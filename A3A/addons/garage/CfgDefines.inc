@@ -73,6 +73,10 @@
 
 #define CarIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\car_ca.paa"
 #define ArmoredIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\tank_ca.paa"
+#define UnmannedIcon "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\portrait_UGV_01_CA.paa"
+#define HeliIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\helicopter_ca.paa"
+#define PlaneIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\plane_ca.paa"
+#define VTOLIcon "\A3\Air_F_Exp\VTOL_01\Data\UI\VTOL_01_vehicle_CA.paa"
 #define AirIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\helicopter_ca.paa"
 #define BoatIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\naval_ca.paa"
 #define StaticIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\static_ca.paa"

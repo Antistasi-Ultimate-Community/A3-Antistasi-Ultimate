@@ -72,6 +72,10 @@
                 <Italian>Armatura</Italian>
                 <Polish>Pojazdy Opancerzone</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Generic_Unmanned">
+                <Original>Unmanned</Original>
+                <Russian>Беспилотники</Russian>
+            </Key>
             <Key ID="STR_HR_GRG_Generic_Air">
                 <Original>Aircraft</Original>
                 <French>Aéronefs</French>
@@ -82,6 +86,18 @@
                 <Czech>Letadlo</Czech>
                 <Italian>Veivolo</Italian>
                 <Polish>Lotnictwo</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Heli">
+              <Original>Helicopters</Original>
+              <Russian>Вертолёты</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Plane">
+              <Original>Planes</Original>
+              <Russian>Самолёты</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_VTOL">
+              <Original>VTOL</Original>
+              <Russian>СВВП</Russian>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
                 <Original>You can only access aircraft if a rebel helipad or friendly airfield is nearby</Original>
