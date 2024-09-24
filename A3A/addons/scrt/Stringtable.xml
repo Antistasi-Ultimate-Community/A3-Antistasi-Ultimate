@@ -12668,6 +12668,13 @@
                 <Korean>일부 플레이어가 차량에 탑승했으며 목적지가 본부나 공군 기지, 군사 기지, 집결 지점, 암거래상이 아니기 때문에 %1의 빠른 이동이 취소되었습니다.</Korean>
                 <French>%1 Le voyage rapide a été annulé parce qu'un joueur est monté à bord de son véhicule et que la destination n'est pas le QG ou une base aérienne, une base militaire, un point de ralliement ou un marchand d'armes.</French>
             </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_trader_locked">
+                <Original>You can't Fast Travel to trader before visiting him once.</Original>
+                <Russian>Вы не можете совершить быстрое путешествие к торговцу, пока не посетите его хотя бы один раз.</Russian>
+                <Chinesesimp>在拜访交易者一次之前，你不能快速旅行到他那里</Chinesesimp>
+                <Korean>한 번 방문하기 전에는 상인에게 빠른 이동을 할 수 없습니다.</Korean>
+                <French>Vous ne pouvez pas voyager rapidement vers un commerçant avant de lui rendre visite une fois.</French>
+            </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_arrived_hc">
                 <Original>Group %1 arrived to destination.</Original>
                 <Russian>%1 отряд добрался до места назначения.</Russian>
