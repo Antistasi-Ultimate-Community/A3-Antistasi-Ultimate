@@ -5024,6 +5024,10 @@
                 <Korean>차량을 뒤집으려면 몇 명의 사람이 필요합니까?</Korean>
                 <French>Combien de personnes sont nécessaires pour retourner le véhicule ?</French>
             </Key>
+            <Key ID="STR_params_enableAdvancedSlingLoading">
+                <Original>Enable advanced slingloading</Original>
+                <Russian>Разрешить advanced slingloading</Russian>
+            </Key>
             <Key ID="STR_params_magRepack">
                 <Original>Enable Mag Repack?</Original>
                 <Russian>Включить Mag Repack?</Russian>
