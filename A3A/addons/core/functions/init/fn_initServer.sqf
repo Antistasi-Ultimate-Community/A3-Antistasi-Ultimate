@@ -53,7 +53,9 @@ Info("Background init started");
 
 // No reason not to do this early
 [] execVM QPATHTOFOLDER(Scripts\fn_advancedTowingInit.sqf);
-[] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);
+if (enableAdvancedSlingLoading) then {
+ 	[] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);/* AdvancedSlingLoadingRefactored\ */
+};
 
 // Nav stuff, should have no parameter/save dependence at all
 call A3A_fnc_loadNavGrid;
