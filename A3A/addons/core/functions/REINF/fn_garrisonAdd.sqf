@@ -49,7 +49,7 @@ waitUntil {(_countX < count (garrison getVariable [_markerX, []])) or (sidesX ge
 
 if(((server getVariable ["hr",0]) <= 10) && (loseHROnDeath isEqualTo 2)) then { 
 	_warningText = "<t font ='PuristaBold' align = 'center' size='0.8' color='#bd0000'>" + localize "STR_A3AU_respawn_warning" +"</t>"+"<br />"+"<t font ='PuristaSemibold' align = 'center' size='0.55' color='#ebebeb'>" + format [localize "STR_A3AU_HR_warning_info", (A3A_faction_reb get "name"), (server getVariable ["hr",0])]+"</t>";
-	[_warningText,0,safezoneY+0.05] spawn BIS_fnc_dynamicText;
+	[_warningText,0,safezoneY+0.05] remoteExec ["BIS_fnc_dynamicText"];
 };
 
 if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) then {
