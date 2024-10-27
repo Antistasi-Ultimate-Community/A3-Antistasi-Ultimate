@@ -209,6 +209,12 @@ _arrayEst = [];
 	};
 } forEach staticsToSave;
 
+{
+	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
+		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
+	};
+} forEach vehiclesToSave;
+
 private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
 _rebMarkers pushBack "Synd_HQ";
 {

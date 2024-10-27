@@ -609,6 +609,16 @@ class aiManagement: SimpleMenuBigger
 			tooltip = $STR_antistasi_dialogs_mount_veh_tooltip;
 			action = "[""mount""] call A3A_fnc_vehStats";
 		};
+
+		class r5Button: SimpleButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_moveout_crew_title;
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.682 * safezoneH + safezoneY;
+			tooltip = $STR_antistasi_dialogs_moveout_crew_tooltip;
+			action = "closeDialog 0; [player,cursorObject] remoteExecCall [""A3A_fnc_vehicleToEmplacement"",2];";
+		};
 	};
 };
 

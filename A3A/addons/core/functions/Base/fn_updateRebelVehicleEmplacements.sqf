@@ -1,6 +1,6 @@
 /*
-    A3A_fnc_updateRebelStatics
-    Search rebel marker area for empty statics, move garrison riflemen into them.
+    A3A_fnc_updateRebelVehicleEmplacements
+    Search rebel marker area for empty vehicles(that are meant to be garrisoned), move garrison riflemen into them.
     Attempts to find existing local garrison static group, otherwise creates one.
 
     Arguments:
@@ -28,17 +28,18 @@ if !(_target isEqualType "") then
 };
 if (_marker isEqualTo "") exitWith {};
 
-// Find all non-mortar statics within marker
-private _statics = staticsToSave inAreaArray _marker;
-_statics = _statics select { _x isKindOf "StaticWeapon" and !(_x isKindOf "StaticMortar") };           // may include bunkers. Don't bother with mortars yet //why not bother with mortars?
-if (count _statics == 0) exitWith {};
+// Find all non-mortar vehicles within marker
+private _vehicles = vehiclesToSave inAreaArray _marker;
+_vehicles = _vehicles select { !(_x isKindOf "StaticWeapon") and !(_x isKindOf "StaticMortar") and !(_x isKindOf "Air")};           // we don't air vehicles(yet), if we find a way to either prevent ai from leaving the area or we have an ability to store their original position
+if (count _vehicles == 0) exitWith {};
 
-// Find unlocked & unoccupied statics
-private _freeStatics = _statics select {
+// Find unlocked & unoccupied vehicles
+private _freeVehicless = _vehicles select {
     isNil { _x getVariable "lockedForAI" }
-    and isNull (gunner _x)
+    and isNull (gunner _x) 
+    and isNull (driver _x)
 };
-if (count _freeStatics == 0) exitWith {};
+if (count _freeVehicles == 0) exitWith {};
 
 // Identify all garrison riflemen in area
 private _possibleCrew = allUnits inAreaArray _marker;
@@ -50,32 +51,32 @@ _possibleCrew = _possibleCrew select {
 };
 if (count _possibleCrew == 0) exitWith {};
 
-// Identify current local static group for marker, if any
-private _staticGroup = grpNull;
+// Identify current local vehicle group for marker, if any
+private _vehiclesGroup = grpNull;
 {
     private _unit = gunner _x;
     if (isNull _unit or !(local _unit)) then { continue };
     if !(_unit getVariable ["markerX", ""] isEqualTo _marker) then { continue };
-    _staticGroup = group _unit; break;
-} forEach _statics;
+    _vehiclesGroup = group _unit; break;
+} forEach _vehicles;
 
-if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
+if (isNull _vehiclesGroup) then { _vehicleGroup = createGroup [teamPlayer, true] };
 
 {
     if (count _possibleCrew == 0) exitWith {};
     private _unit = _possibleCrew deleteAt 0;
-    [_unit] joinSilent _staticGroup;
+    [_unit] joinSilent _vehicleGroup;
     [_x, clientOwner] remoteExec ["setOwner", 2];                      // otherwise unit tends to jump back off for some reason
-    [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];            // required because joinSilent won't switch locality if the group is empty
+    [_vehicleGroup, clientOwner] remoteExec ["setGroupOwner", 2];            // required because joinSilent won't switch locality if the group is empty
 
     // Wait until the unit is local before we do anything else
     [_unit, _x] spawn {
-        params ["_unit", "_static"];
+        params ["_unit", "_vehicle"];
         private _timeout = time + 10;
-        waitUntil { sleep 1; _timeout < time or (local _unit and local _static) };
-        if (isNull objectParent _unit and isNull gunner _static and isNull objectParent _static and isNull attachedTo _static) then {
-            _unit assignAsGunner _static;
-            _unit moveInGunner _static;
+        waitUntil { sleep 1; _timeout < time or (local _unit and local _vehicle) };
+        if (isNull objectParent _unit and isNull gunner _vehicle and isNull objectParent _vehicle and isNull attachedTo _vehicle) then {
+            _unit assignAsGunner _vehicle;
+            _unit moveInGunner _vehicle;
         };
     };
-} forEach _freeStatics;
+} forEach _freeVehicles;

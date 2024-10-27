@@ -125,10 +125,13 @@ if (
 */
 //here to allow adaption of external Antistasi system without needing to addapt code under APL-ND
 private _broadcastReportedVehsAndStaticsToSave = {
+    publicVariable "staticsToSave";
+    publicVariable "vehiclesToSave";
 };
 //_this is vehicle
 private _deleteFromReportedVehsAndStaticsToSave = {
     staticsToSave deleteAt (staticsToSave find _this);
+    vehiclesToSave deleteAt (vehiclesToSave find _this);
 };
 //_this is vehicle
 private _transferToArsenal = {

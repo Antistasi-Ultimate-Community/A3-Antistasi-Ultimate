@@ -348,7 +348,7 @@ else
 	//Remove static weapons near the marker from the saved statics array
 	private _staticWeapons = nearestObjects [_positionX, ["StaticWeapon"], _size * 1.5, true];
 	staticsToSave = staticsToSave - _staticWeapons;
-	publicVariable "staticsToSave";
+	publicVariable "staticsToSave"; ///do simillar thing for vehiclestosave
 	{
 		[_x, _winner, true] call A3A_fnc_vehKilledOrCaptured;
 	} forEach _staticWeapons;
@@ -358,7 +358,7 @@ else
 		params ["_statics", "_markerX"];
 		waitUntil { sleep 1; spawner getVariable _markerX == 2 };
 		{ deleteVehicle _x } forEach (_statics - staticsToSave);
-	};
+	};///do simillar thing for vehiclestosave
 
 	if (!isNull _flagX) then
 	{

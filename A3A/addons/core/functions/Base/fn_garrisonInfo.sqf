@@ -42,6 +42,7 @@ _textX = format [
     , count (_units#9)
     , count (_units#10)
     , {_x distance _positionX < _size} count staticsToSave
+    , {_x distance _positionX < _size} count vehiclesToSave
     , _estatic
     , if (_limit != -1) then {format ["/%1", _limit]} else {""}
 ];
