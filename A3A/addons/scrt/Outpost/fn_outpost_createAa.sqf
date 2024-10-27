@@ -26,8 +26,8 @@ _formatX = A3A_faction_reb get "groupAaEmpl";
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Post"];
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
-_vehType = (A3A_faction_reb get "vehiclesLightUnarmed") select 0;
+private _vehType = selectRandom (A3A_faction_reb get "vehiclesLightUnarmed");
+_pos = position _road findEmptyPosition [1,30, _vehType];
 _truckX = _vehType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
