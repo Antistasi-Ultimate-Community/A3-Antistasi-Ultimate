@@ -7,10 +7,12 @@ private _victoryZones = airportsX + milbases + outposts + resourcesX + factories
 private _victoryZonesLogistical = airportsX + milbases + seaports;
 private _popTotal = 0;
 private _popKilled = 0;
-private _missingMoney = ((2000000 - _factionMoney) call BIS_fnc_numberText) splitString " " joinString ",";
 private _popReb = 0;
 private _popGov = 0;
 private _popMajority = 0;
+private _resourcesCount = count (resourcesX);
+private _economicCalculation = (_resourcesCount * 100000);
+private _missingMoney = ((_economicCalculation - _factionMoney) call BIS_fnc_numberText) splitString " " joinString ",";
 
 {
     private _city = _x;
@@ -71,7 +73,7 @@ switch (victoryCondition) do
     //Economic Victory
     case 2:
     {
-        if (_factionMoney >= 2000000) then {
+        if (_factionMoney >= _economicCalculation) then {
             isNil {["ended", true] call A3A_fnc_writebackSaveVar};
             ["economicVictory",true,true,true,true] remoteExec ["BIS_fnc_endMission"];
         } else {

@@ -1348,7 +1348,7 @@
                 <French>&lt;t size='0.6' color='#C1C0BB'&gt;Revenu&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: +%1&lt;br/&gt;Argent: +%2%3</French>
             </Key>
             <Key ID="STR_comms_mp_paycheck">
-                <Original>&lt;t size='0.6'&gt;%1 receieves &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; for fighting for %4!&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;%1 receives &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; for fighting for %4!&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;%1 получает &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; на борьбу за %4!&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;%1 收到了 &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt;，因为为%4!而战！&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1이(가) %4을(를) 위해 싸운 것에 대해 &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt;을(를) 받았습니다!&lt;/t&gt;</Korean>
@@ -4837,6 +4837,13 @@
                 <Chinesesimp>只有机场、军事基地和HQ</Chinesesimp>
                 <Korean>공항, 군사 기지와 본부만</Korean>
                 <French>Uniquement les aéroports, les bases militaires et les QG</French>
+            </Key>
+            <Key ID="STR_params_allowFT_2">
+                <Original>Only between airports, military bases and HQ</Original>
+                <Russian>Только между аэропортами, военными базами и штаб-квартирами</Russian>
+                <Chinesesimp>仅限机场、军事基地和总部之间</Chinesesimp>
+                <Korean>공항, 군 기지, 본부 간에만 가능</Korean>
+                <French>Uniquement entre les aéroports, les bases militaires et les quartiers généraux</French>
             </Key>
             <Key ID="STR_params_napalmEnabled">
                 <Original>Enable Napalm Bombing for AI</Original>
@@ -12507,6 +12514,13 @@
                 <Chinesesimp>玩家组队只能快速前往总部、空军基地、军事基地、集结点和军火商。</Chinesesimp>
                 <Korean>플레이어 그룹은 본부, 공군 기지, 군사 기지, 집결 지점, 암거래상으로만 빠른 이동이 가능합니다.</Korean>
                 <French>Les groupes de joueurs ne sont autorisés à voyager rapidement que vers le QG, les bases aériennes, les bases militaires, les points de ralliement et les marchands d'armes.</French>
+            </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_limited_to_between_destinations">
+                <Original>Player groups are only allowed to Fast Travel between HQ, Airbases, Military Bases, Arms Dealer and to Rally Points.</Original>
+                <Russian>Группам игроков разрешено быстро перемещаться только между штаб-квартирами, авиабазами, военными базами, торговцами оружием и точками сбора.</Russian>
+                <Chinesesimp>玩家组队只能快速前往总部、空军基地、军事基地、集结点和军火商。</Chinesesimp>
+                <Korean>플레이어 그룹은 본부, 공군 기지, 군사 기지, 무기 상인, 집결 지점 사이로만 빠른 이동이 허용됩니다.</Korean>
+                <French>Les groupes de joueurs ne sont autorisés à voyager rapidement qu'entre le QG, les bases aériennes, les bases militaires, les marchands d'armes et les points de rassemblement.</French>
             </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_no_enemy_zone">
                 <Original>You can't Fast Travel to an enemy controlled zone.</Original>
