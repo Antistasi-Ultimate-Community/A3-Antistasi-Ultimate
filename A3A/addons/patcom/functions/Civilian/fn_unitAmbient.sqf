@@ -43,7 +43,7 @@ private _musicSource = petros;
 
         [_musicSource, _sound] remoteExec ["say3D", [1, _musicSource], true];
 
-        sleep 900;
+        sleep (random 1800);
 
         if not (alive _musicSource) exitWith {};
         
