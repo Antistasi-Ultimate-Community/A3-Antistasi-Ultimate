@@ -2724,8 +2724,8 @@
                 <Russian>Выбрана полная победа&lt;br/&gt;Чтобы выполнить это условие победы, захватите все аванпосты, ресурсы, фабрики, морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_economic">
-                <Original>Economic Victory Selected&lt;br/&gt;To complete this win condition, Gain more than 2 million units of currency.</Original>
-                <Russian>Экономическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, получите более 2 миллионов единиц валюты.</Russian>
+                <Original>Economic Victory Selected&lt;br/&gt;To complete this win condition, Gain more than a set amount of currency.&lt;br/&gt;Calculated as: amount of resources on the map * 100,000&lt;br/&gt;Needed amount on current map : %1%2</Original>
+                <Russian>Экономическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, получите больше установленной суммы валюты.&lt;br/&gt;Рассчитывается как: количество ресурсов на карте * 100,000.&lt;br/&gt;Необходимая сумма на текущей карте : %1%2</Russian>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_logistical">
                 <Original>Logistical Victory Selected&lt;br/&gt;To complete this win condition, capture all seaports, military bases, and airports, and maintain more population support than your enemies.</Original>

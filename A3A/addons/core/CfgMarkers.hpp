@@ -108,12 +108,18 @@ class CfgMarkers
 		texture = QPATHTOFOLDER(Pictures\Markers\CSAT_SFIA_Marker.paa);
 	};
 
+	class a3a_flag_FIN: flag_NATO 
+	{
+		name = "Finland";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_fin_co.paa); 
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_fin_co.paa);
+	};
+
 	class a3a_flag_LRI: flag_NATO 
 	{
 		name = "LRI";
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_lri_co.paa); 
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_lri_co.paa);
-
 	};
 
 	class a3a_flag_cdf: flag_NATO 

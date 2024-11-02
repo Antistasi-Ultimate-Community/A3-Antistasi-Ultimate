@@ -29,6 +29,12 @@ class CfgFunctions
             class initZones {};
             class popup {};
         };
+        class main_menu
+        {
+            file = QPATHTOFOLDER(functions\main_menu);
+            class isInMenu {};
+            class menuImage {};
+        };
         class REINF
         {
             file = QPATHTOFOLDER(functions\REINF);

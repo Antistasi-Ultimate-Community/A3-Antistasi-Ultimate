@@ -1,0 +1,4 @@
+class CUP_NorAF_F16 : vehicles_base
+{
+    ITEM(F16C_NATO50, 91000, PLANE, VEHICLE_CONDITION_PLANE);
+};

@@ -8,7 +8,7 @@
 
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\NFtS\flag_finland.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "NORTH_Flag_FIN"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_FIN"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["NORTH_FIN_41_R75"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["LIB_Kfz1_sernyt"]] call _fnc_saveToTemplate;
