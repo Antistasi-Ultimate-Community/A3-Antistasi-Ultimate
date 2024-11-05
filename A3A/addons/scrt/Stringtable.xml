@@ -5035,6 +5035,10 @@
                 <Original>Enable advanced slingloading</Original>
                 <Russian>Разрешить advanced slingloading</Russian>
             </Key>
+            <Key ID="STR_params_enableAdvancedTowing">
+                <Original>Enable advanced towing</Original>
+                <Russian>Разрешить advanced towing</Russian>
+            </Key>
             <Key ID="STR_params_magRepack">
                 <Original>Enable Mag Repack?</Original>
                 <Russian>Включить Mag Repack?</Russian>

@@ -41,6 +41,7 @@ if !(isServer) then {
     call A3A_fnc_initVarCommon;
 
     [] execVM QPATHTOFOLDER(Scripts\fn_advancedTowingInit.sqf);
+    [] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);
     
     Info("Running client JNA preload");
     ["Preload"] call jn_fnc_arsenal;
@@ -114,10 +115,6 @@ waitUntil {local player};
 if (enableSpectrumDevice) then {
 	[] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);
 	[] execVM QPATHTOFOLDER(Scripts\SpectumDevice\sa_ewar.sqf);
-};
-
-if (enableAdvancedSlingLoading) then {
- 	[] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);/* AdvancedSlingLoadingRefactored\ */
 };
 
 // Placeholders, should get replaced globally by the server

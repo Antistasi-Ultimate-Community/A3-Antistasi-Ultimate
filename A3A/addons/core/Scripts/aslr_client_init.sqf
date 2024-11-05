@@ -1,6 +1,9 @@
 // #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 #include "..\script_component.hpp"
 #include "\a3\ui_f\hpp\definedikcodes.inc"
+FIX_LINE_NUMBERS()
+
+if ((missionNamespace getVariable ["A3U_setting_enableAdvancedSlingloading", true]) isEqualTo false) exitWith {Info("Skipped loading advanced slingloading")};
 
 // prevent the old advanced sling loading from pushing to this client
 ASL_ROPE_INIT = true;
