@@ -116,7 +116,9 @@ switch (victoryCondition) do
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_Default_2"],format [localize "STR_antistasi_journal_entry_text_Default_total"]]];
 	};
 	case 2: {
-		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_Default_2"],format [localize "STR_antistasi_journal_entry_text_Default_economic"]]];
+		private _resourcesCount = count (resourcesX);
+		private _economicCalculation = ((_resourcesCount * 100000) call BIS_fnc_numberText) splitString " " joinString ",";
+		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_Default_2"],format [localize "STR_antistasi_journal_entry_text_Default_economic", _economicCalculation, A3A_faction_civ get "currencySymbol"]]];
 	};
 	case 3: {
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_Default_2"],format [localize "STR_antistasi_journal_entry_text_Default_logistical"]]];

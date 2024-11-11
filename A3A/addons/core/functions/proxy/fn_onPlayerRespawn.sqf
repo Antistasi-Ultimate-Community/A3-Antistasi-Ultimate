@@ -114,7 +114,7 @@ if (side group _newUnit == teamPlayer) then
 				if(((server getVariable ["hr",0]) > 10) && (tierWar >= 2)) then
 				{
 					_warningText = "<t font ='PuristaSemibold' align = 'center' size='0.5' color='#ebebeb'>" + format [localize "STR_chats_player_kia", _deathPenaltyNum]+"</t>";
-					[_warningText,0,safezoneY+0.05] spawn BIS_fnc_dynamicText;
+					[_warningText,0,safezoneY+0.05] remoteExec ["BIS_fnc_dynamicText"];
 				};
 			};
         };
@@ -279,4 +279,4 @@ if (staminaEnabled isEqualTo false) then {
 }; 
  
 private _newWeaponSway = swayEnabled / 100;
-player setCustomAimCoef _newWeaponSway;
+_newunit setCustomAimCoef _newWeaponSway;

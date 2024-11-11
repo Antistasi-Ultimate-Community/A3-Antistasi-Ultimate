@@ -234,10 +234,6 @@
                 <Korean>알티스군(AAF).\n퇴역되었고 구식이지만 여전히 효과적인 서방 장비를 광범위하게 효과적으로 사용하는 작지만 사기가 높은 군대입니다.</Korean>
                 <French>Forces armées d'Altis (AAF).\nPetite force, mais très motivée, qui utilise efficacement une large gamme d'équipements occidentaux déclassés et obsolètes, mais toujours efficaces.</French>
             </Key>
-            <Key ID="STR_A3AP_setupFactionsTab_ldf">
-                <Original>Livonian Defense Force (LDF).\nStructured around defending the tiny NATO member state's territory, the bulk of its forces consist of light infantry and motorised/mechanised elements. Its air force, while not significant, is still a sizeable presence to be reckoned with.</Original>
-                <Russian>Вооруженные Силы Ливонии (ВСЛ).\Основная часть её сил, созданных для защиты территории крошечного государства-члена НАТО, состоит из легкой пехоты и моторизованных подразделений. Ее военно-воздушные силы, хотя и не являются значительными, все же являются значительным контингентом, с которым следует считаться.</Russian>
-            </Key>
             <Key ID="STR_A3AP_setupFactionsTab_natoandldf">
                 <Original>North Atlantic Treaty Organization and Livonian Defense Force (NATO and LDF).\nAfter successful combined training in Livonia, tension between CSAT and NATO increased. LDF decided to let NATO build more of their bases to increase their chances if their eastern neighbor will make it's move.</Original>
                 <Russian>Организация Североатлантического договора и Вооруженные Силы Ливонии (НАТО и ВСЛ).\После успешных совместных учений в Ливонии напряженность в отношениях между CSAT и НАТО возросла. Вооруженные силы Ливии решили позволить НАТО построить больше своих баз, чтобы увеличить свои шансы, если их восточный сосед начнёт действовать.</Russian>
@@ -1348,7 +1344,7 @@
                 <French>&lt;t size='0.6' color='#C1C0BB'&gt;Revenu&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: +%1&lt;br/&gt;Argent: +%2%3</French>
             </Key>
             <Key ID="STR_comms_mp_paycheck">
-                <Original>&lt;t size='0.6'&gt;%1 receieves &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; for fighting for %4!&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;%1 receives &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; for fighting for %4!&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;%1 получает &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; на борьбу за %4!&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;%1 收到了 &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt;，因为为%4!而战！&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1이(가) %4을(를) 위해 싸운 것에 대해 &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt;을(를) 받았습니다!&lt;/t&gt;</Korean>
@@ -4837,6 +4833,13 @@
                 <Chinesesimp>只有机场、军事基地和HQ</Chinesesimp>
                 <Korean>공항, 군사 기지와 본부만</Korean>
                 <French>Uniquement les aéroports, les bases militaires et les QG</French>
+            </Key>
+            <Key ID="STR_params_allowFT_2">
+                <Original>Only between airports, military bases and HQ</Original>
+                <Russian>Только между аэропортами, военными базами и штаб-квартирами</Russian>
+                <Chinesesimp>仅限机场、军事基地和总部之间</Chinesesimp>
+                <Korean>공항, 군 기지, 본부 간에만 가능</Korean>
+                <French>Uniquement entre les aéroports, les bases militaires et les quartiers généraux</French>
             </Key>
             <Key ID="STR_params_napalmEnabled">
                 <Original>Enable Napalm Bombing for AI</Original>
@@ -8924,6 +8927,14 @@
                 <Korean>%1의 은신처 위치 %2이(가) 발견되었습니다. 이제 행동할 시간입니다. 가서 무기 보급품을 파괴하거나 훔치십시오(본부로 전달). 자원이 없다면 이 지역에서 우리를 상대로 어떠한 작전도 수행할 수 없을 것입니다. %3 이전에 완료하십시오.</Korean>
                 <French>L'emplacement de la cachette %1 %2 a été trouvé, il est temps d'agir - allez-y et détruisez ou volez (livrez au QG) leur cache d'armes. Sans ressources, ils ne pourront pas mener d'opération secrète contre nous dans cette zone particulière. Faites-le avant %3.</French>
             </Key>
+            <Key ID="STR_RIV_ATT_transfer_header">
+                <Original>Prevent Invaders transfering valuable cargo to Rivals</Original>
+                <Russian>Предотвратите передачу  Захватчиками ценного груза Соперникам</Russian>
+            </Key>
+            <Key ID="STR_RIV_ATT_transfer_text">
+                <Original>We found out that the Invaders are going to transfer %1 valuable cargo at %2. Go there and stop the transfer. After the transmission is disrupted, %1 will stop conducting operations in this area. Do this before %3.</Original>
+                <Russian>Мы выяснили что Захватчики собираются передать %1 ценный груз в %2 идите туда и остановите передачу. После срыва передачи, %1 перестанут их проводить в этой зоне. Сделайте это до %3.</Russian>
+            </Key>
             <Key ID="STR_trader_quest_header">
                 <Original>Find the Arms Dealer</Original>
                 <Russian>Найти торговца оружием</Russian>
@@ -9007,6 +9018,30 @@
                 <Chinesesimp>%1 正在扰乱我们在该地区的行动。 去那里，在 %2 之前占领它。</Chinesesimp>
                 <Korean>%1은(는) 해당 지역에서의 우리 작전을 방해하고 있습니다. 해당 지역으로 가서 %2 이전까지 점령하십시오.</Korean>
                 <French>Un %1 perturbe nos opérations dans la région. Allez-y et capturez-le avant %2.</French>
+            </Key>
+            <Key ID="STR_CON_Outpost_resources_compet_task">
+                <Original>Resource Acquisition at the frontline</Original>
+                <Russian>Захват ресурсов на передовой</Russian>
+            </Key>
+            <Key ID="STR_CON_Outpost_resources_compet_desc">
+                <Original>A %1 would be a fine addition to our cause. Go there and capture it before %2. %3 Sent their troups as well</Original>
+                <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2. %3 также отправила туда свои войска</Russian>
+            </Key>
+            <Key ID="STR_CON_Outpost_controls_compet_task">
+                <Original>Destroy Roadblock at the frontline</Original>
+                <Russian>Уничтожьте блокпост на передовой</Russian>
+            </Key>
+            <Key ID="STR_CON_Outpost_controls_compet_desc">
+                <Original>A %1 interferes with our operations in the area. Go there and destroy it before %2. %3 Sent their troups as well</Original>
+                <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
+            </Key>
+            <Key ID="STR_CON_Outpost_outposts_compet_task">
+                <Original>Frontline Struggle</Original>
+                <Russian>Борьба на передовой</Russian>
+            </Key>
+            <Key ID="STR_CON_Outpost_outposts_compet_desc">
+                <Original>A %1 is disturbing our operations in the area. Go there and capture it before %2. %3 Sent their troups as well</Original>
+                <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
             </Key>
             <Key ID="STR_CON_MilAdmin_task">
                 <Original>Seize Administration</Original>
@@ -9465,6 +9500,15 @@
                 <Chinesesimp>我们的一群战俘在 %1 等待处决。 我们必须在 %2 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
                 <French>Un groupe de prisonniers de guerre attend d'être exécuté à %1. Nous devons les sauver avant %2. Amenez-les au QG.</French>
+            </Key>
+            </Key>
+            <Key ID="STR_A3A_Missions_RES_Deserters_task_header">
+                <Original>Deresters Rescue</Original>
+                <Russian>Спасите дезертиров</Russian>
+            </Key>
+            <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
+                <Original>A group of enemy deserters is hiding in %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
+                <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_header">
                 <Original>Rescue Prisoners</Original>
@@ -10273,6 +10317,23 @@
                 <Chinesesimp>前往集结地</Chinesesimp>
                 <Korean>집결 지점으로 이동</Korean>
                 <French>Se rendre au point de ralliement</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_destroy_radio">
+                <Original>Destroy Radio</Original>
+                <English>Destroy Radio</English>
+                <Russian>Уничтожить радио</Russian>
+                <German>Radio zerstören</German>
+                <Italian>Distruggi radio</Italian>
+                <Spanish>Destruir radio</Spanish>
+                <French>Détruire la radio</French>
+                <Korean>라디오 파괴</Korean>
+                <Japanese>ラジオを破壊</Japanese>
+                <Chineseimp>摧毁收音机</Chineseimp>
+                <Chinese>摧毀收音機</Chinese>
+                <Polish>Zniszcz radio</Polish>
+                <Czech>Zničit rádio</Czech>
+                <Portuguese>Destruir rádio</Portuguese>
+                <Turkish>Radyoyu Yok Et</Turkish>
             </Key>
         </Container>
         <Container name="common_notifications">
@@ -12507,6 +12568,13 @@
                 <Chinesesimp>玩家组队只能快速前往总部、空军基地、军事基地、集结点和军火商。</Chinesesimp>
                 <Korean>플레이어 그룹은 본부, 공군 기지, 군사 기지, 집결 지점, 암거래상으로만 빠른 이동이 가능합니다.</Korean>
                 <French>Les groupes de joueurs ne sont autorisés à voyager rapidement que vers le QG, les bases aériennes, les bases militaires, les points de ralliement et les marchands d'armes.</French>
+            </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_limited_to_between_destinations">
+                <Original>Player groups are only allowed to Fast Travel between HQ, Airbases, Military Bases, Arms Dealer and to Rally Points.</Original>
+                <Russian>Группам игроков разрешено быстро перемещаться только между штаб-квартирами, авиабазами, военными базами, торговцами оружием и точками сбора.</Russian>
+                <Chinesesimp>玩家组队只能快速前往总部、空军基地、军事基地、集结点和军火商。</Chinesesimp>
+                <Korean>플레이어 그룹은 본부, 공군 기지, 군사 기지, 무기 상인, 집결 지점 사이로만 빠른 이동이 허용됩니다.</Korean>
+                <French>Les groupes de joueurs ne sont autorisés à voyager rapidement qu'entre le QG, les bases aériennes, les bases militaires, les marchands d'armes et les points de rassemblement.</French>
             </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_no_enemy_zone">
                 <Original>You can't Fast Travel to an enemy controlled zone.</Original>

@@ -31,13 +31,19 @@ if(_mode == "ADD") then {
 			if (_location in citiesX) then {
 				[[_location],"A3A_fnc_RIV_ATT_Cell"] remoteExec ["A3A_fnc_scheduler",2];
             } else {
-				[[_location],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
-			};
-
+                if !(areInvadersDefeated) then {
+                    private _roll = round random 100;
+                    if (_roll >= 55) then { ///65
+                        [[_location],"A3A_fnc_RIV_ATT_Transfer"] remoteExec ["A3A_fnc_scheduler",2];	
+                    } else {
+                        [[_location],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
+                    };
+			    };
 			["REMOVE"] call SCRT_fnc_ui_assignRivalsAttackLocationEventHandler;
 			closeDialog 0;
 			closeDialog 0;
             [] call SCRT_fnc_ui_clearRivals;
+            };
         },
         []
 	] call BIS_fnc_addStackedEventHandler;

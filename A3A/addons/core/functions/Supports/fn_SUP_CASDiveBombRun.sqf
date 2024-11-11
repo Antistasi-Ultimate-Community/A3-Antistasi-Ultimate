@@ -20,6 +20,10 @@ private _weaponState3 = [];
 
 (_plane getVariable "diveParams") params ["_startAlt", "_endAlt", "_diveSpeed", "_diveAngle", "_turnRate", "_bombDrag"];
 
+// Reduce accuracy against foot troops
+private _targetOffset = [0,0,0];
+if (_target isKindOf "Man") then { _targetOffset getPos [random 100, random 360]; _targetOffset set [2, 0] };
+
 
 // Delay on loop until we're in the correct position
 private _inPosition = false;
@@ -31,6 +35,7 @@ while {true} do {
     // Target lead calc
     private _timeToTarget = 1.1 * (_plane distance _target) / _diveSpeed;
     private _targetPos = eyePos _target vectorAdd (velocity _target vectorMultiply _timeToTarget);        // posASL
+    _targetPos = _targetPos vectorAdd _targetOffset;
 
     private _targDirFwd = getPosASL _plane vectorFromTo _targetPos;
     _targDirFwd = vectorNormalized [_targDirFwd#0, _targDirFwd#1, 0];
@@ -68,7 +73,7 @@ _plane setVariable ["A3A_diveLastDir", vectorDir _plane];
 _plane setVariable ["A3A_diveLastPos", getPosASL _plane];
 
 private _ehID = addMissionEventHandler ["EachFrame", {
-    _thisArgs params ["_plane", "_target", "_endAlt", "_diveSpeed", "_turnRate", "_bombDrag"];
+    _thisArgs params ["_plane", "_target", "_endAlt", "_diveSpeed", "_turnRate", "_bombDrag", "_targetOffset"];
 
     if (!alive _target or !canMove _plane or isNull driver _plane) exitWith {
         Debug("EachFrame handler abandoned due to target or plane damage");
@@ -81,6 +86,7 @@ private _ehID = addMissionEventHandler ["EachFrame", {
     private _bombOffset = _bombOffset vectorAdd (vectorNormalized [_dir#1, -(_dir#0), 0] vectorMultiply (_bombDrag#1));
     private _timeToTarget = (_plane distance _target) / _diveSpeed;
     private _targetPos = getPosASL _target vectorAdd (velocity _target vectorMultiply _timeToTarget) vectorAdd _bombOffset;
+    _targetPos = _targetPos vectorAdd _targetOffset;
     private _targetDir = getPosASL _plane vectorFromTo _targetPos;
 
     // heading adjustment
@@ -106,7 +112,7 @@ private _ehID = addMissionEventHandler ["EachFrame", {
     _plane setVectorDirAndUp [_dir, _dir vectorCrossProduct [0,0,1] vectorCrossProduct _dir];
     _plane setVelocity (_dir vectorMultiply _diveSpeed);
 
-    if (getPosATL _plane#2 < _endAlt) exitWith {
+    if (getPosASL _plane#2 - getPosASL _target#2 < _endAlt) exitWith {
         removeMissionEventHandler ["EachFrame", _thisEventHandler];
         driver _plane enableAI "All";
         gunner _plane enableAI "All";
@@ -134,7 +140,7 @@ private _ehID = addMissionEventHandler ["EachFrame", {
         } forEach (_plane getVariable "bombRacks");
         _plane setVariable ["bombsDropped", true];
     };
-}, [_plane, _target, _endAlt, _diveSpeed, _turnRate, _bombDrag]];
+}, [_plane, _target, _endAlt, _diveSpeed, _turnRate, _bombDrag, _targetOffset]];
 
 waitUntil { sleep 1; !(getEventHandlerInfo ["EachFrame", _ehID] # 0) };
 

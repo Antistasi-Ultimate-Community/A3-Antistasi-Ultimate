@@ -233,25 +233,26 @@ _sfLoadoutData set ["binoculars", ["SWLB_clone_commander_binocular"]];
 
 //SF Weapons
 _sfLoadoutData set ["rifles", [
-["SWLW_DC17M", "swlw_attachment_dc17m_blaster", "", "", ["SWLW_DC17M_Blaster_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag"], [], ""]
 ]];
 _sfLoadoutData set ["carbines", [
-["SWLW_DC17M", "swlw_attachment_dc17m_blaster", "", "", ["SWLW_DC17M_Blaster_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag","3AS_100Rnd_EC40_mag","3AS_100Rnd_EC40_mag","3AS_AntiArmour_mag"], [], ""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-["SWLW_DC17M", "swlw_attachment_dc17m_at", "", "", ["SWLW_DC17M_Blaster_Mag"], ["SWLW_DC17M_AT_Mag"], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag","3AS_AntiArmour_mag"], [], ""]
 ]];
 _sfLoadoutData set ["SMGs", [
-["SWLW_DC17M", "swlw_attachment_dc17m_blaster", "", "", ["SWLW_DC17M_Blaster_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
+["SWLW_Z6", "", "", "", ["SWLW_Z6_mag"], [], ""],
 ["SWLW_Z6", "", "", "", ["SWLW_Z6_mag"], [], ""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-["SWLW_DC17M", "swlw_attachment_dc17m_sniper", "", "swlw_attachment_scope_dc17m_sniper", ["SWLW_DC17M_Sniper_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_5Rnd_EC80_mag","3AS_5Rnd_EC80_mag","3AS_5Rnd_EC80_mag","3AS_100Rnd_EC40_mag"], [], ""]
 ]];
 _sfLoadoutData set ["sniperRifles", [
-["SWLW_DC17M", "swlw_attachment_dc17m_sniper", "", "swlw_attachment_scope_dc17m_sniper", ["SWLW_DC17M_Sniper_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_5Rnd_EC80_mag"], [], ""]
 ]];
 _sfLoadoutData set ["sidearms", [
 ["SWLW_DC15SA", "", "", "", ["SWLW_DC15SA_Mag"], [], ""]

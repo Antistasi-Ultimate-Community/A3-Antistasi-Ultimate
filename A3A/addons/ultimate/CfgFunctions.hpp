@@ -29,6 +29,12 @@ class CfgFunctions
             class initZones {};
             class popup {};
         };
+        class main_menu
+        {
+            file = QPATHTOFOLDER(functions\main_menu);
+            class isInMenu {};
+            class menuImage {};
+        };
         class REINF
         {
             file = QPATHTOFOLDER(functions\REINF);
@@ -45,7 +51,6 @@ class CfgFunctions
         class STALKER
         {
             file = QPATHTOFOLDER(functions\STALKER);
-            class cleanupAnomalyField {};
             class createAnomalyField {};
             class emission {};
             class fillMapAnomalies {};

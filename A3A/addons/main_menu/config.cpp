@@ -8,122 +8,25 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_core", "A3_UI_F"};
+        requiredAddons[] = {
+			"A3A_core",
+			"A3_UI_F",
+			"A3_Data_F_Enoch_Loadorder",
+            "A3_Map_Data",
+            "A3_Map_Stratis",
+            "A3_Map_Altis",
+            "A3_Map_VR",
+            "A3_Data_F_Exp",
+            "A3_Map_Malden",
+            "A3_Sounds_F_Enoch",
+			"CBA_Main"
+			};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
         VERSION_CONFIG;
     };
 };
-
-#define RANDOM_NUMBER __RAND_UINT8__
-
-#if __A3_DEBUG__
-	class RANDOM_NUMBER
-	{
-		number = RANDOM_NUMBER;
-	};
-#endif
-
-#if RANDOM_NUMBER > 0
-    #define BACKGROUND data\backgrounds\Zombies_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 11
-    #define BACKGROUND data\backgrounds\bwa_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 22
-    #define BACKGROUND data\backgrounds\canada_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 33
-    #define BACKGROUND data\backgrounds\Cars_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 44
-    #define BACKGROUND data\backgrounds\clone_wars_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 55
-    #define BACKGROUND data\backgrounds\ffaa_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 66
-    #define BACKGROUND data\backgrounds\italy_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 77
-    #define BACKGROUND data\backgrounds\Maps_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 88
-    #define BACKGROUND data\backgrounds\Modsets_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 99
-    #define BACKGROUND data\backgrounds\transport_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 110
-    #define BACKGROUND data\backgrounds\racs_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 121
-    #define BACKGROUND data\backgrounds\rebels_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 132
-    #define BACKGROUND data\backgrounds\rebels2_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 143
-    #define BACKGROUND data\backgrounds\rebels3_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 154
-    #define BACKGROUND data\backgrounds\russia_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 165
-    #define BACKGROUND data\backgrounds\spearhead_1944_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 176
-    #define BACKGROUND data\backgrounds\Stealth_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 187
-    #define BACKGROUND data\backgrounds\Sunset_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 198
-    #define BACKGROUND data\backgrounds\sweden_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 209
-    #define BACKGROUND data\backgrounds\turkey_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 220
-    #define BACKGROUND data\backgrounds\us_army_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 231
-    #define BACKGROUND data\backgrounds\usmc_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 242
-    #define BACKGROUND data\backgrounds\vietnam_co.jpg
-#endif
-
-#if RANDOM_NUMBER > 254
-    #define BACKGROUND data\backgrounds\onein255_co.jpg
-#endif
-
-#ifndef BACKGROUND
-    #define BACKGROUND data\backgrounds\Sunset_co.jpg
-#endif
 
 class RscActivePicture;
 class RscStandardDisplay;
@@ -282,27 +185,71 @@ class RscTitles
 		onLoad = "(_this # 0) ctrlEnable false;";
 	};
 };
+
+class CfgMissions
+{
+	class Cutscenes
+	{
+		class a3au_main_menu // Class referenced in 'cutscenes' property in CfgWorlds
+		{
+			directory = "x\A3A\addons\main_menu\data\backgrounds\scenes\menu_overwrite.Stratis"; // Path to scenario with the scene
+		};
+	};
+};
+
+class CfgWorlds
+{
+	class CAWorld;
+	class VR : CAWorld
+	{
+		cutscenes[] = { "a3au_main_menu" };
+	};
+
+	class Altis : CAWorld
+	{
+		cutscenes[] = { "a3au_main_menu" };
+	};
+
+	class Tanoa : CAWorld
+	{
+		cutscenes[] = { "a3au_main_menu" };
+	};
+
+	class Malden : CAWorld
+	{
+		cutscenes[] = { "a3au_main_menu" };
+	};
+
+	class Stratis : CAWorld
+	{
+		cutscenes[] = { "a3au_main_menu" };
+	};
+
+	class Enoch : CAWorld
+	{
+		cutscenes[] = { "a3au_main_menu" };
+	};
+
+	initWorld = "VR";
+	demoWorld = "VR";
+};
+
+class A3AU_Images
+{
+	#include "cfgMenuImages.hpp"
+};
+
+class Extended_PreInit_EventHandlers
+{
+    class A3AU_settings
+    {
+        init = "call compile preprocessFileLineNumbers 'x\A3A\addons\main_menu\XEH_preInit.sqf'";
+    };
+};
+
 class RscDisplayMain: RscStandardDisplay //main menu
 {
 	enableDisplay = 0;
-	class controlsBackground 
-    {
-        class Background 
-        {
-            idc = -1;
-            type = 0;
-            style = 48;
-            text = QPATHTOFOLDER(BACKGROUND); // Path to your custom main menu image
-            x = "safeZoneX";
-            y = "safeZoneY";
-            w = "safeZoneW";
-            h = "safeZoneH";
-            colorBackground[] = {0, 0, 0, 0};
-            colorText[] = {1, 1, 1, 1};
-            font = "RobotoCondensed";
-            sizeEx = 0.025;
-        };
-    };
 	class controls 
     {
 		delete Spotlight;
@@ -316,7 +263,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 		delete SpotlightPrev;
 		class Logo: RscActivePicture
 		{
-			text = QPATHTOFOLDER(data\AULOGO_TEST.paa);
+			text = QPATHTOFOLDER(data\buttons\AULOGO_TEST.paa);
 			tooltip="Join the official Antistasi Ultimate Discord server!";
 			color[]={0.89999998,0.89999998,0.89999998,1};
 			colorActive[]={1,1,1,1};
@@ -341,7 +288,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			y = "safeZoneY + safeZoneH - 0.28";
 			w = 0.18;
 			h = 0.05;
-			text = QPATHTOFOLDER(data\SteamB.paa); // No text needed for an image button
+			text = QPATHTOFOLDER(data\buttons\SteamB.paa); // No text needed for an image button
 			colorBackground[] = {0, 0, 0, 0};
 			colorText[] = {1, 1, 1, 1};
 			font = "RobotoCondensed";
@@ -367,58 +314,59 @@ class RscDisplayMain: RscStandardDisplay //main menu
 		class SteamButton1: base_side_btn 
         {
 			onLoad = "(_this # 0) ctrlEnable true";
-			text = QPATHTOFOLDER(data\SteamB.paa); // Path to button image
+			text = QPATHTOFOLDER(data\buttons\SteamB.paa); // Path to button image
 			tooltip = "Steam workshop Mod";
 			url = "https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032";
-			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\SteamB_Hov.paa""";
-			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\SteamB.paa""";
-			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\SteamB_Hov.paa""";
-			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\SteamB.paa""";
+			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB_Hov.paa""";
+			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB.paa""";
+			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB_Hov.paa""";
+			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB.paa""";
 		};
 		class GitHubButton2: SteamButton1
         {
 			y = "safeZoneY + safeZoneH - 0.34";
-			text = QPATHTOFOLDER(data\GitB.paa); // Path to button image
+			text = QPATHTOFOLDER(data\buttons\GitB.paa); // Path to button image
 			tooltip="GitHub Page";
 			url = "https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate";
-			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\GitB_Hov.paa""";
-			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\GitB.paa""";
-			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\GitB_Hov.paa""";
-			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\GitB.paa""";
+			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB_Hov.paa""";
+			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB.paa""";
+			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB_Hov.paa""";
+			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB.paa""";
 		};
 		class ServerButton3: base_side_btn
         {
+			onLoad = "(_this # 0) ctrlEnable true";
 			y = "safeZoneY + safeZoneH - 0.4";
-			text = QPATHTOFOLDER(data\ServerB.paa); // No text needed for an image button
+			text = QPATHTOFOLDER(data\buttons\ServerB.paa); // No text needed for an image button
 			tooltip="Connect to our community server!";
 			onMouseButtonClick = "connectToServer ['138.201.62.114', 2402, '1221']";
-			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ServerB_Hov.paa""";
-			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ServerB.paa""";
-			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ServerB_Hov.paa""";
-			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ServerB.paa""";
+			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB_Hov.paa""";
+			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB.paa""";
+			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB_Hov.paa""";
+			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB.paa""";
 		};
 		class ArmaCreditsButton4: base_side_btn 
         {
 			onLoad = "(_this # 0) ctrlEnable true";
 			x = "safeZoneX + 0.007";
-			text = QPATHTOFOLDER(data\ArmaCredits.paa); // No text needed for an image button
+			text = QPATHTOFOLDER(data\buttons\ArmaCredits.paa); // No text needed for an image button
 			tooltip="ArmA 3 Credits";
 			onMouseButtonClick = "if (scriptdone (missionnamespace getvariable ['RscDisplayMain_credits',scriptnull])) then {RscDisplayMain_credits = _this spawn (uinamespace getvariable 'bis_fnc_credits');};";
-			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ArmaCredits_Hov.paa""";
-			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ArmaCredits.paa""";
-			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ArmaCredits_Hov.paa""";
-			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\ArmaCredits.paa""";
+			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits_Hov.paa""";
+			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits.paa""";
+			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits_Hov.paa""";
+			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits.paa""";
 		};
 		class WebsiteButton5: ArmaCreditsButton4
         {
 			y = "safeZoneY + safeZoneH - 0.34";
-			text = QPATHTOFOLDER(data\WebsiteB.paa); // No text needed for an image button
+			text = QPATHTOFOLDER(data\buttons\WebsiteB.paa); // No text needed for an image button
 			tooltip="Official Website";
 			url = "https://antistasiultimate.com/Home/";
-			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\WebsiteB_Hov.paa""";
-			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\WebsiteB.paa""";
-			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\WebsiteB_Hov.paa""";
-			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\WebsiteB.paa""";
+			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB_Hov.paa""";
+			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB.paa""";
+			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB_Hov.paa""";
+			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB.paa""";
 		};
 	};
 };

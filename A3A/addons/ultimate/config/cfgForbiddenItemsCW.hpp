@@ -8,7 +8,7 @@
     
     // We don't want droid heads going unlimited, but we do want them to appear in crates.
     // The economy is based off of selling things to the arms dealer, so if they go unlimited it breaks.
-    class CWDependencies_Mando_DroidHelmet : CW_limited_base {appearInCrates = 1};
+    class CWDependencies_Mando_DroidHelmet : CW_limited_base {appearInCrates = 1;};
     class lsd_cis_oom_Geonosis_helmet : CWDependencies_Mando_DroidHelmet {};
     class ls_cis_b1_helmet : CWDependencies_Mando_DroidHelmet {};
     class lsd_cis_b1Geonosis_helmet : CWDependencies_Mando_DroidHelmet {};
@@ -48,7 +48,7 @@
     class lsd_hologram_antenna_backpack : CW_limited_base {};
 
     // I would like to have some kind words with the JLTS developer
-    class JLTS_credits_10 : CW_limited_base {appearInCrates = 1};
+    class JLTS_credits_10 : CW_limited_base {appearInCrates = 1;};
     class JLTS_credits_50 : JLTS_credits_10 {};
     class JLTS_credits_100 : JLTS_credits_10 {};
     class JLTS_credits_500 : JLTS_credits_10 {};
@@ -128,7 +128,7 @@
     class ls_holoprojector_bountyPuck : CW_limited_base {};
     class ls_meme_graciousGovernmentMix_item : CW_limited_base {};
 
-    class CW_DroidParts : CW_limited_base {appearInCrates = 1};
+    class CW_DroidParts : CW_limited_base {appearInCrates = 1;};
 
     class Pipe_aluminium : CW_unlimited_base {};
     class WBK_axe : CW_unlimited_base {};

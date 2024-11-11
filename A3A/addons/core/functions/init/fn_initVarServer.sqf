@@ -299,10 +299,12 @@ FIX_LINE_NUMBERS()
 //////////////////////////////////////
 Info("Setting up faction and DLC equipment flags");
 
+// Arma bug: Need to hardcode CDLC because arma3.cfg mod loading method doesn't register CDLC as "official"
+private _loadedDLC = getLoadedModsInfo select { (_x#2) and !(_x#1 in ["A3","curator","argo","tacops"]) };
+_loadedDLC append (getLoadedModsInfo select { tolower (_x#1) in ["gm", "rf", "spe", "vn", "ws"] });
+_loadedDLC = _loadedDLC apply { tolower (_x#1) };
+
 // Set enabled & disabled DLC/CDLC arrays for faction/equipment modification
-private _loadedDLC = getLoadedModsInfo select {
-	(_x#3) and {!(_x#1 in ["A3","curator","argo","tacops"])}
-} apply {tolower (_x#1)};
 A3A_enabledDLC = (_saveData get "DLC") apply {tolower _x};                 // should be pre-checked against _loadedDLC
 {
 	A3A_enabledDLC insert [0, getArray (configFile/"A3A"/"Templates"/_x/"forceDLC"), true];		// add unique elements only
@@ -313,7 +315,7 @@ A3A_disabledMods = A3A_disabledDLC;                 // Split to allow CUP civili
 // Everything that counts as vanilla: Official DLC plus various junk tags
 A3A_vanillaMods = (getLoadedModsInfo select {_x#2 and _x#3} apply {tolower (_x#1)}) + ["", "officialmod"];
 
-Debug_3("DLC enabled: %1 Disabled: %2 Vanilla: %3", A3A_enabledDLC, A3A_disabledDLC, A3A_vanillaMods);
+Debug_4("DLC loaded: %1 Enabled: %2 Disabled: %3 Vanilla: %4", _loadedDLC, A3A_enabledDLC, A3A_disabledDLC, A3A_vanillaMods);
 
 // Set faction equipment flags by lowest common denominator
 private _factions = _saveData get "factions";
@@ -350,7 +352,9 @@ Debug_1("Extra equip mod paths: %1", A3A_extraEquipMods);
 Info("Reading templates");
 
 {
-    private _side = [west, east, resistance, civilian, east] # _forEachIndex;
+
+    private _side = [west, east, resistance, civilian, opfor] # _forEachIndex;
+
     Info_2("Loading template %1 for side %2", _x, _side);
 
 	private _cfg = configFile/"A3A"/"Templates"/_x;
@@ -491,7 +495,7 @@ Info("Building loot lists");
 
 if (["tts_emission"] call A3U_fnc_hasAddon) then {call A3U_fnc_emission};
 
-if (["diwako_anomalies"] call A3U_fnc_hasAddon) then {call A3U_fnc_fillMapAnomalies};
+if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {call A3U_fnc_fillMapAnomalies};
 
 // Build smoke grenade magazine->muzzle hashmap
 private _smokeMuzzleHM = createHashMap;
@@ -517,11 +521,12 @@ ONLY_DECLARE_SERVER_VAR(A3A_utilityItemHM);
 //fastrope needs to be rewritten and then we can get get ridd of this
 
 private _vehFastRope = (FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"));
-diag_log _vehFastRope;
+
 //private _vehFastRope = ["O_Heli_Light_02_unarmed_F","B_Heli_Transport_01_camo_F","RHS_UH60M_d","UK3CB_BAF_Merlin_HC3_18_GPMG_DDPM_RM","UK3CB_BAF_Merlin_HC3_18_GPMG_Tropical_RM","RHS_Mi8mt_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_Cargo_vv"];
 DECLARE_SERVER_VAR(vehFastRope, _vehFastRope);
 DECLARE_SERVER_VAR(A3A_vehClassToCrew,call A3A_fnc_initVehClassToCrew);
 
+DECLARE_SERVER_VAR(A3A_RivalsVehClassToCrew,call A3A_fnc_initRivalsVehClassToCrew);
 
 // Default vehicle resource costs
 private _vehicleResourceCosts = createHashMap;

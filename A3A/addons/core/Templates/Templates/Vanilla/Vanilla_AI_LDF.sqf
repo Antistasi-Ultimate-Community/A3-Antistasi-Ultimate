@@ -28,7 +28,9 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
-/* ["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;  */
+["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
+
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type

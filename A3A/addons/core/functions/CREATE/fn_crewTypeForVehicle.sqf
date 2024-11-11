@@ -22,7 +22,9 @@
 FIX_LINE_NUMBERS()
 params ["_side", "_vehicle"];
 
+
 private _sideIndex = [west, east, independent, civilian, opfor] find _side; //opfor
+
 private _typeX = typeOf _vehicle;
 
 A3A_vehClassToCrew getOrDefault [_typeX,
