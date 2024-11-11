@@ -35,3 +35,4 @@ sleep 1.55;
 
 _x action ["Eject", _podX];
 _x leaveVehicle _podX;
+[_podX] spawn A3A_fnc_VEHDespawner;

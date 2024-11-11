@@ -106,14 +106,14 @@ if (_spawnableVehicle != "") then {
 		_vehicleSpawnPosition = _emptyPos;
 	};
 
-	private _vehicleData = [_vehicleSpawnPosition, _dirVeh, _spawnableVehicle, Rivals] call A3A_fnc_spawnVehicle;
+	private _vehicleData = [_vehicleSpawnPosition, _dirVeh, _spawnableVehicle, Rivals] call A3A_fnc_RivalsSpawnVehicle;
 	private _vehicle = _vehicleData select 0;
 	[_vehicle, Rivals] call A3A_fnc_AIVEHinit;
 	private _vehicleCrew = _vehicleData select 1;
 	private _vehicleGroup = _vehicleData select 2;
 	{[_x] call A3A_fnc_NATOinit} forEach _vehicleCrew;
 
-	private _group = [_vehicleSpawnPosition, Rivals, _spawnableGroup] call A3A_fnc_spawnGroup;
+	private _group = [_vehicleSpawnPosition, Rivals, _spawnableGroup] call A3A_fnc_RivalsSpawnGroup;
 	{
 		[_x] join _vehicleGroup; 
 		[_x] call A3A_fnc_NATOinit;
@@ -158,7 +158,7 @@ if (_spawnableVehicle != "") then {
 		_iterations = _iterations + 1;
 	};
 
-	private _group = [_originPosition, Rivals, _spawnableGroup] call A3A_fnc_spawnGroup;
+	private _group = [_originPosition, Rivals, _spawnableGroup] call A3A_fnc_RivalsSpawnGroup;
 	{
 		[_x] call A3A_fnc_NATOinit;
 	} forEach units _group;

@@ -154,6 +154,7 @@ while {time < _timeout && canMove _uav} do
             _uav doWatch objNull; /// _gunner
             _uav setVariable ["currentTarget", nil];
             _suppTarget resize 0;
+	    deleteVehicle _laser;
             Debug_1("%1 skips target, as it is already dead", _supportName);
             continue;
         };

@@ -46,5 +46,5 @@
     class OPTRE_FC_Jackal_Red_Shield : OPTRE_limited_base {};
 
     class OPTRE_FC_Railgun : OPTRE_limited_base {};
-    class OPTRE_M247H_Etilka : OPTRE_limited_base {appearInCrates = 1};
+    class OPTRE_M247H_Etilka : OPTRE_limited_base {appearInCrates = 1;};
     class OPTRE_M99A2S3 : OPTRE_M247H_Etilka {};

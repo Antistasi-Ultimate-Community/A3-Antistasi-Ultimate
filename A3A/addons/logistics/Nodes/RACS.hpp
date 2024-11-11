@@ -26,8 +26,8 @@ class PRACS_M250 : TRIPLES(ADDON,Nodes,Base)
     };
 };
 
-class PRACS_M250_flat_bed : PRACS_M250 {canLoadWeapon = 1};
-class PRACS_M250_open : PRACS_M250 {canLoadWeapon = 1};
+class PRACS_M250_flat_bed : PRACS_M250 {canLoadWeapon = 1;};
+class PRACS_M250_open : PRACS_M250 {canLoadWeapon = 1;};
 
 class PRACS_SLA_URAL : TRIPLES(ADDON,Nodes,Base)
 {
@@ -53,4 +53,4 @@ class PRACS_SLA_URAL : TRIPLES(ADDON,Nodes,Base)
     };
 };
 
-class PRACS_SLA_Ural_flat_bed : PRACS_SLA_URAL {canLoadWeapon = 1};
+class PRACS_SLA_Ural_flat_bed : PRACS_SLA_URAL {canLoadWeapon = 1;};

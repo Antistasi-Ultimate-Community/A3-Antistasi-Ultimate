@@ -17,7 +17,7 @@ while{ true } do {
 			if((side _target == playerSide) && ((player distance _target) < _distance))then {
 			_weaponsplayer = weapons _target;
 			_name = name _target;
-			_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>" + format['%1 %2',_target getVariable ['unitname', name _target]] + "</t>";
+			_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 			_rank = [_target,"displayNameShort"] call BIS_fnc_rankParams;
 			if (count _weaponsPlayer > 0) then {
 				_weaponsplayer =  _weaponsplayer select 0;
