@@ -51,10 +51,11 @@ class CfgFunctions {
             class getVehicleClassSkins {};
             class getVehicleWeapons {};
             class isUsableWeapon {};
-            class processVehicleCategory {};
-			class UI_buyVehicleTabs {};
-            class UI_vehicleFromGarage {};
-            class UI_vehicleFromStore {};
+            class ui_buyVehicleRoadblockTabs {};
+            class ui_outpostVehicleFromGarageDialog {};
+			class ui_outpostVehicleFromStoreDialog {};
+			class ui_populateOutpostVehicleBox {};
+			class ui_roadblockFromGarage {};
 		};
     };
     class ADDON {

@@ -345,76 +345,52 @@ Maintainer: DoomMetal
 
 
 // outpost ui
-#define A3A_IDD_BUYVEHICLEOUTPOSTDIALOG             11001
-#define A3A_IDC_BUYSTATICMAIN                       11002
-#define	A3A_IDC_BUYLAVEHICLEMAIN 	                11003
+// roadblock
+#define A3A_IDD_BUYVEHICLEROADBLOCKDIALOG           11001
+#define	A3A_IDC_BUYLIGHTARMEDMAIN 	                11002
+#define	A3A_IDC_LIGHTARMEDGROUP 	                11003
 #define	A3A_IDC_BUYATVEHICLEMAIN	                11004
-#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11005
+#define	A3A_IDC_ATVEHICLEGROUP 	                    11005
+#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11006
+#define	A3A_IDC_AAVEHICLEGROUP 	                    11007
 
-#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11006
-#define A3A_IDC_GARAGE_CATCAR                       11007
-#define A3A_IDC_GARAGEStructuredText                11008
-#define A3A_IDC_GARAGEselectbutton                  11009
-#define A3A_IDC_GARAGEundercoverIcon                11010
-#define A3A_IDC_GARAGEinfo                          11011
-#define HR_GRG_IDC_OriginsPanel                     11012
+// outpost ui
+//garage roadblock
+#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11008
+#define	A3A_IDC_SETUP_GARAGETABLE                   11009
+#define A3A_IDC_GARAGE_CATCAR                       11010
+#define A3A_IDC_GARAGEStructuredText                11011
+#define A3A_IDC_GARAGEselectbutton                  11012
 
-//civ 
-#define	A3A_IDC_BUYCIVVEHICLECARS 	                10337
-#define	A3A_IDC_CIVVEHICLESGROUPCARS 	            10338
+#define A3A_IDC_GARAGEundercoverIcon                11013
 
-#define	A3A_IDC_BUYCIVVEHICLETRUCKS 	            10339
-#define	A3A_IDC_CIVVEHICLESGROUPTRUCKS 	            10340
+#define A3A_IDC_GARAGEdriverIcon                    11014
+#define A3A_IDC_GARAGEdriverGunsText                11015
 
-#define	A3A_IDC_BUYCIVVEHICLEBOATS 	                10341
-#define	A3A_IDC_CIVVEHICLESGROUPBOATS 	            10342
+#define A3A_IDC_GARAGEcoPilotIcon                   11016
+#define A3A_IDC_GARAGEcoPilotGunsText               11017
 
-#define	A3A_IDC_BUYCIVVEHICLEHELI 	                10343
-#define	A3A_IDC_CIVVEHICLESGROUPHELI 	            10344
+#define A3A_IDC_GARAGEcommanderIcon                 11018
+#define A3A_IDC_GARAGEcommanderGunsText             11019
 
-#define	A3A_IDC_BUYCIVVEHICLEPLANE 	                10345
-#define	A3A_IDC_CIVVEHICLESGROUPPLANE 	            10346
+#define A3A_IDC_GARAGEgunnerIcon                    11020
+#define A3A_IDC_GARAGEgunnerText                    11021
+#define A3A_IDC_GARAGEgunnerGunsText                11022
 
-//rebel
-#define	A3A_IDC_BUYREBVEHICLEBASIC 	                10347
-#define	A3A_IDC_REBVEHICLESGROUPBASIC 	            10348
+#define A3A_IDC_GARAGEpassengerIcon                 11023
+#define A3A_IDC_GARAGEpassengersText                11024
 
-#define	A3A_IDC_BUYREBVEHICLETRUCKS 	            10349
-#define	A3A_IDC_REBVEHICLESGROUPTRUCKS 	            10350
+#define A3A_IDC_GARAGEffvIcon                       11025
+#define A3A_IDC_GARAGEffvText                       11026
 
-#define	A3A_IDC_BUYREBVEHICLELIGHTUNARMED 	        10351
-#define	A3A_IDC_REBVEHICLESGROUPLIGHTUNARMED 	    10352
+#define A3A_IDC_GARAGEinfoBox                       11027
+#define A3A_IDC_GARAGEinfo                          11028
 
-#define	A3A_IDC_BUYREBVEHICLEBOATS 	                10353
-#define	A3A_IDC_REBVEHICLESGROUPBOATS 	            10354
+#define A3A_IDC_GARAGELIGHTARMEDMAIN                11029
+#define A3A_IDC_GARAGELIGHTARMEDGROUP               11030
 
-#define	A3A_IDC_BUYREBVEHICLEMEDICAL 	            10355
-#define	A3A_IDC_REBVEHICLESGROUPMEDICAL 	        10356
-
-#define	A3A_IDC_BUYREBVEHICLELIGHTARMED 	        10357
-#define	A3A_IDC_REBVEHICLESGROUPLIGHTARMED 	        10358
-
-#define	A3A_IDC_BUYREBVEHICLEAT 	                10359
-#define	A3A_IDC_REBVEHICLESGROUPAT 	                10360
-
-#define	A3A_IDC_BUYREBVEHICLEAA 	                10361
-#define	A3A_IDC_REBVEHICLESGROUPAA 	                10362
-
-#define	A3A_IDC_BUYREBVEHICLEPLANE 	                10363
-#define	A3A_IDC_REBVEHICLESGROUPPLANE 	            10364
-
-//static
-#define	A3A_IDC_BUYSTATICVEHICLEMG 	                10365
-#define	A3A_IDC_STATICVEHICLESGROUPMG 	            10366
-
-#define	A3A_IDC_BUYSTATICVEHICLEAT 	                10367
-#define	A3A_IDC_STATICVEHICLESGROUPAT 	            10368
-
-#define	A3A_IDC_BUYSTATICVEHICLEAA 	                10369
-#define	A3A_IDC_STATICVEHICLESGROUPAA 	            10370
-
-#define	A3A_IDC_BUYSTATICVEHICLEMORTAR 	            10371
-#define	A3A_IDC_STATICVEHICLESGROUPMORTAR 	        10372
+#define A3A_IDC_GARAGEHEAVYVEHICLEMAIN              11031
+#define A3A_IDC_GARAGEHEAVYVEHICLEGROUP             11032
 
 // Load last save
 #define A3A_IDC_LOADDIALOG 9400

@@ -198,7 +198,7 @@ previewVehicles = [];
 
 vehicleToOutpost = "";
 curentlySelectedVehicleUID = 0;
-garageCategoryToremoveVehicleFrom = 22;
+garageCategoryToremoveVehicleFrom = [];
 curentlySelectedVehicleState = [];
 curentlySelectedVehicleCustomization = [];
 

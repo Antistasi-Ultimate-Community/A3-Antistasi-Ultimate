@@ -4,6 +4,7 @@ FIX_LINE_NUMBERS()
 
 params ["_mode"];
 myGlobalResult = nil;
+myGlobalResult = nil;
 if(_mode == "ADD") then {
     [
         "establishOutpost",
@@ -12,8 +13,8 @@ if(_mode == "ADD") then {
             playSound "readoutClick";
 
             myGlobalResult = _pos;
-            outpostCostmoney = outpostCost select 0; 
-            outpostCosthr = outpostCost select 1;
+            _outpostCostmoney = outpostCost select 0; 
+            _outpostCosthr = outpostCost select 1;
 
             if (outpostType == "WATCHPOST" && {isOnRoad _pos}) exitWith {
                 [
@@ -48,56 +49,23 @@ if(_mode == "ADD") then {
             if (outpostType == "ROADBLOCK") exitWith {
                 //[_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
                 ///
-                [myGlobalResult,outpostCostmoney,outpostCosthr] spawn ///step 1
+                [myGlobalResult,_outpostCostmoney,_outpostCosthr] spawn
                 { 
                     myGlobalResult = _this select 0;
-                    outpostCostmoney = _this select 1;
-                    outpostCosthr = _this select 2;
-                	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
-                    private _hasValidVehicles = false;
-                    private _categoriesToCheck = [1, 2]; // Номера категорий для проверки
-
-                    // Проверяем каждую категорию из списка
-                    {
-                        private _categoryID = _x;
-                        private _categoryVehicles = HR_GRG_Vehicles param [_categoryID, []];
-
-                        // Перебираем технику в категории
-                        {
-                            _y params [
-                                ["_displayName", ""],
-                                ["_class", ""],
-                                ["_lockedUID", ""],
-                                ["_checkedOut", false],
-                                ["", ""],
-                                ["_lockName", ""],
-                                ["_stateData", []],
-                                ["_customisation", []]
-                            ];
-
-                            // Если нашли валидный класс - прерываем проверку
-                            if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
-                                _hasValidVehicles = true;
-                            };
-                        } forEach _categoryVehicles;
-
-                        // Если уже нашли валидную технику - прерываем проверку категорий
-                        if (_hasValidVehicles) exitWith {};
-
-                    } forEach _categoriesToCheck;
+                    _outpostCostmoney = _this select 1;
+                    _outpostCosthr = _this select 2;
+                	private _result = [(format["Do you want to use vehicle from the garage? Otherwise, you will have to buy it from the store"]), "Confirm", true, true] call BIS_fnc_guiMessage;
+                	// Use _result here
                     if (_result) then {
-                        if (!_hasValidVehicles) then {
-                            _result = false;
-                            ["Гараж пуст, будет открыто окно магазина", "", true, true] call BIS_fnc_guiMessage;
-                            createDialog "A3A_RoadblockFromStore";
-                        } else {
-                            createDialog "A3A_RoadblockFromGarage"; ///step 1.7
-                        };
+                        createDialog "A3A_VehiclesFromGarageDisplay";
                     } else {
-                        createDialog "A3A_RoadblockFromStore";
+                        createDialog "A3A_BuyVehicleRoadblockDialog";
                     };
                 };
+
+                
                 ///
+
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
                 ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
                 [] spawn {
