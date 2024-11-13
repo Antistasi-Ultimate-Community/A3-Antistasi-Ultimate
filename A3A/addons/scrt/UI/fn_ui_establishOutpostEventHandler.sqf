@@ -3,13 +3,17 @@ FIX_LINE_NUMBERS()
 
 
 params ["_mode"];
-
+myGlobalResult = nil;
 if(_mode == "ADD") then {
     [
         "establishOutpost",
         "onMapSingleClick",
         {
             playSound "readoutClick";
+
+            myGlobalResult = _pos;
+            _outpostCostmoney = outpostCost select 0; 
+            _outpostCosthr = outpostCost select 1;
 
             if (outpostType == "WATCHPOST" && {isOnRoad _pos}) exitWith {
                 [
@@ -42,7 +46,24 @@ if(_mode == "ADD") then {
             };
 
             if (outpostType == "ROADBLOCK") exitWith {
-                [_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+                //[_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
+                ///
+                [myGlobalResult,_outpostCostmoney,_outpostCosthr] spawn
+                { 
+                    myGlobalResult = _this select 0;
+                    _outpostCostmoney = _this select 1;
+                    _outpostCosthr = _this select 2;
+                	private _result = [(format["Do you want to use vehicle from the garage? Otherwise, you will have to buy it from the store"]), "Confirm", true, true] call BIS_fnc_guiMessage;
+                	// Use _result here
+                    if (_result) then {
+                        createDialog "A3A_VehiclesFromGarageDisplay";
+                    } else {
+                        createDialog "A3A_BuyVehicleRoadblockDialog";
+                    };
+                };
+
+                
+                ///
 
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
                 ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
