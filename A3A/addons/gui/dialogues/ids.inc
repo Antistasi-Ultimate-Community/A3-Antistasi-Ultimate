@@ -343,6 +343,55 @@ Maintainer: DoomMetal
 #define	A3A_IDC_BLACKMARKETVEHICLESGROUPUNARMED 	10335
 #define	A3A_IDC_BLACKMARKETVEHICLESGROUPBOAT 	    10336
 
+
+// outpost ui
+// roadblock
+#define A3A_IDD_BUYVEHICLEROADBLOCKDIALOG           11001
+#define	A3A_IDC_BUYLIGHTARMEDMAIN 	                11002
+#define	A3A_IDC_LIGHTARMEDGROUP 	                11003
+#define	A3A_IDC_BUYATVEHICLEMAIN	                11004
+#define	A3A_IDC_ATVEHICLEGROUP 	                    11005
+#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11006
+#define	A3A_IDC_AAVEHICLEGROUP 	                    11007
+
+// outpost ui
+//garage roadblock
+#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11008
+#define	A3A_IDC_SETUP_GARAGETABLE                   11009
+#define A3A_IDC_GARAGE_CATCAR                       11010
+#define A3A_IDC_GARAGEStructuredText                11011
+#define A3A_IDC_GARAGEselectbutton                  11012
+
+#define A3A_IDC_GARAGEundercoverIcon                11013
+
+#define A3A_IDC_GARAGEdriverIcon                    11014
+#define A3A_IDC_GARAGEdriverGunsText                11015
+
+#define A3A_IDC_GARAGEcoPilotIcon                   11016
+#define A3A_IDC_GARAGEcoPilotGunsText               11017
+
+#define A3A_IDC_GARAGEcommanderIcon                 11018
+#define A3A_IDC_GARAGEcommanderGunsText             11019
+
+#define A3A_IDC_GARAGEgunnerIcon                    11020
+#define A3A_IDC_GARAGEgunnerText                    11021
+#define A3A_IDC_GARAGEgunnerGunsText                11022
+
+#define A3A_IDC_GARAGEpassengerIcon                 11023
+#define A3A_IDC_GARAGEpassengersText                11024
+
+#define A3A_IDC_GARAGEffvIcon                       11025
+#define A3A_IDC_GARAGEffvText                       11026
+
+#define A3A_IDC_GARAGEinfoBox                       11027
+#define A3A_IDC_GARAGEinfo                          11028
+
+#define A3A_IDC_GARAGELIGHTARMEDMAIN                11029
+#define A3A_IDC_GARAGELIGHTARMEDGROUP               11030
+
+#define A3A_IDC_GARAGEHEAVYVEHICLEMAIN              11031
+#define A3A_IDC_GARAGEHEAVYVEHICLEGROUP             11032
+
 // Load last save
 #define A3A_IDC_LOADDIALOG 9400
 

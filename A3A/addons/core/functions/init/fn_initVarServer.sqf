@@ -192,6 +192,27 @@ hcArray = [];					// array of headless client IDs
 membersX = [];					// These two published later by startGame
 theBoss = objNull;
 
+previewVehicles = [];
+
+vehicleToOutpost = "";
+curentlySelectedVehicleUID = 0;
+garageCategoryToremoveVehicleFrom = [];
+curentlySelectedVehicleState = [];
+curentlySelectedVehicleCustomization = [];
+
+usable_vehicle_weapons = [];
+useless_vehicle_weapons = [
+	"FakeWeapon",
+	"rhsusf_weap_DummyLauncher", "rhsusf_weap_M257_8", "rhsusf_weap_CMFlareLauncher",
+	"rhsusf_weap_ANALQ144", "rhsusf_weap_duke", "rhsusf_weap_M259", "rhs_weap_smokegen",
+	"rhsusf_weap_ANAAQ24", "rhs_weap_DummyLauncher", "rhs_weap_902a", "rhs_weap_902b"
+];
+
+useless_vehicle_magazines = [
+	"rhs_mag_fueltank_UH60", "rhs_mag_ANALQ131", "rhs_mag_fueltank_UH60MEV",
+	"RHS_LWIRCM_Magazine_MELB", "rhsusf_DIRCM_Magazine_120", "rhs_mag_smokegen", "rhsusf_mag_L8A3_8"
+];
+
 activityIsChanging = false;
 baseRivalsDecay = switch (rivalsDifficulty) do {
     case (1): { 0.28 };

@@ -3,7 +3,22 @@ FIX_LINE_NUMBERS()
 
 if (!isServer) exitWith {};
 
-params ["_position", "_moneyCost", "_hrCost", "_commanderNetworkId"];
+params ["_vehicle","_position", "_vehicledirection","_moneyCost", "_hrCost", "_commanderNetworkId"];
+
+//myGlobalResult = nil;
+
+/* [] spawn
+{
+	private _result = [(format["Do you want to use vehicle from the garage?"]), "Confirm", true, true] call BIS_fnc_guiMessage;
+	// Use _result here
+    if (_result) then {
+        createDialog "A3A_BuyVehicleRoadblockDialog";
+    } else {
+        createDialog "roadblockFromGarage";
+    };
+};
+
+waitUntil { !isNil myGlobalResult }; */
 
 [-_hrCost,-_moneyCost] remoteExec ["A3A_fnc_resourcesFIA",2];
 
@@ -30,7 +45,7 @@ _formatX = [_riflemanType] + _squadType;
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Road"];
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
+_pos = position _road findEmptyPosition [1,30, _truckType];
 _truckX = _truckType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
@@ -74,7 +89,11 @@ switch (true) do {
 		sidesX setVariable [_marker,teamPlayer,true];
 		markersX pushBack _marker;
 		publicVariable "markersX";
-		spawner setVariable [_marker,2,true];
+		spawner setVariable [_marker,2,true]; ///we need to sent selected vehicle with marker to save it and when marker/roadblock spawns it will spawn with selected vehicle(always)
+		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
+		_vehiclecustomazation = curentlySelectedVehicleCustomization;
+		spawner setVariable [format[_marker + "_vehiclecustomazation"], _vehiclecustomazation];
+		spawner setVariable [format[_marker + "_vehicledirection"], _vehicledirection];
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "n_support";
 		_marker setMarkerColor colorTeamPlayer;
@@ -83,6 +102,25 @@ switch (true) do {
 		garrison setVariable [_marker,_garrison,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "roadblock"]] call EFUNC(Events,triggerEvent);
+
+		//find vehicles to remove
+		private _removedVeh = garageCategoryToremoveVehicleFrom deleteAt curentlySelectedVehicleUID;
+		//remove from source registre
+		{
+		  private _index = _x find curentlySelectedVehicleUID;
+		  if (_index != -1) exitWith {
+		    (HR_GRG_Sources#_forEachIndex) deleteAt _index;
+		    [_forEachIndex] call HR_GRG_fnc_declairSources;
+		  };
+		}forEach HR_GRG_Sources;
+		
+		///reset stuff used for remove
+		vehicleToOutpost = "";
+		curentlySelectedVehicleUID = 0;
+		garageCategoryToremoveVehicleFrom = [];
+		curentlySelectedVehicleState = [];
+		curentlySelectedVehicleCustomization = [];
+
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

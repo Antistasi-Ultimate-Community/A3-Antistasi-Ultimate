@@ -1,13 +1,16 @@
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-params ["_markerX"];
+params ["_markerX","_vehicleX","_vehiclecustomazationX","_vehicledirectionX"];
 
 if (!isServer and hasInterface) exitWith {};
 
 private _positionX = getMarkerPos _markerX;
 private _riflemanType = A3A_faction_reb get "unitRifle";
-private _typeVehX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
+
+/* private _typeVehX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
+private _vehicleX = [_vehicleX];
+private _vehicleX = _vehicleX getOrDefault [_vehicleX select 0,_typeVehX]; */
 
 private _radiusX = 1;
 private _garrison = garrison getVariable [_markerX, []];
@@ -38,8 +41,9 @@ _barricade setDir _dirveh;
 _barricade setVectorUp surfaceNormal position _barricade;
 
 if (_riflemanType in _garrison) then {
-    _veh = _typeVehX createVehicle getPos (_road select 0);
-    _veh setDir _dirveh + 90;
+    _veh = _vehicleX createVehicle getPos (_road select 0);
+    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    _veh setDir _dirveh + _vehicledirectionX;
     _veh lock 3;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 };
@@ -54,9 +58,9 @@ private _groupXUnits = units _groupX;
 private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh;
+    _crewMan moveInGunner _veh; ////////somehow add commander as well (or maybe even fill the fill all non driver or passenger seats)
     sleep 1;
-    _crewMan lookAt (_crewMan getRelPos [100, _dirveh]);
+    _crewMan lookAt _barricade;
 };
 
 ["locationSpawned", [_markerX, "RebelRoadblock", true]] call EFUNC(Events,triggerEvent);
