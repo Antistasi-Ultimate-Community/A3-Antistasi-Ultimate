@@ -54,4 +54,5 @@ class mapInfo {
 	#include "Antistasi_tem_chernarusw.tem_chernarusw\mapInfo.hpp"
 	#include "Antistasi_mehland.mehland\mapInfo.hpp"
 	#include "Antistasi_pulau.pulau\mapInfo.hpp"
+	#include "Antistasi_chernarusredux.chernarusredux\mapInfo.hpp"
 };

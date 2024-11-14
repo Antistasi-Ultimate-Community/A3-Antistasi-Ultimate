@@ -14,10 +14,10 @@ private _positionX = getMarkerPos _markerX;
 private _shipType = "Land_UWreck_FishingBoat_F";
 
 //Select possible locations for sunken treasure
-private _firstPos = round (random 100) + 150;
-private _mrk1Pos = (selectRandom (selectBestPlaces [_positionX, _firstPos,"waterDepth", 5, 20]) select 0) + [0];
-private _mrk2Pos = (selectRandom (selectBestPlaces [_mrk1Pos, 300,"waterDepth", 5, 20]) select 0) + [0];
-private _mrk3Pos = (selectRandom (selectBestPlaces [_mrk2Pos, 300,"waterDepth", 5, 20]) select 0) + [0];
+private _firstPos = round (random 1000) + 150;
+private _mrk1Pos = (selectRandom (selectBestPlaces [_positionX, _firstPos,"waterDepth", 20, 20]) select 0) + [0];
+private _mrk2Pos = (selectRandom (selectBestPlaces [_mrk1Pos, 300,"waterDepth", 20, 20]) select 0) + [0];
+private _mrk3Pos = (selectRandom (selectBestPlaces [_mrk2Pos, 300,"waterDepth", 20, 20]) select 0) + [0];
 
 //Create markers for treasure locations!
 private _mrk1 = createMarker ["salvageLocation1", _mrk1Pos];
@@ -62,6 +62,7 @@ waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or ((spawner getVariable 
 Debug("players in spawning range, starting spawning");
 
 private _boxPos = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
+private _markers = [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 private _shipPos = _boxPos vectorAdd [4, -5, 2];
 
 private _ship = _shipType createVehicle _shipPos;
@@ -83,6 +84,45 @@ Debug("Spawning patrol boat and crew");
 private _typeVeh = if (_difficultX) then { selectRandom (_faction get "vehiclesGunBoats") } else { selectRandom (_faction get "vehiclesTransportBoats") };
 private _typeGroup = if _difficultX then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
 private _boatSpawnLocation = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
+
+private _typeSDV = _faction getOrDefault ["vehiclesSDV", ""];
+if (_typeSDV != "") then {
+	private _diverType = "";
+	private _diversGroup = createGroup _sideX;
+	private _diversGroup2 = createGroup _sideX;
+   _typeSDV = selectRandom (_faction get "vehiclesSDV");
+   if (_typeSDV == "I_SDV_01_F") then {
+		_diverType = "I_diver_F";
+   };
+   if (_typeSDV == "O_SDV_01_F") then {
+		_diverType = "O_diver_F";
+   };
+   if (_typeSDV == "B_SDV_01_F") then {
+		_diverType = "B_diver_F";
+   };
+   for "_i" from 1 to 2 do {
+		private _SDVmarker = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
+		private _vehSDV = createVehicle [_typeSDV, _SDVmarker, [], 30, "NONE"];
+		_vehSDV setPos [getPos _vehSDV select 0, getPos _vehSDV select 1, (getPos _vehSDV select 2) - 7];
+		[_vehSDV, _sideX] call A3A_fnc_AIVEHinit;
+		for "_i" from 1 to 2 do {
+			private _diver = _diversGroup createUnit [_diverType, getPos _vehSDV, [], 10, "NONE"];
+			_diver setPos [getPos _diver select 0, getPos _diver select 1, (getPos _diver select 2) - 8];
+			[_diver] call A3A_fnc_NATOinit;
+   		};
+		for "_i" from 1 to 2 do {
+			private _diver = _diversGroup2 createUnit [_diverType, getPos _vehSDV, [], 10, "NONE"];
+			_diver setPos [getPos _diver select 0, getPos _diver select 1, (getPos _diver select 2) - 8];
+			[_diver] call A3A_fnc_NATOinit;
+   		};
+   };
+	private _diversWaypoint = _diversGroup addWaypoint [selectRandom _markers, 30];
+	_diversWaypoint setWaypointType "SAD";
+	_diversGroup setCurrentWaypoint _diversWaypoint;
+	private _divers2Waypoint = _diversGroup2 addWaypoint [selectRandom _markers, 30];
+	_divers2Waypoint setWaypointType "SAD";
+	_diversGroup2 setCurrentWaypoint _divers2Waypoint;
+};
 
 private _veh = createVehicle [_typeVeh, _boatSpawnLocation, [], 0, "NONE"];
 [_veh, _sideX] call A3A_fnc_AIVEHinit;
@@ -147,3 +187,8 @@ deleteVehicle _ship;
 
 [_vehCrewGroup] spawn A3A_fnc_groupDespawner;
 [_veh] spawn A3A_fnc_vehDespawner;
+if (_typeSDV != "") then {
+	[_SDVcrewGroup] spawn A3A_fnc_groupDespawner;
+	[_diversGroup] spawn A3A_fnc_groupDespawner;
+	[_vehSDV] spawn A3A_fnc_vehDespawner;
+};

@@ -51,7 +51,6 @@ class CfgFunctions
         class STALKER
         {
             file = QPATHTOFOLDER(functions\STALKER);
-            class cleanupAnomalyField {};
             class createAnomalyField {};
             class emission {};
             class fillMapAnomalies {};

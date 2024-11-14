@@ -218,7 +218,8 @@ _vehicles pushBack _heliVehicle;
 if !(typeOf _lootCrate in _regPods || typeOf _lootCrate in _csatPods || typeOf _lootCrate == _ammoBoxType) then {
 	private _wplootbox = group driver(_lootCrate) addWaypoint [_outpostPosition, 10]; //wplootbox lol
 	_wplootbox setWaypointSpeed "NORMAL";
-	_wplootbox setWaypointType "GETOUT";
+	//_wplootbox setWaypointType "GETOUT";
+	_wplootbox setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
 	_wplootbox setWaypointBehaviour "CARELESS";
 };
 
@@ -230,7 +231,9 @@ _wp setWaypointBehaviour "CARELESS";
 
 private _wp2 = _heliGroup addWaypoint [_actualspawnPosition, 0];
 _wp2 setWaypointSpeed "NORMAL";
-_wp2 setWaypointType "GETOUT";
+//_wp2 setWaypointType "GETOUT";
+_wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
+
 _wp2 setWaypointBehaviour "CARELESS";
 sleep 4;
 //private _timeOut = time + 1800;

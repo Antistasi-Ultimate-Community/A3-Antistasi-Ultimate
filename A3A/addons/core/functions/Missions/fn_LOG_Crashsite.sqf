@@ -336,7 +336,8 @@ deleteGroup _cargoGroupX;
 
 //moving to crash site
 _cargoVehicleWp = _cargoVehicleGroup addWaypoint [position _box, 1];
-_cargoVehicleWp setWaypointType "GETOUT";
+//_cargoVehicleWp setWaypointType "GETOUT";
+_cargoVehicleWp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
 _cargoVehicleWp setWaypointBehaviour "SAFE";
 
 private _searchHeliData = [];
@@ -404,7 +405,8 @@ if (_searchHeliClass isNotEqualTo []) then {
             //[_cargoVehicle2,"Cargo Truck"] spawn A3A_fnc_inmuneConvoy;
             _vehicles pushBack _cargoVehicle2;
             _cargoVehicle2Wp = group driver _cargoVehicle2 addWaypoint [position _box, 1];
-            _cargoVehicle2Wp setWaypointType "GETOUT";
+            //_cargoVehicleWp setWaypointType "GETOUT";
+            _cargoVehicleWp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
             _cargoVehicle2Wp setWaypointBehaviour "SAFE";
             _cargoVehicle2Wp setWaypointCompletionRadius 20;
             _cargoVehicle2driver = driver _cargoVehicle2;

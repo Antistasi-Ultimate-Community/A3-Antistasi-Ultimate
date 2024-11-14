@@ -96,7 +96,7 @@ _vehicles pushBack _mortar;
 
 Info_1("Roving mortar has been created at %1 position.", str _spawnPosition);
 
-private _mortarGroup = [Rivals, _mortar, A3A_faction_riv get "unitRifle"] call A3A_fnc_createVehicleCrew;
+private _mortarGroup = [Rivals, _mortar, A3A_faction_riv get "unitRifle"] call A3A_fnc_RivalsCreateVehicleCrew;
 _groups pushBack _mortarGroup;
 
 _mortar setVariable ["shellType", A3A_faction_riv get "mortarMagazineHE", true];
@@ -123,7 +123,7 @@ _car engineOn true;
 
 _vehicles pushBack _car;
 
-private _patrolGroup = [_patrolPosition, Rivals, (selectRandom (A3A_faction_riv get "groupsSentry"))] call A3A_fnc_spawnGroup;
+private _patrolGroup = [_patrolPosition, Rivals, (selectRandom (A3A_faction_riv get "groupsSentry"))] call A3A_fnc_RivalsSpawnGroup;
 {
     [_x] call A3A_fnc_NATOinit;
 } forEach units _patrolGroup;

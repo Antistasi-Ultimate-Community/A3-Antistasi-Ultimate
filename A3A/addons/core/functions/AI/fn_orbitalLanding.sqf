@@ -107,3 +107,5 @@ if (_podseats == 1) then {
 	deleteVehicle driver _pod;
 	deleteVehicle _pod;
 };
+[_podX] spawn A3A_fnc_VEHDespawner;
+[_pod] spawn A3A_fnc_VEHDespawner;

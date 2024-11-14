@@ -141,7 +141,7 @@ if (_varName in specialVarLoads) then {
                 0 setRainbow (_varValue select 7);
                 0 setWaves (_varValue select 8);
                 private _windParams = _varValue select 9;
-                setWind [_windParams#0, _windParams#1, _windParams#2];
+                setWind [_windParams#0, _windParams#1, false];
                 0 setWindDir (_varValue select 10);
                 0 setWindStr (_varValue select 11);
                 forceWeatherChange;

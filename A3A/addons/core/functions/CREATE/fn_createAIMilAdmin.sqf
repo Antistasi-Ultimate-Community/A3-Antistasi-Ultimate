@@ -238,7 +238,7 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 	];
 
 	_crateContents call A3A_fnc_fillLootCrate;
-	[_ammoBox] call A3A_Logistics_fnc_addLoadAction;
+	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
 	[_ammoBox] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _ammoBox];
 
 	sleep 2;

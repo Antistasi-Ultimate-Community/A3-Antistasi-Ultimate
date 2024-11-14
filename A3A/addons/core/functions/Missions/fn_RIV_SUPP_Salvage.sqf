@@ -265,7 +265,7 @@ if (dateToNumber date < _dateLimitNum) then {
 	_weapon setDir ([_weapon, _truck] call BIS_fnc_dirTo);
 	_vehicles pushBack _weapon;
 
-	private _gunner = [_groupGunner, _faction get "unitRifle", _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
+	private _gunner = [_groupGunner, _faction get "unitRifle", _positionX, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 	[_gunner] call A3A_fnc_NATOinit;
 	[_gunner, Rivals] call A3A_fnc_AIVEHinit;
 	_gunner moveInGunner _weapon;
@@ -293,7 +293,7 @@ if (dateToNumber date < _dateLimitNum) then {
 		(_faction get "groupsFireteam")
 	};
 
-	private _barricadePatrolGroup = [_barricadePos, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
+	private _barricadePatrolGroup = [_barricadePos, Rivals, (selectRandom _patrolPool)] call A3A_fnc_RivalsSpawnGroup;
 	(units _barricadePatrolGroup) apply {
 		[_x,""] call A3A_fnc_NATOinit;
 	};
@@ -301,7 +301,7 @@ if (dateToNumber date < _dateLimitNum) then {
 	[_barricadePatrolGroup, "Patrol_Defend", 0, 200, -1, true, _barricadePos, false] call A3A_fnc_patrolLoop;
 	_groups pushBack _barricadePatrolGroup;
 
-	private _truckPatrolGroup = [_startingRoadPosition, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
+	private _truckPatrolGroup = [_startingRoadPosition, Rivals, (selectRandom _patrolPool)] call A3A_fnc_RivalsSpawnGroup;
 	(units _truckPatrolGroup) apply {
 		[_x,""] call A3A_fnc_NATOinit;
 	};

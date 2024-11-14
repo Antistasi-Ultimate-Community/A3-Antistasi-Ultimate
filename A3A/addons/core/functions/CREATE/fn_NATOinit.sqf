@@ -235,7 +235,7 @@ if (sunOrMoon < 1) then {
         private _lamp = "";
         private _lamps = _weaponItems arrayIntersect allLightAttachments;
         if (_lamps isEqualTo []) then {
-            private _compatibleLamps = ((primaryWeapon _unit) call BIS_fnc_compatibleItems) arrayIntersect allLightAttachments;
+            private _compatibleLamps = (compatibleItems (primaryWeapon _unit)) arrayIntersect allLightAttachments;
             if !(_compatibleLamps isEqualTo []) then
             {
                 _lamp = selectRandom _compatibleLamps;

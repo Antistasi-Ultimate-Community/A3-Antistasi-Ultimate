@@ -84,7 +84,8 @@ sa_scan_friendly_foe={
 					private _safeLandPos = [_unit,1,250,2,0,4,0] call BIS_fnc_findSafePos;
 					_wp = (group _unit) addWaypoint [_safeLandPos, 1];
 					_wp setWaypointBehaviour "SAFE";
-					_wp setWaypointType "GETOUT";
+					//_wp setWaypointType "GETOUT";
+					_wp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
 					private _time = time;
 					waitUntil {sleep 0.1, (getPos _unit) select 2 <1.3/*  || time - _time <= 30 */};
 					{

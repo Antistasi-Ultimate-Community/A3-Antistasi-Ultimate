@@ -46,6 +46,14 @@
         climate[] = {"arctic"};
     };
 
+    class CUP_NATO_Temperate : CUP_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\Data_F\Flags\Flag_NATO_CO.paa";
+        name = "CUP NATO Temperate";
+        file = "CUP_AI_NATO_Temperate";
+    };
+
     class CUP_BAF_Arid : CUP_Base
     {
         side = "Occ";
