@@ -13,6 +13,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 FIX_LINE_NUMBERS()
 if (!isServer) exitWith {};
 
+private _platformData = productVersion;
+private _platform = _platformData select 6;
+if(_platform == "Linux") exitWith {};
+
 AUR_Advanced_Urban_Rappelling_Install = {
 
 // Prevent advanced urban rappelling from installing twice

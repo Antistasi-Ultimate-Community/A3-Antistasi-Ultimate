@@ -54,8 +54,13 @@ Info("Background init started");
 // No reason not to do this early
 [] execVM QPATHTOFOLDER(Scripts\fn_advancedTowingInit.sqf);
 [] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);
-[] execVM QPATHTOFOLDER(Scripts\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf);
-[] execVM QPATHTOFOLDER(Scripts\Advanced_Urban_Rappelling_ACEFIX\functions\fn_advancedUrbanRappellingInit.sqf);
+private _platformData = productVersion;
+private _platform = _platformData select 6;
+if (_platform != "Linux") then {
+    [] execVM QPATHTOFOLDER(Scripts\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf);
+    [] execVM QPATHTOFOLDER(Scripts\Advanced_Urban_Rappelling_ACEFIX\functions\fn_advancedUrbanRappellingInit.sqf);
+}; ////Professor Sugon says on deez nuts for all Linux users
+    
 
 // Nav stuff, should have no parameter/save dependence at all
 call A3A_fnc_loadNavGrid;

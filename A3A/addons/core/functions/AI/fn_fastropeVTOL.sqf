@@ -125,41 +125,47 @@ _driver action ["VectoringUp", _veh];
 if (alive _veh && canMove _veh) then
 {
 	[_veh] call A3A_fnc_smokeCoverAuto;
-	//{
 	_veh setVelocity [0,0,0];
 	_veh setVectorUp [0,0,1];
-	[_veh] call AR_Rappel_All_Cargo;
-	/* [_veh,_x,_xRef,_yRef] spawn
+	private _platformData = productVersion;
+    private _platform = _platformData select 6;
+    if (_platform == "Linux") then {  ////Professor Sugon says on deez nuts for all Linux users
 		{
-		private ["_veh","_unit","_d","_xRef","_yRef"];
-		_veh = _this select 0;
-		_unit = _this select 1;
-		_xRef = _this select 2;
-		_yRef = _this select 3;
-		waitUntil {((speed _veh < 1) and (speed _veh > -1))};
-		_d = -1;
-		unassignVehicle _unit;
-		moveOut _unit;
-		if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};	// Avoid placing dead units underground after vehicle crashes
-		_veh setVectorUp [0,0,1];
-		[_unit,"gunner_standup01"] remoteExec ["switchmove"];
-		_unit attachTo [_veh, [_xRef,_yRef,_d]];
-		while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (canMove _veh) and (speed _veh < 10) and (speed _veh > -10)} do
+		[_veh,_x,_xRef,_yRef] spawn
 			{
-			_unit attachTo [_veh, [2,1,_d]];
-			_d = _d - 0.35;
-			private _driver = driver _veh;
-			_veh setVectorUp [0,0,1];
-			_driver action ["VectoringUp", _veh];
-			_veh setVelocity [0,0,0];
-			sleep 0.005;
+				private ["_veh","_unit","_d","_xRef","_yRef"];
+				_veh = _this select 0;
+				_unit = _this select 1;
+				_xRef = _this select 2;
+				_yRef = _this select 3;
+				waitUntil {((speed _veh < 1) and (speed _veh > -1))};
+				_d = -1;
+				unassignVehicle _unit;
+				moveOut _unit;
+				if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};	// Avoid placing dead units underground after vehicle crashes
+				_veh setVectorUp [0,0,1];
+				[_unit,"gunner_standup01"] remoteExec ["switchmove"];
+				_unit attachTo [_veh, [_xRef,_yRef,_d]];
+				while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (canMove _veh) and (speed _veh < 10) and (speed _veh > -10)} do
+					{
+					_unit attachTo [_veh, [2,1,_d]];
+					_d = _d - 0.35;
+					private _driver = driver _veh;
+					_veh setVectorUp [0,0,1];
+					_driver action ["VectoringUp", _veh];
+					_veh setVelocity [0,0,0];
+					sleep 0.005;
+					};
+				detach _unit;
+				[_unit,""] remoteExec ["switchMove"];
+				sleep 0.5;
 			};
-		detach _unit;
-		[_unit,""] remoteExec ["switchMove"];
-		sleep 0.5;
-		};
-	sleep (2 + random 2);
-	} forEach units _groupX; */
+			sleep (2 + random 2);
+		} forEach units _groupX;
+	} else {
+		[_veh] call A3A_fnc_smokeCoverAuto;
+		[_veh] call AR_Rappel_All_Cargo;
+	};
 };
 
 _driver action ["VTOLVectoringCancel", _veh];

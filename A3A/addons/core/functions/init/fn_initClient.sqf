@@ -42,8 +42,13 @@ if !(isServer) then {
 
     [] execVM QPATHTOFOLDER(Scripts\fn_advancedTowingInit.sqf);
     [] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);/* AdvancedSlingLoadingRefactored\ */
-    [] execVM QPATHTOFOLDER(Scripts\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf);
-    [] execVM QPATHTOFOLDER(Scripts\Advanced_Urban_Rappelling_ACEFIX\functions\fn_advancedUrbanRappellingInit.sqf);
+    private _platformData = productVersion;
+    private _platform = _platformData select 6;
+    if (_platform != "Linux") then {
+        [] execVM QPATHTOFOLDER(Scripts\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf);
+        [] execVM QPATHTOFOLDER(Scripts\Advanced_Urban_Rappelling_ACEFIX\functions\fn_advancedUrbanRappellingInit.sqf);
+    }; ////Professor Sugon says on deez nuts for all Linux users
+    
     if (enableSpectrumDevice) then {
         [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);
         [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\sa_ewar.sqf);

@@ -128,13 +128,13 @@ if !(_isReinforcement) then
     _groupJumper spawn A3A_fnc_attackDrillAI;
 };
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
+private _weapons = count weapons _vehicle;
+private _driverturret = _vehicle weaponsTurret [0];
+private _gunnerturret = _vehicle weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
 if (_vehType in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
+    [_vehicle, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
 };
 
 if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {

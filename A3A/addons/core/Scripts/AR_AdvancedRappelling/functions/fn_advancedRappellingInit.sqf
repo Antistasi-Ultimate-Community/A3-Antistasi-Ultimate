@@ -13,6 +13,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 FIX_LINE_NUMBERS()
 if (!isServer) exitWith {};
 
+private _platformData = productVersion;
+private _platform = _platformData select 6;
+if(_platform == "Linux") exitWith {}; ////Professor Sugon says on deez nuts for all Linux users
+
 AR_Advanced_Rappelling_Install = {
 
 // Prevent advanced rappelling from installing twice
