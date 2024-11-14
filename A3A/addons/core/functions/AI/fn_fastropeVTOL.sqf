@@ -164,7 +164,7 @@ if (alive _veh && canMove _veh) then
 		} forEach units _groupX;
 	} else {
 		[_veh] call A3A_fnc_smokeCoverAuto;
-		[_veh] call AR_Rappel_All_Cargo;
+		[_veh] spawn AR_Rappel_All_Cargo;
 	};
 };
 
