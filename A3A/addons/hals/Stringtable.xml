@@ -861,6 +861,29 @@
                 <Korean>Cold War ReArmed</Korean>
                 <French>Cold War ReArmed</French>
             </Key>
+            <Key ID="STR_A3AU_ylarms">
+                <Original>YLArms</Original>
+                <English>YLArms</English>
+                <Russian>YLArms</Russian>
+                <Korean>YLArms</Korean>
+                <French>YLArms</French>
+            </Key>
+            <Key ID="STR_A3AU_PROJINF">
+                <Original>P.I.</Original>
+                <German>P.I.</German>
+                <Russian>P.I.</Russian>
+                <Chinesesimp>P.I.</Chinesesimp>
+                <Korean>P.I.</Korean>
+                <French>P.I.</French>
+            </Key>
+            <Key ID="STR_A3AU_JCA_ARSENAL">
+                <Original>JCA</Original>
+                <German>JCA</German>
+                <Russian>JCA</Russian>
+                <Chinesesimp>JCA</Chinesesimp>
+                <Korean>JCA</Korean>
+                <French>JCA</French>
+            </Key>
             <Key ID="STR_A3AU_ffp">
                 <Original>FFP</Original>
                 <English>FFP</English>
