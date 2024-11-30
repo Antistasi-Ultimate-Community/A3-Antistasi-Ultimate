@@ -131,8 +131,12 @@ AR_Rappel_All_Cargo = {
 						_unitsRappelling = true;
 					};
 				} forEach _rappelUnits;
-				sleep 3;
+				sleep 1.5;
 			};
+
+			{
+				unassignVehicle _x;
+			} forEach _rappelUnits;
 			
 			deleteVehicle _gameLogicLeader;
 			

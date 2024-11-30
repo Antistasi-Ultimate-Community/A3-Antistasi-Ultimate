@@ -172,7 +172,7 @@ _driver action ["VTOLVectoringCancel", _veh];
 _driver enableAI "MOVE";
 _driver enableAI "PATH";
 
-waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
+waitUntil {sleep 0.5; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
 _veh flyInHeight 175;

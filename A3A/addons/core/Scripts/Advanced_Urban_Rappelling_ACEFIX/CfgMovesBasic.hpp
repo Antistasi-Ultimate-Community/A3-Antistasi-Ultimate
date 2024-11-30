@@ -8,7 +8,7 @@ class CfgMovesBasic
 	class Actions
 	{
 		class RifleStandActions;
-		class AUR_BaseActions: RifleStandActions
+		/* class AUR_BaseActions: RifleStandActions
 		{
 			AdjustF="";
 			AdjustB="";
@@ -153,8 +153,8 @@ class CfgMovesBasic
 			FDStart="";
 			useFastMove=0;
 			stance="ManStanceUndefined";
-		};
-		class AUR_01_Actions: AUR_BaseActions
+		}; */
+		class AUR_01_Actions: RifleStandActions
 		{
 			upDegree="ManPosCombat";
 			stop="AUR_01_Aim";
@@ -169,7 +169,7 @@ class CfgMovesBasic
 			Unconscious="AUR_01_Die";
 			civil="";
 		};
-		class AUR_01_DeadActions: AUR_BaseActions
+		class AUR_01_DeadActions: RifleStandActions
 		{
 			stop="AUR_01_Die";
 			default="AUR_01_Die";
