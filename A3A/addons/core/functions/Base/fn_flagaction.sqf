@@ -172,6 +172,13 @@ switch _typeX do
             localize "STR_antistasi_actions_free_prisoner"
         ], A3A_fnc_liberaterefugee,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
     };
+    case "deserter":
+    {
+        _flag addAction [format [
+            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", 
+            localize "STR_antistasi_actions_free_prisoner"
+        ], A3A_fnc_liberateDeserter,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
+    };
     case "prisonerX":
     {
         _flag addAction [format [

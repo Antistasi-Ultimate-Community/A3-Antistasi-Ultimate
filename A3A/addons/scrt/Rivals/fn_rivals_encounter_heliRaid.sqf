@@ -98,7 +98,7 @@ _heli setVelocity [
 	(_velocity select 2)
 ];
 
-private _groupHeli = [Rivals, _heli, A3A_faction_riv get "unitRifle"] call A3A_fnc_createVehicleCrew;
+private _groupHeli = [Rivals, _heli, A3A_faction_riv get "unitRifle"] call A3A_fnc_RivalsCreateVehicleCrew;
 {
 	[_x] call A3A_fnc_NATOinit;	
 } forEach (units _groupHeli);

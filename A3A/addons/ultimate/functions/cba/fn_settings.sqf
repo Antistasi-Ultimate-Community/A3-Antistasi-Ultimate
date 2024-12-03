@@ -146,7 +146,7 @@ if (["tts_emission"] call A3U_fnc_hasAddon) then {
     #include "fn_emission_settings.sqf"
 };
 
-if (["diwako_anomalies"] call A3U_fnc_hasAddon) then {
+if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_anomalyDraw", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
         "CHECKBOX", // setting type

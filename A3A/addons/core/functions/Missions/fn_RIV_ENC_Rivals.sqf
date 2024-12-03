@@ -93,7 +93,7 @@ if (count _damagedBuildings > 0) then {
 };
 
 private _leaderIntelGroup = createGroup Rivals;
-private _intelLeader = [_leaderIntelGroup, A3A_faction_riv get "unitCL", _markerPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
+private _intelLeader = [_leaderIntelGroup, A3A_faction_riv get "unitCL", _markerPosition, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 _intelLeader setVariable ["canBeInterrogated", true]; //to remove search intel action
 _intelLeader setDamage 0.7;
 _intelLeader setCaptive true;
@@ -207,7 +207,7 @@ for "_i" from 0 to count _rivalsClasses - 1 do {
 		[], //blacklist positions
 		[_roadPosition, _roadPosition] //default position
 	] call BIS_fnc_findSafePos;
-    private _soldier = [_rivalsGroup, (_rivalsClasses select _i), _bodyPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
+    private _soldier = [_rivalsGroup, (_rivalsClasses select _i), _bodyPosition, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
     [_soldier] call A3A_fnc_NATOinit;
 
 	private _anim = selectRandom [
@@ -348,7 +348,7 @@ private _group1Position = [
 		[], //blacklist positions
 		[_roadPosition, _roadPosition] //default position
 	] call BIS_fnc_findSafePos;
-private _group1 = [_group1Position, Rivals, selectRandom (A3A_faction_riv get "groupsFireteam")] call A3A_fnc_spawnGroup;
+private _group1 = [_group1Position, Rivals, selectRandom (A3A_faction_riv get "groupsFireteam")] call A3A_fnc_RivalsSpawnGroup;
 _groups pushBack _group1;
 private _group1Wp = _group1 addWaypoint [_laptopPosition, 5];
 _group1Wp setWaypointType "MOVE";
@@ -367,7 +367,7 @@ private _group2Position = [
 		[], //blacklist positions
 		[_roadPosition, _roadPosition] //default position
 	] call BIS_fnc_findSafePos;
-private _group2 = [_group2Position, Rivals, selectRandom (A3A_faction_riv get "groupsFireteam")] call A3A_fnc_spawnGroup;
+private _group2 = [_group2Position, Rivals, selectRandom (A3A_faction_riv get "groupsFireteam")] call A3A_fnc_RivalsSpawnGroup;
 _groups pushBack _group2;
 private _group2Wp = _group2 addWaypoint [_laptopPosition, 5];
 _group2Wp setWaypointType "MOVE";
@@ -392,7 +392,7 @@ _roadcon = roadsConnectedto (selectRandom _road);
 _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 _roadPosition = getPos (_road select 0);
 
-private _rivalVehData = [_roadPosition, 0, selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed"), Rivals] call A3A_fnc_spawnVehicle;
+private _rivalVehData = [_roadPosition, 0, selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed"), Rivals] call A3A_fnc_RivalsSpawnVehicle;
 private _rivalVeh = _rivalVehData select 0;
 [_rivalVeh, Rivals] call A3A_fnc_AIVEHinit;
 private _rivalVehCrew = _rivalVehData select 1;

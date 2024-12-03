@@ -127,7 +127,7 @@ call {
     };
 
     if (_basecategory isEqualTo "Headgear") exitWith {
-        if (getNumber (configfile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 5) then {
+        if (getNumber (configfile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 0) then {
             _categories pushBack "ArmoredHeadgear";
         };
     };

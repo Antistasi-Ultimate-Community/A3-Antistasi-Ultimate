@@ -111,7 +111,7 @@ if (dateToNumber date < _dateLimitNum && {alive _x} count _POWs > 0) then {
 	_patrolMrk setMarkerAlphaLocal 0;
 
 	for "_i" from 1 to _patrolCount do {
-		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
+		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_RivalsSpawnGroup;
 		(units _patrolGroup) apply {
 			[_x] call A3A_fnc_NATOinit;
 		};

@@ -42,7 +42,7 @@ if (isNull _vehicle) exitWith {
     [localize "STR_A3A_Base_moveOutCrew_header", localize "STR_A3A_reinf_airstrike_not_looking_at_veh"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
 };
 _owner = _vehicle getVariable ["ownerX",""];
-if !(_owner isEqualTo "" || {getPlayerUID _player isEqualTo _owner}) exitWith {  // crew cannot be moved out if owned by another player.
+if (_owner isNotEqualTo "" && {getPlayerUID _player isNotEqualTo _owner}) exitWith {  // crew cannot be moved out if owned by another player.
     [localize "STR_A3A_Base_moveOutCrew_header", localize "STR_A3A_Base_sellVehicle_err2"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
 };
 

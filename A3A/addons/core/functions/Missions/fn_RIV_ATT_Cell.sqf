@@ -159,7 +159,7 @@ private _targetBuildingPositionIndex = random (round ((count _buildingPositions)
 private _targetBuildingPosition = _buildingPositions select _targetBuildingPositionIndex;
 
 private _occupiedIndexes = [_targetBuildingPosition];
-private _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetBuildingPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
+private _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetBuildingPosition, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 
 if (_isDifficult) then {
     for "_i" from 1 to (round (random [1,2,4])) do {
@@ -181,7 +181,7 @@ if (_isDifficult) then {
                 "loadouts_riv_militia_Enforcer"
             ];
             private _guardBuildingPos = _buildingPositions select _nonOccupiedIndex;
-            private _guard = [_targetGroup, _guardClassName, _guardBuildingPos, [], 0, "NONE"] call A3A_fnc_createUnit;
+            private _guard = [_targetGroup, _guardClassName, _guardBuildingPos, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
         };
     };
 };
@@ -333,7 +333,7 @@ for "_i" from 0 to _patrolCount do {
         [], //blacklist positions
         [_positionX, _positionX] //default position
     ] call BIS_fnc_findSafePos;
-    private _patrolGroup = [_position, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
+    private _patrolGroup = [_position, Rivals, (selectRandom _patrolPool)] call A3A_fnc_RivalsSpawnGroup;
     (units _patrolGroup) apply {
         private _unit = _x;
         {_unit disableAI _x} forEach ["CHECKVISIBLE", "COVER", "SUPPRESSION", "FSM", "TARGET", "AUTOTARGET"];
@@ -358,7 +358,7 @@ if (_isDifficult) then {
         [], //blacklist positions
         [_targetPos, _targetPos] //default position
     ] call BIS_fnc_findSafePos;
-    private _sentry = [_position, Rivals, (selectRandom (A3A_faction_riv get "groupsSentry"))] call A3A_fnc_spawnGroup;
+    private _sentry = [_position, Rivals, (selectRandom (A3A_faction_riv get "groupsSentry"))] call A3A_fnc_RivalsSpawnGroup;
     (units _sentry) apply {
         private _unit = _x;
         {_unit disableAI _x} forEach ["CHECKVISIBLE", "COVER", "SUPPRESSION", "FSM", "TARGET", "AUTOTARGET"];
@@ -380,7 +380,7 @@ private _vehicleClass = if (_isDifficult) then {
 };
 
 private _vehiclePosAndDir = [_positionX, _vehicleClass] call SCRT_fnc_common_findSafePositionForVehicle; 
-private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_spawnVehicle;
+private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_RivalsSpawnVehicle;
 private _patrolVeh = _patrolVehicleData select 0;
 _patrolVeh setDir (_vehiclePosAndDir select 1);
 private _patrolVehCrew = _patrolVehicleData select 1;

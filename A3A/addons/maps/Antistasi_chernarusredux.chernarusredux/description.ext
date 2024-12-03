@@ -1,0 +1,29 @@
+#include "..\missionDescription\master.hpp"
+
+OnLoadName = $STR_antistasi_mission_info_chernarus_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_chernarus_blurb_text;
+briefingName = $STR_antistasi_mission_info_chernarus_mapname_text;
+overviewText = $STR_antistasi_mission_info_chernarus_description_text;
+loadScreen = LOAD_SCREEN_IMAGE;
+overviewPicture = OVERVIEW_IMAGE;
+
+class CfgDiscordRichPresence 
+{
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Chernarus";
+    defaultLargeImageKey="chernarus";
+    defaultLargeImageText="Rebelling in Chernarus";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
+    useTimeElapsed=1;
+};
+//Workshop Link: https://steamcommunity.com/sharedfiles/filedetails/?id=583544987
+class CfgNotifications
+{
+    #include "..\missionDescription\CfgNotificationsContents.hpp"
+};
+
+class CfgDebriefing {
+    #include "..\missionDescription\CfgDebriefingContents.hpp"
+};

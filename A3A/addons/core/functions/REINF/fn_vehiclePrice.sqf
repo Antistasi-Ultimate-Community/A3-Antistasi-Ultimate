@@ -12,13 +12,15 @@ _costs = if (isNil "_costs") then {
 
 	0
 } else {
-	private _multiplier = if (count seaports > 0) then {
-		{sidesX getVariable [_x,sideUnknown] == teamPlayer} count seaports;
-	} else {
-		{sidesX getVariable [_x,sideUnknown] == teamPlayer} count resourcesX;
-	};
+	private _multiplierSeaport = {sidesX getVariable [_x,sideUnknown] == teamPlayer} count seaports;
+	private _multiplierResource = {sidesX getVariable [_x,sideUnknown] == teamPlayer} count resourcesX;
 
-	round (_costs - (_costs * (0.1 * _multiplier))) // This needs to be reworked, very OP for little to no reason.
+	private _reductionFactorSeaport = 0.1; // Base reduction per seaport
+	private _reductionFactorResource = 0.02; // Base reduction per resource
+
+	private _diminishingFactor = 1 / (1 + (_multiplierSeaport * _reductionFactorSeaport) + (_multiplierResource * _reductionFactorResource)); // Diminishing returns
+
+	round (_costs * _diminishingFactor) // Apply diminishing returns to reduce cost
 };
 
 

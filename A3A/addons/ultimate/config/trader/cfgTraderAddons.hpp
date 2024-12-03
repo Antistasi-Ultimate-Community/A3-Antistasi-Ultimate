@@ -107,13 +107,13 @@
     {
         addons[] = {"Weapons_1_F_lxWS"};
         weapons = "weapons_ws";
-        vehicles = "vehicles_ws"
+        vehicles = "vehicles_ws";
     };
     class addons_rf : addons_base
     {
         addons[] = {"RF_Weapons"};
         weapons = "weapons_rf";
-        // Needs vehicles doing, can use some of the technical variants I made in config fixes
+        vehicles = "vehicles_rf";
     };
     class addons_racs : addons_base
     {
@@ -247,7 +247,7 @@
         addons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "cwr3_weapons", "cwr3_expansion_usmc"};
         vehicles = "vehicles_cwriiiusmc";
     };
-    class addons_flyleg : addons_base
+	class addons_flyleg : addons_base
     {
         addons[] = {"sab_flyinglegends"};
         vehicles = "vehicles_flyleg";

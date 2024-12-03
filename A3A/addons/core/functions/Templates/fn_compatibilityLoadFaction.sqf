@@ -27,10 +27,10 @@ missionNamespace setVariable ["A3A_faction_" + _factionPrefix, _faction];
 
 private _unitClassMap = _side call SCRT_fnc_unit_getUnitMap;
 private _baseUnitClass = switch (_side) do {
-    case west: { "B_G_Soldier_F" };
-    case east: { "O_G_Soldier_F" };
-    case independent: { "I_G_Soldier_F" };
-    case civilian: { "C_Man_1" };
+    case west: { "a3a_unit_west" };
+    case east: { "a3a_unit_east" };
+    case independent: { "a3a_unit_reb" };
+    case civilian: { "a3a_unit_civ" };
 };
 
 //validate loadouts

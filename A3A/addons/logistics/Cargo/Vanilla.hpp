@@ -896,7 +896,7 @@ class a3_Soft_F_Gamma_Truck_01_Truck_01_cargo_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_soft_f_beta_Truck_01_Truck_01_transport_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -904,7 +904,7 @@ class A3_soft_f_beta_Truck_01_Truck_01_transport_F_p3d : TRIPLES(ADDON,Cargo,Bas
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_soft_f_beta_Truck_01_Truck_01_covered_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -912,7 +912,7 @@ class A3_soft_f_beta_Truck_01_Truck_01_covered_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_soft_f_gamma_Truck_01_Truck_01_box_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -920,7 +920,7 @@ class A3_soft_f_gamma_Truck_01_Truck_01_box_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_soft_f_gamma_Truck_01_Truck_01_fuel_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -928,7 +928,7 @@ class A3_soft_f_gamma_Truck_01_Truck_01_fuel_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_soft_f_gamma_Truck_01_Truck_01_medevac_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -936,7 +936,7 @@ class A3_soft_f_gamma_Truck_01_Truck_01_medevac_F_p3d : TRIPLES(ADDON,Cargo,Base
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_soft_f_gamma_Truck_01_Truck_01_ammo_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -944,7 +944,7 @@ class A3_soft_f_gamma_Truck_01_Truck_01_ammo_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_Air_F_Heli_Light_01_Heli_Light_01_civil_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -952,7 +952,7 @@ class A3_Air_F_Heli_Light_01_Heli_Light_01_civil_F_p3d : TRIPLES(ADDON,Cargo,Bas
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1
+    recoil = 1;
 };
 class A3_Air_F_Heli_Light_01_Heli_Light_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -960,7 +960,7 @@ class A3_Air_F_Heli_Light_01_Heli_Light_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 500
+    recoil = 500;
 };
 class A3_Air_F_Exp_UAV_03_UAV_03_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -968,7 +968,7 @@ class A3_Air_F_Exp_UAV_03_UAV_03_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 500
+    recoil = 500;
 };
 class A3_Drones_F_Air_F_Gamma_UAV_02_UAV_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -976,7 +976,7 @@ class A3_Drones_F_Air_F_Gamma_UAV_02_UAV_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 500
+    recoil = 500;
 };
 class a3_Air_F_Exp_UAV_04_UAV_04_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -984,7 +984,7 @@ class a3_Air_F_Exp_UAV_04_UAV_04_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 500
+    recoil = 500;
 };
 class A3_armor_f_beta_APC_Tracked_01_APC_Tracked_01_crv_F : TRIPLES(ADDON,Cargo,Base)
 {
@@ -992,7 +992,7 @@ class A3_armor_f_beta_APC_Tracked_01_APC_Tracked_01_crv_F : TRIPLES(ADDON,Cargo,
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 400
+    recoil = 400;
 };
 class A3_Armor_F_Tank_AFV_Wheeled_01_AFV_Wheeled_01_cannon_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1000,7 +1000,7 @@ class A3_Armor_F_Tank_AFV_Wheeled_01_AFV_Wheeled_01_cannon_F_p3d : TRIPLES(ADDON
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class A3_Armor_F_Tank_AFV_Wheeled_01_AFV_Wheeled_01_up_cannon_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1008,7 +1008,7 @@ class A3_Armor_F_Tank_AFV_Wheeled_01_AFV_Wheeled_01_up_cannon_F_p3d : TRIPLES(AD
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class A3_armor_f_gamma_MBT_01_MBT_01_cannon_F : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1016,7 +1016,7 @@ class A3_armor_f_gamma_MBT_01_MBT_01_cannon_F : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class A3_Armor_F_EPC_MBT_01_MBT_01_tusk_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1024,7 +1024,7 @@ class A3_Armor_F_EPC_MBT_01_MBT_01_tusk_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 10;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 /////Size 11
 class A3_Armor_F_EPB_MBT_03_MBT_03_cannon_F_p3d : TRIPLES(ADDON,Cargo,Base)
@@ -1033,7 +1033,7 @@ class A3_Armor_F_EPB_MBT_03_MBT_03_cannon_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 11;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class A3_armor_f_gamma_MBT_02_MBT_02_cannon_F : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1041,7 +1041,7 @@ class A3_armor_f_gamma_MBT_02_MBT_02_cannon_F : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 11;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class a3_Armor_F_Decade_MBT_02_MBT_02_railgun_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1049,7 +1049,7 @@ class a3_Armor_F_Decade_MBT_02_MBT_02_railgun_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 11;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class A3_Armor_F_Tank_MBT_04_MBT_04_cannon_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1057,7 +1057,7 @@ class A3_Armor_F_Tank_MBT_04_MBT_04_cannon_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 11;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 class A3_Armor_F_Tank_MBT_04_MBT_04_command_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -1065,7 +1065,7 @@ class A3_Armor_F_Tank_MBT_04_MBT_04_command_F_p3d : TRIPLES(ADDON,Cargo,Base)
     rotation[] = {0,1,0};
     size = 11;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
 /////size 12
 class A3_Boat_F_Boat_Armed_01_Boat_Armed_01_minigun_F_p3d : TRIPLES(ADDON,Cargo,Base)
@@ -1074,5 +1074,5 @@ class A3_Boat_F_Boat_Armed_01_Boat_Armed_01_minigun_F_p3d : TRIPLES(ADDON,Cargo,
     rotation[] = {0,1,0};
     size = 11;
     isWeapon = 1;
-    recoil = 1000
+    recoil = 1000;
 };
