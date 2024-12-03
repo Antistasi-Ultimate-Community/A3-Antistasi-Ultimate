@@ -1,7 +1,7 @@
-enableEnvironment false;
-showCinemaBorder false;
-setViewDistance 500;
-setTerrainGrid 50;
+// Can re-enable if they are reset to the video settings default in initClient
+// enableEnvironment false;
+// showCinemaBorder false;
+// setViewDistance 500;
 
 private _displayName = "RscTitleDisplayEmpty";
 
