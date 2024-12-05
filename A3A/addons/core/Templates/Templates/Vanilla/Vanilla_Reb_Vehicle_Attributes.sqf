@@ -48,7 +48,7 @@
     ["vn_i_static_mortar_m29", ["rebCost", 1000]], //81mm mortar
 
 
-    //statics
+    //
     ["vn_o_wheeled_btr40_01_vcmf", ["rebCost", 800]],
     ["vn_o_wheeled_btr40_mg_01_vcmf", ["rebCost", 1200]],
     ["vn_o_wheeled_btr40_mg_02_vcmf", ["rebCost", 1400]],

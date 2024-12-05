@@ -15,13 +15,23 @@
  *    _markers - Markers the AI can be placed on: Array
  *    _placement - Placement radius: Number
  *    _special - Unit special placement: String
+ *    _identity - optional unit identity parameters, keys may include:
+			- "face"
+			- "speaker"
+			- "pitch"
+			- "firstName"
+			- "lastName"
+			All values of those keys must be strings except for "pitch" which is a number.
+			If _identity parameter is not specified, a random identity will be applied to the unit according to its faction and type.
  * Returns:
  *    Object - created unit
  * Example Usage:
  *    [group, _type, position, markers, placement, special] call A3A_fnc_createUnit
 */
 
-params ["_group", "_type", "_position", ["_markers", []], ["_placement", 0], ["_special", "NONE"]];
+#include "..\..\script_component.hpp"
+
+params ["_group", "_type", "_position", ["_markers", []], ["_placement", 0], ["_special", "NONE"], "_identity"];
 
 private _unitDefinition = A3A_customUnitTypes getVariable [_type, []];
 
@@ -61,6 +71,13 @@ if !(_unitDefinition isEqualTo []) exitWith {
 	    _unit setUnitLoadout selectRandom _loadouts;
     };
 	_unit setVariable ["unitType", _type, true];
+
+	private _identity = if (isNil "_identity") then {
+		[Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
+	} else {
+		_identity;
+	};
+	[_unit, _identity] call A3A_fnc_setIdentity;
 
 	//it's very fragile and non-extensible (adding second bool or string value into template will break this)
 	{

@@ -12,6 +12,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 //////////////////////////
 //   Side Information   //
@@ -55,7 +56,7 @@ private _tanks = ["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F"];
 private _aa = ["B_T_APC_Tracked_01_AA_F"];
 
 private _transportBoat = ["B_T_Boat_Transport_01_F"];
-["vehiclesGunBoats", ["B_T_Boat_Armed_01_minigun_F","a3a_Boat_Armed_01_hmg_blufor_F"]] call _fnc_saveToTemplate;
+private _gunBoat = ["B_T_Boat_Armed_01_minigun_F","a3a_Boat_Armed_01_hmg_blufor_F"];
 
 private _planesCAS = ["B_Plane_CAS_01_dynamicLoadout_F","B_UAV_02_dynamicLoadout_F"];
 private _planesLargeCAS = [];
@@ -149,6 +150,11 @@ if (_hasCSLA) then {
     #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO_Tropical.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
+};
+
+["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", _militiaTrucks] call _fnc_saveToTemplate;
@@ -193,7 +199,8 @@ if (_hasCSLA) then {
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
@@ -201,7 +208,8 @@ if (_hasCSLA) then {
     #include "..\vehicleVariants\Vanilla_NATO_Tropical\GM_NATO_Tropical.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Tropical\RF_NATO_Tropical.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Tropical\Vanilla_NATO_Tropical.sqf",
-    #include "..\vehicleVariants\Vanilla_NATO_Tropical\WS_NATO_Tropical.sqf"
+    #include "..\vehicleVariants\Vanilla_NATO_Tropical\WS_NATO_Tropical.sqf",
+    #include "..\vehicleVariants\Vanilla_NATO_Tropical\EF_NATO_Tropical.sqf"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -258,7 +266,12 @@ if (_hasWS) then {
         #include "..\DLC_content\faces\WS\WS_white.sqf"
     ];
 };
-
+if (_hasEF) then {
+    _faces append [
+        #include "..\DLC_content\faces\EF\EF_white.sqf", ///probaly need to separate by camos
+        #include "..\DLC_content\faces\EF\EF_african.sqf"
+    ];
+};
 ["voices", _voices] call _fnc_saveToTemplate;
 ["sfVoices", ["Male01ENGB", "Male02ENGB", "Male03ENGB", "Male04ENGB", "Male05ENGB"]] call _fnc_saveToTemplate;
 ["eliteVoices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG",
@@ -266,6 +279,8 @@ if (_hasWS) then {
 ["faces", _faces] call _fnc_saveToTemplate;
 ["insignia", ["111thID", "", ""]] call _fnc_saveToTemplate;
 ["sfInsignia", ["CTRG"]] call _fnc_saveToTemplate;
+
+"NATOMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
@@ -802,6 +817,11 @@ if (_hasGM) then {
 if (_hasSOG) then {
     #include "..\DLC_content\gear\SOG\Vanilla_NATO.sqf"
     #include "..\DLC_content\weapons\SOG\Vanilla_NATO.sqf"
+};
+
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_NATO_Tropical.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_NATO_Temparate.sqf"
 };
 //
 

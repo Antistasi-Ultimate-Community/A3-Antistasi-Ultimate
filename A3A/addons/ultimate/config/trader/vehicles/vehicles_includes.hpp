@@ -20,6 +20,7 @@
 #include "vehicles_cwriii.hpp"
 #include "vehicles_csla.hpp"
 #include "vehicles_rf.hpp"
+#include "vehicles_ef.hpp"
 #include "vehicles_amf.hpp"
 #include "vehicles_3cbbaf.hpp"
 #include "vehicles_bw.hpp"

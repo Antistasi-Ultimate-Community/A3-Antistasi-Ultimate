@@ -5,6 +5,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasArtOfWar = "aow" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ////////////////////////////
 //   Rivals Information   //

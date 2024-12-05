@@ -151,7 +151,7 @@ switch (true) do {
         _insignia = selectRandom _regularInsignia;
     };
 };
-[_unit, _face, _voice, (random [0.9, 1, 1.1])] call A3A_fnc_setIdentity;
+[_unit, createHashMapFromArray [["face", _face], ["speaker", _voice], ["pitch", (random [0.9, 1, 1.1])]]] call A3A_fnc_setIdentity;
 _unit setSkill _skill;
 if (!isNil "_insignia" && {_insignia isNotEqualTo ""}) then {
    [_unit, _insignia] call BIS_fnc_setUnitInsignia;

@@ -375,10 +375,19 @@ if (dateToNumber date < _dateLimitNum) then {
     reverse _markNames;
     {
         (driver _x) stop false;
+        private _crew = crew _x;
+        {
+            _x allowDamage true;
+        } forEach _crew;
         [_x, _route, _convoyVehicles, 30,true] spawn A3A_fnc_vehicleConvoyTravel;
 	    [_x, _markNames#_forEachIndex, false] spawn A3A_fnc_inmuneConvoy;			// Disabled the stuck-vehicle hacks
+        _x allowDamage true;
+        (driver _x) allowDamage true;
         sleep 1;
     } forEach _convoyVehicles;
+    {
+        _x allowDamage true;
+    } forEach units _soldiers;
     waitUntil {
 	sleep 1;
 	dateToNumber date > _dateLimitNum || {(!isNil "_lootContainer" && (!alive  _lootContainer || _lootContainer inArea [getMarkerPos respawnTeamPlayer, 50, 50, 0, false]))} || {(!isNil "_vehObj" && (!alive _vehObj || _vehObj inArea [getMarkerPos respawnTeamPlayer, 50, 50, 0, false]))} //and all rivals are dead?

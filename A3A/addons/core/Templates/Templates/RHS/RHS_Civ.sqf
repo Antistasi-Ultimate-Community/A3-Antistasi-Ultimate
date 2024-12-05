@@ -115,6 +115,7 @@ if (_hasLawsOfWar) then {
 };
 
 ["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+"RussianMen" call _fnc_saveNames;
 
 private _civhats = [
     "H_Bandanna_blu",

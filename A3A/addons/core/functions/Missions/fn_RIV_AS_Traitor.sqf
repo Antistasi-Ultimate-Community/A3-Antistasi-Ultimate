@@ -51,7 +51,7 @@ private _bodyguardClass = selectRandom [
 private _traitor = [_groupTraitor, _faction get "unitCommander", _posTraitor, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 _traitor allowDamage false;
 _traitor setPos _posTraitor;
-[_traitor, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 
 [_traitor, 100, (random 3)] call SCRT_fnc_common_addRandomMoneyMagazine;
 _traitor setVariable ["hasLaptop", true, true];
