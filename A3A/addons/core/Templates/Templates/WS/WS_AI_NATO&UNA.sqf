@@ -1193,7 +1193,7 @@ if (_hasGM) then {
 };
 
 if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_NATO&UNA.sqf"
+    #include "..\DLC_content\gear\EF\WS_NATO&UNA.sqf"
     #include "..\DLC_content\weapons\EF\Vanilla_NATO&AAF.sqf"
 };
 

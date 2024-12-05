@@ -885,7 +885,7 @@ if (_hasSPE) then {
 };
 
 if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_CSAT&SFIA.sqf"
+    #include "..\DLC_content\gear\EF\WS_CSAT&SFIA.sqf"
 };
 
 /////////////////////////////////

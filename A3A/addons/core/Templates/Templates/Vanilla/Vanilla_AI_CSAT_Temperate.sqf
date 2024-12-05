@@ -665,7 +665,7 @@ if (_hasSOG) then {
 };
 
 if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_CSAT_Temperate.sqf"
+    #include "..\DLC_content\gear\EF\Vanilla_CSAT_Temparate.sqf"
 };
 //
 

@@ -20,7 +20,7 @@
 (_militaryLoadoutData get "glVests") append ["EF_V_AAV_Support_Olive", "EF_V_AAV_Support_Black"];
 
 /////////
-(_militiaLoadoutData get "NVGs") append ["EF_LPNVG_T", "EF_LPNVG"]
+(_militiaLoadoutData get "NVGs") append ["EF_LPNVG_T", "EF_LPNVG"];
 (_militaryLoadoutData get "helmets") pushBack "EF_H_HelmetCrew_White";
 (_militiaLoadoutData get "backpacks") pushBack "EF_B_RaiderPack_coy";
 (_militiaLoadoutData get "Hvests") append ["EF_V_AAV_Support_Coy", "EF_V_CCR_Support_Coy"];

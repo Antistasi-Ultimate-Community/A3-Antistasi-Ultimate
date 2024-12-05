@@ -68,10 +68,9 @@ private _gunship = [];
 
 private _transportHelicopters = ["EF_B_Heli_Transport_01_MJTF_Des"];
 
-private _vehiclesHelisLight = ["B_Heli_Light_01_F"];
-
-private _vehiclesHelisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
-private _vehiclesHelisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
+private _helisLight = ["B_Heli_Light_01_F"];
+private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
+private _helisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
 
 private _artillery = ["B_MBT_01_mlrs_F"];
 ["magazines", createHashMapFromArray [
@@ -171,10 +170,10 @@ if (_hasCSLA) then {
 
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
 ["vehiclesPolice", _vehiclesPolice] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", _vehiclesHelisLightAttack] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", _helisLightAttack] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
-["vehiclesHelisLight", _vehiclesHelisLight] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", _vehiclesHelisAttack] call _fnc_saveToTemplate;
+["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
 ["vehicleRadar", _radar] call _fnc_saveToTemplate;
 ["vehicleSam", _SAM] call _fnc_saveToTemplate;

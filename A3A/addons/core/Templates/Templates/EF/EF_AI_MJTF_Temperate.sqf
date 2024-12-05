@@ -66,10 +66,10 @@ private _planesLargeAA = [];
 ["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", ["B_T_VTOL_01_armed_F"]] call _fnc_saveToTemplate;
 
-private _vehiclesHelisLight = ["a3a_Heli_Light_01_ION_F"];
+private _helisLight = ["a3a_Heli_Light_01_ION_F"];
 private _transportHelicopters =  ["EF_B_Heli_Transport_01_MJTF_Des"];
-private _vehiclesHelisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
-private _vehiclesHelisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
+private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
+private _helisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
 
 private _artillery = ["B_T_MBT_01_mlrs_F"];
 
@@ -87,7 +87,7 @@ private _militiaTrucks = ["B_T_Truck_01_transport_F", "B_T_Truck_01_covered_F"];
 private _militiaCars = ["B_G_Offroad_01_F"];
 private _militiaAPCs = [];
 
-private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+private _vehiclesPolice = ["B_GEN_Offroad_01_gen_F"];
 
 private _staticMG = ["B_G_HMG_02_high_F", "B_HMG_01_high_F"];
 private _staticAT = ["B_T_Static_AT_F","B_GMG_01_high_F"];
@@ -168,10 +168,10 @@ if (_hasCSLA) then {
 ["vehiclesTanks", _tanks] call _fnc_saveToTemplate;
 ["uavsPortable", _uavsPortable] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
-["vehiclesPolice", _policeVehs] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", _vehiclesHelisLightAttack] call _fnc_saveToTemplate;
-["vehiclesHelisLight", _vehiclesHelisLight] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", _vehiclesHelisAttack] call _fnc_saveToTemplate;
+["vehiclesPolice", _vehiclesPolice] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", _helisLightAttack] call _fnc_saveToTemplate;
+["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
 ["vehicleRadar", _radar] call _fnc_saveToTemplate;
 ["vehicleSam", _SAM] call _fnc_saveToTemplate;
