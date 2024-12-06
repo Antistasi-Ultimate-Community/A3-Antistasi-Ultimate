@@ -21,7 +21,7 @@
 ["B_D_Truck_01_cargo_lxWS",["Tyre1_hide",0.5]],
 ["B_D_Truck_01_flatbed_lxWS",["Tyre1_hide",0.5]],
 ["B_D_Heli_Light_01_dynamicLoadout_lxWS",["AddTread_Short",0.5,"AddTread",0.5]],
-["B_D_Heli_Light_01_lxWS",["AddBenches",0.3,"AddTread",0.3,"AddBackseats",0.3,"AddHoldingFrame",0.3,"AddTread_Short",0.3]],
+["B_D_Heli_Light_01_lxWS",["AddBenches",0.7,"AddTread",0.3,"AddBackseats",0.5,"AddHoldingFrame",0.3,"AddTread_Short",0.3]],
 ["B_D_MBT_01_TUSK_lxWS",["showCamonetTurret",0.3,"showCamonetHull",0.3,"showBags",0.3]],
 ["B_D_MBT_01_cannon_lxWS",["showBags",0.3,"showCamonetTurret",0.3,"showCamonetHull",0.3]],
 ["B_T_APC_Wheeled_01_atgm_lxWS",["showBags",0.3,"showCamonetHull",0.3,"showCamonetTurret",0.3,"showSLATHull",0.3,"showSLATTurret",0.3]],

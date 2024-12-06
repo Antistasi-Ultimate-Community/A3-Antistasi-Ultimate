@@ -34,6 +34,7 @@
 	"AsianHead_A3_06"
 ]] call _fnc_saveToTemplate; 
 ["voices", ["Male01POL", "Male02POL", "Male03POL", "Male01RUS", "Male02RUS", "Male03RUS", "rhs_male01cz", "rhs_male02cz", "rhs_male03cz", "rhs_male04cz", "rhs_male05cz"]] call _fnc_saveToTemplate;
+"CzechMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Vehicles       //

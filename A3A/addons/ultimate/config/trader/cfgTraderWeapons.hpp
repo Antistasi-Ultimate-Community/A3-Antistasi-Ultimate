@@ -162,3 +162,7 @@
         {
             prefix = "jca_stock"
         };
+        class weapons_ef : weapons_base
+        {
+            prefix = "ef";
+        };

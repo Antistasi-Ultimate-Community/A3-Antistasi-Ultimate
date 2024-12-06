@@ -39,7 +39,7 @@ private _allVehClassToCrew = [
     [FactionGet(all,"vehiclesRivalsLight"),[FactionGet(occ,"unitRifle"), FactionGet(inv,"unitRifle"), /* FactionGet(riv,"unitRifle"), */ FactionGet(reb,"unitRifle"), FactionGet(civ,"unitMan")]],
     [FactionGet(all,"vehiclesRivalsStatics"),[FactionGet(occ,"unitRifle"), FactionGet(inv,"unitRifle"), /* FactionGet(riv,"unitRifle"), */ FactionGet(reb,"unitRifle"), FactionGet(civ,"unitMan")]],
     [FactionGet(riv,"vehiclesRivalsUavs"), ["B_UAV_AI", "O_UAV_AI", "I_UAV_AI", "C_UAV_AI"]],
-    [FactionGet(all,"vehiclesRivalsHelis"),[FactionGet(occ,"unitRifle"), FactionGet(inv,"unitRifle"), /* FactionGet(riv,"unitRifle"), */ FactionGet(reb,"unitRifle"), FactionGet(civ,"unitMan")]],    ///why FactionGet(all and not riv? why c_man and not  FactionGet(civ,"unitMan")? why no FactionGet(inv ?
+    [FactionGet(all,"vehiclesRivalsHelis"),[FactionGet(occ,"unitPilot"), FactionGet(inv,"unitPilot"), /* FactionGet(riv,"unitRifle"), */ FactionGet(reb,"unitCrew"), FactionGet(civ,"unitMan")]],    ///why FactionGet(all and not riv? why c_man and not  FactionGet(civ,"unitMan")? why no FactionGet(inv ?
     [FactionGet(all,"vehiclesRivals"),[FactionGet(occ,"unitRifle"), FactionGet(inv,"unitRifle"), /* FactionGet(riv,"unitRifle"), */ FactionGet(reb,"unitRifle"), FactionGet(civ,"unitMan")]],
 
     [FactionGet(all,"vehiclesFixedWing"),[FactionGet(occ,"unitPilot"), FactionGet(inv,"unitPilot"), FactionGet(reb,"unitCrew"), FactionGet(civ,"unitMan")]],

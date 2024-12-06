@@ -13,6 +13,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ////////////////////////////
 //   Rivals Information   //
@@ -359,6 +360,10 @@ if (_hasSPE) then {
 
 if (_hasJets) then {
 	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
+};
+
+if (_hasEF) then {
+	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
 };
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later.
