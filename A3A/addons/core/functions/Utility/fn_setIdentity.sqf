@@ -13,11 +13,12 @@ Arguments:
     <STRING> Optional: Name of unit
 */
 
-params ["_unit"];           // Don't care about the other params here
+params ["_unit", "_identity"];           // Don't care about the other params here
 
 if (isNull _unit) exitWith {};
 private _JIPID = "identity_" + netId _unit;
-([_JIPID] + _this) remoteExec ["A3A_fnc_setIdentityLocal", 0, _JIPID];
+[_JIPID, _unit, _identity] remoteExec ["A3A_fnc_setIdentityLocal", 0, _JIPID];
+// ([_JIPID] + _this) remoteExec ["A3A_fnc_setIdentityLocal", 0, _JIPID];
 
 // This won't be 100% reliable because it's only installed locally, but it'll avoid remoteExec spam on connection
 _unit addEventHandler ["Deleted", {

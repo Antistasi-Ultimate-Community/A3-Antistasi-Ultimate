@@ -73,6 +73,7 @@ class cfgHALsStore
 		#include "config\nfts.hpp"
 		#include "config\fow.hpp"
 		#include "config\eaw.hpp"
+		#include "config\ef.hpp"
 		#include "config\cwr.hpp"
 		#include "config\ffp.hpp"
 		#include "config\ylarms.hpp"
@@ -221,6 +222,21 @@ class cfgHALsStore
 				"muzzlesRF", 
 				"opticsRF", 
 				"miscRF"
+			};
+		};
+
+		class ef 
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"riflesEF", 
+				"handgunsEF", 
+				"magazinesEF", 
+				"navigationEF", 
+				"pointersEF", 
+				"muzzlesEF", 
+				"opticsEF", 
+				"miscEF"
 			};
 		};
     

@@ -42,8 +42,9 @@
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-private _vehiclesPlanesCAS = ["EAW_A4N"];
-private _vehiclesPlanesAA = ["fow_va_a6m_white"];
+private _vehiclesPlanesCAS = ["EAW_A4N", "EAW_Ki43_II"];
+["vehiclesPlanesLargeCAS", ["EAW_G3M"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesAA = ["EAW_Ki27", "EAW_Ki43_II"];
 private _vehiclesPlanesTransport = ["A3U_LIB_C47_German"];
 
 if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {

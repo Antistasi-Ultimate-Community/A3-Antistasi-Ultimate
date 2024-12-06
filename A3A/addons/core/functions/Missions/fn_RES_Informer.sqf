@@ -98,7 +98,7 @@ _informer disableAI "TARGET";
 _informer setUnitPos "UP";
 _informer setBehaviour "CARELESS";
 _informer allowFleeing 0;
-[_informer, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+[_informer, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 
 removeAllWeapons _informer;
 removeAllAssignedItems _informer;

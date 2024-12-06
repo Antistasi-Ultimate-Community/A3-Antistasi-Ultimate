@@ -3,6 +3,7 @@
 //////////////////////////////
 
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 //////////////////////////
 //       Vehicles       //

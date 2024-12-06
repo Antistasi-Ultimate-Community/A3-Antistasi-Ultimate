@@ -136,7 +136,7 @@ private _smugglerCount = random [3, 5, 6];
 
 for "_i" from 0 to _smugglerCount do {
     private _unit = [_grpPOW, FactionGet(reb,"unitUnarmed"), _shorePosition, [], 0, "NONE"] call A3A_fnc_createUnit;
-    [_unit, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+    [_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 	_unit allowDamage false;
 	_unit setCaptive true;
 	_unit disableAI "MOVE";

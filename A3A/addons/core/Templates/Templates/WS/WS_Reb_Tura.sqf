@@ -3,6 +3,7 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasApex = "expansion" in A3A_enabledDLC;
 private _hasContact = "enoch" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ///////////////////////////
 //   Rebel Information   //

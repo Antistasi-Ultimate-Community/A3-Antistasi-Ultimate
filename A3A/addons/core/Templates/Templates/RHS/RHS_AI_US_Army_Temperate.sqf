@@ -113,6 +113,7 @@ if (isClass (configFile >> "cfgVehicles" >> "USAF_AC130U")) then {
 "WhiteHead_21","WhiteHead_23", "WhiteHead_24", "WhiteHead_25",
 "WhiteHead_26", "WhiteHead_27", "WhiteHead_28", "WhiteHead_29", "WhiteHead_30", "WhiteHead_31", "WhiteHead_32"
 ]] call _fnc_saveToTemplate;
+"NATOMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

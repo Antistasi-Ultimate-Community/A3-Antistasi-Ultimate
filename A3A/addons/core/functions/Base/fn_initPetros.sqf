@@ -7,7 +7,7 @@ petros setSkill 1;
 petros setVariable ["respawning",false];
 petros allowDamage false;
 
-[petros, "GreekHead_A3_01", "Male01GRE", 1.1, "Petros"] call A3A_fnc_setIdentity;
+[petros, createHashMapFromArray [["face", "GreekHead_A3_01"], ["speaker", "Male01GRE"], ["pitch", 1.1], ["firstName", "Petros"], ["lastName", ""]]] call A3A_fnc_setIdentity;
 
 removeHeadgear petros;
 removeGoggles petros;

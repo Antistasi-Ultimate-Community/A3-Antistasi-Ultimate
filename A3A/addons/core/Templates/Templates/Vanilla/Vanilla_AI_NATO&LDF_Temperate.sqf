@@ -12,6 +12,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 //////////////////////////
 //   Side Information   //
@@ -162,6 +163,10 @@ if (_hasSPE) then {
     #include "..\DLC_content\vehicles\SPE\Vanilla_LDF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
+};
+
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
@@ -212,7 +217,8 @@ if (_hasSPE) then {
     #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
 	#include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
@@ -221,6 +227,7 @@ if (_hasSPE) then {
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\RF_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\Vanilla_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\WS_NATO_Temparate.sqf",
+    #include "..\vehicleVariants\Vanilla_NATO_Temparate\EF_NATO_Temparate.sqf",
 	#include "..\vehicleVariants\Vanilla_LDF\CSLA_LDF.sqf",
     #include "..\vehicleVariants\GM_police.sqf",
     #include "..\vehicleVariants\Vanilla_LDF\RF_LDF.sqf",
@@ -985,6 +992,10 @@ if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_LDF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_NATO&LDF_Temparate.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_NATO&LDF_Temparate.sqf"
+};
 
 /////////////////////////////////
 //    Unit Type Definitions    //
