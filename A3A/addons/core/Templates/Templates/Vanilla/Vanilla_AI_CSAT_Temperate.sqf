@@ -56,7 +56,7 @@ private _tanks = ["O_T_MBT_02_cannon_ghex_F","O_T_MBT_02_railgun_ghex_F"];
 ["vehiclesAA", ["O_T_APC_Tracked_02_AA_ghex_F"]] call _fnc_saveToTemplate;
 
 private _transportBoat = ["O_T_Boat_Transport_01_F"];
-["vehiclesGunBoats", ["O_T_Boat_Armed_01_hmg_F"]] call _fnc_saveToTemplate;
+private _gunBoat = ["O_Boat_Armed_01_hmg_F"];
 
 private _planesCAS = ["O_Plane_CAS_02_dynamicLoadout_F","O_T_VTOL_02_infantry_dynamicLoadout_F","O_T_UAV_04_CAS_F"];
 private _planesAA = ["O_Plane_CAS_02_dynamicLoadout_F","O_T_VTOL_02_infantry_dynamicLoadout_F"];
@@ -64,11 +64,11 @@ private _planesAA = ["O_Plane_CAS_02_dynamicLoadout_F","O_T_VTOL_02_infantry_dyn
 private _planesTransport = ["O_T_VTOL_02_infantry_dynamicLoadout_F"];
 private _gunship = ["O_T_VTOL_02_infantry_dynamicLoadout_F"];
 
-private _lightHelicopters = ["O_Heli_Light_02_unarmed_F"];
+private _helisLight = ["O_Heli_Light_02_unarmed_F"];
 private _transportHelicopters = ["O_Heli_Light_02_unarmed_F"];
 
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
-private _lightAttackHelicopters = ["O_Heli_Light_02_dynamicLoadout_F"];
+private _helisLightAttack = ["O_Heli_Light_02_dynamicLoadout_F"];
 ["vehiclesHelisAttack", ["O_Heli_Attack_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["O_T_MBT_02_arty_ghex_F"]] call _fnc_saveToTemplate;
@@ -160,8 +160,8 @@ if (_hasEF) then {
 ["vehiclesCargoTrucks", _cargoTrucks] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", _militiaAPCs] call _fnc_saveToTemplate;
 ["vehiclesTanks", _tanks] call _fnc_saveToTemplate;
-["vehiclesHelisLight", _lightHelicopters] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", _lightAttackHelicopters]call _fnc_saveToTemplate;
+["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", _helisLightAttack]call _fnc_saveToTemplate;
 
 #include "Vanilla_Vehicle_Attributes.sqf"
 

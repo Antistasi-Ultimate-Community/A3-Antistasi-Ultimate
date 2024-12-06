@@ -362,7 +362,7 @@ if (_hasJets) then {
 };
 
 if (_hasEF) then {
-	#include "..\DLC_content\gear\EF\Vanill_Riv_Remnants.sqf"
+	#include "..\DLC_content\gear\EF\Vanilla_Riv_Remnants.sqf"
 };
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later 
