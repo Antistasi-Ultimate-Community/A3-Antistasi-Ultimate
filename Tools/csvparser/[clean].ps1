@@ -1,1 +1,1 @@
-py cleanup.py
+python cleanup.py

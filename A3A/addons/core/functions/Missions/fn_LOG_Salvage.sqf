@@ -100,6 +100,9 @@ if (_typeSDV != "") then {
    if (_typeSDV == "B_SDV_01_F") then {
 		_diverType = "B_diver_F";
    };
+   if (_typeSDV == "EF_B_SDV_01_MJTF_Des") then {
+		_diverType = "EF_B_Marine_Diver_Des";
+   };
    for "_i" from 1 to 2 do {
 		private _SDVmarker = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 		private _vehSDV = createVehicle [_typeSDV, _SDVmarker, [], 30, "NONE"];

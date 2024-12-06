@@ -40,5 +40,4 @@ A3A_activeSupports pushBack _suppData;
 
 [_reveal, _side, "UAV", _targPos, _delay] spawn A3A_fnc_showInterceptedSetupCall;
 
-// Uh, do these have a vehicle cost atm?
-(150+0);            // resource cost of support
+(A3A_vehicleResourceCosts get _planeType) + 100;

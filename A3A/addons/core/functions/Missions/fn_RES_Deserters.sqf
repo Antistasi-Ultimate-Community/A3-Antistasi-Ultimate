@@ -124,18 +124,18 @@ for "_i" from 0 to _countX do {
 		if (count _potentials > 0) then {
 			
 			_unit = [_grpDeserters, _unitRandom,_spawnPos, [], 3, "NONE"] call A3A_fnc_createUnit;
-			[_unit, selectRandom (A3A_faction_occ get "faces"), selectRandom (A3A_faction_occ get "voices")] call A3A_fnc_setIdentity;
+			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_occ get "faces")], ["speaker", selectRandom (A3A_faction_occ get "voices")]]] call A3A_fnc_setIdentity;
 		} else {
 			_unit = [_grpDeserters, _unitRandom, (_posHouse select _i), [], 0, "NONE"] call A3A_fnc_createUnit;
-			[_unit, selectRandom (A3A_faction_occ get "faces"), selectRandom (A3A_faction_occ get "voices")] call A3A_fnc_setIdentity;
+			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_occ get "faces")], ["speaker", selectRandom (A3A_faction_occ get "voices")]]] call A3A_fnc_setIdentity;
 		};
 	} else {
 		if (count _potentials > 0) then {
 			_unit = [_grpDeserters, _unitRandom, (_posHouse select _i), [], 0, "NONE"] call A3A_fnc_createUnit;
-			[_unit, selectRandom (A3A_faction_inv get "faces"), selectRandom (A3A_faction_inv get "voices")] call A3A_fnc_setIdentity;
+			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_inv get "faces")], ["speaker", selectRandom (A3A_faction_inv get "voices")]]] call A3A_fnc_setIdentity;
 		} else {
 			_unit = [_grpDeserters, _unitRandom,_spawnPos, [], 3, "NONE"] call A3A_fnc_createUnit;
-			[_unit, selectRandom (A3A_faction_inv get "faces"), selectRandom (A3A_faction_inv get "voices")] call A3A_fnc_setIdentity;
+			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_inv get "faces")], ["speaker", selectRandom (A3A_faction_inv get "voices")]]] call A3A_fnc_setIdentity;
 		};
 	};
 	_unit allowDamage false;

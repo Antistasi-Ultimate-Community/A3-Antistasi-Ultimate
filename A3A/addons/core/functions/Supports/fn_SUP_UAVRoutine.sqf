@@ -180,6 +180,7 @@ while {time < _timeout && canMove _uav} do
 
     // wait for previous missile to have effect (or not)
     if (alive (_uav getVariable ["A3A_currentMissile", objNull])) then { sleep 1; continue };
+    deleteVehicle _laser;
 
     //_targTimeout = (time + 120);
     sleep 10;

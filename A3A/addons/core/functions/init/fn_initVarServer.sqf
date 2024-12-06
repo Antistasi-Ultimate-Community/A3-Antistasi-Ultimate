@@ -301,7 +301,7 @@ Info("Setting up faction and DLC equipment flags");
 
 // Arma bug: Need to hardcode CDLC because arma3.cfg mod loading method doesn't register CDLC as "official"
 private _loadedDLC = getLoadedModsInfo select { (_x#2) and !(_x#1 in ["A3","curator","argo","tacops"]) };
-_loadedDLC append (getLoadedModsInfo select { tolower (_x#1) in ["gm", "rf", "spe", "vn", "ws"] });
+_loadedDLC append (getLoadedModsInfo select { tolower (_x#1) in ["ef", "gm", "rf", "spe", "vn", "ws"] });
 _loadedDLC = _loadedDLC apply { tolower (_x#1) };
 
 // Set enabled & disabled DLC/CDLC arrays for faction/equipment modification
@@ -537,7 +537,7 @@ private _vehicleResourceCosts = createHashMap;
 { _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all, "vehiclesLightAPCs");
 { _vehicleResourceCosts set [_x, 100] } forEach FactionGet(all, "vehiclesAPCs");
 { _vehicleResourceCosts set [_x, 150] } forEach FactionGet(all, "vehiclesAA") + FactionGet(all, "vehiclesArtillery") + FactionGet(all, "vehiclesIFVs");
-{ _vehicleResourceCosts set [_x, 165] } forEach FactionGet(all, "vehiclesLightTanks");
+{ _vehicleResourceCosts set [_x, 170] } forEach FactionGet(all, "vehiclesLightTanks");
 { _vehicleResourceCosts set [_x, 230] } forEach FactionGet(all, "vehiclesTanks");
 
 { _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all, "vehiclesHelisLight");

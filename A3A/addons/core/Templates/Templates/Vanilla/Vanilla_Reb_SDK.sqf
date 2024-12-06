@@ -13,6 +13,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ///////////////////////////
 //   Rebel Information   //
@@ -157,6 +158,8 @@ private _rebUniforms = [
 private _dlcUniforms = [];
 
 ["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+
+"TanoanMen" call _fnc_saveNames;
 
 private _headgear = [
   "H_Booniehat_khk_hs",

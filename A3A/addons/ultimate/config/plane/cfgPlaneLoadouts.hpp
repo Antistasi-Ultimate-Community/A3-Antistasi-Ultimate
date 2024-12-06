@@ -82,6 +82,12 @@ class planeLoadouts
             bombRacks[] = {"EAW_A4N_Bomb_Pod1","EAW_A4N_Bomb_Pod2"};
             diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
         };
+		class EAW_Ki43_II
+        {
+            mainGun = "EAW_Ki43_II_MG";
+            bombRacks[] = {"EAW_HawkIII_Bomb_Pod2"};
+            diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
+        };
         // 3CBF CSAT
         class UK3CB_CSAT_B_O_MIG21
         {
@@ -274,7 +280,7 @@ class planeLoadouts
         {
             loadout[] = {"sab_fl_bomb_axis_8rnd_flat_1000_mag","sab_fl_bomb_axis_fritzx_mag","sab_fl_bomb_axis_fritzx_mag"};
 			bombRacks[] = {"sab_fl_bomb_bay_weapon","sab_fl_fritzx_weapon"};
-			diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
+			diveParams[] = {1000, 300, 50, 55, 15, {0,0}};
         };
         //HAFM
         class A7BLU
@@ -422,6 +428,17 @@ class planeLoadouts
             mainGun = "EAW_A4N_MG";
             bombRacks[] = {"EAW_A4N_Bomb_Pod1","EAW_A4N_Bomb_Pod2"};
             diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
+        };
+		class EAW_Ki43_II
+        {
+            mainGun = "EAW_Ki43_II_MG";
+            bombRacks[] = {"EAW_HawkIII_Bomb_Pod2"};
+            diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
+        };
+		class EAW_G3M
+        {
+            loadout[] = {"EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P","EAW_G3M_225Bomb_Mag_P"};
+			mainGun = "EAW_G3M_Dorsal_MG";
         };
         // 3CBF CSAT
         class UK3CB_CSAT_B_O_MIG21
@@ -945,6 +962,14 @@ class planeLoadouts
 		class sab_sw_p38
         {
             mainGun = "sab_fl_4x_hmg_weapon";
+        };
+		class EAW_Ki27
+        {
+            mainGun = "EAW_Ki27_MG";
+        };
+		class EAW_Ki43_II
+        {
+            mainGun = "EAW_Ki43_II_MG";
         };
         // FFP Finland
         class ffp_jas39e

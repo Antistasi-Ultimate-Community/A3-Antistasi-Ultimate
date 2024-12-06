@@ -12,7 +12,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=168;
+		nextID=180;
 	};
 	class Camera
 	{
@@ -193,6 +193,7 @@ class ScenarioData
 {
 	author="Antistasi Ultimate Dev Team";
 	disabledAI=1;
+	respawn=3;
 };
 class CustomAttributes
 {
@@ -216,7 +217,7 @@ class CustomAttributes
 							class data
 							{
 								singleType="STRING";
-								value="None";
+								value="Counter";
 							};
 						};
 					};
@@ -2204,7 +2205,7 @@ class Mission
 					colorName="ColorGreen";
 					a=18.238558;
 					b=31.064337;
-					angle=220.40135;
+					angle=220.40134;
 					id=555;
 					atlOffset=1.1307192;
 				};
@@ -2232,7 +2233,7 @@ class Mission
 					colorName="ColorGreen";
 					a=58.066166;
 					b=31.9757;
-					angle=214.10025;
+					angle=214.10023;
 					id=557;
 					atlOffset=0.10597181;
 				};
@@ -2302,7 +2303,7 @@ class Mission
 					colorName="ColorGreen";
 					a=71.707581;
 					b=74.925262;
-					angle=194.83379;
+					angle=194.83377;
 					id=1015;
 				};
 				class Item28
@@ -2328,7 +2329,7 @@ class Mission
 					colorName="ColorGreen";
 					a=42.576176;
 					b=58.231342;
-					angle=180.40468;
+					angle=180.40466;
 					id=1036;
 				};
 				class Item30
@@ -2354,7 +2355,7 @@ class Mission
 					colorName="ColorGreen";
 					a=18.238558;
 					b=31.064337;
-					angle=220.40134;
+					angle=220.40132;
 					id=1046;
 				};
 				class Item32
@@ -2434,7 +2435,7 @@ class Mission
 					colorName="ColorGreen";
 					a=199.77081;
 					b=198.18187;
-					angle=214.09996;
+					angle=214.09995;
 					id=1072;
 				};
 				class Item38
@@ -2447,7 +2448,7 @@ class Mission
 					colorName="ColorGreen";
 					a=49.054123;
 					b=27.768173;
-					angle=164.48503;
+					angle=164.48502;
 					id=1100;
 					atlOffset=0.11934566;
 				};
@@ -2719,7 +2720,7 @@ class Mission
 					colorName="ColorEAST";
 					a=510.89246;
 					b=333.4664;
-					angle=57.193489;
+					angle=57.193485;
 					id=171;
 				};
 				class Item13
@@ -3610,7 +3611,7 @@ class Mission
 			type="rectangle";
 			a=767.19672;
 			b=2143.5999;
-			angle=57.044571;
+			angle=57.044567;
 			id=223;
 			atlOffset=90.476013;
 		};

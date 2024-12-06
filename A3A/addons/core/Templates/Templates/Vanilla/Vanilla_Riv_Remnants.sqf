@@ -13,6 +13,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ////////////////////////////
 //   Rivals Information   //
@@ -195,39 +196,39 @@ _loadoutData set ["smokeGrenades", ["SmokeShell"]];
 _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
 
 if (_hasGM) then {
-    #include "..\DLC_content\weapons\GM\Vanilla_Rivals.sqf" 
+    #include "..\DLC_content\weapons\GM\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasRF) then {
-	#include "..\DLC_content\weapons\RF\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\weapons\RF\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasContact) then {
-	#include "..\DLC_content\weapons\Contact\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\weapons\Contact\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasMarksman) then {
-	#include "..\DLC_content\weapons\Marksman\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\weapons\Marksman\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasApex) then {
-	#include "..\DLC_content\weapons\Apex\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\weapons\Apex\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasWs) then {
-	#include "..\DLC_content\weapons\WS\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\weapons\WS\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasCSLA) then {
-    #include "..\DLC_content\weapons\CSLA\Vanilla_Rivals.sqf" 
+    #include "..\DLC_content\weapons\CSLA\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_Rivals.sqf" 
+    #include "..\DLC_content\weapons\SOG\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasSPE) then {
-    #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
+    #include "..\DLC_content\weapons\SPE\Vanilla_Riv_Remnants.sqf" 
 };
 
 _loadoutData set ["rifles", _rifles];
@@ -317,43 +318,51 @@ _pilotLoadoutData set ["vests", _vests];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_I", "H_CrewHelmetHeli_I"]];
 
 if (_hasApex) then {
-	#include "..\DLC_content\gear\Apex\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\Apex\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\Artofwar\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasContact) then {
-	#include "..\DLC_content\gear\Contact\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\Contact\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasWs) then {
-	#include "..\DLC_content\gear\WS\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\WS\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasRF) then {
-	#include "..\DLC_content\gear\RF\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\RF\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasLawsOfWar) then {
-	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Riv_Remnants.sqf" 
+};
+
+if (_hasTanks) then {
+	#include "..\DLC_content\gear\Tanks\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasGM) then {
-	#include "..\DLC_content\gear\GM\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\GM\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasCSLA) then {
-	#include "..\DLC_content\gear\CSLA\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\CSLA\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasSOG) then {
-	#include "..\DLC_content\gear\SOG\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\SOG\Vanilla_Riv_Remnants.sqf" 
 };
 
 if (_hasJets) then {
-	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\Jets\Vanilla_Riv_Remnants.sqf" 
+};
+
+if (_hasEF) then {
+	#include "..\DLC_content\gear\EF\Vanilla_Riv_Remnants.sqf"
 };
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later 
