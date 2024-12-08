@@ -65,6 +65,18 @@ _rebelGear set ["MachineGuns", _mg];
 _rebelGear set ["SniperRifles", _sniper];
 _rebelGear set ["GrenadeLaunchers", _gl];
 
+private _handgun = [];
+{
+    _x params ["_class", "_amount"];
+    private _categories = _class call A3A_fnc_equipmentClassToCategories;
+
+    call {
+        if ("Handguns" in _categories) exitWith { [_handgun, _class, _amount] call _fnc_addItem };
+    };
+} forEach (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_HANDGUN);
+
+_rebelGear set ["Handguns", _handgun];
+
 // Secondary weapon filtering
 private _rlaunchers = [];
 private _mlaunchersAT = [];
@@ -229,7 +241,37 @@ private _lights = [];
     if ("LightAttachments" in _categories) then { _lights pushBack _class };
 } forEach (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_ITEMACC);
 
+// Lazer attachments, also no weights because of weapon compat
+private _lazers = [];
+{
+    _x params ["_class", "_amount"];
+    if (_amount > 0 and {minWeaps > 0 or _amount < ITEM_MIN}) then { continue };
+    private _categories = _class call A3A_fnc_equipmentClassToCategories;
+    if ("LaserAttachments" in _categories) then { _lazers pushBack _class };
+} forEach (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_ITEMACC);
+
+// Muzzle attachments, also no weights because of weapon compat
+private _muzzles = [];
+{
+    _x params ["_class", "_amount"];
+    if (_amount > 0 and {minWeaps > 0 or _amount < ITEM_MIN}) then { continue };
+    private _categories = _class call A3A_fnc_equipmentClassToCategories;
+    if ("MuzzleAttachments" in _categories) then { _muzzles pushBack _class };
+} forEach (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_ITEMMUZZLE);
+
+// bipods attachments, also no weights because of weapon compat
+private _bipods = [];
+{
+    _x params ["_class", "_amount"];
+    if (_amount > 0 and {minWeaps > 0 or _amount < ITEM_MIN}) then { continue };
+    private _categories = _class call A3A_fnc_equipmentClassToCategories;
+    if ("Bipods" in _categories) then { _bipods pushBack _class };
+} forEach (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_ITEMBIPOD);
+
 _rebelGear set ["LightAttachments", _lights];
+_rebelGear set ["LaserAttachments", _lazers];
+_rebelGear set ["MuzzleAttachments", _muzzles];
+_rebelGear set ["Bipods", _bipods];
 
 // Update everything while unscheduled so that version numbers match
 isNil {
@@ -237,9 +279,12 @@ isNil {
     _rebelGear set ["Version", A3A_rebelGearVersion];
     A3A_rebelGear = _rebelGear;
 
-    // Clear these two locally
+    // Clear these locally
     A3A_rebelOpticsCache = createHashMap;
     A3A_rebelFlashlightsCache = createHashMap;
+    A3A_rebelLazersCache = createHashMap;
+    A3A_rebelSilencersCache = createHashMap;
+    A3A_rebelBipodsCache = createHashMap;
 };
 // Only broadcast the version number so that clients & HCs can request as required
 publicVariable "A3A_rebelGearVersion";

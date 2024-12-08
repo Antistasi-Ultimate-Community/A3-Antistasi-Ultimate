@@ -63,7 +63,5 @@ _path = _culledPath;
 reverse _path;
 
 private _waypoints = _path apply {_group addWaypoint [ATLtoASL _x, -1]};
-{_x setWaypointBehaviour "SAFE"} forEach _waypoints;
 {_x setWaypointSpeed "FULL"} forEach _waypoints;
-{_x setWaypointCompletionRadius 30} forEach _waypoints;
 _group setCurrentWaypoint (_waypoints select 0);

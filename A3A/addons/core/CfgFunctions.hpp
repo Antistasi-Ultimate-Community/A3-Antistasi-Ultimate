@@ -97,6 +97,7 @@ class CfgFunctions
             class launcherInfo {};
             class loot {};
             class randomRifle {};
+            class randomHandgun {};
             class transfer {};
             class unlockEquipment {};
             class vehicleSort {};
@@ -282,6 +283,7 @@ class CfgFunctions
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
             class spawnVehiclePrecise {};
+            class RivalscargoSeats {};
             class RivalsCreateUnit {};
             class RivalsCreateVehicleCrew {};
             class RivalsCrewTypeForVehicle {};

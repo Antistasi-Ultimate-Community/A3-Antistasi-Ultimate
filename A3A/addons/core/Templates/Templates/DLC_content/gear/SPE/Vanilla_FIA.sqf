@@ -54,8 +54,7 @@ _initialRebelEquipment append [
     "SPE_GER_ItemCompass",
     "SPE_GER_ItemCompass_deg",
     "SPE_US_ItemWatch",
-    "SPE_GER_ItemWatch",
-    "SPE_GER_Headset"
+    "SPE_GER_ItemWatch"
 ];
 
 _initialRebelEquipment append [

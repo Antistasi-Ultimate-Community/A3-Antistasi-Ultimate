@@ -15,6 +15,8 @@ private _vest = selectRandomWeighted (A3A_rebelGear get "ArmoredVests");
 if (_vest == "") then { _vest = selectRandomWeighted (A3A_rebelGear get "CivilianVests") };
 petros addVest _vest;
 [petros, "Rifles"] call A3A_fnc_randomRifle;
+[petros, "Handguns"] call A3A_fnc_randomHandgun;
+
 petros selectWeapon (primaryWeapon petros);
 
 if (petros == leader group petros) then {
