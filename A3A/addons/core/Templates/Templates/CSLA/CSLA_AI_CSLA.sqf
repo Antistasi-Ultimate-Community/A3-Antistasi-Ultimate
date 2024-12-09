@@ -552,6 +552,8 @@ private _medicTemplate = {
     ["backpacks"] call _fnc_setBackpack;
     
     [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
+    
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -635,7 +637,6 @@ private _engineerTemplate = {
     ["backpacks"] call _fnc_setBackpack;
 
     [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
-
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -693,7 +694,7 @@ private _atTemplate = {
     ["backpacks"] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
+    ["primary", 5] call _fnc_addMagazines;
 
     [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
     //TODO - Add a check if it's disposable.
@@ -722,7 +723,7 @@ private _aaTemplate = {
     ["backpacks"] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
+    ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;
     //TODO - Add a check if it's disposable.
