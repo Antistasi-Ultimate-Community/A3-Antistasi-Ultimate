@@ -76,6 +76,39 @@ private _fnc_addSecondaryAndMags = {
     if (_compatOptics isNotEqualTo []) then { _unit addSecondaryWeaponItem (selectRandom _compatOptics) };
 };
 
+private _fnc_addHandgunAndMags = {
+    params ["_unit", "_weapon"];
+
+    _unit addWeapon _weapon;
+
+    private _magazine = compatibleMagazines _weapon select 0;
+    _unit addHandgunItem _magazine;
+    _unit addMagazines [_magazine, 1];
+
+    private _compatOptics = A3A_rebelOpticsCache get _weapon;
+    if (isNil "_compatOptics") then {
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
+        _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get "OpticsAll");
+        A3A_rebelOpticsCache set [_weapon, _compatOptics];
+    };
+    if (_compatOptics isNotEqualTo []) then { _unit addHandgunItem (selectRandom _compatOptics) };
+
+    private _compatSilencers = A3A_rebelSilencersCache get _weapon;
+    if (isNil "_compatSilencers") then {
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
+        _compatSilencers = _compatItems arrayIntersect call {
+            A3A_rebelGear get "MuzzleAttachments";
+        };
+        if (_compatSilencers isEqualTo []) then {
+            _compatSilencers = _compatItems arrayIntersect call {
+                A3A_rebelGear get "MuzzleAttachments";
+            };
+        };
+        A3A_rebelSilencersCache set [_weapon, _compatSilencers];
+    };
+    if (_compatSilencers isNotEqualTo []) then { _unit addHandgunItem (selectRandom _compatSilencers) };
+};
+
 private _fnc_addCharges = {
     params ["_unit", "_totalWeight"];
 
@@ -219,9 +252,45 @@ switch (true) do {
     };
 };
 
-private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
-if (_nvg != "") then { _unit linkItem _nvg }
-else {
+private _handgun = selectRandomWeighted (A3A_rebelGear get "Handguns");
+if !(isNil "_handgun") then { [_unit, _handgun] call _fnc_addHandgunAndMags };
+
+if (_nvg != "") then { 
+    _unit linkItem _nvg;
+    private _weapon = primaryWeapon _unit;
+    private _compatLazers = A3A_rebelLazersCache get _weapon;
+    if (isNil "_compatLazers") then {
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
+        _compatLazers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLazersCache set [_weapon, _compatLazers];
+    };
+    if (_compatLazers isNotEqualTo []) then {
+        private _LazerAttachment = selectRandom _compatLazers;
+        _unit addPrimaryWeaponItem _LazerAttachment;		// should be used automatically by AI as necessary
+    };
+    private _weaponsecondary = secondaryWeapon _unit;
+    private _compatSecondaryLazers = A3A_rebelLazersCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLazers") then {
+        private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
+        _compatSecondaryLazers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLazersCache set [_weaponsecondary, _compatSecondaryLazers];
+    };
+    if (_compatSecondaryLazers isNotEqualTo []) then {
+        private _LazerAttachment = selectRandom _compatSecondaryLazers;
+        _unit addSecondaryWeaponItem _LazerAttachment;		// should be used automatically by AI as necessary
+    };
+    private _weaponhandgun = handgunWeapon _unit;
+    private _compatHandgunLazers = A3A_rebelLazersCache get _weaponhandgun;
+    if (isNil "_compatHandgunLazers") then {
+        private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
+        _compatHandgunLazers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLazersCache set [_weaponhandgun, _compatHandgunLazers];
+    };
+    if (_compatHandgunLazers isNotEqualTo []) then {
+        private _LazerAttachment = selectRandom _compatHandgunLazers;
+        _unit addHandgunItem _LazerAttachment;		// should be used automatically by AI as necessary
+    };
+} else {
     private _weapon = primaryWeapon _unit;
     private _compatLights = A3A_rebelFlashlightsCache get _weapon;
     if (isNil "_compatLights") then {
@@ -232,6 +301,28 @@ else {
     if (_compatLights isNotEqualTo []) then {
         private _flashlight = selectRandom _compatLights;
         _unit addPrimaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
+    };
+    private _weaponsecondary = secondaryWeapon _unit;
+    private _compatSecondaryLights = A3A_rebelFlashlightsCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLights") then {
+        private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
+        _compatSecondaryLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weaponsecondary, _compatSecondaryLights];
+    };
+    if (_compatSecondaryLights isNotEqualTo []) then {
+        private _flashlight = selectRandom _compatSecondaryLights;
+        _unit addSecondaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
+    };
+    private _weaponhandgun = handgunWeapon _unit;
+    private _compatHandgunLights = A3A_rebelFlashlightsCache get _weaponhandgun;
+    if (isNil "_compatHandgunLights") then {
+        private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
+        _compatHandgunLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weaponhandgun, _compatHandgunLights];
+    };
+    if (_compatHandgunLights isNotEqualTo []) then {
+        private _flashlight = selectRandom _compatHandgunLights;
+        _unit addHandgunItem _flashlight;		// should be used automatically by AI as necessary
     };
 };
 

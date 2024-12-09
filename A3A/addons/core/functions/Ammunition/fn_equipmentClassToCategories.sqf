@@ -120,6 +120,10 @@ call {
         };
     };
 
+    if (_baseCategory isEqualTo "Handguns") exitWith {
+        private _config = configfile >> "CfgWeapons" >> _className;
+    };
+
     if (_basecategory isEqualTo "Vests") exitWith {
         if (getNumber (configfile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor") > 5) then {
             _categories pushBack "ArmoredVests";
