@@ -48,7 +48,7 @@ private _maxThreatDist = distanceForAirAttack + 1000;
 
     private _threat = 10 * count (garrison getVariable [_x, []]);
     if (_markerSide == teamPlayer) then {
-        _threat = _threat + 50 * (count (staticsToSave inAreaArray _x) + count (vehiclesToSave inAreaArray _x));
+        _threat = _threat + 50 * count (staticsToSave inAreaArray _x);
     } else {
         // based on typical static count
         _threat = _threat + call {

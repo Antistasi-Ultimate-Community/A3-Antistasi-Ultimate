@@ -23,11 +23,6 @@ if (isNull _group) then
         staticsToSave = staticsToSave - [_victim];
         publicVariable "staticsToSave";
     };
-    if (_victim in vehiclesToSave) then
-    {
-        vehiclesToSave = vehiclesToSave - [_victim];
-        publicVariable "vehiclesToSave";
-    };
 };
 
 Debug_3("Pausing for %1 minutes before cleaning victim: %2 and group: %3", round cleantime/60, _victim, _group);

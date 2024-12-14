@@ -115,6 +115,15 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 	};
 };
 
+if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
+	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
+	if (_markers isEqualTo []) exitWith {};
+	if !(_typeX isKindOf "StaticMortar") then {
+		[_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+		if (_side == teamPlayer && !isNil {serverInitDone}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
+	};
+};
+
 if (_side == civilian) then {
 	_veh addEventHandler ["HandleDamage",{if (((_this select 1) find "wheel" != -1) and (_this select 4=="") and (!isPlayer driver (_this select 0))) then {0;} else {(_this select 2);};}];
 	

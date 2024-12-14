@@ -153,7 +153,6 @@ if (spawner getVariable _nearX != 2) then {
             isNull leader _group or { leader _group distance getMarkerPos _marker < 20 }
         };
         sleep 10;			// give units some time to get onto marker
-        if !(isNull leader _group) then { [_marker] remoteExec ["A3A_fnc_updateRebelVehicleEmplacements", 2] };
         if !(isNull leader _group) then { [_marker] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
     };
 

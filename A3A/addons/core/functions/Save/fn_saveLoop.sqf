@@ -209,11 +209,6 @@ _arrayEst = [];
 	};
 } forEach staticsToSave;
 
-{
-	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
-		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
-	};
-} forEach vehiclesToSave;
 
 private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
 // ^ Update to include plus related stuff
@@ -249,7 +244,6 @@ _arrayConstructions = [];
 } forEach constructionsToSave;
 ["constructionsX", _arrayConstructions] call A3A_fnc_setStatVariable;
 
-["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 [] call A3A_fnc_arsenalManage;
 
 _jna_dataList = [];

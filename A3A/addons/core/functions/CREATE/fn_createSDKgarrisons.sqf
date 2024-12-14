@@ -14,7 +14,7 @@ _positionX = getMarkerPos (_markerX);
 
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
-if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {
+if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///maaaaaaybe we should save vehicles near ANY friendly marker?
 	if (!(_markerX in citiesX)) then {
 		private _veh = createVehicle [FactionGet(reb,"flag"), _positionX, [],0, "NONE"];
 		_veh setFlagTexture FactionGet(reb,"flagTexture");

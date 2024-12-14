@@ -610,15 +610,16 @@ class aiManagement: SimpleMenuBigger
 			action = "[""mount""] call A3A_fnc_vehStats";
 		};
 
-		class r5Button: SimpleButton
+		/* class r5Button: SimpleButton
 		{
 			idc = -1;
 			text = $STR_antistasi_dialogs_moveout_crew_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.682 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_moveout_crew_tooltip;
-			action = "closeDialog 0; [player,cursorObject] remoteExecCall [""A3A_fnc_vehicleToEmplacement"",2];";
-		};
+			action = "if (player isEqualTo theBoss) then {closeDialog 0; [cursorObject, ""static""] remoteExec [""A3A_fnc_flagAction"", [teamPlayer,civilian], cursorObject];} else {[localize 'STR_antistasi_journal_entry_header_commander_11', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};"; ////need to add a check so doesnt add action twice
+			//[cursorObject, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], cursorObject];
+		}; */
 	};
 };
 
