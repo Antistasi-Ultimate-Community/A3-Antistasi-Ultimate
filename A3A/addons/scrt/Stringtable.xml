@@ -3399,6 +3399,22 @@
                 <Korean>건쉽 지역</Korean>
                 <French>Zone de tirs d'appui feu</French>
             </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAV">
+                <Original>A %1 recon UAV started circling the area</Original>
+                <Russian>БПЛА разведки %1 барражирует над локацией</Russian>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAV_marker">
+                <Original>Recon UAV Area</Original>
+                <Russian>Зона действия БПЛА разведки</Russian>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAVAttack">
+                <Original>A %1 attack UAV started circling the area</Original>
+                <Russian>Ударный БПЛА %1 барражирует над локацией</Russian>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAVAttack_marker">
+                <Original>Attack UAV Area</Original>
+                <Russian>Зона действия ударного БПЛА</Russian>
+            </Key>
             <Key ID="STR_notifiers_SUP_execute_generic">
                 <Original>%1 is executing %2 support now</Original>
                 <Russian>%1 оказывают %2 поддержку</Russian>
@@ -3531,6 +3547,10 @@
                 <Chinesesimp>%1 派出侦察无人机</Chinesesimp>
                 <Korean>%1이(가) 감적무인기를 보내는 중입니다</Korean>
                 <French>%1 envoie un drone de repérage</French>
+            </Key>
+            <Key ID="STR_notifiers_SUP_setup_UAVAttack">
+                <Original>%1 is sending an attack UAV</Original>
+                <Russian>%1 запускают ударный БПЛА</Russian>
             </Key>
             <Key ID="STR_notifiers_SUP_setup_unknown">
                 <Original>%1 is setting up %2 support</Original>
