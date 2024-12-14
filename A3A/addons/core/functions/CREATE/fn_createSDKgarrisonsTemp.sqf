@@ -22,7 +22,6 @@ if (_typeX isEqualType "") then {
 
     private _unit = [_groupX, _typeX, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
     [_unit,_markerX] call A3A_fnc_FIAinitBases;
-    if (_typeX isEqualTo FactionGet(reb,"unitRifle")) then { [_markerX] remoteExec ["A3A_fnc_updateRebelVehicleEmplacements", 2] };
     if (_typeX isEqualTo FactionGet(reb,"unitRifle")) then { [_markerX] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
 
     if (_typeX == FactionGet(reb,"unitCrew")) then {
