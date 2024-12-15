@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 
 if (!isServer) exitWith {};
 
-params ["_vehicle","_position", "_vehicledirection","_moneyCost", "_hrCost", "_commanderNetworkId"];
+params ["_vehicle", "_position", "_vehicledirection","_moneyCost", "_hrCost", "_commanderNetworkId"];
 
 //myGlobalResult = nil;
 

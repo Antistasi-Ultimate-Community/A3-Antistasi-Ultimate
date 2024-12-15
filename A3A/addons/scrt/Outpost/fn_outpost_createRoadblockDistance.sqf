@@ -58,10 +58,15 @@ private _groupXUnits = units _groupX;
 private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh; ////////somehow add commander as well (or maybe even fill the fill all non driver or passenger seats)
+    _crewMan moveInGunner _veh; 
     sleep 1;
     _crewMan lookAt _barricade;
 };
+
+_groupX setBehaviour "AWARE";
+_groupX setCombatMode "YELLOW";
+
+////////somehow add commander as well (or maybe even fill the all non driver or passenger seats)
 
 ["locationSpawned", [_markerX, "RebelRoadblock", true]] call EFUNC(Events,triggerEvent);
 
