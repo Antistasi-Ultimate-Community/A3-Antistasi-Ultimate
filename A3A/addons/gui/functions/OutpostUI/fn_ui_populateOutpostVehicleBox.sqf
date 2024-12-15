@@ -14,7 +14,8 @@ switch (_category) do {
 		private _militaryVehicles = [];
 
 		if (tierWar > 2) then {
-			private _availableVehs = (A3A_faction_reb get 'vehiclesLightArmed') select {_x isNotEqualTo ""};
+			private _availableVehs = 
+				(A3A_faction_reb get 'vehiclesLightArmed') select {_x isNotEqualTo []};
 			_militaryVehicles append _availableVehs;
 		};
 
@@ -42,10 +43,50 @@ switch (_category) do {
 
 		_vehicleClasses = _militaryVehicles;
 	};
+	case "staticMG": {
+		private _militaryVehicles = [];
+		
+		if (tierWar > 2) then {
+			private _availableVehs = (A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
+			_militaryVehicles append _availableVehs;
+		};
+		
+		_vehicleClasses = _militaryVehicles;
+	};
+	case "staticAT": {
+		private _militaryVehicles = [];
+		if (tierWar > 3) then {
+			private _availableVehs = (A3A_faction_reb get 'staticAT') select {_x isNotEqualTo []};
+			_militaryVehicles append _availableVehs;
+		};
+		
+		_vehicleClasses = _militaryVehicles;
+	};
+	case "staticAA": {
+		private _militaryVehicles = [];
+		if (tierWar > 3) then {
+			private _availableVehs = (A3A_faction_reb get 'staticAA') select {_x isNotEqualTo []};
+			_militaryVehicles append _availableVehs;
+		};
+
+		_vehicleClasses = _militaryVehicles;
+	};
 	default {
 		Error_1("Invalid vehicle category, given was %1", _category);
 	};
 };
+
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
+diag_log _vehicleClasses;
 
 {
 	private _vehiclePrice = [_x] call A3A_fnc_vehiclePrice;
