@@ -13423,6 +13423,18 @@
                 <Korean>현재 적재량</Korean>
                 <French>Charge actuelle</French>
             </Key>
+            <Key ID="STR_A3A_GarageOrStore">
+                <Original>Do you want to use vehicle from the garage? Otherwise, you will have to buy it from the store</Original>
+                <Russian>Вы хотите воспользоваться техникой из гаража? В противном случае вам придется приобрести её в магазине</Russian>
+            </Key>
+            <Key ID="STR_A3A_Garage">
+                <Original>Garage</Original>
+                <Russian>Гараж</Russian>
+            </Key>
+            <Key ID="STR_A3A_Store">
+                <Original>Store</Original>
+                <Russian>Магазин</Russian>
+            </Key>
         </Container>
     </Package>
 </Project>

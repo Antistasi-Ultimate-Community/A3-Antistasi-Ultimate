@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 
 if (!isServer) exitWith {};
 
-params ["_position", "_direction", "_moneyCost", "_hrCost", "_commanderNetworkId"];
+params ["_vehicle", "_position", "_turretDirection", "_moneyCost", "_hrCost", "_commanderNetworkId"];
 
 [-_hrCost,-_moneyCost] remoteExec ["A3A_fnc_resourcesFIA",2];
 
@@ -26,8 +26,8 @@ _formatX = A3A_faction_reb get "groupHmgEmpl";
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Post"];
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
-_vehType = (A3A_faction_reb get "vehiclesLightUnarmed") select 0;
+private _vehType = selectRandom (A3A_faction_reb get "vehiclesLightUnarmed");
+_pos = position _road findEmptyPosition [1,30, _vehType];
 _truckX = _vehType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
@@ -71,16 +71,37 @@ switch (true) do {
 		sidesX setVariable [_marker,teamPlayer,true];
 		markersX pushBack _marker;
 		publicVariable "markersX";
-		spawner setVariable [_marker,2,true];
+		spawner setVariable [_marker,2,true]; ///we need to sent selected vehicle with marker to save it and when marker/roadblock spawns it will spawn with selected vehicle(always)
+		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
+		_vehiclecustomazation = curentlySelectedVehicleCustomization;
+		spawner setVariable [format[_marker + "_vehiclecustomazation"], _vehiclecustomazation];
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "n_unknown";
 		_marker setMarkerColor colorTeamPlayer;
 		_marker setMarkerText _textX;
 		_garrison = A3A_faction_reb get "groupHmgEmpl";
 		garrison setVariable [_marker,_garrison,true];
-		staticPositions setVariable [_marker, [_position, _direction], true];
+		staticPositions setVariable [_marker, [_position, _turretDirection], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "hmgemplacement"]] call EFUNC(Events,triggerEvent);
+
+		//find vehicles to remove
+		private _removedVeh = garageCategoryToremoveVehicleFrom deleteAt curentlySelectedVehicleUID;
+		//remove from source registre
+		{
+		  private _index = _x find curentlySelectedVehicleUID;
+		  if (_index != -1) exitWith {
+		    (HR_GRG_Sources#_forEachIndex) deleteAt _index;
+		    [_forEachIndex] call HR_GRG_fnc_declairSources;
+		  };
+		}forEach HR_GRG_Sources;
+
+		///reset stuff used for remove
+		vehicleToOutpost = "";
+		curentlySelectedVehicleUID = 0;
+		garageCategoryToremoveVehicleFrom = [];
+		curentlySelectedVehicleState = [];
+		curentlySelectedVehicleCustomization = [];
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

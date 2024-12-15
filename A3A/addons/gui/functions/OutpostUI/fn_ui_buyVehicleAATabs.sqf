@@ -31,7 +31,7 @@ params[
     ["_params",[]]
 ];
 
-private _display = findDisplay A3A_IDD_BUYVEHICLEROADBLOCKDIALOG;
+private _display = findDisplay A3A_IDD_BUYVEHICLEAADIALOG;
 
 if (_tab isEqualTo "vehicles") then {
     _params params ["_tab", "_selectedTab", "_category"];
@@ -44,17 +44,6 @@ if (_tab isEqualTo "vehicles") then {
     // Add stuff to the buyable vehicles list
     private _buyableVehiclesList = [_category] call A3A_fnc_ui_populateOutpostVehicleBox;
     private _vehiclesControlsGroup = _display displayCtrl _selectedTab;
-
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
 
     private _added = 0;
     {
@@ -108,22 +97,14 @@ if (_tab isEqualTo "vehicles") then {
             curentlySelectedVehicleCustomization = [_onetimevehicle] call BIS_fnc_getVehicleCustomization;
             deleteVehicle _onetimevehicle;
             _pos = myGlobalResult;
-            _vehicledirection = nil;
-            [_pos,_carcar,outpostCost] spawn ///maybe add customazation to spawn
-                { 
-                    _pos = _this select 0;
-                    _carcar = _this select 1;
-                    outpostCost = _this select 2;
-                	private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage;
-                    // Use _result here
-                    if (_result) then {
-                        _vehicledirection = 90;
-                        [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
-                    } else {
-                        _vehicledirection = 0;
-                        [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
-                    };
-                };
+            _turretDirection = turretDirection;
+            [_pos,_carcar,outpostCost, _turretDirection] spawn ///maybe add customazation to spawn
+            { 
+                _pos = _this select 0;
+                _carcar = _this select 1;
+                _turretDirection = _this select 3;
+                [_carcar, _pos, _turretDirection, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
+            };
         }];
         _button ctrlCommit 0;
 
@@ -136,7 +117,7 @@ if (_tab isEqualTo "vehicles") then {
                     private _UIScaleAdjustment = (0.55/getResolution#5);  // I tweaked this on UI Small, so that's why the 0.55 is the base size.
                     private _model = _control getVariable "model";
                     private _className = _control getVariable "className";
-                    private _display = findDisplay A3A_IDD_BUYVEHICLEROADBLOCKDIALOG;  // 11000;
+                    private _display = findDisplay A3A_IDD_BUYVEHICLEAADIALOG;  // 11000;
                     private _objPreview = _display displayCtrl A3A_IDC_BUYOBJECTRENDER;  // 9303;
                     _objPreview ctrlSetModel _model;
                     private _boundingDiameter = [_className] call FUNC(sizeOf);
@@ -164,7 +145,7 @@ if (_tab isEqualTo "vehicles") then {
                 params ["_control"];
                 if (true || isNil "Dev_GUI_prevInjectExit") then {
                     params ["_control"];
-                    private _display = findDisplay A3A_IDD_BUYVEHICLEROADBLOCKDIALOG;  // 11000;
+                    private _display = findDisplay A3A_IDD_BUYVEHICLEAADIALOG;  // 11000;
                     private _objPreview = _display displayCtrl A3A_IDC_BUYOBJECTRENDER;  // 9303;
 
                     private _editorPreviewPicture = ctrlParentControlsGroup _control controlsGroupCtrl A3A_IDC_BUYVEHICLEPREVIEW;  // 9304;

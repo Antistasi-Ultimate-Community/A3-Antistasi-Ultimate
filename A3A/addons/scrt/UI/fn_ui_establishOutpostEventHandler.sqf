@@ -12,8 +12,8 @@ if(_mode == "ADD") then {
             playSound "readoutClick";
 
             myGlobalResult = _pos;
-            _outpostCostmoney = outpostCost select 0; 
-            _outpostCosthr = outpostCost select 1;
+            outpostCostmoney = outpostCost select 0; 
+            outpostCosthr = outpostCost select 1;
 
             if (outpostType == "WATCHPOST" && {isOnRoad _pos}) exitWith {
                 [
@@ -53,7 +53,7 @@ if(_mode == "ADD") then {
                     myGlobalResult = _this select 0;
                     _outpostCostmoney = _this select 1;
                     _outpostCosthr = _this select 2;
-                	private _result = [(format["Do you want to use vehicle from the garage? Otherwise, you will have to buy it from the store"]), "Confirm", true, true] call BIS_fnc_guiMessage;
+                	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage;
                 	// Use _result here
                     if (_result) then {
                         createDialog "A3A_VehiclesFromGarageDisplay";
@@ -92,17 +92,65 @@ if(_mode == "ADD") then {
                 outpostDirection setMarkerTypeLocal "hd_dot";
                 outpostDirection setMarkerTextLocal format [localize "STR_marker_outpost_direction", outpostType];
 
-                private _direction = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
+                turretDirection = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
 
                 switch (outpostType) do {
                     case "AA": {
-                        [(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
+                        //[(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
+                        ///
+                        [myGlobalResult, outpostCostmoney, outpostCosthr, turretDirection] spawn
+                        { 
+                            myGlobalResult = _this select 0;
+                            outpostCostmoney = _this select 1;
+                            outpostCosthr = _this select 2;
+                            turretDirection = _this select 3;
+                        	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage;
+                        	// Use _result here
+                            if (_result) then {
+                                createDialog "A3A_StaticAAFromGarageDisplay";
+                            } else {
+                                createDialog "A3A_BuyVehicleAADialog";
+                            };
+                        };
+                        ///
                     };
                     case "AT": {
-                        [(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2];
+                        //[(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
+                        ///
+                        [myGlobalResult, outpostCostmoney, outpostCosthr, turretDirection] spawn
+                        { 
+                            myGlobalResult = _this select 0;
+                            outpostCostmoney = _this select 1;
+                            outpostCosthr = _this select 2;
+                            turretDirection = _this select 3;
+                        	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage;
+                        	// Use _result here
+                            if (_result) then {
+                                createDialog "A3A_StaticATFromGarageDisplay";
+                            } else {
+                                createDialog "A3A_BuyVehicleATDialog";
+                            };
+                        };
+                        ///
                     };
                     case "HMG": {
-                        [(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2];
+                        //[(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
+                        ///
+                        [myGlobalResult, outpostCostmoney, outpostCosthr, turretDirection] spawn
+                        { 
+                            myGlobalResult = _this select 0;
+                            outpostCostmoney = _this select 1;
+                            outpostCosthr = _this select 2;
+                            turretDirection = _this select 3;
+                        	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage;
+                        	// Use _result here
+                            if (_result) then {
+                                createDialog "A3A_StaticMGFromGarageDisplay";
+                            } else {
+                                createDialog "A3A_BuyVehicleMGDialog";
+                            };
+                        };
+                        ///
                     };
                     default {
                         Error("Bad outpost type.");

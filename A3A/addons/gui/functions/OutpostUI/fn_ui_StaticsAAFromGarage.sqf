@@ -66,22 +66,7 @@ _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 // Получение списка доступных транспортных средств
 switch (_categoty) do 
 {
-    case ("light"): {
-        {  
-            _y params ["_displayName", "_class", "_lockedUID", "_checkedOut", "", ["_lockName", ""],"_stateData", "_customisation"];
-            private _UID = _x;
-            private _displayName = _displayName;
-            private _index = _vehicleListBox lbAdd _displayName;
-            _vehicleListBox lbSetData [_index, "[" + str _x + "," + str _y + "]" ];
-            _vehicleListBox lbSetValue [_index, _x];
-            _vehicleListBox lbSetPicture [_index, cfgIcon(_class)];
-            _vehicleListBox lbSetPictureColor [_index, [1, 1, 1, 1]];
-            _vehicleListBox lbSetPictureColorSelected [_index, [0.85, 0.85, 0.55, 1]];
-            _vehicleListBox lbSetPictureRightColorSelected [_index, [0.85,0.85,0.55,1]];
-            garageCategoryToremoveVehicleFrom = HR_GRG_Vehicles#0;
-        } forEach (HR_GRG_Vehicles#0);
-    };
-    case ("heavy"): {
+    case ("Static"): {
         {
             _y params ["_displayName", "_class", "_lockedUID", "_checkedOut", "", ["_lockName", ""],"_stateData", "_customisation"];
             private _UID = _x;
@@ -94,7 +79,7 @@ switch (_categoty) do
             _vehicleListBox lbSetPictureColorSelected [_index, [0.85, 0.85, 0.55, 1]];
             _vehicleListBox lbSetPictureRightColorSelected [_index, [0.85,0.85,0.55,1]];
             garageCategoryToremoveVehicleFrom = HR_GRG_Vehicles#1;
-        } forEach (HR_GRG_Vehicles#1);
+        } forEach (HR_GRG_Vehicles#4);
     };
 };
 
@@ -287,14 +272,15 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
             _pos = _this select 0;
             _carcar = _this select 1;
             outpostCost = _this select 2;
+            _turretDirection = turretDirection;
             diag_log outpostCost;
-            private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage;
-            if (_result) then {
-                _vehicledirection = 90;
-                [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
-            } else {
-                _vehicledirection = 0;
-                [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+            [_pos, _carcar, outpostCost, _turretDirection] spawn ///maybe add customazation to spawn
+            { 
+                _pos = _this select 0;
+                _carcar = _this select 1;
+                outpostCost = _this select 2;
+                _turretDirection = _this select 3;
+                [_carcar, _pos, _turretDirection, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
             };
         };
 }];

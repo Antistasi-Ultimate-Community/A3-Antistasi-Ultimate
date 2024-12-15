@@ -239,16 +239,25 @@ private _processFIAMarker = {
                     private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
                     private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
                     private _vehicledirection = spawner getVariable [(_marker + "_vehicledirection"), ObjNull];
-                    [[_marker,_markerVehicle,_markerVehicleCustomazation,_vehicledirection],"SCRT_fnc_outpost_createRoadblockDistance"] call A3A_fnc_scheduler;
+                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createRoadblockDistance"] call A3A_fnc_scheduler;
                 };
                 case (_marker in aapostsFIA): {
-                    [[_marker],"SCRT_fnc_outpost_createAaDistance"] call A3A_fnc_scheduler;
+                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
+                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
+                    private _vehicledirection = spawner getVariable [(_marker + "_vehicledirection"), ObjNull];
+                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createAaDistance"] call A3A_fnc_scheduler;
                 };
                 case (_marker in atpostsFIA): {
-                    [[_marker],"SCRT_fnc_outpost_createAtDistance"] call A3A_fnc_scheduler;
+                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
+                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
+                    private _vehicledirection = spawner getVariable [(_marker + "_vehicledirection"), ObjNull];
+                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createAtDistance"] call A3A_fnc_scheduler;
                 };
                 case (_marker in hmgpostsFIA): {
-                    [[_marker],"SCRT_fnc_outpost_createHmgDistance"] call A3A_fnc_scheduler;
+                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
+                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
+                    private _vehicledirection = spawner getVariable [(_marker + "_vehicledirection"), ObjNull];
+                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createHmgDistance"] call A3A_fnc_scheduler;
                 };
 
                 case !(_marker in controlsX): {

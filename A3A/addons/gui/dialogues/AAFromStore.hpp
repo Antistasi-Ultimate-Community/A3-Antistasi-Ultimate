@@ -1,8 +1,8 @@
 class A3A_BuyVehicleAADialog : A3A_TabbedDialog
 {
-  idd = A3A_IDD_BUYVEHICLEDIALOG;
-  onLoad = "['onLoad'] spawn A3A_fnc_buyVehicleDialog";
-  onUnload = "['onUnload'] spawn A3A_fnc_buyVehicleDialog";
+  idd = A3A_IDD_BUYVEHICLEAADIALOG;
+  onLoad = "['onLoadAA'] spawn A3A_fnc_ui_outpostStaticFromStoreDialog";
+  onUnload = "['onUnload'] spawn A3A_fnc_ui_outpostStaticFromStoreDialog";
 
     class Controls
     {
@@ -10,86 +10,57 @@ class A3A_BuyVehicleAADialog : A3A_TabbedDialog
         {
             idc = -1;
             text = $STR_antistasi_dialogs_buy_vehicle_titlebar;
-            x = DIALOG_X;
-            y = DIALOG_Y - 10 * GRID_H;
+            x = -36 * GRID_W;
+            y = DIALOG_Y - 40 * GRID_H;
             w = DIALOG_W * GRID_W;
             h = 5 * GRID_H;
         };
 
         class TipText : A3A_TitlebarText
         {
-          idc = -1;
-          text = $STR_antistasi_dialogs_war_level_tip;
-          font = A3A_NOTIFICATION_FONT;
-          x = DIALOG_X;
-          y = DIALOG_Y - 1 * GRID_H;
-          w = DIALOG_W * GRID_W;
-          h = 5 * GRID_H;
+            idc = -1;
+            text = $STR_antistasi_dialogs_war_level_tip;
+            font = A3A_NOTIFICATION_FONT;
+            x = -36 * GRID_W;
+            y = DIALOG_Y - 31 * GRID_H;
+            w = DIALOG_W * GRID_W;
+            h = 5 * GRID_H;
         };
     
         class TabButtons : A3A_ControlsGroupNoScrollbars
         {
             idc = A3A_IDC_MAINDIALOGTABBUTTONS;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
+            x = -36 * GRID_W;
+            y = DIALOG_Y - 35 * GRID_H;
             w = DIALOG_W * GRID_W;
             h = 5 * GRID_H;
 
             class Controls
             {
-                class rebelVehicleTabButton : A3A_Button ///rebels vehicle aa
+                class aaStaticsTabButton : A3A_Button
                 {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_vehicle_tab_reb;
-                    onButtonClick = "[""switchTab"", [""rebel""]] call A3A_fnc_buyVehicleDialog";
-                    x = 30 * GRID_W;
+                    text = $STR_antistasi_dialogs_outpost_tab_staticAA;
+                    onButtonClick = "[""switchTabAA"", [""staticAA""]] call A3A_fnc_ui_outpostStaticFromStoreDialog";
+                    x = 0 * GRID_W;
                     y = 0;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-
-                class staticsTabButton : A3A_Button ///rebels static aa
-                {
-                    idc = -1;
-                    text = $STR_antistasi_dialogs_vehicle_tab_static;
-                    onButtonClick = "[""switchTab"", [""static""]] call A3A_fnc_buyVehicleDialog";
-                    x = 60 * GRID_W;
-                    y = 0;
-                    w = 30 * GRID_W;
+                    w = 160 * GRID_W;
                     h = 5 * GRID_H;
                 };
             };
         };
 
         // Main content
-        class civilianVehicleTab : A3A_DefaultControlsGroup ///rebels vehicle aa
+        class  aaStaticsTab : A3A_DefaultControlsGroup
         {
-            idc = A3A_IDC_BUYCIVVEHICLEMAIN;
+            idc = A3A_IDC_AASTATICMAIN;
             show = false;
 
             class Controls
             {
                 class VehiclesControlsGroup : A3A_ControlsGroupNoHScrollbars
                 {
-                    idc = A3A_IDC_CIVVEHICLESGROUP;
-                    x = 0;
-                    y = 4 * GRID_H;
-                    w = PX_W(DIALOG_W);
-                    h = PX_H(DIALOG_H) - 8 * GRID_H;
-                };
-            };
-        };
-
-        class staticsTab : A3A_DefaultControlsGroup ///rebels static aa
-        {
-            idc = A3A_IDC_BUYSTATICMAIN;
-            show = false;
-
-            class Controls
-            {
-                class VehiclesControlsGroup : A3A_ControlsGroupNoHScrollbars
-                {
-                    idc = A3A_IDC_STATICSGROUP;
+                    idc = A3A_IDC_AASTATICGROUP;
                     x = 0;
                     y = 4 * GRID_H;
                     w = PX_W(DIALOG_W);

@@ -3536,6 +3536,58 @@
                 <Portuguese>Posiçao selecionada nao pode estar fora do mapa</Portuguese>
                 <Chinesesimp>所选位置不能位于地图外</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_crew">
+                <Original>Crew</Original>
+                <Russian>Экипаж</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_weapons">
+                <Original>Weapons</Original>
+                <Russian>Вооружение</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_camo">
+                <Original>Camouflage</Original>
+                <Russian>Камуфляж</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_animations">
+                <Original>Animations</Original>
+                <Russian>Анимации</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_parallel">
+                <Original>Do you want vehicle to be parallel to the road?</Original>
+                <Russian>Вы хотите, чтобы техника располагалась параллельно дороге?</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_outpost_tab_lightarmed">
+                <Original>Light armed</Original>
+                <Russian>Техника с лёгким вооружением</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_outpost_tab_AT">
+                <Original>AT vehicles</Original>
+                <Russian>Техника с противотанковым вооружением</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_outpost_tab_AA">
+                <Original>AA vehicles</Original>
+                <Russian>Техника с противоздушным вооружением</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_outpost_tab_staticMG">
+                <Original>MG statics</Original>
+                <Russian>Турели с пулемётами</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_outpost_tab_staticAT">
+                <Original>AT statics</Original>
+                <Russian>Противотанковые турели</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_outpost_tab_staticAA">
+                <Original>AA statics</Original>
+                <Russian>Противовоздушные турели</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_garage_light">
+                <Original>Light vehicles</Original>
+                <Russian>Лёгкая техника</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_garage_heavy">
+                <Original>Heavy vehicles</Original>
+                <Russian>Тяжёлая техника</Russian>
+            </Key>
         </Container>
     </Package>
 </Project>

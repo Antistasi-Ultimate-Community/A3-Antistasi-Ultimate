@@ -153,8 +153,6 @@ switch (_category) do {
 			_statics append _availableVehs;
 		};
 
-		(A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
-
 		if (tierWar > 3) then {
 			private _availableVehs = 
 				(A3A_faction_reb get 'staticAT') +
@@ -178,7 +176,6 @@ switch (_category) do {
 			private _availableVehs = (A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
 			_statics append _availableVehs;
 		};
-		(A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
 		_vehicleClasses = _statics;
 	};
 	case "staticAT": {

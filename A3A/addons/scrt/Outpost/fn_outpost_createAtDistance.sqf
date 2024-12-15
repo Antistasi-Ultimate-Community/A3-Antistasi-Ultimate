@@ -1,14 +1,16 @@
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-params ["_markerX"];
+params ["_markerX", "_vehicleX", "_vehiclecustomazationX"];
 
 if (!isServer and hasInterface) exitWith {};
 
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-private _atClass = selectRandom (A3A_faction_reb get "staticAT");
+/* private _atClass = selectRandom (A3A_faction_reb get "staticAT");
+private _atClass = [_vehicleX];
+private _atClass = _atClass getOrDefault [_atClass select 0,_typeVehX]; */
 
 private _props = [];
 
@@ -35,11 +37,13 @@ private _staticPositionInfo = staticPositions getVariable [_markerX, []];
 if (!(_staticPositionInfo isEqualTo [])) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
-    _veh = createVehicle [_atClass, _positionX, [], 0, "CAN_COLLIDE"];
+    _veh = createVehicle [_vehicleX, _positionX, [], 0, "CAN_COLLIDE"];
+    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
     _veh setPosATL _staticPosition;
     _veh setDir _staticDirection;
 } else {
-    _veh = _atClass createVehicle _positionX;
+    _veh = _vehicleX createVehicle _positionX;
+    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
 };
 
 _veh lock 3;
@@ -55,7 +59,7 @@ _groupXUnits apply { [_x,_markerX] spawn A3A_fnc_FIAinitBases; };
 private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh;
+    _crewMan moveInGunner _veh; ////////somehow add commander as well (or maybe even fill the fill all non driver or passenger seats)
 };
 
 _groupX setBehaviour "AWARE";
