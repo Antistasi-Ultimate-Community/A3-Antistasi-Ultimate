@@ -10,8 +10,8 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
         {
             idc = -1;
             text = $STR_antistasi_dialogs_buy_vehicle_titlebar;
-            x = DIALOG_X;
-            y = DIALOG_Y - 10 * GRID_H;
+            x = -36 * GRID_W;
+            y = DIALOG_Y - 40 * GRID_H;
             w = DIALOG_W * GRID_W;
             h = 5 * GRID_H;
         };
@@ -21,8 +21,8 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
           idc = -1;
           text = $STR_antistasi_dialogs_war_level_tip;
           font = A3A_NOTIFICATION_FONT;
-          x = DIALOG_X;
-          y = DIALOG_Y - 1 * GRID_H;
+          x = -36 * GRID_W;
+          y = DIALOG_Y - 31 * GRID_H;
           w = DIALOG_W * GRID_W;
           h = 5 * GRID_H;
         };
@@ -30,8 +30,8 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
         class TabButtons : A3A_ControlsGroupNoScrollbars
         {
             idc = A3A_IDC_MAINDIALOGTABBUTTONS;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
+            x = -36 * GRID_W;
+            y = DIALOG_Y - 35 * GRID_H;
             w = DIALOG_W * GRID_W;
             h = 5 * GRID_H;
 
@@ -40,33 +40,33 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
                 class rebelLightarmedVehiclesVehicleTabButton : A3A_Button ///rebels light armed
                 {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_vehicle_tab_reb;
-                    onButtonClick = "[""switchTab"", [""light""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
+                    text = $STR_antistasi_dialogs_outpost_tab_lightarmed;
+                    onButtonClick = "[""switchTab"", [""lightarmed""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
                     x = 0 * GRID_W;
                     y = 0;
-                    w = 40 * GRID_W;
+                    w = 54 * GRID_W;
                     h = 5 * GRID_H;
                 };
 
                 class rebelsATVehiclesTabButton : A3A_Button //rebels vehicle at
                 {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_vehicle_tab_static;
+                    text = $STR_antistasi_dialogs_outpost_tab_AT;
                     onButtonClick = "[""switchTab"", [""AT""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
-                    x = 60 * GRID_W;
+                    x = 54 * GRID_W;
                     y = 0;
-                    w = 40 * GRID_W;
+                    w = 54 * GRID_W;
                     h = 5 * GRID_H;
                 };
 
 				class rebelsAAVehiclesTabButton : A3A_Button //rebels vehicle aa
                 {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_vehicle_tab_static;
+                    text = $STR_antistasi_dialogs_outpost_tab_AA;
                     onButtonClick = "[""switchTab"", [""AA""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
-                    x = 90 * GRID_W;
+                    x = 108 * GRID_W;
                     y = 0;
-                    w = 40 * GRID_W;
+                    w = 54 * GRID_W;
                     h = 5 * GRID_H;
                 };
             };

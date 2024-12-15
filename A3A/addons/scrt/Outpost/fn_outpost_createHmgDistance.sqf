@@ -2,15 +2,16 @@
 FIX_LINE_NUMBERS()
 
 params ["_markerX", "_vehicleX", "_vehiclecustomazationX"];
+params ["_markerX", "_vehicleX", "_vehiclecustomazationX"];
 
 if (!isServer and hasInterface) exitWith {};
 
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-if (_vehicleX isEqualTo objNull) then {
-    _vehicleX = (A3A_faction_reb get "staticMGs") select 0;
-};
+/* private _mgClass = (A3A_faction_reb get "staticMGs") # 0;
+private _mgClass = [_vehicleX];
+private _mgClass = _mgClass getOrDefault [_mgClass select 0,_typeVehX]; */
 
 private _props = [];
 
@@ -38,15 +39,11 @@ if (!(_staticPositionInfo isEqualTo [])) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
     _veh = createVehicle [_vehicleX, _positionX, [], 0, "CAN_COLLIDE"];
-    if !(_vehiclecustomazationX isEqualTo objNull) then {
-        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
-    };
+    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
     _veh setPosATL _staticPosition;
 } else {
     _veh = _vehicleX createVehicle _positionX;
-    if !(_vehiclecustomazationX isEqualTo objNull) then {
-        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
-    };
+    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
 };
 
 _veh lock 3;
@@ -63,45 +60,8 @@ private _riflemanType = A3A_faction_reb get "unitRifle";
 private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    
-    // Назначение наводчика
-    if (isNull gunner _veh) then {
-        _crewMan assignAsGunner _veh;
-        _crewMan moveInGunner _veh;
-        [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
-    };
-    
-    // Исправленный поиск командира
-    private _commanderIndex = -1;
-    for "_i" from (_crewManIndex + 1) to (count _groupXUnits - 1) do {
-        private _unit = _groupXUnits select _i;
-        if ((_unit getVariable "unitType") == _riflemanType && isNull objectParent _unit) exitWith {
-            _commanderIndex = _i;
-        };
-    };
-    
-    if (_commanderIndex != -1 && (_veh emptyPositions "Commander") > 0) then {
-        private _commander = _groupXUnits select _commanderIndex;
-        _commander assignAsCommander _veh;
-        _commander moveInCommander _veh;
-    };
-
-    // Заполнение турелей
-    private _turrets = allTurrets _veh;
-    {
-        if (isNull (_veh turretUnit _x)) then {
-            private _turretIndex = _groupXUnits findIf {
-                (_x getVariable "unitType") == _riflemanType && 
-                isNull objectParent _x
-            };
-            if (_turretIndex != -1) then {
-                //private _unit = _groupXUnits select _turretIndex;
-                private _unit = [_groupX, A3A_faction_reb get "unitRifle", _positionX, [], 10] call A3A_fnc_createUnit;
-                _unit assignAsTurret [_veh, _x];
-                _unit moveInTurret [_veh, _x];
-            };
-        };
-    } forEach _turrets;
+    _crewMan moveInGunner _veh; ////////somehow add commander as well (or maybe even fill the fill all non driver or passenger seats)
+    [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
 };
 
 _groupX setBehaviour "AWARE";

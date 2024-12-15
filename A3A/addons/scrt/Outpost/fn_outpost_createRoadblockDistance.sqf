@@ -60,7 +60,7 @@ private _riflemanType = A3A_faction_reb get "unitRifle";
 private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == _riflemanType};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh; ////////somehow add commander as well (or maybe even fill the fill all non driver or passenger seats)
+    _crewMan moveInGunner _veh; 
     sleep 1;
     _crewMan lookAt _barricade;
 };
