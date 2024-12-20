@@ -11,6 +11,19 @@ class CfgVehicles
     class B_Heli_light_03_unarmed_RF;
     class Heli_EC_01_base_RF;
 
+    class Aegis_B_ION_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        textureList[] ={ION,1,"Black",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        class Turrets: Turrets
+        {
+            class MainTurret: MainTurret
+            {
+                magazines[] = {"1000Rnd_762x51_Belt_Red", "1000Rnd_762x51_Belt_Red", "1000Rnd_762x51_Belt_Red"};
+            };
+        };
+    };
+
     class a3a_black_Pickup_rf : C_Pickup_rf
     {
         textureList[] = {};
