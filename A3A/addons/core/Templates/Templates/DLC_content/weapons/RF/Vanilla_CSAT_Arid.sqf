@@ -50,3 +50,9 @@
 ];
 (_policeLoadoutData get "sidearms") append ["hgun_Glock19_RF"];
 
+(_loadoutData get "lightATLaunchers") append [
+    ["launch_PSRL1_black_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_sand_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_black_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_sand_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""]
+];

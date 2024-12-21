@@ -60,6 +60,50 @@
 			ITEM(hgun_DEagle_classic_RF, 600, PISTOL_STOCK);
 			ITEM(hgun_DEagle_copper_RF, 600, PISTOL_STOCK);
 			ITEM(hgun_DEagle_gold_RF, 600, PISTOL_STOCK);
+			ITEM(hgun_DEagle_camo_RF, 600, PISTOL_STOCK);
+		};
+
+		class launchersRF
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_RF", localize "STR_A3AU_launchers"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
+
+			ITEM(launch_PSRL1_geo_RF, 1100, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_olive_RF, 1100, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_sand_RF, 1100, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_digi_RF, 1100, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_black_RF, 1100, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_PWS_geo_RF, 1250, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_PWS_olive_RF, 1250, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_PWS_sand_RF, 1250, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_PWS_digi_RF, 1250, LAUNCHER_STOCK);
+			ITEM(launch_PSRL1_PWS_black_RF, 1250, LAUNCHER_STOCK);
+		};
+
+		class launcherMagazinesRF
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_RF", localize "STR_A3AU_launcherAmmo"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
+
+			class PSRL1_AT_RF {
+				price = 300;
+				stock = 20;
+			};
+
+			class PSRL1_HE_RF {
+				price = 300;
+				stock = 20;
+			};
+			class PSRL1_HEAT_RF {
+				price = 300;
+				stock = 20;
+			};
+
+			class PSRL1_FRAG_RF {
+				price = 200;
+				stock = 20;
+			};
+
 		};
 
 		class navigationRF
@@ -279,6 +323,7 @@
 			ITEM(V_TacVest_rig_blk_RF, 700, MISC_STOCK);
 			ITEM(V_TacVest_rig_khk_RF, 700, MISC_STOCK);
 			ITEM(V_TacVest_rig_oli_RF, 700, MISC_STOCK);
+			ITEM(V_TacVest_gen_holster_RF, 700, MISC_STOCK);
 
 			ITEM(U_C_PilotJacket_black_RF, 1000, MISC_STOCK);
 			ITEM(U_C_PilotJacket_open_black_RF, 1000, MISC_STOCK);

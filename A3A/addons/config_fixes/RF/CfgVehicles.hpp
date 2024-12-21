@@ -10,18 +10,76 @@ class CfgVehicles
     class Heli_light_03_base_F;
     class B_Heli_light_03_unarmed_RF;
     class Heli_EC_01_base_RF;
+    class Pickup_01_minigun_base_rf;
 
-    class Aegis_B_ION_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    class AU_B_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
     {
-        textureList[] ={ION,1,"Black",1};
+        scope = 2;
+        faction = "BLU_F";
+        side = 1;
+        textureList[] ={"NATO",1};
         animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
-        class Turrets: Turrets
-        {
-            class MainTurret: MainTurret
-            {
-                magazines[] = {"1000Rnd_762x51_Belt_Red", "1000Rnd_762x51_Belt_Red", "1000Rnd_762x51_Belt_Red"};
-            };
-        };
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_B_Pickup_Minigun_RF.jpg);
+    };
+
+    class AU_B_T_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        scope = 2;
+        faction = "BLU_T_F";
+        side = 1;
+        textureList[] ={"NATO_P",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_B_T_Pickup_Minigun_RF.jpg);
+    };
+
+    class AU_O_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        scope = 2;
+        faction = "OPF_F";
+        side = 0;
+        textureList[] ={"CSAT",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_O_Pickup_Minigun_RF.jpg);
+    };
+
+    class AU_O_T_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        scope = 2;
+        faction = "OPF_T_F";
+        side = 0;
+        textureList[] ={"CSAT_Pacific",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_O_T_Pickup_Minigun_RF.jpg);
+    };
+
+    class AU_I_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        scope = 2;
+        faction = "IND_F";
+        side = 2;
+        textureList[] ={"AAF",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_I_Pickup_Minigun_RF.jpg);
+    };
+
+    class AU_I_E_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        scope = 2;
+        faction = "IND_E_F";
+        side = 2;
+        textureList[] ={"EAF",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_I_E_Pickup_Minigun_RF.jpg);
+    };
+
+    class AU_I_G_Pickup_Minigun_RF: Pickup_01_minigun_base_rf
+    {
+        scope = 2;
+        faction = "IND_G_F";
+        side = 2;
+        textureList[] ={"Black",1};
+        animationList[] = {"hide_bullbar", 0.5, "hide_snorkel", 0.5, "hide_trunk_door", 0, "hide_sidesteps", 0, "hide_frame", 1, "hide_box", 0, "hide_box_door", 0};
+        editorPreview = QPATHTOFOLDER(Pictures\vehicles\AU_I_G_Pickup_Minigun_RF.jpg);
     };
 
     class a3a_black_Pickup_rf : C_Pickup_rf
@@ -251,6 +309,4 @@ class CfgVehicles
         textureList[] = {};
         hiddenSelectionsTextures[] = {"\lxRF\air_rf\heli_medium_ec\data\as332_exterior_34_dark_co.paa","\lxRF\air_rf\heli_medium_ec\data\as332_int_cargo_light_co.paa","#(rgb,1024,1024,1)ui('lxRF_MFDMinimap','lxRF_MFDMinimap')","\lxRF\air_rf\heli_medium_ec\data\as332_adds_34_dark_co.paa","\lxRF\air_rf\heli_medium_ec\data\as332_exterior_34_dark_co.paa","\lxRF\air_rf\heli_medium_ec\data\as332_int_cargo_light_co.paa"};
     };
-
-
 };

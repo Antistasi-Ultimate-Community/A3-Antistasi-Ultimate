@@ -44,3 +44,4 @@ if (_hasApex) then {
 	];
 };
 
+(_policeLoadoutData get "vests") pushBack "V_TacVest_gen_holster_RF";

@@ -11,7 +11,7 @@
 (_militiaLoadoutData get "helmets") pushBack "H_HelmetB_plain_sb_tna_RF";
 (_militiaLoadoutData get "Hvests") append ["V_TacVest_rig_oli_RF","V_TacVest_rig_blk_RF"];
 
-
+(_policeLoadoutData get "vests") pushBack "V_TacVest_gen_holster_RF";
 
 
 

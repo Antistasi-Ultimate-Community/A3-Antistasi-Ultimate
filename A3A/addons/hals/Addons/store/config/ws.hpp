@@ -6,18 +6,26 @@
 			ITEM(arifle_XMS_Base_lxWS, 700, RIFLE_STOCK);
 			ITEM(arifle_XMS_Base_khk_lxWS, 700, RIFLE_STOCK);
 			ITEM(arifle_XMS_Base_Sand_lxWS, 700, RIFLE_STOCK);
+			ITEM(arifle_XMS_Camo_lxWS, 700, RIFLE_STOCK);
+			ITEM(arifle_XMS_Gray_lxWS, 700, RIFLE_STOCK);
 			
 			ITEM(arifle_XMS_Shot_lxWS, 800, RIFLE_STOCK);
 			ITEM(arifle_XMS_Shot_khk_lxWS, 800, RIFLE_STOCK);
 			ITEM(arifle_XMS_Shot_Sand_lxWS, 800, RIFLE_STOCK);
+			ITEM(arifle_XMS_Shot_Camo_lxWS, 800, RIFLE_STOCK);
+			ITEM(arifle_XMS_Shot_Gray_lxWS, 800, RIFLE_STOCK);
 
 			ITEM(arifle_XMS_M_lxWS, 900, RIFLE_STOCK);
 			ITEM(arifle_XMS_M_khk_lxWS, 900, RIFLE_STOCK);
 			ITEM(arifle_XMS_M_Sand_lxWS, 900, RIFLE_STOCK);
+			ITEM(arifle_XMS_M_Camo_lxWS, 900, RIFLE_STOCK);
+			ITEM(arifle_XMS_M_Gray_lxWS, 900, RIFLE_STOCK);
 
 			ITEM(arifle_XMS_GL_lxWS, 1050, RIFLE_STOCK);
 			ITEM(arifle_XMS_GL_khk_lxWS, 1050, RIFLE_STOCK);
 			ITEM(arifle_XMS_GL_Sand_lxWS, 1050, RIFLE_STOCK);
+			ITEM(arifle_XMS_GL_Camo_lxWS, 1050, RIFLE_STOCK);
+			ITEM(arifle_XMS_GL_Gray_lxWS, 1050, RIFLE_STOCK);
 
 			ITEM(arifle_Galat_lxWS, 1500, RIFLE_STOCK);
 			ITEM(arifle_Galat_worn_lxWS, 1400, RIFLE_STOCK);
@@ -272,6 +280,15 @@
 				stock = 100;
 			};
 
+			class optic_ACO_grn_camo_lxWS {
+				price = 150;
+				stock = 100;
+			};
+			class optic_ACO_camo_lxWS {
+				price = 150;
+				stock = 100;
+			};
+
 			class optic_Holosight_snake_lxWS {
 				price = 250;
 				stock = 100;
@@ -388,4 +405,5 @@
 			ITEM(B_G_FIA_UavTerminal_lxWS, 800, MISC_STOCK);
 			ITEM(B_Tura_UavTerminal_lxWS, 800, MISC_STOCK);
 
+			ITEM(ItemMotionSensor_lxWS, 800, MISC_STOCK);
 		};

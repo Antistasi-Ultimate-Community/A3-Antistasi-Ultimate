@@ -15,4 +15,5 @@
 ["B_T_LSV_01_unarmed_F", ["Black", 0.3, "Olive", 0.5, "Dazzle", 0.2]],
 ["B_T_LSV_01_AT_F", ["Black", 0.3, "Olive", 0.5, "Dazzle", 0.2]],
 ["a3a_Offroad_02_LMG_black_F", ["Black", 0.3, "Olive", 0.7]],
-["I_C_Offroad_02_unarmed_F", ["Black", 0.3, "Olive", 0.7]]
+["I_C_Offroad_02_unarmed_F", ["Black", 0.3, "Olive", 0.7]],
+["B_ION_Pickup_rcws_rf",["NATO_P",1]]

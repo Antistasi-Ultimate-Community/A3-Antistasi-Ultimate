@@ -56,49 +56,44 @@ _militaryRifleOptics append ["optic_VRCO_RF", 2.5];
 //////////////////////////////////////////////////////
 _rfSFDeagleOptics = ["optic_VRCO_pistol_RF", 8, "optic_rds_RF", 2]; // Better than making variants of each Deagle with different Optics and separately balancing their weights.
 (_sfLoadoutData get "sidearms") append [
-    ["hgun_Glock19_Tan_RF", "muzzle_snds_L", "acc_flashlight_IR_pistol_RF", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""], 2.5,
-    ["hgun_Glock19_auto_Tan_RF", "muzzle_snds_L", "acc_flashlight_IR_pistol_RF", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF","65Rnd_9x19_Mag_RF"], [], ""], 7.5,
-    ["hgun_DEagle_RF", "", "", _rfSFDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 5, 
-    ["hgun_DEagle_classic_RF", "", "", _rfSFDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 2,
-    ["hgun_DEagle_copper_RF", "", "", _rfSFDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.5,
-    ["hgun_DEagle_bronze_RF", "", "", _rfSFDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 1,
-    ["hgun_DEagle_camo_RF", "", "", _rfSFDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.5,
-    ["hgun_DEagle_gold_RF", "", "", _rfSFDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.25
-    // SpecOps use the Deagle enough where it appears as frequently as other sidearms.
+    ["hgun_Glock19_Tan_RF", "muzzle_snds_L", "acc_flashlight_IR_pistol_RF", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""],
+    ["hgun_Glock19_auto_Tan_RF", "muzzle_snds_L", "acc_flashlight_IR_pistol_RF", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF","65Rnd_9x19_Mag_RF"], [], ""],
+    ["hgun_DEagle_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_classic_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_copper_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_camo_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""]
 ];
-_rfEliteDeagleOptics = ["optic_VRCO_pistol_RF", 6, "optic_rds_RF", 4];
-_rfEliteGlockOptics = ["optic_MRD_tan_RF", 3, "", 1];
 (_eliteLoadoutData get "sidearms") append [
-    ["hgun_Glock19_Tan_RF", "", "acc_flashlight_IR_pistol_RF", _rfEliteGlockOptics, ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""], 7,
-    ["hgun_Glock19_auto_Tan_RF", "", "acc_flashlight_IR_pistol_RF", _rfEliteGlockOptics, ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF","65Rnd_9x19_Mag_RF"], [], ""], 3,
-    ["hgun_DEagle_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 1,
-    ["hgun_DEagle_bronze_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1,
-    ["hgun_DEagle_gold_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.025,
-    ["hgun_DEagle_classic_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.25,
-    ["hgun_DEagle_camo_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1,
-    ["hgun_DEagle_copper_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1
-    
-    // Elites carry around the Deagle uncommonly, but enough where you should be able to consistently collect them.
+    ["hgun_Glock19_Tan_RF", "", "acc_flashlight_IR_pistol_RF", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""],
+    ["hgun_Glock19_auto_Tan_RF", "", "acc_flashlight_IR_pistol_RF", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF","65Rnd_9x19_Mag_RF"], [], ""],
+    ["hgun_DEagle_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_classic_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_copper_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_camo_RF", "", "", "optic_VRCO_pistol_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""]
 ];
-
-_rfMilitaryDeagleOptics = ["optic_rds_RF", 1, "", 2];
-_rfMilitaryGlockOptics = ["optic_MRD_tan_RF", 1, "", 3];
 (_militaryLoadoutData get "sidearms") append [
-    ["hgun_Glock19_Tan_RF", "", "acc_flashlight_pistol", _rfMilitaryGlockOptics, ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""], 9,
-    ["hgun_Glock19_auto_Tan_RF", "", "acc_flashlight_pistol", _rfMilitaryGlockOptics, ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""], 1, // Full auto Glocks aren't something the usual soldier is gonna carry around often.
-    ["hgun_DEagle_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.3,
-    ["hgun_DEagle_classic_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1,
-    ["hgun_DEagle_copper_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1
-    // Make the Deagle super rare, since it's an unusual gun for a normal soldier to have.
+    ["hgun_Glock19_Tan_RF", "", "acc_flashlight_pistol", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""],
+    ["hgun_Glock19_auto_Tan_RF", "", "acc_flashlight_pistol", "optic_MRD_tan_RF", ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""],
+    ["hgun_DEagle_RF", "", "", "optic_rds_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_classic_RF", "", "", "optic_rds_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_copper_RF", "", "", "optic_rds_RF", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_RF", "", "", "", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_classic_RF", "", "", "", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_copper_RF", "", "", "", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""],
+    ["hgun_DEagle_camo_RF", "", "", "", ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""]
 ];
 (_militiaLoadoutData get "sidearms") append [
     ["hgun_Glock19_Tan_RF", "", "", "", ["17Rnd_9x19_Mag_RF","17Rnd_9x19_Mag_RF"], [], ""], 10
 ];
+(_policeLoadoutData get "sidearms") append ["hgun_Glock19_RF"];
 
-(_policeLoadoutData get "sidearms") append [
-    ["hgun_Glock19_RF", "", "", "", ["17Rnd_9x19_Mag_RF","17Rnd_9x19_Mag_RF"], [], ""], 10
+(_loadoutData get "lightATLaunchers") append [
+    ["launch_PSRL1_black_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_digi_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_olive_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_black_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_digi_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_olive_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""]
 ];
-
-
 
 

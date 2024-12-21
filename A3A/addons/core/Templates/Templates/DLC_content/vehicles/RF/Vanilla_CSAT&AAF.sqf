@@ -1,9 +1,10 @@
 _unarmedVehicles append ["O_Pickup_rf","O_Pickup_Comms_rf"];
-_armedVehicles pushBack "O_G_Pickup_hmg_rf";
+_armedVehicles append ["O_G_Pickup_hmg_rf", "O_Pickup_rcws_rf", "AU_O_Pickup_Minigun_RF"];
 _howitzers pushBack "O_TwinMortar_RF";
+_cargoTrucks pushBack "O_Truck_03_cargo_RF";
 
 
-_militiaLightArmed append ["I_Pickup_mmg_rf","I_Pickup_hmg_rf"];
+_militiaLightArmed append ["I_Pickup_mmg_rf","I_Pickup_hmg_rf", "I_Pickup_rcws_rf", "AU_I_Pickup_Minigun_RF"];
 _militiaCars append ["I_Pickup_rf","I_Pickup_Comms_rf"];
 _aa pushBack "I_Pickup_aat_rf";
 _SAM pushback "I_Pickup_aat_rf";

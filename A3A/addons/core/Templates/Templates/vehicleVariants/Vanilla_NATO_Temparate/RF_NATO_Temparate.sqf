@@ -4,4 +4,5 @@
 ["I_Heli_EC_01A_military_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5,"AAF_Olive",0]],
 ["a3a_black_Heli_EC_02_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5]],
 ["B_Heli_EC_03_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5]],
-["B_Heli_EC_04_military_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5]]
+["B_Heli_EC_04_military_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5]],
+["B_ION_Pickup_rcws_rf",["NATO_P",1]] 
