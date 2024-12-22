@@ -5,5 +5,4 @@
 ["a3a_black_Heli_EC_02_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5,"TAN",0.5]],
 ["B_Heli_EC_03_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5,"TAN",0.5]],
 ["B_Heli_EC_04_military_RF",["CAMO_SWISS",0.5,"MARINE",0.5,"OLIVE",0.5,"TAN",0.5]],
-
 ["B_ION_Pickup_rcws_rf",["NATO",0.5 ,"Tan",0.5]]

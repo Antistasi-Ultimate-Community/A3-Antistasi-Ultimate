@@ -33,5 +33,13 @@ for "_i" from 0 to (_countX - 1) do {
 
 {_x allowDamage true} forEach units _groupX;
 
+if ("rf" in A3A_enabledDLC) then {
+    _groupX addEventHandler ["EnemyDetected", {
+        params ["_group", "_newTarget"];
+        {
+           [_x, _newTarget] spawn lxRF_fnc_RC40_attack;
+        } forEach units _group;
+    }];
+};
 
 _groupX
