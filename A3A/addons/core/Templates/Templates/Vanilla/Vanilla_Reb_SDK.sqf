@@ -93,6 +93,9 @@ if (_hasSPE) then {
   #include "..\DLC_content\vehicles\SPE\Vanilla_FIA.sqf"
 };
 
+["vehiclesCivPlane", []] call _fnc_saveToTemplate; //add here something
+["vehiclesCivSupply", []] call _fnc_saveToTemplate; //add here something
+["vehiclesMedical", []] call _fnc_saveToTemplate; //add here something
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
 ["staticAT", _staticAT] call _fnc_saveToTemplate;

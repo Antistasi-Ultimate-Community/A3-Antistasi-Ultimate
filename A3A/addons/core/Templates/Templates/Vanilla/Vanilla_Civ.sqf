@@ -109,7 +109,7 @@ if (_hasSPE) then {
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_GM_CIV.sqf"
+  #include "..\vehicleVariants\Vanilla_GM_CIV.sqf"
 ]] call _fnc_saveToTemplate;
 
 //////////////////////////
