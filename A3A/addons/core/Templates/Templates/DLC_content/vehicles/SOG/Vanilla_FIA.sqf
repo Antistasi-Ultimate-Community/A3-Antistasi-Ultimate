@@ -2,9 +2,6 @@ _staticMG append ["vn_b_army_static_m2_scoped_high","vn_o_pl_static_mg42_high","
 "vn_i_fank_70_static_dshkm_high_01","vn_i_fank_70_static_dp28_high","vn_i_static_m1919a4_high","vn_i_static_m2_high","vn_i_static_m60_high","vn_i_fank_70_static_dshkm_high_02","vn_i_fank_70_static_sgm_high_01"];
 _staticAT append ["vn_o_pl_static_d44","vn_o_pl_static_at3","vn_i_fank_70_static_type56rr","vn_i_fank_71_static_m40a1rr","vn_i_static_tow","vn_i_static_m101_01"];
 _staticAA append ["vn_o_nva_navy_static_v11m","vn_o_pl_static_zpu4","vn_i_static_m45","vn_i_fank_70_static_l60mk3","vn_i_fank_71_static_l70mk2","vn_i_fank_70_static_zgu1_01"];
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-    _vehiclePlane pushBack "vnx_i_air_ac119_02_01_noinsignia";
-};
 _vehiclesCivCar append ["vn_c_car_01_01","vn_c_car_03_01","vn_c_car_02_01","vn_c_wheeled_m151_02","vn_c_wheeled_m151_01","vn_c_car_01_02"];
 _CivTruck append ["vn_c_car_04_01"];
 _VehTruck append ["vn_o_wheeled_z157_01", "vn_o_wheeled_z157_02","vn_b_wheeled_m54_01_aus_army","vn_b_wheeled_m54_02_aus_army"];

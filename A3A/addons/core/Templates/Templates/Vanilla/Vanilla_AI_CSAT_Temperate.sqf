@@ -680,6 +680,10 @@ if (_hasEF) then {
 };
 //
 
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_CSAT.sqf"
+};
+
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////

@@ -904,6 +904,10 @@ if (_hasEF) then {
     #include "..\DLC_content\gear\EF\WS_CSAT&SFIA.sqf"
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_CSAT&AAF.sqf"
+};
+
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////

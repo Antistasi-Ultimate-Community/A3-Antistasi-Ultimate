@@ -1109,6 +1109,10 @@ if (_hasEF) then {
     #include "..\DLC_content\weapons\EF\Vanilla_NATO&LDF_Arid.sqf"
 };
 //
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_NATO&LDF.sqf"
+};
+
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////

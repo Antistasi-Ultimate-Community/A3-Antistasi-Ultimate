@@ -10,19 +10,20 @@
 //       Vehicles       //
 //////////////////////////
 
-["vehiclesCivCar", [
+private _civCarsWithWeights = [
     "vn_c_wheeled_m151_02", 1.8
     ,"vn_c_wheeled_m151_01", 1.8
     ,"vn_c_car_02_01", 1.5
     ,"vn_c_car_03_01", 1
     ,"vn_c_car_01_01", 0.8
-    ,"vn_c_bicycle_01", 0.2]] call _fnc_saveToTemplate;
+    ,"vn_c_bicycle_01", 0.2
+];
 
 ["vehiclesCivIndustrial", [
     "vn_b_wheeled_m54_01_airport", 0.2
     ,"vn_c_car_04_01", 1]] call _fnc_saveToTemplate;
 
-["vehiclesCivPlanes", ["vn_o_air_mi2_01_02", "vn_o_air_mi2_01_01"]] call _fnc_saveToTemplate;
+private _civPlanes = [];
 
 ["vehiclesCivHeli", ["vn_b_air_uh1d_04_09"]] call _fnc_saveToTemplate;
 
@@ -36,6 +37,17 @@
 ["vehiclesCivMedical", []] call _fnc_saveToTemplate;
 
 ["vehiclesCivFuel", ["vn_b_wheeled_m54_fuel_airport", 0.2]] call _fnc_saveToTemplate;
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_CIV.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_CIV.sqf"
+};
+
+["vehiclesCivCar", _civCarsWithWeights] call _fnc_saveToTemplate;
+["vehiclesCivPlanes", _civPlanes] call _fnc_saveToTemplate;
 
 ["uniforms", [
     "vn_o_uniform_vc_01_01",

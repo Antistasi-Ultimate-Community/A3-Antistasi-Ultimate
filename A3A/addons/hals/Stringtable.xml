@@ -812,6 +812,13 @@
                 <Korean>SPE</Korean>
                 <French>SPE</French>
             </Key>
+            <Key ID="STR_A3AU_spex">
+                <Original>SPEX</Original>
+                <English>SPEX</English>
+                <Russian>SPEX</Russian>
+                <Korean>SPEX</Korean>
+                <French>SPEX</French>
+            </Key>
             <Key ID="STR_A3AU_tow">
                 <Original>Tier 1</Original>
                 <English>Tier 1</English>
@@ -832,6 +839,13 @@
                 <Russian>VN</Russian>
                 <Korean>VN</Korean>
                 <French>VN</French>
+            </Key>
+            <Key ID="STR_A3AU_nickelsteel">
+                <Original>Nickel steel</Original>
+                <English>Nickel steel</English>
+                <Russian>Nickel steel</Russian>
+                <Korean>Nickel steel</Korean>
+                <French>Nickel steel</French>
             </Key>
             <Key ID="STR_A3AU_wrs">
                 <Original>Research and Security</Original>

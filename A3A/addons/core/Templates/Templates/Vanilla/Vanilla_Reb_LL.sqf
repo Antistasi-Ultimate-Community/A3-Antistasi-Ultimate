@@ -36,6 +36,12 @@ private _vehiclesBoat = ["I_C_Boat_Transport_02_F" , "I_SDV_01_F" , "I_Boat_Arme
 
 private _vehiclePlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
 
+private _vehiclesMedical = [];
+
+private _vehiclesSupply = [];
+
+private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
+
 private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_SUV_01_F"];
 private _CivTruck = ["C_Truck_02_transport_F", "C_Truck_02_covered_F"];
 private _civHelicopters = ["C_Heli_Light_01_civil_F", "O_Heli_Light_02_unarmed_F" , "I_Heli_Transport_02_F"];
@@ -94,9 +100,17 @@ if (_hasSPE) then {
   #include "..\DLC_content\vehicles\SPE\Vanilla_FIA.sqf"
 };
 
-["vehiclesCivPlane", []] call _fnc_saveToTemplate; //add here something
-["vehiclesCivSupply", []] call _fnc_saveToTemplate; //add here something
-["vehiclesMedical", []] call _fnc_saveToTemplate; //add here something
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_FIA.sqf"
+};
+
+["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate; //add here something
+["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate; //add here something
+["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate; //add here something
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
@@ -320,6 +334,10 @@ if (_hasSOG) then {
 
 if (_hasSPE) then {
     #include "..\DLC_content\gear\SPE\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\gear\Vanilla_FIA.sqf"
 };
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];

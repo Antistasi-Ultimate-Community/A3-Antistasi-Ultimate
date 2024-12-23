@@ -173,6 +173,14 @@ if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_AAF.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_AAF.sqf"
+};
+
 //If CUP
 if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\MOD_content\CUP\Vanilla_AAF\Gear_AAF_militia.sqf"
@@ -1094,17 +1102,23 @@ if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_NATO&AAF.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_NATO&AAF.sqf"
+};
+
+//
 //If CUP
 if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\MOD_content\CUP\Vanilla_AAF\Gear_AAF_militia.sqf"
     #include "..\MOD_content\CUP\Vanilla_AAF\Weapons_AAF_militia.sqf"
 };
 
-if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\EF\Vanilla_NATO&AAF.sqf"
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_NATO&AAFsqf"
 };
-//
+
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////

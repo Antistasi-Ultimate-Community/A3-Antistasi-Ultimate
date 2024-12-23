@@ -248,6 +248,10 @@ if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
+};
+
 _loadoutData set ["rifles", _rifles];
 _loadoutData set ["tunedRifles", _tunedRifles];
 _loadoutData set ["enforcerRifles", _enforcerRifles];
@@ -375,6 +379,10 @@ if (_hasJets) then {
 
 if (_hasEF) then {
 	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\gear\Vanilla_Rivals.sqf"
 };
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later.

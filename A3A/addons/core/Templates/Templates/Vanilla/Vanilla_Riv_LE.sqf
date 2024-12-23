@@ -365,10 +365,6 @@ if (_hasMarksman) then {
 	#include "..\DLC_content\weapons\Marksman\Vanilla_Rivals.sqf" 
 };
 
-if (_hasApex) then {
-	#include "..\DLC_content\weapons\Apex\Vanilla_Rivals.sqf" 
-};
-
 if (_hasWs) then {
 	#include "..\DLC_content\weapons\WS\Vanilla_Rivals.sqf" 
 };
@@ -383,6 +379,10 @@ if (_hasSOG) then {
 
 if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
 };
 
 _loadoutData set ["rifles", _rifles];
@@ -465,20 +465,52 @@ private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["vests", ["V_TacChestrig_cbr_F"]];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_O"]];
 
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
-};
-
 if (_hasArtOfWar) then {
 	#include "..\DLC_content\gear\Artofwar\Vanilla_Rivals.sqf" 
 };
 
+if (_hasContact) then {
+	#include "..\DLC_content\gear\Contact\Vanilla_Rivals.sqf" 
+};
+
+if (_hasWs) then {
+	#include "..\DLC_content\gear\WS\Vanilla_Rivals.sqf" 
+};
+
+if (_hasRF) then {
+	#include "..\DLC_content\gear\RF\Vanilla_Rivals.sqf" 
+};
+
+if (_hasLawsOfWar) then {
+	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
+};
+
+if (_hasGM) then {
+	#include "..\DLC_content\gear\GM\Vanilla_Rivals.sqf" 
+};
+
+if (_hasCSLA) then {
+	#include "..\DLC_content\gear\CSLA\Vanilla_Rivals.sqf" 
+};
+
 if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\SOG\Vanilla_Rivals.sqf" 
 };
 
 if (_hasSPE) then {
-    #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\SPE\Vanilla_Rivals.sqf" 
+};
+
+if (_hasJets) then {
+	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
+};
+
+if (_hasEF) then {
+	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\gear\Vanilla_Rivals.sqf"
 };
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.

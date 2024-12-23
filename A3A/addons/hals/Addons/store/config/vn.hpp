@@ -408,7 +408,7 @@
 
 		class opticsvn 
 		{
-			displayName = "VN Optics";
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_vn", localize "STR_A3AU_sights"]);
 			picture = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\ItemOptic_ca.paa";
 
 			class vn_o_3x_m84 {
@@ -1280,7 +1280,7 @@
 			ITEM(vn_b_vest_usmc_08, 500, MISC_STOCK);
 			ITEM(vn_b_vest_usmc_03, 500, MISC_STOCK);
 			ITEM(vn_b_vest_usmc_09, 50, MISC_STOCK);
-			ITEM(vvn_b_vest_usmc_04, 500, MISC_STOCK);
+			ITEM(vn_b_vest_usmc_04, 500, MISC_STOCK);
 			ITEM(vn_b_vest_usmc_05, 400, MISC_STOCK);
 			ITEM(vn_b_vest_aircrew_04, 100, MISC_STOCK);
 			ITEM(vn_b_vest_aircrew_06, 100, MISC_STOCK);

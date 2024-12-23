@@ -34,6 +34,10 @@
         {
             prefix = "vn";
         };
+        class weapons_nickelsteel : weapons_base
+        {
+            prefix = "nickelsteel";
+        };
         class weapons_3cbf : weapons_base
         {
             prefix = "3cbf";
@@ -45,6 +49,10 @@
         class weapons_spe : weapons_base
         {
             prefix = "ww2cdlc";
+        };
+        class weapons_spex : weapons_base
+        {
+            prefix = "spex";
         };
         class weapons_ffaa : weapons_base
         {
