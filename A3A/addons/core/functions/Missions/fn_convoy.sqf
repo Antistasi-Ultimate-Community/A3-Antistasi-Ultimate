@@ -88,7 +88,7 @@ private _vehiclePool = [];
 
 switch (toLowerANSI _convoyType) do ///why? toLowerANSI
 {
-    case "ammunition": ///shouldn't they all start from the Capital?
+        case "ammunition": ///shouldn't they all start from the Capital?
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_ammo",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_ammo";
@@ -114,18 +114,14 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_armor";
         _taskIcon = "destroy";
-        _typeVehObj = selectRandom (_milFaction get "vehiclesArmor");
+        _typeVehObj = selectRandom (_faction get "vehiclesAA"); /// more vehicle variaty?
     };
     case "prisoners":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_prisoners",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_prisoners";
         _taskIcon = "run";
-        _typeVehObj = selectRandom ( switch true do {
-            case (tierWar < 5): { (_milFaction get "vehiclesMilitiaTrucks") };
-            case (tierWar < 7): { (_milFaction get "vehiclesMilitiaTrucks") + (_milFaction get "vehiclesTrucks") };
-            default { (_milFaction get "vehiclesTrucks") };
-        });
+        _typeVehObj = selectRandom (_faction get "vehiclesTrucks"); /// maybe add medical vehicles here
     };
     case "reinforcements":
     {
@@ -150,11 +146,14 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
         _taskIcon = "box";
-        _vehiclePool = if (_civDisabled) then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction getOrDefault ["vehiclesCivMedical", _civFaction get "vehiclesCivIndustrial"] } select { typeName _x == "STRING"}; // * convert weighted list to normal array
-        _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
+        private _supplyVehicles = (FactionGet(reb, "vehiclesCivSupply"));
+        private _medicalVehicles = _faction get "vehiclesMedical";
+        _vehiclePool = (_supplyVehicles + _medicalVehicles);
+        _typeVehObj = selectRandom _vehiclePool;
     };
-};
+};/// add case "repair"
 
+///look at this in detail
 
 // Find suitable nav points for origin/dest
 private _posOrigin = navGrid select ([_mrkOrigin] call A3A_fnc_getMarkerNavPoint) select 0;
