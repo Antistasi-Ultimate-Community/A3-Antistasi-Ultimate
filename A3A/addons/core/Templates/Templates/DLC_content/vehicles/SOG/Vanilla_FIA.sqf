@@ -13,3 +13,6 @@ _vehicleAA append ["vn_o_armor_btr50pk_02_nva65_noinsignia","vn_o_wheeled_z157_m
 _CivBoat append ["vn_c_boat_01_00","vn_c_boat_02_00","vn_c_boat_08_01","vn_c_boat_07_01"];
 _vehiclesBoat append ["vn_b_boat_12_03","vn_b_boat_10_01","vn_b_boat_09_01","vn_o_boat_01_mg_00","vn_o_boat_02_mg_00"];
 _civHelicopters append ["vn_b_air_uh1b_01_09","vn_b_air_uh1d_04_09","vn_o_air_mi2_02_02_noinsignia"];
+
+_vehiclesMedical append ["vn_i_armor_m577_02","vn_i_wheeled_btr40_02_fank_70","vn_b_wheeled_lr2a_03_aus_army"];
+_vehiclesSupply append ["vn_i_wheeled_m54_03","vn_b_wheeled_m274_02_01"];

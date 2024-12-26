@@ -9,3 +9,6 @@ _vehiclesLightUnarmed append ["gm_ge_army_iltis_cargo","gm_pl_army_uaz469_cargo"
 _vehiclesLightArmed append ["gm_pl_army_uaz469_dshkm","gm_ge_army_iltis_mg3"];
 _vehiclesAt append ["gm_gc_army_uaz469_spg9_noinsignia","gm_ge_army_iltis_milan"];
 _vehiclesBasic append ["gm_ge_army_k125"];
+
+_vehiclesMedical append ["gm_ge_ff_u1300l_medic","gm_gc_bgs_ural375d_medic_noinsignia","gm_ge_army_m113a1g_medic_noinsignia"];
+_vehiclesSupply pushBack "gm_ge_army_u1300l_firefighter";

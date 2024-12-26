@@ -36,7 +36,7 @@ private _vehiclesBoat = ["I_C_Boat_Transport_02_F" , "I_SDV_01_F" , "I_Boat_Arme
 
 private _vehiclesMedical = [];
 
-private _vehiclesSupply = [];
+private _vehiclesSupply = ["C_Van_01_box_F"];
 
 private _vehiclePlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
 

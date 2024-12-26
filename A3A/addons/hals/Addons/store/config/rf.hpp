@@ -189,16 +189,6 @@
 				price = 10000;
 				stock = 5;
 			};
-		};
-
-		class magazinesRF
-		{
-			displayName = __EVAL(formatText["%1 %2", localize "STR_A3AU_RF", localize "STR_A3AU_magazines"]);
-			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
-
-			///////////////////////////////////////////////////////
-			// Underbarrel
-			///////////////////////////////////////////////////////
 			class 1Rnd_RC40_shell_RF 
 			{
 				price = 5000;
@@ -209,7 +199,12 @@
 			class 1Rnd_RC40_SmokeOrange_shell_RF : 1Rnd_RC40_shell_RF {};
 			class 1Rnd_RC40_SmokeRed_shell_RF : 1Rnd_RC40_shell_RF {};
 			class 1Rnd_RC40_SmokeWhite_shell_RF : 1Rnd_RC40_shell_RF {};
+		};
 
+		class magazinesRF
+		{
+			displayName = __EVAL(formatText["%1 %2", localize "STR_A3AU_RF", localize "STR_A3AU_magazines"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
 			///////////////////////////////////////////////////////
 			// Pistols, SMGs
 			///////////////////////////////////////////////////////

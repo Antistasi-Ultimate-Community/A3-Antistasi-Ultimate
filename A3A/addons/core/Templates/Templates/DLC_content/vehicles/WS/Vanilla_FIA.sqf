@@ -5,3 +5,5 @@ _vehiclesLightArmed pushBack "I_G_Offroad_01_armor_armed_lxWS";
 _vehiclesAt pushBack "I_G_Offroad_01_armor_AT_lxWS";
 _vehicleAA pushBack "I_Tura_Truck_02_aa_lxWS";
 _staticAA append ["I_Tura_ZU23_lxWS"];
+
+_vehiclesMedical pushBack "a3a_ION_Truck_02_medical_F";

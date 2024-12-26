@@ -11,3 +11,6 @@ _vehiclesAt pushback "FIA_AZU_T21";
 _vehiclesBasic append ["CSLA_CIV_JARA250","US85_TT650"];
 _vehicleAA pushBack "CSLA_PLdvK59V3S";
 _CivBoat pushback "CSLA_lodka";
+
+_vehiclesSupply pushBack "US85_M923a1_s280";
+_vehiclesMedical pushBack "CSLA_OZV90_noinsignia";
