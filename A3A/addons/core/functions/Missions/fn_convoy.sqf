@@ -83,59 +83,6 @@ private _vehiclePool = [];
 
 //// add check for warlevel vehicles and replace stuff with militia vehicles and/or do randomization vehicle groups like vehiclesArmor
 
-//trucks to carry infantry
-private _vehTrucks =
-OccAndInv("vehiclesTrucks")
-+ OccAndInv("vehiclesMilitiaTrucks")
-+ Riv("vehiclesRivalsTrucks")
-+ Reb("vehiclesTruck");
-setVar("vehiclesTrucks", _vehTrucks);
-
-//Armed cars
-private _carsArmed =
-OccAndInv("vehiclesLightArmed")
-+ OccAndInv("vehiclesMilitiaLightArmed")
-+ Reb("vehiclesLightArmed")
-+ Riv("vehiclesRivalsLightArmed")
-+ ("ARMEDCAR" call _fnc_extractMarketClasses);
-setVar("vehiclesLightArmed", _carsArmed);
-
-//Unarmed cars
-private _carsUnarmed =
-OccAndInv("vehiclesLightUnarmed")      // anything else?
-+ OccAndInv("vehiclesMilitiaCars")
-+ OccAndInv("vehiclesPolice")
-+ Riv("vehiclesRivalsCars")
-+ ("UNARMEDCAR" call _fnc_extractMarketClasses)
-+ Reb("vehiclesLightUnarmed");
-setVar("vehiclesLightUnarmed", _carsUnarmed);
-setVar("vehiclesLight", _carsArmed + _carsUnarmed);
-
-//all Occ&Inv armor
-private _vehArmor =
-getVar("vehiclesTanks")
-+ getVar("vehiclesAA")
-+ getVar("vehiclesArtillery")
-+ getVar("vehiclesLightAPCs")
-+ getVar("vehiclesAPCs")
-+ getVar("vehiclesLightTanks")
-+ getVar("vehiclesAirborne")
-+ getVar("vehiclesIFVs");
-setVar("vehiclesArmor", _vehArmor);
-
-//rebel vehicles
-private _vehReb = 
-    Reb("vehiclesBasic") + Reb("vehiclesTruck") + Reb("vehiclesBoat")
-    + Reb("vehiclesAT") + Reb("vehiclesLightArmed") + Reb("vehiclesLightUnarmed")
-    + Reb("staticMGs") + Reb("staticAT") + Reb("staticAA") + Reb("staticMortars")
-    + Reb("vehiclesHelis") + Reb("vehiclesPlane") + Reb("vehiclesMedical") + Reb("vehiclesAA")
-    + (A3U_blackMarketStock apply {_x select 0});
-setVar("vehiclesReb", _vehReb);
-
-//trucks that can cary logistics cargo
-private _vehCargoTrucks = (_vehTrucks + OccAndInv("vehiclesCargoTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
-setVar("vehiclesCargoTrucks", _vehCargoTrucks);
-
 switch (toLowerANSI _convoyType) do ///why? toLowerANSI
 {
     case "ammunition": ///shouldn't they all start from the Capital?
