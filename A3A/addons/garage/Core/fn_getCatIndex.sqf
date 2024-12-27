@@ -20,13 +20,15 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-params [["_class", "_vehicle", [""]]];
+params ["_class"]; // [["_class", "_vehicle", [""]]]
 if ( !isClass (configFile >> "CfgVehicles" >> _class) ) exitWith { Error_1("Invalid Input: %1", _class); -1 };
 
 /* _vtol = "getNumber (_x >> 'vtol') >= 0" configClasses (configFile >> "CfgVehicles");
 _class in [_vtol]; */ 
 //&& (getNumber (configOf _vehicle >> "isUav") == 0)
 //case (getNumber (configOf _vehicle >> "isUav") > 0): { 2 };
+private _vtolConfig = configFile >> "CfgVehicles" >> _class;
+
 private _editorCat = cfgEditorCat(_class);
 switch (true) do {
     //filter blacklist first
@@ -36,9 +38,9 @@ switch (true) do {
     case (_editorCat isEqualTo "EdSubcat_Cars" && !(_class in undercoverVehicles)): { 1 }; 
     case (_editorCat isEqualTo "EdSubcat_APCs"): { 2 };
     case (_editorCat in ["EdSubcat_Tanks","EdSubcat_AAs","EdSubcat_Artillery"]): { 3 };
-    case (_editorCat in ["EdSubcat_Helicopters"]/*  || getNumber (configOf _vehicle >> "vtol") > 0 */): { 4 };
-    case (getNumber (configOf _vehicle >> "vtol") > 0): { 5 };
-    case (_editorCat in ["EdSubcat_Planes"] && (getNumber (configOf _vehicle >> "vtol") == 0)): { 6 };
+    case (_editorCat in ["EdSubcat_Helicopters"]/*  || getNumber (_vtolConfig >> "vtol") > 0 */): { 4 };
+    case (getNumber (_vtolConfig >> "vtol") > 0): { 5 };
+    case (_editorCat in ["EdSubcat_Planes"] && (getNumber (_vtolConfig >> "vtol") == 0)): { 6 };
     case (_editorCat in ["EdSubcat_Boats","EdSubcat_Submersibles"]): { 7 };
     case (_editorCat isEqualTo "EdSubcat_Turrets"): { 8 };
 

@@ -157,7 +157,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_Cars;
             action = "[1] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnAPC: HR_GRG_BttnCars
+        class HR_GRG_BttnAPC: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnAPC;
             y = SCREEN_TOP + 8 * GRID_NOUISCALE_H;
@@ -165,7 +165,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_APC;
             action = "[2] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnArmor: HR_GRG_BttnCars
+        class HR_GRG_BttnArmor: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnArmor;
             y = SCREEN_TOP + 12 * GRID_NOUISCALE_H;
@@ -173,7 +173,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_Armored;
             action = "[3] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnHeli: HR_GRG_BttnCars
+        class HR_GRG_BttnHeli: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnHeli;
             y = SCREEN_TOP + 16 * GRID_NOUISCALE_H;
@@ -181,7 +181,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_Heli;
             action = "[4] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnVTOL: HR_GRG_BttnCars
+        class HR_GRG_BttnVTOL: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnVTOL;
             y = SCREEN_TOP + 20 * GRID_NOUISCALE_H;
@@ -189,7 +189,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_VTOL;
             action = "[5] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnPlane: HR_GRG_BttnCars
+        class HR_GRG_BttnPlane: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnPlane;
             y = SCREEN_TOP + 24 * GRID_NOUISCALE_H;
@@ -197,7 +197,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_Plane;
             action = "[6] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnBoats: HR_GRG_BttnCars
+        class HR_GRG_BttnBoats: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnBoats;
             y = SCREEN_TOP + 28 * GRID_NOUISCALE_H;
@@ -205,7 +205,7 @@ class HR_GRG_VehicleSelect
             tooltip = $STR_HR_GRG_Generic_Boat;
             action = "[7] call HR_GRG_fnc_switchCategory;";
         };
-        class HR_GRG_BttnStatics: HR_GRG_BttnCars
+        class HR_GRG_BttnStatics: HR_GRG_BttnCarsUndercover
         {
             idc = HR_GRG_IDC_BttnStatics;
             y = SCREEN_TOP + 32 * GRID_NOUISCALE_H;
@@ -401,9 +401,9 @@ class HR_GRG_VehicleSelect
         // Origins Panel
         class HR_GRG_OriginslWrapper: HR_GRG_RscControlsGroup
         {
-            x = SCREEN_RIGHT - 82 * GRID_NOUISCALE_W;
+            x = SCREEN_RIGHT - 94 * GRID_NOUISCALE_W;
             y = SCREEN_BOTTOM - 7 * GRID_NOUISCALE_H;
-            w = 43 * GRID_NOUISCALE_W;
+            w = 55 * GRID_NOUISCALE_W;
             h = 7 * GRID_NOUISCALE_H;
             size = TEXT_SIZE_MEDIUM;
 
@@ -414,7 +414,7 @@ class HR_GRG_VehicleSelect
                     idc = HR_GRG_IDC_OriginsPanel;
                     x = 0;
                     y = 0;
-                    w = 43 * GRID_NOUISCALE_W;
+                    w = 55 * GRID_NOUISCALE_W;
                     h = 7 * GRID_NOUISCALE_H;
                     size = TEXT_SIZE_HUGE;
                 };
