@@ -1,14 +1,14 @@
 
 
 (_policeLoadoutData get "SMGs") append [
-    ["SPE_M1A1_Carbine","","","",["SPE_15Rnd_762x33","SPE_15Rnd_762x33","SPE_15Rnd_762x33_t","SPE_15Rnd_762x33_t"], [], ""], 1,
-    ["SPE_M1_Carbine",["SPE_ACC_GL_M8", 1, "", 5],"","",["SPE_15Rnd_762x33","SPE_15Rnd_762x33","SPE_15Rnd_762x33_t","SPE_15Rnd_762x33_t"], [], ""], 4,
-
-    ["SPE_Fusil_Mle_208_12_Sawedoff","","","",["SPE_2Rnd_12x65_No4_Buck","SPE_2Rnd_12x65_Pellets","SPE_2Rnd_12x65_Slug","SPE_2Rnd_12x65_No4_Buck"], [], ""], 0.1,
-    ["SPE_Fusil_Mle_208_12","","","",["SPE_2Rnd_12x65_No4_Buck","SPE_2Rnd_12x65_Pellets","SPE_2Rnd_12x65_Slug","SPE_2Rnd_12x65_No4_Buck"], [], ""], 0.25,
-
-    ["SPE_Model_37_Trenchgun",["SPE_ACC_M1917_Bayo", 1, "", 5],"","",["SPE_5Rnd_12x70_No4_Buck","SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_Slug"], [], ""], 1,
-    ["SPE_Model_37_Riotgun","","","",["SPE_5Rnd_12x70_No4_Buck","SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_Slug"], [], ""], 4
+    ["SPE_M1_Carbine","SPE_ACC_GL_M8","","",["SPE_15Rnd_762x33","SPE_15Rnd_762x33","SPE_15Rnd_762x33_t","SPE_15Rnd_762x33_t"], [], ""],
+    ["SPE_M1_Carbine","","","",["SPE_15Rnd_762x33","SPE_15Rnd_762x33","SPE_15Rnd_762x33_t","SPE_15Rnd_762x33_t"], [], ""],
+    ["SPE_Fusil_Mle_208_12_Sawedoff","","","",["SPE_2Rnd_12x65_No4_Buck","SPE_2Rnd_12x65_Pellets","SPE_2Rnd_12x65_Slug","SPE_2Rnd_12x65_No4_Buck"], [], ""],
+    ["SPE_Fusil_Mle_208_12","","","",["SPE_2Rnd_12x65_No4_Buck","SPE_2Rnd_12x65_Pellets","SPE_2Rnd_12x65_Slug","SPE_2Rnd_12x65_No4_Buck"], [], ""],
+    ["SPE_Model_37_Trenchgun","","","",["SPE_5Rnd_12x70_No4_Buck","SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_Slug"], [], ""],
+    ["SPE_Model_37_Trenchgun","SPE_ACC_M1917_Bayo","","",["SPE_5Rnd_12x70_No4_Buck","SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_Slug"], [], ""],
+    ["SPE_Model_37_Riotgun","","","",["SPE_5Rnd_12x70_No4_Buck","SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_Slug"], [], ""],
+    ["SPE_M1A1_Carbine","","","",["SPE_15Rnd_762x33","SPE_15Rnd_762x33","SPE_15Rnd_762x33_t","SPE_15Rnd_762x33_t"], [], ""]
 
 ];
 
