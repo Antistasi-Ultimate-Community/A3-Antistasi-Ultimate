@@ -145,18 +145,15 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_money";
-        _taskIcon = "takeoff"; ///"truck" icon doesn't exist
-        _typeVehObj = selectRandom (FactionGet(reb, "vehiclesCivSupply"));
+        _taskIcon = "truck";
+        _typeVehObj = selectRandom (_faction getOrDefault ["vehiclesSupply", FactionGet(reb, "vehiclesCivSupply"), true]);
     };
     case "supplies":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
-        _taskIcon = "box";
-        private _supplyVehicles = (FactionGet(reb, "vehiclesCivSupply"));
-        private _medicalVehicles = _faction get "vehiclesMedical";
-        _vehiclePool = append [_supplyVehicles,_medicalVehicles];
-        _typeVehObj = selectRandom _vehiclePool;
+        _taskIcon = "truck";
+        _typeVehObj = selectRandom (_faction getOrDefault ["vehiclesSupply", FactionGet(reb, "vehiclesCivSupply"), true]);
     };
 };
 //_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
