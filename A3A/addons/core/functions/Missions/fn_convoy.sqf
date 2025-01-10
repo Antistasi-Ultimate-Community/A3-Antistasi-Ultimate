@@ -118,7 +118,7 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_prisoners",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_prisoners";
         _taskIcon = "run";
-        _typeVehObj = selectRandom ( switch true do {
+_typeVehObj = selectRandom ( switch true do {
             case (tierWar < 5): { (_faction get "vehiclesMilitiaTrucks") };
             case (tierWar < 7): { (_faction get "vehiclesMilitiaTrucks") + (_faction get "vehiclesTrucks") };
             default { (_faction get "vehiclesTrucks") };
