@@ -9,6 +9,7 @@ params ["_mrkDest", "_mrkOrigin", ["_convoyType", ""], ["_resPool", "legacy"], [
 private _difficult = if (random 10 < tierWar) then {true} else {false};
 private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) then {Occupants} else {Invaders};
 private _faction = Faction(_sideX);
+private _rebFaction = Faction(teamPlayer);
 
 private _posSpawn = getMarkerPos _mrkOrigin;			// used for spawning infantry before moving them into vehicles
 private _posHQ = getMarkerPos respawnTeamPlayer;
@@ -138,15 +139,15 @@ _typeVehObj = selectRandom ( switch true do {
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_money";
-        _taskIcon = "truck";
-        _typeVehObj = selectRandom (_faction getOrDefault ["vehiclesSupply", FactionGet(reb, "vehiclesCivSupply"), true]);
+        _taskIcon = "takeoff"; ///"truck" icon doesn't exist
+        _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _faction getOrDefault ["vehiclesCargoTrucks", _faction get "vehiclesTrucks", true], false]);
     };
     case "supplies":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
-        _taskIcon = "truck";
-        _typeVehObj = selectRandom (_faction getOrDefault ["vehiclesSupply", FactionGet(reb, "vehiclesCivSupply"), true]);
+        _taskIcon = "box";
+        _typeVehObj = selectRandom ((_rebFaction getOrDefault ["vehiclesCivSupply", _faction getOrDefault ["vehiclesCargoTrucks", _faction get "vehiclesTrucks", true], false]) + (_faction get "vehiclesMedical"));
     };
 };
 //_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
@@ -272,66 +273,26 @@ if (_convoyType isEqualTo "Reinforcements") then
     _soldiers append (units _groupEsc);
     _reinforcementsX append (units _groupEsc);
 };
-if (_convoyType == "Money") then
+if (_convoyType in ["Money", "Supplies"]) then
 {
-    if (_objectiveIsCargo) then {
-        // * put a supply container in the truck so it can be identified more easily as the objective vehicle
-        {
-            _supObj = _x createVehicle (position _vehObj);
-            if (_forEachIndex == 0) then {
-                // * attach money crates to pallet
-                private _crateOffset = [0.52, 0.02, -0.48];
-                for "_i" from 0 to 2 do {
-                    private _crate = "A3AU_moneyCrate_small_01" createVehicle (position _supObj);
-                    _crate lockInventory true;
-                    _crate attachTo [_supObj, [0, _crateOffset select _i, 0.29]];
-                };
-            };
-            
-            // * try to load a large container, then fall back to small box if we can't load large container
-            private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;        
-            if (_canLoad isEqualType -1) then {
-                deleteVehicle _supObj;
-                continue
-            } else {
-                clearMagazineCargoGlobal _supObj;
-                clearWeaponCargoGlobal _supObj;
-                clearItemCargoGlobal _supObj;
-                clearBackpackCargoGlobal _supObj;
-                _supObj setDamage 0.75; // * vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
-                _supObj lockInventory true; // * don't want pesky inquisitive players to know there's not actually anything in here lol
-                _supObj call A3A_Logistics_fnc_addLoadAction;
-                (_canLoad + [true]) call A3A_Logistics_fnc_load;
-                break
-            };
-        } forEach ["Land_Pallet_F", "A3AU_moneyCrate_small_01"];
-    };
-    _vehObj setVariable ["A3A_reported", true, true];
-};
-if (_convoyType == "Supplies") then
-{
-    if (_objectiveIsCargo) then {
-        // * put a supply container in the truck so it can be identified more easily as the objective vehicle
-        {
-            _supObj = _x createVehicle (position _vehObj);
-        
-            // * try to load a large container, then fall back to small box if we can't load large container
-            private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;
-            if (_canLoad isEqualType -1) then {
-                deleteVehicle _supObj; 
-                continue 
-            } else {
-                clearMagazineCargoGlobal _supObj;
-                clearWeaponCargoGlobal _supObj;
-                clearItemCargoGlobal _supObj;
-                clearBackpackCargoGlobal _supObj;
-                _supObj setDamage 0.75; // vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
-                _supObj lockInventory true; // don't want pesky inquisitive players to know there's not actually anything in here lol
-                _supObj call A3A_Logistics_fnc_addLoadAction;
-                (_canLoad + [true]) call A3A_Logistics_fnc_load;
-                break
-            };
-        } forEach [selectRandom ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "Land_PaperBox_01_small_stacked_F", "Land_WaterBottle_01_stack_F", "Land_FoodSacks_01_cargo_white_idap_F"], "Land_PaperBox_01_small_closed_white_med_F"];
+    if !(_vehObj in (_rebFaction getOrDefault ["vehiclesCivSupply", []])) then {
+        // put a supply container in the supply / money truck so it can be identified more easily as the objective vehicle
+        _supObj = "CargoNet_01_box_F" createVehicle (position _vehObj);
+        private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;
+        if (_canLoad isEqualType -1) then {
+            deleteVehicle _supObj; 
+            continue 
+        } else {
+            clearMagazineCargoGlobal _supObj;
+            clearWeaponCargoGlobal _supObj;
+            clearItemCargoGlobal _supObj;
+            clearBackpackCargoGlobal _supObj;
+            _supObj setDamage 0.75; // vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
+            _supObj lockInventory true; // don't want pesky inquisitive players to know there's not actually anything in here lol
+            _supObj call A3A_Logistics_fnc_addLoadAction;
+            (_canLoad + [true]) call A3A_Logistics_fnc_load;
+            break
+        };
     };
     _vehObj setVariable ["A3A_reported", true, true];
 };
@@ -560,8 +521,18 @@ if (_convoyType isEqualTo "Reinforcements") then
 
 if (_convoyType isEqualTo "Money") then
 {
-    waitUntil {sleep 1; (time > _timeout) or (_supObj distance _posDest < _arrivalDist) or (not alive _supObj) or (side group driver attachedTo _supObj != _sideX)};
-    if ((time > _timeout) or (_supObj distance _posDest < _arrivalDist) or (not alive _supObj)) then
+    private _objectiveObj = objNull;
+    private _driver = objNull;
+    if (count (_vehObj call A3A_Logistics_fnc_getCargo) > 0) then {
+        _objectiveObj = _supObj;
+        _driver = driver attachedTo _supObj;
+    } else {
+        _objectiveObj = _vehObj;
+        _driver = driver _vehObj;
+    };
+
+    waitUntil {sleep 1; (time > _timeout) or (_objectiveObj distance _posDest < _arrivalDist) or (not alive _objectiveObj) or (side group _driver != _sideX)};
+    if ((time > _timeout) or (_objectiveObj distance _posDest < _arrivalDist) or (not alive _objectiveObj)) then
     {
         if ((time > _timeout) or (_objectiveObj distance _posDest < _arrivalDist)) then
         {
@@ -595,14 +566,27 @@ if (_convoyType isEqualTo "Money") then
 
 if (_convoyType isEqualTo "Supplies") then
 {
-    waitUntil {sleep 1; (time > _timeout) or (_supObj distance _posDest < _arrivalDist) or (not alive _supObj) or (side group driver attachedTo _supObj != _sideX)};
-    if (not alive _supObj) then
+    private _objectiveObj = objNull;
+    private _driver = objNull;
+    if (count (_vehObj call A3A_Logistics_fnc_getCargo) > 0) then {
+        _objectiveObj = _supObj;
+        _driver = driver attachedTo _supObj;
+    } else {
+        _objectiveObj = _vehObj;
+        _driver = driver _vehObj;
+    };
+    
+    waitUntil {sleep 1; (time > _timeout) or (_objectiveObj distance _posDest < _arrivalDist) or (not alive _objectiveObj) or (side group _driver != _sideX)};
+    if (not alive _objectiveObj) then
     {
         [false, false, 0, -10, 0, 0, "supply"] call _fnc_applyResults;
     }
     else
     {
-        if (side group driver attachedTo _supObj != _sideX) then
+        if (side group _driver != _sideX) then
+        {
+            waitUntil {sleep 1; (_objectiveObj distance _posDest < _arrivalDist) or (not alive _objectiveObj) or (time > _timeout)};
+            if (_objectiveObj distance _posDest < _arrivalDist) then
             {
                 [0,15*_bonus,_mrkDest] remoteExec ["A3A_fnc_citySupportChange",2];
                 {if (_x distance _objectiveObj < 500) then {
