@@ -9,7 +9,6 @@ params ["_mrkDest", "_mrkOrigin", ["_convoyType", ""], ["_resPool", "legacy"], [
 private _difficult = if (random 10 < tierWar) then {true} else {false};
 private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) then {Occupants} else {Invaders};
 private _faction = Faction(_sideX);
-private _sideshort =  if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) then {occ} else {inv};
 
 private _posSpawn = getMarkerPos _mrkOrigin;			// used for spawning infantry before moving them into vehicles
 private _posHQ = getMarkerPos respawnTeamPlayer;
@@ -111,7 +110,7 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_armor";
         _taskIcon = "destroy";
-        _typeVehObj = selectRandom (FactionGet(_sideshort, "vehiclesArmor"));
+        _typeVehObj = selectRandom (_faction get "vehiclesArmor");
     };
     case "prisoners":
     {
