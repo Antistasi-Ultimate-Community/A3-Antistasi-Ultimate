@@ -11,6 +11,7 @@ private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) t
 private _milFaction = Faction(_sideX);
 private _rebFaction = Faction(teamPlayer);
 private _civFaction = Faction(civilian);
+private _civDisabled = A3A_saveData get "factions" select 3 == "Vanilla_Civ_Empty";
 
 
 private _posSpawn = getMarkerPos _mrkOrigin;			// used for spawning infantry before moving them into vehicles
@@ -142,26 +143,16 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_money";
         _taskIcon = "takeoff"; ///"truck" icon doesn't exist
-        // ! _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _milFaction getOrDefault ["vehiclesCargoTrucks", _milFaction get "vehiclesTrucks", true], false]);
-        _typeVehObj = selectRandom ( switch true do {
-            case (tierWar < 3): { (_civFaction get "vehiclesCivIndustrial") };
-            case (tierWar < 5): { (_civFation get "vehiclesCivIndustrial") + (_milFaction get "vehiclesMilitiaTrucks") };
-            case (tierWar < 7): { (_milFaction get "vehiclesMilitiaTrucks") + (_milFaction get "vehiclesCargoTrucks") };
-            default { (_milFaction get "vehiclesCargoTrucks") + (_milFaction get "vehiclesTrucks") };
-        });
+        _vehiclePool = if _civDisabled then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction get "vehiclesCivIndustrial" } select { typeName _x == "STRING"}; // * convert weighted list to normal array
+        _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
     };
     case "supplies":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
         _taskIcon = "box";
-        // ! _typeVehObj = selectRandom ((_rebFaction getOrDefault ["vehiclesCivSupply", _milFaction getOrDefault ["vehiclesCargoTrucks", _milFaction get "vehiclesTrucks", true], false]) + (_milFaction get "vehiclesMedical"));
-        _typeVehObj = selectRandom ( switch true do {
-            case (tierWar < 3): { (_civFaction get "vehiclesCivMedical") };
-            case (tierWar < 5): { (_civFation get "vehiclesCivMedical") + (_milFaction get "vehiclesMilitiaTrucks") };
-            case (tierWar < 7): { (_milFaction get "vehiclesMilitiaTrucks") + (_milFaction get "vehiclesMedical`") };
-            default { (_milFaction get "vehiclesMedical") + (_milFaction get "vehiclesTrucks") };
-        });
+        _vehiclePool = if _civDisabled then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction get "vehiclesCivMedical" } select { typeName _x == "STRING"}; // * convert weighted list to normal array
+        _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
     };
 };
 //_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
