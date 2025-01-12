@@ -147,7 +147,10 @@ _typeVehObj = selectRandom ( switch true do {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
         _taskIcon = "box";
-        _typeVehObj = selectRandom ((_rebFaction getOrDefault ["vehiclesCivSupply", _faction getOrDefault ["vehiclesCargoTrucks", _faction get "vehiclesTrucks", true], false]) + (_faction get "vehiclesMedical"));
+        private _supplyVehicles = (FactionGet(reb, "vehiclesCivSupply"));
+        private _medicalVehicles = _faction get "vehiclesMedical";
+        _vehiclePool = (_supplyVehicles + _medicalVehicles);
+        _typeVehObj = selectRandom _vehiclePool;
     };
 };
 //_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
