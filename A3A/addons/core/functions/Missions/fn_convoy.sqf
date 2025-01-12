@@ -9,7 +9,6 @@ params ["_mrkDest", "_mrkOrigin", ["_convoyType", ""], ["_resPool", "legacy"], [
 private _difficult = if (random 10 < tierWar) then {true} else {false};
 private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) then {Occupants} else {Invaders};
 private _faction = Faction(_sideX);
-private _rebFaction = Faction(teamPlayer);
 
 private _posSpawn = getMarkerPos _mrkOrigin;			// used for spawning infantry before moving them into vehicles
 private _posHQ = getMarkerPos respawnTeamPlayer;
