@@ -17,7 +17,6 @@
 ["vehiclesCivPlane", []] call _fnc_saveToTemplate;
 ["vehiclesPlane", []] call _fnc_saveToTemplate;
 ["vehiclesMedical", []] call _fnc_saveToTemplate;
-["vehiclesCivSupply", []] call _fnc_saveToTemplate;
 
 ["animations", []] call _fnc_saveToTemplate;
 ["variants", []] call _fnc_saveToTemplate;
