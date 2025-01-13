@@ -161,6 +161,19 @@ class CfgVehicles
             QPATHTOFOLDER(Pictures\items\AmmoBox_black_CO.paa)
         };
 	};
+    class A3AU_Build_Box_base: NATO_Box_Base {
+        author = AUTHOR;
+        hiddenSelections[] = 
+        {
+            "Camo_Signs",
+            "Camo"
+        };
+        hiddenSelectionsTextures[] = 
+        {
+            QPATHTOFOLDER(Pictures\items\AmmoBox_signs_CA.paa),
+            QPATHTOFOLDER(Pictures\items\AmmoBox_black_CO.paa)
+        };
+	};
 
 	class A3AU_Build_Box_Large_1: A3AU_Build_Box_base {
         mapSize = 2.3399999;
@@ -203,12 +216,14 @@ class CfgVehicles
         hiddenSelections[] = { "camo" };
 		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\supplydrop_medical_02_co.paa) };
     };
-    
-    class Land_PaperBox_01_small_closed_white_med_F;
-    class A3AU_moneyCrate_small_01 : Land_PaperBox_01_small_closed_white_med_F {
-        displayName = "Money Crate (Small)";
+    class A3AU_supplyCrate_Money_01 : A3AU_supplyCrate_Base {
         author = AUTHOR;
         hiddenSelections[] = { "camo" };
-		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\PaperBox_01_small_money_CO.paa) };
+		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\supplydrop_money_01_co.paa) };
+    };
+    class A3AU_supplyCrate_Money_02 : A3AU_supplyCrate_Base {
+        author = AUTHOR;
+        hiddenSelections[] = { "camo" };
+		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\supplydrop_money_02_co.paa) };
     };
 };

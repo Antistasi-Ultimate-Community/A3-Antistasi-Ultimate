@@ -76,6 +76,7 @@ private _taskTitle = "";
 private _taskIcon = "";
 private _taskState1 = "CREATED";
 private _typeVehObj = "";
+private _typeSupObj = "";
 private _vehiclePool = [];
 
 // * Cleanup the civilian and rebel equipment hashmaps (remove vehicle arrays that are nil or empty) before attempting to select a vehicle from them
@@ -145,6 +146,7 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _taskIcon = "takeoff"; ///"truck" icon doesn't exist
         _vehiclePool = if _civDisabled then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction get "vehiclesCivIndustrial" } select { typeName _x == "STRING"}; // * convert weighted list to normal array
         _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
+        _typeSupObj = selectRandom ["A3AU_supplyCrate_Money_01", "A3AU_supplyCrate_Money_02"];
     };
     case "supplies":
     {
@@ -153,6 +155,7 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _taskIcon = "box";
         _vehiclePool = if _civDisabled then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction getOrDefault ["vehiclesCivMedical", _civFaction get "vehiclesCivIndustrial"] } select { typeName _x == "STRING"}; // * convert weighted list to normal array
         _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
+        _typeSupObj = selectRandom ["A3AU_supplyCrate_Medical_01", "A3AU_supplyCrate_Medical_02"];
     };
 };
 //_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
@@ -282,7 +285,7 @@ if (_convoyType in ["Money", "Supplies"]) then
 {
     if (_objectiveIsCargo) then {
         // put a supply container in the supply / money truck so it can be identified more easily as the objective vehicle
-        _supObj = "CargoNet_01_box_F" createVehicle (position _vehObj);
+        _supObj = _typeSupObj createVehicle (position _vehObj);
         private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;
         if (_canLoad isEqualType -1) then {
             deleteVehicle _supObj; 
