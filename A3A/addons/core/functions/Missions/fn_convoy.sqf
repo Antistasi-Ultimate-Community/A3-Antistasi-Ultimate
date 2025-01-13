@@ -11,7 +11,7 @@ private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) t
 private _milFaction = Faction(_sideX);
 private _rebFaction = Faction(teamPlayer);
 private _civFaction = Faction(civilian);
-private _civDisabled = A3A_saveData get "factions" select 3 == "Vanilla_Civ_Empty";
+private _civDisabled = if (_civFaction getOrDefault ["attributeLowCiv", false] || {_civFaction getOrDefault ["attributeCivNonHuman", false]});
 
 
 private _posSpawn = getMarkerPos _mrkOrigin;			// used for spawning infantry before moving them into vehicles
