@@ -22,32 +22,71 @@
 #include "..\..\script_component.hpp"
 params ["_building"];
 
+if (createAmbientSounds isEqualTo false) exitWith {};
+
 private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
 if (_lowCiv) exitWith {};
 if (_civNonHuman) exitWith {};
 
-// We add the music source to a RoadCone rather than the building itself.
+// We add the music source to a radio item rather than the building itself.
 // This is so we can delete the source later in a easier fashion.
-private _musicSource = "RoadCone_L_F" createVehicle position _building;
+private _radioItem = getPosATL _building;
+_radioItem set [2, ((_radioItem select 2) + 1)];
+private _musicSource = createVehicle ["Land_FMradio_F", _radioItem];
 
-// Attach Cone to building.
-_musicSource attachTo [_building, [1,1,1]];
+private _tableItem = getPosATL _building; 
+_tableItem set [0, ((_tableItem select 0) + ([-1.0, 1.0] call BIS_fnc_randomNum))];
+_tableItem set [1, ((_tableItem select 1) + ([-1.0, 1.0] call BIS_fnc_randomNum))];
+_tableItem set [2, ((_tableItem select 2) + 0.5)];
 
-// Hide the cone, we don't want to see it!
-[_musicSource, true] remoteExec ["hideObjectGlobal", 2];
+private _civItems = selectRandom [
+	"Item_Money", 
+	"Item_Money_bunch", 
+	"Item_Money_roll", 
+	"Item_Money_stack"
+];
 
-[_building, _musicSource] spawn {
-    params ["_building", "_musicSource", "_locationType"];
+if (5 >= random 10) then {
+    private _randomCivItem = createVehicle [_civItems, _tableItem];
+};
+
+[_radioItem, _musicSource] spawn {
+    params ["_radioItem", "_musicSource", "_locationType"];
     private _tracksPlayed = 1;
-    private _tracks = A3A_Civilian_Amb_Tracks get "Ambience";
-
-    if (count _tracks == 0) exitWith {
-        Error("No Tracks found to create a music source");
-    };
+    // name of the sound file in CfgSounds.hpp and the duration (in sec)
+    private _tracks = 
+    [
+        ["A3A_Audio_Civ_Song1", 127],
+        ["A3A_Audio_Civ_Song2", 192],
+        ["A3A_Audio_Civ_Song3", 180],
+        ["A3A_Audio_Civ_Song4", 196],
+        ["A3A_Audio_Civ_Song5", 357],
+        ["A3A_Audio_Civ_Radio1", 240],
+        ["A3A_Audio_Civ_Radio2", 411],
+        ["A3A_Audio_Civ_Radio3", 246],
+        ["A3A_Audio_Civ_Radio4", 292],
+        ["A3A_Audio_Civ_Radio5", 189],
+        ["A3A_Audio_Civ_Radio6", 203]
+    ];
 
     private _totalTracks = count _tracks;
+
+    [
+        _musicSource,
+        localize "STR_antistasi_actions_destroy_radio",
+        "\a3\ui_f\data\igui\cfg\simpletasks\types\destroy_ca.paa", "\a3\ui_f\data\igui\cfg\simpletasks\types\destroy_ca.paa",
+        "true", "true",
+        {},
+        {},
+        {
+            private _radioItem = _this select 0;
+            deleteVehicle _radioItem;
+        },
+        {},
+        [_musicSource], 2, nil, true, false
+    ] call BIS_fnc_holdActionAdd; // hold interaction to destroy radio.
 
     while { (alive _musicSource) } do {
         while { _tracksPlayed < _totalTracks } do {

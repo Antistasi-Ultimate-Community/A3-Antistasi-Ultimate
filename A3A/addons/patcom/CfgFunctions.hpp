@@ -20,6 +20,7 @@ class CfgFunctions {
             class createResourceCiv {};
             class createRoomLight {};
             class getDayState {};
+            class unitAmbient {};
         };
 
         class Patcom {
