@@ -260,6 +260,13 @@ class CfgSounds
         titles[] = {};
     };
 
+    class A3A_Audio_Petros_Ambient_Sneeze
+    {
+        name = "A3A_Audio_Petros_Ambient_Sneeze";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Sneeze.ogg), 0.8, 1, 40};
+        titles[] = {};
+    };
+
     class A3A_Audio_Petros_Ambient_Coughing1
     {
         name = "A3A_Audio_Petros_Ambient_Coughing1";
