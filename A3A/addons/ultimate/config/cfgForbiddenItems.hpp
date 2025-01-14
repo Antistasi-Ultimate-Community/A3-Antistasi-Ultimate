@@ -21,4 +21,5 @@ class forbiddenItems
     #include "cfgForbiddenItemsSMA.hpp"
     #include "cfgForbiddenItemsTOW.hpp"
     #include "cfgForbiddenItemsUns.hpp"
+    #include "cfgForbiddenItemsHAFM.hpp"
 };

@@ -1,5 +1,6 @@
 //Remmember to update the list @ A3A\addons\scrt\UI\fn_ui_setAvailableBuildingTypes.sqf
 //Era Modifiers (Depends on map not modset)
+
 #define BUILDABLES_MODERN_GREEN {"Land_GuardTower_01_F", 300}, {"Land_HBarrier_01_line_3_green_F", 100}, {"Land_HBarrier_01_line_5_green_F", 150}, {"Land_HBarrier_01_line_1_green_F", 50}, {"Land_HBarrier_01_big_4_green_F", 300}, {"Land_HBarrier_01_wall_corridor_green_F", 250}, {"Land_HBarrier_01_wall_corner_green_F", 250}, {"Land_HBarrier_01_wall_6_green_F", 450}, {"Land_HBarrier_01_wall_4_green_F", 400}, {"Land_HBarrier_01_big_tower_green_F", 500}, {"Land_Cargo_House_V1_F", 1500}, {"Land_Cargo_HQ_V1_F", 2500}, {"Land_Cargo_Patrol_V1_F", 2000}, {"Land_Cargo_Tower_V1_F", 3000}
 
 #define BUILDABLES_MODERN_SAND {"Land_GuardTower_01_F", 300}, {"Land_HBarrier_3_F", 100}, {"Land_HBarrier_5_F", 150}, {"Land_HBarrier_1_F", 50}, {"Land_HBarrier_Big_F", 300}, {"Land_HBarrierWall_corridor_F", 250}, {"Land_HBarrierWall_corner_F", 250}, {"Land_HBarrierWall6_F", 450}, {"Land_HBarrierWall4_F", 400}, {"Land_HBarrierTower_F", 500}, {"Land_Cargo_House_V3_F", 1500}, {"Land_Cargo_HQ_V3_F", 2500}, {"Land_Cargo_Patrol_V3_F", 2000}, {"Land_Cargo_Tower_V3_F", 3000}

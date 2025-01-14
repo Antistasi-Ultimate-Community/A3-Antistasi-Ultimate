@@ -3,6 +3,7 @@
 ["B_SAM_System_01_F", ["Green", 1.0]],
 ["B_SAM_System_02_F", ["Green", 1.0]],
 ["B_T_VTOL_01_infantry_F", ["Blue",0.4 , "Olive", 0.6]],
+["B_T_VTOL_01_armed_F", ["Blue",0.4 , "Olive", 0.6]],
 ["B_Plane_Fighter_01_F", ["DarkGreyCamo", 0.4, "DarkGrey", 0.6]],
 ["B_Plane_Fighter_01_Stealth_F", ["DarkGreyCamo", 0.4, "DarkGrey", 0.6]],
 ["B_Radar_System_01_F", ["Olive", 1]],

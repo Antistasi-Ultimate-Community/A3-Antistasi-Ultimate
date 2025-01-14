@@ -16,3 +16,5 @@ _transportHelicopters append ["I_E_Heli_EC_01A_military_RF","B_Heli_EC_04_milita
 _helisLightAttack append ["a3a_LDF_Heli_light_03_dynamicLoadout_RF","B_Heli_EC_03_RF","a3a_Heli_light_03_dynamicLoadout_RF","a3a_black_Heli_light_03_dynamicLoadout_RF"];
 _helisAttack append ["a3a_LDF_Heli_EC_02_RF","a3a_black_Heli_EC_02_RF"];
 _aa append ["I_Pickup_aat_rf","B_T_Pickup_aat_rf"];
+
+_airPatrol append ["I_E_Heli_light_03_unarmed_RF","B_Heli_light_03_unarmed_RF","a3a_LDF_Heli_light_03_dynamicLoadout_RF","B_Heli_EC_03_RF","a3a_Heli_light_03_dynamicLoadout_RF","a3a_black_Heli_light_03_dynamicLoadout_RF"];

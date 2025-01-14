@@ -31,3 +31,5 @@ _fuelTrucks append ["gm_ge_army_kat1_451_refuel","gm_pl_army_ural375d_refuel"];
 _medicalTrucks append ["gm_dk_army_m113a1dk_medic_noinsignia","gm_ge_army_u1300l_medic","gm_pl_army_ural375d_medic","gm_ge_army_m113a1g_medic_noinsignia"];
 
 _policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+
+_airPatrol append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_swooper_noinsignia","gm_gc_airforce_mi2p_noinsignia","gm_gc_bgs_mi2p_noinsignia","gm_gc_airforce_mi2urn_noinsignia","gm_gc_airforce_mi2us_noinsignia","gm_gc_bgs_mi2us_noinsignia"];

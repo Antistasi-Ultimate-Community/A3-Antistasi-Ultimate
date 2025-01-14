@@ -37,8 +37,8 @@ FIX_LINE_NUMBERS()
 		private _dlcName = _this call GETDLC;\
 		if (_dlcName != "") then {\
 			_ctrlList lbsetpictureright [_lbAdd,(modParams [_dlcName,["logo"]]) param [0,""]];\
-			_modID = _modList find _dlcName;\
-			if (_modID < 0) then {_modID = _modList pushback _dlcName;};\
+			_modID = MODLIST find _dlcName;\
+			if (_modID < 0) then {_modID = MODLIST pushback _dlcName;};\
 			_ctrlList lbsetvalue [_lbAdd,_modID];\
 		};\
 	};
@@ -117,6 +117,7 @@ FIX_LINE_NUMBERS()
 #define SORT_AMOUNT 1
 #define SORT_ALPHABETICAL 2
 #define SORT_COLOR 3
+#define SORT_MOD 4
 
 #define FORBIDDEN_ITEM_COLOR [0.6901, 0, 0.1254, 0.8]
 #define LIMITED_ITEM_COLOR [1, 1, 0, 0.8]
@@ -440,12 +441,14 @@ switch _mode do {
 
 	  private _sortByAmountIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_BY_AMOUNT");
       private _sortDefaultIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_DEFAULT");
-	  private _sortColorIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_COLOR");
+	private _sortColorIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_COLOR");
+	  private _sortModIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_MOD");
 
       _ctrlSort lbSetValue [0, SORT_ALPHABETICAL];
       _ctrlSort lbSetValue [_sortByAmountIndex, SORT_AMOUNT];
       _ctrlSort lbSetValue [_sortDefaultIndex, SORT_DEFAULT];
 	  _ctrlSort lbSetValue [_sortColorIndex, SORT_COLOR];
+	  _ctrlSort lbSetValue [_sortModIndex, SORT_MOD];
 
       lbSortByValue _ctrlSort;
 
@@ -501,6 +504,41 @@ switch _mode do {
 
         lbSortByValue _ctrlList;
       };
+	  case SORT_MOD: {
+	    private _displayNameArray = [];
+		private _modArray = [];
+	    private _dataArray = [];
+	  
+	    for "_i" from (_itemCount - 1) to 0 step -1 do {
+	        private _dataStr = if _type then {_ctrlList lnbdata [_i,0]} else {_ctrlList lbdata _i};
+	  
+	        if (_dataStr != "") then {
+	            private _data = call compile _dataStr;
+	            private _item = _data select 0;
+	            private _amount = _data select 1;
+	            private _displayName = _data select 2;
+	            private _dlcName = _data select 3;
+				diag_log _dlcName;
+	  
+	            _displayNameArray pushBack _displayName;
+				_modArray pushBack _dlcName;
+	            _dataArray set [_i, _data];
+	        };
+	    };
+	  
+	    _modArray sort true;
+
+	    for "_i" from 0 to (_itemCount - 1) do {
+	        private _data = _dataArray select _i;
+	  
+	        if (!isNil "_data") then {
+	            private _dlcName = _data select 3;
+	            _ctrlList lbSetValue [_i, _modArray find _dlcName];
+	        };
+	    };
+	  
+	    lbSortByValue _ctrlList;
+	  };
 	  case SORT_COLOR: {
 			private _displayNameArray = [];
 			private _dataArray = [];
@@ -1333,7 +1371,8 @@ switch _mode do {
 			default										{configfile >> "cfgweapons" 	>> _item};
 		};
 		private _displayName = gettext (_xCfg >> "displayName");
-		private _data = str [_item,_amount,_displayName];
+		private _dlcName = _xCfg call GETDLC;
+		private _data = str [_item,_amount,_displayName,_dlcName];
 		private _lbAdd = 0;
 
 		if (ctrltype _ctrlList == 102) then {
@@ -1361,6 +1400,24 @@ switch _mode do {
 			])then{
 				_ammo_logo = getText(configfile >> "RscDisplayArsenal" >> "Controls" >> "TabCargoMag" >> "text");
 				_ctrlList lbsetpictureright [_lbAdd,_ammo_logo];
+				_xCfg call ADDMODICON;
+			};
+
+			if(_index in [
+				IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,
+				IDC_RSCDISPLAYARSENAL_TAB_VEST,
+				IDC_RSCDISPLAYARSENAL_TAB_BACKPACK,
+				IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR,
+				IDC_RSCDISPLAYARSENAL_TAB_GOGGLES,
+				IDC_RSCDISPLAYARSENAL_TAB_NVGS,
+				IDC_RSCDISPLAYARSENAL_TAB_BINOCULARS,
+				IDC_RSCDISPLAYARSENAL_TAB_MAP,
+				IDC_RSCDISPLAYARSENAL_TAB_GPS,
+				IDC_RSCDISPLAYARSENAL_TAB_RADIO,
+				IDC_RSCDISPLAYARSENAL_TAB_COMPASS,
+				IDC_RSCDISPLAYARSENAL_TAB_WATCH
+			])then{
+				_xCfg call ADDMODICON;
 			};
 
 			//grayout attachments
@@ -1380,10 +1437,9 @@ switch _mode do {
 				if not (({_x == _item} count _compatibleItems > 0) || _item isequalto "")exitwith{
 					_ctrlList lbSetColor [_lbAdd, [1,1,1,0.25]];
 				};
+				_xCfg call ADDMODICON;
 			};
-
 		};
-
 		//["UpdateItemGui",[_display,_index,_lbAdd]] call SCRT_fnc_arsenal_loadoutArsenal;
 	};
 
@@ -2368,7 +2424,7 @@ switch _mode do {
 			_ctrlDLC = _display displayctrl IDC_RSCDISPLAYARSENAL_INFO_DLCICON;
 			_ctrlDLCBackground = _display displayctrl IDC_RSCDISPLAYARSENAL_INFO_DLCBACKGROUND;
 			_dlc = _itemCfg call GETDLC;
-			if (_dlc != "" && _fullVersion) then {
+			if (_dlc != "" /*  && _fullVersion */) then {
 
 				_dlcParams = modParams [_dlc,["name","logo","logoOver"]];
 				_name = _dlcParams param [0,""];
