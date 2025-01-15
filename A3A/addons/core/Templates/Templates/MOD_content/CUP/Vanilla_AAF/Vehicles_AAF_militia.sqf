@@ -17,6 +17,8 @@ _transportHelicopters append ["CUP_I_412_Military_Radar_AAF","CUP_I_412_Mil_Tran
 _helisLightAttack append ["CUP_I_Wildcat_Digital_AAF","CUP_I_Wildcat_Green_AAF","CUP_I_412_Military_Armed_AAF","CUP_I_412_dynamicLoadout_AAF","CUP_I_Ka60_GL_Digi_AAF","CUP_I_Ka60_Digi_AAF"];
 _helisAttack append ["CUP_I_AH1Z_Dynamic_AAF","CUP_I_412_Military_Armed_AT_AAF","CUP_I_Mi24_Mk3_AAF","CUP_I_Mi24_Mk4_AAF","CUP_I_Mi24_D_Dynamic_AAF","CUP_O_Ka50_DL_RU","CUP_B_Mi171Sh_CDF","CUP_O_Mi8_RU"];
 
+_airPatrol append ["CUP_I_Wildcat_Unarmed_Digital_AAF","CUP_I_Wildcat_Unarmed_Green_AAF","CUP_I_Wildcat_Digital_AAF","CUP_I_Wildcat_Green_AAF","CUP_I_412_Military_Armed_AAF","CUP_I_412_dynamicLoadout_AAF","CUP_I_Ka60_GL_Digi_AAF","CUP_I_Ka60_Digi_AAF"];
+
 _ammoTrucks append ["CUP_I_M113A3_Reammo_AAF"];
 _repairTrucks append ["CUP_I_M113A3_Repair_AAF"];
 _fuelTrucks append ["CUP_I_V3S_Refuel_TKG"];

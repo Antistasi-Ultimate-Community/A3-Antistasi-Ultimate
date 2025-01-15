@@ -72,6 +72,8 @@ private _helisLight = ["B_Heli_Light_01_F"];
 private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
 private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F"];
 
+private _airPatrol = ["B_Heli_Light_01_F","B_Heli_Light_01_dynamicLoadout_F"];
+
 private _artillery = ["B_T_MBT_01_arty_F","B_T_MBT_01_mlrs_F"];
 
 ["magazines", createHashMapFromArray [
@@ -154,6 +156,7 @@ if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
 };
 
+["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;

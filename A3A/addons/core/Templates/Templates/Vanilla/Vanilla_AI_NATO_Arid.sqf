@@ -73,6 +73,8 @@ private _helisLight = ["B_Heli_Light_01_F"];
 private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
 private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F"];
 
+private _airPatrol = ["B_Heli_Light_01_F","B_Heli_Light_01_dynamicLoadout_F"];
+
 private _artillery = ["B_MBT_01_arty_F","B_MBT_01_mlrs_F"];
 ["magazines", createHashMapFromArray [
     ["B_MBT_01_arty_F",["32Rnd_155mm_Mo_shells", "2Rnd_155mm_Mo_Cluster", "6Rnd_155mm_Mo_mine"]],
@@ -154,6 +156,8 @@ if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
 };
 
+
+["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;

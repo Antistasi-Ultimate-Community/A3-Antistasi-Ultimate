@@ -66,6 +66,8 @@ private _transportHelicopters = ["I_Heli_Transport_02_F"];
 private _helisLightAttack =  ["I_Heli_light_03_dynamicLoadout_F"];
 private _helisAttack = [];
 
+private _airPatrol = ["I_Heli_light_03_unarmed_F", "I_Heli_light_03_dynamicLoadout_F"];
+
 private _artillery = ["I_Truck_02_MRL_F"];
 ["magazines", createHashMapFromArray [
 ["I_Truck_02_MRL_F", ["12Rnd_230mm_rockets", "12Rnd_230mm_rockets_cluster"]],
@@ -157,6 +159,7 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_AAF.sqf"
 };
 
+["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;

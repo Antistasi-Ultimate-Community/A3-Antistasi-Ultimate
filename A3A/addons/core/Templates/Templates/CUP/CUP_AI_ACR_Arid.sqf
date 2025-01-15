@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["CUP_B_Mi171Sh_ACR"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_Mi35_Dynamic_CZ", "CUP_B_Mi35_Dynamic_CZ_Des"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["CUP_B_Mi171Sh_Unarmed_ACR","CUP_B_Mi171Sh_ACR"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["CUP_B_RM70_CZ"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_B_RM70_CZ", ["CUP_40Rnd_GRAD_HE"]]]] call _fnc_saveToTemplate;
 
