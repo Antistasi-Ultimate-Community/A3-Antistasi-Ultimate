@@ -426,6 +426,7 @@ class CfgFunctions
             class LOG_Bank {};
             class SUPP_Supplies {};
             class LOG_Salvage {};
+            class findIfNearAndHostile {};
             class LOG_Airdrop {};
             class LOG_Crashsite {};
             class LOG_Crashsite_Satellite{};

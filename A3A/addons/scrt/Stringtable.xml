@@ -10420,6 +10420,23 @@
                 <Portuguese>Destruir rádio</Portuguese>
                 <Turkish>Radyoyu Yok Et</Turkish>
             </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ">
+                <Original>Talk with Civilian</Original>
+                <English>Talk with Civilian</English>
+                <Russian>Поговорить с гражданским</Russian>
+                <German>Mit Zivilist sprechen</German>
+                <Italian>Parla con il civile</Italian>
+                <Spanish>Hablar con civil</Spanish>
+                <French>Parler avec le civil</French>
+                <Korean>민간인과 대화</Korean>
+                <Japanese>民間人と話す</Japanese>
+                <Chineseimp>与平民交谈</Chineseimp>
+                <Chinese>與平民交談</Chinese>
+                <Polish>Porozmawiaj z cywilem</Polish>
+                <Czech>Mluvit s civilistou</Czech>
+                <Portuguese>Falar com civil</Portuguese>
+                <Turkish>Sivil ile konuş</Turkish>
+            </Key>
         </Container>
         <Container name="common_notifications">
             <Key ID="STR_A3AP_notifications_possess_cooldown">
@@ -10725,6 +10742,312 @@
                 <Chinesesimp>我永远不会背叛我的祖国！</Chinesesimp>
                 <Korean>난 절대 내 조국을 배신하지 않을 것이다!</Korean>
                 <French>Je ne trahirai pas mon pays !</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question1">
+                <Original>Have you seen anything unusual around here recently?</Original>
+                <English>Have you seen anything unusual around here recently?</English>
+                <Russian>Вы видели что-то необычное вокруг здесь недавно?</Russian>
+                <German>Haben Sie hier in letzter Zeit etwas Ungewöhnliches gesehen?</German>
+                <Italian>Hai visto qualcosa di strano qui intorno ultimamente?</Italian>
+                <Spanish>¿Has visto algo inusual por aquí últimamente?</Spanish>
+                <French>Avez-vous vu quelque chose d'inhabituel ici récemment ?</French>
+                <Korean>최근 이 주변에서 이상한 것을 보셨나요?</Korean>
+                <Japanese>最近、この辺りで何か異常なことを見ましたか？</Japanese>
+                <Chineseimp>你最近在这里看到什么不寻常的事情了吗？</Chineseimp>
+                <Chinese>你最近在這裡看到什麼不尋常的事情嗎？</Chinese>
+                <Polish>Czy widziałeś coś nietypowego w pobliżu ostatnio?</Polish>
+                <Czech>Viděl jste v poslední době něco neobvyklého tady?</Czech>
+                <Portuguese>Você viu algo incomum por aqui recentemente?</Portuguese>
+                <Turkish>Son zamanlarda burada tuhaf bir şey gördünüz mü?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question2">
+                <Original>Do you know of any important locations or people I should be aware of?</Original>
+                <English>Do you know of any important locations or people I should be aware of?</English>
+                <Russian>Знаете ли вы о каких-либо важных местах или людях, о которых я должен знать?</Russian>
+                <German>Kennst du irgendwelche wichtigen Orte oder Personen, über die ich Bescheid wissen sollte?</German>
+                <Italian>Conosci luoghi o persone importanti di cui dovrei essere a conoscenza?</Italian>
+                <Spanish>¿Conoces lugares o personas importantes de los que deba estar al tanto?</Spanish>
+                <French>Connaissez-vous des lieux ou des personnes importants dont je devrais être au courant ?</French>
+                <Korean>알아야 할 중요한 장소나 사람을 아시나요?</Korean>
+                <Japanese>私が知っておくべき重要な場所や人物を知っていますか？</Japanese>
+                <Chineseimp>你知道任何我应该了解的重要地点或人物吗？</Chineseimp>
+                <Chinese>你知道任何我應該了解的重要地點或人物嗎？</Chinese>
+                <Polish>Czy znasz jakieś ważne miejsca lub osoby, o których powinienem wiedzieć?</Polish>
+                <Czech>Znám nějaká důležitá místa nebo osoby, o kterých bych měl vědět?</Czech>
+                <Portuguese>Você conhece algum local ou pessoa importante da qual eu deva saber?</Portuguese>
+                <Turkish>Bilmem gereken önemli yerler ya da kişiler var mı?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question3">
+                <Original>Is there anyone around here who might be willing to share some useful information?</Original>
+                <English>Is there anyone around here who might be willing to share some useful information?</English>
+                <Russian>Здесь есть кто-то, кто может быть готов поделиться полезной информацией?</Russian>
+                <German>Gibt es hier jemanden, der bereit ist, nützliche Informationen zu teilen?</German>
+                <Italian>C'è qualcuno qui intorno che potrebbe essere disposto a condividere informazioni utili?</Italian>
+                <Spanish>¿Hay alguien por aquí que esté dispuesto a compartir información útil?</Spanish>
+                <French>Y a-t-il quelqu'un ici qui pourrait être disposé à partager des informations utiles ?</French>
+                <Korean>이 주변에 유용한 정보를 공유할 의향이 있는 사람이 있나요?</Korean>
+                <Japanese>ここ周辺に有益な情報を共有する意志のある人はいますか？</Japanese>
+                <Chineseimp>这里有谁愿意分享一些有用的信息吗？</Chineseimp>
+                <Chinese>這裡有誰願意分享一些有用的信息嗎？</Chinese>
+                <Polish>Czy jest tutaj ktoś, kto mógłby być skłonny podzielić się przydatnymi informacjami?</Polish>
+                <Czech>Je zde někdo, kdo by mohl být ochoten sdílet užitečné informace?</Czech>
+                <Portuguese>Há alguém por aqui que possa estar disposto a compartilhar algumas informações úteis?</Portuguese>
+                <Turkish>Buralarda bazı faydalı bilgiler paylaşmaya istekli biri var mı?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail1">
+                <Original>I'm sorry, but I can't help you. Please, try asking someone else.</Original>
+                <English>I'm sorry, but I can't help you. Please, try asking someone else.</English>
+                <Russian>Извините, но я не могу вам помочь. Пожалуйста, попробуйте спросить кого-нибудь другого.</Russian>
+                <German>Es tut mir leid, aber ich kann Ihnen nicht helfen. Bitte versuchen Sie, jemand anderen zu fragen.</German>
+                <Italian>Mi dispiace, ma non posso aiutarti. Per favore, prova a chiedere a qualcun altro.</Italian>
+                <Spanish>Lo siento, pero no puedo ayudarte. Por favor, intenta preguntarle a otra persona.</Spanish>
+                <French>Je suis désolé, mais je ne peux pas vous aider. Veuillez essayer de demander à quelqu'un d'autre.</French>
+                <Korean>죄송하지만, 도와드릴 수 없습니다. 다른 사람에게 물어보세요.</Korean>
+                <Japanese>申し訳ありませんが、お力になれません。他の人に聞いてみてください。</Japanese>
+                <Chineseimp>对不起，我无法帮忙。请尝试问其他人。</Chineseimp>
+                <Chinese>對不起，我無法幫忙。請嘗試問其他人。</Chinese>
+                <Polish>Przepraszam, ale nie mogę ci pomóc. Spróbuj zapytać kogoś innego.</Polish>
+                <Czech>Omlouvám se, ale nemohu vám pomoci. Zkuste se zeptat někoho jiného.</Czech>
+                <Portuguese>Desculpe, mas não posso ajudar. Por favor, tente perguntar a outra pessoa.</Portuguese>
+                <Turkish>Üzgünüm, ama size yardımcı olamam. Lütfen başka birine sorunuz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail2">
+                <Original>I don't know anything about that. Maybe someone else can assist you.</Original>
+                <English>I don't know anything about that. Maybe someone else can assist you.</English>
+                <Russian>Я ничего об этом не знаю. Может быть, кто-то другой может вам помочь.</Russian>
+                <German>Ich weiß nichts darüber. Vielleicht kann Ihnen jemand anders helfen.</German>
+                <Italian>Non so nulla di questo. Forse qualcun altro può aiutarti.</Italian>
+                <Spanish>No sé nada de eso. Tal vez otra persona pueda ayudarte.</Spanish>
+                <French>Je ne sais rien à ce sujet. Peut-être que quelqu'un d'autre pourra vous aider.</French>
+                <Korean>그것에 대해서는 모르겠습니다. 아마 다른 사람이 도와줄 수 있을 겁니다.</Korean>
+                <Japanese>それについては何も知りません。別の誰かが助けてくれるかもしれません。</Japanese>
+                <Chineseimp>我对此一无所知。也许其他人能帮助你。</Chineseimp>
+                <Chinese>我對此一無所知。也許其他人能幫助你。</Chinese>
+                <Polish>Nic o tym nie wiem. Może ktoś inny ci pomoże.</Polish>
+                <Czech>Nic o tom nevím. Možná vám někdo jiný může pomoci.</Czech>
+                <Portuguese>Eu não sei nada sobre isso. Talvez outra pessoa possa ajudá-lo.</Portuguese>
+                <Turkish>Bunun hakkında hiçbir şey bilmiyorum. Belki başka biri size yardımcı olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail3">
+                <Original>Sorry, I really wish I could help, but I have no idea what you're talking about.</Original>
+                <English>Sorry, I really wish I could help, but I have no idea what you're talking about.</English>
+                <Russian>Извините, я бы хотел помочь, но не имею ни малейшего представления, о чём вы говорите.</Russian>
+                <German>Entschuldigung, ich würde wirklich gerne helfen, aber ich habe keine Ahnung, wovon Sie sprechen.</German>
+                <Italian>Mi dispiace, vorrei davvero aiutarti, ma non ho idea di cosa stai dicendo.</Italian>
+                <Spanish>Lo siento, realmente desearía poder ayudarte, pero no tengo ni idea de lo que estás diciendo.</Spanish>
+                <French>Désolé, j'aimerais vraiment pouvoir vous aider, mais je n'ai aucune idée de ce dont vous parlez.</French>
+                <Korean>죄송하지만, 정말 도와주고 싶지만, 당신이 말하는 내용에 대해 전혀 알지 못합니다.</Korean>
+                <Japanese>申し訳ありませんが、助けてあげたいのですが、あなたが何を言っているのか全くわかりません。</Japanese>
+                <Chineseimp>抱歉，我真的希望能帮忙，但我完全不知道你在说什么。</Chineseimp>
+                <Chinese>抱歉，我真的希望能幫忙，但我完全不知道你在說什麼。</Chinese>
+                <Polish>Przepraszam, naprawdę chciałbym pomóc, ale nie mam pojęcia, o czym mówisz.</Polish>
+                <Czech>Omlouvám se, opravdu bych rád pomohl, ale nemám tušení, o čem mluvíte.</Czech>
+                <Portuguese>Desculpe, eu realmente gostaria de poder ajudar, mas não tenho ideia do que você está falando.</Portuguese>
+                <Turkish>Üzgünüm, gerçekten yardımcı olmak isterdim ama ne söylediğiniz hakkında hiçbir fikrim yok.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_ref1">
+                <Original>I know of a place where they hold people captive. If you're looking to help, I can tell you where it is.</Original>
+                <English>I know of a place where they hold people captive. If you're looking to help, I can tell you where it is.</English>
+                <Russian>Я знаю место, где держат людей в плену. Если вы хотите помочь, я могу сказать, где оно находится.</Russian>
+                <German>Ich kenne einen Ort, an dem sie Menschen gefangen halten. Wenn du helfen willst, kann ich dir sagen, wo es ist.</German>
+                <Italian>Conosco un posto dove tengono le persone prigioniere. Se vuoi aiutare, posso dirti dove si trova.</Italian>
+                <Spanish>Conozco un lugar donde mantienen a las personas cautivas. Si quieres ayudar, te puedo decir dónde está.</Spanish>
+                <French>Je connais un endroit où ils gardent des gens captifs. Si vous voulez aider, je peux vous dire où il se trouve.</French>
+                <Korean>사람들을 억제하는 곳을 알고 있습니다. 도와주고 싶다면 어디인지 말해줄 수 있습니다.</Korean>
+                <Japanese>人々を捕らえている場所を知っています。助けたいなら、その場所を教えることができます。</Japanese>
+                <Chineseimp>我知道一个地方，他们把人关押在那里。如果你想帮忙，我可以告诉你在哪里。</Chineseimp>
+                <Chinese>我知道一個地方，他們把人關押在那裡。如果你想幫忙，我可以告訴你在哪裡。</Chinese>
+                <Polish>Znam miejsce, gdzie trzymają ludzi w niewoli. Jeśli chcesz pomóc, mogę ci powiedzieć, gdzie to jest.</Polish>
+                <Czech>Znam místo, kde drží lidi v zajetí. Pokud chcete pomoci, můžu vám říct, kde to je.</Czech>
+                <Portuguese>Conheço um lugar onde mantêm as pessoas em cativeiro. Se você quer ajudar, posso te dizer onde é.</Portuguese>
+                <Turkish>İnsanları esir tuttukları bir yer biliyorum. Yardım etmek istiyorsanız, nerede olduğunu söyleyebilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_ref2">
+                <Original>There's a spot where they keep prisoners. I’ve heard people talk about it. If you’re willing, you might be able to free them.</Original>
+                <English>There's a spot where they keep prisoners. I’ve heard people talk about it. If you’re willing, you might be able to free them.</English>
+                <Russian>Есть место, где держат заключенных. Я слышал, как люди о нем говорят. Если вы хотите, вы можете попытаться освободить их.</Russian>
+                <German>Es gibt einen Ort, an dem sie Gefangene halten. Ich habe gehört, wie die Leute darüber sprechen. Wenn du bereit bist, könntest du sie befreien.</German>
+                <Italian>C'è un posto dove tengono i prigionieri. Ho sentito parlare di questo posto. Se sei disposto, potresti essere in grado di liberarli.</Italian>
+                <Spanish>Hay un lugar donde mantienen a los prisioneros. He oído hablar de él. Si estás dispuesto, podrías liberarlos.</Spanish>
+                <French>Il y a un endroit où ils gardent les prisonniers. J'ai entendu parler de cet endroit. Si vous êtes disposé, vous pourriez les libérer.</French>
+                <Korean>그곳에는 죄수들을 가두는 곳이 있습니다. 사람들이 그것에 대해 이야기하는 걸 들었어요. 원하시면, 그들을 자유롭게 할 수 있을 겁니다.</Korean>
+                <Japanese>囚人を収容している場所があります。それについて話しているのを聞いたことがあります。もし望むなら、彼らを解放できるかもしれません。</Japanese>
+                <Chineseimp>有一个地方，他们关押着囚犯。我听人提起过它。如果你愿意，你也许能解救他们。</Chineseimp>
+                <Chinese>有一個地方，他們關押著囚犯。我聽人提起過它。如果你願意，你也許能解救他們。</Chinese>
+                <Polish>Jest miejsce, gdzie trzymają więźniów. Słyszałem, jak ludzie o nim mówią. Jeśli chcesz, możesz ich uwolnić.</Polish>
+                <Czech>Existuje místo, kde drží vězně. Slyšel jsem, jak o tom lidé mluví. Pokud budete ochotni, můžete je osvobodit.</Czech>
+                <Portuguese>Há um lugar onde mantêm prisioneiros. Ouvi falar sobre isso. Se você estiver disposto, pode ser capaz de libertá-los.</Portuguese>
+                <Turkish>Mahkumları tuttukları bir yer var. İnsanların bundan bahsettiğini duydum. Hazırsan, onları özgürleştirebilirsin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_info1">
+                <Original>I’ve heard about an informer. I can tell you where they’re hiding if you want to find them.</Original>
+                <English>I’ve heard about an informer. I can tell you where they’re hiding if you want to find them.</English>
+                <Russian>Я слышал о шпионе. Я могу сказать, где они прячутся, если вы хотите найти их.</Russian>
+                <German>Ich habe von einem Informanten gehört. Ich kann dir sagen, wo er sich versteckt, wenn du ihn finden willst.</German>
+                <Italian>Ho sentito parlare di un informatore. Posso dirti dove si nasconde se vuoi trovarlo.</Italian>
+                <Spanish>He oído hablar de un informante. Puedo decirte dónde se esconden si quieres encontrarlos.</Spanish>
+                <French>J'ai entendu parler d'un informateur. Je peux vous dire où ils se cachent si vous voulez les trouver.</French>
+                <Korean>스파이 이야기를 들었습니다. 그들이 숨겨져 있는 곳을 말할 수 있습니다, 찾고 싶다면요.</Korean>
+                <Japanese>情報提供者のことを聞いたことがあります。彼らが隠れている場所を教えることができます、もし探したいなら。</Japanese>
+                <Chineseimp>我听说过一个线人。如果你想找到他们，我可以告诉你他们藏身的地方。</Chineseimp>
+                <Chinese>我聽說過一個線人。如果你想找到他們，我可以告訴你他們藏身的地方。</Chinese>
+                <Polish>Słyszałem o informatorze. Mogę ci powiedzieć, gdzie się ukrywają, jeśli chcesz ich znaleźć.</Polish>
+                <Czech>Slyšel jsem o informátorovi. Můžu vám říct, kde se skrývá, pokud je chcete najít.</Czech>
+                <Portuguese>Ouvi falar de um informante. Posso dizer onde ele está se escondendo, se você quiser encontrá-lo.</Portuguese>
+                <Turkish>Bir ihbarcıdan duydum. Nerede saklandıklarını söyleyebilirim, onları bulmak istersen.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_info2">
+                <Original>There’s someone I know who has valuable information. I can let you know where to look.</Original>
+                <English>There’s someone I know who has valuable information. I can let you know where to look.</English>
+                <Russian>Я знаю человека, у которого есть ценная информация. Я могу сказать вам, где искать.</Russian>
+                <German>Es gibt jemanden, den ich kenne, der wertvolle Informationen hat. Ich kann dir sagen, wo du suchen musst.</German>
+                <Italian>Conosco una persona che ha informazioni preziose. Posso dirti dove cercare.</Italian>
+                <Spanish>Conozco a alguien que tiene información valiosa. Puedo decirte dónde buscar.</Spanish>
+                <French>Je connais quelqu'un qui a des informations précieuses. Je peux vous dire où chercher.</French>
+                <Korean>유용한 정보를 가진 사람을 알고 있습니다. 어디서 찾아야 하는지 알려줄 수 있습니다.</Korean>
+                <Japanese>貴重な情報を持っている人を知っています。どこを探せばよいか教えることができます。</Japanese>
+                <Chineseimp>我认识一个人，他有宝贵的信息。我可以告诉你在哪里找。</Chineseimp>
+                <Chinese>我認識一個人，他有寶貴的信息。我可以告訴你在哪裡找。</Chinese>
+                <Polish>Znam kogoś, kto ma cenne informacje. Mogę ci powiedzieć, gdzie szukać.</Polish>
+                <Czech>Znám někoho, kdo má cenné informace. Můžu vám říct, kde hledat.</Czech>
+                <Portuguese>Conheço alguém que tem informações valiosas. Posso te dizer onde procurar.</Portuguese>
+                <Turkish>Değerli bilgiye sahip birini tanıyorum. Nerede arayacağını söyleyebilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_prisoners1">
+                <Original>I overheard some soldiers talking about a group of prisoners being held in a facility nearby. If you're brave enough, you could find them there.</Original>
+                <English>I overheard some soldiers talking about a group of prisoners being held in a facility nearby. If you're brave enough, you could find them there.</English>
+                <Russian>Я подслушал, как солдаты говорили о группе заключенных, которых держат в ближайшем учреждении. Если ты достаточно смел, ты можешь найти их там.</Russian>
+                <German>Ich habe einige Soldaten über eine Gruppe von Gefangenen sprechen hören, die in einer nahegelegenen Einrichtung festgehalten werden. Wenn du mutig genug bist, kannst du sie dort finden.</German>
+                <Italian>Ho sentito alcuni soldati parlare di un gruppo di prigionieri tenuti in una struttura vicina. Se sei abbastanza coraggioso, potresti trovarli lì.</Italian>
+                <Spanish>Escuché a unos soldados hablar sobre un grupo de prisioneros retenidos en una instalación cercana. Si eres lo suficientemente valiente, podrías encontrarlos allí.</Spanish>
+                <French>J'ai entendu des soldats parler d'un groupe de prisonniers détenus dans une installation à proximité. Si vous êtes assez courageux, vous pourriez les trouver là-bas.</French>
+                <Korean>근처 시설에서 억제되고 있는 포로들에 대해 군인들이 이야기하는 걸 들었습니다. 용기가 있다면 거기서 그들을 찾을 수 있을 겁니다.</Korean>
+                <Japanese>近くの施設で囚人のグループが拘束されていることについて、兵士たちが話しているのを聞きました。もし十分勇気があれば、そこで彼らを見つけることができるでしょう。</Japanese>
+                <Chineseimp>我听到一些士兵谈论在附近的设施中关押一群囚犯。如果你够勇敢，你可以在那里找到他们。</Chineseimp>
+                <Chinese>我聽到一些士兵談論在附近的設施中關押一群囚犯。如果你夠勇敢，你可以在那裡找到他們。</Chinese>
+                <Polish>Przechwyciłem rozmowę żołnierzy o grupie więźniów przetrzymywanych w pobliskiej placówce. Jeśli jesteś wystarczająco odważny, możesz ich tam znaleźć.</Polish>
+                <Czech>Přeslechl jsem, jak vojáci mluvili o skupině vězňů, kteří jsou drženi v nedaleké zařízení. Pokud jsi dost odvážný, můžeš je tam najít.</Czech>
+                <Portuguese>Eu ouvi alguns soldados falando sobre um grupo de prisioneiros sendo mantidos em uma instalação próxima. Se você for corajoso o suficiente, pode encontrá-los lá.</Portuguese>
+                <Turkish>Bazı askerlerin yakındaki bir tesiste tutulan bir grup mahkumdan bahsettiğini duydum. Eğer yeterince cesurysan, onları orada bulabilirsin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_prisoners2">
+                <Original>There’s a place where they’ve been keeping prisoners. If you’re looking to help, that’s where you should head.</Original>
+                <English>There’s a place where they’ve been keeping prisoners. If you’re looking to help, that’s where you should head.</English>
+                <Russian>Есть место, где они держат заключенных. Если вы хотите помочь, вам стоит направиться туда.</Russian>
+                <German>Es gibt einen Ort, an dem sie Gefangene festhalten. Wenn du helfen willst, solltest du dorthin gehen.</German>
+                <Italian>C'è un posto dove tengono i prigionieri. Se vuoi aiutare, dovresti andare lì.</Italian>
+                <Spanish>Hay un lugar donde mantienen a los prisioneros. Si quieres ayudar, deberías ir allí.</Spanish>
+                <French>Il y a un endroit où ils gardent des prisonniers. Si vous voulez aider, c'est là que vous devriez vous rendre.</French>
+                <Korean>그들이 포로들을 가두는 곳이 있습니다. 도와주고 싶다면, 거기로 가야 합니다.</Korean>
+                <Japanese>囚人たちを収容している場所があります。助けたいなら、そこに向かうべきです。</Japanese>
+                <Chineseimp>有一个地方，他们关押着囚犯。如果你想帮忙，你应该去那里。</Chineseimp>
+                <Chinese>有一個地方，他們關押著囚犯。如果你想幫忙，你應該去那裡。</Chinese>
+                <Polish>Jest miejsce, gdzie trzymają więźniów. Jeśli chcesz pomóc, tam powinieneś się udać.</Polish>
+                <Czech>Existuje místo, kde drží vězně. Pokud chcete pomoci, tam byste měli zamířit.</Czech>
+                <Portuguese>Há um lugar onde mantêm os prisioneiros. Se você quer ajudar, deve ir até lá.</Portuguese>
+                <Turkish>Mahkumları tuttukları bir yer var. Yardım etmek istiyorsan, oraya gitmelisin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_Deserters1">
+                <Original>I heard a few soldiers have deserted their posts and are hiding in a safe spot just outside the area. If you're willing to help them, that’s where you’ll find them.</Original>
+                <English>I heard a few soldiers have deserted their posts and are hiding in a safe spot just outside the area. If you're willing to help them, that’s where you’ll find them.</English>
+                <Russian>Я слышал, что несколько солдат покинули свои посты и прячутся в безопасном месте недалеко от этого района. Если вы хотите помочь им, вы найдете их там.</Russian>
+                <German>Ich habe gehört, dass einige Soldaten ihre Posten verlassen haben und sich in einem sicheren Versteck direkt außerhalb des Gebiets verstecken. Wenn du bereit bist, ihnen zu helfen, findest du sie dort.</German>
+                <Italian>Ho sentito che alcuni soldati hanno abbandonato i loro posti e si stanno nascondendo in un posto sicuro appena fuori dall'area. Se vuoi aiutarli, li troverai lì.</Italian>
+                <Spanish>Escuché que algunos soldados han desertado de sus puestos y se están escondiendo en un lugar seguro justo fuera de la zona. Si estás dispuesto a ayudarlos, los encontrarás allí.</Spanish>
+                <French>J'ai entendu dire que quelques soldats ont déserté leurs postes et se cachent dans un endroit sûr juste à l'extérieur de la zone. Si vous êtes prêt à les aider, c'est là que vous les trouverez.</French>
+                <Korean>몇몇 군인들이 자신의 임무를 떠나 근처의 안전한 장소에 숨겨져 있다고 들었습니다. 그들을 돕고 싶다면, 그곳에서 찾을 수 있을 겁니다.</Korean>
+                <Japanese>数人の兵士が自分のポストを離れて、エリア外の安全な場所に隠れていると聞きました。彼らを助けたいなら、そこに行けば見つけられます。</Japanese>
+                <Chineseimp>我听说有几个士兵抛弃了他们的岗位，正在该地区外的安全地方躲藏。如果你愿意帮助他们，那里就是他们所在的地方。</Chineseimp>
+                <Chinese>我聽說有幾個士兵拋棄了他們的崗位，正在該地區外的安全地方躲藏。如果你願意幫助他們，那裡就是他們所在的地方。</Chinese>
+                <Polish>Słyszałem, że kilku żołnierzy opuściło swoje stanowiska i ukrywa się w bezpiecznym miejscu tuż za tym obszarem. Jeśli chcesz im pomóc, znajdziesz ich tam.</Polish>
+                <Czech>Slyšel jsem, že někteří vojáci opustili své stanice a skrývají se na bezpečném místě hned za touto oblastí. Pokud chcete pomoci, najdete je tam.</Czech>
+                <Portuguese>Ouvi dizer que alguns soldados abandonaram seus postos e estão se escondendo em um local seguro logo fora da área. Se você estiver disposto a ajudá-los, é lá que você os encontrará.</Portuguese>
+                <Turkish>Birkaç askerin görev yerlerini terk ettiğini ve bölge dışında güvenli bir yere saklandığını duydum. Onlara yardımcı olmak istersen, onları orada bulacaksın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_Deserters2">
+                <Original>There are some deserters trying to escape the military’s grasp. I know of a place where they’ve been hiding, but you’ll need to be quick.</Original>
+                <English>There are some deserters trying to escape the military’s grasp. I know of a place where they’ve been hiding, but you’ll need to be quick.</English>
+                <Russian>Есть дезертиры, пытающиеся избежать военной власти. Я знаю место, где они прячутся, но вам нужно будет действовать быстро.</Russian>
+                <German>Es gibt einige Deserteure, die versuchen, der militärischen Kontrolle zu entkommen. Ich kenne einen Ort, an dem sie sich verstecken, aber du musst schnell sein.</German>
+                <Italian>Ci sono dei disertori che stanno cercando di sfuggire al controllo militare. Conosco un posto dove si stanno nascondendo, ma dovrai essere veloce.</Italian>
+                <Spanish>Hay algunos desertores que están tratando de escapar del control militar. Conozco un lugar donde se están escondiendo, pero necesitarás ser rápido.</Spanish>
+                <French>Il y a des déserteurs qui essaient d'échapper à l'emprise militaire. Je connais un endroit où ils se cachent, mais vous devrez être rapide.</French>
+                <Korean>군대의 통제를 피하려는 탈영병들이 있습니다. 그들이 숨겨져 있는 곳을 알고 있지만, 빠르게 움직여야 할 겁니다.</Korean>
+                <Japanese>軍の手から逃げようとしている脱走兵がいます。彼らが隠れている場所を知っていますが、素早く行動する必要があります。</Japanese>
+                <Chineseimp>有一些逃兵正在试图逃脱军队的掌控。我知道他们藏身的地方，但你需要快速行动。</Chineseimp>
+                <Chinese>有一些逃兵正在試圖逃脫軍隊的掌控。我知道他們藏身的地方，但你需要快速行動。</Chinese>
+                <Polish>Są dezerterzy, którzy próbują uciec przed wojskową kontrolą. Znam miejsce, gdzie się ukrywają, ale musisz działać szybko.</Polish>
+                <Czech>Existují dezerteři, kteří se snaží uniknout vojenské moci. Znám místo, kde se skrývají, ale budete muset být rychlí.</Czech>
+                <Portuguese>Há alguns desertores tentando escapar do controle militar. Conheço um lugar onde eles estão se escondendo, mas você precisa ser rápido.</Portuguese>
+                <Turkish>Askeri kontrolden kaçmaya çalışan bazı kaçaklar var. Nerede saklandıklarını biliyorum ama hızlı olmalısın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_zone_reveal1">
+                <Original>Also, I’ve overheard some soldiers talking about a heavily guarded enemy zone. It might be worth checking out if you're planning something big.</Original>
+                <English>Also, I’ve overheard some soldiers talking about a heavily guarded enemy zone. It might be worth checking out if you're planning something big.</English>
+                <Russian>Кроме того, я слышал, как солдаты говорили о сильно охраняемой зоне врага. Это может стоить проверить, если вы планируете что-то серьезное.</Russian>
+                <German>Außerdem habe ich einige Soldaten über eine stark bewachte feindliche Zone sprechen hören. Es könnte sich lohnen, diese zu überprüfen, wenn du etwas Großes planst.</German>
+                <Italian>Ho anche sentito dei soldati parlare di una zona nemica pesantemente sorvegliata. Potrebbe valere la pena controllarla se hai grandi progetti.</Italian>
+                <Spanish>Además, he oído a algunos soldados hablar de una zona enemiga fuertemente vigilada. Podría valer la pena echarle un vistazo si estás planeando algo importante.</Spanish>
+                <French>J'ai aussi entendu des soldats parler d'une zone ennemie fortement gardée. Cela pourrait valoir le coup d'œil si vous planifiez quelque chose d'important.</French>
+                <Korean>또한, 몇몇 병사들이 철저히 경비된 적의 구역에 대해 이야기하는 것을 들었습니다. 무언가 큰일을 계획 중이라면 확인해볼 가치가 있을 겁니다.</Korean>
+                <Japanese>また、兵士たちが厳重に警備された敵の区域について話しているのを耳にしました。何か大きなことを計画しているなら、調べる価値があるかもしれません。</Japanese>
+                <Chineseimp>另外，我听到一些士兵谈论一个戒备森严的敌方区域。如果你有重大计划，这值得一探。</Chineseimp>
+                <Chinese>另外，我聽到一些士兵談論一個戒備森嚴的敵方區域。如果你有重大計劃，這值得一探。</Chinese>
+                <Polish>Poza tym słyszałem, jak żołnierze rozmawiali o silnie strzeżonej strefie wroga. Może warto to sprawdzić, jeśli planujesz coś dużego.</Polish>
+                <Czech>Také jsem slyšel, jak vojáci mluví o silně střežené nepřátelské zóně. Mohlo by to stát za prozkoumání, pokud plánujete něco velkého.</Czech>
+                <Portuguese>Além disso, ouvi alguns soldados falando sobre uma zona inimiga fortemente guardada. Pode valer a pena verificar se você está planejando algo grande.</Portuguese>
+                <Turkish>Ayrıca bazı askerlerin sıkı korunan bir düşman bölgesinden bahsettiğini duydum. Eğer büyük bir şey planlıyorsanız, bakmaya değer olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_zone_reveal2">
+                <Original>By the way, I’ve seen enemy patrols moving around a location not too far from here. It could be one of their key zones. You might want to take a closer look.</Original>
+                <English>By the way, I’ve seen enemy patrols moving around a location not too far from here. It could be one of their key zones. You might want to take a closer look.</English>
+                <Russian>Кстати, я видел патрули врага, перемещающиеся недалеко отсюда. Возможно, это одна из их ключевых зон. Стоит присмотреться.</Russian>
+                <German>Übrigens habe ich feindliche Patrouillen in der Nähe gesehen. Es könnte einer ihrer Schlüsselpunkte sein. Du solltest es dir genauer ansehen.</German>
+                <Italian>A proposito, ho visto pattuglie nemiche muoversi in una zona non troppo lontano da qui. Potrebbe essere una delle loro aree chiave. Potresti volerla esaminare più da vicino.</Italian>
+                <Spanish>Por cierto, he visto patrullas enemigas moviéndose en un lugar no muy lejos de aquí. Podría ser una de sus zonas clave. Quizás quieras investigarlo más a fondo.</Spanish>
+                <French>Au fait, j'ai vu des patrouilles ennemies se déplacer dans un endroit non loin d'ici. Cela pourrait être l'une de leurs zones clés. Vous pourriez vouloir y jeter un œil plus attentif.</French>
+                <Korean>참고로, 여기서 멀지 않은 곳에서 적의 순찰대를 본 적이 있습니다. 그곳은 그들의 주요 구역 중 하나일 수 있습니다. 더 가까이 조사해보는 것이 좋을 것입니다.</Korean>
+                <Japanese>ちなみに、ここから遠くない場所で敵の巡回部隊を見かけました。それは彼らの重要なエリアの1つかもしれません。もっと詳しく調べるべきです。</Japanese>
+                <Chineseimp>顺便说一句，我看到敌军在离这里不远的一个地方巡逻。那可能是他们的关键区域之一。你或许需要仔细查看。</Chineseimp>
+                <Chinese>順便說一句，我看到敵軍在離這裡不遠的一個地方巡邏。那可能是他們的關鍵區域之一。你或許需要仔細查看。</Chinese>
+                <Polish>Przy okazji widziałem patrole wroga w pobliżu tego miejsca. Może to być jedna z ich kluczowych stref. Warto się temu przyjrzeć bliżej.</Polish>
+                <Czech>Mimochodem jsem viděl nepřátelské patroly pohybující se poblíž. Mohla by to být jedna z jejich klíčových zón. Možná by stálo za to se tam podívat.</Czech>
+                <Portuguese>Aliás, vi patrulhas inimigas movendo-se perto daqui. Pode ser uma das zonas-chave deles. Talvez você deva dar uma olhada mais de perto.</Portuguese>
+                <Turkish>Bu arada, buraya çok uzak olmayan bir yerde düşman devriyelerini gördüm. Bu, onların kilit bölgelerinden biri olabilir. Daha yakından bakmak isteyebilirsiniz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal1">
+                <Original>Sorry I couldn't help, but I’ve seen enemy soldiers patrolling a spot nearby. Might be worth checking out if you’re looking for trouble.</Original>
+                <English>Sorry I couldn't help, but I’ve seen enemy soldiers patrolling a spot nearby. Might be worth checking out if you’re looking for trouble.</English>
+                <Russian>Простите, что не смог помочь, но я видел, как враги патрулируют место неподалеку. Возможно, стоит проверить, если вы ищете неприятностей.</Russian>
+                <German>Es tut mir leid, dass ich nicht helfen konnte, aber ich habe gesehen, wie feindliche Soldaten in der Nähe patrouillieren. Vielleicht lohnt es sich, dort nachzusehen, wenn du Ärger suchst.</German>
+                <Italian>Mi dispiace di non poter aiutare, ma ho visto soldati nemici pattugliare un posto qui vicino. Potrebbe valere la pena controllare se stai cercando guai.</Italian>
+                <Spanish>Lo siento, no puedo ayudarte, pero he visto soldados enemigos patrullando un lugar cerca de aquí. Podría valer la pena echarle un vistazo si buscas problemas.</Spanish>
+                <French>Désolé de ne pas pouvoir vous aider, mais j'ai vu des soldats ennemis patrouiller à proximité. Cela pourrait valoir le coup d'œil si vous cherchez des ennuis.</French>
+                <Korean>도움을 드리지 못해 죄송하지만, 근처에서 적 병사들이 순찰하는 것을 봤습니다. 문제가 필요하다면 확인해볼 가치가 있을 겁니다.</Korean>
+                <Japanese>お力になれず申し訳ありませんが、近くで敵兵が巡回しているのを見かけました。もし問題を探しているなら、確認する価値があるかもしれません。</Japanese>
+                <Chineseimp>很抱歉我无法帮助你，但我看到敌军在附近的一个地点巡逻。如果你想找点麻烦，可能值得查看一下。</Chineseimp>
+                <Chinese>很抱歉我無法幫助你，但我看到敵軍在附近的一個地點巡邏。如果你想找點麻煩，可能值得查看一下。</Chinese>
+                <Polish>Przepraszam, że nie mogłem pomóc, ale widziałem, jak wrogowie patrolują pobliskie miejsce. Może warto to sprawdzić, jeśli szukasz kłopotów.</Polish>
+                <Czech>Omlouvám se, že nemohu pomoci, ale viděl jsem, jak nepřátelé hlídkují v blízkosti. Možná to stojí za kontrolu, pokud hledáte potíže.</Czech>
+                <Portuguese>Desculpe, não pude ajudar, mas vi soldados inimigos patrulhando um local próximo. Pode valer a pena verificar se você está procurando problemas.</Portuguese>
+                <Turkish>Üzgünüm yardımcı olamadım, ama yakındaki bir yerde düşman askerlerinin devriye gezdiğini gördüm. Sorun arıyorsanız bakmaya değer olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal2">
+                <Original>Sorry, I don’t have the information you need, but there’s a location I’ve noticed the enemy frequenting. Maybe that’ll help.</Original>
+                <English>Sorry, I don’t have the information you need, but there’s a location I’ve noticed the enemy frequenting. Maybe that’ll help.</English>
+                <Russian>Простите, у меня нет нужной вам информации, но я заметил место, которое часто посещают враги. Возможно, это поможет.</Russian>
+                <German>Entschuldigung, ich habe nicht die Informationen, die du brauchst, aber ich habe einen Ort bemerkt, den der Feind häufig besucht. Vielleicht hilft dir das.</German>
+                <Italian>Mi dispiace, non ho le informazioni che ti servono, ma ho notato un luogo che i nemici frequentano spesso. Forse potrebbe esserti utile.</Italian>
+                <Spanish>Lo siento, no tengo la información que necesitas, pero he notado un lugar que los enemigos frecuentan. Quizás eso te sirva.</Spanish>
+                <French>Désolé, je n'ai pas les informations dont vous avez besoin, mais j'ai remarqué un endroit fréquenté par l'ennemi. Peut-être que cela pourra vous aider.</French>
+                <Korean>죄송하지만 필요한 정보를 가지고 있지 않습니다. 그러나 적이 자주 드나드는 장소를 본 적이 있습니다. 도움이 될지도 모릅니다.</Korean>
+                <Japanese>申し訳ありませんが、必要な情報を持っていません。ただし、敵が頻繁に出入りする場所を見かけました。それがお役に立つかもしれません。</Japanese>
+                <Chineseimp>对不起，我没有你需要的信息，但我注意到敌军经常光顾一个地方。也许这会有所帮助。</Chineseimp>
+                <Chinese>對不起，我沒有你需要的信息，但我注意到敵軍經常光顧一個地方。也許這會有所幫助。</Chinese>
+                <Polish>Przepraszam, nie mam informacji, których potrzebujesz, ale zauważyłem miejsce, które wróg często odwiedza. Może to ci pomoże.</Polish>
+                <Czech>Omlouvám se, nemám informace, které potřebujete, ale všiml jsem si místa, kam nepřátelé často chodí. Možná to pomůže.</Czech>
+                <Portuguese>Desculpe, não tenho as informações que você precisa, mas notei um local que os inimigos frequentam. Talvez isso ajude.</Portuguese>
+                <Turkish>Üzgünüm, ihtiyacınız olan bilgiye sahip değilim, ama düşmanın sık sık gittiği bir yer fark ettim. Belki bu işinize yarar.</Turkish>
             </Key>
         </Container>
         <Container name="rivals_notifications">

@@ -20,6 +20,8 @@ class CfgFunctions {
             class createResourceCiv {};
             class createRoomLight {};
             class getDayState {};
+            class dialogCivilian {};
+            class dialogCivFinished {};
             class unitAmbient {};
         };
 

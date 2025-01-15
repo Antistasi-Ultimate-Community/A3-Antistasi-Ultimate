@@ -42,15 +42,19 @@ _tableItem set [1, ((_tableItem select 1) + ([-1.0, 1.0] call BIS_fnc_randomNum)
 _tableItem set [2, ((_tableItem select 2) + 0.5)];
 
 private _civItems = selectRandom [
-	"Item_Money", 
-	"Item_Money_bunch", 
-	"Item_Money_roll", 
-	"Item_Money_stack"
+    "Item_Money", 
+    "Item_Money_bunch", 
+    "Item_Money_roll", 
+    "Item_Money_stack",
+    "Leaflet_05_F", 
+    "Leaflet_05_Old_F", 
+    "MedicalGarbage_01_1x1_v1_F", 
+    "MedicalGarbage_01_Packaging_F", 
+    "Land_Tyre_F", 
+    "Leaflet_05_New_F"
 ];
 
-if (5 >= random 10) then {
-    private _randomCivItem = createVehicle [_civItems, _tableItem];
-};
+private _randomCivItem = createVehicle [_civItems, _tableItem];
 
 [_radioItem, _musicSource] spawn {
     params ["_radioItem", "_musicSource", "_locationType"];
@@ -86,7 +90,7 @@ if (5 >= random 10) then {
         },
         {},
         [_musicSource], 2, nil, true, false
-    ] call BIS_fnc_holdActionAdd; // hold interaction to destroy radio.
+    ] remoteExec ["BIS_fnc_holdActionAdd", 0]; // hold interaction to destroy radio.
 
     while { (alive _musicSource) } do {
         while { _tracksPlayed < _totalTracks } do {
