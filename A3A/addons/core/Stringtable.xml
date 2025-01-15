@@ -697,6 +697,23 @@
                 <Russian>Радист</Russian>
                 <Korean>무전병</Korean>
             </Key>
+            <Key ID="STR_A3AU_ambient_sounds">
+                <Original>Enable Ambient Sounds</Original>
+                <English>Enable Ambient Sounds</English>
+                <Russian>Включить фоновые звуки</Russian>
+                <German>Ambientegeräusche aktivieren</German>
+                <Italian>Abilita suoni ambientali</Italian>
+                <Spanish>Habilitar sonidos ambientales</Spanish>
+                <French>Activer les sons d'ambiance</French>
+                <Korean>환경 소리 활성화</Korean>
+                <Japanese>環境音を有効にする</Japanese>
+                <Chineseimp>启用环境声音</Chineseimp>
+                <Chinese>啟用環境聲音</Chinese>
+                <Polish>Włącz dźwięki otoczenia</Polish>
+                <Czech>Povolit ambientní zvuky</Czech>
+                <Portuguese>Ativar sons ambientais</Portuguese>
+                <Turkish>Ortam Seslerini Etkinleştir</Turkish>
+            </Key>
             <Key ID="STR_A3AU_dialogs_squadleader_support">
                 <Original>Squadleader</Original>
                 <English>Squadleader</English>

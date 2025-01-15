@@ -28,6 +28,8 @@ if (petros == leader group petros) then {
 	petros setBehaviour "SAFE";
 };
 
+call A3A_fnc_unitAmbient; // adds ambient sounds to petros
+
 // Install both moving and static actions
 [petros,"petros"] remoteExec ["A3A_fnc_flagaction", 0, petros];
 
