@@ -15,7 +15,7 @@
         _return <_unit>
 */
 
-params ["_musicSource", ""];
+params [["_musicSource", petros]];
 
 [_musicSource] spawn {
     params ["_musicSource"];

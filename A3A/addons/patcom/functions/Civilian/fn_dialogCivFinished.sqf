@@ -17,6 +17,7 @@
 
 #include "..\..\script_component.hpp"
 private _civilian = _this select 0;
+private _civPos = getPosWorld _civilian;
 if (4 >= random 10) then {
     private _civrequestedMission = "";
     if (tierWar >= 5) then {
@@ -74,14 +75,15 @@ if (4 >= random 10) then {
         };
     };
     
-    private _possibleMarkers = [citiesX] call A3A_fnc_findIfNearAndHostile;
+    private _possibleMarkers = [citiesX, _civilian] call A3A_fnc_findIfNearAndHostile;
+    _possibleMarkers deleteAt 0;
     private _site = selectRandom _possibleMarkers;
 
     diag_log format ["[Maxxs work] selected site: ", _site];
 
     [[_site],_civrequestedMission] remoteExec ["A3A_fnc_scheduler",2];
     if (hideEnemyMarkers) then {
-        if (random(100) >= 25) then {
+        if (10 >= random(100)) then {
             
             sleep 2;// waits for 2 sec so the text wont appear too fast
 
@@ -101,7 +103,7 @@ if (4 >= random 10) then {
     ]);
 
     if (hideEnemyMarkers) then {
-        if (random(100) >= 8) then {
+        if (5 >= random(100)) then {
             
             sleep 2;// waits for 2 sec so the text wont appear too fast
             

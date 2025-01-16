@@ -51,10 +51,6 @@ private _unhiddenMarkers = [];
 
 if (_availableMarkers isEqualTo []) exitWith {["Aborting function. All markers are revealed already.", _fnc_scriptName] call A3U_fnc_log};
 
-if (_availableMarkers <= 3) exitWith {
-    [_availableMarkers] call A3U_fnc_revealZones; // reveal all of the zones that are left if there are less then 3
-};
-
 // Grab random markers (if available)
 for "_i" from 0 to (_amount - 1) do {
     private _marker = selectRandom _availableMarkers;
