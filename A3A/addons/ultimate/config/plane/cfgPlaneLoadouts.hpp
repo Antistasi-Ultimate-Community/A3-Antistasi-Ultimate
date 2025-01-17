@@ -380,6 +380,36 @@ class planeLoadouts
             rocketLauncher[] = {"Rocket_04_AP_Plane_CAS_01_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
+        class KAP_GSB_22_Plane_Fighter_04
+        {
+            loadout[] = {"","","rhs_mag_ub16_s5ko","rhs_mag_ub16_s5ko","PylonMissile_1Rnd_BombCluster_01_F","PylonMissile_1Rnd_BombCluster_01_F"};
+            mainGun = "weapon_Fighter_Gun20mm_AA";
+            bombRacks[] = {"BombCluster_01_F"};
+            rocketLauncher[] = {"rhs_weap_s5ko"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class CDF_F16_C
+        {
+            loadout[] = {"","","FIR_GBU56_P_1rnd_M","","","","","FIR_GBU56_P_1rnd_M","",""};
+            mainGun = "FIR_M61A2";
+            bombRacks[] = {"FIR_GBU56"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class rhsgref_cdf_b_su25
+        {
+            loadout[] = {"rhs_mag_ub32_s5ko","rhs_mag_ub32_s5ko","rhs_mag_b13l_s13t","rhs_mag_b13l_s13t","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","","",,"rhs_ASO2_CMFlare_Chaff_Magazine_x4"};
+            mainGun = "rhs_weap_gsh302";
+            rocketLauncher[] = {"rhs_weap_s8df", "rhs_weap_s5ko", "rhs_weap_s13t"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class rhs_l159_cdf_b_CDF
+        {
+            loadout[] = {"","rhs_mag_agm65f","rhs_mag_mk82","rhs_mag_zpl20_mixed","rhs_mag_mk82","rhs_mag_agm65f","","rhsusf_ANALE40_CMFlare_Chaff_Magazine_x2"};
+            mainGun = "RHS_weap_zpl20";
+            missileLauncher[] = {"rhs_weap_agm65f"};
+            bombRacks[] = {"rhs_weap_mk82"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
     };
 
     class CAS
@@ -795,6 +825,31 @@ class planeLoadouts
             mainGun = "CUP_Vacannon_GAU12_veh";
             missileLauncher[] = {"CUP_Vmlauncher_AIM9L_veh_1Rnd", "CUP_Vblauncher_GBU12_veh"};
         };
+        class KAP_GSB_22_Plane_Fighter_04
+        {
+            loadout[] = {"PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_C_x1","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Bomb_04_F"};
+            mainGun = "weapon_Fighter_Gun20mm_AA";
+            missileLauncher[] = {"weapon_AMRAAMLauncher", "Bomb_04_Plane_CAS_01_F"};
+        };
+        class CDF_F16_C
+        {
+            loadout[] = {"","","FIR_GBU56_P_1rnd_M","","","FIR_SniperXR_HTS_P_1rnd_M","","FIR_GBU56_P_1rnd_M","",""};
+            mainGun = "FIR_M61A2";
+            bombRacks[] = {"FIR_GBU56"};
+        };
+        class rhsgref_cdf_b_su25
+        {
+            loadout[] = {"rhs_mag_ub32_s5ko","rhs_mag_ub32_s5ko","rhs_mag_b13l_s13t","rhs_mag_b13l_s13t","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","","",,"rhs_ASO2_CMFlare_Chaff_Magazine_x4"};
+            mainGun = "rhs_weap_gsh302";
+            rocketLauncher[] = {"rhs_weap_s8df", "rhs_weap_s5ko", "rhs_weap_s13t"};
+        };
+        class rhs_l159_cdf_b_CDF
+        {
+            loadout[] = {"","rhs_mag_agm65f","rhs_mag_mk82","rhs_mag_zpl20_mixed","rhs_mag_mk82","rhs_mag_agm65f","","rhsusf_ANALE40_CMFlare_Chaff_Magazine_x2"};
+            mainGun = "RHS_weap_zpl20";
+            missileLauncher[] = {"rhs_weap_agm65f"};
+            bombRacks[] = {"rhs_weap_mk82"};
+        };
     };
    
     class AA
@@ -1097,6 +1152,34 @@ class planeLoadouts
             loadout[] = {"PylonMissile_1Rnd_Missile_AA_04_F","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_D_x1","PylonMissile_Missile_AMRAAM_C_x1","","PylonMissile_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_D_x1","PylonRack_Missile_BIM9X_x1","PylonMissile_1Rnd_Missile_AA_04_F"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"Missile_AA_04_Plane_CAS_01_F","weapon_BIM9xLauncher","weapon_AMRAAMLauncher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+        class KAP_GSB_22_Plane_Fighter_04
+        {
+            loadout[] = {"PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1"};
+            mainGun = "weapon_Fighter_Gun20mm_AA";
+            missileLauncher[] = {"weapon_AMRAAMLauncher","weapon_BIM9xLauncher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+        class CDF_F16_C
+        {
+            loadout[] = {"FIR_AIM120_P_1rnd_M","FIR_AIM9X_P_1rnd_M","FIR_AIM120_P_1rnd_M","","","","","FIR_AIM120_P_1rnd_M","FIR_AIM9X_P_1rnd_M","FIR_AIM120_P_1rnd_M"};
+            mainGun = "FIR_M61A2";
+            missileLauncher[] = {"FIR_AIM120", "FIR_AIM9X"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+        class rhsgref_cdf_b_mig29s
+        {
+            loadout[] = {"rhs_mag_R27ET_APU470","rhs_mag_R27ET_APU470","rhs_mag_R73M_APU73","rhs_mag_R73M_APU73","rhs_mag_R73M_APU73","rhs_mag_R73M_APU73","","rhs_BVP3026_CMFlare_Chaff_Magazine_x2"};
+            mainGun = "rhs_weap_gsh301";
+            missileLauncher[] = {"rhs_weap_r27t_Launcher", "rhs_weap_r73m_Launcher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+        class rhs_l159_cdf_b_CDF
+        {
+            loadout[] = {"rhs_mag_Sidewinder","rhs_mag_Sidewinder","rhs_mag_Sidewinder","rhs_mag_zpl20_hei","rhs_mag_Sidewinder","rhs_mag_Sidewinder","rhs_mag_Sidewinder","rhsusf_ANALE40_CMFlare_Chaff_Magazine_x2"};
+            mainGun = "RHS_weap_zpl20";
+            missileLauncher[] = {"rhs_weap_SidewinderLauncher"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
     };

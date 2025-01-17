@@ -403,6 +403,25 @@ class Templates
         file = "RHS_AI_SAF";
     };
 
+	class GSB2022_Occ: RHS_Base
+    {  
+        requiredAddons[] = {"rhsgref_main", "rhssaf_c_vehicles", "rhs_c_tanks", "RHS_US_A2Port_Armor", "gsb_rhs_22_infantry"}; 
+        side = "Occ";
+        flagTexture = "\gsb_rhs_22_main\DATA\flags\flag_marker_gsb_22_co.paa";
+        name = "RHS GSB 2022";
+        file = "RHS_AI_GSB";
+        description = "Mix of Western and Eastern Assets.";
+    };
+
+    class ZAVB_Riv: RHS_Base
+    {
+        requiredAddons[] = {"rhsgref_main", "rhssaf_c_vehicles", "rhs_c_tanks", "RHS_US_A2Port_Armor", "gsb_rhs_22_infantry", "ACM_CDF_GSFL"};
+        side = "Riv";
+        flagTexture = "\gsb_rhs_22_main\DATA\flags\flag_marker_gsb_22_co.paa";
+        name = "RHS S-ZAVB";
+        file = "RHS_Riv_SZAVB";
+    };
+
     //************* VN ********************************************************
 
     class VN_Base : Base
