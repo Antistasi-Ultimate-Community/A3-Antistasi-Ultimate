@@ -388,13 +388,6 @@ class planeLoadouts
             rocketLauncher[] = {"rhs_weap_s5ko"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
-        class CDF_F16_C
-        {
-            loadout[] = {"","","FIR_GBU56_P_1rnd_M","","","","","FIR_GBU56_P_1rnd_M","",""};
-            mainGun = "FIR_M61A2";
-            bombRacks[] = {"FIR_GBU56"};
-            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
-        };
         class rhsgref_cdf_b_su25
         {
             loadout[] = {"rhs_mag_ub32_s5ko","rhs_mag_ub32_s5ko","rhs_mag_b13l_s13t","rhs_mag_b13l_s13t","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","","",,"rhs_ASO2_CMFlare_Chaff_Magazine_x4"};
@@ -831,12 +824,6 @@ class planeLoadouts
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"weapon_AMRAAMLauncher", "Bomb_04_Plane_CAS_01_F"};
         };
-        class CDF_F16_C
-        {
-            loadout[] = {"","","FIR_GBU56_P_1rnd_M","","","FIR_SniperXR_HTS_P_1rnd_M","","FIR_GBU56_P_1rnd_M","",""};
-            mainGun = "FIR_M61A2";
-            bombRacks[] = {"FIR_GBU56"};
-        };
         class rhsgref_cdf_b_su25
         {
             loadout[] = {"rhs_mag_ub32_s5ko","rhs_mag_ub32_s5ko","rhs_mag_b13l_s13t","rhs_mag_b13l_s13t","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","rhs_mag_b8m1_s8df","","",,"rhs_ASO2_CMFlare_Chaff_Magazine_x4"};
@@ -1159,13 +1146,6 @@ class planeLoadouts
             loadout[] = {"PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"weapon_AMRAAMLauncher","weapon_BIM9xLauncher"};
-            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
-        };
-        class CDF_F16_C
-        {
-            loadout[] = {"FIR_AIM120_P_1rnd_M","FIR_AIM9X_P_1rnd_M","FIR_AIM120_P_1rnd_M","","","","","FIR_AIM120_P_1rnd_M","FIR_AIM9X_P_1rnd_M","FIR_AIM120_P_1rnd_M"};
-            mainGun = "FIR_M61A2";
-            missileLauncher[] = {"FIR_AIM120", "FIR_AIM9X"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
         class rhsgref_cdf_b_mig29s
