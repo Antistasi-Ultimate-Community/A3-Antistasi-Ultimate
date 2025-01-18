@@ -17,6 +17,7 @@
 
 
 #include "..\..\script_component.hpp"
+private _debugStatus = format ["[Civ Dialog] | Civ Hold Action | caller: %1 Civ Unit: %2", _caller, _civUnit];
 params ["_civUnit", nil];
 [
     _civUnit,
@@ -29,6 +30,7 @@ params ["_civUnit", nil];
             localize "STR_antistasi_actions_talk_with_civ_question2",
             localize "STR_antistasi_actions_talk_with_civ_question3"
         ]);
+        _civUnit disableAI "PATH";
         diag_log format ["[Maxxs work action] caller: %1 Civ Unit: %2", _caller, _civUnit];
     },
     {},

@@ -3,25 +3,27 @@
         Wersal, MaxxLite
     
     Description:
-        makes a distance sorted array from all near enemy held terretory from a provided array of markers
+        Finds the closest enemy town to a selected refrance unit/object
     
     Params:
-        single array of markers, do 'array + array' for multiple.
+        _Markers <Array> <Default: "">
+        _unit <unit/object> <Default: petros>
     
     Usage:
         [_Markers, _unit] call A3A_fnc_findIfNearAndHostile;
     
     Return:
-        array of markers within max mission distance and is not rebel.
-        from closest to furthest.
+        The closest enemy controlled marker
 */
-params [ 
-  ["_Markers", ""], 
-  ["_unit", petros] 
-];
 
-private _referencePos = getPosWorld _unit;
-private _nearestMarker = [allMapMarkers, _referencePos] call BIS_fnc_nearestPosition;
-_Markers = _Markers select {(getMarkerPos _x distance2D getMarkerPos _nearestMarker < distanceMission) && (sidesX getVariable [_x,sideUnknown] != teamPlayer)};
-_Markers = [_Markers,[],{_referencePos distanceSqr getMarkerPos _x},"ASCEND"] call BIS_fnc_sortBy;
-_Markers
+params [  
+  ["_Markers", ""],  
+  ["_unit", petros]  
+]; 
+
+private _referencePos = getPosWorld _unit; 
+private _nearestMarkers = [allMapMarkers, _referencePos] call BIS_fnc_nearestPosition; 
+_Markers = _Markers select {(getMarkerPos _x distance2D getMarkerPos _nearestMarkers < (distanceMission * 2)) && (sidesX getVariable [_x,sideUnknown] != teamPlayer)}; 
+_Markers = [_Markers,[],{_referencePos distanceSqr getMarkerPos _x},"ASCEND"] call BIS_fnc_sortBy; 
+_nearestMarker = _Markers select 0; 
+_nearestMarker
