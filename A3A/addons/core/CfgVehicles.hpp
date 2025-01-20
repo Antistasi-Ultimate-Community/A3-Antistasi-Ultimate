@@ -216,14 +216,12 @@ class CfgVehicles
         hiddenSelections[] = { "camo" };
 		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\supplydrop_medical_02_co.paa) };
     };
-    class A3AU_supplyCrate_Money_01 : A3AU_supplyCrate_Base {
+    
+    class Land_PaperBox_01_small_closed_white_med_F;
+    class A3AU_moneyCrate_small_01 : Land_PaperBox_01_small_closed_white_med_F {
+        displayName = "Money Crate (Small)";
         author = AUTHOR;
         hiddenSelections[] = { "camo" };
-		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\supplydrop_money_01_co.paa) };
-    };
-    class A3AU_supplyCrate_Money_02 : A3AU_supplyCrate_Base {
-        author = AUTHOR;
-        hiddenSelections[] = { "camo" };
-		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\supplydrop_money_02_co.paa) };
+		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\PaperBox_01_small_money_CO.paa) };
     };
 };

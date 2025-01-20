@@ -11,7 +11,7 @@ private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) t
 private _milFaction = Faction(_sideX);
 private _rebFaction = Faction(teamPlayer);
 private _civFaction = Faction(civilian);
-private _civDisabled = if (_civFaction getOrDefault ["attributeLowCiv", false] || {_civFaction getOrDefault ["attributeCivNonHuman", false]});
+private _civDisabled = (_civFaction getOrDefault ["attributeLowCiv", false] || {_civFaction getOrDefault ["attributeCivNonHuman", false]});
 
 
 private _posSpawn = getMarkerPos _mrkOrigin;			// used for spawning infantry before moving them into vehicles
@@ -76,7 +76,6 @@ private _taskTitle = "";
 private _taskIcon = "";
 private _taskState1 = "CREATED";
 private _typeVehObj = "";
-private _typeSupObj = "";
 private _vehiclePool = [];
 
 // * Cleanup the civilian and rebel equipment hashmaps (remove vehicle arrays that are nil or empty) before attempting to select a vehicle from them
@@ -146,7 +145,6 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _taskIcon = "takeoff"; ///"truck" icon doesn't exist
         _vehiclePool = if _civDisabled then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction get "vehiclesCivIndustrial" } select { typeName _x == "STRING"}; // * convert weighted list to normal array
         _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
-        _typeSupObj = selectRandom ["A3AU_supplyCrate_Money_01", "A3AU_supplyCrate_Money_02"];
     };
     case "supplies":
     {
@@ -155,7 +153,6 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _taskIcon = "box";
         _vehiclePool = if _civDisabled then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction getOrDefault ["vehiclesCivMedical", _civFaction get "vehiclesCivIndustrial"] } select { typeName _x == "STRING"}; // * convert weighted list to normal array
         _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
-        _typeSupObj = selectRandom ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "Land_PaperBox_01_small_stacked_F", "Land_WaterBottle_01_stack_F", "Land_FoodSacks_01_cargo_white_idap_F"];
     };
 };
 //_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
@@ -281,26 +278,66 @@ if (_convoyType isEqualTo "Reinforcements") then
     _soldiers append (units _groupEsc);
     _reinforcementsX append (units _groupEsc);
 };
-if (_convoyType in ["Money", "Supplies"]) then
+if (_convoyType == "Money") then
 {
     if (_objectiveIsCargo) then {
-        // put a supply container in the supply / money truck so it can be identified more easily as the objective vehicle
-        _supObj = _typeSupObj createVehicle (position _vehObj);
-        private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;
-        if (_canLoad isEqualType -1) then {
-            deleteVehicle _supObj; 
-            continue 
-        } else {
-            clearMagazineCargoGlobal _supObj;
-            clearWeaponCargoGlobal _supObj;
-            clearItemCargoGlobal _supObj;
-            clearBackpackCargoGlobal _supObj;
-            _supObj setDamage 0.75; // vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
-            _supObj lockInventory true; // don't want pesky inquisitive players to know there's not actually anything in here lol
-            _supObj call A3A_Logistics_fnc_addLoadAction;
-            (_canLoad + [true]) call A3A_Logistics_fnc_load;
-            break
-        };
+        // * put a supply container in the truck so it can be identified more easily as the objective vehicle
+        {
+            _supObj = _x createVehicle (position _vehObj);
+            if (_forEachIndex == 0) then {
+                // * attach money crates to pallet
+                private _crateOffset = [0.52, 0.02, -0.48];
+                for "_i" from 0 to 2 do {
+                    private _crate = "A3AU_moneyCrate_small_01" createVehicle (position _supObj);
+                    _crate lockInventory true;
+                    _crate attachTo [_supObj, [0, _crateOffset select _i, 0.29]];
+                };
+            };
+            
+            // * try to load a large container, then fall back to small box if we can't load large container
+            private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;        
+            if (_canLoad isEqualType -1) then {
+                deleteVehicle _supObj;
+                continue
+            } else {
+                clearMagazineCargoGlobal _supObj;
+                clearWeaponCargoGlobal _supObj;
+                clearItemCargoGlobal _supObj;
+                clearBackpackCargoGlobal _supObj;
+                _supObj setDamage 0.75; // * vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
+                _supObj lockInventory true; // * don't want pesky inquisitive players to know there's not actually anything in here lol
+                _supObj call A3A_Logistics_fnc_addLoadAction;
+                (_canLoad + [true]) call A3A_Logistics_fnc_load;
+                break
+            };
+        } forEach ["Land_Pallet_F", "A3AU_moneyCrate_small_01"];
+    };
+    _vehObj setVariable ["A3A_reported", true, true];
+};
+if (_convoyType == "Supplies") then
+{
+    if (_objectiveIsCargo) then {
+        // * put a supply container in the truck so it can be identified more easily as the objective vehicle
+        {
+            _supObj = _x createVehicle (position _vehObj);
+        
+            // * try to load a large container, then fall back to small box if we can't load large container
+            private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;
+            if (_canLoad isEqualType -1) then {
+                deleteVehicle _supObj; 
+                continue 
+            } else {
+                clearMagazineCargoGlobal _supObj;
+                clearWeaponCargoGlobal _supObj;
+                clearItemCargoGlobal _supObj;
+                clearBackpackCargoGlobal _supObj;
+                _supObj setDamage 0.75; // vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
+                _supObj lockInventory true; // don't want pesky inquisitive players to know there's not actually anything in here lol
+                _supObj call A3A_Logistics_fnc_addLoadAction;
+                (_canLoad + [true]) call A3A_Logistics_fnc_load;
+                break
+            };
+        } forEach [selectRandom ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "Land_PaperBox_01_small_stacked_F", "Land_WaterBottle_01_stack_F", "Land_FoodSacks_01_cargo_white_idap_F"], "Land_PaperBox_01_small_closed_white_med_F"];
     };
     _vehObj setVariable ["A3A_reported", true, true];
 };
