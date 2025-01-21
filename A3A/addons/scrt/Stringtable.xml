@@ -10794,6 +10794,40 @@
                 <Portuguese>Há alguém por aqui que possa estar disposto a compartilhar algumas informações úteis?</Portuguese>
                 <Turkish>Buralarda bazı faydalı bilgiler paylaşmaya istekli biri var mı?</Turkish>
             </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_interruption1">
+                <Original>Hey, I thought you needed something... Never mind then.</Original>
+                <English>Hey, I thought you needed something... Never mind then.</English>
+                <Russian>Эй, я думал, тебе что-то нужно... Ну, не важно.</Russian>
+                <German>Hey, ich dachte, du brauchst etwas... Schon gut, vergiss es.</German>
+                <Italian>Ehi, pensavo avessi bisogno di qualcosa... Lascia perdere allora.</Italian>
+                <Spanish>Oye, pensé que necesitabas algo... Da igual entonces.</Spanish>
+                <French>Hé, je pensais que tu avais besoin de quelque chose... Tant pis alors.</French>
+                <Korean>저기, 뭔가 필요한 줄 알았는데... 그럼 신경 쓰지 마세요.</Korean>
+                <Japanese>ねえ、何か必要だと思ってたけど…気にしないで。</Japanese>
+                <Chineseimp>嘿，我以为你需要什么……算了。</Chineseimp>
+                <Chinese>嘿，我以為你需要什麼……算了。</Chinese>
+                <Polish>Hej, myślałem, że czegoś potrzebujesz... Nieważne.</Polish>
+                <Czech>Hej, myslel jsem, že něco potřebuješ... Tak nic.</Czech>
+                <Portuguese>Ei, achei que você precisava de algo... Deixa pra lá então.</Portuguese>
+                <Turkish>Hey, bir şeye ihtiyacın var sanmıştım... Neyse, boş ver.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_interruption2">
+                <Original>Leaving already? Guess you didn’t need my help after all.</Original>
+                <English>Leaving already? Guess you didn’t need my help after all.</English>
+                <Russian>Уже уходишь? Похоже, моя помощь тебе не понадобилась.</Russian>
+                <German>Gehst du schon? Anscheinend brauchst du meine Hilfe doch nicht.</German>
+                <Italian>Te ne vai già? Immagino che alla fine non avessi bisogno del mio aiuto.</Italian>
+                <Spanish>¿Ya te vas? Supongo que al final no necesitabas mi ayuda.</Spanish>
+                <French>Tu pars déjà ? Apparemment, tu n'avais pas besoin de mon aide finalement.</French>
+                <Korean>벌써 가시는 건가요? 결국 제 도움이 필요 없으셨나 봐요.</Korean>
+                <Japanese>もう行くの？結局、私の助けは必要なかったみたいだね。</Japanese>
+                <Chineseimp>这么快就走了？看来你根本不需要我的帮助。</Chineseimp>
+                <Chinese>這麼快就走了？看來你根本不需要我的幫助。</Chinese>
+                <Polish>Już wychodzisz? Chyba jednak nie potrzebowałeś mojej pomocy.</Polish>
+                <Czech>Už odcházíš? Asi jsi moji pomoc nakonec nepotřeboval.</Czech>
+                <Portuguese>Já vai embora? Acho que você não precisava da minha ajuda afinal.</Portuguese>
+                <Turkish>Şimdiden mi gidiyorsun? Demek ki yardımıma ihtiyacın yokmuş.</Turkish>
+            </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_fail1">
                 <Original>I'm sorry, but I can't help you. Please, try asking someone else.</Original>
                 <English>I'm sorry, but I can't help you. Please, try asking someone else.</English>

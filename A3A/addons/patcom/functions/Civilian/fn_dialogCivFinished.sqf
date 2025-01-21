@@ -128,5 +128,4 @@ if (4 >= random 10) then {
     };
 };
 
-_civUnit enableAI "PATH";
 diag_log _debugStatus;

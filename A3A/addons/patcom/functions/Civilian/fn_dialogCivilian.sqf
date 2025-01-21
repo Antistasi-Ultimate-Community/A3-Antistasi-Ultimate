@@ -30,13 +30,17 @@ params ["_civUnit", nil];
             localize "STR_antistasi_actions_talk_with_civ_question2",
             localize "STR_antistasi_actions_talk_with_civ_question3"
         ]);
-        _civUnit disableAI "PATH";
         diag_log format ["[Maxxs work action] caller: %1 Civ Unit: %2", _caller, _civUnit];
     },
     {},
     {
         call A3A_fnc_dialogCivFinished;
     },
-    {},
+    {            
+        _caller globalChat (selectRandom [
+            localize "STR_antistasi_actions_talk_with_civ_interruption1",
+            localize "STR_antistasi_actions_talk_with_civ_interruption2"
+        ]);
+    },
     [_civUnit], 2, nil, true, false
 ] remoteExec ["BIS_fnc_holdActionAdd", 0]; // hold interaction to talk with a civ.
