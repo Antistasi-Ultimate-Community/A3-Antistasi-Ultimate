@@ -8055,7 +8055,7 @@
         </Container>
         <Container name="simple_menu_missions">
             <Key ID="STR_antistasi_dialogs_assassination_text">
-                <Original>Assasination Mission</Original>
+                <Original>Assassination Mission</Original>
                 <Russian>Миссии по устранению</Russian>
                 <Chinesesimp>暗杀任务</Chinesesimp>
                 <Korean>암살 임무</Korean>

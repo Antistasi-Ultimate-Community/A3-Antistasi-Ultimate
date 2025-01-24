@@ -10,7 +10,7 @@ Info("Artillery mission init.");
 
 private _missionOriginPos = getMarkerPos _markerX;
 
-private _difficult = random 10 < tierWar;
+private _difficult = if (random 10 < tierWar) then {true} else {false};
 private _sideX = if (sidesX getVariable [_markerX, sideUnknown] == Occupants) then {Occupants} else {Invaders};
 private _faction = Faction(_sideX);
 
@@ -31,17 +31,43 @@ private _artilleryShellClass = nil;
 private _mgClass = nil;
 private _mgCrewClass = nil;
 
+private _mortarsPool = _faction getOrDefault ["staticMortars", []];
+private _artilleryPool = _faction getOrDefault ["vehiclesArtillery", []];
+private _howitzersPool = _faction getOrDefault ["staticHowitzers", []];
+
+private _mortarMagazine = _faction get "mortarMagazineHE";
+private _artilleryMagazine = _faction get "magazines";
+private _howitzerMagazine = _faction get "howitzerMagazineHE";
+
 private _infantrySquadArray = [
     selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),
     selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
 ] select _difficult;
 
-if ((_faction get "staticHowitzers") isEqualTo []) then {
-    _artilleryClass = selectRandom (_faction get "staticMortars");
-    _artilleryShellClass = _faction get "mortarMagazineHE";
-} else {
-    _artilleryClass = selectRandom (_faction get "staticHowitzers");
-    _artilleryShellClass = _faction get "howitzerMagazineHE";
+switch (true) do 
+{ 
+	case (tierWar < 6): 
+	{
+		private _potentialArtillery = (_howitzersPool + _mortarsPool);
+		_artilleryClass = selectRandom (_potentialArtillery select {_x isNotEqualTo []});
+		_artilleryShellClass = if (_artilleryClass in _howitzersPool) then 
+        {
+            _howitzerMagazine
+        } else {
+            _mortarMagazine
+        };
+	};
+	default
+	{
+		private _potentialArtillery = (_howitzersPool + _artilleryPool);
+		_artilleryClass = selectRandom (_potentialArtillery select {_x isNotEqualTo []});
+		_artilleryShellClass = if (_artilleryClass in _howitzersPool) then 
+        {
+            _howitzerMagazine
+        } else {
+            selectRandom (_artilleryMagazine get _artilleryClass);
+        };
+	};
 };
 
 _mgClass = selectRandom (_faction get "staticMGs");

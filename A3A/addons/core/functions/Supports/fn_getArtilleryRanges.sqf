@@ -1,7 +1,19 @@
-/* Examples:
+/*  Find minimum and maximum ranges for artillery type
+
+Environment: Any
+
+Arguments:
+    <STRING> Classname of artillery vehicle
+    <STRING> Classname of artillery magazine
+
+Return array:
+    <SCALAR> Minimum range in metres
+    <SCALAR> Maximum range in metres
+
+Examples:
     ["UK3CB_ADA_I_BM21", "rhs_mag_m21of_1"] call A3A_fnc_getArtilleryRanges;
     ["O_MBT_02_arty_F", "32Rnd_155mm_Mo_shells_O"] call A3A_fnc_getArtilleryRanges;
- */
+*/
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
@@ -21,6 +33,11 @@ private _turretCfg = call {
     };
     _allTurrets # _idx;
 };
+
+// Try mags for pylon weapons, otherwise assume the turret weapon is valid
+private _weapon = getText (configfile >> "CfgMagazines" >> _shellType >> "pylonWeapon");
+if (_weapon == "") then { _weapon = getArray (_turretCfg >> "Weapons") # 0 };
+private _weaponCfg = configFile >> "CfgWeapons" >> _weapon;
 
 // Assume that there's no speed override on weapon, probably true for arty
 private _initSpeed = getNumber (configFile >> "CfgMagazines" >> _shellType >> "initSpeed");

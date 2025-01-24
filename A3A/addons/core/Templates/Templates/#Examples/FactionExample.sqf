@@ -229,7 +229,29 @@ _sfLoadoutData set ["vests", []];
 _sfLoadoutData set ["backpacks", []];
 _sfLoadoutData set ["helmets", []];
 _sfLoadoutData set ["binoculars", []];
+
 //["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
+
+// The two empty lists are for magazines - leave them empty for whatever the weapon's default mag is, or fill them for a given ratio (i.e. ["tracer", "regular", "regular"]). 
+// The second list is for underbarrel mags.
+
+// Note: muzzle, rail, sight, and bipod slots can be either a string for a specific item, or an array for a list of items. Arrays can be defined separately from weapons.
+// Arrays (both for attachments and for the larger lists of weapons) can either be a regular list or a weighted list that alternates between item and weight.
+// See https://community.bistudio.com/wiki/selectRandomWeighted for details.
+// If a given spawn list is made a weighted list, make sure that anything that adds to that list (e.g. optional DLC compatibility) is also a weighted list, or everything breaks.
+// Everything in this also applies to e.g. uniforms and equipment, but does NOT apply to vehicles.
+
+// Example of a weighted spawn list, with attachments and etc, using all possible methods of declaring lists:
+/*
+_sfM4Optics = ["optic_holo", 2, "optic_acog", 1, "", 1]; //weighted list - 50% chance holo, 25% chance acog, 25% chance nothing
+_sfM4Attachments = ["flashlight", ""]; //unweighted list, even distribution between flashlight or nothing
+_sfLoadoutData set ["rifles", [
+    ["rifle_m4a1", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 2,
+    ["rifle_m4a1_camo", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 1 //2:1 ratio of regular and camo M4s
+]]; 
+_sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the optics lists are applied since _sfM4Optics is stored as a reference, which is useful for DLC/mod compats
+
+*/
 
 _sfLoadoutData set ["rifles", []];
 _sfLoadoutData set ["carbines", []];
