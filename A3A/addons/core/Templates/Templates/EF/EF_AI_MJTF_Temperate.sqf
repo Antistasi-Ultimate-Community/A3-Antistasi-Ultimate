@@ -71,6 +71,8 @@ private _transportHelicopters =  ["EF_B_Heli_Transport_01_MJTF_Des"];
 private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
 private _helisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
 
+private _airPatrol = ["a3a_Heli_Light_01_ION_F","B_Heli_Light_01_dynamicLoadout_F"];
+
 private _artillery = ["B_T_MBT_01_mlrs_F"];
 
 ["magazines", createHashMapFromArray [
@@ -149,6 +151,7 @@ if (_hasCSLA) then {
     #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO_Temparate.sqf"
 };
 
+["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
