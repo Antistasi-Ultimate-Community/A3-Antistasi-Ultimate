@@ -45,7 +45,7 @@ private _savedPlayers = _namespace getVariable ["savedPlayers" + _postfix, []];
 	"supportPoints",
     "constructionsX",
     "watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "hmgpostsFIA",
-    "traderDiscount", "isTraderQuestCompleted", "traderPosition",
+    "traderDiscount", "isTraderQuestAssigned", "isTraderQuestCompleted", "traderPosition",
     "areOccupantsDefeated", "areInvadersDefeated",
     "destroyedMilAdmins",
     "rebelLoadouts", "randomizeRebelLoadoutUniforms",
