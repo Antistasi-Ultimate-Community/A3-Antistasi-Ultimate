@@ -98,7 +98,8 @@ if (_positionTel isEqualTo []) exitWith {
 };
 
 private _base = [_markersX, _positionTel] call BIS_Fnc_nearestPosition;
-if (_base == traderMarker && (isTraderQuestAssigned || !isTraderQuestCompleted)) exitWith {
+
+if (_base == traderMarker && {isTraderQuestAssigned || !isTraderQuestCompleted}) exitWith {
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_trader_locked"] call SCRT_fnc_misc_deniedHint;
 };
 
