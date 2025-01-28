@@ -123,7 +123,7 @@ if (4 >= random 10) then {
                 localize "STR_antistasi_actions_talk_with_civ_fail_zone_reveal2"
             ]);
 
-            [1, "A civilian as revealed a zone"] call A3U_fnc_revealRandomZones;
+            [1, "A civilian has revealed a zone"] call A3U_fnc_revealRandomZones;
         };
     };
 };
