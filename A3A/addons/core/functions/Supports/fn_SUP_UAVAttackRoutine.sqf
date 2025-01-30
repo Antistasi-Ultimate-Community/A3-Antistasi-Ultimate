@@ -59,7 +59,6 @@ _uav addEventHandler ["Fired", {
 
 _wp = _groupVeh addWayPoint [_suppCenter, 0];
 _wp setWaypointBehaviour "AWARE";
-/* _wp setWaypointType "SAD"; */
 _wp setWaypointType "LOITER";
 _wp setWaypointLoiterType "CIRCLE_L";
 _wp setWaypointSpeed "NORMAL";
@@ -160,24 +159,6 @@ while {time < _timeout && canMove _uav} do
         };
     };
 
-/*     //Target no longer valid
-    if (!canMove _currentTarget or time > _targTimeout) then {
-        Debug_1("%1 target lost or destroyed, returning to idle", _supportName);
-        _suppTarget resize 0;
-        _currentTarget = objNull;
-        _uav doWatch objNull;
-        continue;
-    }; */
-
-/*     // Update acquisition depending on whether path to target is blocked
-    private _dir = _uav getDir _currentTarget;
-    private _intercept = (getPosASL _uav) getPos [250, _dir] vectorAdd [0,0,300];
-    private _isBlocked = terrainIntersectASL [_intercept, getPosASL _currentTarget];
-    _acquisition = _acquisition + ([0.1, -0.1] select _isBlocked);
-    _acquisition = 1 min _acquisition max 0;
-    _uav doWatch _intercept;
-    if (_acquisition < 1) then { sleep 1; continue }; */
-
     // wait for previous missile to have effect (or not)
     if (alive (_uav getVariable ["A3A_currentMissile", objNull])) then { sleep 1; continue };
     deleteVehicle _laser;
@@ -186,7 +167,7 @@ while {time < _timeout && canMove _uav} do
     sleep 10;
 };
 
-_suppData set [4, 0];           // Set activesupport radius to zero, prevents adding further targets
+_suppData set [4, 0];  // Set activesupport radius to zero, prevents adding further targets
 
 [_groupVeh] spawn A3A_fnc_groupDespawner;
 [_uav] spawn A3A_fnc_vehDespawner;
