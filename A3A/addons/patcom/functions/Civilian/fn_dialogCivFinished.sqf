@@ -14,20 +14,20 @@
     Return:
         _return <TYPE>
 */
-
+params ["_civUnit", ObjNull];
 #include "..\..\script_component.hpp"
 
 private _civilian = _this select 0;
 
 private _civPos = getPosWorld _civilian;
 
-private _possibleMarkers = [citiesX, _civilian] call A3A_fnc_findIfNearAndHostileZones;
+private _possibleMarkers = [citiesX, _civilian, true] call A3A_fnc_findIfNearAndHostile;
 _possibleMarkers = _possibleMarkers select 1;
 
 private _dialogResult = "";
-private _civrequestedMission = "";
+private _civRequestedMission = "";
 
-private _debugStatus = format ["[Civ Dialog] | %3 | Mission type and site selected | %1 | %2 |", _civrequestedMission, _possibleMarkers, _dialogResult];
+private _debugStatus = format ["[Civ Dialog] | %3 | Mission type and site selected | %1 | %2 |", _civRequestedMission, _possibleMarkers, _dialogResult];
 
 if (4 >= random 10) then {
     if (_possibleMarkers == "") then {
@@ -40,21 +40,21 @@ if (4 >= random 10) then {
     } else {
         _dialogResult = "Success";
         if (tierWar >= 5) then {
-            _civrequestedMission = selectRandom [
+            _civRequestedMission = selectRandom [
             "A3A_fnc_RES_Refugees", 
             "A3A_fnc_RES_Informer", 
             "A3A_fnc_RES_Prisoners", 
             "A3A_fnc_RES_Deserters"
             ];
         } else {
-            _civrequestedMission = selectRandom [
+            _civRequestedMission = selectRandom [
             "A3A_fnc_RES_Refugees", 
             "A3A_fnc_RES_Informer", 
             "A3A_fnc_RES_Prisoners"
             ];
         };
 
-        switch (_civrequestedMission) do
+        switch (_civRequestedMission) do
         {
 
             case "A3A_fnc_RES_Refugees":
@@ -90,9 +90,9 @@ if (4 >= random 10) then {
             };
         };
 
-        [[_possibleMarkers],_civrequestedMission] remoteExec ["A3A_fnc_scheduler",2];
+        [[_possibleMarkers],_civRequestedMission] remoteExec ["A3A_fnc_scheduler",2];
         if (hideEnemyMarkers) then {
-            if (10 >= random(100)) then {
+            if (10 >= (random 100)) then {
                 
                 sleep 2;// waits for 2 sec so the text wont appear too fast
 
@@ -114,7 +114,7 @@ if (4 >= random 10) then {
     _dialogResult = "Failure";
 
     if (hideEnemyMarkers) then {
-        if (5 >= random(100)) then {
+        if (5 >= (random 100)) then {
             
             sleep 2;// waits for 2 sec so the text wont appear too fast
             

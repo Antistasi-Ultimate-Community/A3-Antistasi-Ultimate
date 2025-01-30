@@ -27,7 +27,7 @@ _unit setSkill 0;
 _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 //Stops civilians from shouting out commands.
-[_unit, selectRandom (A3A_faction_civ get "faces"), "NoVoice"] call A3A_fnc_setIdentity;
+[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_civ get "faces")], ["speaker", "NoVoice"]]] call A3A_fnc_setIdentity;
 
 _unit addEventHandler ["HandleDamage", {
     private _unit = _this select 0;

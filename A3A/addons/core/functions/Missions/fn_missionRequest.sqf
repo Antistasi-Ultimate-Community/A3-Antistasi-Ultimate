@@ -28,10 +28,10 @@ private _possibleMarkers = [];
 switch (_type) do {
 	case "AS": {
 		//find apropriate sites
-		_possibleMarkers = [airportsX + milbases + citiesX] call A3A_fnc_findIfNearAndHostileZones;
+		_possibleMarkers = [airportsX + milbases + citiesX, petros, true] call A3A_fnc_findIfNearAndHostile;
 		_possibleMarkers = _possibleMarkers select {spawner getVariable _x != 0};
 		//add controlsX not on roads and on the 'frontier'
-		private _controlsX = [controlsX] call A3A_fnc_findIfNearAndHostileZones;
+		private _controlsX = [controlsX, petros, true] call A3A_fnc_findIfNearAndHostile;
 		private _nearbyFriendlyMarkers = markersX select {
 			(getMarkerPos _x inArea [getMarkerPos respawnTeamPlayer, distanceMission+distanceSPWN, distanceMission+distanceSPWN, 0, false])
 			and (sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer)
@@ -82,8 +82,8 @@ switch (_type) do {
 
 	case "CON": {
 		//find apropriate sites
-		_possibleMarkers = [outposts + milAdministrationsX + seaports + factories + resourcesX + (controlsX select {isOnRoad (getMarkerPos _x)})] call A3A_fnc_findIfNearAndHostileZones;
-		private _possibleMarkersForFrontline = [airportsX + milbases + outposts + seaports + factories + resourcesX] call A3A_fnc_findIfNearAndHostileZones;
+		_possibleMarkers = [outposts + milAdministrationsX + seaports + factories + resourcesX + (controlsX select {isOnRoad (getMarkerPos _x)}), petros, true] call A3A_fnc_findIfNearAndHostile;
+		private _possibleMarkersForFrontline = [airportsX + milbases + outposts + seaports + factories + resourcesX, petros, true] call A3A_fnc_findIfNearAndHostile;
 		private _possibleFrontlineMarker = selectRandom _possibleMarkersForFrontline;
 		private _frontlineSite = [_possibleFrontlineMarker] call A3A_fnc_isFrontlineNoFIA;
 		if (count _possibleMarkers == 0) then {
@@ -108,10 +108,10 @@ switch (_type) do {
 
 	case "DES": {
 		//find apropriate sites
-		_possibleMarkers = [airportsX] call A3A_fnc_findIfNearAndHostileZones;
+		_possibleMarkers = [airportsX, petros, true] call A3A_fnc_findIfNearAndHostile;
 		_possibleMarkers = _possibleMarkers select {spawner getVariable _x != 0};
 
-		private _controlsX = [controlsX select {!(isOnRoad (getMarkerPos _x))}] call A3A_fnc_findIfNearAndHostileZones;
+		private _controlsX = [controlsX select {!(isOnRoad (getMarkerPos _x))}, petros, true] call A3A_fnc_findIfNearAndHostile;
 		private _nearbyFriendlyMarkers = markersX select {
 			(getMarkerPos _x inArea [getMarkerPos respawnTeamPlayer, distanceMission+distanceSPWN, distanceMission+distanceSPWN, 0, false])
 			and (sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer)
@@ -160,10 +160,10 @@ switch (_type) do {
 
 	case "LOG": {
 		//Add unspawned outposts for ammo trucks, and seaports for salvage
-		_possibleMarkers = [seaports + outposts] call A3A_fnc_findIfNearAndHostileZones;
+		_possibleMarkers = [seaports + outposts, petros, true] call A3A_fnc_findIfNearAndHostile;
 		_possibleMarkers = _possibleMarkers select {(_x in seaports) or (spawner getVariable _x != 0)};
 
-		private _controlsX = ([controlsX] call A3A_fnc_findIfNearAndHostileZones) select {!isOnRoad (getMarkerPos _x)};
+		private _controlsX = ([controlsX, petros, true] call A3A_fnc_findIfNearAndHostile) select {!isOnRoad (getMarkerPos _x)};
 		_possibleMarkers append _controlsX;
 
 		//append banks in hostile cities
@@ -235,11 +235,11 @@ switch (_type) do {
 	};
 
 	case "RES": {
-		_possibleMarkers = [citiesX] call A3A_fnc_findIfNearAndHostileZones;
+		_possibleMarkers = [citiesX, petros, true] call A3A_fnc_findIfNearAndHostile;
 		{
 			private _spawner = spawner getVariable _x;
 			if (_spawner != 0) then {_possibleMarkers pushBack _x};
-		} forEach ([airportsX + outposts + milbases] call A3A_fnc_findIfNearAndHostileZones);
+		} forEach ([airportsX + outposts + milbases, petros, true] call A3A_fnc_findIfNearAndHostile);
 
 		if (count _possibleMarkers == 0) then {
 			if (!_silent) then {

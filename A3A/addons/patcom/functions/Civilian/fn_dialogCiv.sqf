@@ -9,7 +9,7 @@
         _civUnit <unit> <Default: nil>
     
     Usage:
-        [_civUnit] call A3A_fnc_dialogCivilian;
+        [_civUnit] call A3A_fnc_dialogCiv;
     
     Return:
         _return <TYPE>
@@ -34,7 +34,7 @@ params ["_civUnit", nil];
     },
     {},
     {
-        call A3A_fnc_dialogCivFinished;
+        [_civUnit] call A3A_fnc_dialogCivFinished;
     },
     {            
         _caller globalChat (selectRandom [

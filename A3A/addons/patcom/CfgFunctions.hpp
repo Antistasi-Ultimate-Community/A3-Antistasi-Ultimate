@@ -20,7 +20,7 @@ class CfgFunctions {
             class createResourceCiv {};
             class createRoomLight {};
             class getDayState {};
-            class dialogCivilian {};
+            class dialogCiv {};
             class dialogCivFinished {};
             class unitAmbient {};
         };
