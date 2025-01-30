@@ -109,9 +109,9 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_FIA.sqf"
 };
 
-["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate; //add here something
-["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate; //add here something
-["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate; //add here something
+["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
+["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
 ["staticMortars", _staticMortars] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
