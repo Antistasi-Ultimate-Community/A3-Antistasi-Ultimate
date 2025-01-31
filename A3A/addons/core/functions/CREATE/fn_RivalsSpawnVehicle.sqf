@@ -90,13 +90,4 @@ if (isNil "_unitType") then {
 //Spawn the crew
 _group = [_group, _veh, _unitType] call A3A_fnc_RivalsCreateVehicleCrew;
 
-if ("rf" in A3A_enabledDLC) then {
-    _group addEventHandler ["EnemyDetected", {
-        params ["_group", "_newTarget"];
-        {
-           [_x, _newTarget] spawn lxRF_fnc_RC40_attack;
-        } forEach units _group;
-    }];
-};
-
 [_veh, crew _veh, _group];

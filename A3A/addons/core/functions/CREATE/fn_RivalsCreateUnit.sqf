@@ -93,14 +93,4 @@ if !(_unitDefinition isEqualTo []) exitWith {
 
 private _unit = _group createUnit [_type, _position, _markers, _placement, _special];
 _unit setVariable ["unitType", _type, true];
-
-if ("rf" in A3A_enabledDLC) then {
-    _group addEventHandler ["EnemyDetected", {
-        params ["_group", "_newTarget"];
-        {
-           [_x, _newTarget] spawn lxRF_fnc_RC40_attack;
-        } forEach units _group;
-    }];
-};
-
 _unit
