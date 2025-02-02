@@ -74,4 +74,7 @@ if (_newGroup) then {
 };
 
 _group addVehicle _vehicle;
+
+[_group] spawn A3A_fnc_RC40_attack_EH_byUnit;
+
 _group

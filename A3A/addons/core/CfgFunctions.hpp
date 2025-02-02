@@ -326,6 +326,8 @@ class CfgFunctions
             class addArtilleryTrailEH {};
             class enemyUnitDeletedEH {};
             class enemyUnitKilledEH {};
+            class RC40_attack_EH_byUnit {};
+            class RC40_attack_EH {};
             class vehicleDeletedEH {};
         };
 

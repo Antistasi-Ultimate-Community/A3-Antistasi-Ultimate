@@ -101,3 +101,5 @@ if (player == leader _unit) then {
 		_victim setVariable ["spawner",nil,true];
 	}];
 };
+
+[_unit] spawn A3A_fnc_RC40_attack_EH_byUnit;
