@@ -5122,6 +5122,13 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
+            <Key ID="STR_params_recruitToPlayerSquad">
+                <Original>Enable enemy AI recruits to join player's squad</Original>
+                <Russian>Позволяет вражеским новобранцам ИИ присоединиться к отряду игрока</Russian>
+                <Chinesesimp>允许敌方 AI 新兵加入玩家的小队</Chinesesimp>
+                <Korean>적 AI 신병이 플레이어 분대에 합류할 수 있도록 합니다.</Korean>
+                <French>Permettre aux recrues ennemies de l'IA de rejoindre l'équipe du joueur</French>
+            </Key>
             <Key ID="STR_params_enablePunishments">
                 <Original>Enable invader punishments</Original>
                 <Russian>Включить наказания захватчиков</Russian>
@@ -5258,6 +5265,10 @@
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>Enable spectrum device hacking capability (conctact dlc required)</Original>
                 <Russian>Разрешить возможность взлома с помощью spectrum device (необходимо дополнение contact)</Russian>
+            </Key>
+            <Key ID="STR_params_disableAutoSmokeCover">
+                <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
+                <Russian>Выключить скрипт для автоматического отбрасываения дымов (помогает с производительностью)</Russian>
             </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
@@ -8044,7 +8055,7 @@
         </Container>
         <Container name="simple_menu_missions">
             <Key ID="STR_antistasi_dialogs_assassination_text">
-                <Original>Assasination Mission</Original>
+                <Original>Assassination Mission</Original>
                 <Russian>Миссии по устранению</Russian>
                 <Chinesesimp>暗杀任务</Chinesesimp>
                 <Korean>암살 임무</Korean>

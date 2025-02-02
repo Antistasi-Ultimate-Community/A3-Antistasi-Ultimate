@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["CUP_B_AW159_HIL","CUP_B_412_Military_Armed_AT_HIL","CUP_B_412_Military_Armed_HIL","CUP_B_412_dynamicLoadout_HIL"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_AH1Z_Dynamic_USMC"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["CUP_B_AW159_Unarmed_HIL", "CUP_B_MH6M_USA","CUP_B_AW159_HIL","CUP_B_412_Military_Armed_AT_HIL","CUP_B_412_Military_Armed_HIL","CUP_B_412_dynamicLoadout_HIL"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["CUP_B_M270_HE_HIL", "CUP_B_M270_DPICM_HIL"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
 ["CUP_B_M270_HE_HIL", ["CUP_12Rnd_MLRS_HE"]],

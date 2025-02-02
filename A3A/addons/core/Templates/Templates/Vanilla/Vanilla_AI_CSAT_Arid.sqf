@@ -71,6 +71,8 @@ private _transportHelicopters = ["O_Heli_Light_02_unarmed_F"];
 private _helisLightAttack = ["O_Heli_Light_02_dynamicLoadout_F"];
 ["vehiclesHelisAttack", ["O_Heli_Attack_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
 
+private _airPatrol = ["O_Heli_Light_02_unarmed_F", "O_Heli_Light_02_dynamicLoadout_F"];
+
 ["vehiclesArtillery", ["O_MBT_02_arty_F", "I_Truck_02_MRL_F"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
 ["I_Truck_02_MRL_F", ["12Rnd_230mm_rockets", "12Rnd_230mm_rockets_cluster"]],
@@ -142,6 +144,7 @@ if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
 };
 
+["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;

@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["CUP_I_412_dynamicLoadout_PMC", "CUP_I_412_Military_Armed_AT_PMC"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_I_Mi24_Mk3_ION"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["CUP_I_MH6M_ION", "CUP_I_412_Mil_Utility_PMC","CUP_I_412_dynamicLoadout_PMC", "CUP_I_412_Military_Armed_AT_PMC"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["CUP_B_M270_DPICM_BAF_DES"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_B_M270_DPICM_BAF_DES", ["CUP_12Rnd_MLRS_DPICM"]]]] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
 

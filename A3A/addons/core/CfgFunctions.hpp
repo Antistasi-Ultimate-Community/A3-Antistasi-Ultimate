@@ -90,6 +90,7 @@ class CfgFunctions
             class generateRebelGear {};
             class getRadio {};
             class hasARadio {};
+            class itemArrayWeight {};
             class itemConfig {};
             class itemConfigMass {};
             class itemSort {};

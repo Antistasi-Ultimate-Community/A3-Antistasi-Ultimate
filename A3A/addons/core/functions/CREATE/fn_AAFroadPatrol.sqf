@@ -48,6 +48,10 @@ switch (true) do {
 	case (_base in airportsX && {!(_faction getOrDefault ["attributeLowAir", false])}): {
 		if (_sideX isEqualTo Invaders || {random 10 < tierWar + aggressionOccupants/10}) then {
 			_typeCar = selectRandom (_faction get "vehiclesHelisLight");
+			if(count (_faction get "vehiclesAirPatrol") > 0) then 
+			{
+				_typeCar = selectRandom (_faction get "vehiclesAirPatrol");
+			};
 			_typePatrol = "AIR";
 		} else {
 			_typeCar = selectRandom ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"));	

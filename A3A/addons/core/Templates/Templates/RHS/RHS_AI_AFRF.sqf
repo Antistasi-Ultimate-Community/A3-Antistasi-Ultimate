@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["RHS_Mi8MTV3_vvs", "RHS_Mi8MTV3_vvsc", "RHS_Mi8MTV3_vvs", "RHS_Mi8MTV3_vvsc", "RHS_Mi24P_vvs", "RHS_Mi24P_vvsc"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["RHS_Ka52_vvsc", "rhs_mi28n_vvsc", "RHS_Ka52_vvs", "rhs_mi28n_vvs"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["RHS_Mi8AMT_vvs", "RHS_Mi8mt_vvsc", "RHS_Mi8AMT_vvs", "RHS_Mi8mt_vvsc", "RHS_Mi8AMT_vvs", "RHS_Mi8mt_vvsc", "RHS_Mi24V_vvsc", "RHS_Mi24V_vvs","RHS_Mi8MTV3_vvs", "RHS_Mi8MTV3_vvsc", "RHS_Mi8MTV3_vvs", "RHS_Mi8MTV3_vvsc", "RHS_Mi24P_vvs", "RHS_Mi24P_vvsc"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["rhs_2s1_tv", "rhs_2s3_tv", "RHS_BM21_VV_01"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
 ["rhs_2s1_tv", ["rhs_mag_3of56_10"]],

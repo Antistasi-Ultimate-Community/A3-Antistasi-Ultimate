@@ -47,6 +47,8 @@
 ["vehiclesHelisLightAttack", ["Flex_CUP_LDF_Heli_dynamicLoadout"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["Flex_CUP_LDF_Heli_dynamicLoadout"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["Flex_CUP_LDF_Heli_Unarmed", "Flex_CUP_LDF_Heli_dynamicLoadout"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["Flex_CUP_LDF_M270_HE"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["Flex_CUP_LDF_M270_HE", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate;
 

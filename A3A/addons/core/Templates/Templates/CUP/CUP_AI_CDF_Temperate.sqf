@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["CUP_B_Mi171Sh_CDF"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_Mi24_D_Dynamic_CDF"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["CUP_B_Mi17_medevac_CDF","CUP_B_Mi171Sh_CDF"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["CUP_B_BM21_CDF", "CUP_B_D30_CDF"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
     ["CUP_B_BM21_CDF", ["CUP_40Rnd_GRAD_HE"]],

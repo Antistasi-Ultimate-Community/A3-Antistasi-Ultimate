@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["CUP_B_UH1D_armed_GER_KSK", "CUP_B_UH1D_gunship_GER_KSK", "CUP_B_AW159_GER", "CUP_B_Mi171Sh_ACR","CUP_B_AW159_GB", "CUP_B_AH6M_USA", "CUP_B_AH6J_USA"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_Mi35_Dynamic_CZ", "CUP_B_Mi35_Dynamic_CZ_Dark", "CUP_B_AH1_DL_BAF", "CUP_B_AH64D_DL_USA"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["CUP_B_UH1D_GER_KSK", "CUP_B_Mi171Sh_Unarmed_ACR","CUP_B_AW159_Unarmed_RN_Blackcat", "CUP_B_AW159_Unarmed_GB", "CUP_B_AW159_Unarmed_RN_Grey", "CUP_B_MH6M_USA", "CUP_B_MH6J_USA","CUP_B_UH1D_armed_GER_KSK", "CUP_B_UH1D_gunship_GER_KSK", "CUP_B_AW159_GER", "CUP_B_Mi171Sh_ACR","CUP_B_AW159_GB", "CUP_B_AH6M_USA", "CUP_B_AH6J_USA"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["CUP_B_M270_HE_USA"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_B_M270_HE_USA", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate;
 

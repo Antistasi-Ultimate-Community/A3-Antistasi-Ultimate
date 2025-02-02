@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["rhsgref_cdf_b_reg_Mi17Sh"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["rhsgref_cdf_b_Mi24D", "rhsgref_cdf_b_Mi24D_Early", "rhsgref_b_mi24g_CAS", "rhsgref_cdf_b_Mi35"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["rhsgref_cdf_reg_Mi8amt","rhsgref_cdf_reg_Mi8amt","rhsgref_cdf_reg_Mi8amt","rhsgref_cdf_b_Mi24D_Early","rhsgref_cdf_b_reg_Mi17Sh"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_BM21"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
 ["rhsgref_cdf_b_2s1",["rhs_mag_3of56_10"]],

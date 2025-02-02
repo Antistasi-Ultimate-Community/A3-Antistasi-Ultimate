@@ -211,6 +211,13 @@ class Params
         texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
         default = 1;
     };
+    class recruitToPlayerSquad
+    {
+        title = $STR_params_recruitToPlayerSquad;
+        values[] = {1,0};
+        texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        default = 1;
+    }
     class enablePunishments
     {
         title = $STR_params_enablePunishments;
@@ -341,8 +348,8 @@ class Params
     class lootCrateDistance
     {
         title = $STR_params_lootCrateDistance;
-        values[] = {10, 25, 50, 75, 100};
-        texts[] = {"10", "25", "50", "75", "100"};
+        values[] = {10, 25, 50, 75, 100, 200, 300, 400};
+        texts[] = {"10", "25", "50", "75", "100", "200", "300", "400"};
         default = 50;
     };
     class lootCratePrice
@@ -485,6 +492,13 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
+    };
+    class disableAutoSmokeCover
+    {
+        title = $STR_params_disableAutoSmokeCover;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
     };
 
     class SpacerBalance
