@@ -258,7 +258,8 @@ _sfLoadoutData set ["sniperRifles", [
 ["US85_M21", "US85_M21tlm", "", "", ["US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51"], [], "US85_M14bpd"]
 ]];
 _sfLoadoutData set ["sidearms", [
-["US85_1911", "", "", "", ["US85_7Rnd_45ACP","US85_7Rnd_45ACP"], [], ""]
+["US85_1911", "", "", "", ["US85_7Rnd_45ACP","US85_7Rnd_45ACP"], [], ""],
+["US85_Mk23", "US85_Mk23tlm", "US85_Mk23fl", "", ["US85_Mk23_12Rnd_045ACP","US85_Mk23_12Rnd_045ACP"], [], ""]
 ]];
 
 /////////////////////////////////
@@ -304,7 +305,8 @@ _eliteLoadoutData set ["sniperRifles", [
 ["US85_M21", "US85_M21tlm", "", "", ["US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51"], [], "US85_M14bpd"]
 ]];
 _eliteLoadoutData set ["sidearms", [
-["US85_1911", "", "", "", ["US85_7Rnd_45ACP","US85_7Rnd_45ACP"], [], ""]
+["US85_1911", "", "", "", ["US85_7Rnd_45ACP","US85_7Rnd_45ACP"], [], ""],
+["US85_Mk23", "", "US85_Mk23fl", "", ["US85_Mk23_12Rnd_045ACP","US85_Mk23_12Rnd_045ACP"], [], ""]
 ]];
 
 /////////////////////////////////
