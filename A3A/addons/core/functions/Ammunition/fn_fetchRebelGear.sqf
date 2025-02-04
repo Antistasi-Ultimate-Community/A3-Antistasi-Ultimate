@@ -22,6 +22,6 @@ Info("New version of rebelGear data received");
 // Create/clear local accessory-compatibility caches
 A3A_rebelOpticsCache = createHashMap;
 A3A_rebelFlashlightsCache = createHashMap;
-A3A_rebelLazersCache = createHashMap;
+A3A_rebelLasersCache = createHashMap;
 A3A_rebelSilencersCache = createHashMap;
 A3A_rebelBipodsCache = createHashMap;

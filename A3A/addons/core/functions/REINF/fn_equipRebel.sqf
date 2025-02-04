@@ -255,40 +255,41 @@ switch (true) do {
 private _handgun = selectRandomWeighted (A3A_rebelGear get "Handguns");
 if !(isNil "_handgun") then { [_unit, _handgun] call _fnc_addHandgunAndMags };
 
+private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
 if (_nvg != "") then { 
     _unit linkItem _nvg;
     private _weapon = primaryWeapon _unit;
-    private _compatLazers = A3A_rebelLazersCache get _weapon;
-    if (isNil "_compatLazers") then {
+    private _compatLasers = A3A_rebelLasersCache get _weapon;
+    if (isNil "_compatLasers") then {
         private _compatItems = compatibleItems _weapon; // cached, should be fast
-        _compatLazers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
-        A3A_rebelLazersCache set [_weapon, _compatLazers];
+        _compatLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weapon, _compatLasers];
     };
-    if (_compatLazers isNotEqualTo []) then {
-        private _LazerAttachment = selectRandom _compatLazers;
-        _unit addPrimaryWeaponItem _LazerAttachment;		// should be used automatically by AI as necessary
+    if (_compatLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatLasers;
+        _unit addPrimaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
     };
     private _weaponsecondary = secondaryWeapon _unit;
-    private _compatSecondaryLazers = A3A_rebelLazersCache get _weaponsecondary;
-    if (isNil "_compatSecondaryLazers") then {
+    private _compatSecondaryLasers = A3A_rebelLasersCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLasers") then {
         private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
-        _compatSecondaryLazers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
-        A3A_rebelLazersCache set [_weaponsecondary, _compatSecondaryLazers];
+        _compatSecondaryLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weaponsecondary, _compatSecondaryLasers];
     };
-    if (_compatSecondaryLazers isNotEqualTo []) then {
-        private _LazerAttachment = selectRandom _compatSecondaryLazers;
-        _unit addSecondaryWeaponItem _LazerAttachment;		// should be used automatically by AI as necessary
+    if (_compatSecondaryLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatSecondaryLasers;
+        _unit addSecondaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
     };
     private _weaponhandgun = handgunWeapon _unit;
-    private _compatHandgunLazers = A3A_rebelLazersCache get _weaponhandgun;
-    if (isNil "_compatHandgunLazers") then {
+    private _compatHandgunLasers = A3A_rebelLasersCache get _weaponhandgun;
+    if (isNil "_compatHandgunLasers") then {
         private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
-        _compatHandgunLazers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
-        A3A_rebelLazersCache set [_weaponhandgun, _compatHandgunLazers];
+        _compatHandgunLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weaponhandgun, _compatHandgunLasers];
     };
-    if (_compatHandgunLazers isNotEqualTo []) then {
-        private _LazerAttachment = selectRandom _compatHandgunLazers;
-        _unit addHandgunItem _LazerAttachment;		// should be used automatically by AI as necessary
+    if (_compatHandgunLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatHandgunLasers;
+        _unit addHandgunItem _LaserAttachment;		// should be used automatically by AI as necessary
     };
 } else {
     private _weapon = primaryWeapon _unit;
