@@ -594,3 +594,141 @@ class csla_civ_veh_sarka1200_csla_sarka1200_p3d : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
+///1.3 update
+class csla_afmc_apc_m113_csla_m113a1_TOW_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.26,-1.57,-1.77};
+            seats[] = {2};
+        };
+    };
+};
+
+class csla_afmc_cars_HMMWV_HMMWVCargo_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,0.1,-0.85};
+            seats[] = {1,2};
+        };
+        class Node2
+        {
+            offset[] = {0,-0.7,-0.85};
+            seats[] = {3,4};
+        };
+        class Node3
+        {
+            offset[] = {0,-1.5,-0.85};
+            seats[] = {5,6};
+        };
+    };
+};
+class csla_afmc_cars_m939_US85_M923a1_GT_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.07,-2.7,-1.37};
+            seats[] = {0,1};
+        };
+    };
+};
+class csla_afmc_cars_m1008_us85_m1008_M2_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.55,-1.2,-1.2};
+            seats[] = {3,4};
+        };
+        class Node2
+        {
+            offset[] = {-0.55,-2,-1.2};
+            seats[] = {1,2};
+        };
+    };
+};
+class csla_afmc_cars_m1008_us85_m1008_MK19_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.55,-1.2,-1.2};
+            seats[] = {3,4};
+        };
+        class Node2
+        {
+            offset[] = {-0.55,-2,-1.2};
+            seats[] = {1,2};
+        };
+    };
+};
+class csla_afmc_apc_m113_csla_m113A1_Mk19_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.32,-0.95,-2};
+            seats[] = {0,3,9};
+        };
+        class Node2
+        {
+            offset[] = {0.32,-1.75,-2};
+            seats[] = {4,7};
+        };
+    };
+};
+class csla_afmc_cars_HMMWV_HMMWVMk19_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.8,-1.562};
+        };
+    };
+};
+class csla_apc_OT62_csla_ot62d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {1,-1.8,-0.24};
+        };
+    };
+};
+class csla_cars_V3S_V3S_GT_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.3,-1.78,-0.84};
+        };
+        class Node2
+        {
+            offset[] = {0.3,-2.58,-0.84};
+            seats[] = {1,2};
+        };
+    };
+};
+class csla_cars_V3S_V3S_AGS17_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.08,-0.9,-0.7};
+        };
+    };
+};
