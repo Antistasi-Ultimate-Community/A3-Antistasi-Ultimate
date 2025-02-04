@@ -542,6 +542,37 @@ class Templates
         file = "CSLA_AI_AFMC";
 	//maps[] = {"stozec"};
     };
+    //***************************** CSLA Desert *****************************
+    class CSLA_Desert_Base : Vanilla_Base
+    {
+        requiredAddons[] = {"CSLA"};
+	    logo = "\csla_cfg\Images\Logos\csla_logo_text.paa"; // csla\csla_cfg\Images\Logos\csla_logo_text.paa
+        basepath = QPATHTOFOLDER(Templates\Templates\CSLA);
+        priority = 50;
+        forceDLC[] = {"CSLA"};
+        climate[] = {"arid"};
+    };
+    class CSLA_FIA_Desert : CSLA_Desert_Base
+    {
+        side = "Reb";
+        flagTexture = "\csla_misc\signs\flags\fia_flag.paa";
+        name = "FIA Desert";
+        file = "CSLA_FIA_Desert";
+    };
+    class CSLA_US_Desert : CSLA_Desert_Base
+    {
+        side = "Occ";
+        flagTexture = "\csla_misc\signs\flags\flag_us_co.paa";
+        name = "US85 Desert";
+        file = "CSLA_AI_US_Desert";
+    };
+    class CSLA_CS_Desert : CSLA_Desert_Base
+    {
+        side = "Inv";
+        flagTexture = "\csla_misc\signs\flags\cssr_flag.paa";
+        name = "CSLA Desert";
+        file = "CSLA_AI_CSLA_Desert";
+    };
 	
     // ***************************** CUP *****************************
 

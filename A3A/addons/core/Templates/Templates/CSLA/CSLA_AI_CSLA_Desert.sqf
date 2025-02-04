@@ -1,97 +1,100 @@
 //////////////////////////
 //   Side Information   //
-//////////////////////////
+/////////////////////////
 
-["name", "US85"] call _fnc_saveToTemplate;
-["spawnMarkerName", "US support corridor"] call _fnc_saveToTemplate;
+["name", "CSLA"] call _fnc_saveToTemplate;
+["spawnMarkerName", "CSLA Support Corridor"] call _fnc_saveToTemplate;
 
-["flag", "Flag_US_F"] call _fnc_saveToTemplate;
-["flagTexture", "\A3\Data_F\Flags\Flag_us_CO.paa"] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_USA"] call _fnc_saveToTemplate;
+["flag", "Flag_CSLA"] call _fnc_saveToTemplate;
+["flagTexture", "\csla_misc\signs\flags\cssr_flag.paa"] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_CzechRepublic"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
 
-["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
+["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
-// vehicles can be placed in more than one category if they fit between both. Cost will be derived by the higher category
-["vehiclesBasic", ["US85_M1030","US85_M1008_S250","US85_M923a1_s280"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["US85_M1025_ua","US85_M1043_ua"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["US85_M1025_M2","US85_M1025_M60","US85_M1043_M2","US85_M1043_M60"]] call _fnc_saveToTemplate;
-["vehiclesTrucks", ["US85_M923o","US85_M923c","US85_M923a1o","US85_M923a1om2","US85_M923a1c","US85_M923a1cm2"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["US85_M1008c","US85_M923cargo","US85_M923a1_cargo"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["US85_M923a","US85_M923a1_a"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["US85_M923r","US85_M113_DTP","US85_M923a1_r"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["US85_M923f","US85_M923a1_f"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["US85_M113_AMB"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["US85_M113"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["US85_LAV25"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["US85_M113"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["US85_M1A1"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["US85_M163"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks", ["US85_M1IP"]] call _fnc_saveToTemplate;  
-["vehiclesTransportBoats", ["US85_zodiac"]] call _fnc_saveToTemplate;
-["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["US85_LAV25"]] call _fnc_saveToTemplate;
+["vehiclesBasic", ["CSLA_JARA250","CSLA_AZU_R2_des"]] call _fnc_saveToTemplate;			 
+["vehiclesLightUnarmed", ["CSLA_AZU_para_des","CSLA_AZU_des","CSLA_AZU_R2_des"]] call _fnc_saveToTemplate;		 
+["vehiclesLightArmed", []] call _fnc_saveToTemplate;             
+["vehiclesTrucks", ["CSLA_F813_des","CSLA_V3S_des"]] call _fnc_saveToTemplate;		 
+["vehiclesCargoTrucks", ["CSLA_F813_des","CSLA_V3S_des"]] call _fnc_saveToTemplate;		 
+["vehiclesAmmoTrucks", ["CSLA_V3Sa_des"]] call _fnc_saveToTemplate;		 
+["vehiclesRepairTrucks", ["CSLA_DTP90_Des"]] call _fnc_saveToTemplate;		 
+["vehiclesFuelTrucks", ["CSLA_V3Sf_des"]] call _fnc_saveToTemplate;		 
+["vehiclesMedical", ["CSLA_OZV90_Des"]] call _fnc_saveToTemplate;		 
+["vehiclesLightAPCs", ["CSLA_OT65A_des"]] call _fnc_saveToTemplate;             
+["vehiclesAPCs", ["CSLA_OT64C_des"]] call _fnc_saveToTemplate;                  
+["vehiclesAirborne", ["CSLA_BVP1_Des","CSLA_OT64C_des","CSLA_OT65A_des"]] call _fnc_saveToTemplate;              
+["vehiclesIFVs", ["CSLA_BVP1_Des","CSLA_OT62_Des","CSLA_OT62D_Des"]] call _fnc_saveToTemplate;                  
+["vehiclesTanks", ["CSLA_T72_Des","CSLA_T72M_Des","CSLA_T72M1_Des"]] call _fnc_saveToTemplate;                 
+["vehiclesLightTanks", ["CSLA_BPzV_Des"]] call _fnc_saveToTemplate;            
+["vehiclesAA", ["CSLA_PLdvK59V3S_des"]] call _fnc_saveToTemplate;                    
 
-["vehiclesPlanesCAS", ["B_Plane_CAS_01_dynamicLoadout_F"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["B_Plane_CAS_01_dynamicLoadout_F"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["CSLA_CIV_An2_1"]] call _fnc_saveToTemplate;
+["vehiclesTransportBoats", ["CSLA_lodka"]] call _fnc_saveToTemplate;	
+["vehiclesGunBoats", ["O_Boat_Armed_01_hmg_F"]] call _fnc_saveToTemplate;              
 
-["vehiclesHelisLight", ["US85_UH60"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["US85_MH60M134","US85_UH60M240"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["O_Plane_CAS_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;            
+["vehiclesPlanesAA", ["O_Plane_CAS_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;              
+["vehiclesPlanesTransport", ["CSLA_CIV_An2_1"]] call _fnc_saveToTemplate;	
 
-["vehiclesHelisLightAttack", ["US85_MH60FFAR"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["US85_AH1F"]] call _fnc_saveToTemplate;
+["vehiclesHelisLight", ["CSLA_Mi17_DES"]] call _fnc_saveToTemplate;            
+["vehiclesHelisTransport", ["CSLA_Mi17mg_DES"]] call _fnc_saveToTemplate;        
 
-["vehiclesArtillery", ["US85_M270"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["CSLA_Mi17pylons_DES"]] call _fnc_saveToTemplate;      
+["vehiclesHelisAttack", ["CSLA_Mi24V_DES"]] call _fnc_saveToTemplate;           
+
+["vehiclesArtillery", ["CSLA_RM51_des","CSLA_RM70_des","CSLA_ShKH77_des"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["US85_M270", ["US85_12Rnd_M26"]]
+["CSLA_ShKH77_des", ["CSLA_54Rnd_152EOF"]],
+["CSLA_RM70_des", ["CSLA_40rnd_9M22U"]],
+["CSLA_RM51_des", ["CSLA_32rnd_130JRROv"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", []] call _fnc_saveToTemplate;
-["uavsPortable", []] call _fnc_saveToTemplate;
-
-["vehicleRadar", ""] call _fnc_saveToTemplate;                  
-["vehicleSam", ""] call _fnc_saveToTemplate;
+["uavsAttack", []] call _fnc_saveToTemplate;                    
+["uavsPortable", []] call _fnc_saveToTemplate;                  
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", ["US85_M998SFGT"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaTrucks", ["US85_M923a1c"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["US85_M1008"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", []] call _fnc_saveToTemplate;     
+["vehiclesMilitiaTrucks", ["CSLA_V3S_des"]] call _fnc_saveToTemplate;         
+["vehiclesMilitiaCars", ["CSLA_AZU_para_des","CSLA_AZU_des","CSLA_AZU_R2_des"]] call _fnc_saveToTemplate;           
 
-["vehiclesMilitiaAPCs", ["US85_M113"]] call _fnc_saveToTemplate; 
+["vehiclesMilitiaAPCs", ["CSLA_OT64C_des"]] call _fnc_saveToTemplate;             
 
-["vehiclesPolice", ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"]] call _fnc_saveToTemplate;
+["vehiclesPolice", ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"]] call _fnc_saveToTemplate;                
 
-["staticMGs", ["US85_M2h"]] call _fnc_saveToTemplate;
-["staticAT", ["US85_TOW_Stat"]] call _fnc_saveToTemplate;
-["staticAA", []] call _fnc_saveToTemplate;
-["staticMortars", ["US85_M252_Stat"]] call _fnc_saveToTemplate;
+["staticMGs", ["CSLA_UK59L_Stat","CSLA_DShKM_h_Stat","CSLA_UK59L_Mount"]] call _fnc_saveToTemplate;
+["staticAT", ["CSLA_9K113_Stat","CSLA_AGS17_Stat","CSLA_BzK59A_Stat","CSLA_T21_Stat"]] call _fnc_saveToTemplate;
+["staticAA", ["CSLA_PLdvK59_Stat"]] call _fnc_saveToTemplate;
+["staticMortars", ["CSLA_M52_Stat"]] call _fnc_saveToTemplate;
+["mortarMagazineHE", "CSLA_8rnd_82EOM52"] call _fnc_saveToTemplate;               
 
-["mortarMagazineHE", "US85_8Rnd_81mmHE"] call _fnc_saveToTemplate;
-["mortarMagazineSmoke", ""] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;                  
+["vehicleSam", ""] call _fnc_saveToTemplate;                    
+
+["howitzerMagazineHE", ""] call _fnc_saveToTemplate;            
+             
+["mortarMagazineSmoke", ""] call _fnc_saveToTemplate;           
 
 //Minefield definition
-//CFGVehicles variant of Mines are needed "ATMine", "APERSTripMine", "APERSMine"
-["minefieldAT", ["US85_ATMine_ammo"]] call _fnc_saveToTemplate;
-["minefieldAPERS", ["US85_M14Mine_ammo"]] call _fnc_saveToTemplate;
+["minefieldAT", ["CSLA_PtMiBa3_charge"]] call _fnc_saveToTemplate;
+["minefieldAPERS", ["CSLA_PPMiNa_charge"]] call _fnc_saveToTemplate;
+
+//SLAT cages, camo nets, logs, doors etc
+["animations", []] call _fnc_saveToTemplate;
+
+//vehicle skins
+["variants", []] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
 /////////////////////
 
-["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"]] call _fnc_saveToTemplate;
-["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
-"GreekHead_A3_05","GreekHead_A3_07","Sturrock","WhiteHead_01","WhiteHead_02",
-"WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07",
-"WhiteHead_08","WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
-"WhiteHead_15","WhiteHead_16","WhiteHead_18","WhiteHead_19","WhiteHead_20",
-"WhiteHead_21"]] call _fnc_saveToTemplate;
-["sfVoices", ["Male01ENGB", "Male02ENGB", "Male03ENGB", "Male04ENGB", "Male05ENGB"]] call _fnc_saveToTemplate;
+["faces", ["WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","WhiteHead_11","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_17","WhiteHead_18","WhiteHead_20","WhiteHead_21","WhiteHead_30"]] call _fnc_saveToTemplate;
+["voices", ["CSLA_Male01CZ","CSLA_Male02CZ","CSLA_Male03CZ","CSLA_Male04CZ"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
@@ -106,68 +109,77 @@ _loadoutData set ["SMGs", []];
 _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
-
 _loadoutData set ["lightATLaunchers", [
-["US85_LAW72", "", "", "", ["US85_LAW72_Mag"], [], ""],
-["US85_M136", "", "", "", ["US85_M136_Mag"], [], ""]
+["CSLA_RPG75", "", "", "", ["CSLA_RPG75_Mag"], [], ""],
+["CSLA_RPG7", "", "", "", ["CSLA_PG7M110"], [], ""]
 ]];
 _loadoutData set ["ATLaunchers", [
-["US85_SMAW", "", "", "", ["US85_SMAW_HEAA", "US85_SMAW_HEDP"], [], ""],
-["US85_MAAWS", "", "", "", ["US85_MAAWS_HEAT", "US85_MAAWS_HEDP"], [], ""]
+["CSLA_RPG7V", "", "", "", ["CSLA_PG7M110", "CSLA_PG7M110V"], [], ""]
 ]];
-_loadoutData set ["missileATLaunchers", [
-["US85_M47", "", "", "", ["US85_M47_Mag"], [], ""]
-]];
+_loadoutData set ["missileATLaunchers", []];
 _loadoutData set ["AALaunchers", [
-["US85_FIM92", "", "", "", ["US85_FIM92_Mag"], [], ""]
+["CSLA_9K32", "", "", "", ["CSLA_9M32M"], [], ""]
 ]];
 _loadoutData set ["sidearms", []];
 
-_loadoutData set ["ATMines", ["US85_ATMine_mag"]];
-_loadoutData set ["APMines", ["US85_M14Mine_mag"]];
+_loadoutData set ["ATMines", ["CSLA_PtMiBa3_mag"]];
+_loadoutData set ["APMines", ["CSLA_PPMiNa_mag"]];
 _loadoutData set ["lightExplosives", ["CSLA_TNT0100g"]];
-_loadoutData set ["heavyExplosives", ["US85_SatchelCharge_Mag"]];
+_loadoutData set ["heavyExplosives", ["CSLA_IVZ"]];
 
+_loadoutData set ["antiInfantryGrenades", ["CSLA_RG4o", "CSLA_RG4u","CSLA_URG86o","CSLA_URG86u","CSLA_F1"]];
 _loadoutData set ["antiTankGrenades", []];
-_loadoutData set ["antiInfantryGrenades", ["US85_M67"]];
-_loadoutData set ["smokeGrenades", ["US85_dymB","US85_dymC","US85_dymZ","US85_dymZl"]];
-_loadoutData set ["signalsmokeGrenades", []];
+_loadoutData set ["smokeGrenades", ["CSLA_dymB","CSLA_dymC","CSLA_dymZ","CSLA_dymZl"]];
+_loadoutData set ["signalsmokeGrenades", ["CSLA_26_5sigCv1a", "CSLA_26_5sigZl1a", "CSLA_26_5sigCrD", "CSLA_26_5sigOrD", "CSLA_26_5sigMD"]];
+
 
 //Basic equipment. Shouldn't need touching most of the time.
 //Mods might override this, or certain mods might want items removed (No GPSs in WW2, for example)
 _loadoutData set ["maps", ["ItemMap"]];
-_loadoutData set ["watches", ["US85_watch"]];
+_loadoutData set ["watches", ["CSLA_Prim_enl"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", []];
-_loadoutData set ["NVGs", ["US85_ANPVS5_Goggles"]];
-_loadoutData set ["binoculars", ["US85_bino"]];
-_loadoutData set ["rangefinders", ["Rangefinder"]];
+_loadoutData set ["NVGs", []];
+_loadoutData set ["binoculars", []];
+_loadoutData set ["rangefinders", []];
 
-_loadoutData set ["uniforms", ["US85_uniBDU"]];
-_loadoutData set ["vests", ["US85_grY_M16","US85_grY_MPV"]];
-_loadoutData set ["SLvests", ["US85_grY_M9","US85_grV_ofc","US85_grV_M9"]];
-_loadoutData set ["MGvests", ["US85_grY_MG","US85_grV_MG"]];
-_loadoutData set ["SNIvests", ["US85_grY_M24","US85_grV_M24","US85_grY_snp"]];
-_loadoutData set ["Hvests", ["US85_grV_M16","US85_grV_MPV"]];
-_loadoutData set ["glVests", ["US85_grVm_M16GL","US85_grV_M16GL"]];
-_loadoutData set ["backpacks", ["US85_bpAlice"]];
-_loadoutData set ["MEDIbackpacks", ["US85_bpMedi"]];
-_loadoutData set ["longRangeRadios", ["US85_bpPRC77"]];
-_loadoutData set ["helmets", ["US85_helmetPASGT","US85_helmetPASGTr","US85_helmetPASGTG"]];
-_loadoutData set ["slHat", ["US85_marineCap"]];
-_loadoutData set ["sniHats", ["US85_hat"]];
+_loadoutData set ["uniforms", ["CSLA_uni60wld"]];
+_loadoutData set ["slUniforms", ["CSLA_uni60wld"]];
+_loadoutData set ["vests", [
+		"CSLA_gr60rfl"
+]];
+_loadoutData set ["SLvests", [
+		"CSLA_gr60sgt"
+]];
+_loadoutData set ["MEDIvests", [
+		"CSLA_gr60medic"
+]];
+_loadoutData set ["ATvests", [
+		"CSLA_gr60RPG7",
+		"CSLA_gr60RPG7r"
+]];
+_loadoutData set ["MGvests", [
+		"CSLA_gr60UK59"
+]];
+_loadoutData set ["Hvests", []];
+_loadoutData set ["glVests", []];
+_loadoutData set ["backpacks", ["CSLA_bp60"]];
+_loadoutData set ["longRangeRadios", []];
+_loadoutData set ["helmets", ["CSLA_helmet53","CSLA_helmet53j","CSLA_helmet53m","CSLA_helmet53G","CSLA_helmet53G_on","CSLA_helmet53mG","CSLA_helmet53jG"]];
+_loadoutData set ["slHat", ["CSLA_capDes"]];
+_loadoutData set ["sniHats", ["CSLA_hat85bDes","CSLA_hat85Des"]];
 
-_loadoutData set ["traitorUniforms", ["FIA_uniWoodlander","FIA_uniWoodlander2","FIA_uniWoodlander3","FIA_uniWoodlander4"]];
+_loadoutData set ["traitorUniforms", ["FIA_uniDES"]];
 _loadoutData set ["traitorVests", ["FIA_gr85_Sa61"]];
 _loadoutData set ["traitorHats", ["FIA_Usanka"]];
 
-_loadoutData set ["officerUniforms", ["US85_uniBDU"]];
-_loadoutData set ["officerVests", ["US85_grV_ofc"]];
-_loadoutData set ["officerHats", ["US85_marineCap"]];
+_loadoutData set ["officerUniforms", ["CSLA_uniDES"]]; ///finish that
+_loadoutData set ["officerVests", ["CSLA_gr85ptOfc"]];
+_loadoutData set ["officerHats", ["CSLA_beretR"]];
 
-_loadoutData set ["cloakUniforms", ["US85_uniGhillie"]];
-_loadoutData set ["cloakVests", ["US85_grY_MPV"]];
+_loadoutData set ["cloakUniforms", ["CSLA_uniGhillie"]];
+_loadoutData set ["cloakVests", ["CSLA_uniGhillie"]];
 
 _loadoutData set ["slUniforms", []];
 _loadoutData set ["sniVests", []];
@@ -175,7 +187,7 @@ _loadoutData set ["backpacks", []];
 _loadoutData set ["longRangeRadios", []];
 _loadoutData set ["atBackpacks", []];
 _loadoutData set ["helmets", []];
-_loadoutData set ["slHat", ["US85_patrolCap","US85_ptCap"]];
+_loadoutData set ["slHat", []];
 _loadoutData set ["sniHats", []];
 
 _loadoutData set ["glasses", []];
@@ -189,7 +201,7 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 
 //Unit type specific item sets. Add or remove these, depending on the unit types in use.
 private _slItems = [];
-private _eeItems = ["US85_toolkit_S", "US85_anprs8_detector"];
+private _eeItems = ["CSLA_toolkit_KOMZE", "CSLA_w3p_detector"];
 private _mmItems = [];
 
 if (A3A_hasACE) then {
@@ -221,201 +233,258 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["uniforms", ["US85_uniSF"]];
-_sfLoadoutData set ["vests", ["US85_grSF_M16","US85_grSF_MPV","US85_grSF_TLBV","US85_grSF_MG","US85_grSF_M9"]];
-_sfLoadoutData set ["SNIvests", ["US85_grSF_M24"]];
-_sfLoadoutData set ["backpacks", ["US85_bpSf"]];
-_sfLoadoutData set ["MEDIbackpacks", ["US85_bpMedi"]];
-_sfLoadoutData set ["helmets", ["US85_helmetSFL","US85_helmetSFLG","US85_helmetSFLG_on"]];
-_sfLoadoutData set ["sniHats", ["US85_beanie"]];
-_sfLoadoutData set ["NVGs", ["US85_ANPVS5_Goggles"]];
-_sfLoadoutData set ["binoculars", ["US85_bino"]];
-
+_sfLoadoutData set ["uniforms", ["CSLA_uniDES"]];
+_sfLoadoutData set ["slUniforms", ["CSLA_uniDES"]];
+_sfLoadoutData set ["vests", [
+	"CSLA_gr85ptBase",
+	"CSLA_gr85lrrSa61"
+]];
+_sfLoadoutData set ["MEDIvests", [
+	"CSLA_gr85ptMdc"
+]];
+_sfLoadoutData set ["ATvests", [
+	"CSLA_gr85ptCrw"
+]];
+_sfLoadoutData set ["SLvests", [
+	"CSLA_gr85ptSgt",
+	"CSLA_gr85ptOfc"
+]];
+_sfLoadoutData set ["MGvests", [
+	"CSLA_gr85ptMg"
+]];
+_sfLoadoutData set ["SNIvests", [
+	"CSLA_gr85ptOP63"
+]];
+_sfLoadoutData set ["Hvests", []];
+_sfLoadoutData set ["backpacks", ["CSLA_bp85Sa58", "CSLA_bp85RF10"]];
+_sfLoadoutData set ["helmets", ["CSLA_helmetPara"]];
+_sfLoadoutData set ["sniHats", ["CSLA_beretM"]];
+_sfLoadoutData set ["NVGs", ["CSLA_nokto"]];
+_sfLoadoutData set ["binoculars", ["CSLA_Bino"]];
+//SF Weapons
+//["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
+_sfLoadoutData set ["slRifles", [
+["CSLA_Sa58P", "", "", "CSLA_NSPU", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bnt"],
+["CSLA_Sa58P", "", "", "CSLA_NSPU", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"],
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bnt"],
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"],
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], ["CSLA_26_5sigZl1a","CSLA_26_5sigCrD","CSLA_26_5vz70","CSLA_26_5vz70"], "CSLA_Sa58bnt"],
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], ["CSLA_26_5sigZl1a","CSLA_26_5sigCrD","CSLA_26_5vz70","CSLA_26_5vz70"], ""]
+]];
 _sfLoadoutData set ["rifles", [
-["US85_M16A2", "US85_M16tlm", "", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], ""],
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
 ]];
 _sfLoadoutData set ["carbines", [
-["US85_M16A2CAR", "US85_M16tlm", "", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""],
-["US85_M16A2CAR", "US85_M16tlm", "US85_M16fl", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58V", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-["US85_M16A2CARGL", "", "", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], ["US85_M406", "US85_M406", "US85_M406", "US85_M406"], ""]
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], ["CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70"], ""]
 ]];
 _sfLoadoutData set ["SMGs", [
-["US85_MPVSD", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""],
-["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""]
+["CSLA_rSa61", "CSLA_Sa61tlm", "", "", ["CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
-["US85_M249", "", "", "US85_sc2000M249", ["US85_200Rnd_556x45", "US85_200Rnd_556x45"], [], ""],
-["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45", "US85_200Rnd_556x45"], [], ""],
-["US85_M60E3LB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""],
-["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""]
+["CSLA_UK59L", "", "", "", ["CSLA_UK59_50rnd_7_62PZ59", "CSLA_UK59_50rnd_7_62PZ59","CSLA_UK59_50rnd_7_62PZ59"], [], ""],
+["CSLA_UK59L", "", "", "CSLA_UK59_ZD4x8", ["CSLA_UK59_50rnd_7_62PZ59", "CSLA_UK59_50rnd_7_62PZ59","CSLA_UK59_50rnd_7_62PZ59"], [], ""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-["US85_M16A2CAR", "US85_M16tlm", "", "US85_sc4x20_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Pu52", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62Sv52","CSLA_Pu52_10rnd_7_62Sv52"], [], ""]
 ]];
 _sfLoadoutData set ["sniperRifles", [
-["US85_M21", "US85_M21tlm", "", "", ["US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51"], [], "US85_M14bpd"]
+["CSLA_OP63", "", "", "CSLA_PSO1_OP63", ["CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59", "CSLA_OP63_10rnd_7_62Odst59"], [], ""],
+["CSLA_OP63", "", "", "CSLA_NSPU_OP63", ["CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59", "CSLA_OP63_10rnd_7_62Odst59"], [], ""]
 ]];
 _sfLoadoutData set ["sidearms", [
-["US85_1911", "", "", "", ["US85_7Rnd_45ACP","US85_7Rnd_45ACP"], [], ""]
+["CSLA_Sa61", "", "", "", ["CSLA_Sa61_20rnd_7_65Pi27"], [], ""],
+["CSLA_Pi75lr", "", "", "", ["CSLA_Pi75_15Rnd_9Luger"], [], ""],
+["CSLA_Pi75sr", "", "", "", ["CSLA_Pi75_15Rnd_9Luger"], [], ""],
+["CSLA_Pi52", "", "", "", ["CSLA_Pi52_8rnd_7_62Pi52"], [], ""],
+["CSLA_Pi82", "", "", "", ["CSLA_Pi82_12rnd_9Pi82"], [], ""]
 ]];
+
 
 /////////////////////////////////
 //    Elite Loadout Data       //
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-private _eliteLoadoutData= _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_eliteLoadoutData set ["uniforms", ["US85_uniSF"]];
-_eliteLoadoutData set ["vests", ["US85_grSF_M16","US85_grSF_MPV","US85_grSF_TLBV","US85_grSF_M9","US85_grSF_MG"]];
-_eliteLoadoutData set ["SNIvests", ["US85_grSF_M24"]];
-_eliteLoadoutData set ["backpacks", ["US85_bpSf"]];
-_eliteLoadoutData set ["MEDIbackpacks", ["US85_bpMedi"]];
-_eliteLoadoutData set ["helmets", ["US85_helmetSFL","US85_helmetSFLG","US85_helmetSFLG_on"]];
-_eliteLoadoutData set ["sniHats", ["US85_beanie"]];
-_eliteLoadoutData set ["NVGs", ["US85_ANPVS5_Goggles"]];
-_eliteLoadoutData set ["binoculars", ["US85_bino"]];
-
+_eliteLoadoutData set ["uniforms", ["CSLA_uniDES"]];
+_eliteLoadoutData set ["slUniforms", ["CSLA_uniDES"]];
+_eliteLoadoutData set ["vests", [
+		"CSLA_gr85ptBase",
+		"CSLA_gr85lrrSa61",
+        "CSLA_gr85ptMdc",
+        "CSLA_gr85ptCrw",
+        "CSLA_gr85ptSgt",
+		"CSLA_gr85ptOfc",
+        "CSLA_gr85ptMg",
+        "CSLA_gr85ptOP63"
+]];
+_eliteLoadoutData set ["Hvests", []];
+_eliteLoadoutData set ["backpacks", ["CSLA_bp85Sa58", "CSLA_bp85RF10"]];
+_eliteLoadoutData set ["helmets", ["CSLA_helmetPara"]];
+_eliteLoadoutData set ["sniHats", ["CSLA_beretM"]];
+_eliteLoadoutData set ["NVGs", ["CSLA_nokto"]];
+_eliteLoadoutData set ["binoculars", ["CSLA_Bino"]];
+//SF Weapons
+_eliteLoadoutData set ["slRifles", [
+["CSLA_Sa58P", "", "", "CSLA_NSPU", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bnt"],
+["CSLA_Sa58P", "", "", "CSLA_NSPU", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"],
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bnt"],
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"],
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], ["CSLA_26_5sigZl1a","CSLA_26_5sigCrD","CSLA_26_5vz70","CSLA_26_5vz70"], "CSLA_Sa58bnt"],
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], ["CSLA_26_5sigZl1a","CSLA_26_5sigCrD","CSLA_26_5vz70","CSLA_26_5vz70"], ""]
+]];
 _eliteLoadoutData set ["rifles", [
-["US85_M16A2", "", "", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], ""],
+["CSLA_Sa58P", "", "", "CSLA_ZD4x8", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
 ]];
 _eliteLoadoutData set ["carbines", [
-["US85_M16A2CAR", "", "", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""],
-["US85_M16A2CAR", "", "US85_M16fl", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58V", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-["US85_M16A2CARGL", "", "", "US85_sc2000_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], ["US85_M406", "US85_M406", "US85_M406", "US85_M406"], ""]
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], ["CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70"], ""]
 ]];
 _eliteLoadoutData set ["SMGs", [
-["US85_MPVSD", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""],
-["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""]
+["CSLA_rSa61", "CSLA_Sa61tlm", "", "", ["CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
-["US85_M249", "", "", "US85_sc2000M249", ["US85_200Rnd_556x45", "US85_200Rnd_556x45"], [], ""],
-["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45", "US85_200Rnd_556x45"], [], ""],
-["US85_M60E3LB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""],
-["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""]
+["CSLA_UK59L", "", "", "", ["CSLA_UK59_50rnd_7_62PZ59", "CSLA_UK59_50rnd_7_62PZ59","CSLA_UK59_50rnd_7_62PZ59"], [], ""],
+["CSLA_UK59L", "", "", "CSLA_UK59_ZD4x8", ["CSLA_UK59_50rnd_7_62PZ59", "CSLA_UK59_50rnd_7_62PZ59","CSLA_UK59_50rnd_7_62PZ59"], [], ""]
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
-["US85_M16A2CAR", "", "", "US85_sc4x20_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Pu52", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62Sv52","CSLA_Pu52_10rnd_7_62Sv52"], [], ""]
 ]];
 _eliteLoadoutData set ["sniperRifles", [
-["US85_M21", "US85_M21tlm", "", "", ["US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51"], [], "US85_M14bpd"]
+["CSLA_OP63", "", "", "CSLA_PSO1_OP63", ["CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59", "CSLA_OP63_10rnd_7_62Odst59"], [], ""],
+["CSLA_OP63", "", "", "CSLA_NSPU_OP63", ["CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62PZ59", "CSLA_OP63_10rnd_7_62Odst59"], [], ""]
 ]];
 _eliteLoadoutData set ["sidearms", [
-["US85_1911", "", "", "", ["US85_7Rnd_45ACP","US85_7Rnd_45ACP"], [], ""]
+["CSLA_Sa61", "", "", "", ["CSLA_Sa61_20rnd_7_65Pi27"], [], ""],
+["CSLA_Pi75lr", "", "", "", ["CSLA_Pi75_15Rnd_9Luger"], [], ""],
+["CSLA_Pi75sr", "", "", "", ["CSLA_Pi75_15Rnd_9Luger"], [], ""],
+["CSLA_Pi52", "", "", "", ["CSLA_Pi52_8rnd_7_62Pi52"], [], ""],
+["CSLA_Pi82", "", "", "", ["CSLA_Pi82_12rnd_9Pi82"], [], ""]
 ]];
+
 
 /////////////////////////////////
 //    Military Loadout Data    //
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militaryLoadoutData set ["uniforms", ["US85_uniBDU"]];
-_militaryLoadoutData set ["vests", ["US85_grY_M16","US85_grY_MPV","US85_grY_MG","US85_grV_MG","US85_grY_M9","US85_grV_M9","US85_grV_ofc"]];
-_militaryLoadoutData set ["SNIvests", ["US85_grY_snp","US85_grV_M24"]];
-_militaryLoadoutData set ["Hvests", ["US85_grV_M16","US85_grV_MPV"]];
-_militaryLoadoutData set ["glVests", ["US85_grVm_M16GL","US85_grV_M16GL"]];
-_militaryLoadoutData set ["backpacks", ["US85_bpAlice"]];
-_militaryLoadoutData set ["MEDIbackpacks", ["US85_bpMedi"]];
-_militaryLoadoutData set ["helmets", ["US85_helmetPASGT","US85_helmetPASGTr","US85_helmetPASGTG"]];
-_militaryLoadoutData set ["binoculars", ["US85_bino"]];
+_militaryLoadoutData set ["uniforms", ["CSLA_uniDES"]];
+_militaryLoadoutData set ["slUniforms", ["CSLA_uniDES"]];
+_eliteLoadoutData set ["vests", [
+	"CSLA_gr85ptBase",
+	"CSLA_gr85lrrSa61",
+    "CSLA_gr85ptMdc",
+    "CSLA_gr85ptCrw",
+    "CSLA_gr85ptSgt",
+	"CSLA_gr85ptOfc",
+    "CSLA_gr85ptMg",
+    "CSLA_gr85ptOP63"
+]];
+_militaryLoadoutData set ["glVests", []];
+_militaryLoadoutData set ["Hvests", []];
+_militaryLoadoutData set ["backpacks", ["CSLA_bp60"]];
+_militaryLoadoutData set ["ATbackpacks", ["CSLA_bpRPG7"]];
+_militaryLoadoutData set ["helmets", ["CSLA_helmet53","CSLA_helmet53d","CSLA_helmet53m","CSLA_helmet53j","CSLA_helmet53G"]];
+_militaryLoadoutData set ["binoculars", ["CSLA_Bino"]];
 
 _militaryLoadoutData set ["slRifles", [
-["US85_M16A2", "", "", "", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58V", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43"], [], ""]
 ]];
 _militaryLoadoutData set ["rifles", [
-["US85_M16A2", "", "", "", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58P", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43"], [], ""]
 ]];
 _militaryLoadoutData set ["carbines", [
-["US85_M16A2", "", "", "", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Sa58V", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43"], [], ""]
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-["US85_M16A2GL", "", "", "", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], ["US85_M406", "US85_M406", "US85_M406", "US85_M406"], ""]
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43"], ["CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70"], ""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""]
+["CSLA_rSa61", "", "", "", ["CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
-["US85_M249", "", "", "", ["US85_200Rnd_556x45", "US85_200Rnd_556x45"], [], ""],
-["US85_M60", "", "", "", ["US85_100Rnd_762x51", "US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""],
-["US85_M60E3LB", "", "", "", ["US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""],
-["US85_M60E3SB", "", "", "", ["US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""]
+["CSLA_LK57_50", "", "", "", ["CSLA_LK57_50rnd_7_62vz43", "CSLA_LK57_50rnd_7_62PZ43","CSLA_LK57_50rnd_7_62Sv43"], [], ""]
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
-["US85_M16A2", "", "", "US85_sc4x20_M16", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], [], ""]
+["CSLA_Pu57", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43"], [], ""]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
-["US85_M14", "", "", "US85_scM21", ["US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51"], [], "US85_M14bpd"]
+["CSLA_OP54", "", "", "CSLA_PD54", ["CSLA_OP54_5rnd_7_62PZ59","CSLA_OP54_5rnd_7_62TzOdst59","CSLA_OP54_5rnd_7_62Odst59", "CSLA_OP54_5rnd_7_62Odst59"], [], ""]
 ]];
-_militaryLoadoutData set ["sidearms", [
-["US85_M9", "", "", "", ["US85_M9_15Rnd_9Luger"], [], ""]
-]];
+_militaryLoadoutData set ["sidearms", ["CSLA_Pi52"]];
+
 ///////////////////////////////
 //    Police Loadout Data    //
 ///////////////////////////////
 
-private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-
-_policeLoadoutData set ["uniforms", ["CSLA_uniPoliceman"]];
+private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
+_policeLoadoutData set ["uniforms", ["CSLA_uniPoliceMan"]];
+_policeLoadoutData set ["slUniforms", ["CSLA_uniPoliceMan"]];
 _policeLoadoutData set ["vests", []];
-_policeLoadoutData set ["helmets", ["CSLA_policeCap"]];
-
+_policeLoadoutData set ["helmets", ["CSLA_PoliceCap"]];
 _policeLoadoutData set ["SMGs", [
-["CSLA_rSa61", "", "", "", ["CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""]
+["CSLA_Sa24", "", "", "", ["CSLA_Sa24_32rnd_7_62Pi52","CSLA_Sa24_32rnd_7_62Pi52","CSLA_Sa24_32rnd_7_62Pi52","CSLA_Sa24_32rnd_7_62Pi52"], [], ""],
+["CSLA_Sa26", "", "", "", ["CSLA_Sa24_32rnd_7_62Pi52","CSLA_Sa24_32rnd_7_62Pi52","CSLA_Sa24_32rnd_7_62Pi52","CSLA_Sa24_32rnd_7_62Pi52"], [], ""]
 ]];
-_policeLoadoutData set ["sidearms", [["US85_M9", "", "", "", ["US85_M9_15Rnd_9Luger"], [], ""]]];
+_policeLoadoutData set ["sidearms", ["CSLA_Pi82"]];
 
 ////////////////////////////////
 //    Militia Loadout Data    //
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militiaLoadoutData set ["uniforms", ["US85_uniKHK"]];
-_militiaLoadoutData set ["vests", ["US85_grVest"]];
+_militiaLoadoutData set ["uniforms", ["CSLA_uniDES"]];
+_militiaLoadoutData set ["slUniforms", ["CSLA_uniDES"]];
+_militiaLoadoutData set ["vests", ["CSLA_gr60drv"]];
+_militiaLoadoutData set ["glVests", []];
+_militiaLoadoutData set ["Hvests", []];
 _militiaLoadoutData set ["backpacks", []];
-_militiaLoadoutData set ["helmets", ["US85_helmetM1g"]];
-
+_militiaLoadoutData set ["helmets", ["CSLA_cap"]];
 _militiaLoadoutData set ["rifles", [
-["US85_M16A1", "", "", "", ["US85_20Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""]
+["CSLA_Pu52", "", "", "", ["CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62Sv52","CSLA_Pu52_10rnd_7_62Sv52"], [], ""]
 ]];
 _militiaLoadoutData set ["carbines", [
-//["", "", "", "", [], [], ""]
-["US85_M16A1", "", "", "", ["US85_20Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""]
+["CSLA_Pu57", "", "", "", ["CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62Sv43","CSLA_Pu57_10rnd_7_62Sv43"], [], ""]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-//["", "", "", "", [], [], ""]
-["US85_M16A2GL", "", "", "", ["US85_30Rnd_556x45", "US85_30Rnd_556x45", "US85_30Rnd_556x45","US85_30Rnd_556x45"], ["US85_M406", "US85_M406", "US85_M406", "US85_M406"], ""]
+["CSLA_VG70", "", "", "", ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43"], ["CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70","CSLA_26_5vz70"], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
-//["", "", "", "", [], [], ""]
-["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""]
+["CSLA_rSa61", "", "", "", ["CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""]
 ]];
 _militiaLoadoutData set ["machineGuns", [
-//["", "", "", "", [], [], ""]
-["US85_M60", "", "", "", ["US85_100Rnd_762x51", "US85_100Rnd_762x51", "US85_100Rnd_762x51"], [], ""]
+["CSLA_LK52_25", "", "", "", ["CSLA_LK52_25rnd_7_62vz52", "CSLA_LK52_25rnd_7_62PZ52","CSLA_LK52_25rnd_7_62Sv52"], [], ""]
 ]];
 _militiaLoadoutData set ["marksmanRifles", [
-//["", "", "", "", [], [], ""]
-["US85_M14", "", "", "US85_scM21", ["US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51", "US85_20Rnd_762x51"], [], "US85_M14bpd"]
+["CSLA_OP54", "", "", "", ["CSLA_OP54_5rnd_7_62PZ59","CSLA_OP54_5rnd_7_62TzOdst59","CSLA_OP54_5rnd_7_62Odst59", "CSLA_OP54_5rnd_7_62Odst59"], [], ""]
 ]];
-_militiaLoadoutData set ["sidearms", [["US85_M9", "", "", "", ["US85_M9_15Rnd_9Luger"], [], ""]]];
+_militiaLoadoutData set ["sniperRifles", [
+["CSLA_OP54", "", "", "CSLA_PD54", ["CSLA_OP54_5rnd_7_62PZ59","CSLA_OP54_5rnd_7_62TzOdst59","CSLA_OP54_5rnd_7_62Odst59", "CSLA_OP54_5rnd_7_62Odst59"], [], ""]
+]];
+_militiaLoadoutData set ["sidearms", ["CSLA_Pi52"]];
 //////////////////////////
 //    Misc Loadouts     //
 //////////////////////////
 
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_crewLoadoutData set ["uniforms", ["US85_uniCrew"]];
-_crewLoadoutData set ["vests", ["US85_grY_snp"]];
-_crewLoadoutData set ["helmets", ["US85_helmetDH132","US85_helmetDH132G","US85_helmetDH132G_on"]];
+_crewLoadoutData set ["uniforms", ["CSLA_uniSrv"]];
+_crewLoadoutData set ["slUniforms", ["CSLA_uniSrv"]];
+_crewLoadoutData set ["vests", ["CSLA_gr60crw"]];
+_crewLoadoutData set ["helmets", ["CSLA_helmetT28", "CSLA_helmetT28G"]];
 
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["US85_uniPlt"]];
-_pilotLoadoutData set ["vests", ["US85_grY_snp"]];
-_pilotLoadoutData set ["helmets", ["US85_helmetPlt","US85_helmetPltC"]];
+_pilotLoadoutData set ["uniforms", ["CSLA_uniPlt"]];
+_pilotLoadoutData set ["slUniforms", ["CSLA_uniPlt"]];
+_pilotLoadoutData set ["vests", ["CSLA_gr60crw"]];
+_pilotLoadoutData set ["helmets", ["CSLA_helmetPOP6"]];
 
 /////////////////////////////////
 //    Unit Type Definitions    //
@@ -424,7 +493,6 @@ _pilotLoadoutData set ["helmets", ["US85_helmetPlt","US85_helmetPltC"]];
 
 private _squadLeaderTemplate = {
     ["slHat"] call _fnc_setHelmet;
-  //  [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["SLvests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
@@ -482,7 +550,7 @@ private _medicTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    ["MEDIbackpacks"] call _fnc_setBackpack;
+    ["backpacks"] call _fnc_setBackpack;
     
     [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
@@ -708,6 +776,7 @@ private _radiomanTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["longRangeRadios"] call _fnc_setBackpack;
+
 
     [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;

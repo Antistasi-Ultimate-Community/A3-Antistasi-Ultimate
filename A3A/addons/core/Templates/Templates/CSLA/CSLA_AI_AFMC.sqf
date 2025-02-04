@@ -20,7 +20,7 @@
 // vehicles can be placed in more than one category if they fit between both. Cost will be derived by the higher category
 ["vehiclesBasic", ["AFMC_M1008_S250"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["AFMC_M1008"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["US85_M998SFGT"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["US85_M998SFGT","AFMC_M1008_MK19","AFMC_M923A1_GT"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["AFMC_M923o","AFMC_M923c"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["AFMC_M1008c","AFMC_M923cargo"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["AFMC_M923a"]] call _fnc_saveToTemplate;
@@ -29,7 +29,7 @@
 ["vehiclesMedical", ["AFMC_M113A2_AMB"]] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", []] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["AFMC_LAV25"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["AFMC_M113A1","AFMC_M113A2ext"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", ["AFMC_M113A1","AFMC_M113A2ext","AFMC_M113A1_Mk19"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["AFMC_M1A1"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["AFMC_M163"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks", ["AFMC_M1IP"]] call _fnc_saveToTemplate;  
@@ -58,7 +58,7 @@
 ["vehicleSam", ""] call _fnc_saveToTemplate;
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", ["US85_M998SFGT"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", ["AFMC_M1008_M2"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["AFMC_M923o","AFMC_M923c"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["AFMC_M1008"]] call _fnc_saveToTemplate;
 
@@ -67,7 +67,7 @@
 ["vehiclesPolice", ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["AFMC_M2h"]] call _fnc_saveToTemplate;
-["staticAT", ["AFMC_TOW_Stat"]] call _fnc_saveToTemplate;
+["staticAT", ["AFMC_TOW_Stat","AFMC_Mk19"]] call _fnc_saveToTemplate;
 ["staticAA", []] call _fnc_saveToTemplate;
 ["staticMortars", ["AFMC_M252_Stat"]] call _fnc_saveToTemplate;
 
@@ -213,10 +213,13 @@ _sfLoadoutData set ["carbines", [
 ]];
 _sfLoadoutData set ["grenadeLaunchers", []];
 _sfLoadoutData set ["SMGs", [
-    ["US85_MPVSD", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""]
+    ["US85_MPVN1", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
-    ["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""]
+    ["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
+    ["US85_M249", "", "", "US85_sc2000M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
+    ["US85_M60E3LB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
+    ["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
 ]];
 _sfLoadoutData set ["marksmanRifles", [
     ["US85_M14", "", "", "US85_scM21", ["US85_20Rnd_762M61","US85_20Rnd_762M61","US85_20Rnd_762M61"], [], "US85_M14bpd"]
@@ -251,7 +254,10 @@ _eliteLoadoutData set ["SMGs", [
     ["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
-    ["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""]
+    ["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
+    ["US85_M249", "", "", "US85_sc2000M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
+    ["US85_M60E3LB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
+    ["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
     ["US85_M14", "", "", "US85_scM21", ["US85_20Rnd_762M61","US85_20Rnd_762M61","US85_20Rnd_762M61"], [], "US85_M14bpd"]
@@ -285,7 +291,9 @@ _militaryLoadoutData set ["SMGs", [
     ["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
-    ["US85_M249", "", "", "", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""]
+    ["US85_M249", "", "", "", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
+    ["US85_M60E3LB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
+    ["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""]
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
     ["US85_M14", "", "", "", ["US85_20Rnd_762x51","US85_20Rnd_762x51","US85_20Rnd_762x51"], [], "US85_M14bpd"]
@@ -333,7 +341,7 @@ _militiaLoadoutData set ["carbines", [
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", []];
 _militiaLoadoutData set ["SMGs", [
-    ["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""]
+    ["US85_MPVN1", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""]
 ]];
 _militiaLoadoutData set ["machineGuns", [
     ["US85_M249", "", "", "", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""]
@@ -366,10 +374,11 @@ _pilotLoadoutData set ["helmets", ["US85_helmetDH132","US85_helmetDH132G","US85_
 
 
 private _squadLeaderTemplate = {
-    [selectRandomWeighted ["helmets", 2, "slHat", 1]] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    [["slUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
+    ["slHat"] call _fnc_setHelmet;
+    [["SLvests"] call _fnc_fallback] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+
+    ["backpacks"] call _fnc_setBackpack;
 
     [["slRifles", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
@@ -382,8 +391,8 @@ private _squadLeaderTemplate = {
     ["items_squadLeader_extras"] call _fnc_addItemSet;
     ["items_miscEssentials"] call _fnc_addItemSet;
     ["antiInfantryGrenades", 2] call _fnc_addItem;
-    ["signalsmokeGrenades", 2] call _fnc_addItem;
     ["smokeGrenades", 2] call _fnc_addItem;
+    ["signalsmokeGrenades", 2] call _fnc_addItem;
 
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
@@ -396,8 +405,7 @@ private _squadLeaderTemplate = {
 
 private _riflemanTemplate = {
     ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
+    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
 
@@ -411,6 +419,230 @@ private _riflemanTemplate = {
     ["items_rifleman_extras"] call _fnc_addItemSet;
     ["items_miscEssentials"] call _fnc_addItemSet;
     ["antiInfantryGrenades", 2] call _fnc_addItem;
+    ["smokeGrenades", 2] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _medicTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["MEDIbackpacks"] call _fnc_setBackpack;
+    
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
+    ["primary", 6] call _fnc_addMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_medic"] call _fnc_addItemSet;
+    ["items_medic_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 2] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _grenadierTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    [["glVests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    ["grenadeLaunchers"] call _fnc_setPrimary;
+    ["primary", 6] call _fnc_addMagazines;
+    ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_grenadier_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 4] call _fnc_addItem;
+    ["smokeGrenades", 2] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _explosivesExpertTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    [["glVests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
+    ["primary", 6] call _fnc_addMagazines;
+
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_explosivesExpert_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+
+    ["lightExplosives", 2] call _fnc_addItem;
+    if (random 1 > 0.5) then {["heavyExplosives", 1] call _fnc_addItem;};
+    if (random 1 > 0.5) then {["atMines", 1] call _fnc_addItem;};
+    if (random 1 > 0.5) then {["apMines", 1] call _fnc_addItem;};
+
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 1] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _engineerTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    ["vests"] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
+
+    ["primary", 6] call _fnc_addMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_engineer_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+
+    if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 2] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _latTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    ["vests"] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
+    ["primary", 6] call _fnc_addMagazines;
+
+    [["lightATLaunchers", "ATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
+    //TODO - Add a check if it's disposable.
+    ["launcher", 1] call _fnc_addMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_lat_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 1] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _atTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    ["vests"] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
+    ["primary", 6] call _fnc_addMagazines;
+
+    [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
+    //TODO - Add a check if it's disposable.
+    ["launcher", 3] call _fnc_addMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_at_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 1] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _aaTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    ["vests"] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
+    ["primary", 6] call _fnc_addMagazines;
+
+    ["AALaunchers"] call _fnc_setLauncher;
+    //TODO - Add a check if it's disposable.
+    ["launcher", 1] call _fnc_addMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_aa_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 2] call _fnc_addItem;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
+    ["NVGs"] call _fnc_addNVGs;
+};
+
+private _machineGunnerTemplate = {
+    ["helmets"] call _fnc_setHelmet;
+    ["MGvests"] call _fnc_setVest;
+    ["uniforms"] call _fnc_setUniform;
+    ["backpacks"] call _fnc_setBackpack;
+
+    ["machineGuns"] call _fnc_setPrimary;
+    ["primary", 4] call _fnc_addMagazines;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_machineGunner_extras"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
     ["smokeGrenades", 2] call _fnc_addItem;
 
     ["maps"] call _fnc_addMap;
@@ -447,238 +679,8 @@ private _radiomanTemplate = {
     ["NVGs"] call _fnc_addNVGs;
 };
 
-private _medicTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
-    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
-
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
-
-    ["items_medical_medic"] call _fnc_addItemSet;
-    ["items_medic_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 2] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _grenadierTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1.25]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-
-    if (random 1 < 0.3) then {
-        [["designatedGrenadeLaunchers", "grenadeLaunchers"] call _fnc_fallback] call _fnc_setPrimary;
-        ["backpacks"] call _fnc_setBackpack;
-    } else {
-        ["grenadeLaunchers"] call _fnc_setPrimary;
-    };
-    
-    ["primary", 6] call _fnc_addMagazines;
-    ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
-
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_grenadier_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 4] call _fnc_addItem;
-    ["smokeGrenades", 2] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _explosivesExpertTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
-
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
-
-
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_explosivesExpert_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-
-    ["lightExplosives", 2] call _fnc_addItem;
-    if (random 1 > 0.5) then {["heavyExplosives", 1] call _fnc_addItem;};
-    if (random 1 > 0.5) then {["atMines", 1] call _fnc_addItem;};
-    if (random 1 > 0.5) then {["apMines", 1] call _fnc_addItem;};
-
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 1] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _engineerTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
-
-    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
-
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_engineer_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-
-    if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
-
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 2] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _latTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
-
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
-
-    [["lightATLaunchers", "ATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
-    //TODO - Add a check if it's disposable.
-    ["launcher", 3] call _fnc_addMagazines;
-
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_lat_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 1] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _atTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
-
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
-    ["primary", 5] call _fnc_addMagazines;
-
-    [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
-    //TODO - Add a check if it's disposable.
-    ["launcher", 3] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_at_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 1] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _aaTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
-
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
-    ["primary", 5] call _fnc_addMagazines;
-
-    ["AALaunchers"] call _fnc_setLauncher;
-    //TODO - Add a check if it's disposable.
-    ["launcher", 3] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_aa_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 1] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _machineGunnerTemplate = {
-    ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    ["vests"] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
-
-    ["machineGuns"] call _fnc_setPrimary;
-    ["primary", 4] call _fnc_addMagazines;
-
-    ["sidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
-
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_machineGunner_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 2] call _fnc_addItem;
-
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
-};
-
-private _marksmanTemplate = {
-    [selectRandomWeighted ["helmets", 2, "sniHats", 1]] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
+private _marksmanTemplate= {
+    ["sniHats"] call _fnc_setHelmet;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
@@ -705,13 +707,12 @@ private _marksmanTemplate = {
 
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
-    [["sniVests","vests"] call _fnc_fallback] call _fnc_setVest;
+    ["SNIvests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
 
-    [["sniperRifles", "marksmanRifles"] call _fnc_fallback] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
+    ["sniperRifles"] call _fnc_setPrimary;
+    ["primary", 7] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
     ["handgun", 2] call _fnc_addMagazines;
@@ -755,7 +756,6 @@ private _policeTemplate = {
 
 private _crewTemplate = {
     ["helmets"] call _fnc_setHelmet;
-    [selectRandomWeighted [[], 2, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
@@ -883,7 +883,6 @@ private _patrolSpotterTemplate = {
     ["rangefinders"] call _fnc_addBinoculars;
     ["NVGs"] call _fnc_addNVGs;
 };
-
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //  You shouldn't touch below this line unless you really really know what you're doing.

@@ -9,11 +9,11 @@
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CSLA_CIV_JARA250"]] call _fnc_saveToTemplate;
-private _vehiclesLightUnarmed = ["FIA_AZU_para","FIA_BTR40"];
-private _vehiclesLightArmed = ["FIA_BTR40_DSKM","FIA_AZU_DSKM","FIA_AZU_T21","CSLA_FIA_V3S_AGS17","CSLA_FIA_V3S_GT"];
-["vehiclesTruck", ["CSLA_V3S"]] call _fnc_saveToTemplate;
+private _vehiclesLightUnarmed = ["FIA_AZU_para_des","CSLA_FIA_BTR40_des"];
+private _vehiclesLightArmed = ["CSLA_FIA_BTR40_DSKM_des","CSLA_FIA_AZU_DSKM_des","CSLA_FIA_AZU_T21_des","CSLA_FIA_V3S_AGS17_des","CSLA_FIA_V3S_GT_des"];
+["vehiclesTruck", ["CSLA_FIA_V3S_des"]] call _fnc_saveToTemplate;
 private _vehiclesAT = [];
-private _vehicleAA = ["CSLA_FIA_PLdvK59V3S"];
+private _vehicleAA = ["CSLA_FIA_PLdvK59V3S_des"];
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 
@@ -73,18 +73,19 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-		"FIA_uniwld",
-		"FIA_uniwld2",
-		"FIA_uniwld3",
-		"FIA_uniwld4",
-		"FIA_uniwld5",
-		"FIA_uniwld6",
-		"FIA_uniwld7",
-		"FIA_uniwld8",
-		"FIA_uniwld9",
-		"FIA_uniwld10",
-		"FIA_uniwld11",
-		"FIA_uniwld12"
+	/* "FIA_uniwld",
+	"FIA_uniwld2",
+	"FIA_uniwld3",
+	"FIA_uniwld4",
+	"FIA_uniwld5",
+	"FIA_uniwld6",
+	"FIA_uniwld7",
+	"FIA_uniwld8",
+	"FIA_uniwld9",
+	"FIA_uniwld10",
+	"FIA_uniwld11",
+	"FIA_uniwld12", */
+	"FIA_uniDES"
 ];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;

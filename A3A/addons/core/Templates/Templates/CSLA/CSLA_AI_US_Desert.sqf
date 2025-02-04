@@ -18,38 +18,38 @@
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
 // vehicles can be placed in more than one category if they fit between both. Cost will be derived by the higher category
-["vehiclesBasic", ["US85_M1030","US85_M1008_S250","US85_M923a1_s280"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["US85_M1025_ua","US85_M1043_ua"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["US85_M1025_M2","US85_M1025_M60","US85_M1043_M2","US85_M1043_M60"]] call _fnc_saveToTemplate;
-["vehiclesTrucks", ["US85_M923o","US85_M923c","US85_M923a1o","US85_M923a1om2","US85_M923a1c","US85_M923a1cm2"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["US85_M1008c","US85_M923cargo","US85_M923a1_cargo"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["US85_M923a","US85_M923a1_a"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["US85_M923r","US85_M113_DTP","US85_M923a1_r"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["US85_M923f","US85_M923a1_f"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["US85_M113_AMB"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["US85_M113"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["US85_LAV25"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["US85_M113"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["US85_M1A1"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["US85_M163"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks", ["US85_M1IP"]] call _fnc_saveToTemplate;  
+["vehiclesBasic", ["US85_M1030","US85_M1008_S250_DES","US85_M923a1_s280_DES"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["US85_M1025_ua_DES","US85_M1043_ua_DES","US85_M998_DES"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["US85_M1025_M2_DES","US85_M1025_M60_DES","US85_M1025_Mk19_DES","US85_M1025_TOW_DES","US85_M1043_M2_DES","US85_M1043_M60_DES","US85_M1043_Mk19_DES","US85_M1043_TOW_DES","US85_M998SFGT_DES","US85_M923A1_GT_DES"]] call _fnc_saveToTemplate;
+["vehiclesTrucks", ["US85_M923o_DES","US85_M923c_DES","US85_M923a1om2_DES","US85_M923a1o_DES","US85_M923a1cm2_DES","US85_M923a1c_DES"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["US85_M923cargo_DES","US85_M923a1_cargo_DES"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["US85_M923a_DES","US85_M923a1_a_DES"]] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", ["US85_M923r_DES","US85_M923a1_r_DES","US85_M113_DTP_DES"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["US85_M923f_DES","US85_M923a1_f_DES"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["US85_M113_AMB_DES"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["US85_M113_DES"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["US85_LAV25_DES"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", ["US85_M113_DES","US85_M113A1_TOW_DES"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["US85_M1A1_DES"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["US85_M163_DES"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks", ["US85_M1IP_DES"]] call _fnc_saveToTemplate;  
 ["vehiclesTransportBoats", ["US85_zodiac"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["US85_LAV25"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["US85_LAV25_DES"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlanesCAS", ["B_Plane_CAS_01_dynamicLoadout_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["B_Plane_CAS_01_dynamicLoadout_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["CSLA_CIV_An2_1"]] call _fnc_saveToTemplate;
 
-["vehiclesHelisLight", ["US85_UH60"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["US85_MH60M134","US85_UH60M240"]] call _fnc_saveToTemplate;
+["vehiclesHelisLight", ["US85_UH60_DES"]] call _fnc_saveToTemplate;
+["vehiclesHelisTransport", ["US85_MH60M134_DES","US85_UH60M240_DES"]] call _fnc_saveToTemplate;
 
-["vehiclesHelisLightAttack", ["US85_MH60FFAR"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["US85_AH1F"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["US85_MH60FFAR_DES"]] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", ["US85_AH1F_DES"]] call _fnc_saveToTemplate;
 
-["vehiclesArtillery", ["US85_M270"]] call _fnc_saveToTemplate;
+["vehiclesArtillery", ["US85_M270_DES"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["US85_M270", ["US85_12Rnd_M26"]]
+["US85_M270_DES", ["US85_12Rnd_M26"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", []] call _fnc_saveToTemplate;
@@ -59,18 +59,18 @@
 ["vehicleSam", ""] call _fnc_saveToTemplate;
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", ["US85_M998SFGT"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaTrucks", ["US85_M923a1c"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["US85_M1008"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", ["US85_M998SFGT_DES"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaTrucks", ["US85_M923a1c_DES"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["US85_M1008_DES"]] call _fnc_saveToTemplate;
 
-["vehiclesMilitiaAPCs", ["US85_M113"]] call _fnc_saveToTemplate; 
+["vehiclesMilitiaAPCs", ["US85_M113_DES"]] call _fnc_saveToTemplate; 
 
 ["vehiclesPolice", ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["US85_M2h"]] call _fnc_saveToTemplate;
-["staticAT", ["US85_TOW_Stat"]] call _fnc_saveToTemplate;
+["staticMGs", ["US85_M2h_DES"]] call _fnc_saveToTemplate;
+["staticAT", ["US85_TOW_Stat_DES","US85_Mk19_stat_DES"]] call _fnc_saveToTemplate;
 ["staticAA", []] call _fnc_saveToTemplate;
-["staticMortars", ["US85_M252_Stat"]] call _fnc_saveToTemplate;
+["staticMortars", ["US85_M252_Stat_DES"]] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "US85_8Rnd_81mmHE"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", ""] call _fnc_saveToTemplate;
@@ -144,7 +144,7 @@ _loadoutData set ["NVGs", ["US85_ANPVS5_Goggles"]];
 _loadoutData set ["binoculars", ["US85_bino"]];
 _loadoutData set ["rangefinders", ["Rangefinder"]];
 
-_loadoutData set ["uniforms", ["US85_uniBDU"]];
+_loadoutData set ["uniforms", ["US85_uniDES"]];
 _loadoutData set ["vests", ["US85_grY_M16","US85_grY_MPV"]];
 _loadoutData set ["SLvests", ["US85_grY_M9","US85_grV_ofc","US85_grV_M9"]];
 _loadoutData set ["MGvests", ["US85_grY_MG","US85_grV_MG"]];
@@ -162,7 +162,7 @@ _loadoutData set ["traitorUniforms", ["FIA_uniWoodlander","FIA_uniWoodlander2","
 _loadoutData set ["traitorVests", ["FIA_gr85_Sa61"]];
 _loadoutData set ["traitorHats", ["FIA_Usanka"]];
 
-_loadoutData set ["officerUniforms", ["US85_uniBDU"]];
+_loadoutData set ["officerUniforms", ["US85_uniDES"]];
 _loadoutData set ["officerVests", ["US85_grV_ofc"]];
 _loadoutData set ["officerHats", ["US85_marineCap"]];
 
@@ -221,7 +221,7 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["uniforms", ["US85_uniSF"]];
+_sfLoadoutData set ["uniforms", ["US85_uniSFDES"]];
 _sfLoadoutData set ["vests", ["US85_grSF_M16","US85_grSF_MPV","US85_grSF_TLBV","US85_grSF_MG","US85_grSF_M9"]];
 _sfLoadoutData set ["SNIvests", ["US85_grSF_M24"]];
 _sfLoadoutData set ["backpacks", ["US85_bpSf"]];
@@ -267,7 +267,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 private _eliteLoadoutData= _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_eliteLoadoutData set ["uniforms", ["US85_uniSF"]];
+_eliteLoadoutData set ["uniforms", ["US85_uniSFDES"]];
 _eliteLoadoutData set ["vests", ["US85_grSF_M16","US85_grSF_MPV","US85_grSF_TLBV","US85_grSF_M9","US85_grSF_MG"]];
 _eliteLoadoutData set ["SNIvests", ["US85_grSF_M24"]];
 _eliteLoadoutData set ["backpacks", ["US85_bpSf"]];
@@ -312,7 +312,7 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militaryLoadoutData set ["uniforms", ["US85_uniBDU"]];
+_militaryLoadoutData set ["uniforms", ["US85_uniDES"]];
 _militaryLoadoutData set ["vests", ["US85_grY_M16","US85_grY_MPV","US85_grY_MG","US85_grV_MG","US85_grY_M9","US85_grV_M9","US85_grV_ofc"]];
 _militaryLoadoutData set ["SNIvests", ["US85_grY_snp","US85_grV_M24"]];
 _militaryLoadoutData set ["Hvests", ["US85_grV_M16","US85_grV_MPV"]];
@@ -372,7 +372,7 @@ _policeLoadoutData set ["sidearms", [["US85_M9", "", "", "", ["US85_M9_15Rnd_9Lu
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militiaLoadoutData set ["uniforms", ["US85_uniKHK"]];
+_militiaLoadoutData set ["uniforms", ["US85_uniDES"]];
 _militiaLoadoutData set ["vests", ["US85_grVest"]];
 _militiaLoadoutData set ["backpacks", []];
 _militiaLoadoutData set ["helmets", ["US85_helmetM1g"]];
@@ -407,7 +407,7 @@ _militiaLoadoutData set ["sidearms", [["US85_M9", "", "", "", ["US85_M9_15Rnd_9L
 
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_crewLoadoutData set ["uniforms", ["US85_uniCrew"]];
+_crewLoadoutData set ["uniforms", ["US85_uniDES"]];
 _crewLoadoutData set ["vests", ["US85_grY_snp"]];
 _crewLoadoutData set ["helmets", ["US85_helmetDH132","US85_helmetDH132G","US85_helmetDH132G_on"]];
 
@@ -424,7 +424,6 @@ _pilotLoadoutData set ["helmets", ["US85_helmetPlt","US85_helmetPltC"]];
 
 private _squadLeaderTemplate = {
     ["slHat"] call _fnc_setHelmet;
-  //  [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["SLvests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
