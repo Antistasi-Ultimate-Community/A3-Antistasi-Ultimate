@@ -118,7 +118,7 @@ class csla_afmc_weapons_Mk19_Mk19_static_p3d : TRIPLES(ADDON,Cargo,Base)
     isWeapon = 1;
 };
 
-class csla_weapons_AGS-17_AGS17_static_p3d : TRIPLES(ADDON,Cargo,Base)
+class CSLA_AGS17_Stat : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0.0,0,0};
     rotation[] = {0,1,0};
