@@ -45,6 +45,14 @@ class CfgVehicles
     class FIA_AZU_DSKM;
     class FIA_AZU_T21;
     class CSLA_FIA_CATOR;
+    class CSLA_OT62D;
+    class CSLA_FIA_V3S_GT;
+    class AFMC_M113A1_Mk19;
+    class AFMC_M113A1;
+    class AFMC_M113A2ext;
+    class AFMC_M1008_M2;
+    class AFMC_M1008_MK19;
+    class AFMC_M923A1_GT;
    
     class CSLA_PLdvK59V3S_noinsignia : CSLA_PLdvK59V3S
     {
@@ -184,7 +192,7 @@ class CfgVehicles
     }; 
     class CSLA_T72_noinsignia : CSLA_T72
     {
-        hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4","Camo5","none","sign2_turret","cislo1","cislo2","cislo3","cisloN"};
+        hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4","Camo5","none","none2","cislo1","cislo2","cislo3","cisloN"};
     };
     class CSLA_T72M_noinsignia : CSLA_T72M
     {
@@ -217,5 +225,38 @@ class CfgVehicles
     class CSLA_FIA_CATOR_noinsignia : CSLA_FIA_CATOR
     {
         hiddenSelections[] = {"camo1","none","none2"};
+    };
+    ///1.3 update
+    class CSLA_OT62D_noinsignia : CSLA_OT62D
+    {
+        hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","none","emblem1_hull","cislo1","cislo2","cislo3","cisloN"};
+    };
+    class CSLA_FIA_V3S_GT_noinsignia : CSLA_FIA_V3S_GT
+    {
+        hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","camo6","camo7","camo8","camoA","none","none2"};
+    };
+    class AFMC_M113A1_Mk19_noinsignia : AFMC_M113A1_Mk19
+    {
+        hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4","none","emblem1_hull","emblem2_hull","unit1_hull","unit2_hull","emblem_text1_turret"};
+    };
+    class AFMC_M113A1_noinsignia : AFMC_M113A1
+    {
+        hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4","none","emblem1_hull","emblem2_hull","unit1_hull","unit2_hull","emblem_text1_turret"};
+    };
+    class AFMC_M113A2ext_noinsignia : AFMC_M113A2ext
+    {
+        hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4","none","emblem1_hull","emblem2_hull","unit1_hull","unit2_hull","emblem_text1_turret"};
+    };
+    class AFMC_M1008_M2_noinsignia : AFMC_M1008_M2
+    {
+        hiddenSelections[] = {"Camo1","Camo2","Camo3","none","none2"};
+    };
+    class AFMC_M1008_MK19_noinsignia : AFMC_M1008_MK19
+    {
+        hiddenSelections[] = {"Camo1","Camo2","Camo3","none","none2"};
+    };
+    class AFMC_M923A1_GT_noinsignia : AFMC_M923A1_GT
+    {
+        hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","camo6","camo7","camo8","camoA","none","none2","unit1_hull","unit2_hull"};
     };
 };
