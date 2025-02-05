@@ -53,6 +53,7 @@ class CfgVehicles
     class AFMC_M1008_M2;
     class AFMC_M1008_MK19;
     class AFMC_M923A1_GT;
+    class CSLA_FIA_V3S_M52;
    
     class CSLA_PLdvK59V3S_noinsignia : CSLA_PLdvK59V3S
     {
@@ -258,5 +259,9 @@ class CfgVehicles
     class AFMC_M923A1_GT_noinsignia : AFMC_M923A1_GT
     {
         hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","camo6","camo7","camo8","camoA","none","none2","unit1_hull","unit2_hull"};
+    };
+    class CSLA_FIA_V3S_M52_noinsignia : CSLA_FIA_V3S_M52
+    {
+        hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","camo6","camo7","camo8","none","none2"};
     };
 };
