@@ -156,13 +156,15 @@ private _opticsMidCount = 0;
                 };
             };
             case "PointerAttachments": {
-                if ("LightAttachments" in _categories) exitWith {
-                    _array = _rebelGear getOrDefault ["LightAttachments", [], true];
-                    [_array, _class, _amount] call _fnc_addItem;
-                };
-                if ("LaserAttachments" in _categories) exitWith {
-                    _array = _rebelGear getOrDefault ["LaserAttachments", [], true];
-                    [_array, _class, _amount] call _fnc_addItem;
+                switch true do {
+                    case ("LightAttachments" in _categories): {
+                        _array = _rebelGear getOrDefault ["LightAttachments", [], true];
+                        [_array, _class, _amount] call _fnc_addItem;
+                    };
+                    case ("LaserAttachments" in _categories): {
+                        _array = _rebelGear getOrDefault ["LaserAttachments", [], true];
+                        [_array, _class, _amount] call _fnc_addItem;
+                    };
                 };
             };
             case "MuzzleAttachments": {
@@ -171,6 +173,7 @@ private _opticsMidCount = 0;
             };
             case "Bipods": {
                 _array = _rebelGear getOrDefault ["Bipods", [], true];
+                [_array, _class, _amount] call _fnc_addItem;
             };
 
             // Items
