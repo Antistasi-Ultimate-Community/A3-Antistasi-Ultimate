@@ -299,7 +299,7 @@ if (!_busy) then {
 		private _hangar = objNull;
 		private _spawnParameter = [_markerX, "Plane"] call A3A_fnc_findSpawnPosition;
 		if(_spawnParameter isEqualType []) then {
-			private _vehPool = (_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesAA");
+			private _vehPool = (_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesAA") + (_faction getOrDefault ["uavsAttack", []]); ////
 			if(count _vehPool > 0) then
 			{
 				_spawnsUsed pushBack _spawnParameter#2;
