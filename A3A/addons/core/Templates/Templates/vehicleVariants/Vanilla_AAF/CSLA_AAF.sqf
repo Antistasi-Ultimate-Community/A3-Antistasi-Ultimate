@@ -36,4 +36,19 @@
 ["US85_M998SFGT", ["NATOg",1]],
 ["CSLA_Mi24V_noinsignia", ["camo6",1]],
 ["FIA_BTR40_DSKM_noinsignia",["FIAg",1]],
-["FIA_BTR40_noinsignia",["FIAg",1]]
+["FIA_BTR40_noinsignia",["FIAg",1]],
+///1.3 update
+["AFMC_M113A1_noinsignia", ["AFMCg",1]],
+["AFMC_M113A1_Mk19_noinsignia", ["AFMCg",1]],
+["AFMC_M113A2ext_noinsignia", ["NATOg",1]],
+["AFMC_M1008_M2_noinsignia", ["AFMCg",1]],
+["AFMC_M1008_MK19_noinsignia",["AFMCg",1]],
+["AFMC_M923A1_GT_noinsignia",["AFMCg",1]],
+["US85_M113A1_TOW",["NATOg",1]],
+["US85_M1025_Mk19",["NATOg",1]],
+["US85_M1025_TOW",["NATOg",1]],
+["US85_M1043_Mk19",["NATOg",1]],
+["US85_M1043_TOW",["NATOg",1]],
+["US85_M998",["NATOg",1]],
+["CSLA_FIA_V3S_AGS17",["FIAg",1]],
+["CSLA_FIA_V3S_GT_noinsignia",["FIAg",1]]

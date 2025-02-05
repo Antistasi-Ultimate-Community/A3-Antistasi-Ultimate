@@ -31,4 +31,17 @@
 ["US85_M923a1o",["NATOg",1]],
 ["US85_M923a1om2",["NATOg",1]],
 ["US85_M923a1c",["NATOg",1]],
-["US85_M923a1cm2",["NATOg",1]]
+["US85_M923a1cm2",["NATOg",1]],
+///1.3 update
+["AFMC_M113A1_noinsignia", ["AFMCg",1]],
+["AFMC_M113A1_Mk19_noinsignia", ["AFMCg",1]],
+["AFMC_M113A2ext_noinsignia", ["NATOg",1]],
+["AFMC_M1008_M2_noinsignia", ["AFMCg",1]],
+["AFMC_M1008_MK19_noinsignia",["AFMCg",1]],
+["AFMC_M923A1_GT_noinsignia",["AFMCg",1]],
+["US85_M113A1_TOW",["NATOg",1]],
+["US85_M1025_Mk19",["NATOg",1]],
+["US85_M1025_TOW",["NATOg",1]],
+["US85_M1043_Mk19",["NATOg",1]],
+["US85_M1043_TOW",["NATOg",1]],
+["US85_M998",["NATOg",1]]

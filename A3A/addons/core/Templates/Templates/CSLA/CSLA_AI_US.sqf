@@ -55,8 +55,8 @@
 ["uavsAttack", []] call _fnc_saveToTemplate;
 ["uavsPortable", []] call _fnc_saveToTemplate;
 
-["vehicleRadar", ""] call _fnc_saveToTemplate;                  
-["vehicleSam", ""] call _fnc_saveToTemplate;
+["vehicleRadar", []] call _fnc_saveToTemplate;                  
+["vehicleSam", []] call _fnc_saveToTemplate;
 
 //Config special vehicles
 ["vehiclesMilitiaLightArmed", ["US85_M998SFGT"]] call _fnc_saveToTemplate;
@@ -243,7 +243,8 @@ _sfLoadoutData set ["grenadeLaunchers", [
 ]];
 _sfLoadoutData set ["SMGs", [
 ["US85_MPVSD", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""],
-["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""]
+["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""],
+["US85_MPVN1", "US85_MPVtlm", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
 ["US85_M249", "", "", "US85_sc2000M249", ["US85_200Rnd_556x45", "US85_200Rnd_556x45"], [], ""],

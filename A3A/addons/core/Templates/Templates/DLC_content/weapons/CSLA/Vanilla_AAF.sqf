@@ -7,13 +7,19 @@ _cslaFALBipods = ["US85_FALbpd", 1, "", 8];
 
 (_militaryLoadoutData get "machineGuns") append [
     ["US85_M60","","","",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""], 2,
+    ["US85_M60E3LB","","","",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3SB","","","",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3LB","","","US85_ANPVS4_M60",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3SB","","","US85_ANPVS4_M60",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
     ["US85_M249","","",_cslaMilitaryMGOptics,["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"],[],""], 4
 ];
 (_militaryLoadoutData get "slRifles") append [
     ["US85_M16A2","",_cslaMilitaryM16Attachments,_cslaMilitaryM16SlOptics,["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_30Rnd_556x45"],[],""], 3,
     ["US85_M16A1","",_cslaMilitaryM16Attachments,_cslaMilitaryM16SlOptics,["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_30Rnd_556x45"],[],""], 1,
     ["US85_FALf","","",_cslaMilitaryFALOptics,["US85_20Rnd_762M61","US85_20Rnd_762M61","US85_20Rnd_762x51"],[],_cslaFALBipods], 3,
-    ["US85_FAL","","","US85_scFAL",["US85_20Rnd_762M61","US85_20Rnd_762M61","US85_20Rnd_762x51"],[],_cslaFALBipods], 2
+    ["US85_FAL","","","US85_scFAL",["US85_20Rnd_762M61","US85_20Rnd_762M61","US85_20Rnd_762x51"],[],_cslaFALBipods], 2,
+    ["US85_M16A2GL","","",_cslaMilitaryM16SlOptics,["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_30Rnd_556x45"],["US85_M583A1","US85_M406","US85_M406","US85_M583A1"],""], 2,
+    ["US85_M16A2GL","","",_cslaMilitaryM16SlOptics,["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_30Rnd_556x45"],["US85_M583A1","US85_M406","US85_M406","US85_M583A1"],""], 2
 ];
 (_militaryLoadoutData get "rifles") append [
     ["US85_M16A2","",_cslaMilitaryM16Attachments,"US85_sc2000_M16",["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_30Rnd_556x45"],[],""], 3,

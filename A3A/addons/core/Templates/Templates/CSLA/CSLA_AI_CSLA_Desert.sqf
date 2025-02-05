@@ -72,8 +72,8 @@
 ["staticMortars", ["CSLA_M52_Stat"]] call _fnc_saveToTemplate;
 ["mortarMagazineHE", "CSLA_8rnd_82EOM52"] call _fnc_saveToTemplate;               
 
-["vehicleRadar", ""] call _fnc_saveToTemplate;                  
-["vehicleSam", ""] call _fnc_saveToTemplate;                    
+["vehicleRadar", []] call _fnc_saveToTemplate;                  
+["vehicleSam", []] call _fnc_saveToTemplate;                    
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;            
              

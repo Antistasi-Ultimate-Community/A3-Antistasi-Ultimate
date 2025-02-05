@@ -58,4 +58,3 @@
     ["SPE_M9A1_Bazooka", "", "", "", ["SPE_1Rnd_60mm_M6A3","SPE_1Rnd_60mm_M6A3","SPE_1Rnd_60mm_M6A3"], [], ""],
     ["SPE_M9_Bazooka", "", "", "", ["SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6"], [], ""]
 ];
-];
