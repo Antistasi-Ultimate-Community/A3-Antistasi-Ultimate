@@ -5938,6 +5938,11 @@
                 <Korean>무기 흔들림 % (바닐라)</Korean>
                 <French>% de balancement de l'arme (Vanilla)</French>
             </Key>
+            <Key ID="STR_notifiers_reload_turret">
+                <Original>Total: %1. Magazines: </Original>
+                <English>Total: %1. Magazines: </English>
+                <Russian>Всего: %1. Магазины: </Russian>
+            </Key>
         </Container>
     </Package>
 </Project>

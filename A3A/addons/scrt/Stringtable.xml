@@ -4957,6 +4957,10 @@
                 <Korean>안티스타시 플러스 매개변수</Korean>
                 <French>PARAMÈTRES ANTISTASI PLUS</French>
             </Key>
+            <Key ID="STR_params_antistasi_scripts">
+                <Original>SCRIPTS</Original>
+                <Russian>СКРИПТЫ</Russian>
+            </Key>
             <Key ID="STR_params_timeMultiplier">
                 <Original>Time Multiplier</Original>
                 <Russian>Множитель времени</Russian>
@@ -5033,6 +5037,10 @@
                 <Chinesesimp>启用Mag Repack？</Chinesesimp>
                 <Korean>탄약 재포장을 활성화합니까?</Korean>
                 <French>Activer le reconditionnement des chargeurs?</French>
+            </Key>
+            <Key ID="STR_params_ReloadRepackTurretMagazines">
+                <Original>Enable Turret Magazine Repacking?</Original>
+                <Russian>Включить Turret Magazine Repacking?</Russian>
             </Key>
             <Key ID="STR_params_playerIcons">
                 <Original>Show 3D icons above unconscious players?</Original>
@@ -5121,6 +5129,13 @@
                 <Chinesesimp>允许玩家招募AI</Chinesesimp>
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
+            </Key>
+            <Key ID="STR_params_recruitToPlayerSquad">
+                <Original>Enable enemy AI recruits to join player's squad</Original>
+                <Russian>Позволяет вражеским новобранцам ИИ присоединиться к отряду игрока</Russian>
+                <Chinesesimp>允许敌方 AI 新兵加入玩家的小队</Chinesesimp>
+                <Korean>적 AI 신병이 플레이어 분대에 합류할 수 있도록 합니다.</Korean>
+                <French>Permettre aux recrues ennemies de l'IA de rejoindre l'équipe du joueur</French>
             </Key>
             <Key ID="STR_params_enablePunishments">
                 <Original>Enable invader punishments</Original>
@@ -5258,6 +5273,10 @@
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>Enable spectrum device hacking capability (conctact dlc required)</Original>
                 <Russian>Разрешить возможность взлома с помощью spectrum device (необходимо дополнение contact)</Russian>
+            </Key>
+            <Key ID="STR_params_disableAutoSmokeCover">
+                <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
+                <Russian>Выключить скрипт для автоматического отбрасываения дымов (помогает с производительностью)</Russian>
             </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
@@ -5827,6 +5846,14 @@
                 <Chinesesimp>你选择了步枪兵角色。&lt;br/&gt;&lt;br/&gt;步枪兵的运载能力提升25%，但移动时容易被发现并发出更大的噪音。</Chinesesimp>
                 <Korean>당신은 소총수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;소총수는 운반량에 25%의 보너스가 있지만, 움직일 때 발견되기 더 쉽고 더 많은 소음을 냅니다.</Korean>
                 <French>Vous avez choisi un rôle de Fusilier.&lt;br/&gt;&lt;br/&gt;Les Fusiliers ont un bonus de 25% sur la capacité de transport mais sont faciles à repérer et font plus de bruit lorsqu'ils se déplacent.</French>
+            </Key>
+			<Key ID="STR_role_grenadier">
+                <Original>You have selected a Grenadier role.&lt;br/&gt;&lt;br/&gt;Grenadiers have a slight bonus on carry capacity, but are easy to spot.</Original>
+                <Russian>Вы выбрали роль Стрелка ГП.&lt;br/&gt;&lt;br/&gt;Стрелок ГП имеет небольшой бонус к переносимому весу, но является более заметным.</Russian>
+            </Key>
+			<Key ID="STR_role_autorifleman">
+                <Original>You have selected an Autorifleman role.&lt;br/&gt;&lt;br/&gt;Autoriflemen have a slight bonus on carry capacity, but make more noise when they move.</Original>
+                <Russian>Вы выбрали роль Пулеметчика.&lt;br/&gt;&lt;br/&gt;Пулеметчик имеет небольшой бонус к переносимому весу, но сильнее шумит при движении.</Russian>
             </Key>
             <Key ID="STR_role_engineer">
                 <Original>You have selected a Engineer role.&lt;br/&gt;&lt;br/&gt;Engineers do not have any bonus or penalties, but have the ability to use repair Kits for vehicle repair, also they can hack UAV drones.</Original>
@@ -8044,7 +8071,7 @@
         </Container>
         <Container name="simple_menu_missions">
             <Key ID="STR_antistasi_dialogs_assassination_text">
-                <Original>Assasination Mission</Original>
+                <Original>Assassination Mission</Original>
                 <Russian>Миссии по устранению</Russian>
                 <Chinesesimp>暗杀任务</Chinesesimp>
                 <Korean>암살 임무</Korean>
@@ -9503,7 +9530,7 @@
             </Key>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_header">
-                <Original>Deresters Rescue</Original>
+                <Original>Deserters Rescue</Original>
                 <Russian>Спасите дезертиров</Russian>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">

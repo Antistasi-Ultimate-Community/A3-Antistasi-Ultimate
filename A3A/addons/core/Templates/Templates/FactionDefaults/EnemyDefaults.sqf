@@ -24,6 +24,7 @@
 ["animations", []] call _fnc_saveToTemplate;
 ["variants", []] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", []] call _fnc_saveToTemplate;

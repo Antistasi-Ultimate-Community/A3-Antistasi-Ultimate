@@ -18,3 +18,5 @@ _repairTrucks append ["US85_M113_DTP","US85_M923r"];
 _fuelTrucks append ["US85_M923f","US85_M923a1_f"];
 _medicalTrucks pushBack "US85_M113_AMB";
 _policeVehs append ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200PO","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"];
+
+_airPatrol append ["US85_MH60FFAR"];

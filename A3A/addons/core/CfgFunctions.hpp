@@ -90,6 +90,7 @@ class CfgFunctions
             class generateRebelGear {};
             class getRadio {};
             class hasARadio {};
+            class itemArrayWeight {};
             class itemConfig {};
             class itemConfigMass {};
             class itemSort {};
@@ -282,6 +283,7 @@ class CfgFunctions
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
             class spawnVehiclePrecise {};
+            class RivalsCargoSeats {};
             class RivalsCreateUnit {};
             class RivalsCreateVehicleCrew {};
             class RivalsCrewTypeForVehicle {};
@@ -805,6 +807,13 @@ class CfgFunctions
             class initObjectRemote {};
             class remainingFuel {};
             class rotateItem {};
+        };
+        
+        class reload_repack_turret_magazines {
+            file = QPATHTOFOLDER(Scripts\RRTurretMagazines\scripts);
+            //class postInit {};
+            class reloadTurret {};
+            class monitorMagazines {};
         };
     };
 };

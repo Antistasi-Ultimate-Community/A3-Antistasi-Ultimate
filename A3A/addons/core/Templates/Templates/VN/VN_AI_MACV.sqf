@@ -513,7 +513,10 @@ _policeLoadoutData set ["helmets", ["vn_b_helmet_m1_01_02","vn_b_boonie_02_01"]]
 
 _policeLoadoutData set ["rifles", [
 ["vn_m1a1_tommy", "", "", "", ["vn_m1a1_20_mag", "vn_m1a1_20_mag", "vn_m1a1_20_t_mag"], [], ""],
-["vn_m1carbine", "", "", "", ["vn_carbine_15_mag", "vn_carbine_15_mag", "vn_carbine_15_t_mag"], [], ""],
+["vn_m1carbine", "", "", "", ["vn_carbine_15_mag", "vn_carbine_15_mag", "vn_carbine_15_t_mag"], [], ""]
+]];
+
+_policeLoadoutData set ["shotguns", [
 ["vn_m1897", "", "", "", ["vn_m1897_buck_mag", "vn_m1897_fl_mag"], [], ""]
 ]];
 
@@ -963,7 +966,7 @@ private _policeTemplate = {
 	["vests"] call _fnc_setVest;
 	["uniforms"] call _fnc_setUniform;
 
-	[selectRandom ["rifles", "shotGuns"]] call _fnc_setPrimary;
+	[selectRandom ["rifles", "shotguns"]] call _fnc_setPrimary;
 	["primary", 3] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;

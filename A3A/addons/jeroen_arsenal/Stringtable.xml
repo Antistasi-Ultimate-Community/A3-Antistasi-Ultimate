@@ -42,6 +42,10 @@
                 <Korean>색깔 별로 정렬</Korean>
                 <French>Tri par couleur de ligne</French>
             </Key>
+            <Key ID="STR_JNA_SORT_MOD">
+                <Original>Sort by mod/dlc</Original>
+                <Russian>Сортировка по моду/дополнению</Russian>
+            </Key>
             <Key ID="STR_JNA_SORT_DEFAULT">
                 <Original>Default</Original>
                 <German>Standard</German>

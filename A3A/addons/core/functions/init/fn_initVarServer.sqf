@@ -540,7 +540,7 @@ private _vehicleResourceCosts = createHashMap;
 { _vehicleResourceCosts set [_x, 170] } forEach FactionGet(all, "vehiclesLightTanks");
 { _vehicleResourceCosts set [_x, 230] } forEach FactionGet(all, "vehiclesTanks");
 
-{ _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all, "vehiclesHelisLight");
+{ _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all, "vehiclesHelisLight") + FactionGet(all, "vehiclesAirPatrol");
 { _vehicleResourceCosts set [_x, 100] } forEach FactionGet(all, "vehiclesHelisTransport");
 { _vehicleResourceCosts set [_x, 130] } forEach FactionGet(all, "vehiclesHelisLightAttack") + FactionGet(all, "vehiclesPlanesTransport");
 { _vehicleResourceCosts set [_x, 150] } forEach FactionGet(all, "vehiclesDropPod") + FactionGet(all, "uavsAttack");

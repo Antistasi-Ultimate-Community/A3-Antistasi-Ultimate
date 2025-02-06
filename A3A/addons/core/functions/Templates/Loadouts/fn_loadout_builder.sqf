@@ -30,6 +30,29 @@ private _fnc_magClassToEntry = {
 	[_this, getNumber (configFile >> "CfgMagazines" >> _this >> "count")]
 };
 
+//Function for handling for 3 different ways to define how items are distributed in a template, including individual weapon attachments:
+// - Array of choices (e.g. ["M16", "AKM"]), aka the normal way of doing things
+// - Single classname (e.g. "holosight"), useful mostly for attachments within weapons
+// - Array of choices and weights (e.g. ["M16", 1, "AKM", 2])
+private _fnc_parseItemArray = {
+	params ["_attachment"]; 
+	private _choice = "";
+	if((typeName _attachment) == "ARRAY") then {
+		if(count _attachment > 1) then { 
+			if(typeName (_attachment select 1) == "SCALAR") then { //is it a weighted list?
+				_choice = selectRandomWeighted _attachment;
+			} else {
+				_choice = selectRandom _attachment;
+			};
+		} else {
+			_choice = _attachment select 0;
+		};
+	} else {
+		_choice = _attachment;
+	};
+	_choice;
+};
+
 // Converts a weapon array that's valid in the builder to a weapon array valid in a loadout, extracting data in the process.
 // Magazines can be:
 // - A classname - Loads a full magazine into the weapon, uses only that magazine as an available mag.
@@ -99,7 +122,7 @@ private _fnc_parseWeaponFormat = {
 	//String - Literal mag name
 
 	[
-		[_class, _silencer, _pointer, _optic, _magsToUse select 0 select 0, _magsToUse select 1 select 0, _bipod],
+		[_class, ([_silencer] call _fnc_parseItemArray), ([_pointer] call _fnc_parseItemArray), ([_optic] call _fnc_parseItemArray), _magsToUse select 0 select 0, _magsToUse select 1 select 0, (_bipod call _fnc_parseItemArray)],
 		// Available primary mags
 		_magsToUse select 0 select 1,
 		// Available secondary mags
@@ -116,7 +139,7 @@ private _fnc_setHelmet = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _helmet = selectRandom _data;
+	private _helmet = ([_data] call _fnc_parseItemArray);
 	[_finalLoadout, _helmet] call A3A_fnc_loadout_setHelmet;
 };
 
@@ -124,7 +147,7 @@ private _fnc_setFacewear = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _facewear = selectRandom _data;
+	private _facewear = ([_data] call _fnc_parseItemArray);
 	[_finalLoadout, _facewear] call A3A_fnc_loadout_setFacewear;
 };
 
@@ -133,7 +156,7 @@ private _fnc_setVest = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _vest = selectRandom _data;
+	private _vest = ([_data] call _fnc_parseItemArray);
 	[_finalLoadout, _vest] call A3A_fnc_loadout_setVest
 };
 
@@ -142,7 +165,7 @@ private _fnc_setUniform = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _uniform = selectRandom _data;
+	private _uniform = ([_data] call _fnc_parseItemArray);
 	[_finalLoadout, _uniform] call A3A_fnc_loadout_setUniform
 };
 
@@ -151,7 +174,7 @@ private _fnc_setBackpack = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _backpack = selectRandom _data;
+	private _backpack = ([_data] call _fnc_parseItemArray);
 	[_finalLoadout, _backpack] call A3A_fnc_loadout_setBackpack
 };
 
@@ -163,7 +186,7 @@ private _fnc_setPrimary = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _weaponData = (selectRandom _data) call _fnc_parseWeaponFormat;
+	private _weaponData = ([_data] call _fnc_parseItemArray) call _fnc_parseWeaponFormat;
 	_primaryPrimaryMags = _weaponData # 1;
 	_primarySecondaryMags = _weaponData # 2;
 	[_finalLoadout, "PRIMARY", _weaponData # 0] call A3A_fnc_loadout_setWeapon;
@@ -177,7 +200,7 @@ private _fnc_setLauncher = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _weaponData = (selectRandom _data) call _fnc_parseWeaponFormat;
+	private _weaponData = (([_data] call _fnc_parseItemArray)) call _fnc_parseWeaponFormat;
 	_launcherPrimaryMags = _weaponData # 1;
 	_launcherSecondaryMags = _weaponData # 2;
 	[_finalLoadout, "LAUNCHER", _weaponData # 0] call A3A_fnc_loadout_setWeapon;
@@ -191,7 +214,7 @@ private _fnc_setHandgun = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _weaponData = (selectRandom _data) call _fnc_parseWeaponFormat;
+	private _weaponData = (([_data] call _fnc_parseItemArray)) call _fnc_parseWeaponFormat;
 	_handgunPrimaryMags = _weaponData # 1;
 	_handgunSecondaryMags = _weaponData # 2;
 	[_finalLoadout, "HANDGUN", _weaponData # 0] call A3A_fnc_loadout_setWeapon;
@@ -254,7 +277,7 @@ private _fnc_addMap = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _map = selectRandom _data;
+	private _map = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["MAP", _map];
 };
 
@@ -263,7 +286,7 @@ private _fnc_addWatch = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _watch = selectRandom _data;
+	private _watch = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["WATCH", _watch];
 };
 
@@ -272,7 +295,7 @@ private _fnc_addCompass = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _compass = selectRandom _data;
+	private _compass = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["COMPASS", _compass];
 };
 
@@ -281,7 +304,7 @@ private _fnc_addRadio = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _radio = selectRandom _data;
+	private _radio = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["RADIO", _radio];
 };
 
@@ -290,7 +313,7 @@ private _fnc_addGPS = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _gps = selectRandom _data;
+	private _gps = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["GPS", _gps];
 };
 
@@ -299,7 +322,7 @@ private _fnc_addBinoculars = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _binoculars = selectRandom _data;
+	private _binoculars = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["BINOCULARS", _binoculars];
 };
 
@@ -308,7 +331,7 @@ private _fnc_addNVGs = {
 	params ["_key"];
 	private _data = _loadoutDataForTemplate getOrDefault [_key, []];
 	if (_data isEqualTo []) exitWith {};
-	private _nvgs = selectRandom _data;
+	private _nvgs = ([_data] call _fnc_parseItemArray);
 	_equipment pushBack ["NVG", _nvgs];
 };
 

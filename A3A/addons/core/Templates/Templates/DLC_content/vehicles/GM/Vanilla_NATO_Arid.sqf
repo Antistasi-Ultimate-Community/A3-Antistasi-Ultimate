@@ -17,3 +17,5 @@ _medicalTrucks append ["gm_ge_army_m113a1g_medic_noinsignia","gm_ge_army_u1300l_
 _helisLight append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_swooper_noinsignia"];
 _transportHelicopters append ["gm_ge_army_ch53g_noinsignia","gm_ge_army_ch53gs_noinsignia"];
 _helisAttack append ["gm_ge_army_bo105p_pah1a1_noinsignia","gm_ge_army_bo105p_pah1_noinsignia"];
+
+_airPatrol append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_swooper_noinsignia"];

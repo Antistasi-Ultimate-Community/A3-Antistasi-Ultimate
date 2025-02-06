@@ -95,11 +95,16 @@ if(currentWaypoint _groupPilot > 0) then
             _this moveInDriver _chute;
             if !("lowTech" in A3A_factionEquipFlags) then {
                 private _smokeGrenade = selectRandom allSmokeGrenades;
-                private _smoke = _smokeGrenade createVehicle (getPosATL _this);
-                _smoke attachTo [_this,[0,0,0]];
-                waitUntil { sleep 1; isTouchingGround _this};
-                deleteVehicle _chute;
-                detach _smoke;
+                if !(disableAutoSmokeCover) then {
+                    private _smoke = _smokeGrenade createVehicle (getPosATL _this);
+                    _smoke attachTo [_this,[0,0,0]];
+                    waitUntil { sleep 1; isTouchingGround _this};
+                    deleteVehicle _chute;
+                    detach _smoke;
+                } else {
+                    waitUntil { sleep 1; isTouchingGround _this};
+                    deleteVehicle _chute;
+                };
             }else{
                 waitUntil { sleep 1; isTouchingGround _this};
                 deleteVehicle _chute;
