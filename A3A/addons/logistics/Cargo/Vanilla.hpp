@@ -1,13 +1,13 @@
 class A3_Static_F_Mark_Designator_01_Designator_01_F : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,0,0};
+    offset[] = {0.1,0,0.5};
     rotation[] = {1,0,0};
     size = 1;
 };
 
 class A3_Static_F_Mark_Designator_02_Designator_02_F : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,0,0};
+    offset[] = {0,0,0.4};
     rotation[] = {1,0,0};
     size = 1;
 };

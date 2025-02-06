@@ -43,6 +43,7 @@
 ["vehiclesPlanesCAS", ["RHS_A10"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["rhsusf_f22"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["RHS_C130J"]] call _fnc_saveToTemplate;
+["vehiclesAirPatrol", ["RHS_MELB_H6M"]] call _fnc_saveToTemplate;
 
 private _gunship = [];
 /// "USAF_AC130U"   USAF gunship

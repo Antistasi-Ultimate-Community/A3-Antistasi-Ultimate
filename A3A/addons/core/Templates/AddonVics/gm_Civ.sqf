@@ -43,6 +43,6 @@ _addon set ["vehiclesCivHeli", [
 ]];
 
 _addon set ["vehiclesCivPlanes", [
-	"gm_gc_civ_l410s_passenger" , 0.3
-	,"gm_gc_civ_l410s_salon" , 0.3
+	"gm_gc_civ_l410s_passenger"
+	,"gm_gc_civ_l410s_salon"
 ]];

@@ -92,6 +92,18 @@
 			ITEM(JCA_smg_MP5_VFG_black_F, 400, 30);
 			ITEM(JCA_smg_MP5_VFG_olive_F, 400, 30);
 			ITEM(JCA_smg_MP5_VFG_sand_F, 400, 30);
+
+			ITEM(JCA_smg_UMP_black_F, 500, 30);
+			ITEM(JCA_smg_UMP_olive_F, 500, 30);
+			ITEM(JCA_smg_UMP_sand_F, 500, 30);
+
+			ITEM(JCA_smg_UMP_AFG_black_F, 500, 30);
+			ITEM(JCA_smg_UMP_AFG_olive_F, 500, 30);
+			ITEM(JCA_smg_UMP_AFG_sand_F, 500, 30);
+
+			ITEM(JCA_smg_UMP_VFG_black_F, 500, 30);
+			ITEM(JCA_smg_UMP_VFG_olive_F, 500, 30);
+			ITEM(JCA_smg_UMP_VFG_sand_F, 500, 30);
 		};
 
 		class underbarrelJCA
@@ -143,6 +155,10 @@
 			ITEM(JCA_muzzle_snds_MP5_olive, 300, MZ_STOCK);
 			ITEM(JCA_muzzle_snds_MP5_sand, 300, MZ_STOCK);
 
+			ITEM(JCA_muzzle_snds_45_tactical_black, 300, MZ_STOCK);
+			ITEM(JCA_muzzle_snds_45_tactical_olive, 300, MZ_STOCK);
+			ITEM(JCA_muzzle_snds_45_tactical_sand, 300, MZ_STOCK);
+
 			ITEM(JCA_muzzle_snds_556_advanced_black, 500, MZ_STOCK);
 			ITEM(JCA_muzzle_snds_556_advanced_olive, 500, MZ_STOCK);
 			ITEM(JCA_muzzle_snds_556_advanced_sand, 500, MZ_STOCK);
@@ -180,6 +196,10 @@
 			class JCA_optic_AHO_black { price = 600; stock = 100; };
 			class JCA_optic_AHO_olive { price = 600; stock = 100; };
 			class JCA_optic_AHO_sand { price = 600; stock = 100; };
+
+			class JCA_optic_MROS_black { price = 600; stock = 100; };
+			class JCA_optic_MROS_olive { price = 600; stock = 100; };
+			class JCA_optic_MROS_sand { price = 600; stock = 100; };
 
 			class JCA_optic_AICO_black { price = 700; stock = 100; };
 			class JCA_optic_AICO_olive { price = 700; stock = 100; };
@@ -254,6 +274,78 @@
 				stock = MAGAZINE_STOCK;
 			};
 			class JCA_15Rnd_9x21_P226_IR_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_Yellow_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_Yellow_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_Red_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_Red_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_IR_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_IR_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_Green_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Tracer_Green_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Yellow_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Yellow_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Red_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Red_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_IR_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_IR_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Green_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_25Rnd_45ACP_UMP_Green_Sand_Mag {
 				price = 30;
 				stock = MAGAZINE_STOCK;
 			};

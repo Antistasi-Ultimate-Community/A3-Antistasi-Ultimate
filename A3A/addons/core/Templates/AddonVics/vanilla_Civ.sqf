@@ -31,5 +31,5 @@ _addon set ["vehiclesCivBoat", [
 ]];
 
 _addon set ["vehiclesCivHeli", [
-	"C_Heli_Light_01_civil_F", 0.3
+	"C_Heli_Light_01_civil_F"
 ]];
