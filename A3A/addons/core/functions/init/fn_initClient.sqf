@@ -116,6 +116,12 @@ if (enableSpectrumDevice) then {
 	[] execVM QPATHTOFOLDER(Scripts\SpectumDevice\sa_ewar.sqf);
 };
 
+if (RRTurretMagazines) then {
+    [] execVM QPATHTOFOLDER(Scripts\RRTurretMagazines\scripts\fn_monitorMagazines.sqf);
+    addUserActionEventHandler ["ReloadMagazine", "Activate", A3A_fnc_reloadTurret];
+    [] execVM QPATHTOFOLDER(Scripts\RRTurretMagazines\scripts\fn_reloadTurret.sqf);
+};
+
 // Placeholders, should get replaced globally by the server
 player setVariable ["score",0];
 player setVariable ["moneyX",0];

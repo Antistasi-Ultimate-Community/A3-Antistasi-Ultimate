@@ -56,6 +56,16 @@ if(roleDescription player isEqualTo "@STR_role_default_commander_role_name" || {
 			player setUnitTrait ["loadCoef",0.7]; 
 			_text = localize "STR_role_rifleman"
 		}; 
+    	case "I_G_Soldier_GL_F": {
+            player setUnitTrait ["camouflageCoef",1.2];
+            player setUnitTrait ["loadCoef",0.8];
+            _text = localize "STR_role_grenadier"
+        };
+    	case "I_G_Soldier_AR_F": {
+            player setUnitTrait ["audibleCoef",1.2];
+            player setUnitTrait ["loadCoef",0.8];
+            _text = localize "STR_role_autorifleman"
+        };
     	case "I_G_engineer_F":  {
 			player setUnitTrait ["UAVHacker",true]; 
 			player setUnitTrait ["explosiveSpecialist", true]; ///why not?

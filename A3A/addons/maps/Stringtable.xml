@@ -96,6 +96,20 @@
                 <French>Antistasi Ultimate - Mer verte</French>
                 <Korean>안티스타시 얼티밋 - Green Sea</Korean>
             </Key>
+			<Key ID="STR_antistasi_mission_info_fapovo_mapname_short_text">
+                <Original>Antistasi Ultimate - Fapovo</Original>
+                <Russian>Antistasi Ultimate - Fapovo</Russian>
+                <Chinesesimp>Antistasi Ultimate - Fapovo</Chinesesimp>
+                <French>Antistasi Ultimate - Fapovo</French>
+                <Korean>안티스타시 얼티밋 - Fapovo</Korean>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_fapovo_mapname_text">
+                <Original>Antistasi Ultimate - Fapovo Island</Original>
+                <Chinesesimp>Antistasi Ultimate - Fapovo 岛</Chinesesimp>
+                <Russian>Antistasi Ultimate - Fapovo Остров</Russian>
+                <French>Antistasi Ultimate - Fapovo Île</French>
+                <Korean>안티스타시 얼티밋 - Fapovo 섬</Korean>
+            </Key>
             <Key ID="STR_antistasi_mission_info_Greensea_blurb_text">
                 <Original>Whether we wanted it or not, we stepped into a war with occupants and invaders in the Green Sea.</Original>
                 <Russian>Хотим мы того или нет, но мы начали войну против оккупантов и захвачтиков Green Sea.</Russian>

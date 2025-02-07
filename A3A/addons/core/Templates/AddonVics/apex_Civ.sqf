@@ -8,6 +8,6 @@ _addon set ["vehiclesCivBoat", [
 ]];
 
 _addon set ["vehiclesCivPlanes", [
-	"C_Plane_Civil_01_F" , 0.3
-	,"C_Plane_Civil_01_racing_F" , 0.2
+	"C_Plane_Civil_01_F"
+	,"C_Plane_Civil_01_racing_F"
 ]];

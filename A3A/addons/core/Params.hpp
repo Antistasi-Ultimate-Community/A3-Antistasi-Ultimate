@@ -309,6 +309,41 @@ class Params
         texts[] = {"0%","25%","50%","75%","100%"};
         default = 100;
     };
+    class Spacer66
+    {
+        title = "";
+        values[] = {""};
+        texts[] = {""};
+        default = "";
+    };
+    class Spacer67
+    {
+        title = $STR_params_antistasi_scripts;
+        values[] = {""};
+        texts[] = {""};
+        default = "";
+    };
+    class magRepack
+    {
+        title = $STR_params_magRepack;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
+    class RRTurretMagazines
+    {
+        title = $STR_params_ReloadRepackTurretMagazines;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class enableSpectrumDevice
+    {
+        title = $STR_params_enableSpectrumDevice;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
 
     class Spacer60
     {
@@ -323,13 +358,6 @@ class Params
         values[] = {""};
         texts[] = {""};
         default = "";
-    };
-    class magRepack
-    {
-        title = $STR_params_magRepack;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
-        default = 1;
     };
     class newCarTowing
     {
@@ -586,13 +614,6 @@ class Params
     {
         attr[] = {"server"};
         title = $STR_params_allowUnfairSupports;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
-    };
-    class enableSpectrumDevice
-    {
-        title = $STR_params_enableSpectrumDevice;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;

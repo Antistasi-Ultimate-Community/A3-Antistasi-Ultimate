@@ -290,7 +290,7 @@ switch (_type) do {
 					} else {
 						if (tierWar >= 5) then {
 							private _roll = round random 100;
-							if(_roll < 99) then {
+							if(_roll < 50) then {
 								[[_site],"A3A_fnc_RES_Deserters"] remoteExec ["A3A_fnc_scheduler",2];
 							} else {
 								[[_site],"A3A_fnc_RES_Prisoners"] remoteExec ["A3A_fnc_scheduler",2];
