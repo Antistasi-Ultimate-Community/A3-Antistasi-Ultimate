@@ -315,14 +315,7 @@ class Params
         texts[] = {"100", "300", "500", "1000", "1500", "2000"};
         default = 500;
     };
-    class blackMarketIgnoreRequirements: UltimateParams
-    {
-        title = $STR_A3AU_blackmarket_ignore_requirements;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
-    };
-    class useDownedNotification: UltimateParams
+    class useDownedNotification
     {
         title = $STR_A3AU_use_downed_notification;
         values[] = {0,1};
@@ -614,7 +607,28 @@ class Params
         texts[] = {"30s", "60s", "120s"};
         default = 60;
     };
-    class enableSpectrumDevice: ExperimentalParams
+    class blackMarketIgnoreRequirements
+    {
+        title = $STR_params_blackMarketIgnoreRequirements;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class A3U_blackMarketDiscountVehicle
+    {
+        title = $STR_params_blackMarketDiscountVehicle;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
+        default = 0;
+    };
+    class A3U_blackMarketDiscountWeapon
+    {
+        title = $STR_params_blackMarketDiscountWeapon;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
+        default = 0;
+    };
+    class enableSpectrumDevice
     {
         title = $STR_params_enableSpectrumDevice;
         values[] = {0,1};

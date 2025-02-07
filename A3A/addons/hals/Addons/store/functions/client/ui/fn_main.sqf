@@ -96,7 +96,14 @@ switch (_mode) do {
 			private _categoryItems = "true" configClasses (configFile >> "cfgHALsAddons" >> "cfgHALsStore" >> "categories" >> _x) apply {[configName _x, getNumber (_x >> "price") max 0]};
 			
 			[HALs_store_category_items, _x, _categoryItems apply {_x select 0}] call HALs_store_fnc_hashSet;
-			{[HALs_store_item_price, _x select 0, _x select 1] call HALs_store_fnc_hashSet} forEach _categoryItems;
+
+			{
+				private _price = _x select 1;
+				private _discount = ((A3U_blackMarketDiscountWeapon / 10) * _price);
+				private _price = round (_price - _discount);
+
+				[HALs_store_item_price, _x select 0, _price] call HALs_store_fnc_hashSet
+			} forEach _categoryItems;
 				
 			_items append _categoryItems;
 		} forEach _categories;

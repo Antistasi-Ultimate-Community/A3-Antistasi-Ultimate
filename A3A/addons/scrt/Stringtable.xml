@@ -5281,6 +5281,16 @@
                 <Korean>지원 설정</Korean>
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
+            <Key ID="STR_params_blackMarketIgnoreRequirements">
+                <Original>[Experimental] Ignore Black Market Vehicle Requirements</Original>
+                <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
+            </Key>
+            <Key ID="STR_params_blackMarketDiscountVehicle">
+                <Original>[Experimental] Black Market Vehicle Discount</Original>
+            </Key>
+            <Key ID="STR_params_blackMarketDiscountWeapon">
+                <Original>[Experimental] Black Market Equipment Discount</Original>
+            </Key>
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>Enable spectrum device hacking capability (Contact DLC required)</Original>
                 <Russian>Разрешить возможность взлома с помощью spectrum device (необходимо дополнение contact)</Russian>
