@@ -198,7 +198,14 @@ class Params
         texts[] = {"2","5","15","30", $STR_params_afk_disabled};
         default = 300;
     };
-    class A3A_GCThreshold: BasicParams
+    class A3A_isUAVAFK
+    {
+        title = $STR_params_afk_uav;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class A3A_GCThreshold
     {
         title = $STR_params_gc_threshold;
         values[] = {3600, 7200, 10800, 14400, 9999999};

@@ -24,8 +24,11 @@ while {true} do {
     private _oldDir = A3A_lastPlayerDir;
     A3A_lastPlayerDir = getDir player;
 
-    // "speed player" return zero for sideways walking/crawling
-    if (A3A_lastPlayerDir != _oldDir or vectorMagnitude velocity player > 0.1) then {
+    if (
+        A3A_lastPlayerDir != _oldDir ||
+        {vectorMagnitude velocity player > 0.1} || // "speed player" return zero for sideways walking/crawling
+        {!A3A_isUAVAFK && {getConnectedUAV player != objNull}} // player controlling a UGV/UAV
+    ) then {
         A3A_lastActiveTime = time;
         if (player getVariable ["isAFK", false]) then {
             player setVariable ["isAFK", nil, [2, clientOwner]];
