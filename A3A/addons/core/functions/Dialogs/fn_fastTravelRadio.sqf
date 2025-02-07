@@ -81,7 +81,7 @@ if (_earlyEscape) exitWith {};
 
 private _areEnemiesNearby = false;
 
-if (_eshHC && {_units findIf {[getPosATL _x] call A3A_fnc_enemyNearCheck} != -1}) exitWith {
+if (_esHC && {_units findIf {[getPosATL _x] call A3A_fnc_enemyNearCheck} != -1}) exitWith {
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_enemiesnear_group"] call SCRT_fnc_misc_deniedHint;
 };
 
