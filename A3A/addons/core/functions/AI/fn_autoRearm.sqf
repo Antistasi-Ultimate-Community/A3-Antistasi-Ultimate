@@ -14,7 +14,12 @@ if (_rearming) exitWith {if (_inPlayerGroup) then {_unit groupChat localize "STR
 if (vehicle _unit != _unit) exitWith {};
 _unit setVariable ["rearming",true];
 
+private _unitType = _unit getVariable "unitType";
+private _customLoadout = rebelLoadouts get _unitType;
+private _loadoutPrimaryWeapon = if (!isNil "_customLoadout") then { (_customLoadout select 0) select 0 } else { "" };
 private _primaryWeapon = primaryWeapon _unit;
+private _primaryWeaponWeight = [[_primaryWeapon, ["Weapons", "PrimaryWeaponsCatchAll"]] call A3A_fnc_itemArrayWeight, 0] select (_primaryWeapon isEqualTo "");
+private _validPrimaryWeapons = allRifles + allSniperRifles + allMachineGuns + allSMGs + allShotguns;
 private _secondaryWeapon = secondaryWeapon _unit;
 private _nearbyContainers = [];
 private _foundItem = false;
@@ -38,7 +43,7 @@ _nearbyContainers = nearestObjects [_unit, ["ReammoBox_F","LandVehicle","WeaponH
 if (boxX in _nearbyContainers) then {_nearbyContainers = _nearbyContainers - [boxX]};
 
 
-if ((_primaryWeapon in initialRebelEquipment) || (_primaryWeapon isEqualTo "")) then {
+if ((!isNil "_customLoadout" && {_primaryWeapon != _loadoutPrimaryWeapon}) || {_primaryWeapon == ""}) then {
 	_needsRearm = true;
 	if (count _nearbyContainers > 0) then {
 		{
@@ -48,8 +53,9 @@ if ((_primaryWeapon in initialRebelEquipment) || (_primaryWeapon isEqualTo "")) 
 					_containerWeapons = weaponCargo _potentialContainer;
 					for "_i" from 0 to (count _containerWeapons - 1) do {
 						_potentialWeapon = _containerWeapons select _i;
+						_potentialWeaponWeight = [_potentialWeapon, ["Weapons", "PrimaryWeaponsCatchAll"]] call A3A_fnc_itemArrayWeight;
 						_baseWeapon = [_potentialWeapon] call BIS_fnc_baseWeapon;
-						if (!(_baseWeapon in ["hgun_PDW2000_F","hgun_Pistol_01_F","hgun_ACPC2_F"]) && ((_baseWeapon in allRifles) || (_baseWeapon in allSniperRifles) || (_baseWeapon in allMachineGuns) || (_baseWeapon in allSMGs) || (_baseWeapon in allShotguns))) then {
+						if (!(_baseWeapon in ["hgun_PDW2000_F","hgun_Pistol_01_F","hgun_ACPC2_F"]) && (_baseWeapon in _validPrimaryWeapons) && (_potentialWeaponWeight > _primaryWeaponWeight)) then {
 							_selectedContainer = _potentialContainer;
 							_foundItem = true;
 							_selectedWeapon = _potentialWeapon;
