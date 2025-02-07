@@ -1082,15 +1082,15 @@
                 <Polish>Funkcja tylko dla członków serwera</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_player_money_text">
-                <Original>Current money:\n€ %1</Original>
-                <French>Monnaie actuelle:\n€ %1</French>
+                <Original>Current money:\n%1 %2</Original>
+                <French>Monnaie actuelle:\n%1 %2</French>
                 <Korean>현재 자금:\n%1€</Korean>
-                <Russian>Текущий баланс:\n€ %1</Russian>
-                <Chinesesimp>当前资金:\n€ %1</Chinesesimp>
-                <Czech>Aktuální peníze: \ n € %1</Czech>
-                <Italian>Denaro attuale:\n€ %1</Italian>
-                <Spanish>Dinero:\n€ %1</Spanish>
-                <Polish>Aktualne pieniądze:\n€ %1</Polish>
+                <Russian>Текущий баланс:\n%1 %2</Russian>
+                <Chinesesimp>当前资金:\n%1 %2</Chinesesimp>
+                <Czech>Aktuální peníze: \ n %1 %2</Czech>
+                <Italian>Denaro attuale:\n%1 %2</Italian>
+                <Spanish>Dinero:\n%1 %2</Spanish>
+                <Polish>Aktualne pieniądze:\n%1 %2</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_sl_tooltip">
                 <Original>Only available to squad leaders</Original>
@@ -1515,7 +1515,7 @@
                 <Polish>Nie można strzelać. Moździerz nie jest rozstawiony.</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_medic">
-                <Original>Has operative medic</Original>
+                <Original>Has medic capability</Original>
                 <French>A un médecin disponible</French>
                 <Korean>활동 가능한 의무병 있음</Korean>
                 <Russian>Есть доступный медик</Russian>
@@ -1805,7 +1805,7 @@
                 <Polish>To zajmie</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_vehicle">
-                <Original>You will bring your vehicle along as well as any cargo and passengers along with you.</Original>
+                <Original>You will bring your vehicle as well as any cargo and passengers along with you.</Original>
                 <French>Vous apporterez votre véhicule ainsi que toute cargaison et passagers avec vous.</French>
                 <Korean>차량은 물론 화물과 승객도 함께 가지고 갈 것입니다다.</Korean>
                 <Russian>Вы возьмете с собой свою технику, а также груз и пассажиров.</Russian>
@@ -1952,7 +1952,7 @@
                 <Polish>Przenieś Kwaterę Główną</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_clear_trees_button">
-                <Original>Clear Trees</Original>
+                <Original>Clear Foliage</Original>
                 <French>Effacer les arbres</French>
                 <Korean>나무 없애기</Korean>
                 <Russian>Очистить от деревьев</Russian>
@@ -2243,7 +2243,7 @@
                 <Original>Squad Leader</Original>
                 <French>Meneur d'escouade</French>
                 <Korean>분대장</Korean>
-                <Russian>Командир отряда</Russian>
+                <Russian>Старший стрелок</Russian>
                 <Chinesesimp>小队长</Chinesesimp>
                 <Czech>Velitel družstva</Czech>
                 <Italian>Caposquadra</Italian>
@@ -2265,7 +2265,7 @@
                 <Original>Grenadier</Original>
                 <French>Grenadier</French>
                 <Korean>유탄수</Korean>
-                <Russian>Гренадер</Russian>
+                <Russian>Стрелок ГП</Russian>
                 <Chinesesimp>掷弹手</Chinesesimp>
                 <Czech>Granátometčík</Czech>
                 <Italian>Granatiere</Italian>
@@ -2963,15 +2963,15 @@
                 <Polish>Nie masz wystarczających zasobów ludzkich dla tego żądania (wymagany %1)</Polish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_insufficient_money">
-                <Original>You do not have enough money for this request (%1 € required)</Original>
-                <French>Vous n'avez pas assez d'argent pour cette demande (%1 € requis)</French>
-                <Korean>이 요청을 수행할 자금이 부족합니다 (%1 € 필요)</Korean>
-                <Russian>У вас недостаточно денег для этого (%1 € необходимо)</Russian>
+                <Original>You do not have enough money for this request (%1 %2 required)</Original>
+                <French>Vous n'avez pas assez d'argent pour cette demande (%1 %2 requis)</French>
+                <Korean>이 요청을 수행할 자금이 부족합니다 (%1 %2 필요)</Korean>
+                <Russian>У вас недостаточно денег для этого (%1 %2 необходимо)</Russian>
                 <Chinesesimp>您没有足够的金钱来处理此请求（需要 %1 ）</Chinesesimp>
-                <Czech>Na tuto žádost nemáte dostatek peněz (vyžadováno%1 €)</Czech>
-                <Italian>Non hai abbastanza denaro per questa richiesta (%1 € necessari)</Italian>
-                <Spanish>No tienes suficiente Dinero para esto (1% requerido)</Spanish>
-                <Polish>Nie masz wystarczającej ilości pieniędzy na to żądanie (wymagane %1 €)</Polish>
+                <Czech>Na tuto žádost nemáte dostatek peněz (vyžadováno%1 %2)</Czech>
+                <Italian>Non hai abbastanza denaro per questa richiesta (%1 %2 necessari)</Italian>
+                <Spanish>No tienes suficiente Dinero para esto (1% %2requerido)</Spanish>
+                <Polish>Nie masz wystarczającej ilości pieniędzy na to żądanie (wymagane %1 %2)</Polish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_vehicle_purchased">
                 <Original>Vehicle Purchased</Original>

@@ -209,7 +209,7 @@ switch (_mode) do
 
         // Update money
         private _money = player getVariable "moneyX";
-        _moneyText ctrlSetText format[localize "STR_antistasi_dialogs_main_player_money_text", _money];
+        _moneyText ctrlSetText format[localize "STR_antistasi_dialogs_main_player_money_text", A3A_faction_civ get "currencySymbol", _money];
 
         // Vehicle section
         private _vehicleGroup = _display displayCtrl A3A_IDC_PLAYERVEHICLEGROUP;

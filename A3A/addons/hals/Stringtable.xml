@@ -196,7 +196,7 @@
             <French>Ouvrir le %1</French>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
-            <Original>Item unavaliable.</Original>
+            <Original>Item unavailable.</Original>
             <German>Gegenstand nicht verfügbar.</German>
             <Russian>Предмет недоступен</Russian>
             <Chinesesimp>物品不可用。</Chinesesimp>
@@ -266,7 +266,7 @@
             <Korean>플레이어가 현재 구입 가능한 아이템만 표시합니다.</Korean>
         </Key> -->
         <Key ID="STR_HALS_STORE_CHECKBOX_AVALIABLE">
-            <Original>Only show items that are avaliable for purchase.</Original>
+            <Original>Only show items that are available for purchase.</Original>
             <Russian>Показывать только предметы, доступные к покупке.</Russian>
             <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
             <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
@@ -412,7 +412,7 @@
                 <French>Magasins</French>
             </Key>
             <Key ID="STR_A3AU_glGrenades">
-                <Original>GL Grenadaes</Original>
+                <Original>GL Grenades</Original>
                 <English>GL Grenades</English>
                 <Russian>Подствольные Гранаты</Russian>
                 <Korean>유탄발사기</Korean>
@@ -631,10 +631,10 @@
                 <Korean>CSLA</Korean>
             </Key>
             <Key ID="STR_A3AU_RF">
-                <Original>Reaction Force</Original>
-                <English>Reaction Force</English>
-                <Russian>Reaction Force</Russian>
-                <Korean>Reaction Force</Korean>
+                <Original>Reaction Forces</Original>
+                <English>Reaction Forces</English>
+                <Russian>Reaction Forces</Russian>
+                <Korean>Reaction Forces</Korean>
                 <French>Force de réaction</French>
             </Key>
             <Key ID="STR_A3AU_EF">
