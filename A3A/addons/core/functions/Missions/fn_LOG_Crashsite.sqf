@@ -865,7 +865,6 @@ switch(true) do
         
         [20*_bonus,theBoss] call A3A_fnc_addScorePlayer;
         [500*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
-        // [20] call SCRT_fnc_trader_setTraderDiscount;
     };
     default
     {
