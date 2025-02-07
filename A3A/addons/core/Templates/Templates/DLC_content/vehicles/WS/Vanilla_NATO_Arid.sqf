@@ -8,3 +8,5 @@ _helisLightAttack pushback "B_D_Heli_Light_01_dynamicLoadout_lxWS";
 _helisAttack pushback "B_D_Heli_Attack_01_dynamicLoadout_lxWS";
 _transportHelicopters pushback "B_D_Heli_Transport_01_lxWS";
 _uavsPortable pushBack "B_UAV_02_lxWS";
+
+_airPatrol append ["B_D_Heli_Light_01_lxWS","B_D_Heli_Light_01_dynamicLoadout_lxWS"];

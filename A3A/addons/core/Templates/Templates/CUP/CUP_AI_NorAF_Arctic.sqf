@@ -71,6 +71,8 @@ if (isClass (configFile >> "CfgPatches" >> "F16_Norwegian_Reskin")) then {
 ["vehiclesHelisLightAttack", ["Flex_CUP_NOR_Bell412_Armed", "Flex_CUP_NOR_Bell412_Armed_AT", "Flex_CUP_NOR_Bell412_dynamicLoadout", "Flex_CUP_NOR_MH60S_Armed", "Flex_CUP_NOR_Merlin_HC3_Armed"]] call _fnc_saveToTemplate;		// this line determines light attack helicopters
 ["vehiclesHelisAttack", []] call _fnc_saveToTemplate; 		//this line determines attack helis -- Example: ["vehiclesHelisAttack", ["B_Heli_Attack_01_F"]] -- Array, can contain multiple assets
 
+["vehiclesAirPatrol", ["Flex_CUP_NOR_Bell412_Transport", "Flex_CUP_NOR_Bell412_Utility", "Flex_CUP_NOR_Bell412_Radar", "Flex_CUP_NOR_Bell412_Armed", "Flex_CUP_NOR_Bell412_Armed_AT", "Flex_CUP_NOR_Bell412_dynamicLoadout", "Flex_CUP_NOR_MH60S_Armed", "Flex_CUP_NOR_Merlin_HC3_Armed"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", []] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
 ["magazines", createHashMapFromArray []] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
 

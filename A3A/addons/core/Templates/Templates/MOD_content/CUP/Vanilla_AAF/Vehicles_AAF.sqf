@@ -26,3 +26,5 @@ _gunBoat append ["CUP_B_RHIB_USMC","CUP_B_RHIB2Turret_USMC"];
 _staticMG append ["CUP_B_DSHKM_ACR","CUP_O_KORD_high_RU","CUP_B_L111A1_BAF_DDPM","CUP_B_M2StaticMG_AFU","CUP_B_SearchLight_static_ACR"];
 _staticAT append ["CUP_B_D30_AT_CDF","CUP_B_L134A1_TriPod_BAF_DDPM","CUP_B_TOW_TriPod_US","CUP_B_TOW2_TriPod_USMC","CUP_B_MK19_TriPod_US","CUP_B_SPG9_AFU"];
 _staticAA append ["CUP_B_CUP_Stinger_AA_pod_US","CUP_B_Igla_AA_pod_AFU","CUP_B_RBS70_ACR","CUP_B_ZU23_AFU"];
+
+_airPatrol append ["CUP_I_Wildcat_Unarmed_Digital_AAF","CUP_I_Wildcat_Unarmed_Green_AAF","CUP_I_Wildcat_Digital_AAF","CUP_I_Wildcat_Green_AAF","CUP_I_412_Military_Armed_AAF","CUP_I_412_dynamicLoadout_AAF","CUP_I_Ka60_GL_Digi_AAF","CUP_I_Ka60_Digi_AAF"];

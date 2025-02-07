@@ -49,6 +49,8 @@
 ["vehiclesHelisLightAttack", ["CUP_O_UH1H_gunship_TKA", "CUP_O_UH1H_armed_TKA"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_O_Mi24_D_Dynamic_TK"]] call _fnc_saveToTemplate;
 
+["vehiclesAirPatrol", ["CUP_O_UH1H_TKA", "CUP_O_UH1H_slick_TKA", "CUP_O_UH1H_gunship_TKA", "CUP_O_UH1H_armed_TKA"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["CUP_O_BM21_TKA"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_O_BM21_TKA", ["CUP_40Rnd_GRAD_HE"]]]] call _fnc_saveToTemplate;
 

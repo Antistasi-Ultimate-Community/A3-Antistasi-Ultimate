@@ -38,8 +38,6 @@
             ITEM(HAFM_G3A3RIS, 900, RIFLE_STOCK);// HAFM_20rnd_G3A3_762
             ITEM(HAFM_G3A4, 800, RIFLE_STOCK);// HAFM_20rnd_G3A3_762
             ITEM(HAFM_G3A3_SG, 800, RIFLE_STOCK);// HAFM_20rnd_G3A3_762
-            ITEM(HAFM_G3A3, 800, RIFLE_STOCK);// HAFM_20rnd_G3A3_762
-            ITEM(HAFM_G3A3, 800, RIFLE_STOCK);// HAFM_20rnd_G3A3_762
             ITEM(HAFM_HK416, 800, RIFLE_STOCK);// M4DD But Cooler Looking | hafm_mag_30Rnd_556x45_M855_Stanag/hafm_mag_30Rnd_556x45_M855A1_Stanag/hafm_mag_30Rnd_556x45_Mk318_Stanag
             ITEM(HAFM_HK416GL, 1250, RIFLE_STOCK);// M4DD But Cooler Looking and UGL | hafm_mag_30Rnd_556x45_M855_Stanag/hafm_mag_30Rnd_556x45_M855A1_Stanag/hafm_mag_30Rnd_556x45_Mk318_Stanag
             ITEM(HAFM_M4A1, 800, RIFLE_STOCK);// M4DD But Older | hafm_mag_30Rnd_556x45_M855_Stanag/hafm_mag_30Rnd_556x45_M855A1_Stanag/hafm_mag_30Rnd_556x45_Mk318_Stanag
@@ -93,8 +91,6 @@
             ITEM(hafm_mag_30Rnd_556x45_M855A1_Stanag, 100, MZ_STOCK);
             ITEM(hafm_mag_30Rnd_556x45_Mk318_Stanag, 100, MZ_STOCK);
             ITEM(hafm_mag_arrow, 80, MZ_STOCK);
-            ITEM(hafm_mag_arrow_exp, 400, MZ_STOCK);
-            ITEM(HAFM_G36C, 100, MZ_STOCK);
             ITEM(HAFM_20rnd_G3A3_762, 150, MZ_STOCK);
             ITEM(HAFM_HK21_762, 150, MZ_STOCK);
             ITEM(HAFM_20rnd_M14_762, 150, MZ_STOCK);
@@ -106,7 +102,7 @@
 		};
 
 		class pointersHAFM{
-			displayName = __EVAL(formatText ["%1 %2 %3 %4 %5", localize "STR_A3AU_hafm", localize "STR_A3AU_barret", localize "STR_A3AU_handles", localize "STR_A3AU_and", localize "STR_A3AU_bipods"]);
+			displayName = __EVAL(formatText ["%1 %2 %3 %4 %5", localize "STR_A3AU_hafm", localize "STR_A3AU_pointers"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemAcc_ca.paa";
 
 			ITEM(HAFM_acc_PEQ15_side, 100, PN_STOCK);
@@ -142,7 +138,7 @@
 		};
 
 		class underbarrelHAFM{
-	     	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_hafm", localize "STR_A3AU_bagsStatics"]);
+	     	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_hafm", localize "STR_A3AU_bipods"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemBipod_ca.paa";
 
 			ITEM(HAFM_Harris_Bipod, 100, 50);

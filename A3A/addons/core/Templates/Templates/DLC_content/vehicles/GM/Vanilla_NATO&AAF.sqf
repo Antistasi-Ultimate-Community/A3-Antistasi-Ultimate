@@ -18,6 +18,8 @@ _helisLight append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_
 _transportHelicopters append ["gm_ge_army_ch53g_noinsignia","gm_ge_army_ch53gs_noinsignia"];
 _helisAttack append ["gm_ge_army_bo105p_pah1_noinsignia"];
 
+_airPatrol append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_swooper_noinsignia"];
+
 
 if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl")) then {
 _staticMG pushBack "gmx_aaf_mg3_aatripod";
@@ -49,4 +51,6 @@ _ammoTrucks append ["gmx_aaf_kat1_451_reammo_wdl","gmx_aaf_kat1_454_reammo_wdl",
 _repairTrucks append ["gmx_aaf_u1300l_repair_wdl","gmx_aaf_bpz2a0_wdl","gm_gc_bgs_ural4320_repair_noinsignia"];
 _fuelTrucks append ["gmx_aaf_kat1_451_refuel_wdl","gm_gc_bgs_ural375d_refuel_noinsignia"];
 _medicalTrucks append ["gmx_aaf_u1300l_medic_wdl","gmx_aaf_m113a1g_medic_wdl","ggm_gc_bgs_ural375d_medic_noinsignia"];
+
+_airPatrol append ["gmx_aaf_bo105m_vbh_wdl","gmx_aaf_bo105p1m_vbh_wdl","gmx_aaf_bo105p1m_vbh_swooper_wdl","gm_gc_airforce_mi2p_noinsignia","gm_gc_bgs_mi2p_noinsignia","gm_gc_airforce_mi2t_noinsignia","gmx_aaf_bo105p_pah1_wdl","gm_gc_airforce_mi2us_noinsignia","gm_gc_airforce_mi2urn_noinsignia","gm_gc_bgs_mi2us_noinsignia"];
 };

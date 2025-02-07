@@ -1,0 +1,29 @@
+#include "..\missionDescription\master.hpp"
+
+OnLoadName = $STR_antistasi_mission_info_stubbhult_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_stubbhult_blurb_text;
+briefingName = $STR_antistasi_mission_info_stubbhult_mapname_text;
+overviewText = $STR_antistasi_mission_info_stubbhult_description_text;
+loadScreen = LOAD_SCREEN_IMAGE;
+overviewPicture = OVERVIEW_IMAGE;
+
+class CfgDiscordRichPresence 
+{
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Tanoa";
+    defaultLargeImageKey="tanoa";
+    defaultLargeImageText="Rebelling in Stubbhult";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
+    useTimeElapsed=1;
+};
+
+class CfgNotifications
+{
+    #include "..\missionDescription\CfgNotificationsContents.hpp"
+};
+
+class CfgDebriefing {
+    #include "..\missionDescription\CfgDebriefingContents.hpp"
+};

@@ -211,6 +211,13 @@ class Params
         texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
         default = 1;
     };
+    class recruitToPlayerSquad
+    {
+        title = $STR_params_recruitToPlayerSquad;
+        values[] = {1,0};
+        texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        default = 1;
+    }
     class enablePunishments
     {
         title = $STR_params_enablePunishments;
@@ -302,6 +309,41 @@ class Params
         texts[] = {"0%","25%","50%","75%","100%"};
         default = 100;
     };
+    class Spacer66
+    {
+        title = "";
+        values[] = {""};
+        texts[] = {""};
+        default = "";
+    };
+    class Spacer67
+    {
+        title = $STR_params_antistasi_scripts;
+        values[] = {""};
+        texts[] = {""};
+        default = "";
+    };
+    class magRepack
+    {
+        title = $STR_params_magRepack;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
+    class RRTurretMagazines
+    {
+        title = $STR_params_ReloadRepackTurretMagazines;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class enableSpectrumDevice
+    {
+        title = $STR_params_enableSpectrumDevice;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
 
     class Spacer60
     {
@@ -316,13 +358,6 @@ class Params
         values[] = {""};
         texts[] = {""};
         default = "";
-    };
-    class magRepack
-    {
-        title = $STR_params_magRepack;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
-        default = 1;
     };
     class newCarTowing
     {
@@ -341,8 +376,8 @@ class Params
     class lootCrateDistance
     {
         title = $STR_params_lootCrateDistance;
-        values[] = {10, 25, 50, 75, 100};
-        texts[] = {"10", "25", "50", "75", "100"};
+        values[] = {10, 25, 50, 75, 100, 200, 300, 400};
+        texts[] = {"10", "25", "50", "75", "100", "200", "300", "400"};
         default = 50;
     };
     class lootCratePrice
@@ -486,6 +521,13 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
+    class disableAutoSmokeCover
+    {
+        title = $STR_params_disableAutoSmokeCover;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
 
     class SpacerBalance
     {
@@ -572,13 +614,6 @@ class Params
     {
         attr[] = {"server"};
         title = $STR_params_allowUnfairSupports;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
-    };
-    class enableSpectrumDevice
-    {
-        title = $STR_params_enableSpectrumDevice;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;

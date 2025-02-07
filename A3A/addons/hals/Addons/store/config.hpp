@@ -79,6 +79,7 @@ class cfgHALsStore
 		#include "config\ylarms.hpp"
 		#include "config\ProjInfAD.hpp"
 		#include "config\JCAArsenal.hpp"
+		#include "config\hafm.hpp"
 	};
 
 	class stores 

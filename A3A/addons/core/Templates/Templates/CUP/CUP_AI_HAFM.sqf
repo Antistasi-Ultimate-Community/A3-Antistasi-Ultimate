@@ -54,6 +54,8 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesHelisLightAttack", ["HAFM_Kiowa", "HAFM_Kiowa_AT"]] call _fnc_saveToTemplate;		// this line determines light attack helicopters
 ["vehiclesHelisAttack", ["HAFM_AH64D"]] call _fnc_saveToTemplate; 		//this line determines attack helis -- Example: ["vehiclesHelisAttack", ["B_Heli_Attack_01_F"]] -- Array, can contain multiple assets
 
+["vehiclesAirPatrol", ["HAFM_UH1H","HAFM_Kiowa", "HAFM_Kiowa_AT"]] call _fnc_saveToTemplate;
+
 ["vehiclesArtillery", ["GR_MBT_mlrs"]] call _fnc_saveToTemplate;		//this line determines SPAs
 ["magazines", createHashMapFromArray [
 ["GR_MBT_mlrs", ["12Rnd_230mm_rockets"]]

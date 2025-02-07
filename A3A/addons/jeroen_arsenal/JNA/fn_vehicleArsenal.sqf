@@ -36,8 +36,8 @@
 		private _dlcName = _this call GETDLC;\
 		if (_dlcName != "") then {\
 			_ctrlList lbsetpictureright [_lbAdd,(modParams [_dlcName,["logo"]]) param [0,""]];\
-			_modID = _modList find _dlcName;\
-			if (_modID < 0) then {_modID = _modList pushback _dlcName;};\
+			_modID = MODLIST find _dlcName;\
+			if (_modID < 0) then {_modID = MODLIST pushback _dlcName;};\
 			_ctrlList lbsetvalue [_lbAdd,_modID];\
 		};\
 	};

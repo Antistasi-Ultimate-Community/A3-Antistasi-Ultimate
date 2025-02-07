@@ -27,7 +27,5 @@ _medicalTrucks append ["US85_M113_AMB","CSLA_OZV90"];
 _policeVehs append ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200PO","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"];
 _artillery append ["CSLA_ShKH77","CSLA_RM70","CSLA_RM51","US85_M270"];
 
-
-
-
+_airPatrol append ["US85_MH60FFAR","CSLA_Mi17pylons"];
 
