@@ -197,17 +197,6 @@ A3U_fnc_displaystuff = {
             _description = _description + _displayName + "<br/>";
         };
     } foreach (configProperties [(configfile >> "CfgVehicles" >> _selectedClassName >> "animationSources"),"isclass _x",true]);
-    /* // Итерация по анимационным источникам
-    {
-        // Получаем имя анимационного источника
-        private _animationName = getText(configFile >> "CfgVehicles" >> _selectedClassName >> "animationSources" >> _x >> "displayName");
-
-        // Проверяем, что имя не пустое
-        if (_animationName != "") then {
-            // Добавляем имя анимации в _description
-            _description = _description + _animationName + "<br/>";
-        };
-    } foreach _animationSources; */
 
     private _descriptionBox = _display displayCtrl A3A_IDC_GARAGEinfo;
     _descriptionBox ctrlSetStructuredText parseText(_description + "<br /> ");
@@ -256,7 +245,6 @@ _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle 
     [_control,_selectedIndex,_vehFullData] call A3U_fnc_displaystuff;
 }];
 
-// Кнопка для закрытия диалога
 _selectButton ctrlAddEventHandler ["ButtonClick", {
     closeDialog 2;
     camDestroy _previewCamera;
