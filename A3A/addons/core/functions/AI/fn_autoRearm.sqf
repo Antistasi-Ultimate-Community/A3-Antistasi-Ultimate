@@ -18,7 +18,7 @@ private _unitType = _unit getVariable "unitType";
 private _customLoadout = rebelLoadouts get _unitType;
 private _loadoutPrimaryWeapon = if (!isNil "_customLoadout") then { (_customLoadout select 0) select 0 } else { "" };
 private _primaryWeapon = primaryWeapon _unit;
-private _primaryWeaponWeight = [[_primaryWeapon, ["Weapons", "PrimaryWeaponsCatchAll"]] call A3A_fnc_itemArrayWeight, 0] select (_primaryWeapon isEqualTo "");
+private _primaryWeaponWeight = [[_primaryWeapon, ["PrimaryWeaponsCatchAll", "Weapons"]] call A3A_fnc_itemArrayWeight, 0] select (_primaryWeapon isEqualTo "");
 private _validPrimaryWeapons = allRifles + allSniperRifles + allMachineGuns + allSMGs + allShotguns;
 private _secondaryWeapon = secondaryWeapon _unit;
 private _nearbyContainers = [];
@@ -53,7 +53,7 @@ if ((!isNil "_customLoadout" && {_primaryWeapon != _loadoutPrimaryWeapon}) || {i
 					_containerWeapons = weaponCargo _potentialContainer;
 					for "_i" from 0 to (count _containerWeapons - 1) do {
 						_potentialWeapon = _containerWeapons select _i;
-						_potentialWeaponWeight = [_potentialWeapon, ["Weapons", "PrimaryWeaponsCatchAll"]] call A3A_fnc_itemArrayWeight;
+						_potentialWeaponWeight = [_potentialWeapon, ["PrimaryWeaponsCatchAll", "Weapons"]] call A3A_fnc_itemArrayWeight;
 						_baseWeapon = [_potentialWeapon] call BIS_fnc_baseWeapon;
 						if (!(_baseWeapon in ["hgun_PDW2000_F","hgun_Pistol_01_F","hgun_ACPC2_F"]) && (_baseWeapon in _validPrimaryWeapons) && (_potentialWeaponWeight > _primaryWeaponWeight)) then {
 							_selectedContainer = _potentialContainer;
