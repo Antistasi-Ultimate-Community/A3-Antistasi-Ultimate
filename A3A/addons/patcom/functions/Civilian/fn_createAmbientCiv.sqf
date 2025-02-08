@@ -213,6 +213,7 @@ for "_i" from 1 to _numCiv do {
         _civilianGroups pushBack _groupX;
         _civilians pushBack _civUnit;
         [_civUnit] spawn A3A_fnc_civilianInitEH;
+        [_civUnit] call A3A_fnc_dialogCiv;
         [_groupX] call A3A_fnc_patrolLoop;
     };
 };
