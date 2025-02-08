@@ -27,7 +27,7 @@ while {true} do {
     if (
         A3A_lastPlayerDir != _oldDir ||
         {vectorMagnitude velocity player > 0.1} || // "speed player" return zero for sideways walking/crawling
-        {!A3A_isUAVAFK && {getConnectedUAV player != objNull}} // player controlling a UGV/UAV
+        {!A3A_isUAVAFK && {player in UAVControl (getConnectedUAV player) || {shownUAVFeed}}} // player controlling a UGV/UAV or viewing its feed
     ) then {
         A3A_lastActiveTime = time;
         if (player getVariable ["isAFK", false]) then {
