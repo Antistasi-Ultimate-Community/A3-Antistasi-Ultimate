@@ -60,7 +60,7 @@ private _aa = ["B_APC_Tracked_01_AA_F"];
 private _transportBoat = ["B_Boat_Transport_01_F"];
 private _gunBoat = ["B_Boat_Armed_01_minigun_F","a3a_Boat_Armed_01_hmg_blufor_F"];
 
-private _planesCAS = ["B_D_Plane_CAS_01_dynamicLoadout_lxWS","B_UAV_02_dynamicLoadout_F"];
+private _planesCAS = ["B_D_Plane_CAS_01_dynamicLoadout_lxWS"];
 private _planesLargeCAS = [];
 private _planesAA = ["B_D_Plane_CAS_01_dynamicLoadout_lxWS"];
 private _planesLargeAA = [];
