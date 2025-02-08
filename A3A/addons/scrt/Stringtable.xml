@@ -1656,10 +1656,9 @@
                 <French>Le pays a été détruit par l'OPFOR</French>
             </Key>
             <Key ID="STR_end_mission_defeat_desc">
-                <Original>Humanitarian catastrophe haS ruined the country, nobody wants to live there.</Original>
+                <Original>Humanitarian catastrophe has ruined the country, nobody wants to live there.</Original>
                 <Russian>Гуманитарная катастрофа разорила страну, никто не хочет там жить.</Russian>
                 <Chinesesimp>人道主义灾难毁了这个国家，没有人愿意住在那里。</Chinesesimp>
-                <Korean>인도주의적 재앙이 나라를 망쳤고, 아무도 그 곳에서 살려고 하지 않습니다.</Korean>
                 <French>La catastrophe humanitaire a ruiné le pays, personne ne veut y vivre.</French>
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_title">
@@ -5156,10 +5155,9 @@
                 <French>Activer les sanctions contre les envahisseurs</French>
             </Key>
             <Key ID="STR_params_deathPenalty">
-                <Original>Player penalty on death (How many much will be lost on death)</Original>
+                <Original>Player penalty on death (How much money will be lost on death)</Original>
                 <Russian>Штраф игроку при смерти (Сколько денег будет потеряно при смерти)</Russian>
                 <Chinesesimp>玩家死亡惩罚（死亡会损失多少金钱）</Chinesesimp>
-                <Korean>플레이어 사망 시 패널티 (사망 시 손실되는 금액은 얼마입니까?)</Korean>
                 <French>Pénalité du joueur en cas de décès (combien d'argent sera perdu en cas de décès)</French>
             </Key>
             <Key ID="STR_params_attackTiming">
@@ -13073,7 +13071,7 @@
                 <French>Il n'est pas possible d'ouvrir une brèche dans un véhicule contrôlé par les rebelles.</French>
             </Key>
             <Key ID="STR_A3A_Base_breachVeh_no_explosives">
-                <Original>You are not carrying aany explosives. You will need some to breach vehicles.</Original>
+                <Original>You are not carrying any explosives. You will need some to breach vehicles.</Original>
                 <Russian>У вас с собой нет взрывчатки, которая необходима, чтобы вскрывать технику.</Russian>
                 <Chinesesimp>你没有打开载具所需的炸药。</Chinesesimp>
                 <Korean>폭발물을 가지고 있지 않습니다. 차량을 브리칭하려면 몇 개가 필요합니다.</Korean>
