@@ -5147,26 +5147,12 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
-            <Key ID="STR_params_enableVehicleAutoLock">
-                <Original>Enable Enemy Vehicle Locks</Original>
-                <Russian>Включить замки на вражеских машинах</Russian>
-                <Chinesesimp>启用敌方车辆锁</Chinesesimp>
-                <Korean>적 차량 잠금 장치 활성화</Korean>
-                <French>Activer les verrous des véhicules ennemis</French>
-            </Key>
-            <Key ID="STR_params_vehicleLockpickTime">
-                <Original>Amount of time in seconds to lockpick a vehicle</Original>
-                <Russian>Время в секундах для взлома автомобиля</Russian>
-                <French>Temps en secondes pour crocheter un véhicule</French>
-                <Korean>차량의 자물쇠를 따는 데 걸리는 시간(초)</Korean>
-                <Chineseimp>撬锁车辆所需的时间（秒）</Chineseimp>
-            </Key>
-	        <Key ID="STR_params_recruitToPlayerSquad">
-                <Original>Allow players to recruit enemy AI to their squad</Original>
-                <Russian>Позволить игрокам нанимать вражеский ИИ в свой отряд</Russian>
-                <Chinesesimp>允许玩家招募敌方 AI 加入他们的小队</Chinesesimp>
-                <Korean>플레이어가 적 AI를 분대에 모집할 수 있도록 허용</Korean>
-                <French>Permettez aux joueurs de recruter l'IA ennemie dans leur équipe</French>
+            <Key ID="STR_params_recruitToPlayerSquad">
+                <Original>[Experimental] Enable enemy AI recruits to join player's squad</Original>
+                <Russian>[Экспериментально] Позволяет вражеским новобранцам ИИ присоединиться к отряду игрока</Russian>
+                <Chinesesimp>[实验]允许敌方 AI 新兵加入玩家的小队</Chinesesimp>
+                <Korean>[실험용] 적 AI 신병이 플레이어 분대에 합류할 수 있도록 합니다.</Korean>
+                <French>[Expérimental] Permettre aux recrues ennemies de l'IA de rejoindre l'équipe du joueur</French>
             </Key>
             <Key ID="STR_params_enablePunishments">
                 <Original>Enable invader punishments</Original>
@@ -5318,8 +5304,8 @@
                 <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
-                <Original>Enable spectrum device hacking capability (Contact DLC required)</Original>
-                <Russian>Разрешить возможность взлома с помощью spectrum device (необходимо дополнение contact)</Russian>
+                <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
+                <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
@@ -5599,11 +5585,11 @@
                 <French>Temps avant qu'un joueur soit considéré comme AFK (en minutes)</French>
             </Key>
             <Key ID="STR_params_afk_uav">
-                <Original>Should player be considered AFK while controlling a UAV?</Original>
-                <Russian>Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
-                <Chinesesimp>玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
-                <Korean>UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
-                <French>Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
+                <Original>[Experimental] Should player be considered AFK while controlling a UAV?</Original>
+                <Russian>[Экспериментально] Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
+                <Chinesesimp>[实验]玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
+                <Korean>[실험용] UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
+                <French>[Expérimental] Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
             </Key>
             <Key ID="STR_params_afk_disabled">
                 <Original>Disabled</Original>
