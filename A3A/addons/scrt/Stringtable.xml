@@ -1479,11 +1479,8 @@
                 <French>Mods incompatibles détectés</French>
             </Key>
             <Key ID="STR_end_mission_modUnautorized_desc">
-                <Original>An incompatible mod or incompatible set of supported mods (for example, usage of both RHS and CUP Weapons/Vehicles/Units) installed on the server or your PC has been detected. To avoid support problems the mission is finished. Please turn off unsupported (IFA, ASR AI, aLIVE, MCC or any AI behaviour) mods from your computer or server to be able to play Antistasi. See server .rpt log for more information.</Original>
-                <Russian>Обнаружен несовместимый мод или несовместимый набор поддерживаемых модов (например, одновременное использование как RHS, так и CUP Weapons/Vehicles/Weapons), установленных на сервере или на вашем ПК. Во избежание проблем с поддержкой миссия завершена. Пожалуйста, отключите неподдерживаемые моды (IFA, ASR AI, aLIVE, MCC или любое поведение AI) на вашем компьютере или сервере, чтобы иметь возможность играть в Antistasi. Дополнительную информацию см. в журнале .rpt сервера.</Russian>
-                <Chinesesimp>检测到服务器或您的电脑上安装了不兼容的MOD或不兼容的支持MOD集（例如，同时使用RHS和CUP武器/车辆/单位）。为了避免支持问题，任务已经完成。请关闭你的电脑或服务器上不支持的（IFA、ASR AI、aLIVE、MCC或任何AI行为）MOD，以便能够玩Antistasi。更多信息请参见服务器.rpt日志。</Chinesesimp>
-                <Korean>서버 또는 PC에 설치된 호환되지 않는 모드나 모드 세트가 감지되었습니다. 지원 문제를 피하기 위해 임무가 종료되었습니다. 안티스타시를 플레이하려면 컴퓨터 또는 서버에서 지원하지 않는 모드(IFA3, ASR AI, ALIVE, MCC 또는 인공지능 동작 개선 모드 등)를 해제하십시오. 자세한 내용은 서버의 .rpt 로그를 참조하십시오.</Korean>
-                <French>Un mod incompatible ou un ensemble incompatible de mods pris en charge (par exemple, l'utilisation d'armes/véhicules/unités RHS et CUP) installé sur le serveur ou sur votre PC a été détecté. Pour éviter tout problème de support, la mission est terminée. Veuillez désactiver les mods non pris en charge (IFA, ASR AI, aLIVE, MCC ou tout autre comportement de l'IA) de votre ordinateur ou de votre serveur pour éviter tout problème d'assistance. de votre ordinateur ou de votre serveur pour pouvoir jouer à Antistasi. Voir le journal .rpt du serveur pour plus d'informations.</French>
+                <Original>An incompatible mod or incompatible set of supported mods installed on the server or your PC has been detected. To avoid problems the mission has ended. Please turn off unsupported (ASR AI, aLIVE, MCC or any AI behaviour) mods from your computer (and server when applicable) to be able to play Antistasi. See server .rpt log for more information.</Original>
+                <Russian>Обнаружен несовместимый мод или несовместимый набор модов, установленных на сервере или вашем компьютере. Во избежание проблем миссия завершена. Пожалуйста, отключите неподдерживаемые (ASR AI, aLIVE, MCC или другой мод, который влияет на поведение ИИ) моды на вашем компьютере (и сервере, если применимо), чтобы иметь возможность играть в Antistasi. Дополнительную информацию смотрите в журнале сервера .rpt.</Russian>
             </Key>
             <Key ID="STR_end_mission_noPvP_title">
                 <Original>PvP Disabled</Original>
@@ -5271,8 +5268,8 @@
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
-                <Original>Enable spectrum device hacking capability (conctact dlc required)</Original>
-                <Russian>Разрешить возможность взлома с помощью spectrum device (необходимо дополнение contact)</Russian>
+                <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
+                <Russian>[Experimental] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
@@ -5592,6 +5589,12 @@
                 <Chinesesimp>无限制</Chinesesimp>
                 <Korean>무제한</Korean>
                 <French>Illimité</French>
+            </Key>
+            <Key ID="STR_params_builder_header">
+                <Original>BUILDER BOX OPTIONS</Original>
+            </Key>
+            <Key ID="STR_params_experimental_header">
+                <Original>EXPERIMENTAL OPTIONS</Original>
             </Key>
             <Key ID="STR_params_balance_header">
                 <Original>BALANCE OPTIONS</Original>
@@ -10676,6 +10679,9 @@
                 <Chinesesimp>&lt;t size='0.6'&gt;&lt;t color='#800000'&gt;%1&lt;/t&gt; 藏身处已被成功摧毁。 他们将停止在 %2 附近进行秘密行动。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;&lt;t color='#800000'&gt;%1&lt;/t&gt;의 은신처가 성공적으로 파괴되었습니다. 이제 그들은 %2 근처에서 비밀 작전을 수행할 수 없을 것입니다.&lt;t&gt;</Korean>
                 <French>&lt;t size='0.6'&gt;&lt;t color='#800000'&gt;%1&lt;/t&gt; la cachette a été détruite avec succès. Ils cesseront leurs opérations secrètes dans les environs de %2.&lt;/t&gt;</French>
+            </Key>
+            <Key ID="STR_rivals_destroyed_no_invaders">
+                <Original>&lt;t size='0.6'&gt;Our scouts have reported that the &lt;t color='#800000'&gt;%1&lt;/t&gt; hideout has been abandoned, seemingly due to a lack of &lt;t color='#800000'&gt;%2&lt;/t&gt; logistical support.&lt;/t&gt;</Original>
             </Key>
             <Key ID="STR_rivals_destroyed_finale">
                 <Original>&lt;t size='0.6'&gt;The story of &lt;t color='#800000'&gt;%1&lt;/t&gt; ends here. Leaderless, with huge manpower and equipment shortage they quickly become too disorganised to maintain any significant presence on %2. It's a great success for %3, congratulations!&lt;/t&gt;</Original>

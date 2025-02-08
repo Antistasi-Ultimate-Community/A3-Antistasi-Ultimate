@@ -71,7 +71,7 @@ private _constructionObjects = [
     A3A_unbuiltObjects pushBack _planks;
 
     // Should be the only actions on this object, so we can just JIP on the object
-    private _holdTime = 1.6 * sqrt _price;
+    private _holdTime = (A3A_builderBuildTime / 10) * sqrt _price;
     [_planks, _holdTime] remoteExecCall ["A3A_fnc_addBuildingActions", 0, _planks];
 
     // TODO: could trigger on unbuiltObjects change instead
