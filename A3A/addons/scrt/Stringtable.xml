@@ -5303,6 +5303,13 @@
                 <Korean>[실험용] 적군이 미래적인 지원을 사용하도록 허용</Korean>
                 <French>[Expérimental] Permettre à l'ennemi d'utiliser des supports futuristes</French>
             </Key>
+            <Key ID="STR_params_loadoutsToGenerate">
+                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+            </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>[Experimental] Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>[Экспериментально] Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
