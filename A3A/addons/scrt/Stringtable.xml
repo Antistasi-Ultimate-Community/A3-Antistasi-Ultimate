@@ -1659,6 +1659,7 @@
                 <Original>Humanitarian catastrophe has ruined the country, nobody wants to live there.</Original>
                 <Russian>Гуманитарная катастрофа разорила страну, никто не хочет там жить.</Russian>
                 <Chinesesimp>人道主义灾难毁了这个国家，没有人愿意住在那里。</Chinesesimp>
+                <Korean>인도주의적 재앙이 나라를 망쳤고, 아무도 그 곳에서 살려고 하지 않습니다.</Korean>
                 <French>La catastrophe humanitaire a ruiné le pays, personne ne veut y vivre.</French>
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_title">
@@ -5158,6 +5159,7 @@
                 <Original>Player penalty on death (How much money will be lost on death)</Original>
                 <Russian>Штраф игроку при смерти (Сколько денег будет потеряно при смерти)</Russian>
                 <Chinesesimp>玩家死亡惩罚（死亡会损失多少金钱）</Chinesesimp>
+                <Korean>플레이어 사망 시 패널티 (사망 시 손실되는 금액은 얼마입니까?)</Korean>
                 <French>Pénalité du joueur en cas de décès (combien d'argent sera perdu en cas de décès)</French>
             </Key>
             <Key ID="STR_params_attackTiming">
