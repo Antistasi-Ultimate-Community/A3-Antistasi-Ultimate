@@ -89,6 +89,7 @@ if (_joinPlyGroup) then {
 	_unit setSpeaker (_unit getVariable "A3U_PoW_speaker");
 	[_unit, true] call A3A_fnc_FIAinit;
 	_unit setVariable ["unitType", "loadouts_reb_militia_Rifleman", true]; // * allows the AI to be dismissed or garrisoned
+	_unit setVariable ["stopPostmortem", true]; // * should stop garbage cleaner from sending the unit to valhalla
 } else {
 	[_unit, _fleeSide] remoteExec ["A3A_fnc_fleeToSide", _unit];
 
