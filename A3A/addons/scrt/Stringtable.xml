@@ -10502,17 +10502,17 @@
             </Key>
             <Key ID="STR_recruit_to_faction_action">
                 <Original>Recruit to faction</Original>
-                <Russian>Рекрутировать</Russian>
-                <Chinesesimp>招募</Chinesesimp>
-                <Korean>모집하기</Korean>
-                <French>Recruter</French>
+                <Russian>Набор во фракцию</Russian>
+                <Chinesesimp>招募到派系</Chinesesimp>
+                <Korean>진영에 모집</Korean>
+                <French>Recruter pour la faction</French>
             </Key>
             <Key ID="STR_recruit_to_squad_action">
                 <Original>Recruit to squad</Original>
-                <Russian>Рекрутировать</Russian>
-                <Chinesesimp>招募</Chinesesimp>
-                <Korean>모집하기</Korean>
-                <French>Recruter</French>
+                <Russian>Набор в отряд</Russian>
+                <Chinesesimp>招募到小队</Chinesesimp>
+                <Korean>분대에 모집</Korean>
+                <French>Recruter pour l'équipe</French>
             </Key>
             <Key ID="STR_interrogate_action">
                 <Original>Interrogate</Original>
