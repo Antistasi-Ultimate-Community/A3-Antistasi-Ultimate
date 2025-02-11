@@ -644,7 +644,7 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
-    class loadoutsToGenerate
+    class loadoutsToGenerate: ExperimentalParams
     {
         title = $STR_params_loadoutsToGenerate;
         values[] = {5, 10, 15, 20};
