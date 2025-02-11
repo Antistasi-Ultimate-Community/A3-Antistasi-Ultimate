@@ -5127,20 +5127,6 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
-            <Key ID="STR_params_enableVehicleAutoLock">
-                <Original>Enable Enemy Vehicle Locks</Original>
-                <Russian>Включить замки на вражеских машинах</Russian>
-                <Chinesesimp>启用敌方车辆锁</Chinesesimp>
-                <Korean>적 차량 잠금 장치 활성화</Korean>
-                <French>Activer les verrous des véhicules ennemis</French>
-            </Key>
-            <Key ID="STR_params_recruitToPlayerSquad">
-                <Original>Enable enemy AI recruits to join player's squad</Original>
-                <Russian>Позволяет вражеским новобранцам ИИ присоединиться к отряду игрока</Russian>
-                <Chinesesimp>允许敌方 AI 新兵加入玩家的小队</Chinesesimp>
-                <Korean>적 AI 신병이 플레이어 분대에 합류할 수 있도록 합니다.</Korean>
-                <French>Permettre aux recrues ennemies de l'IA de rejoindre l'équipe du joueur</French>
-            </Key>
             <Key ID="STR_params_enablePunishments">
                 <Original>Enable invader punishments</Original>
                 <Russian>Включить наказания захватчиков</Russian>
@@ -10514,8 +10500,15 @@
                 <Korean>적 위치 표시</Korean>
                 <French>Révéler les positions de l'ennemi</French>
             </Key>
-            <Key ID="STR_recruit_action">
-                <Original>Recruit</Original>
+            <Key ID="STR_recruit_to_faction_action">
+                <Original>Recruit to faction</Original>
+                <Russian>Рекрутировать</Russian>
+                <Chinesesimp>招募</Chinesesimp>
+                <Korean>모집하기</Korean>
+                <French>Recruter</French>
+            </Key>
+            <Key ID="STR_recruit_to_squad_action">
+                <Original>Recruit to squad</Original>
                 <Russian>Рекрутировать</Russian>
                 <Chinesesimp>招募</Chinesesimp>
                 <Korean>모집하기</Korean>

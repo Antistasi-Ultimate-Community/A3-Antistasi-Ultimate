@@ -1,6 +1,7 @@
 private _unit = _this select 0;
 private _playerX = _this select 1;
-private _recruiting = _this select 3;
+private _recruiting = _this select 3 select 0;
+private _recruitToSquad = _this select 3 select 1;
 
 [_unit,"remove"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];
 
@@ -39,7 +40,7 @@ if (_recruiting) then {
 
 	if (random 100 < _chance) then
 	{
-		if ((count units _playerX < 10) && (recruitToPlayerSquad isEqualTo 1)) then {
+		if (_recruitToSquad && {count units _playerX < 10}) then {
 			_joinPlyGroup = true;
 		};
 		_modAggro = [1, 30];
@@ -84,9 +85,10 @@ if (_joinPlyGroup) then {
 	_unit enableAI "TARGET";
 	_unit enableAI "ANIM";
 	_unit setUnitPos "AUTO";
-	_unit setVariable ["unitType", "loadouts_reb_militia_Unarmed", true];
+	_unit setVariable ["unitType", "loadouts_reb_militia_Unarmed", true]; // * ensures that FIAinit doesn't try to equip them
 	_unit setSpeaker (_unit getVariable "A3U_PoW_speaker");
 	[_unit, true] call A3A_fnc_FIAinit;
+	_unit setVariable ["unitType", "loadouts_reb_militia_Rifleman", true]; // * allows the AI to be dismissed or garrisoned
 } else {
 	[_unit, _fleeSide] remoteExec ["A3A_fnc_fleeToSide", _unit];
 
