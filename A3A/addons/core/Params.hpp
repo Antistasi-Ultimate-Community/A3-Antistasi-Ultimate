@@ -315,7 +315,7 @@ class Params
         texts[] = {"100", "300", "500", "1000", "1500", "2000"};
         default = 500;
     };
-    class useDownedNotification
+    class useDownedNotification: UltimateParams
     {
         title = $STR_A3AU_use_downed_notification;
         values[] = {0,1};
