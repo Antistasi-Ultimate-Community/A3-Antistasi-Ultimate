@@ -50,8 +50,8 @@ private _initData = [
     ["SAM",           "TARGET", 1.0, 1.0,   0, 100, "u", ""],                            // balanced against ASF
     ["CRUISEMISSILE", "AREA", 0.3, 0.1, 150,   100, "u", ""],
     ["ORBITALSTRIKE",   "AREA", 0.2, 0.0, 300,   0, "f", ""],
-    ["UAV",           "TARGET", 0.4, 0.2,   0, 80,  "", "uavsAttack"],
-    ["UAVAttack",           "TARGET", 0.3, 0.2,   0, 0,  "u", "uavsAttack"]
+    ["UAV",           "TARGET", 0.4, 0.2,   0, 0,  "", "uavsAttack"],
+    ["UAVAttack",           "TARGET", 0.3, 0.2,   0, 80,  "u", "uavsAttack"]
 ];
 
 // Generate support type hashmap for a faction, suppType -> [baseType, weight, effRadius, strikepower]
