@@ -649,7 +649,7 @@ class Params
         title = $STR_params_loadoutsToGenerate;
         values[] = {5, 10, 15, 20};
         texts[] = {"5", "10", "15", "20"};
-        default = 10;
+        default = 5;
     };
 
     class SpacerBalance
