@@ -549,7 +549,7 @@ private _medicTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    ["MEDIbackpacks"] call _fnc_setBackpack;
+    ["backpacks"] call _fnc_setBackpack;
     
     [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
