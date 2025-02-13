@@ -153,22 +153,22 @@ if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
         "Draw Anomaly Markers", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
         "Antistasi Ultimate - Diwako Anomaly Settings", // Pretty name of the category where the setting can be found. Can be stringtable entry.
         false,
-        true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
-        {  
-            params ["_value"];
-            missionNamespace setVariable ["A3U_setting_anomalyDraw",_value,true];
-        }
+        true
     ] call CBA_fnc_addSetting;
     [
         "A3U_setting_anomalyAmount", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
         "SLIDER", // setting type
         "Anomaly Population (Lower = More)", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
         "Antistasi Ultimate - Diwako Anomaly Settings", // Pretty name of the category where the setting can be found. Can be stringtable entry.
-        [0, 1000, 200, 0],
-        true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
-        {
-            params ["_value"];
-            missionNamespace setVariable ["A3U_setting_anomalyAmount",round(_value),true];
-        }
+        [100, 1000, 200, 0],
+        true
+    ] call CBA_fnc_addSetting;
+    [
+        "A3U_setting_anomalyCap", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+        "SLIDER", // setting type
+        "Anomaly Cap (Higher = Dangerous)", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+        "Antistasi Ultimate - Diwako Anomaly Settings", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+        [50, 1000, 200, 0],
+        true
     ] call CBA_fnc_addSetting;
 };
