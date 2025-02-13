@@ -257,7 +257,7 @@ _eliteLoadoutData set ["machineGuns", [
     ["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
     ["US85_M249", "", "", "US85_sc2000M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
     ["US85_M60E3LB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
-    ["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
+    ["US85_M60E3SB", "", "", "US85_ANPVS4_M60", ["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""]
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
     ["US85_M14", "", "", "US85_scM21", ["US85_20Rnd_762M61","US85_20Rnd_762M61","US85_20Rnd_762M61"], [], "US85_M14bpd"]
