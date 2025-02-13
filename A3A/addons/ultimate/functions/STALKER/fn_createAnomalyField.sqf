@@ -16,7 +16,9 @@
 
 // I had to rewrite the diwako spawning logic from scratch because the original doesn't take into account water, out of bounds, etc.
 
-params[["_anomalyAmount", 40]];
+params [["_anomalyAmount", 40]];
+
+_anomalyAmount = _anomalyAmount min (round A3U_setting_anomalyCap);
 
 private _anomalies = [];
 
@@ -48,8 +50,6 @@ private _fnc_createMarker = {
 [format ["Creating anomaly field, anomaly amount: %1", _anomalyAmount], _fnc_scriptName] call A3U_fnc_log;
 
 for "_i" from 1 to _anomalyAmount do {
-    if ((count _anomalies) >= round(A3U_setting_anomalyCap)) then {break};
-
     private _pos = call _fnc_grabPos;
     private _roll = selectRandomWeighted [
         1,0.5,
