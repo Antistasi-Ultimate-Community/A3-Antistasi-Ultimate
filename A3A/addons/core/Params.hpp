@@ -640,8 +640,8 @@ class Params
     class recruitToPlayerSquad: ExperimentalParams
     {
         title = $STR_params_recruitToPlayerSquad;
-        values[] = {1,0};
-        texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
         default = 0;
     };
 
