@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+
 private _unit = _this select 0;
 private _playerX = _this select 1;
 private _recruiting = _this select 3 select 0;
@@ -72,24 +74,24 @@ else {
 sleep 2;
 _unit globalChat _response;
 if (_joinPlyGroup) then {
-	_unit setVariable ["surrendered", false, true];
+	// * preserve original unit identity for new recruit
+	private _nameUnit = (name _unit) splitString " ";
+	private _identityUnit = createHashMapFromArray [
+		["face", face _unit],
+		["speaker", _unit getVariable "A3U_PoW_speaker"],
+		["firstName", _nameUnit select 0],
+		["lastName", _nameUnit select 1]
+	];
+	private _uniformUnit = uniform _unit;
+	private _posUnit = position _unit;
+	deleteVehicle _unit;
 
-	_unit removeEventHandler ["HandleDamage", _unit getVariable "A3U_PoW_EH_HandleDamage"];
-
-	[_unit] joinSilent (group _playerX);
-	_unit setCaptive false;
-	_unit stop false;
-	_unit switchMove "";
-	_unit enableAI "MOVE";
-	_unit enableAI "AUTOTARGET";
-	_unit enableAI "TARGET";
-	_unit enableAI "ANIM";
-	_unit setUnitPos "AUTO";
-	_unit setVariable ["unitType", "loadouts_reb_militia_Unarmed", true]; // * ensures that FIAinit doesn't try to equip them
-	_unit setSpeaker (_unit getVariable "A3U_PoW_speaker");
-	[_unit, true] call A3A_fnc_FIAinit;
-	_unit setVariable ["unitType", "loadouts_reb_militia_Rifleman", true]; // * allows the AI to be dismissed or garrisoned
-	_unit setVariable ["stopPostmortem", true]; // * should stop garbage cleaner from sending the unit to valhalla
+	private _recruit = [group player, "loadouts_reb_militia_Unarmed", _posUnit, [], 0, "NONE", _identityUnit] call A3A_fnc_createUnit;
+	[_recruit, true] spawn A3A_fnc_FIAinit;
+	_recruit setUnitLoadout [ [], [], [], [_uniformUnit, []], [], [], "", "", [], ["","","","","",""] ];
+	_recruit disableAI "AUTOCOMBAT"; // ? not sure what this does. But it's used after creating a unit in fn_reinfPlayer.
+	sleep 1;
+	_recruit setVariable ["unitType", "loadouts_reb_militia_Rifleman", true]; // * allows the AI to be dismissed or garrisoned. Needs to be set AFTER FIAinit so we don't equip the rebel.
 } else {
 	[_unit, _fleeSide] remoteExec ["A3A_fnc_fleeToSide", _unit];
 
