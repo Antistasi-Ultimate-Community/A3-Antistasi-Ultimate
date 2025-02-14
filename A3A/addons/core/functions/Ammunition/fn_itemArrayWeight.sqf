@@ -26,8 +26,9 @@ private _config = _class call A3A_fnc_itemConfig;
 // Total "score" (array weight) of the item based on calculated properties
 private _arrayWeight = 1; // in case this function is called with an itemType without custom weighting setup or without an item type, just use default weight (but this shouldn't be called unless you're attempting to change this behavior)
 
-if ("Weapons" in _categories) then {
+if (_class in allWeapons) {
 	private _magcfg = getArray (_config >> "Magazines") # 0 call A3A_fnc_itemConfig;
+	if (isNil "_magcfg") then { _magcfg = (compatibleMagazines _class) # 0 call A3A_fnc_itemConfig};
 	private _ammocfg = getText (_magcfg >> "ammo") call A3A_fnc_itemConfig;
 	private _firemode = getArray (_config >> "modes") # 0; // primary firemode ("SINGLE", "FULLAUTO", etc)
 	private _modecfg = [_config >> _firemode, _config] select (_firemode == "this");
