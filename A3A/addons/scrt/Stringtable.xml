@@ -5127,6 +5127,13 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
+	    <Key ID="STR_params_recruitToPlayerSquad">
+                <Original>Allow players to recruit enemy AI to their squad</Original>
+                <Russian>Позволить игрокам нанимать вражеский ИИ в свой отряд</Russian>
+                <Chinesesimp>允许玩家招募敌方 AI 加入他们的小队</Chinesesimp>
+                <Korean>플레이어가 적 AI를 분대에 모집할 수 있도록 허용</Korean>
+                <French>Permettez aux joueurs de recruter l'IA ennemie dans leur équipe</French>
+            </Key>
             <Key ID="STR_params_enablePunishments">
                 <Original>Enable invader punishments</Original>
                 <Russian>Включить наказания захватчиков</Russian>
