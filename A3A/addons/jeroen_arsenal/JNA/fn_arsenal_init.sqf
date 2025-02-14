@@ -136,6 +136,7 @@ if(hasInterface)then{
                 case "I_G_Soldier_GL_F": { "Grenadier" };
                 case "I_G_Soldier_AR_F": { "MachineGunner" };
                 case "I_G_engineer_F":  { "Engineer" };
+                default { "Rifleman" };
             };
 
             [_player, 0, _prefix + _loadout] call A3A_fnc_equipRebel;
