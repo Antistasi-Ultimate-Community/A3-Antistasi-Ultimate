@@ -123,6 +123,31 @@ if(hasInterface)then{
         "alive _target && {_target distance _this < 5 && {vehicle player == player}}"
     ];
 
+    //add quick equip button
+    _object addAction [
+        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\vest_ca.paa"] + format["<t size='1'> %1</t>", "Quick Equip Loadout"]),
+        { 
+            private _player = _this select 1;
+            private _prefix = "loadouts_reb_militia_";
+            private _loadout =  switch (typeOf _player) do {
+                case "I_G_medic_F":  { "Medic" }; 
+                case "I_G_Soldier_TL_F": { "SquadLeader" };
+                case "I_G_Soldier_F": { "Rifleman" };
+                case "I_G_Soldier_GL_F": { "Grenadier" };
+                case "I_G_Soldier_AR_F": { "MachineGunner" };
+                case "I_G_engineer_F":  { "Engineer" };
+            };
+
+            [_player, 0, _prefix + _loadout] call A3A_fnc_equipRebel;
+        },
+        [],
+        6,
+        true,
+        false,
+        "",
+        "alive _target && {_target distance _this < 5} && {vehicle player == player}"
+    ];
+
     //add open event
     [missionNamespace, "arsenalOpened", {
         disableSerialization;
