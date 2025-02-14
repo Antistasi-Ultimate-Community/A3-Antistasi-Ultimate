@@ -78,7 +78,7 @@ class Templates
         file = "WS_Riv_ION";
         forceDLC[] = {"ws"};
         description = $STR_A3AP_setupFactionsTab_ion;
-    }
+    };
 
     // ************************************** Vanilla *******************************************************
 
@@ -107,6 +107,7 @@ class Templates
         name = "A3 CSAT&AAF";
         flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\CSAT_AAF.paa);
         file = "Vanilla_AI_CSAT&AAF";
+        priority = 5;
         climate[] = {"arid"};
         description = $STR_A3AP_setupFactionsTab_csatandaaf;
     };
@@ -147,6 +148,7 @@ class Templates
         name = "A3 NATO&AAF";
         flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\NATO_AAF.paa);
         file = "Vanilla_AI_NATO&AAF";
+        priority = 5;
         climate[] = {"arid"};
         description = $STR_A3AP_setupFactionsTab_natoandaaf;
     };
@@ -157,6 +159,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\NATO_LDF.paa);
         name = "A3 NATO&LDF Arid";
         file = "Vanilla_AI_NATO&LDF_Arid";
+        priority = 5;
         climate[] = {"arid"};
         forceDLC[] = {"enoch"};
         description = $STR_A3AP_setupFactionsTab_natoandldf;
@@ -168,6 +171,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\NATO_LDF.paa);
         name = "A3 NATO&LDF Temparate";
         file = "Vanilla_AI_NATO&LDF_Temperate";
+        priority = 5;
         maps[] = {"enoch","vt7"};
         climate[] = {"temperate"};
         forceDLC[] = {"enoch"};
