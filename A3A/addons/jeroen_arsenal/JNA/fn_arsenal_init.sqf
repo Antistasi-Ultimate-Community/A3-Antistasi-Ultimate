@@ -125,7 +125,7 @@ if(hasInterface)then{
 
     //add quick equip button
     _object addAction [
-        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\vest_ca.paa"] + format["<t size='1'> %1</t>", "Quick Equip Loadout"]),
+        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\vest_ca.paa"] + format["<t size='1'> %1</t>", (localize "STR_JNA_SCT_QUICK_EQUIP")]),
         { 
             private _player = _this select 1;
             private _prefix = "loadouts_reb_militia_";
