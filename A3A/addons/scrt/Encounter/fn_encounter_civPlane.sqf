@@ -14,6 +14,15 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
+private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
+private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
+
+if (_lowCiv || _civNonHuman) exitWith {
+    Error("Non civilian or low civilian faction, aborting.");
+    isEventInProgress = false;
+    publicVariableServer "isEventInProgress";    
+};
+
 private _civPlane = (A3A_faction_civ getOrDefault ["vehiclesCivPlanes", []]);
 if (_civPlane isEqualTo []) exitWith {
     Error("No civ plane found, aborting.");

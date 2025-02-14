@@ -477,6 +477,15 @@ class A3A_SetupDialog : A3A_TabbedDialog
 
             class Controls
             {
+                class ParamsTypesComboBox: A3A_ComboBox {
+                    idc = A3A_IDC_SETUP_PARAMSTYPE;
+                    colorBackground[] = {0,0,0,1};
+                    onLBSelChanged = "['update'] call A3A_fnc_setupParamsTab";
+                    x = 4 * GRID_W;
+                    y = 4 * GRID_H;
+                    w = 152 * GRID_W;
+                    h = 4 * GRID_H;
+                };
                 class ParamsBackground: A3A_Background {
                     idc = -1;
                     x = 4 * GRID_W;
@@ -484,13 +493,12 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     w = 152 * GRID_W;
                     h = 92 * GRID_H;
                 };
-                class ParamsTable : A3A_ControlsGroup       // hopefully has scrollbars
-                {
+                class ParamsTable: A3A_ControlsGroup {
                     idc = A3A_IDC_SETUP_PARAMSTABLE;
                     x = 4 * GRID_W;
-                    y = 4 * GRID_H;
+                    y = 8 * GRID_H;
                     w = 152 * GRID_W;
-                    h = 92 * GRID_H;
+                    h = 88 * GRID_H;
                 };
             };
         };

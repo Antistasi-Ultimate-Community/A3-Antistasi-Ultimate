@@ -73,11 +73,16 @@ private _upKeyEH = _emptyDisplay displayAddEventHandler ["KeyUp", {
 
     // Place object
     if (_key isEqualTo DIK_SPACE) then {
+
+        if (count (A3A_buildingsToSave) >= A3A_builderLimit) exitWith {
+            ["Build Placer", format["There are too many builds. %1/%2", (count A3A_buildingsToSave), A3A_builderLimit]] call A3A_fnc_customHint;
+        };
+
         private _tempObject = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
         if (isObjectHidden _tempObject) exitWith {};
-        if ((A3A_building_EHDB # BUILD_OBJECT_SELECTED_STRING) isEqualTo "Land_Can_V2_F") exitwith {};	// temp objects not built.
+        if ((A3A_building_EHDB # BUILD_OBJECT_SELECTED_STRING) isEqualTo "Land_Can_V2_F") exitWith {};	// temp objects not built.
 
-        if (_tempObject distance (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB # BUILD_RADIUS)) exitwith {};
+        if (_tempObject distance (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB # BUILD_RADIUS)) exitWith {};
         //if (isOnRoad getPosATL _tempObject) exitwith {};	// can't build on roads
         
         private _price = (A3A_building_EHDB # OBJECT_PRICE);
