@@ -5,7 +5,7 @@
 ["name", "VM"] call _fnc_saveToTemplate;
 
 ["flag", "vn_flag_lao_dmg"] call _fnc_saveToTemplate;
-["flagTexture", "\vn\objects_f_vietnam\flags\data\vn_flag_01_lao_dmg_ca.paa"] call _fnc_saveToTemplate;
+["flagTexture", "\A3\Data_F\Flags\flag_blue_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "vn_flag_lao"] call _fnc_saveToTemplate;
 
 //////////////////////////
