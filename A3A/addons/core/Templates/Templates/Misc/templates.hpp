@@ -14,6 +14,8 @@
     class Vanilla_Civ_Zombie : Vanilla_Civ_Empty
     {
         requiredAddons[] = {"WBK_ZombieCreatures"};
+        logo = "a3\data_f\Images\Mod_Base_logo_ca.paa";
+        flagTexture = "a3\data_f\flags\flag_white_dmg_co.paa";
         name = "Zombies";
         file = "Vanilla_Civ_Zombie";
         description = "All civilian life was wiped out, being replaced by zombies. (This is an experimental template, disabling traffic and replacing civs with zombies)";
