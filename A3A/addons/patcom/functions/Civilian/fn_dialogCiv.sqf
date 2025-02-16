@@ -6,18 +6,26 @@
         Adds dialog action to civs and selects a rescue mission
     
     Params:
-        _civUnit <unit> <Default: nil>
+        _civUnit <Default: ObjNull>
     
     Usage:
         [_civUnit] call A3A_fnc_dialogCiv;
     
     Return:
-        _return <TYPE>
+        N/A
 */
 
 
 #include "..\..\script_component.hpp"
-params ["_civUnit", ObjNull];
+FIX_LINE_NUMBERS()
+
+params [["_civUnit", ObjNull]];
+
+private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
+private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
+
+if (_lowCiv || _civNonHuman) exitWith {false};
+
 [
     _civUnit,
     localize "STR_antistasi_actions_talk_with_civ",
@@ -29,14 +37,13 @@ params ["_civUnit", ObjNull];
             localize "STR_antistasi_actions_talk_with_civ_question2",
             localize "STR_antistasi_actions_talk_with_civ_question3"
         ]);
-        private _debugStatus = format ["[Civ Dialog] | Civ Hold Action | caller: %1 Civ Unit: %2", _caller, _this select 0];
     },
     {},
     {
         [_this select 0] call A3A_fnc_dialogCivFinished;
     },
     {            
-        _caller globalChat (selectRandom [
+        (_this select 0) globalChat (selectRandom [
             localize "STR_antistasi_actions_talk_with_civ_interruption1",
             localize "STR_antistasi_actions_talk_with_civ_interruption2"
         ]);

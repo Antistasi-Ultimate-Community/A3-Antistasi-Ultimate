@@ -6,19 +6,21 @@
         Adds idle sounds and animation to selected unit
     
     Params:
-        _musicSource <_unit> <Default: petros>
+        _unit <Default: ObjNull>
     
     Usage:
-        [_musicSource] call A3A_fnc_unitAmbient;
+        [_unit] call A3A_fnc_unitAmbient;
     
     Return:
-        _return <_unit>
+        N/A
 */
 
-params [["_musicSource", petros]];
+params [["_unit", ObjNull]];
 
-[_musicSource] spawn {
-    params ["_musicSource"];
+if (_unit isEqualTo ObjNull) exitWith {ObjNull};
+
+[_unit] spawn {
+    params ["_unit"];
     // name of the sound file in CfgSounds.hpp
     private _ambientSounds = 
     [
@@ -38,25 +40,22 @@ params [["_musicSource", petros]];
 	// the action and sound selected unit makes in the following order 
 	// | Sound name as written in CfgSounds.hpp | Animation played when sound is selected | Duration of animation | 
  
-	while { (alive _musicSource) } do { 
+	while { (alive _unit) } do { 
 		private _sound = selectRandom (_ambientSounds); 
  
 		private _animation = _sound # 1; 
  
-		[_musicSource, _sound # 0] remoteExec ["say3D", [1, _musicSource], true]; 
+		[_unit, _sound # 0] remoteExec ["say3D", 0, true]; 
  
-		_musicSource playMoveNow _animation; 
+		_unit playMoveNow _animation; 
  
 		sleep (_sound # 2); 
  
-		_musicSource switchMove "";
+		_unit switchMove "";
  
 		sleep (random 1800); 
- 
-		if not (alive _musicSource) exitWith {}; 
-		 
 		sleep (random 10); 
+
+        if !(alive _unit) exitWith {};
 	}; 
-}; 
- 
-_musicSource
+};
