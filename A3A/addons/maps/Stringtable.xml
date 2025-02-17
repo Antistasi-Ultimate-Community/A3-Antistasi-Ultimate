@@ -81,6 +81,7 @@
                 <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Lythium.</German>
                 <Korean>우리가 원했든 원하지 않았든, 우린 Lythium의 점령군들과 침략자와의 전쟁을 시작했습니다.</Korean>
                 <French>Que nous le voulions ou non, nous sommes entrés en guerre contre les occupants et les envahisseurs de Lythium.</French>
+                <Chinesesimp>无论我们是否愿意，我们都与 Lythium 的占领者和侵略者展开了战争。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_Greensea_mapname_short_text">
                 <Original>Antistasi Ultimate - Green Sea</Original>
@@ -96,7 +97,7 @@
                 <French>Antistasi Ultimate - Mer verte</French>
                 <Korean>안티스타시 얼티밋 - Green Sea</Korean>
             </Key>
-			<Key ID="STR_antistasi_mission_info_fapovo_mapname_short_text">
+            <Key ID="STR_antistasi_mission_info_fapovo_mapname_short_text">
                 <Original>Antistasi Ultimate - Fapovo</Original>
                 <Russian>Antistasi Ultimate - Fapovo</Russian>
                 <Chinesesimp>Antistasi Ultimate - Fapovo</Chinesesimp>
@@ -116,6 +117,7 @@
                 <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Green Sea.</German>
                 <French>Que nous l'ayons voulu ou non, nous sommes entrés dans une guerre avec les occupants et les envahisseurs de la mer Verte.</French>
                 <Korean>우리가 원했든 원하지 않았든, 우린 Green Sea의 점령군들과 침략자와의 전쟁을 시작했습니다.</Korean>
+                <Chinesesimp>无论我们是否愿意，我们都与绿海的占领者和侵略者陷入了战争。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_Stratis_mapname_short_text">
                 <Original>Antistasi Stratis</Original>
@@ -473,28 +475,33 @@
                 <Russian>Antistasi Ultimate - Код Красный</Russian>
                 <French>Antistasi Ultimate - Code Rouge</French>
                 <Korean>안티스타시 얼티밋 - 코드 레드</Korean>
+                <Chinesesimp>Antistasi Ultimate - Code Red</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_weferlingen_mapname_short_text">
                 <Original>Antistasi Ultimate - Code Red</Original>
                 <Russian>Antistasi Ultimate - Код Красный</Russian>
                 <French>Antistasi Ultimate - Code Rouge</French>
                 <Korean>안티스타시 얼티밋 - 코드 레드</Korean>
+                <Chinesesimp>Antistasi Ultimate - Code Red</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_weferlingen_blurb_text">
                 <Original>Border crossing never has been so easy.</Original>
                 <Russian>Пересечение границы еще никогда не было таким простым.</Russian>
                 <Korean>국경을 넘는 것이 그렇게 쉬운 적은 없었습니다.</Korean>
                 <French>Le passage des frontières n'a jamais été aussi facile.</French>
+                <Chinesesimp>过境从未如此简单。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_SPE_Normandy_mapname_short_text">
                 <Original>Antistasi Normandy</Original>
                 <Korean>안티스타시 노르망디</Korean>
                 <French>Antistasi Normandie</French>
+                <Chinesesimp>Antistasi Normandy</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_SPE_Normandy_mapname_text">
                 <Original>Antistasi - The French Resistance</Original>
                 <Korean>안티스타시 - 프랑스 레지스탕스</Korean>
                 <French>Antistasi - La Résistance française</French>
+                <Chinesesimp>Antistasi - The French Resistance</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_SPE_Normandy_description_text">
                 <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -513,156 +520,188 @@
                 <Russian>Vive la résistance!</Russian>
                 <Korean>레지스탕스 만세!</Korean>
                 <French>Vive la résistance !</French>
+                <Chinesesimp>Vive la résistance!</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_SPE_Mortain_mapname_short_text">
                 <Original>Antistasi Mortain</Original>
+                <Chinesesimp>Antistasi Mortain</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_sumava_mapname_text">
                 <Original>Antistasi Ultimate - Šumava</Original>
                 <Russian>Antistasi Ultimate - Čумава</Russian>
                 <Korean>안티스타시 얼티밋 - Šumava</Korean>
                 <French>Antistasi Ultimate - Šumava</French>
+                <Chinesesimp>Antistasi Ultimate - Šumava</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_sumava_blurb_text">
                 <Original>The entire country is counting on us and they don't even know it.</Original>
                 <Russian>На нас рассчитывает вся страна и они даже не знают об этом.</Russian>
                 <Korean>온 나라가 우리를 믿고 있지만 그들은 그걸 모르고 있습니다.</Korean>
                 <French>Le pays tout entier compte sur nous et ne le sait même pas.</French>
+                <Chinesesimp>整个国家都指望着我们，但他们却不知道这一点。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_sumava_mapname_short_text">
                 <Original>Antistasi Ultimate - Šumava</Original>
                 <Russian>Antistasi Ultimate - Čумава</Russian>
                 <Korean>안티스타시 얼티밋 - Šumava</Korean>
                 <French>Antistasi Ultimate - Šumava</French>
+                <Chinesesimp>Antistasi Ultimate - Šumava</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_mapname_short_text">
                 <Original>Antistasi Ultimate - Gulfcoast Islands</Original>
+                <Chinesesimp>Antistasi Ultimate - Gulfcoast Islands</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_mapname_text">
                 <Original>Antistasi Ultimate - Gulfcoast Islands</Original>
+                <Chinesesimp>Antistasi Ultimate - Gulfcoast Islands</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_blurb_text">
                 <Original>Paying a visit to the corrupt political leaders' vacation homes.</Original>
+                <Chinesesimp>参观腐败政治领袖的度假屋。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_mapname_short_text">
                 <Original>Antistasi Ultimate - Stubbhult</Original>
+                <Chinesesimp>Antistasi Ultimate - Stubbhult</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_mapname_text">
                 <Original>Antistasi Ultimate - Stubbhult</Original>
+                <Chinesesimp>Antistasi Ultimate - Stubbhult</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_blurb_text">
                 <Original>Rural warfare, few men, many bunkers</Original>
+                <Chinesesimp>农村战争，士兵稀少，掩体众多</Chinesesimp>
             </Key>
-			<Key ID="STR_antistasi_mission_info_stubbhult_description_text">
-				<Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
-			</Key>
-			<Key ID="STR_antistasi_mission_info_Pulau_blurb_text">
-				<Original>Revolution on paradise island!</Original>
-			</Key>
-			<Key ID="STR_antistasi_mission_info_Pulau_description_text">
-				<Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
-			</Key>
-			<Key ID="STR_antistasi_mission_info_Pulau_mapname_short_text">
-				<Original>Antistasi Pulau</Original>
-			</Key>
-			<Key ID="STR_antistasi_mission_info_Pulau_mapname_text">
-				<Original>Antistasi - Liberation of Pulau</Original>
-			</Key>
+            <Key ID="STR_antistasi_mission_info_stubbhult_description_text">
+                <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
+                <Chinesesimp>成为抵抗军领袖。与在技术、数量、资产和车辆方面占优势的敌人作战。在完全动态的世界中运用游击战术，在大约 18 个支线任务中随时随地进行任何任务。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Pulau_blurb_text">
+                <Original>Revolution on paradise island!</Original>
+                <Chinesesimp>天堂岛上的革命！</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Pulau_description_text">
+                <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
+                <Chinesesimp>成为抵抗军领袖。与在技术、数量、资产和车辆方面占优势的敌人作战。在完全动态的世界中运用游击战术，在大约 18 个支线任务中随时随地进行任何任务。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Pulau_mapname_short_text">
+                <Original>Antistasi Pulau</Original>
+                <Chinesesimp>Antistasi Pulau</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Pulau_mapname_text">
+                <Original>Antistasi - Liberation of Pulau</Original>
+                <Chinesesimp>Antistasi - Liberation of Pulau</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>
                 <Russian>Автоматически загружать последнее сохранение после задержки</Russian>
                 <Korean>딜레이 후 마지막으로 유효한 저장을 자동으로 로드</Korean>
                 <French>Chargement automatique de la dernière sauvegarde valide après un délai</French>
+                <Chinesesimp>延迟后自动加载上次有效保存</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_no_automatic_load">
                 <Original>No automatic load</Original>
                 <Russian>Не загружать автоматически</Russian>
                 <Korean>자동 로드 없음</Korean>
                 <French>Pas de chargement automatique</French>
+                <Chinesesimp>不自动加载</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_1min">
                 <Original>1 min</Original>
                 <Russian>1 мин</Russian>
                 <Korean>1분</Korean>
                 <French>1 min</French>
+                <Chinesesimp>1分钟</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_2min">
                 <Original>2 min</Original>
                 <Russian>2 мин</Russian>
                 <Korean>2분</Korean>
                 <French>2 min</French>
+                <Chinesesimp>2分钟</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_3min">
                 <Original>3 min</Original>
                 <Russian>3 мин</Russian>
                 <Korean>3분</Korean>
                 <French>3 min</French>
+                <Chinesesimp>3分钟</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_5min">
                 <Original>5 min</Original>
                 <Russian>5 мин</Russian>
                 <Korean>5분</Korean>
                 <French>5 min</French>
+                <Chinesesimp>5分钟</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_10min">
                 <Original>10 min</Original>
                 <Russian>10 мин</Russian>
                 <Korean>10분</Korean>
                 <French>10 min</French>
+                <Chinesesimp>10分钟</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_LogLevel_name">
                 <Original>Logging Level during setup</Original>
                 <Russian>Уровень логгирования</Russian>
                 <Korean>설정 중 로그 작성 수준</Korean>
                 <French>Niveau d'enregistrement</French>
+                <Chinesesimp>设置期间的日志记录级别</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_LogLevel_Error">
                 <Original>Error</Original>
                 <Russian>Ошибки</Russian>
                 <Korean>오류</Korean>
                 <French>Erreurs</French>
+                <Chinesesimp>错误</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_LogLevel_Info">
                 <Original>Info</Original>
                 <Russian>Информация</Russian>
                 <Korean>정보</Korean>
                 <French>Informations</French>
+                <Chinesesimp>信息</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_LogLevel_Debug">
                 <Original>Debug</Original>
                 <Russian>Дебаг</Russian>
                 <Korean>디버그</Korean>
                 <French>Débogage</French>
+                <Chinesesimp>开发</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_LogLevel_Verbose">
                 <Original>Verbose</Original>
                 <Russian>Подробный</Russian>
                 <Korean>세부 정보</Korean>
                 <French>Détaillé</French>
+                <Chinesesimp>详细</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_A3A_logDebugConsole_name">
                 <Original>Log debug console use during setup</Original>
                 <Russian>Логгировать использование дебаг консоли</Russian>
                 <Korean>설정 중 디버그 콘솔 사용 기록하기</Korean>
                 <French>Utilisation de la console de débogage pendant l'installation</French>
+                <Chinesesimp>在设置过程中记录调试控制台的使用情况</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_A3A_logDebugConsole_None">
                 <Original>None</Original>
                 <Russian>Не логировать никого</Russian>
                 <Korean>없음</Korean>
                 <French>N'enregistrez personne</French>
+                <Chinesesimp>无</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_A3A_logDebugConsole_All_none_dev">
                 <Original>All none dev</Original>
                 <Russian>Логгировать не-разработчиков</Russian>
                 <Korean>모두(개발자 버전 제외)</Korean>
                 <French>Enregistrer les non-développeurs</French>
+                <Chinesesimp>除开发外</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_A3A_logDebugConsole_Dev">
                 <Original>Dev</Original>
                 <Russian>Логгировать всех</Russian>
                 <Korean>개발자 버전</Korean>
                 <French>Enregistrer tout le monde</French>
+                <Chinesesimp>开发</Chinesesimp>
             </Key>
         </Container>
     </Package>
