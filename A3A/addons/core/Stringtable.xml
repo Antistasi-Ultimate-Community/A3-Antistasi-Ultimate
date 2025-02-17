@@ -3418,6 +3418,7 @@
             <Key ID="STR_A3A_fn_undercover_canGoUn_no_lowciv">
                 <Original>Undercover not allowed in current civ template.</Original>
                 <Russian>Вы не можете быть под прикрытием в текущем гражданском шаблоне</Russian>
+                <Chinesesimp>当前平民类型不允许伪装</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_helmet">
                 <Original>%1&lt;br/&gt;Wearing a helmet.</Original>
@@ -3548,6 +3549,7 @@
             <Key ID="STR_A3A_fn_undercover_goUn_detect_milb">
                 <Original>An enemy military base has detected you!</Original>
                 <Russian>Вас обнаружила вражеская военная база</Russian>
+                <Chinesesimp>敌方军事基地已发现您！</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_fn_undercover_goUn_detect_roadb">
                 <Original>An enemy roadblock has detected you!</Original>
@@ -5655,6 +5657,7 @@
                 <Korean>검문소나 감시초소에는 박격포를 추가할 수 없습니다.</Korean>
                 <Spanish>No puedes añadir morteros a las guarniciones de Control de carretera o Puesto de boservación.</Spanish>
                 <French>Vous ne pouvez pas ajouter de mortiers aux garnisons, aux barrages routiers ou aux postes de garde.</French>
+                <Chinesesimp>您不能向路障或岗哨驻军添加迫击炮。</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3AP_items">
@@ -5676,6 +5679,7 @@
         <Container name="A3A_selfRevive">
             <Key ID="STR_A3A_Params_removeRestore_title">
                 <Original>Disable the "Restore nearby units" option on the vehicle box.</Original>
+                <Chinesesimp>禁用车辆箱上的“恢复附近单位”选项。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_selfReviveMethods_title">
                 <Original>Self-revive methods enabled</Original>
