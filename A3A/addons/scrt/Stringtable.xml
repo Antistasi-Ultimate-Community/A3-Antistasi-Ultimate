@@ -3021,10 +3021,10 @@
                 <Korean>연막탄 탄막 전개 시작. 도달 예정 시간 30초.</Korean>
                 <French>Lancement du barrage de fumigènes. Temps estimé à 30 secondes.</French>
             </Key>
-            <Key ID="STR_chats_barrage_smoke">
+            <!-- <Key ID="STR_chats_barrage_smoke">
                 <Original>Player killed in action.</Original>
                 <Russian>Солдат погиб в бою.</Russian>
-            </Key>
+            </Key> -->
             <Key ID="STR_chats_airdrop_pilot_smoke">
                 <Original>This is the pilot. I see your smoke in the drop zone. I'm about to paradrop my cargo on %1 position, please wait.</Original>
                 <Russian>Пилот на связи. Вижу дым в зоне высадки. Я скоро выброшу груз на парашюте на %1 позицию, ожидайте.</Russian>
