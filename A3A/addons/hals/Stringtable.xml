@@ -905,7 +905,7 @@
                 <Korean>HAFM</Korean>
                 <French>HAFM</French>
             </Key>
-            <Key ID="STR_A3AU_PROJINF">
+            <!-- <Key ID="STR_A3AU_PROJINF">
                 <Original>P.I.</Original>
                 <German>P.I.</German>
                 <Russian>P.I.</Russian>
@@ -919,7 +919,7 @@
                 <Chinesesimp>JCA</Chinesesimp>
                 <Korean>JCA</Korean>
                 <French>JCA</French>
-           </Key>
+           </Key> -->
         </Container>
     </Package>
 </Project>
