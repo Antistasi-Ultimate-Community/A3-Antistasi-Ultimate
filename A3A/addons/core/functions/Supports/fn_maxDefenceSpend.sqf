@@ -50,7 +50,7 @@ if (_target isEqualType objNull and {_target isKindOf "Air"}) exitWith
 
     private _targSpend = 0;
     {
-        _x params ["_sside", "_btype", "_starg", "_endtime", "_dur", "_pow"];
+        _x params ["_sside", "_btype", "_starg", "_endtime", "_dur", "_pow"]; /// why _sside ?
         if (_sside == _side && _starg isEqualTo _target) then { _targSpend = _targSpend + _pow };
     } forEach A3A_supportStrikes;
 

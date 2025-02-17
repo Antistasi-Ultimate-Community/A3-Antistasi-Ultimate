@@ -1101,7 +1101,7 @@ if (_hasSOG) then {
 
 if (_hasSPE) then {
     #include "..\DLC_content\gear\SPE\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\SPE\Vanilla_LDF.sqf"
+    //#include "..\DLC_content\weapons\SPE\Vanilla_LDF.sqf"
 };
 
 if (_hasEF) then {
