@@ -15,8 +15,8 @@ private _fnc_distCheck = {
 
 // Cleanup constructed buildings
 private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
+_rebMarkers pushBack "Synd_HQ";
 // ^ Add extra plus related stuff
-_rebMarkers append outpostsFIA; _rebMarkers pushBack "Synd_HQ";
 
 A3A_buildingsToSave = A3A_buildingsToSave select {
 	// Keep if there are rebel spawners within 500m

@@ -14,6 +14,15 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
+private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
+private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
+
+if (_lowCiv || _civNonHuman) exitWith {
+    Error("Non civilian or low civilian faction, aborting.");
+    isEventInProgress = false;
+    publicVariableServer "isEventInProgress";    
+};
+
 private _originPosition = position _player;
 
 Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);

@@ -1,0 +1,13 @@
+﻿# CONTRIBUTOR LIST
+
+# CORE TEAM
+Ampersand
+
+# CONTRIBUTORS
+
+"Reload Repack Turret Magazines"
+"https://github.com/ampersand38/reload-repack-turret-magazines";
+author = "Ampersand"
+
+Steam Workshop
+https://steamcommunity.com/sharedfiles/filedetails/?id=2957051994

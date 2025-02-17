@@ -1,16 +1,28 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_crate",
-["_crateWepTypeMax", crateWepTypeMax], "_crateWepNum",
-["_crateItemTypeMax", crateItemTypeMax], "_crateItemNum",
-["_crateAmmoTypeMax", crateAmmoTypeMax], "_crateAmmoNum",
-["_crateExplosiveTypeMax", crateExplosiveTypeMax], "_crateExplosiveNum",
-["_crateAttachmentTypeMax", crateAttachmentTypeMax], "_crateAttachmentNum",
-["_crateBackpackTypeMax", crateBackpackTypeMax], "_crateBackpackNum",
-["_crateHelmetTypeMax", crateHelmetTypeMax], "_crateHelmetNum",
-["_crateVestTypeMax", crateVestTypeMax], "_crateVestNum",
-["_crateDeviceTypeMax", crateDeviceTypeMax], "_crateDeviceNum"
+params [
+	"_crate",
+	["_crateWepTypeMax", crateWepTypeMax], "_crateWepNum",
+	["_crateItemTypeMax", crateItemTypeMax], "_crateItemNum",
+	["_crateAmmoTypeMax", crateAmmoTypeMax], "_crateAmmoNum",
+	["_crateExplosiveTypeMax", crateExplosiveTypeMax], "_crateExplosiveNum",
+	["_crateAttachmentTypeMax", crateAttachmentTypeMax], "_crateAttachmentNum",
+	["_crateBackpackTypeMax", crateBackpackTypeMax], "_crateBackpackNum",
+	["_crateHelmetTypeMax", crateHelmetTypeMax], "_crateHelmetNum",
+	["_crateVestTypeMax", crateVestTypeMax], "_crateVestNum",
+	["_crateDeviceTypeMax", crateDeviceTypeMax], "_crateDeviceNum"
 ];
+
+if (!isServer && hasInterface) exitWith {
+	["fillLootCrate was not called on the server? Recalling on server", _fnc_scriptName] call A3U_fnc_log;
+	_this remoteExec ["A3A_fnc_fillLootCrate", 2];
+};
+
+if (isNil "A3U_forbiddenItems") then {
+	["A3U_forbiddenItems is nil, attempting to recreate the value", _fnc_scriptName] call A3U_fnc_log;
+	call A3U_fnc_grabForbiddenItems;
+};
+
 private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOptics + unlockedItems + unlockedWeapons + unlockedBackpacks + unlockedMagazines);
 private _available = objNull;
 private _amount = objNull;
@@ -32,7 +44,6 @@ if (typeOf _crate in FactionGet(all,"vehiclesAmmoTrucks")) then {
 	_crateVestTypeMax = _crateVestTypeMax * 2;
 	_crateDeviceTypeMax = _crateDeviceTypeMax * 2;
 };
-
 
 private _quantityScalingFactor = if (minWeaps < 0) then {1} else {
 	private _playerCount = if(!isNil "spoofedPlayerCount") then {spoofedPlayerCount} else {A3A_activePlayerCount};

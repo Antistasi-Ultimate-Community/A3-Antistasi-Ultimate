@@ -80,6 +80,7 @@ class CfgMissions
 	A3A_Mission(tem_chernarusw, "Antistasi Ultimate - Svartmarka Winter")
 	A3A_Mission(mehland, "Antistasi Ultimate - Mehland")
 	A3A_Mission(pulau, "Antistasi Ultimate - Pulau")
+	A3A_Mission(fapovo, "Antistasi Ultimate - Fapovo Island")
 	A3A_Mission(chernarusredux, "Antistasi Ultimate - Redux")
 	A3A_Mission(stubbhult, "Antistasi Ultimate - Stubbhult")
 #if __A3_DEBUG__

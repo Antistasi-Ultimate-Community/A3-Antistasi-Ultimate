@@ -14,6 +14,10 @@ class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehic
         };
     };
 };
+class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_datsun_uk3cb_datsun_civ_closed_p3d : UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_datsun_uk3cb_datsun_civ_open_p3d
+{
+	canLoadWeapon = 0;
+};
 
 class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_datsun_uk3cb_datsun_open_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -47,6 +51,10 @@ class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehic
             seats[] = {3,4,6};
         };
     };
+};
+class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_hilux_uk3cb_hilux_civilian_closed_p3d : UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_hilux_uk3cb_hilux_p3d
+{
+	canLoadWeapon = 0;
 };
 
 class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_m939_uk3cb_m939_open_p3d : TRIPLES(ADDON,Nodes,Base)
@@ -782,6 +790,28 @@ class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_apc_UK3CB_Factions_Vehicles_
         {
             offset[] = {-0.10,-2.4,-0.58};
             seats[] = {};
+        };
+    };
+};
+
+class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_landrover_uk3cb_lr_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.15,-0.81};
+			seats[] = {2,3};
+        };
+        class Node2
+        {
+            offset[] = {0,-0.95,-0.81};
+			seats[] = {4,5};
+        };
+        class Node3
+        {
+            offset[] = {0,-1.75,-0.81};
+			seats[] = {0,1,6};
         };
     };
 };

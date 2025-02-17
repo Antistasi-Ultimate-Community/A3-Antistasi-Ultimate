@@ -35,7 +35,6 @@ private _cargoGroups = [];
 
 private _faction = Faction(_side);
 private _transportPlanes = _faction get "vehiclesDropPod";
-/* if (_transportPlanes isEqualType []) exitwith {}; */
 private _lhFactor = 0 max (1 - (tierWar+_tierMod) / 10);            // phase out light helis at higher war tiers
 
 private _transportPool = [];
@@ -51,6 +50,8 @@ private _isTransport = _vehAttackCount < _vehCount;            // normal case, f
 
 for "_i" from 1 to _vehCount do {
     private _vehType = selectRandomWeighted ([_supportPool, _transportPool] select _isTransport);
+
+    if (isNil "_vehType") then {continue};
 
     switch (true) do {   
         case (_isGuaranteedAirdrop || {_vehType == "VEHAIRDROP"}): {
