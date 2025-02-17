@@ -9531,7 +9531,6 @@
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
                 <French>Un groupe de prisonniers de guerre attend d'être exécuté à %1. Nous devons les sauver avant %2. Amenez-les au QG.</French>
             </Key>
-            </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_header">
                 <Original>Deserters Rescue</Original>
                 <Russian>Спасите дезертиров</Russian>
