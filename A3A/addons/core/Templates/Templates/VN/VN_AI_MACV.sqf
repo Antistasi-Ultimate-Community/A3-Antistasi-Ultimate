@@ -6,7 +6,7 @@
 ["spawnMarkerName", format [localize "STR_supportcorridor", "MACV"]] call _fnc_saveToTemplate;
 
 ["flag", "vn_flag_usa"] call _fnc_saveToTemplate;
-["flagTexture", "vn\objects_f_vietnam\flags\data\vn_flag_01_usa_co.paa"] call _fnc_saveToTemplate;
+["flagTexture", "\vn\objects_f_vietnam\flags\vn_flag_01_usa_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "vn_flag_usa"] call _fnc_saveToTemplate;
 
 //////////////////////////
