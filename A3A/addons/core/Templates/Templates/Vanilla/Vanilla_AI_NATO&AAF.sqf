@@ -1132,7 +1132,7 @@ if (_hasSOG) then {
 
 if (_hasSPE) then {
     #include "..\DLC_content\gear\SPE\Vanilla_AAF.sqf"
-    #include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
+    //#include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
 };
 
 if (_hasEF) then {
