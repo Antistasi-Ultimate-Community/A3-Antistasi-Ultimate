@@ -760,10 +760,10 @@
                 <Original>Tanks</Original>
                 <Russian>Танки</Russian>
             </Key>
-            <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
+            <!-- <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
                 <Original>Statics</Original>
                 <Russian>Стационарные оружия</Russian>
-            </Key>
+            </Key> -->
             <Key ID="STR_antistasi_dialogs_vehicle_tab_heli">
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
