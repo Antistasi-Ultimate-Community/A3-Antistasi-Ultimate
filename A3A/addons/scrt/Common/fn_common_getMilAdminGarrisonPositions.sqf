@@ -21,7 +21,7 @@ switch(_buildingType) do {
         _soldierPositions = [0,12,13,14,16,17,18,19,20,21,22,23,25,29,34,38,47,49,56,67,68,69,70,71,72,73,74,75,76,77,78,79];
         _collaborantPositions = [24, 28, 50, 51, 63];
     };
-    case "Land_PoliceStation_01_F": {
+    case "land_policestation_01_f": {
         _powPositions = [0, 4];
         _itemPositions = [6];
         _soldierPositions = [1,2,5,7,8,9,10,11,12];
