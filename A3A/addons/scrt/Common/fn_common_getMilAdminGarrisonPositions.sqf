@@ -27,6 +27,12 @@ switch(_buildingType) do {
         _soldierPositions = [1,2,5,7,8,9,10,11,12];
         _collaborantPositions = [3,6,7];
     };
+    case "Land_PoliceStation_01_F": {
+        _powPositions = [0, 4];
+        _itemPositions = [6];
+        _soldierPositions = [1,2,5,7,8,9,10,11,12];
+        _collaborantPositions = [3,6,7];
+    };
     case "Land_i_Barracks_V1_F";
 	case "Land_Barracks_01_dilapidated_F"; 
 	case "Land_Barracks_01_grey_F"; 
