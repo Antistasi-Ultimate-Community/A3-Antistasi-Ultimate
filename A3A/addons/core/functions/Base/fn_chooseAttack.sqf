@@ -68,13 +68,16 @@ Debug("Final target choice list:");
 } forEach _targets;
 
 // Cull anything worse than 10:1 value ratio, otherwise we'll launch some really stupid attacks occasionally
+private _arePunishmentsAllowed = ((enablePunishments isEqualTo 1) && (tierWar >= A3U_setting_tierWarPunishments));
+
 private _minWeight = selectMax _weights / 10;
 private _culledTargets = [];
 {
+    if (!_arePunishmentsAllowed && {(_x#0) in citiesX}) then {continue}; // Skip cities here rather than leaving it to the else statement later
+
     private _weight = _weights select _forEachIndex;
     if (_weight > _minWeight) then { _culledTargets append [_x, _weight] };
 } forEach _targets;
-
 
 // Now we just pick a target
 private _target = selectRandomWeighted _culledTargets;
@@ -94,19 +97,12 @@ if (sidesX getVariable _originMrk != _side) exitWith {
 
 
 if (_targetMrk in citiesX) exitWith {
-    private _tierWarPunishments = missionNamespace getVariable ["A3U_setting_tierWarPunishments",3];
-    if (_side == Invaders && {(tierWar >= _tierWarPunishments)} && {(enablePunishments isEqualTo 1)}) then {
+    if (_side == Invaders) then {
         // Punishment, unsimulated
         Info_2("Starting punishment mission from %1 to %2", _originMrk, _targetMrk);
         [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
         bigAttackInProgress = true; publicVariable "bigAttackInProgress";
         [_targetMrk, _originMrk] spawn A3A_fnc_invaderPunish;
-    } else {
-        // Supply convoy, unsimulated
-        // Do we allow these even if there's already a convoy? Probably not harmful.
-        Info_2("Sending supply convoy from %1 to %2", _originMrk, _targetMrk);
-        [-200, _side, "attack"] call A3A_fnc_addEnemyResources;
-        [[_targetMrk, _originMrk, "Supplies", "attack"],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
     };
     true;
 };
