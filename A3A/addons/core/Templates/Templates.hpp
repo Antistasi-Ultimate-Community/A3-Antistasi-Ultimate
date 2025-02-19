@@ -474,7 +474,7 @@ class Templates
     class VN_Civ : VN_Base
     {
         side = "Civ";
-        flagTexture = QPATHTOFOLDER(Pictures\Markers\vn_flag_01_vn_co.paa);
+        flagTexture = QPATHTOFOLDER(Templates\Templates\VN\flags\flag_vn_combined_co.paa);
         name = "Vietnam";
         file = "VN_Civ";
         description = $STR_A3AP_setupFactionsTab_vietcivs;
