@@ -244,7 +244,6 @@ class Params
         values[] = {0,1,2,3,4};
         texts[] = {$STR_A3AU_normal_victory,$STR_A3AU_total_victory,$STR_A3AU_economic_victory,$STR_A3AU_logistical_victory,$STR_A3AU_political_victory};
         default = 0;
-        lockOnSave = 1;
     };
     class lossCondition: UltimateParams
     {
@@ -596,7 +595,6 @@ class Params
         values[] = {100, 200, 300, 400, 500, 600, 800, 900, 1000, 999999};
         texts[] = {"100", "200", "300", "400", "500", "600", "800", "900", "1000", "Basically Infinite"};
         default = 300;
-        lockOnSave = 1; // ? Same question here as with the zeus bulidings
     };
     class A3A_builderBuildTime: BuilderParams
     {
@@ -616,7 +614,7 @@ class Params
     class ExperimentalParams
     {
         type = "Experimental";
-        lockOnSave = 0; // ! IMO, nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
+        lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
     class recruitToPlayerSquad: ExperimentalParams
     {
