@@ -77,7 +77,7 @@ private _classWeightsHM = call {
     
     // AREA has stronger reduction than TROOPS but over a smaller area
     {
-        _x params ["_sside", "_btype", "_starg", "_endtime", "_dur", "_pow"]; /// why _sside ?
+        _x params ["_sside", "_btype", "_starg", "_endtime", "_dur", "_pow"];
         if (_sside != _side or time >= _endtime) then { continue };
         switch (_btype) do {
             case "AREA": {
