@@ -32,7 +32,7 @@ private _costsBM = [_typeX] call A3U_fnc_blackMarketVehiclePrice;
 if (isNil "_costsBM") then {_costsBM = 0};
 
 if (_costs isNotEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
-	_costs = _costs max _costsBM;
+	_costs = _costs min _costsBM;
 };
 
 if (_costs <= 0) then { // if the cost is less than 0
