@@ -293,5 +293,7 @@ if (_tab isEqualTo "vehicles") then
         _added = _added + 1;
     } forEach _buyableVehiclesList;
 
+    uiNamespace setVariable ["A3U_BM_isTabsComplete", true];
+
     Debug("BuyVehicleTab complete.");
 };

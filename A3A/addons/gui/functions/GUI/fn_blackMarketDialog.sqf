@@ -147,6 +147,21 @@ switch (_mode) do
         localize "STR_antistasi_dialogs_vehicle_tab_plane", localize "STR_antistasi_dialogs_vehicle_tab_armedcar", localize "STR_antistasi_dialogs_vehicle_tab_unarmedcar", localize "STR_antistasi_dialogs_vehicle_tab_boat"];
         private _vals = ["all", "artillery", "apc", "aa", "uav", "tank", "statics", "heli", "plane", "armedcar", "unarmedcar", "boat"];
 
+        ["vehicles", [A3A_IDC_BLACKMARKETMAIN, A3A_IDC_BLACKMARKETVEHICLESGROUP, "all"]] call A3A_fnc_blackMarketTabs; ///show all?
+        ["vehicles", [A3A_IDC_BLACKMARKETARTY, A3A_IDC_BLACKMARKETVEHICLESGROUPATRY, "artillery"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETAPC, A3A_IDC_BLACKMARKETVEHICLESGROUPAPC, "apc"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETAA, A3A_IDC_BLACKMARKETVEHICLESGROUPAA, "AA"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETUAV, A3A_IDC_BLACKMARKETVEHICLESGROUPUAV, "uav"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETTANK, A3A_IDC_BLACKMARKETVEHICLESGROUPTANK, "tank"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETSTATICS, A3A_IDC_BLACKMARKETVEHICLESGROUPSTATICS, "statics"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETHELI, A3A_IDC_BLACKMARKETVEHICLESGROUPHELI, "heli"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETPLANE, A3A_IDC_BLACKMARKETVEHICLESGROUPPLANE, "plane"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETARMEDCAR, A3A_IDC_BLACKMARKETVEHICLESGROUPARMEDCAR, "armedcar"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETUNARMEDCAR, A3A_IDC_BLACKMARKETVEHICLESGROUPUNARMED, "unarmedcar"]] call A3A_fnc_blackMarketTabs;
+        ["vehicles", [A3A_IDC_BLACKMARKETBOAT, A3A_IDC_BLACKMARKETVEHICLESGROUPBOAT, "boat"]] call A3A_fnc_blackMarketTabs;
+
+        waitUntil {sleep 1; uiNamespace getVariable ["A3U_BM_isTabsComplete", false]};
+
         private _valsCtrl = _bmTable;
         /* _valsCtrl ctrlSetPosition [GRID_W * -30.4, GRID_H*-17.9, GRID_W*125, GRID_H*5]; */
         _valsCtrl ctrlCommit 0;
@@ -160,19 +175,6 @@ switch (_mode) do
         _valsCtrl lbSetSelected [0, true];
 
         uiNamespace setVariable ["bm_vehicleTypeBox", _valsCtrl];
-
-        ["vehicles", [A3A_IDC_BLACKMARKETMAIN, A3A_IDC_BLACKMARKETVEHICLESGROUP, "all"]] call A3A_fnc_blackMarketTabs; ///show all?
-        ["vehicles", [A3A_IDC_BLACKMARKETARTY, A3A_IDC_BLACKMARKETVEHICLESGROUPATRY, "artillery"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETAPC, A3A_IDC_BLACKMARKETVEHICLESGROUPAPC, "apc"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETAA, A3A_IDC_BLACKMARKETVEHICLESGROUPAA, "AA"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETUAV, A3A_IDC_BLACKMARKETVEHICLESGROUPUAV, "uav"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETTANK, A3A_IDC_BLACKMARKETVEHICLESGROUPTANK, "tank"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETSTATICS, A3A_IDC_BLACKMARKETVEHICLESGROUPSTATICS, "statics"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETHELI, A3A_IDC_BLACKMARKETVEHICLESGROUPHELI, "heli"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETPLANE, A3A_IDC_BLACKMARKETVEHICLESGROUPPLANE, "plane"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETARMEDCAR, A3A_IDC_BLACKMARKETVEHICLESGROUPARMEDCAR, "armedcar"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETUNARMEDCAR, A3A_IDC_BLACKMARKETVEHICLESGROUPUNARMED, "unarmedcar"]] call A3A_fnc_blackMarketTabs;
-        ["vehicles", [A3A_IDC_BLACKMARKETBOAT, A3A_IDC_BLACKMARKETVEHICLESGROUPBOAT, "boat"]] call A3A_fnc_blackMarketTabs;
     };
 
     case ("onUnload"): 
