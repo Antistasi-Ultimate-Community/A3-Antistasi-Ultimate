@@ -252,7 +252,7 @@ _sfLoadoutData set ["SLvests", [
 _sfLoadoutData set ["MGvests", [
 		"CSLA_gr85ptMg"
 ]];
-_sfLoadoutData set ["SNIvests", [
+_sfLoadoutData set ["sniVests", [
 		"CSLA_gr85ptOP63"
 ]];
 _sfLoadoutData set ["Hvests", []];

@@ -252,7 +252,7 @@ _sfLoadoutData set ["SLvests", [
 _sfLoadoutData set ["MGvests", [
 	"CSLA_gr85ptMg"
 ]];
-_sfLoadoutData set ["SNIvests", [
+_sfLoadoutData set ["sniVests", [
 	"CSLA_gr85ptOP63"
 ]];
 _sfLoadoutData set ["Hvests", []];
@@ -825,7 +825,7 @@ private _marksmanTemplate= {
 
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["SNIvests"] call _fnc_setVest;
+    ["sniVests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
 

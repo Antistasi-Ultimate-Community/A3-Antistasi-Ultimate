@@ -148,7 +148,7 @@ _loadoutData set ["uniforms", ["US85_uniBDU"]];
 _loadoutData set ["vests", ["US85_grY_M16","US85_grY_MPV"]];
 _loadoutData set ["SLvests", ["US85_grY_M9","US85_grV_ofc","US85_grV_M9"]];
 _loadoutData set ["MGvests", ["US85_grY_MG","US85_grV_MG"]];
-_loadoutData set ["SNIvests", ["US85_grY_M24","US85_grV_M24","US85_grY_snp"]];
+_loadoutData set ["sniVests", ["US85_grY_M24","US85_grV_M24","US85_grY_snp"]];
 _loadoutData set ["Hvests", ["US85_grV_M16","US85_grV_MPV"]];
 _loadoutData set ["glVests", ["US85_grVm_M16GL","US85_grV_M16GL"]];
 _loadoutData set ["backpacks", ["US85_bpAlice"]];
@@ -223,7 +223,7 @@ _loadoutData set ["items_unarmed_extras", []];
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
 _sfLoadoutData set ["uniforms", ["US85_uniSF"]];
 _sfLoadoutData set ["vests", ["US85_grSF_M16","US85_grSF_MPV","US85_grSF_TLBV","US85_grSF_MG","US85_grSF_M9"]];
-_sfLoadoutData set ["SNIvests", ["US85_grSF_M24"]];
+_sfLoadoutData set ["sniVests", ["US85_grSF_M24"]];
 _sfLoadoutData set ["backpacks", ["US85_bpSf"]];
 _sfLoadoutData set ["MEDIbackpacks", ["US85_bpMedi"]];
 _sfLoadoutData set ["helmets", ["US85_helmetSFL","US85_helmetSFLG","US85_helmetSFLG_on"]];
@@ -271,7 +271,7 @@ private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 private _eliteLoadoutData= _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
 _eliteLoadoutData set ["uniforms", ["US85_uniSF"]];
 _eliteLoadoutData set ["vests", ["US85_grSF_M16","US85_grSF_MPV","US85_grSF_TLBV","US85_grSF_M9","US85_grSF_MG"]];
-_eliteLoadoutData set ["SNIvests", ["US85_grSF_M24"]];
+_eliteLoadoutData set ["sniVests", ["US85_grSF_M24"]];
 _eliteLoadoutData set ["backpacks", ["US85_bpSf"]];
 _eliteLoadoutData set ["MEDIbackpacks", ["US85_bpMedi"]];
 _eliteLoadoutData set ["helmets", ["US85_helmetSFL","US85_helmetSFLG","US85_helmetSFLG_on"]];
@@ -317,7 +317,7 @@ _eliteLoadoutData set ["sidearms", [
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
 _militaryLoadoutData set ["uniforms", ["US85_uniBDU"]];
 _militaryLoadoutData set ["vests", ["US85_grY_M16","US85_grY_MPV","US85_grY_MG","US85_grV_MG","US85_grY_M9","US85_grV_M9","US85_grV_ofc"]];
-_militaryLoadoutData set ["SNIvests", ["US85_grY_snp","US85_grV_M24"]];
+_militaryLoadoutData set ["sniVests", ["US85_grY_snp","US85_grV_M24"]];
 _militaryLoadoutData set ["Hvests", ["US85_grV_M16","US85_grV_MPV"]];
 _militaryLoadoutData set ["glVests", ["US85_grVm_M16GL","US85_grV_M16GL"]];
 _militaryLoadoutData set ["backpacks", ["US85_bpAlice"]];
@@ -759,7 +759,7 @@ private _marksmanTemplate= {
 
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["SNIvests"] call _fnc_setVest;
+    ["sniVests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
 

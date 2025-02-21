@@ -707,7 +707,7 @@ private _marksmanTemplate= {
 
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["SNIvests"] call _fnc_setVest;
+    ["sniVests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
 
