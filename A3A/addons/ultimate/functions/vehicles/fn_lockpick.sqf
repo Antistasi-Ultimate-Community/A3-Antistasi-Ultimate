@@ -14,8 +14,6 @@
 
 params ["_vehicle"];
 
-private _zones = (airportsX + milbases + seaports + outposts);
-
 [ 
     _vehicle,
     localize "STR_A3AU_action_lockpick_title",
@@ -27,20 +25,21 @@ private _zones = (airportsX + milbases + seaports + outposts);
     {
         params ["_target", "_caller", "_actionId", "_arguments", "_frame", "_maxFrame"];
 
-        [_target, _zones, _frame, _actionId] call A3U_fnc_lockpickOnProgress;
+        [_target, _caller, _frame, _actionId] call A3U_fnc_lockpickOnProgress;
     },
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
+        [_target, _actionId] call BIS_fnc_holdActionRemove;
         [_target, false] call A3U_fnc_setLock;
         [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_success", (getText (configFile >> "cfgVehicles" >> typeOf _target >> "displayName"))]] call A3A_fnc_customHint;
     },
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-        [_target, _caller, _zones] call A3U_fnc_lockpickOnFail;
+        [_target, _caller] call A3U_fnc_lockpickOnFail;
     },
     [],
     30,
     2026,
-    true,
+    false,
     false
 ] remoteExec ["BIS_fnc_holdActionAdd", 0, _vehicle];

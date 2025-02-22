@@ -1,6 +1,8 @@
-params ["_target", "_caller", "_zones"];
+params ["_target", "_caller"];
 
-private _closestZone = (sidesX getVariable [([_zones, player] call BIS_fnc_nearestPosition), sideUnknown]);
+private _zones = call A3U_fnc_lockpickZones;
+
+private _closestZone = (sidesX getVariable [([_zones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
 if (_closestZone isNotEqualTo teamPlayer) then {
     [_target, "alarmCar"] remoteExec ["say3D", 0, true];
 

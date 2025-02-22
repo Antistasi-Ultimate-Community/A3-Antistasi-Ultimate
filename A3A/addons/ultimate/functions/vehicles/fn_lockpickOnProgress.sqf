@@ -1,8 +1,10 @@
-params ["_target", "_zones", "_frame", "_actionId"];
+params ["_target", "_caller", "_frame", "_actionId"];
 
-if !(locked _target) exitWith {[_target, _actionId] call BIS_fnc_holdActionRemove};
+private _zones = call A3U_fnc_lockpickZones;
 
-private _closestZone = (sidesX getVariable [([_zones, player] call BIS_fnc_nearestPosition), sideUnknown] isEqualTo teamPlayer);
+// if !(locked _target in [2, 3]) exitWith {[_target, _actionId] call BIS_fnc_holdActionRemove};
+
+private _closestZone = (sidesX getVariable [([_zones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
 if (_closestZone isEqualTo teamPlayer) then {
     if (_frame >= 3) then {
         [_target, false] call A3U_fnc_setLock;
