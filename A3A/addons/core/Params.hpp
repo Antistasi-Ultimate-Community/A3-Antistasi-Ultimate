@@ -496,7 +496,6 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
-        lockOnSave = 1; // ? Not sure about this one. What happens if its enabled and zeus buildings are saved, then later the param is disabled?
     };
     class maxConstructions: PlusParams
     {
@@ -504,7 +503,6 @@ class Params
         values[] = {0,50,100,250,300};
         texts[] = {"0","50","100","250","300"};
         default = 100;
-        lockOnSave = 1; // ? Similar question here. What happens if you save 300 buildings, then lower the max to 50?
     };
     class maxSupportPoints: PlusParams
     {
