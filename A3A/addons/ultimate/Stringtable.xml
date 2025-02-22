@@ -142,72 +142,68 @@
     </Package>
     <Package name="Lockpick">
         <Key ID="STR_A3AU_action_lockpick_title">
-            <Original>Lockpicking</Original>
-            <English>Lockpicking</English>
-            <Russian>Взлом замка</Russian>
-            <German>Schlossknacken</German>
-            <Italian>Scassinamento</Italian>
+            <Original>Lockpick</Original>
+            <Russian>Отмычка</Russian>
+            <German>Dietrich</German>
+            <Italian>Grimaldello</Italian>
             <Spanish>Ganzúa</Spanish>
-            <French>Crochetage</French>
+            <French>Crochet</French>
             <Korean>자물쇠 따기</Korean>
             <Japanese>ピッキング</Japanese>
-            <Chineseimp>撬锁</Chineseimp>
+            <Chinesesimp>撬锁</Chinesesimp>
             <Chinese>撬鎖</Chinese>
-            <Polish>Otwieranie zamka</Polish>
-            <Czech>Odemykání zámku</Czech>
-            <Portuguese>Arrombamento</Portuguese>
-            <Turkish>Kilit Açma</Turkish>
+            <Polish>Wytrych</Polish>
+            <Czech>Páčidlo</Czech>
+            <Portuguese>Gazua</Portuguese>
+            <Turkish>Maymuncuk</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_start">
-            <Original>you have started lockpicking %1&lt;br /&gt;</Original>
-            <English>you have started lockpicking %1&lt;br /&gt;</English>
-            <Russian>вы начали взлом замка %1&lt;br /&gt;</Russian>
-            <German>du hast begonnen, das Schloss von %1 zu knacken&lt;br /&gt;</German>
-            <Italian>hai iniziato a scassinare %1&lt;br /&gt;</Italian>
-            <Spanish>has comenzado a forzar la cerradura de %1&lt;br /&gt;</Spanish>
-            <French>vous avez commencé à crocheter %1&lt;br /&gt;</French>
-            <Korean>%1의 자물쇠를 따기 시작했습니다&lt;br /&gt;</Korean>
-            <Japanese>%1のピッキングを開始しました&lt;br /&gt;</Japanese>
-            <Chineseimp>你已开始撬锁 %1&lt;br /&gt;</Chineseimp>
-            <Chinese>你已開始撬鎖 %1&lt;br /&gt;</Chinese>
-            <Polish>rozpocząłeś otwieranie zamka %1&lt;br /&gt;</Polish>
-            <Czech>začal jsi odemykat %1&lt;br /&gt;</Czech>
-            <Portuguese>você começou a arrombar %1&lt;br /&gt;</Portuguese>
-            <Turkish>%1 kilidini açmaya başladın&lt;br /&gt;</Turkish>
+            <Original>you have started lockpicking %1.</Original>
+            <Russian>Вы начали взламывать %1.</Russian>
+            <German>Du hast begonnen, %1 zu knacken.</German>
+            <Italian>Hai iniziato a scassinare %1.</Italian>
+            <Spanish>Has comenzado a forzar %1.</Spanish>
+            <French>Vous avez commencé à crocheter %1.</French>
+            <Korean>%1 잠금 해제를 시작했습니다.</Korean>
+            <Japanese>%1 のピッキングを開始しました。</Japanese>
+            <Chinesesimp>你开始撬锁 %1。</Chinesesimp>
+            <Chinese>你開始撬鎖 %1。</Chinese>
+            <Polish>Rozpocząłeś wytrychowanie %1.</Polish>
+            <Czech>Začal jsi páčit %1.</Czech>
+            <Portuguese>Você começou a arrombar %1.</Portuguese>
+            <Turkish>%1 kilidini açmaya başladın.</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_success">
-            <Original>You have successfully lockpicked %1&lt;br /&gt;</Original>
-            <English>You have successfully lockpicked %1&lt;br /&gt;</English>
-            <Russian>Вы успешно взломали %1&lt;br /&gt;</Russian>
-            <German>Du hast %1 erfolgreich geknackt&lt;br /&gt;</German>
-            <Italian>Hai scassinato con successo %1&lt;br /&gt;</Italian>
-            <Spanish>Has forzado la cerradura de %1 con éxito&lt;br /&gt;</Spanish>
-            <French>Vous avez réussi à crocheter %1&lt;br /&gt;</French>
-            <Korean>%1의 자물쇠를 성공적으로 땄습니다&lt;br /&gt;</Korean>
-            <Japanese>%1のピッキングに成功しました&lt;br /&gt;</Japanese>
-            <Chineseimp>你已成功撬开 %1&lt;br /&gt;</Chineseimp>
-            <Chinese>你已成功撬開 %1&lt;br /&gt;</Chinese>
-            <Polish>Udało ci się otworzyć %1&lt;br /&gt;</Polish>
-            <Czech>Úspěšně jsi odemkl %1&lt;br /&gt;</Czech>
-            <Portuguese>Você arrombou %1 com sucesso&lt;br /&gt;</Portuguese>
-            <Turkish>%1 kilidini başarıyla açtın&lt;br /&gt;</Turkish>
+            <Original>You have successfully lockpicked %1.</Original>
+            <Russian>Вы успешно взломали %1.</Russian>
+            <German>Du hast %1 erfolgreich geknackt.</German>
+            <Italian>Hai scassinato con successo %1.</Italian>
+            <Spanish>Has forzado con éxito %1.</Spanish>
+            <French>Vous avez réussi à crocheter %1.</French>
+            <Korean>%1 잠금 해제에 성공했습니다.</Korean>
+            <Japanese>%1 のピッキングに成功しました。</Japanese>
+            <Chinesesimp>你成功撬开了 %1。</Chinesesimp>
+            <Chinese>你成功撬開了 %1。</Chinese>
+            <Polish>Udało ci się wytrychować %1.</Polish>
+            <Czech>Úspěšně jsi vypáčil %1.</Czech>
+            <Portuguese>Você arrombou %1 com sucesso.</Portuguese>
+            <Turkish>%1 kilidini başarıyla açtın.</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_aborted">
-            <Original>Lockpicking has been aborted &lt;br /&gt; An alarm has started &lt;br /&gt; Enemies nearby now know your location</Original>
-            <English>Lockpicking has been aborted &lt;br /&gt; An alarm has started &lt;br /&gt; Enemies nearby now know your location</English>
-            <Russian>Взлом замка прерван &lt;br /&gt; Сработала сигнализация &lt;br /&gt; Враги поблизости теперь знают ваше местоположение</Russian>
-            <German>Schlossknacken wurde abgebrochen &lt;br /&gt; Ein Alarm wurde ausgelöst &lt;br /&gt; Feinde in der Nähe kennen nun deine Position</German>
-            <Italian>Scassinamento interrotto &lt;br /&gt; È scattato un allarme &lt;br /&gt; I nemici vicini ora conoscono la tua posizione</Italian>
-            <Spanish>Ganzúa abortada &lt;br /&gt; Se ha activado una alarma &lt;br /&gt; Los enemigos cercanos ahora conocen tu ubicación</Spanish>
-            <French>Le crochetage a été interrompu &lt;br /&gt; Une alarme s'est déclenchée &lt;br /&gt; Les ennemis proches connaissent maintenant votre position</French>
-            <Korean>자물쇠 따기가 중단되었습니다 &lt;br /&gt; 경보가 울렸습니다 &lt;br /&gt; 근처의 적들이 이제 당신의 위치를 알고 있습니다</Korean>
-            <Japanese>ピッキングが中断されました &lt;br /&gt; アラームが作動しました &lt;br /&gt; 近くの敵があなたの位置を知りました</Japanese>
-            <Chineseimp>撬锁已中止 &lt;br /&gt; 警报已响起 &lt;br /&gt; 附近的敌人现在知道了你的位置</Chineseimp>
-            <Chinese>撬鎖已中止 &lt;br /&gt; 警報已響起 &lt;br /&gt; 附近的敵人現在知道了你的位置</Chinese>
-            <Polish>Otwieranie zamka zostało przerwane &lt;br /&gt; Włączony został alarm &lt;br /&gt; Wrogowie w pobliżu znają teraz twoją lokalizację</Polish>
-            <Czech>Odemykání bylo přerušeno &lt;br /&gt; Spustil se alarm &lt;br /&gt; Nepřátelé v okolí teď znají tvoji polohu</Czech>
-            <Portuguese>Arrombamento foi abortado &lt;br /&gt; Um alarme foi disparado &lt;br /&gt; Inimigos próximos agora sabem sua localização</Portuguese>
-            <Turkish>Kilit açma işlemi iptal edildi &lt;br /&gt; Alarm çaldı &lt;br /&gt; Yakındaki düşmanlar artık konumunu biliyor</Turkish>
+            <Original>Lockpicking has been aborted. &lt;br /&gt; An alarm has started. &lt;br /&gt; You are no longer undercover.</Original>
+            <Russian>Взлом был прерван. &lt;br /&gt; Сработала сигнализация. &lt;br /&gt; Вы больше не под прикрытием.</Russian>
+            <German>Das Knacken wurde abgebrochen. &lt;br /&gt; Ein Alarm wurde ausgelöst. &lt;br /&gt; Du bist nicht mehr undercover.</German>
+            <Italian>Lo scasso è stato interrotto. &lt;br /&gt; È scattato un allarme. &lt;br /&gt; Non sei più sotto copertura.</Italian>
+            <Spanish>El forzamiento ha sido abortado. &lt;br /&gt; Se ha activado una alarma. &lt;br /&gt; Ya no estás encubierto.</Spanish>
+            <French>Le crochetage a été interrompu. &lt;br /&gt; Une alarme s'est déclenchée. &lt;br /&gt; Vous n'êtes plus sous couverture.</French>
+            <Korean>자물쇠 따기가 중단되었습니다. &lt;br /&gt; 경보가 울리기 시작했습니다. &lt;br /&gt; 더 이상 위장 상태가 아닙니다.</Korean>
+            <Japanese>ピッキングが中止されました。 &lt;br /&gt; アラームが鳴り始めました。 &lt;br /&gt; もう潜入状態ではありません。</Japanese>
+            <Chinesesimp>撬锁已被中止。 &lt;br /&gt; 警报已触发。 &lt;br /&gt; 你不再是卧底。</Chinesesimp>
+            <Chinese>撬鎖已被中止。 &lt;br /&gt; 警報已觸發。 &lt;br /&gt; 你不再是臥底。</Chinese>
+            <Polish>Wytrychowanie zostało przerwane. &lt;br /&gt; Włączył się alarm. &lt;br /&gt; Nie jesteś już pod przykrywką.</Polish>
+            <Czech>Páčení bylo přerušeno. &lt;br /&gt; Spustil se alarm. &lt;br /&gt; Už nejsi v utajení.</Czech>
+            <Portuguese>O arrombamento foi interrompido. &lt;br /&gt; Um alarme foi ativado. &lt;br /&gt; Você não está mais disfarçado.</Portuguese>
+            <Turkish>Maymuncuk kullanma işlemi iptal edildi. &lt;br /&gt; Alarm çalmaya başladı. &lt;br /&gt; Artık gizli değilsin.</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_zone_control">
             <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</Original>

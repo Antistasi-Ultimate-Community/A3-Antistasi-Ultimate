@@ -72,6 +72,7 @@ class CfgFunctions
             class lockpick {};
             class lockpickOnFail {};
             class lockpickOnProgress {};
+            class lockpickOnSuccess {};
             class lockpickZones {};
             class setLock {};
             class toggleLock {};

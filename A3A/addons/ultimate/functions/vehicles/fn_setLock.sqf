@@ -31,6 +31,7 @@ _vehicle lock _state;
 
 if (_state isEqualTo true) then {
     [_vehicle] call A3U_fnc_lockpick;
+    _vehicle setVariable ["A3U_lockpicking_vehicleOwner", clientOwner];
 };
 
 [format["%1 has been locked. State: %2", typeOf _vehicle, _state], _fnc_scriptName] call A3U_fnc_log;

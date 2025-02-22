@@ -25,16 +25,16 @@ params ["_vehicle"];
     {
         params ["_target", "_caller", "_actionId", "_arguments", "_frame", "_maxFrame"];
 
-        [_target, _caller, _frame, _actionId] call A3U_fnc_lockpickOnProgress;
+        [_target, _caller, _actionId, _frame, _maxFrame] call A3U_fnc_lockpickOnProgress;
     },
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-        [_target, _actionId] call BIS_fnc_holdActionRemove;
-        [_target, false] call A3U_fnc_setLock;
-        [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_success", (getText (configFile >> "cfgVehicles" >> typeOf _target >> "displayName"))]] call A3A_fnc_customHint;
+
+        [_target, _caller, _actionId] call A3U_fnc_lockpickOnSuccess;
     },
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
+        
         [_target, _caller] call A3U_fnc_lockpickOnFail;
     },
     [],
