@@ -41,20 +41,11 @@ if (_unit isEqualTo ObjNull) exitWith {ObjNull};
 	// | Sound name as written in CfgSounds.hpp | Animation played when sound is selected | Duration of animation | 
  
 	while { (alive _unit) } do {
-		private _sound = selectRandom (_ambientSounds);
+		private _combo = selectRandom (_ambientSounds);
+
+        [_unit, _combo#0, _combo#1, _combo#2] call A3A_fnc_unitAmbientPlay;
  
-		private _animation = _sound # 1;
- 
-		[_unit, _sound # 0] remoteExec ["say3D", 0, true];
- 
-		[_unit, _animation] remoteExec ["playMoveNow",0,true];
- 
-		sleep (_sound # 2);
- 
-		[_unit,[""]] remoteExec ["switchMove"];
- 
-		sleep (random 1800); 
-		sleep (random 10); 
+		sleep (random 1800);
 
         if !(alive _unit) exitWith {};
 	}; 

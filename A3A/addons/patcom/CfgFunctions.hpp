@@ -23,6 +23,7 @@ class CfgFunctions {
             class dialogCiv {};
             class dialogCivFinished {};
             class unitAmbient {};
+            class unitAmbientPlay {};
         };
 
         class Patcom {
