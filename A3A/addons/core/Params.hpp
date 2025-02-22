@@ -600,6 +600,13 @@ class Params
     {
         type = "Experimental";
     };
+    class enableVehicleAutoLock: ExperimentalParams
+    {
+        title = $STR_params_enableVehicleAutoLock;
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        default = 1;
+    };
     class recruitToPlayerSquad: ExperimentalParams
     {
         title = $STR_params_recruitToPlayerSquad;
