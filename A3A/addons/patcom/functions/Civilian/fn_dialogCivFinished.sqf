@@ -31,7 +31,7 @@ if (_civUnit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
 
 private _possibleMarkers = [citiesX, _civUnit, true] call A3A_fnc_findIfNearAndHostile;
 
-private _isDialogSuccessful = (captive player && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
+private _isDialogSuccessful = (captive _caller && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
 
 if (_isDialogSuccessful) exitWith {
     private _roll = random 100;
