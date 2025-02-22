@@ -5461,6 +5461,13 @@
                 <Korean>[실험용] 플레이어가 의식불명인 상태에서 인공지능 유닛을 조종할 수 있도록 허용</Korean>
                 <French>[Expérimental] Permettre aux joueurs de prendre le contrôle des unités de l'IA lorsqu'ils sont inconscients</French>
             </Key>
+            <Key ID="STR_params_maxConstructions">
+                <Original>Maximum quantity of Persistent Constructions</Original>
+                <Russian>Максимальное количество сохраняемых сооружений</Russian>
+                <Chinesesimp>最大多少数量的永久建筑</Chinesesimp>
+                <Korean>영구 건축물의 최대 수량</Korean>
+                <French>Quantité maximale de constructions permanentes</French>
+            </Key>
             <Key ID="STR_params_maxSupportPoints">
                 <Original>Support Points Cap</Original>
                 <Russian>Максимальное количество очков поддержки</Russian>

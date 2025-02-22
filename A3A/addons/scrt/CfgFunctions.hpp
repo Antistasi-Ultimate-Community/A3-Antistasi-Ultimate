@@ -123,6 +123,15 @@ class CfgFunctions {
 			class garrison_rollOversizeVehicle {};
 		};
 
+		class Build {
+			file = QPATHTOFOLDER(Build);
+			class build_prepareAndStartConstruction {};
+			class build_addConstruction {};
+			class build_saveConstruction {};
+			class build_updateConstruction {};
+			class build_removeConstruction {};
+		};
+
 		class Location {
 			file = QPATHTOFOLDER(Location);
 			class location_createPatrols {};
@@ -187,6 +196,8 @@ class CfgFunctions {
 			class ui_setAvailableBuildingTypes {};
 			
 			class ui_createConstructionMenu {};
+			class ui_prepareConstructionBuild {};
+        	class ui_prepareConstructionRemoval {};
 
 			class ui_populateVehicleBox {};
 			class ui_populateBlackMarket {};

@@ -105,6 +105,8 @@ DECLARE_SERVER_VAR(paradropAttendants, []);
 DECLARE_SERVER_VAR(traderDiscount, 0);
 //Trader position.
 DECLARE_SERVER_VAR(traderPosition, []);
+//List of player-placed buildings that will be saved and loaded.
+DECLARE_SERVER_VAR(constructionsToSave, []);
 //Non-lethal support points similar to airstrikes
 DECLARE_SERVER_VAR(supportPoints, 0);
 //Whether the players have trader quest.

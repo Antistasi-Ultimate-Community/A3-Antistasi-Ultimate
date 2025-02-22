@@ -786,7 +786,28 @@ class constructionMenu: SimpleMenuSmall
 			w = 0.183333 * safezoneW;	
 			h = 0.0222222 * safezoneH;
 		};
-		
+
+		// class r1Button: SimpleButton
+		// {
+		// 	idc = -1;
+		// 	text = $STR_antistasi_dialogs_remove_construction;
+		// 	tooltip = $STR_antistasi_dialogs_remove_construction_tooltip;
+		// 	x = 0.477 * safezoneW + safezoneX;
+		// 	y = 0.262 * safezoneH + safezoneY;	
+		// 	colorBackground[] = {"0.376","0.125","0.043",0.9};
+		// 	action = "[] spawn SCRT_fnc_ui_prepareConstructionRemoval;";
+		// };
+
+		// class r2Button: SimpleButton
+		// {
+		// 	idc = -1;
+		// 	text = $STR_antistasi_dialogs_build;
+		// 	x = 0.477 * safezoneW + safezoneX;
+		// 	y = 0.346 * safezoneH + safezoneY;
+		// 	tooltip = $STR_antistasi_dialogs_build_tooltip;
+		// 	action = "[] call SCRT_fnc_ui_prepareConstructionBuild;";
+		// 	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",0.9};
+		// };
 	};
 };
 

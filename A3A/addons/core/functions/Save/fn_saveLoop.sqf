@@ -220,6 +220,24 @@ _rebMarkers pushBack "Synd_HQ";
 
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 
+private _excessiveConstructions = maxConstructions - (count constructionsToSave);
+if(_excessiveConstructions < 0) then {
+	private _top = abs _excessiveConstructions;
+	for "_i" from 0 to _top do {
+		constructionsToSave deleteAt _i;
+	};
+};
+
+_arrayConstructions = [];
+{
+	_positionX = position _x;
+	if ((alive _x) and !(surfaceIsWater _positionX) and !(isNull _x)) then {
+		_arrayConstructions pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
+	};
+} forEach constructionsToSave;
+["constructionsX", _arrayConstructions] call A3A_fnc_setStatVariable;
+
+["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 [] call A3A_fnc_arsenalManage;
 
 _jna_dataList = [];
