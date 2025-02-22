@@ -159,7 +159,7 @@ private _failMessage = selectRandom [
     "STR_antistasi_actions_talk_with_civ_fail3"
 ];
 
-if (!(captive player) || {aggressionOccupants >= random [30, 50, 70]}) then {
+if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
     _failMessage = selectRandom [
         "STR_antistasi_actions_talk_with_civ_fail_notundercover1",
         "STR_antistasi_actions_talk_with_civ_fail_notundercover2"
