@@ -22,9 +22,11 @@ params [
 ];
 
 if (_vehicle isEqualTo ObjNull || {isNil "_vehicle"}) exitWith {false};
+if ( ["flag", typeOf _vehicle] call BIS_fnc_inString ) exitWith {false};
 if (alive _vehicle isEqualTo false) exitWith {false};
 
 _vehicle lock _state;
+[_vehicle] call A3U_fnc_lockpick;
 
 [format["%1 has been locked. State: %2", typeOf _vehicle, _state], _fnc_scriptName] call A3U_fnc_log;
 

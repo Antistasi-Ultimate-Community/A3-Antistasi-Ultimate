@@ -64,6 +64,7 @@ class CfgFunctions
         class vehicles
         {
             file = QPATHTOFOLDER(functions\vehicles);
+            class lockpick {};
             class setLock {};
             class toggleLock {};
         };

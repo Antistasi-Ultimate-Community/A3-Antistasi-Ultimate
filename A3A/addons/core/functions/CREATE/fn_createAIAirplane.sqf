@@ -452,9 +452,7 @@ for "_i" from 0 to (count _array - 1) do {
 
 ["locationSpawned", [_markerX, "Airport", true]] call EFUNC(Events,triggerEvent);
 
-{
-	[_x, true] call A3U_fnc_setLock;
-} forEach _vehiclesX;
+{ [_x, true] call A3U_fnc_setLock; } forEach _vehiclesX;
 
 _flagX setVariable ["A3U_zoneVehicles", _vehiclesX, true];
 
