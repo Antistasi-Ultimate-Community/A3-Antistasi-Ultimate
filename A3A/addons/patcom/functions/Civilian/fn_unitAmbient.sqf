@@ -40,18 +40,18 @@ if (_unit isEqualTo ObjNull) exitWith {ObjNull};
 	// the action and sound selected unit makes in the following order 
 	// | Sound name as written in CfgSounds.hpp | Animation played when sound is selected | Duration of animation | 
  
-	while { (alive _unit) } do { 
-		private _sound = selectRandom (_ambientSounds); 
+	while { (alive _unit) } do {
+		private _sound = selectRandom (_ambientSounds);
  
-		private _animation = _sound # 1; 
+		private _animation = _sound # 1;
  
-		[_unit, _sound # 0] remoteExec ["say3D", 0, true]; 
+		[_unit, _sound # 0] remoteExec ["say3D", 0, true];
  
-		_unit playMoveNow _animation; 
+		[_unit, _animation] remoteExec ["playMoveNow",0,true];
  
-		sleep (_sound # 2); 
+		sleep (_sound # 2);
  
-		_unit switchMove "";
+		[_unit,[""]] remoteExec ["switchMove"];
  
 		sleep (random 1800); 
 		sleep (random 10); 
