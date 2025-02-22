@@ -32,10 +32,6 @@ private _markerX = [airportsX + resourcesX + factories + outposts + seaports + m
 
 private _vehicles = _flagX getVariable ["A3U_zoneVehicles", []];
 
-{
-    [_x, false] call A3U_fnc_setLock;
-} forEach _vehicles;
-
 if (hideEnemyMarkers) then {
     "Dum"+_markerX setMarkerAlpha 1;
 };

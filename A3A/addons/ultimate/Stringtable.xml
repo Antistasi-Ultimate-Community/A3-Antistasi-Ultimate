@@ -196,21 +196,21 @@
             <Turkish>Kilit açma işlemi iptal edildi &lt;br /&gt; Alarm çaldı &lt;br /&gt; Yakındaki düşmanlar artık konumunu biliyor</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_zone_control">
-            <Original>%1 &lt;br /&gt;lockpick time has been cut in half since you have control of this zone</Original>
-            <English>%1 &lt;br /&gt;lockpick time has been cut in half since you have control of this zone</English>
-            <Russian>%1 &lt;br /&gt;время взлома сокращено вдвое, так как вы контролируете эту зону</Russian>
-            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde halbiert, da du diese Zone kontrollierst</German>
-            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato dimezzato poiché controlli questa zona</Italian>
-            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido a la mitad porque tienes el control de esta zona</Spanish>
-            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit de moitié car vous contrôlez cette zone</French>
-            <Korean>%1 &lt;br /&gt;이 지역을 장악했기 때문에 자물쇠 따기 시간이 절반으로 줄었습니다</Korean>
-            <Japanese>%1 &lt;br /&gt;このエリアを支配しているため、ピッキング時間が半分になりました</Japanese>
-            <Chineseimp>%1 &lt;br /&gt;撬锁时间减半，因为你控制了此区域</Chineseimp>
-            <Chinese>%1 &lt;br /&gt;撬鎖時間減半，因為你控制了此區域</Chinese>
-            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony o połowę, ponieważ kontrolujesz tę strefę</Polish>
-            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen na polovinu, protože ovládáte tuto zónu</Czech>
-            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido pela metade porque você controla esta zona</Portuguese>
-            <Turkish>%1 &lt;br /&gt;bu bölgeyi kontrol ettiğin için kilit açma süresi yarıya indi</Turkish>
+            <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</Original>
+            <English>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</English>
+            <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как вы контролируете эту зону</Russian>
+            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du diese Zone kontrollierst</German>
+            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché controlli questa zona</Italian>
+            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido porque tienes el control de esta zona</Spanish>
+            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous contrôlez cette zone</French>
+            <Korean>%1 &lt;br /&gt;이 지역을 장악했기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
+            <Japanese>%1 &lt;br /&gt;このエリアを支配しているため、ピッキング時間が短縮されました</Japanese>
+            <Chineseimp>%1 &lt;br /&gt;撬锁时间已减少，因为你控制了此区域</Chineseimp>
+            <Chinese>%1 &lt;br /&gt;撬鎖時間已減少，因為你控制了此區域</Chinese>
+            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ kontrolujesz tę strefę</Polish>
+            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože ovládáte tuto zónu</Czech>
+            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você controla esta zona</Portuguese>
+            <Turkish>%1 &lt;br /&gt;bu bölgeyi kontrol ettiğin için kilit açma süresi azaldı</Turkish>
         </Key>
     </Package>
 </Project>
