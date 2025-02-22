@@ -21,7 +21,7 @@ params [
     ["_state", false]
 ];
 
-if !(enableVehicleAutoLock) exitWith {false};
+if (enableVehicleAutoLock isEqualTo false) exitWith {false};
 
 if (_vehicle isEqualTo ObjNull || {isNil "_vehicle"}) exitWith {false};
 if (_vehicle isKindOf "Static") exitWith {false};
