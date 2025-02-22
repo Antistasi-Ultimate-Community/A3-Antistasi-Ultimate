@@ -343,7 +343,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
-        lockOnSave = 1; // ? Not sure if this one can be changed mid game or not...
+        lockOnSave = 1; // Causes errors if disabling trader after already having found him in a save
     };
     class staminaEnabled: UltimateParams
     {
