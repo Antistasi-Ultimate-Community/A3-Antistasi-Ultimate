@@ -522,20 +522,6 @@ if (_varName in specialVarLoads) then {
 			publicVariable "supportPoints";
 		};
 
-        case 'constructionsX': {
-			for "_i" from 0 to (count _varvalue) - 1 do {
-				_typeVehX = _varvalue select _i select 0;
-				_posVeh = _varvalue select _i select 1;
-				_xVectorUp = _varvalue select _i select 2;
-				_xVectorDir = _varvalue select _i select 3;
-				private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
-				_veh setPosWorld _posVeh;
-				_veh setVectorDirAndUp [_xVectorDir,_xVectorUp];
-				constructionsToSave pushBack _veh;
-			};
-			publicVariable "constructionsToSave";
-		};
-
         case 'watchpostsFIA': {
 			if (count (_varValue select 0) == 2) then {
 			{
