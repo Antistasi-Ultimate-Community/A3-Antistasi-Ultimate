@@ -140,4 +140,91 @@
             <Original>%1 just sent a tank platoon.</Original>
         </Key>
     </Package>
+    <Package name="Lockpick">
+        <Key ID="STR_A3AU_action_lockpick_title">
+            <Original>Lockpicking</Original>
+            <English>Lockpicking</English>
+            <Russian>Взлом замка</Russian>
+            <German>Schlossknacken</German>
+            <Italian>Scassinamento</Italian>
+            <Spanish>Ganzúa</Spanish>
+            <French>Crochetage</French>
+            <Korean>자물쇠 따기</Korean>
+            <Japanese>ピッキング</Japanese>
+            <Chineseimp>撬锁</Chineseimp>
+            <Chinese>撬鎖</Chinese>
+            <Polish>Otwieranie zamka</Polish>
+            <Czech>Odemykání zámku</Czech>
+            <Portuguese>Arrombamento</Portuguese>
+            <Turkish>Kilit Açma</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_start">
+            <Original>you have started lockpicking %1&lt;br /&gt;</Original>
+            <English>you have started lockpicking %1&lt;br /&gt;</English>
+            <Russian>вы начали взлом замка %1&lt;br /&gt;</Russian>
+            <German>du hast begonnen, das Schloss von %1 zu knacken&lt;br /&gt;</German>
+            <Italian>hai iniziato a scassinare %1&lt;br /&gt;</Italian>
+            <Spanish>has comenzado a forzar la cerradura de %1&lt;br /&gt;</Spanish>
+            <French>vous avez commencé à crocheter %1&lt;br /&gt;</French>
+            <Korean>%1의 자물쇠를 따기 시작했습니다&lt;br /&gt;</Korean>
+            <Japanese>%1のピッキングを開始しました&lt;br /&gt;</Japanese>
+            <Chineseimp>你已开始撬锁 %1&lt;br /&gt;</Chineseimp>
+            <Chinese>你已開始撬鎖 %1&lt;br /&gt;</Chinese>
+            <Polish>rozpocząłeś otwieranie zamka %1&lt;br /&gt;</Polish>
+            <Czech>začal jsi odemykat %1&lt;br /&gt;</Czech>
+            <Portuguese>você começou a arrombar %1&lt;br /&gt;</Portuguese>
+            <Turkish>%1 kilidini açmaya başladın&lt;br /&gt;</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_success">
+            <Original>You have successfully lockpicked %1&lt;br /&gt;</Original>
+            <English>You have successfully lockpicked %1&lt;br /&gt;</English>
+            <Russian>Вы успешно взломали %1&lt;br /&gt;</Russian>
+            <German>Du hast %1 erfolgreich geknackt&lt;br /&gt;</German>
+            <Italian>Hai scassinato con successo %1&lt;br /&gt;</Italian>
+            <Spanish>Has forzado la cerradura de %1 con éxito&lt;br /&gt;</Spanish>
+            <French>Vous avez réussi à crocheter %1&lt;br /&gt;</French>
+            <Korean>%1의 자물쇠를 성공적으로 땄습니다&lt;br /&gt;</Korean>
+            <Japanese>%1のピッキングに成功しました&lt;br /&gt;</Japanese>
+            <Chineseimp>你已成功撬开 %1&lt;br /&gt;</Chineseimp>
+            <Chinese>你已成功撬開 %1&lt;br /&gt;</Chinese>
+            <Polish>Udało ci się otworzyć %1&lt;br /&gt;</Polish>
+            <Czech>Úspěšně jsi odemkl %1&lt;br /&gt;</Czech>
+            <Portuguese>Você arrombou %1 com sucesso&lt;br /&gt;</Portuguese>
+            <Turkish>%1 kilidini başarıyla açtın&lt;br /&gt;</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_aborted">
+            <Original>Lockpicking has been aborted &lt;br /&gt; An alarm has started &lt;br /&gt; Enemies nearby now know your location</Original>
+            <English>Lockpicking has been aborted &lt;br /&gt; An alarm has started &lt;br /&gt; Enemies nearby now know your location</English>
+            <Russian>Взлом замка прерван &lt;br /&gt; Сработала сигнализация &lt;br /&gt; Враги поблизости теперь знают ваше местоположение</Russian>
+            <German>Schlossknacken wurde abgebrochen &lt;br /&gt; Ein Alarm wurde ausgelöst &lt;br /&gt; Feinde in der Nähe kennen nun deine Position</German>
+            <Italian>Scassinamento interrotto &lt;br /&gt; È scattato un allarme &lt;br /&gt; I nemici vicini ora conoscono la tua posizione</Italian>
+            <Spanish>Ganzúa abortada &lt;br /&gt; Se ha activado una alarma &lt;br /&gt; Los enemigos cercanos ahora conocen tu ubicación</Spanish>
+            <French>Le crochetage a été interrompu &lt;br /&gt; Une alarme s'est déclenchée &lt;br /&gt; Les ennemis proches connaissent maintenant votre position</French>
+            <Korean>자물쇠 따기가 중단되었습니다 &lt;br /&gt; 경보가 울렸습니다 &lt;br /&gt; 근처의 적들이 이제 당신의 위치를 알고 있습니다</Korean>
+            <Japanese>ピッキングが中断されました &lt;br /&gt; アラームが作動しました &lt;br /&gt; 近くの敵があなたの位置を知りました</Japanese>
+            <Chineseimp>撬锁已中止 &lt;br /&gt; 警报已响起 &lt;br /&gt; 附近的敌人现在知道了你的位置</Chineseimp>
+            <Chinese>撬鎖已中止 &lt;br /&gt; 警報已響起 &lt;br /&gt; 附近的敵人現在知道了你的位置</Chinese>
+            <Polish>Otwieranie zamka zostało przerwane &lt;br /&gt; Włączony został alarm &lt;br /&gt; Wrogowie w pobliżu znają teraz twoją lokalizację</Polish>
+            <Czech>Odemykání bylo přerušeno &lt;br /&gt; Spustil se alarm &lt;br /&gt; Nepřátelé v okolí teď znají tvoji polohu</Czech>
+            <Portuguese>Arrombamento foi abortado &lt;br /&gt; Um alarme foi disparado &lt;br /&gt; Inimigos próximos agora sabem sua localização</Portuguese>
+            <Turkish>Kilit açma işlemi iptal edildi &lt;br /&gt; Alarm çaldı &lt;br /&gt; Yakındaki düşmanlar artık konumunu biliyor</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_zone_control">
+            <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</Original>
+            <English>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</English>
+            <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как вы контролируете эту зону</Russian>
+            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du diese Zone kontrollierst</German>
+            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché controlli questa zona</Italian>
+            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido porque tienes el control de esta zona</Spanish>
+            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous contrôlez cette zone</French>
+            <Korean>%1 &lt;br /&gt;이 지역을 장악했기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
+            <Japanese>%1 &lt;br /&gt;このエリアを支配しているため、ピッキング時間が短縮されました</Japanese>
+            <Chineseimp>%1 &lt;br /&gt;撬锁时间已减少，因为你控制了此区域</Chineseimp>
+            <Chinese>%1 &lt;br /&gt;撬鎖時間已減少，因為你控制了此區域</Chinese>
+            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ kontrolujesz tę strefę</Polish>
+            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože ovládáte tuto zónu</Czech>
+            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você controla esta zona</Portuguese>
+            <Turkish>%1 &lt;br /&gt;bu bölgeyi kontrol ettiğin için kilit açma süresi azaldı</Turkish>
+        </Key>
+    </Package>
 </Project>

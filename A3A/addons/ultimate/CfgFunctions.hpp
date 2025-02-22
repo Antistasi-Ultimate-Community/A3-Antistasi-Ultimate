@@ -66,6 +66,13 @@ class CfgFunctions
             class logisticsGrabSeats {};
             class weightTest {};
         };
+        class vehicles
+        {
+            file = QPATHTOFOLDER(functions\vehicles);
+            class lockpick {};
+            class setLock {};
+            class toggleLock {};
+        };
         class zombie
         {
             file = QPATHTOFOLDER(functions\zombie);
