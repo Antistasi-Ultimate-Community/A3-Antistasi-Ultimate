@@ -31,22 +31,26 @@ if (_lowCiv || _civNonHuman) exitWith {false};
     localize "STR_antistasi_actions_talk_with_civ",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\unknown_ca", "\a3\ui_f\data\igui\cfg\simpletasks\types\talk_ca.paa",
     "true", "true",
-    {            
-        _caller globalChat (selectRandom [
+    {
+        private _question = selectRandom [
             localize "STR_antistasi_actions_talk_with_civ_question1",
             localize "STR_antistasi_actions_talk_with_civ_question2",
             localize "STR_antistasi_actions_talk_with_civ_question3"
-        ]);
+        ]; 
+         
+        [_caller, _question] remoteExec ["globalChat", _caller];
     },
     {},
     {
-        [_this select 0] call A3A_fnc_dialogCivFinished;
+        [_this select 0, _caller] remoteExecCall ["A3A_fnc_dialogCivFinished", 2];
     },
-    {            
-        (_this select 0) globalChat (selectRandom [
+    {
+        private _interruption = selectRandom [
             localize "STR_antistasi_actions_talk_with_civ_interruption1",
             localize "STR_antistasi_actions_talk_with_civ_interruption2"
-        ]);
+        ];
+
+        [(_this select 0), _interruption] remoteExec ["globalChat", _caller];
     },
     [_civUnit], 2, nil, true, false
 ] remoteExec ["BIS_fnc_holdActionAdd", 0]; // hold interaction to talk with a civ.

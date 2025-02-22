@@ -36,26 +36,6 @@ private _radioItem = getPosATL _building;
 _radioItem set [2, ((_radioItem select 2) + 1)];
 private _musicSource = createVehicle ["Land_FMradio_F", _radioItem];
 
-private _tableItem = getPosATL _building; 
-_tableItem set [0, ((_tableItem select 0) + ([-1.0, 1.0] call BIS_fnc_randomNum))];
-_tableItem set [1, ((_tableItem select 1) + ([-1.0, 1.0] call BIS_fnc_randomNum))];
-_tableItem set [2, ((_tableItem select 2) + 0.5)];
-
-private _civItems = selectRandom [
-    "Item_Money", 
-    "Item_Money_bunch", 
-    "Item_Money_roll", 
-    "Item_Money_stack",
-    "Leaflet_05_F", 
-    "Leaflet_05_Old_F", 
-    "MedicalGarbage_01_1x1_v1_F", 
-    "MedicalGarbage_01_Packaging_F", 
-    "Land_Tyre_F", 
-    "Leaflet_05_New_F"
-];
-
-private _randomCivItem = createVehicle [_civItems, _tableItem];
-
 [_radioItem, _musicSource] spawn {
     params ["_radioItem", "_musicSource", "_locationType"];
     private _tracksPlayed = 1;
@@ -95,7 +75,7 @@ private _randomCivItem = createVehicle [_civItems, _tableItem];
     while { (alive _musicSource) } do {
         while { _tracksPlayed < _totalTracks } do {
             private _track = selectRandom (_tracks);
-            private _trackDuration = _track # 1;
+            private _trackDuration = (_track # 1) * 2;
 
             [_musicSource, _track # 0] remoteExec ["say3D", [0, _musicSource], true];
 

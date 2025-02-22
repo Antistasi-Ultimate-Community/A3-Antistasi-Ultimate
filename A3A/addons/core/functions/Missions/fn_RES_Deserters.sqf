@@ -220,4 +220,7 @@ deleteGroup _grpDeserters;
 {boxX addWeaponCargoGlobal [_x,1]} forEach _weaponsX;
 {boxX addMagazineCargoGlobal [_x,1]} forEach _ammunition;
 {boxX addItemCargoGlobal [_x,1]} forEach _items;/// add every item deserter have to the box, current system seems doesn't work
+
+missionNamespace setVariable ["A3U_dialogCivMissionInProgress", false, true];
+
 [_taskId, "RES", 1200] spawn A3A_fnc_taskDelete;
