@@ -263,7 +263,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
             class Controls
             {
                 class RebelsLabel: A3A_SectionLabelRight {
-                    idc = -1;
+                    idc = A3A_IDC_SETUP_REBELSLABEL;
                     text = $STR_antistasi_dialogs_setup_rebels;
                     x = 4 * GRID_W;
                     y = 4 * GRID_H;
@@ -280,7 +280,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
 
                 class CiviliansLabel: A3A_SectionLabelRight {
-                    idc = -1;
+                    idc = A3A_IDC_SETUP_CIVILIANSLABEL;
                     text = $STR_antistasi_dialogs_setup_civilians;
                     x = 4 * GRID_W;
                     y = 50 * GRID_H;
@@ -297,7 +297,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
 
                 class OccupantsLabel: A3A_SectionLabelRight {
-                    idc = -1;
+                    idc = A3A_IDC_SETUP_OCCUPANTSLABEL;
                     text = $STR_antistasi_dialogs_setup_occupants;
                     x = 44 * GRID_W;
                     y = 4 * GRID_H;
@@ -314,7 +314,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
 
                 class InvadersLabel: A3A_SectionLabelRight {
-                    idc = -1;
+                    idc = A3A_IDC_SETUP_INVADERSLABEL;
                     text = $STR_antistasi_dialogs_setup_invaders;
                     x = 84 * GRID_W;
                     y = 4 * GRID_H;
@@ -331,7 +331,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
 
                 class RivalsLabel: A3A_SectionLabelRight {
-                    idc = -1;
+                    idc = A3A_IDC_SETUP_RIVALSLABEL;
                     text = $STR_antistasi_dialogs_setup_rivals;
                     x = 84 * GRID_W;
                     y = 50 * GRID_H;
