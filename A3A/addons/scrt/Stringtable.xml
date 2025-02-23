@@ -5127,7 +5127,21 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
-	    <Key ID="STR_params_recruitToPlayerSquad">
+            <Key ID="STR_params_enableVehicleAutoLock">
+                <Original>Enable Enemy Vehicle Locks</Original>
+                <Russian>Включить замки на вражеских машинах</Russian>
+                <Chinesesimp>启用敌方车辆锁</Chinesesimp>
+                <Korean>적 차량 잠금 장치 활성화</Korean>
+                <French>Activer les verrous des véhicules ennemis</French>
+            </Key>
+            <Key ID="STR_params_vehicleLockpickTime">
+                <Original>Amount of time in seconds to lockpick a vehicle</Original>
+                <Russian>Время в секундах для взлома автомобиля</Russian>
+                <French>Temps en secondes pour crocheter un véhicule</French>
+                <Korean>차량의 자물쇠를 따는 데 걸리는 시간(초)</Korean>
+                <Chineseimp>撬锁车辆所需的时间（秒）</Chineseimp>
+            </Key>
+	        <Key ID="STR_params_recruitToPlayerSquad">
                 <Original>Allow players to recruit enemy AI to their squad</Original>
                 <Russian>Позволить игрокам нанимать вражеский ИИ в свой отряд</Russian>
                 <Chinesesimp>允许玩家招募敌方 AI 加入他们的小队</Chinesesimp>

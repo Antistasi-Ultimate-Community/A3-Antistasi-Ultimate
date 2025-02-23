@@ -207,7 +207,6 @@
         </Key>
         <Key ID="STR_A3AU_action_lockpick_zone_control">
             <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</Original>
-            <English>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</English>
             <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как вы контролируете эту зону</Russian>
             <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du diese Zone kontrollierst</German>
             <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché controlli questa zona</Italian>
@@ -221,6 +220,38 @@
             <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože ovládáte tuto zónu</Czech>
             <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você controla esta zona</Portuguese>
             <Turkish>%1 &lt;br /&gt;bu bölgeyi kontrol ettiğin için kilit açma süresi azaldı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_has_toolkit">
+            <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have a toolkit</Original>
+            <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как у вас есть набор инструментов</Russian>
+            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du ein Werkzeugset hast</German>
+            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché hai un kit di attrezzi</Italian>
+            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido porque tienes un kit de herramientas</Spanish>
+            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous avez une trousse à outils</French>
+            <Korean>%1 &lt;br /&gt;공구 상자가 있기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
+            <Japanese>%1 &lt;br /&gt;工具キットを持っているため、ピッキング時間が短縮されました</Japanese>
+            <Chineseimp>%1 &lt;br /&gt;由于你有工具包，撬锁时间已减少</Chineseimp>
+            <Chinese>%1 &lt;br /&gt;由於你有工具包，撬鎖時間已減少</Chinese>
+            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ masz zestaw narzędzi</Polish>
+            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože máte sadu nástrojů</Czech>
+            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você tem um kit de ferramentas</Portuguese>
+            <Turkish>%1 &lt;br /&gt;alet takımın olduğu için kilit açma süresi azaldı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_not_engineer">
+            <Original>You have to be an Engineer to start lockpicking</Original>
+            <Russian>Вам нужно быть инженером, чтобы начать взлом</Russian>
+            <German>Du musst ein Ingenieur sein, um das Schlossknacken zu starten</German>
+            <Italian>Devi essere un ingegnere per iniziare a scassinare</Italian>
+            <Spanish>Debes ser ingeniero para empezar a ganzuar</Spanish>
+            <French>Vous devez être ingénieur pour commencer le crochetage</French>
+            <Korean>자물쇠 따기를 시작하려면 엔지니어여야 합니다</Korean>
+            <Japanese>ピッキングを開始するにはエンジニアである必要があります</Japanese>
+            <Chineseimp>你必须是工程师才能开始撬锁</Chineseimp>
+            <Chinese>你必須是工程師才能開始撬鎖</Chinese>
+            <Polish>Musisz być inżynierem, aby rozpocząć otwieranie zamków</Polish>
+            <Czech>Musíte být inženýrem, abyste mohli začít odemykat</Czech>
+            <Portuguese>Você precisa ser um engenheiro para começar a arrombar fechaduras</Portuguese>
+            <Turkish>Kilit açmaya başlamak için mühendis olmalısın</Turkish>
         </Key>
     </Package>
 </Project>

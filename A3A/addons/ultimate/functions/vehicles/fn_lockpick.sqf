@@ -19,9 +19,15 @@ params ["_vehicle"];
     localize "STR_A3AU_action_lockpick_title",
     "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    "(_this distance _target < 5) && {_this call A3A_fnc_isEngineer} && {[_this, 'ToolKit'] call BIS_fnc_hasItem}",
-    "(_caller distance _target < 5)",
-    {[localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_start", (getText (configFile >> "cfgVehicles" >> typeOf (_this select 0) >> "displayName"))]] call A3A_fnc_customHint},
+    "(_this distance _target < 5)",
+    "(_caller distance _target < 5) && {_this call A3A_fnc_isEngineer}",
+    {
+        params ["_target", "_caller", "_actionId", "_arguments"];
+
+        if !(_caller call A3A_fnc_isEngineer) then {
+            [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint
+        };
+    },
     {
         params ["_target", "_caller", "_actionId", "_arguments", "_frame", "_maxFrame"];
 
@@ -38,7 +44,7 @@ params ["_vehicle"];
         [_target, _caller] call A3U_fnc_lockpickOnFail;
     },
     [],
-    30,
+    vehicleLockpickTime,
     2026,
     false,
     false

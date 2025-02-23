@@ -600,14 +600,21 @@ class Params
     {
         type = "Experimental";
     };
-    class TitleExperimental
+    class enableVehicleAutoLock: ExperimentalParams
     {
-        title = $STR_params_experimental_header;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        title = $STR_params_enableVehicleAutoLock;
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        default = 1;
     };
-    class enableSpectrumDevice
+    class vehicleLockpickTime: ExperimentalParams
+    {
+        title = $STR_params_vehicleLockpickTime;
+        values[] = {30,60,120};
+        texts[] = {"30s", "60s", "120s"};
+        default = 60;
+    };
+    class enableSpectrumDevice: ExperimentalParams
     {
         title = $STR_params_enableSpectrumDevice;
         values[] = {0,1};
