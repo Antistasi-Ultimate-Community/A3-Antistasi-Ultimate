@@ -24,6 +24,13 @@ params ["_vehicle"];
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 
+        // private _closestZone = (sidesX getVariable [([call A3U_fnc_lockpickZones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
+        // if (_closestZone isEqualTo teamPlayer) exitWith {
+        //     [_target, _actionId] call BIS_fnc_holdActionRemove;
+        //     [_target, false] remoteExec ["A3U_fnc_setLock", (owner _target)];
+        // };
+        // Re-enable if instant lockpicking after capture is desired
+
         if !(_caller call A3A_fnc_isEngineer) then {
             [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint;
         };
