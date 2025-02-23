@@ -25,7 +25,7 @@ params ["_vehicle"];
         params ["_target", "_caller", "_actionId", "_arguments"];
 
         if !(_caller call A3A_fnc_isEngineer) then {
-            [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint
+            [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint;
         };
     },
     {
