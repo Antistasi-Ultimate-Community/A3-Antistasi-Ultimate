@@ -1,9 +1,8 @@
 params ["_target", "_caller", "_actionId", "_frame", "_maxFrame"];
 
+if !([_target] call A3U_fnc_isLocked) exitWith {[_target, _actionId] call BIS_fnc_holdActionRemove};
 
 private _zones = call A3U_fnc_lockpickZones;
-
-if (locked _target in [0, 1]) exitWith {[_target, _actionId] call BIS_fnc_holdActionRemove};
 
 private _closestZone = (sidesX getVariable [([_zones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
 

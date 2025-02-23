@@ -28,6 +28,7 @@ if (_vehicle isKindOf "Static") exitWith {false};
 if (!(alive _vehicle)) exitWith {false};
 
 _vehicle lock _state;
+[_vehicle, _state] remoteExecCall ["lockInventory", 0, true];
 
 if (_state isEqualTo true) then {
     [_vehicle] call A3U_fnc_lockpick;
