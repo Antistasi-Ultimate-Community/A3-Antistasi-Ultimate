@@ -143,15 +143,15 @@ switch (_mode) do
         _aaTruckPrice params ["_aaTruckMoney", "_aaTruckHr"];
 
         // Update price labels
-        _infSquadPriceText ctrlSetText (format ["%1 € %2 HR", _infSquadMoney, _infSquadHr]);
-        // _engSquadPriceText ctrlSetText (format ["%1 €, %2 HR", _engSquadPrice, _engSquadHr]);
-        _infTeamPriceText ctrlSetText (format ["%1 € %2 HR", _infTeamMoney, _infTeamHr]);
-        _mgTeamPriceText ctrlSetText (format ["%1 € %2 HR", _mgTeamMoney, _mgTeamHr]);
-        _atTeamPriceText ctrlSetText (format ["%1 € %2 HR", _atTeamMoney, _atTeamHr]);
-        _mortarTeamPriceText ctrlSetText (format ["%1 € %2 HR", _mortarTeamMoney, _mortarTeamHr]);
-        _sniperTeamPriceText ctrlSetText (format ["%1 € %2 HR", _sniperTeamMoney, _sniperTeamHr]);
-        _atCarPriceText ctrlSetText (format ["%1 € %2 HR", _atCarMoney, _atCarHr]);
-        _aaTruckPriceText ctrlSetText (format ["%1 € %2 HR", _aaTruckMoney, _aaTruckHr]);
+        _infSquadPriceText ctrlSetText (format ["%1 %2 %3 HR", _infSquadMoney, A3A_faction_civ get "currencySymbol", _infSquadHr]);
+        // _engSquadPriceText ctrlSetText (format ["%1 %2, %3 HR", _engSquadPrice, A3A_faction_civ get "currencySymbol", _engSquadHr]);
+        _infTeamPriceText ctrlSetText (format ["%1 %2 %3 HR", _infTeamMoney, A3A_faction_civ get "currencySymbol", _infTeamHr]);
+        _mgTeamPriceText ctrlSetText (format ["%1 %2 %3 HR", _mgTeamMoney, A3A_faction_civ get "currencySymbol", _mgTeamHr]);
+        _atTeamPriceText ctrlSetText (format ["%1 %2 %3 HR", _atTeamMoney, A3A_faction_civ get "currencySymbol", _atTeamHr]);
+        _mortarTeamPriceText ctrlSetText (format ["%1 %2 %3 HR", _mortarTeamMoney, A3A_faction_civ get "currencySymbol", _mortarTeamHr]);
+        _sniperTeamPriceText ctrlSetText (format ["%1 %2 %3 HR", _sniperTeamMoney, A3A_faction_civ get "currencySymbol", _sniperTeamHr]);
+        _atCarPriceText ctrlSetText (format ["%1 %2 %3 HR", _atCarMoney, A3A_faction_civ get "currencySymbol", _atCarHr]);
+        _aaTruckPriceText ctrlSetText (format ["%1 %2 %3 HR", _aaTruckMoney, A3A_faction_civ get "currencySymbol", _aaTruckHr]);
 
         // Disable buttons and darken icon if not enough money or HR for the squad
         private _money = server getVariable "resourcesFIA";

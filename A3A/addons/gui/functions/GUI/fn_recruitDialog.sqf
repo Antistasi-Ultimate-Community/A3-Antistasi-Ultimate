@@ -72,14 +72,14 @@ switch (_mode) do
         private _bombSpecialistPrice = server getVariable FactionGet(reb,"unitExp");
 
         // Update price labels
-        _militiamanPriceText ctrlSetText ((str _militiamanPrice) + "€");
-        _autoriflemanPriceText ctrlSetText ((str _autoriflemanPrice) + "€");
-        _grenadierPriceText ctrlSetText ((str _grenadierPrice) + "€");
-        _antitankPriceText ctrlSetText ((str _antitankPrice) + "€");
-        _medicPriceText ctrlSetText ((str _medicPrice) + "€");
-        _marksmanPriceText ctrlSetText ((str _marksmanPrice) + "€");
-        _engineerPriceText ctrlSetText ((str _engineerPrice) + "€");
-        _bombSpecialistPriceText ctrlSetText ((str _bombSpecialistPrice) + "€");
+        _militiamanPriceText ctrlSetText ((str _militiamanPrice) + A3A_faction_civ get "currencySymbol");
+        _autoriflemanPriceText ctrlSetText ((str _autoriflemanPrice) + A3A_faction_civ get "currencySymbol");
+        _grenadierPriceText ctrlSetText ((str _grenadierPrice) + A3A_faction_civ get "currencySymbol");
+        _antitankPriceText ctrlSetText ((str _antitankPrice) + A3A_faction_civ get "currencySymbol");
+        _medicPriceText ctrlSetText ((str _medicPrice) + A3A_faction_civ get "currencySymbol");
+        _marksmanPriceText ctrlSetText ((str _marksmanPrice) + A3A_faction_civ get "currencySymbol");
+        _engineerPriceText ctrlSetText ((str _engineerPrice) + A3A_faction_civ get "currencySymbol");
+        _bombSpecialistPriceText ctrlSetText ((str _bombSpecialistPrice) + A3A_faction_civ get "currencySymbol");
 
         // Disable buttons and darken icon if not enough money or HR for the unit
         private _money = player getVariable "moneyX";

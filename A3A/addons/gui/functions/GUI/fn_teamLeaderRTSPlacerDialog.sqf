@@ -33,7 +33,7 @@ switch (_mode) do
 		private _display = findDisplay A3A_IDD_TEAMLEADERDIALOG;
 		private _moneyCtrl = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMONEY;
 
-		_moneyCtrl ctrlSetText format ["%1 €", A3A_building_EHDB # AVAILABLE_MONEY];
+		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB # AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
 	};
 	case ("onLoad"):
     {
@@ -42,7 +42,7 @@ switch (_mode) do
 		private _buildControlsGroup = _parent controlsGroupCtrl A3A_IDC_TEAMLEADERBUILDINGGROUP;
 
 		private _moneyCtrl = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMONEY;
-		_moneyCtrl ctrlSetText format ["%1 €", A3A_building_EHDB # AVAILABLE_MONEY];
+		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB # AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
 
 		private _buildableObjects = A3A_buildableObjects;
 		
@@ -127,7 +127,7 @@ switch (_mode) do
 			if (_price isNotEqualTo 0) then {
 				private _priceText = _display ctrlCreate ["A3A_InfoTextRight", -1, _itemControlsGroup];
 				_priceText ctrlSetPosition[(_itemWidth - 21) * GRID_W, 20 * GRID_H, 20 * GRID_W, 3 * GRID_H];
-				_priceText ctrlSetText format ["%1 €",_price];
+				_priceText ctrlSetText format ["%1 %2",_price,A3A_faction_civ get "currencySymbol"];
 				_priceText ctrlCommit 0;
 			};
 

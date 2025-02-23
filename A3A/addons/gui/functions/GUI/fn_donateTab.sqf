@@ -50,7 +50,7 @@ switch (_mode) do
         private _target = cursorTarget;
 
         private _moneyText = _display displayCtrl A3A_IDC_DONATIONMONEYTEXT;
-        _moneyText ctrlSetText format ["%1 €", _money];
+        _moneyText ctrlSetText format ["%1 %2", _money, A3A_faction_civ get "currencySymbol"];
 
         private _playerList = _display displayCtrl A3A_IDC_DONATEPLAYERLIST;
         {
