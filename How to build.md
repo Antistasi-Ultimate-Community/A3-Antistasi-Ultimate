@@ -34,7 +34,7 @@
     ],
 	"clientMods": [],
 	"ftpConnection": {},
-    "steamPath": "H:\\SteamLibrary" //arma 3 install steam library, arma 3 tools should be in the same folder
+    "steamPath": "H:\\Steam" //steam installation directory, both Arma 3 and Arma 3 Tools should be in the same steam library
 }
 ```
 * Run the command `Extensions: Open Extension Folder` and navigate to `ole1986.arma-dev-0.0.20 -> out -> helpers -> runArma.js -> ln 54` and add `'-debug'` to the list
