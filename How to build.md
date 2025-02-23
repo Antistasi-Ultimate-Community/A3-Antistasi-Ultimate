@@ -26,6 +26,7 @@
         "A3A/addons/hals",
         "A3A/addons/jeroen_arsenal",
         "A3A/addons/logistics",
+        "A3A/addons/main_menu",
         "A3A/addons/maps",
         "A3A/addons/patcom",
         "A3A/addons/scrt",
