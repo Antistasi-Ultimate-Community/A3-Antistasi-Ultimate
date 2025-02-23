@@ -7,7 +7,9 @@ petros setSkill 1;
 petros setVariable ["respawning",false];
 petros allowDamage false;
 
-[petros, createHashMapFromArray [["face", "GreekHead_A3_01"], ["speaker", "Male01GRE"], ["pitch", 1.1], ["firstName", "Petros"], ["lastName", ""]]] call A3A_fnc_setIdentity;
+if (face petros != "GreekHead_A3_01") then {
+    [petros, createHashMapFromArray [["face", "GreekHead_A3_01"], ["speaker", "Male01GRE"], ["pitch", 1.1], ["firstName", "Petros"], ["lastName", ":)"]]] call A3A_fnc_setIdentity;
+};
 
 removeHeadgear petros;
 removeGoggles petros;
@@ -92,6 +94,7 @@ petros addMPEventHandler ["mpkilled",
         [] call A3A_fnc_createPetros;
     };
 }];
+
 [] spawn {sleep 120; petros allowDamage true;};
 
 Info("initPetros completed");

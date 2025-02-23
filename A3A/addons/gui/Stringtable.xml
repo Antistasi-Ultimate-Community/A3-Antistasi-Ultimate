@@ -3109,6 +3109,50 @@
                 <Portuguese>Parametros</Portuguese>
                 <Chinesesimp>参数</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_basic_label">
+                <Original>Basic Parameters</Original>
+                <Czech>Základní parametry</Czech>
+                <French>Paramètres de base</French>
+                <Italian>Parametri di base</Italian>
+                <Korean>기본 매개 변수</Korean>
+                <Russian>Основные параметры</Russian>
+                <Polish>Podstawowe parametry</Polish>
+                <Portuguese>Parâmetros fundamentais</Portuguese>
+                <Chinesesimp>基本参数</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_adv_label">
+                <Original>Advanced Parameters</Original>
+                <Czech>Pokročilé parametry</Czech>
+                <French>Paramètres avancés</French>
+                <Italian>Parametri avanzati</Italian>
+                <Korean>고급 매개 변수</Korean>
+                <Russian>Расширенные параметры</Russian>
+                <Polish>Parametry zaawansowane</Polish>
+                <Portuguese>Parâmetros avançados</Portuguese>
+                <Chinesesimp>高级参数</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_exp_label">
+                <Original>Experimental Parameters</Original>
+                <Czech>Experimentální parametry</Czech>
+                <French>Paramètres expérimentaux</French>
+                <Italian>Parametri sperimentali</Italian>
+                <Korean>실험적 매개 변수</Korean>
+                <Russian>Параметры эксперимента</Russian>
+                <Polish>Parametry eksperymentalne</Polish>
+                <Portuguese>Parâmetros experimentais</Portuguese>
+                <Chinesesimp>实验参数</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
+                <Original>Development Parameters</Original>
+                <Czech>Parametry vývoje</Czech>
+                <French>Paramètres de développement</French>
+                <Italian>Parametri di sviluppo</Italian>
+                <Korean>개발 매개 변수</Korean>
+                <Russian>Параметры разработки</Russian>
+                <Polish>Parametry rozwojowe</Polish>
+                <Portuguese>Parâmetros de desenvolvimento</Portuguese>
+                <Chinesesimp>开发参数</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_content_tab_button">
                 <Original>Additional Content</Original>
                 <Czech>Další obsah</Czech>
