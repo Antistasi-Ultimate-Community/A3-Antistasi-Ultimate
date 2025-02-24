@@ -683,7 +683,7 @@ class commanderMenu
 					y = "10 * pixelGridNoUIScale * pixelH";	
 					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format [localize 'STR_commander_menu_fog_title', _value]; fogValue = [_value,0,0];diag_log _value;";
+					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format [localize 'STR_commander_menu_fog_title', _value]; fogValue = [_value,0,0];";
 				};
 
 				class setFogButton: ButtonBase
@@ -729,7 +729,7 @@ class commanderMenu
 					y = "16.5 * pixelGridNoUIScale * pixelH";	
 					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4060) ctrlSetText format [localize 'STR_commander_menu_overcast_title', _value]; overcastValue = _value;diag_log _value;";
+					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4060) ctrlSetText format [localize 'STR_commander_menu_overcast_title', _value]; overcastValue = _value;";
 				};
 
 				class setOvercastButton: ButtonBase
