@@ -1,6 +1,6 @@
 params [["_hours", 8]];
 
-cutText [format [localize "STR_params_rest", localize "STR_antistasi_timeSpan_hours"],"BLACK",5];
+cutText [format [localize "STR_params_rest", _hours],"BLACK",5];
 sleep 10;
 skiptime _hours;
 forceWeatherChange;
