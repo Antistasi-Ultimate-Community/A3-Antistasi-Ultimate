@@ -4444,11 +4444,11 @@
                 <French>Tous les joueurs doivent se trouver dans un rayon de 100 m autour du QG pour pouvoir se reposer.</French>
             </Key>
             <Key ID="STR_params_rest">
-                <Original>You decided to rest for 8 hours...</Original>
-                <Russian>Вы решили отдохнуть 8 часов...</Russian>
-                <Chinesesimp>你决定摸鱼休息8小时...</Chinesesimp>
-                <Korean>당신은 8시간 동안 쉬기로 했습니다...</Korean>
-                <French>Vous avez décidé de vous reposer pendant 8 heures...</French>
+                <Original>You decided to rest for %1 hours...</Original>
+                <Russian>Вы решили отдохнуть %1 часов...</Russian>
+                <Chinesesimp>你决定摸鱼休息%1小时...</Chinesesimp>
+                <Korean>당신은 %1시간 동안 쉬기로 했습니다...</Korean>
+                <French>Vous avez décidé de vous reposer pendant %1 heures...</French>
             </Key>
             <Key ID="STR_params_time_to_go">
                 <Original>Time to go.</Original>
@@ -7493,14 +7493,14 @@
                 <French>Mines AT</French>
             </Key>
             <Key ID="STR_commander_menu_fog_title">
-                <Original>Fog: %1</Original>
+                <Original>Fog Level: %1</Original>
                 <Russian>Туман: %1</Russian>
                 <Chinesesimp>雾：%1</Chinesesimp>
                 <Korean>안개: %1</Korean>
                 <French>Brouillard: %1</French>
             </Key>
             <Key ID="STR_commander_menu_fog_title_default">
-                <Original>Fog: 0.5</Original>
+                <Original>Fog Level: 0.5</Original>
                 <Russian>Туман: 0.5</Russian>
                 <Chinesesimp>雾：0.5</Chinesesimp>
                 <Korean>안개: 0.5</Korean>
@@ -7514,21 +7514,17 @@
                 <French>Accorde le niveau général du brouillard.</French>
             </Key>
             <Key ID="STR_commander_menu_fog_button">
-                <Original>SET FOG LEVEL</Original>
-                <Russian>ЗАДАТЬ УРОВЕНЬ ТУМАНА</Russian>
-                <Chinesesimp>设置雾级别</Chinesesimp>
-                <Korean>안개 레벨 설정</Korean>
-                <French>RÉGLAGE DU NIVEAU DE BROUILLARD</French>
+                <Original>APPLY</Original>
             </Key>
             <Key ID="STR_commander_menu_overcast_title">
-                <Original>Overcast: %1</Original>
+                <Original>Overcast Level: %1</Original>
                 <Russian>Облачность: %1</Russian>
                 <Chinesesimp>阴天：%1</Chinesesimp>
                 <Korean>날씨: %1</Korean>
                 <French>Couvert: %1</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_title_default">
-                <Original>Overcast: 0.5</Original>
+                <Original>Overcast Level: 0.5</Original>
                 <Russian>Облачность: 0.5</Russian>
                 <Chinesesimp>阴天：0.5</Chinesesimp>
                 <Korean>날씨: 0.5</Korean>
@@ -7542,11 +7538,19 @@
                 <French>Accorde le niveau général de la couverture nuageuse.</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_button">
-                <Original>SET OVERCAST LEVEL</Original>
-                <Russian>ЗАДАТЬ УРОВЕНЬ ОБЛАЧНОСТИ</Russian>
-                <Chinesesimp>设置阴天水平</Chinesesimp>
-                <Korean>날씨 레벨 설정</Korean>
-                <French>DÉFINIR LE NIVEAU DE COUVERTURE</French>
+                <Original>APPLY</Original>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title">
+                <Original>Rest for %1 %2</Original>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title_default">
+                <Original>Rest for 6 %1</Original>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title_tooltip">
+                <Original>%1 to rest</Original>
+            </Key>
+            <Key ID="STR_commander_menu_wait_button">
+                <Original>APPLY</Original>
             </Key>
             <Key ID="STR_commander_menu_clear_forest_button">
                 <Original>CLEAR FOREST NEAR HQ</Original>

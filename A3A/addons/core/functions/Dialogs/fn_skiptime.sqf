@@ -1,3 +1,5 @@
+params [["_hours", 8]];
+
 if (player != theBoss) exitWith {
 	[
 		localize "STR_notifiers_fail_type",
@@ -65,6 +67,6 @@ if (!_allPlayersInRadius) exitWith {
 	] spawn SCRT_fnc_ui_showMessage;
 };
 
-remoteExec ["A3A_fnc_resourcecheckSkipTime", 0];
+_hours remoteExec ["A3A_fnc_resourcecheckSkipTime", 0];
 closeDialog 0; 
 closeDialog 0;

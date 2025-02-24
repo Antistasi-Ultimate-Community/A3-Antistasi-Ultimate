@@ -676,42 +676,33 @@ class commanderMenu
 				class fogSlider: SliderBase
 				{
 					idc = 4041;
+					sliderPosition = 50;
+					sliderRange[] = {0, 100}; // doesn't work with 0..1 range and 0.1 step for some reason
+					sliderStep = 1;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
 					y = "10 * pixelGridNoUIScale * pixelH";	
-					w = "21.5 * pixelGridNoUIScale * pixelW";	
+					w = "17.5 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = "_value = ((_this select 1)/100); _rounded = [_value, 2] call BIS_fnc_cutDecimals; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format [localize 'STR_commander_menu_fog_title', _rounded]; fogValue = [_rounded,0,0];";
+					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format [localize 'STR_commander_menu_fog_title', _value]; fogValue = [_value,0,0];diag_log _value;";
 				};
 
-				class fogFooter: ScrtRscControlsGroupNoScrollbarsMain 
-				{
+				class setFogButton: ButtonBase
+				{			
 					idc = 4110;
-					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "12.5 * pixelGridNoUIScale * pixelH";	
-					w = "22 * pixelGridNoUIScale * pixelW";	
-					h = "3 * pixelGridNoUIScale * pixelH";
-
-					class Controls 
-					{
-						class setFogButton: ButtonBase
-						{			
-							idc = 4112;
-							text = $STR_commander_menu_fog_button;
-							x = 0;
-							y = 0;
-							w = "22 * pixelGridNoUIScale * pixelW";	
-							h = "3 * pixelGridNoUIScale * pixelH";
-							sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
-							shadow = 2;	
-							action = "if(player isEqualTo theBoss) then {[10, fogValue] remoteExec ['setFog',2];};";			
-						};
-					};
+					text = $STR_commander_menu_fog_button;
+					x = "20 * pixelGridNoUIScale * pixelW";
+					y = "9.5 * pixelGridNoUIScale * pixelH";	
+					w = "3 * pixelGridNoUIScale * pixelW"; 
+					h = "1.5 * pixelGridNoUIScale * pixelH";
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;	
+					action = "if(player isEqualTo theBoss) then {[10, fogValue] remoteExec ['setFog',2];};";			
 				};
 
 				class spacer2: brSpacer 
 				{
-					idc = 4091;					
-					y = "16 * pixelGridNoUIScale * pixelH";	
+					idc = 4111;					
+					y = "12.5 * pixelGridNoUIScale * pixelH";	
 				};
 
 				class overcastTitle: TextBase
@@ -719,7 +710,7 @@ class commanderMenu
 					idc = 4060;
 					text = $STR_commander_menu_overcast_title_default;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "16.5 * pixelGridNoUIScale * pixelH";	
+					y = "13 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "3 * pixelGridNoUIScale * pixelH";
 					colorText[] = {0.75,0.75,0.75,1};
@@ -731,56 +722,81 @@ class commanderMenu
 				class overcastSlider: SliderBase
 				{
 					idc = 4061;
+					sliderPosition = 50;
+					sliderRange[] = {0, 100}; // doesn't work with 0..1 range and 0.1 step for some reason
+					sliderStep = 1;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
-					y = "20 * pixelGridNoUIScale * pixelH";	
-					w = "21.5 * pixelGridNoUIScale * pixelW";	
+					y = "16.5 * pixelGridNoUIScale * pixelH";	
+					w = "17.5 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = "_value = ((_this select 1)/100); _rounded = [_value, 2] call BIS_fnc_cutDecimals; ((findDisplay 60000) displayCtrl 4060) ctrlSetText format [localize 'STR_commander_menu_overcast_title', _rounded]; overcastValue = _rounded;";
+					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4060) ctrlSetText format [localize 'STR_commander_menu_overcast_title', _value]; overcastValue = _value;diag_log _value;";
 				};
 
-				class overcastFooter: ScrtRscControlsGroupNoScrollbarsMain 
-				{
+				class setOvercastButton: ButtonBase
+				{			
 					idc = 4062;
+					text = $STR_commander_menu_overcast_button;
+					x = "20 * pixelGridNoUIScale * pixelW";
+					y = "16 * pixelGridNoUIScale * pixelH";	
+					w = "3 * pixelGridNoUIScale * pixelW"; 
+					h = "1.5 * pixelGridNoUIScale * pixelH";
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;	
+					action = "if(player isEqualTo theBoss) then {[] spawn {[overcastValue] call BIS_fnc_setOvercast;};};";
+				};
+
+				class spacer3: brSpacer 
+				{
+					idc = 4063;					
+					y = "19 * pixelGridNoUIScale * pixelH";	
+				};
+
+				class waitTitle: TextBase
+				{
+					idc = 4070;
+					//text = $STR_commander_menu_wait_title_default;
+					text = __EVAL(format [localize "STR_commander_menu_wait_title_default", localize "STR_antistasi_timeSpan_hours"]);
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "22.5 * pixelGridNoUIScale * pixelH";	
+					y = "19.5 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "3 * pixelGridNoUIScale * pixelH";
-
-					class Controls 
-					{
-						class setOvercastButton: ButtonBase
-						{			
-							idc = 4063;
-							text = $STR_commander_menu_overcast_button;
-							x = 0;
-							y = 0;
-							w = "22 * pixelGridNoUIScale * pixelW";	
-							h = "3 * pixelGridNoUIScale * pixelH";
-							sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
-							shadow = 2;	
-							action = "if(player isEqualTo theBoss) then {[] spawn {[overcastValue] call BIS_fnc_setOvercast;};};";			
-						};
-					};
+					colorText[] = {0.75,0.75,0.75,1};
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					font = "PuristaMedium";
+					//tooltip = $STR_commander_menu_wait_title_tooltip;
+					tooltip = __EVAL(format [localize "STR_commander_menu_wait_title_tooltip", localize "STR_antistasi_timeSpan_hours"]);
 				};
 
-				class hqSpacer3: brSpacer 
+				class waitSlider: SliderBase
 				{
-					idc = 4200;					
-					y = "26 * pixelGridNoUIScale * pixelH";	
+					idc = 4071;
+					sliderPosition = 6;
+					sliderRange[] = {0, 12};
+					sliderStep = 0.25;
+					x = "1.5 * pixelGridNoUIScale * pixelW";
+					y = "23 * pixelGridNoUIScale * pixelH";	
+					w = "17.5 * pixelGridNoUIScale * pixelW";	
+					h = "1.5 * pixelGridNoUIScale * pixelH";					
+					onSliderPosChanged = "_value = _this select 1; ((findDisplay 60000) displayCtrl 4070) ctrlSetText format [localize 'STR_commander_menu_wait_title', _value, localize 'STR_antistasi_timeSpan_hours']; (_this select 0) setVariable ['timeToSkip', _value];";
 				};
 
 				class waitButton: ButtonBase
 				{			
-					idc = 4212;
-					text = $STR_params_rest_button;
-					tooltip = $STR_commander_menu_rest_tooltip;
-					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "26.5 * pixelGridNoUIScale * pixelH";
-					w = "22 * pixelGridNoUIScale * pixelW";	
-					h = "3 * pixelGridNoUIScale * pixelH";	
+					idc = 4072;
+					text = $STR_commander_menu_wait_button;
+					x = "20 * pixelGridNoUIScale * pixelW";
+					y = "22.5 * pixelGridNoUIScale * pixelH";	
+					w = "3 * pixelGridNoUIScale * pixelW"; 
+					h = "1.5 * pixelGridNoUIScale * pixelH";
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
-					action = "[] call A3A_fnc_skiptime;";		
+					action = "((findDisplay 60000) displayCtrl 4071) getVariable ['timeToSkip', 8] call A3A_fnc_skiptime;";
+				};
+
+				class spacer4: brSpacer 
+				{
+					idc = 4073;					
+					y = "25.5 * pixelGridNoUIScale * pixelH";	
 				};
 
 				class clearForestButton: ButtonBase
