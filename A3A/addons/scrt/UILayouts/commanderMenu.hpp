@@ -754,7 +754,6 @@ class commanderMenu
 				class waitTitle: TextBase
 				{
 					idc = 4070;
-					//text = $STR_commander_menu_wait_title_default;
 					text = __EVAL(format [localize "STR_commander_menu_wait_title_default", localize "STR_antistasi_timeSpan_hours"]);
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "19.5 * pixelGridNoUIScale * pixelH";	
@@ -763,7 +762,6 @@ class commanderMenu
 					colorText[] = {0.75,0.75,0.75,1};
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					font = "PuristaMedium";
-					//tooltip = $STR_commander_menu_wait_title_tooltip;
 					tooltip = __EVAL(format [localize "STR_commander_menu_wait_title_tooltip", localize "STR_antistasi_timeSpan_hours"]);
 				};
 

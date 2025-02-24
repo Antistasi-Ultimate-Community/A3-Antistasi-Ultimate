@@ -7542,15 +7542,31 @@
             </Key>
             <Key ID="STR_commander_menu_wait_title">
                 <Original>Rest for %1 %2</Original>
+                <Russian>Отдых для %1 %2</Russian>
+                <Chinesesimp>%1 %2 的其余部分</Chinesesimp>
+                <Korean>%1 %2에 대한 휴식</Korean>
+                <French>Repos pour %1 %2</French>
             </Key>
             <Key ID="STR_commander_menu_wait_title_default">
                 <Original>Rest for 6 %1</Original>
+                <Russian>Отдых на 6 %1</Russian>
+                <Chinesesimp>6 %1 的休息</Chinesesimp>
+                <Korean>6 %1 휴식</Korean>
+                <French>Repos pour 6 %1</French>
             </Key>
             <Key ID="STR_commander_menu_wait_title_tooltip">
                 <Original>%1 to rest</Original>
+                <Russian>%1 для покоя</Russian>
+                <Chinesesimp>%1 到其余</Chinesesimp>
+                <Korean>%1 휴식</Korean>
+                <French>%1 au repos</French>
             </Key>
             <Key ID="STR_commander_menu_wait_button">
-                <Original>APPLY</Original>
+                <Original>Rest</Original>
+                <Russian>Отдых</Russian>
+                <Chinesesimp>休息</Chinesesimp>
+                <Korean>쉬다</Korean>
+                <French>Se reposer</French>
             </Key>
             <Key ID="STR_commander_menu_clear_forest_button">
                 <Original>CLEAR FOREST NEAR HQ</Original>
