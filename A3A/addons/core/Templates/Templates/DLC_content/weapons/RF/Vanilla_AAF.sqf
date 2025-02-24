@@ -77,7 +77,6 @@ _rfEliteGlockOptics = ["optic_MRD_tan_RF", 3, "", 1];
     ["hgun_DEagle_classic_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.25,
     ["hgun_DEagle_camo_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1,
     ["hgun_DEagle_copper_RF", "", "", _rfEliteDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1
-    
     // Elites carry around the Deagle uncommonly, but enough where you should be able to consistently collect them.
 ];
 
@@ -88,7 +87,8 @@ _rfMilitaryGlockOptics = ["optic_MRD_tan_RF", 1, "", 3];
     ["hgun_Glock19_auto_Tan_RF", "", "acc_flashlight_pistol", _rfMilitaryGlockOptics, ["17Rnd_9x19_Mag_RF","33Rnd_9x19_Mag_RF"], [], ""], 1, // Full auto Glocks aren't something the usual soldier is gonna carry around often.
     ["hgun_DEagle_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.3,
     ["hgun_DEagle_classic_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1,
-    ["hgun_DEagle_copper_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1
+    ["hgun_DEagle_copper_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1,
+    ["hgun_DEagle_camo_RF", "", "", _rfMilitaryDeagleOptics, ["7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF","7Rnd_50AE_Mag_RF"], [], ""], 0.1
     // Make the Deagle super rare, since it's an unusual gun for a normal soldier to have.
 ];
 (_militiaLoadoutData get "sidearms") append [
@@ -99,6 +99,13 @@ _rfMilitaryGlockOptics = ["optic_MRD_tan_RF", 1, "", 3];
     ["hgun_Glock19_RF", "", "", "", ["17Rnd_9x19_Mag_RF","17Rnd_9x19_Mag_RF"], [], ""], 10
 ];
 
-
+(_loadoutData get "lightATLaunchers") append [
+    ["launch_PSRL1_black_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_digi_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_olive_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_black_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_digi_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""],
+    ["launch_PSRL1_PWS_olive_RF", "", "", "", ["PSRL1_AT_RF","PSRL1_FRAG_RF","PSRL1_HE_RF","PSRL1_HEAT_RF"], [], ""]
+];
 
 

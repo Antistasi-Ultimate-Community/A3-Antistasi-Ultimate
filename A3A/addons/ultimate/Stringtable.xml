@@ -140,4 +140,13 @@
             <Original>%1 just sent a tank platoon.</Original>
         </Key>
     </Package>
+    <Package name="Arsenal">
+        <Key ID="STR_JNA_SCT_QUICK_EQUIP">
+            <Original>Quick Equip Loadout</Original>
+            <Russian>Быстрая экипировка</Russian>
+            <Korean>빠른 장비 로드아웃</Korean>
+            <Chinesesimp>快速装备</Chinesesimp>
+            <French>Équipement rapide</French>
+        </Key>
+    </Package>
 </Project>

@@ -39,12 +39,16 @@ _rifles append [
 	["US85_M16A1", "", "", "",  ["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""],
 	["US85_M16A2", "", "", "",  ["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""],
 	["CSLA_Sa58P", "", "", "",  ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], ""],
-	["CSLA_Sa58V", "", "", "",  ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
+	["CSLA_Sa58V", "", "", "",  ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"],
+    ["CSLA_Pu57", "", "", "", ["CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43"], [], ""],
+    ["CSLA_Pu52", "", "", "", ["CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62Sv52","CSLA_Pu52_10rnd_7_62Sv52"], [], ""]
 ];
 _carbines append [
     ["US85_M16A2CAR", "", "", "",  ["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""],
     ["US85_MPVN", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""],
 	["US85_MPVSD", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""],
+    ["US85_MPVN1", "", "", "", ["US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger","US85_MPV_30Rnd_9Luger"], [], ""],
+    ["US85_MPVN1", "US85_MPVtlm", "", "", ["US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger", "US85_MPV_30Rnd_9Luger"], [], ""],
     ["CSLA_rSa61", "", "", "", ["CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_10rnd_7_65Pi27"], [], ""],
 	["CSLA_Sa24", "", "", "",  ["CSLA_Sa24_32rnd_7_62Pi52", "CSLA_Sa24_32rnd_7_62Pi52", "CSLA_Sa24_32rnd_7_62Pi52"], [], ""],
 	["CSLA_Sa26", "", "", "",  ["CSLA_Sa24_32rnd_7_62Pi52", "CSLA_Sa24_32rnd_7_62Pi52", "CSLA_Sa24_32rnd_7_62Pi52"], [], ""]
@@ -55,13 +59,18 @@ _tunedRifles append [
 	["US85_M16A2CAR", "US85_M16tlm","US85_M16fl","US85_sc4x20_M16",["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""],
     ["US85_M16A1", "US85_M16tlm", "", "US85_sc4x20_M16",  ["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""],
 	["US85_M16A2", "US85_M16tlm", "", "US85_sc4x20_M16",  ["US85_30Rnd_556x45","US85_30Rnd_556x45","US85_20Rnd_556x45","US85_20Rnd_556x45"], [], ""],
-	["CSLA_Sa58P", "","","CSLA_ZD4x8",["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
+	["CSLA_Sa58P", "","","CSLA_ZD4x8",["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"],
+    ["CSLA_Pu57", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43"], [], ""],
+    ["CSLA_Pu52", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62Sv52","CSLA_Pu52_10rnd_7_62Sv52"], [], ""]
 ];
 _marksmanRifles append [
     ["CSLA_HuntingRifle","","","",["CSLA_10Rnd_762hunt","CSLA_10Rnd_762hunt", "CSLA_10Rnd_762hunt","CSLA_10Rnd_762hunt"], [], "gm_msg90_bipod_blk"],
     ["US85_M14","","","US85_scM21",["US85_20Rnd_762x51", "US85_20Rnd_762M61", "US85_20Rnd_762M61"], [], "US85_M14bpd"],
 	["US85_M21","","","US85_scM21",["US85_20Rnd_762x51", "US85_20Rnd_762M61", "US85_20Rnd_762M61"], [], "US85_M14bpd"],
-	["CSLA_OP63","","","CSLA_PSO1_OP63",["CSLA_OP63_10rnd_7_62Odst59","CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62Odst59","CSLA_OP63_10rnd_7_62PZ59"], [], ""]
+	["CSLA_OP63","","","CSLA_PSO1_OP63",["CSLA_OP63_10rnd_7_62Odst59","CSLA_OP63_10rnd_7_62PZ59","CSLA_OP63_10rnd_7_62Odst59","CSLA_OP63_10rnd_7_62PZ59"], [], ""],
+    ["CSLA_Pu57", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43","CSLA_Pu57_10rnd_7_62vz43"], [], ""],
+    ["CSLA_Pu52", "", "", "CSLA_ZD4x8_Pu52", ["CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62vz52","CSLA_Pu52_10rnd_7_62Sv52","CSLA_Pu52_10rnd_7_62Sv52"], [], ""],
+    ["CSLA_OP54", "", "", "CSLA_PD54", ["CSLA_OP54_5rnd_7_62PZ59","CSLA_OP54_5rnd_7_62TzOdst59","CSLA_OP54_5rnd_7_62Odst59", "CSLA_OP54_5rnd_7_62Odst59"], [], ""]
 ];
 _enforcerRifles append [
     ["US85_FAL", "", "", "US85_scFAL",  ["US85_20Rnd_762x51", "US85_20Rnd_762M61", "US85_20Rnd_762M61"], [], "US85_FALbpd"],
@@ -73,9 +82,15 @@ _enforcerRifles append [
 	["CSLA_Sa58V", "", "", "",  ["CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62vz43","CSLA_Sa58_30rnd_7_62Sv43","CSLA_Sa58_30rnd_7_62Sv43"], [], "CSLA_Sa58bpd"]
 ];
 _mgs append [
-    ["US85_M249", "", "", "US85_sc4x20M249", ["US85_200Rnd_556x45","US85_200Rnd_556x45"], [], ""],
-	["US85_M60", "", "", "", ["US85_100Rnd_762x51","US85_100Rnd_762x51"], [], ""],
-    ["CSLA_UK59L", "", "", "CSLA_UK59_ZD4x8", ["CSLA_UK59_50rnd_7_62vz59","CSLA_UK59_50rnd_7_62Sv59","CSLA_UK59_50rnd_7_62PZ59","CSLA_UK59_50rnd_7_62Tz59","CSLA_UK59_50rnd_7_62TzSv59"], [], ""]
+    ["US85_M60","","","",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3LB","","","",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3SB","","","",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3LB","","","US85_ANPVS4_M60",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M60E3SB","","","US85_ANPVS4_M60",["US85_100Rnd_762x51","US85_100Rnd_762x51","US85_100Rnd_762x51"],[],""],
+    ["US85_M249","","","US85_sc4x20M249",["US85_200Rnd_556x45","US85_200Rnd_556x45","US85_200Rnd_556x45"],[],""],
+    ["CSLA_UK59L","","","CSLA_UK59_ZD4x8",["CSLA_UK59_50rnd_7_62vz59","CSLA_UK59_50rnd_7_62PZ59","CSLA_UK59_50rnd_7_62Tz59","CSLA_UK59_50rnd_7_62TzSv59","CSLA_UK59_50rnd_7_62Sv59"],[],""],
+    ["CSLA_LK57_50", "", "", "", ["CSLA_LK57_50rnd_7_62vz43", "CSLA_LK57_50rnd_7_62PZ43","CSLA_LK57_50rnd_7_62Sv43"], [], ""],
+    ["CSLA_LK52_25", "", "", "", ["CSLA_LK52_25rnd_7_62vz52", "CSLA_LK52_25rnd_7_62PZ52","CSLA_LK52_25rnd_7_62Sv52"], [], ""]
 ];
 _pistols append [
     ["US85_1911", "", "", "", ["US85_1911_7Rnd_045ACP","US85_1911_7Rnd_045ACP","US85_1911_7Rnd_045ACP"], [], ""],
@@ -84,5 +99,9 @@ _pistols append [
     ["CSLA_Pi75lr", "", "", "", ["CSLA_Pi75_15Rnd_9Luger","CSLA_Pi75_15Rnd_9Luger","CSLA_Pi75_15Rnd_9Luger"], [], ""],
     ["CSLA_Pi75sr", "", "", "", ["CSLA_Pi75_15Rnd_9Luger","CSLA_Pi75_15Rnd_9Luger","CSLA_Pi75_15Rnd_9Luger"], [], ""],
     ["CSLA_Pi82", "", "", "", ["CSLA_Pi82_12rnd_9Pi82","CSLA_Pi82_12rnd_9Pi82","CSLA_Pi82_12rnd_9Pi82"], [], ""],
-    ["CSLA_Sa61", "", "", "", ["CSLA_Sa61_10rnd_7_65Pi27","CSLA_Sa61_10rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""]
+    ["CSLA_Sa61", "", "", "", ["CSLA_Sa61_10rnd_7_65Pi27","CSLA_Sa61_10rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27","CSLA_Sa61_20rnd_7_65Pi27"], [], ""],
+    ["US85_Mk23", "US85_Mk23tlm", "US85_Mk23fl", "", ["US85_Mk23_12Rnd_045ACP","US85_Mk23_12Rnd_045ACP"], [], ""],
+    ["US85_Mk23", "", "", "", ["US85_Mk23_12Rnd_045ACP","US85_Mk23_12Rnd_045ACP"], [], ""],
+    ["US85_Mk23", "", "US85_Mk23fl", "", ["US85_Mk23_12Rnd_045ACP","US85_Mk23_12Rnd_045ACP"], [], ""],
+    ["US85_Mk23", "US85_Mk23tlm", "", "", ["US85_Mk23_12Rnd_045ACP","US85_Mk23_12Rnd_045ACP"], [], ""]
 ];

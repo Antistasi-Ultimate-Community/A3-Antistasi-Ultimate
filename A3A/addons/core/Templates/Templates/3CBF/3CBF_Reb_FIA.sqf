@@ -198,6 +198,7 @@ private _rebUniforms = [
     "Mavros"
 ]] call _fnc_saveToTemplate;
 ["voices", ["Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE"]] call _fnc_saveToTemplate;
+"GreekMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
