@@ -33,7 +33,7 @@
 ["vehiclesAPCs", ["3AS_PAC_F"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["3AS_AAT_CIS"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["3AS_N99","3AS_Advanced_DSD","3AS_Heavy_AAT_Flamer_F"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["3AS_AAT_CIS", "3AS_AAT_CIS", "3AS_GAT", "3AS_N99", "3AS_Heavy_AAT_Shield_F"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["3AS_AAT_CIS", "3AS_AAT_CIS", "3AS_GAT", "3AS_N99"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["3AS_GAT_Light"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
