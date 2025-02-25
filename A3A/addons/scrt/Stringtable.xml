@@ -7514,7 +7514,11 @@
                 <French>Accorde le niveau général du brouillard.</French>
             </Key>
             <Key ID="STR_commander_menu_fog_button">
-                <Original>APPLY</Original>
+                <Original>Apply</Original>
+                <Russian>Применять</Russian>
+                <Chinesesimp>应用</Chinesesimp>
+                <Korean>적용하다</Korean>
+                <French>Appliquer</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_title">
                 <Original>Overcast Level: %1</Original>
@@ -7538,7 +7542,11 @@
                 <French>Accorde le niveau général de la couverture nuageuse.</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_button">
-                <Original>APPLY</Original>
+                <Original>Apply</Original>
+                <Russian>Применять</Russian>
+                <Chinesesimp>应用</Chinesesimp>
+                <Korean>적용하다</Korean>
+                <French>Appliquer</French>
             </Key>
             <Key ID="STR_commander_menu_wait_title">
                 <Original>Rest for %1 %2</Original>

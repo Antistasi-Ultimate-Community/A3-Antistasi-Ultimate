@@ -681,7 +681,7 @@ class commanderMenu
 					sliderStep = 1;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
 					y = "10 * pixelGridNoUIScale * pixelH";	
-					w = "17.5 * pixelGridNoUIScale * pixelW";	
+					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
 					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format [localize 'STR_commander_menu_fog_title', _value]; fogValue = [_value,0,0];diag_log _value;";
 				};
@@ -690,9 +690,9 @@ class commanderMenu
 				{			
 					idc = 4110;
 					text = $STR_commander_menu_fog_button;
-					x = "20 * pixelGridNoUIScale * pixelW";
+					x = "18.5 * pixelGridNoUIScale * pixelW";
 					y = "9.5 * pixelGridNoUIScale * pixelH";	
-					w = "3 * pixelGridNoUIScale * pixelW"; 
+					w = "4.5 * pixelGridNoUIScale * pixelW"; 
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
@@ -727,7 +727,7 @@ class commanderMenu
 					sliderStep = 1;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
 					y = "16.5 * pixelGridNoUIScale * pixelH";	
-					w = "17.5 * pixelGridNoUIScale * pixelW";	
+					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
 					onSliderPosChanged = "_value = (_this select 1)/100; ((findDisplay 60000) displayCtrl 4060) ctrlSetText format [localize 'STR_commander_menu_overcast_title', _value]; overcastValue = _value;diag_log _value;";
 				};
@@ -736,9 +736,9 @@ class commanderMenu
 				{			
 					idc = 4062;
 					text = $STR_commander_menu_overcast_button;
-					x = "20 * pixelGridNoUIScale * pixelW";
+					x = "18.5 * pixelGridNoUIScale * pixelW";
 					y = "16 * pixelGridNoUIScale * pixelH";	
-					w = "3 * pixelGridNoUIScale * pixelW"; 
+					w = "4.5 * pixelGridNoUIScale * pixelW"; 
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
@@ -773,7 +773,7 @@ class commanderMenu
 					sliderStep = 0.25;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
 					y = "23 * pixelGridNoUIScale * pixelH";	
-					w = "17.5 * pixelGridNoUIScale * pixelW";	
+					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
 					onSliderPosChanged = "_value = _this select 1; ((findDisplay 60000) displayCtrl 4070) ctrlSetText format [localize 'STR_commander_menu_wait_title', _value, localize 'STR_antistasi_timeSpan_hours']; (_this select 0) setVariable ['timeToSkip', _value];";
 				};
@@ -782,9 +782,9 @@ class commanderMenu
 				{			
 					idc = 4072;
 					text = $STR_commander_menu_wait_button;
-					x = "20 * pixelGridNoUIScale * pixelW";
+					x = "18.5 * pixelGridNoUIScale * pixelW";
 					y = "22.5 * pixelGridNoUIScale * pixelH";	
-					w = "3 * pixelGridNoUIScale * pixelW"; 
+					w = "4.5 * pixelGridNoUIScale * pixelW"; 
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
