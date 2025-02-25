@@ -118,3 +118,9 @@ if (isClass (configfile >> "CBA_Extended_EventHandlers")) then {
     }] call CBA_fnc_addSetting;
 
 };
+
+HR_GRG_fnc_addVehicleUAVCompat = {
+    private _veh = _this select 0;
+    if (crew _veh isNotEqualTo []) then { deleteVehicleCrew _veh };
+    _this call HR_GRG_fnc_addVehicle;
+};
