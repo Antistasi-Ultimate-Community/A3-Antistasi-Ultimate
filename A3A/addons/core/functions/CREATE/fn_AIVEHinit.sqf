@@ -81,6 +81,15 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 	};
 } else {
 	switch (true) do {
+		case (unitIsUAV _veh): {
+			if (crew _veh isNotEqualTo []) then {
+				private _uavGroup = createGroup teamPlayer;
+				crew _veh join _uavGroup;
+				_uavGroup deleteGroupWhenEmpty true;
+			} else {
+				[_side, _veh] call A3A_fnc_createVehicleCrew;
+			};
+		};
 		case (_typeX in (FactionGet(all,"vehiclesFixedWing") + FactionGet(all,"vehiclesHelis"))): {
 			_veh addEventHandler ["GetIn", {
 				if (_this select 1 != "driver") exitWith {};
