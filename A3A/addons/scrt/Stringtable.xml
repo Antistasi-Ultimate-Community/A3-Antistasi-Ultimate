@@ -7551,21 +7551,21 @@
             <Key ID="STR_commander_menu_wait_title">
                 <Original>Rest for %1 %2</Original>
                 <Russian>Отдых для %1 %2</Russian>
-                <Chinesesimp>%1 %2 的其余部分</Chinesesimp>
+                <Chinesesimp>休息 %1 %2</Chinesesimp>
                 <Korean>%1 %2에 대한 휴식</Korean>
                 <French>Repos pour %1 %2</French>
             </Key>
             <Key ID="STR_commander_menu_wait_title_default">
                 <Original>Rest for 6 %1</Original>
                 <Russian>Отдых на 6 %1</Russian>
-                <Chinesesimp>6 %1 的休息</Chinesesimp>
+                <Chinesesimp>休息 6 %1</Chinesesimp>
                 <Korean>6 %1 휴식</Korean>
                 <French>Repos pour 6 %1</French>
             </Key>
             <Key ID="STR_commander_menu_wait_title_tooltip">
                 <Original>%1 to rest</Original>
                 <Russian>%1 для покоя</Russian>
-                <Chinesesimp>%1 到其余</Chinesesimp>
+                <Chinesesimp>%1 到休息完毕</Chinesesimp>
                 <Korean>%1 휴식</Korean>
                 <French>%1 au repos</French>
             </Key>
