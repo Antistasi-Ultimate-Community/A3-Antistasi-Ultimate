@@ -9,6 +9,12 @@ Info("Trader Mission Init.");
 
 _positionX = getMarkerPos _markerX;
 
+private _traderPosVague = createMarkerLocal ["TraderMarkerVague", _positionX, 1];
+_traderPosVague setMarkerColorLocal "ColorUNKNOWN";
+_traderPosVague setMarkerBrushLocal "DiagGrid";
+_traderPosVague setMarkerShapeLocal "ELLIPSE";
+_traderPosVague setMarkerSize [300, 300]; // global function to broadcast the marker after setting its size
+
 private _traderPosition = [
     _positionX, //center
     0, //minimal distance
@@ -70,9 +76,11 @@ private _taskId = "TRADER" + str A3A_taskCount;
     [
         format [localize "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
         localize "STR_trader_quest_header",
-        _markerX
+        //_markerX
+        _traderPosVague
     ],
-    _traderPosition,
+    //_traderPosition,
+    getMarkerPos _traderPosVague, // use center of vague area marker instead of exact trader position
     false,
     0,
     true,
@@ -108,5 +116,6 @@ publicVariable "isTraderQuestAssigned";
 publicVariable "isTraderQuestCompleted";
 
 deleteVehicle _trigger;
+deleteMarker _traderPosVague;
 
 [_taskId, "TRADER", 5] spawn A3A_fnc_taskDelete;
