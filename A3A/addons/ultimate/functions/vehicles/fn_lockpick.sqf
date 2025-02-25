@@ -1,15 +1,27 @@
 /*
     Author:
-        Maxx
+        Maxx, Silence
     
     Description:
-        Adds the ability to lockpick locked vehicles
+        Adds the action to lockpick a vehicle locally
     
     Params:
-        _vehicle <Object> <Default: nil>
+        _vehicle <OBJECT>
+    
+    Dependencies:
+        vehicleLockpickTime
+    
+    Scope:
+        Client
+    
+    Environment:
+        Unscheduled
     
     Usage:
         [_vehicle] call A3U_fnc_lockpick;
+    
+    Return:
+        N/A
 */
 
 params ["_vehicle"];
@@ -27,7 +39,7 @@ params ["_vehicle"];
         // private _closestZone = (sidesX getVariable [([call A3U_fnc_lockpickZones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
         // if (_closestZone isEqualTo teamPlayer) exitWith {
         //     [_target, _actionId] call BIS_fnc_holdActionRemove;
-        //     [_target, false] remoteExec ["A3U_fnc_setLock", (owner _target)];
+        //     [_target, false] remoteExecCall ["A3U_fnc_setLock", (owner _target)];
         // };
         // Re-enable if instant lockpicking after capture is desired
 
@@ -55,4 +67,4 @@ params ["_vehicle"];
     2026,
     false,
     false
-] remoteExec ["BIS_fnc_holdActionAdd", 0, _vehicle];
+] call BIS_fnc_holdActionAdd;

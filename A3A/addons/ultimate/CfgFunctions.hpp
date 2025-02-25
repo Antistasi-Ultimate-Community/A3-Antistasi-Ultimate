@@ -76,7 +76,6 @@ class CfgFunctions
             class lockpickOnSuccess {};
             class lockpickZones {};
             class setLock {};
-            class toggleLock {};
         };
         class zombie
         {
