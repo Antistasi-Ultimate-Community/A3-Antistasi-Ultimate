@@ -33,3 +33,5 @@
 (_militiaLoadoutData get "vests") append ["V_TacVest_rig_oli_RF","V_TacVest_rig_blk_RF"];
 
 (_pilotLoadoutData get "uniforms") pushBack "U_C_HeliPilotCoveralls_Green_RF";
+
+(_policeLoadoutData get "vests") pushBack "V_TacVest_gen_holster_RF";

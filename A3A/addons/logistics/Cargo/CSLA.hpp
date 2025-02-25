@@ -89,3 +89,67 @@ class csla_weapons_at5_csla_at5 : TRIPLES(ADDON,Cargo,Base)
     recoil = 100;
     isWeapon = 1;
 };
+
+////1.3 update
+class csla_afmc_weapons_m122_tripod_csla_m122_tripod_m60_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.0,0,0};
+    rotation[] = {0,1,0};
+    size = 3;
+    recoil = 100;
+    isWeapon = 1;
+};
+
+class csla_afmc_weapons_m122_tripod_csla_m122_tripod_m60e3_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.0,0,0};
+    rotation[] = {0,1,0};
+    size = 3;
+    recoil = 100;
+    isWeapon = 1;
+};
+
+class csla_afmc_weapons_Mk19_Mk19_static_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.0,0,0};
+    rotation[] = {0,1,0};
+    size = 3;
+    recoil = 300;
+    isWeapon = 1;
+};
+
+class CSLA_AGS17_Stat : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.0,0,0};
+    rotation[] = {0,1,0};
+    size = 3;
+    recoil = 300;
+    isWeapon = 1;
+};
+
+class csla_weapons_BzK59A_CSLA_bzk59a_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0};
+    rotation[] = {0,1,0};
+    size = 5;
+    recoil = 0;
+    isWeapon = 1;
+};
+
+class csla_weapons_dskm_dshkm_static_high_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0};
+    rotation[] = {0,1,0};
+    size = 4;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class csla_weapons_uk59_proxy_vehicle_mount_UK59_1_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0};
+    rotation[] = {0,1,0};
+    size = 4;
+    recoil = 50;
+    isWeapon = 1;
+};

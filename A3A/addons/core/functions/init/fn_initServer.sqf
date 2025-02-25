@@ -133,9 +133,11 @@ else
         private _arsenalTab = _class call jn_fnc_arsenal_itemType;
         jna_dataList#_arsenalTab pushBack [_class, _count];         // direct add to avoid O(N^2) issue
 
-        private _categories = _class call A3A_fnc_equipmentClassToCategories;
-        { (missionNamespace getVariable ("unlocked" + _x)) pushBack _class } forEach _categories;
-        _categoriesToPublish insert [true, _categories, []];
+        if (_count == -1 || {(minWeaps != -1) && _count >= minWeaps}) then {
+            private _categories = _class call A3A_fnc_equipmentClassToCategories;
+            { (missionNamespace getVariable ("unlocked" + _x)) pushBack _class } forEach _categories;
+            _categoriesToPublish insert [true, _categories, []];
+        };
     } foreach FactionGet(reb,"initialRebelEquipment");
 
     // Publish the unlocked categories (once each)

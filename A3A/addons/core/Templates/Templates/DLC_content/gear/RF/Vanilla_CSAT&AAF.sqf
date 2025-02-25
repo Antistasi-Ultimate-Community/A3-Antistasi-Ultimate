@@ -12,3 +12,5 @@
 (_militiaLoadoutData get "helmets") append ["H_HelmetIA_sb_digital_RF","H_HelmetHeavy_Olive_RF","H_HelmetHeavy_Simple_Olive_RF","H_HelmetHeavy_VisorUp_Olive_RF"];
 
 (_pilotLoadoutData get "uniforms") pushBack "U_C_HeliPilotCoveralls_Green_RF";
+
+(_policeLoadoutData get "vests") pushBack "V_TacVest_gen_holster_RF";
