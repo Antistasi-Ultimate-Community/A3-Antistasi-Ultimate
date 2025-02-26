@@ -75,6 +75,14 @@ class CfgMissions
 		A3A_Mission(psyfx_pht, "Antistasi Ultimate - Phuoc Tuy")
 		A3A_Mission(yulakia, "Antistasi Ultimate - Yulakia")
     A3A_Mission(Gulfcoast, "Antistasi Ultimate - Gulfcoast Islands")
+	A3A_Mission(SPE_Mortain, "Antistasi Ultimate - Mortain")
+	A3A_Mission(tem_chernarus, "Antistasi Ultimate - Svartmarka")
+	A3A_Mission(tem_chernarusw, "Antistasi Ultimate - Svartmarka Winter")
+	A3A_Mission(mehland, "Antistasi Ultimate - Mehland")
+	A3A_Mission(pulau, "Antistasi Ultimate - Pulau")
+	A3A_Mission(fapovo, "Antistasi Ultimate - Fapovo Island")
+	A3A_Mission(chernarusredux, "Antistasi Ultimate - Redux")
+	A3A_Mission(stubbhult, "Antistasi Ultimate - Stubbhult")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif

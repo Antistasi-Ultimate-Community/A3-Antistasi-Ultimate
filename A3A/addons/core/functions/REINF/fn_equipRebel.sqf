@@ -69,7 +69,7 @@ private _fnc_addSecondaryAndMags = {
 
     private _compatOptics = A3A_rebelOpticsCache get _weapon;
     if (isNil "_compatOptics") then {
-        private _compatItems = [_weapon] call BIS_fnc_compatibleItems;		// cached, should be fast
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
         _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get "OpticsAll");
         A3A_rebelOpticsCache set [_weapon, _compatOptics];
     };
@@ -118,7 +118,20 @@ switch (true) do {
         if (_grenades isNotEqualTo []) then { _unit addMagazines [selectRandomWeighted _grenades, 2] };
         if (_smokes isNotEqualTo []) then { _unit addMagazines [selectRandomWeighted _smokes, 1] };
 
-        // could throw in some disposable launchers here...
+        // increase likelihood of rifleman getting a disposable launcher by war level (10% chance * war level)
+        if (random 10 < (tierWar / 2)) then {
+            private _rlaunchers = A3A_rebelGear get "RocketLaunchers";
+            private _launcherPool = [];
+            
+            {
+                private _categories = _x call A3A_fnc_equipmentClassToCategories;
+
+                if ("Disposable" in _categories) then {_launcherPool append [_x, _rlaunchers select (_rlaunchers find _x) + 1 ]};
+            } forEach (_rlaunchers select {_x isEqualType ""});
+
+            private _launcher = selectRandomWeighted _launcherPool;
+            if !(isNil "_launcher") then { [_unit, _launcher, 100] call _fnc_addSecondaryAndMags };
+        };
     };
     case (_unitType isEqualTo FactionGet(reb,"unitMG")): {
         [_unit, "MachineGuns", 150] call A3A_fnc_randomRifle;
@@ -212,7 +225,7 @@ else {
     private _weapon = primaryWeapon _unit;
     private _compatLights = A3A_rebelFlashlightsCache get _weapon;
     if (isNil "_compatLights") then {
-        private _compatItems = [_weapon] call BIS_fnc_compatibleItems;		// cached, should be fast
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
         _compatLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
         A3A_rebelFlashlightsCache set [_weapon, _compatLights];
     };

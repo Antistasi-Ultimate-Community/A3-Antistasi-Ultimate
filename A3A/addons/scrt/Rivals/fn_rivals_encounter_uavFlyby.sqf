@@ -125,7 +125,7 @@ for "_i" from 0 to _uavQuantity - 1 do {
 		(_velocity select 2)
 	];
 
-	[Rivals, _uav] call A3A_fnc_createVehicleCrew;
+	[Rivals, _uav] call A3A_fnc_RivalsCreateVehicleCrew;
 	[_uav, Rivals] call A3A_fnc_AIVEHinit;
 
 	_vehicles pushBack _uav;

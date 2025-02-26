@@ -171,6 +171,7 @@ class vehicles_rhs : vehicles_base
     ITEM(rhs_t90a_tv, 62650, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(rhs_t90am_tv, 64850, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(rhs_t90sm_tv, 67050, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(rhs_t14_tv, 1000000, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(rhsusf_m1a1aimwd_usarmy, 65800, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(rhsusf_m1a1aim_tuski_wd, 54100, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(rhsusf_m1a2sep1wd_usarmy, 50400, "TANK", VEHICLE_CONDITION_TANK);

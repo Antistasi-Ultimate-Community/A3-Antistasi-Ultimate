@@ -2,7 +2,7 @@ private _markersX = markersX + [respawnTeamPlayer];
 
 // private _titleStr = localize "STR_A3A_fn_dialogs_ftradio_title";
 private _titleStr = "Fast Travel";
-if (limitedFT == 2) exitWith {[_titleStr, "Fast travel is disabled for this server."] call A3A_fnc_customHint}; // [_titleStr, localize "STR_A3A_fn_dialogs_ftradio_no_param"]
+if (limitedFT == 3) exitWith {[_titleStr, "Fast travel is disabled for this server."] call A3A_fnc_customHint}; // [_titleStr, localize "STR_A3A_fn_dialogs_ftradio_no_param"]
 // This needs a proper stringtable ^
 
 if (!isNil "traderMarker") then {
@@ -26,7 +26,7 @@ if (count hcSelected player == 1) then {
 	_groupX = group player;
 };
 private _checkForPlayer = false;
-if (!_esHC and {(limitedFT == 1)}) then {_checkForPlayer = true};
+if (!_esHC and {(limitedFT == 1 or limitedFT == 2)}) then {_checkForPlayer = true};
 private _boss = leader _groupX;
 
 if (_boss != player and {!_esHC}) then {_groupX = player};
@@ -98,10 +98,22 @@ if (_positionTel isEqualTo []) exitWith {
 };
 
 private _base = [_markersX, _positionTel] call BIS_Fnc_nearestPosition;
-
 private _rebelMarkers = if (!isNil "traderMarker") then {["Synd_HQ", traderMarker]} else {["Synd_HQ"]};
-if (_checkForPlayer && {!(_base in (_rebelMarkers + airportsX + milbases))}) exitWith {
+private _isValidTargetLocation = (_base in (_rebelMarkers + airportsX + milbases));
+
+if (_checkForPlayer && limitedFT == 1 && !_isValidTargetLocation) exitWith {
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_limited"] call SCRT_fnc_misc_deniedHint;
+};
+
+private _withinBoundaries = true;
+if (limitedFT == 2) then {
+	private _rebelLocations = (_rebelMarkers + airportsX + milbases) select { sidesX getVariable _x == teamPlayer };
+	private _nearestPosition = [_rebelLocations, player] call BIS_Fnc_nearestPosition;
+	private _distanceToNearest = player distance getMarkerPos _nearestPosition;
+	_withinBoundaries = _distanceToNearest < 50;	
+};
+if (_checkForPlayer && limitedFT == 2 && (!_isValidTargetLocation or !_withinBoundaries)) exitWith {
+	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_limited_to_between_destinations"] call SCRT_fnc_misc_deniedHint;
 };
 
 if ((sidesX getVariable [_base,sideUnknown]) in [Occupants, Invaders]) exitWith {
@@ -141,13 +153,13 @@ if (_positionTel distance getMarkerPos _base < 50) then {
 		};
 	};
 	private _exit = false;
-	if (limitedFT == 1) then {
+	if (limitedFT == 1 or limitedFT == 2) then {
 		_vehicles = [];
 		{if (vehicle _x != _x) then {_vehicles pushBackUnique (vehicle _x)}} forEach units _groupX;
 		{if ((vehicle _x) in _vehicles) exitWith {_checkForPlayer = true}} forEach (call A3A_fnc_playableUnits);
 	};
 
-	if (_checkForPlayer and {!(_base in (_rebelMarkers + airportsX + milbases))}) exitWith {
+	if (_checkForPlayer and !_isValidTargetLocation) exitWith {
 		[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_cancel",groupID _groupX]] call A3A_fnc_customHint;
 	};
 

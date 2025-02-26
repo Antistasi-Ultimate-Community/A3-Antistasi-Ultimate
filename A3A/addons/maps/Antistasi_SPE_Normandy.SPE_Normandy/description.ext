@@ -9,16 +9,16 @@ overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
-    defaultLargeImageKey="cherno";
-    defaultLargeImageText="Antistasi Ultimate - Normandy";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Normandy";
+    defaultLargeImageKey="normandy";
+    defaultLargeImageText="Rebelling in Normandy";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
+//DLC: https://store.steampowered.com/app/1175380/Arma_3_Creator_DLC_Spearhead_1944/
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

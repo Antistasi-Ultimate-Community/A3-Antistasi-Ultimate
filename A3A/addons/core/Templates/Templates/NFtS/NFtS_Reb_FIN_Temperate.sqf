@@ -8,7 +8,7 @@
 
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\NFtS\flag_finland.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "NORTH_Flag_FIN"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_FIN"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["NORTH_FIN_41_R75"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["LIB_Kfz1_sernyt"]] call _fnc_saveToTemplate;
@@ -93,7 +93,7 @@ private _dlcUniforms = [];
 
 ["faces", ["LIB_aleksei_IF","LIB_boyartsev_IF","LIB_bykov_IF",
 "LIB_Otto_IF","LIB_Volker_IF", "LIB_Walter_IF", "LIB_Wolf_IF"]] call _fnc_saveToTemplate;
-["voices", ["Male01PL", "Male02PL", "Male03PL"]] call _fnc_saveToTemplate;
+["voices", ["Male01FIN", "Male02FIN", "Male03FIN", "Male04FIN"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //

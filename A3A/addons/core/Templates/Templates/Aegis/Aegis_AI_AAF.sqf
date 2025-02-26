@@ -19,6 +19,8 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesSDV", ["I_SDV_01_F"]] call _fnc_saveToTemplate;
+
 ["ammobox", "I_supplyCrate_F"] call _fnc_saveToTemplate;     
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; 
 ["equipmentBox", "Box_AAF_Equip_F"] call _fnc_saveToTemplate; 
@@ -27,7 +29,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesLightUnarmed", ["I_MRAP_03_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["I_Truck_02_transport_F", "I_Truck_02_covered_F"]] call _fnc_saveToTemplate;
-private _cargoTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
+private _cargoTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F","I_UGV_01_F"];
 ["vehiclesAmmoTrucks", ["I_Truck_02_ammo_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["I_Truck_02_box_F"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["I_Truck_02_fuel_F"]] call _fnc_saveToTemplate;
@@ -35,9 +37,9 @@ private _cargoTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
 ["vehiclesLightAPCs", []] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["I_APC_tracked_03_cannon_F", "I_APC_Wheeled_03_cannon_F"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["I_APC_Wheeled_03_cannon_F"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["I_APC_Wheeled_03_cannon_F","I_UGV_01_rcws_F"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["I_MBT_03_cannon_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks", ["I_LT_01_cannon_F", "I_LT_01_AT_F"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks", ["I_LT_01_cannon_F", "I_LT_01_AT_F","I_UGV_01_rcws_F"]] call _fnc_saveToTemplate;
 private _aa = ["I_LT_01_AA_F"];
 
 ["vehiclesTransportBoats", ["I_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
@@ -98,7 +100,7 @@ private _policeVehs = if (_hasContact) then {
 
 //If Western Sahara DLC
 if (_hasWs) then {
-    _cargoTrucks = ["I_Truck_02_flatbed_lxWS", "I_Truck_02_cargo_lxWS"];
+    _cargoTrucks append ["I_Truck_02_flatbed_lxWS", "I_Truck_02_cargo_lxWS"];
     _aa pushBack "I_A_Truck_02_aa_lxWS";
 };
 ["vehiclesCargoTrucks", _cargoTrucks] call _fnc_saveToTemplate;

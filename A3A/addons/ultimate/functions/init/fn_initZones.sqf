@@ -10,7 +10,9 @@ markersImmune = markersX select {
     {(_x in citiesX)}
     || 
     {(_x in airportsX)}
-}; // this var should in theory only be seen by the server
+};
+
+publicVariable "markersImmune";
 
 private _revealedZones = revealedZones;
 

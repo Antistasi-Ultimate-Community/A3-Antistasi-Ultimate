@@ -1026,24 +1026,100 @@ class playerMoney: SimpleMenuSmall
 			action = "closeDialog 0; ['remove'] call A3A_fnc_memberAdd;";
 		};
 		
-		class r1Button: SimpleButton
+		class r1Text : SimpleText
 		{
-			idc = 106;
+			idc = 120001;
 			text = $STR_antistasi_dialogs_donate_player_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.262 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_donate_player_tooltip;
-			action = "[true] call A3A_fnc_donateMoney;";
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.24 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
+			h = 0.06 * safezoneH;
+			style = ST_CENTER;
 		};
 
-		class r2Button: SimpleButton
+		class r1Button: QuarterSimpleButton
 		{
 			idc = 308;
-			text = $STR_antistasi_dialogs_donate_faction_title;
+			text = "25%";
 			x = 0.477 * safezoneW + safezoneX;
-			y = 0.346 * safezoneH + safezoneY;
+			y = 0.282 * safezoneH + safezoneY;
+			action = "[player, cursorTarget, 0.25] call A3A_fnc_donateMoneyPercentage;";
+		};
+
+		class r2Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "50%";
+			x = 0.527 * safezoneW + safezoneX;
+			y = 0.282 * safezoneH + safezoneY;
+			action = "[player, cursorTarget, 0.5] call A3A_fnc_donateMoneyPercentage;";
+		};
+
+		class r3Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "75%";
+			x = 0.577 * safezoneW + safezoneX;
+			y = 0.282 * safezoneH + safezoneY;
+			action = "[player, cursorTarget, 0.75] call A3A_fnc_donateMoneyPercentage;";
+		};
+
+		class r4Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "100%";
+			x = 0.627 * safezoneW + safezoneX;
+			y = 0.282 * safezoneH + safezoneY;
+			action = "[player, cursorTarget, 1] call A3A_fnc_donateMoneyPercentage;";
+		};
+		
+		class r2Text : SimpleText
+		{
+			idc = 120001;
+			text = $STR_antistasi_dialogs_donate_faction_title;
 			tooltip = $STR_antistasi_dialogs_donate_faction_tooltip;
-			action = "[] call A3A_fnc_donateMoney;";
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
+			h = 0.06 * safezoneH;
+			style = ST_CENTER;
+		};
+
+		class r5Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "25%";
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.366 * safezoneH + safezoneY;
+			action = "[player, ObjNull, 0.25] call A3A_fnc_donateMoneyPercentage;";
+		};
+
+		class r6Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "50%";
+			x = 0.527 * safezoneW + safezoneX;
+			y = 0.366 * safezoneH + safezoneY;
+			action = "[player, ObjNull, 0.5] call A3A_fnc_donateMoneyPercentage;";
+		};
+
+		class r7Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "75%";
+			x = 0.577 * safezoneW + safezoneX;
+			y = 0.366 * safezoneH + safezoneY;
+			action = "[player, ObjNull, 0.75] call A3A_fnc_donateMoneyPercentage;";
+		};
+
+		class r8Button: QuarterSimpleButton
+		{
+			idc = 308;
+			text = "100%";
+			x = 0.627 * safezoneW + safezoneX;
+			y = 0.366 * safezoneH + safezoneY;
+			action = "[player, ObjNull, 1] call A3A_fnc_donateMoneyPercentage;";
 		};
 	};
 };

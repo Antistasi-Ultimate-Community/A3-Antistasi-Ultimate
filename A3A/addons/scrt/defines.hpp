@@ -1159,6 +1159,14 @@ class SimpleButton: ButtonBase
 	sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.5) * 0.5";
 };
 
+class QuarterSimpleButton: ButtonBase
+{
+	fade = 0;
+	w = 0.049 * safezoneW;
+	h = 0.04 * safezoneH;
+	sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.5) * 0.5";
+};
+
 class SimpleText: TextBase
 {
 	fade = 0;

@@ -45,9 +45,21 @@ _ps2 setParticleParams [
 _ps2 setParticleRandom [0, [0.4, 0.4, 0], [0.4, 0.4, 0], 0, 0.25, [0, 0, 0, 0.1], 0, 0];
 _ps2 setDropInterval 0.02;
 
+///Light it up
+private _lightSource = "#lightpoint" createVehicleLocal _posATL;
+_lightSource setLightColor [1,0.8,0.8];
+_lightSource setLightAmbient [1,0.8,0.8];
+_lightSource setLightUseFlare true;
+_lightSource setLightFlareSize 30;
+_lightSource setLightFlareMaxDistance 2500;
+_lightSource setLightBrightness 3000;
+_lightSource setLightDayLight true;
+_lightSource setLightIntensity 1e6;
+
 _ps0 attachTo [_object, [0, 0, 1]];
 _ps1 attachTo [_object, [0, 0, 1]];
 _ps2 attachTo [_object, [0, 0, 1]];
+_lightSource attachTo [_object, [0, 0, 1]];
 
 sleep 11;
 
@@ -82,3 +94,4 @@ waitUntil { sleep 0.01; getPos _object select 2 < 2 }; ///0.01 because we don't 
 deleteVehicle _ps0;
 deleteVehicle _ps1;
 deleteVehicle _ps2;
+deleteVehicle _lightSource;

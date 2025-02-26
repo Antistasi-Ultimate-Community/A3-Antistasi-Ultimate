@@ -20,6 +20,11 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 // specifically don't use it to attack:
 // - Fixed wing aircraft
 // TODO: Rework vehicle type system to handle this shit better
+/* if (_side isEqualTo Invaders) then {
+    if (isNull FactionGet(inv,"vehiclesDropPod")) exitwith { 0 };
+} else {
+    if (isNull FactionGet(occ,"vehiclesDropPod")) exitwith { 0 };
+}; */
 private _allAA = (A3A_faction_all get "vehiclesPlanesAA");
 if (typeOf _target in _allAA) exitWith { 0 };
 

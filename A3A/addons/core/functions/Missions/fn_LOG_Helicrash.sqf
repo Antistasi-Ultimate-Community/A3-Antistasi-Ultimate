@@ -290,7 +290,8 @@ _groups pushBack _patrolGroup;
 
 //moving to crash site
 _cargoVehicleWp = _cargoVehicleGroup addWaypoint [position _box, 1];
-_cargoVehicleWp setWaypointType "GETOUT";
+//_cargoVehicleWp setWaypointType "GETOUT";
+_cargoVehicleWp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
 _cargoVehicleWp setWaypointBehaviour "SAFE";
 
 waitUntil {

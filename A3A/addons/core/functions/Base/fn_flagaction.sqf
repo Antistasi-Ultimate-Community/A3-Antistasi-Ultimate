@@ -17,16 +17,19 @@ switch _typeX do
     };
     case "unit":
     {
-        _flag addAction [
-            format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"],
-            {
-                if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
-                    [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
-                } else { 
-                    [] spawn A3A_fnc_unit_recruit; 
-                };
-            },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
-        ];
+        if (playerRecruitAI isEqualTo 1) then 
+        {
+            _flag addAction [
+                format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"],
+                {
+                    if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
+                        [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
+                    } else { 
+                        [] spawn A3A_fnc_unit_recruit; 
+                    };
+                },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
+            ];
+        };
     };
     case "vehicle":
     {
@@ -169,6 +172,13 @@ switch _typeX do
             localize "STR_antistasi_actions_free_prisoner"
         ], A3A_fnc_liberaterefugee,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
     };
+    case "deserter":
+    {
+        _flag addAction [format [
+            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", 
+            localize "STR_antistasi_actions_free_prisoner"
+        ], A3A_fnc_liberateDeserter,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
+    };
     case "prisonerX":
     {
         _flag addAction [format [
@@ -211,16 +221,18 @@ switch _typeX do
         if (true) exitWith { ERROR("Disabled due to UseDoomGUI Switch.") };
 #endif
         removeAllActions _flag;
-        _flag addAction [
-            format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], 
-            {
-                if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
-                    [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
-                } else { 
-                    [] spawn A3A_fnc_unit_recruit; 
-                };
-            },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
-        ];
+        if (playerRecruitAI isEqualTo 1) then {
+            _flag addAction [
+                format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], 
+                {
+                    if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
+                        [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
+                    } else { 
+                        [] spawn A3A_fnc_unit_recruit; 
+                    };
+                },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
+            ];
+        };
         _flag addAction [
             format ["<img image='a3\ui_f\data\igui\cfg\simpletasks\types\truck_ca.paa' size='1.6' shadow=2 /> <t>%1</t>",  localize "STR_antistasi_actions_buy_vehicle"], 
             {

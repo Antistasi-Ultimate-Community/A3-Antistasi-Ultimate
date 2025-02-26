@@ -77,6 +77,19 @@
     }
 ] call CBA_fnc_addSetting;
 
+[
+    "A3U_setting_tierWarHRLoss", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "War Level To Trigger HR Loss Condition Check", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Antistasi Ultimate", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1, 8, 2, 0],
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {  
+        params ["_value"];
+		missionNamespace setVariable ["A3U_setting_tierWarHRLoss",(round _value),true];
+    }
+] call CBA_fnc_addSetting;
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_emissionMinimum", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
@@ -133,7 +146,7 @@ if (["tts_emission"] call A3U_fnc_hasAddon) then {
     #include "fn_emission_settings.sqf"
 };
 
-if (["diwako_anomalies"] call A3U_fnc_hasAddon) then {
+if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_anomalyDraw", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
         "CHECKBOX", // setting type

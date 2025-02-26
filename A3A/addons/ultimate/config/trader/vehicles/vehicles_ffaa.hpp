@@ -22,6 +22,16 @@ class vehicles_ffaa : vehicles_base
     ITEM(ffaa_et_vamtac_st5_spike, 18200, "ARMEDCAR", VEHICLE_CONDITION_ARMEDCAR);
     ITEM(ffaa_et_m109, 34100, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
     ITEM(ffaa_et_vamtac_cardom, 24000, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
+    ITEM(ffaa_famet_cougar_armed, 12000, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_famet_cougar, 8400, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_famet_ch47_mg_cargo, 6100, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_famet_ch47_mg, 13600, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_famet_ec135, 9500, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_famet_tigre, 31220, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_nh90_nfh_transport, 22300, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_nh90_tth_armed, 15100, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_nh90_tth_cargo, 10000, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(ffaa_nh90_tth_transport, 16000, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(ffaa_ar_harrier, 93400, "PLANE", VEHICLE_CONDITION_PLANE);
     ITEM(ffaa_ea_ef18m, 101350, "PLANE", VEHICLE_CONDITION_PLANE);
     ITEM(ffaa_spike_tripode, 9000, "STATICAA", VEHICLE_CONDITION_STATICAA);

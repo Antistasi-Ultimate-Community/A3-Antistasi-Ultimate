@@ -34,7 +34,7 @@ HR_GRG_CP_closeCnd = {
 };
 
 HR_GRG_Cnd_canAccessAir = {
-    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
+    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
 };
 
 //Lock on garaged vehicles ( Values: [{""}, { getPlayerUID player }] )

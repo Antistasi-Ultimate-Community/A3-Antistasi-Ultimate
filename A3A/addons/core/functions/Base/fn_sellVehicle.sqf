@@ -118,7 +118,8 @@ private _costs = call {
         or (_typeX in FactionGet(all,"vehiclesAA"))
         or (_typeX in FactionGet(all,"vehiclesArtillery"))
     ) exitWith {6500};
-    if (_typeX in (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA"))) exitWith {7500};
+    if (_typeX in (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA") + FactionGet(all,"vehiclesPlanesLargeAA") + FactionGet(all,"vehiclesPlanesLargeCAS"))) exitWith {7500};
+    if (_typeX in (FactionGet(all,"vehiclesPlanesGunship"))) exitWith {10000};
     0;
 };
 

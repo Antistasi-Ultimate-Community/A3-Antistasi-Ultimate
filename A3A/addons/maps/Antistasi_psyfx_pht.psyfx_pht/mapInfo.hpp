@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class psyfx_pht {
 	population[] = {
 		{"LangLongHurang", 92},{"XaBinhGia", 147},{"NgaiGiao", 153},{"XaBihnBa", 248},{"PhuMy", 77},{"LangPhuocHoa", 54},{"XaLongSon", 56},{"LongToan", 258},{"LongTam", 295},{"HoaLong", 157},{"XaAhnNut", 127},{"XaLongPhuoc", 2},{"ChoPhuocHai", 110},{"XaLongHai", 48},{"DatDo", 398},{"XaLongTan", 5},{"XaLongDien", 172},{"BaRia", 475},{"XaThuaTich", 8},{"PhuocLongTho", 92},{"ApLoVui", 29},{"ThangNhi", 260},{"ApXuanSon", 23},{"PhuacTan", 42},{"BongTrang", 50},{"HoaHoi", 36},{"HoaBinh", 34},{"KimLong", 30},{"CuBi", 34},{"ChauPha", 27},{"TocTien", 28},{"LongXoal", 16},{"LangLon", 10},{"HoaHien", 25},{"BungRieng", 23},{"LongGiao", 18},{"ApBihnSon", 65},{"DaBac", 24},{"PhuocBuu", 64},{"ThuanBien", 46},{"BauLam", 21},{"LongPhuoc", 26},{"ThuaDuc", 9},{"CamDurong", 11},{"ApHai", 16},{"XuanTay", 15},{"SongRay", 20},{"TanXuan", 7},{"TanBang", 9},{"XuyenMoc", 89},{"NuiNhon", 51},{"HacDich", 27},{"XaThangNhui", 45},{"CauRachBa", 50},{"DaiAn", 16},{"ApPhuocThang", 34},{"DucMy", 167},{"VUNGTAU", 939},{"HaiDang", 33},{"ApPhuocTinh", 20},{"BaBienLongHai", 34},{"ApPhuocLam", 22},{"MuiKyVan", 16},{"ApChoBen", 33},{"XaTamPhuoc", 15},{"ApPhuocCo", 54},{"ApLongLien", 171},{"XaLongMy", 31},{"XaPhuocLai", 59},{"ApMyAn", 36},{"ApGiaThanh", 15},{"CaoTung", 14},{"ApLangCat", 67},{"ApPhuocHung", 11},{"ApHungHoa", 13},{"XomDaTrang", 19},{"XomTruongQuit", 13},{"LangPhuocBuu", 23},{"LangCaThi", 16},{"MuiBaKiem", 35},{"HoiMy", 17},{"ApBinhChau", 27},{"LongSon", 15},{"MieuBa", 58},{"ApBanDa", 18},{"LangLonSom", 32},{"ApHoiPhuoc", 19},{"ApHoiThanh", 12},{"ApPhuocHuu", 29},{"ApLongHoi", 29},{"ApPhuocTan", 14},{"ApPhuHai", 58},{"ApLongXuan", 31},{"ApPhuocLoc", 31},{"ApOngTrinh", 25},{"XamMyXuan", 57},{"ThaiTien", 16},{"LongThanh", 18},{"PhuocThien", 11},{"ApNgaiGiao", 27},{"ApBac", 91},{"ApPhuocHien", 1},{"ApNangSon", 22},{"ApCuBi", 17},{"LaSong", 17},{"ApHuongSam", 91},{"ApQuangGiao", 42},{"QuanDucThanh", 21},{"NhaThoCauDai", 22},{"AoTrinhBa", 12},{"HoiDongDen", 17},{"BauMang", 15},{"XaTamLang", 24},{"BauMo", 8},{"ApDen", 26},{"ApBenKe", 15},{"NuiHat", 19},{"LamXuan", 16},{"CuMy", 15},{"CamMy", 10},{"SuoiRam", 10},{"CamTiem", 8},{"XaCamMy", 19},{"XaHoiMy", 51},{"SongTheu", 14},{"ApSuoiNghe", 53},{"ApLoiVai", 29},{"ApThamThien", 15},{"CauCoiGia", 93},{"ApLongCat", 61}	
@@ -21,13 +22,8 @@ class psyfx_pht {
 	};
 	climate = "tropical";
 	buildObjects[] = {
-		// Large vanilla tropical structures
-		{"Land_BagBunker_01_large_green_F", 300}, {"Land_HBarrier_01_tower_green_F", 300}, {"Land_BagBunker_01_small_green_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// vanilla tropical sandbag walls
-		{"Land_BagFence_01_short_green_F", 10}, {"Land_BagFence_01_round_green_F", 10}, {"Land_BagFence_01_long_green_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_TROPIC,
+		BUILDABLES_UNIVERSAL
 	};
 };

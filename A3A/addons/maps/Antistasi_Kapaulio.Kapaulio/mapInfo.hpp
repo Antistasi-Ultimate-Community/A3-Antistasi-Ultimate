@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class kapaulio {
 	population[] = {
 		{"Koroina", 159},{"Kurio", 63},{"Bangger", 68},{"Catanga", 57},{"Jambola", 167},{"Lahaina", 46},{"Belladonna", 42},{"Petra", 49},{"Lantana", 63},{"Cabana", 24},{"Bowna", 69},{"Perots", 148},{"Ragnar", 0},{"Caserma", 18},{"Ebsal", 12},{"Oden", 96},{"Rugusa", 219},{"Bazanti", 99},{"Mijutti", 43},{"Yannagar", 112},{"nova", 104},{"Singalli", 10},{"Butu", 56},{"Sole", 50},{"Huri", 11},{"agnir", 27},{"padre", 67},{"Bangar", 20},{"Haddawassi", 258},{"Viking", 61},{"Capsicum", 21},{"Anubis", 91},{"brooni", 24},{"Malikoi", 102},{"Hawasi", 210},{"casataina", 94},{"Jappoli", 231},{"Cancom", 5},{"Jambalaya", 652},{"Bonga", 534},{"Ubomo", 454},{"Kawi", 799},{"Lambo", 152},{"Kupri", 323},{"Bologa", 173},{"Saranader", 56},{"Lundy", 62},{"Cachina", 64},{"Hasakaya", 48},{"Salty", 184}
@@ -17,13 +18,10 @@ class kapaulio {
 	};
 	climate = "tropical";
 	buildObjects[] = {
-		// Large vanilla arid structures
-		{"Land_BagBunker_Large_F", 300}, {"Land_BagBunker_Tower_F", 300}, {"Land_BagBunker_Small_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// Vanilla arid sandbag walls
-		{"Land_BagFence_Long_F", 10}, {"Land_BagFence_Round_F", 10}, {"Land_BagFence_Short_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TROPIC,
+		BUILDABLES_CUP,
+		BUILDABLES_UNIVERSAL
 	};
 };

@@ -52,7 +52,7 @@ private _taskId = "RES" + str A3A_taskCount;
 _groupPOW = createGroup teamPlayer;
 for "_i" from 1 to (((count _posHouse) - 1) min 6) do {
 	_unit = [_groupPOW, FactionGet(reb,"unitUnarmed"), _posHouse select _i, [], 0, "NONE"] call A3A_fnc_createUnit;
-	[_unit, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+	[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 	_unit allowdamage false;
 	_unit disableAI "MOVE";
 	_unit disableAI "AUTOTARGET";
@@ -82,9 +82,9 @@ if (_sideX == Invaders) then {
 		if (_isDifficult) then {sleep 300} else {sleep (300 + random 1800)};
 		if !(_taskId call BIS_fnc_taskCompleted) then
 		{
-			// Needs rework
-            //private _reveal = [_positionX , Invaders] call A3A_fnc_calculateSupportCallReveal;
-            //[getPos _house, 4, ["QRF"], Invaders, _reveal] remoteExec ["A3A_fnc_createSupport", 2];
+			// Needs rework, probably
+            		private _reveal = [_positionX , Invaders] call A3A_fnc_calculateSupportCallReveal;
+            		[getPos _house, 4, ["QRF"], Invaders, _reveal] remoteExec ["A3A_fnc_createSupport", 2];
 		};
 	};
 } else {

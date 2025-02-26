@@ -265,6 +265,7 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1000, 600, 200, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         ///S.O.G. nickel steel
+        case "vnx_b_air_ac119_04_01_noinsignia";
         case "vnx_b_air_ac119_04_01":
         {
             _loadout = ["vn_bomb_15000_blu82_dc_parachute_mag_x1"]; //"vn_v_launcher_mk24"
@@ -272,12 +273,14 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1200, 800, 170, 55, 20, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         ///S.O.G.
+        case "vn_b_air_f4c_at_noinsignia";
         case "vn_b_air_f4c_at":
         {
             _loadout = ["","","vn_bomb_500_mk82_he_mag_x1","vn_bomb_750_blu1b_fb_mag_x1","","","","","","",""];
             _plane setVariable ["bombRacks", ["vn_bomb_mk82_he_launcher","vn_bomb_blu1b_750_fb_launcher"]];
             _plane setVariable ["diveParams", [1000, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "vn_b_air_f100d_at_noinsignia";
         case "vn_b_air_f100d_at":
         {
             _loadout = ["","","vn_fuel_f100_335_mag","vn_fuel_f100_335_mag","vn_bomb_500_blu1b_fb_mag_x1","vn_bomb_500_mk82_he_mag_x1"];
@@ -285,6 +288,7 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["vn_bomb_blu1b_500_fb_launcher", "vn_bomb_mk82_he_launcher"]];
             _plane setVariable ["diveParams", [1000, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "vn_o_air_mig19_at_noinsignia";
         case "vn_o_air_mig19_at":
         {
             _loadout = ["","","vn_bomb_500_fab250_he_mag_x1","vn_bomb_500_fab250_he_mag_x1"];
@@ -292,6 +296,7 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["vn_bomb_500_fab250_he_mag_x1"]];
             _plane setVariable ["diveParams", [1000, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "vn_o_air_mig21_cas_noinsignia";
         case "vn_o_air_mig21_cas":
         {
             _loadout = ["vn_bomb_500_fab250_he_mag_x1","vn_bomb_500_fab250_he_mag_x1","vn_gunpod_gsh23l_v_200_mag"];
@@ -356,6 +361,8 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
 		// cup aircraft
+        case "CUP_I_L39_AAF";
+        case "CUP_O_L39_TK";
         case "CUP_B_L39_CZ":
         {
             _loadout = ["","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_FAB250_plane_M",""];
@@ -376,6 +383,16 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh","BombCluster_02_F","Bomb_03_Plane_CAS_02_F"]];
             _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "CUP_I_SU34_AAF";
+        case "CUP_B_SU34_CDF";
+        case "CUP_O_SU34_RU";
+        case "CUP_O_SU34_SLA":
+        {
+            _loadout = ["","CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_FAB250_plane_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_FAB250_plane_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_1Rnd_FAB250_plane_M","CUP_PylonPod_1Rnd_R73_Vympel"];
+            _plane setVariable ["mainGun", "CUP_Vacannon_GSh301_veh"];
+            _plane setVariable ["bombRacks", ["CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh","CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh","CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh","CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh","CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh"]];
+            _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
 		case "cwr3_b_a10";
         case "CUP_B_A10_DYN_USA":
         {
@@ -391,6 +408,7 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["CUP_Vblauncher_GBU12_veh","BombCluster_01_F","CUP_Vblauncher_Mk82_veh"]];
             _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "CUP_I_AV8B_DYN_AAF";
         case "CUP_B_AV8B_DYN_USMC":
         {
             _loadout = ["","","120Rnd_CMFlare_Chaff_Magazine","CUP_PylonPod_3Rnd_GBU12_M","CUP_PylonPod_3Rnd_Mk82_M","PylonMissile_1Rnd_BombCluster_01_F",""];
@@ -463,12 +481,14 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         // SPE planes
+        case "SPE_FW190F8_noinsignia";
         case "SPE_FW190F8": {
             _loadout = ["SPE_250Rnd_MG151","SPE_250Rnd_MG151","SPE_400Rnd_MG131","SPE_400Rnd_MG131","SPE_1Rnd_SC50","SPE_1Rnd_SC50","SPE_1Rnd_SC500","SPE_1Rnd_SC50","SPE_1Rnd_SC50"];
             _plane setVariable ["mainGun", "SPE_2xMG151"];
             _plane setVariable ["bombRacks", ["SPE_SC500_Bomb_Mount","SPE_SC50_Bomb_Mount"]];
             _plane setVariable ["diveParams", [1200, 300, 110, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "SPE_P47_noinsignia";
         case "SPE_P47": {
             _loadout = ["SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_3Rnd_M8_P47","SPE_3Rnd_M8_P47","SPE_1Rnd_US_500lb","SPE_1Rnd_US_500lb","SPE_1Rnd_US_500lb"];
             _plane setVariable ["mainGun", "SPE_8xM2_P47"];
@@ -477,7 +497,8 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
 		// Clone Wars Planes (3AS)
-        case "3AS_ARC_170_Yellow";
+        case "3AS_ARC_170_Red";
+		case "3AS_ARC_170_Yellow";
         case "3AS_ARC_170_Orange";
         case "3AS_ARC_170_Green";
         case "3AS_ARC_170_Blue":
@@ -976,6 +997,8 @@ if (_type == "CAS") then
             _plane setVariable ["missileLauncher", ["CUP_Vmlauncher_AGM114K_veh"]];
         };
         // cup aircraft
+        case "CUP_I_L39_AAF";
+        case "CUP_O_L39_TK";
         case "CUP_B_L39_CZ":
         {
             _loadout = ["CUP_PylonPod_20Rnd_S8_plane_M","PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_1Rnd_Missile_AGM_01_F","CUP_PylonPod_20Rnd_S8_plane_M"];
@@ -995,6 +1018,18 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["Rocket_03_HE_Plane_CAS_02_F", "Rocket_03_AP_Plane_CAS_02_F"]];
             _plane setVariable ["missileLauncher", ["CUP_Vmlauncher_Kh29L_veh"]];
         };
+        case "CUP_I_SU34_AAF";
+        case "CUP_B_SU34_CDF";
+        case "CUP_O_SU34_RU";
+        case "CUP_O_SU34_SLA":
+        {
+            _loadout = ["","CUP_PylonPod_1Rnd_R73_Vympel","CUP_PylonPod_1Rnd_Kh29_M","CUP_PylonPod_250Rnd_TE2_Green_Tracer_GSh23_23mm_APHE_M","CUP_PylonPod_1Rnd_FAB250_plane_M","CUP_PylonPod_1Rnd_KAB250_M","CUP_PylonPod_250Rnd_TE2_Green_Tracer_GSh23_23mm_APHE_M","CUP_PylonPod_1Rnd_Kh29_M","CUP_PylonPod_1Rnd_R73_Vympel"];
+            _plane setVariable ["mainGun", "CUP_Vacannon_GSh301_veh"];
+            _plane setVariable ["rocketLauncher", ["Rocket_03_HE_Plane_CAS_02_F", "Rocket_03_AP_Plane_CAS_02_F"]];
+            _plane setVariable ["missileLauncher", ["CUP_Vmlauncher_Kh29L_veh"]];
+            _plane setVariable ["bombRacks", ["CUP_Vblauncher_Fab250_veh","CUP_Vblauncher_KAB250_veh"]];
+            _plane setVariable ["diveParams", [1200, 500, 150, 55, 15, [3, 0]]]; 
+        };
 		case "cwr3_b_a10";
         case "CUP_B_A10_DYN_USA":
         {
@@ -1010,6 +1045,7 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["CUP_Vmlauncher_CRV7_veh"]];
             _plane setVariable ["missileLauncher", ["CUP_Vmlauncher_AGM65pod_veh"]];
         };
+        case "CUP_I_AV8B_DYN_AAF";
         case "CUP_B_AV8B_DYN_USMC":
         {
             _loadout = ["CUP_PylonPod_19Rnd_CRV7_FAT_plane_M","CUP_PylonPod_1Rnd_AGM65_Maverick_M","CUP_PylonPod_1Rnd_AGM65_Maverick_M","CUP_PylonPod_1Rnd_AGM65_Maverick_M","CUP_PylonPod_1Rnd_AGM65_Maverick_M","CUP_PylonPod_19Rnd_CRV7_FAT_plane_M"];
@@ -1079,12 +1115,14 @@ if (_type == "CAS") then
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         // SPE planes
+        case "SPE_FW190F8_noinsignia";
         case "SPE_FW190F8": {
             _loadout = ["SPE_250Rnd_MG151","SPE_250Rnd_MG151","SPE_400Rnd_MG131","SPE_400Rnd_MG131","SPE_1Rnd_SC50","SPE_1Rnd_SC50","SPE_1Rnd_SC500","SPE_1Rnd_SC50","SPE_1Rnd_SC50"];
             _plane setVariable ["mainGun", "SPE_2xMG151"];
             _plane setVariable ["bombRacks", ["SPE_SC500_Bomb_Mount","SPE_SC50_Bomb_Mount"]];
             _plane setVariable ["diveParams", [1200, 300, 110, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "SPE_P47_noinsignia";
         case "SPE_P47": {
             _loadout = ["SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_425rnd_M2_P47","SPE_3Rnd_M8_P47","SPE_3Rnd_M8_P47","SPE_1Rnd_US_500lb","SPE_1Rnd_US_500lb","SPE_1Rnd_US_500lb"];
             _plane setVariable ["mainGun", "SPE_8xM2_P47"];
@@ -1093,7 +1131,8 @@ if (_type == "CAS") then
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
 	    // Clone Wars Planes (3AS)
-        case "3AS_ARC_170_Yellow";
+        case "3AS_ARC_170_Red";
+		case "3AS_ARC_170_Yellow";
         case "3AS_ARC_170_Orange";
         case "3AS_ARC_170_Green";
         case "3AS_ARC_170_Blue":
@@ -1159,7 +1198,6 @@ if (_type == "CAS") then
         case "3AS_Delta7_TANO";
         case "3AS_Delta7_ANI";
         case "3AS_Delta7_Blue";
-        case "3AS_Delta7_F";
         case "3AS_Delta7_Orange";
         case "3AS_Delta7_PLO";
         case "3AS_Delta7_Purple";
@@ -1542,18 +1580,13 @@ if (_type == "AA") then
             _loadout = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
         };
         // cup aircraft
+        case "CUP_I_L39_AAF";
+        case "CUP_O_L39_TK";
         case "CUP_B_L39_CZ":
         {
             _loadout = ["PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1"];
         };
-        case "CUP_O_L39_TK":
-        {
-            _loadout = ["PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1"];
-        };
-        case "CUP_B_GR9_DYN_GB":
-        {
-            _loadout = ["CUP_PylonPod_19Rnd_CRV7_HE_plane_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","PylonRack_1Rnd_AAA_missiles"];
-        };
+        case "CUP_I_SU34_AAF";
         case "CUP_B_SU34_CDF";
         case "CUP_O_SU34_RU";
         case "CUP_O_SU34_SLA":
@@ -1568,6 +1601,7 @@ if (_type == "AA") then
         {
             _loadout = ["CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_ALQ_131","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M"];
         };
+        case "CUP_I_AV8B_DYN_AAF";
         case "CUP_B_AV8B_DYN_USMC":
         {
             _loadout = ["CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M"];
@@ -1618,7 +1652,8 @@ if (_type == "AA") then
             _loadout = ["LIB_1Rnd_SC250"];
         };
 	    // Clone Wars Planes (3AS)
-        case "3AS_ARC_170_Yellow";
+        case "3AS_ARC_170_Red";
+		case "3AS_ARC_170_Yellow";
         case "3AS_ARC_170_Orange";
         case "3AS_ARC_170_Green";
         case "3AS_ARC_170_Blue":
@@ -1675,7 +1710,6 @@ if (_type == "AA") then
         case "3AS_Delta7_TANO";
         case "3AS_Delta7_ANI";
         case "3AS_Delta7_Blue";
-        case "3AS_Delta7_F";
         case "3AS_Delta7_Orange";
         case "3AS_Delta7_PLO";
         case "3AS_Delta7_Purple";

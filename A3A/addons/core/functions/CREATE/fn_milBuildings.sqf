@@ -245,14 +245,25 @@ for "_i" from 0 to (count _buildings) - 1 do
             private _type = selectRandom (_faction get "staticMGs");
             private _dir = (getDir _building) - 180;
             private _zpos = AGLToASL (position _building);
-            private _zOffset = [0, 0, 2.25];
+            private _zOffset = [0, 0, 2.55];
             _zpos = _zpos vectorAdd _zOffset;
             private _pos = _zpos getPos [1.5, _dir];
             _pos = ASLToATL ([_pos select 0, _pos select 1, _zpos select 2]);
             private _static = [_type, _pos, _dir] call _fnc_spawnStatic;
             _static setPos _pos; 
         };
-        if (_typeB isEqualTo "Land_Fort_Watchtower_EP1" or {_typeB isEqualTo "Land_Fort_Watchtower" or {_typeB isEqualTo "Land_HBarrier_01_tower_green_F" or {_typeB isEqualTo "Land_BagBunker_Tower_F"}}}) exitWith {
+        if (_typeB isEqualTo "Land_HBarrier_01_tower_green_F"  or {_typeB isEqualTo "Land_BagBunker_Tower_F"}) exitWith {
+            private _type = selectRandom (_faction get "staticMGs");
+            private _dir = (getDir _building) - 180;
+            private _zpos = AGLToASL (position _building);
+            private _zOffset = [0, 0, 2.55];
+            _zpos = _zpos vectorAdd _zOffset;
+            private _pos = _zpos getPos [1.5, _dir];
+            _pos = ASLToATL ([_pos select 0, _pos select 1, _zpos select 2]);
+            private _static = [_type, _pos, _dir] call _fnc_spawnStatic;
+            _static setPos _pos; 
+        };
+        if (_typeB isEqualTo "Land_Fort_Watchtower_EP1" or {_typeB isEqualTo "Land_Fort_Watchtower"}) exitWith {
             private _type = selectRandom (_faction get "staticMGs");
             private _dir = (getDir _building) - 180;
             private _zpos = AGLToASL (position _building);

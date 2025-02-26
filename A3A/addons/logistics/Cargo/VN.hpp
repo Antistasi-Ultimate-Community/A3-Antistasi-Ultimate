@@ -10,7 +10,7 @@ class vn_static_f_vietnam_zpu4_vn_static_zpu4_01_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0.15,-0.1,1.6};
     rotation[] = {0,-1,0};
-    size = 7;
+    size = 5;
     recoil = 200;
     isWeapon = 1;
 };
@@ -224,4 +224,121 @@ class vn_static_f_vietnam_02_type56rr_vn_o_static_type56rr_p3d : TRIPLES(ADDON,C
     rotation[] = {0,-1,0};
     size = 4;
     recoil = 250;
+};
+
+class vn_static_f_vietnam_04_m1910_vn_static_m1910_high_01_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_04_m1910_vn_static_m1910_low_02_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_04_m1910_vn_static_m1910_low_01_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_04_m2_vn_static_m2_scoped_high_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_04_m2_vn_static_m2_scoped_low_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_03_mg42_vn_static_mg42_high_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_03_mg42_vn_static_mg42_low_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_03_mk18_vn_static_mk18_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_sa2_vn_o_static_launcher_sa2_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 6;
+    recoil = 1500;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_03_sgm_vn_static_sgm_high_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_03_sgm_vn_static_sgm_low_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 2;
+    recoil = 150;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_02_v11m_vn_static_v11m_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 5;
+    recoil = 1500;
+    isWeapon = 1;
+};
+
+class vn_static_f_vietnam_04_zgu1_vn_static_zgu1_p3d  : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {-0.3,0.8,1.21};
+    rotation[] = {0,-1,0};
+    size = 3;
+    recoil = 1500;
+    isWeapon = 1;
 };

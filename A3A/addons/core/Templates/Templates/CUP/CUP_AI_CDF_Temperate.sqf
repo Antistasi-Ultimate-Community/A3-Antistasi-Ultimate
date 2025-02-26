@@ -13,6 +13,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate;
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate;
@@ -46,6 +48,8 @@
 ["vehiclesHelisTransport", ["CUP_B_Mi17_CDF"]] call _fnc_saveToTemplate;        // CUP_B_MI6A_CDF
 ["vehiclesHelisLightAttack", ["CUP_B_Mi171Sh_CDF"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_Mi24_D_Dynamic_CDF"]] call _fnc_saveToTemplate;
+
+["vehiclesAirPatrol", ["CUP_B_Mi17_medevac_CDF","CUP_B_Mi171Sh_CDF"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["CUP_B_BM21_CDF", "CUP_B_D30_CDF"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
@@ -95,6 +99,7 @@
 "WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_19","WhiteHead_20",
 "WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["CUP_D_Male01_CZ_ACR","CUP_D_Male02_CZ_ACR","CUP_D_Male03_CZ_ACR","CUP_D_Male04_CZ_ACR","CUP_D_Male05_CZ_ACR"]] call _fnc_saveToTemplate;
+"RussianMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

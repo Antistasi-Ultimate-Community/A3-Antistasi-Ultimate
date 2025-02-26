@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class Gulfcoast {
 	population[] = {
 		{"haven", 145},{"iona", 133},{"terraceia", 670},{"Lely", 89},{"laurel", 190},{"cayocosta", 129},{"hobesound", 275},{"acline", 62},{"alva", 86},{"northfort", 303},{"solana", 74},{"croom", 48},{"pineridge", 76},{"labelle", 46},{"goodland", 73},{"keela", 125},{"harker", 46},{"orionestates", 164},{"captivabeach", 90},{"captivasound", 54},{"stjamescity", 136},{"tice", 89},{"bokeelia", 105},{"osprey", 64},{"northterra", 230},{"starmand", 126},{"riverside", 28},{"woodford", 56},{"edgewood", 152},{"crosscity", 95},{"eastwood", 93},{"cooperhead", 22},{"bellavida", 216},{"marco", 71},{"lochmoor", 49},{"madeira", 75},{"rotonda", 284},{"felda", 35},{"lakeport", 138},{"harborside", 98},{"gulfshore", 267},{"caperassa", 666},{"sanbelshores", 61},{"palmdale", 122},{"sebring", 539},{"esteropass", 51},{"hurpass", 38},{"boca", 201},{"sanbelcity", 411},{"salvista", 142},{"arcadia", 129},{"delmare", 322},{"sancarlos", 188},{"corelcity", 486}
@@ -21,14 +22,10 @@ class Gulfcoast {
 	};
 	climate = "arid";
 	buildObjects[] = {
-		{"Land_fortified_nest_big_EP1", 300}, {"Land_Fort_Watchtower_EP1", 300}, {"Fortress2", 200}, {"Fortress1", 100}, {"Fort_Nest", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140}, {"ShedBig", 100}, {"Shed", 100}, {"ShedSmall", 60}, {"Land_GuardShed", 30},
-		// CUP sandbag walls
-		{"Land_BagFenceLong", 10}, {"Land_BagFenceShort", 10}, {"Land_BagFenceRound", 10},        //{"Land_BagFenceEnd", 0, 5}, 
-		// Other CUP fences
-		{"Land_fort_artillery_nest_EP1", 200}, {"Land_fort_rampart_EP1", 50}, {"Fort_Barricade", 50}, {"Fence", 20}, {"FenceWood", 10}, {"FenceWoodPalet", 10}, 
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_SAND,
+		BUILDABLES_ARID,
+		BUILDABLES_CUP,
+		BUILDABLES_UNIVERSAL
 	};
 };

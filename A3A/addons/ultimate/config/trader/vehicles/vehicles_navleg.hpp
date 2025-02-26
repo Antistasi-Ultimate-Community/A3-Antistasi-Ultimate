@@ -1,0 +1,24 @@
+class vehicles_navleg : vehicles_base
+{
+    ITEM(sab_nl_vessel_a, 1900, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_vessel_b, 3400, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_vessel_c, 1600, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_vessel_d, 1900, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_vessel_e, 1900, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_liberty, 117500, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_sims, 175000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_foxhound, 169000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_dido, 292500, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_cleveland, 436250, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_hood, 590000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_t22, 171000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_mutsuki, 147000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_fubuki, 211000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_vincenzo, 159000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_zara, 286500, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_scharnhorst, 565000, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_u557, 83500, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(sab_nl_enterprise_gun_20mm, 5000, "STATICAA", VEHICLE_CONDITION_STATICAA);
+    ITEM(sab_nl_enterprise_gun_40mm, 15000, "STATICAA", VEHICLE_CONDITION_STATICAA);
+    ITEM(sab_nl_enterprise_gun_127mm, 10000, "STATICAT", VEHICLE_CONDITION_STATICAT);
+};

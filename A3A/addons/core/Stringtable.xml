@@ -2719,6 +2719,22 @@
                 <Spanish>Ganarás el juego cuando la mayoría de la población apoye a tu facción y hayas conquistado todas las bases aéreas y bases militares.</Spanish>
                 <Polish>Wygrasz grę, gdy większość populacji poprze twoją frakcję i podbijesz wszystkie lotniska i bazy wojskowe.</Polish>
             </Key>
+            <Key ID="STR_antistasi_journal_entry_text_Default_total">
+                <Original>Total Victory Selected&lt;br/&gt;To complete this win condition, capture all outposts, resources, factories, seaports, military bases, and airports, and maintain more population support than your enemies.</Original>
+                <Russian>Выбрана полная победа&lt;br/&gt;Чтобы выполнить это условие победы, захватите все аванпосты, ресурсы, фабрики, морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
+            </Key>
+            <Key ID="STR_antistasi_journal_entry_text_Default_economic">
+                <Original>Economic Victory Selected&lt;br/&gt;To complete this win condition, Gain more than a set amount of currency.&lt;br/&gt;Calculated as: amount of resources on the map * 100,000&lt;br/&gt;Needed amount on current map : %1%2</Original>
+                <Russian>Экономическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, получите больше установленной суммы валюты.&lt;br/&gt;Рассчитывается как: количество ресурсов на карте * 100,000.&lt;br/&gt;Необходимая сумма на текущей карте : %1%2</Russian>
+            </Key>
+            <Key ID="STR_antistasi_journal_entry_text_Default_logistical">
+                <Original>Logistical Victory Selected&lt;br/&gt;To complete this win condition, capture all seaports, military bases, and airports, and maintain more population support than your enemies.</Original>
+                <Russian>Логистическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, захватите все морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
+            </Key>
+            <Key ID="STR_antistasi_journal_entry_text_Default_political">
+                <Original>Political Victory Selected&lt;br/&gt;To complete this win condition get more than 75% of the population to support your cause</Original>
+                <Russian>Политическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, заставьте более 75% населения поддержать ваше дело.</Russian>
+            </Key>
             <Key ID="STR_antistasi_journal_entry_header_Default_3">
                 <Original>Lose</Original>
                 <French>Défaite</French>
@@ -5709,6 +5725,32 @@
                 <French>&lt;br/&gt;&lt;t size='0.8' color='#%1' shadow='1' shadowColor='#%2' valign='top'&gt;Appuyez sur &lt;t color='#%3'&gt;%4&lt;/t&gt; pour supprimer l'indice . +%5&lt;/t&gt;</French>
             </Key>
         </Container>
+        <Container name="A3A_enemyResponseTime">
+            <Key ID="STR_A3A_Params_generic_veryslow">
+                <Original>Very slow</Original>
+                <Russian>Очень медленно</Russian>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_slow">
+                <Original>Slow</Original>
+                <Russian>Медленный</Russian>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_normal">
+                <Original>Normal</Original>
+                <Russian>Нормальный</Russian>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_fast">
+                <Original>Fast</Original>
+                <Russian>Быстрый</Russian>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_veryfast">
+                <Original>Very fast</Original>
+                <Russian>Очень быстро</Russian>
+            </Key>
+            <Key ID="STR_A3A_Params_enemyResponseTime_title">
+                <Original>Speed of enemy air responses</Original>
+                <Russian>Скорость реакции авиации противника</Russian>
+            </Key>
+        </Container>
         <Container name="A3A_GCTracker">
             <Key ID="STR_A3A_GCTracker_tracker_title">
                 <Original>Garbage Cleaner Tracker</Original>
@@ -5789,19 +5831,90 @@
                 <French>Zone révélée par les avions de reconnaissance.</French>
                 <Korean>정찰기의 정찰 거리</Korean>
             </Key>
+            <Key ID="STR_A3AU_victory_condition">
+                <Original>Victory Condition</Original>
+                <English>Victory Condition</English>
+                <Russian>Условие победы</Russian>
+            </Key>
+            <Key ID="STR_A3AU_total_victory_deprecated">
+                <Original>Total Victory (deprecated)</Original>
+                <English>Total Victory (deprecated)</English>
+                <Russian>абсолютная победа (устарел)</Russian>
+            </Key>
             <Key ID="STR_A3AU_total_victory">
-                <Original>Enable Total Victory Conditions</Original>
-                <English>Enable Total Victory Conditions</English>
-                <Russian>Включить условия тотальной победы</Russian>
+                <Original>Total Victory</Original>
+                <English>Total Victory</English>
+                <Russian>абсолютная победа</Russian>
+            </Key>
+            <Key ID="STR_A3AU_economic_victory">
+                <Original>Economic Victory</Original>
+                <English>Economic Victory</English>
+                <Russian>Экономическая победа</Russian>
+            </Key>
+            <Key ID="STR_A3AU_political_victory">
+                <Original>Political Victory</Original>
+                <English>Political Victory</English>
+                <Russian>политическая победа</Russian>
+            </Key>
+            <Key ID="STR_A3AU_normal_victory">
+                <Original>Normal Victory</Original>
+                <English>Normal Victory</English>
+                <Russian>Нормальная победа</Russian>
+            </Key>
+            <Key ID="STR_A3AU_logistical_victory">
+                <Original>Logistical Victory</Original>
+                <English>Logistical Victory</English>
+                <Russian>Логистическая победа</Russian>
+            </Key>
+            <Key ID="STR_A3AU_hr_loss">
+                <Original>Lose HR on death</Original>
+                <Russian>Логистическая победа</Russian>
+            </Key>
+            <Key ID="STR_A3AU_no_hr_loss">
+                <Original>Disabled</Original>
+                <Russian>Неполноценный</Russian>
+            </Key>
+            <Key ID="STR_A3AU_yes_hr_loss">
+                <Original>Enabled</Original>
+                <Russian>Включено</Russian>
+            </Key>
+            <Key ID="STR_A3AU_yes_hr_loss_w_msg">
+                <Original>Enabled (with HUD alerts)</Original>
+                <Russian>Включено (с оповещениями HUD)</Russian>
+            </Key>
+            <Key ID="STR_A3AU_loss_condition">
+                <Original>Loss Conditions</Original>
+                <Russian>Условия проигрыша</Russian>
+            </Key>
+            <Key ID="STR_A3AU_loss_condition_pop_death">
+                <Original>Population death</Original>
+                <Russian>Смерть населения</Russian>
+            </Key>
+            <Key ID="STR_A3AU_loss_condition_hr">
+                <Original>Human Resource loss</Original>
+                <Russian>Потери человеческих ресурсов</Russian>
+            </Key>
+            <Key ID="STR_A3AU_loss_condition_money">
+                <Original>Financial Loss</Original>
+                <Russian>Финансовые потери</Russian>
+            </Key>
+            <Key ID="STR_A3AU_loss_condition_all">
+                <Original>HARDCORE</Original>
+                <Russian>ХАРДКОР</Russian>
             </Key>
             <Key ID="STR_A3AU_blackmarket_ignore_requirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
                 <English>Ignore Black Market Vehicle Requirements</English>
                 <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>
             </Key>
-            <Key ID="STR_A3AU_use_downed_notifaction">
+            <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
                 <English>Notify Players When Downed</English>
+                <Russian>Placeholder</Russian>
+            </Key>
+            <Key ID="STR_A3AU_disable_trader">
+                <Original>Disable Arms Dealer</Original>
+                <English>Disable Arms Dealer</English>
                 <Russian>Placeholder</Russian>
             </Key>
             <Key ID="STR_A3AU_stamina_enabled">
@@ -5819,11 +5932,16 @@
                 <French>Activer la fatigue (Vanilla)</French>
             </Key>
             <Key ID="STR_A3AU_sway_enabled">
-                <Original>Enable Sway (Vanilla)</Original>
-                <English>Enable Sway (Vanilla)</English>
-                <Russian>Включить раскачку оружия (Vanilla)</Russian>
-                <Korean>무기 흔들림 활성화 (바닐라)</Korean>
-                <French>Activer l'oscillation (Vanilla)</French>
+                <Original>Weapon Sway % (Vanilla)</Original>
+                <English>Weapon Sway % (Vanilla)</English>
+                <Russian>раскачивание оружия % (Vanilla)</Russian>
+                <Korean>무기 흔들림 % (바닐라)</Korean>
+                <French>% de balancement de l'arme (Vanilla)</French>
+            </Key>
+            <Key ID="STR_notifiers_reload_turret">
+                <Original>Total: %1. Magazines: </Original>
+                <English>Total: %1. Magazines: </English>
+                <Russian>Всего: %1. Магазины: </Russian>
             </Key>
         </Container>
     </Package>

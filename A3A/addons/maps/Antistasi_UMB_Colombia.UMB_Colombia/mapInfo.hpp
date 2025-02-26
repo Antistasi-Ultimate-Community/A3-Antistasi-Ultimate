@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class umb_colombia {
 	population[] = {
 		{"Monteria",181},{"SanAntero",461},{"Currulao",44},{"Pital",51},{"Charco_Grande",65},{"San_Luis",79},{"Santa_Rosa",103},{"Tubara",164},{"Megua",118},{"San_Cordoba",38},{"Chinu",187},{"Arjona",25},{"Sambrano",69},{"El_Barzal",76},{"El_Cabro",67},{"Catalina",206},{"San_Antonio",289},{"Briceno",46},{"Angostura",76},{"Los_Olivos",103},{"Arboletes",49},{"Sincelejo",78},{"Aquitania",51},{"El_Limon",52},{"Ovejas",17},{"Sonson",134},{"San_Bernando",30},{"Lorica",172},{"Carepa",30},{"Turbo",57},{"San_Bartolo",55},{"La_Travesia",64},{"San_Predro",60},{"Chigorodo",49},{"Necocli",95},{"Montelibano",319},{"Caucasia",394},{"Villa_Melissa",68},{"Normadia_Farm",46},{"Valdivia",61}
@@ -38,13 +39,9 @@ class umb_colombia {
 	};
 	climate = "tropical";
 	buildObjects[] = {
-		// Large vanilla tropical structures
-		{"Land_BagBunker_01_large_green_F", 300}, {"Land_HBarrier_01_tower_green_F", 300}, {"Land_BagBunker_01_small_green_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// vanilla tropical sandbag walls
-		{"Land_BagFence_01_short_green_F", 10}, {"Land_BagFence_01_round_green_F", 10}, {"Land_BagFence_01_long_green_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TROPIC,
+		BUILDABLES_UNIVERSAL
 	};
 };

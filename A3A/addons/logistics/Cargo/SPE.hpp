@@ -58,7 +58,7 @@ class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_M45_p3d : TRIPLES(ADDON,Carg
     offset[] = {0.45,0.2,1.73};
     rotation[] = {0,1,0};
     size = 4;
-    recoil = 250;
+    recoil = 450;
 	isWeapon = 1;
 };
 //Mortars
@@ -78,6 +78,70 @@ class WW2_SPE_Assets_m_Weapons_Mortars_m_SPE_Brandt_81mm_p3d : TRIPLES(ADDON,Car
     recoil = 2000;
 	isWeapon = 1;
 };
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_leFH18_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 2000;
+	isWeapon = 1;
+};
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_57mm_M1_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 6;
+    recoil = 2000;
+	isWeapon = 1;
+};
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_M1919_M2_Low_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 4;
+    recoil = 250;
+	isWeapon = 1;
+};
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_Flak_36_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 2000;
+	isWeapon = 1;
+};
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_MG34_Lafette_Low_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 4;
+    recoil = 250;
+	isWeapon = 1;
+};
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_MG42_Lafette_Low_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 4;
+    recoil = 250;
+	isWeapon = 1;
+};
+
+class WW2_SPE_Assets_m_Vehicles_StaticWeapons_m_SPE_Pak_40_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0.2,-0,0.72};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 2000;
+	isWeapon = 1;
+};
+
 // Fuel Barrels
 class WW2_SPE_Structures_Military_Supplies_SPE_Fuel_Barrel_US_p3d : TRIPLES(ADDON,Cargo,Base)
 {

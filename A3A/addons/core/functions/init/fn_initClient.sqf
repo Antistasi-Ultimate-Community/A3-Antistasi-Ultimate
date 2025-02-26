@@ -27,7 +27,7 @@ hasHeadlessClients = false;     //check if has headless clients
 //enables Discord Rich Presence if game client uses English language and mod is turned on
 private _richPresenceFunc = missionNamespace getVariable "DiscordRichPresence_fnc_update";
 private _isEnglish = ((localize "STR_antistasi_dialogs_generic_button_yes_text") isEqualTo "Yes");
-isDiscordRichPresenceActive = if (isNil "_richPresenceFunc" || {!_isEnglish}) then {false} else {true};
+isDiscordRichPresenceActive = if (isNil "_richPresenceFunc") then {false} else {true};
 Info_1("Discord Rich Presence: %1", str isDiscordRichPresenceActive);
 
 //Disables rabbits and snakes, because they cause the log to be filled with "20:06:39 Ref to nonnetwork object Agent 0xf3b4a0c0"
@@ -111,6 +111,17 @@ waitUntil {local player};
 
 [] spawn A3A_fnc_briefing;
 
+if (enableSpectrumDevice) then {
+	[] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);
+	[] execVM QPATHTOFOLDER(Scripts\SpectumDevice\sa_ewar.sqf);
+};
+
+if (RRTurretMagazines) then {
+    [] execVM QPATHTOFOLDER(Scripts\RRTurretMagazines\scripts\fn_monitorMagazines.sqf);
+    addUserActionEventHandler ["ReloadMagazine", "Activate", A3A_fnc_reloadTurret];
+    [] execVM QPATHTOFOLDER(Scripts\RRTurretMagazines\scripts\fn_reloadTurret.sqf);
+};
+
 // Placeholders, should get replaced globally by the server
 player setVariable ["score",0];
 player setVariable ["moneyX",0];
@@ -183,7 +194,7 @@ stragglers = creategroup teamPlayer;
 (group player) enableAttack false;
 
 if (isNil "ace_noradio_enabled" or {!ace_noradio_enabled}) then {
-    [player, nil, selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity
+    [player, createHashMapFromArray [["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 };
 //Give the player the base loadout.
 [player] call A3A_fnc_dress;
@@ -499,7 +510,10 @@ boxX addAction [format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\co
 boxX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 if (A3A_hasACE) then { [boxX, boxX] call ace_common_fnc_claim;};	//Disables ALL Ace Interactions
 flagX allowDamage false;
-flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], {if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {["Recruit Unit", "You cannot recruit units while there are enemies near you."] call A3A_fnc_customHint;} else { [] spawn A3A_fnc_unit_recruit; }},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)"];
+if(playerRecruitAI isEqualTo 1) then 
+{
+    flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], {if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {["Recruit Unit", "You cannot recruit units while there are enemies near you."] call A3A_fnc_customHint;} else { [] spawn A3A_fnc_unit_recruit; }},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)"];
+};
 flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\run_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_rally_point_travel"], {[] spawn SCRT_fnc_rally_travelToRallyPoint},nil,0,false,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && (side (group _this) == teamPlayer) && (!isNil 'isRallyPointPlaced' && {isRallyPointPlaced})",4];
 flagX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
@@ -645,6 +659,8 @@ if (!isMultiplayer) then {
 
 call A3U_fnc_checkMods;
 
+if (A3A_hasACE) then {call A3A_fnc_initACE};
+
 if (["WBK_IMS_ANIMS_2"] call A3U_fnc_hasAddon) then {
     [player] call A3U_fnc_IMS_stealthKill;
 };
@@ -656,7 +672,6 @@ if (fatigueEnabled isEqualTo false) then {
 if (staminaEnabled isEqualTo false) then { 
 	player enableStamina false; 
 }; 
- 
-if (swayEnabled isEqualTo false) then { 
-	player setCustomAimCoef 0; 
-};
+
+private _newWeaponSway = swayEnabled / 100;
+player setCustomAimCoef _newWeaponSway;

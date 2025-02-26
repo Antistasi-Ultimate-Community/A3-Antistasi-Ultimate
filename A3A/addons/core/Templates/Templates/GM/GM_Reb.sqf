@@ -70,8 +70,8 @@ private _initialRebelEquipment = [
 "gm_1Rnd_265mm_flare_single_red_gc", "gm_1Rnd_265mm_flare_single_wht_gc", "gm_1Rnd_265mm_flare_single_grn_DM11", 
 "gm_1Rnd_265mm_flare_single_wht_DM15", "gm_1Rnd_265mm_flare_multi_wht_DM25",
 "gm_handgrenade_frag_dm51","gm_smokeshell_wht_dm25", "gm_handgrenade_frag_rgd5",
-"B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr","B_FieldPack_khk",
-"gm_ge_bgs_vest_80_rifleman","gm_gc_bgs_vest_80_border_str","gm_gc_army_vest_80_at_str","Binocular"];
+"gm_gc_army_backpack_80_assaultpack_empty_str","gm_ge_backpack_satchel_80_blk",
+"gm_ge_bgs_vest_80_rifleman","gm_gc_bgs_vest_80_border_str","gm_gc_army_vest_80_at_str","gm_df7x40_blk"];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155","tf_anprc155_coyote"]};
@@ -83,16 +83,16 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 _rebUniforms = [
     "gm_gc_army_uniform_soldier_80_blk", 
     "gm_ge_uniform_soldier_tshirt_90_flk", 
-    "gm_ge_bgs_uniform_soldier_80_smp",
-    "U_IG_Guerilla1_1",
-    "U_IG_Guerilla2_1",
-    "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3",
-    "U_IG_Guerilla3_1",
-    "U_IG_leader",
-    "U_IG_Guerrilla_6_1",
-    "U_I_G_resistanceLeader_F",
-    "U_I_L_Uniform_01_deserter_F"
+    "gm_ge_uniform_soldier_tshirt_90_oli",
+    "gm_xx_army_uniform_fighter_01_alp",
+    "gm_xx_army_uniform_fighter_01_m84",
+    "gm_xx_army_uniform_fighter_01_oli",
+    "gm_xx_army_uniform_fighter_02_oli",
+    "gm_xx_army_uniform_fighter_02_wdl",
+    "gm_xx_army_uniform_fighter_03_blk",
+    "gm_xx_army_uniform_fighter_03_brn",
+    "gm_xx_army_uniform_fighter_04_grn",
+    "gm_xx_army_uniform_fighter_04_wdl"
     ];
 
 
@@ -142,15 +142,15 @@ if (allowDLCExpansion) then {_dlcUniforms append [
 
 private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["maps", ["ItemMap"]];
-_loadoutData set ["watches", ["ItemWatch"]];
-_loadoutData set ["compasses", ["ItemCompass"]];
-_loadoutData set ["binoculars", ["Binocular"]];
+_loadoutData set ["watches", ["gm_watch_kosei_80"]];
+_loadoutData set ["compasses", ["gm_gc_compass_f73"]];
+_loadoutData set ["binoculars", ["gm_df7x40_blk"]];
 
 _loadoutData set ["uniforms", _rebUniforms];
 
-_loadoutData set ["glasses", ["G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
-_loadoutData set ["goggles", ["G_Lowprofile"]];
-_loadoutData set ["facemask", ["G_Bandanna_blk", "G_Bandanna_oli", "G_Bandanna_khk", "G_Bandanna_tan", "G_Bandanna_beast", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_aviator"]];
+_loadoutData set ["glasses", ["G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Squares", "G_Squares_Tinted", "gm_ge_facewear_glacierglasses"]];
+_loadoutData set ["goggles", ["gm_gc_army_facewear_dustglasses"]];
+_loadoutData set ["facemask", ["G_Bandanna_aviator", "gm_ge_facewear_stormhood_blk", "gm_xx_facewear_scarf_01_blk", "gm_xx_facewear_scarf_01_grn", "gm_xx_facewear_scarf_01_gry", "gm_xx_facewear_scarf_01_oli", "gm_xx_facewear_scarf_01_str"]];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];

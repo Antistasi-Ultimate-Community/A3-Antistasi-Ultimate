@@ -31,7 +31,7 @@
 ["vehiclesLightAPCs", ["LIB_SdKfz251_FFV_w","LIB_SdKfz251_w"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["LIB_SdKfz_7_AA_w", "LIB_SdKfz251_FFV_w","LIB_SdKfz251_w"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["LIB_PzKpfwIV_H_w", "LIB_StuG_III_G_w", "CSA38_pzIIID_W", "CSA38_pzIVC_W"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["LIB_PzKpfwV_w", "LIB_PzKpfwVI_E_w"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["LIB_PzKpfwV_w", "LIB_PzKpfwV_w", "LIB_PzKpfwV_w", "LIB_PzKpfwVI_E_w", "LIB_PzKpfwVI_B_w"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["LIB_FlakPanzerIV_Wirbelwind_w"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["LIB_SdKfz251_w"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["CSA38_pzkpfwIA_W","CSA38_pzkpfwI_W","CSA38_pzII_W","CSA38_ltm35_W","CSA38_ltm38_W","CSA38_ltm38_FR2_W"]] call _fnc_saveToTemplate;
@@ -40,9 +40,28 @@
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["LIB_Ju87_w"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["LIB_FW190F8_w"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["A3U_LIB_C47_German"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["LIB_Ju87_w"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["LIB_FW190F8_w"];
+private _vehiclesPlanesTransport = ["A3U_LIB_C47_German"];
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_bf109g"];
+	_vehiclesPlanesLargeCAS append ["sab_fl_ju88a","sab_fl_ju86"];
+	_vehiclesPlanesAA append ["sab_fl_bf109e","sab_fl_bf109f","sab_fl_bf109g","sab_fl_bf109k","sab_fl_fw190a","sab_fl_fw190d"];
+	_vehiclesPlanesTransport = ["sab_fl_ju52"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_bf110"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_he111","sab_sw_he177"];
+	_vehiclesPlanesAA append ["sab_sw_me262","sab_sw_bf110"];
+};
+
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;

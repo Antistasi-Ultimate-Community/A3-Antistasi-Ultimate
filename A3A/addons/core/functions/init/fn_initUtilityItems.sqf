@@ -38,10 +38,10 @@ _items append [
     [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "place", "move", "rotate", "save"]],
     [_repairStation#0, _repairStation#1, localize "STR_A3AP_buyvehdialog_repair_station", "repair", ["cmmdr", "place", "move", "rotate", "pack", "save"]],
     [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "", ["move"]],
-    ["Land_PlasticCase_01_medium_F", 100, "buildboxsmall", "", ["place", "move", "build"]],
-    ["Land_PlasticCase_01_large_F", 500, "buildboxlarge", "", ["place", "move", "build"]],
-    ["Land_PlasticCase_01_medium_black_F", 1000, "buildboxhuge", "", ["place", "move", "build"]],
-    ["Land_PlasticCase_01_large_black_F", 5000, "buildboxgigantic", "", ["place", "move", "build"]]
+    ["Land_PlasticCase_01_small_black_F", 250, "Build Box (Extra Small)", "", ["place", "move", "build"]],
+    ["Land_PlasticCase_01_medium_black_F", 500, "Build Box (Small)", "", ["place", "move", "build"]],
+    ["A3AU_Build_Box_Large_1", 2500, "Build Box (Medium)", "", ["place", "move", "build"]],
+    ["Land_PlasticCase_01_large_black_F", 5000, "Build Box (Large)", "", ["place", "move", "build"]]
     // TODO: get larger box from somewhere
 ];
 

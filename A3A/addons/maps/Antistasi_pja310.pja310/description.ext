@@ -9,16 +9,16 @@ overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
-    defaultLargeImageKey="cherno";
-    defaultLargeImageText="Antistasi Ultimate - GOS Al Rayak";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="G.O.S Al Rayak";
+    defaultLargeImageKey="pja310";
+    defaultLargeImageText="Rebelling in G.O.S Al Rayak";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
+//Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=648172507
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

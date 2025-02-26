@@ -42,9 +42,24 @@
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["EAW_A4N"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["fow_va_a6m_white"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["A3U_LIB_C47_German"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["EAW_A4N", "EAW_Ki43_II"];
+["vehiclesPlanesLargeCAS", ["EAW_G3M"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesAA = ["EAW_Ki27", "EAW_Ki43_II"];
+private _vehiclesPlanesTransport = ["A3U_LIB_C47_German"];
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_a6m"];
+	_vehiclesPlanesAA append ["sab_fl_a6m"];
+	_vehiclesPlanesTransport = ["sab_fl_ju52"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_d3a"];
+};
+
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;

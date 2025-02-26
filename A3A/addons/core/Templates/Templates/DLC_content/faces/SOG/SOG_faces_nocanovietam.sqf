@@ -1,0 +1,12 @@
+"vn_vietnamese_03_03_face",
+"vn_vietnamese_02_03_face",
+"vn_vietnamese_01_01_face",
+"vn_vietnamese_02_02_face",
+"vn_vietnamese_03_02_face",
+"vn_vietnamese_02_01_face",
+"vn_vietnamese_01_03_face",
+"vn_vietnamese_04_03_face",
+"vn_vietnamese_04_01_face",
+"vn_vietnamese_03_01_face",
+"vn_vietnamese_04_02_face",
+"vn_vietnamese_01_02_face"

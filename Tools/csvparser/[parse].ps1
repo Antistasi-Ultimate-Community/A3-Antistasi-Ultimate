@@ -1,1 +1,1 @@
-py parser.py
+python parser.py

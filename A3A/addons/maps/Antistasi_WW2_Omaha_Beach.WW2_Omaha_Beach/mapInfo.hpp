@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class WW2_Omaha_Beach {
 	population[] = {
 {"ww2_location_fr_1", 359},
@@ -43,11 +44,9 @@ class WW2_Omaha_Beach {
 	};
 	climate = "temperate";
 	buildObjects[] = {
-		// Pillbox bunkers
-		{"Land_PillboxBunker_01_hex_F", 200}, {"Land_PillboxBunker_01_rectangle_F", 300},
-		// SPE sandbag walls
-		{"Land_SPE_Sandbag_Long", 15}, {"Land_SPE_Sandbag_Short", 10}, {"Land_SPE_Sandbag_Nest", 15}, {"Land_SPE_Sandbag_Curve", 20},
-		// Some extra stuff from vanilla
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_TEMPERATE,
+		BUILDABLES_SPE,
+		BUILDABLES_UNIVERSAL
 	};
 };

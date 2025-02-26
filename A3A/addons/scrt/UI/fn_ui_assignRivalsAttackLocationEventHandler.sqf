@@ -31,12 +31,22 @@ if(_mode == "ADD") then {
 			if (_location in citiesX) then {
 				[[_location],"A3A_fnc_RIV_ATT_Cell"] remoteExec ["A3A_fnc_scheduler",2];
             } else {
-				[[_location],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
-			};
+                if !(areInvadersDefeated) then {
+                    private _roll = round random 100;
+                    if (_roll >= 55) then { ///65
+                        [[_location],"A3A_fnc_RIV_ATT_Transfer"] remoteExec ["A3A_fnc_scheduler",2];	
+                    } else {
+                        [[_location],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
+                    };
+			    } else {
+                    ["No rival missions are possible, invaders are defeated and location isn't a city.", _fnc_scriptName] call A3U_fnc_log;
+                    [_location, "NOINVADER"] remoteExecCall ["SCRT_fnc_rivals_destroyLocation",2];
+                };
+            };
 
-			["REMOVE"] call SCRT_fnc_ui_assignRivalsAttackLocationEventHandler;
-			closeDialog 0;
-			closeDialog 0;
+            ["REMOVE"] call SCRT_fnc_ui_assignRivalsAttackLocationEventHandler;
+            closeDialog 0;
+            closeDialog 0;
             [] call SCRT_fnc_ui_clearRivals;
         },
         []

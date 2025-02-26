@@ -523,6 +523,36 @@
                 <Korean>위장복</Korean>
                 <French>Camouflage</French>
             </Key>
+            <Key ID="STR_A3AU_helmets">
+                <Original>Helmets</Original>
+                <English>Helmets</English>
+                <Russian>Шлемы</Russian>
+            </Key>
+            <Key ID="STR_A3AU_uniforms">
+                <Original>Uniforms</Original>
+                <English>Uniforms</English>
+                <Russian>Униформы</Russian>
+            </Key>
+            <Key ID="STR_A3AU_backpacks">
+                <Original>Backpacks</Original>
+                <English>Backpacks</English>
+                <Russian>Рюкзаки</Russian>
+            </Key>
+            <Key ID="STR_A3AU_facewear">
+                <Original>Facewear</Original>
+                <English>Facewear</English>
+                <Russian>Очки/шарфы</Russian>
+            </Key>
+            <Key ID="STR_A3AU_vests">
+                <Original>Vests</Original>
+                <English>Vests</English>
+                <Russian>Разгрузки</Russian>
+            </Key>
+            <Key ID="STR_A3AU_utility">
+                <Original>Utility</Original>
+                <English>Utility</English>
+                <Russian>Служебные</Russian>
+            </Key>
         </Container>
         <!-- helpers -->
         <Container name="A3AU_hals_store_helpers">
@@ -606,6 +636,13 @@
                 <Russian>Reaction Force</Russian>
                 <Korean>Reaction Force</Korean>
                 <French>Force de réaction</French>
+            </Key>
+            <Key ID="STR_A3AU_EF">
+                <Original>Expeditionary Forces</Original>
+                <English>Expeditionary Forces</English>
+                <Russian>Expeditionary Forces</Russian>
+                <Korean>Expeditionary Forces</Korean>
+                <French>Force de Expéditionnaire</French>
             </Key>
             <Key ID="STR_A3AU_3cbbaf">
                 <Original>3CBBAF</Original>
@@ -831,6 +868,58 @@
                 <Korean>Cold War ReArmed</Korean>
                 <French>Cold War ReArmed</French>
             </Key>
+            <Key ID="STR_A3AU_ylarms">
+                <Original>YLArms</Original>
+                <English>YLArms</English>
+                <Russian>YLArms</Russian>
+                <Korean>YLArms</Korean>
+                <French>YLArms</French>
+            </Key>
+            <Key ID="STR_A3AU_PROJINF">
+                <Original>P.I.</Original>
+                <German>P.I.</German>
+                <Russian>P.I.</Russian>
+                <Chinesesimp>P.I.</Chinesesimp>
+                <Korean>P.I.</Korean>
+                <French>P.I.</French>
+            </Key>
+            <Key ID="STR_A3AU_JCA_ARSENAL">
+                <Original>JCA</Original>
+                <German>JCA</German>
+                <Russian>JCA</Russian>
+                <Chinesesimp>JCA</Chinesesimp>
+                <Korean>JCA</Korean>
+                <French>JCA</French>
+            </Key>
+            <Key ID="STR_A3AU_ffp">
+                <Original>FFP</Original>
+                <English>FFP</English>
+                <Russian>FFP</Russian>
+                <Korean>FFP</Korean>
+                <French>FFP</French>
+            </Key>
+            <Key ID="STR_A3AU_hafm">
+                <Original>HAFM</Original>
+                <English>HAFM</English>
+                <Russian>HAFM</Russian>
+                <Korean>HAFM</Korean>
+                <French>HAFM</French>
+            </Key>
+            <Key ID="STR_A3AU_PROJINF">
+                <Original>P.I.</Original>
+                <German>P.I.</German>
+                <Russian>P.I.</Russian>
+                <Chinesesimp>P.I.</Chinesesimp>
+                <Korean>P.I.</Korean>
+                <French>P.I.</French>
+            <Key ID="STR_A3AU_JCA_ARSENAL">
+                <Original>JCA</Original>
+                <German>JCA</German>
+                <Russian>JCA</Russian>
+                <Chinesesimp>JCA</Chinesesimp>
+                <Korean>JCA</Korean>
+                <French>JCA</French>
+           </Key>
         </Container>
     </Package>
 </Project>

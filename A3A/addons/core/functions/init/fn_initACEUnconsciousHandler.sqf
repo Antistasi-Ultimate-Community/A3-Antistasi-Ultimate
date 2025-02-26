@@ -19,6 +19,8 @@ Info("initACEUnconsciousHandler started");
 	{
 		_unit setVariable ["incapacitated", true, true];	// for canFight tests
 
+	_groupLeader = leader (group _unit);
+
         // Pass group lead if unit is the leader
         if (_unit == leader (group _unit)) then
         {
@@ -40,6 +42,10 @@ Info("initACEUnconsciousHandler started");
 		_unit setCaptive false;			// match vanilla behaviour
 	};
 
+	if (_unit == _groupLeader) then {
+		group _unit selectLeader _unit;
+	};
+	
 	if (isPlayer _unit) exitWith {};					// don't force surrender with players
 	if (_realSide != Occupants && _realSide != Invaders) exitWith {};
 	if (_unit getVariable ["surrendered", false]) exitWith {};		// don't surrender twice

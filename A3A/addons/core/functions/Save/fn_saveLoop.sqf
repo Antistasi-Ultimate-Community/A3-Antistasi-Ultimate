@@ -127,7 +127,14 @@ private _revealedZones = [];
 
 ["revealedZones", _revealedZones] call A3A_fnc_setStatVariable;
 
+if (isNil "unlockedVehicleTypes") then {
+	unlockedVehicleTypes = [];
+};
+
+["unlockedVehicleTypes", unlockedVehicleTypes] call A3A_fnc_setStatVariable;
+
 diag_log format["Saving revealed zones: %1", _revealedZones];
+diag_log format["Saving unlocked vehicle types: %1", unlockedVehicleTypes];
 //Antistasi Ultimate variables ^
 
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];
@@ -203,16 +210,10 @@ _arrayEst = [];
 } forEach staticsToSave;
 
 private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
-// ^ Update to include plus related stuff
-_rebMarkers append outpostsFIA; _rebMarkers pushBack "Synd_HQ";
+_rebMarkers pushBack "Synd_HQ";
 {
-	// Ignore if outside mission distance (temporary)
-	if (!alive _x or (_x distance2d markerPos "Synd_HQ" > distanceMission)) then { continue };
-
-	// Ignore if not within a rebel marker
-	private _building = _x;
-	private _indexes = _rebMarkers inAreaArrayIndexes [getPosATL _x, 500, 500];
-	if (-1 == _indexes findIf { _building inArea _rebMarkers#_x } ) then { continue };
+	if (isOnRoad _x && {A3A_builderAllowRoads isEqualTo false}) then {continue};
+	if (surfaceIsWater getPosASL _x) then {continue};
 
 	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
 } forEach A3A_buildingsToSave;

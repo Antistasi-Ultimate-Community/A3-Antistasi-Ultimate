@@ -77,8 +77,12 @@ class CfgSounds
         sound[] = {EQPATHTOFOLDER(core,Sounds\Misc\RadioIntercept.ogg), 1, 1, 100};
         titles[] = { 1, "" };
     };
-
-
+    class HelmetLoss
+    {
+        name = "HelmetLoss";
+        sound[] = {EQPATHTOFOLDER(core,Sounds\Misc\HelmetLoss.ogg), 5, 1, 100};
+        titles[] = { 1, "" };
+    };
     class Typing
     {
         name = "Typing";

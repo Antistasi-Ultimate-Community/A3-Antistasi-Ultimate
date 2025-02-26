@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class tanoa {
 	population[] = {
 		{"Lami01",277},{"Lifou01",350},{"Lobaka01",64},{"LaFoa01",38},{"Savaka01",33},{"Regina01",303},{"Katkoula01",413},{"Moddergat01",195},{"Losi01",83},{"Tanouka01",380},{"Tobakoro01",45},{"Georgetown01",347},{"Kotomo01",160},{"Rautake01",113},{"Harcourt01",325},{"Buawa01",44},{"SaintJulien01",353},{"Balavu01",189},{"Namuvaka01",45},{"Vagalala01",174},{"Imone01",31},{"Leqa01",45},{"Blerick01",71},{"Yanukka01",189},{"OuaOue01",200},{"Cerebu01",22},{"Laikoro01",29},{"Saioko01",46},{"Belfort01",240},{"Oumere01",333},{"Muaceba01",18},{"Nicolet01",224},{"Lailai01",23},{"Doodstil01",101},{"Tavu01",178},{"Lijnhaven01",610},{"Nani01",19},{"PetitNicolet01",135},{"PortBoise01",28},{"SaintPaul01",136},{"Nasua01",60},{"Savu01",184},{"Murarua01",258},{"Momea01",159},{"LaRochelle01",532},{"Koumac01",51},{"Taga01",31},{"Buabua01",27},{"Penelo01",189},{"Vatukoula01",15},{"Nandai01",130},{"Tuvanaka01",303},{"Rereki01",43},{"Ovau01",226},{"IndPort01",420},{"Ba01",106}
@@ -21,13 +22,9 @@ class tanoa {
 	};
 	climate = "tropical";
 	buildObjects[] = {
-		// Large vanilla tropical structures
-		{"Land_BagBunker_01_large_green_F", 300}, {"Land_HBarrier_01_tower_green_F", 300}, {"Land_BagBunker_01_small_green_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// vanilla tropical sandbag walls
-		{"Land_BagFence_01_short_green_F", 10}, {"Land_BagFence_01_round_green_F", 10}, {"Land_BagFence_01_long_green_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TROPIC,
+		BUILDABLES_UNIVERSAL
 	};
 };

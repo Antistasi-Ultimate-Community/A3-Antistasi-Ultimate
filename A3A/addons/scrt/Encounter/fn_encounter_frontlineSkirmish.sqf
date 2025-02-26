@@ -27,7 +27,7 @@ diag_log _frontLine;
 diag_log _frontLine;
 
 diag_log _frontLine; */
-private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontline && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
 private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player < distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
 if (_frontlineSitesNearPlayer isEqualTo []) exitWith {
@@ -37,23 +37,6 @@ if (_frontlineSitesNearPlayer isEqualTo []) exitWith {
 };
 
 private _FrontlineOutpost = selectRandom _frontlineSitesNearPlayer;
-/* private _fnc_actualFrontline = {
-	params ["_markerX"];
-
-	private _isFrontier = false;
-	private _sideX = sidesX getVariable [_markerX,sideUnknown];
-	//private _sideX2 = sidesX getVariable [_markerX,Invaders];
-	//private _mrksideX = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {sidesX getVariable [_x,sideUnknown] == _sideX};
-	private _mrksideX2 = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {sidesX getVariable [_x,sideUnknown] != _sideX};
-	//private _PosmrksideX = getMarkerPos _mrksideX;
-	private _PosmrksideX = getMarkerPos _markerX;
-	private _PosmrksideX2 = getMarkerPos _mrksideX2;
-
-	if (_PosmrksideX distance _PosmrksideX2 <= distanceSPWN*3) then {
-		_isFrontier = true;
-	};
-}; */
-///private _frontierX = [_FrontlineOutpost] call _fnc_actualFrontline;
 
 private _side = Occupants;
 private _side2 = Invaders;
@@ -91,10 +74,6 @@ private _fnc_spawngroups = {
 		_vehiclegroup = _vehicledata select 2;
 		[_vehicle, Occupants] call A3A_fnc_AIVEHinit;
 		_vehiclegroup setBehaviourStrong "AWARE";
-		/* private _wpveh = _vehiclegroup addWaypoint [_skirmishposition, 50];
-		_wpveh setWaypointSpeed "NORMAL";
-		_wpveh setWaypointType "SAD"; */
-		//{_x assignAsCargo _vehicle} forEach units _InfGroup;
 		units _vehiclegroup join _InfGroup;
 		if (_difficult) then {
 			_UAVtype = selectRandom (_faction get "uavsPortable");
@@ -130,63 +109,19 @@ private _fnc_spawngroups = {
 		_vehiclegroup2 = _vehicledata2 select 2;
 		[_vehicle2, Invaders] call A3A_fnc_AIVEHinit;
 		_vehiclegroup2 setBehaviourStrong "AWARE";
-		/* private _wpveh2 = _vehiclegroup2 addWaypoint [_skirmishposition, 50];
-		_wpveh2 setWaypointSpeed "NORMAL";
-		_wpveh2 setWaypointType "SAD"; */
-		//{_x assignAsCargo _vehicle2} forEach units _InfGroup2;
 		units _vehiclegroup2 join _InfGroup2;
-		if (_difficult2) then {
+		/* if (_difficult2) then {
 			_UAV2type = selectRandom (_faction2 get "uavsPortable");
 			_uav2 = createVehicle [_UAV2type, _skirmishpositionActuall2, [], 0, "FLY"];
 			[_side2, _uav2] call A3A_fnc_createVehicleCrew;
 			_vehiclesArray2 pushBack _uav2;
 			_groupUAV2 = group (crew _uav2 select 1);
 			{[_x] joinSilent _InfGroup2} forEach units _groupUAV2;
-		};
+		}; */ // for some reason, it can't create second uav
 		[_InfGroup2, "Patrol_Attack", 0, 300, 1000, true, _skirmishposition, true] call A3A_fnc_patrolLoop;
 		[_vehiclegroup2, "Patrol_Area", 0, 300, 1000, true, _skirmishposition, true] call A3A_fnc_patrolLoop;
 		_vehiclesArray2 pushBack _vehicle2;
 	};
-	/* for "_i" from 1 to _vehiclesAmount do {
-		private _vehicles = if (_difficult) then {selectRandom ((_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
-					} else {selectRandom
-					((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + 
-					(_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"))
-		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
-		diag_log _vehicles;
-		_skirmishpositionActuall = [_skirmishposition, 30, 200, 10, 0, 10, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
-		_vehicledata = [_skirmishpositionActuall, 0, _vehicles, _side] call A3A_fnc_spawnVehicle;
-		_vehicle = _vehicledata select 0;
-		_vehiclegroup = _vehicledata select 2;
-		[_vehicle, Occupants] call A3A_fnc_AIVEHinit;
-		_vehiclegroup setBehaviourStrong "AWARE";
-		private _wp = _vehiclegroup addWaypoint [_skirmishposition, 0];
-		_wp setWaypointSpeed "NORMAL";
-		_wp setWaypointType "SAD";
-		{[_x] assignAsCargo _vehicle} forEach units _InfGroup;
-		units _vehiclegroup2 join _InfGroup;
-		_vehiclesArray pushBack _vehicle;
-	};
-	for "_i" from 1 to _vehiclesAmount2 do {
-		private _vehicles2 = if (_difficult2) then {selectRandom ((_faction2 get "vehiclesAirborne") + (_faction2 get "vehiclesLightTanks") + (_faction2 get "vehiclesTanks") + (_faction2 get "vehiclesAPCs") + (_faction2 get "vehiclesIFVs"))
-					} else {selectRandom
-					((_faction2 get "vehiclesLightUnarmed") + (_faction2 get "vehiclesLightArmed") + (_faction2 get "vehiclesAirborne") + (_faction2 get "vehiclesLightTanks") + (_faction2 get "vehiclesMilitiaAPCs") + 
-					(_faction2 get "vehiclesMilitiaLightArmed") + (_faction2 get "vehiclesMilitiaCars"))
-		};
-		diag_log _vehicles2;
-		_skirmishpositionActuall2 = [_skirmishposition2, 125, 350, 10, 0, 10, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
-		_vehicledata2 = [_skirmishpositionActuall2, 0,_vehicles2, _side2] call A3A_fnc_spawnVehicle;
-		_vehicle2 = _vehicledata2 select 0;
-		_vehiclegroup2 = _vehicledata2 select 2;
-		[_vehicle2, Invaders] call A3A_fnc_AIVEHinit;
-		_vehiclegroup2 setBehaviourStrong "AWARE";
-		private _wp = _vehiclegroup2 addWaypoint [_skirmishposition, 0];
-		_wp setWaypointSpeed "NORMAL";
-		_wp setWaypointType "SAD";
-		{[_x] assignAsCargo _vehicle2} forEach units _InfGroup2;
-		units _vehiclegroup2 join _InfGroup2;
-		_vehiclesArray2 pushBack _vehicle2;
-	}; */
 };
 private _amount = round random 3;
 if (_amount == 0) then {

@@ -907,6 +907,20 @@ class commanderMenu
 							tooltip = $STR_commander_menu_paradrop_tooltip;
 						};
 					};
+				};	
+
+				class CheckVictoryButton: ButtonBase
+				{			
+					idc = 5310;
+					text = $STR_commander_menu_victory_check_button;
+					tooltip = $STR_commander_menu_victory_check_button_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "11.5 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";	
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;	
+					action = "closeDialog 0; closeDialog 0; [] spawn A3A_fnc_checkWinCondition;";		
 				};
 
 				class saveGameButton: ButtonBase

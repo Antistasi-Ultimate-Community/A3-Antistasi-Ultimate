@@ -13,6 +13,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -46,6 +48,8 @@
 ["vehiclesHelisTransport", ["CUP_I_SA330_Puma_HC1_RACS", "CUP_I_SA330_Puma_HC2_RACS", "CUP_I_CH47F_RACS", "CUP_I_UH60L_RACS", "CUP_I_UH60L_FFV_RACS", "CUP_I_UH60L_Unarmed_RACS", "CUP_I_UH60L_Unarmed_FFV_Racs"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", ["CUP_I_AH6J_AT_RACS", "CUP_I_AH6J_RACS", "CUP_I_UH1H_gunship_RACS"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_AH64D_DL_USA"]] call _fnc_saveToTemplate;
+
+["vehiclesAirPatrol", ["CUP_I_MH6J_RACS", "CUP_I_UH1H_RACS", "CUP_I_AH6J_AT_RACS", "CUP_I_AH6J_RACS", "CUP_I_UH1H_gunship_RACS"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["CUP_I_M270_HE_RACS"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_I_M270_HE_RACS", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate;
@@ -90,6 +94,7 @@
 "WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_18","WhiteHead_19",
 "WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"]] call _fnc_saveToTemplate;
+"SahraniNames" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

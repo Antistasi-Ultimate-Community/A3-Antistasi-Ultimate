@@ -13,6 +13,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -46,6 +48,8 @@
 ["vehiclesHelisTransport", ["CUP_O_Mi8_SLA_1"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", ["CUP_O_Mi8_SLA_2", "CUP_O_UH1H_gunship_SLA"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_O_Mi24_D_Dynamic_SLA", "CUP_O_Ka50_SLA"]] call _fnc_saveToTemplate;
+
+["vehiclesAirPatrol", ["CUP_O_UH1H_SLA", "CUP_O_UH1H_slick_SLA","CUP_O_Mi8_SLA_2", "CUP_O_UH1H_gunship_SLA"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["CUP_O_BM21_SLA"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_O_BM21_SLA", ["CUP_40Rnd_GRAD_HE"]]]] call _fnc_saveToTemplate;
@@ -90,6 +94,7 @@
 "WhiteHead_14","WhiteHead_15","WhiteHead_16","WhiteHead_17",
 "WhiteHead_19","WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE"]] call _fnc_saveToTemplate;
+"SahraniNames" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

@@ -55,6 +55,7 @@ if(_preference in ["AIR_DRONE", "AIR_GENERIC"]) then {
 if(_preference in ["AIR_GENERIC", "AIR_DEFAULT"]) then {
     _possibleVehicles append (_faction get "vehiclesPlanesCAS");
     _possibleVehicles append (_faction get "vehiclesPlanesAA");
+    _possibleVehicles append (_faction get "vehiclesPlanesGunship");
 };
 
 if(count _possibleVehicles == 0) exitWith

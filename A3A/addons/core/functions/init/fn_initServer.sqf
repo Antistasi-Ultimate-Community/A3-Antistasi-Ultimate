@@ -17,6 +17,7 @@ if (call A3A_fnc_modBlacklist) exitWith {};
 
 // hide all the HQ objects
 {
+    _x enableRopeAttach false;
     _x allowDamage false;
     _x hideObjectGlobal true;
 } forEach [boxX, flagX, vehicleBox, mapX, petros];
@@ -29,10 +30,12 @@ switch (toLower worldname) do {
 
 enableSaving [false,false];
 
+/*
 //Disable VN music
 if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) then {
     A3A_VN_MusicModule = (createGroup sideLogic) createUnit ["vn_module_dynamicradiomusic_disable", [worldSize, worldSize,0], [],0,"NONE"];
 };
+*/
 
 // Shouldn't be anything with dependencies in here
 call A3A_fnc_initVarCommon;
@@ -220,7 +223,14 @@ call A3A_fnc_createPetros;
 //HandleDisconnect doesn't get 'owner' param, so we can't use it to handle headless client disconnects.
 addMissionEventHandler ["HandleDisconnect",{_this call A3A_fnc_onPlayerDisconnect;false}];
 //PlayerDisconnected doesn't get access to the unit, so we shouldn't use it to handle saving.
-addMissionEventHandler ["PlayerDisconnected",{_this call A3A_fnc_onHeadlessClientDisconnect;false}];
+addMissionEventHandler ["PlayerDisconnected",{
+    // Remove player from arsenal in case they disconnected while in it
+    private _temp = server getVariable ["jna_playersInArsenal",[]];
+    _temp = _temp - [param [4]];
+    server setVariable ["jna_playersInArsenal",_temp,true];
+    _this call A3A_fnc_onHeadlessClientDisconnect;
+    false;
+}];
 
 addMissionEventHandler ["BuildingChanged", {
     params ["_oldBuilding", "_newBuilding", "_isRuin"];
@@ -249,7 +259,7 @@ addMissionEventHandler ["EntityKilled", {
 
     if !(isNil {_victim getVariable "ownerSide"}) then {
         // Antistasi-created vehicle
-        [_victim, _killerSide, false] call A3A_fnc_vehKilledOrCaptured;
+        [_victim, _killerSide, false, _killer] call A3A_fnc_vehKilledOrCaptured;
         [_victim] spawn A3A_fnc_postmortem;
     };
 }];
@@ -350,5 +360,10 @@ if(A3A_hasACE) then
 };
 
 call A3U_fnc_initZones;
+
+if (enableSpectrumDevice) then {
+    [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);
+    [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\sa_ewar.sqf);
+};
 
 Info("initServer completed");

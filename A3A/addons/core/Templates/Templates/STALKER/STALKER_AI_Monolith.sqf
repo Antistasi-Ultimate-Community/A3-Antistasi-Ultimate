@@ -15,6 +15,7 @@
 //       Vehicles       //
 //////////////////////////
 
+["attributeMoreTrucks", true] call _fnc_saveToTemplate; // due to emissions in "the zone" and such, you don't want helis and planes flying around all the time
 ["attributeLowAir", true] call _fnc_saveToTemplate; // due to emissions in "the zone" and such, you don't want helis and planes flying around all the time
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;

@@ -9,16 +9,16 @@ overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
-    defaultLargeImageKey="weferlingen";
-    defaultLargeImageText="Antistasi Ultimate - Weferlingen Winter";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Weferlingen (Winter)";
+    defaultLargeImageKey="weferlingen-winter";
+    defaultLargeImageText="Rebelling in Weferlingen (Winter)";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
+//DLC: https://store.steampowered.com/app/1042220/Arma_3_Creator_DLC_Global_Mobilization__Cold_War_Germany/
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

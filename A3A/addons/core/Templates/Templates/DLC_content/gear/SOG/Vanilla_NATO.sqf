@@ -1,0 +1,3 @@
+(_militiaLoadoutData get "vests") append ["vn_b_vest_usmc_02","vn_b_vest_usmc_01","vn_b_vest_usmc_06"];
+(_militiaLoadoutData get "Hvests") append ["vn_b_vest_sog_04","vn_b_vest_sog_01","vn_b_vest_sog_02","vn_b_vest_sog_06","vn_b_vest_sog_05","vn_b_vest_sog_03","vn_b_vest_seal_05","vn_b_vest_seal_03","vn_b_vest_sas_01","vn_b_vest_sas_04","vn_b_vest_sas_03","vn_b_vest_sas_02"];
+(_militiaLoadoutData get "backpacks") append ["vn_b_pack_p08_02","vn_b_pack_p44_01","vn_b_pack_trp_03_02","vn_b_pack_m41_01"];

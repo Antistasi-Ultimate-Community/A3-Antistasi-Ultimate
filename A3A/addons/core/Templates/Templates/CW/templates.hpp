@@ -70,7 +70,7 @@
     {
         side = "Occ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\CW\flag_Empire.paa);
-        name = "Empire";
+        name = "JMs Empire";
         file = "EMP_AI_EMP";
     };
 	
@@ -79,7 +79,7 @@
         requiredAddons[] = {"3AS_Characters", "442_equipment", "SWLB_clones", "JLTS_core", "CWDependencies", "JMSLLTE_empire_mod", "WBK_Lightsabers"};
         side = "Occ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\CW\flag_Empire.paa);
-        name = "Empire (WBK)";
+        name = "JMs Empire (WBK)";
         file = "EMP_AI_EMP_WBK";
     };
 	
@@ -87,7 +87,7 @@
     {
         side = "Riv";
 		flagTexture = QPATHTOFOLDER(Templates\Templates\CW\flag_partisans.paa);
-        name = "EMP Partisans";
+        name = "JMs EMP Partisans";
         file = "EMP_Riv_GP";
         description = "Saw Gerrera's Partisans are an extremely militant, anti-imperial group, willing to use any and all tactics against their enemies.";
     };
@@ -96,7 +96,7 @@
     {
         side = "Civ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\CW\flag_Empire.paa);
-        name = "EMP Civ";
+        name = "JMs EMP Civ";
         file = "EMP_Civ";
     };
 	
@@ -112,12 +112,12 @@
     {
         side = "Occ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\CW\flag_Empire.paa);
-        name = "Empire";
+        name = "WM Empire";
         file = "WM_AI_EMP";
     };
     class WM_EMP_Arctic : WM_EMP
     {
-        name = "Empire (Arctic)";
+        name = "WM Empire (Arctic)";
         file = "WM_AI_EMP_Arctic";
         climate[] = {"arctic"};
     };

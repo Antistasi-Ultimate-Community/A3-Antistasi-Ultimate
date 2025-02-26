@@ -68,7 +68,7 @@ while {true} do { // This isn't great and would be better to figure out an alter
 
 // selecting classnames
 private _reconVehicle = selectRandom (_faction get "vehiclesDropPod");
-
+private _reconVehicleDummyClass = _reconVehicle;
 if (_reconVehicle == "SpaceshipCapsule_01_F") then {
 	_reconVehicle = "SpaceshipCapsule_01_wreck_F";
 };
@@ -92,10 +92,7 @@ if (_reconVehicle == "SpaceshipCapsule_01_wreck_F") then {
     _blackboxClass = "Land_PortableServer_01_black_F"; ///should be something else
 };
 
-
-///new
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
-///new
 private _infantrySquadArray = selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier);
 
 if (isNil "_reconVehicle" || {isNil "_cargoTruckClass"} || {isNil "_specOpsArray"}) exitWith {
@@ -153,8 +150,13 @@ private _rebelTaskText = format [
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 ///checking if players reached minimum distance to start vfx or if time limit has passed
-private _missionstart = serverTime;
-waitUntil {sleep 1; (player distance2D _crashPosition) < 1500 || _missionstart >= serverTime + 600 };
+private _missionStart = serverTime;
+
+waitUntil {
+    sleep 30;
+    (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_crashPosition, 1500, 1500] isNotEqualTo [] || {_missionStart >= serverTime + 600 }
+};
+sleep 60; ///prep time
 ///
 
 _vehicles pushBack _reconVehicle;
@@ -162,10 +164,10 @@ _vehicles pushBack _reconVehicle;
 _reconVehicleDummy = [];
 if (typeOf _reconVehicle == "SpaceshipCapsule_01_wreck_F") then {
 	_reconVehicleDummy = "SpaceshipCapsule_01_F";
-} else{
+} else {
     _reconVehicleDummy = _reconVehicle;
 };
-private _reconVehicleDummy = createVehicle [_reconVehicleDummy, [0, 0, 250], [], 0, "NONE"];
+private _reconVehicleDummy = createVehicle [_reconVehicleDummyClass, [0, 0, 250], [], 0, "NONE"];
 
 private _initPos = _crashPosition getPos [4500, random -180];
 private _angleOffset = -28;
@@ -335,7 +337,8 @@ deleteGroup _cargoGroupX;
 
 //moving to crash site
 _cargoVehicleWp = _cargoVehicleGroup addWaypoint [position _box, 1];
-_cargoVehicleWp setWaypointType "GETOUT";
+//_cargoVehicleWp setWaypointType "GETOUT";
+_cargoVehicleWp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
 _cargoVehicleWp setWaypointBehaviour "SAFE";
 
 //loiter helicopter

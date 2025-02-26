@@ -14,19 +14,19 @@ private _shopLookupArray = nil;
 
 switch(_constructionType) do {
 	case("TRENCH"): {
-        _shopLookupArray = ["Land_SandbagBarricade_01_half_F", "Land_SandbagBarricade_01_F", "Land_BasaltKerb_01_pile_F", "Land_SandbagBarricade_01_hole_F", "Land_BagFence_01_long_green_F", "Land_BagFence_Round_F", "Land_BagFence_Long_F", "Land_BagFence_01_round_green_F","Land_GarbageHeap_01_F", "Land_Tyres_F"];
+        _shopLookupArray = ["Land_BagFence_Corner_F", "Land_BagFence_End_F", "Land_BagFence_Long_F", "Land_BagFence_Round_F", "Land_BagFence_Short_F", "Land_SandbagBarricade_01_half_F", "Land_SandbagBarricade_01_hole_F", "Land_SandbagBarricade_01_F"];
     };
     case("OBSTACLE"): {
-        _shopLookupArray = ["Land_CzechHedgehog_01_old_F","Land_DragonsTeeth_01_1x1_old_F", "Land_Barricade_01_10m_F", "Land_Barricade_01_4m_F", "Land_GarbageWashingMachine_F", "Land_Fortress_01_bricks_v1_F", "Land_Fortress_01_bricks_v2_F","Land_WoodPile_large_F", "Land_JunkPile_F", "Land_WoodPile_F", "Land_Razorwire_F", "Land_Wall_IndCnc_2deco_F", "Land_CncBarrier_dam_F"];
+        _shopLookupArray = ["Land_CzechHedgehog_01_new_F", "Land_Razorwire_F"];
     };
     case("LIGHT_BUNKER"): {
-        _shopLookupArray = ["Land_BagBunker_01_small_green_F", "Fort_Nest", "Land_BagBunker_Large_F", "Land_GuardTower_02_F", "Land_GuardTower_01_F", "Land_GuardBox_01_brown_F"];
+        _shopLookupArray = ["Land_BagBunker_Large_F", "Land_BagBunker_Small_F", "Land_GuardBox_01_brown_F"];
     };
     case("HEAVY_BUNKER"): {
-        _shopLookupArray = ["Land_Bunker_02_light_left_F", "Land_Bunker_02_light_right_F", "Land_PillboxBunker_01_hex_F", "Land_PillboxBunker_01_big_F", "Land_PillboxBunker_01_rectangle_F"];
+        _shopLookupArray = ["Land_Bunker_02_light_double_F"];
     };
     case("MISC"): {
-        _shopLookupArray = ["CamoNet_BLUFOR_F", "CamoNet_BLUFOR_open_F", "CamoNet_BLUFOR_big_F", "Land_CanvasCover_02_F", "Land_CanvasCover_01_F", "Land_LampShabby_F", "Land_MedicalTent_01_NATO_generic_outer_F", "Land_MedicalTent_01_NATO_generic_inner_F"];
+        _shopLookupArray = ["Land_HelipadCircle_F", "Land_HelipadSquare_F", "Land_u_Addon_01_V1_F"];
     };
     default { 
         [1, format ["Bad Construction Type - %1 ", _constructionType], "fn_ui_setAvailableBuildingTypes"] call A3A_fnc_log;

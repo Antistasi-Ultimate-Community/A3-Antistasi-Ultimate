@@ -44,6 +44,8 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["vehiclesPlanesAA", ["UK3CB_B_Mystere_HIDF_AA1"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["RHS_C130J", "UK3CB_B_Osprey_VIV_Transport_HIDF", "UK3CB_B_Osprey_IDWS_HMG_HIDF"]] call _fnc_saveToTemplate;
 
+["vehiclesPlanesGunship", ["UK3CB_B_AC47_HIDF"]] call _fnc_saveToTemplate;
+
 ["vehiclesHelisTransport", ["rhs_uh1h_hidf_unarmed", "UK3CB_B_Bell412_Utility_HIDF", "UK3CB_B_Bell412_Radar_HIDF"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLight", ["rhs_uh1h_hidf", "UK3CB_B_Bell412_Utility_HIDF"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", ["UK3CB_B_Bell412_Armed_AT_HIDF", "UK3CB_B_Bell412_Armed_HIDF", "UK3CB_B_Bell412_Armed_dynamicLoadout_HIDF", "rhs_uh1h_hidf_gunship", "rhs_uh1h_hidf_gunship", "rhs_uh1h_hidf_gunship"]] call _fnc_saveToTemplate;

@@ -9,16 +9,16 @@ overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Livonia";
     defaultLargeImageKey="livonia";
-    defaultLargeImageText="Antistasi Ultimate - Livonia";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    defaultLargeImageText="Rebelling in Livonia";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
+//DLC: https://store.steampowered.com/app/1021790/Arma_3_Contact/?snr=1_16_16_creator_curatorfeatureddiscount&curator_clanid=2799889
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

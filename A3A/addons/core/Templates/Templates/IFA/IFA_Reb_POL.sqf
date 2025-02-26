@@ -52,7 +52,7 @@ private _initialRebelEquipment = [
     "LIB_M1895","LIB_7Rnd_762x38",
     ["LIB_Faustpatrone", 50],
     ["LIB_Ladung_Small_MINE_mag", 10], ["LIB_Ladung_Big_MINE_mag", 3],
-    "lib_shg24",
+    "LIB_Shg24",
     "V_LIB_WP_OfficerVest","V_LIB_WP_Kar98Vest","V_LIB_WP_MP40Vest",
     "B_LIB_SOV_RA_MGAmmoBag_Empty", "B_LIB_SOV_RA_GasBag",
     "LIB_Binocular_GER"

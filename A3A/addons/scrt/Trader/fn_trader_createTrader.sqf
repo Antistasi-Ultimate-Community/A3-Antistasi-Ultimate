@@ -11,6 +11,8 @@
 
 params ["_position"];
 
+if (disableTrader) exitWith {};
+
 traderObjects = [];
 
 traderMarker = createMarker ["TraderMarker", _position];
@@ -35,6 +37,7 @@ _traderTent = if (_isVn) then {
 } else {
 	createVehicle ["Land_MedicalTent_01_wdl_generic_open_F", _position];
 };
+
 _traderTent allowDamage false;
 _buildingPositions = _traderTent buildingPos -1;
 
@@ -58,7 +61,6 @@ if (!_isVn) then {
 	_satellite setDir 45; 
 	traderObjects pushBack _satellite;
 };
-
 
 _tableBoxArray = [[_table, "TOP"],"Land_Ammobox_rounds_F",1,[-0.4,(random 0.2),(random 20)-10],(random 180)] call BIS_fnc_spawnObjects;
 _tableBox = _tableBoxArray select 0;

@@ -71,14 +71,14 @@ while {true} do {
 };
 
 // selecting classnames
-// private _reconVehicleDroppod = _faction getOrDefault ["vehiclesDropPod", []];
+private _reconVehicleDroppod = _faction getOrDefault ["vehiclesDropPod", []];
 
-private _reconVehicleClass = selectRandom ((_faction get "vehiclesPlanesTransport") + (_faction get "uavsAttack")); //  + _reconVehicleDroppod
+private _reconVehicleClass = selectRandom ((_faction get "vehiclesPlanesTransport") + (_faction get "uavsAttack") + _reconVehicleDroppod); //  + _reconVehicleDroppod
 private _pilotClass = _faction get "unitPilot";
 
-// if (_reconVehicleClass in _reconVehicleDroppod) exitWith { 
-//    [_markerX] call A3A_fnc_LOG_Crashsite_Satellite;
-// };
+if (_reconVehicleClass in _reconVehicleDroppod) exitWith { 
+    [_markerX] call A3A_fnc_LOG_Crashsite_Satellite;
+};
 
 private _searchHeliClassLight = _faction getOrDefault ["vehiclesHelisLight", []];
 private _searchHeliClassLightAttack = _faction getOrDefault ["vehiclesHelisLightAttack", []];
@@ -164,8 +164,15 @@ private _rebelTaskText = format [
 ] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
-//checking if time has passed to start vfx
-waitUntil {sleep 1; (dateToNumber date >= _startTimeNum)};
+///checking if players reached minimum distance to start vfx or if time limit has passed
+private _missionStart = serverTime;
+waitUntil {
+    sleep 30;
+    (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_crashPosition, 1500, 1500] isNotEqualTo [] || {_missionStart >= serverTime + 600 }
+};
+sleep 60; ///prep time
+
+///
 
 // This is the "crashing" vehicle, hence dummy
 private _reconVehicleDummy = createVehicle [_reconVehicleClass, [0, 0, 250], [], 0, "NONE"];
@@ -202,12 +209,13 @@ _bomb1 = "ammo_Missile_Cruise_01" createVehicle [getPos _quad select 0, getPos _
 private _crashsiteActual = getPosATL _quad;
 _bomb2 = "ammo_Missile_Cruise_01" createVehicle [(_crashsiteActual  select 0),(_crashsiteActual  select 1),0];
 
-private _reconVehicle = createVehicle [_reconVehicleClass, [0,0,10], [], 0, "CAN_COLLIDE"];
-_reconVehicle setPos [_crashsiteActual select 0, _crashsiteActual select 1, 1];
+private _crater = "CraterLong_02_F" createVehicle _crashsiteActual;
+private _reconVehicle = createVehicle [_reconVehicleClass, [_crashsiteActual select 0, _crashsiteActual select 1, 5], [], 0, "CAN_COLLIDE"];
+_reconVehicle allowDamage false;
+_reconVehicle setPos [_crashsiteActual select 0, _crashsiteActual select 1, 5];
 clearWeaponCargoGlobal _reconVehicle;
 clearMagazineCargoGlobal _reconVehicle;
 
-private _crater = "CraterLong_02_F" createVehicle _crashsiteActual;
 deletevehicle _reconVehicleDummy;
 deletevehicle _quad;
 
@@ -278,7 +286,7 @@ _box setVectorDirAndUp [[0,0,0], [0,1,0]];
 [_box] call A3A_Logistics_fnc_addLoadAction;
 
 sleep 1;
-
+_reconVehicle allowDamage true;
 _box allowDamage true;
 
 Info_1("Box position: %1", position _box);
@@ -328,7 +336,8 @@ deleteGroup _cargoGroupX;
 
 //moving to crash site
 _cargoVehicleWp = _cargoVehicleGroup addWaypoint [position _box, 1];
-_cargoVehicleWp setWaypointType "GETOUT";
+//_cargoVehicleWp setWaypointType "GETOUT";
+_cargoVehicleWp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
 _cargoVehicleWp setWaypointBehaviour "SAFE";
 
 private _searchHeliData = [];
@@ -396,7 +405,8 @@ if (_searchHeliClass isNotEqualTo []) then {
             //[_cargoVehicle2,"Cargo Truck"] spawn A3A_fnc_inmuneConvoy;
             _vehicles pushBack _cargoVehicle2;
             _cargoVehicle2Wp = group driver _cargoVehicle2 addWaypoint [position _box, 1];
-            _cargoVehicle2Wp setWaypointType "GETOUT";
+            //_cargoVehicleWp setWaypointType "GETOUT";
+            _cargoVehicleWp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
             _cargoVehicle2Wp setWaypointBehaviour "SAFE";
             _cargoVehicle2Wp setWaypointCompletionRadius 20;
             _cargoVehicle2driver = driver _cargoVehicle2;
@@ -887,4 +897,4 @@ sleep 20;
 
 deleteVehicle _box;
 
-Info("Helicrash clean up complete.");
+Info("Crashsite clean up complete.");

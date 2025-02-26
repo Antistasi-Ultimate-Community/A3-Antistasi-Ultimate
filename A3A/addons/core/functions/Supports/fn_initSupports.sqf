@@ -29,7 +29,7 @@ A3A_activeSupports = [];
 
 
 private _initData = [
-    // [supptype, basetype, weight, lowair, effradius, strikepower, unfair, reqtype]
+    // [supptype, basetype, weight, lowair, effradius, strikepower, unfair/futuristic, reqtype]
     // weight/lowair: Relative weighting for selection. May be adjusted by availability functions.
     // effradius: Strike radius, used for detecting friendly fire
     // strikepower: Approx resource value per strike for multi-target supports
@@ -38,17 +38,19 @@ private _initData = [
     ["MORTAR",          "AREA", 0.5, 0.9, 100,  50,  "", "staticMortars"],
     ["HOWITZER",        "AREA", 0.5, 0.9, 125,  65,  "", "staticHowitzers"],
     ["ASF",           "TARGET", 1.0, 0.4,   0, 100,  "", "vehiclesPlanesAA"],            // balanced against SAMs (if available), 66/33 weighting
-    ["CAS",           "TARGET", 1.0, 0.4,   0, 100,  "", "vehiclesPlanesCAS"],
+    ["CAS",           "TARGET", 0.5, 0.3,   0, 100,  "", "vehiclesPlanesCAS"],
+    ["TANK",          "TARGET", 0.5, 0.7,   0, 100,  "", ""],                            // balanced against CAS, lowAir based
     ["CASDIVE",       "TARGET", 0.8, 0.3,   0, 100,  "", "vehiclesPlanesCAS"],
     ["QRFLAND",       "TROOPS", 1.0, 1.4,   0,   0,  "", ""],
     ["QRFAIR",        "TROOPS", 0.5, 0.1,   0,   0,  "", ""],
     ["QRFVEHAIRDROP", "TROOPS", 0.3, 0.1,   0,   0,  "", "vehiclesPlanesTransport"],
-    ["QRFORBITAL",        "TROOPS", 0.5, 0.1,   0,   0,  "", "vehiclesDropPod"],     ///needs to be balanced
+    ["QRFORBITAL",        "TROOPS", 0.5, 0.1,   0,   0,  "fu", "vehiclesDropPod"],     ///needs to be balanced
     ["CARPETBOMBS",     "AREA", 0.5, 0.1, 200,   0, "u", ""],                            // balanced against airstrikes
-    ["SAM",           "TARGET", 1.0, 1.0,   0, 100, "u", ""],                             // balanced against ASF
-    ["ORBITALSTRIKE",   "AREA", 0.2, 0.0, 300,   0, "f", ""]
-//  ["UAV",           "TARGET", 1.0, 0.4,   0, 80,  "", "uavsAttack"],
-//  ["GUNSHIP",    ["AREA",   0.2,  50,   0]],                 // uh. Does AREA work for this? Only lasts 5 minutes so maybe...
+    ["GUNSHIP",         "AREA", 0.2, 0.1, 0, 80, "", "vehiclesPlanesGunship"],                   //u      // uh. Does AREA work for this? Only lasts 5 minutes so maybe...
+    ["SAM",           "TARGET", 1.0, 1.0,   0, 100, "u", ""],                            // balanced against ASF
+    ["CRUISEMISSILE", "AREA", 0.3, 0.1, 150,   100, "u", ""],
+    ["ORBITALSTRIKE",   "AREA", 0.2, 0.0, 300,   0, "fu", ""],
+    ["UAV",           "TARGET", 0.4, 0.2,   0, 80,  "u", "uavsAttack"]
 ];
 
 // Generate support type hashmap for a faction, suppType -> [baseType, weight, effRadius, strikepower]
@@ -62,6 +64,7 @@ private _fnc_buildSupportHM =
         if (_faction get _reqType isEqualTo []) then { continue };
         if ("u" in _flags and !allowUnfairSupports) then { continue };
         if ("f" in _flags and !allowFuturisticSupports) then { continue };
+        if ("fu" in _flags and !allowFuturisticUnfairSupports) then { continue };
 
         private _weight = [_weight, _lowAirWeight] select _lowAir;
         _suppHM set [_suppType, [_baseType, _weight, _effRadius, _strikepower]];

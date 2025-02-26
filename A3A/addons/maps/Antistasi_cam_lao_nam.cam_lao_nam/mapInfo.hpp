@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class cam_lao_nam {
 	population[] = {
 		{"haiphong",500},{"hanoi",1000},{"hue",2000},{"saigon",700},{"sihanoukville",200},{"nodallho",100},{"bru",100},{"attapeu",100},{"dakrong",100},{"lumphat",100},{"cuchi",100},{"baria",100},{"danang",600},{"kenglat",100},{"laichau",100},{"paknoi",100},{"phuan",100},{"xomram",120},{"xomgia",100},{"tongmoo",100},{"donlac",100},{"cangon",100},{"nalai",100},{"baichai",100},{"bachdang",100},{"ketthuc",100},{"vongxo",100},{"banbon",100},{"nongkhiaw",100},{"horhog",100},{"langmau",100},{"baria2",100},{"anhoa",100},{"binhminh",100},{"buoisang",100},{"hoalien",100},{"lacmy",100},{"cacan",100},{"tanhop",100},{"hanoi2",300},{"gansong",100},{"zokcarbora",100},{"banhtrung",100},{"yentinh",100},{"thunglungcao",100},{"baibiendep",100},{"phoduc",100},{"baove",100},{"ngatu",100},{"binhyen",100},{"bosong",100},{"marble",180},{"niemtin",100},{"krosang",100},{"banlen",100},{"comngon",100},{"saigonport",100},{"cauhai",100},{"longhai", 50},{"nhenden", 50},{"daotrai", 100}
@@ -21,15 +22,9 @@ class cam_lao_nam {
 	};
 	climate = "tropical";
 	buildObjects[] = {
-		// Standalone bunkers
-		{"Land_vn_bunker_small_01", 60}, {"Land_vn_pillboxbunker_01_hex_f", 200}, {"Land_vn_pillboxbunker_01_rectangle_f", 300},
-		// Trenches & matching firing posts
-		{"Land_vn_b_trench_45_02", 40}, {"Land_vn_b_trench_05_02", 20}, {"Land_vn_b_trench_firing_04", 60}, {"Land_vn_b_trench_firing_05", 80}, {"Land_vn_b_mortarpit_01", 40},			// circular low trench
-		// VN sandbag walls
-		{"Land_vn_bagfence_01_long_green_f", 10}, {"Land_vn_bagfence_01_short_green_f", 10}, {"Land_vn_bagfence_01_round_green_f", 10},
-		// Higher sandbag/metal walls + junk
-		{"Land_vn_b_trench_revetment_tall_03", 20}, {"Land_vn_b_trench_revetment_05_01", 30}, {"Land_vn_barricade_01_4m_f", 30},
-		// PAVN stuff
-		{"Land_vn_o_bunker_03", 40}, {"Land_vn_o_platform_06", 40}, {"Land_vn_fence_punji_01_03", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_TROPIC,
+		BUILDABLES_SOGPF,
+		BUILDABLES_UNIVERSAL
 	};
 };

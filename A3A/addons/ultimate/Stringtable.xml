@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3AU-ultimate">
+    <Package name="A3-Antistasi-builderbox">
+        <Key ID="STR_params_builderPermissions">
+            <Original>Player classes permitted to use the building placer</Original>
+        </Key>
+        <Key ID="STR_params_builderLimit">
+            <Original>Build limit</Original>
+        </Key>
+        <Key ID="STR_params_builderAllowRoads">
+            <Original>Allow buildings to be saved on roads</Original>
+        </Key>
+        <Key ID="STR_params_builderBuildTime">
+            <Original>Build hold time multiplier</Original>
+        </Key>
+    </Package>
     <Package name="A3-Antistasi-Ultimate-functions">
         <Key ID="STR_A3AU_init_mods_warning_header">
             <Original>Warning</Original>
@@ -119,6 +133,11 @@
             <Russian>Dismemberment</Russian>
             <Korean>Dismemberment</Korean>
             <French>Dismemberment</French>
+        </Key>
+    </Package>
+    <Package name="ported">
+        <Key ID="STR_A3A_fn_support_showIntStpCll_TANK">
+            <Original>%1 just sent a tank platoon.</Original>
         </Key>
     </Package>
 </Project>

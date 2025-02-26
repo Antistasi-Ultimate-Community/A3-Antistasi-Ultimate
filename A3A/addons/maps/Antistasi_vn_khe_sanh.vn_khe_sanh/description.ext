@@ -9,17 +9,16 @@ overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
-    defaultLargeImageKey="khe_sanh";
-    defaultLargeImageText="Antistasi Ultimate - Khe Sanh";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Khe Sahn";
+    defaultLargeImageKey="khe";
+    defaultLargeImageText="Rebelling in Khe Sahn";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
-
+//DLC: https://store.steampowered.com/app/1227700/Arma_3_Creator_DLC_SOG_Prairie_Fire/?curator_clanid=2799889
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

@@ -62,7 +62,7 @@ if (_hasWs) then {
 ["vehiclesRivalsCars", ["Opf_O_S_Offroad_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", ["Opf_O_S_Truck_02_transport_F", "Opf_O_S_Truck_02_F"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", ["Opf_O_S_APC_Tracked_02_30mm_lxWS"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", ["Opf_O_S_MBT_02_cannon_F"]] call _fnc_saveToTemplate;
+["vehiclesRivalsTanks", ["Opf_O_S_MBT_02_cannon_F","Aegis_I_C_UGV_01_rcws_F"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["O_Raven_Heli_Light_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["O_UAV_01_F"]] call _fnc_saveToTemplate;			
 

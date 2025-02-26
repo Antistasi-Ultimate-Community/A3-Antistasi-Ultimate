@@ -3,6 +3,7 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasApex = "expansion" in A3A_enabledDLC;
 private _hasContact = "enoch" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ///////////////////////////
 //   Rebel Information   //
@@ -74,6 +75,8 @@ if (_hasRF) then {
     ["I_APC_Wheeled_03_cannon_F", ["Guerilla_01",1]],
     ["I_LT_01_AA_F", ["Indep_Olive",1]]
 ]] call _fnc_saveToTemplate;
+
+#include "WS_Reb_Vehicle_Attributes.sqf"
 
 ///////////////////////////
 //  Rebel Starting Gear  //

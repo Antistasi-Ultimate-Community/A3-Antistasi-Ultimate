@@ -113,6 +113,11 @@ else
             _text = format [localize "STR_notifiers_SUP_execute_gunship", _sideName];
             _markerText = localize "STR_notifiers_SUP_execute_gunship_marker";
         };
+        case ("UAV"):
+        {
+            _text = format [localize "STR_notifiers_SUP_execute_UAV", _sideName];
+            _markerText = localize "STR_notifiers_SUP_execute_UAV_marker";
+        };
         default
         {
             _text = format [localize "STR_notifiers_SUP_execute_generic", _sideName, _supportType];

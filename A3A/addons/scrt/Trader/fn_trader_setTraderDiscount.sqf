@@ -9,8 +9,6 @@ private _trader = if (!isNil "traderX") then {
     nil 
 };
 
-
-
 if (isNil "_trader") exitWith {
     Info("Trader is not spawned yet, aborting.");
 };

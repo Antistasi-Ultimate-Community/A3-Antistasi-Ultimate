@@ -17,6 +17,40 @@ private _resBoost = nil;
 private _rivalsTaskChance = 5;
 private _traderTaskChance = 5;
 
+private _cfg = (configFile >> "A3U" >> "traderAddons" >> "traderVehicles");
+
+private _condition_AA = getText (_cfg >> "condition_AA");
+private _condition_APC = getText (_cfg >> "condition_APC");
+private _condition_ARMEDCAR = getText (_cfg >> "condition_ARMEDCAR");
+private _condition_ARTILLERY = getText (_cfg >> "condition_ARTILLERY");
+private _condition_BOAT = getText (_cfg >> "condition_BOAT");
+private _condition_HELI = getText (_cfg >> "condition_HELI");
+private _condition_PLANE = getText (_cfg >> "condition_PLANE");
+private _condition_STATICAA = getText (_cfg >> "condition_STATICAA");
+private _condition_STATICAT = getText (_cfg >> "condition_STATICAT");
+private _condition_STATICMG = getText (_cfg >> "condition_STATICMG");
+private _condition_STATICMORTAR = getText (_cfg >> "condition_STATICMORTAR");
+private _condition_TANK = getText (_cfg >> "condition_TANK");
+private _condition_UAV = getText (_cfg >> "condition_UAV");
+private _condition_UNARMEDCAR = getText (_cfg >> "condition_UNARMEDCAR");
+
+private _conditions = [
+	[_condition_AA, "AA"], 
+	[_condition_APC, "APCs"], 
+	[_condition_ARMEDCAR, "Armed Cars"], 
+	[_condition_ARTILLERY, "Artillery"], 
+	[_condition_BOAT, "Boats"], 
+	[_condition_HELI, "Helicopters"], 
+	[_condition_PLANE, "Planes"], 
+	[_condition_STATICAA, "Statics: AA"], 
+	[_condition_STATICAT, "Statics: AT"], 
+	[_condition_STATICMG, "Statics: MG"], 
+	[_condition_STATICMORTAR, "Statics: Mortar"],
+	[_condition_TANK, "Tanks"],
+	[_condition_UAV, "UAVs"],
+	[_condition_UNARMEDCAR, "Unarmed Cars"]
+];
+
 while {true} do {
 	nextTick = time + 600;
 	waitUntil {sleep 15; time >= nextTick};
@@ -94,20 +128,10 @@ while {true} do {
 		};
 	} forEach citiesX;
 
-	if (_popKilled > (_popTotal / 3)) then {
-		isNil { ["ended", true] call A3A_fnc_writebackSaveVar };
-		["destroyedSites",false,true] remoteExec ["BIS_fnc_endMission"];
-	};
+	call A3A_fnc_checkWinCondition;
 
-	if (totalVictory isEqualTo false and (_popReb > _popGov) and {({sidesX getVariable [_x,sideUnknown] == teamPlayer} count (airportsX + milbases)) == count (airportsX + milbases)}) then {
-		isNil { ["ended", true] call A3A_fnc_writebackSaveVar };
-		["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0];
-	};
-
-	private _victoryZones = airportsX + milbases + outposts + resourcesX + factories + seaports;
-	if ( (totalVictory isEqualTo true) && { (_popReb > _popGov) } && { ( {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (_victoryZones) ) isEqualTo count (_victoryZones) } ) then {
-		isNil { ["ended", true] call A3A_fnc_writebackSaveVar };
-		["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0];
+	if (lossCondition isNotEqualTo 1) then {
+		call A3A_fnc_checkLossCondition;
 	};
 
 	{
@@ -256,5 +280,45 @@ while {true} do {
 
 	if (areRivalsDiscovered && {!areRivalsDefeated}) then{
 		[random [5,7,10]] call SCRT_fnc_rivals_addProgressToRivalsLocationReveal;
+	};
+
+	if (isTraderQuestCompleted) then {
+		private _vehicleTypesUnlocked = unlockedVehicleTypes;
+		private _vehicleTypesUnlockedNotify = [];
+
+		if (isNil "_vehicleTypesUnlocked") then {
+			_vehicleTypesUnlocked = [];
+		};
+
+		{
+			private _condition = compile (_x#0);
+
+			private _alreadyUnlocked = ((_x#1) in _vehicleTypesUnlocked);
+			if (_alreadyUnlocked) then {continue};
+
+			if (call _condition) then {
+				private _text = format["%1 is now unlocked in the Arms Dealer.", (_x#1)];
+
+				_vehicleTypesUnlocked pushBack (_x#1);
+				_vehicleTypesUnlockedNotify pushBack (_x#1);
+				
+				[_text, _fnc_scriptName] call A3U_fnc_log;
+			};
+		} forEach _conditions;
+
+		if (_vehicleTypesUnlockedNotify isEqualTo []) exitWith {false};
+
+		private _unlockedMessages = "The following vehicles have been unlocked at the Arms Dealer.<br/>"; // To-Do: Localize
+
+		{
+			private _vehicleType = _x;
+			_unlockedMessages = _unlockedMessages + "<br/>" + _vehicleType; // <br/> vehicleType <br/>
+		} forEach _vehicleTypesUnlocked;
+
+		[localize "STR_marker_arms_dealer", _unlockedMessages] remoteExec ["A3A_fnc_customHint", 0, false];
+
+		unlockedVehicleTypes = _vehicleTypesUnlocked;
+		
+		publicVariable "unlockedVehicleTypes";
 	};
 };

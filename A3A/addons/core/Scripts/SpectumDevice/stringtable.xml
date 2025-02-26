@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Any Name">
+    <Package name="Mission One">
+        <Container name="Some Words">
+            <Key ID="STR_SA_Discretization">
+                <English>Discretization step: %1</English>
+                <Russian>Шаг дискретизации: %1</Russian>
+            </Key>
+            <Key ID="STR_SA_Scan">
+                <English>&lt;t align='left' valign='middle' size='1'&gt;UAV signals: &lt;t color='#00ff00'&gt; %1 &lt;/t&gt;&lt;t color='#ff0000'&gt; %2 &lt;/t&gt;&lt;br /&gt;Unidentified signals: %3&lt;br /&gt;Weak signals: %4&lt;/t&gt;</English>
+                <Russian>&lt;t align='left' valign='middle' size='1'&gt;Сигналов БПЛА: &lt;t color='#00ff00'&gt; %1 &lt;/t&gt;&lt;t color='#ff0000'&gt; %2 &lt;/t&gt;&lt;br /&gt;Неидентифицируемые сигналы: %3&lt;br /&gt;Слабые сигналы: %4&lt;/t&gt;</Russian>
+            </Key>
+            <Key ID="STR_SA_Jamm">
+                <English>&lt;t align='left' valign='middle' size='1'&gt; Success chance: %1&lt;/t&gt;</English>
+                <Russian>&lt;t align='left' valign='middle' size='1'&gt; Вероятность успеха: %1&lt;/t&gt;</Russian>
+            </Key>
+            <Key ID="STR_SA_Jamm_NoTarget">
+                <English>&lt;t align='left' valign='middle' size='1'&gt; No suitable target &lt;/t&gt;</English>
+                <Russian>&lt;t align='left' valign='middle' size='1'&gt; Нет подходящих целей &lt;/t&gt;</Russian>
+            </Key>
+            <Key ID="STR_SA_NoFunction">
+                <English>&lt;t align='left' valign='middle' size='1'&gt; This antenna is not functional yet &lt;/t&gt;</English>
+                <Russian>&lt;t align='left' valign='middle' size='1'&gt; Эта антенна не работает (пока что) &lt;/t&gt;</Russian>
+            </Key>
+        </Container>
+    </Package>
+</Project>

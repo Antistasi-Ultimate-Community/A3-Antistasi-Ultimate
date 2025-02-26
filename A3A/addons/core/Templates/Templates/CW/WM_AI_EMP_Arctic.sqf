@@ -41,8 +41,12 @@
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
 ["vehiclesPlanesCAS", ["WM_TieBomber_Cluster"]] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", ["WM_TieDefender"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["WM_TieInterceptor","WM_TieInterceptor","3AS_VWing_Imperial","3AS_VWing_Imperial","WM_TieAdvanced"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["3AS_Imperial_Transport_01"]] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeAA", ["WM_Tiefighter","WM_Tiefighter","WM_Tiefighter","WM_Tiefighter","WM_Tiefighter"]] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", ["3AS_Imperial_Transport_01","3AS_Gozanti_F"]] call _fnc_saveToTemplate;
+
+["vehiclesPlanesGunship", ["3AS_LAAT_Mk1_Imperial"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["3AS_Patrol_LAAT_Imperial"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["3AS_LAAT_Mk2_Imperial", "3AS_LAAT_Mk2_Imperial", "3AS_LAAT_Mk2_Imperial", "WM_Lambda", "3AS_Nu_IMP_F", "3AS_Rho_IMP_F"]] call _fnc_saveToTemplate;
@@ -73,7 +77,7 @@
 ["staticHowitzers", []] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "lsd_cis_radarDish"] call _fnc_saveToTemplate;
-["vehicleSam", "3as_XX9"] call _fnc_saveToTemplate;
+["vehicleSam", "3AS_Keeradak_Imperial"] call _fnc_saveToTemplate;
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;
 
@@ -359,12 +363,12 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militiaLoadoutData set ["uniforms", ["WM_SnowArmor"]];		//this line determines uniforms for militia loadouts -- Example: ["U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt"] -- Array, can contain multiple assets
-_militiaLoadoutData set ["vests", ["WM_Basic_armor", "WM_SnowPouches"]];			//this line determines vests for militia loadouts -- Example: ["V_PlateCarrierSpec_mtp", "V_PlateCarrierGL_mtp"] -- Array, can contain multiple assets
+_militiaLoadoutData set ["uniforms", ["WM_ArmyUniform"]];		//this line determines uniforms for militia loadouts -- Example: ["U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt"] -- Array, can contain multiple assets
+_militiaLoadoutData set ["vests", ["WM_ArmyVest"]];			//this line determines vests for militia loadouts -- Example: ["V_PlateCarrierSpec_mtp", "V_PlateCarrierGL_mtp"] -- Array, can contain multiple assets
 _militiaLoadoutData set ["backpacks", ["WM_SnowTrooper_Backpack", "WM_SnowTrooper_Backpack_RTO"]];		//this line determines backpacks for militia loadouts -- Example: ["B_AssaultPack_mcamo", "B_Kitbag_mcamo"] -- Array, can contain multiple assets
-_militiaLoadoutData set ["helmets", ["WM_SnowHelmet"]];		//this line determines helmets for police loadouts -- Example: ["H_HelmetB_camo", "H_HelmetB_desert"] -- Array, can contain multiple assets
-_militiaLoadoutData set ["sniHats", ["WM_SnowHelmet"]];
-_militiaLoadoutData set ["slHat", ["WM_SnowHelmet"]];
+_militiaLoadoutData set ["helmets", ["WM_ArmyHelmet"]];		//this line determines helmets for police loadouts -- Example: ["H_HelmetB_camo", "H_HelmetB_desert"] -- Array, can contain multiple assets
+_militiaLoadoutData set ["sniHats", ["WM_ArmyHelmet"]];
+_militiaLoadoutData set ["slHat", ["WM_OfficerCap"]];
 
 _militiaLoadoutData set ["rifles", [
 ["WM_E11", "", "", "", ["WM_E11_Mag"], [], ""],
@@ -406,9 +410,9 @@ _militiaLoadoutData set ["sidearms", [
 //////////////////////////
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_crewLoadoutData set ["uniforms", ["WM_ScoutArmor"]];			//this line determines uniforms for vehicle crew loadouts -- Example: ["U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt"] -- Array, can contain multiple assets
-_crewLoadoutData set ["vests", ["WM_Basic_armor"]];				//this line determines vests for vehicle crew loadouts -- Example: ["V_PlateCarrierSpec_mtp", "V_PlateCarrierGL_mtp"] -- Array, can contain multiple assets
-_crewLoadoutData set ["helmets", ["WM_ScoutHelmet"]];
+_crewLoadoutData set ["uniforms", ["WM_ArmyUniform"]];			//this line determines uniforms for vehicle crew loadouts -- Example: ["U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt"] -- Array, can contain multiple assets
+_crewLoadoutData set ["vests", ["WM_ArmyVest"]];				//this line determines vests for vehicle crew loadouts -- Example: ["V_PlateCarrierSpec_mtp", "V_PlateCarrierGL_mtp"] -- Array, can contain multiple assets
+_crewLoadoutData set ["helmets", ["WM_DriverHelmet"]];
 _crewLoadoutData set ["carbines", [
 ["WM_DH17", "", "", "", ["WM_DH17_Mag"], [], ""]
 ]];

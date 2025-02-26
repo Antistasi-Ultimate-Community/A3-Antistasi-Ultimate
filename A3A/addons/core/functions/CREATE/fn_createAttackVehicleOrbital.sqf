@@ -57,20 +57,6 @@ private _cargoGroup = grpNull;
         [_x, nil, nil, _resPool] call A3A_fnc_NATOinit;
     } forEach units _cargoGroup;
 
-    /*// Find turret paths that count as cargo seats
-    private _fnc_addCargoTurrets = {
-        params ["_config", ["_path", []]];
-        {
-            private _turretPath = _path + [_forEachIndex];
-            [_x, _turretPath] call _fnc_addCargoTurrets;                // Handle nested turrets
-            if (getNumber (_x >> "showAsCargo") != 0) then { _cargoTurrets pushBack _turretPath };
-        } forEach ("true" configClasses (_config >> "Turrets"));
-    };
-    private _cargoTurrets = [];
-    if !(_vehicleType in ["LIB_C47_Skytrain", "LIB_C47_RAF", "LIB_Li2"]) then {
-        [configFile >> "CfgVehicles" >> _vehicleType] call _fnc_addCargoTurrets;
-    }; */
-
     
 //};
 

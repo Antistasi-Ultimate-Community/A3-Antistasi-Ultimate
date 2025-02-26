@@ -36,6 +36,7 @@
 /////////////////////
 
 ["faces", ["LivonianHead_6","SPE_Connors","SPE_Ivanych","SPE_OBrien","SPE_Vasiliev","WhiteHead_02","WhiteHead_04","WhiteHead_05","WhiteHead_09","WhiteHead_11","WhiteHead_13","WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
+["voices", ["Male01FRE","Male02FRE","Male03FRE","SPE_Male01FRE","SPE_Male02FRE"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //

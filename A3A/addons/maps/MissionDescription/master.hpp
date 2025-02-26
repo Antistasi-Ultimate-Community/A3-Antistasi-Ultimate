@@ -30,7 +30,7 @@ missionGroup = "AntistasiUltimate";
 
 #ifndef LOAD_SCREEN_IMAGE
 	#define LOAD_SCREEN_IMAGE "\x\A3A\addons\maps\images_alt_co.jpg"
-	#define OVERVIEW_IMAGE "\x\A3A\addons\maps\images_alt_co.jpg"
+	#define OVERVIEW_IMAGE "\x\A3A\addons\maps\images_co.jpg"
 #endif
 
 #include "debug.hpp"

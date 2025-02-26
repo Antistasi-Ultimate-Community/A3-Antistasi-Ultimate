@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class lingor3 {
 	population[] = {
 		{"tucos",200},{"maruko",903},{"calamar",549},{"montehofo",29},{"manteria",125},{"sanvigado",54},{"guayucca",153},{"calapedro",87},{"tia",82},{"mercielo",93},{"calixo",123},{"fernando",428},{"aculto",72},{"garibosa",225},{"haciendos",96},{"mairango",76},{"rosalia",112},{"elcanto",85},{"morada",155},{"victorin",66},{"prospero",57},{"corazon",260},{"fauna",124},{"negrosa",28},{"peligron",35},{"sanisabel",94},{"marcella",44},{"pancho",32},{"lagosa",17},{"aguado",28},{"barro",48},{"gomez",21},{"conoteta",35},{"cemarin",14},{"madron",31},{"picolin",12},{"pmalargo",0},{"villon",156},{"palida",64},{"chupinka",10},{"tamba",51},{"pachi",37},{"cabara",45},{"monga",180},{"ayan",15},{"pikawas",32},{"bilbado",148},{"ralon",82},{"sanarulco",571},{"benio",283},{"pocobay",36},{"reginatributa",67},{"pintosa",254},{"drassen",261},{"rago",80},{"medlina",120},{"zuela",233},{"alma",22},{"cordo",23},{"mercadio",41},{"verto",54},{"zanjeer",75},{"gatoro",69},{"medicolin",51},{"arapesca",49},{"fantasmo",170},{"maruko",903},{"matacan",105},{"vidora",155},{"paredes",29},{"mvt",25},{"mvv",13},{"mirasol",94},{"jodido",13},{"pescito",34},{"ramona",75},{"gritto",124},{"vissa",35}
@@ -17,13 +18,10 @@ class lingor3 {
 	};
 	climate = "tropical";
 	buildObjects[] = {
-		// Large vanilla arid structures
-		{"Land_BagBunker_Large_F", 300}, {"Land_BagBunker_Tower_F", 300}, {"Land_BagBunker_Small_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// Vanilla arid sandbag walls
-		{"Land_BagFence_Long_F", 10}, {"Land_BagFence_Round_F", 10}, {"Land_BagFence_Short_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_HISTORIC,
+		BUILDABLES_TROPIC,
+		BUILDABLES_CUP,
+		BUILDABLES_UNIVERSAL
 	};
 };

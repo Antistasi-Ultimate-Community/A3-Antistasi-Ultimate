@@ -92,7 +92,7 @@ else
 		_returnWP setWaypointStatements ["true", "if (!local this or !alive this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
 
 		_getoutWP = _cargoGroup addWaypoint [_landpos, 0];
-		_getoutWP setWaypointType "GETOUT";
+		//_getoutWP setWaypointType "GETOUT";
 		_reinfWP = _cargoGroup addWaypoint [_posDest, 0];
 		_reinfWP setWaypointBehaviour "AWARE";
 		_landWP synchronizeWaypoint [_getoutWP];

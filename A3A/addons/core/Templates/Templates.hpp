@@ -17,6 +17,30 @@ class Templates
         equipFlags[] = {"vanilla"};
     };
 
+    class WS_CSATandSFIA : WS_Base
+    {
+        side = "Inv";
+        name = "WS CSAT&SFIA";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\WS\flags\CSAT_SFIA.paa);
+        file = "WS_AI_CSAT&SFIA";
+        maps[] = {"SefrouRamal", "takistan"};
+        forceDLC[] = {"ws"};
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_csatandsfia;
+    };
+
+    class WS_NATOandUNA : WS_Base
+    {
+        side = "Occ";
+        name = "WS NATO&UNA";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\WS\flags\NATO_UNA.paa);
+        file = "WS_AI_NATO&UNA";
+        maps[] = {"SefrouRamal", "takistan"};
+        forceDLC[] = {"ws"};
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_natoanduna;
+    };
+
     class WS_Civ : WS_Base
     {
         side = "Civ";
@@ -54,7 +78,7 @@ class Templates
         file = "WS_Riv_ION";
         forceDLC[] = {"ws"};
         description = $STR_A3AP_setupFactionsTab_ion;
-    }
+    };
 
     // ************************************** Vanilla *******************************************************
 
@@ -76,6 +100,16 @@ class Templates
         file = "Vanilla_AI_CSAT_Arid";
         climate[] = {"arid", "arctic"};
         description = $STR_A3AP_setupFactionsTab_csat;
+    };
+
+    class Vanilla_CSATandAAF : Vanilla_CSAT_Arid
+    {
+        name = "A3 CSAT&AAF";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\CSAT_AAF.paa);
+        file = "Vanilla_AI_CSAT&AAF";
+        priority = 5;
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_csatandaaf;
     };
 
     class Vanilla_CSAT_Temperate : Vanilla_CSAT_Arid
@@ -109,6 +143,41 @@ class Templates
         climate[] = {"tropical"};
     };
 
+    class Vanilla_NATOandAAF : Vanilla_NATO_Arid
+    {
+        name = "A3 NATO&AAF";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\NATO_AAF.paa);
+        file = "Vanilla_AI_NATO&AAF";
+        priority = 5;
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_natoandaaf;
+    };
+
+    class Vanilla_NATOandLDF_Arid : Vanilla_Base
+    {
+        side = "Occ";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\NATO_LDF.paa);
+        name = "A3 NATO&LDF Arid";
+        file = "Vanilla_AI_NATO&LDF_Arid";
+        priority = 5;
+        climate[] = {"arid"};
+        forceDLC[] = {"enoch"};
+        description = $STR_A3AP_setupFactionsTab_natoandldf;
+    };
+
+    class Vanilla_NATOandLDF_Temperate : Vanilla_Base
+    {
+        side = "Occ";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\NATO_LDF.paa);
+        name = "A3 NATO&LDF Temparate";
+        file = "Vanilla_AI_NATO&LDF_Temperate";
+        priority = 5;
+        maps[] = {"enoch","vt7"};
+        climate[] = {"temperate"};
+        forceDLC[] = {"enoch"};
+        description = $STR_A3AP_setupFactionsTab_natoandldf;
+    };
+
     class Vanilla_LDF : Vanilla_Base
     {
         side = "Occ";
@@ -118,6 +187,7 @@ class Templates
         maps[] = {"enoch","vt7"};
         climate[] = {"temperate"};
         forceDLC[] = {"enoch"};
+        description = $STR_A3AP_setupFactionsTab_ldf;
     };
 
     class Vanilla_AAF : Vanilla_Base
@@ -164,7 +234,7 @@ class Templates
     class Vanilla_Remnants : Vanilla_Base
     {
         side = "Riv";
-        flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flag_aaf_torn_co.paa);
+        flagTexture = QPATHTOFOLDER(Templates\Templates\Vanilla\flags\flag_aaf_torn_co.paa);
         name = "A3 AAF Remnants";
         file = "Vanilla_Riv_Remnants";
         climate[] = {"arid", "temperate", "arctic"}; ///arctic?
@@ -198,6 +268,37 @@ class Templates
         name = "Vanilla";
         file = "Vanilla_Civ";
         description = $STR_A3AP_setupFactionsTab_vanilla_civ;
+    };
+
+    // ************************************** Expeditionary Forces *******************************************************
+
+    class EF_Base : Vanilla_Base
+    {
+        requiredAddons[] = {"EF_Data"};
+        logo = "\ef\ef_data\logos\arma3_ef_logo_ca.paa";
+        basepath = QPATHTOFOLDER(Templates\Templates\EF); //the path to the template folder
+        priority = 5;
+        forceDLC[] = {"ef"};
+        equipFlags[] = {"vanilla"};
+    };
+
+    class EF_MJTF_Arid : EF_Base
+    {
+        side = "Occ";
+        flagTexture = "\ef\ef_data\data\Flag_29thMEU_CO.paa";
+        name = "EF MJTF Arid";
+        file = "EF_AI_MJTF_Arid";
+        shortName = "MJTF";    
+        climate[] = {"arid", "arctic"};
+        description = $STR_A3AP_setupFactionsTab_nato;
+    };
+
+    class EF_MJTF_Temperate : EF_MJTF_Arid
+    {
+        name = "EF MJTF Temperate";
+        file = "EF_AI_MJTF_Temperate";  
+        climate[] = {"temperate", "tropical"};
+        description = $STR_A3AP_setupFactionsTab_nato; 
     };
 
 
@@ -377,6 +478,69 @@ class Templates
         name = "Vietnam";
         file = "VN_Civ";
         description = $STR_A3AP_setupFactionsTab_vietcivs;
+    };
+
+    //***************************** CSLA *****************************
+    class CSLA_Base : Vanilla_Base
+    {
+        requiredAddons[] = {"CSLA"};
+	    logo = "\csla_cfg\Images\Logos\csla_logo_text.paa"; // csla\csla_cfg\Images\Logos\csla_logo_text.paa
+        basepath = QPATHTOFOLDER(Templates\Templates\CSLA);
+        priority = 50;
+        forceDLC[] = {"CSLA"};
+        climate[] = {"temperate","tropical","arid"};
+    };
+    class CSLA_CIV : CSLA_Base
+    {
+        side = "Civ";
+        flagTexture = "\csla_misc\signs\flags\cssr_flag.paa";
+        name = "CSLA Civs";
+        file = "CSLA_CIV";
+	//maps[] = {"stozec"};
+    };
+    class CSLA_FIA : CSLA_Base
+    {
+        side = "Reb";
+        flagTexture = "\csla_misc\signs\flags\fia_flag.paa";
+        name = "FIA";
+        file = "CSLA_FIA";
+	//maps[] = {"stozec"};
+    };
+    class CSLA_US : CSLA_Base
+    {
+        side = "Occ";
+        flagTexture = "\csla_misc\signs\flags\flag_us_co.paa";
+        name = "US85";
+        file = "CSLA_AI_US";
+	//maps[] = {"stozec"};
+    };
+
+    class CSLA_SEPARATISTS : CSLA_Base
+    {
+        side = "Riv";
+        flagTexture = "\A3\Data_F\Flags\Flag_red_CO.paa";
+        name = "CSLA Separatists";
+        file = "CSLA_Riv_Separatists";
+        climate[] = {"arid", "temperate", "arctic"};
+        description = $STR_A3AP_setupFactionsTab_separatistsCSLA;
+    };
+
+    class CSLA_CS : CSLA_Base
+    {
+        side = "Inv";
+        flagTexture = "\csla_misc\signs\flags\cssr_flag.paa";
+        name = "CSLA";
+        file = "CSLA_AI_CSLA";
+	//maps[] = {"stozec"};
+    };
+
+    class CSLA_AFMC : CSLA_Base
+    {
+        side = "Occ";
+        flagTexture = "\csla_misc\signs\flags\flag_afmc_co.paa";
+        name = "AFMC";
+        file = "CSLA_AI_AFMC";
+	//maps[] = {"stozec"};
     };
 	
     // ***************************** CUP *****************************

@@ -13,6 +13,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -46,6 +48,8 @@
 ["vehiclesHelisTransport", ["rhssaf_airforce_o_ht40", "rhssaf_airforce_o_ht48"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", ["RHS_Mi8MTV3_vvsc", "RHS_Mi8MTV3_heavy_vvsc", "RHS_Mi24Vt_vvsc", "rhsgref_cdf_reg_Mi17Sh"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["rhsgref_cdf_Mi24D", "rhsgref_cdf_Mi35", "rhsgref_mi24g_CAS"]] call _fnc_saveToTemplate;
+
+["vehiclesAirPatrol", ["rhssaf_airforce_o_ht40", "RHS_Mi8MTV3_vvsc", "RHS_Mi8MTV3_heavy_vvsc", "RHS_Mi24Vt_vvsc", "rhsgref_cdf_reg_Mi17Sh"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["rhs_2s1_tv", "rhs_2s3_tv", "RHS_BM21_VV_01"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
@@ -91,6 +95,7 @@
 
 ["faces", ["RHS_LivonianHead_1", "RHS_LivonianHead_10", "RHS_LivonianHead_2", "RHS_LivonianHead_3", "RHS_LivonianHead_4", "RHS_LivonianHead_5", "RHS_LivonianHead_6", "RHS_LivonianHead_7", "RHS_RussianHead_1", "RHS_WhiteHead_01", "RHS_WhiteHead_04", "RHS_WhiteHead_05", "RHS_WhiteHead_06", "RHS_WhiteHead_07", "RHS_WhiteHead_08", "RHS_WhiteHead_09", "RHS_WhiteHead_10", "RHS_WhiteHead_11", "RHS_WhiteHead_14", "RHS_WhiteHead_15", "RHS_WhiteHead_16", "RHS_WhiteHead_25", "RHS_WhiteHead_27", "RHS_WhiteHead_28", "RHS_WhiteHead_32"]] call _fnc_saveToTemplate;
 ["voices", ["male01gre","male02gre","male03gre","male04gre","male05gre","male06gre"]] call _fnc_saveToTemplate;
+"RussianMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

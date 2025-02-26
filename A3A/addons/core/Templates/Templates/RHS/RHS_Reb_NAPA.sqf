@@ -165,6 +165,7 @@ private _rebUniforms = [
     "WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"
 ]] call _fnc_saveToTemplate;
 ["voices", ["rhs_male01cz","rhs_male02cz","rhs_male03cz","rhs_male04cz","rhs_male05cz"]] call _fnc_saveToTemplate;
+"CzechMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

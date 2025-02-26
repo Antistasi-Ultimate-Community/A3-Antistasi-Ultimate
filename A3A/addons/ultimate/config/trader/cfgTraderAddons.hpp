@@ -107,13 +107,13 @@
     {
         addons[] = {"Weapons_1_F_lxWS"};
         weapons = "weapons_ws";
-        vehicles = "vehicles_ws"
+        vehicles = "vehicles_ws";
     };
     class addons_rf : addons_base
     {
         addons[] = {"RF_Weapons"};
         weapons = "weapons_rf";
-        // Needs vehicles doing, can use some of the technical variants I made in config fixes
+        vehicles = "vehicles_rf";
     };
     class addons_racs : addons_base
     {
@@ -246,4 +246,67 @@
     {
         addons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "cwr3_weapons", "cwr3_expansion_usmc"};
         vehicles = "vehicles_cwriiiusmc";
+    };
+	class addons_flyleg : addons_base
+    {
+        addons[] = {"sab_flyinglegends"};
+        vehicles = "vehicles_flyleg";
+    };
+    class addons_scrtwpns : addons_base
+    {
+        addons[] = {"sab_flyinglegends","sab_sw_i16"};
+        vehicles = "vehicles_scrtwpns";
+    };
+    class addons_navleg : addons_base
+    {
+        addons[] = {"sab_navallegends"};
+        vehicles = "vehicles_navleg";
+    };
+    class addons_ffp : addons_base
+    {
+        addons[] = {"Finnish_Forces_Pack"};
+        weapons = "weapons_ffp";
+        vehicles = "vehicles_ffp";
+    };
+    class addons_ffpxa185 : addons_base
+    {
+        addons[] = {"XA_185"};
+        vehicles = "vehicles_ffpxa185";
+    };
+    class addons_hafm : addons_base
+    {
+        addons[] = {"HAFM_Acc"};
+        weapons = "weapons_hafm";
+        vehicles = "vehicles_hafm";
+    };
+    class addons_ylarms : addons_base
+    {
+        addons[] = {"YL_scripts"};
+        weapons = "weapons_ylarms";
+    };
+    class addons_projinf : addons_base
+    {
+        addons[] = {"bnae_core"};
+        weapons = "weapons_projinf";
+    };
+    class addons_jca : addons_base
+    {
+        addons[] = {"Weapons_F_JCA_IA","Weapons_F_JCA_IA_Accessories","Weapons_F_JCA_IA_LongRangeRifles_AWM","Weapons_F_JCA_IA_Pistols_P226","Weapons_F_JCA_IA_Pistols_P320","Weapons_F_JCA_IA_Rifles_M4A1","Weapons_F_JCA_IA_Rifles_M4A4","Weapons_F_JCA_IA_Rifles_SR10","Weapons_F_JCA_IA_Rifles_SR25","Weapons_F_JCA_IA_SMGs_MP5"};
+        weapons = "weapons_jca";
+    };
+    class addons_FlexNorAF : addons_base
+    {
+        addons[] = {"Flex_CUP_NOR_Faction"};
+        vehicles = "CUP_NorAF_Vehicles";
+    };
+    class addons_FlexNorAFF16 : addons_base
+    {
+        addons[] = {"F16_Norwegian_Reskin"};
+        vehicles = "CUP_NorAF_F16";
+    };
+    class addons_ef : addons_base
+    {
+        addons[] = {"EF_Marines"};
+        weapons = "weapons_ef";
+        vehicles = "vehicles_ef";
     };

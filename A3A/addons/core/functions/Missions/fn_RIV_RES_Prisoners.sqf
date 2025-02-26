@@ -56,7 +56,7 @@ private _grpPOW = createGroup teamPlayer;
 
 for "_i" from 0 to _countX do {
 	private _unit = [_grpPOW, FactionGet(reb,"unitUnarmed"), (_posHouse select _i), [], 0, "NONE"] call A3A_fnc_createUnit;
-	[_unit, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+	[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 	_unit allowDamage false;
 	_unit setCaptive true;
 	_unit disableAI "MOVE";
@@ -111,7 +111,7 @@ if (dateToNumber date < _dateLimitNum && {alive _x} count _POWs > 0) then {
 	_patrolMrk setMarkerAlphaLocal 0;
 
 	for "_i" from 1 to _patrolCount do {
-		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
+		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_RivalsSpawnGroup;
 		(units _patrolGroup) apply {
 			[_x] call A3A_fnc_NATOinit;
 		};

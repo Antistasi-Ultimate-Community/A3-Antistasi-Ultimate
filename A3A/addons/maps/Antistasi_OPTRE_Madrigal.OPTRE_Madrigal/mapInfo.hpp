@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class optre_madrigal {
 	population[] = {
 		{"Barcelonova", 683},{"Fort_Romeo", 124},{"Castilla_Facility", 229},{"Castra_Arcology", 360},{"Airbase", 336},{"Enix_Relay", 172},{"Merida", 473},{"Caralis", 197},{"Gibaja", 163},{"Ostia", 103},{"Malaca", 79},{"Laredo_Base", 197},{"Sierra_Outpost", 111},{"Victor_Outpost", 35},{"Gladius_Academy", 277},{"Adrada", 89},{"Nisa", 63},{"Luciana", 120},{"Gargantiel", 92},{"Onil", 55},{"Illana", 128},{"Arenys", 188},{"Neila", 171},{"Monroy", 118},{"Nasca", 43},{"Cartagena", 102},{"San_Jose", 82},{"Encinitas", 203},{"LaVilla_Resort", 115},{"Getaria", 230}
@@ -9,7 +10,7 @@ class optre_madrigal {
 	antennasBlacklistIndex[] = {0,2,3,4,6,7,9,10,11,12};
 	banks[] = {}; 
 	garrison[] = {
-		{},{"outpost_4"},{},{}
+		{},{"outpost_6","outpost_7","resource_2"},{},{}
 	};
 	fuelStationTypes[] = {"Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","Land_Fuelstation","Land_Fuelstation_army","Land_Benzina_schnell"};
 	milAdministrations[] = {
@@ -17,14 +18,11 @@ class optre_madrigal {
 	};
 	climate = "temperate";
 	buildObjects[] = {
-		// Large vanilla arid structures
-		{"Land_BagBunker_Large_F", 300}, {"Land_BagBunker_Tower_F", 300}, {"Land_BagBunker_Small_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// Vanilla arid sandbag walls
-		{"Land_BagFence_Long_F", 10}, {"Land_BagFence_Round_F", 10}, {"Land_BagFence_Short_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_SCIFI,
+		BUILDABLES_TEMPERATE,
+		BUILDABLES_UNIVERSAL
 	};
 	// Needs to be re-done when possible
 };

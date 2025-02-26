@@ -1,0 +1,1 @@
+(_loadoutData get "glasses") pushBack "CSLA_glsPlscSpring";
