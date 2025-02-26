@@ -104,6 +104,7 @@ if (5 < (random 100)) then {
     "AsianHead_A3_04",
     "AsianHead_A3_05"
 ]] call _fnc_saveToTemplate;
+"ChineseMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

@@ -312,6 +312,16 @@ _loadoutData set ["AALaunchers", [
 ["launch_B_Titan_tna_F", "", "acc_pointer_IR", "", ["Titan_AA"], [], ""]
 ]];
 
+private _glammo = ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "1Rnd_Smoke_Grenade_shell"];
+
+if (_hasRF) then {
+    _glammo pushBack "1Rnd_RC40_HE_shell_RF";
+};
+
+if (_hasWs) then {
+	_glammo pushBack "1Rnd_Pellet_Grenade_shell_lxWS";
+};
+
 private _rifles = [
 	["arifle_AKM_F", "", "", "", ["30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_Green_F"], [], ""]
 ];
@@ -328,7 +338,7 @@ private _carbines = [
 	["arifle_AKS_F", "", "", "", ["30Rnd_545x39_Mag_F", "30Rnd_545x39_Mag_F", "30Rnd_545x39_Mag_Tracer_F"], [], ""]
 ];
 private _gls = [
-	["arifle_AK12_GL_F", "", "", "", ["30Rnd_762x39_AK12_Mag_F", "30Rnd_762x39_AK12_Mag_F", "30Rnd_762x39_AK12_Mag_Tracer_F"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "1Rnd_Smoke_Grenade_shell"], ""]
+	["arifle_AK12_GL_F", "", "", "", ["30Rnd_762x39_AK12_Mag_F", "30Rnd_762x39_AK12_Mag_F", "30Rnd_762x39_AK12_Mag_Tracer_F"], _glammo, ""]
 ];
 private _mgs = [
 	["LMG_03_F", "", "", "", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""]
@@ -365,10 +375,6 @@ if (_hasMarksman) then {
 	#include "..\DLC_content\weapons\Marksman\Vanilla_Rivals.sqf" 
 };
 
-if (_hasApex) then {
-	#include "..\DLC_content\weapons\Apex\Vanilla_Rivals.sqf" 
-};
-
 if (_hasWs) then {
 	#include "..\DLC_content\weapons\WS\Vanilla_Rivals.sqf" 
 };
@@ -383,6 +389,10 @@ if (_hasSOG) then {
 
 if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
 };
 
 _loadoutData set ["rifles", _rifles];
@@ -447,6 +457,11 @@ private _vests = ["V_TacChestrig_cbr_F", "V_TacChestrig_grn_F", "V_TacChestrig_o
 _loadoutData set ["offuniforms", ["U_I_C_Soldier_Camo_F"]];
 _loadoutData set ["vests", _vests];
 
+private _heavyVests = ["V_TacVestIR_blk", "V_Press_F", "V_PlateCarrierIAGL_oli", "V_I_G_resistanceLeader_F", "V_TacVest_blk_POLICE","V_PlateCarrier1_blk","V_PlateCarrier2_blk"];
+_loadoutData set ["heavyVests", _heavyVests];
+
+_loadoutData set ["heavyUniforms", []]; ///don't know why it's here but could be useful in the future
+
 private _backpacks = ["B_AssaultPack_rgr","B_AssaultPack_cbr","B_AssaultPack_sgg","B_AssaultPack_khk","B_AssaultPack_blk","B_TacticalPack_oli","B_Carryall_oli","B_Kitbag_sgg","B_FieldPack_oli"];
 _loadoutData set ["backpacks", _backpacks];
 _loadoutData set ["helmets", _helmets];
@@ -465,20 +480,52 @@ private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["vests", ["V_TacChestrig_cbr_F"]];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_O"]];
 
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
-};
-
 if (_hasArtOfWar) then {
 	#include "..\DLC_content\gear\Artofwar\Vanilla_Rivals.sqf" 
 };
 
+if (_hasContact) then {
+	#include "..\DLC_content\gear\Contact\Vanilla_Rivals.sqf" 
+};
+
+if (_hasWs) then {
+	#include "..\DLC_content\gear\WS\Vanilla_Rivals.sqf" 
+};
+
+if (_hasRF) then {
+	#include "..\DLC_content\gear\RF\Vanilla_Rivals.sqf" 
+};
+
+if (_hasLawsOfWar) then {
+	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
+};
+
+if (_hasGM) then {
+	#include "..\DLC_content\gear\GM\Vanilla_Rivals.sqf" 
+};
+
+if (_hasCSLA) then {
+	#include "..\DLC_content\gear\CSLA\Vanilla_Rivals.sqf" 
+};
+
 if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\SOG\Vanilla_Rivals.sqf" 
 };
 
 if (_hasSPE) then {
-    #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
+	#include "..\DLC_content\gear\SPE\Vanilla_Rivals.sqf" 
+};
+
+if (_hasJets) then {
+	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
+};
+
+if (_hasEF) then {
+	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\gear\Vanilla_Rivals.sqf"
 };
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
@@ -533,7 +580,7 @@ private _cellLeaderTemplate = {
 		["headgear"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
-	["vests"] call _fnc_setVest;
+	[selectRandom ["vests", "heavyVests"]] call _fnc_setVest;
 	[["offuniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
 	[selectRandom ["grenadeLaunchers", "rifles"]] call _fnc_setPrimary;
@@ -562,8 +609,8 @@ private _cellLeaderTemplate = {
 private _mercenaryTemplate = {
 	["helmets"] call _fnc_setHelmet;
 	[selectRandomWeighted [[], 1.5, "facewear", 1, "fullmask", 1]] call _fnc_setFacewear;
-	["vests"] call _fnc_setVest;
-	["uniforms"] call _fnc_setUniform;
+	["heavyVests"] call _fnc_setVest;
+	[["heavyUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
 	[selectRandom ["grenadeLaunchers", "rifles", "tunedRifles"]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
@@ -725,8 +772,8 @@ private _saboteurTemplate = {
 		["headgear"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
-	["vests"] call _fnc_setVest;
-	["uniforms"] call _fnc_setUniform;
+	[selectRandom ["vests", "heavyVests"]] call _fnc_setVest;
+	[["heavyUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
 	["grenadeLaunchers"] call _fnc_setPrimary;
@@ -762,8 +809,8 @@ private _explosivesExpertTemplate = {
 		["headgear"] call _fnc_setHelmet;
 		[selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
 	};
-	["vests"] call _fnc_setVest;
-	["uniforms"] call _fnc_setUniform;
+	["heavyVests"] call _fnc_setVest;
+	[["heavyUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
 	[selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
