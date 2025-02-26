@@ -9,12 +9,11 @@
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CSLA_CIV_JARA250"]] call _fnc_saveToTemplate;
-//["vehiclesBasic", []] call _fnc_saveToTemplate;
 private _vehiclesLightUnarmed = ["FIA_AZU_para","FIA_BTR40"];
-private _vehiclesLightArmed = ["FIA_BTR40_DSKM","FIA_AZU_DSKM","FIA_AZU_T21"];
+private _vehiclesLightArmed = ["FIA_BTR40_DSKM","FIA_AZU_DSKM","FIA_AZU_T21","CSLA_FIA_V3S_AGS17","CSLA_FIA_V3S_GT"];
 ["vehiclesTruck", ["CSLA_V3S"]] call _fnc_saveToTemplate;
 private _vehiclesAT = [];
-private _vehicleAA = [];
+private _vehicleAA = ["CSLA_FIA_PLdvK59V3S"];
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 
@@ -25,8 +24,8 @@ private _vehiclesCivCar = ["CSLA_CIV_AZU"];
 ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["C_Boat_Civil_01_F", "C_Rubberboat"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["CSLA_UK59L_Stat"]] call _fnc_saveToTemplate;
-["staticAT", ["CSLA_9K113_Stat"]] call _fnc_saveToTemplate;
+["staticMGs", ["CSLA_UK59L_Stat","FIA_DShKM_h_Stat","US85_M60E3_Stat_DES","US85_M60_Stat_DES"]] call _fnc_saveToTemplate;
+["staticAT", ["CSLA_9K113_Stat","FIA_AGS17_Stat"]] call _fnc_saveToTemplate;
 private _staticAA = [];
 ["staticMortars", ["CSLA_M52_Stat"]] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "CSLA_8rnd_82EOM52"] call _fnc_saveToTemplate;

@@ -9,3 +9,5 @@ _vehiclesLightArmed append ["SPE_Milice_R200_MG34_noinsignia","SPE_US_G503_MB_M1
 //_vehiclesBasic append [];
 //_vehiclesAt append [];
 _vehicleAA append ["SPE_FR_M16_Halftrack_noinsignia","SPE_OpelBlitz_Flak38_noinsignia"];
+
+_vehiclesMedical append ["SPE_FFI_OpelBlitz_Ambulance_noinsignia","SPE_FR_M3_Halftrack_Ambulance"];

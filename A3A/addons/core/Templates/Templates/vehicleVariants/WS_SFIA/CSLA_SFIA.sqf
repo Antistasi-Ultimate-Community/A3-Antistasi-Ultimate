@@ -34,4 +34,7 @@
 ["CSLA_T72M1_noinsignia",["CSLAd",1]],
 
 ["FIA_BTR40_noinsignia",["FIAd",1]],
-["FIA_BTR40_DSKM_noinsignia",["FIAd",1]]
+["FIA_BTR40_DSKM_noinsignia",["FIAd",1]],
+///1.3 update
+["CSLA_FIA_V3S_AGS17",["FIAd2",1]],
+["CSLA_FIA_V3S_GT_noinsignia",["FIAd2",1]]

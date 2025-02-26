@@ -49,7 +49,15 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 
 ["vehiclesPlanesCAS", ["SPE_FW190F8"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["SPE_FW190F8"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["JK_B_C47_F"]] call _fnc_saveToTemplate;
+
+private _vehiclesPlanesTransport = [];
+if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
+    _vehiclesPlanesTransport append ["SPEX_C47_Skytrain"];
+};
+if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
+    _vehiclesPlanesTransport append ["JK_B_C47_F"];
+};
+["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;

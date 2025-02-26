@@ -5,7 +5,7 @@
     ["arifle_AK12_arid_F","muzzle_snds_B_arid_F","acc_pointer_IR","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],[],"bipod_02_F_arid"]
 ];
 (_sfLoadoutData get "grenadeLaunchers") append [
-    ["arifle_AK12_GL_arid_F","muzzle_snds_B_arid_F","acc_pointer_IR","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"],""]
+    ["arifle_AK12_GL_arid_F","muzzle_snds_B_arid_F","acc_pointer_IR","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],_glammo,""]
 ];
 (_sfLoadoutData get "carbines") append [
     ["arifle_AK12U_F","muzzle_snds_B","acc_pointer_IR","optic_Arco_AK_blk_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],[],"bipod_02_F_arid"],
@@ -23,7 +23,7 @@
     ["arifle_AK12_arid_F","","acc_pointer_IR","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],[],"bipod_02_F_arid"]
 ];
 (_eliteLoadoutData get "grenadeLaunchers") append [
-    ["arifle_AK12_GL_arid_F","","acc_pointer_IR","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"],""]
+    ["arifle_AK12_GL_arid_F","","acc_pointer_IR","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],_glammo,""]
 ];
 (_eliteLoadoutData get "carbines") append [
     ["arifle_AK12U_F","","acc_pointer_IR","optic_Arco_AK_blk_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],[],"bipod_02_F_arid"],
@@ -41,7 +41,7 @@
     ["arifle_AK12_arid_F","","acc_flashlight","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],[],"bipod_02_F_arid"]
 ];
 (_militaryLoadoutData get "grenadeLaunchers") append [
-    ["arifle_AK12_GL_arid_F","","acc_flashlight","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"],""]
+    ["arifle_AK12_GL_arid_F","","acc_flashlight","optic_Arco_AK_arid_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],_glammo,""]
 ];
 (_militaryLoadoutData get "carbines") append [
     ["arifle_AK12U_F","","acc_flashlight","optic_Arco_AK_blk_F",["30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_F","30rnd_762x39_AK12_Arid_Mag_Tracer_F"],[],"bipod_02_F_arid"],
@@ -65,10 +65,10 @@
     ["arifle_MSBS65_UBS_F", "", "acc_pointer_IR", "optic_MRCO",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Slug","6Rnd_12Gauge_Slug"], ""]
 ];
 (_militiaLoadoutData get "grenadeLaunchers") append [
-    ["arifle_MSBS65_GL_F", "muzzle_snds_H", "acc_pointer_IR", "optic_ico_01_f",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"], "bipod_02_F_lush"],
-    ["arifle_MSBS65_GL_F", "muzzle_snds_H", "acc_pointer_IR", "optic_MRCO",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"], "bipod_02_F_lush"],
-	["arifle_MSBS65_GL_F", "", "acc_pointer_IR", "optic_ico_01_f",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"], "bipod_02_F_lush"],
-    ["arifle_MSBS65_GL_F", "", "acc_pointer_IR", "optic_MRCO",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell"], "bipod_02_F_lush"]
+    ["arifle_MSBS65_GL_F", "muzzle_snds_H", "acc_pointer_IR", "optic_ico_01_f",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], _glammo, "bipod_02_F_lush"],
+    ["arifle_MSBS65_GL_F", "muzzle_snds_H", "acc_pointer_IR", "optic_MRCO",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], _glammo, "bipod_02_F_lush"],
+	["arifle_MSBS65_GL_F", "", "acc_pointer_IR", "optic_ico_01_f",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], _glammo, "bipod_02_F_lush"],
+    ["arifle_MSBS65_GL_F", "", "acc_pointer_IR", "optic_MRCO",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], _glammo, "bipod_02_F_lush"]
 ];
 (_militiaLoadoutData get "carbines") append [
     ["arifle_MSBS65_F", "muzzle_snds_H", "acc_pointer_IR", "optic_ico_01_f",["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], [], "bipod_02_F_lush"],

@@ -61,6 +61,12 @@
         weapons = "weapons_sogpf";
         vehicles = "vehicles_sog";
     };
+    class addons_nickelsteel : addons_base
+    {
+        addons[] = {"air_f_vietnam_04"};
+        weapons = "weapons_nickelsteel";
+        vehicles = "vehicles_nickelsteel";
+    };
     class addons_3cbf : addons_base
     {
         addons[] = {"UK3CB_Factions_Vehicles_SUV"};
@@ -78,6 +84,12 @@
         addons[] = {"ww2_spe_assets_c_characters_germans_c"};
         weapons = "weapons_spe";
         vehicles = "vehicles_spe";
+    };
+    class addons_spex : addons_base
+    {
+        addons[] = {"ww2_spex_assets_c_characters_americans_c"};
+        weapons = "weapons_spex";
+        vehicles = "vehicles_spex";
     };
     class addons_ffaa : addons_base
     {
