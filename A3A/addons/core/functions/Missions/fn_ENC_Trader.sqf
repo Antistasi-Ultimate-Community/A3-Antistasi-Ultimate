@@ -9,11 +9,11 @@ Info("Trader Mission Init.");
 
 _positionX = getMarkerPos _markerX;
 
-private _traderPosVague = createMarkerLocal ["TraderMarkerVague", _positionX, 1];
-_traderPosVague setMarkerColorLocal "ColorUNKNOWN";
-_traderPosVague setMarkerBrushLocal "DiagGrid";
-_traderPosVague setMarkerShapeLocal "ELLIPSE";
-_traderPosVague setMarkerSize [300, 300]; // global function to broadcast the marker after setting its size
+private _traderMarkerVague = createMarkerLocal ["TraderMarkerVague", _positionX, 1];
+_traderMarkerVague setMarkerColorLocal "ColorUNKNOWN";
+_traderMarkerVague setMarkerBrushLocal "DiagGrid";
+_traderMarkerVague setMarkerShapeLocal "ELLIPSE";
+_traderMarkerVague setMarkerSize [1500, 1500]; // global function to broadcast the marker after setting its size
 
 private _traderPosition = [
     _positionX, //center
@@ -77,10 +77,10 @@ private _taskId = "TRADER" + str A3A_taskCount;
         format [localize "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
         localize "STR_trader_quest_header",
         //_markerX
-        _traderPosVague
+        _traderMarkerVague
     ],
     //_traderPosition,
-    getMarkerPos _traderPosVague, // use center of vague area marker instead of exact trader position
+    getMarkerPos _traderMarkerVague, // use center of vague area marker instead of exact trader position
     false,
     0,
     true,
@@ -110,12 +110,19 @@ waitUntil {
 traderPosition = _traderPosition;
 publicVariable "traderPosition";
 
-isTraderQuestAssigned = false;
-isTraderQuestCompleted = true;
-publicVariable "isTraderQuestAssigned";
+_traderMarker = createMarkerLocal ["_traderMarker", _traderPosition];
+_traderMarker setMarkerTypeLocal "hd_objective";
+_traderMarker setMarkerSizeLocal [1, 1];
+_traderMarker setMarkerTextLocal (localize "STR_marker_arms_dealer");
+_traderMarker setMarkerColorLocal "ColorUNKNOWN";
+_traderMarker setMarkerAlpha 1;
+sidesX setVariable [_traderMarker,teamPlayer,true];
+publicVariable "_traderMarker";
+
+isTraderQuestCompleted = true; 
 publicVariable "isTraderQuestCompleted";
 
 deleteVehicle _trigger;
-deleteMarker _traderPosVague;
+deleteMarker _traderMarkerVague;
 
 [_taskId, "TRADER", 5] spawn A3A_fnc_taskDelete;
