@@ -897,5 +897,4 @@ sleep 20;
 
 deleteVehicle _box;
 
-
 Info("Crashsite clean up complete.");
