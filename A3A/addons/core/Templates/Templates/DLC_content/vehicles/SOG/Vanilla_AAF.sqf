@@ -24,7 +24,7 @@ _repairTrucks append ["vn_i_wheeled_m54_repair_marines"];
 _fuelTrucks append ["vn_i_wheeled_m54_fuel_marines"];
 _medicalTrucks append ["vn_b_armor_m577_02_aus_army","vn_b_wheeled_lr2a_03_aus_army_noinsignia","vn_o_armor_btr50pk_03_nva65_noinsignia","vn_o_wheeled_btr40_02_noinsignia"];
 _planesCAS append ["vn_b_air_f4c_cas","vn_b_air_f100d_cas","vn_o_air_mig19_at_noinsignia","vn_o_air_mig21_cas_noinsignia"];
-_planesAA append ["vn_b_air_f100d_cap","vn_b_air_f4c_mr","vn_o_air_mig19_cap_noinsignia","vn_o_air_mig21_cap_noinsignia"];
+_planesAA append ["vn_b_air_f100d_cap","vn_b_air_f4c_cap","vn_o_air_mig19_cap_noinsignia","vn_o_air_mig21_cap_noinsignia"];
 _howitzers append ["vn_o_nva_static_d44_01","vn_i_static_m101_02","vn_o_kr_static_h12"];
 _gunBoat append ["vn_b_boat_11_01","vn_b_boat_09_01","vn_b_boat_10_01","vn_b_boat_05_01","vn_b_boat_05_02","vn_b_boat_06_01","vn_b_boat_06_02","vn_b_boat_13_03","vn_b_boat_13_01","vn_b_boat_13_04","vn_b_boat_13_02","vn_b_boat_12_03","vn_b_boat_12_01",
 "vn_b_boat_12_04","vn_b_boat_12_02","vn_o_boat_04_01","vn_o_boat_04_02","vn_o_boat_03_01","vn_o_boat_03_02","vn_i_boat_12_02_fank_71","vn_i_boat_12_04_fank_71","vn_i_boat_12_01_fank_71","vn_i_boat_12_03_fank_71"];

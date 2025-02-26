@@ -83,5 +83,20 @@
 ["US85_MH60M134", ["addWinch",0.5]],
 ["US85_MH60FFAR", ["addWinch",0.5]],
 ["US85_UH60", ["addESSS",0.5,"addWinch",0.5]],
-["US85_UH60M240", ["addWinch",0.5]]
-
+["US85_UH60M240", ["addWinch",0.5]],
+////1.3 update
+["AFMC_M113A1_noinsignia", ["AddBox",0.3,"AddBagsSide",0.3,"AddInt1",0.3,"AddTools",0.3,"addCamonet_front",0.3,"AddKanister",0.3,"AddTop1",0.3,"AddTop2",0.3,"AddCamonet",0.3,"AddBarbwire",0.3,"AddMetalRope",0.3]],
+["AFMC_M113A1_Mk19_noinsignia", ["AddBox",0.3,"AddBagsSide",0.3,"AddInt1",0.3,"AddTools",0.3,"addCamonet_front",0.3,"AddKanister",0.3,"AddTop1",0.3,"AddTop2",0.3,"AddCamonet",0.3,"AddBarbwire",0.3,"AddMetalRope",0.3]],
+["AFMC_M113A2ext_noinsignia", ["AddBox",0.3,"AddBagsSide",0.3,"AddInt1",0.3,"AddTools",0.3,"AddSpareWheel",0.3,"AddKanister",0.3,"AddTop1",0.3,"AddTop2",0.3,"AddCamonet",0.3,"AddBarbwire",0.3,"AddMetalRope",0.3]],
+["AFMC_M1008_M2_noinsignia",["AddBarbwire",0.3,"AddKanister",0.3,"AddBox",0.3,"AddTop1",0.3,"AddCamonet",0.3,"AddBagsSide",0.3,"AddTools",0.3,"addBenches",0.3,"addRearFrame",0.3,"addFrontFrame",0.3]],
+["AFMC_M1008_MK19_noinsignia",["AddBarbwire",0.3,"AddKanister",0.3,"AddBox",0.3,"AddTop1",0.3,"AddCamonet",0.3,"AddBagsSide",0.3,"AddTools",0.3,"addBenches",0.3,"addRearFrame",0.3,"addFrontFrame",0.3]],
+["AFMC_M923A1_GT_noinsignia",["ADD_frame",0.3,"ADD_ammoBox",0.3,"ADD_Barbwire",0.3,"ADD_BagsSide",0.3,"ADD_Int1",0.3,"ADD_Int2",0.3,"ADD_Camonet",0.3,"ADD_Mags",0.3,"ADD_Tools",0.3,"ADD_WaterCan",0.3,"ADD_spareWheel",0.3,"ADD_fuelcan",0.3]],
+["US85_M113A1_TOW",["AddBox",0.3,"AddBagsSide",0.3,"AddTools",0.3,"addCamonet_front",0.3,"AddSpareWheel",0.3,"addTOW_cover",0.3,"addTOW_nightsight",0.3,"AddShield",0.3,"AddKanister",0.3,"AddTop1",0.3,"AddTop2",0.3,"AddCamonet",0.3,"AddBarbwire",0.3,"AddMetalRope",0.3]],
+["US85_M1025_Mk19",["AddBarbwire",0.3,"AddSparewheel",0.3,"AddCamonet",0.3]],
+["US85_M1025_TOW",["AddBarbwire",0.3,"AddSparewheel",0.3,"AddCamonet",0.3]],
+["US85_M1043_Mk19",["AddBarbwire",0.3,"AddSparewheel",0.3,"AddCamonet",0.3]],
+["US85_M1043_TOW",["AddBarbwire",0.3,"AddSparewheel",0.3,"AddCamonet",0.3]],
+["US85_M998",["AddBarbwire",0.3,"AddCamonet",0.3,"AddBumper",0.3,"AddDoors",0.3,"AddBench",0.3,"AddCabinCover",0.3,"AddCargoCover",0.3,"AddUSMCparts",0.3]],
+["CSLA_OT62D_noinsignia",["addTools",0.3,"addRope",0.3,"addCover",0.3,"addSpareTracks",0.3]],
+["CSLA_FIA_V3S_AGS17",["AddBagsSide",0.3,"AddInt1",0.3,"AddInt2",0.3,"addCamonet",0.3,"addMags",0.3,"addTools",0.3,"addTripod",0.3,"addAmmo",0.3,"addRadio",0.3,"addSpareWheel",0.3,"addFuelKanister",0.3]],
+["CSLA_FIA_V3S_GT_noinsignia",["AddBagsSide",0.3,"AddInt1",0.3,"AddInt2",0.3,"addCamonet",0.3,"addCover",0.3,"addCamo",0.3,"addMags",0.3,"addTools",0.3,"addTripod",0.3,"ADDBarbwire",0.3,"addSpareWheel",0.3,"addFuelKanister",0.3]]
