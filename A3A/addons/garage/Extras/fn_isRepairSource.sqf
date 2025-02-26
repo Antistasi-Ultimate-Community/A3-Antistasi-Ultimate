@@ -34,9 +34,9 @@ if (A3A_hasAce) then {
     private _value = _vehicle getVariable ["ACE_isRepairVehicle", getNumber (_vehCfg/"ace_repair_canRepair")];
     _value in [1, true];
 } else {
-    if (isNull _vehicle) then {
-        getNumber (_vehCfg/"transportRepair") > 0
-    } else {
-        getRepairCargo _vehicle > 0
-    };
+    private _vehCfg = configFile/"CfgVehicles"/_vehicle;
+    if (!isClass _vehCfg) exitWith {false}; //invalid class string passed
+    if (getNumber (_vehCfg/"transportRepair") > 0) exitWith {true};                       // vanilla
+    if (getNumber (_vehCfg/"ace_repair_canRepair") > 0) exitWith {true};
+    false;
 };

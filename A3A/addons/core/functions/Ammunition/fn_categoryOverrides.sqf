@@ -413,3 +413,20 @@ A3A_categoryOverrides = false call A3A_fnc_createNamespace;
 {
 	A3A_categoryOverrides setVariable [_x select 0, _x select 1];
 } forEach _categoryOverrideTable;
+
+
+A3A_specialGrenadeLaunchers = createHashMap;
+{
+	private _class = _x#0;
+	private _config = configFile >> "CfgWeapons" >> _class;
+	if !(isClass _config) then { continue };
+
+	private _baseWeapon = getText (_config >> "baseWeapon");
+	if (_baseWeapon == "") then { continue };
+
+	private _muzzle = getText (_config >> "LinkedItems" >> "LinkedItemsMuzzle" >> "item");
+	if (_muzzle == "") then { continue };
+
+	A3A_specialGrenadeLaunchers set [_class, [_baseWeapon, _muzzle]];
+
+} forEach (_categoryOverrideTable select { "GrenadeLaunchers" in _x#1 });
