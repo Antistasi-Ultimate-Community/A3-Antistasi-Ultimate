@@ -9282,7 +9282,7 @@
                 <French>Intercepter un convoi de ravitaillement</French>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_supplies">
-                <Original>A truck with humanitarian supplies destination %3 is about to depart at %2 from %1. Steal those supplies, bring them to %3 and let people in there know it is %4 who's giving those supplies.</Original>
+                <Original>A truck with medical supplies destination %3 it's about to depart at %2 from %1. Steal that truck bring it to %3 and let people in there know it is %4 who's giving those supplies.</Original>
                 <Russian>Грузовик с медикаментами и медицинским оборудованием собирается поехать из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте медикаменты нуждающимся в них людям, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Chinesesimp>一辆装有药品和医疗设备的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
                 <Korean>의료 보급품이 있는 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져오고 해당 주민들에게 그 보급품을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
