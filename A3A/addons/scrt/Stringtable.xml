@@ -5301,15 +5301,21 @@
                 <Korean>지원 설정</Korean>
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
-            <Key ID="STR_params_blackMarketIgnoreRequirements">
-                <Original>[Experimental] Ignore Black Market Vehicle Requirements</Original>
-                <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
-            </Key>
-            <Key ID="STR_params_blackMarketDiscountVehicle">
-                <Original>[Experimental] Black Market Vehicle Discount</Original>
-            </Key>
-            <Key ID="STR_params_blackMarketDiscountWeapon">
-                <Original>[Experimental] Black Market Equipment Discount</Original>
+            <Key ID="STR_params_allowCivDialog">
+                <Original>[Experimental] Allow talking to civilians</Original>
+                <Russian>[Экспериментально] Разрешить разговоры с гражданскими</Russian>
+                <German>[Experimentell] Gespräche mit Zivilisten erlauben</German>
+                <Italian>[Sperimentale] Permetti di parlare con i civili</Italian>
+                <Spanish>[Experimental] Permitir hablar con civiles</Spanish>
+                <French>[Expérimental] Autoriser les conversations avec les civils</French>
+                <Korean>[실험적] 민간인과 대화 허용</Korean>
+                <Japanese>[試験的] 民間人との会話を許可</Japanese>
+                <Chinesesimp>[实验性] 允许与平民交谈</Chinesesimp>
+                <Chinese>[實驗性] 允許與平民交談</Chinese>
+                <Polish>[Eksperymentalne] Zezwól na rozmowy z cywilami</Polish>
+                <Czech>[Experimentální] Povolit rozhovory s civilisty</Czech>
+                <Portuguese>[Experimental] Permitir conversas com civis</Portuguese>
+                <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>Enable spectrum device hacking capability (Contact DLC required)</Original>

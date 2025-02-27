@@ -3,33 +3,43 @@
         MaxxLite
     
     Description:
-        on success selects a mission and assigns it to the closest enemy town.
+        Handles the intel/civ response from dialogCiv
     
     Params:
-        _civUnit <Default: ObjNull>
+        _unit <Default: ObjNull>
         _caller <Default: ObjNull>
     
+    Dependencies:
+        N/A
+    
+    Scope:
+        Server
+    
+    Environment:
+        Unscheduled
+    
     Usage:
-        call A3A_fnc_dialogCivFinished;
+        [_unit, _caller] call A3A_fnc_dialogCivFinished;
     
     Return:
-        Success/Fail <BOOL>
+        true (success) false (failure)
 */
+
 #include "..\..\script_component.hpp"
-params [["_civUnit", ObjNull], ["_caller", ObjNull]];
+params [["_unit", ObjNull], ["_caller", ObjNull]];
 
-if (_civUnit isEqualTo ObjNull || _caller isEqualTo ObjNull) exitWith {nil};
+if (_unit isEqualTo ObjNull || _caller isEqualTo ObjNull) exitWith {nil};
 
-if (_civUnit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
+if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
     private _failMessage = selectRandom [
         localize "STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1", 
         localize "STR_antistasi_actions_talk_with_civ_fail_alreadyspoken2"
     ];
 
-    [_civUnit, _failMessage] remoteExec ["globalChat", _caller];
+    [_unit, _failMessage] remoteExec ["globalChat", _caller];
 };
 
-private _possibleMarkers = [citiesX, _civUnit, true] call A3A_fnc_findIfNearAndHostile;
+private _possibleMarkers = [citiesX, _unit, true] call A3A_fnc_findIfNearAndHostile;
 
 private _isDialogSuccessful = (captive _caller && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
 
@@ -79,7 +89,7 @@ if (_isDialogSuccessful) exitWith {
             };
         };
 
-        [_civUnit, (localize _civResponse)] remoteExec ["globalChat", _caller];
+        [_unit, (localize _civResponse)] remoteExec ["globalChat", _caller];
         [[_missionMarker], _civRequestedMission] remoteExec ["A3A_fnc_scheduler",2];
         missionNamespace setVariable ["A3U_dialogCivMissionInProgress", true, true];
 
@@ -94,7 +104,7 @@ if (_isDialogSuccessful) exitWith {
 
                         [(_this#0), (localize _message)] remoteExec ["globalChat", _caller];
                     },
-                    [_civUnit], 
+                    [_unit], 
                     5 // 5s is around the time it takes me to read the entire paragraph
                 ] call CBA_fnc_waitAndExecute;
 
@@ -145,10 +155,10 @@ if (_isDialogSuccessful) exitWith {
             default {_intelMessage = "STR_antistasi_actions_talk_with_civ_fail1"};
         };
         
-        [_civUnit, (localize _intelMessage)] remoteExec ["globalChat", _caller];
+        [_unit, (localize _intelMessage)] remoteExec ["globalChat", _caller];
     };
 
-    _civUnit setVariable ["A3U_civDialogHasSpoken", true, true];
+    _unit setVariable ["A3U_civDialogHasSpoken", true, true];
 
     true
 };
@@ -166,8 +176,8 @@ if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
     ];
 };
 
-[_civUnit, (localize _failMessage)] remoteExec ["globalChat", _caller];
+[_unit, (localize _failMessage)] remoteExec ["globalChat", _caller];
 
-_civUnit setVariable ["A3U_civDialogHasSpoken", true, true];
+_unit setVariable ["A3U_civDialogHasSpoken", true, true];
 
 false

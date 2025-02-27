@@ -3,31 +3,34 @@
         MaxxLite
     
     Description:
-        Adds dialog action to civs and selects a rescue mission
+        Adds the action to dialog with _unit locally
     
     Params:
-        _civUnit <Default: ObjNull>
+        _unit <Default: ObjNull>
+    
+    Dependencies:
+        N/A
+    
+    Scope:
+        Client
+    
+    Environment:
+        Unscheduled
     
     Usage:
-        [_civUnit] call A3A_fnc_dialogCiv;
+        [_unit] call A3A_fnc_dialogCiv;
     
     Return:
-        N/A
+        false if failure is handled
 */
-
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params [["_civUnit", ObjNull]];
-
-private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
-private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
-
-if (_lowCiv || _civNonHuman) exitWith {false};
+params [["_unit", ObjNull]];
 
 [
-    _civUnit,
+    _unit,
     localize "STR_antistasi_actions_talk_with_civ",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\unknown_ca", "\a3\ui_f\data\igui\cfg\simpletasks\types\talk_ca.paa",
     "true", "true",
@@ -42,7 +45,7 @@ if (_lowCiv || _civNonHuman) exitWith {false};
     },
     {},
     {
-        [_this select 0, _caller] remoteExecCall ["A3A_fnc_dialogCivFinished", 2];
+        [_target, _caller] remoteExecCall ["A3A_fnc_dialogCivFinished", 2]; // server should be handling this
     },
     {
         private _interruption = selectRandom [
@@ -50,7 +53,7 @@ if (_lowCiv || _civNonHuman) exitWith {false};
             localize "STR_antistasi_actions_talk_with_civ_interruption2"
         ];
 
-        [(_this select 0), _interruption] remoteExec ["globalChat", _caller];
+        [_target, _interruption] remoteExec ["globalChat", _caller];
     },
-    [_civUnit], 2, nil, true, false
-] remoteExec ["BIS_fnc_holdActionAdd", 0]; // hold interaction to talk with a civ.
+    [], 2, nil, true, false
+] call BIS_fnc_holdActionAdd;

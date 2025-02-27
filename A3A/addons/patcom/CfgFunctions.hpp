@@ -19,8 +19,11 @@ class CfgFunctions {
             class createMusicSource {};
             class createResourceCiv {};
             class createRoomLight {};
+            class destroyObject {};
+            class destroyObjectAction {};
             class getDayState {};
             class dialogCiv {};
+            class dialogCivAction {};
             class dialogCivFinished {};
             class unitAmbient {};
             class unitAmbientPlay {};

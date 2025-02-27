@@ -600,42 +600,14 @@ class Params
     {
         type = "Experimental";
     };
-    class enableVehicleAutoLock: ExperimentalParams
+    class allowCivDialog: ExperimentalParams
     {
-        title = $STR_params_enableVehicleAutoLock;
+        title = $STR_params_allowCivDialog;
         values[] = {0,1};
-        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
-    class vehicleLockpickTime: ExperimentalParams
-    {
-        title = $STR_params_vehicleLockpickTime;
-        values[] = {30,60,120};
-        texts[] = {"30s", "60s", "120s"};
-        default = 60;
-    };
-    class blackMarketIgnoreRequirements
-    {
-        title = $STR_params_blackMarketIgnoreRequirements;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
-    };
-    class A3U_blackMarketDiscountVehicle
-    {
-        title = $STR_params_blackMarketDiscountVehicle;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
-        default = 0;
-    };
-    class A3U_blackMarketDiscountWeapon
-    {
-        title = $STR_params_blackMarketDiscountWeapon;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
-        default = 0;
-    };
-    class enableSpectrumDevice
+    class enableSpectrumDevice: ExperimentalParams
     {
         title = $STR_params_enableSpectrumDevice;
         values[] = {0,1};

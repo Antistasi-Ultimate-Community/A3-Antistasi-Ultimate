@@ -57,20 +57,7 @@ private _musicSource = createVehicle ["Land_FMradio_F", _radioItem];
 
     private _totalTracks = count _tracks;
 
-    [
-        _musicSource,
-        localize "STR_antistasi_actions_destroy_radio",
-        "\a3\ui_f\data\igui\cfg\simpletasks\types\destroy_ca.paa", "\a3\ui_f\data\igui\cfg\simpletasks\types\destroy_ca.paa",
-        "true", "true",
-        {},
-        {},
-        {
-            private _radioItem = _this select 0;
-            deleteVehicle _radioItem;
-        },
-        {},
-        [_musicSource], 2, nil, true, false
-    ] remoteExec ["BIS_fnc_holdActionAdd", 0]; // hold interaction to destroy radio.
+    [_musicSource, 2] call A3A_fnc_destroyObjectAction;
 
     while { (alive _musicSource) } do {
         while { _tracksPlayed < _totalTracks } do {
