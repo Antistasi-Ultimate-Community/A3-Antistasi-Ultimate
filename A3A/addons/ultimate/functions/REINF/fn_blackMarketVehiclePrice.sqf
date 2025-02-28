@@ -34,4 +34,7 @@ _cost = if (isNil "_cost") then {
 	round (_cost * _diminishingFactor) // Apply diminishing returns to reduce cost
 };
 
-_cost
+private _discount = ((A3U_blackMarketDiscountVehicle / 10) * _cost);
+private _cost = round (_cost - _discount);
+
+_cost;

@@ -23,3 +23,5 @@
 
 (_militiaLoadoutData get "helmets") append ["H_HelmetB_plain_sb_khaki_RF","H_HelmetHeavy_White_RF","H_HelmetHeavy_Simple_White_RF","H_HelmetHeavy_VisorUp_White_RF"];
 (_militiaLoadoutData get "backpacks") append ["B_DuffleBag_Blue_RF"];
+
+(_policeLoadoutData get "vests") pushBack "V_TacVest_gen_holster_RF";

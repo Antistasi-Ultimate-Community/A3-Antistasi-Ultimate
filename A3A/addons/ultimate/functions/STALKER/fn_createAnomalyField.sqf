@@ -16,11 +16,13 @@
 
 // I had to rewrite the diwako spawning logic from scratch because the original doesn't take into account water, out of bounds, etc.
 
-params[["_anomalyAmount", 40]];
+params [["_anomalyAmount", 40]];
+
+_anomalyAmount = _anomalyAmount min (round A3U_setting_anomalyCap);
 
 private _anomalies = [];
 
-private _drawAnomalies = missionNamespace getVariable ["A3U_setting_anomalyDraw", false];
+private _drawAnomalies = A3U_setting_anomalyDraw;
 
 private _fnc_grabPos = {
     private _pos = [nil, ["water"]] call BIS_fnc_randomPos;
@@ -45,7 +47,7 @@ private _fnc_createMarker = {
     _marker setMarkerPos (getPos _anomaly);
 };
 
-[format ["Creating anomaly field, anomaly amount: ", [_anomalyAmount]], _fnc_scriptName] call A3U_fnc_log;
+[format ["Creating anomaly field, anomaly amount: %1", _anomalyAmount], _fnc_scriptName] call A3U_fnc_log;
 
 for "_i" from 1 to _anomalyAmount do {
     private _pos = call _fnc_grabPos;
@@ -85,6 +87,6 @@ for "_i" from 1 to _anomalyAmount do {
     };
 };
 
-[format ["Created anomaly field, anomaly amount final: ", [count _anomalies]], _fnc_scriptName] call A3U_fnc_log;
+[format ["Created anomaly field, anomaly amount final: %1", count _anomalies], _fnc_scriptName] call A3U_fnc_log;
 
 _anomalies
