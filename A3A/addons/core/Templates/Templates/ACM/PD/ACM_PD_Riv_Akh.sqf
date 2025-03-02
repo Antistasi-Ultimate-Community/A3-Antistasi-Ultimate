@@ -122,7 +122,7 @@ _loadoutData set ["uniforms", ["U_Simc_TCU_mk3_erdl_H", "U_Simc_TCU_mk3_erdl_H_t
 
 _loadoutData set ["vests", ["V_sns_m58_p37_m43", "V_Simc_SF_BAR_1", "V_Simc_56_4cm", "V_TacChestrig_oli_F", "V_Simc_SF_1", "V_Simc_Barbelt_M56_zusp"]];
 _loadoutData set ["medVests", ["V_Simc_56_med"]];
-_loadoutData set ["heavyVests", ["V_Simc_mk56", "V_Simc_SF_mk56_2", "V_Simc_SF_mk56_3", "V_Simc_SF_mk56_5", "V_Simc_SF_mk56_alt"]];
+_loadoutData set ["heavyVests", ["V_Simc_mk56", "V_Simc_SF_mk56_2", "V_Simc_SF_mk56_3", "V_Simc_SF_mk56_5", "V_Simc_mk56_alt"]];
 _loadoutData set ["medBackpacks", ["gm_ge_backpack_satchel_80_san"]];
 _loadoutData set ["atBackpacks", ["gm_pl_army_backpack_at_80_gry"]];
 _loadoutData set ["backpacks", ["B_simc_pack_frem_flak_0", "B_simc_US_roll"]];
