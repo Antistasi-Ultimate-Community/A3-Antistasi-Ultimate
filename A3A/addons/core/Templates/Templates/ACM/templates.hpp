@@ -65,6 +65,15 @@
         file = "ACM_PD_Riv_FIA_Loy";
         description = "Remnants of the previous Altian government & its armed forces.";
     };
+    
+    class ACM_PD_Riv_FIA_UPF : ACM_PD_Base
+    {
+        side = "Riv";
+        flagTexture = QPATHTOFOLDER(Templates\ACM\flags\flag_fia_upf_co.paa);
+        name = "[PD] FIA United Political Front";
+        file = "ACM_PD_Riv_FIA_UPF";
+        description = "The Freedom and Independence Army, referred to as the FIA, is the united political front for various anti-Akhanteros political factions, the dominent factions include the remnants of the previous Altian government & its armed forces, referred to as the Loyalists who fight a conventional conflict, but have lost a lot of their influence as the losses mount. Competing yet allied are various insurgent groups who conduct assasinations, bombing campaigns, theft, and psychological operations.";
+    };
 
     // ***************************** Griffin's Ascent *****************************
     
