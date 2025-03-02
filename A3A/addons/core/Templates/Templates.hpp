@@ -86,7 +86,6 @@ class Templates
     {
         requiredAddons[] = {};
         logo = "a3\ui_f\data\logos\arma3_expansion_ca.paa";
-        logo = "a3\ui_f\data\logos\arma3_expansion_ca.paa";
         basepath = QPATHTOFOLDER(Templates\Templates\Vanilla); //the path to the template folder
         priority = 10;
         equipFlags[] = {"vanilla"};
@@ -349,7 +348,6 @@ class Templates
     {
         side = "Occ";
         flagTexture = "rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
-        flagTexture = "rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
         name = "RHS US Army Arid";
         file = "RHS_AI_US_Army_Arid";
         description = $STR_A3AP_setupFactionsTab_usaf;
@@ -365,7 +363,6 @@ class Templates
     class RHS_USMC_Arid : RHS_Base
     {
         side = "Occ";
-        flagTexture = "rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
         flagTexture = "rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
         name = "RHS USMC Arid";
         file = "RHS_AI_USMC_Arid";
@@ -423,7 +420,6 @@ class Templates
         priority = 51;
         side = "Occ";
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_usa_co.paa";
-        flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_usa_co.paa";
         name = "VN MACV";
         file = "VN_AI_MACV";
         description = $STR_A3AP_setupFactionsTab_macv;
@@ -433,7 +429,6 @@ class Templates
     {
         side = "Inv";
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_arvn_co.paa";
-        flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_arvn_co.paa";
         name = "VN ARVN";
         file = "VN_AI_ARVN";
         description = $STR_A3AP_setupFactionsTab_arvn;
@@ -442,7 +437,6 @@ class Templates
     class VN_PAVN : VN_Base
     {
         side = "Inv";
-        flagTexture = "vn\objects_f_vietnam\flags\vn_flag_01_pavn_co.paa";
         flagTexture = "vn\objects_f_vietnam\flags\vn_flag_01_pavn_co.paa";
         name = "VN PAVN";
         file = "VN_AI_PAVN";
@@ -454,7 +448,6 @@ class Templates
         priority = 51;
         side = "Reb";
         flagTexture = "\A3\Data_F\Flags\flag_blue_co.paa";
-        flagTexture = "\A3\Data_F\Flags\flag_blue_co.paa";
         name = "VN VM";
         file = "VN_Reb_VM";
         description = $STR_A3AP_setupFactionsTab_vm;
@@ -464,7 +457,6 @@ class Templates
     {
         side = "Reb";
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_vc_co.paa";
-        flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_vc_co.paa";
         name = "VN VC";
         file = "VN_Reb_VC";
         description = $STR_A3AP_setupFactionsTab_vc;
@@ -473,7 +465,6 @@ class Templates
     class VN_Riv_PL : VN_Base
     {
         side = "Riv";
-        flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_pl_co.paa";
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_pl_co.paa";
         name = "VN PL";
         file = "VN_Riv_PL";
