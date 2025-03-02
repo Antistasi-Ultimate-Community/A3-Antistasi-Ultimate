@@ -541,9 +541,26 @@ _militiaLoadoutData set ["ATLaunchers", [
     ["gm_pzf44_2_oli", "", "", "gm_feroz2x17_pzf44_2_blk", ["gm_1Rnd_44x537mm_heat_dm32_pzf44_2"], [], ""]
 ]];
 if (_hasSOG) then {
-    (_militiaLoadoutData get "machineGuns") pushBack ["vn_l4", "", "", "", ["vn_l1a1_30_mag","vn_l1a1_30_t_mag"], [], ""];
-    (_militiaLoadoutData get "grenadeLaunchers") pushBack ["vn_m16_m203", "", "", "", ["vn_m16_20_mag","vn_m16_20_t_mag"], [], ""];
-    (_militiaLoadoutData get "marksmanRifles") pushBack ["vn_m14a1", "", "vn_o_9x_m14", "", ["vn_m14_mag","vn_m14_t_mag"], [], "vn_bipod_m14"];
+    (_militiaLoadoutData get "machineGuns") append [
+        ["vn_l4", "", "", "", ["vn_l1a1_30_mag","vn_l1a1_30_t_mag"], [], ""]
+    ];
+    (_militiaLoadoutData get "grenadeLaunchers") append [
+        ["vn_m16_m203", "", "", "", ["vn_m16_20_mag","vn_m16_20_t_mag"], [], ""],
+        ["vn_m79", "", "", "", ["vn_40mm_m381_he_mag","vn_40mm_m406_he_mag", "vn_40mm_m583_flare_w_mag", "vn_40mm_m680_smoke_w_mag"], [], ""]
+    ];
+    (_militiaLoadoutData get "rifles") append [
+        ["vn_m14", "", "", "", ["vn_m14_mag","vn_m14_t_mag"], [], ""]
+    ];
+    (_militiaLoadoutData get "marksmanRifles") append [
+        ["vn_m14a1", "", "vn_o_9x_m14", "", ["vn_m14_mag","vn_m14_t_mag"], [], "vn_bipod_m14"]
+    ];
+    (_militiaLoadoutData get "carbines") append [
+        ["vn_m1carbine", "", "", "", ["vn_carbine_15_mag"], [], ""]
+    ];
+    (_militiaLoadoutData get "SMGs") append [
+        ["vn_sten", "", "", "", ["vn_sten_mag"], [], ""],
+        ["vn_m3a1", "", "", "", ["vn_m3a1_mag"], [], ""]
+    ];
 };
 //////////////////////////
 //    Misc Loadouts     //
