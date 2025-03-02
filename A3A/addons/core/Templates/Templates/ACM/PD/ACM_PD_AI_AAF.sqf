@@ -432,12 +432,12 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militaryLoadoutData set ["uniforms", ["gm_ge_uniform_soldier_90_flk", "gm_ge_uniform_soldier_rolled_90_flk"]];
+_militaryLoadoutData set ["uniforms", ["acm_gm_aaf2015_clothes_1_1", "acm_gm_aaf2015_clothes_1_4", "acm_gm_aaf2015_clothes_1_6"]];
 _militaryLoadoutData set ["vests", ["V_Simc_Alice_lc2", "V_Simc_Alice_mc_lc2", "V_Simc_Alice_lc2_alt"]];
 _militaryLoadoutData set ["medVests", ["V_Simc_56_med", "V_Simc_56_med_side", "V_Simc_56_med_side_ass"]];
 _militaryLoadoutData set ["mgVests", ["V_Simc_Alice_mc_249", "V_Simc_Alice_mc_lc2_60"]];
 _militaryLoadoutData set ["glVests", ["V_Simc_nadevest_67", "V_Simc_nadevest_alice_mc"]];
-_militaryLoadoutData set ["helmets", ["gm_ge_headgear_m62", "gm_ge_headgear_m62_net", "gm_ge_headgear_m92_flk", "gm_ge_headgear_m92_glasses_flk"]];
+_militaryLoadoutData set ["helmets", ["acm_gm_aaf2015_pasgt_1_1", "acm_gm_aaf2015_pasgt_1_2", "acm_gm_aaf2015_pasgt_1_3", "acm_gm_aaf2015_pasgt_1_4"]];
 
 _militaryLoadoutData set ["slRifles", [
     ["gm_g3a3a0_oli", "", "gm_feroz24_stanagClaw_blk", "", ["gm_20Rnd_762x51mm_B_DM41_g3_blk", "gm_20Rnd_762x51mm_B_T_DM21A1_g3_blk"], [], "gm_g3_bipod_blk"],
