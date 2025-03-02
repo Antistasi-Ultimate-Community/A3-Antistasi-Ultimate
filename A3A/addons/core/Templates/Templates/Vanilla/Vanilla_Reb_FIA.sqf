@@ -34,7 +34,13 @@ private _vehicleAA = [];
 
 private _vehiclesBoat = ["I_C_Boat_Transport_02_F" , "I_SDV_01_F" , "I_Boat_Armed_01_minigun_F" , "O_Boat_Armed_01_hmg_F"];
 
+private _vehiclesMedical = [];
+
+private _vehiclesSupply = ["C_Van_01_box_F"];
+
 private _vehiclePlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
+
+private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
 
 private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_SUV_01_F"];
 private _CivTruck = ["C_Truck_02_transport_F", "C_Truck_02_covered_F"];
@@ -95,6 +101,17 @@ if (_hasSPE) then {
   #include "..\DLC_content\vehicles\SPE\Vanilla_FIA.sqf"
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_FIA.sqf"
+};
+
+["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
+["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
 ["staticMortars", _staticMortars] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
@@ -252,43 +269,47 @@ _loadoutData set ["facewearSOG", []];
 _loadoutData set ["facewearSPE", []];
 
 if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\WS\Vanilla_FIA.sqf"
 };
 
 if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\RF\Vanilla_FIA.sqf"
 };
 
 if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\Contact\Vanilla_FIA.sqf"
 };
 
 if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\Apex\Vanilla_FIA.sqf"
 };
 
 if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\Lawsofwar\Vanilla_FIA.sqf"
 };
 
 if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\GM\Vanilla_FIA.sqf"
 };
 
 if (_hasCSLA) then {
-    #include "..\DLC_content\gear\CSLA\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\CSLA\Vanilla_FIA.sqf"
 };
 
 if (_hasArtOfWar) then {
-    #include "..\DLC_content\gear\Artofwar\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\Artofwar\Vanilla_FIA.sqf"
 };
 
 if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\SOG\Vanilla_FIA.sqf"
 };
 
 if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_FIA.sqf"
+  #include "..\DLC_content\gear\SPE\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\gear\Vanilla_FIA.sqf"
 };
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];

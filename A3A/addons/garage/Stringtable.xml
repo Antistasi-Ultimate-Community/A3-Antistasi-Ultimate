@@ -84,7 +84,7 @@
                 <Polish>Lotnictwo</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
-                <Original>You can only access aircrafts from a friendly airbase</Original>
+                <Original>You can only access aircraft from a friendly airbase</Original>
                 <French>Vous ne pouvez accéder aux aéronefs qu'à partir d'une base aérienne alliée</French>
                 <Russian>Вы можете получить доступ к авиации только через союзный аэродром</Russian>
                 <Korean>아군 공군 기지에서만 항공기에 액세스할 수 있습니다.</Korean>
@@ -172,15 +172,15 @@
                 <Polish>Pylony wymagają źródła amunicji do edycji</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_full">
-                <Original>full</Original>
-                <French>plein</French>
+                <Original>Full</Original>
+                <French>Plein</French>
                 <Russian>Заполнено</Russian>
                 <Korean>꽉 참</Korean>
                 <Spanish>Lleno</Spanish>
                 <Chinesesimp>车库已满</Chinesesimp>
-                <Czech>plný</Czech>
-                <Italian>pieno</Italian>
-                <Polish>pełny</Polish>
+                <Czech>Plný</Czech>
+                <Italian>Pieno</Italian>
+                <Polish>Pełny</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_capacity">
                 <Original>Available space in garage</Original>
@@ -414,7 +414,7 @@
                 <Polish>Prędkość Maksymalna:</Polish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_HP">
-                <Original>Horse power:</Original>
+                <Original>Horsepower:</Original>
                 <French>Puissance:</French>
                 <Russian>Лошадиные силы:</Russian>
                 <Korean>마력:</Korean>
@@ -458,7 +458,7 @@
                 <Polish>Pojazd można zatankować tylko częściowo do</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_noRefuel">
-                <Original>Vehicle can not be refueled</Original>
+                <Original>Vehicle cannot be refueled</Original>
                 <French>Le véhicule ne peut pas être ravitaillé</French>
                 <Russian>Техника не может быть заправлена</Russian>
                 <Korean>차량에 연료를 주입할 수 없습니다</Korean>
@@ -469,8 +469,8 @@
                 <Polish>Pojazd nie może być zatankowany</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_factionFuel">
-                <Original>Factions has</Original>
-                <French>Les factions ont</French>
+                <Original>Faction has</Original>
+                <French>Les faction ont</French>
                 <Russian>Фракции имеют</Russian>
                 <Korean>팩션이</Korean>
                 <Spanish>La facción tiene</Spanish>
@@ -614,7 +614,7 @@
             </Key>
             <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_badLocation">
-                <Original>You and the vehicle need to be in a %1 garrisons surroundings in order to garage a it</Original>
+                <Original>You and the vehicle need to be in a %1 garrisons surroundings in order to garage it</Original>
                 <French>Vous et le véhicule devez être dans les alentours d'une garnisons %1 afin de le ranger</French>
                 <Russian>Вы и ваша техника должны быть внутри гарнизона фракции %1 для перемещения её в гараж</Russian>
                 <Korean>해당 차량을 차고에 넣으려면 당신과 차량이 %1 주둔지 주변에 있어야 합니다</Korean>
