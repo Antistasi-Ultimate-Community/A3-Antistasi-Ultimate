@@ -112,7 +112,11 @@ private _initialRebelEquipment = [
     "V_TacChestrig_grn_F","V_Chestrig_rgr","gm_df7x40_blk"
 ];
 
-if (_hasSOG) then {_initialRebelEquipment append ["vn_vz54", "vn_m38_mag"]};
+if (_hasSOG) then {
+    _initialRebelEquipment append ["vn_vz54", "vn_m38_mag"]
+} else {
+    _initialRebelEquipment append ["sgun_HunterShotgun_01_F", "2Rnd_12Gauge_Pellets", "2Rnd_12Gauge_Slug"]
+};
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155","tf_anprc155_coyote"]};
