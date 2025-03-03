@@ -306,17 +306,17 @@ if (!_busy) then {
 			private _vehPool = [];
 			{
 			    _vehPool pushBack _x;
-			    _vehPool pushBack 3;
+			    _vehPool pushBack 1;
 			} forEach _vehiclesPlanesCAS;
 
 			{
 			    _vehPool pushBack _x;
-			    _vehPool pushBack 2;
+			    _vehPool pushBack 1;
 			} forEach _vehiclesPlanesAA;
 
 			{
 			    _vehPool pushBack _x;
-			    _vehPool pushBack 1;
+			    _vehPool pushBack 0.3;
 			} forEach _uavsAttack;
 			_spawnsUsed pushBack _spawnParameter#2;
 			_typeVehX = selectRandomWeighted _vehPool;
@@ -349,31 +349,31 @@ if (!_busy) then {
 				private _vehPool = [];
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 3;
+				    _vehPool pushBack 0.7;
 				} forEach _vehiclesPlanesCAS;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 2;
+				    _vehPool pushBack 0.7;
 				} forEach _vehiclesPlanesAA;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 4;
+				    _vehPool pushBack 1;
 				} forEach _vehiclesPlanesLargeCAS;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 3;
+				    _vehPool pushBack 1;
 				} forEach _vehiclesPlanesLargeAA;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 2;
+				    _vehPool pushBack 1;
 				} forEach _vehiclesPlanesTransport;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 5;
+				    _vehPool pushBack 0.5;
 				} forEach _vehiclesPlanesGunship;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack 1;
+				    _vehPool pushBack 0.2;
 				} forEach _uavsAttack;
 				_typeVehX = selectRandomWeighted _vehPool;
 				if (!isNil "_typeVehX") then {
