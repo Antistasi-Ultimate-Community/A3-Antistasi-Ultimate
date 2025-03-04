@@ -76,34 +76,6 @@ private _fnc_addSecondaryAndMags = {
     if (_compatOptics isNotEqualTo []) then { _unit addSecondaryWeaponItem (selectRandom _compatOptics) };
 };
 
-private _fnc_addHandgunAndMags = {
-    params ["_unit", "_weapon"];
-
-    _unit addWeapon _weapon;
-
-    private _magazine = compatibleMagazines _weapon select 0;
-    _unit addHandgunItem _magazine;
-    _unit addMagazines [_magazine, 1];
-
-    private _compatOptics = A3A_rebelOpticsCache get _weapon;
-    if (isNil "_compatOptics") then {
-        private _compatItems = compatibleItems _weapon; // cached, should be fast
-        _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get "OpticsAll");
-        A3A_rebelOpticsCache set [_weapon, _compatOptics];
-    };
-    if (_compatOptics isNotEqualTo []) then { _unit addHandgunItem (selectRandom _compatOptics) };
-
-    private _compatSilencers = A3A_rebelSilencersCache get _weapon;
-    if (isNil "_compatSilencers") then {
-        private _compatItems = compatibleItems _weapon; // cached, should be fast
-        _compatSilencers = _compatItems arrayIntersect call {
-            A3A_rebelGear get "MuzzleAttachments";
-        };
-        A3A_rebelSilencersCache set [_weapon, _compatSilencers];
-    };
-    if (_compatSilencers isNotEqualTo []) then { _unit addHandgunItem (selectRandom _compatSilencers) };
-};
-
 private _fnc_addCharges = {
     params ["_unit", "_totalWeight"];
 
@@ -248,7 +220,7 @@ switch (true) do {
 };
 
 private _handgun = selectRandomWeighted (A3A_rebelGear get "Handguns");
-if !(isNil "_handgun") then { [_unit, _handgun] call _fnc_addHandgunAndMags };
+if !(isNil "_handgun") then { [_unit, "Handguns"] call A3A_fnc_randomHandgun;};
 
 private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
 if (_nvg != "") then { 
