@@ -62,48 +62,38 @@ _unit addPrimaryWeaponItem _magazine;
 _unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
 
 
+// Optics
 private _compatOptics = A3A_rebelOpticsCache get _weapon;
 if (isNil "_compatOptics") then {
-    private _compatItems = compatibleItems _weapon; // cached, should be fast		// cached, should be fast
+    private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatOptics = _compatItems arrayIntersect call {
         if (_weaponType in ["Rifles", "MachineGuns"]) exitWith { A3A_rebelGear get "OpticsMid" };
         if (_weaponType == "SniperRifles") exitWith { A3A_rebelGear get "OpticsLong" };
         A3A_rebelGear get "OpticsClose";
     };
-    if (_compatOptics isEqualTo []) then {
-        _compatOptics = _compatItems arrayIntersect call {
-            if (_weaponType in ["Rifles", "MachineGuns"]) exitWith { A3A_rebelGear get "OpticsClose" };
-            A3A_rebelGear get "OpticsMid";
-        };
-    };
+    // save in cache
     A3A_rebelOpticsCache set [_weapon, _compatOptics];
 };
 
+// Silencers/Muzzles
 private _compatSilencers = A3A_rebelSilencersCache get _weapon;
 if (isNil "_compatSilencers") then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatSilencers = _compatItems arrayIntersect call {
-        A3A_rebelGear get "MuzzleAttachments";////
+        A3A_rebelGear get "MuzzleAttachments";
     };
-    if (_compatSilencers isEqualTo []) then {
-        _compatSilencers = _compatItems arrayIntersect call {
-            A3A_rebelGear get "MuzzleAttachments";////
-        };
-    };
-    A3A_rebelSilencersCache set [_weapon, _compatSilencers];/////
+    // save in cache
+    A3A_rebelSilencersCache set [_weapon, _compatSilencers];
 };
 
+// Bipods
 private _compatBipods = A3A_rebelBipodsCache get _weapon;
 if (isNil "_compatBipods") then {
-    private _compatItems = compatibleItems _weapon; // cached, should be fast		// cached, should be fast
+    private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatBipods = _compatItems arrayIntersect call {
         A3A_rebelGear get "Bipods";
     };
-    if (_compatBipods isEqualTo []) then {
-        _compatBipods = _compatItems arrayIntersect call {
-            A3A_rebelGear get "Bipods";
-        };
-    };
+    // save in cache
     A3A_rebelBipodsCache set [_weapon, _compatBipods];
 };
 
