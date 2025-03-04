@@ -50,7 +50,22 @@ switch (_mode) do
         _display setVariable ["savedParams", []];
         _listboxCtrl setVariable ["rowIndex", -1];
 
-        _newSaveCtrl cbSetChecked true;
+        private _platformIsWindows = A3A_setup_platform isEqualTo "Windows";
+        _newSaveCtrl cbSetChecked _platformIsWindows;
+        // _newSaveCtrl ctrlEnable _platformIsWindows; // ! Outright disable the control if platform isn't Windows
+        if !(_platformIsWindows) then {
+            _newSaveCtrl ctrlSetTooltip localize "STR_antistasi_dialogs_setup_use_new_namespace_warning";
+            /*
+            // If we want to use a GUI popup warning message or something instead of a hover tooltip over the checkbox,
+            // use this
+            _newSaveCtrl ctrlAddEventHandler ["CheckedChanged", {
+                params ["_control", "_checked"];
+                if (_checked isEqualTo 1) then {
+                    // do something
+                };
+            }];
+            */
+        };
 
         // Do these programmatically so that we can reuse the column data
         private _headerCtrl = _display displayCtrl A3A_IDC_SETUP_SAVESHEADER;

@@ -3220,15 +3220,26 @@
                 <Chinesesimp>复制之前的参数</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_use_new_namespace">
-                <Original>Use New Save file</Original>
-                <Czech>Použít nový uložený soubor</Czech>
-                <French>Utiliser un nouveau fichier</French>
-                <Italian>Usa Nuovo File di Salvataggio</Italian>
-                <Korean>새 저장 파일 사용</Korean>
-                <Russian>Отдельный файл сохр.</Russian>
-                <Polish>Użyj Nowego Pliku Zapisu</Polish>
-                <Portuguese>Usar novo save</Portuguese>
-                <Chinesesimp>使用新的存档文件</Chinesesimp>
+                <Original>Use New Save Method</Original>
+                <Czech>Použít novou metodu uložení</Czech>
+                <French>Utiliser la nouvelle méthode d'enregistrement</French>
+                <Italian>Usa il nuovo metodo di salvataggio</Italian>
+                <Korean>새 저장 방법 사용</Korean>
+                <Russian>Используйте новый метод сохранения</Russian>
+                <Polish>Użyj nowej metody zapisywania</Polish>
+                <Portuguese>Usar novo método de salvamento</Portuguese>
+                <Chinesesimp>使用新的保存方法</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_use_new_namespace_warning">
+                <Original>Warning: This WILL cause save issues if used on a non-Windows-based server.</Original>
+                <Czech>Varování: To způsobí problémy s ukládáním, pokud je použito na serveru jiném než Windows.</Czech>
+                <French>Avertissement : Cela causera des problèmes de sauvegarde s'il est utilisé sur un serveur non Windows.</French>
+                <Italian>Attenzione: questo causerà problemi di salvataggio se utilizzato su un server non basato su Windows.</Italian>
+                <Korean>경고: 이렇게 하면 Windows 기반이 아닌 서버에서 사용하는 경우 저장 문제가 발생합니다.</Korean>
+                <Russian>Предупреждение: Это вызовет проблемы с сохранением при использовании на сервере, отличном от Windows.</Russian>
+                <Polish>Ostrzeżenie: Spowoduje to problemy z zapisywaniem, jeśli zostanie użyty na serwerze innym niż Windows.</Polish>
+                <Portuguese>Aviso: Isso CAUSARÁ problemas de salvamento se usado em um servidor não baseado no Windows.</Portuguese>
+                <Chinesesimp>警告：如果在非基于 Windows 的服务器上使用，这将导致保存问题。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_set_hq_position">
                 <Original>Set HQ Position</Original>
