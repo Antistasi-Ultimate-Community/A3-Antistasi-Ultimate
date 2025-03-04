@@ -353,6 +353,11 @@ private _categoryOverrideTable = [
 ["vn_l2a1_01", ["MachineGuns","Weapons"]],
 ["vn_f1_smg", ["SMGs","Weapons"]],
 
+// Melee
+["vn_m_mk2_knife_01", ["Unknown","Weapons"]],
+["vn_m_axe_01", ["Unknown","Weapons"]],
+//need to add more later
+
 ["ACRE_PRC148", ["Gadgets","items"]],
 ["ACRE_PRC152", ["Gadgets","items"]],
 ["ACRE_PRC343", ["Gadgets","items"]],
