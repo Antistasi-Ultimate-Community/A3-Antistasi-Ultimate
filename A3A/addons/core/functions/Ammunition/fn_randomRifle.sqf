@@ -71,6 +71,12 @@ if (isNil "_compatOptics") then {
         if (_weaponType == "SniperRifles") exitWith { A3A_rebelGear get "OpticsLong" };
         A3A_rebelGear get "OpticsClose";
     };
+    if (_compatOptics isEqualTo []) then {
+        _compatOptics = _compatItems arrayIntersect call {
+            if (_weaponType in ["Rifles", "MachineGuns"]) exitWith { A3A_rebelGear get "OpticsClose" };
+            A3A_rebelGear get "OpticsMid";
+        };
+    };
     // save in cache
     A3A_rebelOpticsCache set [_weapon, _compatOptics];
 };
