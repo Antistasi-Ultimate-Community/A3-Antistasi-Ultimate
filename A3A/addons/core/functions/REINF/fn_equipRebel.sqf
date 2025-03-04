@@ -99,11 +99,6 @@ private _fnc_addHandgunAndMags = {
         _compatSilencers = _compatItems arrayIntersect call {
             A3A_rebelGear get "MuzzleAttachments";
         };
-        if (_compatSilencers isEqualTo []) then {
-            _compatSilencers = _compatItems arrayIntersect call {
-                A3A_rebelGear get "MuzzleAttachments";
-            };
-        };
         A3A_rebelSilencersCache set [_weapon, _compatSilencers];
     };
     if (_compatSilencers isNotEqualTo []) then { _unit addHandgunItem (selectRandom _compatSilencers) };
