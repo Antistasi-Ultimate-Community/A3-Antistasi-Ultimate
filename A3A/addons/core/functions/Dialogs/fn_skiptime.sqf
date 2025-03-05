@@ -1,4 +1,4 @@
-params [["_hours", 8]];
+params [["_hours", 6]];
 
 if (player != theBoss) exitWith {
 	[

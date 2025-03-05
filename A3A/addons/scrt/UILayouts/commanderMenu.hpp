@@ -788,7 +788,7 @@ class commanderMenu
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
-					action = "((findDisplay 60000) displayCtrl 4071) getVariable ['timeToSkip', 8] call A3A_fnc_skiptime;";
+					action = "((findDisplay 60000) displayCtrl 4071) getVariable ['timeToSkip', 6] call A3A_fnc_skiptime;";
 				};
 
 				class spacer4: brSpacer 

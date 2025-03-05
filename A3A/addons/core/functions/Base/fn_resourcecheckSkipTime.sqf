@@ -1,4 +1,4 @@
-params [["_hours", 8]];
+params [["_hours", 6]];
 
 cutText [format [localize "STR_params_rest", _hours],"BLACK",5];
 sleep 10;
