@@ -33,6 +33,8 @@ if (_pool isEqualTo []) then {
 };
 private _weapon = selectRandomWeighted _pool;
 
+if (isNil "_weapon") exitWith {};
+
 // Probably shouldn't ever be executed
 if !(primaryWeapon _unit isEqualTo "") then {
     if (_weapon == primaryWeapon _unit) exitWith {};
