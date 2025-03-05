@@ -35,8 +35,24 @@ if ((count units group player) + (count units stragglers) > 9) exitWith {[locali
 
 private _unit = [group player, _typeUnit, position player, [], 0, "NONE"] call A3A_fnc_createUnit;
 
-_nul = [-1, 0] remoteExec ["A3A_fnc_resourcesFIA",2];
-[- _costs] call A3A_fnc_resourcesPlayer;
+private _hrCost = 1;
+
+switch (_typeUnit) do {
+    case "loadouts_reb_militia_Rifleman": { _hrCost = rifle_hr_cost; };
+    case "loadouts_reb_militia_Grenadier": { _hrCost = GL_hr_cost; };
+    case "loadouts_reb_militia_ExplosivesExpert": { _hrCost = EXP_hr_cost; };
+    case "loadouts_reb_militia_MachineGunner": { _hrCost = MG_hr_cost; };
+    case "loadouts_reb_militia_LAT": { _hrCost = LAT_hr_cost; };
+    case "loadouts_reb_militia_AT": { _hrCost = AT_hr_cost; };
+    case "loadouts_reb_militia_AA": { _hrCost = AA_hr_cost; };
+    case "loadouts_reb_militia_Medic": { _hrCost = MED_hr_cost; };
+    case "loadouts_reb_militia_Engineer": { _hrCost = ENG_hr_cost; };
+    case "loadouts_reb_militia_Sniper": { _hrCost = Sniper_hr_cost; };
+    default { _hrCost = 1; };
+};
+
+[-_hrCost, 0] remoteExec ["A3A_fnc_resourcesFIA",2];
+[-_costs] call A3A_fnc_resourcesPlayer;
 [localize "STR_A3A_reinf_reinfPlayer_header", localize "STR_A3A_reinf_reinfPlayer_success"] call A3A_fnc_customHint;
 
 [_unit] spawn A3A_fnc_FIAinit;

@@ -190,22 +190,22 @@ if (_typeX == "rem") then {
 
 	if (str (_display) != "no display") then {
 		_ChildControl = _display displayCtrl 104;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitRifle"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",rifle_hr_cost,server getVariable (A3A_faction_reb get "unitRifle"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 105;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitMG"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",MG_hr_cost,server getVariable (A3A_faction_reb get "unitMG"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 126;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitMedic"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",MED_hr_cost,server getVariable (A3A_faction_reb get "unitMedic"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 107;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitSL"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",SL_hr_cost,server getVariable (A3A_faction_reb get "unitSL"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 108;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitLAT"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",LAT_hr_cost,server getVariable (A3A_faction_reb get "unitLAT"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 109;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitGL"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",GL_hr_cost,server getVariable (A3A_faction_reb get "unitGL"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 110;
-		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitSniper"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",Sniper_hr_cost,server getVariable (A3A_faction_reb get "unitSniper"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 111;
-        _ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitAT"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",AT_hr_cost,server getVariable (A3A_faction_reb get "unitAT"), A3A_faction_civ get "currencySymbol"];
 		_ChildControl = _display displayCtrl 112;
-        _ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",server getVariable (A3A_faction_reb get "unitAA"), A3A_faction_civ get "currencySymbol"];
+		_ChildControl  ctrlSetTooltip format [localize "STR_dialog_cost_hire_no_HR",AA_hr_cost,server getVariable (A3A_faction_reb get "unitAA"), A3A_faction_civ get "currencySymbol"];
 	};
 };

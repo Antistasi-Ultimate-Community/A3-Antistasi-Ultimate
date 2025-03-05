@@ -6369,11 +6369,11 @@
                 <French>Coût: %1%3. RH : %2.</French>
             </Key>
             <Key ID="STR_dialog_cost_hire_no_HR">
-                <Original>Cost: %1%2.</Original>
-                <Russian>Стоимость: %1%2.</Russian>
-                <Chinesesimp>成本: %1%2</Chinesesimp>
-                <Korean>가격: %1%2.</Korean>
-                <French>Coût: %1%2.</French>
+                <Original>Cost: HR: %1, %2%3.</Original>
+                <Russian>Стоимость: HR: %1, %2%3.</Russian>
+                <Chinesesimp>成本: HR: %1, %2%3.</Chinesesimp>
+                <Korean>가격: HR: %1, %2%3.</Korean>
+                <French>Coût: HR: %1, %2%3.</French>
             </Key>
             <Key ID="STR_dialogs_RP_header">
                 <Original>Rally Point</Original>

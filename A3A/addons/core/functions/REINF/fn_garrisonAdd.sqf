@@ -40,8 +40,22 @@ if (_limit != -1 && {count _garrison >= _limit}) exitWith {
 	[localize "STR_A3A_garrisons_header", localize "STR_A3A_garrison_reached_limit"] call SCRT_fnc_ui_showDynamicTextMessage;
 };
 
+private _hrCost = 1;
 
-[-1,-_costs] remoteExec ["A3A_fnc_resourcesFIA",2];
+switch (_unitType) do {
+	case "loadouts_reb_militia_Rifleman": { _hrCost = rifle_hr_cost;};
+	case "loadouts_reb_militia_Grenadier": { _hrCost = GL_hr_cost;};
+	case "loadouts_reb_militia_MachineGunner": { _hrCost = MG_hr_cost;};
+	case "loadouts_reb_militia_LAT": { _hrCost = LAT_hr_cost;};
+	case "loadouts_reb_militia_AT": { _hrCost = AT_hr_cost;};
+	case "loadouts_reb_militia_AA": { _hrCost = AA_hr_cost;};
+	case "loadouts_reb_militia_Medic": { _hrCost = MED_hr_cost;};
+	case "loadouts_reb_militia_Sniper": { _hrCost = Sniper_hr_cost;};
+	case "loadouts_reb_militia_SquadLeader": { _hrCost = SL_hr_cost;};
+	default { _hrCost = 1;};
+};
+
+[-_hrCost, -_costs] remoteExec ["A3A_fnc_resourcesFIA",2];
 
 private _countX = count _garrison;
 [_unitType,teamPlayer,_markerX,1] remoteExec ["A3A_fnc_garrisonUpdate",2];

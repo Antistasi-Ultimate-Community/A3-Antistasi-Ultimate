@@ -90,6 +90,150 @@
     }
 ] call CBA_fnc_addSetting;
 
+//Unit hr costs
+[
+    "rifle_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Rifleman HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["rifle_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "GL_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Grenadier HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["GL_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "EXP_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "ExplosivesExpert HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["EXP_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "MG_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "MachineGunner HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["MG_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "LAT_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Light Anti-Tank HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["LAT_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "AT_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Anti-Tank HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["AT_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "AA_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Anti-Air HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["AA_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "MED_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Medic HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["MED_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "ENG_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Engineer HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["ENG_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "Sniper_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Sniper HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["Sniper_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "SL_hr_cost", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Squad Leader HR Cost", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    ["Antistasi Ultimate", "Unit HR Cost"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [1,5,1,0], // [default value], [name for default value], index for default value
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {
+        params ["_value"];
+        profileNamespace setVariable ["SL_hr_cost", _value];
+    }
+] call CBA_fnc_addSetting;
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_emissionMinimum", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
