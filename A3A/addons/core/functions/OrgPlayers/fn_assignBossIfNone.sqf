@@ -50,6 +50,35 @@ if (!isNull _nextBoss) then
 else
 {
     Info("Couldn't select a new boss - no eligible candidates.");
+    // Make the boss a random player - Fixed Auto Init "Reaper"
+
+    private _players = allPlayers select {alive _x && side _x == teamPlayer};
+
+        // Ensure R is initialized in the mission namespace
+        if (isNil {missionNamespace getVariable "R"}) then { 
+            missionNamespace setVariable ["R", 0, true]; 
+        };
+
+        if ((missionNamespace getVariable "R") == 0 && (count _players) > 0) then {
+            missionNamespace setVariable ["R", 1, true]; // Ensure this command only runs once
+            theBoss = selectRandom _players;
+            publicVariable "theBoss"; // Broadcast the change
+            ["New commander assigned: " + name theBoss, "hint"] call A3A_fnc_customHint;
+    
+    // Remove the boss after 60 seconds
+            [] spawn {
+                sleep 60;
+                if (!isNull theBoss) then {
+                    theBoss = objNull;
+                    publicVariable "theBoss";
+                    ["The commander has been removed after 60 seconds.", "hint"] call A3A_fnc_customHint;
+                };
+            };
+    } else {
+        ["No eligible players to assign as the commander or command already executed.", "hint"] call A3A_fnc_customHint;
+    };
+
+
     // Remove current boss if any, as they're ineligible
     if (!isNull theBoss) then { [] call A3A_fnc_theBossTransfer };
 };
