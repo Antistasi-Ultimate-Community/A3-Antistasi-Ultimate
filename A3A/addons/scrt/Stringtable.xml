@@ -5498,6 +5498,13 @@
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
+            <Key ID="STR_params_pistolStart">
+                <Original>[Experimental] Start with only unlocked handguns</Original>
+                <Russian>[Экспериментально] [Экспериментальный] Начните только с разблокированным пистолетом</Russian>
+                <Chinesesimp>[实验性]仅从未锁定的手枪开始</Chinesesimp>
+                <Korean>[실험적] 잠금 해제된 권총으로만 시작</Korean>
+                <French>[Expérimental] Commencez avec uniquement des armes de poing déverrouillées</French>
+            </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>

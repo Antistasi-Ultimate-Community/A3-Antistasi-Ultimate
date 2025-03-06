@@ -130,12 +130,15 @@ else
     // Do initial arsenal filling
     private _categoriesToPublish = createHashMap;
     private _addedClasses = createHashMap;       // dupe proofing
+    private _skippedClassMags = [];
+
     {
         _x params ["_class", ["_count", -1]];
         if (_class in _addedClasses) then { continue };
         _addedClasses set [_class, nil];
 
         private _arsenalTab = _class call jn_fnc_arsenal_itemType;
+        if (pistolStart && {_arsenalTab in [0,1]}) then { _skippedClassMags append compatibleMagazines _class; continue }; 
         jna_dataList#_arsenalTab pushBack [_class, _count];         // direct add to avoid O(N^2) issue
 
         if (_count == -1 || {(minWeaps != -1) && _count >= minWeaps}) then {
@@ -144,6 +147,13 @@ else
             _categoriesToPublish insert [true, _categories, []];
         };
     } foreach FactionGet(reb,"initialRebelEquipment");
+
+    // need to remove mags from arsenal *after* iterating through all initialRebelEquipment since we don't know what order IRE will be in
+    if (pistolStart) then {
+        {
+            if ((_x select 0) in _skippedClassMags) then { [26, _x select 0, -1] call jn_fnc_arsenal_removeItem };
+        } forEach (jna_datalist#26);
+    };
 
     // Publish the unlocked categories (once each)
     { publicVariable ("unlocked" + _x) } forEach keys _categoriesToPublish;
