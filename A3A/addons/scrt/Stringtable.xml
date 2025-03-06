@@ -5672,6 +5672,14 @@
                 <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
                 <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
             </Key>
+            <Key ID="STR_params_UAVSpawnChance">
+                <Original>UAV spawn chance on airfileds</Original>
+                <Russian>Шанс спавна БПЛА </Russian>
+            </Key>
+            <Key ID="STR_params_UAVSpawnChance_desc">
+                <Original>Adjusts spawn chance of UAVs on enemy airfields, higher the chance, less likely the game will spawn other fixed wing aircrafts</Original>
+                <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+            </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
                 <Russian>Постоянное сохранение для построек, размещенных Зевсом</Russian>
