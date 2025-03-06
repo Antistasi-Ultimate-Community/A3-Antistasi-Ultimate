@@ -7,10 +7,9 @@ params [["_memberForced", false]];
 if (!isNil "A3A_electionInProgress") exitWith {};
 A3A_electionInProgress = true;
 
-
 // Don't run if a Boss exists and is still eligible & active
 private _electionReason = call {
-    if (isNull theBoss) exitWith { "there is no boss" };
+    if (isNull theBoss || {theBoss isEqualTo ObjNull}) exitWith { "there is no boss" }; // second check is probably unnecessary but better to be safe
     if (_memberForced && !([theBoss] call A3A_fnc_isMember)) exitWith { "the boss is a guest" };
     if !(theBoss getVariable ["eligible", true]) exitWith { "the boss is not eligible" };
     if (theBoss getVariable ["isAFK", false]) exitWith { "the boss is AFK" };
@@ -20,7 +19,6 @@ if (isNil "_electionReason") exitWith {
     A3A_electionInProgress = nil;
 };
 Info_2("Election triggered because %1. Previous boss was %2", _electionReason, name theBoss);
-
 
 // Note: allPlayers doesn't work for a while after server startup, so this function isn't used for picking the initial commander
 // But we can't use playableUnits because it excludes dead players
@@ -52,6 +50,11 @@ else
     Info("Couldn't select a new boss - no eligible candidates.");
     // Remove current boss if any, as they're ineligible
     if (!isNull theBoss) then { [] call A3A_fnc_theBossTransfer };
+};
+
+if (isNil "theBoss" || {isNull theBoss}) then {
+    theBoss = ObjNull;
+    publicVariable "theBoss";
 };
 
 A3A_electionInProgress = nil;
