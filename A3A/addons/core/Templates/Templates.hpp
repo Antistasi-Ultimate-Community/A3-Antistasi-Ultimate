@@ -658,5 +658,8 @@ class Templates
     // ***************************** Cold War ReArmed *****************************
 
     #include "Templates\CWR\templates.hpp"
+	// ***************************** YLS Aegis *****************************
+
+    #include "Templates\yls_aegis\templates.hpp"
 
 };
