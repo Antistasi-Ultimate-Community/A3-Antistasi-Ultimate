@@ -440,18 +440,39 @@ if (!_busy) then
 	};
 };
 
-private _vehTypesLight = 
-	(_faction get "vehiclesLightArmed") + 
-	(_faction get "vehiclesLightUnarmed") + 
-	(_faction get "vehiclesTrucks") + 
-	(_faction get "vehiclesAmmoTrucks") + 
-	(_faction get "vehiclesRepairTrucks") + 
-	(_faction get "vehiclesFuelTrucks") + 
-	(_faction get "vehiclesMedical");
-_countX = 0;
+private _lightvehPool = [];
+private _vehTypes = [
+	"vehiclesLightArmed",
+	"vehiclesLightUnarmed",
+	"vehiclesTrucks",
+	"vehiclesCargoTrucks",
+	"vehiclesAmmoTrucks",
+	"vehiclesRepairTrucks",
+	"vehiclesFuelTrucks",
+	"vehiclesMedical"
+	];
+private _typeWeight = [
+	7, 
+	4, 
+	2, 
+	2,
+	1, 
+	1, 
+	1, 
+	2
+	];
+
+{
+	private _vehs = _faction get _x;
+	if(_vehs isEqualTo []) then {continue};
+	private _weight = (_typeWeight select _forEachIndex) / count _vehs;
+	{
+		_lightvehPool append [_x, _weight];
+	} forEach _vehs;
+} forEach _vehTypes;
 
 while {_countX < _nVeh && {_countX < 3}} do {
-	private _typeVehX = selectRandom _vehTypesLight;
+	private _typeVehX = selectRandomWeighted _lightvehPool;
 	private _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 	if(_spawnParameter isEqualType []) then
 	{
