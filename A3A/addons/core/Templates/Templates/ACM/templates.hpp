@@ -7,7 +7,6 @@
         logo = QPATHTOFOLDER(Templates\Templates\ACM\PD\modicon_ca.paa); // Copied from Phalanx Downfall (APL-SA). Thanks Anthrax!
         maps[] = {"altis", "malden"};
         climate[] = {"arid", "temperate"};
-        priority = 80;
         equipFlags[] = {"specialGM"};
         forceDLC[] = {"gm"};
     };
@@ -84,7 +83,6 @@
         logo = QPATHTOFOLDER(Templates\Templates\ACM\GA\modicon_ca.paa); // Copied from Griffin's Ascent (APL-SA). Thanks Anthrax!
         maps[] = {"altis", "stratis", "malden"};
         climate[] = {"arid", "temperate"};
-        priority = 80;
         equipFlags[] = {"specialGM"};
         forceDLC[] = {"gm"};
     };
