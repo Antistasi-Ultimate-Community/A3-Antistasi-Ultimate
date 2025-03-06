@@ -9,12 +9,6 @@ Info("Trader Mission Init.");
 
 _positionX = getMarkerPos _markerX;
 
-private _traderMarkerVague = createMarkerLocal ["TraderMarkerVague", _positionX, 1];
-_traderMarkerVague setMarkerColorLocal "ColorUNKNOWN";
-_traderMarkerVague setMarkerBrushLocal "DiagGrid";
-_traderMarkerVague setMarkerShapeLocal "ELLIPSE";
-_traderMarkerVague setMarkerSize [1500, 1500]; // global function to broadcast the marker after setting its size
-
 private _traderPosition = [
     _positionX, //center
     0, //minimal distance
@@ -61,6 +55,20 @@ Info("Trader position: " + str _traderPosition);
 traderX = [_traderPosition] call SCRT_fnc_trader_createTrader;
 publicVariable "traderX";
 
+// Add only a vague marker for trader position to the map
+private _markerVaguePosition = [_traderPosition, 0, 750] call BIS_fnc_findSafePos;
+private _traderMarkerVague = createMarkerLocal ["TraderMarkerVague", _markerVaguePosition];
+_traderMarkerVague setMarkerColorLocal "ColorUNKNOWN";
+_traderMarkerVague setMarkerBrushLocal "DiagGrid";
+_traderMarkerVague setMarkerShapeLocal "ELLIPSE";
+_traderMarkerVague setMarkerSize [750, 750]; // global function to broadcast the marker after setting its size
+
+// Add a burning barrel / smoke near the trader tent to make it *slightly* easier to find, particulary in highly vegetated AOs
+private _barrelPosition = [_traderPosition, 5, 10, 0, 0, 0.3, 0, [], _traderPosition vectorAdd [5,5,0]] call BIS_fnc_findSafePos;
+private _barrel = "MetalBarrel_burning_F" createVehicle _barrelPosition;
+private _smokeEffect = "#particlesource" createVehicle _barrelPosition;
+_smokeEffect setParticleClass "BigDestructionSmoke";
+
 //due to esotheric BS which fn_scheduler is i have no other choice than sending setTraderStock 
 //everywhere in hope that it will be delivered to heckin server (because clientId 2 does not work at all)
 [traderX] remoteExecCall ["SCRT_fnc_trader_setStockType", 0];
@@ -76,11 +84,9 @@ private _taskId = "TRADER" + str A3A_taskCount;
     [
         format [localize "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
         localize "STR_trader_quest_header",
-        //_markerX
         _traderMarkerVague
     ],
-    //_traderPosition,
-    getMarkerPos _traderMarkerVague, // use center of vague area marker instead of exact trader position
+    _markerVaguePosition,
     false,
     0,
     true,
@@ -110,18 +116,21 @@ waitUntil {
 traderPosition = _traderPosition;
 publicVariable "traderPosition";
 
-_traderMarker = createMarkerLocal ["_traderMarker", _traderPosition];
+_traderMarker = createMarkerLocal ["TraderMarker", _traderPosition];
 _traderMarker setMarkerTypeLocal "hd_objective";
 _traderMarker setMarkerSizeLocal [1, 1];
 _traderMarker setMarkerTextLocal (localize "STR_marker_arms_dealer");
 _traderMarker setMarkerColorLocal "ColorUNKNOWN";
 _traderMarker setMarkerAlpha 1;
-sidesX setVariable [_traderMarker,teamPlayer,true];
-publicVariable "_traderMarker";
+traderMarker = _traderMarker;
+sidesX setVariable [traderMarker,teamPlayer,true];
+publicVariable "traderMarker";
 
 isTraderQuestCompleted = true; 
 publicVariable "isTraderQuestCompleted";
 
+deleteVehicle _barrel;
+deleteVehicle _smokeEffect;
 deleteVehicle _trigger;
 deleteMarker _traderMarkerVague;
 

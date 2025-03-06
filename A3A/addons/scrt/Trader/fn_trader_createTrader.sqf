@@ -15,6 +15,17 @@ if (disableTrader) exitWith {};
 
 traderObjects = [];
 
+if (isTraderQuestCompleted) then {
+	traderMarker = createMarker ["TraderMarker", _position];
+	traderMarker setMarkerType "hd_objective";
+	traderMarker setMarkerSize [1, 1];
+	traderMarker setMarkerText (localize "STR_marker_arms_dealer");
+	traderMarker setMarkerColor "ColorUNKNOWN";
+	traderMarker setMarkerAlpha 1;
+	sidesX setVariable [traderMarker,teamPlayer,true];
+	publicVariable "traderMarker";
+};
+
 //clear point
 {  
 	[_x, true] remoteExec ["hideObject", 0, true];
