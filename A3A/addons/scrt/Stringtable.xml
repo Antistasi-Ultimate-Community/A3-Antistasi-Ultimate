@@ -5500,7 +5500,7 @@
             </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>[Experimental] Start with only unlocked handguns</Original>
-                <Russian>[Экспериментально] [Экспериментальный] Начните только с разблокированным пистолетом</Russian>
+                <Russian>[Экспериментально] Начните только с разблокированным пистолетом</Russian>
                 <Chinesesimp>[实验性]仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>[실험적] 잠금 해제된 권총으로만 시작</Korean>
                 <French>[Expérimental] Commencez avec uniquement des armes de poing déverrouillées</French>

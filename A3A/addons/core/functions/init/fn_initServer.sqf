@@ -130,7 +130,6 @@ else
     // Do initial arsenal filling
     private _categoriesToPublish = createHashMap;
     private _addedClasses = createHashMap;       // dupe proofing
-    private _skippedClassMags = [];
 
     {
         _x params ["_class", ["_count", -1]];
@@ -138,7 +137,6 @@ else
         _addedClasses set [_class, nil];
 
         private _arsenalTab = _class call jn_fnc_arsenal_itemType;
-        if (pistolStart && {_arsenalTab in [0,1]}) then { _skippedClassMags append compatibleMagazines _class; continue }; 
         jna_dataList#_arsenalTab pushBack [_class, _count];         // direct add to avoid O(N^2) issue
 
         if (_count == -1 || {(minWeaps != -1) && _count >= minWeaps}) then {
@@ -148,11 +146,20 @@ else
         };
     } foreach FactionGet(reb,"initialRebelEquipment");
 
-    // need to remove mags from arsenal *after* iterating through all initialRebelEquipment since we don't know what order IRE will be in
     if (pistolStart) then {
+        private _magsToKeep = [];
+        private _magsToRemove = [];
+        
+        { _magsToKeep append (compatibleMagazines (_x select 0)); } forEach (jna_datalist#2); // handguns
+        { _magsToRemove append (compatibleMagazines (_x select 0)); } forEach (jna_datalist#0 + jna_datalist#1); // primaries + secondaries (launchers)
+        jna_datalist set [0, []];
+        jna_datalist set [1, []];
+        
         {
-            if ((_x select 0) in _skippedClassMags) then { [26, _x select 0, -1] call jn_fnc_arsenal_removeItem };
-        } forEach (jna_datalist#26);
+            private _magazine = _x select 0;
+            // sanity check to not remove magazine compatible with a removed primary if it's also compatible with a handgun in the arsenal
+            if (_magazine in _magsToRemove && {!(_magazine in _magsToKeep)}) then { [26, _magazine, -1] call jn_fnc_arsenal_removeItem };
+        } forEach (jna_datalist#26); // magazines
     };
 
     // Publish the unlocked categories (once each)
