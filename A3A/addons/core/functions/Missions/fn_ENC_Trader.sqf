@@ -126,7 +126,19 @@ traderMarker = _traderMarker;
 sidesX setVariable [traderMarker,teamPlayer,true];
 publicVariable "traderMarker";
 
-isTraderQuestCompleted = true; 
+_traderMarker = createMarkerLocal ["TraderMarker", _traderPosition];
+_traderMarker setMarkerTypeLocal "hd_objective";
+_traderMarker setMarkerSizeLocal [1, 1];
+_traderMarker setMarkerTextLocal (localize "STR_marker_arms_dealer");
+_traderMarker setMarkerColorLocal "ColorUNKNOWN";
+_traderMarker setMarkerAlpha 1;
+traderMarker = _traderMarker;
+sidesX setVariable [traderMarker,teamPlayer,true];
+publicVariable "traderMarker";
+
+isTraderQuestAssigned = false;
+isTraderQuestCompleted = true;
+publicVariable "isTraderQuestAssigned";
 publicVariable "isTraderQuestCompleted";
 
 deleteVehicle _barrel;
