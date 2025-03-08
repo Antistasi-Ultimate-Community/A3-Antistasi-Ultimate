@@ -214,4 +214,6 @@ if (_sideX == Occupants) then
 	[_groupX] spawn A3A_fnc_groupDespawner;
 };
 
+missionNamespace setVariable ["A3U_dialogCivMissionInProgress", false, true];
+
 [_taskId, "RES", 1200] spawn A3A_fnc_taskDelete;

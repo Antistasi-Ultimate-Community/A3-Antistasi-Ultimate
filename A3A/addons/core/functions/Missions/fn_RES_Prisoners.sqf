@@ -148,4 +148,6 @@ deleteGroup _grpPOW;
 {boxX addMagazineCargoGlobal [_x,1]} forEach _ammunition;
 {boxX addItemCargoGlobal [_x,1]} forEach _items;
 
+missionNamespace setVariable ["A3U_dialogCivMissionInProgress", false, true];
+
 [_taskId, "RES", 1200] spawn A3A_fnc_taskDelete;
