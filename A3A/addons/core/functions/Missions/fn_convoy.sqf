@@ -282,35 +282,20 @@ if (_convoyType == "Money") then
 {
     if (_objectiveIsCargo) then {
         // * put a supply container in the truck so it can be identified more easily as the objective vehicle
-        {
-            _supObj = _x createVehicle (position _vehObj);
-            if (_forEachIndex == 0) then {
-                // * attach money crates to pallet
-                private _crateOffset = [0.52, 0.02, -0.48];
-                for "_i" from 0 to 2 do {
-                    private _crate = "A3AU_moneyCrate_small_01" createVehicle (position _supObj);
-                    _crate lockInventory true;
-                    _crate attachTo [_supObj, [0, _crateOffset select _i, 0.29]];
-                };
-            };
-            
-            // * try to load a large container, then fall back to small box if we can't load large container
-            private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;        
-            if (_canLoad isEqualType -1) then {
-                deleteVehicle _supObj;
-                continue
-            } else {
-                clearMagazineCargoGlobal _supObj;
-                clearWeaponCargoGlobal _supObj;
-                clearItemCargoGlobal _supObj;
-                clearBackpackCargoGlobal _supObj;
-                _supObj setDamage 0.75; // * vanilla supply crates are ridiculously strong. Would make destroying (instead of stealing) the cargo way too hard / resource intensive
-                _supObj lockInventory true; // * don't want pesky inquisitive players to know there's not actually anything in here lol
-                _supObj call A3A_Logistics_fnc_addLoadAction;
-                (_canLoad + [true]) call A3A_Logistics_fnc_load;
-                break
-            };
-        } forEach ["Land_Pallet_F", "A3AU_moneyCrate_small_01"];
+            // * put a supply container in the truck so it can be identified more easily as the objective vehicle
+        _supObj = "A3AU_moneyCrate_small_01" createVehicle (position _vehObj);
+        
+        private _canLoad = [_vehObj, _supObj] call A3A_Logistics_fnc_canLoad;        
+        if (_canLoad isEqualType []) then {
+            clearMagazineCargoGlobal _supObj;
+            clearWeaponCargoGlobal _supObj;
+            clearItemCargoGlobal _supObj;
+            clearBackpackCargoGlobal _supObj;
+            _supObj setDamage 0.75;
+            _supObj lockInventory true; // * don't want pesky inquisitive players to know there's not actually anything in here lol
+            _supObj call A3A_Logistics_fnc_addLoadAction;
+            (_canLoad + [true]) call A3A_Logistics_fnc_load;
+        };
     };
     _vehObj setVariable ["A3A_reported", true, true];
 };
