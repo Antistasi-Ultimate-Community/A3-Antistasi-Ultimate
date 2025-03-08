@@ -57,7 +57,8 @@ if (isNull _veh) exitWith {
     [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_reinf_airstrike_not_looking_at_veh"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
 };
 
-if (_veh distance getMarkerPos respawnTeamPlayer > 50) exitWith {
+private _nearestFriendlyAirfield = nearestLocation [getPos _veh, ("airport") select {sidesX getVariable _x == teamPlayer}];
+if ((_veh distance getMarkerPos respawnTeamPlayer > 50) || {!(_veh isKindOf "Air" ) && (_veh distance getMarkerPos _nearestFriendlyAirfield > 50)}) exitWith {
     [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_Base_sellVehicle_err0"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
 };
 
