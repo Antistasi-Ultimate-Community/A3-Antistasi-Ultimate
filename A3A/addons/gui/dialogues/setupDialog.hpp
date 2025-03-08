@@ -70,6 +70,15 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     w = 30 * GRID_W;
                     h = 5 * GRID_H;
                 };
+
+                class SaveInfoText : A3A_Text
+                {
+                    idc = A3A_IDC_SETUP_SAVEINFOTEXT;
+                    x = 120 * GRID_W;
+                    y = 0;
+                    w = 40 * GRID_W;
+                    h = 5 * GRID_H;
+                };
             };
         };
 

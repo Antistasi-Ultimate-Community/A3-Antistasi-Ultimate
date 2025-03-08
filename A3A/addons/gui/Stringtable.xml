@@ -3514,6 +3514,15 @@
                 <Portuguese>Este parâmetro não pode ser ativado se os invasores estiverem desativados.</Portuguese>
                 <Chinesesimp>如果 invaders 被禁用，则无法启用此参数。</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_new_save">
+                <Original>Creating new save</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_edit_save">
+                <Original>Editing save with ID: %1</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_copy_save">
+                <Original>Copying save with ID: %1</Original>
+            </Key>
         </Container>
         <Container name="setup_dialog_table">
             <Key ID="STR_antistasi_setup_dialog_table_map">
