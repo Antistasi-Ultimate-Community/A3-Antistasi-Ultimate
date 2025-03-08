@@ -14140,14 +14140,14 @@
                 <Chinesesimp>车辆必须载有叛军乘员或平民乘员。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0">
-                <Original>Vehicle must be closer than 50 meters to the HQ marker.</Original>
+                <Original>Vehicle must be within 50 meters of the HQ marker.</Original>
                 <Russian>Техника должна быть ближе 50 метров от маркера штаба чтобы её можно было продать.</Russian>
                 <Chinesesimp>载具距离总部标志必须小于50米。</Chinesesimp>
                 <Korean>차량은 본부 마커로부터 반경 50m 이하에 있어야 합니다.</Korean>
                 <French>Le véhicule doit être à moins de 50 mètres du quartier général.</French>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0.1">
-                <Original>Air vehicle must be closer than 50 meters to the HQ marker or airfiled.</Original>
+                <Original>Air vehicle must be within 50 meters of the HQ marker or airfield.</Original>
                 <Russian>Воздушная техника должна быть ближе 50 метров от маркера штаба или аэродрома чтобы её можно было продать.</Russian>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err1">
