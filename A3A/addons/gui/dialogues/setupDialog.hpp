@@ -498,9 +498,9 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 class ParamsBackground: A3A_Background {
                     idc = -1;
                     x = 4 * GRID_W;
-                    y = 4 * GRID_H;
+                    y = 8 * GRID_H;
                     w = 152 * GRID_W;
-                    h = 92 * GRID_H;
+                    h = 88 * GRID_H;
                 };
                 class ParamsTable: A3A_ControlsGroup {
                     idc = A3A_IDC_SETUP_PARAMSTABLE;
