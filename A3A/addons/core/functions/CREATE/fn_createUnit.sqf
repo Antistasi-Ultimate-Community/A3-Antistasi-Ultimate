@@ -104,6 +104,6 @@ if !(_unitDefinition isEqualTo []) exitWith {
 private _unit = _group createUnit [_type, _position, _markers, _placement, _special];
 _unit setVariable ["unitType", _type, true];
 
-[_group] spawn A3A_fnc_RC40_attack_EH_byUnit;
+[_group] spawn A3A_fnc_RC40_attack_EH;
 
 _unit
