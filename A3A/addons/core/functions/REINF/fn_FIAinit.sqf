@@ -102,4 +102,4 @@ if (player == leader _unit) then {
 	}];
 };
 
-[_unit] spawn A3A_fnc_RC40_attack_EH_byUnit;
+[group _unit] spawn A3A_fnc_RC40_attack_EH;
