@@ -124,6 +124,6 @@ switch _special do {
 
 if !(_bypassAI) then {_group spawn A3A_fnc_attackDrillAI};
 
-[_group] spawn A3A_fnc_RC40_attack_EH_byUnit;
+[_group] spawn A3A_fnc_RC40_attack_EH;
 
 _group
