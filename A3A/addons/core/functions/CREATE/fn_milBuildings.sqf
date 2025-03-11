@@ -88,12 +88,9 @@ for "_i" from 0 to (count _buildings) - 1 do
         if (damage _building >= 1 or isObjectHidden _building) exitWith {};			// don't put statics on destroyed buildings
         //Static MGs
         if (_typeB isEqualTo "A3U_StaticHolderSmall") then {
-            // Values need tweaking, just threw this in so it's there
             private _type = selectRandom (_faction get "staticMGs");
-            private _dir = getDir _building; // -180?
-            private _zpos = AGLToASL (_building buildingPos 1);
-            private _pos = _zpos getPos [1.5, _dir];			// zeroes Z value because BIS
-            _pos = ASLToATL ([_pos select 0, _pos select 1, _zpos select 2]);
+            private _dir = (getDir _building);
+            private _pos = _building modelToWorld [0,0,0];
             [_type, _pos, _dir] call _fnc_spawnStatic;
         };
         if ((_typeB == "Land_Cargo_Patrol_V1_F") or (_typeB == "Land_Cargo_Patrol_V2_F") or (_typeB == "Land_Cargo_Patrol_V3_F") or (_typeB == "Land_Cargo_Patrol_V4_F")) exitWith
