@@ -24,6 +24,7 @@
 //Additional types
 #define DISCOUNT      500
 #define RIVALS        501
+#define DEALER        502
 
 params ["_intelType", "_side"];
 
@@ -49,10 +50,11 @@ if(isNil "_side") exitWith
 private _faction = Faction(_side);
 private _text = "";
 private _sideName = _faction get "name";
-private _intelContent = "";
+private _intelContent = -1;
 
 if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
     private _thresholds = createHashMapFromArray [
+        ["Civilian", 20],
         ["Small", 20],
         ["Medium", 75],
         ["Large", 100]
@@ -61,15 +63,53 @@ if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
     if (random 100 < (_thresholds get _intelType)) then {
         [] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
         _text = format [localize "STR_trader_task_hint_description", ([] call SCRT_fnc_misc_getWorldName)];
+        _intelContent = DEALER;
     };
 };
 
 if (_text isEqualTo "") then {
     switch (true) do {
+        case (_intelType isEqualTo "Civilian"): {
+            _intelContent = selectRandomWeighted [
+                MONEY, 0.2,
+                WEAPON, 0.2,
+                DECRYPTION_KEY, 0.2,
+                TRAITOR, 0.1
+            ];
+
+            switch (_intelContent) do
+            {
+                case (MONEY):
+                {
+                    private _money = ((round (random 50)) + (10 * tierWar)) * 100;
+                    _text = format ["A civilian gave you some confidential data, you sold it for %1 on the black market!", _money];
+                    [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
+                };
+                case (DECRYPTION_KEY):
+                {
+                    occupantsRadioKeys = occupantsRadioKeys + 1;
+                    _text = format [localize "STR_intel_decryption_key", _sideName];
+                };
+                case (WEAPON):
+                {
+                    private _notYetUnlocked = allWeapons - unlockedWeapons;
+                    private _newWeapon = selectRandom _notYetUnlocked;
+                    [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
+
+                    private _weaponName = getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName");
+                    _text = format ["A civilian gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have unlocked this weapon!", _weaponName];
+                };
+                case (TRAITOR):
+                {
+                    _text = "A civilian handed you a file with incriminating evidence on a traitor, we don't think they will cause any more trouble.";
+                    traitorIntel = true; publicVariable "traitorIntel";
+                };
+            };
+        };
         case (_intelType isEqualTo "Small"): {
             _intelContent = [
-                selectRandomWeighted [TIME_LEFT, 0.2, REVEAL_ZONE_SMALL, 0.2, DEF_RESOURCES, 0.2, DECRYPTION_KEY, 0.2, CONVOY, 0.2, RIVALS, 0.1, DISCOUNT, 0.1],
-                selectRandomWeighted [TIME_LEFT, 0.23, REVEAL_ZONE_SMALL, 0.2, DEF_RESOURCES, 0.23, DECRYPTION_KEY, 0.23, CONVOY, 0.21, DISCOUNT, 0.21]
+                selectRandomWeighted [TIME_LEFT, 0.2, REVEAL_ZONE_SMALL, 0.2, DEF_RESOURCES, 0.2, DECRYPTION_KEY, 0.2, CONVOY, 0.2, RIVALS, 0.1],
+                selectRandomWeighted [TIME_LEFT, 0.23, REVEAL_ZONE_SMALL, 0.2, DEF_RESOURCES, 0.23, DECRYPTION_KEY, 0.23, CONVOY, 0.21]
             ] select (areRivalsEnabled && {areRivalsDiscovered && {!areRivalsDefeated}});
             
             switch (_intelContent) do
@@ -149,18 +189,6 @@ if (_text isEqualTo "") then {
                     _text = format [(localize "STR_intel_rivals"), A3A_faction_riv get "name", _sideName];
                     [15] remoteExecCall ["SCRT_fnc_rivals_addProgressToRivalsLocationReveal", 2];
                 };
-                case (DISCOUNT):
-                {
-                    if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
-                        [] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
-                        _text = format [localize "STR_trader_task_hint_description", ([] call SCRT_fnc_misc_getWorldName)];
-                    } else {
-                        private _discount = traderDiscount + 0.01;
-                        [_discount] call SCRT_fnc_trader_setTraderDiscount;
-
-                        _text = format [localize "STR_intel_discount", _discount * 100];
-                    };
-                };
             };
         };
         case (_intelType isEqualTo "Medium"): {
@@ -172,8 +200,7 @@ if (_text isEqualTo "") then {
                 ACCESS_ARMOR, 0, 
                 COUNTER_ATTACK, 0,
                 CONVOY_ROUTE, 0.2, 
-                CONVOYS, 0.2, 
-                DISCOUNT, 0.2
+                CONVOYS, 0.2
             ];
             switch (_intelContent) do
             {
@@ -215,18 +242,6 @@ if (_text isEqualTo "") then {
                 {
                     //Not yet implemented, needs a rework of the attack script
                 };
-                case (DISCOUNT):
-                {
-                    if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
-                        [] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
-                        _text = format [localize "STR_trader_task_hint_description", ([] call SCRT_fnc_misc_getWorldName)];
-                    } else {
-                        private _discount = traderDiscount + 0.05;
-                        [_discount] call SCRT_fnc_trader_setTraderDiscount;
-
-                        _text = format [localize "STR_intel_discount", _discount * 100];
-                    };
-                };
                 case (CONVOY_ROUTE):
                 {
                     if (!("CONVOY" in A3A_activeTasks) && {!bigAttackInProgress}) then
@@ -251,11 +266,11 @@ if (_text isEqualTo "") then {
         };
         case (_intelType isEqualTo "Large"): {
             if ("AS" in A3A_activeTasks) then {
-                _intelContent = selectRandomWeighted [TRAITOR, 0.25, REVEAL_ZONE_LARGE, 0.25, WEAPON, 0.25, MONEY, 0.25, DISCOUNT, 0.25];
+                _intelContent = selectRandomWeighted [TRAITOR, 0.25, REVEAL_ZONE_LARGE, 0.25, WEAPON, 0.25, MONEY, 0.25];
             } else {
                 _intelContent = [
-                    selectRandomWeighted [WEAPON, 0.35, REVEAL_ZONE_LARGE, 0.3, MONEY, 0.55, DISCOUNT, 0.2],
-                    selectRandomWeighted [WEAPON, 0.35, REVEAL_ZONE_LARGE, 0.3, MONEY, 0.35, RIVALS, 0.15, DISCOUNT, 0.15]
+                    selectRandomWeighted [WEAPON, 0.35, REVEAL_ZONE_LARGE, 0.3, MONEY, 0.55],
+                    selectRandomWeighted [WEAPON, 0.35, REVEAL_ZONE_LARGE, 0.3, MONEY, 0.35, RIVALS, 0.15]
                 ] select (areRivalsEnabled && {areRivalsDiscovered && {!areRivalsDefeated}});
             };
 
@@ -285,21 +300,6 @@ if (_text isEqualTo "") then {
                     _text = format ["You found some confidential data, you sold it for %1 on the black market!", _money];
                     [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
                 };
-                case (DISCOUNT):
-                {
-                    if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
-                        [] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
-                        _text = format [localize "STR_trader_task_hint_description", ([] call SCRT_fnc_misc_getWorldName)];
-                    } else {
-                        private _discount = traderDiscount + 0.1;
-                        [_discount] call SCRT_fnc_trader_setTraderDiscount;
-
-                        private _money = (round (random 50)) * 100;
-                        [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
-
-                        _text = format [localize "STR_intel_discount", _discount * 100];
-                    };
-                };
                 case (RIVALS):
                 {
                     _text = format [(localize "STR_intel_rivals"), A3A_faction_riv get "name", _sideName];
@@ -313,3 +313,5 @@ if (_text isEqualTo "") then {
 if (_text isNotEqualTo "") then {
     [_text, true] remoteExec ["A3A_fnc_showIntel", [civilian, teamPlayer]];
 };
+
+_intelContent;

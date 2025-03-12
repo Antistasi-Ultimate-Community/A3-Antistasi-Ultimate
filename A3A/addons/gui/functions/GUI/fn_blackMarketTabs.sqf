@@ -93,7 +93,7 @@ if (_tab isEqualTo "vehicles") then
         private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
         _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
         _button ctrlSetText _displayName;
-        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, "€"];
+        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
         _button setVariable ["className", _className];
         _button setVariable ["model", _model];
         _button ctrlAddEventHandler ["ButtonClick", {
@@ -158,7 +158,7 @@ if (_tab isEqualTo "vehicles") then
         // Handles showing price
         private _priceText = _display ctrlCreate ["A3A_InfoTextRight", -1, _itemControlsGroup];
         _priceText ctrlSetPosition[23 * GRID_W, 21 * GRID_H, 20 * GRID_W, 3 * GRID_H];
-        _priceText ctrlSetText format ["%1 €",_price];
+        _priceText ctrlSetText format ["%1 %2",_price,A3A_faction_civ get "currencySymbol"];
         _priceText ctrlCommit 0;
 
         // Undercover icon
@@ -292,6 +292,8 @@ if (_tab isEqualTo "vehicles") then
 
         _added = _added + 1;
     } forEach _buyableVehiclesList;
+
+    uiNamespace setVariable ["A3U_BM_isTabsComplete", true];
 
     Debug("BuyVehicleTab complete.");
 };

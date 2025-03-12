@@ -35,7 +35,16 @@
 
 ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepair", ["SPE_OpelBlitz_Repair"]] call _fnc_saveToTemplate;
-["vehiclesPlane", ["SPE_FW190F8"]] call _fnc_saveToTemplate;
+
+private _vehiclesPlanes = [];
+if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
+    _vehiclesPlanes append ["SPEX_C47_Skytrain"];
+};
+if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
+    _vehiclesPlanes append ["JK_B_C47_F"];
+};
+["vehiclesPlane", _vehiclesPlanes] call _fnc_saveToTemplate;
+
 ["vehiclesHeli", []] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["SPE_Milice_R200_Hood"]] call _fnc_saveToTemplate;

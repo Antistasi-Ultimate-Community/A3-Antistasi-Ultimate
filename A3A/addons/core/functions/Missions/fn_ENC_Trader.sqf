@@ -102,7 +102,9 @@ waitUntil {
 traderPosition = _traderPosition;
 publicVariable "traderPosition";
 
-isTraderQuestCompleted = true; 
+isTraderQuestAssigned = false;
+isTraderQuestCompleted = true;
+publicVariable "isTraderQuestAssigned";
 publicVariable "isTraderQuestCompleted";
 
 deleteVehicle _trigger;

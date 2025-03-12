@@ -1262,6 +1262,32 @@ switch _mode do {
 				}foreach assignedItems player;
 				_return1;
 			};
+			case IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG;
+			case IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2;
+			case IDC_RSCDISPLAYARSENAL_TAB_ITEMOPTIC;
+			case IDC_RSCDISPLAYARSENAL_TAB_ITEMACC;
+			case IDC_RSCDISPLAYARSENAL_TAB_ITEMMUZZLE;
+			case IDC_RSCDISPLAYARSENAL_TAB_ITEMBIPOD: {
+				private _weapon = switch true do {
+					case (ctrlEnabled (_display displayCtrl IDC_RSCDISPLAYARSENAL_LIST + IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON)): { primaryWeapon player };
+					case (ctrlEnabled (_display displayCtrl IDC_RSCDISPLAYARSENAL_LIST + IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON)): { secondaryWeapon player };
+					case (ctrlEnabled (_display displayCtrl IDC_RSCDISPLAYARSENAL_LIST + IDC_RSCDISPLAYARSENAL_TAB_HANDGUN)): { handgunWeapon player };
+				};
+				private _weaponItems = weaponsItems player select { _x select 0 isEqualTo _weapon } select 0;
+
+				_return1 = switch (_index) do {
+					case IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG: { _weaponItems select 4 };
+					case IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2: { _weaponItems select 5 };
+					case IDC_RSCDISPLAYARSENAL_TAB_ITEMOPTIC: { _weaponItems select 3 };
+					case IDC_RSCDISPLAYARSENAL_TAB_ITEMACC: { _weaponItems select 2 };
+					case IDC_RSCDISPLAYARSENAL_TAB_ITEMMUZZLE: { _weaponItems select 1 };
+					case IDC_RSCDISPLAYARSENAL_TAB_ITEMBIPOD: { _weaponItems select 6 };
+				};
+				if (_return1 isEqualType []) then { 
+					_return1 = if (count _return1 > 0) then { _return1 select 0 } else { "" };
+				};
+				_return1;
+			};
 		};
 		_return;
 	};

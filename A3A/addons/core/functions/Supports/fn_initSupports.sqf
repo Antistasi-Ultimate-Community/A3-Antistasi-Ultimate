@@ -44,13 +44,14 @@ private _initData = [
     ["QRFLAND",       "TROOPS", 1.0, 1.4,   0,   0,  "", ""],
     ["QRFAIR",        "TROOPS", 0.5, 0.1,   0,   0,  "", ""],
     ["QRFVEHAIRDROP", "TROOPS", 0.3, 0.1,   0,   0,  "", "vehiclesPlanesTransport"],
-    ["QRFORBITAL",        "TROOPS", 0.5, 0.1,   0,   0,  "f", "vehiclesDropPod"],     ///needs to be balanced
+    ["QRFORBITAL",        "TROOPS", 0.5, 0.1,   0,   0,  "fu", "vehiclesDropPod"],     ///needs to be balanced
     ["CARPETBOMBS",     "AREA", 0.5, 0.1, 200,   0, "u", ""],                            // balanced against airstrikes
     ["GUNSHIP",         "AREA", 0.2, 0.1, 0, 80, "", "vehiclesPlanesGunship"],                   //u      // uh. Does AREA work for this? Only lasts 5 minutes so maybe...
     ["SAM",           "TARGET", 1.0, 1.0,   0, 100, "u", ""],                            // balanced against ASF
     ["CRUISEMISSILE", "AREA", 0.3, 0.1, 150,   100, "u", ""],
     ["ORBITALSTRIKE",   "AREA", 0.2, 0.0, 300,   0, "f", ""],
-    ["UAV",           "TARGET", 0.4, 0.2,   0, 80,  "u", "uavsAttack"]
+    ["UAV",           "TARGET", 0.4, 0.2,   0, 0,  "", "uavsAttack"],
+    ["UAVAttack",           "TARGET", 0.3, 0.2,   0, 80,  "u", "uavsAttack"]
 ];
 
 // Generate support type hashmap for a faction, suppType -> [baseType, weight, effRadius, strikepower]

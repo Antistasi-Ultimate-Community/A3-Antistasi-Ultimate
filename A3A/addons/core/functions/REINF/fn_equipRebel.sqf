@@ -219,9 +219,46 @@ switch (true) do {
     };
 };
 
+private _handgun = selectRandomWeighted (A3A_rebelGear get "Handguns");
+if !(isNil "_handgun") then { [_unit, "Handguns"] call A3A_fnc_randomHandgun;};
+
 private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
-if (_nvg != "") then { _unit linkItem _nvg }
-else {
+if (_nvg != "") then { 
+    _unit linkItem _nvg;
+    private _weapon = primaryWeapon _unit;
+    private _compatLasers = A3A_rebelLasersCache get _weapon;
+    if (isNil "_compatLasers") then {
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
+        _compatLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weapon, _compatLasers];
+    };
+    if (_compatLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatLasers;
+        _unit addPrimaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
+    };
+    private _weaponsecondary = secondaryWeapon _unit;
+    private _compatSecondaryLasers = A3A_rebelLasersCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLasers") then {
+        private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
+        _compatSecondaryLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weaponsecondary, _compatSecondaryLasers];
+    };
+    if (_compatSecondaryLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatSecondaryLasers;
+        _unit addSecondaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
+    };
+    private _weaponhandgun = handgunWeapon _unit;
+    private _compatHandgunLasers = A3A_rebelLasersCache get _weaponhandgun;
+    if (isNil "_compatHandgunLasers") then {
+        private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
+        _compatHandgunLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weaponhandgun, _compatHandgunLasers];
+    };
+    if (_compatHandgunLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatHandgunLasers;
+        _unit addHandgunItem _LaserAttachment;		// should be used automatically by AI as necessary
+    };
+} else {
     private _weapon = primaryWeapon _unit;
     private _compatLights = A3A_rebelFlashlightsCache get _weapon;
     if (isNil "_compatLights") then {
@@ -232,6 +269,28 @@ else {
     if (_compatLights isNotEqualTo []) then {
         private _flashlight = selectRandom _compatLights;
         _unit addPrimaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
+    };
+    private _weaponsecondary = secondaryWeapon _unit;
+    private _compatSecondaryLights = A3A_rebelFlashlightsCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLights") then {
+        private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
+        _compatSecondaryLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weaponsecondary, _compatSecondaryLights];
+    };
+    if (_compatSecondaryLights isNotEqualTo []) then {
+        private _flashlight = selectRandom _compatSecondaryLights;
+        _unit addSecondaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
+    };
+    private _weaponhandgun = handgunWeapon _unit;
+    private _compatHandgunLights = A3A_rebelFlashlightsCache get _weaponhandgun;
+    if (isNil "_compatHandgunLights") then {
+        private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
+        _compatHandgunLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weaponhandgun, _compatHandgunLights];
+    };
+    if (_compatHandgunLights isNotEqualTo []) then {
+        private _flashlight = selectRandom _compatHandgunLights;
+        _unit addHandgunItem _flashlight;		// should be used automatically by AI as necessary
     };
 };
 

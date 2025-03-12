@@ -24,17 +24,8 @@ if !(isNil "_speaker") then { _unit setSpeaker _speaker };
 private _pitch = _identity get "pitch";
 if !(isNil "_pitch") then { _unit setPitch _pitch };
 
-private _firstName = _identity getOrDefault ["firstName", ""];
-private _lastName = _identity getOrDefault ["lastName", ""];
-
-if (isNil "_firstName" || {isNil "_lastName"}) then {
-    private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> "GreekMen";
-    private _firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
-    private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
-
-    _firstName = selectRandom _firstNames;
-    _lastName = selectRandom _lastNames;
-};
+private _firstName = _identity get "firstName";
+private _lastName = _identity get "lastName";
 
 if (_firstName != "" || _lastName != "") then {
     private _fullName = [_firstName, _lastName] select { _x != "" } joinString " ";

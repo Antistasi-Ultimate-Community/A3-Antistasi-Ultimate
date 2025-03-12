@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3AU-ultimate">
+    <Package name="A3-Antistasi-builderbox">
+        <Key ID="STR_params_builderPermissions">
+            <Original>Player classes permitted to use the building placer</Original>
+        </Key>
+        <Key ID="STR_params_builderLimit">
+            <Original>Build limit</Original>
+        </Key>
+        <Key ID="STR_params_builderAllowRoads">
+            <Original>Allow buildings to be saved on roads</Original>
+        </Key>
+        <Key ID="STR_params_builderBuildTime">
+            <Original>Build hold time multiplier</Original>
+        </Key>
+    </Package>
     <Package name="A3-Antistasi-Ultimate-functions">
         <Key ID="STR_A3AU_init_mods_warning_header">
             <Original>Warning</Original>
@@ -124,6 +138,129 @@
     <Package name="ported">
         <Key ID="STR_A3A_fn_support_showIntStpCll_TANK">
             <Original>%1 just sent a tank platoon.</Original>
+        </Key>
+    </Package>
+    <Package name="Lockpick">
+        <Key ID="STR_A3AU_action_lockpick_title">
+            <Original>Lockpick</Original>
+            <Russian>Отмычка</Russian>
+            <German>Dietrich</German>
+            <Italian>Grimaldello</Italian>
+            <Spanish>Ganzúa</Spanish>
+            <French>Crochet</French>
+            <Korean>자물쇠 따기</Korean>
+            <Japanese>ピッキング</Japanese>
+            <Chinesesimp>撬锁</Chinesesimp>
+            <Chinese>撬鎖</Chinese>
+            <Polish>Wytrych</Polish>
+            <Czech>Páčidlo</Czech>
+            <Portuguese>Gazua</Portuguese>
+            <Turkish>Maymuncuk</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_start">
+            <Original>you have started lockpicking %1.</Original>
+            <Russian>Вы начали взламывать %1.</Russian>
+            <German>Du hast begonnen, %1 zu knacken.</German>
+            <Italian>Hai iniziato a scassinare %1.</Italian>
+            <Spanish>Has comenzado a forzar %1.</Spanish>
+            <French>Vous avez commencé à crocheter %1.</French>
+            <Korean>%1 잠금 해제를 시작했습니다.</Korean>
+            <Japanese>%1 のピッキングを開始しました。</Japanese>
+            <Chinesesimp>你开始撬锁 %1。</Chinesesimp>
+            <Chinese>你開始撬鎖 %1。</Chinese>
+            <Polish>Rozpocząłeś wytrychowanie %1.</Polish>
+            <Czech>Začal jsi páčit %1.</Czech>
+            <Portuguese>Você começou a arrombar %1.</Portuguese>
+            <Turkish>%1 kilidini açmaya başladın.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_success">
+            <Original>You have successfully lockpicked %1.</Original>
+            <Russian>Вы успешно взломали %1.</Russian>
+            <German>Du hast %1 erfolgreich geknackt.</German>
+            <Italian>Hai scassinato con successo %1.</Italian>
+            <Spanish>Has forzado con éxito %1.</Spanish>
+            <French>Vous avez réussi à crocheter %1.</French>
+            <Korean>%1 잠금 해제에 성공했습니다.</Korean>
+            <Japanese>%1 のピッキングに成功しました。</Japanese>
+            <Chinesesimp>你成功撬开了 %1。</Chinesesimp>
+            <Chinese>你成功撬開了 %1。</Chinese>
+            <Polish>Udało ci się wytrychować %1.</Polish>
+            <Czech>Úspěšně jsi vypáčil %1.</Czech>
+            <Portuguese>Você arrombou %1 com sucesso.</Portuguese>
+            <Turkish>%1 kilidini başarıyla açtın.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_aborted">
+            <Original>Lockpicking has been aborted. &lt;br /&gt; An alarm has started. &lt;br /&gt; You are no longer undercover.</Original>
+            <Russian>Взлом был прерван. &lt;br /&gt; Сработала сигнализация. &lt;br /&gt; Вы больше не под прикрытием.</Russian>
+            <German>Das Knacken wurde abgebrochen. &lt;br /&gt; Ein Alarm wurde ausgelöst. &lt;br /&gt; Du bist nicht mehr undercover.</German>
+            <Italian>Lo scasso è stato interrotto. &lt;br /&gt; È scattato un allarme. &lt;br /&gt; Non sei più sotto copertura.</Italian>
+            <Spanish>El forzamiento ha sido abortado. &lt;br /&gt; Se ha activado una alarma. &lt;br /&gt; Ya no estás encubierto.</Spanish>
+            <French>Le crochetage a été interrompu. &lt;br /&gt; Une alarme s'est déclenchée. &lt;br /&gt; Vous n'êtes plus sous couverture.</French>
+            <Korean>자물쇠 따기가 중단되었습니다. &lt;br /&gt; 경보가 울리기 시작했습니다. &lt;br /&gt; 더 이상 위장 상태가 아닙니다.</Korean>
+            <Japanese>ピッキングが中止されました。 &lt;br /&gt; アラームが鳴り始めました。 &lt;br /&gt; もう潜入状態ではありません。</Japanese>
+            <Chinesesimp>撬锁已被中止。 &lt;br /&gt; 警报已触发。 &lt;br /&gt; 你不再是卧底。</Chinesesimp>
+            <Chinese>撬鎖已被中止。 &lt;br /&gt; 警報已觸發。 &lt;br /&gt; 你不再是臥底。</Chinese>
+            <Polish>Wytrychowanie zostało przerwane. &lt;br /&gt; Włączył się alarm. &lt;br /&gt; Nie jesteś już pod przykrywką.</Polish>
+            <Czech>Páčení bylo přerušeno. &lt;br /&gt; Spustil se alarm. &lt;br /&gt; Už nejsi v utajení.</Czech>
+            <Portuguese>O arrombamento foi interrompido. &lt;br /&gt; Um alarme foi ativado. &lt;br /&gt; Você não está mais disfarçado.</Portuguese>
+            <Turkish>Maymuncuk kullanma işlemi iptal edildi. &lt;br /&gt; Alarm çalmaya başladı. &lt;br /&gt; Artık gizli değilsin.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_zone_control">
+            <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have control of this zone</Original>
+            <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как вы контролируете эту зону</Russian>
+            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du diese Zone kontrollierst</German>
+            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché controlli questa zona</Italian>
+            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido porque tienes el control de esta zona</Spanish>
+            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous contrôlez cette zone</French>
+            <Korean>%1 &lt;br /&gt;이 지역을 장악했기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
+            <Japanese>%1 &lt;br /&gt;このエリアを支配しているため、ピッキング時間が短縮されました</Japanese>
+            <Chineseimp>%1 &lt;br /&gt;撬锁时间已减少，因为你控制了此区域</Chineseimp>
+            <Chinese>%1 &lt;br /&gt;撬鎖時間已減少，因為你控制了此區域</Chinese>
+            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ kontrolujesz tę strefę</Polish>
+            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože ovládáte tuto zónu</Czech>
+            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você controla esta zona</Portuguese>
+            <Turkish>%1 &lt;br /&gt;bu bölgeyi kontrol ettiğin için kilit açma süresi azaldı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_has_toolkit">
+            <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have a toolkit</Original>
+            <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как у вас есть набор инструментов</Russian>
+            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du ein Werkzeugset hast</German>
+            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché hai un kit di attrezzi</Italian>
+            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido porque tienes un kit de herramientas</Spanish>
+            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous avez une trousse à outils</French>
+            <Korean>%1 &lt;br /&gt;공구 상자가 있기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
+            <Japanese>%1 &lt;br /&gt;工具キットを持っているため、ピッキング時間が短縮されました</Japanese>
+            <Chineseimp>%1 &lt;br /&gt;由于你有工具包，撬锁时间已减少</Chineseimp>
+            <Chinese>%1 &lt;br /&gt;由於你有工具包，撬鎖時間已減少</Chinese>
+            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ masz zestaw narzędzi</Polish>
+            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože máte sadu nástrojů</Czech>
+            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você tem um kit de ferramentas</Portuguese>
+            <Turkish>%1 &lt;br /&gt;alet takımın olduğu için kilit açma süresi azaldı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_not_engineer">
+            <Original>You have to be an Engineer to start lockpicking</Original>
+            <Russian>Вам нужно быть инженером, чтобы начать взлом</Russian>
+            <German>Du musst ein Ingenieur sein, um das Schlossknacken zu starten</German>
+            <Italian>Devi essere un ingegnere per iniziare a scassinare</Italian>
+            <Spanish>Debes ser ingeniero para empezar a ganzuar</Spanish>
+            <French>Vous devez être ingénieur pour commencer le crochetage</French>
+            <Korean>자물쇠 따기를 시작하려면 엔지니어여야 합니다</Korean>
+            <Japanese>ピッキングを開始するにはエンジニアである必要があります</Japanese>
+            <Chineseimp>你必须是工程师才能开始撬锁</Chineseimp>
+            <Chinese>你必須是工程師才能開始撬鎖</Chinese>
+            <Polish>Musisz być inżynierem, aby rozpocząć otwieranie zamków</Polish>
+            <Czech>Musíte být inženýrem, abyste mohli začít odemykat</Czech>
+            <Portuguese>Você precisa ser um engenheiro para começar a arrombar fechaduras</Portuguese>
+            <Turkish>Kilit açmaya başlamak için mühendis olmalısın</Turkish>
+        </Key>
+    </Package>
+    <Package name="Arsenal">
+        <Key ID="STR_JNA_SCT_QUICK_EQUIP">
+            <Original>Quick Equip Loadout</Original>
+            <Russian>Быстрая экипировка</Russian>
+            <Korean>빠른 장비 로드아웃</Korean>
+            <Chinesesimp>快速装备</Chinesesimp>
+            <French>Équipement rapide</French>
         </Key>
     </Package>
 </Project>
