@@ -3399,6 +3399,22 @@
                 <Korean>건쉽 지역</Korean>
                 <French>Zone de tirs d'appui feu</French>
             </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAV">
+                <Original>A %1 recon UAV started circling the area</Original>
+                <Russian>БПЛА разведки %1 барражирует над локацией</Russian>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAV_marker">
+                <Original>Recon UAV Area</Original>
+                <Russian>Зона действия БПЛА разведки</Russian>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAVAttack">
+                <Original>A %1 attack UAV started circling the area</Original>
+                <Russian>Ударный БПЛА %1 барражирует над локацией</Russian>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAVAttack_marker">
+                <Original>Attack UAV Area</Original>
+                <Russian>Зона действия ударного БПЛА</Russian>
+            </Key>
             <Key ID="STR_notifiers_SUP_execute_generic">
                 <Original>%1 is executing %2 support now</Original>
                 <Russian>%1 оказывают %2 поддержку</Russian>
@@ -3531,6 +3547,10 @@
                 <Chinesesimp>%1 派出侦察无人机</Chinesesimp>
                 <Korean>%1이(가) 감적무인기를 보내는 중입니다</Korean>
                 <French>%1 envoie un drone de repérage</French>
+            </Key>
+            <Key ID="STR_notifiers_SUP_setup_UAVAttack">
+                <Original>%1 is sending an attack UAV</Original>
+                <Russian>%1 запускают ударный БПЛА</Russian>
             </Key>
             <Key ID="STR_notifiers_SUP_setup_unknown">
                 <Original>%1 is setting up %2 support</Original>
@@ -4424,11 +4444,11 @@
                 <French>Tous les joueurs doivent se trouver dans un rayon de 100 m autour du QG pour pouvoir se reposer.</French>
             </Key>
             <Key ID="STR_params_rest">
-                <Original>You decided to rest for 8 hours...</Original>
-                <Russian>Вы решили отдохнуть 8 часов...</Russian>
-                <Chinesesimp>你决定摸鱼休息8小时...</Chinesesimp>
-                <Korean>당신은 8시간 동안 쉬기로 했습니다...</Korean>
-                <French>Vous avez décidé de vous reposer pendant 8 heures...</French>
+                <Original>You decided to rest for %1 hours...</Original>
+                <Russian>Вы решили отдохнуть %1 часов...</Russian>
+                <Chinesesimp>你决定摸鱼休息%1小时...</Chinesesimp>
+                <Korean>당신은 %1시간 동안 쉬기로 했습니다...</Korean>
+                <French>Vous avez décidé de vous reposer pendant %1 heures...</French>
             </Key>
             <Key ID="STR_params_time_to_go">
                 <Original>Time to go.</Original>
@@ -5127,7 +5147,21 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
-	    <Key ID="STR_params_recruitToPlayerSquad">
+            <Key ID="STR_params_enableVehicleAutoLock">
+                <Original>Enable Enemy Vehicle Locks</Original>
+                <Russian>Включить замки на вражеских машинах</Russian>
+                <Chinesesimp>启用敌方车辆锁</Chinesesimp>
+                <Korean>적 차량 잠금 장치 활성화</Korean>
+                <French>Activer les verrous des véhicules ennemis</French>
+            </Key>
+            <Key ID="STR_params_vehicleLockpickTime">
+                <Original>Amount of time in seconds to lockpick a vehicle</Original>
+                <Russian>Время в секундах для взлома автомобиля</Russian>
+                <French>Temps en secondes pour crocheter un véhicule</French>
+                <Korean>차량의 자물쇠를 따는 데 걸리는 시간(초)</Korean>
+                <Chineseimp>撬锁车辆所需的时间（秒）</Chineseimp>
+            </Key>
+	        <Key ID="STR_params_recruitToPlayerSquad">
                 <Original>Allow players to recruit enemy AI to their squad</Original>
                 <Russian>Позволить игрокам нанимать вражеский ИИ в свой отряд</Russian>
                 <Chinesesimp>允许玩家招募敌方 AI 加入他们的小队</Chinesesimp>
@@ -5267,6 +5301,22 @@
                 <Korean>지원 설정</Korean>
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
+            <Key ID="STR_params_allowCivDialog">
+                <Original>[Experimental] Allow talking to civilians</Original>
+                <Russian>[Экспериментально] Разрешить разговоры с гражданскими</Russian>
+                <German>[Experimentell] Gespräche mit Zivilisten erlauben</German>
+                <Italian>[Sperimentale] Permetti di parlare con i civili</Italian>
+                <Spanish>[Experimental] Permitir hablar con civiles</Spanish>
+                <French>[Expérimental] Autoriser les conversations avec les civils</French>
+                <Korean>[실험적] 민간인과 대화 허용</Korean>
+                <Japanese>[試験的] 民間人との会話を許可</Japanese>
+                <Chinesesimp>[实验性] 允许与平民交谈</Chinesesimp>
+                <Chinese>[實驗性] 允許與平民交談</Chinese>
+                <Polish>[Eksperymentalne] Zezwól na rozmowy z cywilami</Polish>
+                <Czech>[Experimentální] Povolit rozhovory s civilisty</Czech>
+                <Portuguese>[Experimental] Permitir conversas com civis</Portuguese>
+                <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
+            </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
                 <Original>[Experimental] Ignore Black Market Vehicle Requirements</Original>
                 <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
@@ -5279,7 +5329,7 @@
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
-                <Russian>[Experimental] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
+                <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
@@ -5557,6 +5607,13 @@
                 <Chinesesimp>玩家被视为AFK之前的时间（以分钟为单位）</Chinesesimp>
                 <Korean>플레이어가 잠수로 간주될 때까지의 시간 (분)</Korean>
                 <French>Temps avant qu'un joueur soit considéré comme AFK (en minutes)</French>
+            </Key>
+            <Key ID="STR_params_afk_uav">
+                <Original>[Experimental] Should player be considered AFK while controlling a UAV?</Original>
+                <Russian>[Экспериментально] Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
+                <Chinesesimp>[实验]玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
+                <Korean>[실험용] UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
+                <French>[Expérimental] Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
             </Key>
             <Key ID="STR_params_afk_disabled">
                 <Original>Disabled</Original>
@@ -7460,14 +7517,14 @@
                 <French>Mines AT</French>
             </Key>
             <Key ID="STR_commander_menu_fog_title">
-                <Original>Fog: %1</Original>
+                <Original>Fog Level: %1</Original>
                 <Russian>Туман: %1</Russian>
                 <Chinesesimp>雾：%1</Chinesesimp>
                 <Korean>안개: %1</Korean>
                 <French>Brouillard: %1</French>
             </Key>
             <Key ID="STR_commander_menu_fog_title_default">
-                <Original>Fog: 0.5</Original>
+                <Original>Fog Level: 0.5</Original>
                 <Russian>Туман: 0.5</Russian>
                 <Chinesesimp>雾：0.5</Chinesesimp>
                 <Korean>안개: 0.5</Korean>
@@ -7481,21 +7538,21 @@
                 <French>Accorde le niveau général du brouillard.</French>
             </Key>
             <Key ID="STR_commander_menu_fog_button">
-                <Original>SET FOG LEVEL</Original>
-                <Russian>ЗАДАТЬ УРОВЕНЬ ТУМАНА</Russian>
-                <Chinesesimp>设置雾级别</Chinesesimp>
-                <Korean>안개 레벨 설정</Korean>
-                <French>RÉGLAGE DU NIVEAU DE BROUILLARD</French>
+                <Original>Apply</Original>
+                <Russian>Применять</Russian>
+                <Chinesesimp>应用</Chinesesimp>
+                <Korean>적용하다</Korean>
+                <French>Appliquer</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_title">
-                <Original>Overcast: %1</Original>
+                <Original>Overcast Level: %1</Original>
                 <Russian>Облачность: %1</Russian>
                 <Chinesesimp>阴天：%1</Chinesesimp>
                 <Korean>날씨: %1</Korean>
                 <French>Couvert: %1</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_title_default">
-                <Original>Overcast: 0.5</Original>
+                <Original>Overcast Level: 0.5</Original>
                 <Russian>Облачность: 0.5</Russian>
                 <Chinesesimp>阴天：0.5</Chinesesimp>
                 <Korean>날씨: 0.5</Korean>
@@ -7509,11 +7566,39 @@
                 <French>Accorde le niveau général de la couverture nuageuse.</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_button">
-                <Original>SET OVERCAST LEVEL</Original>
-                <Russian>ЗАДАТЬ УРОВЕНЬ ОБЛАЧНОСТИ</Russian>
-                <Chinesesimp>设置阴天水平</Chinesesimp>
-                <Korean>날씨 레벨 설정</Korean>
-                <French>DÉFINIR LE NIVEAU DE COUVERTURE</French>
+                <Original>Apply</Original>
+                <Russian>Применять</Russian>
+                <Chinesesimp>应用</Chinesesimp>
+                <Korean>적용하다</Korean>
+                <French>Appliquer</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title">
+                <Original>Rest for %1 %2</Original>
+                <Russian>Отдых для %1 %2</Russian>
+                <Chinesesimp>休息 %1 %2</Chinesesimp>
+                <Korean>%1 %2에 대한 휴식</Korean>
+                <French>Repos pour %1 %2</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title_default">
+                <Original>Rest for 6 %1</Original>
+                <Russian>Отдых на 6 %1</Russian>
+                <Chinesesimp>休息 6 %1</Chinesesimp>
+                <Korean>6 %1 휴식</Korean>
+                <French>Repos pour 6 %1</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title_tooltip">
+                <Original>%1 to rest</Original>
+                <Russian>%1 для покоя</Russian>
+                <Chinesesimp>%1 到休息完毕</Chinesesimp>
+                <Korean>%1 휴식</Korean>
+                <French>%1 au repos</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_button">
+                <Original>Rest</Original>
+                <Russian>Отдых</Russian>
+                <Chinesesimp>休息</Chinesesimp>
+                <Korean>쉬다</Korean>
+                <French>Se reposer</French>
             </Key>
             <Key ID="STR_commander_menu_clear_forest_button">
                 <Original>CLEAR FOREST NEAR HQ</Original>
@@ -9550,7 +9635,7 @@
             </Key>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_header">
-                <Original>Deserters Rescue</Original>
+                <Original>Rescue Deserters</Original>
                 <Russian>Спасите дезертиров</Russian>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
@@ -10375,12 +10460,29 @@
                 <French>Détruire la radio</French>
                 <Korean>라디오 파괴</Korean>
                 <Japanese>ラジオを破壊</Japanese>
-                <Chineseimp>摧毁收音机</Chineseimp>
+                <Chinesesimp>摧毁收音机</Chinesesimp>
                 <Chinese>摧毀收音機</Chinese>
                 <Polish>Zniszcz radio</Polish>
                 <Czech>Zničit rádio</Czech>
                 <Portuguese>Destruir rádio</Portuguese>
                 <Turkish>Radyoyu Yok Et</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ">
+                <Original>Talk with Civilian</Original>
+                <English>Talk with Civilian</English>
+                <Russian>Поговорить с гражданским</Russian>
+                <German>Mit Zivilist sprechen</German>
+                <Italian>Parla con il civile</Italian>
+                <Spanish>Hablar con civil</Spanish>
+                <French>Parler avec le civil</French>
+                <Korean>민간인과 대화</Korean>
+                <Japanese>民間人と話す</Japanese>
+                <Chinesesimp>与平民交谈</Chinesesimp>
+                <Chinese>與平民交談</Chinese>
+                <Polish>Porozmawiaj z cywilem</Polish>
+                <Czech>Mluvit s civilistou</Czech>
+                <Portuguese>Falar com civil</Portuguese>
+                <Turkish>Sivil ile konuş</Turkish>
             </Key>
         </Container>
         <Container name="common_notifications">
@@ -10687,6 +10789,550 @@
                 <Chinesesimp>我永远不会背叛我的祖国！</Chinesesimp>
                 <Korean>난 절대 내 조국을 배신하지 않을 것이다!</Korean>
                 <French>Je ne trahirai pas mon pays !</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question1">
+                <Original>Have you seen anything unusual around here recently?</Original>
+                <Russian>Вы видели что-то необычное вокруг здесь недавно?</Russian>
+                <German>Haben Sie hier in letzter Zeit etwas Ungewöhnliches gesehen?</German>
+                <Italian>Hai visto qualcosa di strano qui intorno ultimamente?</Italian>
+                <Spanish>¿Has visto algo inusual por aquí últimamente?</Spanish>
+                <French>Avez-vous vu quelque chose d'inhabituel ici récemment ?</French>
+                <Korean>최근 이 주변에서 이상한 것을 보셨나요?</Korean>
+                <Japanese>最近、この辺りで何か異常なことを見ましたか？</Japanese>
+                <Chinesesimp>你最近在这里看到什么不寻常的事情了吗？</Chinesesimp>
+                <Chinese>你最近在這裡看到什麼不尋常的事情嗎？</Chinese>
+                <Polish>Czy widziałeś coś nietypowego w pobliżu ostatnio?</Polish>
+                <Czech>Viděl jste v poslední době něco neobvyklého tady?</Czech>
+                <Portuguese>Você viu algo incomum por aqui recentemente?</Portuguese>
+                <Turkish>Son zamanlarda burada tuhaf bir şey gördünüz mü?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question2">
+                <Original>Do you know of any important locations or people I should be aware of?</Original>
+                <Russian>Знаете ли вы о каких-либо важных местах или людях, о которых я должен знать?</Russian>
+                <German>Kennst du irgendwelche wichtigen Orte oder Personen, über die ich Bescheid wissen sollte?</German>
+                <Italian>Conosci luoghi o persone importanti di cui dovrei essere a conoscenza?</Italian>
+                <Spanish>¿Conoces lugares o personas importantes de los que deba estar al tanto?</Spanish>
+                <French>Connaissez-vous des lieux ou des personnes importants dont je devrais être au courant ?</French>
+                <Korean>알아야 할 중요한 장소나 사람을 아시나요?</Korean>
+                <Japanese>私が知っておくべき重要な場所や人物を知っていますか？</Japanese>
+                <Chinesesimp>你知道任何我应该了解的重要地点或人物吗？</Chinesesimp>
+                <Chinese>你知道任何我應該了解的重要地點或人物嗎？</Chinese>
+                <Polish>Czy znasz jakieś ważne miejsca lub osoby, o których powinienem wiedzieć?</Polish>
+                <Czech>Znám nějaká důležitá místa nebo osoby, o kterých bych měl vědět?</Czech>
+                <Portuguese>Você conhece algum local ou pessoa importante da qual eu deva saber?</Portuguese>
+                <Turkish>Bilmem gereken önemli yerler ya da kişiler var mı?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question3">
+                <Original>Is there anyone around here who might be willing to share some useful information?</Original>
+                <Russian>Здесь есть кто-то, кто может быть готов поделиться полезной информацией?</Russian>
+                <German>Gibt es hier jemanden, der bereit ist, nützliche Informationen zu teilen?</German>
+                <Italian>C'è qualcuno qui intorno che potrebbe essere disposto a condividere informazioni utili?</Italian>
+                <Spanish>¿Hay alguien por aquí que esté dispuesto a compartir información útil?</Spanish>
+                <French>Y a-t-il quelqu'un ici qui pourrait être disposé à partager des informations utiles ?</French>
+                <Korean>이 주변에 유용한 정보를 공유할 의향이 있는 사람이 있나요?</Korean>
+                <Japanese>ここ周辺に有益な情報を共有する意志のある人はいますか？</Japanese>
+                <Chinesesimp>这里有谁愿意分享一些有用的信息吗？</Chinesesimp>
+                <Chinese>這裡有誰願意分享一些有用的信息嗎？</Chinese>
+                <Polish>Czy jest tutaj ktoś, kto mógłby być skłonny podzielić się przydatnymi informacjami?</Polish>
+                <Czech>Je zde někdo, kdo by mohl být ochoten sdílet užitečné informace?</Czech>
+                <Portuguese>Há alguém por aqui que possa estar disposto a compartilhar algumas informações úteis?</Portuguese>
+                <Turkish>Buralarda bazı faydalı bilgiler paylaşmaya istekli biri var mı?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_interruption1">
+                <Original>Hey, I thought you needed something... Never mind then.</Original>
+                <Russian>Эй, я думал, тебе что-то нужно... Ну, не важно.</Russian>
+                <German>Hey, ich dachte, du brauchst etwas... Schon gut, vergiss es.</German>
+                <Italian>Ehi, pensavo avessi bisogno di qualcosa... Lascia perdere allora.</Italian>
+                <Spanish>Oye, pensé que necesitabas algo... Da igual entonces.</Spanish>
+                <French>Hé, je pensais que tu avais besoin de quelque chose... Tant pis alors.</French>
+                <Korean>저기, 뭔가 필요한 줄 알았는데... 그럼 신경 쓰지 마세요.</Korean>
+                <Japanese>ねえ、何か必要だと思ってたけど…気にしないで。</Japanese>
+                <Chinesesimp>嘿，我以为你需要什么……算了。</Chinesesimp>
+                <Chinese>嘿，我以為你需要什麼……算了。</Chinese>
+                <Polish>Hej, myślałem, że czegoś potrzebujesz... Nieważne.</Polish>
+                <Czech>Hej, myslel jsem, že něco potřebuješ... Tak nic.</Czech>
+                <Portuguese>Ei, achei que você precisava de algo... Deixa pra lá então.</Portuguese>
+                <Turkish>Hey, bir şeye ihtiyacın var sanmıştım... Neyse, boş ver.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_interruption2">
+                <Original>Leaving already? Guess you didn’t need my help after all.</Original>
+                <Russian>Уже уходишь? Похоже, моя помощь тебе не понадобилась.</Russian>
+                <German>Gehst du schon? Anscheinend brauchst du meine Hilfe doch nicht.</German>
+                <Italian>Te ne vai già? Immagino che alla fine non avessi bisogno del mio aiuto.</Italian>
+                <Spanish>¿Ya te vas? Supongo que al final no necesitabas mi ayuda.</Spanish>
+                <French>Tu pars déjà ? Apparemment, tu n'avais pas besoin de mon aide finalement.</French>
+                <Korean>벌써 가시는 건가요? 결국 제 도움이 필요 없으셨나 봐요.</Korean>
+                <Japanese>もう行くの？結局、私の助けは必要なかったみたいだね。</Japanese>
+                <Chinesesimp>这么快就走了？看来你根本不需要我的帮助。</Chinesesimp>
+                <Chinese>這麼快就走了？看來你根本不需要我的幫助。</Chinese>
+                <Polish>Już wychodzisz? Chyba jednak nie potrzebowałeś mojej pomocy.</Polish>
+                <Czech>Už odcházíš? Asi jsi moji pomoc nakonec nepotřeboval.</Czech>
+                <Portuguese>Já vai embora? Acho que você não precisava da minha ajuda afinal.</Portuguese>
+                <Turkish>Şimdiden mi gidiyorsun? Demek ki yardımıma ihtiyacın yokmuş.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail1">
+                <Original>I'm sorry, but I can't help you. Please, try asking someone else.</Original>
+                <Russian>Извините, но я не могу вам помочь. Пожалуйста, попробуйте спросить кого-нибудь другого.</Russian>
+                <German>Es tut mir leid, aber ich kann Ihnen nicht helfen. Bitte versuchen Sie, jemand anderen zu fragen.</German>
+                <Italian>Mi dispiace, ma non posso aiutarti. Per favore, prova a chiedere a qualcun altro.</Italian>
+                <Spanish>Lo siento, pero no puedo ayudarte. Por favor, intenta preguntarle a otra persona.</Spanish>
+                <French>Je suis désolé, mais je ne peux pas vous aider. Veuillez essayer de demander à quelqu'un d'autre.</French>
+                <Korean>죄송하지만, 도와드릴 수 없습니다. 다른 사람에게 물어보세요.</Korean>
+                <Japanese>申し訳ありませんが、お力になれません。他の人に聞いてみてください。</Japanese>
+                <Chinesesimp>对不起，我无法帮忙。请尝试问其他人。</Chinesesimp>
+                <Chinese>對不起，我無法幫忙。請嘗試問其他人。</Chinese>
+                <Polish>Przepraszam, ale nie mogę ci pomóc. Spróbuj zapytać kogoś innego.</Polish>
+                <Czech>Omlouvám se, ale nemohu vám pomoci. Zkuste se zeptat někoho jiného.</Czech>
+                <Portuguese>Desculpe, mas não posso ajudar. Por favor, tente perguntar a outra pessoa.</Portuguese>
+                <Turkish>Üzgünüm, ama size yardımcı olamam. Lütfen başka birine sorunuz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail2">
+                <Original>I don't know anything about that. Maybe someone else can assist you.</Original>
+                <Russian>Я ничего об этом не знаю. Может быть, кто-то другой может вам помочь.</Russian>
+                <German>Ich weiß nichts darüber. Vielleicht kann Ihnen jemand anders helfen.</German>
+                <Italian>Non so nulla di questo. Forse qualcun altro può aiutarti.</Italian>
+                <Spanish>No sé nada de eso. Tal vez otra persona pueda ayudarte.</Spanish>
+                <French>Je ne sais rien à ce sujet. Peut-être que quelqu'un d'autre pourra vous aider.</French>
+                <Korean>그것에 대해서는 모르겠습니다. 아마 다른 사람이 도와줄 수 있을 겁니다.</Korean>
+                <Japanese>それについては何も知りません。別の誰かが助けてくれるかもしれません。</Japanese>
+                <Chinesesimp>我对此一无所知。也许其他人能帮助你。</Chinesesimp>
+                <Chinese>我對此一無所知。也許其他人能幫助你。</Chinese>
+                <Polish>Nic o tym nie wiem. Może ktoś inny ci pomoże.</Polish>
+                <Czech>Nic o tom nevím. Možná vám někdo jiný může pomoci.</Czech>
+                <Portuguese>Eu não sei nada sobre isso. Talvez outra pessoa possa ajudá-lo.</Portuguese>
+                <Turkish>Bunun hakkında hiçbir şey bilmiyorum. Belki başka biri size yardımcı olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail3">
+                <Original>Sorry, I really wish I could help, but I have no idea what you're talking about.</Original>
+                <Russian>Извините, я бы хотел помочь, но не имею ни малейшего представления, о чём вы говорите.</Russian>
+                <German>Entschuldigung, ich würde wirklich gerne helfen, aber ich habe keine Ahnung, wovon Sie sprechen.</German>
+                <Italian>Mi dispiace, vorrei davvero aiutarti, ma non ho idea di cosa stai dicendo.</Italian>
+                <Spanish>Lo siento, realmente desearía poder ayudarte, pero no tengo ni idea de lo que estás diciendo.</Spanish>
+                <French>Désolé, j'aimerais vraiment pouvoir vous aider, mais je n'ai aucune idée de ce dont vous parlez.</French>
+                <Korean>죄송하지만, 정말 도와주고 싶지만, 당신이 말하는 내용에 대해 전혀 알지 못합니다.</Korean>
+                <Japanese>申し訳ありませんが、助けてあげたいのですが、あなたが何を言っているのか全くわかりません。</Japanese>
+                <Chinesesimp>抱歉，我真的希望能帮忙，但我完全不知道你在说什么。</Chinesesimp>
+                <Chinese>抱歉，我真的希望能幫忙，但我完全不知道你在說什麼。</Chinese>
+                <Polish>Przepraszam, naprawdę chciałbym pomóc, ale nie mam pojęcia, o czym mówisz.</Polish>
+                <Czech>Omlouvám se, opravdu bych rád pomohl, ale nemám tušení, o čem mluvíte.</Czech>
+                <Portuguese>Desculpe, eu realmente gostaria de poder ajudar, mas não tenho ideia do que você está falando.</Portuguese>
+                <Turkish>Üzgünüm, gerçekten yardımcı olmak isterdim ama ne söylediğiniz hakkında hiçbir fikrim yok.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_notundercover1">
+                <Original>Are you crazy!? I’m not talking to you while you're dressed like that... The police will think I’m helping you rebels!</Original>
+                <Russian>Ты с ума сошёл!? Я не собираюсь с тобой разговаривать, пока ты одет так... Полиция подумает, что я помогаю вам, повстанцам!</Russian>
+                <German>Bist du verrückt!? Ich rede nicht mit dir, solange du so herumläufst... Die Polizei wird denken, dass ich euch Rebellen helfe!</German>
+                <Italian>Sei impazzito!? Non parlerò con te finché sei vestito così... La polizia penserà che sto aiutando voi ribelli!</Italian>
+                <Spanish>¿Estás loco!? No hablaré contigo mientras vistas así... ¡La policía pensará que estoy ayudando a ustedes, los rebeldes!</Spanish>
+                <French>Tu es fou!? Je ne te parlerai pas tant que tu es habillé comme ça... La police pensera que j'aide les rebelles!</French>
+                <Korean>미쳤어요!? 그런 옷차림으로는 절대 얘기하지 않을 거예요... 경찰이 나를 반군을 돕는다고 생각할 거예요!</Korean>
+                <Japanese>正気か!?そんな格好じゃ話せないよ… 警察に反乱軍の仲間だと思われるぞ!</Japanese>
+                <Chinesesimp>你疯了吗!?你穿成这样我才不会跟你说话……警察会以为我在帮你们叛军!</Chinesesimp>
+                <Chinese>你瘋了嗎!?你穿成這樣我才不會跟你說話……警察會以為我在幫你們叛軍!</Chinese>
+                <Polish>Oszalałeś!? Nie będę z tobą rozmawiać, dopóki tak wyglądasz... Policja pomyśli, że pomagam wam, rebeliantom!</Polish>
+                <Czech>Jsi blázen!? Nebudu s tebou mluvit, dokud vypadáš takhle... Policie si bude myslet, že pomáhám vám rebelům!</Czech>
+                <Portuguese>Você está louco!? Não vou falar com você enquanto estiver vestido assim... A polícia vai pensar que estou ajudando vocês, os rebeldes!</Portuguese>
+                <Turkish>Aklını mı kaçırdın!? Böyle giyinirken seninle konuşmam... Polis, isyancılara yardım ettiğimi düşünecek!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_notundercover2">
+                <Original>Are you trying to get me arrested!? Come back when you’re not drawing attention!</Original>
+                <Russian>Ты хочешь, чтобы меня арестовали!? Возвращайся, когда не будешь привлекать внимание!</Russian>
+                <German>Willst du, dass ich verhaftet werde!? Komm zurück, wenn du nicht mehr auffällst!</German>
+                <Italian>Vuoi farmi arrestare!? Torna quando non attirerai l'attenzione!</Italian>
+                <Spanish>¿Quieres que me arresten!? Vuelve cuando no llames la atención.</Spanish>
+                <French>Tu veux que je me fasse arrêter !? Reviens quand tu ne te feras pas remarquer !</French>
+                <Korean>날 체포하게 만들 셈이야!? 주목받지 않을 때 다시 와!</Korean>
+                <Japanese>俺を逮捕させる気か！？目立たなくなってから戻ってこい！</Japanese>
+                <Chinesesimp>你想让我被逮捕吗！？等你不那么引人注意时再来！</Chinesesimp>
+                <Chinese>你想讓我被逮捕嗎！？等你不那麼引人注意時再來！</Chinese>
+                <Polish>Chcesz, żebym został aresztowany!? Wróć, gdy nie będziesz zwracać na siebie uwagi!</Polish>
+                <Czech>Chceš, abych byl zatčen!? Vrať se, až nebudeš budit pozornost!</Czech>
+                <Portuguese>Você quer que eu seja preso!? Volte quando não estiver chamando atenção!</Portuguese>
+                <Turkish>Beni tutuklattırmaya mı çalışıyorsun!? Dikkat çekmediğinde geri gel!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1">
+                <Original>Hey! One of your rebel friends already talked to me! Leave me alone!</Original>
+                <Russian>Эй! Один из твоих повстанцев уже со мной разговаривал! Оставь меня в покое!</Russian>
+                <German>Hey! Einer deiner Rebellenfreunde hat schon mit mir gesprochen! Lass mich in Ruhe!</German>
+                <Italian>Ehi! Uno dei tuoi amici ribelli ha già parlato con me! Lasciami in pace!</Italian>
+                <Spanish>¡Eh! ¡Uno de tus amigos rebeldes ya habló conmigo! ¡Déjame en paz!</Spanish>
+                <French>Hé ! Un de tes amis rebelles m'a déjà parlé ! Laisse-moi tranquille !</French>
+                <Korean>이봐! 네 반란군 친구 중 하나가 이미 나랑 얘기했어! 나를 내버려 둬!</Korean>
+                <Japanese>おい！あなたの反乱者の友達の一人がもう俺と話した！放っておいてくれ！</Japanese>
+                <Chinesesimp>嘿！你的一位反叛朋友已经跟我说过话了！别打扰我！</Chinesesimp>
+                <Chinese>嘿！你的一位反叛朋友已經跟我說過話了！別打擾我！</Chinese>
+                <Polish>Ej! Jeden z twoich przyjaciół rebeliantów już ze mną rozmawiał! Zostaw mnie w spokoju!</Polish>
+                <Czech>Hej! Jeden z tvých rebelských přátel už se se mnou bavil! Nech mě na pokoji!</Czech>
+                <Portuguese>Ei! Um dos seus amigos rebeldes já falou comigo! Me deixe em paz!</Portuguese>
+                <Turkish>Hey! Senin isyancı arkadaşlarından biri zaten benimle konuştu! Beni rahat bırak!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_alreadyspoken2">
+                <Original>Haven't you heard? I already spoke to one of your Comrades.</Original>
+                <Russian>Ты разве не слышал? Я уже поговорил с одним из твоих товарищей.</Russian>
+                <German>Hast du es nicht gehört? Ich habe bereits mit einem deiner Kameraden gesprochen.</German>
+                <Italian>Non hai sentito? Ho già parlato con uno dei tuoi compagni.</Italian>
+                <Spanish>¿No lo has oído? Ya hablé con uno de tus camaradas.</Spanish>
+                <French>Tu n'as pas entendu ? J'ai déjà parlé à l'un de tes camarades.</French>
+                <Korean>못 들었어? 나는 이미 네 동료 중 한 명과 이야기했어.</Korean>
+                <Japanese>聞いてないのか？俺はもうお前の仲間の一人と話したぞ。</Japanese>
+                <Chinesesimp>你没听说吗？我已经和你们的一位同志谈过了。</Chinesesimp>
+                <Chinese>你沒聽說嗎？我已經和你們的一位同志談過了。</Chinese>
+                <Polish>Nie słyszałeś? Już rozmawiałem z jednym z twoich towarzyszy.</Polish>
+                <Czech>Neslyšel jsi? Už jsem mluvil s jedním z tvých soudruhů.</Czech>
+                <Portuguese>Você não ouviu? Já falei com um dos seus camaradas.</Portuguese>
+                <Turkish>Duyamadın mı? Zaten senin yoldaşlarından biriyle konuştum.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_ref1">
+                <Original>I know of a place where they hold people captive. If you're looking to help, I can tell you where it is.</Original>
+                <Russian>Я знаю место, где держат людей в плену. Если вы хотите помочь, я могу сказать, где оно находится.</Russian>
+                <German>Ich kenne einen Ort, an dem sie Menschen gefangen halten. Wenn du helfen willst, kann ich dir sagen, wo es ist.</German>
+                <Italian>Conosco un posto dove tengono le persone prigioniere. Se vuoi aiutare, posso dirti dove si trova.</Italian>
+                <Spanish>Conozco un lugar donde mantienen a las personas cautivas. Si quieres ayudar, te puedo decir dónde está.</Spanish>
+                <French>Je connais un endroit où ils gardent des gens captifs. Si vous voulez aider, je peux vous dire où il se trouve.</French>
+                <Korean>사람들을 억제하는 곳을 알고 있습니다. 도와주고 싶다면 어디인지 말해줄 수 있습니다.</Korean>
+                <Japanese>人々を捕らえている場所を知っています。助けたいなら、その場所を教えることができます。</Japanese>
+                <Chinesesimp>我知道一个地方，他们把人关押在那里。如果你想帮忙，我可以告诉你在哪里。</Chinesesimp>
+                <Chinese>我知道一個地方，他們把人關押在那裡。如果你想幫忙，我可以告訴你在哪裡。</Chinese>
+                <Polish>Znam miejsce, gdzie trzymają ludzi w niewoli. Jeśli chcesz pomóc, mogę ci powiedzieć, gdzie to jest.</Polish>
+                <Czech>Znam místo, kde drží lidi v zajetí. Pokud chcete pomoci, můžu vám říct, kde to je.</Czech>
+                <Portuguese>Conheço um lugar onde mantêm as pessoas em cativeiro. Se você quer ajudar, posso te dizer onde é.</Portuguese>
+                <Turkish>İnsanları esir tuttukları bir yer biliyorum. Yardım etmek istiyorsanız, nerede olduğunu söyleyebilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_ref2">
+                <Original>There's a spot where they keep prisoners. I’ve heard people talk about it. If you’re willing, you might be able to free them.</Original>
+                <Russian>Есть место, где держат заключенных. Я слышал, как люди о нем говорят. Если вы хотите, вы можете попытаться освободить их.</Russian>
+                <German>Es gibt einen Ort, an dem sie Gefangene halten. Ich habe gehört, wie die Leute darüber sprechen. Wenn du bereit bist, könntest du sie befreien.</German>
+                <Italian>C'è un posto dove tengono i prigionieri. Ho sentito parlare di questo posto. Se sei disposto, potresti essere in grado di liberarli.</Italian>
+                <Spanish>Hay un lugar donde mantienen a los prisioneros. He oído hablar de él. Si estás dispuesto, podrías liberarlos.</Spanish>
+                <French>Il y a un endroit où ils gardent les prisonniers. J'ai entendu parler de cet endroit. Si vous êtes disposé, vous pourriez les libérer.</French>
+                <Korean>그곳에는 죄수들을 가두는 곳이 있습니다. 사람들이 그것에 대해 이야기하는 걸 들었어요. 원하시면, 그들을 자유롭게 할 수 있을 겁니다.</Korean>
+                <Japanese>囚人を収容している場所があります。それについて話しているのを聞いたことがあります。もし望むなら、彼らを解放できるかもしれません。</Japanese>
+                <Chinesesimp>有一个地方，他们关押着囚犯。我听人提起过它。如果你愿意，你也许能解救他们。</Chinesesimp>
+                <Chinese>有一個地方，他們關押著囚犯。我聽人提起過它。如果你願意，你也許能解救他們。</Chinese>
+                <Polish>Jest miejsce, gdzie trzymają więźniów. Słyszałem, jak ludzie o nim mówią. Jeśli chcesz, możesz ich uwolnić.</Polish>
+                <Czech>Existuje místo, kde drží vězně. Slyšel jsem, jak o tom lidé mluví. Pokud budete ochotni, můžete je osvobodit.</Czech>
+                <Portuguese>Há um lugar onde mantêm prisioneiros. Ouvi falar sobre isso. Se você estiver disposto, pode ser capaz de libertá-los.</Portuguese>
+                <Turkish>Mahkumları tuttukları bir yer var. İnsanların bundan bahsettiğini duydum. Hazırsan, onları özgürleştirebilirsin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_info1">
+                <Original>I’ve heard about an informer. I can tell you where they’re hiding if you want to find them.</Original>
+                <Russian>Я слышал о шпионе. Я могу сказать, где они прячутся, если вы хотите найти их.</Russian>
+                <German>Ich habe von einem Informanten gehört. Ich kann dir sagen, wo er sich versteckt, wenn du ihn finden willst.</German>
+                <Italian>Ho sentito parlare di un informatore. Posso dirti dove si nasconde se vuoi trovarlo.</Italian>
+                <Spanish>He oído hablar de un informante. Puedo decirte dónde se esconden si quieres encontrarlos.</Spanish>
+                <French>J'ai entendu parler d'un informateur. Je peux vous dire où ils se cachent si vous voulez les trouver.</French>
+                <Korean>스파이 이야기를 들었습니다. 그들이 숨겨져 있는 곳을 말할 수 있습니다, 찾고 싶다면요.</Korean>
+                <Japanese>情報提供者のことを聞いたことがあります。彼らが隠れている場所を教えることができます、もし探したいなら。</Japanese>
+                <Chinesesimp>我听说过一个线人。如果你想找到他们，我可以告诉你他们藏身的地方。</Chinesesimp>
+                <Chinese>我聽說過一個線人。如果你想找到他們，我可以告訴你他們藏身的地方。</Chinese>
+                <Polish>Słyszałem o informatorze. Mogę ci powiedzieć, gdzie się ukrywają, jeśli chcesz ich znaleźć.</Polish>
+                <Czech>Slyšel jsem o informátorovi. Můžu vám říct, kde se skrývá, pokud je chcete najít.</Czech>
+                <Portuguese>Ouvi falar de um informante. Posso dizer onde ele está se escondendo, se você quiser encontrá-lo.</Portuguese>
+                <Turkish>Bir ihbarcıdan duydum. Nerede saklandıklarını söyleyebilirim, onları bulmak istersen.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_info2">
+                <Original>There’s someone I know who has valuable information. I can let you know where to look.</Original>
+                <Russian>Я знаю человека, у которого есть ценная информация. Я могу сказать вам, где искать.</Russian>
+                <German>Es gibt jemanden, den ich kenne, der wertvolle Informationen hat. Ich kann dir sagen, wo du suchen musst.</German>
+                <Italian>Conosco una persona che ha informazioni preziose. Posso dirti dove cercare.</Italian>
+                <Spanish>Conozco a alguien que tiene información valiosa. Puedo decirte dónde buscar.</Spanish>
+                <French>Je connais quelqu'un qui a des informations précieuses. Je peux vous dire où chercher.</French>
+                <Korean>유용한 정보를 가진 사람을 알고 있습니다. 어디서 찾아야 하는지 알려줄 수 있습니다.</Korean>
+                <Japanese>貴重な情報を持っている人を知っています。どこを探せばよいか教えることができます。</Japanese>
+                <Chinesesimp>我认识一个人，他有宝贵的信息。我可以告诉你在哪里找。</Chinesesimp>
+                <Chinese>我認識一個人，他有寶貴的信息。我可以告訴你在哪裡找。</Chinese>
+                <Polish>Znam kogoś, kto ma cenne informacje. Mogę ci powiedzieć, gdzie szukać.</Polish>
+                <Czech>Znám někoho, kdo má cenné informace. Můžu vám říct, kde hledat.</Czech>
+                <Portuguese>Conheço alguém que tem informações valiosas. Posso te dizer onde procurar.</Portuguese>
+                <Turkish>Değerli bilgiye sahip birini tanıyorum. Nerede arayacağını söyleyebilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_prisoners1">
+                <Original>I overheard some soldiers talking about a group of prisoners being held in a facility nearby. If you're brave enough, you could find them there.</Original>
+                <Russian>Я подслушал, как солдаты говорили о группе заключенных, которых держат в ближайшем учреждении. Если ты достаточно смел, ты можешь найти их там.</Russian>
+                <German>Ich habe einige Soldaten über eine Gruppe von Gefangenen sprechen hören, die in einer nahegelegenen Einrichtung festgehalten werden. Wenn du mutig genug bist, kannst du sie dort finden.</German>
+                <Italian>Ho sentito alcuni soldati parlare di un gruppo di prigionieri tenuti in una struttura vicina. Se sei abbastanza coraggioso, potresti trovarli lì.</Italian>
+                <Spanish>Escuché a unos soldados hablar sobre un grupo de prisioneros retenidos en una instalación cercana. Si eres lo suficientemente valiente, podrías encontrarlos allí.</Spanish>
+                <French>J'ai entendu des soldats parler d'un groupe de prisonniers détenus dans une installation à proximité. Si vous êtes assez courageux, vous pourriez les trouver là-bas.</French>
+                <Korean>근처 시설에서 억제되고 있는 포로들에 대해 군인들이 이야기하는 걸 들었습니다. 용기가 있다면 거기서 그들을 찾을 수 있을 겁니다.</Korean>
+                <Japanese>近くの施設で囚人のグループが拘束されていることについて、兵士たちが話しているのを聞きました。もし十分勇気があれば、そこで彼らを見つけることができるでしょう。</Japanese>
+                <Chinesesimp>我听到一些士兵谈论在附近的设施中关押一群囚犯。如果你够勇敢，你可以在那里找到他们。</Chinesesimp>
+                <Chinese>我聽到一些士兵談論在附近的設施中關押一群囚犯。如果你夠勇敢，你可以在那裡找到他們。</Chinese>
+                <Polish>Przechwyciłem rozmowę żołnierzy o grupie więźniów przetrzymywanych w pobliskiej placówce. Jeśli jesteś wystarczająco odważny, możesz ich tam znaleźć.</Polish>
+                <Czech>Přeslechl jsem, jak vojáci mluvili o skupině vězňů, kteří jsou drženi v nedaleké zařízení. Pokud jsi dost odvážný, můžeš je tam najít.</Czech>
+                <Portuguese>Eu ouvi alguns soldados falando sobre um grupo de prisioneiros sendo mantidos em uma instalação próxima. Se você for corajoso o suficiente, pode encontrá-los lá.</Portuguese>
+                <Turkish>Bazı askerlerin yakındaki bir tesiste tutulan bir grup mahkumdan bahsettiğini duydum. Eğer yeterince cesurysan, onları orada bulabilirsin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_prisoners2">
+                <Original>There’s a place where they’ve been keeping prisoners. If you’re looking to help, that’s where you should head.</Original>
+                <Russian>Есть место, где они держат заключенных. Если вы хотите помочь, вам стоит направиться туда.</Russian>
+                <German>Es gibt einen Ort, an dem sie Gefangene festhalten. Wenn du helfen willst, solltest du dorthin gehen.</German>
+                <Italian>C'è un posto dove tengono i prigionieri. Se vuoi aiutare, dovresti andare lì.</Italian>
+                <Spanish>Hay un lugar donde mantienen a los prisioneros. Si quieres ayudar, deberías ir allí.</Spanish>
+                <French>Il y a un endroit où ils gardent des prisonniers. Si vous voulez aider, c'est là que vous devriez vous rendre.</French>
+                <Korean>그들이 포로들을 가두는 곳이 있습니다. 도와주고 싶다면, 거기로 가야 합니다.</Korean>
+                <Japanese>囚人たちを収容している場所があります。助けたいなら、そこに向かうべきです。</Japanese>
+                <Chinesesimp>有一个地方，他们关押着囚犯。如果你想帮忙，你应该去那里。</Chinesesimp>
+                <Chinese>有一個地方，他們關押著囚犯。如果你想幫忙，你應該去那裡。</Chinese>
+                <Polish>Jest miejsce, gdzie trzymają więźniów. Jeśli chcesz pomóc, tam powinieneś się udać.</Polish>
+                <Czech>Existuje místo, kde drží vězně. Pokud chcete pomoci, tam byste měli zamířit.</Czech>
+                <Portuguese>Há um lugar onde mantêm os prisioneiros. Se você quer ajudar, deve ir até lá.</Portuguese>
+                <Turkish>Mahkumları tuttukları bir yer var. Yardım etmek istiyorsan, oraya gitmelisin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_Deserters1">
+                <Original>I heard a few soldiers have deserted their posts and are hiding in a safe spot just outside the area. If you're willing to help them, that’s where you’ll find them.</Original>
+                <Russian>Я слышал, что несколько солдат покинули свои посты и прячутся в безопасном месте недалеко от этого района. Если вы хотите помочь им, вы найдете их там.</Russian>
+                <German>Ich habe gehört, dass einige Soldaten ihre Posten verlassen haben und sich in einem sicheren Versteck direkt außerhalb des Gebiets verstecken. Wenn du bereit bist, ihnen zu helfen, findest du sie dort.</German>
+                <Italian>Ho sentito che alcuni soldati hanno abbandonato i loro posti e si stanno nascondendo in un posto sicuro appena fuori dall'area. Se vuoi aiutarli, li troverai lì.</Italian>
+                <Spanish>Escuché que algunos soldados han desertado de sus puestos y se están escondiendo en un lugar seguro justo fuera de la zona. Si estás dispuesto a ayudarlos, los encontrarás allí.</Spanish>
+                <French>J'ai entendu dire que quelques soldats ont déserté leurs postes et se cachent dans un endroit sûr juste à l'extérieur de la zone. Si vous êtes prêt à les aider, c'est là que vous les trouverez.</French>
+                <Korean>몇몇 군인들이 자신의 임무를 떠나 근처의 안전한 장소에 숨겨져 있다고 들었습니다. 그들을 돕고 싶다면, 그곳에서 찾을 수 있을 겁니다.</Korean>
+                <Japanese>数人の兵士が自分のポストを離れて、エリア外の安全な場所に隠れていると聞きました。彼らを助けたいなら、そこに行けば見つけられます。</Japanese>
+                <Chinesesimp>我听说有几个士兵抛弃了他们的岗位，正在该地区外的安全地方躲藏。如果你愿意帮助他们，那里就是他们所在的地方。</Chinesesimp>
+                <Chinese>我聽說有幾個士兵拋棄了他們的崗位，正在該地區外的安全地方躲藏。如果你願意幫助他們，那裡就是他們所在的地方。</Chinese>
+                <Polish>Słyszałem, że kilku żołnierzy opuściło swoje stanowiska i ukrywa się w bezpiecznym miejscu tuż za tym obszarem. Jeśli chcesz im pomóc, znajdziesz ich tam.</Polish>
+                <Czech>Slyšel jsem, že někteří vojáci opustili své stanice a skrývají se na bezpečném místě hned za touto oblastí. Pokud chcete pomoci, najdete je tam.</Czech>
+                <Portuguese>Ouvi dizer que alguns soldados abandonaram seus postos e estão se escondendo em um local seguro logo fora da área. Se você estiver disposto a ajudá-los, é lá que você os encontrará.</Portuguese>
+                <Turkish>Birkaç askerin görev yerlerini terk ettiğini ve bölge dışında güvenli bir yere saklandığını duydum. Onlara yardımcı olmak istersen, onları orada bulacaksın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_Deserters2">
+                <Original>There are some deserters trying to escape the military’s grasp. I know of a place where they’ve been hiding, but you’ll need to be quick.</Original>
+                <Russian>Есть дезертиры, пытающиеся избежать военной власти. Я знаю место, где они прячутся, но вам нужно будет действовать быстро.</Russian>
+                <German>Es gibt einige Deserteure, die versuchen, der militärischen Kontrolle zu entkommen. Ich kenne einen Ort, an dem sie sich verstecken, aber du musst schnell sein.</German>
+                <Italian>Ci sono dei disertori che stanno cercando di sfuggire al controllo militare. Conosco un posto dove si stanno nascondendo, ma dovrai essere veloce.</Italian>
+                <Spanish>Hay algunos desertores que están tratando de escapar del control militar. Conozco un lugar donde se están escondiendo, pero necesitarás ser rápido.</Spanish>
+                <French>Il y a des déserteurs qui essaient d'échapper à l'emprise militaire. Je connais un endroit où ils se cachent, mais vous devrez être rapide.</French>
+                <Korean>군대의 통제를 피하려는 탈영병들이 있습니다. 그들이 숨겨져 있는 곳을 알고 있지만, 빠르게 움직여야 할 겁니다.</Korean>
+                <Japanese>軍の手から逃げようとしている脱走兵がいます。彼らが隠れている場所を知っていますが、素早く行動する必要があります。</Japanese>
+                <Chinesesimp>有一些逃兵正在试图逃脱军队的掌控。我知道他们藏身的地方，但你需要快速行动。</Chinesesimp>
+                <Chinese>有一些逃兵正在試圖逃脫軍隊的掌控。我知道他們藏身的地方，但你需要快速行動。</Chinese>
+                <Polish>Są dezerterzy, którzy próbują uciec przed wojskową kontrolą. Znam miejsce, gdzie się ukrywają, ale musisz działać szybko.</Polish>
+                <Czech>Existují dezerteři, kteří se snaží uniknout vojenské moci. Znám místo, kde se skrývají, ale budete muset být rychlí.</Czech>
+                <Portuguese>Há alguns desertores tentando escapar do controle militar. Conheço um lugar onde eles estão se escondendo, mas você precisa ser rápido.</Portuguese>
+                <Turkish>Askeri kontrolden kaçmaya çalışan bazı kaçaklar var. Nerede saklandıklarını biliyorum ama hızlı olmalısın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_zone_reveal1">
+                <Original>Also, I’ve overheard some soldiers talking about a heavily guarded enemy zone. It might be worth checking out if you're planning something big.</Original>
+                <Russian>Кроме того, я слышал, как солдаты говорили о сильно охраняемой зоне врага. Это может стоить проверить, если вы планируете что-то серьезное.</Russian>
+                <German>Außerdem habe ich einige Soldaten über eine stark bewachte feindliche Zone sprechen hören. Es könnte sich lohnen, diese zu überprüfen, wenn du etwas Großes planst.</German>
+                <Italian>Ho anche sentito dei soldati parlare di una zona nemica pesantemente sorvegliata. Potrebbe valere la pena controllarla se hai grandi progetti.</Italian>
+                <Spanish>Además, he oído a algunos soldados hablar de una zona enemiga fuertemente vigilada. Podría valer la pena echarle un vistazo si estás planeando algo importante.</Spanish>
+                <French>J'ai aussi entendu des soldats parler d'une zone ennemie fortement gardée. Cela pourrait valoir le coup d'œil si vous planifiez quelque chose d'important.</French>
+                <Korean>또한, 몇몇 병사들이 철저히 경비된 적의 구역에 대해 이야기하는 것을 들었습니다. 무언가 큰일을 계획 중이라면 확인해볼 가치가 있을 겁니다.</Korean>
+                <Japanese>また、兵士たちが厳重に警備された敵の区域について話しているのを耳にしました。何か大きなことを計画しているなら、調べる価値があるかもしれません。</Japanese>
+                <Chinesesimp>另外，我听到一些士兵谈论一个戒备森严的敌方区域。如果你有重大计划，这值得一探。</Chinesesimp>
+                <Chinese>另外，我聽到一些士兵談論一個戒備森嚴的敵方區域。如果你有重大計劃，這值得一探。</Chinese>
+                <Polish>Poza tym słyszałem, jak żołnierze rozmawiali o silnie strzeżonej strefie wroga. Może warto to sprawdzić, jeśli planujesz coś dużego.</Polish>
+                <Czech>Také jsem slyšel, jak vojáci mluví o silně střežené nepřátelské zóně. Mohlo by to stát za prozkoumání, pokud plánujete něco velkého.</Czech>
+                <Portuguese>Além disso, ouvi alguns soldados falando sobre uma zona inimiga fortemente guardada. Pode valer a pena verificar se você está planejando algo grande.</Portuguese>
+                <Turkish>Ayrıca bazı askerlerin sıkı korunan bir düşman bölgesinden bahsettiğini duydum. Eğer büyük bir şey planlıyorsanız, bakmaya değer olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_zone_reveal2">
+                <Original>By the way, I’ve seen enemy patrols moving around a location not too far from here. It could be one of their key zones. You might want to take a closer look.</Original>
+                <Russian>Кстати, я видел патрули врага, перемещающиеся недалеко отсюда. Возможно, это одна из их ключевых зон. Стоит присмотреться.</Russian>
+                <German>Übrigens habe ich feindliche Patrouillen in der Nähe gesehen. Es könnte einer ihrer Schlüsselpunkte sein. Du solltest es dir genauer ansehen.</German>
+                <Italian>A proposito, ho visto pattuglie nemiche muoversi in una zona non troppo lontano da qui. Potrebbe essere una delle loro aree chiave. Potresti volerla esaminare più da vicino.</Italian>
+                <Spanish>Por cierto, he visto patrullas enemigas moviéndose en un lugar no muy lejos de aquí. Podría ser una de sus zonas clave. Quizás quieras investigarlo más a fondo.</Spanish>
+                <French>Au fait, j'ai vu des patrouilles ennemies se déplacer dans un endroit non loin d'ici. Cela pourrait être l'une de leurs zones clés. Vous pourriez vouloir y jeter un œil plus attentif.</French>
+                <Korean>참고로, 여기서 멀지 않은 곳에서 적의 순찰대를 본 적이 있습니다. 그곳은 그들의 주요 구역 중 하나일 수 있습니다. 더 가까이 조사해보는 것이 좋을 것입니다.</Korean>
+                <Japanese>ちなみに、ここから遠くない場所で敵の巡回部隊を見かけました。それは彼らの重要なエリアの1つかもしれません。もっと詳しく調べるべきです。</Japanese>
+                <Chinesesimp>顺便说一句，我看到敌军在离这里不远的一个地方巡逻。那可能是他们的关键区域之一。你或许需要仔细查看。</Chinesesimp>
+                <Chinese>順便說一句，我看到敵軍在離這裡不遠的一個地方巡邏。那可能是他們的關鍵區域之一。你或許需要仔細查看。</Chinese>
+                <Polish>Przy okazji widziałem patrole wroga w pobliżu tego miejsca. Może to być jedna z ich kluczowych stref. Warto się temu przyjrzeć bliżej.</Polish>
+                <Czech>Mimochodem jsem viděl nepřátelské patroly pohybující se poblíž. Mohla by to být jedna z jejich klíčových zón. Možná by stálo za to se tam podívat.</Czech>
+                <Portuguese>Aliás, vi patrulhas inimigas movendo-se perto daqui. Pode ser uma das zonas-chave deles. Talvez você deva dar uma olhada mais de perto.</Portuguese>
+                <Turkish>Bu arada, buraya çok uzak olmayan bir yerde düşman devriyelerini gördüm. Bu, onların kilit bölgelerinden biri olabilir. Daha yakından bakmak isteyebilirsiniz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_money1">
+                <Original>I did keep this file that "fell" off of a truck that might be worth something... I hear a particularly sketchy Irish man might be interested! is he Irish? Whatever...</Original>
+                <Russian>Я сохранил этот файл, который "случайно" упал с грузовика... Говорят, один подозрительный ирландец может быть заинтересован! Он точно ирландец? Да какая разница...</Russian>
+                <German>Ich habe diese Datei behalten, die von einem LKW "gefallen" ist... Ich habe gehört, dass ein ziemlich zwielichtiger Ire daran interessiert sein könnte! Ist er wirklich Ire? Ach, egal...</German>
+                <Italian>Ho tenuto questo file che è "caduto" da un camion... Ho sentito che un irlandese piuttosto losco potrebbe essere interessato! È davvero irlandese? Boh, chi lo sa...</Italian>
+                <Spanish>Me quedé con este archivo que "se cayó" de un camión... He oído que un irlandés bastante sospechoso podría estar interesado. ¿Es realmente irlandés? Bah, qué más da...</Spanish>
+                <French>J'ai gardé ce fichier qui est "tombé" d'un camion... J'ai entendu dire qu'un Irlandais particulièrement louche pourrait être intéressé ! Il est vraiment Irlandais ? Peu importe...</French>
+                <Korean>트럭에서 "우연히" 떨어진 이 파일을 챙겼어... 꽤 수상한 아일랜드 사람이 관심이 있을지도 모른다고 하더군! 근데 진짜 아일랜드 사람인가? 뭐, 상관없지...</Korean>
+                <Japanese>トラックから「落ちた」このファイルを取っておいたよ… かなり怪しいアイルランド人が興味を持つかもしれないって聞いたけど！本当にアイルランド人なのか？まあ、どうでもいいか…</Japanese>
+                <Chinesesimp>我保留了这个从卡车上“掉下来”的文件，可能值点钱……听说有个特别可疑的爱尔兰人可能会感兴趣！他真是爱尔兰人吗？管他的……</Chinesesimp>
+                <Chinese>我保留了這個從卡車上「掉下來」的文件，可能值點錢……聽說有個特別可疑的愛爾蘭人可能會感興趣！他真是愛爾蘭人嗎？管他的……</Chinese>
+                <Polish>Zachowałem ten plik, który "spadł" z ciężarówki… Słyszałem, że pewien dość podejrzany Irlandczyk może być nim zainteresowany! Czy on na pewno jest Irlandczykiem? Cóż, nieważne…</Polish>
+                <Czech>Nechal jsem si ten soubor, který "spadl" z náklaďáku… Slyšel jsem, že o něj může mít zájem jeden dost podezřelý Ir! Je to vůbec Ir? No, kdo ví…</Czech>
+                <Portuguese>Guardei este arquivo que "caiu" de um caminhão… Ouvi dizer que um irlandês bastante suspeito pode estar interessado! Ele é mesmo irlandês? Ah, tanto faz…</Portuguese>
+                <Turkish>Kamyondan "düşen" bu dosyayı sakladım… Oldukça şüpheli bir İrlandalının ilgilenebileceğini duydum! Gerçekten İrlandalı mı? Boş ver…</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_money2">
+                <Original>I know a police officer that owes me a favor. Here's some data on surveillance blind spots, maybe someone will pay highly for it...</Original>
+                <Russian>Я знаю одного полицейского, который мне должен услугу. Вот данные о слепых зонах наблюдения, возможно, кто-то хорошо за них заплатит...</Russian>
+                <German>Ich kenne einen Polizisten, der mir einen Gefallen schuldet. Hier sind einige Daten zu Überwachungsblindenflecken, vielleicht bezahlt jemand gut dafür...</German>
+                <Italian>Conosco un poliziotto che mi deve un favore. Ecco alcuni dati sui punti ciechi della sorveglianza, forse qualcuno pagherà bene per questo...</Italian>
+                <Spanish>Conozco a un policía que me debe un favor. Aquí tienes algunos datos sobre puntos ciegos de vigilancia, quizás alguien pague bien por ello...</Spanish>
+                <French>Je connais un policier qui me doit un service. Voici des données sur les angles morts de surveillance, peut-être que quelqu'un paiera cher pour ça...</French>
+                <Korean>내게 신세를 진 경찰관이 하나 있어. 여기 감시 사각지대에 대한 데이터가 있어, 누군가 비싼 값을 쳐줄지도 몰라...</Korean>
+                <Japanese>俺に借りがある警官を知ってる。ここに監視の死角に関するデータがあるんだ、誰かが高値で買うかもしれないな…</Japanese>
+                <Chinesesimp>我认识一个欠我人情的警察。这里有一些关于监控盲区的数据，也许有人会出高价买下它…</Chinesesimp>
+                <Chinese>我認識一個欠我人情的警察。這裡有一些關於監控盲區的數據，也許有人會出高價買下它…</Chinese>
+                <Polish>Znam jednego policjanta, który jest mi coś winien. Oto dane o martwych strefach monitoringu, może ktoś dobrze za to zapłaci...</Polish>
+                <Czech>Znám jednoho policistu, který mi dluží laskavost. Tady jsou data o slepých zónách dohledu, možná za to někdo dobře zaplatí...</Czech>
+                <Portuguese>Conheço um policial que me deve um favor. Aqui estão alguns dados sobre pontos cegos da vigilância, talvez alguém pague bem por isso...</Portuguese>
+                <Turkish>Bana borcu olan bir polis memuru tanıyorum. İşte gözetleme kör noktalarına dair bazı veriler, belki birisi buna iyi para öder...</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_decryption1">
+                <Original>I have a radio that was... "Borrowed" from the police. Here, maybe you'll have a use for it.</Original>
+                <Russian>У меня есть радио, которое было... "одолжено" у полиции. Вот, может быть, оно тебе пригодится.</Russian>
+                <German>Ich habe ein Radio, das von der Polizei... "ausgeliehen" wurde. Hier, vielleicht kannst du es gebrauchen.</German>
+                <Italian>Ho una radio che è stata... "presa in prestito" dalla polizia. Ecco, magari ti sarà utile.</Italian>
+                <Spanish>Tengo una radio que fue... "tomada en préstamo" de la policía. Aquí, tal vez te sirva.</Spanish>
+                <French>J'ai une radio qui a été... "empruntée" à la police. Tiens, peut-être que tu en auras l'usage.</French>
+                <Korean>경찰에서... "빌린" 라디오가 있어요. 여기, 아마 당신이 필요로 할 수도 있어요.</Korean>
+                <Japanese>警察から...「借りた」ラジオがあります。ほら、これ、もしかしたら役に立つかもしれません。</Japanese>
+                <Chinesesimp>我有一台从警察那里... “借来的”无线电。这里，也许你会用得上。</Chinesesimp>
+                <Chinese>我有一台從警察那裡... “借來的”無線電。這裡，也許你會用得上。</Chinese>
+                <Polish>Mam radio, które zostało... "pożyczone" od policji. Oto, może ci się przyda.</Polish>
+                <Czech>Mám rádio, které bylo... "půjčeno" od policie. Tady, možná ho budeš potřebovat.</Czech>
+                <Portuguese>Eu tenho um rádio que foi... "pegado emprestado" da polícia. Aqui, talvez você precise dele.</Portuguese>
+                <Turkish>Bir radyo var, bu... "polisten ödünç alındı". İşte, belki senin işine yarar.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_decryption2">
+                <Original>I know some contacts who work in communications, I'll let you know if they get any information.</Original>
+                <Russian>Я знаю кое-кого, кто работает в сфере связи. Дам тебе знать, если они что-нибудь выяснят.</Russian>
+                <German>Ich kenne ein paar Kontakte, die in der Kommunikation arbeiten. Ich lasse dich wissen, falls sie etwas herausfinden.</German>
+                <Italian>Conosco alcuni contatti che lavorano nelle comunicazioni. Ti farò sapere se ottengono qualche informazione.</Italian>
+                <Spanish>Conozco a algunas personas que trabajan en comunicaciones. Te avisaré si consiguen alguna información.</Spanish>
+                <French>Je connais des contacts qui travaillent dans les communications. Je te ferai savoir s'ils obtiennent des informations.</French>
+                <Korean>통신 분야에서 일하는 지인들이 있어. 그들이 정보를 입수하면 알려줄게.</Korean>
+                <Japanese>通信関係の仕事をしている知り合いがいる。何か情報を入手したら知らせるよ。</Japanese>
+                <Chinesesimp>我认识一些在通信行业工作的人，如果他们得到任何信息，我会通知你。</Chinesesimp>
+                <Chinese>我認識一些在通信行業工作的人，如果他們得到任何信息，我會通知你。</Chinese>
+                <Polish>Znam kilka osób pracujących w komunikacji. Dam ci znać, jeśli zdobędą jakieś informacje.</Polish>
+                <Czech>Znám pár lidí pracujících v komunikacích. Dám ti vědět, pokud něco zjistí.</Czech>
+                <Portuguese>Conheço alguns contatos que trabalham com comunicações. Avisarei se conseguirem alguma informação.</Portuguese>
+                <Turkish>İletişim sektöründe çalışan birkaç tanıdığım var. Eğer bir bilgi alırlarsa sana haber veririm.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_weapons1">
+                <Original>I drive past a warehouse on my way to the factory and a few days ago I saw the military offloading some disguised trucks. Real sneaky - They don't fool me!</Original>
+                <Russian>Я проезжаю мимо склада по пути на фабрику, и несколько дней назад видел, как военные разгружали несколько замаскированных грузовиков. Очень хитро — меня они не обманут!</Russian>
+                <German>Ich fahre an einem Lagerhaus vorbei, wenn ich zur Fabrik fahre, und vor ein paar Tagen habe ich die Militärs gesehen, die einige getarnte Lkw entladen haben. Richtig hinterhältig – mich täuschen sie nicht!</German>
+                <Italian>Passo davanti a un magazzino mentre vado in fabbrica, e qualche giorno fa ho visto i militari scaricare dei camion mascherati. Molto furbi - Non mi fregano!</Italian>
+                <Spanish>Paso por un almacén de camino a la fábrica y hace unos días vi a los militares descargando algunos camiones disfrazados. Muy astutos, ¡no me engañan!</Spanish>
+                <French>Je passe devant un entrepôt en me rendant à l'usine et il y a quelques jours, j'ai vu les militaires décharger des camions déguisés. Vraiment sournois - Ils ne m'ont pas eu !</French>
+                <Korean>공장으로 가는 길에 창고를 지나는데, 며칠 전에 군대가 위장된 트럭을 내리는 걸 봤어요. 정말 교활하군요 - 저를 속일 순 없어요!</Korean>
+                <Japanese>工場に向かう途中、倉庫の前を通り過ぎたところ、数日前に軍が偽装したトラックを荷降ろししているのを見ました。非常に狡猾ですね - 私は騙されません！</Japanese>
+                <Chinesesimp>我在去工厂的路上经过一个仓库，几天前我看到军方正在卸载一些伪装的卡车。真狡猾——他们骗不了我！</Chinesesimp>
+                <Chinese>我在去工廠的路上經過一個倉庫，幾天前我看到軍方正在卸載一些偽裝的卡車。真狡猾——他們騙不了我！</Chinese>
+                <Polish>Przejeżdżam obok magazynu w drodze do fabryki, a kilka dni temu widziałem, jak wojsko rozładowuje kilka zamaskowanych ciężarówek. Naprawdę przebiegli - nie oszukają mnie!</Polish>
+                <Czech>Projíždím kolem skladu na cestě do továrny a před pár dny jsem viděl, jak vojáci vykládali nějaké maskované náklaďáky. Opravdu mazaní - mě nenachytají!</Czech>
+                <Portuguese>Passo por um armazém a caminho da fábrica e há alguns dias vi os militares descarregando alguns caminhões disfarçados. Muito espertos - não me enganam!</Portuguese>
+                <Turkish>Fabrika yolunda bir depo önünden geçiyorum ve birkaç gün önce askerlerin bazı gizlenmiş kamyonları indirirken gördüm. Gerçekten sinsi - beni kandıramazlar!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_weapons2">
+                <Original>I've been hearing chatter of a weapons production facility. Maybe you will see that those weapons end up in the right hands?</Original>
+                <Russian>Я слышал разговоры о производственном объекте оружия. Может, ты позаботишься о том, чтобы оружие попало в нужные руки?</Russian>
+                <German>Ich habe Gerüchte über eine Waffenproduktionsanlage gehört. Vielleicht sorgst du dafür, dass diese Waffen in die richtigen Hände gelangen?</German>
+                <Italian>Ho sentito parlare di una fabbrica di armi. Forse potresti assicurarti che quelle armi finiscano nelle mani giuste?</Italian>
+                <Spanish>He oído rumores sobre una instalación de producción de armas. ¿Quizás te asegures de que esas armas terminen en las manos correctas?</Spanish>
+                <French>J’ai entendu des rumeurs sur une usine de production d’armes. Peut-être que tu feras en sorte que ces armes finissent entre de bonnes mains ?</French>
+                <Korean>무기 생산 시설에 대한 소문을 들었어. 그 무기가 올바른 사람들의 손에 들어가도록 할 수 있겠지?</Korean>
+                <Japanese>武器製造施設の噂を耳にしたよ。その武器が正しい人の手に渡るようにできるんじゃないか？</Japanese>
+                <Chinesesimp>我听说有一个武器生产设施。也许你能确保这些武器落入正确的人手中？</Chinesesimp>
+                <Chinese>我聽說有一個武器生產設施。也許你能確保這些武器落入正確的人手中？</Chinese>
+                <Polish>Słyszałem pogłoski o fabryce broni. Może dopilnujesz, żeby trafiła w odpowiednie ręce?</Polish>
+                <Czech>Slyšel jsem zvěsti o výrobním závodu na zbraně. Možná zajistíš, aby se ty zbraně dostaly do správných rukou?</Czech>
+                <Portuguese>Ouvi rumores sobre uma instalação de produção de armas. Talvez você possa garantir que essas armas acabem nas mãos certas?</Portuguese>
+                <Turkish>Bir silah üretim tesisi hakkında söylentiler duydum. Belki o silahların doğru ellere geçmesini sağlayabilirsin?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_traitor1">
+                <Original>I found this folder discarded in some bushes. You might find the contents interesting, to say the least.</Original>
+                <Russian>Я нашел эту папку, выброшенную в кустах. Тебе могут быть интересны её содержимое, скажем так.</Russian>
+                <German>Ich habe diese Mappe in einigen Sträuchern gefunden. Du könntest den Inhalt interessant finden, um es milde auszudrücken.</German>
+                <Italian>Ho trovato questa cartella gettata tra i cespugli. Potresti trovare interessante il contenuto, per non dire altro.</Italian>
+                <Spanish>Encontré esta carpeta tirada en unos arbustos. Podrías encontrar el contenido interesante, por decirlo de alguna manera.</Spanish>
+                <French>J'ai trouvé ce dossier jeté dans des buissons. Tu pourrais trouver le contenu intéressant, pour ne rien dire de plus.</French>
+                <Korean>이 파일을 덤불 속에서 버려진 채로 찾았어요. 내용이 흥미로울지도 몰라요, 적어도 그렇게 말할 수 있겠네요.</Korean>
+                <Japanese>このフォルダーを茂みの中で捨てられているのを見つけました。内容が興味深いかもしれません、少なくともそう言えます。</Japanese>
+                <Chinesesimp>我在一些灌木丛中找到这个被丢弃的文件夹。你可能会觉得内容很有趣，至少可以这么说。</Chinesesimp>
+                <Chinese>我在一些灌木叢中找到這個被丟棄的文件夾。你可能會覺得內容很有趣，至少可以這麼說。</Chinese>
+                <Polish>Znalazłem tę teczkę porzuconą w krzakach. Może uznasz jej zawartość za interesującą, mówiąc delikatnie.</Polish>
+                <Czech>Našel jsem tuto složku zaházenou v keřích. Možná najdeš její obsah zajímavý, tak řečeno.</Czech>
+                <Portuguese>Encontrei esta pasta jogada entre alguns arbustos. Talvez você ache o conteúdo interessante, para não dizer mais.</Portuguese>
+                <Turkish>Bu klasörü bazı çalılarda terk edilmiş olarak buldum. İçeriği ilginç bulabilirsin, en azından söylemek gerekirse.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_traitor2">
+                <Original>I hear you've been looking for a fellow Rebel like yourself. I might have seen him hanging around the local police stations...</Original>
+                <Russian>Слышал, ты ищешь одного из своих товарищей-повстанцев. Кажется, я видел его ошивающимся возле местных полицейских участков...</Russian>
+                <German>Ich habe gehört, dass du nach einem anderen Rebellen wie dir suchst. Ich glaube, ich habe ihn in der Nähe der örtlichen Polizeistationen gesehen...</German>
+                <Italian>Ho sentito che stai cercando un altro ribelle come te. Forse l'ho visto aggirarsi vicino alle stazioni di polizia locali...</Italian>
+                <Spanish>He oído que buscas a otro rebelde como tú. Puede que lo haya visto rondando por las comisarías locales...</Spanish>
+                <French>J’ai entendu dire que tu cherchais un autre rebelle comme toi. Il me semble l’avoir vu rôder près des postes de police locaux...</French>
+                <Korean>네가 너처럼 반군 동료를 찾고 있다고 들었어. 그가 지역 경찰서 주변에서 어슬렁거리는 걸 본 것 같아...</Korean>
+                <Japanese>君みたいな仲間の反乱軍を探してるって聞いたよ。地元の警察署の周りをうろついてるのを見たかもしれない…</Japanese>
+                <Chinesesimp>听说你在找和你一样的叛军同伴。我好像在当地警察局附近见过他…</Chinesesimp>
+                <Chinese>聽說你在找和你一樣的叛軍同伴。我好像在當地警察局附近見過他…</Chinese>
+                <Polish>Słyszałem, że szukasz innego buntownika jak ty. Może widziałem go kręcącego się koło miejscowych posterunków policji...</Polish>
+                <Czech>Slyšel jsem, že hledáš jiného rebela, jako jsi ty. Možná jsem ho viděl potloukat se kolem místních policejních stanic...</Czech>
+                <Portuguese>Ouvi dizer que você está procurando outro rebelde como você. Acho que o vi rondando as delegacias locais...</Portuguese>
+                <Turkish>Kendi gibi bir isyancı aradığını duydum. Onu yerel karakolların etrafında dolanırken görmüş olabilirim...</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_dealer1">
+                <Original>I have some information on a "legitimate" dealer. I hear he's good friends with that weird Irish man.</Original>
+                <Russian>У меня есть информация о "законном" торговце. Говорят, он хорошо дружит с тем странным ирландцем.</Russian>
+                <German>Ich habe Informationen über einen „legitimen“ Händler. Ich habe gehört, dass er ein guter Freund von diesem seltsamen Iren ist.</German>
+                <Italian>Ho alcune informazioni su un commerciante "legittimo". Ho sentito dire che è un buon amico di quel bizzarro irlandese.</Italian>
+                <Spanish>Tengo información sobre un comerciante "legítimo". He oído que es buen amigo de ese extraño irlandés.</Spanish>
+                <French>J'ai des informations sur un marchand "légitime". J’ai entendu dire qu’il est un bon ami de cet étrange Irlandais.</French>
+                <Korean>"합법적인" 거래상에 대한 정보가 있어. 그 이상한 아일랜드인과 친한 사이라더군.</Korean>
+                <Japanese>「正当な」商人についての情報があるよ。あの変わったアイルランド人と仲が良いらしい。</Japanese>
+                <Chinesesimp>我有关于一个“合法”商人的信息。听说他和那个奇怪的爱尔兰人是好朋友。</Chinesesimp>
+                <Chinese>我有關於一個“合法”商人的信息。聽說他和那個奇怪的愛爾蘭人是好朋友。</Chinese>
+                <Polish>Mam informacje o „legalnym” handlarzu. Słyszałem, że jest dobrym przyjacielem tego dziwnego Irlandczyka.</Polish>
+                <Czech>Mám nějaké informace o „legitimním“ obchodníkovi. Slyšel jsem, že je dobrým přítelem toho podivného Ira.</Czech>
+                <Portuguese>Tenho algumas informações sobre um comerciante "legítimo". Ouvi dizer que ele é bom amigo daquele estranho irlandês.</Portuguese>
+                <Turkish>"Yasal" bir satıcı hakkında bazı bilgilerim var. O garip İrlandalıyla iyi arkadaş olduğunu duydum.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_dealer2">
+                <Original>Have you heard of that "MaxxLite Armaments" guy? I've been hearing rumors... I can tell you all about them.</Original>
+                <Russian>Слышал о парне из "MaxxLite Armaments"? До меня дошли слухи... Могу рассказать тебе всё.</Russian>
+                <German>Hast du schon von dem Typen von „MaxxLite Armaments“ gehört? Ich habe einige Gerüchte gehört... Ich kann dir alles erzählen.</German>
+                <Italian>Hai sentito parlare di quel tizio della "MaxxLite Armaments"? Ho sentito delle voci... Posso raccontarti tutto.</Italian>
+                <Spanish>¿Has oído hablar de ese tipo de "MaxxLite Armaments"? He estado escuchando rumores... Puedo contarte todo.</Spanish>
+                <French>As-tu entendu parler de ce gars de "MaxxLite Armaments" ? J’ai entendu des rumeurs... Je peux tout te raconter.</French>
+                <Korean>"MaxxLite Armaments" 사람에 대해 들어본 적 있어? 소문을 좀 들었는데... 다 알려줄 수 있어.</Korean>
+                <Japanese>「MaxxLite Armaments」の男のことを聞いたことあるか？噂を聞いたよ…全部教えてやるよ。</Japanese>
+                <Chinesesimp>你听说过“MaxxLite Armaments”那个人吗？我听到了一些传闻……我可以告诉你一切。</Chinesesimp>
+                <Chinese>你聽說過“MaxxLite Armaments”那個人嗎？我聽到了一些傳聞……我可以告訴你一切。</Chinese>
+                <Polish>Słyszałeś o tym gościu z „MaxxLite Armaments”? Krążą plotki... Mogę ci wszystko opowiedzieć.</Polish>
+                <Czech>Slyšel jsi o tom chlapíkovi z „MaxxLite Armaments“? Slyšel jsem nějaké zvěsti... Mohu ti o nich všechno říct.</Czech>
+                <Portuguese>Você já ouviu falar daquele cara da "MaxxLite Armaments"? Tenho ouvido alguns rumores... Posso te contar tudo.</Portuguese>
+                <Turkish>"MaxxLite Armaments" adamını duydun mu? Bazı söylentiler duydum... Sana her şeyi anlatabilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal1">
+                <Original>Sorry I couldn't help, but I’ve seen enemy soldiers patrolling a spot nearby. Might be worth checking out if you’re looking for trouble.</Original>
+                <Russian>Простите, что не смог помочь, но я видел, как враги патрулируют место неподалеку. Возможно, стоит проверить, если вы ищете неприятностей.</Russian>
+                <German>Es tut mir leid, dass ich nicht helfen konnte, aber ich habe gesehen, wie feindliche Soldaten in der Nähe patrouillieren. Vielleicht lohnt es sich, dort nachzusehen, wenn du Ärger suchst.</German>
+                <Italian>Mi dispiace di non poter aiutare, ma ho visto soldati nemici pattugliare un posto qui vicino. Potrebbe valere la pena controllare se stai cercando guai.</Italian>
+                <Spanish>Lo siento, no puedo ayudarte, pero he visto soldados enemigos patrullando un lugar cerca de aquí. Podría valer la pena echarle un vistazo si buscas problemas.</Spanish>
+                <French>Désolé de ne pas pouvoir vous aider, mais j'ai vu des soldats ennemis patrouiller à proximité. Cela pourrait valoir le coup d'œil si vous cherchez des ennuis.</French>
+                <Korean>도움을 드리지 못해 죄송하지만, 근처에서 적 병사들이 순찰하는 것을 봤습니다. 문제가 필요하다면 확인해볼 가치가 있을 겁니다.</Korean>
+                <Japanese>お力になれず申し訳ありませんが、近くで敵兵が巡回しているのを見かけました。もし問題を探しているなら、確認する価値があるかもしれません。</Japanese>
+                <Chinesesimp>很抱歉我无法帮助你，但我看到敌军在附近的一个地点巡逻。如果你想找点麻烦，可能值得查看一下。</Chinesesimp>
+                <Chinese>很抱歉我無法幫助你，但我看到敵軍在附近的一個地點巡邏。如果你想找點麻煩，可能值得查看一下。</Chinese>
+                <Polish>Przepraszam, że nie mogłem pomóc, ale widziałem, jak wrogowie patrolują pobliskie miejsce. Może warto to sprawdzić, jeśli szukasz kłopotów.</Polish>
+                <Czech>Omlouvám se, že nemohu pomoci, ale viděl jsem, jak nepřátelé hlídkují v blízkosti. Možná to stojí za kontrolu, pokud hledáte potíže.</Czech>
+                <Portuguese>Desculpe, não pude ajudar, mas vi soldados inimigos patrulhando um local próximo. Pode valer a pena verificar se você está procurando problemas.</Portuguese>
+                <Turkish>Üzgünüm yardımcı olamadım, ama yakındaki bir yerde düşman askerlerinin devriye gezdiğini gördüm. Sorun arıyorsanız bakmaya değer olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal2">
+                <Original>Sorry, I don’t have the information you need, but there’s a location I’ve noticed the enemy frequenting. Maybe that’ll help.</Original>
+                <Russian>Простите, у меня нет нужной вам информации, но я заметил место, которое часто посещают враги. Возможно, это поможет.</Russian>
+                <German>Entschuldigung, ich habe nicht die Informationen, die du brauchst, aber ich habe einen Ort bemerkt, den der Feind häufig besucht. Vielleicht hilft dir das.</German>
+                <Italian>Mi dispiace, non ho le informazioni che ti servono, ma ho notato un luogo che i nemici frequentano spesso. Forse potrebbe esserti utile.</Italian>
+                <Spanish>Lo siento, no tengo la información que necesitas, pero he notado un lugar que los enemigos frecuentan. Quizás eso te sirva.</Spanish>
+                <French>Désolé, je n'ai pas les informations dont vous avez besoin, mais j'ai remarqué un endroit fréquenté par l'ennemi. Peut-être que cela pourra vous aider.</French>
+                <Korean>죄송하지만 필요한 정보를 가지고 있지 않습니다. 그러나 적이 자주 드나드는 장소를 본 적이 있습니다. 도움이 될지도 모릅니다.</Korean>
+                <Japanese>申し訳ありませんが、必要な情報を持っていません。ただし、敵が頻繁に出入りする場所を見かけました。それがお役に立つかもしれません。</Japanese>
+                <Chinesesimp>对不起，我没有你需要的信息，但我注意到敌军经常光顾一个地方。也许这会有所帮助。</Chinesesimp>
+                <Chinese>對不起，我沒有你需要的信息，但我注意到敵軍經常光顧一個地方。也許這會有所幫助。</Chinese>
+                <Polish>Przepraszam, nie mam informacji, których potrzebujesz, ale zauważyłem miejsce, które wróg często odwiedza. Może to ci pomoże.</Polish>
+                <Czech>Omlouvám se, nemám informace, které potřebujete, ale všiml jsem si místa, kam nepřátelé často chodí. Možná to pomůže.</Czech>
+                <Portuguese>Desculpe, não tenho as informações que você precisa, mas notei um local que os inimigos frequentam. Talvez isso ajude.</Portuguese>
+                <Turkish>Üzgünüm, ihtiyacınız olan bilgiye sahip değilim, ama düşmanın sık sık gittiği bir yer fark ettim. Belki bu işinize yarar.</Turkish>
             </Key>
         </Container>
         <Container name="rivals_notifications">
@@ -12667,6 +13313,13 @@
                 <Chinesesimp>%1 快速旅行已被取消，因为一些玩家已经登上了他们的车辆并且目的地不是总部或空军基地、军事基地、集结点、军火商。</Chinesesimp>
                 <Korean>일부 플레이어가 차량에 탑승했으며 목적지가 본부나 공군 기지, 군사 기지, 집결 지점, 암거래상이 아니기 때문에 %1의 빠른 이동이 취소되었습니다.</Korean>
                 <French>%1 Le voyage rapide a été annulé parce qu'un joueur est monté à bord de son véhicule et que la destination n'est pas le QG ou une base aérienne, une base militaire, un point de ralliement ou un marchand d'armes.</French>
+            </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_trader_locked">
+                <Original>You can't Fast Travel to trader before visiting him once.</Original>
+                <Russian>Вы не можете совершить быстрое путешествие к торговцу, пока не посетите его хотя бы один раз.</Russian>
+                <Chinesesimp>在拜访交易者一次之前，你不能快速旅行到他那里</Chinesesimp>
+                <Korean>한 번 방문하기 전에는 상인에게 빠른 이동을 할 수 없습니다.</Korean>
+                <French>Vous ne pouvez pas voyager rapidement vers un commerçant avant de lui rendre visite une fois.</French>
             </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_arrived_hc">
                 <Original>Group %1 arrived to destination.</Original>

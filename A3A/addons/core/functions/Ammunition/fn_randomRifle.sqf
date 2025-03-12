@@ -33,6 +33,8 @@ if (_pool isEqualTo []) then {
 };
 private _weapon = selectRandomWeighted _pool;
 
+if (isNil "_weapon") exitWith {};
+
 // Probably shouldn't ever be executed
 if !(primaryWeapon _unit isEqualTo "") then {
     if (_weapon == primaryWeapon _unit) exitWith {};
@@ -62,9 +64,10 @@ _unit addPrimaryWeaponItem _magazine;
 _unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
 
 
+// Optics
 private _compatOptics = A3A_rebelOpticsCache get _weapon;
 if (isNil "_compatOptics") then {
-    private _compatItems = compatibleItems _weapon; // cached, should be fast		// cached, should be fast
+    private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatOptics = _compatItems arrayIntersect call {
         if (_weaponType in ["Rifles", "MachineGuns"]) exitWith { A3A_rebelGear get "OpticsMid" };
         if (_weaponType == "SniperRifles") exitWith { A3A_rebelGear get "OpticsLong" };
@@ -76,6 +79,33 @@ if (isNil "_compatOptics") then {
             A3A_rebelGear get "OpticsMid";
         };
     };
+    // save in cache
     A3A_rebelOpticsCache set [_weapon, _compatOptics];
 };
+
+// Silencers/Muzzles
+private _compatSilencers = A3A_rebelSilencersCache get _weapon;
+if (isNil "_compatSilencers") then {
+    private _compatItems = compatibleItems _weapon; // cached, should be fast
+    _compatSilencers = _compatItems arrayIntersect call {
+        A3A_rebelGear get "MuzzleAttachments";
+    };
+    // save in cache
+    A3A_rebelSilencersCache set [_weapon, _compatSilencers];
+};
+
+// Bipods
+private _compatBipods = A3A_rebelBipodsCache get _weapon;
+if (isNil "_compatBipods") then {
+    private _compatItems = compatibleItems _weapon; // cached, should be fast
+    _compatBipods = _compatItems arrayIntersect call {
+        A3A_rebelGear get "Bipods";
+    };
+    // save in cache
+    A3A_rebelBipodsCache set [_weapon, _compatBipods];
+};
+
+//// silencers and bipods
 if (_compatOptics isNotEqualTo []) then { _unit addPrimaryWeaponItem (selectRandom _compatOptics) };
+if (_compatSilencers isNotEqualTo []) then { _unit addPrimaryWeaponItem (selectRandom _compatSilencers) };
+if (_compatBipods isNotEqualTo []) then { _unit addPrimaryWeaponItem (selectRandom _compatBipods) };
