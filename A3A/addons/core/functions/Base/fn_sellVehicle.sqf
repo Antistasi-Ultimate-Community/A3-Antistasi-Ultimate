@@ -63,7 +63,8 @@ if (_veh isKindOf "Air") then {
         [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_Base_sellVehicle_err0.1"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
     };
 } else {
-    if (_veh distance getMarkerPos respawnTeamPlayer > 50) exitWith {
+    if ((_veh distance (getMarkerPos respawnTeamPlayer)) > 50) exitWith {
+
         [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_Base_sellVehicle_err0"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
     };
 };
