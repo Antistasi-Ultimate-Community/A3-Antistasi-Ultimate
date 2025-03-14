@@ -5674,7 +5674,7 @@
             </Key>
             <Key ID="STR_params_UAVSpawnChance">
                 <Original>UAV spawn chance on airfileds</Original>
-                <Russian>Шанс спавна БПЛА </Russian>
+                <Russian>Шанс спавна БПЛА на аэрдромах</Russian>
             </Key>
             <Key ID="STR_params_UAVSpawnChance_desc">
                 <Original>Adjusts spawn chance of UAVs on enemy airfields, higher the chance, less likely the game will spawn other fixed wing aircrafts</Original>
