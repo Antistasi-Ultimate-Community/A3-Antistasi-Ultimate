@@ -5673,7 +5673,7 @@
                 <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
             </Key>
             <Key ID="STR_params_UAVSpawnChance">
-                <Original>UAV spawn chance on airfileds</Original>
+                <Original>UAV spawn chance at airfields</Original>
                 <Russian>Шанс спавна БПЛА на аэрдромах</Russian>
             </Key>
             <Key ID="STR_params_UAVSpawnChance_desc">
