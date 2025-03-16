@@ -632,6 +632,7 @@ if (_objectiveIsCargo) then {
             waitUntil {sleep 1; (_objectiveObj distance _posDest < _arrivalDist) or (not alive _objectiveObj) or (time > _timeout)};
             if (_objectiveObj distance _posDest < _arrivalDist) then
             {
+		[true, false, 200*_bonus, 10*_bonus, 5, 120, "supply"] call _fnc_applyResults;
                 [0,15*_bonus,_mrkDest] remoteExec ["A3A_fnc_citySupportChange",2];
                 {if (_x distance _objectiveObj < 500) then {
                     [10*_bonus,_x] call A3A_fnc_addScorePlayer;
