@@ -115,7 +115,7 @@ if (_tab isEqualTo "vehicles") then
         _buttonDelivery setVariable ["className", _className];
         _buttonDelivery setVariable ["model", _model];
         _buttonDelivery ctrlAddEventHandler ["ButtonClick", {
-            closeDialog 2; [(_this # 0) getVariable "className", true] spawn A3A_fnc_addBlackMarketVeh;
+            [(_this # 0) getVariable "className", true] spawn A3A_fnc_addBlackMarketVeh;
         }];
         _buttonDelivery ctrlCommit 0;
 
