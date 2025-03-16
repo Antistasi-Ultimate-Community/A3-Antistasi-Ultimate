@@ -553,9 +553,16 @@ if (_convoyType isEqualTo "Money") then
 {
     private _objectiveObj = objNull;
     private _driver = objNull;
-    if (_objectiveIsCargo) then {
+if (_objectiveIsCargo) then {
         _objectiveObj = _supObj;
         _driver = driver attachedTo _supObj;
+        _vehObj addEventHandler ["Killed", {
+            params ["_vehicle", "_killer", "_instigator", "_useEffects"];
+            private _cargoItem = _vehicle call A3A_Logistics_fnc_getCargo select 0;
+            _cargoItem setDamage 1;
+            deleteVehicle _cargoItem;
+
+        }];
     } else {
         _objectiveObj = _vehObj;
         _driver = driver _vehObj;
