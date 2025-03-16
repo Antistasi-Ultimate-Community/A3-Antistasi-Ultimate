@@ -472,7 +472,7 @@ private _typeWeight = [
 } forEach _vehTypes;
 
 while {_countX < _nVeh && {_countX < 3}} do {
-	private _typeVehX = selectRandomWeighted _lightvehPool;
+	private _typeVehX = selectRandomWeighted _groundPool;
 	private _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 	if(_spawnParameter isEqualType []) then
 	{
