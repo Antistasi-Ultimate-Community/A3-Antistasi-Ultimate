@@ -5677,7 +5677,7 @@
                 <Russian>Шанс спавна БПЛА на аэрдромах</Russian>
             </Key>
             <Key ID="STR_params_UAVSpawnChance_desc">
-                <Original>Adjusts spawn chance of UAVs on enemy airfields, higher the chance, less likely the game will spawn other fixed wing aircrafts</Original>
+                <Original>Adjusts spawn chance of UAVs at enemy airfields. The higher the chance, the less likely other fixed wing aircrafts will be spawned</Original>
                 <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
             </Key>
             <Key ID="STR_params_saveZeusBuildings">
