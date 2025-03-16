@@ -259,4 +259,88 @@ class CfgSounds
         sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Fear\fear6.ogg), 0.8, 1, 40};
         titles[] = {};
     };
+
+    class A3A_Audio_Petros_Ambient_Sneeze
+    {
+        name = "A3A_Audio_Petros_Ambient_Sneeze";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Sneeze.ogg), 0.8, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Coughing1
+    {
+        name = "A3A_Audio_Petros_Ambient_Coughing1";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Coughing1.ogg), 3, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Coughing2
+    {
+        name = "A3A_Audio_Petros_Ambient_Coughing2";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Coughing2.ogg), 1, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Scratching
+    {
+        name = "A3A_Audio_Petros_Ambient_Scratching";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Scratching.ogg), 4, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Whistle1
+    {
+        name = "A3A_Audio_Petros_Ambient_Whistle1";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Whistle1.ogg), 4, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Whistle2
+    {
+        name = "A3A_Audio_Petros_Ambient_Whistle2";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Whistle2.ogg), 2.5, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Yawn1
+    {
+        name = "A3A_Audio_Petros_Ambient_Yawn1";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Yawn1.ogg), 2.5, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Yawn2
+    {
+        name = "A3A_Audio_Petros_Ambient_Yawn2";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Yawn2.ogg), 4, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_ThroatClearing
+    {
+        name = "A3A_Audio_Petros_Ambient_ThroatClearing";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\ThroatClearing.ogg), 4.5, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Humming
+    {
+        name = "A3A_Audio_Petros_Ambient_Humming";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Humming.ogg), 5, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Sniffling
+    {
+        name = "A3A_Audio_Petros_Ambient_Sniffling";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Sniffling.ogg), 5, 1, 40};
+        titles[] = {};
+    };
+
+    class A3A_Audio_Petros_Ambient_Breathing
+    {
+        name = "A3A_Audio_Petros_Ambient_Breathing";
+        sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Breathing.ogg), 5, 1, 40};
+        titles[] = {};
+    };
 };

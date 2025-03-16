@@ -1,5 +1,5 @@
 class cfgHALsMoney {
 	debug = 0;
 	startingFunds = 0;
-	oldManItemsPrice[] = {150, 500, 1000, 10000};
+	oldManItemsPrice[] = {500, 2500, 5000, 10000};
 };

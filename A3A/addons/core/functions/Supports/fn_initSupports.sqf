@@ -49,8 +49,9 @@ private _initData = [
     ["GUNSHIP",         "AREA", 0.2, 0.1, 0, 80, "", "vehiclesPlanesGunship"],                   //u      // uh. Does AREA work for this? Only lasts 5 minutes so maybe...
     ["SAM",           "TARGET", 1.0, 1.0,   0, 100, "u", ""],                            // balanced against ASF
     ["CRUISEMISSILE", "AREA", 0.3, 0.1, 150,   100, "u", ""],
-    ["ORBITALSTRIKE",   "AREA", 0.2, 0.0, 300,   0, "fu", ""],
-    ["UAV",           "TARGET", 0.4, 0.2,   0, 80,  "u", "uavsAttack"]
+    ["ORBITALSTRIKE",   "AREA", 0.2, 0.0, 300,   0, "f", ""],
+    ["UAV",           "TARGET", 0.4, 0.2,   0, 0,  "", "uavsAttack"],
+    ["UAVAttack",           "TARGET", 0.3, 0.2,   0, 80,  "u", "uavsAttack"]
 ];
 
 // Generate support type hashmap for a faction, suppType -> [baseType, weight, effRadius, strikepower]

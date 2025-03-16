@@ -22,7 +22,9 @@
 #define REVEAL_ZONE_LARGE       303
 
 //Additional types
-#define RIVALS        500
+#define DISCOUNT      500
+#define RIVALS        501
+#define DEALER        502
 
 params ["_intelType", "_side"];
 
@@ -48,10 +50,11 @@ if(isNil "_side") exitWith
 private _faction = Faction(_side);
 private _text = "";
 private _sideName = _faction get "name";
-private _intelContent = "";
+private _intelContent = -1;
 
 if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
     private _thresholds = createHashMapFromArray [
+        ["Civilian", 20],
         ["Small", 20],
         ["Medium", 75],
         ["Large", 100]
@@ -60,11 +63,49 @@ if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
     if (random 100 < (_thresholds get _intelType)) then {
         [] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
         _text = format [localize "STR_trader_task_hint_description", ([] call SCRT_fnc_misc_getWorldName)];
+        _intelContent = DEALER;
     };
 };
 
 if (_text isEqualTo "") then {
     switch (true) do {
+        case (_intelType isEqualTo "Civilian"): {
+            _intelContent = selectRandomWeighted [
+                MONEY, 0.2,
+                WEAPON, 0.2,
+                DECRYPTION_KEY, 0.2,
+                TRAITOR, 0.1
+            ];
+
+            switch (_intelContent) do
+            {
+                case (MONEY):
+                {
+                    private _money = ((round (random 50)) + (10 * tierWar)) * 100;
+                    _text = format ["A civilian gave you some confidential data, you sold it for %1 on the black market!", _money];
+                    [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
+                };
+                case (DECRYPTION_KEY):
+                {
+                    occupantsRadioKeys = occupantsRadioKeys + 1;
+                    _text = format [localize "STR_intel_decryption_key", _sideName];
+                };
+                case (WEAPON):
+                {
+                    private _notYetUnlocked = allWeapons - unlockedWeapons;
+                    private _newWeapon = selectRandom _notYetUnlocked;
+                    [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
+
+                    private _weaponName = getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName");
+                    _text = format ["A civilian gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have unlocked this weapon!", _weaponName];
+                };
+                case (TRAITOR):
+                {
+                    _text = "A civilian handed you a file with incriminating evidence on a traitor, we don't think they will cause any more trouble.";
+                    traitorIntel = true; publicVariable "traitorIntel";
+                };
+            };
+        };
         case (_intelType isEqualTo "Small"): {
             _intelContent = [
                 selectRandomWeighted [TIME_LEFT, 0.2, REVEAL_ZONE_SMALL, 0.2, DEF_RESOURCES, 0.2, DECRYPTION_KEY, 0.2, CONVOY, 0.2, RIVALS, 0.1],
@@ -272,3 +313,5 @@ if (_text isEqualTo "") then {
 if (_text isNotEqualTo "") then {
     [_text, true] remoteExec ["A3A_fnc_showIntel", [civilian, teamPlayer]];
 };
+
+_intelContent;
