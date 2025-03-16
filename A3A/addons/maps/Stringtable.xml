@@ -124,7 +124,7 @@
                 <French>Antistasi Stratis</French>
                 <Russian>Antistasi Стратис</Russian>
                 <Chinesesimp>Antistasi Stratis</Chinesesimp>
-                <Korean>안티스타시 - 스트라티스</Korean>
+                <Korean>안티스타시 스트라티스</Korean>
                 <Czech>Antistasi Stratis</Czech>
                 <Italian>Antistasi Stratis</Italian>
                 <Spanish>Antistasi Stratis</Spanish>
@@ -187,7 +187,7 @@
                 <German>Reprise für die Menschen.</German>
                 <Chinesesimp>为人民重演。</Chinesesimp>
                 <Russian>Реприза для народа.</Russian>
-                <Korean>거주민들을 위한 레프리제.</Korean>
+                <Korean>국민들을 위한 레프리제.</Korean>
                 <French>Reprise pour le peuple.</French>
             </Key>
             <Key ID="STR_antistasi_mission_info_sefrouramal_mapname_text">
@@ -525,6 +525,7 @@
             <Key ID="STR_antistasi_mission_info_SPE_Mortain_mapname_short_text">
                 <Original>Antistasi Mortain</Original>
                 <Chinesesimp>Antistasi Mortain</Chinesesimp>
+                <Korean>안티스타시 모르탱</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_sumava_mapname_text">
                 <Original>Antistasi Ultimate - Šumava</Original>
@@ -550,46 +551,57 @@
             <Key ID="STR_antistasi_mission_info_Gulfcoast_mapname_short_text">
                 <Original>Antistasi Ultimate - Gulfcoast Islands</Original>
                 <Chinesesimp>Antistasi Ultimate - Gulfcoast Islands</Chinesesimp>
+                <Korean>안티스타시 얼티밋 - Gulfcoast Islands</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_mapname_text">
                 <Original>Antistasi Ultimate - Gulfcoast Islands</Original>
                 <Chinesesimp>Antistasi Ultimate - Gulfcoast Islands</Chinesesimp>
+                <Korean>안티스타시 얼티밋 - Gulfcoast Islands</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_blurb_text">
                 <Original>Paying a visit to the corrupt political leaders' vacation homes.</Original>
                 <Chinesesimp>参观腐败政治领袖的度假屋。</Chinesesimp>
+                <Korean>썩은 정치지도자들의 별장을 방문하세요.</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_mapname_short_text">
                 <Original>Antistasi Ultimate - Stubbhult</Original>
                 <Chinesesimp>Antistasi Ultimate - Stubbhult</Chinesesimp>
+                <Korean>안티스타시 얼티밋 - Stubbhult</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_mapname_text">
                 <Original>Antistasi Ultimate - Stubbhult</Original>
                 <Chinesesimp>Antistasi Ultimate - Stubbhult</Chinesesimp>
+                <Korean>안티스타시 얼티밋 - Stubbhult</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_blurb_text">
                 <Original>Rural warfare, few men, many bunkers</Original>
                 <Chinesesimp>农村战争，士兵稀少，掩体众多</Chinesesimp>
+                <Korean>지방 전쟁, 적은 병력, 많은 벙커</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_description_text">
                 <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
                 <Chinesesimp>成为抵抗军领袖。与在技术、数量、资产和车辆方面占优势的敌人作战。在完全动态的世界中运用游击战术，在大约 18 个支线任务中随时随地进行任何任务。</Chinesesimp>
+                <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_blurb_text">
                 <Original>Revolution on paradise island!</Original>
                 <Chinesesimp>天堂岛上的革命！</Chinesesimp>
+                <Korean>천국의 섬에서의 혁명을!</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_description_text">
                 <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
                 <Chinesesimp>成为抵抗军领袖。与在技术、数量、资产和车辆方面占优势的敌人作战。在完全动态的世界中运用游击战术，在大约 18 个支线任务中随时随地进行任何任务。</Chinesesimp>
+                <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_mapname_short_text">
                 <Original>Antistasi Pulau</Original>
                 <Chinesesimp>Antistasi Pulau</Chinesesimp>
+                <Korean>안티스타시 Pulau</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_mapname_text">
                 <Original>Antistasi - Liberation of Pulau</Original>
                 <Chinesesimp>Antistasi - Liberation of Pulau</Chinesesimp>
+                <Korean>안티스타시 얼티밋 - Pulau 해방</Korean>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>

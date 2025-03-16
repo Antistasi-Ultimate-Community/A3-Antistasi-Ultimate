@@ -8,6 +8,7 @@
             <Chinesesimp>军火商商店</Chinesesimp>
             <Korean>암거래상 상점</Korean>
             <French>Magasin de vente d'armes</French>
+            <English>Arms Dealer Store</English>
         </Key>
         <Key ID="STR_HALS_STORE_ALL">
             <Original>All</Original>
@@ -16,6 +17,7 @@
             <Chinesesimp>全部</Chinesesimp>
             <Korean>모두</Korean>
             <French>Tous</French>
+            <English>All</English>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_HANDGUNS">
             <Original>Handguns</Original>
@@ -185,6 +187,7 @@
             <Chinesesimp>商店</Chinesesimp>
             <Korean>상점</Korean>
             <French>Magasin</French>
+            <English>Store</English>
         </Key>
         <Key ID="STR_HALS_STORE_OPEN_ACTION">
             <Original>Open the %1</Original>
@@ -194,6 +197,7 @@
             <Chinesesimp>打开 %1</Chinesesimp>
             <Korean>%1 열어보기</Korean>
             <French>Ouvrir le %1</French>
+            <English>Open the %1</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
             <Original>Item unavailable.</Original>
@@ -202,6 +206,7 @@
             <Chinesesimp>物品不可用。</Chinesesimp>
             <Korean>아이템 이용 불가.</Korean>
             <French>Article indisponible.</French>
+            <English>Item unavailable.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_OUTOFSTOCK">
             <Original>Insufficient stock.</Original>
@@ -210,6 +215,7 @@
             <Chinesesimp>已售罄。</Chinesesimp>
             <Korean>재고 부족.</Korean>
             <French>Stock insuffisant.</French>
+            <English>Insufficient stock.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_TOOEXPENSIVE">
             <Original>Insufficient funds.</Original>
@@ -218,6 +224,7 @@
             <Chinesesimp>资金不足。</Chinesesimp>
             <Korean>자금 부족.</Korean>
             <French>Fonds insuffisants.</French>
+            <English>Insufficient funds.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOEQUIP">
             <Original>Unable to equip.</Original>
@@ -226,6 +233,7 @@
             <Chinesesimp>无法装备。</Chinesesimp>
             <Korean>장비 불가.</Korean>
             <French>Impossible d'équiper</French>
+            <English>Unable to equip.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOCARGOSPACE">
             <Original>Insufficient cargo space.</Original>
@@ -234,6 +242,7 @@
             <Chinesesimp>货舱空间不足。</Chinesesimp>
             <Korean>화물 공간 부족.</Korean>
             <French>Espace de chargement insuffisant.</French>
+            <English>Insufficient cargo space.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_PURCHASED">
             <Original>purchased</Original>
@@ -242,6 +251,7 @@
             <Chinesesimp>成交</Chinesesimp>
             <Korean>구입 완료</Korean>
             <French>achetés</French>
+            <English>purchased</English>
         </Key>
         <!-- Thanks to JakeHekesFists -->
         <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
@@ -271,6 +281,7 @@
             <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
             <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
             <French>Seuls les articles disponibles à l'achat sont affichés.</French>
+            <English>Only show items that are available for purchase.</English>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
             <Original>Only show items which are in stock.</Original>
@@ -286,6 +297,7 @@
             <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
             <Korean>플레이어가 장착한 무기와 호환되는 아이템만 표시합니다.</Korean>
             <French>N'afficher que les objets compatibles avec les armes équipées par le joueur.</French>
+            <English>Only show items compatible with the player's equipped weapons.</English>
         </Key>
         <!-- SELL BOX -->
         <Key ID="STR_HALS_STORE_CHECKBOX_SELLFILTER">
@@ -294,6 +306,7 @@
             <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
             <Korean>플레이어가 판매할 수 있는 아이템만 표시합니다.</Korean>
             <French>N'afficher que les objets que le joueur peut vendre.</French>
+            <English>Only show items that the player can sell.</English>
         </Key>
         <!-- SELL BUTTON -->
         <Key ID="STR_HALS_STORE_BUTTON_SELL">
@@ -303,6 +316,7 @@
             <Chinesesimp>出售</Chinesesimp>
             <Korean>판매</Korean>
             <French>Vendre</French>
+            <English>Sell</English>
         </Key>
         <Key ID="STR_HALS_STORE_CHECKBOX_EQUIP">
             <Original>Equip item upon purchase (if possible).</Original>
@@ -311,6 +325,7 @@
             <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
             <Korean>구매 시 장비 착용. (가능 시)</Korean>
             <French>Équiper l'objet lors de l'achat (si possible).</French>
+            <English>Equip item upon purchase (if possible).</English>
         </Key>
         <Key ID="STR_HALS_STORE_BUTTON_PURCHASE">
             <Original>Purchase</Original>
@@ -319,6 +334,7 @@
             <Chinesesimp>购买</Chinesesimp>
             <Korean>구입</Korean>
             <French>Achat</French>
+            <English>Purchase</English>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_PRICE">
             <Original>Price</Original>
@@ -327,6 +343,7 @@
             <Chinesesimp>价格</Chinesesimp>
             <Korean>가격</Korean>
             <French>Prix</French>
+            <English>Price</English>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_INSTOCK">
             <Original>IN STOCK</Original>
@@ -335,6 +352,7 @@
             <Chinesesimp>现货</Chinesesimp>
             <Korean>재고 있음</Korean>
             <French>EN STOCK</French>
+            <English>IN STOCK</English>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_NOSTOCK">
             <Original>OUT OF STOCK.</Original>
@@ -343,6 +361,7 @@
             <Chinesesimp>售罄</Chinesesimp>
             <Korean>재고 없음.</Korean>
             <French>EN RUPTURE DE STOCK.</French>
+            <English>OUT OF STOCK.</English>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
             <Original>%1¢ more required.</Original>
@@ -552,36 +571,42 @@
                 <English>Helmets</English>
                 <Russian>Шлемы</Russian>
                 <Chinesesimp>头盔</Chinesesimp>
+                <Korean>헬멧</Korean>
             </Key>
             <Key ID="STR_A3AU_uniforms">
                 <Original>Uniforms</Original>
                 <English>Uniforms</English>
                 <Russian>Униформы</Russian>
                 <Chinesesimp>制服</Chinesesimp>
+                <Korean>유니폼</Korean>
             </Key>
             <Key ID="STR_A3AU_backpacks">
                 <Original>Backpacks</Original>
                 <English>Backpacks</English>
                 <Russian>Рюкзаки</Russian>
                 <Chinesesimp>背包</Chinesesimp>
+                <Korean>군장</Korean>
             </Key>
             <Key ID="STR_A3AU_facewear">
                 <Original>Facewear</Original>
                 <English>Facewear</English>
                 <Russian>Очки/шарфы</Russian>
                 <Chinesesimp>面部装备</Chinesesimp>
+                <Korean>페이스웨어</Korean>
             </Key>
             <Key ID="STR_A3AU_vests">
                 <Original>Vests</Original>
                 <English>Vests</English>
                 <Russian>Разгрузки</Russian>
                 <Chinesesimp>背心</Chinesesimp>
+                <Korean>조끼</Korean>
             </Key>
             <Key ID="STR_A3AU_utility">
                 <Original>Utility</Original>
                 <English>Utility</English>
                 <Russian>Служебные</Russian>
                 <Chinesesimp>一般物品</Chinesesimp>
+                <Korean>기타 아이템</Korean>
             </Key>
         </Container>
         <!-- helpers -->
@@ -616,54 +641,63 @@
                 <English>Apex</English>
                 <Russian>Apex</Russian>
                 <Chinesesimp>Apex</Chinesesimp>
+                <Korean>Apex</Korean>
             </Key>
             <Key ID="STR_A3AU_Artofwar">
                 <Original>Art of war</Original>
                 <English>Art of war</English>
                 <Russian>Art of war</Russian>
                 <Chinesesimp>Art of war</Chinesesimp>
+                <Korean>Art of war</Korean>
             </Key>
             <Key ID="STR_A3AU_Contact">
                 <Original>Contact</Original>
                 <English>Contact</English>
                 <Russian>Contact</Russian>
                 <Chinesesimp>Contact</Chinesesimp>
+                <Korean>Contact</Korean>
             </Key>
             <Key ID="STR_A3AU_Jets">
                 <Original>Jets</Original>
                 <English>Jets</English>
                 <Russian>Jets</Russian>
                 <Chinesesimp>Jets</Chinesesimp>
+                <Korean>Jets</Korean>
             </Key>
             <Key ID="STR_A3AU_Kart">
                 <Original>Kart</Original>
                 <English>Kart</English>
                 <Russian>Kart</Russian>
                 <Chinesesimp>Kart</Chinesesimp>
+                <Korean>Kart</Korean>
             </Key>
             <Key ID="STR_A3AU_Lawsofwar">
                 <Original>Laws of war</Original>
                 <English>Laws of war</English>
                 <Russian>Laws of war</Russian>
                 <Chinesesimp>Laws of war</Chinesesimp>
+                <Korean>Laws of war</Korean>
             </Key>
             <Key ID="STR_A3AU_Marksmen">
                 <Original>Marksmen</Original>
                 <English>Marksmen</English>
                 <Russian>Marksmen</Russian>
                 <Chinesesimp>Marksmen</Chinesesimp>
+                <Korean>Marksmen</Korean>
             </Key>
             <Key ID="STR_A3AU_Tanks">
                 <Original>Tanks</Original>
                 <English>Tanks</English>
                 <Russian>Tanks</Russian>
                 <Chinesesimp>Tanks</Chinesesimp>
+                <Korean>Tanks</Korean>
             </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
                 <English>Kkiv 2035</English>
                 <Russian>Kkiv 2035</Russian>
                 <Chinesesimp>Kkiv 2035</Chinesesimp>
+                <Korean>Kkiv 2035</Korean>
             </Key>
             <Key ID="STR_A3AU_CSLA">
                 <Original>CSLA</Original>
@@ -974,6 +1008,7 @@
                 <Chinesesimp>P.I.</Chinesesimp>
                 <Korean>P.I.</Korean>
                 <French>P.I.</French>
+                <English>P.I.</English>
             </Key>
             <Key ID="STR_A3AU_JCA_ARSENAL">
                 <Original>JCA</Original>
@@ -982,6 +1017,7 @@
                 <Chinesesimp>JCA</Chinesesimp>
                 <Korean>JCA</Korean>
                 <French>JCA</French>
+                <English>JCA</English>
             </Key>
             <Key ID="STR_A3AU_ffp">
                 <Original>FFP</Original>

@@ -2745,21 +2745,25 @@
                 <Original>Total Victory Selected&lt;br/&gt;To complete this win condition, capture all outposts, resources, factories, seaports, military bases, and airports, and maintain more population support than your enemies.</Original>
                 <Russian>Выбрана полная победа&lt;br/&gt;Чтобы выполнить это условие победы, захватите все аванпосты, ресурсы, фабрики, морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
                 <Chinesesimp>完全胜利&lt;br/&gt;要完成此胜利条件，请占领所有前哨、资源、工厂、海港、军事基地和机场，并保持比敌人更多的人口支持。</Chinesesimp>
+                <Korean>전체적 승리 선택&lt;br/&gt;이 조건을 완료하려면 모든 전초 기지, 자원채취소, 공장, 항구, 군사 기지, 공항을 점령하고 적보다 더 많은 시민들의 지지율을 유지해야 합니다.</Korean>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_economic">
                 <Original>Economic Victory Selected&lt;br/&gt;To complete this win condition, gain more than a set amount of currency.&lt;br/&gt;Calculated as: amount of resources on the map * 100,000&lt;br/&gt;Needed amount on current map : %1%2</Original>
                 <Russian>Экономическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, получите больше установленной суммы валюты.&lt;br/&gt;Рассчитывается как: количество ресурсов на карте * 100,000.&lt;br/&gt;Необходимая сумма на текущей карте : %1%2</Russian>
                 <Chinesesimp>经济胜利&lt;br/&gt;要完成此胜利条件，需要获得超过一定数量的货币。&lt;br/&gt;计算方式为：地图上的资源点数量 * 100,000&lt;br/&gt;当前地图上所需数量：%1%2</Chinesesimp>
+                <Korean>경제적 승리 선택&lt;br/&gt;이 조건을 완료하려면 일정 금액 이상의 자금을 확보해야 합니다.&lt;br/&gt;계산 방식: 지도에 있는 자원채취소의 수 x 100,000&lt;br/&gt;현재 맵에 필요한 수: %1%2</Korean>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_logistical">
                 <Original>Logistical Victory Selected&lt;br/&gt;To complete this win condition, capture all seaports, military bases, and airports, and maintain more population support than your enemies.</Original>
                 <Russian>Логистическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, захватите все морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
                 <Chinesesimp>后勤胜利&lt;br/&gt;要完成此胜利条件，请占领所有海港、军事基地和机场，并保持比敌人更多的人口支持。</Chinesesimp>
+                <Korean>군수적 승리 선택&lt;br/&gt;이 조건을 완료하려면 모든 항구, 군사 기지, 공항을 점령하고 적보다 더 많은 시민들의 지지율을 유지해야 합니다.</Korean>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_political">
                 <Original>Political Victory Selected&lt;br/&gt;To complete this win condition, get more than 75% of the population to support your cause.</Original>
                 <Russian>Политическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, заставьте более 75% населения поддержать ваше дело.</Russian>
                 <Chinesesimp>政治胜利&lt;br/&gt;要完成此胜利条件，需要获得超过 75% 的人口支持你的事业</Chinesesimp>
+                <Korean>정치적 승리 선택&lt;br/&gt;이 조건을 완료하려면 인구의 75% 이상이 당신의 대의를 지지해야 합니다.</Korean>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_Default_3">
                 <Original>Lose</Original>
@@ -2779,7 +2783,7 @@
                 <German>Du verlierst das Spiel, wenn %1 1/3 der gesamten Bevölkerung ermordet hat.</German>
                 <Czech>Ztratíte hru, pokud %1 zavraždí 1/3 celkové populace.</Czech>
                 <Chinesesimp>如果 %1 谋杀了总人口的1/3, 你将输掉这场游戏。</Chinesesimp>
-                <Korean>%1이 전체 인구의 1/3을 학살할 경우 게임에서 패배합니다.</Korean>
+                <Korean>%1이 전체 인구의 1/3이 학살당할 경우 게임에서 패배합니다.</Korean>
                 <Russian>Вы проиграете, если 1/3 всего населения погибнет от рук %1.</Russian>
                 <Italian>Perderai se il %1 ha ucciso 1/3 della popolazione totale.</Italian>
                 <Spanish>Perderás si %1 asesina a 1/3 del total de la población.</Spanish>
@@ -3436,6 +3440,7 @@
                 <Original>Undercover not allowed in current civ template.</Original>
                 <Russian>Вы не можете быть под прикрытием в текущем гражданском шаблоне</Russian>
                 <Chinesesimp>当前平民类型不允许伪装</Chinesesimp>
+                <Korean>현재 민간인 템플릿으로는 위장이 허용되지 않습니다.</Korean>
             </Key>
             <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_helmet">
                 <Original>%1&lt;br/&gt;Wearing a helmet.</Original>
@@ -3567,6 +3572,7 @@
                 <Original>An enemy military base has detected you!</Original>
                 <Russian>Вас обнаружила вражеская военная база</Russian>
                 <Chinesesimp>敌方军事基地已发现您！</Chinesesimp>
+                <Korean>적의 군사 기지가 당신을 발견했습니다!</Korean>
             </Key>
             <Key ID="STR_A3A_fn_undercover_goUn_detect_roadb">
                 <Original>An enemy roadblock has detected you!</Original>
@@ -5697,6 +5703,7 @@
             <Key ID="STR_A3A_Params_removeRestore_title">
                 <Original>Disable the "Restore nearby units" option on the vehicle box.</Original>
                 <Chinesesimp>禁用车辆箱上的“恢复附近单位”选项。</Chinesesimp>
+                <Korean>차량 상자에서 "주변 유닛 회복" 옵션을 비활성화합니다.</Korean>
             </Key>
             <Key ID="STR_A3A_Params_selfReviveMethods_title">
                 <Original>Self-revive methods enabled</Original>
@@ -5789,31 +5796,37 @@
                 <Original>Very slow</Original>
                 <Russian>Очень медленно</Russian>
                 <Chinesesimp>非常慢</Chinesesimp>
+                <Korean>매우 느림</Korean>
             </Key>
             <Key ID="STR_A3A_Params_generic_slow">
                 <Original>Slow</Original>
                 <Russian>Медленный</Russian>
                 <Chinesesimp>慢</Chinesesimp>
+                <Korean>느림</Korean>
             </Key>
             <Key ID="STR_A3A_Params_generic_normal">
                 <Original>Normal</Original>
                 <Russian>Нормальный</Russian>
                 <Chinesesimp>正常</Chinesesimp>
+                <Korean>보통</Korean>
             </Key>
             <Key ID="STR_A3A_Params_generic_fast">
                 <Original>Fast</Original>
                 <Russian>Быстрый</Russian>
                 <Chinesesimp>快</Chinesesimp>
+                <Korean>빠름</Korean>
             </Key>
             <Key ID="STR_A3A_Params_generic_veryfast">
                 <Original>Very fast</Original>
                 <Russian>Очень быстро</Russian>
                 <Chinesesimp>非常快</Chinesesimp>
+                <Korean>매우 빠름</Korean>
             </Key>
             <Key ID="STR_A3A_Params_enemyResponseTime_title">
                 <Original>Speed of enemy air responses</Original>
                 <Russian>Скорость реакции авиации противника</Russian>
                 <Chinesesimp>敌方空中反应速度</Chinesesimp>
+                <Korean>적 공군 대응 속도</Korean>
             </Key>
         </Container>
         <Container name="A3A_GCTracker">
@@ -5912,105 +5925,124 @@
                 <English>Victory Condition</English>
                 <Russian>Условие победы</Russian>
                 <Chinesesimp>胜利条件</Chinesesimp>
+                <Korean>승리 조건</Korean>
             </Key>
             <Key ID="STR_A3AU_total_victory_deprecated">
                 <Original>Total Victory (deprecated)</Original>
                 <English>Total Victory (deprecated)</English>
                 <Russian>абсолютная победа (устарел)</Russian>
                 <Chinesesimp>全面胜利(已弃用)</Chinesesimp>
+                <Korean>전체적 승리 (비사용)</Korean>
             </Key>
             <Key ID="STR_A3AU_total_victory">
                 <Original>Total Victory</Original>
                 <English>Total Victory</English>
                 <Russian>абсолютная победа</Russian>
                 <Chinesesimp>全面胜利</Chinesesimp>
+                <Korean>전체적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_economic_victory">
                 <Original>Economic Victory</Original>
                 <English>Economic Victory</English>
                 <Russian>Экономическая победа</Russian>
                 <Chinesesimp>经济胜利</Chinesesimp>
+                <Korean>경제적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_political_victory">
                 <Original>Political Victory</Original>
                 <English>Political Victory</English>
                 <Russian>политическая победа</Russian>
                 <Chinesesimp>政治胜利</Chinesesimp>
+                <Korean>정치적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_normal_victory">
                 <Original>Normal Victory</Original>
                 <English>Normal Victory</English>
                 <Russian>Нормальная победа</Russian>
                 <Chinesesimp>普通胜利</Chinesesimp>
+                <Korean>보통 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_logistical_victory">
                 <Original>Logistical Victory</Original>
                 <English>Logistical Victory</English>
                 <Russian>Логистическая победа</Russian>
                 <Chinesesimp>后勤胜利</Chinesesimp>
+                <Korean>군수적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_hr_loss">
                 <Original>Lose HR on death</Original>
                 <Russian>Логистическая победа</Russian>
                 <Chinesesimp>死亡时损失人力</Chinesesimp>
+                <Korean>사망 시 인력 손실</Korean>
             </Key>
             <Key ID="STR_A3AU_no_hr_loss">
                 <Original>Disabled</Original>
                 <Russian>Неполноценный</Russian>
                 <Chinesesimp>已禁用</Chinesesimp>
+                <Korean>비활성화</Korean>
             </Key>
             <Key ID="STR_A3AU_yes_hr_loss">
                 <Original>Enabled</Original>
                 <Russian>Включено</Russian>
                 <Chinesesimp>已启用</Chinesesimp>
+                <Korean>활성화</Korean>
             </Key>
             <Key ID="STR_A3AU_yes_hr_loss_w_msg">
                 <Original>Enabled (with HUD alerts)</Original>
                 <Russian>Включено (с оповещениями HUD)</Russian>
                 <Chinesesimp>已启用(并有屏幕提示)</Chinesesimp>
+                <Korean>활성화 (경고 HUD로 표시)</Korean>
             </Key>
             <Key ID="STR_A3AU_loss_condition">
                 <Original>Loss Conditions</Original>
                 <Russian>Условия проигрыша</Russian>
                 <Chinesesimp>失败条件</Chinesesimp>
+                <Korean>패배 조건</Korean>
             </Key>
             <Key ID="STR_A3AU_loss_condition_pop_death">
                 <Original>Population death</Original>
                 <Russian>Смерть населения</Russian>
                 <Chinesesimp>人口伤亡</Chinesesimp>
+                <Korean>인구 사망</Korean>
             </Key>
             <Key ID="STR_A3AU_loss_condition_hr">
                 <Original>Human Resource loss</Original>
                 <Russian>Потери человеческих ресурсов</Russian>
                 <Chinesesimp>人力损失</Chinesesimp>
+                <Korean>인력 손실</Korean>
             </Key>
             <Key ID="STR_A3AU_loss_condition_money">
                 <Original>Financial Loss</Original>
                 <Russian>Финансовые потери</Russian>
                 <Chinesesimp>经济崩溃</Chinesesimp>
+                <Korean>재정 손실</Korean>
             </Key>
             <Key ID="STR_A3AU_loss_condition_all">
                 <Original>HARDCORE</Original>
                 <Russian>ХАРДКОР</Russian>
                 <Chinesesimp>硬核</Chinesesimp>
+                <Korean>하드코어</Korean>
             </Key>
             <Key ID="STR_A3AU_blackmarket_ignore_requirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
                 <English>Ignore Black Market Vehicle Requirements</English>
                 <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>
                 <Chinesesimp>取消黑市车辆解锁条件</Chinesesimp>
+                <Korean>암시장 차량 요구사항 무시</Korean>
             </Key>
             <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
                 <English>Notify Players When Downed</English>
                 <Russian>Placeholder</Russian>
                 <Chinesesimp>玩家倒地时提示</Chinesesimp>
+                <Korean>쓰러질 시 플레이어에게 알림</Korean>
             </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
                 <English>Disable Arms Dealer</English>
                 <Russian>Placeholder</Russian>
                 <Chinesesimp>取消军火商</Chinesesimp>
+                <Korean>암거래상 비활성화</Korean>
             </Key>
             <Key ID="STR_A3AU_stamina_enabled">
                 <Original>Enable Stamina (Vanilla)</Original>
@@ -6041,6 +6073,7 @@
                 <English>Total: %1. Magazines: </English>
                 <Russian>Всего: %1. Магазины: </Russian>
                 <Chinesesimp>总计: %1. 弹匣:</Chinesesimp>
+                <Korean>합계: %1. 탄창:</Korean>
             </Key>
         </Container>
     </Package>
