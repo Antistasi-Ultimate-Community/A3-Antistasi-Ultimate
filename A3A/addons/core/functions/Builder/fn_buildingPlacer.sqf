@@ -105,10 +105,6 @@ private _upKeyEH = _emptyDisplay displayAddEventHandler ["KeyUp", {
         (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
         (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, objNull, _position, _dirAndUp, _price];
 
-        if (typeOf _vehicle in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
-            [_vehicle] call A3A_fnc_terrainSmoother;
-        };
-
         _tempObject hideObject true;		// prevent unintentional double-builds
     };
 
