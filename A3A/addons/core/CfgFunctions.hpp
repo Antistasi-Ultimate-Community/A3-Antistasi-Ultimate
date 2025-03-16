@@ -205,6 +205,7 @@ class CfgFunctions
             class lockBuilderBox {};
             class placeBuilderObjects {};
             class processBuildingTimeouts {};
+            class terrainSmoother {};
         };
 
         class Collections {

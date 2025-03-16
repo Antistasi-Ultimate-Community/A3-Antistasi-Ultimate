@@ -32,7 +32,7 @@ private _building = createVehicle [_target getVariable "A3A_build_class", [0,0,0
 _building setPosWorld (_target getVariable "A3A_build_pos");
 _building setVectorDirAndUp (_target getVariable "A3A_build_dir");
 _building setVariable ["A3A_building", true, true];            // Used to identify removable buildings
-A3A_buildingsToSave pushBack _building;
+A3A_buildingsToSave pushBack _building; ///could move terrain smoothing here
 
 // Allowing flagpole construction is probably not a good idea due to how markerChange handles flags atm
 if (_className isEqualTo (A3A_faction_reb get "flag")) then {
