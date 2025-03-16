@@ -464,10 +464,10 @@ private _typeWeight = [
 
 {
 	private _vehs = _faction get _x;
-	if(_vehs isEqualTo []) then {continue};
-	private _weight = (_typeWeight select _forEachIndex) / count _vehs;
+	if (_vehs isEqualTo []) then {continue};
+	private _weight = (_vehTypeWeights select _forEachIndex) / count _vehs;
 	{
-		_lightvehPool append [_x, _weight];
+		_groundPool append [_x, _weight];
 	} forEach _vehs;
 } forEach _vehTypes;
 
