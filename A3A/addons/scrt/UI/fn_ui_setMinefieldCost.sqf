@@ -17,10 +17,7 @@ private _hr = 0;
 
 private _pool = jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_CARGOPUT;
 private _quantity = 0;
-private _minePool = [
-	(A3A_faction_reb getOrDefault ["minesAPERS", []] + A3A_faction_occ getOrDefault ["minefieldAPERS", []] + A3A_faction_inv getOrDefault ["minefieldAPERS", []] + A3A_faction_riv getOrDefault ["minefieldAPERS", []]),
-	(A3A_faction_reb getOrDefault ["minesAT", []] + A3A_faction_occ getOrDefault ["minefieldAT", []] + A3A_faction_inv getOrDefault ["minefieldAT", []] + A3A_faction_riv getOrDefault ["minefieldAT", []])
-] select (_minefieldType isEqualTo "ATMine");
+private _minePool = [AllMinesAPERS, AllMinesAT] select (_minefieldType isEqualTo "ATMine");
 private _mine = "";
 
 private _availableMinesPool = _pool select { 

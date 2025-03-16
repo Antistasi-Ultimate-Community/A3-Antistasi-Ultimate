@@ -107,6 +107,7 @@ if (_aggregateCategory isEqualTo "Explosives") then {
         private _magcfg = configFile >> "CfgMagazines" >> _classname;
         private _ammocfg = configFile / "CfgAmmo" / getText (_magcfg / "ammo");
         if (getText (_ammoCfg / "mineTrigger") == "remotetrigger") then { _categories pushBack "ExplosiveCharges" };
+        _categories pushBack (["MinesAPERS", "MinesAT"] select (getNumber (_ammoCfg / "hit") >= 1000));
     };
 };
 
