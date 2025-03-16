@@ -1,7 +1,8 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 params [
-	["_typeVehX", "", [""]]
+	["_typeVehX", "", [""]],
+	["_addToGarage", false]
 ];
 
 if (_typeVehX isEqualTo "") exitWith {[localize "STR_A3A_addFiaVeh_header", localize "STR_A3AP_error_empty_generic"] call A3A_fnc_customHint;};
@@ -55,4 +56,11 @@ private _fnc_check = {
 	[(player distance2d traderX > 50), localize "STR_veh_callback_arms_dealer_close"];
 };
 
-[_typeVehX, _fnc_placed, _fnc_check, [_cost], nil, nil, nil, _extraMessage] call HR_GRG_fnc_confirmPlacement;
+if (_addToGarage) then {
+	private _pos = [position player, 5, 25] call BIS_fnc_findSafePos;
+	private _vehicle = _typeVehX createVehicle _pos;
+	[_vehicle, _cost] call _fnc_placed;
+	[_vehicle, clientOwner, call HR_GRG_dLock, player] remoteExecCall ["HR_GRG_fnc_addVehicle",2];
+} else {
+	[_typeVehX, _fnc_placed, _fnc_check, [_cost], nil, nil, nil, _extraMessage] call HR_GRG_fnc_confirmPlacement;
+};
