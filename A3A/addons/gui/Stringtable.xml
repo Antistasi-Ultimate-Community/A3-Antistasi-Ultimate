@@ -492,6 +492,17 @@
                 <Spanish>Comprar %1 por %2 %3</Spanish>
                 <Polish>Kup %1 za %2 %3</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip">
+                <Original>Deliver %1 to garage for %2 %3</Original>
+                <French>Livrer %1 au garage pour %2 %3</French>
+                <Korean>%1을(를) %2에 차고로 배달%2 %3</Korean>
+                <Russian>Доставка %1 в гараж за %2 %3</Russian>
+                <Chinesesimp>将 %1 运送到 %2 %3 的车库</Chinesesimp>
+                <Czech>Doručte %1 do garáže za %2 %3</Czech>
+                <Italian>Consegna %1 all'officina per %2 %3</Italian>
+                <Spanish>Entrega %1 al garaje por %2 %3</Spanish>
+                <Polish>Dostarcz %1 do garażu za %2 %3</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_undercover_tooltip">
                 <Original>This vehicle can go undercover</Original>
                 <French>Ce véhicule peut passer incognito</French>
