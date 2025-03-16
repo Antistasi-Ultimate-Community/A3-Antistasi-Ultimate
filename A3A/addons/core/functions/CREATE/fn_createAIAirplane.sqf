@@ -440,7 +440,8 @@ if (!_busy) then
 	};
 };
 
-private _lightvehPool = [];
+private _groundPool = [];
+
 private _vehTypes = [
 	"vehiclesLightArmed",
 	"vehiclesLightUnarmed",
@@ -450,8 +451,9 @@ private _vehTypes = [
 	"vehiclesRepairTrucks",
 	"vehiclesFuelTrucks",
 	"vehiclesMedical"
-	];
-private _typeWeight = [
+];
+
+private _vehTypeWeights = [
 	7, 
 	4, 
 	2, 
@@ -460,7 +462,7 @@ private _typeWeight = [
 	1, 
 	1, 
 	2
-	];
+];
 
 {
 	private _vehs = _faction get _x;
