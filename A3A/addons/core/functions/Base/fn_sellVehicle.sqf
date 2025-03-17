@@ -63,10 +63,8 @@ if (_veh isKindOf "Air") then {
         (sidesX getVariable [_x, sideUnknown] == teamPlayer) && 
         (getMarkerPos _x distance2D _veh <= 50)
     };
-    if (_nearAirfields isEqualTo []) then {
-        if (_veh distance (getMarkerPos "Synd_HQ") <= 50 || {_nearAirfields isNotEqualTo []}) exitWith {
-            [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_Base_sellVehicle_err0.1"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
-        };
+    if (_veh distance (getMarkerPos "Synd_HQ") >= 50 || {_nearAirfields isEqualTo []}) exitWith {
+        [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_Base_sellVehicle_err0.1"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
     };
 } else {
     if ((_veh distance (getMarkerPos respawnTeamPlayer)) > 50) exitWith {
