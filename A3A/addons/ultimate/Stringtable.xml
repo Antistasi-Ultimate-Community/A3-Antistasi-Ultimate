@@ -3,15 +3,19 @@
     <Package name="A3-Antistasi-builderbox">
         <Key ID="STR_params_builderPermissions">
             <Original>Player classes permitted to use the building placer</Original>
+            <Chinesesimp>允许放置建筑的玩家类型</Chinesesimp>
         </Key>
         <Key ID="STR_params_builderLimit">
             <Original>Build limit</Original>
+            <Chinesesimp>建筑上限</Chinesesimp>
         </Key>
         <Key ID="STR_params_builderAllowRoads">
             <Original>Allow buildings to be saved on roads</Original>
+            <Chinesesimp>允许保留道路上的建筑物</Chinesesimp>
         </Key>
         <Key ID="STR_params_builderBuildTime">
             <Original>Build hold time multiplier</Original>
+            <Chinesesimp>建筑留存时间乘数</Chinesesimp>
         </Key>
     </Package>
     <Package name="A3-Antistasi-Ultimate-functions">
@@ -21,6 +25,7 @@
             <Russian>Предупреждение</Russian>
             <Korean>경고</Korean>
             <French>Avertissement</French>
+            <Chinesesimp>警告</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_text">
             <Original>Warning. Addons loaded may not work correctly, or work together.%1%1| %2 |%1%1Consider removing them if you encounter any issues.</Original>
@@ -28,6 +33,7 @@
             <Russian>Внимание! Загруженные моды могут работать некорректно или конфликтовать между собой.%1%1| %2 |%1%1Рекомендуем отключить их в случае возникновения ошибок.</Russian>
             <Korean>경고. 불러온 애드온이 올바르게 작동하지 않거나 함께 작동하지 않을 수 있습니다.%1%1| %2 |%1%1문제가 발생하면 제거하는 것이 좋습니다.</Korean>
             <French>Attention. Les modules complémentaires chargés peuvent ne pas fonctionner correctement ou ne pas fonctionner ensemble.%1%1| %2 |%1%1Envisagez de les supprimer si vous rencontrez des problèmes.</French>
+            <Chinesesimp>警告。加载的插件可能无法正常工作，或无法协同工作。%1%1| %2 |%1%1如果遇到任何问题，请考虑将其删除。</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_CUP_RHS">
             <Original>CUP and RHS (Pick One)</Original>
@@ -35,6 +41,7 @@
             <Russian>CUP и RHS (Выберите один из них)</Russian>
             <Korean>CUP와 RHS (하나만 고르십시오)</Korean>
             <French>CUP et RHS (en choisir un)</French>
+            <Chinesesimp>CUP 和 RHS (二选一)</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Advanced_Rappeling">
             <Original>Advanced Rappeling</Original>
@@ -42,6 +49,7 @@
             <Russian>Advanced Rappeling</Russian>
             <Korean>Advanced Rappeling</Korean>
             <French>Advanced Rappeling</French>
+            <Chinesesimp>Advanced Rappeling</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Advanced_Urban_Rappeling">
             <Original>Advanced Urban Rappeling</Original>
@@ -49,6 +57,7 @@
             <Russian>Advanced Urban Rappeling</Russian>
             <Korean>Advanced Urban Rappeling</Korean>
             <French>Advanced Urban Rappeling</French>
+            <Chinesesimp>Advanced Urban Rappeling</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_LAMBS_AI">
             <Original>LAMBS AI</Original>
@@ -56,6 +65,7 @@
             <Russian>LAMBS AI</Russian>
             <Korean>LAMBS AI</Korean>
             <French>LAMBS AI</French>
+            <Chinesesimp>LAMBS AI</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_VCOM_AI">
             <Original>VCOM AI</Original>
@@ -63,6 +73,7 @@
             <Russian>VCOM AI</Russian>
             <Korean>VCOM AI</Korean>
             <French>VCOM AI</French>
+            <Chinesesimp>VCOM AI</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_AI_CSTG">
             <Original>AI Cannot See Through Grass</Original>
@@ -70,6 +81,7 @@
             <Russian>AI Cannot See Through Grass</Russian>
             <Korean>AI Cannot See Through Grass</Korean>
             <French>AI Cannot See Through Grass</French>
+            <Chinesesimp>AI Cannot See Through Grass</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ASR_AI3">
             <Original>ASR AI3</Original>
@@ -77,6 +89,7 @@
             <Russian>ASR AI3</Russian>
             <Korean>ASR AI3</Korean>
             <French>ASR AI3</French>
+            <Chinesesimp>ASR AI3</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ALiVE">
             <Original>ALiVE</Original>
@@ -84,6 +97,7 @@
             <Russian>ALiVE</Russian>
             <Korean>ALiVE</Korean>
             <French>ALiVE</French>
+            <Chinesesimp>ALiVE</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_MCC_Sandbox_4">
             <Original>MCC Sandbox 4</Original>
@@ -91,6 +105,7 @@
             <Russian>MCC Sandbox 4</Russian>
             <Korean>MCC Sandbox 4</Korean>
             <French>MCC Sandbox 4</French>
+            <Chinesesimp>MCC Sandbox 4</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ZHC">
             <Original>Zulu Headless Client (ZHC)</Original>
@@ -98,6 +113,7 @@
             <Russian>Zulu Headless Client (ZHC)</Russian>
             <Korean>Zulu Headless Client (ZHC)</Korean>
             <French>Zulu Headless Client (ZHC)</French>
+            <Chinesesimp>Zulu Headless Client (ZHC)</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_PiR">
             <Original>Project injury Reaction (PiR)</Original>
@@ -105,6 +121,7 @@
             <Russian>Project injury Reaction (PiR)</Russian>
             <Korean>Project injury Reaction (PiR)</Korean>
             <French>Project injury Reaction (PiR)</French>
+            <Chinesesimp>Project injury Reaction (PiR)</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_WHK">
             <Original>Werthles' Headless Module</Original>
@@ -112,6 +129,7 @@
             <Russian>Werthles' Headless Module</Russian>
             <Korean>Werthles' Headless Module</Korean>
             <French>Werthles' Headless Module</French>
+            <Chinesesimp>Werthles' Headless Module</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Wargame">
             <Original>ZEUS WARGAME</Original>
@@ -119,6 +137,7 @@
             <Russian>ZEUS WARGAME</Russian>
             <Korean>ZEUS WARGAME</Korean>
             <French>ZEUS WARGAME</French>
+            <Chinesesimp>ZEUS WARGAME</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_APS">
             <Original>Armor Plates System</Original>
@@ -126,6 +145,7 @@
             <Russian>Armor Plates System</Russian>
             <Korean>Armor Plates System</Korean>
             <French>Armor Plates System</French>
+            <Chinesesimp>Armor Plates System</Chinesesimp>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_dis">
             <Original>Dismemberment</Original>
@@ -133,11 +153,13 @@
             <Russian>Dismemberment</Russian>
             <Korean>Dismemberment</Korean>
             <French>Dismemberment</French>
+            <Chinesesimp>Dismemberment</Chinesesimp>
         </Key>
     </Package>
     <Package name="ported">
         <Key ID="STR_A3A_fn_support_showIntStpCll_TANK">
             <Original>%1 just sent a tank platoon.</Original>
+            <Chinesesimp>%1刚刚派出了一个坦克排。</Chinesesimp>
         </Key>
     </Package>
     <Package name="Lockpick">
