@@ -783,7 +783,7 @@ class Params
         title = $STR_params_rebelGarrisonLimit;
         tooltip = $STR_params_rebelGarrisonLimit_desc;
         values[] = {-1, 16, 24, 32};
-        texts[] = {"∞", "16", "24", "32"};
+        texts[] = {"No limit", "16", "24", "32"};
         default = 24;
     };
     class A3A_UAVSpawnChance: BalanceParams
