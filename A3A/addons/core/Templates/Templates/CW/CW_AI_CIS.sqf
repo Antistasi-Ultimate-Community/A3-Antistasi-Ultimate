@@ -167,7 +167,7 @@ _loadoutData set ["ViperBP", []];
 _loadoutData set ["longRangeRadios", []];
 _loadoutData set ["helmets", []];
 _loadoutData set ["slHat", ["lsd_cis_oomOfficer_helmet"]];
-_loadoutData set ["sniHats", []];
+_loadoutData set ["sniHats", ["ls_cis_b1_helmet"]];
 
 _loadoutData set ["glasses", []];
 _loadoutData set ["goggles", []];
