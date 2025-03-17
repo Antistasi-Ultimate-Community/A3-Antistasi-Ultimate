@@ -64,7 +64,7 @@ if (_veh isKindOf "Air") then {
         (getMarkerPos _x distance2D _veh <= 50)
     };
     if (_nearAirfields isEqualTo []) then {
-        if if (_veh distance (getMarkerPos "Synd_HQ") <= 50 || {_nearAirfields isNotEqualTo []}) exitWith {
+        if (_veh distance (getMarkerPos "Synd_HQ") <= 50 || {_nearAirfields isNotEqualTo []}) exitWith {
             [localize "STR_A3A_Base_sellVehicle_header", localize "STR_A3A_Base_sellVehicle_err0.1"] remoteExecCall ["SCRT_fnc_misc_deniedHint",_player];
         };
     };
