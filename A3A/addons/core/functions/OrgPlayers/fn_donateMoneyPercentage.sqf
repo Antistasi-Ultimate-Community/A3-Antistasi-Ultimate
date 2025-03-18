@@ -51,7 +51,7 @@ if (_target isEqualTo ObjNull && {_donateToPlayer isEqualTo false}) exitWith {
     [localize "STR_A3A_OrgPlayers_donateMoney_header", format [localize "STR_A3A_OrgPlayers_donateMoney_success", _amount, A3A_faction_civ get "currencySymbol"]] call A3A_fnc_customHint;
 };
 
-if (!isPlayer _target && {_donateToPlayer isEqualTo true}) exitWith {
+if ((!isPlayer _target || _target isEqualTo ObjNull) && {_donateToPlayer}) exitWith {
     [localize "STR_A3A_OrgPlayers_donateMoney_header",localize "STR_A3A_OrgPlayers_donateMoney_no_player"] call SCRT_fnc_misc_deniedHint;
 };
 
