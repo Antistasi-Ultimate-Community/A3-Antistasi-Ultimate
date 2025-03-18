@@ -91,18 +91,26 @@ _disp displayAddEventHandler ["MouseZChanged","if !(HR_GRG_RMouseBtnDown) exitWi
 waitUntil {!isNil "HR_GRG_Vehicles"};//wait for server response
 
 //define list of controls coresponding with list index
-HR_GRG_Cats = [HR_GRG_IDC_CatUndercoverCar,HR_GRG_IDC_CatCar,HR_GRG_IDC_CatAPC,HR_GRG_IDC_CatArmored,HR_GRG_IDC_CatHeli,HR_GRG_IDC_CatVTOL,HR_GRG_IDC_CatPlane,HR_GRG_IDC_CatBoat,HR_GRG_IDC_CatStatic] apply {_disp displayCtrl _x}; //,HR_GRG_IDC_CatUnmanned,
+HR_GRG_Cats = [HR_GRG_IDC_CatUndercoverCar,HR_GRG_IDC_CatCar,HR_GRG_IDC_CatAPC,HR_GRG_IDC_CatArmored,HR_GRG_IDC_CatHeli,HR_GRG_IDC_CatPlane,HR_GRG_IDC_CatBoat,HR_GRG_IDC_CatSource,HR_GRG_IDC_CatStatic] apply {_disp displayCtrl _x}; //,HR_GRG_IDC_CatUnmanned,HR_GRG_IDC_CatVTOL
 {
     _x ctrlShow false;
     _x ctrlEnable false;
 } forEach HR_GRG_Cats;
 [0] call HR_GRG_fnc_switchCategory;
 
-if !(call HR_GRG_Cnd_canAccessAir) then {
-    private _airBttn = _disp displayCtrl HR_GRG_IDC_BttnPlane;
-    _airBttn ctrlEnable false;
-    _airBttn ctrlSetTextColor [0.7,0,0,1];
-    _airBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_AirDisabled";
+
+if !(call HR_GRG_Cnd_canAccessHeli) then {
+    private _heliBttn = _disp displayCtrl HR_GRG_IDC_BttnHeli;
+    _heliBttn ctrlEnable false;
+    _heliBttn ctrlSetTextColor [0.7,0,0,1];
+    _heliBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_AirDisabled";
+};
+
+if !(call HR_GRG_Cnd_canAccessPlane) then {
+    private _planeBttn = _disp displayCtrl HR_GRG_IDC_BttnPlane;
+    _planeBttn ctrlEnable false;
+    _planeBttn ctrlSetTextColor [0.7,0,0,1];
+    _planeBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_AirDisabled";
 };
 
 //extras list init
