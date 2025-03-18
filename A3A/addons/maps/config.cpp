@@ -83,7 +83,7 @@ class CfgMissions
 	A3A_Mission(fapovo, "Antistasi Ultimate - Fapovo Island")
 	A3A_Mission(chernarusredux, "Antistasi Ultimate - Redux")
 	A3A_Mission(stubbhult, "Antistasi Ultimate - Stubbhult")
-	A3A_Mission(isladuala3, "Antistasi Ultimate - Isla Duala")
+	A3A_Mission(kunduz_valley, "Antistasi Ultimate - Kunduz River")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif
