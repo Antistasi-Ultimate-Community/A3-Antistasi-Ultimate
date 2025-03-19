@@ -23,24 +23,26 @@
 #define HR_GRG_IDC_CatCar 1700101
 #define HR_GRG_IDC_CatAPC 1700102
 #define HR_GRG_IDC_CatArmored 1700103
-#define HR_GRG_IDC_CatHeli 1700104
-#define HR_GRG_IDC_CatPlane 1700105
-#define HR_GRG_IDC_CatBoat 1700106
-#define HR_GRG_IDC_CatSource 1700107
-#define HR_GRG_IDC_CatStatic 1700108
+#define HR_GRG_IDC_CatAA 1700104
+#define HR_GRG_IDC_CatArty 1700105
+#define HR_GRG_IDC_CatHeli 1700106
+#define HR_GRG_IDC_CatPlane 1700107
+#define HR_GRG_IDC_CatBoat 1700108
+#define HR_GRG_IDC_CatSource 1700109
+#define HR_GRG_IDC_CatStatic 1700110
 
-#define HR_GRG_IDC_BttnCars 1700109
-#define HR_GRG_IDC_BttnArmor 1700110
-#define HR_GRG_IDC_BttnHeli 1700111
-#define HR_GRG_IDC_BttnPlane 1700112
-#define HR_GRG_IDC_BttnBoats 1700113
-#define HR_GRG_IDC_BttnSource 1700114
-#define HR_GRG_IDC_BttnStatics 1700115
+#define HR_GRG_IDC_BttnCars 1700111
+#define HR_GRG_IDC_BttnArmor 1700112
+#define HR_GRG_IDC_BttnHeli 1700113
+#define HR_GRG_IDC_BttnPlane 1700114
+#define HR_GRG_IDC_BttnBoats 1700115
+#define HR_GRG_IDC_BttnSource 1700116
+#define HR_GRG_IDC_BttnStatics 1700117
 //-- unsused --\\
-#define HR_GRG_IDC_CatUnmanned 1700116
-#define HR_GRG_IDC_BttnUnmanned 1700117
-#define HR_GRG_IDC_CatVTOL 1700118
-#define HR_GRG_IDC_BttnVTOL 1700119
+#define HR_GRG_IDC_CatUnmanned 1700118
+#define HR_GRG_IDC_BttnUnmanned 1700119
+#define HR_GRG_IDC_CatVTOL 1700120
+#define HR_GRG_IDC_BttnVTOL 1700121
 
 //-- extra --\\
 #define HR_GRG_IDC_BttnMounts 1700170
@@ -92,6 +94,8 @@
 #define BoatIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\naval_ca.paa"
 #define StaticIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\static_ca.paa"
 #define SourceIcon "\A3\soft_f_gamma\Truck_02\Data\UI\Truck_02_fuel_CA.paa"
+#define ArtyIcon "\A3\Soft_F_Gamma\Truck_02\Data\UI\Truck_02_MRL_CA.paa"
+#define AAIcon "\A3\armor_f_beta\APC_Tracked_02\Data\UI\APC_Tracked_02_aa_ca.paa"
 
 #define DriverIcon "\a3\ui_f\data\IGUI\RscIngameUI\RscUnitInfo\role_driver_ca.paa"
 #define GunnerIcon "\a3\ui_f\data\IGUI\RscIngameUI\RscUnitInfo\role_gunner_ca.paa"
