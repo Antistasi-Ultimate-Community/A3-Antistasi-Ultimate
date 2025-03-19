@@ -84,14 +84,11 @@
 ///  Identities   ///
 /////////////////////
 
-["faces", ["LivonianHead_1","LivonianHead_2","LivonianHead_3","LivonianHead_4","LivonianHead_5",
-"LivonianHead_6","LivonianHead_7","LivonianHead_8","LivonianHead_9",
-"RussianHead_1","RussianHead_2","RussianHead_3","Sturrock",
-"WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04",
-"WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_12",
-"WhiteHead_13","WhiteHead_14","WhiteHead_17","WhiteHead_18",
-"WhiteHead_21","WhiteHead_30"]] call _fnc_saveToTemplate;
-["voices", ["Male01POL", "Male02POL", "Male03POL"]] call _fnc_saveToTemplate;
+["faces", ["cwr3_face_hammer","Barklem",
+"TanoanHead_A3_06","TanoanHead_A3_01","TanoanHead_A3_09","TanoanHead_A3_07",
+"TanoanHead_A3_05","TanoanHead_A3_04","TanoanHead_A3_03","TanoanHead_A3_02",
+"AfricanHead_01","AfricanHead_03","AfricanHead_02"]] call _fnc_saveToTemplate;
+["voices", ["Male01FRE", "Male02FRE", "Male03FRE", "Male01ENGFRE", "Male02ENGFRE"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
