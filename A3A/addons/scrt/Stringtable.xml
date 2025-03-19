@@ -21,6 +21,7 @@
                 <Russian>Бочка с топливом</Russian>
                 <Korean>연료통 (드럼통)</Korean>
                 <French>Fût de carburant</French>
+                <Chinesesimp>油桶</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_light">
                 <Original>Light</Original>
@@ -41,24 +42,28 @@
                 <Russian>Медицинская палатка</Russian>
                 <Korean>의료텐트</Korean>
                 <French>Tente médicale</French>
+                <Chinesesimp>医疗帐篷</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_ammo_station">
                 <Original>Ammo Station</Original>
                 <Russian>Пункт боепитания</Russian>
                 <Korean>탄약고</Korean>
                 <French>Station de munitions</French>
+                <Chinesesimp>弹药箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_repair_station">
                 <Original>Repair Station</Original>
                 <Russian>Пункт ремонта</Russian>
                 <Korean>수리소</Korean>
                 <French>Station de réparation</French>
+                <Chinesesimp>维修站</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_medical_box">
                 <Original>Medical Box</Original>
                 <Russian>Коробка с медициной</Russian>
                 <Korean>의료 상자</Korean>
                 <French>Boite médicale</French>
+                <Chinesesimp>医疗箱</Chinesesimp>
             </Key>
         </Container>
         <Container name="arsenal">
@@ -237,14 +242,17 @@
             <Key ID="STR_A3AP_setupFactionsTab_natoandldf">
                 <Original>North Atlantic Treaty Organization and Livonian Defense Force (NATO and LDF).\nAfter successful combined training in Livonia, tension between CSAT and NATO increased. LDF decided to let NATO build more bases to increase their chances if their eastern neighbor makes a move.</Original>
                 <Russian>Организация Североатлантического договора и Вооруженные Силы Ливонии (НАТО и ВСЛ).\После успешных совместных учений в Ливонии напряженность в отношениях между CSAT и НАТО возросла. Вооруженные силы Ливии решили позволить НАТО построить больше своих баз, чтобы увеличить свои шансы, если их восточный сосед начнёт действовать.</Russian>
+                <Chinesesimp>北大西洋公约组织和利沃尼亚国防军（NATO 和 LDF）。\n在利沃尼亚成功进行联合训练后，CSAT 和 NATO 之间的紧张局势加剧。LDF 决定让 NATO 建造更多基地，以增加其东部邻国采取行动的机会。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_csatandaaf">
                 <Original>Canton Protocol Strategic Alliance Treaty and Altis Armed Forces (CSAT and AAF).\nAfter NATO forces took over Altis archipelago, AAF struck a deal with CSAT to return control of their islands, but at the cost of becoming their puppets and dragging their nation into the bigger conflict.</Original>
                 <Russian>Стратегический Альянс по Договору Гуанчжоу и Вооруженные силы Альтиса (CSAT и AAF).\После жестокой гражданской войны правительство Альтиса и армия остались в руинах. После переговоров с НАТО, AAF получат запрошенную поддержку, но ценой своей автономии.</Russian>
+                <Chinesesimp>《广州议定书》战略联盟条约和阿尔蒂斯武装部队 (CSAT 和 AAF)。\n在北约部队占领阿尔蒂斯群岛后，AAF 与 CSAT 达成协议，归还对其岛屿的控制权，但代价是成为 CSAT 的傀儡，并将他们的国家拖入更大的冲突。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_natoandaaf">
                 <Original>North Atlantic Treaty Organization and Altis Armed Forces (NATO and AAF).\nAfter a brutal civil war, Altis government and military were left in ruin. After negotiations with NATO, AAF will receive requested support, but at the cost of their autonomy.</Original>
                 <Russian>Организация Североатлантического договора и Вооруженные силы Альтиса (НАТО и AAF).\После жестокой гражданской войны правительство Альтиса и армия остались в руинах. После переговоров с НАТО, AAF получат запрошенную поддержку, но ценой своей автономии.</Russian>
+                <Chinesesimp>北大西洋公约组织和阿尔蒂斯武装部队（NATO 和 AAF）。\n在残酷的内战之后，阿尔蒂斯政府和军队一片废墟。与北约谈判后，AAF 将获得所要求的支持，但代价是其自治权。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_aaf_3cbf">
                 <Original>Altis Armed Forces (AAF).\nSmall, but highly motivated force which effectively uses a wide range of decomissioned and outdated yet still effective equipment from around the world.</Original>
@@ -256,10 +264,12 @@
             <Key ID="STR_A3AP_setupFactionsTab_natoanduna">
                 <Original>North Atlantic Treaty Organization and United Nations Agency (NATO and UNA).\nAfter a series of attacks on UN peacekeepers within the Sefrou-Ramal region, some of which were seemingly perpetrated by elements of the SFIA, it was agreed that a NATO task force would provide support to ensure the safety of aid workers and UN staff in the region.</Original>
                 <Russian>Организация Североатлантического договора и Учреждение Организации Объединенных Наций (НАТО и ООН).\После серии нападений на миротворцев ООН в регионе Сефру-Рамаль, некоторые из которых, по всей видимости, были совершены боевиками SFIA, было решено, что оперативная группа НАТО окажет поддержку в обеспечении безопасности гуманитарных работников и персонала ООН в регионе.</Russian>
+                <Chinesesimp>北大西洋公约组织和联合国机构 (NATO 和 UNA)。\n在塞夫鲁-拉马尔地区发生一系列针对联合国维和人员的袭击之后，其中一些袭击似乎是由 SFIA 的成员实施的，各方同意由北约特遣部队提供支持，以确保该地区援助工作者和联合国工作人员的安全。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_csatandsfia">
                 <Original>Canton Protocol Strategic Alliance Treaty and Sefrawi Freedom and Independence Army (CSAT and SFIA).\nAfter recent attacks by Tura forces on SFIA military bases and increasing presence of NATO forces to oversee UN peacekeeping operations, a decision was made by the Arganan government to station CSAT forces in Sefrou-Ramal to bolster regional security.</Original>
                 <Russian>Стратегический Альянс по Договору Гуанчжоу и Армия свободы и независимости Сефрауи (CSAT и SFIA).\После недавних нападений сил Тура на военные базы SFIA и увеличения присутствия сил НАТО для наблюдения за миротворческими операциями ООН правительство Арганы приняло решение разместить силы CSAT в Сефру-Рамале для укрепления региональной безопасности.</Russian>
+                <Chinesesimp>《广州议定书》战略联盟条约和塞夫鲁拉马尔自由独立军 (CSAT 和 SFIA)。\n在图拉部队最近对 SFIA 军事基地发动袭击以及北约部队不断增加以监督联合国维和行动之后，阿尔加南政府决定在塞夫鲁拉马尔驻扎 CSAT 部队，以加强地区安全。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_tka">
                 <Original>Takistan Army (TKA).\nA mix of military and paramilitary forces using dated equipment from all around the world.</Original>
@@ -308,6 +318,7 @@
                 <Russian>Ополчение Ливонии.\nВосточноевропейское ополчение.</Russian>
                 <Korean>리보니아 민병대(LM).\n동유럽계 무장세력입니다.</Korean>
                 <French>Milice livonienne (LM).\nMilitants d'Europe de l'Est.</French>
+                <Chinesesimp>利沃尼亚民兵 (LM)。\n东欧武装分子。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ws_tura">
                 <Original>Tura.\nOne of the many militarized tribes of the Sefrawi Desert, almost like famous Turanic Raiders.</Original>
@@ -410,10 +421,12 @@
             <Key ID="STR_A3AP_setupFactionsTab_remnants">
                 <Original>Remnants.\nRemnants of the AAF forces sponsored by CSAT, who want to regain control of the islands.</Original>
                 <Russian>Remnants.\nRemnants - остатки сил AAF спонсируемые CSAT, желающие вернуть контроль над островами.</Russian>
+                <Chinesesimp>残余部队。\n 由 CSAT 赞助的 AAF 部队残余部队，他们想要重新控制这些岛屿。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_LRI">
                 <Original>Local Resistance Initiative.\nA resistance led by local civilians, using military surplus and basic gear from ebay.</Original>
                 <Russian>Инициатива местного сопротивления.\nСопротивление, возглавляемое местными гражданами, использующее военные излишки и базовое снаряжение с eBay.</Russian>
+                <Chinesesimp>当地抵抗倡议。\n由当地平民领导的抵抗运动，使用军用剩余物资和从 ebay 上购买的基本装备。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_exegermenos">
                 <Original>Exegerménos.\nStandard enemy guerilla faction.</Original>
@@ -425,6 +438,7 @@
             <Key ID="STR_A3AP_setupFactionsTab_separatistsCSLA">
                 <Original>Separatists.\nStandard enemy guerilla faction.</Original>
                 <Russian>Separatists.\nСтандартная вражеская повстанческая фракция.</Russian>
+                <Chinesesimp>分离主义者。\n标准敌方游击派系。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_le">
                 <Original>L'Ensemble.\nFormer Syndikat branch.</Original>
@@ -531,7 +545,7 @@
                 <Russian>Связка клавиш: </Russian>
                 <Chinesesimp>按键绑定: </Chinesesimp>
                 <Korean>키 설정: </Korean>
-                <French>Raccourcis clavier: </French>                
+                <French>Raccourcis clavier: </French>
             </Key>
             <Key ID="STR_magRepack_about">
                 <Original>Mag Repack: About</Original>
@@ -1265,6 +1279,7 @@
             </Key>
             <Key ID="STR_comms_mp_faction_return">
                 <Original>&lt;t size='0.6'&gt;&lt;t size='0.6' color='%1'&gt;%2&lt;/t&gt; forces on %3 have returned with help from an unknown force. Their support corridor will be re-opened and they will likely launch attacks on us!&lt;/t&gt;</Original>
+                <Chinesesimp>&lt;t size='0.6'&gt;&lt;t size='0.6' color='%1'&gt;%2&lt;/t&gt; %3 上的部队在未知力量的帮助下已经返回。他们的支援走廊将重新开放，他们可能会对我们发动攻击！&lt;/t&gt;</Chinesesimp>
             </Key>
             <Key ID="STR_comms_mp_recon_prisoner_success">
                 <Original>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#988df7'&gt;Interrogated combatant&lt;/t&gt; shares approximate enemy positions.&lt;/t&gt;</Original>
@@ -1481,6 +1496,7 @@
             <Key ID="STR_end_mission_modUnautorized_desc">
                 <Original>An incompatible mod or incompatible set of supported mods installed on the server or your PC has been detected. To avoid problems the mission has ended. Please turn off unsupported (ASR AI, aLIVE, MCC or any AI behaviour) mods from your computer (and server when applicable) to be able to play Antistasi. See server .rpt log for more information.</Original>
                 <Russian>Обнаружен несовместимый мод или несовместимый набор модов, установленных на сервере или вашем компьютере. Во избежание проблем миссия завершена. Пожалуйста, отключите неподдерживаемые (ASR AI, aLIVE, MCC или другой мод, который влияет на поведение ИИ) моды на вашем компьютере (и сервере, если применимо), чтобы иметь возможность играть в Antistasi. Дополнительную информацию смотрите в журнале сервера .rpt.</Russian>
+                <Chinesesimp>检测到服务器或 PC 上安装了不兼容的模组或不兼容的支持模组集。为避免出现问题，任务已结束。请关闭计算机（和服务器，如果适用）上不受支持的模组（ASR AI、aLIVE、MCC 或任何 AI 行为），以便能够玩 Antistasi。有关更多信息，请参阅服务器 .rpt 日志。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_noPvP_title">
                 <Original>PvP Disabled</Original>
@@ -1590,18 +1606,22 @@
             <Key ID="STR_end_mission_total_victory_generic_title">
                 <Original>T O T A L   V I C T O R Y</Original>
                 <Russian>О Б Щ И Й   П О Б Е Д А</Russian>
+                <Chinesesimp>全面胜利</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_economic_victory_generic_title">
                 <Original>E C O N O M I C   V I C T O R Y</Original>
                 <Russian>Э К О Н О М И Ч Е С К И Й   П О Б Е Д А</Russian>
+                <Chinesesimp>经济胜利</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_logistical_victory_generic_title">
                 <Original>L O G I S T I C A L   V I C T O R Y</Original>
                 <Russian>Л О Г И С Т И К А   П О Б Е Д А</Russian>
+                <Chinesesimp>后勤胜利</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_political_victory_generic_title">
                 <Original>P O L I T I C A L   V I C T O R Y</Original>
                 <Russian>П О Л И Т И Ч Е С К И Е   П О Б Е Д А</Russian>
+                <Chinesesimp>政治胜利</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_victory_subtitle">
                 <Original>Country is under our control!</Original>
@@ -1613,6 +1633,7 @@
             <Key ID="STR_end_mission_economic_victory_subtitle">
                 <Original>The required funds have been secured!</Original>
                 <Russian>Необходимые средства были обеспечены.!</Russian>
+                <Chinesesimp>所需资金已到位！</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_victory_desc">
                 <Original>The population of the country loves you!&lt;br/&gt;The brave soldiers have proven their valour, and Petros, the newly elected Prime Minister, can at last have a nice holiday. A well deserved rest and honor for all resistance soldiers too.</Original>
@@ -1625,21 +1646,25 @@
                 <Original>You have completely decimated your enemies!&lt;br/&gt;The brave soldiers have proven their valour, and Petros has been made the sole leader of the country!. You have shown your power and overwhelming strength in this region and deserve some well earned rest.</Original>
                 <English>You have completely decimated your enemies!&lt;br/&gt;The brave soldiers have proven their valour, and Petros has been made the sole leader of the country!. You have shown your power and overwhelming strength in this region and deserve some well earned rest.</English>
                 <Russian>Вы полностью уничтожили своих врагов!&lt;br/&gt;Храбрые солдаты доказали свою доблесть, и Петрос стал единоличным лидером страны! Вы продемонстрировали свою мощь в этом регионе и заслуживаете отдых.</Russian>
+                <Chinesesimp>你们彻底消灭了敌人！&lt;br/&gt;勇敢的士兵们已经证明了他们的英勇，而佩特罗斯已经成为这个国家的唯一领导人！你们已经在这个地区展示了你们的力量和压倒性的力量，你们应该好好休息一下。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_economic_victory_desc">
                 <Original>Your goals have been reached!&lt;br/&gt;After a long fight and struggle you have finally earned enough money to leave this region and live a comfortable life. Take a good rest, the plane is leaving in an hour.</Original>
                 <English>Your goals have been reached!&lt;br/&gt;After a long fight and struggle you have finally earned enough money to leave this region and live a comfortable life. Take a good rest, the plane is leaving in an hour.</English>
                 <Russian>Ваши цели достигнуты!&lt;br/&gt;После долгой борьбы, вы наконец заработали достаточно денег, чтобы покинуть этот регион и жить комфортной жизнью. Хорошенько отдохните, самолет вылетает через час.</Russian>
+                <Chinesesimp>你的目标已经实现了！&lt;br/&gt;经过长期的奋斗和奋斗，你终于赚到了足够的钱，可以离开这个地区，过上舒适的生活。好好休息吧，飞机一小时后就起飞。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_political_victory_desc">
                 <Original>Most of the population of this country loves you!&lt;br/&gt;Petros, the newly elected Prime Minister, has made some reforms and has gotten your enemies to back away from the conflict. &lt;br/&gt;Now you have some peace and quiet, but for how long?</Original>
                 <English>Most of the population of this country loves you!&lt;br/&gt;Petros, the newly elected Prime Minister, has made some reforms and has gotten your enemies to back away from the conflict. &lt;br/&gt;Now you have some peace and quiet, but for how long?</English>
                 <Russian>Большая часть населения страны любит вас!&lt;br/&gt;Петрос, избранный новым премьер-министром, провел несколько реформ и заставил ваших врагов отступить. &lt;br/&gt;На данный момент всё спокойно, но надолго ли?</Russian>
+                <Chinesesimp>这个国家的大多数人都爱你！&lt;br/&gt;新当选的总理佩特罗斯做出了一些改革，让你的敌人退出了冲突。&lt;br/&gt;现在你有一些平静，但是这种平静能持续多久呢？</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_logistical_victory_desc">
                 <Original>You have successfully crippled your enemies!&lt;br/&gt;Their military bases and airports are now under your control, your enemies have backed away from the conflict and have closed their support corridors. Go have a rest soldier, you have earned it!</Original>
                 <English>You have successfully crippled your enemies!&lt;br/&gt;Their military bases and airports are now under your control, your enemies have backed away from the conflict and have closed their support corridors. Go have a rest soldier, you have earned it!</English>
                 <Russian>Вы успешно нанесли поражение своим врагам!&lt;br/&gt;Их военные базы и аэропорты теперь под вашим контролем, ваши враги отступили от конфликта и закрыли свои коридоры поддержки. &lt;br/&gt;Иди отдохни, солдат, ты это заслужил!</Russian>
+                <Chinesesimp>您已成功击溃敌人！&lt;br/&gt;他们的军事基地和机场现已被您控制，您的敌人已退出冲突并关闭了支援走廊。士兵们，去休息吧，这是您应得的！</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_defeat_title">
                 <Original>Country is Destroyed</Original>
@@ -1665,38 +1690,47 @@
             <Key ID="STR_end_mission_no_hr_defeat_title">
                 <Original>No Manpower Left</Original>
                 <Russian>Не осталось рабочей силы</Russian>
+                <Chinesesimp>人力不足</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_subtitle">
                 <Original>Manpower reserves have been depleted.</Original>
                 <Russian>Людские резервы исчерпаны.</Russian>
+                <Chinesesimp>人力储备已耗尽。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_desc">
                 <Original>You have lost too much manpower, no one is left to fight for the cause.</Original>
                 <Russian>Вы потеряли слишком много живой силы, некому больше бороться за дело.</Russian>
+                <Chinesesimp>你们已经损失了太多人力，已经没有人能够为这个事业而奋斗了。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_financial_defeat_title">
                 <Original>Money Reserves Depleted</Original>
                 <Russian>Денежные резервы исчерпаны</Russian>
+                <Chinesesimp>货币储备耗尽</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_financial_defeat_subtitle">
                 <Original>No money left in reserves.</Original>
                 <Russian>Денег в резервах не осталось.</Russian>
+                <Chinesesimp>储备金已所剩无几。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_financial_defeat_desc">
                 <Original>You have used all of the money you had in your reserves, you cannot buy any more gear to complete your mission.</Original>
                 <Russian>Вы использовали все деньги, которые были в ваших резервах, вы не можете больше покупать снаряжение для выполнения своей миссии.</Russian>
+                <Chinesesimp>您已经用完了储备中的所有资金，无法再购买任何装备来完成您的任务。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_title">
                 <Original>H A R D C O R E   D E F E A T</Original>
                 <Russian>Х А Р Д К О Р Н О Е   П О Р А Ж Е Н И Е</Russian>
+                <Chinesesimp>硬核失败</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_subtitle">
                 <Original>Maybe you are not ready for this.</Original>
                 <Russian>Возможно, вы не готовы к этому.</Russian>
+                <Chinesesimp>也许你还没有做好准备。</Chinesesimp>
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_desc">
                 <Original>you have tried to fight against all odds and yet you still failed. GG WP</Original>
                 <Russian>вы пытались бороться вопреки всему, но все равно потерпели неудачу. ГГ ВП</Russian>
+                <Chinesesimp>你尝试克服一切困难，但你仍然失败了。GG WP</Chinesesimp>
             </Key>
         </Container>
         <Container name="markers">
@@ -1710,6 +1744,7 @@
             <Key ID="STR_qrf_marker_heli">
                 <Original>HELI</Original>
                 <Russian>Вертолёт</Russian>
+                <Chinesesimp>直升机</Chinesesimp>
             </Key>
             <Key ID="STR_qrf_marker_apc">
                 <Original>APC</Original>
@@ -1742,18 +1777,22 @@
             <Key ID="STR_qrf_marker_artillery">
                 <Original>Artillery</Original>
                 <Russian>артиллерия</Russian>
+                <Chinesesimp>炮兵</Chinesesimp>
             </Key>
             <Key ID="STR_qrf_marker_ifv">
                 <Original>IFV</Original>
                 <Russian>БМП</Russian>
+                <Chinesesimp>步兵战车</Chinesesimp>
             </Key>
             <Key ID="STR_qrf_marker_airborne">
                 <Original>Airborne</Original>
                 <Russian>воздушно-десантная техника</Russian>
+                <Chinesesimp>空降兵</Chinesesimp>
             </Key>
             <Key ID="STR_qrf_marker_ugv">
                 <Original>UGV</Original>
                 <Russian>БПА</Russian>
+                <Chinesesimp>无人车</Chinesesimp>
             </Key>
             <Key ID="STR_qrf_marker_aa">
                 <Original>AA</Original>
@@ -1877,6 +1916,7 @@
             <Key ID="STR_marker_logistics_heli">
                 <Original>Logistics helicopter</Original>
                 <Russian>Вертолёт логистики</Russian>
+                <Chinesesimp>后勤直升机</Chinesesimp>
             </Key>
             <Key ID="STR_marker_qrf">
                 <Original>Quick Reaction Force</Original>
@@ -1958,6 +1998,7 @@
             <Key ID="STR_marker_civ_convoy">
                 <Original>Civilian convoy</Original>
                 <Russian>Конвой гражданских</Russian>
+                <Chinesesimp>平民车队</Chinesesimp>
             </Key>
             <Key ID="STR_marker_convoy_objective">
                 <Original>Convoy Objective</Original>
@@ -1976,10 +2017,12 @@
             <Key ID="STR_marker_convoy_escort_vehicle">
                 <Original> Convoy Escort</Original>
                 <Russian> Конвой (эскорт)</Russian>
+                <Chinesesimp>车队护卫</Chinesesimp>
             </Key>
             <Key ID="STR_marker_convoy_lead_vehicle">
                 <Original> Convoy Lead</Original>
                 <Russian> Конвой (ведущий)</Russian>
+                <Chinesesimp>车队头车</Chinesesimp>
             </Key>
             <Key ID="STR_marker_mission_vehicle">
                 <Original>Mission Vehicle</Original>
@@ -2307,6 +2350,7 @@
             <Key ID="STR_chats_player_kia">
                 <Original>A player has been killed in action! (%1 HR)</Original>
                 <Russian>Игрок погиб в бою! (%1 HR)</Russian>
+                <Chinesesimp>一名玩家在战斗中阵亡！（%1 人力）</Chinesesimp>
             </Key>
         </Container>
         <Container name="cut_texts">
@@ -3021,10 +3065,10 @@
                 <Korean>연막탄 탄막 전개 시작. 도달 예정 시간 30초.</Korean>
                 <French>Lancement du barrage de fumigènes. Temps estimé à 30 secondes.</French>
             </Key>
-            <Key ID="STR_chats_barrage_smoke">
+            <!-- <Key ID="STR_chats_barrage_smoke">
                 <Original>Player killed in action.</Original>
                 <Russian>Солдат погиб в бою.</Russian>
-            </Key>
+            </Key> -->
             <Key ID="STR_chats_airdrop_pilot_smoke">
                 <Original>This is the pilot. I see your smoke in the drop zone. I'm about to paradrop my cargo on %1 position, please wait.</Original>
                 <Russian>Пилот на связи. Вижу дым в зоне высадки. Я скоро выброшу груз на парашюте на %1 позицию, ожидайте.</Russian>
@@ -3151,7 +3195,7 @@
                 <Russian>Истребитель-перехватчик уничтожен</Russian>
                 <Chinesesimp>战斗机被摧毁</Chinesesimp>
                 <Korean>전투기가 파괴되었습니다</Korean>
-                <French>Chasseur détruit</French>           
+                <French>Chasseur détruit</French>
             </Key>
             <Key ID="STR_notifiers_fighter_crew_killed">
                 <Original>Fighter crew killed</Original>
@@ -3240,10 +3284,12 @@
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital">
                 <Original>A %1 orbital QRF just dropped</Original>
                 <Russian>Орбитальный десант %1 приземлились</Russian>
+                <Chinesesimp>%1 轨道快反部队刚刚降落</Chinesesimp>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital_marker">
                 <Original>Orbital QRF</Original>
                 <Russian>Орибальный СБР</Russian>
+                <Chinesesimp>轨道快反部队</Chinesesimp>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_airstrike">
                 <Original>%1 is about to execute an airstrike</Original>
@@ -3590,6 +3636,7 @@
             <Key ID="STR_notifiers_SUP_setup_QRFOrbital">
                 <Original>%1 just sent an orbital landing</Original>
                 <Russian>%1 отправили орбитальный десант</Russian>
+                <Chinesesimp>%1 刚刚完成轨道着陆</Chinesesimp>
             </Key>
             <Key ID="STR_notifiers_SUP_setup_wavedAttack">
                 <Original>%1 just sent a major attack wave</Original>
@@ -4002,6 +4049,7 @@
             <Key ID="STR_notifiers_skill_cancelled">
                 <Original>Price was not confirmed.</Original>
                 <Russian>Цена не была подтверждена.</Russian>
+                <Chinesesimp>价格尚未确认。</Chinesesimp>
             </Key>
             <Key ID="STR_notifiers_disband_header">
                 <Original>Disband</Original>
@@ -4321,62 +4369,77 @@
             <Key ID="STR_A3AU_victory_condition_check">
                 <Original>Victory Condition check&lt;br/&gt;</Original>
                 <Russian>Проверка условий победы&lt;br/&gt;</Russian>
+                <Chinesesimp>胜利条件检查&lt;br/&gt;</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition_not_met">
                 <Original>The selected victory condition requirements were not met.&lt;br/&gt;</Original>
                 <Russian>Выбранные условия победы не были выполнены.&lt;br/&gt;</Russian>
+                <Chinesesimp>所选的胜利条件要求未得到满足。&lt;br/&gt;</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_type_normal">
                 <Original>Normal Victory</Original>
                 <Russian>Нормальная победа</Russian>
+                <Chinesesimp>一般胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_type_total">
                 <Original>Total Victory</Original>
                 <Russian>Полная победа</Russian>
+                <Chinesesimp>全面胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_type_economic">
                 <Original>Economic Victory</Original>
                 <Russian>Экономическая победа</Russian>
+                <Chinesesimp>经济胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_type_logistical">
                 <Original>Logistical Victory</Original>
                 <Russian>Логистическая победа</Russian>
+                <Chinesesimp>后勤胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_type_political">
                 <Original>Political Victory</Original>
                 <Russian>Политическая победа</Russian>
+                <Chinesesimp>政治胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition_missing_money">
                 <Original>&lt;br/&gt;Missing: %1 %2</Original>
                 <Russian>&lt;br/&gt;Отсутствующий: %1 %2</Russian>
+                <Chinesesimp>&lt;br/&gt;缺失：%1 %2</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition_missing_support">
                 <Original>&lt;br/&gt;Population Support&lt;br/&gt;Total: %1&lt;br/&gt;Government Support: %2&lt;br/&gt;Rebel Support: %3</Original>
                 <Russian>&lt;br/&gt;Поддержка населения&lt;br/&gt;Общий: %1&lt;br/&gt;Государственная поддержка: %2&lt;br/&gt;Поддержка повстанцев: %3</Russian>
+                <Chinesesimp>&lt;br/&gt;人口支持率&lt;br/&gt;总计：%1&lt;br/&gt;政府支持率：%2&lt;br/&gt;叛军支持率：%3</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition_total_victory_info">
                 <Original>&lt;br/&gt;Rebel Support: %1&lt;br/&gt;Government Support: %2&lt;br/&gt;Resources: %3 / %4&lt;br/&gt;Factories: %5 / %6&lt;br/&gt;Outposts: %7 / %8&lt;br/&gt;Seaports: %9 / %10&lt;br/&gt;Military Bases: %11 / %12&lt;br/&gt;Airports: %13 / %14</Original>
                 <Russian>&lt;br/&gt;Поддержка повстанцев: %1&lt;br/&gt;Государственная поддержка: %2&lt;br/&gt;Ресурсы: %3 / %4&lt;br/&gt;Заводы: %5 / %6&lt;br/&gt;Аванпосты: %7 / %8&lt;br/&gt;Морские порты: %9 / %10&lt;br/&gt;Военные базы: %11 / %12&lt;br/&gt;Аэропорты: %13 / %14</Russian>
+                <Chinesesimp>&lt;br/&gt;叛军支持：%1&lt;br/&gt;政府支持：%2&lt;br/&gt;资源：%3 / %4&lt;br/&gt;工厂：%5 / %6&lt;br/&gt;前哨：%7 / %8&lt;br/&gt;海港：%9 / %10&lt;br/&gt;军事基地：%11 / %12&lt;br/&gt;机场：%13 / %14</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition_normal_victory_info">
                 <Original>&lt;br/&gt;Rebel Support: %1&lt;br/&gt;Government Support: %2&lt;br/&gt;Military Bases: %3 / %4&lt;br/&gt;Airports: %5 / %6</Original>
                 <Russian>&lt;br/&gt;Поддержка повстанцев: %1&lt;br/&gt;Государственная поддержка: %2&lt;br/&gt;Военные базы: %3 / %4&lt;br/&gt;Аэропорты: %5 / %6</Russian>
+                <Chinesesimp>&lt;br/&gt;叛军支持：%1&lt;br/&gt;政府支持：%2&lt;br/&gt;军事基地：%3 / %4&lt;br/&gt;机场：%5 / %6</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition_logistical_victory_info">
                 <Original>&lt;br/&gt;Seaports: %1 / %2&lt;br/&gt;Military Bases: %3 / %4&lt;br/&gt;Airports: %5 / %6</Original>
                 <Russian>&lt;br/&gt;Морские порты: %1 / %2&lt;br/&gt;Военные базы: %3 / %4&lt;br/&gt;Аэропорты: %5 / %6</Russian>
+                <Chinesesimp>&lt;br/&gt;海港：%1 / %2&lt;br/&gt;军事基地：%3 / %4&lt;br/&gt;机场：%5 / %6</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_respawn_warning">
                 <Original>WARNING!</Original>
                 <Russian>ПРЕДУПРЕЖДЕНИЕ!</Russian>
+                <Chinesesimp>警告</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_respawn_warning_info">
                 <Original>%1 only has %2 Respawns left!</Original>
                 <Russian>У %1 осталось только %2 повторных появления!</Russian>
+                <Chinesesimp>%1 仅剩下 %2 次重生！</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_HR_warning_info">
                 <Original>%1 only has %2 HR left!</Original>
                 <Russian>У %1 осталось только %2 HR!</Russian>
+                <Chinesesimp>%1 仅剩下 %2 人力！</Chinesesimp>
             </Key>
         </Container>
         <Container name="skip_time_rest">
@@ -4788,12 +4851,14 @@
                 <Russian>Максимальное количество гражданских на сервере</Russian>
                 <Korean>서버 내 최대 민간인 수</Korean>
                 <French>Nombre maximal de civils sur le serveur</French>
+                <Chinesesimp>服务器上的最大平民数量</Chinesesimp>
             </Key>
             <Key ID="STR_params_civ_per_town">
                 <Original>Maximum civilians per town</Original>
                 <Russian>Максимальное количество гражданских на населенный пункт</Russian>
                 <Korean>마을 당 최대 민간인 수</Korean>
                 <French>Nombre maximum de civils par ville</French>
+                <Chinesesimp>每个城镇的最大平民数量</Chinesesimp>
             </Key>
             <Key ID="STR_params_civ_traffic_none">
                 <Original>None</Original>
@@ -4898,6 +4963,7 @@
                 <Russian>Разрешить разблокированную взрывчатку</Russian>
                 <Korean>폭발물 해금 허용</Korean>
                 <French>Autoriser les explosifs déverrouillés</French>
+                <Chinesesimp>允许解锁爆炸物</Chinesesimp>
             </Key>
             <Key ID="STR_params_startWithLongRangeRadio">
                 <Original>[TFAR] Start with Long Range Radio</Original>
@@ -4960,12 +5026,14 @@
                 <Russian>Порог активации сборщика мусора (в часах)</Russian>
                 <Korean>자동 쓰레기 청소에 대한 쓰레기 청소 프로그램 임계점 (시간)</Korean>
                 <French>Seuil de nettoyage des ordures pour le ramassage automatique des ordures (en heures)</French>
+                <Chinesesimp>垃圾清理器自动垃圾收集阈值（小时）</Chinesesimp>
             </Key>
             <Key ID="STR_params_revive_time">
                 <Original>Revive time for players (in seconds)</Original>
                 <Russian>Время до поднятия игрока на ноги (в секундах)</Russian>
                 <Korean>플레이어 소생 시간 (초)</Korean>
                 <French>Temps de réanimation des joueurs (en secondes)</French>
+                <Chinesesimp>玩家复活时间（秒）</Chinesesimp>
             </Key>
             <Key ID="STR_params_antistasi_plus">
                 <Original>ANTISTASI PLUS PARAMETERS</Original>
@@ -4977,6 +5045,7 @@
             <Key ID="STR_params_antistasi_scripts">
                 <Original>SCRIPTS</Original>
                 <Russian>СКРИПТЫ</Russian>
+                <Chinesesimp>脚本</Chinesesimp>
             </Key>
             <Key ID="STR_params_timeMultiplier">
                 <Original>Time Multiplier</Original>
@@ -5058,6 +5127,7 @@
             <Key ID="STR_params_ReloadRepackTurretMagazines">
                 <Original>Enable Turret Magazine Repacking?</Original>
                 <Russian>Включить Turret Magazine Repacking?</Russian>
+                <Chinesesimp>启用炮塔弹匣整理？</Chinesesimp>
             </Key>
             <Key ID="STR_params_playerIcons">
                 <Original>Show 3D icons above unconscious players?</Original>
@@ -5111,6 +5181,7 @@
             <Key ID="STR_params_enable_HR_cap">
                 <Original>Enable HR cap</Original>
                 <Russian>Начальные людские ресурсы</Russian>
+                <Chinesesimp>启用人力上限</Chinesesimp>
             </Key>
             <Key ID="STR_params_newCarTowing">
                 <Original>Improved towing of wheeled vehicles</Original>
@@ -5330,10 +5401,12 @@
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
                 <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
+                <Chinesesimp>[实验] 启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
                 <Russian>Выключить скрипт для автоматического отбрасываения дымов (помогает с производительностью)</Russian>
+                <Chinesesimp>禁用自动烟雾覆盖脚本（有助于提高性能）</Chinesesimp>
             </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
@@ -5359,6 +5432,7 @@
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>[Experimental] Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>[Экспериментально] Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
+                <Chinesesimp>[实验] 允许敌人使用未来主义的不公平支持</Chinesesimp>
             </Key>
             <Key ID="STR_params_CrateOptions">
                 <Original>LOOT CRATE SETTINGS</Original>
@@ -5574,11 +5648,13 @@
                 <Original>Loot crate price</Original>
                 <Korean>전리품 상자 가격</Korean>
                 <French>Prix de la caisse de butin</French>
+                <Chinesesimp>战利品箱价格</Chinesesimp>
             </Key>
             <Key ID="STR_params_lootCrateUnlockedItems">
                 <Original>Loot crate ignore unlocked items</Original>
                 <Korean>전리품 상자가 해금된 아이템 무시</Korean>
                 <French>La caisse de butin ignore les objets débloqués</French>
+                <Chinesesimp>战利品箱忽略已解锁的物品</Chinesesimp>
             </Key>
             <Key ID="STR_params_spawnDistance">
                 <Original>Enemy spawn distance</Original>
@@ -5666,9 +5742,11 @@
             </Key>
             <Key ID="STR_params_builder_header">
                 <Original>BUILDER BOX OPTIONS</Original>
+                <Chinesesimp>建筑箱设置</Chinesesimp>
             </Key>
             <Key ID="STR_params_experimental_header">
                 <Original>EXPERIMENTAL OPTIONS</Original>
+                <Chinesesimp>实验选项</Chinesesimp>
             </Key>
             <Key ID="STR_params_balance_header">
                 <Original>BALANCE OPTIONS</Original>
@@ -5924,13 +6002,15 @@
                 <Korean>당신은 소총수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;소총수는 운반량에 25%의 보너스가 있지만, 움직일 때 발견되기 더 쉽고 더 많은 소음을 냅니다.</Korean>
                 <French>Vous avez choisi un rôle de Fusilier.&lt;br/&gt;&lt;br/&gt;Les Fusiliers ont un bonus de 25% sur la capacité de transport mais sont faciles à repérer et font plus de bruit lorsqu'ils se déplacent.</French>
             </Key>
-			<Key ID="STR_role_grenadier">
+            <Key ID="STR_role_grenadier">
                 <Original>You have selected a Grenadier role.&lt;br/&gt;&lt;br/&gt;Grenadiers have a slight bonus on carry capacity, but are easy to spot.</Original>
                 <Russian>Вы выбрали роль Стрелка ГП.&lt;br/&gt;&lt;br/&gt;Стрелок ГП имеет небольшой бонус к переносимому весу, но является более заметным.</Russian>
+                <Chinesesimp>您选择了掷弹兵角色。&lt;br/&gt;&lt;br/&gt;掷弹兵在携带能力上有轻微的加成，但很容易被发现。</Chinesesimp>
             </Key>
-			<Key ID="STR_role_autorifleman">
+            <Key ID="STR_role_autorifleman">
                 <Original>You have selected an Autorifleman role.&lt;br/&gt;&lt;br/&gt;Autoriflemen have a slight bonus on carry capacity, but make more noise when they move.</Original>
                 <Russian>Вы выбрали роль Пулеметчика.&lt;br/&gt;&lt;br/&gt;Пулеметчик имеет небольшой бонус к переносимому весу, но сильнее шумит при движении.</Russian>
+                <Chinesesimp>您选择了自动步枪兵角色。&lt;br/&gt;&lt;br/&gt;自动步枪兵在携带能力上有轻微的加成，但是移动时会发出更大的噪音。</Chinesesimp>
             </Key>
             <Key ID="STR_role_engineer">
                 <Original>You have selected a Engineer role.&lt;br/&gt;&lt;br/&gt;Engineers do not have any bonus or penalties, but have the ability to use repair Kits for vehicle repair and can hack UAV drones.</Original>
@@ -6047,6 +6127,7 @@
                 <Russian>Штаб</Russian>
                 <Korean>당신의 본부</Korean>
                 <French>Votre QG</French>
+                <Chinesesimp>你的总部</Chinesesimp>
             </Key>
         </Container>
         <Container name="system_chats">
@@ -6169,12 +6250,14 @@
                 <Russian>Вы не можете оставаться под прикрытием, если:&lt;br/&gt;&lt;br/&gt; у вас есть какое-либо видимое оружие&lt;br/&gt;Вы в бронежилете или разгрузке&lt;br/&gt;Вы в каске&lt;br/&gt;Вы носите ПНВ&lt;br/&gt;Вы в военной форме!</Russian>
                 <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!</Korean>
                 <French>Vous ne pouvez pas rester sous couverture si:&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez un gilet&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des JVN&lt;br/&gt;Vous portez un uniforme militaire!</French>
+                <Chinesesimp>在下列情况下您无法保持伪装状态：&lt;br/&gt;&lt;br/&gt;武器可见&lt;br/&gt;穿着背心&lt;br/&gt;戴着头盔&lt;br/&gt;戴着夜视镜&lt;br/&gt;穿着军装！</Chinesesimp>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_mil_items_2">
                 <Original>You can't stay Undercover while:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a military uniform&lt;br/&gt;Enemy have added you to Wanted list!</Original>
                 <Russian>Вы не можете оставаться под прикрытием, если:&lt;br/&gt;&lt;br/&gt; у вас есть какое-либо видимое оружие&lt;br/&gt;Вы в бронежилете или разгрузке&lt;br/&gt;Вы в каске&lt;br/&gt;Вы носите ПНВ&lt;br/&gt;Вы в военной форме&lt;br/&gt;Враг добавил вас в список разыскиваемых лиц!</Russian>
                 <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
                 <French>Vous ne pouvez pas rester sous couverture si:&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez un gilet&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des JVN&lt;br/&gt;Vous portez un uniforme militaire&lt;br/&gt;L'ennemi vous a ajouté à la liste des personnes recherchées!</French>
+                <Chinesesimp>以下情况下您无法保持伪装状态：&lt;br/&gt;&lt;br/&gt;武器可见&lt;br/&gt;穿着背心&lt;br/&gt;戴着头盔&lt;br/&gt;戴着夜视镜&lt;br/&gt;穿着军装&lt;br/&gt;敌人已将您添加到通缉名单中！</Chinesesimp>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_mil_carry">
                 <Original>You're looking very suspicious while carrying military-grade items, and the enemy has noticed it.</Original>
@@ -6202,12 +6285,14 @@
                 <Russian>Вы не можете оставаться под прикрытием пока к вашей технике прикреплен буксировочный трос!</Russian>
                 <Korean>견인 로프를 차량에 부착한 상태로 위장 상태에 있을 수 없습니다!</Korean>
                 <French>Vous ne pouvez pas être sous couverture lorsque des câbles de remorquage sont attachés à votre véhicule!</French>
+                <Chinesesimp>当牵引绳系在您的车辆上时，您无法伪装！</Chinesesimp>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_tow_ropes">
                 <Original>You can't be undercover and use tow ropes!</Original>
                 <Russian>Вы не можете оставаться под прикрытием пока у вас в руках буксировочный трос!</Russian>
                 <Korean>위장 상태에서 견인 로프를 사용할 수 없습니다!</Korean>
                 <French>On ne peut pas être sous couverture et utiliser des câbles de remorquage!</French>
+                <Chinesesimp>你不能伪装并使用牵引绳！</Chinesesimp>
             </Key>
         </Container>
         <Container name="info_bar">
@@ -6595,12 +6680,14 @@
                 <Russian>ПТ-специалист</Russian>
                 <Korean>대전차전문가</Korean>
                 <French>AT Spécialiste</French>
+                <Chinesesimp>反坦克专家</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_aa_title">
                 <Original>AA Specialist</Original>
                 <Russian>Оператор ПЗРК</Russian>
                 <Korean>대공전문가</Korean>
                 <French>AA Spécialiste</French>
+                <Chinesesimp>AA专家</Chinesesimp>
             </Key>
         </Container>
         <Container name="simple_menu_dialogs">
@@ -7243,12 +7330,14 @@
                 <Russian>Выгнать экипаж их техники</Russian>
                 <French>Déplace l'équipage du véhicule</French>
                 <Korean>차량 승무원 내보내기</Korean>
+                <Chinesesimp>移出车辆乘员</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_moveout_crew_tooltip">
                 <Original>Moves out crew from vehicle you're looking at.</Original>
                 <Russian>Выгоняет экипаж из техники на которую вы смотрите.</Russian>
                 <French>Déplace l'équipage du véhicule que vous regardez.</French>
                 <Korean>현재 보고 있는 차량의 승무원을 내보냅니다.</Korean>
+                <Chinesesimp>将人员从您正在查看的车辆中移出。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_arsenal_limits_title">
                 <Original>Arsenal Limits</Original>
@@ -7771,17 +7860,19 @@
             <Key ID="STR_commander_menu_persistent_save_button_tooltip">
                 <Original>Use this option to save your current game. It does save the most important data in a ""Grand Theft Auto"" way.</Original>
                 <Russian>Используйте эту опцию, чтобы сохранить текущую игру. Сохраняются самые важные данные в стиле «Grand Theft Auto».</Russian>
-                <Chinesesimp>使用这个选项来保存你当前的游戏。 最重要的数据以“侠盗猎车手”的风格保存。</Chinesesimp>
                 <Korean>현재 게임을 저장하려면 이 옵션을 사용하십시오. ""GTA"" 방식으로 가장 중요한 데이터를 저장합니다.</Korean>
                 <French>Cette option permet de sauvegarder le jeu en cours. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
+                <Chinesesimp>使用此选项可保存当前游戏。它确实以“侠盗猎车手”的方式保存了最重要的数据。</Chinesesimp>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
+                <Chinesesimp>检查胜利</Chinesesimp>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button_tooltip">
                 <Original>Use this option to check if you have achieved the victory conditions and ends mission if you have.</Original>
                 <Russian>Используйте эту опцию, чтобы проверить, выполнили ли вы условия победы, и завершить миссию, если да.</Russian>
+                <Chinesesimp>使用此选项检查您是否已达到胜利条件，如果已达到则结束任务。</Chinesesimp>
             </Key>
             <Key ID="STR_commander_menu_personal_save_button">
                 <Original>PERSONAL SAVE</Original>
@@ -8568,6 +8659,7 @@
             <Key ID="STR_trader_black_market_requirements">
                 <Original>Vehicle requirements can be found by clicking the notepad in the top right corner.</Original>
                 <Russian>Условия разблокировки можно найти, кликнув на иконку блокнота в правом верхнем углу</Russian>
+                <Chinesesimp>点击右上角的记事本即可找到车辆要求。</Chinesesimp>
             </Key>
         </Container>
         <Container name="intel_actions">
@@ -9062,10 +9154,12 @@
             <Key ID="STR_RIV_ATT_transfer_header">
                 <Original>Prevent Invaders transfering valuable cargo to Rivals</Original>
                 <Russian>Предотвратите передачу  Захватчиками ценного груза Соперникам</Russian>
+                <Chinesesimp>防止入侵者将贵重货物转移给竞争对手</Chinesesimp>
             </Key>
             <Key ID="STR_RIV_ATT_transfer_text">
                 <Original>We found out that the Invaders are going to transfer %1 valuable cargo at %2. Go there and stop the transfer. After the transmission is disrupted, %1 will stop conducting operations in this area. Do this before %3.</Original>
                 <Russian>Мы выяснили что Захватчики собираются передать %1 ценный груз в %2 идите туда и остановите передачу. После срыва передачи, %1 перестанут их проводить в этой зоне. Сделайте это до %3.</Russian>
+                <Chinesesimp>我们发现入侵者将在 %2 转移 %1 贵重货物。前往那里并阻止转移。传输中断后，%1 将停止在此区域开展行动。请在 %3 之前完成此操作。</Chinesesimp>
             </Key>
             <Key ID="STR_trader_quest_header">
                 <Original>Find the Arms Dealer</Original>
@@ -9154,26 +9248,32 @@
             <Key ID="STR_CON_Outpost_resources_compet_task">
                 <Original>Resource Acquisition at the frontline</Original>
                 <Russian>Захват ресурсов на передовой</Russian>
+                <Chinesesimp>前线资源获取</Chinesesimp>
             </Key>
             <Key ID="STR_CON_Outpost_resources_compet_desc">
                 <Original>A %1 would be a fine addition to our cause. Go there and capture it before %2. %3 Sent their troups as well</Original>
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2. %3 также отправила туда свои войска</Russian>
+                <Chinesesimp>%1 对我们的事业大有裨益。赶在 %2 之前占领那里。%3 也派出了他们的部队</Chinesesimp>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_task">
                 <Original>Destroy Roadblock at the frontline</Original>
                 <Russian>Уничтожьте блокпост на передовой</Russian>
+                <Chinesesimp>摧毁前线的路障</Chinesesimp>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_desc">
                 <Original>A %1 interferes with our operations in the area. Go there and destroy it before %2. %3 Sent their troups as well</Original>
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
+                <Chinesesimp>%1 干扰了我们在该地区的行动。赶快去那里并在 %2 之前将其摧毁。%3 也派出了他们的部队</Chinesesimp>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_task">
                 <Original>Frontline Struggle</Original>
                 <Russian>Борьба на передовой</Russian>
+                <Chinesesimp>前线斗争</Chinesesimp>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_desc">
                 <Original>A %1 is disturbing our operations in the area. Go there and capture it before %2. %3 Sent their troups as well</Original>
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
+                <Chinesesimp>%1 正在干扰我们在该地区的行动。赶在 %2 之前前往占领该地区。%3 也派出了他们的部队</Chinesesimp>
             </Key>
             <Key ID="STR_CON_MilAdmin_task">
                 <Original>Seize Administration</Original>
@@ -9275,15 +9375,19 @@
             </Key>
             <Key ID="STR_A3A_Missions_AS_Smasher_task_header">
                 <Original>Kill the Mutant</Original>
+                <Chinesesimp>杀死变种人</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Smasher_task_desc">
                 <Original>Reports from unknown sources suggest %1 Special Forces have engaged a rare Mutant in %2. Kill the Mutant before it causes major issues. Do this before %3. We don't know where this fight is happening.</Original>
+                <Chinesesimp>来自未知来源的报告表明 %1 特种部队在 %2 与一名罕见的变种人交战。在变种人造成重大问题之前将其杀死。在 %3 之前完成此操作。我们不知道这场战斗发生在哪里。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Zombies_task_header">
                 <Original>Stop City Infestation</Original>
+                <Chinesesimp>阻止城市侵扰</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Zombies_task_desc">
                 <Original>%1 is in danger of becoming infested. If it falls, nobody will be able to live there in future. This will have permanent consequences, so we need to act quickly. Save %1 from infestation... Do this before %2.</Original>
+                <Chinesesimp>%1 有被感染的危险。如果它倒塌，以后就没有人能住在那里了。这将产生永久性的后果，所以我们需要迅速采取行动。拯救 %1 免受感染... 在 %2 之前完成这件事。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_AS_RIV_Traitor_task_header">
                 <Original>Eliminate the Defector</Original>
@@ -9554,14 +9658,17 @@
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_header">
                 <Original>Reconnaissance Vehicle Crash Site</Original>
                 <Russian>Направляйтесь на предпологаемое место крушения</Russian>
+                <Chinesesimp>侦察坠毁现场</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_desc">
                 <Original>%1s' reconnaissance vehicle sent a distress signal. The vehicles trajectory suggests that the crash is expected to happen at %2. Collect the data and bring it back to HQ before the enemy recovery team. We must get it before %3. Enemy frontline troops are on their way to recover the data.</Original>
                 <Russian>Транспорт %1 c разведданными был подбит в %2. Соберите их и доставьте в штаб до того как их заберёт вражеская эвакуационная команда. Мы должны сделать это %3. Вражеские передовые отряды уже в пути.</Russian>
+                <Chinesesimp>%1s 的侦察机发出求救信号。车辆轨迹表明坠机预计发生在 %2。收集数据并在敌方恢复小组到达之前将其带回总部。我们必须在 %3 之前拿到它。敌方前线部队正在前往恢复数据的途中。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_alt">
                 <Original>Deliver the crashsite data to the arms dealer. He will pay handsomely! Petros won't be too upset about it.</Original>
                 <Russian>Доставьте данные торговцу оружием. Он щедро за них заплатит (Петрос не сильно расстроится).</Russian>
+                <Chinesesimp>将坠机现场数据交给军火商。他会付给他丰厚的报酬！Petros 不会对此太难过。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_SUPP_Supplies_task_header">
                 <Original>Deliver Supplies to %1</Original>
@@ -9633,14 +9740,15 @@
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
                 <French>Un groupe de prisonniers de guerre attend d'être exécuté à %1. Nous devons les sauver avant %2. Amenez-les au QG.</French>
             </Key>
-            </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_header">
                 <Original>Rescue Deserters</Original>
                 <Russian>Спасите дезертиров</Russian>
+                <Chinesesimp>逃兵营救</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
                 <Original>A group of enemy deserters is hiding in %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
                 <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
+                <Chinesesimp>一群敌方逃兵躲藏在 %1，他们正在被敌方追捕。我们必须在 %2 之前救出他们。将他们带到总部。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_header">
                 <Original>Rescue Prisoners</Original>
@@ -9854,7 +9962,7 @@
                 <Russian>Использовать набор восстановления боеспособности на %1</Russian>
                 <Chinesesimp>在 %1 上使用战备恢复工具包</Chinesesimp>
                 <Korean>%1 키로 전투 준비 복구 키트 사용</Korean>
-                <French>Utiliser le kit de récupération de l'état de préparation au combat sur %1</French>                
+                <French>Utiliser le kit de récupération de l'état de préparation au combat sur %1</French>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_revive_holdKey">
                 <Original>To Stand Up</Original>
@@ -9916,14 +10024,17 @@
                 <Original>&lt;br/&gt;Press H to Withstand.</Original>
                 <French>&lt;br/&gt;Appuyez sur H pour résister.</French>
                 <Korean>&lt;br/&gt;H키를 눌러 스스로 일어나십시오.</Korean>
+                <Chinesesimp>&lt;br/&gt;按 H 键站起。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_self_withstand_countdown">
                 <Original>Self-Revive Cooldown</Original>
                 <Korean>자가소생 쿨다운</Korean>
+                <Chinesesimp>自我复活冷却</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_self_withstand_ready">
                 <Original>Available</Original>
                 <Korean>준비됨</Korean>
+                <Chinesesimp>可用</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_common_access_vehicle_marker_text">
                 <Original>Access Vehicle Market</Original>
@@ -10466,6 +10577,24 @@
                 <Czech>Zničit rádio</Czech>
                 <Portuguese>Destruir rádio</Portuguese>
                 <Turkish>Radyoyu Yok Et</Turkish>
+                <Chinesesimp>摧毁无线电</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ">
+                <Original>Talk with Civilian</Original>
+                <English>Talk with Civilian</English>
+                <Russian>Поговорить с гражданским</Russian>
+                <German>Mit Zivilist sprechen</German>
+                <Italian>Parla con il civile</Italian>
+                <Spanish>Hablar con civil</Spanish>
+                <French>Parler avec le civil</French>
+                <Korean>민간인과 대화</Korean>
+                <Japanese>民間人と話す</Japanese>
+                <Chinesesimp>与平民交谈</Chinesesimp>
+                <Chinese>與平民交談</Chinese>
+                <Polish>Porozmawiaj z cywilem</Polish>
+                <Czech>Mluvit s civilistou</Czech>
+                <Portuguese>Falar com civil</Portuguese>
+                <Turkish>Sivil ile konuş</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ">
                 <Original>Talk with Civilian</Original>
@@ -10491,6 +10620,7 @@
                 <Russian>Управление ИИ уже было использовано, подождите %1 секунд.</Russian>
                 <Korean>인공지능 조종이 이미 사용되었습니다. %1초간 기다리십시오.</Korean>
                 <French>Le contrôle de l'IA a déjà été utilisé, attendez %1 secondes.</French>
+                <Chinesesimp>AI 控制已被使用，请等待 %1 秒。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_common_notifications_money_found_title">
                 <Original>Money</Original>
@@ -11352,6 +11482,7 @@
             </Key>
             <Key ID="STR_rivals_destroyed_no_invaders">
                 <Original>&lt;t size='0.6'&gt;Our scouts have reported that the &lt;t color='#800000'&gt;%1&lt;/t&gt; hideout has been abandoned, seemingly due to a lack of &lt;t color='#800000'&gt;%2&lt;/t&gt; logistical support.&lt;/t&gt;</Original>
+                <Chinesesimp>&lt;t size='0.6'&gt;我们的侦察兵报告说，&lt;t color='#800000'&gt;%1&lt;/t&gt; 藏身处已被废弃，似乎是由于缺乏 &lt;t color='#800000'&gt;%2&lt;/t&gt; 后勤支援。&lt;/t&gt;</Chinesesimp>
             </Key>
             <Key ID="STR_rivals_destroyed_finale">
                 <Original>&lt;t size='0.6'&gt;The story of &lt;t color='#800000'&gt;%1&lt;/t&gt; ends here. Leaderless, with huge manpower and equipment shortage they quickly become too disorganised to maintain any significant presence on %2. It's a great success for %3, congratulations!&lt;/t&gt;</Original>
@@ -11400,6 +11531,7 @@
                 <Russian>&lt;t color='#800000'&gt;Вертолёт %1&lt;/t&gt; рядом с нами!</Russian>
                 <Korean>&lt;t color='#800000'&gt;%1대의 헬리콥터&lt;/t&gt;가 우리 근처에 있습니다!</Korean>
                 <French>&lt;t color='#800000'&gt;%1 hélicoptère&lt;/t&gt; est près de nous!</French>
+                <Chinesesimp>&lt;t color='#800000'&gt;%1 直升机&lt;/t&gt;就在我们附近！</Chinesesimp>
             </Key>
         </Container>
     </Package>
@@ -12141,24 +12273,28 @@
                 <Russian>Эта техника не может уйти в маскировка пока к ней прикреплен буксировочный трос.</Russian>
                 <Korean>이 차량은 견인줄이 걸려 있는 동안에는 위장이 불가능합니다.</Korean>
                 <French>Ce véhicule ne peut pas être mis à l'abri tant qu'il est équipé de câbles de remorquage.</French>
+                <Chinesesimp>此车辆在系有牵引绳的情况下无法隐蔽行驶</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_goUndercover_error_towing_ropes">
                 <Original>In vehicle with tow ropes attached</Original>
                 <Russian>В технике с прикрепленным буксировочным тросом</Russian>
                 <Korean>견인줄이 부착된 차량일 경우</Korean>
                 <French>Si le véhicule est équipé d'un câble de remorquage</French>
+                <Chinesesimp>在系有牵引绳的车辆中</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_goUndercover_error_towing_ropes_2">
                 <Original>%1&lt;br/&gt;Holding tow ropes.</Original>
                 <Russian>"%1&lt;br/&gt;В руках буксировочный трос.</Russian>
                 <Korean>%1이(가)&lt;br/&gt;견인줄을 잡고 있습니다.</Korean>
                 <French>%1&lt;br/&gt;Tenez la ligne de remorquage.</French>
+                <Chinesesimp>%1&lt;br/&gt;握住牵引绳。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_goUndercover_error_towing_ropes_output">
                 <Original>Holding tow ropes</Original>
                 <Russian>Держит буксировочный трос</Russian>
                 <Korean>견인줄을 잡는 중</Korean>
                 <French>Tient la corde de remorquage</French>
+                <Chinesesimp>抓着牵引绳</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3A_ai">
@@ -12593,12 +12729,14 @@
                 <Russian>У вас недостаточно денег для экипирования данного типа юнита.</Russian>
                 <Korean>이런 종류의 유닛을 장비하는 데 필요한 자금이 부족합니다.</Korean>
                 <French>Vous n'avez pas assez d'argent pour vous équiper de ce type d'unité.</French>
+                <Chinesesimp>您没有足够的钱来装备这种类型的单位。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_reinf_reinfPlayer_no_weapons_equip">
                 <Original>You don't have enough weapons to equip this type of unit.</Original>
                 <Russian>У вас недостаточно оружия для экипирования данного типа юнита.</Russian>
                 <Korean>이런 종류의 유닛을 장비하는 데 필요한 무기가 부족합니다.</Korean>
                 <French>Vous n'avez pas assez d'armes pour équiper ce type d'unité.</French>
+                <Chinesesimp>您没有足够的武器来装备这种类型的部队。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_reinf_reinfPlayer_full_squad">
                 <Original>Your squad is full or you have too many scattered units with no radio contact.</Original>
@@ -13897,12 +14035,14 @@
                 <Russian>Выгнать экипаж из техники</Russian>
                 <French>Expulser l'équipage du véhicule</French>
                 <Korean>승무원 내보내기</Korean>
+                <Chinesesimp>移出乘员</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Base_moveOutCrew_err0">
                 <Original>Vehicle must contain rebel crew or civillian crew.</Original>
                 <Russian>В транспортном средстве должен находиться экипаж повстанцев или гражданских.</Russian>
                 <French>Le véhicule doit contenir un équipage rebelle ou civil.</French>
                 <Korean>차량에 반드시 반군 또는 민간인 승무원이 타고 있어야 합니다.</Korean>
+                <Chinesesimp>车辆必须载有叛军乘员或平民乘员。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0">
                 <Original>Vehicle must be closer than 50 meters to the HQ marker.</Original>
@@ -13951,6 +14091,7 @@
                 <Russian>Экипаж покинул технику.</Russian>
                 <French>L'équipage a abandonné le véhicule.</French>
                 <Korean>승무원을 내보냈습니다.</Korean>
+                <Chinesesimp>乘员已移出</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3A_CREATE">
