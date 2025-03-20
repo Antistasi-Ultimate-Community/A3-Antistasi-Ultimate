@@ -182,7 +182,7 @@ if (_hasWs) then {
     ];
 };
 ["faces", _faces] call _fnc_saveToTemplate;
-
+"TakistaniMen" call _fnc_saveNames;
 ["insignia", ["CSAT_ScimitarRegiment", "GryffinRegiment", ""]] call _fnc_saveToTemplate;
 ["milInsignia", ["CSAT_Patch", "", ""]] call _fnc_saveToTemplate;
 ["sfInsignia", ["CSAT_ScorpionRegiment", "", ""]] call _fnc_saveToTemplate;

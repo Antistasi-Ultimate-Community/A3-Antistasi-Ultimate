@@ -173,6 +173,7 @@ if (_hasTanks) then {
 	"AsianHead_A3_06",
 	"Mavros"
 ]] call _fnc_saveToTemplate; 
+"RussianMen" call _fnc_saveNames;
 
 ["sfInsignia", ["Spetsnaz223rdDetachment", "", ""]] call _fnc_saveToTemplate;
 
