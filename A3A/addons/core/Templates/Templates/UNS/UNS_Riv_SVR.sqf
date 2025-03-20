@@ -13,6 +13,7 @@
 "AsianHead_A3_03", "AsianHead_A3_03_cfaces_vccamo01", "AsianHead_A3_03_cfaces_vccamo02",
 "AsianHead_A3_04", "AsianHead_A3_04_cfaces_vccamo01", "AsianHead_A3_05", "AsianHead_A3_05_cfaces_vccamo02",
 "AsianHead_A3_06", "AsianHead_A3_07", "AsianHead_A3_07_cfaces_vccamo01", "AsianHead_A3_07_cfaces_vccamo02"]] call _fnc_saveToTemplate;
+"VietnameseMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Vehicles       //

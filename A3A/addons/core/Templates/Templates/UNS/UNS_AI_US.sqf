@@ -99,6 +99,7 @@
 "WhiteHead_06", "WhiteHead_06_cfaces_lrrpcamo16", "WhiteHead_07", "WhiteHead_08", "WhiteHead_10",
 "WhiteHead_11", "WhiteHead_13", "WhiteHead_14", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17",
 "WhiteHead_19_cfaces_lrrpcamo13", "WhiteHead_21", "WhiteHead_21_cfaces_lrrpcamo10"]] call _fnc_saveToTemplate;
+"NATOMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
