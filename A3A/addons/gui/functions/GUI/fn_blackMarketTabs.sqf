@@ -98,7 +98,7 @@ if (_tab isEqualTo "vehicles") then
 
         private _buttonTakeout = _display ctrlCreate ["A3A_ShortcutButtonSmall", -1, _itemControlsGroup];
         _buttonTakeout ctrlSetPosition [0, 25 * GRID_H, 22 * GRID_W, 6 * GRID_H];
-        _buttonTakeout ctrlSetText "Takeout"; // TODO: Localize
+        _buttonTakeout ctrlSetText (localize "STR_antistasi_dialogs_buy_vehicle_button");
         _buttonTakeout ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
         _buttonTakeout setVariable ["className", _className];
         _buttonTakeout setVariable ["model", _model];
@@ -109,7 +109,7 @@ if (_tab isEqualTo "vehicles") then
 
         private _buttonDelivery = _display ctrlCreate ["A3A_ShortcutButtonSmall", -1, _itemControlsGroup];
         _buttonDelivery ctrlSetPosition [22 * GRID_W, 25 * GRID_H, 22 * GRID_W, 6 * GRID_H];
-        _buttonDelivery ctrlSetText "Delivery"; // TODO: Localize
+        _buttonDelivery ctrlSetText (localize "STR_antistasi_dialogs_buy_vehicle_deliver_button");
         _buttonDelivery ctrlSetFontHeight GUI_TEXT_SIZE_SMALL;
         _buttonDelivery ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
         _buttonDelivery setVariable ["className", _className];

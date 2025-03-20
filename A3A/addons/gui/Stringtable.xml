@@ -481,6 +481,17 @@
                 <Korean>암시장 차량 재고는 현재 전쟁 레벨과 달성한 다양한 이정표에 따라 달라집니다.</Korean>
                 <French>Le stock de véhicules du marché noir dépend du niveau de guerre actuel et des différentes étapes franchies.</French>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_button">
+                <Original>Purchase</Original>
+                <French>Achat</French>
+                <Korean>사다</Korean>
+                <Russian>Покупать</Russian>
+                <Chinesesimp>购买</Chinesesimp>
+                <Czech>Nákup</Czech>
+                <Italian>Acquista</Italian>
+                <Spanish>Compra</Spanish>
+                <Polish>Kupno</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_button_tooltip">
                 <Original>Buy %1 for %2 %3</Original>
                 <French>Acheter %1 pour %2 %3</French>
@@ -491,6 +502,17 @@
                 <Italian>Compra %1 per %2 %3</Italian>
                 <Spanish>Comprar %1 por %2 %3</Spanish>
                 <Polish>Kup %1 za %2 %3</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button">
+                <Original>Deliver</Original>
+                <French>Livrer</French>
+                <Korean>배달하다</Korean>
+                <Russian>Доставлять</Russian>
+                <Chinesesimp>提供</Chinesesimp>
+                <Czech>Doručit</Czech>
+                <Italian>Consegnare</Italian>
+                <Spanish>Entregar</Spanish>
+                <Polish>Dostarczyć</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip">
                 <Original>Deliver %1 to garage for %2 %3</Original>
