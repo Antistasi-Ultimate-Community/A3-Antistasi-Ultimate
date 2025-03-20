@@ -72,12 +72,29 @@ private _fnc_generateAndSaveUnitsToTemplate = {
 	} forEach _unitTemplates;
 };
 
+// Custom defined name lists beyond what is available in CfgWorlds.GenericNames
+VN_LastNames = ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Phan", "Vũ", "Đặng", "Bùi", "Đỗ"];
+VN_FirstNames = ["An", "Bảo", "Cường", "Dũng", "Hải", "Khoa", "Linh", "Minh", "Quang", "Tú"];
+
 private _fnc_saveNames = {
     params ["_names"];
-    private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> _names;
-    private _firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
-    ["firstNames", _firstNames] call _fnc_saveToTemplate;
-    private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
+
+    private _firstNames = [];
+    private _lastNames = [];
+
+    switch (_names) do {
+		case "VietnameseMen": {
+            _firstNames = VN_FirstNames;
+            _lastNames = VN_LastNames;
+        };
+		default {
+    		private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> _names;
+    		_firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
+    		_lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
+		}
+	};
+
+	["firstNames", _firstNames] call _fnc_saveToTemplate;
     ["lastNames", _lastNames] call _fnc_saveToTemplate;
 };
 
