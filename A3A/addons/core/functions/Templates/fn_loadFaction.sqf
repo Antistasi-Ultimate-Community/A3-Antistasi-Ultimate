@@ -74,12 +74,11 @@ private _fnc_generateAndSaveUnitsToTemplate = {
 
 // Custom defined name lists beyond what is available in CfgWorlds.GenericNames
 VN_LastNames = [
-    "Nguyen", "Tran", "Le", "Pham", "Hoang", "Phan", "Vu", "Dang", "Bui", "Do",
-    "Ngo", "Duong", "Dinh", "Ly", "Cao", "Chau", "Luu", "Thach", "Ton", "Tieu",
-    "Ma", "La", "Han", "Kim", "Lam", "Quach", "Diep", "Tung", "Huynh", "Trinh",
-    "Thai", "Tu", "Gia", "Hua", "Van", "Ho", "Hao", "Tao", "Luong", "Nghiem",
-    "Chung", "Khuat", "Hong", "Tuan", "Khanh", "Son", "Dao", "Tam", "Sinh", "Hien"
-];VN_FirstNames = ["An", "Bao", "Cuong", "Dung", "Hai", "Khoa", "Linh", "Minh", "Quang", "Tu"];
+    "Nguyen", "Tran", "Le", "Pham", "Hoang", "Phan", "Vu", "Dang", "Bui", "Ngo", "Duong", "Dinh", 
+	"Ly", "Luu", "Thach", "Ton", "Tieu", "Quach", "Diep", "Huynh", "Trinh", "Tu", "Gia", "Van", 
+	"Luong", "Nghiem", "Khanh", "Son", "Dao", "Tam", "Hien"
+];
+VN_FirstNames = ["An", "Bao", "Cuong", "Dung", "Hai", "Khoa", "Linh", "Minh", "Quang", "Tu"];
 
 private _fnc_saveNames = {
     params ["_names"];
