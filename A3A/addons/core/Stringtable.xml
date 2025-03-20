@@ -634,12 +634,14 @@
                 <Russian>ПТ-специалист</Russian>
                 <Korean>대전차전문가 모집</Korean>
                 <French>Recruter un spécialiste AT</French>
+                <Chinesesimp>招募重反坦克手</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_unit_recruit_aamissile_text">
                 <Original>Recruit AA Specialist</Original>
                 <Russian>Оператор ПЗРК</Russian>
                 <Korean>대공전문가 모집</Korean>
                 <French>Recruter un spécialiste en AA</French>
+                <Chinesesimp>招募AA兵</Chinesesimp>
             </Key>
         </Container>
         <Container name="dialog_generic">
@@ -696,6 +698,7 @@
                 <English>Radioman</English>
                 <Russian>Радист</Russian>
                 <Korean>무전병</Korean>
+                <Chinesesimp>无线电兵</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_ambient_sounds">
                 <Original>Enable Ambient Sounds</Original>
@@ -719,12 +722,14 @@
                 <English>Squadleader</English>
                 <Russian>Лидер команды</Russian>
                 <Korean>분대장</Korean>
+                <Chinesesimp>小队长</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_downed_help">
                 <Original>I am injured comrades! Help!</Original>
                 <English>I am injured comrades! Help!</English>
                 <Russian>Placeholder</Russian>
                 <Korean>Placeholder</Korean>
+                <Chinesesimp>我受伤了! 救命!</Chinesesimp>
             </Key>
         </Container>
         <Container name="credits_generic">
@@ -2739,18 +2744,22 @@
             <Key ID="STR_antistasi_journal_entry_text_Default_total">
                 <Original>Total Victory Selected&lt;br/&gt;To complete this win condition, capture all outposts, resources, factories, seaports, military bases, and airports, and maintain more population support than your enemies.</Original>
                 <Russian>Выбрана полная победа&lt;br/&gt;Чтобы выполнить это условие победы, захватите все аванпосты, ресурсы, фабрики, морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
+                <Chinesesimp>完全胜利&lt;br/&gt;要完成此胜利条件，请占领所有前哨、资源、工厂、海港、军事基地和机场，并保持比敌人更多的人口支持。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_economic">
                 <Original>Economic Victory Selected&lt;br/&gt;To complete this win condition, gain more than a set amount of currency.&lt;br/&gt;Calculated as: amount of resources on the map * 100,000&lt;br/&gt;Needed amount on current map : %1%2</Original>
                 <Russian>Экономическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, получите больше установленной суммы валюты.&lt;br/&gt;Рассчитывается как: количество ресурсов на карте * 100,000.&lt;br/&gt;Необходимая сумма на текущей карте : %1%2</Russian>
+                <Chinesesimp>经济胜利&lt;br/&gt;要完成此胜利条件，需要获得超过一定数量的货币。&lt;br/&gt;计算方式为：地图上的资源点数量 * 100,000&lt;br/&gt;当前地图上所需数量：%1%2</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_logistical">
                 <Original>Logistical Victory Selected&lt;br/&gt;To complete this win condition, capture all seaports, military bases, and airports, and maintain more population support than your enemies.</Original>
                 <Russian>Логистическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, захватите все морские порты, военные базы и аэропорты и поддерживайте большую поддержку населения, чем ваши враги.</Russian>
+                <Chinesesimp>后勤胜利&lt;br/&gt;要完成此胜利条件，请占领所有海港、军事基地和机场，并保持比敌人更多的人口支持。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Default_political">
                 <Original>Political Victory Selected&lt;br/&gt;To complete this win condition, get more than 75% of the population to support your cause.</Original>
                 <Russian>Политическая победа выбрана&lt;br/&gt;Чтобы выполнить это условие победы, заставьте более 75% населения поддержать ваше дело.</Russian>
+                <Chinesesimp>政治胜利&lt;br/&gt;要完成此胜利条件，需要获得超过 75% 的人口支持你的事业</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_Default_3">
                 <Original>Lose</Original>
@@ -2782,6 +2791,7 @@
                 <Russian>Заслуги</Russian>
                 <Korean>크레딧</Korean>
                 <French>Crédits</French>
+                <Chinesesimp>制作者名单</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_Credits_1">
                 <Original>Script Credits</Original>
@@ -2860,6 +2870,7 @@
                 <Russian>Основы Antistasi</Russian>
                 <Korean>일반 안티스타시</Korean>
                 <French>Notions d'antistasi</French>
+                <Chinesesimp>Antistasi基础</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_commander_options_name">
                 <Original>Commander Options</Original>
@@ -2867,6 +2878,7 @@
                 <Russian>Функции командира</Russian>
                 <Korean>지휘관 옵션</Korean>
                 <French>Options du commandant</French>
+                <Chinesesimp>指挥官选项</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_special_keys_name">
                 <Original>Special Keys</Original>
@@ -2874,6 +2886,7 @@
                 <Russian>Спец. клавиши</Russian>
                 <Korean>특수 키</Korean>
                 <French>Touches spéciales</French>
+                <Chinesesimp>特殊按键</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_features_detail_name">
                 <Original>Features Detail</Original>
@@ -2881,6 +2894,7 @@
                 <Russian>Возможности</Russian>
                 <Korean>기능 세부 정보</Korean>
                 <French>Détails des fonctionnalités</French>
+                <Chinesesimp>功能详情</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_ai_management_name">
                 <Original>AI Management</Original>
@@ -2888,6 +2902,7 @@
                 <Russian>Управление ИИ</Russian>
                 <Korean>AI 관리</Korean>
                 <French>Gestion de l'IA</French>
+                <Chinesesimp>AI管理</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_game_options_name">
                 <Original>Game Options</Original>
@@ -3381,333 +3396,335 @@
             </Key>
         </Container>
         <Container name="A3A_fn_Undercover">
-        <Key ID="STR_A3A_fn_undercover_canGoUn_already">
-            <Original>You are Undercover already.</Original>
-            <Italian>Sei già sotto copertura.</Italian>
-            <French>Vous êtes déja Incognito.</French>
-            <Korean>당신은 이미 위장 중입니다.</Korean>
-            <Russian>Вы уже под прикрытием</Russian>
-            <Czech>Už jsi v utajení.</Czech>
-            <Chinesesimp>你已经伪装过了</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_ai">
-            <Original>You cannot go Undercover while you are controlling AI!</Original>
-            <Italian>Non puoi andare Sotto Copertura mentre controlli l'IA!</Italian>
-            <French>Vous ne pouvez pas être Incognito alors que vous contrôlez l'IA!</French>
-            <Korean>AI를 조종하는 동안에는 위장을 할 수 없습니다!</Korean>
-            <Russian>Вы не можете быть под прикрытием, пока управляете ИИ!</Russian>
-            <Czech>Nemůžeš jít do utajení když ovládáš AI!</Czech>
-            <Chinesesimp>你无法在伪装模式下控制AI！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_close">
-            <Original>You cannot go Undercover near Airbases, Outposts, Seaports or Roadblocks.</Original>
-            <Italian>Non puoi andare Sotto Copertura vicino ad Aeroporti, Avamposti, Porti o Posti di blocco.</Italian>
-            <French>Vous ne pouvez pas être Incognito près des Aéroports, des Avants-postes, des Bases Maritimes ou des Barrages routiers.</French>
-            <Korean>공항, 전초기지, 항구 또는 검문소 근처에서는 위장할 수 없습니다.</Korean>
-            <Russian>Вы не можете быть под прикрытием вблизи авиабаз, аванпостов, морских портов или блокпостов.</Russian>
-            <Czech>Nemůžeš jít do utajení poblíž Letišť, Stanovišť, Přístavů a Zátarasů.</Czech>
-            <Chinesesimp>你无法在机场, 哨站, 港口以及路障附近进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_nociv">
-            <Original>You are not in a civilian vehicle.</Original>
-            <Italian>Non sei in un veicolo civile</Italian>
-            <French>Vous n'êtes pas dans un véhicule civile.</French>
-            <Korean>당신은 민간 차량 안에 있지 않습니다.</Korean>
-            <Russian>Вы не в гражданском транспорте.</Russian>
-            <Czech>Nejsi v civilním vozidle.</Czech>
-            <Chinesesimp>你当前不在一辆民用车辆内</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_lowciv">
-            <Original>Undercover not allowed in current civ template.</Original>
-            <Russian>Вы не можете быть под прикрытием в текущем гражданском шаблоне</Russian>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_helmet">
-            <Original>%1&lt;br/&gt;Wearing a helmet.</Original>
-            <Italian>%1&lt;br/&gt;Indossa un elmetto.</Italian>
-            <French>%1&lt;br/&gt;Port d'un casque.</French>
-            <Korean>%1&lt;br/&gt;헬멧 착용 중.</Korean>
-            <Russian>%1&lt;br/&gt;В шлеме.</Russian>
-            <Czech>%1&lt;br/&gt;Máš na sobě helmu.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;正戴着一顶军用头盔</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_naked">
-            <Original>%1&lt;br/&gt;Being naked. Put some civilian clothes on, Petros can't bear to watch.</Original>
-            <Italian>%1&lt;br/&gt;Nudo? Mettiti dei vestiti civili, Petros non riesce a guardarti.</Italian>
-            <French>%1&lt;br/&gt;Être nu. Mettez des vêtements civils, Petros ne supporte pas de regarder.</French>
-            <Korean>%1&lt;br/&gt;알몸 상태. 민간인 복장을 착용하십시오, 페트로스가 차마 눈 뜨고 볼 수가 없어합니다.</Korean>
-            <Russian>%1&lt;br/&gt;Голый. Надень что-нибудь гражданское, Петросу невыносимо на это смотреть.</Russian>
-            <Czech>%1&lt;br/&gt;Jsi nahý. Vezmi si na sebe nějaké civilní oblečení, Petros na toto nesnese pohled.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;决定啥都不穿. 快拿点平民的衣服套上, Petros都快看不下去了.</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_ngv">
-            <Original>%1&lt;br/&gt;Wearing NVGs.</Original>
-            <Italian>%1&lt;br/&gt;Indossando NVG.</Italian>
-            <French>%1&lt;br/&gt;Porte des NVGs.</French>
-            <Korean>%1&lt;br/&gt;야시경 착용 중.</Korean>
-            <Russian>%1&lt;br/&gt;Одето ПНВ.</Russian>
-            <Czech>%1&lt;br/&gt;Máš na sobě noktovizor.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;正穿戴这一顶军用夜视仪</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_rope">
-            <Original>%1&lt;br/&gt;Holding tow ropes.</Original>
-            <Italian>%1&lt;br/&gt;Portando funi da traino.</Italian>
-            <French>%1&lt;br/&gt;Tient un treuil de remorquage.</French>
-            <Korean>%1&lt;br/&gt;견인줄 잡는 중.</Korean>
-            <Russian>%1&lt;br/&gt;В руках трос.</Russian>
-            <Czech>%1&lt;br/&gt;Držíš tažné lano.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;手中正拿着拖车绳索</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_uniform">
-            <Original>%1&lt;br/&gt;Wearing a suspicious uniform.</Original>
-            <Italian>%1&lt;br/&gt;Indossando una uniforme sospetta.</Italian>
-            <French>%1&lt;br/&gt;Porte un uniforme suspect.</French>
-            <Korean>%1&lt;br/&gt;수상한 복장 착용 중.</Korean>
-            <Russian>%1&lt;br/&gt;Одета подозрительная одежда.</Russian>
-            <Czech>%1&lt;br/&gt;Máš na sobě podezřelou uniformu.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;身着可疑制服</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_vest">
-            <Original>%1&lt;br/&gt;Wearing a vest.</Original>
-            <Italian>%1&lt;br/&gt;Indossando gibernaggi.</Italian>
-            <French>%1&lt;br/&gt;Porte une veste.</French>
-            <Korean>%1&lt;br/&gt;조끼 착용 중.</Korean>
-            <Russian>%1&lt;br/&gt;Одет бронежилет.</Russian>
-            <Czech>%1&lt;br/&gt;Máš na sobě vestu.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;身上套有军用背心</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_weapon">
-            <Original>%1&lt;br/&gt;A weapon is visible.</Original>
-            <Italian>%1&lt;br/&gt;Un'arma è visibile.</Italian>
-            <French>%1&lt;br/&gt;Une arme est visible.</French>
-            <Korean>%1&lt;br/&gt;무기 보임.</Korean>
-            <Russian>%1&lt;br/&gt;Видно оружие.</Russian>
-            <Czech>%1&lt;br/&gt;Zbraň je viditelná.</Czech>
-            <Chinesesimp>%1&lt;br/&gt;被目视到身上持有武器</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reported1">
-            <Original>This vehicle has been reported to the enemy. Change or renew your vehicle in the Garage to go Undercover.</Original>
-            <Italian>Questo veicolo è stato riportato al nemico. Cambialo o rinnovalo nel Garage per andare Sotto Copertura.</Italian>
-            <French>Ce véhicule a été signalé à l'ennemi. Changez-en ou prenez-en un nouvel exemplaire au garage pour devenir Icognito.</French>
-            <Korean>이 차량은 적에게 보고되었습니다. 차고에서 차량을 바꾸거나 재도색하여 위장을 하십시오.</Korean>
-            <Russian>Об этом транспортном средстве стало известно врагу. Смените или обновите свой автомобиль в гараже, чтобы действовать под прикрытием.</Russian>
-            <Czech>Toto vozidlo bylo nahlášeno nepříteli. Změň nebo obnov bozidlo v Garáži aby jsi mohl jít do utajení.</Czech>
-            <Chinesesimp>该载具已经被上报给敌人.在车库中更变或者更新你的车辆以便再次进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_reported2">
-            <Original>You have been reported in the last 30 minutes.</Original>
-            <Italian>Sei stato riportato negli ultimi 30 minuti, quindi non puoi andare Sotto Copertura.</Italian>
-            <French>Vous avez été signalé dans les 30 dernières minutes, de fait vous ne pouvez pas devenir Incognito.</French>
-            <Korean>지난 30분 동안 신고를 당했기 때문에 위장할 수 없습니다.</Korean>
-            <Russian>О вас сообщили за последние 30 минут, поэтому вы не можете работать под прикрытием.</Russian>
-            <Czech>Byl jsi nahlášen v posledních 30 minutách tudíž nemůžeš jít do utajení.</Czech>
-            <Chinesesimp>在过去的30分钟内你被上报给敌人因此你暂时无法进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_spotted">
-            <Original>You cannot go Undercover while enemies are spotting you.</Original>
-            <Italian>Non puoi andare Sotto Copertura mentre i nemici ti stanno avvistando.</Italian>
-            <French>Vous ne pouvez pas devenir Incognito pendant que des ennemis vous observent.</French>
-            <Korean>적이 당신을 발견한 동안에는 위장을 할 수 없습니다.</Korean>
-            <Russian>Вы не можете действовать под прикрытием, пока враги вас замечают.</Russian>
-            <Czech>Nemůžeš být v utajení když tě nepřátelé pozorují.</Czech>
-            <Chinesesimp>在敌人发现你的情况下你无法进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_towrope">
-            <Original>This vehicle cannot go undercover while it has tow ropes attached.</Original>
-            <Italian>Questo veicolo non può andare sotto copertura mentre ha delle funi da traino attaccate.</Italian>
-            <French>Ce véhicule ne peut pas devenir Incognito pendant un remorquage.</French>
-            <Korean>이 차량은 견인줄이 걸려 있는 동안에는 위장이 불가능합니다.</Korean>
-            <Russian>Этот автомобиль не может передвигаться под прикрытием, пока к нему прикреплены буксирные тросы.</Russian>
-            <Czech>Tohle vozidlo nemůže být v utajení když má připojené tažné lano.</Czech>
-            <Chinesesimp>在载具拖车绳索调用的情况下该载具无法进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_canGoUn_no_while">
-            <Original>You cannot go Undercover while:&lt;br/&gt;</Original>
-            <Italian>Non puoi andare Sotto Copertura mentre:&lt;br/&gt;</Italian>
-            <French>Vous ne pouvez pas devenir Incognito pendant :&lt;br/&gt;</French>
-            <Korean>다음 사항이 있는 동안에는 위장을 할 수 없습니다:&lt;br/&gt;</Korean>
-            <Russian>Вы не можете работать под прикрытием, пока:&lt;br/&gt;</Russian>
-            <Czech>Nemůžeš být v utajení když:&lt;br/&gt;</Czech>
-            <Chinesesimp>你不能进行伪装，你正在:&lt;br/&gt;</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_detect_airspace">
-            <Original>Unidentified aircraft, you have violated the restricted airspace of %1!</Original>
-            <Italian>Velivolo non identificato, hai violato lo spazio aereo di %1!</Italian>
-            <French>Vous avez enfreint l'espace aérien de %1 !</French>
-            <Korean>미확인 항공기, 넌 %1 소속의 영공을 침범했다!</Korean>
-            <Russian>Неопознанный самолет, вы нарушили воздушное пространство %1!</Russian>
-            <Czech>Neidentifikované letadlo, narušil jsi vzdušný prostor %1!</Czech>
-            <Chinesesimp>不明飞行物,你已经侵犯了%1的空中管制区域</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_detect_outp">
-            <Original>An enemy outpost or seaport has detected you!</Original>
-            <Italian>Un avamposto o un porto nemico ti hanno avvistato!</Italian>
-            <French>Un avant-poste ou port ennemi vous a detecté !</French>
-            <Korean>적의 전초기지나 항구가 당신을 발견했습니다!</Korean>
-            <Russian>Вражеский аванпост или морской порт обнаружил вас!</Russian>
-            <Czech>Nepřátelské stanoviště nebo přístav tě zpozoroval!</Czech>
-            <Chinesesimp>敌人的哨站或港口已经察觉到你了！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_detect_milb">
-            <Original>An enemy military base has detected you!</Original>
-            <Russian>Вас обнаружила вражеская военная база</Russian>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_detect_roadb">
-            <Original>An enemy roadblock has detected you!</Original>
-            <Italian>Un posto di blocco nemico ti ha avvistato!</Italian>
-            <French>Un barrage routier ennemi vous a detecté !</French>
-            <Korean>적의 검문소가 당신을 발견했습니다!</Korean>
-            <Russian>Вас обнаружил вражеский блокпост!</Russian>
-            <Czech>Nepřátelský zátaras tě zpozoroval!</Czech>
-            <Chinesesimp>敌人的阻击路障已经察觉到你了！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_entered_veh1">
-            <Original>You entered a non civilian vehicle!</Original>
-            <Italian>Sei salito su un veicolo non civile!</Italian>
-            <French>Vous êtes entré dans un véhicule non civil !</French>
-            <Korean>민간 차량이 아닌 차량에 탑승했습니다!</Korean>
-            <Russian>Вы сели в негражданский автомобиль!</Russian>
-            <Czech>Nastoupil jsi do necivilního vozidla!</Czech>
-            <Chinesesimp>你进入了一辆非民用车辆！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_entered_veh2">
-            <Original>You entered a reported vehicle!</Original>
-            <Italian>Sei salito su un veicolo riportato!</Italian>
-            <French>Vous êtes entré dans un véhicule recherché !</French>
-            <Korean>수배된 차량에 탑승했습니다!</Korean>
-            <Russian>Вы сели в скомпрометированный автомобиль!</Russian>
-            <Czech>Nastoupil jsi do hledaného vozidla!</Czech>
-            <Chinesesimp>你进入了一辆已经被上报的车辆！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_Error">
-            <Original>Unknown error occured in undercover execution routine!</Original>
-            <Italian>Si è verificato un errore sconosciuto durante l'esecuzione della routine di copertura!</Italian>
-            <French>Erreur inconnue survenue pendant le processus de devenir Incognito !</French>
-            <Korean>위장 실행 루틴에서 알 수 없는 오류가 발생했습니다!</Korean>
-            <Russian>При скрытии произошла неизвестная ошибка!</Russian>
-            <Czech>Došlo k neznámé chybě při přepínání statusu do "v utajení"!</Czech>
-            <Chinesesimp>进行伪装的过程中出现了未知错误</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_leftveh">
-            <Original>You left your vehicle and you are still on the Wanted List!</Original>
-            <Italian>Hai abbandonato il tuo veicolo e sei ancora Ricercato!</Italian>
-            <French>Vous avez quitté votre véhicule et êtes toujours recherchés !</French>
-            <Korean>당신은 차량에서 내렸지만 여전히 수배 목록에 있습니다!</Korean>
-            <Russian>Вы оставили свой автомобиль и все еще находитесь в розыске!</Russian>
-            <Czech>Opustil jsi vozidlo ale stále jsi na listině hledaných!</Czech>
-            <Chinesesimp>你已从你的车辆中离开然而你仍然还在通缉名单上！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_distance">
-            <Original>You went too far away from any roads and have been spotted!</Original>
-            <Italian>Ti sei allontanato troppo dalle strade e sei stato avvistato!</Italian>
-            <French>Vous vous êtes trop éloigné des routes et vous avez été repéré !</French>
-            <Korean>도로에서 너무 멀리 떨어졌기 때문에 발견되었습니다!</Korean>
-            <Russian>Вы ушли слишком далеко от каких-либо дорог и были замечены!</Russian>
-            <Czech>Sjel jsi příliš daleko z cesty a byl jsi zpozorován!</Czech>
-            <Chinesesimp>你因过度开离任何公路而遭到了举报</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_explo">
-            <Original>Explosives have been spotted on your vehicle!</Original>
-            <Italian>Gli esplosivi sono stati visti sul tuo veicolo!</Italian>
-            <French>Des Explosifs ont étés repérés sur votre véhicule !</French>
-            <Korean>차량에서 폭발물이 발견되었습니다!</Korean>
-            <Russian>В вашем автомобиле обнаружена взрывчатка!</Russian>
-            <Chinesesimp>你车上的爆炸物被发现了！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_reason_1">
-            <Original>You cannot stay Undercover while:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a mil uniform!</Original>
-            <Italian>Non puoi rimanere Sotto Copertura mentre:&lt;br/&gt;&lt;br/&gt;Un'arma è visibile&lt;br/&gt;Indossi del gibernaggio&lt;br/&gt;Indossi un elmetto&lt;br/&gt;Indossi NVG&lt;br/&gt;Indossi un'uniforme militare!</Italian>
-            <French>Vous ne pouvez pas rester Incognito pendant que :&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez une veste&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des LVN&lt;br/&gt;Vous portez un uniforme militaire !</French>
-            <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!</Korean>
-            <Russian>Вы не можете оставаться под прикрытием, пока:&lt;br/&gt;&lt;br/&gt;Видно оружие&lt;br/&gt;Одет бронежилет&lt;br/&gt;Одет бронежилет&lt;br/&gt;Одет ПНВ&lt;br/&gt;Одета военная форма!</Russian>
-            <Czech>Nemůžeš zůstat v utajení pokud:&lt;br/&gt;&lt;br/&gt;Zbraň je viditelná&lt;br/&gt;Máš na sobě vestu&lt;br/&gt;Máš na sobě helmu&lt;br/&gt;Máš na sobě noktovizor&lt;br/&gt;Máš na sobě vojenskou uniformu!</Czech>
-            <Chinesesimp>你不能进行伪装，因为你:&lt;br/&gt;&lt;br/&gt;被目视到身持武器&lt;br/&gt;正身着军用背心&lt;br/&gt;正穿戴一顶军用头盔&lt;br/&gt;正穿戴一顶军用夜视仪&lt;br/&gt;正身着军用制服！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_reason_2">
-            <Original>You cannot stay Undercover while showing:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a mil uniform&lt;br/&gt;&lt;br/&gt;The enemy added you to their Wanted List!</Original>
-            <Italian>Non puoi rimanere Sotto Copertura mentre:&lt;br/&gt;&lt;br/&gt;Un'arma è visibile&lt;br/&gt;Indossi del gibernaggio&lt;br/&gt;Indossi un elmetto&lt;br/&gt;Indossi NVG&lt;br/&gt;Indossi un'uniforme militare!&lt;br/&gt;Sei ricercato dal nemico!</Italian>
-            <French>Vous ne pouvez pas rester Incognito pendant que vous montrez :&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez une veste&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des LVN&lt;br/&gt;Vous portez un uniforme militaire !</French>
-            <Korean>다음과 같은 경우가 보여지는 동안에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
-            <Russian>Вы не можете оставаться под прикрытием, демонстрируя:&lt;br/&gt;&lt;br/&gt;Видно оружие&lt;br/&gt;Одет бронежилет&lt;br/&gt;Одет шлем&lt;br/&gt;Одет ПНВ&lt;br/&gt;Одета военная форма&lt;br/&gt;&lt;br/&gt;Вы в розыске!</Russian>
-            <Czech>Nemůžeš zůstat v utajení pokud:&lt;br/&gt;&lt;br/&gt;Zbraň je viditelná&lt;br/&gt;Máš na sobě vestu&lt;br/&gt;Máš na sobě helmu&lt;br/&gt;Máš na sobě noktovizor&lt;br/&gt;Máš na sobě vojenskou uniformu&lt;br/&gt;&lt;br/&gt;Nepřítel tě přidal na listinu hledaných!</Czech>
-            <Chinesesimp>你不能进行伪装，因为你:&lt;br/&gt;&lt;br/&gt;被目视到身持武器&lt;br/&gt;正身着军用背心&lt;br/&gt;正穿戴一顶军用头盔&lt;br/&gt;正穿戴一顶军用夜视仪&lt;br/&gt;正身着军用制服！&lt;br/&gt;敌人已经把你拉入他们的通缉名单！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_reason_3">
-            <Original>You cannot stay Undercover while healing a compromised resistance member!</Original>
-            <Italian>Non puoi rimanere Sotto Copertura mentre curi un membro della resistenza comprommesso!</Italian>
-            <French>Vous ne pouvez pas rester Incognito alors que vous soignez un membre de la résistance compromis !</French>
-            <Korean>부상을 입은 저항군을 치료하는 동안에는 위장을 유지할 수 없습니다!</Korean>
-            <Russian>Вы не можете оставаться под прикрытием, исцеляя члена сопротивления!</Russian>
-            <Czech>Nemůžeš zůstat v utajení když léčíš prozrazeného člena odboje!</Czech>
-            <Chinesesimp>明目张胆的救助反抗军成员使得你退出了伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_reason_4">
-            <Original>You cannot stay Undercover while healing a compromised resistance member&lt;br/&gt;&lt;br/&gt;The enemy added you to their Wanted List!</Original>
-            <Italian>Non puoi rimanere Sotto Copertura mentre curi un membro della resistenza comprommesso!&lt;br/&gt;&lt;br/&gt;Il nemico ti ha aggiunto alla Lista dei Ricercati!</Italian>
-            <French>Vous ne pouvez pas rester Incognito alors que vous soignez un membre de la résistance compromis !&lt;br/&gt;&lt;br/&gt;L'ennemi vous a ajouté à leur liste de gens recherchés !</French>
-            <Korean>부상을 입은 저항군을 치료하는 동안에는 위장을 유지할 수 없습니다!&lt;br/&gt;&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
-            <Russian>Вы не можете оставаться под прикрытием, пока лечите скомпрометированного члена сопротивления&lt;br/&gt;&lt;br/&gt;Враг добавил вас в свой список разыскиваемых!</Russian>
-            <Czech>Nemůžeš zůstat v utajení když léčíš prozrazeného člena odboje&lt;br/&gt;&lt;br/&gt;Nepřítel tě přidal na listinu hledaných!</Czech>
-            <Chinesesimp>明目张胆的救助反抗军成员使得你退出了伪装&lt;br/&gt;&lt;br/&gt;敌人已经把你拉入他们的通缉名单！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_towrope1">
-            <Original>You cannot be undercover while tow ropes are attached to your vehicle!</Original>
-            <Italian>Non puoi andare sotto copertura mentre hai delle funi da traino attaccate al tuo veicolo.</Italian>
-            <French>Vous ne pouvez pas être Incognito pendant qu'un treuil de remorquage est attaché à votre véhicule !</French>
-            <Korean>당신의 차량에 견인줄이 걸려 있는 동안에는 위장이 불가능합니다!</Korean>
-            <Russian>Вы не можете находиться под прикрытием, пока к вашему автомобилю прикреплены буксирные тросы!</Russian>
-            <Czech>Nemůžeš být v utajení když tažné lano je připojeno k tvému vozidlu!</Czech>
-            <Chinesesimp>在载具被其他车辆拖动的情况下该载具无法进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_no_towrope2">
-            <Original>You cannot be undercover and use tow ropes!</Original>
-            <Italian>Non puoi andare sotto copertura e usare le funi da traino!</Italian>
-            <French>Vous ne pouvez pas être Incognito et utiliser un treuil de remorquage !</French>
-            <Korean>견인줄을 사용하면서 위장을 할 순 없습니다!</Korean>
-            <Russian>Вы не можете работать под прикрытием и использовать буксирные тросы!</Russian>
-            <Czech>V utajení nemůžeš používat tažné lano!</Czech>
-            <Chinesesimp>你不能在伪装模式下使用拖车绳索！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_off">
-            <Original>Undercover OFF</Original>
-            <French>Incognito OFF</French>
-            <Korean>위장 끔</Korean>
-            <Russian>Скрытность ВЫКЛ</Russian>
-            <Chinesesimp>退出伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_on">
-            <Original>Undercover ON</Original>
-            <French>Incognito ON</French>
-            <Korean>위장 켬</Korean>
-            <Russian>Скрытность ВКЛ</Russian>
-            <Chinesesimp>进行伪装</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_reported">
-            <Original>You have been reported or spotted by the enemy!</Original>
-            <Italian>Sei stato riportato o avvistato dal nemico!</Italian>
-            <French>Vous avez été signalé ou détecté par l'ennemi !</French>
-            <Korean>적에게 신고를 받았거나 발견되었습니다!</Korean>
-            <Russian>Враг сообщил о вас или заметил вас!</Russian>
-            <Czech>Byl jsi nahlášen nebo zpozorován nepřítelem!</Czech>
-            <Chinesesimp>你已经被敌人举报或者发现了！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_goUn_trespass">
-            <Original>You have trespassed on an enemy airbase!</Original>
-            <Italian>Hai sconfinato in una base nemica!</Italian>
-            <French>Vous vous êtes introduit sur une base aérienne ennemie !</French>
-            <Korean>적의 공군 기지에 무단 침입했습니다!</Korean>
-            <Russian>Вы вторглись на территорию вражеской авиабазы!</Russian>
-            <Czech>Vkročil jsi na nepřátelské letiště!</Czech>
-            <Chinesesimp>你已经非法入侵敌人的空军基地！</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_fn_undercover_title">
-            <Original>Undercover</Original>
-            <Italian>Sotto Copertura</Italian>
-            <French>Incognito</French>
-            <Korean>위장</Korean>
-            <Russian>Под прикрытием</Russian>
-            <Czech>V utajení</Czech>
-            <Chinesesimp>伪装</Chinesesimp>
-        </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_already">
+                <Original>You are Undercover already.</Original>
+                <Italian>Sei già sotto copertura.</Italian>
+                <French>Vous êtes déja Incognito.</French>
+                <Korean>당신은 이미 위장 중입니다.</Korean>
+                <Russian>Вы уже под прикрытием</Russian>
+                <Czech>Už jsi v utajení.</Czech>
+                <Chinesesimp>你已经伪装过了</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_ai">
+                <Original>You cannot go Undercover while you are controlling AI!</Original>
+                <Italian>Non puoi andare Sotto Copertura mentre controlli l'IA!</Italian>
+                <French>Vous ne pouvez pas être Incognito alors que vous contrôlez l'IA!</French>
+                <Korean>AI를 조종하는 동안에는 위장을 할 수 없습니다!</Korean>
+                <Russian>Вы не можете быть под прикрытием, пока управляете ИИ!</Russian>
+                <Czech>Nemůžeš jít do utajení když ovládáš AI!</Czech>
+                <Chinesesimp>你无法在伪装模式下控制AI！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_close">
+                <Original>You cannot go Undercover near Airbases, Outposts, Seaports or Roadblocks.</Original>
+                <Italian>Non puoi andare Sotto Copertura vicino ad Aeroporti, Avamposti, Porti o Posti di blocco.</Italian>
+                <French>Vous ne pouvez pas être Incognito près des Aéroports, des Avants-postes, des Bases Maritimes ou des Barrages routiers.</French>
+                <Korean>공항, 전초기지, 항구 또는 검문소 근처에서는 위장할 수 없습니다.</Korean>
+                <Russian>Вы не можете быть под прикрытием вблизи авиабаз, аванпостов, морских портов или блокпостов.</Russian>
+                <Czech>Nemůžeš jít do utajení poblíž Letišť, Stanovišť, Přístavů a Zátarasů.</Czech>
+                <Chinesesimp>你无法在机场, 哨站, 港口以及路障附近进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_nociv">
+                <Original>You are not in a civilian vehicle.</Original>
+                <Italian>Non sei in un veicolo civile</Italian>
+                <French>Vous n'êtes pas dans un véhicule civile.</French>
+                <Korean>당신은 민간 차량 안에 있지 않습니다.</Korean>
+                <Russian>Вы не в гражданском транспорте.</Russian>
+                <Czech>Nejsi v civilním vozidle.</Czech>
+                <Chinesesimp>你当前不在一辆民用车辆内</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_lowciv">
+                <Original>Undercover not allowed in current civ template.</Original>
+                <Russian>Вы не можете быть под прикрытием в текущем гражданском шаблоне</Russian>
+                <Chinesesimp>当前平民类型不允许伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_helmet">
+                <Original>%1&lt;br/&gt;Wearing a helmet.</Original>
+                <Italian>%1&lt;br/&gt;Indossa un elmetto.</Italian>
+                <French>%1&lt;br/&gt;Port d'un casque.</French>
+                <Korean>%1&lt;br/&gt;헬멧 착용 중.</Korean>
+                <Russian>%1&lt;br/&gt;В шлеме.</Russian>
+                <Czech>%1&lt;br/&gt;Máš na sobě helmu.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;正戴着一顶军用头盔</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_naked">
+                <Original>%1&lt;br/&gt;Being naked. Put some civilian clothes on, Petros can't bear to watch.</Original>
+                <Italian>%1&lt;br/&gt;Nudo? Mettiti dei vestiti civili, Petros non riesce a guardarti.</Italian>
+                <French>%1&lt;br/&gt;Être nu. Mettez des vêtements civils, Petros ne supporte pas de regarder.</French>
+                <Korean>%1&lt;br/&gt;알몸 상태. 민간인 복장을 착용하십시오, 페트로스가 차마 눈 뜨고 볼 수가 없어합니다.</Korean>
+                <Russian>%1&lt;br/&gt;Голый. Надень что-нибудь гражданское, Петросу невыносимо на это смотреть.</Russian>
+                <Czech>%1&lt;br/&gt;Jsi nahý. Vezmi si na sebe nějaké civilní oblečení, Petros na toto nesnese pohled.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;决定啥都不穿. 快拿点平民的衣服套上, Petros都快看不下去了.</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_ngv">
+                <Original>%1&lt;br/&gt;Wearing NVGs.</Original>
+                <Italian>%1&lt;br/&gt;Indossando NVG.</Italian>
+                <French>%1&lt;br/&gt;Porte des NVGs.</French>
+                <Korean>%1&lt;br/&gt;야시경 착용 중.</Korean>
+                <Russian>%1&lt;br/&gt;Одето ПНВ.</Russian>
+                <Czech>%1&lt;br/&gt;Máš na sobě noktovizor.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;正穿戴这一顶军用夜视仪</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_rope">
+                <Original>%1&lt;br/&gt;Holding tow ropes.</Original>
+                <Italian>%1&lt;br/&gt;Portando funi da traino.</Italian>
+                <French>%1&lt;br/&gt;Tient un treuil de remorquage.</French>
+                <Korean>%1&lt;br/&gt;견인줄 잡는 중.</Korean>
+                <Russian>%1&lt;br/&gt;В руках трос.</Russian>
+                <Czech>%1&lt;br/&gt;Držíš tažné lano.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;手中正拿着拖车绳索</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_uniform">
+                <Original>%1&lt;br/&gt;Wearing a suspicious uniform.</Original>
+                <Italian>%1&lt;br/&gt;Indossando una uniforme sospetta.</Italian>
+                <French>%1&lt;br/&gt;Porte un uniforme suspect.</French>
+                <Korean>%1&lt;br/&gt;수상한 복장 착용 중.</Korean>
+                <Russian>%1&lt;br/&gt;Одета подозрительная одежда.</Russian>
+                <Czech>%1&lt;br/&gt;Máš na sobě podezřelou uniformu.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;身着可疑制服</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_vest">
+                <Original>%1&lt;br/&gt;Wearing a vest.</Original>
+                <Italian>%1&lt;br/&gt;Indossando gibernaggi.</Italian>
+                <French>%1&lt;br/&gt;Porte une veste.</French>
+                <Korean>%1&lt;br/&gt;조끼 착용 중.</Korean>
+                <Russian>%1&lt;br/&gt;Одет бронежилет.</Russian>
+                <Czech>%1&lt;br/&gt;Máš na sobě vestu.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;身上套有军用背心</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reason_weapon">
+                <Original>%1&lt;br/&gt;A weapon is visible.</Original>
+                <Italian>%1&lt;br/&gt;Un'arma è visibile.</Italian>
+                <French>%1&lt;br/&gt;Une arme est visible.</French>
+                <Korean>%1&lt;br/&gt;무기 보임.</Korean>
+                <Russian>%1&lt;br/&gt;Видно оружие.</Russian>
+                <Czech>%1&lt;br/&gt;Zbraň je viditelná.</Czech>
+                <Chinesesimp>%1&lt;br/&gt;被目视到身上持有武器</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reported1">
+                <Original>This vehicle has been reported to the enemy. Change or renew your vehicle in the Garage to go Undercover.</Original>
+                <Italian>Questo veicolo è stato riportato al nemico. Cambialo o rinnovalo nel Garage per andare Sotto Copertura.</Italian>
+                <French>Ce véhicule a été signalé à l'ennemi. Changez-en ou prenez-en un nouvel exemplaire au garage pour devenir Icognito.</French>
+                <Korean>이 차량은 적에게 보고되었습니다. 차고에서 차량을 바꾸거나 재도색하여 위장을 하십시오.</Korean>
+                <Russian>Об этом транспортном средстве стало известно врагу. Смените или обновите свой автомобиль в гараже, чтобы действовать под прикрытием.</Russian>
+                <Czech>Toto vozidlo bylo nahlášeno nepříteli. Změň nebo obnov bozidlo v Garáži aby jsi mohl jít do utajení.</Czech>
+                <Chinesesimp>该载具已经被上报给敌人.在车库中更变或者更新你的车辆以便再次进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_reported2">
+                <Original>You have been reported in the last 30 minutes.</Original>
+                <Italian>Sei stato riportato negli ultimi 30 minuti, quindi non puoi andare Sotto Copertura.</Italian>
+                <French>Vous avez été signalé dans les 30 dernières minutes, de fait vous ne pouvez pas devenir Incognito.</French>
+                <Korean>지난 30분 동안 신고를 당했기 때문에 위장할 수 없습니다.</Korean>
+                <Russian>О вас сообщили за последние 30 минут, поэтому вы не можете работать под прикрытием.</Russian>
+                <Czech>Byl jsi nahlášen v posledních 30 minutách tudíž nemůžeš jít do utajení.</Czech>
+                <Chinesesimp>在过去的30分钟内你被上报给敌人因此你暂时无法进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_spotted">
+                <Original>You cannot go Undercover while enemies are spotting you.</Original>
+                <Italian>Non puoi andare Sotto Copertura mentre i nemici ti stanno avvistando.</Italian>
+                <French>Vous ne pouvez pas devenir Incognito pendant que des ennemis vous observent.</French>
+                <Korean>적이 당신을 발견한 동안에는 위장을 할 수 없습니다.</Korean>
+                <Russian>Вы не можете действовать под прикрытием, пока враги вас замечают.</Russian>
+                <Czech>Nemůžeš být v utajení když tě nepřátelé pozorují.</Czech>
+                <Chinesesimp>在敌人发现你的情况下你无法进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_towrope">
+                <Original>This vehicle cannot go undercover while it has tow ropes attached.</Original>
+                <Italian>Questo veicolo non può andare sotto copertura mentre ha delle funi da traino attaccate.</Italian>
+                <French>Ce véhicule ne peut pas devenir Incognito pendant un remorquage.</French>
+                <Korean>이 차량은 견인줄이 걸려 있는 동안에는 위장이 불가능합니다.</Korean>
+                <Russian>Этот автомобиль не может передвигаться под прикрытием, пока к нему прикреплены буксирные тросы.</Russian>
+                <Czech>Tohle vozidlo nemůže být v utajení když má připojené tažné lano.</Czech>
+                <Chinesesimp>在载具拖车绳索调用的情况下该载具无法进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_canGoUn_no_while">
+                <Original>You cannot go Undercover while:&lt;br/&gt;</Original>
+                <Italian>Non puoi andare Sotto Copertura mentre:&lt;br/&gt;</Italian>
+                <French>Vous ne pouvez pas devenir Incognito pendant :&lt;br/&gt;</French>
+                <Korean>다음 사항이 있는 동안에는 위장을 할 수 없습니다:&lt;br/&gt;</Korean>
+                <Russian>Вы не можете работать под прикрытием, пока:&lt;br/&gt;</Russian>
+                <Czech>Nemůžeš být v utajení když:&lt;br/&gt;</Czech>
+                <Chinesesimp>你不能进行伪装，你正在:&lt;br/&gt;</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_detect_airspace">
+                <Original>Unidentified aircraft, you have violated the restricted airspace of %1!</Original>
+                <Italian>Velivolo non identificato, hai violato lo spazio aereo di %1!</Italian>
+                <French>Vous avez enfreint l'espace aérien de %1 !</French>
+                <Korean>미확인 항공기, 넌 %1 소속의 영공을 침범했다!</Korean>
+                <Russian>Неопознанный самолет, вы нарушили воздушное пространство %1!</Russian>
+                <Czech>Neidentifikované letadlo, narušil jsi vzdušný prostor %1!</Czech>
+                <Chinesesimp>不明飞行物,你已经侵犯了%1的空中管制区域</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_detect_outp">
+                <Original>An enemy outpost or seaport has detected you!</Original>
+                <Italian>Un avamposto o un porto nemico ti hanno avvistato!</Italian>
+                <French>Un avant-poste ou port ennemi vous a detecté !</French>
+                <Korean>적의 전초기지나 항구가 당신을 발견했습니다!</Korean>
+                <Russian>Вражеский аванпост или морской порт обнаружил вас!</Russian>
+                <Czech>Nepřátelské stanoviště nebo přístav tě zpozoroval!</Czech>
+                <Chinesesimp>敌人的哨站或港口已经察觉到你了！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_detect_milb">
+                <Original>An enemy military base has detected you!</Original>
+                <Russian>Вас обнаружила вражеская военная база</Russian>
+                <Chinesesimp>敌方军事基地已发现您！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_detect_roadb">
+                <Original>An enemy roadblock has detected you!</Original>
+                <Italian>Un posto di blocco nemico ti ha avvistato!</Italian>
+                <French>Un barrage routier ennemi vous a detecté !</French>
+                <Korean>적의 검문소가 당신을 발견했습니다!</Korean>
+                <Russian>Вас обнаружил вражеский блокпост!</Russian>
+                <Czech>Nepřátelský zátaras tě zpozoroval!</Czech>
+                <Chinesesimp>敌人的阻击路障已经察觉到你了！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_entered_veh1">
+                <Original>You entered a non civilian vehicle!</Original>
+                <Italian>Sei salito su un veicolo non civile!</Italian>
+                <French>Vous êtes entré dans un véhicule non civil !</French>
+                <Korean>민간 차량이 아닌 차량에 탑승했습니다!</Korean>
+                <Russian>Вы сели в негражданский автомобиль!</Russian>
+                <Czech>Nastoupil jsi do necivilního vozidla!</Czech>
+                <Chinesesimp>你进入了一辆非民用车辆！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_entered_veh2">
+                <Original>You entered a reported vehicle!</Original>
+                <Italian>Sei salito su un veicolo riportato!</Italian>
+                <French>Vous êtes entré dans un véhicule recherché !</French>
+                <Korean>수배된 차량에 탑승했습니다!</Korean>
+                <Russian>Вы сели в скомпрометированный автомобиль!</Russian>
+                <Czech>Nastoupil jsi do hledaného vozidla!</Czech>
+                <Chinesesimp>你进入了一辆已经被上报的车辆！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_Error">
+                <Original>Unknown error occured in undercover execution routine!</Original>
+                <Italian>Si è verificato un errore sconosciuto durante l'esecuzione della routine di copertura!</Italian>
+                <French>Erreur inconnue survenue pendant le processus de devenir Incognito !</French>
+                <Korean>위장 실행 루틴에서 알 수 없는 오류가 발생했습니다!</Korean>
+                <Russian>При скрытии произошла неизвестная ошибка!</Russian>
+                <Czech>Došlo k neznámé chybě při přepínání statusu do "v utajení"!</Czech>
+                <Chinesesimp>进行伪装的过程中出现了未知错误</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_leftveh">
+                <Original>You left your vehicle and you are still on the Wanted List!</Original>
+                <Italian>Hai abbandonato il tuo veicolo e sei ancora Ricercato!</Italian>
+                <French>Vous avez quitté votre véhicule et êtes toujours recherchés !</French>
+                <Korean>당신은 차량에서 내렸지만 여전히 수배 목록에 있습니다!</Korean>
+                <Russian>Вы оставили свой автомобиль и все еще находитесь в розыске!</Russian>
+                <Czech>Opustil jsi vozidlo ale stále jsi na listině hledaných!</Czech>
+                <Chinesesimp>你已从你的车辆中离开然而你仍然还在通缉名单上！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_distance">
+                <Original>You went too far away from any roads and have been spotted!</Original>
+                <Italian>Ti sei allontanato troppo dalle strade e sei stato avvistato!</Italian>
+                <French>Vous vous êtes trop éloigné des routes et vous avez été repéré !</French>
+                <Korean>도로에서 너무 멀리 떨어졌기 때문에 발견되었습니다!</Korean>
+                <Russian>Вы ушли слишком далеко от каких-либо дорог и были замечены!</Russian>
+                <Czech>Sjel jsi příliš daleko z cesty a byl jsi zpozorován!</Czech>
+                <Chinesesimp>你因过度开离任何公路而遭到了举报</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_explo">
+                <Original>Explosives have been spotted on your vehicle!</Original>
+                <Italian>Gli esplosivi sono stati visti sul tuo veicolo!</Italian>
+                <French>Des Explosifs ont étés repérés sur votre véhicule !</French>
+                <Korean>차량에서 폭발물이 발견되었습니다!</Korean>
+                <Russian>В вашем автомобиле обнаружена взрывчатка!</Russian>
+                <Chinesesimp>你车上的爆炸物被发现了！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_reason_1">
+                <Original>You cannot stay Undercover while:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a mil uniform!</Original>
+                <Italian>Non puoi rimanere Sotto Copertura mentre:&lt;br/&gt;&lt;br/&gt;Un'arma è visibile&lt;br/&gt;Indossi del gibernaggio&lt;br/&gt;Indossi un elmetto&lt;br/&gt;Indossi NVG&lt;br/&gt;Indossi un'uniforme militare!</Italian>
+                <French>Vous ne pouvez pas rester Incognito pendant que :&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez une veste&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des LVN&lt;br/&gt;Vous portez un uniforme militaire !</French>
+                <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!</Korean>
+                <Russian>Вы не можете оставаться под прикрытием, пока:&lt;br/&gt;&lt;br/&gt;Видно оружие&lt;br/&gt;Одет бронежилет&lt;br/&gt;Одет бронежилет&lt;br/&gt;Одет ПНВ&lt;br/&gt;Одета военная форма!</Russian>
+                <Czech>Nemůžeš zůstat v utajení pokud:&lt;br/&gt;&lt;br/&gt;Zbraň je viditelná&lt;br/&gt;Máš na sobě vestu&lt;br/&gt;Máš na sobě helmu&lt;br/&gt;Máš na sobě noktovizor&lt;br/&gt;Máš na sobě vojenskou uniformu!</Czech>
+                <Chinesesimp>你不能进行伪装，因为你:&lt;br/&gt;&lt;br/&gt;被目视到身持武器&lt;br/&gt;正身着军用背心&lt;br/&gt;正穿戴一顶军用头盔&lt;br/&gt;正穿戴一顶军用夜视仪&lt;br/&gt;正身着军用制服！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_reason_2">
+                <Original>You cannot stay Undercover while showing:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a mil uniform&lt;br/&gt;&lt;br/&gt;The enemy added you to their Wanted List!</Original>
+                <Italian>Non puoi rimanere Sotto Copertura mentre:&lt;br/&gt;&lt;br/&gt;Un'arma è visibile&lt;br/&gt;Indossi del gibernaggio&lt;br/&gt;Indossi un elmetto&lt;br/&gt;Indossi NVG&lt;br/&gt;Indossi un'uniforme militare!&lt;br/&gt;Sei ricercato dal nemico!</Italian>
+                <French>Vous ne pouvez pas rester Incognito pendant que vous montrez :&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez une veste&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des LVN&lt;br/&gt;Vous portez un uniforme militaire !</French>
+                <Korean>다음과 같은 경우가 보여지는 동안에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
+                <Russian>Вы не можете оставаться под прикрытием, демонстрируя:&lt;br/&gt;&lt;br/&gt;Видно оружие&lt;br/&gt;Одет бронежилет&lt;br/&gt;Одет шлем&lt;br/&gt;Одет ПНВ&lt;br/&gt;Одета военная форма&lt;br/&gt;&lt;br/&gt;Вы в розыске!</Russian>
+                <Czech>Nemůžeš zůstat v utajení pokud:&lt;br/&gt;&lt;br/&gt;Zbraň je viditelná&lt;br/&gt;Máš na sobě vestu&lt;br/&gt;Máš na sobě helmu&lt;br/&gt;Máš na sobě noktovizor&lt;br/&gt;Máš na sobě vojenskou uniformu&lt;br/&gt;&lt;br/&gt;Nepřítel tě přidal na listinu hledaných!</Czech>
+                <Chinesesimp>你不能进行伪装，因为你:&lt;br/&gt;&lt;br/&gt;被目视到身持武器&lt;br/&gt;正身着军用背心&lt;br/&gt;正穿戴一顶军用头盔&lt;br/&gt;正穿戴一顶军用夜视仪&lt;br/&gt;正身着军用制服！&lt;br/&gt;敌人已经把你拉入他们的通缉名单！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_reason_3">
+                <Original>You cannot stay Undercover while healing a compromised resistance member!</Original>
+                <Italian>Non puoi rimanere Sotto Copertura mentre curi un membro della resistenza comprommesso!</Italian>
+                <French>Vous ne pouvez pas rester Incognito alors que vous soignez un membre de la résistance compromis !</French>
+                <Korean>부상을 입은 저항군을 치료하는 동안에는 위장을 유지할 수 없습니다!</Korean>
+                <Russian>Вы не можете оставаться под прикрытием, исцеляя члена сопротивления!</Russian>
+                <Czech>Nemůžeš zůstat v utajení když léčíš prozrazeného člena odboje!</Czech>
+                <Chinesesimp>明目张胆的救助反抗军成员使得你退出了伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_reason_4">
+                <Original>You cannot stay Undercover while healing a compromised resistance member&lt;br/&gt;&lt;br/&gt;The enemy added you to their Wanted List!</Original>
+                <Italian>Non puoi rimanere Sotto Copertura mentre curi un membro della resistenza comprommesso!&lt;br/&gt;&lt;br/&gt;Il nemico ti ha aggiunto alla Lista dei Ricercati!</Italian>
+                <French>Vous ne pouvez pas rester Incognito alors que vous soignez un membre de la résistance compromis !&lt;br/&gt;&lt;br/&gt;L'ennemi vous a ajouté à leur liste de gens recherchés !</French>
+                <Korean>부상을 입은 저항군을 치료하는 동안에는 위장을 유지할 수 없습니다!&lt;br/&gt;&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
+                <Russian>Вы не можете оставаться под прикрытием, пока лечите скомпрометированного члена сопротивления&lt;br/&gt;&lt;br/&gt;Враг добавил вас в свой список разыскиваемых!</Russian>
+                <Czech>Nemůžeš zůstat v utajení když léčíš prozrazeného člena odboje&lt;br/&gt;&lt;br/&gt;Nepřítel tě přidal na listinu hledaných!</Czech>
+                <Chinesesimp>明目张胆的救助反抗军成员使得你退出了伪装&lt;br/&gt;&lt;br/&gt;敌人已经把你拉入他们的通缉名单！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_towrope1">
+                <Original>You cannot be undercover while tow ropes are attached to your vehicle!</Original>
+                <Italian>Non puoi andare sotto copertura mentre hai delle funi da traino attaccate al tuo veicolo.</Italian>
+                <French>Vous ne pouvez pas être Incognito pendant qu'un treuil de remorquage est attaché à votre véhicule !</French>
+                <Korean>당신의 차량에 견인줄이 걸려 있는 동안에는 위장이 불가능합니다!</Korean>
+                <Russian>Вы не можете находиться под прикрытием, пока к вашему автомобилю прикреплены буксирные тросы!</Russian>
+                <Czech>Nemůžeš být v utajení když tažné lano je připojeno k tvému vozidlu!</Czech>
+                <Chinesesimp>在载具被其他车辆拖动的情况下该载具无法进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_no_towrope2">
+                <Original>You cannot be undercover and use tow ropes!</Original>
+                <Italian>Non puoi andare sotto copertura e usare le funi da traino!</Italian>
+                <French>Vous ne pouvez pas être Incognito et utiliser un treuil de remorquage !</French>
+                <Korean>견인줄을 사용하면서 위장을 할 순 없습니다!</Korean>
+                <Russian>Вы не можете работать под прикрытием и использовать буксирные тросы!</Russian>
+                <Czech>V utajení nemůžeš používat tažné lano!</Czech>
+                <Chinesesimp>你不能在伪装模式下使用拖车绳索！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_off">
+                <Original>Undercover OFF</Original>
+                <French>Incognito OFF</French>
+                <Korean>위장 끔</Korean>
+                <Russian>Скрытность ВЫКЛ</Russian>
+                <Chinesesimp>退出伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_on">
+                <Original>Undercover ON</Original>
+                <French>Incognito ON</French>
+                <Korean>위장 켬</Korean>
+                <Russian>Скрытность ВКЛ</Russian>
+                <Chinesesimp>进行伪装</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_reported">
+                <Original>You have been reported or spotted by the enemy!</Original>
+                <Italian>Sei stato riportato o avvistato dal nemico!</Italian>
+                <French>Vous avez été signalé ou détecté par l'ennemi !</French>
+                <Korean>적에게 신고를 받았거나 발견되었습니다!</Korean>
+                <Russian>Враг сообщил о вас или заметил вас!</Russian>
+                <Czech>Byl jsi nahlášen nebo zpozorován nepřítelem!</Czech>
+                <Chinesesimp>你已经被敌人举报或者发现了！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_goUn_trespass">
+                <Original>You have trespassed on an enemy airbase!</Original>
+                <Italian>Hai sconfinato in una base nemica!</Italian>
+                <French>Vous vous êtes introduit sur une base aérienne ennemie !</French>
+                <Korean>적의 공군 기지에 무단 침입했습니다!</Korean>
+                <Russian>Вы вторглись на территорию вражеской авиабазы!</Russian>
+                <Czech>Vkročil jsi na nepřátelské letiště!</Czech>
+                <Chinesesimp>你已经非法入侵敌人的空军基地！</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_fn_undercover_title">
+                <Original>Undercover</Original>
+                <Italian>Sotto Copertura</Italian>
+                <French>Incognito</French>
+                <Korean>위장</Korean>
+                <Russian>Под прикрытием</Russian>
+                <Czech>V utajení</Czech>
+                <Chinesesimp>伪装</Chinesesimp>
+            </Key>
         </Container>
         <Container name="vehicle_manager">
             <Key ID="STR_antistasi_dialogs_vehicle_manager">
@@ -5286,6 +5303,7 @@
                 <Spanish>Ya has comprado una unidad, espera %1 segundos antes de poder comprar otra.</Spanish>
                 <Korean>이미 하나를 구입하였습니다. 다른 걸 구입하려면 %1초를 기다리십시오.</Korean>
                 <French>Vous en avez déjà acheté un, attendez %1 secondes avant de pouvoir en acheter un autre.</French>
+                <Chinesesimp>您已购买了一个，请等待 %1 秒才能购买另一个。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Insufficient_Funds">
                 <Original>You can't afford this item.</Original>
@@ -5293,6 +5311,7 @@
                 <Spanish>No puedes pagar ese objeto.</Spanish>
                 <Korean>이 아이템을 구입할 자금이 부족합니다.</Korean>
                 <French>Vous ne pouvez pas vous permettre cet article.</French>
+                <Chinesesimp>您买不起该商品。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Purchase_Title">
                 <Original>Item Purchase</Original>
@@ -5300,6 +5319,7 @@
                 <Spanish>Compra de objeto</Spanish>
                 <Korean>아이템 구입</Korean>
                 <French>Achat d'objets</French>
+                <Chinesesimp>购买物品</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Packable_Objects_Title">
                 <Original>Packing Objects</Original>
@@ -5307,6 +5327,7 @@
                 <Spanish>Objetos empacables</Spanish>
                 <Korean>오브젝트 포장</Korean>
                 <French>Emballage d'objets</French>
+                <Chinesesimp>打包物品</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Packable_Objects_refunding_error">
                 <Original>Refunding money due to error</Original>
@@ -5314,54 +5335,63 @@
                 <Spanish>Devolviendo el dinero a causa de un error.</Spanish>
                 <Korean>오류로 인해 환불됨</Korean>
                 <French>remboursement des sommes versées en raison d'une erreur</French>
+                <Chinesesimp>系统出错, 正在退款</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_lootbox">
                 <Original>Loot Box</Original>
                 <Russian>Ящик для сбора лута</Russian>
                 <Korean>전리품 상자</Korean>
                 <French>Boîte de butin</French>
+                <Chinesesimp>战利品箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_fueldrum">
                 <Original>Fuel Drum</Original>
                 <Russian>Бочка с топливом</Russian>
                 <Korean>연료통 (드럼통)</Korean>
                 <French>Bidon de carburant</French>
+                <Chinesesimp>燃油桶</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_fueltank">
                 <Original>Fuel Tank</Original>
                 <Russian>Топливное хранилище</Russian>
                 <Korean>연료통 (연료탱크)</Korean>
                 <French>Réservoir de carburant</French>
+                <Chinesesimp>燃油箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_medicaltent">
                 <Original>Medical Tent</Original>
                 <Russian>Медицинская палатка</Russian>
                 <Korean>의료텐트</Korean>
                 <French>Tente médicale</French>
+                <Chinesesimp>医疗帐篷</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_medicalbox">
                 <Original>Medical Box</Original>
                 <Russian>Медицинский ящик</Russian>
                 <Korean>의료 상자</Korean>
                 <French>Boîte médicale</French>
+                <Chinesesimp>医疗箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_ammostation">
                 <Original>Ammo Station</Original>
                 <Russian>Станция перевооружения</Russian>
                 <Korean>탄약고</Korean>
                 <French>Station de munitions</French>
+                <Chinesesimp>弹药箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_repairstation">
                 <Original>Repair Station</Original>
                 <Russian>Ремонтная станция</Russian>
                 <Korean>수리소</Korean>
                 <French>Station de réparation</French>
+                <Chinesesimp>维修站</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Name_light">
                 <Original>Light</Original>
                 <Russian>Фонарь</Russian>
                 <Korean>조명</Korean>
                 <French>Lumière</French>
+                <Chinesesimp>灯</Chinesesimp>
             </Key>
         </Container>
         <Container name="server_info">
@@ -5442,6 +5472,7 @@
                 <Russian>Ошибка, несовпадение версий:&lt;br/&gt;&lt;br/&gt;Сервер: %1&lt;br/&gt;Клиент: %2</Russian>
                 <Korean>버전 불일치 오류:&lt;br/&gt;&lt;br/&gt;서버: %1&lt;br/&gt;클라이언트: %2</Korean>
                 <French>Erreur de compatibilité de version:&lt;br/&gt;&lt;br/&gt;Serveur : %1&lt;br/&gt;Client : %2</French>
+                <Chinesesimp>版本不匹配错误：&lt;br/&gt;&lt;br/&gt;服务器：%1&lt;br/&gt;客户端：%2</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3A_actions">
@@ -5603,6 +5634,7 @@
                 <Korean>유닛을 모집할 인력이 부족합니다.</Korean>
                 <Spanish>Te falta HR para reclutar unidades.</Spanish>
                 <French>Vous manquez de RH pour recruter des unités.</French>
+                <Chinesesimp>缺少人力, 无法招募单位</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_garrison_error_no_money">
                 <Original>You don't have enough money for adding this kind of unit (%1€ needed).</Original>
@@ -5610,6 +5642,7 @@
                 <Korean>이런 종류의 유닛을 추가할 충분한 비용이 없습니다 (%1€ 필요).</Korean>
                 <Spanish>No tienes suficiente dinero para añadir este tipo de unidad (Necesitas %1€).</Spanish>
                 <French>Vous n'avez pas assez d'argent pour ajouter ce type d'unité (%1€ nécessaire).</French>
+                <Chinesesimp>您没有足够的资金来添加此类单位（需要 %1€）。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_garrison_recruit_success">
                 <Original>Unit has been recruited.%1</Original>
@@ -5617,6 +5650,7 @@
                 <Korean>다음 유닛을 모집했습니다: %1</Korean>
                 <Spanish>La unidad ha sido reclutada.%1</Spanish>
                 <French>L'unité a été recrutée.%1</French>
+                <Chinesesimp>单位已招募。%1</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_garrison_error_enemies_near">
                 <Original>You can't recruit units into garrison when enemies are near the zone.</Original>
@@ -5624,6 +5658,7 @@
                 <Korean>적들이 근처에 있을 때는 주둔지에 유닛을 모집할 수 없습니다.</Korean>
                 <Spanish>No puedes reclutar unidades en guarniciones cuando los enemigos se encuentran cerca de la zona.</Spanish>
                 <French>Vous ne pouvez pas recruter d'unités en garnison lorsque des ennemis se trouvent à proximité de la zone.</French>
+                <Chinesesimp>当敌人靠近该区域时，您无法招募部队进入驻军。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_garrison_error_still_updating">
                 <Original>This garrison is still updating, please try again in a few seconds.</Original>
@@ -5631,6 +5666,7 @@
                 <Korean>이 주둔지는 아직 업데이트 중이니 몇 초 후에 다시 시도하십시오.</Korean>
                 <Spanish>La guarnición se está actualizando, por favor inténtalo en unos segundos.</Spanish>
                 <French>Cette garnison est en cours de mise à jour, veuillez réessayer dans quelques secondes.</French>
+                <Chinesesimp>该驻军仍在更新，请稍后重试。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_garrison_error_no_mortar">
                 <Original>You can't add mortars to Roadblock or Watchpost garrisons.</Original>
@@ -5638,6 +5674,7 @@
                 <Korean>검문소나 감시초소에는 박격포를 추가할 수 없습니다.</Korean>
                 <Spanish>No puedes añadir morteros a las guarniciones de Control de carretera o Puesto de boservación.</Spanish>
                 <French>Vous ne pouvez pas ajouter de mortiers aux garnisons, aux barrages routiers ou aux postes de garde.</French>
+                <Chinesesimp>您不能向路障或岗哨驻军添加迫击炮。</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3AP_items">
@@ -5659,6 +5696,7 @@
         <Container name="A3A_selfRevive">
             <Key ID="STR_A3A_Params_removeRestore_title">
                 <Original>Disable the "Restore nearby units" option on the vehicle box.</Original>
+                <Chinesesimp>禁用车辆箱上的“恢复附近单位”选项。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_selfReviveMethods_title">
                 <Original>Self-revive methods enabled</Original>
@@ -5684,6 +5722,7 @@
                 <Korean>당신은 자가소생을 위한 구급상자를 가지고 있지 않습니다.</Korean>
                 <Polish>Nie masz apteczki pierwszej pomocy do samodzielnego uleczenia się.</Polish>
                 <Czech>Nepotřebuješ Soupravu první pomoci pro oživení sama sebe.</Czech>
+                <Chinesesimp>您没有可供自我复苏的急救箱。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_selfRevive_recent">
                 <Original>You have already revived yourself recently.</Original>
@@ -5694,6 +5733,7 @@
                 <Korean>당신은 이미 최근에 자가소생을 했습니다.</Korean>
                 <Polish>Niedawno już się uleczyłeś.</Polish>
                 <Czech>Již jsi se nedávno oživil.</Czech>
+                <Chinesesimp>您最近已使用过急救箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_selfRevive_success">
                 <Original>You shake off the injury, but you're not feeling great.</Original>
@@ -5704,6 +5744,7 @@
                 <Korean>당신은 부상을 털어내지만, 썩 기분이 좋지 않습니다.</Korean>
                 <Polish>Otrząsnąłeś się po kontuzji, ale nie czujesz się najlepiej.</Polish>
                 <Czech>Zbavuješ se zranění, ale necítíš se dobře.</Czech>
+                <Chinesesimp>虽然你已经摆脱了伤病，但是感觉不太好。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_selfRevive_timeout">
                 <Original>You are feeling much better.</Original>
@@ -5714,6 +5755,7 @@
                 <Korean>당신은 훨씬 상태가 좋아졌다.</Korean>
                 <Polish>Czujesz się znacznie lepiej.</Polish>
                 <Czech>Cítíš se mnohem lépe</Czech>
+                <Chinesesimp>你感觉好多了。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_selfRevive_title">
                 <Original>Self Revive</Original>
@@ -5746,26 +5788,32 @@
             <Key ID="STR_A3A_Params_generic_veryslow">
                 <Original>Very slow</Original>
                 <Russian>Очень медленно</Russian>
+                <Chinesesimp>非常慢</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_generic_slow">
                 <Original>Slow</Original>
                 <Russian>Медленный</Russian>
+                <Chinesesimp>慢</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_generic_normal">
                 <Original>Normal</Original>
                 <Russian>Нормальный</Russian>
+                <Chinesesimp>正常</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_generic_fast">
                 <Original>Fast</Original>
                 <Russian>Быстрый</Russian>
+                <Chinesesimp>快</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_generic_veryfast">
                 <Original>Very fast</Original>
                 <Russian>Очень быстро</Russian>
+                <Chinesesimp>非常快</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Params_enemyResponseTime_title">
                 <Original>Speed of enemy air responses</Original>
                 <Russian>Скорость реакции авиации противника</Russian>
+                <Chinesesimp>敌方空中反应速度</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3A_GCTracker">
@@ -5775,6 +5823,7 @@
                 <Korean>쓰레기 청소 기록 프로그램</Korean>
                 <Spanish>Seguimiento del Limpiador de Basura</Spanish>
                 <French>Traceur de collecteurs d'ordures</French>
+                <Chinesesimp>垃圾清理追踪器</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_GCTracker_tracker_notification">
                 <Original>Last Garbage Clean was %1 ago. Keep track of it.</Original>
@@ -5782,6 +5831,7 @@
                 <Korean>마지막 쓰레기 청소는 %1 전에 실행되었습니다. 계속 기록합니다.</Korean>
                 <Spanish>La ultima Limpieza de Basura fue hace %1. Mantenlo supervisado.</Spanish>
                 <French>Le dernier nettoyage des ordures a eu lieu il y a %1. Gardez-en la trace.</French>
+                <Chinesesimp>上次垃圾清理是在 %1 之前。请记住时间。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_GCTracker_tracker_ran_gc">
                 <Original>Garbage Cleaner Tracker ran a garbage clean because the time passed the threshold. Keep track of GC times.</Original>
@@ -5789,6 +5839,7 @@
                 <Korean>쓰레기 청소 기록 프로그램이 임계값을 초과하여 쓰레기를 청소합니다. 쓰레기 청소 시간을 계속 기록합니다.</Korean>
                 <Spanish>El Seguimiento del Limpiador de Basura llevó a cabo una limpieza porque el umbral de tiempo fue superado. Mantén supervisado el Limpiador de Basura.</Spanish>
                 <French>Le dernier nettoyage des ordures a eu lieu il y a %1. Gardez-en la trace.</French>
+                <Chinesesimp>垃圾清理跟踪器运行垃圾清理，因为时间超过了阈值。请记住时间。</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3AU_SetupParams">
@@ -5798,6 +5849,7 @@
                 <Russian>ПАРАМЕТРЫ ANTISTASI ULTIMATE</Russian>
                 <Korean>안티스타시 얼티밋 매개변수</Korean>
                 <French>PARAMÈTRES D'ANTISTASI ULTIMATE</French>
+                <Chinesesimp>ANTISTASI ULTIMATE 参数</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_cosmetics">
                 <Original>Enable Cosmetics</Original>
@@ -5805,6 +5857,7 @@
                 <Russian>Добавить косметические предметы</Russian>
                 <Korean>설계도 활성화</Korean>
                 <French>Activer les cosmétiques</French>
+                <Chinesesimp>启用装饰性装备</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_uncap_zombie_spawn">
                 <Original>Enable Uncapped Zombie Spawning</Original>
@@ -5812,6 +5865,7 @@
                 <Russian>Включить неограниченный спавн зомби</Russian>
                 <Korean>무제한 좀비 스폰 활성화</Korean>
                 <French>Activer la création de zombies non plafonnés</French>
+                <Chinesesimp>启用无限僵尸生成</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_old_garrison_spawn">
                 <Original>Use Old Plus Garrison Spawning</Original>
@@ -5819,6 +5873,7 @@
                 <Russian>Использовать старую логику спавна гарнизонов из Plus</Russian>
                 <Korean>기존 안티스타시 플러스 주둔지 스폰 사용</Korean>
                 <French>Utiliser la garnison Old Plus</French>
+                <Chinesesimp>使用旧版Antistasi Plus的驻军生成</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_vanilla_weapons_in_arms_dealer">
                 <Original>Include Vanilla Weapons In Arms Dealer</Original>
@@ -5826,6 +5881,7 @@
                 <Russian>Добавить ванильное оружие/снаряжение/технику в ассортимент торговца оружием</Russian>
                 <Korean>암거래상에 바닐라 무기 포함</Korean>
                 <French>Inclure les armes Vanilla dans les contrats de vente d'armes</French>
+                <Chinesesimp>在军火商中加入原版武器</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_radioman_support">
                 <Original>Support Caller</Original>
@@ -5833,6 +5889,7 @@
                 <Russian>Вызывающий поддержку</Russian>
                 <Korean>지원 요청자</Korean>
                 <French>Appel de soutien</French>
+                <Chinesesimp>谁能呼叫支援</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers">
                 <Original>Hide Enemy Zone Markers</Original>
@@ -5840,6 +5897,7 @@
                 <Russian>Спрятать маркеры вражеских баз</Russian>
                 <French>Cacher les marqueurs ennemis</French>
                 <Korean>적 구역 마커 숨기기</Korean>
+                <Chinesesimp>隐藏敌方区域标记</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers_recon_plane_distance">
                 <Original>Recon Plane Zone Reveal Distance</Original>
@@ -5847,87 +5905,112 @@
                 <Russian>Дистанция открытыя маркеров самолётом разведки</Russian>
                 <French>Zone révélée par les avions de reconnaissance.</French>
                 <Korean>정찰기의 정찰 거리</Korean>
+                <Chinesesimp>侦察机侦察距离</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_victory_condition">
                 <Original>Victory Condition</Original>
                 <English>Victory Condition</English>
                 <Russian>Условие победы</Russian>
+                <Chinesesimp>胜利条件</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_total_victory_deprecated">
                 <Original>Total Victory (deprecated)</Original>
                 <English>Total Victory (deprecated)</English>
                 <Russian>абсолютная победа (устарел)</Russian>
+                <Chinesesimp>全面胜利(已弃用)</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_total_victory">
                 <Original>Total Victory</Original>
                 <English>Total Victory</English>
                 <Russian>абсолютная победа</Russian>
+                <Chinesesimp>全面胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_economic_victory">
                 <Original>Economic Victory</Original>
                 <English>Economic Victory</English>
                 <Russian>Экономическая победа</Russian>
+                <Chinesesimp>经济胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_political_victory">
                 <Original>Political Victory</Original>
                 <English>Political Victory</English>
                 <Russian>политическая победа</Russian>
+                <Chinesesimp>政治胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_normal_victory">
                 <Original>Normal Victory</Original>
                 <English>Normal Victory</English>
                 <Russian>Нормальная победа</Russian>
+                <Chinesesimp>普通胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_logistical_victory">
                 <Original>Logistical Victory</Original>
                 <English>Logistical Victory</English>
                 <Russian>Логистическая победа</Russian>
+                <Chinesesimp>后勤胜利</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_hr_loss">
                 <Original>Lose HR on death</Original>
                 <Russian>Логистическая победа</Russian>
+                <Chinesesimp>死亡时损失人力</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_no_hr_loss">
                 <Original>Disabled</Original>
                 <Russian>Неполноценный</Russian>
+                <Chinesesimp>已禁用</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_yes_hr_loss">
                 <Original>Enabled</Original>
                 <Russian>Включено</Russian>
+                <Chinesesimp>已启用</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_yes_hr_loss_w_msg">
                 <Original>Enabled (with HUD alerts)</Original>
                 <Russian>Включено (с оповещениями HUD)</Russian>
+                <Chinesesimp>已启用(并有屏幕提示)</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_loss_condition">
                 <Original>Loss Conditions</Original>
                 <Russian>Условия проигрыша</Russian>
+                <Chinesesimp>失败条件</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_loss_condition_pop_death">
                 <Original>Population death</Original>
                 <Russian>Смерть населения</Russian>
+                <Chinesesimp>人口伤亡</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_loss_condition_hr">
                 <Original>Human Resource loss</Original>
                 <Russian>Потери человеческих ресурсов</Russian>
+                <Chinesesimp>人力损失</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_loss_condition_money">
                 <Original>Financial Loss</Original>
                 <Russian>Финансовые потери</Russian>
+                <Chinesesimp>经济崩溃</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_loss_condition_all">
                 <Original>HARDCORE</Original>
                 <Russian>ХАРДКОР</Russian>
+                <Chinesesimp>硬核</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_blackmarket_ignore_requirements">
+                <Original>Ignore Black Market Vehicle Requirements</Original>
+                <English>Ignore Black Market Vehicle Requirements</English>
+                <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>
+                <Chinesesimp>取消黑市车辆解锁条件</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
                 <English>Notify Players When Downed</English>
                 <Russian>Placeholder</Russian>
+                <Chinesesimp>玩家倒地时提示</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
                 <English>Disable Arms Dealer</English>
                 <Russian>Placeholder</Russian>
+                <Chinesesimp>取消军火商</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_stamina_enabled">
                 <Original>Enable Stamina (Vanilla)</Original>
@@ -5935,6 +6018,7 @@
                 <Russian>Включить выносливость (Vanilla)</Russian>
                 <Korean>스태미나 활성화 (바닐라)</Korean>
                 <French>Activer l'endurance (Vanilla)</French>
+                <Chinesesimp>启用体力(原版)</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_fatigue_enabled">
                 <Original>Enable Fatigue (Vanilla)</Original>
@@ -5942,6 +6026,7 @@
                 <Russian>Включить усталость (Vanilla)</Russian>
                 <Korean>피로도 활성화 (바닐라)</Korean>
                 <French>Activer la fatigue (Vanilla)</French>
+                <Chinesesimp>启用疲劳(原版)</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_sway_enabled">
                 <Original>Weapon Sway % (Vanilla)</Original>
@@ -5949,11 +6034,13 @@
                 <Russian>раскачивание оружия % (Vanilla)</Russian>
                 <Korean>무기 흔들림 % (바닐라)</Korean>
                 <French>% de balancement de l'arme (Vanilla)</French>
+                <Chinesesimp>武器晃动 % (原版)</Chinesesimp>
             </Key>
             <Key ID="STR_notifiers_reload_turret">
                 <Original>Total: %1. Magazines: </Original>
                 <English>Total: %1. Magazines: </English>
                 <Russian>Всего: %1. Магазины: </Russian>
+                <Chinesesimp>总计: %1. 弹匣:</Chinesesimp>
             </Key>
         </Container>
     </Package>
