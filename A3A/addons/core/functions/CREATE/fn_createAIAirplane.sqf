@@ -36,8 +36,8 @@ private _radarType = _faction getOrDefault ["vehicleRadar", ""];
 private _samType = _faction getOrDefault ["vehicleSam", ""];
 
 // In case of array
-if (_radarType isEqualType [] && {_radarType isNotEqualTo []}) then {_radarType = selectRandom _radarType};
-if (_samType isEqualType [] && {_samType isNotEqualTo []}) then {_samType = selectRandom _samType};
+if (_radarType isEqualType [] && {_radarType isNotEqualTo []}) then {_radarType = selectRandomWeighted _radarType};
+if (_samType isEqualType [] && {_samType isNotEqualTo []}) then {_samType = selectRandomWeighted _samType};
 
 // In case of empty array
 if (_samType isEqualType [] && {_samType isEqualTo []}) then {_samType = ""};
@@ -108,7 +108,7 @@ for "_i" from 1 to _max do {
 
 	private _veh = nil;
 	isNil {
-		_veh = createVehicle [selectRandom (_faction get "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+		_veh = createVehicle [selectRandomWeighted (_faction get "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 		_veh setDir (_spawnParameter select 1);
   	};
 
@@ -132,7 +132,7 @@ if (_frontierX && {random 100 < (20 + tierWar * 3)}) then {
 	if (_road distance2D _positionX > 800) exitWith {};
 
 	private _heavyVehPool =  (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks");
-	private _type = selectRandom _heavyVehPool;
+	private _type = selectRandomWeighted _heavyVehPool;
 
 	private _heavyVehicle = [_type, (position _road), 15, 10] call A3A_fnc_safeVehicleSpawn;
 	if (isNull _heavyVehicle) exitWith {};
@@ -163,7 +163,7 @@ if (_frontierX) then {
 	if (count _roads != 0) then {
 		private _groupX = createGroup _sideX;
 		_groups pushBack _groupX;
-		private _typeVehX = selectRandom (_faction get "staticAT");
+		private _typeVehX = selectRandomWeighted (_faction get "staticAT");
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
 			private _veh = _typeVehX createVehicle _positionX;
@@ -246,7 +246,7 @@ while {true} do {
 	if (_spawnParameter isEqualType false) exitWith {};
 
 	_spawnsUsed pushBack _spawnParameter#2;
-	_typeVehX = selectRandom (_faction get "staticMortars");
+	_typeVehX = selectRandomWeighted (_faction get "staticMortars");
 	_veh = _typeVehX createVehicle (_spawnParameter select 0);
 	_veh setDir (_spawnParameter select 1);
 	_unit = [_groupX, _typeUnit, _positionX, [], 0, "CAN_COLLIDE"] call A3A_fnc_createUnit;
@@ -303,7 +303,7 @@ if (!_busy) then {
 			if(count _vehPool > 0) then
 			{
 				_spawnsUsed pushBack _spawnParameter#2;
-				_typeVehX = selectRandom _vehPool;
+				_typeVehX = selectRandomWeighted _vehPool;
 				/* isNil { */
 					_veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 					_veh setDir (_spawnParameter select 1);
@@ -333,7 +333,7 @@ if (!_busy) then {
                     + (_faction get "vehiclesPlanesLargeAA")
                     + (_faction get "vehiclesPlanesTransport");
 		    		+ (_faction getOrDefault ["vehiclesPlanesGunship", []]);
-				_typeVehX = selectRandom _airVehTypes;
+				_typeVehX = selectRandomWeighted _airVehTypes;
 				if (!isNil "_typeVehX") then {
 					_veh = createVehicle [_typeVehX, _pos, [],50, "NONE"];
 					_veh setDir (_ang);
@@ -387,7 +387,7 @@ if (!_busy) then
 			_spawnsUsed pushBack _spawnParameter#2;
 			private _veh = nil;
 			isNil {
-				_veh = createVehicle [selectRandom _vehTypesHeavy, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+				_veh = createVehicle [selectRandomWeighted _vehTypesHeavy, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 				_veh setDir (_spawnParameter select 1);
 			};
 			_vehiclesX pushBack _veh;
@@ -409,7 +409,7 @@ private _vehTypesLight =
 _countX = 0;
 
 while {_countX < _nVeh && {_countX < 3}} do {
-	private _typeVehX = selectRandom _vehTypesLight;
+	private _typeVehX = selectRandomWeighted _vehTypesLight;
 	private _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 	if(_spawnParameter isEqualType []) then
 	{

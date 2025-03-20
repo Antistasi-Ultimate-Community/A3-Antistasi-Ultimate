@@ -36,7 +36,7 @@ if (_faction get "vehiclesPlanesCAS" isNotEqualTo []) then {
     _vehWeights append ["CAS", _casWeight];
     _vehWeights append ["CASDIVE", _casDiveWeight];
 };
-[_faction get "vehiclesHelisAttack", _AHWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesHelisLightAttack", _lightAHWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesHelisAttack") select {_x isEqualType ""}, _AHWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesHelisLightAttack") select {_x isEqualType ""}, _lightAHWeight] call _fnc_addArrayToWeights;
 
 _vehWeights;

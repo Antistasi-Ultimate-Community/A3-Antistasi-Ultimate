@@ -46,7 +46,7 @@ while {true} do {
 
 // selecting Aircraft
 private _heliPool = (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport") + (_faction get "vehiclesHelisAttack") + (_faction get "vehiclesHelisLightAttack");
-private _typeVehH = selectRandom (_heliPool select {_x isKindOf "Helicopter"});
+private _typeVehH = selectRandomWeighted _heliPool;
 if (isNil "_typeVehH") exitWith {
     ["DES"] remoteExecCall ["A3A_fnc_missionRequest",2];
     Error("No aircrafts in arrays vehiclesHelisLight, vehiclesHelisTransport or vehiclesHelisAttack. Reselecting DES mission");
@@ -128,7 +128,7 @@ private _roadR = _roads select 0;
 sleep 1;
 
 //Spawning escort
-_typeVeh = selectRandom (_faction get "vehiclesLightUnarmed");
+_typeVeh = selectRandomWeighted (_faction get "vehiclesLightUnarmed");
 private _vehicleDataE = [position _roadE, 0,_typeVeh, _sideX] call A3A_fnc_spawnVehicle;
 private _vehE = _vehicleDataE select 0;
 _vehE limitSpeed 50;
@@ -156,7 +156,7 @@ _escortWP setWaypointBehaviour "SAFE";
 Debug_2("Placed Group: %1 in Lite Vehicle and set waypoint %2", _typeGroup, _posCrash);
 
 //creating repair vehicle
-_typeVeh = selectRandom (_faction get "vehiclesRepairTrucks");
+_typeVeh = selectRandomWeighted (_faction get "vehiclesRepairTrucks");
 private _vehicleDataR = [position _roadR, 0,_typeVeh, _sideX] call A3A_fnc_spawnVehicle;
 private _vehR = _vehicleDataR select 0;
 _vehR limitSpeed 50;
@@ -206,7 +206,7 @@ if !(_typeVehH in (_faction get "vehiclesHelisLight")) then {
     if (_isAttackHeli) then {
         //if attack helicopter
         //creating transport vehicle
-        _typeVeh = selectRandom (_faction get "vehiclesTrucks");
+        _typeVeh = selectRandomWeighted (_faction get "vehiclesTrucks");
         private _posVehHT = _posCrash findEmptyPosition [15, 30 ,_typeVeh];
         if (_posVehHT isEqualTo []) then {_posVehHT = _posCrash findEmptyPosition [15, 100 ,_typeVeh]}; //if it fails to find a pos expand and try again
         if (_posVehHT isEqualTo []) exitWith { _vehGuard = _heli};

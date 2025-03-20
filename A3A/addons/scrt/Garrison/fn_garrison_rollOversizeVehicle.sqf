@@ -20,7 +20,7 @@ if ((random 100) < _oversizeChance) then {
     } else {
         (_faction get "vehiclesAPCs") + (_faction get "vehiclesLightArmed") +  (_faction get "vehiclesIFVs")
     };
-    private _selectedVehicle = selectRandom _vehiclePool;
+    private _selectedVehicle = selectRandomWeighted _vehiclePool;
 
     if (!isNil "_selectedVehicle") then {
         private _road = nil;

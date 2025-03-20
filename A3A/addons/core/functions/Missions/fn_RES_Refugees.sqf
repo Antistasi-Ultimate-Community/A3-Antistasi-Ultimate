@@ -112,7 +112,7 @@ if (_sideX == Invaders) then {
 		_dirVeh = getDir _road;
 		};
 	_posVeh = [_posroad, 3, _dirveh + 90] call BIS_Fnc_relPos;
-	_veh = (selectRandom (_faction get "vehiclesPolice")) createVehicle _posVeh;
+	_veh = (selectRandomWeighted (_faction get "vehiclesPolice")) createVehicle _posVeh;
 	_veh allowDamage false;
 	_veh setDir _dirVeh;
 	sleep 15;

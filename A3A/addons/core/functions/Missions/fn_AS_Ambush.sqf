@@ -71,8 +71,8 @@ Info_2("Origin: %1, Destination: %2", str _missionOrigin, str _destinationSite);
 
 // selecting classnames
 private _officerClass = _faction get "unitOfficial";
-private _escortVehicleClass = if(_difficult) then {selectRandom (_faction get "vehiclesAPCs")} else {selectRandom (_faction get "vehiclesTrucks")};
-private _officerVehicleClass = if(_difficult) then { selectRandom (_faction get "vehiclesLightArmed") } else { selectRandom (_faction get "vehiclesLightUnarmed") };
+private _escortVehicleClass = if(_difficult) then {selectRandomWeighted (_faction get "vehiclesAPCs")} else {selectRandomWeighted (_faction get "vehiclesTrucks")};
+private _officerVehicleClass = if(_difficult) then { selectRandomWeighted (_faction get "vehiclesLightArmed") } else { selectRandomWeighted (_faction get "vehiclesLightUnarmed") };
 private _infantrySquadArray = selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier);
 
 if (isNil "_officerClass" || {isNil "_officerVehicleClass" || {isNil "_escortVehicleClass" || {isNil "_infantrySquadArray"}}}) exitWith {

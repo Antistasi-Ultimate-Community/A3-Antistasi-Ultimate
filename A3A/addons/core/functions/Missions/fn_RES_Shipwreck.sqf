@@ -158,9 +158,9 @@ for "_i" from 0 to _smugglerCount do {
     _x allowDamage true;
 } forEach _POWS;
 
-private _boatClass = selectRandom (_faction get "vehiclesGunBoats");
+private _boatClass = selectRandomWeighted (_faction get "vehiclesGunBoats");
 private _officerClass = _faction get "unitOfficial";
-private _truckClass = selectRandom (_faction get "vehiclesTrucks");
+private _truckClass = selectRandomWeighted (_faction get "vehiclesTrucks");
 
 private _infantrySquadArray = [
     selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),

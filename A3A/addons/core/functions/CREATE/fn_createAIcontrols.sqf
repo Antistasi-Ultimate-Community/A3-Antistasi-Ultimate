@@ -91,7 +91,7 @@ if (_isControl) then
 				_pos = getPosATL _bunker;
 			};
 			_vehiclesX pushBack _bunker;
-			_typeVehX = selectRandom (_faction get "staticMGs");
+			_typeVehX = selectRandomWeighted (_faction get "staticMGs");
 			_veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPosATL _pos;
@@ -109,7 +109,7 @@ if (_isControl) then
 				_bunker setDir _dirveh + 180;
 				_pos = _bunker modelToWorld [-0.200684,-0.91333,-0.421184];
 				_vehiclesX pushBack _bunker;
-				_typeVehX = selectRandom (_faction get "staticMGs");
+				_typeVehX = selectRandomWeighted (_faction get "staticMGs");
 				_veh = _typeVehX createVehicle _positionX;
 				_vehiclesX pushBack _veh;
 				_veh setPosATL _pos;
@@ -189,7 +189,7 @@ if (_isControl) then
 				_vehicleGet = "vehiclesMilitiaCars";
 			};
 		};
-		_typeVehX = selectRandom (_faction get _vehicleGet);
+		_typeVehX = selectRandomWeighted (_faction get _vehicleGet);
 		_veh = _typeVehX createVehicle getPos (_roads select 0);
 		_veh setDir _dirveh + 90;
 		[_veh, _sideX] call A3A_fnc_AIVEHinit;
@@ -223,7 +223,7 @@ else
 			Debug_1("Creating a Minefield at %1", _markerX);
 			private _mines = (_faction get "minefieldAPERS");
 			for "_i" from 1 to 45 do {
-				_mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
+				_mineX = createMine [ selectRandomWeighted _mines ,_positionX,[],_size];
 				_sideX revealMine _mineX;
 			};
 		};
@@ -232,7 +232,7 @@ else
 		[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 		_groups pushBack _groupX;
 
-		_typeVehX = selectRandom (_faction get "uavsPortable");
+		_typeVehX = selectRandomWeighted (_faction get "uavsPortable");
 		if !(isNil "_typeVehX") then
 		{
 			sleep 1;

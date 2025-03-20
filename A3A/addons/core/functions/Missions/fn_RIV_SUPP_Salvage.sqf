@@ -134,7 +134,7 @@ private _crewClasses = [
 	A3A_faction_reb get "unitEng"
 ];
 
-private _truckClass = selectRandom (A3A_faction_reb get "vehiclesTruck");
+private _truckClass = selectRandomWeighted (A3A_faction_reb get "vehiclesTruck");
 private _truck = createVehicle [_truckClass, [_startingRoadPosition select 0, _startingRoadPosition select 1, 0.9], [], 0, "CAN_COLLIDE"];
 _truck setDir _dirVeh;
 _truck setDamage (random [0.3,0.5,0.7]);
@@ -259,7 +259,7 @@ if (dateToNumber date < _dateLimitNum) then {
 	_others append [_canOpener, _barricade];
 
 	private _groupGunner = createGroup Rivals;
-	private _staticWeaponClass = selectRandom (_faction get "staticLowWeapons");
+	private _staticWeaponClass = selectRandomWeighted (_faction get "staticLowWeapons");
 	private _weaponPos = [_barricadePos, 7, _dirBarricade + 270] call BIS_Fnc_relPos;
 	private _weapon = createVehicle [_staticWeaponClass, _weaponPos, [], 0 , "NONE"];
 	_weapon setDir ([_weapon, _truck] call BIS_fnc_dirTo);
@@ -278,7 +278,7 @@ if (dateToNumber date < _dateLimitNum) then {
 		private _minesCount = round random [3,5,7];
 		private _mines = (_faction get "minefieldAPERS");
 		for "_i" from 1 to _minesCount do {
-			private _mineX = createMine [selectRandom _mines, _startingRoadPosition, [], 25];
+			private _mineX = createMine [selectRandomWeighted _mines, _startingRoadPosition, [], 25];
 			Rivals revealMine _mineX;
 			_vehicles pushBack _mineX;
 	#if __A3_DEBUG__

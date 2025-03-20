@@ -129,7 +129,7 @@ if (dateToNumber date < _dateLimitNum && alive _traitor) then {
 	};
 
 	if (_isDifficult) then {
-		private _vehicleClass = selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+		private _vehicleClass = selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 
 		private _vehiclePosAndDir = [_positionX, _vehicleClass] call SCRT_fnc_common_findSafePositionForVehicle; 
 		private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_RivalsSpawnVehicle;

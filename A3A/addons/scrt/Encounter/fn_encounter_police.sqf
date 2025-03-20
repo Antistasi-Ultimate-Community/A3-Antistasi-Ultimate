@@ -38,7 +38,7 @@ private _roadcon = roadsConnectedto (_road select 0);
 private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _policeVehicleClass = selectRandom (A3A_faction_occ get "vehiclesPolice");
+private _policeVehicleClass = selectRandomWeighted (A3A_faction_occ get "vehiclesPolice");
 
 private _policeVehicleData = [(getPos (_road select 0)), _dirveh, _policeVehicleClass, Occupants] call A3A_fnc_spawnVehicle;
 private _policeVehicle = _policeVehicleData select 0;

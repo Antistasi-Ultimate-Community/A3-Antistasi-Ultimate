@@ -42,7 +42,7 @@ if (_frontierX) then {
 		private _pos = [getPos _road, 7, _dirveh + 270] call BIS_Fnc_relPos;
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
-			private _typeVehX = selectRandom (_faction get "staticAT");
+			private _typeVehX = selectRandomWeighted (_faction get "staticAT");
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
@@ -58,7 +58,7 @@ if (_frontierX) then {
 			_vehiclesX pushBack _bunker;
 			_bunker setDir _dirveh;
 			_pos = getPosATL _bunker;
-			private _typeVehX = selectRandom (_faction get "staticAT");
+			private _typeVehX = selectRandomWeighted (_faction get "staticAT");
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
@@ -136,16 +136,20 @@ private _veh = nil;
 if (_spawnParameter isEqualType []) then {
 	_spawnsUsed pushBack _spawnParameter#2;
 	private _typeVehX = call {
-		if (FactionGet(civ,"vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandom (_faction get "vehiclesRepairTrucks") };
-		if (FactionGet(civ,"vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandom (_faction get "vehiclesFuelTrucks") };
+		if (FactionGet(civ,"vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (_faction get "vehiclesRepairTrucks") };
+		if (FactionGet(civ,"vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (_faction get "vehiclesFuelTrucks") };
 		private _types = if (!_isFIA) then {
 			(_faction get "vehiclesTrucks") + (_faction get "vehiclesCargoTrucks")
 		} else {
 			_faction get "vehiclesMilitiaTrucks"
 		};
-		_types = _types select { _x in FactionGet(all,"vehiclesCargoTrucks") };
+		{
+			if (_x isEqualType "" && {!(_x in FactionGet(all,"vehiclesCargoTrucks")) ||
+				_x isEqualType 1 && {!(_types select (_forEachIndex - 1) in FactionGet(all, "vehiclesCargoTrucks"))}}
+			) then { _types deleteAt _forEachIndex };
+		} forEach _types;
 		if (count _types == 0) then { _types = (_faction get "vehiclesCargoTrucks") } else { _types }; // failsafe didn't work?
-		selectRandom _types;
+		selectRandomWeighted _types;
 	};
 	isNil {
 		_veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "NONE"];

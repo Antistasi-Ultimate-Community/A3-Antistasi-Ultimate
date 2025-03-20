@@ -92,7 +92,7 @@ if (_patrol) then {
 
 if (_frontierX and {_markerX in outposts}) then {
 	_typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
-	_typeVehX = selectRandom (_faction get "staticMortars");
+	_typeVehX = selectRandomWeighted (_faction get "staticMortars");
 	_spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 	if (_spawnParameter isEqualType []) then {
 		_spawnsUsed pushBack _spawnParameter#2;
@@ -154,7 +154,7 @@ private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
 _roads = _positionX nearRoads _size;
 
 if (_markerX in seaports) then {
-	_typeVehX = selectRandom (_faction get "vehiclesGunBoats");
+	_typeVehX = selectRandomWeighted (_faction get "vehiclesGunBoats");
 	private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
 	if(count _mrkMar > 0) then {
 		private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_typeVehX];
@@ -198,7 +198,7 @@ if (_markerX in seaports) then {
 		private _pos = [getPos _road, 7, _dirveh + 270] call BIS_fnc_relPos;
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
-			private _typeVehX = selectRandom (_faction get "staticAT");
+			private _typeVehX = selectRandomWeighted (_faction get "staticAT");
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
@@ -214,7 +214,7 @@ if (_markerX in seaports) then {
 			_vehiclesX pushBack _bunker;
 			_bunker setDir _dirveh;
 			_pos = getPosATL _bunker;
-			private _typeVehX = selectRandom (_faction get "staticAT");
+			private _typeVehX = selectRandomWeighted (_faction get "staticAT");
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
@@ -235,8 +235,8 @@ private _veh = nil;
 if (_spawnParameter isEqualType []) then {
 	_spawnsUsed pushBack _spawnParameter#2;
 	private _typeVehX = call {
-		if (FactionGet(civ,"vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandom (_faction get "vehiclesRepairTrucks") };
-		if (FactionGet(civ,"vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandom (_faction get "vehiclesFuelTrucks") };
+		if (FactionGet(civ,"vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (_faction get "vehiclesRepairTrucks") };
+		if (FactionGet(civ,"vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (_faction get "vehiclesFuelTrucks") };
 		private _types = if (!_isFIA) then {
 			(_faction get "vehiclesTrucks") + 
 			(_faction get "vehiclesCargoTrucks") + 
@@ -249,9 +249,8 @@ if (_spawnParameter isEqualType []) then {
 			(_faction get "vehiclesMilitiaCars")+
 			(_faction get "vehiclesBasic") //we should use them somewhere at least
 		};
-		// _types = _types select { _x in FactionGet(all,"vehiclesCargoTrucks") };
 		if (count _types == 0) then { (_faction get "vehiclesCargoTrucks") } else { _types };
-		selectRandom _types;
+		selectRandomWeighted _types;
 	};
 	isNil {
 		_veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];

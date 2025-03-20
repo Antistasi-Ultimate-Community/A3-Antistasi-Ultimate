@@ -53,8 +53,8 @@ private _fnc_spawngroups = {
 		_wp setWaypointType "SAD";
 		_InfGroups pushBack _InfGroup;
 
-		private _vehicles = if (_difficult) then {selectRandom ((_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
-					} else {selectRandom
+		private _vehicles = if (_difficult) then {selectRandomWeighted ((_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
+					} else {selectRandomWeighted
 					((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + 
 					(_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"))
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
@@ -66,7 +66,7 @@ private _fnc_spawngroups = {
 		_vehiclegroup setBehaviourStrong "AWARE";
 		units _vehiclegroup join _InfGroup;
 		if (_difficult) then {
-			_UAVtype = selectRandom (_faction get "uavsPortable");
+			_UAVtype = selectRandomWeighted (_faction get "uavsPortable");
 			_uav = createVehicle [_UAVtype, _skirmishpositionActuall, [], 0, "FLY"];
 			[_side, _uav] call A3A_fnc_createVehicleCrew;
 			_vehiclesArray pushBack _uav;
@@ -87,7 +87,7 @@ private _fnc_spawngroups = {
 		_wp setWaypointType "SAD";
 		_Rivalsgroups pushBack _Rivalsgroup;
 
-		private _vehicles2 = if (_difficult2) then {selectRandom ((A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"))} else {selectRandom ((A3A_faction_riv get "vehiclesRivalsCars") + 
+		private _vehicles2 = if (_difficult2) then {selectRandomWeighted ((A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"))} else {selectRandomWeighted ((A3A_faction_riv get "vehiclesRivalsCars") + 
 		(A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsTrucks"))};
 		diag_log _vehicles2;
 		_vehicledata2 = [_skirmishpositionActuall2, 0,_vehicles2, _side2] call A3A_fnc_RivalsSpawnVehicle;

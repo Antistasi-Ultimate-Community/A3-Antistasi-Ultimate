@@ -99,11 +99,11 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
             {
                 if (_neededCargoSpace <= 4) then
                 {
-                    _currentSelected = selectRandom (_faction get "vehiclesHelisLight");
+                    _currentSelected = selectRandomWeighted (_faction get "vehiclesHelisLight");
                 }
                 else
                 {
-                    _currentSelected = selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport"));
+                    _currentSelected = selectRandomWeighted ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport"));
                 };
                 Verbose_1("Selected %1 as an air transport vehicle", _currentSelected);
             }
@@ -112,19 +112,19 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
                 if(_neededCargoSpace == 1) then
                 {
                     //Vehicle, crew and one person, selecting quad
-                    _currentSelected = selectRandom (_faction get "vehiclesBasic");
+                    _currentSelected = selectRandomWeighted (_faction get "vehiclesBasic");
                 }
                 else
                 {
                     if(_neededCargoSpace <= 5) then
                     {
                         //Select light unarmed vehicle (as the armed uses three crew)
-                        _currentSelected = selectRandom (_faction get "vehiclesLightUnarmed");
+                        _currentSelected = selectRandomWeighted (_faction get "vehiclesLightUnarmed");
                     }
                     else
                     {
                         //Select random truck or helicopter
-                        _currentSelected = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport"));
+                        _currentSelected = selectRandomWeighted ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport"));
                     };
                 };
                 Verbose_1("Selected %1 as an ground or air transport vehicle", _currentSelected);

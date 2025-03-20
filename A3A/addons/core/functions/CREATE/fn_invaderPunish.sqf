@@ -145,7 +145,7 @@ if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time 
     publicVariable "destroyedSites";
     private _mineTypes = A3A_faction_inv get "minefieldAPERS";
     for "_i" from 1 to 60 do {
-        private _mineX = createMine [selectRandom _mineTypes,_posDest,[],_size];
+        private _mineX = createMine [selectRandomWeighted _mineTypes,_posDest,[],_size];
         Invaders revealMine _mineX;
     };
     [_mrkDest] call A3A_fnc_destroyCity;

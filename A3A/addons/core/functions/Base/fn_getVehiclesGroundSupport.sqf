@@ -28,22 +28,22 @@ private _tankWeight =       [ 0,  0,  0, 15, 20, 25, 30, 35, 40, 50] select _lev
 private _ltankWeight =      [ 0, 10, 15, 25, 30, 35, 30, 25, 20, 15] select _level;
 
 // filter out weak AA that shouldn't be tier-scaled (eg. Avenger, zu23)
-private _vehAA = (_faction get "vehiclesAA") select { A3A_vehicleResourceCosts get _x >= 100 };
+private _vehAA = (_faction get "vehiclesAA") select { _x isEqualType "" && {A3A_vehicleResourceCosts get _x >= 100} };
 if (_vehAA isEqualTo []) then { _tankWeight = _tankWeight + _aaWeight };
 
-[_faction get "vehiclesLightTanks", _ltankWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesTanks", _tankWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesLightTanks") select {_x isEqualType ""}, _ltankWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesTanks") select {_x isEqualType ""}, _tankWeight] call _fnc_addArrayToWeights;
 if (_tanksOnly) exitWith { _vehWeights };
 
 // only occupants use militia vehicles?
 if (_side == Occupants) then {
-    [_faction get "vehiclesMilitiaLightArmed", _milCarWeight] call _fnc_addArrayToWeights;
-    private _milApc = _faction get "vehiclesMilitiaAPCs";
+    [(_faction get "vehiclesMilitiaLightArmed") select {_x isEqualType ""}, _milCarWeight] call _fnc_addArrayToWeights;
+    private _milApc = (_faction get "vehiclesMilitiaAPCs") select {_x isEqualType ""};
     if (_milApc isNotEqualTo []) then {
         [_milApc, _milApcWeight] call _fnc_addArrayToWeights;
     };
 };
-[_faction get "vehiclesLightArmed", _carWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesLightArmed") select {_x isEqualType ""}, _carWeight] call _fnc_addArrayToWeights;
 [_vehAA, _aaWeight] call _fnc_addArrayToWeights;
 
 _vehWeights;

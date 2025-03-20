@@ -54,7 +54,7 @@ private _spawnPosition = selectRandom _potentialspawnPosition;
 
 private _actualspawnPosition = getMarkerPos _spawnPosition;
 
-private _HeliClass = selectRandom (_faction get "vehiclesHelisTransport");
+private _HeliClass = selectRandomWeighted (_faction get "vehiclesHelisTransport");
 private _ammoBoxType = _faction get "ammobox";
 
 if (_HeliClass == "") exitWith {
@@ -88,11 +88,9 @@ private _attempts = 15;
 
 if (_HeliClass == "O_Heli_Transport_04_F") then {
 	_HeliClass = "O_Heli_Transport_04_F";
-	/* _lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
-	(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (selectRandom _csatPods)); */
 	while {_attempts != 0} do {
-		private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F" , "Land_Pod_Heli_Transport_04_bench_F" , "Land_Pod_Heli_Transport_04_medevac_F" , "Land_Pod_Heli_Transport_04_repair_F", "Land_Pod_Heli_Transport_04_fuel_F" , "Land_Pod_Heli_Transport_04_ammo_F" , "Land_Pod_Heli_Transport_04_box_F"];
-		_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + 
+		private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F", 1, "Land_Pod_Heli_Transport_04_bench_F", 1, "Land_Pod_Heli_Transport_04_medevac_F", 1, "Land_Pod_Heli_Transport_04_repair_F", 1, "Land_Pod_Heli_Transport_04_fuel_F", 1, "Land_Pod_Heli_Transport_04_ammo_F", 1, "Land_Pod_Heli_Transport_04_box_F", 1];
+		_lootcrateType = selectRandomWeighted ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + 
 		(_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _csatPods);
 		_lootCrate = _lootcrateType createVehicle _actualspawnPosition;
 		deleteVehicle _lootCrate;
@@ -149,12 +147,9 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 		_lootCrate addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 	};
 } else {
-	//if (_HeliClass typeOf "Heli_Transport_03_base_F") then {
-	/* _lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + 
-	(_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (selectRandom _regPods)); ///light armored vehicles + light tanks + pods */
 	while {_attempts != 0 } do {
-		private _regPods = ["B_Slingload_01_Cargo_F", "B_Slingload_01_Ammo_F", "B_Slingload_01_Medevac_F", "B_Slingload_01_Repair_F", "B_Slingload_01_Fuel_F"];
-		_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
+		private _regPods = ["B_Slingload_01_Cargo_F", 1, "B_Slingload_01_Ammo_F", 1, "B_Slingload_01_Medevac_F", 1, "B_Slingload_01_Repair_F", 1, "B_Slingload_01_Fuel_F", 1];
+		_lootcrateType = selectRandomWeighted ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
 		(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _regPods);
 		_lootCrate = _lootcrateType createVehicle _actualspawnPosition;
 		deleteVehicle _lootCrate;

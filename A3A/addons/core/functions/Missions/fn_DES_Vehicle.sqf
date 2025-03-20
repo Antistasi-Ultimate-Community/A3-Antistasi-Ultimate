@@ -16,7 +16,7 @@ private _limit = if (_difficultX) then {
 };
 _limit params ["_dateLimitNum", "_displayTime"];
 private _nameDest = [_markerX] call A3A_fnc_localizar;
-private _typeVehX = selectRandom (_faction get "vehiclesAA");
+private _typeVehX = selectRandomWeighted (_faction get "vehiclesAA");
 
 private _taskId = "DES" + str A3A_taskCount;
 [

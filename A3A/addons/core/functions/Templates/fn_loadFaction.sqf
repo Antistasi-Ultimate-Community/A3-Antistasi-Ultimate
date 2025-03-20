@@ -22,7 +22,18 @@ private _dataStore = createHashMap;
 
 private _fnc_saveToTemplate = {
 	params ["_name", "_data"];
-
+	private _weightedArrays = [
+		"vehiclesSDV", "vehiclesBasic", "vehiclesLightUnarmed", "vehiclesLightArmed", "vehiclesTruck", "vehiclesTrucks", "vehiclesCargoTrucks", "vehiclesAmmoTrucks", "vehiclesRepairTrucks", "vehiclesFuelTrucks", "vehiclesMedical", "vehiclesLightAPCs", "vehiclesAPCs",
+		"vehiclesIFVs", "vehiclesTanks", "vehiclesAA", "vehiclesAirborne", "vehiclesLightTanks", "vehiclesBoat", "vehiclesTransportBoats", "vehiclesGunBoats", "vehiclesAmphibious", "vehiclesPlane", "vehiclesCivPlane", "vehiclesPlanesCAS", "vehiclesPlanesAA", "vehiclesPlanesTransport",
+		"vehiclesHelisLight", "vehiclesHelisTransport", "vehiclesHelisLightAttack", "vehiclesHelisAttack", "vehiclesAirPatrol", "vehiclesArtillery", "uavsAttack", "uavsPortable", "vehiclesMilitiaLightArmed", "vehiclesMilitiaTrucks", "vehiclesMilitiaCars", "vehiclesMilitiaAPCs", "vehiclesPolice",
+		"staticMGs", "staticAT", "staticAA", "staticMortars", "staticHowitzers", "vehicleRadar", "vehicleSAM", "minefieldAT", "minefieldAPERS",
+		"vehiclesCivCar", "vehiclesCivTruck", "vehiclesCivHeli", "vehiclesCivBoat",
+		"vehiclesRivalsLightArmed", "vehiclesRivalsTrucks", "vehiclesRivalsCars", "vehiclesRivalsAPCs", "vehiclesRivalsTanks", "vehiclesRivalsHelis", "vehiclesRivalsUavs", "staticLowWeapons"
+	];
+	if (_name in _weightedArrays) then { // * convert all data types to standard weighted list. Set weights to 1 if none given.
+		if (_data isEqualType "") then { _data = [_data] };
+		if (count _data > 0 && {isNil {_data select 1} || {(_data select 1) isEqualType ""}}) then { _data = flatten (_data apply {[_x, 1]}) };
+	};
 	_dataStore set [_name, _data];
 };
 

@@ -67,13 +67,13 @@ while {true} do {
 
 // selecting classnames
 private _pilotClass = _faction get "unitPilot";
-private _helicopterClass = selectRandom (_faction get "vehiclesHelisTransport");
+private _helicopterClass = selectRandomWeighted (_faction get "vehiclesHelisTransport");
 private _searchHeliClass =  if (_difficult) then {
-    selectRandom ((_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
+    selectRandomWeighted ((_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
 } else {
-    selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
+    selectRandomWeighted ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
 };
-private _cargoTruckClass = selectRandom (_faction get "vehiclesTrucks");
+private _cargoTruckClass = selectRandomWeighted (_faction get "vehiclesTrucks");
 private _boxClass = _faction get "ammobox";
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
 

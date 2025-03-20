@@ -91,7 +91,7 @@ for "_i" from 0 to _uavQuantity - 1 do {
 
 	_spawnPosition pushBack ((_spawnPosition select 2) + _height);
 
-	private _uav = createVehicle [selectRandom (A3A_faction_riv get "vehiclesRivalsUavs"), _spawnPosition, [], 0, "FLY"];
+	private _uav = createVehicle [selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsUavs"), _spawnPosition, [], 0, "FLY"];
 	private _angle =  [_spawnPosition,_originPosition] call BIS_fnc_dirTo;
 	_uav setDir _angle;
 

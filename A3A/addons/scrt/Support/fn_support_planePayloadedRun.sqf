@@ -6,7 +6,7 @@ private _angleOrigin = _angle - 180;
 private _originPosition = [_positionOrigin, 2500, _angleOrigin] call BIS_fnc_relPos;
 private _finPosition = [_positionDestination, 2500, _angle] call BIS_fnc_relPos;
 
-private _planeData = [_originPosition, _angle, selectRandom (A3A_faction_reb get "vehiclesPlane"), teamPlayer] call A3A_fnc_spawnVehicle;
+private _planeData = [_originPosition, _angle, selectRandomWeighted (A3A_faction_reb get "vehiclesPlane"), teamPlayer] call A3A_fnc_spawnVehicle;
 private _plane = _planeData select 0;
 private _planeCrew = _planeData select 1;
 private _groupPlane = _planeData select 2;
@@ -34,7 +34,7 @@ switch (supportType) do {
 		_text = localize "STR_comms_mp_supply";
 	};
 	case ("VEH_AIRDROP"): {
-		_wp1 setWaypointStatements ["true", format ["if !(local this) exitWith {}; [this, '%1', '%2'] spawn SCRT_fnc_common_supplyDrop", selectRandom (A3A_faction_reb get "vehiclesBasic"), supportType]];
+		_wp1 setWaypointStatements ["true", format ["if !(local this) exitWith {}; [this, '%1', '%2'] spawn SCRT_fnc_common_supplyDrop", selectRandomWeighted (A3A_faction_reb get "vehiclesBasic"), supportType]];
 		_text = localize "STR_comms_mp_light_veh";
 	};
 	case ("NAPALM");

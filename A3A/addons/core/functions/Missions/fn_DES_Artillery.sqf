@@ -49,7 +49,7 @@ switch (true) do
 	case (tierWar < 6): 
 	{
 		private _potentialArtillery = (_howitzersPool + _mortarsPool);
-		_artilleryClass = selectRandom (_potentialArtillery select {_x isNotEqualTo []});
+		_artilleryClass = selectRandomWeighted (_potentialArtillery select {_x isNotEqualTo []});
 		_artilleryShellClass = if (_artilleryClass in _howitzersPool) then 
         {
             _howitzerMagazine
@@ -60,7 +60,7 @@ switch (true) do
 	default
 	{
 		private _potentialArtillery = (_howitzersPool + _artilleryPool);
-		_artilleryClass = selectRandom (_potentialArtillery select {_x isNotEqualTo []});
+		_artilleryClass = selectRandomWeighted (_potentialArtillery select {_x isNotEqualTo []});
 		_artilleryShellClass = if (_artilleryClass in _howitzersPool) then 
         {
             _howitzerMagazine
@@ -70,7 +70,7 @@ switch (true) do
 	};
 };
 
-_mgClass = selectRandom (_faction get "staticMGs");
+_mgClass = selectRandomWeighted (_faction get "staticMGs");
 _mgCrewClass = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
 
 if (isNil "_artilleryClass" || {isNil "_artilleryShellClass" || {isNil "_mgClass" || {isNil "_mgCrewClass"}}}) exitWith {

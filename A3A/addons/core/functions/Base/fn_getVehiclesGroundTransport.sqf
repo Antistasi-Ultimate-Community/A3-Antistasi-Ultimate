@@ -53,20 +53,20 @@ if (_faction get "vehiclesAPCs" isEqualTo []) then {
 
 // only occupants use militia vehicle types?
 if (_side == Occupants) then {
-    [_faction get "vehiclesPolice", _policeWeight] call _fnc_addArrayToWeights;
-    [_faction get "vehiclesMilitiaCars", _milCarWeight] call _fnc_addArrayToWeights;
-    [_faction get "vehiclesMilitiaTrucks", _milTruckWeight] call _fnc_addArrayToWeights;
-    private _milApc = _faction get "vehiclesMilitiaAPCs";
+    [(_faction get "vehiclesPolice") select {_x isEqualType ""}, _policeWeight] call _fnc_addArrayToWeights;
+    [(_faction get "vehiclesMilitiaCars") select {_x isEqualType ""}, _milCarWeight] call _fnc_addArrayToWeights;
+    [(_faction get "vehiclesMilitiaTrucks") select {_x isEqualType ""}, _milTruckWeight] call _fnc_addArrayToWeights;
+    private _milApc = (_faction get "vehiclesMilitiaAPCs") select {_x isEqualType ""};
     if (_milApc isNotEqualTo []) then {
         [_milApc, _milApcWeight] call _fnc_addArrayToWeights;
     };
 };
-[_faction get "vehiclesLightUnarmed", _carWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesLightArmedTroop", _armedCarWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesTrucks", _truckWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesLightAPCs", _lapcWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesAPCs", _apcWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesIFVs", _ifvWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesTanks", _tankWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesLightTanks", _ltankWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesLightUnarmed") select {_x isEqualType ""}, _carWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesLightArmedTroop") select {_x isEqualType ""}, _armedCarWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesTrucks") select {_x isEqualType ""}, _truckWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesLightAPCs") select {_x isEqualType ""}, _lapcWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesAPCs") select {_x isEqualType ""}, _apcWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesIFVs") select {_x isEqualType ""}, _ifvWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesTanks") select {_x isEqualType ""}, _tankWeight] call _fnc_addArrayToWeights;
+[(_faction get "vehiclesLightTanks") select {_x isEqualType ""}, _ltankWeight] call _fnc_addArrayToWeights;
 _vehWeights;

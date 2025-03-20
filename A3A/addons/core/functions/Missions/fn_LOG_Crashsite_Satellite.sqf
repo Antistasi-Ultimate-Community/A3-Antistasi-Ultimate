@@ -67,7 +67,7 @@ while {true} do { // This isn't great and would be better to figure out an alter
 };
 
 // selecting classnames
-private _reconVehicle = selectRandom (_faction get "vehiclesDropPod");
+private _reconVehicle = selectRandomWeighted (_faction get "vehiclesDropPod");
 private _reconVehicleDummyClass = _reconVehicle;
 if (_reconVehicle == "SpaceshipCapsule_01_F") then {
 	_reconVehicle = "SpaceshipCapsule_01_wreck_F";
@@ -76,12 +76,12 @@ if (_reconVehicle == "SpaceshipCapsule_01_F") then {
 private _pilotClass = _faction get "unitPilot";
 
 private _searchHeliClass =  if (_difficult) then {
-    selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
+    selectRandomWeighted ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
 } else {
-    selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
+    selectRandomWeighted ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
 };
 
-private _cargoTruckClass = selectRandom (_faction get "vehiclesTrucks");
+private _cargoTruckClass = selectRandomWeighted (_faction get "vehiclesTrucks");
 
 //selecting blackbox
 private _blackboxClass = "";

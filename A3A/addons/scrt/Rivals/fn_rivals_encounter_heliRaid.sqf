@@ -64,7 +64,7 @@ private _fnc_notifyPlayers = {
 
 	_spawnPosition pushBack ((_spawnPosition select 2) + _height);
 
-	private _heli = createVehicle [selectRandom (A3A_faction_riv get "vehiclesRivalsHelis"), _spawnPosition, [], 0, "FLY"];
+	private _heli = createVehicle [selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsHelis"), _spawnPosition, [], 0, "FLY"];
 	private _angle =  [_spawnPosition,_originPosition] call BIS_fnc_dirTo;
 	_heli setDir _angle;
 

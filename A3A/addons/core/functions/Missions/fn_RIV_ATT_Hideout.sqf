@@ -181,7 +181,7 @@ if (dateToNumber date < _dateLimitNum) then {
     _lootContainer addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
     [_lootContainer] call A3A_Logistics_fnc_addLoadAction;
 
-    private _truckClass = selectRandom (A3A_faction_riv get "vehiclesRivalsTrucks");
+    private _truckClass = selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsTrucks");
     private _vehiclePosAndDir = [_lootContainerPosition, _truckClass, 50, true] call SCRT_fnc_common_findSafePositionForVehicle; 
     private _truck = createVehicle [_truckClass, (_vehiclePosAndDir select 0), [], 0 , "CAN_COLLIDE"];
     _truck setDir (_vehiclePosAndDir select 1);
@@ -191,7 +191,7 @@ if (dateToNumber date < _dateLimitNum) then {
 
     if (_isDifficult) then {
         _truckPosition = position _truck;
-        private _prizeClass = selectRandom ((A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsCars") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks") + (A3A_faction_riv get "vehiclesRivalsHelis"));
+        private _prizeClass = selectRandomWeighted ((A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsCars") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks") + (A3A_faction_riv get "vehiclesRivalsHelis"));
         private _vehiclePosAndDir = [_truckPosition, _prizeClass, 50, true] call SCRT_fnc_common_findSafePositionForVehicle; 
         private _prizeVehicle = createVehicle [_prizeClass, (_vehiclePosAndDir select 0), [], 0 , "CAN_COLLIDE"];
         _prizeVehicle setDir (_vehiclePosAndDir select 1);
@@ -261,9 +261,9 @@ if (dateToNumber date < _dateLimitNum) then {
     //  Patrol vehicle 	                        //
     //////////////////////////////////////////////
     private _vehicleClass = if (_isDifficult) then {
-        selectRandom ((A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"));
+        selectRandomWeighted ((A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"));
     } else {
-        selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+        selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
     };
 
     private _vehiclePosAndDir = [_hideoutPosition, _vehicleClass, 250, true] call SCRT_fnc_common_findSafePositionForVehicle; 

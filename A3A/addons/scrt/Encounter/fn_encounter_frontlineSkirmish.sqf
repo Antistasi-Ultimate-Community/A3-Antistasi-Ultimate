@@ -62,8 +62,8 @@ private _fnc_spawngroups = {
 		_wp setWaypointSpeed "NORMAL";
 		_wp setWaypointType "SAD";
 		_InfGroups pushBack _InfGroup;
-		private _vehicles = if (_difficult) then {selectRandom ((_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
-					} else {selectRandom
+		private _vehicles = if (_difficult) then {selectRandomWeighted ((_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
+					} else {selectRandomWeighted
 					((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + 
 					(_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"))
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
@@ -76,7 +76,7 @@ private _fnc_spawngroups = {
 		_vehiclegroup setBehaviourStrong "AWARE";
 		units _vehiclegroup join _InfGroup;
 		if (_difficult) then {
-			_UAVtype = selectRandom (_faction get "uavsPortable");
+			_UAVtype = selectRandomWeighted (_faction get "uavsPortable");
 			_uav = createVehicle [_UAVtype, _skirmishpositionActuall, [], 0, "FLY"];
 			[_side, _uav] call A3A_fnc_createVehicleCrew;
 			_vehiclesArray pushBack _uav;
@@ -97,8 +97,8 @@ private _fnc_spawngroups = {
 		_wp setWaypointType "SAD";
 		_InfGroups2 pushBack _InfGroup2;
 
-		private _vehicles2 = if (_difficult2) then {selectRandom ((_faction2 get "vehiclesAirborne") + (_faction2 get "vehiclesLightTanks") + (_faction2 get "vehiclesTanks") + (_faction2 get "vehiclesAPCs") + (_faction2 get "vehiclesIFVs"))
-					} else {selectRandom
+		private _vehicles2 = if (_difficult2) then {selectRandomWeighted ((_faction2 get "vehiclesAirborne") + (_faction2 get "vehiclesLightTanks") + (_faction2 get "vehiclesTanks") + (_faction2 get "vehiclesAPCs") + (_faction2 get "vehiclesIFVs"))
+					} else {selectRandomWeighted
 					((_faction2 get "vehiclesLightUnarmed") + (_faction2 get "vehiclesLightArmed") + (_faction2 get "vehiclesAirborne") + (_faction2 get "vehiclesLightTanks") + (_faction2 get "vehiclesMilitiaAPCs") + 
 					(_faction2 get "vehiclesMilitiaLightArmed") + (_faction2 get "vehiclesMilitiaCars"))
 		};

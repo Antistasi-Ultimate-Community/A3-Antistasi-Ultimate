@@ -92,44 +92,44 @@ Info("Identifying vehicle types");
 
 //Occ&Inv X vehicles
 //Antistasi Ultimate stuff
-setVar("vehiclesDropPod", OccAndInv("vehiclesDropPod"));
-setVar("vehiclesSDV", OccAndInv("vehiclesSDV"));
+setVar("vehiclesDropPod", OccAndInv("vehiclesDropPod") select {_x isEqualType ""});
+setVar("vehiclesSDV", OccAndInv("vehiclesSDV") select {_x isEqualType ""});
 ///
-setVar("vehiclesPolice", OccAndInv("vehiclesPolice"));
-setVar("vehiclesAttack", OccAndInv("vehiclesAttack"));
-setVar("vehiclesAmmoTrucks", OccAndInv("vehiclesAmmoTrucks"));
-setVar("vehiclesLightAPCs", OccAndInv("vehiclesLightAPCs") + OccAndInv("vehiclesMilitiaAPCs") + OccAndInv("vehiclesAirborne"));
-setVar("vehiclesMedical", OccAndInv("vehiclesMedical") + ((A3A_faction_civ get "vehiclesCivMedical") select {_x isEqualType ""}));
-setVar("vehiclesAPCs", OccAndInv("vehiclesAPCs") + Riv("vehiclesRivalsAPCs") + ("APC" call _fnc_extractMarketClasses));
-setVar("vehiclesIFVs", OccAndInv("vehiclesIFVs") );
-setVar("vehiclesUAVs", OccAndInv("uavsAttack")+ OccAndInv("uavsPortable") + Riv("vehiclesRivalsUavs") + ("UAV" call _fnc_extractMarketClasses));
-setVar("vehiclesAA", OccAndInv("vehiclesAA") + ("AA" call _fnc_extractMarketClasses) + Reb("vehiclesAA"));
-setVar("vehiclesArtillery", OccAndInv("vehiclesArtillery") + ("ARTILLERY" call _fnc_extractMarketClasses));
-setVar("vehiclesTanks", OccAndInv("vehiclesTanks") + Riv("vehiclesRivalsTanks") + ("TANK" call _fnc_extractMarketClasses));
-setVar("vehiclesTransportAir", OccAndInv("vehiclesHelisLight") + OccAndInv("vehiclesHelisTransport") + OccAndInv("vehiclesPlanesTransport"));
-setVar("vehiclesHelisLight", OccAndInv("vehiclesHelisLight") );
-setVar("vehiclesHelisLightAttack", OccAndInv("vehiclesHelisLightAttack") );
-setVar("vehiclesHelisAttack", OccAndInv("vehiclesHelisAttack") );
-setVar("vehiclesHelisTransport", OccAndInv("vehiclesHelisTransport") );
-setVar("vehiclesPlanesAA", OccAndInv("vehiclesPlanesAA") );
-setVar("vehiclesPlanesCAS", OccAndInv("vehiclesPlanesCAS") );
-setVar("vehiclesPlanesLargeAA", OccAndInv("vehiclesPlanesLargeAA") );
-setVar("vehiclesPlanesLargeCAS", OccAndInv("vehiclesPlanesLargeCAS") );
-setVar("vehiclesPlanesTransport", OccAndInv("vehiclesPlanesTransport"));
-setVar("vehiclesAirPatrol", OccAndInv("vehiclesAirPatrol"));
-setVar("vehiclesPlanesGunship", OccAndInv("vehiclesPlanesGunship"));
-setVar("staticMortars", OccAndInv("staticMortars") + Riv("staticMortars") + Reb("staticMortars") + ("STATICMORTAR" call _fnc_extractMarketClasses));
-setVar("staticAA", OccAndInv("staticAA") + Reb("staticAA") + ("STATICAA" call _fnc_extractMarketClasses));
-setVar("staticAT", OccAndInv("staticAT") + Reb("staticAT") + ("STATICAT" call _fnc_extractMarketClasses));
-setVar("staticMGs", OccAndInv("staticMGs") + Riv("staticLowWeapons") + Reb("staticMGs") + ("STATICMG" call _fnc_extractMarketClasses));
+setVar("vehiclesPolice", OccAndInv("vehiclesPolice") select {_x isEqualType ""});
+setVar("vehiclesAttack", OccAndInv("vehiclesAttack") select {_x isEqualType ""});
+setVar("vehiclesAmmoTrucks", OccAndInv("vehiclesAmmoTrucks") select {_x isEqualType ""});
+setVar("vehiclesLightAPCs", (OccAndInv("vehiclesLightAPCs") + OccAndInv("vehiclesMilitiaAPCs") + OccAndInv("vehiclesAirborne")) select {_x isEqualType ""});
+setVar("vehiclesMedical", (OccAndInv("vehiclesMedical") + (A3A_faction_civ get "vehiclesCivMedical")) select {_x isEqualType ""});
+setVar("vehiclesAPCs", (OccAndInv("vehiclesAPCs") + Riv("vehiclesRivalsAPCs") + ("APC" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("vehiclesIFVs", OccAndInv("vehiclesIFVs") select {_x isEqualType ""});
+setVar("vehiclesUAVs", (OccAndInv("uavsAttack")+ OccAndInv("uavsPortable") + Riv("vehiclesRivalsUavs") + ("UAV" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("vehiclesAA", (OccAndInv("vehiclesAA") + ("AA" call _fnc_extractMarketClasses) + Reb("vehiclesAA")) select {_x isEqualType ""});
+setVar("vehiclesArtillery", (OccAndInv("vehiclesArtillery") + ("ARTILLERY" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("vehiclesTanks", (OccAndInv("vehiclesTanks") + Riv("vehiclesRivalsTanks") + ("TANK" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("vehiclesTransportAir", (OccAndInv("vehiclesHelisLight") + OccAndInv("vehiclesHelisTransport") + OccAndInv("vehiclesPlanesTransport")) select {_x isEqualType ""});
+setVar("vehiclesHelisLight", OccAndInv("vehiclesHelisLight") select {_x isEqualType ""});
+setVar("vehiclesHelisLightAttack", OccAndInv("vehiclesHelisLightAttack") select {_x isEqualType ""});
+setVar("vehiclesHelisAttack", OccAndInv("vehiclesHelisAttack") select {_x isEqualType ""});
+setVar("vehiclesHelisTransport", OccAndInv("vehiclesHelisTransport") select {_x isEqualType ""});
+setVar("vehiclesPlanesAA", OccAndInv("vehiclesPlanesAA") select {_x isEqualType ""});
+setVar("vehiclesPlanesCAS", OccAndInv("vehiclesPlanesCAS") select {_x isEqualType ""});
+setVar("vehiclesPlanesLargeAA", OccAndInv("vehiclesPlanesLargeAA") select {_x isEqualType ""});
+setVar("vehiclesPlanesLargeCAS", OccAndInv("vehiclesPlanesLargeCAS") select {_x isEqualType ""});
+setVar("vehiclesPlanesTransport", OccAndInv("vehiclesPlanesTransport") select {_x isEqualType ""});
+setVar("vehiclesAirPatrol", OccAndInv("vehiclesAirPatrol") select {_x isEqualType ""});
+setVar("vehiclesPlanesGunship", OccAndInv("vehiclesPlanesGunship") select {_x isEqualType ""});
+setVar("staticMortars", (OccAndInv("staticMortars") + Riv("staticMortars") + Reb("staticMortars") + ("STATICMORTAR" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("staticAA", (OccAndInv("staticAA") + Reb("staticAA") + ("STATICAA" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("staticAT", (OccAndInv("staticAT") + Reb("staticAT") + ("STATICAT" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
+setVar("staticMGs", (OccAndInv("staticMGs") + Riv("staticLowWeapons") + Reb("staticMGs") + ("STATICMG" call _fnc_extractMarketClasses)) select {_x isEqualType ""});
 
 //Antistasi Plus stuff
-setVar("vehiclesAirborne", OccAndInv("vehiclesAirborne"));
-setVar("vehiclesLightTanks", OccAndInv("vehiclesLightTanks"));
+setVar("vehiclesAirborne", OccAndInv("vehiclesAirborne") select {_x isEqualType ""});
+setVar("vehiclesLightTanks", OccAndInv("vehiclesLightTanks") select {_x isEqualType ""});
 
-setVar("vehicleRadars", [Occ("vehicleRadar"), Inv("vehicleRadar")]);
-setVar("vehicleSams", [Occ("vehicleSam"), Inv("vehicleSam")]);
-setVar("staticHowitzers", OccAndInv("staticHowitzers"));
+setVar("vehicleRadars", [Occ("vehicleRadar"), Inv("vehicleRadar")] select {_x isEqualType ""});
+setVar("vehicleSams", [Occ("vehicleSam"), Inv("vehicleSam")] select {_x isEqualType ""});
+setVar("staticHowitzers", OccAndInv("staticHowitzers") select {_x isEqualType ""});
 
 [A3A_faction_inv, "animations"] call _fnc_setHashmap;
 [A3A_faction_occ, "animations"] call _fnc_setHashmap;
@@ -144,16 +144,16 @@ setVar("staticHowitzers", OccAndInv("staticHowitzers"));
 
 //Rivals
 private _vehRivalsArmor = Riv("vehiclesRivalsAPCs") + Riv("vehiclesRivalsTanks");
-setVar("vehiclesRivalsArmor", _vehRivalsArmor);
+setVar("vehiclesRivalsArmor", _vehRivalsArmor select {_x isEqualType ""});
 
 private _vehRivalsLight = Riv("vehiclesRivalsCars") + Riv("vehiclesRivalsLightArmed") + Riv("vehiclesRivalsTrucks");
-setVar("vehiclesRivalsLight", _vehRivalsLight);
+setVar("vehiclesRivalsLight", _vehRivalsLight select {_x isEqualType ""});
 
 private _vehRivalsStatics = Riv("staticMGs") + Riv("staticAT") + Riv("staticAA");
-setVar("vehiclesRivalsStatics", _vehRivalsStatics);
+setVar("vehiclesRivalsStatics", _vehRivalsStatics select {_x isEqualType ""});
 
 private _vehRivalsAir = Riv("vehiclesRivalsHelis");
-setVar("vehiclesRivalsAir", _vehRivalsAir);
+setVar("vehiclesRivalsAir", _vehRivalsAir select {_x isEqualType ""});
 
 private _vehRivals = Riv("vehiclesRivalsAPCs") 
 + Riv("vehiclesRivalsTanks") 
@@ -162,17 +162,17 @@ private _vehRivals = Riv("vehiclesRivalsAPCs")
 + Riv("vehiclesRivalsLightArmed") 
 + Riv("vehiclesRivalsUavs")
 + Riv("vehiclesRivalsHelis");
-setVar("vehiclesRivals", _vehRivals);
+setVar("vehiclesRivals", _vehRivals select {_x isEqualType ""});
 
 private _vehMilitia = OccAndInv("vehiclesMilitiaCars")
 + OccAndInv("vehiclesMilitiaTrucks")
 + OccAndInv("vehiclesMilitiaLightArmed")
 + OccAndInv("vehiclesMilitiaAPCs");
-setVar("vehiclesMilitia", _vehMilitia);
+setVar("vehiclesMilitia", _vehMilitia select {_x isEqualType ""});
 
 //boats
 private _vehBoats = OccAndInv("vehiclesTransportBoats") + OccAndInv("vehiclesGunBoats") + Reb("vehiclesBoat");
-setVar("vehiclesBoats", _vehBoats);
+setVar("vehiclesBoats", _vehBoats select {_x isEqualType ""});
 
 //Occ&Inv helicopters
 private _vehHelis =
@@ -181,7 +181,7 @@ OccAndInv("vehiclesHelisTransport")
 + OccAndInv("vehiclesHelisAttack")
 + OccAndInv("vehiclesHelisLight")
 + ("HELI" call _fnc_extractMarketClasses);
-setVar("vehiclesHelis", _vehHelis);
+setVar("vehiclesHelis", _vehHelis select {_x isEqualType ""});
 
 //fixed winged aircrafts
 private _vehFixedWing =
@@ -193,7 +193,7 @@ OccAndInv("vehiclesPlanesCAS")
 + Reb("vehiclesPlane")
 + Reb("vehiclesCivPlane")
 + ("PLANE" call _fnc_extractMarketClasses);
-setVar("vehiclesFixedWing", _vehFixedWing);
+setVar("vehiclesFixedWing", _vehFixedWing select {_x isEqualType ""});
 
 //trucks to carry infantry
 private _vehTrucks =
@@ -201,7 +201,7 @@ OccAndInv("vehiclesTrucks")
 + OccAndInv("vehiclesMilitiaTrucks")
 + Riv("vehiclesRivalsTrucks")
 + Reb("vehiclesTruck");
-setVar("vehiclesTrucks", _vehTrucks);
+setVar("vehiclesTrucks", _vehTrucks select {_x isEqualType ""});
 
 //Armed cars
 private _carsArmed =
@@ -210,7 +210,7 @@ OccAndInv("vehiclesLightArmed")
 + Reb("vehiclesLightArmed")
 + Riv("vehiclesRivalsLightArmed")
 + ("ARMEDCAR" call _fnc_extractMarketClasses);
-setVar("vehiclesLightArmed", _carsArmed);
+setVar("vehiclesLightArmed", _carsArmed select {_x isEqualType ""});
 
 //Unarmed cars
 private _carsUnarmed =
@@ -221,7 +221,7 @@ OccAndInv("vehiclesLightUnarmed")      // anything else?
 + ("UNARMEDCAR" call _fnc_extractMarketClasses)
 + Reb("vehiclesLightUnarmed");
 setVar("vehiclesLightUnarmed", _carsUnarmed);
-setVar("vehiclesLight", _carsArmed + _carsUnarmed);
+setVar("vehiclesLight", (_carsArmed + _carsUnarmed) select {_x isEqualType ""});
 
 //all Occ&Inv armor
 private _vehArmor =
@@ -233,7 +233,7 @@ getVar("vehiclesTanks")
 + getVar("vehiclesLightTanks")
 + getVar("vehiclesAirborne")
 + getVar("vehiclesIFVs");
-setVar("vehiclesArmor", _vehArmor);
+setVar("vehiclesArmor", _vehArmor select {_x isEqualType ""});
 
 //rebel vehicles
 private _vehReb = 
@@ -242,10 +242,10 @@ private _vehReb =
     + Reb("staticMGs") + Reb("staticAT") + Reb("staticAA") + Reb("staticMortars")
     + Reb("vehiclesHelis") + Reb("vehiclesPlane") + Reb("vehiclesMedical") + Reb("vehiclesAA")
     + (A3U_blackMarketStock apply {_x select 0});
-setVar("vehiclesReb", _vehReb);
+setVar("vehiclesReb", _vehReb select {_x isEqualType ""});
 
 //trucks that can cary logistics cargo
-private _vehCargoTrucks = (_vehTrucks + OccAndInv("vehiclesCargoTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
+private _vehCargoTrucks = (_vehTrucks + OccAndInv("vehiclesCargoTrucks")) select { _x isEqualType "" && {[_x] call A3A_Logistics_fnc_getVehCapacity > 1} };
 setVar("vehiclesCargoTrucks", _vehCargoTrucks);
 
 missionNamespace setVariable ["A3A_faction_all", A3A_faction_all, true];

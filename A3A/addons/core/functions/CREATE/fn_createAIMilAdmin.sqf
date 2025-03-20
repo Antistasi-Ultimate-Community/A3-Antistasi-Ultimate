@@ -179,7 +179,7 @@ private _roadcon = roadsConnectedto (_road select 0);
 private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _vehClass = selectRandom _carPool;
+private _vehClass = selectRandomWeighted _carPool;
 private _spawnPos = (getPos (_road select 0)) findEmptyPosition [0, 10, _vehClass];
 if (isNil "_spawnPos") then {
 	_spawnPos = getPos (_road select 0);

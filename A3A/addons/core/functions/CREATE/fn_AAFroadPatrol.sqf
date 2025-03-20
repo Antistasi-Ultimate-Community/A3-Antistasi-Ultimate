@@ -33,36 +33,36 @@ private _typePatrol = "LAND";
 
 switch (true) do {
 	case (_base in seaports): {
-		_typeCar = selectRandom (_faction get "vehiclesGunBoats");
+		_typeCar = selectRandomWeighted (_faction get "vehiclesGunBoats");
 		_typePatrol = "SEA";
 	};
 
 	case (_base in milbases): {
 		if (random 10 < tierWar + aggressionOccupants/10) then {
-			_typeCar = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks"));
+			_typeCar = selectRandomWeighted ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks"));
 		} else {
-			_typeCar = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesMilitiaAPCs"));
+			_typeCar = selectRandomWeighted ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesMilitiaAPCs"));
 		};
 	};
 
 	case (_base in airportsX && {!(_faction getOrDefault ["attributeLowAir", false])}): {
 		if (_sideX isEqualTo Invaders || {random 10 < tierWar + aggressionOccupants/10}) then {
-			_typeCar = selectRandom (_faction get "vehiclesHelisLight");
+			_typeCar = selectRandomWeighted (_faction get "vehiclesHelisLight");
 			if(count (_faction get "vehiclesAirPatrol") > 0) then 
 			{
-				_typeCar = selectRandom (_faction get "vehiclesAirPatrol");
+				_typeCar = selectRandomWeighted (_faction get "vehiclesAirPatrol");
 			};
 			_typePatrol = "AIR";
 		} else {
-			_typeCar = selectRandom ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"));	
+			_typeCar = selectRandomWeighted ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"));	
 		};
 	};
 
 	default {
 		if (_sideX isEqualTo Invaders || {random 10 < tierWar + aggressionOccupants/10}) then {
-			_typeCar = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightUnarmed"));
+			_typeCar = selectRandomWeighted ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightUnarmed"));
 		} else {
-			_typeCar = selectRandom ((_faction get "vehiclesPolice") + (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars") + (_faction get "vehiclesBasic"));
+			_typeCar = selectRandomWeighted ((_faction get "vehiclesPolice") + (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars") + (_faction get "vehiclesBasic"));
 		};
 	};
 };

@@ -21,7 +21,7 @@ private _isLand = if (_lowAir) then { true } else {						// land markers guarant
 ServerInfo_5("Spawning PatrolReinf. Dest:%1 Orig:%2 Size:%3 Side:%4 Land:%5",_mrkDest,_mrkOrigin,_numTroops,_side,_isLand);
 
 private _vehicleType = if (_isLand) then {
-	selectRandom (_faction get "vehiclesTrucks");
+	selectRandomWeighted (_faction get "vehiclesTrucks");
 } else {
 	private _transportPlanes = _faction get "vehiclesPlanesTransport";
 	private _transportHelis = _faction get "vehiclesHelisTransport";

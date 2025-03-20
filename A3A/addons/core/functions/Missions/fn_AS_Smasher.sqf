@@ -76,9 +76,9 @@ if (_difficultX) then {
 
 	// Spawn attack helicopter
 	private _heliType = if (_faction getOrDefault ["vehiclesHelisAttack", []] isNotEqualTo []) then {
-		selectRandom (_faction getOrDefault ["vehiclesHelisAttack", []]);
+		selectRandomWeighted (_faction getOrDefault ["vehiclesHelisAttack", []]);
 	} else {
-		selectRandom (_faction getOrDefault ["vehiclesHelisLightAttack", []]);
+		selectRandomWeighted (_faction getOrDefault ["vehiclesHelisLightAttack", []]);
 	};
 	
 	private _heliPos = _posTask getPos [random [1000, 2000, 3000], random 360]; // replace this with an airbase or outpost, etc

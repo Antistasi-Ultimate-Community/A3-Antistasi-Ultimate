@@ -21,7 +21,7 @@ FIX_LINE_NUMBERS()
 params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_reveal", "_delay"];
 
 private _faction = Faction(_side);
-private _vehType = selectRandom (_faction get "vehiclesArtillery");
+private _vehType = selectRandomWeighted (_faction get "vehiclesArtillery");
 private _magPool = (_faction get "magazines") get _vehType;
 private _shellType = selectRandom _magPool;
 ([_vehType, _shellType] call A3A_fnc_getArtilleryRanges) params ["_minRange", "_maxRange"];

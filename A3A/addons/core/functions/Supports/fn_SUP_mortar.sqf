@@ -22,7 +22,7 @@ FIX_LINE_NUMBERS()
 params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_reveal", "_delay"];
 
 private _faction = Faction(_side);
-private _vehType = selectRandom (_faction get "staticMortars");
+private _vehType = selectRandomWeighted (_faction get "staticMortars");
 private _shellType = _faction get "mortarMagazineHE";
 ([_vehType, _shellType] call A3A_fnc_getArtilleryRanges) params ["_minRange", "_maxRange"];
 

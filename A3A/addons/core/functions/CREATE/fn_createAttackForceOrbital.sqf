@@ -34,7 +34,7 @@ private _crewGroups = [];
 private _cargoGroups = [];
 
 private _faction = Faction(_side);
-private _transportPlanes = _faction get "vehiclesDropPod";
+private _transportPlanes = (_faction get "vehiclesDropPod") select {_x isEqualType ""};
 private _lhFactor = 0 max (1 - (tierWar+_tierMod) / 10);            // phase out light helis at higher war tiers
 
 private _transportPool = [];
@@ -56,7 +56,7 @@ for "_i" from 1 to _vehCount do {
     switch (true) do {   
         case (_isGuaranteedAirdrop || {_vehType == "VEHAIRDROP"}): {
             //TODO: remove this delicious copypasta
-            private _transportPlaneType = selectRandom _transportPlanes;
+            private _transportPlaneType = selectRandomWeighted _transportPlanes;
             private _vehData = [_transportPlaneType, _troopType, _resPool, [], _side, _base, _targPos, true] call A3A_fnc_createAttackVehicleOrbital;
             if !(_vehData isEqualType []) exitWith {};          // couldn't create for some reason. Not sure why for air vehicles.
 

@@ -50,7 +50,7 @@ private _roadPosition = getPos (_road select 0);
 
 private _crater = createVehicle ["Crater", _roadPosition, [], 0, "NONE"];
 
-private _vehicleClass = selectRandom ((A3A_faction_riv get "vehiclesRivalsCars") + (A3A_faction_riv get "vehiclesRivalsLightArmed"));
+private _vehicleClass = selectRandomWeighted ((A3A_faction_riv get "vehiclesRivalsCars") + (A3A_faction_riv get "vehiclesRivalsLightArmed"));
 private _crashedVehicle = createVehicle [_vehicleClass, [_roadPosition select 0, _roadPosition select 1, 0.2], [], 0, "CAN_COLLIDE"];
 _crashedVehicle setDir _dirveh;
 _crashedVehicle setDamage 0.7;
@@ -392,7 +392,7 @@ _roadcon = roadsConnectedto (selectRandom _road);
 _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 _roadPosition = getPos (_road select 0);
 
-private _rivalVehData = [_roadPosition, 0, selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed"), Rivals] call A3A_fnc_RivalsSpawnVehicle;
+private _rivalVehData = [_roadPosition, 0, selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed"), Rivals] call A3A_fnc_RivalsSpawnVehicle;
 private _rivalVeh = _rivalVehData select 0;
 [_rivalVeh, Rivals] call A3A_fnc_AIVEHinit;
 private _rivalVehCrew = _rivalVehData select 1;

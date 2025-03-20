@@ -866,7 +866,7 @@ class squadRecruit: SimpleMenuBigger
 			text = $STR_antistasi_dialogs_mg_team_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
-			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'staticMGs')] spawn A3A_fnc_addFIAsquadHC";
+			action = "closeDialog 0;[selectRandomWeighted (A3A_faction_reb get 'staticMGs')] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class l5Button: SimpleButton
@@ -893,7 +893,7 @@ class squadRecruit: SimpleMenuBigger
 			text = $STR_antistasi_dialogs_at_car_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
-			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'vehiclesAT')] spawn A3A_fnc_addFIAsquadHC";
+			action = "closeDialog 0;[selectRandomWeighted (A3A_faction_reb get 'vehiclesAT')] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class r3Button: SimpleButton
@@ -902,7 +902,7 @@ class squadRecruit: SimpleMenuBigger
 			text = $STR_antistasi_dialogs_aa_car_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
-			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'staticAA')] spawn A3A_fnc_addFIAsquadHC";
+			action = "closeDialog 0;[selectRandomWeighted (A3A_faction_reb get 'staticAA')] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class r4Button: SimpleButton
@@ -911,7 +911,7 @@ class squadRecruit: SimpleMenuBigger
 			text = $STR_antistasi_dialogs_mortar_team_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
-			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'staticMortars')] spawn A3A_fnc_addFIAsquadHC";
+			action = "closeDialog 0;[selectRandomWeighted (A3A_faction_reb get 'staticMortars')] spawn A3A_fnc_addFIAsquadHC";
 		};
 		class r5Button: SimpleButton
 		{
@@ -919,7 +919,7 @@ class squadRecruit: SimpleMenuBigger
 			text = $STR_antistasi_dialogs_mg_car_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.682 * safezoneH + safezoneY;
-			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'vehiclesLightArmed')] spawn A3A_fnc_addFIAsquadHC";
+			action = "closeDialog 0;[selectRandomWeighted (A3A_faction_reb get 'vehiclesLightArmed')] spawn A3A_fnc_addFIAsquadHC";
 		};
 	};
 };

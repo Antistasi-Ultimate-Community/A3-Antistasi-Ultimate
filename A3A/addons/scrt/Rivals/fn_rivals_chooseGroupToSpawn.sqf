@@ -39,7 +39,7 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 		};
 
 		private _vehicle = if (random 100 < (((100 - 20 * inactivityLevelRivals) - 10) max 0)) then {
-			selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+			selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 		} else {
 			""
 		};
@@ -55,14 +55,14 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 
 		private _vehicle = switch (true) do {
             case ((random 100) < 25): {
-				selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+				selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 			};
 			case ((random 100) < 15): {
 				private _apcs = A3A_faction_riv get "vehiclesRivalsAPCs";
 				if (_apcs isEqualTo []) then {
-					selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+					selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 				} else {
-					selectRandom _apcs;
+					selectRandomWeighted _apcs;
 				};
 			};
 			default {
@@ -76,14 +76,14 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 		private _group = selectRandom (A3A_faction_riv get "groupsSquad");
 		private _vehicle = switch (true) do {
 			case ((random 100) < 35): {
-				selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+				selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 			};
             case ((random 100) < 25): {
 				private _apcs = A3A_faction_riv get "vehiclesRivalsAPCs";
 				if (_apcs isEqualTo []) then {
-					selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+					selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 				} else {
-					selectRandom _apcs;
+					selectRandomWeighted _apcs;
 				};
 			};
             case ((random 100) < 15): {
@@ -92,13 +92,13 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 
 				switch (true) do {
 					case (_tanks isNotEqualTo []): {
-						selectRandom _tanks;
+						selectRandomWeighted _tanks;
 					};
 					case (_apcs isNotEqualTo []): {
-						selectRandom _apcs;
+						selectRandomWeighted _apcs;
 					};
 					default {
-						selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
+						selectRandomWeighted (A3A_faction_riv get "vehiclesRivalsLightArmed");
 					};
 				};
 			};
