@@ -525,6 +525,13 @@
                 <Korean>파테트라오.\n라오스의 정치 활동 조직입니다.</Korean>
                 <French>Pathet Lao.\nMouvement et organisation politique du Laos.</French>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_hm">
+                <Original>Hmong Secret Army.\nCIA-backed, largely Hmong, guerrilla force.</Original>
+                <Russian>Хмонгская тайная армия.\nПоддерживаемая ЦРУ, в основном хмонгская, партизанская сила.</Russian>
+                <Chinesesimp>苗族秘密军。\n由CIA支持，主要是苗族的游击队。</Chinesesimp>
+                <Korean>몽족 비밀군.\nCIA 지원을 받으며, 주로 몽족으로 구성된 게릴라군입니다.</Korean>
+                <French>Armée secrète Hmong.\nForce de guérilla soutenue par la CIA, principalement composée de Hmong.</French>
+            </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ra">
                 <Original>The Workers' and Peasants' Red Army (Red Army).\nAll the might of the Soviet Union.\nUsage of this faction will activate the Cold War mode (there will be only usage of vehicles and weapons that roughly fits the timeline.</Original>
                 <Russian>Рабоче-крестьянская красная армия (РККА).\nВся мощь Советского Союза.\nИспользование этой фракции включает режим Холодной Войны (будет использоваться только оружие и техника, которые подходят по временному периоду).</Russian>
