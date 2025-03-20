@@ -82,7 +82,7 @@ Lao_LastNames = [
 ];
 Lao_FirstNames = [
     "Somchai", "Bounthavy", "Khamla", "Sengphet", "Xay", "Chansy", "Thongchai", "Vixay", "Phoutthasone", "Douang",
-    "Souvanny", "Khamphou", "Chanthone", "Sisouk", "Somsack", "Phomma", "Bounlue", "Khampheng", "Thonglith", "Vong",
+    "Souvanny", "Khamphou", "Chanthone", "Sisouk", "Somsack", "Phomma", "Bounlue", "Khampheng", "Thonglith", "Vong"
 ];
 VN_LastNames = [
     "Nguyen", "Tran", "Le", "Pham", "Hoang", "Phan", "Vu", "Dang", "Bui", "Ngo", "Duong", "Dinh", 
