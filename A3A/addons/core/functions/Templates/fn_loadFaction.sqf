@@ -72,48 +72,12 @@ private _fnc_generateAndSaveUnitsToTemplate = {
 	} forEach _unitTemplates;
 };
 
-// Custom defined name lists beyond what is available in CfgWorlds.GenericNames
-Lao_LastNames = [
-    "Sisavath", "Souvanthong", "Inthavong", "Keomany", "Sihavong", "Chansy", "Phanthavong", "Somphone", "Bounmy", "Douangphouxay",
-    "Xaysana", "Vongsavanh", "Phimmasone", "Souvannavong", "Khamphoumy", "Sengsouly", "Thongsavath", "Vannasith", "Phouangmala", "Khamchai",
-    "Sihavong", "Vongphachanh", "Xayavong", "Thammavong", "Vannavong", "Douangchai", "Chanthavong", "Souvannaseng", "Phanlasy", "Thongsavanh",
-    "Somsanith", "Khamvongsa", "Phommasane", "Inthasone", "Khamsouk", "Vixay", "Kongmany", "Chanthalangsy", "Souvannaphong", "Bounnack",
-    "Douangsavanh", "Xaybandith", "Phengsavanh", "Sisouvanh", "Nanthavong", "Vongxay", "Phommachanh", "Soukthavong", "Phouangpak", "Somsavath"
-];
-Lao_FirstNames = [
-    "Somchai", "Bounthavy", "Khamla", "Sengphet", "Xay", "Chansy", "Thongchai", "Vixay", "Phoutthasone", "Douang",
-    "Souvanny", "Khamphou", "Chanthone", "Sisouk", "Somsack", "Phomma", "Bounlue", "Khampheng", "Thonglith", "Vong"
-];
-VN_LastNames = [
-    "Nguyen", "Tran", "Le", "Pham", "Hoang", "Phan", "Vu", "Dang", "Bui", "Ngo", "Duong", "Dinh", 
-	"Ly", "Luu", "Thach", "Ton", "Tieu", "Quach", "Diep", "Huynh", "Trinh", "Tu", "Gia", "Van", 
-	"Luong", "Nghiem", "Khanh", "Son", "Dao", "Tam", "Hien"
-];
-VN_FirstNames = ["An", "Bao", "Cuong", "Dung", "Hai", "Khoa", "Linh", "Minh", "Quang", "Tu"];
-
 private _fnc_saveNames = {
     params ["_names"];
-
-    private _firstNames = [];
-    private _lastNames = [];
-
-    switch (_names) do {
-		case "VietnameseMen": {
-            _firstNames = VN_FirstNames;
-            _lastNames = VN_LastNames;
-        };
-		case "LaoMen": {
-            _firstNames = Lao_FirstNames;
-            _lastNames = Lao_LastNames;
-        };
-		default {
-    		private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> _names;
-    		_firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
-    		_lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
-		}
-	};
-
-	["firstNames", _firstNames] call _fnc_saveToTemplate;
+    private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> _names;
+    private _firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
+    ["firstNames", _firstNames] call _fnc_saveToTemplate;
+    private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
     ["lastNames", _lastNames] call _fnc_saveToTemplate;
 };
 
