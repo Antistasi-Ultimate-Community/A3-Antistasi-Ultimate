@@ -16,7 +16,6 @@
             <Chinesesimp>全部</Chinesesimp>
             <Korean>모두</Korean>
             <French>Tous</French>
-            <English>All</English>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_HANDGUNS">
             <Original>Handguns</Original>
@@ -186,7 +185,6 @@
             <Chinesesimp>商店</Chinesesimp>
             <Korean>상점</Korean>
             <French>Magasin</French>
-            <English>Store</English>
         </Key>
         <Key ID="STR_HALS_STORE_OPEN_ACTION">
             <Original>Open the %1</Original>
@@ -196,7 +194,6 @@
             <Chinesesimp>打开 %1</Chinesesimp>
             <Korean>%1 열어보기</Korean>
             <French>Ouvrir le %1</French>
-            <English>Open the %1</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
             <Original>Item unavailable.</Original>
@@ -205,7 +202,6 @@
             <Chinesesimp>物品不可用。</Chinesesimp>
             <Korean>아이템 이용 불가.</Korean>
             <French>Article indisponible.</French>
-            <English>Item unavailable.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_OUTOFSTOCK">
             <Original>Insufficient stock.</Original>
@@ -214,7 +210,6 @@
             <Chinesesimp>已售罄。</Chinesesimp>
             <Korean>재고 부족.</Korean>
             <French>Stock insuffisant.</French>
-            <English>Insufficient stock.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_TOOEXPENSIVE">
             <Original>Insufficient funds.</Original>
@@ -223,7 +218,6 @@
             <Chinesesimp>资金不足。</Chinesesimp>
             <Korean>자금 부족.</Korean>
             <French>Fonds insuffisants.</French>
-            <English>Insufficient funds.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOEQUIP">
             <Original>Unable to equip.</Original>
@@ -241,7 +235,6 @@
             <Chinesesimp>货舱空间不足。</Chinesesimp>
             <Korean>화물 공간 부족.</Korean>
             <French>Espace de chargement insuffisant.</French>
-            <English>Insufficient cargo space.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_PURCHASED">
             <Original>purchased</Original>
@@ -250,7 +243,6 @@
             <Chinesesimp>成交</Chinesesimp>
             <Korean>구입 완료</Korean>
             <French>achetés</French>
-            <English>purchased</English>
         </Key>
         <!-- Thanks to JakeHekesFists -->
         <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
@@ -280,7 +272,6 @@
             <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
             <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
             <French>Seuls les articles disponibles à l'achat sont affichés.</French>
-            <English>Only show items that are available for purchase.</English>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
             <Original>Only show items which are in stock.</Original>
@@ -296,7 +287,6 @@
             <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
             <Korean>플레이어가 장착한 무기와 호환되는 아이템만 표시합니다.</Korean>
             <French>N'afficher que les objets compatibles avec les armes équipées par le joueur.</French>
-            <English>Only show items compatible with the player's equipped weapons.</English>
         </Key>
         <!-- SELL BOX -->
         <Key ID="STR_HALS_STORE_CHECKBOX_SELLFILTER">
@@ -305,7 +295,6 @@
             <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
             <Korean>플레이어가 판매할 수 있는 아이템만 표시합니다.</Korean>
             <French>N'afficher que les objets que le joueur peut vendre.</French>
-            <English>Only show items that the player can sell.</English>
         </Key>
         <!-- SELL BUTTON -->
         <Key ID="STR_HALS_STORE_BUTTON_SELL">
@@ -315,7 +304,6 @@
             <Chinesesimp>出售</Chinesesimp>
             <Korean>판매</Korean>
             <French>Vendre</French>
-            <English>Sell</English>
         </Key>
         <Key ID="STR_HALS_STORE_CHECKBOX_EQUIP">
             <Original>Equip item upon purchase (if possible).</Original>
@@ -324,7 +312,6 @@
             <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
             <Korean>구매 시 장비 착용. (가능 시)</Korean>
             <French>Équiper l'objet lors de l'achat (si possible).</French>
-            <English>Equip item upon purchase (if possible).</English>
         </Key>
         <Key ID="STR_HALS_STORE_BUTTON_PURCHASE">
             <Original>Purchase</Original>
@@ -333,7 +320,6 @@
             <Chinesesimp>购买</Chinesesimp>
             <Korean>구입</Korean>
             <French>Achat</French>
-            <English>Purchase</English>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_PRICE">
             <Original>Price</Original>
@@ -342,7 +328,6 @@
             <Chinesesimp>价格</Chinesesimp>
             <Korean>가격</Korean>
             <French>Prix</French>
-            <English>Price</English>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_INSTOCK">
             <Original>IN STOCK</Original>
@@ -351,7 +336,6 @@
             <Chinesesimp>现货</Chinesesimp>
             <Korean>재고 있음</Korean>
             <French>EN STOCK</French>
-            <English>IN STOCK</English>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_NOSTOCK">
             <Original>OUT OF STOCK.</Original>
@@ -360,14 +344,13 @@
             <Chinesesimp>售罄</Chinesesimp>
             <Korean>재고 없음.</Korean>
             <French>EN RUPTURE DE STOCK.</French>
-            <English>OUT OF STOCK.</English>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
             <Original>%1¢ more required.</Original>
             <German>%1¢ mehr benötigt.</German>
             <Russian>Не хватает %1¢.</Russian>
             <Chinesesimp>还需要 %1¢。</Chinesesimp>
-            <Korean>%1€가 더 필요합니다.</Korean>
+            <Korean>%1¢가 더 필요합니다.</Korean>
         </Key> -->
     </Package>
     <Package name="A3AU_hals_store">
@@ -1007,7 +990,6 @@
                 <Chinesesimp>P.I.</Chinesesimp>
                 <Korean>P.I.</Korean>
                 <French>P.I.</French>
-                <English>P.I.</English>
             </Key>
             <Key ID="STR_A3AU_JCA_ARSENAL">
                 <Original>JCA</Original>
@@ -1016,7 +998,6 @@
                 <Chinesesimp>JCA</Chinesesimp>
                 <Korean>JCA</Korean>
                 <French>JCA</French>
-                <English>JCA</English>
             </Key>
             <Key ID="STR_A3AU_ffp">
                 <Original>FFP</Original>
