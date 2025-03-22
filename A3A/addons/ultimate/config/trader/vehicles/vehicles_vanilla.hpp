@@ -1,4 +1,4 @@
-class vehicles_vanilla : vehicles_base ///bonk
+class vehicles_vanilla : vehicles_base
 {
     ITEM(B_APC_Tracked_01_AA_F, 43000, "AA", VEHICLE_CONDITION_AA);
     ITEM(O_APC_Tracked_02_AA_F, 43000, "AA", VEHICLE_CONDITION_AA);
@@ -40,7 +40,7 @@ class vehicles_vanilla : vehicles_base ///bonk
     ITEM(C_Boat_Civil_01_F, 1200, "BOAT", VEHICLE_CONDITION_BOAT);
     ITEM(B_Heli_Transport_03_unarmed_F, 12600, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Transport_03_F, 14100, "HELI", VEHICLE_CONDITION_HELI);
-    ITEM(B_Heli_Attack_01_dynamicLoadout_F, 41160, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(B_Heli_Attack_01_dynamicLoadout_F, 38660, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Light_01_dynamicLoadout_F, 26400, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Light_01_F, 9000, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Transport_01_F, 11700, "HELI", VEHICLE_CONDITION_HELI);
@@ -104,6 +104,12 @@ class vehicles_vanilla : vehicles_base ///bonk
     ITEM(I_UAV_02_dynamicLoadout_F, 28700, "UAV", VEHICLE_CONDITION_UAV);
     ITEM(I_UGV_01_rcws_F, 17550, "UAV", VEHICLE_CONDITION_UAV);
     ITEM(I_UGV_01_F, 12600, "UAV", VEHICLE_CONDITION_UAV);
+    ITEM(I_UGV_02_Science_F, 8000, "UAV", VEHICLE_CONDITION_UAV);
+    ITEM(I_UGV_02_Demining_F, 9500, "UAV", VEHICLE_CONDITION_UAV);
+    ITEM(I_UAV_01_F, 11000, "UAV", VEHICLE_CONDITION_UAV);
+    ITEM(I_UAV_06_medical_F, 11500, "UAV", VEHICLE_CONDITION_UAV);
+    ITEM(I_UAV_06_F, 14000, "UAV", VEHICLE_CONDITION_UAV);
+    ITEM(C_IDAP_UAV_06_antimine_F, 14000, "UAV", VEHICLE_CONDITION_UAV);
     ITEM(B_T_UAV_03_dynamicLoadout_F, 23350, "UAV", VEHICLE_CONDITION_UAV);
     ITEM(O_T_UAV_04_CAS_F, 18100, "UAV", VEHICLE_CONDITION_UAV);
     ITEM(B_MRAP_01_F, 1140, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
