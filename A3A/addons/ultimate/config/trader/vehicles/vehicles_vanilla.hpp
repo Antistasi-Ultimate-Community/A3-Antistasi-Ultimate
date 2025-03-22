@@ -1,4 +1,4 @@
-class vehicles_vanilla : vehicles_base
+class vehicles_vanilla : vehicles_base ///bonk
 {
     ITEM(B_APC_Tracked_01_AA_F, 43000, "AA", VEHICLE_CONDITION_AA);
     ITEM(O_APC_Tracked_02_AA_F, 43000, "AA", VEHICLE_CONDITION_AA);
