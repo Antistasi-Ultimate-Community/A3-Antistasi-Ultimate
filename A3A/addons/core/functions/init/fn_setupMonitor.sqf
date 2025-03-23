@@ -97,7 +97,11 @@ while {isNil "A3A_saveData"} do {
     // Collect save data. Do this each time so consistency is maintained with deletes
     private _saveData = call A3A_fnc_collectSaveData;
     DebugArray("Save data found:", _saveData);
-    ["sendData", [_saveData, _loadedPatches, _loadedDLC]] remoteExec ["A3A_fnc_setupDialog", A3A_setupPlayer];
+
+    // Get server OS / platform for new / old save file usage
+    private _platform = productVersion select 6;
+
+    ["sendData", [_saveData, _loadedPatches, _loadedDLC, _platform]] remoteExec ["A3A_fnc_setupDialog", A3A_setupPlayer];
 };
 
 Info("Setup monitor terminated");
