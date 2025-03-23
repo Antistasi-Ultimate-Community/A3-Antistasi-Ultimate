@@ -33,6 +33,4 @@ for "_i" from 0 to (_countX - 1) do {
 
 {_x allowDamage true} forEach units _groupX;
 
-[_groupX] spawn A3A_fnc_RC40_attack_EH;
-
 _groupX
