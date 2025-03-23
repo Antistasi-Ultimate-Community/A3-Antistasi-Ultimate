@@ -226,6 +226,7 @@
             <Chinesesimp>无法装备。</Chinesesimp>
             <Korean>장비 불가.</Korean>
             <French>Impossible d'équiper</French>
+            <English>Unable to equip.</English>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOCARGOSPACE">
             <Original>Insufficient cargo space.</Original>
@@ -349,7 +350,7 @@
             <German>%1¢ mehr benötigt.</German>
             <Russian>Не хватает %1¢.</Russian>
             <Chinesesimp>还需要 %1¢。</Chinesesimp>
-            <Korean>%1€가 더 필요합니다.</Korean>
+            <Korean>%1¢가 더 필요합니다.</Korean>
         </Key> -->
     </Package>
     <Package name="A3AU_hals_store">
@@ -552,36 +553,42 @@
                 <English>Helmets</English>
                 <Russian>Шлемы</Russian>
                 <Chinesesimp>头盔</Chinesesimp>
+                <Korean>헬멧</Korean>
             </Key>
             <Key ID="STR_A3AU_uniforms">
                 <Original>Uniforms</Original>
                 <English>Uniforms</English>
                 <Russian>Униформы</Russian>
                 <Chinesesimp>制服</Chinesesimp>
+                <Korean>유니폼</Korean>
             </Key>
             <Key ID="STR_A3AU_backpacks">
                 <Original>Backpacks</Original>
                 <English>Backpacks</English>
                 <Russian>Рюкзаки</Russian>
                 <Chinesesimp>背包</Chinesesimp>
+                <Korean>군장</Korean>
             </Key>
             <Key ID="STR_A3AU_facewear">
                 <Original>Facewear</Original>
                 <English>Facewear</English>
                 <Russian>Очки/шарфы</Russian>
                 <Chinesesimp>面部装备</Chinesesimp>
+                <Korean>페이스웨어</Korean>
             </Key>
             <Key ID="STR_A3AU_vests">
                 <Original>Vests</Original>
                 <English>Vests</English>
                 <Russian>Разгрузки</Russian>
                 <Chinesesimp>背心</Chinesesimp>
+                <Korean>조끼</Korean>
             </Key>
             <Key ID="STR_A3AU_utility">
                 <Original>Utility</Original>
                 <English>Utility</English>
                 <Russian>Служебные</Russian>
                 <Chinesesimp>一般物品</Chinesesimp>
+                <Korean>기타 아이템</Korean>
             </Key>
         </Container>
         <!-- helpers -->
@@ -616,54 +623,63 @@
                 <English>Apex</English>
                 <Russian>Apex</Russian>
                 <Chinesesimp>Apex</Chinesesimp>
+                <Korean>Apex</Korean>
             </Key>
             <Key ID="STR_A3AU_Artofwar">
                 <Original>Art of war</Original>
                 <English>Art of war</English>
                 <Russian>Art of war</Russian>
                 <Chinesesimp>Art of war</Chinesesimp>
+                <Korean>Art of war</Korean>
             </Key>
             <Key ID="STR_A3AU_Contact">
                 <Original>Contact</Original>
                 <English>Contact</English>
                 <Russian>Contact</Russian>
                 <Chinesesimp>Contact</Chinesesimp>
+                <Korean>Contact</Korean>
             </Key>
             <Key ID="STR_A3AU_Jets">
                 <Original>Jets</Original>
                 <English>Jets</English>
                 <Russian>Jets</Russian>
                 <Chinesesimp>Jets</Chinesesimp>
+                <Korean>Jets</Korean>
             </Key>
             <Key ID="STR_A3AU_Kart">
                 <Original>Kart</Original>
                 <English>Kart</English>
                 <Russian>Kart</Russian>
                 <Chinesesimp>Kart</Chinesesimp>
+                <Korean>Kart</Korean>
             </Key>
             <Key ID="STR_A3AU_Lawsofwar">
                 <Original>Laws of war</Original>
                 <English>Laws of war</English>
                 <Russian>Laws of war</Russian>
                 <Chinesesimp>Laws of war</Chinesesimp>
+                <Korean>Laws of war</Korean>
             </Key>
             <Key ID="STR_A3AU_Marksmen">
                 <Original>Marksmen</Original>
                 <English>Marksmen</English>
                 <Russian>Marksmen</Russian>
                 <Chinesesimp>Marksmen</Chinesesimp>
+                <Korean>Marksmen</Korean>
             </Key>
             <Key ID="STR_A3AU_Tanks">
                 <Original>Tanks</Original>
                 <English>Tanks</English>
                 <Russian>Tanks</Russian>
                 <Chinesesimp>Tanks</Chinesesimp>
+                <Korean>Tanks</Korean>
             </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
                 <English>Kkiv 2035</English>
                 <Russian>Kkiv 2035</Russian>
                 <Chinesesimp>Kkiv 2035</Chinesesimp>
+                <Korean>Kkiv 2035</Korean>
             </Key>
             <Key ID="STR_A3AU_CSLA">
                 <Original>CSLA</Original>

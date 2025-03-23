@@ -32,6 +32,7 @@ private _newGameCtrl = _display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX;
 private _copyGameCtrl = _display displayCtrl A3A_IDC_SETUP_COPYGAMECHECKBOX;
 private _oldParamsCtrl = _display displayCtrl A3A_IDC_SETUP_OLDPARAMSCHECKBOX;
 private _newSaveCtrl = _display displayCtrl A3A_IDC_SETUP_NAMESPACECHECKBOX;
+private _saveInfoCtrl = _display displayCtrl A3A_IDC_SETUP_SAVEINFOTEXT;
 
 private _saveBoxColumns = [
     ["gameID", "ID", 0, 9],
@@ -49,6 +50,11 @@ switch (_mode) do
         _display setVariable ["savedFactions", [[], [], []]];
         _display setVariable ["savedParams", []];
         _listboxCtrl setVariable ["rowIndex", -1];
+
+        private _platformIsWindows = A3A_setup_platform isEqualTo "Windows";
+        _newSaveCtrl cbSetChecked _platformIsWindows;
+        // _newSaveCtrl ctrlEnable _platformIsWindows; // ! Outright disable the control if platform isn't Windows
+        if !(_platformIsWindows) then { _newSaveCtrl ctrlSetTooltip localize "STR_antistasi_dialogs_setup_use_new_namespace_warning" };
 
         // Do these programmatically so that we can reuse the column data
         private _headerCtrl = _display displayCtrl A3A_IDC_SETUP_SAVESHEADER;
@@ -78,7 +84,6 @@ switch (_mode) do
         _copyGameCtrl ctrlShow _newGame;
         _oldParamsCtrl ctrlShow _newGame;
         _newSaveCtrl ctrlShow _newGame;
-        _newSaveCtrl cbSetChecked true;
         (_display displayCtrl A3A_IDC_SETUP_COPYGAMETEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_OLDPARAMSTEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_NAMESPACETEXT) ctrlShow _newGame;
@@ -100,6 +105,12 @@ switch (_mode) do
         if ((_sameMap and !cbChecked _newGameCtrl) or cbChecked _copyGameCtrl or cbChecked _oldParamsCtrl) then {
             if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then {
                 _display setVariable ["savedParams", _params];
+                ["fillParams"] call A3A_fnc_setupParamsTab;
+            };
+        } else {
+            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then {
+                //_display setVariable ["paramsChangedSinceReset", true];
+                _display setVariable ["savedParams", []];
                 ["fillParams"] call A3A_fnc_setupParamsTab;
             };
         };
@@ -166,6 +177,7 @@ switch (_mode) do
         _selectBar ctrlCommit 0;
 
         _listBoxCtrl setVariable ["rowIndex", _rowIndex];
+        ["updateSaveInfoText"] call A3A_fnc_setupLoadgameTab;
         ["update"] call A3A_fnc_setupLoadgameTab;
     };
 
@@ -204,9 +216,16 @@ switch (_mode) do
         _saveData set ["addonVics", _contentData#0];
         _saveData set ["DLC", _contentData#1];
 
-        private _occName = getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#0/"name");
-        private _invName = getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#1/"name");
-        _confirmText = _confirmText + endl + format [localize "STR_antistasi_dialogs_setup_confirm_occ_inv", _occName, _invName];
+        private _invEnabled = ctrlEnabled A3A_IDC_SETUP_INVADERSLISTBOX;
+        private _rivEnabled = ctrlEnabled A3A_IDC_SETUP_RIVALSLISTBOX;
+        private _factionNames = [
+            getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#2/"name"),
+            getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#3/"name"),
+            getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#0/"name"),
+            [(localize "STR_params_afk_disabled"), getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#1/"name")] select (_invEnabled),
+            [(localize "STR_params_afk_disabled"), getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#4/"name")] select (_rivEnabled)
+        ];
+        _confirmText = _confirmText + endl + format [localize "STR_antistasi_dialogs_setup_confirm_factions", _factionNames#0, _factionNames#1, _factionNames#2, _factionNames#3, _factionNames#4];
 
         // Params tab: Array of [name, value]
         private _paramsData = ["getParams"] call A3A_fnc_setupParamsTab;
@@ -227,22 +246,35 @@ switch (_mode) do
         ["serverClose"] call A3A_fnc_setupDialog;          // make sure the confirm dialog is closed first
     };
 
+    case ("updateSaveInfoText"):
+    {
+        private _lbCurSel = _listboxCtrl getVariable "rowIndex";
+        switch (true) do {
+            case (_lbCurSel isEqualTo -1): { _saveInfoCtrl ctrlSetText localize "STR_antistasi_dialogs_setup_new_save" };
+            case (cbChecked _copyGameCtrl): { _saveInfoCtrl ctrlSetText format [localize "STR_antistasi_dialogs_setup_copy_save", A3A_setup_saveData select _lbCurSel get "gameID"] };
+            case (cbChecked _newGameCtrl): { _saveInfoCtrl ctrlSetText localize "STR_antistasi_dialogs_setup_new_save" };
+            default { _saveInfoCtrl ctrlSetText format [localize "STR_antistasi_dialogs_setup_edit_save", A3A_setup_saveData select _lbCurSel get "gameID"] };
+        };
+    };
+
     case ("newGameCheck"):
     {
-//        if (!cbChecked _newGameCtrl && cbChecked _copyGameCtrl) exitWith { _copyGameCtrl cbSetChecked false };
+        ["updateSaveInfoText"] call A3A_fnc_setupLoadGameTab;
         ["update"] call A3A_fnc_setupLoadgameTab;
     };
 
     case ("copyGameCheck"):
     {
         // exitWith so that we don't infinite loop
-        if (cbChecked _copyGameCtrl && cbChecked _oldParamsCtrl) exitWith { _oldParamsCtrl cbSetChecked false };
+        if (cbChecked _copyGameCtrl && cbChecked _oldParamsCtrl) exitWith { _oldParamsCtrl cbSetChecked false; ["updateSaveInfoText"] call A3A_fnc_setupLoadGameTab };
+        ["updateSaveInfoText"] call A3A_fnc_setupLoadGameTab;
         ["update"] call A3A_fnc_setupLoadgameTab;
     };
 
     case ("oldParamsCheck"):
     {
-        if (cbChecked _copyGameCtrl && cbChecked _oldParamsCtrl) exitWith { _copyGameCtrl cbSetChecked false };
+        if (cbChecked _copyGameCtrl && cbChecked _oldParamsCtrl) exitWith { _copyGameCtrl cbSetChecked false;  ["updateSaveInfoText"] call A3A_fnc_setupLoadGameTab };
+        ["updateSaveInfoText"] call A3A_fnc_setupLoadGameTab;
         ["update"] call A3A_fnc_setupLoadgameTab;
     };
 
