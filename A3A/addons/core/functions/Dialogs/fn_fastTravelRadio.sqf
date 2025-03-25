@@ -190,7 +190,10 @@ if (_positionTel distance getMarkerPos _base < 50) then {
 						_radiusX = _radiusX + 10;
 					};
 					_road = _roads select 0;
-					private _pos = position _road findEmptyPosition [10,100,typeOf (vehicle _unit)];
+					private _pos = position _road findEmptyPosition [(sizeOf typeOf vehicle _unit) / 2, 100, typeOf (vehicle _unit)];
+					if (_pos isEqualTo []) exitWith {
+						[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_no_empty_position"] call SCRT_fnc_misc_deniedHint
+					};
 					vehicle _unit setPos _pos;
 				};
 				if ((vehicle _unit isKindOf "StaticWeapon") and (!isPlayer (leader _unit))) then {

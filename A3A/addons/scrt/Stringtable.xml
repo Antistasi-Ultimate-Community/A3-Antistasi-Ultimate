@@ -13533,6 +13533,13 @@
                 <Korean>공격을 받거나 주변에 적이 포위한 지역으로는 빠른 이동을 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas voyager rapidement vers une zone attaquée ou entourée d'ennemis.</French>
             </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_no_empty_position">
+                <Original>Unable to find a position to place unit.</Original>
+                <Russian>Не удалось найти позицию для размещения юнита.</Russian>
+                <Chinesesimp>无法找到放置单元的位置。</Chinesesimp>
+                <Korean>장치를 배치할 위치를 찾을 수 없습니다.</Korean>
+                <French>Impossible de trouver une position pour placer l'unité.</French>
+            </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_moving_hc_group">
                 <Original>Moving group %1 to destination.</Original>
                 <Russian>Перемещаем %1 отряд в место назначения.</Russian>
