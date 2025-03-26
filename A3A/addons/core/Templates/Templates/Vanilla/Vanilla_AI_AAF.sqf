@@ -1030,6 +1030,8 @@ private _atTemplate = {
     ["items_medical_standard"] call _fnc_addItemSet;
     ["items_at_extras"] call _fnc_addItemSet;
     ["items_miscEssentials"] call _fnc_addItemSet;
+    ["antiInfantryGrenades", 1] call _fnc_addItem;
+    ["smokeGrenades", 1] call _fnc_addItem;
 
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
