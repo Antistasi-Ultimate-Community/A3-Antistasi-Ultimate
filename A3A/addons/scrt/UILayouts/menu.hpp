@@ -355,7 +355,7 @@ class radioComm: SimpleMenuBigger
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_put_garage_tooltip;
-			action = "closeDialog 0; [cursorObject, clientOwner, call HR_GRG_dLock, player] remoteExecCall ['HR_GRG_fnc_addVehicle',2];";
+			action = "closeDialog 0; [cursorObject, clientOwner, call HR_GRG_dLock, player] remoteExec ['HR_GRG_fnc_addVehicleUAVCompat',2];";
 		};
 
 		class l4Button: SimpleButton
@@ -1044,7 +1044,7 @@ class playerMoney: SimpleMenuSmall
 			text = "25%";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
-			action = "[player, cursorTarget, 0.25] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, cursorObject, true, 0.25] call A3A_fnc_donateMoneyPercentage;";
 		};
 
 		class r2Button: QuarterSimpleButton
@@ -1053,7 +1053,7 @@ class playerMoney: SimpleMenuSmall
 			text = "50%";
 			x = 0.527 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
-			action = "[player, cursorTarget, 0.5] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, cursorObject, true, 0.5] call A3A_fnc_donateMoneyPercentage;";
 		};
 
 		class r3Button: QuarterSimpleButton
@@ -1062,7 +1062,7 @@ class playerMoney: SimpleMenuSmall
 			text = "75%";
 			x = 0.577 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
-			action = "[player, cursorTarget, 0.75] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, cursorObject, true, 0.75] call A3A_fnc_donateMoneyPercentage;";
 		};
 
 		class r4Button: QuarterSimpleButton
@@ -1071,7 +1071,7 @@ class playerMoney: SimpleMenuSmall
 			text = "100%";
 			x = 0.627 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
-			action = "[player, cursorTarget, 1] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, cursorObject, true, 1] call A3A_fnc_donateMoneyPercentage;";
 		};
 		
 		class r2Text : SimpleText
@@ -1092,7 +1092,7 @@ class playerMoney: SimpleMenuSmall
 			text = "25%";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
-			action = "[player, ObjNull, 0.25] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, ObjNull, false, 0.25] call A3A_fnc_donateMoneyPercentage;";
 		};
 
 		class r6Button: QuarterSimpleButton
@@ -1101,7 +1101,7 @@ class playerMoney: SimpleMenuSmall
 			text = "50%";
 			x = 0.527 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
-			action = "[player, ObjNull, 0.5] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, ObjNull, false, 0.5] call A3A_fnc_donateMoneyPercentage;";
 		};
 
 		class r7Button: QuarterSimpleButton
@@ -1110,7 +1110,7 @@ class playerMoney: SimpleMenuSmall
 			text = "75%";
 			x = 0.577 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
-			action = "[player, ObjNull, 0.75] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, ObjNull, false, 0.75] call A3A_fnc_donateMoneyPercentage;";
 		};
 
 		class r8Button: QuarterSimpleButton
@@ -1119,7 +1119,7 @@ class playerMoney: SimpleMenuSmall
 			text = "100%";
 			x = 0.627 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
-			action = "[player, ObjNull, 1] call A3A_fnc_donateMoneyPercentage;";
+			action = "[player, ObjNull, false, 1] call A3A_fnc_donateMoneyPercentage;";
 		};
 	};
 };

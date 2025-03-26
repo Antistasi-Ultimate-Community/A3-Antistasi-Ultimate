@@ -274,6 +274,12 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_freedom_ca.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_freedom_ca.paa);
 	};
+	class a3u_flag_GSB2022 : flag_NATO 
+	{
+		name = "GSB 2022";
+		icon = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
+	};
 	
 	// Griffin's Ascent
 	class a3u_flag_asdf: flag_NATO

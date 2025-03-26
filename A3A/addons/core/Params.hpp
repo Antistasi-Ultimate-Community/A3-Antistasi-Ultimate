@@ -71,6 +71,7 @@ class Params
     class BasicParams
     {
         type = "Basic";
+        lockOnSave = 0;
     };
     class gameMode: BasicParams
     {
@@ -78,6 +79,7 @@ class Params
         values[] = {1,2,3};
         texts[] = {$STR_params_game_mode_1,$STR_params_game_mode_2,$STR_params_game_mode_3};
         default = 1;
+        lockOnSave = 1;
     };
     class areRivalsEnabled: BasicParams
     {
@@ -85,6 +87,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_params_areRivalsEnabled_0, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
+        lockOnSave = 1;
     };
     class autoSave: BasicParams
     {
@@ -169,6 +172,7 @@ class Params
         values[] = {0, 100, 200, 500, 1000, 2500};
         texts[] = {"0", "100", "200", "500","1000","2500"};
         default = 500;
+        lockOnSave = 1;
     };
     class initialFactionMoney: BasicParams
     {
@@ -176,6 +180,7 @@ class Params
         values[] = {0,1000,2500,5000,10000};
         texts[] = {"0","1000","2500","5000","10000"};
         default = 1000;
+        lockOnSave = 1;
     };
     class initialHr: BasicParams
     {
@@ -183,6 +188,7 @@ class Params
         values[] = {0, 8, 16, 24, 32, 50};
         texts[] = {"0","8","16","24","32","50"};
         default = 8;
+        lockOnSave = 1;
     };
     class limitHR: BasicParams
     {
@@ -223,6 +229,7 @@ class Params
     class UltimateParams
     {
         type = "Ultimate";
+        lockOnSave = 0;
     };
     class Spacer102: UltimateParams
     {
@@ -244,6 +251,7 @@ class Params
         values[] = {0,1,2,3};
         texts[] = {$STR_A3AU_loss_condition_pop_death,$STR_A3AU_loss_condition_hr,$STR_A3AU_loss_condition_money,$STR_A3AU_loss_condition_all};
         default = 0;
+        lockOnSave = 1;
     };
     class loseHROnDeath: UltimateParams
     {
@@ -308,6 +316,13 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
+    class createAmbientSounds: UltimateParams
+    {
+        title = $STR_A3AU_ambient_sounds;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
     class hideEnemyMarkersReconPlaneDistance: UltimateParams
     {
         title = $STR_A3AU_hide_enemy_markers_recon_plane_distance;
@@ -328,6 +343,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
+        lockOnSave = 1; // Causes errors if disabling trader after already having found him in a save
     };
     class staminaEnabled: UltimateParams
     {
@@ -354,6 +370,7 @@ class Params
     class ScriptParams
     {
         type = "Script";
+        lockOnSave = 0;
     };
     class Spacer67: ScriptParams
     {
@@ -380,6 +397,7 @@ class Params
     class PlusParams
     {
         type = "Plus";
+        lockOnSave = 0;
     };
     class Spacer51: PlusParams
     {
@@ -512,6 +530,7 @@ class Params
     class MemberParams
     {
         type = "Member";
+        lockOnSave = 0;
     };
     class TitleMembership: MemberParams
     {
@@ -552,6 +571,7 @@ class Params
     class BuilderParams
     {
         type = "Builder";
+        lockOnSave = 0;
     };
     class TitleBuilder: BuilderParams
     {
@@ -592,6 +612,28 @@ class Params
     class ExperimentalParams
     {
         type = "Experimental";
+        lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
+    };
+    class enableVehicleAutoLock: ExperimentalParams
+    {
+        title = $STR_params_enableVehicleAutoLock;
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        default = 1;
+    };
+    class vehicleLockpickTime: ExperimentalParams
+    {
+        title = $STR_params_vehicleLockpickTime;
+        values[] = {30,60,120};
+        texts[] = {"30s", "60s", "120s"};
+        default = 60;
+    };
+    class allowCivDialog: ExperimentalParams
+    {
+        title = $STR_params_allowCivDialog;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
     };
     class blackMarketIgnoreRequirements : ExperimentalParams
     {
@@ -644,6 +686,13 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
+    class A3A_isUAVAFK: ExperimentalParams
+    {
+        title = $STR_params_afk_uav;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
     class recruitToPlayerSquad: ExperimentalParams
     {
         title = $STR_params_recruitToPlayerSquad;
@@ -662,6 +711,7 @@ class Params
     class BalanceParams
     {
         type = "Balance";
+        lockOnSave = 0;
     };
     class TitleBalance: BalanceParams
     {
@@ -750,13 +800,14 @@ class Params
         title = $STR_params_rebelGarrisonLimit;
         tooltip = $STR_params_rebelGarrisonLimit_desc;
         values[] = {-1, 16, 24, 32};
-        texts[] = {"No limit", "16", "24", "32"};
+        texts[] = {"∞", "16", "24", "32"};
         default = 24;
     };
     
     class EquipmentParams
     {
         type = "Equipment";
+        lockOnSave = 0;
     };
     class TitleEquipment: EquipmentParams
     {
@@ -844,6 +895,7 @@ class Params
     class LootParams
     {
         type = "Loot";
+        lockOnSave = 0;
     };
     class TitleLoot: LootParams
     {
@@ -982,6 +1034,7 @@ class Params
     class DevelopmentParams
     {
         type = "Development";
+        lockOnSave = 0;
     };
     class LogLevel: DevelopmentParams
     {

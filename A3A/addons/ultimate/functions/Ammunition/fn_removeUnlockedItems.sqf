@@ -29,11 +29,15 @@ private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOp
     private _array = _x;
 
     {
+        private _itemAttachments = [];
         private _item = _x;
         if (_item isEqualType []) then {
             // diag_log format["Test: %1", _item];
             _originalItem = _item;
             _item = _item select 0;
+            if (count _originalItem > 1) then {
+                _itemAttachments = [_originalItem#1, _originalItem#2, _originalItem#3, _originalItem#6];
+            };
         };
 
         {
@@ -51,8 +55,12 @@ private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOp
         {
             if (_originalItem in _indexed) exitWith {}; // element is already indexed, ignore
             if (_item in _x) then {
-                diag_log format["%1 is already unlocked", _item];
-                _indexed pushBack _originalItem;
+                private _hasAttachments = if (_itemAttachments findIf {_x != ""} != -1) then {true} else {false};
+
+                if (!_hasAttachments) then {
+                    diag_log format["%1 is already unlocked as a weapon", _item];
+                    _indexed pushBack _originalItem;
+                };
             
                 // _array = _array - [_originalItem];
                 // diag_log format["Removing %1 from array", _originalItem];

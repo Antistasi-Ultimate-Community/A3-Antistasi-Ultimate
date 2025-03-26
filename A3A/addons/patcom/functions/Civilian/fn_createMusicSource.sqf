@@ -22,37 +22,47 @@
 #include "..\..\script_component.hpp"
 params ["_building"];
 
+if (createAmbientSounds isEqualTo false) exitWith {};
+
 private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
 if (_lowCiv) exitWith {};
 if (_civNonHuman) exitWith {};
 
-// We add the music source to a RoadCone rather than the building itself.
+// We add the music source to a radio item rather than the building itself.
 // This is so we can delete the source later in a easier fashion.
-private _musicSource = "RoadCone_L_F" createVehicle position _building;
+private _radioItem = getPosATL _building;
+_radioItem set [2, ((_radioItem select 2) + 1)];
+private _musicSource = createVehicle ["Land_FMradio_F", _radioItem];
 
-// Attach Cone to building.
-_musicSource attachTo [_building, [1,1,1]];
-
-// Hide the cone, we don't want to see it!
-[_musicSource, true] remoteExec ["hideObjectGlobal", 2];
-
-[_building, _musicSource] spawn {
-    params ["_building", "_musicSource", "_locationType"];
+[_radioItem, _musicSource] spawn {
+    params ["_radioItem", "_musicSource", "_locationType"];
     private _tracksPlayed = 1;
-    private _tracks = A3A_Civilian_Amb_Tracks get "Ambience";
-
-    if (count _tracks == 0) exitWith {
-        Error("No Tracks found to create a music source");
-    };
+    // name of the sound file in CfgSounds.hpp and the duration (in sec)
+    private _tracks = 
+    [
+        ["A3A_Audio_Civ_Song1", 127],
+        ["A3A_Audio_Civ_Song2", 192],
+        ["A3A_Audio_Civ_Song3", 180],
+        ["A3A_Audio_Civ_Song4", 196],
+        ["A3A_Audio_Civ_Song5", 357],
+        ["A3A_Audio_Civ_Radio1", 240],
+        ["A3A_Audio_Civ_Radio2", 411],
+        ["A3A_Audio_Civ_Radio3", 246],
+        ["A3A_Audio_Civ_Radio4", 292],
+        ["A3A_Audio_Civ_Radio5", 189],
+        ["A3A_Audio_Civ_Radio6", 203]
+    ];
 
     private _totalTracks = count _tracks;
+
+    [_musicSource, 2] call A3A_fnc_destroyObjectAction;
 
     while { (alive _musicSource) } do {
         while { _tracksPlayed < _totalTracks } do {
             private _track = selectRandom (_tracks);
-            private _trackDuration = _track # 1;
+            private _trackDuration = (_track # 1) * 2;
 
             [_musicSource, _track # 0] remoteExec ["say3D", [0, _musicSource], true];
 

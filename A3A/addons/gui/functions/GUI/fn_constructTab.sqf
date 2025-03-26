@@ -92,7 +92,7 @@ switch (_mode) do
             {
                 private _priceText = _display ctrlCreate ["A3A_InfoTextRight", -1, _itemControlsGroup];
                 _priceText ctrlSetPosition[23 * GRID_W, 18 * GRID_H, 20 * GRID_W, 3 * GRID_H];
-                _priceText ctrlSetText format ["%1 €",_price];
+                _priceText ctrlSetText format ["%1 %2",_price, A3A_faction_civ get "currencySymbol"];
                 _priceText ctrlCommit 0;
             };
             private _timeText = _display ctrlCreate ["A3A_InfoTextRight", -1, _itemControlsGroup]; // TODO UI-update: Add icon
