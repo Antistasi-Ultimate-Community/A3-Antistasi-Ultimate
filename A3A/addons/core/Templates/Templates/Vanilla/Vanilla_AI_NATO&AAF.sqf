@@ -1246,7 +1246,7 @@ private _medicTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -1307,7 +1307,6 @@ private _explosivesExpertTemplate = {
     [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
-
     ["sidearms"] call _fnc_setHandgun;
     ["handgun", 2] call _fnc_addMagazines;
 
@@ -1337,7 +1336,7 @@ private _engineerTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -1366,7 +1365,7 @@ private _latTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     [["lightATLaunchers", "ATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
@@ -1396,7 +1395,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
@@ -1423,7 +1422,7 @@ private _aaTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;
