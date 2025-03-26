@@ -278,7 +278,7 @@ for "_i" from 0 to (random [3,5,6]) do {
 
 //spawning box
 private _boxPosition = +_crashsiteActual;
-_boxPosition set [2, (_crashsiteActual select 2) + 5];
+_boxPosition set [2, (_crashsiteActual select 2) + 10];
 private _box = _blackboxClass createVehicle _boxPosition;
 _box allowDamage false;
 _box setVectorDirAndUp [[0,0,0], [0,1,0]];
