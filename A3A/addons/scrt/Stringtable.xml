@@ -1084,11 +1084,11 @@
                 <French>Échec du retournement</French>
             </Key>
             <Key ID="STR_unflip_fail_wrong_type">
-                <Original>This kind of vehicle can't be flipped.</Original>
-                <Russian>Этот тип транспортного средства не может быть перевёрнут.</Russian>
-                <Chinesesimp>这种载具不能翻正。</Chinesesimp>
-                <Korean>이런 종류의 차량은 뒤집을 수 없습니다.</Korean>
-                <French>Ce type de véhicule ne peut pas être retourné.</French>
+                <Original>Flipping this vehicle might be dangerous, think twice.</Original>
+                <Russian>Переворачивание этой техники может быть опасным, подумайте дважды.</Russian>
+                <Chinesesimp>翻转这辆车可能有危险，请三思而后行。</Chinesesimp>
+                <Korean>이 차량을 뒤집는 것은 위험할 수 있으니 신중히 생각해 주십시오.</Korean>
+                <French>Retourner ce véhicule peut être dangereux, réfléchissez à deux fois.</French>
             </Key>
             <Key ID="STR_unflip_fail_veh_destroyed">
                 <Original>Vehicle is destroyed.</Original>
