@@ -167,7 +167,7 @@ private _rebelTaskText = format [
 ///checking if players reached minimum distance to start vfx or if time limit has passed
 private _missionStart = serverTime;
 waitUntil {
-    sleep 30;
+    sleep 20;
     (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_crashPosition, 1500, 1500] isNotEqualTo [] || {_missionStart >= serverTime + 600 }
 };
 sleep 60; ///prep time
@@ -210,14 +210,24 @@ private _crashsiteActual = getPosATL _quad;
 _bomb2 = "ammo_Missile_Cruise_01" createVehicle [(_crashsiteActual  select 0),(_crashsiteActual  select 1),0];
 
 private _crater = "CraterLong_02_F" createVehicle _crashsiteActual;
-private _reconVehicle = createVehicle [_reconVehicleClass, [_crashsiteActual select 0, _crashsiteActual select 1, 5], [], 0, "CAN_COLLIDE"];
-_reconVehicle allowDamage false;
-_reconVehicle setPos [_crashsiteActual select 0, _crashsiteActual select 1, 5];
-clearWeaponCargoGlobal _reconVehicle;
-clearMagazineCargoGlobal _reconVehicle;
-
 deletevehicle _reconVehicleDummy;
 deletevehicle _quad;
+
+private _reconVehicle = createVehicle [_reconVehicleClass, [_crashsiteActual select 0, _crashsiteActual select 1, 1], [], 0, "CAN_COLLIDE"];
+_reconVehicle allowDamage false;
+
+{  
+	[_x, true] remoteExec ["hideObject", 0, true];
+    _x enableSimulationGlobal false;
+} forEach nearestTerrainObjects [_reconVehicle, ["ROCKS","ROCK","HIDE"], 50, false, true];
+
+{  
+    _x setDamage 1;
+} forEach nearestTerrainObjects [_reconVehicle, ["Tree", "Bush", "BUILDING","RUIN","POWERWIND","POWERWAVE","POWERSOLAR","POWER LINES","MAIN ROAD","LIGHTHOUSE","HOUSE","HOSPITAL","HIDE","FUELSTATION","FOUNTAIN","FORTRESS","FENCE","CROSS","CHURCH","CHAPEL","BUSSTOP","BUNKER","QUAY","ROAD","SMALL TREE","STACK","TOURISM","TRACK","TRAIL","TRANSMITTER","VIEW-TOWER","WALL","WATERTOWER"], 20, false, true];
+
+sleep 1;
+clearWeaponCargoGlobal _reconVehicle;
+clearMagazineCargoGlobal _reconVehicle;
 
 _reconVehicle setDamage 0.6;
 _reconVehicle animateDoor ["Door_rear_source", 1, true];
@@ -227,16 +237,6 @@ _smokeEffect attachTo [_reconVehicle,[0,1.5,-1]];
 _effectsAndProps pushBack _smokeEffect;
 
 _effectsAndProps pushBack _crater;
-
-{  
-	[_x, true] remoteExec ["hideObject", 0, true];
-    _x enableSimulationGlobal false;
-} forEach nearestTerrainObjects [_reconVehicle, ["ROCKS","ROCK"], 50, false, true];
-
-{  
-    _x setDamage 1;
-} forEach nearestTerrainObjects [_reconVehicle, ["Tree", "Bush", "BUILDING","RUIN","POWERWIND","POWERWAVE","POWERSOLAR","POWER LINES","MAIN ROAD","LIGHTHOUSE","HOUSE","HOSPITAL","HIDE","FUELSTATION","FOUNTAIN","FORTRESS","FENCE","CROSS","CHURCH","CHAPEL","BUSSTOP","BUNKER","QUAY","ROAD","SMALL TREE","STACK","TOURISM","TRACK","TRAIL","TRANSMITTER","VIEW-TOWER","WALL","WATERTOWER"], 20, false, true];
-
 
 Info_2("Crash Location: %1, Aircraft: %2", _crashsiteActual, _reconVehicle);
 
@@ -278,7 +278,7 @@ for "_i" from 0 to (random [3,5,6]) do {
 
 //spawning box
 private _boxPosition = +_crashsiteActual;
-_boxPosition set [2, (_crashsiteActual select 2) + 10];
+_boxPosition set [2, (_crashsiteActual select 2) + 7];
 private _box = _blackboxClass createVehicle _boxPosition;
 _box allowDamage false;
 _box setVectorDirAndUp [[0,0,0], [0,1,0]];
@@ -290,6 +290,17 @@ _reconVehicle allowDamage true;
 _box allowDamage true;
 
 Info_1("Box position: %1", position _box);
+
+private _smokeGrenade = selectRandom allSmokeGrenades; //notife player where box is
+private _smoke = _smokeGrenade createVehicle (getPosATL _box);
+_smoke attachTo [_box, [0,0,1]];
+
+private _chemLight = "Chemlight_green"; //notife player where box is (during night)
+private _light = _chemLight createVehicle (getPosATL _box);
+_light attachTo [_box, [0,0,1]];
+sleep 2;
+detach _smoke;
+detach _light;
 
 ////////////////
 //convoy spawn//

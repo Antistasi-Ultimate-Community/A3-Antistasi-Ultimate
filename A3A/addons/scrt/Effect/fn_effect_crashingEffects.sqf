@@ -59,7 +59,7 @@ _lightSource setLightIntensity 1e6;
 _ps0 attachTo [_object, [0, 0, 1]];
 _ps1 attachTo [_object, [0, 0, 1]];
 _ps2 attachTo [_object, [0, 0, 1]];
-_lightSource attachTo [_object, [0, 0, 1]];
+_lightSource attachTo [_object, [0, 0, 0]];
 
 sleep 11;
 

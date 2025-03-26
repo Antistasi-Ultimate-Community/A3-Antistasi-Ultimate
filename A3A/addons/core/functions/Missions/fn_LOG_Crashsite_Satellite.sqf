@@ -153,7 +153,7 @@ private _rebelTaskText = format [
 private _missionStart = serverTime;
 
 waitUntil {
-    sleep 30;
+    sleep 20;
     (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_crashPosition, 1500, 1500] isNotEqualTo [] || {_missionStart >= serverTime + 600 }
 };
 sleep 60; ///prep time
@@ -197,22 +197,17 @@ private _dir = getDir _reconVehicleDummy;
 [_reconVehicleDummy] call SCRT_fnc_effect_crashingEffects;
 
 private _crashsiteactual = getPosATL _reconVehicleDummy;
+_reconVehicle allowDamage false;
 _reconVehicle setPos [_crashsiteactual select 0, _crashsiteactual select 1, 0.2];
 private _bomb = "ammo_Missile_Cruise_01" createVehicle [(_crashsiteactual select 0),(_crashsiteactual select 1),2];
-_reconVehicle hideObjectGlobal false;
 deleteVehicle _reconVehicleDummy;
-private _debri = "SpaceshipCapsule_01_debris_F" createVehicle [(_crashsiteactual select 0),(_crashsiteactual select 1),0];
-_debri setPos [_crashsiteactual select 0,_crashsiteactual select 1, 0.6];
-_debri setDir (abs (_dir+124)%360);
-private _offset = [1.5, 5, -0.8];
-private _worldPos = _reconVehicle modelToWorld _offset;
-_debri setPos _worldPos;
-_vehicles pushBack _debri;
+
+sleep 1;
 
 {  
 	[_x, true] remoteExec ["hideObject", 0, true];
     _x enableSimulationGlobal false;
-} forEach nearestTerrainObjects [_reconVehicle, ["ROCKS","ROCK"], 50, false, true];
+} forEach nearestTerrainObjects [_reconVehicle, ["ROCKS","ROCK","HIDE"], 50, false, true];
 
 {
     private _objects = ["Tree", "Bush", "BUILDING","RUIN","POWERWIND","POWERWAVE","POWERSOLAR","POWER LINES","MAIN ROAD","LIGHTHOUSE","HOUSE","HOSPITAL","HIDE","FUELSTATION","FOUNTAIN","FORTRESS","FENCE","CROSS","CHURCH","CHAPEL","BUSSTOP","BUNKER","QUAY","ROAD","SMALL TREE","STACK","TOURISM","TRACK","TRAIL","TRANSMITTER","VIEW-TOWER","WALL","WATERTOWER"];
@@ -228,7 +223,22 @@ _vehicles pushBack _debri;
     } forEach _terrainObjects;
 } forEach [100, 150, 200];
 
-for "_i" from 0 to (random [5,6,8]) do {
+_reconVehicle hideObjectGlobal false;
+private _debri = "SpaceshipCapsule_01_debris_F" createVehicle [(_crashsiteactual select 0),(_crashsiteactual select 1),0];
+_debri setPos [_crashsiteactual select 0,_crashsiteactual select 1, 0.6];
+_debri setDir (abs (_dir+124)%360);
+
+private _offset = [1.5, 5, -0.8];
+private _worldPos = _reconVehicle modelToWorld _offset;
+_debri setPos _worldPos;
+if (typeOf _reconVehicle == "SpaceshipCapsule_01_wreck_F") then {
+
+} else {
+    _reconVehicle setPos [_crashsiteactual select 0, _crashsiteactual select 1, 3];
+};
+_vehicles pushBack _debri;
+
+for "_i" from 0 to (random [3,4,5]) do {
     private _firePosition = 
     [
         _crashsiteactual, 
@@ -288,8 +298,20 @@ _box allowDamage false;
 
 sleep 1;
 _box allowDamage true;
+_reconVehicle allowDamage true;
 
 Info_1("Box position: %1", position _box);
+
+private _smokeGrenade = selectRandom allSmokeGrenades; //notife player where box is
+private _smoke = _smokeGrenade createVehicle (getPosATL _box);
+_smoke attachTo [_box, [0,0,1]];
+
+private _chemLight = "Chemlight_green"; //notife player where box is (during night)
+private _light = _chemLight createVehicle (getPosATL _box);
+_light attachTo [_box, [0,0,1]];
+sleep 2;
+detach _smoke;
+detach _light;
 
 ////////////////
 //convoy spawn//
@@ -778,20 +800,20 @@ switch(true) do
 {
     case(_box distance _deliverySite < 50 || {dateToNumber date > _dateLimitNum}):
     {
-        Info("Box has been recovered by enemy, mission falied.");
+        Info("Box has been recovered by enemy, mission failed.");
 
         [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
         [_taskId2, "LOG", "FAILED"] call A3A_fnc_taskSetState;
 
-        [-900, _sideX] remoteExec ["A3A_fnc_timingCA",2];
+        [-900, _sideX] remoteExec ["A3A_fnc_timingCA",2]; // isn't this function running on the server? Might aswell just turn the remoteExecs to call/spawn
         [-10,theBoss] call A3A_fnc_addScorePlayer;
         if (dateToNumber date > _dateLimitNum) then {
-		_hrT = server getVariable "hr";
-		_resourcesFIAT = server getVariable "resourcesFIA";
-		[-1*(round(_hrT/3)),-1*(round(_resourcesFIAT/3))] remoteExec ["A3A_fnc_resourcesFIA",2];
-		[-10*_factor, 90] remoteExec ["SCRT_fnc_rivals_reduceActivity",2];
-		{ A3A_curHQInfoInv = A3A_curHQInfoInv + 0.25 + random 0.5 } remoteExecCall ["call", 2];
-	    }; ///If players fail, enemy will get location of the HQ
+            private _hrT = server getVariable "hr";
+            private _resourcesFIAT = server getVariable "resourcesFIA";
+            [-1*(round(_hrT/3)),-1*(round(_resourcesFIAT/3))] remoteExec ["A3A_fnc_resourcesFIA",2];
+            [-10, 90] remoteExec ["SCRT_fnc_rivals_reduceActivity",2];
+            { A3A_curHQInfoInv = A3A_curHQInfoInv + 0.25 + random 0.5 } remoteExecCall ["call", 2];
+	    }; //If players fail, enemy will get location of the HQ
     };
     case(!alive _box):
     {
@@ -808,38 +830,44 @@ switch(true) do
 
         [0, 600] remoteExec ["A3A_fnc_resourcesFIA",2];
         [1800, _sideX] remoteExec ["A3A_fnc_timingCA",2];
+
         { 
             [20*_bonus,_x] call A3A_fnc_addScorePlayer;
             [350*_bonus,_x] call A3A_fnc_addMoneyPlayer;
         } forEach (call SCRT_fnc_misc_getRebelPlayers);
+
         [10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
-        [250*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
+        [250*_bonus,theBoss,true] call A3A_fnc_addMoneyPlayer;
         ["Large", _sideX] remoteExec ["A3A_fnc_selectIntel", 2];
 
         for "_i" from 0 to 3 do {
             [(position _box), 6000, 1200, false] spawn SCRT_fnc_common_recon;
-
             if (hideEnemyMarkers) then {
-                [(selectRandom [2,3])] call A3U_fnc_revealRandomZones;
+                if (random 100 >= 70) then {
+                    private _zoneAmount = selectRandom [1,2];
+                    [_zoneAmount] call A3U_fnc_revealRandomZones;
+                };
             };
-
             uiSleep 60;
         };
-        
+
         deleteVehicle _box;
     };
     case(_box distance (getMarkerPos traderMarker) < 50):
     {
-        Info("Box has been delivered to arms traider, mission completed.");
+        Info("Box has been delivered to arms trader, mission completed.");
+
         [_taskId, "LOG", "CANCELED"] call A3A_fnc_taskSetState;
         [_taskId2, "LOG", "SUCCEEDED"] call A3A_fnc_taskSetState;
 
         [0, 1200] remoteExec ["A3A_fnc_resourcesFIA",2];
         [3600, _sideX] remoteExec ["A3A_fnc_timingCA",2];
+
         { 
             [30*_bonus,_x] call A3A_fnc_addScorePlayer;
             [700*_bonus,_x] call A3A_fnc_addMoneyPlayer;
         } forEach (call SCRT_fnc_misc_getRebelPlayers);
+        
         [20*_bonus,theBoss] call A3A_fnc_addScorePlayer;
         [500*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
     };
