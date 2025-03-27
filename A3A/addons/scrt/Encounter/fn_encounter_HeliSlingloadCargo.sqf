@@ -5,7 +5,7 @@ Info("Helicopter slingload cargo Event Init.");
 
 private _vehicles = [];
 private _groups = [];
-private _difficult = random 10 < tierWar;
+private _difficult = random 10 < tierWar; ///
 
 private _player = selectRandom (call SCRT_fnc_misc_getRebelPlayers);
 
