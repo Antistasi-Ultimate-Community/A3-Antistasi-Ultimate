@@ -1700,7 +1700,7 @@
                 <French>Le pays a été détruit par l'OPFOR</French>
             </Key>
             <Key ID="STR_end_mission_defeat_desc">
-                <Original>A humanitarian catastrophe has ruined the country, nobody wants to live there.</Original>
+                <Original>A humanitarian catastrophe has ruined the country, nobody wants to live here anymore.</Original>
                 <Russian>Гуманитарная катастрофа разорила страну, никто не хочет там жить.</Russian>
                 <Chinesesimp>人道主义灾难毁了这个国家，没有人愿意住在那里。</Chinesesimp>
                 <Korean>인도주의적 재앙이 나라를 망쳤고, 아무도 그 곳에서 살려고 하지 않습니다.</Korean>
@@ -2441,7 +2441,7 @@
                 <French>Vous êtes arrivé à destination.</French>
             </Key>
             <Key ID="STR_cut_text_paradrop_notification_1">
-                <Original>&lt;t color='#d3d9df' size='2'&gt; The commander has begun a paradrop insertion at a marked location. You're about to be moved into plane in %1 seconds. Press ESCAPE if you don't want to be moved into the airplane. Parachutes will be automatically applied on jump from plane.&lt;/t&gt;</Original>
+                <Original>&lt;t color='#d3d9df' size='2'&gt; The commander has begun a paradrop insertion at a marked location. You're about to be moved into the plane in %1 seconds. Press ESCAPE if you don't want to be moved into the airplane. Parachutes will be automatically applied on jump from plane.&lt;/t&gt;</Original>
                 <Russian>&lt;t color='#d3d9df' size='2'&gt;Командир испольует десантирование с парашютами на определенную позицию. Вас переместит в самолёт через %1 секунд. Нажмите ESCAPE если вы не хотите перемещаться в самолёт и остаться на земле. Парашют будет автоматически прикреплен после прыжка с парашютом, нет нужды его брать отдельно.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#d3d9df' size='2'&gt;指挥官在某些位置使用集体空投。 您将在 %1 秒后进入飞机。 如果您不想进入飞机，请按 ESCAPE ，跳伞时降落伞会自动携带，不需要自己带。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#d3d9df' size='2'&gt;지휘관이 특정 위치에 공수강하 진입을 사용합니다. %1초 후에 비행기로 이동합니다. 비행기 안으로 이동하지 않으려면 ESC를 누르십시오. 낙하산은 비행기에서 점프할 때 자동으로 펼쳐집니다.&lt;/t&gt;</Korean>
@@ -2709,7 +2709,7 @@
                 <French>%1 est mort</French>
             </Key>
             <Key ID="STR_hints_new_game_petros_dead_text">
-                <Original>%1 has been killed. You lost mostt of your assets and need to select a new HQ position far from enemy presence.</Original>
+                <Original>%1 has been killed. You lost most of your assets and need to select a new HQ position far from enemy presence.</Original>
                 <Russian>%1 был убит. Вы потеряете большую часть своих денег. Необходимо выбрать новую позицию штаба подальше от врагов.</Russian>
                 <Chinesesimp>%1 已被杀死。 你失去了部分资产，需要选择一个远离敌人的新总部位置。</Chinesesimp>
                 <Korean>%1가 사살되었습니다. 자산의 일부를 잃었으므로 적으로부터 멀리 떨어진 새 본부 위치를 선택해야 합니다.</Korean>
@@ -6599,7 +6599,7 @@
                 <French>Point de ralliement</French>
             </Key>
             <Key ID="STR_dialogs_RP_abolish_fail">
-                <Original>Rally point can only be abolished at the HQ or near the Rally Point itself.</Original>
+                <Original>The rally point can only be abolished at the HQ or near the Rally Point itself.</Original>
                 <Russian>Точка сбора может быть упразднена только рядом с штабом или самим пунктом сбора.</Russian>
                 <Chinesesimp>集结点只能在总部或集结点本身附近取消。</Chinesesimp>
                 <Korean>집결 지점은 본부 또는 집결 지점 자체 근처에서만 제거 가능합니다.</Korean>
@@ -9809,7 +9809,7 @@
                 <French>Gardez la zone exempte d'hostiles pendant %1 secondes supplémentaires.</French>
             </Key>
             <Key ID="STR_A3A_Missions_SUPP_Supplies_success">
-                <Original>Supplies have been successfully delivered and distributed amongst the population. %1' people love you!</Original>
+                <Original>Supplies have been successfully delivered and distributed amongst the population. %1's people love you!</Original>
                 <Russian>Припасы были успешно доставлены и распространены среди населения. Народ %1 любит вас!</Russian>
                 <Chinesesimp>物资已成功交付并分发给民众。 %1人爱你！</Chinesesimp>
                 <Korean>보급품이 성공적으로 배달되고 주민들에게 나눠졌습니다. %1의 주민들은 이제 당신들을 사랑합니다!</Korean>
@@ -9850,7 +9850,7 @@
                 <Korean>탈영병 구조</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
-                <Original>A group of enemy deserters is hiding at a %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
+                <Original>A group of enemy deserters is hiding at the %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
                 <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Chinesesimp>一群敌方逃兵躲藏在 %1，他们正在被敌方追捕。我们必须在 %2 之前救出他们。将他们带到总部。</Chinesesimp>
                 <Korean>탈주자 구조적의 탈영병 무리가 %1에 숨어 있고, 적 부대에게 쫓기고 있습니다. %2 이전에 구출해야 합니다. 본부로 데려오십시오.</Korean>
@@ -9863,7 +9863,7 @@
                 <French>Sauver les prisonniers</French>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_desc">
-                <Original>%1 are about to execute our comrades at a %2. We must rescue them before %3. Bring them to HQ.</Original>
+                <Original>%1 are about to execute our comrades at the %2. We must rescue them before %3. Bring them to HQ.</Original>
                 <Russian>%1 собираются казнить наших товарищей в %2. Мы должны спасти их до %3. Привезите их в штаб.</Russian>
                 <Chinesesimp>%1 即将处决我们在 %2 的同志。 我们必须在 %3 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1이 %2에서 우리 동지들을 처형하려고 합니다. %3 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
@@ -9905,7 +9905,7 @@
                 <French>Sauver l'informateur</French>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Informer_task_desc">
-                <Original>%1 forces sweeps %2 in search of our civilian informant with some very valuable data. He's hiding in one of the city's buildings. We have to get him out of there or he will be killed and our intel source will be exposed. He will shoot flare in the sky when we are close to him. Bring him to our HQ. Do this before %3.</Original>
+                <Original>%1 forces sweeps %2 in search of our civilian informant with some very valuable data. He's hiding in one of the town's buildings. We have to get him out of there or he will be killed and our intel source will be exposed. He will shoot flare in the sky when we are close to him. Bring him to our HQ. Do this before %3.</Original>
                 <Russian>Силы %1 прочёсывают %2 в поисках нашего информатора, у которого есть очень важные разведданные. Он скрывается в одном из зданий в городе. Мы должны вытащить его оттуда и доставить в штаб пока его не убили и не раскрыли наш источник разведданных. Он выстрелит флейром в небо когда мы будем близко к нему. Привезите его в наш штаб. Сделайте это до %3.</Russian>
                 <Chinesesimp>%1 部队扫荡 %2 以寻找我们的平民告密者并提供一些非常有价值的数据。 他躲在城市的一栋建筑物中。 我们必须把他弄出去，否则他会被杀，我们的情报来源也会暴露。 当我们靠近他时，他会向天空发射照明弹。 把他带到我们的总部。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%1의 병력이 매우 귀중한 정보를 가진 민간인 정보원을 찾기 위해 %2을(를) 뒤집어 엎고 있습니다. 그는 도시의 한 건물에 숨어 있습니다. 그를 거기서 탈출시키지 않으면 그는 살해되고 우리의 정보가 노출될 것입니다. 그는 우리가 가까이 왔을 때 하늘에 조명탄을 발사할 것입니다. 그를 본부로 데려오십시오. %3 이전에 완료하십시오.</Korean>
@@ -9919,7 +9919,7 @@
                 <French>Sauver les survivants d'un naufrage</French>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Shipwreck_task_desc">
-                <Original>A smuggler's ship has crashed in %1. We must rescue survivors before %2. Bring them to HQ.</Original>
+                <Original>A smuggler's ship has crashed in %1. We must rescue any survivors before %2. Bring them to HQ.</Original>
                 <Russian>Корабль контрабандистов потерпел крушение in %1. We must rescue survivors before %2. Bring them to HQ.</Russian>
                 <Chinesesimp>走私者的船在 %1 坠毁。 我们必须在 %2 之前营救幸存者。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 밀수업자의 배가 난파되었습니다. %2 이전에 생존자를 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
