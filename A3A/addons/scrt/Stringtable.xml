@@ -68,7 +68,7 @@
         </Container>
         <Container name="arsenal">
             <Key ID="STR_A3AP_vehArsenal_desc">
-                <Original>Select a vehicle to open the arsenal for it, allowing you to fill its inventory with any items from arsenal.</Original>
+                <Original>Select a vehicle to open the arsenal for it, allowing you to fill its inventory with any items from the arsenal.</Original>
                 <Russian>Выберите транспортное средство чтобы открыть арсенал для него и наполнить инвентарь техники любыми предметами из арсенала.</Russian>
                 <Chinesesimp>选择车辆为其打开武器库，以便将其货物与武器库中的任何物品一起装满。</Chinesesimp>
                 <Korean>아스널의 모든 아이템으로 화물을 채울 수 있도록 아스널을 열 차량을 선택하십시오.</Korean>
