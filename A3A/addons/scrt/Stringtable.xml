@@ -852,7 +852,7 @@
                 <French>L'avion n'est pas en mesure d'effectuer la mission, interruption du paradrop.</French>
             </Key>
             <Key ID="STR_A3AP_paradrop_abort_plane_no_free_seats">
-                <Original>Plane has no free seats, aborting paradrop.</Original>
+                <Original>The plane has no free seats, aborting paradrop.</Original>
                 <Russian>Самолёт не имеет свободных мест, отмена прыжка.</Russian>
                 <Chinesesimp>飞机没有空位，跳伞失败。</Chinesesimp>
                 <Korean>비행기에 빈 좌석이 없어서 공수강하가 취소되었습니다.</Korean>
@@ -882,28 +882,28 @@
                 <French>Le point de ralliement n'existe pas.</French>
             </Key>
             <Key ID="STR_A3AP_rally_occupied_veh">
-                <Original>You can't travel to rally point while in a vehicle.</Original>
+                <Original>You can't travel to the rally point while in a vehicle.</Original>
                 <Russian>Вы не можете путешествовать к точке сбора сидя в транспортном средстве.</Russian>
                 <Chinesesimp>你不能在车上前往集合点。</Chinesesimp>
                 <Korean>차량 내에서는 집결 지점까지 이동할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas vous déplacer au point de ralliement lorsque vous êtes dans un véhicule.</French>
             </Key>
             <Key ID="STR_A3AP_rally_tow_rope">
-                <Original>You can't travel with your tow rope out or with a vehicle attached.</Original>
+                <Original>You can't travel with your tow rope out or with a vehicle in tow.</Original>
                 <Russian>Вы не можете путешествовать к точке сбора с буксировочным тросом в руках или прикрепленным к транспортному средству.</Russian>
                 <Chinesesimp>您不能在拉出拖车绳或连接车辆的情况下旅行。</Chinesesimp>
                 <Korean>견인 로프를 빼거나 차량을 연결한 상태로는 이동할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas vous déplacer avec votre câble d'attelage détaché ou un véhicule attaché.</French>
             </Key>
             <Key ID="STR_A3AP_rally_no_aicontrol">
-                <Original>You can't travel to rally point while you are controlling AI.</Original>
+                <Original>You can't travel to the rally point while you are controlling AI.</Original>
                 <Russian>Вы не можете путешествовать к точке сбора пока контроллируете другой ИИ-юнит.</Russian>
                 <Chinesesimp>当您控制 AI 时，您无法前往集结点。</Chinesesimp>
                 <Korean>인공지능을 조종하는 동안에는 집결 지점으로 이동할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas vous déplacer au point de ralliement lorsque vous contrôlez l'IA.</French>
             </Key>
             <Key ID="STR_A3AP_rally_unconscious">
-                <Original>You can't travel to rally point while unconscious.</Original>
+                <Original>You can't travel to the rally point while unconscious.</Original>
                 <Russian>Вы не можете путешествовать к точке сбора будучи в тяжело раненом состоянии.</Russian>
                 <Chinesesimp>你不能在失去知觉的情况下前往集结点。</Chinesesimp>
                 <Korean>의식불명 상태로는 집결 지점으로 이동할 수 없습니다.</Korean>
@@ -998,7 +998,7 @@
                 <French>Aucun</French>
             </Key>
             <Key ID="STR_generic_commander_only">
-                <Original>Only Commander has access to this function.</Original>
+                <Original>Only the commander has access to this function.</Original>
                 <Russian>Только командир имеет доступ к этой функции.</Russian>
                 <Chinesesimp>只有指挥官才能使用这个功能</Chinesesimp>
                 <Korean>지휘관만 이 기능에 액세스할 수 있습니다.</Korean>
@@ -1319,14 +1319,14 @@
                 <French>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#D96600'&lt;La reconnaissance&lt;/t&gt; n'a pas détecté d'activité ennemie.&lt;/t&gt;</French>
             </Key>
             <Key ID="STR_comms_mp_prisoner_release">
-                <Original>&lt;t size='0.6'&gt;Due to humanitarian agreements with &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, %1 recieves &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; for released prisoner.&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;Due to our humanitarian agreements with the &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, %1 receives &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; for the released prisoner.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;Ввиду гуманитарного соглашения с &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, %1 получает &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; за освобождение пленного.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;根据与 &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;的人道主义协定, %1 收到 &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; 由于释放囚犯。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;t size='0.6'&gt;의 인도주의적 합의 때문에 &lt;/t&gt;, %1&lt;t size='0.6'&gt;은 석방된 포로에 대해&lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt;을(를) 받았습니다.&lt;/t&gt;</Korean>
                 <French>&lt;t size='0.6'&gt;En raison d'accords humanitaires avec&lt;t size='0.6' color='#FFA500'&gt;l'IDAP&lt;/t&gt;, %1 reçoit des fonds &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; pour les prisonniers libérés.</French>
             </Key>
             <Key ID="STR_comms_mp_money_share">
-                <Original>&lt;t size='0.6'&gt;Commander %1 shares rebel money equally among all members. %2 recieves his share - &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;The commander %1 has shared money equally among all members. %2 receives his share - &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;Командир %1 делит казну фракции на всех. %2 получает свою долю - &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt; %1 指挥官在所有成员中平均分配抵抗军资金。 %2 获得他的份额 - &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1의 지휘관은 모든 멤버에게 동등하게 아군의 자금을 분배했습니다. %2은(는) 몫을 받았습니다 - &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</Korean>
@@ -1347,7 +1347,7 @@
                 <French>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#008000'&gt;Le point de ralliement&lt;/t&gt; a manqué de voyages.&lt;/t&gt;</French>
             </Key>
             <Key ID="STR_comms_mp_loot_heli">
-                <Original>&lt;t size='0.6'&gt;%1 The helicopter and its crew helps us with the scattered &lt;t size='0.6' color='#660080'&gt;loot&lt;/t&gt;. They will drop the crate with gathered loot near your position.&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;Our loot helicopter and its crew helps us gather the scattered &lt;t size='0.6' color='#660080'&gt;equipment&lt;/t&gt;. They will drop the crate with gathered loot near your position.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;Вертолет %1 и его экипаж поможет нам с разбросанной вокруг &lt;t size='0.6' color='#660080'&gt;добычей&lt;/t&gt;. Они бросят ящик с собранной добычей рядом с вашей позицией.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;%1 直升机和它的乘员会帮助我们 &lt;t size='0.6' color='#660080'&gt;loot&lt;/t&gt;. 他们会把装满战利品的板条箱扔到你的位置附近。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1의 헬리콥터와 승무원들이 흩어진 &lt;t size='0.6' color='#660080'&gt;전리품&lt;/t&gt;을 모으기 위해 도와줍니다. 그들은 당신 위치 근처에 모은 전리품과 함께 상자를 떨어뜨릴 것입니다.&lt;/t&gt;</Korean>
@@ -1503,7 +1503,7 @@
                 <French>Mods incompatibles détectés</French>
             </Key>
             <Key ID="STR_end_mission_modUnautorized_desc">
-                <Original>An incompatible mod or incompatible set of supported mods installed on the server or your PC has been detected. To avoid problems the mission has ended. Please turn off unsupported (ASR AI, aLIVE, MCC, LAMBS or any other AI behaviour) mods from your computer (and server when applicable) to be able to play Antistasi. See server .rpt log for more information.</Original>
+                <Original>An incompatible mod or incompatible set of supported mods installed on the server or your PC has been detected. To avoid problems the mission has ended. Please turn off unsupported (ASR AI, aLIVE, MCC, LAMBS_danger.fsm or any other AI behaviour) mods from your computer (and server when applicable) to be able to play Antistasi. See server .rpt log for more information.</Original>
                 <Russian>Обнаружен несовместимый мод или несовместимый набор модов, установленных на сервере или вашем компьютере. Во избежание проблем миссия завершена. Пожалуйста, отключите неподдерживаемые (ASR AI, aLIVE, MCC или другой мод, который влияет на поведение ИИ) моды на вашем компьютере (и сервере, если применимо), чтобы иметь возможность играть в Antistasi. Дополнительную информацию смотрите в журнале сервера .rpt.</Russian>
                 <Chinesesimp>检测到服务器或 PC 上安装了不兼容的模组或不兼容的支持模组集。为避免出现问题，任务已结束。请关闭计算机（和服务器，如果适用）上不受支持的模组（ASR AI、aLIVE、MCC 或任何 AI 行为），以便能够玩 Antistasi。有关更多信息，请参阅服务器 .rpt 日志。</Chinesesimp>
                 <Korean>서버나 PC에 설치된 호환되지 않는 모드 또는 호환되지 않는 지원 모드 세트가 감지되었습니다. 문제를 피하기 위해 미션이 종료되었습니다. 안티스타시를 플레이하려면 컴퓨터(또는 해당되는 경우 서버)에서 호환되지 않는(ASR AI, aLIVE, MCC 또는 모든 AI 행동) 모드를 끄십시오. 자세한 내용은 서버의 .rpt 파일의 로그를 참조하십시오.</Korean>
@@ -2329,42 +2329,42 @@
                 <French>Missions</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_AS_hint_text">
-                <Original>Assassination missions require cities, patrolled forests, open plains or airports closer than %1m from your HQ.</Original>
+                <Original>Assassination missions require cities, patrolled forests, open plains or airports within %1m of HQ.</Original>
                 <Russian>Миссиям по устранению требуются города, патрулируемые лесы, открытые пространства или авиабазы ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>暗杀任务需要城市、巡逻的森林、开阔的平原或距离总部不到 %1m 的机场。</Chinesesimp>
                 <Korean>암살 임무를 수행하려면 본부로부터 %1m 가까운 도시, 순찰된 숲, 개방된 평원이나 공항이 필요합니다.</Korean>
                 <French>Les missions d'assassinat nécessitent des villes, des forêts patrouillées, des plaines ouvertes ou des aéroports situés à moins de %1m de votre QG.</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_CON_hint_text">
-                <Original>Conquest missions require roadblocks or outposts closer than %1m from your HQ.</Original>
+                <Original>Conquest missions require roadblocks or outposts within %1m of HQ.</Original>
                 <Russian>Миссиям по захвату требуются блокпосты или аванпосты ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>征服任务需要距离总部 %1m 以内的路障或哨站。</Chinesesimp>
                 <Korean>점령 임무를 수행하려면 본부로부터 %1m 가까운 곳에 바리케이드나 전초 기지가 있어야 합니다.</Korean>
                 <French>Les missions de conquête nécessitent des barrages routiers ou des avant-postes à moins de %1m de votre QG.</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_DES_hint_text">
-                <Original>Destroy missions require Airbases or Radio Towers closer than %1 from your HQ.</Original>
+                <Original>Destroy missions require Airbases or Radio Towers withing %1 of HQ.</Original>
                 <Russian>Миссиям по уничтожению требуются авиабазы или радиовышки ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>摧毁任务需要空军基地或无线电塔距离您的总部不超过 %1。</Chinesesimp>
                 <Korean>파괴 임무를 수행하려면 본부로부터 %1m 가까운 곳에 공군 기지 또는 통신탑이 필요합니다.</Korean>
                 <French>Les missions de destruction nécessitent des bases aériennes ou des tours radio situées à moins de %1 de votre QG.</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_LOG_hint_text">
-                <Original>Logistics missions require Outposts, Seaports or Banks closer than %1m from your HQ.</Original>
+                <Original>Logistics missions require Outposts, Seaports or Banks within %1m of HQ.</Original>
                 <Russian>Миссиям логистики требуются аванпосты, порты или банки ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>后勤任务需要前哨站、海港或银行离总部不超过 %1m。</Chinesesimp>
                 <Korean>병참 임무를 수행하려면 본부로부터 %1m 가까운 곳에 전초 기지, 항구 또는 은행이 필요합니다.</Korean>
                 <French>Les missions logistiques nécessitent des avant-postes, des ports maritimes ou des banques situés à moins de %1m de votre QG.</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_SUPP_hint_text">
-                <Original>Support missions require cities closer than %1m from your HQ.</Original>
+                <Original>Support missions require cities within %1m of HQ.</Original>
                 <Russian>Миссиям поддержки требуются города ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>支持任务需要距离您总部 %1m 以内的城市。</Chinesesimp>
                 <Korean>지원 임무를 수행하려면 본부로부터 %1m 가까운 곳에 도시가 필요합니다.</Korean>
                 <French>Les missions de soutien nécessitent des villes situées à moins de %1m de votre QG.</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_RES_hint_text">
-                <Original>Rescue missions require cities, airports or beaches closer than %1m from your HQ.</Original>
+                <Original>Rescue missions require cities, airports or beaches within %1m of HQ.</Original>
                 <Russian>Спасательным миссиям требуются требуются города, авиабазы или пляжи ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>救援任务要求城市、机场或海滩距离您的总部不超过 %1m。</Chinesesimp>
                 <Korean>구출 임무를 수행하려면 본부로부터 %1m 가까운 도시, 공항 또는 해변이 필요합니다.</Korean>
@@ -2441,7 +2441,7 @@
                 <French>Vous êtes arrivé à destination.</French>
             </Key>
             <Key ID="STR_cut_text_paradrop_notification_1">
-                <Original>&lt;t color='#d3d9df' size='2'&gt; The commander has begun a paradrop insertion at a marked location. You're about to be moved into the plane in %1 seconds. Press ESCAPE if you don't want to be moved into the airplane. Parachutes will be automatically applied on jump from plane.&lt;/t&gt;</Original>
+                <Original>&lt;t color='#d3d9df' size='2'&gt; The commander has begun a paradrop insertion at a marked location. You will be moved into the plane in %1 seconds. Press ESCAPE if you don't want to be moved into the airplane. Parachutes will automatically deploy upon jumping from the plane.&lt;/t&gt;</Original>
                 <Russian>&lt;t color='#d3d9df' size='2'&gt;Командир испольует десантирование с парашютами на определенную позицию. Вас переместит в самолёт через %1 секунд. Нажмите ESCAPE если вы не хотите перемещаться в самолёт и остаться на земле. Парашют будет автоматически прикреплен после прыжка с парашютом, нет нужды его брать отдельно.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#d3d9df' size='2'&gt;指挥官在某些位置使用集体空投。 您将在 %1 秒后进入飞机。 如果您不想进入飞机，请按 ESCAPE ，跳伞时降落伞会自动携带，不需要自己带。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#d3d9df' size='2'&gt;지휘관이 특정 위치에 공수강하 진입을 사용합니다. %1초 후에 비행기로 이동합니다. 비행기 안으로 이동하지 않으려면 ESC를 누르십시오. 낙하산은 비행기에서 점프할 때 자동으로 펼쳐집니다.&lt;/t&gt;</Korean>
@@ -2455,7 +2455,7 @@
                 <French>&lt;t color='#d3d9df' size='2'&gt;Vous resterez au QG.&lt;/t&gt;</French>
             </Key>
             <Key ID="STR_cut_text_paradrop_notification_3">
-                <Original>&lt;t color='#d3d9df' size='2'&gt;You have been moved to the  airplane to attend in the paradrop.&lt;/t&gt;</Original>
+                <Original>&lt;t color='#d3d9df' size='2'&gt;You have been moved into the airplane to participate in the paradrop.&lt;/t&gt;</Original>
                 <Russian>&lt;t color='#d3d9df' size='2'&gt;Вы были перемещены в самолёт для принятия участия в парашютной высадке.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#d3d9df' size='2'&gt;您已被转移到飞机上以参加空降。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#d3d9df' size='2'&gt;공수강하에 참여하기 위해 비행기로 이동하였습니다.&lt;/t&gt;</Korean>
@@ -2520,7 +2520,7 @@
                 <French>Personne n'est à portée de l'information, il faut repartir de zéro.</French>
             </Key>
             <Key ID="STR_hints_AS_traitor_intel">
-                <Original>Someone found some intel on the traitors family, he will not cause us any problems any more!</Original>
+                <Original>Someone found some intel on the traitor's family. He will not cause us any problems anymore!</Original>
                 <Russian>Кто-то нашёл информацию о семье предателя, он понял намёк и от него больше не будет проблем.</Russian>
                 <Chinesesimp>有人找到了叛徒家族的情报，他不会再惹事了！</Chinesesimp>
                 <Korean>누군가 배신자 가족에 대한 정보를 발견했기 때문에, 그는 더 이상 문제를 일으키지 않을 것입니다.</Korean>
@@ -2998,7 +2998,7 @@
                 <French>Je n'ai pas de missions de convoi à vous confier. Rapprochez notre QG de l'ennemi.</French>
             </Key>
             <Key ID="STR_chats_mission_request_big_battle">
-                <Original>There is a large battle occurring, I don't think the enemy will be sending any convoys.</Original>
+                <Original>There is a large battle occurring; I don't think the enemy will be sending any convoys.</Original>
                 <Russian>В настоящий момент идёт довольно крупная битва. Не думаю, что враг отправит конвой в такое время.</Russian>
                 <Chinesesimp>周围有大战，估计敌人不会派车队过来。</Chinesesimp>
                 <Korean>주변에 큰 전투가 벌어져서 적군이 호송대를 보내지 않을 것 같습니다.</Korean>
@@ -4105,7 +4105,7 @@
                 <French>Dissolution</French>
             </Key>
             <Key ID="STR_notifiers_disband_tip">
-                <Original>Click on any friendly marker to disband it and recieve a partial refund.</Original>
+                <Original>Click on any friendly marker to disband it and receive a partial refund.</Original>
                 <Russian>Кликните по любому дружественному маркеру, чтобы распустить гарнизон и возместить часть его стоимости.</Russian>
                 <Chinesesimp>点击任何友方标记解散驻军并退还部分费用。</Chinesesimp>
                 <Korean>원하는 마커를 클릭하여 해산시키고 비용의 일부를 환불하십시오.</Korean>
@@ -4519,7 +4519,7 @@
                 <French>Sauter le temps / Repos</French>
             </Key>
             <Key ID="STR_params_rest_commander_only">
-                <Original>Only commander can order a rest.</Original>
+                <Original>Only the commander can order a rest.</Original>
                 <Russian>Только командир может приказать отдохнуть.</Russian>
                 <Chinesesimp>只有指挥官才能命令休息。</Chinesesimp>
                 <Korean>지휘관만이 휴식을 명령할 수 있습니다.</Korean>
@@ -4682,7 +4682,7 @@
                 <French>Le groupe %1 est revenu sous le contrôle de HC car la zone qui était pointée vers la garnison a été perdue.</French>
             </Key>
             <Key ID="STR_garrison_error_no_hr">
-                <Original>You lack enough HR to recruit anyone.</Original>
+                <Original>You don't have enough HR for this recruitment.</Original>
                 <Russian>Вам не хватает HR, чтобы добавить новый юнит в гарнизон.</Russian>
                 <Chinesesimp>您没有足够的人力来向你的驻军添加新的单位。</Chinesesimp>
                 <Korean>신병 모집을 위한 인력이 부족합니다.</Korean>
@@ -5325,7 +5325,7 @@
                 <French>Fréquence des attaques massives de l'ennemi (en minutes, la valeur de base dépend de différentes conditions et modificateurs)</French>
             </Key>
             <Key ID="STR_params_ironManMode">
-                <Original>Iron Man Mode - Petros will have a single life and the game will end if he dies, saves will also be erased.</Original>
+                <Original>Iron Man Mode - Petros will have a single life. If he dies, the game will end and the save will be erased.</Original>
                 <Russian>Режим Железной Воли - У Петроса одна жизнь, игра закончится и сохранение затрётся при его смерти</Russian>
                 <Chinesesimp>钢铁侠模式-Petros只有一条命，死亡就游戏结束，存档也会被清空</Chinesesimp>
                 <Korean>아이언맨 모드 - 페트로스는 목숨이 하나 뿐이며 그가 죽으면 게임은 끝날 것이며, 세이브도 지워집니다</Korean>
@@ -5437,7 +5437,7 @@
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
             <Key ID="STR_params_allowCivDialog">
-                <Original>[Experimental] Allow talking to civilians</Original>
+                <Original>Allow talking to civilians</Original>
                 <Russian>[Экспериментально] Разрешить разговоры с гражданскими</Russian>
                 <German>[Experimentell] Gespräche mit Zivilisten erlauben</German>
                 <Italian>[Sperimentale] Permetti di parlare con i civili</Italian>
@@ -5453,20 +5453,20 @@
                 <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
-                <Original>[Experimental] Ignore Black Market Vehicle Requirements</Original>
+                <Original>Ignore Black Market Vehicle Requirements</Original>
                 <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
                 <Korean>[실험적] 암시장 차량 요구사항 무시</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle">
-                <Original>[Experimental] Black Market Vehicle Discount</Original>
+                <Original>Black Market Vehicle Discount</Original>
                 <Korean>[실험적] 암시장 차량 할인</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
-                <Original>[Experimental] Black Market Equipment Discount</Original>
+                <Original>Black Market Equipment Discount</Original>
                 <Korean>[실험적] 암시장 장비 할인</Korean>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
-                <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
+                <Original>Enable spectrum device hacking capability (Contact DLC)</Original>
                 <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
                 <Chinesesimp>[实验] 启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
                 <Korean>[실험적] 스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
@@ -5485,21 +5485,21 @@
                 <French>Permettre à l'ennemi d'utiliser des supports injustes (déséquilibrés)</French>
             </Key>
             <Key ID="STR_params_allowFuturisticSupports">
-                <Original>[Experimental] Allow futuristic supports to be used by the enemy</Original>
+                <Original>Allow futuristic supports to be used by the enemy</Original>
                 <Russian>[Экспериментально] Разрешить использование противником футуристичной поддержки</Russian>
                 <Chinesesimp>[实验性]允许敌人使用未来支援</Chinesesimp>
                 <Korean>[실험용] 적군이 미래적인 지원을 사용하도록 허용</Korean>
                 <French>[Expérimental] Permettre à l'ennemi d'utiliser des supports futuristes</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
-                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Original>Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
                 <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
                 <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
                 <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
-                <Original>[Experimental] Allow futuristic-unfair supports to be used by the enemy</Original>
+                <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>[Экспериментально] Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
                 <Chinesesimp>[实验] 允许敌人使用未来主义的不公平支持</Chinesesimp>
                 <Korean>[실험적] 적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
@@ -5512,7 +5512,7 @@
                 <French>PARAMÈTRES DES CAISSES DE BUTIN</French>
             </Key>
             <Key ID="STR_params_truelyRandomCrates">
-                <Original>[Experimental] Truly Random Crates: No balance checks for crates</Original>
+                <Original>Truly Random Crates: No balance checks for crates</Original>
                 <Russian>[Экспериментально] Истинно случайные ящики: проверки баланса для ящиков не производится.</Russian>
                 <Chinesesimp>[实验性]真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
                 <Korean>[실험용] 완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
@@ -5666,7 +5666,7 @@
                 <French>Une sauvegarde persistante pour les constructions placées par Zeus</French>
             </Key>
             <Key ID="STR_params_unconsciousAiPossess">
-                <Original>[Experimental] Allow players to take control of AI units while unconscious</Original>
+                <Original>Allow players to take control of AI units while unconscious</Original>
                 <Russian>[Экспериментально] Разрешить игрокам управлять ИИ-соотрядниками находясь в бессознательном состоянии</Russian>
                 <Chinesesimp>允许玩家在失去行动的情况下控制AI队友</Chinesesimp>
                 <Korean>[실험용] 플레이어가 의식불명인 상태에서 인공지능 유닛을 조종할 수 있도록 허용</Korean>
@@ -5755,7 +5755,7 @@
                 <French>Temps avant qu'un joueur soit considéré comme AFK (en minutes)</French>
             </Key>
             <Key ID="STR_params_afk_uav">
-                <Original>[Experimental] Should a player be considered AFK while controlling a UAV?</Original>
+                <Original>Should a player be considered AFK while controlling a UAV?</Original>
                 <Russian>[Экспериментально] Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
                 <Chinesesimp>[实验]玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
                 <Korean>[실험용] UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
@@ -6024,7 +6024,7 @@
                 <French>OPTIONS POUR LES CAISSES DE BUTIN</French>
             </Key>
             <Key ID="STR_params_bobChaosCrates">
-                <Original>[Experimental] Truly Random Crates: Remove all balance checks from Crates</Original>
+                <Original>Truly Random Crates: Remove all balance checks from Crates</Original>
                 <Russian>[Экспериментально] Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
                 <Chinesesimp>[实验]真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
                 <Korean>[실험용] 완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
@@ -6054,40 +6054,40 @@
                 <French>Vous avez sélectionné un rôle de commandant.&lt;br/&gt;&lt;br/&gt;Le commandant est une unité avec des capacités accrues de camouflage, de médecine, de piratage de drones et d'ingénierie avec l'accès au menu exclusif du commandant (touche TAB par défaut).</French>
             </Key>
             <Key ID="STR_role_medic">
-                <Original>You have selected the Medic role.&lt;br/&gt;&lt;br/&gt;Medics do not have any bonus or penalties, but have the ability to use certain medical items for full health restoration.</Original>
+                <Original>You have selected a Medic role.&lt;br/&gt;&lt;br/&gt;Medics do not have any bonus or penalties, but have the ability to use certain medical items for full health restoration.</Original>
                 <Russian>Вы выбрали роль медика.&lt;br/&gt;&lt;br/&gt;Медики не имеют никаких бонусов или штрафов, но могут использовать определенные медицинские предметы для полного восстановления здоровья.</Russian>
                 <Chinesesimp>您选择了一个医生角色。&lt;br/&gt;&lt;br/&gt;医生没有任何加成或惩罚，但可以使用某些医疗物品来完全恢复健康。</Chinesesimp>
                 <Korean>당신은 의무병 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;의무병은 보너스나 패널티가 없지만, 완전한 회복을 위해 특정 의료 아이템을 사용할 수 있는 능력이 있습니다.</Korean>
                 <French>Vous avez choisi le rôle de Médecin.&lt;br/&gt;&lt;br/&gt;Les Médecins n'ont pas de bonus ou de pénalités, mais ont la possibilité d'utiliser certains objets médicaux pour restaurer complètement leur santé.</French>
             </Key>
             <Key ID="STR_role_teamleader">
-                <Original>You have selected the Team Leader role.&lt;br/&gt;&lt;br/&gt;Team Leaders are more lightweight units with increased camouflage capabilities who can hire AI units into their squad.</Original>
+                <Original>You have selected a Team Leader role.&lt;br/&gt;&lt;br/&gt;Team Leaders are more lightweight units with increased camouflage capabilities who can hire AI units into their squad.</Original>
                 <Russian>Вы выбрали роль лидера отряда.&lt;br/&gt;&lt;br/&gt;Лидеры отряда - это более легкие юниты с улучшенными возможностями маскировки, которые могут нанимать ИИ-юнитов в свой отряд.</Russian>
                 <Chinesesimp>你选择了一个小队长角色。&lt;br/&gt;&lt;br/&gt;队长是更轻量级的单位，具有更强的伪装能力，可以在他们的小队中雇佣 AI 单位。</Chinesesimp>
                 <Korean>당신은 조장 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;조장은 위장 능력이 향상된 경보병 유닛으로 인공지능 유닛을 분대에 고용할 수 있습니다.</Korean>
                 <French>Vous avez sélectionné un rôle de chef d'équipe.&lt;br/&gt;&lt;br/&gt;Les chefs d'équipe sont des unités plus légères avec des capacités de camouflage accrues qui peuvent engager des unités IA dans leur escouade.</French>
             </Key>
             <Key ID="STR_role_rifleman">
-                <Original>You have selected the Rifleman role.&lt;br/&gt;&lt;br/&gt;Riflemen have a 25% bonus on carry capacity but are easy to spot and make more noise when they move.</Original>
+                <Original>You have selected a Rifleman role.&lt;br/&gt;&lt;br/&gt;Riflemen have a 25% bonus on carry capacity but are easy to spot and make more noise when they move.</Original>
                 <Russian>Вы выбрали роль стрелка.&lt;br/&gt;&lt;br/&gt;Стрелки имеют 25% бонус к грузоподъемности, но их легче заметить, а также они издают больше шума при движении.</Russian>
                 <Chinesesimp>你选择了步枪兵角色。&lt;br/&gt;&lt;br/&gt;步枪兵的运载能力提升25%，但移动时容易被发现并发出更大的噪音。</Chinesesimp>
                 <Korean>당신은 소총수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;소총수는 운반량에 25%의 보너스가 있지만, 움직일 때 발견되기 더 쉽고 더 많은 소음을 냅니다.</Korean>
                 <French>Vous avez choisi un rôle de Fusilier.&lt;br/&gt;&lt;br/&gt;Les Fusiliers ont un bonus de 25% sur la capacité de transport mais sont faciles à repérer et font plus de bruit lorsqu'ils se déplacent.</French>
             </Key>
             <Key ID="STR_role_grenadier">
-                <Original>You have selected the Grenadier role.&lt;br/&gt;&lt;br/&gt;Grenadiers have a slight bonus on carry capacity, but are easy to spot.</Original>
+                <Original>You have selected a Grenadier role.&lt;br/&gt;&lt;br/&gt;Grenadiers have a slight bonus on carry capacity, but are easy to spot.</Original>
                 <Russian>Вы выбрали роль Стрелка ГП.&lt;br/&gt;&lt;br/&gt;Стрелок ГП имеет небольшой бонус к переносимому весу, но является более заметным.</Russian>
                 <Chinesesimp>您选择了掷弹兵角色。&lt;br/&gt;&lt;br/&gt;掷弹兵在携带能力上有轻微的加成，但很容易被发现。</Chinesesimp>
                 <Korean>당신은 유탄수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;유탄수는 운반 용량에 약간의 보너스가 주어지지만 발견되기 쉽습니다.</Korean>
             </Key>
             <Key ID="STR_role_autorifleman">
-                <Original>You have selected the Autorifleman role.&lt;br/&gt;&lt;br/&gt;Autoriflemen have a slight bonus on carry capacity, but make more noise when they move.</Original>
+                <Original>You have selected an Autorifleman role.&lt;br/&gt;&lt;br/&gt;Autoriflemen have a slight bonus on carry capacity, but make more noise when they move.</Original>
                 <Russian>Вы выбрали роль Пулеметчика.&lt;br/&gt;&lt;br/&gt;Пулеметчик имеет небольшой бонус к переносимому весу, но сильнее шумит при движении.</Russian>
                 <Chinesesimp>您选择了自动步枪兵角色。&lt;br/&gt;&lt;br/&gt;自动步枪兵在携带能力上有轻微的加成，但是移动时会发出更大的噪音。</Chinesesimp>
                 <Korean>당신은 자동소총수 역할을 선택했습니다,&lt;br/&gt;&lt;br/&gt;자동소총수는 운반 용량에 약간의 보너스가 주어지지만 이동할 때 소음이 더 큽니다.</Korean>
             </Key>
             <Key ID="STR_role_engineer">
-                <Original>You have selected the Engineer role.&lt;br/&gt;&lt;br/&gt;Engineers do not have any bonus or penalties, but have the ability to use repair Kits for vehicle repair and can hack UAVs</Original>
+                <Original>You have selected an Engineer role.&lt;br/&gt;&lt;br/&gt;Engineers do not have any stat bonuses or penalties, but have the ability to use repair kits for vehicle repairs and can hack drones.</Original>
                 <Russian>Вы выбрали роль инженера.&lt;br/&gt;&lt;br/&gt;Инженеры не имеют бонусов и штрафов, но имеют возможность использовать ремкомплекты для более основательного ремонта техники, а также взламывать дроны БПЛА.</Russian>
                 <Chinesesimp>您选择了工程师角色。&lt;br/&gt;&lt;br/&gt;工程师没有任何奖励或惩罚，但可以使用维修工具包进行车辆维修，还可以破解无人机。</Chinesesimp>
                 <Korean>당신은 공병 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;공병은 보너스나 패널티가 없지만 차량 수리를 위해 도구모음을 사용할 수 있으며 무인기를 해킹할 수 있습니다.</Korean>
@@ -6271,7 +6271,7 @@
                 <French>Vous vous êtes approché trop près d'une base, d'un avant-poste ou d'un barrage ennemi !</French>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_left_wanted">
-                <Original>You left your vehicle and you are still on the wanted list!</Original>
+                <Original>You left your vehicle and you are still on the Wanted List!</Original>
                 <Russian>Вы вышли из техники, и вы все еще в розыске!</Russian>
                 <Chinesesimp>你离开了你的车，你仍然在通缉名单上！</Chinesesimp>
                 <Korean>차량에 내렸지만 여전히 수배 중입니다!</Korean>
@@ -6969,7 +6969,7 @@
                 <French>Retourner le véhicule</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_flip_vehicle_tooltip">
-                <Original>Flips the vehicle you're looking at. requires 3 people to successfully perform. Heavy vehicles requires another vehicle in proximity.</Original>
+                <Original>Flips the vehicle you're looking at. Requires 3 people to successfully perform. Heavy vehicles require another vehicle in close proximity.</Original>
                 <Russian>Переворачивает автомобиль, на который вы указываете, обратно на колёса. Для выполнения требуется 3 человека, для тяжелых транспортных средств требуется ремонтная машина в непосредственной близости.</Russian>
                 <Chinesesimp>翻转你指向的载具。 需要3个人才能成功完成，重型车辆需要附近的维修车。</Chinesesimp>
                 <Korean>가리키고 있는 차량을 뒤집습니다. 3명이 성공적으로 수행해야 하며, 무거운 차량은 근처에 수리 트럭이 필요합니다.</Korean>
@@ -6997,7 +6997,7 @@
                 <French>Mettre le véhicule au garage</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_put_garage_tooltip">
-                <Original>The vehicle or static weapon you're looking at will be garaged; interact with the flag/garage box to retrieve from garage.</Original>
+                <Original>The vehicle or static weapon you're looking at will be garaged; interact with the flag or garage box to retrieve it from the garage.</Original>
                 <Russian>Автомобиль или статическое орудие, на которое вы смотрите, будет положен в гараж. Взаимодействуйте с флагом или ящиком, чтобы получить его из гаража.</Russian>
                 <Chinesesimp>载具或固定武器以放进载具库，与旗杆互动从载具库中取回。</Chinesesimp>
                 <Korean>현재 보고 있는 차량 또는 고정화기는 차고에 보관되며, 차고에서 꺼내려면 깃발과 상호작용을 하십시오.</Korean>
@@ -7477,7 +7477,7 @@
                 <French>Largage de véhicules légers</French>
             </Key>
             <Key ID="STR_commander_menu_lva_tooltip">
-                <Original>A plane flies over and drops a two-seated light vehicle to the specified position.</Original>
+                <Original>A plane flies over and drops a two-seated light vehicle at the specified position.</Original>
                 <Russian>Самолет пролетает и сбрасывает двухместное транспортное средство в указанное место.</Russian>
                 <Chinesesimp>飞机飞过，将两辆轻型载具投放到指定位置。</Chinesesimp>
                 <Korean>비행기가 상공을 비행해서 2인승 경차량을 지정한 위치로 떨어뜨립니다.</Korean>
@@ -7505,7 +7505,7 @@
                 <French>L'avion survole et dépose une caisse de butin à la position spécifiée.</French>
             </Key>
             <Key ID="STR_commander_menu_hmga_tooltip">
-                <Original>A plane flies over and drops crate with HMG at the specified position.</Original>
+                <Original>A plane flies over and drops a crate with HMG at the specified position.</Original>
                 <Russian>Самолет пролетает и сбрасывает ящик с крупнокалиберным пулеметом в указанное место.</Russian>
                 <Chinesesimp>飞机飞过，将装有重机枪的箱子丢到指定位置。</Chinesesimp>
                 <Korean>비행기가 상공을 비행해서 중기관총을 지정한 위치로 떨어뜨립니다.</Korean>
@@ -8564,7 +8564,7 @@
                 <French>%1 Incursion</French>
             </Key>
             <Key ID="STR_antistasi_rivals_hint_text">
-                <Original>%1 has started to build their shadow network across %2.&lt;br/&gt; Their nature is decentralized, their cells are autonomous, their ranks have various specialists with various backgrounds - from deserters and international criminals to mercenaries and paramilitaries. They are trained well and know how to fight insurgencies - they will try to disrupt our operations with dirty methods, covert operations and sheer force. Soon they will find you.&lt;br/&gt;&lt;br/&gt; Use new commander menu tab or new tripod map action to see your current progress on eliminating this new threat.</Original>
+                <Original>%1 has started to build their shadow network across %2.&lt;br/&gt; Their nature is decentralized, their cells are autonomous, their ranks have various specialists with various backgrounds - from deserters and international criminals to mercenaries and paramilitaries. They are trained well and know how to fight insurgencies - they will try to disrupt your operations with dirty methods, covert operations and sheer force. Soon they will find you.&lt;br/&gt;&lt;br/&gt; Use new commander menu tab or new tripod map action to see your current progress on eliminating this new threat.</Original>
                 <Russian>%1 начали строить свою подпольную сеть на %2.&lt;br/&gt; Их стихия - децентрализация, их ячейки автономны, в их рядах есть специалисты с разным прошлым - от дезертиров и международных преступников до наемников и бывших членов ЧВК. Они обучены и хорошо знают, как бороться с повстанческим движением — они попытаются сорвать ваши операции грязными методами, тайными операциями и просто грубой силой. Вскоре они найдут вас.&lt;br/&gt;&lt;br/&gt; Используйте новую вкладку в меню командира или новое действие на карте на треноге, чтобы увидеть свой текущий прогресс в устранении новой угрозы.</Russian>
                 <Chinesesimp>%1 已经开始在 %2 上建立他们的影子网络。&lt;br/&gt; 他们喜欢散开行动，每个小组都是独立的，他们的队伍中有来自不同背景的各种专家——从逃兵到国际罪犯再到雇佣军以及PMC前成员。 他们受过训练并且非常了解如何打击叛乱——他们会试图用肮脏的手段、秘密行动和简单的蛮力来破坏你的行动。 很快他们就会来找你。&lt;br/&gt;&lt;br/&gt; 使用新的指挥官菜单选项卡</Chinesesimp>
                 <Korean>%1이(가) %2에 지하 연락망을 구축하기 시작했습니다&lt;br/&gt;그들은 서로 분산되어 있고, 셀은 자율적으로 행동하며, 계급은 탈영병과 국제적인 범죄자에서부터 용병과 준군사조직에 이르기까지 다양한 배경을 가진 다양한 전문가들로 이루어져 있습니다. 그들은 고도로 훈련받았고 반란을 일으키는 법과 싸우는 법을 잘 알고 있으며, 더러운 방법과 비밀 작전, 있는 그대로의 무력으로 당신의 작전을 방해하려 할 것입니다. 곧 그들이 당신을 찾을 것입니다.&lt;br/&gt;&lt;br/&gt;새 지휘관 메뉴 탭 또는 새 삼각대 지도 행동을 사용하여 새 위협 제거에 대한 현재 진행 상황을 확인할 수 있습니다.</Korean>
@@ -9331,7 +9331,7 @@
                 <Korean>최전선의 자원채취소 점령</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_resources_compet_desc">
-                <Original>A %1 would be a fine addition to our cause. Go there and capture it before %2. %3 Sent their troops as well</Original>
+                <Original>A %1 would be a fine addition to our cause. Go there and capture it before %2. %3 sent their troops as well</Original>
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2. %3 также отправила туда свои войска</Russian>
                 <Chinesesimp>%1 对我们的事业大有裨益。赶在 %2 之前占领那里。%3 也派出了他们的部队</Chinesesimp>
                 <Korean>%1은(는) 우리 대의의 훌륭한 부차적 자원이 될 것입니다. %2 이전에 그 곳으로 가서 점령하십시오. %3도 병력을 보냈습니다.</Korean>
@@ -9343,7 +9343,7 @@
                 <Korean>최전선의 로드블록 파괴</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_desc">
-                <Original>A %1 interferes with our operations in the area. Go there and destroy it before %2. %3 Sent their troops as well</Original>
+                <Original>A %1 interferes with our operations in the area. Go there and destroy it before %2. %3 sent their troops as well</Original>
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
                 <Chinesesimp>%1 干扰了我们在该地区的行动。赶快去那里并在 %2 之前将其摧毁。%3 也派出了他们的部队</Chinesesimp>
                 <Korean>%1이(가) 해당 지역에서 우리의 작전을 방해합니다. %2 이전에 가서 파괴하십시오. %3도 병력을 보냈습니다.</Korean>
@@ -9355,7 +9355,7 @@
                 <Korean>최전선에서의 투쟁</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_desc">
-                <Original>A %1 is disturbing our operations in the area. Go there and capture it before %2. %3 Sent their troops as well.</Original>
+                <Original>A %1 is disturbing our operations in the area. Go there and capture it before %2. %3 sent their troops as well.</Original>
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
                 <Chinesesimp>%1 正在干扰我们在该地区的行动。赶在 %2 之前前往占领该地区。%3 也派出了他们的部队</Chinesesimp>
                 <Korean>%1이(가) 해당 지역에서 우리의 작전을 방해하고 있습니다. %2 이전에 그 곳으로 가서 점령하십시오. %3도 병력을 보냈습니다.</Korean>
@@ -9368,7 +9368,7 @@
                 <French>Saisir l'administration</French>
             </Key>
             <Key ID="STR_CON_MilAdmin_desc">
-                <Original>A military administration forces their rule on the local population, we should deal with it so the people can live freely. Free any prisoners you find and kill the military officer stationed there to seize it. Do it before %2.</Original>
+                <Original>A military administration forces their rule on the local population. We should deal with it so the people can live freely. Free any prisoners you find and kill the military officer stationed there to seize it. Do this before %2.</Original>
                 <Russian>Военная администрация населенного пункта %1 утверждает свое господство и применяет силу к нашему населению, мы должны разобраться с этим, чтобы люди смогли вздохнуть спокойно. Убейте военного администратора для захвата. Сделайте это до %2.</Russian>
                 <Chinesesimp>一个卡瓦拉的军事管理机构宣称他们对我们人民的统治和武力，我们应该处理这个问题，这样人民才能松一口气。杀死军事行政官以夺取它。在%2之前。</Chinesesimp>
                 <Korean>해당 도시의 군 행정부는 우리 국민들에게 그들의 통치와 무력행사의 정당성을 주장합니다. 우린 사람들이 자유롭게 숨쉴 수 있도록 그들을 처리해야 합니다. 군 행정부의 관리자를 죽이고 점령하십시오. %2 이전에 완료하십시오.</Korean>
@@ -9452,7 +9452,7 @@
                 <French>Tuer le traître</French>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Traitor_task_desc">
-                <Original>A traitor has scheduled a meeting with the %1 in %2. Kill him before he provides enough intel to give us trouble. Do this before %3. We don't know exactly where this meeting will happen but you will be able to find the building he is in by the nearby offroad and %1 presence.</Original>
+                <Original>A traitor has scheduled a meeting with the %1 in %2. Kill him before he provides enough intel to give us trouble. Do this before %3. We don't know exactly where this meeting will happen but you will be able to find the building he is in by the nearby offroad vehicle and %1 presence.</Original>
                 <Russian>Предатель назначил встречу с %1 в %2. Убейте его до того как он выдаст достаточно информации о нас. Сделайте это до %3. Мы не знаем точно где произойдёт эта встреча. Вы узнаете конкретное здание по припаркованному рядом автомобилю и присутствию охраны от %1.</Russian>
                 <Chinesesimp>内鬼已安排在 %2 与 %1 会面。 在他提供足够的情报给我们带来麻烦之前杀了他。 在 %3 之前执行此任务。 我们不知道这次会议的确切地点。 你要通过识别停在附近的载具和 %1 携带的安保人员，找到在哪个建筑交易。</Chinesesimp>
                 <Korean>배신자가 %2에서 %1과의 만남을 예약했습니다. 그가 우리에게 문제를 일으킬 만큼 충분한 정보를 제공하기 전에 그를 죽이십시오. %3 이전에 완료하십시오. 우린 이 만남이 어디서 일어날 지 모릅니다. 근처 차량 및 %1의 존재로 건물을 알아볼 수 있습니다.</Korean>
@@ -9542,7 +9542,7 @@
                 <French>Intercepter un convoi de prisonniers</French>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_prisoners">
-                <Original>A group of POWs are being transported from the %1 to the %3, the convoy will depart at %2. Try to intercept it. Kill or capture the truck driver to free the prisoners and bring them to HQ.</Original>
+                <Original>A group of POWs is being transported from the %1 to the %3, the convoy will depart at %2. Try to intercept it. Kill or capture the truck driver to free the prisoners and bring them to HQ.</Original>
                 <Russian>Группа из наших пленных скоро будет переевозиться из %1 в %3, конвой начнёт движение в %2. Попробуйте перехватить его. Заставьте водителя грузовика покинуть водительское место и привезите наших пленников в штаб. Живыми.</Russian>
                 <Chinesesimp>一群战俘正从%1运送到%3，准备在%2出发。 尝试拦截它。 杀死或俘虏卡车司机，让他们加入你的行列，并将他们带到总部。 如果可能的话，活着。</Chinesesimp>
                 <Korean>%1에서 %3(으)로 포로들이 수송되고 있으며 %2에서 출발하려고 합니다. 그들을 방해하십시오. 트럭 운전사를 죽이거나 붙잡아 합류시켜서 본부로 데려오십시오. 가능하면 살아 있어야 합니다.</Korean>
@@ -9837,7 +9837,7 @@
                 <French>Sauvetage de prisonniers de guerre</French>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Prisoners_task_desc">
-                <Original>A group of POWs are awaiting execution at the %1. We must rescue them before %2. Bring them to HQ.</Original>
+                <Original>A group of POWs is awaiting execution at the %1. We must rescue them before %2. Bring them to HQ.</Original>
                 <Russian>Группа наших пленников ожидает казни в %1. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Chinesesimp>我们的一群战俘在 %1 等待处决。 我们必须在 %2 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
@@ -9891,7 +9891,7 @@
                 <French>Sauver les réfugiés</French>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Refugees_task_desc_2">
-                <Original>A group of refugees is hiding in %1 awaiting for evacuation. We have to find them before %2 does. If not, it is certain death for them. Bring them back to HQ. Do this before %3.</Original>
+                <Original>A group of refugees is hiding in %1 waiting for evacuation. We have to find them before %2 does. If not, it is certain death for them. Bring them back to HQ. Do this before %3.</Original>
                 <Russian>Группа беженцев скрывается в %1, ожидая эвакуации. Мы должны найти их до того как их найдут %2. Если мы не успеем они, вероятно, умрут. Верните их в штаб. Сделайте это до %3.</Russian>
                 <Chinesesimp>一群难民躲在%1等待撤离。 我们必须在 %2 之前找到它们。 否则，他们必死无疑。 把他们带回总部。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>난민 일행이 %1에 숨어서 구출을 기다리고 있습니다. %2이(가) 발견하기 전에 먼저 찾아야 합니다. 그렇지 않으면 그들은 확실하게 죽을 것입니다. 그들을 본부로 데려오십시오. %3 이전에 완료하십시오.</Korean>
@@ -9905,7 +9905,7 @@
                 <French>Sauver l'informateur</French>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Informer_task_desc">
-                <Original>%1 forces sweeps %2 in search of our civilian informant with some very valuable data. He's hiding in one of the town's buildings. We have to get him out of there or he will be killed and our intel source will be exposed. He will shoot flare in the sky when we are close to him. Bring him to our HQ. Do this before %3.</Original>
+                <Original>%1 forces sweep %2 in search of our civilian informant with some very valuable data. He's hiding in one of the town's buildings. We have to get him out of there, or he will be killed and our intel source will be exposed. He will a shoot flare in the sky when we are close to him. Bring him to our HQ. Do this before %3.</Original>
                 <Russian>Силы %1 прочёсывают %2 в поисках нашего информатора, у которого есть очень важные разведданные. Он скрывается в одном из зданий в городе. Мы должны вытащить его оттуда и доставить в штаб пока его не убили и не раскрыли наш источник разведданных. Он выстрелит флейром в небо когда мы будем близко к нему. Привезите его в наш штаб. Сделайте это до %3.</Russian>
                 <Chinesesimp>%1 部队扫荡 %2 以寻找我们的平民告密者并提供一些非常有价值的数据。 他躲在城市的一栋建筑物中。 我们必须把他弄出去，否则他会被杀，我们的情报来源也会暴露。 当我们靠近他时，他会向天空发射照明弹。 把他带到我们的总部。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%1의 병력이 매우 귀중한 정보를 가진 민간인 정보원을 찾기 위해 %2을(를) 뒤집어 엎고 있습니다. 그는 도시의 한 건물에 숨어 있습니다. 그를 거기서 탈출시키지 않으면 그는 살해되고 우리의 정보가 노출될 것입니다. 그는 우리가 가까이 왔을 때 하늘에 조명탄을 발사할 것입니다. 그를 본부로 데려오십시오. %3 이전에 완료하십시오.</Korean>
@@ -12466,7 +12466,7 @@
                 <French>Cargaison</French>
             </Key>
             <Key ID="STR_A3A_ammunition_transfer_reject_only_commander">
-                <Original>Only Commander can transfer this ammobox content to a truck.</Original>
+                <Original>Only the commander can transfer this ammobox content to a truck.</Original>
                 <Russian>Только командир может переместить содержимое этого ящика с припасами в любое транспортное средство.</Russian>
                 <Chinesesimp>只有指挥官才能将这个补给箱的内容转移到任何载具上。</Chinesesimp>
                 <Korean>지휘관만이 이 탄약상자의 내용물을 아무 트럭에 옮길 수 있습니다.</Korean>
@@ -12890,7 +12890,7 @@
                 <French>Contrôle de l'escouade</French>
             </Key>
             <Key ID="STR_A3A_reinf_control_squad_only_commander">
-                <Original>Only Commander has the ability to control HC units.</Original>
+                <Original>Only the commander has the ability to control HC units.</Original>
                 <Russian>Только командир имеет возможность контроллировать High Command-отряды.</Russian>
                 <Chinesesimp>只有指挥官才有能力控制HC单位。</Chinesesimp>
                 <Korean>지휘관만이 하이 커맨드 유닛을 통제할 수 있습니다.</Korean>
@@ -13356,7 +13356,7 @@
                 <French>Débroussailler la forêt environnante</French>
             </Key>
             <Key ID="STR_A3A_Dialogs_clear_forest_only_comm">
-                <Original>Only Commander can order to clear the forest around the HQ.</Original>
+                <Original>Only the commander can order to clear the forest around the HQ.</Original>
                 <Russian>Только командир может очистить лес вокруг штаба.</Russian>
                 <Chinesesimp>只有指挥官才能下令清理总部周围的森林。</Chinesesimp>
                 <Korean>지휘관만이 본부 주변의 숲을 정리하라고 명령할 수 있습니다.</Korean>
@@ -13436,7 +13436,7 @@
                 <French>Vous ne pouvez pas voyager rapidement lorsque vous contrôlez l'IA.</French>
             </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_no_towing">
-                <Original>You can't Fast Travel with your Tow Rope out or a Vehicle attached.</Original>
+                <Original>You can't fast travel with your tow rope out or with a vehicle in tow.</Original>
                 <Russian>Вы не можете быстро путешествовать пока у вас в руках или у вашей техники достан буксировочный трос.</Russian>
                 <Chinesesimp>你不能在拉出拖车绳或连接载具的情况下快速行驶。</Chinesesimp>
                 <Korean>견인 로프를 빼거나 차량을 연결한 상태에서는 빠른 이동을 할 수 없습니다.</Korean>
@@ -13576,7 +13576,7 @@
                 <French>Déménagement des ressources du QG</French>
             </Key>
             <Key ID="STR_A3A_Dialogs_moveHQObject_error_only_comm">
-                <Original>Only Commander is allowed to move HQ assets.</Original>
+                <Original>Only the commander is allowed to move HQ assets.</Original>
                 <Russian>Только командир может двигать имущество штаба.</Russian>
                 <Chinesesimp>只有指挥官才能移动总部资产。</Chinesesimp>
                 <Korean>지휘관만이 본부 자산을 옮길 수 있습니다.</Korean>
@@ -13881,7 +13881,7 @@
                 <French>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Des actions de soutien non offensives sont disponibles (menu du commandant).&lt;/t&gt;</French>
             </Key>
             <Key ID="STR_A3A_Base_commsMp_idap">
-                <Original>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Resistance has been recognized by &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, a third party humanitarian organization and agreement has been made - &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; will pay &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; for freeing &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; soldiers.&lt;/t&gt;</Original>
+                <Original>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;The resistance has been recognised by the &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, a third party humanitarian organization and an agreement has been made - the &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; will pay us &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; for freeing &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; enemy soldiers.&lt;/t&gt;</Original>
                 <Russian>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;К сопротивлению на контакт вышла организация &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; - некоммерческая гуманитарная организация. При её посредничестве было заключено соглашение - &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; будет платить &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; за освобождение сдавшихся солдат &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt;.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;抵抗运动得到了 &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, 一个第三方人道主义组织的认可，并达成了协议—— &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; 将支付 &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; 以释放 &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; 名投降的士兵.&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;반군은 &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;에 의해 제3자 인도주의 단체로 인정받았고 합의가 이루어졌으며, &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;은 &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt;명의 군인을 석방하는 데 &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt;를 받았습니다.&lt;/t&gt;</Korean>
