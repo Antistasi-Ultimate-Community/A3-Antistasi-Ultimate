@@ -2343,7 +2343,7 @@
                 <French>Les missions de conquête nécessitent des barrages routiers ou des avant-postes à moins de %1m de votre QG.</French>
             </Key>
             <Key ID="STR_chats_mission_request_no_DES_hint_text">
-                <Original>Destroy missions require Airbases or Radio Towers withing %1 of HQ.</Original>
+                <Original>Destroy missions require Airbases or Radio Towers within %1 of HQ.</Original>
                 <Russian>Миссиям по уничтожению требуются авиабазы или радиовышки ближе %1 метров от вашего штаба.</Russian>
                 <Chinesesimp>摧毁任务需要空军基地或无线电塔距离您的总部不超过 %1。</Chinesesimp>
                 <Korean>파괴 임무를 수행하려면 본부로부터 %1m 가까운 곳에 공군 기지 또는 통신탑이 필요합니다.</Korean>
