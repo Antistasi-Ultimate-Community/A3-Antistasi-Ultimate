@@ -9115,7 +9115,7 @@
                 <French>Nous avons trouvé la clé de décryptage du convoi %2 %1!&lt;br/&gt;%3 convois sont marqués sur la carte!</French>
             </Key>
             <Key ID="STR_intel_convoy_route">
-                <Original>We found some information about a possible convoy route from %1 to %2. The route has been marked on map. We can prepare an ambush for it.</Original>
+                <Original>We found some information about a possible convoy route from the %1 to the %2. The route has been marked on map. We can prepare an ambush for it.</Original>
                 <Russian>У нас есть информация о возможном маршуте конвоя из %1 в %2. Мы можем подготовить засаду на него. Маршрут отмечен на карте.</Russian>
                 <Chinesesimp>我们找到了可能会有从 %1 到 %2 的护航车队路线图。 我们可以准备埋伏。 路线在地图上有标注。</Chinesesimp>
                 <Korean>%1에서 %2까지의 가능한 호송 경로에 대한 정보를 찾았습니다. 경로가 지도에 표시되었습니다. 그 곳에 매복을 준비할 수 있습니다.</Korean>
@@ -9235,7 +9235,7 @@
                 <Korean>침략군들이 라이벌에게 귀중한 화물을 운송하는 걸 막기</Korean>
             </Key>
             <Key ID="STR_RIV_ATT_transfer_text">
-                <Original>We found out that the Invaders are going to transfer %1 valuable cargo at %2. Go there and stop the transfer. After the transfer is disrupted, %1 will stop conducting operations in this area. Do this before %3.</Original>
+                <Original>We found out that the Invaders are going to transfer some valuable cargo to the %1 at %2. Go there and stop the transfer. After the transfer is disrupted, %1 will stop conducting operations in this area. Do this before %3.</Original>
                 <Russian>Мы выяснили что Захватчики собираются передать %1 ценный груз в %2 идите туда и остановите передачу. После срыва передачи, %1 перестанут их проводить в этой зоне. Сделайте это до %3.</Russian>
                 <Chinesesimp>我们发现入侵者将在 %2 转移 %1 贵重货物。前往那里并阻止转移。传输中断后，%1 将停止在此区域开展行动。请在 %3 之前完成此操作。</Chinesesimp>
                 <Korean>우린 침략군이 %2에서 %1의 귀중한 화물을 운송할 것이라는 걸 알아냈습니다. 그 곳으로 가서 운송을 중지시키십시오. 운송이 중단되면 %1은(는) 이 지역에서 작업을 멈출 것입니다. %3 이전에 완료하십시오.</Korean>
@@ -9290,7 +9290,7 @@
                 <French>Acquisition de ressources</French>
             </Key>
             <Key ID="STR_CON_Outpost_resources_desc">
-                <Original>A %1 would be a fine addition to our cause. Go there and capture it before %2.</Original>
+                <Original>The %1 would be a fine addition to our cause. Go there and capture it before %2.</Original>
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2.</Russian>
                 <Chinesesimp>%1 对我们的行动来说是一个很好的补充。 去那里，在 %2 之前占领它。</Chinesesimp>
                 <Korean>%1은(는) 우리의 대의에 훌륭한 지원이 될 것입니다. 해당 지역으로 가서 %2 이전까지 점령하십시오.</Korean>
@@ -9486,7 +9486,7 @@
                 <French>Éliminer le transfuge</French>
             </Key>
             <Key ID="STR_A3A_Missions_AS_RIV_Traitor_task_desc">
-                <Original>Some invididual decided to leave our ranks in favour of %1. We should show him that %2 betrayal is an expensive game. Eliminate him before he brings us trouble. He is in %3. Do this before %4.</Original>
+                <Original>A certain invididual has decided to leave our ranks in favour of the %1. We should show him that betrayal is an expensive game. Eliminate him before he causes us trouble. He is in %3. Do this before %4.</Original>
                 <Russian>Один товарищ решил внезапно покинуть наши ряды и вступить в %1. Мы должны показать ему что предательство %2 может быть дорогим удовольствием. Устраните его пока он не создал нам проблем. Он находится в %3. Сделайте это до %4.</Russian>
                 <Chinesesimp>一些人突然决定离开我们的队伍加入%1。 我们必须让他知道背叛 %2 得付出有多大的代价。 在他给我们带来麻烦之前消灭他。 它位于 %3。 在 %4 之前执行此任务。</Chinesesimp>
                 <Korean>어떤 사람이 우리의 대열을 떠나 %1에 찬동하기로 결정했습니다. 우리는 %2의 배신이 비싼 도박이라는 것을 보여주어야 합니다. 그가 우리에게 문제를 일으키기 전까지 제거하십시오. 그는 현재 %3에 있습니다. %4 이전에 완료하십시오.</Korean>
@@ -9651,7 +9651,7 @@
                 <French>Détruire l'artillerie</French>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Artillery_task_desc">
-                <Original>Artillery is firing at our positions from the %1. We must destroy it or kill its crew. Do this before %2, or they will destroy something important.</Original>
+                <Original>Artillery is firing at our positions from the %1. We must destroy it or kill its crew. Do this before %2, or they will destroy something important!</Original>
                 <Russian>Артиллерия стреляет по нашим позициям с %1. Мы должнны уничтожить её или её экипаж. Сделайте это до %2, или враг уничтожит что-нибудь ценное.</Russian>
                 <Chinesesimp>火炮正在从 %1 向我们的阵地开火。 我们必须摧毁火炮或者操控火炮人员。 在 %2 之前执行此任务，否则敌人会破坏一些有价值的东西。</Chinesesimp>
                 <Korean>야포가 %1에서 우리 위치를 향해 발사하고 있습니다. 그것을 파괴하거나 해당 사수들을 죽여야 합니다. %2 이전에 완료하십시오. 그렇지 않으면 그들이 어떤 가치있는 것을 파괴할 것입니다.</Korean>
@@ -9823,7 +9823,7 @@
                 <French>Recontruction de la tour perturber</French>
             </Key>
             <Key ID="STR_A3A_Missions_REP_Antenna_task_desc">
-                <Original>%1 is trying to rebuild the radio tower at the %2. If we want to maintain the enemy comms breakdown, the repair must be stopped. Destroy the repair truck parked nearby or capture the zone. The work will be finished by %3.</Original>
+                <Original>%1 is trying to rebuild the radio tower at the %2. If we want to maintain the enemy comms breakdown, the repair must be stopped. Destroy or steal the repair truck parked nearby or alternatively capture the zone. The work will be finished by %3.</Original>
                 <Russian>%1 пытаются отремонтировать радиовышку в %2. Если мы хотим продолжать нарушать радиосвязь и пропаганду противника в этом районе, мы должны помешать восстановительным работам. Уничтожьте ремонтную машину, которая наверняка будет где-то рядом с вышкой либо захватите локацию. Работы противника будут окончены до %3.</Russian>
                 <Chinesesimp>%1 正在尝试修复 %2 的无线电塔。 如果我们想继续干扰该地区的无线电通信和敌方宣传，我们就必须干预恢复工作。 摧毁在塔附近某处的维修车辆，或占领该位置。 敌人的工作将在 %3 之前完成。</Chinesesimp>
                 <Korean>%1이(가) %2에서 통신탑을 재건축하려 합니다. 우리가 적의 통신을 차단하려면 해당 작업을 중지시켜야 합니다. 근처에 주차된 수리 트럭을 파괴하거나 해당 구역을 점령하십시오. %3에 작업이 완료될 예정입니다.</Korean>
