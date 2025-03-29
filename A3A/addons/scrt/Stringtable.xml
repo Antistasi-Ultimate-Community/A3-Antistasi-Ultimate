@@ -4346,7 +4346,7 @@
                 <Original>You can't paradrop while enemies are near HQ.</Original>
                 <Russian>Вы не можете запустить парашютную высадку, пока рядом со штабом враги.</Russian>
                 <Chinesesimp>当敌人靠近抵抗军总部时，你不能空投。</Chinesesimp>
-                <Korean>적들이 아군 본부 근처에 있을 땐은 공수강하를 할 수 없습니다.</Korean>
+                <Korean>적들이 아군 본부 근처에 있는 동안에는 공수강하를 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas effectuer un parachutage lorsque des ennemis se trouvent à proximité du QG.</French>
             </Key>
             <Key ID="STR_notifiers_paradrop_no_players_ready">
