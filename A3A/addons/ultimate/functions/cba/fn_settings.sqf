@@ -90,6 +90,34 @@
     }
 ] call CBA_fnc_addSetting;
 
+[
+    "A3U_setting_OverallDrawDistance",
+    "SLIDER",
+    "Overall draw distance",
+    "Antistasi Ultimate",
+    [0, 20000, 2000, 1],
+    0,
+    {
+        params ["_value"];
+        _value = round _value;
+        setViewDistance _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_ObjectDrawDistance",
+    "SLIDER",
+    "Object draw distance",
+    "Antistasi Ultimate",
+    [0, 20000, 2000, 1],
+    0,
+    {
+        params ["_value"];
+        _value = round _value;
+        setObjectViewDistance _value;
+    }
+] call CBA_fnc_addSetting;
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_emissionMinimum", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
