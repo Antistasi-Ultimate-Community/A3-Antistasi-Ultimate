@@ -2520,7 +2520,7 @@
                 <French>Personne n'est à portée de l'information, il faut repartir de zéro.</French>
             </Key>
             <Key ID="STR_hints_AS_traitor_intel">
-                <Original>Someone found some intel on the traitor's family. He will not cause us any problems anymore!</Original>
+                <Original>Someone found intel on the traitor's family. He will not cause us any further problems!</Original>
                 <Russian>Кто-то нашёл информацию о семье предателя, он понял намёк и от него больше не будет проблем.</Russian>
                 <Chinesesimp>有人找到了叛徒家族的情报，他不会再惹事了！</Chinesesimp>
                 <Korean>누군가 배신자 가족에 대한 정보를 발견했기 때문에, 그는 더 이상 문제를 일으키지 않을 것입니다.</Korean>
@@ -2541,14 +2541,14 @@
                 <French>Conduisez le camion avec l'argent jusqu'à la base pour terminer cette mission.</French>
             </Key>
             <Key ID="STR_hints_LOG_close_truck">
-                <Original>Don't move the truck far from the bank until the timer is done.</Original>
+                <Original>Don't move the truck away from the bank until the timer is done.</Original>
                 <Russian>Не отвозите грузовик далеко от банка пока процесс не будет завершён.</Russian>
                 <Chinesesimp>在计时器结束之前，不要让卡车远离银行。</Chinesesimp>
                 <Korean>타이머가 끝날 때까지 트럭을 은행에서 멀리 떨어뜨리지 마십시오.</Korean>
                 <French>N'éloignez pas le camion de la banque tant que le délai n'est pas écoulé.</French>
             </Key>
             <Key ID="STR_hints_LOG_objective">
-                <Original>Bring this truck to %1 Bank and park it in the main entrance.</Original>
+                <Original>Bring this truck to the %1 Bank and park it in the main entrance.</Original>
                 <Russian>Привезите этот грузовик до банка %1 и припаркуйте его у главного входа.</Russian>
                 <Chinesesimp>将这辆卡车开到 %1 银行，并将其停在正门。</Chinesesimp>
                 <Korean>이 트럭을 %1 은행으로 가져가서 정문에 주차하십시오.</Korean>
@@ -2618,7 +2618,7 @@
                 <French>Le commandant a démissionné. Il n'y a pas de commandant éligible.</French>
             </Key>
             <Key ID="STR_hints_build_minefield_engie_start">
-                <Original>Engineer Team has started deploying mines.</Original>
+                <Original>The engineer team has started deploying mines.</Original>
                 <Russian>Отряд инженеров начал класть мины.</Russian>
                 <Chinesesimp>工程部队已经开始部署地雷。</Chinesesimp>
                 <Korean>공병 팀이 지뢰를 배치하기 시작했습니다.</Korean>
@@ -2632,7 +2632,7 @@
                 <French>Transfert du haut commandement</French>
             </Key>
             <Key ID="STR_hints_hc_transfer_success">
-                <Original>Group %1 has been transfered to be under your command.&lt;br/&gt;&lt;br/&gt;Groups are managed from the High Command bar (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;</Original>
+                <Original>Group %1 has been transfered to your command.&lt;br/&gt;&lt;br/&gt;Groups are managed from the High Command bar (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;</Original>
                 <Russian>Группа %1 была переведена под ваше коммандование.&lt;br/&gt;&lt;br/&gt;Группами можно управлять через High Command-меню (По умолчанию:CTRL+Пробел)&lt;br/&gt;&lt;br/&gt;</Russian>
                 <Chinesesimp> %1 组已转移到您的指挥下。&lt;br/&gt;&lt;br/&gt;从高级命令栏管理（默认：CTRL+SPACE）&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
                 <Korean>%1 그룹이 당신 지휘 하에 들어갔습니다.&lt;br/&gt;&lt;br/&gt;그룹은 하이 커맨드 표시줄(기본값: 컨트롤 + 스페이스)에서 관리됩니다.&lt;br/&gt;&lt;br/&gt;</Korean>
@@ -2702,7 +2702,7 @@
                 <French>Ne sélectionnez pas de zones avec des ennemis à proximité !\n\nL'expérience de jeu change beaucoup en fonction de la position de départ.</French>
             </Key>
             <Key ID="STR_hints_new_game_petros_dead_header">
-                <Original>%1 is Dead</Original>
+                <Original>%1 is dead.</Original>
                 <Russian>%1 умер</Russian>
                 <Chinesesimp>%1 已死</Chinesesimp>
                 <Korean>%1가 죽었습니다</Korean>
@@ -3128,7 +3128,7 @@
                 <French>Largage de la cargaison</French>
             </Key>
             <Key ID="STR_chats_airdrop_pilot_drop_cargo_end">
-                <Original>Cargo has been dropped, I hope it will help the resistance. Good luck lads!</Original>
+                <Original>Cargo has been dropped, I hope it will help the resistance. Good luck comrades!</Original>
                 <Russian>Груз сброшен, надеюсь, это поможет сопротивлению. Удачи, парни!</Russian>
                 <Chinesesimp>货物已经卸下，希望能帮助抵抗军，祝你们好运，小伙子们！</Chinesesimp>
                 <Korean>화물이 떨어졌다, 그게 당신들에게 도움이 됐으면 좋겠군. 행운을 빈다, 친구들!</Korean>
@@ -11488,7 +11488,7 @@
                 <Turkish>Kendi gibi bir isyancı aradığını duydum. Onu yerel karakolların etrafında dolanırken görmüş olabilirim...</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_success_dealer1">
-                <Original>I have some information on a "legitimate" dealer. I hear he's good friends with that sketchy Irish man.</Original>
+                <Original>I have some information on a "legitimate" dealer. I hear he's good friends with that weird Irish man.</Original>
                 <Russian>У меня есть информация о "законном" торговце. Говорят, он хорошо дружит с тем странным ирландцем.</Russian>
                 <German>Ich habe Informationen über einen „legitimen“ Händler. Ich habe gehört, dass er ein guter Freund von diesem seltsamen Iren ist.</German>
                 <Italian>Ho alcune informazioni su un commerciante "legittimo". Ho sentito dire che è un buon amico di quel bizzarro irlandese.</Italian>
