@@ -4,11 +4,9 @@ if(isNil "_vehicle" || {isNull _vehicle}) exitWith {};
 
 if (isNil "unflipWarningGlobal") then {unflipWarningGlobal = 0};
 
-if (!(_vehicle isKindOf "LandVehicle")) exitWith {
-    if (unflipWarningGlobal == 0) exitWith {
-        [localize "STR_unflip_fail_header", localize "STR_unflip_fail_wrong_type"] call SCRT_fnc_misc_deniedHint;
-        unflipWarningGlobal = 1;
-    };
+if (!(_vehicle isKindOf "LandVehicle") && unflipWarningGlobal == 0) exitWith {
+    [localize "STR_unflip_fail_header", localize "STR_unflip_fail_wrong_type"] call SCRT_fnc_misc_deniedHint;
+    unflipWarningGlobal = 1;
 };
 
 private _isAlive = alive _vehicle;
