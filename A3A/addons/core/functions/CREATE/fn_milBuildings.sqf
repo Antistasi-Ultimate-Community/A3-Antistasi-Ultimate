@@ -93,6 +93,18 @@ for "_i" from 0 to (count _buildings) - 1 do
             private _pos = _building modelToWorld [0,0,0];
             [_type, _pos, _dir] call _fnc_spawnStatic;
         };
+        if (_typeB in ["A3U_StaticHolderMediumAT", "A3U_StaticHolderLargeAT"]) then {
+            private _type = selectRandom (_faction get "staticAT");
+            private _dir = (getDir _building);
+            private _pos = _building modelToWorld [0,0,0];
+            [_type, _pos, _dir] call _fnc_spawnStatic;
+        };
+        if (_typeB in ["A3U_StaticHolderMediumAA", "A3U_StaticHolderLargeAA"]) then {
+            private _type = selectRandom (_faction get "staticAA");
+            private _dir = (getDir _building);
+            private _pos = _building modelToWorld [0,0,0];
+            [_type, _pos, _dir] call _fnc_spawnStatic;
+        };
         if ((_typeB == "Land_Cargo_Patrol_V1_F") or (_typeB == "Land_Cargo_Patrol_V2_F") or (_typeB == "Land_Cargo_Patrol_V3_F") or (_typeB == "Land_Cargo_Patrol_V4_F")) exitWith
         {
             private _type = selectRandom (_faction get "staticMGs");

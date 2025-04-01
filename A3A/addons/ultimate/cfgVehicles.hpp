@@ -21,3 +21,27 @@ class A3U_StaticHolderSmall: A3U_StaticHolderBase
     displayName = "Static Holder (Small)";
     scope = 2;
 };
+
+class A3U_StaticHolderMediumAT: A3U_StaticHolderSmall
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_medium);
+    displayName = "Static Holder (Medium, AT)";
+};
+
+class A3U_StaticHolderMediumAA: A3U_StaticHolderSmall
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_medium);
+    displayName = "Static Holder (Medium, AA)";
+};
+
+class A3U_StaticHolderLargeAT: A3U_StaticHolderMediumAT
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_large);
+    displayName = "Static Holder (Large, AT)";
+};
+
+class A3U_StaticHolderLargeAA: A3U_StaticHolderMediumAA
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_large);
+    displayName = "Static Holder (Large, AA)";
+};
