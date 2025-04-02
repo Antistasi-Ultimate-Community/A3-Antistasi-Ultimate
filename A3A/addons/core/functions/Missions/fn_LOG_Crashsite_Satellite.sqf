@@ -199,7 +199,7 @@ private _dir = getDir _reconVehicleDummy;
 private _crashsiteactual = getPosATL _reconVehicleDummy;
 _reconVehicle allowDamage false;
 _reconVehicle setPos [_crashsiteactual select 0, _crashsiteactual select 1, 0.2];
-private _bomb = "ammo_Missile_Cruise_01" createVehicle [(_crashsiteactual select 0),(_crashsiteactual select 1),2];
+private _bomb = "ammo_Missile_Cruise_01" createVehicle [(_crashsiteactual select 0),(_crashsiteactual select 1),0];
 deleteVehicle _reconVehicleDummy;
 
 sleep 1;
@@ -228,7 +228,7 @@ private _debri = "SpaceshipCapsule_01_debris_F" createVehicle [(_crashsiteactual
 _debri setPos [_crashsiteactual select 0,_crashsiteactual select 1, 0.6];
 _debri setDir (abs (_dir+124)%360);
 
-private _offset = [1.5, 5, -0.8];
+private _offset = [1.5, 5, -1];
 private _worldPos = _reconVehicle modelToWorld _offset;
 _debri setPos _worldPos;
 if (typeOf _reconVehicle == "SpaceshipCapsule_01_wreck_F") then {
@@ -242,7 +242,7 @@ for "_i" from 0 to (random [3,4,5]) do {
     private _firePosition = 
     [
         _crashsiteactual, 
-        2,
+        3,
         25,
         2
     ] call BIS_fnc_findSafePos;
