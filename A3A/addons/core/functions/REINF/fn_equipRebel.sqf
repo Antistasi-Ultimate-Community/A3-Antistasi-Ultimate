@@ -59,6 +59,9 @@ if (!isNil "_customLoadout") exitWith {
 private _fnc_addSecondaryAndMags = {
     params ["_unit", "_weapon", "_totalMagWeight"];
 
+    private _weightAvail = maxLoad _unit - load _unit;
+    _totalMagWeight = _totalMagWeight min _weightAvail;
+
     _unit addWeapon _weapon;
     private _magazine = compatibleMagazines _weapon select 0;
     _unit addSecondaryWeaponItem _magazine;
@@ -78,6 +81,9 @@ private _fnc_addSecondaryAndMags = {
 
 private _fnc_addCharges = {
     params ["_unit", "_totalWeight"];
+
+    private _weightAvail = maxLoad backpack _unit - loadBackpack _unit;
+    _totalWeight = _totalWeight min _weightAvail;
 
     private _charges = A3A_rebelGear get "ExplosiveCharges";
     if (_charges isEqualTo []) exitWith {};
