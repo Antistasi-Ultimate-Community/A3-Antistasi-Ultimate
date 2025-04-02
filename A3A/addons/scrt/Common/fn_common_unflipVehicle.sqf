@@ -59,4 +59,4 @@ if (([_vx,_vy] findIf {_x > 80 || _x < -80}) != -1) then {
 };
 
 playSound "A3AP_UiSuccess";
-unflipWarningGlobal = 0;
+_vehicle setVariable ["A3U_hasFlipWarning", false, true];
