@@ -22,10 +22,11 @@ private _airport = [_side, _targPos] call A3A_fnc_availableBasesAir;
 if (isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _supportName); -1; };
 
 private _faction = Faction(_side);
+private _vehType = "";
 if (A3A_UAVSpawnChance < 0.2) then {
-    private _vehType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS"));
+    _vehType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS"));
 } else {
-    private _vehType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS") + (_faction get "uavsAttack"));
+    _vehType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS") + (_faction get "uavsAttack"));
 };
 
 private _aggro = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
