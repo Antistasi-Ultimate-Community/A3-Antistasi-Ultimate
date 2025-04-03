@@ -319,7 +319,7 @@
 
     class CAF2035_Base : CUP_Base
     { 
-        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "PUP_CAF", "Weapons_F_JCA_AWM", "vests_f_JCA_MCRP", "A3_Aegis_Air_F_Aegis"};//Unfortunately it requires a bit of random single mods from just the base CAF 2035
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "PUP_CAF", "Weapons_F_JCA_AWM", "vests_f_JCA_MCRP", "A3_Aegis_Air_F_Aegis", "Weapons_1_F_lxWS"};//Unfortunately it requires a bit of random single mods from just the base CAF 2035
         priority = 61;
     };
     class CAF2035 : CAF2035_Base
