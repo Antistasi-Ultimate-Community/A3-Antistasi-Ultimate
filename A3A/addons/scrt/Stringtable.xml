@@ -14147,8 +14147,8 @@
                 <French>Le véhicule doit être à moins de 50 mètres du quartier général.</French>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0.1">
-                <Original>Air vehicle must be within 50 meters of the HQ marker or airfield.</Original>
-                <Russian>Воздушная техника должна быть ближе 50 метров от маркера штаба или аэродрома чтобы её можно было продать.</Russian>
+                <Original>Vehicle must be within 50 meters of the HQ marker or airfield.</Original>
+                <Russian>Техника должна быть ближе 50 метров от маркера штаба или аэродрома чтобы её можно было продать.</Russian>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err1">
                 <Original>Vehicle must be empty.</Original>
