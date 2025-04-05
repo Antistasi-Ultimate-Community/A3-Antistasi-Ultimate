@@ -84,7 +84,7 @@
                 <Polish>Lotnictwo</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
-                <Original>You can only access aircraft if rebel helipad is nearby or from friendly airfield</Original>
+                <Original>You can only access aircraft if a rebel helipad or friendly airfield is nearby</Original>
                 <French>Vous ne pouvez accéder aux aéronefs que si un héliport rebelle est à proximité ou depuis une base aérienne alliée.</French>
                 <Russian>Вы можете получить доступ к авиации только если рядом есть повстанческая вертолётная площадка или через дружественный аэродром.</Russian>
                 <Korean>반군 헬리패드가 근처에 있거나 아군 공군 기지에서만 항공기를 사용할 수 있습니다.</Korean>
