@@ -46,7 +46,7 @@ _mainMarker = getMarkerPos _marker;
     case ("hangar"): {_hangarMarker pushBack _fullName;};
     case ("plane"): {_planeMarker pushBack _fullName;};
     case ("mortar"): {_mortarMarker pushBack _fullName;};
-	case ("sam"): {_samMarker pushBack _fullName;};
+	  case ("sam"): {_samMarker pushBack _fullName;};
   };
   _fullName setMarkerAlpha 0;
 } forEach _placementMarker;
@@ -62,7 +62,7 @@ private ["_markerSize", "_distance", "_buildings", "_hangars", "_garages", "_hel
 _markerSize = markerSize _marker;
 _distance = sqrt ((_markerSize select 0) * (_markerSize select 0) + (_markerSize select 1) * (_markerSize select 1));
 
-_buildings = nearestObjects [getMarkerPos _marker, ["Land_Hangar_2", "Helipad_Base_F", "land_bunker_garage", "Land_vn_b_helipad_01", "Land_BludpadCircle", "Land_Hangar_F", "Land_TentHangar_V1_F", "Land_Airport_01_hangar_F", "Land_Mil_hangar_EP1", "Land_Ss_hangar", "Land_Ss_hangard", "Land_vn_helipad_base", "Land_vn_airport_01_hangar_f", "Land_vn_usaf_hangar_01", "Land_vn_usaf_hangar_02", "Land_vn_usaf_hangar_03"], _distance, true];
+_buildings = nearestObjects [getMarkerPos _marker, ["OverObject_HelipadCircle_F", "OverObject_HelipadSquare_F", "Land_Hangar_2", "Helipad_Base_F", "land_bunker_garage", "Land_vn_b_helipad_01", "Land_BludpadCircle", "Land_Hangar_F", "Land_TentHangar_V1_F", "Land_Airport_01_hangar_F", "Land_Mil_hangar_EP1", "Land_Ss_hangar", "Land_Ss_hangard", "Land_vn_helipad_base", "Land_vn_airport_01_hangar_f", "Land_vn_usaf_hangar_01", "Land_vn_usaf_hangar_02", "Land_vn_usaf_hangar_03"], _distance, true];
 
 _hangars = [];
 _helipads = [];
@@ -72,6 +72,8 @@ _garages = [];
   if((getPos _x) inArea _marker) then {
     private _type = typeOf _x;
     switch (true) do {
+      case (typeOf _x == "OverObject_HelipadCircle_F");
+      case (typeOf _x == "OverObject_HelipadSquare_F");
       case (_x isKindOf "Land_BludpadCircle");
       case (_x isKindOf "Land_vn_helipad_base");
       case (_x isKindOf "Land_vn_b_helipad_01");
@@ -183,7 +185,9 @@ _vehicleSpawns = [];
 _heliSpawns = [];
 {
     _pos = getPos _x;
-    _pos set [2, 0.4];
+    if !(typeOf _x == "OverObject_HelipadCircle_F" || typeOf _x == "OverObject_HelipadSquare_F") then{
+      _pos set [2, 0.4];
+    };
     if (!isMultiplayer) then
     {
       {
