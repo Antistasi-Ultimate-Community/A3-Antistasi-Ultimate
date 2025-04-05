@@ -87,7 +87,7 @@ private _heightDiff = 0;
 /* _helicopter action ["LandGear", _helicopter]; */
 
 private _driver = driver _helicopter;
-while {_interval < 0.9999} do
+while {_interval < 0.9999} do ////
 {
     //Update data
     _vectorDir = vectorDir _helicopter;
