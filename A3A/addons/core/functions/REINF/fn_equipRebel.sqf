@@ -82,7 +82,7 @@ private _fnc_addSecondaryAndMags = {
 private _fnc_addCharges = {
     params ["_unit", "_totalWeight"];
 
-    private _weightAvail = maxLoad backpack _unit - loadBackpack _unit;
+    private _weightAvail = getContainerMaxLoad backpack _unit - loadBackpack _unit;
     _totalWeight = _totalWeight min _weightAvail;
 
     private _charges = A3A_rebelGear get "ExplosiveCharges";

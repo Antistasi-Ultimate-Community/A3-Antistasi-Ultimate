@@ -21,7 +21,7 @@ params ["_unit", "_weaponType", ["_totalMagWeight", 50]];
 
 call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from server if we're out of date
 
-private _weightAvail = (maxLoad vest _unit + maxLoad uniform _unit) - (loadVest _unit + loadUniform _unit);
+private _weightAvail = (getContainerMaxLoad vest _unit + getContainerMaxLoad uniform _unit ) - (loadVest _unit + loadUniform _unit);
 _totalMagWeight = _totalMagWeight min _weightAvail;
 
 private _pool = A3A_rebelGear get _weaponType;
