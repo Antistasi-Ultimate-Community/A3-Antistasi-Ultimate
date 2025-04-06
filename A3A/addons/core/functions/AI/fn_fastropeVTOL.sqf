@@ -31,7 +31,7 @@ _wp setWaypointSpeed "FULL";
 _wp setWaypointCompletionRadius 3;
 
 waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 550) or !(canMove _veh)};
-private _midHeight = [100, 150] select (A3A_climate isEqualTo "tropical");
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 
 _veh flyInHeight _midHeight;
 

@@ -35,7 +35,7 @@ _vehWP0 setWaypointSpeed "FULL";
 _vehWP0 setWaypointCompletionRadius 150;
 _vehWP0 setWaypointBehaviour "CARELESS";
 
-private _midHeight = [100, 150] select (A3A_climate isEqualTo "tropical");
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
