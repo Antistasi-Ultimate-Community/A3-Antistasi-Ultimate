@@ -177,6 +177,8 @@ private _replaceBadAntenna = {
 		_antennaPos set [2, 0];
 		private _antennaClass = if (worldName isEqualTo "chernarus_summer") then { "Land_Telek1" } else { "Land_TTowerBig_2_F" };
 		_antenna = createVehicle [_antennaClass, _antennaPos, [], 0, "NONE"];
+		_antenna setVectorUp [0, 0, 1];
+        _antenna setDir (getDir _antenna);
 	};
 	_antenna;
 };

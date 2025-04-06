@@ -92,7 +92,7 @@ for "_i" from 0 to (count _buildings) - 1 do
             private _type = selectRandom (_faction get "staticMGs");
             private _dir = (getDir _building) - 180;
             private _zpos = AGLToASL (_building buildingPos 1);
-            private _pos = _zpos getPos [1.5, _dir];			// zeroes Z value because BIS
+            private _pos = _zpos getPos [1.8, _dir];			// zeroes Z value because BIS /// I would like to move mg to the left a bit, but coudn't find a way to do it
             _pos = ASLToATL ([_pos select 0, _pos select 1, _zpos select 2]);
             [_type, _pos, _dir] call _fnc_spawnStatic;
         };

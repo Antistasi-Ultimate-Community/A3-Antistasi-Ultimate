@@ -93,13 +93,18 @@ while {(spawner getVariable _spawnKey != 2) and (_countParked < _numParked)} do 
                 _dirveh = _p1 getDir _p2;
             };
 
-            private _width = 3 max (getRoadInfo _road # 1 / 2 - 1);
+            private _width = 2.8 max (getRoadInfo _road # 1 / 2 - 1);
             _pos = [_p1, _width, _dirveh + 90] call BIS_Fnc_relPos;
             _typeVehX = selectRandomWeighted civVehiclesWeighted;
 
             private _veh = _typeVehX createVehicle _pos;
             _veh setDir _dirveh;
             _veh setFuel random [0.10, 0.30, 0.50];
+            _veh allowDamage false;
+			_veh enableSimulation false;
+			sleep 0.5;
+			_veh enableSimulation true;
+			_veh allowDamage true;
 
             // Magazine, Weapon, Item, Backpack, True = Clear
             [_veh, true, true, true, true] call A3A_fnc_clearVehicleCargo;
@@ -110,7 +115,7 @@ while {(spawner getVariable _spawnKey != 2) and (_countParked < _numParked)} do 
             };
         };
 
-    sleep 0.5;
+    sleep 0.3;
     _countParked = _countParked + 1;
 };
 
