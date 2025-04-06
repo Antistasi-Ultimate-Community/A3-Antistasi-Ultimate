@@ -93,7 +93,7 @@ while {(spawner getVariable _spawnKey != 2) and (_countParked < _numParked)} do 
                 _dirveh = _p1 getDir _p2;
             };
 
-            private _width = 2.8 max (getRoadInfo _road # 1 / 2 - 1);
+            private _width = 2.65 max (getRoadInfo _road # 1 / 2 - 1);
             _pos = [_p1, _width, _dirveh + 90] call BIS_Fnc_relPos;
             _typeVehX = selectRandomWeighted civVehiclesWeighted;
 
