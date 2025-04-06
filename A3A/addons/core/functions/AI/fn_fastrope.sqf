@@ -104,9 +104,9 @@ else
 	_wp2 setWaypointType "MOVE";
 };
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
+private _weapons = count weapons _veh;
+private _driverturret = _veh weaponsTurret [0];
+private _gunnerturret = _veh weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
 if (_veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
