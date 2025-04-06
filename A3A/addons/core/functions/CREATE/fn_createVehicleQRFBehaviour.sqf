@@ -62,8 +62,8 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
                 _landPosVTOL set [2, 0];
                 _landPosBlacklist pushBack _landPosVTOL;
                 private _roll = random 100;
-					if(_roll >= 50) then {
-						[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPosVTOL] spawn A3A_fnc_combatLanding;
+					if(_roll >= 1) then {
+						[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL;
 					} else {
                         if(_roll <= 30) then{
                             [_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop;
@@ -86,7 +86,7 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
         {
             if (_vtol != "") then {
                 private _roll = random 100;
-				if(_roll >= 40) then {
+				if(_roll >= 1) then {
 					[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL;
 				} else {
                     if(_roll <= 30) then {

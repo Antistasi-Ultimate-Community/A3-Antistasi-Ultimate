@@ -35,59 +35,53 @@ private _midHeight = [100, 150] select (A3A_climate isEqualTo "tropical");
 
 _veh flyInHeight _midHeight;
 
-// Landing path setup for vtol
-private _endPos = _landpos;
+// Landing path setup
+private _endPos = getPosASL _landPad;
 private _startPos = getPosASL _veh;
 private _midPos = _endPos vectorAdd [0,0,_midHeight];
 private _initialVelocity = (velocity _veh);
 _initialVelocity set [2, 0];
 private _velocityVector = +_initialVelocity;
-_initialVelocity = vectorMagnitude _initialVelocity;
-private _initialSpeed = speed _veh/3.6;
-//We got the initial velocity of the heli
+private _initialSpeed = vectorMagnitude _initialVelocity;
 private _distance = _startPos distance _midPos;
-private _landingTime = _distance/_initialVelocity * 1.35;
-private _maxAngle = ((_initialVelocity * _initialVelocity/3600) * 35) min 35;
-//Starting land approach with bezier curve
+private _landingTime = _distance / _initialSpeed * 1.35;
+private _maxAngle = ((_initialSpeed * _initialSpeed / 3600) * 35) min 35;
 private _startToMidVector = _midPos vectorDiff _startPos;
 private _midToEndVector = _endPos vectorDiff _midPos;
-private _vectorDir = vectorDir _veh;
-private _vectorUp = vectorUp _veh;
-private _interval = 0;
-private _time = 0;
-private _angleStep = 0.25;
-private _angleTarget = 0;
-private _angleIs = 0;
-private _angleDiff = 0;
-private _heightDiff = 0;
+
 private _driver = driver _veh;
+private _interval = 0;
+private _lastTime = time;
 
+while {_interval < 0.7777} do {
+    // Update time
+    private _currentTime = time;
+    private _deltaTime = _currentTime - _lastTime;
+    _lastTime = _currentTime;
 
-while {_interval < 0.7777} do
-{
-    //Update data
-    _vectorDir = vectorDir _veh;
-    _vectorUp = vectorUp _veh;
+    // Calculate interval step
+    _interval = _interval + ((_deltaTime / _landingTime) * (1 - (_interval / 2))) min 0.7777;
 
-    //Calculating the current angle and what the helicopter should turn too
-    _angleTarget = sin (_interval * 180) * _maxAngle;
-    _angleIs = (asin (_vectorDir select 2));
-    _angleDiff = _angleTarget - _angleIs;
-    if(_angleDiff > _angleStep) then {_angleDiff = _angleStep;};
-    if(_angleDiff < -_angleStep) then {_angleDiff = -_angleStep;};
-
-    //Calculating the height and back value needed
-    _backFactor = -tan (_angleDiff);
-    _vectorUp = _vectorUp vectorAdd (_vectorDir vectorMultiply _backFactor);
-
-    _heightDiff = (sin (_angleIs + _angleDiff)) - (_vectorDir select 2);
-    _vectorDir = _vectorDir vectorAdd [0, 0, _heightDiff];
-
+    // Calculate current path points
     private _lineStart = _startPos vectorAdd (_startToMidVector vectorMultiply _interval);
-   	private _lineEnd = _midPos vectorAdd (_midToEndVector vectorMultiply _interval);
-    
-    _veh setVelocityTransformation
-    [
+    private _lineEnd = _midPos vectorAdd (_midToEndVector vectorMultiply _interval);
+
+    // Update velocity vector
+    _velocityVector = (_lineEnd vectorDiff _lineStart) vectorMultiply (_initialSpeed * (1 - _interval) / vectorMagnitude (_lineEnd vectorDiff _lineStart));
+
+    // Angle calculation
+    private _angleTarget = sin (pi * _interval) * _maxAngle;
+    private _vectorDir = vectorDir _veh;
+    private _angleIs = asin (_vectorDir select 2);
+    private _angleDiff = (_angleTarget - _angleIs) min 0.25 max -0.25;
+
+    // Adjust vectors for pitch control
+    private _backFactor = -tan _angleDiff;
+    private _vectorUp = (vectorUp _veh) vectorAdd (_vectorDir vectorMultiply _backFactor);
+    _vectorDir = _vectorDir vectorAdd [0, 0, sin(_angleIs + _angleDiff) - (_vectorDir select 2)];
+
+    // Apply velocity transformation
+    _veh setVelocityTransformation [
         _lineStart,
         _lineEnd,
         _velocityVector,
@@ -99,13 +93,11 @@ while {_interval < 0.7777} do
         _interval
     ];
 
-    _time = time;
-    sleep 0.001;
-    _interval = _interval + (((time - _time)/_landingTime) * (1 - (_interval / 2)));
-    _velocityVector = _lineEnd vectorDiff _lineStart;
-    _velocityVector = (vectorNormalized _velocityVector) vectorMultiply (_initialSpeed * (1 - _interval));
+    // Exit condition checks
+    if (!canMove _veh || !alive _driver) exitWith {};
 
-    if(!canMove _veh || !alive _driver) exitWith {};
+    // Throttle loop execution
+    sleep 0.01;
 };
 _veh flyInHeight 15;
 _veh setVelocity [0,0,0];
