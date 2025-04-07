@@ -805,7 +805,7 @@ switch(true) do
         [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
         [_taskId2, "LOG", "FAILED"] call A3A_fnc_taskSetState;
 
-        [-900, _sideX] remoteExec ["A3A_fnc_timingCA",2]; // isn't this function running on the server? Might aswell just turn the remoteExecs to call/spawn
+        [-900, _sideX] remoteExec ["A3A_fnc_timingCA",2];
         [-10,theBoss] call A3A_fnc_addScorePlayer;
         if (dateToNumber date > _dateLimitNum) then {
             private _hrT = server getVariable "hr";
