@@ -54,5 +54,5 @@ switch (_eventType) do {
 	};
 	case (SKIRMISH_FRONTLINE): {
 		[[], "SCRT_fnc_encounter_frontlineSkirmish"] call A3A_fnc_scheduler;
-	};
+	}; //bam
 };
