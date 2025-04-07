@@ -634,31 +634,37 @@
                 <Original>All Civilian</Original>
                 <Russian>Вся гражданская техника</Russian>
                 <Chinesesimp>所有平民</Chinesesimp>
+                <Korean>모든 민간용</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civcars">
                 <Original>Civilian Cars</Original>
                 <Russian>Гражданские машины</Russian>
                 <Chinesesimp>平民车辆</Chinesesimp>
+                <Korean>민간 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civtrucks">
                 <Original>Civilian Trucks</Original>
                 <Russian>Гражданские грузовики</Russian>
                 <Chinesesimp>平民卡车</Chinesesimp>
+                <Korean>민간 트럭</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civboats">
                 <Original>Civilian Boats</Original>
                 <Russian>Гражданские лодки</Russian>
                 <Chinesesimp>平民船只</Chinesesimp>
+                <Korean>민간 보트</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civheli">
                 <Original>Civilian Heli</Original>
                 <Russian>Гражданские вертолёты</Russian>
                 <Chinesesimp>平民直升机</Chinesesimp>
+                <Korean>민간 헬기</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civplanes">
                 <Original>Civilian Planes</Original>
                 <Russian>Гражданские самолёты</Russian>
                 <Chinesesimp>平民飞机</Chinesesimp>
+                <Korean>민간 항공기</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reb">
                 <Original>Rebel</Original>
@@ -672,126 +678,151 @@
                 <Original>All Rebel</Original>
                 <Russian>Вся техника повстанцев</Russian>
                 <Chinesesimp>所有反抗军</Chinesesimp>
+                <Korean>모든 반군용</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebbasic">
                 <Original>Rebel Basics</Original>
                 <Russian>Базовая техника повстанцев</Russian>
                 <Chinesesimp>反抗军基础</Chinesesimp>
+                <Korean>반군용 기본 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebtrucks">
                 <Original>Rebel Trucks</Original>
                 <Russian>Грузовики повстанцев</Russian>
                 <Chinesesimp>反抗军卡车</Chinesesimp>
+                <Korean>반군용 트럭</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightunarmed">
                 <Original>Rebel Unarmed</Original>
                 <Russian>Неворуженные машины повстанцев</Russian>
                 <Chinesesimp>反抗军无武装</Chinesesimp>
+                <Korean>반군용 비무장 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebboats">
                 <Original>Rebel Boats</Original>
                 <Russian>Лодки повстанцев</Russian>
                 <Chinesesimp>反抗军船只</Chinesesimp>
+                <Korean>반군용 보트</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebmedical">
                 <Original>Rebel Medical</Original>
                 <Russian>Медицинский транспорт повстанцев</Russian>
                 <Chinesesimp>反抗军医疗</Chinesesimp>
+                <Korean>반군용 의료 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightarmed">
                 <Original>Rebel Armed</Original>
                 <Russian>Вооруженные машины повстанцев</Russian>
                 <Chinesesimp>反抗军有武装</Chinesesimp>
+                <Korean>반군용 무장 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebat">
                 <Original>Rebel AT</Original>
                 <Russian>ПТ техника повстанцев</Russian>
                 <Chinesesimp>反抗军反坦克</Chinesesimp>
+                <Korean>반군용 대전차차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebaa">
                 <Original>Rebel AA</Original>
                 <Russian>ПВО техника повстанцев</Russian>
                 <Chinesesimp>反抗军对空</Chinesesimp>
+                <Korean>반군용 대공차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebplane">
                 <Original>Rebel Plane</Original>
                 <Russian>Самолёты повстанцев</Russian>
                 <Chinesesimp>反抗军飞机</Chinesesimp>
+                <Korean>반군용 항공기</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
                 <Original>All Statics</Original>
                 <Russian>Все турели</Russian>
                 <Chinesesimp>所有静态</Chinesesimp>
+                <Korean>모든 고정화기</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticMG">
                 <Original>MG Statics</Original>
                 <Russian>Пулеметные турели</Russian>
                 <Chinesesimp>静态机枪</Chinesesimp>
+                <Korean>고정 기관총</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAT">
                 <Original>AT Statics</Original>
                 <Russian>ПТ турели</Russian>
                 <Chinesesimp>静态反坦克</Chinesesimp>
+                <Korean>고정 대전차포</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAA">
                 <Original>AA Statics</Original>
                 <Russian>ПВО турели</Russian>
                 <Chinesesimp>静态对空</Chinesesimp>
+                <Korean>고정 대공포</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticmortars">
                 <Original>Mortars</Original>
                 <Russian>Миномёты</Russian>
                 <Chinesesimp>迫击炮</Chinesesimp>
+                <Korean>박격포</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_med_tooltip">
                 <Original>This station will help you heal up</Original>
                 <Russian>Эта станция поможет вам вылечиться</Russian>
                 <Chinesesimp>这个将帮助你医疗</Chinesesimp>
+                <Korean>이 스테이션은 당신의 치료를 도웁니다.</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_ammo_tooltip">
                 <Original>Ammo station</Original>
                 <Russian>Склад боеприпасов</Russian>
                 <Chinesesimp>弹药站</Chinesesimp>
+                <Korean>탄약고</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_repair_tooltip">
                 <Original>This station can repair vehicles</Original>
                 <Russian>Эта станция может чинить технику</Russian>
                 <Chinesesimp>这个可以维修载具</Chinesesimp>
+                <Korean>이 스테이션은 차량을 수리할 수 있습니다.</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_select">
                 <Original>Select</Original>
                 <Russian>Выбрать</Russian>
                 <Chinesesimp>选择</Chinesesimp>
+                <Korean>선택</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_all">
                 <Original>All vehicles</Original>
                 <Russian>Вся техника</Russian>
                 <Chinesesimp>所有车辆</Chinesesimp>
+                <Korean>모든 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_arty">
                 <Original>Artillery</Original>
                 <Russian>Артиллерия</Russian>
                 <Chinesesimp>炮兵</Chinesesimp>
+                <Korean>야포</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_apc">
                 <Original>APC</Original>
                 <Russian>Бронетранспортёры</Russian>
                 <Chinesesimp>APC</Chinesesimp>
+                <Korean>보병수송장갑차</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_AA">
                 <Original>AA</Original>
                 <Russian>ПВО</Russian>
                 <Chinesesimp>AA</Chinesesimp>
+                <Korean>대공포</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_uav">
                 <Original>UAV/UGV</Original>
                 <Russian>БПЛА/БПА</Russian>
                 <Chinesesimp>无人机/无人车</Chinesesimp>
+                <Korean>무인기/무인차</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_tank">
                 <Original>Tanks</Original>
                 <Russian>Танки</Russian>
                 <Chinesesimp>坦克</Chinesesimp>
+                <Korean>전차</Korean>
             </Key>
             <!-- <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
                 <Original>Statics</Original>
@@ -801,26 +832,31 @@
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
                 <Chinesesimp>直升机</Chinesesimp>
+                <Korean>헬리콥터</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_plane">
                 <Original>Planes</Original>
                 <Russian>Самолёты</Russian>
                 <Chinesesimp>飞机</Chinesesimp>
+                <Korean>항공기</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_armedcar">
                 <Original>Armed cars</Original>
                 <Russian>Вооруженные автомобили</Russian>
                 <Chinesesimp>武装车辆</Chinesesimp>
+                <Korean>무장 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_unarmedcar">
                 <Original>Unarmed cars</Original>
                 <Russian>Безоружные автомобили</Russian>
                 <Chinesesimp>无武装车辆</Chinesesimp>
+                <Korean>비무장 차량</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_boat">
                 <Original>Boats</Original>
                 <Russian>Лодки</Russian>
                 <Chinesesimp>船只</Chinesesimp>
+                <Korean>보트</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_static">
                 <Original>Statics</Original>
@@ -3260,15 +3296,26 @@
                 <Chinesesimp>复制之前的参数</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_use_new_namespace">
-                <Original>Use New Save file</Original>
-                <Czech>Použít nový uložený soubor</Czech>
-                <French>Utiliser un nouveau fichier</French>
-                <Italian>Usa Nuovo File di Salvataggio</Italian>
-                <Korean>새 저장 파일 사용</Korean>
-                <Russian>Отдельный файл сохр.</Russian>
-                <Polish>Użyj Nowego Pliku Zapisu</Polish>
-                <Portuguese>Usar novo save</Portuguese>
-                <Chinesesimp>使用新的存档文件</Chinesesimp>
+                <Original>Use New Save Method</Original>
+                <Czech>Použít novou metodu uložení</Czech>
+                <French>Utiliser la nouvelle méthode d'enregistrement</French>
+                <Italian>Usa il nuovo metodo di salvataggio</Italian>
+                <Korean>새 저장 방법 사용</Korean>
+                <Russian>Используйте новый метод сохранения</Russian>
+                <Polish>Użyj nowej metody zapisywania</Polish>
+                <Portuguese>Usar novo método de salvamento</Portuguese>
+                <Chinesesimp>使用新的保存方法</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_use_new_namespace_warning">
+                <Original>Warning: This WILL cause save issues if used on a non-Windows-based server.</Original>
+                <Czech>Varování: To způsobí problémy s ukládáním, pokud je použito na serveru jiném než Windows.</Czech>
+                <French>Avertissement : Cela causera des problèmes de sauvegarde s'il est utilisé sur un serveur non Windows.</French>
+                <Italian>Attenzione: questo causerà problemi di salvataggio se utilizzato su un server non basato su Windows.</Italian>
+                <Korean>경고: 이렇게 하면 Windows 기반이 아닌 서버에서 사용하는 경우 저장 문제가 발생합니다.</Korean>
+                <Russian>Предупреждение: Это вызовет проблемы с сохранением при использовании на сервере, отличном от Windows.</Russian>
+                <Polish>Ostrzeżenie: Spowoduje to problemy z zapisywaniem, jeśli zostanie użyty na serwerze innym niż Windows.</Polish>
+                <Portuguese>Aviso: Isso CAUSARÁ problemas de salvamento se usado em um servidor não baseado no Windows.</Portuguese>
+                <Chinesesimp>警告：如果在非基于 Windows 的服务器上使用，这将导致保存问题。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_set_hq_position">
                 <Original>Set HQ Position</Original>
@@ -3507,12 +3554,12 @@
                 <Korean>ID가 %1인 게임 불러오기, </Korean>
                 <French>Charger la partie avec l' ID %1,</French>
             </Key>
-            <Key ID="STR_antistasi_dialogs_setup_confirm_occ_inv">
-                <Original>%1 occupants and %2 invaders?</Original>
-                <Russian>%1 оккупантами и %2 захватчиками?</Russian>
-                <Chinesesimp>%1 防守方和 %2 入侵者？</Chinesesimp>
-                <Korean>%1이(가) 점령군이고 %2이(가) 침략군입니까?</Korean>
-                <French>%1 occupants et %2 envahisseurs ?</French>
+            <Key ID="STR_antistasi_dialogs_setup_confirm_factions">
+                <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
+                <Russian>%1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
+                <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
+                <Korean>%1 반란군, %2 민간인, %3 거주자, %4 침략자, %5 라이벌?</Korean>
+                <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
                 <Original>name "%1", </Original>
@@ -3520,6 +3567,37 @@
                 <Chinesesimp>名称“%1”，</Chinesesimp>
                 <Korean>"%1"(으)로 명명, </Korean>
                 <French>nom "%1", </French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked">
+                <Original>This parameter cannot be changed for an existing save.</Original>
+                <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
+                <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
+                <Italian>Questo parametro non può essere modificato per un salvataggio esistente.</Italian>
+                <Korean>이 매개변수는 기존 저장에 대해 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр не может быть изменен для существующего сохранения.</Russian>
+                <Polish>Tego parametru nie można zmienić dla istniejącego zapisu.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado para um salvamento existente.</Portuguese>
+                <Chinesesimp>无法为现有保存更改此参数。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_riv_param_locked">
+                <Original>This parameter cannot be enabled if invaders are disabled.</Original>
+                <Czech>Tento parametr nelze povolit, pokud jsou útočníci zakázáni.</Czech>
+                <French>Ce paramètre ne peut pas être activé si les envahisseurs sont désactivés.</French>
+                <Italian>Questo parametro non può essere abilitato se gli invasori sono disabilitati.</Italian>
+                <Korean>침입자가 비활성화된 경우 이 매개변수를 활성화할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя включить, если захватчики отключены.</Russian>
+                <Polish>Tego parametru nie można włączyć, jeśli intruzi są wyłączeni.</Polish>
+                <Portuguese>Este parâmetro não pode ser ativado se os invasores estiverem desativados.</Portuguese>
+                <Chinesesimp>如果 invaders 被禁用，则无法启用此参数。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_new_save">
+                <Original>Creating new save</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_edit_save">
+                <Original>Editing save with ID: %1</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_copy_save">
+                <Original>Copying save with ID: %1</Original>
             </Key>
         </Container>
         <Container name="setup_dialog_table">

@@ -2,32 +2,35 @@
 
 class CfgPatches 
 {
-    class ADDON 
-    {
-        name = COMPONENT_NAME;
-        units[] = {};
-        weapons[] = {};
-        requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
+	class ADDON 
+	{
+		name = COMPONENT_NAME;
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = REQUIRED_VERSION;
+		requiredAddons[] = {
 			"A3A_core",
 			"A3_UI_F",
 			"A3_Data_F_Enoch_Loadorder",
-            "A3_Map_Data",
-            "A3_Map_Stratis",
-            "A3_Map_Altis",
-            "A3_Map_VR",
-            "A3_Data_F_Exp",
-            "A3_Map_Malden",
-            "A3_Sounds_F_Enoch",
+			"A3_Map_Data",
+			"A3_Map_Stratis",
+			"A3_Map_Altis",
+			"A3_Map_VR",
+			"A3_Data_F_Exp",
+			"A3_Map_Malden",
+			"A3_Sounds_F_Enoch",
 			"CBA_Main"
-			};
-        author = AUTHOR;
-        authors[] = { AUTHORS };
-        authorUrl = "";
-        VERSION_CONFIG;
-    };
+		};
+		author = AUTHOR;
+		authors[] = { AUTHORS };
+		authorUrl = "";
+		VERSION_CONFIG;
+	};
 };
 
+#define A3U_DISABLE_MENU __has_include("\x\A3A\addons\menu\.disable") // Could make this 0/1 if needed internally
+
+#if A3U_DISABLE_MENU != 1
 class RscActivePicture;
 class RscStandardDisplay;
 class RscPicture;
@@ -241,17 +244,17 @@ class A3AU_Images
 
 class Extended_PreInit_EventHandlers
 {
-    class A3AU_settings
-    {
-        init = "call compile preprocessFileLineNumbers 'x\A3A\addons\main_menu\XEH_preInit.sqf'";
-    };
+	class A3AU_settings
+	{
+		init = "call compile preprocessFileLineNumbers 'x\A3A\addons\main_menu\XEH_preInit.sqf'";
+	};
 };
 
 class RscDisplayMain: RscStandardDisplay //main menu
 {
 	enableDisplay = 0;
 	class controls 
-    {
+	{
 		delete Spotlight;
 		delete Spotlight1;
 		delete Spotlight2;
@@ -279,7 +282,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onLoad="(_this select 0) ctrlshow !(395180 in getDLCs 1)";
 		};
 		class base_side_btn
-        {
+		{
 			onLoad = "(_this # 0) ctrlEnable false;";
 			type = 1;
 			idc = -1;
@@ -312,7 +315,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onMouseButtonClick = "-";
 		};
 		class SteamButton1: base_side_btn 
-        {
+		{
 			onLoad = "(_this # 0) ctrlEnable true";
 			text = QPATHTOFOLDER(data\buttons\SteamB.paa); // Path to button image
 			tooltip = "Steam workshop Mod";
@@ -323,7 +326,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB.paa""";
 		};
 		class GitHubButton2: SteamButton1
-        {
+		{
 			y = "safeZoneY + safeZoneH - 0.34";
 			text = QPATHTOFOLDER(data\buttons\GitB.paa); // Path to button image
 			tooltip="GitHub Page";
@@ -334,7 +337,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB.paa""";
 		};
 		class ServerButton3: base_side_btn
-        {
+		{
 			onLoad = "(_this # 0) ctrlEnable true";
 			y = "safeZoneY + safeZoneH - 0.4";
 			text = QPATHTOFOLDER(data\buttons\ServerB.paa); // No text needed for an image button
@@ -346,7 +349,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB.paa""";
 		};
 		class ArmaCreditsButton4: base_side_btn 
-        {
+		{
 			onLoad = "(_this # 0) ctrlEnable true";
 			x = "safeZoneX + 0.007";
 			text = QPATHTOFOLDER(data\buttons\ArmaCredits.paa); // No text needed for an image button
@@ -358,7 +361,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits.paa""";
 		};
 		class WebsiteButton5: ArmaCreditsButton4
-        {
+		{
 			y = "safeZoneY + safeZoneH - 0.34";
 			text = QPATHTOFOLDER(data\buttons\WebsiteB.paa); // No text needed for an image button
 			tooltip="Official Website";
@@ -370,3 +373,4 @@ class RscDisplayMain: RscStandardDisplay //main menu
 		};
 	};
 };
+#endif

@@ -20,8 +20,8 @@
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
 ["vehiclesBasic", ["3AS_Fliknot_F"]] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
-["vehiclesLightUnarmed", ["3AS_ISP_Transport"]] call _fnc_saveToTemplate; 		
-["vehiclesLightArmed",["3AS_ISP", "3AS_ISP", "lsd_car_ast"]] call _fnc_saveToTemplate; 		
+["vehiclesLightUnarmed", ["3AS_Combat_Speeder_F"]] call _fnc_saveToTemplate; 		
+["vehiclesLightArmed",["3AS_Combat_Speeder_F", "lsd_car_ast"]] call _fnc_saveToTemplate; 		
 ["vehiclesTrucks", ["442_argon_covered_cis"]] call _fnc_saveToTemplate; 			
 ["vehiclesCargoTrucks", ["442_argon_covered_cis", "442_argon_transport_cis"]] call _fnc_saveToTemplate; 	
 ["vehiclesAmmoTrucks", ["442_argon_ammo_cis"]] call _fnc_saveToTemplate; 
@@ -29,11 +29,11 @@
 ["vehiclesFuelTrucks", ["442_argon_fuel_cis"]] call _fnc_saveToTemplate;		
 ["vehiclesMedical", ["442_argon_medical_cis"]] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", ["3AS_SAC_F"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["3AS_Advanced_DSD", "3AS_ISP", "3AS_PAC_F"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["3AS_Advanced_DSD", "3AS_PAC_F"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["3AS_PAC_F"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["3AS_AAT_CIS"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["3AS_N99","3AS_Advanced_DSD"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["3AS_AAT_CIS", "3AS_GAT", "3AS_N99"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["3AS_N99","3AS_Advanced_DSD","3AS_Heavy_AAT_Flamer_F"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["3AS_AAT_CIS", "3AS_AAT_CIS", "3AS_GAT", "3AS_N99"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["3AS_GAT_Light"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
@@ -53,9 +53,10 @@
 ["vehiclesHelisLightAttack", ["3AS_MAF_Gunship_F"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["3AS_HMP_Gunship"]] call _fnc_saveToTemplate; 		
 
-["vehiclesArtillery", ["3AS_Hailfire_Rocket"]] call _fnc_saveToTemplate;
+["vehiclesArtillery", ["3AS_Hailfire_Rocket","3AS_Heavy_AAT_Defoliator_F"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["3AS_Hailfire_Rocket", ["12Rnd_230mm_rockets"]]
+["3AS_Hailfire_Rocket", ["12Rnd_230mm_rockets"]],
+["3AS_Heavy_AAT_Defoliator_F", ["3AS_6Rnd_200mm_Mo_shells"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["lsd_ground_agtRaptor"]] call _fnc_saveToTemplate;
@@ -166,7 +167,7 @@ _loadoutData set ["ViperBP", []];
 _loadoutData set ["longRangeRadios", []];
 _loadoutData set ["helmets", []];
 _loadoutData set ["slHat", ["lsd_cis_oomOfficer_helmet"]];
-_loadoutData set ["sniHats", []];
+_loadoutData set ["sniHats", ["ls_cis_b1_helmet"]];
 
 _loadoutData set ["glasses", []];
 _loadoutData set ["goggles", []];

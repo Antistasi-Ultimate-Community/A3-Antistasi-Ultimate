@@ -466,8 +466,7 @@ cutText ["","BLACK IN", 3];
 
 [] remoteExecCall ["A3A_fnc_assignBossIfNone", 2];
 
-
-if (isServer || player isEqualTo theBoss || (call BIS_fnc_admin) > 0) then {  // Local Host || Commander || Dedicated Admin
+if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fnc_admin) > 0) then {  // Local Host || Commander || Dedicated Admin
     private _modsAndLoadText = [
         [A3A_hasTFAR || A3A_hasTFARBeta,"TFAR",localize "STR_A3A_initClient_mods_TFAR"],
         [A3A_hasACRE,"ACRE",localize "STR_A3A_initClient_mods_ACRE"],

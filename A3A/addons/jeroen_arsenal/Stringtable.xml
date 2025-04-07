@@ -46,6 +46,7 @@
                 <Original>Sort by mod/dlc</Original>
                 <Russian>Сортировка по моду/дополнению</Russian>
                 <Chinesesimp>按模组/DLC排序</Chinesesimp>
+                <Korean>모드/DLC 별로 정렬</Korean>
             </Key>
             <Key ID="STR_JNA_SORT_DEFAULT">
                 <Original>Default</Original>

@@ -4,18 +4,22 @@
         <Key ID="STR_params_builderPermissions">
             <Original>Player classes permitted to use the building placer</Original>
             <Chinesesimp>允许放置建筑的玩家类型</Chinesesimp>
+            <Korean>구조물 배치기를 사용할 수 있는 플레이어 병과</Korean>
         </Key>
         <Key ID="STR_params_builderLimit">
             <Original>Build limit</Original>
             <Chinesesimp>建筑上限</Chinesesimp>
+            <Korean>구조물 제한</Korean>
         </Key>
         <Key ID="STR_params_builderAllowRoads">
             <Original>Allow buildings to be saved on roads</Original>
             <Chinesesimp>允许保留道路上的建筑物</Chinesesimp>
+            <Korean>도로에 구조물을 저장할 수 있도록 허용</Korean>
         </Key>
         <Key ID="STR_params_builderBuildTime">
             <Original>Build hold time multiplier</Original>
             <Chinesesimp>建筑留存时间乘数</Chinesesimp>
+            <Korean>건설 홀드 시간 배수</Korean>
         </Key>
     </Package>
     <Package name="A3-Antistasi-Ultimate-functions">
@@ -160,6 +164,7 @@
         <Key ID="STR_A3A_fn_support_showIntStpCll_TANK">
             <Original>%1 just sent a tank platoon.</Original>
             <Chinesesimp>%1刚刚派出了一个坦克排。</Chinesesimp>
+            <Korean>%1이(가) 방금 전차소대를 보냈습니다.</Korean>
         </Key>
     </Package>
     <Package name="Lockpick">
