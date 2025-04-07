@@ -38,6 +38,10 @@
         {
             prefix = "nickelsteel";
         };
+        class weapons_nickelsteel : weapons_base
+        {
+            prefix = "nickelsteel";
+        };
         class weapons_3cbf : weapons_base
         {
             prefix = "3cbf";
@@ -165,12 +169,14 @@
         class weapons_projinf : weapons_base
         {
             prefix = "projinf_stock";
+            prefix = "projinf_stock";
         };
         class weapons_jcaia : weapons_base
         {
-            prefix = "jcaia_stock";
+            prefix = "jca_stock";
         };
         class equipment_jcaie : weapons_base
         {
             prefix = "jcaie_stock";
         };
+

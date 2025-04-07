@@ -90,20 +90,14 @@ if (_tab isEqualTo "vehicles") then
         _previewPicture ctrlSetText _editorPreview;
         _previewPicture ctrlCommit 0;
 
-        private _label = _display ctrlCreate ["A3A_SectionLabelLeft", -1, _itemControlsGroup];
-        _label ctrlSetPosition [0, 0, 44 * GRID_W, 6 * GRID_H];
-        _label ctrlSetText _displayName;
-        _label ctrlSetBackgroundColor [0,0,0,0.5];
-        _label ctrlCommit 0;
-
-        private _buttonTakeout = _display ctrlCreate ["A3A_ShortcutButtonSmall", -1, _itemControlsGroup];
-        _buttonTakeout ctrlSetPosition [0, 25 * GRID_H, 22 * GRID_W, 6 * GRID_H];
-        _buttonTakeout ctrlSetText (localize "STR_antistasi_dialogs_buy_vehicle_button");
-        _buttonTakeout ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
-        _buttonTakeout setVariable ["className", _className];
-        _buttonTakeout setVariable ["model", _model];
-        _buttonTakeout ctrlAddEventHandler ["ButtonClick", {
-            closeDialog 2; [(_this # 0) getVariable "className", false] spawn A3A_fnc_addBlackMarketVeh;
+        private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
+        _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
+        _button ctrlSetText _displayName;
+        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
+        _button setVariable ["className", _className];
+        _button setVariable ["model", _model];
+        _button ctrlAddEventHandler ["ButtonClick", {
+            closeDialog 2; [(_this # 0) getVariable "className"] spawn A3A_fnc_addBlackMarketVeh;
         }];
         _buttonTakeout ctrlCommit 0;
 

@@ -14,6 +14,22 @@ private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
 private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs it
 
+/* private _hasWs = "ws" in A3A_enabledDLC;
+private _hasMarksman = "mark" in A3A_enabledDLC;
+private _hasLawsOfWar = "orange" in A3A_enabledDLC;
+private _hasTanks = "tank" in A3A_enabledDLC;
+private _hasContact = "enoch" in A3A_enabledDLC;
+private _hasJets = "jets" in A3A_enabledDLC;
+private _hasHelicopters = "heli" in A3A_enabledDLC;
+private _hasArtOfWar = "aow" in A3A_enabledDLC;
+private _hasApex = "expansion" in A3A_enabledDLC;
+private _hasGM = "gm" in A3A_enabledDLC;
+private _hasCSLA = "csla" in A3A_enabledDLC;
+private _hasRF = "rf" in A3A_enabledDLC;
+private _hasSOG = "vn" in A3A_enabledDLC;
+private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs it
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -297,6 +313,12 @@ _sfLoadoutData set ["goggles", []];
 _sfLoadoutData set ["binoculars", []];
 _sfLoadoutData set ["backpacks", []];
 _sfLoadoutData set ["atBackpacks", []];
+//["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
+
+_sfLoadoutData set ["sniperRifles", []];
+_sfLoadoutData set ["sidearms", []];
+_sfLoadoutData set ["slRifles", []];
+
 //["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
 
 _sfLoadoutData set ["sniperRifles", []];

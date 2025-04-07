@@ -154,14 +154,6 @@ if (isClass (configfile >> "CBA_Extended_EventHandlers")) then {
 
 };
 
-// sell button
-HR_GRG_disableSellButton = false;
-
-HR_GRG_addResources = {
-    params ["_money"];
-    [0,_money] call A3A_fnc_resourcesFIA;
-};
-
 HR_GRG_fnc_addVehicleUAVCompat = {
     private _veh = _this select 0;
     if (unitisUAV _veh && {crew _veh isNotEqualTo []}) then {
@@ -170,15 +162,3 @@ HR_GRG_fnc_addVehicleUAVCompat = {
     };
     _this call HR_GRG_fnc_addVehicle;
 };
-
-HR_GRG_canSell = {_this isEqualTo theBoss};
-
-HR_GRG_getVehicleSellPrice = {
-    private _disableSale = false;
-    if (_disableSale) exitWith {0};
-    params ["_veh"];
-    [_veh] call A3A_fnc_getVehicleSellPrice;
-};
-
-
-
