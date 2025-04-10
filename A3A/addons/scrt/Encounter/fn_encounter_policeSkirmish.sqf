@@ -25,14 +25,14 @@ if (_cities isEqualTo []) exitWith {
 private _city = selectRandom _cities;
 private _cityPos = getMarkerPos _city;
 
-// Функция спавна полицейских сил 
+// Function to spawn police forces
 private _fnc_spawnPoliceForces = {
     params ["_side", "_basePos", "_vehicleTypes", "_unitGroupType"];
     
     private _numGroups = selectRandom [1, 2];
     
     for "_i" from 1 to _numGroups do {
-        // Исправленный блок спавна техники
+        // Corrected vehicle spawn block
 		private _road = objNull;
 		private _radius = 50;
 		private _foundRoad = false;
@@ -48,21 +48,21 @@ private _fnc_spawnPoliceForces = {
 		    };
 		};
 
-		// Определяем позицию спавна
+		// Determine spawn position
 		private _spawnPos = if (!isNull _road) then {
 		    getPosATL _road
 		} else {
-		    // Если дорог нет, создаем позицию рядом с базой
+		    // Create position near base if no roads found
 		    _basePos getPos [random 150, random 360]
 		};
 		
-		// Если дорог не найдено - использовать случайную позицию
+		// Use random position if no roads found
 		if (isNull _road) then {
 		    _road = _basePos getPos [random 150, random 360];
-		    _road setPosATL [getPosATL _road#0, getPosATL _road#1, 0]; // Обнуляем высоту
+		    _road setPosATL [getPosATL _road#0, getPosATL _road#1, 0]; // Reset height to 0
 		};
         
-        // Корректный вызов spawnVehicle
+        // Proper spawnVehicle call
 		private _vehicleType = selectRandom _vehicleTypes;
         private _vehData = [_spawnPos, random 360, _vehicleType, _side] call A3A_fnc_spawnVehicle;
         private _vehicle = _vehData select 0;
@@ -75,7 +75,7 @@ private _fnc_spawnPoliceForces = {
 		(units _crewGroup) join _cargoGroup;
 		_groups pushBack _cargoGroup;
 
-		// Добавление точек патрулирования
+		// Adding patrol points
         private _wp = _cargoGroup addWaypoint [_cityPos, 50];
         _wp setWaypointType "MOVE";
 		sleep 5;
@@ -87,14 +87,14 @@ private _fnc_spawnPoliceForces = {
     };
 };
 
-// Функция спавна сил с исправлениями
+// Force spawn function with corrections
 private _fnc_spawnForces = {
     params ["_side", "_basePos", "_vehicleTypes", "_unitGroupType"];
     
     private _numGroups = selectRandom [1, 2];
     
     for "_i" from 1 to _numGroups do {
-        // Исправленный блок спавна техники
+        // Corrected vehicle spawn block
 		private _road = objNull;
 		private _radius = 50;
 		private _foundRoad = false;
@@ -110,21 +110,21 @@ private _fnc_spawnForces = {
 		    };
 		};
 
-		// Определяем позицию спавна
+		// Determine spawn position
 		private _spawnPos = if (!isNull _road) then {
 		    getPosATL _road
 		} else {
-		    // Если дорог нет, создаем позицию рядом с базой
+		    // Create position near base if no roads found
 		    _basePos getPos [random 150, random 360]
 		};
 		
-		// Если дорог не найдено - использовать случайную позицию
+		// Use random position if no roads found
 		if (isNull _road) then {
 		    _road = _basePos getPos [random 150, random 360];
-		    _road setPosATL [getPosATL _road#0, getPosATL _road#1, 0]; // Обнуляем высоту
+		    _road setPosATL [getPosATL _road#0, getPosATL _road#1, 0]; // Reset height to 0
 		};
         
-        // Корректный вызов spawnVehicle
+        // Proper spawnVehicle call
 		private _vehicleType = selectRandom _vehicleTypes;
         private _vehData = [_spawnPos, random 360, _vehicleType, _side] call A3A_fnc_spawnVehicle;
         private _vehicle = _vehData select 0;
@@ -135,7 +135,7 @@ private _fnc_spawnForces = {
 		(units _crewGroup) join _group;
 		_groups pushBack _group;
 
-		// Добавление точек патрулирования
+		// Adding patrol points
         private _wp = _group addWaypoint [_cityPos, 50];
         _wp setWaypointType "MOVE";
 		sleep 5;
