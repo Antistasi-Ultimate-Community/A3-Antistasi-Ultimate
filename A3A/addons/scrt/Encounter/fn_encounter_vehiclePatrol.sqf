@@ -13,6 +13,14 @@ if (isNil "_player") exitWith {
 
 private _originPosition = position _player;
 
+private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+
+if !(_frontLine isEqualTo []) exitWith {
+    Error("Position is near frontline, need to select appropriate event.");
+    isEventInProgress = false;
+    publicVariableServer "isEventInProgress";
+};
+
 private _vehicles = [];
 private _groups = [];
 private _potentialOutposts = (outposts + milbases + airportsX + resourcesX + factories) select {
@@ -45,15 +53,14 @@ private _faction = Faction(_side);
 
 private _isFia = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
 private _vehicleClass = if (_isFia) then {
-    selectRandom ((_faction get "vehiclesMilitiaLightArmed") +  (_faction get "vehiclesMilitiaAPCs"));
+    selectRandom ((_faction get "vehiclesMilitiaLightArmed") +  (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesHelisLight"));
 } else {
-    selectRandom ((_faction get "vehiclesAPCs") +  (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesLightArmed"));
+    selectRandom ((_faction get "vehiclesAPCs") +  (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesAirPatrol") + (_faction get "vehiclesHelisLightAttack"));
 };
 
 if (_vehicleClass == "") exitWith {
     Info("No vehicle class, aborting Vehicle Patrol Event.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+    [VEH_PATROL] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
 private _patrolVehicle1Data = [_roadPosition, _dirveh, _vehicleClass, _side] call A3A_fnc_spawnVehicle;

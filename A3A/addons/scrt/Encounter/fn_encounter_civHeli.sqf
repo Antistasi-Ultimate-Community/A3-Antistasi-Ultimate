@@ -25,9 +25,8 @@ if (_lowCiv || _civNonHuman) exitWith {
 
 private _civHeli = (A3A_faction_civ getOrDefault ["vehiclesCivHeli", []]);
 if (_civHeli isEqualTo []) exitWith {
-    Error("No civ heli found, aborting.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+    Error("No civ heli found, rerolling.");
+    [CIV_HELI] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
 private _originPosition = position _player;
@@ -54,7 +53,7 @@ private _heliGroup = _civHeliData select 2;
 _groups pushBack _heliGroup;
 _vehicles pushBack _heliVeh;
 
-_heliVeh flyInHeight (100 + (random 150));
+_heliVeh flyInHeight (60 + (random 150));
 
 private _relativePositions = [];
 
