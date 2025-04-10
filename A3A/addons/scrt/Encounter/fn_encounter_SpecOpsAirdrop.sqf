@@ -19,10 +19,10 @@ if (isNil "_player") exitWith {
 };
 
 private _controlsX = ([controlsX, _player, true] call A3A_fnc_findIfNearAndHostile) select {
-    private _markerPos = getMarkerPos _x; // Получаем позицию маркера
-    private _distance = _markerPos vectorDistance _originPosition; // Вычисляем расстояние до игрока
-    private _isOnRoad = isOnRoad _markerPos; // Проверяем, находится ли маркер на дороге
-    !_isOnRoad && (_distance > 600) && (_distance <= 1300); // Проверяем условия
+    private _markerPos = getMarkerPos _x;
+    private _distance = _markerPos vectorDistance _originPosition;
+    private _isOnRoad = isOnRoad _markerPos;
+    !_isOnRoad && (_distance > 600) && (_distance <= 1300);
 };
 
 if (_controlsX isEqualTo []) exitWith {

@@ -38,7 +38,7 @@ if (isNull _road) exitWith {
     publicVariableServer "isEventInProgress";
 };
 
-// После нахождения дороги _road
+// After finding the road _road
 private _roadcon = roadsConnectedTo _road;
 private _roadDir = if (count _roadcon > 0) then {
     [_road, _roadcon select 0] call BIS_fnc_dirTo
@@ -47,22 +47,22 @@ private _roadDir = if (count _roadcon > 0) then {
 };
 private _roadPos = getPos _road;
 
-// Позиция для машины (слева от центра дороги)
-private _vehiclePos = _roadPos getPos [4, _roadDir - 90]; // 4м слева от центра
+// Position for the vehicle (left side of the road center)
+private _vehiclePos = _roadPos getPos [4, _roadDir - 90]; // 4m left from center
 private _vehicleDir = _roadDir;
 
-// Спавн полицейской машины
+// Spawn police vehicle
 private _policeVeh = selectRandom (A3A_faction_occ get "vehiclesPolice");
 private _vehData = [_vehiclePos, _vehicleDir, _policeVeh, Occupants] call A3A_fnc_spawnVehicle;
 private _policeVehicle = _vehData#0;
 [_policeVehicle, Occupants] call A3A_fnc_AIVEHinit;
 [_policeVehicle, ["BeaconsStart", 1]] remoteExecCall ["animate", 0, _policeVehicle];
 
-// Позиции для заложников (справа от дороги)
-private _hostageArea = _roadPos getPos [5, _roadDir + 90]; // 5м справа от дороги
-private _hostageDir = _roadDir + 180; // Смотрят в противоположную сторону
+// Positions for hostages (right side of the road)
+private _hostageArea = _roadPos getPos [5, _roadDir + 90]; // 5m right from road
+private _hostageDir = _roadDir + 180; // Facing opposite direction
 
-// Создание заложников в линию
+// Create hostages in a line
 private _hostageGroup = createGroup [civilian, true];
 private _hostageCount = 2 + floor random 3;
 
@@ -75,17 +75,17 @@ for "_i" from 0 to (_hostageCount - 1) do {
     _hostage setDir _hostageDir;
 };
 
-// Полицейский перед машиной
+// Police officer in front of the vehicle
 private _policeGroup = createGroup [Occupants, true];
-private _frontPos = _policeVehicle getPos [3.5, _vehicleDir]; // 3м перед машиной
+private _frontPos = _policeVehicle getPos [3.5, _vehicleDir]; // 3m in front of vehicle
 private _staticCop = [_policeGroup, FactionGet(occ, "unitPoliceGrunt"), _frontPos, [], 0, "NONE"] call A3A_fnc_createUnit;
 _staticCop setDir (_vehicleDir - 180);
 doStop _staticCop;
 
-// Патрулирующий полицейский
+// Patrolling police officer
 private _patrolCop = [_policeGroup, FactionGet(occ, "unitPoliceGrunt"), _policeVehicle getPos [-3, _vehicleDir - 90], [], 0, "NONE"] call A3A_fnc_createUnit;
 
-// Для патрульного полицейского
+// For the patrolling police officer
 [_patrolCop, _hostageArea] spawn {
     params ["_cop", "_center"];
     while {alive _cop} do {

@@ -39,9 +39,9 @@ while {true} do {
 private _mainRoad = (_road select {(position _x) distance2D _originPosition > 500}) select 0;
 private _roadcon = roadsConnectedto _mainRoad;
 private _dirveh = if (count _roadcon > 0) then {
-    [_mainRoad, _roadcon select 0] call BIS_fnc_dirTo; // Направление от главного сегмента к первому подключённому
+    [_mainRoad, _roadcon select 0] call BIS_fnc_dirTo; // Direction from main segment to first connected road
 } else {
-    random 360; // Резервное направление, если подключённых дорог нет
+    random 360; // Fallback direction if no connected roads
 };
 
 private _roadSegments = [_mainRoad];
@@ -75,24 +75,24 @@ private _convoySpacing = 15;
     private _roadSegment = _x;
     private _roadPosition = getPos _roadSegment;
     private _currentIndex = _forEachIndex;
-    private _roadDir = _dirveh; // Изначальное направление из главного сегмента
+    private _roadDir = _dirveh; // Initial direction from main segment
 
     if (_currentIndex > 0) then {
-        // Смещение вдоль начального направления
+        // Offset along initial direction
         _roadPosition = _roadPosition getPos [_convoySpacing * _currentIndex, _roadDir];
         
-        // Корректировка позиции и обновление направления
+        // Position correction and direction update
         private _nearestRoad = [_roadPosition, 50, []] call BIS_fnc_nearestRoad;
         if (!isNull _nearestRoad) then {
             _roadPosition = getPos _nearestRoad;
             private _newRoadcon = roadsConnectedto _nearestRoad;
             if (count _newRoadcon > 0) then {
-                // Обновляем направление по новому сегменту
+                // Update direction from new segment
                 _roadDir = [_nearestRoad, _newRoadcon select 0] call BIS_fnc_dirTo;
             };
         };
         
-        // Боковое смещение относительно обновлённого направления
+        // Lateral offset relative to updated direction
         private _latOffset = random [-3.5, 0, 3.5];
         _roadPosition = _roadPosition getPos [_latOffset, _roadDir + 90];
     };
@@ -128,7 +128,7 @@ private _convoySpacing = 15;
 
     if (_vehicleClass == "") then { continue };
 
-    // Создание техники с актуальным направлением
+    // Create vehicle with current direction
     private _vehicle = createVehicle [
         _vehicleClass, 
         _roadPosition vectorAdd [0, 0, 1.5], 
@@ -136,90 +136,90 @@ private _convoySpacing = 15;
         0, 
         "CAN_COLLIDE"
     ];
-    _vehicle setDir _roadDir + 180; // Техника ориентирована по текущему направлению
-    // Дополнительные параметры (урон, экипаж и т.д.)
-	private _dir = getDir _vehicle;
-	if (_currentIndex != 0) then {
-		if (_currentIndex == 1) then {
-			private _randomDirOffset = random [0, -25, 25];
-    		_vehicle setDir (_dir + _randomDirOffset);
-			_vehicle setPos (_vehicle modelToWorld [random [-2.5,0,2.5], 0, 0]); // Физическое смещение
-		} else {
-			private _randomDirOffset = random [-45, 45, 0];
-    		_vehicle setDir (_dir + _randomDirOffset);
-			_vehicle setPos (_vehicle modelToWorld [random [-4.5,0,4.5], 0, 0]); // Физическое смещение
-		};
-	};
+    _vehicle setDir _roadDir + 180; // Vehicle oriented to current direction
+    // Additional parameters (damage, crew, etc.)
+    private _dir = getDir _vehicle;
+    if (_currentIndex != 0) then {
+        if (_currentIndex == 1) then {
+            private _randomDirOffset = random [0, -25, 25];
+            _vehicle setDir (_dir + _randomDirOffset);
+            _vehicle setPos (_vehicle modelToWorld [random [-2.5,0,2.5], 0, 0]); // Physical displacement
+        } else {
+            private _randomDirOffset = random [-45, 45, 0];
+            _vehicle setDir (_dir + _randomDirOffset);
+            _vehicle setPos (_vehicle modelToWorld [random [-4.5,0,4.5], 0, 0]); // Physical displacement
+        };
+    };
     _vehicle setDamage random [0.3, 0.5, 0.7];
     
     if (_currentIndex == 0) then {
-        // Для колёсной техники
-		    private _wheels = [
-		        "wheel_1_1_steering", "wheel_2_1_steering",
-		        "wheel_1_2_steering", "wheel_2_2_steering",
-		        "wheel_1_3_steering", "wheel_2_3_steering"
-		    ];
+        // Wheeled vehicles damage
+        private _wheels = [
+            "wheel_1_1_steering", "wheel_2_1_steering",
+            "wheel_1_2_steering", "wheel_2_2_steering",
+            "wheel_1_3_steering", "wheel_2_3_steering"
+        ];
 
-		    // Выбираем 1-4 случайных колеса
-		    for "_i" from 1 to (1 + floor random 3) do {
-		        private _wheel = selectRandom _wheels;
-		        _vehicle setHit [_wheel, 1];
-		        _wheels = _wheels - [_wheel];
-		    };
+        // Select 1-4 random wheels
+        for "_i" from 1 to (1 + floor random 3) do {
+            private _wheel = selectRandom _wheels;
+            _vehicle setHit [_wheel, 1];
+            _wheels = _wheels - [_wheel];
+        };
 
-		    // Для гусеничной техники
-		    // Повреждаем случайную гусеницу
-		    if (random 1 <= 0.7) then {
-		        _vehicle setHit ["HitLTrack", 1];
-		    } else {
-		        _vehicle setHit ["HitRTrack", 1];
-		    };
+        // Tracked vehicles damage
+        // Damage random track
+        if (random 1 <= 0.7) then {
+            _vehicle setHit ["HitLTrack", 1];
+        } else {
+            _vehicle setHit ["HitRTrack", 1];
+        };
 
-		    // Дополнительные повреждения
-		    if (random 1 <= 0.3) then {
-		        _vehicle setHit ["HitEngine", 0.5 + random 0.5];
-		    };
+        // Additional damage
+        if (random 1 <= 0.3) then {
+            _vehicle setHit ["HitEngine", 0.5 + random 0.5];
+        };
 
-		    // Универсальные повреждения
-		    if (random 1 <= 0.4) then {
-		        _vehicle setHit ["HitFuel", 0.3 + random 0.7];
-		    };
+        // Universal damage
+        if (random 1 <= 0.4) then {
+            _vehicle setHit ["HitFuel", 0.3 + random 0.7];
+        };
     } else {
-		// В блоке создания техники после setFuel:
-		if (random 1 <= 0.7) then {
-		    // Для колёсной техники
-		    private _wheels = [
-		        "wheel_1_1_steering", "wheel_2_1_steering",
-		        "wheel_1_2_steering", "wheel_2_2_steering",
-		        "wheel_1_3_steering", "wheel_2_3_steering"
-		    ];
+        // Post-creation damage
+        if (random 1 <= 0.7) then {
+            // Wheeled vehicles damage
+            private _wheels = [
+                "wheel_1_1_steering", "wheel_2_1_steering",
+                "wheel_1_2_steering", "wheel_2_2_steering",
+                "wheel_1_3_steering", "wheel_2_3_steering"
+            ];
 
-		    // Выбираем 1-4 случайных колеса
-		    for "_i" from 1 to (1 + floor random 3) do {
-		        private _wheel = selectRandom _wheels;
-		        _vehicle setHit [_wheel, 1];
-		        _wheels = _wheels - [_wheel];
-		    };
+            // Select 1-4 random wheels
+            for "_i" from 1 to (1 + floor random 3) do {
+                private _wheel = selectRandom _wheels;
+                _vehicle setHit [_wheel, 1];
+                _wheels = _wheels - [_wheel];
+            };
 
-		    // Для гусеничной техники
-		    // Повреждаем случайную гусеницу
-		    if (random 1 <= 0.7) then {
-		        _vehicle setHit ["HitLTrack", 1];
-		    } else {
-		        _vehicle setHit ["HitRTrack", 1];
-		    };
+            // Tracked vehicles damage
+            // Damage random track
+            if (random 1 <= 0.7) then {
+                _vehicle setHit ["HitLTrack", 1];
+            } else {
+                _vehicle setHit ["HitRTrack", 1];
+            };
 
-		    // Дополнительные повреждения
-		    if (random 1 <= 0.3) then {
-		        _vehicle setHit ["HitEngine", 0.5 + random 0.5];
-		    };
+            // Additional damage
+            if (random 1 <= 0.3) then {
+                _vehicle setHit ["HitEngine", 0.5 + random 0.5];
+            };
 
-		    // Универсальные повреждения
-		    if (random 1 <= 0.4) then {
-		        _vehicle setHit ["HitFuel", 0.3 + random 0.7];
-		    };
-		};
-	};
+            // Universal damage
+            if (random 1 <= 0.4) then {
+                _vehicle setHit ["HitFuel", 0.3 + random 0.7];
+            };
+        };
+    };
     
     _vehicle setFuel 0;
     [_vehicle, _side] call A3A_fnc_AIVEHinit;
@@ -263,6 +263,7 @@ private _convoySpacing = 15;
     _groups pushBack _groupCrew;
 
     if (_currentIndex == 0) then {
+        // Create fire effects for lead vehicle
         for "_k" from 0 to (random [3,5,6]) do {
             private _firePosition = [
                 _roadPosition, 
@@ -284,29 +285,30 @@ private _convoySpacing = 15;
             _others append [_fireEffectEmitter, _lightEffectEmitter];
         };
     } else {
-		if (random 1 <= 0.5) then {
-			for "_k" from 0 to (random [3,5,6]) do {
-        	    private _firePosition = [
-        	        _roadPosition, 
-        	        2,
-        	        25,
-        	        2
-        	    ] call BIS_fnc_findSafePos;
+        // Random chance for secondary vehicle effects
+        if (random 1 <= 0.5) then {
+            for "_k" from 0 to (random [3,5,6]) do {
+                private _firePosition = [
+                    _roadPosition, 
+                    2,
+                    25,
+                    2
+                ] call BIS_fnc_findSafePos;
 
-        	    [_firePosition, 5000] remoteExec ["SCRT_fnc_effect_createBurningDebrisEffect", 0, _vehicle];
+                [_firePosition, 5000] remoteExec ["SCRT_fnc_effect_createBurningDebrisEffect", 0, _vehicle];
 
-        	    private _fireEffectEmitter = "#particlesource" createVehicle _firePosition;
-        	    [_fireEffectEmitter, "SmallDestructionFire"] remoteExec ["setParticleClass", 0, _fireEffectEmitter];
+                private _fireEffectEmitter = "#particlesource" createVehicle _firePosition;
+                [_fireEffectEmitter, "SmallDestructionFire"] remoteExec ["setParticleClass", 0, _fireEffectEmitter];
 
-        	    private _lightEffectEmitter = "#lightpoint" createVehicle _firePosition; 
-        	    [_lightEffectEmitter, 0.3] remoteExec ["setLightBrightness", 0, _lightEffectEmitter];
-        	    [_lightEffectEmitter, [0.70, 0.3, 0.3]] remoteExec ["setLightAmbient", 0, _lightEffectEmitter];
-        	    [_lightEffectEmitter, [0.70, 0.3, 0.3]] remoteExec ["setLightColor", 0, _lightEffectEmitter];
+                private _lightEffectEmitter = "#lightpoint" createVehicle _firePosition; 
+                [_lightEffectEmitter, 0.3] remoteExec ["setLightBrightness", 0, _lightEffectEmitter];
+                [_lightEffectEmitter, [0.70, 0.3, 0.3]] remoteExec ["setLightAmbient", 0, _lightEffectEmitter];
+                [_lightEffectEmitter, [0.70, 0.3, 0.3]] remoteExec ["setLightColor", 0, _lightEffectEmitter];
 
-        	    _others append [_fireEffectEmitter, _lightEffectEmitter];
-        	};
-    	}
-	};
+                _others append [_fireEffectEmitter, _lightEffectEmitter];
+            };
+        }
+    };
 } forEach _roadSegments;
 
 private _timeOut = time + 1200;

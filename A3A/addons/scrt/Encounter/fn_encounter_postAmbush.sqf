@@ -83,30 +83,30 @@ sleep 0.2;
 private _crashedVehicle = createVehicle [_vehicleClass, [_roadPosition select 0, _roadPosition select 1, 1], [], 0, "CAN_COLLIDE"];
 _crashedVehicle setDir _dirveh;
 _crashedVehicle setDamage 0.7;
-// Для колёсной техники
+// For wheeled vehicles
 private _wheels = [
     "wheel_1_1_steering", "wheel_2_1_steering",
     "wheel_1_2_steering", "wheel_2_2_steering",
     "wheel_1_3_steering", "wheel_2_3_steering"
 ];
-// Выбираем 1-4 случайных колеса
+// Select 1-4 random wheels
 for "_i" from 1 to (1 + floor random 3) do {
     private _wheel = selectRandom _wheels;
     _vehicle setHit [_wheel, 1];
     _wheels = _wheels - [_wheel];
 };
-// Для гусеничной техники
-// Повреждаем случайную гусеницу
+// For tracked vehicles
+// Damage a random track
 if (random 1 <= 0.7) then {
     _vehicle setHit ["HitLTrack", 1];
 } else {
     _vehicle setHit ["HitRTrack", 1];
 };
-// Дополнительные повреждения
+// Additional damage
 if (random 1 < 0.3) then {
     _vehicle setHit ["HitEngine", 0.5 + random 0.5];
 };
-// Универсальные повреждения
+// Universal damage
 if (random 1 < 0.4) then {
     _vehicle setHit ["HitFuel", 0.3 + random 0.7];
 };

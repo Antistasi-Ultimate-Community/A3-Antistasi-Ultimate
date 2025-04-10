@@ -38,7 +38,7 @@ while {true} do {
     
     if (count _road > 0 && {_road findIf {
         private _roadPos = position _x;
-        // Основное условие с добавленной проверкой на военные базы
+        // Main condition with added check for military bases
         (_roadPos distance2D _originPosition > 500) &&
         ({_roadPos distance2D _x < 700} count _cityPositions == 0) &&
         ({_roadPos distance2D _x < 700} count _militaryPositions == 0)
@@ -94,29 +94,29 @@ sleep 0.2;
 private _crashedVehicle = createVehicle [_vehicleClass, [_roadPosition select 0, _roadPosition select 1, 1], [], 0, "CAN_COLLIDE"];
 _crashedVehicle setDir _dirveh;
 _crashedVehicle setDamage 0.7;
-// Для колёсной техники
+// For wheeled vehicles
 private _wheels = [
     "wheel_1_1_steering", "wheel_2_1_steering",
     "wheel_1_2_steering", "wheel_2_2_steering",
     "wheel_1_3_steering", "wheel_2_3_steering"
 ];
-// Выбираем 1-4 случайных колеса
+// Select 1-4 random wheels
 for "_i" from 1 to (1 + floor random 3) do {
     private _wheel = selectRandom _wheels;
     _crashedVehicle setHit [_wheel, 1];
     _wheels = _wheels - [_wheel];
 };
-// Для гусеничной техники
-// Повреждаем случайную гусеницу
+// For tracked vehicles
+// Damage a random track
 _crashedVehicle setHit ["HitLTrack", 1];
 _crashedVehicle setHit ["HitRTrack", 1];
-// Дополнительные повреждения
+// Additional damage
 _crashedVehicle setHit ["HitEngine", 0.5 + random 0.5];
-// Универсальные повреждения
+// Universal damage
 _crashedVehicle setHit ["HitFuel", 0.3 + random 0.7];
 _crashedVehicle setFuel 0;
 [_crashedVehicle, _side] call A3A_fnc_AIVEHinit;
-_crashedVehicle setPos (_crashedVehicle modelToWorld [random [1,2,4.5], 0, 0]); // Физическое смещение
+_crashedVehicle setPos (_crashedVehicle modelToWorld [random [1,2,4.5], 0, 0]); // Physical displacement
 _vehicles pushBack _crashedVehicle;
 
 private _groupCrew = createGroup _side;
@@ -132,10 +132,10 @@ private _crewClass = if (_vehicleClass in (
     [(_faction get "unitRifle")] call SCRT_fnc_unit_getTiered
 };
 
-// Получаем количество мест в технике
+// Get the number of seats in the vehicle
 private _seatCount = [_vehicleClass, false] call BIS_fnc_crewCount;
 
-// Создаем экипаж в зависимости от количества мест (максимум 3)
+// Create crew according to seat count (max 3)
 for "_i" from 1 to _seatCount do {
     private _crew = [_groupCrew, _crewClass, _roadPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
     [_crew] call A3A_fnc_NATOinit;
@@ -180,7 +180,7 @@ _groups pushBack _groupMedevac;
 
 [_MedicalVehicle, _side] call A3A_fnc_AIVEHinit;
 _MedicalVehicle setDir _dirvehMedical; // Random direction for the medical vehicle
-// Command the medical vehicle to move towards the crashed vehicle
+
 private _wp = _groupMedevac addWaypoint [_roadPosition, 15];
 _wp setWaypointCombatMode "SAFE";
 if (_MedicalVehicle isKindOf "Air") then {
@@ -210,10 +210,6 @@ _smokeGrenade setPos [(_positionCrashedVehicle select 0) - 5, (_positionCrashedV
 
 sleep 20;
 
-/* _crashedVehicle action ["repair", _repairVehicle];
-_crashedVehicle action ["refuel", _repairVehicle]; ///maybe just set the fuel back to half */
-//_crashedVehicle setDamage 0;
-
 {
 	_x assignAsCargo _MedicalVehicle;
 	[_x] join _groupMedevac;
@@ -232,8 +228,6 @@ sleep 20;
 private _wp = _groupMedevac addWaypoint [(getMarkerPos _marker), 40];
 _wp setWaypointCombatMode "SAFE";
 _wp setWaypointType "GETOUT";
-/* private _wp2 = _groupCrew addWaypoint [(getMarkerPos _marker), 40];
-_wp2 setWaypointCombatMode "SAFE"; */
 
 waitUntil { 
     sleep 5; 
