@@ -22,6 +22,13 @@ if (_cities isEqualTo []) exitWith {
     [POLICE_SKIRMISH] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
+private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+
+if (_frontLine isEqualTo []) exitWith {
+    Error("Position is not near frontline, need to select appropriate event.");
+    [POLICE_SKIRMISH] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
+};
+
 private _city = selectRandom _cities;
 private _cityPos = getMarkerPos _city;
 
