@@ -216,12 +216,19 @@ class CfgFunctions {
 			class encounter_civHeli {};
 			class encounter_civPlane {};
 			class encounter_police {};
+			class encounter_policeSkirmish {};
+			class encounter_policeHostages {};
 			class encounter_vehicleMove {};
 			class encounter_vehiclePatrol {};
 			class encounter_postAmbush {};
+			class encounter_postAmbushConvoy {};
+			class encounter_postBattle {};
+			class encounter_repair {};
+			class encounter_MedEvac {};
 			class encounter_fleeingCivConvoy {};
 			class encounter_HeliSlingloadCargo {};
 			class encounter_frontlineSkirmish {};
+			class encounter_SpecOpsAirdrop {};
 		};
 
 		class Support {
@@ -279,6 +286,7 @@ class CfgFunctions {
 			class rivals_encounter_rovingMortar {};
 			class rivals_encounter_heliRaid {};
 			class rivals_encounter_OccVsRivalsskirmish {};
+			class rivals_encounter_policeVsRivalsskirmish {};
 			
 			class rivals_addProgressToRivalsLocationReveal {};
 			class rivals_revealLocation {};
