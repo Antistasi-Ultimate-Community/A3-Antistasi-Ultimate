@@ -17,6 +17,8 @@ private _vest = selectRandomWeighted (A3A_rebelGear get "ArmoredVests");
 if (_vest == "") then { _vest = selectRandomWeighted (A3A_rebelGear get "CivilianVests") };
 petros addVest _vest;
 [petros, "Rifles"] call A3A_fnc_randomRifle;
+[petros, "Handguns"] call A3A_fnc_randomHandgun;
+
 petros selectWeapon (primaryWeapon petros);
 
 if (petros == leader group petros) then {
@@ -96,5 +98,6 @@ petros addMPEventHandler ["mpkilled",
 }];
 
 [] spawn {sleep 120; petros allowDamage true;};
+[petros] call A3A_fnc_unitAmbient; // adds ambient sounds and animations to petros
 
 Info("initPetros completed");

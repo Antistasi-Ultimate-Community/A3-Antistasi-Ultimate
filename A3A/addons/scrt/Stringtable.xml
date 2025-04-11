@@ -21,6 +21,7 @@
                 <Russian>Бочка с топливом</Russian>
                 <Korean>연료통 (드럼통)</Korean>
                 <French>Fût de carburant</French>
+                <Chinesesimp>油桶</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_light">
                 <Original>Light</Original>
@@ -41,24 +42,28 @@
                 <Russian>Медицинская палатка</Russian>
                 <Korean>의료텐트</Korean>
                 <French>Tente médicale</French>
+                <Chinesesimp>医疗帐篷</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_ammo_station">
                 <Original>Ammo Station</Original>
                 <Russian>Пункт боепитания</Russian>
                 <Korean>탄약고</Korean>
                 <French>Station de munitions</French>
+                <Chinesesimp>弹药箱</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_repair_station">
                 <Original>Repair Station</Original>
                 <Russian>Пункт ремонта</Russian>
                 <Korean>수리소</Korean>
                 <French>Station de réparation</French>
+                <Chinesesimp>维修站</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_medical_box">
                 <Original>Medical Box</Original>
                 <Russian>Коробка с медициной</Russian>
                 <Korean>의료 상자</Korean>
                 <French>Boite médicale</French>
+                <Chinesesimp>医疗箱</Chinesesimp>
             </Key>
         </Container>
         <Container name="arsenal">
@@ -237,14 +242,20 @@
             <Key ID="STR_A3AP_setupFactionsTab_natoandldf">
                 <Original>North Atlantic Treaty Organization and Livonian Defense Force (NATO and LDF).\nAfter successful combined training in Livonia, tension between CSAT and NATO increased. LDF decided to let NATO build more bases to increase their chances if their eastern neighbor makes a move.</Original>
                 <Russian>Организация Североатлантического договора и Вооруженные Силы Ливонии (НАТО и ВСЛ).\После успешных совместных учений в Ливонии напряженность в отношениях между CSAT и НАТО возросла. Вооруженные силы Ливии решили позволить НАТО построить больше своих баз, чтобы увеличить свои шансы, если их восточный сосед начнёт действовать.</Russian>
+                <Chinesesimp>北大西洋公约组织和利沃尼亚国防军（NATO 和 LDF）。\n在利沃尼亚成功进行联合训练后，CSAT 和 NATO 之间的紧张局势加剧。LDF 决定让 NATO 建造更多基地，以增加其东部邻国采取行动的机会。</Chinesesimp>
+                <Korean>북대서양 조약 기구와 리보니아 방위군(NATO와 LDF).\n리보니아에서 성공적인 합동 훈련 이후, CSAT과 NATO 간의 긴장이 고조되었습니다. LDF는 '동쪽의 이웃'이 움직일 경우 기회를 늘리기 위해 NATO가 더 많은 기지를 건설하도록 결정했습니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_csatandaaf">
                 <Original>Canton Protocol Strategic Alliance Treaty and Altis Armed Forces (CSAT and AAF).\nAfter NATO forces took over Altis archipelago, AAF struck a deal with CSAT to return control of their islands, but at the cost of becoming their puppets and dragging their nation into the bigger conflict.</Original>
                 <Russian>Стратегический Альянс по Договору Гуанчжоу и Вооруженные силы Альтиса (CSAT и AAF).\После жестокой гражданской войны правительство Альтиса и армия остались в руинах. После переговоров с НАТО, AAF получат запрошенную поддержку, но ценой своей автономии.</Russian>
+                <Chinesesimp>《广州议定书》战略联盟条约和阿尔蒂斯武装部队 (CSAT 和 AAF)。\n在北约部队占领阿尔蒂斯群岛后，AAF 与 CSAT 达成协议，归还对其岛屿的控制权，但代价是成为 CSAT 的傀儡，并将他们的国家拖入更大的冲突。</Chinesesimp>
+                <Korean>광둥 의정서 전략 동맹 조약과 알티스군 (CSAT과 AAF).\nNATO군이 알티스 군도를 점령한 이후, AAF는 CSAT과 협정을 맺어 그들의 섬에 대한 통치권을 반환했지만, 그 대가로 그들의 꼭두각시가 되어 국가를 더 큰 분쟁에 끌어들이게 되었습니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_natoandaaf">
                 <Original>North Atlantic Treaty Organization and Altis Armed Forces (NATO and AAF).\nAfter a brutal civil war, Altis government and military were left in ruin. After negotiations with NATO, AAF will receive requested support, but at the cost of their autonomy.</Original>
                 <Russian>Организация Североатлантического договора и Вооруженные силы Альтиса (НАТО и AAF).\После жестокой гражданской войны правительство Альтиса и армия остались в руинах. После переговоров с НАТО, AAF получат запрошенную поддержку, но ценой своей автономии.</Russian>
+                <Chinesesimp>北大西洋公约组织和阿尔蒂斯武装部队（NATO 和 AAF）。\n在残酷的内战之后，阿尔蒂斯政府和军队一片废墟。与北约谈判后，AAF 将获得所要求的支持，但代价是其自治权。</Chinesesimp>
+                <Korean>북대서양 조약 기구와 알티스군 (NATO와 AAF).\n잔혹했던 내전 이후, 알티스 정부와 군대는 몰락했습니다. NATO와의 협상 후, AAF는 요청한 지원을 받게 되지만, 자율권을 희생해야 합니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_aaf_3cbf">
                 <Original>Altis Armed Forces (AAF).\nSmall, but highly motivated force which effectively uses a wide range of decomissioned and outdated yet still effective equipment from around the world.</Original>
@@ -256,10 +267,14 @@
             <Key ID="STR_A3AP_setupFactionsTab_natoanduna">
                 <Original>North Atlantic Treaty Organization and United Nations Agency (NATO and UNA).\nAfter a series of attacks on UN peacekeepers within the Sefrou-Ramal region, some of which were seemingly perpetrated by elements of the SFIA, it was agreed that a NATO task force would provide support to ensure the safety of aid workers and UN staff in the region.</Original>
                 <Russian>Организация Североатлантического договора и Учреждение Организации Объединенных Наций (НАТО и ООН).\После серии нападений на миротворцев ООН в регионе Сефру-Рамаль, некоторые из которых, по всей видимости, были совершены боевиками SFIA, было решено, что оперативная группа НАТО окажет поддержку в обеспечении безопасности гуманитарных работников и персонала ООН в регионе.</Russian>
+                <Chinesesimp>北大西洋公约组织和联合国机构 (NATO 和 UNA)。\n在塞夫鲁-拉马尔地区发生一系列针对联合国维和人员的袭击之后，其中一些袭击似乎是由 SFIA 的成员实施的，各方同意由北约特遣部队提供支持，以确保该地区援助工作者和联合国工作人员的安全。</Chinesesimp>
+                <Korean>북대서양 조약 기구와 유엔 기구 (NATO와 UNA).\n세프로-라말 지역 내 평화유지군에 대한 일련의 공격(일부는 SFIA의 일부가 저지른 것으로 추정) 이후, NATO의 태스크 포스가 해당 지역의 구호봉사자와 유엔 직원의 안전을 보장하기 위해 지원을 제공하기로 합의했습니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_csatandsfia">
                 <Original>Canton Protocol Strategic Alliance Treaty and Sefrawi Freedom and Independence Army (CSAT and SFIA).\nAfter recent attacks by Tura forces on SFIA military bases and increasing presence of NATO forces to oversee UN peacekeeping operations, a decision was made by the Arganan government to station CSAT forces in Sefrou-Ramal to bolster regional security.</Original>
                 <Russian>Стратегический Альянс по Договору Гуанчжоу и Армия свободы и независимости Сефрауи (CSAT и SFIA).\После недавних нападений сил Тура на военные базы SFIA и увеличения присутствия сил НАТО для наблюдения за миротворческими операциями ООН правительство Арганы приняло решение разместить силы CSAT в Сефру-Рамале для укрепления региональной безопасности.</Russian>
+                <Chinesesimp>《广州议定书》战略联盟条约和塞夫鲁拉马尔自由独立军 (CSAT 和 SFIA)。\n在图拉部队最近对 SFIA 军事基地发动袭击以及北约部队不断增加以监督联合国维和行动之后，阿尔加南政府决定在塞夫鲁拉马尔驻扎 CSAT 部队，以加强地区安全。</Chinesesimp>
+                <Korean>광둥 의정서 전략 동맹 조약과 세프라위 자유독립군 (CSAT과 SFIA).\n최근 투라군이 SFIA 군사 기지를 공격하고 유엔 평화 유지 활동을 감독하기 위해 NATO군이 증가함에 따라 아르가나 정부는 지역 안보를 강화하기 위해 세프로-라말에 CSAT군을 주둔시키기로 결정했습니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_tka">
                 <Original>Takistan Army (TKA).\nA mix of military and paramilitary forces using dated equipment from all around the world.</Original>
@@ -308,6 +323,7 @@
                 <Russian>Ополчение Ливонии.\nВосточноевропейское ополчение.</Russian>
                 <Korean>리보니아 민병대(LM).\n동유럽계 무장세력입니다.</Korean>
                 <French>Milice livonienne (LM).\nMilitants d'Europe de l'Est.</French>
+                <Chinesesimp>利沃尼亚民兵 (LM)。\n东欧武装分子。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ws_tura">
                 <Original>Tura.\nOne of the many militarized tribes of the Sefrawi Desert, almost like famous Turanic Raiders.</Original>
@@ -410,10 +426,14 @@
             <Key ID="STR_A3AP_setupFactionsTab_remnants">
                 <Original>Remnants.\nRemnants of the AAF forces sponsored by CSAT, who want to regain control of the islands.</Original>
                 <Russian>Remnants.\nRemnants - остатки сил AAF спонсируемые CSAT, желающие вернуть контроль над островами.</Russian>
+                <Chinesesimp>残余部队。\n 由 CSAT 赞助的 AAF 部队残余部队，他们想要重新控制这些岛屿。</Chinesesimp>
+                <Korean>잔당.\nCSAT이 배후에 있는 AAF군의 잔당으로, 섬에 대한 통치권을 되찾으려고 합니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_LRI">
                 <Original>Local Resistance Initiative.\nA resistance led by local civilians, using military surplus and basic gear from ebay.</Original>
                 <Russian>Инициатива местного сопротивления.\nСопротивление, возглавляемое местными гражданами, использующее военные излишки и базовое снаряжение с eBay.</Russian>
+                <Chinesesimp>当地抵抗倡议。\n由当地平民领导的抵抗运动，使用军用剩余物资和从 ebay 上购买的基本装备。</Chinesesimp>
+                <Korean>현지 저항 결의.\n지역 시민들이 주도하는 저항 세력으로, 군수품과 이베이에서 구입한 기본 장비를 활용합니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_exegermenos">
                 <Original>Exegerménos.\nStandard enemy guerilla faction.</Original>
@@ -425,6 +445,8 @@
             <Key ID="STR_A3AP_setupFactionsTab_separatistsCSLA">
                 <Original>Separatists.\nStandard enemy guerilla faction.</Original>
                 <Russian>Separatists.\nСтандартная вражеская повстанческая фракция.</Russian>
+                <Chinesesimp>分离主义者。\n标准敌方游击派系。</Chinesesimp>
+                <Korean>분리주의자.\n평범한 적 게릴라 팩션입니다.</Korean>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_le">
                 <Original>L'Ensemble.\nFormer Syndikat branch.</Original>
@@ -531,7 +553,7 @@
                 <Russian>Связка клавиш: </Russian>
                 <Chinesesimp>按键绑定: </Chinesesimp>
                 <Korean>키 설정: </Korean>
-                <French>Raccourcis clavier: </French>                
+                <French>Raccourcis clavier: </French>
             </Key>
             <Key ID="STR_magRepack_about">
                 <Original>Mag Repack: About</Original>
@@ -1265,6 +1287,8 @@
             </Key>
             <Key ID="STR_comms_mp_faction_return">
                 <Original>&lt;t size='0.6'&gt;&lt;t size='0.6' color='%1'&gt;%2&lt;/t&gt; forces on %3 have returned with help from an unknown force. Their support corridor will be re-opened and they will likely launch attacks on us!&lt;/t&gt;</Original>
+                <Chinesesimp>&lt;t size='0.6'&gt;&lt;t size='0.6' color='%1'&gt;%2&lt;/t&gt; %3 上的部队在未知力量的帮助下已经返回。他们的支援走廊将重新开放，他们可能会对我们发动攻击！&lt;/t&gt;</Chinesesimp>
+                <Korean>%3의 &lt;t size='0.6'&gt;&lt;t size='0.6' color='%1'&gt;%2&lt;/t&gt; 세력이 알려지지 않은 세력의 도움을 받고 돌아왔습니다. 그들은 지원 경로가 다시 열렸고 우리에게 공격을 가할 가능성이 큽니다!&lt;/t&gt;</Korean>
             </Key>
             <Key ID="STR_comms_mp_recon_prisoner_success">
                 <Original>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#988df7'&gt;Interrogated combatant&lt;/t&gt; shares approximate enemy positions.&lt;/t&gt;</Original>
@@ -1481,6 +1505,8 @@
             <Key ID="STR_end_mission_modUnautorized_desc">
                 <Original>An incompatible mod or incompatible set of supported mods installed on the server or your PC has been detected. To avoid problems the mission has ended. Please turn off unsupported (ASR AI, aLIVE, MCC or any AI behaviour) mods from your computer (and server when applicable) to be able to play Antistasi. See server .rpt log for more information.</Original>
                 <Russian>Обнаружен несовместимый мод или несовместимый набор модов, установленных на сервере или вашем компьютере. Во избежание проблем миссия завершена. Пожалуйста, отключите неподдерживаемые (ASR AI, aLIVE, MCC или другой мод, который влияет на поведение ИИ) моды на вашем компьютере (и сервере, если применимо), чтобы иметь возможность играть в Antistasi. Дополнительную информацию смотрите в журнале сервера .rpt.</Russian>
+                <Chinesesimp>检测到服务器或 PC 上安装了不兼容的模组或不兼容的支持模组集。为避免出现问题，任务已结束。请关闭计算机（和服务器，如果适用）上不受支持的模组（ASR AI、aLIVE、MCC 或任何 AI 行为），以便能够玩 Antistasi。有关更多信息，请参阅服务器 .rpt 日志。</Chinesesimp>
+                <Korean>서버나 PC에 설치된 호환되지 않는 모드 또는 호환되지 않는 지원 모드 세트가 감지되었습니다. 문제를 피하기 위해 미션이 종료되었습니다. 안티스타시를 플레이하려면 컴퓨터(또는 해당되는 경우 서버)에서 호환되지 않는(ASR AI, aLIVE, MCC 또는 모든 AI 행동) 모드를 끄십시오. 자세한 내용은 서버의 .rpt 파일의 로그를 참조하십시오.</Korean>
             </Key>
             <Key ID="STR_end_mission_noPvP_title">
                 <Original>PvP Disabled</Original>
@@ -1590,18 +1616,26 @@
             <Key ID="STR_end_mission_total_victory_generic_title">
                 <Original>T O T A L   V I C T O R Y</Original>
                 <Russian>О Б Щ И Й   П О Б Е Д А</Russian>
+                <Chinesesimp>全面胜利</Chinesesimp>
+                <Korean>전  체  적  승  리</Korean>
             </Key>
             <Key ID="STR_end_mission_economic_victory_generic_title">
                 <Original>E C O N O M I C   V I C T O R Y</Original>
                 <Russian>Э К О Н О М И Ч Е С К И Й   П О Б Е Д А</Russian>
+                <Chinesesimp>经济胜利</Chinesesimp>
+                <Korean>경  제  적  승  리</Korean>
             </Key>
             <Key ID="STR_end_mission_logistical_victory_generic_title">
                 <Original>L O G I S T I C A L   V I C T O R Y</Original>
                 <Russian>Л О Г И С Т И К А   П О Б Е Д А</Russian>
+                <Chinesesimp>后勤胜利</Chinesesimp>
+                <Korean>군  수  적  승  리</Korean>
             </Key>
             <Key ID="STR_end_mission_political_victory_generic_title">
                 <Original>P O L I T I C A L   V I C T O R Y</Original>
                 <Russian>П О Л И Т И Ч Е С К И Е   П О Б Е Д А</Russian>
+                <Chinesesimp>政治胜利</Chinesesimp>
+                <Korean>정  치  적  승  리</Korean>
             </Key>
             <Key ID="STR_end_mission_victory_subtitle">
                 <Original>Country is under our control!</Original>
@@ -1613,6 +1647,8 @@
             <Key ID="STR_end_mission_economic_victory_subtitle">
                 <Original>The required funds have been secured!</Original>
                 <Russian>Необходимые средства были обеспечены.!</Russian>
+                <Chinesesimp>所需资金已到位！</Chinesesimp>
+                <Korean>필요한 자금이 모두 확보되었습니다!</Korean>
             </Key>
             <Key ID="STR_end_mission_victory_desc">
                 <Original>The population of the country loves you!&lt;br/&gt;The brave soldiers have proven their valour, and Petros, the newly elected Prime Minister, can at last have a nice holiday. A well deserved rest and honor for all resistance soldiers too.</Original>
@@ -1625,21 +1661,29 @@
                 <Original>You have completely decimated your enemies!&lt;br/&gt;The brave soldiers have proven their valour, and Petros has been made the sole leader of the country!. You have shown your power and overwhelming strength in this region and deserve some well earned rest.</Original>
                 <English>You have completely decimated your enemies!&lt;br/&gt;The brave soldiers have proven their valour, and Petros has been made the sole leader of the country!. You have shown your power and overwhelming strength in this region and deserve some well earned rest.</English>
                 <Russian>Вы полностью уничтожили своих врагов!&lt;br/&gt;Храбрые солдаты доказали свою доблесть, и Петрос стал единоличным лидером страны! Вы продемонстрировали свою мощь в этом регионе и заслуживаете отдых.</Russian>
+                <Chinesesimp>你们彻底消灭了敌人！&lt;br/&gt;勇敢的士兵们已经证明了他们的英勇，而佩特罗斯已经成为这个国家的唯一领导人！你们已经在这个地区展示了你们的力量和压倒性的力量，你们应该好好休息一下。</Chinesesimp>
+                <Korean>당신은 적을 완전히 섬멸했습니다!&lt;br/&gt;용감한 군인들은 그들의 용맹함을 증명했고, 페트로스가 이 나라의 유일한 지도자가 되었습니다! 당신은 이 지역에서 당신의 힘과 압도적인 힘을 보여주었고, 마땅히 받아야 할 휴식을 받을 자격이 있습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_economic_victory_desc">
                 <Original>Your goals have been reached!&lt;br/&gt;After a long fight and struggle you have finally earned enough money to leave this region and live a comfortable life. Take a good rest, the plane is leaving in an hour.</Original>
                 <English>Your goals have been reached!&lt;br/&gt;After a long fight and struggle you have finally earned enough money to leave this region and live a comfortable life. Take a good rest, the plane is leaving in an hour.</English>
                 <Russian>Ваши цели достигнуты!&lt;br/&gt;После долгой борьбы, вы наконец заработали достаточно денег, чтобы покинуть этот регион и жить комфортной жизнью. Хорошенько отдохните, самолет вылетает через час.</Russian>
+                <Chinesesimp>你的目标已经实现了！&lt;br/&gt;经过长期的奋斗和奋斗，你终于赚到了足够的钱，可以离开这个地区，过上舒适的生活。好好休息吧，飞机一小时后就起飞。</Chinesesimp>
+                <Korean>당신의 목표가 달성되었습니다!&lt;br/&gt;긴 싸움과 투쟁 끝에 마침내 이 지역을 떠나 편안한 삶을 살 수 있을 만큼 돈을 벌었습니다. 충분히 쉬십시오. 비행기가 한 시간 후에 출발합니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_political_victory_desc">
                 <Original>Most of the population of this country loves you!&lt;br/&gt;Petros, the newly elected Prime Minister, has made some reforms and has gotten your enemies to back away from the conflict. &lt;br/&gt;Now you have some peace and quiet, but for how long?</Original>
                 <English>Most of the population of this country loves you!&lt;br/&gt;Petros, the newly elected Prime Minister, has made some reforms and has gotten your enemies to back away from the conflict. &lt;br/&gt;Now you have some peace and quiet, but for how long?</English>
                 <Russian>Большая часть населения страны любит вас!&lt;br/&gt;Петрос, избранный новым премьер-министром, провел несколько реформ и заставил ваших врагов отступить. &lt;br/&gt;На данный момент всё спокойно, но надолго ли?</Russian>
+                <Chinesesimp>这个国家的大多数人都爱你！&lt;br/&gt;新当选的总理佩特罗斯做出了一些改革，让你的敌人退出了冲突。&lt;br/&gt;现在你有一些平静，但是这种平静能持续多久呢？</Chinesesimp>
+                <Korean>이 나라 국민의 대부분이 당신을 사랑합니다!&lt;br/&gt;새로 선출된 총리 페트로스는 몇 가지 개혁을 단행했고 당신의 적들이 분쟁을 멈추게 했습니다.&lt;br/&gt;이제 당신은 평화와 고요함을 누리게 되었지만, 얼마나 지속될까요?</Korean>
             </Key>
             <Key ID="STR_end_mission_logistical_victory_desc">
                 <Original>You have successfully crippled your enemies!&lt;br/&gt;Their military bases and airports are now under your control, your enemies have backed away from the conflict and have closed their support corridors. Go have a rest soldier, you have earned it!</Original>
                 <English>You have successfully crippled your enemies!&lt;br/&gt;Their military bases and airports are now under your control, your enemies have backed away from the conflict and have closed their support corridors. Go have a rest soldier, you have earned it!</English>
                 <Russian>Вы успешно нанесли поражение своим врагам!&lt;br/&gt;Их военные базы и аэропорты теперь под вашим контролем, ваши враги отступили от конфликта и закрыли свои коридоры поддержки. &lt;br/&gt;Иди отдохни, солдат, ты это заслужил!</Russian>
+                <Chinesesimp>您已成功击溃敌人！&lt;br/&gt;他们的军事基地和机场现已被您控制，您的敌人已退出冲突并关闭了支援走廊。士兵们，去休息吧，这是您应得的！</Chinesesimp>
+                <Korean>당신은 성공적으로 적을 재기불능으로 만들었습니다!&lt;br/&gt;그들의 군사 기지와 공항은 이제 당신의 통제 하에 있고 당신의 적들은 분쟁을 멈추었으며 지원 통로를 닫았습니다. 이제 가서 휴식을 취하세요, 군인 여러분. 당신들은 그럴 자격이 있습니다!</Korean>
             </Key>
             <Key ID="STR_end_mission_defeat_title">
                 <Original>Country is Destroyed</Original>
@@ -1665,38 +1709,56 @@
             <Key ID="STR_end_mission_no_hr_defeat_title">
                 <Original>No Manpower Left</Original>
                 <Russian>Не осталось рабочей силы</Russian>
+                <Chinesesimp>人力不足</Chinesesimp>
+                <Korean>남은 인력 없음</Korean>
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_subtitle">
                 <Original>Manpower reserves have been depleted.</Original>
                 <Russian>Людские резервы исчерпаны.</Russian>
+                <Chinesesimp>人力储备已耗尽。</Chinesesimp>
+                <Korean>인력 보유량이 고갈되었습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_desc">
                 <Original>You have lost too much manpower, no one is left to fight for the cause.</Original>
                 <Russian>Вы потеряли слишком много живой силы, некому больше бороться за дело.</Russian>
+                <Chinesesimp>你们已经损失了太多人力，已经没有人能够为这个事业而奋斗了。</Chinesesimp>
+                <Korean>너무나 많은 병력을 잃었고, 이 대의를 위해 싸울 사람이 아무도 남지 않았습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_financial_defeat_title">
                 <Original>Money Reserves Depleted</Original>
                 <Russian>Денежные резервы исчерпаны</Russian>
+                <Chinesesimp>货币储备耗尽</Chinesesimp>
+                <Korean>예비 자금 고갈</Korean>
             </Key>
             <Key ID="STR_end_mission_financial_defeat_subtitle">
                 <Original>No money left in reserves.</Original>
                 <Russian>Денег в резервах не осталось.</Russian>
+                <Chinesesimp>储备金已所剩无几。</Chinesesimp>
+                <Korean>남은 예비 자금이 없습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_financial_defeat_desc">
                 <Original>You have used all of the money you had in your reserves, you cannot buy any more gear to complete your mission.</Original>
                 <Russian>Вы использовали все деньги, которые были в ваших резервах, вы не можете больше покупать снаряжение для выполнения своей миссии.</Russian>
+                <Chinesesimp>您已经用完了储备中的所有资金，无法再购买任何装备来完成您的任务。</Chinesesimp>
+                <Korean>당신은 예비 자금에 있던 돈을 모두 사용했기 때문에 임무를 완료하는 데 필요한 장비를 더 이상 구입할 수 없습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_title">
                 <Original>H A R D C O R E   D E F E A T</Original>
                 <Russian>Х А Р Д К О Р Н О Е   П О Р А Ж Е Н И Е</Russian>
+                <Chinesesimp>硬核失败</Chinesesimp>
+                <Korean>하드코어 패배</Korean>
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_subtitle">
                 <Original>Maybe you are not ready for this.</Original>
                 <Russian>Возможно, вы не готовы к этому.</Russian>
+                <Chinesesimp>也许你还没有做好准备。</Chinesesimp>
+                <Korean>아직 당신은 이에 대비하지 못했을 수도 있습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_desc">
                 <Original>you have tried to fight against all odds and yet you still failed. GG WP</Original>
                 <Russian>вы пытались бороться вопреки всему, но все равно потерпели неудачу. ГГ ВП</Russian>
+                <Chinesesimp>你尝试克服一切困难，但你仍然失败了。GG WP</Chinesesimp>
+                <Korean>당신은 모든 역경에 맞서 싸우려고 고군분투했지만 여전히 실패했습니다. GG 수고</Korean>
             </Key>
         </Container>
         <Container name="markers">
@@ -1710,6 +1772,8 @@
             <Key ID="STR_qrf_marker_heli">
                 <Original>HELI</Original>
                 <Russian>Вертолёт</Russian>
+                <Chinesesimp>直升机</Chinesesimp>
+                <Korean>헬기</Korean>
             </Key>
             <Key ID="STR_qrf_marker_apc">
                 <Original>APC</Original>
@@ -1742,18 +1806,26 @@
             <Key ID="STR_qrf_marker_artillery">
                 <Original>Artillery</Original>
                 <Russian>артиллерия</Russian>
+                <Chinesesimp>炮兵</Chinesesimp>
+                <Korean>야포</Korean>
             </Key>
             <Key ID="STR_qrf_marker_ifv">
                 <Original>IFV</Original>
                 <Russian>БМП</Russian>
+                <Chinesesimp>步兵战车</Chinesesimp>
+                <Korean>보병전투차</Korean>
             </Key>
             <Key ID="STR_qrf_marker_airborne">
                 <Original>Airborne</Original>
                 <Russian>воздушно-десантная техника</Russian>
+                <Chinesesimp>空降兵</Chinesesimp>
+                <Korean>공수장갑차</Korean>
             </Key>
             <Key ID="STR_qrf_marker_ugv">
                 <Original>UGV</Original>
                 <Russian>БПА</Russian>
+                <Chinesesimp>无人车</Chinesesimp>
+                <Korean>무인차</Korean>
             </Key>
             <Key ID="STR_qrf_marker_aa">
                 <Original>AA</Original>
@@ -1877,6 +1949,8 @@
             <Key ID="STR_marker_logistics_heli">
                 <Original>Logistics helicopter</Original>
                 <Russian>Вертолёт логистики</Russian>
+                <Chinesesimp>后勤直升机</Chinesesimp>
+                <Korean>군수 헬리콥터</Korean>
             </Key>
             <Key ID="STR_marker_qrf">
                 <Original>Quick Reaction Force</Original>
@@ -1958,6 +2032,8 @@
             <Key ID="STR_marker_civ_convoy">
                 <Original>Civilian convoy</Original>
                 <Russian>Конвой гражданских</Russian>
+                <Chinesesimp>平民车队</Chinesesimp>
+                <Korean>민간 호송대</Korean>
             </Key>
             <Key ID="STR_marker_convoy_objective">
                 <Original>Convoy Objective</Original>
@@ -1976,10 +2052,14 @@
             <Key ID="STR_marker_convoy_escort_vehicle">
                 <Original> Convoy Escort</Original>
                 <Russian> Конвой (эскорт)</Russian>
+                <Chinesesimp>车队护卫</Chinesesimp>
+                <Korean> 호송대 호위</Korean>
             </Key>
             <Key ID="STR_marker_convoy_lead_vehicle">
                 <Original> Convoy Lead</Original>
                 <Russian> Конвой (ведущий)</Russian>
+                <Chinesesimp>车队头车</Chinesesimp>
+                <Korean> 호송대 선두</Korean>
             </Key>
             <Key ID="STR_marker_mission_vehicle">
                 <Original>Mission Vehicle</Original>
@@ -2307,6 +2387,7 @@
             <Key ID="STR_chats_player_kia">
                 <Original>A player has been killed in action! (%1 HR)</Original>
                 <Russian>Игрок погиб в бою! (%1 HR)</Russian>
+                <Chinesesimp>一名玩家在战斗中阵亡！（%1 人力）</Chinesesimp>
             </Key>
         </Container>
         <Container name="cut_texts">
@@ -3021,10 +3102,10 @@
                 <Korean>연막탄 탄막 전개 시작. 도달 예정 시간 30초.</Korean>
                 <French>Lancement du barrage de fumigènes. Temps estimé à 30 secondes.</French>
             </Key>
-            <Key ID="STR_chats_barrage_smoke">
+            <!-- <Key ID="STR_chats_barrage_smoke">
                 <Original>Player killed in action.</Original>
                 <Russian>Солдат погиб в бою.</Russian>
-            </Key>
+            </Key> -->
             <Key ID="STR_chats_airdrop_pilot_smoke">
                 <Original>This is the pilot. I see your smoke in the drop zone. I'm about to paradrop my cargo on %1 position, please wait.</Original>
                 <Russian>Пилот на связи. Вижу дым в зоне высадки. Я скоро выброшу груз на парашюте на %1 позицию, ожидайте.</Russian>
@@ -3151,7 +3232,7 @@
                 <Russian>Истребитель-перехватчик уничтожен</Russian>
                 <Chinesesimp>战斗机被摧毁</Chinesesimp>
                 <Korean>전투기가 파괴되었습니다</Korean>
-                <French>Chasseur détruit</French>           
+                <French>Chasseur détruit</French>
             </Key>
             <Key ID="STR_notifiers_fighter_crew_killed">
                 <Original>Fighter crew killed</Original>
@@ -3240,10 +3321,14 @@
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital">
                 <Original>A %1 orbital QRF just dropped</Original>
                 <Russian>Орбитальный десант %1 приземлились</Russian>
+                <Chinesesimp>%1 轨道快反部队刚刚降落</Chinesesimp>
+                <Korean>%1의 궤도 신속대응군이 방금 착륙했습니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital_marker">
                 <Original>Orbital QRF</Original>
                 <Russian>Орибальный СБР</Russian>
+                <Chinesesimp>轨道快反部队</Chinesesimp>
+                <Korean>궤도 신속대응군</Korean>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_airstrike">
                 <Original>%1 is about to execute an airstrike</Original>
@@ -3399,6 +3484,26 @@
                 <Korean>건쉽 지역</Korean>
                 <French>Zone de tirs d'appui feu</French>
             </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAV">
+                <Original>A %1 recon UAV started circling the area</Original>
+                <Russian>БПЛА разведки %1 барражирует над локацией</Russian>
+                <Korean>%1의 정찰 무인기가 해당 지역을 배회하기 시작했습니다.</Korean>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAV_marker">
+                <Original>Recon UAV Area</Original>
+                <Russian>Зона действия БПЛА разведки</Russian>
+                <Korean>정찰 무인기 구역</Korean>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAVAttack">
+                <Original>A %1 attack UAV started circling the area</Original>
+                <Russian>Ударный БПЛА %1 барражирует над локацией</Russian>
+                <Korean>%1의 공격 무인기가 해당 지역을 배회하기 시작했습니다.</Korean>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_UAVAttack_marker">
+                <Original>Attack UAV Area</Original>
+                <Russian>Зона действия ударного БПЛА</Russian>
+                <Korean>공격 무인기 구역</Korean>
+            </Key>
             <Key ID="STR_notifiers_SUP_execute_generic">
                 <Original>%1 is executing %2 support now</Original>
                 <Russian>%1 оказывают %2 поддержку</Russian>
@@ -3529,8 +3634,13 @@
                 <Original>%1 is sending a spotting UAV</Original>
                 <Russian>%1 запускают разведывательный БПЛА</Russian>
                 <Chinesesimp>%1 派出侦察无人机</Chinesesimp>
-                <Korean>%1이(가) 감적무인기를 보내는 중입니다</Korean>
+                <Korean>%1이(가) 감적 무인기를 보내는 중입니다</Korean>
                 <French>%1 envoie un drone de repérage</French>
+            </Key>
+            <Key ID="STR_notifiers_SUP_setup_UAVAttack">
+                <Original>%1 is sending an attack UAV</Original>
+                <Russian>%1 запускают ударный БПЛА</Russian>
+                <Korean>%1이(가) 공격 무인기를 보내는 중입니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_SUP_setup_unknown">
                 <Original>%1 is setting up %2 support</Original>
@@ -3570,6 +3680,8 @@
             <Key ID="STR_notifiers_SUP_setup_QRFOrbital">
                 <Original>%1 just sent an orbital landing</Original>
                 <Russian>%1 отправили орбитальный десант</Russian>
+                <Chinesesimp>%1 刚刚完成轨道着陆</Chinesesimp>
+                <Korean>%1이(가) 방금 궤도강하를 보냈습니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_SUP_setup_wavedAttack">
                 <Original>%1 just sent a major attack wave</Original>
@@ -3982,6 +4094,8 @@
             <Key ID="STR_notifiers_skill_cancelled">
                 <Original>Price was not confirmed.</Original>
                 <Russian>Цена не была подтверждена.</Russian>
+                <Chinesesimp>价格尚未确认。</Chinesesimp>
+                <Korean>가격이 확인되지 않았습니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_disband_header">
                 <Original>Disband</Original>
@@ -4301,62 +4415,92 @@
             <Key ID="STR_A3AU_victory_condition_check">
                 <Original>Victory Condition check&lt;br/&gt;</Original>
                 <Russian>Проверка условий победы&lt;br/&gt;</Russian>
+                <Chinesesimp>胜利条件检查&lt;br/&gt;</Chinesesimp>
+                <Korean>승리 조건 확인&lt;br/&gt;</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_condition_not_met">
                 <Original>The selected victory condition requirements were not met.&lt;br/&gt;</Original>
                 <Russian>Выбранные условия победы не были выполнены.&lt;br/&gt;</Russian>
+                <Chinesesimp>所选的胜利条件要求未得到满足。&lt;br/&gt;</Chinesesimp>
+                <Korean>선택된 승리 조건 요구 사항을 충족하지 않았습니다.&lt;br/&gt;</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_type_normal">
                 <Original>Normal Victory</Original>
                 <Russian>Нормальная победа</Russian>
+                <Chinesesimp>一般胜利</Chinesesimp>
+                <Korean>보통 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_type_total">
                 <Original>Total Victory</Original>
                 <Russian>Полная победа</Russian>
+                <Chinesesimp>全面胜利</Chinesesimp>
+                <Korean>전체적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_type_economic">
                 <Original>Economic Victory</Original>
                 <Russian>Экономическая победа</Russian>
+                <Chinesesimp>经济胜利</Chinesesimp>
+                <Korean>경제적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_type_logistical">
                 <Original>Logistical Victory</Original>
                 <Russian>Логистическая победа</Russian>
+                <Chinesesimp>后勤胜利</Chinesesimp>
+                <Korean>군수적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_type_political">
                 <Original>Political Victory</Original>
                 <Russian>Политическая победа</Russian>
+                <Chinesesimp>政治胜利</Chinesesimp>
+                <Korean>정치적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_condition_missing_money">
                 <Original>&lt;br/&gt;Missing: %1 %2</Original>
                 <Russian>&lt;br/&gt;Отсутствующий: %1 %2</Russian>
+                <Chinesesimp>&lt;br/&gt;缺失：%1 %2</Chinesesimp>
+                <Korean>&lt;br/&gt;잃음: %1 %2</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_condition_missing_support">
                 <Original>&lt;br/&gt;Population Support&lt;br/&gt;Total: %1&lt;br/&gt;Government Support: %2&lt;br/&gt;Rebel Support: %3</Original>
                 <Russian>&lt;br/&gt;Поддержка населения&lt;br/&gt;Общий: %1&lt;br/&gt;Государственная поддержка: %2&lt;br/&gt;Поддержка повстанцев: %3</Russian>
+                <Chinesesimp>&lt;br/&gt;人口支持率&lt;br/&gt;总计：%1&lt;br/&gt;政府支持率：%2&lt;br/&gt;叛军支持率：%3</Chinesesimp>
+                <Korean>&lt;br/&gt;국민 지지율&lt;br/&gt;합계: %1&lt;br/&gt;정부 지지율: %2&lt;br/&gt;반군 지지율: %3</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_condition_total_victory_info">
                 <Original>&lt;br/&gt;Rebel Support: %1&lt;br/&gt;Government Support: %2&lt;br/&gt;Resources: %3 / %4&lt;br/&gt;Factories: %5 / %6&lt;br/&gt;Outposts: %7 / %8&lt;br/&gt;Seaports: %9 / %10&lt;br/&gt;Military Bases: %11 / %12&lt;br/&gt;Airports: %13 / %14</Original>
                 <Russian>&lt;br/&gt;Поддержка повстанцев: %1&lt;br/&gt;Государственная поддержка: %2&lt;br/&gt;Ресурсы: %3 / %4&lt;br/&gt;Заводы: %5 / %6&lt;br/&gt;Аванпосты: %7 / %8&lt;br/&gt;Морские порты: %9 / %10&lt;br/&gt;Военные базы: %11 / %12&lt;br/&gt;Аэропорты: %13 / %14</Russian>
+                <Chinesesimp>&lt;br/&gt;叛军支持：%1&lt;br/&gt;政府支持：%2&lt;br/&gt;资源：%3 / %4&lt;br/&gt;工厂：%5 / %6&lt;br/&gt;前哨：%7 / %8&lt;br/&gt;海港：%9 / %10&lt;br/&gt;军事基地：%11 / %12&lt;br/&gt;机场：%13 / %14</Chinesesimp>
+                <Korean>&lt;br/&gt;반군 지지율: %1&lt;br/&gt;정부 지지율: %2&lt;br/&gt;Resources: %3 / %4&lt;br/&gt;공장: %5 / %6&lt;br/&gt;전초 기지: %7 / %8&lt;br/&gt;항구: %9 / %10&lt;br/&gt;군사 기지: %11 / %12&lt;br/&gt;공항: %13 / %14</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_condition_normal_victory_info">
                 <Original>&lt;br/&gt;Rebel Support: %1&lt;br/&gt;Government Support: %2&lt;br/&gt;Military Bases: %3 / %4&lt;br/&gt;Airports: %5 / %6</Original>
                 <Russian>&lt;br/&gt;Поддержка повстанцев: %1&lt;br/&gt;Государственная поддержка: %2&lt;br/&gt;Военные базы: %3 / %4&lt;br/&gt;Аэропорты: %5 / %6</Russian>
+                <Chinesesimp>&lt;br/&gt;叛军支持：%1&lt;br/&gt;政府支持：%2&lt;br/&gt;军事基地：%3 / %4&lt;br/&gt;机场：%5 / %6</Chinesesimp>
+                <Korean>&lt;br/&gt;반군 지지율: %1&lt;br/&gt;정부 지지율: %2&lt;br/&gt;군사 기지: %3 / %4&lt;br/&gt;공항: %5 / %6</Korean>
             </Key>
             <Key ID="STR_A3AU_victory_condition_logistical_victory_info">
                 <Original>&lt;br/&gt;Seaports: %1 / %2&lt;br/&gt;Military Bases: %3 / %4&lt;br/&gt;Airports: %5 / %6</Original>
                 <Russian>&lt;br/&gt;Морские порты: %1 / %2&lt;br/&gt;Военные базы: %3 / %4&lt;br/&gt;Аэропорты: %5 / %6</Russian>
+                <Chinesesimp>&lt;br/&gt;海港：%1 / %2&lt;br/&gt;军事基地：%3 / %4&lt;br/&gt;机场：%5 / %6</Chinesesimp>
+                <Korean>&lt;br/&gt;항구: %1 / %2&lt;br/&gt;군사 기지: %3 / %4&lt;br/&gt;공항: %5 / %6</Korean>
             </Key>
             <Key ID="STR_A3AU_respawn_warning">
                 <Original>WARNING!</Original>
                 <Russian>ПРЕДУПРЕЖДЕНИЕ!</Russian>
+                <Chinesesimp>警告</Chinesesimp>
+                <Korean>경고!</Korean>
             </Key>
             <Key ID="STR_A3AU_respawn_warning_info">
                 <Original>%1 only has %2 Respawns left!</Original>
                 <Russian>У %1 осталось только %2 повторных появления!</Russian>
+                <Chinesesimp>%1 仅剩下 %2 次重生！</Chinesesimp>
+                <Korean>%1의 리스폰 횟수가 %2회 밖에 남지 않았습니다!</Korean>
             </Key>
             <Key ID="STR_A3AU_HR_warning_info">
                 <Original>%1 only has %2 HR left!</Original>
                 <Russian>У %1 осталось только %2 HR!</Russian>
+                <Chinesesimp>%1 仅剩下 %2 人力！</Chinesesimp>
+                <Korean>%1의 인력이 %2 밖에 남지 않았습니다!</Korean>
             </Key>
         </Container>
         <Container name="skip_time_rest">
@@ -4424,11 +4568,11 @@
                 <French>Tous les joueurs doivent se trouver dans un rayon de 100 m autour du QG pour pouvoir se reposer.</French>
             </Key>
             <Key ID="STR_params_rest">
-                <Original>You decided to rest for 8 hours...</Original>
-                <Russian>Вы решили отдохнуть 8 часов...</Russian>
-                <Chinesesimp>你决定摸鱼休息8小时...</Chinesesimp>
-                <Korean>당신은 8시간 동안 쉬기로 했습니다...</Korean>
-                <French>Vous avez décidé de vous reposer pendant 8 heures...</French>
+                <Original>You decided to rest for %1 hours...</Original>
+                <Russian>Вы решили отдохнуть %1 часов...</Russian>
+                <Chinesesimp>你决定摸鱼休息%1小时...</Chinesesimp>
+                <Korean>당신은 %1시간 동안 쉬기로 했습니다...</Korean>
+                <French>Vous avez décidé de vous reposer pendant %1 heures...</French>
             </Key>
             <Key ID="STR_params_time_to_go">
                 <Original>Time to go.</Original>
@@ -4768,12 +4912,14 @@
                 <Russian>Максимальное количество гражданских на сервере</Russian>
                 <Korean>서버 내 최대 민간인 수</Korean>
                 <French>Nombre maximal de civils sur le serveur</French>
+                <Chinesesimp>服务器上的最大平民数量</Chinesesimp>
             </Key>
             <Key ID="STR_params_civ_per_town">
                 <Original>Maximum civilians per town</Original>
                 <Russian>Максимальное количество гражданских на населенный пункт</Russian>
                 <Korean>마을 당 최대 민간인 수</Korean>
                 <French>Nombre maximum de civils par ville</French>
+                <Chinesesimp>每个城镇的最大平民数量</Chinesesimp>
             </Key>
             <Key ID="STR_params_civ_traffic_none">
                 <Original>None</Original>
@@ -4878,6 +5024,7 @@
                 <Russian>Разрешить разблокированную взрывчатку</Russian>
                 <Korean>폭발물 해금 허용</Korean>
                 <French>Autoriser les explosifs déverrouillés</French>
+                <Chinesesimp>允许解锁爆炸物</Chinesesimp>
             </Key>
             <Key ID="STR_params_startWithLongRangeRadio">
                 <Original>[TFAR] Start with Long Range Radio</Original>
@@ -4940,12 +5087,14 @@
                 <Russian>Порог активации сборщика мусора (в часах)</Russian>
                 <Korean>자동 쓰레기 청소에 대한 쓰레기 청소 프로그램 임계점 (시간)</Korean>
                 <French>Seuil de nettoyage des ordures pour le ramassage automatique des ordures (en heures)</French>
+                <Chinesesimp>垃圾清理器自动垃圾收集阈值（小时）</Chinesesimp>
             </Key>
             <Key ID="STR_params_revive_time">
                 <Original>Revive time for players (in seconds)</Original>
                 <Russian>Время до поднятия игрока на ноги (в секундах)</Russian>
                 <Korean>플레이어 소생 시간 (초)</Korean>
                 <French>Temps de réanimation des joueurs (en secondes)</French>
+                <Chinesesimp>玩家复活时间（秒）</Chinesesimp>
             </Key>
             <Key ID="STR_params_antistasi_plus">
                 <Original>ANTISTASI PLUS PARAMETERS</Original>
@@ -4957,6 +5106,8 @@
             <Key ID="STR_params_antistasi_scripts">
                 <Original>SCRIPTS</Original>
                 <Russian>СКРИПТЫ</Russian>
+                <Chinesesimp>脚本</Chinesesimp>
+                <Korean>스크립트</Korean>
             </Key>
             <Key ID="STR_params_timeMultiplier">
                 <Original>Time Multiplier</Original>
@@ -5040,12 +5191,14 @@
                 <Original>Enable Mag Repack?</Original>
                 <Russian>Включить Mag Repack?</Russian>
                 <Chinesesimp>启用Mag Repack？</Chinesesimp>
-                <Korean>탄약 재포장을 활성화합니까?</Korean>
+                <Korean>탄창 재포장을 활성화합니까?</Korean>
                 <French>Activer le reconditionnement des chargeurs?</French>
             </Key>
             <Key ID="STR_params_ReloadRepackTurretMagazines">
                 <Original>Enable Turret Magazine Repacking?</Original>
                 <Russian>Включить Turret Magazine Repacking?</Russian>
+                <Chinesesimp>启用炮塔弹匣整理？</Chinesesimp>
+                <Korean>포탑 탄창 재포장을 활성화합니까?</Korean>
             </Key>
             <Key ID="STR_params_playerIcons">
                 <Original>Show 3D icons above unconscious players?</Original>
@@ -5099,6 +5252,8 @@
             <Key ID="STR_params_enable_HR_cap">
                 <Original>Enable HR cap</Original>
                 <Russian>Начальные людские ресурсы</Russian>
+                <Chinesesimp>启用人力上限</Chinesesimp>
+                <Korean>인력 한도 활성화</Korean>
             </Key>
             <Key ID="STR_params_newCarTowing">
                 <Original>Improved towing of wheeled vehicles</Original>
@@ -5135,7 +5290,21 @@
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
                 <French>Autoriser les joueurs à recruter l'IA</French>
             </Key>
-	    <Key ID="STR_params_recruitToPlayerSquad">
+            <Key ID="STR_params_enableVehicleAutoLock">
+                <Original>Enable Enemy Vehicle Locks</Original>
+                <Russian>Включить замки на вражеских машинах</Russian>
+                <Chinesesimp>启用敌方车辆锁</Chinesesimp>
+                <Korean>적 차량 잠금 장치 활성화</Korean>
+                <French>Activer les verrous des véhicules ennemis</French>
+            </Key>
+            <Key ID="STR_params_vehicleLockpickTime">
+                <Original>Amount of time in seconds to lockpick a vehicle</Original>
+                <Russian>Время в секундах для взлома автомобиля</Russian>
+                <French>Temps en secondes pour crocheter un véhicule</French>
+                <Korean>차량의 자물쇠를 따는 데 걸리는 시간(초)</Korean>
+                <Chineseimp>撬锁车辆所需的时间（秒）</Chineseimp>
+            </Key>
+            <Key ID="STR_params_recruitToPlayerSquad">
                 <Original>Allow players to recruit enemy AI to their squad</Original>
                 <Russian>Позволить игрокам нанимать вражеский ИИ в свой отряд</Russian>
                 <Chinesesimp>允许玩家招募敌方 AI 加入他们的小队</Chinesesimp>
@@ -5275,23 +5444,46 @@
                 <Korean>지원 설정</Korean>
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
+            <Key ID="STR_params_allowCivDialog">
+                <Original>[Experimental] Allow talking to civilians</Original>
+                <Russian>[Экспериментально] Разрешить разговоры с гражданскими</Russian>
+                <German>[Experimentell] Gespräche mit Zivilisten erlauben</German>
+                <Italian>[Sperimentale] Permetti di parlare con i civili</Italian>
+                <Spanish>[Experimental] Permitir hablar con civiles</Spanish>
+                <French>[Expérimental] Autoriser les conversations avec les civils</French>
+                <Korean>[실험적] 민간인과 대화 허용</Korean>
+                <Japanese>[試験的] 民間人との会話を許可</Japanese>
+                <Chinesesimp>[实验性] 允许与平民交谈</Chinesesimp>
+                <Chinese>[實驗性] 允許與平民交談</Chinese>
+                <Polish>[Eksperymentalne] Zezwól na rozmowy z cywilami</Polish>
+                <Czech>[Experimentální] Povolit rozhovory s civilisty</Czech>
+                <Portuguese>[Experimental] Permitir conversas com civis</Portuguese>
+                <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
+            </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
                 <Original>[Experimental] Ignore Black Market Vehicle Requirements</Original>
                 <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
+                <Korean>[실험적] 암시장 차량 요구사항 무시</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle">
                 <Original>[Experimental] Black Market Vehicle Discount</Original>
+                <Korean>[실험적] 암시장 차량 할인</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
                 <Original>[Experimental] Black Market Equipment Discount</Original>
+                <Korean>[실험적] 암시장 장비 할인</Korean>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
-                <Russian>[Experimental] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
+                <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
+                <Chinesesimp>[实验] 启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
+                <Korean>[실험적] 스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
                 <Russian>Выключить скрипт для автоматического отбрасываения дымов (помогает с производительностью)</Russian>
+                <Chinesesimp>禁用自动烟雾覆盖脚本（有助于提高性能）</Chinesesimp>
+                <Korean>자동 연막 숨기 스크립트 비활성화 (성능 향상에 도움)</Korean>
             </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
@@ -5317,6 +5509,8 @@
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>[Experimental] Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>[Экспериментально] Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
+                <Chinesesimp>[实验] 允许敌人使用未来主义的不公平支持</Chinesesimp>
+                <Korean>[실험적] 적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
             </Key>
             <Key ID="STR_params_CrateOptions">
                 <Original>LOOT CRATE SETTINGS</Original>
@@ -5532,11 +5726,13 @@
                 <Original>Loot crate price</Original>
                 <Korean>전리품 상자 가격</Korean>
                 <French>Prix de la caisse de butin</French>
+                <Chinesesimp>战利品箱价格</Chinesesimp>
             </Key>
             <Key ID="STR_params_lootCrateUnlockedItems">
                 <Original>Loot crate ignore unlocked items</Original>
                 <Korean>전리품 상자가 해금된 아이템 무시</Korean>
                 <French>La caisse de butin ignore les objets débloqués</French>
+                <Chinesesimp>战利品箱忽略已解锁的物品</Chinesesimp>
             </Key>
             <Key ID="STR_params_spawnDistance">
                 <Original>Enemy spawn distance</Original>
@@ -5565,6 +5761,13 @@
                 <Chinesesimp>玩家被视为AFK之前的时间（以分钟为单位）</Chinesesimp>
                 <Korean>플레이어가 잠수로 간주될 때까지의 시간 (분)</Korean>
                 <French>Temps avant qu'un joueur soit considéré comme AFK (en minutes)</French>
+            </Key>
+            <Key ID="STR_params_afk_uav">
+                <Original>[Experimental] Should player be considered AFK while controlling a UAV?</Original>
+                <Russian>[Экспериментально] Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
+                <Chinesesimp>[实验]玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
+                <Korean>[실험용] UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
+                <French>[Expérimental] Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
             </Key>
             <Key ID="STR_params_afk_disabled">
                 <Original>Disabled</Original>
@@ -5617,9 +5820,13 @@
             </Key>
             <Key ID="STR_params_builder_header">
                 <Original>BUILDER BOX OPTIONS</Original>
+                <Chinesesimp>建筑箱设置</Chinesesimp>
+                <Korean>건설 상자 설정</Korean>
             </Key>
             <Key ID="STR_params_experimental_header">
                 <Original>EXPERIMENTAL OPTIONS</Original>
+                <Chinesesimp>实验选项</Chinesesimp>
+                <Korean>실험적 설정</Korean>
             </Key>
             <Key ID="STR_params_balance_header">
                 <Original>BALANCE OPTIONS</Original>
@@ -5875,13 +6082,17 @@
                 <Korean>당신은 소총수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;소총수는 운반량에 25%의 보너스가 있지만, 움직일 때 발견되기 더 쉽고 더 많은 소음을 냅니다.</Korean>
                 <French>Vous avez choisi un rôle de Fusilier.&lt;br/&gt;&lt;br/&gt;Les Fusiliers ont un bonus de 25% sur la capacité de transport mais sont faciles à repérer et font plus de bruit lorsqu'ils se déplacent.</French>
             </Key>
-			<Key ID="STR_role_grenadier">
+            <Key ID="STR_role_grenadier">
                 <Original>You have selected a Grenadier role.&lt;br/&gt;&lt;br/&gt;Grenadiers have a slight bonus on carry capacity, but are easy to spot.</Original>
                 <Russian>Вы выбрали роль Стрелка ГП.&lt;br/&gt;&lt;br/&gt;Стрелок ГП имеет небольшой бонус к переносимому весу, но является более заметным.</Russian>
+                <Chinesesimp>您选择了掷弹兵角色。&lt;br/&gt;&lt;br/&gt;掷弹兵在携带能力上有轻微的加成，但很容易被发现。</Chinesesimp>
+                <Korean>당신은 유탄수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;유탄수는 운반 용량에 약간의 보너스가 주어지지만 발견되기 쉽습니다.</Korean>
             </Key>
-			<Key ID="STR_role_autorifleman">
+            <Key ID="STR_role_autorifleman">
                 <Original>You have selected an Autorifleman role.&lt;br/&gt;&lt;br/&gt;Autoriflemen have a slight bonus on carry capacity, but make more noise when they move.</Original>
                 <Russian>Вы выбрали роль Пулеметчика.&lt;br/&gt;&lt;br/&gt;Пулеметчик имеет небольшой бонус к переносимому весу, но сильнее шумит при движении.</Russian>
+                <Chinesesimp>您选择了自动步枪兵角色。&lt;br/&gt;&lt;br/&gt;自动步枪兵在携带能力上有轻微的加成，但是移动时会发出更大的噪音。</Chinesesimp>
+                <Korean>당신은 자동소총수 역할을 선택했습니다,&lt;br/&gt;&lt;br/&gt;자동소총수는 운반 용량에 약간의 보너스가 주어지지만 이동할 때 소음이 더 큽니다.</Korean>
             </Key>
             <Key ID="STR_role_engineer">
                 <Original>You have selected a Engineer role.&lt;br/&gt;&lt;br/&gt;Engineers do not have any bonus or penalties, but have the ability to use repair Kits for vehicle repair and can hack UAV drones.</Original>
@@ -5998,6 +6209,7 @@
                 <Russian>Штаб</Russian>
                 <Korean>당신의 본부</Korean>
                 <French>Votre QG</French>
+                <Chinesesimp>你的总部</Chinesesimp>
             </Key>
         </Container>
         <Container name="system_chats">
@@ -6120,12 +6332,14 @@
                 <Russian>Вы не можете оставаться под прикрытием, если:&lt;br/&gt;&lt;br/&gt; у вас есть какое-либо видимое оружие&lt;br/&gt;Вы в бронежилете или разгрузке&lt;br/&gt;Вы в каске&lt;br/&gt;Вы носите ПНВ&lt;br/&gt;Вы в военной форме!</Russian>
                 <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!</Korean>
                 <French>Vous ne pouvez pas rester sous couverture si:&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez un gilet&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des JVN&lt;br/&gt;Vous portez un uniforme militaire!</French>
+                <Chinesesimp>在下列情况下您无法保持伪装状态：&lt;br/&gt;&lt;br/&gt;武器可见&lt;br/&gt;穿着背心&lt;br/&gt;戴着头盔&lt;br/&gt;戴着夜视镜&lt;br/&gt;穿着军装！</Chinesesimp>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_mil_items_2">
                 <Original>You can't stay Undercover while:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a military uniform&lt;br/&gt;Enemy have added you to Wanted list!</Original>
                 <Russian>Вы не можете оставаться под прикрытием, если:&lt;br/&gt;&lt;br/&gt; у вас есть какое-либо видимое оружие&lt;br/&gt;Вы в бронежилете или разгрузке&lt;br/&gt;Вы в каске&lt;br/&gt;Вы носите ПНВ&lt;br/&gt;Вы в военной форме&lt;br/&gt;Враг добавил вас в список разыскиваемых лиц!</Russian>
                 <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
                 <French>Vous ne pouvez pas rester sous couverture si:&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez un gilet&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des JVN&lt;br/&gt;Vous portez un uniforme militaire&lt;br/&gt;L'ennemi vous a ajouté à la liste des personnes recherchées!</French>
+                <Chinesesimp>以下情况下您无法保持伪装状态：&lt;br/&gt;&lt;br/&gt;武器可见&lt;br/&gt;穿着背心&lt;br/&gt;戴着头盔&lt;br/&gt;戴着夜视镜&lt;br/&gt;穿着军装&lt;br/&gt;敌人已将您添加到通缉名单中！</Chinesesimp>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_mil_carry">
                 <Original>You're looking very suspicious while carrying military-grade items, and the enemy has noticed it.</Original>
@@ -6153,12 +6367,14 @@
                 <Russian>Вы не можете оставаться под прикрытием пока к вашей технике прикреплен буксировочный трос!</Russian>
                 <Korean>견인 로프를 차량에 부착한 상태로 위장 상태에 있을 수 없습니다!</Korean>
                 <French>Vous ne pouvez pas être sous couverture lorsque des câbles de remorquage sont attachés à votre véhicule!</French>
+                <Chinesesimp>当牵引绳系在您的车辆上时，您无法伪装！</Chinesesimp>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_tow_ropes">
                 <Original>You can't be undercover and use tow ropes!</Original>
                 <Russian>Вы не можете оставаться под прикрытием пока у вас в руках буксировочный трос!</Russian>
                 <Korean>위장 상태에서 견인 로프를 사용할 수 없습니다!</Korean>
                 <French>On ne peut pas être sous couverture et utiliser des câbles de remorquage!</French>
+                <Chinesesimp>你不能伪装并使用牵引绳！</Chinesesimp>
             </Key>
         </Container>
         <Container name="info_bar">
@@ -6546,12 +6762,14 @@
                 <Russian>ПТ-специалист</Russian>
                 <Korean>대전차전문가</Korean>
                 <French>AT Spécialiste</French>
+                <Chinesesimp>反坦克专家</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_aa_title">
                 <Original>AA Specialist</Original>
                 <Russian>Оператор ПЗРК</Russian>
                 <Korean>대공전문가</Korean>
                 <French>AA Spécialiste</French>
+                <Chinesesimp>AA专家</Chinesesimp>
             </Key>
         </Container>
         <Container name="simple_menu_dialogs">
@@ -7194,12 +7412,14 @@
                 <Russian>Выгнать экипаж их техники</Russian>
                 <French>Déplace l'équipage du véhicule</French>
                 <Korean>차량 승무원 내보내기</Korean>
+                <Chinesesimp>移出车辆乘员</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_moveout_crew_tooltip">
                 <Original>Moves out crew from vehicle you're looking at.</Original>
                 <Russian>Выгоняет экипаж из техники на которую вы смотрите.</Russian>
                 <French>Déplace l'équipage du véhicule que vous regardez.</French>
                 <Korean>현재 보고 있는 차량의 승무원을 내보냅니다.</Korean>
+                <Chinesesimp>将人员从您正在查看的车辆中移出。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_arsenal_limits_title">
                 <Original>Arsenal Limits</Original>
@@ -7468,14 +7688,14 @@
                 <French>Mines AT</French>
             </Key>
             <Key ID="STR_commander_menu_fog_title">
-                <Original>Fog: %1</Original>
+                <Original>Fog Level: %1</Original>
                 <Russian>Туман: %1</Russian>
                 <Chinesesimp>雾：%1</Chinesesimp>
                 <Korean>안개: %1</Korean>
                 <French>Brouillard: %1</French>
             </Key>
             <Key ID="STR_commander_menu_fog_title_default">
-                <Original>Fog: 0.5</Original>
+                <Original>Fog Level: 0.5</Original>
                 <Russian>Туман: 0.5</Russian>
                 <Chinesesimp>雾：0.5</Chinesesimp>
                 <Korean>안개: 0.5</Korean>
@@ -7489,21 +7709,21 @@
                 <French>Accorde le niveau général du brouillard.</French>
             </Key>
             <Key ID="STR_commander_menu_fog_button">
-                <Original>SET FOG LEVEL</Original>
-                <Russian>ЗАДАТЬ УРОВЕНЬ ТУМАНА</Russian>
-                <Chinesesimp>设置雾级别</Chinesesimp>
-                <Korean>안개 레벨 설정</Korean>
-                <French>RÉGLAGE DU NIVEAU DE BROUILLARD</French>
+                <Original>Apply</Original>
+                <Russian>Применять</Russian>
+                <Chinesesimp>应用</Chinesesimp>
+                <Korean>적용하다</Korean>
+                <French>Appliquer</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_title">
-                <Original>Overcast: %1</Original>
+                <Original>Overcast Level: %1</Original>
                 <Russian>Облачность: %1</Russian>
                 <Chinesesimp>阴天：%1</Chinesesimp>
                 <Korean>날씨: %1</Korean>
                 <French>Couvert: %1</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_title_default">
-                <Original>Overcast: 0.5</Original>
+                <Original>Overcast Level: 0.5</Original>
                 <Russian>Облачность: 0.5</Russian>
                 <Chinesesimp>阴天：0.5</Chinesesimp>
                 <Korean>날씨: 0.5</Korean>
@@ -7517,11 +7737,39 @@
                 <French>Accorde le niveau général de la couverture nuageuse.</French>
             </Key>
             <Key ID="STR_commander_menu_overcast_button">
-                <Original>SET OVERCAST LEVEL</Original>
-                <Russian>ЗАДАТЬ УРОВЕНЬ ОБЛАЧНОСТИ</Russian>
-                <Chinesesimp>设置阴天水平</Chinesesimp>
-                <Korean>날씨 레벨 설정</Korean>
-                <French>DÉFINIR LE NIVEAU DE COUVERTURE</French>
+                <Original>Apply</Original>
+                <Russian>Применять</Russian>
+                <Chinesesimp>应用</Chinesesimp>
+                <Korean>적용하다</Korean>
+                <French>Appliquer</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title">
+                <Original>Rest for %1 %2</Original>
+                <Russian>Отдых для %1 %2</Russian>
+                <Chinesesimp>休息 %1 %2</Chinesesimp>
+                <Korean>%1 %2에 대한 휴식</Korean>
+                <French>Repos pour %1 %2</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title_default">
+                <Original>Rest for 6 %1</Original>
+                <Russian>Отдых на 6 %1</Russian>
+                <Chinesesimp>休息 6 %1</Chinesesimp>
+                <Korean>6 %1 휴식</Korean>
+                <French>Repos pour 6 %1</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_title_tooltip">
+                <Original>%1 to rest</Original>
+                <Russian>%1 для покоя</Russian>
+                <Chinesesimp>%1 到休息完毕</Chinesesimp>
+                <Korean>%1 휴식</Korean>
+                <French>%1 au repos</French>
+            </Key>
+            <Key ID="STR_commander_menu_wait_button">
+                <Original>Rest</Original>
+                <Russian>Отдых</Russian>
+                <Chinesesimp>休息</Chinesesimp>
+                <Korean>쉬다</Korean>
+                <French>Se reposer</French>
             </Key>
             <Key ID="STR_commander_menu_clear_forest_button">
                 <Original>CLEAR FOREST NEAR HQ</Original>
@@ -7694,23 +7942,27 @@
             <Key ID="STR_commander_menu_persistent_save_button_tooltip">
                 <Original>Use this option to save your current game. It does save the most important data in a ""Grand Theft Auto"" way.</Original>
                 <Russian>Используйте эту опцию, чтобы сохранить текущую игру. Сохраняются самые важные данные в стиле «Grand Theft Auto».</Russian>
-                <Chinesesimp>使用这个选项来保存你当前的游戏。 最重要的数据以“侠盗猎车手”的风格保存。</Chinesesimp>
                 <Korean>현재 게임을 저장하려면 이 옵션을 사용하십시오. ""GTA"" 방식으로 가장 중요한 데이터를 저장합니다.</Korean>
                 <French>Cette option permet de sauvegarder le jeu en cours. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
+                <Chinesesimp>使用此选项可保存当前游戏。它确实以“侠盗猎车手”的方式保存了最重要的数据。</Chinesesimp>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
+                <Chinesesimp>检查胜利</Chinesesimp>
+                <Korean>승리 확인</Korean>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button_tooltip">
                 <Original>Use this option to check if you have achieved the victory conditions and ends mission if you have.</Original>
                 <Russian>Используйте эту опцию, чтобы проверить, выполнили ли вы условия победы, и завершить миссию, если да.</Russian>
+                <Chinesesimp>使用此选项检查您是否已达到胜利条件，如果已达到则结束任务。</Chinesesimp>
+                <Korean>이 옵션을 사용하면 승리 조건을 달성했는지 확인할 수 있으며, 달성했다면 임무를 종료합니다.</Korean>
             </Key>
             <Key ID="STR_commander_menu_personal_save_button">
                 <Original>PERSONAL SAVE</Original>
                 <Russian>ЛИЧНОЕ СОХРАНЕНИЕ</Russian>
                 <Chinesesimp>个人存档</Chinesesimp>
-                <Korean>개인저장</Korean>
+                <Korean>개인 저장</Korean>
                 <French>SAUVEGARDE PERSONNELLE</French>
             </Key>
             <Key ID="STR_commander_menu_personal_save_button_tooltip">
@@ -8491,6 +8743,8 @@
             <Key ID="STR_trader_black_market_requirements">
                 <Original>Vehicle requirements can be found by clicking the notepad in the top right corner.</Original>
                 <Russian>Условия разблокировки можно найти, кликнув на иконку блокнота в правом верхнем углу</Russian>
+                <Chinesesimp>点击右上角的记事本即可找到车辆要求。</Chinesesimp>
+                <Korean>차량 요구사항은 오른쪽 상단 모서리에 있는 메모장을 클릭하여 확인할 수 있습니다.</Korean>
             </Key>
         </Container>
         <Container name="intel_actions">
@@ -8985,10 +9239,14 @@
             <Key ID="STR_RIV_ATT_transfer_header">
                 <Original>Prevent Invaders transfering valuable cargo to Rivals</Original>
                 <Russian>Предотвратите передачу  Захватчиками ценного груза Соперникам</Russian>
+                <Chinesesimp>防止入侵者将贵重货物转移给竞争对手</Chinesesimp>
+                <Korean>침략군들이 라이벌에게 귀중한 화물을 운송하는 걸 막기</Korean>
             </Key>
             <Key ID="STR_RIV_ATT_transfer_text">
                 <Original>We found out that the Invaders are going to transfer %1 valuable cargo at %2. Go there and stop the transfer. After the transmission is disrupted, %1 will stop conducting operations in this area. Do this before %3.</Original>
                 <Russian>Мы выяснили что Захватчики собираются передать %1 ценный груз в %2 идите туда и остановите передачу. После срыва передачи, %1 перестанут их проводить в этой зоне. Сделайте это до %3.</Russian>
+                <Chinesesimp>我们发现入侵者将在 %2 转移 %1 贵重货物。前往那里并阻止转移。传输中断后，%1 将停止在此区域开展行动。请在 %3 之前完成此操作。</Chinesesimp>
+                <Korean>우린 침략군이 %2에서 %1의 귀중한 화물을 운송할 것이라는 걸 알아냈습니다. 그 곳으로 가서 운송을 중지시키십시오. 운송이 중단되면 %1은(는) 이 지역에서 작업을 멈출 것입니다. %3 이전에 완료하십시오.</Korean>
             </Key>
             <Key ID="STR_trader_quest_header">
                 <Original>Find the Arms Dealer</Original>
@@ -9077,26 +9335,38 @@
             <Key ID="STR_CON_Outpost_resources_compet_task">
                 <Original>Resource Acquisition at the frontline</Original>
                 <Russian>Захват ресурсов на передовой</Russian>
+                <Chinesesimp>前线资源获取</Chinesesimp>
+                <Korean>최전선의 자원채취소 점령</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_resources_compet_desc">
                 <Original>A %1 would be a fine addition to our cause. Go there and capture it before %2. %3 Sent their troups as well</Original>
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2. %3 также отправила туда свои войска</Russian>
+                <Chinesesimp>%1 对我们的事业大有裨益。赶在 %2 之前占领那里。%3 也派出了他们的部队</Chinesesimp>
+                <Korean>%1은(는) 우리 대의의 훌륭한 부차적 자원이 될 것입니다. %2 이전에 그 곳으로 가서 점령하십시오. %3도 병력을 보냈습니다.</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_task">
                 <Original>Destroy Roadblock at the frontline</Original>
                 <Russian>Уничтожьте блокпост на передовой</Russian>
+                <Chinesesimp>摧毁前线的路障</Chinesesimp>
+                <Korean>최전선의 로드블록 파괴</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_desc">
                 <Original>A %1 interferes with our operations in the area. Go there and destroy it before %2. %3 Sent their troups as well</Original>
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
+                <Chinesesimp>%1 干扰了我们在该地区的行动。赶快去那里并在 %2 之前将其摧毁。%3 也派出了他们的部队</Chinesesimp>
+                <Korean>%1이(가) 해당 지역에서 우리의 작전을 방해합니다. %2 이전에 가서 파괴하십시오. %3도 병력을 보냈습니다.</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_task">
                 <Original>Frontline Struggle</Original>
                 <Russian>Борьба на передовой</Russian>
+                <Chinesesimp>前线斗争</Chinesesimp>
+                <Korean>최전선에서의 투쟁</Korean>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_desc">
                 <Original>A %1 is disturbing our operations in the area. Go there and capture it before %2. %3 Sent their troups as well</Original>
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
+                <Chinesesimp>%1 正在干扰我们在该地区的行动。赶在 %2 之前前往占领该地区。%3 也派出了他们的部队</Chinesesimp>
+                <Korean>%1이(가) 해당 지역에서 우리의 작전을 방해하고 있습니다. %2 이전에 그 곳으로 가서 점령하십시오. %3도 병력을 보냈습니다.</Korean>
             </Key>
             <Key ID="STR_CON_MilAdmin_task">
                 <Original>Seize Administration</Original>
@@ -9198,15 +9468,23 @@
             </Key>
             <Key ID="STR_A3A_Missions_AS_Smasher_task_header">
                 <Original>Kill the Mutant</Original>
+                <Chinesesimp>杀死变种人</Chinesesimp>
+                <Korean>돌연변이 사살</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Smasher_task_desc">
                 <Original>Reports from unknown sources suggest %1 Special Forces have engaged a rare Mutant in %2. Kill the Mutant before it causes major issues. Do this before %3. We don't know where this fight is happening.</Original>
+                <Chinesesimp>来自未知来源的报告表明 %1 特种部队在 %2 与一名罕见的变种人交战。在变种人造成重大问题之前将其杀死。在 %3 之前完成此操作。我们不知道这场战斗发生在哪里。</Chinesesimp>
+                <Korean>알 수 없는 출처의 보고에 따르면 %1의 특수부대가 %2에서 희귀한 돌연변이와 교전했다고 합니다. 중대한 문제가 발생하기 전에 돌연변이를 죽이십시오. %3 이전에 완료하십시오. 이 전투가 어디서 일어나는지 알 수 없습니다.</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Zombies_task_header">
                 <Original>Stop City Infestation</Original>
+                <Chinesesimp>阻止城市侵扰</Chinesesimp>
+                <Korean>도시 감염 방호</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Zombies_task_desc">
                 <Original>%1 is in danger of becoming infested. If it falls, nobody will be able to live there in future. This will have permanent consequences, so we need to act quickly. Save %1 from infestation... Do this before %2.</Original>
+                <Chinesesimp>%1 有被感染的危险。如果它倒塌，以后就没有人能住在那里了。这将产生永久性的后果，所以我们需要迅速采取行动。拯救 %1 免受感染... 在 %2 之前完成这件事。</Chinesesimp>
+                <Korean>%1은(는) 감염될 위험이 있습니다. 만약 뚫린다면 앞으로 아무도 그 곳에서 살 수 없을 것입니다. 이것은 영구적인 결과를 가져올 것이므로 재빨리 행동해야 합니다. %1을(를) 감염으로부터 구하십시오... %2 이전에 완료하십시오.</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_AS_RIV_Traitor_task_header">
                 <Original>Eliminate the Defector</Original>
@@ -9477,14 +9755,20 @@
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_header">
                 <Original>Reconnaissance Vehicle Crash Site</Original>
                 <Russian>Направляйтесь на предпологаемое место крушения</Russian>
+                <Chinesesimp>侦察坠毁现场</Chinesesimp>
+                <Korean>정찰 차량 파괴 현장</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_desc">
                 <Original>%1s' reconnaissance vehicle sent a distress signal. The vehicles trajectory suggests that the crash is expected to happen at %2. Collect the data and bring it back to HQ before the enemy recovery team. We must get it before %3. Enemy frontline troops are on their way to recover the data.</Original>
                 <Russian>Транспорт %1 c разведданными был подбит в %2. Соберите их и доставьте в штаб до того как их заберёт вражеская эвакуационная команда. Мы должны сделать это %3. Вражеские передовые отряды уже в пути.</Russian>
+                <Chinesesimp>%1s 的侦察机发出求救信号。车辆轨迹表明坠机预计发生在 %2。收集数据并在敌方恢复小组到达之前将其带回总部。我们必须在 %3 之前拿到它。敌方前线部队正在前往恢复数据的途中。</Chinesesimp>
+                <Korean>%1의 정찰 차량이 구조 신호를 보냈습니다. 차량의 궤적을 보면 충돌은 %2에서 발생한 것으로 예상됩니다. 데이터를 수집하여 적의 구조팀보다 먼저 본부로 가져오십시오. %3 이전에 가져와야 합니다. 적의 최전선 부대가 데이터를 복구하기 위해 출발했습니다.</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_alt">
                 <Original>Deliver the crashsite data to the arms dealer. He will pay handsomely! Petros won't be too upset about it.</Original>
                 <Russian>Доставьте данные торговцу оружием. Он щедро за них заплатит (Петрос не сильно расстроится).</Russian>
+                <Chinesesimp>将坠机现场数据交给军火商。他会付给他丰厚的报酬！Petros 不会对此太难过。</Chinesesimp>
+                <Korean>충돌 현장 데이터를 암거래상에게 전달하십시오. 그는 후하게 대가를 쳐줄 겁니다! 페트로스는 별로 화내지 않을 것입니다.</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_SUPP_Supplies_task_header">
                 <Original>Deliver Supplies to %1</Original>
@@ -9556,14 +9840,17 @@
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
                 <French>Un groupe de prisonniers de guerre attend d'être exécuté à %1. Nous devons les sauver avant %2. Amenez-les au QG.</French>
             </Key>
-            </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_header">
-                <Original>Deserters Rescue</Original>
+                <Original>Rescue Deserters</Original>
                 <Russian>Спасите дезертиров</Russian>
+                <Chinesesimp>逃兵营救</Chinesesimp>
+                <Korean>탈영병 구조</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
                 <Original>A group of enemy deserters is hiding in %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
                 <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
+                <Chinesesimp>一群敌方逃兵躲藏在 %1，他们正在被敌方追捕。我们必须在 %2 之前救出他们。将他们带到总部。</Chinesesimp>
+                <Korean>탈주자 구조적의 탈영병 무리가 %1에 숨어 있고, 적 부대에게 쫓기고 있습니다. %2 이전에 구출해야 합니다. 본부로 데려오십시오.</Korean>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_header">
                 <Original>Rescue Prisoners</Original>
@@ -9777,7 +10064,7 @@
                 <Russian>Использовать набор восстановления боеспособности на %1</Russian>
                 <Chinesesimp>在 %1 上使用战备恢复工具包</Chinesesimp>
                 <Korean>%1 키로 전투 준비 복구 키트 사용</Korean>
-                <French>Utiliser le kit de récupération de l'état de préparation au combat sur %1</French>                
+                <French>Utiliser le kit de récupération de l'état de préparation au combat sur %1</French>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_revive_holdKey">
                 <Original>To Stand Up</Original>
@@ -9839,14 +10126,17 @@
                 <Original>&lt;br/&gt;Press H to Withstand.</Original>
                 <French>&lt;br/&gt;Appuyez sur H pour résister.</French>
                 <Korean>&lt;br/&gt;H키를 눌러 스스로 일어나십시오.</Korean>
+                <Chinesesimp>&lt;br/&gt;按 H 键站起。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_self_withstand_countdown">
                 <Original>Self-Revive Cooldown</Original>
                 <Korean>자가소생 쿨다운</Korean>
+                <Chinesesimp>自我复活冷却</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_self_withstand_ready">
                 <Original>Available</Original>
                 <Korean>준비됨</Korean>
+                <Chinesesimp>可用</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_common_access_vehicle_marker_text">
                 <Original>Access Vehicle Market</Original>
@@ -10383,12 +10673,29 @@
                 <French>Détruire la radio</French>
                 <Korean>라디오 파괴</Korean>
                 <Japanese>ラジオを破壊</Japanese>
-                <Chineseimp>摧毁收音机</Chineseimp>
                 <Chinese>摧毀收音機</Chinese>
                 <Polish>Zniszcz radio</Polish>
                 <Czech>Zničit rádio</Czech>
                 <Portuguese>Destruir rádio</Portuguese>
                 <Turkish>Radyoyu Yok Et</Turkish>
+                <Chinesesimp>摧毁无线电</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ">
+                <Original>Talk with Civilian</Original>
+                <English>Talk with Civilian</English>
+                <Russian>Поговорить с гражданским</Russian>
+                <German>Mit Zivilist sprechen</German>
+                <Italian>Parla con il civile</Italian>
+                <Spanish>Hablar con civil</Spanish>
+                <French>Parler avec le civil</French>
+                <Korean>민간인과 대화</Korean>
+                <Japanese>民間人と話す</Japanese>
+                <Chinesesimp>与平民交谈</Chinesesimp>
+                <Chinese>與平民交談</Chinese>
+                <Polish>Porozmawiaj z cywilem</Polish>
+                <Czech>Mluvit s civilistou</Czech>
+                <Portuguese>Falar com civil</Portuguese>
+                <Turkish>Sivil ile konuş</Turkish>
             </Key>
         </Container>
         <Container name="common_notifications">
@@ -10397,6 +10704,7 @@
                 <Russian>Управление ИИ уже было использовано, подождите %1 секунд.</Russian>
                 <Korean>인공지능 조종이 이미 사용되었습니다. %1초간 기다리십시오.</Korean>
                 <French>Le contrôle de l'IA a déjà été utilisé, attendez %1 secondes.</French>
+                <Chinesesimp>AI 控制已被使用，请等待 %1 秒。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_actions_common_notifications_money_found_title">
                 <Original>Money</Original>
@@ -10696,6 +11004,550 @@
                 <Korean>난 절대 내 조국을 배신하지 않을 것이다!</Korean>
                 <French>Je ne trahirai pas mon pays !</French>
             </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question1">
+                <Original>Have you seen anything unusual around here recently?</Original>
+                <Russian>Вы видели что-то необычное вокруг здесь недавно?</Russian>
+                <German>Haben Sie hier in letzter Zeit etwas Ungewöhnliches gesehen?</German>
+                <Italian>Hai visto qualcosa di strano qui intorno ultimamente?</Italian>
+                <Spanish>¿Has visto algo inusual por aquí últimamente?</Spanish>
+                <French>Avez-vous vu quelque chose d'inhabituel ici récemment ?</French>
+                <Korean>최근 이 주변에서 이상한 것을 보셨나요?</Korean>
+                <Japanese>最近、この辺りで何か異常なことを見ましたか？</Japanese>
+                <Chinesesimp>你最近在这里看到什么不寻常的事情了吗？</Chinesesimp>
+                <Chinese>你最近在這裡看到什麼不尋常的事情嗎？</Chinese>
+                <Polish>Czy widziałeś coś nietypowego w pobliżu ostatnio?</Polish>
+                <Czech>Viděl jste v poslední době něco neobvyklého tady?</Czech>
+                <Portuguese>Você viu algo incomum por aqui recentemente?</Portuguese>
+                <Turkish>Son zamanlarda burada tuhaf bir şey gördünüz mü?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question2">
+                <Original>Do you know of any important locations or people I should be aware of?</Original>
+                <Russian>Знаете ли вы о каких-либо важных местах или людях, о которых я должен знать?</Russian>
+                <German>Kennst du irgendwelche wichtigen Orte oder Personen, über die ich Bescheid wissen sollte?</German>
+                <Italian>Conosci luoghi o persone importanti di cui dovrei essere a conoscenza?</Italian>
+                <Spanish>¿Conoces lugares o personas importantes de los que deba estar al tanto?</Spanish>
+                <French>Connaissez-vous des lieux ou des personnes importants dont je devrais être au courant ?</French>
+                <Korean>알아야 할 중요한 장소나 사람을 아시나요?</Korean>
+                <Japanese>私が知っておくべき重要な場所や人物を知っていますか？</Japanese>
+                <Chinesesimp>你知道任何我应该了解的重要地点或人物吗？</Chinesesimp>
+                <Chinese>你知道任何我應該了解的重要地點或人物嗎？</Chinese>
+                <Polish>Czy znasz jakieś ważne miejsca lub osoby, o których powinienem wiedzieć?</Polish>
+                <Czech>Znám nějaká důležitá místa nebo osoby, o kterých bych měl vědět?</Czech>
+                <Portuguese>Você conhece algum local ou pessoa importante da qual eu deva saber?</Portuguese>
+                <Turkish>Bilmem gereken önemli yerler ya da kişiler var mı?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_question3">
+                <Original>Is there anyone around here who might be willing to share some useful information?</Original>
+                <Russian>Здесь есть кто-то, кто может быть готов поделиться полезной информацией?</Russian>
+                <German>Gibt es hier jemanden, der bereit ist, nützliche Informationen zu teilen?</German>
+                <Italian>C'è qualcuno qui intorno che potrebbe essere disposto a condividere informazioni utili?</Italian>
+                <Spanish>¿Hay alguien por aquí que esté dispuesto a compartir información útil?</Spanish>
+                <French>Y a-t-il quelqu'un ici qui pourrait être disposé à partager des informations utiles ?</French>
+                <Korean>이 주변에 유용한 정보를 공유할 의향이 있는 사람이 있나요?</Korean>
+                <Japanese>ここ周辺に有益な情報を共有する意志のある人はいますか？</Japanese>
+                <Chinesesimp>这里有谁愿意分享一些有用的信息吗？</Chinesesimp>
+                <Chinese>這裡有誰願意分享一些有用的信息嗎？</Chinese>
+                <Polish>Czy jest tutaj ktoś, kto mógłby być skłonny podzielić się przydatnymi informacjami?</Polish>
+                <Czech>Je zde někdo, kdo by mohl být ochoten sdílet užitečné informace?</Czech>
+                <Portuguese>Há alguém por aqui que possa estar disposto a compartilhar algumas informações úteis?</Portuguese>
+                <Turkish>Buralarda bazı faydalı bilgiler paylaşmaya istekli biri var mı?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_interruption1">
+                <Original>Hey, I thought you needed something... Never mind then.</Original>
+                <Russian>Эй, я думал, тебе что-то нужно... Ну, не важно.</Russian>
+                <German>Hey, ich dachte, du brauchst etwas... Schon gut, vergiss es.</German>
+                <Italian>Ehi, pensavo avessi bisogno di qualcosa... Lascia perdere allora.</Italian>
+                <Spanish>Oye, pensé que necesitabas algo... Da igual entonces.</Spanish>
+                <French>Hé, je pensais que tu avais besoin de quelque chose... Tant pis alors.</French>
+                <Korean>저기, 뭔가 필요한 줄 알았는데... 그럼 신경 쓰지 마세요.</Korean>
+                <Japanese>ねえ、何か必要だと思ってたけど…気にしないで。</Japanese>
+                <Chinesesimp>嘿，我以为你需要什么……算了。</Chinesesimp>
+                <Chinese>嘿，我以為你需要什麼……算了。</Chinese>
+                <Polish>Hej, myślałem, że czegoś potrzebujesz... Nieważne.</Polish>
+                <Czech>Hej, myslel jsem, že něco potřebuješ... Tak nic.</Czech>
+                <Portuguese>Ei, achei que você precisava de algo... Deixa pra lá então.</Portuguese>
+                <Turkish>Hey, bir şeye ihtiyacın var sanmıştım... Neyse, boş ver.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_interruption2">
+                <Original>Leaving already? Guess you didn’t need my help after all.</Original>
+                <Russian>Уже уходишь? Похоже, моя помощь тебе не понадобилась.</Russian>
+                <German>Gehst du schon? Anscheinend brauchst du meine Hilfe doch nicht.</German>
+                <Italian>Te ne vai già? Immagino che alla fine non avessi bisogno del mio aiuto.</Italian>
+                <Spanish>¿Ya te vas? Supongo que al final no necesitabas mi ayuda.</Spanish>
+                <French>Tu pars déjà ? Apparemment, tu n'avais pas besoin de mon aide finalement.</French>
+                <Korean>벌써 가시는 건가요? 결국 제 도움이 필요 없으셨나 봐요.</Korean>
+                <Japanese>もう行くの？結局、私の助けは必要なかったみたいだね。</Japanese>
+                <Chinesesimp>这么快就走了？看来你根本不需要我的帮助。</Chinesesimp>
+                <Chinese>這麼快就走了？看來你根本不需要我的幫助。</Chinese>
+                <Polish>Już wychodzisz? Chyba jednak nie potrzebowałeś mojej pomocy.</Polish>
+                <Czech>Už odcházíš? Asi jsi moji pomoc nakonec nepotřeboval.</Czech>
+                <Portuguese>Já vai embora? Acho que você não precisava da minha ajuda afinal.</Portuguese>
+                <Turkish>Şimdiden mi gidiyorsun? Demek ki yardımıma ihtiyacın yokmuş.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail1">
+                <Original>I'm sorry, but I can't help you. Please, try asking someone else.</Original>
+                <Russian>Извините, но я не могу вам помочь. Пожалуйста, попробуйте спросить кого-нибудь другого.</Russian>
+                <German>Es tut mir leid, aber ich kann Ihnen nicht helfen. Bitte versuchen Sie, jemand anderen zu fragen.</German>
+                <Italian>Mi dispiace, ma non posso aiutarti. Per favore, prova a chiedere a qualcun altro.</Italian>
+                <Spanish>Lo siento, pero no puedo ayudarte. Por favor, intenta preguntarle a otra persona.</Spanish>
+                <French>Je suis désolé, mais je ne peux pas vous aider. Veuillez essayer de demander à quelqu'un d'autre.</French>
+                <Korean>죄송하지만, 도와드릴 수 없습니다. 다른 사람에게 물어보세요.</Korean>
+                <Japanese>申し訳ありませんが、お力になれません。他の人に聞いてみてください。</Japanese>
+                <Chinesesimp>对不起，我无法帮忙。请尝试问其他人。</Chinesesimp>
+                <Chinese>對不起，我無法幫忙。請嘗試問其他人。</Chinese>
+                <Polish>Przepraszam, ale nie mogę ci pomóc. Spróbuj zapytać kogoś innego.</Polish>
+                <Czech>Omlouvám se, ale nemohu vám pomoci. Zkuste se zeptat někoho jiného.</Czech>
+                <Portuguese>Desculpe, mas não posso ajudar. Por favor, tente perguntar a outra pessoa.</Portuguese>
+                <Turkish>Üzgünüm, ama size yardımcı olamam. Lütfen başka birine sorunuz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail2">
+                <Original>I don't know anything about that. Maybe someone else can assist you.</Original>
+                <Russian>Я ничего об этом не знаю. Может быть, кто-то другой может вам помочь.</Russian>
+                <German>Ich weiß nichts darüber. Vielleicht kann Ihnen jemand anders helfen.</German>
+                <Italian>Non so nulla di questo. Forse qualcun altro può aiutarti.</Italian>
+                <Spanish>No sé nada de eso. Tal vez otra persona pueda ayudarte.</Spanish>
+                <French>Je ne sais rien à ce sujet. Peut-être que quelqu'un d'autre pourra vous aider.</French>
+                <Korean>그것에 대해서는 모르겠습니다. 아마 다른 사람이 도와줄 수 있을 겁니다.</Korean>
+                <Japanese>それについては何も知りません。別の誰かが助けてくれるかもしれません。</Japanese>
+                <Chinesesimp>我对此一无所知。也许其他人能帮助你。</Chinesesimp>
+                <Chinese>我對此一無所知。也許其他人能幫助你。</Chinese>
+                <Polish>Nic o tym nie wiem. Może ktoś inny ci pomoże.</Polish>
+                <Czech>Nic o tom nevím. Možná vám někdo jiný může pomoci.</Czech>
+                <Portuguese>Eu não sei nada sobre isso. Talvez outra pessoa possa ajudá-lo.</Portuguese>
+                <Turkish>Bunun hakkında hiçbir şey bilmiyorum. Belki başka biri size yardımcı olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail3">
+                <Original>Sorry, I really wish I could help, but I have no idea what you're talking about.</Original>
+                <Russian>Извините, я бы хотел помочь, но не имею ни малейшего представления, о чём вы говорите.</Russian>
+                <German>Entschuldigung, ich würde wirklich gerne helfen, aber ich habe keine Ahnung, wovon Sie sprechen.</German>
+                <Italian>Mi dispiace, vorrei davvero aiutarti, ma non ho idea di cosa stai dicendo.</Italian>
+                <Spanish>Lo siento, realmente desearía poder ayudarte, pero no tengo ni idea de lo que estás diciendo.</Spanish>
+                <French>Désolé, j'aimerais vraiment pouvoir vous aider, mais je n'ai aucune idée de ce dont vous parlez.</French>
+                <Korean>죄송하지만, 정말 도와주고 싶지만, 당신이 말하는 내용에 대해 전혀 알지 못합니다.</Korean>
+                <Japanese>申し訳ありませんが、助けてあげたいのですが、あなたが何を言っているのか全くわかりません。</Japanese>
+                <Chinesesimp>抱歉，我真的希望能帮忙，但我完全不知道你在说什么。</Chinesesimp>
+                <Chinese>抱歉，我真的希望能幫忙，但我完全不知道你在說什麼。</Chinese>
+                <Polish>Przepraszam, naprawdę chciałbym pomóc, ale nie mam pojęcia, o czym mówisz.</Polish>
+                <Czech>Omlouvám se, opravdu bych rád pomohl, ale nemám tušení, o čem mluvíte.</Czech>
+                <Portuguese>Desculpe, eu realmente gostaria de poder ajudar, mas não tenho ideia do que você está falando.</Portuguese>
+                <Turkish>Üzgünüm, gerçekten yardımcı olmak isterdim ama ne söylediğiniz hakkında hiçbir fikrim yok.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_notundercover1">
+                <Original>Are you crazy!? I’m not talking to you while you're dressed like that... The police will think I’m helping you rebels!</Original>
+                <Russian>Ты с ума сошёл!? Я не собираюсь с тобой разговаривать, пока ты одет так... Полиция подумает, что я помогаю вам, повстанцам!</Russian>
+                <German>Bist du verrückt!? Ich rede nicht mit dir, solange du so herumläufst... Die Polizei wird denken, dass ich euch Rebellen helfe!</German>
+                <Italian>Sei impazzito!? Non parlerò con te finché sei vestito così... La polizia penserà che sto aiutando voi ribelli!</Italian>
+                <Spanish>¿Estás loco!? No hablaré contigo mientras vistas así... ¡La policía pensará que estoy ayudando a ustedes, los rebeldes!</Spanish>
+                <French>Tu es fou!? Je ne te parlerai pas tant que tu es habillé comme ça... La police pensera que j'aide les rebelles!</French>
+                <Korean>미쳤어요!? 그런 옷차림으로는 절대 얘기하지 않을 거예요... 경찰이 나를 반군을 돕는다고 생각할 거예요!</Korean>
+                <Japanese>正気か!?そんな格好じゃ話せないよ… 警察に反乱軍の仲間だと思われるぞ!</Japanese>
+                <Chinesesimp>你疯了吗!?你穿成这样我才不会跟你说话……警察会以为我在帮你们叛军!</Chinesesimp>
+                <Chinese>你瘋了嗎!?你穿成這樣我才不會跟你說話……警察會以為我在幫你們叛軍!</Chinese>
+                <Polish>Oszalałeś!? Nie będę z tobą rozmawiać, dopóki tak wyglądasz... Policja pomyśli, że pomagam wam, rebeliantom!</Polish>
+                <Czech>Jsi blázen!? Nebudu s tebou mluvit, dokud vypadáš takhle... Policie si bude myslet, že pomáhám vám rebelům!</Czech>
+                <Portuguese>Você está louco!? Não vou falar com você enquanto estiver vestido assim... A polícia vai pensar que estou ajudando vocês, os rebeldes!</Portuguese>
+                <Turkish>Aklını mı kaçırdın!? Böyle giyinirken seninle konuşmam... Polis, isyancılara yardım ettiğimi düşünecek!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_notundercover2">
+                <Original>Are you trying to get me arrested!? Come back when you’re not drawing attention!</Original>
+                <Russian>Ты хочешь, чтобы меня арестовали!? Возвращайся, когда не будешь привлекать внимание!</Russian>
+                <German>Willst du, dass ich verhaftet werde!? Komm zurück, wenn du nicht mehr auffällst!</German>
+                <Italian>Vuoi farmi arrestare!? Torna quando non attirerai l'attenzione!</Italian>
+                <Spanish>¿Quieres que me arresten!? Vuelve cuando no llames la atención.</Spanish>
+                <French>Tu veux que je me fasse arrêter !? Reviens quand tu ne te feras pas remarquer !</French>
+                <Korean>날 체포하게 만들 셈이야!? 주목받지 않을 때 다시 와!</Korean>
+                <Japanese>俺を逮捕させる気か！？目立たなくなってから戻ってこい！</Japanese>
+                <Chinesesimp>你想让我被逮捕吗！？等你不那么引人注意时再来！</Chinesesimp>
+                <Chinese>你想讓我被逮捕嗎！？等你不那麼引人注意時再來！</Chinese>
+                <Polish>Chcesz, żebym został aresztowany!? Wróć, gdy nie będziesz zwracać na siebie uwagi!</Polish>
+                <Czech>Chceš, abych byl zatčen!? Vrať se, až nebudeš budit pozornost!</Czech>
+                <Portuguese>Você quer que eu seja preso!? Volte quando não estiver chamando atenção!</Portuguese>
+                <Turkish>Beni tutuklattırmaya mı çalışıyorsun!? Dikkat çekmediğinde geri gel!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1">
+                <Original>Hey! One of your rebel friends already talked to me! Leave me alone!</Original>
+                <Russian>Эй! Один из твоих повстанцев уже со мной разговаривал! Оставь меня в покое!</Russian>
+                <German>Hey! Einer deiner Rebellenfreunde hat schon mit mir gesprochen! Lass mich in Ruhe!</German>
+                <Italian>Ehi! Uno dei tuoi amici ribelli ha già parlato con me! Lasciami in pace!</Italian>
+                <Spanish>¡Eh! ¡Uno de tus amigos rebeldes ya habló conmigo! ¡Déjame en paz!</Spanish>
+                <French>Hé ! Un de tes amis rebelles m'a déjà parlé ! Laisse-moi tranquille !</French>
+                <Korean>이봐! 네 반란군 친구 중 하나가 이미 나랑 얘기했어! 나를 내버려 둬!</Korean>
+                <Japanese>おい！あなたの反乱者の友達の一人がもう俺と話した！放っておいてくれ！</Japanese>
+                <Chinesesimp>嘿！你的一位反叛朋友已经跟我说过话了！别打扰我！</Chinesesimp>
+                <Chinese>嘿！你的一位反叛朋友已經跟我說過話了！別打擾我！</Chinese>
+                <Polish>Ej! Jeden z twoich przyjaciół rebeliantów już ze mną rozmawiał! Zostaw mnie w spokoju!</Polish>
+                <Czech>Hej! Jeden z tvých rebelských přátel už se se mnou bavil! Nech mě na pokoji!</Czech>
+                <Portuguese>Ei! Um dos seus amigos rebeldes já falou comigo! Me deixe em paz!</Portuguese>
+                <Turkish>Hey! Senin isyancı arkadaşlarından biri zaten benimle konuştu! Beni rahat bırak!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_alreadyspoken2">
+                <Original>Haven't you heard? I already spoke to one of your Comrades.</Original>
+                <Russian>Ты разве не слышал? Я уже поговорил с одним из твоих товарищей.</Russian>
+                <German>Hast du es nicht gehört? Ich habe bereits mit einem deiner Kameraden gesprochen.</German>
+                <Italian>Non hai sentito? Ho già parlato con uno dei tuoi compagni.</Italian>
+                <Spanish>¿No lo has oído? Ya hablé con uno de tus camaradas.</Spanish>
+                <French>Tu n'as pas entendu ? J'ai déjà parlé à l'un de tes camarades.</French>
+                <Korean>못 들었어? 나는 이미 네 동료 중 한 명과 이야기했어.</Korean>
+                <Japanese>聞いてないのか？俺はもうお前の仲間の一人と話したぞ。</Japanese>
+                <Chinesesimp>你没听说吗？我已经和你们的一位同志谈过了。</Chinesesimp>
+                <Chinese>你沒聽說嗎？我已經和你們的一位同志談過了。</Chinese>
+                <Polish>Nie słyszałeś? Już rozmawiałem z jednym z twoich towarzyszy.</Polish>
+                <Czech>Neslyšel jsi? Už jsem mluvil s jedním z tvých soudruhů.</Czech>
+                <Portuguese>Você não ouviu? Já falei com um dos seus camaradas.</Portuguese>
+                <Turkish>Duyamadın mı? Zaten senin yoldaşlarından biriyle konuştum.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_ref1">
+                <Original>I know of a place where they hold people captive. If you're looking to help, I can tell you where it is.</Original>
+                <Russian>Я знаю место, где держат людей в плену. Если вы хотите помочь, я могу сказать, где оно находится.</Russian>
+                <German>Ich kenne einen Ort, an dem sie Menschen gefangen halten. Wenn du helfen willst, kann ich dir sagen, wo es ist.</German>
+                <Italian>Conosco un posto dove tengono le persone prigioniere. Se vuoi aiutare, posso dirti dove si trova.</Italian>
+                <Spanish>Conozco un lugar donde mantienen a las personas cautivas. Si quieres ayudar, te puedo decir dónde está.</Spanish>
+                <French>Je connais un endroit où ils gardent des gens captifs. Si vous voulez aider, je peux vous dire où il se trouve.</French>
+                <Korean>사람들을 억제하는 곳을 알고 있습니다. 도와주고 싶다면 어디인지 말해줄 수 있습니다.</Korean>
+                <Japanese>人々を捕らえている場所を知っています。助けたいなら、その場所を教えることができます。</Japanese>
+                <Chinesesimp>我知道一个地方，他们把人关押在那里。如果你想帮忙，我可以告诉你在哪里。</Chinesesimp>
+                <Chinese>我知道一個地方，他們把人關押在那裡。如果你想幫忙，我可以告訴你在哪裡。</Chinese>
+                <Polish>Znam miejsce, gdzie trzymają ludzi w niewoli. Jeśli chcesz pomóc, mogę ci powiedzieć, gdzie to jest.</Polish>
+                <Czech>Znam místo, kde drží lidi v zajetí. Pokud chcete pomoci, můžu vám říct, kde to je.</Czech>
+                <Portuguese>Conheço um lugar onde mantêm as pessoas em cativeiro. Se você quer ajudar, posso te dizer onde é.</Portuguese>
+                <Turkish>İnsanları esir tuttukları bir yer biliyorum. Yardım etmek istiyorsanız, nerede olduğunu söyleyebilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_ref2">
+                <Original>There's a spot where they keep prisoners. I’ve heard people talk about it. If you’re willing, you might be able to free them.</Original>
+                <Russian>Есть место, где держат заключенных. Я слышал, как люди о нем говорят. Если вы хотите, вы можете попытаться освободить их.</Russian>
+                <German>Es gibt einen Ort, an dem sie Gefangene halten. Ich habe gehört, wie die Leute darüber sprechen. Wenn du bereit bist, könntest du sie befreien.</German>
+                <Italian>C'è un posto dove tengono i prigionieri. Ho sentito parlare di questo posto. Se sei disposto, potresti essere in grado di liberarli.</Italian>
+                <Spanish>Hay un lugar donde mantienen a los prisioneros. He oído hablar de él. Si estás dispuesto, podrías liberarlos.</Spanish>
+                <French>Il y a un endroit où ils gardent les prisonniers. J'ai entendu parler de cet endroit. Si vous êtes disposé, vous pourriez les libérer.</French>
+                <Korean>그곳에는 죄수들을 가두는 곳이 있습니다. 사람들이 그것에 대해 이야기하는 걸 들었어요. 원하시면, 그들을 자유롭게 할 수 있을 겁니다.</Korean>
+                <Japanese>囚人を収容している場所があります。それについて話しているのを聞いたことがあります。もし望むなら、彼らを解放できるかもしれません。</Japanese>
+                <Chinesesimp>有一个地方，他们关押着囚犯。我听人提起过它。如果你愿意，你也许能解救他们。</Chinesesimp>
+                <Chinese>有一個地方，他們關押著囚犯。我聽人提起過它。如果你願意，你也許能解救他們。</Chinese>
+                <Polish>Jest miejsce, gdzie trzymają więźniów. Słyszałem, jak ludzie o nim mówią. Jeśli chcesz, możesz ich uwolnić.</Polish>
+                <Czech>Existuje místo, kde drží vězně. Slyšel jsem, jak o tom lidé mluví. Pokud budete ochotni, můžete je osvobodit.</Czech>
+                <Portuguese>Há um lugar onde mantêm prisioneiros. Ouvi falar sobre isso. Se você estiver disposto, pode ser capaz de libertá-los.</Portuguese>
+                <Turkish>Mahkumları tuttukları bir yer var. İnsanların bundan bahsettiğini duydum. Hazırsan, onları özgürleştirebilirsin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_info1">
+                <Original>I’ve heard about an informer. I can tell you where they’re hiding if you want to find them.</Original>
+                <Russian>Я слышал о шпионе. Я могу сказать, где они прячутся, если вы хотите найти их.</Russian>
+                <German>Ich habe von einem Informanten gehört. Ich kann dir sagen, wo er sich versteckt, wenn du ihn finden willst.</German>
+                <Italian>Ho sentito parlare di un informatore. Posso dirti dove si nasconde se vuoi trovarlo.</Italian>
+                <Spanish>He oído hablar de un informante. Puedo decirte dónde se esconden si quieres encontrarlos.</Spanish>
+                <French>J'ai entendu parler d'un informateur. Je peux vous dire où ils se cachent si vous voulez les trouver.</French>
+                <Korean>스파이 이야기를 들었습니다. 그들이 숨겨져 있는 곳을 말할 수 있습니다, 찾고 싶다면요.</Korean>
+                <Japanese>情報提供者のことを聞いたことがあります。彼らが隠れている場所を教えることができます、もし探したいなら。</Japanese>
+                <Chinesesimp>我听说过一个线人。如果你想找到他们，我可以告诉你他们藏身的地方。</Chinesesimp>
+                <Chinese>我聽說過一個線人。如果你想找到他們，我可以告訴你他們藏身的地方。</Chinese>
+                <Polish>Słyszałem o informatorze. Mogę ci powiedzieć, gdzie się ukrywają, jeśli chcesz ich znaleźć.</Polish>
+                <Czech>Slyšel jsem o informátorovi. Můžu vám říct, kde se skrývá, pokud je chcete najít.</Czech>
+                <Portuguese>Ouvi falar de um informante. Posso dizer onde ele está se escondendo, se você quiser encontrá-lo.</Portuguese>
+                <Turkish>Bir ihbarcıdan duydum. Nerede saklandıklarını söyleyebilirim, onları bulmak istersen.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_info2">
+                <Original>There’s someone I know who has valuable information. I can let you know where to look.</Original>
+                <Russian>Я знаю человека, у которого есть ценная информация. Я могу сказать вам, где искать.</Russian>
+                <German>Es gibt jemanden, den ich kenne, der wertvolle Informationen hat. Ich kann dir sagen, wo du suchen musst.</German>
+                <Italian>Conosco una persona che ha informazioni preziose. Posso dirti dove cercare.</Italian>
+                <Spanish>Conozco a alguien que tiene información valiosa. Puedo decirte dónde buscar.</Spanish>
+                <French>Je connais quelqu'un qui a des informations précieuses. Je peux vous dire où chercher.</French>
+                <Korean>유용한 정보를 가진 사람을 알고 있습니다. 어디서 찾아야 하는지 알려줄 수 있습니다.</Korean>
+                <Japanese>貴重な情報を持っている人を知っています。どこを探せばよいか教えることができます。</Japanese>
+                <Chinesesimp>我认识一个人，他有宝贵的信息。我可以告诉你在哪里找。</Chinesesimp>
+                <Chinese>我認識一個人，他有寶貴的信息。我可以告訴你在哪裡找。</Chinese>
+                <Polish>Znam kogoś, kto ma cenne informacje. Mogę ci powiedzieć, gdzie szukać.</Polish>
+                <Czech>Znám někoho, kdo má cenné informace. Můžu vám říct, kde hledat.</Czech>
+                <Portuguese>Conheço alguém que tem informações valiosas. Posso te dizer onde procurar.</Portuguese>
+                <Turkish>Değerli bilgiye sahip birini tanıyorum. Nerede arayacağını söyleyebilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_prisoners1">
+                <Original>I overheard some soldiers talking about a group of prisoners being held in a facility nearby. If you're brave enough, you could find them there.</Original>
+                <Russian>Я подслушал, как солдаты говорили о группе заключенных, которых держат в ближайшем учреждении. Если ты достаточно смел, ты можешь найти их там.</Russian>
+                <German>Ich habe einige Soldaten über eine Gruppe von Gefangenen sprechen hören, die in einer nahegelegenen Einrichtung festgehalten werden. Wenn du mutig genug bist, kannst du sie dort finden.</German>
+                <Italian>Ho sentito alcuni soldati parlare di un gruppo di prigionieri tenuti in una struttura vicina. Se sei abbastanza coraggioso, potresti trovarli lì.</Italian>
+                <Spanish>Escuché a unos soldados hablar sobre un grupo de prisioneros retenidos en una instalación cercana. Si eres lo suficientemente valiente, podrías encontrarlos allí.</Spanish>
+                <French>J'ai entendu des soldats parler d'un groupe de prisonniers détenus dans une installation à proximité. Si vous êtes assez courageux, vous pourriez les trouver là-bas.</French>
+                <Korean>근처 시설에서 억제되고 있는 포로들에 대해 군인들이 이야기하는 걸 들었습니다. 용기가 있다면 거기서 그들을 찾을 수 있을 겁니다.</Korean>
+                <Japanese>近くの施設で囚人のグループが拘束されていることについて、兵士たちが話しているのを聞きました。もし十分勇気があれば、そこで彼らを見つけることができるでしょう。</Japanese>
+                <Chinesesimp>我听到一些士兵谈论在附近的设施中关押一群囚犯。如果你够勇敢，你可以在那里找到他们。</Chinesesimp>
+                <Chinese>我聽到一些士兵談論在附近的設施中關押一群囚犯。如果你夠勇敢，你可以在那裡找到他們。</Chinese>
+                <Polish>Przechwyciłem rozmowę żołnierzy o grupie więźniów przetrzymywanych w pobliskiej placówce. Jeśli jesteś wystarczająco odważny, możesz ich tam znaleźć.</Polish>
+                <Czech>Přeslechl jsem, jak vojáci mluvili o skupině vězňů, kteří jsou drženi v nedaleké zařízení. Pokud jsi dost odvážný, můžeš je tam najít.</Czech>
+                <Portuguese>Eu ouvi alguns soldados falando sobre um grupo de prisioneiros sendo mantidos em uma instalação próxima. Se você for corajoso o suficiente, pode encontrá-los lá.</Portuguese>
+                <Turkish>Bazı askerlerin yakındaki bir tesiste tutulan bir grup mahkumdan bahsettiğini duydum. Eğer yeterince cesurysan, onları orada bulabilirsin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_prisoners2">
+                <Original>There’s a place where they’ve been keeping prisoners. If you’re looking to help, that’s where you should head.</Original>
+                <Russian>Есть место, где они держат заключенных. Если вы хотите помочь, вам стоит направиться туда.</Russian>
+                <German>Es gibt einen Ort, an dem sie Gefangene festhalten. Wenn du helfen willst, solltest du dorthin gehen.</German>
+                <Italian>C'è un posto dove tengono i prigionieri. Se vuoi aiutare, dovresti andare lì.</Italian>
+                <Spanish>Hay un lugar donde mantienen a los prisioneros. Si quieres ayudar, deberías ir allí.</Spanish>
+                <French>Il y a un endroit où ils gardent des prisonniers. Si vous voulez aider, c'est là que vous devriez vous rendre.</French>
+                <Korean>그들이 포로들을 가두는 곳이 있습니다. 도와주고 싶다면, 거기로 가야 합니다.</Korean>
+                <Japanese>囚人たちを収容している場所があります。助けたいなら、そこに向かうべきです。</Japanese>
+                <Chinesesimp>有一个地方，他们关押着囚犯。如果你想帮忙，你应该去那里。</Chinesesimp>
+                <Chinese>有一個地方，他們關押著囚犯。如果你想幫忙，你應該去那裡。</Chinese>
+                <Polish>Jest miejsce, gdzie trzymają więźniów. Jeśli chcesz pomóc, tam powinieneś się udać.</Polish>
+                <Czech>Existuje místo, kde drží vězně. Pokud chcete pomoci, tam byste měli zamířit.</Czech>
+                <Portuguese>Há um lugar onde mantêm os prisioneiros. Se você quer ajudar, deve ir até lá.</Portuguese>
+                <Turkish>Mahkumları tuttukları bir yer var. Yardım etmek istiyorsan, oraya gitmelisin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_Deserters1">
+                <Original>I heard a few soldiers have deserted their posts and are hiding in a safe spot just outside the area. If you're willing to help them, that’s where you’ll find them.</Original>
+                <Russian>Я слышал, что несколько солдат покинули свои посты и прячутся в безопасном месте недалеко от этого района. Если вы хотите помочь им, вы найдете их там.</Russian>
+                <German>Ich habe gehört, dass einige Soldaten ihre Posten verlassen haben und sich in einem sicheren Versteck direkt außerhalb des Gebiets verstecken. Wenn du bereit bist, ihnen zu helfen, findest du sie dort.</German>
+                <Italian>Ho sentito che alcuni soldati hanno abbandonato i loro posti e si stanno nascondendo in un posto sicuro appena fuori dall'area. Se vuoi aiutarli, li troverai lì.</Italian>
+                <Spanish>Escuché que algunos soldados han desertado de sus puestos y se están escondiendo en un lugar seguro justo fuera de la zona. Si estás dispuesto a ayudarlos, los encontrarás allí.</Spanish>
+                <French>J'ai entendu dire que quelques soldats ont déserté leurs postes et se cachent dans un endroit sûr juste à l'extérieur de la zone. Si vous êtes prêt à les aider, c'est là que vous les trouverez.</French>
+                <Korean>몇몇 군인들이 자신의 임무를 떠나 근처의 안전한 장소에 숨겨져 있다고 들었습니다. 그들을 돕고 싶다면, 그곳에서 찾을 수 있을 겁니다.</Korean>
+                <Japanese>数人の兵士が自分のポストを離れて、エリア外の安全な場所に隠れていると聞きました。彼らを助けたいなら、そこに行けば見つけられます。</Japanese>
+                <Chinesesimp>我听说有几个士兵抛弃了他们的岗位，正在该地区外的安全地方躲藏。如果你愿意帮助他们，那里就是他们所在的地方。</Chinesesimp>
+                <Chinese>我聽說有幾個士兵拋棄了他們的崗位，正在該地區外的安全地方躲藏。如果你願意幫助他們，那裡就是他們所在的地方。</Chinese>
+                <Polish>Słyszałem, że kilku żołnierzy opuściło swoje stanowiska i ukrywa się w bezpiecznym miejscu tuż za tym obszarem. Jeśli chcesz im pomóc, znajdziesz ich tam.</Polish>
+                <Czech>Slyšel jsem, že někteří vojáci opustili své stanice a skrývají se na bezpečném místě hned za touto oblastí. Pokud chcete pomoci, najdete je tam.</Czech>
+                <Portuguese>Ouvi dizer que alguns soldados abandonaram seus postos e estão se escondendo em um local seguro logo fora da área. Se você estiver disposto a ajudá-los, é lá que você os encontrará.</Portuguese>
+                <Turkish>Birkaç askerin görev yerlerini terk ettiğini ve bölge dışında güvenli bir yere saklandığını duydum. Onlara yardımcı olmak istersen, onları orada bulacaksın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_Deserters2">
+                <Original>There are some deserters trying to escape the military’s grasp. I know of a place where they’ve been hiding, but you’ll need to be quick.</Original>
+                <Russian>Есть дезертиры, пытающиеся избежать военной власти. Я знаю место, где они прячутся, но вам нужно будет действовать быстро.</Russian>
+                <German>Es gibt einige Deserteure, die versuchen, der militärischen Kontrolle zu entkommen. Ich kenne einen Ort, an dem sie sich verstecken, aber du musst schnell sein.</German>
+                <Italian>Ci sono dei disertori che stanno cercando di sfuggire al controllo militare. Conosco un posto dove si stanno nascondendo, ma dovrai essere veloce.</Italian>
+                <Spanish>Hay algunos desertores que están tratando de escapar del control militar. Conozco un lugar donde se están escondiendo, pero necesitarás ser rápido.</Spanish>
+                <French>Il y a des déserteurs qui essaient d'échapper à l'emprise militaire. Je connais un endroit où ils se cachent, mais vous devrez être rapide.</French>
+                <Korean>군대의 통제를 피하려는 탈영병들이 있습니다. 그들이 숨겨져 있는 곳을 알고 있지만, 빠르게 움직여야 할 겁니다.</Korean>
+                <Japanese>軍の手から逃げようとしている脱走兵がいます。彼らが隠れている場所を知っていますが、素早く行動する必要があります。</Japanese>
+                <Chinesesimp>有一些逃兵正在试图逃脱军队的掌控。我知道他们藏身的地方，但你需要快速行动。</Chinesesimp>
+                <Chinese>有一些逃兵正在試圖逃脫軍隊的掌控。我知道他們藏身的地方，但你需要快速行動。</Chinese>
+                <Polish>Są dezerterzy, którzy próbują uciec przed wojskową kontrolą. Znam miejsce, gdzie się ukrywają, ale musisz działać szybko.</Polish>
+                <Czech>Existují dezerteři, kteří se snaží uniknout vojenské moci. Znám místo, kde se skrývají, ale budete muset být rychlí.</Czech>
+                <Portuguese>Há alguns desertores tentando escapar do controle militar. Conheço um lugar onde eles estão se escondendo, mas você precisa ser rápido.</Portuguese>
+                <Turkish>Askeri kontrolden kaçmaya çalışan bazı kaçaklar var. Nerede saklandıklarını biliyorum ama hızlı olmalısın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_zone_reveal1">
+                <Original>Also, I’ve overheard some soldiers talking about a heavily guarded enemy zone. It might be worth checking out if you're planning something big.</Original>
+                <Russian>Кроме того, я слышал, как солдаты говорили о сильно охраняемой зоне врага. Это может стоить проверить, если вы планируете что-то серьезное.</Russian>
+                <German>Außerdem habe ich einige Soldaten über eine stark bewachte feindliche Zone sprechen hören. Es könnte sich lohnen, diese zu überprüfen, wenn du etwas Großes planst.</German>
+                <Italian>Ho anche sentito dei soldati parlare di una zona nemica pesantemente sorvegliata. Potrebbe valere la pena controllarla se hai grandi progetti.</Italian>
+                <Spanish>Además, he oído a algunos soldados hablar de una zona enemiga fuertemente vigilada. Podría valer la pena echarle un vistazo si estás planeando algo importante.</Spanish>
+                <French>J'ai aussi entendu des soldats parler d'une zone ennemie fortement gardée. Cela pourrait valoir le coup d'œil si vous planifiez quelque chose d'important.</French>
+                <Korean>또한, 몇몇 병사들이 철저히 경비된 적의 구역에 대해 이야기하는 것을 들었습니다. 무언가 큰일을 계획 중이라면 확인해볼 가치가 있을 겁니다.</Korean>
+                <Japanese>また、兵士たちが厳重に警備された敵の区域について話しているのを耳にしました。何か大きなことを計画しているなら、調べる価値があるかもしれません。</Japanese>
+                <Chinesesimp>另外，我听到一些士兵谈论一个戒备森严的敌方区域。如果你有重大计划，这值得一探。</Chinesesimp>
+                <Chinese>另外，我聽到一些士兵談論一個戒備森嚴的敵方區域。如果你有重大計劃，這值得一探。</Chinese>
+                <Polish>Poza tym słyszałem, jak żołnierze rozmawiali o silnie strzeżonej strefie wroga. Może warto to sprawdzić, jeśli planujesz coś dużego.</Polish>
+                <Czech>Také jsem slyšel, jak vojáci mluví o silně střežené nepřátelské zóně. Mohlo by to stát za prozkoumání, pokud plánujete něco velkého.</Czech>
+                <Portuguese>Além disso, ouvi alguns soldados falando sobre uma zona inimiga fortemente guardada. Pode valer a pena verificar se você está planejando algo grande.</Portuguese>
+                <Turkish>Ayrıca bazı askerlerin sıkı korunan bir düşman bölgesinden bahsettiğini duydum. Eğer büyük bir şey planlıyorsanız, bakmaya değer olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_zone_reveal2">
+                <Original>By the way, I’ve seen enemy patrols moving around a location not too far from here. It could be one of their key zones. You might want to take a closer look.</Original>
+                <Russian>Кстати, я видел патрули врага, перемещающиеся недалеко отсюда. Возможно, это одна из их ключевых зон. Стоит присмотреться.</Russian>
+                <German>Übrigens habe ich feindliche Patrouillen in der Nähe gesehen. Es könnte einer ihrer Schlüsselpunkte sein. Du solltest es dir genauer ansehen.</German>
+                <Italian>A proposito, ho visto pattuglie nemiche muoversi in una zona non troppo lontano da qui. Potrebbe essere una delle loro aree chiave. Potresti volerla esaminare più da vicino.</Italian>
+                <Spanish>Por cierto, he visto patrullas enemigas moviéndose en un lugar no muy lejos de aquí. Podría ser una de sus zonas clave. Quizás quieras investigarlo más a fondo.</Spanish>
+                <French>Au fait, j'ai vu des patrouilles ennemies se déplacer dans un endroit non loin d'ici. Cela pourrait être l'une de leurs zones clés. Vous pourriez vouloir y jeter un œil plus attentif.</French>
+                <Korean>참고로, 여기서 멀지 않은 곳에서 적의 순찰대를 본 적이 있습니다. 그곳은 그들의 주요 구역 중 하나일 수 있습니다. 더 가까이 조사해보는 것이 좋을 것입니다.</Korean>
+                <Japanese>ちなみに、ここから遠くない場所で敵の巡回部隊を見かけました。それは彼らの重要なエリアの1つかもしれません。もっと詳しく調べるべきです。</Japanese>
+                <Chinesesimp>顺便说一句，我看到敌军在离这里不远的一个地方巡逻。那可能是他们的关键区域之一。你或许需要仔细查看。</Chinesesimp>
+                <Chinese>順便說一句，我看到敵軍在離這裡不遠的一個地方巡邏。那可能是他們的關鍵區域之一。你或許需要仔細查看。</Chinese>
+                <Polish>Przy okazji widziałem patrole wroga w pobliżu tego miejsca. Może to być jedna z ich kluczowych stref. Warto się temu przyjrzeć bliżej.</Polish>
+                <Czech>Mimochodem jsem viděl nepřátelské patroly pohybující se poblíž. Mohla by to být jedna z jejich klíčových zón. Možná by stálo za to se tam podívat.</Czech>
+                <Portuguese>Aliás, vi patrulhas inimigas movendo-se perto daqui. Pode ser uma das zonas-chave deles. Talvez você deva dar uma olhada mais de perto.</Portuguese>
+                <Turkish>Bu arada, buraya çok uzak olmayan bir yerde düşman devriyelerini gördüm. Bu, onların kilit bölgelerinden biri olabilir. Daha yakından bakmak isteyebilirsiniz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_money1">
+                <Original>I did keep this file that "fell" off of a truck that might be worth something... I hear a particularly sketchy Irish man might be interested! is he Irish? Whatever...</Original>
+                <Russian>Я сохранил этот файл, который "случайно" упал с грузовика... Говорят, один подозрительный ирландец может быть заинтересован! Он точно ирландец? Да какая разница...</Russian>
+                <German>Ich habe diese Datei behalten, die von einem LKW "gefallen" ist... Ich habe gehört, dass ein ziemlich zwielichtiger Ire daran interessiert sein könnte! Ist er wirklich Ire? Ach, egal...</German>
+                <Italian>Ho tenuto questo file che è "caduto" da un camion... Ho sentito che un irlandese piuttosto losco potrebbe essere interessato! È davvero irlandese? Boh, chi lo sa...</Italian>
+                <Spanish>Me quedé con este archivo que "se cayó" de un camión... He oído que un irlandés bastante sospechoso podría estar interesado. ¿Es realmente irlandés? Bah, qué más da...</Spanish>
+                <French>J'ai gardé ce fichier qui est "tombé" d'un camion... J'ai entendu dire qu'un Irlandais particulièrement louche pourrait être intéressé ! Il est vraiment Irlandais ? Peu importe...</French>
+                <Korean>트럭에서 "우연히" 떨어진 이 파일을 챙겼어... 꽤 수상한 아일랜드 사람이 관심이 있을지도 모른다고 하더군! 근데 진짜 아일랜드 사람인가? 뭐, 상관없지...</Korean>
+                <Japanese>トラックから「落ちた」このファイルを取っておいたよ… かなり怪しいアイルランド人が興味を持つかもしれないって聞いたけど！本当にアイルランド人なのか？まあ、どうでもいいか…</Japanese>
+                <Chinesesimp>我保留了这个从卡车上“掉下来”的文件，可能值点钱……听说有个特别可疑的爱尔兰人可能会感兴趣！他真是爱尔兰人吗？管他的……</Chinesesimp>
+                <Chinese>我保留了這個從卡車上「掉下來」的文件，可能值點錢……聽說有個特別可疑的愛爾蘭人可能會感興趣！他真是愛爾蘭人嗎？管他的……</Chinese>
+                <Polish>Zachowałem ten plik, który "spadł" z ciężarówki… Słyszałem, że pewien dość podejrzany Irlandczyk może być nim zainteresowany! Czy on na pewno jest Irlandczykiem? Cóż, nieważne…</Polish>
+                <Czech>Nechal jsem si ten soubor, který "spadl" z náklaďáku… Slyšel jsem, že o něj může mít zájem jeden dost podezřelý Ir! Je to vůbec Ir? No, kdo ví…</Czech>
+                <Portuguese>Guardei este arquivo que "caiu" de um caminhão… Ouvi dizer que um irlandês bastante suspeito pode estar interessado! Ele é mesmo irlandês? Ah, tanto faz…</Portuguese>
+                <Turkish>Kamyondan "düşen" bu dosyayı sakladım… Oldukça şüpheli bir İrlandalının ilgilenebileceğini duydum! Gerçekten İrlandalı mı? Boş ver…</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_money2">
+                <Original>I know a police officer that owes me a favor. Here's some data on surveillance blind spots, maybe someone will pay highly for it...</Original>
+                <Russian>Я знаю одного полицейского, который мне должен услугу. Вот данные о слепых зонах наблюдения, возможно, кто-то хорошо за них заплатит...</Russian>
+                <German>Ich kenne einen Polizisten, der mir einen Gefallen schuldet. Hier sind einige Daten zu Überwachungsblindenflecken, vielleicht bezahlt jemand gut dafür...</German>
+                <Italian>Conosco un poliziotto che mi deve un favore. Ecco alcuni dati sui punti ciechi della sorveglianza, forse qualcuno pagherà bene per questo...</Italian>
+                <Spanish>Conozco a un policía que me debe un favor. Aquí tienes algunos datos sobre puntos ciegos de vigilancia, quizás alguien pague bien por ello...</Spanish>
+                <French>Je connais un policier qui me doit un service. Voici des données sur les angles morts de surveillance, peut-être que quelqu'un paiera cher pour ça...</French>
+                <Korean>내게 신세를 진 경찰관이 하나 있어. 여기 감시 사각지대에 대한 데이터가 있어, 누군가 비싼 값을 쳐줄지도 몰라...</Korean>
+                <Japanese>俺に借りがある警官を知ってる。ここに監視の死角に関するデータがあるんだ、誰かが高値で買うかもしれないな…</Japanese>
+                <Chinesesimp>我认识一个欠我人情的警察。这里有一些关于监控盲区的数据，也许有人会出高价买下它…</Chinesesimp>
+                <Chinese>我認識一個欠我人情的警察。這裡有一些關於監控盲區的數據，也許有人會出高價買下它…</Chinese>
+                <Polish>Znam jednego policjanta, który jest mi coś winien. Oto dane o martwych strefach monitoringu, może ktoś dobrze za to zapłaci...</Polish>
+                <Czech>Znám jednoho policistu, který mi dluží laskavost. Tady jsou data o slepých zónách dohledu, možná za to někdo dobře zaplatí...</Czech>
+                <Portuguese>Conheço um policial que me deve um favor. Aqui estão alguns dados sobre pontos cegos da vigilância, talvez alguém pague bem por isso...</Portuguese>
+                <Turkish>Bana borcu olan bir polis memuru tanıyorum. İşte gözetleme kör noktalarına dair bazı veriler, belki birisi buna iyi para öder...</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_decryption1">
+                <Original>I have a radio that was... "Borrowed" from the police. Here, maybe you'll have a use for it.</Original>
+                <Russian>У меня есть радио, которое было... "одолжено" у полиции. Вот, может быть, оно тебе пригодится.</Russian>
+                <German>Ich habe ein Radio, das von der Polizei... "ausgeliehen" wurde. Hier, vielleicht kannst du es gebrauchen.</German>
+                <Italian>Ho una radio che è stata... "presa in prestito" dalla polizia. Ecco, magari ti sarà utile.</Italian>
+                <Spanish>Tengo una radio que fue... "tomada en préstamo" de la policía. Aquí, tal vez te sirva.</Spanish>
+                <French>J'ai une radio qui a été... "empruntée" à la police. Tiens, peut-être que tu en auras l'usage.</French>
+                <Korean>경찰에서... "빌린" 라디오가 있어요. 여기, 아마 당신이 필요로 할 수도 있어요.</Korean>
+                <Japanese>警察から...「借りた」ラジオがあります。ほら、これ、もしかしたら役に立つかもしれません。</Japanese>
+                <Chinesesimp>我有一台从警察那里... “借来的”无线电。这里，也许你会用得上。</Chinesesimp>
+                <Chinese>我有一台從警察那裡... “借來的”無線電。這裡，也許你會用得上。</Chinese>
+                <Polish>Mam radio, które zostało... "pożyczone" od policji. Oto, może ci się przyda.</Polish>
+                <Czech>Mám rádio, které bylo... "půjčeno" od policie. Tady, možná ho budeš potřebovat.</Czech>
+                <Portuguese>Eu tenho um rádio que foi... "pegado emprestado" da polícia. Aqui, talvez você precise dele.</Portuguese>
+                <Turkish>Bir radyo var, bu... "polisten ödünç alındı". İşte, belki senin işine yarar.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_decryption2">
+                <Original>I know some contacts who work in communications, I'll let you know if they get any information.</Original>
+                <Russian>Я знаю кое-кого, кто работает в сфере связи. Дам тебе знать, если они что-нибудь выяснят.</Russian>
+                <German>Ich kenne ein paar Kontakte, die in der Kommunikation arbeiten. Ich lasse dich wissen, falls sie etwas herausfinden.</German>
+                <Italian>Conosco alcuni contatti che lavorano nelle comunicazioni. Ti farò sapere se ottengono qualche informazione.</Italian>
+                <Spanish>Conozco a algunas personas que trabajan en comunicaciones. Te avisaré si consiguen alguna información.</Spanish>
+                <French>Je connais des contacts qui travaillent dans les communications. Je te ferai savoir s'ils obtiennent des informations.</French>
+                <Korean>통신 분야에서 일하는 지인들이 있어. 그들이 정보를 입수하면 알려줄게.</Korean>
+                <Japanese>通信関係の仕事をしている知り合いがいる。何か情報を入手したら知らせるよ。</Japanese>
+                <Chinesesimp>我认识一些在通信行业工作的人，如果他们得到任何信息，我会通知你。</Chinesesimp>
+                <Chinese>我認識一些在通信行業工作的人，如果他們得到任何信息，我會通知你。</Chinese>
+                <Polish>Znam kilka osób pracujących w komunikacji. Dam ci znać, jeśli zdobędą jakieś informacje.</Polish>
+                <Czech>Znám pár lidí pracujících v komunikacích. Dám ti vědět, pokud něco zjistí.</Czech>
+                <Portuguese>Conheço alguns contatos que trabalham com comunicações. Avisarei se conseguirem alguma informação.</Portuguese>
+                <Turkish>İletişim sektöründe çalışan birkaç tanıdığım var. Eğer bir bilgi alırlarsa sana haber veririm.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_weapons1">
+                <Original>I drive past a warehouse on my way to the factory and a few days ago I saw the military offloading some disguised trucks. Real sneaky - They don't fool me!</Original>
+                <Russian>Я проезжаю мимо склада по пути на фабрику, и несколько дней назад видел, как военные разгружали несколько замаскированных грузовиков. Очень хитро — меня они не обманут!</Russian>
+                <German>Ich fahre an einem Lagerhaus vorbei, wenn ich zur Fabrik fahre, und vor ein paar Tagen habe ich die Militärs gesehen, die einige getarnte Lkw entladen haben. Richtig hinterhältig – mich täuschen sie nicht!</German>
+                <Italian>Passo davanti a un magazzino mentre vado in fabbrica, e qualche giorno fa ho visto i militari scaricare dei camion mascherati. Molto furbi - Non mi fregano!</Italian>
+                <Spanish>Paso por un almacén de camino a la fábrica y hace unos días vi a los militares descargando algunos camiones disfrazados. Muy astutos, ¡no me engañan!</Spanish>
+                <French>Je passe devant un entrepôt en me rendant à l'usine et il y a quelques jours, j'ai vu les militaires décharger des camions déguisés. Vraiment sournois - Ils ne m'ont pas eu !</French>
+                <Korean>공장으로 가는 길에 창고를 지나는데, 며칠 전에 군대가 위장된 트럭을 내리는 걸 봤어요. 정말 교활하군요 - 저를 속일 순 없어요!</Korean>
+                <Japanese>工場に向かう途中、倉庫の前を通り過ぎたところ、数日前に軍が偽装したトラックを荷降ろししているのを見ました。非常に狡猾ですね - 私は騙されません！</Japanese>
+                <Chinesesimp>我在去工厂的路上经过一个仓库，几天前我看到军方正在卸载一些伪装的卡车。真狡猾——他们骗不了我！</Chinesesimp>
+                <Chinese>我在去工廠的路上經過一個倉庫，幾天前我看到軍方正在卸載一些偽裝的卡車。真狡猾——他們騙不了我！</Chinese>
+                <Polish>Przejeżdżam obok magazynu w drodze do fabryki, a kilka dni temu widziałem, jak wojsko rozładowuje kilka zamaskowanych ciężarówek. Naprawdę przebiegli - nie oszukają mnie!</Polish>
+                <Czech>Projíždím kolem skladu na cestě do továrny a před pár dny jsem viděl, jak vojáci vykládali nějaké maskované náklaďáky. Opravdu mazaní - mě nenachytají!</Czech>
+                <Portuguese>Passo por um armazém a caminho da fábrica e há alguns dias vi os militares descarregando alguns caminhões disfarçados. Muito espertos - não me enganam!</Portuguese>
+                <Turkish>Fabrika yolunda bir depo önünden geçiyorum ve birkaç gün önce askerlerin bazı gizlenmiş kamyonları indirirken gördüm. Gerçekten sinsi - beni kandıramazlar!</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_weapons2">
+                <Original>I've been hearing chatter of a weapons production facility. Maybe you will see that those weapons end up in the right hands?</Original>
+                <Russian>Я слышал разговоры о производственном объекте оружия. Может, ты позаботишься о том, чтобы оружие попало в нужные руки?</Russian>
+                <German>Ich habe Gerüchte über eine Waffenproduktionsanlage gehört. Vielleicht sorgst du dafür, dass diese Waffen in die richtigen Hände gelangen?</German>
+                <Italian>Ho sentito parlare di una fabbrica di armi. Forse potresti assicurarti che quelle armi finiscano nelle mani giuste?</Italian>
+                <Spanish>He oído rumores sobre una instalación de producción de armas. ¿Quizás te asegures de que esas armas terminen en las manos correctas?</Spanish>
+                <French>J’ai entendu des rumeurs sur une usine de production d’armes. Peut-être que tu feras en sorte que ces armes finissent entre de bonnes mains ?</French>
+                <Korean>무기 생산 시설에 대한 소문을 들었어. 그 무기가 올바른 사람들의 손에 들어가도록 할 수 있겠지?</Korean>
+                <Japanese>武器製造施設の噂を耳にしたよ。その武器が正しい人の手に渡るようにできるんじゃないか？</Japanese>
+                <Chinesesimp>我听说有一个武器生产设施。也许你能确保这些武器落入正确的人手中？</Chinesesimp>
+                <Chinese>我聽說有一個武器生產設施。也許你能確保這些武器落入正確的人手中？</Chinese>
+                <Polish>Słyszałem pogłoski o fabryce broni. Może dopilnujesz, żeby trafiła w odpowiednie ręce?</Polish>
+                <Czech>Slyšel jsem zvěsti o výrobním závodu na zbraně. Možná zajistíš, aby se ty zbraně dostaly do správných rukou?</Czech>
+                <Portuguese>Ouvi rumores sobre uma instalação de produção de armas. Talvez você possa garantir que essas armas acabem nas mãos certas?</Portuguese>
+                <Turkish>Bir silah üretim tesisi hakkında söylentiler duydum. Belki o silahların doğru ellere geçmesini sağlayabilirsin?</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_traitor1">
+                <Original>I found this folder discarded in some bushes. You might find the contents interesting, to say the least.</Original>
+                <Russian>Я нашел эту папку, выброшенную в кустах. Тебе могут быть интересны её содержимое, скажем так.</Russian>
+                <German>Ich habe diese Mappe in einigen Sträuchern gefunden. Du könntest den Inhalt interessant finden, um es milde auszudrücken.</German>
+                <Italian>Ho trovato questa cartella gettata tra i cespugli. Potresti trovare interessante il contenuto, per non dire altro.</Italian>
+                <Spanish>Encontré esta carpeta tirada en unos arbustos. Podrías encontrar el contenido interesante, por decirlo de alguna manera.</Spanish>
+                <French>J'ai trouvé ce dossier jeté dans des buissons. Tu pourrais trouver le contenu intéressant, pour ne rien dire de plus.</French>
+                <Korean>이 파일을 덤불 속에서 버려진 채로 찾았어요. 내용이 흥미로울지도 몰라요, 적어도 그렇게 말할 수 있겠네요.</Korean>
+                <Japanese>このフォルダーを茂みの中で捨てられているのを見つけました。内容が興味深いかもしれません、少なくともそう言えます。</Japanese>
+                <Chinesesimp>我在一些灌木丛中找到这个被丢弃的文件夹。你可能会觉得内容很有趣，至少可以这么说。</Chinesesimp>
+                <Chinese>我在一些灌木叢中找到這個被丟棄的文件夾。你可能會覺得內容很有趣，至少可以這麼說。</Chinese>
+                <Polish>Znalazłem tę teczkę porzuconą w krzakach. Może uznasz jej zawartość za interesującą, mówiąc delikatnie.</Polish>
+                <Czech>Našel jsem tuto složku zaházenou v keřích. Možná najdeš její obsah zajímavý, tak řečeno.</Czech>
+                <Portuguese>Encontrei esta pasta jogada entre alguns arbustos. Talvez você ache o conteúdo interessante, para não dizer mais.</Portuguese>
+                <Turkish>Bu klasörü bazı çalılarda terk edilmiş olarak buldum. İçeriği ilginç bulabilirsin, en azından söylemek gerekirse.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_traitor2">
+                <Original>I hear you've been looking for a fellow Rebel like yourself. I might have seen him hanging around the local police stations...</Original>
+                <Russian>Слышал, ты ищешь одного из своих товарищей-повстанцев. Кажется, я видел его ошивающимся возле местных полицейских участков...</Russian>
+                <German>Ich habe gehört, dass du nach einem anderen Rebellen wie dir suchst. Ich glaube, ich habe ihn in der Nähe der örtlichen Polizeistationen gesehen...</German>
+                <Italian>Ho sentito che stai cercando un altro ribelle come te. Forse l'ho visto aggirarsi vicino alle stazioni di polizia locali...</Italian>
+                <Spanish>He oído que buscas a otro rebelde como tú. Puede que lo haya visto rondando por las comisarías locales...</Spanish>
+                <French>J’ai entendu dire que tu cherchais un autre rebelle comme toi. Il me semble l’avoir vu rôder près des postes de police locaux...</French>
+                <Korean>네가 너처럼 반군 동료를 찾고 있다고 들었어. 그가 지역 경찰서 주변에서 어슬렁거리는 걸 본 것 같아...</Korean>
+                <Japanese>君みたいな仲間の反乱軍を探してるって聞いたよ。地元の警察署の周りをうろついてるのを見たかもしれない…</Japanese>
+                <Chinesesimp>听说你在找和你一样的叛军同伴。我好像在当地警察局附近见过他…</Chinesesimp>
+                <Chinese>聽說你在找和你一樣的叛軍同伴。我好像在當地警察局附近見過他…</Chinese>
+                <Polish>Słyszałem, że szukasz innego buntownika jak ty. Może widziałem go kręcącego się koło miejscowych posterunków policji...</Polish>
+                <Czech>Slyšel jsem, že hledáš jiného rebela, jako jsi ty. Možná jsem ho viděl potloukat se kolem místních policejních stanic...</Czech>
+                <Portuguese>Ouvi dizer que você está procurando outro rebelde como você. Acho que o vi rondando as delegacias locais...</Portuguese>
+                <Turkish>Kendi gibi bir isyancı aradığını duydum. Onu yerel karakolların etrafında dolanırken görmüş olabilirim...</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_dealer1">
+                <Original>I have some information on a "legitimate" dealer. I hear he's good friends with that weird Irish man.</Original>
+                <Russian>У меня есть информация о "законном" торговце. Говорят, он хорошо дружит с тем странным ирландцем.</Russian>
+                <German>Ich habe Informationen über einen „legitimen“ Händler. Ich habe gehört, dass er ein guter Freund von diesem seltsamen Iren ist.</German>
+                <Italian>Ho alcune informazioni su un commerciante "legittimo". Ho sentito dire che è un buon amico di quel bizzarro irlandese.</Italian>
+                <Spanish>Tengo información sobre un comerciante "legítimo". He oído que es buen amigo de ese extraño irlandés.</Spanish>
+                <French>J'ai des informations sur un marchand "légitime". J’ai entendu dire qu’il est un bon ami de cet étrange Irlandais.</French>
+                <Korean>"합법적인" 거래상에 대한 정보가 있어. 그 이상한 아일랜드인과 친한 사이라더군.</Korean>
+                <Japanese>「正当な」商人についての情報があるよ。あの変わったアイルランド人と仲が良いらしい。</Japanese>
+                <Chinesesimp>我有关于一个“合法”商人的信息。听说他和那个奇怪的爱尔兰人是好朋友。</Chinesesimp>
+                <Chinese>我有關於一個“合法”商人的信息。聽說他和那個奇怪的愛爾蘭人是好朋友。</Chinese>
+                <Polish>Mam informacje o „legalnym” handlarzu. Słyszałem, że jest dobrym przyjacielem tego dziwnego Irlandczyka.</Polish>
+                <Czech>Mám nějaké informace o „legitimním“ obchodníkovi. Slyšel jsem, že je dobrým přítelem toho podivného Ira.</Czech>
+                <Portuguese>Tenho algumas informações sobre um comerciante "legítimo". Ouvi dizer que ele é bom amigo daquele estranho irlandês.</Portuguese>
+                <Turkish>"Yasal" bir satıcı hakkında bazı bilgilerim var. O garip İrlandalıyla iyi arkadaş olduğunu duydum.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_success_dealer2">
+                <Original>Have you heard of that "MaxxLite Armaments" guy? I've been hearing rumors... I can tell you all about them.</Original>
+                <Russian>Слышал о парне из "MaxxLite Armaments"? До меня дошли слухи... Могу рассказать тебе всё.</Russian>
+                <German>Hast du schon von dem Typen von „MaxxLite Armaments“ gehört? Ich habe einige Gerüchte gehört... Ich kann dir alles erzählen.</German>
+                <Italian>Hai sentito parlare di quel tizio della "MaxxLite Armaments"? Ho sentito delle voci... Posso raccontarti tutto.</Italian>
+                <Spanish>¿Has oído hablar de ese tipo de "MaxxLite Armaments"? He estado escuchando rumores... Puedo contarte todo.</Spanish>
+                <French>As-tu entendu parler de ce gars de "MaxxLite Armaments" ? J’ai entendu des rumeurs... Je peux tout te raconter.</French>
+                <Korean>"MaxxLite Armaments" 사람에 대해 들어본 적 있어? 소문을 좀 들었는데... 다 알려줄 수 있어.</Korean>
+                <Japanese>「MaxxLite Armaments」の男のことを聞いたことあるか？噂を聞いたよ…全部教えてやるよ。</Japanese>
+                <Chinesesimp>你听说过“MaxxLite Armaments”那个人吗？我听到了一些传闻……我可以告诉你一切。</Chinesesimp>
+                <Chinese>你聽說過“MaxxLite Armaments”那個人嗎？我聽到了一些傳聞……我可以告訴你一切。</Chinese>
+                <Polish>Słyszałeś o tym gościu z „MaxxLite Armaments”? Krążą plotki... Mogę ci wszystko opowiedzieć.</Polish>
+                <Czech>Slyšel jsi o tom chlapíkovi z „MaxxLite Armaments“? Slyšel jsem nějaké zvěsti... Mohu ti o nich všechno říct.</Czech>
+                <Portuguese>Você já ouviu falar daquele cara da "MaxxLite Armaments"? Tenho ouvido alguns rumores... Posso te contar tudo.</Portuguese>
+                <Turkish>"MaxxLite Armaments" adamını duydun mu? Bazı söylentiler duydum... Sana her şeyi anlatabilirim.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal1">
+                <Original>Sorry I couldn't help, but I’ve seen enemy soldiers patrolling a spot nearby. Might be worth checking out if you’re looking for trouble.</Original>
+                <Russian>Простите, что не смог помочь, но я видел, как враги патрулируют место неподалеку. Возможно, стоит проверить, если вы ищете неприятностей.</Russian>
+                <German>Es tut mir leid, dass ich nicht helfen konnte, aber ich habe gesehen, wie feindliche Soldaten in der Nähe patrouillieren. Vielleicht lohnt es sich, dort nachzusehen, wenn du Ärger suchst.</German>
+                <Italian>Mi dispiace di non poter aiutare, ma ho visto soldati nemici pattugliare un posto qui vicino. Potrebbe valere la pena controllare se stai cercando guai.</Italian>
+                <Spanish>Lo siento, no puedo ayudarte, pero he visto soldados enemigos patrullando un lugar cerca de aquí. Podría valer la pena echarle un vistazo si buscas problemas.</Spanish>
+                <French>Désolé de ne pas pouvoir vous aider, mais j'ai vu des soldats ennemis patrouiller à proximité. Cela pourrait valoir le coup d'œil si vous cherchez des ennuis.</French>
+                <Korean>도움을 드리지 못해 죄송하지만, 근처에서 적 병사들이 순찰하는 것을 봤습니다. 문제가 필요하다면 확인해볼 가치가 있을 겁니다.</Korean>
+                <Japanese>お力になれず申し訳ありませんが、近くで敵兵が巡回しているのを見かけました。もし問題を探しているなら、確認する価値があるかもしれません。</Japanese>
+                <Chinesesimp>很抱歉我无法帮助你，但我看到敌军在附近的一个地点巡逻。如果你想找点麻烦，可能值得查看一下。</Chinesesimp>
+                <Chinese>很抱歉我無法幫助你，但我看到敵軍在附近的一個地點巡邏。如果你想找點麻煩，可能值得查看一下。</Chinese>
+                <Polish>Przepraszam, że nie mogłem pomóc, ale widziałem, jak wrogowie patrolują pobliskie miejsce. Może warto to sprawdzić, jeśli szukasz kłopotów.</Polish>
+                <Czech>Omlouvám se, že nemohu pomoci, ale viděl jsem, jak nepřátelé hlídkují v blízkosti. Možná to stojí za kontrolu, pokud hledáte potíže.</Czech>
+                <Portuguese>Desculpe, não pude ajudar, mas vi soldados inimigos patrulhando um local próximo. Pode valer a pena verificar se você está procurando problemas.</Portuguese>
+                <Turkish>Üzgünüm yardımcı olamadım, ama yakındaki bir yerde düşman askerlerinin devriye gezdiğini gördüm. Sorun arıyorsanız bakmaya değer olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal2">
+                <Original>Sorry, I don’t have the information you need, but there’s a location I’ve noticed the enemy frequenting. Maybe that’ll help.</Original>
+                <Russian>Простите, у меня нет нужной вам информации, но я заметил место, которое часто посещают враги. Возможно, это поможет.</Russian>
+                <German>Entschuldigung, ich habe nicht die Informationen, die du brauchst, aber ich habe einen Ort bemerkt, den der Feind häufig besucht. Vielleicht hilft dir das.</German>
+                <Italian>Mi dispiace, non ho le informazioni che ti servono, ma ho notato un luogo che i nemici frequentano spesso. Forse potrebbe esserti utile.</Italian>
+                <Spanish>Lo siento, no tengo la información que necesitas, pero he notado un lugar que los enemigos frecuentan. Quizás eso te sirva.</Spanish>
+                <French>Désolé, je n'ai pas les informations dont vous avez besoin, mais j'ai remarqué un endroit fréquenté par l'ennemi. Peut-être que cela pourra vous aider.</French>
+                <Korean>죄송하지만 필요한 정보를 가지고 있지 않습니다. 그러나 적이 자주 드나드는 장소를 본 적이 있습니다. 도움이 될지도 모릅니다.</Korean>
+                <Japanese>申し訳ありませんが、必要な情報を持っていません。ただし、敵が頻繁に出入りする場所を見かけました。それがお役に立つかもしれません。</Japanese>
+                <Chinesesimp>对不起，我没有你需要的信息，但我注意到敌军经常光顾一个地方。也许这会有所帮助。</Chinesesimp>
+                <Chinese>對不起，我沒有你需要的信息，但我注意到敵軍經常光顧一個地方。也許這會有所幫助。</Chinese>
+                <Polish>Przepraszam, nie mam informacji, których potrzebujesz, ale zauważyłem miejsce, które wróg często odwiedza. Może to ci pomoże.</Polish>
+                <Czech>Omlouvám se, nemám informace, které potřebujete, ale všiml jsem si místa, kam nepřátelé často chodí. Možná to pomůže.</Czech>
+                <Portuguese>Desculpe, não tenho as informações que você precisa, mas notei um local que os inimigos frequentam. Talvez isso ajude.</Portuguese>
+                <Turkish>Üzgünüm, ihtiyacınız olan bilgiye sahip değilim, ama düşmanın sık sık gittiği bir yer fark ettim. Belki bu işinize yarar.</Turkish>
+            </Key>
         </Container>
         <Container name="rivals_notifications">
             <Key ID="STR_rivals_destroyed_city">
@@ -10714,6 +11566,8 @@
             </Key>
             <Key ID="STR_rivals_destroyed_no_invaders">
                 <Original>&lt;t size='0.6'&gt;Our scouts have reported that the &lt;t color='#800000'&gt;%1&lt;/t&gt; hideout has been abandoned, seemingly due to a lack of &lt;t color='#800000'&gt;%2&lt;/t&gt; logistical support.&lt;/t&gt;</Original>
+                <Chinesesimp>&lt;t size='0.6'&gt;我们的侦察兵报告说，&lt;t color='#800000'&gt;%1&lt;/t&gt; 藏身处已被废弃，似乎是由于缺乏 &lt;t color='#800000'&gt;%2&lt;/t&gt; 后勤支援。&lt;/t&gt;</Chinesesimp>
+                <Korean>&lt;t size='0.6'&gt;우리 측 정찰병들이 &lt;t color='#800000'&gt;%1&lt;/t&gt; 은신처가 버려졌다고 보고했는데, 이유가 &lt;t color='#800000'&gt;%2&lt;/t&gt;의 군수 지원 부족하기 때문인 것으로 보입니다.&lt;/t&gt;</Korean>
             </Key>
             <Key ID="STR_rivals_destroyed_finale">
                 <Original>&lt;t size='0.6'&gt;The story of &lt;t color='#800000'&gt;%1&lt;/t&gt; ends here. Leaderless, with huge manpower and equipment shortage they quickly become too disorganised to maintain any significant presence on %2. It's a great success for %3, congratulations!&lt;/t&gt;</Original>
@@ -10762,6 +11616,7 @@
                 <Russian>&lt;t color='#800000'&gt;Вертолёт %1&lt;/t&gt; рядом с нами!</Russian>
                 <Korean>&lt;t color='#800000'&gt;%1대의 헬리콥터&lt;/t&gt;가 우리 근처에 있습니다!</Korean>
                 <French>&lt;t color='#800000'&gt;%1 hélicoptère&lt;/t&gt; est près de nous!</French>
+                <Chinesesimp>&lt;t color='#800000'&gt;%1 直升机&lt;/t&gt;就在我们附近！</Chinesesimp>
             </Key>
         </Container>
     </Package>
@@ -11503,24 +12358,28 @@
                 <Russian>Эта техника не может уйти в маскировка пока к ней прикреплен буксировочный трос.</Russian>
                 <Korean>이 차량은 견인줄이 걸려 있는 동안에는 위장이 불가능합니다.</Korean>
                 <French>Ce véhicule ne peut pas être mis à l'abri tant qu'il est équipé de câbles de remorquage.</French>
+                <Chinesesimp>此车辆在系有牵引绳的情况下无法隐蔽行驶</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_goUndercover_error_towing_ropes">
                 <Original>In vehicle with tow ropes attached</Original>
                 <Russian>В технике с прикрепленным буксировочным тросом</Russian>
                 <Korean>견인줄이 부착된 차량일 경우</Korean>
                 <French>Si le véhicule est équipé d'un câble de remorquage</French>
+                <Chinesesimp>在系有牵引绳的车辆中</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_goUndercover_error_towing_ropes_2">
                 <Original>%1&lt;br/&gt;Holding tow ropes.</Original>
                 <Russian>"%1&lt;br/&gt;В руках буксировочный трос.</Russian>
                 <Korean>%1이(가)&lt;br/&gt;견인줄을 잡고 있습니다.</Korean>
                 <French>%1&lt;br/&gt;Tenez la ligne de remorquage.</French>
+                <Chinesesimp>%1&lt;br/&gt;握住牵引绳。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_goUndercover_error_towing_ropes_output">
                 <Original>Holding tow ropes</Original>
                 <Russian>Держит буксировочный трос</Russian>
                 <Korean>견인줄을 잡는 중</Korean>
                 <French>Tient la corde de remorquage</French>
+                <Chinesesimp>抓着牵引绳</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3A_ai">
@@ -11955,12 +12814,14 @@
                 <Russian>У вас недостаточно денег для экипирования данного типа юнита.</Russian>
                 <Korean>이런 종류의 유닛을 장비하는 데 필요한 자금이 부족합니다.</Korean>
                 <French>Vous n'avez pas assez d'argent pour vous équiper de ce type d'unité.</French>
+                <Chinesesimp>您没有足够的钱来装备这种类型的单位。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_reinf_reinfPlayer_no_weapons_equip">
                 <Original>You don't have enough weapons to equip this type of unit.</Original>
                 <Russian>У вас недостаточно оружия для экипирования данного типа юнита.</Russian>
                 <Korean>이런 종류의 유닛을 장비하는 데 필요한 무기가 부족합니다.</Korean>
                 <French>Vous n'avez pas assez d'armes pour équiper ce type d'unité.</French>
+                <Chinesesimp>您没有足够的武器来装备这种类型的部队。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_reinf_reinfPlayer_full_squad">
                 <Original>Your squad is full or you have too many scattered units with no radio contact.</Original>
@@ -12676,6 +13537,13 @@
                 <Korean>일부 플레이어가 차량에 탑승했으며 목적지가 본부나 공군 기지, 군사 기지, 집결 지점, 암거래상이 아니기 때문에 %1의 빠른 이동이 취소되었습니다.</Korean>
                 <French>%1 Le voyage rapide a été annulé parce qu'un joueur est monté à bord de son véhicule et que la destination n'est pas le QG ou une base aérienne, une base militaire, un point de ralliement ou un marchand d'armes.</French>
             </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_trader_locked">
+                <Original>You can't Fast Travel to trader before visiting him once.</Original>
+                <Russian>Вы не можете совершить быстрое путешествие к торговцу, пока не посетите его хотя бы один раз.</Russian>
+                <Chinesesimp>在拜访交易者一次之前，你不能快速旅行到他那里</Chinesesimp>
+                <Korean>한 번 방문하기 전에는 상인에게 빠른 이동을 할 수 없습니다.</Korean>
+                <French>Vous ne pouvez pas voyager rapidement vers un commerçant avant de lui rendre visite une fois.</French>
+            </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_arrived_hc">
                 <Original>Group %1 arrived to destination.</Original>
                 <Russian>%1 отряд добрался до места назначения.</Russian>
@@ -13252,12 +14120,14 @@
                 <Russian>Выгнать экипаж из техники</Russian>
                 <French>Expulser l'équipage du véhicule</French>
                 <Korean>승무원 내보내기</Korean>
+                <Chinesesimp>移出乘员</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Base_moveOutCrew_err0">
                 <Original>Vehicle must contain rebel crew or civillian crew.</Original>
                 <Russian>В транспортном средстве должен находиться экипаж повстанцев или гражданских.</Russian>
                 <French>Le véhicule doit contenir un équipage rebelle ou civil.</French>
                 <Korean>차량에 반드시 반군 또는 민간인 승무원이 타고 있어야 합니다.</Korean>
+                <Chinesesimp>车辆必须载有叛军乘员或平民乘员。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0">
                 <Original>Vehicle must be closer than 50 meters to the HQ marker.</Original>
@@ -13306,6 +14176,7 @@
                 <Russian>Экипаж покинул технику.</Russian>
                 <French>L'équipage a abandonné le véhicule.</French>
                 <Korean>승무원을 내보냈습니다.</Korean>
+                <Chinesesimp>乘员已移出</Chinesesimp>
             </Key>
         </Container>
         <Container name="A3A_CREATE">

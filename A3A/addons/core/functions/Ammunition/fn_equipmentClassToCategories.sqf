@@ -107,6 +107,7 @@ if (_aggregateCategory isEqualTo "Explosives") then {
         private _magcfg = configFile >> "CfgMagazines" >> _classname;
         private _ammocfg = configFile / "CfgAmmo" / getText (_magcfg / "ammo");
         if (getText (_ammoCfg / "mineTrigger") == "remotetrigger") then { _categories pushBack "ExplosiveCharges" };
+        _categories pushBack (["MinesAPERS", "MinesAT"] select (getNumber (_ammoCfg / "hit") >= 1000));
     };
 };
 
@@ -118,6 +119,10 @@ call {
         if (count _muzzles >= 2 && {"gl" == getText (_config >> (_muzzles select 1) >> "cursorAim")}) then {
             _categories pushBack "GrenadeLaunchers";
         };
+    };
+
+    if (_baseCategory isEqualTo "Handguns") exitWith {
+        private _config = configfile >> "CfgWeapons" >> _className;
     };
 
     if (_basecategory isEqualTo "Vests") exitWith {

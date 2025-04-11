@@ -118,6 +118,11 @@ else
             _text = format [localize "STR_notifiers_SUP_execute_UAV", _sideName];
             _markerText = localize "STR_notifiers_SUP_execute_UAV_marker";
         };
+        case ("UAVAttack"):
+        {
+            _text = format [localize "STR_notifiers_SUP_execute_UAVAttack", _sideName];
+            _markerText = localize "STR_notifiers_SUP_execute_UAVAttack_marker";
+        };
         default
         {
             _text = format [localize "STR_notifiers_SUP_execute_generic", _sideName, _supportType];
