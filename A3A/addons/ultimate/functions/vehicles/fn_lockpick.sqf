@@ -31,7 +31,7 @@ params ["_vehicle"];
     localize "STR_A3AU_action_lockpick_title",
     "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    "(_this distance _target < 10) && {_target call A3U_fnc_isLocked}",
+    "(_this distance _target < 10) && {alive _target} && {_target call A3U_fnc_isLocked}",
     "(_caller distance _target < 10) && {_caller call A3A_fnc_isEngineer}",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
