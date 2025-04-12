@@ -5652,11 +5652,25 @@
                 <French>Combien de rebelles peuvent être mis en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines) ?</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit_desc">
-                <Original>How many rebel troops can be in garrison. Note that No limit option may affect performance as there might be too many troops for CPU to handle.</Original>
-                <Russian>Настраивает максимальное количество солдат-повстанцев, которое может быть в гарнизоне. Опция "No Limit" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
+                <Original>How many rebel troops can be in garrison. Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
+                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне. Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
                 <Chinesesimp>有多少反抗军可以驻守。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
                 <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
                 <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
+            </Key>
+            <Key ID="STR_params_rebelGarrisonGroupSize">
+                <Original>How many rebels can be in one garrison group?</Original>
+                <Russian>Сколько повстанцев может одной группе гарнизона?</Russian>
+                <Chinesesimp>每个驻军小组中的反抗军人数</Chinesesimp>
+                <Korean>한 개 주둔군 그룹에 몇 명의 반군이 포함될 수 있습니까?</Korean>
+                <French>Combien de rebelles peuvent être dans un groupe de garnison ?</French>
+            </Key>
+            <Key ID="STR_params_rebelGarrisonGroupSize_desc">
+                <Original>How many rebels can be in one garrison group? Total amount of garrison soldiers will be divided by this number and spread into groups.</Original>
+                <Russian>Настраивает количество повстанцев которые могут быть в одной группе гарнизона. Общее количество солдат в гарнизоне будет разделено на это число и солдаты будут распределены на группы.</Russian>
+                <Chinesesimp>设置每个驻军小组中可包含的反抗军人数。总驻军人数将按此数值分配至各小组。</Chinesesimp>
+                <Korean>한 개 주둔군 그룹에 포함될 수 있는 반군 인원을 설정합니다. 총 주둔군 병력 수를 이 수치로 나누어 각 그룹에 배분됩니다.</Korean>
+                <French>Définit le nombre de rebelles pouvant être dans un groupe de garnison. Le nombre total de soldats de la garnison sera divisé par ce nombre et réparti en groupes.</French>
             </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
