@@ -10,8 +10,13 @@ Arguments: None
 FIX_LINE_NUMBERS()
 
 Info("initBuilderMonitors started");
-if !(player call A3A_fnc_isEngineer) exitWith {};
-Info("initBuilderMonitors started2");
+
+// delay execution since `A3A_fnc_unitTraits` is also spawned before this spawn
+// on busy servers, player might not be recognized as engineer yet
+uiSleep 10;
+
+if !(player call A3A_fnc_isEngineer) exitWith { Info("initBuilderMonitors: Player is not an engineer, exiting"); };
+Info("initBuilderMonitors starting handlers");
 
 // EH to draw icons for nearby under-construction objects
 A3A_buildDrawIconsEH = addMissionEventHandler ["Draw3D", {
