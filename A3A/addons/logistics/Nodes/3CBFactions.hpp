@@ -764,6 +764,18 @@ class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehic
     };
 };
 
+class UK3CB_AAF_I_SUV_Armed : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-2.5,-1.1};
+            seats[] = {};
+        };
+    };
+};
+
 class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_hilux_uk3cb_hilux_pkm_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
