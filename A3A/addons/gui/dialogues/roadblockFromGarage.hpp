@@ -21,7 +21,7 @@ class A3A_VehiclesFromGarageDisplay : A3A_GARAGEDialog
                 {
                     idc = -1;
                     text = $STR_antistasi_dialogs_garage_light;
-                    onButtonClick = "[""light""] call A3A_fnc_ui_roadblockFromGarage";
+                    onButtonClick = "[""light""] call A3A_fnc_ui_roadblockFromGarage"; ///step 2
                     x = 0 * GRID_W;
                     y = 0;
                     w = 71 * GRID_W;
@@ -32,7 +32,7 @@ class A3A_VehiclesFromGarageDisplay : A3A_GARAGEDialog
                 {
                     idc = -1;
                     text = $STR_antistasi_dialogs_garage_heavy;
-                    onButtonClick = "[""heavy""] call A3A_fnc_ui_roadblockFromGarage";
+                    onButtonClick = "[""heavy""] call A3A_fnc_ui_roadblockFromGarage"; ///step 2
                     x = 71 * GRID_W;
                     y = 0;
                     w = 71 * GRID_W;

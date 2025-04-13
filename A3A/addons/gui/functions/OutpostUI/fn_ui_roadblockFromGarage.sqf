@@ -282,7 +282,7 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
     _carcar = vehicleToOutpost; ///this probably doubles as it spawns 2 groups 
     _pos = myGlobalResult;
     _vehicledirection = nil;
-    [_pos,_carcar,outpostCost] spawn
+    [_pos,_carcar,outpostCost] spawn ///step 3
         { 
             _pos = _this select 0;
             _carcar = _this select 1;
@@ -291,7 +291,7 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
             private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage;
             if (_result) then {
                 _vehicledirection = 90;
-                [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+                [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; ///step 3.5
             } else {
                 _vehicledirection = 0;
                 [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
