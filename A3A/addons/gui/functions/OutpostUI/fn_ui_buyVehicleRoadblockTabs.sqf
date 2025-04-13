@@ -46,14 +46,6 @@ if (_tab isEqualTo "vehicles") then {
     private _vehiclesControlsGroup = _display displayCtrl _selectedTab;
 
     diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _buyableVehiclesList;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
-    diag_log _selectedTab;
     diag_log _selectedTab;
 
     private _added = 0;
@@ -114,11 +106,11 @@ if (_tab isEqualTo "vehicles") then {
                     _pos = _this select 0;
                     _carcar = _this select 1;
                     outpostCost = _this select 2;
-                	private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage;
+                	private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage; ///step 3
                     // Use _result here
                     if (_result) then {
                         _vehicledirection = 90;
-                        [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+                        [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; ///step 3.5
                     } else {
                         _vehicledirection = 0;
                         [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];

@@ -60,7 +60,7 @@ switch (_mode) do
     case ("onLoad"):
     {
         ['on'] call SCRT_fnc_ui_toggleMenuBlur;
-        ["vehicles", [A3A_IDC_BUYLIGHTARMEDMAIN, A3A_IDC_LIGHTARMEDGROUP, "lightarmed"]] call A3A_fnc_ui_buyVehicleRoadblockTabs;
+        ["vehicles", [A3A_IDC_BUYLIGHTARMEDMAIN, A3A_IDC_LIGHTARMEDGROUP, "lightarmed"]] call A3A_fnc_ui_buyVehicleRoadblockTabs; ///step 3
         ["vehicles", [A3A_IDC_BUYATVEHICLEMAIN, A3A_IDC_ATVEHICLEGROUP, "AT"]] call A3A_fnc_ui_buyVehicleRoadblockTabs;
         ["vehicles", [A3A_IDC_BUYAAVEHICLEMAIN, A3A_IDC_AAVEHICLEGROUP, "AA"]] call A3A_fnc_ui_buyVehicleRoadblockTabs;
 

@@ -3702,6 +3702,26 @@
                 <Original>Crew</Original>
                 <Russian>Экипаж</Russian>
             </Key>
+            <Key ID="STR_antistasi_dialogs_crew_Driver">
+                <Original>Driver</Original>
+                <Russian>Водитель</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_crew_Commander">
+                <Original>Commander</Original>
+                <Russian>Командир</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_crew_Gunner">
+                <Original>Gunner</Original>
+                <Russian>Стрелок</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_crew_Passengers">
+                <Original>Passengers</Original>
+                <Russian>Пассажиры</Russian>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_crew_PassengersFFV">
+                <Original>Passengers with FFV</Original>
+                <Russian>Пассажиры с FFV</Russian>
+            </Key>
             <Key ID="STR_antistasi_dialogs_weapons">
                 <Original>Weapons</Original>
                 <Russian>Вооружение</Russian>

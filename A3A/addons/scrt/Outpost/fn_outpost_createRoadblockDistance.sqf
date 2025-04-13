@@ -1,7 +1,7 @@
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-params ["_markerX","_vehicleX","_vehiclecustomazationX","_vehicledirectionX"];
+params ["_markerX","_vehicleX","_vehiclecustomazationX","_vehicledirectionX"]; ///step 5
 
 if (!isServer and hasInterface) exitWith {};
 

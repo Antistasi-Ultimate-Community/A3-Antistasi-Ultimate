@@ -41,7 +41,7 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
                 {
                     idc = -1;
                     text = $STR_antistasi_dialogs_outpost_tab_lightarmed;
-                    onButtonClick = "[""switchTab"", [""lightarmed""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
+                    onButtonClick = "[""switchTab"", [""lightarmed""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog"; ///step 2
                     x = 0 * GRID_W;
                     y = 0;
                     w = 54 * GRID_W;
@@ -52,7 +52,7 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
                 {
                     idc = -1;
                     text = $STR_antistasi_dialogs_outpost_tab_AT;
-                    onButtonClick = "[""switchTab"", [""AT""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
+                    onButtonClick = "[""switchTab"", [""AT""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog"; ///step 2
                     x = 54 * GRID_W;
                     y = 0;
                     w = 54 * GRID_W;
@@ -63,7 +63,7 @@ class A3A_BuyVehicleRoadblockDialog : A3A_TabbedDialog
                 {
                     idc = -1;
                     text = $STR_antistasi_dialogs_outpost_tab_AA;
-                    onButtonClick = "[""switchTab"", [""AA""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog";
+                    onButtonClick = "[""switchTab"", [""AA""]] call A3A_fnc_ui_outpostVehicleFromStoreDialog"; ///step 2
                     x = 108 * GRID_W;
                     y = 0;
                     w = 54 * GRID_W;

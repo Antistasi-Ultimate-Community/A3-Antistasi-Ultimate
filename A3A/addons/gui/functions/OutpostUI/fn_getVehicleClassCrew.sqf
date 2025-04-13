@@ -33,7 +33,7 @@ while { count(_toScan) > 0 } do {
 };
 
 if (getNumber (_c >> "hasDriver") > 0) then {
-	_crew pushBack ["Водитель", "driver"];
+	_crew pushBack [localize "STR_antistasi_dialogs_crew_Driver", "driver"];
 };
 
 private _coPilot = 0;
@@ -69,10 +69,10 @@ _passengers = _allTurrets + _transportSoldier - _commander - _gunners - _coPilot
 _ffvCount = _passengers - _transportSoldier;
 
 if (_passengers > 0) then {
-	_crew pushBack ["Пассажиры " + str _passengers, "passenger"];
+	_crew pushBack [localize "STR_antistasi_dialogs_crew_Passengers" + str _passengers, "passenger"];
 };
 if (_ffvCount > 0) then {
-	_crew pushBack ["Пассажиры с FFV " + str _ffvCount, "ffv"];
+	_crew pushBack [localize "STR_antistasi_dialogs_crew_PassengersFFV" + str _ffvCount, "ffv"];
 };
 
 _crew;

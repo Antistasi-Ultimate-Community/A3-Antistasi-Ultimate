@@ -79,14 +79,6 @@ switch (_category) do {
 diag_log _vehicleClasses;
 diag_log _vehicleClasses;
 diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
-diag_log _vehicleClasses;
 
 {
 	private _vehiclePrice = [_x] call A3A_fnc_vehiclePrice;
