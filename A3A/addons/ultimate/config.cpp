@@ -168,6 +168,7 @@ class A3U
     #include "config\plane\cfgPlaneLoadouts.hpp"
     #include "config\cfgForbiddenItems.hpp"
     #include "config\trader\cfgTraderMods.hpp"
+    #include "config\music\vn_music.hpp"
 };
 
 class Extended_PreInit_EventHandlers 
@@ -177,3 +178,11 @@ class Extended_PreInit_EventHandlers
         init = "call A3U_fnc_init";
     };
 };
+
+
+//////////Music radio stuff
+#include "Dialogs.hpp"
+
+/* class CfgMusic {
+    #include "config\music\vn_music.hpp"
+}; */

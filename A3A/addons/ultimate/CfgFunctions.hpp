@@ -96,5 +96,23 @@ class CfgFunctions
             class revealZones {};
             class revealZonesDistance {};
         };
+        class radio
+        {
+            file = QPATHTOFOLDER(functions\radio);
+            class getCategories {};
+            class categoryChanged {};
+            class nextTrack {};
+            class prevTrack {};
+            class trackChanged {};
+            class volumeChanged {};
+            class playPause {};
+            class playTrack {};
+            class getTracksByCategory {};
+            class initPlayer {};
+            class trackProgressMonitor {};
+            class updatePlayButton {};
+            class updateTrackInfo {};
+            class addRadioAction {};
+        };
     };
 };
