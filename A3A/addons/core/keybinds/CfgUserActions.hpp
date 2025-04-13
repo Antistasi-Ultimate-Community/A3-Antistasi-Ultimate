@@ -1,3 +1,4 @@
+#include "..\functions\Builder\placerDefines.hpp"
 #define ACTIONINTERNAL(type) "["##type##", _this] call A3A_fnc_keyActions"
 #define ACTION(type) ACTIONINTERNAL(QGVAR(type))
 class CfgUserActions {
@@ -40,15 +41,15 @@ class CfgUserActions {
     class GVAR(buildingPlacerRotateCCW) {
         displayName = $STR_A3A_keyActions_buildingPlacerRotateCCW_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerRotateCCW_desc;
-        onActivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[2, true] }";
-        onDeactivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[2, false] }";
+        onActivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CCW,true)] });
+        onDeactivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CCW,false)] });
     };
 
     class GVAR(buildingPlacerRotateCW) {
         displayName = $STR_A3A_keyActions_buildingPlacerRotateCW_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerRotateCW_desc;
-        onActivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[1, true] }";
-        onDeactivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[1, false] }";
+        onActivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CW,true)] });
+        onDeactivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CW,false)] });
     };
 };
 #undef ACTION
