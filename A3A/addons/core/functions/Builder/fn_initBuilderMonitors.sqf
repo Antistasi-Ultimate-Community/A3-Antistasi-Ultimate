@@ -61,6 +61,6 @@ while { true } do {
         {},
         [],
         10,
-        20
+        200
     ] call BIS_fnc_holdActionAdd;
 };
