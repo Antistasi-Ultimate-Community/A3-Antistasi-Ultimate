@@ -57,11 +57,11 @@ private _downKeyEH = _emptyDisplay displayAddEventHandler ["KeyDown", {
         call (A3A_building_EHDB # END_BUILD_FUNC);
     };
 
-    if (_key isEqualTo DIK_E) then {
+    if (!buildingPlacerUseUnhardcodedKeybinds && (_key isEqualTo DIK_E)) then {
         A3A_building_EHDB set [ROTATION_MODE_CCW, true];
     };
 
-    if (_key isEqualTo DIK_R) then {
+    if (!buildingPlacerUseUnhardcodedKeybinds && (_key isEqualTo DIK_R)) then {
         A3A_building_EHDB set [ROTATION_MODE_CW, true];
     };	 
 }];
@@ -170,11 +170,11 @@ private _upKeyEH = _emptyDisplay displayAddEventHandler ["KeyUp", {
         if (A3A_building_EHDB # SNAP_SURFACE_MODE) then {_altText ctrlSetTextColor [1, 0, 0, 1];} else {_altText ctrlSetTextColor [1, 1, 1, 1];}
     };
 
-    if (_key isEqualTo DIK_E) then {
+    if (!buildingPlacerUseUnhardcodedKeybinds && (_key isEqualTo DIK_E)) then {
         A3A_building_EHDB set [ROTATION_MODE_CCW, false];
     };
 
-    if (_key isEqualTo DIK_R) then {
+    if (!buildingPlacerUseUnhardcodedKeybinds && (_key isEqualTo DIK_R)) then {
         A3A_building_EHDB set [ROTATION_MODE_CW, false];
     };
 

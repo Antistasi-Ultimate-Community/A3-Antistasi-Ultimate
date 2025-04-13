@@ -36,5 +36,19 @@ class CfgUserActions {
         tooltip = $STR_A3A_keyActions_commMenu_desc;
         onActivate = ACTION(commanderRebelMenu);
     };
+
+    class GVAR(buildingPlacerRotateCCW) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateCCW_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateCCW_desc;
+        onActivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[2, true] }";
+        onDeactivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[2, false] }";
+    };
+
+    class GVAR(buildingPlacerRotateCW) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateCW_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateCW_desc;
+        onActivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[1, true] }";
+        onDeactivate = "if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[1, false] }";
+    };
 };
 #undef ACTION

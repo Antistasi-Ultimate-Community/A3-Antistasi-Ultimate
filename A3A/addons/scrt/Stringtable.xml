@@ -14402,6 +14402,46 @@
                 <Korean>현재 적재량</Korean>
                 <French>Charge actuelle</French>
             </Key>
+            <Key ID="STR_params_buildingPlacerUseUnhardcodedKeybinds">
+                <Original>Building Placer - Use custom keybinds</Original>
+                <German>Gebäudeplatzierung - Benutzerdefinierte Tastenbelegung verwenden</German>
+                <Russian>Строитель - Использовать пользовательские клавиши</Russian>
+                <Chinesesimp>建筑放置器 - 使用自定义按键</Chinesesimp>
+                <Korean>건물 배치기 - 사용자 지정 키 바인딩 사용</Korean>
+                <French>Constructeur - Utiliser des touches personnalisées</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCCW_title">
+                <Original>Building Placer - Rotate counter-clockwise</Original>
+                <German>Gebäudeplatzierung - Gegen den Uhrzeigersinn drehen</German>
+                <Russian>Строитель - Повернуть против часовой стрелки</Russian>
+                <Chinesesimp>建筑放置器 - 逆时针旋转</Chinesesimp>
+                <Korean>건물 배치기 - 반시계 방향으로 회전</Korean>
+                <French>Constructeur - Rotation dans le sens inverse des aiguilles d'une montre</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCCW_desc">
+                <Original>Rotate the building counter-clockwise.</Original>
+                <German>Das Gebäude gegen den Uhrzeigersinn drehen.</German>
+                <Russian>Повернуть здание против часовой стрелки.</Russian>
+                <Chinesesimp>逆时针旋转建筑物。</Chinesesimp>
+                <Korean>건물을 반시계 방향으로 회전합니다.</Korean>
+                <French>Faire pivoter le bâtiment dans le sens inverse des aiguilles d'une montre.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCW_title">
+                <Original>Building Placer - Rotate clockwise</Original>
+                <German>Gebäudeplatzierung - Im Uhrzeigersinn drehen</German>
+                <Russian>Строитель - Повернуть по часовой стрелке</Russian>
+                <Chinesesimp>建筑放置器 - 顺时针旋转</Chinesesimp>
+                <Korean>건물 배치기 - 시계 방향으로 회전</Korean>
+                <French>Constructeur - Rotation dans le sens des aiguilles d'une montre</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCW_desc">
+                <Original>Rotate the building clockwise.</Original>
+                <German>Das Gebäude im Uhrzeigersinn drehen.</German>
+                <Russian>Повернуть здание по часовой стрелке.</Russian>
+                <Chinesesimp>顺时针旋转建筑物。</Chinesesimp>
+                <Korean>건물을 시계 방향으로 회전합니다.</Korean>
+                <French>Faire pivoter le bâtiment dans le sens des aiguilles d'une montre.</French>
+            </Key>
         </Container>
     </Package>
 </Project>
