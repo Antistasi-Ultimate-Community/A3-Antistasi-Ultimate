@@ -72,7 +72,7 @@ switch (true) do {
 		sleep 3;
 		deleteMarker _marker;
 	};
-	case (_units findIf {[_x] call A3A_fnc_canFight && {_x distance _position < 35}} != -1): {
+	case (_units findIf {[_x] call A3A_fnc_canFight && {_x distance _position < 35}} != -1): {  ///step 4
 		if (isPlayer leader _groupX) then {
 			_owner = (leader _groupX) getVariable ["owner",leader _groupX];
 			(leader _groupX) remoteExec ["removeAllActions",leader _groupX];
