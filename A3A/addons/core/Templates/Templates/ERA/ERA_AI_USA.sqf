@@ -2,7 +2,7 @@
 //   Side Information   //
 //////////////////////////
 
-["name", "US Army"] call _fnc_saveToTemplate;
+["name", "USAF"] call _fnc_saveToTemplate;
 ["spawnMarkerName", "US support corridor"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_US_F"] call _fnc_saveToTemplate;
@@ -110,7 +110,7 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ["minefieldAT", ["SPE_US_M1A1_ATMINE", "vn_mine_m15", "CUP_Mine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["SPE_US_M3_Pressure_MINE", "SPE_US_M3_MINE", "vn_mine_m14", "APERSMine"]] call _fnc_saveToTemplate;
 
-//#include "IFA_Vehicle_Attributes.sqf"
+#include "ERA_Vehicle_Attributes.sqf"
 
 /////////////////////
 ///  Identities   ///
