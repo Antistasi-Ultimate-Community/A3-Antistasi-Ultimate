@@ -55,11 +55,49 @@ private _groupX = [_positionX, teamPlayer, _garrison,true,false] call A3A_fnc_sp
 private _groupXUnits = units _groupX;
 _groupXUnits apply { [_x,_markerX] spawn A3A_fnc_FIAinitBases; };
 
+private _riflemanType = A3A_faction_reb get "unitRifle";
 private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh; ////////somehow add commander as well (or maybe even fill the fill all non driver or passenger seats)
-    [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
+    
+    // Назначение наводчика
+    if (isNull gunner _veh) then {
+        _crewMan assignAsGunner _veh;
+        _crewMan moveInGunner _veh;
+        [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
+    };
+    
+    // Исправленный поиск командира
+    private _commanderIndex = -1;
+    for "_i" from (_crewManIndex + 1) to (count _groupXUnits - 1) do {
+        private _unit = _groupXUnits select _i;
+        if ((_unit getVariable "unitType") == _riflemanType && isNull objectParent _unit) exitWith {
+            _commanderIndex = _i;
+        };
+    };
+    
+    if (_commanderIndex != -1 && (_veh emptyPositions "Commander") > 0) then {
+        private _commander = _groupXUnits select _commanderIndex;
+        _commander assignAsCommander _veh;
+        _commander moveInCommander _veh;
+    };
+
+    // Заполнение турелей
+    private _turrets = allTurrets [_veh, false];
+    {
+        if (isNull (_veh turretUnit _x)) then {
+            private _turretIndex = _groupXUnits findIf {
+                (_x getVariable "unitType") == _riflemanType && 
+                isNull objectParent _x
+            };
+            if (_turretIndex != -1) then {
+                //private _unit = _groupXUnits select _turretIndex;
+                private _unit = [_groupX, A3A_faction_reb get "unitRifle", _positionX, [], 10] call A3A_fnc_createUnit;
+                _unit assignAsTurret [_veh, _x];
+                _unit moveInTurret [_veh, _x];
+            };
+        };
+    } forEach _turrets;
 };
 
 _groupX setBehaviour "AWARE";

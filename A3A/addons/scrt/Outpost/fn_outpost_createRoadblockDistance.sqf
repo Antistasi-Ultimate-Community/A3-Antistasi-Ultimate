@@ -55,10 +55,50 @@ private _groupXUnits = units _groupX;
     [_x,_markerX] spawn A3A_fnc_FIAinitBases; 
 } forEach _groupXUnits;
 
-private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
+private _riflemanType = A3A_faction_reb get "unitRifle";
+
+private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == _riflemanType};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh; 
+    
+    // Основное назначение наводчика
+    if (isNull gunner _veh) then {
+        _crewMan assignAsGunner _veh;
+        _crewMan moveInGunner _veh;
+    };
+
+    // Исправленный поиск командира
+    private _commanderIndex = -1;
+    for "_i" from (_crewManIndex + 1) to (count _groupXUnits - 1) do {
+        private _unit = _groupXUnits select _i;
+        if ((_unit getVariable "unitType") == _riflemanType && isNull objectParent _unit) exitWith {
+            _commanderIndex = _i;
+        };
+    };
+    
+    if (_commanderIndex != -1 && (_veh emptyPositions "Commander") > 0) then {
+        private _commander = _groupXUnits select _commanderIndex;
+        _commander assignAsCommander _veh;
+        _commander moveInCommander _veh;
+    };
+
+    // Заполнение турелей
+    private _turrets = allTurrets [_veh, false];
+    {
+        if (isNull (_veh turretUnit _x)) then {
+            private _turretIndex = _groupXUnits findIf {
+                (_x getVariable "unitType") == _riflemanType && 
+                isNull objectParent _x
+            };
+            if (_turretIndex != -1) then {
+                //private _unit = _groupXUnits select _turretIndex;
+                private _unit = [_groupX, A3A_faction_reb get "unitRifle", _positionX, [], 10] call A3A_fnc_createUnit; /// there are only 2 rifleman in the squad so why not
+                _unit assignAsTurret [_veh, _x];
+                _unit moveInTurret [_veh, _x];
+            };
+        };
+    } forEach _turrets;
+
     sleep 1;
     _crewMan lookAt _barricade;
 };
