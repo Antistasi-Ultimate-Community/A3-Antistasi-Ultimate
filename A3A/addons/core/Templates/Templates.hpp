@@ -718,8 +718,8 @@ class Templates
 
     #include "Templates\CWR\templates.hpp"
 	
-    // ***************************** Korsac *****************************
+	// ***************************** Mixed Era Factions *****************************
 
-    #include "Templates\KOR\templates.hpp"
+    #include "Templates\ERA\templates.hpp"
 
 };
