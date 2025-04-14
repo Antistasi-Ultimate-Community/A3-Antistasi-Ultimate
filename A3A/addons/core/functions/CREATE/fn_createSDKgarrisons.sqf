@@ -112,6 +112,8 @@ while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do {
 	_soldiers pushBack _unit;
 	_countUnits = _countUnits + 1;
 	_countGroup = _countGroup + 1;
+	_groupX setBehaviour "AWARE";
+	_groupX setCombatMode "YELLOW";
 	sleep 0.5;
 };
 
