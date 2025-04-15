@@ -20,7 +20,7 @@ Example:
 
 params [["_object", objNull, [objNull]]];
 
-_object setVehicleRadar 0;
+_object setVehicleRadar 1; /// fix (kinda) for inactive rebel SAMs and radars
 _object setVehicleReceiveRemoteTargets true;
 _object setVehicleReportRemoteTargets true;
 //_object setVehicleReportOwnPosition true;
