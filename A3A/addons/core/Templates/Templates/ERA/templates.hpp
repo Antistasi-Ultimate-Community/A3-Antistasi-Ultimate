@@ -24,6 +24,16 @@
         file = "ERA_AI_USA_DLC";
     };
 	
+	class ERA_USA : ERA_Base
+    {
+		requiredAddons[] = {"IFA3_Core","uns_weap_w","CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core"};
+        side = "Occ";
+        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+		logo = "a3\data_f\flags\flag_us_co.paa";
+        name = "MultiEra USA";
+        file = "ERA_AI_USA";
+    };
+	
 	class ERA_RUS : ERA_Base
     {
 		requiredAddons[] = {"cwr3_weapons", "NORTH_Main", "CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core"};
