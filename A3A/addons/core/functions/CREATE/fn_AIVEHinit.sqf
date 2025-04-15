@@ -21,7 +21,7 @@ if (fullCrew [_veh, "", true] isEqualTo []) exitWith {
 	if (typeof _veh in A3A_utilityItemHM) then { _veh call A3A_fnc_initObject };
 };
 
-_veh setVehicleRadar 0; ///might break something
+_veh setVehicleRadar 1; ///might break something ////// fix (kinda) for inactive rebel SAMs and radars
 _veh setVehicleReceiveRemoteTargets true;
 _veh setVehicleReportRemoteTargets true;
 _veh setVehicleReportOwnPosition true;
