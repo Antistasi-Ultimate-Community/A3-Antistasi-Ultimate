@@ -2,6 +2,8 @@
 
 params ["_unit","_part","_damage","_injurer","_projectile","_hitIndex","_instigator","_hitPoint"];
 
+private _side = side _unit;
+
 // Functionality unrelated to Antistasi revive
 if (side group _injurer == teamPlayer) then
 {
@@ -83,7 +85,7 @@ private _makeUnconscious =
 	
 	[_unit, group _unit, _injurer] spawn A3A_fnc_AIreactOnKill;
 
-	[_unit,_injurer] spawn A3A_fnc_unconsciousAAF;
+	[_unit,_injurer,_side] spawn A3A_fnc_unconsciousAAF;
 };
 
 if (side _injurer == teamPlayer) then

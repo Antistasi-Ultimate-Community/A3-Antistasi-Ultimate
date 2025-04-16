@@ -143,6 +143,13 @@ while {time < _bleedOut && _unit getVariable ["incapacitated",false] && alive _u
 
 	if (isNull _helper and _nextRequest < time) then {
 		_helper = [_unit] call A3A_fnc_askHelp;
+		diag_log 123;
+		diag_log _helper;
+		if (isNull _helper) then { ///can add a parametr here for snobs
+			_helper = [_unit, independent] call A3A_fnc_askAnyoneHelp; //in case there is no helper found in _units group
+			diag_log 321;
+			diag_log _helper;
+		};
 		private _requestGap = (2 + (_unit getVariable ["helpFailed", 0]))^2;
 		_nextRequest = if (isPlayer _unit) then { time + _requestGap/2 } else { time + _requestGap };
 	};

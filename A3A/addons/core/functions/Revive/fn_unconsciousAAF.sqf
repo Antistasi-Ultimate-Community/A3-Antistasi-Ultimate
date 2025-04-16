@@ -1,11 +1,10 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_unit", "_injurer"];
+params ["_unit", "_injurer","_side"];
 
 private _bleedOutTime = if (surfaceIsWater (position _unit)) then {time + 60} else {time + 300};
 private _playerNear = false;
 private _group = group _unit;
-private _side = side _group;
 
 // This is... quite weird
 if ({if ((isPlayer _x) and {_x distance _unit < distanceSPWN2}) exitWith {1}} count allUnits != 0) then
@@ -28,7 +27,10 @@ while { (alive _unit) && (time < _bleedOutTime) && (_unit getVariable ["incapaci
     //Ask for help if not already helped
 	private _helped = _unit getVariable ["helped",objNull];
 	if (isNull _helped and _nextRequest < time) then {
-		[_unit] call A3A_fnc_askHelp;
+		_helper = [_unit] call A3A_fnc_askHelp;
+		if (isNull _helper) then {
+			_helper = [_unit,_side] call A3A_fnc_askAnyoneHelp; //in case there is no helper found in _units group
+		};
 		_nextRequest = time + (2 + (_unit getVariable ["helpFailed", 0]))^2;
 	};
 	sleep 3;
