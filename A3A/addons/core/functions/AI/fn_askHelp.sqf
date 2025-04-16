@@ -29,7 +29,7 @@ private _fnc_canHelp = {
     if (_unitNeedsFAK and {count (_firstAidKits arrayIntersect items _unit) == 0}) exitWith { false };
     true;
 };
-///
+
 // Use available medics as priority
 private _index = _medics findIf { _x call _fnc_canHelp };
 if (_index != -1) exitWith {
