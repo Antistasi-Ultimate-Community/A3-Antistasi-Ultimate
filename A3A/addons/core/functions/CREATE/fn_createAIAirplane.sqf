@@ -421,15 +421,42 @@ private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
 
 if (!_busy) then
 {
-	private _vehTypesHeavy = (_faction get "vehiclesAPCs") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesTanks") +(_faction get "vehiclesLightTanks");
-	for "_i" from 1 to (round (random 2)) do {
+	private _vehPool = [];
+	private _vehTypes = [
+		"vehiclesLightAPCs",
+		"vehiclesAPCs",
+		"vehiclesIFVs",
+		"vehiclesLightTanks",
+		"vehiclesTanks",
+		"vehiclesHeavyTanks",
+		"vehiclesAirborne",
+		];
+	private _typeWeight = [
+		12 - (tierWar), 
+		12 - (tierWar * 0.5),
+		5 + (tierWar), 
+		12 - (tierWar * 0.25),
+		5 + (tierWar), 
+		5 + (tierWar * 0.5),
+		5 + (tierWar)
+		];
+
+	{
+		private _vehs = _faction get _x;
+		if (_vehs isEqualTo []) then {continue};
+		private _weight = (_typeWeight select _forEachIndex) / count _vehs;
+		{
+			_vehPool append [_x, _weight];
+		} forEach _vehs;
+	} forEach _vehTypes;
+	for "_i" from 1 to (round (random 2)) do
+	{
 		_spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 		if (_spawnParameter isEqualType []) then
 		{
 			_spawnsUsed pushBack _spawnParameter#2;
-			private _veh = nil;
 			isNil {
-				_veh = createVehicle [selectRandom _vehTypesHeavy, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+				_veh = createVehicle [selectRandomWeighted _vehPool, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 				_veh setDir (_spawnParameter select 1);
 			};
 			_vehiclesX pushBack _veh;
@@ -458,9 +485,9 @@ private _vehTypeWeights = [
 	4, 
 	2, 
 	2,
-	1, 
-	1, 
-	1, 
+	1 + (tierWar * 0.05), 
+	1 + (tierWar * 0.05), 
+	1 + (tierWar * 0.2), 
 	2
 ];
 
