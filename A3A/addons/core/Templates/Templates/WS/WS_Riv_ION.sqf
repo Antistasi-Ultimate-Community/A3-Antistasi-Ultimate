@@ -631,7 +631,7 @@ private _partisanTemplate = {
 	["handgun", 2] call _fnc_addMagazines;
 
 
-	[selectRandomWeighted ["rifles", 0.2 "carbines", 0.5 "smgs", 0.3]] call _fnc_setPrimary;
+	[selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["items_medical_standard"] call _fnc_addItemSet;
