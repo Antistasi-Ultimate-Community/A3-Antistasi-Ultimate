@@ -90,8 +90,6 @@ switch (_mode) do
                         private _invSelCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
                         private _rivEnaCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 1);
 
-                        _invSelCtrl ctrlEnable !_invDisabled;
-
                         if (_invDisabled) then {
                             _invSelCtrl ctrlEnable false;
                             _invSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_inv_disabled");
