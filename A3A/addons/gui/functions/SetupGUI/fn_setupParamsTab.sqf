@@ -93,14 +93,14 @@ switch (_mode) do
                         _invSelCtrl ctrlEnable !_invDisabled;
 
                         if (_invDisabled) then {
+                            _invSelCtrl ctrlEnable false;
+                            _invSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_inv_disabled");
                             _rivEnaCtrl lbSetCurSel 0;
-                            _rivEnaCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_param_locked");
-                            _rivEnaCtrl setVariable ["locked", true];
-                            _rivEnaCtrl ctrlEnable false;
+                            _rivEnaCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_param_warning");
                         } else {
+                            _invSelCtrl ctrlEnable true;
+                            _invSelCtrl ctrlSetTooltip "";
                             _rivEnaCtrl ctrlSetTooltip "";
-                            _rivEnaCtrl setVariable ["locked", false];
-                            _rivEnaCtrl ctrlEnable true;
                         };
                     }];
                 };
@@ -112,7 +112,13 @@ switch (_mode) do
                         private _rivDisabled = (_thisCtrl lbValue _index) isEqualTo 0;
                         private _rivSelCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
 
-                        _rivSelCtrl ctrlEnable !_rivDisabled;
+                        if (_rivDisabled) then {
+                            _rivSelCtrl ctrlEnable false;
+                            _rivSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_disabled");
+                        } else {
+                            _rivSelCtrl ctrlEnable true;
+                            _rivSelCtrl ctrlSetTooltip "";
+                        };
                     }];
                 };
             };
