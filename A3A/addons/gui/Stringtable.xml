@@ -794,6 +794,34 @@
                 <Chinesesimp>所有车辆</Chinesesimp>
                 <Korean>모든 차량</Korean>
             </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_amount_single">
+                <Original>Buy single vehicle</Original>
+                <Russian>Купить одиночный транспорт</Russian>
+                <Chinesesimp>购买单个载具</Chinesesimp>
+                <Korean>단일 차량 구매</Korean>
+                <French>Acheter un véhicule</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_amount_more">
+                <Original>Put %1 vehicle(s) into garage</Original>
+                <Russian>Поместить %1 транспорт(ов) в гараж</Russian>
+                <Chinesesimp>将 %1 车辆放入车库</Chinesesimp>
+                <Korean>차고에 %1 대의 차량을 넣습니다.</Korean>
+                <French>Mettre %1 véhicule(s) dans le garage</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_amount_more_confirm_title">
+                <Original>Confirm purchase</Original>
+                <Russian>Подтвердите покупку</Russian>
+                <Chinesesimp>确认购买</Chinesesimp>
+                <Korean>구매 확인</Korean>
+                <French>Confirmer l'achat</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_amount_more_confirm_text">
+                <Original>Really buy %1x vehicle %2 for altogether %3 %4 and put them into garage?</Original>
+                <Russian>Вы действительно хотите купить %1x транспорт %2 за %3 %4 и поместить его в гараж?</Russian>
+                <Chinesesimp>真的要购买 %1 辆 %2 吗？总共 %3 %4，并放入车库？</Chinesesimp>
+                <Korean>정말 %1대의 차량 %2를 %3 %4에 구매하고 차고에 넣으시겠습니까?</Korean>
+                <French>Voulez-vous vraiment acheter %1 véhicule %2 pour un total de %3 %4 et les mettre dans le garage ?</French>
+            </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_arty">
                 <Original>Artillery</Original>
                 <Russian>Артиллерия</Russian>

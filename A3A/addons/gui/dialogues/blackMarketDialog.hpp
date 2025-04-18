@@ -44,8 +44,19 @@ class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
                     access = 1;
                     x = 0 * GRID_W;
                     y = 0;
-                    w = 125 * GRID_W;
-                    h = 5 * GRID_H;/* GRID_H */
+                    w = 80 * GRID_W;
+                    h = 5 * GRID_H;
+                };
+
+                class VehicleTabAmountCombo : A3A_ComboBox_Small_BM
+                {
+                    idc = A3A_IDC_SETUP_BMTABLE_AMOUNT;
+                    fade = 0;
+                    access = 1;
+                    x = 80 * GRID_W;
+                    y = 0;
+                    w = 45 * GRID_W;
+                    h = 5 * GRID_H;
                 };
             };
         };

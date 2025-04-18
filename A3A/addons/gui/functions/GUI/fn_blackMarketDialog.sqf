@@ -102,7 +102,7 @@ switch (_mode) do
         };
 
         if (_selectedTabIDC == -1) exitWith {
-            Error("Attempted to access tab without permission : %1", _selectedTab);
+            Error_1("Attempted to access tab without permission : %1", _selectedTab);
         };
 
         private _allTabs = [
@@ -141,6 +141,7 @@ switch (_mode) do
 
         private _displayBM = findDisplay A3A_IDD_BLACKMARKETVEHICLEDIALOG;
         private _bmTable = _displayBM displayCtrl A3A_IDC_SETUP_BMTABLE;
+        private _bmVehicleAmount = _displayBM displayCtrl A3A_IDC_SETUP_BMTABLE_AMOUNT;
 
         private _vehicleTypes = [localize "STR_antistasi_dialogs_vehicle_tab_all", localize "STR_antistasi_dialogs_vehicle_tab_arty", localize "STR_antistasi_dialogs_vehicle_tab_apc", localize "STR_antistasi_dialogs_vehicle_tab_AA",
         localize "STR_antistasi_dialogs_vehicle_tab_uav", localize "STR_antistasi_dialogs_vehicle_tab_tank",localize "STR_antistasi_dialogs_vehicle_tab_statics", localize "STR_antistasi_dialogs_vehicle_tab_heli", 
@@ -175,11 +176,51 @@ switch (_mode) do
         _valsCtrl lbSetSelected [0, true];
 
         uiNamespace setVariable ["bm_vehicleTypeBox", _valsCtrl];
+
+        private _index = _bmVehicleAmount lbAdd localize "STR_antistasi_dialogs_vehicle_tab_amount_single";
+        _bmVehicleAmount lbSetValue[_index, 1];
+
+        [2, 3, 4, 5, 6, 7, 8, 9, 10] apply {
+            _index = _bmVehicleAmount lbAdd format[localize "STR_antistasi_dialogs_vehicle_tab_amount_more", _x];
+            _bmVehicleAmount lbSetValue[_index, _x];
+        };
+
+        _bmVehicleAmount lbSetCurSel 0;
+        _bmVehicleAmount lbSetSelected [0, true];
+
+        uiNamespace setVariable ["bm_vehicleAmountBox", _bmVehicleAmount];
     };
 
     case ("onUnload"): 
     {
         ['off'] call SCRT_fnc_ui_toggleMenuBlur;
+    };
+
+    case "buyToGarage": {
+        if !(_params params[
+            ["_amount", nil, [0]],
+            ["_className", nil, [""]],
+            ["_price", nil, [0]]
+        ]) then {
+            Error_1("BlackMarketDialog buyToGarage mode called with invalid params: %1", _params);
+            break;
+        };
+
+        [_amount, _className, _price] spawn {
+            params["_amount","_className","_price"];
+
+            private _guiTitle = localize "STR_antistasi_dialogs_vehicle_tab_amount_more_confirm_title";
+            private _guiPrompt = format[localize "STR_antistasi_dialogs_vehicle_tab_amount_more_confirm_text",
+                _amount, 
+                [configFile >> "CfgVehicles" >> _className >> "displayName", "STRING", _className] call CBA_fnc_getConfigEntry,
+                _price * _amount, A3A_faction_civ get "currencySymbol"
+            ];
+
+            if !([_guiPrompt, _guiTitle, true, true] call BIS_fnc_guiMessage) exitWith {};
+        
+            closeDialog 2;
+            [_className, _amount] spawn A3A_fnc_addBlackMarketVeh;
+        };
     };
 
     default

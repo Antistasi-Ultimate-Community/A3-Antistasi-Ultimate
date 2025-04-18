@@ -96,8 +96,19 @@ if (_tab isEqualTo "vehicles") then
         _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
         _button setVariable ["className", _className];
         _button setVariable ["model", _model];
+        _button setVariable ["price", _price];
         _button ctrlAddEventHandler ["ButtonClick", {
-            closeDialog 2; [(_this # 0) getVariable "className"] spawn A3A_fnc_addBlackMarketVeh;
+            params[["_button",controlNull,[controlNull]]];
+
+            private _ctrl = uiNamespace getVariable "bm_vehicleAmountBox";
+            private _amount = _ctrl lbValue lbCurSel _ctrl;
+
+            if (_amount > 1) then {
+                ["buyToGarage", [_amount, _button getVariable "className", _button getVariable "price"]] call A3A_fnc_blackMarketDialog;
+            } else {
+                closeDialog 2;
+                [_button getVariable "className"] spawn A3A_fnc_addBlackMarketVeh;
+            };
         }];
         _button ctrlCommit 0;
 
