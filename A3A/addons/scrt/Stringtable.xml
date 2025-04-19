@@ -5438,38 +5438,38 @@
             </Key>
             <Key ID="STR_params_allowCivDialog">
                 <Original>Allow talking to civilians</Original>
-                <Russian>[Экспериментально] Разрешить разговоры с гражданскими</Russian>
-                <German>[Experimentell] Gespräche mit Zivilisten erlauben</German>
-                <Italian>[Sperimentale] Permetti di parlare con i civili</Italian>
-                <Spanish>[Experimental] Permitir hablar con civiles</Spanish>
-                <French>[Expérimental] Autoriser les conversations avec les civils</French>
-                <Korean>[실험적] 민간인과 대화 허용</Korean>
-                <Japanese>[試験的] 民間人との会話を許可</Japanese>
-                <Chinesesimp>[实验性] 允许与平民交谈</Chinesesimp>
-                <Chinese>[實驗性] 允許與平民交談</Chinese>
-                <Polish>[Eksperymentalne] Zezwól na rozmowy z cywilami</Polish>
-                <Czech>[Experimentální] Povolit rozhovory s civilisty</Czech>
-                <Portuguese>[Experimental] Permitir conversas com civis</Portuguese>
-                <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
+                <Russian>Разрешить разговоры с гражданскими</Russian>
+                <German>Gespräche mit Zivilisten erlauben</German>
+                <Italian>Permetti di parlare con i civili</Italian>
+                <Spanish>Permitir hablar con civiles</Spanish>
+                <French>Autoriser les conversations avec les civils</French>
+                <Korean>민간인과 대화 허용</Korean>
+                <Japanese>民間人との会話を許可</Japanese>
+                <Chinesesimp>允许与平民交谈</Chinesesimp>
+                <Chinese>允許與平民交談</Chinese>
+                <Polish>Zezwól na rozmowy z cywilami</Polish>
+                <Czech>Povolit rozhovory s civilisty</Czech>
+                <Portuguese>Permitir conversas com civis</Portuguese>
+                <Turkish>Sivillerle konuşmaya izin ver</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
-                <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
-                <Korean>[실험적] 암시장 차량 요구사항 무시</Korean>
+                <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>
+                <Korean>암시장 차량 요구사항 무시</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle">
                 <Original>Black Market Vehicle Discount</Original>
-                <Korean>[실험적] 암시장 차량 할인</Korean>
+                <Korean>암시장 차량 할인</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
                 <Original>Black Market Equipment Discount</Original>
-                <Korean>[실험적] 암시장 장비 할인</Korean>
+                <Korean>암시장 장비 할인</Korean>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>Enable spectrum device hacking capability (Contact DLC)</Original>
-                <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
-                <Chinesesimp>[实验] 启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
-                <Korean>[실험적] 스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
+                <Russian>Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
+                <Chinesesimp>启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
+                <Korean>스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
@@ -5486,23 +5486,23 @@
             </Key>
             <Key ID="STR_params_allowFuturisticSupports">
                 <Original>Allow futuristic supports to be used by the enemy</Original>
-                <Russian>[Экспериментально] Разрешить использование противником футуристичной поддержки</Russian>
-                <Chinesesimp>[实验性]允许敌人使用未来支援</Chinesesimp>
-                <Korean>[실험용] 적군이 미래적인 지원을 사용하도록 허용</Korean>
-                <French>[Expérimental] Permettre à l'ennemi d'utiliser des supports futuristes</French>
+                <Russian>Разрешить использование противником футуристичной поддержки</Russian>
+                <Chinesesimp>允许敌人使用未来支援</Chinesesimp>
+                <Korean>적군이 미래적인 지원을 사용하도록 허용</Korean>
+                <French>Permettre à l'ennemi d'utiliser des supports futuristes</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
                 <Original>Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
-                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
-                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
-                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
-                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+                <Russian>Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
-                <Russian>[Экспериментально] Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
-                <Chinesesimp>[实验] 允许敌人使用未来主义的不公平支持</Chinesesimp>
-                <Korean>[실험적] 적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
+                <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
+                <Chinesesimp>允许敌人使用未来主义的不公平支持</Chinesesimp>
+                <Korean>적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
             </Key>
             <Key ID="STR_params_CrateOptions">
                 <Original>LOOT CRATE SETTINGS</Original>
@@ -5513,10 +5513,10 @@
             </Key>
             <Key ID="STR_params_truelyRandomCrates">
                 <Original>Truly Random Crates: No balance checks for crates</Original>
-                <Russian>[Экспериментально] Истинно случайные ящики: проверки баланса для ящиков не производится.</Russian>
-                <Chinesesimp>[实验性]真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
-                <Korean>[실험용] 완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
-                <French>[Expérimental] Des caisses vraiment aléatoires : Pas de vérification de l'équilibre des caisses</French>
+                <Russian>Истинно случайные ящики: проверки баланса для ящиков не производится.</Russian>
+                <Chinesesimp>真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
+                <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
+                <French>Des caisses vraiment aléatoires : Pas de vérification de l'équilibre des caisses</French>
             </Key>
             <Key ID="STR_params_crateWepTypeMax">
                 <Original>Maximum Weapon Types in Crates</Original>
@@ -5667,10 +5667,10 @@
             </Key>
             <Key ID="STR_params_unconsciousAiPossess">
                 <Original>Allow players to take control of AI units while unconscious</Original>
-                <Russian>[Экспериментально] Разрешить игрокам управлять ИИ-соотрядниками находясь в бессознательном состоянии</Russian>
+                <Russian>Разрешить игрокам управлять ИИ-соотрядниками находясь в бессознательном состоянии</Russian>
                 <Chinesesimp>允许玩家在失去行动的情况下控制AI队友</Chinesesimp>
-                <Korean>[실험용] 플레이어가 의식불명인 상태에서 인공지능 유닛을 조종할 수 있도록 허용</Korean>
-                <French>[Expérimental] Permettre aux joueurs de prendre le contrôle des unités de l'IA lorsqu'ils sont inconscients</French>
+                <Korean>플레이어가 의식불명인 상태에서 인공지능 유닛을 조종할 수 있도록 허용</Korean>
+                <French>Permettre aux joueurs de prendre le contrôle des unités de l'IA lorsqu'ils sont inconscients</French>
             </Key>
             <Key ID="STR_params_maxConstructions">
                 <Original>Maximum quantity of Persistent Constructions</Original>
@@ -5755,11 +5755,11 @@
                 <French>Temps avant qu'un joueur soit considéré comme AFK (en minutes)</French>
             </Key>
             <Key ID="STR_params_afk_uav">
-                <Original>Should a player be considered AFK while controlling a UAV?</Original>
-                <Russian>[Экспериментально] Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
-                <Chinesesimp>[实验]玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
-                <Korean>[실험용] UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
-                <French>[Expérimental] Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
+                <Original>Should player be considered AFK while controlling a UAV?</Original>
+                <Russian>Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
+                <Chinesesimp>玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
+                <Korean>UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
+                <French>Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
             </Key>
             <Key ID="STR_params_afk_disabled">
                 <Original>Disabled</Original>
@@ -6025,10 +6025,10 @@
             </Key>
             <Key ID="STR_params_bobChaosCrates">
                 <Original>Truly Random Crates: Remove all balance checks from Crates</Original>
-                <Russian>[Экспериментально] Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
-                <Chinesesimp>[实验]真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
-                <Korean>[실험용] 완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
-                <French>[Expérimental] Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
+                <Russian>Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
+                <Chinesesimp>真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
+                <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
+                <French>Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
             </Key>
         </Container>
         <Container name="roles">
