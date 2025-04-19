@@ -247,6 +247,15 @@ if (_opticsMidCount < ITEM_MAX*2) then {
 
 _rebelGear set ["OpticsAll", _opticClose + _opticMid + _opticLong];     // for launchers
 
+// normalize all item weights, within their own array
+{
+    private _array = _y; 
+    if !(_array isEqualType []) then {continue}; 
+    private _totalWeight = 0;  
+    { _totalWeight = _totalWeight + _x } forEach (_array select {_x isEqualType 1}); 
+    _rebelGear set [_x, _array apply {if (_x isEqualType 1) then {_x / _totalWeight} else {_x}}];
+} forEach _rebelGear;
+
 // Update everything while unscheduled so that version numbers match
 isNil {
     A3A_rebelGearVersion = time;
