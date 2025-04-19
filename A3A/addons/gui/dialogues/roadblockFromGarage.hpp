@@ -44,9 +44,9 @@ class A3A_VehiclesFromGarageDisplay : A3A_GARAGEDialog
 		class GARAGE_ListCars//HR_GRG_RscListbox
 		{
 			idc = A3A_IDC_GARAGE_CATCAR;
-            x = -62 * GRID_W;
+            x = -62.6 * GRID_W;
             y = DIALOG_Y - 36 * GRID_H;
-            w = 30 * GRID_W;
+            w = 30.6 * GRID_W;
             h = 100 * GRID_H; // Screen height - title and buttons height
             size = TEXT_SIZE_MEDIUM;
             rowHeight = 3 * GRID_NOUISCALE_H;
@@ -89,9 +89,9 @@ class A3A_VehiclesFromGarageDisplay : A3A_GARAGEDialog
 		class GARAGE_StructuredText : A3A_Text
 		{
 		    idc = A3A_IDC_GARAGEStructuredText;
-		    x = -62 * GRID_W;
+		    x = -62.6 * GRID_W;
             y = DIALOG_Y + 64 * GRID_H;
-            w = 213 * GRID_W;
+            w = 213.6 * GRID_W;
             h = 16 * GRID_H; // Screen height - title and buttons height
 		    text = "";
 		    font = "RobotoCondensed";

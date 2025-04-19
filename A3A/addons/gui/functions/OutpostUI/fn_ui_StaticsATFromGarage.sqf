@@ -56,7 +56,7 @@ vehicleToOutpost = "";
 curentlySelectedVehicleUID = 0;
 curentlySelectedVehicleState = [];
 curentlySelectedVehicleCustomization = [];
-garageCategoryToremoveVehicleFrom = [];
+garageCategoryToremoveVehicleFrom = 22;
 
 _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 /////or instead of all this use _getSaveData (probably)
@@ -78,7 +78,7 @@ switch (_categoty) do
             _vehicleListBox lbSetPictureColor [_index, [1, 1, 1, 1]];
             _vehicleListBox lbSetPictureColorSelected [_index, [0.85, 0.85, 0.55, 1]];
             _vehicleListBox lbSetPictureRightColorSelected [_index, [0.85,0.85,0.55,1]];
-            garageCategoryToremoveVehicleFrom = HR_GRG_Vehicles#0;
+            garageCategoryToremoveVehicleFrom = 4;
         } forEach (HR_GRG_Vehicles#4);
     };
 };
@@ -267,20 +267,28 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
     _carcar = vehicleToOutpost; ///this probably doubles as it spawns 2 groups 
     _pos = myGlobalResult;
     _vehicledirection = nil;
-    [_pos,_carcar,outpostCost] spawn
+    outpostCostmoney = outpostCost select 0;
+    outpostCosthr = outpostCost select 1;
+    [_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn ///step 3
         { 
             _pos = _this select 0;
             _carcar = _this select 1;
-            outpostCost = _this select 2;
+            curentlySelectedVehicleCustomization = _this select 2;
+            outpostCostmoney = _this select 3;
+            outpostCosthr = _this select 4;
+            _garageCategoryToremoveVehicleFrom = _this select 5;
+            _curentlySelectedVehicleUID = _this select 6;
             _turretDirection = turretDirection;
-            diag_log outpostCost;
-            [_pos, _carcar, outpostCost, _turretDirection] spawn ///maybe add customazation to spawn
+            [_pos, _carcar,outpostCostmoney,outpostCosthr,_turretDirection,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID] spawn ///maybe add customazation to spawn
             { 
                 _pos = _this select 0;
                 _carcar = _this select 1;
-                outpostCost = _this select 2;
-                _turretDirection = _this select 3;
-                [_carcar, _pos, _turretDirection, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2];
+                outpostCostmoney = _this select 2;
+                outpostCosthr = _this select 3;
+                _turretDirection = _this select 4;
+                _garageCategoryToremoveVehicleFrom = _this select 5;
+                _curentlySelectedVehicleUID = _this select 6;
+                [_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
             };
         };
 }];
