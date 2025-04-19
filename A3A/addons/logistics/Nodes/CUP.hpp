@@ -381,10 +381,13 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_LR_model_RightHand_CUP_LR_Special_
         {
             offset[] = {0,-2.2,0.83};
         };
+        /*
+        // cargo basket. loot crate is just a hair too big
         class Node3
         {
             offset[] = {0.1,-2.9,1};
         };
+        */
     };
 };
 class CUP_WheeledVehicles_CUP_WheeledVehicles_LR_model_RightHand_CUP_LR_Special_HMG_p3d : CUP_WheeledVehicles_CUP_WheeledVehicles_LR_model_RightHand_CUP_LR_Special_GMG_p3d {};
