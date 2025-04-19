@@ -45,7 +45,7 @@ if (isClass (configFile >> "CfgPatches" >> "FA_WW2_Tanks")) then {
 
 private _vehiclesPlanesCAS = ["LIB_P47", "uns_A1J_CAS", "uns_A7_CAS", "CUP_B_A10_DYN_USA"];
 private _vehiclesPlanesLargeCAS = [];
-private _vehiclesPlanesAA = ["LIB_US_P39", "uns_F4E_CAP", "uns_f100b_CAP", "CUP_B_AV8B_DYN_USMC"];
+private _vehiclesPlanesAA = ["LIB_US_P39", "uns_F4E_CAP", "uns_f100b_CAP", "CUP_B_AV8B_DYN_USMC", "CUP_B_F35B_USMC"];
 ["vehiclesPlanesTransport", ["LIB_C47_Skytrain", "uns_c1a5cargo", "uns_C130_H", "CUP_B_C130J_USMC", "CUP_B_MV22_USMC_RAMPGUN"]] call _fnc_saveToTemplate;
 
 if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
