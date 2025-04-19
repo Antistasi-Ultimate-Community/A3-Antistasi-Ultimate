@@ -8,9 +8,9 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-/* private _atClass = selectRandom (A3A_faction_reb get "staticAT");
-private _atClass = [_vehicleX];
-private _atClass = _atClass getOrDefault [_atClass select 0,_typeVehX]; */
+if (_vehicleX isEqualTo objNull) then { //this is for backward compatibility
+    _vehicleX = (A3A_faction_reb get "staticAT") select 0;
+};
 
 private _props = [];
 
@@ -38,17 +38,21 @@ if (!(_staticPositionInfo isEqualTo [])) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
     _veh = createVehicle [_vehicleX, _positionX, [], 0, "CAN_COLLIDE"];
-    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
     _veh setPosATL _staticPosition;
     _veh setDir _staticDirection;
 } else {
     _veh = _vehicleX createVehicle _positionX;
-    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
 };
 
 _veh lock 3;
 
-sleep 1;
+sleep 0.5;
 
 [_veh,"Move_Outpost_Static"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _veh];
 
@@ -61,14 +65,14 @@ private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
     
-    // Назначение наводчика
+    // gunner
     if (isNull gunner _veh) then {
         _crewMan assignAsGunner _veh;
         _crewMan moveInGunner _veh;
         [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
     };
     
-    // Исправленный поиск командира
+    // searching for commander
     private _commanderIndex = -1;
     for "_i" from (_crewManIndex + 1) to (count _groupXUnits - 1) do {
         private _unit = _groupXUnits select _i;
@@ -83,8 +87,8 @@ if (_crewManIndex != -1) then {
         _commander moveInCommander _veh;
     };
 
-    // Заполнение турелей
-    private _turrets = allTurrets [_veh, false];
+    // populating turrets
+    private _turrets = allTurrets _veh;
     {
         if (isNull (_veh turretUnit _x)) then {
             private _turretIndex = _groupXUnits findIf {

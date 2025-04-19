@@ -48,11 +48,11 @@ if(_mode == "ADD") then {
             if (outpostType == "ROADBLOCK") exitWith {
                 //[_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
                 ///
-                [myGlobalResult,_outpostCostmoney,_outpostCosthr] spawn ///step 1
+                [myGlobalResult,outpostCostmoney,outpostCosthr] spawn ///step 1
                 { 
                     myGlobalResult = _this select 0;
-                    _outpostCostmoney = _this select 1;
-                    _outpostCosthr = _this select 2;
+                    outpostCostmoney = _this select 1;
+                    outpostCosthr = _this select 2;
                 	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
                 	// Use _result here
                     if (_result) then {
