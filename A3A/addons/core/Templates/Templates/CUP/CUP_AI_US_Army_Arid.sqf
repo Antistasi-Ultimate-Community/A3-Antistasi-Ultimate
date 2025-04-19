@@ -58,9 +58,9 @@ _vehiclesData set ["magazines", createHashMapFromArray [["CUP_B_M270_HE_USA", ["
 _vehiclesData set ["uavsAttack", ["CUP_B_USMC_DYN_MQ9"]];
 _vehiclesData set ["uavsPortable", ["B_UAV_01_F"]];
 
-_vehiclesData set ["vehiclesMilitiaLightArmed", ["CUP_B_nM1025_M2_USMC_DES"]];
+_vehiclesData set ["vehiclesMilitiaLightArmed", ["CUP_B_nM1025_M2_USA_DES", "CUP_B_nM1025_M2_DF_USA_DES", "CUP_B_nM1025_M240_USA_DES", "CUP_B_nM1025_M240_DF_USA_DES", "CUP_B_HMMWV_Crows_M2_USA", "CUP_B_HMMWV_Crows_MK19_USA", "CUP_B_nM1025_Mk19_USA_DES", "CUP_B_nM1025_Mk19_DF_USA_DES", "CUP_B_nM1036_TOW_USA_DES", "CUP_B_nM1036_TOW_DF_USA_DES"]];
 _vehiclesData set ["vehiclesMilitiaTrucks", ["CUP_B_MTVR_USMC"]];
-_vehiclesData set ["vehiclesMilitiaCars", ["CUP_B_nM1025_Unarmed_USMC_DES"]];
+_vehiclesData set ["vehiclesMilitiaCars", ["CUP_B_nM1025_Unarmed_USA_DES", "CUP_B_nM1025_Unarmed_DF_USA_DES", "CUP_B_M1152_USA", "CUP_B_nM1038_USA_DES", "CUP_B_nM1038_DF_USA_DES", "CUP_B_nM1038_4s_USA_DES", "CUP_B_nM1038_4s_DF_USA_DES"]];
 _vehiclesData set ["vehiclesMilitiaAPCs", ["CUP_B_M113A3_desert_USA"]];
 
 _vehiclesData set ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]];
