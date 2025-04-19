@@ -54,9 +54,13 @@ private _allDefinitions = _faction get "loadouts";
 
 if (_side in [Occupants, Invaders]) then {
     // Compile light armed that also have 4+ passenger seats
-    private _lightArmedTroop = (_faction get "vehiclesLightArmed") select {
-        ([_x, true] call BIS_fnc_crewCount) - ([_x, false] call BIS_fnc_crewCount) >= 4
-    };
+    private _lightArmedTroop = [[], [], []];
+    {
+        _lightArmedTroop set [_forEachIndex, _x select {
+            _x isEqualType "" &&
+            {([_x, true] call BIS_fnc_crewCount) - ([_x, false] call BIS_fnc_crewCount) >= 4}
+        }];
+    } forEach (_faction get "vehiclesLightArmed");
     _faction set ["vehiclesLightArmedTroop", _lightArmedTroop];
 };
 

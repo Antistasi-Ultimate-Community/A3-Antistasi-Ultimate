@@ -13,48 +13,48 @@ params ["_vehicle", "_preference"];
 
 //define list of vehicles as lazy conditions
 #define lightVeh \
-    {_vehicle in FactionGet(occ,"vehiclesLightArmed")} \
-    || {_vehicle in FactionGet(inv,"vehiclesLightUnarmed")} \
-    || {_vehicle in FactionGet(occ,"vehiclesLightArmed")} \
-    || {_vehicle in FactionGet(inv,"vehiclesLightUnarmed")}
+    {_vehicle in flatten FactionGet(occ,"vehiclesLightArmed")} \
+    || {_vehicle in flatten FactionGet(occ,"vehiclesLightUnarmed")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesLightArmed")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesLightUnarmed")}
 
 #define apc \
-    {_vehicle in FactionGet(occ,"vehiclesAPCs")} \
-    || {_vehicle in FactionGet(inv,"vehiclesAPCs")}
+    {_vehicle in flatten FactionGet(occ,"vehiclesAPCs")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesAPCs")}
 
 #define tank \
-    {_vehicle in FactionGet(occ,"vehiclesTanks")} \
-    || {_vehicle in FactionGet(inv,"vehiclesTanks")}
+    {_vehicle in flatten FactionGet(occ,"vehiclesTanks")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesTanks")}
 
 #define patrolHeli \
-    {_vehicle in FactionGet(occ,"vehiclesHelisLight")} \
-    || {_vehicle in FactionGet(inv,"vehiclesHelisLight")}
+    {_vehicle in flatten FactionGet(occ,"vehiclesHelisLight")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesHelisLight")}
 
 #define transportHeli \
     patrolHeli \
-    || {_vehicle in FactionGet(occ,"vehiclesHelisTransport")} \
-    || {_vehicle in FactionGet(inv,"vehiclesHelisTransport")}
+    || {_vehicle in flatten FactionGet(occ,"vehiclesHelisTransport")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesHelisTransport")}
 
 #define attackHeli \
-    {_vehicle in FactionGet(occ,"vehiclesHelisAttack")} \
-    || {_vehicle in FactionGet(inv,"vehiclesHelisAttack")}
+    {_vehicle in flatten FactionGet(occ,"vehiclesHelisAttack")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesHelisAttack")}
 
 #define drone \
-    {_vehicle in FactionGet(occ,"uavsAttack")} \
-    || {_vehicle in FactionGet(inv,"uavsAttack")} \
-    || {_vehicle in FactionGet(occ,"uavsPortable")} \
-    || {_vehicle in FactionGet(inv,"uavsPortable")}
+    {_vehicle in flatten FactionGet(occ,"uavsAttack")} \
+    || {_vehicle in flatten FactionGet(inv,"uavsAttack")} \
+    || {_vehicle in flatten FactionGet(occ,"uavsPortable")} \
+    || {_vehicle in flatten FactionGet(inv,"uavsPortable")}
 
 #define plane \
-    {_vehicle in FactionGet(occ,"vehiclesPlanesCAS")} \
-    || {_vehicle in FactionGet(inv,"vehiclesPlanesCAS")} \
-    || {_vehicle in FactionGet(inv,"vehiclesPlanesAA")} \
-    || {_vehicle in FactionGet(occ,"vehiclesPlanesGunship")} \
-	|| {_vehicle in FactionGet(occ,"vehiclesPlanesLargeCAS")} \
-	|| {_vehicle in FactionGet(inv,"vehiclesPlanesLargeAA")} \
-	|| {_vehicle in FactionGet(occ,"vehiclesPlanesLargeAA")} \
-	|| {_vehicle in FactionGet(inv,"vehiclesPlanesLargeCAS")} \
-    || {_vehicle in FactionGet(inv,"vehiclesPlanesGunship")}   
+    {_vehicle in flatten FactionGet(occ,"vehiclesPlanesCAS")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesPlanesCAS")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesPlanesAA")} \
+    || {_vehicle in flatten FactionGet(occ,"vehiclesPlanesGunship")} \
+	|| {_vehicle in flatten FactionGet(occ,"vehiclesPlanesLargeCAS")} \
+	|| {_vehicle in flatten FactionGet(inv,"vehiclesPlanesLargeAA")} \
+	|| {_vehicle in flatten FactionGet(occ,"vehiclesPlanesLargeAA")} \
+	|| {_vehicle in flatten FactionGet(inv,"vehiclesPlanesLargeCAS")} \
+    || {_vehicle in flatten FactionGet(inv,"vehiclesPlanesGunship")}   
 
 //TODO this does not work properly (maybe even throws errors) as the template files arent
 //unified on how they work, await Pots Templates, then fix this
@@ -91,7 +91,7 @@ switch (_preference) do
     };
     case ("LAND_AIR"):
     {
-      _vehicle in FactionGet(occ,"vehiclesAA") || {_vehicle in FactionGet(inv,"vehiclesAA")};
+      _vehicle in flatten FactionGet(occ,"vehiclesAA") || {_vehicle in flatten FactionGet(inv,"vehiclesAA")};
     };
     case ("HELI_PATROL"):
     {

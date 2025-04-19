@@ -138,11 +138,11 @@ private _driverturret = _helicopter weaponsTurret [0];
 private _gunnerturret = _helicopter weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
+if (_vehType in flatten FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
     [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
 };
 
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
+if (_vehType in flatten (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"))) exitWith {
     [_vehicle, _groupPilot, _targetPosition] spawn A3A_fnc_attackHeli
 };
 

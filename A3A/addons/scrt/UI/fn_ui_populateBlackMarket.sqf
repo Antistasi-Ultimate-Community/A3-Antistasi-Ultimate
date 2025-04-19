@@ -26,23 +26,23 @@ switch (_category) do
 {
     case "artillery": 
 	{
-        _vehicleClasses = ("ARTILLERY" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+        _vehicleClasses = ("ARTILLERY" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
     };
 	case "apc": 
 	{
-		_vehicleClasses = ("APC" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("APC" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "AA": 
 	{
-		_vehicleClasses = ("AA" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("AA" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "uav": 
 	{
-		_vehicleClasses =  ("UAV" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses =  ("UAV" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "tank": 
 	{
-		_vehicleClasses =  ("TANK" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses =  ("TANK" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "statics": 
 	{
@@ -52,23 +52,23 @@ switch (_category) do
 	};
 	case "heli": 
 	{
-		_vehicleClasses = ("HELI" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("HELI" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "plane": 
 	{
-		_vehicleClasses = ("PLANE" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("PLANE" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "armedcar": 
 	{
-		_vehicleClasses = ("ARMEDCAR" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("ARMEDCAR" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "unarmedcar": 
 	{
-		_vehicleClasses = ("UNARMEDCAR" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("UNARMEDCAR" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "boat": 
 	{
-		_vehicleClasses = ("BOAT" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		_vehicleClasses = ("BOAT" call _fnc_extractMarketClasses) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 	};
 	case "all": 
 	{

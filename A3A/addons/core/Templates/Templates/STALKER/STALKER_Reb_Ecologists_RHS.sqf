@@ -40,8 +40,8 @@
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-["mineAT", "ATMine"] call _fnc_saveToTemplate;
-["mineAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
+["minesAT", "ATMine"] call _fnc_saveToTemplate;
+["minesAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["rhsusf_m112_mag", 1],["rhsusf_m112x4_mag", 1],["DemoCharge_Remote_Mag", 1],["rhsusf_tm100_mag", 1],["rhssaf_tm200_mag", 1],["rhssaf_tm500_mag", 1],["rhs_ec200_sand_mag", 1],["rhs_ec200_mag", 1],["rhs_ec400_sand_mag", 1],["rhs_ec400_mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["rhsusf_m112_mag", 3],["rhsusf_m112x4_mag", 1],["DemoCharge_Remote_Mag", 2],["rhsusf_tm100_mag", 3],["rhssaf_tm200_mag", 2],["rhssaf_tm500_mag", 1],["rhs_ec200_sand_mag", 2],["rhs_ec200_mag", 2],["rhs_ec400_sand_mag", 1],["rhs_ec400_mag", 1]]] call _fnc_saveToTemplate; //this line determines explosives needed for breaching Tanks -- Example: [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] -- Array, can use Multiple

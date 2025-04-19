@@ -25,7 +25,7 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 } else {
     if (isNull FactionGet(occ,"vehiclesDropPod")) exitwith { 0 };
 }; */
-private _allAA = (A3A_faction_all get "vehiclesPlanesAA");
+private _allAA = (FactionGetTiered(all, "vehiclesPlanesAA"));
 if (typeOf _target in _allAA) exitWith { 0 };
 
 // Otherwise fine?

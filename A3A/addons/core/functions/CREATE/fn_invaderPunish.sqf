@@ -143,7 +143,7 @@ if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time 
 
     destroyedSites = destroyedSites + [_mrkDest];
     publicVariable "destroyedSites";
-    private _mineTypes = A3A_faction_inv get "minefieldAPERS";
+    private _mineTypes = FactionGetTiered(A3A_faction_inv, "minefieldAPERS");
     for "_i" from 1 to 60 do {
         private _mineX = createMine [selectRandom _mineTypes,_posDest,[],_size];
         Invaders revealMine _mineX;

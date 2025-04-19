@@ -61,8 +61,8 @@ if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
 ["staticMortarMagHE", "SPE_8Rnd_81mm_FA_Mle_1932_HE"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "SPE_8Rnd_81mm_FA_Mle_1932_Smoke"] call _fnc_saveToTemplate;
 
-["mineAT", "SPE_US_M1A1_ATMINE_mag"] call _fnc_saveToTemplate;
-["mineAPERS", "SPE_US_M3_Pressure_MINE_mag"] call _fnc_saveToTemplate;
+["minesAT", "SPE_US_M1A1_ATMINE_mag"] call _fnc_saveToTemplate;
+["minesAPERS", "SPE_US_M3_Pressure_MINE_mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["SPE_Ladung_Small_MINE_mag", 1], ["SPE_Ladung_Big_MINE_mag", 1], ["SPE_US_TNT_half_pound_mag", 2], ["SPE_US_TNT_4pound_mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SPE_Ladung_Small_MINE_mag", 3], ["SPE_Ladung_Big_MINE_mag", 1], ["SPE_US_TNT_4pound_mag", 1], ["SPE_US_TNT_half_pound_mag", 8]]] call _fnc_saveToTemplate;

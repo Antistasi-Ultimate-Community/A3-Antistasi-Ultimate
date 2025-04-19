@@ -169,7 +169,7 @@ _resourcesBackground = server getVariable "resourcesFIA";
 	};
 } forEach allUnits;
 
-private _lootCrateClass = FactionGet(reb,"lootCrate");
+private _lootCrateClass = FactionGet(reb, "lootCrate");
 private _lootCratePrice = [_lootCrateClass] call A3A_fnc_vehiclePrice;
 
 {
@@ -177,7 +177,7 @@ private _lootCratePrice = [_lootCrateClass] call A3A_fnc_vehiclePrice;
 } forEach (allMissionObjects _lootCrateClass);
 
 if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
-	private _rallyPointCost = [FactionGet(reb,"lootCrate")] call A3A_fnc_vehiclePrice;
+	private _rallyPointCost = [FactionGet(reb, "lootCrate")] call A3A_fnc_vehiclePrice;
 	_resourcesBackground = _resourcesBackground + round(_rallyPointCost/1.3);
 };
 

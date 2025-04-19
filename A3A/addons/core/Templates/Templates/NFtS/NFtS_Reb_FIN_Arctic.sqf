@@ -34,8 +34,8 @@
 ["staticMortarMagHE", "NORTH_10Shell_50mm_MortarHEshell_50krh38"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "NORTH_10Shell_50mm_MortarSmokeShell_50krh38"] call _fnc_saveToTemplate;
 
-["mineAT", "LIB_TMI_42_MINE_mag"] call _fnc_saveToTemplate;
-["mineAPERS", "LIB_shumine_42_MINE_mag"] call _fnc_saveToTemplate;
+["minesAT", "LIB_TMI_42_MINE_mag"] call _fnc_saveToTemplate;
+["minesAPERS", "LIB_shumine_42_MINE_mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["LIB_Ladung_Big_MINE_mag", 1], ["LIB_Ladung_Small_MINE_mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["LIB_Ladung_Big_MINE_mag", 1], ["LIB_Ladung_Small_MINE_mag", 2]]] call _fnc_saveToTemplate;

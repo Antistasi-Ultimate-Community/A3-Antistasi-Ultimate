@@ -107,9 +107,15 @@ removeAllAssignedItems _informer;
 _informer playMoveNow "ApanPknlMstpSnonWnonDnon_G01";
 
 private _searchHeliClass =  if (_difficulty) then {
-    selectRandom ((_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
+    selectRandom (
+        (FactionGoDTiered(_faction, "vehiclesHelisLightAttack")) +
+        (FactionGoDTiered(_faction, "vehiclesHelisAttack"))
+    )
 } else {
-    selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
+    selectRandom (
+        (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
+        (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
+    )
 };
 private _searchHeliData = [[(_positionX select 0) + random 100, (_positionX select 1) + random 100, 300 + random 500], 0, _searchHeliClass, _side] call A3A_fnc_spawnVehicle;
 private _searchHeliVeh = _searchHeliData select 0;
@@ -127,7 +133,7 @@ _pilot action ["collisionlightOn", _searchHeliVeh];
 _searchHeliVeh setPilotLight true;
 _searchHeliVeh setCollisionLight true;
 
-if(_searchHeliClass in (_faction get "vehiclesHelisLight")) then {
+if(_searchHeliClass in flatten (_faction get "vehiclesHelisLight")) then {
     _heliLoiterWaypoint = _heliVehicleGroup addWaypoint [_positionX, 0];
     _heliLoiterWaypoint setWaypointType "LOITER";
     _heliLoiterWaypoint setWaypointBehaviour "SAFE";
@@ -218,9 +224,12 @@ for "_i" from 0 to _roadblockCount do {
     private _roadblockPosition = position (_roads select 0);   
 
     private _typeVehX = if(random 10 < (tierWar + (difficultyCoef / 2))) then {
-        selectRandom ((_faction get "vehiclesLightAPCs") + (_faction get "vehiclesLightArmed"))
+        selectRandom (
+            (FactionGoDTiered(_faction, "vehiclesLightAPCs")) +
+            (FactionGoDTiered(_faction, "vehiclesLightArmed"))
+        )
     } else {
-        selectRandom (_faction get "vehiclesMilitiaLightArmed")
+        selectRandomWeighted (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0))
     };
 
     private _roadblockVehicleData = [_roadblockPosition, 0, _typeVehX, _side] call A3A_fnc_spawnVehicle;

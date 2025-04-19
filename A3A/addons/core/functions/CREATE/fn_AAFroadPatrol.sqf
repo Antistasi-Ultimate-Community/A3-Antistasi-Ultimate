@@ -10,7 +10,7 @@ private _bases = (seaports + airportsX + outposts + milbases) select {
 		if (_players inAreaArray [markerPos _x, 2000, 2000] isEqualTo []) exitWith {false};
 		private _side = sidesX getVariable [_x, sideUnknown];
 		if (_side == teamPlayer) exitWith {false};
-		if (_x in seaports and Faction(_side) get "vehiclesGunBoats" isEqualTo []) exitWith {false};
+		if (_x in seaports and FactionGetTiered(Faction(_side), "vehiclesGunBoats") isEqualTo []) exitWith {false};
 		if (_x call A3A_fnc_getMarkerNavPoint == -1) exitWith {false};
 		true;
 	};
@@ -33,36 +33,56 @@ private _typePatrol = "LAND";
 
 switch (true) do {
 	case (_base in seaports): {
-		_typeCar = selectRandom (_faction get "vehiclesGunBoats");
+		_typeCar = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesGunBoats"));
 		_typePatrol = "SEA";
 	};
 
 	case (_base in milbases): {
 		if (random 10 < tierWar + aggressionOccupants/10) then {
-			_typeCar = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks"));
+			_typeCar = selectRandom (
+				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
+				(FactionGoDTiered(_faction, "vehiclesAPCs")) +
+				(FactionGoDTiered(_faction, "vehiclesIFVs")) +
+				(FactionGoDTiered(_faction, "vehiclesLightTanks"))
+			);
 		} else {
-			_typeCar = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesMilitiaAPCs"));
+			_typeCar = selectRandom (
+				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
+				(FactionGoDTiered(_faction, "vehiclesLightAPCs")) +
+				(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0))
+			);
 		};
 	};
 
 	case (_base in airportsX && {!(_faction getOrDefault ["attributeLowAir", false])}): {
 		if (_sideX isEqualTo Invaders || {random 10 < tierWar + aggressionOccupants/10}) then {
-			_typeCar = selectRandom (_faction get "vehiclesHelisLight");
-			if(count (_faction get "vehiclesAirPatrol") > 0) then 
+			_typeCar = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesHelisLight"));
+			if(count (FactionGetTiered(_faction, "vehiclesAirPatrol")) > 0) then 
 			{
-				_typeCar = selectRandom (_faction get "vehiclesAirPatrol");
+				_typeCar = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesAirPatrol"));
 			};
 			_typePatrol = "AIR";
 		} else {
-			_typeCar = selectRandom ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"));	
+			_typeCar = selectRandom (
+				(FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) +
+				(FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0))
+			);	
 		};
 	};
 
 	default {
 		if (_sideX isEqualTo Invaders || {random 10 < tierWar + aggressionOccupants/10}) then {
-			_typeCar = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightUnarmed"));
+			_typeCar = selectRandom (
+				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
+				(FactionGoDTiered(_faction, "vehiclesLightUnarmed"))
+			);
 		} else {
-			_typeCar = selectRandom ((_faction get "vehiclesPolice") + (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars") + (_faction get "vehiclesBasic"));
+			_typeCar = selectRandom (
+				(FactionGoDTiered(_faction, "vehiclesPolice")) + 
+				(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
+				(FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0)) +
+				(FactionGoDTiered(_faction, "vehiclesBasic"))
+			);
 		};
 	};
 };
@@ -125,19 +145,19 @@ _groups pushBack _groupVeh;
 _vehiclesX pushBack _veh;
 
 switch (true) do {
-	case (_typeCar in (_faction get "vehiclesLightUnarmed")): {
+	case (_typeCar in (flatten (_faction get "vehiclesLightUnarmed"))): {
 		sleep 1;
 		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, "groupsTierSmall"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _veh;_x moveInCargo _veh; _soldiers pushBack _x; [_x] joinSilent _groupVeh; [_x,"",false] call A3A_fnc_NATOinit} forEach units _groupX;
 		deleteGroup _groupX;
 	};
-	case (_typeCar in (_faction get "vehiclesLightAPCs")): {
+	case (_typeCar in (flatten (_faction get "vehiclesLightAPCs"))): {
 		sleep 1;
 		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _veh;_x moveInCargo _veh; _soldiers pushBack _x; [_x] joinSilent _groupVeh; [_x,"",false] call A3A_fnc_NATOinit} forEach units _groupX;
 		deleteGroup _groupX;
 	};
-	case (_typeCar in ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))): {
+	case (_typeCar in (flatten (_faction get "vehiclesAPCs") + (flatten (_faction get "vehiclesIFVs")))): {
 		sleep 1;
 		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _veh;_x moveInCargo _veh; _soldiers pushBack _x; [_x] joinSilent _groupVeh; [_x,"",false] call A3A_fnc_NATOinit} forEach units _groupX;

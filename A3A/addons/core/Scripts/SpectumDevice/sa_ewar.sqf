@@ -14,7 +14,7 @@ sa_ident_str=-100;//Minimum signal str for friendly-foe recognition
 sa_jamm_time=5;//Jamm time
 sa_ins_list= ["B_UAV_03_dynamicLoadout_F","B_UAV_05_F","B_UAV_02_dynamicLoadout_F","O_UAV_02_dynamicLoadout_F","O_T_UAV_04_CAS_F","I_UAV_02_dynamicLoadout_F"];//UAVs classes with inertial navigation (dont lose waypoints after jamm&start operate acording waypoint program)
 //
-// Faction(west) get "uavsAttack" + Faction(west) get "uavsPortable" + Faction(east) get "uavsAttack" + Faction(east) get "uavsPortable" + ("UAV" call _fnc_extractMarketClasses) 
+// FactionGetTiered(west, "uavsAttack") + FactionGetTiered(west, "uavsPortable") + FactionGetTiered(east, "uavsAttack") + FactionGetTiered(east, "uavsPortable") + ("UAV" call _fnc_extractMarketClasses) 
 //or "vehiclesUAVs"
 //OR ALL VEHICLES AND JUST CHECK WHICH HAS UAV CONTROLS
 sa_scan_progress=0;

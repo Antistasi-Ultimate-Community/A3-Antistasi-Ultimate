@@ -8,34 +8,41 @@
 ["flagTexture", "a3\data_f\flags\flag_fia_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
-["vehiclesBasic", ["I_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["CUP_I_Hilux_DSHKM_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["CUP_V3S_Open_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesAT", ["CUP_I_Hilux_SPG9_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_I_Ural_ZU23_NAPA", "CUP_I_Hilux_zu23_NAPA"]] call _fnc_saveToTemplate;
-["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
+private _vehiclesData = call _fnc_createLoadoutData;
 
-["vehiclesPlane", ["CUP_C_DC3_CIV"]] call _fnc_saveToTemplate;
-["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_C47_CIV"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["CUP_I_LR_Ambulance_RACS"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesBasic", ["I_Quadbike_01_F"]];
+_vehiclesData set ["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]];
+_vehiclesData set ["vehiclesLightArmed", ["CUP_I_Hilux_DSHKM_NAPA"]];
+_vehiclesData set ["vehiclesTruck", ["CUP_V3S_Open_NAPA"]];
+_vehiclesData set ["vehiclesAT", ["CUP_I_Hilux_SPG9_NAPA"]];
+_vehiclesData set ["vehiclesAA", ["CUP_I_Ural_ZU23_NAPA", "CUP_I_Hilux_zu23_NAPA"]];
+_vehiclesData set ["vehiclesBoat", ["I_G_Boat_Transport_01_F"]];
 
-["vehiclesCivCar", ["CUP_O_Hilux_unarmed_CR_CIV"]] call _fnc_saveToTemplate;
-["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["C_Rubberboat"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesPlane", ["CUP_C_DC3_CIV"]];
+_vehiclesData set ["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_C47_CIV"]];
+_vehiclesData set ["vehiclesMedical", ["CUP_I_LR_Ambulance_RACS"]];
 
-["staticMGs", ["CUP_I_DSHKM_NAPA"]] call _fnc_saveToTemplate;
-["staticAT", ["CUP_I_SPG9_NAPA"]] call _fnc_saveToTemplate;
-["staticAA", ["CUP_I_ZU23_NAPA"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesCivCar", ["CUP_O_Hilux_unarmed_CR_CIV"]];
+_vehiclesData set ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]];
+_vehiclesData set ["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU"]];
+_vehiclesData set ["vehiclesCivBoat", ["C_Rubberboat"]];
 
-["staticMortars", ["CUP_I_2b14_82mm_NAPA"]] call _fnc_saveToTemplate;
-["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
+_vehiclesData set ["staticMGs", ["CUP_I_DSHKM_NAPA"]];
+_vehiclesData set ["staticAT", ["CUP_I_SPG9_NAPA"]];
+_vehiclesData set ["staticAA", ["CUP_I_ZU23_NAPA"]];
 
-["mineAT", "CUP_MineE_M"] call _fnc_saveToTemplate;
-["mineAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
+_vehiclesData set ["staticMortars", ["CUP_I_2b14_82mm_NAPA"]];
+_vehiclesData set ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"];
+_vehiclesData set ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"];
+_vehiclesData set ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"];
+
+_vehiclesData set ["mineAT", "CUP_MineE_M"];
+_vehiclesData set ["mineAPERS", "APERSMine_Range_Mag"];
+
+["vehiclesData", [
+    _vehiclesData
+]] call _fnc_saveVehiclesToTemplate;
+
 
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate; //this line determines explosives needed for breaching Tanks -- Example: [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] -- Array, can use Multiple

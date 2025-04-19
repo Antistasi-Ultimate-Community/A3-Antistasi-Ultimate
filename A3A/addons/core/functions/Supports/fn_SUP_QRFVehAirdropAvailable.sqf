@@ -17,7 +17,11 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 
 if(tierWar < 2) exitWith {-1};
 
-private _allAA = (A3A_faction_all get "vehiclesPlanesAA") + (A3A_faction_all get "vehiclesAA") + (A3A_faction_all get "staticAA");
+private _allAA = (
+    (FactionGetTiered(all, "vehiclesPlanesAA")) +
+    (FactionGetTiered(all, "vehiclesAA")) +
+    (FactionGetTiered(all, "staticAA"))
+);
 if (typeOf _target in _allAA) exitWith { 0 };
 
 if (_target isKindOf "Tank") exitWith { 0.3 }; //airborne veihcles usually have light anti-infantry weapons

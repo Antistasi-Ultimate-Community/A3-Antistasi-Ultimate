@@ -17,7 +17,7 @@ params ["_helicopter", "_crewGroup", "_cargoGroup", "_posDestination", "_originP
 
 private _vehType = typeOf _helicopter;
 
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
+if (_vehType in flatten (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport"))) then {
     _helicopter setVehicleRadar 1;
 };
 
@@ -196,12 +196,12 @@ private _driverturret = _helicopter weaponsTurret [0];
 private _gunnerturret = _helicopter weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
+if (_vehType in flatten FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
     _helicopter action ["LandGearUp", _helicopter];
     [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
 };
 
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
+if (_vehType in flatten (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"))) exitWith {
     _helicopter action ["LandGearUp", _helicopter];
     [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
 };

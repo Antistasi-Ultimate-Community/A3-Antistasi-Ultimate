@@ -13,72 +13,87 @@
 //       Vehicles       //
 //////////////////////////
 
+private _vehiclesData = call _fnc_createLoadoutData;
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate;
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate;
 
-["vehiclesBasic", ["Flex_CUP_LDF_Quadbike"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["Flex_CUP_LDF_nM1151_Unarmed", "Flex_CUP_LDF_Offroad_01", "Flex_CUP_LDF_Offroad_01_covered"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["Flex_CUP_LDF_nM1151_crowslp_m2", "Flex_CUP_LDF_nM1151_m2"]] call _fnc_saveToTemplate;
-["vehiclesTrucks", ["Flex_CUP_LDF_T810_Unarmed"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["Flex_CUP_LDF_T810_Unarmed"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["Flex_CUP_LDF_T810_Reammo","Flex_CUP_LDF_M113A3_Reammo"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["Flex_CUP_LDF_T810_Repair","Flex_CUP_LDF_M113A3_Repair"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["Flex_CUP_LDF_T810_Refuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["Flex_CUP_LDF_Van_02_medevac", "Flex_CUP_LDF_M113A3_Med"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["Flex_CUP_LDF_LAV25_HQ"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["Flex_CUP_LDF_LAV25M240", "Flex_CUP_LDF_M113A3"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["Flex_CUP_LDF_LAV25M240"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["Flex_CUP_LDF_Leopard2A6"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["Flex_CUP_LDF_nM1097_AVENGER", "Flex_CUP_LDF_M163_Vulcan"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["Flex_CUP_LDF_LAV25M240", "Flex_CUP_LDF_nM1151_mk19"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["Flex_CUP_LDF_LAV25M240"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesBasic", ["Flex_CUP_LDF_Quadbike"]];
+_vehiclesData set ["vehiclesLightUnarmed", ["Flex_CUP_LDF_nM1151_Unarmed", "Flex_CUP_LDF_Offroad_01", "Flex_CUP_LDF_Offroad_01_covered"]];
+_vehiclesData set ["vehiclesLightArmed", ["Flex_CUP_LDF_nM1151_crowslp_m2", "Flex_CUP_LDF_nM1151_m2"]];
+_vehiclesData set ["vehiclesTrucks", ["Flex_CUP_LDF_T810_Unarmed"]];
+_vehiclesData set ["vehiclesCargoTrucks", ["Flex_CUP_LDF_T810_Unarmed"]];
+_vehiclesData set ["vehiclesAmmoTrucks", ["Flex_CUP_LDF_T810_Reammo","Flex_CUP_LDF_M113A3_Reammo"]];
+_vehiclesData set ["vehiclesRepairTrucks", ["Flex_CUP_LDF_T810_Repair","Flex_CUP_LDF_M113A3_Repair"]];
+_vehiclesData set ["vehiclesFuelTrucks", ["Flex_CUP_LDF_T810_Refuel"]];
+_vehiclesData set ["vehiclesMedical", ["Flex_CUP_LDF_Van_02_medevac", "Flex_CUP_LDF_M113A3_Med"]];
+_vehiclesData set ["vehiclesLightAPCs", ["Flex_CUP_LDF_LAV25_HQ"]];
+_vehiclesData set ["vehiclesAPCs", ["Flex_CUP_LDF_LAV25M240", "Flex_CUP_LDF_M113A3"]];
+_vehiclesData set ["vehiclesIFVs", ["Flex_CUP_LDF_LAV25M240"]];
+_vehiclesData set ["vehiclesTanks", ["Flex_CUP_LDF_Leopard2A6"]];
+_vehiclesData set ["vehiclesAA", ["Flex_CUP_LDF_nM1097_AVENGER", "Flex_CUP_LDF_M163_Vulcan"]];
+_vehiclesData set ["vehiclesAirborne", ["Flex_CUP_LDF_LAV25M240", "Flex_CUP_LDF_nM1151_mk19"]];
+_vehiclesData set ["vehiclesLightTanks",  ["Flex_CUP_LDF_LAV25M240"]];
 
-["vehiclesTransportBoats", ["CUP_B_RHIB_USMC"]] call _fnc_saveToTemplate;
-["vehiclesGunBoats", ["CUP_B_RHIB2Turret_USMC"]] call _fnc_saveToTemplate;
-["vehiclesAmphibious", []] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesTransportBoats", ["CUP_B_RHIB_USMC"]];
+_vehiclesData set ["vehiclesGunBoats", ["CUP_B_RHIB2Turret_USMC"]];
+_vehiclesData set ["vehiclesAmphibious", []];
 
-["vehiclesPlanesCAS", ["Flex_CUP_LDF_L39"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["Flex_CUP_LDF_Fighter"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["Flex_CUP_LDF_C130J"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesPlanesCAS", ["Flex_CUP_LDF_L39"]];
+_vehiclesData set ["vehiclesPlanesAA", ["Flex_CUP_LDF_Fighter"]];
+_vehiclesData set ["vehiclesPlanesTransport", ["Flex_CUP_LDF_C130J"]];
 
-["vehiclesHelisLight", ["Flex_CUP_LDF_Heli_Unarmed"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["Flex_CUP_LDF_Merlin_HC3", "Flex_CUP_LDF_Merlin_HC3_Armed"]] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", ["Flex_CUP_LDF_Heli_dynamicLoadout"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["Flex_CUP_LDF_Heli_dynamicLoadout"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesHelisLight", ["Flex_CUP_LDF_Heli_Unarmed"]];
+_vehiclesData set ["vehiclesHelisTransport", ["Flex_CUP_LDF_Merlin_HC3", "Flex_CUP_LDF_Merlin_HC3_Armed"]];
+_vehiclesData set ["vehiclesHelisLightAttack", ["Flex_CUP_LDF_Heli_dynamicLoadout"]];
+_vehiclesData set ["vehiclesHelisAttack", ["Flex_CUP_LDF_Heli_dynamicLoadout"]];
 
-["vehiclesAirPatrol", ["Flex_CUP_LDF_Heli_Unarmed", "Flex_CUP_LDF_Heli_dynamicLoadout"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesAirPatrol", ["Flex_CUP_LDF_Heli_Unarmed", "Flex_CUP_LDF_Heli_dynamicLoadout"]];
 
-["vehiclesArtillery", ["Flex_CUP_LDF_M270_HE"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesArtillery", ["Flex_CUP_LDF_M270_HE"]];
 ["magazines", createHashMapFromArray [["Flex_CUP_LDF_M270_HE", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["CUP_B_USMC_DYN_MQ9"]] call _fnc_saveToTemplate;
-["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
+_vehiclesData set ["uavsAttack", ["CUP_B_USMC_DYN_MQ9"]];
+_vehiclesData set ["uavsPortable", ["B_UAV_01_F"]];
 
-["vehiclesMilitiaLightArmed", ["Flex_CUP_LDF_nM1151_crowslp_m2"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaTrucks", ["Flex_CUP_LDF_T810_Unarmed"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["Flex_CUP_LDF_Offroad_01", "Flex_CUP_LDF_Offroad_01_comms", "Flex_CUP_LDF_Offroad_01_covered"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["Flex_CUP_LDF_M113A3"]] call _fnc_saveToTemplate;
 
-["vehiclesPolice", ["Flex_CUP_LDF_Offroad_01_Ranger", "Flex_CUP_LDF_Offroad_01_comms_Ranger"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["CUP_B_M2StaticMG_US"]] call _fnc_saveToTemplate;
-["staticAT", ["CUP_B_TOW2_TriPod_US"]] call _fnc_saveToTemplate;
-["staticAA", ["CUP_B_CUP_Stinger_AA_pod_US"]] call _fnc_saveToTemplate;
-["staticMortars", ["CUP_B_M252_US"]] call _fnc_saveToTemplate;
-["staticHowitzers", [""]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesPolice", ["Flex_CUP_LDF_Offroad_01_Ranger", "Flex_CUP_LDF_Offroad_01_comms_Ranger"]];
 
-["vehicleRadar", "Flex_CUP_LDF_Radar_System"] call _fnc_saveToTemplate;
-["vehicleSam", "Flex_CUP_LDF_SAM_System"] call _fnc_saveToTemplate;
+_vehiclesData set ["staticMGs", ["CUP_B_M2StaticMG_US"]];
+_vehiclesData set ["staticAT", ["CUP_B_TOW2_TriPod_US"]];
+_vehiclesData set ["staticAA", ["CUP_B_CUP_Stinger_AA_pod_US"]];
+_vehiclesData set ["staticMortars", ["CUP_B_M252_US"]];
+_vehiclesData set ["staticHowitzers", [""]];
 
-["howitzerMagazineHE", ""] call _fnc_saveToTemplate;
+_vehiclesData set ["vehicleRadar", "Flex_CUP_LDF_Radar_System"];
+_vehiclesData set ["vehicleSam", "Flex_CUP_LDF_SAM_System"];
 
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
-["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
+_vehiclesData set ["howitzerMagazineHE", ""];
 
-["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;
-["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
+_vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"];
+_vehiclesData set ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"];
+_vehiclesData set ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"];
+
+_vehiclesData set ["minefieldAT", ["CUP_Mine"]];
+_vehiclesData set ["minefieldAPERS", ["APERSMine"]];
+
+private _eliteVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+private _militaryVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+private _militiaVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+
+_militiaVehiclesData set ["vehiclesLightArmed", ["Flex_CUP_LDF_nM1151_crowslp_m2"]];
+_militiaVehiclesData set ["vehiclesTrucks", ["Flex_CUP_LDF_T810_Unarmed"]];
+_militiaVehiclesData set ["vehiclesLightUnarmed", ["Flex_CUP_LDF_Offroad_01", "Flex_CUP_LDF_Offroad_01_comms", "Flex_CUP_LDF_Offroad_01_covered"]];
+_militiaVehiclesData set ["vehiclesAPCs", ["Flex_CUP_LDF_M113A3"]];
+
+["vehiclesData", [
+    _militiaVehiclesData,
+    _militaryVehiclesData,
+    _eliteVehiclesData
+]] call _fnc_saveVehiclesToTemplate;
+
 
 #include "CUP_Vehicle_Attributes.sqf"
 

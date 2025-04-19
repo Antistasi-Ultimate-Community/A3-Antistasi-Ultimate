@@ -80,49 +80,49 @@ switch (toLowerANSI _convoyType) do
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_ammo",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_ammo";
         _taskIcon = "rearm";
-        _typeVehObj = selectRandom (_faction get "vehiclesAmmoTrucks");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesAmmoTrucks"));
     };
     case "fuel":
 	{
 		_textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_fuel",_nameOrigin,_displayTime,_nameDest];
 		_taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_fuel";
 		_taskIcon = "refuel";
-		_typeVehObj = selectRandom (_faction get "vehiclesFuelTrucks");
+		_typeVehObj = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesFuelTrucks"));
 	};
     case "armor":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_armor";
         _taskIcon = "destroy";
-        _typeVehObj = selectRandom (_faction get "vehiclesAA");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesAA"));
     };
     case "prisoners":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_prisoners",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_prisoners";
         _taskIcon = "run";
-        _typeVehObj = selectRandom (_faction get "vehiclesTrucks");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
     };
     case "reinforcements":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_reinf",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_reinf";
         _taskIcon = "meet";
-        _typeVehObj = selectRandom (_faction get "vehiclesTrucks");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
     };
     case "money":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_money";
         _taskIcon = "truck";
-        _typeVehObj = selectRandom (FactionGet(reb, "vehiclesCivSupply"));
+        _typeVehObj = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivSupply", 0));
     };
     case "supplies":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
         _taskIcon = "truck";
-        _typeVehObj = selectRandom (FactionGet(reb, "vehiclesCivSupply"));
+        _typeVehObj = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivSupply", 0));
     };
 };
 
@@ -265,7 +265,11 @@ for "_i" from 1 to _countX do
 
 // Lead vehicle
 sleep 2;
-private _typeVehX = selectRandom (if (_sideX == Occupants && random 4 < tierWar) then {_faction get "vehiclesPolice"} else {_faction get "vehiclesLightArmed"});
+private _typeVehX = selectRandom (if (_sideX == Occupants && random 4 < tierWar) then {
+    FactionGetTiered(_faction, "vehiclesPolice")
+} else {
+    FactionGetTiered(_faction, "vehiclesLightArmed")
+});
 private _LeadText = localize "STR_marker_convoy_lead_vehicle";
 private _vehLead = [_typeVehX, _LeadText] call _fnc_spawnConvoyVehicle;
 

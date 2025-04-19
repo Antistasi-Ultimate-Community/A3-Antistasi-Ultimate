@@ -23,6 +23,8 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
+private _vehiclesData = call _fnc_createLoadoutData;
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate; 	//Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -35,25 +37,25 @@ if (isClass (configFile >> "CfgPatches" >> "Swedish_Forces_Pack")) then {
     _vehiclesLightArmed append ["sfp_tgb16_ksp58", "sfp_tgb16_rws"];
 };
 
-["vehiclesBasic", ["B_T_Quadbike_01_F"]] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
-["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
-["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
-["vehiclesTrucks", ["Flex_CUP_NOR_Truck_01_transport", "Flex_CUP_NOR_Truck_01_covered"]] call _fnc_saveToTemplate; 			//this line determines the trucks -- Example: ["vehiclesTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
-["vehiclesCargoTrucks", ["Flex_CUP_NOR_Truck_01_flatbed", "Flex_CUP_NOR_Truck_01_cargo"]] call _fnc_saveToTemplate; 		//this line determines cargo trucks -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
-["vehiclesAmmoTrucks", ["Flex_CUP_NOR_Truck_01_ammo", "Flex_CUP_NOR_M113A3_Reammo"]] call _fnc_saveToTemplate; 		//this line determines ammo trucks -- Example: ["vehiclesAmmoTrucks", ["B_Truck_01_ammo_F"]] -- Array, can contain multiple assets
-["vehiclesRepairTrucks", ["Flex_CUP_NOR_Truck_01_Repair", "Flex_CUP_NOR_M113A3_Repair"]] call _fnc_saveToTemplate; 		//this line determines repair trucks -- Example: ["vehiclesRepairTrucks", ["B_Truck_01_Repair_F"]] -- Array, can contain multiple assets
-["vehiclesFuelTrucks", ["Flex_CUP_NOR_Truck_01_fuel"]] call _fnc_saveToTemplate;		//this line determines fuel trucks -- Array, can contain multiple assets
-["vehiclesMedical", ["Flex_CUP_NOR_Truck_01_medical", "Flex_CUP_NOR_M113A3_Med"]] call _fnc_saveToTemplate;			//this line determines medical vehicles -- Array, can contain multiple assets
-["vehiclesAPCs", ["Flex_CUP_NOR_M113A3"]] call _fnc_saveToTemplate; 				//this line determines APCs -- Example: ["vehiclesAPCs", ["B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_CRV_F"]] -- Array, can contain multiple assets
-["vehiclesTanks", ["Flex_CUP_NOR_Leopard2A6"]] call _fnc_saveToTemplate; 			//this line determines tanks -- Example: ["vehiclesTanks", ["B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"]] -- Array, can contain multiple assets
-["vehiclesAA", ["CUP_B_nM1097_AVENGER_NATO_T"]] call _fnc_saveToTemplate; 				//this line determines AA vehicles -- Example: ["vehiclesAA", ["B_APC_Tracked_01_AA_F"]] -- Array, can contain multiple assets
-["vehiclesLightAPCs", []] call _fnc_saveToTemplate;			//this line determines light APCs
-["vehiclesIFVs", []] call _fnc_saveToTemplate;				//this line determines IFVs
+_vehiclesData set ["vehiclesBasic", ["B_T_Quadbike_01_F"]]; 			//this line determines basic vehicles, the lightest kind available. -- Example: _vehiclesData set ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
+["vehiclesLightUnarmed", _vehiclesLightUnarmed]; 		//this line determines light and unarmed vehicles. -- Example: _vehiclesData set ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
+["vehiclesLightArmed", _vehiclesLightArmed]; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
+_vehiclesData set ["vehiclesTrucks", ["Flex_CUP_NOR_Truck_01_transport", "Flex_CUP_NOR_Truck_01_covered"]]; 			//this line determines the trucks -- Example: _vehiclesData set ["vehiclesTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
+["vehiclesCargoTrucks", ["Flex_CUP_NOR_Truck_01_flatbed", "Flex_CUP_NOR_Truck_01_cargo"]]; 		//this line determines cargo trucks -- Example: _vehiclesData set ["vehiclesCargoTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
+["vehiclesAmmoTrucks", ["Flex_CUP_NOR_Truck_01_ammo", "Flex_CUP_NOR_M113A3_Reammo"]]; 		//this line determines ammo trucks -- Example: _vehiclesData set ["vehiclesAmmoTrucks", ["B_Truck_01_ammo_F"]] -- Array, can contain multiple assets
+["vehiclesRepairTrucks", ["Flex_CUP_NOR_Truck_01_Repair", "Flex_CUP_NOR_M113A3_Repair"]]; 		//this line determines repair trucks -- Example: _vehiclesData set ["vehiclesRepairTrucks", ["B_Truck_01_Repair_F"]] -- Array, can contain multiple assets
+["vehiclesFuelTrucks", ["Flex_CUP_NOR_Truck_01_fuel"]];		//this line determines fuel trucks -- Array, can contain multiple assets
+_vehiclesData set ["vehiclesMedical", ["Flex_CUP_NOR_Truck_01_medical", "Flex_CUP_NOR_M113A3_Med"]];			//this line determines medical vehicles -- Array, can contain multiple assets
+_vehiclesData set ["vehiclesAPCs", ["Flex_CUP_NOR_M113A3"]]; 				//this line determines APCs -- Example: _vehiclesData set ["vehiclesAPCs", ["B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_CRV_F"]] -- Array, can contain multiple assets
+["vehiclesTanks", ["Flex_CUP_NOR_Leopard2A6"]]; 			//this line determines tanks -- Example: _vehiclesData set ["vehiclesTanks", ["B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"]] -- Array, can contain multiple assets
+["vehiclesAA", ["CUP_B_nM1097_AVENGER_NATO_T"]]; 				//this line determines AA vehicles -- Example: _vehiclesData set ["vehiclesAA", ["B_APC_Tracked_01_AA_F"]] -- Array, can contain multiple assets
+["vehiclesLightAPCs", []];			//this line determines light APCs
+_vehiclesData set ["vehiclesIFVs", []];				//this line determines IFVs
 
 
-["vehiclesTransportBoats", ["Flex_CUP_NOR_Boat_Transport"]] call _fnc_saveToTemplate; 	//this line determines transport boats -- Example: ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] -- Array, can contain multiple assets
-["vehiclesGunBoats", ["Flex_CUP_NOR_RHIB", "Flex_CUP_NOR_RHIB2Turret"]] call _fnc_saveToTemplate; 			//this line determines gun boats -- Example: ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] -- Array, can contain multiple assets
-["vehiclesAmphibious", []] call _fnc_saveToTemplate; 		//this line determines amphibious vehicles  -- Example: ["vehiclesAmphibious", ["B_APC_Wheeled_01_cannon_F"]] -- Array, can contain multiple assets
+_vehiclesData set ["vehiclesTransportBoats", ["Flex_CUP_NOR_Boat_Transport"]]; 	//this line determines transport boats -- Example: _vehiclesData set ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] -- Array, can contain multiple assets
+["vehiclesGunBoats", ["Flex_CUP_NOR_RHIB", "Flex_CUP_NOR_RHIB2Turret"]]; 			//this line determines gun boats -- Example: _vehiclesData set ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] -- Array, can contain multiple assets
+["vehiclesAmphibious", []]; 		//this line determines amphibious vehicles  -- Example: _vehiclesData set ["vehiclesAmphibious", ["B_APC_Wheeled_01_cannon_F"]] -- Array, can contain multiple assets
 
 private _vehiclesFighters = ["Flex_CUP_NOR_F35B"];
 
@@ -61,48 +63,62 @@ if (isClass (configFile >> "CfgPatches" >> "F16_Norwegian_Reskin")) then {
     _vehiclesFighters append ["F16C_NATO50"];
 };
 
-["vehiclesPlanesCAS", _vehiclesFighters] call _fnc_saveToTemplate; 		//this line determines CAS planes -- Example: ["vehiclesPlanesCAS", ["B_Plane_CAS_01_dynamicLoadout_F"]] -- Array, can contain multiple assets
-["vehiclesPlanesAA", _vehiclesFighters] call _fnc_saveToTemplate; 			//this line determines air supperiority planes -- Example: ["vehiclesPlanesAA", ["B_Plane_Fighter_01_F"]] -- Array, can contain multiple assets
-["vehiclesPlanesTransport", ["Flex_CUP_NOR_C130J"]] call _fnc_saveToTemplate; 	//this line determines transport planes -- Example: ["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] -- Array, can contain multiple assets
+["vehiclesPlanesCAS", _vehiclesFighters]; 		//this line determines CAS planes -- Example: _vehiclesData set ["vehiclesPlanesCAS", ["B_Plane_CAS_01_dynamicLoadout_F"]] -- Array, can contain multiple assets
+["vehiclesPlanesAA", _vehiclesFighters]; 			//this line determines air supperiority planes -- Example: _vehiclesData set ["vehiclesPlanesAA", ["B_Plane_Fighter_01_F"]] -- Array, can contain multiple assets
+["vehiclesPlanesTransport", ["Flex_CUP_NOR_C130J"]]; 	//this line determines transport planes -- Example: _vehiclesData set ["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] -- Array, can contain multiple assets
 
-["vehiclesHelisLight", ["Flex_CUP_NOR_Bell412_Transport", "Flex_CUP_NOR_Bell412_Utility", "Flex_CUP_NOR_Bell412_Radar"]] call _fnc_saveToTemplate; 		//this line determines light helis -- Example: ["vehiclesHelisLight", ["B_Heli_Light_01_F"]] -- Array, can contain multiple assets
-["vehiclesHelisTransport", ["Flex_CUP_NOR_Merlin_HC3", "Flex_CUP_NOR_MH60S_Unarmed"]] call _fnc_saveToTemplate; 	//this line determines transport helis -- Example: ["vehiclesHelisTransport", ["B_Heli_Transport_01_F"]] -- Array, can contain multiple assets
-["vehiclesHelisLightAttack", ["Flex_CUP_NOR_Bell412_Armed", "Flex_CUP_NOR_Bell412_Armed_AT", "Flex_CUP_NOR_Bell412_dynamicLoadout", "Flex_CUP_NOR_MH60S_Armed", "Flex_CUP_NOR_Merlin_HC3_Armed"]] call _fnc_saveToTemplate;		// this line determines light attack helicopters
-["vehiclesHelisAttack", []] call _fnc_saveToTemplate; 		//this line determines attack helis -- Example: ["vehiclesHelisAttack", ["B_Heli_Attack_01_F"]] -- Array, can contain multiple assets
+["vehiclesHelisLight", ["Flex_CUP_NOR_Bell412_Transport", "Flex_CUP_NOR_Bell412_Utility", "Flex_CUP_NOR_Bell412_Radar"]]; 		//this line determines light helis -- Example: _vehiclesData set ["vehiclesHelisLight", ["B_Heli_Light_01_F"]] -- Array, can contain multiple assets
+["vehiclesHelisTransport", ["Flex_CUP_NOR_Merlin_HC3", "Flex_CUP_NOR_MH60S_Unarmed"]]; 	//this line determines transport helis -- Example: _vehiclesData set ["vehiclesHelisTransport", ["B_Heli_Transport_01_F"]] -- Array, can contain multiple assets
+["vehiclesHelisLightAttack", ["Flex_CUP_NOR_Bell412_Armed", "Flex_CUP_NOR_Bell412_Armed_AT", "Flex_CUP_NOR_Bell412_dynamicLoadout", "Flex_CUP_NOR_MH60S_Armed", "Flex_CUP_NOR_Merlin_HC3_Armed"]];		// this line determines light attack helicopters
+_vehiclesData set ["vehiclesHelisAttack", []]; 		//this line determines attack helis -- Example: _vehiclesData set ["vehiclesHelisAttack", ["B_Heli_Attack_01_F"]] -- Array, can contain multiple assets
 
-["vehiclesArtillery", []] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
+["vehiclesArtillery", []];             // wheeled or tracked vehicle with artillery cannon or rockets
 ["magazines", createHashMapFromArray []] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
 
-["uavsAttack", []] call _fnc_saveToTemplate; 				//this line determines attack UAVs -- Example: ["uavsAttack", ["B_UAV_02_CAS_F"]] -- Array, can contain multiple assets
-["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate; 				//this line determines portable UAVs -- Example: ["uavsPortable", ["B_UAV_01_F"]] -- Array, can contain multiple assets
+_vehiclesData set ["uavsAttack", []]; 				//this line determines attack UAVs -- Example: _vehiclesData set ["uavsAttack", ["B_UAV_02_CAS_F"]] -- Array, can contain multiple assets
+["uavsPortable", ["B_UAV_01_F"]]; 				//this line determines portable UAVs -- Example: _vehiclesData set ["uavsPortable", ["B_UAV_01_F"]] -- Array, can contain multiple assets
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["CUP_B_nM1025_M2_NATO_T", "CUP_B_nM1025_M240_NATO_T", "CUP_B_nM1036_TOW_NATO_T"]] call _fnc_saveToTemplate; //this line determines lightly armed militia vehicles -- Example: ["vehiclesMilitiaLightArmed", ["B_G_Offroad_01_armed_F"]] -- Array, can contain multiple assets
-["vehiclesMilitiaTrucks", ["Flex_CUP_NOR_Truck_01_transport", "Flex_CUP_NOR_Truck_01_covered"]] call _fnc_saveToTemplate; 	//this line determines militia trucks (unarmed) -- Example: ["vehiclesMilitiaTrucks", ["B_G_Van_01_transport_F"]] -- Array, can contain multiple assets
-["vehiclesMilitiaCars", ["CUP_B_nM1025_Unarmed_NATO_T", "CUP_B_nM1025_Unarmed_DF_NATO_T", "CUP_B_nM1151_Unarmed_NATO_T", "CUP_B_nM1151_Unarmed_DF_NATO_T"]] call _fnc_saveToTemplate; 		//this line determines militia cars (unarmed) -- Example: ["vehiclesMilitiaCars", ["B_G_Offroad_01_F"]] -- Array, can contain multiple assets
+						//this line determines militia APCs
 
-["vehiclesMilitiaAPCs", ["CUP_B_nM1025_M2_NATO_T", "CUP_B_nM1025_M240_NATO_T"]] call _fnc_saveToTemplate;						//this line determines militia APCs
+_vehiclesData set ["vehiclesPolice", ["B_T_LSV_01_unarmed_F", "CUP_B_nM1025_Unarmed_NATO_T"]]; 			//this line determines police cars -- Example: _vehiclesData set ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] -- Array, can contain multiple assets
 
-["vehiclesPolice", ["B_T_LSV_01_unarmed_F", "CUP_B_nM1025_Unarmed_NATO_T"]] call _fnc_saveToTemplate; 			//this line determines police cars -- Example: ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] -- Array, can contain multiple assets
+["staticMGs", ["Flex_CUP_NOR_HMG_high"]]; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
+_vehiclesData set ["staticAT", ["Flex_CUP_NOR_TOW2_TriPod"]]; 					//this line determinesstatic ATs -- Example: _vehiclesData set ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
+["staticAA", ["Flex_CUP_NOR_Stinger_AA_pod"]]; 					//this line determines static AAs -- Example: _vehiclesData set ["staticAA", ["B_static_AA_F"]] -- Array, can contain multiple assets
+["staticMortars", ["Flex_CUP_NOR_Mortar"]]; 				//this line determines static mortars -- Example: _vehiclesData set ["staticMortars", ["B_Mortar_01_F"]] -- Array, can contain multiple assets
+["staticHowitzers", ["Flex_CUP_NOR_M119"]];							//this line determines static howitzers. Basically it's just a stronger mortar, use same syntax as above.
 
-["staticMGs", ["Flex_CUP_NOR_HMG_high"]] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
-["staticAT", ["Flex_CUP_NOR_TOW2_TriPod"]] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
-["staticAA", ["Flex_CUP_NOR_Stinger_AA_pod"]] call _fnc_saveToTemplate; 					//this line determines static AAs -- Example: ["staticAA", ["B_static_AA_F"]] -- Array, can contain multiple assets
-["staticMortars", ["Flex_CUP_NOR_Mortar"]] call _fnc_saveToTemplate; 				//this line determines static mortars -- Example: ["staticMortars", ["B_Mortar_01_F"]] -- Array, can contain multiple assets
-["staticHowitzers", ["Flex_CUP_NOR_M119"]] call _fnc_saveToTemplate;							//this line determines static howitzers. Basically it's just a stronger mortar, use same syntax as above.
+_vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"]; 			//this line determines available HE-shells for the static mortars - !needs to be compatible with the mortar! -- Example: _vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] - ENTER ONLY ONE OPTION
+["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"]; 		//this line determines smoke-shells for the static mortar - !needs to be compatible with the mortar! -- Example: _vehiclesData set ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] - ENTER ONLY ONE OPTION
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"];		//this line determines flare shells for the static mortar - !needs to be compatible with the mortar! -- Example: _vehiclesData set ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Flare_white"] - ENTER ONLY ONE OPTION
 
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate; 			//this line determines available HE-shells for the static mortars - !needs to be compatible with the mortar! -- Example: ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] - ENTER ONLY ONE OPTION
-["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate; 		//this line determines smoke-shells for the static mortar - !needs to be compatible with the mortar! -- Example: ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] - ENTER ONLY ONE OPTION
-["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;		//this line determines flare shells for the static mortar - !needs to be compatible with the mortar! -- Example: ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Flare_white"] - ENTER ONLY ONE OPTION
+["howitzerMagazineHE", "CUP_30Rnd_105mmHE_M119_M"];			//this line determines available HE-shells for the static howitzers - !needs to be compatible with the howitzer! -- same syntax as above - ENTER ONLY ONE OPTION
 
-["howitzerMagazineHE", "CUP_30Rnd_105mmHE_M119_M"] call _fnc_saveToTemplate;			//this line determines available HE-shells for the static howitzers - !needs to be compatible with the howitzer! -- same syntax as above - ENTER ONLY ONE OPTION
-
-["vehicleRadar", "Flex_CUP_NOR_Radar_System"] call _fnc_saveToTemplate;
-["vehicleSam", "Flex_CUP_NOR_SAM_System"] call _fnc_saveToTemplate;
+_vehiclesData set ["vehicleRadar", "Flex_CUP_NOR_Radar_System"];
+_vehiclesData set ["vehicleSam", "Flex_CUP_NOR_SAM_System"];
 
 //Minefield definition
-["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;
-["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
+_vehiclesData set ["minefieldAT", ["CUP_Mine"]];
+_vehiclesData set ["minefieldAPERS", ["APERSMine"]];
+
+private _eliteVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+private _militaryVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+private _militiaVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+
+_militiaVehiclesData set ["vehiclesLightArmed", ["CUP_B_nM1025_M2_NATO_T", "CUP_B_nM1025_M240_NATO_T", "CUP_B_nM1036_TOW_NATO_T"]];
+_militiaVehiclesData set ["vehiclesTrucks", ["B_G_Van_01_transport_F"]] -- Array, can contain multiple assets
+["vehiclesMilitiaCars", ["CUP_B_nM1025_Unarmed_NATO_T", "CUP_B_nM1025_Unarmed_DF_NATO_T", "CUP_B_nM1151_Unarmed_NATO_T", "CUP_B_nM1151_Unarmed_DF_NATO_T"]];
+_militiaVehiclesData set ["vehiclesLightUnarmed", ["B_G_Offroad_01_F"]] -- Array, can contain multiple assets
+
+["vehiclesMilitiaAPCs", ["CUP_B_nM1025_M2_NATO_T", "CUP_B_nM1025_M240_NATO_T"]];
+
+["vehiclesData", [
+    _militiaVehiclesData,
+    _militaryVehiclesData,
+    _eliteVehiclesData
+]] call _fnc_saveVehiclesToTemplate;
+
 
 /////////////////////
 ///  Identities   ///

@@ -1,8 +1,14 @@
 //////////////////////////
+// VehiclesData Hashmap //
+//////////////////////////
+
+private _vehiclesData = call _fnc_createLoadoutData;
+
+//////////////////////////
 //  Mission/HQ Objects  //
 //////////////////////////
 
-// All of bellow are optional overrides.
+// All of below are optional overrides.
 ["firstAidKits", ["FirstAidKit"]] call _fnc_saveToTemplate;  // However, item is tested for for help and reviving.
 ["mediKits", ["Medikit"]] call _fnc_saveToTemplate;  // However, item is tested for for help and reviving.
 ["toolKits", ["ToolKit"]] call _fnc_saveToTemplate;  // Relies on autodetection.
@@ -14,10 +20,10 @@
 ["rallyPoint", "B_RadioBag_01_wdl_F"] call _fnc_saveToTemplate;
 ["reviveKitBox", ["Box_NATO_Support_F", 2100]] call _fnc_saveToTemplate;
 
-["vehiclesCivPlane", []] call _fnc_saveToTemplate;
-["vehiclesPlane", []] call _fnc_saveToTemplate;
-["vehiclesMedical", []] call _fnc_saveToTemplate;
-["vehiclesCivSupply", ["C_Van_01_box_F"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesCivPlane", []];
+_vehiclesData set ["vehiclesPlane", []];
+_vehiclesData set ["vehiclesMedical", []];
+_vehiclesData set ["vehiclesCivSupply", ["C_Van_01_box_F"]];
 
 ["animations", []] call _fnc_saveToTemplate;
 ["variants", []] call _fnc_saveToTemplate;

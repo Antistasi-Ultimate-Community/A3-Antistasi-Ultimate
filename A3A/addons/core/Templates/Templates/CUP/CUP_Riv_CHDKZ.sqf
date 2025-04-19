@@ -41,15 +41,17 @@
 ["ammobox", "Box_FIA_Support_F"] call _fnc_saveToTemplate; 	//Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_Syndicate_Wps_F"] call _fnc_saveToTemplate;
 
-["vehiclesRivalsLightArmed", ["CUP_O_UAZ_MG_CHDKZ", "CUP_O_Hilux_DSHKM_CHDKZ", "CUP_O_UAZ_AGS30_CHDKZ", "CUP_O_Hilux_UB32_CHDKZ", "CUP_O_BRDM2_CHDKZ", "CUP_O_BRDM2_HQ_CHDKZ"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTrucks", ["CUP_O_Ural_Open_CHDKZ", "CUP_O_Ural_CHDKZ"]] call _fnc_saveToTemplate;
-["vehiclesRivalsCars", ["CUP_O_UAZ_Open_CHDKZ", "CUP_O_UAZ_Unarmed_CHDKZ", "CUP_O_Hilux_unarmed_CHDKZ"]] call _fnc_saveToTemplate;
-["vehiclesRivalsAPCs", ["CUP_O_BTR60_CHDKZ", "CUP_O_BTR80_CHDKZ", "CUP_O_BMP2_CHDKZ"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", ["CUP_O_T55_CHDKZ", "CUP_O_T72_CHDKZ"]] call _fnc_saveToTemplate;
-["vehiclesRivalsHelis", ["CUP_O_Mi8_CHDKZ"]] call _fnc_saveToTemplate;			
-["vehiclesRivalsUavs", ["O_UAV_01_F"]] call _fnc_saveToTemplate;			
+private _vehiclesData = call _fnc_createLoadoutData;
 
-["staticLowWeapons", [
+_vehiclesData set ["vehiclesLightArmed", ["CUP_O_UAZ_MG_CHDKZ", "CUP_O_Hilux_DSHKM_CHDKZ", "CUP_O_UAZ_AGS30_CHDKZ", "CUP_O_Hilux_UB32_CHDKZ", "CUP_O_BRDM2_CHDKZ", "CUP_O_BRDM2_HQ_CHDKZ"]];
+_vehiclesData set ["vehiclesTrucks", ["CUP_O_Ural_Open_CHDKZ", "CUP_O_Ural_CHDKZ"]];
+_vehiclesData set ["vehiclesLightUnarmed", ["CUP_O_UAZ_Open_CHDKZ", "CUP_O_UAZ_Unarmed_CHDKZ", "CUP_O_Hilux_unarmed_CHDKZ"]];
+_vehiclesData set ["vehiclesAPCs", ["CUP_O_BTR60_CHDKZ", "CUP_O_BTR80_CHDKZ", "CUP_O_BMP2_CHDKZ"]];
+_vehiclesData set ["vehiclesTanks", ["CUP_O_T55_CHDKZ", "CUP_O_T72_CHDKZ"]];
+_vehiclesData set ["vehiclesHelis", ["CUP_O_Mi8_CHDKZ"]];			
+_vehiclesData set ["vehiclesUavs", ["O_UAV_01_F"]];			
+
+_vehiclesData set ["staticLowWeapons", [
 	"CUP_O_DSHkM_MiniTriPod_ChDKZ", 
 	"CUP_O_DSHKM_ChDKZ", 
 	"CUP_O_DSHkM_MiniTriPod_ChDKZ", 
@@ -57,16 +59,21 @@
 	"CUP_O_AGS_ChDKZ", 
 	"CUP_O_SPG9_ChDKZ", 
 	"CUP_O_SPG9_ChDKZ"
-]] call _fnc_saveToTemplate;
-["staticMortars", ["CUP_B_2b14_82mm_CDF"]] call _fnc_saveToTemplate;
+]];
+_vehiclesData set ["staticMortars", ["CUP_B_2b14_82mm_CDF"]];
 
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+_vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"];
 
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
 
-["minefieldAT", ["CUP_MineE"]] call _fnc_saveToTemplate;
-["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
+_vehiclesData set ["minefieldAT", ["CUP_MineE"]];
+_vehiclesData set ["minefieldAPERS", ["APERSMine"]];
+
+["vehiclesData", [
+    _vehiclesData
+]] call _fnc_saveVehiclesToTemplate;
+
 
 //////////////////////////
 //       Loadouts       //

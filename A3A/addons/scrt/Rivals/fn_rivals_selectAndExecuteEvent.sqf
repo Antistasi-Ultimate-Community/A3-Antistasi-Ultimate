@@ -26,7 +26,7 @@ private _events = [
 	([CARDEMO, UAVGRENADE, ROVINGMORTAR, HELIRAID ,SKIRMISH_OCCVSRIV] select { _x != _excludeId })
 ] select (_excludeId isNotEqualTo 0);
 
-if ((A3A_faction_riv get "vehiclesRivalsUavs") isEqualTo []) then {
+if ((FactionGetTieredFT(A3A_faction_riv, "vehiclesUavs", 0)) isEqualTo []) then {
 	_events deleteAt (_events find UAVGRENADE); 
 };
 

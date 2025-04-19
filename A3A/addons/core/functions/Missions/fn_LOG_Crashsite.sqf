@@ -71,31 +71,42 @@ while {true} do {
 };
 
 // selecting classnames
-private _reconVehicleDroppod = _faction getOrDefault ["vehiclesDropPod", []];
+private _reconVehicleDroppod = FactionGoDTiered(_faction, "vehiclesDropPod");
 
-private _reconVehicleClass = selectRandom ((_faction get "vehiclesPlanesTransport") + (_faction get "uavsAttack") + _reconVehicleDroppod); //  + _reconVehicleDroppod
+private _reconVehicleClass = selectRandom (
+    (FactionGoDTiered(_faction, "vehiclesPlanesTransport")) +
+    (FactionGoDTiered(_faction, "uavsAttack")) +
+    _reconVehicleDroppod
+); //  + _reconVehicleDroppod
 private _pilotClass = _faction get "unitPilot";
 
 if (_reconVehicleClass in _reconVehicleDroppod) exitWith { 
     [_markerX] call A3A_fnc_LOG_Crashsite_Satellite;
 };
 
-private _searchHeliClassLight = _faction getOrDefault ["vehiclesHelisLight", []];
-private _searchHeliClassLightAttack = _faction getOrDefault ["vehiclesHelisLightAttack", []];
-private _searchHeliClassAttack = _faction getOrDefault ["vehiclesHelisAttack", []];
+private _searchHeliClassLight = FactionGoDTiered(_faction, "vehiclesHelisLight");
+private _searchHeliClassLightAttack = FactionGoDTiered(_faction, "vehiclesHelisLightAttack");
+private _searchHeliClassAttack = FactionGoDTiered(_faction, "vehiclesHelisAttack");
 private _searchHeliClass = [];
 
 if (_searchHeliClassLight isEqualTo [] && {_searchHeliClassLightAttack isEqualTo []} && {_searchHeliClassAttack isEqualTo []}) then {
     _searchHeliClass = [];
 } else {
     _searchHeliClass =  if (_difficult) then {
-        selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
+        selectRandom (
+            (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
+            (FactionGoDTiered(_faction, "vehiclesHelisLightAttack")) +
+            (FactionGoDTiered(_faction, "vehiclesHelisAttack"))
+        )
     } else {
-        selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
+        selectRandom (
+            (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
+            (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
+        )
     };
 };
 
-private _cargoTruckClass = selectRandom (_faction get "vehiclesTrucks");
+private _cargoTruckClass = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
 
 private _blackboxClass = "";
 
@@ -245,7 +256,7 @@ _pilot = "";
 _pilotPosition = "";
 _bloodSplatter = "";
 
-if (typeOf _reconVehicle in (_faction get "vehiclesPlanesTransport")) then { 
+if (typeOf _reconVehicle in flatten (_faction get "vehiclesPlanesTransport")) then { 
     _pilot = [_groupPilot, _pilotClass, _crashsiteActual, [], 0, "NONE"] call A3A_fnc_createUnit;
     _pilotPosition = position _pilot;
     _bloodSplatter = createVehicle ["BloodSplatter_01_Large_New_F", [_pilotPosition select 0, _pilotPosition select 1,0/*  + 0.05 */], [], 0,  "CAN_COLLIDE"];
@@ -389,7 +400,7 @@ if (_searchHeliClass isNotEqualTo []) then {
     _landPos = [_crashsiteActual, 30, 100, 10, 0, 0.25, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
     _totalSeats = [typeOf _cargoVehicle, false] call BIS_fnc_crewCount; 
     _heliInfGroupSize = count units _heliInfGroup;
-    if(_searchHeliClass in (_faction get "vehiclesHelisLight")) then {
+    if(_searchHeliClass in flatten (_faction get "vehiclesHelisLight")) then {
         private _roll = random 100;
 		if(_roll >= 50) then {
             [_searchHeliVeh, _heliInfGroup, _crashsiteActual, _cargoGroupSpawnpositon, _heliVehicleGroup] spawn A3A_fnc_fastrope;

@@ -93,7 +93,7 @@ if (count _assignedPairs isEqualTo 0) exitWith {};
             _unit setCombatBehaviour "AWARE"; 
             _unit setUnitCombatMode "YELLOW";
 
-            if (typeOf _static in FactionGet(all, "vehiclesArtillery")) then {
+            if (typeOf _static in flatten FactionGet(all, "vehiclesArtillery")) then {
                 [_group] call A3A_fnc_artilleryAdd;
             };
 

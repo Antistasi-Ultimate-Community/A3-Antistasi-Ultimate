@@ -81,16 +81,20 @@ Debug("Box spawned");
 
 //Create boat and initialise crew members
 Debug("Spawning patrol boat and crew");
-private _typeVeh = if (_difficultX) then { selectRandom (_faction get "vehiclesGunBoats") } else { selectRandom (_faction get "vehiclesTransportBoats") };
+private _typeVeh = if (_difficultX) then { 
+	selectRandom ( FactionGetTiered(_faction, "vehiclesGunBoats"))
+} else {
+	selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTransportBoats"))
+};
 private _typeGroup = if _difficultX then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
 private _boatSpawnLocation = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 
-private _typeSDV = _faction getOrDefault ["vehiclesSDV", ""];
-if (_typeSDV != "") then {
+private _typeSDV = FactionGetTiered(_faction, "vehiclesSDV");
+if (_typeSDV != []) then {
 	private _diverType = "";
 	private _diversGroup = createGroup _sideX;
 	private _diversGroup2 = createGroup _sideX;
-   _typeSDV = selectRandom (_faction get "vehiclesSDV");
+   _typeSDV = selectRandom (_typeSDV);
    if (_typeSDV == "I_SDV_01_F") then {
 		_diverType = "I_diver_F";
    };

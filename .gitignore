@@ -6,6 +6,8 @@
 *.pbo
 *.pbo.bak
 *.png
+*_converted.sqf
+*.sqf.bak
 AntistasiBuilder.cfg
 
 #Ignore mission files that have been copied to A3-Antistasi

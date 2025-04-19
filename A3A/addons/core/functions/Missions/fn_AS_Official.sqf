@@ -37,7 +37,7 @@ private _grp = createGroup _sideX;
 private _officialClass = _faction get "unitOfficial";
 private _official = [_grp, _officialClass, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 
-private _bodyguardClass = [_faction get "unitRifle"] call SCRT_fnc_unit_getTiered;
+private _bodyguardClass = FactionGetTiered(_faction, "unitRifle");
 private _pilot = [_grp, _bodyguardClass, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 if (_difficultX) then {
 	for "_i" from 1 to 4 do {

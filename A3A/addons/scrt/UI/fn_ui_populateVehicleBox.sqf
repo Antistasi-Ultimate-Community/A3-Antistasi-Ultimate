@@ -12,11 +12,11 @@ private _isCivilian = false;
 switch (_category) do {
     case "civilian": {
         private _civilianVehicles = 
-			(A3A_faction_reb get 'vehiclesCivCar') +
-			(A3A_faction_reb get 'vehiclesCivTruck') +
-			(A3A_faction_reb get 'vehiclesCivBoat') select {_x isNotEqualTo ""};
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesCivCar", 0)) +
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesCivTruck", 0)) +
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesCivBoat", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 		
-		private _civAircrafts = (A3A_faction_reb get "vehiclesCivHeli") + (A3A_faction_reb get 'vehiclesCivPlane');
+		private _civAircrafts = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0)) + FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivPlane", 0);
 		if (_civAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_civilianVehicles append _civAircrafts;
 		};
@@ -25,26 +25,26 @@ switch (_category) do {
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civcars": {
-        private _civilianVehicles = (A3A_faction_reb get 'vehiclesCivCar') select {_x isNotEqualTo ""};
+        private _civilianVehicles = (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivCar", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		_isCivilian = true;
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civtrucks": {
-        private _civilianVehicles = (A3A_faction_reb get 'vehiclesCivTruck') select {_x isNotEqualTo ""};
+        private _civilianVehicles = (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivTruck", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		_isCivilian = true;
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civboats": {
-        private _civilianVehicles =	(A3A_faction_reb get 'vehiclesCivBoat') select {_x isNotEqualTo ""};
+        private _civilianVehicles =	(FactionGetTieredFT(A3A_faction_reb, "vehiclesCivBoat", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		_isCivilian = true;
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civheli": {
         private _civilianVehicles = [];
-		private _civAircrafts = (A3A_faction_reb get "vehiclesCivHeli");
+		private _civAircrafts = (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0));
 		if (_civAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_civilianVehicles append _civAircrafts;
 		};
@@ -55,7 +55,7 @@ switch (_category) do {
 	case "civplane": {
         private _civilianVehicles = [];
 		
-		private _civAircrafts = (A3A_faction_reb get 'vehiclesCivPlane');
+		private _civAircrafts = (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivPlane", 0));
 		if (_civAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_civilianVehicles append _civAircrafts;
 		};
@@ -65,26 +65,26 @@ switch (_category) do {
     };
 	case "military": {
 		private _militaryVehicles = 
-			(A3A_faction_reb get 'vehiclesBasic') + 
-			(A3A_faction_reb get 'vehiclesTruck') + 
-			(A3A_faction_reb get 'vehiclesLightUnarmed') +
-			(A3A_faction_reb get 'vehiclesBoat') + 
-			(A3A_faction_reb get 'vehiclesMedical')
-		select {_x isNotEqualTo []};
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesBasic", 0)) + 
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0)) + 
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesLightUnarmed", 0)) +
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesBoat", 0)) + 
+			(FactionGetTieredFT(A3A_faction_reb, "vehiclesMedical", 0))
+		select {_x isNotEqualTo [] && {_x isEqualType ""}};
 
 		if (tierWar > 2) then {
-			private _availableVehs = (A3A_faction_reb get 'vehiclesLightArmed') select {_x isNotEqualTo ""};
+			private _availableVehs = (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 
 		if (tierWar > 3) then {
 			private _availableVehs = 
-				(A3A_faction_reb get 'vehiclesAT') + 
-				(A3A_faction_reb get 'vehiclesAA') select {_x isNotEqualTo []};
+				(FactionGetTieredFT(A3A_faction_reb, "vehiclesAT", 0)) + 
+				(FactionGetTieredFT(A3A_faction_reb, "vehiclesAA", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 
-		private _milAircrafts = A3A_faction_reb get "vehiclesPlane";
+		private _milAircrafts = FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0);
 		if (_milAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_militaryVehicles append _milAircrafts;
 		};
@@ -92,29 +92,29 @@ switch (_category) do {
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarybasic": {
-		private _militaryVehicles = (A3A_faction_reb get 'vehiclesBasic') select {_x isNotEqualTo []};
+		private _militaryVehicles = (FactionGetTieredFT(A3A_faction_reb, "vehiclesBasic", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarytrucks": {
-		private _militaryVehicles = (A3A_faction_reb get 'vehiclesTruck') select {_x isNotEqualTo []};
+		private _militaryVehicles = (FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarylightunarmed": {
-		private _militaryVehicles = (A3A_faction_reb get 'vehiclesLightUnarmed') select {_x isNotEqualTo []};
+		private _militaryVehicles = (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightUnarmed", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militaryboats": {
-		private _militaryVehicles = (A3A_faction_reb get 'vehiclesBoat') select {_x isNotEqualTo []};
+		private _militaryVehicles = (FactionGetTieredFT(A3A_faction_reb, "vehiclesBoat", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarymedical": {
-		private _militaryVehicles =	(A3A_faction_reb get 'vehiclesMedical')	select {_x isNotEqualTo []};
+		private _militaryVehicles =	(FactionGetTieredFT(A3A_faction_reb, "vehiclesMedical", 0))	select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarylightarmed": {
 		private _militaryVehicles =[];
 		if (tierWar > 2) then {
-			private _availableVehs = (A3A_faction_reb get 'vehiclesLightArmed') select {_x isNotEqualTo ""};
+			private _availableVehs = (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 		_vehicleClasses = _militaryVehicles;
@@ -123,7 +123,7 @@ switch (_category) do {
 		private _militaryVehicles =[];
 		if (tierWar > 3) then {
 			private _availableVehs = 
-				(A3A_faction_reb get 'vehiclesAT') select {_x isNotEqualTo []};
+				(FactionGetTieredFT(A3A_faction_reb, "vehiclesAT", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 		_vehicleClasses = _militaryVehicles;
@@ -132,14 +132,14 @@ switch (_category) do {
 		private _militaryVehicles =[];
 		if (tierWar > 3) then {
 			private _availableVehs = 
-				(A3A_faction_reb get 'vehiclesAA') select {_x isNotEqualTo []};
+				(FactionGetTieredFT(A3A_faction_reb, "vehiclesAA", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militaryplane": {
 		private _militaryVehicles =[];
-		private _milAircrafts = A3A_faction_reb get "vehiclesPlane";
+		private _milAircrafts = FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0);
 		if (_milAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_militaryVehicles append _milAircrafts;
 		};
@@ -149,21 +149,21 @@ switch (_category) do {
 		private _statics = [];
 		
 		if (tierWar > 2) then {
-			private _availableVehs = (A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
+			private _availableVehs = (FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 
-		(A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
+		(FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 
 		if (tierWar > 3) then {
 			private _availableVehs = 
-				(A3A_faction_reb get 'staticAT') +
-				(A3A_faction_reb get 'staticAA') select {_x isNotEqualTo []};
+				(FactionGetTieredFT(A3A_faction_reb, "staticAT", 0)) +
+				(FactionGetTieredFT(A3A_faction_reb, "staticAA", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 
 		if (tierWar > 4) then {
-			private _mortars = A3A_faction_reb get 'staticMortars';
+			private _mortars = FactionGetTieredFT(A3A_faction_reb, "staticMortars", 0);
 			if (_mortars isNotEqualTo []) then {
 				_statics append _mortars;
 			};
@@ -175,16 +175,16 @@ switch (_category) do {
 		private _statics = [];
 		
 		if (tierWar > 2) then {
-			private _availableVehs = (A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
+			private _availableVehs = (FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
-		(A3A_faction_reb get 'staticMGs') select {_x isNotEqualTo []};
+		(FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _statics;
 	};
 	case "staticAT": {
 		private _statics = [];
 		if (tierWar > 3) then {
-			private _availableVehs = (A3A_faction_reb get 'staticAT') select {_x isNotEqualTo []};
+			private _availableVehs = (FactionGetTieredFT(A3A_faction_reb, "staticAT", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 		_vehicleClasses = _statics;
@@ -192,7 +192,7 @@ switch (_category) do {
 	case "staticAA": {
 		private _statics = [];
 		if (tierWar > 3) then {
-			private _availableVehs = (A3A_faction_reb get 'staticAA') select {_x isNotEqualTo []};
+			private _availableVehs = (FactionGetTieredFT(A3A_faction_reb, "staticAA", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 		_vehicleClasses = _statics;
@@ -200,7 +200,7 @@ switch (_category) do {
 	case "staticMORTAR": {
 		private _statics = [];
 		if (tierWar > 4) then {
-			private _mortars = A3A_faction_reb get 'staticMortars';
+			private _mortars = FactionGetTieredFT(A3A_faction_reb, "staticMortars", 0);
 			if (_mortars isNotEqualTo []) then {
 				_statics append _mortars;
 			};

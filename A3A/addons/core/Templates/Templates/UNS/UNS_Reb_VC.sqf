@@ -32,8 +32,8 @@
 ["staticMortarMagSmoke", "uns_8Rnd_82mmSMOKE_M1941"] call _fnc_saveToTemplate;
 ["staticMortarMagFlare", "uns_8Rnd_82mmILLUM_M1941"] call _fnc_saveToTemplate;
 
-["mineAT", "uns_mine_AT_mag"] call _fnc_saveToTemplate;
-["mineAPERS", "uns_mine_AP_mag"] call _fnc_saveToTemplate;
+["minesAT", "uns_mine_AT_mag"] call _fnc_saveToTemplate;
+["minesAPERS", "uns_mine_AP_mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["uns_M118_mag_remote", 1],["PipeBomb", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["PipeBomb", 2],["uns_M118_mag_remote", 2],["uns_mine_TM_mag", 1]]] call _fnc_saveToTemplate;

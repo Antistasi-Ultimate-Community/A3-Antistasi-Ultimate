@@ -36,7 +36,7 @@ if (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"v
 
 if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod")) then
 {
-    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") || _vtol != "" || (typeOf _vehicle in (_faction get "vehiclesDropPod"))) exitWith
+    if (_vehType in flatten (FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight")) || _vtol != "" || (typeOf _vehicle in flatten (_faction get "vehiclesDropPod"))) exitWith
     {
         //Transport helicopter or VTOL
         _landPos = [_posDestination, 200, 400, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
@@ -105,7 +105,7 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
             };
         };
     };
-    if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith 
+    if (_vehType in flatten (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"))) exitWith 
     {   //Attack helicopter
         _landPosAttackheli = [_posDestination, 400, 800, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
@@ -157,16 +157,16 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
 else            // ground vehicle
 {
     private _typeName = call {
-        if (_vehType in FactionGet(all,"vehiclesTanks")) exitWith {localize "STR_qrf_marker_tank"};
-        if (_vehType in FactionGet(all,"vehiclesLightTanks")) exitWith {localize "STR_qrf_marker_light_tank"};
-        if (_vehType in FactionGet(all,"vehiclesLightAPCs")) exitWith {localize "STR_qrf_marker_light_apc"};
-        if (_vehType in FactionGet(all,"vehiclesAA")) exitWith {localize "STR_qrf_marker_aa"};
-        if (_vehType in FactionGet(all,"vehiclesArtillery")) exitWith {localize "STR_qrf_marker_atillery"};
-        if (_vehType in FactionGet(all,"vehiclesAirborne")) exitWith {localize "STR_qrf_marker_airborne"};
-        if (_vehType in FactionGet(all,"vehiclesIFVs")) exitWith {localize "STR_qrf_marker_ifv"};
-        if (_vehType in FactionGet(all,"vehiclesArmor") && unitIsUAV _vehicle) exitWith {localize "STR_qrf_marker_ugv"};
-        if (_vehType in FactionGet(all,"vehiclesArmor"))  exitWith {localize "STR_qrf_marker_apc"};
-        if (_vehType in FactionGet(all,"vehiclesTrucks")) exitWith {localize "STR_qrf_marker_truck"};
+        if (_vehType in flatten FactionGet(all,"vehiclesTanks")) exitWith {localize "STR_qrf_marker_tank"};
+        if (_vehType in flatten FactionGet(all,"vehiclesLightTanks")) exitWith {localize "STR_qrf_marker_light_tank"};
+        if (_vehType in flatten FactionGet(all,"vehiclesLightAPCs")) exitWith {localize "STR_qrf_marker_light_apc"};
+        if (_vehType in flatten FactionGet(all,"vehiclesAA")) exitWith {localize "STR_qrf_marker_aa"};
+        if (_vehType in flatten FactionGet(all,"vehiclesArtillery")) exitWith {localize "STR_qrf_marker_atillery"};
+        if (_vehType in flatten FactionGet(all,"vehiclesAirborne")) exitWith {localize "STR_qrf_marker_airborne"};
+        if (_vehType in flatten FactionGet(all,"vehiclesIFVs")) exitWith {localize "STR_qrf_marker_ifv"};
+        if (_vehType in flatten FactionGet(all,"vehiclesArmor") && unitIsUAV _vehicle) exitWith {localize "STR_qrf_marker_ugv"};
+        if (_vehType in flatten FactionGet(all,"vehiclesArmor"))  exitWith {localize "STR_qrf_marker_apc"};
+        if (_vehType in flatten FactionGet(all,"vehiclesTrucks")) exitWith {localize "STR_qrf_marker_truck"};
         localize "STR_qrf_marker_mrap";
     };
 

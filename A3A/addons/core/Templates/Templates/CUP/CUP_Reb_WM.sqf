@@ -10,33 +10,40 @@
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_nato_co.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "a3u_flag_nato_wa"] call _fnc_saveToTemplate;
 
-["vehiclesBasic", ["CUP_C_TT650_TK_CIV"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["CUP_B_LR_Transport_GB_W", "a3u_cup_m1025_unarmed_olive"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["a3u_cup_lr_mg_wl", "a3u_cup_m1025_m240_olive", "a3u_cup_m1025_sov_m2_olive"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["a3u_cup_mtvr_wl"]] call _fnc_saveToTemplate;
-["vehiclesAT", ["a3u_cup_m1036_tow_olive"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_B_M163_Vulcan_USA"]] call _fnc_saveToTemplate;
-["vehiclesBoat", ["CUP_B_RHIB_USMC"]] call _fnc_saveToTemplate;
+private _vehiclesData = call _fnc_createLoadoutData;
 
-["vehiclesPlane", ["a3u_cup_cessna_t41"]] call _fnc_saveToTemplate;       // replace from civ varient s
-["vehiclesCivPlane", ["a3u_cup_cessna"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesBasic", ["CUP_C_TT650_TK_CIV"]];
+_vehiclesData set ["vehiclesLightUnarmed", ["CUP_B_LR_Transport_GB_W", "a3u_cup_m1025_unarmed_olive"]];
+_vehiclesData set ["vehiclesLightArmed", ["a3u_cup_lr_mg_wl", "a3u_cup_m1025_m240_olive", "a3u_cup_m1025_sov_m2_olive"]];
+_vehiclesData set ["vehiclesTruck", ["a3u_cup_mtvr_wl"]];
+_vehiclesData set ["vehiclesAT", ["a3u_cup_m1036_tow_olive"]];
+_vehiclesData set ["vehiclesAA", ["CUP_B_M163_Vulcan_USA"]];
+_vehiclesData set ["vehiclesBoat", ["CUP_B_RHIB_USMC"]];
 
-["vehiclesCivCar", ["CUP_C_LR_Transport_CTK"]] call _fnc_saveToTemplate;
-["vehiclesCivTruck", ["C_Van_01_transport_F"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["CUP_C_412"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesPlane", ["a3u_cup_cessna_t41"]];       // replace from civ varient s
+_vehiclesData set ["vehiclesCivPlane", ["a3u_cup_cessna"]];
 
-["staticMGs", ["CUP_B_M2StaticMG_US", "CUP_B_M2StaticMG_MiniTripod_US"]] call _fnc_saveToTemplate;
-["staticAT", ["CUP_B_TOW_TriPod_US"]] call _fnc_saveToTemplate;
-["staticAA", ["CUP_B_CUP_Stinger_AA_pod_US"]] call _fnc_saveToTemplate;
+_vehiclesData set ["vehiclesCivCar", ["CUP_C_LR_Transport_CTK"]];
+_vehiclesData set ["vehiclesCivTruck", ["C_Van_01_transport_F"]];
+_vehiclesData set ["vehiclesCivHeli", ["CUP_C_412"]];
+_vehiclesData set ["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]];
 
-["staticMortars", ["CUP_B_L16A2_BAF_WDL"]] call _fnc_saveToTemplate;
-["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
+_vehiclesData set ["staticMGs", ["CUP_B_M2StaticMG_US", "CUP_B_M2StaticMG_MiniTripod_US"]];
+_vehiclesData set ["staticAT", ["CUP_B_TOW_TriPod_US"]];
+_vehiclesData set ["staticAA", ["CUP_B_CUP_Stinger_AA_pod_US"]];
 
-["mineAT", "CUP_MineE_M"] call _fnc_saveToTemplate;
-["mineAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
+_vehiclesData set ["staticMortars", ["CUP_B_L16A2_BAF_WDL"]];
+_vehiclesData set ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"];
+_vehiclesData set ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"];
+_vehiclesData set ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"];
+
+_vehiclesData set ["mineAT", "CUP_MineE_M"];
+_vehiclesData set ["mineAPERS", "APERSMine_Range_Mag"];
+
+["vehiclesData", [
+    _vehiclesData
+]] call _fnc_saveVehiclesToTemplate;
+
 
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;

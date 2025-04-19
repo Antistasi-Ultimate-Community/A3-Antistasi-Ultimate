@@ -45,13 +45,18 @@ while {true} do {
 };
 
 // selecting Aircraft
-private _heliPool = (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport") + (_faction get "vehiclesHelisAttack") + (_faction get "vehiclesHelisLightAttack");
+private _heliPool = (
+    (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
+    (FactionGoDTiered(_faction, "vehiclesHelisTransport")) +
+    (FactionGoDTiered(_faction, "vehiclesHelisAttack")) +
+    (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
+);
 private _typeVehH = selectRandom (_heliPool select {_x isKindOf "Helicopter"});
 if (isNil "_typeVehH") exitWith {
     ["DES"] remoteExecCall ["A3A_fnc_missionRequest",2];
     Error("No aircrafts in arrays vehiclesHelisLight, vehiclesHelisTransport or vehiclesHelisAttack. Reselecting DES mission");
 };
-private _isAttackHeli = _typeVehH in ((_faction get "vehiclesHelisAttack") + (_faction get "vehiclesHelisLightAttack"));
+private _isAttackHeli = _typeVehH in flatten ((_faction get "vehiclesHelisAttack") + (_faction get "vehiclesHelisLightAttack"));
 
 //refining crash spawn position, to avoid exploding on spawn or "Armaing" during mission
 private _flatPos = [_posCrashOrigin, 0, 1000, 0, 0, 0.1] call BIS_fnc_findSafePos;
@@ -128,7 +133,7 @@ private _roadR = _roads select 0;
 sleep 1;
 
 //Spawning escort
-_typeVeh = selectRandom (_faction get "vehiclesLightUnarmed");
+_typeVeh = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesLightUnarmed"));
 private _vehicleDataE = [position _roadE, 0,_typeVeh, _sideX] call A3A_fnc_spawnVehicle;
 private _vehE = _vehicleDataE select 0;
 _vehE limitSpeed 50;
@@ -193,7 +198,7 @@ if (!debug) then {_mrkCrash setMarkerAlphaLocal 0};
 private ["_guard", "_guardWP", "_vehGuard"];
 _typeGroup = selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier);
 //if not patrol heli
-if !(_typeVehH in (_faction get "vehiclesHelisLight")) then {
+if !(_typeVehH in (FactionGetTiered(_faction, "vehiclesHelisLight"))) then {
     //spawning guard inf
     _guard = [_posCrash, _sideX, _typeGroup] call A3A_fnc_spawnGroup;
     {[_x] call A3A_fnc_NATOinit} forEach units _guard;
@@ -206,7 +211,7 @@ if !(_typeVehH in (_faction get "vehiclesHelisLight")) then {
     if (_isAttackHeli) then {
         //if attack helicopter
         //creating transport vehicle
-        _typeVeh = selectRandom (_faction get "vehiclesTrucks");
+        _typeVeh = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
         private _posVehHT = _posCrash findEmptyPosition [15, 30 ,_typeVeh];
         if (_posVehHT isEqualTo []) then {_posVehHT = _posCrash findEmptyPosition [15, 100 ,_typeVeh]}; //if it fails to find a pos expand and try again
         if (_posVehHT isEqualTo []) exitWith { _vehGuard = _heli};
@@ -301,14 +306,14 @@ if (_vehR distance _heli < 50) then {
         {if ([_x] call A3A_fnc_canFight) exitWith {_notAlivePilots = false}}forEach units _pilots;
 
 
-        if (_typeVehH in ( (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport") )) then {
-            if !(_typeVehH in (_faction get "vehiclesHelisLight")) then {
+        if (_typeVehH in flatten ( (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport") )) then {
+            if !(_typeVehH in flatten (_faction get "vehiclesHelisLight")) then {
                 //guard move in back of heli, pilots wait for them to load
                 if (_notAlivePilots) then {_guard addVehicle _heli} else {{_x assignAsCargo _heli}forEach units _guard};
                 (units _guard) orderGetIn true;
                 sleep 1;
             };
-            if (_notAlivePilots && !(_typeVehH in (_faction get "vehiclesHelisLight"))) then {
+            if (_notAlivePilots && !(_typeVehH in flatten (_faction get "vehiclesHelisLight"))) then {
                 _pilotsWP = _guard addWaypoint [_missionOriginPos, 3];
                 _pilotsWP setWaypointType "MOVE";
                 _pilotsWP setWaypointBehaviour "AWARE";
