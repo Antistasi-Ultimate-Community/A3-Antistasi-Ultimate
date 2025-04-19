@@ -54,17 +54,29 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 ["vehiclesTransportBoats", _vehiclesTransportBoats] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _vehiclesGunBoats] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["SPE_FW190F8"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["SPE_FW190F8"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["SPE_FW190F8"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["SPE_FW190F8","CUP_B_F35B_USMC"];
+private _vehiclesPlanesTransport = ["gm_ge_airforce_do28d2"];
 
-private _planesCAS = ["SPE_FW190F8"];
-private _planesAA = ["SPE_FW190F8"];
-if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
-    _planesCAS append ["Tornado_AWS_camo_ger"];
-    _planesAA append ["Tornado_AWS_GER", "Tornado_AWS_ecr_ger"];
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_bf109g"];
+	_vehiclesPlanesLargeCAS append ["sab_fl_ju88a","sab_fl_ju86"];
+	_vehiclesPlanesAA append ["sab_fl_bf109e","sab_fl_bf109f","sab_fl_bf109g","sab_fl_bf109k","sab_fl_fw190a","sab_fl_fw190d"];
+	_vehiclesPlanesTransport append ["sab_fl_ju52"];
 };
 
-private _vehiclesPlanesTransport = ["gm_ge_airforce_do28d2"];
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_bf110"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_he111","sab_sw_he177"];
+	_vehiclesPlanesAA append ["sab_sw_me262","sab_sw_bf110"];
+};
+
+if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
+    _vehiclesPlanesCAS append ["Tornado_AWS_camo_ger"];
+    _vehiclesPlanesAA append ["Tornado_AWS_GER", "Tornado_AWS_ecr_ger"];
+};
+
 if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
     _vehiclesPlanesTransport append ["SPEX_C47_Skytrain"];
 };
@@ -72,8 +84,9 @@ if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
     _vehiclesPlanesTransport append ["JK_B_C47_F"];
 };
 
-["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["gm_ge_army_bo105m_vbh", "gm_ge_army_bo105p1m_vbh", "gm_ge_army_bo105p1m_vbh_swooper", "BWA3_NH90_TTH_Fleck"]] call _fnc_saveToTemplate;

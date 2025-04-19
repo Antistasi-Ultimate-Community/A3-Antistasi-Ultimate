@@ -46,8 +46,8 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 ["vehiclesTransportBoats", _vehiclesTransportBoats] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _vehiclesGunBoats] call _fnc_saveToTemplate;
 
-private _planesCAS = ["SPE_P47", "CUP_B_A10_DYN_USA", "vn_b_air_f4c_at", "vn_b_air_f100d_at"];
-["vehiclesPlanesAA", ["SPE_P47", "CUP_B_AV8B_DYN_USMC", "vn_b_air_f4c_cap", "vn_b_air_f100d_cap"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["SPE_P47", "CUP_B_A10_DYN_USA", "vn_b_air_f4c_at", "vn_b_air_f100d_at"];
+private _vehiclesPlanesAA = ["SPE_P47", "CUP_B_AV8B_DYN_USMC", "vn_b_air_f4c_cap", "vn_b_air_f100d_cap", "CUP_B_F35B_USMC"];
 
 private _vehiclesPlanesTransport = ["CUP_B_C130J_USMC", "CUP_B_MV22_USMC_RAMPGUN"];
 if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
@@ -57,14 +57,27 @@ if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
     _vehiclesPlanesTransport append ["JK_B_C47_F"];
 };
 
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_p51d","sab_fl_p51b","sab_fl_f4f","sab_fl_sbd","sab_fl_f4u","sab_fl_f4u"];
+	_vehiclesPlanesAA append ["sab_fl_p51d","sab_fl_p51b"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_tbf","sab_sw_p40"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_a26"];
+	_vehiclesPlanesAA append ["sab_sw_p40","sab_sw_p38"];
+};
+
 private _gunship = [];
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	_gunship pushBack "vnx_b_air_ac119_01_01";
   	_vehiclesPlanesTransport append ["vnx_b_air_ac119_02_01","vnx_b_air_ac119_02_02"];
-	_planesCAS pushBack "vnx_b_air_ac119_04_01";
+	_vehiclesPlanesCAS pushBack "vnx_b_air_ac119_04_01";
 };
+
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
-["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["CUP_B_MH6M_USA", "CUP_B_MH6J_USA", "vn_b_air_ch34_01_01"]] call _fnc_saveToTemplate;
