@@ -22,21 +22,21 @@ _vehiclesData set ["surrenderCrate", "Box_IND_Wps_F"];
 _vehiclesData set ["equipmentBox", "Box_NATO_Equip_F"];
 
 _vehiclesData set ["vehiclesBasic", ["B_Quadbike_01_F"]];
-_vehiclesData set ["vehiclesLightUnarmed", ["CUP_B_nM1025_Unarmed_DF_USA_DES", "CUP_B_nM1025_Unarmed_USA_DES", "CUP_B_nM1025_Unarmed_DF_USA_DES", "CUP_B_nM1038_DF_USA_DES", "CUP_B_nM1038_USA_DES", "CUP_B_nM1038_4s_DF_USA_DES", "CUP_B_nM1038_4s_USA_DES", "CUP_B_M1151_USA", "CUP_B_M1152_USA"]];
-_vehiclesData set ["vehiclesLightArmed", ["CUP_B_HMMWV_Crows_M2_USA", "CUP_B_HMMWV_Crows_MK19_USA", "CUP_B_HMMWV_M2_GPK_USA", "CUP_B_nM1025_M2_USA_DES", "CUP_B_nM1025_M2_DF_USA_DES", "CUP_B_nM1025_M240_USA_DES", "CUP_B_nM1025_M240_DF_USA_DES", "CUP_B_nM1025_Mk19_USA_DES", "CUP_B_nM1025_Mk19_DF_USA_DES", "CUP_B_nM1025_SOV_M2_USA_DES", "CUP_B_nM1025_SOV_Mk19_USA_DES", "CUP_B_nM1036_TOW_USA_DES", "CUP_B_nM1036_TOW_DF_USA_DES", "CUP_B_M1151_M2_USA", "CUP_B_M1151_Deploy_USA", "CUP_B_M1151_Mk19_USA", "CUP_B_M1165_GMV_USA", "CUP_B_M1167_USA", "CUP_B_M1135_ATGMV_Desert"]];
+_vehiclesData set ["vehiclesLightUnarmed", []];
+_vehiclesData set ["vehiclesLightArmed", []];
 _vehiclesData set ["vehiclesTrucks", ["CUP_B_MTVR_USA"]];
 _vehiclesData set ["vehiclesCargoTrucks", ["B_Truck_01_flatbed_F"]];
 _vehiclesData set ["vehiclesAmmoTrucks", ["CUP_B_MTVR_Ammo_USA", "CUP_B_nM1038_Ammo_USA_DES", "CUP_B_nM1038_Ammo_DF_USA_DES"]];
 _vehiclesData set ["vehiclesRepairTrucks", ["CUP_B_nM1038_Repair_USA_DES", "CUP_B_nM1038_Repair_DF_USA_DES", "CUP_B_MTVR_Repair_USA"]];
 _vehiclesData set ["vehiclesFuelTrucks", ["CUP_B_MTVR_Refuel_USA"]];
-_vehiclesData set ["vehiclesMedical", ["CUP_B_nM997_DF_USA_DES", "CUP_B_nM997_USA_DES", "CUP_B_M1133_MEV_Desert"]];
-_vehiclesData set ["vehiclesLightAPCs", ["CUP_B_M113A3_desert_USA", "CUP_B_M113A3_desert_USA", "CUP_B_RG31_Mk19_USA", "CUP_B_RG31E_M2_USA", "CUP_B_RG31_M2_USA", "CUP_B_RG31_M2_GC_USA"]];
-_vehiclesData set ["vehiclesAPCs", ["CUP_B_M2Bradley_USA_D", "CUP_B_M7Bradley_USA_D", "CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_MK19_Desert"]];     //   "CUP_B_M1129_MC_MK19_Desert"
-_vehiclesData set ["vehiclesIFVs", ["CUP_B_M2Bradley_USA_D", "CUP_B_M7Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D"]];
-_vehiclesData set ["vehiclesTanks", ["CUP_B_M1A1SA_Desert_US_Army", "CUP_B_M1A1SA_Desert_TUSK_US_Army", "CUP_B_M1A2SEP_Desert_US_Army", "CUP_B_M1A2SEP_TUSK_II_Desert_US_Army", "CUP_B_M1A2SEP_TUSK_Desert_US_Army", "CUP_B_M1A2C_Desert_US_Army", "CUP_B_M1A2C_TUSK_II_Desert_US_Army", "CUP_B_M1A2C_TUSK_Desert_US_Army", "CUP_B_M1128_MGS_Desert"]];
-_vehiclesData set ["vehiclesAA", ["CUP_B_M6LineBacker_USA_D", "CUP_B_nM1097_AVENGER_USA_DES", "CUP_B_M163_Vulcan_USA"]];
-_vehiclesData set ["vehiclesAirborne", ["CUP_B_M113A3_desert_USA", "CUP_B_M113A3_desert_USA"]];
-_vehiclesData set ["vehiclesLightTanks",  ["CUP_B_M2Bradley_USA_D", "CUP_B_M7Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D"]];
+_vehiclesData set ["vehiclesMedical", []];
+_vehiclesData set ["vehiclesLightAPCs", []];
+_vehiclesData set ["vehiclesAPCs", []];
+_vehiclesData set ["vehiclesIFVs", []];
+_vehiclesData set ["vehiclesTanks", []];
+_vehiclesData set ["vehiclesAA", []];
+_vehiclesData set ["vehiclesAirborne", []];
+_vehiclesData set ["vehiclesLightTanks",  []];
 
 _vehiclesData set ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]];
 _vehiclesData set ["vehiclesGunBoats", ["CUP_B_RHIB2Turret_USMC"]];
@@ -46,12 +46,11 @@ _vehiclesData set ["vehiclesPlanesCAS", ["CUP_B_A10_DYN_USA"]];
 _vehiclesData set ["vehiclesPlanesAA", ["CUP_B_AV8B_DYN_USMC"]];
 _vehiclesData set ["vehiclesPlanesTransport", ["CUP_B_C130J_USMC", "CUP_B_MV22_USMC_RAMPGUN"]];
 
-_vehiclesData set ["vehiclesHelisLight", ["CUP_B_MH6M_USA", "CUP_B_MH6J_USA"]];
-_vehiclesData set ["vehiclesHelisTransport", ["CUP_B_UH60M_US", "CUP_B_UH60M_FFV_US", "CUP_B_UH60M_Unarmed_US", "CUP_B_UH60M_Unarmed_FFV_US"]];
-_vehiclesData set ["vehiclesHelisLightAttack", ["CUP_B_AH6M_USA", "CUP_B_AH6J_USA"]];
-_vehiclesData set ["vehiclesHelisAttack", ["CUP_B_AH64D_DL_USA"]];
-
-_vehiclesData set ["vehiclesAirPatrol", ["CUP_B_MH6M_USA", "CUP_B_MH6J_USA","CUP_B_AH6M_USA", "CUP_B_AH6J_USA"]];
+_vehiclesData set ["vehiclesHelisLight", []];
+_vehiclesData set ["vehiclesHelisTransport", []];
+_vehiclesData set ["vehiclesHelisLightAttack", []];
+_vehiclesData set ["vehiclesHelisAttack", []];
+_vehiclesData set ["vehiclesAirPatrol", []];
 
 _vehiclesData set ["vehiclesArtillery", ["CUP_B_M270_HE_USA"]];
 _vehiclesData set ["magazines", createHashMapFromArray [["CUP_B_M270_HE_USA", ["CUP_12Rnd_MLRS_HE"]]]];
@@ -85,8 +84,54 @@ _vehiclesData set ["minefieldAT", ["CUP_Mine"]];
 _vehiclesData set ["minefieldAPERS", ["APERSMine"]];
 
 private _eliteVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+_eliteVehiclesData set ["vehiclesLightUnarmed", ["CUP_B_nM1151_Unarmed_USA_DES", "CUP_B_nM1151_Unarmed_DF_USA_DES", "CUP_B_M1151_USA"]];
+_eliteVehiclesData set ["vehiclesLightArmed", ["CUP_B_RG31_Mk19_USA", "CUP_B_RG31E_M2_USA", "CUP_B_RG31_M2_USA", "CUP_B_RG31_M2_GC_USA"]];
+_eliteVehiclesData set ["vehiclesMedical", ["CUP_B_M1133_MEV_Desert"]];
+_eliteVehiclesData set ["vehiclesLightAPCs", ["CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_MK19_Desert"]];
+_eliteVehiclesData set ["vehiclesAPCs", ["CUP_B_M7Bradley_USA_D", "CUP_B_M1126_ICV_M2_Desert"]];
+_eliteVehiclesData set ["vehiclesIFVs", ["CUP_B_M7Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D"]];
+_eliteVehiclesData set ["vehiclesTanks", ["CUP_B_M1A1SA_Desert_TUSK_US_Army", "CUP_B_M1A2SEP_TUSK_II_Desert_US_Army", "CUP_B_M1A2SEP_TUSK_Desert_US_Army", "CUP_B_M1A2C_TUSK_II_Desert_US_Army", "CUP_B_M1A2C_TUSK_Desert_US_Army"]];
+_eliteVehiclesData set ["vehiclesAA", ["CUP_B_M6LineBacker_USA_D"]];
+_eliteVehiclesData set ["vehiclesLightTanks",  ["CUP_B_M7Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D"]];
+_eliteVehiclesData set ["vehiclesHelisLight", ["CUP_B_MH6M_USA"]];
+_eliteVehiclesData set ["vehiclesHelisTransport", ["CUP_B_UH60M_US", "CUP_B_UH60M_FFV_US", "CUP_B_MH47E_USA"]];
+_eliteVehiclesData set ["vehiclesHelisLightAttack", ["CUP_B_AH6M_USA", "CUP_B_MH60L_DAP_2x_US", "CUP_B_MH60L_DAP_4x_US"]];
+_eliteVehiclesData set ["vehiclesHelisAttack", ["CUP_B_AH64D_DL_USA"]];
+_eliteVehiclesData set ["vehiclesAirPatrol", ["CUP_B_MH6M_USA", "CUP_B_AH6M_USA"]];
+
 private _militaryVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+_militaryVehiclesData set ["vehiclesLightUnarmed", ["CUP_B_nM1151_Unarmed_USA_DES", "CUP_B_nM1151_Unarmed_DF_USA_DES", "CUP_B_M1151_USA"]];
+_militaryVehiclesData set ["vehiclesLightArmed", ["CUP_B_HMMWV_M2_GPK_USA", "CUP_B_nM1151_ogpk_m2_USA_DES", "CUP_B_nM1151_ogpk_m2_DF_USA_DES", "CUP_B_nM1151_ogpk_m240_USA_DES", "CUP_B_nM1151_ogpk_m240_DF_USA_DES", "CUP_B_nM1151_ogpk_mk19_USA_DES", "CUP_B_nM1151_ogpk_mk19_DF_USA_DES", "CUP_B_M1151_M2_USA", "CUP_B_M1151_Deploy_USA", "CUP_B_M1151_Mk19_USA", "CUP_B_M1165_GMV_USA", "CUP_B_M1167_USA"]];
+_militaryVehiclesData set ["vehiclesMedical", ["CUP_B_M1133_MEV_Desert"]];
+_militaryVehiclesData set ["vehiclesLightAPCs", ["CUP_B_RG31_Mk19_USA", "CUP_B_RG31E_M2_USA", "CUP_B_RG31_M2_USA", "CUP_B_RG31_M2_GC_USA"]];
+_militaryVehiclesData set ["vehiclesAPCs", ["CUP_B_M2Bradley_USA_D", "CUP_B_M7Bradley_USA_D", "CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_MK19_Desert"]];
+_militaryVehiclesData set ["vehiclesIFVs", ["CUP_B_M7Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D"]];
+_militaryVehiclesData set ["vehiclesTanks", ["CUP_B_M1A1SA_Desert_US_Army", "CUP_B_M1A2SEP_Desert_US_Army", "CUP_B_M1A2C_Desert_US_Army"]];
+_militaryVehiclesData set ["vehiclesAA", ["CUP_B_M6LineBacker_USA_D", "CUP_B_M163_Vulcan_USA"]];
+_militaryVehiclesData set ["vehiclesLightTanks",  ["CUP_B_M7Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D", "CUP_B_M2A3Bradley_USA_D"]];
+_militaryVehiclesData set ["vehiclesHelisLight", ["CUP_B_MH6J_USA"]];
+_militaryVehiclesData set ["vehiclesHelisTransport", ["CUP_B_UH60M_US", "CUP_B_UH60M_Unarmed_US", "CUP_B_CH47F_USA"]];
+_militaryVehiclesData set ["vehiclesHelisLightAttack", ["CUP_B_AH6J_USA"]];
+_militaryVehiclesData set ["vehiclesHelisAttack", ["CUP_B_AH64_DL_USA"]];
+_militaryVehiclesData set ["vehiclesAirPatrol", ["CUP_B_MH6J_USA", "CUP_B_AH6J_USA"]];
+
 private _militiaVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
+_militiaVehiclesData set ["vehiclesLightUnarmed", ["CUP_B_nM1025_Unarmed_USA_DES", "CUP_B_nM1025_Unarmed_DF_USA_DES", "CUP_B_M1152_USA", "CUP_B_nM1038_USA_DES", "CUP_B_nM1038_DF_USA_DES", "CUP_B_nM1038_4s_USA_DES", "CUP_B_nM1038_4s_DF_USA_DES"]];
+_militiaVehiclesData set ["vehiclesLightArmed", ["CUP_B_nM1025_M2_USA_DES", "CUP_B_nM1025_M2_DF_USA_DES", "CUP_B_nM1025_M240_USA_DES", "CUP_B_nM1025_M240_DF_USA_DES", "CUP_B_HMMWV_Crows_M2_USA", "CUP_B_HMMWV_Crows_MK19_USA", "CUP_B_nM1025_Mk19_USA_DES", "CUP_B_nM1025_Mk19_DF_USA_DES", "CUP_B_nM1036_TOW_USA_DES", "CUP_B_nM1036_TOW_DF_USA_DES"]];
+_militiaVehiclesData set ["vehiclesMedical", ["CUP_B_nM997_DF_USA_DES", "CUP_B_nM997_USA_DES"]];
+_militiaVehiclesData set ["vehiclesLightAPCs", ["CUP_B_M113A3_desert_USA"]];
+_militiaVehiclesData set ["vehiclesAPCs", ["CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_M2_Desert", "CUP_B_M1126_ICV_MK19_Desert"]];
+_militiaVehiclesData set ["vehiclesIFVs", ["CUP_B_M2Bradley_USA_D"]];
+_militiaVehiclesData set ["vehiclesTanks", ["CUP_B_M1128_MGS_Desert", "CUP_B_M1128_MGS_Desert", "CUP_B_M1A1SA_Desert_US_Army"]];
+_militiaVehiclesData set ["vehiclesAA", ["CUP_B_nM1097_AVENGER_USA_DES"]];
+_militiaVehiclesData set ["vehiclesAirborne", ["CUP_B_M113A3_desert_USA", "CUP_B_M113A3_desert_USA"]];
+_militiaVehiclesData set ["vehiclesLightTanks",  ["CUP_B_M2Bradley_USA_D"]];
+_militiaVehiclesData set ["vehiclesHelisLight", ["CUP_B_MH6J_USA"]];
+_militiaVehiclesData set ["vehiclesHelisTransport", ["CUP_B_UH60M_US", "CUP_B_UH60M_Unarmed_US", "CUP_B_CH47F_USA"]];
+_militiaVehiclesData set ["vehiclesHelisLightAttack", ["CUP_B_UH60M_US"]];
+_militiaVehiclesData set ["vehiclesHelisAttack", []];
+_militiaVehiclesData set ["vehiclesAirPatrol", ["CUP_B_MH6J_USA", "CUP_B_UH60M_US"]];
+
 
 ["vehiclesData", [
     _militiaVehiclesData,
