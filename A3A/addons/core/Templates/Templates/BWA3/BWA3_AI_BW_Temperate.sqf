@@ -115,7 +115,7 @@ if (isClass (configfile >> "CfgPatches" >> "Redd_Marder_1A5")) then {
 
 if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
     _planesCAS = ["Tornado_AWS_camo_ger"];
-    _planesAA = ["Tornado_AWS_GER"];
+    _planesAA = ["Tornado_AWS_GER", "Tornado_AWS_ecr_ger"];
 };
 
 /* ANTISTASI PLUS STUFF START */
