@@ -74,7 +74,7 @@ if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
 
 if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
     _vehiclesPlanesCAS append ["Tornado_AWS_camo_ger"];
-    _vehiclesPlanesAA append ["Tornado_AWS_GER", "Tornado_AWS_ecr_ger"];
+    _vehiclesPlanesAA append ["Tornado_AWS_GER"];
 };
 
 if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {

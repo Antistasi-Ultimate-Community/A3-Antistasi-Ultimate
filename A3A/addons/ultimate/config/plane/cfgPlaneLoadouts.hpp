@@ -403,6 +403,14 @@ class planeLoadouts
             bombRacks[] = {"rhs_weap_mk82"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
+        class Tornado_AWS_camo_ger
+        {
+            loadout[] = {"Tornado_AWS_ECMpod_1rnd_M","FIR_AIM9L_P_1rnd_M","Tornado_AWS_fuelsmall_1rnd_M","FIR_Mk82_GP_P_1rnd_M","FIR_Brimstone_type1_P_3rnd_M","FIR_Brimstone_type1_P_3rnd_M","FIR_Mk82_GP_P_1rnd_M","FIR_Mk82_GP_P_1rnd_M","FIR_Mk82_GP_P_1rnd_M","Tornado_AWS_fuelsmall_1rnd_M","FIR_AIM9L_P_1rnd_M","Tornado_AWS_AIRCMpod_1rnd_M","FIR_BK27_R_M","FIR_BK27_L_M"};
+            mainGun = "Tornado_AWS_CANNON_W";
+            missileLauncher[] = {"FIR_Brimstone"};
+            bombRacks[] = {"FIR_mk82_Snakeye_Launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
     };
 
     class CAS
@@ -837,6 +845,14 @@ class planeLoadouts
             missileLauncher[] = {"rhs_weap_agm65f"};
             bombRacks[] = {"rhs_weap_mk82"};
         };
+		class Tornado_AWS_camo_ger
+        {
+            loadout[] = {"Tornado_AWS_ECMpod_1rnd_M","FIR_AIM9L_P_1rnd_M","Tornado_AWS_fuelsmall_1rnd_M","FIR_Mk82_GP_P_1rnd_M","FIR_Brimstone_type1_P_3rnd_M","FIR_Brimstone_type1_P_3rnd_M","FIR_Mk82_GP_P_1rnd_M","FIR_Mk82_GP_P_1rnd_M","FIR_Mk82_GP_P_1rnd_M","Tornado_AWS_fuelsmall_1rnd_M","FIR_AIM9L_P_1rnd_M","Tornado_AWS_AIRCMpod_1rnd_M","FIR_BK27_R_M","FIR_BK27_L_M"};
+            mainGun = "Tornado_AWS_CANNON_W";
+            missileLauncher[] = {"FIR_Brimstone"};
+            bombRacks[] = {"FIR_mk82_Snakeye_Launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
     };
    
     class AA
@@ -1161,6 +1177,13 @@ class planeLoadouts
             mainGun = "RHS_weap_zpl20";
             missileLauncher[] = {"rhs_weap_SidewinderLauncher"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+		
+		class Tornado_AWS_GER
+        {
+            loadout[] = {"Tornado_AWS_AIRCMpod_1rnd_M","FIR_AIM132_P_1rnd_M","Tornado_AWS_fuelsmall_1rnd_M","","","","","","","Tornado_AWS_fuelsmall_1rnd_M","FIR_AIM132_P_1rnd_M","Tornado_AWS_ECMpod_1rnd_M","FIR_BK27_R_M","FIR_BK27_L_M"};
+            mainGun = "Tornado_AWS_CANNON_W";
+            missileLauncher[] = {"FIR_AIM132"};
         };
     };
 };
