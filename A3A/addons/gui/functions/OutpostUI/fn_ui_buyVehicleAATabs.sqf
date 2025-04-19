@@ -93,17 +93,24 @@ if (_tab isEqualTo "vehicles") then {
             closeDialog 2;
             ///[(_this # 0) getVariable "className"] spawn A3A_fnc_addFIAveh;
             _carcar = _this # 0 getVariable "className";
-            _onetimevehicle = _selectedClassName createVehicleLocal [0, 0, 10000];
+            _onetimevehicle = _carcar createVehicleLocal [0, 0, 10000];
             curentlySelectedVehicleCustomization = [_onetimevehicle] call BIS_fnc_getVehicleCustomization;
             deleteVehicle _onetimevehicle;
             _pos = myGlobalResult;
             _turretDirection = turretDirection;
-            [_pos,_carcar,outpostCost, _turretDirection] spawn ///maybe add customazation to spawn
+            outpostCostmoney = outpostCost select 0;
+            private _cost = [_carcar] call A3A_fnc_vehiclePrice;
+            outpostCostmoney = outpostCostmoney + _cost;
+            outpostCosthr = outpostCost select 1;
+            [_pos, _carcar, outpostCostmoney,outpostCosthr, _turretDirection,curentlySelectedVehicleCustomization] spawn ///maybe add customazation to spawn
             { 
                 _pos = _this select 0;
                 _carcar = _this select 1;
-                _turretDirection = _this select 3;
-                [_carcar, _pos, _turretDirection, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
+                outpostCostmoney = _this select 2;
+                outpostCosthr = _this select 3;
+                _turretDirection = _this select 4;
+                curentlySelectedVehicleCustomization = _this select 5;
+                [_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization, outpostCostmoney, outpostCosthr,objNull,objNull, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2];
             };
         }];
         _button ctrlCommit 0;

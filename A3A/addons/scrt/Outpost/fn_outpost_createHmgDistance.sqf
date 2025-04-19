@@ -8,9 +8,9 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-/* private _mgClass = (A3A_faction_reb get "staticMGs") # 0;
-private _mgClass = [_vehicleX];
-private _mgClass = _mgClass getOrDefault [_mgClass select 0,_typeVehX]; */
+if (_vehicleX isEqualTo objNull) then {
+    _vehicleX = (A3A_faction_reb get "staticMGs") select 0;
+};
 
 private _props = [];
 
@@ -38,16 +38,20 @@ if (!(_staticPositionInfo isEqualTo [])) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
     _veh = createVehicle [_vehicleX, _positionX, [], 0, "CAN_COLLIDE"];
-    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
     _veh setPosATL _staticPosition;
 } else {
     _veh = _vehicleX createVehicle _positionX;
-    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
 };
 
 _veh lock 3;
 
-sleep 1;
+sleep 0.5;
 
 [_veh,"Move_Outpost_Static"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _veh];
 
@@ -83,7 +87,7 @@ if (_crewManIndex != -1) then {
     };
 
     // Заполнение турелей
-    private _turrets = allTurrets [_veh, false];
+    private _turrets = allTurrets _veh;
     {
         if (isNull (_veh turretUnit _x)) then {
             private _turretIndex = _groupXUnits findIf {

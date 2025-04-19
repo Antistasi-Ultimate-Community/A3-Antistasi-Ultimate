@@ -96,24 +96,30 @@ if (_tab isEqualTo "vehicles") then {
             closeDialog 2;
             ///[(_this # 0) getVariable "className"] spawn A3A_fnc_addFIAveh;
             _carcar = _this # 0 getVariable "className";
-            _onetimevehicle = _selectedClassName createVehicleLocal [0, 0, 10000];
+            _onetimevehicle = _carcar createVehicleLocal [0, 0, 10000];
             curentlySelectedVehicleCustomization = [_onetimevehicle] call BIS_fnc_getVehicleCustomization;
             deleteVehicle _onetimevehicle;
             _pos = myGlobalResult;
             _vehicledirection = nil;
-            [_pos,_carcar,outpostCost] spawn ///maybe add customazation to spawn
+            outpostCostmoney = outpostCost select 0;
+            private _cost = [_carcar] call A3A_fnc_vehiclePrice;
+            outpostCostmoney = outpostCostmoney + _cost;
+            outpostCosthr = outpostCost select 1;
+            [_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr] spawn ///maybe add customazation to spawn
                 { 
                     _pos = _this select 0;
                     _carcar = _this select 1;
-                    outpostCost = _this select 2;
+                    curentlySelectedVehicleCustomization = _this select 2;
+                    outpostCostmoney = _this select 3;
+                    outpostCosthr = _this select 4;
                 	private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage; ///step 3
                     // Use _result here
                     if (_result) then {
                         _vehicledirection = 90;
-                        [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; ///step 3.5
+                        [_carcar, _pos, _vehicledirection,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,objNull,objNull,clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; ///step 3.5
                     } else {
                         _vehicledirection = 0;
-                        [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+                        [_carcar, _pos, _vehicledirection,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,objNull,objNull,clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
                     };
                 };
         }];

@@ -56,7 +56,7 @@ vehicleToOutpost = "";
 curentlySelectedVehicleUID = 0;
 curentlySelectedVehicleState = [];
 curentlySelectedVehicleCustomization = [];
-garageCategoryToremoveVehicleFrom = [];
+garageCategoryToremoveVehicleFrom = 22;
 
 _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 /////or instead of all this use _getSaveData (probably)
@@ -78,7 +78,7 @@ switch (_categoty) do
             _vehicleListBox lbSetPictureColor [_index, [1, 1, 1, 1]];
             _vehicleListBox lbSetPictureColorSelected [_index, [0.85, 0.85, 0.55, 1]];
             _vehicleListBox lbSetPictureRightColorSelected [_index, [0.85,0.85,0.55,1]];
-            garageCategoryToremoveVehicleFrom = HR_GRG_Vehicles#0;
+            garageCategoryToremoveVehicleFrom = 0;
         } forEach (HR_GRG_Vehicles#0);
     };
     case ("heavy"): {
@@ -93,7 +93,7 @@ switch (_categoty) do
             _vehicleListBox lbSetPictureColor [_index, [1, 1, 1, 1]];
             _vehicleListBox lbSetPictureColorSelected [_index, [0.85, 0.85, 0.55, 1]];
             _vehicleListBox lbSetPictureRightColorSelected [_index, [0.85,0.85,0.55,1]];
-            garageCategoryToremoveVehicleFrom = HR_GRG_Vehicles#1;
+            garageCategoryToremoveVehicleFrom = 1;
         } forEach (HR_GRG_Vehicles#1);
     };
 };
@@ -282,19 +282,24 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
     _carcar = vehicleToOutpost; ///this probably doubles as it spawns 2 groups 
     _pos = myGlobalResult;
     _vehicledirection = nil;
-    [_pos,_carcar,outpostCost] spawn ///step 3
+    outpostCostmoney = outpostCost select 0;
+    outpostCosthr = outpostCost select 1;
+    [_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn ///step 3
         { 
             _pos = _this select 0;
             _carcar = _this select 1;
-            outpostCost = _this select 2;
-            diag_log outpostCost;
+            curentlySelectedVehicleCustomization = _this select 2;
+            outpostCostmoney = _this select 3;
+            outpostCosthr = _this select 4;
+            _garageCategoryToremoveVehicleFrom = _this select 5;
+            _curentlySelectedVehicleUID = _this select 6;
             private _result = [(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage;
             if (_result) then {
                 _vehicledirection = 90;
-                [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; ///step 3.5
+                [_carcar, _pos, _vehicledirection,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID,clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; ///step 3.5
             } else {
                 _vehicledirection = 0;
-                [_carcar, _pos, _vehicledirection,outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+                [_carcar, _pos, _vehicledirection,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID,clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
             };
         };
 }];
