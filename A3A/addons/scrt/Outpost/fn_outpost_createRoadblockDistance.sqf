@@ -8,9 +8,9 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _riflemanType = A3A_faction_reb get "unitRifle";
 
-/* private _typeVehX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
-private _vehicleX = [_vehicleX];
-private _vehicleX = _vehicleX getOrDefault [_vehicleX select 0,_typeVehX]; */
+if (_vehicleX isEqualTo objNull) then {
+    _vehicleX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
+};
 
 private _radiusX = 1;
 private _garrison = garrison getVariable [_markerX, []];
@@ -42,7 +42,9 @@ _barricade setVectorUp surfaceNormal position _barricade;
 
 if (_riflemanType in _garrison) then {
     _veh = _vehicleX createVehicle getPos (_road select 0);
-    ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
     _veh setDir _dirveh + _vehicledirectionX;
     _veh lock 3;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;
@@ -83,7 +85,7 @@ if (_crewManIndex != -1) then {
     };
 
     // Заполнение турелей
-    private _turrets = allTurrets [_veh, false];
+    private _turrets = allTurrets _veh;
     {
         if (isNull (_veh turretUnit _x)) then {
             private _turretIndex = _groupXUnits findIf {
