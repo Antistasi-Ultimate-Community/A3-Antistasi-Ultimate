@@ -81,6 +81,16 @@ private _fnc_saveNames = {
     ["lastNames", _lastNames] call _fnc_saveToTemplate;
 };
 
+private _fnc_saveVehiclesToTemplate = {
+	params ["_name", "_data"];
+
+	// add array of all vehiclesData hashmaps to faction hashmap for use when war level changes
+	_this call _fnc_saveToTemplate;
+
+	// set faction hashmap kv pairs for the current war level
+	{ [_x, _y] call _fnc_saveToTemplate } forEach ([_data] call SCRT_fnc_unit_getTiered);
+};
+
 {
 	call compile preprocessFileLineNumbers _x;
 } forEach _filepaths;
