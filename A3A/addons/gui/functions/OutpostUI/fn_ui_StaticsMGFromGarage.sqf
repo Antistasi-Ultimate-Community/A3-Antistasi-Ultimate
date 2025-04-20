@@ -1,23 +1,5 @@
 /*
-Maintainer: DoomMetal, killerswin2
-    Handles the initialization and updating of the Buy item dialog.
-    This function should only be called from Buyvehicle onLoad and control activation EHs.
-
-Arguments:
-    <STRING> Mode, only possible value for this dialog is "onLoad"
-    <ARRAY<ANY>> Array of params for the mode when applicable. Params for specific modes are documented in the modes.
-
-Return Value:
-    Nothing
-
-Scope: Clients, Local Arguments, Local Effect
-Environment: Scheduled for onLoad mode
-Public: No
-Dependencies:
-    None
-
-Example:
-    ["logistics"] call A3A_fnc_buyVehicleTab;
+Maintainer: wersal
 */
 
 
@@ -27,14 +9,14 @@ Example:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 ['off'] call SCRT_fnc_ui_toggleMenuBlur;
-params ["_category"];
-_categoty = _this select 0;
+params ["_category", "_staticType"];
+
+// Общая часть инициализации
+['off'] call SCRT_fnc_ui_toggleMenuBlur;
 private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
 private _vehicleListBox = _display displayCtrl A3A_IDC_GARAGE_CATCAR;
 _vehicleListBox ctrlCommit 0;
 
-// Создание области для предварительного просмотра
-private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
 private _previewArea = _display displayCtrl A3A_IDC_GARAGEStructuredText;
 _previewArea ctrlCommit 0;
 private _selectButton = _display displayCtrl A3A_IDC_GARAGEselectbutton;
@@ -45,9 +27,6 @@ _currentPreviewVeh = objNull;
 
 Debug("BuyVehicleTab starting...");    
 
-//diag_log HR_GRG_Vehicles#0;
-//diag_log HR_GRG_Vehicles#0;
-//diag_log HR_GRG_Vehicles#0;
 {
     deleteVehicle _x;
 } forEach previewVehicles;
@@ -63,25 +42,7 @@ _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 
 // also can check vehicle type here fn_common_vehicle_getVehicleType
 
-// Получение списка доступных транспортных средств
-switch (_categoty) do
-{
-    case ("Static"): {
-        {  
-            _y params ["_displayName", "_class", "_lockedUID", "_checkedOut", "", ["_lockName", ""],"_stateData", "_customisation"];
-            private _UID = _x;
-            private _displayName = _displayName;
-            private _index = _vehicleListBox lbAdd _displayName;
-            _vehicleListBox lbSetData [_index, "[" + str _x + "," + str _y + "]" ];
-            _vehicleListBox lbSetValue [_index, _x];
-            _vehicleListBox lbSetPicture [_index, cfgIcon(_class)];
-            _vehicleListBox lbSetPictureColor [_index, [1, 1, 1, 1]];
-            _vehicleListBox lbSetPictureColorSelected [_index, [0.85, 0.85, 0.55, 1]];
-            _vehicleListBox lbSetPictureRightColorSelected [_index, [0.85,0.85,0.55,1]];
-            garageCategoryToremoveVehicleFrom = 4;
-        } forEach (HR_GRG_Vehicles#4);
-    };
-};
+[_vehicleListBox,_category] call A3A_fnc_processVehicleCategory;
 
 A3U_fnc_displaystuff = {
     _data params ["_control","_selectedIndex","_vehFullData"];
@@ -105,7 +66,6 @@ A3U_fnc_displaystuff = {
         deleteVehicle _x;
     } forEach previewVehicles;
     
-    // Получение информации о выбранной технике
     private _configPath = configFile >> "CfgVehicles" >> _selectedClassName;
     if (!isClass _configClass) exitWith {};
 
@@ -131,11 +91,7 @@ A3U_fnc_displaystuff = {
 
     _currentPreviewVeh setPos [0, 1000, 100000];
 
-    //diag_log getPos _currentPreviewVeh;
-    //diag_log previewVehicles;
-
     previewVehicles pushBack _currentPreviewVeh;
-    //diag_log previewVehicles;
 
     private _previewCamera = "camera" camCreate [0, 1000, 100000];
     _previewCamera enableSimulation false;
@@ -197,17 +153,6 @@ A3U_fnc_displaystuff = {
             _description = _description + _displayName + "<br/>";
         };
     } foreach (configProperties [(configfile >> "CfgVehicles" >> _selectedClassName >> "animationSources"),"isclass _x",true]);
-    /* // Итерация по анимационным источникам
-    {
-        // Получаем имя анимационного источника
-        private _animationName = getText(configFile >> "CfgVehicles" >> _selectedClassName >> "animationSources" >> _x >> "displayName");
-
-        // Проверяем, что имя не пустое
-        if (_animationName != "") then {
-            // Добавляем имя анимации в _description
-            _description = _description + _animationName + "<br/>";
-        };
-    } foreach _animationSources; */
 
     private _descriptionBox = _display displayCtrl A3A_IDC_GARAGEinfo;
     _descriptionBox ctrlSetStructuredText parseText(_description + "<br /> ");
@@ -239,16 +184,13 @@ A3U_fnc_displaystuff = {
 
 _vehicleListBox lbSetCurSel 0;
 
-// Обработчик события выбора техники из листбокса
 _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle in list box, should use this onLBDblClick
     private _control = _this select 0;
 
     private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
 
     private _selectedIndex = lbCurSel _control;
-    //diag_log lbCurSel _control;
     private _indexText = _control lbText _selectedIndex;
-    //diag_log _indexText;
     private _vehdatastring = _control lbData _selectedIndex;
     //diag_log _vehdatastring;
     private _vehFullData = parseSimpleArray _vehdatastring;
@@ -264,7 +206,7 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
         deleteVehicle _x;
     } forEach previewVehicles;
 
-    _carcar = vehicleToOutpost; ///this probably doubles as it spawns 2 groups 
+    _carcar = vehicleToOutpost;
     _pos = myGlobalResult;
     _vehicledirection = nil;
     outpostCostmoney = outpostCost select 0;
@@ -279,7 +221,7 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
             _garageCategoryToremoveVehicleFrom = _this select 5;
             _curentlySelectedVehicleUID = _this select 6;
             _turretDirection = turretDirection;
-            [_pos, _carcar,outpostCostmoney,outpostCosthr,_turretDirection,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID] spawn ///maybe add customazation to spawn
+            [_pos, _carcar,outpostCostmoney,outpostCosthr,_turretDirection,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID] spawn
             { 
                 _pos = _this select 0;
                 _carcar = _this select 1;
@@ -288,7 +230,7 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
                 _turretDirection = _this select 4;
                 _garageCategoryToremoveVehicleFrom = _this select 5;
                 _curentlySelectedVehicleUID = _this select 6;
-                [_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
+                [_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2];
             };
         };
 }];
