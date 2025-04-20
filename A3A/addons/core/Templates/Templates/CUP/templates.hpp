@@ -327,6 +327,6 @@
         side = "Occ";
         flagTexture = "\A3\ui_f\data\map\markers\flags\Canada_ca.paa";
         name = "CUP CAF";
-        file = "CAF2035";
+        file = "CUP_AI_CAF2035";
         description = "CUP/Aegis Mixed Canadian Armed Forces 2035";
     };
