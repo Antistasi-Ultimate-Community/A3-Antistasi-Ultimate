@@ -3,6 +3,8 @@ class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
 	idd = A3A_IDD_DISPLAYGARAGEVEHICLES;
 	onLoad = "[""Static""] call A3A_fnc_ui_StaticsATFromGarage";
 	onUnload = "['onUnload'] call A3A_fnc_ui_StaticsATFromGarage";
+    //onLoad = "[""Static"", ""AT""] call A3A_fnc_ui_StaticsFromGarage";
+    //onUnload = "[""onUnload"", ""AT""] call A3A_fnc_ui_StaticsFromGarage";
 	
 	class Controls
     {
@@ -22,6 +24,7 @@ class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
                     idc = -1;
                     text = $STR_antistasi_dialogs_garage_light;
                     onButtonClick = "[""Static""] call A3A_fnc_ui_StaticsATFromGarage";
+                    //onButtonClick = "[""Static"", ""AT""] call A3A_fnc_ui_StaticsFromGarage";
                     x = 0 * GRID_W;
                     y = 0;
                     w = 142 * GRID_W;
@@ -33,9 +36,9 @@ class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
 		class GARAGE_ListCars//HR_GRG_RscListbox
 		{
 			idc = A3A_IDC_GARAGE_CATCAR;
-            x = -62 * GRID_W;
+            x = -62.6 * GRID_W;
             y = DIALOG_Y - 36 * GRID_H;
-            w = 30 * GRID_W;
+            w = 30.6 * GRID_W;
             h = 100 * GRID_H; // Screen height - title and buttons height
             size = TEXT_SIZE_MEDIUM;
             rowHeight = 3 * GRID_NOUISCALE_H;
@@ -78,9 +81,9 @@ class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
 		class GARAGE_StructuredText : A3A_Text
 		{
 		    idc = A3A_IDC_GARAGEStructuredText;
-		    x = -62 * GRID_W;
+		    x = -62.6 * GRID_W;
             y = DIALOG_Y + 64 * GRID_H;
-            w = 213 * GRID_W;
+            w = 213.6 * GRID_W;
             h = 16 * GRID_H; // Screen height - title and buttons height
 		    text = "";
 		    font = "RobotoCondensed";

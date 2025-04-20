@@ -51,6 +51,7 @@ class CfgFunctions {
             class getVehicleClassSkins {};
             class getVehicleWeapons {};
             class isUsableWeapon {};
+            class processVehicleCategory {};
             class ui_buyVehicleAATabs {};
             class ui_buyVehicleATTabs {};
             class ui_buyVehicleMGTabs {};
@@ -59,6 +60,7 @@ class CfgFunctions {
 			class ui_outpostVehicleFromStoreDialog {};
 			class ui_populateOutpostVehicleBox {};
 			class ui_roadblockFromGarage {};
+            class ui_StaticsFromGarage {};
             class ui_StaticsMGFromGarage {};
             class ui_StaticsATFromGarage {};
             class ui_StaticsAAFromGarage {};
