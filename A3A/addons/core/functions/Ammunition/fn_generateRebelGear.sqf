@@ -106,11 +106,11 @@ private _opticsMidCount = 0;
                 switch true do {
                     case ("AA" in _categories): {
                         _array = _rebelGear getOrDefault ["MissileLaunchersAA", [], true];
-                        [_array, _class, _amount] call _fnc_addItemNoUnlocks
+                        [_array, _class, _amount] call ([_fnc_addItemNoUnlocks, _fnc_addItemUnlocks] select (allowGuidedLaunchers && {minWeaps > 0}));
                     };
                     case ("AT" in _categories): {
                         _array = _rebelGear getOrDefault ["MissileLaunchersAT", [], true];
-                        [_array, _class, _amount] call _fnc_addItemNoUnlocks
+                        [_array, _class, _amount] call ([_fnc_addItemNoUnlocks, _fnc_addItemUnlocks] select (allowGuidedLaunchers && {minWeaps > 0}));
                     };
                 };
             };
@@ -203,7 +203,7 @@ private _opticsMidCount = 0;
                     };
                     case ("ExplosiveCharges" in _categories): {
                         _array = _rebelGear getOrDefault ["ExplosiveCharges", [], true];
-                        [_array, _class, _amount] call _fnc_addItemNoUnlocks
+                        [_array, _class, _amount] call ([_fnc_addItemNoUnlocks, _fnc_addItemUnlocks] select (allowUnlockedExplosives && {minWeaps > 0}));
                     };
                 };
             };
