@@ -10,6 +10,14 @@ Maintainer: wersal
 FIX_LINE_NUMBERS()
 params ["_category", "_staticType"];
 
+diag_log _staticType;
+diag_log _staticType;
+diag_log _staticType;
+diag_log _staticType;
+diag_log _staticType;
+diag_log _staticType;
+diag_log _staticType;
+
 // Общая часть инициализации
 ['off'] call SCRT_fnc_ui_toggleMenuBlur;
 private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
@@ -44,13 +52,14 @@ _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 [_vehicleListBox,_category] call A3A_fnc_processVehicleCategory;
 
 A3U_fnc_displaystuff = {
-    _data params ["_control","_selectedIndex","_vehFullData"];
+    _data params ["_control","_selectedIndex","_vehFullData","_staticType"];
     //diag_log _data;
 
     vehicleToOutpost = "";
     curentlySelectedVehicleUID = 0;
     curentlySelectedVehicleState = [];
     curentlySelectedVehicleCustomization = [];
+	_staticType = _staticType;
 
     _vehFullData = _vehFullData;
     //diag_log _vehFullData;
@@ -65,7 +74,6 @@ A3U_fnc_displaystuff = {
         deleteVehicle _x;
     } forEach previewVehicles;
     
-    // Получение информации о выбранной технике
     private _configPath = configFile >> "CfgVehicles" >> _selectedClassName;
     if (!isClass _configClass) exitWith {};
 
@@ -90,7 +98,6 @@ A3U_fnc_displaystuff = {
     vehicleToOutpost = _selectedClassName;
 
     _currentPreviewVeh setPos [0, 1000, 100000];
-
     previewVehicles pushBack _currentPreviewVeh;
 
     private _previewCamera = "camera" camCreate [0, 1000, 100000];
@@ -184,7 +191,6 @@ A3U_fnc_displaystuff = {
 
 _vehicleListBox lbSetCurSel 0;
 
-// Обработчик события выбора техники из листбокса
 _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle in list box, should use this onLBDblClick
     private _control = _this select 0;
 
@@ -196,10 +202,9 @@ _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle 
     //diag_log _vehdatastring;
     private _vehFullData = parseSimpleArray _vehdatastring;
     //diag_log _vehFullData;
-    [_control,_selectedIndex,_vehFullData] call A3U_fnc_displaystuff;
+    [_control,_selectedIndex,_vehFullData,_staticType] call A3U_fnc_displaystuff;
 }];
 
-// Кнопка для закрытия диалога
 _selectButton ctrlAddEventHandler ["ButtonClick", {
     closeDialog 2;
     camDestroy _previewCamera;
@@ -212,27 +217,59 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
     _vehicledirection = nil;
     outpostCostmoney = outpostCost select 0;
     outpostCosthr = outpostCost select 1;
-    [_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn ///step 3
-        { 
-            _pos = _this select 0;
-            _carcar = _this select 1;
-            curentlySelectedVehicleCustomization = _this select 2;
-            outpostCostmoney = _this select 3;
-            outpostCosthr = _this select 4;
-            _garageCategoryToremoveVehicleFrom = _this select 5;
-            _curentlySelectedVehicleUID = _this select 6;
-            _turretDirection = turretDirection;
-            [_pos, _carcar,outpostCostmoney,outpostCosthr,_turretDirection,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID] spawn
-            { 
-                _pos = _this select 0;
-                _carcar = _this select 1;
-                outpostCostmoney = _this select 2;
-                outpostCosthr = _this select 3;
-                _turretDirection = _this select 4;
-                _garageCategoryToremoveVehicleFrom = _this select 5;
-                _curentlySelectedVehicleUID = _this select 6;
-                [_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2];
-            };
-        };
+	switch (_staticType) do {
+	    case "MG": {
+			[_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn ///step 3
+        	{ 
+				diag_log 1111;
+				diag_log 1111;
+				diag_log 1111;
+				diag_log 1111;
+				diag_log 1111;
+        	    _pos = _this select 0;
+        	    _carcar = _this select 1;
+        	    curentlySelectedVehicleCustomization = _this select 2;
+        	    outpostCostmoney = _this select 3;
+        	    outpostCosthr = _this select 4;
+        	    _garageCategoryToremoveVehicleFrom = _this select 5;
+        	    _curentlySelectedVehicleUID = _this select 6;
+        	    _turretDirection = turretDirection;
+				[_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2];};
+        	};
+	    case "AT": {
+			[_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn 
+			{	
+				diag_log 2222;
+				diag_log 2222;
+				diag_log 2222;
+				diag_log 2222;
+				_pos = _this select 0;
+        		_carcar = _this select 1;
+        		curentlySelectedVehicleCustomization = _this select 2;
+        		outpostCostmoney = _this select 3;
+        		outpostCosthr = _this select 4;
+        		_garageCategoryToremoveVehicleFrom = _this select 5;
+        		_curentlySelectedVehicleUID = _this select 6;
+        		_turretDirection = turretDirection;
+				[_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2];}; ///step 3
+			};
+	    case "AA": {
+			[_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn 
+			{
+				diag_log 3333;
+				diag_log 3333;
+				diag_log 3333;
+				diag_log 3333;
+				_pos = _this select 0;
+        		_carcar = _this select 1;
+        		curentlySelectedVehicleCustomization = _this select 2;
+        		outpostCostmoney = _this select 3;
+        		outpostCosthr = _this select 4;
+        		_garageCategoryToremoveVehicleFrom = _this select 5;
+        		_curentlySelectedVehicleUID = _this select 6;
+        		_turretDirection = turretDirection;
+				[_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];};
+			};
+	};
 }];
 Debug("BuyVehicleTab complete.");
