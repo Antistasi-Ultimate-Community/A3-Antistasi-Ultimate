@@ -1,7 +1,7 @@
 class A3A_VehicleFromStore : A3A_TabbedDialog
 {
-    idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
-    onUnload = "['onUnload'] spawn A3A_fnc_UI_vehicleFromStore";
+    idd = A3A_IDD_BUYVEHICLEDIALOG;
+    onUnload = "['onUnload'] spawn A3A_fnc_ui_outpostStaticFromStoreDialog";
 
     class Controls
     {
@@ -50,12 +50,12 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
         // Main content
         class  VehiclesTab : A3A_DefaultControlsGroup
         {
+            show = false;
+
             class Controls
             {
                 class VehiclesControlsGroup : A3A_ControlsGroupNoHScrollbars
                 {
-                    show = false;
-                    idc = A3A_IDC_BUYSTATICMAIN;
                     x = 0;
                     y = 4 * GRID_H;
                     w = PX_W(DIALOG_W);
@@ -103,7 +103,8 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
 
 class A3A_StaticAAFromStore : A3A_VehicleFromStore
 {
-	onLoad = "['onLoad', ['AA']] spawn A3A_fnc_UI_vehicleFromStore";
+	idd = A3A_IDD_BUYVEHICLEAADIALOG;
+	onLoad = "['onLoadAA'] spawn A3A_fnc_ui_outpostStaticFromStoreDialog";
 
     class Controls : Controls
     {
@@ -117,12 +118,23 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
                 class aaVehiclesTabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_staticAA;
-                    onButtonClick = "['switchTab', ['AA']] call A3A_fnc_UI_vehicleFromStore";
+                    onButtonClick = "['switchTabAA', ['staticAA']] call A3A_fnc_ui_outpostStaticFromStoreDialog";
                 };
             };
         };
 
-		class VehiclesTab : VehiclesTab {};
+		class  aaVehiclesTab : VehiclesTab
+        {
+            idc = A3A_IDC_AASTATICMAIN;
+			class Controls : Controls
+            {
+                class VehiclesControlsGroup : VehiclesControlsGroup
+                {
+                    idc = A3A_IDC_AASTATICGROUP;
+                };
+            };
+        };
+
 		class CloseButton : CloseButton {};
     };
 
@@ -131,7 +143,8 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
 
 class A3A_StaticATFromStore : A3A_VehicleFromStore
 {
-	onLoad = "['onLoad', ['AT']] spawn A3A_fnc_UI_vehicleFromStore";
+	idd = A3A_IDD_BUYVEHICLEATDIALOG;
+	onLoad = "['onLoadAT'] spawn A3A_fnc_ui_outpostStaticFromStoreDialog";
 
     class Controls : Controls
     {
@@ -145,12 +158,23 @@ class A3A_StaticATFromStore : A3A_VehicleFromStore
                 class atVehiclesTabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_staticAT;
-                    onButtonClick = "['switchTab', ['AT']] call A3A_fnc_UI_vehicleFromStore";
+                    onButtonClick = "['switchTabAT', ['staticAT']] call A3A_fnc_ui_outpostStaticFromStoreDialog";
                 };
             };
         };
 
-		class VehiclesTab : VehiclesTab {};
+		class  atVehiclesTab : VehiclesTab
+        {
+            idc = A3A_IDC_ATSTATICMAIN;
+			class Controls : Controls
+            {
+                class VehiclesControlsGroup : VehiclesControlsGroup
+                {
+                    idc = A3A_IDC_ATSTATICGROUP;
+                };
+            };
+        };
+
 		class CloseButton : CloseButton {};
     };
 	
@@ -159,7 +183,8 @@ class A3A_StaticATFromStore : A3A_VehicleFromStore
 
 class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 {
-	onLoad = "['onLoad', ['MG']] spawn A3A_fnc_UI_vehicleFromStore";
+	idd = A3A_IDD_BUYVEHICLEMGDIALOG;
+	onLoad = "['onLoadMG'] spawn A3A_fnc_ui_outpostStaticFromStoreDialog";
 
     class Controls : Controls
     {
@@ -173,12 +198,23 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
                 class mgVehiclesTabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_staticMG;
-                    onButtonClick = "['switchTab', ['MG']] call A3A_fnc_UI_vehicleFromStore";
+                    onButtonClick = "['switchTabMG', ['staticMG']] call A3A_fnc_ui_outpostStaticFromStoreDialog";
                 };
             };
         };
 
-		class VehiclesTab : VehiclesTab {};
+		class  mgVehiclesTab : VehiclesTab
+        {
+            idc = A3A_IDC_MGSTATICMAIN;
+			class Controls : Controls
+            {
+                class VehiclesControlsGroup : VehiclesControlsGroup
+                {
+                    idc = A3A_IDC_MGSTATICGROUP;
+                };
+            };
+        };
+
 		class CloseButton : CloseButton {};
     };
 	
@@ -187,7 +223,9 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 
 class A3A_RoadblockFromStore : A3A_VehicleFromStore
 {
-	onLoad = "['onLoad', ['RB_LA']] spawn A3A_fnc_UI_vehicleFromStore";
+	idd = A3A_IDD_BUYVEHICLEROADBLOCKDIALOG;
+	onLoad = "['onLoad'] spawn A3A_fnc_ui_outpostVehicleFromStoreDialog";
+	onUnload = "['onUnload'] spawn A3A_fnc_ui_outpostVehicleFromStoreDialog";
 
     class Controls : Controls
     {
@@ -201,14 +239,14 @@ class A3A_RoadblockFromStore : A3A_VehicleFromStore
                 class vehiclesLATabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_lightarmed;
-                    onButtonClick = "['switchTab', ['RB_LA']] call A3A_fnc_UI_vehicleFromStore";
+                    onButtonClick = "['switchTab', ['lightarmed']] call A3A_fnc_ui_outpostVehicleFromStoreDialog"; ///step 2
                     w = 54 * GRID_W;
                 };
 
                 class vehiclesATTabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_AT;
-                    onButtonClick = "['switchTab', ['RB_AT']] call A3A_fnc_UI_vehicleFromStore";
+                    onButtonClick = "['switchTab', ['AT']] call A3A_fnc_ui_outpostVehicleFromStoreDialog"; ///step 2
                     x = 54 * GRID_W;
                     w = 54 * GRID_W;
                 };
@@ -216,30 +254,45 @@ class A3A_RoadblockFromStore : A3A_VehicleFromStore
 				class vehiclesAATabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_AA;
-                    onButtonClick = "['switchTab', ['RB_AA']] call A3A_fnc_UI_vehicleFromStore";
+                    onButtonClick = "['switchTab', ['AA']] call A3A_fnc_ui_outpostVehicleFromStoreDialog"; ///step 2
                     x = 108 * GRID_W;
                     w = 54 * GRID_W;
                 };
             };
         };
 
-		class VehiclesTab : VehiclesTab
+		class vehiclesLATab : VehiclesTab 
         {
-            class Controls: Controls
+            idc = A3A_IDC_BUYLIGHTARMEDMAIN;
+			class Controls : Controls
             {
-                class VehiclesLACtrlGroup : VehiclesControlsGroup
+                class VehiclesControlsGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_BUYLAVEHICLEMAIN;
+                    idc = A3A_IDC_LIGHTARMEDGROUP;
                 };
+            };
+        };
 
-                class VehiclesATCtrlGroup : VehiclesControlsGroup
+        class vehiclesATTab : VehiclesTab
+        {
+            idc = A3A_IDC_BUYATVEHICLEMAIN;
+            class Controls : Controls
+            {
+                class VehiclesControlsGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_BUYATVEHICLEMAIN;
+                    idc = A3A_IDC_ATVEHICLEGROUP;
                 };
+            };
+        };
 
-                class VehiclesAACtrlGroup : VehiclesControlsGroup
+		class vehiclesAATab : VehiclesTab
+        {
+            idc = A3A_IDC_BUYAAVEHICLEMAIN;
+            class Controls : Controls
+            {
+                class VehiclesControlsGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_BUYAAVEHICLEMAIN;
+                    idc = A3A_IDC_AAVEHICLEGROUP;
                 };
             };
         };
