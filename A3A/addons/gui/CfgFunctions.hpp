@@ -59,11 +59,7 @@ class CfgFunctions {
             class ui_outpostStaticFromStoreDialog {};
 			class ui_outpostVehicleFromStoreDialog {};
 			class ui_populateOutpostVehicleBox {};
-			class ui_roadblockFromGarage {};
-            class ui_StaticsFromGarage {};
-            class ui_StaticsMGFromGarage {};
-            class ui_StaticsATFromGarage {};
-            class ui_StaticsAAFromGarage {};
+            class UI_vehicleFromGarage {};
 		};
     };
     class ADDON {
