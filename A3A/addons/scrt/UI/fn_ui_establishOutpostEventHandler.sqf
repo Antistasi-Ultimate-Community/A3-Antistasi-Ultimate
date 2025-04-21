@@ -58,7 +58,7 @@ if(_mode == "ADD") then {
                     if (_result) then {
                         createDialog "A3A_RoadblockFromGarage"; ///step 1.7
                     } else {
-                        createDialog "A3A_BuyVehicleRoadblockDialog";
+                        createDialog "A3A_RoadblockFromStore";
                     };
                 };
 
@@ -108,7 +108,7 @@ if(_mode == "ADD") then {
                     turretDirection = _this select 4;
 
                     private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
-                    private _dialog = [format ["A3A_BuyVehicle%1Dialog", _outpostType], format ["A3A_Static%1FromGarage", _outpostType]] select (_result);
+                    private _dialog = format [["A3A_Static%1FromStore", "A3A_Static%1FromGarage"] select (_result), _outpostType];
                     createDialog _dialog; ///step 1.7
                 };
                 

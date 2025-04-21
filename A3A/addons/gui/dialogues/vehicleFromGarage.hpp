@@ -333,15 +333,12 @@ class A3A_RoadblockFromGarage : A3A_VehicleFromGarage
                     w = 71 * GRID_W;
                 };
 
-                class rebelsATVehiclesTabButton : A3A_Button
+                class rebelsATVehiclesTabButton : VehicleTabButton
                 {
-                    idc = -1;
                     text = $STR_antistasi_dialogs_garage_heavy;
                     onButtonClick = "['heavy', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
                     x = 71 * GRID_W;
-                    y = 0;
                     w = 71 * GRID_W;
-                    h = 5 * GRID_H;
                 };
             };
         };
