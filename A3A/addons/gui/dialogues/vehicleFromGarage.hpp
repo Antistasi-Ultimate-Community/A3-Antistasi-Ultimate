@@ -1,4 +1,4 @@
-class A3A_VehicleFromGarage : A3A_DefaultDialog
+class A3A_VehicleFromGarage : A3A_GARAGEDialog
 {
 	idd = A3A_IDD_DISPLAYGARAGEVEHICLES;
 	onLoad = "['Static'] call A3A_fnc_UI_vehicleFromGarage";
@@ -155,11 +155,11 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
             idc = -1;
             deletable = 1;
             type = CT_CONTROLS_GROUP;
-            x = 55 * GRID_W;
+            x = 60 * GRID_W;
             y = DIALOG_Y + 57 * GRID_H;
-            w = 55 * GRID_W;
+            w = 50 * GRID_W;
             h = 7 * GRID_H;
-            size = GRID_H * 4.5;
+            size = GRID_H * 5;
             style = ST_MULTI;
             shadow = 0;
             fade = 0;
@@ -210,9 +210,9 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
                     colorBackground[]= {0.23,0.23,0.23,0.55};
                     x = 0;
                     y = 0;
-                    w = 55 * GRID_W;
+                    w = 50 * GRID_W;
                     h = 7 * GRID_H;
-                    size = GRID_H * 4.5;
+                    size = GRID_H * 5;
                     text = "";
                     class Attributes
                     {
@@ -236,8 +236,6 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
             tooltip = $STR_antistasi_arsenal_limits_dialog_close;
         };
     };
-
-    class ControlsBackground {};
 };
 
 class A3A_StaticAAFromGarage : A3A_VehicleFromGarage
@@ -252,7 +250,6 @@ class A3A_StaticAAFromGarage : A3A_VehicleFromGarage
             {
 				class VehicleTabButton: VehicleTabButton
                 {
-                    text = $STR_antistasi_dialogs_garage_statics;
                     onButtonClick = "['Static', 'AA'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -279,7 +276,6 @@ class A3A_StaticATFromGarage : A3A_VehicleFromGarage
             {
 				class VehicleTabButton: VehicleTabButton
                 {
-                    text = $STR_antistasi_dialogs_garage_statics;
                     onButtonClick = "['Static', 'AT'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -306,7 +302,6 @@ class A3A_StaticHMGFromGarage : A3A_VehicleFromGarage
             {
 				class VehicleTabButton: VehicleTabButton
                 {
-                    text = $STR_antistasi_dialogs_garage_statics;
                     onButtonClick = "['Static', 'MG'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -323,7 +318,7 @@ class A3A_StaticHMGFromGarage : A3A_VehicleFromGarage
 
 class A3A_RoadblockFromGarage : A3A_VehicleFromGarage
 {
-    onLoad = "['light', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
+    onLoad = "['light'] call A3A_fnc_ui_roadblockFromGarage";
 	onUnload = "['onUnload'] call A3A_fnc_ui_roadblockFromGarage";
 	
     class Controls : Controls
@@ -338,12 +333,15 @@ class A3A_RoadblockFromGarage : A3A_VehicleFromGarage
                     w = 71 * GRID_W;
                 };
 
-                class rebelsATVehiclesTabButton : VehicleTabButton
+                class rebelsATVehiclesTabButton : A3A_Button
                 {
+                    idc = -1;
                     text = $STR_antistasi_dialogs_garage_heavy;
                     onButtonClick = "['heavy', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
                     x = 71 * GRID_W;
+                    y = 0;
                     w = 71 * GRID_W;
+                    h = 5 * GRID_H;
                 };
             };
         };

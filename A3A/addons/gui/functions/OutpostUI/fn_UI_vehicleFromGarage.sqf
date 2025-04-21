@@ -44,14 +44,6 @@ _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 
 [_vehicleListBox,_category] call A3A_fnc_processVehicleCategory;
 
-//preview cam
-private _previewCamera = "camera" camCreate [10,0,1000];
-_previewCamera enableSimulation false;
-_previewCamera cameraEffect ["Internal", "Back"];
-showCinemaBorder false;
-enableEnvironment false; //wind sound
-_previewCamera camCommit 0;
-
 A3U_fnc_displaystuff = {
     _data params ["_control","_selectedIndex","_vehFullData"];
     //diag_log _data;
@@ -90,7 +82,7 @@ A3U_fnc_displaystuff = {
         _undercoverIcon ctrlSetText A3A_Icon_HideVic;
         _underCoverIcon ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_undercover_tooltip";
         _undercoverIcon ctrlCommit 0;
-    }; /// probably not needed anymore, unless we want to use civ vehicles in outposts
+    };
 
     // Show item
     // creating vehicle for the preview
@@ -191,16 +183,7 @@ A3U_fnc_displaystuff = {
     _Origins ctrlCommit 0;
 };
 
-// Автоматически выбираем первый элемент если есть
-if (lbSize _vehicleListBox > 0) then {
-    _vehicleListBox lbSetCurSel 0;
-    // Форсируем обновление данных
-    private _vehFullData = parseSimpleArray (_vehicleListBox lbData 0);
-    [_vehicleListBox, 0, _vehFullData] call A3U_fnc_displaystuff;
-} else {
-    vehicleToOutpost = "";
-};
-
+_vehicleListBox lbSetCurSel 0;
 
 // Обработчик события выбора техники из листбокса
 _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle in list box, should use this onLBDblClick
@@ -214,8 +197,6 @@ _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle 
 // Кнопка для закрытия диалога
 _selectButton ctrlAddEventHandler ["ButtonClick", {
     params ["_control"];
-    // Проверка выбранной техники
-    if (vehicleToOutpost == "") exitWith {};
     closeDialog 2;
     camDestroy _previewCamera;
     {
@@ -245,7 +226,7 @@ _selectButton ctrlAddEventHandler ["ButtonClick", {
             case ("MG"): { _createFnc = "SCRT_fnc_outpost_createHMG" };
             case ("Roadblock"): {
                 _createFnc = "SCRT_fnc_outpost_createRoadblock";
-                _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", localize "STR_antistasi_dialogs_generic_button_yes_text", localize "STR_antistasi_dialogs_generic_button_no_text"] call BIS_fnc_guiMessage);
+                _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage);
             };
         };
         [_vehicle, _pos, _direction, _vehCustomization, _costMoney, _costHR, _vehCategory, _vehUID, clientOwner] remoteExec [_createFnc, 2];
