@@ -26,7 +26,7 @@ Example:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_mainIDC", "_groupIDC", "_IDD", "_outpostType"];
+params ["_groupIDC", "_IDD", "_outpostType"];
 
 private _display = findDisplay _IDD;
 
