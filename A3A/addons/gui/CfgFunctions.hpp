@@ -52,8 +52,7 @@ class CfgFunctions {
             class getVehicleWeapons {};
             class isUsableWeapon {};
             class processVehicleCategory {};
-			class ui_populateOutpostVehicleBox {};
-            class UI_buyVehicleTabs {};
+			class UI_buyVehicleTabs {};
             class UI_vehicleFromGarage {};
             class UI_vehicleFromStore {};
 		};
