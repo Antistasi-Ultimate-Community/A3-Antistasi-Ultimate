@@ -1,4 +1,4 @@
-class A3A_VehicleFromGarage : A3A_GARAGEDialog
+class A3A_VehicleFromGarage : A3A_DefaultDialog
 {
 	idd = A3A_IDD_DISPLAYGARAGEVEHICLES;
 	onLoad = "['Static'] call A3A_fnc_UI_vehicleFromGarage";

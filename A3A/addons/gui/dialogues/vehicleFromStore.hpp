@@ -1,6 +1,6 @@
 class A3A_VehicleFromStore : A3A_TabbedDialog
 {
-    idd = A3A_IDD_BUYVEHICLEDIALOG;
+    idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
     onUnload = "['onUnload'] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls
@@ -103,7 +103,7 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
 
 class A3A_StaticAAFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEAADIALOG;
+	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['AA']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -125,12 +125,12 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
 
 		class  aaVehiclesTab : VehiclesTab
         {
-            idc = A3A_IDC_AASTATICMAIN;
+            idc = A3A_IDC_STATICMAIN;
 			class Controls : Controls
             {
                 class VehiclesControlsGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_AASTATICGROUP;
+                    idc = A3A_IDC_STATICGROUP;
                 };
             };
         };
@@ -143,7 +143,7 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
 
 class A3A_StaticATFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEATDIALOG;
+	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['AA']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -165,12 +165,12 @@ class A3A_StaticATFromStore : A3A_VehicleFromStore
 
 		class  atVehiclesTab : VehiclesTab
         {
-            idc = A3A_IDC_ATSTATICMAIN;
+            idc = A3A_IDC_STATICMAIN;
 			class Controls : Controls
             {
                 class VehiclesControlsGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_ATSTATICGROUP;
+                    idc = A3A_IDC_STATICGROUP;
                 };
             };
         };
@@ -183,7 +183,7 @@ class A3A_StaticATFromStore : A3A_VehicleFromStore
 
 class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEMGDIALOG;
+	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['MG']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -205,12 +205,12 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 
 		class  mgVehiclesTab : VehiclesTab
         {
-            idc = A3A_IDC_MGSTATICMAIN;
+            idc = A3A_IDC_STATICMAIN;
 			class Controls : Controls
             {
                 class VehiclesControlsGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_MGSTATICGROUP;
+                    idc = A3A_IDC_STATICGROUP;
                 };
             };
         };
@@ -223,7 +223,7 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 
 class A3A_RoadblockFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEROADBLOCKDIALOG;
+	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['RB_LA']] spawn A3A_fnc_UI_vehicleFromStore";
 	onUnload = "['onUnload'] spawn A3A_fnc_UI_vehicleFromStore";
 

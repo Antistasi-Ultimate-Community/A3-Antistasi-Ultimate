@@ -344,47 +344,23 @@ Maintainer: DoomMetal
 #define	A3A_IDC_BLACKMARKETVEHICLESGROUPBOAT 	    10336
 
 // outpost ui
-// roadblock
-#define A3A_IDD_BUYVEHICLEROADBLOCKDIALOG           11001
-#define	A3A_IDC_BUYLIGHTARMEDMAIN 	                11002
-#define	A3A_IDC_LIGHTARMEDGROUP 	                11003
-#define	A3A_IDC_BUYATVEHICLEMAIN	                11004
-#define	A3A_IDC_ATVEHICLEGROUP 	                    11005
-#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11006
-#define	A3A_IDC_AAVEHICLEGROUP 	                    11007
+#define A3A_IDD_BUYVEHICLEOUTPOSTDIALOG             11001
+#define A3A_IDC_STATICMAIN                          11002
+#define A3A_IDC_STATICGROUP                         11003
+#define	A3A_IDC_BUYLIGHTARMEDMAIN 	                11004
+#define	A3A_IDC_LIGHTARMEDGROUP 	                11005
+#define	A3A_IDC_BUYATVEHICLEMAIN	                11006
+#define	A3A_IDC_ATVEHICLEGROUP 	                    11007
+#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11008
+#define	A3A_IDC_AAVEHICLEGROUP 	                    11009
 
-// outpost ui
-//garage roadblock
-#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11008
-#define	A3A_IDC_SETUP_GARAGETABLE                   11009
-#define A3A_IDC_GARAGE_CATCAR                       11010
-#define A3A_IDC_GARAGEStructuredText                11011
-#define A3A_IDC_GARAGEselectbutton                  11012
-
-#define A3A_IDC_GARAGEundercoverIcon                11013
-
-#define A3A_IDC_GARAGEinfoBox                       11014
+#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11010
+#define A3A_IDC_GARAGE_CATCAR                       11011
+#define A3A_IDC_GARAGEStructuredText                11012
+#define A3A_IDC_GARAGEselectbutton                  11013
+#define A3A_IDC_GARAGEundercoverIcon                11014
 #define A3A_IDC_GARAGEinfo                          11015
-
 #define HR_GRG_IDC_OriginsPanel                     11016
-
-#define A3A_IDC_GARAGELIGHTARMEDMAIN                11017
-#define A3A_IDC_GARAGELIGHTARMEDGROUP               11018
-
-#define A3A_IDC_GARAGEHEAVYVEHICLEMAIN              11019
-#define A3A_IDC_GARAGEHEAVYVEHICLEGROUP             11020
-
-#define A3A_IDD_BUYVEHICLEMGDIALOG                  11021
-#define A3A_IDC_MGSTATICMAIN                        11022
-#define A3A_IDC_MGSTATICGROUP                       11023
-
-#define A3A_IDD_BUYVEHICLEATDIALOG                  11024
-#define A3A_IDC_ATSTATICMAIN                        11025
-#define A3A_IDC_ATSTATICGROUP                       11026
-
-#define A3A_IDD_BUYVEHICLEAADIALOG                  11027
-#define A3A_IDC_AASTATICMAIN                        11028
-#define A3A_IDC_AASTATICGROUP                       11029
 
 //civ 
 #define	A3A_IDC_BUYCIVVEHICLECARS 	                10337
