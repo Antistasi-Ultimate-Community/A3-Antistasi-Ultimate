@@ -26,9 +26,9 @@ Example:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_groupIDC", "_IDD", "_outpostType"];
+params ["_idc", "_idd", "_outpostType"];
 
-private _display = findDisplay _IDD;
+private _display = findDisplay _idd;
 
 Debug("BuyVehicleTab starting...");
 
@@ -46,7 +46,7 @@ private _typeMap = createHashMapFromArray [
     ["RB_AA", "militaryaa"]
 ];
 private _buyableVehiclesList = [_typeMap get _outpostType] call SCRT_fnc_ui_populateVehicleBox;
-private _vehiclesControlsGroup = _display displayCtrl _groupIDC;
+private _vehiclesControlsGroup = _display displayCtrl _idc;
 
 private _added = 0;
 {
