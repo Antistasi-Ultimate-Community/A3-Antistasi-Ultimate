@@ -224,7 +224,7 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 class A3A_RoadblockFromStore : A3A_VehicleFromStore
 {
 	idd = A3A_IDD_BUYVEHICLEROADBLOCKDIALOG;
-	onLoad = "['onLoad', ['RB']] spawn A3A_fnc_UI_vehicleFromStore";
+	onLoad = "['onLoad', ['RB_LA']] spawn A3A_fnc_UI_vehicleFromStore";
 	onUnload = "['onUnload'] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -239,14 +239,14 @@ class A3A_RoadblockFromStore : A3A_VehicleFromStore
                 class vehiclesLATabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_lightarmed;
-                    onButtonClick = "['switchTab', ['RB_LA']] call A3A_fnc_UI_vehicleFromStore"; ///step 2
+                    onButtonClick = "['switchTab', ['RB_LA']] call A3A_fnc_UI_vehicleFromStore";
                     w = 54 * GRID_W;
                 };
 
                 class vehiclesATTabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_AT;
-                    onButtonClick = "['switchTab', ['RB_AT']] call A3A_fnc_UI_vehicleFromStore"; ///step 2
+                    onButtonClick = "['switchTab', ['RB_AT']] call A3A_fnc_UI_vehicleFromStore";
                     x = 54 * GRID_W;
                     w = 54 * GRID_W;
                 };
@@ -254,7 +254,7 @@ class A3A_RoadblockFromStore : A3A_VehicleFromStore
 				class vehiclesAATabButton : VehiclesTabButton
                 {
                     text = $STR_antistasi_dialogs_outpost_tab_AA;
-                    onButtonClick = "['switchTab', ['RB_AA']] call A3A_fnc_UI_vehicleFromStore"; ///step 2
+                    onButtonClick = "['switchTab', ['RB_AA']] call A3A_fnc_UI_vehicleFromStore";
                     x = 108 * GRID_W;
                     w = 54 * GRID_W;
                 };

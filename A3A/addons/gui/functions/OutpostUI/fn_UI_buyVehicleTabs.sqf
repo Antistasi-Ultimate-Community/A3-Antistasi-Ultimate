@@ -41,7 +41,6 @@ private _typeMap = createHashMapFromArray [
     ["AA", "staticAA"],
     ["AT", "staticAT"],
     ["MG", "staticMG"],
-    ["RB", "militarylightarmed"],
     ["RB_LA", "militarylightarmed"],
     ["RB_AT", "militaryat"],
     ["RB_AA", "militaryaa"]
@@ -122,8 +121,7 @@ private _added = 0;
                 case ("MG"): { _createFnc = "SCRT_fnc_outpost_createHMG" };
                 case ("RB_LA");
                 case ("RB_AT");
-                case ("RB_AA");
-                case ("RB"): {
+                case ("RB_AA"): {
                     _createFnc = "SCRT_fnc_outpost_createRoadblock";
                     _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage);
                 };
