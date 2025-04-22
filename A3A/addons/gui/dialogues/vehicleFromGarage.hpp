@@ -236,6 +236,8 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
             tooltip = $STR_antistasi_arsenal_limits_dialog_close;
         };
     };
+
+    class ControlsBackground {};
 };
 
 class A3A_StaticAAFromGarage : A3A_VehicleFromGarage

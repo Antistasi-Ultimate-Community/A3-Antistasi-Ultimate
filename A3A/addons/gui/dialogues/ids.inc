@@ -345,22 +345,18 @@ Maintainer: DoomMetal
 
 // outpost ui
 #define A3A_IDD_BUYVEHICLEOUTPOSTDIALOG             11001
-#define A3A_IDC_STATICMAIN                          11002
-#define A3A_IDC_STATICGROUP                         11003
-#define	A3A_IDC_BUYLIGHTARMEDMAIN 	                11004
-#define	A3A_IDC_LIGHTARMEDGROUP 	                11005
-#define	A3A_IDC_BUYATVEHICLEMAIN	                11006
-#define	A3A_IDC_ATVEHICLEGROUP 	                    11007
-#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11008
-#define	A3A_IDC_AAVEHICLEGROUP 	                    11009
+#define A3A_IDC_BUYSTATICMAIN                       11002
+#define	A3A_IDC_BUYLAVEHICLEMAIN 	                11003
+#define	A3A_IDC_BUYATVEHICLEMAIN	                11004
+#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11005
 
-#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11010
-#define A3A_IDC_GARAGE_CATCAR                       11011
-#define A3A_IDC_GARAGEStructuredText                11012
-#define A3A_IDC_GARAGEselectbutton                  11013
-#define A3A_IDC_GARAGEundercoverIcon                11014
-#define A3A_IDC_GARAGEinfo                          11015
-#define HR_GRG_IDC_OriginsPanel                     11016
+#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11006
+#define A3A_IDC_GARAGE_CATCAR                       11007
+#define A3A_IDC_GARAGEStructuredText                11008
+#define A3A_IDC_GARAGEselectbutton                  11009
+#define A3A_IDC_GARAGEundercoverIcon                11010
+#define A3A_IDC_GARAGEinfo                          11011
+#define HR_GRG_IDC_OriginsPanel                     11012
 
 //civ 
 #define	A3A_IDC_BUYCIVVEHICLECARS 	                10337
