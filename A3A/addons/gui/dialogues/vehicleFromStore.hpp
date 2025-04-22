@@ -50,12 +50,12 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
         // Main content
         class  VehiclesTab : A3A_DefaultControlsGroup
         {
-            show = false;
-
             class Controls
             {
                 class VehiclesControlsGroup : A3A_ControlsGroupNoHScrollbars
                 {
+                    show = false;
+                    idc = A3A_IDC_BUYSTATICMAIN;
                     x = 0;
                     y = 4 * GRID_H;
                     w = PX_W(DIALOG_W);
@@ -103,7 +103,6 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
 
 class A3A_StaticAAFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['AA']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -123,18 +122,7 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
             };
         };
 
-		class  aaVehiclesTab : VehiclesTab
-        {
-            idc = A3A_IDC_STATICMAIN;
-			class Controls : Controls
-            {
-                class VehiclesControlsGroup : VehiclesControlsGroup
-                {
-                    idc = A3A_IDC_STATICGROUP;
-                };
-            };
-        };
-
+		class VehiclesTab : VehiclesTab {};
 		class CloseButton : CloseButton {};
     };
 
@@ -143,7 +131,6 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
 
 class A3A_StaticATFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['AA']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -163,18 +150,7 @@ class A3A_StaticATFromStore : A3A_VehicleFromStore
             };
         };
 
-		class  atVehiclesTab : VehiclesTab
-        {
-            idc = A3A_IDC_STATICMAIN;
-			class Controls : Controls
-            {
-                class VehiclesControlsGroup : VehiclesControlsGroup
-                {
-                    idc = A3A_IDC_STATICGROUP;
-                };
-            };
-        };
-
+		class VehiclesTab : VehiclesTab {};
 		class CloseButton : CloseButton {};
     };
 	
@@ -183,7 +159,6 @@ class A3A_StaticATFromStore : A3A_VehicleFromStore
 
 class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['MG']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
@@ -203,18 +178,7 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
             };
         };
 
-		class  mgVehiclesTab : VehiclesTab
-        {
-            idc = A3A_IDC_STATICMAIN;
-			class Controls : Controls
-            {
-                class VehiclesControlsGroup : VehiclesControlsGroup
-                {
-                    idc = A3A_IDC_STATICGROUP;
-                };
-            };
-        };
-
+		class VehiclesTab : VehiclesTab {};
 		class CloseButton : CloseButton {};
     };
 	
@@ -223,9 +187,7 @@ class A3A_StaticHMGFromStore : A3A_VehicleFromStore
 
 class A3A_RoadblockFromStore : A3A_VehicleFromStore
 {
-	idd = A3A_IDD_BUYVEHICLEOUTPOSTDIALOG;
 	onLoad = "['onLoad', ['RB_LA']] spawn A3A_fnc_UI_vehicleFromStore";
-	onUnload = "['onUnload'] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
     {
@@ -261,38 +223,23 @@ class A3A_RoadblockFromStore : A3A_VehicleFromStore
             };
         };
 
-		class vehiclesLATab : VehiclesTab 
+		class VehiclesTab : VehiclesTab
         {
-            idc = A3A_IDC_BUYLIGHTARMEDMAIN;
-			class Controls : Controls
+            class Controls: Controls
             {
-                class VehiclesControlsGroup : VehiclesControlsGroup
+                class VehiclesLACtrlGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_LIGHTARMEDGROUP;
+                    idc = A3A_IDC_BUYLAVEHICLEMAIN;
                 };
-            };
-        };
 
-        class vehiclesATTab : VehiclesTab
-        {
-            idc = A3A_IDC_BUYATVEHICLEMAIN;
-            class Controls : Controls
-            {
-                class VehiclesControlsGroup : VehiclesControlsGroup
+                class VehiclesATCtrlGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_ATVEHICLEGROUP;
+                    idc = A3A_IDC_BUYATVEHICLEMAIN;
                 };
-            };
-        };
 
-		class vehiclesAATab : VehiclesTab
-        {
-            idc = A3A_IDC_BUYAAVEHICLEMAIN;
-            class Controls : Controls
-            {
-                class VehiclesControlsGroup : VehiclesControlsGroup
+                class VehiclesAACtrlGroup : VehiclesControlsGroup
                 {
-                    idc = A3A_IDC_AAVEHICLEGROUP;
+                    idc = A3A_IDC_BUYAAVEHICLEMAIN;
                 };
             };
         };
