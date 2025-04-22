@@ -26,9 +26,9 @@ Example:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_idc", "_idd", "_outpostType"];
+params ["_mainIDC", "_groupIDC", "_IDD", "_outpostType"];
 
-private _display = findDisplay _idd;
+private _display = findDisplay _IDD;
 
 Debug("BuyVehicleTab starting...");
 
@@ -41,12 +41,13 @@ private _typeMap = createHashMapFromArray [
     ["AA", "staticAA"],
     ["AT", "staticAT"],
     ["MG", "staticMG"],
+    ["RB", "militarylightarmed"],
     ["RB_LA", "militarylightarmed"],
     ["RB_AT", "militaryat"],
     ["RB_AA", "militaryaa"]
 ];
 private _buyableVehiclesList = [_typeMap get _outpostType] call SCRT_fnc_ui_populateVehicleBox;
-private _vehiclesControlsGroup = _display displayCtrl _idc;
+private _vehiclesControlsGroup = _display displayCtrl _groupIDC;
 
 private _added = 0;
 {
@@ -121,9 +122,10 @@ private _added = 0;
                 case ("MG"): { _createFnc = "SCRT_fnc_outpost_createHMG" };
                 case ("RB_LA");
                 case ("RB_AT");
-                case ("RB_AA"): {
+                case ("RB_AA");
+                case ("RB"): {
                     _createFnc = "SCRT_fnc_outpost_createRoadblock";
-                    _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", localize "STR_antistasi_dialogs_generic_button_yes_text", localize "STR_antistasi_dialogs_generic_button_no_text"] call BIS_fnc_guiMessage);
+                    _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage);
                 };
             };
             [_vehicle, _pos, _direction, _vehCustomization, _costMoney, _costHR, objNull, objNull, clientOwner] remoteExec [_createFnc, 2];
