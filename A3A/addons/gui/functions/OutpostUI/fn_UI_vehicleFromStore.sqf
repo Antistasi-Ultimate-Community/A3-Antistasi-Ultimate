@@ -14,7 +14,6 @@ private _IDs = switch (_outpostType) do {
 	case ("AA"): { [A3A_IDC_AASTATICMAIN, A3A_IDC_AASTATICGROUP, A3A_IDD_BUYVEHICLEAADIALOG] };
 	case ("AT"): { [A3A_IDC_ATSTATICMAIN, A3A_IDC_ATSTATICGROUP, A3A_IDD_BUYVEHICLEATDIALOG] };
 	case ("MG"): { [A3A_IDC_MGSTATICMAIN, A3A_IDC_MGSTATICGROUP, A3A_IDD_BUYVEHICLEMGDIALOG] };
-	case ("RB");
 	case ("RB_LA"): { [A3A_IDC_BUYLIGHTARMEDMAIN, A3A_IDC_LIGHTARMEDGROUP, A3A_IDD_BUYVEHICLEROADBLOCKDIALOG] };
 	case ("RB_AT"): { [A3A_IDC_BUYATVEHICLEMAIN, A3A_IDC_ATVEHICLEGROUP, A3A_IDD_BUYVEHICLEROADBLOCKDIALOG] };
 	case ("RB_AA"): { [A3A_IDC_BUYAAVEHICLEMAIN, A3A_IDC_AAVEHICLEGROUP, A3A_IDD_BUYVEHICLEROADBLOCKDIALOG] };
@@ -29,20 +28,19 @@ switch (_mode) do
 	{
 		['on'] call SCRT_fnc_ui_toggleMenuBlur;
 
-		if (_outpostType isEqualTo "RB_LA" || {_outpostType isEqualTo "RB"}) exitWith {
+		if (_outpostType isEqualTo "RB_LA") then {
 			{ ["onLoad", [_x]] call A3A_fnc_UI_vehicleFromStore } forEach ["RB_AT", "RB_AA"];
 		};
-
 		[_mainIDC, _groupIDC, _IDD, _outpostType] call A3A_fnc_UI_buyVehicleTabs;
 
-		ctrlShow [_mainIDC, true];
+		["switchTab", _outpostType] call A3A_fnc_UI_vehicleFromStore;
 	};
 
 	case ("switchTab"):
 	{
 		// Hide all tabs
         Debug("Hiding all tabs");
-		ctrlShow [A3A_IDC_BUYVEHICLEPREVIEW, false];
+		{ ctrlShow [_x, false] } forEach [A3A_IDC_BUYLIGHTARMEDMAIN, A3A_IDC_BUYATVEHICLEMAIN, A3A_IDC_BUYAAVEHICLEMAIN, A3A_IDC_BUYVEHICLEPREVIEW];
         
 		// Show selected tab
         Debug("Showing selected tab");
