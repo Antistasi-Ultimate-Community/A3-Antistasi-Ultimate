@@ -123,7 +123,7 @@ private _added = 0;
                 case ("RB_AT");
                 case ("RB_AA"): {
                     _createFnc = "SCRT_fnc_outpost_createRoadblock";
-                    _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", true, true] call BIS_fnc_guiMessage);
+                    _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", localize "STR_antistasi_dialogs_generic_button_yes_text", localize "STR_antistasi_dialogs_generic_button_no_text"] call BIS_fnc_guiMessage);
                 };
             };
             [_vehicle, _pos, _direction, _vehCustomization, _costMoney, _costHR, objNull, objNull, clientOwner] remoteExec [_createFnc, 2];
