@@ -41,32 +41,6 @@
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
 
-
-
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-
-    ["CUP_B_AGS_CDF", 3000, "STATICMG", {tierWar > 3}],
-
-    ["CUP_B_M113A3_USA", 2050, "CAR", {true}],
-
-    ["CUP_B_LAV25_HQ_USMC", 6000, "APC", {true}],
-    ["CUP_B_LAV25M240_USMC", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["CUP_B_M60A3_USMC", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["CUP_B_ZSU23_CDF", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["CUP_B_CESSNA_T41_ARMED_USA", 10000, "PLANE", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["CUP_B_L39_CZ", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["CUP_B_MH6J_USA", 15000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["CUP_B_UH60M_US", 25000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////

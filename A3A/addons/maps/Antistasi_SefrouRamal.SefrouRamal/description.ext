@@ -7,18 +7,18 @@ overviewText = $STR_antistasi_mission_info_Altis_description_text;
 loadScreen = LOAD_SCREEN_IMAGE;
 overviewPicture = OVERVIEW_IMAGE;
 
-class CfgDiscordRichPresence
+class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
-    defaultLargeImageKey="sefrouramal";
-    defaultLargeImageText="Antistasi Ultimate - Sefrou-Ramal";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Sefrou-Ramal";
+    defaultLargeImageKey="ramal";
+    defaultLargeImageText="Rebelling in Sefrou-Ramal";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
+//DLC: https://store.steampowered.com/app/1681170/Arma_3_Creator_DLC_Western_Sahara/
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

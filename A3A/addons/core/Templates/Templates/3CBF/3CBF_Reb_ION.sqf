@@ -47,39 +47,6 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 //       Antistasi Plus Stuff       //
 //////////////////////////////////////
 
-["blackMarketStock", [
-    ["UK3CB_LDF_I_RBS70", 2500, "STATICAA", {tierWar > 3}],
-    ["UK3CB_CW_US_B_LATE_TOW_TriPod", 3000, "STATICAT", {tierWar > 3}],
-    ["RHS_MK19_TriPod_USMC_WD", 3000, "STATICMG", {tierWar > 3}],
-
-    ["UK3CB_ARD_I_Hilux_Mortar", 15000, "ARTILLERY", {tierWar > 5}],
-    ["UK3CB_ARD_I_Hilux_Rocket", 25000, "ARTILLERY", {tierWar > 7}],
-    ["UK3CB_ARD_I_Hilux_Rocket_Arty", 30000, "ARTILLERY", {tierWar > 8}],
-
-    ["UK3CB_ARD_I_Hilux_Zu23", 1750, "CAR", {tierWar > 2}],
-    ["UK3CB_ARD_I_Hilux_GMG", 2500, "CAR", {tierWar > 2}],
-    ["UK3CB_ARD_I_Hilux_Metis", 3500, "CAR", {tierWar > 2}],
-    
-    ["UK3CB_KRG_I_M113tank_unarmed", 1750, "APC", {true}],
-    ["UK3CB_KRG_I_M113tank_M2_90", 2500, "APC", {true}],
-    ["UK3CB_KRG_I_M113tank_MK19_90", 4500, "CAR", {true}],
-
-    ["UK3CB_I_G_BMP1", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["UK3CB_I_G_BMP2K", 12500, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["UK3CB_I_G_T34", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["UK3CB_I_G_T55", 13000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["UK3CB_MDF_I_M60A3", 17500, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["UK3CB_I_G_ZsuTank", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["RHSGREF_A29B_HIDF", 17500, "PLANE", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["UK3CB_MDF_I_Mystere_CAS1", 22500, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["UK3CB_ADA_I_UH1H_M240", 13500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["UK3CB_ADA_I_UH1H_GUNSHIP", 20000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ["variants", [
     ["RHSGREF_A29B_HIDF", ["Brazil",1]],
     ["RHSGREF_A29B_HIDF", ["MIG",1]]
@@ -185,6 +152,7 @@ switch (true) do
 "WhiteHead_03", "WhiteHead_04", "WhiteHead_05", "WhiteHead_07", "WhiteHead_08", "WhiteHead_09", "WhiteHead_10", "WhiteHead_11", "WhiteHead_13",
 "WhiteHead_14", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17", "WhiteHead_18", "WhiteHead_19", "WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["Male01ENG", "Male02ENG", "Male03ENG", "Male04ENG", "Male05ENG", "Male06ENG", "Male07ENG", "Male08ENG", "Male09ENG", "Male10ENG", "Male11ENG", "Male12ENG", "Male01GRE", "Male02GRE", "Male03GRE", "Male04GRE", "Male05GRE", "Male06GRE", "Male01ENGB", "Male02ENGB", "Male03ENGB", "Male04ENGB", "Male05ENGB", "Male01ENGFRE", "Male02ENGFRE"]] call _fnc_saveToTemplate;
+"EnglishMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

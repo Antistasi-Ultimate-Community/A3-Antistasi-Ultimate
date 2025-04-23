@@ -19,57 +19,79 @@
 ["surrenderCrate", "SPE_Mine_AmmoBox_US"] call _fnc_saveToTemplate;
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate;
 
-["vehiclesBasic", ["LIB_US_Willys_MB"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["LIB_US_Willys_MB", "LIB_US_Willys_MB_Hood"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["LIB_US_Willys_MB_M1919", "LIB_US_Scout_M3"]] call _fnc_saveToTemplate;
-["vehiclesTrucks", ["SPE_US_M3_Halftrack_Unarmed", "LIB_US_GMC_Open", "LIB_US_GMC_Tent"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["SPE_US_M3_Halftrack_Unarmed"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["SPE_US_M3_Halftrack_Ammo", "LIB_US_GMC_Ammo"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["SPE_US_M3_Halftrack_Repair", "LIB_US_GMC_Parm"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["SPE_US_M3_Halftrack_Fuel", "LIB_US_GMC_Fuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["SPE_US_M3_Halftrack_Ambulance", "LIB_US_GMC_Ambulance"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["LIB_US_Scout_M3", "SPE_US_M3_Halftrack"]] call _fnc_saveToTemplate;
+["vehiclesBasic", ["SPE_US_G503_MB_Open"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["SPE_US_G503_MB", "SPE_US_G503_MB_Armoured"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["SPE_US_G503_MB_M1919_Armoured", "SPE_US_G503_MB_M2_Armoured", "SPE_US_G503_MB_M2_PATROL", "SPE_US_G503_MB_M1919_PATROL"]] call _fnc_saveToTemplate;
+["vehiclesTrucks", ["SPE_US_M3_Halftrack_Unarmed", "SPE_CCKW_353_Open", "SPE_CCKW_353"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["SPE_CCKW_353_Open"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["SPE_US_M3_Halftrack_Ammo", "SPE_CCKW_353_Ammo"]] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", ["SPE_US_M3_Halftrack_Repair", "SPE_CCKW_353_Repair"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["SPE_US_M3_Halftrack_Fuel", "SPE_CCKW_353_Fuel"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["SPE_US_M3_Halftrack_Ambulance", "SPE_US_G503_MB_Ambulance", "SPE_CCKW_353_Ambulance"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["SPE_CCKW_353_M2", "SPE_US_M3_Halftrack"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["SPE_US_M3_Halftrack", "SPE_US_M16_Halftrack", "SPE_US_M3_Halftrack"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["SPE_M18_Hellcat", "SPE_M10", "LIB_M8_Greyhound", "LIB_M3A3_Stuart", "LIB_M5A1_Stuart"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["SPE_M4A0_75_Early", "SPE_M4A0_75", "SPE_M4A1_76", "SPE_M4A1_75"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", ["SPE_M18_Hellcat", "SPE_M10", "SPE_M8_LAC_ringMount", "SPE_M8_LAC", "LIB_M3A3_Stuart", "LIB_M5A1_Stuart"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["SPE_M4A0_75_Early", "SPE_M4A0_75", "SPE_M4A1_76", "SPE_M4A1_75", "SPE_M4A0_composite", "SPE_M4A0_105", "SPE_M4A1_75_erla", "SPE_M4A3_105", "SPE_M4A3_75", "SPE_M4A3_76"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["SPE_US_M16_Halftrack"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["LIB_US_Scout_M3"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["LIB_M3A3_Stuart", "LIB_M5A1_Stuart"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["SPE_M20_AUC"]] call _fnc_saveToTemplate;
+private _vehiclesLightTanks = ["SPE_M8_LAC_ringMount", "SPE_M8_LAC"];
+
+if (isClass (configFile >> "CfgPatches" >> "MWB_M24Chaffee")) then {
+    _vehiclesLightTanks append ["MWB_M24Chaffee"];
+};
+["vehiclesLightTanks", _vehiclesLightTanks] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["LIB_LCVP"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["LIB_LCM3_Armed"]] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["SPE_P47"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["SPE_P47"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["SPE_P47"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["LIB_US_P39"];
 ["vehiclesPlanesTransport", ["LIB_C47_Skytrain"]] call _fnc_saveToTemplate;
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_p51d","sab_fl_p51b","sab_fl_f4f","sab_fl_sbd","sab_fl_f4u","sab_fl_f4u"];
+	_vehiclesPlanesAA append ["sab_fl_p51d","sab_fl_p51b"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_tbf","sab_sw_p40"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_a26"];
+	_vehiclesPlanesAA append ["sab_sw_p40","sab_sw_p38"];
+};
+
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", []] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", []] call _fnc_saveToTemplate;
 
-["vehiclesArtillery", ["SPE_M4A1_T34_Calliope"]] call _fnc_saveToTemplate;
+["vehiclesArtillery", ["SPE_M4A1_T34_Calliope", "SPE_M4A3_T34_Calliope"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["SPE_M4A1_T34_Calliope", ["SPE_60Rnd_M8"]]
+["SPE_M4A1_T34_Calliope", ["SPE_60Rnd_M8"]],
+["SPE_M4A3_T34_Calliope", ["SPE_60Rnd_M8"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", []] call _fnc_saveToTemplate;
 ["uavsPortable", []] call _fnc_saveToTemplate;
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", ["LIB_US_Willys_MB_M1919"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaTrucks", ["LIB_US_GMC_Open"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["LIB_US_Willys_MB"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["LIB_US_Scout_M3"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", ["SPE_US_G503_MB_M1919", "SPE_US_G503_MB_M2"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaTrucks", ["SPE_CCKW_353_Open"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["SPE_US_G503_MB_Open"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["SPE_M20_AUC"]] call _fnc_saveToTemplate;
 
-["vehiclesPolice", ["LIB_US_Willys_MB_Hood"]] call _fnc_saveToTemplate;
+["vehiclesPolice", ["SPE_CCKW_353_Open"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["SPE_M1919A6_Bipod"]] call _fnc_saveToTemplate;
-["staticAT", ["SPE_57mm_M1"]] call _fnc_saveToTemplate;
+["staticMGs", ["SPE_M1919_M2_Trench_Deployed"]] call _fnc_saveToTemplate;
+["staticAT", ["SPE_57mm_M1", "SPE_105mm_M3_Direct"]] call _fnc_saveToTemplate;
 ["staticAA", ["SPE_FR_M45_Quadmount"]] call _fnc_saveToTemplate;
 ["staticMortars", ["SPE_M1_81"]] call _fnc_saveToTemplate;
-["staticHowitzers", ["SPE_leFH18"]] call _fnc_saveToTemplate;
+["staticHowitzers", ["SPE_105mm_M3"]] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "SPE_FlaK_36_AA"] call _fnc_saveToTemplate;
 ["vehicleSam", "SPE_FlaK_36_AA"] call _fnc_saveToTemplate;
@@ -112,7 +134,8 @@ _loadoutData set ["slRifles", [
 ["SPE_M1918A2_BAR", "", "SPE_M1918A2_BAR_Handle", "", ["SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63_M2_AP"], [], ""]
 ]];
 _loadoutData set ["carbines", [
-["SPE_M1_Carbine", "", "", "", ["SPE_15Rnd_762x33", "SPE_15Rnd_762x33", "SPE_15Rnd_762x33_t"], [], ""]
+["SPE_M1_Carbine", "", "", "", ["SPE_15Rnd_762x33", "SPE_15Rnd_762x33", "SPE_15Rnd_762x33_t"], [], ""],
+["SPE_M1A1_Carbine", "", "", "", ["SPE_15Rnd_762x33", "SPE_15Rnd_762x33", "SPE_15Rnd_762x33_t"], [], ""]
 ]];
 _loadoutData set ["grenadeLaunchers", [
 ["SPE_M1_Garand_M7", "SPE_ACC_GL_M7", "", "", ["SPE_8Rnd_762x63_M1", "SPE_8Rnd_762x63_M1", "SPE_8Rnd_762x63_t"], ["SPE_1Rnd_G_M9A1", "SPE_1Rnd_G_Mk2", "SPE_1Rnd_G_M17A1", "SPE_1Rnd_G_M2_ANM8"], ""],
@@ -126,7 +149,9 @@ _loadoutData set ["SMGs", [
 _loadoutData set ["machineGuns", [
 ["SPE_M1919A4", "", "", "", ["SPE_50Rnd_762x63", "SPE_50Rnd_762x63_M1", "SPE_50Rnd_762x63_M2_AP"], [], ""],
 ["SPE_M1919A6", "", "", "", ["SPE_50Rnd_762x63", "SPE_50Rnd_762x63_M1", "SPE_50Rnd_762x63_M2_AP"], [], ""],
-["SPE_M1918A2_BAR", "", "SPE_M1918A2_BAR_Handle", "", ["SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63"], [], ""]
+["SPE_M1918A2_BAR", "", "SPE_M1918A2_BAR_Handle", "", ["SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63"], [], ""],
+["SPE_M1918A2_erla_BAR", "", "SPE_M1918A2_BAR_Handle", "", ["SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63"], [], ""],
+["SPE_M1918A0_BAR", "", "", "", ["SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63_M1", "SPE_20Rnd_762x63"], [], ""]
 ]];
 _loadoutData set ["marksmanRifles", [
 ["SPE_M1903A4_Springfield", "", "", "", ["SPE_5Rnd_762x63", "SPE_5Rnd_762x63", "SPE_5Rnd_762x63_t"], [], ""],
@@ -287,7 +312,8 @@ _policeLoadoutData set ["rifles", [
 ["SPE_M1903A3_Springfield", "SPE_ACC_M1905_Bayo", "", "", ["SPE_5Rnd_762x63_M1", "SPE_5Rnd_762x63_M1", "SPE_5Rnd_762x63_t"], [], ""]
 ]];
 _policeLoadoutData set ["shotGuns", [
-["SPE_Fusil_Mle_208_12", "", "", "", ["SPE_2Rnd_12x65_No4_Buck", "SPE_2Rnd_12x65_Slug"], [], ""]
+["SPE_Model_37_Trenchgun", "", "", "", ["SPE_5Rnd_12x70_Pellets", "SPE_5Rnd_12x70_Slug"], [], ""],
+["SPE_Model_37_Riotgun", "", "", "", ["SPE_5Rnd_12x70_Pellets", "SPE_5Rnd_12x70_Slug"], [], ""]
 ]];
 
 ////////////////////////////////

@@ -16,13 +16,39 @@ params ["_traderX"];
 
 private _modsets = [];
 
-private _cfg = (configfile >> "A3U" >> "traderMods") call BIS_fnc_getCfgSubClasses;
+private _oldCfg = (configFile >> "A3U" >> "traderMods") call BIS_fnc_getCfgSubClasses;
+
+if (_oldCfg isNotEqualTo []) then {
+    {
+        private _addons = getArray (configFile >> "A3U" >> "traderMods" >> _x >> "addons");
+        private _prefix = getText (configFile >> "A3U" >> "traderMods" >> _x >> "prefix");
+
+        if ([_addons] call A3U_fnc_hasAddon) then {
+            _modsets pushBack _prefix;
+            [format ["Added %1 to _modsets list (old version). It is now deprecated and should be updated ASAP.", _prefix]] call A3U_fnc_log;
+        };
+    } forEach _oldCfg;
+};
+
+private _baseCfg = (configFile >> "A3U" >> "traderAddons");
+private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
+
+private _ignoreClasses = ["traderWeapons", "traderVehicles"];
 
 {
-    private _addons = getArray (configFile >> "A3U" >> "traderMods" >> _x >> "addons");
-    private _prefix = getText (configFile >> "A3U" >> "traderMods" >> _x >> "prefix");
+    if (_x in _ignoreClasses) then {continue};
 
-    if (_addons isNotEqualTo [] && {[_addons] call A3U_fnc_hasAddon}) then {
+    private _addons = getArray (_baseCfg >> _x >> "addons");
+    if (_addons isEqualTo []) then {continue};
+
+    private _weapons = getText (_baseCfg >> _x >> "weapons");
+    if (_weapons isEqualTo "") then {continue};
+
+    private _prefix = getText (_baseCfg >> "traderWeapons" >> _weapons >> "prefix");
+
+    if (isNil "_prefix" || {_prefix isEqualTo ""}) then {continue};
+
+    if ([_addons] call A3U_fnc_hasAddon) then {
         _modsets pushBack _prefix;
         [format ["Added %1 to _modsets list.", _prefix]] call A3U_fnc_log;
     };
@@ -31,11 +57,7 @@ private _cfg = (configfile >> "A3U" >> "traderMods") call BIS_fnc_getCfgSubClass
 private _vanillaModsets = ["vanilla", "apex", "artofwar", "contact", "jets", "kart", "lawsofwar", "marksmen", "tanks"];
 
 // Special cases
-if (vanillaArmsDealer isEqualTo true && {!(_modsets isEqualTo [])}) then {_modsets append _vanillaModsets}; // if parameter to keep vanilla weapons in arms dealer is on
-
-if (_modsets isEqualTo []) then {_modsets append _vanillaModsets}; // If it still hasn't got anything by this point, we can safely assume no supported mods are loaded.
-
-if ("ws" in A3A_enabledDLC) then {_modsets pushBack "ws"}; // western sahara
+if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {_modsets append _vanillaModsets}; // If it still hasn't got anything by this point, we can safely assume no supported mods are loaded.
 
 if ("coldWar" in A3A_factionEquipFlags) then { // 3cbf cold war
     _modsets pushBack "3cbfcw";

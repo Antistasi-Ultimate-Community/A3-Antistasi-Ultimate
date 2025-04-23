@@ -37,12 +37,12 @@ if (isNil "specialVarLoads") then {
         "supportPoints",
         "constructionsX",
         "watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "hmgpostsFIA",
-        "traderDiscount", "isTraderQuestCompleted","traderPosition",
+        "traderDiscount", "isTraderQuestAssigned", "isTraderQuestCompleted","traderPosition",
         "areOccupantsDefeated", "areInvadersDefeated",
         "destroyedMilAdmins",
         "rebelLoadouts", "randomizeRebelLoadoutUniforms",
         "areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
-        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned"
+        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones"
     ] createHashMapFromArray [];
 };
 
@@ -141,7 +141,7 @@ if (_varName in specialVarLoads) then {
                 0 setRainbow (_varValue select 7);
                 0 setWaves (_varValue select 8);
                 private _windParams = _varValue select 9;
-                setWind [_windParams#0, _windParams#1, _windParams#2];
+                setWind [_windParams#0, _windParams#1, false];
                 0 setWindDir (_varValue select 10);
                 0 setWindStr (_varValue select 11);
                 forceWeatherChange;
@@ -445,6 +445,11 @@ if (_varName in specialVarLoads) then {
             testingTimerIsActive = _varValue;
         };
 
+        case 'isTraderQuestAssigned': {
+            isTraderQuestAssigned = _varvalue;  
+            publicVariable "isTraderQuestAssigned";
+        };
+
         case 'isTraderQuestCompleted': {
             isTraderQuestCompleted = _varvalue;  
             publicVariable "isTraderQuestCompleted";
@@ -465,9 +470,7 @@ if (_varName in specialVarLoads) then {
 
         case 'traderPosition': {
 			if(count _varvalue > 0) then {
-                isTraderQuestAssigned = true;
-                publicVariable "isTraderQuestAssigned";
-				traderX = [_varvalue] call SCRT_fnc_trader_createTrader; 
+                traderX = [_varvalue] call SCRT_fnc_trader_createTrader; 
 				publicVariable "traderX";
 				[traderX] call SCRT_fnc_trader_setStockType;
 				[traderX] remoteExecCall ["SCRT_fnc_trader_addVehicleMarketAction", 0, true];
@@ -657,11 +660,31 @@ if (_varName in specialVarLoads) then {
 		};
 
         case 'isRivalsDiscoveryQuestAssigned': {
-            isRivalsDiscoveryQuestAssigned = _varvalue;  
+            isRivalsDiscoveryQuestAssigned = _varValue;  
             publicVariable "isRivalsDiscoveryQuestAssigned";
             if (isRivalsDiscoveryQuestAssigned && {!areRivalsDiscovered}) then {
                 [] call SCRT_fnc_rivals_prepareQuest;
             };
+        };
+
+        case 'revealedZones': {
+            revealedZones = _varValue;
+
+            if (isNil "revealedZones") then {
+                revealedZones = [];
+            };
+
+            publicVariable "revealedZones";
+        };
+
+        case 'unlockedVehicleTypes': {
+            unlockedVehicleTypes = _varValue;
+
+            if (isNil "unlockedVehicleTypes") then {
+                unlockedVehicleTypes = [];
+            };
+
+            publicVariable "unlockedVehicleTypes";
         };
     };
 } else {

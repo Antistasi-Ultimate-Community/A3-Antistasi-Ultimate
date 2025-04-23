@@ -13,10 +13,11 @@
 FIX_LINE_NUMBERS()
 
 params [
-    ["_updateArray", ["UpdateState", format ["Liberates %1", ([] call SCRT_fnc_misc_getWorldName)]]]
+    ["_updateArray", ["UpdateState", format ["In Mission"]]]
 ];
 
 if (!isDiscordRichPresenceActive) exitWith {};
 
 Debug_1("Updating rich presence with these parameters: %1", str _updateArray);
 [_updateArray] call (missionNameSpace getVariable ["DiscordRichPresence_fnc_update",{}]);
+

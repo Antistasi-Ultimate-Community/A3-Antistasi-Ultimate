@@ -21,6 +21,10 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
+
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     
 ["surrenderCrate", "Box_NATO_Wps_F"] call _fnc_saveToTemplate; 
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; 
@@ -29,7 +33,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesLightUnarmed", ["B_A_MRAP_03_wdl_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["B_A_MRAP_03_gmg_wdl_F", "B_A_MRAP_03_hmg_wdl_F"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["B_A_Truck_01_transport_wdl_F", "B_A_Truck_01_covered_wdl_F"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["B_A_Truck_01_cargo_wdl_F", "B_A_Truck_01_flatbed_wdl_F"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["B_A_Truck_01_cargo_wdl_F", "B_A_Truck_01_flatbed_wdl_F","B_D_UGV_01_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["B_A_Truck_01_ammo_wdl_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["B_A_Truck_01_Repair_wdl_F"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["B_A_Truck_01_fuel_wdl_F"]] call _fnc_saveToTemplate;
@@ -37,8 +41,8 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesLightAPCs", ["Atlas_B_G_APC_Wheeled_03_cannon_F"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["B_A_APC_tracked_03_cannon_v2_wdl_F"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["Atlas_B_G_APC_Wheeled_03_cannon_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  []] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["Atlas_B_G_APC_Wheeled_03_cannon_F","B_D_UGV_01_rcws_lxWS"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["B_D_UGV_01_rcws_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["Atlas_B_A_MBT_03_cannon_F"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["B_W_APC_Tracked_01_AA_F"]] call _fnc_saveToTemplate;
 

@@ -107,6 +107,7 @@ if (_aggregateCategory isEqualTo "Explosives") then {
         private _magcfg = configFile >> "CfgMagazines" >> _classname;
         private _ammocfg = configFile / "CfgAmmo" / getText (_magcfg / "ammo");
         if (getText (_ammoCfg / "mineTrigger") == "remotetrigger") then { _categories pushBack "ExplosiveCharges" };
+        _categories pushBack (["MinesAPERS", "MinesAT"] select (getNumber (_ammoCfg / "hit") >= 1000));
     };
 };
 
@@ -118,6 +119,10 @@ call {
         if (count _muzzles >= 2 && {"gl" == getText (_config >> (_muzzles select 1) >> "cursorAim")}) then {
             _categories pushBack "GrenadeLaunchers";
         };
+    };
+
+    if (_baseCategory isEqualTo "Handguns") exitWith {
+        private _config = configfile >> "CfgWeapons" >> _className;
     };
 
     if (_basecategory isEqualTo "Vests") exitWith {
@@ -170,8 +175,8 @@ call {
         if (getNumber (_config >> "rhs_disposable") == 1 or _mainmag == "CBA_fakeLauncherMagazine") then {
             _categories pushBack "Disposable";
             if (getNumber (_config >> "scope") == 1) exitWith { _categories set [0, "UsedLaunchers"] };
-            if (_mainmag == "CBA_fakeLauncherMagazine" and !isNil "cba_disposable_normalLaunchers") then {
-                _mainmag = (cba_disposable_normalLaunchers getVariable _classname) # 1;     // format is [realLauncher, magazine]
+            if (_mainmag == "CBA_fakeLauncherMagazine" and !isNil "cba_disposable_normalLaunchers" and {typeName cba_disposable_normalLaunchers == "HASHMAP"}) then {
+                _mainmag = (cba_disposable_normalLaunchers get _classname) # 1;     // format is [realLauncher, magazine]
             };
         };
         if (_categories#0 == "UsedLaunchers") exitWith {};

@@ -82,34 +82,6 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["breachingExplosivesAPC", [["rhs_ec75_mag", 2], ["rhs_ec75_sand_mag", 2], ["rhs_ec200_mag", 1], ["rhs_ec200_sand_mag", 1], ["rhsusf_m112_mag", 1], ["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["rhs_ec75_mag", 4], ["rhs_ec75_sand_mag", 4], ["rhs_ec200_mag", 2], ["rhs_ec200_sand_mag", 2], ["rhs_ec400_mag", 1], ["rhs_ec400_sand_mag", 1],["DemoCharge_Remote_Mag", 2], ["rhsusf_m112_mag", 2], ["rhsusf_m112x4_mag", 1], ["rhs_charge_M2tet_x2_mag", 1], ["SatchelCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["RHS_TOW_TriPod_WD", 3000, "STATICAT", {tierWar > 3}],
-    ["rhsgref_nat_AGS30_TriPod", 3000, "STATICMG", {tierWar > 3}],
-
-
-    ["rhsgref_BRDM2UM_msv", 1750, "CAR", {true}],
-    ["rhsgref_BRDM2_HQ_msv", 2050, "CAR", {true}],
-    ["rhsgref_BRDM2_msv", 2500, "CAR", {true}],
-
-    ["rhsgref_nat_btr70", 6000, "APC", {true}],
-    ["rhs_bmd1k", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["rhs_bmd2", 12500, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["rhs_t72ba_tv", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["rhs_t80", 21000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    
-    ["rhs_zsu234_aa", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["rhs_l159_CDF", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["RHS_Mi8mt_vvsc", 15000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["RHS_Mi8MTV3_vvsc", 25000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -193,6 +165,7 @@ private _rebUniforms = [
     "WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"
 ]] call _fnc_saveToTemplate;
 ["voices", ["rhs_male01cz","rhs_male02cz","rhs_male03cz","rhs_male04cz","rhs_male05cz"]] call _fnc_saveToTemplate;
+"CzechMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

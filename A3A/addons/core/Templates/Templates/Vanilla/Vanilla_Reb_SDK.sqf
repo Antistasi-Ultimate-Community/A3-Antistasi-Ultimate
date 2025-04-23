@@ -11,6 +11,10 @@ private _hasKart = "kart" in A3A_enabledDLC;
 private _hasGM = "gm" in A3A_enabledDLC;
 private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasSOG = "vn" in A3A_enabledDLC;
+private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
+
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -28,9 +32,15 @@ private _VehTruck = ["I_C_Van_01_transport_F"];
 private _vehiclesAt = ["I_G_Offroad_01_AT_F", "I_C_Offroad_02_AT_F"];
 private _vehicleAA = [];
 
-["vehiclesBoat", ["I_C_Boat_Transport_02_F" , "I_SDV_01_F" , "I_Boat_Armed_01_minigun_F" , "O_Boat_Armed_01_hmg_F"]] call _fnc_saveToTemplate;
+private _vehiclesBoat = ["I_C_Boat_Transport_02_F" , "I_SDV_01_F" , "I_Boat_Armed_01_minigun_F" , "O_Boat_Armed_01_hmg_F"];
 
 private _vehiclePlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
+
+private _vehiclesMedical = [];
+
+private _vehiclesSupply = ["C_Van_01_box_F"];
+
+private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
 
 private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_02_unarmed_F", "C_SUV_01_F"];
 private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
@@ -50,76 +60,57 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
 
-if (_hasRF) then {
-    _vehiclesCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
-    _civHelicopters append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF","C_Heli_EC_04_rescue_RF"];
-    _vehiclesLightArmed append ["a3u_black_Pickup_mmg_alt_rf", "a3u_black_Pickup_mmg_frame_rf","I_G_Pickup_hmg_rf"];
-    _vehiclesLightUnarmed append ["I_G_Pickup_rf"];
-    _vehicleAA pushBack "B_Pickup_aat_rf";
-    _staticMortars pushBack "I_G_CommandoMortar_RF";
+if (_hasKart) then {
+  #include "..\DLC_content\vehicles\Kart\Rebel_kart.sqf"  
 };
-
 if (_hasApex) then {
-    _vehiclesCivCar pushBack "C_Offroad_02_unarmed_F";
-    _vehiclesLightUnarmed pushBack "I_C_Offroad_02_unarmed_F";
-    _vehiclesLightArmed pushBack "I_C_Offroad_02_LMG_F";
-    _vehiclesAt pushBack "I_C_Offroad_02_AT_F";
-    _CivBoat append ["C_Boat_Transport_02_F", "C_Scooter_Transport_01_F"];
-};
-
-if (_hasLawsOfWar) then {
-    _CivTruck append ["C_Van_02_vehicle_F", "C_Van_02_transport_F"];
-    _VehTruck append ["I_G_Van_02_transport_F", "I_G_Van_02_vehicle_F"];
+  #include "..\DLC_content\vehicles\Apex\Vanilla_FIA.sqf"  
 };
 
 if (_hasContact) then {
-    _vehiclesCivCar append ["C_Offroad_01_covered_F", "C_Offroad_01_comms_F", "C_Tractor_01_F"];
+  #include "..\DLC_content\vehicles\Contact\Vanilla_FIA.sqf" 
+};
+
+if (_hasLawsOfWar) then {
+  #include "..\DLC_content\vehicles\LawsOfwar\Vanilla_FIA.sqf"  
 };
 
 if (_hasWs) then {
-    _CivTruck append ["C_Truck_02_cargo_lxWS", "C_Truck_02_flatbed_lxWS"];
-    _vehiclesCivCar append ["C_Offroad_lxWS","C_Truck_02_racing_lxWS"];
-    _vehiclesLightUnarmed pushBack "I_G_Offroad_01_armor_base_lxWS";
-    _vehiclesLightArmed pushBack "I_G_Offroad_01_armor_armed_lxWS";
-    _vehiclesAt pushBack "I_G_Offroad_01_armor_AT_lxWS";
-    _vehicleAA pushBack "I_Tura_Truck_02_aa_lxWS";
-    _staticAA = ["I_Tura_ZU23_lxWS"];
-};
-
-if (_hasKart) then {
-    _vehiclesCivCar pushBack "C_Kart_01_F";
+  #include "..\DLC_content\vehicles\WS\Vanilla_FIA.sqf"  
 };
 
 if (_hasGM) then {
-    _staticMG append ["gm_dk_army_mg3_aatripod", "gm_gc_army_dshkm_aatripod", "gm_gc_bgs_searchlight_01"];
-    _staticAT append ["gm_ge_army_milan_launcher_tripod", "gm_gc_army_fagot_launcher_tripod", "gm_gc_army_spg9_tripod"];
-    _civHelicopters append ["gm_gc_civ_mi2p", "gm_ge_adak_bo105m_vbh"];
-    _vehiclePlane append ["gm_gc_civ_l410s_passenger", "gm_gc_civ_l410s_salon" , "gm_ge_airforce_do28d2"];
-    _vehiclesCivCar append ["gm_ge_civ_typ1200","gm_gc_civ_p601","gm_ge_civ_typ253","gm_ge_civ_w123","gm_xx_civ_bicycle_01","gm_ge_dbp_bicycle_01_ylw"];
-    _CivTruck append ["gm_gc_civ_ural375d_cargo", "gm_ge_civ_u1300l", "gm_ge_civ_typ247", "gm_ge_civ_typ251"];
-    _VehTruck append ["gm_pl_army_ural4320_cargo","gm_ge_army_kat1_451_container","gm_dk_army_u1300l_container","gm_ge_army_kat1_451_cargo"];
-    _vehiclesLightUnarmed append ["gm_ge_army_iltis_cargo","gm_pl_army_uaz469_cargo"];
-    _vehiclesLightArmed append ["gm_pl_army_uaz469_dshkm","gm_ge_army_iltis_mg3"];
-    _vehiclesAt append ["gm_gc_bgs_uaz469_spg9","gm_ge_army_iltis_milan"];
-    _vehiclesBasic append ["gm_ge_army_k125"];
+  #include "..\DLC_content\vehicles\GM\Vanilla_FIA.sqf"
 };
 
 if (_hasCSLA) then {
-    _staticMG append ["AFMC_M2h", "AFMC_M2l","CSLA_UK59L_Stat","CSLA_UK59T_Stat"];
-    _staticAT append ["AFMC_TOW_Stat", "CSLA_T21_Stat","CSLA_9K113_Stat"];
-    _staticAA pushback "CSLA_PLdvK59_Stat";
-    _vehiclePlane pushBack "CSLA_CIV_An2_1";
-    _vehiclesCivCar append ["CSLA_CIV_Sarka1200","CSLA_CIV_ADA1600","CSLA_CIV_AZU","CSLA_civ_CATOR"];
-    _CivTruck append ["CSLA_CIV_V3S"];
-    _VehTruck append ["CSLA_F813o", "CSLA_F813"];
-    _vehiclesLightUnarmed append ["US85_M1008c","US85_M1008","US85_M1025_ua","US85_M1043_ua","FIA_AZU_para","CSLA_AZU_R2","CSLA_AZU"];
-    _vehiclesLightArmed append ["US85_M1025_M2","US85_M1025_M60","US85_M1043_M2","US85_M1043_M60","US85_M998SFGT","FIA_AZU_DSKM"];
-    _vehiclesAt pushback "FIA_AZU_T21";
-    _vehiclesBasic append ["CSLA_CIV_JARA250","US85_TT650"];
-    _vehicleAA pushBack "CSLA_PLdvK59V3S";
-    _CivBoat pushback "CSLA_lodka";
+  #include "..\DLC_content\vehicles\CSLA\Vanilla_FIA.sqf"  
 };
 
+if (_hasRF) then {
+  #include "..\DLC_content\vehicles\RF\Vanilla_FIA.sqf" 
+};
+
+if (_hasSOG) then {
+  #include "..\DLC_content\vehicles\SOG\Vanilla_FIA.sqf"
+};
+
+if (_hasSPE) then {
+  #include "..\DLC_content\vehicles\SPE\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_FIA.sqf"
+};
+
+["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
+["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
+["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
 ["staticAT", _staticAT] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;
@@ -139,204 +130,8 @@ if (_hasCSLA) then {
 //       Antistasi Plus Stuff       //
 //////////////////////////////////////
 
-//classname, price, type, availability condition
-///APC,UAV,AA,ARTILLERY,TANK,STATICMORTAR,STATICAA,STATICAT,STATICMG,HELI,PLANE,ARMEDCAR,UNARMEDCAR,
-private _shopTanks = if (_hasTanks) then {
-    [
-        ["I_LT_01_AA_F", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-        ["I_LT_01_scout_F", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-        ["I_LT_01_cannon_F", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-        ["I_LT_01_AT_F", 11000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}]
-    ]
-} else {
-    []
-};
-private _shopApex = if (_hasApex) then {
-    [
-        ["O_T_UAV_04_CAS_F", 20000, "UAV", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-    ]
-} else {
-    []
-};
-private _shopWs = if (_hasWs) then {
-    [
-        ["I_UAV_02_lxWS", 3500, "UAV", {tierWar > 2}], 
-        ["I_G_UAV_02_IED_lxWS", 4500, "UAV", {tierWar > 3}],
-        ["B_D_APC_Wheeled_01_mortar_lxWS", 25000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-        ["B_ION_APC_Wheeled_01_command_lxWS", 6000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-        ["O_SFIA_APC_Wheeled_02_unarmed_lxWS", 2000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-        ["O_SFIA_APC_Wheeled_02_hmg_lxWS", 2500, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-        ["B_ION_Heli_Light_02_dynamicLoadout_lxWS", 25000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-        ["B_ION_Heli_Light_02_unarmed_lxWS", 12000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-    ]
-} else {
-    []
-};
-private _shopRF = if (_hasRF) then {
-    [
-        ["I_UAV_RC40_SENSOR_RF", 1500, "UAV", {tierWar > 2}],
-        ["I_UAV_RC40_HE_RF", 3500, "UAV", {tierWar > 2}],
-        ["I_G_Pickup_mrl_rf", 25000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-        ["I_TwinMortar_RF", 40000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-        ["a3a_black_Heli_light_03_dynamicLoadout_RF", 25000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-        ["B_Heli_EC_03_RF", 25000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-        ["I_Heli_EC_02_RF", 35000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-        ["B_Heli_EC_04_military_RF", 12000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-        ["I_Heli_EC_01A_military_RF", 10000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-        ["a3a_black_Heli_light_03_unarmed_RF", 8000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-    ]
-} else {
-    []
-};
-private _shopLawsOfWar = if (_hasLawsOfWar) then {
-    [
-        ["I_UAV_06_F", 2500, "UAV", {tierWar > 2}], 
-        ["I_UAV_06_medical_F", 3500, "UAV", {tierWar > 3}],
-        ["C_IDAP_UAV_06_antimine_F", 3500, "UAV", {tierWar > 3}]
-    ]
-} else {
-    []
-};
-private _shopContact = if (_hasContact) then {
-    [
-        ["C_IDAP_UGV_02_Demining_F", 2500, "UAV", {tierWar > 2}],
-        ["I_UGV_02_Science_F", 2000, "UAV", {tierWar > 2}] 
-    ]
-} else {
-    []
-};
-private _shopJets = if (_hasJets) then {
-    [
-        ["a3a_Plane_Fighter_04_grey_F", 50000, "PLANE", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 1}]
-    ]
-} else {
-    []
-};
-private _shopMarksman = if (_hasMarksman) then {
-    [
-        ["B_Static_Designator_01_F", 1500, "UAV", {tierWar > 2}],
-        ["O_Static_Designator_02_F", 1500, "UAV", {tierWar > 2}]
-    ]
-} else {
-    []
-};
-private _shopGM = if (_hasGM) then {
-    [
-    ["gm_ge_army_kat1_463_mlrs", 55000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_gc_army_2s1", 50000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_dk_army_m109", 50000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_gc_army_ural375d_mlrs", 52000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_gc_army_2p16", 250000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 2}],
-    ["gm_ge_army_gepard1a1", 7000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["gm_pl_army_zsu234v1", 7000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["gm_pl_army_pt76b", 8500, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_ge_army_Leopard1a1", 9000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_ge_army_Leopard1a1a1", 9500, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_ge_army_Leopard1a1a2", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_dk_army_Leopard1a3", 10500, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_ge_army_Leopard1a3a1", 11000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_ge_army_Leopard1a5", 11500, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],    
-    ["gm_pl_army_t55", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_pl_army_t55ak", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_gc_army_t55am2b", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["gm_pl_army_ot64a", 5000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_pl_army_bmp1sp2", 10000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_dk_army_m113a1dk_command", 5000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_dk_army_m113a1dk_apc", 5500, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_dk_army_m113a2dk", 12000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_gc_army_brdm2um", 3000, "UNARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_pl_army_brdm2", 4000, "ARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_gc_army_brdm2rkh", 4200, "ARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_gc_army_btr60pa", 3500, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_gc_army_btr60pa_dshkm", 6000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_gc_army_btr60pb", 7000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_gc_army_btr60pu12", 4000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["gm_ge_army_ch53g", 10000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_ge_army_ch53gs", 10500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_ge_army_bo105p_pah1", 15000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_ge_army_bo105p_pah1a1", 15500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_ge_army_bo105m_vbh", 7000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_ge_army_bo105p1m_vbh", 7500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_ge_army_bo105p1m_vbh_swooper", 8000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2ch", 7500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2p", 7500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2platan", 10000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2t", 8000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2urn", 11000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2urp", 12000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2urpg", 13500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2urs", 11000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["gm_pl_airforce_mi2us", 9500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-    ]
-} else {
-    []
-};
-
-private _shopCLSA = if (_hasCSLA) then {
-    [
-    ["AFMC_M252_Stat", 5000, "STATICMORTAR", {tierWar > 3}],
-    ["CSLA_M52_Stat", 4000, "STATICMORTAR", {tierWar > 3}],
-    ["CSLA_RM51", 35000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["CSLA_RM70", 40000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["CSLA_ShKH77", 50000, "ARTILLERY", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["AFMC_M163", 7000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["US85_M1A1", 18000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["US85_M1IP", 17000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["CSLA_T72", 14000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["CSLA_T72M", 15000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["CSLA_T72M1", 16000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 1}],
-    ["AFMC_LAV25", 9000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["AFMC_M113A1", 6000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["AFMC_M113A2ext", 6500, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_BVP1", 9000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_BPzV", 10000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_MU90", 8000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_OT62", 7000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_OT64C", 6000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_OT65A", 6500, "ARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_V3SLizard", 1000, "UNARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["FIA_BTR40", 1000, "UNARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["FIA_BTR40_DSKM", 2000, "ARMEDCAR", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["CSLA_Mi24V", 28000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["AFMC_AH1F", 26000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["US85_MH60M134", 13000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["US85_MH60FFAR", 20000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["US85_UH60", 10000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["US85_UH60M240", 12000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["CSLA_Mi17", 9000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["CSLA_Mi17mg", 11000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["CSLA_Mi17pylons", 23000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-    ]
-} else {
-    []
-};
-
-private _vehiclesBlackMarket = _shopTanks + _shopApex + _shopWs + _shopRF + _shopLawsOfWar + _shopContact + _shopJets + _shopMarksman + _shopGM + _shopCLSA + [
-    ["I_HMG_01_high_F", 1000, "STATICMG", {tierWar > 3}],
-    ["I_HMG_01_F", 700, "STATICMG", {tierWar > 3}],
-    ["I_GMG_01_high_F", 3000, "STATICMG", {tierWar > 3}],
-    ["I_GMG_01_F", 2500, "STATICMG", {tierWar > 3}],
-    ["a3a_Plane_Fighter_03_grey_F", 40000, "PLANE", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 1}],
-    ["I_UAV_01_F", 2000, "UAV", {true}],
-    ["I_HMG_01_A_F", 2500, "UAV", {tierWar > 3}],
-    ["I_GMG_01_A_F", 4500, "UAV", {tierWar > 3}],
-    ["I_UGV_01_F", 4000, "UAV", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["I_UGV_01_rcws_F", 7500, "UAV", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["I_APC_Wheeled_03_cannon_F", 15000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["B_Heli_Light_01_F", 7000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["I_Heli_light_03_unarmed_F", 10000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["B_Heli_Light_01_dynamicLoadout_F", 20000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
-    ["I_Heli_light_03_dynamicLoadout_F", 25000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-];
-["blackMarketStock", _vehiclesBlackMarket] call _fnc_saveToTemplate;
-
 ["variants", [
-    ["I_Heli_light_03_dynamicLoadout_F", ["Green",1]],
-    ["I_APC_Wheeled_03_cannon_F", ["Guerilla_01",0.5, "Guerilla_02",0.5, "Guerilla_03",0.5, "Indep",0, "Indep_03",0, "Indep_02",0]],
-    ["I_LT_01_AA_F", ["Indep_Olive",1]],
-    ["I_LT_01_scout_F", ["Indep_Olive",1]],
-    ["I_LT_01_cannon_F", ["Indep_Olive",1]],
-    ["I_LT_01_AT_F", ["Indep_Olive",1]]
+  #include "..\vehicleVariants\Vanilla_FIA.sqf"
 ]] call _fnc_saveToTemplate;
 
 #include "Vanilla_Reb_Vehicle_Attributes.sqf"
@@ -354,115 +149,10 @@ private _initialRebelEquipment = [
     "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
     "V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F",
     "Binocular",
-    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol"
+    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol",
+    ["launch_RPG32_F", 2], ["RPG32_F", 6],
+    "B_FieldPack_blk","B_AssaultPack_blk"
 ];
-
-if (_hasRF) then {
-    _initialRebelEquipment append ["srifle_h6_oli_rf","10Rnd_556x45_AP_Stanag_red_khk_RF","10Rnd_556x45_AP_Stanag_khk_RF","10Rnd_556x45_AP_Stanag_green_khk_RF"];
-};
-
-if (_hasRF) then {
-    _initialRebelEquipment append ["srifle_h6_tan_rf","10Rnd_556x45_AP_Stanag_red_Tan_RF","10Rnd_556x45_AP_Stanag_Tan_RF","10Rnd_556x45_AP_Stanag_green_Tan_RF"];
-};
-
-if (_hasLawsOfWar) then {
-    _initialRebelEquipment append [
-        "V_Pocketed_olive_F", 
-        "V_Pocketed_coyote_F", 
-        "V_Pocketed_black_F",
-        "V_Plain_crystal_F",
-        "B_LegStrapBag_black_F", 
-        "V_LegStrapBag_coyote_F",
-        "V_LegStrapBag_olive_F",
-        "V_Safety_blue_F",
-        "V_Safety_orange_F",
-        "V_Safety_yellow_F"
-    ];
-};
-
-if (_hasApex) then {
-    _initialRebelEquipment append [
-        "V_BandollierB_ghex_F",
-        "V_TacChestrig_cbr_F",
-        "V_TacChestrig_grn_F",
-        "V_TacChestrig_oli_F"
-    ];
-};
-
-
-if (_hasGM) then {
-    _initialRebelEquipment append [
-        "gm_pm_blk",
-        "gm_8Rnd_9x18mm_B_pst_pm_blk",
-        "gm_photocamera_01_blk",
-        "gm_df7x40_blk",
-        "gm_ge_army_conat2",
-        "gm_gc_compass_f73",
-        "gm_watch_kosei_80",
-        "gm_handgrenade_conc_dm51","gm_handgrenade_conc_dm51a1","gm_handgrenade_frag_dm41","gm_handgrenade_frag_dm41a1","gm_handgrenade_frag_dm51","gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_m26",
-        "gm_handgrenade_frag_m26a1", "gm_handgrenade_frag_rgd5",
-        "gm_smokeshell_blk_gc","gm_smokeshell_blu_gc","gm_smokeshell_grn_gc","gm_smokeshell_org_gc","gm_smokeshell_red_gc","gm_smokeshell_wht_gc","gm_smokeshell_yel_gc","gm_smokeshell_grn_dm21",
-        "gm_smokeshell_red_dm23","gm_smokeshell_wht_dm25","gm_smokeshell_yel_dm26","gm_smokeshell_org_dm32",
-        ["gm_explosive_petn_charge", 10], ["gm_explosive_plnp_charge", 10],
-        "gm_boltcutter",
-        ["gm_rpg7_wud", 3], 
-        ["gm_1Rnd_40mm_heat_pg7v_rpg7", 9],
-        ["gm_1Rnd_40mm_heat_pg7vl_rpg7", 9]
-    ];
-};
-
-private _backpacks = [];
-if (_hasLawsOfWar) then {
-    _backpacks append [
-        "B_Messenger_Black_F", 
-        "B_Messenger_Coyote_F", 
-        "B_Messenger_Gray_F",
-        "B_Messenger_Olive_F"
-    ];
-} else {
-    _backpacks append ["B_FieldPack_blk","B_AssaultPack_blk"];
-};
-
-if (_hasArtOfWar) then {
-    _backpacks append [
-        "B_CivilianBackpack_01_Everyday_Astra_F",
-        "B_CivilianBackpack_01_Everyday_Black_F",
-        "B_CivilianBackpack_01_Everyday_Vrana_F",
-        "B_CivilianBackpack_01_Sport_Blue_F",
-        "B_CivilianBackpack_01_Sport_Green_F",
-        "B_CivilianBackpack_01_Sport_Red_F"
-    ];
-};
-
-if (_hasGM) then {
-    _backpacks append [
-        "gm_ge_army_backpack_medic_80_oli",
-        "gm_ge_backpack_satchel_80_blk",
-        "gm_ge_backpack_satchel_80_san"
-    ];
-};
-
-_initialRebelEquipment append _backpacks;
-
-if (_hasContact) then {
-    _initialRebelEquipment append [
-        "sgun_HunterShotgun_01_F",
-        "sgun_HunterShotgun_01_sawedoff_F",
-        "2Rnd_12Gauge_Pellets",
-        "2Rnd_12Gauge_Slug"
-    ];
-};
-
-if (_hasApex) then {
-    _initialRebelEquipment append [
-        "hgun_Pistol_01_F",
-        "10Rnd_9x21_Mag",
-        ["launch_RPG7_F", 3], 
-        ["RPG7_F", 9]
-    ];
-} else {
-    _initialRebelEquipment append [["launch_RPG32_F", 2], ["RPG32_F", 6]];
-};
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155","tf_anprc155_coyote"]};
@@ -484,330 +174,59 @@ private _rebUniforms = [
 
 private _dlcUniforms = [];
 
-if (_hasContact) then {
-    _dlcUniforms append [
-        "U_I_L_Uniform_01_camo_F",
-        "U_I_L_Uniform_01_tshirt_black_F",
-        "U_I_L_Uniform_01_tshirt_olive_F",
-        "U_I_L_Uniform_01_tshirt_skull_F",
-        "U_I_L_Uniform_01_tshirt_sport_F",
-        "U_I_L_Uniform_01_deserter_F",
-        "U_C_E_LooterJacket_01_F"
-    ];
-};
-if (_hasWs) then {
-    _dlcUniforms append [
-        "U_lxWS_ION_Casual1",
-        "U_lxWS_ION_Casual2",
-        "U_lxWS_ION_Casual3",
-        "U_lxWS_ION_Casual4",
-        "U_lxWS_ION_Casual5",
-        "U_lxWS_SFIA_deserter",
-        "U_lxWS_Djella_02_Brown",
-        "U_lxWS_Djella_02_Grey",
-/*         "U_lxWS_Djella_02_Green", */
-        "U_lxWS_Djella_02_Sand"
-    ];
-};
-if (_hasApex) then {
-    _dlcUniforms append [
-        "U_I_C_Soldier_Bandit_1_F",
-        "U_I_C_Soldier_Bandit_2_F",
-        "U_I_C_Soldier_Bandit_3_F",
-        "U_I_C_Soldier_Bandit_4_F",
-        "U_I_C_Soldier_Bandit_5_F",
-        "U_I_C_Soldier_Camo_F",
-        "U_I_C_Soldier_Para_1_F",
-        "U_I_C_Soldier_Para_2_F",
-        "U_I_C_Soldier_Para_3_F",
-        "U_I_C_Soldier_Para_4_F",
-        "U_I_C_Soldier_Para_5_F"
-    ];
-};
-if (_hasLawsOfWar) then {
-    _dlcUniforms append [
-        "U_C_ConstructionCoverall_Black_F",
-        "U_C_ConstructionCoverall_Blue_F",
-        "U_C_ConstructionCoverall_Red_F",
-        "U_C_ConstructionCoverall_Vrana_F",
-        "U_BG_Guerilla1_2_F",
-        "U_C_Paramedic_01_F"
-    ];
-};
-if (_hasArtOfWar) then {
-    _dlcUniforms append [
-        "U_C_ArtTShirt_01_v1_F",
-        "U_C_ArtTShirt_01_v2_F",
-        "U_C_ArtTShirt_01_v3_F",
-        "U_C_ArtTShirt_01_v4_F",
-        "U_C_ArtTShirt_01_v5_F",
-        "U_C_ArtTShirt_01_v6_F"
-    ];
-};
-
-if (_hasGM) then {
-    _dlcUniforms append [
-        "gm_gc_civ_uniform_man_04_80_gry",
-        "gm_gc_civ_uniform_man_04_80_blu",
-        "gm_ge_dbp_uniform_suit_80_blu",
-        "gm_gc_civ_uniform_man_03_80_gry",
-        "gm_gc_civ_uniform_man_03_80_grn",
-        "gm_gc_civ_uniform_man_03_80_blu",
-        "gm_pl_airforce_uniform_pilot_80_gry",
-        "gm_gc_airforce_uniform_pilot_80_blu",
-        "gm_gc_civ_uniform_pilot_80_blk",
-        "gm_xx_army_uniform_fighter_04_wdl",
-        "gm_xx_army_uniform_fighter_01_oli",
-        "gm_xx_army_uniform_fighter_01_alp",
-        "gm_xx_army_uniform_fighter_01_m84",
-        "gm_xx_army_uniform_fighter_02_wdl",
-        "gm_xx_army_uniform_fighter_02_oli",
-        "gm_xx_army_uniform_fighter_03_blk",
-        "gm_xx_army_uniform_fighter_03_brn",
-        "gm_xx_army_uniform_fighter_04_grn",
-        "gm_ge_uniform_pilot_commando_rolled_oli",
-        "gm_ge_uniform_pilot_commando_rolled_gry",
-        "gm_ge_uniform_pilot_commando_rolled_blk",
-        "gm_ge_uniform_pilot_commando_oli",
-        "gm_ge_uniform_pilot_commando_gry",
-        "gm_ge_uniform_pilot_commando_blk",
-        "gm_ge_ff_uniform_man_80_orn",
-        "gm_ge_army_uniform_soldier_parka_80_win",
-        "gm_dk_army_uniform_soldier_84_win",
-        "gm_ge_civ_uniform_blouse_80_gry",
-        "gm_gc_civ_uniform_man_02_80_brn",
-        "gm_gc_civ_uniform_man_01_80_blu",
-        "gm_gc_civ_uniform_man_01_80_blk"
-    ];
-};
-
-if (_hasCSLA) then {
-    _dlcUniforms append [
-        "FIA_uniwld11",
-        "FIA_uniwld",
-        "FIA_uniwld1",
-        "FIA_uniwld10",
-        "FIA_uniwld3",
-        "FIA_uniwld4",
-        "FIA_uniwld6",
-        "FIA_uniwld7",
-        "FIA_uniWld8",
-        "FIA_uniWld9"
-      ];
-};
-
-if (_hasRF) then {
-    _dlcUniforms append [
-        "U_IG_Guerrilla_RF",
-        "U_IG_leader_RF",
-        "U_C_PilotJacket_brown_RF",
-        "U_C_PilotJacket_open_brown_RF",
-        "U_C_PilotJacket_lbrown_RF",
-        "U_C_PilotJacket_open_lbrown_RF",
-        "U_C_PilotJacket_black_RF",
-        "U_C_PilotJacket_open_black_RF",
-        "U_C_FirefighterFatigues_RF",
-        "U_C_FirefighterFatigues_RolledUp_RF",
-        "U_C_HeliPilotCoveralls_Yellow_RF",
-        "U_C_HeliPilotCoveralls_Green_RF",
-        "U_C_HeliPilotCoveralls_Rescue_RF",
-        "U_C_HeliPilotCoveralls_Blue_RF",
-        "U_C_HeliPilotCoveralls_Black_RF"
-    ];
-};
 ["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
 
+"TanoanMen" call _fnc_saveNames;
+
 private _headgear = [
-    "H_Booniehat_khk_hs",
-    "H_Booniehat_khk",
-    "H_Booniehat_tan",
-    "H_Booniehat_oli",    
-    "H_Bandanna_gry",
-    "H_Bandanna_blu",
-    "H_Bandanna_cbr",    
-    "H_Bandanna_khk_hs",
-    "H_Bandanna_khk",
-    "H_Bandanna_sgg",
-    "H_Bandanna_sand",
-    "H_Bandanna_surfer",
-    "H_Bandanna_surfer_blk",
-    "H_Bandanna_surfer_grn",
-    "H_Bandanna_camo",
-    "H_Watchcap_blk",
-    "H_Watchcap_cbr",
-    "H_Watchcap_camo",
-    "H_Watchcap_khk",
-    "H_Beret_blk",
-    "H_Booniehat_khk_hs",
-    "H_Booniehat_khk",
-    "H_Booniehat_oli",
-    "H_Booniehat_tan",
-    "H_Cap_oli",
-    "H_Cap_surfer",
-    "H_Cap_tan",
-    "H_Cap_oli_hs",
-    "H_Cap_blk",
-    "H_Cap_headphones",
-    "H_Hat_blue",
-    "H_Hat_brown",
-    "H_Hat_camo",
-    "H_Hat_checker",
-    "H_Hat_grey",
-    "H_Hat_tan",
-    "H_Cap_marshal",
-    "H_MilCap_blue",
-    "H_MilCap_gry",
-    "H_ShemagOpen_tan",
-    "H_ShemagOpen_khk",
-    "H_ShemagOpen_tan",
-    "H_Shemag_olive_hs",
-    "H_StrawHat",
-    "H_StrawHat_dark"
+  "H_Booniehat_khk_hs",
+  "H_Booniehat_khk",
+  "H_Booniehat_tan",
+  "H_Booniehat_oli",    
+  "H_Bandanna_gry",
+  "H_Bandanna_blu",
+  "H_Bandanna_cbr",    
+  "H_Bandanna_khk_hs",
+  "H_Bandanna_khk",
+  "H_Bandanna_sgg",
+  "H_Bandanna_sand",
+  "H_Bandanna_surfer",
+  "H_Bandanna_surfer_blk",
+  "H_Bandanna_surfer_grn",
+  "H_Bandanna_camo",
+  "H_Watchcap_blk",
+  "H_Watchcap_cbr",
+  "H_Watchcap_camo",
+  "H_Watchcap_khk",
+  "H_Beret_blk",
+  "H_Booniehat_khk_hs",
+  "H_Booniehat_khk",
+  "H_Booniehat_oli",
+  "H_Booniehat_tan",
+  "H_Cap_oli",
+  "H_Cap_surfer",
+  "H_Cap_tan",
+  "H_Cap_oli_hs",
+  "H_Cap_blk",
+  "H_Cap_headphones",
+  "H_Hat_blue",
+  "H_Hat_brown",
+  "H_Hat_camo",
+  "H_Hat_checker",
+  "H_Hat_grey",
+  "H_Hat_tan",
+  "H_Cap_marshal",
+  "H_MilCap_blue",
+  "H_MilCap_gry",
+  "H_ShemagOpen_tan",
+  "H_ShemagOpen_khk",
+  "H_ShemagOpen_tan",
+  "H_Shemag_olive_hs",
+  "H_StrawHat",
+  "H_StrawHat_dark"
 ];
 
 private _dlcheadgear = [];
-
-if (_hasContact) then {
-    _dlcheadgear append [
-        "H_Booniehat_mgrn",
-        "H_Booniehat_taiga",
-        "H_Tank_eaf_F",
-        "H_MilCap_grn",
-        "H_MilCap_taiga",
-        "H_Hat_Tinfoil_F"
-    ];
-};
-if (_hasWs) then {
-    _dlcheadgear append [
-        "lxWS_H_Bandanna_blk_hs",
-        "H_Cap_headphones_ion_lxws",
-        "lxWS_H_CapB_rvs_blk_ION",
-        "lxWS_H_Headset"
-    ];
-};
-if (_hasApex) then {
-    _dlcheadgear append [
-        "H_Helmet_Skate"
-    ];
-};
-if (_hasLawsOfWar) then {
-    _dlcheadgear append [
-        "H_EarProtectors_black_F",
-        "H_EarProtectors_orange_F",
-        "H_EarProtectors_red_F",
-        "H_EarProtectors_white_F",
-        "H_EarProtectors_yellow_F",
-        "U_C_Paramedic_01_F",///
-        "H_Construction_basic_black_F",
-        "H_Construction_basic_orange_F",
-        "H_Construction_basic_red_F",
-        "H_Construction_basic_vrana_F",
-        "H_Construction_basic_white_F",
-        "H_Construction_basic_yellow_F",///
-        "H_Construction_earprot_black_F",
-        "H_Construction_earprot_orange_F",
-        "H_Construction_earprot_red_F",
-        "H_Construction_earprot_vrana_F",
-        "H_Construction_earprot_white_F",
-        "H_Construction_earprot_yellow_F",///
-        "H_Construction_headset_black_F",
-        "H_Construction_headset_orange_F",
-        "H_Construction_headset_red_F",
-        "H_Construction_headset_vrana_F",
-        "H_Construction_headset_white_F",
-        "H_Construction_headset_yellow_F",///
-        "H_HeadBandage_clean_F",
-        "H_HeadBandage_stained_F",
-        "H_HeadBandage_bloody_F",
-        "H_HeadSet_black_F",
-        "H_HeadSet_orange_F",
-        "H_HeadSet_red_F",
-        "H_HeadSet_white_F",
-        "H_HeadSet_yellow_F",
-        "H_Hat_Safari_olive_F",
-        "H_Hat_Safari_sand_F",
-        "H_WirelessEarpiece_F"
-    ];
-};
-
-if (_hasGM) then {
-    _dlcheadgear append [
-        "gm_ge_headgear_beret_blk",
-        "gm_ge_headgear_beret_un",
-        "gm_ge_headgear_beret_mrb",
-        "gm_ge_headgear_hat_boonie_trp",
-        "gm_ge_headgear_hat_boonie_flk",
-        "gm_dk_headgear_hat_boonie_m84",
-        "gm_ge_headgear_hat_boonie_oli",
-        "gm_ge_headgear_hat_boonie_wdl",
-        "gm_ge_headgear_crewhat_80_blk",
-        "gm_gc_army_headgear_crewhat_80_blk",
-        "gm_ge_headgear_headset_crew_oli",
-        "gm_ge_headgear_beret_crew_blk",
-        "gm_gc_headgear_fjh_model4_oli",
-        "gm_gc_headgear_fjh_model4_wht",
-        "gm_xx_headgear_headwrap_01_trp",
-        "gm_xx_headgear_headwrap_01_flk",
-        "gm_xx_headgear_headwrap_01_blk",
-        "gm_xx_headgear_headwrap_01_blu",
-        "gm_xx_headgear_headwrap_01_smp",
-        "gm_xx_headgear_headwrap_crew_01_trp",
-        "gm_xx_headgear_headwrap_crew_01_flk",
-        "gm_xx_headgear_headwrap_crew_01_blk",
-        "gm_xx_headgear_headwrap_crew_01_smp",
-        "gm_xx_headgear_headwrap_crew_01_grn",
-        "gm_xx_headgear_headwrap_crew_01_m84",
-        "gm_xx_headgear_headwrap_crew_01_oli",
-        "gm_xx_headgear_headwrap_01_frog",
-        "gm_xx_headgear_headwrap_01_grn",
-        "gm_xx_headgear_headwrap_01_m84",
-        "gm_xx_headgear_headwrap_01_moro",
-        "gm_xx_headgear_headwrap_01_oli",
-        "gm_xx_headgear_headwrap_01_str",
-        "gm_xx_headgear_headwrap_01_wht",
-        "gm_xx_headgear_headwrap_01_dino",
-        "gm_ge_headgear_winterhat_80_oli",
-        "gm_ge_headgear_hat_beanie_blk",
-        "gm_ge_headgear_hat_beanie_crew_blk"
-    ];
-};
-
-if (_hasCSLA) then {
-    _dlcheadgear append [
-        "AFMC_booniehatLizard",
-        "US85_hat",
-        "FIA_hat85Gn",
-        "FIA_hat85bGn",
-        "FIA_hat85Mlok",
-        "FIA_hat85bMlok",
-        "FIA_Hairs_Brown",
-        "FIA_capBk",
-        "FIA_capGn",
-        "FIA_cap",
-        "FIA_capMlok",
-        "CSLA_RadiovkaBk",
-        "CSLA_RadiovkaGy",
-        "FIA_Radiovka",
-        "FIA_Usanka",
-        "FIA_Hairs_Silver",
-        "CSLA_BudajkaBk",
-        "CSLA_BudajkaGy",
-        "FIA_Budajka"
-    ];
-};
-
-if (_hasRF) then {
-    _dlcheadgear append [
-        "H_Helmet_HardHat_White_RF",
-        "H_Helmet_HardHat_Yellow_RF",
-        "H_Helmet_HardHat_Green_RF",
-        "H_Helmet_HardHat_Red_RF",
-        "H_Helmet_HardHat_Orange_RF",
-        "H_Helmet_HardHat_Blue_RF",
-        "H_Helmet_HardHat_Black_RF",
-        "H_Cap_marshal_blue_RF"
-    ];
-};
 
 ["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
 
@@ -815,9 +234,16 @@ if (_hasRF) then {
 ///  Identities   ///
 /////////////////////
 
-["faces", ["TanoanHead_A3_01","TanoanHead_A3_02","TanoanHead_A3_03","TanoanHead_A3_04","TanoanHead_A3_05","TanoanHead_A3_06","TanoanHead_A3_07","TanoanHead_A3_08"]] call _fnc_saveToTemplate;
-["voices", ["Male01ENGFRE","Male02ENGFRE"]] call _fnc_saveToTemplate;
+private _faces = ["TanoanHead_A3_01","TanoanHead_A3_02","TanoanHead_A3_03","TanoanHead_A3_04","TanoanHead_A3_05","TanoanHead_A3_06","TanoanHead_A3_07","TanoanHead_A3_08"];
+private _voices = ["Male01ENGFRE","Male02ENGFRE","Male03FRE","Male02FRE","Male01FRE"];
+["voices", _voices] call _fnc_saveToTemplate;
+["faces", _faces] call _fnc_saveToTemplate;
 
+if (_hasSPE) then {
+  _voices append [
+    #include "..\DLC_content\voices\SPE_french.sqf"
+  ];
+};
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
@@ -826,13 +252,7 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
-
-if (_hasWs) then {
-    _loadoutData set ["binoculars", ["Binocular","Camera_lxWS"]];
-} else {
-    _loadoutData set ["binoculars", ["Binocular"]];
-};
-
+_loadoutData set ["binoculars", ["Binocular"]];
 _loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
 
 _loadoutData set ["glasses", ["G_Lady_Blue","G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
@@ -840,72 +260,55 @@ _loadoutData set ["goggles", ["G_Lowprofile"]];
 _loadoutData set ["facemask", ["G_Bandanna_blk", "G_Bandanna_oli", "G_Bandanna_khk", "G_Bandanna_tan", "G_Bandanna_beast", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_aviator"]];
 _loadoutData set ["balaclavas", ["G_Balaclava_blk", "G_Balaclava_BlueStrips", "G_Balaclava_Flecktarn", "G_Balaclava_Halloween_01", "G_Balaclava_lowprofile", "G_Balaclava_oli", "G_Balaclava_Flames1", "G_Balaclava_Scarecrow_01", "G_Balaclava_Skull1", "G_Balaclava_Tropentarn"]];
 _loadoutData set ["argoFacemask", ["G_Bandanna_BlueFlame1", "G_Bandanna_BlueFlame2", "G_Bandanna_CandySkull", "G_Bandanna_OrangeFlame1", "G_Bandanna_RedFlame1", "G_Bandanna_Skull1", "G_Bandanna_Syndikat1", "G_Bandanna_Syndikat2","G_Bandanna_Skull2", "G_Bandanna_Vampire_01"]];
-
+_loadoutData set ["facewearWS", []];
+_loadoutData set ["facewearContact", []];
+_loadoutData set ["facewearLawsOfWar", []];
+_loadoutData set ["facewearGM", []];
+_loadoutData set ["facewearCLSA", []];
+_loadoutData set ["facewearSOG", []];
+_loadoutData set ["facewearSPE", []];
 if (_hasWs) then {
-    _loadoutData set ["facewearWS", ["G_Balaclava_blk_lxWS", "G_Balaclava_oli_lxWS", "G_Balaclava_snd_lxWS", "G_Combat_lxWS", "G_Headset_lxWS"]];
-} else {
-    _loadoutData set ["facewearWS", []];
+  #include "..\DLC_content\gear\WS\Vanilla_FIA.sqf"
 };
 
 if (_hasRF) then {
-    (_loadoutData get "facemask") pushBack "G_Bandanna_yellow_RF";
-    (_loadoutData get "glasses") append ["G_Glasses_black_RF","G_Glasses_white_RF"];
+  #include "..\DLC_content\gear\RF\Vanilla_FIA.sqf"
 };
 
 if (_hasContact) then {
-    _loadoutData set ["facewearContact", ["G_Blindfold_01_black_F", "G_Blindfold_01_white_F", "G_RegulatorMask_F"]];
-} else {
-    _loadoutData set ["facewearContact", []];
+  #include "..\DLC_content\gear\Contact\Vanilla_FIA.sqf"
+};
+
+if (_hasApex) then {
+  #include "..\DLC_content\gear\Apex\Vanilla_FIA.sqf"
 };
 
 if (_hasLawsOfWar) then {
-    _loadoutData set ["facewearLawsOfWar", ["G_Respirator_blue_F", "G_Respirator_white_F", "G_Respirator_yellow_F", "G_EyeProtectors_F", "G_EyeProtectors_Earpiece_F", "G_WirelessEarpiece_F"]];
-} else {
-    _loadoutData set ["facewearLawsOfWar", []];
+  #include "..\DLC_content\gear\Lawsofwar\Vanilla_FIA.sqf"
 };
 
 if (_hasGM) then {
-    _loadoutData set ["facewearGM", [
-        "gm_ge_facewear_acidgoggles",
-        "gm_ge_facewear_dustglasses",
-        "gm_gc_army_facewear_dustglasses",
-        "gm_ge_facewear_m65",
-        "gm_gc_army_facewear_schm41m",
-        "gm_ge_facewear_glacierglasses",
-        "gm_xx_facewear_scarf_01_trp",
-        "gm_xx_facewear_scarf_01_flk",
-        "gm_xx_facewear_scarf_01_blk",
-        "gm_xx_facewear_scarf_01_blu",
-        "gm_xx_facewear_scarf_01_pt1",
-        "gm_xx_facewear_scarf_01_pt3",
-        "gm_xx_facewear_scarf_01_frog",
-        "gm_xx_facewear_scarf_01_grn",
-        "gm_xx_facewear_scarf_01_gry",
-        "gm_xx_facewear_scarf_01_m84",
-        "gm_xx_facewear_scarf_02_blk",
-        "gm_xx_facewear_scarf_01_grn",
-        "gm_xx_facewear_scarf_01_oli",
-        "gm_xx_facewear_scarf_01_wht",
-        "gm_xx_facewear_scarf_01_moro",
-        "gm_xx_facewear_scarf_01_oli",
-        "gm_xx_facewear_scarf_01_red",
-        "gm_xx_facewear_scarf_01_pt2",
-        "gm_xx_facewear_scarf_01_str",
-        "gm_xx_facewear_scarf_01_wht",
-        "gm_ge_facewear_stormhood_blk",
-        "gm_ge_facewear_stormhood_dustglasses_blk",
-        "gm_ge_facewear_stormhood_brd",
-        "gm_ge_facewear_sunglasses"
-        ]
-    ];
-} else {
-    _loadoutData set ["facewearGM", []];
+  #include "..\DLC_content\gear\GM\Vanilla_FIA.sqf"
 };
 
-if (_hasLawsOfWar) then {
-    _loadoutData set ["facewearCLSA", ["CSLA_glsPlscSpring"]];
-} else {
-    _loadoutData set ["facewearCLSA", []];
+if (_hasCSLA) then {
+  #include "..\DLC_content\gear\CSLA\Vanilla_FIA.sqf"
+};
+
+if (_hasArtOfWar) then {
+  #include "..\DLC_content\gear\Artofwar\Vanilla_FIA.sqf"
+};
+
+if (_hasSOG) then {
+  #include "..\DLC_content\gear\SOG\Vanilla_FIA.sqf"
+};
+
+if (_hasSPE) then {
+  #include "..\DLC_content\gear\SPE\Vanilla_FIA.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\gear\Vanilla_FIA.sqf"
 };
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
@@ -919,7 +322,7 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
-    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2]] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2,"facewearSOG", 0.3]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
     ["items_miscEssentials"] call _fnc_addItemSet;
@@ -932,7 +335,7 @@ private _squadLeaderTemplate = {
 
 private _riflemanTemplate = {
     ["uniforms"] call _fnc_setUniform;
-    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2]] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2,"facewearSOG", 0.3]] call _fnc_setFacewear;
     
     ["items_medical_standard"] call _fnc_addItemSet;
     ["items_miscEssentials"] call _fnc_addItemSet;

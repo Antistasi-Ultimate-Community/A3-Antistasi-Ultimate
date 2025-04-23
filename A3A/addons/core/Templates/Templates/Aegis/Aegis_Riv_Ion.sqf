@@ -35,7 +35,7 @@ private _hasMarksman = "mark" in A3A_enabledDLC;
 ["vehiclesRivalsCars", ["B_ION_Offroad_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", ["B_ION_Truck_02_covered_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", ["B_ION_APC_Wheeled_01_command_lxWS", "B_ION_APC_Wheeled_02_hmg_lxWS"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", []] call _fnc_saveToTemplate;
+["vehiclesRivalsTanks", ["Aegis_B_ION_UGV_01_rcws_F"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["a3a_ION_Heli_Light_02_dynamicLoadout_lxWS"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["ION_UAV_01_lxWS"]] call _fnc_saveToTemplate;			
 

@@ -25,6 +25,7 @@
 ["vehiclesCivTruck", ["LIB_Zis5v"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", []] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["LIB_LCA"]] call _fnc_saveToTemplate;
+["vehiclesCivSupply", ["LIB_OpelBlitz_Tent_Y_Camo"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["LIB_M1919_M2"]] call _fnc_saveToTemplate;
 ["staticAT", ["csa38_pak35_FR"]] call _fnc_saveToTemplate;
@@ -41,29 +42,6 @@
 
 #include "CSA_Vehicle_Attributes.sqf"
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["LIB_Flakvierling_38", 3000, "STATICAT", {tierWar > 3}],
-    ["LIB_leFH18", 8000, "STATICMG", {tierWar > 3}],
-
-    ["LIB_Kfz1_Hood_camo", 2050, "CAR", {true}],
-
-    ["LIB_SdKfz_7", 6000, "APC", {true}],
-	
-	["CSA38_TCvz33", 12000, "TANK", {true}],
-	["CSA38_ltvz35", 25000, "TANK", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-	["CSA38_ltvz38", 28000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["LIB_PzKpfwVI_B", 40000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["LIB_SdKfz_7_AA", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["LIB_P39", 30000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["LIB_Pe2", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -74,7 +52,7 @@ private _initialRebelEquipment = [
     "csa38_czvz22","CSA38_9mm_8xBrowning",
     ["LIB_Faustpatrone", 50],
     ["LIB_Ladung_Small_MINE_mag", 10], ["LIB_Ladung_Big_MINE_mag", 3],
-    "lib_shg24",
+    "LIB_Shg24",
     "V_csa38_equip_CZ01","V_csa38_equip_CZ02","V_csa38_equip_CZ12",
     "csa38_GeMedicbag", "csa38_pouzdrovz23",
     "CSA38_Binocular", "csa38_Binocular2"
@@ -116,7 +94,7 @@ private _dlcUniforms = [];
 
 ["faces", ["LIB_aleksei_IF","LIB_boyartsev_IF","LIB_bykov_IF",
 "LIB_Otto_IF","LIB_Volker_IF", "LIB_Walter_IF", "LIB_Wolf_IF"]] call _fnc_saveToTemplate;
-["voices", ["Male01PL", "Male02PL", "Male03PL"]] call _fnc_saveToTemplate;
+["voices", ["Male01CZ", "Male02CZ", "Male03CZ", "Male04CZ", "Male05CZ"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //

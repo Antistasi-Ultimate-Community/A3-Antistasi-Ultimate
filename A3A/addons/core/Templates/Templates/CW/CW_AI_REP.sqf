@@ -13,6 +13,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["3AS_Rho_Crate_REP_Transport","3AS_EscapePod"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -39,8 +41,12 @@
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
 ["vehiclesPlanesCAS", ["3AS_BTLB_Bomber"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["3AS_Z95_Republic","3as_Vwing_base"]] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", ["3AS_ARC_170_Red"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["3AS_Z95_Republic","3as_Vwing_base", "3AS_Delta7_F"]] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeAA", ["3AS_ARC_170_Red","3as_V19_base"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["3AS_Republic_Transport_01"]] call _fnc_saveToTemplate;
+
+["vehiclesPlanesGunship", ["3AS_LAAT_Mk1","lsd_heli_laati"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["3AS_Patrol_LAAT_Republic"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["3AS_LAAT_Mk2", "3AS_LAAT_Mk2", "3AS_LAAT_Mk2", "3AS_Nu_REP_F","3AS_Rho_REP_F"]] call _fnc_saveToTemplate;
@@ -71,7 +77,7 @@
 ["staticHowitzers", []] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "lsd_cis_radarDish"] call _fnc_saveToTemplate;
-["vehicleSam", "3as_XX9"] call _fnc_saveToTemplate;
+["vehicleSam", "3AS_Keeradak_F"] call _fnc_saveToTemplate;
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;
 
@@ -216,25 +222,26 @@ _sfLoadoutData set ["binoculars", ["SWLB_clone_commander_binocular"]];
 
 //SF Weapons
 _sfLoadoutData set ["rifles", [
-["SWLW_DC17M", "swlw_attachment_dc17m_blaster", "", "", ["SWLW_DC17M_Blaster_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag"], [], ""]
 ]];
 _sfLoadoutData set ["carbines", [
-["SWLW_DC17M", "swlw_attachment_dc17m_blaster", "", "", ["SWLW_DC17M_Blaster_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag","3AS_100Rnd_EC40_mag","3AS_100Rnd_EC40_mag","3AS_AntiArmour_mag"], [], ""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-["SWLW_DC17M", "swlw_attachment_dc17m_at", "", "", ["SWLW_DC17M_Blaster_Mag"], ["SWLW_DC17M_AT_Mag"], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag","3AS_AntiArmour_mag"], [], ""]
 ]];
 _sfLoadoutData set ["SMGs", [
-["SWLW_DC17M", "swlw_attachment_dc17m_blaster", "", "", ["SWLW_DC17M_Blaster_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_100Rnd_EC40_mag"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
+["SWLW_Z6", "", "", "", ["SWLW_Z6_mag"], [], ""],
 ["SWLW_Z6", "", "", "", ["SWLW_Z6_mag"], [], ""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-["SWLW_DC17M", "swlw_attachment_dc17m_sniper", "", "swlw_attachment_scope_dc17m_sniper", ["SWLW_DC17M_Sniper_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_5Rnd_EC80_mag","3AS_5Rnd_EC80_mag","3AS_5Rnd_EC80_mag","3AS_100Rnd_EC40_mag"], [], ""]
 ]];
 _sfLoadoutData set ["sniperRifles", [
-["SWLW_DC17M", "swlw_attachment_dc17m_sniper", "", "swlw_attachment_scope_dc17m_sniper", ["SWLW_DC17M_Sniper_Mag"], [], ""]
+["3AS_DC17M_F", "", "", "", ["3AS_5Rnd_EC80_mag"], [], ""]
 ]];
 _sfLoadoutData set ["sidearms", [
 ["SWLW_DC15SA", "", "", "", ["SWLW_DC15SA_Mag"], [], ""]

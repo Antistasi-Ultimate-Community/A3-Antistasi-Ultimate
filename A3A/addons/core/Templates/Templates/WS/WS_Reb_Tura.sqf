@@ -3,6 +3,7 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasApex = "expansion" in A3A_enabledDLC;
 private _hasContact = "enoch" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ///////////////////////////
 //   Rebel Information   //
@@ -70,23 +71,12 @@ if (_hasRF) then {
 //       Antistasi Plus Stuff       //
 //////////////////////////////////////
 
-//classname, price, type, availability condition
-["blackMarketStock", [
-    ["I_UAV_02_lxWS", 3500, "UAV", {tierWar > 2}], 
-    ["I_G_UAV_02_IED_lxWS", 4500, "UAV", {tierWar > 3}],
-    ["I_G_Offroad_01_armor_base_lxWS", 4500, "UNARMEDCAR", {true}],
-    ["I_G_Offroad_01_armor_armed_lxWS", 4500, "ARMEDCAR", {true}],
-    ["I_G_Offroad_01_armor_AT_lxWS", 4500, "ARMEDCAR", {true}],
-    ["I_UAV_01_F", 2000, "UAV", {true}],
-    ["I_LT_01_AA_F", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["I_APC_Wheeled_03_cannon_F", 15000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["B_Heli_Light_01_dynamicLoadout_F", 25000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-]] call _fnc_saveToTemplate;
-
 ["variants", [
     ["I_APC_Wheeled_03_cannon_F", ["Guerilla_01",1]],
     ["I_LT_01_AA_F", ["Indep_Olive",1]]
 ]] call _fnc_saveToTemplate;
+
+#include "WS_Reb_Vehicle_Attributes.sqf"
 
 ///////////////////////////
 //  Rebel Starting Gear  //

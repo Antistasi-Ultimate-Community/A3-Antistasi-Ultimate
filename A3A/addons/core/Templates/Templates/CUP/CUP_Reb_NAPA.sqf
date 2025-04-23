@@ -43,31 +43,6 @@
 
 #include "CUP_Reb_Vehicle_Attributes.sqf"
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["CUP_B_TOW_TriPod_USMC", 3000, "STATICAT", {tierWar > 3}],
-    ["CUP_B_AGS_CDF", 3000, "STATICMG", {tierWar > 3}],
-
-    ["CUP_B_BRDM2_HQ_CZ", 2050, "CAR", {true}],
-    ["CUP_B_BRDM2_CDF", 2500, "CAR", {true}],
-
-    ["CUP_B_BTR80_FIA", 6000, "APC", {true}],
-    ["CUP_B_BMP2_CDF", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["CUP_B_T72_CDF", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["CUP_B_ZSU23_CDF", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["CUP_B_CESSNA_T41_ARMED_USA", 10000, "PLANE", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["CUP_B_L39_CZ", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["CUP_B_Mi17_CDF", 15000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["CUP_O_Mi8_RU", 25000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -163,6 +138,7 @@ private _rebUniformsAI = [
 "WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_19","WhiteHead_20",
 "WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["CUP_D_Male01_CZ_ACR","CUP_D_Male02_CZ_ACR","CUP_D_Male03_CZ_ACR","CUP_D_Male04_CZ_ACR","CUP_D_Male05_CZ_ACR"]] call _fnc_saveToTemplate;
+"CzechMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

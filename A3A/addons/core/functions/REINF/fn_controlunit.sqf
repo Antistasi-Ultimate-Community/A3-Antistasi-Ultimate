@@ -48,7 +48,7 @@ private _eh2 = _unit addEventHandler ["HandleDamage", {
 selectPlayer _unit;
 
 //otherwise unit will lose his identity
-[_unit, _face, _speaker] call A3A_fnc_setIdentity;
+[_unit, createHashMapFromArray [["face", _face], ["speaker", _speaker]]] call A3A_fnc_setIdentity;
 
 if (fatigueEnabled isEqualTo false) then {
 	_unit enableFatigue false;
@@ -58,9 +58,8 @@ if (staminaEnabled isEqualTo false) then {
 	_unit enableStamina false;
 };
 
-if (swayEnabled isEqualTo false) then {
-	_unit setCustomAimCoef 0;
-};
+private _newWeaponSway = swayEnabled / 100;
+_unit setCustomAimCoef _newWeaponSway;
 
 private _timeX = aiControlTime;
 

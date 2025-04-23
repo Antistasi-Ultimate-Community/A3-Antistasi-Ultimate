@@ -7,7 +7,7 @@
 author = $STR_antistasi_credits_generic_author_text;
 Keys[] = {"A3-Antistasi-is-not-available-in-single-player"};
 KeysLimit = 2;  // Even if player tampers with his unlocked keys, this will never become true.
-missionGroup = "AntistasiPlus";
+missionGroup = "AntistasiUltimate";
 
 #ifndef CUSTOM_A3A_CLASS
 	class A3A {
@@ -30,7 +30,7 @@ missionGroup = "AntistasiPlus";
 
 #ifndef LOAD_SCREEN_IMAGE
 	#define LOAD_SCREEN_IMAGE "\x\A3A\addons\maps\images_alt_co.jpg"
-	#define OVERVIEW_IMAGE "\x\A3A\addons\maps\images_alt_co.jpg"
+	#define OVERVIEW_IMAGE "\x\A3A\addons\maps\images_co.jpg"
 #endif
 
 #include "debug.hpp"

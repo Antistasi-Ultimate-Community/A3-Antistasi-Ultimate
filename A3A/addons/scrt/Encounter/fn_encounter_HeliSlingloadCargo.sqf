@@ -88,14 +88,18 @@ private _attempts = 15;
 
 if (_HeliClass == "O_Heli_Transport_04_F") then {
 	_HeliClass = "O_Heli_Transport_04_F";
-	_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
-	(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _csatPods);
+	/* _lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
+	(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (selectRandom _csatPods)); */
 	while {_attempts != 0} do {
+		private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F" , "Land_Pod_Heli_Transport_04_bench_F" , "Land_Pod_Heli_Transport_04_medevac_F" , "Land_Pod_Heli_Transport_04_repair_F", "Land_Pod_Heli_Transport_04_fuel_F" , "Land_Pod_Heli_Transport_04_ammo_F" , "Land_Pod_Heli_Transport_04_box_F"];
 		_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + 
 		(_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _csatPods);
-		_lootCrate = /* _lootcrateType createVehicle _actualspawnPosition */[_lootcrateType, _actualspawnPosition, [], 30, "NONE"];
+		_lootCrate = _lootcrateType createVehicle _actualspawnPosition;
 		deleteVehicle _lootCrate;
-		if (_heliVehicle canSlingLoad _lootCrate) exitwith {};
+		if (_heliVehicle canSlingLoad _lootCrate) exitwith {
+			deleteVehicle _lootCrate;
+		};
+		deleteVehicle _lootCrate;
 		_attempts = _attempts - 1;
 		sleep 0.05;
 	};
@@ -146,14 +150,18 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 	};
 } else {
 	//if (_HeliClass typeOf "Heli_Transport_03_base_F") then {
-	_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + 
-	(_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _regPods); ///light armored vehicles + light tanks + pods
+	/* _lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + 
+	(_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (selectRandom _regPods)); ///light armored vehicles + light tanks + pods */
 	while {_attempts != 0 } do {
+		private _regPods = ["B_Slingload_01_Cargo_F", "B_Slingload_01_Ammo_F", "B_Slingload_01_Medevac_F", "B_Slingload_01_Repair_F", "B_Slingload_01_Fuel_F"];
 		_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
 		(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _regPods);
 		_lootCrate = _lootcrateType createVehicle _actualspawnPosition;
 		deleteVehicle _lootCrate;
-		if (_heliVehicle canSlingLoad _lootCrate) exitwith {};
+		if (_heliVehicle canSlingLoad _lootCrate) exitwith {
+			deleteVehicle _lootCrate;
+		};
+		deleteVehicle _lootCrate;
 		_attempts = _attempts - 1;
 		sleep 0.08;
 	};
@@ -218,7 +226,8 @@ _vehicles pushBack _heliVehicle;
 if !(typeOf _lootCrate in _regPods || typeOf _lootCrate in _csatPods || typeOf _lootCrate == _ammoBoxType) then {
 	private _wplootbox = group driver(_lootCrate) addWaypoint [_outpostPosition, 10]; //wplootbox lol
 	_wplootbox setWaypointSpeed "NORMAL";
-	_wplootbox setWaypointType "GETOUT";
+	//_wplootbox setWaypointType "GETOUT";
+	_wplootbox setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
 	_wplootbox setWaypointBehaviour "CARELESS";
 };
 
@@ -230,7 +239,9 @@ _wp setWaypointBehaviour "CARELESS";
 
 private _wp2 = _heliGroup addWaypoint [_actualspawnPosition, 0];
 _wp2 setWaypointSpeed "NORMAL";
-_wp2 setWaypointType "GETOUT";
+//_wp2 setWaypointType "GETOUT";
+_wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
+
 _wp2 setWaypointBehaviour "CARELESS";
 sleep 4;
 //private _timeOut = time + 1800;
@@ -242,7 +253,7 @@ sleep 5;
 detach _smoke;
 _lootCrate allowDamage true;
 {[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
-
+sleep 360;
 if (_lootCrate distance2D _wpDropPos < 50) then {
 	_vehicles pushBack _lootCrate;
 	{[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
@@ -251,8 +262,8 @@ if (_lootCrate distance2D _wpDropPos < 50) then {
 	publicVariableServer "isEventInProgress";
 	Info("Helicopter sligload clean up complete.");
 } else {
-	//{[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
-	//{[_x] spawn A3A_fnc_groupDespawner} forEach _groups; 
+	{[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
+	{[_x] spawn A3A_fnc_groupDespawner} forEach _groups; 
 	//assuming heli and it's payload didn't make it to destination
 	isEventInProgress = false;
 	publicVariableServer "isEventInProgress";

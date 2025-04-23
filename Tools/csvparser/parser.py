@@ -3,8 +3,6 @@ import os
 
 import parse_operations
 
-# parse_operations.parse_file("BlackMarketVehicles - APC", "APC")
-
 prefix = ""
 
 directory = os.getcwd()

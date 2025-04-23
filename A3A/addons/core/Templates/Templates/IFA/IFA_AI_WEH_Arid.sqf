@@ -21,7 +21,7 @@
 
 ["vehiclesBasic", ["LIB_DAK_Kfz1"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["LIB_DAK_Kfz1","LIB_DAK_Kfz1_Hood"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed",["LIB_DAK_Kfz1_MG42"]] call _fnc_saveToTemplate;
+private _vehiclesLightArmed = ["LIB_DAK_Kfz1_MG42"]; 
 ["vehiclesTrucks", ["LIB_DAK_OpelBlitz_Open","LIB_DAK_OpelBlitz_Tent","LIB_DAK_SdKfz_7"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["LIB_DAK_OpelBlitz_Open","LIB_DAK_SdKfz_7"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["LIB_DAK_OpelBlitz_Ammo", "LIB_DAK_SdKfz_7_Ammo"]] call _fnc_saveToTemplate;
@@ -36,13 +36,37 @@
 ["vehiclesAirborne", ["LIB_DAK_SdKfz251"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["LIB_DAK_PzKpfwIV_H"]] call _fnc_saveToTemplate;
 
+if (isClass (configFile >> "CfgPatches" >> "FA_WW2_Armored_Cars")) then {
+    _vehiclesLightArmed append ["FA_Sdkfz234_4"]; 
+};
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+
 ["vehiclesTransportBoats", ["LIB_LCA"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["LIB_DAK_Ju87"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["LIB_DAK_FW190F8"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["A3U_LIB_C47_German"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["LIB_DAK_Ju87"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["LIB_DAK_FW190F8"];
+private _vehiclesPlanesTransport = ["A3U_LIB_C47_German"];
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_bf109g"];
+	_vehiclesPlanesLargeCAS append ["sab_fl_ju88a","sab_fl_ju86"];
+	_vehiclesPlanesAA append ["sab_fl_bf109e","sab_fl_bf109f","sab_fl_bf109g","sab_fl_bf109k"];
+	_vehiclesPlanesTransport = ["sab_fl_ju52"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_bf110"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_he111","sab_sw_he177"];
+	_vehiclesPlanesAA append ["sab_sw_me262","sab_sw_bf110"];
+};
+
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;

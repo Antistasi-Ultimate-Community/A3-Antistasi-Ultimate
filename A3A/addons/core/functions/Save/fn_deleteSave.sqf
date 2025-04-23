@@ -45,7 +45,7 @@ private _savedPlayers = _namespace getVariable ["savedPlayers" + _postfix, []];
 	"supportPoints",
     "constructionsX",
     "watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "hmgpostsFIA",
-    "traderDiscount", "isTraderQuestCompleted", "traderPosition",
+    "traderDiscount", "isTraderQuestAssigned", "isTraderQuestCompleted", "traderPosition",
     "areOccupantsDefeated", "areInvadersDefeated",
     "destroyedMilAdmins",
     "rebelLoadouts", "randomizeRebelLoadoutUniforms",
@@ -55,9 +55,9 @@ private _savedPlayers = _namespace getVariable ["savedPlayers" + _postfix, []];
 
 
 // Remove this campaign from the save list, if present
-private _saveList = [_namespace getVariable "antistasiPlus2SavedGames"] param [0, [], [[]]];
+private _saveList = [_namespace getVariable "antistasiUltimate2SavedGames"] param [0, [], [[]]];
 _saveIndex = _saveList findIf { _x#0 == _campaignID };
 _saveList deleteAt _saveIndex;
-_namespace setVariable ["antistasiPlus2SavedGames", _saveList];
+_namespace setVariable ["antistasiUltimate2SavedGames", _saveList];
 
 if (_serverID isEqualType false) then { saveMissionProfileNamespace } else { saveProfileNamespace };

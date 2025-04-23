@@ -14,6 +14,15 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
+private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
+private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
+
+if (_lowCiv || _civNonHuman) exitWith {
+    Error("Non civilian or low civilian faction, aborting.");
+    isEventInProgress = false;
+    publicVariableServer "isEventInProgress";    
+};
+
 private _originPosition = position _player;
 
 Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
@@ -91,27 +100,30 @@ private _convoyobj = [];
 private _cargoSpace = objNull;
 private _cargospaceResized = objNull;
 private _cargo = objNull;
-/* private _fnc_fillcargo = {
-    params ["_vehObj", "_civVehicles"];
-    private _vehdriver = driver _vehObj;
-    private _vehObjgroup = group _vehdriver;
 
-    if (civTraffic >= 2 ) then {
-        
-        _cargoSpace = [_civVehicles, true] call BIS_fnc_crewCount;
+private _fnc_fillcargo = {
+	params ["_vehObj","_civVehicles"];
+	private _vehdriver = driver _vehObj;
+	private _vehObjgroup = group _vehdriver;
+    if (civTraffic isEqualTo 2) then {
+	    _cargoSpace = [_civVehicles, true] call BIS_fnc_crewCount;
         _cargoSpace = _cargoSpace - 1;
-
-        for "_i" from 1 to _cargoSpace do {
-            private _cargo = [_vehObjgroup, FactionGet(civ, "unitMan"), getPos _vehObj, [], 10] call A3A_fnc_createUnit;
-
-            _cargo assignAsCargoIndex [_vehObj, _i];  
-            _cargo disableAI "MOVE";
-
-            _cargo moveInCargo [_vehObj, _i];
-            group _cargo setVariable ["deleteGroupWhenEmpty", true];
+	    _vehObj setVehicleLock "LOCKED";
+	     while {_cargoSpace != 1} do { ///driver already exists
+            
         };
-    };
-}; */
+        for _i from 1 to _cargoSpace do {
+            _cargo = [_vehObjgroup, FactionGet(civ,"unitMan"), getPos _vehObj, [], 10] call A3A_fnc_createUnit;
+            _cargo moveInAny _vehObj; 
+            _cargo disableAI "MOVE";
+		    _cargoSpace = _cargoSpace - 1; //round random [1,3,5]; 
+		    if (_cargoSpace < 1) then{
+			    _cargospace = 1;
+		    }; 
+            group _cargo deleteGroupWhenEmpty true;
+        };
+	};
+};
 
 for '_i' from round random 3 to 5 do
 {
@@ -141,7 +153,8 @@ private _civGroups = [];
 	_groups = group driver _x;
 	private _wp = _groups addWaypoint [_posDest, 10];
 	_wp setWaypointSpeed "NORMAL";
-	_wp setWaypointType "GETOUT";
+	//_wp setWaypointType "GETOUT";
+	_wp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
 	_wp setWaypointBehaviour "SAFE";
 	_civGroups pushBack _groups;
 	_vehicles pushBack _x;

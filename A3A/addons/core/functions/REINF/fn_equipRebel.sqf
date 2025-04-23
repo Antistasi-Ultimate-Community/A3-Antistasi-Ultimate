@@ -69,7 +69,7 @@ private _fnc_addSecondaryAndMags = {
 
     private _compatOptics = A3A_rebelOpticsCache get _weapon;
     if (isNil "_compatOptics") then {
-        private _compatItems = [_weapon] call BIS_fnc_compatibleItems;		// cached, should be fast
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
         _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get "OpticsAll");
         A3A_rebelOpticsCache set [_weapon, _compatOptics];
     };
@@ -118,7 +118,20 @@ switch (true) do {
         if (_grenades isNotEqualTo []) then { _unit addMagazines [selectRandomWeighted _grenades, 2] };
         if (_smokes isNotEqualTo []) then { _unit addMagazines [selectRandomWeighted _smokes, 1] };
 
-        // could throw in some disposable launchers here...
+        // increase likelihood of rifleman getting a disposable launcher by war level (10% chance * war level)
+        if (random 10 < (tierWar / 2)) then {
+            private _rlaunchers = A3A_rebelGear get "RocketLaunchers";
+            private _launcherPool = [];
+            
+            {
+                private _categories = _x call A3A_fnc_equipmentClassToCategories;
+
+                if ("Disposable" in _categories) then {_launcherPool append [_x, _rlaunchers select (_rlaunchers find _x) + 1 ]};
+            } forEach (_rlaunchers select {_x isEqualType ""});
+
+            private _launcher = selectRandomWeighted _launcherPool;
+            if !(isNil "_launcher") then { [_unit, _launcher, 100] call _fnc_addSecondaryAndMags };
+        };
     };
     case (_unitType isEqualTo FactionGet(reb,"unitMG")): {
         [_unit, "MachineGuns", 150] call A3A_fnc_randomRifle;
@@ -206,19 +219,78 @@ switch (true) do {
     };
 };
 
+private _handgun = selectRandomWeighted (A3A_rebelGear get "Handguns");
+if !(isNil "_handgun") then { [_unit, "Handguns"] call A3A_fnc_randomHandgun;};
+
 private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
-if (_nvg != "") then { _unit linkItem _nvg }
-else {
+if (_nvg != "") then { 
+    _unit linkItem _nvg;
+    private _weapon = primaryWeapon _unit;
+    private _compatLasers = A3A_rebelLasersCache get _weapon;
+    if (isNil "_compatLasers") then {
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
+        _compatLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weapon, _compatLasers];
+    };
+    if (_compatLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatLasers;
+        _unit addPrimaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
+    };
+    private _weaponsecondary = secondaryWeapon _unit;
+    private _compatSecondaryLasers = A3A_rebelLasersCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLasers") then {
+        private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
+        _compatSecondaryLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weaponsecondary, _compatSecondaryLasers];
+    };
+    if (_compatSecondaryLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatSecondaryLasers;
+        _unit addSecondaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
+    };
+    private _weaponhandgun = handgunWeapon _unit;
+    private _compatHandgunLasers = A3A_rebelLasersCache get _weaponhandgun;
+    if (isNil "_compatHandgunLasers") then {
+        private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
+        _compatHandgunLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weaponhandgun, _compatHandgunLasers];
+    };
+    if (_compatHandgunLasers isNotEqualTo []) then {
+        private _LaserAttachment = selectRandom _compatHandgunLasers;
+        _unit addHandgunItem _LaserAttachment;		// should be used automatically by AI as necessary
+    };
+} else {
     private _weapon = primaryWeapon _unit;
     private _compatLights = A3A_rebelFlashlightsCache get _weapon;
     if (isNil "_compatLights") then {
-        private _compatItems = [_weapon] call BIS_fnc_compatibleItems;		// cached, should be fast
+        private _compatItems = compatibleItems _weapon; // cached, should be fast
         _compatLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
         A3A_rebelFlashlightsCache set [_weapon, _compatLights];
     };
     if (_compatLights isNotEqualTo []) then {
         private _flashlight = selectRandom _compatLights;
         _unit addPrimaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
+    };
+    private _weaponsecondary = secondaryWeapon _unit;
+    private _compatSecondaryLights = A3A_rebelFlashlightsCache get _weaponsecondary;
+    if (isNil "_compatSecondaryLights") then {
+        private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
+        _compatSecondaryLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weaponsecondary, _compatSecondaryLights];
+    };
+    if (_compatSecondaryLights isNotEqualTo []) then {
+        private _flashlight = selectRandom _compatSecondaryLights;
+        _unit addSecondaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
+    };
+    private _weaponhandgun = handgunWeapon _unit;
+    private _compatHandgunLights = A3A_rebelFlashlightsCache get _weaponhandgun;
+    if (isNil "_compatHandgunLights") then {
+        private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
+        _compatHandgunLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weaponhandgun, _compatHandgunLights];
+    };
+    if (_compatHandgunLights isNotEqualTo []) then {
+        private _flashlight = selectRandom _compatHandgunLights;
+        _unit addHandgunItem _flashlight;		// should be used automatically by AI as necessary
     };
 };
 

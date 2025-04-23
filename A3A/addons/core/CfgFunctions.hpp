@@ -35,12 +35,14 @@ class CfgFunctions
             class guardDog {};
             class hasRadio {};
             class HeliDoors {};
+            class PodsDoors {};
             class help {};
             class hideInBuilding {};
             class inmuneConvoy {};
             class interrogate {};
             class isBuildingPosition {};
             class landThreatEval {};
+            class liberateDeserter {};
             class liberaterefugee {};
             class liberatePOW {};
             class liberateFlee {};
@@ -50,6 +52,8 @@ class CfgFunctions
             class napalmDamage {};
             class napalmParticles {};
             class nearEnemy {};
+            class orbitalLanding {};
+            class orbitalLandingSinglePod {};
             class paradrop {};
             class rearmCall {};
             class recallGroup {};
@@ -86,6 +90,7 @@ class CfgFunctions
             class generateRebelGear {};
             class getRadio {};
             class hasARadio {};
+            class itemArrayWeight {};
             class itemConfig {};
             class itemConfigMass {};
             class itemSort {};
@@ -93,6 +98,7 @@ class CfgFunctions
             class launcherInfo {};
             class loot {};
             class randomRifle {};
+            class randomHandgun {};
             class transfer {};
             class unlockEquipment {};
             class vehicleSort {};
@@ -140,6 +146,7 @@ class CfgFunctions
             class vehicleBoxRestore {};
             class initPetros {};
             class isFrontline {};
+            class isFrontlineNoFIA {};
             class arePositionsConnected {};
             class joinMultipleGroups {};
             class localizar {};
@@ -182,6 +189,8 @@ class CfgFunctions
             class unlockVehicle {};
             class updateRebelStatics {};
             class zoneCheck {};
+            class checkWinCondition {};
+            class checkLossCondition {};
         };
 
         class Builder {
@@ -243,7 +252,9 @@ class CfgFunctions
             class createAttackForceAir {};
             class createAttackForceLand {};
             class createAttackForceMixed {};
+            class createAttackForceOrbital {};
             class createAttackVehicle {};
+            class createAttackVehicleOrbital {};
             class createSDKGarrisons {};
             class createSDKgarrisonsTemp {};
             class createUnit {};
@@ -273,6 +284,12 @@ class CfgFunctions
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
             class spawnVehiclePrecise {};
+            class RivalsCargoSeats {};
+            class RivalsCreateUnit {};
+            class RivalsCreateVehicleCrew {};
+            class RivalsCrewTypeForVehicle {};
+            class RivalsSpawnGroup {};
+            class RivalsSpawnVehicle {};
             class VEHdespawner {};
             class vehKilledOrCaptured {};
             class wavedAttack {};
@@ -349,6 +366,7 @@ class CfgFunctions
             class cityinfo {};
             class clientIdleChecker {};
             class credits {};
+            class initACE {};
             class initACEUnconsciousHandler {};
             class initBases {};
             class initUtilityItems {};
@@ -361,6 +379,7 @@ class CfgFunctions
             class initVarServer {};
 
             class initVehClassToCrew {};
+            class initRivalsVehClassToCrew {};
             class initZones {};
             class initZeusLogging {};
             class modBlacklist {};
@@ -390,9 +409,13 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\Missions);
             class AS_Ambush {};
             class AS_Official {};
+            class AS_Smasher {};
             class AS_specOP {};
             class AS_Traitor {};
+            class AS_Zombies {};
+            class CON_Outpost_Zombies {};
             class CON_Outpost {};
+            class CON_Outpost_Compet {};
             class CON_MilAdmin {};
             class convoy {};
             class DES_Antenna {};
@@ -403,12 +426,14 @@ class CfgFunctions
             class LOG_Bank {};
             class SUPP_Supplies {};
             class LOG_Salvage {};
+            class findIfNearAndHostile {};
             class LOG_Airdrop {};
             class LOG_Crashsite {};
             class LOG_Crashsite_Satellite{};
             class LOG_Helicrash {};;
             class missionRequest {};
             class REP_Antenna {};
+            class RES_Deserters {};
             class RES_Prisoners {};
             class RES_Refugees {};
             class RES_Informer {};
@@ -417,6 +442,7 @@ class CfgFunctions
             class RIV_ENC_Rivals {};
             class RIV_ATT_Cell {};
             class RIV_ATT_Hideout {};
+            class RIV_ATT_Transfer {};
             class RIV_AS_Traitor {};
             class RIV_SUPP_Salvage {};
             class RIV_RES_Prisoners {};
@@ -437,6 +463,7 @@ class CfgFunctions
             class addScorePlayer {};
             class addMoneyPlayer {};
             class donateMoney {};
+            class donateMoneyPercentage {};
             class isMember {};
             class makePlayerBossIfEligible {};
             class memberAdd {};
@@ -523,6 +550,7 @@ class CfgFunctions
             class garrisonDialog {};
             class postmortem {};
             class reDress {};
+            class reDressFaction {};
             class reinfPlayer {};
             class spawnHCGroup {};
             class vehiclePrice {};
@@ -627,8 +655,14 @@ class CfgFunctions
             class SUP_cruiseMissileRoutine {};
             class SUP_gunship {};
             class SUP_gunshipAvailable {};
-            class SUP_gunshipRoutineCSAT {};
-            class SUP_gunshipRoutineNATO {};
+            class SUP_gunshipRoutineDefault {};
+            class SUP_gunshipRoutineV44 {};
+            class SUP_gunshipRoutineNickelSteel {};
+            class SUP_gunshipRoutineUSAF {};
+            class SUP_gunshipRoutinePelican {};
+            class SUP_gunshipRoutineStarWarsHMP {};
+            class SUP_gunshipRoutineStarWarsLAAT {};
+            class SUP_gunshipRoutine3CBAC47 {};
             class SUP_gunshipSpawn {};
             class SUP_mortar {};
             class SUP_mortarAvailable {};
@@ -642,12 +676,21 @@ class CfgFunctions
             class SUP_QRFAirAvailable {};
             class SUP_QRFLand {};
             class SUP_QRFLandAvailable {};
+            class SUP_QRFOrbital {};
+            class SUP_QRFOrbitalAvailable {};
             class SUP_QRFRoutine {};
             class SUP_SAM {};
             class SUP_SAMAvailable {};
             class SUP_SAMRoutine {};
+            class SUP_tank {};
+            class SUP_tankAvailable {};
+            class SUP_tankRoutine {};
             class SUP_UAV {};
             class SUP_UAVRoutine {};
+            class SUP_UAVAvailable {};
+            class SUP_UAVAttack {};
+            class SUP_UAVAttackRoutine {};
+            class SUP_UAVAttackAvailable {};
             class SUP_QRFVehAirdrop {};
             class SUP_QRFVehAirdropAvailable {};
             class SUP_howitzer {};
@@ -743,6 +786,7 @@ class CfgFunctions
             class countAttachedObjects {};
             class createDataObject {};
             class createNamespace {};
+            class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
             class isEngineer {};
@@ -768,6 +812,13 @@ class CfgFunctions
             class initObjectRemote {};
             class remainingFuel {};
             class rotateItem {};
+        };
+        
+        class reload_repack_turret_magazines {
+            file = QPATHTOFOLDER(Scripts\RRTurretMagazines\scripts);
+            //class postInit {};
+            class reloadTurret {};
+            class monitorMagazines {};
         };
     };
 };

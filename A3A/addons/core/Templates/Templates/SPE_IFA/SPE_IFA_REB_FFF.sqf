@@ -64,26 +64,6 @@
 ["vehicleHealthStation", ["", 75]] call _fnc_saveToTemplate;
 ["vehicleRepairStation", ["", 5000]] call _fnc_saveToTemplate;
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["LIB_Flakvierling_38", 3000, "STATICAT", {tierWar > 3}],
-    ["LIB_leFH18", 8000, "STATICMG", {tierWar > 3}],
-
-    ["LIB_Kfz1_Hood_camo", 2050, "CAR", {true}],
-
-    ["LIB_SdKfz_7", 6000, "APC", {true}],
-
-    ["LIB_PzKpfwVI_B", 40000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["LIB_SdKfz_7_AA", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["LIB_P39", 30000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["LIB_Pe2", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////

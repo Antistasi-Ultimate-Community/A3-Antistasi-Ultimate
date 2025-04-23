@@ -74,5 +74,4 @@ if (_newGroup) then {
 };
 
 _group addVehicle _vehicle;
-
 _group

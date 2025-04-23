@@ -28,5 +28,7 @@ _addon set ["vehiclesCivBoat", [
 ]];
 
 _addon set ["vehiclesCivHeli", [
-	"vn_o_air_mi2_02_02", 0.3
+	"vn_o_air_mi2_02_02_noinsignia",
+	"vn_b_air_uh1b_01_09",
+	"vn_b_air_uh1d_04_09"
 ]];

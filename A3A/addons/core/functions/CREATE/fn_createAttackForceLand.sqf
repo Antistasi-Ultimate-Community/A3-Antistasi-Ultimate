@@ -14,6 +14,7 @@ Arguments:
     <INTEGER> Number of attack/support vehicles to create
     <INTEGER> Optional, tier modifier to apply to vehicle selection (Default: 0)
     <STRING> Optional, troop type to use (Default: "Normal")
+    <BOOL> Optional, true to only use tanks (Default: false)
 
 Return array:
     <SCALAR> Resources spent
@@ -24,26 +25,44 @@ Return array:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_side", "_base", "_target", "_resPool", "_vehCount", "_vehAttackCount", ["_tierMod", 0]];
+params ["_side", "_base", "_target", "_resPool", "_vehCount", "_vehAttackCount", ["_tierMod", 0], ["_troopType", "Normal"], ["_tanksOnly", false]];
 private _targpos = if (_target isEqualType []) then { _target } else { markerPos _target };
 private _transportRatio = 1 - _vehAttackCount / _vehCount;
+
+if (_tierMod isEqualTo 0) then {_tierMod = 1};
 
 private _resourcesSpent = 0;
 private _vehicles = [];
 private _crewGroups = [];
 private _cargoGroups = [];
 
-private _transportPool = [_side, tierWar+_tierMod] call A3A_fnc_getVehiclesGroundTransport;
-private _supportPool = [_side, tierWar+_tierMod] call A3A_fnc_getVehiclesGroundSupport;
+private _transportPool = [];
+private _supportPool = [];
+
+// Bandaid fix for whatever was causing everything to break, this seems to work consistently. If _tierMod was 0, even the normal pools would break...
+if (_tanksOnly) then {
+	_transportPool = [_side, 6] call A3A_fnc_getVehiclesGroundTransport; 
+	_supportPool = [_side, 6, true] call A3A_fnc_getVehiclesGroundSupport;	
+} else {
+	_transportPool = [_side, tierWar+_tierMod] call A3A_fnc_getVehiclesGroundTransport; 
+	_supportPool = [_side, tierWar+_tierMod, true] call A3A_fnc_getVehiclesGroundSupport;
+};
 
 private _numTransports = 0;
 private _isTransport = _vehAttackCount < _vehCount;            // normal case, first vehicle should be a transport
 private _landPosBlacklist = [];
 
 for "_i" from 1 to _vehCount do {
-    private _vehType = selectRandomWeighted ([_supportPool, _transportPool] select _isTransport);
+    private _vehType = ObjNull;
 
-    private _vehData = [_vehType, "Normal", _resPool, _landPosBlacklist, _side, _base, _targPos] call A3A_fnc_createAttackVehicle;
+    // Attempt to grab veh types
+    _vehType = selectRandomWeighted ([_supportPool, _transportPool] select _isTransport);
+    if (isNil "_vehType") then {
+        Error_1("Failed to grab land vehicle, attempting to grab a transport vehicle.", _base);
+        _vehType = selectRandomWeighted _transportPool;
+    };
+
+    private _vehData = [_vehType, _troopType, _resPool, _landPosBlacklist, _side, _base, _targPos] call A3A_fnc_createAttackVehicle;
     if !(_vehData isEqualType []) exitWith {
         Error_1("Failed to spawn land vehicle at marker %1", _base);
     };          // couldn't create for some reason, assume we're out of spawn places?

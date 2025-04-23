@@ -386,7 +386,6 @@ if (_conquered) then
 	}
 	else
 	{
-		/*
 		if ((!_isControl) and (_winner == teamPlayer)) then
 			{
 			_size = [_markerX] call A3A_fnc_sizeMarker;
@@ -396,7 +395,6 @@ if (_conquered) then
 				if (_loser == Occupants) then {Occupants revealMine _mineX} else {Invaders revealMine _mineX};
 				};
 			};
-		*/
 	};
 };
 ["locationSpawned", [_markerX, "Control", false]] call EFUNC(Events,triggerEvent);

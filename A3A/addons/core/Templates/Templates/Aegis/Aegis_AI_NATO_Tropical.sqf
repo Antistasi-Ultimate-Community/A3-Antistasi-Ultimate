@@ -21,6 +21,10 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
+
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     
 ["surrenderCrate", "Box_NATO_Wps_F"] call _fnc_saveToTemplate; 
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; 
@@ -29,7 +33,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesLightUnarmed", ["B_T_MRAP_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["B_T_MRAP_01_gmg_F", "B_T_MRAP_01_hmg_F"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["B_T_Truck_01_transport_F", "B_T_Truck_01_covered_F"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["B_T_Truck_01_flatbed_F", "B_T_Truck_01_cargo_F"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["B_T_Truck_01_flatbed_F", "B_T_Truck_01_cargo_F","B_T_UGV_01_olive_F"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["B_T_Truck_01_ammo_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["B_T_Truck_01_Repair_F"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["B_T_Truck_01_fuel_F"]] call _fnc_saveToTemplate;
@@ -38,8 +42,8 @@ private _lightAPCs = ["B_T_APC_Wheeled_01_cannon_v2_F"];
 private _APCs = ["B_T_APC_Wheeled_01_cannon_v2_F"];           // CRV has no cargo: "B_APC_Tracked_01_CRV_F"
 ["vehiclesIFVs", ["B_T_APC_Tracked_01_rcws_F"]] call _fnc_saveToTemplate;
 
-private _airborneVehicles = ["B_T_APC_Wheeled_01_cannon_v2_F"];
-private _lightTanks = ["B_T_AFV_Wheeled_01_cannon_F", "B_T_AFV_Wheeled_01_up_cannon_F"];
+private _airborneVehicles = ["B_T_APC_Wheeled_01_cannon_v2_F","B_T_UGV_01_rcws_olive_F"];
+private _lightTanks = ["B_T_AFV_Wheeled_01_cannon_F", "B_T_AFV_Wheeled_01_up_cannon_F","B_T_UGV_01_rcws_olive_F"];
 ["vehiclesTanks", ["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["B_T_APC_Tracked_01_AA_F"]] call _fnc_saveToTemplate;
 

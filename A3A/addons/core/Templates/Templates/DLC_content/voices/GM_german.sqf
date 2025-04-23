@@ -1,0 +1,9 @@
+"gm_voice_male_deu_01",
+"gm_voice_male_deu_02",
+"gm_voice_male_deu_03",
+"gm_voice_male_deu_04",
+"gm_voice_male_deu_05",
+"gm_voice_male_deu_06",
+"gm_voice_male_deu_07",
+"gm_voice_male_deu_08",
+"gm_voice_male_deu_09"

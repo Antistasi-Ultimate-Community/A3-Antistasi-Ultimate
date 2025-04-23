@@ -21,6 +21,10 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesSDV", ["O_SDV_01_F"]] call _fnc_saveToTemplate;
+
+["vehiclesDropPod", ["Land_Pod_Heli_Transport_04_covered_F"]] call _fnc_saveToTemplate;
+
 ["ammobox", "O_R_supplyCrate_F"] call _fnc_saveToTemplate;     
 ["surrenderCrate", "Box_RUS_Wps_F"] call _fnc_saveToTemplate; 
 ["equipmentBox", "Box_RUS_Equip_F"] call _fnc_saveToTemplate; 
@@ -37,7 +41,7 @@ if (_hasApex) then {
 ["vehiclesLightArmed", _lightArmed] call _fnc_saveToTemplate;
 
 ["vehiclesTrucks", ["O_R_Truck_03_transport_F", "O_R_Truck_03_covered_F"]] call _fnc_saveToTemplate;
-["vehiclesCargoTrucks", ["O_R_Truck_02_cargo_F", "O_R_Truck_02_flatbed_F"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", ["O_R_Truck_02_cargo_F", "O_R_Truck_02_flatbed_F","O_R_UGV_01_ard_F"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["O_R_Truck_03_ammo_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["O_R_Truck_03_repair_F", "O_R_Truck_02_box_F"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["O_R_Truck_03_fuel_F", "O_R_Truck_02_fuel_F"]] call _fnc_saveToTemplate;
@@ -45,8 +49,8 @@ if (_hasApex) then {
 ["vehiclesLightAPCs", ["O_R_APC_Wheeled_04_cannon_F"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["Aegis_O_R_APC_Tracked_02_30mm_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["Aegis_O_R_APC_Tracked_02_30mm_lxWS"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["O_R_APC_Wheeled_04_cannon_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks", []] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["O_R_APC_Wheeled_04_cannon_F","O_R_UGV_01_rcws_ard_F"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks", ["O_R_UGV_01_rcws_ard_F"]] call _fnc_saveToTemplate;
 private _tanks = ["O_R_MBT_02_cannon_F"];
 if (_hasTanks) then {
     _tanks append ["O_R_MBT_04_cannon_F", "O_R_MBT_04_command_F"];
@@ -121,6 +125,7 @@ if (_hasTanks) then {
 };
 
 ["variants", [
+    ["Land_Pod_Heli_Transport_04_covered_F", ["Black",1]],
     ["O_T_VTOL_02_infantry_dynamicLoadout_F", ["Grey",1]],
     ["O_Plane_Transport_01_infantry_F", ["Grey",1]],
     ["O_G_Offroad_01_armed_F", ["Olive", 1]],

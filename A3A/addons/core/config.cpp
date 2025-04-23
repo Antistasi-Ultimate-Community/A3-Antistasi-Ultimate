@@ -15,6 +15,7 @@ class CfgPatches {
 };
 
 #include "CfgSounds.hpp" 
+// Base AI unit definitions
 #include "CfgVehicles.hpp"
 #include "CfgMarkers.hpp"
 #include "CfgWeapons.hpp"

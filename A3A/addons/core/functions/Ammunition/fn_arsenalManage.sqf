@@ -48,6 +48,8 @@ private _count = objNull;
 
 private _allExceptNVs = _weapons + _explosives + _backpacks + _items + _optics + _helmets + _vests + _magazine;
 
+private _categoriesToPublish = createHashMap;
+
 [] call SCRT_fnc_common_fixCupRhsLaunchers;
 
 {
@@ -64,7 +66,8 @@ private _allExceptNVs = _weapons + _explosives + _backpacks + _items + _optics +
 
 		if (_item in A3U_forbiddenItems && {getNumber (configFile >> "A3U" >> "forbiddenItems" >> _item >> "unlimited") isEqualTo 0}) exitWith {};
 
-		_item call A3A_fnc_unlockEquipment;
+		[_item, true] call A3A_fnc_unlockEquipment;
+		_categoriesToPublish insert [true, _categories, []];
 
 		private _name = switch (true) do {
 			case ("Magazines" in _categories): {getText (configFile >> "CfgMagazines" >> _item >> "displayName")};
@@ -81,7 +84,8 @@ private _allExceptNVs = _weapons + _explosives + _backpacks + _items + _optics +
 			if (!isNil "_weaponMagazine") then {
 				if (not(_weaponMagazine in unlockedMagazines)) then {
 					_updated = format ["%1%2<br/>",_updated,getText (configFile >> "CfgMagazines" >> _weaponMagazine >> "displayName")];
-					[_weaponMagazine] call A3A_fnc_unlockEquipment;
+					private _categories = [_weaponMagazine, true] call A3A_fnc_unlockEquipment;
+					_categoriesToPublish insert [true, _categories, []];
 				};
 			};
 		};
@@ -109,10 +113,13 @@ _sortedNVs sort true;		// sort by count, ascending
 
 while {_totalNV >= minWeaps} do {
 	private _nvToUnlock = (_sortedNVs deleteAt (count _sortedNVs - 1)) select 1;
-	[_nvToUnlock] call A3A_fnc_unlockEquipment;
+	private _categories = [_nvToUnlock, true] call A3A_fnc_unlockEquipment;
+	_categoriesToPublish insert [true, _categories, []];
 	_updated = format ["%1%2<br/>",_updated,getText (configFile >> "CfgWeapons" >> _nvToUnlock >> "displayName")];
 	_totalNV =_totalNV - minWeaps;		// arguably wrong but doesn't matter in practice
 };
 
+// Publish the unlocked categories (once each)
+{ publicVariable ("unlocked" + _x) } forEach keys _categoriesToPublish;
 
 _updated

@@ -195,9 +195,16 @@ class Xlsx2csv:
         options.setdefault("outputencoding", "utf-8")
         options.setdefault("skip_hidden_rows", True)
 
+        file_exists = os.path.isfile(xlsxfile)
+        if (not file_exists):
+            print("xlsx file not found.")
+            quit()
+
         self.options = options
         try:
+            print(f"Converting {xlsxfile} to csv.")
             self.ziphandle = zipfile.ZipFile(xlsxfile)
+
         except (zipfile.BadZipfile, IOError):
             raise InvalidXlsxFileException("Invalid xlsx file: " + str(xlsxfile))
 
@@ -214,9 +221,10 @@ class Xlsx2csv:
         elif self.options['escape_strings']:
             self.shared_strings.escape_strings()
 
-    def __del__(self):
-        # make sure to close zip file, ziphandler does have a close() method
-        self.ziphandle.close()
+    # def __del__(self):
+    #     # make sure to close zip file, ziphandler does have a close() method
+    #     self.ziphandle.close()
+    # Might be unsafe to leave this commented out, but tbh, it was terrible anyway because it expected that the file actually existed in the first place
 
     def getSheetIdByName(self, name):
         for s in self.workbook.sheets:

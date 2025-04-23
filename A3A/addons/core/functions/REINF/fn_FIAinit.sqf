@@ -25,12 +25,11 @@ _unit setUnitTrait ["audibleCoef",0.8];
 
 //otherwise unit will change identity in cases when FIAInit was called sometime after it's initial spawn
 if (!_preserveIdentity) then {
-	[
-		_unit,
-		(selectRandom (A3A_faction_reb get "faces")),
-		(selectRandom (A3A_faction_reb get "voices")),
-		(random [0.9, 1, 1.1])
-	] call A3A_fnc_setIdentity;
+	[_unit, createHashMapFromArray [
+		["face", (selectRandom (A3A_faction_reb get "faces"))], 
+		["speaker", (selectRandom (A3A_faction_reb get "voices"))], 
+		["pitch", (random [0.9, 1, 1.1])]
+	]] call A3A_fnc_setIdentity;
 };
 
 // FIAinit is called for liberated refugees/hostages. Don't equip them.

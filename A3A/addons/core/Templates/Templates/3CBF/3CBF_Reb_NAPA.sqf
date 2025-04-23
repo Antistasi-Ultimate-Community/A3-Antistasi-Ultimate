@@ -82,43 +82,6 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["breachingExplosivesAPC", [["rhs_ec75_mag", 2], ["rhs_ec75_sand_mag", 2], ["rhs_ec200_mag", 1], ["rhs_ec200_sand_mag", 1], ["rhsusf_m112_mag", 1], ["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["rhs_ec75_mag", 4], ["rhs_ec75_sand_mag", 4], ["rhs_ec200_mag", 2], ["rhs_ec200_sand_mag", 2], ["rhs_ec400_mag", 1], ["rhs_ec400_sand_mag", 1],["DemoCharge_Remote_Mag", 2], ["rhsusf_m112_mag", 2], ["rhsusf_m112x4_mag", 1], ["rhs_charge_M2tet_x2_mag", 1], ["SatchelCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["UK3CB_LDF_I_RBS70", 2500, "STATICAA", {tierWar > 3}],
-    ["UK3CB_CW_US_B_LATE_TOW_TriPod", 3000, "STATICAT", {tierWar > 3}],
-    ["rhsgref_nat_AGS30_TriPod", 3000, "STATICMG", {tierWar > 3}],
-
-    ["UK3CB_NAP_I_Hilux_Mortar", 15000, "ARTILLERY", {tierWar > 5}],
-    ["UK3CB_NAP_I_Hilux_Rocket", 25000, "ARTILLERY", {tierWar > 7}],
-    ["UK3CB_NAP_I_Hilux_Rocket_Arty", 30000, "ARTILLERY", {tierWar > 8}],
-
-    ["UK3CB_NAP_I_Hilux_Zu23", 1750, "CAR", {tierWar > 2}],
-    ["UK3CB_NAP_I_Hilux_GMG", 2500, "CAR", {tierWar > 2}],
-    ["UK3CB_NAP_I_BRDM2_UM", 1750, "CAR", {true}],
-    ["UK3CB_NAP_I_BRDM2_HQ", 2050, "CAR", {true}],
-    ["UK3CB_NAP_I_BRDM2", 2500, "CAR", {true}],
-
-    ["UK3CB_NAP_I_MTLB_PKT", 2000, "APC", {true}],
-    ["UK3CB_NAP_I_BTR60", 5000, "APC", {true}],
-    ["UK3CB_NAP_I_BMP1", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["UK3CB_NAP_I_BMP2", 12500, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["UK3CB_NAP_I_T55", 13000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["UK3CB_NAP_I_T72A", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["UK3CB_NAP_I_T72BM", 21000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    
-    ["UK3CB_NAP_I_MTLB_ZU23", 7000, "AA", {tierWar > 3}],
-    ["UK3CB_I_G_ZsuTank", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["UK3CB_ADA_I_L39_PYLON", 25000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["rhs_l159_CDF", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["UK3CB_ADA_I_Mi8AMTSh", 25000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 #include "3CBF_Reb_Vehicle_Attributes.sqf"
 
 ///////////////////////////
@@ -225,6 +188,7 @@ private _rebUniforms = [
     "WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"
 ]] call _fnc_saveToTemplate;
 ["voices", ["rhs_male01cz","rhs_male02cz","rhs_male03cz","rhs_male04cz","rhs_male05cz"]] call _fnc_saveToTemplate;
+"CzechMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

@@ -1,6 +1,9 @@
+#include "..\..\script_component.hpp"
+
 private _unit = _this select 0;
 private _playerX = _this select 1;
-private _recruiting = _this select 3;
+private _recruiting = _this select 3 select 0;
+private _recruitToSquad = _this select 3 select 1;
 
 [_unit,"remove"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];
 
@@ -13,6 +16,7 @@ private _modAggro = [0, 0];
 private _modHR = false;
 private _response = "";
 private _fleeSide = _sideX;
+private _joinPlyGroup = false;
 
 private _unitPrefix = _unit getVariable "unitPrefix";
 
@@ -37,7 +41,10 @@ if (_recruiting) then {
 	if (_interrogated) then { _chance = _chance / 2 };
 
 	if (random 100 < _chance) then
-    {
+	{
+		if (_recruitToSquad && {count units _playerX < 10}) then {
+			_joinPlyGroup = true;
+		};
 		_modAggro = [1, 30];
 		_response = localize "STR_recruit_success_text";
 		_modHR = true;
@@ -66,16 +73,36 @@ else {
 
 sleep 2;
 _unit globalChat _response;
+if (_joinPlyGroup) then {
+	// * preserve original unit identity for new recruit
+	private _nameUnit = (name _unit) splitString " ";
+	private _identityUnit = createHashMapFromArray [
+		["face", face _unit],
+		["speaker", _unit getVariable "A3U_PoW_speaker"],
+		["firstName", _nameUnit select 0],
+		["lastName", _nameUnit select 1]
+	];
+	private _uniformUnit = uniform _unit;
+	private _posUnit = position _unit;
+	deleteVehicle _unit;
 
-[_unit, _fleeSide] remoteExec ["A3A_fnc_fleeToSide", _unit];
+	private _recruit = [group player, "loadouts_reb_militia_Unarmed", _posUnit, [], 0, "NONE", _identityUnit] call A3A_fnc_createUnit;
+	[_recruit, true] spawn A3A_fnc_FIAinit;
+	_recruit setUnitLoadout [ [], [], [], [_uniformUnit, []], [], [], "", "", [], ["","","","","",""] ];
+	_recruit disableAI "AUTOCOMBAT"; // ? not sure what this does. But it's used after creating a unit in fn_reinfPlayer.
+	sleep 1;
+	_recruit setVariable ["unitType", "loadouts_reb_militia_Rifleman", true]; // * allows the AI to be dismissed or garrisoned. Needs to be set AFTER FIAinit so we don't equip the rebel.
+} else {
+	[_unit, _fleeSide] remoteExec ["A3A_fnc_fleeToSide", _unit];
 
-private _group = group _unit;		// Group should be surrender-specific now
-sleep 100;
-if (alive _unit && {!(_unit getVariable ["incapacitated", false])}) then
-{
-	([_sideX] + _modAggro) remoteExec ["A3A_fnc_addAggression",2];
-	if (_modHR) then { [1,0] remoteExec ["A3A_fnc_resourcesFIA",2] };
+	private _group = group _unit;		// Group should be surrender-specific now
+	sleep 100;
+	if (alive _unit && {!(_unit getVariable ["incapacitated", false])}) then
+	{
+		([_sideX] + _modAggro) remoteExec ["A3A_fnc_addAggression",2];
+		if (_modHR) then { [1,0] remoteExec ["A3A_fnc_resourcesFIA",2] };
+	};
+
+	deleteVehicle _unit;
+	deleteGroup _group;
 };
-
-deleteVehicle _unit;
-deleteGroup _group;

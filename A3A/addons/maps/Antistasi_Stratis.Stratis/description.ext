@@ -7,6 +7,18 @@ overviewText = $STR_antistasi_mission_info_Altis_description_text;
 loadScreen = LOAD_SCREEN_IMAGE;
 overviewPicture = OVERVIEW_IMAGE;
 
+class CfgDiscordRichPresence 
+{
+    applicationID="1270380812684230746";
+    defaultDetails="Currently Debugging";
+    defaultState="Debug";
+    defaultLargeImageKey="stratis";
+    defaultLargeImageText="Debug";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
+    useTimeElapsed=1;
+};
+
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

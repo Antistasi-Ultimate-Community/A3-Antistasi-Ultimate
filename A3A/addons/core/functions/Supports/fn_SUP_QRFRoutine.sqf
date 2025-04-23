@@ -36,6 +36,9 @@ private _data = switch (_qrfType) do {
     case "VEHAIRDROP": {
         [_side, _base, _targPos, _resPool, _vehCount, _attackCount, 0, "Normal", true] call A3A_fnc_createAttackForceAir;
     };
+    case "ORBITAL": {
+        [_side, _base, _targPos, _resPool, _vehCount, _attackCount, 0, "Normal", true] call A3A_fnc_createAttackForceOrbital;
+    };
 };
 
 _data params ["_resources", "_vehicles", "_crewGroups", "_cargoGroups"];

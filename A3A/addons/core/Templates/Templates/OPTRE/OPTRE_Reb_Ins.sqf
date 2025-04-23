@@ -54,20 +54,6 @@ private _vehiclesCivCar = ["OPTRE_M12_CIV", "OPTRE_Genet"];
 
 ["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
 
-["blackMarketStock", [
-    ["OPTRE_Static_M247H_Shielded_Tripod", 3000, "STATICMG", {tierWar > 3}],
-    ["OPTRE_Static_M41", 4500, "STATICMG", {tierWar > 4}],
-
-    ["OPTRE_M914_RV", 1750, "CAR", {true}],
-    ["OPTRE_M813_TT", 2050, "CAR", {true}],
-    ["OPTRE_M12_FAV_APC", 2500, "CAR", {true}],
-
-    ["OPTRE_M808S", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["OPTRE_M313_UNSC", 50000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["OPTRE_YSS_1000_A_VTOL", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////

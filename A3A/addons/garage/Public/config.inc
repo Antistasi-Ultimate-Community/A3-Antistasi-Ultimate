@@ -34,7 +34,7 @@ HR_GRG_CP_closeCnd = {
 };
 
 HR_GRG_Cnd_canAccessAir = {
-    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
+    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
 };
 
 //Lock on garaged vehicles ( Values: [{""}, { getPlayerUID player }] )
@@ -117,4 +117,13 @@ if (isClass (configfile >> "CBA_Extended_EventHandlers")) then {
         HR_GRG_renderPlacementRays = _this;
     }] call CBA_fnc_addSetting;
 
+};
+
+HR_GRG_fnc_addVehicleUAVCompat = {
+    private _veh = _this select 0;
+    if (unitisUAV _veh && {crew _veh isNotEqualTo []}) then {
+        private _moveOutCrewHandle = [_this select 3, _this select 0] spawn A3A_fnc_moveOutCrew;
+        waitUntil { sleep 0.1; scriptDone _moveOutCrewHandle };
+    };
+    _this call HR_GRG_fnc_addVehicle;
 };

@@ -14,29 +14,29 @@
         Silence
 */
 
-// You can find the unedited script by diwako here: https://github.com/diwako/stalker_anomalies/blob/master/mod/diwako_anomalies/functions/anomalies/fn_createAnomalyField.sqf
-// This is their mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1383903166
+// I had to rewrite the diwako spawning logic from scratch because the original doesn't take into account water, out of bounds, etc.
 
-// I had to rewrite this because the original script doesn't take into account water, out of bounds, etc.
-// License: APL-SA
+params [["_anomalyAmount", 40]];
 
-params[["_anomalyAmount", 40]];
+_anomalyAmount = _anomalyAmount min (round A3U_setting_anomalyCap);
 
 private _anomalies = [];
 
-private _drawAnomalies = missionNamespace getVariable ["A3U_setting_anomalyDraw", false];
+private _drawAnomalies = A3U_setting_anomalyDraw;
 
 private _fnc_grabPos = {
     private _pos = [nil, ["water"]] call BIS_fnc_randomPos;
 
-    // I used to have random code here, it's not needed anymore
+    private _terrainHeight = getTerrainHeight _pos;
+	
+	_pos = [_pos select 0, _pos select 1, _terrainHeight];
 
-    if (_pos isEqualTo [0,0] || {_pos isEqualTo [0,0,0]}) exitWith {_pos = call _fnc_grabPos}; // pls let recursive function work
+    if (_pos isEqualTo [0,0] || {_pos isEqualTo [0,0,0]}) exitWith {false};
 
-    _pos
+    _pos;
 };
 
-private _fnc_structureText = { // idk why I named it this, it structures the text AND makes a marker
+private _fnc_createMarker = {
     params ["_text", "_anomaly", "_index"];
 
     if (_drawAnomalies isEqualTo false) exitWith {};
@@ -47,7 +47,7 @@ private _fnc_structureText = { // idk why I named it this, it structures the tex
     _marker setMarkerPos (getPos _anomaly);
 };
 
-[format ["Creating anomaly field, anomaly amount: ", [_anomalyAmount]], _fnc_scriptName] call A3U_fnc_log;
+[format ["Creating anomaly field, anomaly amount: %1", _anomalyAmount], _fnc_scriptName] call A3U_fnc_log;
 
 for "_i" from 1 to _anomalyAmount do {
     private _pos = call _fnc_grabPos;
@@ -62,33 +62,31 @@ for "_i" from 1 to _anomalyAmount do {
     {
         case 1: 
         {
-            private _anomaly = [_pos] call anomaly_fnc_createMeatgrinder;
+            private _anomaly = [_pos] call diwako_anomalies_main_fnc_createMeatgrinder;
             _anomalies pushBack _anomaly;
-            ["meatgrinder", _anomaly, _i] call _fnc_structureText;
+            ["meatgrinder", _anomaly, _i] call _fnc_createMarker;
         };
         case 2: 
         {
-            private _anomaly = [_pos] call anomaly_fnc_createSpringboard;
+            private _anomaly = [_pos] call diwako_anomalies_main_fnc_createSpringboard;
             _anomalies pushBack _anomaly;
-            ["springboard", _anomaly, _i] call _fnc_structureText;
+            ["springboard", _anomaly, _i] call _fnc_createMarker;
         };
         case 3: 
         {
-            private _anomaly = [_pos] call anomaly_fnc_createBurner;
+            private _anomaly = [_pos] call diwako_anomalies_main_fnc_createBurner;
             _anomalies pushBack _anomaly;
-            ["burner", _anomaly, _i] call _fnc_structureText;
+            ["burner", _anomaly, _i] call _fnc_createMarker;
         };
         case 4: 
         {
-            private _anomaly = [_pos] call anomaly_fnc_createElectra;
+            private _anomaly = [_pos] call diwako_anomalies_main_fnc_createElectra;
             _anomalies pushBack _anomaly;
-            ["electra", _anomaly, _i] call _fnc_structureText;
+            ["electra", _anomaly, _i] call _fnc_createMarker;
         };
     };
 };
 
-// [_anomalies] call A3U_fnc_cleanupAnomalyField;
-
-[format ["Created anomaly field, anomaly amount final: ", [count _anomalies]], _fnc_scriptName] call A3U_fnc_log;
+[format ["Created anomaly field, anomaly amount final: %1", count _anomalies], _fnc_scriptName] call A3U_fnc_log;
 
 _anomalies

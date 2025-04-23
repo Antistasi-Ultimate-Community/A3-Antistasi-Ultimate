@@ -22,7 +22,7 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 // - static AA
 // - AA tanks/trucks
 // TODO: Rework vehicle type system to handle this shit better
-private _allAA = (A3A_faction_all get "vehiclesPlanesAA") + (A3A_faction_all get "vehiclesAA") + (A3A_faction_all get "staticAA");
+private _allAA = (A3A_faction_all get "vehiclesPlanesAA") + (A3A_faction_all get "vehiclesPlanesLargeAA") + (A3A_faction_all get "vehiclesAA") + (A3A_faction_all get "staticAA");
 if (typeOf _target in _allAA) exitWith { 0 };
 
 // Otherwise fine?

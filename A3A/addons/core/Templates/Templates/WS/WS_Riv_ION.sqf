@@ -5,6 +5,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasArtOfWar = "aow" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 ////////////////////////////
 //   Rivals Information   //
@@ -135,7 +136,9 @@ private _carbines = [
 	["arifle_XMS_Base_lxWS", "", "saber_light_lxWS", "optic_r1_low_lxWS", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""],
 	["arifle_XMS_Base_lxWS", "", "saber_light_lxWS", "optic_aco", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""],
 	["arifle_VelkoR5_lxWS", "", "saber_light_lxWS", "",  ["35Rnd_556x45_Velko_reload_tracer_green_lxWS", "35Rnd_556x45_Velko_reload_tracer_green_lxWS", "35Rnd_556x45_Velko_tracer_green_lxWS"], [], ""],
-	["arifle_VelkoR5_lxWS", "", "saber_light_lxWS", "optic_r1_high_lxWS",  ["35Rnd_556x45_Velko_reload_tracer_green_lxWS", "35Rnd_556x45_Velko_reload_tracer_green_lxWS", "35Rnd_556x45_Velko_tracer_green_lxWS"], [], ""]
+	["arifle_VelkoR5_lxWS", "", "saber_light_lxWS", "optic_r1_high_lxWS",  ["35Rnd_556x45_Velko_reload_tracer_green_lxWS", "35Rnd_556x45_Velko_reload_tracer_green_lxWS", "35Rnd_556x45_Velko_tracer_green_lxWS"], [], ""],
+	["arifle_SLR_Para_lxWS", "", "saber_light_lxWS", "optic_r1_high_black_sand_lxWS",  ["20Rnd_762x51_slr_lxWS", "30Rnd_762x51_slr_lxWS", "30Rnd_762x51_slr_lxWS"], [], ""],
+	["arifle_SLR_Para_snake_lxWS", "", "saber_light_lxWS", "optic_r1_high_black_sand_lxWS",  ["20Rnd_762x51_slr_lxWS", "30Rnd_762x51_slr_lxWS", "30Rnd_762x51_slr_lxWS"], [], ""]
 ];
 if (_hasContact ) then {
 	_carbines append [
@@ -272,10 +275,12 @@ _loadoutData set ["sidearms", _pistols];
 _loadoutData set ["lightATLaunchers", [
 	["launch_MRAWS_green_rail_F", "", "", "", ["MRAWS_HEAT55_F", "MRAWS_HE_F"], [], ""],
 	["launch_MRAWS_green_rail_F", "", "", "", ["MRAWS_HEAT55_F", "MRAWS_HEAT_F"], [], ""],
-	["launch_MRAWS_green_rail_F", "", "", "", ["MRAWS_HEAT55_F"], [], ""]
+	["launch_MRAWS_green_rail_F", "", "", "", ["MRAWS_HEAT55_F"], [], ""],
+	["launch_RPG32_tan_lxWS", "", "", "", ["RPG32_F", "RPG32_F"], [], ""]
 ]];
 _loadoutData set ["lightHELaunchers", [
-	["launch_MRAWS_green_rail_F", "", "", "", ["MRAWS_HEAT55_F"], [], ""]
+	["launch_MRAWS_green_rail_F", "", "", "", ["MRAWS_HEAT55_F"], [], ""],
+	["launch_RPG32_tan_lxWS", "", "", "", ["RPG32_HE_F", "RPG32_HE_F"], [], ""]
 ]];
 _loadoutData set ["ATLaunchers", ["launch_NLAW_F"]];
 _loadoutData set ["AALaunchers", [
@@ -346,7 +351,8 @@ private _headgear = [
 	"H_MilCap_gry",
 	"H_Cap_headphones",
 	"H_Cap_oli_hs",
-	"lsWS_H_Headset"
+	"lsWS_H_Headset",
+	"H_Beret_Headset_lxWS"
 ];
 
 private _pilotHeadgear = ["H_Cap_headphones_ion_lxWS", "lxWS_H_CapB_rvs_blk_ION"];

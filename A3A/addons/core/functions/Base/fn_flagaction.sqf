@@ -17,16 +17,19 @@ switch _typeX do
     };
     case "unit":
     {
-        _flag addAction [
-            format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"],
-            {
-                if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
-                    [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
-                } else { 
-                    [] spawn A3A_fnc_unit_recruit; 
-                };
-            },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
-        ];
+        if (playerRecruitAI isEqualTo 1) then 
+        {
+            _flag addAction [
+                format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"],
+                {
+                    if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
+                        [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
+                    } else { 
+                        [] spawn A3A_fnc_unit_recruit; 
+                    };
+                },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
+            ];
+        };
     };
     case "vehicle":
     {
@@ -169,6 +172,13 @@ switch _typeX do
             localize "STR_antistasi_actions_free_prisoner"
         ], A3A_fnc_liberaterefugee,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
     };
+    case "deserter":
+    {
+        _flag addAction [format [
+            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", 
+            localize "STR_antistasi_actions_free_prisoner"
+        ], A3A_fnc_liberateDeserter,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
+    };
     case "prisonerX":
     {
         _flag addAction [format [
@@ -186,8 +196,11 @@ switch _typeX do
     case "captureX":
     {
         // Uses the optional param to determine whether the call of captureX is a release or a recruit
-        _flag addAction [format ["<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_release_action"], { _this spawn A3A_fnc_captureX; },false,6,true,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
-        _flag addAction [format ["<img image='a3\missions_f_oldman\data\img\holdactions\holdaction_follow_start_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_recruit_action"], { _this spawn A3A_fnc_captureX; },true,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
+        _flag addAction [format ["<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_release_action"], { _this spawn A3A_fnc_captureX; },[false, false],6,true,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
+        _flag addAction [format ["<img image='a3\missions_f_oldman\data\img\holdactions\holdaction_follow_start_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_recruit_to_faction_action"], { _this spawn A3A_fnc_captureX; },[true,false],0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
+        if (recruitToPlayerSquad) then {
+            _flag addAction [format ["<img image='a3\missions_f_oldman\data\img\holdactions\holdaction_follow_start_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_recruit_to_squad_action"], { _this spawn A3A_fnc_captureX; },[true,true],0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
+        };
         _flag addAction [format ["<img image='\a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_interrogate_action"], A3A_fnc_interrogate, nil, 0, false, true, "", "(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (_target getVariable ['canBeInterrogated', false])",4];
         _flag addAction [format ["<img image='\a3\ui_f_oldman\data\igui\cfg\holdactions\map_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_reveal_action"],SCRT_fnc_common_reveal,false,6,true,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
     };
@@ -211,16 +224,18 @@ switch _typeX do
         if (true) exitWith { ERROR("Disabled due to UseDoomGUI Switch.") };
 #endif
         removeAllActions _flag;
-        _flag addAction [
-            format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], 
-            {
-                if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
-                    [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
-                } else { 
-                    [] spawn A3A_fnc_unit_recruit; 
-                };
-            },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
-        ];
+        if (playerRecruitAI isEqualTo 1) then {
+            _flag addAction [
+                format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], 
+                {
+                    if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {
+                        [localize "STR_antistasi_actions_unit_recruitment", localize "STR_antistasi_actions_unit_recruitment_distance_check_failure"] call A3A_fnc_customHint;
+                    } else { 
+                        [] spawn A3A_fnc_unit_recruit; 
+                    };
+                },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
+            ];
+        };
         _flag addAction [
             format ["<img image='a3\ui_f\data\igui\cfg\simpletasks\types\truck_ca.paa' size='1.6' shadow=2 /> <t>%1</t>",  localize "STR_antistasi_actions_buy_vehicle"], 
             {

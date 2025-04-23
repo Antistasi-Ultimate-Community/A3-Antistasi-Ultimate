@@ -46,6 +46,14 @@
         climate[] = {"arctic"};
     };
 
+    class CUP_NATO_Temperate : CUP_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\Data_F\Flags\Flag_NATO_CO.paa";
+        name = "CUP NATO Temperate";
+        file = "CUP_AI_NATO_Temperate";
+    };
+
     class CUP_BAF_Arid : CUP_Base
     {
         side = "Occ";
@@ -200,6 +208,20 @@
         file = "CUP_Reb_NAPA";
         description = $STR_A3AP_setupFactionsTab_napa_3cbf;
     };
+    class CUP_Reb_EM : CUP_Reb
+    {
+        name = "Eastern Loyalists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_soviet_co.paa);
+        file = "CUP_Reb_EM";
+        description = "A generic militarized militia using surplus or outdated Soviet technology. Loyal to the East. Consider this a more forgiving start than most.";
+    };
+    class CUP_Reb_WM : CUP_Reb
+    {
+        name = "Western Loyalists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_nato_co.paa);
+        file = "CUP_Reb_WM";
+        description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
+    };
     class CUP_TKC : CUP_Base
     {
         side = "Civ";
@@ -221,4 +243,76 @@
         name = "CUP CHDKZ";
         file = "CUP_Riv_CHDKZ";
         description = $STR_A3AP_setupFactionsTab_chdkz;
+    };
+    class CUP_LRI : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\flag_LRI_co.paa);
+        name = "CUP LRI";
+        file = "CUP_Reb_LRI";
+        description = $STR_A3AP_setupFactionsTab_CUP_LRI;
+    };
+	
+    class LDF_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_LDF_Faction"};        // units, weapons, vehicles
+        //requiredAddons[] = {"CUP_AirVehicles_Core"};        // vehicles requires units & weapons
+        priority = 61;
+    };
+	
+    class CUP_LDF : LDF_Base
+    {
+        side = "Occ";
+        flagTexture = "a3\data_f_enoch\flags\flag_enoch_co.paa";
+        name = "CUP LDF";
+        file = "CUP_AI_LDF";
+    };
+    class HAFM_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "HAFM_Acc"};
+        priority = 61;
+	};
+    //CUP NorAF
+    class NorAF_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_NOR_Faction"};        // units, weapons, vehicles
+        //requiredAddons[] = {"CUP_AirVehicles_Core"};        // vehicles requires units & weapons
+        priority = 61;
+    };
+
+    class CUP_HAFM : HAFM_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Greece_ca.paa";
+        name = "CUP HAFM";
+        file = "CUP_AI_HAFM";
+	};
+    class CUP_NorAF_Temperate : NorAF_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Norway_ca.paa";
+        name = "CUP NorAF Temperate";
+        file = "CUP_AI_NorAF_Temperate";
+        climate[] = {"temperate","tropical"};
+    };
+
+    class CUP_NorAF_Arctic : CUP_NorAF_Temperate
+    {
+        name = "CUP NorAF Arctic";
+        file = "CUP_AI_NorAF_Arctic";
+        climate[] = {"arctic"};
+    };
+
+    class EST_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Estraria_Army", "DEGA_Vehicles_V22", "BVC_Facewear"};
+        priority = 61;
+    };
+	
+    class CUP_EST : EST_Base
+    {
+        side = "Occ";
+        flagTexture = "\EST_Markers\Data\Marker_EST.paa";
+        name = "CUP EST";
+        file = "CUP_AI_EST";
     };

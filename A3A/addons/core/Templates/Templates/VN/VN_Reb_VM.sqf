@@ -5,7 +5,7 @@
 ["name", "VM"] call _fnc_saveToTemplate;
 
 ["flag", "vn_flag_lao_dmg"] call _fnc_saveToTemplate;
-["flagTexture", "\vn\objects_f_vietnam\flags\data\vn_flag_01_lao_dmg_ca.paa"] call _fnc_saveToTemplate;
+["flagTexture", "\A3\Data_F\Flags\flag_blue_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "vn_flag_lao"] call _fnc_saveToTemplate;
 
 //////////////////////////
@@ -53,25 +53,6 @@
 
 ["breachingExplosivesAPC", [["vn_mine_m112_remote_mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["vn_mine_satchel_remote_02_mag", 1], ["vn_mine_m112_remote_mag", 2]]] call _fnc_saveToTemplate;
-
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["vn_b_seal_static_mk18", 2500, "STATICMG", {tierWar > 3}],
-    ["vn_b_rok_army_static_mortar_m29", 3000, "STATICMORTAR", {tierWar > 5}],
-
-    ["vn_i_armor_m113_acav_02_fank_71", 5000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}],
-    ["vn_i_armor_m113_acav_06_fank_71", 7500, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}],
-
-    ["vn_i_armor_m41_01", 20000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}}],
-
-    ["vn_b_air_oh6a_06", 25000, "HELI", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["vn_b_air_oh6a_05", 25000, "HELI", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["vn_b_air_oh6a_04", 25000, "HELI", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["vn_b_air_oh6a_07", 25000, "HELI", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
 
 #include "VN_Reb_Vehicle_Attributes.sqf"
 

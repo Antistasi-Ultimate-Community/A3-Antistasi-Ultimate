@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class sara {
 	population[] = {
 		{"Sara_Rashidah",25},{"Sara_Balmopan",97},{"Sara_Estrella",66},{"Sara_Chantico",82},{"Sara_Cedras",33},{"Sara_Ambergris",59},{"Sara_Ortego",450},{"Sara_Cayo",94},{"Sara_Iguana",107},{"Sara_Dolores",315},{"Sara_Parato",26},{"Sara_Tiberia",49},{"Sara_Geraldo",33},{"Sara_Corazol",397},{"Sara_Gulan",38},{"Sara_Somato",167},{"Sara_Bonanza",25},{"Sara_Corinto",31},{"Sara_Yoro",25},{"Sara_Pesto",25},{"Sara_Paraiso",450},{"Sara_Arcadia",74},{"Sara_Masbete",59},{"Sara_Pita",82},{"Sara_Bagango",218},{"Sara_Eponia",109},{"Sara_Everon",59},{"Sara_Hunapu",34},{"Sara_Pacamac",30},{"Sara_Tlaloc",33},{"Sara_Obregan",147},{"Sara_Carmen",33},{"Sara_Ixel",31},{"Sara_Mercalillo",154},{"Sara_Modesta",52},{"Sara_Valor",25},{"Sara_Gaula",45},{"Sara_Mataredo",25},{"Sara_Benoma",25},{"Sara_Tandag",43},{"Sara_Rahmadi",30}
@@ -17,14 +18,10 @@ class sara {
 	};	
 	climate = "arid";
 	buildObjects[] = {
-		{"Land_fortified_nest_big_EP1", 300}, {"Land_Fort_Watchtower_EP1", 300}, {"Fortress2", 200}, {"Fortress1", 100}, {"Land_fortified_nest_small_EP1", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140}, {"ShedBig", 100}, {"Shed", 100}, {"ShedSmall", 60}, {"Land_GuardShed", 30},
-		// CUP sandbag walls
-		{"Land_BagFenceLong", 10}, {"Land_BagFenceShort", 10}, {"Land_BagFenceRound", 10},        //{"Land_BagFenceEnd", 0, 5}, 
-		// Other CUP fences
-		{"Land_fort_artillery_nest_EP1", 200}, {"Land_fort_rampart_EP1", 50}, {"Fort_Barricade", 50}, {"Fence", 20}, {"FenceWood", 10}, {"FenceWoodPalet", 10}, 
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_SAND,
+		BUILDABLES_ARID,
+		BUILDABLES_CUP,
+		BUILDABLES_UNIVERSAL
 	};
 };

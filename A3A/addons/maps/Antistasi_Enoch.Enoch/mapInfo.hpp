@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class enoch {
 	population[] = {
 		{"Adamow",200},{"Bielawa",150},{"Borek",150},{"Brena",150},{"Dolnik",100},{"Gieraltow",400},{"Gliniska",150},{"Grabin",250},{"Huta",150},{"Karlin",50},{"Kolembrody",100},{"Lembork",50},{"Lipina",100},{"Lukow",200},{"Muratyn",50},{"Nadbor",600},{"Nidek",100},{"Olszanka",100},{"Polana",100},{"Radacz",150},{"Radunin",150},{"Roztoka",50},{"Sitnik",150},{"Sobotka",100},{"Tarnow",200},{"Topolin",650},{"Zalesie",150},{"Zapadlisko",100}
@@ -19,13 +20,9 @@ class enoch {
 	};
 	climate = "temperate";
 	buildObjects[] = {
-		// Large vanilla tropical structures
-		{"Land_BagBunker_01_large_green_F", 300}, {"Land_HBarrier_01_tower_green_F", 300}, {"Land_BagBunker_01_small_green_F", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140},
-		// vanilla tropical sandbag walls
-		{"Land_BagFence_01_short_green_F", 10}, {"Land_BagFence_01_round_green_F", 10}, {"Land_BagFence_01_long_green_F", 10},
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TEMPERATE,
+		BUILDABLES_UNIVERSAL
 	};
 };

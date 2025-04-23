@@ -93,12 +93,22 @@ if(currentWaypoint _groupPilot > 0) then
             waitUntil {sleep 0.25; getPosATL _this # 2 < 120};
             private _chute = createVehicle ["Steerable_Parachute_F", getPosATL _this, [], 0, "CAN_COLLIDE"];
             _this moveInDriver _chute;
-            private _smokeGrenade = selectRandom allSmokeGrenades;
-            private _smoke = _smokeGrenade createVehicle (getPosATL _this);
-            _smoke attachTo [_this,[0,0,0]];
-            waitUntil { sleep 1; isTouchingGround _this};
-            deleteVehicle _chute;
-            detach _smoke;
+            if !("lowTech" in A3A_factionEquipFlags) then {
+                private _smokeGrenade = selectRandom allSmokeGrenades;
+                if !(disableAutoSmokeCover) then {
+                    private _smoke = _smokeGrenade createVehicle (getPosATL _this);
+                    _smoke attachTo [_this,[0,0,0]];
+                    waitUntil { sleep 1; isTouchingGround _this};
+                    deleteVehicle _chute;
+                    detach _smoke;
+                } else {
+                    waitUntil { sleep 1; isTouchingGround _this};
+                    deleteVehicle _chute;
+                };
+            }else{
+                waitUntil { sleep 1; isTouchingGround _this};
+                deleteVehicle _chute;
+            };
         };
         sleep 0.5;
   	} forEach units _groupJumper;

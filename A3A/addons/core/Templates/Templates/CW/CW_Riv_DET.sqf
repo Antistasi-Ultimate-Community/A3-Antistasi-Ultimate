@@ -44,9 +44,9 @@
 ["vehiclesRivalsLightArmed", ["3AS_ISP"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", ["CW_Mando_argon_transport"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", ["3AS_ISP_Transport"]] call _fnc_saveToTemplate;
-["vehiclesRivalsAPCs", ["3AS_RTT_Wheeled"]] call _fnc_saveToTemplate;
+["vehiclesRivalsAPCs", ["3AS_PX10_REB_UP"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", ["ls_ground_aat_black"]] call _fnc_saveToTemplate;
-["vehiclesRivalsHelis", ["3AS_Patrol_LAAT_Imperial"]] call _fnc_saveToTemplate;			
+["vehiclesRivalsHelis", ["3AS_Aegis_Shuttle_Pirate_F"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["3as_uas2"]] call _fnc_saveToTemplate;			
 
 ["staticLowWeapons", [
@@ -143,23 +143,26 @@ _loadoutData set ["items_unarmed_extras", []];
 _loadoutData set ["rifles", [
 	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
 	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "swlw_westar35s_scope",  ["SWLW_Westar35S_Mag"], [], ""]
+	["3AS_Cinnagaran_Carbine_F", "", "", "3AS_Optic_Cinnagaran_1_F",  ["3AS_Cinnagaran_Carbine_F"], [], ""],
+	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""]
 ]];
 _loadoutData set ["tunedRifles", [
 	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["3AS_Arkanian_F", "", "", "3AS_Optic_Arkanian_1_F",  ["3AS_40Rnd_EM50_Mag"], [], ""],
 	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""],
 	["ls_weapon_westar35s_primary", "", "", "swlw_westar35s_scope",  ["SWLW_Westar35S_Mag"], [], ""]
 ]];
 _loadoutData set ["enforcerRifles", [
 	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
 	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["3AS_Arkanian_Stock_F", "", "", "3AS_Optic_Arkanian_2_F",  ["3AS_40Rnd_EM50_Mag"], [], ""],
+	["3AS_Cinnagaran_Carbine_F", "", "", "3AS_Optic_Cinnagaran_1_F",  ["3AS_Cinnagaran_Carbine_F"], [], ""],
 	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""],
 	["ls_weapon_westar35s_primary", "", "", "swlw_westar35s_scope",  ["SWLW_Westar35S_Mag"], [], ""]
 ]];
 _loadoutData set ["carbines", [
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""]
+	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["3AS_Cinnagaran_Carbine_F", "", "", "3AS_Optic_Cinnagaran_1_F",  ["3AS_Cinnagaran_Carbine_F"], [], ""]
 ]];
 _loadoutData set ["grenadeLaunchers", [
 	["SWLW_WestarM5_UGL", "", "", "", ["SWLW_WestarM5_standard_Mag"], ["SWLW_WestarM5_g_Mag"], ""],

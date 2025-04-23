@@ -3,6 +3,7 @@ FIX_LINE_NUMBERS()
 
 //Mission: Capture/destroy the convoy
 if (!isServer and hasInterface) exitWith {};
+if (missionNamespace getVariable ["A3A_convoyInProgress", false]) exitWith {};
 params ["_mrkDest", "_mrkOrigin", ["_convoyType", ""], ["_resPool", "legacy"], ["_startDelay", -1], ["_visible", false]];
 
 private _difficult = if (random 10 < tierWar) then {true} else {false};
@@ -18,6 +19,8 @@ private _markNames = [];
 private _POWS = [];
 private _reinforcementsX = [];
 
+// Prevent duplicate convoys
+missionNamespace setVariable ["A3A_convoyInProgress", true, true];
 
 // Setup start time
 
@@ -221,7 +224,7 @@ if (_convoyType isEqualTo "Prisoners") then
     for "_i" from 1 to (1+ round (random 11)) do
     {
         private _unit = [_grpPOW, FactionGet(reb,"unitUnarmed"), _posSpawn, [], 0, "NONE"] call A3A_fnc_createUnit;
-        [_unit, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+        [_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
         _unit setCaptive true;
         _unit disableAI "MOVE";
         _unit setBehaviour "CARELESS";
@@ -533,6 +536,8 @@ private _groups = [];
 { if (alive _x) then {_groups pushBackUnique (group _x)} } forEach _soldiers;
 { [_x] spawn A3A_fnc_groupDespawner } forEach _groups;
 { [_x] spawn A3A_fnc_VEHdespawner } forEach _vehiclesX;
+
+missionNamespace setVariable ["A3A_convoyInProgress", false, true];
 
 {deleteMarker _x} forEach _markers;
 // Hang around for a bit, and then send all escorts back to the source base

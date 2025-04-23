@@ -14,10 +14,12 @@ class DOUBLES(ADDON,Nodes)
     #include "Nodes\GM.hpp"
     #include "Nodes\RDS.hpp"
     #include "Nodes\RF.hpp"
+    #include "Nodes\EF.hpp"
     #include "Nodes\RHS.hpp"
     #include "Nodes\RNT.hpp"
     #include "Nodes\Scion.hpp"
     #include "Nodes\SPE.hpp"
+    #include "Nodes\SPEX.hpp"
     #include "Nodes\IFA.hpp"
     #include "Nodes\CSA.hpp"
     #include "Nodes\UNS.hpp"
@@ -25,6 +27,7 @@ class DOUBLES(ADDON,Nodes)
     #include "Nodes\OPTRE.hpp"
     #include "Nodes\RACS.hpp"
     #include "Nodes\VN.hpp"
+    #include "Nodes\Nickelsteel.hpp"
     #include "Nodes\WS.hpp"
     #include "Nodes\Aegis.hpp"
     #include "Nodes\CW.hpp"
@@ -38,6 +41,8 @@ class DOUBLES(ADDON,Nodes)
 	#include "Nodes\NFtS.hpp"
 	#include "Nodes\EAW.hpp"
 	#include "Nodes\FOW.hpp"
+	#include "Nodes\CWR.hpp"
+    #include "Nodes\HAFM.hpp"
 };
 
 class DOUBLES(ADDON,Cargo)
@@ -61,17 +66,19 @@ class DOUBLES(ADDON,Cargo)
     #include "Cargo\GM.hpp"
     #include "Cargo\RHS.hpp"
     #include "Cargo\RF.hpp"
+    #include "Cargo\EF.hpp"
     #include "Cargo\IFA.hpp"
     #include "Cargo\SPE.hpp"
+    #include "Cargo\SPEX.hpp"
     #include "Cargo\UNS.hpp"
     #include "Cargo\Vanilla.hpp"
     #include "Cargo\OPTRE.hpp" // has to be here. It uses the class for the vanilla fuel drum
     #include "Cargo\VN.hpp"
+    #include "Cargo\Nickelsteel.hpp"
     #include "Cargo\WS.hpp"
     #include "Cargo\CW.hpp"
     #include "Cargo\FFAA.hpp"
 	#include "Cargo\NFtS.hpp"
-
 };
 
 class DOUBLES(ADDON,Packable) {

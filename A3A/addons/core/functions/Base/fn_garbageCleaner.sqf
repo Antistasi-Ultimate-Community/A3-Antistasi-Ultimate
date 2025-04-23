@@ -15,8 +15,8 @@ private _fnc_distCheck = {
 
 // Cleanup constructed buildings
 private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
+_rebMarkers pushBack "Synd_HQ";
 // ^ Add extra plus related stuff
-_rebMarkers append outpostsFIA; _rebMarkers pushBack "Synd_HQ";
 
 A3A_buildingsToSave = A3A_buildingsToSave select {
 	// Keep if there are rebel spawners within 500m
@@ -31,6 +31,13 @@ A3A_buildingsToSave = A3A_buildingsToSave select {
 	if (-1 != _indexes findIf { _building inArea _rebMarkers#_x } ) then { continueWith true };
 	deleteVehicle _x; false;
 };
+
+Debug("Moving dead solders out of vehicles...")
+{
+	if !(isNull objectParent _x) then { moveOut _x };
+} forEach allDeadMen;
+Debug("Finished moving soldiers out of vehicles; executing garbage clean.")
+sleep 0.5;
 
 { deleteVehicle _x } forEach allDead;
 { deleteVehicle _x } forEach (allMissionObjects "WeaponHolder");

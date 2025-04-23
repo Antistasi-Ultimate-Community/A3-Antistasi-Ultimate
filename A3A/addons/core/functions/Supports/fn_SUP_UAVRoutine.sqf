@@ -17,16 +17,15 @@ FIX_LINE_NUMBERS()
 
 params ["_suppData", "_resPool", "_airport", "_planeType", "_sleepTime", "_reveal"];
 _suppData params ["_supportName", "_side", "_suppType", "_suppCenter", "_suppRadius", "_suppTarget"];
-// Doesn't actually process targets at the moment, it's just a dummy
 
 //Sleep to simulate preparation time
 sleep _sleepTime;
-
 private _spawnPos = markerPos _airport vectorAdd [0,0,300];
 private _uav = createVehicle [_planeType, _spawnPos, [], 0, "FLY"];
 [_side, _uav] call A3A_fnc_createVehicleCrew;
 _groupVeh = group driver _uav;
 { [_x, nil, false, _resPool] call A3A_fnc_NATOinit } forEach (crew _uav);           // arguable
+[-10 * count units _groupVeh, _side, _resPool] call A3A_fnc_addEnemyResources;
 [_uav, _side, _resPool] call A3A_fnc_AIVEHinit;
 
 #if __A3_DEBUG__
@@ -52,17 +51,25 @@ _groupVeh = group driver _uav;
 
 _wp = _groupVeh addWayPoint [_suppCenter, 0];
 _wp setWaypointBehaviour "AWARE";
-_wp setWaypointType "SAD";
+/* _wp setWaypointType "SAD"; */
+_wp setWaypointType "LOITER";
+_wp setWaypointLoiterType "CIRCLE_L";
+_wp setWaypointSpeed "NORMAL";
+_wp setWaypointLoiterRadius 600;
 _groupVeh setCurrentWaypoint _wp;
-//_uav flyInHeight 500;           // maybe not necessary if we lock the waypoint
+_uav flyInHeight 400;           // maybe not necessary if we lock the waypoint
 _groupVeh lockWP true;          // prevent exiting the SAD waypoint
 
-// do we just run for 20mins and then RTB?
 private _timeout = time + 1200;
-private _enemySide = [Invaders, Occupants] select (_side == Invaders);
+private _enemySide = [Occupants, Invaders] select (_side == Invaders);
+
 while {time < _timeout && canMove _uav} do
 {
-    waitUntil { sleep 5; _uav distance2d _suppCenter < 500 };
+    waitUntil { sleep 5; _uav distance2d _suppCenter < 1200 || !alive _uav};
+    // check if launcher/crew are intact
+    if !(canFire _uav and gunner _uav call A3A_fnc_canFight || alive _uav) exitWith {
+        Info_1("%1 has been destroyed or disabled, aborting routine", _supportName);
+    };
 
     private _friends = units _side inAreaArray [_suppCenter, 1000, 1000];
     private _friendGroups = allGroups select {(leader _x in _friends) and {isNull objectParent leader _x} };
@@ -82,9 +89,13 @@ while {time < _timeout && canMove _uav} do
         { [_group, [_x, 2]] remoteExec ["reveal", leader _group] } forEach _spottedEnemies;
     } forEach _friendGroups;
 
-    sleep 60;
-};
+    // check if we're past the active time/missiles
+    if (time > _timeout) exitWith {
+        Info_1("%1 has timed out, aborting", _supportName);
+    };
 
+    sleep 10;
+};
 
 _suppData set [4, 0];           // Set activesupport radius to zero, prevents adding further targets
 

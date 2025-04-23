@@ -46,4 +46,16 @@ class NavGrid {
 	UMB_Colombia = QPATHTOFOLDER(Antistasi_UMB_Colombia.UMB_Colombia\navGrid.sqf);
 	tem_kujari = QPATHTOFOLDER(Antistasi_tem_kujari.tem_kujari\navGrid.sqf);
 	stozec = QPATHTOFOLDER(Antistasi_stozec.stozec\navGrid.sqf);
+	psyfx_pht = QPATHTOFOLDER(Antistasi_psyfx_pht.psyfx_pht\navGrid.sqf);
+	yulakia = QPATHTOFOLDER(Antistasi_yulakia.yulakia\navGrid.sqf);
+	Gulfcoast = QPATHTOFOLDER(Antistasi_Gulfcoast.Gulfcoast\navGrid.sqf);
+	SPE_Mortain = QPATHTOFOLDER(Antistasi_SPE_Mortain.SPE_Mortain\navGrid.sqf);
+	tem_chernarus = QPATHTOFOLDER(Antistasi_tem_chernarus.tem_chernarus\navGrid.sqf);
+	tem_chernarusw = QPATHTOFOLDER(Antistasi_tem_chernarusw.tem_chernarusw\navGrid.sqf);
+	mehland = QPATHTOFOLDER(Antistasi_mehland.mehland\navGrid.sqf);
+	pulau = QPATHTOFOLDER(Antistasi_pulau.pulau\navGrid.sqf);
+	fapovo = QPATHTOFOLDER(Antistasi_fapovo.fapovo\navGrid.sqf);
+	chernarusredux = QPATHTOFOLDER(Antistasi_chernarusredux.chernarusredux\navGrid.sqf);
+	stubbhult = QPATHTOFOLDER(Antistasi_stubbhult.stubbhult\navGrid.sqf);
+	isladuala3 = QPATHTOFOLDER(Antistasi_isladuala3.isladuala3\navGrid.sqf);
 };

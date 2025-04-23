@@ -57,7 +57,7 @@ private _fnc_saveUnitToTemplate = {
 private _fnc_generateAndSaveUnitToTemplate = {
 	params ["_name", "_template", "_loadoutData", ["_traits", []], ["_unitProperties", []]];
 	private _loadouts = [];
-	for "_i" from 1 to 5 do {
+	for "_i" from 1 to loadoutsToGenerate do {
 		_loadouts pushBack ([_template, _loadoutData] call A3A_fnc_loadout_builder);
 	};
 	[_name, _loadouts, _traits, _unitProperties] call _fnc_saveUnitToTemplate;
@@ -70,6 +70,15 @@ private _fnc_generateAndSaveUnitsToTemplate = {
 		private _finalName = format ["%1_%2", _prefix, _name];
 		[_finalName, _template, _loadoutData, _traits, _unitProperties] call _fnc_generateAndSaveUnitToTemplate;
 	} forEach _unitTemplates;
+};
+
+private _fnc_saveNames = {
+    params ["_names"];
+    private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> _names;
+    private _firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
+    ["firstNames", _firstNames] call _fnc_saveToTemplate;
+    private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
+    ["lastNames", _lastNames] call _fnc_saveToTemplate;
 };
 
 {

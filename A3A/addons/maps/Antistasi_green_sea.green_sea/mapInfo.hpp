@@ -1,3 +1,4 @@
+#include "..\BuildObjectsList.hpp"
 class green_sea 
 {
 	population[] = {
@@ -59,22 +60,18 @@ class green_sea
 	antennasBlacklistIndex[] = {};
 	banks[] = {}; //no suitable building available
 	garrison[] = {
-		{},{"outpost_22","outpost_24","outpost_25","outpost_26","seaport_5","milbase_2","airport_5","resource_10","resource_11","resource_12", "resource_13"},{},{}
+		{},{"outpost_22","outpost_24","outpost_25","outpost_26","seaport_5","milbase_2","airport_5","resource_10","resource_11","resource_12", "resource_13", "factory_5"},{},{}
 	};
 	fuelStationTypes[] = {"Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","Land_Fuelstation","Land_Fuelstation_army","Land_Benzina_schnell"};
 	milAdministrations[] = {
-		{9914.04,8561.59,0},{11489.5,15359.9,-3.8147e-006},{2493.91,11565.8,0}
+		{9914.04,8561.59,0},{11489.5,15359.9,-3.8147e-006},{2493.91,11565.8,0},{17076.549,18934.75,0}
 	};
 	climate = "temperate";
 	buildObjects[] = {
-		{"Land_fortified_nest_big_EP1", 300}, {"Land_Fort_Watchtower_EP1", 300}, {"Fortress2", 200}, {"Fortress1", 100}, {"Fort_Nest", 60},
-		{"Land_Shed_09_F", 120}, {"Land_Shed_10_F", 140}, {"ShedBig", 100}, {"Shed", 100}, {"ShedSmall", 60}, {"Land_GuardShed", 30},
-		// CUP sandbag walls
-		{"Land_BagFenceLong", 10}, {"Land_BagFenceShort", 10}, {"Land_BagFenceRound", 10},        //{"Land_BagFenceEnd", 0, 5}, 
-		// Other CUP fences
-		{"Land_fort_artillery_nest_EP1", 200}, {"Land_fort_rampart_EP1", 50}, {"Fort_Barricade", 50}, {"Fence", 20}, {"FenceWood", 10}, {"FenceWoodPalet", 10}, 
-		// Non-camo vanilla stuff
-		{"Land_SandbagBarricade_01_half_F", 20}, {"Land_SlumWall_01_s_2m_F", 5}, {"Land_PillboxBunker_01_hex_F", 200},
-		{"Land_Barricade_01_4m_F", 30}, {"Land_GuardBox_01_brown_F", 80}, {"Land_Tyres_F", 10}
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TEMPERATE,
+		BUILDABLES_CUP,
+		BUILDABLES_UNIVERSAL
 	};
 };

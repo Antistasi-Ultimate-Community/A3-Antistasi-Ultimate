@@ -4,6 +4,7 @@ private _bleedOut = time + 450;
 private _isPlayer = false;
 private _playersX = false;
 private _inPlayerGroup = false;
+private _handlerCountdown = 0;
 _unit setBleedingremaining 300;
 
 private _fnc_applyPostEffect = {
@@ -14,6 +15,45 @@ private _fnc_applyPostEffect = {
 	"filmGrain" ppEffectAdjust [0.05, 1, 1, 0, 1]; 
 	"filmGrain" ppEffectCommit 0; 
 	"filmGrain" ppEffectEnable true;
+};
+
+private _fnc_selfReviveCountdownStart = {
+	private _diff = (_unit getVariable ["A3A_selfReviveTimeout", -1]) - time;
+	private _initialCountDown = [_diff] call BIS_fnc_countDown;
+
+	if (_diff > 0) then {
+		_handlerCountdown = addMissionEventHandler [
+			"EachFrame", 
+			{ 
+				[
+					localize "STR_antistasi_actions_unconscious_self_withstand_countdown",
+					format[
+						[(([0] call BIS_fnc_countdown) / 60) + .01, "HH:MM"] call BIS_fnc_timetostring
+					],
+					true
+				] call A3A_fnc_customHint
+			}
+		];
+	}
+	else {
+		_handlerCountdown = addMissionEventHandler [
+			"EachFrame", 
+			{ 
+				[
+					localize "STR_antistasi_actions_unconscious_self_withstand_countdown",
+					format[
+						"<t color='#008000'>%1</t>", 
+						localize "STR_antistasi_actions_unconscious_self_withstand_ready"
+					],
+					true
+				] call A3A_fnc_customHint
+			}
+		];
+	};
+};
+
+private _fnc_selfReviveCountdownStop = {
+	removeMissionEventHandler ["EachFrame", _handlerCountdown];
 };
 
 if (isPlayer _unit) then {
@@ -30,10 +70,18 @@ if (isPlayer _unit) then {
 		_unit setCaptive true
 	};
 
+	if (useDownedNotification) then {
+		[_unit, localize "STR_A3AU_downed_help"] remoteExec ["globalChat", 0];
+	};
+
 	openMap false;
 
 	{
-		if ((!isPlayer _x) and (vehicle _x != _x) and (_x distance _unit < 50)) then {unassignVehicle _x; [_x] orderGetIn false}
+		unassignVehicle _x;  // Ensure AI aren't assigned to a vehicle
+		if ((!isPlayer _x) and (vehicle _x != _x) and (_x distance _unit < 50)) then {
+			_x action ["getOut", vehicle _x];  // Added to force AI to get out of the vehicle
+			[_x] orderGetIn false;
+		};
 	} forEach units group _unit;
 }
 else {
@@ -59,6 +107,7 @@ else {
 
 if (_isPlayer) then {
 	[] call _fnc_applyPostEffect;
+	[] call _fnc_selfReviveCountdownStart;
 };
 
 _unit setFatigue 1;
@@ -157,6 +206,7 @@ if (_isPlayer) then {
 if (_isPlayer) then {
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", respawnMenu];
 	[_unit,"remove"] remoteExec ["A3A_fnc_flagaction",0,_unit];
+	[] call _fnc_selfReviveCountdownStop;
 }
 else {
 	_unit stop false;
@@ -171,7 +221,8 @@ if (_isPlayer and (_unit getVariable ["respawn",false])) exitWith {};
 
 if (time > _bleedOut) exitWith {
 	if (_isPlayer) then {
-		_unit call A3A_fnc_respawn
+		_unit call A3A_fnc_respawn;
+		[] call _fnc_selfReviveCountdownStop;
 	}
 	else {
 		_unit setDamage 1;
@@ -182,6 +233,7 @@ if (alive _unit) then {
 	_unit setUnconscious false;
 	_unit switchMove "unconsciousoutprone";
 	_unit setBleedingRemaining 0;
+	[] call _fnc_selfReviveCountdownStop;
 
 	if (isPlayer _unit) then {
 		[] call SCRT_fnc_misc_updateRichPresence;

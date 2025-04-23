@@ -1,0 +1,32 @@
+class vehicles_fow : vehicles_base
+{
+    ITEM(fow_v_sdkfz_250_ger_heer, 3340, "APC", VEHICLE_CONDITION_APC);
+    ITEM(fow_v_sdkfz_251_camo_ger_heer, 3800, "APC", VEHICLE_CONDITION_APC);
+    ITEM(fow_v_universalCarrier, 4240, "APC", VEHICLE_CONDITION_APC);
+    ITEM(fow_v_lvta2_usa, 6480, "APC", VEHICLE_CONDITION_APC);
+    ITEM(fow_v_kubelwagen_mg34_ger_heer, 2100, "ARMEDCAR", VEHICLE_CONDITION_ARMEDCAR);
+    ITEM(fow_v_sdkfz_222_ger_heer, 5200, "ARMEDCAR", VEHICLE_CONDITION_ARMEDCAR);
+    ITEM(fow_v_sdkfz_234_1, 5200, "ARMEDCAR", VEHICLE_CONDITION_ARMEDCAR);
+    ITEM(fow_v_sdkfz_250_9_ger_heer, 5200, "ARMEDCAR", VEHICLE_CONDITION_ARMEDCAR);
+    ITEM(fow_usa_lcvp, 5450, "BOAT", VEHICLE_CONDITION_BOAT);
+    ITEM(fow_va_a6m_green, 13500, "PLANE", VEHICLE_CONDITION_PLANE);
+    ITEM(fow_va_f6f, 14000, "PLANE", VEHICLE_CONDITION_PLANE);
+    ITEM(fow_va_f6f_c, 15500, "PLANE", VEHICLE_CONDITION_PLANE);
+    ITEM(fow_w_pak40_gray_ger_heer, 5000, "STATICAT", VEHICLE_CONDITION_STATICAT);
+    ITEM(fow_w_flak36_gray_ger_heer, 8000, "STATICAT", VEHICLE_CONDITION_STATICAT);
+    ITEM(fow_w_6Pounder_uk, 9000, "STATICAT", VEHICLE_CONDITION_STATICAT);
+    ITEM(fow_w_mg42_deployed_high_ger_heer, 3000, "STATICMG", VEHICLE_CONDITION_STATICMG);
+    ITEM(fow_w_vickers_uk, 2700, "STATICMG", VEHICLE_CONDITION_STATICMG);
+    ITEM(fow_w_m1919a6_deployed_high_usa_m41, 3000, "STATICMG", VEHICLE_CONDITION_STATICMG);
+    ITEM(fow_w_type97_mortar_ija, 8000, "STATICMORTAR", VEHICLE_CONDITION_STATICMORTAR);
+    ITEM(fow_w_m2_mortar_usa, 8000, "STATICMORTAR", VEHICLE_CONDITION_STATICMORTAR);
+    ITEM(fow_ija_type95_HaGo_1_ija, 21200, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(fow_v_panther_ger_heer, 37000, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(fow_v_m5a1_usa, 23400, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(fow_v_cromwell_uk, 29800, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(fow_v_m4a2_usa, 30900, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(fow_v_kubelwagen_ger_heer, 800, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
+    ITEM(fow_v_type97_truck_open_ija, 1850, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
+    ITEM(fow_v_type97_truck_ija, 1850, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
+    ITEM(fow_v_willys_usa, 1000, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
+};

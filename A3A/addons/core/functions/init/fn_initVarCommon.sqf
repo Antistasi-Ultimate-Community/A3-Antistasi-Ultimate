@@ -22,7 +22,7 @@ debug = false;
 Occupants = west;
 Invaders = east;
 teamPlayer = independent;		// uh, probably don't need this yet unless something is busted?
-Rivals = east;
+Rivals = opfor; //east
 colorOccupants = "colorBLUFOR";
 colorInvaders = "colorOPFOR";
 colorCivilian = "ColorCIV";
@@ -69,7 +69,7 @@ aggregateCategories = ["Weapons", "Items", "Magazines", "Explosives"];
 //It's recommended that these categories be used with caution.
 specialCategories = ["AA", "AT", "GrenadeLaunchers", "LightAttachments", "LaserAttachments", "Chemlights", "SmokeGrenades", "LaunchedSmokeGrenades", "LaunchedFlares", "HandFlares", "IRGrenades","LaserBatteries",
 	"RebelUniforms", "CivilianUniforms", "BackpacksEmpty", "BackpacksTool", "BackpacksStatic", "BackpacksDevice", "BackpacksRadio", "CivilianVests", "ArmoredVests", "ArmoredHeadgear", "CosmeticHeadgear",
-	"CosmeticGlasses", "ThermalNVGs", "OpticsClose", "OpticsMid", "OpticsLong", "ExplosiveCharges", "Disposable"];
+	"CosmeticGlasses", "ThermalNVGs", "OpticsClose", "OpticsMid", "OpticsLong", "ExplosiveCharges", "Disposable", "MinesAPERS", "MinesAT"]; ///could probably do some smart check for silencers and bipods, but I don't know anything about their configs
 
 
 allCategoriesExceptSpecial = weaponCategories + itemCategories + magazineCategories + explosiveCategories + otherCategories + aggregateCategories;
@@ -192,7 +192,20 @@ A3A_milBuildingWhitelist = A3A_buildingWhitelist + [
 	"Land_GuardTower_02_F",
 	"Land_vn_guardtower_02_f",
 	"Land_vn_guardtower_03_f",
-	"Land_vn_guardtower_04_f"
+	"Land_vn_guardtower_04_f",
+	"Land_WW2_Bunker_H679",
+	"Land_WW2_Bunker_Gun_R",
+	"Land_WW2_Bunker_Gun_L",
+	"Land_WW2_BET_Flak_Bettung",
+	"Land_SPE_H612",
+	"Land_SPE_H630",
+	"Land_SPE_H667",
+	"Land_SPE_H669",
+	"Land_SPE_H679",
+	"LAND_CSJ_gunpit",
+	"LAND_uns_weapon_pit",
+	"csj_VCbunk01",
+	"Land_Vil_Tower"
 ];
 A3A_buildingBlacklist = [
 	"Bridge_PathLod_base_F","Land_Slum_House03_F","Land_Bridge_01_PathLod_F","Land_Bridge_Asphalt_PathLod_F","Land_Bridge_Concrete_PathLod_F","Land_Bridge_HighWay_PathLod_F","Land_Bridge_01_F","Land_Bridge_Asphalt_F","Land_Bridge_Concrete_F","Land_Bridge_HighWay_F","Land_Canal_Wall_Stairs_F","warehouse_02_f",

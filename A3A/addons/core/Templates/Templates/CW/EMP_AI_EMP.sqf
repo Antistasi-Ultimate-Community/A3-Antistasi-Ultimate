@@ -15,6 +15,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["3AS_Rho_Crate_IMP_Transport"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -43,6 +45,8 @@
 ["vehiclesPlanesCAS", ["JMSLLTE_TIEBomber_veh_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["JMSLLTE_TIEinterceptor_veh_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["3AS_Imperial_Transport_01"]] call _fnc_saveToTemplate;
+
+["vehiclesPlanesGunship", ["3AS_LAAT_Mk1_Imperial"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["3AS_Patrol_LAAT_Imperial"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["JMSLLTE_veh_IDT_inf_empire"]] call _fnc_saveToTemplate;

@@ -21,7 +21,7 @@
 
 ["vehiclesBasic", ["LIB_GazM1_SOV"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["LIB_Willys_MB_w","LIB_Willys_MB_Hood_w"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed",["LIB_Scout_m3_w"]] call _fnc_saveToTemplate;
+private _vehiclesLightArmed = ["LIB_Scout_m3_w"]; 
 ["vehiclesTrucks", ["LIB_US6_Tent","LIB_US6_Open"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["LIB_US6_Open_Cargo","LIB_US6_Tent_Cargo"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["LIB_US6_Ammo"]] call _fnc_saveToTemplate;
@@ -31,18 +31,39 @@
 ["vehiclesLightAPCs", ["LIB_Scout_M3_FFV_w","LIB_Scout_m3_w"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["LIB_Scout_M3_FFV_w","LIB_SOV_M3_Halftrack_w"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["LIB_SU85_w", "LIB_T34_76_w"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["LIB_T34_85_w","LIB_JS2_43_w"]] call _fnc_saveToTemplate;
+private _vehiclesTanks = ["LIB_T34_85_w","LIB_T34_85_w","LIB_T34_85_w","LIB_JS2_43_w"];
 ["vehiclesAA", ["LIB_Zis5v_61K"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["LIB_Scout_M3_FFV_w"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["LIB_T34_76_w"]] call _fnc_saveToTemplate;
+
+if (isClass (configFile >> "CfgPatches" >> "FA_WW2_Armored_Cars")) then {
+    _vehiclesLightArmed append ["FA_BA64"]; 
+};
+if (isClass (configFile >> "CfgPatches" >> "FA_WW2_Tanks")) then {
+	_vehiclesTanks append ["FA_KV1"];
+};
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+["vehiclesTanks", _vehiclesTanks] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["LIB_LCA"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["LIB_Pe2_w"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["LIB_P39_w"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["LIB_Pe2_w"];
+private _vehiclesPlanesAA = ["LIB_P39_w"];
 ["vehiclesPlanesTransport", ["LIB_Li2"]] call _fnc_saveToTemplate;
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+	_vehiclesPlanesAA append ["sab_fl_yak3"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+	_vehiclesPlanesCAS append ["sab_sw_il2"];
+	_vehiclesPlanesAA append ["sab_sw_i16","sab_sw_i16_2"];
+};
+
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;

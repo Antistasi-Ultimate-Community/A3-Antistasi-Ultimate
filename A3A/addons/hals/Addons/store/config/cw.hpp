@@ -40,6 +40,7 @@
 			ITEM(JLTS_E5, 185, RIFLE_STOCK); // JLTS_E5_mag
 			
 			ITEM(3AS_DC15S_F, 200, RIFLE_STOCK); // 3AS_60Rnd_EC30_mag 3AS_60Rnd_EM30_mag
+			ITEM(3AS_Cinnagaran_Carbine_F, 250, RIFLE_STOCK); // 3AS_50Rnd_EG40_Mag
 			ITEM(3AS_E5_F, 210, RIFLE_STOCK); // 3AS_60Rnd_EM50_RedPlasma
 
 		};
@@ -93,6 +94,8 @@
 			ITEM(JLTS_DW32S, 300, RIFLE_STOCK); // JLTS_DW32S_mag
 			ITEM(JLTS_SBB3, 300, RIFLE_STOCK); // JLTS_SBB3_mag
 
+			ITEM(3AS_Arkanian_F, 330, RIFLE_STOCK); // 3AS_40Rnd_EM50_Mag
+			ITEM(3AS_Arkanian_Stock_F, 350, RIFLE_STOCK); // 3AS_40Rnd_EM50_Mag
 			ITEM(3AS_DC15A_GL, 225, RIFLE_STOCK); // 3AS_45Rnd_EC50_Mag
 			ITEM(3AS_DC15A_F, 225, RIFLE_STOCK); // 3AS_45Rnd_EM50_Mag
 			ITEM(3AS_DC15C_F, 225, RIFLE_STOCK); // 3AS_40Rnd_EC40_Mag 
@@ -270,7 +273,9 @@
             ITEM(3AS_10Rnd_EY80_Mag, 90, MZ_STOCK);
             ITEM(3AS_10Rnd_EC80_Mag, 90, MZ_STOCK);
             ITEM(3AS_10Rnd_EM80_Mag, 90, MZ_STOCK);
-
+			ITEM(3AS_50Rnd_EG40_Mag, 60, MZ_STOCK);
+			ITEM(3AS_40Rnd_EM50_Mag, 60, MZ_STOCK);
+			
 		};
 
 		class misccw{
@@ -361,6 +366,9 @@
 			ITEM(3as_optic_holo_dc15s, 60, MAGAZINE_STOCK);
 			ITEM(3as_optic_vk38x, 70, MAGAZINE_STOCK);
 			ITEM(3as_optic_scope_westarm5, 70, MAGAZINE_STOCK);
+			ITEM(3AS_Optic_Arkanian_1_F, 70, MAGAZINE_STOCK);
+			ITEM(3AS_Optic_Arkanian_2_F, 70, MAGAZINE_STOCK);
+			ITEM(3AS_Optic_Cinnagaran_1_F, 70, MAGAZINE_STOCK);
 			
 		};
 

@@ -25,6 +25,7 @@
 ["vehiclesCivTruck", ["EAW_Dodge1936_Pickup"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", []] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["LIB_LCA"]] call _fnc_saveToTemplate;
+["vehiclesCivSupply", ["fow_v_type97_truck_ija"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["EAW_Type24_MG"]] call _fnc_saveToTemplate;
 ["staticAT", ["EAW_ROC_Pak36"]] call _fnc_saveToTemplate;
@@ -40,26 +41,6 @@
 ["breachingExplosivesTank", [["LIB_Ladung_Big_MINE_mag", 1], ["LIB_Ladung_Small_MINE_mag", 2]]] call _fnc_saveToTemplate;
 
 #include "EAW_Reb_Vehicle_Attributes.sqf"
-
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["LIB_Flakvierling_38", 3000, "STATICAT", {tierWar > 3}],
-    ["LIB_leFH18", 8000, "STATICMG", {tierWar > 3}],
-
-    ["LIB_Kfz1_Hood_camo", 2050, "CAR", {true}],
-
-    ["LIB_SdKfz_7", 6000, "APC", {true}],
-
-    ["LIB_PzKpfwVI_B", 40000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["LIB_SdKfz_7_AA", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["LIB_P39", 30000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["LIB_Pe2", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
 
 ///////////////////////////
 //  Rebel Starting Gear  //

@@ -216,7 +216,7 @@ while {true} do
 									private _noNvgIndex = (units _groupX) findIf {hmd _x == "" || {getArray (configFile >> "CfgWeapons" >> (hmd _x) >> "visionMode") isEqualTo ["Normal","Normal"]}};	
 									if (_noNvgIndex != -1) then {
 										if (([_LeaderX] call A3A_fnc_canFight) and (primaryWeapon _LeaderX in allGrenadeLaunchers)) then {
-											[_LeaderX,_nearX] call A3A_fnc_useFlares
+											[_LeaderX, _sideX, _nearX] call A3A_fnc_useFlares
 										} else {
 											{
 												[_x,_nearX] call A3A_fnc_suppressingFire;

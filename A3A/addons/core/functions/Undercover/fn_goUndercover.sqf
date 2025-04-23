@@ -182,7 +182,8 @@ while {_reason == ""} do
     if (!isNull _veh and { _veh isKindOf "Air" }) then { continue };
 
     private _base = [_secureBases, player] call BIS_fnc_nearestPosition;
-    private _onDetectionMarker = detectionAreas findIf {player inArea _x} != -1;
+    // If player is _onDetectionMarker, the detectionArea they are in should also be less than 700m away from _base (which should only be an airport).
+    private _onDetectionMarker = detectionAreas findIf {player inArea _x && (_base in airportsX) && {((getMarkerPos _x) distance2D (getMarkerPos _base)) <= 700}} != -1;
     private _onBaseMarker = player inArea _base;
     private _baseSide = sidesX getVariable [_base, sideUnknown];
     if ((_onBaseMarker || _onDetectionMarker) && (_baseSide != teamPlayer) && (_base != _lastBaseInside)) then

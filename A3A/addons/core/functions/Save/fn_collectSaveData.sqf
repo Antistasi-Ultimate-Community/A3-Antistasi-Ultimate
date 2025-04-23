@@ -13,7 +13,7 @@ private _campaignIDs = [];
 private _serverID = profileNameSpace getVariable ["ss_ServerID",""];
 
 // Old Plus saves
-private _saveList = [profileNamespace getVariable "antistasiPlus2SavedGames"] param [0, [], [[]]];
+private _saveList = [profileNamespace getVariable "antistasiUltimate2SavedGames"] param [0, [], [[]]];
 {
     _x params ["_cid", "_map", "_gameType"];
     _campaignIDs pushBack _cid;
@@ -36,7 +36,7 @@ if !(_oldCampaignID in _campaignIDs) then {
 };
 
 // missionProfileNamespace saves
-private _saveList2 = [missionProfileNamespace getVariable "antistasiPlus2SavedGames"] param [0, [], [[]]];
+private _saveList2 = [missionProfileNamespace getVariable "antistasiUltimate2SavedGames"] param [0, [], [[]]];
 {
     _x params ["_cid", "_map"];
     A3A_saveTarget = [false, _cid, _map];

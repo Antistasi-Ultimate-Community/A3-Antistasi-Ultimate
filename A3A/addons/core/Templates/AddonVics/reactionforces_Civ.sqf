@@ -19,7 +19,7 @@ _addon set ["vehiclesCivFuel", [
 ]];
 
 _addon set ["vehiclesCivHeli", [
-	"C_Heli_EC_01A_civ_RF" , 0.3
-	,"C_Heli_EC_01_civ_RF" ,0.3
-	,"C_Heli_EC_04_rescue_RF" ,0.3
+	"C_Heli_EC_01A_civ_RF"
+	,"C_Heli_EC_01_civ_RF"
+	,"C_Heli_EC_04_rescue_RF"
 ]];

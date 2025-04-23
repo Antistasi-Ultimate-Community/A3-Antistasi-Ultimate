@@ -17,6 +17,12 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 
 if !(_target isKindOf "Air") exitWith { 0 };     // can't hit anything except air
 
+private _targThreat = A3A_vehicleResourceCosts getOrDefault [typeOf _target, 0];
+_targThreat = _targThreat + (_target getVariable ["A3A_airKills", 0]);
+
+private _lowAir = Faction(_side) getOrDefault ["attributeLowAir", false];
+if (!_lowAir) then { _targThreat = _targThreat - 150 };
+
 // Should limit to certain templates?
 
-1;          // maybe set higher, especially if it's fixed-wing aircraft?
+_targThreat / 500;

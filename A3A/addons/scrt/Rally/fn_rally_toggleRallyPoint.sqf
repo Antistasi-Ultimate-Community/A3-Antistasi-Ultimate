@@ -1,6 +1,12 @@
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
+if (rallyPointSpawnCount isEqualTo 0) exitWith  
+{ 
+	private _warningText = "<t font ='PuristaSemibold' align = 'center' shadow='1' shadowColor='#000000' size='0.8' color='#ebebeb'>" + localize "STR_params_rallyPointSpawnCountDisabled" +"</t>"; 
+	[_warningText,0,safezoneY+0.5] spawn BIS_fnc_dynamicText; 
+};
+
 private _rallyPointClass = FactionGet(reb,"rallyPoint");
 
 if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
@@ -64,8 +70,8 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
     private _fnc_placed = {
         params ["_vehicle", "_cost"];
 
-		if (_vehicle isEqualTo objNull) exitWith {};
-		
+        if (_vehicle isEqualTo objNull) exitWith {};
+        
         private _factionMoney = server getVariable "resourcesFIA";
         if (player == theBoss && {_cost <= _factionMoney}) then {
             [0,(-1 * _cost)] remoteExec ["A3A_fnc_resourcesFIA",2];
@@ -80,9 +86,9 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
         [_posWorld] call SCRT_fnc_rally_placeRallyPoint;
 
         isRallyPointPlaced = true;
-    	publicVariable "isRallyPointPlaced";
-		petros sideRadio "SentGenBaseUnlockRespawn";
-    	[petros, "support", localize "STR_dialogs_RP_success"] remoteExec ["A3A_fnc_commsMP", 0];
+        publicVariable "isRallyPointPlaced";
+        petros sideRadio "SentGenBaseUnlockRespawn";
+        [petros, "support", localize "STR_dialogs_RP_success"] remoteExec ["A3A_fnc_commsMP", 0];
     };
 
     private _fnc_check = {

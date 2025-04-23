@@ -25,6 +25,7 @@
 ["vehiclesCivTruck", ["LIB_Zis5v"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", []] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["LIB_LCA"]] call _fnc_saveToTemplate;
+["vehiclesCivSupply", ["LIB_OpelBlitz_Tent_Y_Camo"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["LIB_M1919_M2"]] call _fnc_saveToTemplate;
 ["staticAT", ["LIB_Pak40"]] call _fnc_saveToTemplate;
@@ -41,26 +42,6 @@
 
 #include "IFA_Reb_Vehicle_Attributes.sqf"
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["LIB_Flakvierling_38", 3000, "STATICAT", {tierWar > 3}],
-    ["LIB_leFH18", 8000, "STATICMG", {tierWar > 3}],
-
-    ["LIB_Kfz1_Hood_camo", 2050, "CAR", {true}],
-
-    ["LIB_SdKfz_7", 6000, "APC", {true}],
-
-    ["LIB_PzKpfwVI_B", 40000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["LIB_SdKfz_7_AA", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["LIB_P39", 30000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["LIB_Pe2", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -71,7 +52,7 @@ private _initialRebelEquipment = [
     "LIB_M1895","LIB_7Rnd_762x38",
     ["LIB_Faustpatrone", 50],
     ["LIB_Ladung_Small_MINE_mag", 10], ["LIB_Ladung_Big_MINE_mag", 3],
-    "lib_shg24",
+    "LIB_Shg24",
     "V_LIB_WP_OfficerVest","V_LIB_WP_Kar98Vest","V_LIB_WP_MP40Vest",
     "B_LIB_SOV_RA_MGAmmoBag_Empty", "B_LIB_SOV_RA_GasBag",
     "LIB_Binocular_GER"

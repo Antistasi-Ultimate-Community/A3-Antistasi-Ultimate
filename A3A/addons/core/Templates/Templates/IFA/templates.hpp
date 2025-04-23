@@ -105,6 +105,33 @@
         climate[] = {"temperate","tropical"};
     };		
 
+    class IFA_Allies_Arctic : IFA_Base
+    {
+        side = "Inv";
+        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+        name = "IFA Allies Winter";
+        file = "IFA_AI_Allies_Arctic";
+        climate[] = {"arctic"};
+    };	
+
+    class IFA_Allies_Arid : IFA_Base
+    {
+        side = "Inv";
+        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+        name = "IFA Allies Arid";
+        file = "IFA_AI_Allies_Arid";
+        climate[] = {"arid"};
+    };	
+	
+    class IFA_Allies_Temperate : IFA_Base
+    {
+        side = "Inv";
+        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+        name = "IFA Allies Temperate";
+        file = "IFA_AI_Allies_Temperate";
+        climate[] = {"temperate","tropical"};
+    };	
+
     class IFA_Reb : IFA_Base
     {
         side = "Reb";

@@ -87,39 +87,6 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 //       Antistasi Plus Stuff       //
 //////////////////////////////////////
 
-["blackMarketStock", [
-    ["rhsgref_nat_Igla_AA_pod", 3000, "STATICAA", {tierWar > 3}],
-    ["UK3CB_LNM_I_Metis", 3000, "STATICAT", {tierWar > 3}],
-    ["rhsgref_nat_AGS30_TriPod", 3000, "STATICMG", {tierWar > 3}],
-
-    ["UK3CB_I_G_BRDM2_UM", 1750, "CAR", {true}],
-    ["UK3CB_I_G_BRDM2_HQ", 2050, "CAR", {true}],
-    ["UK3CB_I_G_BRDM2", 2500, "CAR", {true}],
-    ["UK3CB_I_G_BRDM2_ATGM", 3500, "CAR", {tierWar > 3}],
-    ["UK3CB_KDF_I_UAZ_AGS30", 2500, "CAR", {tierWar > 2}],
-
-    ["UK3CB_I_G_MTLB_PKT", 2000, "APC", {true}],
-    ["UK3CB_I_G_BTR40", 2250, "APC", {true}],
-    ["UK3CB_I_G_BTR40_MG", 3000, "APC", {true}],
-    ["UK3CB_KDF_I_BTR60", 5000, "APC", {true}],
-    ["UK3CB_KDF_I_BTR70", 5000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["UK3CB_KDF_I_BMD1K", 7500, "APC", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["UK3CB_KDF_I_BMD2", 10000, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-
-    ["UK3CB_I_G_T34", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["UK3CB_I_G_T55", 13000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["UK3CB_KDF_I_T72A", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["UK3CB_KDF_I_T80", 21000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    
-    ["UK3CB_KDF_I_MTLB_ZU23", 7000, "AA", {tierWar > 3}],
-    ["UK3CB_I_G_ZsuTank", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["UK3CB_KDF_I_MIG21_CAS", 35000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    
-    ["UK3CB_KDF_I_Mi8", 17500, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["UK3CB_KDF_I_Mi8AMTSh", 25000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ["variants", [
     ["UK3CB_KDF_I_MIG21_CAS", ["SIL",1]]
 ]] call _fnc_saveToTemplate;
@@ -195,6 +162,7 @@ private _rebUniforms = [
 
 ["voices", ["Male01PER","Male02PER","Male03PER"]] call _fnc_saveToTemplate;
 ["faces", ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]] call _fnc_saveToTemplate;
+"TakistaniMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

@@ -1,0 +1,1 @@
+(_militiaLoadoutData get "binoculars") append ["Laserdesignator_03"];

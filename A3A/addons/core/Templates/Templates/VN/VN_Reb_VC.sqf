@@ -5,7 +5,7 @@
 ["name", "VC"] call _fnc_saveToTemplate;
 
 ["flag", "vn_flag_vc"] call _fnc_saveToTemplate;
-["flagTexture", "\vn\objects_f_vietnam\flags\data\vn_flag_01_vc_co.paa"] call _fnc_saveToTemplate;
+["flagTexture", "\vn\objects_f_vietnam\flags\vn_flag_01_vc_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "vn_flag_vc"] call _fnc_saveToTemplate;
 
 //////////////////////////
@@ -53,26 +53,6 @@
 
 ["breachingExplosivesAPC", [["vn_mine_m112_remote_mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["vn_mine_satchel_remote_02_mag", 1], ["vn_mine_m112_remote_mag", 2]]] call _fnc_saveToTemplate;
-
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["vn_o_nva_static_at3", 3000, "STATICMG", {tierWar > 3}],
-    ["vn_o_nva_65_static_mortar_type53", 3000, "STATICMORTAR", {tierWar > 5}],
-
-    ["vn_o_vc_static_h12", 15000, "ARTILLERY", {tierWar > 5}],
-
-    ["vn_o_armor_btr50pk_01", 6000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}],
-    ["vn_o_armor_btr50pk_02", 7500, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}],
-
-    ["vn_o_armor_pt76a_01_nva65", 15000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}}],
-    ["vn_o_armor_pt76b_01_nva65", 17500, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}}],
-    ["vn_o_armor_type63_01_nva65", 17500, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count milbases > 0}}],
-
-    ["vn_o_air_mig19_cas", 25000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
 
 #include "VN_Reb_Vehicle_Attributes.sqf"
 

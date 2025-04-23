@@ -20,7 +20,7 @@ private _heli = _heliData select 0;
 private _heliCrew = _heliData select 1;
 private _groupHeli = _heliData select 2;
 
-if (_heliType isEqualTo [] || {(_heliType canSlingLoad (A3A_faction_occ get "ammobox")) isEqualTo false}) exitWith {
+if (_heliType isEqualTo []) exitWith {
 	["Support", "A helicopter is not available due to template issues. Apologies! You have been refunded."] call A3A_fnc_customHint;
 	[0,2000] remoteExec ["A3A_fnc_resourcesFIA",2];
 };

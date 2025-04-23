@@ -33,3 +33,5 @@ Tools/csvparser/xlsx2csv/*.xlsx
 Tools/csvparser/xlsx2csv/*.csv
 *.py[cod]
 Tools/ValidationResults.txt
+Tools/ValidationTemplates.txt
+/Tools/csvparser/output

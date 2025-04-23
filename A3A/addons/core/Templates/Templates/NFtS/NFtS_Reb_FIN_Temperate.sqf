@@ -8,7 +8,7 @@
 
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\NFtS\flag_finland.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "NORTH_Flag_FIN"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_FIN"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["NORTH_FIN_41_R75"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["LIB_Kfz1_sernyt"]] call _fnc_saveToTemplate;
@@ -25,6 +25,7 @@
 ["vehiclesCivTruck", ["LIB_Zis5v"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", []] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["NORTH_FIN_Syoksyvene"]] call _fnc_saveToTemplate;
+["vehiclesCivSupply", ["LIB_US6_Tent"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["NORTH_FIN_Maxim"]] call _fnc_saveToTemplate;
 ["staticAT", ["NORTH_FIN_45PSTK37"]] call _fnc_saveToTemplate;
@@ -40,26 +41,6 @@
 ["breachingExplosivesTank", [["LIB_Ladung_Big_MINE_mag", 1], ["LIB_Ladung_Small_MINE_mag", 2]]] call _fnc_saveToTemplate;
 
 #include "NFtS_Reb_Vehicle_Attributes.sqf"
-
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["LIB_Flakvierling_38", 3000, "STATICAT", {tierWar > 3}],
-    ["LIB_leFH18", 8000, "STATICMG", {tierWar > 3}],
-
-    ["LIB_Kfz1_Hood_camo", 2050, "CAR", {true}],
-
-    ["LIB_SdKfz_7", 6000, "APC", {true}],
-
-    ["LIB_PzKpfwVI_B", 40000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-  
-    ["LIB_SdKfz_7_AA", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["LIB_P39", 30000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["LIB_Pe2", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
 
 ///////////////////////////
 //  Rebel Starting Gear  //
@@ -112,7 +93,7 @@ private _dlcUniforms = [];
 
 ["faces", ["LIB_aleksei_IF","LIB_boyartsev_IF","LIB_bykov_IF",
 "LIB_Otto_IF","LIB_Volker_IF", "LIB_Walter_IF", "LIB_Wolf_IF"]] call _fnc_saveToTemplate;
-["voices", ["Male01PL", "Male02PL", "Male03PL"]] call _fnc_saveToTemplate;
+["voices", ["Male01FIN", "Male02FIN", "Male03FIN", "Male04FIN"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //

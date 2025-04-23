@@ -9,7 +9,7 @@ if (!(isNil "HR_GRG_placing") && {HR_GRG_placing}) exitWith {[localize "STR_A3A_
 if (player != player getVariable ["owner",player]) exitWith {[localize "STR_A3A_addFiaVeh_header", localize "STR_A3AP_error_aicontrol_generic"] call A3A_fnc_customHint;};
 if ([getPosATL player] call A3A_fnc_enemyNearCheck) exitWith {[localize "STR_A3A_addFiaVeh_header", localize "STR_A3AP_error_enemynear_generic"] call A3A_fnc_customHint;};
 
-private _cost = [_typeVehX] call A3A_fnc_vehiclePrice;
+private _cost = [_typeVehX] call A3U_fnc_blackMarketVehiclePrice;
 private _resourcesFIA = 0;
 
 if (player != theBoss) then {

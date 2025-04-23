@@ -169,7 +169,13 @@ while {visibleMap} do {
 		if (_siteX in hmgpostsFIA) then {
 			_textX = format [localize "STR_A3A_cityinfo_hmgempl",[_siteX] call A3A_fnc_garrisonInfo,_nameFaction];
 		};
-		[localize "STR_A3A_cityinfo_header", _textX] call A3A_fnc_customHint;
+		if (hideEnemyMarkers) then {
+			if (_siteX in markersImmune || {(sidesX getVariable [_siteX,sideUnknown]) == teamPlayer}) then {
+				[localize "STR_A3A_cityinfo_header", _textX] call A3A_fnc_customHint;
+			};
+		} else {
+			[localize "STR_A3A_cityinfo_header", _textX] call A3A_fnc_customHint;
+		};
 	};
 	positionTel = [];
 };

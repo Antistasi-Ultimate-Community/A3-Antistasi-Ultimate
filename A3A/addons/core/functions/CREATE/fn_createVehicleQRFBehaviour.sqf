@@ -34,9 +34,9 @@ if (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"v
     _vehicle setVehicleRadar 1;
 };
 
-if (_vehicle isKindOf "Air") then
+if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod")) then
 {
-    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") || _vtol != "") exitWith
+    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") || _vtol != "" || (typeOf _vehicle in (_faction get "vehiclesDropPod"))) exitWith
     {
         //Transport helicopter or VTOL
         _landPos = [_posDestination, 200, 400, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
@@ -48,7 +48,10 @@ if (_vehicle isKindOf "Air") then
         {
             if(_x distance2D _landPos < 20) exitWith { _landPos = [0, 0, 0] };
         } forEach _landPosBlacklist;
-
+        
+        if (typeOf _vehicle in (_faction get "vehiclesDropPod") ) exitWith {
+            [_vehicle, _cargoGroup, _posDestination, _posOrigin] spawn A3A_fnc_OrbitalLanding; // , _crewGroup
+        };
         {
             if(_x distance2D _landPosVTOL < 20) exitWith { _landPos = [0, 0, 0] };
         } forEach _landPosBlacklist;
@@ -224,7 +227,7 @@ else            // ground vehicle
 
         //Set the waypoints for cargoGroup
         private _cargoWP0 = _cargoGroup addWaypoint [_landpos, 0];
-        _cargoWP0 setWaypointType "GETOUT";
+        //_cargoWP0 setWaypointType "GETOUT";
         _cargoWP0 setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this); (group this) spawn A3A_fnc_attackDrillAI"];
         private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 0];
         _cargoWP1 setWaypointBehaviour "AWARE";
@@ -256,7 +259,7 @@ else            // ground vehicle
 
         //Set the waypoints for cargoGroup
         private _cargoWP0 = _cargoGroup addWaypoint [_landpos, 0];
-        _cargoWP0 setWaypointType "GETOUT";
+        //_cargoWP0 setWaypointType "GETOUT";
         _cargoWP0 setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this); (group this) spawn A3A_fnc_attackDrillAI"];
         private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 0];
         _cargoWP1 setWaypointBehaviour "AWARE";
@@ -268,3 +271,4 @@ else            // ground vehicle
 };
 
 _landPosBlacklist;
+

@@ -11,6 +11,9 @@
     ["LIB_PzKpfwVI_E_w", ["cost", 300]],
     ["LIB_JS2_43", ["cost", 300]],
     ["LIB_JS2_43_w", ["cost", 300]],
-    ["LIB_DAK_PzKpfwVI_E", ["cost", 300]]
+    ["LIB_DAK_PzKpfwVI_E", ["cost", 300]],
+	["LIB_PzKpfwVI_B_tarn51c", ["cost", 350]],
+	["LIB_PzKpfwVI_B_w", ["cost", 350]],
+	["LIB_DAK_PzKpfwVI_E", ["cost", 350]]
 
 ]] call _fnc_saveToTemplate;

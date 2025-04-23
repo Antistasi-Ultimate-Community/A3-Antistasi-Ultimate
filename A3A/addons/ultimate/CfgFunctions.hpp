@@ -7,7 +7,14 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\Ammunition);
             class grabForbiddenItems {};
             class removeForbiddenItems {};
+            class grabBlackMarketVehicles {};
             class removeUnlockedItems {};
+        };
+        class blackmarket
+        {
+            file = QPATHTOFOLDER(functions\blackmarket);
+            class hasRequirements {};
+            class sidesX {};
         };
         class cba
         {
@@ -22,6 +29,20 @@ class CfgFunctions
             class initZones {};
             class popup {};
         };
+        class main_menu
+        {
+            file = QPATHTOFOLDER(functions\main_menu);
+            class isInMenu {};
+            class menuImage {};
+        };
+        class REINF
+        {
+            file = QPATHTOFOLDER(functions\REINF);
+            class blackMarketVehiclePrice {};
+            class invaderComeback {};
+            class setInvaderState {};
+            class simpleAttack {};
+        };
         class patches
         {
             file = QPATHTOFOLDER(functions\patches);
@@ -30,7 +51,6 @@ class CfgFunctions
         class STALKER
         {
             file = QPATHTOFOLDER(functions\STALKER);
-            class cleanupAnomalyField {};
             class createAnomalyField {};
             class emission {};
             class fillMapAnomalies {};
@@ -45,6 +65,28 @@ class CfgFunctions
             class log {};
             class logisticsGrabSeats {};
             class weightTest {};
+        };
+        class vehicles
+        {
+            file = QPATHTOFOLDER(functions\vehicles);
+            class addLockpickAction {};
+            class isLocked {};
+            class lockpick {};
+            class lockpickOnFail {};
+            class lockpickOnProgress {};
+            class lockpickOnSuccess {};
+            class lockpickZones {};
+            class setLock {};
+        };
+        class zombie
+        {
+            file = QPATHTOFOLDER(functions\zombie);
+            class attackHeli {};
+            class spawnZombie {};
+            class spawnZombieCrater {};
+            class spawnZombieRoar {};
+            class spawnZombieWave {};
+            class spawnZombieWaves {};
         };
         class zones
         {

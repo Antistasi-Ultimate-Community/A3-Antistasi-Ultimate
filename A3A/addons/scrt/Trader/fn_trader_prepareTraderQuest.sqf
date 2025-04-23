@@ -1,6 +1,8 @@
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
+if (disableTrader) exitWith {};
+
 if (isTraderQuestAssigned || isTraderQuestCompleted) exitWith {
     Warning("Something tries to call for Arms Dealer quest again, aborting...");
 };

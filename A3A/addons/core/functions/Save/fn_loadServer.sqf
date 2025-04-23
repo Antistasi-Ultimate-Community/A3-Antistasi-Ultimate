@@ -47,6 +47,7 @@ if (isServer) then {
 	["supportPoints"] call A3A_fnc_getStatVariable;
 	["areOccupantsDefeated"] call A3A_fnc_getStatVariable;
 	["areInvadersDefeated"] call A3A_fnc_getStatVariable;
+	["isTraderQuestAssigned"] call A3A_fnc_getStatVariable;
 	["isTraderQuestCompleted"] call A3A_fnc_getStatVariable;
 	["traderPosition"] call A3A_fnc_getStatVariable;
 	["traderDiscount"] call A3A_fnc_getStatVariable;
@@ -61,23 +62,30 @@ if (isServer) then {
 	["constructionsX"] call A3A_fnc_getStatVariable;
 	["isRivalsDiscoveryQuestAssigned"] call A3A_fnc_getStatVariable;
 
+	//Antistasi Ultimate variables
+	["revealedZones"] call A3A_fnc_getStatVariable; publicVariable "revealedZones";
+	["unlockedVehicleTypes"] call A3A_fnc_getStatVariable; publicVariable "unlockedVehicleTypes";
+
 	//===========================================================================
 
 	//RESTORE THE STATE OF THE 'UNLOCKED' VARIABLES USING JNA_DATALIST
+	private _categoriesToPublish = createHashMap;
 	{
 		private _arsenalTabDataArray = _x;
 		private _unlockedItemsInTab = _arsenalTabDataArray select { _x select 1 == -1 } apply { _x select 0 };
 		{
-			[_x, true] call A3A_fnc_unlockEquipment;
+			private _categories = [_x, true, true] call A3A_fnc_unlockEquipment;
+			_categoriesToPublish insert [true, _categories, []];
 		} forEach _unlockedItemsInTab;
 	} forEach jna_dataList;
 
+	Info_1("Categories to publish: %1", keys _categoriesToPublish);
+
+	// Publish the unlocked categories (once each)
+	{ publicVariable ("unlocked" + _x) } forEach keys _categoriesToPublish;
+
 	//Check if we have radios unlocked and update haveRadio.
 	call A3A_fnc_checkRadiosUnlocked;
-
-	//Sort optics list so that snipers pick the right sight
-	// obsolete since rebelGear
-	//unlockedOptics = [unlockedOptics,[],{getNumber (configfile >> "CfgWeapons" >> _x >> "ItemInfo" >> "mass")},"DESCEND"] call BIS_fnc_sortBy;
 
 	// Set enemy roadblock allegiance to match nearest main marker
 	private _mainMarkers = markersX - controlsX -  watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;

@@ -1,0 +1,28 @@
+#include "..\BuildObjectsList.hpp"
+class mehland {
+	population[] = {
+		{"Kongsdal_NameCity", 495},{"Langbygd_NameCity", 119},{"st_Bygda_NameCity", 187},{"Vest_Bygda_NameCity", 150},{"Langgrunn_NameCity", 279},{"Kilen_NameCity", 298},{"Midtjordet_NameCity", 124},{"Midtjordet_Tmmermlle_NameCity", 44},{"Storestranda_NameCity", 180},{"Lillestranda_NameCity", 98},{"Tuppen_NameCity", 59},{"Vestlige_Fiske_Frabrikk_NameCity", 158},{"Falkensen_NameCity", 204},{"Tuftekroken_NameCity", 48},{"stre_Dal_NameCity", 177},{"Jarberg_NameCity", 85},{"Kraken_NameCity", 78},{"Grimestranda_NameCity", 120},{"Mellomya_NameCity", 49},{"Kjpmannskjr_NameCity", 168},{"Rdvik_NameCity", 138},{"Gropa_NameCity", 136},{"Nordre_Grdsbygd_NameCity", 120},{"Utkikssen_NameCity", 126},{"Platet_NameCity", 134},{"Jarlsby_NameCity", 808},{"Kilen_Vannverk_NameCity", 151},{"Kilen_Havn_NameCity", 244},{"Lille_Kilen_NameCity", 302},{"Sndre_Berg_NameCity", 170},{"Sjberg_NameCity", 151},{"Kanalen_By_NameCity", 221},{"Bergssen_NameCity", 214},{"Dalsbygd_NameCity", 205},{"Dalsvingen_NameCity", 328},{"Hgtoppsvingen_NameCity", 299},{"Innlaget_NameCity", 167},{"Kirkelv_NameCity", 81},{"stre_Muningen_NameCity", 102},{"Vestre_Muningen_NameCity", 91},{"Stranda_NameCity", 114},{"Husvik_NameCity", 312},{"Skogholt_NameCity", 133},{"Holtan_NameCity", 74},{"Store_Vollen_NameCity", 111},{"Sandesen_NameCity", 66},{"Sndre_Rd_NameCity", 80},{"Presterd_NameCity", 67},{"Storker_NameCity", 147},{"Sndre_Grdsbygd_NameCity", 55},{"Vestskogen_NameCity", 140},{"Vest_Kraftanlegg_NameCity", 46},{"Tmmerholt_NameCity", 108},{"Kortbygd_NameCity", 50},{"Eplebygd_NameCity", 136},{"Haugen_NameCity", 94},{"Lille_Vollen_NameCity", 101},{"Tangen_NameCity", 79},{"Kirkebygda_NameCity", 17},{"Dalstoppen_NameCity", 16},{"Srdalsbygda_NameCity", 16},{"stre_Kongsbygd_NameCity", 114},{"Auli_NameCity", 53},{"Basberg_NameCity", 50},{"Lyng_NameCity", 37},{"Kongsbakken_NameCity", 232},{"Nordre_Kongsbygd_NameCity", 76},{"Sndre_Kongsbygd_NameCity", 115},{"Gretteberg_NameCity", 14},{"Tuftedal_NameCity", 27},{"Haslestranda_NameCity", 78},{"Haraldstranda_NameCity", 48},{"Bergsbygd_NameCity", 210},{"Fjrholmen_NameCity", 34},{"Myresvingen_NameCity", 18},{"Stange_NameCity", 13},{"r_NameCity", 7},{"Aker_NameCity", 36},{"Bjelland_NameCity", 15},{"Borgstad_NameCity", 7},{"Huseby_NameCity", 36},{"Bjerke_NameCity", 12},{"Klepp_NameCity", 5},{"Hillstad_NameCity", 15},{"Sndre_Bjune_NameCity", 26},{"Nordre_Bjune_NameCity", 18},{"vre_Dal_NameCity", 15},{"Krantun_NameCity", 7},{"Strangestad_NameCity", 15},{"Hallingrd_NameCity", 18},{"lborgy_NameCity", 3},{"Vermelid_NameCity", 7},{"Rastad_NameCity", 23},{"degrden_NameCity", 18},{"Skarphaga_NameCity", 29},{"Gunnestad_NameCity", 34},{"Lkke_NameCity", 22},{"Kleppan_NameCity", 45},{"Horn_NameCity", 49},{"Heiertun_NameCity", 49},{"Kile_NameCity", 23},{"Rustan_NameCity", 44},{"Oserd_NameCity", 92},{"Hesby_NameCity", 89},{"Skogly_NameCity", 84},{"Grdbo_NameCity", 34},{"Smrberg_NameCity", 24},{"Solerd_NameCity", 49},{"Solby_NameCity", 45},{"Heimdal_NameCity", 32},{"Stensrud_NameCity", 55},{"Bjrnstad_NameCity", 66},{"Jaren_NameCity", 50},{"Haugan_NameCity", 17},{"Kjern_NameCity", 27},{"Voll_NameCity", 68},{"Gran_NameCity", 41},{"Foss_NameCity", 46},{"Sjskogen_NameCity", 25},{"Barkost_NameCity", 5},{"Kirkebygd_NameCity", 18},{"Nygrd_NameCity", 33},{"Slettefjell_NameCity", 55},{"Frevik_NameCity", 63},{"Rnningen_NameCity", 25},{"mot_NameCity", 29},{"Veierud_NameCity", 13},{"Vestre_Bakke_NameCity", 18},{"Heian_NameCity", 20},{"Kpe_NameCity", 36},{"Grunnstad_NameCity", 6},{"Frestestad_NameCity", 22},{"Vik_NameCity", 66},{"Nordre_Vise_NameCity", 42},{"Sndre_Vise_NameCity", 23},{"Eikekrysset_NameCity", 46},{"Vervet_NameCity", 25},{"Sundby_NameCity", 68},{"Orvika_NameCity", 39},{"Eikelia_NameCity", 33},{"Greker_NameCity", 7}
+	};
+	disabledTowns[] = {"Kilen_Havn_NameCity","Midtjordet_Tmmermlle_NameCity","Kilen_Vannverk_NameCity","Vestlige_Fiske_Frabrikk_NameCity","Kjern_NameCity","Rustan_NameCity","Kirkebygd_NameCity","Nygrd_NameCity","mot_NameCity","Vervet_NameCity","Nordre_Vise_NameCity","Eikekrysset_NameCity","Vest_Kraftanlegg_NameCity","Slettefjell_NameCity","Solerd_NameCity","Solby_NameCity","Myresvingen_NameCity","Sndre_Bjune_NameCity","Aker_NameCity","Bjelland_NameCity","Gunnestad_NameCity","Stange_NameCity","Huseby_NameCity","Horn_NameCity","Veierud_NameCity","Krantun_NameCity","Haugan_NameCity","Greker_NameCity","vre_Dal_NameCity","Voll_NameCity","Orvika_NameCity","Gran_NameCity","Vik_NameCity","Strangestad_NameCity","Kile_NameCity","Skarphaga_NameCity","Vermelid_NameCity","Hillstad_NameCity","Heian_NameCity","Kpe_NameCity"}; //no towns that need to be disabled
+	antennas[] = {
+		{18165.287,13437.21,0},{18983.242,1643.250,0},{19832.076,17557.674,0},{2797.198,16612.439,0},{6449.275,2862.387,11.172},{2130.772,7317.54,11.117},{15983.092,10013.744,0},{11819.099,1924.744,10.913},{9274.142,18893.797,9.640}
+	};
+	antennasBlacklistIndex[] = {};
+	banks[] = {};
+	garrison[] = {
+		{},{"airport","seaport_4","resource_10","outpost_8","outpost_9","outpost_10","outpost_13"},{},{}
+	};
+	fuelStationTypes[] = {
+		"Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F"
+	};
+	milAdministrations[] = {
+		{12144.455,9522.740,0},{6554.042,7396.069,0},{16947.47,10268.914,0},{16661.299,16687.020,0},{4114.089,17750.988,0}
+	};
+	climate = "temperate";
+	buildObjects[] = {
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TEMPERATE,
+		BUILDABLES_UNIVERSAL
+	};
+};

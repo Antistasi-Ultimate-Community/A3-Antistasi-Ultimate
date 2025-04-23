@@ -68,6 +68,7 @@ Maintainer: DoomMetal
 #define A3A_Icon_Napalm_Bomb        A3A_GUI_QTEXTURE_PATH_OF(icon_napalm_bomb.paa)
 #define A3A_Icon_None               A3A_GUI_QTEXTURE_PATH_OF(icon_none.paa)
 #define A3A_Icon_Pilot              A3A_GUI_QTEXTURE_PATH_OF(icon_pilot.paa)
+#define A3A_Icon_Requirements       A3A_GUI_QTEXTURE_PATH_OF(icon_requirements.paa)
 #define A3A_Icon_Rescue             A3A_GUI_QTEXTURE_PATH_OF(icon_rescue.paa)
 #define A3A_Icon_Rifleman           A3A_GUI_QTEXTURE_PATH_OF(icon_rifleman.paa)
 #define A3A_Icon_Sniper             A3A_GUI_QTEXTURE_PATH_OF(icon_sniper.paa)

@@ -69,6 +69,8 @@ if (_typeCrew in _garrison) then {
 // Move riflemen into saved static weapons in area
 {
 	if !(isNil {_x getVariable "lockedForAI"}) then { continue };
+	// Statics loaded into vehicle via ACE are attached to their vehicle; don't mount those
+	if (!(isNull attachedTo _x) && (_x in (attachedTo _x getVariable["ace_cargo_loaded", []]))) then { continue };
 	private _index = _garrison findIf {_x isEqualTo FactionGet(reb,"unitRifle")};
 	if (_index == -1) exitWith {};
 	private _unit = objNull;

@@ -9,16 +9,16 @@ overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence 
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
-    defaultLargeImageKey="cherno";
-    defaultLargeImageText="Antistasi Ultimate - Harvest Red";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Chernarus 2020";
+    defaultLargeImageKey="chernarus-2020";
+    defaultLargeImageText="Rebelling in Chernarus (2020)";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
-
+//Workshop Link: https://steamcommunity.com/sharedfiles/filedetails/?id=1981964169
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"

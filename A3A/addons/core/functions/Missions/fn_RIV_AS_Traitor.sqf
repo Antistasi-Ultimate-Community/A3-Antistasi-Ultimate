@@ -48,10 +48,10 @@ private _bodyguardClass = selectRandom [
 	_faction get "unitSaboteur",
 	_faction get "unitOppressor"
 ];
-private _traitor = [_groupTraitor, _faction get "unitCommander", _posTraitor, [], 0, "NONE"] call A3A_fnc_createUnit;
+private _traitor = [_groupTraitor, _faction get "unitCommander", _posTraitor, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 _traitor allowDamage false;
 _traitor setPos _posTraitor;
-[_traitor, selectRandom (A3A_faction_reb get "faces"), selectRandom (A3A_faction_reb get "voices")] call A3A_fnc_setIdentity;
+[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 
 [_traitor, 100, (random 3)] call SCRT_fnc_common_addRandomMoneyMagazine;
 _traitor setVariable ["hasLaptop", true, true];
@@ -67,8 +67,8 @@ _traitor addEventHandler ["Killed", {
 	_unit removeEventHandler ["Killed",_thisEventHandler];
 }];
 
-private _sol1 = [_groupTraitor, _bodyguardClass, _posSol1, [], 0, "NONE"] call A3A_fnc_createUnit;
-private _sol2 = [_groupTraitor, _bodyguardClass, _posSol2, [], 0, "NONE"] call A3A_fnc_createUnit;
+private _sol1 = [_groupTraitor, _bodyguardClass, _posSol1, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
+private _sol2 = [_groupTraitor, _bodyguardClass, _posSol2, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 _groupTraitor selectLeader _traitor;
 
 {[_x,""] call A3A_fnc_NATOinit; _x allowFleeing 0} forEach units _groupTraitor;
@@ -114,7 +114,7 @@ if (dateToNumber date < _dateLimitNum && alive _traitor) then {
 	};
 
 	for "_i" from 0 to _patrolCount do {
-		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
+		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_RivalsSpawnGroup;
 		(units _patrolGroup) apply {
 			private _unit = _x;
 			{_unit disableAI _x} forEach ["CHECKVISIBLE", "COVER", "SUPPRESSION", "FSM", "TARGET", "AUTOTARGET"];
@@ -132,7 +132,7 @@ if (dateToNumber date < _dateLimitNum && alive _traitor) then {
 		private _vehicleClass = selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
 
 		private _vehiclePosAndDir = [_positionX, _vehicleClass] call SCRT_fnc_common_findSafePositionForVehicle; 
-		private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_spawnVehicle;
+		private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_RivalsSpawnVehicle;
 		private _patrolVeh = _patrolVehicleData select 0;
 		_patrolVeh setDir (_vehiclePosAndDir select 1);
 		private _patrolVehCrew = _patrolVehicleData select 1;

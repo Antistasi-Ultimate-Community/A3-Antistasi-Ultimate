@@ -1,3 +1,19 @@
+/* private _hasWs = "ws" in A3A_enabledDLC;
+private _hasMarksman = "mark" in A3A_enabledDLC;
+private _hasLawsOfWar = "orange" in A3A_enabledDLC;
+private _hasTanks = "tank" in A3A_enabledDLC;
+private _hasContact = "enoch" in A3A_enabledDLC;
+private _hasJets = "jets" in A3A_enabledDLC;
+private _hasHelicopters = "heli" in A3A_enabledDLC;
+private _hasArtOfWar = "aow" in A3A_enabledDLC;
+private _hasApex = "expansion" in A3A_enabledDLC;
+private _hasGM = "gm" in A3A_enabledDLC;
+private _hasCSLA = "csla" in A3A_enabledDLC;
+private _hasRF = "rf" in A3A_enabledDLC;
+private _hasSOG = "vn" in A3A_enabledDLC;
+private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs it
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -12,6 +28,12 @@
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
+
+//["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate; //used only in salvage mission and only if template has "vanilla" flag 
+/// can be "B_SDV_01_F", "O_SDV_01_F" or "I_SDV_01_F"
+
+//["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; //used in QRF orbital and crashsite mission
+/// can be a vehicle or prop like in example above(but it must have physix)
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -48,6 +70,8 @@
 //Needs fixed gun and either rockets or missiles
 ["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
 //no need for vehicle variant currently
+["vehiclesPlanesGunship", []] call _fnc_saveToTemplate;     // planes like V-44X armed, AC-130 or pelican from OPTRE, used in GUNSHIP support
+//probably can also be a helicopter
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;            // ideally fragile & unarmed helis seating 4+
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;        // bigger heli with more passengers. 
@@ -56,6 +80,8 @@
 // Should be capable of dealing damage to ground targets without additional scripting
 ["vehiclesHelisLightAttack", []] call _fnc_saveToTemplate;      // Utility helis with fixed or door guns + rocket pods
 ["vehiclesHelisAttack", []] call _fnc_saveToTemplate;           // Proper attack helis: Apache, Hind etc
+
+["vehiclesAirPatrol", []] call _fnc_saveToTemplate;             // preferably light helicopters(armed or unarmed), used in base patrol near bases
 
 ["vehiclesArtillery", []] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
 ["magazines", createHashMapFromArray []] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
@@ -92,16 +118,48 @@
 ["minefieldAT", []] call _fnc_saveToTemplate;                   // anti-tank mines
 ["minefieldAPERS", []] call _fnc_saveToTemplate;                // anti-personal mines
 
+//Example on how to use dlc content
+/* if (_hasContact) then {
+    #include "..\DLC_content\vehicles\Contact\weird_alien_bug.sqf"
+}; */
+
+//Example on how to use mod content
+//If CUP
+/* if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
+    #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_AAF.sqf"
+}; */
+
+//or like this
+
+//Example on how to use mod content
+/* if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	_gunship pushBack "vnx_b_air_ac119_01_01";
+  	_transportplanes append ["vnx_b_air_ac119_02_01","vnx_b_air_ac119_02_02"];
+	_planesCAS pushBack "vnx_b_air_ac119_04_01";
+}; */
+
+//#include "xxx_Vehicle_Attributes.sqf"  /// in case you want vehicles to have custom "prices" and threat levels
+
 //SLAT cages, camo nets, logs, doors etc
 ["animations", [
     ["vehClass", ["animsourcefromgarage1", 0.3, "animsourcefromgarage2", 0.25, "animsourcefromgarage3", 0.3, "animsourcefromgarage4", 0.3]],
     ["", []]
 ]] call _fnc_saveToTemplate;
 
+/// or do it like this
+/* ["animations", [
+    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf"
+]] call _fnc_saveToTemplate; */
+
 //vehicle skins
 ["variants", [
     ["vehClass", ["paint", 1]]
 ]] call _fnc_saveToTemplate;
+
+/// or do it like this
+/* ["variants", [
+    #include "..\vehicleVariants\Vanilla_NATO_Arid\CSLA_NATO_Arid.sqf"
+]] call _fnc_saveToTemplate; */
 
 /////////////////////
 ///  Identities   ///
@@ -129,6 +187,7 @@
 //       Loadouts       //
 //////////////////////////
 private _loadoutData = call _fnc_createLoadoutData;
+_loadoutData set ["slRifles", []];
 _loadoutData set ["rifles", []];
 _loadoutData set ["carbines", []];
 _loadoutData set ["grenadeLaunchers", []];
@@ -183,9 +242,14 @@ _loadoutData set ["cloakGlasses", []];
 
 _loadoutData set ["uniforms", []];
 _loadoutData set ["vests", []];
+_loadoutData set ["Hvests", []];
+_loadoutData set ["glVests", []];
 _loadoutData set ["backpacks", []];
-_loadoutData set ["longRangeRadios", []];           //long range radios used by radiomen
+_loadoutData set ["atBackpacks", []];
+_loadoutData set ["longRangeRadios", ["B_RadioBag_01_mtp_F"]];
 _loadoutData set ["helmets", []];
+_loadoutData set ["slHat", ["H_Beret_02"]];
+_loadoutData set ["sniHats", ["H_Booniehat_mcamo"]];
 
 _loadoutData set ["facewear", []];
 
@@ -222,21 +286,84 @@ _loadoutData set ["goggles", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
+_sfLoadoutData set ["NVGs", []]; 
 _sfLoadoutData set ["uniforms", []];
 _sfLoadoutData set ["vests", []];
-_sfLoadoutData set ["backpacks", []];
+_sfLoadoutData set ["Hvests", []];
+_sfLoadoutData set ["glVests", []];
 _sfLoadoutData set ["helmets", []];
+_sfLoadoutData set ["glasses", []];
+_sfLoadoutData set ["goggles", []];
 _sfLoadoutData set ["binoculars", []];
+_sfLoadoutData set ["backpacks", []];
+_sfLoadoutData set ["atBackpacks", []];
 //["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
+
+_sfLoadoutData set ["sniperRifles", []];
+_sfLoadoutData set ["sidearms", []];
+_sfLoadoutData set ["slRifles", []];
+
+//["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
+
+// The two empty lists are for magazines - leave them empty for whatever the weapon's default mag is, or fill them for a given ratio (i.e. ["tracer", "regular", "regular"]). 
+// The second list is for underbarrel mags.
+
+// Note: muzzle, rail, sight, and bipod slots can be either a string for a specific item, or an array for a list of items. Arrays can be defined separately from weapons.
+// Arrays (both for attachments and for the larger lists of weapons) can either be a regular list or a weighted list that alternates between item and weight.
+// See https://community.bistudio.com/wiki/selectRandomWeighted for details.
+// If a given spawn list is made a weighted list, make sure that anything that adds to that list (e.g. optional DLC compatibility) is also a weighted list, or everything breaks.
+// Everything in this also applies to e.g. uniforms and equipment, but does NOT apply to vehicles.
+
+// Example of a weighted spawn list, with attachments and etc, using all possible methods of declaring lists:
+/*
+_sfM4Optics = ["optic_holo", 2, "optic_acog", 1, "", 1]; //weighted list - 50% chance holo, 25% chance acog, 25% chance nothing
+_sfM4Attachments = ["flashlight", ""]; //unweighted list, even distribution between flashlight or nothing
+_sfLoadoutData set ["rifles", [
+    ["rifle_m4a1", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 2,
+    ["rifle_m4a1_camo", "suppressor_m4", _sfM4Attachments,  _sfM4Optics, [], [], ""], 1 //2:1 ratio of regular and camo M4s
+]]; 
+_sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the optics lists are applied since _sfM4Optics is stored as a reference, which is useful for DLC/mod compats
+
+*/
 
 _sfLoadoutData set ["rifles", []];
 _sfLoadoutData set ["carbines", []];
 _sfLoadoutData set ["grenadeLaunchers", []];
-_sfLoadoutData set ["SMGs", []];
 _sfLoadoutData set ["machineGuns", []];
 _sfLoadoutData set ["marksmanRifles", []];
+_sfLoadoutData set ["SMGs", []];
 _sfLoadoutData set ["sniperRifles", []];
 _sfLoadoutData set ["sidearms", []];
+
+/////////////////////////////////
+//    Elite Loadout Data       //
+/////////////////////////////////
+
+private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
+_eliteLoadoutData set ["NVGs", []]; 
+_eliteLoadoutData set ["uniforms", []];
+_eliteLoadoutData set ["vests", []];
+_eliteLoadoutData set ["Hvests", []];
+_eliteLoadoutData set ["glVests", []];
+_eliteLoadoutData set ["helmets", []];
+_eliteLoadoutData set ["glasses", []];
+_eliteLoadoutData set ["goggles", []];
+_eliteLoadoutData set ["binoculars", []];
+_eliteLoadoutData set ["backpacks", []];
+_eliteLoadoutData set ["atBackpacks", []];
+
+_eliteLoadoutData set ["sniperRifles", []];
+_eliteLoadoutData set ["sidearms", []];
+_eliteLoadoutData set ["slRifles", []];
+_eliteLoadoutData set ["rifles", []];
+_eliteLoadoutData set ["carbines", []];
+_eliteLoadoutData set ["grenadeLaunchers", []];
+_eliteLoadoutData set ["machineGuns", []];
+_eliteLoadoutData set ["marksmanRifles", []];
+_eliteLoadoutData set ["SMGs", []];
+_eliteLoadoutData set ["sniperRifles", []];
+_eliteLoadoutData set ["sidearms", []];
+
 /////////////////////////////////
 //    Military Loadout Data    //
 /////////////////////////////////
@@ -248,6 +375,7 @@ _militaryLoadoutData set ["backpacks", []];
 _militaryLoadoutData set ["helmets", []];
 _militaryLoadoutData set ["binoculars", []];
 
+_militaryLoadoutData set ["slRifles", []];
 _militaryLoadoutData set ["rifles", []];
 _militaryLoadoutData set ["carbines", []];
 _militaryLoadoutData set ["grenadeLaunchers", []];
@@ -280,6 +408,7 @@ _militiaLoadoutData set ["vests", []];
 _militiaLoadoutData set ["backpacks", []];
 _militiaLoadoutData set ["helmets", []];
 
+_militiaLoadoutData set ["slRifles", []];
 _militiaLoadoutData set ["rifles", []];
 _militiaLoadoutData set ["carbines", []];
 _militiaLoadoutData set ["grenadeLaunchers", []];
@@ -422,7 +551,7 @@ private _medicTemplate = {
 private _grenadierTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1.25]] call _fnc_setFacewear;
-    [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
+    [["glVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 

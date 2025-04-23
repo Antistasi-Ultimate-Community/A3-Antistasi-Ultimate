@@ -21,7 +21,7 @@
 
 ["vehiclesBasic", ["fow_v_truppenfahrrad_ger_heer"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["LIB_Kfz1","LIB_Kfz1_camo","LIB_Kfz1_Hood"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed",["LIB_Kfz1_MG42","LIB_Kfz1_MG42_camo","fow_v_sdkfz_250_9_camo_ger_heer","fow_v_sdkfz_222_camo_ger_heer"]] call _fnc_saveToTemplate;
+private _vehiclesLightArmed = ["LIB_Kfz1_MG42","LIB_Kfz1_MG42_camo","fow_v_sdkfz_250_9_camo_ger_heer","fow_v_sdkfz_222_camo_ger_heer"]; 
 ["vehiclesTrucks", ["LIB_OpelBlitz_Open_Y_Camo","LIB_OpelBlitz_Tent_Y_Camo","LIB_SdKfz_7"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["LIB_OpelBlitz_Open_Y_Camo","LIB_SdKfz_7"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["LIB_OpelBlitz_Ammo", "LIB_SdKfz_7_Ammo"]] call _fnc_saveToTemplate;
@@ -31,18 +31,46 @@
 ["vehiclesLightAPCs", ["fow_v_sdkfz_250_camo_ger_heer","fow_v_sdkfz_250_camo_ger_heer"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["LIB_SdKfz_7_AA", "fow_v_sdkfz_251_camo_ger_heer","fow_v_sdkfz_251_camo_ger_heer"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["LIB_PzKpfwIV_H", "LIB_StuG_III_G"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["fow_v_panther_camo_ger_heer", "LIB_PzKpfwVI_E"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["fow_v_panther_camo_ger_heer", "fow_v_panther_camo_ger_heer", "fow_v_panther_camo_ger_heer", "LIB_PzKpfwVI_E", "LIB_PzKpfwVI_B_tarn51c"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["LIB_FlakPanzerIV_Wirbelwind"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["fow_v_sdkfz_250_camo_ger_heer"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["LIB_StuG_III_G"]] call _fnc_saveToTemplate;
+private _vehiclesLightTanks = ["LIB_StuG_III_G"]; 
+
+if (isClass (configFile >> "CfgPatches" >> "FA_WW2_Armored_Cars")) then {
+    _vehiclesLightArmed append ["FA_BA64_Captured","FA_Sdkfz231", "FA_Sdkfz234", "FA_Sdkfz234_4", "FA_Sdkfz231"]; 
+};
+if (isClass (configFile >> "CfgPatches" >> "FA_WW2_Tanks")) then {
+    _vehiclesLightTanks append ["FA_Panzer2","FA_Pz38t"];
+};
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+["vehiclesLightTanks", _vehiclesLightTanks] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["LIB_LCA"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["LIB_Ju87"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["LIB_FW190F8"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["A3U_LIB_C47_German"]] call _fnc_saveToTemplate;
+private _vehiclesPlanesCAS = ["LIB_Ju87"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["LIB_FW190F8"];
+private _vehiclesPlanesTransport = ["A3U_LIB_C47_German"];
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_bf109g"];
+	_vehiclesPlanesLargeCAS append ["sab_fl_ju88a","sab_fl_ju86"];
+	_vehiclesPlanesAA append ["sab_fl_bf109e","sab_fl_bf109f","sab_fl_bf109g","sab_fl_bf109k","sab_fl_fw190a","sab_fl_fw190d"];
+	_vehiclesPlanesTransport = ["sab_fl_ju52"];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_bf110"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_he111","sab_sw_he177"];
+	_vehiclesPlanesAA append ["sab_sw_me262","sab_sw_bf110"];
+};
+
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", []] call _fnc_saveToTemplate;

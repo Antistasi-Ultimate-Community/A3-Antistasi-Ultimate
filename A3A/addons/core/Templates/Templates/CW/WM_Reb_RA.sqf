@@ -41,35 +41,6 @@
 
 #include "WM_Reb_Vehicle_Attributes.sqf"
 
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["3AS_StationaryTurret", 3000, "STATICAT", {tierWar > 3}],
-    ["3as_XX9", 50000, "STATICMG", {tierWar > 8}],
-
-
-    ["3AS_Barc", 1750, "CAR", {true}],
-    ["3AS_BarcSideCar", 2050, "CAR", {true}],
-	["3AS_ISP", 3000, "CAR", {true}],
-	["3AS_ISP_Transport", 2500, "CAR", {true}],
-
-    ["3AS_RTT", 6000, "APC", {true}],
-
-    ["3AS_AAT_Woodland", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["3AS_AAT_Desert", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["3AS_AAT_Tropical", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["3AS_AAT_Winter", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    
-    ["3AS_RX200_Base", 30000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["3as_arc_170_red", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["3as_LAAT_Mk2", 25000, "HELI", {tierWar > 4 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["3as_LAAT_Mk1", 35000, "HELI", {tierWar > 6 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
-
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////

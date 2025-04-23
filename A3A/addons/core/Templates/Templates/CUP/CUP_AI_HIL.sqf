@@ -13,6 +13,8 @@
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate;
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate;
@@ -46,6 +48,8 @@
 ["vehiclesHelisTransport", ["CUP_B_AW159_Unarmed_HIL","CUP_B_CH47F_HIL","CUP_B_412_Mil_Transport_HIL"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", ["CUP_B_AW159_HIL","CUP_B_412_Military_Armed_AT_HIL","CUP_B_412_Military_Armed_HIL","CUP_B_412_dynamicLoadout_HIL"]] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", ["CUP_B_AH1Z_Dynamic_USMC"]] call _fnc_saveToTemplate;
+
+["vehiclesAirPatrol", ["CUP_B_AW159_Unarmed_HIL", "CUP_B_MH6M_USA","CUP_B_AW159_HIL","CUP_B_412_Military_Armed_AT_HIL","CUP_B_412_Military_Armed_HIL","CUP_B_412_dynamicLoadout_HIL"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["CUP_B_M270_HE_HIL", "CUP_B_M270_DPICM_HIL"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
@@ -101,6 +105,8 @@
 "TanoanHead_A3_06","TanoanHead_A3_07"]] call _fnc_saveToTemplate;
 
 ["voices", ["Male01FRE","Male02FRE","Male03FRE"]] call _fnc_saveToTemplate;
+
+"TanoanMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

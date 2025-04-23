@@ -5,7 +5,13 @@ if (!isServer) exitWith {Error("Server-only function miscalled")};
 waitUntil {!cityIsSupportChanging};
 cityIsSupportChanging = true;
 
-params ["_changeGov", "_changeReb", "_pos", ["_scaled", true], ["_isRadio", false]];
+params [["_changeGov", ""], ["_changeReb", ""], ["_pos","",["",[]]], ["_scaled", true], ["_isRadio", false]];
+
+if !(_changeGov isEqualType 0) exitWith {["Function was called incorrectly. First param must be a number.", _fnc_scriptName] call A3U_fnc_log};
+if !(_changeReb isEqualType 0) exitWith {["Function was called incorrectly. Second param must be a number.", _fnc_scriptName] call A3U_fnc_log};
+if (_pos isEqualTo "" || {_pos isEqualTo []}) exitWith {
+	["Function was called incorrectly. Third param must be a city varname (STR) or coordinates (ARR).", _fnc_scriptName] call A3U_fnc_log
+};
 
 private _city = if (_pos isEqualType "") then {_pos} else {[citiesX, _pos] call BIS_fnc_nearestPosition};
 private _cityData = server getVariable _city;
