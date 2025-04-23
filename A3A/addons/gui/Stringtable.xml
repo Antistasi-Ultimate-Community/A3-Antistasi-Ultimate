@@ -3621,6 +3621,9 @@
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_unlocks_disabled">
+                <Original>This parameter cannot be changed when unlocks are globally disabled.</Original>
+            </Key>
         </Container>
         <Container name="setup_dialog_table">
             <Key ID="STR_antistasi_setup_dialog_table_map">
