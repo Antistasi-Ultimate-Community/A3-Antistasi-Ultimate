@@ -1158,7 +1158,7 @@ if (_type == "CAS") then
             _plane setVariable ["missileLauncher", ["3as_ARC_Missile_AGM"]];
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
-        case "3as_Tri_Fighter_dynamicLoadout":
+        case "3AS_Tri_Fighter_DynamicLoadout":
         {
             _loadout = ["3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP"];
             _plane setVariable ["mainGun", "3AS_Vulture_Cannon"];
@@ -1670,7 +1670,7 @@ if (_type == "AA") then
             _plane setVariable ["mainGun", "3as_ARC_Light_Canon"];
             _plane setVariable ["missileLauncher", ["weapon_BIM9xLauncher","weapon_AMRAAMLauncher"]];
         };
-        case "3as_Tri_Fighter_dynamicLoadout":
+        case "3AS_Tri_Fighter_DynamicLoadout":
         {
             _loadout = ["3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA"];
             _plane setVariable ["mainGun", "3AS_Vulture_Cannon"];

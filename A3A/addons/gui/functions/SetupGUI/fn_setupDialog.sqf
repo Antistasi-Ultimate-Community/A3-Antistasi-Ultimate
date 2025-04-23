@@ -105,7 +105,7 @@ switch (_mode) do
 
     case ("sendData"):
     {
-        _params params ["_saveData", "_loadedPatches", "_loadedDLC"];
+        _params params ["_saveData", "_loadedPatches", "_loadedDLC", "_platform"];
 
         // Generate user map names
         private _prettyMapHM = createHashMapFromArray [
@@ -137,6 +137,7 @@ switch (_mode) do
         A3A_setup_saveData = _saveData;
         A3A_setup_loadedPatches = _loadedPatches;
         A3A_setup_loadedDLC = _loadedDLC;
+        A3A_setup_platform = _platform;
 
         if (!isNull _display) exitWith {
             Error("Server sent data while dialog is open? Curious");

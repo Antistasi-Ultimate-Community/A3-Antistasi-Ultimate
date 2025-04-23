@@ -76,7 +76,149 @@ if (isNil {_display getVariable "validFactions"}) then
 
 switch (_mode) do
 {
-    case ("update"): {};			// Don't hide anything here, nothing to do
+    case ("update"): {
+        _params params ["_listboxes"];
+
+        private _rebLBCtrl = _display displayCtrl A3A_IDC_SETUP_REBELSLISTBOX;
+        private _civLBCtrl = _display displayCtrl A3A_IDC_SETUP_CIVILIANSLISTBOX;
+        private _invLBCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
+        private _rivLBCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
+
+        
+        private _rebLBHandler =_rebLBCtrl getVariable "LBHandler";
+        if (!isNil "_rebLBHandler") then { _rebLBCtrl ctrlRemoveEventHandler ["MouseMoving", _rebLBHandler] };
+        if (_rebLBCtrl in _listboxes) then {
+            _rebLBHandler = _rebLBCtrl ctrlAddEventHandler ["MouseMoving", {
+                params ["_rebLBCtrl", "_xPos", "_yPos", "_mouseOver"];
+
+                private _display = findDisplay A3A_IDD_SETUPDIALOG;
+                private _civLabelCtrl = _display displayCtrl A3A_IDC_SETUP_CIVILIANSLABEL;
+                private _civLBCtrl = _display displayCtrl A3A_IDC_SETUP_CIVILIANSLISTBOX;
+
+                if (_mouseOver) then {
+                    if (_rebLBCtrl getVariable "Expanded") exitWith {};
+                    _rebLBCtrl setVariable ["Expanded", true];
+                    
+                    private _rebLBSize = lbSize _rebLBCtrl;
+                    private _LBx = 4 * GRID_W;
+                    private _rebLBy = 8 * GRID_H;
+                    private _LBw = 38 * GRID_W;
+                    private _Lh = 4 * GRID_H;
+                    private _rebLBh = ((_rebLBSize * 3.25) min 66) * GRID_H;
+                    private _civLy = (_rebLBy + _rebLBh + 2 * GRID_H);
+                    private _civLBy = (_civLy + 4 * GRID_H);
+                    private _civLBh = (92 * GRID_H - _civLy);
+                    _rebLBCtrl ctrlSetPosition [_LBx, _rebLBy, _LBw, _rebLBh];
+                    _civLabelCtrl ctrlSetPosition [_LBx, _civLy, _LBw, _Lh];
+                    _civLBCtrl ctrlSetPosition [_LBx, _civLBy, _LBw, _civLBh];
+                    { _x ctrlCommit 0.4 } forEach [_rebLBCtrl, _civLabelCtrl, _civLBCtrl];
+                } else {
+                    _rebLBCtrl ctrlSetPosition [4 * GRID_W, 8 * GRID_H, 38 * GRID_W, 40 * GRID_H];
+                    _civLabelCtrl ctrlSetPosition [4 * GRID_W, 50 * GRID_H, 38 * GRID_W, 4 * GRID_H];
+                    _civLBCtrl ctrlSetPosition [4 * GRID_W, 54 * GRID_H, 38 * GRID_W, 42 * GRID_H];
+                    { _x ctrlCommit 0.4 } forEach [_rebLBCtrl, _civLabelCtrl, _civLBCtrl];
+                    _rebLBCtrl setVariable ["Expanded", false];
+                };
+            }];
+            _rebLBCtrl setVariable ["LBHandler", _rebLBHandler];
+        };
+
+        private _civLBHandler = _civLBCtrl getVariable "LBHandler";
+        if (!isNil "_civLBHandler") then { _civLBCtrl ctrlRemoveEventHandler ["MouseMoving", _civLBHandler] };
+        if (_civLBCtrl in _listboxes) then {
+            _civLBHandler = _civLBCtrl ctrlAddEventHandler ["MouseMoving", {
+                params ["_civLBCtrl", "_xPos", "_yPos", "_mouseOver"];
+
+                private _display = findDisplay A3A_IDD_SETUPDIALOG;
+                private _civLabelCtrl = _display displayCtrl A3A_IDC_SETUP_CIVILIANSLABEL;
+                private _rebLBCtrl = _display displayCtrl A3A_IDC_SETUP_REBELSLISTBOX;
+
+                if (_mouseOver) then {
+                    if (_civLBCtrl getVariable "Expanded") exitWith {};
+                    _civLBCtrl setVariable ["Expanded", true];
+                    
+                    _rebLBCtrl ctrlSetPosition [4 * GRID_W, 8 * GRID_H, 38 * GRID_W, 16 * GRID_H];
+                    _civLabelCtrl ctrlSetPosition [4 * GRID_W, 26 * GRID_H, 38 * GRID_W, 4 * GRID_H];
+                    _civLBCtrl ctrlSetPosition [4 * GRID_W, 30 * GRID_H, 38 * GRID_W, 66 * GRID_H];
+                    { _x ctrlCommit 0.4 } forEach [_rebLBCtrl, _civLabelCtrl, _civLBCtrl];
+                } else {
+                    _rebLBCtrl ctrlSetPosition [4 * GRID_W, 8 * GRID_H, 38 * GRID_W, 40 * GRID_H];
+                    _civLabelCtrl ctrlSetPosition [4 * GRID_W, 50 * GRID_H, 38 * GRID_W, 4 * GRID_H];
+                    _civLBCtrl ctrlSetPosition [4 * GRID_W, 54 * GRID_H, 38 * GRID_W, 42 * GRID_H];
+                    { _x ctrlCommit 0.4 } forEach [_rebLBCtrl, _civLabelCtrl, _civLBCtrl];
+                    _civLBCtrl setVariable ["Expanded", false];
+                };
+            }];
+            _civLBCtrl setVariable ["LBHandler", _civLBHandler];
+        };
+
+        private _invLBHandler = _invLBCtrl getVariable "LBHandler";
+        if (!isNil "_invLBHandler") then { _invLBCtrl ctrlRemoveEventHandler ["MouseMoving", _invLBHandler] };
+        if (_invLBCtrl in _listboxes) then {
+            _invLBHandler = _invLBCtrl ctrlAddEventHandler ["MouseMoving", {
+                params ["_invLBCtrl", "_xPos", "_yPos", "_mouseOver"];
+
+                private _display = findDisplay A3A_IDD_SETUPDIALOG;
+                private _rivLabelCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLABEL;
+                private _rivLBCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
+
+                if (_mouseOver) then {
+                    if (_invLBCtrl getVariable "Expanded") exitWith {};
+                    _invLBCtrl setVariable ["Expanded", true];
+                    
+                    private _invLBSize = lbSize _invLBCtrl;
+                    private _LBx = 84 * GRID_W;
+                    private _invLBy = 8 * GRID_H;
+                    private _LBw = 38 * GRID_W;
+                    private _Lh = 4 * GRID_H;
+                    private _invLBh = ((_invLBSize * 3.25) min 66) * GRID_H;
+                    private _rivLy = (_invLBy + _invLBh + 2 * GRID_H);
+                    private _rivLBy = (_rivLy + 4 * GRID_H);
+                    private _rivLBh = (92 * GRID_H - _rivLy);
+                    _invLBCtrl ctrlSetPosition [_LBx, _invLBy, _LBw, _invLBh];
+                    _rivLabelCtrl ctrlSetPosition [_LBx, _rivLy, _LBw, _Lh];
+                    _rivLBCtrl ctrlSetPosition [_LBx, _rivLBy, _LBw, _rivLBh];
+                    { _x ctrlCommit 0.4 } forEach [_invLBCtrl, _rivLabelCtrl, _rivLBCtrl];
+                } else {
+                    _invLBCtrl ctrlSetPosition [84 * GRID_W, 8 * GRID_H, 38 * GRID_W, 40 * GRID_H];
+                    _rivLabelCtrl ctrlSetPosition [84 * GRID_W, 50 * GRID_H, 38 * GRID_W, 4 * GRID_H];
+                    _rivLBCtrl ctrlSetPosition [84 * GRID_W, 54 * GRID_H, 38 * GRID_W, 42 * GRID_H];
+                    { _x ctrlCommit 0.4 } forEach [_invLBCtrl, _rivLabelCtrl, _rivLBCtrl];
+                    _invLBCtrl setVariable ["Expanded", false];
+                };
+            }];
+            _invLBCtrl setVariable ["LBHandler", _invLBHandler];
+        };
+
+        private _rivLBHandler = _rivLBCtrl getVariable "LBHandler";
+        if (!isNil "_rivLBHandler") then { _rivLBCtrl ctrlRemoveEventHandler ["MouseMoving", _rivLBHandler] };
+        if (_rivLBCtrl in _listboxes) then {
+            _rivLBHandler = _rivLBCtrl ctrlAddEventHandler ["MouseMoving", {
+                params ["_rivLBCtrl", "_xPos", "_yPos", "_mouseOver"];
+
+                private _display = findDisplay A3A_IDD_SETUPDIALOG;
+                private _rivLabelCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLABEL;
+                private _invLBCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
+
+                if (_mouseOver) then {
+                    if (_rivLBCtrl getVariable "Expanded") exitWith {};
+                    _rivLBCtrl setVariable ["Expanded", true];
+                    
+                    _invLBCtrl ctrlSetPosition [84 * GRID_W, 8 * GRID_H, 38 * GRID_W, 16 * GRID_H];
+                    _rivLabelCtrl ctrlSetPosition [84 * GRID_W, 26 * GRID_H, 38 * GRID_W, 4 * GRID_H];
+                    _rivLBCtrl ctrlSetPosition [84 * GRID_W, 30 * GRID_H, 38 * GRID_W, 66 * GRID_H];
+                    { _x ctrlCommit 0.4 } forEach [_invLBCtrl, _rivLabelCtrl, _rivLBCtrl];
+                } else {
+                    _invLBCtrl ctrlSetPosition [84 * GRID_W, 8 * GRID_H, 38 * GRID_W, 40 * GRID_H];
+                    _rivLabelCtrl ctrlSetPosition [84 * GRID_W, 50 * GRID_H, 38 * GRID_W, 4 * GRID_H];
+                    _rivLBCtrl ctrlSetPosition [84 * GRID_W, 54 * GRID_H, 38 * GRID_W, 42 * GRID_H];
+                    { _x ctrlCommit 0.4 } forEach [_invLBCtrl, _rivLabelCtrl, _rivLBCtrl];
+                    _rivLBCtrl setVariable ["Expanded", false];
+                };
+            }];
+            _rivLBCtrl setVariable ["LBHandler", _rivLBHandler];
+        };
+    };
 
     case ("factionSelected"):
     {
@@ -91,6 +233,8 @@ switch (_mode) do
 
     case ("fillFactions"):
     {
+        private _expandLBs = [];
+        
         private _fnc_fillListBox = {
             params ["_listboxIDC", "_factions", "_selected"];
             Debug_1("fillListBox called with %1 selected", _selected);
@@ -115,6 +259,8 @@ switch (_mode) do
                 };
             } forEach _factions;
             if (lbCurSel _listBox == -1) then { _listBox lbSetCurSel 0 };				// Should always exist
+
+            if (count _factions > 12) then { _expandLBs pushBack _listbox };
         };
 
         // Fetch valid factions and filter based on checkboxes
@@ -162,6 +308,8 @@ switch (_mode) do
         [A3A_IDC_SETUP_REBELSLISTBOX, _factions#2, _savedFactions#2] call _fnc_fillListBox;
         [A3A_IDC_SETUP_CIVILIANSLISTBOX, _factions#3, _savedFactions#3] call _fnc_fillListBox;
         [A3A_IDC_SETUP_RIVALSLISTBOX, _factions#4, _savedFactions#4] call _fnc_fillListBox;
+
+        ["update", [_expandLBs]] call A3A_fnc_setupFactionsTab;
     };
 
 
