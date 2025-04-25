@@ -385,9 +385,15 @@ if (_varName in specialVarLoads) then {
                     if (_veh isKindOf "StaticWeapon") exitWith { staticsToSave pushBack _veh };
                     if (_veh isKindOf "Building") exitWith {
                         _veh setVariable ["A3A_building", true, true];
-                        if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
+                        if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F","A3AU_TerrainCleaner_VerySmall_F","A3AU_TerrainCleaner_Small_F","A3AU_TerrainCleaner_Medium_F","A3AU_TerrainCleaner_Large_F"]) then {
+                            [_veh] call A3A_fnc_terrainCleaner;
+                        };
+                        if (typeOf _veh in ["A3AU_TerrainSmoother_VerySmall_F","A3AU_TerrainSmoother_Small_F","A3AU_TerrainSmoother_Medium_F","A3AU_TerrainSmoother_Large_F"]) then {
                             [_veh] call A3A_fnc_terrainSmoother;
                         };
+                        if (typeOf _veh in ["A3AU_TerrainSmoother_VerySmall_F","A3AU_TerrainSmoother_Small_F","A3AU_TerrainSmoother_Medium_F","A3AU_TerrainSmoother_Large_F","A3AU_TerrainCleaner_VerySmall_F","A3AU_TerrainCleaner_Small_F","A3AU_TerrainCleaner_Medium_F","A3AU_TerrainCleaner_Large_F"]) then {
+                            hideObject _veh;
+                        }
                         A3A_buildingsToSave pushBack _veh;
                     };
                 };
