@@ -12,11 +12,6 @@ private _gridSize = getTerrainInfo #2;
 private _centerX = _center select 0;
 private _centerY = _center select 1;
 
-{
-    [_x, true] remoteExec ["hideObject", 0, true];
-    _x enableSimulationGlobal false;
-} forEach nearestTerrainObjects [_center, ["ROCKS","ROCK","Tree", "Bush","SMALL TREE","HIDE"], 35, false, true];
-
 // General function for terrain height processing
 private _fnc_processTerrain = {
     params ["_positions"];

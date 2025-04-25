@@ -386,7 +386,7 @@ if (_varName in specialVarLoads) then {
                     if (_veh isKindOf "Building") exitWith {
                         _veh setVariable ["A3A_building", true, true];
                         if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
-                            [_veh] call A3A_fnc_terrainSmoother;
+                            [_veh] call A3A_fnc_terrainCleaner;
                         };
                         A3A_buildingsToSave pushBack _veh;
                     };
