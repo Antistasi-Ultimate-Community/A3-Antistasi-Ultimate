@@ -4926,7 +4926,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={327.44272,294.71216,9425.6963};
-			name="outp_1_vehicle_1";
+			name="outp_9_vehicle";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorGreen";
