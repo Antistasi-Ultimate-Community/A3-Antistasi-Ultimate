@@ -4,18 +4,36 @@
 params ["_object"];
 private _center = getPos _object;
 private _targetHeight = getTerrainHeightASL _center;
-private _radius = 22;
-private _smoothingRadius = 34;
+private _radius = objNull;
+private _smoothingRadius = objNull;
+
+switch (_object) do {
+    case ("A3AU_TerrainSmoother_VerySmall_F"):
+    {
+        _radius = 4;
+        _smoothingRadius = 8;
+    };
+    case ("A3AU_TerrainSmoother_Small_F"):
+    {
+        _radius = 8;
+        _smoothingRadius = 16;
+    };
+    case ("A3AU_TerrainSmoother_Medium_F"):
+    {
+        _radius = 15;
+        _smoothingRadius = 27;
+    };
+    case ("A3AU_TerrainSmoother_Large_F"):
+    {
+        _radius = 30;
+        _smoothingRadius = 42;
+    };
+};
 private _gridSize = getTerrainInfo #2;
 
 // Optimization: pre-calculate center coordinates
 private _centerX = _center select 0;
 private _centerY = _center select 1;
-
-{
-    [_x, true] remoteExec ["hideObject", 0, true];
-    _x enableSimulationGlobal false;
-} forEach nearestTerrainObjects [_center, ["ROCKS","ROCK","Tree", "Bush","SMALL TREE","HIDE"], 35, false, true];
 
 // General function for terrain height processing
 private _fnc_processTerrain = {
