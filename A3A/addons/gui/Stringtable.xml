@@ -3185,6 +3185,17 @@
                 <Portuguese>Parametros</Portuguese>
                 <Chinesesimp>参数</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_tab_button_disabled">
+                <Original>This tab is disabled. To change save parameters, select a save to edit or check the 'Create new game' checkbox.</Original>
+                <Czech>Tato karta je zakázána. Chcete-li změnit parametry ukládání, vyberte uloženou pozici, kterou chcete upravit, nebo zaškrtněte políčko "Vytvořit novou hru".</Czech>
+                <French>Cet onglet est désactivé. Pour modifier les paramètres de sauvegarde, sélectionnez une sauvegarde à modifier ou cochez la case « Créer un nouveau jeu ».</French>
+                <Italian>Questa scheda è disabilitata. Per modificare i parametri di salvataggio, seleziona un salvataggio da modificare o seleziona la casella di controllo "Crea nuova partita".</Italian>
+                <Korean>이 탭은 사용할 수 없습니다. 저장 매개변수를 변경하려면 편집할 저장을 선택하거나 '새 게임 생성' 확인란을 선택합니다.</Korean>
+                <Russian>Эта вкладка отключена. Чтобы изменить параметры сохранения, выберите сохранение для редактирования или установите флажок «Создать новую игру».</Russian>
+                <Polish>Ta karta jest wyłączona. Aby zmienić parametry zapisu, wybierz zapis do edycji lub zaznacz pole wyboru "Utwórz nową grę".</Polish>
+                <Portuguese>Este separador está desativado. Para alterar os parâmetros de gravação, selecione um salvamento para editar ou marque a caixa de seleção 'Criar novo jogo'.</Portuguese>
+                <Chinesesimp>此选项卡已禁用。要更改保存参数，请选择要编辑的保存或选中"创建新游戏"复选框。</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_basic_label">
                 <Original>Basic Parameters</Original>
                 <Czech>Základní parametry</Czech>
