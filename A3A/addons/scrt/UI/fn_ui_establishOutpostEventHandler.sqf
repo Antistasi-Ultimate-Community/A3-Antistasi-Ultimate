@@ -56,9 +56,9 @@ if(_mode == "ADD") then {
                 	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
                 	// Use _result here
                     if (_result) then {
-                        createDialog "A3A_VehiclesFromGarageDisplay"; ///step 1.7
+                        createDialog "A3A_RoadblockFromGarage"; ///step 1.7
                     } else {
-                        createDialog "A3A_BuyVehicleRoadblockDialog";
+                        createDialog "A3A_RoadblockFromStore";
                     };
                 };
 
@@ -94,69 +94,24 @@ if(_mode == "ADD") then {
 
                 turretDirection = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
 
-                switch (outpostType) do {
-                    case "AA": {
-                        //[(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
-                        ///
-                        [myGlobalResult, outpostCostmoney, outpostCosthr, turretDirection] spawn ///step 1
-                        { 
-                            myGlobalResult = _this select 0;
-                            outpostCostmoney = _this select 1;
-                            outpostCosthr = _this select 2;
-                            turretDirection = _this select 3;
-                        	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
-                        	// Use _result here
-                            if (_result) then {
-                                createDialog "A3A_StaticAAFromGarageDisplay"; ///step 1.7
-                            } else {
-                                createDialog "A3A_BuyVehicleAADialog";
-                            };
-                        };
-                        ///
-                    };
-                    case "AT": {
-                        //[(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
-                        ///
-                        [myGlobalResult, outpostCostmoney, outpostCosthr, turretDirection] spawn
-                        { 
-                            myGlobalResult = _this select 0;
-                            outpostCostmoney = _this select 1;
-                            outpostCosthr = _this select 2;
-                            turretDirection = _this select 3;
-                        	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage;
-                        	// Use _result here
-                            if (_result) then {
-                                createDialog "A3A_StaticATFromGarageDisplay";
-                            } else {
-                                createDialog "A3A_BuyVehicleATDialog";
-                            };
-                        };
-                        ///
-                    };
-                    case "HMG": {
-                        //[(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
-                        ///
-                        [myGlobalResult, outpostCostmoney, outpostCosthr, turretDirection] spawn
-                        { 
-                            myGlobalResult = _this select 0;
-                            outpostCostmoney = _this select 1;
-                            outpostCosthr = _this select 2;
-                            turretDirection = _this select 3;
-                        	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage;
-                        	// Use _result here
-                            if (_result) then {
-                                createDialog "A3A_StaticMGFromGarageDisplay";
-                            } else {
-                                createDialog "A3A_BuyVehicleMGDialog";
-                            };
-                        };
-                        ///
-                    };
-                    default {
-                        Error("Bad outpost type.");
-                    };
-                };
+                [
+                    outpostType,
+                    myGlobalResult,
+                    outpostCostmoney,
+                    outpostCosthr,
+                    turretDirection
+                ] spawn {
+                    private _outpostType = _this select 0;
+                    myGlobalResult = _this select 1;
+                    outpostCostmoney = _this select 2;
+                    outpostCosthr = _this select 3;
+                    turretDirection = _this select 4;
 
+                    private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
+                    private _dialog = format [["A3A_Static%1FromStore", "A3A_Static%1FromGarage"] select (_result), _outpostType];
+                    createDialog _dialog; ///step 1.7
+                };
+                
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
                 ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
                 [] spawn {

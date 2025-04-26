@@ -8,7 +8,7 @@ Maintainer: wersal
 #include "..\..\dialogues\textures.inc"
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_category", "_staticType"];
+params ["_category", "_outpostType"];
 
 // Общая часть инициализации
 ['off'] call SCRT_fnc_ui_toggleMenuBlur;
@@ -19,6 +19,7 @@ _vehicleListBox ctrlCommit 0;
 private _previewArea = _display displayCtrl A3A_IDC_GARAGEStructuredText;
 _previewArea ctrlCommit 0;
 private _selectButton = _display displayCtrl A3A_IDC_GARAGEselectbutton;
+_selectButton setVariable ["outpostType", _outpostType];
 
 lbClear _vehicleListBox;
 lbClear A3A_IDC_GARAGE_CATCAR;
@@ -31,9 +32,9 @@ Debug("BuyVehicleTab starting...");
 } forEach previewVehicles;
 
 vehicleToOutpost = "";
-curentlySelectedVehicleUID = 0;
-curentlySelectedVehicleState = [];
-curentlySelectedVehicleCustomization = [];
+currentlySelectedVehicleUID = 0;
+currentlySelectedVehicleState = [];
+currentlySelectedVehicleCustomization = [];
 garageCategoryToremoveVehicleFrom = 22;
 
 _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
@@ -48,14 +49,14 @@ A3U_fnc_displaystuff = {
     //diag_log _data;
 
     vehicleToOutpost = "";
-    curentlySelectedVehicleUID = 0;
-    curentlySelectedVehicleState = [];
-    curentlySelectedVehicleCustomization = [];
+    currentlySelectedVehicleUID = 0;
+    currentlySelectedVehicleState = [];
+    currentlySelectedVehicleCustomization = [];
 
     _vehFullData = _vehFullData;
     //diag_log _vehFullData;
     _vehFullData params ["_UID", "_data"];
-    curentlySelectedVehicleUID = _vehFullData select 0;
+    currentlySelectedVehicleUID = _vehFullData select 0;
     //diag_log _UID;
     _vehData = _data;
     //diag_log _vehData;
@@ -113,15 +114,15 @@ A3U_fnc_displaystuff = {
     HR_GRG_previewLight setLightBrightness 1.1 * HR_GRG_camDist;"]; */ 
     ///would been nice to use this but it's too much code under you know what
 
-    curentlySelectedVehicleState = _vehData select 4; // vehicle status
+    currentlySelectedVehicleState = _vehData select 4; // vehicle status
     Trace_1("Preview vehicle State: %1", _vehState);
     
     // setting vehicle state
     [_currentPreviewVeh, _vehState] call HR_GRG_fnc_setState; ///setting vehicle state
     _currentPreviewVeh allowDamage false;
     // vehicle customization
-    curentlySelectedVehicleCustomization = _vehData param [6, [false, false]];
-    ([_currentPreviewVeh] + curentlySelectedVehicleCustomization) call BIS_fnc_initVehicle;
+    currentlySelectedVehicleCustomization = _vehData param [6, [false, false]];
+    ([_currentPreviewVeh] + currentlySelectedVehicleCustomization) call BIS_fnc_initVehicle;
     
     _description2 = [_configPath >> "Library" >> "libTextDesc", ""] call HALs_fnc_getConfigValue;
 
@@ -186,53 +187,49 @@ _vehicleListBox lbSetCurSel 0;
 
 // Обработчик события выбора техники из листбокса
 _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle in list box, should use this onLBDblClick
-    private _control = _this select 0;
-
-    private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
-
-    private _selectedIndex = lbCurSel _control;
-    private _indexText = _control lbText _selectedIndex;
-    private _vehdatastring = _control lbData _selectedIndex;
-    //diag_log _vehdatastring;
-    private _vehFullData = parseSimpleArray _vehdatastring;
-    //diag_log _vehFullData;
-    [_control,_selectedIndex,_vehFullData] call A3U_fnc_displaystuff;
+    params ["_control", "_lbCurSel", "_lbSelection"];
+    if (_lbCurSel isNotEqualTo -1) then {
+        private _vehFullData = parseSimpleArray (_control lbData _lbCurSel);
+        [_control, _lbCurSel, _vehFullData] call A3U_fnc_displaystuff;
+    };
 }];
 
 // Кнопка для закрытия диалога
 _selectButton ctrlAddEventHandler ["ButtonClick", {
+    params ["_control"];
     closeDialog 2;
     camDestroy _previewCamera;
     {
         deleteVehicle _x;
     } forEach previewVehicles;
 
-    _carcar = vehicleToOutpost;
-    _pos = myGlobalResult;
-    _vehicledirection = nil;
     outpostCostmoney = outpostCost select 0;
     outpostCosthr = outpostCost select 1;
-    [_pos,_carcar,curentlySelectedVehicleCustomization,outpostCostmoney,outpostCosthr,garageCategoryToremoveVehicleFrom,curentlySelectedVehicleUID] spawn ///step 3
-        { 
-            _pos = _this select 0;
-            _carcar = _this select 1;
-            curentlySelectedVehicleCustomization = _this select 2;
-            outpostCostmoney = _this select 3;
-            outpostCosthr = _this select 4;
-            _garageCategoryToremoveVehicleFrom = _this select 5;
-            _curentlySelectedVehicleUID = _this select 6;
-            _turretDirection = turretDirection;
-            [_pos, _carcar,outpostCostmoney,outpostCosthr,_turretDirection,_garageCategoryToremoveVehicleFrom,_curentlySelectedVehicleUID] spawn
-            { 
-                _pos = _this select 0;
-                _carcar = _this select 1;
-                outpostCostmoney = _this select 2;
-                outpostCosthr = _this select 3;
-                _turretDirection = _this select 4;
-                _garageCategoryToremoveVehicleFrom = _this select 5;
-                _curentlySelectedVehicleUID = _this select 6;
-                [_carcar, _pos, _turretDirection,curentlySelectedVehicleCustomization,outpostCostmoney, outpostCosthr, _garageCategoryToremoveVehicleFrom, _curentlySelectedVehicleUID, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2];
+    
+    [
+        _control getVariable "outpostType",
+        vehicleToOutpost,
+        myGlobalResult,
+        turretDirection,
+        currentlySelectedVehicleCustomization,
+        outpostCostMoney,
+        outpostCostHR,
+        garageCategorytoRemoveVehicleFrom,
+        currentlySelectedVehicleUID
+    ] spawn {
+        params ["_outpostType", "_vehicle", "_pos", "_direction", "_vehCustomization", "_costMoney", "_costHR", "_vehCategory", "_vehUID"];
+
+        private ["_createFnc"];
+        switch (_outpostType) do {
+            case ("AA"): { _createFnc = "SCRT_fnc_outpost_createAA" };
+            case ("AT"): { _createFnc = "SCRT_fnc_outpost_createAT" };
+            case ("MG"): { _createFnc = "SCRT_fnc_outpost_createHMG" };
+            case ("Roadblock"): {
+                _createFnc = "SCRT_fnc_outpost_createRoadblock";
+                _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", localize "STR_antistasi_dialogs_generic_button_yes_text", localize "STR_antistasi_dialogs_generic_button_no_text"] call BIS_fnc_guiMessage);
             };
         };
+        [_vehicle, _pos, _direction, _vehCustomization, _costMoney, _costHR, _vehCategory, _vehUID, clientOwner] remoteExec [_createFnc, 2];
+    };
 }];
 Debug("BuyVehicleTab complete.");

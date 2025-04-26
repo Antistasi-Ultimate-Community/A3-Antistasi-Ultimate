@@ -1132,39 +1132,6 @@ class A3A_TabbedDialog : A3A_DefaultDialog
     };
 };
 
-class A3A_GARAGEDialog : A3A_DefaultDialog
-{
-    class ControlsBackground
-    {
-        /* class TitleBarBackground : A3A_Background
-        {
-            moving = true;
-            colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 10 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
-        };
-
-        class TabsBackground : A3A_Background
-        {
-            colorBackground[] = A3A_COLOR_TABS_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
-        };
-
-        class Background : A3A_Background
-        {
-            x = DIALOG_X;
-            y = DIALOG_Y;
-            w = DIALOG_W * GRID_W;
-            h = DIALOG_H * GRID_H;
-        }; */
-    };
-};
-
 class A3A_TabbedDialogBlackmarket : A3A_DefaultDialog
 {
     class ControlsBackground

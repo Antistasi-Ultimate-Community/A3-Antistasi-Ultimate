@@ -1,10 +1,8 @@
-class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
+class A3A_VehicleFromGarage : A3A_DefaultDialog
 {
 	idd = A3A_IDD_DISPLAYGARAGEVEHICLES;
-	onLoad = "[""Static""] call A3A_fnc_ui_StaticsATFromGarage";
-	onUnload = "['onUnload'] call A3A_fnc_ui_StaticsATFromGarage";
-    //onLoad = "[""Static"", ""AT""] call A3A_fnc_ui_StaticsFromGarage";
-    //onUnload = "[""onUnload"", ""AT""] call A3A_fnc_ui_StaticsFromGarage";
+	onLoad = "['Static'] call A3A_fnc_UI_vehicleFromGarage";
+	onUnload = "['onUnload'] call A3A_fnc_UI_vehicleFromGarage";
 	
 	class Controls
     {
@@ -23,8 +21,7 @@ class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
                 {
                     idc = -1;
                     text = $STR_antistasi_dialogs_garage_light;
-                    onButtonClick = "[""Static""] call A3A_fnc_ui_StaticsATFromGarage";
-                    //onButtonClick = "[""Static"", ""AT""] call A3A_fnc_ui_StaticsFromGarage";
+                    onButtonClick = "['Static'] call A3A_fnc_UI_vehicleFromGarage";
                     x = 0 * GRID_W;
                     y = 0;
                     w = 142 * GRID_W;
@@ -238,5 +235,121 @@ class A3A_StaticATFromGarageDisplay : A3A_GARAGEDialog
             y = DIALOG_Y - 30 * GRID_H;
             tooltip = $STR_antistasi_arsenal_limits_dialog_close;
         };
+    };
+
+    class ControlsBackground {};
+};
+
+class A3A_StaticAAFromGarage : A3A_VehicleFromGarage
+{
+    onLoad = "['Static', 'AA'] call A3A_fnc_UI_vehicleFromGarage";
+	
+    class Controls : Controls
+    {
+        class TabButtons : TabButtons
+        {
+            class Controls: Controls
+            {
+				class VehicleTabButton: VehicleTabButton
+                {
+                    onButtonClick = "['Static', 'AA'] call A3A_fnc_UI_vehicleFromGarage";
+                };
+            };
+        };
+        class GARAGE_ListCars : GARAGE_ListCars {};
+        class GARAGE_StructuredText: GARAGE_StructuredText {};
+        class info : info {};
+        class GARAGE_undercoverIcon : GARAGE_undercoverIcon {};
+        class GARAGE_selectbutton : GARAGE_selectbutton {};
+        class HR_GRG_OriginslWrapper : HR_GRG_OriginslWrapper {};
+        class CloseButton : CloseButton {};
+    };
+};
+
+class A3A_StaticATFromGarage : A3A_VehicleFromGarage
+{
+    onLoad = "['Static', 'AT'] call A3A_fnc_UI_vehicleFromGarage";
+	
+    class Controls : Controls
+    {
+        class TabButtons : TabButtons
+        {
+            class Controls: Controls
+            {
+				class VehicleTabButton: VehicleTabButton
+                {
+                    onButtonClick = "['Static', 'AT'] call A3A_fnc_UI_vehicleFromGarage";
+                };
+            };
+        };
+        class GARAGE_ListCars : GARAGE_ListCars {};
+        class GARAGE_StructuredText: GARAGE_StructuredText {};
+        class info : info {};
+        class GARAGE_undercoverIcon : GARAGE_undercoverIcon {};
+        class GARAGE_selectbutton : GARAGE_selectbutton {};
+        class HR_GRG_OriginslWrapper : HR_GRG_OriginslWrapper {};
+        class CloseButton : CloseButton {};
+    };
+};
+
+class A3A_StaticHMGFromGarage : A3A_VehicleFromGarage
+{
+    onLoad = "['Static', 'MG'] call A3A_fnc_UI_vehicleFromGarage";
+	
+    class Controls : Controls
+    {
+        class TabButtons : TabButtons
+        {
+            class Controls: Controls
+            {
+				class VehicleTabButton: VehicleTabButton
+                {
+                    onButtonClick = "['Static', 'MG'] call A3A_fnc_UI_vehicleFromGarage";
+                };
+            };
+        };
+        class GARAGE_ListCars : GARAGE_ListCars {};
+        class GARAGE_StructuredText: GARAGE_StructuredText {};
+        class info : info {};
+        class GARAGE_undercoverIcon : GARAGE_undercoverIcon {};
+        class GARAGE_selectbutton : GARAGE_selectbutton {};
+        class HR_GRG_OriginslWrapper : HR_GRG_OriginslWrapper {};
+        class CloseButton : CloseButton {};
+    };
+};
+
+class A3A_RoadblockFromGarage : A3A_VehicleFromGarage
+{
+    onLoad = "['light'] call A3A_fnc_ui_roadblockFromGarage";
+	onUnload = "['onUnload'] call A3A_fnc_ui_roadblockFromGarage";
+	
+    class Controls : Controls
+    {
+        class TabButtons : TabButtons
+        {
+            class Controls: Controls
+            {
+				class VehicleTabButton: VehicleTabButton
+                {
+                    onButtonClick = "['light', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
+                    w = 71 * GRID_W;
+                };
+
+                class rebelsATVehiclesTabButton : VehicleTabButton
+                {
+                    text = $STR_antistasi_dialogs_garage_heavy;
+                    onButtonClick = "['heavy', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
+                    x = 71 * GRID_W;
+                    w = 71 * GRID_W;
+                };
+            };
+        };
+        class GARAGE_ListCars : GARAGE_ListCars {};
+        class GARAGE_StructuredText: GARAGE_StructuredText {};
+        class info : info {};
+        class GARAGE_undercoverIcon : GARAGE_undercoverIcon {};
+        class GARAGE_selectbutton : GARAGE_selectbutton {};
+        class HR_GRG_OriginslWrapper : HR_GRG_OriginslWrapper {};
+        class CloseButton : CloseButton {};
     };
 };
