@@ -1,6 +1,7 @@
 #define CIV_HELI        0
-#define MIL_HELI        1
-#define JET             2
+#define CIV_PLANE        1
+#define MIL_HELI        2
+#define JET             3
 
 params ["_vehicle"];
 #include "..\..\script_component.hpp"
