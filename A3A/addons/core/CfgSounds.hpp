@@ -369,24 +369,4 @@ class CfgSounds
         sound[] = {EQPATHTOFOLDER(core,Sounds\Civilian\Fear\fear6.ogg), 0.6, 1, 30};
         titles[] = {};
     };
-
-    class AR_Rappel_Loop
-	{
-		name="AR_Rappel_Loop";
-        
-		sound[]={EQPATHTOFOLDER(core,Sounds\Misc\AR_Rappel_Loop.ogg), db+10, 5}; ///{"sounds\",10,1};
-		titles[]={0,""};
-	};
-	class AR_Rappel_Start
-	{
-		name="AR_Rappel_Start";
-		sound[]={EQPATHTOFOLDER(core,Sounds\Misc\AR_Rappel_Start.ogg), db+10, 5};//{"sounds\AR_Rappel_Start.ogg",10,1};
-		titles[]={0,""};
-	};
-	class AR_Rappel_End
-	{
-		name="AR_Rappel_End";
-        sound[]={EQPATHTOFOLDER(core,Sounds\Misc\AR_Rappel_End.ogg), db+10, 5};//sound[]={"sounds\AR_Rappel_End.ogg",10,1};
-		titles[]={0,""};
-	};
 };
