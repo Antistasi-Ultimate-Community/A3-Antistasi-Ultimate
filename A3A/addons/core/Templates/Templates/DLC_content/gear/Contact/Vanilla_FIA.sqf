@@ -14,3 +14,5 @@ _dlcUniforms append [
     "U_I_L_Uniform_01_deserter_F",
     "U_C_E_LooterJacket_01_F"
 ];
+
+_loadoutData set ["facewearContact", ["G_RegulatorMask_F","G_Blindfold_01_black_F","G_Blindfold_01_white_F"]];

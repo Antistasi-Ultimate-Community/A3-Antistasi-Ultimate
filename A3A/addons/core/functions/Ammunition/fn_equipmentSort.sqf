@@ -11,8 +11,8 @@ FIX_LINE_NUMBERS()
 	};
 } forEach allBackpacks;
 
-allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_AssaultPack_Kerry");
-allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_CombinationUnitRespirator_01_F");
+//allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_AssaultPack_Kerry"); why?
+//allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_CombinationUnitRespirator_01_F"); I kinda understand why, but...
 
 {
 	switch (true) do {
@@ -187,6 +187,10 @@ allMagBullet = allMagBullet select { getText (configFile >> "CfgMagazines" >> _x
 allMagBullet = allMagBullet select { !(_x in A3U_forbiddenItems) };
 
 //Remove False NVGs
+dummyNVGs = allNVGs select { (getArray (configFile >> "CfgWeapons" >> _x >> "visionMode")) findIf {_x in ["NVG","TI"]} == -1 };
+
+allNVGs = allNVGs select { (getArray (configFile >> "CfgWeapons" >> _x >> "visionMode")) findIf {_x in ["NVG","TI"]} != -1 };
+
 allNVGs = allNVGs select { getarray (configFile >> "CfgWeapons" >> _x >> "visionMode") isnotequalto ["Normal","Normal"]};
 
 private _removableDefaultItems = [

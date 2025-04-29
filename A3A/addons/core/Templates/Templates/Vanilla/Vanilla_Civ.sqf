@@ -21,8 +21,8 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 private _civCarsWithWeights = [
     "C_Quadbike_01_F", 0.3
-    ,"C_Hatchback_01_F", 7.0
-    ,"C_Hatchback_01_sport_F", 0.3
+    ,"C_Hatchback_01_F", 2.0
+    ,"C_Hatchback_01_sport_F", 0.5
     ,"C_Offroad_01_F", 1.0
     ,"C_SUV_01_F", 1.0
 ];
@@ -347,6 +347,12 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 
+if (_hasWs) then {
+  _loadoutData set ["binoculars", ["Camera_lxWS"]];
+} else {
+  _loadoutData set ["binoculars", [""]];
+};
+
 private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
     ["uniforms"] call _fnc_setUniform;
@@ -377,6 +383,7 @@ private _pressTemplate = {
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
+    ["binoculars"] call _fnc_addBinoculars;
 };
 private _prefix = "militia";
 private _unitTypes = [

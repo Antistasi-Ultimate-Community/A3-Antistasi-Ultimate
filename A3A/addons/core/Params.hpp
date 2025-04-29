@@ -703,8 +703,8 @@ class Params
     class loadoutsToGenerate: ExperimentalParams
     {
         title = $STR_params_loadoutsToGenerate;
-        values[] = {5, 10, 15, 20};
-        texts[] = {"5", "10", "15", "20"};
+        values[] = {5, 10, 15, 20, 30, 40, 100};
+        texts[] = {"5", "10", "15", "20", "30", "40", "100"};
         default = 5;
     };
 

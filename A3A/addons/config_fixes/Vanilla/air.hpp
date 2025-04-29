@@ -58,6 +58,9 @@ class a3a_Plane_Fighter_04_grey_F : I_Plane_Fighter_04_F
 };
 class a3a_Plane_Fighter_03_grey_F : I_Plane_Fighter_03_dynamicLoadout_F
 {
+    scope = 2;
+    faction = "OPF_F";
+    side = 0;
     textureList[] = {"Grey",1,"Green",0,"Hex",0};
     hiddenSelectionsTextures[] = {"a3\air_f_gamma\plane_fighter_03\data\plane_fighter_03_body_1_greyhex_co.paa","a3\air_f_gamma\plane_fighter_03\data\plane_fighter_03_body_2_greyhex_co.paa"};
 };
