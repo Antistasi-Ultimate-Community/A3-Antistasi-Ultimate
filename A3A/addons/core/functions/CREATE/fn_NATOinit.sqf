@@ -172,7 +172,7 @@ if((_unit skill "aimingAccuracy") > _decimalAccurancyCap) then {
     _unit setSkill ["aimingShake", _decimalAccurancyCap];
     _unit setSkill ["aimingSpeed", _decimalAccurancyCap];
 };
-
+///
 //Sets NVGs, lights, lasers, radios and spotting skills for the night
 private _hmd = hmd _unit;
 if (sunOrMoon < 1) then {
