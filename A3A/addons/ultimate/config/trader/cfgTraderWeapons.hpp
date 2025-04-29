@@ -10,6 +10,18 @@
         {
             prefix = "aegis";
         };
+        class weapons_atlas : weapons_base
+        {
+            prefix = "atlas";
+        };
+        class weapons_police : weapons_base
+        {
+            prefix = "police";
+        };
+        class weapons_opposingforces : weapons_base
+        {
+            prefix = "opposingforces";
+        };
         class weapons_wmempire : weapons_base
         {
             prefix = "wmemp";

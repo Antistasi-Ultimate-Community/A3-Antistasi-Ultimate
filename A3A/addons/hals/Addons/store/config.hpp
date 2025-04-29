@@ -34,6 +34,9 @@ class cfgHALsStore
 		#include "config\3cbf.hpp"
 		#include "config\3cbfcw.hpp"
 		#include "config\aegis.hpp"
+		#include "config\atlas.hpp"
+		#include "config\opposingforces.hpp"
+		#include "config\police.hpp"
 		#include "config\bwa.hpp"
 		#include "config\csa38.hpp"
 		#include "config\csla.hpp"
@@ -282,14 +285,59 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-				"handgunsAegis", 
-				"launchersAegis",
-				"launcherMagazinesAegis",  
-				"riflesAegis", 
+				"handgunsAegis",
+				"launcherMagazinesAegis",
+				"riflesAegis",
+				"specialWeaponsAegis", 
+				"mgAegis", 
 				"sniperRiflesAegis", 
-				"mgAegis",
 				"smgAegis", 
-				"magazinesAegis"
+				"pointersAegis", 
+				"muzzlesAegis", 
+				"opticsAegis", 
+				"magazinesAegis ",
+				"navigationAegis",  
+				"miscAegis", 
+				"backpacksAegis", 
+				"vestsAegis",
+				"uniformsAegis", 
+				"helmetsAegis"
+			};
+		};
+
+		class atlas
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"launchersAtlas",
+				"launcherMagazinesAtlas",
+				"opticsAtlas",
+				"magazinesAtlas",
+				"sniperRiflesAtlas", 
+				"mgAtlas", 
+				"riflesAtlas", 
+				"miscAtlas", 
+				"backpacksAtlas", 
+				"vestsAtlas", 
+				"uniformsAtlas", 
+				"helmetsAtlas"
+			};
+		};
+
+		class opposingforces 
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"riflesOpposingForces",
+				"miscOpposingForces"
+			};
+		};
+
+		class police
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"miscPolice"
 			};
 		};
 
@@ -452,21 +500,21 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			"handgunsCup", 
-			"launchersCup", 
-			"riflesCup", 
-			"sniperRiflesCup",
-			"specialWeaponsCup", 
-			"mgCup", 
-			"smgCup", 
-			"launcherMagazinesCup", 
-			"magazinesCup", 
-			"opticsCup", 
-			"muzzlesCup", 
-			"underbarrelCup", 
-			"pointersCup", 
-			"navigationCup", 
-			"miscCup"
+				"handgunsCup", 
+				"launchersCup", 
+				"riflesCup", 
+				"sniperRiflesCup",
+				"specialWeaponsCup", 
+				"mgCup", 
+				"smgCup", 
+				"launcherMagazinesCup", 
+				"magazinesCup", 
+				"opticsCup", 
+				"muzzlesCup", 
+				"underbarrelCup", 
+				"pointersCup", 
+				"navigationCup", 
+				"miscCup"
 			};
 		};
 
@@ -571,21 +619,21 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "handgunshalo",
-			      "smghalo",
-			      "mghalo",
-			      "rifleshalo",
-			      "sniperrifleshalo",
-			      "launchershalo",
-			      "launchermagazineshalo",
-			      "riflegrenadeshalo",
-			      "muzzleshalo",
-			      "magazineshalo", 
-			      "pointershalo",
-			      "specialweaponshalo",
-			      "mischalo",
-			      "opticshalo",
-			      "underbarrelhalo"
+			    "handgunshalo",
+			    "smghalo",
+			    "mghalo",
+			    "rifleshalo",
+			    "sniperrifleshalo",
+			    "launchershalo",
+			    "launchermagazineshalo",
+			    "riflegrenadeshalo",
+			    "muzzleshalo",
+			    "magazineshalo", 
+			    "pointershalo",
+			    "specialweaponshalo",
+			    "mischalo",
+			    "opticshalo",
+			    "underbarrelhalo"
 			};
 		};
 		
@@ -593,17 +641,17 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "handgunsffaa",
-			      "smgffaa",
-			      "mgffaa",
-			      "riflesffaa",
-			      "sniperriflesffaa",
-			      "launchersffaa",
-			      "muzzlesffaa",
-			      "magazinesffaa", 
-			      "pointersffaa",
-			      "opticsffaa",
-			      "underbarrelffaa"
+			    "handgunsffaa",
+			    "smgffaa",
+			    "mgffaa",
+			    "riflesffaa",
+			    "sniperriflesffaa",
+			    "launchersffaa",
+			    "muzzlesffaa",
+			    "magazinesffaa", 
+			    "pointersffaa",
+			    "opticsffaa",
+			    "underbarrelffaa"
 			};
 		};
 		
@@ -611,18 +659,18 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "handgunsitaly",
-			      "mgitaly",
-			      "riflesitaly",
-			      "sniperriflesitaly",
-			      "launchersitaly",
-			      "launchermagazinesitaly",
-			      "muzzlesitaly",
-			      "magazinesitaly", 
-			      "pointersitaly",
-			      "specialweaponsitaly",
-			      "opticsitaly",
-			      "underbarrelitaly"
+			    "handgunsitaly",
+			    "mgitaly",
+			    "riflesitaly",
+			    "sniperriflesitaly",
+			    "launchersitaly",
+			    "launchermagazinesitaly",
+			    "muzzlesitaly",
+			    "magazinesitaly", 
+			    "pointersitaly",
+			    "specialweaponsitaly",
+			    "opticsitaly",
+			    "underbarrelitaly"
 			};
 		};
 		
@@ -630,18 +678,18 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "handgunsswe",
-			      "smgswe",
-			      "mgswe",
-			      "riflesswe",
-			      "sniperriflesswe",
-			      "launchersswe",
-			      "launchermagazinesswe",
-			      "magazinesswe", 
-			      "pointersswe",
-			      "specialweaponsswe",
-			      "opticsswe",
-			      "underbarrelswe"
+			    "handgunsswe",
+			    "smgswe",
+			    "mgswe",
+			    "riflesswe",
+			    "sniperriflesswe",
+			    "launchersswe",
+			    "launchermagazinesswe",
+			    "magazinesswe", 
+			    "pointersswe",
+			    "specialweaponsswe",
+			    "opticsswe",
+			    "underbarrelswe"
 			};
 		};
 		
@@ -649,12 +697,12 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "mgpla",
-			      "riflespla",
-			      "sniperriflespla",
-			      "launcherspla",
-			      "launchermagazinespla",
-			      "magazinespla"
+			    "mgpla",
+			    "riflespla",
+			    "sniperriflespla",
+			    "launcherspla",
+			    "launchermagazinespla",
+			    "magazinespla"
 			};
 		};
 		
@@ -662,18 +710,18 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "handgunsbwa",
-			      "smgbwa",
-			      "mgbwa",
-			      "riflesbwa",
-			      "sniperriflesbwa",
-			      "launchersbwa",
-			      "launchermagazinesbwa",
-			      "muzzlesbwa",
-			      "magazinesbwa", 
-			      "pointersbwa",
-			      "opticsbwa",
-			      "underbarrelbwa"
+			    "handgunsbwa",
+			    "smgbwa",
+			    "mgbwa",
+			    "riflesbwa",
+			    "sniperriflesbwa",
+			    "launchersbwa",
+			    "launchermagazinesbwa",
+			    "muzzlesbwa",
+			    "magazinesbwa", 
+			    "pointersbwa",
+			    "opticsbwa",
+			    "underbarrelbwa"
 			};
 		};
 		
@@ -681,19 +729,19 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-			      "handguns3cbbaf",
-			      "smg3cbbaf",
-			      "mg3cbbaf",
-			      "rifles3cbbaf",
-			      "sniperrifles3cbbaf",
-			      "launchers3cbbaf",
-			      "riflegrenades3cbbaf",
-			      "muzzles3cbbaf",
-			      "magazines3cbbaf", 
-			      "pointers3cbbaf",
-			      "specialweapons3cbbaf",
-			      "optics3cbbaf",
-			      "underbarrel3cbbaf"
+			    "handguns3cbbaf",
+			    "smg3cbbaf",
+			    "mg3cbbaf",
+			    "rifles3cbbaf",
+			    "sniperrifles3cbbaf",
+			    "launchers3cbbaf",
+			    "riflegrenades3cbbaf",
+			    "muzzles3cbbaf",
+			    "magazines3cbbaf", 
+			    "pointers3cbbaf",
+			    "specialweapons3cbbaf",
+			    "optics3cbbaf",
+			    "underbarrel3cbbaf"
 			};
 		};
 		
