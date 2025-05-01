@@ -412,6 +412,21 @@ class A3A_ShortcutButton : A3A_CtrlDefault
     };
 };
 
+class A3A_ShortcutButtonSmall : A3A_ShortcutButton
+{
+    size = GUI_TEXT_SIZE_SMALL;
+    sizeEx = GUI_TEXT_SIZE_SMALL;
+    sizeExSecondary = GUI_TEXT_SIZE_SMALL;
+
+    class TextPos
+    {
+        left = 2 * GRID_W;
+        right = 2 * GRID_W;
+        top = 1 * GRID_H;
+        bottom = 1 * GRID_H;
+    };
+};
+
 class A3A_ActiveText : A3A_CtrlDefault
 {
     type = CT_ACTIVETEXT;

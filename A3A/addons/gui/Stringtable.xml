@@ -481,6 +481,17 @@
                 <Korean>암시장 차량 재고는 현재 전쟁 레벨과 달성한 다양한 이정표에 따라 달라집니다.</Korean>
                 <French>Le stock de véhicules du marché noir dépend du niveau de guerre actuel et des différentes étapes franchies.</French>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_button">
+                <Original>Purchase</Original>
+                <French>Achat</French>
+                <Korean>사다</Korean>
+                <Russian>Купить</Russian>
+                <Chinesesimp>购买</Chinesesimp>
+                <Czech>Nákup</Czech>
+                <Italian>Acquista</Italian>
+                <Spanish>Compra</Spanish>
+                <Polish>Kupno</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_button_tooltip">
                 <Original>Buy %1 for %2 %3</Original>
                 <French>Acheter %1 pour %2 %3</French>
@@ -491,6 +502,28 @@
                 <Italian>Compra %1 per %2 %3</Italian>
                 <Spanish>Comprar %1 por %2 %3</Spanish>
                 <Polish>Kup %1 za %2 %3</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button">
+                <Original>Deliver</Original>
+                <French>Livrer</French>
+                <Korean>배달하다</Korean>
+                <Russian>Доставить</Russian>
+                <Chinesesimp>提供</Chinesesimp>
+                <Czech>Doručit</Czech>
+                <Italian>Consegnare</Italian>
+                <Spanish>Entregar</Spanish>
+                <Polish>Dostarczyć</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip">
+                <Original>Deliver %1 to garage for %2 %3</Original>
+                <French>Livrer %1 au garage pour %2 %3</French>
+                <Korean>%1을(를) %2에 차고로 배달%2 %3</Korean>
+                <Russian>Доставка %1 в гараж за %2 %3</Russian>
+                <Chinesesimp>将 %1 运送到 %2 %3 的车库</Chinesesimp>
+                <Czech>Doručte %1 do garáže za %2 %3</Czech>
+                <Italian>Consegna %1 all'officina per %2 %3</Italian>
+                <Spanish>Entrega %1 al garaje por %2 %3</Spanish>
+                <Polish>Dostarcz %1 do garażu za %2 %3</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_undercover_tooltip">
                 <Original>This vehicle can go undercover</Original>
@@ -3185,6 +3218,17 @@
                 <Portuguese>Parametros</Portuguese>
                 <Chinesesimp>参数</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_tab_button_disabled">
+                <Original>This tab is disabled. To change save parameters, select a save to edit or check the 'Create new game' checkbox.</Original>
+                <Czech>Tato karta je zakázána. Chcete-li změnit parametry ukládání, vyberte uloženou pozici, kterou chcete upravit, nebo zaškrtněte políčko "Vytvořit novou hru".</Czech>
+                <French>Cet onglet est désactivé. Pour modifier les paramètres de sauvegarde, sélectionnez une sauvegarde à modifier ou cochez la case « Créer un nouveau jeu ».</French>
+                <Italian>Questa scheda è disabilitata. Per modificare i parametri di salvataggio, seleziona un salvataggio da modificare o seleziona la casella di controllo "Crea nuova partita".</Italian>
+                <Korean>이 탭은 사용할 수 없습니다. 저장 매개변수를 변경하려면 편집할 저장을 선택하거나 '새 게임 생성' 확인란을 선택합니다.</Korean>
+                <Russian>Эта вкладка отключена. Чтобы изменить параметры сохранения, выберите сохранение для редактирования или установите флажок «Создать новую игру».</Russian>
+                <Polish>Ta karta jest wyłączona. Aby zmienić parametry zapisu, wybierz zapis do edycji lub zaznacz pole wyboru "Utwórz nową grę".</Polish>
+                <Portuguese>Este separador está desativado. Para alterar os parâmetros de gravação, selecione um salvamento para editar ou marque a caixa de seleção 'Criar novo jogo'.</Portuguese>
+                <Chinesesimp>此选项卡已禁用。要更改保存参数，请选择要编辑的保存或选中"创建新游戏"复选框。</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_basic_label">
                 <Original>Basic Parameters</Original>
                 <Czech>Základní parametry</Czech>
@@ -3300,7 +3344,7 @@
                 <Czech>Použít novou metodu uložení</Czech>
                 <French>Utiliser la nouvelle méthode d'enregistrement</French>
                 <Italian>Usa il nuovo metodo di salvataggio</Italian>
-                <Korean>새 저장 방법 사용</Korean>
+                <Korean>새 저장 방식 사용</Korean>
                 <Russian>Используйте новый метод сохранения</Russian>
                 <Polish>Użyj nowej metody zapisywania</Polish>
                 <Portuguese>Usar novo método de salvamento</Portuguese>
@@ -3311,7 +3355,7 @@
                 <Czech>Varování: To způsobí problémy s ukládáním, pokud je použito na serveru jiném než Windows.</Czech>
                 <French>Avertissement : Cela causera des problèmes de sauvegarde s'il est utilisé sur un serveur non Windows.</French>
                 <Italian>Attenzione: questo causerà problemi di salvataggio se utilizzato su un server non basato su Windows.</Italian>
-                <Korean>경고: 이렇게 하면 Windows 기반이 아닌 서버에서 사용하는 경우 저장 문제가 발생합니다.</Korean>
+                <Korean>경고: Windows 기반이 아닌 서버에서 사용하면 저장 문제가 발생합니다.</Korean>
                 <Russian>Предупреждение: Это вызовет проблемы с сохранением при использовании на сервере, отличном от Windows.</Russian>
                 <Polish>Ostrzeżenie: Spowoduje to problemy z zapisywaniem, jeśli zostanie użyty na serwerze innym niż Windows.</Polish>
                 <Portuguese>Aviso: Isso CAUSARÁ problemas de salvamento se usado em um servidor não baseado no Windows.</Portuguese>
@@ -3558,7 +3602,7 @@
                 <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
                 <Russian>%1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
                 <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
-                <Korean>%1 반란군, %2 민간인, %3 거주자, %4 침략자, %5 라이벌?</Korean>
+                <Korean>반란군은 %1, 민간인은 %2, 점령군은 %3, 침략군은 %4, 라이벌은 %5입니까?</Korean>
                 <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
@@ -3573,18 +3617,51 @@
                 <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
                 <Italian>Questo parametro non può essere modificato per un salvataggio esistente.</Italian>
-                <Korean>이 매개변수는 기존 저장에 대해 변경할 수 없습니다.</Korean>
+                <Korean>이 매개변수는 기존에 저장한 게임에서는 바꿀 수 없습니다.</Korean>
                 <Russian>Этот параметр не может быть изменен для существующего сохранения.</Russian>
                 <Polish>Tego parametru nie można zmienić dla istniejącego zapisu.</Polish>
                 <Portuguese>Este parâmetro não pode ser alterado para um salvamento existente.</Portuguese>
                 <Chinesesimp>无法为现有保存更改此参数。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_riv_param_warning">
+                <Original>Enabling rivals may have unintended side effects (e.g. possibility of default invader faction appearing) when invaders are disabled.</Original>
+                <Czech>Zapnutí soupeřů může mít nezamýšlené vedlejší účinky (např. možnost zobrazení výchozí frakce útočníků), když jsou útočníci deaktivováni.</Czech>
+                <French>L'activation des rivaux peut avoir des effets secondaires involontaires (par exemple, la possibilité que la faction des envahisseurs par défaut apparaisse) lorsque les envahisseurs sont désactivés.</French>
+                <Italian>L'abilitazione dei rivali può avere effetti collaterali indesiderati (ad esempio, la possibilità che appaia una fazione invasore predefinita) quando gli invasori sono disabilitati.</Italian>
+                <Korean>라이벌을 활성화하면 침입자가 비활성화될 때 의도하지 않은 부작용(예: 기본 침입자 진영이 나타날 가능성)이 발생할 수 있습니다.</Korean>
+                <Russian>Включение соперников может иметь непреднамеренные побочные эффекты (например, возможность появления стандартной фракции захватчиков) при отключении захватчиков.</Russian>
+                <Polish>Włączenie rywali może mieć niezamierzone skutki uboczne (np. możliwość pojawienia się domyślnej frakcji najeźdźców), gdy najeźdźcy są wyłączeni.</Polish>
+                <Portuguese>Habilitar rivais pode ter efeitos colaterais não intencionais (por exemplo, possibilidade de fação invasora padrão aparecer) quando invasores são desativados.</Portuguese>
+                <Chinesesimp>当入侵者被禁用时，启用对手可能会产生意想不到的副作用（例如，可能会出现默认入侵者派系）。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_riv_disabled">
+                <Original>Rival faction is disabled. To select a rival faction, enable the rivals in the parameters tab.</Original>
+                <Czech>Konkurenční frakce je deaktivována. Chcete-li vybrat soupeřící frakci, povolte soupeře na kartě parametrů.</Czech>
+                <French>La faction rivale est désactivée. Pour sélectionner une faction rivale, activez les rivaux dans l'onglet des paramètres.</French>
+                <Italian>La fazione rivale è disabilitata. Per selezionare una fazione rivale, abilita i rivali nella scheda dei parametri.</Italian>
+                <Korean>라이벌 진영이 비활성화되었습니다. 라이벌 진영을 선택하려면, parameters 탭에서 라이벌을 활성화하세요.</Korean>
+                <Russian>Соперничающая фракция отключена. Чтобы выбрать соперничающую фракцию, включите соперников во вкладке параметров.</Russian>
+                <Polish>Rywalizująca frakcja jest wyłączona. Aby wybrać rywalizującą frakcję, włącz rywali w zakładce parametrów.</Polish>
+                <Portuguese>A fação rival está desativada. Para selecionar uma fação rival, ative os rivais na guia de parâmetros.</Portuguese>
+                <Chinesesimp>敌对派系被禁用。要选择对手派系，请在 parameters 选项卡中启用对手。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_inv_disabled">
+                <Original>Invader faction is disabled for this game mode. To select an invader faction, change the game mode in the parameters tab.</Original>
+                <Czech>Frakce Invader je pro tento herní režim zakázána. Chcete-li vybrat frakci útočníků, změňte herní režim na kartě parametrů.</Czech>
+                <French>La faction des envahisseurs est désactivée pour ce mode de jeu. Pour sélectionner une faction d'envahisseur, changez le mode de jeu dans l'onglet des paramètres.</French>
+                <Italian>La fazione Invasore è disabilitata per questa modalità di gioco. Per selezionare una fazione invasore, cambia la modalità di gioco nella scheda dei parametri.</Italian>
+                <Korean>이 게임 모드에서는 침입자 진영이 비활성화되어 있습니다. 침략자 진영을 선택하려면 매개변수 탭에서 게임 모드를 변경하세요.</Korean>
+                <Russian>Фракция захватчиков отключена для этого режима игры. Чтобы выбрать фракцию захватчика, измените режим игры во вкладке параметров.</Russian>
+                <Polish>Frakcja Najeźdźców jest wyłączona w tym trybie gry. Aby wybrać frakcję najeźdźców, zmień tryb gry w zakładce parametrów.</Polish>
+                <Portuguese>A fação Invader está desativada para este modo de jogo. Para selecionar uma fação invasora, altere o modo de jogo na guia de parâmetros.</Portuguese>
+                <Chinesesimp>Invader 派系在此游戏模式中被禁用。要选择入侵者派系，请在参数选项卡中更改游戏模式。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_locked">
                 <Original>This parameter cannot be enabled if invaders are disabled.</Original>
                 <Czech>Tento parametr nelze povolit, pokud jsou útočníci zakázáni.</Czech>
                 <French>Ce paramètre ne peut pas être activé si les envahisseurs sont désactivés.</French>
                 <Italian>Questo parametro non può essere abilitato se gli invasori sono disabilitati.</Italian>
-                <Korean>침입자가 비활성화된 경우 이 매개변수를 활성화할 수 없습니다.</Korean>
+                <Korean>이 매개변수는 침략자가 비활성화되어 있다면 활성화할 수 없습니다.</Korean>
                 <Russian>Этот параметр нельзя включить, если захватчики отключены.</Russian>
                 <Polish>Tego parametru nie można włączyć, jeśli intruzi są wyłączeni.</Polish>
                 <Portuguese>Este parâmetro não pode ser ativado se os invasores estiverem desativados.</Portuguese>
@@ -3598,6 +3675,9 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_unlocks_disabled">
+                <Original>This parameter cannot be changed when unlocks are globally disabled.</Original>
             </Key>
         </Container>
         <Container name="setup_dialog_table">
