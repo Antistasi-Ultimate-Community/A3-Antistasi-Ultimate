@@ -223,6 +223,9 @@ if(_veh isKindOf "Air") then
 		{
 			// TODO: check this isn't spammed
 			[_veh] spawn A3A_fnc_airspaceControl;
+			if (A3A_enableAutoland) then {
+				[_veh] spawn A3A_fnc_autoland;
+			};
 		};
     }];
 };

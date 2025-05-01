@@ -225,6 +225,14 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_A3A_Params_selfReviveMethods_withstand};
         default = 0;
     };
+    class A3A_enableAutoland: BasicParams
+    {
+        title = $STR_antistasi_actions_autoland;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        tooltip = $STR_params_autoland_tooltip;
+        default = 1;
+    };
 
     class UltimateParams
     {

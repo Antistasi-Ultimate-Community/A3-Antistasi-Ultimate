@@ -5096,6 +5096,20 @@
                 <French>Temps de réanimation des joueurs (en secondes)</French>
                 <Chinesesimp>玩家复活时间（秒）</Chinesesimp>
             </Key>
+            <Key ID="STR_params_autoland">
+                <Original>Auto-land</Original>
+                <Russian>Автоматическая посадка</Russian>
+                <Chinesesimp>自动着陆</Chinesesimp>
+                <Korean>자동 착륙</Korean>
+                <French>Atterrissage automatique</French>
+            </Key>
+            <Key ID="STR_params_autoland_tooltip">
+                <Original>Adds aircraft action that lands it via script, if cerian conditions are met</Original>
+                <Russian>Добавляет действие для самолётов, которое при помощи скрипта если выполнены определённые условия</Russian>
+                <Chinesesimp>通过脚本添加飞机动作（需满足特定条件）</Chinesesimp>
+                <Korean>특정 조건 충족 시 스크립트로 항공기 액션 추가</Korean>
+                <French>Ajoute une action aérienne via un script si les conditions sont remplies</French>
+            </Key>
             <Key ID="STR_params_antistasi_plus">
                 <Original>ANTISTASI PLUS PARAMETERS</Original>
                 <Russian>ПАРАМЕТРЫ ANTISTASI PLUS</Russian>
@@ -10479,6 +10493,13 @@
                 <Chinesesimp>解密情报</Chinesesimp>
                 <Korean>인텔 해독</Korean>
                 <French>Déchiffrer des renseignements</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_autoland">
+                <Original>Auto-land</Original>
+                <Russian>Автоматическая посадка</Russian>
+                <Chinesesimp>自动着陆</Chinesesimp>
+                <Korean>자동 착륙</Korean>
+                <French>Atterrissage automatique</French>
             </Key>
             <Key ID="STR_antistasi_actions_move_static_weapon_emplacement">
                 <Original>Move emplacement static weapon</Original>

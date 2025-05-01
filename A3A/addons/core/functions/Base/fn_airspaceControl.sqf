@@ -1,6 +1,6 @@
 #define CIV_HELI        0
-#define CIV_PLANE        1
-#define MIL_HELI        2
+#define MIL_HELI        1
+#define CIV_PLANE       2
 #define JET             3
 
 params ["_vehicle"];
@@ -39,20 +39,27 @@ if(_vehicle isKindOf "Helicopter") then
 }
 else
 {
-    _airType = JET;
+    if((typeOf _vehicle) in (FactionGet(reb,"vehiclesCivPlane"))) then
+    {
+        _airType = CIV_PLANE;
+    }
+    else
+    {
+        _airType = JET;
+    };
 };
 
-//Select height and range for outposts, numbers are values for [CIV_HELI, MIL_HELI, JET]
-private _outpostDetectionRange = [300, 500, 750] select _airType;
-private _outpostDetectionHeight = [150, 250, 500] select _airType;
+//Select height and range for outposts, numbers are values for [CIV_HELI, MIL_HELI, CIV_PLANE, JET]
+private _outpostDetectionRange = [300, 500, 500, 750] select _airType;
+private _outpostDetectionHeight = [150, 250, 350, 500] select _airType;
 
-//Select height and range for milbases, numbers are values for [CIV_HELI, MIL_HELI, JET]
-private _milbaseDetectionRange = [450, 600, 1000] select _airType;
-private _milbaseDetectionHeight = [350, 350, 1500] select _airType;
+//Select height and range for milbases, numbers are values for [CIV_HELI, MIL_HELI, CIV_PLANE, JET]
+private _milbaseDetectionRange = [450, 600, 600, 1000] select _airType;
+private _milbaseDetectionHeight = [350, 350, 550, 1500] select _airType;
 
-//Select height and range for outposts, numbers are values for [CIV_HELI, MIL_HELI, JET]
-private _airportDetectionRange = [500, 750, 1500] select _airType;
-private _airportDetectionHeight = [500, 500, 2500] select _airType;
+//Select height and range for outposts, numbers are values for [CIV_HELI, MIL_HELI, CIV_PLANE, JET]
+private _airportDetectionRange = [500, 750, 750, 1500] select _airType;
+private _airportDetectionHeight = [500, 500, 750, 2500] select _airType;
 
 //Selecting height and distance warning for outposts
 private _outpostWarningRange = 500;
