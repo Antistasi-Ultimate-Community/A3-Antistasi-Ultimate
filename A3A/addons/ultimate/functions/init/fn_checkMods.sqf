@@ -86,6 +86,14 @@ if (["DISMEMBERMENT"] call A3U_fnc_hasAddon) then { // Some weird dismemberment 
     _addons pushBack localize "STR_A3AU_init_mods_warning_dis";
 };
 
+if (["Lifeline_revive"] call A3U_fnc_hasAddon) then {
+    _addons pushBack localize "STR_A3AU_init_mods_warning_Lifeline";
+};
+
+if (["exile_client"] call A3U_fnc_hasAddon) then {
+    _addons pushBack localize "STR_A3AU_init_mods_warning_Exile";
+};
+
 if (_addons isNotEqualTo []) exitWith {
     private _addonText = _addons joinString ", ";
 

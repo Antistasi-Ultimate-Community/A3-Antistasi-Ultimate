@@ -490,6 +490,15 @@ class Templates
         description = $STR_A3AP_setupFactionsTab_pl;
     };
 
+    class VN_Riv_HM : VN_Base
+    {
+        side = "Riv";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\VN\flags\royal_lao_army.paa);
+        name = "VN HM";
+        file = "VN_Riv_HM";
+        description = $STR_A3AP_setupFactionsTab_hm;
+    };
+
     class VN_Civ : VN_Base
     {
         side = "Civ";
