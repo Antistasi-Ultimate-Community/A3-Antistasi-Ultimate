@@ -42,11 +42,19 @@ if (_typeX == "rem") then {
 			_costs = round (_costs * 0.85);
 		};
 		case (_roadblockFIA): {
+			// Обработка техники
 		    private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
 
+			diag_log _vehicle;
+			diag_log _vehicle;
+			diag_log _vehicle;
+			// Если переменная содержит строку (класс техники), пытаемся найти объект
 			if (_vehicle isEqualType "") then {
 			    _vehicle = nearestObject [markerPos _site, _vehicle];
 			};
+			diag_log _vehicle;
+			diag_log _vehicle;
+			diag_log _vehicle;
 
 			if (isNull _vehicle) then {
 				_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
@@ -57,19 +65,39 @@ if (_typeX == "rem") then {
 		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
 		    	};
 			};
+		    // Получаем текущий гарнизон (типы юнитов)
 		    _garrison = garrison getVariable [_site, []];
 
+			diag_log 1111;
+			diag_log _garrison;
+			diag_log _garrison;
+			diag_log _garrison;
+			diag_log _garrison;
+			diag_log 1111;
+
+		    // Ищем живых юнитов, связанных с маркером
 		    private _aliveUnits = allUnits select {
 		        _x getVariable ["markerX", ""] == _site && alive _x
 		    };
 
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+
+		    // Считаем HR и стоимость
 		    _hr = count _aliveUnits;
 		    {
 		        _costs = _costs + (server getVariable [_x, 0]);
 		    } forEach _garrison;
 
+
+		    // Удаление юнитов
 		    { deleteVehicle _x } forEach _aliveUnits;
 
+		    // Стандартные вычисления
 		    _costs = round (_costs * 0.85);
 		    _hr = _hr + 1; // static gunner
 		};
