@@ -39,22 +39,14 @@ if (_typeX == "rem") then {
 				_costs = _costs + (server getVariable [_x,0]);
 				_hr = _hr + 1;
 			} forEach (A3A_faction_reb get "groupSniper");
-			_costs = round (_costs * 0.75);
+			_costs = round (_costs * 0.85);
 		};
 		case (_roadblockFIA): {
-			// Обработка техники
 		    private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
 
-			diag_log _vehicle;
-			diag_log _vehicle;
-			diag_log _vehicle;
-			// Если переменная содержит строку (класс техники), пытаемся найти объект
 			if (_vehicle isEqualType "") then {
 			    _vehicle = nearestObject [markerPos _site, _vehicle];
 			};
-			diag_log _vehicle;
-			diag_log _vehicle;
-			diag_log _vehicle;
 
 			if (isNull _vehicle) then {
 				_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
@@ -65,68 +57,117 @@ if (_typeX == "rem") then {
 		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
 		    	};
 			};
-		    // Получаем текущий гарнизон (типы юнитов)
 		    _garrison = garrison getVariable [_site, []];
 
-			diag_log 1111;
-			diag_log _garrison;
-			diag_log _garrison;
-			diag_log _garrison;
-			diag_log _garrison;
-			diag_log 1111;
-
-		    // Ищем живых юнитов, связанных с маркером
 		    private _aliveUnits = allUnits select {
 		        _x getVariable ["markerX", ""] == _site && alive _x
 		    };
 
-			diag_log _aliveUnits;
-			diag_log _aliveUnits;
-			diag_log _aliveUnits;
-			diag_log _aliveUnits;
-			diag_log _aliveUnits;
-			diag_log _aliveUnits;
-
-		    // Считаем HR и стоимость
 		    _hr = count _aliveUnits;
 		    {
 		        _costs = _costs + (server getVariable [_x, 0]);
 		    } forEach _garrison;
 
-
-		    // Удаление юнитов
 		    { deleteVehicle _x } forEach _aliveUnits;
 
-		    // Стандартные вычисления
 		    _costs = round (_costs * 0.85);
 		    _hr = _hr + 1; // static gunner
 		};
 		case (_aapostFIA): {
-			_costs = [(A3A_faction_reb get "staticAA") # 0] call A3A_fnc_vehiclePrice; //AA
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr +1;
-			} forEach  (A3A_faction_reb get "groupAaEmpl");
-			_costs = round (_costs * 0.75);
+			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "staticAA") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+			_garrison = garrison getVariable [_site, []];
+
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
 		};
 		case (_atpostFIA): {
-			_costs = [(A3A_faction_reb get "staticAT") # 0] call A3A_fnc_vehiclePrice; //AT
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr +1;
-			} forEach (A3A_faction_reb get "groupAtEmpl");
-			_costs = round (_costs * 0.75);
+			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "staticAT") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+			_garrison = garrison getVariable [_site, []];
+
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
 		};
 		case (_hmgpostFIA): {
-			_costs = [(A3A_faction_reb get "staticMGs") # 0] call A3A_fnc_vehiclePrice; //HMG
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr +1;
-			} forEach (A3A_faction_reb get "groupHmgEmpl");
-			_costs = round (_costs * 0.75);
+			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "staticMGs") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+			_garrison = garrison getVariable [_site, []];
+
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
 		};
 		default {
 			{
