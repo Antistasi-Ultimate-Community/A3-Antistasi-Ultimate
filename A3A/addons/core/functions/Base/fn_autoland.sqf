@@ -66,8 +66,11 @@ while {alive _vehicle && {count crew _vehicle > 0}} do {
                 private _locations = airportsX select {sidesX getVariable [_x, sideUnknown] == teamPlayer};
                 private _selectedMarker = [_locations, _vehiclePos] call BIS_fnc_nearestPosition;
                 _selectedMarkerPos = getMarkerPos _selectedMarker;
-                player setPos _selectedMarkerPos;
-                [_vehicle, clientOwner, call HR_GRG_dLock, player, true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+                private _pilot = driver _vehicle;
+                {
+                    _x setPos _selectedMarkerPos;
+                } forEach (crew _vehicle);
+                [_vehicle, clientOwner, call HR_GRG_dLock, _pilot, true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
             },
             [_vehicle], 1.5, true, true, "", "driver vehicle player == player", 40
         ];
