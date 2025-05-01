@@ -519,11 +519,18 @@
                 <French>Civils vietnamiens.</French>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_pl">
-                <Original>Pathet Lao.\nPoilitical movement and organization from Laos.</Original>
+                <Original>Pathet Lao.\nPolitical movement and organization from Laos.</Original>
                 <Russian>Патет Лао.\nПолитическое движение и организация из Лаоса.</Russian>
                 <Chinesesimp>巴特寮。\来自老挝的激进运动和组织。</Chinesesimp>
                 <Korean>파테트라오.\n라오스의 정치 활동 조직입니다.</Korean>
                 <French>Pathet Lao.\nMouvement et organisation politique du Laos.</French>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_hm">
+                <Original>Hmong Secret Army.\nCIA-backed, largely Hmong, guerrilla force.</Original>
+                <Russian>Хмонгская тайная армия.\nПоддерживаемая ЦРУ, в основном хмонгская, партизанская сила.</Russian>
+                <Chinesesimp>苗族秘密军。\n由CIA支持，主要是苗族的游击队。</Chinesesimp>
+                <Korean>몽족 비밀군.\nCIA 지원을 받으며, 주로 몽족으로 구성된 게릴라군입니다.</Korean>
+                <French>Armée secrète Hmong.\nForce de guérilla soutenue par la CIA, principalement composée de Hmong.</French>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ra">
                 <Original>The Workers' and Peasants' Red Army (Red Army).\nAll the might of the Soviet Union.\nUsage of this faction will activate the Cold War mode (there will be only usage of vehicles and weapons that roughly fits the timeline.</Original>
@@ -4339,7 +4346,7 @@
                 <Original>You can't paradrop when enemies are near rebel HQ.</Original>
                 <Russian>Вы не можете запустить парашютную высадку, пока рядом со штабом враги.</Russian>
                 <Chinesesimp>当敌人靠近抵抗军总部时，你不能空投。</Chinesesimp>
-                <Korean>적들이 아군 본부 근처에 있을 땐은 공수강하를 할 수 없습니다.</Korean>
+                <Korean>적들이 아군 본부 근처에 있는 동안에는 공수강하를 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas effectuer un parachutage lorsque des ennemis se trouvent à proximité du QG.</French>
             </Key>
             <Key ID="STR_notifiers_paradrop_no_players_ready">
@@ -5437,39 +5444,39 @@
                 <French>PARAMÈTRES DE SOUTIEN</French>
             </Key>
             <Key ID="STR_params_allowCivDialog">
-                <Original>[Experimental] Allow talking to civilians</Original>
-                <Russian>[Экспериментально] Разрешить разговоры с гражданскими</Russian>
-                <German>[Experimentell] Gespräche mit Zivilisten erlauben</German>
-                <Italian>[Sperimentale] Permetti di parlare con i civili</Italian>
-                <Spanish>[Experimental] Permitir hablar con civiles</Spanish>
-                <French>[Expérimental] Autoriser les conversations avec les civils</French>
-                <Korean>[실험적] 민간인과 대화 허용</Korean>
-                <Japanese>[試験的] 民間人との会話を許可</Japanese>
-                <Chinesesimp>[实验性] 允许与平民交谈</Chinesesimp>
-                <Chinese>[實驗性] 允許與平民交談</Chinese>
-                <Polish>[Eksperymentalne] Zezwól na rozmowy z cywilami</Polish>
-                <Czech>[Experimentální] Povolit rozhovory s civilisty</Czech>
-                <Portuguese>[Experimental] Permitir conversas com civis</Portuguese>
-                <Turkish>[Deneysel] Sivillerle konuşmaya izin ver</Turkish>
+                <Original>Allow talking to civilians</Original>
+                <Russian>Разрешить разговоры с гражданскими</Russian>
+                <German>Gespräche mit Zivilisten erlauben</German>
+                <Italian>Permetti di parlare con i civili</Italian>
+                <Spanish>Permitir hablar con civiles</Spanish>
+                <French>Autoriser les conversations avec les civils</French>
+                <Korean>민간인과 대화 허용</Korean>
+                <Japanese>民間人との会話を許可</Japanese>
+                <Chinesesimp>允许与平民交谈</Chinesesimp>
+                <Chinese>允許與平民交談</Chinese>
+                <Polish>Zezwól na rozmowy z cywilami</Polish>
+                <Czech>Povolit rozhovory s civilisty</Czech>
+                <Portuguese>Permitir conversas com civis</Portuguese>
+                <Turkish>Sivillerle konuşmaya izin ver</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
-                <Original>[Experimental] Ignore Black Market Vehicle Requirements</Original>
-                <Russian>[Experimental] Игнорировать условия разблокировки транспорта у черного торговца </Russian>
-                <Korean>[실험적] 암시장 차량 요구사항 무시</Korean>
+                <Original>Ignore Black Market Vehicle Requirements</Original>
+                <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>
+                <Korean>암시장 차량 요구사항 무시</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle">
-                <Original>[Experimental] Black Market Vehicle Discount</Original>
-                <Korean>[실험적] 암시장 차량 할인</Korean>
+                <Original>Black Market Vehicle Discount</Original>
+                <Korean>암시장 차량 할인</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
-                <Original>[Experimental] Black Market Equipment Discount</Original>
-                <Korean>[실험적] 암시장 장비 할인</Korean>
+                <Original>Black Market Equipment Discount</Original>
+                <Korean>암시장 장비 할인</Korean>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
-                <Original>[Experimental] Enable spectrum device hacking capability (Contact DLC)</Original>
-                <Russian>[Экспериментально] Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
-                <Chinesesimp>[实验] 启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
-                <Korean>[실험적] 스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
+                <Original>Enable spectrum device hacking capability (Contact DLC)</Original>
+                <Russian>Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
+                <Chinesesimp>启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
+                <Korean>스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
@@ -5485,24 +5492,31 @@
                 <French>Permettre à l'ennemi d'utiliser des supports injustes (déséquilibrés)</French>
             </Key>
             <Key ID="STR_params_allowFuturisticSupports">
-                <Original>[Experimental] Allow futuristic supports to be used by the enemy</Original>
-                <Russian>[Экспериментально] Разрешить использование противником футуристичной поддержки</Russian>
-                <Chinesesimp>[实验性]允许敌人使用未来支援</Chinesesimp>
-                <Korean>[실험용] 적군이 미래적인 지원을 사용하도록 허용</Korean>
-                <French>[Expérimental] Permettre à l'ennemi d'utiliser des supports futuristes</French>
+                <Original>Allow futuristic supports to be used by the enemy</Original>
+                <Russian>Разрешить использование противником футуристичной поддержки</Russian>
+                <Chinesesimp>允许敌人使用未来支援</Chinesesimp>
+                <Korean>적군이 미래적인 지원을 사용하도록 허용</Korean>
+                <French>Permettre à l'ennemi d'utiliser des supports futuristes</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
-                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
-                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
-                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
-                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
-                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+                <Original>Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Russian>Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+            </Key>
+            <Key ID="STR_params_pistolStart">
+                <Original>[Experimental] Start with only unlocked handguns</Original>
+                <Russian>[Экспериментально] Начните только с разблокированным пистолетом</Russian>
+                <Chinesesimp>[实验性]仅从未锁定的手枪开始</Chinesesimp>
+                <Korean>[실험적] 잠금 해제된 권총으로만 시작</Korean>
+                <French>[Expérimental] Commencez avec uniquement des armes de poing déverrouillées</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
-                <Original>[Experimental] Allow futuristic-unfair supports to be used by the enemy</Original>
-                <Russian>[Экспериментально] Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
-                <Chinesesimp>[实验] 允许敌人使用未来主义的不公平支持</Chinesesimp>
-                <Korean>[실험적] 적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
+                <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
+                <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
+                <Chinesesimp>允许敌人使用未来主义的不公平支持</Chinesesimp>
+                <Korean>적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
             </Key>
             <Key ID="STR_params_CrateOptions">
                 <Original>LOOT CRATE SETTINGS</Original>
@@ -5512,11 +5526,11 @@
                 <French>PARAMÈTRES DES CAISSES DE BUTIN</French>
             </Key>
             <Key ID="STR_params_truelyRandomCrates">
-                <Original>[Experimental] Truly Random Crates: No balance checks for crates</Original>
-                <Russian>[Экспериментально] Истинно случайные ящики: проверки баланса для ящиков не производится.</Russian>
-                <Chinesesimp>[实验性]真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
-                <Korean>[실험용] 완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
-                <French>[Expérimental] Des caisses vraiment aléatoires : Pas de vérification de l'équilibre des caisses</French>
+                <Original>Truly Random Crates: No balance checks for crates</Original>
+                <Russian>Истинно случайные ящики: проверки баланса для ящиков не производится.</Russian>
+                <Chinesesimp>真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
+                <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
+                <French>Des caisses vraiment aléatoires : Pas de vérification de l'équilibre des caisses</French>
             </Key>
             <Key ID="STR_params_crateWepTypeMax">
                 <Original>Maximum Weapon Types in Crates</Original>
@@ -5680,11 +5694,11 @@
                 <French>Une sauvegarde persistante pour les constructions placées par Zeus</French>
             </Key>
             <Key ID="STR_params_unconsciousAiPossess">
-                <Original>[Experimental] Allow players to take control of AI units while unconscious</Original>
-                <Russian>[Экспериментально] Разрешить игрокам управлять ИИ-соотрядниками находясь в бессознательном состоянии</Russian>
+                <Original>Allow players to take control of AI units while unconscious</Original>
+                <Russian>Разрешить игрокам управлять ИИ-соотрядниками находясь в бессознательном состоянии</Russian>
                 <Chinesesimp>允许玩家在失去行动的情况下控制AI队友</Chinesesimp>
-                <Korean>[실험용] 플레이어가 의식불명인 상태에서 인공지능 유닛을 조종할 수 있도록 허용</Korean>
-                <French>[Expérimental] Permettre aux joueurs de prendre le contrôle des unités de l'IA lorsqu'ils sont inconscients</French>
+                <Korean>플레이어가 의식불명인 상태에서 인공지능 유닛을 조종할 수 있도록 허용</Korean>
+                <French>Permettre aux joueurs de prendre le contrôle des unités de l'IA lorsqu'ils sont inconscients</French>
             </Key>
             <Key ID="STR_params_maxConstructions">
                 <Original>Maximum quantity of Persistent Constructions</Original>
@@ -5769,11 +5783,11 @@
                 <French>Temps avant qu'un joueur soit considéré comme AFK (en minutes)</French>
             </Key>
             <Key ID="STR_params_afk_uav">
-                <Original>[Experimental] Should player be considered AFK while controlling a UAV?</Original>
-                <Russian>[Экспериментально] Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
-                <Chinesesimp>[实验]玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
-                <Korean>[실험용] UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
-                <French>[Expérimental] Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
+                <Original>Should player be considered AFK while controlling a UAV?</Original>
+                <Russian>Должен ли игрок считаться AFK, управляя БПЛА?</Russian>
+                <Chinesesimp>玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
+                <Korean>UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
+                <French>Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
             </Key>
             <Key ID="STR_params_afk_disabled">
                 <Original>Disabled</Original>
@@ -6038,11 +6052,11 @@
                 <French>OPTIONS POUR LES CAISSES DE BUTIN</French>
             </Key>
             <Key ID="STR_params_bobChaosCrates">
-                <Original>[Experimental] Truly Random Crates: Remove all balance checks from Crates</Original>
-                <Russian>[Экспериментально] Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
-                <Chinesesimp>[实验]真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
-                <Korean>[실험용] 완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
-                <French>[Expérimental] Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
+                <Original>Truly Random Crates: Remove all balance checks from Crates</Original>
+                <Russian>Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
+                <Chinesesimp>真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
+                <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
+                <French>Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
             </Key>
         </Container>
         <Container name="roles">
@@ -9583,13 +9597,6 @@
                 <Korean>자금 호송대 방해</Korean>
                 <French>Interception d'un transport de fonds</French>
             </Key>
-            <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_money">
-                <Original>A truck with plenty of money is being moved from %1 to %3, and it's about to depart at %2. Steal that truck and bring it to HQ. Those funds will be very welcome.</Original>
-                <Russian>Куча денег перевозится в грузовике из %1 в %2, он начнёт движения в %2. Украдите этот грузовик и привезите его в штаб, эти средства нам бы очень пригодились.</Russian>
-                <Chinesesimp>一辆载有大量现金的卡车正在从%1 运到%3，它即将在%2 出发。 偷那辆卡车并把它带到总部。 这些资金将非常受欢迎。</Chinesesimp>
-                <Korean>매우 많은 돈을 싣은 트럭이 %1에서 %3으로 이동하며, %2에서 출발하려고 합니다. 트럭을 훔쳐서 본부로 가져오십시오. 그 자금들은 매우 환영받을 것입니다.</Korean>
-                <French>Un transport de fonds est en cours de %1 à %3, et il est sur le point de partir à %2. Volez ce camion et apportez-le au QG. Ces fonds seront les bienvenus.</French>
-            </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_header_supplies">
                 <Original>Intercept Supply Convoy</Original>
                 <Russian>Перехватите конвой с припасами</Russian>
@@ -9598,11 +9605,22 @@
                 <French>Intercepter un convoi de ravitaillement</French>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_supplies">
-                <Original>A truck with medical supplies destination %3 is about to depart at %2 from %1. Steal that truck, bring it to %3, and let people in there know it is %4 who's giving those supplies.</Original>
-                <Russian>Грузовик с медикаментами и медицинским оборудованием собирается поехать из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте медикаменты нуждающимся в них людям, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
+                <Original>A truck with humanitarian supplies destination %3 is about to depart at %2 from %1. Steal those supplies, bring them to %3 and let people in there know it is %4 who's giving those supplies.</Original>
+                <Russian>Грузовик с гуманитарной помощью собирается поехать из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте припасы нуждающимся в них людям, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Chinesesimp>一辆装有药品和医疗设备的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
                 <Korean>의료 보급품이 있는 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져오고 해당 주민들에게 그 보급품을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
                 <French>Un camion de matériel médical à destination de %3 est sur le point de partir à %2 de %1. Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces fournitures.</French>
+            </Key>
+            <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_repair">
+                <Original>A repair vehicle is set to depart from %1 at %2, heading to %3. Steal that vehicle and bring it to HQ, it's time to take care of our fleet.</Original>
+                <Russian>Ремонтная техника отправиться из %1 в %2, она направляется в %3. Угоните эту технику и доставьте её в штаб, настало время обслужить нашу технику.</Russian>
+            </Key>
+            <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_money">
+                <Original>A truck with plenty of money is being moved from %1 to %3, and it's about to depart at %2. Steal that money and bring it to HQ. Those funds will be very welcome.</Original>
+                <Russian>Куча денег перевозится в грузовике из %1 в %2, он начнёт движения в %2. Украдите этот грузовик и привезите его в штаб, эти средства нам бы очень пригодились.</Russian>
+                <Chinesesimp>一辆载有大量现金的卡车正在从%1 运到%3，它即将在%2 出发。 偷那辆卡车并把它带到总部。 这些资金将非常受欢迎。</Chinesesimp>
+                <Korean>매우 많은 돈을 싣은 트럭이 %1에서 %3으로 이동하며, %2에서 출발하려고 합니다. 트럭을 훔쳐서 본부로 가져오십시오. 그 자금들은 매우 환영받을 것입니다.</Korean>
+                <French>Un transport de fonds est en cours de %1 à %3, et il est sur le point de partir à %2. Volez ce camion et apportez-le au QG. Ces fonds seront les bienvenus.</French>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_header_food">
                 <Original>Intercept Food Convoy</Original>
@@ -13529,6 +13547,13 @@
                 <Korean>공격을 받거나 주변에 적이 포위한 지역으로는 빠른 이동을 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas voyager rapidement vers une zone attaquée ou entourée d'ennemis.</French>
             </Key>
+            <Key ID="STR_A3A_Dialogs_fast_travel_no_empty_position">
+                <Original>Unable to find a position to place unit.</Original>
+                <Russian>Не удалось найти позицию для размещения юнита.</Russian>
+                <Chinesesimp>无法找到放置单元的位置。</Chinesesimp>
+                <Korean>장치를 배치할 위치를 찾을 수 없습니다.</Korean>
+                <French>Impossible de trouver une position pour placer l'unité.</French>
+            </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_moving_hc_group">
                 <Original>Moving group %1 to destination.</Original>
                 <Russian>Перемещаем %1 отряд в место назначения.</Russian>
@@ -14136,11 +14161,15 @@
                 <Chinesesimp>车辆必须载有叛军乘员或平民乘员。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0">
-                <Original>Vehicle must be closer than 50 meters to the HQ marker.</Original>
-                <Russian>Техника должна быть ближе 50 метров чтобы её можно было продать.</Russian>
+                <Original>Vehicle must be within 50 meters of the HQ marker.</Original>
+                <Russian>Техника должна быть ближе 50 метров от маркера штаба чтобы её можно было продать.</Russian>
                 <Chinesesimp>载具距离总部标志必须小于50米。</Chinesesimp>
                 <Korean>차량은 본부 마커로부터 반경 50m 이하에 있어야 합니다.</Korean>
                 <French>Le véhicule doit être à moins de 50 mètres du quartier général.</French>
+            </Key>
+            <Key ID="STR_A3A_Base_sellVehicle_err0.1">
+                <Original>Vehicle must be within 50 meters of the HQ marker or airfield.</Original>
+                <Russian>Техника должна быть ближе 50 метров от маркера штаба или аэродрома чтобы её можно было продать.</Russian>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err1">
                 <Original>Vehicle must be empty.</Original>

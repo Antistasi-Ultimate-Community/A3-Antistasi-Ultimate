@@ -884,10 +884,6 @@ sleep 20;
     deleteVehicle _x;
 } forEach _effectsAndProps;
 
-{
-    deleteVehicle _x;
-} forEach _vehicles;
-
 [_taskId, "LOG", 1200] spawn A3A_fnc_taskDelete;
 [_taskId2, "LOG", 1200] spawn A3A_fnc_taskDelete;
 

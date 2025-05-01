@@ -71,13 +71,26 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     h = 5 * GRID_H;
                 };
 
+                class TabFiller : A3A_Text
+                {
+                    idc = -1;
+                    x = 120 * GRID_W;
+                    y = 0;
+                    w = 2 * GRID_W;
+                    h = 5 * GRID_H;
+                    colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                };
+
                 class SaveInfoText : A3A_Text
                 {
                     idc = A3A_IDC_SETUP_SAVEINFOTEXT;
-                    x = 120 * GRID_W;
+                    x = 122 * GRID_W;
                     y = 0;
-                    w = 40 * GRID_W;
+                    w = 38 * GRID_W;
                     h = 5 * GRID_H;
+                    colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                    style = ST_CENTER;
+                    font = A3A_BUTTON_FONT;
                 };
             };
         };

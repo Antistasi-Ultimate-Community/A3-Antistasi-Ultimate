@@ -248,5 +248,8 @@ setVar("vehiclesReb", _vehReb);
 private _vehCargoTrucks = (_vehTrucks + OccAndInv("vehiclesCargoTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
 setVar("vehiclesCargoTrucks", _vehCargoTrucks);
 
+private _vehMilitiaCargoTrucks = (_vehTrucks + OccAndInv("vehiclesMilitiaTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
+setVar("vehiclesMilitiaCargoTrucks", _vehMilitiaCargoTrucks);
+
 missionNamespace setVariable ["A3A_faction_all", A3A_faction_all, true];
 A3A_faction_all
