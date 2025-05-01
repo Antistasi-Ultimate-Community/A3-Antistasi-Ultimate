@@ -33,8 +33,8 @@ HR_GRG_CP_closeCnd = {
     }
 };
 
-HR_GRG_Cnd_canAccessAir = {
-    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
+HR_GRG_Cnd_canAccessAir = { ///don't forget to separate it to helicopters and planes when update comes out
+    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] && HR_GRG_accessPoint distance2D _x <= 100}) > 0
 };
 
 //Lock on garaged vehicles ( Values: [{""}, { getPlayerUID player }] )
