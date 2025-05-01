@@ -159,6 +159,22 @@
             <French>Dismemberment</French>
             <Chinesesimp>Dismemberment</Chinesesimp>
         </Key>
+        <Key ID="STR_A3AU_init_mods_warning_Exile">
+            <Original>Exile</Original>
+            <English>Exile</English>
+            <Russian>Exile</Russian>
+            <Korean>Exile</Korean>
+            <French>Exile</French>
+            <Chinesesimp>Exile</Chinesesimp>
+        </Key>
+        <Key ID="STR_A3AU_init_mods_warning_Lifeline">
+            <Original>Lifeline Revive AI</Original>
+            <English>Lifeline Revive AI</English>
+            <Russian>Lifeline Revive AI</Russian>
+            <Korean>Lifeline Revive AI</Korean>
+            <French>Lifeline Revive AI</French>
+            <Chinesesimp>Lifeline Revive AI</Chinesesimp>
+        </Key>
     </Package>
     <Package name="ported">
         <Key ID="STR_A3A_fn_support_showIntStpCll_TANK">

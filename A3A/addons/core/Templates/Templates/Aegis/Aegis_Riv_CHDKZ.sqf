@@ -42,7 +42,7 @@ private _hasMarksman = "mark" in A3A_enabledDLC;
 	"AsianHead_A3_06"
 ]] call _fnc_saveToTemplate; 
 ["voices", ["Male01RUS", "Male02RUS", "Male03RUS", "Male01POL", "Male02POL", "Male03POL"]] call _fnc_saveToTemplate;
-
+"RussianMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Vehicles       //
