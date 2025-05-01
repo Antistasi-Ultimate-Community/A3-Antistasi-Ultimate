@@ -3850,6 +3850,10 @@
                 <Original>Heavy vehicles</Original>
                 <Russian>Тяжёлая техника</Russian>
             </Key>
+            <Key ID="STR_antistasi_dialogs_garage_statics">
+                <Original>Statics</Original>
+                <Russian>Турели</Russian>
+            </Key>
         </Container>
     </Package>
 </Project>

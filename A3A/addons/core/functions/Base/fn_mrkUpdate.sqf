@@ -1,10 +1,15 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_marker"];
+params ["_marker", ["_side", sideUnknown]];
 
 private _mrkD = format ["Dum%1",_marker];
-private _mrkSide = sidesX getVariable _marker;
+private _mrkSide = sidesX getVariable [_marker, sideUnknown];
+
+if (_side != sideUnknown) then {
+    _mrkSide = _side;
+    sidesX setVariable [_marker, _mrkSide, true];
+};
 private _faction = Faction(_mrkSide);
 
 if (_marker in airportsX) then {

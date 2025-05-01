@@ -21,7 +21,7 @@
 
     License: MIT / (APL-ND) the license switch is noted in the code
 */
-params [ ["_vehicle", objNull, [objNull]], ["_client", 2, [0]], ["_lockUID", ""], ["_player", objNull, [objNull]] ];
+params [ ["_vehicle", objNull, [objNull]], ["_client", 2, [0]], ["_lockUID", ""], ["_player", objNull, [objNull]], ["_autoland", false, [false]]];
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -34,7 +34,7 @@ if (isNull _vehicle) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Null"] remoteEx
 if (!alive _vehicle) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Destroyed"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 if (locked _vehicle > 1) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Locked"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 if (_player isNotEqualTo vehicle _player) exitWith { ["STR_HR_GRG_Feedback_addVehicle_inVehicle"] remoteExec ["HR_GRG_fnc_Hint", _client] ; false };
-if (_player distance _vehicle > 25) exitWith {["STR_HR_GRG_Feedback_addVehicle_Distance"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+if (!_autoland && {_player distance _vehicle > 25}) exitWith {["STR_HR_GRG_Feedback_addVehicle_Distance"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     //Valid area
 private _friendlyMarkers = (["Synd_HQ"] + outposts + seaports + airportsX + factories + resourcesX + milbases) select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
@@ -42,7 +42,7 @@ if (!isNil "traderMarker") then {
 	_friendlyMarkers pushBack traderMarker;
 };
 private _inArea = _friendlyMarkers findIf { count ([_player, _vehicle] inAreaArray _x) > 1 || {count ([_player, _vehicle] inAreaArray [(getMarkerPos _x), 50, 50]) > 1} };
-if !(_inArea > -1) exitWith {["STR_HR_GRG_Feedback_addVehicle_badLocation",[FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+if (!_autoland && {!(_inArea > -1)}) exitWith {["STR_HR_GRG_Feedback_addVehicle_badLocation", [FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client];false };
 
     //No hostiles near
 
