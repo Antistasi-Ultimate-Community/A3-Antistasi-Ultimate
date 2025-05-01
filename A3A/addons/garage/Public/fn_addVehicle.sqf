@@ -21,7 +21,7 @@
 
     License: MIT / (APL-ND) the license switch is noted in the code
 */
-params [ ["_vehicle", objNull, [objNull]], ["_client", 2, [0]], ["_lockUID", ""], ["_player", objNull, [objNull]] ];
+params [ ["_vehicle", objNull, [objNull]], ["_client", 2, [0]], ["_lockUID", ""], ["_player", objNull, [objNull]], ["_autoland", false, [false]]];
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 
