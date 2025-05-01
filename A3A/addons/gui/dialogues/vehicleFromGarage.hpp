@@ -252,6 +252,7 @@ class A3A_StaticAAFromGarage : A3A_VehicleFromGarage
             {
 				class VehicleTabButton: VehicleTabButton
                 {
+                    text = $STR_antistasi_dialogs_garage_statics;
                     onButtonClick = "['Static', 'AA'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -278,6 +279,7 @@ class A3A_StaticATFromGarage : A3A_VehicleFromGarage
             {
 				class VehicleTabButton: VehicleTabButton
                 {
+                    text = $STR_antistasi_dialogs_garage_statics;
                     onButtonClick = "['Static', 'AT'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -304,6 +306,7 @@ class A3A_StaticHMGFromGarage : A3A_VehicleFromGarage
             {
 				class VehicleTabButton: VehicleTabButton
                 {
+                    text = $STR_antistasi_dialogs_garage_statics;
                     onButtonClick = "['Static', 'MG'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };

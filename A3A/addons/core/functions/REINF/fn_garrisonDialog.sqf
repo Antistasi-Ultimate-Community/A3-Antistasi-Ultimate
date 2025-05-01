@@ -5,50 +5,6 @@ params ["_typeX", "_site"];
 
 private ["_garrison","_costs","_hr","_size"];
 
-//Not sure if needed
-//Checks that were added but I'm not sure if it could be applied to my way to add something
-// _positionTel = positionTel;
-// positionXGarr = "";
-
-// _nearX = [markersX,_positionTel] call BIS_fnc_nearestPosition;
-// _positionX = getMarkerPos _nearX;
-
-// if (getMarkerPos _nearX distance _positionTel > 40) exitWith {
-// 	["Garrison", "You must click near a marked zone."] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// 	_nul=CreateDialog "build_menu";
-// #endif
-// };
-
-// if (not(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) exitWith {
-// 	["Garrison", format ["That zone does not belong to %1.",FactionGet(reb,"name")]] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// 	_nul=CreateDialog "build_menu";
-// #endif
-// };
-// if ([_positionX] call A3A_fnc_enemyNearCheck) exitWith {
-// 	["Garrison", "You cannot manage this garrison while there are enemies nearby."] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// _nul=CreateDialog "build_menu";
-// #endif
-// };
-
-// if (_nearX in forcedSpawn) exitWith {
-// 	["Garrison", "You cannot manage this garrison when there's a major attack incoming."] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// _nul=CreateDialog "build_menu";
-// #endif
-// };
-
-
 private _watchpostFIA = _site in watchpostsFIA;
 private _roadblockFIA = _site in roadblocksFIA;
 private _aapostFIA = _site in aapostsFIA;
@@ -60,6 +16,8 @@ _garrison = if (!_watchpostFIA) then {
 } else {
 	A3A_faction_reb get "unitSniper"
 };
+
+private _vehicle = objNull;
 
 if (_typeX == "rem") then {
 	if ((count _garrison == 0) and {!(_watchpostFIA) || !(_roadblockFIA) || !(_aapostFIA) || !(_atpostFIA)}) exitWith {
@@ -84,13 +42,64 @@ if (_typeX == "rem") then {
 			_costs = round (_costs * 0.75);
 		};
 		case (_roadblockFIA): {
-			_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice; //car with mg
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr + 1;
-			} forEach (A3A_faction_reb get "groupSquad");
-			_costs = round (_costs * 0.75);
+			// Обработка техники
+		    private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			diag_log _vehicle;
+			diag_log _vehicle;
+			diag_log _vehicle;
+			// Если переменная содержит строку (класс техники), пытаемся найти объект
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+			diag_log _vehicle;
+			diag_log _vehicle;
+			diag_log _vehicle;
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+		    // Получаем текущий гарнизон (типы юнитов)
+		    _garrison = garrison getVariable [_site, []];
+
+			diag_log 1111;
+			diag_log _garrison;
+			diag_log _garrison;
+			diag_log _garrison;
+			diag_log _garrison;
+			diag_log 1111;
+
+		    // Ищем живых юнитов, связанных с маркером
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+			diag_log _aliveUnits;
+
+		    // Считаем HR и стоимость
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+
+		    // Удаление юнитов
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    // Стандартные вычисления
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
 		};
 		case (_aapostFIA): {
 			_costs = [(A3A_faction_reb get "staticAA") # 0] call A3A_fnc_vehiclePrice; //AA
@@ -171,7 +180,7 @@ if (_typeX == "rem") then {
 		};
 	};
 
-	[_site] call A3A_fnc_mrkUpdate;
+	[_site, teamPlayer] call A3A_fnc_mrkUpdate;
 
 	[
 		localize "STR_notifiers_fail_type",
