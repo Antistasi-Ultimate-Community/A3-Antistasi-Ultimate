@@ -481,6 +481,17 @@
                 <Korean>암시장 차량 재고는 현재 전쟁 레벨과 달성한 다양한 이정표에 따라 달라집니다.</Korean>
                 <French>Le stock de véhicules du marché noir dépend du niveau de guerre actuel et des différentes étapes franchies.</French>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_button">
+                <Original>Purchase</Original>
+                <French>Achat</French>
+                <Korean>사다</Korean>
+                <Russian>Купить</Russian>
+                <Chinesesimp>购买</Chinesesimp>
+                <Czech>Nákup</Czech>
+                <Italian>Acquista</Italian>
+                <Spanish>Compra</Spanish>
+                <Polish>Kupno</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_button_tooltip">
                 <Original>Buy %1 for %2 %3</Original>
                 <French>Acheter %1 pour %2 %3</French>
@@ -491,6 +502,28 @@
                 <Italian>Compra %1 per %2 %3</Italian>
                 <Spanish>Comprar %1 por %2 %3</Spanish>
                 <Polish>Kup %1 za %2 %3</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button">
+                <Original>Deliver</Original>
+                <French>Livrer</French>
+                <Korean>배달하다</Korean>
+                <Russian>Доставить</Russian>
+                <Chinesesimp>提供</Chinesesimp>
+                <Czech>Doručit</Czech>
+                <Italian>Consegnare</Italian>
+                <Spanish>Entregar</Spanish>
+                <Polish>Dostarczyć</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip">
+                <Original>Deliver %1 to garage for %2 %3</Original>
+                <French>Livrer %1 au garage pour %2 %3</French>
+                <Korean>%1을(를) %2에 차고로 배달%2 %3</Korean>
+                <Russian>Доставка %1 в гараж за %2 %3</Russian>
+                <Chinesesimp>将 %1 运送到 %2 %3 的车库</Chinesesimp>
+                <Czech>Doručte %1 do garáže za %2 %3</Czech>
+                <Italian>Consegna %1 all'officina per %2 %3</Italian>
+                <Spanish>Entrega %1 al garaje por %2 %3</Spanish>
+                <Polish>Dostarcz %1 do garażu za %2 %3</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_undercover_tooltip">
                 <Original>This vehicle can go undercover</Original>
@@ -3300,7 +3333,7 @@
                 <Czech>Použít novou metodu uložení</Czech>
                 <French>Utiliser la nouvelle méthode d'enregistrement</French>
                 <Italian>Usa il nuovo metodo di salvataggio</Italian>
-                <Korean>새 저장 방법 사용</Korean>
+                <Korean>새 저장 방식 사용</Korean>
                 <Russian>Используйте новый метод сохранения</Russian>
                 <Polish>Użyj nowej metody zapisywania</Polish>
                 <Portuguese>Usar novo método de salvamento</Portuguese>
@@ -3311,7 +3344,7 @@
                 <Czech>Varování: To způsobí problémy s ukládáním, pokud je použito na serveru jiném než Windows.</Czech>
                 <French>Avertissement : Cela causera des problèmes de sauvegarde s'il est utilisé sur un serveur non Windows.</French>
                 <Italian>Attenzione: questo causerà problemi di salvataggio se utilizzato su un server non basato su Windows.</Italian>
-                <Korean>경고: 이렇게 하면 Windows 기반이 아닌 서버에서 사용하는 경우 저장 문제가 발생합니다.</Korean>
+                <Korean>경고: Windows 기반이 아닌 서버에서 사용하면 저장 문제가 발생합니다.</Korean>
                 <Russian>Предупреждение: Это вызовет проблемы с сохранением при использовании на сервере, отличном от Windows.</Russian>
                 <Polish>Ostrzeżenie: Spowoduje to problemy z zapisywaniem, jeśli zostanie użyty na serwerze innym niż Windows.</Polish>
                 <Portuguese>Aviso: Isso CAUSARÁ problemas de salvamento se usado em um servidor não baseado no Windows.</Portuguese>
@@ -3558,7 +3591,7 @@
                 <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
                 <Russian>%1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
                 <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
-                <Korean>%1 반란군, %2 민간인, %3 거주자, %4 침략자, %5 라이벌?</Korean>
+                <Korean>반란군은 %1, 민간인은 %2, 점령군은 %3, 침략군은 %4, 라이벌은 %5입니까?</Korean>
                 <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
@@ -3573,7 +3606,7 @@
                 <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
                 <Italian>Questo parametro non può essere modificato per un salvataggio esistente.</Italian>
-                <Korean>이 매개변수는 기존 저장에 대해 변경할 수 없습니다.</Korean>
+                <Korean>이 매개변수는 기존에 저장한 게임에서는 바꿀 수 없습니다.</Korean>
                 <Russian>Этот параметр не может быть изменен для существующего сохранения.</Russian>
                 <Polish>Tego parametru nie można zmienić dla istniejącego zapisu.</Polish>
                 <Portuguese>Este parâmetro não pode ser alterado para um salvamento existente.</Portuguese>
@@ -3584,7 +3617,7 @@
                 <Czech>Tento parametr nelze povolit, pokud jsou útočníci zakázáni.</Czech>
                 <French>Ce paramètre ne peut pas être activé si les envahisseurs sont désactivés.</French>
                 <Italian>Questo parametro non può essere abilitato se gli invasori sono disabilitati.</Italian>
-                <Korean>침입자가 비활성화된 경우 이 매개변수를 활성화할 수 없습니다.</Korean>
+                <Korean>이 매개변수는 침략자가 비활성화되어 있다면 활성화할 수 없습니다.</Korean>
                 <Russian>Этот параметр нельзя включить, если захватчики отключены.</Russian>
                 <Polish>Tego parametru nie można włączyć, jeśli intruzi są wyłączeni.</Polish>
                 <Portuguese>Este parâmetro não pode ser ativado se os invasores estiverem desativados.</Portuguese>

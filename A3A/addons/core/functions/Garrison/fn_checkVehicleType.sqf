@@ -14,8 +14,8 @@ params ["_vehicle", "_preference"];
 //define list of vehicles as lazy conditions
 #define lightVeh \
     {_vehicle in FactionGet(occ,"vehiclesLightArmed")} \
-    || {_vehicle in FactionGet(inv,"vehiclesLightUnarmed")} \
-    || {_vehicle in FactionGet(occ,"vehiclesLightArmed")} \
+    || {_vehicle in FactionGet(occ,"vehiclesLightUnarmed")} \
+    || {_vehicle in FactionGet(inv,"vehiclesLightArmed")} \
     || {_vehicle in FactionGet(inv,"vehiclesLightUnarmed")}
 
 #define apc \
