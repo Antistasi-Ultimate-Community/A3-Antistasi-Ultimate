@@ -67,15 +67,44 @@ if (!isTraderQuestCompleted && !isTraderQuestAssigned) then {
     };
 };
 
+private _fnc_addWeapon = {
+    private _notYetUnlocked = allWeapons - unlockedWeapons;
+    private _newWeapon = selectRandom _notYetUnlocked;
+    private _magazine = selectRandom compatibleMagazines _newWeapon;
+    if (minWeaps > 0) then {
+        [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
+        [_magazine] remoteExec ["A3A_fnc_unlockEquipment", 2];
+    } else {
+        private _arsenalTab = 
+	    [
+            _newWeapon call jn_fnc_arsenal_itemType,
+            _newWeapon,
+            A3A_guestItemLimit max 20
+        ] call jn_fnc_arsenal_addItem;
+        [
+            _magazine call jn_fnc_arsenal_itemType,
+            _magazine,
+            (A3A_guestItemLimit max 20) * 6 * getNumber (configFile >> "CfgMagazines" >> _magazine >> "count")
+        ] call jn_fnc_arsenal_addItem;
+    };
+
+    private _return = [
+        getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName"),
+        ["acquired", "unlocked"] select (minWeaps > 0)
+    ];
+    _return;
+};
+
 if (_text isEqualTo "") then {
     switch (true) do {
         case (_intelType isEqualTo "Civilian"): {
-            _intelContent = selectRandomWeighted [
+            /*_intelContent = selectRandomWeighted [
                 MONEY, 0.2,
                 WEAPON, 0.2,
                 DECRYPTION_KEY, 0.2,
                 TRAITOR, 0.1
-            ];
+            ];*/
+            _intelContent = WEAPON;
 
             switch (_intelContent) do
             {
@@ -92,12 +121,8 @@ if (_text isEqualTo "") then {
                 };
                 case (WEAPON):
                 {
-                    private _notYetUnlocked = allWeapons - unlockedWeapons;
-                    private _newWeapon = selectRandom _notYetUnlocked;
-                    [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
-
-                    private _weaponName = getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName");
-                    _text = format ["A civilian gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have unlocked this weapon!", _weaponName];
+                    [] call _fnc_addWeapon params ["_weaponName", "_action"];
+                    _text = format ["A civilian gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have %2 this weapon!", _weaponName, _action];
                 };
                 case (TRAITOR):
                 {
@@ -287,12 +312,8 @@ if (_text isEqualTo "") then {
                 };
                 case (WEAPON):
                 {
-                    private _notYetUnlocked = allWeapons - unlockedWeapons;
-                    private _newWeapon = selectRandom _notYetUnlocked;
-                    [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
-
-                    private _weaponName = getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName");
-                    _text = format ["You found the supply data for the<br/> %1<br/> You have unlocked this weapon!", _weaponName];
+                    [] call _fnc_addWeapon params ["_weaponName", "_action"];
+                    _text = format ["You found the supply data for the<br/> %1<br/> You have %2 this weapon!", _weaponName, _action];
                 };
                 case (MONEY):
                 {
