@@ -98,13 +98,12 @@ private _fnc_addWeapon = {
 if (_text isEqualTo "") then {
     switch (true) do {
         case (_intelType isEqualTo "Civilian"): {
-            /*_intelContent = selectRandomWeighted [
+            _intelContent = selectRandomWeighted [
                 MONEY, 0.2,
                 WEAPON, 0.2,
                 DECRYPTION_KEY, 0.2,
                 TRAITOR, 0.1
-            ];*/
-            _intelContent = WEAPON;
+            ];
 
             switch (_intelContent) do
             {
