@@ -106,6 +106,20 @@
 			ITEM(JCA_smg_UMP_VFG_sand_F, 500, 30);
 		};
 
+		class launchersJCA 
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_launchers"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
+
+			ITEM(JCA_launch_Mk153_black_F, 1300, LAUNCHER_STOCK);
+			ITEM(JCA_launch_Mk153_olive_F, 1300, LAUNCHER_STOCK);
+			ITEM(JCA_launch_Mk153_sand_F, 1300, LAUNCHER_STOCK);
+
+			ITEM(JCA_launch_Mk153_PWS_black_F, 1400, LAUNCHER_STOCK);
+			ITEM(JCA_launch_Mk153_PWS_olive_F, 1400, LAUNCHER_STOCK);
+			ITEM(JCA_launch_Mk153_PWS_sand_F, 1400, LAUNCHER_STOCK);
+		};
+
 		class underbarrelJCA
 		{
 			displayName = __EVAL(formatText ["%1 %2 %3 %4", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_bipods", localize "STR_A3AU_and", localize "STR_A3AU_grips"]);
@@ -201,6 +215,18 @@
 			class JCA_optic_MROS_olive { price = 600; stock = 100; };
 			class JCA_optic_MROS_sand { price = 600; stock = 100; };
 
+			class JCA_optic_MROS_black_magnifier { price = 800; stock = 100; };
+			class JCA_optic_MROS_olive_magnifier { price = 800; stock = 100; };
+			class JCA_optic_MROS_sand_magnifier { price = 800; stock = 100; };
+
+			class JCA_optic_IHO_black { price = 600; stock = 100; };
+			class JCA_optic_IHO_olive { price = 600; stock = 100; };
+			class JCA_optic_IHO_sand { price = 600; stock = 100; };
+
+			class JCA_optic_IHO_black_magnifier { price = 800; stock = 100; };
+			class JCA_optic_IHO_olive_magnifier { price = 800; stock = 100; };
+			class JCA_optic_IHO_sand_magnifier { price = 800; stock = 100; };
+
 			class JCA_optic_AICO_black { price = 700; stock = 100; };
 			class JCA_optic_AICO_olive { price = 700; stock = 100; };
 			class JCA_optic_AICO_sand { price = 700; stock = 100; };
@@ -208,6 +234,10 @@
 			class JCA_optic_ARO_black { price = 600; stock = 100; };
 			class JCA_optic_ARO_olive { price = 600; stock = 100; };
 			class JCA_optic_ARO_sand { price = 600; stock = 100; };
+
+			class JCA_optic_CRO_black { price = 600; stock = 100; };
+			class JCA_optic_CRO_olive { price = 600; stock = 100; };
+			class JCA_optic_CRO_sand { price = 600; stock = 100; };
 
 			class JCA_optic_HPPO_black { price = 1000; stock = 100; };
 			class JCA_optic_HPPO_RAD_black { price = 1300; stock = 100; };
@@ -222,11 +252,19 @@
 
 			class JCA_optic_MRO_black { price = 400; stock = 100; };
 
-			class JCA_optic_MPO_black { price = 200; stock = 100; };
+			class JCA_optic_ROS_black { price = 400; stock = 100; };
+
+			class JCA_optic_MPO_black { price = 400; stock = 100; };
+
+			class JCA_optic_PRO_black { price = 400; stock = 100; };
 
 			class JCA_optic_MRPS_black { price = 1000; stock = 100; };
 			class JCA_optic_MRPS_olive { price = 1000; stock = 100; };
 			class JCA_optic_MRPS_sand { price = 1000; stock = 100; };
+
+			class JCA_optic_CRBS_black { price = 1000; stock = 100; };
+			class JCA_optic_CRBS_olive { price = 1000; stock = 100; };
+			class JCA_optic_CRBS_sand { price = 1000; stock = 100; };
 		};
 
 		class magazinesJCA 
@@ -415,4 +453,31 @@
 				price = 200;
 				stock = MAGAZINE_STOCK;
 			};
+		};
+
+		class launcherMagazinesJCA
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_launcherAmmo"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
+		
+			class JCA_MK153_HE_F {
+				price = 150;
+				stock = 50;
+			};
+			class JCA_MK153_HEAT_F {
+				price = 250;
+				stock = 50;
+			};
+		};
+
+		class miscJCA
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_misc"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
+
+			ITEM(JCA_HandFlare_Green, 30, 50);
+			ITEM(JCA_SignalFlare_Green, 30, 50);
+
+			ITEM(JCA_HandFlare_Red, 30, 50);
+			ITEM(JCA_SignalFlare_Red, 30, 50);
 		};

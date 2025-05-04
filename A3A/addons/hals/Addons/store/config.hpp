@@ -954,7 +954,10 @@ class cfgHALsStore
 				"pointersJCA",
 				"muzzlesJCA",
 				"opticsJCA",
-				"magazinesJCA"
+				"magazinesJCA",
+				"launchersJCA",
+				"launcherMagazinesJCA",
+				"miscJCA"
 			};
 		};
 	};
