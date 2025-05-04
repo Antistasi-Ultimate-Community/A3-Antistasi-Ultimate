@@ -169,6 +169,7 @@
     {
         addons[] = {"CSLA"};
         weapons = "weapons_csla";
+        vehicles = "vehicles_csla";
     };
     class addons_3cbbaf : addons_base
     {

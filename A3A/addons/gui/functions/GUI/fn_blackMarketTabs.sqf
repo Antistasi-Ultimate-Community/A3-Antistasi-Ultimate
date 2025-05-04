@@ -78,7 +78,7 @@ if (_tab isEqualTo "vehicles") then
         private _topPadding = if (count _buyableVehiclesList < 7) then {5 * GRID_H} else {1 * GRID_H};
 
         private _itemXpos = 7 * GRID_W + ((7 * GRID_W + 44 * GRID_W) * (_added mod 3)); /// space between first row(?) and left border
-        private _itemYpos = (floor (_added / 3)) * (44 * GRID_H) + _topPadding; ///spacer between vehicles
+        private _itemYpos = (floor (_added / 3)) * (38 * GRID_H) + _topPadding; ///spacer between vehicles
 
         private _itemControlsGroup = _display ctrlCreate ["A3A_ControlsGroupNoScrollbars", -1, _vehiclesControlsGroup];
         _itemControlsGroup ctrlSetPosition[_itemXpos, _itemYpos, 44 * GRID_W, 37 * GRID_H];
@@ -90,20 +90,38 @@ if (_tab isEqualTo "vehicles") then
         _previewPicture ctrlSetText _editorPreview;
         _previewPicture ctrlCommit 0;
 
-        private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
-        _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
-        _button ctrlSetText _displayName;
-        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
-        _button setVariable ["className", _className];
-        _button setVariable ["model", _model];
-        _button ctrlAddEventHandler ["ButtonClick", {
-            closeDialog 2; [(_this # 0) getVariable "className"] spawn A3A_fnc_addBlackMarketVeh;
+        private _label = _display ctrlCreate ["A3A_SectionLabelLeft", -1, _itemControlsGroup];
+        _label ctrlSetPosition [0, 0, 44 * GRID_W, 6 * GRID_H];
+        _label ctrlSetText _displayName;
+        _label ctrlSetBackgroundColor [0,0,0,0.5];
+        _label ctrlCommit 0;
+
+        private _buttonTakeout = _display ctrlCreate ["A3A_ShortcutButtonSmall", -1, _itemControlsGroup];
+        _buttonTakeout ctrlSetPosition [0, 25 * GRID_H, 22 * GRID_W, 6 * GRID_H];
+        _buttonTakeout ctrlSetText (localize "STR_antistasi_dialogs_buy_vehicle_button");
+        _buttonTakeout ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
+        _buttonTakeout setVariable ["className", _className];
+        _buttonTakeout setVariable ["model", _model];
+        _buttonTakeout ctrlAddEventHandler ["ButtonClick", {
+            closeDialog 2; [(_this # 0) getVariable "className", false] spawn A3A_fnc_addBlackMarketVeh;
         }];
-        _button ctrlCommit 0;
+        _buttonTakeout ctrlCommit 0;
+
+        private _buttonDelivery = _display ctrlCreate ["A3A_ShortcutButtonSmall", -1, _itemControlsGroup];
+        _buttonDelivery ctrlSetPosition [22 * GRID_W, 25 * GRID_H, 22 * GRID_W, 6 * GRID_H];
+        _buttonDelivery ctrlSetText (localize "STR_antistasi_dialogs_buy_vehicle_deliver_button");
+        _buttonDelivery ctrlSetFontHeight GUI_TEXT_SIZE_SMALL;
+        _buttonDelivery ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
+        _buttonDelivery setVariable ["className", _className];
+        _buttonDelivery setVariable ["model", _model];
+        _buttonDelivery ctrlAddEventHandler ["ButtonClick", {
+            [(_this # 0) getVariable "className", true] spawn A3A_fnc_addBlackMarketVeh;
+        }];
+        _buttonDelivery ctrlCommit 0;
 
         // Object Render
         if (!_hasVehiclePreview) then {
-            _button ctrlAddEventHandler ["MouseEnter", {
+            _buttonTakeout ctrlAddEventHandler ["MouseEnter", {
                 params ["_control"];
                 if (true || isNil "Dev_GUI_prevInjectEnter") then {
                     params ["_control"];
@@ -136,7 +154,7 @@ if (_tab isEqualTo "vehicles") then
                     _control call Dev_GUI_prevInjectEnter;
                 };
             }];
-            _button ctrlAddEventHandler ["MouseExit", {
+            _buttonTakeout ctrlAddEventHandler ["MouseExit", {
                 params ["_control"];
                 if (true || isNil "Dev_GUI_prevInjectExit") then {
                     params ["_control"];

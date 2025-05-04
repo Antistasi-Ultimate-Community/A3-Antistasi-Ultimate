@@ -36,8 +36,14 @@ _staticsNear = _staticsNear select {alive _x};
 // Only get statics which currently are not crewed.
 _staticsNear = _staticsNear select {(crew _x) isequalto []};
 
-// Only get statics which are not current assigned.
-_staticsNear = _staticsNear select {(_x getVariable ["PATCOM_STATIC_ASSIGNED", false]) == false};
+// Only get statics which are not currently assigned. Also no AI-locked or cargo-loaded statics.
+_staticsNear = _staticsNear select {
+    ((_x getVariable ["lockedForAi", false]) == false) &&
+    ((_x getVariable ["PATCOM_STATIC_ASSIGNED", false]) == false) && (
+        (isNull attachedTo _x) ||
+        { !(_x in (attachedTo _x getVariable["ace_cargo_loaded", []])) }
+    )
+};
 
 // Exit if no statics are near.
 if (count _staticsNear == 0) exitWith {};

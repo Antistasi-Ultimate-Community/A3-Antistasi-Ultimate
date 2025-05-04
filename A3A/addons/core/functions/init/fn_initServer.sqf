@@ -130,6 +130,7 @@ else
     // Do initial arsenal filling
     private _categoriesToPublish = createHashMap;
     private _addedClasses = createHashMap;       // dupe proofing
+
     {
         _x params ["_class", ["_count", -1]];
         if (_class in _addedClasses) then { continue };
@@ -144,6 +145,29 @@ else
             _categoriesToPublish insert [true, _categories, []];
         };
     } foreach FactionGet(reb,"initialRebelEquipment");
+
+    if (pistolStart) then {
+        private _magsToKeep = [];
+        private _magsToRemove = [];
+        
+        { _magsToKeep append (compatibleMagazines (_x#0)); } forEach (jna_datalist#2); // handguns
+        {
+            private _weapon = _x#0;
+            _magsToRemove append (compatibleMagazines _weapon);
+            FactionGet(reb, "initialRebelEquipment") deleteAt (FactionGet(reb, "initialRebelEquipment") findIf {_x isEqualTo _weapon || {_x isEqualType [] && {_x#0 isEqualTo _weapon}}});
+        } forEach (jna_datalist#0 + jna_datalist#1); // primaries + secondaries (launchers)
+        jna_datalist set [0, []];
+        jna_datalist set [1, []];
+        
+        {
+            private _magazine = _x#0;
+            // sanity check to not remove magazine compatible with a removed primary if it's also compatible with a handgun in the arsenal
+            if (_magazine in _magsToRemove && {!(_magazine in _magsToKeep)}) then {
+                [26, _magazine, -1] call jn_fnc_arsenal_removeItem;
+                FactionGet(reb, "initialRebelEquipment") deleteAt (FactionGet(reb, "initialRebelEquipment") findIf {_x isEqualTo _magazine || {_x isEqualType [] && {_x#0 isEqualTo _magazine}}});
+            };
+        } forEach (jna_datalist#26); // magazines
+    };
 
     // Publish the unlocked categories (once each)
     { publicVariable ("unlocked" + _x) } forEach keys _categoriesToPublish;
