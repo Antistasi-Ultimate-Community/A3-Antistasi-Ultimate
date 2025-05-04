@@ -6,27 +6,17 @@ private _side = side _group;
 private _enemySides = [];
 private _knownEnemies = [];
 
-if (_side isEqualTo Occupants) then {
-    if (gameMode != 1) then {
-        _enemySides = [teamPlayer, sideEnemy];
-    } else {
-        _enemySides = [Invaders, teamPlayer, sideEnemy];
+_enemySides = if (gameMode isEqualTo 2) then {
+    switch (_side) do {
+        case (teamPlayer): { [Occupants, Invaders, sideEnemy] };
+        case (Occupants);
+        case (Invaders): { [teamPlayer, sideEnemy] };
     };
-};
-
-if (_side isEqualTo Invaders) then {
-    if (gameMode != 1) then {
-        _enemySides = [teamPlayer, sideEnemy];
-    } else {
-        _enemySides = [Occupants, teamPlayer, sideEnemy];
-    };
-};
-
-if (_side isEqualTo teamPlayer) then {
-    if (gameMode != 1) then {
-        _enemySides = [Occupants, sideEnemy];
-    } else {
-        _enemySides = [Occupants, Invaders, sideEnemy];
+} else {
+    switch (_side) do {
+        case (teamPlayer): { [Occupants, Invaders, sideEnemy] };
+        case (Occupants): { [teamPlayer, Invaders, sideEnemy] };
+        case (Invaders): { [teamPlayer, Occupants, sideEnemy] };
     };
 };
 
