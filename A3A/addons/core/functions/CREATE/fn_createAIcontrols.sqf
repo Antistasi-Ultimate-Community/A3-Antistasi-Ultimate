@@ -34,25 +34,12 @@ _isControl = if (isOnRoad _positionX) then {true} else {false};
 
 if (_isControl) then
 {
-	if (gameMode != 4) then
+	if (_sideX == Occupants) then
 	{
-		if (_sideX == Occupants) then
+	if ((random 10 > (tierWar + difficultyCoef)) and (!([_markerX] call A3A_fnc_isFrontline))) then
 		{
-		if ((random 10 > (tierWar + difficultyCoef)) and (!([_markerX] call A3A_fnc_isFrontline))) then
-			{
-				_isFIA = true;
-			}
-		};
-	}
-	else
-	{
-		if (_sideX == Invaders) then
-		{
-			if ((random 10 > (tierWar + difficultyCoef)) and (!([_markerX] call A3A_fnc_isFrontline))) then
-			{
-				_isFIA = true;
-			}
-		};
+			_isFIA = true;
+		}
 	};
 
 	// Attempt to find nearby road with two connected roads
