@@ -325,7 +325,7 @@ A3A_factionEquipFlags = _occEquipFlags arrayIntersect _invEquipFlags;
 
 Debug_1("Faction equip flags: %1", A3A_factionEquipFlags);
 
-if (gameMode isEqualTo 3) {
+if (gameMode isEqualTo 3) then {
 	areInvadersDefeated = true;
 	publicVariable "areInvadersDefeated";
 };
