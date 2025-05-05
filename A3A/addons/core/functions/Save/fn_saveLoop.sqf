@@ -9,6 +9,8 @@ savingServer = true;
 Info("Starting persistent save");
 [localize "STR_A3A_save_persisent_save",localize "STR_A3A_save_save_game_starting"] remoteExecCall ["A3A_fnc_customHint",0,false];
 
+["GameSaveBefore"] call A3A_Events_fnc_triggerEvent;
+
 // Set next autosave time, so that we won't run another shortly after a manual save
 autoSaveTime = time + autoSaveInterval;
 
@@ -475,6 +477,8 @@ _fuelAmountleftArray = [];
 
 //Saving the state of the testing timer
 ["testingTimerIsActive", testingTimerIsActive] call A3A_fnc_setStatVariable;
+
+["GameSaveAfter"] call A3A_Events_fnc_triggerEvent;
 
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 

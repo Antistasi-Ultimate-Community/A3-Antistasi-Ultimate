@@ -153,6 +153,13 @@ private _unloadAceCargo = {
 if (_vehicle getVariable ["HR_GRG_Garaging", false]) exitWith {};
 _vehicle setVariable ["HR_GRG_Garaging", true];
 
+_vehicle setVariable ["A3A_Vehicle_ShouldGarage", true];
+["VehicleGaragedBefore", [_vehicle]] call A3A_Events_fnc_triggerEvent;
+
+if !(_vehicle getVariable "A3A_Vehicle_ShouldGarage") exitWith {
+    _vehicle setVariable ["HR_GRG_Garaging", false];
+};
+
 private _addVehicle = {
     //check if compatible with garage
     private _class = typeOf _this;

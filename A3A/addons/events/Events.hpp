@@ -144,6 +144,27 @@ class Events {
             };
         };
     };
+    // Triggered after saving core game data, at the bottom of `A3A_fnc_saveLoop` before `saveMissionProfileNamespace`
+    class GameSaveAfter {
+        isLocal = 1;
+        class params {};
+    };
+    // Triggered before saving core game data, at the top of `A3A_fnc_saveLoop` right after `savingServer` flag
+    class GameSaveBefore {
+        isLocal = 1;
+        class params {};
+    };
+    // Triggered before putting a vehicle in the garage; event code may modify vehicle's `A3A_Vehicle_ShouldGarage` variable to prevent it from being garaged
+    class VehicleGaragedBefore {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Vehicle being garaged";
+                types[] = {"OBJECT"};
+                optional = 0;
+            };
+        };
+    };
 /*
     class Example {
         isLocal = 1;
