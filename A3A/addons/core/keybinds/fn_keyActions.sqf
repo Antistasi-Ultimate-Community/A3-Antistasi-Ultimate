@@ -89,11 +89,11 @@ switch (_key) do {
     };
 };
 
-if !_hadDialog then {
+if (!_hadDialog) then {
     // Have to spawn the mouse cursor center function because arty menu is spawned, too
     [
         {
-            if dialog then {
+            if (dialog) then {
                 setMousePosition [0.5, 0.5];
             };
         },
