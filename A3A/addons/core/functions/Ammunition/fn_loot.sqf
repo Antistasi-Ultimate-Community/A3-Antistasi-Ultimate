@@ -42,8 +42,8 @@ lootMagazine append allMagBullet + allMagShotgun + allMagMissile + allMagRocket 
 ///////////////////
 lootExplosive append allMine + allMineDirectional + allMineBounding;
 
-lootExplosive deleteAt (lootExplosive find "APERSMineDispenser_Mag");
-lootExplosive deleteAt (lootExplosive find "TrainingMine_Mag");
+//lootExplosive deleteAt (lootExplosive find "APERSMineDispenser_Mag"); no, why?
+lootExplosive deleteAt (lootExplosive find "TrainingMine_Mag"); ///all below is non military grade so needs to be removed, you can buy them anyway
 lootExplosive deleteAt (lootExplosive find "IEDLandSmall_Remote_Mag");
 lootExplosive deleteAt (lootExplosive find "IEDUrbanSmall_Remote_Mag");
 lootExplosive deleteAt (lootExplosive find "IEDLandBig_Remote_Mag");
