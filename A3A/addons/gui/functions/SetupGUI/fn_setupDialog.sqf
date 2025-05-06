@@ -59,6 +59,8 @@ switch (_mode) do
 
         ["setSaveData"] call A3A_fnc_setupLoadgameTab;
         ["switchTab", ["loadgame"]] call A3A_fnc_setupDialog;
+
+        ["enableParamsTab"] call A3A_fnc_setupDialog;
     };
 
     case ("onUnload"):
@@ -73,6 +75,17 @@ switch (_mode) do
             Debug("Restarting setup dialog");
             createDialog "A3A_setupDialog";
         };
+    };
+
+    case ("enableParamsTab"):
+    {
+        private _newGameCtrl = _display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX;
+        private _savesLBCtrl = _display displayCtrl A3A_IDC_SETUP_SAVESLISTBOX;
+        private _paramsTabCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSTABBUTTON;
+        private _enabled = cbChecked _newGameCtrl || {_savesLBCtrl getVariable ["rowIndex", -1] isNotEqualTo -1};
+
+        _paramsTabCtrl ctrlEnable _enabled;
+        _paramsTabCtrl ctrlSetTooltip ([localize "STR_antistasi_dialogs_setup_params_tab_button_disabled", ""] select _enabled);
     };
 
     case ("switchTab"):

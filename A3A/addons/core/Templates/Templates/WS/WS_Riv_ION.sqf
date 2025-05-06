@@ -631,7 +631,7 @@ private _partisanTemplate = {
 	["handgun", 2] call _fnc_addMagazines;
 
 
-	[selectRandom ["rifles", "carbines", "smgs"]] call _fnc_setPrimary;
+	[selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["items_medical_standard"] call _fnc_addItemSet;
@@ -679,7 +679,7 @@ private _medicTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-  	[selectRandom["carbines", "smgs"]] call _fnc_setPrimary;
+  	[selectRandomWeighted ["carbines", 0.4, "smgs", 0.6]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;
@@ -737,7 +737,7 @@ private _explosivesExpertTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-	[selectRandom ["carbines", "smgs"]] call _fnc_setPrimary;
+	[selectRandomWeighted ["carbines", 0.4, "smgs", 0.6]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;
@@ -769,7 +769,7 @@ private _atTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-	[selectRandom ["carbines", "smgs"]] call _fnc_setPrimary;
+	[selectRandomWeighted ["carbines", 0.4, "smgs", 0.6]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["lightATLaunchers"] call _fnc_setLauncher;
