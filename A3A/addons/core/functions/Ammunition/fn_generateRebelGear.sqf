@@ -33,6 +33,24 @@ private _fnc_addItemUnlocks = {
 
 private _fnc_addItem = [_fnc_addItemUnlocks, _fnc_addItemNoUnlocks] select (minWeaps < 0);
 
+private _fnc_getAvailableMagazines = {
+    params ["_class", "_categories", ["_baseClass", ""]];
+
+    private _magsCompat = [compatibleMagazines [_baseClass, _class], compatibleMagazines _class] select (_baseClass == "");
+    {
+        if (_x in _magsCompat) then { (_rebelGear get "Magazines") getOrDefault [_class, [], true] pushBack _x };
+    } forEach (unlockedMagBullet + unlockedMagShotgun + unlockedMagShell + unlockedMagMissile + unlockedMagRocket);
+
+    if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
+        // lookup real underbarrel GL magazine, because not everything is 40mm
+        private _config = configFile >> "CfgWeapons" >> _class;
+        private _glmuzzle = getArray (_config >> "muzzles") select 1;		// guaranteed by category
+        _glmuzzle = configName (_config >> _glmuzzle);                      // bad-case fix. compatibleMagazines is case-sensitive as of 2.12
+        [_glmuzzle, [], _class] call _fnc_getAvailableMagazines;    
+    };
+
+    true;
+};
 
 // Work with temporary array so that we're not transferring partials
 private _rebelGear = createHashMapFromArray [
@@ -48,6 +66,8 @@ private _rebelGear = createHashMapFromArray [
     ["MissileLaunchersAA", []],
 
     ["Handguns", []],
+
+    ["Magazines", createHashMap],
 
     ["ArmoredVests", ["", [1.5, 0.5] select (minWeaps < 0)]],
     ["CivilianVests", []],
@@ -90,6 +110,7 @@ private _opticsMidCount = 0;
             case "SMGs";
             case "Shotguns";
             case "PrimaryWeaponsCatchAll" : {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault [[_mainCategory, "GrenadeLaunchers"] select ("GrenadeLaunchers" in _categories), [], true];
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;
@@ -97,11 +118,13 @@ private _opticsMidCount = 0;
             
             // Secondary Weapons
             case "RocketLaunchers": {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault ["RocketLaunchers", [], true]; 
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;
             };
             case "MissileLaunchers": {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 switch true do {
                     case ("AA" in _categories): {
                         _array = _rebelGear getOrDefault ["MissileLaunchersAA", [], true];
@@ -116,6 +139,7 @@ private _opticsMidCount = 0;
 
             // Handguns
             case "Handguns": {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault ["Handguns", [], true];
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;
