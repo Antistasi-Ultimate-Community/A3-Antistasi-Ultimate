@@ -527,24 +527,24 @@ switch _mode do {
 			_ctrlSort ctrlRemoveAllEventHandlers "lbselchanged";
 			_ctrlSort ctrladdeventhandler ["lbselchanged",format ["['SortBy',[_this,%1]] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
 
-      //Delete "Sort by mod" as it doesn't work currently.
-      if (lbSize _ctrlSort > 1) then {
-        _ctrlSort lbDelete 1;
-      };
+			//Delete "Sort by mod" as it doesn't work currently.
+			if (lbSize _ctrlSort > 1) then {
+			_ctrlSort lbDelete 1;
+			};
 
 
-	  private _sortByAmountIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_BY_AMOUNT");
-      private _sortDefaultIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_DEFAULT");
-	private _sortColorIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_COLOR");
-	  private _sortModIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_MOD");
+			private _sortByAmountIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_BY_AMOUNT");
+			private _sortDefaultIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_DEFAULT");
+			private _sortColorIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_COLOR");
+			private _sortModIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_MOD");
 
-      _ctrlSort lbSetValue [0, SORT_ALPHABETICAL];
-      _ctrlSort lbSetValue [_sortByAmountIndex, SORT_AMOUNT];
-      _ctrlSort lbSetValue [_sortDefaultIndex, SORT_DEFAULT];
-	  _ctrlSort lbSetValue [_sortColorIndex, SORT_COLOR];
-	  _ctrlSort lbSetValue [_sortModIndex, SORT_MOD];
+			_ctrlSort lbSetValue [0, SORT_ALPHABETICAL];
+			_ctrlSort lbSetValue [_sortByAmountIndex, SORT_AMOUNT];
+			_ctrlSort lbSetValue [_sortDefaultIndex, SORT_DEFAULT];
+			_ctrlSort lbSetValue [_sortColorIndex, SORT_COLOR];
+			_ctrlSort lbSetValue [_sortModIndex, SORT_MOD];
 
-      lbSortByValue _ctrlSort;
+			lbSortByValue _ctrlSort;
 
 			_ctrlSort lbsetcursel _sort;
 			_sortValues set [_idc,_sort];
@@ -1348,6 +1348,64 @@ switch _mode do {
 				_lbAdd = _ctrlList lbadd _emptyString;
 				_data = str ["",0,""];
 				_ctrlList lbsetdata [_lbAdd,_data];
+			};
+		};
+
+		// * Filter primary and secondary weapons available according to unit type / class, all items to what's unlocked
+		_inventory = switch (_index) do {
+			// If item is in A3A_rebelGear, it should already be unlocked or its qty should be > jna_minItemMember select _index
+			case (IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON): {
+				private _loadoutName = currentRebelLoadout call SCRT_fnc_misc_getLoadoutName;
+				switch (_loadoutName) do {
+					case ("MACHINEGUNNER"): { 
+						_inventory select { (_x select 0) in (A3A_rebelGear get "MachineGuns") }
+					};
+					case ("STATICCREW");
+					case ("MEDIC"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "SMGs") }
+					};
+					case ("GRENADIER"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "GrenadeLaunchers") }
+					};
+					case ("SNIPER"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "SniperRifles") }
+					};
+					default {
+						_inventory select { (_x select 0) in ((A3A_rebelGear get "Rifles") + (A3A_rebelGear get "SMGs") + (A3A_rebelGear get "Shotguns")) }
+					};
+				};
+			};
+			case (IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON): {
+				private _loadoutName = currentRebelLoadout call SCRT_fnc_misc_getLoadoutName;
+				switch (_loadoutName) do {
+					case ("RIFLEMAN"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "RocketLaunchers") && {(_x select 0) in (missionNamespace getVariable "allDisposable")} }
+					};
+					case ("LAT"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "RocketLaunchers") }
+					};
+					case ("AT"): {
+						_inventory select { (_x select 0) in ((A3A_rebelGear get "RocketLaunchers") + (A3A_rebelGear get "MissileLaunchersAT")) }
+					};
+					case ("AA"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "MissileLaunchersAA") }
+					};
+					default { [] };
+				};
+			};
+			case (IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG);
+			case (IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2);
+			case (IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG);
+			case (IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL): {
+				_inventory select {
+					private _amountCfg = getNumber (configfile >> "CfgMagazines" >> _x select 0 >> "count");
+					(_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ((jna_minItemMember select _index) * _amountCfg)}}
+				}
+			};
+
+			default {
+				// item unlocked (qty == -1) OR (unlocks disabled AND item qty more than min items)
+				_inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= (jna_minItemMember select _index)}} }
 			};
 		};
 
