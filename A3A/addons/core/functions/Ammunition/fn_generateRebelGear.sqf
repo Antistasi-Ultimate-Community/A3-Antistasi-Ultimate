@@ -22,6 +22,29 @@
     
     Return:
         Nothing
+    Author:
+        jwoodruff40
+    
+    Description:
+        Generates the A3A_rebelGear hashmap of all equipment used to equip rebel AI
+    
+    Params:
+        None
+    
+    Dependencies:
+        N/A
+    
+    Scope:
+        N/A
+    
+    Environment:
+        Scheduled, any machine
+    
+    Usage:
+        [] call A3A_fnc_generateRebelGear;
+    
+    Return:
+        Nothing
 */
 
 #include "..\..\script_component.hpp"
@@ -91,7 +114,7 @@ private _rebelGear = createHashMapFromArray [
 
     ["Handguns", []],
 
-    ["Handguns", []],
+    ["Magazines", createHashMap],
 
     ["ArmoredVests", ["", [1.5, 0.5] select (minWeaps < 0)]],
     ["CivilianVests", []],
@@ -138,6 +161,7 @@ private _opticsMidCount = 0;
             case "SMGs";
             case "Shotguns";
             case "PrimaryWeaponsCatchAll" : {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault [[_mainCategory, "GrenadeLaunchers"] select ("GrenadeLaunchers" in _categories), [], true];
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;
@@ -145,11 +169,13 @@ private _opticsMidCount = 0;
             
             // Secondary Weapons
             case "RocketLaunchers": {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault ["RocketLaunchers", [], true]; 
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;
             };
             case "MissileLaunchers": {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 switch true do {
                     case ("AA" in _categories): {
                         _array = _rebelGear getOrDefault ["MissileLaunchersAA", [], true];
@@ -164,6 +190,7 @@ private _opticsMidCount = 0;
 
             // Handguns
             case "Handguns": {
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault ["Handguns", [], true];
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;
