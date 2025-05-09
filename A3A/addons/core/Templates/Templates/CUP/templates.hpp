@@ -316,3 +316,31 @@
         name = "CUP EST";
         file = "CUP_AI_EST";
     };
+
+    class FlexPAF_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_POL_Faction"};
+        priority = 61;
+    };
+
+    class Flex_PAF : FlexPAF_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Poland_ca.paa";
+        name = "CUP PAF";
+        file = "CUP_AI_PAF";
+    };
+
+    class FlexPLA_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_POL_Faction"};
+        priority = 61;
+    };
+
+    class Flex_PLA : FlexPLA_Base
+    {
+        side = "Inv";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Poland_ca.paa";
+        name = "CUP PLA";
+        file = "CUP_AI_PLA";
+    };
