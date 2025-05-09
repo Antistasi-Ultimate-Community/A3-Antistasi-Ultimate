@@ -10,6 +10,14 @@
 			ITEM(JCA_hgun_P320_black_F, 140, PISTOL_STOCK); //Slightly Lower Accuracy But Lighter
 			ITEM(JCA_hgun_P320_olive_F, 140, PISTOL_STOCK);
 			ITEM(JCA_hgun_P320_sand_F, 140, PISTOL_STOCK);
+
+			ITEM(JCA_hgun_Mk23_black_F, 150, PISTOL_STOCK);
+			ITEM(JCA_hgun_Mk23_olive_F, 150, PISTOL_STOCK);
+			ITEM(JCA_hgun_Mk23_sand_F, 150, PISTOL_STOCK);
+
+			ITEM(JCA_hgun_M9A1_black_F, 140, PISTOL_STOCK);
+			ITEM(JCA_hgun_M9A1_olive_F, 140, PISTOL_STOCK);
+			ITEM(JCA_hgun_M9A1_sand_F, 140, PISTOL_STOCK);
 		};
 
 		class riflesJCA 
@@ -384,6 +392,66 @@
 				stock = MAGAZINE_STOCK;
 			};
 			class JCA_25Rnd_45ACP_UMP_Green_Sand_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_12Rnd_45ACP_Mk23_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_12Rnd_45ACP_Mk23_Tracer_Green_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_12Rnd_45ACP_Mk23_Tracer_IR_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_12Rnd_45ACP_Mk23_Tracer_Red_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_12Rnd_45ACP_Mk23_Tracer_Yellow_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_17Rnd_9x21_P320_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_17Rnd_9x21_P320_Green_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_17Rnd_9x21_P320_IR_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_17Rnd_9x21_P320_Red_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_17Rnd_9x21_P320_Yellow_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_15Rnd_9x21_M9A1_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_15Rnd_9x21_M9A1_Green_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_15Rnd_9x21_M9A1_IR_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_15Rnd_9x21_M9A1_Red_Mag {
+				price = 30;
+				stock = MAGAZINE_STOCK;
+			};
+			class JCA_15Rnd_9x21_M9A1_Yellow_Mag {
 				price = 30;
 				stock = MAGAZINE_STOCK;
 			};
