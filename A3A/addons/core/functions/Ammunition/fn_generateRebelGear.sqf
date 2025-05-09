@@ -1,4 +1,30 @@
 /*
+    Author:
+        jwoodruff40
+    
+    Description:
+        Generates the A3A_rebelGear hashmap of all equipment used to equip rebel AI
+    
+    Params:
+        None
+    
+    Dependencies:
+        N/A
+    
+    Scope:
+        N/A
+    
+    Environment:
+        Scheduled, any machine
+    
+    Usage:
+        [] call A3A_fnc_generateRebelGear;
+    
+    Return:
+        Nothing
+*/
+
+/*
     Generate the rebel gear array for equipping AIs
 
 Parameters:
@@ -15,15 +41,15 @@ if (!isServer) exitWith { Error("Server-only function miscalled") };
 Info("Started updating A3A_rebelGear");
 
 // Base weight mappings, MIN->0, MAX->1
-#define ITEM_MIN 10
+// #define ITEM_MIN 10
 #define ITEM_MAX 50
 
 private _fnc_addItemNoUnlocks = {
     params ["_array", "_class", "_amount", ["_arrayWeight", 1]];
     if (_amount < 0) exitWith { _array append [_class, _arrayWeight] };
-    if (_amount <= ITEM_MIN) exitWith {};
+    if (_amount <= A3A_guestItemLimit) exitWith {};
     _array pushBack _class;
-    _array pushBack (linearConversion [ITEM_MIN, ITEM_MAX, _amount, 0, 1, true] * _arrayWeight); // multiply weight (preference) by ratio of amount of item to max amount of that item such that items rebels have more of are more likely to be selected
+    _array pushBack (linearConversion [A3A_guestItemLimit, ITEM_MAX, _amount, 0, 1, true] * _arrayWeight); // multiply weight (preference) by ratio of amount of item to max amount of that item such that items rebels have more of are more likely to be selected
 };
 
 private _fnc_addItemUnlocks = {
