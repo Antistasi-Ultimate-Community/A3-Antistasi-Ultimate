@@ -64,14 +64,13 @@ if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
     if (_glmag != "") then { _unit addMagazines [_glmag, 5] };
 };
 
-private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
-private _magweight = 5 max getNumber (configFile >> "CfgMagazines" >> _magazine >> "mass");
-diag_log [_weapon, _magazine, _totalMagWeight, _magWeight, round (random 0.5 + _totalMagWeight / _magWeight)];
-
 _unit addWeapon _weapon;
-_unit addWeaponItem [_weapon, _magazine];
-_unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
-
+private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
+if !(isNil "_magazine") then {
+    private _magweight = 5 max getNumber (configFile >> "CfgMagazines" >> _magazine >> "mass");
+    _unit addWeaponItem [_weapon, _magazine];
+    _unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
+};
 
 // Optics
 private _compatOptics = A3A_rebelOpticsCache getOrDefault [_weapon, []];
