@@ -333,14 +333,14 @@
 
     class FlexPLA_Base : CUP_Base
     {
-        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_POL_Faction"};
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_PLA_Faction"};
         priority = 61;
     };
 
     class Flex_PLA : FlexPLA_Base
     {
         side = "Inv";
-        flagTexture = "\A3\ui_f\data\map\markers\flags\Poland_ca.paa";
+        flagTexture = "A3A\addons\core\Pictures\Markers\PLA_Flag.paa";
         name = "CUP PLA";
         file = "CUP_AI_PLA";
     };
