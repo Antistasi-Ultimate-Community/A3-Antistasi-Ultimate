@@ -2103,6 +2103,9 @@
                 <Korean>보급 실행 퇴출 지점</Korean>
                 <French>Fin de l'approvisionnement</French>
             </Key>
+            <Key ID="STR_support_supply_run_ground">
+                <Original>Ground Resupply Point</Original>
+            </Key>
             <Key ID="STR_support_barrage">
                 <Original>Barrage</Original>
                 <Russian>Обстрел</Russian>
@@ -7553,6 +7556,12 @@
                 <Korean>비행기가 상공을 비행해서 보급상자를 지정한 위치로 떨어뜨립니다.</Korean>
                 <French>L'avion survole et largue une caisse contenant des munitions et des fournitures médicales à la position spécifiée.</French>
             </Key>
+            <Key ID="STR_commander_menu_scg_title">
+                <Original>Ground Resupply</Original>
+            </Key>
+            <Key ID="STR_commander_menu_scg_tooltip">
+                <Original>A truck brings a crate with ammunition and medical supplies to the specified position.</Original>
+            </Key>
             <Key ID="STR_commander_menu_hba_title">
                 <Original>HE Bomb Airstrike</Original>
                 <Russian>Авиаудар фугасными бомбами</Russian>
@@ -8139,6 +8148,9 @@
                 <Chinesesimp>花费 %1 支援点和 %2%3</Chinesesimp>
                 <Korean>%1 지원 포인트와 %2%3를 소모합니다</Korean>
                 <French>Coûts %1 points de support et %2%3</French>
+            </Key>
+            <Key ID="STR_commander_menu_abilities_cost_support_point_hr_and_money">
+                <Original>Costs %1 HR, %2 support points and %2%3</Original>
             </Key>
             <Key ID="STR_commander_menu_abilities_cost_airstrike">
                 <Original>Costs 1 Airstrike</Original>
