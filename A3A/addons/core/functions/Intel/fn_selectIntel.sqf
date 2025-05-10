@@ -125,7 +125,7 @@ if (_text isEqualTo "") then {
                     private _texts = [
                         format [localize "STR_antistasi_intel_weapon_informant", _weaponName, _quantity],
                         format [localize "STR_antistasi_intel_weapon_convoy", _quantity, _weaponName],
-                        format [localize "STR_antistasi_intel_weapon_truck", _side, _quantity, _weaponName]
+                        format [localize "STR_antistasi_intel_weapon_truck", Faction(_side) get "name", _quantity, _weaponName]
                     ];
                     if (isTraderQuestCompleted) then { _texts pushBack (format [localize "STR_antistasi_intel_weapon_trader", _quantity, _weaponName]) };
                     _text = selectRandom (_texts);

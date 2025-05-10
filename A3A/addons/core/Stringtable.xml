@@ -6081,13 +6081,13 @@
                 <Original>An informant gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have acquired %2 of this weapon.</Original>
             </Key>
             <Key ID="STR_antistasi_intel_weapon_convoy">
-                <Original>A weapons convoy has been intercepted by local militia and rerouted to your HQ. You have received %1 of %2.</Original>
+                <Original>A weapons convoy has been intercepted by local militia and rerouted to your HQ. You have received %1x %2.</Original>
             </Key>
             <Key ID="STR_antistasi_intel_weapon_truck">
-                <Original>A case of weapons has fallen off a truck while %1 moves around the AO. You have acquired %2 of %3.</Original>
+                <Original>A case of weapons has fallen off a truck while %1 moves around the AO. You have acquired %2x %3.</Original>
             </Key>
             <Key ID="STR_antistasi_intel_weapon_trader">
-                <Original>As a gesture of good will and support for the cause, an anonymous arms trader has delivered a case of weapons to your HQ. You have received %1 of $2.</Original>
+                <Original>As a gesture of good will and support for the cause, an anonymous arms trader has delivered a case of weapons to your HQ. You have received %1x $2.</Original>
             </Key>
             <Key ID="STR_antistasi_intel_weapon_supplydata">
                 <Original>You found the supply data for the<br/> %1<br/> You have acquired %2 of this weapon.</Original>
