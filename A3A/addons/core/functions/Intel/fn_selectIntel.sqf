@@ -71,26 +71,27 @@ private _fnc_addWeapon = {
     private _notYetUnlocked = allWeapons - unlockedWeapons;
     private _newWeapon = selectRandom _notYetUnlocked;
     private _magazine = selectRandom compatibleMagazines _newWeapon;
-    if (minWeaps > 0) then {
-        [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
-        [_magazine] remoteExec ["A3A_fnc_unlockEquipment", 2];
-    } else {
-        private _arsenalTab = 
-	    [
-            _newWeapon call jn_fnc_arsenal_itemType,
-            _newWeapon,
-            A3A_guestItemLimit max 20
-        ] call jn_fnc_arsenal_addItem;
-        [
-            _magazine call jn_fnc_arsenal_itemType,
-            _magazine,
-            (A3A_guestItemLimit max 20) * 6 * getNumber (configFile >> "CfgMagazines" >> _magazine >> "count")
-        ] call jn_fnc_arsenal_addItem;
-    };
+
+    private _quantity = [
+        [A3A_guestItemLimit, (50 - A3A_guestItemLimit) / 2, 50], // base QTYs on guestItemLimit for consistency with other arsenal functionality when unlocks disabled
+        [0.6 * minWeaps, minWeaps, 1.2 * minWeaps]
+    ] select (minWeaps > 0);
+    _quantity = ceil (random _quantity); // in case unlocks disabled and A3A_guestItemLimit is set to 0, at least give 1
+    
+    [
+        _newWeapon call jn_fnc_arsenal_itemType,
+        _newWeapon,
+        _quantity
+    ] call jn_fnc_arsenal_addItem;
+    [
+        _magazine call jn_fnc_arsenal_itemType,
+        _magazine,
+        _quantity * 6 * getNumber (configFile >> "CfgMagazines" >> _magazine >> "count")
+    ] call jn_fnc_arsenal_addItem;
 
     private _return = [
         getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName"),
-        ["acquired", "unlocked"] select (minWeaps > 0)
+        _quantity
     ];
     _return;
 };
@@ -120,8 +121,14 @@ if (_text isEqualTo "") then {
                 };
                 case (WEAPON):
                 {
-                    [] call _fnc_addWeapon params ["_weaponName", "_action"];
-                    _text = format ["A civilian gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have %2 this weapon!", _weaponName, _action];
+                    [] call _fnc_addWeapon params ["_weaponName", "_quantity"];
+                    private _texts = [
+                        format [localize "STR_antistasi_intel_weapon_informant", _weaponName, _quantity],
+                        format [localize "STR_antistasi_intel_weapon_convoy", _quantity, _weaponName],
+                        format [localize "STR_antistasi_intel_weapon_truck", _side, _quantity, _weaponName]
+                    ];
+                    if (isTraderQuestCompleted) then { _texts pushBack (format [localize "STR_antistasi_intel_weapon_trader", _quantity, _weaponName]) };
+                    _text = selectRandom (_texts);
                 };
                 case (TRAITOR):
                 {
@@ -311,8 +318,8 @@ if (_text isEqualTo "") then {
                 };
                 case (WEAPON):
                 {
-                    [] call _fnc_addWeapon params ["_weaponName", "_action"];
-                    _text = format ["You found the supply data for the<br/> %1<br/> You have %2 this weapon!", _weaponName, _action];
+                    [] call _fnc_addWeapon params ["_weaponName", "_quantity"];
+                    _text = format [localize "STR_antistasi_intel_weapon_supplydata", _weaponName, _quantity];
                 };
                 case (MONEY):
                 {
