@@ -90,12 +90,12 @@
 
 ["vehiclesPlanesCAS", call {
     if (tierWar < 2) then {
-        ["Flex_CUP_AAF_Plane_Fighter", "Flex_CUP_AAF_Plane_Fighter_2"]
+        ["Flex_CUP_AAF_Fighter", "Flex_CUP_AAF_Plane_Fighter_2"]
     } else {
         ["Flex_CUP_USA_A10"]
     };
 }] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["Flex_CUP_AAF_Fighter"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["Flex_CUP_AAF_Plane_Fighter_2"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["Flex_CUP_AAF_C130J"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", call {
