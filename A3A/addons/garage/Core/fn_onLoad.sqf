@@ -104,7 +104,7 @@ if !(call HR_GRG_Cnd_canAccessHeli) then {
     private _heliBttn = _disp displayCtrl HR_GRG_IDC_BttnHeli;
     _heliBttn ctrlEnable false;
     _heliBttn ctrlSetTextColor [0.7,0,0,1];
-    _heliBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_AirDisabled";
+    _heliBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_HeliDisabled";
 };
 
 if !(call HR_GRG_Cnd_canAccessPlane) then {

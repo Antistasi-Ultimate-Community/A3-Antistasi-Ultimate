@@ -21,15 +21,13 @@
 params [ ["_vehicle", objNull, [objNull,""]] ];
 
 if (_vehicle isEqualType objNull) then {
-   if (isNull _vehicle) exitWith {false};
-   if (getRepairCargo _vehicle > 0) exitWith {true};                                     // vanilla
-   private _canRepair = getNumber (configOf _vehicle/"ace_repair_canRepair");
-   if (_vehicle getVariable ["ACE_isRepairVehicle", _canRepair] in [1, true]) exitWith {true};
-   false;
+    if (isNull _vehicle) exitWith {false};
+    if (missionNamespace getVariable ["ace_repair_enabled", false]) exitWith { _vehicle call ace_repair_fnc_isRepairVehicle };
+    getRepairCargo _vehicle > 0;
 } else {
-   private _vehCfg = configFile/"CfgVehicles"/_vehicle;
-   if (!isClass _vehCfg) exitWith {false}; //invalid class string passed
-   if (getNumber (_vehCfg/"transportRepair") > 0) exitWith {true};                       // vanilla
-   if (getNumber (_vehCfg/"ace_repair_canRepair") > 0) exitWith {true};
-   false;
+    private _vehCfg = configFile/"CfgVehicles"/_vehicle;
+    if (!isClass _vehCfg) exitWith {false}; //invalid class string passed
+    if (getNumber (_vehCfg/"transportRepair") > 0) exitWith {true};                       // vanilla
+    if (getNumber (_vehCfg/"ace_repair_canRepair") > 0) exitWith {true};
+    false;
 };
