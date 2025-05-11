@@ -21,23 +21,16 @@
 //-- Category --\\
 #define HR_GRG_IDC_CatUndercoverCar 1700100
 #define HR_GRG_IDC_CatCar 1700101
-#define HR_GRG_IDC_CatAPC 1700102
-#define HR_GRG_IDC_CatArmored 1700103
-#define HR_GRG_IDC_CatAA 1700104
-#define HR_GRG_IDC_CatArty 1700105
-#define HR_GRG_IDC_CatHeli 1700106
-#define HR_GRG_IDC_CatPlane 1700107
-#define HR_GRG_IDC_CatBoat 1700108
-#define HR_GRG_IDC_CatSource 1700109
-#define HR_GRG_IDC_CatStatic 1700110
+#define HR_GRG_IDC_CatArmor 1700102
+#define HR_GRG_IDC_CatHeli 1700103
+#define HR_GRG_IDC_CatPlane 1700104
+#define HR_GRG_IDC_CatBoat 1700105
+#define HR_GRG_IDC_CatSource 1700106
+#define HR_GRG_IDC_CatStatic 1700107
 
-
-
-
-
-#define HR_GRG_CATIDCS [HR_GRG_IDC_CatUndercoverCar,HR_GRG_IDC_CatCar,HR_GRG_IDC_CatAPC,HR_GRG_IDC_CatArmored,HR_GRG_IDC_CatAA,HR_GRG_IDC_CatArty,HR_GRG_IDC_CatHeli, HR_GRG_IDC_CatPlane,HR_GRG_IDC_CatBoat,HR_GRG_IDC_CatSource,HR_GRG_IDC_CatStatic]
-#define HR_GRG_SOURCEINDEX 9
-#define HR_GRG_STATICINDEX 10 
+#define HR_GRG_CATIDCS [HR_GRG_IDC_CatUndercoverCar,HR_GRG_IDC_CatCar,HR_GRG_IDC_CatArmor,HR_GRG_IDC_CatHeli, HR_GRG_IDC_CatPlane,HR_GRG_IDC_CatBoat,HR_GRG_IDC_CatSource,HR_GRG_IDC_CatStatic]
+#define HR_GRG_SOURCEINDEX 6
+#define HR_GRG_STATICINDEX 7
 
 #define HR_GRG_IDC_BttnCars 1700111
 #define HR_GRG_IDC_BttnArmor 1700112
@@ -47,10 +40,19 @@
 #define HR_GRG_IDC_BttnSource 1700116
 #define HR_GRG_IDC_BttnStatics 1700117
 //-- unsused --\\
-#define HR_GRG_IDC_CatUnmanned 1700118
-#define HR_GRG_IDC_BttnUnmanned 1700119
-#define HR_GRG_IDC_CatVTOL 1700120
-#define HR_GRG_IDC_BttnVTOL 1700121
+#define HR_GRG_IDC_CatAPC 1700118
+#define HR_GRG_IDC_CatArmored 1700119
+#define HR_GRG_IDC_CatAA 1700120
+#define HR_GRG_IDC_CatArty 1700121
+#define HR_GRG_IDC_CatHeli 1700122
+#define HR_GRG_IDC_CatPlane 1700123
+#define HR_GRG_IDC_CatBoat 1700124
+#define HR_GRG_IDC_CatSource 1700125
+#define HR_GRG_IDC_CatStatic 1700126
+#define HR_GRG_IDC_CatUnmanned 1700127
+#define HR_GRG_IDC_BttnUnmanned 1700128
+#define HR_GRG_IDC_CatVTOL 1700129
+#define HR_GRG_IDC_BttnVTOL 1700130
 
 //-- extra --\\
 #define HR_GRG_IDC_BttnMounts 1700170
@@ -93,6 +95,7 @@
 #define HideVicIcon "\A3\soft_f_gamma\Hatchback_01\Data\UI\car_CA.paa"
 #define CarIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\car_ca.paa"
 #define APCIcon "\A3\armor_f_gamma\APC_Wheeled_03\data\UI\APC_Wheeled_03_ca.paa"
+#define ArmorIcon "\A3\armor_f_gamma\APC_Wheeled_03\data\UI\APC_Wheeled_03_ca.paa" //\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\tank_ca.paa
 #define ArmoredIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\tank_ca.paa"
 #define AirIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\helicopter_ca.paa"
 #define UnmannedIcon "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\portrait_UGV_01_CA.paa"
