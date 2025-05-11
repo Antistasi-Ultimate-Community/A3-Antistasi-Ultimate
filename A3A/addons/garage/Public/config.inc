@@ -38,7 +38,10 @@ HR_GRG_Cnd_canAccessHeli = {
 };
 
 HR_GRG_Cnd_canAccessPlane = {
-    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
+    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0
+};
+HR_GRG_Cnd_canAccessHeli = { ///don't forget to separate it to helicopters and planes when update comes out
+    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] && HR_GRG_accessPoint distance2D _x <= 100}) > 0
 };
 
 //Lock on garaged vehicles ( Values: [{""}, { getPlayerUID player }] )
@@ -64,7 +67,7 @@ HR_GRG_blackListCamo = ["IDAP", "African Desert Extremists", "African Desert Ext
 "Middle East Extremists 01", "Middle East Extremists 02", "Middle East Extremists 03", "Middle East Extremists 04", "Middle East Extremists 05", "Middle East Extremists 06"];
 
 // Banned vehicles. These will be deleted instead of being added to the garage. Internal name, case sensitive
-HR_GRG_blacklistVehicles = [/* "rhs_rhino_trigger","ACE_I_SpottingScope","ACE_O_SpottingScope","ACE_O_T_SpottingScope","ACE_B_SpottingScope","ACE_B_T_SpottingScope","ACE_SpottingScopeObject" */];
+HR_GRG_blacklistVehicles = ["rhs_rhino_trigger","ACE_I_SpottingScope","ACE_O_SpottingScope","ACE_O_T_SpottingScope","ACE_B_SpottingScope","ACE_B_T_SpottingScope","ACE_SpottingScopeObject"];
 
 //proxies"Middle East Extremists 01"
 HR_GRG_fnc_Hint = {

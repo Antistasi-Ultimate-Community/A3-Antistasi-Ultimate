@@ -39,22 +39,20 @@
     License: APL-ND
 */
 
-#define EXPECTED_LENGTH 11
-
 if (!isServer) exitWith {false};
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 params [["_save", [], [[]] ]];
 private _newGarage = [];
-for "_i" from 1 to EXPECTED_LENGTH do {_newGarage pushBack createHashMap;};
+for "_i" from 1 to (count HR_GRG_CATIDCS) do {_newGarage pushBack createHashMap;};
 private _validSave = _save params [
     ["_garage", _newGarage, [[]]]
     , ["_uid", 0, [0]]
     , ["_sources", [[],[],[]], [[]], 3]
 ];
 
-// Garage will change from 5 categories to 9 categories at some point. This code will adapt older saved garages to the new standard.
-Info_1("Formatting an existing saved garage to %1 categories. This happens after an update and will not run again.",EXPECTED_LENGTH)
+// Garage will change from 5 categories to 7 categories at some point. This code will adapt older saved garages to the new standard.
+Info_1("Formatting an existing saved garage to %1 categories.",count HR_GRG_CATIDCS)
 {
     private _dataHM = _x;
     {

@@ -44,11 +44,6 @@
 #define HR_GRG_IDC_CatArmored 1700119
 #define HR_GRG_IDC_CatAA 1700120
 #define HR_GRG_IDC_CatArty 1700121
-#define HR_GRG_IDC_CatHeli 1700122
-#define HR_GRG_IDC_CatPlane 1700123
-#define HR_GRG_IDC_CatBoat 1700124
-#define HR_GRG_IDC_CatSource 1700125
-#define HR_GRG_IDC_CatStatic 1700126
 #define HR_GRG_IDC_CatUnmanned 1700127
 #define HR_GRG_IDC_BttnUnmanned 1700128
 #define HR_GRG_IDC_CatVTOL 1700129
