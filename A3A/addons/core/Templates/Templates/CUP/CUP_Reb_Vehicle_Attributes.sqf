@@ -1,5 +1,6 @@
 ["attributesVehicles", [
     // light armed stuff
+    ["CUP_I_Datsun_PK", ["rebCost", 600]],
     ["Flex_CUP_LUF_Datsun_PK", ["rebCost", 600]],
 	
     // up-armored vehicles
