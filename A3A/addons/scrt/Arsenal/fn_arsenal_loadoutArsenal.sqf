@@ -535,13 +535,24 @@ switch _mode do {
 			_ctrlIcon = _display displayctrl (IDC_RSCDISPLAYARSENAL_ICON + _idc);
 			_ctrlTab = _display displayctrl (IDC_RSCDISPLAYARSENAL_TAB + _idc);
 			_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc);
-			if (_idc in [IDCS_LEFT] && {!(_idc in ASSIGNED_ITEMS)}) then {
-				_ctrlList ctrladdeventhandler ["lbdblclick","['OverrideTab', _this select 0] call SCRT_fnc_arsenal_loadoutArsenal"];
-			};
 			{
 				_x ctrlRemoveAllEventHandlers "buttonclick";
+				_x ctrlRemoveAllEventHandlers "ButtonDblClick";
 				if (_idc in [IDCS_LEFT]) then {
 					_x ctrladdeventhandler ["buttonclick",format ["['TabSelectLeft',[ctrlparent (_this select 0),%1],true] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
+					//_x ctrlAddEventHandler ["ButtonDblClick", "diag_log format ['%1 double clicked (ButtonDblClick)', _this select 0];"];
+					_ctrlList ctrladdeventhandler ["lbdblclick",{
+						params ["_control", "_selectedIndex"];
+						diag_log format ['%1 double clicked', _this select 0];
+						private _IDC = ctrlIDC _control;
+						private _tabBtnIDC = _IDC - 30;
+						private _iconBgndIDC = _IDC - 130;
+						private _iconIDC = _IDC - 60;
+						private _display = ctrlParent _control;
+						(_display displayCtrl _tabBtnIDC) ctrlSetBackgroundColor [0,1,0,1];
+						(_display displayCtrl _iconBgndIDC) ctrlSetTextColor [0,1,0,1];
+						(_display displayCtrl _iconIDC) ctrlSetTextColor [0,1,0,1];
+					}];
 				} else {
 					_x ctrladdeventhandler ["buttonclick",format ["['TabSelectRight',[ctrlparent (_this select 0),%1],true] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
 				};
