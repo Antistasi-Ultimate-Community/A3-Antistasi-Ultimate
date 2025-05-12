@@ -42,48 +42,8 @@ call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from se
 // TODO: add types unitAA and unitAT(name?) when UI is ready
 private _unitType = if (_forceClass != "") then {_forceClass} else {_unit getVariable "unitType"};
 private _typeTag = _unitType splitString "_" select 3;
-private _customLoadout = rebelLoadouts get _unitType;
-
-private _fnc_addSecondary = {
-    params ["_unit"];
-
-    if !((_typeTag in ["LAT", "AT", "AA"]) || (_typeTag == "Rifleman" && {random 20 < tierWar})) exitWith {}; 
-    
-    private _rLaunchers = A3A_rebelGear get "RocketLaunchers";
-    private _dLaunchers = [];
-    private _mLaunchersAT = A3A_rebelGear get "MissileLaunchersAT";
-    private _mLaunchersAA = A3A_rebelGear get "MissileLaunchersAA";
-
-    {
-        if ("Disposable" in (_x call A3A_fnc_equipmentClassToCategories)) then { _dLaunchers append [_x, _rlaunchers select (_rlaunchers find _x) + 1 ] };
-    } forEach (_rlaunchers select {_x isEqualType ""});
-
-    private _launcherPool = createHashMapFromArray [
-        ["Rifleman", _dLaunchers],
-        ["LAT", _rLaunchers],
-        ["AT", _mLaunchersAT],
-        ["AA", _mLaunchersAA]
-    ];
-    
-    if (_launcherPool get _typeTag isEqualTo []) exitWith {};
-    private _weapon = selectRandomWeighted (_launcherPool get _typeTag);
-
-    _unit addWeapon _weapon;
-    private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
-    _unit addSecondaryWeaponItem _magazine;
-
-    if ("Disposable" in (_weapon call A3A_fnc_equipmentClassToCategories)) exitWith {};
-    private _magWeight = 20 max getNumber (configFile / "CfgMagazines" / _magazine / "mass");
-    _unit addMagazines [_magazine, round (random 0.5 + 100 / _magWeight)];
-
-    private _compatOptics = A3A_rebelOpticsCache get _weapon;
-    if (isNil "_compatOptics") then {
-        private _compatItems = compatibleItems _weapon; // cached, should be fast
-        _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get "OpticsAll");
-        A3A_rebelOpticsCache set [_weapon, _compatOptics];
-    };
-    if (_compatOptics isNotEqualTo []) then { _unit addSecondaryWeaponItem (selectRandom _compatOptics) };
-};
+private _rebelLoadouts = +rebelLoadouts;
+private _customLoadout = _rebelLoadouts get _unitType;
 
 private _fnc_addCharges = {
     params ["_unit", "_totalWeight"];
@@ -151,16 +111,16 @@ private _fnc_addGrenades = {
 };
 
 private _fnc_addPrimary = {
-    params ["_unit"];
+    params ["_unit", "_overrideClass"];
 
-    private _weaponType = switch (_typeTag) do {
+    private _weaponType = if !(isNil "_overrideClass") then { _overrideClass } else { switch (_typeTag) do {
         case ("Sniper");
         case ("Marksman"): { "SniperRifles" };
         case ("MachineGunner"): { "MachineGuns" };
         case ("Grenadier"): { "GrenadeLaunchers" };
         case ("Medic"): { "SMGs" };
         default { "Rifles" };
-    };
+    }};
     
     private _totalMagWeight = switch (_typeTag) do {
         case ("Rifleman"): { 70 };
@@ -173,10 +133,39 @@ private _fnc_addPrimary = {
     [_unit, _weaponType, _totalMagWeight] call A3A_fnc_randomWeapon;
 };
 
-private _fnc_addHandgun = {
-    params ["_unit"];
+private _fnc_addSecondary = {
+    params ["_unit", "_overrideClass"];
 
-    [_unit, "Handguns", 10] call A3A_fnc_randomWeapon;
+    if !((_typeTag in ["LAT", "AT", "AA"]) || (_typeTag == "Rifleman" && {random 20 < tierWar})) exitWith {}; 
+    
+    private _weapon = if (isNil "_overrideClass") then {
+        private _rLaunchers = A3A_rebelGear get "RocketLaunchers";
+        private _dLaunchers = _rLaunchers arrayIntersect AllDisposable;
+        private _mLaunchersAT = A3A_rebelGear get "MissileLaunchersAT";
+        private _mLaunchersAA = A3A_rebelGear get "MissileLaunchersAA";
+
+        private _launcherPool = createHashMapFromArray [
+            ["Rifleman", _dLaunchers],
+            ["LAT", _rLaunchers],
+            ["AT", _mLaunchersAT],
+            ["AA", _mLaunchersAA]
+        ];
+        
+        if (_launcherPool get _typeTag isEqualTo []) exitWith {};
+        selectRandomWeighted (_launcherPool get _typeTag);
+    } else {
+        _overrideClass;
+    };
+
+    if (isNil "_weapon") exitWith {};
+    [_unit, _weapon, 100] call A3A_fnc_randomWeapon;
+};
+
+private _fnc_addHandgun = {
+    params ["_unit", "_overrideClass"];
+
+    private _weaponType = if !(isNil "_overrideClass") then { _overrideClass } else { "Handguns" };
+    [_unit, _weaponType, 10] call A3A_fnc_randomWeapon;
 };
 
 private _fnc_addClassEquip = {
@@ -229,9 +218,9 @@ private _fnc_addClassEquip = {
 };
 
 private _fnc_addNightEquip = {
-    params ["_unit"];
+    params ["_unit", "_overrideClass"];
 
-    private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
+    private _nvg = if (!isNil "_overrideClass") then { _overrideClass } else { selectRandomWeighted (A3A_rebelGear get "NVGs") };
     if (_nvg != "") then { 
         _unit linkItem _nvg;
         private _weapon = primaryWeapon _unit;
@@ -305,9 +294,9 @@ private _fnc_addNightEquip = {
 };
 
 private _fnc_addUniform = {
-    params ["_unit"];
+    params ["_unit", "_overrideClass"];
 
-    _unit forceAddUniform (selectRandom (A3A_faction_reb get 'uniforms'));
+    if (isNil "_overrideClass") then { _unit forceAddUniform (selectRandom (A3A_faction_reb get 'uniforms')) };
 
     private _uniform = uniformContainer _unit;
 
@@ -324,18 +313,19 @@ private _fnc_addUniform = {
     };
 };
 
-private _unarmedLoadout = (A3A_faction_reb get "loadouts" get "militia_Unarmed") select 0 select 0;
-_unit setUnitLoadout _unarmedLoadout;
-
 if (!isNil "_customLoadout") then {
     // * Apply the loadout, then override it
-    _unit setUnitLoadout _customLoadout;
+    private _tempLoadout = +_customLoadout;
+    _unit setUnitLoadout _tempLoadout;
     
-    if (randomizeRebelLoadoutUniforms) then {
-        _unit call _fnc_addUniform;
-        _unit call _fnc_addHeadgear;
-        _unit call _fnc_addFacewear;
-    };
+    if (isNil {_customLoadout select 3}) then { _unit call _fnc_addUniform } else { [_unit, uniform _unit] call _fnc_addUniform};
+    if (isNil {_customLoadout select 6}) then { _unit call _fnc_addHeadgear };
+    if (isNil {_customLoadout select 7}) then { _unit call _fnc_addFacewear };
+    if (isNil {_customLoadout select 4}) then { _unit call _fnc_addVest };
+    if (isNil {_customLoadout select 5}) then { _unit call _fnc_addBackpack };
+    if (isNil {_customLoadout select 0}) then { _unit call _fnc_addPrimary } else { [_unit, primaryWeapon _unit] call _fnc_addPrimary };
+    if (isNil {_customLoadout select 1}) then { _unit call _fnc_addSecondary } else { [_unit, secondaryWeapon _unit] call _fnc_addSecondary };
+    if (isNil {_customLoadout select 2}) then { _unit call _fnc_addHandgun } else { [_unit, handgunWeapon _unit] call _fnc_addHandgun };
 
     // * Don't cheese allowing launchers with rifleman.
     // * If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it.
