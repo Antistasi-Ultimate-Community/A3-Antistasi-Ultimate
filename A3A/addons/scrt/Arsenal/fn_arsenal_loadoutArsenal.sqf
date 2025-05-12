@@ -515,21 +515,24 @@ switch _mode do {
 			_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc);
 			{
 				_x ctrlRemoveAllEventHandlers "buttonclick";
-				_x ctrlRemoveAllEventHandlers "ButtonDblClick";
 				if (_idc in [IDCS_LEFT]) then {
 					_x ctrladdeventhandler ["buttonclick",format ["['TabSelectLeft',[ctrlparent (_this select 0),%1],true] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
-					//_x ctrlAddEventHandler ["ButtonDblClick", "diag_log format ['%1 double clicked (ButtonDblClick)', _this select 0];"];
 					_ctrlList ctrladdeventhandler ["lbdblclick",{
 						params ["_control", "_selectedIndex"];
 						diag_log format ['%1 double clicked', _this select 0];
+						
+						private _override = _control getVariable ["OverrideTab", false];
+						_control setVariable ["OverrideTab", !_override, true];
+
 						private _IDC = ctrlIDC _control;
 						private _tabBtnIDC = _IDC - 30;
 						private _iconBgndIDC = _IDC - 130;
-						private _iconIDC = _IDC - 60;
+						//private _iconIDC = _IDC - 60;
 						private _display = ctrlParent _control;
-						(_display displayCtrl _tabBtnIDC) ctrlSetBackgroundColor [0,1,0,1];
-						(_display displayCtrl _iconBgndIDC) ctrlSetTextColor [0,1,0,1];
-						(_display displayCtrl _iconIDC) ctrlSetTextColor [0,1,0,1];
+						private _colorTab = [[0,1,0,1], [0,0,0,1]] select (_override);
+						(_display displayCtrl _tabBtnIDC) ctrlSetBackgroundColor _colorTab;
+						(_display displayCtrl _iconBgndIDC) ctrlSetTextColor _colorTab;
+						//(_display displayCtrl _iconIDC) ctrlSetTextColor _colorTab;						
 					}];
 				} else {
 					_x ctrladdeventhandler ["buttonclick",format ["['TabSelectRight',[ctrlparent (_this select 0),%1],true] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
@@ -3089,6 +3092,40 @@ switch _mode do {
 		_display = _this select 0;
 
 		private _loadout = getUnitLoadout player;
+		private _loadoutMap = [
+			IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,
+			IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,
+			IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,
+			IDC_RSCDISPLAYARSENAL_TAB_HANDGUN,
+			IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,
+			IDC_RSCDISPLAYARSENAL_TAB_VEST,
+			IDC_RSCDISPLAYARSENAL_TAB_BACKPACK,
+			IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR,
+			IDC_RSCDISPLAYARSENAL_TAB_GOGGLES,
+			IDC_RSCDISPLAYARSENAL_TAB_BINOCULARS,
+			[
+				IDC_RSCDISPLAYARSENAL_TAB_MAP
+				IDC_RSCDISPLAYARSENAL_TAB_GPS,
+				IDC_RSCDISPLAYARSENAL_TAB_RADIO,
+				IDC_RSCDISPLAYARSENAL_TAB_COMPASS,
+				IDC_RSCDISPLAYARSENAL_TAB_WATCH,
+				IDC_RSCDISPLAYARSENAL_TAB_NVGS
+			]
+		];
+		
+		{
+			if (_x isEqualType []) then {
+				{
+					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
+					if !(_control getVariable ["OverrideTab"]) then { (_loadout select 10) set [_forEachIndex, nil] };
+				} forEach (_x);
+			}
+			private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
+			if !(_control getVariable ["OverrideTab"]) then { _loadout set [_forEachIndex, nil] };
+		} forEach (_loadoutMap);
+
+		if ((_loadout select 10) isEqualTo [nil, nil, nil, nil, nil, nil]) then { _loadout set [10, nil] };
+
 		rebelLoadouts set [currentRebelLoadout, _loadout];
 		publicVariable "rebelLoadouts";
 
