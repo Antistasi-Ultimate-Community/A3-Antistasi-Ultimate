@@ -78,6 +78,28 @@ FIX_LINE_NUMBERS()
 
 #define IDCS	[IDCS_LEFT,IDCS_RIGHT]
 
+#define ASSIGNED_ITEMS [\
+	IDC_RSCDISPLAYARSENAL_TAB_MAP,\
+	IDC_RSCDISPLAYARSENAL_TAB_GPS,\
+	IDC_RSCDISPLAYARSENAL_TAB_RADIO,\
+	IDC_RSCDISPLAYARSENAL_TAB_COMPASS,\
+	IDC_RSCDISPLAYARSENAL_TAB_WATCH,\
+	IDC_RSCDISPLAYARSENAL_TAB_NVGS\
+]
+
+#define LOADOUT_MAP [\
+	IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,\
+	IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,\
+	IDC_RSCDISPLAYARSENAL_TAB_HANDGUN,\
+	IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,\
+	IDC_RSCDISPLAYARSENAL_TAB_VEST,\
+	IDC_RSCDISPLAYARSENAL_TAB_BACKPACK,\
+	IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR,\
+	IDC_RSCDISPLAYARSENAL_TAB_GOGGLES,\
+	IDC_RSCDISPLAYARSENAL_TAB_BINOCULARS,\
+	ASSIGNED_ITEMS\
+]
+
 #define INITTYPES\
 		_types = [];\
 		_types set [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,["Uniform"]];\
@@ -430,7 +452,7 @@ switch _mode do {
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
-	case "customEvents":{
+	case "customEvents": {
 		_display = _this select 0;
 
 		//Keys
@@ -513,27 +535,13 @@ switch _mode do {
 			_ctrlIcon = _display displayctrl (IDC_RSCDISPLAYARSENAL_ICON + _idc);
 			_ctrlTab = _display displayctrl (IDC_RSCDISPLAYARSENAL_TAB + _idc);
 			_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc);
+			if (_idc in [IDCS_LEFT]) then {
+				_ctrlList ctrladdeventhandler ["lbdblclick","['OverrideTab', _this select 0] call SCRT_fnc_arsenal_loadoutArsenal"];
+			};
 			{
 				_x ctrlRemoveAllEventHandlers "buttonclick";
 				if (_idc in [IDCS_LEFT]) then {
 					_x ctrladdeventhandler ["buttonclick",format ["['TabSelectLeft',[ctrlparent (_this select 0),%1],true] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
-					_ctrlList ctrladdeventhandler ["lbdblclick",{
-						params ["_control", "_selectedIndex"];
-						diag_log format ['%1 double clicked', _this select 0];
-						
-						private _override = _control getVariable ["OverrideTab", false];
-						_control setVariable ["OverrideTab", !_override, true];
-
-						private _IDC = ctrlIDC _control;
-						private _tabBtnIDC = _IDC - 30;
-						private _iconBgndIDC = _IDC - 130;
-						//private _iconIDC = _IDC - 60;
-						private _display = ctrlParent _control;
-						private _colorTab = [[0,1,0,1], [0,0,0,1]] select (_override);
-						(_display displayCtrl _tabBtnIDC) ctrlSetBackgroundColor _colorTab;
-						(_display displayCtrl _iconBgndIDC) ctrlSetTextColor _colorTab;
-						//(_display displayCtrl _iconIDC) ctrlSetTextColor _colorTab;						
-					}];
 				} else {
 					_x ctrladdeventhandler ["buttonclick",format ["['TabSelectRight',[ctrlparent (_this select 0),%1],true] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
 				};
@@ -569,6 +577,22 @@ switch _mode do {
 
 		} foreach IDCS;
 		uinamespace setvariable ["jn_fnc_arsenal_sort",_sortValues];
+	};
+
+	case "OverrideTab": {
+		_this params ["_control"];
+
+		private _display = ctrlParent _control;
+		private _IDC = ctrlIDC _control;
+		private _tabBtnCtrl = _display displayCtrl (_IDC - 30);
+		private _iconBgndCtrl = _display displayCtrl (_IDC - 130);
+		private _override = _tabBtnCtrl getVariable ["OverrideTab", false];
+		private _colorTab = [[0,1,0,1], [0,0,0,1]] select (_override);
+		_tabBtnCtrl setVariable ["OverrideTab", !_override];
+		_tabBtnCtrl ctrlSetBackgroundColor _colorTab;
+		_tabBtnCtrl ctrlCommit 0;
+		_iconBgndCtrl ctrlSetTextColor _colorTab;
+		_iconBgndCtrl ctrlCommit 0;
 	};
 
   case "SortBy":{
@@ -3067,40 +3091,20 @@ switch _mode do {
 		_display = _this select 0;
 
 		private _loadout = getUnitLoadout player;
-		private _loadoutMap = [
-			IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,
-			IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,
-			IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,
-			IDC_RSCDISPLAYARSENAL_TAB_HANDGUN,
-			IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,
-			IDC_RSCDISPLAYARSENAL_TAB_VEST,
-			IDC_RSCDISPLAYARSENAL_TAB_BACKPACK,
-			IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR,
-			IDC_RSCDISPLAYARSENAL_TAB_GOGGLES,
-			IDC_RSCDISPLAYARSENAL_TAB_BINOCULARS,
-			[
-				IDC_RSCDISPLAYARSENAL_TAB_MAP
-				IDC_RSCDISPLAYARSENAL_TAB_GPS,
-				IDC_RSCDISPLAYARSENAL_TAB_RADIO,
-				IDC_RSCDISPLAYARSENAL_TAB_COMPASS,
-				IDC_RSCDISPLAYARSENAL_TAB_WATCH,
-				IDC_RSCDISPLAYARSENAL_TAB_NVGS
-			]
-		];
 		
 		{
-			if (_x isEqualType []) then {
+			if (_forEachIndex isEqualTo 9) then {
 				{
 					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
-					if !(_control getVariable ["OverrideTab"]) then { (_loadout select 10) set [_forEachIndex, nil] };
+					if !(_control getVariable ["OverrideTab", false]) then { (_loadout select 9) set [_forEachIndex, nil] };
 				} forEach (_x);
-			}
-			private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
-			if !(_control getVariable ["OverrideTab"]) then { _loadout set [_forEachIndex, nil] };
-		} forEach (_loadoutMap);
+			} else {
+				private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
+				if !(_control getVariable ["OverrideTab", false]) then { _loadout set [_forEachIndex, nil] };
+			};
+		} forEach LOADOUT_MAP;
 
-		if ((_loadout select 10) isEqualTo [nil, nil, nil, nil, nil, nil]) then { _loadout set [10, nil] };
-
+		rebelLoadouts deleteAt currentRebelLoadout;
 		rebelLoadouts set [currentRebelLoadout, _loadout];
 		publicVariable "rebelLoadouts";
 
@@ -3122,12 +3126,24 @@ switch _mode do {
 			removeBackpack player;
 		};
 
-		private _loadout = rebelLoadouts get currentRebelLoadout;
-
-		if (isNil "_loadout") then {
-			[player, 0, currentRebelLoadout] call A3A_fnc_equipRebel;
-		} else {
-			player setUnitLoadout _loadout;
+		private _rebelLoadouts = +rebelLoadouts;
+		private _loadout = _rebelLoadouts get currentRebelLoadout;
+		[player, 0, currentRebelLoadout] call A3A_fnc_equipRebel;
+		if (!isNil "_loadout") then {
+			player setUnitLoadout +_loadout;
+			{
+				if (_forEachIndex isEqualTo 9) then {
+					{
+						private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
+						private _item = (_loadout select 9) select _forEachIndex;
+						if (!isNil "_item") then { ["OverrideTab", _control] call SCRT_fnc_arsenal_loadoutArsenal };
+					} forEach (_x);
+				} else {
+					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
+					private _item = _loadout select _forEachIndex;
+					if (!isNil "_item") then { ["OverrideTab", _control] call SCRT_fnc_arsenal_loadoutArsenal };
+				};
+			} forEach LOADOUT_MAP;
 		};
 	};
 

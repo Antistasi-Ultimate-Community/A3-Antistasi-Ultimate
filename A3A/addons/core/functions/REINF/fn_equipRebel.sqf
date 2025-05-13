@@ -26,7 +26,9 @@ call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from se
 
 // TODO: add types unitAA and unitAT(name?) when UI is ready
 private _unitType = if (_forceClass != "") then {_forceClass} else {_unit getVariable "unitType"};
-private _customLoadout = rebelLoadouts get _unitType;
+private _typeTag = _unitType splitString "_" select 3;
+private _rebelLoadouts = +rebelLoadouts;
+private _customLoadout = _rebelLoadouts get _unitType;
 
 private _fnc_addSecondary = {
     params ["_unit"];
@@ -319,9 +321,6 @@ private _fnc_addUniform = {
         };
     };
 };
-
-private _unarmedLoadout = (A3A_faction_reb get "loadouts" get "militia_Unarmed") select 0 select 0;
-_unit setUnitLoadout _unarmedLoadout;
 
 if (!isNil "_customLoadout") then {
     // * Apply the loadout, then override it
