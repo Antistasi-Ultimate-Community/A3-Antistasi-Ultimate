@@ -893,7 +893,8 @@ switch _mode do {
 		];
 
 		//--- Weapon magazines and attachments
-		_showItems = _index in [IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_HANDGUN];
+		//_showItems = _index in [IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_HANDGUN];
+		_showItems = false;
 		_fadeItems = [1,0] select _showItems;
 		{
 			_idc = _x;
@@ -928,7 +929,8 @@ switch _mode do {
 		};
 
 		//--- Containers
-		_showCargo = _index in [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,IDC_RSCDISPLAYARSENAL_TAB_VEST,IDC_RSCDISPLAYARSENAL_TAB_BACKPACK];
+		//_showCargo = _index in [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,IDC_RSCDISPLAYARSENAL_TAB_VEST,IDC_RSCDISPLAYARSENAL_TAB_BACKPACK];
+		_showCargo = false;
 		_fadeCargo = [1,0] select _showCargo;
 		{
 			_idc = _x;
@@ -3100,6 +3102,8 @@ switch _mode do {
 				} forEach (_x);
 			} else {
 				private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
+				private _item = _loadout select _forEachIndex;
+				if (_item isEqualType []) then { _item set [1, nil] };
 				if !(_control getVariable ["OverrideTab", false]) then { _loadout set [_forEachIndex, nil] };
 			};
 		} forEach LOADOUT_MAP;
