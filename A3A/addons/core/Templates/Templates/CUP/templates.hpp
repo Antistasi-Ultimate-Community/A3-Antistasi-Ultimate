@@ -347,7 +347,7 @@
 
     class FlexFDF_Base : CUP_Base
     {
-        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_FIN_Faction"};
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_FIN_Faction", "KAR_RK62"};
         priority = 61;
     };
 
