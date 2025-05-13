@@ -535,7 +535,7 @@ switch _mode do {
 			_ctrlIcon = _display displayctrl (IDC_RSCDISPLAYARSENAL_ICON + _idc);
 			_ctrlTab = _display displayctrl (IDC_RSCDISPLAYARSENAL_TAB + _idc);
 			_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc);
-			if (_idc in [IDCS_LEFT]) then {
+			if (_idc in [IDCS_LEFT] && {!(_idc in ASSIGNED_ITEMS)}) then {
 				_ctrlList ctrladdeventhandler ["lbdblclick","['OverrideTab', _this select 0] call SCRT_fnc_arsenal_loadoutArsenal"];
 			};
 			{
@@ -2116,7 +2116,7 @@ switch _mode do {
 
 				};
 				_lastCargoListSelected = uiNamespace getVariable ["jna_lastCargoListSelected", IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG];
-				['TabSelectRight',[_display,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG]] call SCRT_fnc_arsenal_loadoutArsenal;
+				//['TabSelectRight',[_display,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG]] call SCRT_fnc_arsenal_loadoutArsenal;
 			};
 			case IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR: {
 				_oldItem = headgear player;
@@ -3121,10 +3121,10 @@ switch _mode do {
 		
 		{
 			if (_forEachIndex isEqualTo 9) then {
-				{
+				/*{
 					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
 					if !(_control getVariable ["OverrideTab", false]) then { (_loadout select 9) set [_forEachIndex, nil] };
-				} forEach (_x);
+				} forEach (_x);*/
 			} else {
 				private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
 				private _item = _loadout select _forEachIndex;
@@ -3162,11 +3162,11 @@ switch _mode do {
 			player setUnitLoadout +_loadout;
 			{
 				if (_forEachIndex isEqualTo 9) then {
-					{
+					/*{
 						private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
 						private _item = (_loadout select 9) select _forEachIndex;
 						if (!isNil "_item") then { ["OverrideTab", _control] call SCRT_fnc_arsenal_loadoutArsenal };
-					} forEach (_x);
+					} forEach (_x);*/
 				} else {
 					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
 					private _item = _loadout select _forEachIndex;

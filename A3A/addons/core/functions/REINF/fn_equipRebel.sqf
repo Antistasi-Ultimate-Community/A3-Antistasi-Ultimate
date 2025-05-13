@@ -46,7 +46,7 @@ private _rebelLoadouts = +rebelLoadouts;
 private _customLoadout = _rebelLoadouts get _unitType;
 
 private _fnc_addSecondary = {
-    params ["_unit", ["_overrideClass", nil]];
+    params ["_unit", "_overrideClass"];
 
     if !((_typeTag in ["LAT", "AT", "AA"]) || (_typeTag == "Rifleman" && {random 20 < tierWar})) exitWith {}; 
     
@@ -157,7 +157,7 @@ private _fnc_addGrenades = {
 };
 
 private _fnc_addPrimary = {
-    params ["_unit", ["_overrideClass", nil]];
+    params ["_unit", "_overrideClass"];
 
     private _weaponType = switch (_typeTag) do {
         case ("Sniper");
@@ -235,9 +235,9 @@ private _fnc_addClassEquip = {
 };
 
 private _fnc_addNightEquip = {
-    params ["_unit", ["_overrideClass", nil]];
+    params ["_unit", "_overrideClass"];
 
-    private _nvg = [_overrideClass, selectRandomWeighted (A3A_rebelGear get "NVGs")] select (isNil "_overrideClass");
+    private _nvg = if (!isNil "_overrideClass") then { _overrideClass } else { selectRandomWeighted (A3A_rebelGear get "NVGs") };
     if (_nvg != "") then { 
         _unit linkItem _nvg;
         private _weapon = primaryWeapon _unit;
@@ -311,7 +311,7 @@ private _fnc_addNightEquip = {
 };
 
 private _fnc_addUniform = {
-    params ["_unit", ["_overrideClass", nil]];
+    params ["_unit", "_overrideClass"];
 
     if (isNil "_overrideClass") then { _unit forceAddUniform (selectRandom (A3A_faction_reb get 'uniforms')) };
 
@@ -342,7 +342,6 @@ if (!isNil "_customLoadout") then {
     if (isNil {_customLoadout select 0}) then { _unit call _fnc_addPrimary } else { [_unit, primaryWeapon _unit] call _fnc_addPrimary };
     if (isNil {_customLoadout select 1}) then { _unit call _fnc_addSecondary } else { [_unit, secondaryWeapon _unit] call _fnc_addSecondary };
     if (isNil {_customLoadout select 2}) then { _unit call _fnc_addHandgun } else { [_unit, handgunWeapon _unit] call _fnc_addHandgun };
-    if (isNil {_customLoadout select 9 select 5}) then { _unit call _fnc_addNightEquip } else { [_unit, (assignedItems _unit) select 5] call _fnc_addNightEquip };
 
     // * Don't cheese allowing launchers with rifleman.
     // * If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it.
