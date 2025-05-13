@@ -247,6 +247,22 @@ _sfLoadoutData set ["helmets", ["Flex_CUP_POL_Opscore_SF", "Flex_CUP_POL_Opscore
 _sfLoadoutData set ["backpacks", ["Flex_CUP_POL_AssaultPack", "B_Carryall_oli", "B_Kitbag_rgr"]];
 //["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
 
+_sfLoadoutData set ["lightATLaunchers", [
+    ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEAT_M"], [], ""]
+]];
+_sfLoadoutData set ["lightHELaunchers", [
+    ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M"], [], ""]
+]];
+_sfLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_M72A6", "", "", "", [], [], ""]
+]];
+_sfLoadoutData set ["missileATLaunchers", [
+    ["CUP_launch_Javelin", "", "", "", ["CUP_Javelin_M"], [], ""]
+]];
+_sfLoadoutData set ["AALaunchers", [
+    ["CUP_launch_Igla", "", "", "", [], [], ""]
+]];
+
 _sfLoadoutData set ["slRifles", [
     ["CUP_arifle_HK416_Black", "CUP_muzzle_snds_M16", "CUP_acc_ANPEQ_15_Flashlight_Black_L", "CUP_optic_ACOG_TA01B_RMR_Black", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
     ["CUP_arifle_HK416_Black", "CUP_muzzle_snds_M16", "CUP_acc_ANPEQ_15_Flashlight_Black_L", "CUP_optic_ACOG2", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
@@ -418,6 +434,22 @@ _eliteLoadoutData set ["Hvests", ["Flex_CUP_POL_V_CarrierRigKBT_01_heavy_F"]];
 _eliteLoadoutData set ["helmets", ["Flex_CUP_POL_Opscore_SF", "Flex_CUP_POL_Opscore_SF_Camo", "Flex_CUP_POL_H_HelmetHBK_F", "Flex_CUP_POL_H_HelmetHBK_chops_F", "Flex_CUP_POL_H_HelmetHBK_ear_F", "Flex_CUP_POL_H_HelmetHBK_headset_F", "Flex_CUP_POL_Opscore_No_Headset", "Flex_CUP_POL_Opscore_No_Headset_Camo", "Flex_CUP_POL_Opscore_Camo", "Flex_CUP_POL_Opscore"]];
 _eliteLoadoutData set ["backpacks", ["Flex_CUP_POL_AssaultPack", "B_Carryall_oli", "B_Kitbag_rgr"]];
 
+_eliteLoadoutData set ["lightATLaunchers", [
+    ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEAT_M"], [], ""]
+]];
+_eliteLoadoutData set ["lightHELaunchers", [
+    ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M"], [], ""]
+]];
+_eliteLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_M72A6", "", "", "", [], [], ""]
+]];
+_eliteLoadoutData set ["missileATLaunchers", [
+    ["CUP_launch_Javelin", "", "", "", ["CUP_Javelin_M"], [], ""]
+]];
+_eliteLoadoutData set ["AALaunchers", [
+    ["CUP_launch_Igla", "", "", "", [], [], ""]
+]];
+
 _eliteLoadoutData set ["slRifles", [
     ["CUP_arifle_HK416_Black", "CUP_muzzle_snds_M16", "CUP_acc_ANPEQ_15_Flashlight_Black_L", "CUP_optic_ACOG_TA01B_RMR_Black", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
     ["CUP_arifle_HK416_Black", "CUP_muzzle_snds_M16", "CUP_acc_ANPEQ_15_Flashlight_Black_L", "CUP_optic_ACOG2", ["CUP_30Rnd_556x45_Emag", "CUP_30Rnd_556x45_Emag_Tracer_Green"], [], ""],
@@ -588,6 +620,19 @@ _militaryLoadoutData set ["vests", ["Flex_CUP_POL_Mk4_Empty", "Flex_CUP_POL_Mk4_
 _militaryLoadoutData set ["backpacks", ["Flex_CUP_POL_AssaultPack", "B_TacticalPack_oli", "B_Kitbag_rgr", "B_FieldPack_oli"]];
 _militaryLoadoutData set ["helmets", ["Flex_CUP_POL_Opscore_No_Headset", "Flex_CUP_POL_Opscore_No_Headset_Camo", "Flex_CUP_POL_PASGT_Helmet"]];
 
+_militaryLoadoutData set ["lightATLaunchers", [
+    ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEAT_M"], [], ""]
+]];
+_militaryLoadoutData set ["lightHELaunchers", [
+    ["CUP_launch_MAAWS", "", "", "CUP_optic_MAAWS_Scope", ["CUP_MAAWS_HEDP_M"], [], ""]
+]];
+_militaryLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_M72A6", "", "", "", [], [], ""]
+]];
+_militaryLoadoutData set ["AALaunchers", [
+    ["CUP_launch_Igla", "", "", "", [], [], ""]
+]];
+
 _militaryLoadoutData set ["slRifles", [
     ["Flex_CUP_POL_arifle_ACR_blk", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "CUP_acc_ANPEQ_15_Black_Top", "CUP_optic_HoloBlack", ["CUP_30Rnd_556x45_PMAG_BLACK", "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Green"], [], ""],
     ["Flex_CUP_POL_arifle_ACR_blk", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "CUP_acc_ANPEQ_15_Black_Top", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_PMAG_BLACK", "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Green"], [], ""],
@@ -663,6 +708,13 @@ _militiaLoadoutData set ["uniforms", ["Flex_CUP_POL_BDU_Pads", "Flex_CUP_POL_Gor
 _militiaLoadoutData set ["vests", ["CUP_V_B_PASGT_OD", "CUP_V_B_PASGT_no_bags_OD"]];
 _militiaLoadoutData set ["backpacks", ["B_FieldPack_oli", "Flex_CUP_POL_AssaultPack", "B_TacticalPack_blk"]];
 _militiaLoadoutData set ["helmets", ["Flex_CUP_POL_PASGT_Helmet"]];
+
+_militaryLoadoutData set ["ATLaunchers", [
+    ["CUP_launch_M72A6", "", "", "", [], [], ""]
+]];
+_militaryLoadoutData set ["AALaunchers", [
+    ["CUP_launch_Igla", "", "", "", [], [], ""]
+]];
 
 _militiaLoadoutData set ["slRifles", [
     ["CUP_arifle_Colt727", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag_Tracer_Green"], [], ""],

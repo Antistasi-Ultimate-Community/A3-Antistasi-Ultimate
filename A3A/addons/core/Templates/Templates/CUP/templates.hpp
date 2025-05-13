@@ -327,7 +327,7 @@
     {
         side = "Occ";
         flagTexture = "\A3\ui_f\data\map\markers\flags\Poland_ca.paa";
-        name = "CUP PAF";
+        name = "CUP Polish Armed Forces";
         file = "CUP_AI_PAF";
     };
 
@@ -343,4 +343,32 @@
         flagTexture = "A3A\addons\core\Pictures\Markers\PLA_Flag.paa";
         name = "CUP PLA";
         file = "CUP_AI_PLA";
+    };
+
+    class FlexFDF_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_FIN_Faction"};
+        priority = 61;
+    };
+
+    class Flex_FDF : FlexFDF_Base
+    {
+        side = "Occ";
+        flagTexture = "A3A\addons\core\Pictures\Markers\marker_fin_co.paa";
+        name = "CUP Finnish Defense Force";
+        file = "CUP_AI_FDF";
+    };
+
+    class FlexSPA_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_SPA_Faction"};
+        priority = 61;
+    };
+
+    class Flex_SPA : FlexSPA_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Spain_ca.paa";
+        name = "CUP Spain";
+        file = "CUP_AI_SPA";
     };
