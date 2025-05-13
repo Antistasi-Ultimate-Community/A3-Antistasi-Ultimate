@@ -312,6 +312,27 @@ _sfLoadoutData set ["rifles", [
     ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
     ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""]
 ]];
+_sfLoadoutData set ["carbines", [
+    ["CUP_arifle_G36K_RIS", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_RIS", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_RIS", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    
+    ["CUP_arifle_G36K_KSK", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+
+    ["CUP_arifle_G36K_KSK_AFG", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK_AFG", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK_AFG", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+
+    ["CUP_arifle_G36KA3", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+
+    ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""]
+]];
 _sfLoadoutData set ["grenadeLaunchers", [
     ["CUP_arifle_G36K_RIS_AG36", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], ["CUP_1Rnd_HE_M203"], ""],
     ["CUP_arifle_G36K_RIS_AG36", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], ["CUP_1Rnd_HE_M203"], ""],
@@ -413,6 +434,27 @@ _eliteLoadoutData set ["rifles", [
     ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
     ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""]
 ]];
+_eliteLoadoutData set ["carbines", [
+    ["CUP_arifle_G36K_RIS", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_RIS", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_RIS", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    
+    ["CUP_arifle_G36K_KSK", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+
+    ["CUP_arifle_G36K_KSK_AFG", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK_AFG", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_KSK_AFG", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+
+    ["CUP_arifle_G36KA3", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+
+    ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36KA3_afg", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_HensoldtZO_low", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""]
+]];
 _eliteLoadoutData set ["grenadeLaunchers", [
     ["CUP_arifle_G36K_RIS_AG36", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_MicroT1", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], ["CUP_1Rnd_HE_M203"], ""],
     ["CUP_arifle_G36K_RIS_AG36", "CUP_muzzle_snds_G36_black", "CUP_acc_LLM01_L", "CUP_optic_AC11704_Black", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], ["CUP_1Rnd_HE_M203"], ""],
@@ -472,6 +514,11 @@ _militaryLoadoutData set ["slRifles", [
     ["CUP_arifle_G36K_AG36", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], ["1Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _militaryLoadoutData set ["rifles", [
+    ["CUP_arifle_G36E", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
+    ["CUP_arifle_G36K_VFG", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""]
+]];
+_militaryLoadoutData set ["carbines", [
     ["CUP_arifle_G36E", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
     ["CUP_arifle_G36K", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""],
     ["CUP_arifle_G36K_VFG", "", "acc_flashlight", "", ["CUP_30Rnd_556x45_G36", "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36"], [], ""]

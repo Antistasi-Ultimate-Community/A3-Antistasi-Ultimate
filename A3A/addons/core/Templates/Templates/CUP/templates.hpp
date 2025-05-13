@@ -317,18 +317,18 @@
         file = "CUP_AI_EST";
     };
 
-    class FlexPAF_Base : CUP_Base
+    class FlexPOL_Base : CUP_Base
     {
         requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_POL_Faction"};
         priority = 61;
     };
 
-    class Flex_PAF : FlexPAF_Base
+    class Flex_POL : FlexPOL_Base
     {
         side = "Occ";
         flagTexture = "\A3\ui_f\data\map\markers\flags\Poland_ca.paa";
         name = "CUP Polish Armed Forces";
-        file = "CUP_AI_PAF";
+        file = "CUP_AI_POL";
     };
 
     class FlexPLA_Base : CUP_Base
@@ -340,7 +340,7 @@
     class Flex_PLA : FlexPLA_Base
     {
         side = "Inv";
-        flagTexture = "A3A\addons\core\Pictures\Markers\PLA_Flag.paa";
+        flagTexture = "\x\A3A\addons\core\Pictures\Markers\PLA_Flag.paa";
         name = "CUP PLA";
         file = "CUP_AI_PLA";
     };
@@ -354,7 +354,7 @@
     class Flex_FDF : FlexFDF_Base
     {
         side = "Occ";
-        flagTexture = "A3A\addons\core\Pictures\Markers\marker_fin_co.paa";
+        flagTexture = "\x\A3A\addons\core\Pictures\Markers\marker_fin_co.paa";
         name = "CUP Finnish Defense Force";
         file = "CUP_AI_FDF";
     };

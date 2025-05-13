@@ -18,8 +18,8 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 //   Side Information   //
 //////////////////////////
 
-["name", "PAF"] call _fnc_saveToTemplate;
-["spawnMarkerName", format [localize "STR_supportcorridor", "PAF"]] call _fnc_saveToTemplate;
+["name", "POL"] call _fnc_saveToTemplate;
+["spawnMarkerName", format [localize "STR_supportcorridor", "POL"]] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", "\A3\ui_f\data\map\markers\flags\Poland_ca.paa"] call _fnc_saveToTemplate;

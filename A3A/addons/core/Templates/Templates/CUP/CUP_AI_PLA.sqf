@@ -626,6 +626,17 @@ _militaryLoadoutData set ["rifles", [
     ["CUP_arifle_AK103_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_AC11704_Black", ["CUP_30Rnd_762x39_AK103_bakelite_M", "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M"], [], ""],
     ["CUP_arifle_AK103_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_MicroT1", ["CUP_30Rnd_762x39_AK103_bakelite_M", "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M"], [], ""]
 ]];
+_militaryLoadoutData set ["carbines", [
+    ["arifle_CTAR_blk_F", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_CompM4", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
+    ["arifle_CTAR_blk_F", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_1P87_RIS", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
+    ["arifle_CTAR_blk_F", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_AC11704_Black", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
+    ["arifle_CTAR_blk_F", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_MicroT1", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
+
+    ["CUP_arifle_AK103_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_CompM4", ["CUP_30Rnd_762x39_AK103_bakelite_M", "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M"], [], ""],
+    ["CUP_arifle_AK103_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_1P87_RIS", ["CUP_30Rnd_762x39_AK103_bakelite_M", "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M"], [], ""],
+    ["CUP_arifle_AK103_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_AC11704_Black", ["CUP_30Rnd_762x39_AK103_bakelite_M", "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M"], [], ""],
+    ["CUP_arifle_AK103_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "acc_flashlight", "CUP_optic_MicroT1", ["CUP_30Rnd_762x39_AK103_bakelite_M", "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M"], [], ""]
+]];
 _militaryLoadoutData set ["SMGs", [
     ["SMG_02_F", "", "", "optic_Yorris", ["CUP_30Rnd_9x19_EVO", "30Rnd_9x21_Mag_SMG_02_Tracer_Green"], [], ""],
     ["SMG_02_F", "", "", "CUP_optic_MRad", ["CUP_30Rnd_9x19_EVO", "30Rnd_9x21_Mag_SMG_02_Tracer_Green"], [], ""],
