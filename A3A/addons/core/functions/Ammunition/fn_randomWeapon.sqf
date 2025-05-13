@@ -8,7 +8,7 @@
     
     Params:
         _unit <OBJECT> <Default: None> the unit to equip
-        _weaponType <STRING> <Default: None> the type of weapon, e.g. "MachineGuns"
+        _weaponType <STRING> <Default: None> the type of weapon, e.g. "MachineGuns", or a classname for a specific weapon
         _totalMagWeight <SCALAR> <Default: 50> total mass of weapon magazines to add
     
     Dependencies:
@@ -34,23 +34,29 @@ params ["_unit", "_weaponType", ["_totalMagWeight", 50]];
 
 call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from server if we're out of date
 
-private _isPrimary = _weaponType isNotEqualTo "Handguns";
+private ["_weapon", "_isPrimary"];
+if (isClass (configFile >> "CfgWeapons" >> _weaponType)) then {
+    _weapon = _weaponType;
+    _isPrimary = "Handguns" in ([_weaponType] call A3A_fnc_equipmentClassToCategories);
+} else {
+    _isPrimary = _weaponType isNotEqualTo "Handguns";
 
-private _pool = A3A_rebelGear get _weaponType;
-if (_isPrimary && {_pool isEqualTo []}) then {
-    _pool = A3A_rebelGear get "Rifles";
-    if (_pool isEqualTo []) then {
-        _pool = A3A_rebelGear get "SMGs";
+    private _pool = A3A_rebelGear get _weaponType;
+    if (_isPrimary && {_pool isEqualTo []}) then {
+        _pool = A3A_rebelGear get "Rifles";
         if (_pool isEqualTo []) then {
-            private _pistolPool = A3A_rebelGear get "Handguns";
-            for "_i" from 1 to (count _pistolPool) step 2 do { 
-                _pistolPool set [_i, 0.5]
+            _pool = A3A_rebelGear get "SMGs";
+            if (_pool isEqualTo []) then {
+                private _pistolPool = A3A_rebelGear get "Handguns";
+                for "_i" from 1 to (count _pistolPool) step 2 do { 
+                    _pistolPool set [_i, 0.5]
+                };
+                _pool = (A3A_rebelGear get "Shotguns") + (A3A_rebelGear get "SniperRifles") + _pistolPool;
             };
-            _pool = (A3A_rebelGear get "Shotguns") + (A3A_rebelGear get "SniperRifles") + _pistolPool;
         };
     };
+    _weapon = selectRandomWeighted _pool;
 };
-private _weapon = selectRandomWeighted _pool;
 
 if (isNil "_weapon") exitWith {};
 
@@ -64,7 +70,7 @@ if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
     if (_glmag != "") then { _unit addMagazines [_glmag, 5] };
 };
 
-_unit addWeapon _weapon;
+if !(_weapon in (weapons _unit)) then { _unit addWeapon _weapon };
 private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
 if !(isNil "_magazine") then {
     private _magweight = 5 max getNumber (configFile >> "CfgMagazines" >> _magazine >> "mass");
