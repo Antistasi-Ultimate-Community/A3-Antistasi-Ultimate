@@ -37,9 +37,9 @@ call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from se
 private ["_weapon", "_isPrimary"];
 if (isClass (configFile >> "CfgWeapons" >> _weaponType)) then {
     _weapon = _weaponType;
-    _isPrimary = "Handguns" in ([_weaponType] call A3A_fnc_equipmentClassToCategories);
+    _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect ([_weaponType] call A3A_fnc_equipmentClassToCategories)) isEqualTo [];
 } else {
-    _isPrimary = _weaponType isNotEqualTo "Handguns";
+    _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect [_weaponType]) isEqualTo [];
 
     private _pool = A3A_rebelGear get _weaponType;
     if (_isPrimary && {_pool isEqualTo []}) then {
@@ -72,7 +72,7 @@ if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
 
 if !(_weapon in (weapons _unit)) then { _unit addWeapon _weapon };
 private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
-if !(isNil "_magazine") then {
+if (!isNil "_magazine" && {!("Disposable" in _categories)}) then {
     private _magweight = 5 max getNumber (configFile >> "CfgMagazines" >> _magazine >> "mass");
     _unit addWeaponItem [_weapon, _magazine];
     _unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
