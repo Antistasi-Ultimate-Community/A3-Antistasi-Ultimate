@@ -53,7 +53,7 @@ A3A_building_EHDB = [
 		{deleteVehicle _x} forEach (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY);
 		{
 			_x params["_actionName", "_eventType", "_ehID"];
-			removeUserActionEventHandler[_actioName, _eventType, _ehID];
+			removeUserActionEventHandler[_actionName, _eventType, _ehID];
 		} forEach (A3A_building_EHDB # USER_ACTION_EHS);
 		removeMissionEventHandler ["EachFrame", (A3A_building_EHDB # EACH_FRAME_EH)];
 		(A3A_building_EHDB # BUILD_DISPLAY) closeDisplay 1;
