@@ -1,4 +1,3 @@
-#include "..\functions\Builder\placerDefines.hpp"
 #define ACTIONINTERNAL(type) "["##type##", _this] call A3A_fnc_keyActions"
 #define ACTION(type) ACTIONINTERNAL(QGVAR(type))
 class CfgUserActions {
