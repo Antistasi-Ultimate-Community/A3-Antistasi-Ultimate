@@ -38,18 +38,44 @@ class CfgUserActions {
         onActivate = ACTION(commanderRebelMenu);
     };
 
+    class GVAR(buildingPlacerAbort) {
+        displayName = $STR_A3A_keyActions_buildingPlacerAbort_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerAbort_desc;
+    };
+
+    class GVAR(buildingPlacerDelete) {
+        displayName = $STR_A3A_keyActions_buildingPlacerDelete_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerDelete_desc;
+    };
+
+    class GVAR(buildingPlacerPlace) {
+        displayName = $STR_A3A_keyActions_buildingPlacerPlace_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerPlace_desc;
+    };
+
+    class GVAR(buildingPlacerRepair) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRepair_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRepair_desc;
+    };
+
     class GVAR(buildingPlacerRotateCCW) {
         displayName = $STR_A3A_keyActions_buildingPlacerRotateCCW_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerRotateCCW_desc;
-        onActivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CCW,true)] });
-        onDeactivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CCW,false)] });
     };
 
     class GVAR(buildingPlacerRotateCW) {
         displayName = $STR_A3A_keyActions_buildingPlacerRotateCW_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerRotateCW_desc;
-        onActivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CW,true)] });
-        onDeactivate = QUOTE(if (buildingPlacerUseUnhardcodedKeybinds && !(isNil {A3A_building_EHDB})) then { A3A_building_EHDB set[ARR_2(ROTATION_MODE_CW,false)] });
+    };
+
+    class GVAR(buildingPlacerSnapToSurface) {
+        displayName = $STR_A3A_keyActions_buildingPlacerSnapToSurface_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerSnapToSurface_desc;
+    };
+
+    class GVAR(buildingPlacerUnsafeMode) {
+        displayName = $STR_A3A_keyActions_buildingPlacerUnsafeMode_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerUnsafeMode_desc;
     };
 };
 #undef ACTION

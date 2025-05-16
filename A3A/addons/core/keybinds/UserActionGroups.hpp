@@ -9,8 +9,13 @@ class UserActionGroups {
             QGVAR(earPlugs),
             QGVAR(customHintDismiss),
             QGVAR(commanderRebelMenu),
+            GVAR(buildingPlacerAbort),
+            GVAR(buildingPlacerDelete),
+            GVAR(buildingPlacerPlace),
             GVAR(buildingPlacerRotateCCW),
-            GVAR(buildingPlacerRotateCW)
+            GVAR(buildingPlacerRotateCW),
+            GVAR(buildingPlacerSnapToSurface),
+            GVAR(buildingPlacerUnsafeMode)
         };
     };
 };

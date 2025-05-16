@@ -9,7 +9,7 @@
 #define	BUILD_OBJECT_TEMP_OBJECT_ARRAY	8
 #define	END_BUILD_FUNC	9
 #define	BUILD_DISPLAY	10
-#define	KEY_DOWN_EH	11
+#define	USER_ACTION_EHS	11
 #define	KEY_UP_EH	12
 #define	EACH_FRAME_EH	13
 #define	UPDATE_BB	14
