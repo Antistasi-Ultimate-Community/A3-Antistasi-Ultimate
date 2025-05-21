@@ -36,8 +36,8 @@ private ["_hr","_unit"];
 	if ([_unit] call A3A_fnc_canFight) then {
 		_resourcesFIA = _resourcesFIA + (server getVariable (_unit getVariable "unitType"));
 		_hr = _hr +1;
-		private _orgLoadout = flatten (_unit getVariable ["orgLoadout", []]);
-		private _curLoadout = flatten (getUnitLoadout _unit);
+		private _orgLoadout = flatten (_unit getVariable ["orgLoadout", []]) select {_x isEqualType ""};
+		private _curLoadout = flatten (getUnitLoadout _unit) select {_x isEqualType ""};
 		_items append (_curLoadout - _orgLoadout);
 	};
 	deleteVehicle _x;
