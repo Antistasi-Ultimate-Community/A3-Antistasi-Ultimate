@@ -118,8 +118,13 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
 	if (_markers isEqualTo []) exitWith {};
 	if !(_typeX isKindOf "StaticMortar") then {
-		[_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-		if (_side == teamPlayer && {!isNil "serverInitDone"}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
+		if (_veh in UngaragedVehicles) then {
+			[_veh, "ungaragedstatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+			_veh setVariable ["lockedForAI", true, true]; 
+		} else {
+			[_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+			if (_side == teamPlayer && {!isNil "serverInitDone"}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
+		};
 	};
 };
 

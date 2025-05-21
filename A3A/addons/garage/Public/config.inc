@@ -69,6 +69,8 @@ HR_GRG_fnc_vehInit = {
     if ((_this isKindOf  "LandVehicle") || (_this isKindOf  "Ship")) then {
 		staticsToSave pushBack _this; 
 		publicVariable "staticsToSave";
+        UngaragedVehicles pushBack _this; 
+		publicVariable "UngaragedVehicles";
 	};
     _this setVariable ["ownerX",getPlayerUID player,true];
     [_this, teamPlayer] call A3A_fnc_AIVEHinit;
