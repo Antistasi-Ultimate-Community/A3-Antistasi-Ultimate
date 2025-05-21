@@ -300,11 +300,4 @@ if (backpackItems _unit isEqualTo []) then { removeBackpack _unit };
 
 Verbose_3("Class %1, type %2, loadout %3", _unitType, _recruitType, str (getUnitLoadout _unit));
 
-if (_recruitType isEqualTo 0) then {
-    _unit addEventHandler ["SlotItemChanged", {
-        params ["_unit", "_name", "_slot", "_assigned", "_weapon"];
-        private _collected = _unit getVariable ["collectedItems", []];
-        _collected pushBack _name;
-        _unit setVariable ["collectedItems", _collected, true];
-    }];
-};
+if (_recruitType isEqualTo 0) then { _unit setVariable ["orgLoadout", getUnitLoadout _unit, true] };
