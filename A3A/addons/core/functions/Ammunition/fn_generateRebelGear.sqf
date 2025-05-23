@@ -24,16 +24,6 @@
         Nothing
 */
 
-/*
-    Generate the rebel gear array for equipping AIs
-
-Parameters:
-    No parameters, returns nothing
-
-Environment:
-    Server, scheduled or unscheduled
-*/
-
 #include "..\..\script_component.hpp"
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"     // jna_datalist indices
 FIX_LINE_NUMBERS()
@@ -62,10 +52,13 @@ private _fnc_addItem = [_fnc_addItemUnlocks, _fnc_addItemNoUnlocks] select (minW
 private _fnc_getAvailableMagazines = {
     params ["_class", "_categories", ["_baseClass", ""]];
 
-    private _magsCompat = [compatibleMagazines [_baseClass, _class], compatibleMagazines _class] select (_baseClass == "");
+    private _allMags = jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL;
+    private _cmpMags = compatibleMagazines ([[_baseClass, _class], _class] select (_baseClass == ""));
     {
-        if (_x in _magsCompat) then { (_rebelGear get "Magazines") getOrDefault [_class, [], true] pushBack _x };
-    } forEach (unlockedMagBullet + unlockedMagShotgun + unlockedMagShell + unlockedMagMissile + unlockedMagRocket);
+        _x params ["_magClass", "_magQty"];
+        private _unlocked = [_magQty == -1, _magQty == -1 || {_magQty > A3A_guestItemLimit}] select (minWeaps < 0);
+        if (_unlocked && {_magClass in _cmpMags}) then { (_rebelGear get "Magazines") getOrDefault [_class, [], true] pushBack _x };
+    } forEach (_allMags);
 
     if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
         // lookup real underbarrel GL magazine, because not everything is 40mm
