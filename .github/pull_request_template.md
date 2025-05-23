@@ -1,15 +1,18 @@
 ## What type of PR is this?
-1. [ ] Bug
-2. [ ] Change
-3. [ ] Feature
-4. [ ] Miscellaneous
+- [ ] Bug
+- [ ] Change
+- [ ] Feature
+- [ ] Miscellaneous
 
 <details><summary><i><b>
 Sub-categories:
 </b></i></summary>
 
-1. [ ] Template
-2. [ ] Map
+- [ ] Template
+- [ ] Map
+- [ ] Config
+- [ ] Function
+- [ ] Localization
 
 </details>
 
@@ -19,44 +22,39 @@ Sub-categories:
 
 > ...
 
-**How can your changes be tested, or bugfix reproduced?**
+**How can your changes be tested, or reproduced?**
 
 > ...
 
-**Do your changes include any external code, code that wasn't written by you, or PR's from other repositories?**
+**Does this PR include changes not authored by you?**
 
-1. [ ] No
-2. [ ] Yes (Provide info below, with relevant info.)
-3. [ ] Unsure (Provide info below, with relevant info.)
+- [ ] No
+- [ ] Yes (See below)
 
 <details><summary><i><b>
 Further info:
 </b></i></summary><br>
-  
-> N/A.
+
+- [ ] I confirm that I, and by extension this repository, can legally use these third-party changes. (Provide links or author attribution.)
+
+> ...
 
 </details>
 
-## Please verify the following (If Possible).
+## Please verify the following (If possible).
 
 `*` - Mandatory
 
-1. [ ] These changes are my own, or I have written permission to use the changes. `*`
-2. [ ] These changes are ready for review, and should not be treated as a draft (unless marked). `*`
-3. [ ] I have loaded the mission in LAN host.
-4. [ ] I have loaded the mission on a dedicated server.
+- [ ] These changes are my own, or I have written permission to use them. `*`
+- [ ] These changes are ready for review, or will be marked as a draft. `*`
+- [ ] I have loaded the mission in LAN host.
+- [ ] I have loaded the mission on a dedicated server.
 
-<details><summary><i><b>
 Is further work needed?
-</b></i></summary><br>
 
-Tick all that apply:
-
-1. [ ] Needs further testing.
-2. [ ] Needs further changes.
-3. [ ] Needs to be converted to a draft.
-
-</details>
+- [ ] Needs further testing.
+- [ ] Needs further changes.
+- [ ] Needs to be converted to a draft.
 
 ## Please specify which Issue this PR Resolves (If Applicable).
 This PR closes #XYZ.
@@ -65,6 +63,6 @@ This PR closes #XYZ.
 Notes:
 </b></i></summary><br>
 
-> N/A.
+> ...
 
 </details>
