@@ -186,7 +186,6 @@ _reconVehicleDummy setVectorUp [-cos (getDir _reconVehicleDummy + 90), sin (getD
 _reconVehicleDummy setVectorDirAndUp [vectorUp _reconVehicleDummy, vectorDir _reconVehicleDummy vectorMultiply -1];
 
 private _vel = velocity _reconVehicleDummy;
-private _dir = vectorDir _reconVehicleDummy;
 private _additionalSpeed = 200; // in m/s
 private _targetVector = [-cos (getDir _reconVehicleDummy + 90), sin (getDir _reconVehicleDummy + 90), 1 / (tan (_angle - 90))];
 _reconVehicleDummy setVelocity (_targetVector vectorMultiply _additionalSpeed);
