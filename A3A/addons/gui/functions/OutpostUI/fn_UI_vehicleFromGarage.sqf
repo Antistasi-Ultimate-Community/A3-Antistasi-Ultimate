@@ -44,6 +44,14 @@ _selectButton ctrlRemoveAllEventHandlers "ButtonClick";
 
 [_vehicleListBox,_category] call A3A_fnc_processVehicleCategory;
 
+//preview cam
+private _previewCamera = "camera" camCreate [10,0,1000];
+_previewCamera enableSimulation false;
+_previewCamera cameraEffect ["Internal", "Back"];
+showCinemaBorder false;
+enableEnvironment false; //wind sound
+_previewCamera camCommit 0;
+
 A3U_fnc_displaystuff = {
     _data params ["_control","_selectedIndex","_vehFullData"];
     //diag_log _data;
@@ -82,7 +90,7 @@ A3U_fnc_displaystuff = {
         _undercoverIcon ctrlSetText A3A_Icon_HideVic;
         _underCoverIcon ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_undercover_tooltip";
         _undercoverIcon ctrlCommit 0;
-    };
+    }; /// probably not needed anymore, unless we want to use civ vehicles in outposts
 
     // Show item
     // creating vehicle for the preview
@@ -183,7 +191,16 @@ A3U_fnc_displaystuff = {
     _Origins ctrlCommit 0;
 };
 
-_vehicleListBox lbSetCurSel 0;
+// Автоматически выбираем первый элемент если есть
+if (lbSize _vehicleListBox > 0) then {
+    _vehicleListBox lbSetCurSel 0;
+    // Форсируем обновление данных
+    private _vehFullData = parseSimpleArray (_vehicleListBox lbData 0);
+    [_vehicleListBox, 0, _vehFullData] call A3U_fnc_displaystuff;
+} else {
+    vehicleToOutpost = "";
+};
+
 
 // Обработчик события выбора техники из листбокса
 _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle in list box, should use this onLBDblClick
@@ -197,6 +214,8 @@ _vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle 
 // Кнопка для закрытия диалога
 _selectButton ctrlAddEventHandler ["ButtonClick", {
     params ["_control"];
+    // Проверка выбранной техники
+    if (vehicleToOutpost == "") exitWith {};
     closeDialog 2;
     camDestroy _previewCamera;
     {

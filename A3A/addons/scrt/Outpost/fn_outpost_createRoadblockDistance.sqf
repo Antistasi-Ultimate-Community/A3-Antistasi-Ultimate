@@ -8,6 +8,11 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _riflemanType = A3A_faction_reb get "unitRifle";
 
+diag_log _vehicleX;
+diag_log _vehicleX;
+diag_log _vehicleX;
+diag_log _vehicleX;
+
 if (_vehicleX isEqualTo objNull) then {
     _vehicleX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
 };
@@ -82,6 +87,7 @@ if (_crewManIndex != -1) then {
         private _commander = _groupXUnits select _commanderIndex;
         _commander assignAsCommander _veh;
         _commander moveInCommander _veh;
+        [_commander, 30] spawn SCRT_fnc_common_scanHorizon;
     };
 
     // Заполнение турелей
@@ -97,6 +103,7 @@ if (_crewManIndex != -1) then {
                 private _unit = [_groupX, A3A_faction_reb get "unitRifle", _positionX, [], 10] call A3A_fnc_createUnit; /// there are only 2 rifleman in the squad so why not
                 _unit assignAsTurret [_veh, _x];
                 _unit moveInTurret [_veh, _x];
+                [_unit, 30] spawn SCRT_fnc_common_scanHorizon;
             };
         };
     } forEach _turrets;

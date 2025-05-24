@@ -91,6 +91,9 @@ switch (true) do {
 		publicVariable "markersX";
 		spawner setVariable [_marker,2,true]; ///we need to sent selected vehicle with marker to save it and when marker/roadblock spawns it will spawn with selected vehicle(always)
 		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
+		diag_log _vehicle;
+		diag_log _vehicle;
+		diag_log _vehicle;
 		spawner setVariable [format[_marker + "_vehiclecustomazation"], _curentlySelectedVehicleCustomization];
 		spawner setVariable [format[_marker + "_vehicledirection"], _vehicledirection];
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
@@ -116,11 +119,9 @@ switch (true) do {
 			{
 			    // Извлечение UID
 			    private _vehicleUID2 = _x;
-			    diag_log format["Обработка UID: %1 (Ожидается: %2)", _vehicleUID, curentlySelectedVehicleUID];
 
 			    // Сравнение UID
 			    if (_vehicleUID2 isEqualTo _vehicleUID) then {
-			        diag_log "Совпадение найдено!";
 			        _toRemove pushBack [_CategoryToremoveVehicleFrom, _x];
 			    };
 			} forEach HR_GRG_Vehicles#_CategoryToremoveVehicleFrom;
@@ -132,7 +133,6 @@ switch (true) do {
 			        _x params ["_catIndex", "_vehIndex"];
 			        private _category = HR_GRG_Vehicles select _catIndex;
 			        _category deleteAt _vehIndex;
-			        diag_log format["Удален элемент с индексом %1", _vehIndex];
 					//remove from source registre
     				{
     				    private _index = _x find _vehIndex;
@@ -146,7 +146,6 @@ switch (true) do {
 			    // Синхронизация данных
 			    //HR_GRG_Vehicles set [_categoryIndex, HR_GRG_Vehicles#0];
 			    publicVariable "HR_GRG_Vehicles";
-			    systemChat "Техника успешно удалена";
 			} else {
 			    systemChat "Техника с UID не найдена";
 			    diag_log "Совпадений не обнаружено";

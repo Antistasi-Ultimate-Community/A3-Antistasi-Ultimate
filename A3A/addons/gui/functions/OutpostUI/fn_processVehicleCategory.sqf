@@ -25,12 +25,12 @@ processVehicleCategory = {
 
 switch (_category) do {
     case ("light"): {
-        [_vehicleListBox, HR_GRG_Vehicles#0, 0] call processVehicleCategory;
-    };
-    case ("heavy"): {
         [_vehicleListBox, HR_GRG_Vehicles#1, 1] call processVehicleCategory;
     };
+    case ("heavy"): {
+        [_vehicleListBox, HR_GRG_Vehicles#2, 2] call processVehicleCategory;
+    };
     case ("Static"): {
-        [_vehicleListBox, HR_GRG_Vehicles#4, 4] call processVehicleCategory;
+        [_vehicleListBox, HR_GRG_Vehicles#7, 7] call processVehicleCategory;
     };
 };

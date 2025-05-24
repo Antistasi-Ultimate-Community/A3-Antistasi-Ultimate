@@ -155,11 +155,11 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
             idc = -1;
             deletable = 1;
             type = CT_CONTROLS_GROUP;
-            x = 60 * GRID_W;
+            x = 55 * GRID_W;
             y = DIALOG_Y + 57 * GRID_H;
-            w = 50 * GRID_W;
+            w = 55 * GRID_W;
             h = 7 * GRID_H;
-            size = GRID_H * 5;
+            size = GRID_H * 4.5;
             style = ST_MULTI;
             shadow = 0;
             fade = 0;
@@ -210,9 +210,9 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
                     colorBackground[]= {0.23,0.23,0.23,0.55};
                     x = 0;
                     y = 0;
-                    w = 50 * GRID_W;
+                    w = 55 * GRID_W;
                     h = 7 * GRID_H;
-                    size = GRID_H * 5;
+                    size = GRID_H * 4.5;
                     text = "";
                     class Attributes
                     {
@@ -323,7 +323,7 @@ class A3A_StaticHMGFromGarage : A3A_VehicleFromGarage
 
 class A3A_RoadblockFromGarage : A3A_VehicleFromGarage
 {
-    onLoad = "['light'] call A3A_fnc_ui_roadblockFromGarage";
+    onLoad = "['light', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
 	onUnload = "['onUnload'] call A3A_fnc_ui_roadblockFromGarage";
 	
     class Controls : Controls
