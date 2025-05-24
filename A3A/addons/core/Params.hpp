@@ -1038,6 +1038,12 @@ class Params
         default = 3;
     };
 
+    class ExtenderParams
+    {
+        type = "Extender";
+        lockOnSave = 0;
+    };
+
     class DevelopmentParams
     {
         type = "Development";

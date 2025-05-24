@@ -3262,6 +3262,17 @@
                 <Portuguese>Parâmetros experimentais</Portuguese>
                 <Chinesesimp>实验参数</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_ext_label">
+                <Original>Extender Parameters</Original>
+                <Czech>Parametry extenderu</Czech>
+                <French>Paramètres de l'extenseur</French>
+                <Italian>Parametri dell'extender</Italian>
+                <Korean>확장 매개 변수</Korean>
+                <Russian>Параметры ретранслятора</Russian>
+                <Polish>Parametry przedłużacza</Polish>
+                <Portuguese>Parâmetros do extensor</Portuguese>
+                <Chinesesimp>扩展器参数</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Development Parameters</Original>
                 <Czech>Parametry vývoje</Czech>
