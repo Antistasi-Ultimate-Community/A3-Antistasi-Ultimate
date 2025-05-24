@@ -231,9 +231,7 @@ _debri setDir (abs (_dir+124)%360);
 private _offset = [1.5, 5, -1];
 private _worldPos = _reconVehicle modelToWorld _offset;
 _debri setPos _worldPos;
-if (typeOf _reconVehicle == "SpaceshipCapsule_01_wreck_F") then {
-
-} else {
+if (typeOf _reconVehicle != "SpaceshipCapsule_01_wreck_F") then {
     _reconVehicle setPos [_crashsiteactual select 0, _crashsiteactual select 1, 3];
 };
 _vehicles pushBack _debri;
