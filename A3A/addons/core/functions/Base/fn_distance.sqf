@@ -237,6 +237,11 @@ private _processFIAMarker = {
                 };
                 case (_marker in roadblocksFIA): {
                     private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
+                    diag_log _markerVehicle;
+                    diag_log _markerVehicle;
+                    diag_log _markerVehicle;
+                    diag_log _markerVehicle;
+                    diag_log _markerVehicle;
                     private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
                     private _vehicledirection = spawner getVariable [(_marker + "_vehicledirection"), 90];
                     [[_marker,_markerVehicle,_markerVehicleCustomazation,_vehicledirection],"SCRT_fnc_outpost_createRoadblockDistance"] call A3A_fnc_scheduler;

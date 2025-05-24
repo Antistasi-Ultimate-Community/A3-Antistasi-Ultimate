@@ -54,17 +54,50 @@ if(_mode == "ADD") then {
                     outpostCostmoney = _this select 1;
                     outpostCosthr = _this select 2;
                 	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
-                	// Use _result here
+                    private _hasValidVehicles = false;
+                    private _categoriesToCheck = [1, 2]; // Номера категорий для проверки
+
+                    // Проверяем каждую категорию из списка
+                    {
+                        private _categoryID = _x;
+                        private _categoryVehicles = HR_GRG_Vehicles param [_categoryID, []];
+
+                        // Перебираем технику в категории
+                        {
+                            _y params [
+                                ["_displayName", ""],
+                                ["_class", ""],
+                                ["_lockedUID", ""],
+                                ["_checkedOut", false],
+                                ["", ""],
+                                ["_lockName", ""],
+                                ["_stateData", []],
+                                ["_customisation", []]
+                            ];
+
+                            // Если нашли валидный класс - прерываем проверку
+                            if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
+                                _hasValidVehicles = true;
+                            };
+                        } forEach _categoryVehicles;
+
+                        // Если уже нашли валидную технику - прерываем проверку категорий
+                        if (_hasValidVehicles) exitWith {};
+
+                    } forEach _categoriesToCheck;
                     if (_result) then {
-                        createDialog "A3A_RoadblockFromGarage"; ///step 1.7
+                        if (!_hasValidVehicles) then {
+                            _result = false;
+                            ["Гараж пуст, будет открыто окно магазина", "", true, true] call BIS_fnc_guiMessage;
+                            createDialog "A3A_RoadblockFromStore";
+                        } else {
+                            createDialog "A3A_RoadblockFromGarage"; ///step 1.7
+                        };
                     } else {
                         createDialog "A3A_RoadblockFromStore";
                     };
                 };
-
-                
                 ///
-
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
                 ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
                 [] spawn {
@@ -107,9 +140,32 @@ if(_mode == "ADD") then {
                     outpostCosthr = _this select 3;
                     turretDirection = _this select 4;
 
-                    private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
-                    private _dialog = format [["A3A_Static%1FromStore", "A3A_Static%1FromGarage"] select (_result), _outpostType];
-                    createDialog _dialog; ///step 1.7
+                    private _result = [
+                        format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"], 
+                        "", 
+                        localize "STR_A3A_Garage", 
+                        localize "STR_A3A_Store"
+                    ] call BIS_fnc_guiMessage;
+
+                    private _hasValidVehicles = false;
+                    {  
+                        _y params ["_displayName", "_class", "_lockedUID", "_checkedOut", "", ["_lockName", ""],"_stateData", "_customisation"];                        // Объявляем все переменные внутри итерации  
+                                                    
+                        if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitwith {  
+                            _hasValidVehicles = true; 
+                        }; 
+                    } forEach HR_GRG_Vehicles#7;
+
+                    if (!_hasValidVehicles) then {
+                        _result = false;
+                        ["Гараж пуст, будет открыто окно магазина", "", true, true] call BIS_fnc_guiMessage;
+                    };
+
+                    private _dialog = format [
+                        ["A3A_Static%1FromStore", "A3A_Static%1FromGarage"] select _result, 
+                        _outpostType
+                    ];
+                    createDialog _dialog;  ///step 1.7
                 };
                 
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
