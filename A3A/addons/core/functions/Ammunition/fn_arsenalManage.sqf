@@ -61,8 +61,8 @@ private _categoriesToPublish = createHashMap;
 		private _categories = _item call A3A_fnc_equipmentClassToCategories;
 		if ("MissileLaunchers" in _categories && {allowGuidedLaunchers == 0}) exitWith {};
 		if ("Explosives" in _categories && {allowUnlockedExplosives == 0}) exitWith {};
-		if ("Backpacks" in _categories && {_item in allBackpacksTool and allowUnlockedUAV == 0}) exitWith {};			// should be UAV & static backpacks
-		if ("StaticWeaponParts" in _categories && (allowUnlockedStatics == 0)) exitWith {};
+		if ("Backpacks" in _categories && {_item in allBackpacksTool}) exitWith {};			// should be UAV & static backpacks
+		if ("StaticWeaponParts" in _categories) exitWith {};
 
 		if (_item in A3U_forbiddenItems && {getNumber (configFile >> "A3U" >> "forbiddenItems" >> _item >> "unlimited") isEqualTo 0}) exitWith {};
 
