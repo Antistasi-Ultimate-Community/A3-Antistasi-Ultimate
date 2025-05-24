@@ -131,7 +131,7 @@ class A3A_StaticAAFromStore : A3A_VehicleFromStore
 
 class A3A_StaticATFromStore : A3A_VehicleFromStore
 {
-	onLoad = "['onLoad', ['AA']] spawn A3A_fnc_UI_vehicleFromStore";
+	onLoad = "['onLoad', ['AT']] spawn A3A_fnc_UI_vehicleFromStore";
 
     class Controls : Controls
     {
