@@ -72,16 +72,66 @@
                 <Italian>Armatura</Italian>
                 <Polish>Pojazdy Opancerzone</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Generic_Unmanned">
+                <Original>Unmanned</Original>
+                <Russian>Беспилотники</Russian>
+            </Key>
             <Key ID="STR_HR_GRG_Generic_Air">
                 <Original>Aircraft</Original>
+                <German>Flugzeug</German>
+                <Italian>Velivolo</Italian>
+                <Spanish>Aeronave</Spanish>
                 <French>Aéronefs</French>
-                <Russian>Авиация</Russian>
                 <Korean>항공기</Korean>
-                <Spanish>Nave</Spanish>
-                <Chinesesimp>飞行器</Chinesesimp>
-                <Czech>Letadlo</Czech>
-                <Italian>Veivolo</Italian>
+                <Russian>Авиация</Russian>
                 <Polish>Lotnictwo</Polish>
+                <Czech>Letadlo</Czech>
+                <Portuguese>Avião</Portuguese>
+                <Turkish>Uçak</Turkish>
+                <Chinesesimp>飞行器</Chinesesimp>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Heli">
+                <Original>Helicopters</Original>
+                <Russian>Вертолёты</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Cars_Сivilian">
+              <Original>Сivilian vehicles</Original>
+              <Russian>Гражданская техника</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_APC">
+                <Original>APC/IFV</Original>
+                <Russian>БТР/БМП</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_AA">
+                <Original>Anti-air</Original>
+                <Russian>ПВО</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Arty">
+                <Original>Artillery</Original>
+                <Russian>Артиллерия</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Heli">
+                <Original>Helicopters</Original>
+                <Russian>Вертолёты</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Plane">
+                <Original>Planes</Original>
+                <Russian>Самолёты</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_VTOL">
+                <Original>VTOL</Original>
+                <Russian>СВВП</Russian>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_HeliDisabled">
+                <Original>You can only access helicopters if rebel helipad is nearby or from friendly airfield</Original>
+                <French>Vous ne pouvez accéder aux hélicoptères que si un héliport rebelle est à proximité ou depuis une base aérienne alliée.</French>
+                <Russian>Вы можете получить доступ к вертолётам только если рядом есть повстанческая вертолётная площадка или через дружественный аэродром.</Russian>
+                <Korean>반군 헬리패드가 근처에 있거나 아군 공군 기지에서만 헬리콥터를 사용할 수 있습니다.</Korean>
+                <Spanish>Solo puedes acceder a helicópteros si hay un helipuerto rebelde cerca o desde una base aérea aliada.</Spanish>
+                <Chinesesimp>只有附近有叛军直升机坪或友方空军基地时，你才能使用直升机。</Chinesesimp>
+                <Czech>Vrtulníky můžete využívat pouze při blízkosti rebelské heliportu nebo na spojenecké letecké základně.</Czech>
+                <Italian>Puoi accedere agli elicotteri solo se c'è un eliporto ribelle nelle vicinanze o da una base aerea alleata.</Italian>
+                <Polish>Możesz korzystać ze śmigłowców tylko w pobliżu rebeliantów lub na przyjaznej bazie lotniczej.</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
                 <Original>You can only access aircraft if a rebel helipad or friendly airfield is nearby</Original>
@@ -104,6 +154,17 @@
                 <Czech>Lodě</Czech>
                 <Italian>Barche</Italian>
                 <Polish>Statki</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_Source">
+                <Original>Resource vehicles</Original>
+                <French>Véhicules de ressources</French>
+                <Russian>Ресурсные транспортные средства</Russian>
+                <Korean>자원 차량</Korean>
+                <Spanish>Vehículos de recursos</Spanish>
+                <Chinesesimp>资源车辆</Chinesesimp>
+                <Czech>Zdrojová vozidla</Czech>
+                <Italian>Veicoli delle risorse</Italian>
+                <Polish>Pojazdy zasobów</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Static">
                 <Original>Statics</Original>
