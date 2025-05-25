@@ -340,7 +340,7 @@
     class Flex_PLA : FlexPLA_Base
     {
         side = "Inv";
-        flagTexture = "\x\A3A\addons\core\Pictures\Markers\PLA_Flag.paa";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
         name = "CUP PLA";
         file = "CUP_AI_PLA";
     };
@@ -354,7 +354,7 @@
     class Flex_FDF : FlexFDF_Base
     {
         side = "Occ";
-        flagTexture = "\x\A3A\addons\core\Pictures\Markers\marker_fin_co.paa";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\marker_fin_co.paa);
         name = "CUP Finnish Defense Force";
         file = "CUP_AI_FDF";
     };
