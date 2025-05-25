@@ -75,9 +75,24 @@ private _searchHeliClass =  if (_difficult) then {
 };
 private _cargoTruckClass = selectRandom (_faction get "vehiclesTrucks");
 private _boxClass = _faction get "ammobox";
-private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
+private _specOpsPool = if (random 100 <= 40) then {
+    _faction get "groupSpecOpsRandom" 
+} else {
+    _faction get "groupSpecOpsRandomNoAA" 
+};
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _specOpsArray = if (_difficult) then {selectRandom _specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
 
-private _infantrySquadArray = selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier);
+private _infantrySquadArray = selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier);
 
 if (isNil "_pilotClass" || 
     {isNil "_helicopterClass"} || 

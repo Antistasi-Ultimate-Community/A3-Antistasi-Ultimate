@@ -217,8 +217,20 @@ if (_varName in specialVarLoads) then {
                 private _marker = _x select 0;
                 private _garrison = [];
                 private _replacements = switch (sidesX getVariable _marker) do {
-                    case (Occupants): { A3A_faction_occ get "groupLoadStatReplacement"};
-                    case (Invaders): { A3A_faction_inv get "groupLoadStatReplacement"};
+                    case (Occupants): {
+                        private _specOpsPool = if (random 100 <= 40) then {
+                            A3A_faction_occ get "groupSpecOpsRandom" 
+                        } else {
+                            A3A_faction_occ get "groupSpecOpsRandomNoAA" 
+                        };
+                    };
+                    case (Invaders): {
+                        private _specOpsPool = if (random 100 <= 40) then {
+                            A3A_faction_inv get "groupSpecOpsRandom"         // 40% шанс взять группы с ПВО
+                        } else {
+                            A3A_faction_inv get "groupSpecOpsRandomNoAA"     // 60% шанс взять группы без ПВО
+                        };
+                    };
                     default { A3A_faction_reb get "groupSquad" };
                 };
 

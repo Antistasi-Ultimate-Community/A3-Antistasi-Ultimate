@@ -100,8 +100,12 @@ if (_difficultX) then {
 	for "_i" from 0 to 3 do
 	{
 		private _sfPos = _posTask getPos [random 10, random 360];
-		
-		private _typeGroup = selectRandom (_groupSFHash get "groupSpecOpsRandom");
+		private _specOpsPool = if (random 100 <= 40) then {
+    		_faction get "groupSpecOpsRandom" 
+		} else {
+		    _faction get "groupSpecOpsRandomNoAA" 
+		};
+		private _typeGroup = selectRandom _specOpsPool;
 		private _groupSF = [_sfPos, _groupSFSide, _typeGroup, false, true] call A3A_fnc_spawnGroup;
 
 		// Set up SF group behaviour

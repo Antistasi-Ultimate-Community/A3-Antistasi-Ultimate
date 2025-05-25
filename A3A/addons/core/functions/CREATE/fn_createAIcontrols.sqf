@@ -212,7 +212,12 @@ else
 	_frontierX = if (count _markersX > 0) then {true} else {false};
 	if (_frontierX) then
 	{
-		_cfg =  selectRandom (_faction get "groupSpecOpsRandom");
+		private _specOpsArray = if (random 100 <= 40) then {
+    	    _faction get "groupSpecOpsRandom" 
+		} else {
+		    _faction get "groupSpecOpsRandomNoAA" 
+		};
+		_cfg = selectRandom _specOpsArray;
 		if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then
 		{
 			_sideX = Occupants;

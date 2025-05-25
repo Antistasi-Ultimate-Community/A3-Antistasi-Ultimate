@@ -26,8 +26,12 @@ if ((random 100) < _oversizeChance) then {
             _squadCount = round (random [1,2,3]);
         };
     };
-
-    private _pool = [_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier;
+    private _groupsTierMedium = if (random 100 <= 40) then {
+      "groupsTierMedium"
+    } else {
+      "groupsTierMediumNoAA"
+    };
+    private _pool = [_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier;
     for "_i" from 1 to _squadCount do {
         _additionalGroups pushBack (selectRandom _pool);
     };

@@ -160,8 +160,18 @@ else
     private _maxTroops = 12 max round ((0.5 + random 0.5) * ([_targetMrk] call A3A_fnc_garrisonSize));
     private _soldiers = [];
     private _faction = Faction(_side);
-    private _groups = (_faction get "groupsTierMedium") apply {[_x] call SCRT_fnc_unit_getTiered};
-    private _squads = (_faction get "groupsTierSquads") apply {[_x] call SCRT_fnc_unit_getTiered};
+    private _groupsTierMedium = if (random 100 <= 40) then {
+        "groupsTierMedium" 
+    } else {
+        "groupsTierMediumNoAA" 
+    };
+    private _groupsTierSquads = if (random 100 <= 40) then {
+        "groupsTierSquads" 
+    } else {
+        "groupsTierSquadsNoAA" 
+    };
+    private _groups = (_faction get _groupsTierMedium) apply {[_x] call SCRT_fnc_unit_getTiered};
+    private _squads = (_faction get _groupsTierSquads) apply {[_x] call SCRT_fnc_unit_getTiered};
 
     while {count _soldiers < _maxTroops} do {
         _soldiers append selectRandom (_groups + _squads);

@@ -162,9 +162,19 @@ private _boatClass = selectRandom (_faction get "vehiclesGunBoats");
 private _officerClass = _faction get "unitOfficial";
 private _truckClass = selectRandom (_faction get "vehiclesTrucks");
 
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
 private _infantrySquadArray = [
-    selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),
-    selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+    selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier),
+    selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 ] select _difficultX;
 
 if (isNil "_infantrySquadArray" || {isNil "_boatClass"} || {isNil "_officerClass"} || {isNil "_truckClass"}) exitWith {

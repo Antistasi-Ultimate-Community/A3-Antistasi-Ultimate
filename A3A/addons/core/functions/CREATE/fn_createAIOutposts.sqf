@@ -306,9 +306,13 @@ while {_countX <= _radiusX} do {
 for "_i" from 0 to (count _array - 1) do {
 
 	private _groupX = grpNull;
-
+	private _groupsTierSquads = if (random 100 <= 40) then {
+	    "groupsTierSquads" 
+	} else {
+	    "groupsTierSquadsNoAA" 
+	};
 	if (plusGarrison isEqualTo false) then {
-		_array = (selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier));
+		_array = (selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier));
 		_groupX = if (_i == 0) then {
 			[_positionX, _sideX, _array, true, false] call A3A_fnc_spawnGroup;
 		} else {

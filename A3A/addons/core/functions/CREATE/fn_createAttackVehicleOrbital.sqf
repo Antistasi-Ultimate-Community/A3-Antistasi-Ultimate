@@ -48,7 +48,12 @@ private _cargoGroup = grpNull;
         if (_troopType == "Tank") exitWith { [_faction get "groupTierAT"] call SCRT_fnc_unit_getTiered };
     }; */
     ///if (_expectedCargo < count _groupType) then { _groupType resize _expectedCargo };           // trim to cargo seat count
-    private _groupType = selectRandom (_faction get "groupSpecOpsRandom");
+    private _specOpsArray = if (random 100 <= 40) then {
+        _faction get "groupSpecOpsRandom" 
+	} else {
+	    _faction get "groupSpecOpsRandomNoAA" 
+	};
+    private _groupType = selectRandom _specOpsArray;
     _cargoGroup = [getMarkerPos _markerOrigin, _side, _groupType, true, false] call A3A_fnc_spawnGroup;         // force spawn, should be pre-checked
     /* if (_cargoGroup == grpNull) then {
         _cargoGroup = selectRandom (_faction get "groupSpecOpsRandom");

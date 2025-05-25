@@ -41,10 +41,15 @@ private _expectedCargo = ([_vehicleType, true] call BIS_fnc_crewCount) - ([_vehi
 if (_expectedCargo >= 2) then
 {
     //Vehicle is able to transport units
+    private _specOpsArray = if (random 100 <= 40) then {
+        _faction get "groupSpecOpsRandom" 
+	} else {
+	    _faction get "groupSpecOpsRandomNoAA" 
+	};
     private _groupType = call {
         if (_isAirdrop) exitWith { selectRandom ([_faction get "groupsTierAirborne"] call SCRT_fnc_unit_getTiered) };
         if (_troopType == "Normal") exitWith { [_vehicleType, _side] call A3A_fnc_cargoSeats };
-        if (_troopType == "Specops") exitWith { selectRandom (_faction get "groupSpecOpsRandom") };
+        if (_troopType == "Specops") exitWith { selectRandom _specOpsArray };
         if (_troopType == "Air") exitWith { [_faction get "groupTierAA"] call SCRT_fnc_unit_getTiered };
         if (_troopType == "Tank") exitWith { [_faction get "groupTierAT"] call SCRT_fnc_unit_getTiered };
     };

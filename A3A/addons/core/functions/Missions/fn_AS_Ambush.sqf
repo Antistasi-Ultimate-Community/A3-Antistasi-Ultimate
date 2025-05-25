@@ -73,7 +73,12 @@ Info_2("Origin: %1, Destination: %2", str _missionOrigin, str _destinationSite);
 private _officerClass = _faction get "unitOfficial";
 private _escortVehicleClass = if(_difficult) then {selectRandom (_faction get "vehiclesAPCs")} else {selectRandom (_faction get "vehiclesTrucks")};
 private _officerVehicleClass = if(_difficult) then { selectRandom (_faction get "vehiclesLightArmed") } else { selectRandom (_faction get "vehiclesLightUnarmed") };
-private _infantrySquadArray = selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier);
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _infantrySquadArray = selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier);
 
 if (isNil "_officerClass" || {isNil "_officerVehicleClass" || {isNil "_escortVehicleClass" || {isNil "_infantrySquadArray"}}}) exitWith {
     Error("Classname problems, rerequesting new AS mission.");

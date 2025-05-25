@@ -32,9 +32,18 @@ if (gameMode >= 3) then
 };
 { _x call A3A_fnc_mrkUpdate } forEach _updateMarkers;
 
-
-private _occGroups = ((A3A_faction_occ get "groupsTierSquads") apply {_x select 1}) + ((A3A_faction_occ get "groupsTierMedium") apply {_x select 1});
-private _invGroups = ((A3A_faction_inv get "groupsTierSquads") apply {_x select 1}) + ((A3A_faction_inv get "groupsTierMedium") apply {_x select 1});
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _occGroups = ((A3A_faction_occ get _groupsTierSquads) apply {_x select 1}) + ((A3A_faction_occ get _groupsTierMedium) apply {_x select 1});
+private _invGroups = ((A3A_faction_inv get _groupsTierSquads) apply {_x select 1}) + ((A3A_faction_inv get _groupsTierMedium) apply {_x select 1});
 { [_x, _occGroups, _invGroups] call _fnc_initGarrison } forEach airportsX + milbases + (outposts select {sidesX getVariable [_x, sideUnknown] == Invaders});
 
 private _milGroups = (A3A_faction_occ get "groupsMilitiaSquads") + (A3A_faction_occ get "groupsMilitiaMedium");

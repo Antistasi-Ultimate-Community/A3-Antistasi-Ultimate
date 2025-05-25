@@ -78,7 +78,17 @@ if !(_heliVehicle canSlingLoad _lootCrateTest) exitwith {
 };
 deleteVehicle _lootCrateTest;
 ///new
-private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
+private _specOpsPool = if (random 100 <= 40) then {
+    _faction get "groupSpecOpsRandom" 
+} else {
+    _faction get "groupSpecOpsRandomNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _specOpsArray = if (_difficult) then {selectRandom _specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
 
 private _lootcrateType = "";
 private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F" , "Land_Pod_Heli_Transport_04_bench_F" , "Land_Pod_Heli_Transport_04_medevac_F" , "Land_Pod_Heli_Transport_04_repair_F", "Land_Pod_Heli_Transport_04_fuel_F" , "Land_Pod_Heli_Transport_04_ammo_F" , "Land_Pod_Heli_Transport_04_box_F"];

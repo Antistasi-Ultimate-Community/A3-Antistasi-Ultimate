@@ -117,8 +117,13 @@ _traitor allowDamage true;
 [_veh, Occupants] call A3A_fnc_AIVEHinit;
 {_x disableAI "MOVE"; _x setUnitPos "UP"} forEach units _groupTraitor;
 
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
 private _typeGroup = if (random 10 < tierWar) then {
-	selectRandom ([(Faction(Occupants)), "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+	selectRandom ([(Faction(Occupants)), _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 } else {
 	FactionGet(occ,"groupPoliceSquad")
 };

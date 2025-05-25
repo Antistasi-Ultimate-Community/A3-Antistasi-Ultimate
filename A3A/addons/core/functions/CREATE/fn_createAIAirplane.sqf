@@ -147,7 +147,12 @@ if (_frontierX && {random 100 < (20 + tierWar * 3)}) then {
 
 	if (_type in ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))) then {
 		sleep 1;
-		private _troopGroup = [(position _road), _sideX, (selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
+		private _groupsTierMedium = if (random 100 <= 40) then {
+		    "groupsTierMedium" 
+		} else {
+		    "groupsTierMediumNoAA" 
+		};
+		private _troopGroup = [(position _road), _sideX, (selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _heavyVehicle;_x moveInCargo _heavyVehicle; _soldiers pushBack _x; [_x] joinSilent _group; [_x,"",false] call A3A_fnc_NATOinit} forEach units _troopGroup;
 		deleteGroup _troopGroup;
 	};

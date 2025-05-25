@@ -81,8 +81,18 @@ Debug("Box spawned");
 
 //Create boat and initialise crew members
 Debug("Spawning patrol boat and crew");
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
 private _typeVeh = if (_difficultX) then { selectRandom (_faction get "vehiclesGunBoats") } else { selectRandom (_faction get "vehiclesTransportBoats") };
-private _typeGroup = if _difficultX then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
+private _typeGroup = if _difficultX then {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier)};
 private _boatSpawnLocation = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 
 private _typeSDV = _faction getOrDefault ["vehiclesSDV", ""];

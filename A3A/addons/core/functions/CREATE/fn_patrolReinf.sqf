@@ -6,10 +6,20 @@ private _faction = Faction(_side);
 private _lowAir = _faction getOrDefault ["attributeLowAir", false];
 private _posDest = getMarkerPos _mrkDest;
 private _posOrigin = getMarkerPos _mrkOrigin;
-private _groupType = if (_numTroops == 4) then {
-	selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)
+private _groupsTierMedium = if (random 100 <= 40) then {
+    "groupsTierMedium" 
 } else {
-	selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+    "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+    "groupsTierSquads" 
+} else {
+    "groupsTierSquadsNoAA" 
+};
+private _groupType = if (_numTroops == 4) then {
+	selectRandom ([_faction, _groupsTierMedium ] call SCRT_fnc_unit_flattenTier)
+} else {
+	selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 };
 
 private _isLand = if (_lowAir) then { true } else {						// land markers guaranteed by reinforcementsAI for low air

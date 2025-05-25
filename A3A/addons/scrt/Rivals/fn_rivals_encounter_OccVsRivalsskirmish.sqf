@@ -31,7 +31,17 @@ private _faction = Faction(_side);
 private _faction2 = Faction(_side2);
 private _FrontlineOutpostPosition = getMarkerPos _FrontlineOutpost;
 
-private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
+private _specOpsPool = if (random 100 <= 40) then {
+    _faction get "groupSpecOpsRandom" 
+} else {
+    _faction get "groupSpecOpsRandomNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _specOpsArray = if (_difficult) then {_specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
 private _specOpsArray2 = if (_difficult2) then {selectRandom (A3A_faction_riv get "groupsSquad")} else {selectRandom ((A3A_faction_riv get "groupsFireteam") + (A3A_faction_riv get "groupsSentry") + (A3A_faction_riv get "groupsAA") + (A3A_faction_riv get "groupsAT"))};
 
 //(selectRandom ((A3A_faction_riv get "groupsSentry") + (A3A_faction_riv get "groupsAA") + (A3A_faction_riv get "groupsAT"))); //not very good
@@ -96,6 +106,14 @@ private _fnc_spawngroups = {
 		[_vehicle2, Invaders] call A3A_fnc_AIVEHinit;
 		_vehiclegroup2 setBehaviourStrong "AWARE";
 		units _vehiclegroup2 join _Rivalsgroup;
+		if (_difficult2) then {
+			_UAV2type = selectRandom (_faction2 get "vehiclesRivalsUavs");
+			_uav2 = createVehicle [_UAV2type, _skirmishpositionActuall2, [], 0, "FLY"];
+			[_side2, _uav2] call A3A_fnc_createVehicleCrew;
+			_vehiclesArray2 pushBack _uav2;
+			_groupUAV2 = group (crew _uav2 select 1);
+			{[_x] joinSilent _InfGroup2} forEach units _groupUAV2;
+		};
 		[_Rivalsgroup, "Patrol_Attack", 0, 300, 1000, true, _skirmishposition, true] call A3A_fnc_patrolLoop;
 		[_vehiclegroup2, "Patrol_Area", 0, 300, 1000, true, _skirmishposition, true] call A3A_fnc_patrolLoop;
 		_vehiclesArray2 pushBack _vehicle2;

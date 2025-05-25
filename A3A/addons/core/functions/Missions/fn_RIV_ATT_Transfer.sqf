@@ -309,7 +309,17 @@ private _markNames = [];
 private _soldiers = [];
         
 private _convoyVehicles = [];
-private _specOpsArray = if (_isDifficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
+private _specOpsPool = if (random 100 <= 40) then {
+    _faction get "groupSpecOpsRandom" 
+} else {
+    _faction get "groupSpecOpsRandomNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _specOpsArray = if (_difficult) then {selectRandom _specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
 private _vehEscort = [_escortvehicle, "Escort vehicle"] call _fnc_spawnConvoyVehicle;
 if (_escortvehicle in FactionGet(all,"vehiclesArmor")) then { _vehEscort allowCrewInImmobile true };			// move this to AIVEHinit at some point?
     

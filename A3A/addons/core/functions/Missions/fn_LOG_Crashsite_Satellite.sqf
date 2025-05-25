@@ -91,9 +91,23 @@ if (_reconVehicle == "SpaceshipCapsule_01_wreck_F") then {
 } else {
     _blackboxClass = "Land_PortableServer_01_black_F"; ///should be something else
 };
-
-private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
-private _infantrySquadArray = selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier);
+private _specOpsPool = if (random 100 <= 40) then {
+    _faction get "groupSpecOpsRandom" 
+} else {
+    _faction get "groupSpecOpsRandomNoAA" 
+};
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
+private _specOpsArray = if (_difficult) then {selectRandom _specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
+private _infantrySquadArray = selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier);
 
 if (isNil "_reconVehicle" || {isNil "_cargoTruckClass"} || {isNil "_specOpsArray"}) exitWith {
 	["LOG"] remoteExec ["A3A_fnc_missionRequest",2];

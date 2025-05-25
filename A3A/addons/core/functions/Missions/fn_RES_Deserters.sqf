@@ -57,10 +57,20 @@ if (count _potentials > 0) then {
 waitUntil {
     sleep 1;
     (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_spawnPos, distanceSPWN1, distanceSPWN1] isNotEqualTo [] || {dateToNumber date > _dateLimitNum}
-};  ///uncomment later
+};
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
 private _infantrySquadArray = [
-    selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),
-    selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+    selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier),
+    selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 ] select _difficultX;
 private _vehiclePatrol = "";
 private _stolenVehicle = "";

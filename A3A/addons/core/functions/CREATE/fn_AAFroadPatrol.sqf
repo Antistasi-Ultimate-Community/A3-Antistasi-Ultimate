@@ -124,6 +124,16 @@ _soldiers append _vehCrew;
 _groups pushBack _groupVeh;
 _vehiclesX pushBack _veh;
 
+private _groupsTierMedium = if (random 100 <= 40) then {
+    "groupsTierMedium" 
+} else {
+    "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+    "groupsTierSquads" 
+} else {
+    "groupsTierSquadsNoAA" 
+};
 switch (true) do {
 	case (_typeCar in (_faction get "vehiclesLightUnarmed")): {
 		sleep 1;
@@ -133,13 +143,13 @@ switch (true) do {
 	};
 	case (_typeCar in (_faction get "vehiclesLightAPCs")): {
 		sleep 1;
-		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
+		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _veh;_x moveInCargo _veh; _soldiers pushBack _x; [_x] joinSilent _groupVeh; [_x,"",false] call A3A_fnc_NATOinit} forEach units _groupX;
 		deleteGroup _groupX;
 	};
 	case (_typeCar in ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))): {
 		sleep 1;
-		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
+		private _groupX = [_posbase, _sideX, (selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _veh;_x moveInCargo _veh; _soldiers pushBack _x; [_x] joinSilent _groupVeh; [_x,"",false] call A3A_fnc_NATOinit} forEach units _groupX;
 		deleteGroup _groupX;
 	};

@@ -135,7 +135,12 @@ if(_searchHeliClass in (_faction get "vehiclesHelisLight")) then {
     [_heliVehicleGroup, 0] setWaypointLoiterType "CIRCLE_L";
 
     //spawning heli inf
-    private _heliInfGroup = selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier);
+    private _groupsTierMedium = if (random 100 <= 40) then {
+      "groupsTierMedium" 
+    } else {
+      "groupsTierMediumNoAA" 
+    };
+    private _heliInfGroup = selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier);
     private _heliInfgroupX = [_positionX, _side, _heliInfGroup] call A3A_fnc_spawnGroup;
     {
         _x assignAsCargo _searchHeliVeh; 
@@ -286,9 +291,14 @@ _mrk setMarkerColorLocal "ColorRed";
 _mrk setMarkerBrushLocal "DiagGrid";
 _mrk setMarkerAlphaLocal 0;
 
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
 private _typeGroup = [
     selectRandom (_faction get "groupsMilitiaSquads"),
-    selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+    selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 ] select _difficulty;
 
 private _groupX = [_positionX,_side, _typeGroup] call A3A_fnc_spawnGroup;

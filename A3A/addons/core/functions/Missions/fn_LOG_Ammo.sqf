@@ -48,8 +48,13 @@ if ((spawner getVariable _markerX != 2) and !(sidesX getVariable [_markerX,sideU
 	_mrk setMarkerColorLocal "ColorRed";
 	_mrk setMarkerBrushLocal "DiagGrid";
 	if (!debug) then {_mrk setMarkerAlphaLocal 0};
+	private _groupsTierSquads = if (random 100 <= 40) then {
+	  "groupsTierSquads" 
+	} else {
+	  "groupsTierSquadsNoAA" 
+	};
 	private _typeGroup = if (_difficultX) then {
-		selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+		selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 	} else {
 		selectRandom ([_faction, "groupsTierSmall"] call SCRT_fnc_unit_flattenTier)
 	};

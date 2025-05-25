@@ -39,9 +39,19 @@ private _mortarMagazine = _faction get "mortarMagazineHE";
 private _artilleryMagazine = _faction get "magazines";
 private _howitzerMagazine = _faction get "howitzerMagazineHE";
 
+private _groupsTierMedium = if (random 100 <= 40) then {
+  "groupsTierMedium" 
+} else {
+  "groupsTierMediumNoAA" 
+};
+private _groupsTierSquads = if (random 100 <= 40) then {
+  "groupsTierSquads" 
+} else {
+  "groupsTierSquadsNoAA" 
+};
 private _infantrySquadArray = [
-    selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),
-    selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
+    selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier),
+    selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
 ] select _difficult;
 
 switch (true) do 
