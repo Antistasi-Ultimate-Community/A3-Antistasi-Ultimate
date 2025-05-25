@@ -14,6 +14,8 @@ private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
 private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs it
 
+#include "..\..\script_component.hpp"
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -22,18 +24,16 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["spawnMarkerName", format [localize "STR_supportcorridor", "PLA"]] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
-["flagTexture", "A3A\addons\core\Pictures\Markers\PLA_Flag.paa"] call _fnc_saveToTemplate;
+["flagTexture", "\x\A3A\addons\core\Pictures\Markers\PLA_Flag.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "a3u_flag_PLA"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
 
-//["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate; //used only in salvage mission and only if template has "vanilla" flag 
-/// can be "B_SDV_01_F", "O_SDV_01_F" or "I_SDV_01_F"
+["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
 
-//["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; //used in QRF orbital and crashsite mission
-/// can be a vehicle or prop like in example above(but it must have physix)
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_T_East_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
