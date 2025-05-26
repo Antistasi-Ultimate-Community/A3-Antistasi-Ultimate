@@ -38,7 +38,7 @@ def process_arguments():
     parser.add_argument("-f", "--filename", help="attempt to convert the specified file")
     parser.add_argument("-i", "--in-place", action="store_true", required=False, help="convert the file(s) in place without adding _converted suffix; .bak copies of the original files are created instead")
     parser.add_argument("-o", "--output", required=False, help="output the converted file(s) to this directory")
-    parser.add_argument("-r", "--recursive", action="store_true", required=False, help="attempt to convert all .sqf files in this directory and all subdirectories; not currently implemented...")
+    parser.add_argument("-r", "--recursive", action="store_true", required=False, help="attempt to convert all .sqf files in this directory and all subdirectories")
     parser.add_argument("-v", "--verbose", action="store_true", required=False, help="print extra logging messages; not currently implemented...")
     parser.add_argument("-y", "--yes-overwrite", action="store_true", required=False, help="do not prompt to overwrite existing files")
     args = parser.parse_args()
@@ -57,13 +57,26 @@ def process_arguments():
 
     return args
 
+def get_files(files : list = [], directory : str = ".", recursive : bool = False):
+    if files == []: print("Getting list of files...\n")
+
+    for file in os.scandir(directory):
+        if file.is_file():
+            files.append(file.path)
+        elif file.is_dir and recursive:
+            get_files(files=files, directory=file.path, recursive=True)
+
+    return files
+
 def get_templates(args):
+    print("Getting list of files to convert...\n")
     try:
         if args.filename:
             if "_converted" in args.filename: print("{0} has already been converted, skipping...".format(args.filename))
             templates = [args.filename]
         elif args.directory:
-            files, templates = os.listdir(args.directory), []
+            files = get_files(directory=args.directory, recursive=args.recursive)
+            templates = []
             for file in files:
                 if "_converted" in file:
                     print("{0} has already been converted, skipping...".format(file))
@@ -200,6 +213,7 @@ def write_template(template : str, content: str, directory : str, in_place : boo
         if not response in ["y", "yes"]: return False
 
     try:
+        print("Writing {0} ...".format(final_name))
         with open(final_name, "w") as file:
             file.write(content)
     except PermissionError:
@@ -214,6 +228,7 @@ if __name__ == "__main__":
     #print(templates)
 
     for template in templates:
+        print("Converting {0} ...".format(template))
         content = open_template(template, in_place=args.in_place)
         content = convert_template(content)
         write_template(template, content, args.output, in_place=args.in_place, yes_overwrite=args.yes_overwrite)
