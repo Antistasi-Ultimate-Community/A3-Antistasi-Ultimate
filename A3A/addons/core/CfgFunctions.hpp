@@ -115,6 +115,7 @@ class CfgFunctions
             class aggressionUpdateLoop {};
             class AILoadInfo {};
             class airspaceControl {};
+            class airspaceControlAI {};
             class blackout {};
             class buildHQ {};
             class calculateAggression {};
