@@ -152,7 +152,6 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _typeVehObj = selectRandom ([_vehiclesCS, _vehiclePool] select (_vehiclesCS isEqualTo []));
     };
 };
-//_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
 
 // Find suitable nav points for origin/dest
 private _posOrigin = navGrid select ([_mrkOrigin] call A3A_fnc_getMarkerNavPoint) select 0;

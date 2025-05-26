@@ -91,7 +91,7 @@ if (_isControl) then
 				_pos = getPosATL _bunker;
 			};
 			_vehiclesX pushBack _bunker;
-			_typeVehX = selectRandom (FactionGetTiered(_sideX, "staticMGs"));
+			_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticMGs"));
 			_veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPosATL _pos;
@@ -109,7 +109,7 @@ if (_isControl) then
 				_bunker setDir _dirveh + 180;
 				_pos = _bunker modelToWorld [-0.200684,-0.91333,-0.421184];
 				_vehiclesX pushBack _bunker;
-				_typeVehX = selectRandom (FactionGetTiered(_sideX, "staticMGs"));
+				_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticMGs"));
 				_veh = _typeVehX createVehicle _positionX;
 				_vehiclesX pushBack _veh;
 				_veh setPosATL _pos;
@@ -182,14 +182,14 @@ if (_isControl) then
 			};
 			case (tierWar >= 3): // if higher or equal to 3, grab militia light armed car
 			{
-				_vehicleGet = "vehiclesMilitiaLightArmed";
+				_vehicleGet = "vehiclesLightArmed";
 			};
 			default // incase it's less than 3 (or something is broken), just grab militia car
 			{
-				_vehicleGet = "vehiclesMilitiaCars";
+				_vehicleGet = "vehiclesLightUnarmed";
 			};
 		};
-		_typeVehX = selectRandom (FactionGetTiered(_sideX, _vehicleGet));
+		_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, _vehicleGet));
 		_veh = _typeVehX createVehicle getPos (_roads select 0);
 		_veh setDir _dirveh + 90;
 		[_veh, _sideX] call A3A_fnc_AIVEHinit;
@@ -232,7 +232,7 @@ else
 		[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 		_groups pushBack _groupX;
 
-		_typeVehX = selectRandom (FactionGetTiered(_sideX, "uavsPortable"));
+		_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "uavsPortable"));
 		if !(isNil "_typeVehX") then
 		{
 			sleep 1;
