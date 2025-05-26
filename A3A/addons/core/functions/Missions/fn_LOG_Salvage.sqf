@@ -82,7 +82,7 @@ Debug("Box spawned");
 //Create boat and initialise crew members
 Debug("Spawning patrol boat and crew");
 private _typeVeh = if (_difficultX) then { 
-	selectRandom ( FactionGetTiered(_faction, "vehiclesGunBoats"))
+	selectRandomWeighted ( FactionGetTiered(_faction, "vehiclesGunBoats"))
 } else {
 	selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTransportBoats"))
 };

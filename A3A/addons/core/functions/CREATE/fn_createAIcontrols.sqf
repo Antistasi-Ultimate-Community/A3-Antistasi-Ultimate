@@ -91,14 +91,14 @@ if (_isControl) then
 				_pos = getPosATL _bunker;
 			};
 			_vehiclesX pushBack _bunker;
-			_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticMGs"));
+			_typeVehX = selectRandom (FactionGetTiered(_sideX, "staticMGs"));
 			_veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPosATL _pos;
 			_veh setDir _dirVeh;
 
 			_groupE = createGroup _sideX;
-			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
+			private _typeUnit = FactionGetTiered(_sideX, "unitTierStaticCrew");
 			_unit = [_groupE, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			_soldiers pushBack _unit;
@@ -109,13 +109,13 @@ if (_isControl) then
 				_bunker setDir _dirveh + 180;
 				_pos = _bunker modelToWorld [-0.200684,-0.91333,-0.421184];
 				_vehiclesX pushBack _bunker;
-				_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticMGs"));
+				_typeVehX = selectRandom (FactionGetTiered(_sideX, "staticMGs"));
 				_veh = _typeVehX createVehicle _positionX;
 				_vehiclesX pushBack _veh;
 				_veh setPosATL _pos;
 				_veh setDir _dirVeh + 180;
 
-				private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
+				private _typeUnit = FactionGetTiered(_sideX, "unitTierStaticCrew");
 				_unit = [_groupE, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 				_unit moveInGunner _veh;
 				_soldiers pushBack _unit;
@@ -167,8 +167,8 @@ if (_isControl) then
 		private _vehicleGet = "";
 		switch (true) do 
 		{
-			private _tier9Vehicle = (_faction getOrDefault ["vehiclesLightTanks", []]);
-			if (_tier9Vehicle isEqualTo []) then {
+			private _tier9Vehicle = "vehiclesLightTanks";
+			if (FactionGoDTieredFT(_faction, _tier9Vehicle, 2) isEqualTo []) then {
 				_tier9Vehicle = "vehiclesAirborne";
 			};
 
@@ -182,14 +182,14 @@ if (_isControl) then
 			};
 			case (tierWar >= 3): // if higher or equal to 3, grab militia light armed car
 			{
-				_vehicleGet = "vehiclesLightArmed";
+				_vehicleGet = "vehiclesMilitiaLightArmed";
 			};
 			default // incase it's less than 3 (or something is broken), just grab militia car
 			{
-				_vehicleGet = "vehiclesLightUnarmed";
+				_vehicleGet = "vehiclesMilitiaCars";
 			};
 		};
-		_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, _vehicleGet));
+		_typeVehX = selectRandom (FactionGetTiered(_sideX, _vehicleGet));
 		_veh = _typeVehX createVehicle getPos (_roads select 0);
 		_veh setDir _dirveh + 90;
 		[_veh, _sideX] call A3A_fnc_AIVEHinit;
@@ -221,9 +221,9 @@ else
 		if ({if (_x inArea _markerX) exitWith {1}} count allMines == 0) then
 		{
 			Debug_1("Creating a Minefield at %1", _markerX);
-			private _mines = (FactionGetTiered(_faction, "minefieldAPERS"));
+			private _mines = (FactionGetTiered(_sideX, "minefieldAPERS"));
 			for "_i" from 1 to 45 do {
-				_mineX = createMine [ selectRandomWeighted _mines ,_positionX,[],_size];
+				_mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
 				_sideX revealMine _mineX;
 			};
 		};
@@ -232,7 +232,7 @@ else
 		[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 		_groups pushBack _groupX;
 
-		_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "uavsPortable"));
+		_typeVehX = selectRandom (FactionGetTiered(_sideX, "uavsPortable"));
 		if !(isNil "_typeVehX") then
 		{
 			sleep 1;
@@ -252,7 +252,7 @@ else
 		if ((random 100) > ((tierWar * 3) + (_aggro / 5))) then {
 			_leave = true;
 		} else {	
-			private _sniperPair = FactionGetTiered(_faction, "groupTierPatrolSniper");
+			private _sniperPair = FactionGetTiered(_sideX, "groupTierPatrolSniper");
 			private _groupX = [_positionX,_sideX, _sniperPair] call A3A_fnc_spawnGroup;
 
 			[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;

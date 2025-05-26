@@ -33,7 +33,7 @@ private _weightChemical = if (_side == Invaders) then {_weightCluster} else {0};
 private _bombType = selectRandomWeighted ["HE", _weightHE, "CLUSTER", _weightCluster, "NAPALM", _weightNapalm, "CHEMICAL", _weightChemical];
 
 private _faction = Faction(_side);
-private _planeType = selectRandom (
+private _planeType = selectRandomWeighted (
     (FactionGoDTiered(_faction, "vehiclesPlanesCAS")) +
     (FactionGoDTiered(_faction, "vehiclesPlanesLargeCAS"))
 );

@@ -55,12 +55,12 @@ waitUntil {sleep 1; (call SCRT_fnc_misc_getRebelPlayers) findIf {_x inArea [_pos
 Info("Setting things in motion...");
 
 private _escortClass = if(_difficultX) then { 
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesAPCs")) +
         (FactionGoDTiered(_faction, "vehiclesLightAPCs"))
     )
 } else {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
         (FactionGoDTiered(_faction, "vehiclesLightUnarmed"))
     )

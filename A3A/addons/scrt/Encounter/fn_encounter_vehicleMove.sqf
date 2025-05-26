@@ -47,7 +47,7 @@ private _roadcon = roadsConnectedto (_road select 0);
 private _dirveh = if (count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _truckClass = selectRandom (
+private _truckClass = selectRandomWeighted (
     (FactionGoDTiered(_faction, "vehiclesAmmoTrucks")) +
     (FactionGoDTiered(_faction, "vehiclesRepairTrucks")) +
     (FactionGoDTiered(_faction, "vehiclesFuelTrucks")) +

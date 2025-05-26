@@ -90,7 +90,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 	_HeliClass = "O_Heli_Transport_04_F";
 	while {_attempts != 0} do {
 		private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F" , "Land_Pod_Heli_Transport_04_bench_F" , "Land_Pod_Heli_Transport_04_medevac_F" , "Land_Pod_Heli_Transport_04_repair_F", "Land_Pod_Heli_Transport_04_fuel_F" , "Land_Pod_Heli_Transport_04_ammo_F" , "Land_Pod_Heli_Transport_04_box_F"];
-		_lootcrateType = selectRandom (
+		_lootcrateType = selectRandomWeighted (
 			(FactionGoDTiered(_faction, "vehiclesLightUnarmed")) +
 			(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 			(FactionGoDTiered(_faction, "vehiclesAirborne")) +
@@ -158,7 +158,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 } else {
 	while {_attempts != 0 } do {
 		private _regPods = ["B_Slingload_01_Cargo_F", "B_Slingload_01_Ammo_F", "B_Slingload_01_Medevac_F", "B_Slingload_01_Repair_F", "B_Slingload_01_Fuel_F"];
-		_lootcrateType = selectRandom (
+		_lootcrateType = selectRandomWeighted (
 			(FactionGoDTiered(_faction, "vehiclesLightUnarmed")) +
 			(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 			(FactionGoDTiered(_faction, "vehiclesAirborne")) +

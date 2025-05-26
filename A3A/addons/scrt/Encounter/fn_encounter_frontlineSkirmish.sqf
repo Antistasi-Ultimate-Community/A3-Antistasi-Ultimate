@@ -40,12 +40,12 @@ private _FrontlineOutpost = selectRandom _frontlineSitesNearPlayer;
 
 private _side = Occupants;
 private _side2 = Invaders;
-private _faction2 = Faction(_side);
-private _faction22 = Faction(_side2);
+private _faction = Faction(_side);
+private _faction2 = Faction(_side2);
 private _FrontlineOutpostPosition = _originPosition ;//getMarkerPos _FrontlineOutpost;
 
-private _specOpsArray = if (_difficult) then {selectRandom (_faction2 get "groupSpecOpsRandom")} else {selectRandom (FactionGetTiered(_side2, "groupsTierSquads"))};     ///
-private _specOpsArray2 = if (_difficult2) then {selectRandom (_faction22 get "groupSpecOpsRandom")} else {selectRandom (FactionGetTiered(_side2, "groupsTierSquads"))}; ///maybe move this into fuction and roll every time?
+private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom (FactionGetTiered(_faction, "groupsTierSquads"))};     ///
+private _specOpsArray2 = if (_difficult2) then {selectRandom (_faction2 get "groupSpecOpsRandom")} else {selectRandom (FactionGetTiered(_faction2, "groupsTierSquads"))}; ///maybe move this into fuction and roll every time?
 
 _skirmishposition = [_FrontlineOutpostPosition, distanceSPWN*0.7, distanceSPWN, 10, 0, 10, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos; ///pos player , distance distance spwn
 _skirmishposition2 = [_skirmishposition, 250, 350, 10, 0, 10, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
@@ -63,7 +63,7 @@ private _fnc_spawngroups = {
 		_wp setWaypointType "SAD";
 		_InfGroups pushBack _InfGroup;
 		private _vehicles = if (_difficult) then {
-			selectRandom (
+			selectRandomWeighted (
 				FactionGetTiered(_faction, "vehiclesAirborne") +
 				FactionGetTiered(_faction, "vehiclesLightTanks") +
 				FactionGetTiered(_faction, "vehiclesTanks") +
@@ -71,7 +71,7 @@ private _fnc_spawngroups = {
 				FactionGetTiered(_faction, "vehiclesIFVs")
 			)
 		} else {
-			selectRandom (
+			selectRandomWeighted (
 				FactionGetTiered(_faction, "vehiclesLightUnarmed") +
 				FactionGetTiered(_faction, "vehiclesLightArmed") +
 				FactionGetTiered(_faction, "vehiclesAirborne") +
@@ -112,22 +112,22 @@ private _fnc_spawngroups = {
 		_InfGroups2 pushBack _InfGroup2;
 
 		private _vehicles2 = if (_difficult2) then {
-			selectRandom (
-				FactionGetTiered(_side2, "vehiclesAirborne") +
-				FactionGetTiered(_side2, "vehiclesLightTanks") +
-				FactionGetTiered(_side2, "vehiclesTanks") +
-				FactionGetTiered(_side2, "vehiclesAPCs") +
+			selectRandomWeighted (
+				FactionGetTiered(_faction2, "vehiclesAirborne") +
+				FactionGetTiered(_faction2, "vehiclesLightTanks") +
+				FactionGetTiered(_faction2, "vehiclesTanks") +
+				FactionGetTiered(_faction2, "vehiclesAPCs") +
 				FactionGetTiered(_side2, "vehiclesIFVs")
 			)
 		} else {
-			selectRandom (
-				FactionGetTiered(_side2, "vehiclesLightUnarmed") +
-				FactionGetTiered(_side2, "vehiclesLightArmed") +
-				FactionGetTiered(_side2, "vehiclesAirborne") +
-				FactionGetTiered(_side2, "vehiclesLightTanks") +
-				FactionGetTieredFT(_side2, "vehiclesAPCs", 0) +
-				FactionGetTieredFT(_side2, "vehiclesLightArmed", 0) +
-				FactionGetTieredFT(_side2, "vehiclesLightUnarmed", 0)
+			selectRandomWeighted (
+				FactionGetTiered(_faction2, "vehiclesLightUnarmed") +
+				FactionGetTiered(_faction2, "vehiclesLightArmed") +
+				FactionGetTiered(_faction2, "vehiclesAirborne") +
+				FactionGetTiered(_faction2, "vehiclesLightTanks") +
+				FactionGetTieredFT(_faction2, "vehiclesAPCs", 0) +
+				FactionGetTieredFT(_faction2, "vehiclesLightArmed", 0) +
+				FactionGetTieredFT(_faction2, "vehiclesLightUnarmed", 0)
 			)
 		};
 		diag_log _vehicles2;
@@ -139,7 +139,7 @@ private _fnc_spawngroups = {
 		_vehiclegroup2 setBehaviourStrong "AWARE";
 		units _vehiclegroup2 join _InfGroup2;
 		/* if (_difficult2) then {
-			_UAV2type = selectRandom (_faction22 get "uavsPortable");
+			_UAV2type = selectRandom (_faction2 get "uavsPortable");
 			_uav2 = createVehicle [_UAV2type, _skirmishpositionActuall2, [], 0, "FLY"];
 			[_side2, _uav2] call A3A_fnc_createVehicleCrew;
 			_vehiclesArray2 pushBack _uav2;

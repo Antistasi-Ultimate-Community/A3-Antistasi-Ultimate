@@ -107,12 +107,12 @@ removeAllAssignedItems _informer;
 _informer playMoveNow "ApanPknlMstpSnonWnonDnon_G01";
 
 private _searchHeliClass =  if (_difficulty) then {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesHelisLightAttack")) +
         (FactionGoDTiered(_faction, "vehiclesHelisAttack"))
     )
 } else {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
         (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
     )
@@ -224,7 +224,7 @@ for "_i" from 0 to _roadblockCount do {
     private _roadblockPosition = position (_roads select 0);   
 
     private _typeVehX = if(random 10 < (tierWar + (difficultyCoef / 2))) then {
-        selectRandom (
+        selectRandomWeighted (
             (FactionGoDTiered(_faction, "vehiclesLightAPCs")) +
             (FactionGoDTiered(_faction, "vehiclesLightArmed"))
         )

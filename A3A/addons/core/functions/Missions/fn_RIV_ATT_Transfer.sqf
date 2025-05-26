@@ -287,19 +287,19 @@ _vehicles pushBack _patrolVeh;
 [_patrolVehGroup, _hideoutPosition, 250] call bis_fnc_taskPatrol;
     
 private _vehicletransferClass = if (_isDifficult) then {
-    selectRandom (
+    selectRandomWeighted (
         FactionGetTiered(_faction, "vehiclesCargoTrucks") +
         (FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) +
         (FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0))
     );
 } else {
-    selectRandom (
+    selectRandomWeighted (
         FactionGetTiered(_faction, "vehiclesCargoTrucks") +
         (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0))
     );
 }; ///check if vehicle is cargo truck or vehicle to transfer, if cargo truck create or move loot crate to truck.
 private _escortvehicle = if (_isDifficult) then {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightAPCs")) +
         (FactionGoDTiered(_faction, "vehiclesAPCs")) +
         (FactionGoDTiered(_faction, "vehiclesIFVs")) +
@@ -307,7 +307,7 @@ private _escortvehicle = if (_isDifficult) then {
         (FactionGoDTiered(_faction, "vehiclesTrucks"))
     );
 } else {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
         (FactionGoDTiered(_faction, "vehiclesTrucks")) +
         (FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
@@ -317,12 +317,12 @@ private _escortvehicle = if (_isDifficult) then {
     );
 }; //check if vehicle is truck, if yes create a group and move in
 private _convoylead = if (_isDifficult) then {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
         (FactionGoDTiered(_faction, "vehiclesTrucks"))
     );
 } else {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
         (FactionGoDTiered(_faction, "vehiclesTrucks")) +
         (FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +

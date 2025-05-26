@@ -64,20 +64,20 @@ private _infantrySquadArray = [
 ] select _difficultX;
 private _vehiclePatrol = "";
 private _stolenVehicle = "";
-_vehiclePatrolType = selectRandom (
+_vehiclePatrolType = selectRandomWeighted (
 	(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 	(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
 	(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
 	(FactionGoDTieredFT(_faction, "vehiclesTrucks", 0))
 );
 _stolenVehicleType = if (_difficultX) then {
-    selectRandom (
+    selectRandomWeighted (
 		(FactionGoDTiered(_faction, "vehiclesLightAPCs")) +
 		(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 		(FactionGoDTiered(_faction, "vehiclesTrucks"))
 	);
 } else {
-    selectRandom (
+    selectRandomWeighted (
 		(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 		(FactionGoDTiered(_faction, "vehiclesTrucks")) +
 		(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +

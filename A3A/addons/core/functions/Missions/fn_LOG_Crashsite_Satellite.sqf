@@ -76,13 +76,13 @@ if (_reconVehicle == "SpaceshipCapsule_01_F") then {
 private _pilotClass = _faction get "unitPilot";
 
 private _searchHeliClass =  if (_difficult) then {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
         (FactionGoDTiered(_faction, "vehiclesHelisLightAttack")) +
         (FactionGoDTiered(_faction, "vehiclesHelisAttack"))
     )
 } else {
-    selectRandom (
+    selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
         (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
     )

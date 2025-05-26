@@ -54,7 +54,7 @@ private _fnc_spawngroups = {
 		_InfGroups pushBack _InfGroup;
 
 		private _vehicles = if (_difficult) then {
-			selectRandom (
+			selectRandomWeighted (
 				(FactionGoDTiered(_faction, "vehiclesAirborne")) +
 				(FactionGoDTiered(_faction, "vehiclesLightTanks")) +
 				(FactionGoDTiered(_faction, "vehiclesTanks")) +
@@ -62,7 +62,7 @@ private _fnc_spawngroups = {
 				(FactionGoDTiered(_faction, "vehiclesIFVs"))
 			)
 		} else {
-			selectRandom (
+			selectRandomWeighted (
 				(FactionGoDTiered(_faction, "vehiclesLightUnarmed")) +
 				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 				(FactionGoDTiered(_faction, "vehiclesAirborne")) +
@@ -102,12 +102,12 @@ private _fnc_spawngroups = {
 		_Rivalsgroups pushBack _Rivalsgroup;
 
 		private _vehicles2 = if (_difficult2) then {
-			selectRandom (
+			selectRandomWeighted (
 				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) +
 				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0))
 			)
 		} else {
-			selectRandom (
+			selectRandomWeighted (
 				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightUnarmed", 0)) +
 				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0)) +
 				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesTrucks", 0))

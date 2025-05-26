@@ -22,7 +22,7 @@ private _airport = [_side, _targPos] call A3A_fnc_availableBasesAir;
 if (isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _supportName); -1; };
 
 private _faction = Faction(_side);
-private _vehType = selectRandom (
+private _vehType = selectRandomWeighted (
     (FactionGoDTiered(_faction, "vehiclesPlanesCAS")) +
     (FactionGoDTiered(_faction, "vehiclesPlanesLargeCAS"))
 );

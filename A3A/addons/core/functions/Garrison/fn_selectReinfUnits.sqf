@@ -103,7 +103,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
                 }
                 else
                 {
-                    _currentSelected = selectRandom (
+                    _currentSelected = selectRandomWeighted (
                         (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
                         (FactionGoDTiered(_faction, "vehiclesHelisTransport"))
                     );
@@ -127,7 +127,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
                     else
                     {
                         //Select random truck or helicopter
-                        _currentSelected = selectRandom (
+                        _currentSelected = selectRandomWeighted (
                             (FactionGoDTiered(_faction, "vehiclesLightUnarmed")) +
                             (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
                             (FactionGoDTiered(_faction, "vehiclesHelisTransport"))

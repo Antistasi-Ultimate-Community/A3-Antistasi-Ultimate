@@ -73,7 +73,7 @@ while {true} do {
 // selecting classnames
 private _reconVehicleDroppod = FactionGoDTiered(_faction, "vehiclesDropPod");
 
-private _reconVehicleClass = selectRandom (
+private _reconVehicleClass = selectRandomWeighted (
     (FactionGoDTiered(_faction, "vehiclesPlanesTransport")) +
     (FactionGoDTiered(_faction, "uavsAttack")) +
     _reconVehicleDroppod
@@ -93,13 +93,13 @@ if (_searchHeliClassLight isEqualTo [] && {_searchHeliClassLightAttack isEqualTo
     _searchHeliClass = [];
 } else {
     _searchHeliClass =  if (_difficult) then {
-        selectRandom (
+        selectRandomWeighted (
             (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
             (FactionGoDTiered(_faction, "vehiclesHelisLightAttack")) +
             (FactionGoDTiered(_faction, "vehiclesHelisAttack"))
         )
     } else {
-        selectRandom (
+        selectRandomWeighted (
             (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
             (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
         )
