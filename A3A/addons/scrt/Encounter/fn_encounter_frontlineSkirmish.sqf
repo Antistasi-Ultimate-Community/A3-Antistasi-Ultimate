@@ -117,7 +117,7 @@ private _fnc_spawngroups = {
 				FactionGetTiered(_faction2, "vehiclesLightTanks") +
 				FactionGetTiered(_faction2, "vehiclesTanks") +
 				FactionGetTiered(_faction2, "vehiclesAPCs") +
-				FactionGetTiered(_side2, "vehiclesIFVs")
+				FactionGetTiered(_faction2, "vehiclesIFVs")
 			)
 		} else {
 			selectRandomWeighted (

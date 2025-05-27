@@ -98,7 +98,7 @@ if (_isControl) then
 			_veh setDir _dirVeh;
 
 			_groupE = createGroup _sideX;
-			private _typeUnit = FactionGetTiered(_sideX, "unitTierStaticCrew");
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			_unit = [_groupE, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			_soldiers pushBack _unit;
@@ -115,7 +115,7 @@ if (_isControl) then
 				_veh setPosATL _pos;
 				_veh setDir _dirVeh + 180;
 
-				private _typeUnit = FactionGetTiered(_sideX, "unitTierStaticCrew");
+				private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 				_unit = [_groupE, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 				_unit moveInGunner _veh;
 				_soldiers pushBack _unit;
@@ -221,9 +221,9 @@ else
 		if ({if (_x inArea _markerX) exitWith {1}} count allMines == 0) then
 		{
 			Debug_1("Creating a Minefield at %1", _markerX);
-			private _mines = (FactionGetTiered(_sideX, "minefieldAPERS"));
+			private _mines = (FactionGetTiered(_faction, "minefieldAPERS"));
 			for "_i" from 1 to 45 do {
-				_mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
+				_mineX = createMine [ selectRandomWeighted _mines ,_positionX,[],_size];
 				_sideX revealMine _mineX;
 			};
 		};
@@ -252,7 +252,7 @@ else
 		if ((random 100) > ((tierWar * 3) + (_aggro / 5))) then {
 			_leave = true;
 		} else {	
-			private _sniperPair = FactionGetTiered(_sideX, "groupTierPatrolSniper");
+			private _sniperPair = FactionGetTiered(_faction, "groupTierPatrolSniper");
 			private _groupX = [_positionX,_sideX, _sniperPair] call A3A_fnc_spawnGroup;
 
 			[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
