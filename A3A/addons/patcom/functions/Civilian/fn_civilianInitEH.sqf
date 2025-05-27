@@ -21,7 +21,7 @@
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_unit"];
+params ["_unit", ["_press", false]];
 
 _unit setSkill 0;
 _unit disableAI "TARGET";
@@ -58,10 +58,19 @@ if (_civNotHuman) exitWith
     ["civInit", [_unit]] call EFUNC(Events,triggerEvent);
 };
 
-_unit addEventHandler["FiredNear", {
-    params ["_unit"];
-    [_unit, _thisEvent, _thisEventHandler] call A3A_fnc_civilianFiredNearEH;
-}];
+if (_press) then {
+    _unit addEventHandler["FiredNear", {
+        params ["_unit", "_firer"];
+            _unit removeEventHandler [_thisEvent, _thisEventHandler];
+            [_unit, _firer] call A3A_fnc_pressFiredNearEH;
+    }];
+} else {
+    // Default civilian behavior
+    _unit addEventHandler["FiredNear", {
+        params ["_unit"];
+        [_unit, _thisEvent, _thisEventHandler] call A3A_fnc_civilianFiredNearEH;
+    }];
+};
 
 _unit addEventHandler ["Killed", {
     params ["_victim", "_killer"];

@@ -25,6 +25,7 @@ class CfgFunctions {
             class dialogCiv {};
             class dialogCivAction {};
             class dialogCivFinished {};
+            class pressFiredNearEH {};
             class unitAmbient {};
             class unitAmbientPlay {};
         };

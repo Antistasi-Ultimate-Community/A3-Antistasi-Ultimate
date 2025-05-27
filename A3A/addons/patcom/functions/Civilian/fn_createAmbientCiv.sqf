@@ -143,10 +143,10 @@ if (random 100 < ((aggressionOccupants) + (aggressionInvaders)) && {_civNonHuman
     private _spawnPosition = [_positionX, 10, 150, 3, 0, -1, 0] call A3A_fnc_getSafePos;
     private _groupX = createGroup _groupSide;
     _civilianGroups pushBack _groupX;
-    private _civPress = [_groupX, FactionGet(civ, "unitPress"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit; ///this one
-    [_civPress] spawn A3A_fnc_civilianInitEH;
+    private _civPress = [_groupX, FactionGet(civ, "unitPress"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit; ///
+    [_civPress, true] spawn A3A_fnc_civilianInitEH; // _press = true
     _civilians pushBack _civPress;
-    [_groupX, "Patrol_Area", 5, 50, 300, false, [], false] call A3A_fnc_patrolLoop;
+    //[_groupX, "Patrol_Area", 5, 50, 300, false, [], false] call A3A_fnc_patrolLoop;
 };
 
 for "_i" from 1 to _numCiv do {
