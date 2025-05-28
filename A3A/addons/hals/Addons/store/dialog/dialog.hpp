@@ -1,7 +1,7 @@
 #include "defines.hpp"
 #include "idcs.hpp"
 #include "sizes.hpp"
-///
+
 class RscDisplayStore {
 	idd = IDD_DISPLAY_STORE;
 	onLoad = "['onLoad', _this] call HALs_store_fnc_main";
