@@ -123,6 +123,8 @@ if (isClass (configFile >> "CfgPatches" >> "Flex_CUP_POL_Plus_Faction")) then {
 ["minefieldAT", ["CUP_MineE"]] call _fnc_saveToTemplate;                   // anti-tank mines
 ["minefieldAPERS", ["APERSBoundingMine"]] call _fnc_saveToTemplate;                // anti-personal mines
 
+"a3u_PolishMen" call _fnc_saveNames;
+
 /////////////////////
 ///  Identities   ///
 /////////////////////

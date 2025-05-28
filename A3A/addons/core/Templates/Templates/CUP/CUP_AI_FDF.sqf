@@ -147,6 +147,8 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ]] call _fnc_saveToTemplate;
 ["voices", ["Male01FIN_FDF_flex","Male02FIN_FDF_flex","Male03FIN_FDF_flex","Male04FIN_FDF_flex","Male05FIN_FDF_flex","Male06FIN_FDF_flex","Male07FIN_FDF_flex","Male08FIN_FDF_flex","Male09FIN_FDF_flex"]] call _fnc_saveToTemplate;
 
+"finnish_names_generic" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////

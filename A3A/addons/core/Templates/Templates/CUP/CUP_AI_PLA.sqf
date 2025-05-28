@@ -123,6 +123,8 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["faces", ["AsianHead_A3_02", "AsianHead_A3_03", "AsianHead_A3_01", "AsianHead_A3_05", "AsianHead_A3_04", "AsianHead_A3_07", "AsianHead_A3_06"]] call _fnc_saveToTemplate;
 ["voices", ["Male01CHI", "Male02CHI", "Male03CHI"]] call _fnc_saveToTemplate;
 
+"ChineseMen" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
