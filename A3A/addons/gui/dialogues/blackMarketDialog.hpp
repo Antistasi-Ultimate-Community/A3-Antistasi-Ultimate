@@ -1,4 +1,4 @@
-class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
+class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket ///
 {
     idd = A3A_IDD_BLACKMARKETVEHICLEDIALOG;
     onLoad = "['onLoad'] spawn A3A_fnc_blackMarketDialog";
