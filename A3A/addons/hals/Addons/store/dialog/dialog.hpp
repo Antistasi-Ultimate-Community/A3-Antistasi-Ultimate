@@ -9,6 +9,7 @@ class RscDisplayStore {
 	
 	class controlsBackground { 
 		class TitleBackground: RscItemText {
+			moving = true;
 			x = DIALOG_X;
 			y = DIALOG_Y;
 			w = GRID_X(STORE_W);
@@ -17,6 +18,7 @@ class RscDisplayStore {
 		};
 
 		class StoreBackground: RscItemText {
+			moving = true;
 			x = DIALOG_X;
 			y = DIALOG_Y + GRID_Y(BAR_H + SPACE_H2);
 			w = GRID_X(STORE_W);
