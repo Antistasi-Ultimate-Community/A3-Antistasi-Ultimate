@@ -90,14 +90,36 @@ if (_tab isEqualTo "vehicles") then
         _previewPicture ctrlSetText _editorPreview;
         _previewPicture ctrlCommit 0;
 
-        private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
-        _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
-        _button ctrlSetText _displayName;
-        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
-        _button setVariable ["className", _className];
-        _button setVariable ["model", _model];
-        _button ctrlAddEventHandler ["ButtonClick", {
-            closeDialog 2; [(_this # 0) getVariable "className"] spawn A3A_fnc_addBlackMarketVeh;
+        private _label = _display ctrlCreate ["A3A_SectionStructuredLabelLeft", -1, _itemControlsGroup];
+        _label ctrlSetPosition [0, 0, 44 * GRID_W, 6 * GRID_H];
+        private _dlc = "";
+        private _addons = configsourceaddonlist _configClass;
+        if (count _addons > 0) then {
+        	private _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);
+        	if (count _mods > 0) then {
+        		_dlc = _mods select 0;
+        	};
+        };
+        private _dlcParams = modParams [_dlc,["logo","logoOver"]];
+        private _logo = _dlcParams param [0,""];
+        private _logoOver = _dlcParams param [1,""];
+        private _fieldManualTopicAndHint = getarray (configfile >> "cfgMods" >> _dlc >> "fieldManualTopicAndHint");
+        _label ctrlseteventhandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
+        private _OriginsText = composeText [
+            _displayName," ",image _logo
+        ];
+        _label ctrlSetStructuredText _OriginsText;
+        _label ctrlSetBackgroundColor [0,0,0,0.5];
+        _label ctrlCommit 0;
+
+        private _buttonTakeout = _display ctrlCreate ["A3A_ShortcutButtonSmall", -1, _itemControlsGroup];
+        _buttonTakeout ctrlSetPosition [0, 25 * GRID_H, 22 * GRID_W, 6 * GRID_H];
+        _buttonTakeout ctrlSetText (localize "STR_antistasi_dialogs_buy_vehicle_button");
+        _buttonTakeout ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
+        _buttonTakeout setVariable ["className", _className];
+        _buttonTakeout setVariable ["model", _model];
+        _buttonTakeout ctrlAddEventHandler ["ButtonClick", {
+            closeDialog 2; [(_this # 0) getVariable "className", false] spawn A3A_fnc_addBlackMarketVeh;
         }];
         _buttonTakeout ctrlCommit 0;
 
