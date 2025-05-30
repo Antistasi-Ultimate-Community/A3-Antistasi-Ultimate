@@ -10,6 +10,53 @@
         If you load AMF and Aegis, you'll get things from both.
     */
     
+    class addons_jets : addons_base
+    {
+        addons[] = {"air_f_jets"};
+        weapons = "weapons_jets";
+        vehicles = "vehicles_jets";
+    };
+    class addons_kart : addons_base
+    {
+        addons[] = {"soft_f_kart"};
+        weapons = "weapons_kart";
+        vehicles = "vehicles_kart";
+    };
+    class addons_marksmen : addons_base
+    {
+        addons[] = {"data_f_mark"};
+        weapons = "weapons_marksmen";
+        vehicles = "vehicles_marksmen";
+    };
+    class addons_tanks : addons_base
+    {
+        addons[] = {"armor_f_tank"};
+        weapons = "weapons_tanks";
+        vehicles = "vehicles_tanks";
+    };
+    class addons_lawsofwar : addons_base
+    {
+        addons[] = {"soft_f_orange"};
+        weapons = "weapons_lawsofwar";
+        vehicles = "vehicles_lawsofwar";
+    };
+    class addons_apex : addons_base
+    {
+        addons[] = {"supplies_f_exp"};
+        weapons = "weapons_apex";
+        vehicles = "vehicles_apex";
+    };
+    class addons_contact : addons_base
+    {
+        addons[] = {"soft_f_contact"};
+        weapons = "weapons_contact";
+        vehicles = "vehicles_contact";
+    };
+    class addons_helicopters : addons_base
+    {
+        addons[] = {"air_f_heli"};
+        vehicles = "vehicles_helicopters";
+    };
     class addons_kkiv2035 : addons_base
     {
         addons[] = {"Kio_Kkiv_2035"};
