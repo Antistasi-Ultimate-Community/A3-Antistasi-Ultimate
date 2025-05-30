@@ -174,3 +174,31 @@
         {
             prefix = "ef";
         };
+        class weapons_jets : weapons_base
+        {
+            prefix = "jets";
+        };
+        class weapons_tanks : weapons_base
+        {
+            prefix = "tanks";
+        };
+        class weapons_kart : weapons_base
+        {
+            prefix = "kart";
+        };
+        class weapons_marksmen : weapons_base
+        {
+            prefix = "marksmen";
+        };
+        class weapons_lawsofwar : weapons_base
+        {
+            prefix = "lawsofwar";
+        };
+        class weapons_apex : weapons_base
+        {
+            prefix = "apex";
+        };
+        class weapons_contact : weapons_base
+        {
+            prefix = "contact";
+        };

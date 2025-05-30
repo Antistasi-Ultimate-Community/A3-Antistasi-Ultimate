@@ -19,8 +19,12 @@ class vehicles_gm : vehicles_base
     ITEM(gm_ge_army_fuchsa0_command_noinsignia, 2856, "APC", VEHICLE_CONDITION_APC);
     ITEM(gm_ge_army_fuchsa0_engineer_noinsignia, 4048, "APC", VEHICLE_CONDITION_APC);
     ITEM(gm_ge_army_fuchsa0_reconnaissance_noinsignia, 10548, "APC", VEHICLE_CONDITION_APC);
+    ITEM(gm_ge_army_fuchsa1_jammer_noinsignia, 2728, "APC", VEHICLE_CONDITION_APC);
+    ITEM(gm_ge_army_fuchsa0_medic_noinsignia, 8584, "APC", VEHICLE_CONDITION_APC);
+    ITEM(gm_gc_army_bmp1p_noinsignia, 19300, "APC", VEHICLE_CONDITION_APC);
     ITEM(gm_gc_army_bmp1sp2_noinsignia, 19300, "APC", VEHICLE_CONDITION_APC);
-    ITEM(gm_gc_army_brdm2_noinsignia, 7000, "APC", VEHICLE_CONDITION_APC);
+    ITEM(gm_gc_army_brdm2_9p133_noinsignia, 10600, "APC", VEHICLE_CONDITION_APC);
+    ITEM(gm_gc_army_brdm2_noinsignia, 6600, "APC", VEHICLE_CONDITION_APC);
     ITEM(gm_gc_army_brdm2rkh_noinsignia, 6600, "APC", VEHICLE_CONDITION_APC);
     ITEM(gm_gc_army_brdm2um_noinsignia, 1664, "APC", VEHICLE_CONDITION_APC);
     ITEM(gm_gc_army_btr60pa_noinsignia, 3448, "APC", VEHICLE_CONDITION_APC);
@@ -47,6 +51,7 @@ class vehicles_gm : vehicles_base
     ITEM(gm_dk_army_m109_noinsignia, 51150, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
     ITEM(gm_ge_army_kat1_463_mlrs_noinsignia, 49500, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
     ITEM(gm_ge_army_m109g_noinsignia, 51150, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
+    ITEM(gm_ge_army_m113a1g_mortar_noinsignia, 39600, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
     ITEM(gm_gc_army_ural375d_mlrs_noinsignia, 54900, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
     ITEM(gm_gc_army_2s1_noinsignia, 40260, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
     ITEM(gm_gc_army_2p16_noinsignia, 198000, "ARTILLERY", VEHICLE_CONDITION_ARTILLERY);
@@ -87,6 +92,8 @@ class vehicles_gm : vehicles_base
     ITEM(gm_ge_army_Leopard1a1a2_noinsignia, 43700, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_ge_army_Leopard1a3a1_noinsignia, 43700, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_ge_army_Leopard1a5_noinsignia, 46700, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(gm_dk_army_Leopard1a5dk1, 46700, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(gm_dk_army_Leopard1a5dk1_dozer, 48500, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_pl_army_pt76b, 19800, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_pl_army_t55, 40200, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_pl_army_t55a, 43500, "TANK", VEHICLE_CONDITION_TANK);
