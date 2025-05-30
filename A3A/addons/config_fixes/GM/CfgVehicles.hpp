@@ -1,6 +1,6 @@
 //GM - CfgVehicles.hpp
 
-class CfgVehicles
+class CfgVehicles //
 {
 	class gm_dk_army_m113a1dk_apc;
 	class gm_dk_army_m113a1dk_command;
