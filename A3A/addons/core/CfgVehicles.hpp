@@ -206,6 +206,8 @@ class CfgVehicles
         transportMaxWeapons = 100;
         transportMaxBackpacks = 100;
         armor = 2000;
+        textureList[] = {"Black", 1};
+        editorPreview = QPATHTOFOLDER(Pictures\items\A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart.jpg);
     }; ///size 7
 
     class A3AU_B_Slingload_01_Cargo_F_shoppingCart : B_Slingload_01_Cargo_F {
