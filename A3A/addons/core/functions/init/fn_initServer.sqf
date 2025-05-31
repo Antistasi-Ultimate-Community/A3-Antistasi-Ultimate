@@ -312,7 +312,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 if (areRandomEventsEnabled) then {
     [] spawn SCRT_fnc_encounter_gameEventLoop;
 };
-
+///////////////////////////////////
 savingServer = false;           // enable saving
 
 // Autosave loop. Save if there were any players on the server since the last save.
