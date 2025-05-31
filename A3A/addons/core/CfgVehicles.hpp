@@ -192,4 +192,6 @@ class CfgVehicles
         hiddenSelections[] = { "camo" };
 		hiddenSelectionsTextures[] = { QPATHTOFOLDER(Pictures\items\PaperBox_01_small_money_CO.paa) };
     };
+
+    ///
 };
