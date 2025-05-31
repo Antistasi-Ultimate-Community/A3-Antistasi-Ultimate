@@ -5399,6 +5399,34 @@
                 <French>Lumière</French>
                 <Chinesesimp>灯</Chinesesimp>
             </Key>
+            <Key ID="STR_A3A_Utility_Items_Name_shoppingcartXL">
+                <Original>Shopping cart XL</Original>
+                <Russian>Тележка XL</Russian>
+                <Korean>쇼핑 카트 XL</Korean>
+                <French>Caddie XL</French>
+                <Chinesesimp>购物车 XL</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Name_shoppingcartL">
+                <Original>Shopping cart L</Original>
+                <Russian>Тележка L</Russian>
+                <Korean>쇼핑 카트 L</Korean>
+                <French>Caddie L</French>
+                <Chinesesimp>购物车 L</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Name_shoppingcartM">
+                <Original>Shopping cart M</Original>
+                <Russian>Тележка M</Russian>
+                <Korean>쇼핑 카트 M</Korean>
+                <French>Caddie M</French>
+                <Chinesesimp>购物车 M</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Name_shoppingcartS">
+                <Original>Shopping cart S</Original>
+                <Russian>Тележка S</Russian>
+                <Korean>쇼핑 카트 S</Korean>
+                <French>Caddie S</French>
+                <Chinesesimp>购物车 S</Chinesesimp>
+            </Key>
         </Container>
         <Container name="server_info">
             <Key ID="STR_A3A_feedback_serverinfo">

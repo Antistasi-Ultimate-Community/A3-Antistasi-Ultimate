@@ -935,6 +935,41 @@
                 <Korean>이 아이템은 일정량의 전투 준비 복구 키트가 들어 있습니다.</Korean>
                 <French>Cet objet contient un certain nombre de kits de récupération de l'état de préparation au combat.</French>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip">
+                <Original>This item is used to build stuff.</Original>
+                <Russian>Этот предмет используется для строительства объектов.</Russian>
+                <Chinesesimp>此物品用于建造设施。</Chinesesimp>
+                <Korean>이 아이템은 건설용으로 사용됩니다.</Korean>
+                <French>Cet objet est utilisé pour la construction.</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_shopcartXL_tooltip">
+                <Original>This item can be used to store bought items from blackmarket or to store looted items for sale.\n(takes 7 cargo spaces)</Original>
+                <Chinesesimp>此物品可用于储存黑市购买的物品或存放战利品出售。\n(占用7个货物空间)</Chinesesimp>
+                <Russian>Этот предмет можно использовать для хранения купленных на чёрном рынке вещей или для хранения добычи на продажу.\n(занимает 7 мест груза)</Russian>
+                <Korean>이 아이템은 블랙마켓에서 구매한 아이템이나 전리품을 저장하여 판매할 수 있습니다.\n(화물 공간 7칸 차지)</Korean>
+                <French>Cet objet peut être utilisé pour stocker des articles achetés au marché noir ou pour stocker du butin à vendre.\n(prend 7 espaces de chargement)</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_shopcartL_tooltip">
+                <Original>This item can be used to store bought items from blackmarket or to store looted items for sale.\n(takes 7 cargo spaces)</Original>
+                <Chinesesimp>此物品可用于储存黑市购买的物品或存放战利品出售。\n(占用7个货物空间)</Chinesesimp>
+                <Russian>Этот предмет можно использовать для хранения купленных на чёрном рынке вещей или для хранения добычи на продажу.\n(занимает 7 мест груза)</Russian>
+                <Korean>이 아이템은 블랙마켓에서 구매한 아이템이나 전리품을 저장하여 판매할 수 있습니다.\n(화물 공간 7칸 차지)</Korean>
+                <French>Cet objet peut être utilisé pour stocker des articles achetés au marché noir ou pour stocker du butin à vendre.\n(prend 7 espaces de chargement)</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_shopcartM_tooltip">
+                <Original>This item can be used to store bought items from blackmarket or to store looted items for sale.\n(takes 4 cargo spaces)</Original>
+                <Chinesesimp>此物品可用于储存黑市购买的物品或存放战利品出售。\n(占用4个货物空间)</Chinesesimp>
+                <Russian>Этот предмет можно использовать для хранения купленных на чёрном рынке вещей или для хранения добычи на продажу.\n(занимает 4 места груза)</Russian>
+                <Korean>이 아이템은 블랙마켓에서 구매한 아이템이나 전리품을 저장하여 판매할 수 있습니다.\n(화물 공간 4칸 차지)</Korean>
+                <French>Cet objet peut être utilisé pour stocker des articles achetés au marché noir ou pour stocker du butin à vendre.\n(prend 4 espaces de chargement)</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_shopcartS_tooltip">
+                <Original>This item can be used to store bought items from blackmarket or to store looted items for sale.\n(takes 3 cargo spaces)</Original>
+                <Chinesesimp>此物品可用于储存黑市购买的物品或存放战利品出售。\n(占用3个货物空间)</Chinesesimp>
+                <Russian>Этот предмет можно использовать для хранения купленных на чёрном рынке вещей или для хранения добычи на продажу.\n(занимает 3 места груза)</Russian>
+                <Korean>이 아이템은 블랙마켓에서 구매한 아이템이나 전리품을 저장하여 판매할 수 있습니다.\n(화물 공간 3칸 차지)</Korean>
+                <French>Cet objet peut être utilisé pour stocker des articles achetés au marché noir ou pour stocker du butin à vendre.\n(prend 3 espaces de chargement)</French>
+            </Key>
         </Container>
         <Container name="dialog_main_player">
             <Key ID="STR_antistasi_dialogs_main_fast_travel">

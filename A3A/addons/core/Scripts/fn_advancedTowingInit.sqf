@@ -652,7 +652,11 @@ SA_Can_Pickup_Tow_Ropes = {
 };
 
 SA_TOW_SUPPORTED_VEHICLES = [
-	"Tank", "Car", "Ship"
+    "Tank", "Car", "Ship", "ReammoBox_F",
+    "A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart",
+    "A3AU_B_Slingload_01_Cargo_F_shoppingCart",
+    "A3AU_Land_Cargo10_light_blue_F_shoppingCart",
+    "A3AU_Land_CargoBox_V1_F_shoppingCart"
 ];
 
 SA_Is_Supported_Vehicle = {
@@ -677,7 +681,16 @@ SA_TOW_RULES = [
 	["Car","CAN_TOW","Car"],
 	["Car","CAN_TOW","Ship"],
 	["Car","CAN_TOW","Air"],
-	["Ship","CAN_TOW","Ship"]
+	["Ship","CAN_TOW","Ship"],
+
+	["Tank","CAN_TOW","A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart"],
+	["Tank","CAN_TOW","A3AU_B_Slingload_01_Cargo_F_shoppingCart"],
+	["Tank","CAN_TOW","A3AU_Land_Cargo10_light_blue_F_shoppingCart"],
+	["Tank","CAN_TOW","A3AU_Land_CargoBox_V1_F_shoppingCart"],
+	["Car","CAN_TOW","A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart"],
+	["Car","CAN_TOW","A3AU_B_Slingload_01_Cargo_F_shoppingCart"],
+	["Car","CAN_TOW","A3AU_Land_Cargo10_light_blue_F_shoppingCart"],
+	["Car","CAN_TOW","A3AU_Land_CargoBox_V1_F_shoppingCart"]
 ];
 
 SA_Is_Supported_Cargo = {

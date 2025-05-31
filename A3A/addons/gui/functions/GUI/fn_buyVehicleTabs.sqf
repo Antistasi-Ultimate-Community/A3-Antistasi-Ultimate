@@ -442,6 +442,8 @@ if  (_tab in ["other"]) then
             case "refuel": { A3A_Icon_Refuel }; 
             case "repair": { A3A_Icon_Repair };
             case "rearm": { A3A_Icon_Rearm };
+            case "build": { A3A_Icon_Build };	
+            case "shop": { A3A_Icon_Shop };	
             default { "" };
         };
         _itemPic ctrlSetText _iconPath;
@@ -466,6 +468,42 @@ if  (_tab in ["other"]) then
         if (_className isEqualTo (A3A_faction_reb get 'vehicleLightSource')) then
         {
             _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_light_tooltip";
+        };
+        if (_className isEqualTo "Box_NATO_Support_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_revivekitbox_tooltip";
+        };
+        if (_className isEqualTo "Land_PlasticCase_01_small_black_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "Land_PlasticCase_01_medium_black_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "A3AU_Build_Box_Large_1") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "Land_PlasticCase_01_large_black_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_shopcartXL_tooltip";
+        };
+        if (_className isEqualTo "A3AU_B_Slingload_01_Cargo_F_shoppingCart") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_shopcartL_tooltip";
+        };
+        if (_className isEqualTo "A3AU_Land_Cargo10_light_blue_F_shoppingCart") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_shopcartM_tooltip";
+        };
+        if (_className isEqualTo "A3AU_Land_CargoBox_V1_F_shoppingCart") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_shopcartS_tooltip";
         };
         _itemPic ctrlCommit 0;
 

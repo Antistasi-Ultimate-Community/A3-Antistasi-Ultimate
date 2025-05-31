@@ -65,6 +65,34 @@
                 <French>Boite médicale</French>
                 <Chinesesimp>医疗箱</Chinesesimp>
             </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxExtraSmall">
+                <Original>Build Box (Extra Small)</Original>
+                <Russian>Строительный ящик (Очень малый)</Russian>
+                <Korean>빌드 박스 (특소형)</Korean>
+                <French>Caisse de construction (Très petite)</French>
+                <Chinesesimp>建造箱 (超小型)</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxSmall">
+                <Original>Build Box (Small)</Original>
+                <Russian>Строительный ящик (Малый)</Russian>
+                <Korean>빌드 박스 (소형)</Korean>
+                <French>Caisse de construction (Petite)</French>
+                <Chinesesimp>建造箱 (小型)</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxMeduim">
+                <Original>Build Box (Medium)</Original>
+                <Russian>Строительный ящик (Средний)</Russian>
+                <Korean>빌드 박스 (중형)</Korean>
+                <French>Caisse de construction (Moyenne)</French>
+                <Chinesesimp>建造箱 (中型)</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxLarge">
+                <Original>Build Box (Large)</Original>
+                <Russian>Строительный ящик (Большой)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+            </Key>
         </Container>
         <Container name="arsenal">
             <Key ID="STR_A3AP_vehArsenal_desc">
@@ -2863,6 +2891,20 @@
                 <Chinesesimp>开始搜刮中。</Chinesesimp>
                 <Korean>노획 시작 중.</Korean>
                 <French>Début du pillage.</French>
+            </Key>
+            <Key ID="STR_chats_autoloot_container_full">
+                <Original>Container is full! Moving to the next one</Original>
+                <Russian>Контейнер заполнен! Переходим к следующему</Russian>
+                <Chinesesimp>容器已满！转到下一个</Chinesesimp>
+                <Korean>컨테이너가 가득 찼습니다! 다음으로 넘어갑니다</Korean>
+                <French>Le conteneur est plein ! Passage au suivant</French>
+            </Key>
+            <Key ID="STR_chats_autoloot_allcontainers_full">
+                <Original>All containers are full! Loading into the truck</Original>
+                <Russian>Все контейнеры заполнены! Грузим в грузовик</Russian>
+                <Chinesesimp>所有容器都已满！正在装入卡车</Chinesesimp>
+                <Korean>모든 컨테이너가 가득 찼습니다! 트럭에 적재합니다</Korean>
+                <French>Tous les conteneurs sont pleins ! Chargement dans le camion</French>
             </Key>
             <Key ID="STR_chats_autoloot_no_more_weapons">
                 <Original>No more weapons to loot.</Original>

@@ -29,7 +29,7 @@ if (!isNil "HALs_store_debug") exitWith {};
 missionNamespace setVariable ["HALs_store_getNearbyVehicles", compileFinal '
 	params [
 		["_trader", objNull, [objNull]],
-		["_types", ["LandVehicle", "Air", "Ship", "ReammoBox_F"], [[]]],
+		["_types", ["LandVehicle", "Air", "Ship", "ReammoBox_F", "A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart", "A3AU_B_Slingload_01_Cargo_F_shoppingCart", "A3AU_Land_Cargo10_light_blue_F_shoppingCart", "A3AU_Land_CargoBox_V1_F_shoppingCart"], [[]]],
 		["_radius", HALs_store_containerRadius, [0]]
 	];
 

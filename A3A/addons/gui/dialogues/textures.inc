@@ -115,6 +115,8 @@ Maintainer: DoomMetal
 #define A3A_Icon_Box                "\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa"
 #define A3A_Icon_HealKit            "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_background_tablet_button_revive02_ca.paa"
 #define A3A_Icon_Repair             "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa"
+#define A3A_Icon_Shop               "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\container_ca.paa"
+#define A3A_Icon_Build              "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa"
 
 
 // Commander picture

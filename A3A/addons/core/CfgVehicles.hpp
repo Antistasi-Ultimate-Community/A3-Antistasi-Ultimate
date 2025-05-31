@@ -194,4 +194,48 @@ class CfgVehicles
     };
 
     ///
+    class Land_Pod_Heli_Transport_04_box_F;
+    class B_Slingload_01_Cargo_F;
+    class Land_Cargo10_light_blue_F;
+    class Land_CargoBox_V1_F;
+    class A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart : Land_Pod_Heli_Transport_04_box_F {
+        displayName = $STR_A3A_Utility_Items_Name_shoppingcartXL;
+        hiddenSelectionsTextures[] = {"A3\Air_F_Heli\Heli_Transport_04\Data\Heli_Transport_04_Pod_Ext01_Black_CO.paa","A3\Air_F_Heli\Heli_Transport_04\Data\Heli_Transport_04_Pod_Ext02_Black_CO.paa"};
+        maximumLoad = 20000;
+        transportMaxMagazines = 300;
+        transportMaxWeapons = 100;
+        transportMaxBackpacks = 100;
+        armor = 2000;
+    }; ///size 7
+
+    class A3AU_B_Slingload_01_Cargo_F_shoppingCart : B_Slingload_01_Cargo_F {
+        displayName = $STR_A3A_Utility_Items_Name_shoppingcartL;
+        maximumLoad = 10000;
+        transportMaxMagazines = 300;
+        transportMaxWeapons = 75;
+        transportMaxBackpacks = 75;
+        armor = 2000;
+    }; ///size 7
+
+    class A3AU_Land_Cargo10_light_blue_F_shoppingCart : Land_Cargo10_light_blue_F {
+        displayName = $STR_A3A_Utility_Items_Name_shoppingcartM;
+        maximumLoad = 5000;
+        transportMaxMagazines = 200;
+        transportMaxWeapons = 50;
+        transportMaxBackpacks = 50;
+        armor = 2000;
+        supplyRadius = 20;
+        enableInventory = 1;
+    };///size 4
+
+    class A3AU_Land_CargoBox_V1_F_shoppingCart : Land_CargoBox_V1_F {
+        displayName = $STR_A3A_Utility_Items_Name_shoppingcartL;
+        maximumLoad = 2000;
+        transportMaxMagazines = 100;
+        transportMaxWeapons = 25;
+        transportMaxBackpacks = 25;
+        armor = 2000;
+        supplyRadius = 4;
+        enableInventory = 1;
+    }; ///size 3
 };

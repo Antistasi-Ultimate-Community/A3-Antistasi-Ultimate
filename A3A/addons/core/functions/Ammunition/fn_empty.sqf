@@ -4,7 +4,7 @@ if (count _this > 0) then {
 	_truckX = _this select 0;
 	if (_truckX isKindOf "StaticWeapon") then {_truckX = objNull};
 } else {
-	private _trucksX = nearestObjects [boxX, ["Helicopter","Plane","LandVehicle","ReammoBox_F"], 20];
+	private _trucksX = nearestObjects [boxX, ["Helicopter","Plane","LandVehicle","ReammoBox_F", "A3AU_Land_Pod_Heli_Transport_04_box_F_shoppingCart", "A3AU_B_Slingload_01_Cargo_F_shoppingCart", "A3AU_Land_Cargo10_light_blue_F_shoppingCart", "A3AU_Land_CargoBox_V1_F_shoppingCart"], 20];
 	_trucksX = _trucksX select {not (_x isKindOf "StaticWeapon")};
 	// Prevent trolling by hiding small UAVs near the arsenal
 	_trucksX = _trucksX select {getNumber (configFile >> "CfgVehicles" >> (typeof _x) >> "isUAV") == 0};

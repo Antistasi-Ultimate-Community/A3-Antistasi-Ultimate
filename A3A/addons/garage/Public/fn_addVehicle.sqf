@@ -58,6 +58,7 @@ private _utilityRefund = {
 
     // canGarage true means it's in the utilityItem lists
     private _flags = (A3A_utilityItemHM get typeof _object) # 4;
+    private _specialflags = (A3A_utilityItemHM get typeof _object) # 3;
 
     if ("cmmdr" in _flags && _player isNotEqualTo theBoss && _instantRefund) exitWith {
         ["STR_HR_GRG_Feedback_addVehicle_commander_only"] remoteExec ["HR_GRG_fnc_Hint", _client];
@@ -72,7 +73,7 @@ private _utilityRefund = {
     } else {
         _toRefund = _object getVariable ['A3A_itemPrice', 0];
     };
-    if ("loot" in _flags) then {
+    if ("loot" in _flags || _specialflags == "shop") then {
         _feedBack = "STR_HR_GRG_Feedback_addVehicle_LTC";
         [_object, boxX, true] call A3A_fnc_ammunitionTransfer;
     };
