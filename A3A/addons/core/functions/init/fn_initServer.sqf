@@ -312,7 +312,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 if (areRandomEventsEnabled) then {
     [] spawn SCRT_fnc_encounter_gameEventLoop;
 };
-///////////////////////////////////
+
 savingServer = false;           // enable saving
 
 // Autosave loop. Save if there were any players on the server since the last save.
@@ -391,6 +391,10 @@ if(A3A_hasACE) then
 };
 
 call A3U_fnc_initZones;
+
+if(enablecanOpenerMayhem) then {
+    [] spawn A3A_fnc_canOpenerMayhem;
+};
 
 if (enableSpectrumDevice) then {
     [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);

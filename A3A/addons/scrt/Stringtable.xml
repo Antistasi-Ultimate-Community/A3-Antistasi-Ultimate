@@ -5512,6 +5512,13 @@
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
             </Key>
+            <Key ID="STR_params_canOpenerMayhem">
+                <Original>ffffffffffffffffffffffffffff</Original>
+                <Russian>This will enable the scipt that somewhat improve AI's driving ability by glittering the map with can openers</Russian>
+                <Chinesesimp></Chinesesimp>
+                <Korean></Korean>
+                <French></French>
+            </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>

@@ -389,6 +389,8 @@ class CfgFunctions
             class prepareMarkerArrays {};
             class resourcecheck {};
             class tags {};
+
+            class canOpenerMayhem {};
         };
 
         class Intel {
