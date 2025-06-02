@@ -1,5 +1,5 @@
 		///////////////////////////////////////////////////////
-		// Global Mobilisation
+		// Global Mobilisation ///
 		///////////////////////////////////////////////////////
 		class handgunsgm{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_gm", localize "STR_A3AU_handguns"]);
