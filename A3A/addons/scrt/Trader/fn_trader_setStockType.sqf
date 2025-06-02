@@ -116,12 +116,13 @@ private _modsets = keys _modsetsSet;
 
 // Handle vanilla modset
 private _vanillaModset = ["vanilla"];
-if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
+if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then { //apparently this doesn't work (and wasn't working before the dlc overhaul)
     _modsets append _vanillaModset;
 };
-/* if ("coldWar" in A3A_factionEquipFlags) then { // 3cbf cold war //why do it this way?
+
+if ("coldWar" in A3A_factionEquipFlags) then { // 3cbf cold war //why do it this way?
     _modsets pushBack "3cbfcw";
-}; */
+};
 
 [_traderX, _modsets] call HALs_store_fnc_addTrader;
 
