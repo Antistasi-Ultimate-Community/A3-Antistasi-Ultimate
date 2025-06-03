@@ -15,7 +15,7 @@ FIX_LINE_NUMBERS()
 
 params ["_traderX"];
 
-private _modsetsSet = createHashMap; // Используем HashMap для уникальных значений
+private _modsetsSet = createHashMap;
 
 // DLC to modset mapping (used for all sections)
 private _dlcModsets = [
@@ -61,7 +61,7 @@ if (_oldCfg isNotEqualTo []) then {
         };
 
         if ([_addons] call A3U_fnc_hasAddon) then {
-            _modsetsSet set [_prefix, true]; // Используем set для уникальности
+            _modsetsSet set [_prefix, true];
             [format ["Added %1 to _modsets list (old version). It is now deprecated and should be updated ASAP.", _prefix]] call A3U_fnc_log;
         };
     } forEach _oldCfg;
@@ -91,7 +91,7 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
     };
 
     if ([_addons] call A3U_fnc_hasAddon) then {
-        _modsetsSet set [_prefix, true]; // Используем set для уникальности
+        _modsetsSet set [_prefix, true];
         [format ["Added %1 to _modsets list.", _prefix]] call A3U_fnc_log;
     };
 } forEach _cfg;
@@ -100,12 +100,12 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
 {
     _x params ["_dlc", "_modset", ["_additional", []]];
     if (_dlc in A3A_enabledDLC) then {
-        _modsetsSet set [_modset, true]; // Используем set для уникальности
+        _modsetsSet set [_modset, true];
         
         {
             _x params ["_addModset", "_checkClass"];
             if (isClass (configFile >> "cfgVehicles" >> _checkClass)) then {
-                _modsetsSet set [_addModset, true]; // Используем set для уникальности
+                _modsetsSet set [_addModset, true];
             };
         } forEach _additional;
     };
@@ -116,7 +116,7 @@ private _modsets = keys _modsetsSet;
 
 // Handle vanilla modset
 private _vanillaModset = ["vanilla"];
-if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then { //apparently this doesn't work (and wasn't working before the dlc overhaul)
+if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
     _modsets append _vanillaModset;
 };
 
