@@ -165,7 +165,13 @@ class CfgVehicles
 		gm_InsigniasDefaultNation = "gm_insignia_none";
 		gm_InsigniasDefaultFlag = "gm_insignia_none";
 	};
-	class ggm_pl_army_brdm2rkh_noinsignia : gm_pl_army_brdm2rkh
+	class gm_pl_army_brdm2rkh_noinsignia : gm_pl_army_brdm2rkh
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+
+	class gm_gc_army_brdm2rkh_noinsignia : gm_gc_army_brdm2rkh
 	{
 		gm_InsigniasDefaultNation = "gm_insignia_none";
 		gm_InsigniasDefaultFlag = "gm_insignia_none";
@@ -342,6 +348,11 @@ class CfgVehicles
 		gm_InsigniasDefaultFlag = "gm_insignia_none";
 	};
 	class gm_ge_army_Leopard1a1_noinsignia : gm_ge_army_Leopard1a1
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_ge_army_Leopard1a1a1_noinsignia : gm_ge_army_Leopard1a1a1
 	{
 		gm_InsigniasDefaultNation = "gm_insignia_none";
 		gm_InsigniasDefaultFlag = "gm_insignia_none";
