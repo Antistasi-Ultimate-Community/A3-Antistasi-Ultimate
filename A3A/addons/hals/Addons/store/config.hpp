@@ -83,7 +83,8 @@ class cfgHALsStore
 		#include "config\ffp.hpp"
 		#include "config\ylarms.hpp"
 		#include "config\ProjInfAD.hpp"
-		#include "config\JCAArsenal.hpp"
+		#include "config\JCAIA.hpp"
+		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
 	};
 
@@ -990,7 +991,7 @@ class cfgHALsStore
 				"underbarrelProjInfAD"
 			};
 		};
-		class jca_stock
+		class jcaia_stock
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
@@ -1002,7 +1003,18 @@ class cfgHALsStore
 				"pointersJCA",
 				"muzzlesJCA",
 				"opticsJCA",
-				"magazinesJCA"
+				"magazinesJCA",
+				"launchersJCA",
+				"launcherMagazinesJCA",
+				"miscJCA"
+			};
+		};
+		class jcaie_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"vestsJCA",
+				"facewearJCA"
 			};
 		};
 	};
