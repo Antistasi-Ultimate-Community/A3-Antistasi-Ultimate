@@ -6078,11 +6078,11 @@
         </Container>
         <Container name="intel_civilian_interaction">
         <Key ID="STR_antistasi_intel_weapon_informant">
-            <Original>An informant gave you the location of a warehouse containing stashes of the&lt;br/&gt; %1.&lt;br/&gt; You have acquired %2 of this weapon.</Original>
-            <Russian>Информатор сообщил вам место склада с тайниками, содержащими &lt;br/&gt; %1.&lt;br/&gt; Вы получили %2 единиц этого оружия.</Russian>
-            <Chinesesimp>一名线人提供了藏有&lt;br/&gt;%1&lt;br/&gt;的仓库位置。&lt;br/&gt;您已获得该武器的%2件。</Chinesesimp>
-            <Korean>정보원이 당신에게&lt;br/&gt;%1&lt;br/&gt;을(를) 보관한 창고 위치를 알려주었습니다.&lt;br/&gt;이 무기 %2개를 획득했습니다.</Korean>
-            <French>Un informateur vous a donné l'emplacement d'un entrepôt contenant des stocks de &lt;br/&gt;%1.&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
+            <Original>An informant gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have acquired %2 of this weapon.</Original>
+            <Russian>Информатор сообщил вам место склада с тайниками, содержащими <br/> %1.<br/> Вы получили %2 единиц этого оружия.</Russian>
+            <Chinesesimp>一名线人提供了藏有<br/> %1.<br/>的仓库位置。您已获得该武器的%2件。</Chinesesimp>
+            <Korean>정보원이 당신에게<br/> %1.<br/>을(를) 보관한 창고 위치를 알려주었습니다이 무기 %2개를 획득했습니다.</Korean>
+            <French>Un informateur vous a donné l'emplacement d'un entrepôt contenant des stocks de <br/> %1.<br/> Vous avez acquis %2 de cette arme.</French>
         </Key>
         <Key ID="STR_antistasi_intel_weapon_convoy">
             <Original>A weapons convoy has been intercepted by local militia and rerouted to your HQ. You have received %1x %2.</Original>
@@ -6106,11 +6106,11 @@
             <French>En signe de bonne volonté et de soutien à la cause, un marchand d'armes anonyme a livré une caisse d'armes à votre QG. Vous avez reçu %1x %2.</French>
         </Key>
         <Key ID="STR_antistasi_intel_weapon_supplydata">
-            <Original>You found the supply data for the&lt;br/&gt; %1&lt;br/&gt; You have acquired %2 of this weapon.</Original>
-            <Russian>Вы нашли данные о поставках для&lt;br/&gt; %1&lt;br/&gt; Вы получили %2 единиц этого оружия.</Russian>
-            <Chinesesimp>你找到了&lt;br/&gt;%1&lt;br/&gt;的供应数据。&lt;br/&gt;你已获得该武器的%2件。</Chinesesimp>
-            <Korean>당신은&lt;br/&gt;%1&lt;br/&gt;의 보급 데이터를 찾았습니다.&lt;br/&gt;이 무기 %2개를 획득했습니다.</Korean>
-            <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt; %1&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
+            <Original>You found the supply data for the<br/> %1.<br/> You have acquired %2 of this weapon.</Original>
+            <Russian>Вы нашли данные о поставках для<br/> %1.<br/> Вы получили %2 единиц этого оружия.</Russian>
+            <Chinesesimp>你找到了<br/> %1.<br/>的供应数据。你已获得该武器的%2件。</Chinesesimp>
+            <Korean>당신은<br/> %1.<br/>의 보급 데이터를 찾았습니다.이 무기 %2개를 획득했습니다.</Korean>
+            <French>Vous avez trouvé les données d'approvisionnement pour le<br/> %1.<br/> Vous avez acquis %2 de cette arme.</French>
         </Key>
         </Container>
     </Package>
