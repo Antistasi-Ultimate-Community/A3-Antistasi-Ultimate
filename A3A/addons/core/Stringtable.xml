@@ -6077,21 +6077,41 @@
             </Key>
         </Container>
         <Container name="intel_civilian_interaction">
-            <Key ID="STR_antistasi_intel_weapon_informant">
-                <Original>An informant gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have acquired %2 of this weapon.</Original>
-            </Key>
-            <Key ID="STR_antistasi_intel_weapon_convoy">
-                <Original>A weapons convoy has been intercepted by local militia and rerouted to your HQ. You have received %1x %2.</Original>
-            </Key>
-            <Key ID="STR_antistasi_intel_weapon_truck">
-                <Original>A case of weapons has fallen off a truck while %1 moves around the AO. You have acquired %2x %3.</Original>
-            </Key>
-            <Key ID="STR_antistasi_intel_weapon_trader">
-                <Original>As a gesture of good will and support for the cause, an anonymous arms trader has delivered a case of weapons to your HQ. You have received %1x %2.</Original>
-            </Key>
-            <Key ID="STR_antistasi_intel_weapon_supplydata">
-                <Original>You found the supply data for the<br/> %1<br/> You have acquired %2 of this weapon.</Original>
-            </Key>
+        <Key ID="STR_antistasi_intel_weapon_informant">
+            <Original>An informant gave you the location of a warehouse containing stashes of the&lt;br/&gt; %1.&lt;br/&gt; You have acquired %2 of this weapon.</Original>
+            <Russian>Информатор сообщил вам место склада с тайниками, содержащими &lt;br/&gt; %1.&lt;br/&gt; Вы получили %2 единиц этого оружия.</Russian>
+            <Chinesesimp>一名线人提供了藏有&lt;br/&gt;%1&lt;br/&gt;的仓库位置。&lt;br/&gt;您已获得该武器的%2件。</Chinesesimp>
+            <Korean>정보원이 당신에게&lt;br/&gt;%1&lt;br/&gt;을(를) 보관한 창고 위치를 알려주었습니다.&lt;br/&gt;이 무기 %2개를 획득했습니다.</Korean>
+            <French>Un informateur vous a donné l'emplacement d'un entrepôt contenant des stocks de &lt;br/&gt;%1.&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
+        </Key>
+        <Key ID="STR_antistasi_intel_weapon_convoy">
+            <Original>A weapons convoy has been intercepted by local militia and rerouted to your HQ. You have received %1x %2.</Original>
+            <Russian>Конвой с оружием был перехвачен местными ополченцами и перенаправлен в ваш штаб. Вы получили %1x %2.</Russian>
+            <Chinesesimp>当地民兵拦截了一支武器运输队并将其转运至你的总部。你已收到%1个%2。</Chinesesimp>
+            <Korean>현지 민병대가 무기 호송대를 차단하여 본부로 돌렸습니다. %2을(를) %1개 획득했습니다.</Korean>
+            <French>Un convoi d'armes a été intercepté par la milice locale et redirigé vers votre QG. Vous avez reçu %1x %2.</French>
+        </Key>
+        <Key ID="STR_antistasi_intel_weapon_truck">
+            <Original>A case of weapons has fallen off a truck while %1 moves around the AO. You have acquired %2x %3.</Original>
+            <Russian>Ящик с оружием выпал из грузовика, пока %1 перемещался по зоне операции. Вы получили %2x %3.</Russian>
+            <Chinesesimp>当%1在行动区移动时，一箱武器从卡车上掉落。你已获得%2个%3。</Chinesesimp>
+            <Korean>%1이(가) 작전 구역을 이동 중 트럭에서 무기 상자가 떨어졌습니다. %3을(를) %2개 획득했습니다.</Korean>
+            <French>Une caisse d'armes est tombée d'un camion pendant que %1 se déplaçait dans la zone d'opération. Vous avez acquis %2x %3.</French>
+        </Key>
+        <Key ID="STR_antistasi_intel_weapon_trader">
+            <Original>As a gesture of good will and support for the cause, an anonymous arms trader has delivered a case of weapons to your HQ. You have received %1x %2.</Original>
+            <Russian>В знак доброй воли и поддержки дела, анонимный торговец оружием доставил ящик с оружием в ваш штаб. Вы получили %1x %2.</Russian>
+            <Chinesesimp>作为善意和对事业的支持，一名匿名军火商已将一箱武器运抵你的总部。你已收到%1个%2。</Chinesesimp>
+            <Korean>선의와 사명 지지의 표시로 익명의 무기 상인이 본부에 무기 상자를 배달했습니다. %2을(를) %1개 획득했습니다.</Korean>
+            <French>En signe de bonne volonté et de soutien à la cause, un marchand d'armes anonyme a livré une caisse d'armes à votre QG. Vous avez reçu %1x %2.</French>
+        </Key>
+        <Key ID="STR_antistasi_intel_weapon_supplydata">
+            <Original>You found the supply data for the&lt;br/&gt; %1&lt;br/&gt; You have acquired %2 of this weapon.</Original>
+            <Russian>Вы нашли данные о поставках для&lt;br/&gt; %1&lt;br/&gt; Вы получили %2 единиц этого оружия.</Russian>
+            <Chinesesimp>你找到了&lt;br/&gt;%1&lt;br/&gt;的供应数据。&lt;br/&gt;你已获得该武器的%2件。</Chinesesimp>
+            <Korean>당신은&lt;br/&gt;%1&lt;br/&gt;의 보급 데이터를 찾았습니다.&lt;br/&gt;이 무기 %2개를 획득했습니다.</Korean>
+            <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt; %1&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
+        </Key>
         </Container>
     </Package>
 </Project>
