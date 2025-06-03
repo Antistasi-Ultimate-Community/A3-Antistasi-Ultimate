@@ -94,6 +94,8 @@ class vehicles_gm : vehicles_base
     ITEM(gm_ge_army_Leopard1a5_noinsignia, 46700, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_dk_army_Leopard1a5dk1, 46700, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_dk_army_Leopard1a5dk1_dozer, 48500, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(gm_ge_army_rakjpz2_noinsignia, 31850, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(gm_ge_army_Leopard1a4_noinsignia, 45500, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_pl_army_pt76b, 19800, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_pl_army_t55, 40200, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(gm_pl_army_t55a, 43500, "TANK", VEHICLE_CONDITION_TANK);
