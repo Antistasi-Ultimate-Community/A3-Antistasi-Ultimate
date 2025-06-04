@@ -16,7 +16,8 @@ private _side = _squadLeader getVariable "side";
 _caller setVariable ["intelSearchTime",time + _timeForSearch];
 _caller setVariable ["intelAnimsDone",false];
 _caller setVariable ["intelFound",false];
-_caller setVariable ["cancelIntelSearch",false];
+
+_caller setVariable ["intelSearching", true];
 _caller setVariable ["A3A_searchedSquadLeader", _squadLeader];
 
 _squadLeader setVariable ["intelSearchDone", true, true];
@@ -90,6 +91,7 @@ if(_wasCancelled) exitWith
     [(localize "STR_intel_no_structtext_header"), (localize "STR_cancel_search_tooltip")] call A3A_fnc_customHint;
     _caller setVariable ["intelFound", nil];
     _squadLeader setVariable ["intelSearchDone", nil, true];
+    _caller setVariable ["intelSearching", nil];
 };
 
 if(_caller getVariable ["intelFound", false]) then {
@@ -111,6 +113,7 @@ else
     _squadLeader setVariable ["intelSearchDone", nil, true];
 };
 _caller setVariable ["intelFound", nil];
+_caller setVariable ["intelSearching", nil];
 
 private _bTimeOut = time + 60;
 waitUntil {sleep 0.5; time > _bTimeOut};

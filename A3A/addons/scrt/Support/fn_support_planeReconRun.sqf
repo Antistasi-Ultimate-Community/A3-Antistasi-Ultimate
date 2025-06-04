@@ -59,7 +59,7 @@ if (isSupportMarkerPlacingLocked) then {
     publicVariable "isSupportMarkerPlacingLocked";
 };
 
-if !(canMove _plane) then { sleep cleantime };
+if !(canMove _plane) then { sleep 3600 };
 deleteVehicle _plane;
 {deleteVehicle _x} forEach _planeCrew;
 deleteGroup _groupPlane;

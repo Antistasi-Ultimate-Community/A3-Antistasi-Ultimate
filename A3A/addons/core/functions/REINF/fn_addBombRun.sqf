@@ -46,7 +46,7 @@ if (!(_veh isKindOf "Air")) exitWith {
 	[localize "STR_A3A_reinf_airstrike_header", localize "STR_A3A_reinf_airstrike_air_only"] call SCRT_fnc_misc_deniedHint;
 };
 
-_typeX = typeOf _veh;
+private _typeX = typeOf _veh;
 
 if (isClass (configfile >> "CfgVehicles" >> _typeX >> "assembleInfo")) then {
 	if (count getArray (configfile >> "CfgVehicles" >> _typeX >> "assembleInfo" >> "dissasembleTo") > 0) then {
