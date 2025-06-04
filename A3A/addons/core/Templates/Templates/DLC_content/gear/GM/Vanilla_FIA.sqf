@@ -127,6 +127,7 @@ _loadoutData set ["facewearGM", [
     "gm_ge_facewear_stormhood_blk",
     "gm_ge_facewear_stormhood_dustglasses_blk",
     "gm_ge_facewear_stormhood_brd",
-    "gm_ge_facewear_sunglasses"
+    "gm_ge_facewear_sunglasses",
+    "gm_ge_facewear_dustglasses_relaxed"
     ]
 ];

@@ -12,12 +12,13 @@ _transportHelicopters append ["gm_gc_airforce_mi2t_noinsignia"];
 
 _artillery append ["gm_gc_army_ural375d_mlrs_noinsignia","gm_gc_army_2s1_noinsignia","gm_gc_army_2p16_noinsignia"];
 
-_militiaAPCs append ["gm_gc_army_btr60pa_noinsignia","gm_gc_army_btr60pa_dshkm_noinsignia","gm_gc_army_btr60pb_noinsignia","gm_gc_army_btr60pu12_noinsignia","gm_pl_army_ot64a_noinsignia"];
+_militiaAPCs append ["gm_gc_army_btr60pa_noinsignia","gm_gc_army_btr60pa_dshkm_noinsignia","gm_gc_army_btr60pb_noinsignia",
+"gm_gc_army_btr60pu12_noinsignia","gm_pl_army_ot64a_noinsignia","gm_gc_army_brdm2_9p133_noinsignia"];
 _militiaTrucks append ["gm_gc_army_ural375d_cargo_noinsignia","gm_gc_army_ural4320_cargo_noinsignia"];
 _militiaCars append ["gm_gc_army_brdm2um_noinsignia","gm_gc_army_uaz469_cargo_noinsignia"];
 _militiaLightArmed append ["gm_gc_army_brdm2_noinsignia","gm_gc_army_uaz469_dshkm_noinsignia","gm_gc_army_uaz469_spg9_noinsignia"];
 
-_lightTanks append ["gm_gc_army_bmp1sp2_noinsignia","gm_gc_army_pt76b_noinsignia","gm_gc_army_t55_noinsignia","gm_gc_army_t55a_noinsignia","gm_gc_army_t55ak_noinsignia","gm_gc_army_t55am2_noinsignia","gm_gc_army_t55am2b_noinsignia","gm_pl_army_t55ak_noinsignia"];
+_lightTanks append ["gm_gc_army_bmp1sp2_noinsignia","gm_gc_army_bmp1p_noinsignia","gm_gc_army_pt76b_noinsignia","gm_gc_army_t55_noinsignia","gm_gc_army_t55a_noinsignia","gm_gc_army_t55ak_noinsignia","gm_gc_army_t55am2_noinsignia","gm_gc_army_t55am2b_noinsignia","gm_pl_army_t55ak_noinsignia"];
 _airborneVehicles append ["gm_gc_army_btr60pa_noinsignia","gm_gc_army_btr60pa_dshkm_noinsignia","gm_gc_army_btr60pb_noinsignia","gm_gc_army_btr60pu12_noinsignia","gm_gc_army_bmp1sp2_noinsignia"];
 _aa append ["gm_gc_army_zsu234v1_noinsignia"];
 

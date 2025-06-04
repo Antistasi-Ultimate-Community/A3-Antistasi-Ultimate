@@ -25,7 +25,8 @@
     "gm_xx_facewear_scarf_01_pt2",
     "gm_xx_facewear_scarf_01_str",
     "gm_xx_facewear_scarf_01_wht",
-    "gm_ge_facewear_sunglasses"
+    "gm_ge_facewear_sunglasses",
+    "gm_ge_facewear_dustglasses_relaxed"
 ];
 
 (_loadoutData get "fullmask") append [
@@ -39,8 +40,7 @@
     "gm_xx_headgear_headwrap_crew_01_grn",
     "gm_ge_headgear_hat_beanie_crew_blk",
     "gm_gc_headgear_fjh_model4_oli",
-    "gm_ge_headgear_m92_cover_glasses_oli",
-    "gm_ge_headgear_m92_cover_oli"
+    "gm_gc_army_headgear_hat_90_bg"
 ];
 
 _vests append [
@@ -101,7 +101,8 @@ _heavyVests append [
 "gm_ge_bgs_vest_type3_oli",
 "gm_ge_bgs_vest_type3_gry",
 "gm_ge_bgs_vest_type3a1_oli",
-"gm_ge_bgs_vest_type3a1_gry"
+"gm_ge_bgs_vest_type3a1_gry",
+"gm_pl_army_vest_armor_01_akm_80_oli"
 ];
 
 (_loadoutData get "uniforms") append [
@@ -119,7 +120,9 @@ _heavyVests append [
 _helmets append [
     "gm_ge_headgear_psh77_oli",
     "gm_ge_headgear_psh77_up_oli",
-    "gm_ge_headgear_psh77_down_oli"
+    "gm_ge_headgear_psh77_down_oli",
+    "gm_ge_headgear_m92_cover_glasses_oli",
+    "gm_ge_headgear_m92_cover_oli"
 ];
 
 _crewhelmets pushBack "gm_ge_headgear_headset_crew_oli";

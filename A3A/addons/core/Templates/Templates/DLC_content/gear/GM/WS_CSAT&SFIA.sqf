@@ -15,7 +15,7 @@
 ];
 
 (_militiaLoadoutData get "vests") pushBack "gm_ge_vest_sov_80_oli";
-(_militiaLoadoutData get "Hvests") append ["gm_ge_vest_sov_armor_80_oli","gm_ge_bgs_vest_type3a1_oli"];
+(_militiaLoadoutData get "Hvests") append ["gm_ge_vest_sov_armor_80_oli","gm_ge_bgs_vest_type3a1_oli","gm_pl_army_vest_armor_01_akm_80_oli"];
 
 (_crewLoadoutData get "helmets") pushBack "gm_ge_headgear_crewhat_80_blk";
 

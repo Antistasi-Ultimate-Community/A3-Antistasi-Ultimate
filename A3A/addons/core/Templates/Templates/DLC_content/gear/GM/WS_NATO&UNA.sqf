@@ -7,10 +7,11 @@
 (_militiaLoadoutData get "helmets") append [
 	"gm_dk_headgear_m96_blu",
 	"gm_ge_headgear_m62_cover_blu",
+	"gm_gc_army_headgear_m56_cover_blu",
 	"gm_gc_army_headgear_m56_cover_blu"
 ];
 (_militiaLoadoutData get "vests") pushBack "gm_ge_bgs_vest_type3_blu";
-(_militiaLoadoutData get "Hvests") append ["gm_dk_army_vest_m00_blu"];
+(_militiaLoadoutData get "Hvests") append ["gm_dk_army_vest_m00_blu","gm_pl_army_vest_armor_01_akm_80_blu"];
 
 
 (_crewLoadoutData get "helmets") pushBack "gm_ge_headgear_crewhat_80_blk";

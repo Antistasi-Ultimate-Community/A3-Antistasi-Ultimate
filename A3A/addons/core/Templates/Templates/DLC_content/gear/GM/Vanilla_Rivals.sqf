@@ -43,9 +43,7 @@
 
 (_loadoutData get "headgear") append [        
 	"gm_ge_headgear_headset_crew_oli",
-    "gm_gc_headgear_fjh_model4_oli",
-    "gm_ge_headgear_m92_cover_glasses_oli",
-    "gm_ge_headgear_m92_cover_oli"
+    "gm_gc_headgear_fjh_model4_oli"
 ];
 
 _vests append [
@@ -106,7 +104,23 @@ _heavyVests append [
 "gm_ge_bgs_vest_type3_oli",
 "gm_ge_bgs_vest_type3_gry",
 "gm_ge_bgs_vest_type3a1_oli",
-"gm_ge_bgs_vest_type3a1_gry"
+"gm_ge_bgs_vest_type3a1_gry",
+"gm_pl_army_vest_armor_01_akm_80_bg",
+"gm_pl_army_vest_armor_01_akm_80_frog",
+"gm_pl_army_vest_armor_01_akm_80_oli",
+"gm_pl_army_vest_armor_01_akm_80_str",
+"gm_gc_army_vest_bespa_80_none_str",
+"gm_gc_army_vest_bespa_80_belt_str",
+"gm_gc_army_vest_bespa_80_leader_str",
+"gm_gc_army_vest_bespa_80_lmg_str",
+"gm_gc_army_vest_bespa_80_rifleman_str",
+"gm_gc_army_vest_bespa_80_at_str",
+"gm_gc_army_vest_bespa_90_belt_str",
+"gm_gc_army_vest_bespa_90_leader_str",
+"gm_gc_army_vest_bespa_90_lmg_str",
+"gm_gc_army_vest_bespa_90_officer_str",
+"gm_gc_army_vest_bespa_90_rifleman_str",
+"gm_gc_army_vest_bespa_90_at_str"
 ];
 
 (_loadoutData get "uniforms") append [
@@ -133,7 +147,9 @@ _helmets append [
 	"gm_ge_bgs_headgear_psh77_cover_down_smp",
 	"gm_ge_bgs_headgear_psh77_cover_str",
 	"gm_ge_bgs_headgear_psh77_cover_up_str",
-	"gm_ge_bgs_headgear_psh77_cover_down_str"
+	"gm_ge_bgs_headgear_psh77_cover_down_str",
+    "gm_ge_headgear_m92_cover_glasses_oli",
+    "gm_ge_headgear_m92_cover_oli"
 ]; 
 
 _crewhelmets pushBack "gm_ge_headgear_headset_crew_oli";
