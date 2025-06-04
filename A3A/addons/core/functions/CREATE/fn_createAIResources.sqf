@@ -25,6 +25,15 @@ private _faction = Faction(_sideX);
 
 private _isFIA = random 10 > (tierWar + difficultyCoef) and {!(_frontierX)};
 
+if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then
+{
+	_sideX = Occupants;
+	if ((random 10 >= (tierWar + difficultyCoef)) and !(_frontierX)) then //Forced spawn is missing (check createAI outpost)
+	{
+		_isFIA = true;
+	};
+};
+
 if (_frontierX) then {
 	_roads = _positionX nearRoads _size;
 	if (count _roads != 0) then
@@ -108,7 +117,7 @@ if (_radiusX < ([_markerX] call A3A_fnc_garrisonSize)) then {
 	//No patrol if patrol area overlaps with an enemy site
 	_patrol = ((markersX findIf {(getMarkerPos _x inArea _mrk) && {sidesX getVariable [_x, sideUnknown] != _sideX}}) == -1);
 };
-if (_patrol) then {
+if (_patrol) then { /// probably needs something like || _isFIA
 	[_markerX, _positionX, _sideX, _faction, 4] call SCRT_fnc_location_createPatrols;
 };
 
