@@ -1,6 +1,6 @@
 /*  Simulates the call for support by a group by making the teamleader a bit more dumb for a time
 
-    Execution on: HC or Server
+    Execution on: HC or Server, group-local
 
     Scope: Internal
 
@@ -32,6 +32,10 @@ private _isRival = _groupLeader getVariable ["isRival", false];
 if (_isRival) then {
     Error("Rivals are not using general supports, aborting.");
 };
+
+// Don't call support against units unless there's slightly more information than damage dealt
+// Should rule out calls for mines/charges but still pick up snipers (maybe only after the second kill)
+if (_target isKindOf "CAManBase" and { _group knowsAbout _target <= 1.5 }) exitWith {};
 
 //If groupleader is down, dont call support
 if !(_groupLeader call A3A_fnc_canFight) exitWith {};
