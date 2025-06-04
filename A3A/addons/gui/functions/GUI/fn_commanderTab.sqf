@@ -532,16 +532,18 @@ switch (_mode) do
         // Disable fire button initially
         _fireButton ctrlEnable false;
 
+        private _roundType = "";
         if (_heShell) then
         {
             // HE
             _heButton ctrlEnable false;
             _smokeButton ctrlEnable true;
-
+            _roundType = _mortarHEMag;
         } else {
             // Smoke
             _smokeButton ctrlEnable false;
             _heButton ctrlEnable true;
+            _roundType = _mortarSmokeMag;
         };
 
         if (_pointStrike) then
@@ -648,15 +650,23 @@ switch (_mode) do
         // Add tooltip to fire button when unable to fire
         private _firebuttonTooltipText = "";
         private _availableRounds = [_smokeRoundsCount, _heRoundsCount] select _heShell;
+        private _isInRange = call {
+            if (isNil "_startPos") exitWith {false};
+            _startPos inRangeOfArtillery [[_artyArrayDef1#0],_roundType];
+        };
         switch (true) do
         {
             case (isNil "_startPos" || (!_pointStrike && isNil "_endPos")):
             {
-                _firebuttonTooltipText = _firebuttonTooltipText + localize "STR_antistasi_dialogs_main_hc_fire_mission_position_not_set_tooltip" + "\n"
+                _firebuttonTooltipText = localize "STR_antistasi_dialogs_main_hc_fire_mission_position_not_set_tooltip"
             };
             case (_roundsCount > _availableRounds):
             {
-                _firebuttonTooltipText = _firebuttonTooltipText + localize "STR_antistasi_dialogs_main_hc_fire_misison_no_ammo_tooltip" + "\n"
+                _firebuttonTooltipText = localize "STR_antistasi_dialogs_main_hc_fire_mission_no_ammo_tooltip"
+            };
+            case !(_isInRange):
+            {
+                _firebuttonTooltipText = localize "STR_antistasi_dialogs_main_hc_fire_mission_out_of_range_tooltip"
             };
         };
 
