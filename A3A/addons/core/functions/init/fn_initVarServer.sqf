@@ -35,6 +35,9 @@ private _declareServerVariable = {
 ////////////////////////////////////////
 Info("initialising general server variables");
 
+private _mapInfo = missionConfigFile/"A3A"/"mapInfo"/toLower worldName;
+if (!isClass _mapInfo) then {_mapInfo = configFile/"A3A"/"mapInfo"/toLower worldName};
+
 //time to delete dead bodies, vehicles etc..
 DECLARE_SERVER_VAR(cleantime, 3600);
 //initial spawn distance. Less than 1Km makes parked vehicles spawn in your nose while you approach.
@@ -43,10 +46,11 @@ DECLARE_SERVER_VAR(cleantime, 3600);
 DECLARE_SERVER_VAR(distanceSPWN1, distanceSPWN*1.3);
 DECLARE_SERVER_VAR(distanceSPWN2, distanceSPWN*0.5);
 //The furthest distance the AI can attack from using helicopters or planes
-DECLARE_SERVER_VAR(distanceForAirAttack, 10000);
+distanceForAirAttack = if (isNumber (_mapInfo/"distanceForAirAttack")) then { getNumber (_mapInfo/"distanceForAirAttack") } else { 10000 };
+ONLY_DECLARE_SERVER_VAR(distanceForAirAttack);
 //The furthest distance the AI can attack from using trucks and armour
-DECLARE_SERVER_VAR(distanceForLandAttack, 3000);
-
+distanceForLandAttack = if (isNumber (_mapInfo/"distanceForLandAttack")) then { getNumber (_mapInfo/"distanceForLandAttack") } else { 3000 };
+ONLY_DECLARE_SERVER_VAR(distanceForLandAttack);
 // Used by headless clients for crate scaling
 DECLARE_SERVER_VAR(A3A_activePlayerCount, 1);
 
