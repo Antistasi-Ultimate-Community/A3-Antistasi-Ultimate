@@ -20,8 +20,8 @@ private _fnc_addArrayToWeights = {
 
 private _vehWeights = [];
 
-private _milCarWeight =     [50, 40, 30, 20, 10,  0,  0,  0,  0,  0] select _level;
-private _carWeight =        [50, 50, 50, 50, 50, 50, 50, 40, 35, 30] select _level;
+private _milCarWeight =     [100, 70, 50, 30, 10,  0,  0,  0,  0,  0] select _level;
+private _carWeight =        [ 0, 30, 30, 40, 50, 50, 50, 40, 35, 30] select _level;
 private _aaWeight =         [ 0,  0,  3,  5,  7,  8, 10, 12, 13, 14] select _level;
 private _milApcWeight =     [ 0,  5, 15, 25,  0,  0,  0,  0,  0,  0] select _level;
 private _tankWeight =       [ 0,  0,  0, 15, 20, 25, 30, 35, 40, 50] select _level;
@@ -30,6 +30,12 @@ private _ltankWeight =      [ 0, 10, 15, 25, 30, 35, 30, 25, 20, 15] select _lev
 // filter out weak AA that shouldn't be tier-scaled (eg. Avenger, zu23)
 private _vehAA = (_faction get "vehiclesAA") select { A3A_vehicleResourceCosts get _x >= 100 };
 if (_vehAA isEqualTo []) then { _tankWeight = _tankWeight + _aaWeight };
+
+if (_faction get "vehiclesLightTanks" isEqualTo []) then { 
+    if (_level < 3) exitWith {_carWeight + _ltWeight};
+    _tankWeight = _tankWeight + _ltWeight;
+};
+if (_faction get "vehiclesTanks" isEqualTo []) then { _ltWeight = _ltWeight + _tankWeight };
 
 [_faction get "vehiclesLightTanks", _ltankWeight] call _fnc_addArrayToWeights;
 [_faction get "vehiclesTanks", _tankWeight] call _fnc_addArrayToWeights;
