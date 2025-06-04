@@ -34,7 +34,7 @@ if (bombRuns > _maxQuantity) exitWith {
 
 private _owner = _veh getVariable "ownerX";
 private _exit = false;
-if (!isNil "_owner" && {_owner isEqualType "" && {getPlayerUID player != _owner}}) then {
+if !(isNil "_owner" && {_owner isEqualType "" || {getPlayerUID player isEqualTo _owner}}) then { //Returns false if no owner, false if is owner, true if is not owner
 	_exit = true;
 };
 
