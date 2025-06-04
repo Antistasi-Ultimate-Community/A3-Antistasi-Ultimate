@@ -54,7 +54,7 @@ switch _typeX do
                     createDialog "missionMenu";
                 #endif
             },
-            nil,0,false,true,"","([_this] call A3A_fnc_isMember or _this == theBoss) and (petros == leader group petros)",4
+            nil,0,false,true,"","([_this] call A3A_fnc_isMember or _this == theBoss) and (petros == leader group petros) and _this == _this getVariable ['owner',objNull]",4];
         ];
         petros addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss) and (petros == leader group petros)"];
         petros addAction [format ["<img image='a3\ui_f\data\igui\cfg\actions\takeflag_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_build_hq"], A3A_fnc_buildHQ,nil,0,false,true,"","(_this == theBoss) and (petros != leader group petros)",4];

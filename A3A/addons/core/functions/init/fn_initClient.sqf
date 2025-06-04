@@ -505,8 +505,8 @@ if (A3A_hasACE) then
 };
 
 boxX allowDamage false;			// hmm...
-boxX addAction [format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_transfer_to_arsenal"], {[] spawn A3A_fnc_empty;}, 3];
-boxX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
+boxX addAction [format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_transfer_to_arsenal"], {[] spawn A3A_fnc_empty;}, 3,1.5,true,true,"","!unitIsUAV _this"];
+boxX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4,1.5,true,true,"","!unitIsUAV _this"];
 if (A3A_hasACE) then { [boxX, boxX] call ace_common_fnc_claim;};	//Disables ALL Ace Interactions
 flagX allowDamage false;
 if(playerRecruitAI isEqualTo 1) then 
