@@ -8,8 +8,24 @@ class CfgVehicles
     };
     // Rebel AI unit types
 
+    // Unbreak the vanilla inheritance chain
+    class Man;
+    class CAManBase : Man {
+        class EventHandlers;
+    };
+    class SoldierGB : CAManBase {
+        class EventHandlers : EventHandlers {};
+    };
+    class I_G_Soldier_base_F : SoldierGB {
+        class EventHandlers : EventHandlers
+        {
+            init = "if (local (_this select 0)) then {[(_this select 0), [], []] call BIS_fnc_unitHeadgear;};";
+            //init line to perserve the behaviour BI intended for the I_G_Soldier_base_F classs
+        };
+    };
+
     //don't need to change this one?
-    class I_G_Survivor_F;
+    class I_G_Survivor_F : I_G_Soldier_base_F{};
     class a3a_unit_reb_unarmed : I_G_Survivor_F {};
 
     class I_G_Soldier_F;
