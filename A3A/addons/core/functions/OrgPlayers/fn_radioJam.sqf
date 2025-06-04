@@ -41,8 +41,17 @@ while {true} do
     _jammers = _jammers select { sidesX getVariable (_antennaBases get netId _x) != _sideX };
 
     // No live enemy antennas within range
+    / Get rebel antennas count
+    private _antReb = {
+        sidesX getVariable (_antennaBases get netId _x) == _sideX
+    } count (antennas - antennasDead);
+
+    // Multiply antenna count by coefficient
+    private _sendMult = 1 + 0.1 * _antreb;
+
+    // No live enemy antennas within range 
     if (_jammers isEqualTo []) then {
-        [1, 1] call _fnc_setInterference;
+        [1 / _sendMult, _sendMult] call _fnc_setInterference;    
         continue;
     };
 
@@ -50,6 +59,6 @@ while {true} do
     private _dist = player distance _jammer;
 
     // Receiving interference >1 has effect, sending interference <1 has effect
-    private _interference = 1 + JAM_STRENGTH * (1 - _dist/JAM_RADIUS);
+    private _interference = 1 / _sendMult + JAM_STRENGTH * (1 - _dist/JAM_RADIUS);
     [_interference, 1/_interference] call _fnc_setInterference;
 };
