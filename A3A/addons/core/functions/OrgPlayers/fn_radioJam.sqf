@@ -41,7 +41,7 @@ while {true} do
     _jammers = _jammers select { sidesX getVariable (_antennaBases get netId _x) != _sideX };
 
     // No live enemy antennas within range
-    / Get rebel antennas count
+    // Get rebel antennas count
     private _antReb = {
         sidesX getVariable (_antennaBases get netId _x) == _sideX
     } count (antennas - antennasDead);

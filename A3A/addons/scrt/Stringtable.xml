@@ -8873,7 +8873,7 @@
                 <Original>The screen says:&lt;br/&gt;&lt;br/&gt;Prepare to die!</Original>
                 <Russian>На экране написано:&lt;br/&gt;&lt;br/&gt; готовься к смерти!</Russian>
                 <Chinesesimp>屏幕上写着：&lt;br/&gt;&lt;br/&gt;傻逼去死吧！</Chinesesimp>
-                <Korean>화면에 이렇게 표시되었습니다:&lt;br/&gt;&lt;br/&gt;;죽을 준비나 해라!</Korean>
+                <Korean>화면에 이렇게 표시되었습니다:&lt;br/&gt;&lt;br/&gt;죽을 준비나 해라!</Korean>
                 <French>L'écran indique:&lt;br/&gt;&lt;br/&gt;Préparez-vous à mourir!</French>
             </Key>
             <Key ID="STR_intel_laptop_no_range_description">
@@ -13287,7 +13287,7 @@
             <Key ID="STR_A3A_punishment_guilty">
                 <Original> has been found guilty of FF (3+ Strikes).&lt;br/&gt;&lt;br/&gt;If you believe this is a mistake, you can forgive him with the corresponding scroll-menu action.</Original>
                 <Russian> был признан виновным в дружественном огне (3+ случая).&lt;br/&gt;&lt;br/&gt;Если вы думаете, что это ошибка правосудия, вы можете простить его соответствующим действием в контекстном меню на колёсико мыши.</Russian>
-                <Chinesesimp>已被判误伤（3次以上）。&lt;br/&gt;&lt;br/&gt;;如果您认为这是误判，您可以通过鼠标滚轮菜单中的适当操作来原谅它。</Chinesesimp>
+                <Chinesesimp>已被判误伤（3次以上）。&lt;br/&gt;&lt;br/&gt;如果您认为这是误判，您可以通过鼠标滚轮菜单中的适当操作来原谅它。</Chinesesimp>
                 <Korean>이(가) 아군오사(3회 이상 공격)에 대해 유죄 판결을 받았습니다.&lt;br/&gt;&lt;br/&gt;실수인 것 같다고 생각한다면 그에 대한 스크롤 메뉴 행동으로 그를 용서할 수 있습니다.</Korean>
                 <French> a été reconnu coupable de tirs amis (plus de trois incidents)..&lt;br/&gt;&lt;br/&gt;Si vous pensez qu'il s'agit d'une erreur, vous pouvez lui pardonner avec l'action correspondante du menu déroulant.</French>
             </Key>
@@ -13891,7 +13891,7 @@
             <Key ID="STR_A3A_Base_commsMp_unlock_tier4_theBoss">
                 <Original>&lt;br/&gt;&lt;t size='0.6'&gt;AA and AT Emplacements are available for building; AA/AT squads and teams are available for recruitment.&lt;/t&gt;</Original>
                 <Russian>&lt;br/&gt;&lt;t size='0.6'&gt;Зенитные и противотанковые огневые точки доступны для постройки, также появляется возможность нанимать ПВО/ПТ-расчёты и отряды.&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;;防空/反坦克阵地可建设，防空/反坦克班及小队可招募。&lt;/t&gt;</Chinesesimp>
+                <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;防空/反坦克阵地可建设，防空/反坦克班及小队可招募。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;t size='0.6'&gt;대공, 대전차화기 포대를 지을 수 있고, 대공/대전차화기 분대와 팀을 모집할 수 있습니다.&lt;/t&gt;</Korean>
                 <French>&lt;br/&gt;&lt;t size='0.6'&gt;Les emplacements AA, AT sont disponibles à la construction, les escouades et équipes AA/AT sont disponibles au recrutement.&lt;/t&gt;</French>
             </Key>

@@ -72,7 +72,7 @@ private _deadEndStructs = [];
 _diag_totalSegments = count _isolatedStructs;
 {
     if (_forEachIndex mod 100 == 0) then {
-        _diag_step_sub = "Completion &lt;" + ((100*_forEachIndex /_diag_totalSegments) toFixed 1) + "% &gt; Processing isolated &lt;" + (str _forEachIndex) + " / " + (str _diag_totalSegments) + "&gt;";;
+        _diag_step_sub = "Completion &lt;" + ((100*_forEachIndex /_diag_totalSegments) toFixed 1) + "% &gt; Processing isolated &lt;" + (str _forEachIndex) + " / " + (str _diag_totalSegments) + "&gt;";
         call _fnc_diag_render;
     };
     if (_x#1 isEqualTo A3A_NG_const_emptyArray) then {
@@ -98,7 +98,7 @@ _diag_totalSegments = count _isolatedStructs;
 _diag_totalSegments = count _deadEndStructs;
 {
     if (_forEachIndex mod 100 == 0) then {
-        _diag_step_sub = "Completion &lt;" + ((100*_forEachIndex /_diag_totalSegments) toFixed 1) + "% &gt; Processing dead-end &lt;" + (str _forEachIndex) + " / " + (str _diag_totalSegments) + "&gt;";;
+        _diag_step_sub = "Completion &lt;" + ((100*_forEachIndex /_diag_totalSegments) toFixed 1) + "% &gt; Processing dead-end &lt;" + (str _forEachIndex) + " / " + (str _diag_totalSegments) + "&gt;";
         call _fnc_diag_render;
     };
     if (count (_x#1) == 1) then {   // Skip if no-longer a dead end.

@@ -77,7 +77,7 @@ private _diag_currentJob = 0;
 {
     _diag_currentJob = _diag_currentJob + 1;
     if (_diag_currentJob mod 100 == 0) then {
-        _diag_step_sub = "Completion &lt;" + ((100*_diag_currentJob /_diag_totalJobs) toFixed 1) + "% &gt; Node &lt;" + (str _diag_currentJob) + " / " + (str _diag_totalJobs) + "&gt;";;
+        _diag_step_sub = "Completion &lt;" + ((100*_diag_currentJob /_diag_totalJobs) toFixed 1) + "% &gt; Node &lt;" + (str _diag_currentJob) + " / " + (str _diag_totalJobs) + "&gt;";
         call _fnc_diag_render;
     };
     if !(_x in _navRoadHM) then { /*diag_log "I continued";*/ continue; };  // If it is nil, it has been previously deleted.

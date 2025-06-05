@@ -651,7 +651,7 @@ class A3A_MapControl
     x = "SafeZoneXAbs";
     y = SafeZoneY + 1.5 * GRID_H;
     w = "SafeZoneWAbs";
-    h = SafeZoneH - 1.5 * GRID_H;;
+    h = SafeZoneH - 1.5 * GRID_H;
     shadow = 0;
     ptsPerSquareSea = 5;
     ptsPerSquareTxt = 20;

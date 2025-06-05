@@ -485,7 +485,7 @@ _policeLoadoutData set ["SMGs", [
 ]];
 _policeLoadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911",7], [], ""]
-]];;
+]];
 
 ////////////////////////////////
 //    Militia Loadout Data    //

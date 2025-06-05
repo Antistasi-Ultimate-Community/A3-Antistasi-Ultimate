@@ -852,7 +852,7 @@ private _sniperTemplate = {
     ["uniforms"] call _fnc_setUniform;
 
 
-    [["sniperRifles", "marksmanRifles"] call _fnc_fallback] call _fnc_setPrimary;;
+    [["sniperRifles", "marksmanRifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 7] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
