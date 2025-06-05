@@ -23,7 +23,10 @@ _airborneVehicles append ["gmx_aaf_luchsa1_wdl","gmx_aaf_luchsa2_wdl","gmx_aaf_f
 _aa append ["gmx_aaf_gepard1a1_wdl","gm_gc_army_zsu234v1_noinsignia"];
 _Trucks append ["gmx_aaf_kat1_451_cargo_wdl","gmx_aaf_u1300l_cargo_wdl"];
 _cargoTrucks append ["gmx_aaf_kat1_451_container_wdl","gmx_aaf_kat1_454_cargo_wdl","gmx_aaf_u1300l_container_wdl","gm_dk_army_typ247_cargo","gm_gc_bgs_ural4320_cargo_noinsignia"];
-_tanks append ["gmx_aaf_leopard1a1a1_wdl","gm_ge_army_Leopard1a1a2_noinsignia","gmx_aaf_leopard1a3_wdl","gm_ge_army_Leopard1a3a1_noinsignia","gmx_aaf_leopard1a5_wdl","gm_gc_army_t55_noinsignia","gm_gc_army_t55a_noinsignia","gm_gc_army_t55ak_noinsignia","gm_gc_army_t55am2_noinsignia","gm_gc_army_t55am2b_noinsignia","gm_pl_army_t55ak_noinsignia"];
+_tanks append ["gmx_aaf_leopard1a1a1_wdl","gm_ge_army_Leopard1a1a2_noinsignia",
+"gmx_aaf_leopard1a3_wdl","gm_ge_army_Leopard1a3a1_noinsignia","gmx_aaf_leopard1a5_wdl",
+"gm_gc_army_t55_noinsignia","gm_gc_army_t55a_noinsignia","gm_gc_army_t55ak_noinsignia",
+"gm_gc_army_t55am2_noinsignia","gm_gc_army_t55am2b_noinsignia","gm_pl_army_t55ak_noinsignia"];
 _ammoTrucks append ["gmx_aaf_kat1_451_reammo_wdl","gmx_aaf_kat1_454_reammo_wdl","gm_gc_bgs_ural4320_reammo_noinsignia"];
 _repairTrucks append ["gmx_aaf_u1300l_repair_wdl","gmx_aaf_bpz2a0_wdl","gm_gc_bgs_ural4320_repair_noinsignia"];
 _fuelTrucks append ["gmx_aaf_kat1_451_refuel_wdl","gm_gc_bgs_ural375d_refuel_noinsignia"];
