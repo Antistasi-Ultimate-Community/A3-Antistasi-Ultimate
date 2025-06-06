@@ -2511,13 +2511,15 @@ switch _mode do {
 					if(_amount != -1)then{
 						if(_amount<_count)then{_count = _amount};
 					};
-					_canAdd = false;
+
 					_container = switch _selected do{
-						case IDC_RSCDISPLAYARSENAL_TAB_UNIFORM: {_canAdd = player canAddItemToUniform _item; uniformContainer player};
-						case IDC_RSCDISPLAYARSENAL_TAB_VEST: {_canAdd = player canAddItemToVest _item; vestContainer player;};
-						case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {_canAdd = player canAddItemToBackpack _item; backpackContainer player;};
+						case IDC_RSCDISPLAYARSENAL_TAB_UNIFORM: { uniformContainer player };
+						case IDC_RSCDISPLAYARSENAL_TAB_VEST: { vestContainer player };
+						case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: { backpackContainer player };
+						default { objNull };
 					};
-					if(_canAdd)then{
+
+					if ([_container, _item] call SCRT_fnc_misc_canAddItemToContainer) then{
 						_container addMagazineAmmoCargo [_item,1,_count];
 					};
 				}else{

@@ -26,19 +26,7 @@
 			ITEM(ASZ_AR7090_gl, 345, RIFLE_STOCK); //Ammo: 20Rnd_556x45_Stanag_SD_ASZ
 			ITEM(ASZ_ARX160, 365, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
 			ITEM(ASZ_ARX160_GLS, 470, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160_GLS_CC, 450, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160_C, 400, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160_IV_L_CC, 390, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160SF, 365, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160SF_GLS, 470, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160SF_GLS_CC, 450, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160SF_C, 400, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160SF_CC, 380, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
-			ITEM(ASZ_ARX160SF_IV_L_CC, 320, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
 			ITEM(APD_ARX200, 420, RIFLE_STOCK); //Ammo: ASZ_20Rnd_762x51_Mag
-			ITEM(APD_ARX200sf, 420, RIFLE_STOCK); //Ammo: ASZ_20Rnd_762x51_Mag_AP
-			ITEM(APD_ARX200sf_VGrip, 440, RIFLE_STOCK); //Ammo: ASZ_20Rnd_762x51_Mag_SD
-			ITEM(APD_ARX200_VGrip, 440, RIFLE_STOCK); //Ammo: ASZ_20Rnd_762x51_Mag_Tracer
 			ITEM(ASZ_SC90, 300, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
 			ITEM(ASZ_SC90_gl, 400, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
 			ITEM(ASZ_SCS90, 290, RIFLE_STOCK); //Ammo: 30Rnd_556x45_Stanag_SD_ASZ
@@ -68,7 +56,6 @@
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
 			
 			ITEM(ASZ_PzF3_Loaded, 500, 25);
-			ITEM(ASZ_Launch_Spike, 700, 25); // ASZ_Spike_Mag
 			ITEM(ASZ_Launch_Stinger, 600, 25); // ASZ_Stinger_Mag
 		}; 
 
@@ -76,7 +63,6 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_italy", localize "STR_A3AU_launcherAmmo"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
 			
-			ITEM(ASZ_Spike_Mag, 400, 15);
 			ITEM(ASZ_Stinger_Mag, 250, 15);
 
 		};
