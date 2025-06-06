@@ -177,5 +177,74 @@
                 <French>Déplacer des objets de l'inventaire des véhicules vers l'arsenal</French>
             </Key>
         </Container>
+        <Container name="JND">
+            <Key ID="STR_A3A_JND_button_del">
+              <Original>Del</Original>
+              <German>Entf</German>
+              <Italian>Canc</Italian>
+              <Spanish>Borrar</Spanish>
+              <French>Suppr</French>
+              <Korean>삭제</Korean>
+              <Russian>Удалить</Russian>
+              <Polish>Usuń </Polish>
+              <Czech>Vymazat</Czech>
+              <Portuguese>Del</Portuguese>
+              <Turkish>Sil</Turkish>
+              <Chinesesimp>删除</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_JND_button_load">
+              <Original>Load</Original>
+              <German>Laden</German>
+              <Italian>Carica</Italian>
+              <Spanish>Cargar</Spanish>
+              <French>Charger</French>
+              <Korean>적재</Korean>
+              <Russian>Загрузить</Russian>
+              <Polish>Załaduj</Polish>
+              <Czech>Načíst</Czech>
+              <Portuguese>Carregar</Portuguese>
+              <Turkish>Yükle</Turkish>
+              <Chinesesimp>加载</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_JND_button_save">
+              <Original>Save</Original>
+              <German>Speichern</German>
+              <Italian>Salva</Italian>
+              <Spanish>Guardar</Spanish>
+              <French>Sauvegarder</French>
+              <Korean>저장</Korean>
+              <Russian>Сохранить</Russian>
+              <Polish>Zapisz</Polish>
+              <Czech>Uložit</Czech>
+              <Portuguese>Salvar</Portuguese>
+              <Turkish>Kaydet</Turkish>
+              <Chinesesimp>保存</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_JND_button_undo">
+              <Original>-- Undo last save --</Original>
+              <German>-- Letztes Speichern rückgängig machen --</German>
+              <Italian>--Annulla ultimo salvataggio--</Italian>
+              <Spanish>-- Deshacer último guardado -- </Spanish>
+              <French>-- Annuler la dernière sauvegarde --</French>
+              <Korean>-- 마지막 저장으로 되돌리기 --</Korean>
+              <Russian>-- Отменить последнее сохранение --</Russian>
+              <Polish>-- Cofnij ostatni zapis --</Polish>
+              <Czech>-- Vrátit poslední uložení --</Czech>
+              <Portuguese>--Desfazer ultimo save--</Portuguese>
+              <Turkish>--Son yükleneni geri al--</Turkish>
+              <Chinesesimp>-- 撤销上一次的保存 --</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3A_JND_title">
+              <Original>Ultra Wide Extended Debug Console With Extra Save Buttons!</Original>
+              <German>Extrabreite Debug-Console mit zusätzlichen Speicherplätzen.</German>
+              <Italian>Console di Debug Ultra Wide con Bottoni di Salvataggio Extra!</Italian>
+              <Spanish>Super Amplia y Extendida Consola de Debug con Extra Butones de Guardado!</Spanish>
+              <French>Console de débogage étendue ultra large avec boutons de sauvegarde supplémentaires !</French>
+              <Korean>추가적인 저장 버튼이 있는 울트라 와이드로 확장된 디버그 콘솔!</Korean>
+              <Russian>Сверхширокая Расширенная Консоль Отладки с Дополнительными Кнопками Сохранения!</Russian>
+              <Czech>Ultra Široká Rozšířená Debug Konzole S Extra Ukládacíma Tlačítkama!</Czech>
+              <Chinesesimp>宇宙究极无敌扩展调试控制台 (搭载额外保存按钮)</Chinesesimp>
+            </Key>
+          </Container>
     </Package>
 </Project>

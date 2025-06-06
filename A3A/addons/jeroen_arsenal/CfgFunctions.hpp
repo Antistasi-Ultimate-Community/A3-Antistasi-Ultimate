@@ -20,6 +20,10 @@ class CfgFunctions {
 			class common_array_add {};
 			class common_array_remove {};
 		};
+		class JND {
+			file = QPATHTOFOLDER(JND);
+			class debugv2 {postinit = 1;};
+		};
 
 		class JNA {
 			file = QPATHTOFOLDER(JNA);
