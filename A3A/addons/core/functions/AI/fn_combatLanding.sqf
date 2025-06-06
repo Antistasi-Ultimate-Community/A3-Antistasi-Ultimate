@@ -38,7 +38,12 @@ _vehWP0 setWaypointBehaviour "CARELESS";
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
-waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
+waitUntil {sleep 1; (_helicopter distance2D _landPos) < 3000};
+_helicopter limitSpeed ((0.8 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 500);         // to slow down vtols
+waitUntil {sleep 1; (_helicopter distance2D _landPos) < 2000};
+_helicopter limitSpeed ((0.7 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 400);         // to slooow down vtols
+waitUntil {sleep 1; (_helicopter distance2D _landPos) < 1500};
+_helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 250);         // to slow down vtols even more
 
 while {_helicopter distance2D _landPos > 675} do {
     [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
@@ -47,6 +52,7 @@ while {_helicopter distance2D _landPos > 675} do {
     sleep 0.3;
 };
 
+_helicopter limitSpeed ((0.4 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 150);         // to slow down vtols even more x2
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 600};
 
 _helicopter flyInHeight 0;                  // helps to keep it near the ground after landing
@@ -183,6 +189,8 @@ _helicopter engineOn true;  ///we must keep the engine running
 if(canMove _helicopter || alive _driver) then {
     [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
 };
+
+_helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// remove the limit
 
 private _weapons = count weapons _helicopter;
 private _driverturret = _helicopter weaponsTurret [0];

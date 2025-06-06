@@ -14,12 +14,6 @@ private _yRef = 1;
 private _landpos = [];
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
-/* while {true} do
-	{
- 	_landpos = _positionX getPos [_dist,random 360];
- 	if (!surfaceIsWater _landpos) exitWith {};
-	}; */
-
 _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
 _landpos set [2,0];
 {_x setBehaviour "CARELESS";} forEach units _heli;
@@ -30,10 +24,20 @@ _wp setWaypointSpeed "FULL";
 
 _wp setWaypointCompletionRadius 3;
 
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 550) or !(canMove _veh)};
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
-
 _veh flyInHeight _midHeight;
+
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 3000) or !(canMove _veh)};
+_veh limitSpeed ((0.8 * (getNumber(configOf _veh >> "maxSpeed"))) min 500);         // to slow down vtols
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 2000) or !(canMove _veh)};
+_veh limitSpeed ((0.7 * (getNumber(configOf _veh >> "maxSpeed"))) min 400);         // to slooow down vtols
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 1500) or !(canMove _veh)};
+_veh limitSpeed ((0.6 * (getNumber(configOf _veh >> "maxSpeed"))) min 250);         // to slow down vtols even more
+
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
+_veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);         // to slow down vtols even more
+
+waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
 // Landing path setup
 private _endPos = getPosASL _landPad;
@@ -160,7 +164,9 @@ _driver enableAI "PATH";
 waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
-_veh flyInHeight 175;
+_veh flyInHeight _midHeight;
+
+_veh limitSpeed (2 * getNumber(configOf _veh >> "maxSpeed"));	// remove the limit
 
 if (canMove _veh) then {
     [_veh, "close"] spawn A3A_fnc_HeliDoors;
