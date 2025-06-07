@@ -162,6 +162,15 @@ HR_GRG_addResources = {
     [0,_money] call A3A_fnc_resourcesFIA;
 };
 
+HR_GRG_fnc_addVehicleUAVCompat = {
+    private _veh = _this select 0;
+    if (unitisUAV _veh && {crew _veh isNotEqualTo []}) then {
+        private _moveOutCrewHandle = [_this select 3, _this select 0] spawn A3A_fnc_moveOutCrew;
+        waitUntil { sleep 0.1; scriptDone _moveOutCrewHandle };
+    };
+    _this call HR_GRG_fnc_addVehicle;
+};
+
 HR_GRG_canSell = {_this isEqualTo theBoss};
 
 HR_GRG_getVehicleSellPrice = {
