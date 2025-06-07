@@ -143,6 +143,7 @@ class CfgFunctions
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
+            class getVehicleSellPrice {};
             class vehicleBoxRestore {};
             class initPetros {};
             class isFrontline {};
