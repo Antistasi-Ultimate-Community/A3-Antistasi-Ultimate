@@ -53,7 +53,7 @@ private _fnc_placed = {
 
 	[_vehicle, teamPlayer] call A3A_fnc_AIVehInit;
 
-	if (_vehicle isKindOf "StaticWeapon") then {
+	if ((_vehicle isKindOf  "LandVehicle") || (_vehicle isKindOf  "Ship")) then {
 		staticsToSave pushBack _vehicle; 
 		publicVariable "staticsToSave";
 	};

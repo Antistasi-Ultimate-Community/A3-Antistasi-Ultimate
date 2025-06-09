@@ -10541,6 +10541,20 @@
                 <Korean>이 무기에서 인공지능 내보내기</Korean>
                 <French>Faire partir l'IA de cette arme</French>
             </Key>
+            <Key ID="STR_antistasi_actions_move_vehicle_allow_ai">
+                <Original>Allow AIs to use this vehicle</Original>
+                <Russian>Разрешить ИИ-юнитам использовать эту технику</Russian>
+                <Chinesesimp>允许AI使用此固定武器</Chinesesimp>
+                <Korean>인공지능이 이 무기를 사용하도록 허용</Korean>
+                <French>Autoriser les IA à utiliser cette arme</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_move_vehicle_prevent_ai">
+                <Original>Prevent AIs from using this vehicle</Original>
+                <Russian>Запретить ИИ-юнитам использовать эту технику</Russian>
+                <Chinesesimp>禁止AI使用此固定武器</Chinesesimp>
+                <Korean>인공지능이 이 무기를 사용하지 못하도록 금지</Korean>
+                <French>Empêcher les IA d'utiliser cette arme</French>
+            </Key>
             <Key ID="STR_antistasi_actions_buy_vehicle_distance_check_failure">
                 <Original>You can't buy vehicles while there are enemies near you.</Original>
                 <Russian>Вы не можете покупать технику пока рядом с вами враги.</Russian>

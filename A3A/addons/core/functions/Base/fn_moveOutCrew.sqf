@@ -26,13 +26,13 @@ for "_i" from 1 to 1000 do {
 };
 
 */
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
 params [
     ["_player",objNull,[objNull]],
     ["_veh",objNull,[objNull]]
 ];
-#include "..\..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 #define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
 private _vehicle = _veh;
@@ -60,6 +60,7 @@ if (unitIsUAV _vehicle) then {
 };
 
 {   
+    [_x] remoteExec ["unassignVehicle", _x];
     unassignVehicle _x;
     _x action ["Eject", _vehicle];
 } forEach _crewgroup;
