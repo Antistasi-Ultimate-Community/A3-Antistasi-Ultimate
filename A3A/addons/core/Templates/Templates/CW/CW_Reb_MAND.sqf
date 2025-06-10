@@ -50,7 +50,7 @@ private _initialRebelEquipment = [
     ["ls_explosive_breachCharge_magazine", 10], ["ls_explosive_demoCharge_magazine", 3],
     "3AS_ThermalDetonator","SmokeShell",
     "ls_vest_poncho","ls_vest_poncho_partnerBlack", "ls_vest_poncho_partnerWhite", "ls_vest_poncho_peaceBlue", "ls_vest_poncho_peaceGreen", "ls_vest_poncho_peaceRed", "ls_vest_poncho_sidestripeBlue", "ls_vest_poncho_sidestripeBrown", "ls_vest_poncho_sidestripeRed", "ls_vest_poncho_sidestripeWhite",
-    "ls_mandalorianHelmet_eldarGrunt","ls_mandalorianHelmet_eldarSergeant","ls_mandalorianHelmet_ordoGrunt","ls_mandalorianHelmet_ordoSergeant","ls_mandalorianHelmet_vizslaCaptain", "ls_mandalorianHelmet_vizslaGrunt", "ls_mandalorianHelmet_vizslaSergeant", "ls_mandalorianHelmet_traditional",
+    "ls_mandalorianHelmet_eldarGrunt","ls_mandalorianHelmet_eldarSergeant","ls_mandalorianHelmet_ordoGrunt","ls_mandalorianHelmet_ordoSergeant", "ls_mandalorianHelmet_traditional",
     "ls_mandalorianBackpack", "ls_mandalorianBackpack_light", "ls_mandalorianBackpack_demo","ls_mandalorianBackpack_heavy","ls_mandalorianBackpack_medic",
     "JLTS_CloneBinocular_black"
 ];
