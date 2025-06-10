@@ -94,7 +94,7 @@
     "A3U_setting_OverallDrawDistance",
     "SLIDER",
     "Overall draw distance",
-    "Antistasi Ultimate",
+    ["Antistasi Ultimate", "Graphics"],
     [0, 20000, 2000, 1],
     0,
     {
@@ -108,7 +108,7 @@
     "A3U_setting_ObjectDrawDistance",
     "SLIDER",
     "Object draw distance",
-    "Antistasi Ultimate",
+    ["Antistasi Ultimate", "Graphics"],
     [0, 20000, 2000, 1],
     0,
     {
@@ -122,7 +122,7 @@
     "A3U_setting_setShadowDistance",
     "SLIDER",
     "Shadow draw distance",
-    "Antistasi Ultimate",
+    ["Antistasi Ultimate", "Graphics"],
     [0, 20000, 2000, 1],
     0,
     {
@@ -136,7 +136,7 @@
     "A3U_setting_setPiPViewDistance",
     "SLIDER",
     "PiP draw distance",
-    "Antistasi Ultimate",
+    ["Antistasi Ultimate", "Graphics"],
     [0, 20000, 2000, 1],
     0,
     {
@@ -150,11 +150,11 @@
     "A3U_setting_TerrainGrid",
     "LIST",
     "Terrain Grid Quality",
-    "Antistasi Ultimate",
+    ["Antistasi Ultimate", "Graphics"],
     [
         [50, 25, 12.5, 6.25, 3.125, 1],
         [
-            "Low (No Grass)",       // 50
+            "Low (No Grass)",        // 50
             "Standard",              // 25
             "High",                  // 12.5
             "Very High",             // 6.25
@@ -174,21 +174,28 @@
     "A3U_setting_setDetailMapBlendPars",
     "LIST",
     "Terrain Detail",
-    "Antistasi Ultimate",
+    ["Antistasi Ultimate", "Graphics"],
     [
         [
-            [-1, -1];    // Default
-            [20, 50],    // Low
-            [50, 100],   // Medium
-            [100, 200]   // High
+            0,         // Default
+            1,         // Low
+            2,         // Medium
+            3,         // High
+            4          // Ultra
         ],
-        ["Default","Low", "Medium", "High"],
-        0 // Default: Default
+        ["Default", "Low", "Medium", "High", "Ultra"],
+        0
     ],
     0,
     {
-        params ["_value"];
-        setDetailMapBlendPars _value;
+        params ["_index"];
+        switch (_index) do {
+            case 0: { setDetailMapBlendPars [-1, -1]; };  // Default
+            case 1: { setDetailMapBlendPars [300, 600]; };   // Low
+            case 2: { setDetailMapBlendPars [750, 1500]; };  // Medium
+            case 3: { setDetailMapBlendPars [1500, 3000]; }; // High
+            case 4: { setDetailMapBlendPars [3000, 6000]; }; // Ultra
+        };
     }
 ] call CBA_fnc_addSetting;
 
