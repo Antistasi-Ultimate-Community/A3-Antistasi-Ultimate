@@ -21,6 +21,9 @@ FIX_LINE_NUMBERS()
 #include "\a3\ui_f\hpp\definedikcodes.inc"
 #include "placerDefines.hpp"
 #include "\x\A3A\addons\GUI\dialogues\ids.inc"
+#define EVENT_TYPE_ACTIVATE QUOTE(Activate)
+#define EVENT_TYPE_DEACTIVATE QUOTE(Deactivate)
+#define EVENT_TYPE_ANALOG QUOTE(Analog)
 
 params [
     ["_centerObject", player, [objNull]],
@@ -45,144 +48,165 @@ for "_i" from 1 to 36 do {
     A3A_boundingCircle pushBack _piece;
 };
 
-
 private _emptyDisplay = findDisplay 46 createDisplay "A3A_teamLeaderBuilder";
 A3A_building_EHDB set [BUILD_DISPLAY, _emptyDisplay];
 call (A3A_building_EHDB # UPDATE_BB); 
 
-private _downKeyEH = _emptyDisplay displayAddEventHandler ["KeyDown", {
-    params["_displayOrControl","_key"];
+private _userActions = [
+    [
+        QGVAR(buildingPlacerAbort),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            [] call (A3A_building_EHDB # END_BUILD_FUNC);
+        }
+    ],
+    [
+        QGVAR(buildingPlacerDelete),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            private _tempArray = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY);
+            private _buildArray = (A3A_building_EHDB # BUILD_OBJECTS_ARRAY);
+            private _objIndex = _tempArray find (A3A_building_EHDB # CURSOR_OBJECT);
+            if (_objIndex == -1) exitWith {};
 
-    if (_key in [DIK_ESCAPE, DIK_Y]) then {
-        call (A3A_building_EHDB # END_BUILD_FUNC);
-    };
+            deleteVehicle (_tempArray deleteAt _objIndex);
+            private _buildData = _buildArray deleteAt _objIndex;
+            private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
+            A3A_building_EHDB set [AVAILABLE_MONEY, _supply + (_buildData#4)];
+            ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
+        }
+    ],
+    [
+        QGVAR(buildingPlacerPlace),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            if (count (A3A_buildingsToSave) >= A3A_builderLimit) exitWith {
+                ["Build Placer", format["There are too many builds. %1/%2", (count A3A_buildingsToSave), A3A_builderLimit]] call A3A_fnc_customHint;
+            };
 
-    if (_key isEqualTo DIK_E) then {
-        A3A_building_EHDB set [ROTATION_MODE_CCW, true];
-    };
+            private _tempObject = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+            if (isObjectHidden _tempObject) exitWith {};
+            if ((A3A_building_EHDB # BUILD_OBJECT_SELECTED_STRING) isEqualTo "Land_Can_V2_F") exitWith {};	// temp objects not built.
 
-    if (_key isEqualTo DIK_R) then {
-        A3A_building_EHDB set [ROTATION_MODE_CW, true];
-    };	 
+            if (_tempObject distance (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB # BUILD_RADIUS)) exitWith {};
+            //if (isOnRoad getPosATL _tempObject) exitwith {};	// can't build on roads
+            
+            private _price = (A3A_building_EHDB # OBJECT_PRICE);
+            private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
+
+            // TODO: Hints don't work here, just hope players are watching the numbers for now
+            if (_price > _supply) exitWith {};
+
+            A3A_building_EHDB set [AVAILABLE_MONEY, _supply - _price];
+            ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
+
+            private _position = getPosWorld _tempObject;
+            private _dirAndUp = [vectorDir _tempObject, vectorUp _tempObject];
+
+            private _vehicle = typeof _tempObject createVehicleLocal [0,0,0];
+            _vehicle setPosWorld _position;
+            _vehicle setVectorDirAndUp _dirAndUp;
+            //playSound3D[getMissionPath "Sounds\hammer.ogg", player];
+
+            (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
+            (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, objNull, _position, _dirAndUp, _price];
+
+            _tempObject hideObject true;		// prevent unintentional double-builds
+        }
+    ],
+    [
+        QGVAR(buildingPlacerRepair),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            private _ruin = (A3A_building_EHDB # CURSOR_OBJECT);
+            if !(_ruin isKindOf "Ruins") exitWith {};
+            private _building = _ruin getVariable "building";
+            if (isNil "_building") then { _building = _ruin getVariable "BIS_fnc_createRuin_object" };
+            if (isNil "_building") exitWith {};																	// non-rebuildable ruin
+            if (-1 != (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
+
+            // Calculate repair cost from bounding box
+            private _bbsize = (boundingBoxReal _building # 1) vectorDiff (boundingBoxReal _building # 0);
+            private _price = 6 * sqrt((_bbsize#0) * (_bbsize#1) * (_bbsize#2));
+            _price = 10 * round (_price / 10);
+
+            // TODO: Sort out hints or something?
+            private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
+            if(_price > _supply) exitWith {};
+            A3A_building_EHDB set [AVAILABLE_MONEY, _supply - _price];
+            ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
+
+            // Place imitation of repaired building
+            private _oldPos = getPosATL _building;
+            private _vehicle = typeof _building createVehicleLocal [0,0,0];
+            _vehicle setDir getDir _building;
+            _vehicle setPosATL [_oldPos#0, _oldPos#1, 0];
+
+            (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, _building, nil, nil, _price];
+            (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
+        }
+    ],
+    [
+        QGVAR(buildingPlacerRotateCCW),
+        EVENT_TYPE_ACTIVATE,
+        {
+            A3A_building_EHDB set [ROTATION_MODE_CCW, true];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerRotateCCW),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            A3A_building_EHDB set [ROTATION_MODE_CCW, false];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerRotateCW),
+        EVENT_TYPE_ACTIVATE,
+        {
+            A3A_building_EHDB set [ROTATION_MODE_CW, true];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerRotateCW),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            A3A_building_EHDB set [ROTATION_MODE_CW, false];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerSnapToSurface),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            A3A_building_EHDB set [SNAP_SURFACE_MODE, !(A3A_building_EHDB # SNAP_SURFACE_MODE)];
+
+            // change the text color to tell that you have entered the mode
+            private _display = uiNamespace getVariable "A3A_placerHint_display";
+            private _altText = (_display displayCtrl IDC_PLACERHINT_ALT_TEXT);
+
+            _altText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB # SNAP_SURFACE_MODE));
+        }
+    ],
+    [
+        QGVAR(buildingPlacerUnsafeMode),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            A3A_building_EHDB set [UNSAFE_MODE, !(A3A_building_EHDB # UNSAFE_MODE)];
+
+            // change the text color to tell that you have entered the mode
+            private _display = uiNamespace getVariable "A3A_placerHint_display";
+            private _shiftText = (_display displayCtrl IDC_PLACERHINT_SHIFT_TEXT);
+
+            _shiftText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB # UNSAFE_MODE));
+        }
+    ]
+];
+
+A3A_building_EHDB set[USER_ACTION_EHS, _userActions apply {
+    _x params["_actionName", "_eventType", "_callback"];
+
+    [_actionName, _eventType, addUserActionEventHandler[_actionName, _eventType, _callback]];
 }];
-
-A3A_building_EHDB set [KEY_DOWN_EH, _downKeyEH];
-
-private _upKeyEH = _emptyDisplay displayAddEventHandler ["KeyUp", {
-    params ["_displayOrControl", "_key"];
-
-    // Place object
-    if (_key isEqualTo DIK_SPACE) then {
-
-        if (count (A3A_buildingsToSave) >= A3A_builderLimit) exitWith {
-            ["Build Placer", format["There are too many builds. %1/%2", (count A3A_buildingsToSave), A3A_builderLimit]] call A3A_fnc_customHint;
-        };
-
-        private _tempObject = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
-        if (isObjectHidden _tempObject) exitWith {};
-        if ((A3A_building_EHDB # BUILD_OBJECT_SELECTED_STRING) isEqualTo "Land_Can_V2_F") exitWith {};	// temp objects not built.
-
-        if (_tempObject distance (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB # BUILD_RADIUS)) exitWith {};
-        //if (isOnRoad getPosATL _tempObject) exitwith {};	// can't build on roads
-        
-        private _price = (A3A_building_EHDB # OBJECT_PRICE);
-        private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
-
-        // TODO: Hints don't work here, just hope players are watching the numbers for now
-        if (_price > _supply) exitWith {};
-
-        A3A_building_EHDB set [AVAILABLE_MONEY, _supply - _price];
-        ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
-
-        private _position = getPosWorld _tempObject;
-        private _dirAndUp = [vectorDir _tempObject, vectorUp _tempObject];
-
-        private _vehicle = typeof _tempObject createVehicleLocal [0,0,0];
-        _vehicle setPosWorld _position;
-        _vehicle setVectorDirAndUp _dirAndUp;
-        //playSound3D[getMissionPath "Sounds\hammer.ogg", player];
-
-        (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
-        (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, objNull, _position, _dirAndUp, _price];
-
-        _tempObject hideObject true;		// prevent unintentional double-builds
-    };
-
-    // Cancel construction
-    if (_key isEqualTo DIK_C) then {
-        private _tempArray = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY);
-        private _buildArray = (A3A_building_EHDB # BUILD_OBJECTS_ARRAY);
-        private _objIndex = _tempArray find (A3A_building_EHDB # CURSOR_OBJECT);
-        if (_objIndex == -1) exitWith {};
-
-        deleteVehicle (_tempArray deleteAt _objIndex);
-        private _buildData = _buildArray deleteAt _objIndex;
-        private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
-        A3A_building_EHDB set [AVAILABLE_MONEY, _supply + (_buildData#4)];
-        ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
-    };
-
-    // Repair
-    if (_key isEqualTo DIK_T) then {
-        private _ruin = (A3A_building_EHDB # CURSOR_OBJECT);
-        if !(_ruin isKindOf "Ruins") exitWith {};
-        private _building = _ruin getVariable "building";
-        if (isNil "_building") then { _building = _ruin getVariable "BIS_fnc_createRuin_object" };
-        if (isNil "_building") exitWith {};																	// non-rebuildable ruin
-        if (-1 != (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
-
-        // Calculate repair cost from bounding box
-        private _bbsize = (boundingBoxReal _building # 1) vectorDiff (boundingBoxReal _building # 0);
-        private _price = 6 * sqrt((_bbsize#0) * (_bbsize#1) * (_bbsize#2));
-        _price = 10 * round (_price / 10);
-
-        // TODO: Sort out hints or something?
-        private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
-        if(_price > _supply) exitWith {};
-        A3A_building_EHDB set [AVAILABLE_MONEY, _supply - _price];
-        ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
-
-        // Place imitation of repaired building
-        private _oldPos = getPosATL _building;
-        private _vehicle = typeof _building createVehicleLocal [0,0,0];
-        _vehicle setDir getDir _building;
-        _vehicle setPosATL [_oldPos#0, _oldPos#1, 0];
-
-        (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, _building, nil, nil, _price];
-        (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
-    };
-
-    // unsafe mode
-    if (_key isEqualTo DIK_LSHIFT) then {
-        A3A_building_EHDB set [UNSAFE_MODE, !(A3A_building_EHDB # UNSAFE_MODE)];
-        // change the text color to tell that you have entered the mode
-        private _display = uiNamespace getVariable "A3A_placerHint_display";
-        private _shiftText = (_display displayCtrl IDC_PLACERHINT_SHIFT_TEXT);
-        if (A3A_building_EHDB # UNSAFE_MODE) then {_shiftText ctrlSetTextColor [1, 0, 0, 1];} else {_shiftText ctrlSetTextColor [1, 1, 1, 1];}
-    };
-
-    // snap to surface
-    if (_key isEqualTo DIK_LALT) then {
-        A3A_building_EHDB set [SNAP_SURFACE_MODE, !(A3A_building_EHDB # SNAP_SURFACE_MODE)];
-        // change the text color to tell that you have entered the mode
-        private _display = uiNamespace getVariable "A3A_placerHint_display";
-        private _altText = (_display displayCtrl IDC_PLACERHINT_ALT_TEXT);
-        if (A3A_building_EHDB # SNAP_SURFACE_MODE) then {_altText ctrlSetTextColor [1, 0, 0, 1];} else {_altText ctrlSetTextColor [1, 1, 1, 1];}
-    };
-
-    if (_key isEqualTo DIK_E) then {
-        A3A_building_EHDB set [ROTATION_MODE_CCW, false];
-    };
-
-    if (_key isEqualTo DIK_R) then {
-        A3A_building_EHDB set [ROTATION_MODE_CW, false];
-    };
-
-}];
-
-A3A_building_EHDB set [KEY_UP_EH, _upKeyEH];
-
-
 
 private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private _stateChange = false;
