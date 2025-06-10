@@ -343,7 +343,10 @@ for "_i" from 0 to (count _array - 1) do {
 };
 ["locationSpawned", [_markerX, "Outpost", true]] call EFUNC(Events,triggerEvent);
 
-{ [_x, true] call A3U_fnc_setLock; } forEach _vehiclesX;
+{
+  if (_x isKindOf "Static" || _x isKindOf "StaticWeapon") then {continue};
+  [_x, true] call A3U_fnc_setLock;
+} forEach _vehiclesX;
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
