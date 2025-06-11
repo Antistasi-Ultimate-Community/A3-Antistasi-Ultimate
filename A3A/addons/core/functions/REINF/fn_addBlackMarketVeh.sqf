@@ -34,7 +34,7 @@ if (player distance2d traderX > 50) exitWith {
 
 private _extraMessage =	format [localize "STR_veh_callback_select_veh_generic", _cost,  A3A_faction_civ get "currencySymbol"];
 private _fnc_placed = {
-	params ["_vehicle", "_cost"];
+	params ["_vehicle", "_cost", "_fnc_buyVehicle"];
 	if (isNull _vehicle) exitWith {};
 
 	[_vehicle, _cost] call _fnc_buyVehicle;
@@ -66,5 +66,5 @@ if (_addToGarage) then {
 	//[[_typeVehX], getPlayerUID player] remoteExecCall ["HR_GRG_fnc_addVehiclesByClass", 2]; // if we want to lock the vehicle when garaging
 	[[_typeVehX], ""] remoteExecCall ["HR_GRG_fnc_addVehiclesByClass", 2];
 } else {
-	[_typeVehX, _fnc_placed, _fnc_check, [_cost], nil, nil, nil, _extraMessage] call HR_GRG_fnc_confirmPlacement;
+	[_typeVehX, _fnc_placed, _fnc_check, [_cost, _fnc_buyVehicle], nil, nil, nil, _extraMessage] call HR_GRG_fnc_confirmPlacement;
 };
