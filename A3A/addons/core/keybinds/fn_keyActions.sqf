@@ -3,6 +3,8 @@ FIX_LINE_NUMBERS()
 params ["_key"];
 if !(isClass (missionConfigFile/"A3A")) exitWith {}; //not a3a mission
 
+private _hadDialog = dialog;
+
 switch (_key) do {
     case QGVAR(customHintDismiss): {
         [] call A3A_fnc_customHintDismiss;
@@ -86,3 +88,18 @@ switch (_key) do {
         Error_1("Key action not registered: %1", _key)
     };
 };
+
+if (!_hadDialog) then {
+    // Have to spawn the mouse cursor center function because arty menu is spawned, too
+    [
+        {
+            if (dialog) then {
+                setMousePosition [0.5, 0.5];
+            };
+        },
+        [],
+        0.05
+    ] call CBA_fnc_waitAndExecute;
+};
+
+nil;

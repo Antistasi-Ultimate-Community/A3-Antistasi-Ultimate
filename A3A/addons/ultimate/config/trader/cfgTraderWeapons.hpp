@@ -166,9 +166,13 @@
         {
             prefix = "projinf_stock";
         };
-        class weapons_jca : weapons_base
+        class weapons_jcaia : weapons_base
         {
-            prefix = "jca_stock";
+            prefix = "jcaia_stock";
+        };
+        class equipment_jcaie : weapons_base
+        {
+            prefix = "jcaie_stock";
         };
         class weapons_ef : weapons_base
         {

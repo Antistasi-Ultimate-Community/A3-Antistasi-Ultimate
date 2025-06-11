@@ -59,7 +59,7 @@ _lightSource setLightIntensity 1e6;
 _ps0 attachTo [_object, [0, 0, 1]];
 _ps1 attachTo [_object, [0, 0, 1]];
 _ps2 attachTo [_object, [0, 0, 1]];
-_lightSource attachTo [_object, [0, 0, 1]];
+_lightSource attachTo [_object, [0, 0, 0]];
 
 sleep 11;
 
@@ -89,7 +89,7 @@ if (typeOf _object in (_faction get "vehiclesDropPod") ) then {
 	setAperture 0;
 };
 
-waitUntil { sleep 0.01; getPos _object select 2 < 2 }; ///0.01 because we don't wanna bounce
+waitUntil { sleep 0.01; getPos _object select 2 < 3 }; ///0.01 because we don't wanna bounce
 
 deleteVehicle _ps0;
 deleteVehicle _ps1;
