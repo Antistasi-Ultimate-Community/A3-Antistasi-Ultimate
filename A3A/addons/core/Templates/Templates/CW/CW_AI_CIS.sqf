@@ -95,8 +95,8 @@
 ///  Identities   ///
 /////////////////////
 
-["voices", ["lsd_voice_B1BattleDroid"]] call _fnc_saveToTemplate;
-["faces", ["lsd_gar_cloneA_head","lsd_gar_cloneB_head","lsd_gar_cloneC_head","lsd_gar_cloneD_head","lsd_gar_cloneE_head","lsd_gar_cloneF_head","lsd_gar_cloneG_head", "lsd_gar_cloneH_head"]] call _fnc_saveToTemplate;
+["voices", ["ls_voice_b1Droid"]] call _fnc_saveToTemplate;
+["faces", ["ls_cloneA","ls_cloneB","ls_cloneC","ls_cloneD","ls_cloneE","ls_cloneF","ls_cloneG", "ls_cloneH"]] call _fnc_saveToTemplate;
 
 
 //////////////////////////
