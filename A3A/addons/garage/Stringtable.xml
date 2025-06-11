@@ -254,6 +254,17 @@
                 <Italian>Spazio disponibile nel garage</Italian>
                 <Polish>Dostępne miejsce w garażu</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Generic_SellVeh">
+                <Original>Sell Vehicle</Original>
+                <French>Vendre véhicule</French>
+                <Russian>Продать технику</Russian>
+                <Korean>차량 판매</Korean>
+                <Spanish>Vender vehículo</Spanish>
+                <Chinesesimp>出售车辆</Chinesesimp>
+                <Czech>Prodat vozidlo</Czech>
+                <Italian>Vendere veicolo</Italian>
+                <Polish>Sprzedaj pojazd</Polish>
+            </Key>
             <Key ID="STR_HR_GRG_SourcePanel_Header">
                 <Original>Sources:</Original>
                 <French>Sources:</French>
@@ -463,6 +474,17 @@
                 <Italian>Disponibile:</Italian>
                 <Polish>Dostępny:</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_InfoPanel_cannotBeSold">
+                <Original>Cannot be sold.</Original>
+                <French>Ne peut pas être vendu.</French>
+                <Russian>Не может быть продана.</Russian>
+                <Korean>판매할 수 없습니다.</Korean>
+                <Spanish>No se puede vender.</Spanish>
+                <Chinesesimp>无法出售。</Chinesesimp>
+                <Czech>Nelze prodat.</Czech>
+                <Italian>Non può essere venduto.</Italian>
+                <Polish>Nie można sprzedać.</Polish>
+            </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Speed">
                 <Original>Top speed:</Original>
                 <French>Vitesse de pointe:</French>
@@ -495,6 +517,17 @@
                 <Czech>Hmotnost:</Czech>
                 <Italian>Massa:</Italian>
                 <Polish>Masa:</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_InfoPanel_salePrice">
+                <Original>Sell Price:</Original>
+                <French>Prix de vente :</French>
+                <Russian>Цена продажи:</Russian>
+                <Korean>판매 가격:</Korean>
+                <Spanish>Precio de venta:</Spanish>
+                <Chinesesimp>出售价格：</Chinesesimp>
+                <Czech>Prodejní cena:</Czech>
+                <Italian>Prezzo di vendita:</Italian>
+                <Polish>Cena sprzedaży:</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_fullRefuel">
                 <Original>Vehicle can be fully refueled with</Original>
@@ -786,6 +819,64 @@
                 <Italian>Impossibile montare l'arma fissa</Italian>
                 <Polish>Nie można zamontować broni statycznej</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_comOnly">
+                <Original>Only the Commander can sell vehicles.</Original>
+                <French>Seul le Commandant peut vendre des véhicules.</French>
+                <Russian>Только командующий может продавать технику.</Russian>
+                <Korean>차량을 판매할 수 있는 사람은 지휘관뿐입니다.</Korean>
+                <Spanish>Solo el comandante puede vender vehículos.</Spanish>
+                <Chinesesimp>只有指挥官可以出售车辆。</Chinesesimp>
+                <Czech>Jen velitel může prodávat vozidla.</Czech>
+                <Italian>Solo il comandante può vendere i veicoli.</Italian>
+                <Polish>Tylko dowódca może sprzedawać pojazdy.</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_locked">
+                <Original>You cannot sell a locked vehicle. If this is your vehicle, make sure to unlock it first.</Original>
+                <French>Vous ne pouvez pas vendre un véhicule verrouillé. Si c'est votre véhicule, déverrouillez-le d'abord.</French>
+                <Russian>Вы не можете продать заблокированную технику. Если это ваша техника, сначала разблокируйте его.</Russian>
+                <Korean>잠긴 차량은 판매할 수 없습니다. 만약 이 차량이 당신의 것이라면 먼저 잠금을 해제하세요.</Korean>
+                <Spanish>No puedes vender un vehículo bloqueado. Si es tu vehículo, asegúrate de desbloquearlo primero.</Spanish>
+                <Chinesesimp>您无法出售已锁定的车辆。如果这是您的车辆，请先解锁。</Chinesesimp>
+                <Czech>Nemůžete prodat zamknuté vozidlo. Pokud je to vaše vozidlo, nejprve ho odemkněte.</Czech>
+                <Italian>Non puoi vendere un veicolo bloccato. Se questo è il tuo veicolo, assicurati di sbloccarlo prima.</Italian>
+                <Polish>Nie możesz sprzedać zablokowanego pojazdu. Jeśli to twój pojazd, najpierw go odblokuj.</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_noPrice">
+                <Original>This vehicle is not suitable for our marketplace.</Original>
+                <French>Ce véhicule n'est pas adapté pour notre marché.</French>
+                <Russian>Эта техника не подходит для нашего рынка.</Russian>
+                <Korean>이 차량은 우리 시장에 적합하지 않습니다.</Korean>
+                <Spanish>Este vehículo no es adecuado para nuestro mercado.</Spanish>
+                <Chinesesimp>此车辆不适合我们的市场。</Chinesesimp>
+                <Czech>Toto vozidlo není vhodné pro náš trh.</Czech>
+                <Italian>Questo veicolo non è adatto al nostro mercato.</Italian>
+                <Polish>Ten pojazd nie nadaje się na nasz rynek.</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_sold">
+                <Original>Vehicle sold for %1.</Original>
+                <French>Véhicule vendu pour %1.</French>
+                <Russian>Техника продана за %1.</Russian>
+                <Korean>차량이 %1 €에 판매되었습니다.</Korean>
+                <Spanish>Vehículo vendido por %1.</Spanish>
+                <Chinesesimp>车辆已以 %1 售出。</Chinesesimp>
+                <Czech>Vozidlo prodáno za %1.</Czech>
+                <Italian>Veicolo venduto per %1.</Italian>
+                <Polish>Pojazd sprzedany za %1.</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_toggleLock_limit">
+                <Original>You have too many vehicles locked</Original>
+                <German>Du hast zu viele Fahrzeuge abgeschlossen</German>
+                <Italian>Hai troppi veicoli chiusi a chiave</Italian>
+                <Spanish>Tienes demasiados vehículos bloqueados</Spanish>
+                <French>Vous avez trop de véhicules verrouillés</French>
+                <Korean>너무 많은 차량을 잠갔습니다</Korean>
+                <Russian>У вас заблокировано слишком много транспорта</Russian>
+                <Polish>Masz za dużo zamkniętych pojazdów</Polish>
+                <Czech>Máš až moc zamknutých vozidel</Czech>
+                <Portuguese>Existem muitos veículos trancados</Portuguese>
+                <Turkish>Çok fazla kilitli aracın var</Turkish>
+                <Chinesesimp>你已上锁过多载具</Chinesesimp>
+            </Key>
             <Key ID="STR_HR_GRG_Feedback_checkedOutToolTip">
                 <!-- name is appended on at the start with a space in between-->
                 <Original>is looking at this vehicle.</Original>
@@ -809,6 +900,17 @@
                 <Czech>Vozidlo je uzamčeno</Czech>
                 <Italian>Il veicolo è bloccato da</Italian>
                 <Polish>Pojazd jest zablokowany przez</Polish>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_LockedToolTip_Ago">
+                <Original>%1: %2 ago</Original>
+                <French>%1 : il y a %2</French>
+                <Russian>%1: %2 назад</Russian>
+                <Korean>%1: %2 전</Korean>
+                <Spanish>%1: hace %2</Spanish>
+                <Chinesesimp>%1：%2 前</Chinesesimp>
+                <Czech>%1: před %2</Czech>
+                <Italian>%1: %2 fa</Italian>
+                <Polish>%1: %2 temu</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_Rotation">
                 <!--Keybinds are hardcoded to key DIK codes: DIK_E, DIK_Q, DIK_ESCAPE, DIK_RETURN, and DIK_SPACE-->

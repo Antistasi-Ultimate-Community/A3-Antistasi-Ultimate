@@ -9,6 +9,8 @@ FIX_LINE_NUMBERS()
 
 params ["_veh"];
 
-private _price = [_veh] call A3A_fnc_vehiclePrice;
+private _typeX = if (_veh isEqualType objNull) then {typeOf _veh} else {_veh};
+
+private _price = [_typeX] call A3A_fnc_vehiclePrice;
 
 _price;
