@@ -33,7 +33,11 @@ HR_GRG_CP_closeCnd = {
     }
 };
 
-HR_GRG_Cnd_canAccessAir = { ///don't forget to separate it to helicopters and planes when update comes out
+
+HR_GRG_Cnd_canAccessPlane = {
+    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 
+};
+HR_GRG_Cnd_canAccessHeli = { ///don't forget to separate it to helicopters and planes when update comes out
     count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] && HR_GRG_accessPoint distance2D _x <= 100}) > 0
 };
 
@@ -58,6 +62,10 @@ HR_GRG_blackListCamo = ["IDAP", "African Desert Extremists", "African Desert Ext
 "African Desert Extremists Alt", "Middle East Extremists", "Middle East Extremists Alt", "Middle East Extremists 1", "Middle East Extremists 2",
 "Middle East Extremists 3", "Middle East Extremists 4", "Middle East Extremists 5", "Middle East Extremists 6",
 "Middle East Extremists 01", "Middle East Extremists 02", "Middle East Extremists 03", "Middle East Extremists 04", "Middle East Extremists 05", "Middle East Extremists 06"];
+
+// Banned vehicles. These will be deleted instead of being added to the garage. Internal name, case sensitive
+HR_GRG_blacklistVehicles = ["rhs_rhino_trigger","ACE_I_SpottingScope","ACE_O_SpottingScope","ACE_O_T_SpottingScope","ACE_B_SpottingScope","ACE_B_T_SpottingScope","ACE_SpottingScopeObject"];
+
 //proxies"Middle East Extremists 01"
 HR_GRG_fnc_Hint = {
     params ["_key", ["_arguments", []]];
@@ -81,6 +89,15 @@ HR_GRG_onOpenEvent = {
 HR_GRG_onCloseEvent = {
     //show Antistasi's top information string
     ["GARAGE", false] call A3A_fnc_disableInfoBar;
+};
+
+// Function to check if the vehicle class is undercover
+HR_GRG_isCivilian = {
+    params [
+        ["_class", ""]
+    ];
+
+    [1, 0] select (_class in undercoverVehicles);
 };
 
 //CBA settings
