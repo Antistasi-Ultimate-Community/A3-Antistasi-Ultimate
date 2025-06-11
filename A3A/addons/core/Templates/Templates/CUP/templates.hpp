@@ -316,3 +316,17 @@
         name = "CUP EST";
         file = "CUP_AI_EST";
     };
+
+    class CAF2035_Base : CUP_Base
+    { 
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "PUP_CAF", "Weapons_F_JCA_AWM", "vests_f_JCA_MCRP", "A3_Aegis_Air_F_Aegis", "Weapons_1_F_lxWS"};//Unfortunately it requires a bit of random single mods from just the base CAF 2035
+        priority = 61;
+    };
+    class CAF2035 : CAF2035_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Canada_ca.paa";
+        name = "CUP CAF";
+        file = "CUP_AI_CAF2035";
+        description = "CUP/Aegis Mixed Canadian Armed Forces 2035";
+    };
