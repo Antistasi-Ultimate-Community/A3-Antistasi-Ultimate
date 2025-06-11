@@ -215,9 +215,9 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["jediUniform", ["lsd_gar_bodyGloveLegArmor_uniform"]];
-_sfLoadoutData set ["jediVest", ["SWLB_CEE_Rancor_Havoc_Vest", "SWLB_clone_501stCommander_armor"]];
-_sfLoadoutData set ["jediHat", ["SWLB_P2_SpecOps_501st_Helmet"]];
+_sfLoadoutData set ["jediUniform", ["ls_garUniform_jediCommander"]];
+_sfLoadoutData set ["jediVest", ["ls_gar_clone_vest"]];
+_sfLoadoutData set ["jediHat", []];
 
 _sfLoadoutData set ["jediSidearm", [
 ["WBK_lightsaber1_jedi", "", "", "", [], [], ""],
