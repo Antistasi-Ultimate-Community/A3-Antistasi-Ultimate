@@ -47,6 +47,10 @@ private _fnc_addItemUnlocks = {
     if (_amount < 0) exitWith { _array append [_class, _arrayWeight] };
 };
 
+private _fnc_addGuidedLauncher = [_fnc_addItemNoUnlocks, _fnc_addItemUnlocks] select (allowGuidedLaunchers isEqualTo 1 && {minWeaps > 0});
+
+private _fnc_addExplosiveCharge = [_fnc_addItemNoUnlocks, _fnc_addItemUnlocks] select (allowUnlockedExplosives isEqualTo 1 && {minWeaps > 0});
+
 private _fnc_addItem = [_fnc_addItemUnlocks, _fnc_addItemNoUnlocks] select (minWeaps < 0);
 
 private _fnc_getAvailableMagazines = {
@@ -148,11 +152,11 @@ private _opticsMidCount = 0;
                 switch true do {
                     case ("AA" in _categories): {
                         _array = _rebelGear getOrDefault ["MissileLaunchersAA", [], true];
-                        [_array, _class, _amount] call _fnc_addItemNoUnlocks
+                        [_array, _class, _amount] call _fnc_addGuidedLauncher;
                     };
                     case ("AT" in _categories): {
                         _array = _rebelGear getOrDefault ["MissileLaunchersAT", [], true];
-                        [_array, _class, _amount] call _fnc_addItemNoUnlocks
+                        [_array, _class, _amount] call _fnc_addGuidedLauncher;
                     };
                 };
             };
@@ -246,7 +250,7 @@ private _opticsMidCount = 0;
                     };
                     case ("ExplosiveCharges" in _categories): {
                         _array = _rebelGear getOrDefault ["ExplosiveCharges", [], true];
-                        [_array, _class, _amount] call _fnc_addItemNoUnlocks
+                        [_array, _class, _amount] call _fnc_addExplosiveCharge;
                     };
                 };
             };
@@ -289,6 +293,15 @@ if (_opticsMidCount < ITEM_MAX*2) then {
 };
 
 _rebelGear set ["OpticsAll", _opticClose + _opticMid + _opticLong];     // for launchers
+
+// normalize all item weights, within their own array
+{
+    private _array = _y; 
+    if !(_array isEqualType []) then {continue}; 
+    private _totalWeight = 0;  
+    { _totalWeight = _totalWeight + _x } forEach (_array select {_x isEqualType 1}); 
+    _rebelGear set [_x, _array apply {if (_x isEqualType 1) then {_x / _totalWeight} else {_x}}];
+} forEach _rebelGear;
 
 // Update everything while unscheduled so that version numbers match
 isNil {

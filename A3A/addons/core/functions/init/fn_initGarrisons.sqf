@@ -21,7 +21,7 @@ _fnc_initGarrison =
 };
 
 private _updateMarkers = outposts + airportsX + milbases;			// To sort out the faction names & flags
-if (gameMode >= 3) then
+if (gameMode == 3) then
 {
     // Set everything to government control if we have no invaders
     {

@@ -1084,11 +1084,11 @@
                 <French>Échec du retournement</French>
             </Key>
             <Key ID="STR_unflip_fail_wrong_type">
-                <Original>This kind of vehicle can't be flipped.</Original>
-                <Russian>Этот тип транспортного средства не может быть перевёрнут.</Russian>
-                <Chinesesimp>这种载具不能翻正。</Chinesesimp>
-                <Korean>이런 종류의 차량은 뒤집을 수 없습니다.</Korean>
-                <French>Ce type de véhicule ne peut pas être retourné.</French>
+                <Original>Flipping this vehicle might be dangerous, think twice.</Original>
+                <Russian>Переворачивание этой техники может быть опасным, подумайте дважды.</Russian>
+                <Chinesesimp>翻转这辆车可能有危险，请三思而后行。</Chinesesimp>
+                <Korean>이 차량을 뒤집는 것은 위험할 수 있으니 신중히 생각해 주십시오.</Korean>
+                <French>Retourner ce véhicule peut être dangereux, réfléchissez à deux fois.</French>
             </Key>
             <Key ID="STR_unflip_fail_veh_destroyed">
                 <Original>Vehicle is destroyed.</Original>
@@ -5672,6 +5672,14 @@
                 <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
                 <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
             </Key>
+            <Key ID="STR_params_UAVSpawnChance">
+                <Original>UAV spawn chance at airfields</Original>
+                <Russian>Шанс спавна БПЛА на аэрдромах</Russian>
+            </Key>
+            <Key ID="STR_params_UAVSpawnChance_desc">
+                <Original>Adjusts spawn chance of UAVs at enemy airfields. The higher the chance, the less likely other fixed wing aircrafts will be spawned</Original>
+                <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+            </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
                 <Russian>Постоянное сохранение для построек, размещенных Зевсом</Russian>
@@ -5774,6 +5782,13 @@
                 <Chinesesimp>玩家在控制无人机时是否应被视为 AFK</Chinesesimp>
                 <Korean>UAV를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
                 <French>Le joueur doit-il être considéré comme AFK lorsqu'il contrôle un drone?</French>
+            </Key>
+            <Key ID="STR_params_afk_zeus">
+                <Original>Should player be considered AFK while controlling Zeus?</Original>
+                <Russian>Должен ли игрок считаться AFK, управляя Зевсом?</Russian>
+                <Chinesesimp>玩家在控制宙斯时是否应被视为 AFK</Chinesesimp>
+                <Korean>제우스를 조종하는 동안 플레이어가 AFK로 간주되어야 합니까?</Korean>
+                <French>Le joueur doit-il être considéré comme AFK lorsqu'il contrôle Zeus ?</French>
             </Key>
             <Key ID="STR_params_afk_disabled">
                 <Original>Disabled</Original>
@@ -14379,6 +14394,134 @@
                 <Chinesesimp>当前重量</Chinesesimp>
                 <Korean>현재 적재량</Korean>
                 <French>Charge actuelle</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerAbort_title">
+                <Original>Building Placer: Abort</Original>
+                <German>Gebäudeplatzierung: Abbrechen</German>
+                <Russian>Строитель: Отменить</Russian>
+                <Chinesesimp>建筑放置器 - 取消</Chinesesimp>
+                <Korean>건물 배치기 - 취소</Korean>
+                <French>Constructeur: Annuler</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerAbort_desc">
+                <Original>Abort the building placement.</Original>
+                <German>Abbrechen der Gebäudeplatzierung.</German>
+                <Russian>Отменить размещение здания.</Russian>
+                <Chinesesimp>取消建筑物放置。</Chinesesimp>
+                <Korean>건물 배치기를 취소합니다.</Korean>
+                <French>Annuler le placement du bâtiment.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerDelete_title">
+                <Original>Building Placer: Delete</Original>
+                <German>Gebäudeplatzierung: Löschen</German>
+                <Russian>Строитель: Удалить</Russian>
+                <Chinesesimp>建筑放置器 - 删除</Chinesesimp>
+                <Korean>건물 배치기 - 삭제</Korean>
+                <French>Constructeur: Supprimer</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerDelete_desc">
+                <Original>Delete the building.</Original>
+                <German>Das Gebäude löschen.</German>
+                <Russian>Удалить здание.</Russian>
+                <Chinesesimp>删除建筑物。</Chinesesimp>
+                <Korean>건물을 삭제합니다.</Korean>
+                <French>Supprimer le bâtiment.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerPlace_title">
+                <Original>Building Placer: Place</Original>
+                <German>Gebäudeplatzierung: Platzieren</German>
+                <Russian>Строитель: Разместить</Russian>
+                <Chinesesimp>建筑放置器 - 放置</Chinesesimp>
+                <Korean>건물 배치기 - 배치</Korean>
+                <French>Constructeur: Placer</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerPlace_desc">
+                <Original>Place the building.</Original>
+                <German>Das Gebäude platzieren.</German>
+                <Russian>Разместить здание.</Russian>
+                <Chinesesimp>放置建筑物。</Chinesesimp>
+                <Korean>건물을 배치합니다.</Korean>
+                <French>Placer le bâtiment.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRepair_title">
+                <Original>Building Placer: Repair</Original>
+                <German>Gebäudeplatzierung: Reparieren</German>
+                <Russian>Строитель: Ремонт</Russian>
+                <Chinesesimp>建筑放置器 - 修理</Chinesesimp>
+                <Korean>건물 배치기 - 수리</Korean>
+                <French>Constructeur: Réparer</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRepair_desc">
+                <Original>Repair the building.</Original>
+                <German>Das Gebäude reparieren.</German>
+                <Russian>Отремонтировать здание.</Russian>
+                <Chinesesimp>修理建筑物。</Chinesesimp>
+                <Korean>건물을 수리합니다.</Korean>
+                <French>Réparer le bâtiment.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCCW_title">
+                <Original>Building Placer: Rotate counter-clockwise</Original>
+                <German>Gebäudeplatzierung: Gegen den Uhrzeigersinn drehen</German>
+                <Russian>Строитель: Повернуть против часовой стрелки</Russian>
+                <Chinesesimp>建筑放置器 - 逆时针旋转</Chinesesimp>
+                <Korean>건물 배치기 - 반시계 방향으로 회전</Korean>
+                <French>Constructeur: Rotation dans le sens inverse des aiguilles d'une montre</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCCW_desc">
+                <Original>Rotate the building counter-clockwise.</Original>
+                <German>Das Gebäude gegen den Uhrzeigersinn drehen.</German>
+                <Russian>Повернуть здание против часовой стрелки.</Russian>
+                <Chinesesimp>逆时针旋转建筑物。</Chinesesimp>
+                <Korean>건물을 반시계 방향으로 회전합니다.</Korean>
+                <French>Faire pivoter le bâtiment dans le sens inverse des aiguilles d'une montre.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCW_title">
+                <Original>Building Placer: Rotate clockwise</Original>
+                <German>Gebäudeplatzierung: Im Uhrzeigersinn drehen</German>
+                <Russian>Строитель: Повернуть по часовой стрелке</Russian>
+                <Chinesesimp>建筑放置器 - 顺时针旋转</Chinesesimp>
+                <Korean>건물 배치기 - 시계 방향으로 회전</Korean>
+                <French>Constructeur: Rotation dans le sens des aiguilles d'une montre</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateCW_desc">
+                <Original>Rotate the building clockwise.</Original>
+                <German>Das Gebäude im Uhrzeigersinn drehen.</German>
+                <Russian>Повернуть здание по часовой стрелке.</Russian>
+                <Chinesesimp>顺时针旋转建筑物。</Chinesesimp>
+                <Korean>건물을 시계 방향으로 회전합니다.</Korean>
+                <French>Faire pivoter le bâtiment dans le sens des aiguilles d'une montre.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerSnapToSurface_title">
+                <Original>Building Placer: Snap to surface</Original>
+                <German>Gebäudeplatzierung: An Oberfläche anpassen</German>
+                <Russian>Строитель: Привязать к поверхности</Russian>
+                <Chinesesimp>建筑放置器 - 吸附到地面</Chinesesimp>
+                <Korean>건물 배치기 - 표면에 스냅</Korean>
+                <French>Constructeur: Accrocher à la surface</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerSnapToSurface_desc">
+                <Original>Snap the building to the surface.</Original>
+                <German>Das Gebäude an die Oberfläche anpassen.</German>
+                <Russian>Привязать здание к поверхности.</Russian>
+                <Chinesesimp>将建筑物吸附到地面。</Chinesesimp>
+                <Korean>건물을 표면에 스냅합니다.</Korean>
+                <French>Accrocher le bâtiment à la surface.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerUnsafeMode_title">
+                <Original>Building Placer: Unsafe Mode</Original>
+                <German>Gebäudeplatzierung: Unsicherer Modus</German>
+                <Russian>Строитель: Режим небезопасной установки</Russian>
+                <Chinesesimp>建筑放置器 - 不安全模式</Chinesesimp>
+                <Korean>건물 배치기 - 안전하지 않은 모드</Korean>
+                <French>Constructeur: Mode non sécurisé</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerUnsafeMode_desc">
+                <Original>Toggle unsafe mode.</Original>
+                <German>Unsicheren Modus umschalten.</German>
+                <Russian>Переключить небезопасный режим.</Russian>
+                <Chinesesimp>切换不安全模式。</Chinesesimp>
+                <Korean>안전하지 않은 모드를 전환합니다.</Korean>
+                <French>Basculer en mode non sécurisé.</French>
             </Key>
         </Container>
     </Package>
