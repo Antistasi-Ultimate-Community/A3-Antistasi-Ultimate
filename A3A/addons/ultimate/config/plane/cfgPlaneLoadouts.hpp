@@ -456,6 +456,8 @@ class planeLoadouts
             loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonMissile_Bomb_GBU12_x1","PylonMissile_Bomb_GBU12_x1"};
             mainGun = "CUP_Vacannon_GAU12_veh";
             missileLauncher[] = {"PylonRack_Missile_AGM_02_x1", "PylonMissile_Missile_BIM9X_x1", "PylonMissile_Bomb_GBU12_x1"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
     };
     
     class CAS
@@ -937,6 +939,8 @@ class planeLoadouts
             loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonMissile_Bomb_GBU12_x1","PylonMissile_Bomb_GBU12_x1"};
             mainGun = "CUP_Vacannon_GAU12_veh";
             missileLauncher[] = {"PylonRack_Missile_AGM_02_x1", "PylonMissile_Missile_BIM9X_x1", "PylonMissile_Bomb_GBU12_x1"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
     };
    
     class AA
@@ -1284,7 +1288,7 @@ class planeLoadouts
             missileLauncher[] = {"weapon_AMRAAMLauncher"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
-      class Flex_CUP_POL_F16A
+        class Flex_CUP_POL_F16A
         {
             loadout[] = {"CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_AAA_missiles","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","CUP_PylonPod_1Rnd_AIM_120_AMRAAM_M"};
             mainGun = "CDF_Ext_Fighter_Gun_20mm";
@@ -1326,7 +1330,8 @@ class planeLoadouts
         {
             loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_C_x2","PylonRack_Missile_AMRAAM_C_x2"};
             mainGun = "CUP_Vacannon_GAU12_veh";
-            missileLauncher[] = {"PylonRack_Missile_AMRAAM_C_x2", "PylonMissile_Missile_BIM9X_x1", "PylonRack_Missile_BIM9X_x1"
+            missileLauncher[] = {"PylonRack_Missile_AMRAAM_C_x2", "PylonMissile_Missile_BIM9X_x1", "PylonRack_Missile_BIM9X_x1"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
     };
 };
