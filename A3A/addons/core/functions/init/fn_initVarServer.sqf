@@ -325,15 +325,9 @@ A3A_factionEquipFlags = _occEquipFlags arrayIntersect _invEquipFlags;
 
 Debug_1("Faction equip flags: %1", A3A_factionEquipFlags);
 
-switch (gameMode) do {
-	case 3: {
-		areInvadersDefeated = true;
-		publicVariable "areInvadersDefeated";
-	};
-	case 4: {
-		areOccupantsDefeated = true;
-		publicVariable "areOccupantsDefeated";
-	};
+if (gameMode isEqualTo 3) then {
+	areInvadersDefeated = true;
+	publicVariable "areInvadersDefeated";
 };
 
 // Build list of extra equipment mods so we can filter out the modern stuff as necessary

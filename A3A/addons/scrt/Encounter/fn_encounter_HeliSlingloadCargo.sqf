@@ -5,7 +5,7 @@ Info("Helicopter slingload cargo Event Init.");
 
 private _vehicles = [];
 private _groups = [];
-private _difficult = random 10 < tierWar;
+private _difficult = random 10 < tierWar; ///
 
 private _player = selectRandom (call SCRT_fnc_misc_getRebelPlayers);
 
@@ -43,14 +43,6 @@ if (_potentialspawnPosition isEqualTo []) exitWith {
     publicVariableServer "isEventInProgress";
 };
 private _spawnPosition = selectRandom _potentialspawnPosition;
-/* if (_spawnPosition == _outpost) then {
-	while {true} do {
-		_potentialspawnPosition = (outposts + milbases + airportsX + resourcesX + factories) select {
-    	sidesX getVariable [_x, sideUnknown] != teamPlayer && _x != _outpost && sidesX getVariable [_x, sideUnknown] == _side  &&  {(getMarkerPos _x) distance2D _player < distanceSPWN}};
-		_spawnPosition = selectRandom _potentialspawnPosition;
-		if (_spawnPosition != _outpost) exitwith{};
-	};
-}; */
 
 private _actualspawnPosition = getMarkerPos _spawnPosition;
 
@@ -87,7 +79,6 @@ private _lootCrate = objNull;
 private _attempts = 15;
 
 if (_HeliClass == "O_Heli_Transport_04_F") then {
-	_HeliClass = "O_Heli_Transport_04_F";
 	while {_attempts != 0} do {
 		private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F" , "Land_Pod_Heli_Transport_04_bench_F" , "Land_Pod_Heli_Transport_04_medevac_F" , "Land_Pod_Heli_Transport_04_repair_F", "Land_Pod_Heli_Transport_04_fuel_F" , "Land_Pod_Heli_Transport_04_ammo_F" , "Land_Pod_Heli_Transport_04_box_F"];
 		_lootcrateType = selectRandomWeighted (
@@ -108,7 +99,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 		};
 		deleteVehicle _lootCrate;
 		_attempts = _attempts - 1;
-		sleep 0.05;
+		sleep 0.08;
 	};
 	deleteVehicle _lootCrate;
 	{
@@ -262,8 +253,14 @@ waitUntil { sleep 2; getSlingLoad _heliVehicle  == objNull || getPos _lootCrate 
 private _smokeGrenade = selectRandom allSmokeGrenades; //notife player where sweet loot has landed
 private _smoke = _smokeGrenade createVehicle (getPosATL _lootCrate);
 _smoke attachTo [_lootCrate, [0,0,0] ];
+
+private _chemLight = "Chemlight_green"; //notife player where box is (during night)
+private _light = _chemLight createVehicle (getPosATL _lootCrate);
+_light attachTo [_lootCrate, [0,0,0]];
 sleep 5;
 detach _smoke;
+detach _light;
+
 _lootCrate allowDamage true;
 {[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
 sleep 360;
