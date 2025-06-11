@@ -394,7 +394,7 @@ if (random 10 < (tierWar + difficultyCoef)) then {
 
 		private _veh = nil;
 		isNil {
-			_veh = createVehicle [selectRandom (_faction get "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+			_veh = createVehicle [selectRandomWeighted FactionGetTiered(_faction, "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 			_veh setDir (_spawnParameter select 1);
 		};
 
@@ -418,7 +418,7 @@ if (random 10 < (tierWar + difficultyCoef)) then {
   [_x, true] call A3U_fnc_setLock;
 } forEach _vehiclesX;
 
-private _boatType = selectRandom (_faction get "vehiclesGunBoats");
+private _boatType = selectRandomWeighted FactionGoDTiered(_faction, "vehiclesGunBoats");
 private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
 if (count _mrkMar > 0) then {
 	private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_typeVehX];
@@ -441,8 +441,14 @@ if (count _mrkMar > 0) then {
 ////////////////////////////
 
 if (random 100 < (30 + tierWar * 6)) then {
-	private _heavyVehPool =  (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks");
-	private _type = selectRandom _heavyVehPool;
+	private _heavyVehPool =  (
+		FactionGetTiered(_faction, "vehiclesTanks") + 
+		FactionGetTiered(_faction, "vehiclesAPCs") + 
+		FactionGetTiered(_faction, "vehiclesLightAPCs") + 
+		FactionGetTiered(_faction, "vehiclesIFVs") + 
+		FactionGetTiered(_faction, "vehiclesLightTanks")
+	);
+	private _type = selectRandomWeighted _heavyVehPool;
 
 	private _road = [_positionX] call A3A_fnc_findNearestGoodRoad;
 	if (_road distance2D _positionX > 800) exitWith {};
