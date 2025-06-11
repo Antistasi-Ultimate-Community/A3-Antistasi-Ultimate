@@ -38,13 +38,19 @@ _vehWP0 setWaypointBehaviour "CARELESS";
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
-waitUntil {sleep 1; (_helicopter distance2D _landPos) < 3000};
-_helicopter limitSpeed ((0.8 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 500);         // to slow down vtols
-waitUntil {sleep 1; (_helicopter distance2D _landPos) < 2000};
-_helicopter limitSpeed ((0.7 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 400);         // to slooow down vtols
-waitUntil {sleep 1; (_helicopter distance2D _landPos) < 1500};
-_helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 250);         // to slow down vtols even more
+if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
+    waitUntil {sleep 1; (_helicopter distance2D _landPos) < 3000};
+    _helicopter limitSpeed ((0.8 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 500);         // to slow down vtols
+    waitUntil {sleep 1; (_helicopter distance2D _landPos) < 2000};
+    _helicopter limitSpeed ((0.7 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 400);         // to slooow down vtols
+    waitUntil {sleep 1; (_helicopter distance2D _landPos) < 1500};
+    _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 250);         // to slow down vtols even more
+} else {
+    waitUntil {sleep 1; (_helicopter distance2D _landPos) < 1000};
+    _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 350);         // to slow down vtols even more
+};
 
+waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 while {_helicopter distance2D _landPos > 675} do {
     [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
     [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
@@ -110,6 +116,37 @@ while {_interval < 0.9999} do {
     private _vectorUp = (vectorUp _helicopter) vectorAdd (_vectorDir vectorMultiply _backFactor);
     _vectorDir = _vectorDir vectorAdd [0, 0, sin(_angleIs + _angleDiff) - (_vectorDir select 2)];
 
+    // ===========================================
+    // LATERAL ALIGNMENT (ANTI-ROLL)
+    // ===========================================
+    // 1. Calculate current roll angle
+    /* private _vectorRight = _vectorDir vectorCrossProduct _vectorUp;
+    private _rollAngle = asin (_vectorRight select 2);
+    
+    // 2. Smooth roll correction (max 0.5° per frame)
+    private _rollCorrection = -_rollAngle min 0.0087 max -0.0087; // 0.5° in radians
+    
+    // 3. Apply rotation around longitudinal axis (X-axis)
+    private _rotationMatrix = [
+        [1, 0, 0],
+        [0, cos _rollCorrection, -sin _rollCorrection],
+        [0, sin _rollCorrection, cos _rollCorrection]
+    ];
+    
+    // 4. Adjust direction and "up" vectors
+    _vectorDir = [
+        _vectorDir select 0,
+        (_vectorDir select 1) * cos _rollCorrection - (_vectorDir select 2) * sin _rollCorrection,
+        (_vectorDir select 1) * sin _rollCorrection + (_vectorDir select 2) * cos _rollCorrection
+    ];
+    
+    _vectorUp = [
+        _vectorUp select 0,
+        (_vectorUp select 1) * cos _rollCorrection - (_vectorUp select 2) * sin _rollCorrection,
+        (_vectorUp select 1) * sin _rollCorrection + (_vectorUp select 2) * cos _rollCorrection
+    ]; */
+    // ===========================================
+
     // Apply velocity transformation
     _helicopter setVelocityTransformation [
         _lineStart,
@@ -168,12 +205,13 @@ _cargoGroup spawn A3A_fnc_attackDrillAI;
 if(!canMove _helicopter || !alive _driver) exitWith { deleteVehicle _landPad };
 
 // Dirty hack to stop the heli lurching around near the ground
-private _dismountTime = count units _cargoGroup - 3;
+private _dismountTime = count units _cargoGroup - 2;
 [_helicopter, time + _dismountTime, _midHeight, _landPad] spawn {
     params ["_heli", "_endTime", "_flyHeight", "_landPad"];
     while { time < _endTime } do {
         _heli setVelocity [0,0,-0.65];
-        sleep 1;
+        sleep 0.5;
+        if (!isEngineOn _heli) then { _heli engineOn true;};
     };
     if (!isEngineOn _heli) then { _heli engineOn true;};
     _heli flyInHeight _flyHeight;

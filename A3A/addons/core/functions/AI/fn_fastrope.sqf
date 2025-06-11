@@ -29,13 +29,6 @@ _wp setWaypointCompletionRadius 3;
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _veh flyInHeight _midHeight;
 
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 3000) or !(canMove _veh)};
-_veh limitSpeed ((0.8 * (getNumber(configOf _veh >> "maxSpeed"))) min 500);         // to slow down vtols
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 2000) or !(canMove _veh)};
-_veh limitSpeed ((0.7 * (getNumber(configOf _veh >> "maxSpeed"))) min 400);         // to slooow down vtols
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 1500) or !(canMove _veh)};
-_veh limitSpeed ((0.6 * (getNumber(configOf _veh >> "maxSpeed"))) min 250);         // to slow down vtols even more
-
 waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
 _veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);         // to slow down vtols even more
 
