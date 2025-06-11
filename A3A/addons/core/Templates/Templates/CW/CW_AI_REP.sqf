@@ -46,7 +46,7 @@
 ["vehiclesPlanesLargeAA", ["3AS_ARC_170_Red","3as_V19_base"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["3AS_Republic_Transport_01"]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesGunship", ["3AS_LAAT_Mk1","lsd_heli_laati"]] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", ["3AS_LAAT_Mk1","ls_vehicle_laati"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["3AS_Patrol_LAAT_Republic"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["3AS_LAAT_Mk2", "3AS_LAAT_Mk2", "3AS_LAAT_Mk2", "3AS_Nu_REP_F","3AS_Rho_REP_F"]] call _fnc_saveToTemplate;
@@ -359,9 +359,9 @@ _militaryLoadoutData set ["sidearms", [
 ///////////////////////////////
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_policeLoadoutData set ["uniforms", ["SWLB_clone_CGTrooper_Uniform"]];
-_policeLoadoutData set ["vests", ["ls_gar_clone_vest"]];
-_policeLoadoutData set ["helmets", ["SWLB_clone_CGTrooper_helmet"]];
+_policeLoadoutData set ["uniforms", ["ls_cloneUniform_coruscantguard_trooper"]];
+_policeLoadoutData set ["vests", ["ls_gar_holster_vest"]];
+_policeLoadoutData set ["helmets", ["ls_cloneHelmet_phase2_coruscantguard_trooper"]];
 _policeLoadoutData set ["smgs", [
 ["ls_weapon_dp20", "", "", "", ["ls_magazine_dp20"], [], ""],
 ["ls_weapon_dc15s", "", "", "", ["ls_magazine_dc15s"], [], ""]
