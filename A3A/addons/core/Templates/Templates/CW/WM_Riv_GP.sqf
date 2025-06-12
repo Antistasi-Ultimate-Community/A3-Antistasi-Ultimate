@@ -52,7 +52,7 @@
 ["staticLowWeapons", [
 	"3AS_HeavyRepeater_Unarmoured"
 ]] call _fnc_saveToTemplate;
-["staticMortars", ["ls_merc_mortar"]] call _fnc_saveToTemplate;
+["staticMortars", ["ls_vehicle_mortar_mercenary"]] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 
@@ -92,7 +92,7 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", ["ItemGPS"]];
-_loadoutData set ["NVGs", ["ls_mandalorian_rangefinder_nvg"]];
+_loadoutData set ["NVGs", ["ls_mandalorian_rangefinder"]];
 _loadoutData set ["binoculars", ["JLTS_CloneBinocular_black"]];
 _loadoutData set ["Rangefinder", ["JLTS_CloneBinocular_black"]];
 
@@ -167,21 +167,21 @@ _loadoutData set ["carbines", [
 	["WM_DH17", "", "", "",  ["WM_DH17_Mag"], [], ""]
 ]];
 _loadoutData set ["grenadeLaunchers", [
-	["SWLW_GL", "", "", "", ["SWLW_mag_40mm_1rnd"], [], ""]
+	["ls_weapon_mpl57_rebel", "", "", "", ["ls_magazine_2Rnd_40mw_G77_HEAB","ls_magazine_3Rnd_40mw_G76_HEF"], [], ""]
 ]];
 _loadoutData set ["machineGuns", [
 	["WM_T21", "", "", "", ["WM_T21_mag"], [], ""]
 ]];
 _loadoutData set ["marksmanRifles", [
-	["SWLW_sniper", "", "", "swlw_sniper_scope", ["SWLW_sniper_Mag"], [], ""]
+	["ls_weapon_mercenarySniper", "", "", "ls_cows_mercenarySniper_scope", ["ls_magazine_mercenarySniper"], [], ""]
 ]];
-_loadoutData set ["lightATLaunchers", ["ls_weapon_rps6"]];
+_loadoutData set ["lightATLaunchers", ["ls_weapon_rps6_loaded"]];
 _loadoutData set ["ATLaunchers", [
-["ls_weapon_rps6", "", "", "", ["ls_mag_rpg_1rnd"], [], ""]
+["ls_weapon_rps6", "", "", "", ["ls_magazine_rps6_heat"], [], ""]
 ]];
-_loadoutData set ["lightHELaunchers", ["ls_weapon_rps6"]];
-_loadoutData set ["AALaunchers", ["SWLW_PLX1_AA"]];
-_loadoutData set ["sidearms", ["SWLW_RG4D"]];
+_loadoutData set ["lightHELaunchers", ["ls_weapon_rps6_loaded"]];
+_loadoutData set ["AALaunchers", ["ls_weapon_plx1_aa"]];
+_loadoutData set ["sidearms", ["ls_weapon_rg4d"]];
 
 //////////////////////////
 //    Misc Loadouts     //
