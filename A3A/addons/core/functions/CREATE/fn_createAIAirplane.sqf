@@ -275,9 +275,9 @@ if (!_busy) then {
 			if !(_runwaySpawnLocation isEqualTo []) then {
 				private _vehiclesPlanesCAS = FactionGetTiered(_faction, "vehiclesPlanesCAS") select {_x isEqualType ""};
 				private _vehiclesPlanesAA = FactionGetTiered(_faction, "vehiclesPlanesAA") select {_x isEqualType ""};
-				private _vehiclesPlanesLargeCAS = FactionGetTiered(_faction, "vehiclesPlanesLargeCAS") select {_x isEqualType ""};
-				private _vehiclesPlanesLargeAA = FactionGetTiered(_faction, "vehiclesPlanesLargeAA") select {_x isEqualType ""};
-				private _vehiclesPlanesTransport = FactionGetTiered(_faction, "vehiclesPlanesTransport") select {_x isEqualType ""};
+				private _vehiclesPlanesLargeCAS = FactionGoDTiered(_faction, "vehiclesPlanesLargeCAS") select {_x isEqualType ""};
+				private _vehiclesPlanesLargeAA = FactionGoDTiered(_faction, "vehiclesPlanesLargeAA") select {_x isEqualType ""};
+				private _vehiclesPlanesTransport = FactionGoDTiered(_faction, "vehiclesPlanesTransport") select {_x isEqualType ""};
 				private _vehiclesPlanesGunship = FactionGoDTiered(_faction, "vehiclesPlanesGunship") select {_x isEqualType ""};
 				private _uavsAttack = FactionGoDTiered(_faction, "uavsAttack") select {_x isEqualType ""};
 				private _vehPool = [];
