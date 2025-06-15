@@ -1,5 +1,5 @@
 //3CBF - config.cpp
-
+///
 #include "..\script_component.hpp"
 
 class CfgPatches 
