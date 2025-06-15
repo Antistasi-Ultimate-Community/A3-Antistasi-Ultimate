@@ -12,14 +12,14 @@ class Header
 {
 	gameType = ANTI;
 	minplayers = 1;
-	maxplayers = 35;
+	maxplayers = 55;
 };
 
 class CfgTaskEnhancements
 {
   enable       = 1;
   3d           = 1;
-  3dDrawDist   = 3500;
+  3dDrawDist   = 2500;
   share        = 1;
   propagate    = 1;
 };
