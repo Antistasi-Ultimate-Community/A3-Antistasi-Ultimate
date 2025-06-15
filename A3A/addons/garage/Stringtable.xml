@@ -123,26 +123,26 @@
                 <Russian>СВВП</Russian>
             </Key>
             <Key ID="STR_HR_GRG_Generic_HeliDisabled">
-                <Original>You can only access helicopters if rebel helipad is nearby or from friendly airfield</Original>
-                <French>Vous ne pouvez accéder aux hélicoptères que si un héliport rebelle est à proximité ou depuis une base aérienne alliée.</French>
-                <Russian>Вы можете получить доступ к вертолётам только если рядом есть повстанческая вертолётная площадка или через дружественный аэродром.</Russian>
-                <Korean>반군 헬리패드가 근처에 있거나 아군 공군 기지에서만 헬리콥터를 사용할 수 있습니다.</Korean>
-                <Spanish>Solo puedes acceder a helicópteros si hay un helipuerto rebelde cerca o desde una base aérea aliada.</Spanish>
-                <Chinesesimp>只有附近有叛军直升机坪或友方空军基地时，你才能使用直升机。</Chinesesimp>
-                <Czech>Vrtulníky můžete využívat pouze při blízkosti rebelské heliportu nebo na spojenecké letecké základně.</Czech>
-                <Italian>Puoi accedere agli elicotteri solo se c'è un eliporto ribelle nelle vicinanze o da una base aerea alleata.</Italian>
-                <Polish>Możesz korzystać ze śmigłowców tylko w pobliżu rebeliantów lub na przyjaznej bazie lotniczej.</Polish>
+                <Original>You can only access helicopters if a rebel helipad, friendly airfield, or military base is nearby.</Original>
+                <French>Vous ne pouvez accéder aux hélicoptères que si un héliport rebelle, une base aérienne alliée ou une base militaire se trouve à proximité.</French>
+                <Russian>Вы можете получить доступ к вертолётам только если рядом есть повстанческая вертолётная площадка, дружественный аэродром или военная база.</Russian>
+                <Korean>반군 헬리패드, 아군 공군 기지 또는 군사 기지가 근처에 있어야 헬리콥터를 사용할 수 있습니다.</Korean>
+                <Spanish>Solo puedes acceder a helicópteros si hay un helipuerto rebelde, una base aérea aliada o una base militar cerca.</Spanish>
+                <Chinesesimp>只有附近有叛军直升机坪、友方空军基地或军事基地时，你才能使用直升机。</Chinesesimp>
+                <Czech>Vrtulníky můžete využívat pouze tehdy, pokud je poblíž rebelský heliport, spojenecká letecká základna nebo vojenská základna.</Czech>
+                <Italian>Puoi accedere agli elicotteri solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
+                <Polish>Możesz korzystać ze śmigłowców tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
-                <Original>You can only access aircraft if a rebel helipad or friendly airfield is nearby</Original>
-                <French>Vous ne pouvez accéder aux aéronefs que si un héliport rebelle est à proximité ou depuis une base aérienne alliée.</French>
-                <Russian>Вы можете получить доступ к авиации только если рядом есть повстанческая вертолётная площадка или через дружественный аэродром.</Russian>
-                <Korean>반군 헬리패드가 근처에 있거나 아군 공군 기지에서만 항공기를 사용할 수 있습니다.</Korean>
-                <Spanish>Solo puedes acceder a aeronaves si hay un helipuerto rebelle cerca o desde una base aérea aliada.</Spanish>
-                <Chinesesimp>你只能在附近有叛军直升机坪或友方空军基地时使用飞行器。</Chinesesimp>
-                <Czech>Letadla můžete využívat pouze při blízkosti rebelské heliportu nebo na spojenecké letecké základně.</Czech>
-                <Italian>Puoi accedere agli aeromobili solo se c'è un eliporto ribelle nelle vicinanze o da una base aerea alleata.</Italian>
-                <Polish>Możesz korzystać z samolotów tylko w pobliżu rebeliantów lub na przyjaznej bazie lotniczej.</Polish>
+                <Original>You can only access aircraft if a rebel helipad, friendly airfield, or military base is nearby.</Original>
+                <French>Vous ne pouvez accéder aux aéronefs que si un héliport rebelle, une base aérienne alliée ou une base militaire se trouve à proximité.</French>
+                <Russian>Вы можете получить доступ к авиации только если рядом есть повстанческая вертолётная площадка, дружественный аэродром или военная база.</Russian>
+                <Korean>반군 헬리패드, 아군 공군 기지 또는 군사 기지가 근처에 있어야 항공기를 사용할 수 있습니다.</Korean>
+                <Spanish>Solo puedes acceder a aeronaves si hay un helipuerto rebelde, una base aérea aliada o una base militar cerca.</Spanish>
+                <Chinesesimp>你只能在附近有叛军直升机坪、友方空军基地或军事基地时使用飞行器。</Chinesesimp>
+                <Czech>Letadla můžete využívat pouze tehdy, pokud je poblíž rebelský heliport, spojenecká letecká základna nebo vojenská základna.</Czech>
+                <Italian>Puoi accedere agli aeromobili solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
+                <Polish>Możesz korzystać z samolotów tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Boat">
                 <Original>Ships</Original>
