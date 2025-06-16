@@ -6,7 +6,7 @@
 ["spawnMarkerName", "KDF support corridor"] call _fnc_saveToTemplate;
 
 ["flag", "vtf_kf_FLag_Korsac"] call _fnc_saveToTemplate;
-["flagTexture", "\vtf_korsac_factions_main\data\vtf_korsac_flag_co.paa"] call _fnc_saveToTemplate;
+["flagTexture", "vtf\vtf_korsac_factions\addons\main\data\vtf_korsac_flag_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_EAF"] call _fnc_saveToTemplate;
 
 //////////////////////////
