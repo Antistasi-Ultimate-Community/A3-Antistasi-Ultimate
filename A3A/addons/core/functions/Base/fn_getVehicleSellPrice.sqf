@@ -11,6 +11,6 @@ params ["_veh"];
 
 private _typeX = if (_veh isEqualType objNull) then {typeOf _veh} else {_veh};
 
-private _price = [_typeX] call A3A_fnc_vehiclePrice / 2;
+private _price = ([_typeX] call A3A_fnc_vehiclePrice) / 2;
 
 _price;
