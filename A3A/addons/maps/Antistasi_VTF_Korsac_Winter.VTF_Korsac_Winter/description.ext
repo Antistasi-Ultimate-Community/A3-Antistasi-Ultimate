@@ -1,0 +1,29 @@
+#include "..\missionDescription\master.hpp"
+
+OnLoadName = $STR_antistasi_mission_info_Korsac_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_Korsac_blurb_text;
+briefingName = $STR_antistasi_mission_info_Korsac_mapname_text;
+overviewText = $STR_antistasi_mission_info_Korsac_description_text;
+loadScreen = LOAD_SCREEN_IMAGE;
+overviewPicture = OVERVIEW_IMAGE;
+
+class CfgDiscordRichPresence 
+{
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Altis";
+    defaultLargeImageKey="altis";
+    defaultLargeImageText="Rebelling in Korsac";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
+    useTimeElapsed=1;
+};
+// Vanilla Arma3 Map
+class CfgNotifications
+{
+    #include "..\missionDescription\CfgNotificationsContents.hpp"
+};
+
+class CfgDebriefing {
+    #include "..\missionDescription\CfgDebriefingContents.hpp"
+};
