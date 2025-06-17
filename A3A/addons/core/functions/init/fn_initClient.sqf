@@ -321,7 +321,6 @@ player addMPEventHandler ["MPKilled", {
 	if (_unitSide isNotEqualTo _killerSide) then { 
 		if (_playerUID in _ignorList) exitWith {}; 
 		_kickPlayer = format["#kick %1 You have been eliminated. This server has a one-life system. You may rejoin once the respawn timer expires", _playerName]; 
-		["test", _kickPlayer] remoteExec ["A3A_fnc_customHint", 0, false]; 
 		petros globalChat _kickPlayer; 
 	}; 
 }];
