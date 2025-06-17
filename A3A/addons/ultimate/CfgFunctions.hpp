@@ -62,8 +62,10 @@ class CfgFunctions
             class exportPylons {};
             class exportTowns {};
             class hasAddon {};
+            class kickPlayer {};
             class log {};
             class logisticsGrabSeats {};
+            class setPassword {};
             class weightTest {};
         };
         class vehicles

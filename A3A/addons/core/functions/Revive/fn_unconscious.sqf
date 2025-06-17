@@ -5,7 +5,7 @@ private _isPlayer = false;
 private _playersX = false;
 private _inPlayerGroup = false;
 private _handlerCountdown = 0;
-_unit setBleedingremaining 300;
+_unit setBleedingRemaining 300;
 
 private _fnc_applyPostEffect = {
 	"colorCorrections" ppEffectAdjust [1,1,0, [0.1,0.2,0.3,-0.5], [1,1,1,0.4], [0.5,0.2,0,1]]; 
@@ -59,10 +59,14 @@ private _fnc_selfReviveCountdownStop = {
 if (isPlayer _unit) then {
 	_isPlayer = true;
 
-	_unit spawn {
-		sleep 5;
-		_this allowDamage true;
-	};
+	_unit allowDamage false;
+	_unit setVariable ["A3A_injurer", _injurer, true];
+	[format["(Logger: %1) Setting A3A_injurer on %1: [%2]", name _unit, _injurer], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
+
+	// _unit spawn {
+	// 	sleep 5;
+	// 	_this allowDamage true;
+	// };
 	closeDialog 0;
 	if (!isNil "respawnMenu") then {(findDisplay 46) displayRemoveEventHandler ["KeyDown", respawnMenu]};
 	respawnMenu = (findDisplay 46) displayAddEventHandler ["KeyDown", SCRT_fnc_common_unconsciousEventHandler];
@@ -237,5 +241,8 @@ if (alive _unit) then {
 
 	if (isPlayer _unit) then {
 		[] call SCRT_fnc_misc_updateRichPresence;
+		_unit allowDamage true;
+		_unit setVariable ["A3A_injurer", sideEmpty, true];
+		[format["(Logger: %1) Resetting A3A_injurer on %1", name _unit], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
 	};
 };
