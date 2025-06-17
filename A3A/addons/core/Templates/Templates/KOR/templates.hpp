@@ -17,7 +17,7 @@
 	class KOR_KAL : KOR_Base
     {
         side = "Reb";
-        flagTexture = "vtf\vtf_korsac_factions\addons\main\data\vtf_korsac_flag_co.paa";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\KOR\images\flag_kal_co.paa);
         name = "Korsac Armed Locals";
         file = "KOR_Reb_KAL";
     };
