@@ -197,8 +197,7 @@ A3U_kickExemptions = [
 	"76561198219466935", // Silence
 	"76561198087848420", // Pip
 	"76561199185706995", // Fatboy
-	"76561198093086639", // Maxx
-	"76561198351900039" // Dazed
+	"76561198093086639" // Maxx
 ];
 
 activityIsChanging = false;
