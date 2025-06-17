@@ -13,3 +13,11 @@
         name = "Korsac Defence Force";
         file = "KOR_AI_KDF";
     };
+	
+	class KOR_KAL : KOR_Base
+    {
+        side = "Reb";
+        flagTexture = "vtf\vtf_korsac_factions\addons\main\data\vtf_korsac_flag_co.paa";
+        name = "Korsac Armed Locals";
+        file = "KOR_Reb_KAL";
+    };
