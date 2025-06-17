@@ -53,9 +53,6 @@ if (_instigator isEqualType []) then {
 };
 if (!(_instigator isEqualType objNull) || {isNull _instigator}) exitWith {"NOT OBJECT"};
 if (!isPlayer _instigator) exitWith {"AI"};
-if !(side _instigator == Independent || side _instigator == Civilian) exitwith {"Player On Enemy Side"};
-
-
 private _vehicle = vehicle _instigator;
 private _vehicleType = typeOf _vehicle;
 
