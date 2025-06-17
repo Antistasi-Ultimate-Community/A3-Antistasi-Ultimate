@@ -54,7 +54,7 @@
 ["vehiclesArtillery", ["CUP_B_M270_HE_USA"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_B_M270_HE_USA", ["CUP_12Rnd_MLRS_HE"]]]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["CUP_B_USMC_DYN_MQ9"]] call _fnc_saveToTemplate;
+["uavsAttack", []] call _fnc_saveToTemplate;
 ["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesMilitiaLightArmed", ["CUP_B_HMMWV_AGS_GPK_ACR", "CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_HMMWV_M2_GPK_ACR", "CUP_B_LR_Special_Des_CZ_D", "CUP_B_UAZ_SPG9_ACR", "CUP_B_UAZ_METIS_ACR", "CUP_B_UAZ_MG_ACR", "CUP_B_UAZ_AGS30_ACR", "CUP_B_Dingo_CZ_Wdl", "CUP_B_Dingo_GL_CZ_Wdl"]] call _fnc_saveToTemplate;
