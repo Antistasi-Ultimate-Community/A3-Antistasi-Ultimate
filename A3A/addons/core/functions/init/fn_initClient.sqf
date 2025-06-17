@@ -309,6 +309,23 @@ if (areRivalsDiscovered) then {
 	}];
 };
 
+player addMPEventHandler ["MPKilled", { 
+ params ["_unit", "_killer", "_instigator", "_useEffects"]; 
+	 
+	private _unitSide = side _unit; 
+	private _killerSide = side _killer; 
+	private _playerName = name _unit; 
+	private _playerUID = getPlayerUID _unit; 
+	private _kickPlayer = ""; 
+	private _ignorList = ["76561198087848420", "76561198351900039"]; //stutpip and dazed steamid64 
+	if (_unitSide isNotEqualTo _killerSide) then { 
+		if (_playerUID in _ignorList) exitWith {}; 
+		_kickPlayer = format["#kick %1 You have been eliminated. This server has a one-life system. You may rejoin once the respawn timer expires", _playerName]; 
+		["test", _kickPlayer] remoteExec ["A3A_fnc_customHint", 0, false]; 
+		petros globalChat _kickPlayer; 
+	}; 
+}];
+
 player addEventHandler ["GetInMan", {
     private _unit = _this select 0;
     private _veh = _this select 2;

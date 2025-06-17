@@ -15,6 +15,7 @@ while {true} do
 
         // Create/update active players
         {
+            if !(side _x == Independent || side _x == Civilian) exitwith {"Player On Enemy Side"};
             private _ID = getPlayerID _x;
             private _realUnit = _x getVariable ["owner", _x];
             private _name = name _x;
