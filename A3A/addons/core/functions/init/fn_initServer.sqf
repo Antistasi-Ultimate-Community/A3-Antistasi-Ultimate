@@ -98,11 +98,12 @@ boxX call jn_fnc_arsenal_init;
 [A3A_saveData] call A3A_fnc_initVarServer;
 
 // Parameter-dependent vars. Could be moved to initVarServer...
-if (gameMode != 1) then {
-    Occupants setFriend [Invaders,1];
-    Invaders setFriend [Occupants,1];
-    if (gameMode == 3) then {"CSAT_carrier" setMarkerAlpha 0};
-    if (gameMode == 4) then {"NATO_carrier" setMarkerAlpha 0};
+switch (gameMode) do {
+    case (2): {
+        Occupants setFriend [Invaders,1];
+        Invaders setFriend [Occupants,1];
+    };
+    case (3): { "CSAT_carrier" setMarkerAlpha 0 };
 };
 
 setTimeMultiplier settingsTimeMultiplier;
