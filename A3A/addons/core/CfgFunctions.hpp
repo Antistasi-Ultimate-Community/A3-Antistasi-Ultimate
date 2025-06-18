@@ -144,6 +144,7 @@ class CfgFunctions
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
+            class getVehicleSellPrice {};
             class vehicleBoxRestore {};
             class initPetros {};
             class isFrontline {};
@@ -753,6 +754,7 @@ class CfgFunctions
             class secondsToTimeSpan {};
             class systemTime_format_S {};
             class timeSpan_format {};
+            class systemTimeDurationToTimeSpan {};
         };
 
         class UI {

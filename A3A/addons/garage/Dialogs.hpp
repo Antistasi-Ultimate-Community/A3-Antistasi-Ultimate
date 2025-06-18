@@ -272,7 +272,7 @@ class HR_GRG_VehicleSelect
             x = SCREEN_RIGHT - 39 * GRID_NOUISCALE_W;
             y = SCREEN_TOP + 4 * GRID_NOUISCALE_H;
             w = 39 * GRID_NOUISCALE_W;
-            h = safeZoneH - (56 * GRID_NOUISCALE_H); // Screen height - title and buttons height
+            h = safeZoneH - (66 * GRID_NOUISCALE_H); // Screen height - title and buttons height
             size = TEXT_SIZE_MEDIUM;
             rowHeight = 3 * GRID_NOUISCALE_H;
             onMouseButtonClick = "_this call HR_GRG_fnc_requestMount;";
@@ -296,7 +296,7 @@ class HR_GRG_VehicleSelect
             x = SCREEN_RIGHT - 39 * GRID_NOUISCALE_W;
             y = SCREEN_TOP + 4 * GRID_NOUISCALE_H;
             w = 39 * GRID_NOUISCALE_W;
-            h = safeZoneH - (56 * GRID_NOUISCALE_H); // Screen height - title and buttons height
+            h = safeZoneH - (66 * GRID_NOUISCALE_H); // Screen height - title and buttons height
 
             class controls
             {
@@ -306,7 +306,7 @@ class HR_GRG_VehicleSelect
                     x = 0;
                     y = 0;
                     w = 39 * GRID_NOUISCALE_W;
-                    h = safeZoneH - (56 * GRID_NOUISCALE_H);
+                    h = safeZoneH - (66 * GRID_NOUISCALE_H);
                 };
 
                 class HR_GRG_MirrorCheckbox: HR_GRG_RscCheckBox
@@ -344,7 +344,7 @@ class HR_GRG_VehicleSelect
                     x = 0;
                     y = 4 * GRID_NOUISCALE_H;
                     w = 38 * GRID_NOUISCALE_W;
-                    h = safeZoneH - (65 * GRID_NOUISCALE_H); // Screen height - title and buttons height 51
+                    h = safeZoneH - (70 * GRID_NOUISCALE_H); // Screen height - title and buttons height 51
                 };
             };
         };
@@ -353,7 +353,7 @@ class HR_GRG_VehicleSelect
         class HR_GRG_SourcePanel: HR_GRG_RscControlsGroup
         {
             x = SCREEN_RIGHT - 39 * GRID_NOUISCALE_W;
-            y = SCREEN_BOTTOM - 52 * GRID_NOUISCALE_H;
+            y = SCREEN_BOTTOM - 62 * GRID_NOUISCALE_H;
             w = 39 * GRID_NOUISCALE_W;
             h = 7 * GRID_NOUISCALE_H;
             size = TEXT_SIZE_MEDIUM;
@@ -425,9 +425,9 @@ class HR_GRG_VehicleSelect
         class HR_GRG_InfoPanelWrapper: HR_GRG_RscControlsGroup
         {
             x = SCREEN_RIGHT - 39 * GRID_NOUISCALE_W;
-            y = SCREEN_BOTTOM - 45 * GRID_NOUISCALE_H;
+            y = SCREEN_BOTTOM - 55 * GRID_NOUISCALE_H;
             w = 39 * GRID_NOUISCALE_W;
-            h = 45 * GRID_NOUISCALE_H;
+            h = 48 * GRID_NOUISCALE_H;
             size = TEXT_SIZE_MEDIUM;
 
             class controls
@@ -438,8 +438,32 @@ class HR_GRG_VehicleSelect
                     x = 0;
                     y = 0;
                     w = 39 * GRID_NOUISCALE_W;
-                    h = 45 * GRID_NOUISCALE_H;
+                    h = 48 * GRID_NOUISCALE_H;
                     size = TEXT_SIZE_MEDIUM;
+                };
+            };
+        };
+
+        class HR_GRG_SellButtonWrapper: HR_GRG_RscControlsGroup
+        {
+            x = SCREEN_RIGHT - 39 * GRID_NOUISCALE_W;
+            y = SCREEN_BOTTOM - 7 * GRID_NOUISCALE_H;
+            w = 39 * GRID_NOUISCALE_W;
+            h = 7 * GRID_NOUISCALE_H;
+            size = TEXT_SIZE_LARGE;
+
+            class controls
+            {
+                class HR_GRG_SellVeh: HR_GRG_RscButton
+                {
+                    idc = HR_GRG_IDC_SellVeh;
+                    text = $STR_HR_GRG_Generic_SellVeh;
+                    x = 0;
+                    y = 0;
+                    w = 39 * GRID_NOUISCALE_W;
+                    h = 7 * GRID_NOUISCALE_H;
+                    action = "if !(HR_GRG_SelectedVehicles isEqualTo [-1,-1,'']) then {[HR_GRG_PlayerUID, player, HR_GRG_SelectedVehicles] remoteExecCall ['HR_GRG_fnc_sellVehGRG',2];};";
+                    sizeEx = TEXT_SIZE_LARGE;
                 };
             };
         };
