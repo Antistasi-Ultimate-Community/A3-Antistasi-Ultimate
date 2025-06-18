@@ -11,6 +11,10 @@ if (_hr < 1) exitWith {
 
 private _markerX = positionXGarr;
 
+if (not(sidesX getVariable [_markerX,sideUnknown] == teamPlayer)) exitWith {
+	[localize "STR_garrison_garrison_header", format [localize "STR_garrison_error_not_teamplayer",FactionGet(reb,"name")], localize "STR_notifiers_fail_type"] call SCRT_fnc_ui_showDynamicTextMessage;
+};
+
 private _resourcesFIA = server getVariable "resourcesFIA";
 private _costs = server getVariable _unitType;
 private _warningText = nil;
