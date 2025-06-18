@@ -22,7 +22,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_vehicleType", "_troopType", "_resPool", "_landPosBlacklist", "_side", "_markerOrigin", "_posDestination", ["_seaPath", []]]; /// ohoh, need to figure out what to do with _isAirdrop
+params ["_vehicleType", "_troopType", "_resPool", "_landPosBlacklist", "_side", "_markerOrigin", "_posDestination", ["_seaPath", []], ["_isAirdrop", false]];
 
 private _faction = Faction(_side);
 
@@ -92,7 +92,7 @@ if (_expectedCargo >= 2) then
     } forEach units _cargoGroup;
 };
 
-_landPosBlacklist = [_vehicle, _crewGroup, _cargoGroup, _posDestination, _markerOrigin, _landPosBlacklist, _seaPath] call A3A_fnc_createVehicleQRFBehaviour; /// ohoh, need to figure out what to do with _isAirdrop x2
+_landPosBlacklist = [_vehicle, _crewGroup, _cargoGroup, _posDestination, _markerOrigin, _landPosBlacklist, _seaPath, _isAirdrop, _resPool] call A3A_fnc_createVehicleQRFBehaviour;
 ServerDebug_5("Spawn Performed: Created vehicle %1 with %2 crew (%3) and %4 cargo (%5)", typeof _vehicle, count units _crewGroup, _crewGroup, count units _cargoGroup, _cargoGroup);
 
 [_vehicle, _crewGroup, _cargoGroup, _landPosBlacklist];

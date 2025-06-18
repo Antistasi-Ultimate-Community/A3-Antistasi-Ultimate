@@ -19,7 +19,7 @@
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_vehicle", "_crewGroup", "_cargoGroup", "_posDestination", "_markerOrigin", "_landPosBlacklist", "_seaPath"]; ///ohhh shit ["_isAirdrop", false], "_resPool"
+params ["_vehicle", "_crewGroup", "_cargoGroup", "_posDestination", "_markerOrigin", "_landPosBlacklist", "_seaPath", ["_isAirdrop", false], "_resPool"];
 
 _vehicle setVehicleRadar 0;
 _vehicle setVehicleReceiveRemoteTargets true;

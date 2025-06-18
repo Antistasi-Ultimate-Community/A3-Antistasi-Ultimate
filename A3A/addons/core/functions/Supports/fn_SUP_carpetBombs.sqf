@@ -26,7 +26,7 @@ if(isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _supp
 
 private _dir = (_targPos getDir markerPos _airport) + random 10;
 private _offset = 25 + (random 20);
-private _planeType = selectRandom (Faction(_side) get "vehiclesPlanesCAS");
+private _planeType = selectRandom ((Faction(_side) get "vehiclesPlanesCAS") + (Faction(_side) get "vehiclesPlanesLargeCAS"));
 private _aggroValue = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
 if (_delay < 0) then { _delay = (0.5 + random 1) * (350 - 15*tierWar - 1*_aggroValue) };
 
