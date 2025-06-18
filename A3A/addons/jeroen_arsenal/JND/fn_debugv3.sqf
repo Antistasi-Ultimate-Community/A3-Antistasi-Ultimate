@@ -1,5 +1,6 @@
 #include "..\script_component.hpp"
 //Author: Jeroen Not
+//Modified by: wersal 
 
 if(isnil "CBA_fnc_waitUntilAndExecute")exitWith{};
 
@@ -54,13 +55,44 @@ fnc_debugv2_overwrite = {
 	_ctrl_links ctrlSetPosition _pos_links;
 	_ctrl_links ctrlCommit 0;
 
-	//update text because we have change the size and it doesnt update automaticly
-	_ctrl_expression ctrlsettext ctrltext _ctrl_expression;
-
-
-
 	_ctrl_watchBackground = _display displayCtrl 11886;
 	_pos_watchBackground = ctrlposition _ctrl_watchBackground;
+
+	// Expand the watch list background
+	private _newWatchWidth = _pos_debug#2 * 0.7; 
+	_pos_watchBackground set [2, _newWatchWidth]; 
+	_ctrl_watchBackground ctrlSetPosition _pos_watchBackground;
+	_ctrl_watchBackground ctrlCommit 0;
+
+	// Adjust the list header
+	_ctrl_watchText = _display displayCtrl 11893;
+	_pos_watchText = ctrlPosition _ctrl_watchText;
+	_pos_watchText set [2, _newWatchWidth];
+	_ctrl_watchText ctrlSetPosition _pos_watchText;
+	_ctrl_watchText ctrlCommit 0;
+
+	// Increase width of input/output fields without changing positions
+	private _inputIDs = [12285, 12287, 12289, 12291];
+	private _outputIDs = [12286, 12288, 12290, 12293];
+
+	// Width scaling factor
+	private _widthFactor = 2.05; // Width multiplier
+
+	{
+	    // Input field
+	    private _ctrlInput = _display displayCtrl _x;
+	    private _posInput = ctrlPosition _ctrlInput;
+	    _posInput set [2, _posInput#2 * _widthFactor]; // Increase width
+	    _ctrlInput ctrlSetPosition _posInput;
+	    _ctrlInput ctrlCommit 0;
+
+	    // Output field
+	    private _ctrlOutput = _display displayCtrl (_outputIDs select _forEachIndex);
+	    private _posOutput = ctrlPosition _ctrlOutput;
+	    _posOutput set [2, _posOutput#2 * _widthFactor]; // Increase width
+	    _ctrlOutput ctrlSetPosition _posOutput;
+	    _ctrlOutput ctrlCommit 0;
+	} forEach _inputIDs;
 
 	_ctrl_localButton = _display displayCtrl 13484;
 	_pos_localButton = ctrlposition _ctrl_localButton; // [x, y, w, h]

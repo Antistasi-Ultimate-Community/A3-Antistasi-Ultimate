@@ -22,7 +22,7 @@ class CfgFunctions {
 		};
 		class JND {
 			file = QPATHTOFOLDER(JND);
-			class debugv2 {postinit = 1;};
+			class debugv3 {postinit = 1;};
 		};
 
 		class JNA {
