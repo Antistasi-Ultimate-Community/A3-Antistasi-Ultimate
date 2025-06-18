@@ -264,7 +264,7 @@ HR_GRG_EH_keyDown = findDisplay 46 displayAddEventHandler ["KeyDown", {
 
         if (_key isNotEqualTo DIK_SPACE) exitWith {
             // Tell callback that the vehicle wasn't placed
-            ([objNull] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callBackPlace;
+            ([objNull] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callbackPlace;
         };
 
         //create vehicle
@@ -299,7 +299,7 @@ HR_GRG_EH_keyDown = findDisplay 46 displayAddEventHandler ["KeyDown", {
             } forEach HR_GRG_CP_pylons;
         };
         _veh spawn {sleep 0.5;_this allowDamage true;_this enableSimulation true; { _x allowDamage true; } forEach (attachedObjects _this); };
-        ([_veh] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callBackPlace;
+        ([_veh] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callbackPlace;
     };
 
     //block key press if valid key
