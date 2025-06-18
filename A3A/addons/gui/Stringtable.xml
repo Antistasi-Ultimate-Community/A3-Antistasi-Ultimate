@@ -3669,15 +3669,19 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save">
                 <Original>Creating new save</Original>
+                <Korean>새 저장 생성</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_edit_save">
                 <Original>Editing save with ID: %1</Original>
+                <Korean>ID로 저장 편집: %1</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
+                <Korean>ID로 저장 복사: %1</Korean>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_unlocks_disabled">
                 <Original>This parameter cannot be changed when unlocks are globally disabled.</Original>
+                <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
             </Key>
         </Container>
         <Container name="setup_dialog_table">
