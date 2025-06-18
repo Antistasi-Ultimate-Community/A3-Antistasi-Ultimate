@@ -70,10 +70,10 @@ private _gunship = ["B_T_VTOL_01_armed_F"];
 
 private _transportHelicopters = ["B_Heli_Transport_01_F","B_CTRG_Heli_Transport_01_tropic_F","B_Heli_Transport_01_camo_F"];
 private _helisLight = ["B_Heli_Light_01_F","I_E_Heli_light_03_unarmed_F"];
-private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F","I_E_Heli_light_03_dynamicLoadout_F"];
-private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F"];
+private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F","I_E_Heli_light_03_dynamicLoadout_F","a3a_B_Heli_Transport_01_pylons_F"];
+private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F","B_Heli_Attack_01_pylons_dynamicLoadout_F"];
 
-private _airPatrol = ["B_Heli_Light_01_F","I_E_Heli_light_03_unarmed_F","B_Heli_Light_01_dynamicLoadout_F","I_E_Heli_light_03_dynamicLoadout_F"];
+private _airPatrol = ["B_Heli_Light_01_F","I_E_Heli_light_03_unarmed_F","B_Heli_Light_01_dynamicLoadout_F","I_E_Heli_light_03_dynamicLoadout_F","a3a_B_Heli_Transport_01_pylons_F","B_Heli_Attack_01_pylons_dynamicLoadout_F"];
 
 private _artillery = ["B_T_MBT_01_arty_F","B_T_MBT_01_mlrs_F","I_E_Truck_02_MRL_F"];
 
