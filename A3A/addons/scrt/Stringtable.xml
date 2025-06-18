@@ -14232,7 +14232,7 @@
                 <French>Le véhicule que vous recherchez n'est pas adapté à notre marché.</French>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_success">
-                <Original>Vehicle Sold.</Original>
+                <Original>Vehicle sold.</Original>
                 <Russian>Транспортное средство продано.</Russian>
                 <Chinesesimp>载具已出售</Chinesesimp>
                 <Korean>차량 판매 완료.</Korean>

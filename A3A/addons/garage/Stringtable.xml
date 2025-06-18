@@ -144,6 +144,76 @@
                 <Italian>Puoi accedere agli aeromobili solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
                 <Polish>Możesz korzystać z samolotów tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Generic_SellVeh">
+              <Original>Sell Vehicle</Original>
+              <German>Fahrzeug verkaufen</German>
+              <Italian>Vendi veicolo</Italian>
+              <Spanish>Vender vehículo</Spanish>
+              <French>Vendre le véhicule</French>
+              <Korean>차량 판매</Korean>
+              <Russian>Продать технику</Russian>
+              <Polish>Sprzedaj pojazd</Polish>
+              <Czech>Prodat vozidlo</Czech>
+              <Portuguese>Vender veículo</Portuguese>
+              <Turkish>Aracı sat</Turkish>
+              <Chinesesimp>出售载具</Chinesesimp>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_comOnly">
+              <Original>Only the Commander can sell vehicles.</Original>
+              <German>Nur der Kommandant kann Fahrzeuge verkaufen.</German>
+              <Italian>Solo il Comandante può vendere i veicoli.</Italian>
+              <Spanish>Solo el Comandante puede vender vehículos.</Spanish>
+              <French>Seul le Commandant peut vendre les véhicules.</French>
+              <Korean>지휘관만 차량을 판매할 수 있습니다.</Korean>
+              <Russian>Только командир может продавать технику.</Russian>
+              <Polish>Tylko dowódca może sprzedawać pojazdy.</Polish>
+              <Czech>Vozidla může prodávat pouze velitel.</Czech>
+              <Portuguese>Apenas o Comandante pode vender veículos.</Portuguese>
+              <Turkish>Araçları sadece Komutan satabilir.</Turkish>
+              <Chinesesimp>只有指挥官可以出售载具。</Chinesesimp>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_locked">
+              <Original>You cannot sell a locked vehicle. If this is your vehicle, make sure to unlock it first.</Original>
+              <German>Du kannst ein gesperrtes Fahrzeug nicht verkaufen. Wenn es deins ist, entsperre es zuerst.</German>
+              <Italian>Non puoi vendere un veicolo bloccato. Se è tuo, sbloccalo prima.</Italian>
+              <Spanish>No puedes vender un vehículo bloqueado. Si es tuyo, desbloquéalo primero.</Spanish>
+              <French>Vous ne pouvez pas vendre un véhicule verrouillé. S'il est à vous, déverrouillez-le d'abord.</French>
+              <Korean>잠긴 차량은 판매할 수 없습니다. 본인 소유라면 먼저 잠금을 해제하세요.</Korean>
+              <Russian>Нельзя продать заблокированную технику. Если она ваша, сначала разблокируйте её.</Russian>
+              <Polish>Nie możesz sprzedać zablokowanego pojazdu. Odblokuj go, jeśli jest twój.</Polish>
+              <Czech>Nelze prodat zamčené vozidlo. Pokud je vaše, nejprve jej odemkněte.</Czech>
+              <Portuguese>Não podes vender um veículo bloqueado. Se for teu, desbloqueia-o primeiro.</Portuguese>
+              <Turkish>Kilitli bir aracı satamazsınız. Aracınızsa önce kilidini açın.</Turkish>
+              <Chinesesimp>无法出售已上锁的载具。若这是你的载具，请先解锁。</Chinesesimp>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_noPrice">
+              <Original>This vehicle is not suitable for our marketplace.</Original>
+              <German>Dieses Fahrzeug ist nicht für unseren Marktplatz geeignet.</German>
+              <Italian>Questo veicolo non è adatto al nostro mercato.</Italian>
+              <Spanish>Este vehículo no es apto para nuestro mercado.</Spanish>
+              <French>Ce véhicule ne convient pas à notre marché.</French>
+              <Korean>이 차량은 저희 시장에 적합하지 않습니다.</Korean>
+              <Russian>Эта техника не подходит для нашей торговой площадки.</Russian>
+              <Polish>Ten pojazd nie nadaje się na nasz rynek.</Polish>
+              <Czech>Toto vozidlo není vhodné pro náš trh.</Czech>
+              <Portuguese>Este veículo não é adequado ao nosso mercado.</Portuguese>
+              <Turkish>Bu araç pazarımız için uygun değil.</Turkish>
+              <Chinesesimp>此载具不适合在我们的市场上架。</Chinesesimp>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_sellVehicle_sold">
+              <Original>Vehicle sold for %1 €.</Original>
+              <German>Fahrzeug für %1 € verkauft.</German>
+              <Italian>Veicolo venduto per %1 €.</Italian>
+              <Spanish>Vehículo vendido por %1 €.</Spanish>
+              <French>Véhicule vendu pour %1 €.</French>
+              <Korean>차량이 %1 €에 판매되었습니다.</Korean>
+              <Russian>Техника продана за %1 €.</Russian>
+              <Polish>Pojazd sprzedany za %1 €.</Polish>
+              <Czech>Vozidlo prodáno za %1 €.</Czech>
+              <Portuguese>Veículo vendido por %1 €.</Portuguese>
+              <Turkish>Araç %1 € karşılığında satıldı.</Turkish>
+              <Chinesesimp>载具已以 %1 € 出售。</Chinesesimp>
+            </Key>
             <Key ID="STR_HR_GRG_Generic_Boat">
                 <Original>Ships</Original>
                 <French>Navires</French>
@@ -452,6 +522,20 @@
                 <Italian>Ace Cargo:</Italian>
                 <Polish>Ładunek ACE:</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_InfoPanel_cannotBeSold">
+              <Original>Cannot be sold.</Original>
+              <German>Kann nicht verkauft werden.</German>
+              <Italian>Non può essere venduto.</Italian>
+              <Spanish>No se puede vender.</Spanish>
+              <French>Impossible de vendre.</French>
+              <Korean>판매할 수 없습니다.</Korean>
+              <Russian>Не продаётся.</Russian>
+              <Polish>Nie można sprzedać.</Polish>
+              <Czech>Nelze prodat.</Czech>
+              <Portuguese>Não pode ser vendido.</Portuguese>
+              <Turkish>Satılamaz.</Turkish>
+              <Chinesesimp>无法出售。</Chinesesimp>
+            </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Capacity">
                 <Original>Capacity:</Original>
                 <French>Capacité:</French>
@@ -519,15 +603,18 @@
                 <Polish>Masa:</Polish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_salePrice">
-                <Original>Sell Price:</Original>
-                <French>Prix de vente :</French>
-                <Russian>Цена продажи:</Russian>
-                <Korean>판매 가격:</Korean>
-                <Spanish>Precio de venta:</Spanish>
-                <Chinesesimp>出售价格：</Chinesesimp>
-                <Czech>Prodejní cena:</Czech>
-                <Italian>Prezzo di vendita:</Italian>
-                <Polish>Cena sprzedaży:</Polish>
+              <Original>Sell Price:</Original>
+              <German>Verkaufspreis:</German>
+              <Italian>Prezzo di vendita:</Italian>
+              <Spanish>Precio de venta:</Spanish>
+              <French>Prix de vente :</French>
+              <Korean>판매 가격:</Korean>
+              <Russian>Цена продажи:</Russian>
+              <Polish>Cena sprzedaży:</Polish>
+              <Czech>Prodejní cena:</Czech>
+              <Portuguese>Preço de venda:</Portuguese>
+              <Turkish>Satış fiyatı:</Turkish>
+              <Chinesesimp>出售价格：</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_fullRefuel">
                 <Original>Vehicle can be fully refueled with</Original>
