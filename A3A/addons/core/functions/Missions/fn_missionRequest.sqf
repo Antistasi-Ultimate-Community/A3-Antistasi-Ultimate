@@ -303,12 +303,14 @@ switch (_type) do {
 		};
 		// only do the city convoys on flip?
 		private _markers = (airportsX + milbases + resourcesX + factories + seaports + outposts - blackListDest);
+		// Pre-filter the possible source bases to make this less n-squared
+		private _possibleBases = (airportsX + outposts + milbases) select { (getMarkerPos _x) distance (getMarkerPos respawnTeamPlayer) < distanceMission + 3000 };
 		private _convoyPairs = [];
 		{
 			private _site = _x;
-			if (markerPos _site distance2d markerPos respawnTeamPlayer > distanceMission) then {continue};
-			if (sidesX getVariable _site == teamPlayer) then {continue};
-			private _base = [_site] call A3A_fnc_findBasesForConvoy;
+			if ((getMarkerPos _site) distance (getMarkerPos respawnTeamPlayer) > distanceMission) then {continue};
+			if (sidesX getVariable [_site, teamPlayer] == teamPlayer) then {continue};
+			private _base = [_site, _possibleBases] call A3A_fnc_findBasesForConvoy;
 			if (_base != "") then {
 				_possibleMarkers pushBack _site;
 				_convoyPairs pushBack [_site, _base];
