@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 //Mission: Logistics bank mission
 
 params ["_bank"];
-if (!isServer) exitWith {};
+if (!isServer and hasInterface) exitWith {};
 
 private _markerX = [citiesX, _bank] call BIS_fnc_nearestPosition;
 private _difficultX = random 10 < tierWar;
