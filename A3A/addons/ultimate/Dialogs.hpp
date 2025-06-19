@@ -22,6 +22,7 @@ GVAR(volume) = DEFAULT_VOLUME;
 class RscDisplayMusicPlayer: A3A_DefaultDialog {
     idd = 85000;
     movingEnable = 1;
+    moving = true;
     enableSimulation = 1;
     
     class ControlsBackground {
