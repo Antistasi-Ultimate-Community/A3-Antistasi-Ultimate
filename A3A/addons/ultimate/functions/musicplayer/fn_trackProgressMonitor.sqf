@@ -1,7 +1,8 @@
+//fn_trackProggressMonitor.sqf
 #include "..\..\script_component.hpp"
 
 A3U_fnc_trackProgressMonitor = {
-    while {true} do {
+    while {!isNull findDisplay 85000} do {
         if (A3U_isPlaying) then {
             private _config = configFile >> "CfgMusic" >> (A3U_currentTrack#1);
             private _totalDuration = getNumber (_config >> "duration");

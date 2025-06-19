@@ -96,9 +96,9 @@ class CfgFunctions
             class revealZones {};
             class revealZonesDistance {};
         };
-        class radio
+        class musicplayer
         {
-            file = QPATHTOFOLDER(functions\radio);
+            file = QPATHTOFOLDER(functions\musicplayer);
             class getCategories {};
             class categoryChanged {};
             class nextTrack {};

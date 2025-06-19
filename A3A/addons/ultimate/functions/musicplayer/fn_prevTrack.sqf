@@ -1,0 +1,11 @@
+//fn_prevTrack.sqf
+#include "..\..\script_component.hpp"
+
+A3U_fnc_nextTrack = {
+	private _display = findDisplay 85000;
+	private _ctrl = _display displayCtrl 85102;
+	private _currentIndex = lbCurSel _ctrl;
+	private _newIndex = (_currentIndex - 1) max 0;
+
+	_ctrl lbSetCurSel _newIndex;
+};

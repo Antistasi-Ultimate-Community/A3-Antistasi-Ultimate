@@ -1,3 +1,4 @@
+//fn_initPlayer.sqf
 #include "..\..\script_component.hpp"
 
 // Определение функции с префиксом A3U_fnc_
@@ -6,6 +7,13 @@ A3U_fnc_initPlayer = {
     if (!createDialog "RscDisplayMusicPlayer") exitWith {
         systemChat "Ошибка создания плеера!";
     };
+
+    // Инициализация глобальных переменных с префиксом A3U_
+    A3U_currentTrack = [];
+    A3U_isPlaying = false;
+    A3U_trackProgress = 0;
+    A3U_volume = 0.5; // Громкость по умолчанию
+    A3U_trackStartTime = 0;
 
     // Получение динамических категорий
     private _categories = [];
@@ -23,13 +31,6 @@ A3U_fnc_initPlayer = {
     private _categoriesList = _display displayCtrl 85101;
     { _categoriesList lbAdd _x } forEach _categories;
     _categoriesList lbSetCurSel 0;
-
-    // Инициализация глобальных переменных с префиксом A3U_
-    A3U_currentTrack = [];
-    A3U_isPlaying = false;
-    A3U_trackProgress = 0;
-    A3U_volume = 0.5; // Громкость по умолчанию
-    A3U_trackStartTime = 0;
 
     // Настройка слайдера громкости
     private _volumeSlider = _display displayCtrl 85107;

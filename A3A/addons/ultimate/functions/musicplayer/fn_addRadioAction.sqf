@@ -1,3 +1,4 @@
+//fn_addRadioAction.sqf
 #include "..\..\script_component.hpp"
 
 params ["_object"];

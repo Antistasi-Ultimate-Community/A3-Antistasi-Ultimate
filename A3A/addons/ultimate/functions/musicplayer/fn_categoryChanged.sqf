@@ -1,3 +1,4 @@
+//fn_categoryChanged.sqf
 #include "..\..\script_component.hpp"
 
 params ["_ctrlCategory", "_index"];
@@ -14,9 +15,6 @@ systemChat format ["Выбрана категория: %1", _category]; // От�
 // Получение треков
 private _tracks = [_category] call A3U_fnc_getTracksByCategory;
 systemChat format ["Найдено треков: %1", count _tracks]; // Отладка
-
-private _category = _ctrlCategory lbText _index;
-private _tracks = [_category] call A3U_fnc_getTracksByCategory;
 
 private _display = ctrlParent _ctrlCategory;
 private _tracksList = _display displayCtrl 85102;
