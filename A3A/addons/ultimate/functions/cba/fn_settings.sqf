@@ -90,6 +90,115 @@
     }
 ] call CBA_fnc_addSetting;
 
+[
+    "A3U_setting_OverallDrawDistance",
+    "SLIDER",
+    "Overall draw distance",
+    ["Antistasi Ultimate", "Graphics"],
+    [0, 20000, 2000, 1],
+    0,
+    {
+        params ["_value"];
+        _value = round _value;
+        setViewDistance _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_ObjectDrawDistance",
+    "SLIDER",
+    "Object draw distance",
+    ["Antistasi Ultimate", "Graphics"],
+    [0, 20000, 2000, 1],
+    0,
+    {
+        params ["_value"];
+        _value = round _value;
+        setObjectViewDistance _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_setShadowDistance",
+    "SLIDER",
+    "Shadow draw distance",
+    ["Antistasi Ultimate", "Graphics"],
+    [0, 20000, 2000, 1],
+    0,
+    {
+        params ["_value"];
+        _value = round _value;
+        setShadowDistance _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_setPiPViewDistance",
+    "SLIDER",
+    "PiP draw distance",
+    ["Antistasi Ultimate", "Graphics"],
+    [0, 20000, 2000, 1],
+    0,
+    {
+        params ["_value"];
+        _value = round _value;
+        setPiPViewDistance _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_TerrainGrid",
+    "LIST",
+    "Terrain Grid Quality",
+    ["Antistasi Ultimate", "Graphics"],
+    [
+        [50, 25, 12.5, 6.25, 3.125, 1],
+        [
+            "Low (No Grass)",        // 50
+            "Standard",              // 25
+            "High",                  // 12.5
+            "Very High",             // 6.25
+            "Ultra",                 // 3.125
+            "Extreme"                // 1
+        ], 
+        1
+    ],
+    0,
+    {
+        params ["_value"];
+        setTerrainGrid _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_setDetailMapBlendPars",
+    "LIST",
+    "Terrain Detail",
+    ["Antistasi Ultimate", "Graphics"],
+    [
+        [
+            0,         // Default
+            1,         // Low
+            2,         // Medium
+            3,         // High
+            4          // Ultra
+        ],
+        ["Default", "Low", "Medium", "High", "Ultra"],
+        0
+    ],
+    0,
+    {
+        params ["_index"];
+        switch (_index) do {
+            case 0: { setDetailMapBlendPars [-1, -1]; };  // Default
+            case 1: { setDetailMapBlendPars [300, 600]; };   // Low
+            case 2: { setDetailMapBlendPars [750, 1500]; };  // Medium
+            case 3: { setDetailMapBlendPars [1500, 3000]; }; // High
+            case 4: { setDetailMapBlendPars [3000, 6000]; }; // Ultra
+        };
+    }
+] call CBA_fnc_addSetting;
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_emissionMinimum", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
