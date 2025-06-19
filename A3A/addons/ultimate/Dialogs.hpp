@@ -146,8 +146,8 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             idc = 85110;
             x = DIALOG_X + GRID_X(30);
             y = DIALOG_Y + GRID_Y(0.5);
-            w = GRID_X(30);
-            h = GRID_Y(3);
+            w = GRID_X(50);
+            h = GRID_Y(5);
             
             class Attributes {
                 align = "center";
