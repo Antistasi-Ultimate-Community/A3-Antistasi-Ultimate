@@ -90,17 +90,15 @@ switch (_mode) do
                         private _invSelCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
                         private _rivEnaCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 1);
 
-                        _invSelCtrl ctrlEnable !_invDisabled;
-
                         if (_invDisabled) then {
+                            _invSelCtrl ctrlEnable false;
+                            _invSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_inv_disabled");
                             _rivEnaCtrl lbSetCurSel 0;
-                            _rivEnaCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_param_locked");
-                            _rivEnaCtrl setVariable ["locked", true];
-                            _rivEnaCtrl ctrlEnable false;
+                            _rivEnaCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_param_warning");
                         } else {
+                            _invSelCtrl ctrlEnable true;
+                            _invSelCtrl ctrlSetTooltip "";
                             _rivEnaCtrl ctrlSetTooltip "";
-                            _rivEnaCtrl setVariable ["locked", false];
-                            _rivEnaCtrl ctrlEnable true;
                         };
                     }];
                 };
@@ -112,7 +110,69 @@ switch (_mode) do
                         private _rivDisabled = (_thisCtrl lbValue _index) isEqualTo 0;
                         private _rivSelCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
 
-                        _rivSelCtrl ctrlEnable !_rivDisabled;
+                        if (_rivDisabled) then {
+                            _rivSelCtrl ctrlEnable false;
+                            _rivSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_disabled");
+                        } else {
+                            _rivSelCtrl ctrlEnable true;
+                            _rivSelCtrl ctrlSetTooltip "";
+                        };
+                    }];
+                };
+
+                if (configName _x isEqualTo "minWeaps") then {
+                    _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
+                        params ["_thisCtrl", "_index"];
+                        private _display = findDisplay A3A_IDD_SETUPDIALOG;
+                        private _unlocksDisabled = (_thisCtrl lbValue _index) isEqualTo -1;
+                        private _unlockMagazinesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 2);
+                        private _unlockGLaunchersCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 3);
+                        private _unlockExplosivesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 4);
+
+                        if (_unlocksDisabled) then {
+                            for "_i" from 2 to 4 do {
+                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
+                                _ctrl lbSetCurSel 1;
+                                _ctrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_unlocks_disabled");
+                                _ctrl setVariable ["locked", true];
+                                _ctrl ctrlEnable false;
+                            };
+                        } else {
+                            for "_i" from 2 to 4 do {
+                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
+                                _ctrl ctrlSetTooltip "";
+                                _ctrl setVariable ["locked", false];
+                                _ctrl ctrlEnable true;
+                            };
+                        };
+                    }];
+                };
+
+                if (configName _x isEqualTo "minWeaps") then {
+                    _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
+                        params ["_thisCtrl", "_index"];
+                        private _display = findDisplay A3A_IDD_SETUPDIALOG;
+                        private _unlocksDisabled = (_thisCtrl lbValue _index) isEqualTo -1;
+                        private _unlockMagazinesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 2);
+                        private _unlockGLaunchersCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 3);
+                        private _unlockExplosivesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 4);
+
+                        if (_unlocksDisabled) then {
+                            for "_i" from 2 to 4 do {
+                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
+                                _ctrl lbSetCurSel 1;
+                                _ctrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_unlocks_disabled");
+                                _ctrl setVariable ["locked", true];
+                                _ctrl ctrlEnable false;
+                            };
+                        } else {
+                            for "_i" from 2 to 4 do {
+                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
+                                _ctrl ctrlSetTooltip "";
+                                _ctrl setVariable ["locked", false];
+                                _ctrl ctrlEnable true;
+                            };
+                        };
                     }];
                 };
             };

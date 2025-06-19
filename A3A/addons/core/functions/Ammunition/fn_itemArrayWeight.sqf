@@ -68,7 +68,7 @@ if (_class in allWeapons) then {
 		case "MissileLaunchersAT";
 		case "MissileLaunchersAA";
 		case "SecondaryWeaponsCatchAll" : { _arrayWeight = 1 }; // placeholder catchall for launchers
-		case "Handguns" : { _arrayWeight = round (_rof + _magcap + (_impact * 20000) - (_weight * 2.5)) }; // Handguns. Array weight favors weapons with high RoF, Mag capacity, and impact force while heavily discriminating against weight, since it's a backup weapon.
+		case "Handguns" : { _arrayWeight = round (_rof + _magcap + (_impact / 2) - (_weight * 2.5)) }; // Handguns. Array weight favors weapons with high RoF, Mag capacity, and impact force while heavily discriminating against weight, since it's a backup weapon.
 		case "ArmoredVests";
 		case "CivilianVests";
 		case "ArmoredHeadgear";

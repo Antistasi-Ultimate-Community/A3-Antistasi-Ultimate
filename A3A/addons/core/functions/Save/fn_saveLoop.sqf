@@ -218,6 +218,7 @@ _rebMarkers pushBack "Synd_HQ";
 	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
 } forEach A3A_buildingsToSave;
 
+reverse _arrayEst;
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 
 private _excessiveConstructions = maxConstructions - (count constructionsToSave);

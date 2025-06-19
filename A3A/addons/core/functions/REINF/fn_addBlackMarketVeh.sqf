@@ -1,7 +1,8 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 params [
-	["_typeVehX", "", [""]]
+	["_typeVehX", "", [""]],
+	["_addToGarage", false]
 ];
 
 if (_typeVehX isEqualTo "") exitWith {[localize "STR_A3A_addFiaVeh_header", localize "STR_A3AP_error_empty_generic"] call A3A_fnc_customHint;};
@@ -33,8 +34,18 @@ if (player distance2d traderX > 50) exitWith {
 
 private _extraMessage =	format [localize "STR_veh_callback_select_veh_generic", _cost,  A3A_faction_civ get "currencySymbol"];
 private _fnc_placed = {
-	params ["_vehicle", "_cost"];
+	params ["_vehicle", "_cost", "_fnc_buyVehicle"];
 	if (isNull _vehicle) exitWith {};
+
+	[_vehicle, _cost] call _fnc_buyVehicle;
+	[_vehicle, teamPlayer] call A3A_fnc_AIVehInit;
+	[_vehicle, teamPlayer] call SCRT_fnc_misc_tryInitVehicle;
+
+	player reveal _vehicle;
+};
+private _fnc_buyVehicle = {
+	params ["_vehicle", "_cost"];
+
 	private _factionMoney = server getVariable "resourcesFIA";
 
 	if (player == theBoss && {_cost <= _factionMoney}) then {
@@ -42,17 +53,18 @@ private _fnc_placed = {
 	}
 	else {
 		[-1 * _cost] call A3A_fnc_resourcesPlayer;
-		_vehicle setVariable ["ownerX",getPlayerUID player,true];
+		if !(_vehicle isEqualType "") then { _vehicle setVariable ["ownerX",getPlayerUID player,true] };
 		playSound "A3AP_UiSuccess";
 	};
-
-	[_vehicle, teamPlayer] call A3A_fnc_AIVehInit;
-	[_vehicle, teamPlayer] call SCRT_fnc_misc_tryInitVehicle;
-
-	player reveal _vehicle;
 };
 private _fnc_check = {
 	[(player distance2d traderX > 50), localize "STR_veh_callback_arms_dealer_close"];
 };
 
-[_typeVehX, _fnc_placed, _fnc_check, [_cost], nil, nil, nil, _extraMessage] call HR_GRG_fnc_confirmPlacement;
+if (_addToGarage) then {
+	[_typeVehX, _cost] call _fnc_buyVehicle;
+	//[[_typeVehX], getPlayerUID player] remoteExecCall ["HR_GRG_fnc_addVehiclesByClass", 2]; // if we want to lock the vehicle when garaging
+	[[_typeVehX], ""] remoteExecCall ["HR_GRG_fnc_addVehiclesByClass", 2];
+} else {
+	[_typeVehX, _fnc_placed, _fnc_check, [_cost, _fnc_buyVehicle], nil, nil, nil, _extraMessage] call HR_GRG_fnc_confirmPlacement;
+};
