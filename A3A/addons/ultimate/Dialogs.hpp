@@ -139,14 +139,14 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             y = DIALOG_Y + GRID_Y(25);
             w = GRID_X(4);
             h = GRID_Y(4);
-            text = "▶";
+            text = "\a3\ui_f\data\gui\cfg\hints\volume_medium_ca.paa";
         };
 
         class TrackInfo: A3A_StructuredText {
             idc = 85110;
-            x = DIALOG_X + GRID_X(26.5);
+            x = DIALOG_X + GRID_X(30);
             y = DIALOG_Y + GRID_Y(0.5);
-            w = GRID_X(13);
+            w = GRID_X(30);
             h = GRID_Y(3);
             
             class Attributes {

@@ -12,7 +12,6 @@ A3U_fnc_playTrack = {
     if (A3U_isPlaying) then {
         0.5 fadeMusic 0;
         playMusic "";
-        uiSleep 0.5;
     };
 
     playMusic _trackClass;
