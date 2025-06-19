@@ -657,6 +657,7 @@ if (!isMultiplayer) then {
 };
 
 call A3U_fnc_checkMods;
+[player] remoteExecCall ["A3U_fnc_checkPlayer", 2];
 
 if (A3A_hasACE) then {call A3A_fnc_initACE};
 

@@ -18,38 +18,13 @@ private _fnc_applyPostEffect = {
 };
 
 private _fnc_selfReviveCountdownStart = {
-	private _diff = (_unit getVariable ["A3A_selfReviveTimeout", -1]) - time;
-	private _initialCountDown = [_diff] call BIS_fnc_countDown;
-
-	if (_diff > 0) then {
-		_handlerCountdown = addMissionEventHandler [
-			"EachFrame", 
-			{ 
-				[
-					localize "STR_antistasi_actions_unconscious_self_withstand_countdown",
-					format[
-						[(([0] call BIS_fnc_countdown) / 60) + .01, "HH:MM"] call BIS_fnc_timetostring
-					],
-					true
-				] call A3A_fnc_customHint
-			}
-		];
-	}
-	else {
-		_handlerCountdown = addMissionEventHandler [
-			"EachFrame", 
-			{ 
-				[
-					localize "STR_antistasi_actions_unconscious_self_withstand_countdown",
-					format[
-						"<t color='#008000'>%1</t>", 
-						localize "STR_antistasi_actions_unconscious_self_withstand_ready"
-					],
-					true
-				] call A3A_fnc_customHint
-			}
-		];
-	};
+	_handlerCountdown = addMissionEventHandler [
+		"EachFrame", 
+		{ 
+			["One Life Warning", "<t color='#ff0000'>You are at risk of losing your one life.</t>You will be kicked if you die!", true] call A3A_fnc_customHint;
+		}
+		// Hijacked to show the one life warning instead
+	];
 };
 
 private _fnc_selfReviveCountdownStop = {
@@ -60,7 +35,7 @@ if (isPlayer _unit) then {
 	_isPlayer = true;
 
 	_unit allowDamage false;
-	_unit setVariable ["A3A_injurer", _injurer, true];
+	[_unit, _injurer, true] remoteExecCall ["A3U_fnc_trackPlayer", 2];
 	[format["(Logger: %1) Setting A3A_injurer on %1: [%2]", name _unit, _injurer], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
 
 	// _unit spawn {
@@ -242,7 +217,7 @@ if (alive _unit) then {
 	if (isPlayer _unit) then {
 		[] call SCRT_fnc_misc_updateRichPresence;
 		_unit allowDamage true;
-		_unit setVariable ["A3A_injurer", sideEmpty, true];
+		[_unit, sideEmpty, false] remoteExecCall ["A3U_fnc_trackPlayer", 2];
 		[format["(Logger: %1) Resetting A3A_injurer on %1", name _unit], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
 	};
 };

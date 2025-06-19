@@ -200,6 +200,15 @@ A3U_kickExemptions = [
 	"76561198093086639" // Maxx
 ];
 
+A3U_trackedPlayers = [];
+
+A3U_kickEnemySides = [
+	Occupants, // WEST
+	Invaders, // EAST
+	Rivals // EAST (not taking any chances)
+];
+publicVariable "A3U_kickEnemySides";
+
 activityIsChanging = false;
 baseRivalsDecay = switch (rivalsDifficulty) do {
     case (1): { 0.28 };

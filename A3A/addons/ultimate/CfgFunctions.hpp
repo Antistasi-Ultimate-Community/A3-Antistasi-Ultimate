@@ -58,6 +58,7 @@ class CfgFunctions
         class Utility
         {
             file = QPATHTOFOLDER(functions\Utility);
+            class checkPlayer {};
             class exportCrate {};
             class exportPylons {};
             class exportTowns {};
@@ -66,6 +67,7 @@ class CfgFunctions
             class log {};
             class logisticsGrabSeats {};
             class setPassword {};
+            class trackPlayer {};
             class weightTest {};
         };
         class vehicles
