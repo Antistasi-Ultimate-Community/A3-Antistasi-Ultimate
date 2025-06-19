@@ -15,6 +15,10 @@ private _trackData = [
 A3U_currentTrack = _trackData;
 A3U_trackProgress = 0;
 
-// Запуск воспроизведения и обновление интерфейса
-[] call A3U_fnc_playTrack;
+// Запуск воспроизведения только если плеер был активен
+if (A3U_isPlaying) then {
+    [] call A3U_fnc_playTrack;
+};
+
+// Обновление интерфейса
 [] call A3U_fnc_updateTrackInfo;

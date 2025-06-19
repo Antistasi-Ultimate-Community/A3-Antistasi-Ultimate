@@ -108,7 +108,7 @@ class CfgFunctions
             class playPause {};
             class playTrack {};
             class getTracksByCategory {};
-            class initPlayer {};
+            class initMusicPlayer {};
             class trackProgressMonitor {};
             class updatePlayButton {};
             class updateTrackInfo {};
