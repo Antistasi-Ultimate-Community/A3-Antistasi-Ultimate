@@ -2,14 +2,14 @@
     {
         requiredAddons[] = {"3AS_Characters", "442_equipment", "SWLB_clones", "JLTS_core", "CWDependencies"};
         basepath = QPATHTOFOLDER(Templates\Templates\CW);
-        logo = "\LS_statics_props\flags\data\flag_republic.paa";
+        logo = "ls\core\addons\data\flags\flag_republic_ca.paa";
         priority = 100;
     };
 
     class CW_REP : CW_Base
     {
         side = "Occ";
-        flagTexture = "\LS_statics_props\flags\data\flag_republic.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_republic_ca.paa";
         name = "Republic";
         file = "CW_AI_REP";
     };
@@ -17,7 +17,7 @@
     class CW_CIS : CW_Base
     {
         side = "Inv";
-        flagTexture = "\LS_statics_props\flags\data\flag_cis.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_cis_ca.paa";
         name = "CIS";
         file = "CW_AI_CIS";
     };
@@ -26,7 +26,7 @@
     {
         requiredAddons[] = {"3AS_Characters", "442_equipment", "SWLB_clones", "JLTS_core", "CWDependencies", "WBK_Lightsabers"};
         side = "Occ";
-        flagTexture = "\LS_statics_props\flags\data\flag_republic.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_republic_ca.paa";
         name = "Republic (WBK)";
         file = "CW_AI_REP_WBK";
     };
@@ -35,7 +35,7 @@
     {
         requiredAddons[] = {"3AS_Characters", "442_equipment", "SWLB_clones", "JLTS_core", "CWDependencies", "WBK_DifferentRobotics_1"};
         side = "Inv";
-        flagTexture = "\LS_statics_props\flags\data\flag_cis.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_cis_ca.paa";
         name = "CIS (WBK)";
         file = "CW_AI_CIS_WBK";
     };
@@ -43,7 +43,7 @@
     class CW_MAN : CW_Base
     {
         side = "Reb";
-        flagTexture = "\LS_statics_props\flags\data\flag_mandalorian.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_mandalorian_ca.paa";
         name = "Mandalorians";
         file = "CW_Reb_MAND";
         description = "This faction is comprised of mandalorian remnants. People who used to be affiliated with the old clans, but since went underground. They start with basically nothing. A pistol, their helmets, and the clothes on their backs.";
@@ -52,7 +52,7 @@
     class CW_RIV_DET : CW_Base
     {
         side = "Riv";
-        flagTexture = "\LS_statics_props\flags\data\flag_mandalorian.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_mandalorian_ca.paa";
         name = "CW Deathwatch";
         file = "CW_Riv_DET";
         description = "This faction is comprised of mandalorian deathwatch. People who opposed the peaceful way of mandalorian life, and all the different clans. They are already well established.";
@@ -125,7 +125,7 @@
     class WM_RCU : WEMP_Base
     {
         side = "Reb";
-        flagTexture = "\LS_statics_props\flags\data\flag_republic.paa";
+        flagTexture = "ls\core\addons\data\flags\flag_republic_ca.paa";
         name = "Rex's Clone Uprising";
         file = "WM_Reb_RCU";
 		description = "Captain Rex and other disgruntled Clones attempt to start an Uprising against the Empire";

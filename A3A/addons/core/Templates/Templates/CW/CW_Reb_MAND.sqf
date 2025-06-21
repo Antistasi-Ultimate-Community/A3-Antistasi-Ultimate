@@ -5,7 +5,7 @@
 ["name", "Mandalorian"] call _fnc_saveToTemplate;
 
 ["flag", "ls_flag_mandalorian"] call _fnc_saveToTemplate;
-["flagTexture", "\LS_statics_props\flags\data\flag_mandalorian.paa"] call _fnc_saveToTemplate;
+["flagTexture", "ls\core\addons\data\flags\flag_mandalorian_ca.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "mando_marker_red"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CW_Quadbike"]] call _fnc_saveToTemplate;

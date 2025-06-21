@@ -5,7 +5,7 @@
 ["name", "Rex's Clone Uprising"] call _fnc_saveToTemplate;
 
 ["flag", "ls_flag_republic"] call _fnc_saveToTemplate;
-["flagTexture", "\LS_statics_props\flags\data\flag_republic.paa"] call _fnc_saveToTemplate;
+["flagTexture", "ls\core\addons\data\flags\flag_republic_ca.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "JLTS_flag_Rep"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["3AS_Barc"]] call _fnc_saveToTemplate;

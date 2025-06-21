@@ -6,7 +6,7 @@
 ["spawnMarkerName", "CIS Support Corridor"] call _fnc_saveToTemplate;
 
 ["flag", "ls_flag_cis"] call _fnc_saveToTemplate;
-["flagTexture", "\LS_statics_props\flags\data\flag_cis.paa"] call _fnc_saveToTemplate;
+["flagTexture", "ls\core\addons\data\flags\flag_cis_ca.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "JLTS_Flag_CIS"] call _fnc_saveToTemplate;
 
 //////////////////////////
