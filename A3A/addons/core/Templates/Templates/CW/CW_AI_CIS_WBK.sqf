@@ -252,7 +252,7 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_eliteLoadoutData set ["uniforms", ["ls_cis_b1droid_uniform"]];
+_eliteLoadoutData set ["uniforms", ["ls_droidUniform_b1"]];
 _eliteLoadoutData set ["vests", ["ls_gar_clone_vest"]];
 _eliteLoadoutData set ["mgVests", ["ls_gar_clone_vest"]];
 _eliteLoadoutData set ["medVests", ["ls_gar_clone_vest"]];
@@ -306,7 +306,7 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militaryLoadoutData set ["uniforms", ["ls_cis_b1droid_uniform"]];
+_militaryLoadoutData set ["uniforms", ["ls_droidUniform_b1"]];
 _militaryLoadoutData set ["vests", ["ls_gar_clone_vest"]];
 _militaryLoadoutData set ["glVests", ["ls_gar_clone_vest"]];
 _militaryLoadoutData set ["Hvests", ["ls_gar_clone_vest"]];
@@ -365,7 +365,7 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militiaLoadoutData set ["uniforms", ["ls_cis_b1droid_uniform"]];
+_militiaLoadoutData set ["uniforms", ["ls_droidUniform_b1"]];
 _militiaLoadoutData set ["vests", ["ls_gar_clone_vest"]];
 _militiaLoadoutData set ["backpacks", ["ls_droidBackpack_b1"]];
 _militiaLoadoutData set ["helmets", ["ls_droidHelmet_b1"]];
