@@ -390,7 +390,7 @@ _militiaLoadoutData set ["SMGs", [
 ["ls_weapon_dp20", "", "", "", ["ls_magazine_dp20"], [], ""]
 ]];
 _militiaLoadoutData set ["machineGuns", [
-["ls_weapon_dc15saw", "", "", "", ["ls_weapon_dc15saw"], [], ""],
+["ls_weapon_dc15saw", "", "", "", ["ls_magazine_dc15a"], [], ""],
 ["WM_DLT19", "", "", "", ["WM_DLT19_mag"], [], ""],
 ["WM_T21", "", "", "", ["WM_T21_mag"], [], ""]
 ]];
@@ -399,7 +399,7 @@ _militiaLoadoutData set ["marksmanRifles", [
 ["WM_DLT19D", "", "", "", ["WM_DLT19D_Magazine"], [], ""]
 ]];
 _militiaLoadoutData set ["sniperRifles", [
-["ls_weapon_dc15x", "", "", "", ["ls_weapon_dc15x"], [], ""],
+["ls_weapon_dc15x", "", "", "", ["ls_magazine_dc15x"], [], ""],
 ["WM_DLT_19X", "", "", "", ["WM_DLT19X_Magazine"], [], ""]
 ]];
 _militiaLoadoutData set ["sidearms", [
