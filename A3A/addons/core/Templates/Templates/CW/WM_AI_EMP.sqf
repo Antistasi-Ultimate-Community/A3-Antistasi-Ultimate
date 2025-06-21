@@ -290,7 +290,7 @@ _eliteLoadoutData set ["grenadeLaunchers", [
 ["ls_weapon_mpl57", "", "", "", ["ls_magazine_2Rnd_40mw_G77_HEAB","ls_magazine_3Rnd_40mw_G76_HEF"], [], ""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
-["WM_DLT19", "", "", "", ["WM_DTL19_mag"], [], ""],
+["WM_DLT19", "", "", "", ["WM_DLT19_mag"], [], ""],
 ["WM_T21", "", "", "", ["WM_T21_mag"], [], ""],
 ["SWLW_Z6", "", "", "", ["SWLW_Z6_mag"], [], ""]
 ]];
@@ -333,7 +333,7 @@ _militaryLoadoutData set ["SMGs", [
 ["WM_E11", "", "", "", ["WM_E11_Mag"], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
-["WM_DLT19", "", "", "", ["WM_DTL19_mag"], [], ""],
+["WM_DLT19", "", "", "", ["WM_DLT19_mag"], [], ""],
 ["WM_T21", "", "", "", ["WM_T21_mag"], [], ""]
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
@@ -393,7 +393,7 @@ _militiaLoadoutData set ["SMGs", [
 ]];
 _militiaLoadoutData set ["machineGuns", [
 ["ls_weapon_dc15saw", "", "", "", ["ls_weapon_dc15saw"], [], ""],
-["WM_DLT19", "", "", "", ["WM_DTL19_mag"], [], ""],
+["WM_DLT19", "", "", "", ["WM_DLT19_mag"], [], ""],
 ["WM_T21", "", "", "", ["WM_T21_mag"], [], ""]
 ]];
 _militiaLoadoutData set ["marksmanRifles", [
