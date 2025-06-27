@@ -257,7 +257,7 @@ private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["ls_gar_phase2_uniform"]];
 _eliteLoadoutData set ["vests", ["ls_gar_arc_vest"]];
 _eliteLoadoutData set ["glVests", ["ls_cloneVest_arc"]];
-_eliteLoadoutData set ["backpacks", ["ls_cloneBackpack_arc", "ls_cloneBackpack_beltbag", "ls_cloneBackpack_ammo", "SWLB_clone_backpack_RTO"]];
+_eliteLoadoutData set ["backpacks", ["ls_cloneBackpack_arc", "ls_cloneBackpack_beltbag", "ls_cloneBackpack_ammo"]];
 _eliteLoadoutData set ["atBackpacks", ["ls_cloneBackpack_arc"]];
 _eliteLoadoutData set ["helmets", ["ls_gar_phase2_helmet"]];
 _eliteLoadoutData set ["NVGs", ["lsd_gar_rangefinder_nvg", "lsd_gar_heavy_nvg"]];
