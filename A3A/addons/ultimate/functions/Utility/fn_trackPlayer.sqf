@@ -38,7 +38,7 @@ private _uid = getPlayerUID _unit;
 _unit setVariable ["A3A_injurer", _injurer, true];
 
 if (_track) then {
-    A3U_trackedPlayers pushBack _uid;
+    A3U_trackedPlayers pushBackUnique _uid;
     [format["Adding %1 (%2) to the tracked list.", _name, _uid], _fnc_scriptName] call A3U_fnc_log;
 } else {
     A3U_trackedPlayers deleteAt (A3U_trackedPlayers find _uid);

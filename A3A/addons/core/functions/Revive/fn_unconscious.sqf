@@ -20,7 +20,7 @@ private _fnc_applyPostEffect = {
 private _fnc_selfReviveCountdownStart = {
 	_handlerCountdown = addMissionEventHandler [
 		"EachFrame", 
-		{ 
+		{
 			["One Life Warning", "<t color='#ff0000'>You are at risk of losing your one life.</t>You will be kicked if you die!", true] call A3A_fnc_customHint;
 		}
 		// Hijacked to show the one life warning instead
@@ -86,7 +86,9 @@ else {
 
 if (_isPlayer) then {
 	[] call _fnc_applyPostEffect;
-	[] call _fnc_selfReviveCountdownStart;
+	if (_injurer in A3U_kickEnemySides) then {
+		[] call _fnc_selfReviveCountdownStart;
+	};
 };
 
 _unit setFatigue 1;
