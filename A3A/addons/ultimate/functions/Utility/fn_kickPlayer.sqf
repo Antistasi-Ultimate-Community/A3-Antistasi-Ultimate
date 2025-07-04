@@ -16,10 +16,10 @@
         Server
     
     Environment:
-        Unscheduled
+        Scheduled
     
     Usage:
-        [_unit] remoteExecCall ["A3U_fnc_kickPlayer", 2];
+        [_unit] remoteExec ["A3U_fnc_kickPlayer", 2];
     
     Return:
         N/A
@@ -32,7 +32,7 @@ params [
 private _name = name _unit;
 
 if (!isServer) exitWith {
-    [_unit] remoteExecCall ["A3U_fnc_kickPlayer", 2];
+    [_unit] remoteExec ["A3U_fnc_kickPlayer", 2];
 };
 
 private _uid = getPlayerUID _unit;
@@ -52,6 +52,8 @@ private _kickMessage = "You have been eliminated. This server has a one-life sys
 private _kick = format["#kick %1 - %2 -", _uid, _kickMessage];
 
 [_unit, sideEmpty, false] remoteExecCall ["A3U_fnc_trackPlayer", 2];
+
+uiSleep 2;
 
 _password serverCommand _kick;
 

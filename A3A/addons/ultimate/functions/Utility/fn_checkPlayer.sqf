@@ -31,7 +31,7 @@ params [
 private _uid = getPlayerUID _unit;
 
 if (_uid in A3U_trackedPlayers) exitWith {
-    [_unit] call A3U_fnc_kickPlayer;
+    [_unit] spawn A3U_fnc_kickPlayer;
     true
 };
 

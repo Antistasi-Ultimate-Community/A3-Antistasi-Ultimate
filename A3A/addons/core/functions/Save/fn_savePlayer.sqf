@@ -34,11 +34,13 @@ Info_2("Saving player %1 on side %2", _playerId, side group _playerUnit);
 
 private _playerHM = A3A_playerSaveData getOrDefault [_playerID, createHashMap, true];			// ugh, switch to getOrDefaultCall after 2.12
 
+[format["Checking if loadout should be saved for %1. | %2", (name _playerUnit), A3U_trackedPlayers], _fnc_scriptName] call A3U_fnc_log;
 private _shouldStripLoadout = false;
-if (!(alive _playerUnit) || (_playerUnit getVariable ["incapacitated", false])) then
+if (!(alive _playerUnit) || (_playerUnit getVariable ["incapacitated", false]) || (_playerId in A3U_trackedPlayers)) then
 {
 	_shouldStripLoadout = true;
-    Info_1("Stripping saved loadout of player %1 due to saving while dead or unconcious", _playerId);
+	[format["Loadout is not being saved for %1. Are they being kicked? %2 | %3", (name _playerUnit), (_playerId in A3U_trackedPlayers), A3U_trackedPlayers], _fnc_scriptName] call A3U_fnc_log;
+    Info_1("Stripping saved loadout of player %1 due to saving while dead, unconcious or ", _playerId);
 };
 
 private _loadout = getUnitLoadout _playerUnit;
