@@ -225,7 +225,7 @@
     class CUP_TST : CUP_Base
     {
         side = "Reb";
-        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_tka_co.paa";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_science_co.paa);
         name = "The Science Team";
         file = "CUP_Reb_TST";
     };
