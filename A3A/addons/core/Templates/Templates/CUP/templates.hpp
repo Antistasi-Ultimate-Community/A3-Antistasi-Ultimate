@@ -222,6 +222,13 @@
         file = "CUP_Reb_WM";
         description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
     };
+    class CUP_TST : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_tka_co.paa";
+        name = "The Science Team";
+        file = "CUP_Reb_TST";
+    };
     class CUP_TKC : CUP_Base
     {
         side = "Civ";
