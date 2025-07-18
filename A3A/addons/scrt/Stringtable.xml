@@ -5512,6 +5512,13 @@
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
             </Key>
+            <Key ID="STR_params_loadoutsToGenerate">
+                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+            </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
@@ -9612,9 +9619,33 @@
                 <Korean>의료 보급품이 있는 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져오고 해당 주민들에게 그 보급품을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
                 <French>Un camion de matériel médical à destination de %3 est sur le point de partir à %2 de %1. Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces fournitures.</French>
             </Key>
+            <Key ID="STR_A3A_Missions_AS_Convoy_task_header_repair">
+                <Original>Intercept repair vehicle.</Original>
+                <Russian>Перехватите ремонтную технику.</Russian>
+                <French>Interceptez le véhicule de réparation.</French>
+                <German>Reparaturfahrzeug abfangen.</German>
+                <Italian>Intercetta il veicolo di riparazione.</Italian>
+                <Spanish>Intercepta el vehículo de reparación.</Spanish>
+                <Portuguese>Intercepte o veículo de reparo.</Portuguese>
+                <Polish>Przechwyć pojazd naprawczy.</Polish>
+                <Czech>Zachyťte opravárenské vozidlo.</Czech>
+                <Turkish>Tamir aracını durdur.</Turkish>
+                <Korean>수리 차량을 가로채십시오.</Korean>
+                <Chinesesimp>拦截维修车辆。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_repair">
                 <Original>A repair vehicle is set to depart from %1 at %2, heading to %3. Steal that vehicle and bring it to HQ, it's time to take care of our fleet.</Original>
-                <Russian>Ремонтная техника отправиться из %1 в %2, она направляется в %3. Угоните эту технику и доставьте её в штаб, настало время обслужить нашу технику.</Russian>
+                <Russian>Ремонтная техника отправится из %1 в %2, она направляется в %3. Угоните эту технику и доставьте её в штаб, настало время обслужить нашу технику.</Russian>
+                <French>Un véhicule de réparation partira de %1 à %2 en direction de %3. Volez ce véhicule et amenez-le au QG, il est temps d'entretenir notre flotte.</French>
+                <German>Ein Reparaturfahrzeug wird um %2 von %1 nach %3 aufbrechen. Stehle das Fahrzeug und bring es zum HQ – es ist Zeit, unsere Flotte zu warten.</German>
+                <Italian>Un veicolo di riparazione partirà da %1 alle %2 diretto a %3. Ruba quel veicolo e portalo al quartier generale, è ora di occuparsi della nostra flotta.</Italian>
+                <Spanish>Un vehículo de reparación saldrá de %1 a las %2 con destino a %3. Roba ese vehículo y llévalo al cuartel general, es hora de cuidar nuestra flota.</Spanish>
+                <Portuguese>Um veículo de reparo partirá de %1 às %2 com destino a %3. Roube esse veículo e leve-o ao QG, é hora de cuidar da nossa frota.</Portuguese>
+                <Polish>Pojazd naprawczy wyruszy z %1 o %2 w kierunku %3. Skradnij ten pojazd i dostarcz go do kwatery głównej – czas zadbać o naszą flotę.</Polish>
+                <Czech>Opravárenské vozidlo vyrazí z %1 v %2 směrem na %3. Ukradni ho a dovez na velitelství, je čas postarat se o naši flotilu.</Czech>
+                <Turkish>%1 konumundan %2 saatinde %3 yönüne bir tamir aracı yola çıkacak. Bu aracı çal ve karargaha götür, filomuzla ilgilenme zamanı geldi.</Turkish>
+                <Korean>%1에서 %2에 출발하여 %3로 향하는 수리 차량이 있습니다. 그 차량을 훔쳐 본부로 가져오십시오. 이제 우리 차량을 정비할 시간입니다.</Korean>
+                <Chinesesimp>一辆维修车辆将于 %2 从 %1 出发，前往 %3。偷走该车辆并将其带回总部，是时候维护我们的车队了。</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_money">
                 <Original>A truck with plenty of money is being moved from %1 to %3, and it's about to depart at %2. Steal that money and bring it to HQ. Those funds will be very welcome.</Original>
