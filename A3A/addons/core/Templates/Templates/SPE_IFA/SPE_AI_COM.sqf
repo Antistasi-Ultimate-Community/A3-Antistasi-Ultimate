@@ -76,7 +76,7 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m"
 ["uavsPortable", []] call _fnc_saveToTemplate;
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", ["SPE_US_G503_MB_M1919", "SPE_US_G503_MB_M2"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", ["SPEX_CW_G503_MB_M2"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["SPE_CCKW_353_Open"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["SPEX_CW_G503_MB"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", ["SPE_M20_AUC"]] call _fnc_saveToTemplate;
@@ -123,24 +123,24 @@ _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 _loadoutData set ["lightATLaunchers", [
-["SPE_M1A1_Bazooka", "", "", "",["SPE_1Rnd_60mm_M6"], [], ""]
+["SPEX_PIAT_Brown", "", "", "",["SPEX_1Rnd_89mm_PIAT"], [], ""]
 ]];
 _loadoutData set ["ATLaunchers", [
-["SPE_M9_Bazooka", "", "", "",["SPE_1Rnd_60mm_M6A3"], [], ""],
-["SPE_M9A1_Bazooka", "", "", "",["SPE_1Rnd_60mm_M6A3"], [], ""]
+["SPEX_PIAT", "", "", "",["SPEX_1Rnd_89mm_PIAT"], [], ""],
+["SPE_M1A1_Bazooka", "", "", "",["SPE_1Rnd_60mm_M6"], [], ""]
 ]];
 _loadoutData set ["missileATLaunchers", []];
 _loadoutData set ["AALaunchers", []];
 _loadoutData set ["sidearms", []];
 
 _loadoutData set ["ATMines", ["SPE_US_M1A1_ATMINE_mag"]];
-_loadoutData set ["APMines", ["SPE_US_M3_Pressure_MINE_mag"]];
+_loadoutData set ["APMines", ["SPEX_CW_No5_Mk1_AP_Mag"]];
 _loadoutData set ["lightExplosives", ["SPE_US_TNT_half_pound_mag"]];
 _loadoutData set ["heavyExplosives", ["SPE_US_TNT_4pound_mag"]];
 
-_loadoutData set ["antiInfantryGrenades", ["SPE_US_Mk_2"]];
-_loadoutData set ["antiTankGrenades", ["SPE_US_AN_M14"]];
-_loadoutData set ["smokeGrenades", ["SmokeShell"]];
+_loadoutData set ["antiInfantryGrenades", ["SPEX_CW_No36_MKI","SPEX_CW_No82_Light"]];
+_loadoutData set ["antiTankGrenades", ["SPEX_CW_No74_Grenade","SPEX_CW_No75_Grenade","SPEX_CW_No82_Heavy"]];
+_loadoutData set ["smokeGrenades", ["SPEX_CW_No79","SPEX_CW_No77"]];
 _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
 
 
@@ -152,16 +152,16 @@ _loadoutData set ["compasses", ["SPE_US_ItemCompass"]];
 _loadoutData set ["radios", ["TFAR_SCR536"]];
 _loadoutData set ["gpses", []];
 _loadoutData set ["NVGs", []];
-_loadoutData set ["binoculars", ["SPE_Binocular_US"]];
-_loadoutData set ["rangefinders", ["SPE_Binocular_US"]];
+_loadoutData set ["binoculars", ["SPEX_Binocular_CW"]];
+_loadoutData set ["rangefinders", ["SPEX_Binocular_CW"]];
 
-_loadoutData set ["traitorUniforms", ["U_SPE_US_Private_1st"]];
-_loadoutData set ["traitorVests", ["V_SPE_US_Vest_Garand"]];
-_loadoutData set ["traitorHats", ["H_SPE_US_Helmet"]];
+_loadoutData set ["traitorUniforms", ["U_SPEX_CW_BD_open"]];
+_loadoutData set ["traitorVests", ["V_SPEX_cw_vest_p37_N97_no1_p39"]];
+_loadoutData set ["traitorHats", ["H_SPEX_CW_Helmet_mk2_ifak"]];
 
-_loadoutData set ["officerUniforms", ["U_SPE_US_CC_1LT"]];
-_loadoutData set ["officerVests", ["V_SPE_US_Vest_Carbine_nco_Radio"]];
-_loadoutData set ["officerHats", ["H_SPE_US_Helmet_Cap"]];
+_loadoutData set ["officerUniforms", ["U_SPEX_CW_BD_Jerkin_Officer"]];
+_loadoutData set ["officerVests", ["V_SPEX_CW_Vest_P37_N97_offz"]];
+_loadoutData set ["officerHats", ["H_SPEX_CW_beret_gs"]];
 
 _loadoutData set ["cloakUniforms", []];
 _loadoutData set ["cloakVests", []];
@@ -173,7 +173,7 @@ _loadoutData set ["Hvests", []];
 _loadoutData set ["glVests", []];
 _loadoutData set ["backpacks", []];
 _loadoutData set ["ViperBP", []];
-_loadoutData set ["longRangeRadios", ["B_SPE_US_Radio", "B_SPE_US_Radio_alt"]];
+_loadoutData set ["longRangeRadios", ["B_SPE_US_Radio"]];
 _loadoutData set ["helmets", []];
 _loadoutData set ["slHat", []];
 _loadoutData set ["sniHats", []];
@@ -220,40 +220,42 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["uniforms", ["U_SPE_US_AB_Uniform_M42_padded_gas", "U_SPE_US_AB_Uniform_M42_padded_gas_glove", "U_SPE_US_AB_Uniform_M42_padded_gas_knife", "U_SPE_US_AB_Uniform_M42_padded_gas_506", "", ""]];
-_sfLoadoutData set ["vests", ["V_SPE_US_Vest_AB_padded_1","V_SPE_US_Vest_AB_padded_thompson","V_SPE_US_Vest_AB_padded_mk2"]];
-_sfLoadoutData set ["glVests", ["V_SPE_US_Vest_AB_padded_eng"]];
-_sfLoadoutData set ["Hvests", ["V_SPE_US_Vest_AB_padded_M1919"]];
-_sfLoadoutData set ["backpacks", ["B_SPE_US_M36","B_SPE_US_M36_Bandoleer","B_SPE_US_M36_m6","B_SPE_US_M36_Rocketbag","B_SPE_US_M36_Rope","B_SPE_US_M36_m6_Bandoleer","B_SPE_US_M36_roll","B_SPE_US_M36_roll_2","B_SPE_US_M36_Bandoleer_mk2"]];
-_sfLoadoutData set ["helmets", ["H_SPE_US_AB_Helmet","H_SPE_US_AB_Helmet_Net","H_SPE_US_AB_Helmet_polar","H_SPE_US_AB_Helmet_os","H_SPE_US_AB_Helmet_Scrim","H_SPE_US_AB_Helmet_Net_os"]];
-_sfLoadoutData set ["sniHats", ["H_SPE_US_AB_Helmet","H_SPE_US_AB_Helmet_Net","H_SPE_US_AB_Helmet_polar","H_SPE_US_AB_Helmet_os","H_SPE_US_AB_Helmet_Scrim","H_SPE_US_AB_Helmet_Net_os"]];
-_sfLoadoutData set ["slHat", ["H_SPE_US_AB_Helmet_CO", "H_SPE_US_AB_Helmet_CO_ns"]];
-_sfLoadoutData set ["binoculars", ["LIB_Binocular_US"]];
+_sfLoadoutData set ["uniforms", ["U_SPEX_CW_Denis", "U_SPEX_CW_Denis_puttee", "U_SPEX_CW_Denis_tail", "U_SPEX_CW_Denis_kd_tail", "U_SPEX_CW_Denis_scarf", "U_SPEX_CW_Denis_kd_scarf"]];
+_sfLoadoutData set ["vests", ["V_SPEX_cw_vest_p37_N103_no4_P41_bandoleer","V_SPEX_cw_vest_p37_N103_no4_P41_Canteen","V_SPEX_cw_vest_p37_N103_no4_P41_Tin","V_SPEX_cw_vest_p37_N103_no4_P41_2"]];
+_sfLoadoutData set ["glVests", ["V_SPEX_cw_vest_p37_N103_sten_P41"]];
+_sfLoadoutData set ["Hvests", ["V_SPEX_cw_vest_p37_N103_sten_P41_Canteen"]];
+_sfLoadoutData set ["backpacks", ["B_SPEX_CW_Sack_P37_N103_rope_roll_1","B_SPEX_CW_Sack_P37_N103_rope_roll_2","B_SPEX_CW_Sack_P37_N103_rope_roll_3"]];
+_sfLoadoutData set ["helmets", ["H_SPEX_CW_HSAT_mk2","H_SPEX_CW_HSAT_mk3","H_SPEX_CW_HSAT_mk2_net","H_SPEX_CW_HSAT_mk3_net","H_SPEX_CW_HSAT_mk2_scrim","H_SPEX_CW_HSAT_mk3_scrim"]];
+_sfLoadoutData set ["sniHats", ["H_SPEX_CW_HSAT_mk2","H_SPEX_CW_HSAT_mk3","H_SPEX_CW_HSAT_mk2_net","H_SPEX_CW_HSAT_mk3_net","H_SPEX_CW_HSAT_mk2_scrim","H_SPEX_CW_HSAT_mk3_scrim"]];
+_sfLoadoutData set ["slHat", ["H_SPEX_CW_HSAT_mk2","H_SPEX_CW_HSAT_mk3","H_SPEX_CW_HSAT_mk2_net","H_SPEX_CW_HSAT_mk3_net","H_SPEX_CW_HSAT_mk2_scrim","H_SPEX_CW_HSAT_mk3_scrim"]];
+_sfLoadoutData set ["binoculars", ["SPEX_Binocular_CW"]];
 
 //SF Weapons
 _sfLoadoutData set ["rifles", [
-	["SPE_M1A1_Carbine", "", "", "", ["SPE_15Rnd_762x33"], [], ""]
+	["SPEX_No4_Mk1_Enfield_dunkel", "", "", "", ["SPEX_10Rnd_770x56_MkVIII"], [], ""]
 	]];
 _sfLoadoutData set ["carbines", [
-	["SPE_M1A1_Thompson", "", "", "", ["SPE_30Rnd_Thompson_45ACP"], [], ""]
+	["SPEX_Sten_Mk5", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""]
 	]];
 _sfLoadoutData set ["grenadeLaunchers", [
-	["SPE_M1_Garand", "SPE_ACC_GL_M7", "", "", ["SPE_8Rnd_762x63"], ["SPE_1Rnd_G_M9A1","SPE_1Rnd_G_Mk2"], ""]
+	["SPEX_No1_Mk3_late_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""]
 	]];
 _sfLoadoutData set ["SMGs", [
-	["SPE_M1A1_Thompson", "", "", "", ["SPE_30Rnd_Thompson_45ACP"], [], ""]
+	["SPE_Sten_Mk2_Suppressed", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""],
+	["SPEX_Sten_Mk6_Suppressed", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""]
 	]];
 _sfLoadoutData set ["machineGuns", [
-	["SPE_M1919A4", "", "", "", ["SPE_100Rnd_762x63", "SPE_50Rnd_762x63"], [], ""]
+	["SPE_LMG_303_Mk2", "", "", "", ["SPE_30Rnd_770x56_AP_MKI", "SPE_30Rnd_770x56_MKVIII"], [], ""]
 	]];
 _sfLoadoutData set ["marksmanRifles", [
-	["SPE_M1A1_Carbine", "", "", "", ["SPE_15Rnd_762x33"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56"], [], ""]
 	]];
 _sfLoadoutData set ["sniperRifles", [
-	["SPE_M1903A4_Springfield", "", "", "", ["SPE_5Rnd_762x63_M2_AP"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56"], [], ""]
 	]];
 _sfLoadoutData set ["sidearms", [
-	["SPE_M1911", "", "", "", ["SPE_7Rnd_45ACP_1911"], [], ""]
+	["SPEX_Enfield_No2", "", "", "", ["SPEX_6rnd_9x20R"], [], ""],
+	["SPEX_Enfield_No2_late", "", "", "", ["SPEX_6rnd_9x20R"], [], ""]
 	]];
 
 /////////////////////////////////
@@ -261,42 +263,42 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_eliteLoadoutData set ["uniforms", ["U_SPE_US_HBT44", "U_SPE_US_HBT44_roll", "U_SPE_US_HBT44_tuck", "U_SPE_US_HBT44_late", "U_SPE_US_HBT44_Half", "U_SPE_US_HBT44_trop", "U_SPE_US_HBT44_tuck_late"]];
-_eliteLoadoutData set ["slUniforms", ["U_SPE_US_HBT44_tuck"]];
-_eliteLoadoutData set ["vests", ["V_SPE_US_Vest_Carbine_m43","V_SPE_US_Vest_Carbine_eng","V_SPE_US_Vest_Carbine","V_SPE_US_Vest_Carbine_mk2"]];
-_eliteLoadoutData set ["glVests", ["V_SPE_US_Vest_Thompson_M43", "V_SPE_US_Vest_Thompson"]];
-_eliteLoadoutData set ["Hvests", ["V_SPE_US_Vest_Asst_MG", "V_SPE_US_Vest_M1919"]];
-_eliteLoadoutData set ["backpacks", ["B_SPE_US_M36","B_SPE_US_M36_Bandoleer","B_SPE_US_M36_m6","B_SPE_US_M36_Rocketbag","B_SPE_US_M36_Rope","B_SPE_US_M36_m6_Bandoleer","B_SPE_US_M36_roll","B_SPE_US_M36_roll_2","B_SPE_US_M36_Bandoleer_mk2"]];
-_eliteLoadoutData set ["helmets", ["H_SPE_US_Helmet","H_SPE_US_Helmet_os","H_SPE_US_Helmet_Net","H_SPE_US_Helmet_band_net","H_SPE_US_Helmet_ns","H_SPE_US_Helmet_band_net_up", "H_SPE_US_Helmet_band_net_os", "H_SPE_US_Helmet_band_net_ns"]];
-_eliteLoadoutData set ["sniHats", ["H_SPE_US_Helmet","H_SPE_US_Helmet_os","H_SPE_US_Helmet_Net","H_SPE_US_Helmet_band_net","H_SPE_US_Helmet_ns","H_SPE_US_Helmet_band_net_up", "H_SPE_US_Helmet_band_net_os", "H_SPE_US_Helmet_band_net_ns"]];
-_eliteLoadoutData set ["slHat", ["H_SPE_US_Helmet_First_lieutenant"]];
-_eliteLoadoutData set ["binoculars", ["SPE_Binocular_US"]];
+_eliteLoadoutData set ["uniforms", ["U_SPEX_CW_BD_CAN", "U_SPEX_CW_BD_CAN_INV", "U_SPEX_CW_BD_CAN_INV_open", "U_SPEX_CW_BD_CAN_open", "U_SPEX_CW_BD_CAN_roll", "U_SPEX_CW_BD_CAN_INV_roll", "U_SPEX_CW_BD_CAN_INV_LCPL", "U_SPEX_CW_BD_CAN_LCPL"]];
+_eliteLoadoutData set ["slUniforms", ["U_SPEX_CW_BD_CAN_SGT","U_SPEX_CW_BD_CAN_CSGT","U_SPEX_CW_BD_CAN_1LT","U_SPEX_CW_BD_CAN_CPT"]];
+_eliteLoadoutData set ["vests", ["V_SPEX_CW_Vest_P37_N97_Rifle_P41","V_SPEX_CW_Vest_P37_N97_Rifle_no4_P41","V_SPEX_CW_Vest_P37_N97_Rifle_no4_P41_2","V_SPEX_CW_Vest_P37_N97","V_SPEX_cw_vest_p37_N97_sten"]];
+_eliteLoadoutData set ["glVests", ["V_SPEX_cw_vest_p37_N97_sten_P41_Tin", "V_SPEX_cw_vest_p37_N97_no4_P41_bandoleer"]];
+_eliteLoadoutData set ["Hvests", ["V_SPEX_cw_vest_p37_N97_sten_P41", "V_SPEX_cw_vest_p37_N97_sten_P41_2"]];
+_eliteLoadoutData set ["backpacks", ["B_SPEX_CW_Sack_P37_N97_gas_assault_roll_1","B_SPEX_CW_Sack_P37_N97_gas_assault_roll_2","B_SPEX_CW_Sack_P37_N97_gas_assault_roll_3","B_SPEX_CW_Sack_P37_N97_gas_assault_shovel_roll","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_roll_3_side","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_roll_2_side","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_2","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_roll_1_side","B_SPEX_CW_Sack_P37_N97_gas_assault_PIAT"]];
+_eliteLoadoutData set ["helmets", ["H_SPEX_CW_Helmet_mk3","H_SPEX_CW_Helmet_mk3_net","H_SPEX_CW_Helmet_mk3_ifak"]];
+_eliteLoadoutData set ["sniHats", ["H_SPEX_CW_Helmet_mk3_scrim","H_SPEX_CW_Helmet_mk3_scrim_ifak"]];
+_eliteLoadoutData set ["slHat", ["H_SPEX_CW_Helmet_mk3_scrim_ifak_tilt","H_SPEX_CW_Helmet_mk3_scrim_ifak_op_tilt"]];
+_eliteLoadoutData set ["binoculars", ["SPEX_Binocular_CW"]];
 
 _eliteLoadoutData set ["rifles", [
-	["SPE_M1_Garand", "", "", "", ["SPE_8Rnd_762x63"], [], ""]
+	["SPEX_No4_Mk1_Enfield_dunkel", "", "", "", ["SPEX_10Rnd_770x56_AP_MKI"], [], ""]
 	]];
 _eliteLoadoutData set ["carbines", [
-	["SPE_M1_Carbine", "", "", "", ["SPE_15Rnd_762x33"], [], ""]
+	["SPEX_No4_Mk1_Enfield_dunkel", "SPEX_ACC_No4_Mk2_Bayo", "", "", ["SPEX_10Rnd_770x56_AP_MKI"], [], ""]
 	]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-	["SPE_M1_Garand", "SPE_ACC_GL_M7", "", "", ["SPE_8Rnd_762x63"], ["SPE_1Rnd_G_M9A1","SPE_1Rnd_G_Mk2"], ""]
+	["SPEX_No1_Mk3_late_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""]
 	]];
 _eliteLoadoutData set ["SMGs", [
-	["SPE_M1A1_Thompson", "", "", "", ["SPE_30Rnd_Thompson_45ACP"], [], ""],
-	["SPE_M3_GreaseGun", "", "", "", ["SPE_30Rnd_M3_GreaseGun_45ACP"], [], ""]
+	["SPEX_Sten_Mk5", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""],
+	["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""]
 	]];
 _eliteLoadoutData set ["machineGuns", [
-	["SPE_M1918A2_BAR", "", "", "", ["SPE_20Rnd_762x63"], [], ""],
-    ["SPE_M1919A6", "", "", "", ["SPE_100Rnd_762x63", "SPE_50Rnd_762x63"], [], ""]
+	["SPE_LMG_303_Mk2", "", "", "", ["SPE_30Rnd_770x56_AP_MKI", "SPE_30Rnd_770x56_MKVIII"], [], ""]
 	]];
 _eliteLoadoutData set ["marksmanRifles", [
-	["SPE_M1_Garand", "", "", "", ["SPE_8Rnd_762x63"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56_AP_MKI"], [], ""]
 	]];
 _eliteLoadoutData set ["sniperRifles", [
-	["SPE_M1903A4_Springfield", "", "", "", ["SPE_5Rnd_762x63_t"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56_MkVIII"], [], ""]
 	]];
 _eliteLoadoutData set ["sidearms", [
-	["SPE_M1911", "", "", "", ["SPE_7Rnd_45ACP_1911"], [], ""]
+	["SPEX_Enfield_No2", "", "", "", ["SPEX_6rnd_9x20R"], [], ""],
+	["SPEX_Enfield_No2_late", "", "", "", ["SPEX_6rnd_9x20R"], [], ""]
 	]];
 
 /////////////////////////////////
@@ -304,43 +306,49 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militaryLoadoutData set ["uniforms", ["U_SPE_US_CC_EM", "U_SPE_US_CC_EM_roll", "U_SPE_US_CC_EM_late", "U_SPE_US_CC_EM_late_roll"]];
-_militaryLoadoutData set ["slUniforms", ["U_SPE_US_CC_1LT"]];
-_militaryLoadoutData set ["vests", ["V_SPE_US_Vest_Carbine_m43","V_SPE_US_Vest_Carbine_eng","V_SPE_US_Vest_Carbine","V_SPE_US_Vest_Carbine_mk2"]];
-_militaryLoadoutData set ["glVests", ["V_SPE_US_Vest_Thompson_M43", "V_SPE_US_Vest_Thompson"]];
-_militaryLoadoutData set ["Hvests", ["V_SPE_US_Vest_Asst_MG", "V_SPE_US_Vest_M1919"]];
-_militaryLoadoutData set ["backpacks", ["B_SPE_US_M36","B_SPE_US_M36_Bandoleer","B_SPE_US_M36_m6","B_SPE_US_M36_Rocketbag","B_SPE_US_M36_Rope","B_SPE_US_M36_m6_Bandoleer","B_SPE_US_M36_roll","B_SPE_US_M36_roll_2","B_SPE_US_M36_Bandoleer_mk2"]];
-_militaryLoadoutData set ["helmets", ["H_SPE_US_Helmet","H_SPE_US_Helmet_os","H_SPE_US_Helmet_Net","H_SPE_US_Helmet_band_net","H_SPE_US_Helmet_ns","H_SPE_US_Helmet_band_net_up", "H_SPE_US_Helmet_band_net_os", "H_SPE_US_Helmet_band_net_ns"]];
-_militaryLoadoutData set ["sniHats", ["H_SPE_US_Helmet","H_SPE_US_Helmet_os","H_SPE_US_Helmet_Net","H_SPE_US_Helmet_band_net","H_SPE_US_Helmet_ns","H_SPE_US_Helmet_band_net_up", "H_SPE_US_Helmet_band_net_os", "H_SPE_US_Helmet_band_net_ns"]];
-_militaryLoadoutData set ["slHat", ["H_SPE_US_Helmet_First_lieutenant"]];
-_militaryLoadoutData set ["binoculars", ["SPE_Binocular_US"]];
+_militaryLoadoutData set ["uniforms", ["U_SPEX_CW_BD_P40", "U_SPEX_CW_BD_P40_open", "U_SPEX_CW_BD_P40_roll", "U_SPEX_CW_BD_P40_puttee"]];
+_militaryLoadoutData set ["slUniforms", ["U_SPEX_CW_BD_P40_CSGT","U_SPEX_CW_BD_P40_SGT"]];
+_militaryLoadoutData set ["vests", ["V_SPEX_cw_vest_p37_N97_P41","V_SPEX_cw_vest_p37_N97_P41_binoc","V_SPEX_cw_vest_p37_N97_P41_Canteen","V_SPEX_cw_vest_p37_N97_P41_Tin","V_SPEX_cw_vest_p37_N97_no4_P41"]];
+_militaryLoadoutData set ["glVests", ["V_SPEX_cw_vest_p37_N97_sten_P41_Tin", "V_SPEX_cw_vest_p37_N97_no4_P41_bandoleer"]];
+_militaryLoadoutData set ["Hvests", ["V_SPEX_cw_vest_p37_N97_sten_P41", "V_SPEX_cw_vest_p37_N97_sten_P41_2"]];
+_militaryLoadoutData set ["backpacks", ["B_SPEX_CW_Sack_P37_N97_gas_assault_roll_1","B_SPEX_CW_Sack_P37_N97_gas_assault_roll_2","B_SPEX_CW_Sack_P37_N97_gas_assault_roll_3","B_SPEX_CW_Sack_P37_N97_gas_assault_shovel_roll","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_roll_3_side","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_roll_2_side","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_2","B_SPEX_CW_Sack_P37_N97_gas_assault_bren_roll_1_side","B_SPEX_CW_Sack_P37_N97_gas_assault_PIAT"]];
+_militaryLoadoutData set ["helmets", ["H_SPEX_CW_Helmet_mk2","H_SPEX_CW_Helmet_mk2_op","H_SPEX_CW_Helmet_mk2_op_tilt","H_SPEX_CW_Helmet_mk2_tilt","H_SPEX_CW_Helmet_mk2_burlap","H_SPEX_CW_Helmet_mk2_burlap_op", "H_SPEX_CW_Helmet_mk2_ifak", "H_SPEX_CW_Helmet_mk2_hessian"]];
+_militaryLoadoutData set ["sniHats", ["H_SPEX_CW_mutsdas","H_SPEX_CW_SIDECAP"]];
+_militaryLoadoutData set ["slHat", ["H_SPEX_CW_beret_Essex"]];
+_militaryLoadoutData set ["binoculars", ["SPEX_Binocular_CW"]];
 
 _militaryLoadoutData set ["rifles", [
-	["SPE_M1_Garand", "", "", "", ["SPE_8Rnd_762x63"], [], ""]
+	["SPEX_No4_Mk1_Enfield_dunkel", "", "", "", ["SPEX_10Rnd_770x56"], [], ""]
 	]];
 _militaryLoadoutData set ["carbines", [
-	["SPE_M1_Carbine", "", "", "", ["SPE_15Rnd_762x33"], [], ""]
+	["SPEX_No4_Mk1_Enfield", "", "", "", ["SPEX_10Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_late_Enfield", "", "", "", ["SPEX_10Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_Enfield", "", "", "", ["SPEX_10Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_mid_Enfield", "", "", "", ["SPEX_10Rnd_770x56"], [], ""]
 	]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-	["SPE_M1_Garand", "SPE_ACC_GL_M7", "", "", ["SPE_8Rnd_762x63"], ["SPE_1Rnd_G_M9A1","SPE_1Rnd_G_Mk2"], ""]
+	["SPEX_No1_Mk3_late_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""],
+	["SPEX_No1_Mk3_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""],
+	["SPEX_No1_Mk3_mid_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""]
 	]];
 _militaryLoadoutData set ["SMGs", [
 	["SPE_M1A1_Thompson", "", "", "", ["SPE_30Rnd_Thompson_45ACP"], [], ""],
-	["SPE_M3_GreaseGun", "", "", "", ["SPE_30Rnd_M3_GreaseGun_45ACP"], [], ""]
+	["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""]
 	]];
 _militaryLoadoutData set ["machineGuns", [
-	["SPE_M1918A2_erla_BAR", "", "SPE_M1918A2_BAR_Handle", "", ["SPE_20Rnd_762x63_M1"], [], "SPE_M1918A2_BAR_Bipod"],
-    ["SPE_M1919A6", "", "", "", ["SPE_50Rnd_762x63"], [], ""]
+	["SPE_LMG_303_Mk2", "", "", "", ["SPE_30Rnd_770x56"], [], ""]
 	]];
 _militaryLoadoutData set ["marksmanRifles", [
-	["SPE_M1903A3_Springfield", "", "", "", ["SPE_5Rnd_762x63_M1"], [], ""],
-    ["SPE_M1_Garand", "", "", "", ["SPE_8Rnd_762x63"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56", "SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No4_Mk1_Enfield_Scoped", "", "", "", ["SPEX_10Rnd_770x56", "SPE_5Rnd_770x56"], [], ""]
 	]];
 _militaryLoadoutData set ["sniperRifles", [
-	["SPE_M1903A4_Springfield", "", "", "", ["SPE_5Rnd_762x63_t"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56", "SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No4_Mk1_Enfield_Scoped", "", "", "", ["SPEX_10Rnd_770x56", "SPE_5Rnd_770x56"], [], ""]
 	]];
 _militaryLoadoutData set ["sidearms", [
-	["SPE_M1911", "", "", "", ["SPE_7Rnd_45ACP_1911"], [], ""]
+	["SPEX_Enfield_No2", "", "", "", ["SPEX_6rnd_9x20R"], [], ""],
+	["SPEX_Enfield_No2_late", "", "", "", ["SPEX_6rnd_9x20R"], [], ""]
 	]];
 
 ///////////////////////////////
@@ -348,25 +356,22 @@ _militaryLoadoutData set ["sidearms", [
 ///////////////////////////////
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_policeLoadoutData set ["uniforms", ["U_SPE_FR_HBT_Uniform", "U_SPE_FR_HBT_Uniform_Trop"]];
-_policeLoadoutData set ["vests", ["V_SPE_US_Vest_Garand", "V_SPE_US_Vest_Garand_45", "V_SPE_US_Vest_Garand_mk2", "V_SPE_US_Vest_Garand_map"]];
-_policeLoadoutData set ["helmets", ["H_SPE_FR_Adrian", "H_SPE_FR_Adrian_ns", "H_SPE_FR_Adrian_net", "H_SPE_FR_Adrian_net_ns"]];
+_policeLoadoutData set ["uniforms", ["U_SPEX_CW_BD_CAN_INV_open", "U_SPEX_CW_BD_CAN_INV"]];
+_policeLoadoutData set ["vests", ["V_SPEX_cw_vest_p37_N103_no4_P41", "V_SPEX_cw_vest_p37_N103_no4_P41_bandoleer", "V_SPEX_cw_vest_p37_N103_no4_P41_Canteen", "V_SPEX_cw_vest_p37_N103_no4_P41_Tin", "V_SPEX_cw_vest_p37_N103_no4_P41_2"]];
+_policeLoadoutData set ["helmets", ["H_SPEX_CW_Helmet_mk3", "H_SPEX_CW_Helmet_mk3_op", "H_SPEX_CW_Helmet_mk3_net", "H_SPEX_CW_Helmet_mk3_scrim_ifak"]];
 _policeLoadoutData set ["SMGs", [
-	["SPE_MAS_36", "", "", "", ["SPE_5Rnd_75x54"], [], ""],
+	["SPE_M1A1_Thompson", "", "", "", ["SPE_30Rnd_Thompson_45ACP"], [], ""],
 	["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""],
-	["SPE_MAS_36", "", "", "", ["SPE_5Rnd_75x54"], [], ""],
-	["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""],
-	["SPE_MAS_36", "", "", "", ["SPE_5Rnd_75x54"], [], ""],
 	["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""],
 	["SPE_Model_37_Riotgun", "", "", "", ["SPE_5Rnd_12x70_Pellets"], [], ""],
 	["SPE_Model_37_Trenchgun", "", "", "", ["SPE_5Rnd_12x70_Pellets"], [], ""],
-	["SPE_Fusil_Mle_208_12", "", "", "", ["SPE_2Rnd_12x65_Pellets"], [], ""],
-	["SPE_Fusil_Mle_208_12_Sawedoff", "", "", "", ["SPE_2Rnd_12x65_Pellets"], [], ""],
-	["SPE_No3_Mk1_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
-	["SPE_No3_Mk1_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""]
+	["SPEX_No1_Mk3_late_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_mid_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""]
 	]];
 _policeLoadoutData set ["sidearms", [
-	["SPE_M1911", "", "", "", ["SPE_7Rnd_45ACP_1911"], [], ""]
+	["SPEX_Enfield_No2", "", "", "", ["SPEX_6rnd_9x20R"], [], ""],
+	["SPEX_Enfield_No2_late", "", "", "", ["SPEX_6rnd_9x20R"], [], ""]
 	]];
 
 ////////////////////////////////
@@ -374,43 +379,50 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_militiaLoadoutData set ["uniforms", ["U_SPE_US_SC_EM","U_SPE_US_SC_EM_roll"]];
-_militiaLoadoutData set ["slUniforms", ["U_SPE_US_SC_EM_tie"]];
-_militiaLoadoutData set ["vests", ["V_SPE_US_Vest_Garand","V_SPE_US_Vest_Garand_map","V_SPE_US_Vest_Garand_mk2"]];
-_militiaLoadoutData set ["glVests", ["V_SPE_US_Vest_Grenadier"]];
-_militiaLoadoutData set ["Hvests", ["V_SPE_US_Vest_Garand_eng"]];
-_militiaLoadoutData set ["backpacks", ["B_SPE_US_Backpack","B_SPE_US_Backpack_Bandoleer","B_SPE_US_Backpack_roll","B_SPE_US_Backpack_M7_rear","B_SPE_US_Backpack_pick"]];
-_militiaLoadoutData set ["helmets", ["H_SPE_US_Helmet","H_SPE_US_Helmet_os","H_SPE_US_Helmet_Net","H_SPE_US_Helmet_band_net","H_SPE_US_Helmet_ns","H_SPE_US_Helmet_band_net_up", "H_SPE_US_Helmet_band_net_os", "H_SPE_US_Helmet_band_net_ns"]];
-_militiaLoadoutData set ["sniHats", ["H_SPE_US_jeep_cap","H_SPE_US_jeep_cap_rear"]];
-_militiaLoadoutData set ["slHat", ["H_SPE_US_Helmet_CO"]];
+_militiaLoadoutData set ["uniforms", ["U_SPEX_CW_BD","U_SPEX_CW_BD_open","U_SPEX_CW_BD_roll"]];
+_militiaLoadoutData set ["slUniforms", ["U_SPEX_CW_BD_SGT"]];
+_militiaLoadoutData set ["vests", ["V_SPEX_CW_Vest_P37_N97_p39","V_SPEX_cw_vest_p37_N97_no1_p39","V_SPEX_cw_vest_p37_N97_no1_p39_bandoleer"]];
+_militiaLoadoutData set ["glVests", ["V_SPEX_CW_Vest_P37_N97_Tin"]];
+_militiaLoadoutData set ["Hvests", ["V_SPEX_cw_vest_p37_n97_no4"]];
+_militiaLoadoutData set ["backpacks", ["B_SPEX_CW_Sack_P37_N97","B_SPEX_CW_Sack_P37_N97_cup","B_SPEX_CW_Sack_P37_N97_PIAT","B_SPEX_CW_Sack_P37_N97_shovel"]];
+_militiaLoadoutData set ["helmets", ["H_SPEX_CW_Helmet_mk2","H_SPEX_CW_Helmet_mk2_op","H_SPEX_CW_Helmet_mk2_op_tilt","H_SPEX_CW_Helmet_mk2_tilt","H_SPEX_CW_Helmet_mk2_burlap","H_SPEX_CW_Helmet_mk2_ifak", "H_SPEX_CW_Helmet_mk2_hessian", "H_SPEX_CW_Helmet_mk2_net"]];
+_militiaLoadoutData set ["sniHats", ["H_SPEX_CW_beret_gs"]];
+_militiaLoadoutData set ["slHat", ["H_SPEX_CW_beret_GEWEHR_GS"]];
 
 _militiaLoadoutData set ["rifles", [
-	["SPE_M1_Garand", "", "", "", ["SPE_8Rnd_762x63"], [], ""],
-	["SPE_M1903A3_Springfield", "", "", "", ["SPE_5Rnd_762x63"], [], ""]
+	["SPEX_No1_Mk3_late_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_mid_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""]
 	]];
 _militiaLoadoutData set ["carbines", [
-	["SPE_M1_Carbine", "", "", "", ["SPE_15Rnd_762x33"], [], ""],
-	["SPE_M1903A3_Springfield", "", "", "", ["SPE_5Rnd_762x63"], [], ""]
+	["SPEX_No1_Mk3_late_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No1_Mk3_mid_Enfield", "", "", "", ["SPE_5Rnd_770x56"], [], ""]
 	]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-	["SPE_M1_Garand", "SPE_ACC_GL_M7", "", "", ["SPE_8Rnd_762x63"], ["SPE_1Rnd_G_M9A1","SPE_1Rnd_G_Mk2"], ""]
+	["SPEX_No1_Mk3_late_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""],
+	["SPEX_No1_Mk3_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""],
+	["SPEX_No1_Mk3_mid_Enfield", "SPEX_ACC_2HalfInch_GL_CUP", "", "", ["SPE_5Rnd_770x56"], ["SPEX_1Rnd_G_No36_MKI"], ""]
 	]];
 _militiaLoadoutData set ["SMGs", [
-	["SPE_M1A1_Thompson", "", "", "", ["SPE_30Rnd_Thompson_45ACP"], [], ""],
-	["SPE_M3_GreaseGun", "", "", "", ["SPE_30Rnd_M3_GreaseGun_45ACP"], [], ""]
+	["SPEX_M1928_Thompson", "", "", "", ["SPE_20Rnd_Thompson_45ACP"], [], ""],
+	["SPEX_M1928A1_Thompson", "", "", "", ["SPE_20Rnd_Thompson_45ACP"], [], ""]
 	]];
 _militiaLoadoutData set ["machineGuns", [
-	["SPE_M1918A0_BAR", "", "", "", ["SPE_20Rnd_762x63"], [], ""]
+	["SPEX_LMG_303_Mk1", "", "", "", ["SPE_30Rnd_770x56"], [], ""],
+	["SPE_LMG_303_Mk2", "", "", "", ["SPE_30Rnd_770x56"], [], ""]
 	]];
 _militiaLoadoutData set ["marksmanRifles", [
-	["SPE_M1903A3_Springfield", "", "", "", ["SPE_5Rnd_762x63"], [], ""]
+	["SPEX_No4_Mk1_Enfield", "", "", "", ["SPEX_10Rnd_770x56"], [], ""],
+	["SPEX_No4_Mk1_Enfield_dunkel", "", "", "", ["SPEX_10Rnd_770x56"], [], ""]
 	]];
 _militiaLoadoutData set ["sniperRifles", [
-	["SPE_M1903A3_Springfield", "", "", "", ["SPE_5Rnd_762x63", "SPE_5Rnd_762x63_t"], [], ""],
-	["SPE_M1903A4_Springfield", "", "", "", ["SPE_5Rnd_762x63_M1", "SPE_5Rnd_762x63_t"], [], ""]
+	["SPEX_No4_Mk1_Enfield_Scoped_dunkel", "", "", "", ["SPEX_10Rnd_770x56", "SPE_5Rnd_770x56"], [], ""],
+	["SPEX_No4_Mk1_Enfield_Scoped", "", "", "", ["SPEX_10Rnd_770x56", "SPE_5Rnd_770x56"], [], ""]
 	]];
 _militiaLoadoutData set ["sidearms", [
-	["SPE_M1911", "", "", "", ["SPE_7Rnd_45ACP_1911"], [], ""]
+	["SPEX_Enfield_No2", "", "", "", ["SPEX_6rnd_9x20R"], [], ""],
+	["SPEX_Enfield_No2_late", "", "", "", ["SPEX_6rnd_9x20R"], [], ""]
 	]];
 	
 //////////////////////////
@@ -418,19 +430,19 @@ _militiaLoadoutData set ["sidearms", [
 //////////////////////////
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_crewLoadoutData set ["uniforms", ["U_SPE_US_Tank_Coverall","U_SPE_US_Tank_Coverall_Legging","U_SPE_US_Tank_Coverall_Trop","U_SPE_US_Tank_Coverall_Trop_Legging"]];
-_crewLoadoutData set ["vests", ["V_SPE_US_Vest_45"]];
-_crewLoadoutData set ["helmets", ["H_SPE_US_Helmet_Tank_NG","H_SPE_US_Helmet_Tank"]];
+_crewLoadoutData set ["uniforms", ["U_SPEX_CW_BD_open","U_SPEX_CW_BD_roll"]];
+_crewLoadoutData set ["vests", ["V_SPEX_CW_Vest_P37_N61_rac"]];
+_crewLoadoutData set ["helmets", ["H_SPEX_CW_Helmet_RAC","H_SPEX_CW_Helmet_RAC_no38"]];
 _crewLoadoutData set ["carbines", [
-    ["SPE_M3_GreaseGun", "", "", "", ["SPE_30Rnd_M3_GreaseGun_45ACP"], [], ""]
+    ["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""]
 ]];	
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["U_SPE_US_Pilot","U_SPE_US_Pilot_boot","U_SPE_US_Pilot_glove"]];
-_pilotLoadoutData set ["vests", ["V_SPE_US_Vest_45_high"]];
-_pilotLoadoutData set ["helmets", ["H_SPE_US_Helmet_Pilot","H_SPE_US_Helmet_Pilot_Glasses_Up","H_SPE_US_Helmet_Pilot_Glasses_Down","H_SPE_US_Helmet_Pilot_Op"]];
+_pilotLoadoutData set ["uniforms", ["U_SPEX_CW_RAF_BD","U_SPEX_CW_RAF_BD_glove"]];
+_pilotLoadoutData set ["vests", ["V_SPEX_CW_RAF_Schwimm"]];
+_pilotLoadoutData set ["helmets", ["H_SPEX_CW_RAF_visor","H_SPEX_CW_RAF_visor_EM","H_SPEX_CW_SIDECAP_RAF_EM","H_SPEX_CW_SIDECAP_RAF_OFFZ"]];
 _pilotLoadoutData set ["carbines", [
-    ["SPE_M3_GreaseGun", "", "", "", ["SPE_30Rnd_M3_GreaseGun_45ACP"], [], ""]
+    ["SPE_Sten_Mk2", "", "", "", ["SPE_32Rnd_9x19_Sten"], [], ""]
 ]];	
 
 

@@ -223,7 +223,7 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["uniforms", ["U_SPE_US_AB_Uniform_M42_padded_gas", "U_SPE_US_AB_Uniform_M42_padded_gas_glove", "U_SPE_US_AB_Uniform_M42_padded_gas_knife", "U_SPE_US_AB_Uniform_M42_padded_gas_506", "", ""]];
+_sfLoadoutData set ["uniforms", ["U_SPE_US_AB_Uniform_M42_padded_gas", "U_SPE_US_AB_Uniform_M42_padded_gas_glove", "U_SPE_US_AB_Uniform_M42_padded_gas_knife", "U_SPE_US_AB_Uniform_M42_padded_gas_506"]];
 _sfLoadoutData set ["vests", ["V_SPE_US_Vest_AB_padded_1","V_SPE_US_Vest_AB_padded_thompson","V_SPE_US_Vest_AB_padded_mk2"]];
 _sfLoadoutData set ["glVests", ["V_SPE_US_Vest_AB_padded_eng"]];
 _sfLoadoutData set ["Hvests", ["V_SPE_US_Vest_AB_padded_M1919"]];
@@ -231,7 +231,7 @@ _sfLoadoutData set ["backpacks", ["B_SPE_US_M36","B_SPE_US_M36_Bandoleer","B_SPE
 _sfLoadoutData set ["helmets", ["H_SPE_US_AB_Helmet","H_SPE_US_AB_Helmet_Net","H_SPE_US_AB_Helmet_polar","H_SPE_US_AB_Helmet_os","H_SPE_US_AB_Helmet_Scrim","H_SPE_US_AB_Helmet_Net_os"]];
 _sfLoadoutData set ["sniHats", ["H_SPE_US_AB_Helmet","H_SPE_US_AB_Helmet_Net","H_SPE_US_AB_Helmet_polar","H_SPE_US_AB_Helmet_os","H_SPE_US_AB_Helmet_Scrim","H_SPE_US_AB_Helmet_Net_os"]];
 _sfLoadoutData set ["slHat", ["H_SPE_US_AB_Helmet_CO", "H_SPE_US_AB_Helmet_CO_ns"]];
-_sfLoadoutData set ["binoculars", ["LIB_Binocular_US"]];
+_sfLoadoutData set ["binoculars", ["SPE_Binocular_US"]];
 
 //SF Weapons
 _sfLoadoutData set ["rifles", [
