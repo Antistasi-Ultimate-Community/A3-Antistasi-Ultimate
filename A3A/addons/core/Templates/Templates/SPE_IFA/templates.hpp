@@ -118,6 +118,14 @@
         file = "SPE_AI_WEH";
     };
 	
+class SPEX_COM : SPEX_Base
+    {
+        side = "Inv";
+        flagTexture = "\A3\Data_F\Flags\flag_uk_co.paa";
+        name = "SPEX COM";
+        file = "SPE_AI_COM";
+    };
+	
     class SPEX_Reb : SPEX_Base
     {
         side = "Reb";
