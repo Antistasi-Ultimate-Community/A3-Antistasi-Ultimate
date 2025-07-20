@@ -351,28 +351,28 @@ class planeLoadouts
             diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
         };
         //CUP Estraria
-        class EST_Gryphon
+        class EST_Sparrowhawk
         {
             loadout[] = {"","","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonMissile_1Rnd_BombCluster_01_F","PylonMissile_1Rnd_BombCluster_01_F"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"BombCluster_01_F", "weapon_AGM_65Launcher"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
-        class EST_Hornet
+        class EST_Peregrine
         {
             loadout[] = {"","PylonMissile_Bomb_GBU12_x1","PylonMissile_1Rnd_BombCluster_01_F","","","","PylonMissile_1Rnd_BombCluster_01_F","PylonMissile_Bomb_GBU12_x1",""};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"weapon_GBU12Launcher", "BombCluster_01_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
-        class EST_Hornet_Navy
+        class EST_Peregrine_Navy
         {
             loadout[] = {"","PylonMissile_Bomb_GBU12_x1","PylonMissile_1Rnd_BombCluster_01_F","","","","PylonMissile_1Rnd_BombCluster_01_F","PylonMissile_Bomb_GBU12_x1",""};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"weapon_GBU12Launcher", "BombCluster_01_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         };
-        class EST_Navy_AV8B
+        class EST_Navy_VF17
         {
             loadout[] = {"","PylonRack_7Rnd_Rocket_04_AP_F","CUP_PylonPod_1Rnd_GBU12_M","CUP_PylonPod_1Rnd_GBU12_M","PylonRack_7Rnd_Rocket_04_AP_F",""};
             mainGun = "CUP_Vacannon_GAU12_veh";
@@ -811,25 +811,25 @@ class planeLoadouts
             diveParams[] = {1000, 300, 100, 55, 15, {0,0}};
         };
       //CUP Estraria
-        class EST_Gryphon
+        class EST_Sparrowhawk
         {
             loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_AGM_02_x1","PylonRack_Missile_AGM_02_x1","PylonMissile_Bomb_GBU12_x1","PylonMissile_Bomb_GBU12_x1"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"weapon_AGM_65Launcher", "weapon_BIM9xLauncher", "weapon_GBU12Launcher"};
         };
-        class EST_Hornet
+        class EST_Peregrine
         {
             loadout[] = {"PylonMissile_1Rnd_Missile_AA_04_F","PylonMissile_Bomb_GBU12_x1","PylonRack_Missile_AGM_02_x1","","","","PylonRack_Missile_AGM_02_x1","PylonMissile_Bomb_GBU12_x1","PylonMissile_1Rnd_Missile_AA_04_F"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"Missile_AA_04_Plane_CAS_01_F", "weapon_AGM_65Launcher", "weapon_GBU12Launcher"};
         };
-        class EST_Hornet_Navy
+        class EST_Peregrine_Navy
         {
             loadout[] = {"PylonMissile_1Rnd_Missile_AA_04_F","PylonMissile_Bomb_GBU12_x1","PylonRack_Missile_AGM_02_x1","","","","PylonRack_Missile_AGM_02_x1","PylonMissile_Bomb_GBU12_x1","PylonMissile_1Rnd_Missile_AA_04_F"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"Missile_AA_04_Plane_CAS_01_F", "weapon_AGM_65Launcher", "weapon_GBU12Launcher"};
         };
-        class EST_Navy_AV8B
+        class EST_Navy_VF17
         {
             loadout[] = {"CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_1Rnd_GBU12_M","CUP_PylonPod_1Rnd_GBU12_M","CUP_PylonPod_ANAAQ_28","CUP_PylonPod_1Rnd_GBU12_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M"};
             mainGun = "CUP_Vacannon_GAU12_veh";
@@ -1152,21 +1152,21 @@ class planeLoadouts
         };
       
         //CUP Estraria
-        class EST_Gryphon
+        class EST_Sparrowhawk
         {
             loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_C_x2","PylonRack_Missile_AMRAAM_C_x2"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"weapon_BIM9xLauncher","weapon_AMRAAMLauncher"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
-        class EST_Hornet
+        class EST_Peregrine
         {
             loadout[] = {"PylonMissile_1Rnd_Missile_AA_04_F","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_D_x1","PylonMissile_Missile_AMRAAM_C_x1","","PylonMissile_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_D_x1","PylonRack_Missile_BIM9X_x1","PylonMissile_1Rnd_Missile_AA_04_F"};
             mainGun = "weapon_Fighter_Gun20mm_AA";
             missileLauncher[] = {"Missile_AA_04_Plane_CAS_01_F","weapon_BIM9xLauncher","weapon_AMRAAMLauncher"};
             diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
-        class EST_Hornet_Navy
+        class EST_Peregrine_Navy
         {
             loadout[] = {"PylonMissile_1Rnd_Missile_AA_04_F","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_D_x1","PylonMissile_Missile_AMRAAM_C_x1","","PylonMissile_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_D_x1","PylonRack_Missile_BIM9X_x1","PylonMissile_1Rnd_Missile_AA_04_F"};
             mainGun = "weapon_Fighter_Gun20mm_AA";

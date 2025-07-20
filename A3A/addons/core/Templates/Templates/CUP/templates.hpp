@@ -313,7 +313,7 @@
     {
         side = "Occ";
         flagTexture = "\EST_Markers\Data\Marker_EST.paa";
-        name = "CUP EST";
+        name = "CUP Estraria";
         file = "CUP_AI_EST";
     };
 
