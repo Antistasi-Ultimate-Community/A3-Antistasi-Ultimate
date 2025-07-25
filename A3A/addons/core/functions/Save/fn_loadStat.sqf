@@ -382,13 +382,20 @@ if (_varName in specialVarLoads) then {
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
-                    if (_veh isKindOf "StaticWeapon") exitWith { staticsToSave pushBack _veh };
-                    if (_veh isKindOf "Building") exitWith {
-                        _veh setVariable ["A3A_building", true, true];
-                        if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
-                            [_veh] call A3A_fnc_terrainCleaner;
+                    switch true do {
+                        case (_veh isKindOf "StaticWeapon"): {
+                            staticsToSave pushBack _veh;
                         };
-                        A3A_buildingsToSave pushBack _veh;
+
+                        case (_veh isKindOf "Building"): {
+                            _veh setVariable ["A3A_building", true, true];
+                            A3A_buildingsToSave pushBack _veh;
+                        };
+                    };
+
+                    if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
+                        Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
+                        [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
                     };
                 };
                 if (!isNil "_state") then {

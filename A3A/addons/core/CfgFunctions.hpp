@@ -200,6 +200,8 @@ class CfgFunctions
             class buildingComplete {};
             class buildingPlacer {};
             class buildingPlacerStart {};
+            class handlerMapObjectHiderPostInitClient {};
+            class handlerMapObjectHiderPostInitServer {};
             class initBuildableObjects {};
             class initBuilderMonitors {};
             class initPlacerDB {};
