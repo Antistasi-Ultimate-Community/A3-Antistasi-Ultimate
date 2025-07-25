@@ -302,10 +302,15 @@
         addons[] = {"bnae_core"};
         weapons = "weapons_projinf";
     };
-    class addons_jca : addons_base
+    class addons_jcaia : addons_base
     {
         addons[] = {"Weapons_F_JCA_IA","Weapons_F_JCA_IA_Accessories","Weapons_F_JCA_IA_LongRangeRifles_AWM","Weapons_F_JCA_IA_Pistols_P226","Weapons_F_JCA_IA_Pistols_P320","Weapons_F_JCA_IA_Rifles_M4A1","Weapons_F_JCA_IA_Rifles_M4A4","Weapons_F_JCA_IA_Rifles_SR10","Weapons_F_JCA_IA_Rifles_SR25","Weapons_F_JCA_IA_SMGs_MP5"};
-        weapons = "weapons_jca";
+        weapons = "weapons_jcaia";
+    };
+    class addons_jcaie : addons_base
+    {
+        addons[] = {"vests_f_JCA_IE"};
+        weapons = "equipment_jcaie";
     };
     class addons_FlexNorAF : addons_base
     {

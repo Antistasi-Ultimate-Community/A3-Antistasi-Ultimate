@@ -100,7 +100,7 @@ if (_exit) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Crewed"] remoteExec ["HR_
 
     // valid vehicle for garage
 private _cat = [_class] call HR_GRG_fnc_getCatIndex;
-if (_cat isEqualTo -1) exitWith { ["STR_HR_GRG_Feedback_addVehicle_GenericFail"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+if (_cat < 0) exitWith { ["STR_HR_GRG_Feedback_addVehicle_GenericFail"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     //cap block
 private _capacity = 0;
@@ -109,12 +109,12 @@ private _capacity = 0;
 private _countStatics = {_x isKindOf "StaticWeapon"} count (attachedObjects _vehicle);
 if ((call HR_GRG_VehCap - _capacity) < (_countStatics + 1)) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Capacity"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };//HR_GRG_VehCap is defined in config.inc
 
-//Block air garage outside of airbase
-// if (
-//     (_class isKindOf "Air")
-//     && {count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (_player inArea _x)}) < 1} //no airports
-// ) exitWith {["STR_HR_GRG_Feedback_addVehicle_airBlocked", [FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
-
+/* //Block air garage outside of airbase
+if (
+    (_class isKindOf "Air")
+    && {count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (_player inArea _x)}) < 1} //no airports
+) exitWith {["STR_HR_GRG_Feedback_addVehicle_airBlocked", [FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+ */
 //here to allow adaption of external Antistasi system without needing to addapt code under APL-ND
 private _broadcastReportedVehsAndStaticsToSave = {
     publicVariable "staticsToSave";
@@ -157,6 +157,7 @@ private _addVehicle = {
     //check if compatible with garage
     private _class = typeOf _this;
     private _cat = [_class] call HR_GRG_fnc_getCatIndex;
+    if (_cat isEqualTo -2) exitWith {deleteVehicle _this;}; // deletes anything caught by the blacklist
     if (_cat isEqualTo -1) exitWith {};
     _catsRequiringUpdate pushBackUnique _cat;
 
@@ -167,8 +168,14 @@ private _addVehicle = {
     ];
     private _sourceIndex = _source find true;
 
+    //Disable locking if the player is already at the lock limit
+    if (_sourceIndex == -1 && _lockUID != "" && {[_lockUID] call HR_GRG_fnc_getLockCount >= _player call HR_GRG_getLockLimit}) then {
+        _lockUID = ""; _lockName = "";
+    };
+
     private _stateData = [_this] call HR_GRG_fnc_getState;
     private _customisation = [_this] call BIS_fnc_getVehicleCustomization;
+    private _lockTime = [systemTimeUTC, []] select (_lockUID isEqualTo "");
 
     //Antistasi adaptions
     _this call _transferToArsenal;
@@ -179,7 +186,7 @@ private _addVehicle = {
 
     //Add vehicle to garage
     private _vehUID = [] call HR_GRG_fnc_genVehUID;
-    (HR_GRG_Vehicles#_cat) set [_vehUID, [cfgDispName(_class), _class, _lockUID, "", _stateData, _lockName, _customisation]];
+    (HR_GRG_Vehicles#_cat) set [_vehUID, [cfgDispName(_class), _class, _lockUID, "", _stateData, _lockName, _customisation, _lockTime]];
 
     //register vehicle as a source
     if (_sourceIndex != -1) then {
@@ -214,7 +221,10 @@ private _refreshCode = {
     } forEach _cats;
     call HR_GRG_fnc_updateVehicleCount;
 };
-[ _catsRequiringUpdate, _refreshCode ] remoteExecCall ["call", HR_GRG_Users];
+
+if !(HR_GRG_Users isEqualTo []) then {
+    [ _catsRequiringUpdate, _refreshCode ] remoteExecCall ["call", HR_GRG_Users];
+};
 
 ["STR_HR_GRG_Feedback_addVehicle_Success", [cfgDispName(_class)] ] remoteExec ["HR_GRG_fnc_Hint", _client];
 true;
