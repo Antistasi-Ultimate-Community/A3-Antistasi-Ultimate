@@ -126,4 +126,33 @@
     {"CamoNet_Sand_lxWS", 250}
 
 //Ending Build List. (Universal Items)
-#define BUILDABLES_UNIVERSAL {"Land_GuardTower_02_F", 150}, {"Land_PortableLight_double_F", 50}, {"Land_LampShabby_F", 75}, {"Land_LampHarbour_F", 100}, {"Land_BarGate_F", 100}, {"Land_SandbagBarricade_01_half_F", 40}, {"Land_SandbagBarricade_01_hole_F", 40}, {"Land_SandbagBarricade_01_F", 40}, {"A3AU_TerrainCleaner_VerySmall_F", 250}, {"A3AU_TerrainCleaner_Small_F", 1000}, {"A3AU_TerrainCleaner_Medium_F", 2500}, {"A3AU_TerrainCleaner_Large_F", 5000}, {"A3AU_TerrainSmoother_VerySmall_F", 250}, {"A3AU_TerrainSmoother_Small_F", 1000}, {"A3AU_TerrainSmoother_Medium_F", 2500}, {"A3AU_TerrainSmoother_Large_F", 5000}, {"A3AU_RebHelipad_Square_F", 5000}, {"A3AU_RebHelipad_Circle_F", 5000}, {"Land_BagBunker_Large_F", 250}, {"Land_BagBunker_Small_F", 150}, {"Land_Bunker_02_light_double_F", 500}, {"Land_GuardBox_01_brown_F", 100}, {"Land_CzechHedgehog_01_new_F", 15}, {"Land_Razorwire_F", 15}
+#define BUILDABLES_UNIVERSAL {"Land_GuardTower_02_F", 150}, \
+    {"Land_PortableLight_double_F", 50}, \
+    {"Land_LampShabby_F", 75}, \
+    {"Land_LampHarbour_F", 100}, \
+    {"Land_BarGate_F", 100}, \
+    {"Land_SandbagBarricade_01_half_F", 40}, \
+    {"Land_SandbagBarricade_01_hole_F", 40}, \
+    {"Land_SandbagBarricade_01_F", 40}, \
+    {"A3AU_RebHelipad_Square_F", 5000}, \
+    {"A3AU_RebHelipad_Circle_F", 5000}, \
+    {"A3AU_VegetationCleaner_VerySmall_F", 250}, \
+    {"A3AU_VegetationCleaner_Small_F", 1000}, \
+    {"A3AU_VegetationCleaner_Medium_F", 2500}, \
+    {"A3AU_VegetationCleaner_Large_F", 5000}, \
+    {"A3AU_TerrainSmoother_VerySmall_F", 250}, \
+    {"A3AU_TerrainSmoother_Small_F", 1000}, \
+    {"A3AU_TerrainSmoother_Medium_F", 2500}, \
+    {"A3AU_TerrainSmoother_Large_F", 5000}, \
+    {QEGVAR(ultimate,BB_MapObjectHider_Circle5x5), 625}, \
+    {QEGVAR(ultimate,BB_MapObjectHider_Square5x5), 625}, \
+    {QEGVAR(ultimate,BB_MapObjectHider_Circle10x10), 1250}, \
+    {QEGVAR(ultimate,BB_MapObjectHider_Square10x10), 1250}, \
+    {QEGVAR(ultimate,BB_MapObjectHider_Circle20x20), 2500}, \
+    {QEGVAR(ultimate,BB_MapObjectHider_Square20x20), 2500}, \
+    {"Land_BagBunker_Large_F", 250}, \
+    {"Land_BagBunker_Small_F", 150}, \
+    {"Land_Bunker_02_light_double_F", 500}, \
+    {"Land_GuardBox_01_brown_F", 100}, \
+    {"Land_CzechHedgehog_01_new_F", 15}, \
+    {"Land_Razorwire_F", 15}
