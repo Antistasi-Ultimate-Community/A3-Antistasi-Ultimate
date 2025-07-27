@@ -1,13 +1,13 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_handlerMapObjectHiderPostInitClient
+Function: A3A_fnc_handlerTerrainObjectHiderPostInitClient
 
 Description:
-    CBA extended post-init handler for map object hider base buildable objects (client side).
+    CBA extended post-init handler for terrain object hider base buildable objects (client side).
 
 Parameters:
-    0: _object - Map objects hider <OBJECT>
+    0: _object - Terrain objects hider <OBJECT>
 
 Optional:
 
@@ -35,12 +35,12 @@ if (isNil "A3A_building_EHDB") exitWith {};
 
     if (_object getVariable[QGVAR(isTempObject), false]) exitWith {};
 
-    private _config = configOf _object >> "Properties";
-    private _shape = getText(_config >> "shape");
+    private _config = configOf _object >> QGVAR(Properties);
+    private _shape = getText(_config >> "previewShape");
     private _balls = switch (_shape) do {
         case "ellipse": {
-            private _radiusX = getNumber(_config >> "width");
-            private _radiusY = getNumber(_config >> "height");
+            private _radiusX = getNumber(_config >> "previewWidth");
+            private _radiusY = getNumber(_config >> "previewHeight");
             private _points = [];
 
             for "_angle" from 0 to 360 step 20 do {
@@ -51,8 +51,8 @@ if (isNil "A3A_building_EHDB") exitWith {};
         };
 
         case "rectangle": {
-            private _width = getNumber(_config >> "width");
-            private _height = getNumber(_config >> "height");
+            private _width = getNumber(_config >> "previewWidth");
+            private _height = getNumber(_config >> "previewHeight");
             [
                 [-_width / 2, -_height / 2, 0],
                 [0, -_height / 2, 0],

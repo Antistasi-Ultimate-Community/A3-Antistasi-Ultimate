@@ -144,12 +144,10 @@
     {"A3AU_TerrainSmoother_Small_F", 1000}, \
     {"A3AU_TerrainSmoother_Medium_F", 2500}, \
     {"A3AU_TerrainSmoother_Large_F", 5000}, \
-    {QEGVAR(ultimate,BB_MapObjectHider_Circle5x5), 625}, \
-    {QEGVAR(ultimate,BB_MapObjectHider_Square5x5), 625}, \
-    {QEGVAR(ultimate,BB_MapObjectHider_Circle10x10), 1250}, \
-    {QEGVAR(ultimate,BB_MapObjectHider_Square10x10), 1250}, \
-    {QEGVAR(ultimate,BB_MapObjectHider_Circle20x20), 2500}, \
-    {QEGVAR(ultimate,BB_MapObjectHider_Square20x20), 2500}, \
+    {QEGVAR(ultimate,BB_TerrainObjectHider_Circle4x4), 275}, \
+    {QEGVAR(ultimate,BB_TerrainObjectHider_Circle8x8), 1250}, \
+    {QEGVAR(ultimate,BB_TerrainObjectHider_Circle15x15), 2750}, \
+    {QEGVAR(ultimate,BB_TerrainObjectHider_Circle30x30), 5000}, \
     {"Land_BagBunker_Large_F", 250}, \
     {"Land_BagBunker_Small_F", 150}, \
     {"Land_Bunker_02_light_double_F", 500}, \
