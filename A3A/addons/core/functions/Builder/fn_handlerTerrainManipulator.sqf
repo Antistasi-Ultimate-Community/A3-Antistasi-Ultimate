@@ -29,7 +29,7 @@ private _properties = configOf _object >> QGVAR(Properties);
 private _actions = getArray(_properties >> "actions");
 
 if ("terrainCleaner" in _actions) then {
-    [_object, getNumber(_properties >> "cleanRadius")] call A3A_fnc_terrainCleaner;
+    [_object, getNumber(_properties >> "cleanRadius"), getArray(_properties >> "cleanTerrainTypes")] call A3A_fnc_terrainCleaner;
 };
 
 if ("terrainSmoother" in _actions) then {

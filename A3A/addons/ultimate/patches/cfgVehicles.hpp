@@ -106,13 +106,14 @@ class CfgVehicles {
     class A3AU_VegetationCleaner_Base_F: Land_Axe_F {
         scope = 0; // Hide from editor
         scopeCurator = 0; // Hide from Zeus
-        displayName = "Terrain Cleaner Base";
+        displayName = "Vegetation Cleaner Base";
         author = AUTHOR;
         authors[] = {"wersal454", "UnseenKill"};
 
         class EGVAR(core,Properties) {
             actions[] = {"terrainCleaner","hideObject"};
             cleanRadius = 0;
+            cleanTerrainTypes[] = {"ROCKS", "ROCK", "TREE", "BUSH", "SMALL TREE", "HIDE"};
         };
 
         EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
@@ -121,7 +122,7 @@ class CfgVehicles {
 
     class A3AU_VegetationCleaner_VerySmall_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
-        displayName = "Terrain Cleaner (4 m)";
+        displayName = "Vegetation Cleaner (4 m)";
 
         class EGVAR(core,Properties): EGVAR(core,Properties) {
             cleanRadius = 4;
@@ -129,7 +130,7 @@ class CfgVehicles {
     };
     class A3AU_VegetationCleaner_Small_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
-        displayName = "Terrain Cleaner (8 m)";
+        displayName = "Vegetation Cleaner (8 m)";
 
         class EGVAR(core,Properties): EGVAR(core,Properties) {
             cleanRadius = 8;
@@ -137,7 +138,7 @@ class CfgVehicles {
     };
     class A3AU_VegetationCleaner_Medium_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
-        displayName = "Terrain Cleaner (15 m)";
+        displayName = "Vegetation Cleaner (15 m)";
 
         class EGVAR(core,Properties): EGVAR(core,Properties) {
             cleanRadius = 15;
@@ -145,7 +146,7 @@ class CfgVehicles {
     };
     class A3AU_VegetationCleaner_Large_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
-        displayName = "Terrain Cleaner (30 m)";
+        displayName = "Vegetation Cleaner (30 m)";
 
         class EGVAR(core,Properties): EGVAR(core,Properties) {
             cleanRadius = 30;
