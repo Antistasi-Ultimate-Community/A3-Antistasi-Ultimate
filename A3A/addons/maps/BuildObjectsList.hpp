@@ -136,10 +136,10 @@
     {"Land_SandbagBarricade_01_F", 40}, \
     {"A3AU_RebHelipad_Square_F", 5000}, \
     {"A3AU_RebHelipad_Circle_F", 5000}, \
-    {"A3AU_TerrainCleaner_VerySmall_F", 250}, \
-    {"A3AU_TerrainCleaner_Small_F", 1000}, \
-    {"A3AU_TerrainCleaner_Medium_F", 2500}, \
-    {"A3AU_TerrainCleaner_Large_F", 5000}, \
+    {"A3AU_VegetationCleaner_VerySmall_F", 250}, \
+    {"A3AU_VegetationCleaner_Small_F", 1000}, \
+    {"A3AU_VegetationCleaner_Medium_F", 2500}, \
+    {"A3AU_VegetationCleaner_Large_F", 5000}, \
     {"A3AU_TerrainSmoother_VerySmall_F", 250}, \
     {"A3AU_TerrainSmoother_Small_F", 1000}, \
     {"A3AU_TerrainSmoother_Medium_F", 2500}, \

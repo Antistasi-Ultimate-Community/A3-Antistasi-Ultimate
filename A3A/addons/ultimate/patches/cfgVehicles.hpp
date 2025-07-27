@@ -103,7 +103,7 @@ class CfgVehicles {
         };
     };
 
-    class A3AU_TerrainCleaner_Base_F: Land_Axe_F {
+    class A3AU_VegetationCleaner_Base_F: Land_Axe_F {
         scope = 0; // Hide from editor
         scopeCurator = 0; // Hide from Zeus
         displayName = "Terrain Cleaner Base";
@@ -119,7 +119,7 @@ class CfgVehicles {
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     };
 
-    class A3AU_TerrainCleaner_VerySmall_F: A3AU_TerrainCleaner_Base_F {
+    class A3AU_VegetationCleaner_VerySmall_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
         displayName = "Terrain Cleaner (4 m)";
 
@@ -127,7 +127,7 @@ class CfgVehicles {
             cleanRadius = 4;
         };
     };
-    class A3AU_TerrainCleaner_Small_F: A3AU_TerrainCleaner_Base_F {
+    class A3AU_VegetationCleaner_Small_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
         displayName = "Terrain Cleaner (8 m)";
 
@@ -135,7 +135,7 @@ class CfgVehicles {
             cleanRadius = 8;
         };
     };
-    class A3AU_TerrainCleaner_Medium_F: A3AU_TerrainCleaner_Base_F {
+    class A3AU_VegetationCleaner_Medium_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
         displayName = "Terrain Cleaner (15 m)";
 
@@ -143,7 +143,7 @@ class CfgVehicles {
             cleanRadius = 15;
         };
     };
-    class A3AU_TerrainCleaner_Large_F: A3AU_TerrainCleaner_Base_F {
+    class A3AU_VegetationCleaner_Large_F: A3AU_VegetationCleaner_Base_F {
         scope = 2;
         displayName = "Terrain Cleaner (30 m)";
 
