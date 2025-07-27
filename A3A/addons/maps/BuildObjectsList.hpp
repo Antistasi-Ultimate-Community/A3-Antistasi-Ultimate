@@ -136,6 +136,14 @@
     {"Land_SandbagBarricade_01_F", 40}, \
     {"A3AU_RebHelipad_Square_F", 5000}, \
     {"A3AU_RebHelipad_Circle_F", 5000}, \
+    {"A3AU_TerrainCleaner_VerySmall_F", 250}, \
+    {"A3AU_TerrainCleaner_Small_F", 1000}, \
+    {"A3AU_TerrainCleaner_Medium_F", 2500}, \
+    {"A3AU_TerrainCleaner_Large_F", 5000}, \
+    {"A3AU_TerrainSmoother_VerySmall_F", 250}, \
+    {"A3AU_TerrainSmoother_Small_F", 1000}, \
+    {"A3AU_TerrainSmoother_Medium_F", 2500}, \
+    {"A3AU_TerrainSmoother_Large_F", 5000}, \
     {QEGVAR(ultimate,BB_MapObjectHider_Circle5x5), 625}, \
     {QEGVAR(ultimate,BB_MapObjectHider_Square5x5), 625}, \
     {QEGVAR(ultimate,BB_MapObjectHider_Circle10x10), 1250}, \
