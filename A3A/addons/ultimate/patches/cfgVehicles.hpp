@@ -32,42 +32,124 @@ class CfgVehicles {
     class Land_HelipadSquare_F;
 
     class A3AU_RebHelipad_Circle_F: Land_HelipadCircle_F {
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_terrainCleaner);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_terrainCleaner);
+        class EGVAR(core,Properties) {
+            actions[] = {"terrainCleaner"};
+            cleanRadius = 30;
+        };
+
+        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     };
 
     class A3AU_RebHelipad_Square_F: Land_HelipadSquare_F {
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_terrainCleaner);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_terrainCleaner);
+        class EGVAR(core,Properties) {
+            actions[] = {"terrainCleaner"};
+            cleanRadius = 30;
+        };
+
+        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     };
 
     class Land_Shovel_F;
     class Land_Axe_F;
 
-    class A3AU_TerrainSmoother_VerySmall_F: Land_Shovel_F {
-        displayName = Terrain Smoother (4 m); ////needs to be localized
-    };
-    class A3AU_TerrainSmoother_Small_F: Land_Shovel_F {
-        displayName = Terrain Smoother (8 m); ////needs to be localized
-    };
-    class A3AU_TerrainSmoother_Medium_F: Land_Shovel_F {
-        displayName = Terrain Smoother (15 m); ////needs to be localized
-    };
-    class A3AU_TerrainSmoother_Large_F: Land_Shovel_F {
-        displayName = Terrain Smoother (30 m); ////needs to be localized
+    class A3AU_TerrainSmoother_Base_F: Land_Shovel_F {
+        scope = 0; // Hide from editor
+        scopeCurator = 0; // Hide from Zeus
+        displayName = "Terrain Smoother Base";
+        author = AUTHOR;
+        authors[] = {"wersal454", "UnseenKill"};
+
+        class EGVAR(core,Properties) {
+            actions[] = {"terrainSmoother","hideObject"};
+            smoothRadius[] = {0, 0}; // <main zone>,<smoothing zone>
+        };
+
+        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     };
 
-    class A3AU_TerrainCleaner_VerySmall_F: Land_Axe_F {
-        displayName = Terrain Cleaner (4 m); ////needs to be localized
+    class A3AU_TerrainSmoother_VerySmall_F: A3AU_TerrainSmoother_Base_F {
+        scope = 2;
+        displayName = "Terrain Smoother (4 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            smoothRadius[] = {4, 8};
+        };
     };
-    class A3AU_TerrainCleaner_Small_F: Land_Axe_F {
-        displayName = Terrain Cleaner (8 m); ////needs to be localized
+    class A3AU_TerrainSmoother_Small_F: A3AU_TerrainSmoother_Base_F {
+        scope = 2;
+        displayName = "Terrain Smoother (8 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            smoothRadius[] = {8, 16};
+        };
     };
-    class A3AU_TerrainCleaner_Medium_F: Land_Axe_F {
-        displayName = Terrain Cleaner (15 m); ////needs to be localized
+    class A3AU_TerrainSmoother_Medium_F: A3AU_TerrainSmoother_Base_F {
+        scope = 2;
+        displayName = "Terrain Smoother (15 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            smoothRadius[] = {15, 27};
+        };
     };
-    class A3AU_TerrainCleaner_Large_F: Land_Axe_F {
-        displayName = Terrain Cleaner (30 m); ////needs to be localized
+    class A3AU_TerrainSmoother_Large_F: A3AU_TerrainSmoother_Base_F {
+        scope = 2;
+        displayName = "Terrain Smoother (30 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            smoothRadius[] = {30, 42};
+        };
+    };
+
+    class A3AU_TerrainCleaner_Base_F: Land_Axe_F {
+        scope = 0; // Hide from editor
+        scopeCurator = 0; // Hide from Zeus
+        displayName = "Terrain Cleaner Base";
+        author = AUTHOR;
+        authors[] = {"wersal454", "UnseenKill"};
+
+        class EGVAR(core,Properties) {
+            actions[] = {"terrainCleaner","hideObject"};
+            cleanRadius = 0;
+        };
+
+        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+    };
+
+    class A3AU_TerrainCleaner_VerySmall_F: A3AU_TerrainCleaner_Base_F {
+        scope = 2;
+        displayName = "Terrain Cleaner (4 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            cleanRadius = 4;
+        };
+    };
+    class A3AU_TerrainCleaner_Small_F: A3AU_TerrainCleaner_Base_F {
+        scope = 2;
+        displayName = "Terrain Cleaner (8 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            cleanRadius = 8;
+        };
+    };
+    class A3AU_TerrainCleaner_Medium_F: A3AU_TerrainCleaner_Base_F {
+        scope = 2;
+        displayName = "Terrain Cleaner (15 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            cleanRadius = 15;
+        };
+    };
+    class A3AU_TerrainCleaner_Large_F: A3AU_TerrainCleaner_Base_F {
+        scope = 2;
+        displayName = "Terrain Cleaner (30 m)";
+
+        class EGVAR(core,Properties): EGVAR(core,Properties) {
+            cleanRadius = 30;
+        };
     };
 
     class VR_3DSelector_01_default_F;
