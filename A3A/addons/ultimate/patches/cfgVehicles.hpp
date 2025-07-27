@@ -28,27 +28,42 @@ class CfgVehicles {
         // vehicleClass="";
     };
 
-    class Land_HelipadCircle_F;
-    class Land_HelipadSquare_F;
+    class Helipad_base_F;
 
-    class A3AU_RebHelipad_Circle_F: Land_HelipadCircle_F {
+    class A3AU_RebHelipad_base_F: Helipad_base_F {
+        accuracy = 1000;
+        author = AUTHOR;
+        authors[] = {"wersal454", "UnseenKill"};
+
         EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
         class EGVAR(core,Properties) {
-            actions[] = {"terrainCleaner"};
+            actions[] = {"terrainCleaner", "terrainSmoother"};
             cleanRadius = 30;
+            cleanTerrainTypes[] = {};
+            smoothRadius[] = {40, 70}; // <main zone>,<smoothing zone>
         };
     };
 
-    class A3AU_RebHelipad_Square_F: Land_HelipadSquare_F {
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+    class A3AU_RebHelipad_Circle_F: A3AU_RebHelipad_base_F {
+        scope = 2;
+        scopeCurator = 2;
 
-        class EGVAR(core,Properties) {
-            actions[] = {"terrainCleaner"};
-            cleanRadius = 30;
-        };
+        displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0;
+        editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadCircle_F.jpg";
+        model = "\A3\Structures_F\Mil\Helipads\HelipadCircle_F.p3d";
+    };
+
+    class A3AU_RebHelipad_Square_F: A3AU_RebHelipad_base_F {
+        scope = 2;
+        scopeCurator = 2;
+
+        displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0;
+        editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadSquare_F.jpg";
+        mapSize = 11.92;
+        model = "\A3\Structures_F\Mil\Helipads\HelipadSquare_F.p3d";
+        icon = "iconObject_1x1";
     };
 
     class Land_Shovel_F;
@@ -66,7 +81,7 @@ class CfgVehicles {
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
         class EGVAR(core,Properties) {
-            actions[] = {"terrainSmoother","hideObject"};
+            actions[] = {"terrainSmoother", "hideObject"};
             previewShape = "ellipse"; // ellipse or rectangle
             smoothRadius[] = {0, 0}; // <main zone>,<smoothing zone>
         };
@@ -125,7 +140,7 @@ class CfgVehicles {
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
         class EGVAR(core,Properties) {
-            actions[] = {"terrainCleaner","hideObject"};
+            actions[] = {"terrainCleaner", "hideObject"};
             cleanRadius = 0;
             cleanTerrainTypes[] = {"ROCKS", "ROCK", "TREE", "BUSH", "SMALL TREE", "HIDE"};
             previewShape = "ellipse"; // ellipse or rectangle
@@ -188,7 +203,7 @@ class CfgVehicles {
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
         class EGVAR(core,Properties) {
-            actions[] = {"terrainCleaner","hideObject"};
+            actions[] = {"terrainCleaner", "hideObject"};
             cleanRadius = 0;
             cleanTerrainTypes[] = {};
             previewShape = "ellipse"; // ellipse or rectangle
