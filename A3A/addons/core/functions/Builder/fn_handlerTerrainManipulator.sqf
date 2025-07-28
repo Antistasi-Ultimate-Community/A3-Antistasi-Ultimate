@@ -28,6 +28,10 @@ if !assert(!isNull _object) exitWith {};
 private _properties = configOf _object >> QGVAR(Properties);
 private _actions = getArray(_properties >> "actions");
 
+if (A3U_HelipadTerrainSmoothing && { "terrainSmootherExperimental" in _actions }) then {
+    _actions pushBack "terrainSmoother";
+};
+
 if ("terrainCleaner" in _actions) then {
     [_object, getNumber(_properties >> "cleanRadius"), getArray(_properties >> "cleanTerrainTypes")] call A3A_fnc_terrainCleaner;
 };

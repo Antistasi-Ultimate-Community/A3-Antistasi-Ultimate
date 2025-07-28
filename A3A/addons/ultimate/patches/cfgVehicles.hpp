@@ -39,7 +39,7 @@ class CfgVehicles {
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
         class EGVAR(core,Properties) {
-            actions[] = {"terrainCleaner", "terrainSmoother"};
+            actions[] = {"terrainCleaner", "terrainSmootherExperimental"};
             cleanRadius = 30;
             cleanTerrainTypes[] = {};
             smoothRadius[] = {40, 70}; // <main zone>,<smoothing zone>
