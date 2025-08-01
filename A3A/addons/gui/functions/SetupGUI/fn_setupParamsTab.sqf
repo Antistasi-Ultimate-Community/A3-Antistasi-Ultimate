@@ -25,12 +25,14 @@ switch (_mode) do
         private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
         private _advParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_adv_label");
         private _expParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_exp_label");
+        private _a3ueParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_a3ue_label");
         private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
 
         _paramsType lbSetValue [_basicParamsIndex, 0];
         _paramsType lbSetValue [_advParamsIndex, 1];
         _paramsType lbSetValue [_expParamsIndex, 2];
-        _paramsType lbSetValue [_devParamsIndex, 3];
+        _paramsType lbSetValue [_a3ueParamsIndex, 3];
+        _paramsType lbSetValue [_devParamsIndex, 4];
 
         _paramsType lbSetCurSel _basicParamsIndex;
 
@@ -192,7 +194,8 @@ switch (_mode) do
             case (0): { ["Basic"] };
             case (1): { ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot"] };
             case (2): { ["Experimental"] };
-            case (3): { ["Development"] };
+            case (3): { ["A3UE"] };
+            case (4): { ["Development"] };
         };
 
         private _rowCount = -1;

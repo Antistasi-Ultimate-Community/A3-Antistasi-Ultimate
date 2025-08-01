@@ -3262,6 +3262,17 @@
                 <Portuguese>Parâmetros experimentais</Portuguese>
                 <Chinesesimp>实验参数</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_a3ue_label">
+                <Original>A3UE Parameters</Original>
+                <Czech>Parametry A3UE</Czech>
+                <French>Paramètres A3UE</French>
+                <Italian>Parametri A3UE</Italian>
+                <Korean>A3UE 매개 변수</Korean>
+                <Russian>Параметры A3UE</Russian>
+                <Polish>Parametry A3UE</Polish>
+                <Portuguese>Parâmetros A3UE</Portuguese>
+                <Chinesesimp>A3UE 参数</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Development Parameters</Original>
                 <Czech>Parametry vývoje</Czech>
