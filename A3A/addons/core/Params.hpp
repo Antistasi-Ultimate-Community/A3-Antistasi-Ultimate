@@ -486,8 +486,8 @@ class Params
     class deathPenalty: PlusParams
     {
         title = $STR_params_deathPenalty;
-        values[] = {15, 30, 50, 75, 100};
-        texts[] = {"15%", "30%", "50%", "75%", "100%"};
+        values[] = {0, 15, 30, 50, 75, 100};
+        texts[] = {"0%", "15%", "30%", "50%", "75%", "100%"};
         default = 30;
     };
     class saveZeusBuildings: PlusParams
