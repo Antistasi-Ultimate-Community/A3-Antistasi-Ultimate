@@ -21,7 +21,13 @@
 
 ["vehiclesBasic", ["SPEX_CW_G503_MB"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["SPEX_CW_G503_MB", "SPEX_CW_Bedford_MWD"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["SPEX_CW_G503_MB_M2", "SPEX_CW_Humber_LRC"]] call _fnc_saveToTemplate;
+private _vehiclesLightArmed = ["SPEX_CW_G503_MB_M2", "SPEX_CW_Humber_LRC"];
+
+if (isClass (configFile >> "CfgPatches" >> "SPEV_Core")) then {
+    _vehiclesLightArmed append ["SPEV_CW_T17E1"];
+};
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+
 ["vehiclesTrucks", ["SPEX_CW_Bedford_MWD_Open", "SPEX_CW_M5_Halftrack_Unarmed", "SPE_CCKW_353_Open", "SPE_CCKW_353"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["SPE_CCKW_353_Open"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["SPE_CCKW_353_Ammo", "SPEX_CW_Bedford_MWD_Ammo"]] call _fnc_saveToTemplate;

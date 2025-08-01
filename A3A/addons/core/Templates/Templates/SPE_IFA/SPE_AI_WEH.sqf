@@ -21,7 +21,14 @@
 
 ["vehiclesBasic", ["SPE_ST_R200_Unarmed"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["SPE_GER_R200_Hood"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["SPE_GER_R200_MG34", "SPE_ST_OpelBlitz_Flak38"]] call _fnc_saveToTemplate;
+
+private _vehiclesLightArmed = ["SPE_GER_R200_MG34", "SPE_ST_OpelBlitz_Flak38"];
+
+if (isClass (configFile >> "CfgPatches" >> "SPEV_Core")) then {
+    _vehiclesLightArmed append ["SPEV_Sdkfz234_2","SPEV_Sdkfz234_4"];
+};
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+
 ["vehiclesTrucks", ["SPE_ST_OpelBlitz_Open", "SPE_ST_OpelBlitz"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["SPE_ST_OpelBlitz_Open"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["SPE_ST_OpelBlitz_Ammo"]] call _fnc_saveToTemplate;
