@@ -727,13 +727,6 @@ class Params
         type = "A3UE";
         lockOnSave = 0;
     };
-    class TitleA3UE: A3UEParams
-    {
-        title = $STR_params_A3UE_header;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
-    };
 
     class BalanceParams
     {
