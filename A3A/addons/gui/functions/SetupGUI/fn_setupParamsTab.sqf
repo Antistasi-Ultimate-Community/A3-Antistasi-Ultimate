@@ -17,29 +17,55 @@ private _display = findDisplay A3A_IDD_SETUPDIALOG;
 private _paramsTable = _display displayCtrl A3A_IDC_SETUP_PARAMSTABLE;
 private _paramsType = _display displayCtrl A3A_IDC_SETUP_PARAMSTYPE;
 
+private _paramsCategories = [
+    [localize "STR_antistasi_dialogs_setup_params_basic_label", ["Basic"]],
+    [localize "STR_antistasi_dialogs_setup_params_adv_label", ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot"]],
+    [localize "STR_antistasi_dialogs_setup_params_exp_label", ["Experimental"]],
+    [localize "STR_antistasi_dialogs_setup_params_a3ue_label", ["A3UE"]],
+    [localize "STR_antistasi_dialogs_setup_params_dev_label", ["Development"]]
+];
+
+/**
+ * Creates a map from the selection index to the parameter types.
+ *
+ * Resulting map looks like this:
+ * ```
+ * [
+ *     [0, ["Basic"]],
+ *     [1, ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot"]],
+ *     // etc.
+ * ]
+ * ```
+ */
+private _selectionToTypesMap = createHashMapFromArray([] call {
+    private _map = [];
+
+    {
+        _map pushBack[_foreachIndex, _x select 1];
+    } forEach _paramsCategories;
+
+    _map;
+});
+
 switch (_mode) do
 {
     case ("onLoad"):
     {
         // * Populate the Parameter Type Dropdown
-        private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
-        private _advParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_adv_label");
-        private _expParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_exp_label");
-        private _a3ueParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_a3ue_label");
-        private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
+        {
+            _x params[["_title", "", [""]]];
+            private _index = _paramsType lbAdd _title;
+            _paramsType lbSetValue[_index, _foreachIndex];
+        } forEach _paramsCategories;
 
-        _paramsType lbSetValue [_basicParamsIndex, 0];
-        _paramsType lbSetValue [_advParamsIndex, 1];
-        _paramsType lbSetValue [_expParamsIndex, 2];
-        _paramsType lbSetValue [_a3ueParamsIndex, 3];
-        _paramsType lbSetValue [_devParamsIndex, 4];
-
-        _paramsType lbSetCurSel _basicParamsIndex;
+        _paramsType lbSetCurSel 0;
 
         // * Create ALL the param controls
         private _allCtrls = [];
         private _allTextCtrls = [];
         private _allValsCtrls = [];
+        private _optionsSeen = createHashMap;
+
         {
             private _type = getText (_x/"type");
             private _title = getText (_x/"title");
@@ -49,18 +75,20 @@ switch (_mode) do
             private _default = getNumber (_x/"default");
             private _defaultIndex = _vals find _default;
 
-            if (!isNil "_title") then {
-                private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
-                _allTextCtrls pushBack [configName _x, _textCtrl];
-                _textCtrl ctrlEnable false;
-                _textCtrl ctrlSetFade 1;
-                _textCtrl ctrlSetText _title;
-                if (_tooltip isNotEqualTo "") then {
-                    _textCtrl ctrlSetTooltip _tooltip;
-                };
-                _textCtrl setVariable ["type", _type];
-                _textCtrl ctrlCommit 0;
+            if isText(_x / "title") then {
+                _optionsSeen set[_type, true]; // seen at least one instance of this type
             };
+
+            private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
+            _allTextCtrls pushBack [configName _x, _textCtrl];
+            _textCtrl ctrlEnable false;
+            _textCtrl ctrlSetFade 1;
+            _textCtrl ctrlSetText _title;
+            if (_tooltip isNotEqualTo "") then {
+                _textCtrl ctrlSetTooltip _tooltip;
+            };
+            _textCtrl setVariable ["type", _type];
+            _textCtrl ctrlCommit 0;
 
             if (_title isNotEqualTo "" && {_texts isNotEqualTo [""]}) then {
                 private _valsCtrl = _display ctrlCreate ["A3A_ComboBox_Small", A3A_IDC_SETUP_PARAMSVALS + _forEachIndex, _paramsTable];
@@ -184,20 +212,29 @@ switch (_mode) do
         _paramsTable setVariable ["allTextCtrls", _allTextCtrls];
         _paramsTable setVariable ["allValsCtrls", _allValsCtrls];
 
+        // Now look for empty listbox rows and remove them (right now to suppress showing empty "A3UE" section)
+        _selectionToTypesMap apply {
+            private _selection = _x;
+            private _types = _y;
+            private _found = (keys _optionsSeen findIf { _x in _types }) isNotEqualTo -1;
+
+            if (!_found) then {
+                for "_i" from 0 to ((lbSize A3A_IDC_SETUP_PARAMSTYPE) - 1) do {
+                    if (lbValue[A3A_IDC_SETUP_PARAMSTYPE, _i] isEqualTo _selection) then {
+                        lbDelete[A3A_IDC_SETUP_PARAMSTYPE, _i];
+                        break;
+                    };
+                };
+            };            
+        };
+
         ["update"] call A3A_fnc_setupParamsTab;
     };
 
 	case ("update"):
     {
-        private _shownTypes = switch (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) do {
-            case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
-            case (0): { ["Basic"] };
-            case (1): { ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot"] };
-            case (2): { ["Experimental"] };
-            case (3): { ["A3UE"] };
-            case (4): { ["Development"] };
-        };
-
+        private _selection = lbValue[A3A_IDC_SETUP_PARAMSTYPE, lbCurSel A3A_IDC_SETUP_PARAMSTYPE];
+        private _shownTypes = _selectionToTypesMap getOrDefault[_selection, []];
         private _rowCount = -1;
         private _allValsCtrls = createHashMapFromArray (_paramsTable getVariable "allValsCtrls");
         {

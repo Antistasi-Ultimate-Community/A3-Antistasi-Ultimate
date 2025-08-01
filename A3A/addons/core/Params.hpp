@@ -8,7 +8,7 @@ class Params
         };
 
         * params need to inherit from that class,
-        * and you need to add the type string to A3A/addons/gui/functions/SetupGUI/fn_setupParamsTab.sqf
+        * and you need to register the params category to A3A/addons/gui/functions/SetupGUI/fn_setupParamsTab.sqf
 
         * Example:
 
@@ -31,40 +31,27 @@ class Params
             default = 69;
         };
 
-        * and in A3A/addons/gui/functions/SetupGUI/fn_setupParamsTab.sqf (case ("update")):
+        * and on the top of A3A/addons/gui/functions/SetupGUI/fn_setupParamsTab.sqf:
 
-        private _shownTypes = switch (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) do {
-            case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
-            case (0): { ["Basic"] };
-            case (1): { ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot", "SuperDuperCool"] }; // Generally, new sections can probably be added here to show up as a section under "Advanced Params"
-            case (2): { ["Experimental"] };
-            case (3): { ["Development"] };
-        };
+        private _paramsCategories = [
+            [localize "STR_antistasi_dialogs_setup_params_basic_label", ["Basic"]],
+            [localize "STR_antistasi_dialogs_setup_params_adv_label", ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot", "SuperDuperCool"]], // <-- append here
+            [localize "STR_antistasi_dialogs_setup_params_exp_label", ["Experimental"]],
+            [localize "STR_antistasi_dialogs_setup_params_a3ue_label", ["A3UE"]],
+            [localize "STR_antistasi_dialogs_setup_params_dev_label", ["Development"]]
+        ];
 
         * if you want your section to show up as an entirely new option in the Parameter Types Dropdown ComboBox,
-        * you'll need to add the type to the dropdown under case ("onLoad") like: 
+        * simply add it to the _paramsCategories array above, like so:
 
-        // * Populate the Parameter Type Dropdown
-        private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
-        private _advParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_adv_label");
-        private _expParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_exp_label");
-        private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
-        private _sdcParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_sdc_label"); // give it a text value here
-
-        _paramsType lbSetValue [_basicParamsIndex, 0];
-        _paramsType lbSetValue [_advParamsIndex, 1];
-        _paramsType lbSetValue [_expParamsIndex, 2];
-        _paramsType lbSetValue [_devParamsIndex, 3];
-        _paramsType lbSetValue [_sdcParamsIndex, 4]; // and give it an integer value here
-
-        _paramsType lbSetCurSel _basicParamsIndex;
-
-        * and then add a new case with the above integer value in the _shownTypes switch like:
-
-        private _shownTypes = switch (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) do {
-            ...
-            case (4): { ["SuperDuperCool"] };
-        };
+        private _paramsCategories = [
+            [localize "STR_antistasi_dialogs_setup_params_basic_label", ["Basic"]],
+            [localize "STR_antistasi_dialogs_setup_params_adv_label", ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot"]],
+            [localize "STR_antistasi_dialogs_setup_params_exp_label", ["Experimental"]],
+            [localize "STR_antistasi_dialogs_setup_params_a3ue_label", ["A3UE"]],
+            [localize "STR_SuperDuperCool_params_name", ["SuperDuperCool"]], // <-- add this line
+            [localize "STR_antistasi_dialogs_setup_params_dev_label", ["Development"]]
+        ];
 
     */
 
