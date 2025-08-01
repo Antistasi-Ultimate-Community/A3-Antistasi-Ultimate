@@ -58,16 +58,29 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 ["vehiclesTransportBoats", _vehiclesTransportBoats] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _vehiclesGunBoats] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["SPE_P47"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["SPE_P47"]] call _fnc_saveToTemplate;
-
+private _vehiclesPlanesCAS = ["SPE_P47"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["SPE_P47"];
 private _vehiclesPlanesTransport = [];
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_p51d","sab_fl_p51b","sab_fl_f4f","sab_fl_sbd","sab_fl_f4u","sab_fl_f4u"];
+	_vehiclesPlanesAA append ["sab_fl_p51d","sab_fl_p51b"];
+};
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_tbf","sab_sw_p40"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_a26"];
+	_vehiclesPlanesAA append ["sab_sw_p40","sab_sw_p38"];
+};
 if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
     _vehiclesPlanesTransport append ["SPEX_C47_Skytrain"];
 };
 if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
     _vehiclesPlanesTransport append ["JK_B_C47_F"];
 };
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
