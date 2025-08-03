@@ -2600,8 +2600,14 @@ switch _mode do {
 			(_loadPercentage * 100) toFixed 1, "%", _loadAbs, _loadLimit
 		];
 
-		if (_loadPercentage >= 0.9) then {
-			_message pushBack localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_warning";
+		switch true do {
+			case (_loadPercentage >= 1): {
+				_message pushBack localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_fatal";
+				playSound "A3AP_UiFailure";
+			};
+			case (_loadPercentage >= 0.8): {
+				_message pushBack localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_warning";
+			};
 		};
 
 		_message pushBack format["%1: %2%3 (%4/%5)", localize(_load select 2), 
