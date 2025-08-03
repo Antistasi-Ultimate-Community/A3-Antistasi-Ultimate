@@ -1,7 +1,7 @@
 class vehicles_ScifiVP : vehicles_base
 {
     ITEM(TKE_Ext_Bearcat_AA, 13250, "AA", VEHICLE_CONDITION_AA);
-    ITEM(TKE_Ext_Bearcat_Cannon, 38600, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(TKE_Ext_Bearcat_Cannon, 45220, "TANK", VEHICLE_CONDITION_TANK);
     ITEM(TKE_Ext_Bearcat_Unarmed, 5700, "APC", VEHICLE_CONDITION_APC);
     ITEM(TKE_Ext_Bearcat_Autocannon, 23950, "APC", VEHICLE_CONDITION_APC);
     ITEM(TKE_Ext_Dragonfly_A, 42360, "HELI", VEHICLE_CONDITION_HELI);
