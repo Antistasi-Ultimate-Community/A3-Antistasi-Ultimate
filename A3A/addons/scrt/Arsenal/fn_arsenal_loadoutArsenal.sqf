@@ -2583,14 +2583,34 @@ switch _mode do {
 		};
 
 		_load = switch _selected do{
-			case IDC_RSCDISPLAYARSENAL_TAB_UNIFORM: {loaduniform player};
-			case IDC_RSCDISPLAYARSENAL_TAB_VEST: {loadvest player};
-			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {loadbackpack player};
+			case IDC_RSCDISPLAYARSENAL_TAB_UNIFORM: {[loaduniform player, getContainerMaxLoad uniform player, "STR_antistasi_dialogs_hq_button_rebel_loadouts_container_uniform"]};
+			case IDC_RSCDISPLAYARSENAL_TAB_VEST: {[loadvest player, getContainerMaxLoad vest player, "STR_antistasi_dialogs_hq_button_rebel_loadouts_container_vest"]};
+			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {[loadbackpack player, getContainerMaxLoad backpack player, "STR_antistasi_dialogs_hq_button_rebel_loadouts_container_backpack"]};
 		};
 
-		_ctrlLoadCargo progresssetposition _load;
+		_ctrlLoadCargo progresssetposition (_load select 0);
+
+		private _loadPercentage = load player;
+		private _loadAbs = loadAbs player;
+		private _loadLimit = getNumber(configFile >> "CfgInventoryGlobalVariable" >> "maxSoldierLoad");
+		private _message = [];
+
+		_message pushBack format["%1 %2%3 (%4/%5)", 
+			localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_load_caption", 
+			(_loadPercentage * 100) toFixed 1, "%", _loadAbs, _loadLimit
+		];
+
+		if (_loadPercentage >= 0.9) then {
+			_message pushBack localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_warning";
+		};
+
+		_message pushBack format["%1: %2%3 (%4/%5)", localize(_load select 2), 
+			(100 * (_load select 0)) toFixed 1, "%",
+			((_load select 0) * (_load select 1)) toFixed 1, _load select 1
+		];
 
 		["SelectItemRight",[_display,_ctrlList,_index]] call SCRT_fnc_arsenal_loadoutArsenal;
+		['showMessage',[_display, _message joinString " | "]] call SCRT_fnc_arsenal_loadoutArsenal;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
