@@ -10,15 +10,20 @@ Parameters:
     0: _position - ARRAY<PositionATL,radius> or marker name <ARRAY,STRING>
 
 Optional:
-    1: _useExtendedCount - Whether to use average marker size only (false) or
-        anti-flag yoinking marker area plus additional radius (true) (default: false) <BOOL>
+    1: _diameterExtendedCaptureArea - Whether to use average marker size only (traditional, 0) or
+        anti-flag yoinking marker additional diameter (default: 0) <NUMBER>
     2: _npcCallback - Callback to execute for each NPC (group != teamPlayer) in the zone, receives the unit as parameter <CODE>
 
 Example:
     (begin example)
+    // Traditional unit count
     private _counts = [_marker] call A3A_fnc_zoneCountUnits;
-    private _counts = [[getPosATL theBoss, 100], false] call A3A_fnc_zoneCountUnits;
-    private _counts = [_marker, false, {
+
+    // Extended unit count with custom position
+    private _counts = [[getPosATL theBoss, 150], 150] call A3A_fnc_zoneCountUnits;
+
+    // Traditional unit count with callback
+    private _counts = [_marker, 0, {
         params[["_unit", objNull, [objNull]]];
         // Do something with the unit
         hint format["non-friendly %1 is in the zone", name _unit];
@@ -35,10 +40,11 @@ Author:
 ---------------------------------------------------------------------------- */
 params[
     ["_inPos", [], [[], ""]],
-    ["_useExtendedCount", false, [true]],
+    ["_diameterExtendedCaptureArea", 0, [0]],
     ["_npcCallback", {}, [{}]]
 ];
 
+private _useExtendedCount = (_diameterExtendedCaptureArea > 0);
 private _positionAndRadius = if (_inPos isEqualType []) then {
     _inPos;
 } else {
@@ -47,7 +53,7 @@ private _positionAndRadius = if (_inPos isEqualType []) then {
         [];
     } else {
         if (_useExtendedCount) then {
-            [getMarkerPos _inPos, 300];
+            [getMarkerPos _inPos, _diameterExtendedCaptureArea / 2];
         } else {
             [getMarkerPos _inPos, 50 max(((markerSize _inPos select 0) + (markerSize _inPos select 1)) / 2)];
         };

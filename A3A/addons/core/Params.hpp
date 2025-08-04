@@ -601,12 +601,12 @@ class Params
         texts[] = {"5", "10", "15", "20"};
         default = 5;
     };
-    class A3A_useExtendedCaptureArea: ExperimentalParams
+    class A3A_diameterExtendedCaptureArea: ExperimentalParams
     {
-        title = $STR_A3A_Params_useExtendedCaptureArea_title;
-        tooltip = $STR_A3A_Params_useExtendedCaptureArea_tooltip;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        title = $STR_A3A_Params_diameterExtendedCaptureArea_title;
+        tooltip = $STR_A3A_Params_diameterExtendedCaptureArea_tooltip;
+        values[] = {0,150,250,300,350,400,450,500};
+        texts[] = {$STR_A3A_Params_diameterExtendedCaptureArea_traditional, "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
         default = 0;
     };
 

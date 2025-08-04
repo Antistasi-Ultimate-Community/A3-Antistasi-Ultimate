@@ -25,7 +25,7 @@ if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith
     zoneCheckInProgress = false
 };
 
-private _counts = [_marker, A3A_useExtendedCaptureArea] call A3A_fnc_zoneCountUnits;
+private _counts = [_marker, A3A_diameterExtendedCaptureArea] call A3A_fnc_zoneCountUnits;
 private _defenderUnitCount = _counts deleteAt _side;
 _counts deleteAt civilian; // Remove civilian count, we don't care about them
 
