@@ -5513,11 +5513,11 @@
                 <French>Utiliser une zone de capture étendue</French>
             </Key>
             <Key ID="STR_A3A_Params_useExtendedCaptureArea_tooltip">
-                <Original>When capturing/defending locations, use an additional circular area around the flag to consider unit presences.</Original>
-                <Russian>При захвате/защите локаций использовать дополнительную круговую зону вокруг флага для учета присутствия юнитов.</Russian>
-                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域来考虑单位存在。</Chinesesimp>
-                <Korean>위치를 점령/방어할 때, 깃발 주위에 있는 추가 원형 지역을 사용하여 유닛의 존재를 고려합니다.</Korean>
-                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau pour tenir compte de la présence des unités.</French>
+                <Original>When capturing/defending locations, use an additional circular area around the flag (300m) AND the full zone size to consider unit presences.</Original>
+                <Russian>При захвате/защите локаций использовать дополнительную круговую зону вокруг флага (300м) И полную зону для учета присутствия юнитов.</Russian>
+                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域（300米）和整个区域来考虑单位存在。</Chinesesimp>
+                <Korean>위치를 점령/방어할 때, 깃발 주위에 있는 추가 원형 지역(300m)과 전체 지역을 사용하여 유닛의 존재를 고려합니다.</Korean>
+                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau (300m) ET la taille complète de la zone pour tenir compte de la présence des unités.</French>
             </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>

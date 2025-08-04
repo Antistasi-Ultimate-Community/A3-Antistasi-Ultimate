@@ -39,30 +39,19 @@ params[
     ["_npcCallback", {}, [{}]]
 ];
 
-if (_inPos isEqualType "") then {
+private _positionAndRadius = if (_inPos isEqualType []) then {
+    _inPos;
+} else {
     if (markerType _inPos isEqualTo "") then {
         Error_1("No such marker: '%1'",_inPos);
-        _inPos = [];
+        [];
     } else {
         if (_useExtendedCount) then {
-            throw "implement me";
+            [getMarkerPos _inPos, 300];
         } else {
-            _inPos = [getMarkerPos _inPos, 50 max(((markerSize _inPos select 0) + (markerSize _inPos select 1)) / 2)];
+            [getMarkerPos _inPos, 50 max(((markerSize _inPos select 0) + (markerSize _inPos select 1)) / 2)];
         };
     };
-};
-
-if !assert(_inPos isNotEqualTo []) exitWith {};
-
-if !(_inPos params[
-    ["_position", [], [[]], [2,3]],
-    ["_radius", 0, [0]]
-]) exitWith {};
-
-private _units = if (_useExtendedCount) then {
-    throw "implement me"
-} else {
-    allUnits inAreaArray [_position, _radius, _radius];
 };
 
 private _sidesCount = createHashMapFromArray[
@@ -71,6 +60,31 @@ private _sidesCount = createHashMapFromArray[
     [Invaders, 0],
     [civilian, 0]
 ];
+
+if !assert(_positionAndRadius isNotEqualTo []) exitWith { _sidesCount };
+
+if !(_positionAndRadius params[
+    ["_position", [], [[]], [2,3]],
+    ["_radius", 0, [0]]
+]) exitWith { _sidesCount };
+
+private _units = allUnits inAreaArray[_position, _radius, _radius];
+
+if (_useExtendedCount && { _inPos isEqualType "" }) then {
+    markerSize _inPos params["_width", "_height"];
+
+    // Only look for units within marker area if that area is actually larger than the radius
+    if (_width >= _radius || { _height >= _radius }) then {
+        // "appendUnique" all units in the area of the marker
+        _units insert[-1, allUnits inAreaArray[
+            markerPos _inPos,
+            _width,
+            _height,
+            markerDir _inPos,
+            markerShape _inPos isEqualTo "RECTANGLE"
+        ], true];
+    };
+};
 
 _units select {
     // No air units, no dead or unconscious
