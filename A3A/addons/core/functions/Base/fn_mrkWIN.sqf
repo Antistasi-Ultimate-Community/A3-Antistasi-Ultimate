@@ -36,7 +36,7 @@ if (hideEnemyMarkers) then {
 };
 
 private _markerPos = getMarkerPos _markerX;
-private _outpostGridSquare = ((_markerPos#0 toFixed 0) call A3A_fnc_pad_3Digits) + ((_markerPos#1 toFixed 0) call A3A_fnc_pad_3Digits);  // NB: Check if this is the right order for pos-> grid square
+private _outpostGridSquare = mapGridPosition _markerPos;
 
 if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) exitWith {};
 
@@ -60,24 +60,12 @@ _flagX setVariable ["A3A_flagCaptureETA", serverTime + 10, true];
 
 ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3", _outpostGridSquare, _markerX, str player);
 
-private _capRadius = ((markerSize _markerX select 0) + (markerSize _markerX select 1)) / 2;
-_capRadius = 50 max _capRadius;
+private _counts = [_markerX, true, {
+    player reveal (_this select 0);
+}] call A3A_fnc_zoneCountUnits;
 
-private _rebelValue = 0;
-private _enemyValue = 0;
-{
-    if !(_x call A3A_fnc_canFight) then { continue };
-    private _value = linearConversion [_capRadius/2, _capRadius, _markerPos distance2d _x, 1, 0, true];
-    if (side _x == teamPlayer) then {
-        _rebelValue = _rebelValue + _value;
-        continue;
-    };
-    if (side _x == Occupants or side _x == Invaders) then {
-        _enemyValue = _enemyValue + _value;
-        player reveal _x;
-    };
-} forEach (allUnits inAreaArray [_markerPos, _capRadius, _capRadius]);
-
+private _rebelValue = _counts get teamPlayer;
+private _enemyValue = (_counts get Occupants) + (_counts get Invaders);
 
 if (_enemyValue > 2*_rebelValue) exitWith
 {
@@ -112,6 +100,9 @@ if (_cancellationToken #0) exitWith {
 A3A_isPlayerCapturingFlag = nil;
 player removeAction _cancelActionID;
 player playMove "";
+
+private _capRadius = ((markerSize _markerX select 0) + (markerSize _markerX select 1)) / 2;
+_capRadius = 50 max _capRadius;
 
 {
     if (isPlayer _x) then
