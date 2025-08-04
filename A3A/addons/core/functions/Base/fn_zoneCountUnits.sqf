@@ -10,8 +10,8 @@ Parameters:
     0: _position - ARRAY<PositionATL,radius> or marker name <ARRAY,STRING>
 
 Optional:
-    1: _useTraditionalCount - Whether to use average marker size only (true) or
-        anti-flag yoinking marker area plus additional radius (false) (default: true) <BOOL>
+    1: _useExtendedCount - Whether to use average marker size only (false) or
+        anti-flag yoinking marker area plus additional radius (true) (default: false) <BOOL>
     2: _npcCallback - Callback to execute for each NPC (group != teamPlayer) in the zone, receives the unit as parameter <CODE>
 
 Example:
@@ -35,7 +35,7 @@ Author:
 ---------------------------------------------------------------------------- */
 params[
     ["_inPos", [], [[], ""]],
-    ["_useTraditionalCount", true, [true]],
+    ["_useExtendedCount", false, [true]],
     ["_npcCallback", {}, [{}]]
 ];
 
@@ -44,10 +44,10 @@ if (_inPos isEqualType "") then {
         Error_1("No such marker: '%1'",_inPos);
         _inPos = [];
     } else {
-        if (_useTraditionalCount) then {
-            _inPos = [getMarkerPos _inPos, 50 max(((markerSize _inPos select 0) + (markerSize _inPos select 1)) / 2)];
-        } else {
+        if (_useExtendedCount) then {
             throw "implement me";
+        } else {
+            _inPos = [getMarkerPos _inPos, 50 max(((markerSize _inPos select 0) + (markerSize _inPos select 1)) / 2)];
         };
     };
 };
@@ -59,10 +59,10 @@ if !(_inPos params[
     ["_radius", 0, [0]]
 ]) exitWith {};
 
-private _units = if (_useTraditionalCount) then {
-    allUnits inAreaArray [_position, _radius, _radius];
-} else {
+private _units = if (_useExtendedCount) then {
     throw "implement me"
+} else {
+    allUnits inAreaArray [_position, _radius, _radius];
 };
 
 private _sidesCount = createHashMapFromArray[

@@ -601,21 +601,13 @@ class Params
         texts[] = {"5", "10", "15", "20"};
         default = 5;
     };
-    class unconChanceEny : ExperimentalParams
+    class A3A_useExtendedCaptureArea: ExperimentalParams
     {
-        title = $STR_params_unconChanceEny;
-        tooltip = $STR_params_unconChanceEny_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
-        default = 10;
-    };
-    class unconChanceReb : ExperimentalParams
-    {
-        title = $STR_params_unconChanceReb;
-        tooltip = $STR_params_unconChanceReb_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
-        default = 10;
+        title = $STR_A3A_Params_useExtendedCaptureArea_title;
+        tooltip = $STR_A3A_Params_useExtendedCaptureArea_tooltip;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
     };
 
     class BalanceParams

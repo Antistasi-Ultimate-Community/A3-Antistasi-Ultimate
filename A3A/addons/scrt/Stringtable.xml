@@ -5635,75 +5635,26 @@
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
+            <Key ID="STR_A3A_Params_useExtendedCaptureArea_title">
+                <Original>Use Extended Capture Area</Original>
+                <Russian>Использовать расширенную зону захвата</Russian>
+                <Chinesesimp>使用扩展捕获区域</Chinesesimp>
+                <Korean>확장된 점령 지역 사용</Korean>
+                <French>Utiliser une zone de capture étendue</French>
+            </Key>
+            <Key ID="STR_A3A_Params_useExtendedCaptureArea_tooltip">
+                <Original>When capturing/defending locations, use an additional circular area around the flag to consider unit presences.</Original>
+                <Russian>При захвате/защите локаций использовать дополнительную круговую зону вокруг флага для учета присутствия юнитов.</Russian>
+                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域来考虑单位存在。</Chinesesimp>
+                <Korean>위치를 점령/방어할 때, 깃발 주위에 있는 추가 원형 지역을 사용하여 유닛의 존재를 고려합니다.</Korean>
+                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau pour tenir compte de la présence des unités.</French>
+            </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>
                 <Russian>Начните только с разблокированным пистолетом</Russian>
                 <Chinesesimp>仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
-            </Key>
-            <Key ID="STR_params_loadoutArsenalDefaultOverride">
-                <Original>Set all tabs in the AI custom loadout arsenal to be saved by default</Original>
-                <Russian>По умолчанию сохранять все вкладки в пользовательском арсенале снаряжения ИИ</Russian>
-                <Chinesesimp>将 AI 自定义装备库中的所有选项卡设为默认保存</Chinesesimp>
-                <Korean>AI 커스텀 로드아웃 아스널의 모든 탭을 기본적으로 저장</Korean>
-                <French>Enregistrer par défaut tous les onglets de l'arsenal de chargements personnalisés de l'IA</French>
-            </Key>
-            <Key ID="STR_params_loadoutArsenalDefaultOverride_desc">
-                <Original>If enabled, legacy custom loadout behavior will be preserved; when saving a loadout, all items in the loadout will be saved unless specifically excluded. If disabled, only the items in tabs specifically enabled will be saved. All other items will be randomized.</Original>
-                <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Все остальные предметы будут рандомизированы.</Russian>
-                <Chinesesimp>启用时，会保留旧版自定义装备行为；保存装备时，除非被明确排除，否则装备中的所有物品都会被保存。禁用时，只有在专门启用的选项卡中的物品会被保存，其他所有物品将被随机化。</Chinesesimp>
-                <Korean>활성화하면 기존 커스텀 로드아웃 동작이 유지됩니다. 로드아웃을 저장할 때 명시적으로 제외하지 않는 한 로드아웃의 모든 항목이 저장됩니다. 비활성화하면 명시적으로 활성화된 탭의 항목만 저장되며, 나머지 항목은 무작위로 선택됩니다.</Korean>
-                <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
-            </Key>
-            <Key ID="STR_params_limitWeaponsByUnitType">
-                <Original>Limit AI custom loadout weapon selections by unit type</Original>
-                <Russian>Ограничение выбора пользовательского оружия ИИ по типу юнитов</Russian>
-                <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
-                <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
-                <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
-            </Key>
-            <Key ID="STR_params_unconChanceEny">
-                <Original>Enemy AI unconscious chance</Original>
-                <Russian>Неосознанный шанс вражеского ИИ</Russian>
-                <Chinesesimp>敌方AI无意识几率</Chinesesimp>
-                <Korean>적 AI 무의식 확률</Korean>
-                <French>Chance inconsciente de l'IA ennemie</French>
-            </Key>
-            <Key ID="STR_params_unconChanceEny_desc">
-                <Original>Chance for downed enemy AI to become unconscious instead of killed after taking sufficient damage</Original>
-                <Russian>Вероятность того, что сбитый вражеский ИИ потеряет сознание, а не убьется после получения достаточного урона</Russian>
-                <Chinesesimp>被击倒的敌方 AI 在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
-                <Korean>쓰러진 적 AI가 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
-                <French>Chance pour l'IA ennemie abattue de devenir inconsciente au lieu d'être tuée après avoir subi suffisamment de dégâts.</French>
-            </Key>
-            <Key ID="STR_params_unconChanceReb">
-                <Original>Rebel AI and player unconscious chance</Original>
-                <Russian>Искусственный интеллект повстанцев и бессознательный шанс игрока</Russian>
-                <Chinesesimp>叛军AI和玩家无意识的机率</Chinesesimp>
-                <Korean>반란군 AI와 플레이어 무의식 확률</Korean>
-                <French>IA rebelle et chance inconsciente du joueur</French>
-            </Key>
-            <Key ID="STR_params_unconChanceReb_desc">
-                <Original>Chance for downed rebels to become unconscious instead of killed after taking sufficient damage</Original>
-                <Russian>Шанс для сбитых повстанцев потерять сознание, а не погибнуть после получения достаточного урона.</Russian>
-                <Chinesesimp>被击倒的叛军在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
-                <Korean>쓰러진 반란군이 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
-                <French>Chance pour les rebelles abattus de perdre connaissance au lieu d'être tués après avoir subi suffisamment de dégâts</French>
-            </Key>
-            <Key ID="STR_params_enableVehiclesForAI">
-                <Original>Enable AI to man vehicles left near friendly markers by default</Original>
-                <Russian>По умолчанию разрешите ИИ управлять турелями и орудиями транспортных средств, оставленными рядом с дружественными маркерами</Russian>
-                <Chinesesimp>默认启用AI作放置在友方标记附近的车辆</Chinesesimp>
-                <Korean>기본적으로 아군 표식 근처에 배치된 차량을 AI가 조작하도록 활성화하세요</Korean>
-                <French>Permettre à l'IA de manœuvrer par défaut les véhicules laissés près des marqueurs alliés</French>
-            </Key>
-            <Key ID="STR_params_enableVehiclesForAI_desc">
-                <Original>Enable rebel AI to man vehicles (commander / gunner seat) left near friendly markers by default. Note that players can still still enable or disable AI use of specific vehicles by interacting with the vehicle.</Original>
-                <Russian>По умолчанию разрешите ИИ повстанцев садиться на места командира и стрелка в технике, оставленной рядом с маркерами. Обратите внимание, что игроки всё ещё могут запретить или разрешить ИИ использование отдельной техники , путем взаимодействия с ней.</Russian>
-                <Chinesesimp>默认让叛军AI作留在友军标记附近的车辆（指挥官/炮手座位）。请注意，玩家仍然可以通过与载具互动来启用或禁用AI对特定载具的使用。</Chinesesimp>
-                <Korean>기본적으로 아군 표시 근처에 남겨둔 차량(지휘관/포수 좌석)을 조작할 수 있도록 반란군 AI를 활성화하세요. 플레이어는 여전히 특정 차량과 상호작용하여 AI 사용을 활성화하거나 비활성화할 수 있습니다.</Korean>
-                <French>Activez par défaut l'IA rebelle pour manœuvrer les véhicules (siège commandant / mitrailleuse) laissés près des marqueurs alliés par défaut. Notez que les joueurs peuvent toujours activer ou désactiver l'utilisation de véhicules spécifiques par l'IA en interagissant avec le véhicule.</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>[Experimental] Allow futuristic-unfair supports to be used by the enemy</Original>

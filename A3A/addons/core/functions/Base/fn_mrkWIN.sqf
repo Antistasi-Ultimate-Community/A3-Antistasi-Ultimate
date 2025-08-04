@@ -60,7 +60,7 @@ _flagX setVariable ["A3A_flagCaptureETA", serverTime + 10, true];
 
 ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3", _outpostGridSquare, _markerX, str player);
 
-private _counts = [_markerX, true, {
+private _counts = [_markerX, A3A_useExtendedCaptureArea, {
     player reveal (_this select 0);
 }] call A3A_fnc_zoneCountUnits;
 
