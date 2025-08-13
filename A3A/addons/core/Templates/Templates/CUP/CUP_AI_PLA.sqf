@@ -403,7 +403,7 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_eliteLoadoutDataData set ["uniforms", ["PLA_Combat_Uniform_Rolled", "PLA_Combat_Uniform"]];
+_eliteLoadoutData set ["uniforms", ["PLA_Combat_Uniform_Rolled", "PLA_Combat_Uniform"]];
 _eliteLoadoutData set ["vests", ["CUP_V_CPC_communicationsbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_lightbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_weaponsbelt_rngr", "CUP_V_CPC_communications_rngr", "CUP_V_CPC_Fast_rngr", "CUP_V_CPC_light_rngr", "CUP_V_CPC_medical_rngr", "CUP_V_CPC_tl_rngr", "CUP_V_CPC_weapons_rngr"]];
 _eliteLoadoutData set ["helmets", ["PLA_Opscore_SF"]];
 _eliteLoadoutData set ["backpacks", ["PLA_Backpack_Compact", "B_Carryall_oli", "PLA_Backpack", "PLA_Radio_Backpack"]];
