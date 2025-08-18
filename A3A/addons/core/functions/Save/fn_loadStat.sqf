@@ -367,9 +367,23 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'staticsX': {
-            for "_i" from 0 to (count _varvalue) - 1 do {
-                (_varValue#_i) params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+            private _list = +_varValue;
+            private _index = count _list;
+
+            // Retain original order but prioritize after `restorePriority` property
+            _list = _list apply {
+                _x params["_class"];
+                _index = _index - 1;
+                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), _index, _x];
+            };
+
+            // Sort descending; first index wins unless equal, then it's the original order
+            _list sort false;
+            _list apply {
+                _x params["","","_data"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
+                Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save

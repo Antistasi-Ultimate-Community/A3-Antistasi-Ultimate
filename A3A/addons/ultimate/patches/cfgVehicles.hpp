@@ -35,6 +35,7 @@ class CfgVehicles {
         author = AUTHOR;
         authors[] = {"wersal454", "UnseenKill"};
 
+        EGVAR(core,restorePriority) = 95;
         EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
@@ -77,6 +78,7 @@ class CfgVehicles {
         authors[] = {"wersal454", "UnseenKill"};
         model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+        EGVAR(core,restorePriority) = 100;
         EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
@@ -136,6 +138,7 @@ class CfgVehicles {
         authors[] = {"wersal454", "UnseenKill"};
         model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+        EGVAR(core,restorePriority) = 100;
         EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
@@ -199,6 +202,7 @@ class CfgVehicles {
         authors[] = {"UnseenKill"};
         model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+        EGVAR(core,restorePriority) = 90;
         EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
         EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
 
