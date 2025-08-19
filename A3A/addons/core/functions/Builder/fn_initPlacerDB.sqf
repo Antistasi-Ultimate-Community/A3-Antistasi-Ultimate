@@ -2,7 +2,7 @@
 
 /*
 Author: [Killerswin2]
-	DataBase constructor. Creates the placement database for the rts placer 
+	DataBase constructor. Creates the placement database for the rts placer
 Arguments:
 1. <object> object that will center placement
 2. <number> number that is used for the radius of placement
@@ -10,7 +10,7 @@ Return Value:
 NONE
 Scope: Client
 Environment: Unscheduled
-Public: 
+Public:
 no
 Example:
 [player, 100] call A3A_fnc_initBuildingDB
@@ -26,23 +26,35 @@ params [
 
 
 A3A_building_EHDB = [
+	// SPACE_PRESSED (unused)
 	false,
+	// ROTATION_MODE_CW
 	false,
+	// ROTATION_MODE_CCW
 	false,
+	// GUI_BUTTON_PRESSED
 	false,
+	// UNSAFE_MODE
 	false,
+	// BUILD_OBJECTS_ARRAY
 	[],
+	// BUILD_OBJECT_SELECTED_STRING
 	"Land_Can_V2_F",
+	// BUILD_OBJECT_TEMP_OBJECT
 	"Land_Can_V2_F" createVehicleLocal [0,0,0],
-	[], 
+	// BUILD_OBJECT_TEMP_OBJECT_ARRAY
+	[],
+	// END_BUILD_FUNC
 	{
 		// Finished so release
 		private _remMoney = (A3A_building_EHDB # AVAILABLE_MONEY);
 		[A3A_building_EHDB # TEAMLEADER_BOX, player, false, _remMoney] remoteExecCall ["A3A_fnc_lockBuilderBox", 2];
 		{deleteVehicle _x} forEach A3A_boundingCircle;
 		{deleteVehicle _x} forEach (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY);
-		(A3A_building_EHDB # BUILD_DISPLAY) displayRemoveEventHandler ["KeyDown", (A3A_building_EHDB # KEY_DOWN_EH)];
-		(A3A_building_EHDB # BUILD_DISPLAY) displayRemoveEventHandler ["KeyUp", (A3A_building_EHDB # KEY_UP_EH)];
+		{
+			_x params["_actionName", "_eventType", "_ehID"];
+			removeUserActionEventHandler[_actionName, _eventType, _ehID];
+		} forEach (A3A_building_EHDB # USER_ACTION_EHS);
 		removeMissionEventHandler ["EachFrame", (A3A_building_EHDB # EACH_FRAME_EH)];
 		(A3A_building_EHDB # BUILD_DISPLAY) closeDisplay 1;
 		A3A_cam cameraEffect ["terminate", "back"];
@@ -55,10 +67,15 @@ A3A_building_EHDB = [
 		player enableSimulation true;
 		[_params] remoteExecCall ["A3A_fnc_placeBuilderObjects", 2];
 	},
+	// BUILD_DISPLAY
 	-1,
+	// USER_ACTION_EHS
+	[],
+	// KEY_UP_EH (unused)
 	-1,
+	// EACH_FRAME_EH
 	-1,
-	-1,
+	// UPDATE_BB
 	{
 		private _bb = (0 boundingBoxReal (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT));
 		private _back = (_bb#0#1);
@@ -129,15 +146,26 @@ A3A_building_EHDB = [
 			,[[_right,_back,_knee], [_left,_back,_knee]]
 		];
 	},
+	// BUILD_RADIUS_OBJECT_CENTER
 	_buildCenter,
+	// BUILD_RADIUS
 	_buildRadius,
+	// HOLD_TIME (unused)
 	15,
+	// OBJECT_PRICE
 	0,
+	// BUILD_OBJECT_TEMP_DIR
 	0,
+	// TEAMLEADER_BOX
 	_teamLeaderBox,
+	// ELEVATION_MODE_UP (unused)
 	false,
+	// ELEVATION_MODE_DOWN (unused)
 	false,
+	// SNAP_SURFACE_MODE
 	false,
+	// AVAILABLE_MONEY
 	_teamLeaderBox getVariable ["A3A_build_money", 0],
+	// CURSOR_OBJECT
 	objNull
-]; 
+];
