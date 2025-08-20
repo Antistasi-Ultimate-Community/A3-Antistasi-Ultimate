@@ -56,7 +56,7 @@ if (!_doNotAdjust) then { _aggroChange = _aggroChange / A3A_balancePlayerScale }
 
 private _decayRate = [_aggroChange, _aggroTime] call _fn_convertMinutesToDecayRate;
 
-if(gameMode != 4 && (_side == Occupants)) then
+if(_side == Occupants) then
 {
     aggressionStackOccupants pushBack [_aggroChange, _decayRate];
 };

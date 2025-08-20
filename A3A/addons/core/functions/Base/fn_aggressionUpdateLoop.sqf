@@ -54,32 +54,29 @@ while {true} do
 	difficultyCoef = floor (A3A_activePlayerCount / 5);
 	publicVariable "difficultyCoef";
 
-    if(gameMode != 4) then
+    private _aggroMul = [1.0 + aggressionOccupants/200, 0.5 + aggressionOccupants/200] select (gameMode != 1);
+    private _resRateDef = _aggroMul * A3A_balanceResourceRate / 10;
+    private _resRateAtk = _aggroMul * A3A_balanceResourceRate * (A3A_enemyAttackMul / 10) / 12; // Attack rate is a bit lower than defence
+
+    private _noAirport = -1 == airportsX findIf { sidesX getVariable _x == Occupants };
+    if (_noAirport) then { _resRateDef = _resRateDef * 0.6; _resRateAtk = _resRateAtk * 0.6 };
+
+    // Move some attack resources to or from defence depending on defence resource level
+    private _maxDef = _resRateDef*100;
+    private _shift = linearConversion [0, _maxDef, A3A_resourcesDefenceOcc, -0.5, 0.5, true];
+    _resRateDef = _resRateDef - _resRateAtk * _shift;
+    _resRateAtk = _resRateAtk + _resRateAtk * _shift;
+
+    Debug_4("Adding %1 def resources to %2 and %3 atk resources to %4", _resRateDef, A3A_resourcesDefenceOcc, _resRateAtk, A3A_resourcesAttackOcc);
+    A3A_resourcesDefenceOcc = (A3A_resourcesDefenceOcc + _resRateDef) min _maxDef;
+    A3A_resourcesAttackOcc = A3A_resourcesAttackOcc + _resRateAtk;
+
+    if (A3A_resourcesAttackOcc > 0 && !bigAttackInProgress) then
     {
-        private _aggroMul = [1.0 + aggressionOccupants/200, 0.5 + aggressionOccupants/200] select (gameMode != 1);
-        private _resRateDef = _aggroMul * A3A_balanceResourceRate / 10;
-        private _resRateAtk = _aggroMul * A3A_balanceResourceRate * (A3A_enemyAttackMul / 10) / 12; // Attack rate is a bit lower than defence
-
-        private _noAirport = -1 == airportsX findIf { sidesX getVariable _x == Occupants };
-        if (_noAirport) then { _resRateDef = _resRateDef * 0.6; _resRateAtk = _resRateAtk * 0.6 };
-
-        // Move some attack resources to or from defence depending on defence resource level
-        private _maxDef = _resRateDef*100;
-        private _shift = linearConversion [0, _maxDef, A3A_resourcesDefenceOcc, -0.5, 0.5, true];
-        _resRateDef = _resRateDef - _resRateAtk * _shift;
-        _resRateAtk = _resRateAtk + _resRateAtk * _shift;
-
-        Debug_4("Adding %1 def resources to %2 and %3 atk resources to %4", _resRateDef, A3A_resourcesDefenceOcc, _resRateAtk, A3A_resourcesAttackOcc);
-        A3A_resourcesDefenceOcc = (A3A_resourcesDefenceOcc + _resRateDef) min _maxDef;
-        A3A_resourcesAttackOcc = A3A_resourcesAttackOcc + _resRateAtk;
-
-        if (A3A_resourcesAttackOcc > 0 && !bigAttackInProgress) then
-        {
-            private _success = [Occupants] call A3A_fnc_chooseAttack;
-            if (!_success) then {
-                // something went wrong, don't spam
-                A3A_resourcesAttackOcc = A3A_resourcesAttackOcc - _resRateAtk*10;
-            };
+        private _success = [Occupants] call A3A_fnc_chooseAttack;
+        if (!_success) then {
+            // something went wrong, don't spam
+            A3A_resourcesAttackOcc = A3A_resourcesAttackOcc - _resRateAtk*10;
         };
     };
 

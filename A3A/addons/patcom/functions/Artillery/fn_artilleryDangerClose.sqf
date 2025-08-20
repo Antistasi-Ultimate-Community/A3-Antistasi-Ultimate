@@ -22,16 +22,23 @@
 */
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+
+#define ALL_MARKERS (airportsX + milbases + outposts + factories + resourcesX + seaports)
+
 params ["_targetPos", "_radius", "_side"];
-private _result = false;
 
-{
-    if (alive (leader _x)) then {
-        if (((leader _x) distance2D _targetPos) < _radius) exitwith {
-            _result = true;
-            _result
-        };
-    };
-} foreach ((groups _side) + (groups civilian));
+if (((groups _side) + (groups civilian)) findIf {
+    (alive leader _x) &&
+    ((leader _x distance2D _targetPos) < _radius)
+} isNotEqualTo -1) exitWith {
+    true;
+};
 
-_result
+if ((ALL_MARKERS findIf {
+    (sidesX getVariable[_x, sideUnknown] isEqualTo _side) &&
+    (_targetPos inArea _x)
+}) isNotEqualTo -1) exitWith {
+    true;
+};
+
+false;
