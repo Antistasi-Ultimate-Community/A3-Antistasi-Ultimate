@@ -9048,6 +9048,9 @@
                 <Korean>검색을 완료했지만 아무것도 찾지 못했습니다.</Korean>
                 <French>La recherche est terminée, mais vous n'avez rien trouvé.</French>
             </Key>
+            <Key ID="STR_intel_search_failure_alternate_description">
+                <Original>You find: %1</Original>
+            </Key>
         </Container>
         <Container name="intel">
             <Key ID="STR_intel_header">

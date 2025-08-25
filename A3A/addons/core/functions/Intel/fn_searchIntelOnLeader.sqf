@@ -103,7 +103,7 @@ if(_caller getVariable ["intelFound", false]) then {
     }
     else
     {
-        [(localize "STR_intel_no_structtext_header"), (localize "STR_intel_search_failure_description")] call A3A_fnc_customHint;
+        [] call A3A_fnc_showNoIntelMessage;
     };
 }
 else
