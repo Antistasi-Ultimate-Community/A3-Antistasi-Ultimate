@@ -8840,7 +8840,7 @@
                 <French>La recherche est terminée, mais vous n'avez rien trouvé.</French>
             </Key>
             <Key ID="STR_intel_search_failure_alternate_description">
-                <Original>You find: %1</Original>
+                <Original>You find nothing of significance but %1</Original>
             </Key>
         </Container>
         <Container name="intel">
