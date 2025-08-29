@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_addInteractionCondition
+Function: A3U_fnc_addInteractionCondition
 
 Description:
     Adds a new interaction condition to the list

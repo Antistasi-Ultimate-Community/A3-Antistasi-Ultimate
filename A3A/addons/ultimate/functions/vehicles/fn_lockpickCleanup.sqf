@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_lockpickCleanup
+Function: A3U_fnc_lockpickCleanup
 
 Description:
     Cleans up the lockpick action from a vehicle

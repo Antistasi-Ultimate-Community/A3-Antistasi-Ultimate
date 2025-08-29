@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_useMagazineItem
+Function: A3U_fnc_useMagazineItem
 
 Description:
     Decrease rounds count of magazines used like items in inventory
