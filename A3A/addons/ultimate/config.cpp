@@ -5,6 +5,7 @@ class CfgPatches
     class ADDON 
     {
         name = COMPONENT_NAME;
+        magazines[] = {QGVAR(LockpickKit_MultiUse), QGVAR(LockpickKit_SingleUse)};
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
@@ -19,6 +20,7 @@ class CfgPatches
 class CBA_Extended_EventHandlers_base; // Needed for CfgVehicles.hpp
 
 #include "CfgFunctions.hpp"
+#include "patches\CfgMagazines.hpp"
 
 class A3U
 {

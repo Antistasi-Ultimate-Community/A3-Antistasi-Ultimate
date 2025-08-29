@@ -67,6 +67,7 @@ class CfgFunctions
             class hasAddon {};
             class log {};
             class logisticsGrabSeats {};
+            class useMagazineItem {};
             class weightTest {};
         };
         class vehicles
@@ -76,6 +77,7 @@ class CfgFunctions
             class isLocked {};
             class lockpick {};
             class lockpickCleanup {};
+            class lockpickGetPlayerItem {};
             class lockpickOnFail {};
             class lockpickOnProgress {};
             class lockpickOnStart {};
