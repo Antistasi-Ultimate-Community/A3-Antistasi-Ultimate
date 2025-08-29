@@ -29,12 +29,17 @@ params[
 ];
 
 if !GVAR(allowLockpickKits) then {
-    if !([_unit] call A3A_fnc_isEngineer) then {
+    if !([_unit] call FUNCMAIN(isEngineer)) then {
         [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint;
     };
 } else {
     if !([_unit, _vehicle] call FUNCMAIN(canUnlock)) then {
         [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer_no_lockpicks"] call A3A_fnc_customHint;
+    };
+
+    if !([_unit] call FUNCMAIN(isEngineer)) then {
+        _vehicle setVariable[QGVAR(lockpickWillBreak), random 100 < GVAR(lockpickKitBreakChance)];
+        _vehicle setVariable[QGVAR(lockpickUsed), [_unit] call FUNCMAIN(lockpickGetPlayerItem)];
     };
 };
 

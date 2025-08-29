@@ -21,6 +21,7 @@ class CBA_Extended_EventHandlers_base; // Needed for CfgVehicles.hpp
 
 #include "CfgFunctions.hpp"
 #include "patches\CfgMagazines.hpp"
+#include "patches\CfgSounds.hpp"
 
 class A3U
 {

@@ -10,6 +10,22 @@ if (_frame == 2) then {
     [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_start", _vehicleName]] call A3A_fnc_customHint;
 };
 
+if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_unit] call FUNCMAIN(isEngineer)) }) exitWith {
+    private _breakFrame = random _maxFrame;
+
+    if (_frame >= _breakFrame) then {
+        [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_tool_break"] call A3A_fnc_customHint;
+        [_target, QGVAR(LockpickToolBreak)] remoteExecCall["say3D", 0, true];
+
+        [player, _target getVariable QGVAR(lockpickUsed)] call FUNCMAIN(useMagazineItem);
+        [_target] call FUNCMAIN(lockpickCleanup);
+
+        [{
+            call FUNCMAIN(lockpick);
+        }, [_target], 2.5] call CBA_fnc_waitAndExecute;
+    };
+};
+
 private _hintMessage = [];
 
 if (_closestZone isEqualTo teamPlayer && {_frame >= (_maxFrame / 12)}) then {
