@@ -33,16 +33,16 @@ private _removeOk = true;
 
 if (_unlockVehicle) then {
     try {
-        if !([_target] call FUNCMAIN(isEngineer)) then {
+        if !([_target] call A3U_fnc_isEngineer) then {
             if !GVAR(allowLockpickKits) then { throw "Lockpick kits are disabled" };
 
-            private _lockpickKit = [player] call FUNCMAIN(lockpickGetPlayerItem);
+            private _lockpickKit = [player] call A3U_fnc_lockpickGetPlayerItem;
 
             // Should not happen, still check, though
             if !assert(_lockpickKit isNotEqualTo "") then { throw "No lockpick kit found" };
 
             // Now "use" the lockpick kit
-            if !([player, _lockpickKit] call FUNCMAIN(useMagazineItem)) then { throw "Failure to use magazine item" };
+            if !([player, _lockpickKit] call A3U_fnc_useMagazineItem) then { throw "Failure to use magazine item" };
         };
 
         [_target, false] remoteExecCall ["A3U_fnc_setLock", owner _target];

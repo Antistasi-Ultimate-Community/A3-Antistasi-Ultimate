@@ -1,6 +1,6 @@
 params ["_target", "_caller"];
 
-if !([_caller, _target] call FUNCMAIN(canUnlock)) exitWith {};
+if !([_caller, _target] call A3U_fnc_canUnlock) exitWith {};
 
 private _zones = call A3U_fnc_lockpickZones;
 
