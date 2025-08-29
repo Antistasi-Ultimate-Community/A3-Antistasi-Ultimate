@@ -5,6 +5,7 @@ class CfgPatches
     class ADDON 
     {
         name = COMPONENT_NAME;
+        magazines[] = {QGVAR(LockpickKit_MultiUse), QGVAR(LockpickKit_SingleUse)};
         units[] = {};
         weapons[] = {"TFAR_SCR536"};
         requiredVersion = REQUIRED_VERSION;
@@ -17,6 +18,7 @@ class CfgPatches
 };
 
 #include "CfgFunctions.hpp"
+#include "patches\CfgMagazines.hpp"
 
 class cfgWeapons
 {

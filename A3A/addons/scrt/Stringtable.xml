@@ -5687,6 +5687,20 @@
                 <Original>Adjusts spawn chance of UAVs at enemy airfields. The higher the chance, the less likely other fixed wing aircrafts will be spawned</Original>
                 <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
             </Key>
+            <Key ID="STR_params_ultimate_allowLockpickKits">
+                <Original>Allow Lockpick Kits</Original>
+                <Russian>Разрешить наборы отмычек</Russian>
+                <Chinesesimp>允许使用撬锁工具包</Chinesesimp>
+                <Korean>잠금 해제 키트를 허용합니다</Korean>
+                <French>Autoriser les kits de crochetage</French>
+            </Key>
+            <Key ID="STR_params_ultimate_allowLockpickKits_Tooltip">
+                <Original>Allow non-engineer players to use lockpick kits to unlock vehicles</Original>
+                <Russian>Разрешить неинженерам использовать наборы отмычек для разблокировки транспортных средств</Russian>
+                <Chinesesimp>允许非工程师玩家使用撬锁工具包解锁车辆</Chinesesimp>
+                <Korean>비 엔지니어 플레이어가 차량 잠금을 해제하기 위해 잠금 해제 키트를 사용할 수 있도록 허용</Korean>
+                <French>Permettre aux joueurs non-ingénieurs d'utiliser des kits de crochetage pour déverrouiller des véhicules</French>
+            </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
                 <Russian>Постоянное сохранение для построек, размещенных Зевсом</Russian>

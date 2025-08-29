@@ -306,4 +306,33 @@
             <French>Équipement rapide</French>
         </Key>
     </Package>
+    <Package name="Assets">
+        <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse">
+            <Original>Multi-use Lockpick Kit</Original>
+            <Russian>Многоразовый набор отмычек</Russian>
+            <Korean>다회용 락픽 키트</Korean>
+            <Chinesesimp>多次使用撬锁工具包</Chinesesimp>
+        </Key>
+        <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse_Desc">
+            <Original>This kit contains multiple lockpick tools to unlock vehicles if you're not an engineer.</Original>
+            <Russian>Этот набор содержит несколько инструментов для вскрытия замков, чтобы открыть транспортные средства, если вы не инженер.</Russian>
+            <Korean>이 키트에는 엔지니어가 아닌 경우 차량 잠금을 해제하는 데 사용할 수 있는 여러 개의 락픽 도구가 포함되어 있습니다.</Korean>
+            <Chinesesimp>此工具包包含多个撬锁工具，用于在您不是工程师的情况下解锁车辆。</Chinesesimp>
+            <French>Ce kit contient plusieurs outils de crochetage pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
+        </Key>
+        <Key ID="STR_A3AU_Asset_LockpickKit_SingleUse">
+            <Original>Single-use Lockpick Kit</Original>
+            <Russian>Одноразовый набор отмычек</Russian>
+            <Korean>일회용 락픽 키트</Korean>
+            <Chinesesimp>一次性撬锁工具包</Chinesesimp>
+            <French>Kit de crochetage à usage unique</French>
+        </Key>
+        <Key ID="STR_A3AU_Asset_LockpickKit_SingleUse_Desc">
+            <Original>This kit contains a single-use lockpick tool to unlock vehicles if you're not an engineer.</Original>
+            <Russian>Этот набор содержит одноразовый инструмент для вскрытия замков, чтобы открыть транспортные средства, если вы не инженер.</Russian>
+            <Korean>이 키트에는 엔지니어가 아닌 경우 차량 잠금을 해제하는 데 사용할 수 있는 일회용 락픽 도구가 포함되어 있습니다.</Korean>
+            <Chinesesimp>此工具包包含一个一次性撬锁工具，用于在您不是工程师的情况下解锁车辆。</Chinesesimp>
+            <French>Ce kit contient un outil de crochetage à usage unique pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
+        </Key>
+    </Package>
 </Project>

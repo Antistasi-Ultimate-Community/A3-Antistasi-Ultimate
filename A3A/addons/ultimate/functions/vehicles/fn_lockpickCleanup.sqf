@@ -9,7 +9,7 @@ Parameters:
     0: _vehicle - the vehicle to clean up <OBJECT>
 
 Optional:
-    1: _unlockAfter - whether to unlock the vehicle after cleanup (default: false) <BOOL>
+    1: _unlockVehicle - whether to unlock the vehicle, too (default: false) <BOOL>
 
 Example:
 
@@ -24,18 +24,39 @@ Author:
 ---------------------------------------------------------------------------- */
 params[
     ["_vehicle", objNull, [objNull]],
-    ["_unlockAfter", false, [false]]
+    ["_unlockVehicle", false, [false]]
 ];
 
 if !assert(!isNull _vehicle) exitWith {};
 
-if (_target getVariable[QGVAR(lockpickAction), false] isNotEqualTo false) then {
-    [_target, _target getVariable QGVAR(lockpickAction)] call BIS_fnc_holdActionRemove;
-    _target setVariable[QGVAR(lockpickAction), nil];
+private _removeOk = true;
+
+if (_unlockVehicle) then {
+    try {
+        if !([_target] call FUNCMAIN(isEngineer)) then {
+            if !GVAR(allowLockpickKits) then { throw "Lockpick kits are disabled" };
+
+            private _lockpickKit = [player] call FUNCMAIN(lockpickGetPlayerItem);
+
+            // Should not happen, still check, though
+            if !assert(_lockpickKit isNotEqualTo "") then { throw "No lockpick kit found" };
+
+            // Now "use" the lockpick kit
+            if !([player, _lockpickKit] call FUNCMAIN(useMagazineItem)) then { throw "Failure to use magazine item" };
+        };
+
+        [_target, false] remoteExecCall ["A3U_fnc_setLock", owner _target];
+    } catch {
+        Error_1("Vehicle won't be unlocked: %1", _exception);
+        _removeOk = false;
+    };
 };
 
-if (_unlockAfter) then {
-    [_target, false] remoteExecCall ["A3U_fnc_setLock", owner _target];
+if (_removeOk) then {
+    if (_target getVariable[QGVAR(lockpickAction), false] isNotEqualTo false) then {
+        [_target, _target getVariable QGVAR(lockpickAction)] call BIS_fnc_holdActionRemove;
+        _target setVariable[QGVAR(lockpickAction), nil];
+    };
 };
 
 nil;

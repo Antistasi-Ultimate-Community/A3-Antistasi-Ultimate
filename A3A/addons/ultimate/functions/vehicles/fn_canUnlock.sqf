@@ -48,4 +48,8 @@ if (_forDisplayOnly) exitWith { true };
 // Allow engineers
 if ([_unit] call FUNC(isEngineer)) exitWith { true };
 
-false;
+GVAR(allowLockpickKits) && {
+    magazines _unit findIf {
+        _x isKindOf QGVAR(LockpickKitBase)
+    } != -1
+};
