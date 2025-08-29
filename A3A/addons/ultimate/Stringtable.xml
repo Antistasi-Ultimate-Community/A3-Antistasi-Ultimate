@@ -296,6 +296,12 @@
             <Portuguese>Você precisa ser um engenheiro para começar a arrombar fechaduras</Portuguese>
             <Turkish>Kilit açmaya başlamak için mühendis olmalısın</Turkish>
         </Key>
+        <Key ID="STR_A3AU_action_lockpick_not_engineer_no_lockpicks">
+            <Original>Since you're not an engineer, you need a lockpick kit to start lockpicking</Original>
+            <Russian>Поскольку вы не инженер, вам нужен набор отмычек, чтобы начать взлом</Russian>
+            <German>Da du kein Ingenieur bist, benötigst du ein Lockpick-Set, um mit dem Knacken zu beginnen</German>
+            <French>Comme vous n'êtes pas ingénieur, vous avez besoin d'un kit de crochetage pour commencer le crochetage</French>
+        </Key>
     </Package>
     <Package name="Arsenal">
         <Key ID="STR_JNA_SCT_QUICK_EQUIP">
