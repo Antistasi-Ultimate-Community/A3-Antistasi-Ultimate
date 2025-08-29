@@ -2,4 +2,4 @@
 
 call A3U_fnc_settings;
 
-GVAR(interactionConditions) = [];
+GVAR(interactionConditions) = createHashMap;
