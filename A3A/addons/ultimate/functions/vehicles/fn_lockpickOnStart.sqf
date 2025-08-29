@@ -33,7 +33,7 @@ if !GVAR(allowLockpickKits) then {
         [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint;
     };
 } else {
-    if !([_unit, _vehicle] call A3U_fnc_canUnlock) then {
+    if !([_unit, _vehicle] call A3U_fnc_canLockpick) then {
         [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer_no_lockpicks"] call A3A_fnc_customHint;
     };
 
