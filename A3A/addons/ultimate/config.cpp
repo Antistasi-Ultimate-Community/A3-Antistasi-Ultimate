@@ -170,9 +170,17 @@ class A3U
     #include "config\trader\cfgTraderMods.hpp"
 };
 
+class Extended_PostInit_EventHandlers 
+{
+    class ADDON
+	{
+        init = "call A3U_fnc_postInit";
+    };
+};
+
 class Extended_PreInit_EventHandlers 
 {
-    class A3U_init
+    class ADDON
 	{
         init = "call A3U_fnc_init";
     };
