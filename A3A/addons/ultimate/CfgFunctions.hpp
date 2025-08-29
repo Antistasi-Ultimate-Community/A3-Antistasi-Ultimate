@@ -28,6 +28,7 @@ class CfgFunctions
             class init {};
             class initZones {};
             class popup {};
+            class postInit {};
         };
         class main_menu
         {
@@ -58,6 +59,8 @@ class CfgFunctions
         class Utility
         {
             file = QPATHTOFOLDER(functions\Utility);
+            class addInteractionCondition {};
+            class canInteract {};
             class exportCrate {};
             class exportPylons {};
             class exportTowns {};

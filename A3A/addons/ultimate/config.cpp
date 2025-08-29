@@ -35,19 +35,19 @@ class CfgVehicles
 class Extended_InitPost_EventHandlers
 {
     class A3AU_TerrainSmoother_Base_F 
-    {
+	{
         class ADDON 
-        {
+    {
             clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
-        };
+    };
     };
 
     class A3AU_VegetationCleaner_Base_F 
     {
         class ADDON 
-        {
+    {
             clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
-        };
+    };
     };
 
     class GVAR(BB_TerrainObjectHider_Base) 
@@ -55,13 +55,21 @@ class Extended_InitPost_EventHandlers
         class ADDON 
         {
             clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
-        };
+    };
+};
+};
+
+class Extended_PostInit_EventHandlers 
+{
+    class ADDON
+	{
+        init = "call A3U_fnc_postInit";
     };
 };
 
 class Extended_PreInit_EventHandlers 
 {
-    class A3U_init
+    class ADDON
 	{
         init = "call A3U_fnc_init";
     };
