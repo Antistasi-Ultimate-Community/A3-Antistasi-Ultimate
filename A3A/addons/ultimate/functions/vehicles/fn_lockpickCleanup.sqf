@@ -53,6 +53,9 @@ if (_unlockVehicle) then {
 };
 
 if (_removeOk) then {
+    _target setVariable[QGVAR(lockpickUsed), nil];
+    _target setVariable[QGVAR(lockpickWillBreak), nil];
+
     if (_target getVariable[QGVAR(lockpickAction), false] isNotEqualTo false) then {
         [_target, _target getVariable QGVAR(lockpickAction)] call BIS_fnc_holdActionRemove;
         _target setVariable[QGVAR(lockpickAction), nil];

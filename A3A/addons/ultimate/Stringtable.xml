@@ -302,6 +302,12 @@
             <German>Da du kein Ingenieur bist, benötigst du ein Dietrich-Set, um mit dem Knacken zu beginnen</German>
             <French>Comme vous n'êtes pas ingénieur, vous avez besoin d'un kit de crochetage pour commencer le crochetage</French>
         </Key>
+        <Key ID="STR_A3AU_action_lockpick_tool_break">
+            <Original>Your soldiery hands aren't used to fine work. The lockpick broke. Try again.</Original>
+            <Russian>Ваши солдатские руки не привыкли к тонкой работе. Отмычка сломалась. Попробуйте снова.</Russian>
+            <German>Deine Soldatenhände sind nicht an feine Arbeiten gewöhnt. Der Dietrich ist gebrochen. Versuche es erneut.</German>
+            <French>Vos mains de soldat ne sont pas habituées à un travail de précision. La serrure a cassé. Essayez encore.</French>
+        </Key>
     </Package>
     <Package name="Arsenal">
         <Key ID="STR_JNA_SCT_QUICK_EQUIP">

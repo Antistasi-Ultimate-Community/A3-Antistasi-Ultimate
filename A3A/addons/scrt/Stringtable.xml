@@ -5701,6 +5701,20 @@
                 <Korean>비 엔지니어 플레이어가 차량 잠금을 해제하기 위해 잠금 해제 키트를 사용할 수 있도록 허용</Korean>
                 <French>Permettre aux joueurs non-ingénieurs d'utiliser des kits de crochetage pour déverrouiller des véhicules</French>
             </Key>
+            <Key ID="STR_params_ultimate_lockpickKitBreakChance">
+                <Original>Lockpick Kit Break Chance</Original>
+                <Russian>Шанс поломки набора отмычек</Russian>
+                <Chinesesimp>撬锁工具包破损几率</Chinesesimp>
+                <Korean>잠금 해제 키트 파손 확률</Korean>
+                <French>Chance de rupture du kit de crochetage</French>
+            </Key>
+            <Key ID="STR_params_ultimate_lockpickKitBreakChance_Tooltip">
+                <Original>Chance that a lockpick kit will break upon use</Original>
+                <Russian>Шанс поломки набора отмычек при использовании</Russian>
+                <Chinesesimp>撬锁工具包使用时的破损几率</Chinesesimp>
+                <Korean>잠금 해제 키트를 사용할 때 파손될 확률</Korean>
+                <French>Chance qu'un kit de crochetage se casse lors de son utilisation</French>
+            </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
                 <Russian>Постоянное сохранение для построек, размещенных Зевсом</Russian>

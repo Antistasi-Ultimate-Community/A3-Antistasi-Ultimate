@@ -19,6 +19,7 @@ class CfgPatches
 
 #include "CfgFunctions.hpp"
 #include "patches\CfgMagazines.hpp"
+#include "patches\CfgSounds.hpp"
 
 class cfgWeapons
 {
