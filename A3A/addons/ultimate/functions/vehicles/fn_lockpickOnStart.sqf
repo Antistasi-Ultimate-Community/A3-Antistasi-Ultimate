@@ -1,0 +1,35 @@
+#include "..\script_component.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3A_fnc_lockpickOnStart
+
+Description:
+    Hold action handler when lockpicking starts
+
+Parameters:
+    0: _vehicle - the vehicle being lockpicked <OBJECT>
+    1: _unit - the unit that is lockpicking <OBJECT>
+    2: _actionId - the action ID <NUMBER>
+    3: _arguments - the arguments passed to the action <ARRAY>
+
+Optional:
+
+Example:
+
+Returns:
+    Nothing
+
+Author:
+    UnseenKill
+---------------------------------------------------------------------------- */
+params[
+    ["_vehicle", objNull, [objNull]],
+    ["_unit", objNull, [objNull]],
+    ["_actionId", 0, [0]],
+    ["_arguments", [], [[]]]
+];
+
+if !([_unit] call A3A_fnc_isEngineer) then {
+    [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint;
+};
+
+nil;

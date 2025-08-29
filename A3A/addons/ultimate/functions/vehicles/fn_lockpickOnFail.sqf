@@ -1,11 +1,12 @@
 params ["_target", "_caller"];
 
-if (!(_caller call A3A_fnc_isEngineer) || !(_target call A3U_fnc_isLocked)) exitWith {};
+if !([_caller, _target] call FUNCMAIN(canUnlock)) exitWith {};
 
 private _zones = call A3U_fnc_lockpickZones;
 
 private _closestZone = (sidesX getVariable [([_zones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
 
+// TODO: check if there's anybody around to notice the alarm
 if (_closestZone isNotEqualTo teamPlayer) then {
     [_target, "alarmCar"] remoteExecCall ["say3D", 0, true]; 
 
