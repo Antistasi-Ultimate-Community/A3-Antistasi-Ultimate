@@ -74,6 +74,7 @@ class CfgFunctions
         {
             file = QPATHTOFOLDER(functions\vehicles);
             class addLockpickAction {};
+            class canLockpick {};
             class isLocked {};
             class lockpick {};
             class lockpickCleanup {};

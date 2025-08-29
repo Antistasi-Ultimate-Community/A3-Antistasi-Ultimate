@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_canUnlock
+Function: A3A_fnc_canLockpick
 
 Description:
     Checks if a vehicle can be unlocked
@@ -14,7 +14,7 @@ Optional:
 
 Example:
     (begin example)
-    [player, cursorTarget] call A3A_fnc_canUnlock;
+    [player, cursorTarget] call A3A_fnc_canLockpick;
     (end example)
 
 Returns:

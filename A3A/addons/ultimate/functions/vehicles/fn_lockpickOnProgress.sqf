@@ -1,6 +1,6 @@
 params ["_target", "_caller", "_actionId", "_frame", "_maxFrame"];
 
-if !([_caller, _target] call A3U_fnc_canUnlock) exitWith { [_target] call A3U_fnc_lockpickCleanup };
+if !([_caller, _target] call A3U_fnc_canLockpick) exitWith { [_target] call A3U_fnc_lockpickCleanup };
 
 private _zones = call A3U_fnc_lockpickZones;
 private _closestZone = (sidesX getVariable [([_zones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
