@@ -37,16 +37,16 @@ private _forDisplayOnly = params[2, false, [true]];
 if (_target getVariable[QGVAR(lockpickAction), false] isEqualTo false) exitWith { false };
 
 // Generic interaction checks
-if !(call FUNC(canInteract)) exitWith { false };
+if !(call A3U_fnc_canInteract) exitWith { false };
 
 // Vehicle is unlocked
-if !([_target] call FUNC(isLocked)) exitWith { false };
+if !([_target] call A3U_fnc_isLocked) exitWith { false };
 
 // Display-only checks
 if (_forDisplayOnly) exitWith { true };
 
 // Allow engineers
-if ([_unit] call FUNC(isEngineer)) exitWith { true };
+if ([_unit] call A3U_fnc_isEngineer) exitWith { true };
 
 GVAR(allowLockpickKits) && {
     magazines _unit findIf {
