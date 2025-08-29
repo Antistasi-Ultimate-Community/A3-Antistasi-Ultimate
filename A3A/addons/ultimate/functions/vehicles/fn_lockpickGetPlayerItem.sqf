@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_lockpickGetPlayerItem
+Function: A3U_fnc_lockpickGetPlayerItem
 
 Description:
     Find lockpick kit in player's inventory

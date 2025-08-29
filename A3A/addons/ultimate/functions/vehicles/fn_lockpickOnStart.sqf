@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_lockpickOnStart
+Function: A3U_fnc_lockpickOnStart
 
 Description:
     Hold action handler when lockpicking starts

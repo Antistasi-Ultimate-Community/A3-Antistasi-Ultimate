@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_canInteract
+Function: A3U_fnc_canInteract
 
 Description:
     Generic handler for vanilla (hold-)actions

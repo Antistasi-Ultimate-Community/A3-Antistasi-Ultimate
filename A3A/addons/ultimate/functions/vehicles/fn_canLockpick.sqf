@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_canLockpick
+Function: A3U_fnc_canLockpick
 
 Description:
     Checks if a vehicle can be unlocked
