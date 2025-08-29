@@ -46,7 +46,7 @@ private _index = _containers findIf {
     !isNull _x && { _magazine in magazineCargo _x }
 };
 
-if !assert(_index >= 0) exitWith {};
+if !assert(_index >= 0) exitWith { false };
 
 private _container = _containers select _index;
 
@@ -62,7 +62,7 @@ private _mags = magazinesAmmoCargo _container;
 _mags = _mags select { (_x select 0) isEqualTo _magazine };
 _mags sort true;
 
-if !assert(_mags isNotEqualTo []) exitWith {};
+if !assert(_mags isNotEqualTo []) exitWith { false };
 
 (_mags deleteAt 0) params[
     ["_magClass", "", [""]],
