@@ -9,21 +9,35 @@ if (!isServer) exitWith {};
     Returns:
         Nothing
 */
-params ["_marker", "_side"];
+#define CHECK_DELAY 0.25
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-if ((isNil "_marker") or (isNil "_side")) exitWith {};
+if !assert(params[
+    ["_marker", nil, [""]],
+    ["_side", nil, [sideUnknown]]
+]) exitWith {};
 
-//Await lock
-waitUntil {!zoneCheckInProgress};
-zoneCheckInProgress = true;
+// If marker is a different side than the unit which died on it, we don't care
+if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith {};
 
-//If marker is a different side than the unit which died on it, we don't care
-if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith
-{
-    zoneCheckInProgress = false
+// Just in case this function is invoked via `remoteExecCall`
+if (!canSuspend) exitWith { _this spawn A3A_fnc_zoneCheck };
+
+private _key = format["zoneCheck_%1_%2", _marker, _side];
+private _isWaiting = _key in zoneChecksMutex;
+
+zoneChecksMutex set[_key, diag_tickTime + CHECK_DELAY];
+
+if (_isWaiting) exitWith {
+    Debug_2("ZoneCheck at %1 for side %2 is already queued; deferring only", _marker, _side);
 };
+
+Debug_2("ZoneCheck at %1 for side %2 executing", _marker, _side);
+
+// Await mutex expiration
+waitUntil { (diag_tickTime >= (zoneChecksMutex get _key)) };
+zoneChecksMutex deleteAt _key;
 
 private _counts = [_marker, A3A_diameterExtendedCaptureArea] call A3A_fnc_zoneCountUnits;
 private _defenderUnitCount = _counts deleteAt _side;
@@ -34,7 +48,6 @@ private _keys = keys _counts;
 
 #if __A3_DEBUG__
 if !assert(count _keys == 2) exitWith {
-    zoneCheckInProgress = false;
     Error_3("ZoneCheck at %1 found %2 sides (%3), expected 2",_marker,count _keys,_keys);
 };
 #endif
@@ -52,4 +65,3 @@ if (_enemy1UnitCount > 3 * _defenderUnitCount || {_enemy2UnitCount > 3 * _defend
     if (_winner isEqualTo teamPlayer) exitWith {Debug_2("Rebel auto capture of %1 was blocked, %1 remains side %2", _marker, _side)};
     [_winner,_marker] remoteExec ["A3A_fnc_markerChange",2];
 };
-zoneCheckInProgress = false;
