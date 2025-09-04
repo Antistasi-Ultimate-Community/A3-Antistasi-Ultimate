@@ -78,7 +78,12 @@ if !(_positionAndRadius params[
 
 private _units = allUnits inAreaArray[_position, _radius, _radius];
 
+// If extended count is requested, we just now searched within the extended
+// radius. So, if a valid marker name is given, include all units in the
+// marker area, too. Unless, of course, marker dimensions are smaller than
+// the radius already searched.
 if (_useExtendedCount && { _inPos isEqualType "" }) then {
+    // `_width` and `_height` here are misnomers; they are actually semi-axes (radii).
     markerSize _inPos params["_width", "_height"];
 
     // Only look for units within marker area if that area is actually larger than the radius
