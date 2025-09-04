@@ -18,11 +18,11 @@ if !assert(params[
     ["_side", nil, [sideUnknown]]
 ]) exitWith {};
 
-// If marker is a different side than the unit which died on it, we don't care
-if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith {};
-
 // Just in case this function is invoked via `remoteExecCall`
 if (!canSuspend) exitWith { _this spawn A3A_fnc_zoneCheck };
+
+// If marker is a different side than the unit which died on it, we don't care
+if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith {};
 
 private _key = format["zoneCheck_%1_%2", _marker, _side];
 private _isWaiting = _key in zoneChecksMutex;
@@ -33,11 +33,13 @@ if (_isWaiting) exitWith {
     Debug_2("ZoneCheck at %1 for side %2 is already queued; deferring only", _marker, _side);
 };
 
-Debug_2("ZoneCheck at %1 for side %2 executing", _marker, _side);
+Debug_2("ZoneCheck at %1 for side %2 now waiting", _marker, _side);
 
 // Await mutex expiration
 waitUntil { (diag_tickTime >= (zoneChecksMutex get _key)) };
 zoneChecksMutex deleteAt _key;
+
+Debug_2("ZoneCheck at %1 for side %2 executing", _marker, _side);
 
 private _counts = [_marker, A3A_diameterExtendedCaptureArea] call A3A_fnc_zoneCountUnits;
 private _defenderUnitCount = _counts deleteAt _side;
