@@ -101,7 +101,7 @@ _units select {
     private _value = linearConversion[_radius / 2, _radius, _position distance2d _x, 1, 0, true];
     _sidesCount set[side _x, (_sidesCount get side _x) + _value];
 
-    Debug_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
+    Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
 
     if (side _x in [Occupants, Invaders]) then {
         [_x] call _npcCallback;
