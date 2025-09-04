@@ -29,6 +29,7 @@ private _counts = [_marker, A3A_diameterExtendedCaptureArea] call A3A_fnc_zoneCo
 private _defenderUnitCount = _counts deleteAt _side;
 _counts deleteAt civilian; // Remove civilian count, we don't care about them
 
+// There should be exactly two sides left now: `allSides - _side - civilian`
 private _keys = keys _counts;
 
 #if __A3_DEBUG__
