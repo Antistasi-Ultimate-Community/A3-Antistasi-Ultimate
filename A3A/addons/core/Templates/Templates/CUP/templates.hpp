@@ -228,6 +228,15 @@
         flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_science_co.paa);
         name = "The Science Team";
         file = "CUP_Reb_TST";
+		climate[] = {"temperate","arctic","tropical"};
+    };
+    class CUP_TSTa : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_science_co.paa);
+        name = "The Science Team";
+        file = "CUP_Reb_TSTa";
+		climate[] = {"arid"};
     };
     class CUP_TKC : CUP_Base
     {
