@@ -652,6 +652,15 @@
               <Czech>Antistasi - Osvobození Ostrova Duala</Czech>
               <Chinesesimp>Antistasi - 解放 Isla Duala</Chinesesimp>
             </Key>
+			<Key ID="STR_antistasi_mission_info_regero_mapname_text">
+                <Original>Antistasi Ultimate - Kingdom of Regero</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_regero_mapname_short_text">
+                <Original>Antistasi Ultimate - Regero</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_regero_blurb_text">
+                <Original>It's time for King Petros</Original>
+            </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>
                 <Russian>Автоматически загружать последнее сохранение после задержки</Russian>

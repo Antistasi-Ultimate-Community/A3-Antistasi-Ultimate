@@ -61,4 +61,5 @@ class NavGrid {
 	isladuala3 = QPATHTOFOLDER(Antistasi_isladuala3.isladuala3\navGrid.sqf);
 	VTF_Korsac = QPATHTOFOLDER(Antistasi_VTF_Korsac.VTF_Korsac\navGrid.sqf);
 	VTF_Korsac_Winter = QPATHTOFOLDER(Antistasi_VTF_Korsac_Winter.VTF_Korsac_Winter\navGrid.sqf);
+	regero = QPATHTOFOLDER(Antistasi_regero.regero\navGrid.sqf);
 };
