@@ -388,7 +388,8 @@
         flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_CUP_Civ_AFR.paa);
         name = "CUP AFR CIV";
         file = "CUP_Civ_AFR";
-        
+    };    
+		
     class FlexPOL_Base : CUP_Base
     {
         requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_POL_Faction"};
