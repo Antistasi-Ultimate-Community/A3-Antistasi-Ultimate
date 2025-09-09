@@ -330,3 +330,59 @@
         file = "CUP_AI_CAF2035";
         description = "CUP/Aegis Mixed Canadian Armed Forces 2035";
     };
+
+    class FlexPOL_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_POL_Faction"};
+        priority = 61;
+    };
+
+    class Flex_POL : FlexPOL_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Poland_ca.paa";
+        name = "CUP Polish Armed Forces";
+        file = "CUP_AI_POL";
+    };
+
+    class FlexPLA_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_PLA_Faction"};
+        priority = 61;
+    };
+
+    class Flex_PLA : FlexPLA_Base
+    {
+        side = "Inv";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+        name = "CUP PLA";
+        file = "CUP_AI_PLA";
+    };
+
+    class FlexFDF_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_FIN_Faction", "KAR_RK62"};
+        priority = 61;
+    };
+
+    class Flex_FDF : FlexFDF_Base
+    {
+        side = "Occ";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\marker_fin_co.paa);
+        name = "CUP Finnish Defense Force";
+        file = "CUP_AI_FDF";
+    };
+
+    class FlexSPA_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_SPA_Faction"};
+        priority = 61;
+    };
+
+    class Flex_SPA : FlexSPA_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\ui_f\data\map\markers\flags\Spain_ca.paa";
+        name = "CUP Spain";
+        file = "CUP_AI_SPA";
+    };

@@ -280,4 +280,10 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 	};
+	class a3u_flag_PLA : flag_NATO 
+	{
+		name = "People's Liberation Army";
+		icon = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+	};
 };
