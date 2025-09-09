@@ -100,6 +100,7 @@ class CfgFunctions {
 			class misc_tryInitVehicle {};
 			class misc_getRebelPlayers {};
 			class misc_getTimeLimit {};
+			class misc_canAddItemToContainer {};
     	};
 
 		class Paradrop {

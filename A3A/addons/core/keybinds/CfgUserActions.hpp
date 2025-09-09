@@ -36,5 +36,45 @@ class CfgUserActions {
         tooltip = $STR_A3A_keyActions_commMenu_desc;
         onActivate = ACTION(commanderRebelMenu);
     };
+
+    class GVAR(buildingPlacerAbort) {
+        displayName = $STR_A3A_keyActions_buildingPlacerAbort_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerAbort_desc;
+    };
+
+    class GVAR(buildingPlacerDelete) {
+        displayName = $STR_A3A_keyActions_buildingPlacerDelete_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerDelete_desc;
+    };
+
+    class GVAR(buildingPlacerPlace) {
+        displayName = $STR_A3A_keyActions_buildingPlacerPlace_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerPlace_desc;
+    };
+
+    class GVAR(buildingPlacerRepair) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRepair_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRepair_desc;
+    };
+
+    class GVAR(buildingPlacerRotateCCW) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateCCW_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateCCW_desc;
+    };
+
+    class GVAR(buildingPlacerRotateCW) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateCW_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateCW_desc;
+    };
+
+    class GVAR(buildingPlacerSnapToSurface) {
+        displayName = $STR_A3A_keyActions_buildingPlacerSnapToSurface_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerSnapToSurface_desc;
+    };
+
+    class GVAR(buildingPlacerUnsafeMode) {
+        displayName = $STR_A3A_keyActions_buildingPlacerUnsafeMode_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerUnsafeMode_desc;
+    };
 };
 #undef ACTION
