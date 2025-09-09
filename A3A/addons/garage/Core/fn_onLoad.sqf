@@ -99,19 +99,10 @@ HR_GRG_Cats = HR_GRG_CATIDCS apply {_disp displayCtrl _x}; //,HR_GRG_IDC_CatUnma
 } forEach HR_GRG_Cats;
 [0] call HR_GRG_fnc_switchCategory;
 
+//sell button init
 
-if !(call HR_GRG_Cnd_canAccessHeli) then {
-    private _heliBttn = _disp displayCtrl HR_GRG_IDC_BttnHeli;
-    _heliBttn ctrlEnable false;
-    _heliBttn ctrlSetTextColor [0.7,0,0,1];
-    _heliBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_HeliDisabled";
-};
-
-if !(call HR_GRG_Cnd_canAccessPlane) then {
-    private _planeBttn = _disp displayCtrl HR_GRG_IDC_BttnPlane;
-    _planeBttn ctrlEnable false;
-    _planeBttn ctrlSetTextColor [0.7,0,0,1];
-    _planeBttn ctrlSetTooltip localize "STR_HR_GRG_Generic_AirDisabled";
+if (HR_GRG_disableSellButton) then {
+    _disp displayCtrl HR_GRG_IDC_SellVeh ctrlEnable false;
 };
 
 //extras list init

@@ -585,6 +585,8 @@ if (random 100 < (20 + tierWar * 3)) then {
 
 ["locationSpawned", [_markerX, "Airport", true]] call EFUNC(Events,triggerEvent);
 
+{ [_x, true] call A3U_fnc_setLock; } forEach _vehiclesX;
+
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
 {
