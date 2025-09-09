@@ -1,5 +1,5 @@
 		///////////////////////////////////////////////////////
-		// Global Mobilisation
+		// Global Mobilisation ///
 		///////////////////////////////////////////////////////
 		class handgunsgm{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_gm", localize "STR_A3AU_handguns"]);
@@ -1186,6 +1186,62 @@
 				price = 95;
 				stock = MAGAZINE_STOCK;
 			};
+			class gm_40Rnd_762x39mm_AP_7N23_akm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_AP_7N23_ak47_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_AP_7N23_akm_org {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_57N231_akm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_57N231_akm_org {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_BSD_57N231U_akm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_BSD_57N231U_akm_org {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_T_57N231P_akm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_T_57N231P_ak47_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_T_57N231P_akm_org {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_AP_7N23_mpikm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_57N231_mpikm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_BSD_57N231U_mpikm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_40Rnd_762x39mm_B_T_57N231P_mpikm_blk {
+				price = 95;
+				stock = MAGAZINE_STOCK;
+			};
 
 
 
@@ -1385,6 +1441,27 @@
 				price = 275;
 				stock = MAGAZINE_STOCK;
 			};
+
+			class gm_1rnd_40x47mm_he_ngo74 {
+				price = 200;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_1rnd_40x46mm_illum_dm16 {
+				price = 200;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_1rnd_40x46mm_hedp_dm21 {
+				price = 200;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_1rnd_40x46mm_smoke_dm35 {
+				price = 200;
+				stock = MAGAZINE_STOCK;
+			};
+			class gm_1rnd_40x46mm_he_dm91 {
+				price = 200;
+				stock = MAGAZINE_STOCK;
+			};
 			///////////////////////////////////////////////////////
 			// SMGs
 			///////////////////////////////////////////////////////
@@ -1450,6 +1527,8 @@
 			ITEM(gm_gc_firstaidkit_vehicle, 50, MISC_STOCK);
 			ITEM(gm_ge_army_firstaidkit_vehicle, 50, MISC_STOCK);
 
+			ITEM(gm_handgrenade_frag_m56, 100, MISC_STOCK);
+			ITEM(gm_smokeshell_wht_m77, 100, MISC_STOCK);
 		};
 
 		class navigationgm
@@ -1650,6 +1729,16 @@
 			ITEM(gm_ge_headgear_beret_blk_armor, 50, MISC_STOCK);
 			ITEM(gm_ge_headgear_beret_blk_antitank, 50, MISC_STOCK);
 			ITEM(gm_ge_headgear_beret_red_antiair, 50, MISC_STOCK);
+
+			ITEM(gm_gc_army_headgear_hat_90_bg, 50, MISC_STOCK);
+			ITEM(gm_gc_army_headgear_hat_90_str, 50, MISC_STOCK);
+			ITEM(gm_gc_army_headgear_hat_90_sgr, 50, MISC_STOCK);
+
+			ITEM(gm_gc_army_headgear_m86, 100, MISC_STOCK);
+			ITEM(gm_gc_army_headgear_m86_cover_blu, 100, MISC_STOCK);
+			ITEM(gm_gc_army_headgear_m86_net, 100, MISC_STOCK);
+			ITEM(gm_gc_army_headgear_m86_cover_str, 100, MISC_STOCK);
+			ITEM(gm_gc_army_headgear_m86_cover_win, 100, MISC_STOCK);
 			/////helmets
 		};
 
@@ -1738,6 +1827,10 @@
 			ITEM(gm_xx_uniform_soldier_bdu_nogloves_80_oli, 100, MISC_STOCK);
 			ITEM(gm_xx_uniform_soldier_bdu_80_wdl, 100, MISC_STOCK);
 			ITEM(gm_xx_uniform_soldier_bdu_80_oli, 100, MISC_STOCK);
+			ITEM(gm_gc_army_uniform_soldier_rolled_90_str, 100, MISC_STOCK);
+			ITEM(gm_gc_army_uniform_soldier_rolled_90_sgr, 100, MISC_STOCK);
+			ITEM(gm_gc_army_uniform_soldier_90_str, 100, MISC_STOCK);
+			ITEM(gm_gc_army_uniform_soldier_90_sgr, 100, MISC_STOCK);
 			////uniforms
 		};
 
@@ -1821,6 +1914,42 @@
 			ITEM(gm_gc_army_vest_80_belt_str, 5, MISC_STOCK);
 			ITEM(gm_ge_army_vest_pilot_pads_oli, 200, MISC_STOCK);
 			ITEM(gm_ge_army_vest_pilot_oli, 200, MISC_STOCK);
+			ITEM(gm_pl_army_vest_armor_01_akm_80_bg, 200, MISC_STOCK);
+			ITEM(gm_pl_army_vest_armor_01_akm_80_blu, 200, MISC_STOCK);
+			ITEM(gm_pl_army_vest_armor_01_akm_80_frog, 200, MISC_STOCK);
+			ITEM(gm_pl_army_vest_armor_01_akm_80_oli, 200, MISC_STOCK);
+			ITEM(gm_pl_army_vest_armor_01_akm_80_str, 200, MISC_STOCK);
+			ITEM(gm_pl_army_vest_armor_01_akm_80_win, 200, MISC_STOCK);
+
+			ITEM(gm_gc_army_vest_bespa_80_none_str, 200, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_none_win, 200, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_belt_str, 200, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_belt_win, 200, MISC_STOCK);
+
+			ITEM(gm_gc_army_vest_bespa_80_leader_str, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_leader_win, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_lmg_str, 350, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_lmg_win, 350, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_rifleman_str, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_rifleman_win, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_at_str, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_80_at_win, 300, MISC_STOCK);
+
+			ITEM(gm_gc_army_vest_bespa_90_belt_str, 200, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_belt_win, 200, MISC_STOCK);
+
+			ITEM(gm_gc_army_vest_bespa_90_leader_str, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_leader_win, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_lmg_str, 350, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_lmg_win, 350, MISC_STOCK);
+
+			ITEM(gm_gc_army_vest_bespa_90_officer_str, 200, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_officer_win, 200, MISC_STOCK);
+
+			ITEM(gm_gc_army_vest_bespa_90_rifleman_str, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_rifleman_win, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_at_str, 300, MISC_STOCK);
+			ITEM(gm_gc_army_vest_bespa_90_at_win, 300, MISC_STOCK);
 			///vests
 		};
 		
@@ -1896,5 +2025,6 @@
 			ITEM(gm_gc_army_facewear_dustglasses, 50, MISC_STOCK);
 			ITEM(gm_ge_facewear_dustglasses, 50, MISC_STOCK);
 			ITEM(gm_ge_facewear_acidgoggles, 50, MISC_STOCK);
+			ITEM(gm_ge_facewear_dustglasses_relaxed, 50, MISC_STOCK);
 			///facewear
 		};
