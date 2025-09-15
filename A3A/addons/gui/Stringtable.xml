@@ -3262,6 +3262,17 @@
                 <Portuguese>Parâmetros experimentais</Portuguese>
                 <Chinesesimp>实验参数</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_ext_label">
+                <Original>Extender Parameters</Original>
+                <Czech>Parametry extenderu</Czech>
+                <French>Paramètres de l'extenseur</French>
+                <Italian>Parametri dell'extender</Italian>
+                <Korean>확장 매개 변수</Korean>
+                <Russian>Параметры ретранслятора</Russian>
+                <Polish>Parametry przedłużacza</Polish>
+                <Portuguese>Parâmetros do extensor</Portuguese>
+                <Chinesesimp>扩展器参数</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Development Parameters</Original>
                 <Czech>Parametry vývoje</Czech>
@@ -3669,19 +3680,31 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save">
                 <Original>Creating new save</Original>
+                <Russian>Создание нового сохранения</Russian>
+                <Chinesesimp>创建新存档</Chinesesimp>
                 <Korean>새 저장 생성</Korean>
+                <French>Création d'une nouvelle sauvegarde</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_edit_save">
                 <Original>Editing save with ID: %1</Original>
+                <Russian>Редактирование сохранения с ID: %1</Russian>
+                <Chinesesimp>编辑存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 편집: %1</Korean>
+                <French>Modification de la sauvegarde (ID : %1)</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
+                <Russian>Копирование сохранения с ID: %1</Russian>
+                <Chinesesimp>复制存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 복사: %1</Korean>
+                <French>Copie de la sauvegarde (ID : %1)</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_unlocks_disabled">
                 <Original>This parameter cannot be changed when unlocks are globally disabled.</Original>
+                <Russian>Этот параметр нельзя изменить при глобально отключенных разблокировках.</Russian>
+                <Chinesesimp>全局禁用解锁功能时无法更改此参数。</Chinesesimp>
                 <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
+                <French>Ce paramètre ne peut pas être modifié lorsque les déverrouillages sont désactivés globalement.</French>
             </Key>
         </Container>
         <Container name="setup_dialog_table">
