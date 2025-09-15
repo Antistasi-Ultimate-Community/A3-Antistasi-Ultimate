@@ -365,3 +365,5 @@ _unit linkItem (selectRandom (A3A_faction_reb get "watches"));
 if (backpackItems _unit isEqualTo []) then { removeBackpack _unit };
 
 Verbose_3("Class %1, type %2, loadout %3", _unitType, _recruitType, str (getUnitLoadout _unit));
+
+if (_recruitType isEqualTo 0) then { _unit setVariable ["orgLoadout", getUnitLoadout _unit, true] };

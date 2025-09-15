@@ -7,7 +7,7 @@
     0. <String> Class you want to know the category index of
 
     Return Value:
-    <Int> category index or -1 if it has no category
+    <Int> category index; -1 if it has no category, and -2 if it is found on the blacklist. Used for deleting the vehicle after being found on the blacklist.
 
     Scope: Any
     Environment: unscheduled
@@ -37,6 +37,9 @@ switch (true) do {
     case ([_class] call HR_GRG_fnc_isAmmoSource): { 6 };
     case ([_class] call HR_GRG_fnc_isFuelSource): { 6 };
     case ([_class] call HR_GRG_fnc_isRepairSource): { 6 };
+
+    case (_class isKindOf "staticWeapon"): { 7 };   //some non-vanilla artillery is statics
+
     case (_editorCat isEqualTo "EdSubcat_Cars"): { [_class] call HR_GRG_isCivilian }; // Returns 0 (undercover) or 1 (not undercover) 
     case (_editorCat in ["EdSubcat_Tanks","EdSubcat_APCs","EdSubcat_AAs","EdSubcat_Artillery"]): { 2 };
     case (_editorCat in ["EdSubcat_Helicopters"]): { 3 };
@@ -54,7 +57,7 @@ switch (true) do {
 
     //cup
     case (_editorCat in ["CUP_EdSubcat_Bikes", "CUP_EdSubCat_Cars_Woodland", "CUP_EdSubCat_UpHMMWV_Cars_Desert", "CUP_EdSubCat_Cars_Winter"]): { [_class] call HR_GRG_isCivilian }; // Returns 0 (undercover) or 1 (not undercover)
-
+    
     //Fallback
     case (_class isKindOf "Car"): { [_class] call HR_GRG_isCivilian }; // Returns 0 (undercover) or 1 (not undercover)
     case (_class isKindOf "Tracked_APC"): { 2 }; //?
@@ -62,7 +65,6 @@ switch (true) do {
     case (_class isKindOf "Helicopter"): { 3 };
     case (_class isKindOf "Plane"): { 4 };
     case (_class isKindOf "Ship"): { 5 };
-    case (_class isKindOf "staticWeapon"): { 7 }; //some non-vanilla artillery is statics
 
     default { -1 };
 };
