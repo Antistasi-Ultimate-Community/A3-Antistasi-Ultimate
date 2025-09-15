@@ -450,7 +450,7 @@ _eliteLoadoutData set ["machineGuns", [
     ["CUP_lmg_m249_pip3", "", "", "CUP_optic_AIMM_COMPM4_BLK", ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249"], [], ""], 2
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
-    ["CUP_srifle_M110", "", "CUP_acc_ANPEQ_15_Black", "CUP_optic_SB_2_12x50_PMII", ["CUP_20Rnd_762x51_B_M110", "CUP_20Rnd_TE1_Red_Tracer_762x51_M110"], [], "CUP_bipod_Harris_1A2_L"], 3,
+    ["CUP_srifle_M110", "", "CUP_acc_ANPEQ_15_Black", "CUP_optic_SB_3_12x50_PMII", ["CUP_20Rnd_762x51_B_M110", "CUP_20Rnd_TE1_Red_Tracer_762x51_M110"], [], "CUP_bipod_Harris_1A2_L"], 3,
     ["CUP_srifle_Mk12SPR", "CUP_muzzle_snds_Mk12", "CUP_acc_ANPEQ_15_Black", "CUP_optic_LeupoldMk4_MRT_tan", ["CUP_20Rnd_556x45_Stanag"], [], "CUP_bipod_Harris_1A2_L_BLK"], 1
 ]];
 _eliteLoadoutData set ["sniperRifles", [
