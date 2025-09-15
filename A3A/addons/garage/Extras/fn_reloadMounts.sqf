@@ -23,7 +23,7 @@ FIX_LINE_NUMBERS()
 Trace("Reloading mounts");
 private _disp = findDisplay HR_GRG_IDD_Garage;
 private _ctrl = _disp displayCtrl HR_GRG_IDC_ExtraMounts;
-private _cat = HR_GRG_Vehicles#HR_GRG_STATICINDEX;
+private _cat = HR_GRG_vehicles#HR_GRG_STATICINDEX;
 //remove old statics
 {
     [HR_GRG_previewVeh, true] call A3A_Logistics_fnc_unload;
