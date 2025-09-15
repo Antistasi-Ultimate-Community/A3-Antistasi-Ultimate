@@ -38,7 +38,8 @@ class Params
             case (0): { ["Basic"] };
             case (1): { ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot", "SuperDuperCool"] }; // Generally, new sections can probably be added here to show up as a section under "Advanced Params"
             case (2): { ["Experimental"] };
-            case (3): { ["Development"] };
+            case (3): { ["Extender"] };
+            case (4): { ["Development"] };
         };
 
         * if you want your section to show up as an entirely new option in the Parameter Types Dropdown ComboBox,
@@ -48,14 +49,16 @@ class Params
         private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
         private _advParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_adv_label");
         private _expParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_exp_label");
+        private _extParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_ext_label");
         private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
         private _sdcParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_sdc_label"); // give it a text value here
 
         _paramsType lbSetValue [_basicParamsIndex, 0];
         _paramsType lbSetValue [_advParamsIndex, 1];
         _paramsType lbSetValue [_expParamsIndex, 2];
-        _paramsType lbSetValue [_devParamsIndex, 3];
-        _paramsType lbSetValue [_sdcParamsIndex, 4]; // and give it an integer value here
+        _paramsType lbSetValue [_extParamsIndex, 3];
+        _paramsType lbSetValue [_devParamsIndex, 4];
+        _paramsType lbSetValue [_sdcParamsIndex, 5]; // and give it an integer value here
 
         _paramsType lbSetCurSel _basicParamsIndex;
 
@@ -63,7 +66,7 @@ class Params
 
         private _shownTypes = switch (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) do {
             ...
-            case (4): { ["SuperDuperCool"] };
+            case (5): { ["SuperDuperCool"] };
         };
 
     */
@@ -494,8 +497,8 @@ class Params
     class deathPenalty: PlusParams
     {
         title = $STR_params_deathPenalty;
-        values[] = {15, 30, 50, 75, 100};
-        texts[] = {"15%", "30%", "50%", "75%", "100%"};
+        values[] = {0, 15, 30, 50, 75, 100};
+        texts[] = {"0%", "15%", "30%", "50%", "75%", "100%"};
         default = 30;
     };
     class saveZeusBuildings: PlusParams
@@ -714,19 +717,20 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
-    class loadoutsToGenerate: ExperimentalParams
-    {
-        title = $STR_params_loadoutsToGenerate;
-        values[] = {5, 10, 15, 20};
-        texts[] = {"5", "10", "15", "20"};
-        default = 5;
-    };
     class pistolStart : ExperimentalParams
     {
         title = $STR_params_pistolStart;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
+        lockInGame = 1;
+    };
+    class loadoutsToGenerate: ExperimentalParams
+    {
+        title = $STR_params_loadoutsToGenerate;
+        values[] = {5, 10, 15, 20};
+        texts[] = {"5", "10", "15", "20"};
+        default = 5;
         lockInGame = 1;
     };
 
@@ -826,6 +830,14 @@ class Params
         values[] = {-1, 16, 24, 32};
         texts[] = {"∞", "16", "24", "32"};
         default = 24;
+    };
+    class A3A_rebelGarrisonGroupSize: BalanceParams
+    {
+        title = $STR_params_rebelGarrisonGroupSize;
+        tooltip = $STR_params_rebelGarrisonGroupSize_desc;
+        values[] = {2, 4, 6, 8, 10, 12, 14, 16};
+        texts[] = {"2", "4", "6", "8", "10", "12", "14", "16"};
+        default = 8;
     };
     class A3A_UAVSpawnChance: BalanceParams
     {
@@ -1059,6 +1071,11 @@ class Params
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
         default = 3;
+    };
+
+    class ExtenderParams: AllParams
+    {
+        type = "Extender";
     };
 
     class DevelopmentParams: AllParams
