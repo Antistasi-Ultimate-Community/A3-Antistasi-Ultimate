@@ -5,7 +5,16 @@ params ["_newUnit","_oldUnit"];
 
 if (isNull _oldUnit) exitWith {};
 
+private _injurer = _oldUnit getVariable ["A3A_injurer", sideEmpty];
+
 waitUntil {alive _newUnit};
+
+[format["(Logger: %1) Recieving A3A_injurer on %1: [%2]", name _newUnit, _injurer], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
+if (_injurer in A3U_kickEnemySides) then {
+	[_newUnit] remoteExec ["A3U_fnc_kickPlayer", 2];
+} else {
+	[_newUnit, sideEmpty, false] remoteExecCall ["A3U_fnc_trackPlayer", 2];
+};
 
 //When LAN hosting, Bohemia's Zeus module code will cause the player lose Zeus access if the body is deleted after respawning.
 //This is a workaround that re-assigns curator to the player if their body is deleted.

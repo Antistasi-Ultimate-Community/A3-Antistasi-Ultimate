@@ -222,6 +222,22 @@
         file = "CUP_Reb_WM";
         description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
     };
+    class CUP_TST : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_science_co.paa);
+        name = "The Science Team";
+        file = "CUP_Reb_TST";
+		climate[] = {"temperate","arctic","tropical"};
+    };
+    class CUP_TSTa : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_science_co.paa);
+        name = "The Science Team";
+        file = "CUP_Reb_TSTa";
+		climate[] = {"arid"};
+    };
     class CUP_TKC : CUP_Base
     {
         side = "Civ";

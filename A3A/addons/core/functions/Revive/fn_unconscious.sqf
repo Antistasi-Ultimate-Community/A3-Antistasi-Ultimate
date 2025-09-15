@@ -5,7 +5,7 @@ private _isPlayer = false;
 private _playersX = false;
 private _inPlayerGroup = false;
 private _handlerCountdown = 0;
-_unit setBleedingremaining 300;
+_unit setBleedingRemaining 300;
 
 private _fnc_applyPostEffect = {
 	"colorCorrections" ppEffectAdjust [1,1,0, [0.1,0.2,0.3,-0.5], [1,1,1,0.4], [0.5,0.2,0,1]]; 
@@ -18,38 +18,13 @@ private _fnc_applyPostEffect = {
 };
 
 private _fnc_selfReviveCountdownStart = {
-	private _diff = (_unit getVariable ["A3A_selfReviveTimeout", -1]) - time;
-	private _initialCountDown = [_diff] call BIS_fnc_countDown;
-
-	if (_diff > 0) then {
-		_handlerCountdown = addMissionEventHandler [
-			"EachFrame", 
-			{ 
-				[
-					localize "STR_antistasi_actions_unconscious_self_withstand_countdown",
-					format[
-						[(([0] call BIS_fnc_countdown) / 60) + .01, "HH:MM"] call BIS_fnc_timetostring
-					],
-					true
-				] call A3A_fnc_customHint
-			}
-		];
-	}
-	else {
-		_handlerCountdown = addMissionEventHandler [
-			"EachFrame", 
-			{ 
-				[
-					localize "STR_antistasi_actions_unconscious_self_withstand_countdown",
-					format[
-						"<t color='#008000'>%1</t>", 
-						localize "STR_antistasi_actions_unconscious_self_withstand_ready"
-					],
-					true
-				] call A3A_fnc_customHint
-			}
-		];
-	};
+	_handlerCountdown = addMissionEventHandler [
+		"EachFrame", 
+		{
+			["One Life Warning", "<t color='#ff0000'>You are at risk of losing your one life.</t>You will be kicked if you die!", true] call A3A_fnc_customHint;
+		}
+		// Hijacked to show the one life warning instead
+	];
 };
 
 private _fnc_selfReviveCountdownStop = {
@@ -59,10 +34,14 @@ private _fnc_selfReviveCountdownStop = {
 if (isPlayer _unit) then {
 	_isPlayer = true;
 
-	_unit spawn {
-		sleep 5;
-		_this allowDamage true;
-	};
+	_unit allowDamage false;
+	[_unit, _injurer, true] remoteExecCall ["A3U_fnc_trackPlayer", 2];
+	[format["(Logger: %1) Setting A3A_injurer on %1: [%2]", name _unit, _injurer], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
+
+	// _unit spawn {
+	// 	sleep 5;
+	// 	_this allowDamage true;
+	// };
 	closeDialog 0;
 	if (!isNil "respawnMenu") then {(findDisplay 46) displayRemoveEventHandler ["KeyDown", respawnMenu]};
 	respawnMenu = (findDisplay 46) displayAddEventHandler ["KeyDown", SCRT_fnc_common_unconsciousEventHandler];
@@ -107,7 +86,9 @@ else {
 
 if (_isPlayer) then {
 	[] call _fnc_applyPostEffect;
-	[] call _fnc_selfReviveCountdownStart;
+	if (_injurer in A3U_kickEnemySides) then {
+		[] call _fnc_selfReviveCountdownStart;
+	};
 };
 
 _unit setFatigue 1;
@@ -237,5 +218,8 @@ if (alive _unit) then {
 
 	if (isPlayer _unit) then {
 		[] call SCRT_fnc_misc_updateRichPresence;
+		_unit allowDamage true;
+		[_unit, sideEmpty, false] remoteExecCall ["A3U_fnc_trackPlayer", 2];
+		[format["(Logger: %1) Resetting A3A_injurer on %1", name _unit], _fnc_scriptName] remoteExecCall ["A3U_fnc_log", 2];
 	};
 };

@@ -217,6 +217,12 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_old_soviet_co.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_old_soviet_co.paa);
 	};
+	class a3u_flag_science: a3u_flag_optre_unsc 
+	{
+		name = "Science Team";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_old_science_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_old_science_co.paa);
+	};
 
 	// This ukraine flag is for the STALKER modset, not current day ukraine
 	// Please don't use it for current day, it desensitises people to the reality that ukraine is in a war
