@@ -19,6 +19,7 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 #include "CfgMarkers.hpp"
 #include "CfgWeapons.hpp"
+#include "CfgWorlds.hpp"
 class A3A {
     #include "IntelMessages.hpp"
     #include "Templates.hpp"
