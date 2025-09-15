@@ -30,7 +30,8 @@ while {true} do {
     if (
         A3A_lastPlayerDir != _oldDir ||
         {vectorMagnitude velocity player > 0.1} || // "speed player" return zero for sideways walking/crawling
-        {!A3A_isUAVAFK && {_controllingUAV || {shownUAVFeed}}} // player controlling a UGV/UAV or viewing its feed
+        {!A3A_isUAVAFK && {_controllingUAV || {shownUAVFeed}}} || // player controlling a UGV/UAV or viewing its feed
+        {!A3A_isZeusAFK && !isNull curatorCamera} // player is in Zeus mode
     ) then {
         A3A_lastActiveTime = time;
         if (player getVariable ["isAFK", false]) then {
