@@ -90,9 +90,25 @@ if (_tab isEqualTo "vehicles") then
         _previewPicture ctrlSetText _editorPreview;
         _previewPicture ctrlCommit 0;
 
-        private _label = _display ctrlCreate ["A3A_SectionLabelLeft", -1, _itemControlsGroup];
+        private _label = _display ctrlCreate ["A3A_SectionStructuredLabelLeft", -1, _itemControlsGroup];
         _label ctrlSetPosition [0, 0, 44 * GRID_W, 6 * GRID_H];
-        _label ctrlSetText _displayName;
+        private _dlc = "";
+        private _addons = configsourceaddonlist _configClass;
+        if (count _addons > 0) then {
+        	private _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);
+        	if (count _mods > 0) then {
+        		_dlc = _mods select 0;
+        	};
+        };
+        private _dlcParams = modParams [_dlc,["logo","logoOver"]];
+        private _logo = _dlcParams param [0,""];
+        private _logoOver = _dlcParams param [1,""];
+        private _fieldManualTopicAndHint = getarray (configfile >> "cfgMods" >> _dlc >> "fieldManualTopicAndHint");
+        _label ctrlseteventhandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
+        private _OriginsText = composeText [
+            _displayName," ",image _logo
+        ];
+        _label ctrlSetStructuredText _OriginsText;
         _label ctrlSetBackgroundColor [0,0,0,0.5];
         _label ctrlCommit 0;
 
