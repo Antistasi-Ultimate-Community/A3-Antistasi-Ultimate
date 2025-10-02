@@ -166,6 +166,7 @@ class CfgFunctions
             class playableUnits {};
             class getSideRadioTowerInfluence {};
             class rebuildAssets {};
+            class rebuildEconomicAssets {};
             class rebuildRadioTower {};
             class relocateHQObjects {};
             class repairRuinedBuilding {};
