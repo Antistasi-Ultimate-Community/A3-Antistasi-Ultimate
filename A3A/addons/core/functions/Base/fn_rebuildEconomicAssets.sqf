@@ -6,29 +6,26 @@ if (!isServer) exitWith { Error("Server-only function miscalled") };
 
 params ["_economicSite"];
 
-Debug_1("Entered A3A_fnc_rebuildEconomicAssets for %1", str _economicSite);
+Debug_1("Entered A3A_fnc_rebuildEconomicAssets for %1", _economicSite);
 
 if !(_economicSite in destroyedSites) exitWith { Error("Attempted to rebuild invalid economic site") };
 
-Info_2("Repairing %1 Site %2", 
-    if (_economicSite in factories) then {"Factory"} else {"Resource"}, 
-    str _economicSite);
+Info_1("Rebuilding %1", _economicSite);
 
 // Remove from destroyed sites
 destroyedSites = destroyedSites - [_economicSite];
 publicVariable "destroyedSites";
 
 // Repair factory or resource buildings at the site
+private _repairTypes = ["Building", "House"]; // So depots and such in resources and factories can be rebuilt, could be too loose
 private _economicSitePosition = getMarkerPos _economicSite;
-private _economicBuildings = nearestObjects [_economicSitePosition, A3A_buildingWhitelist, 500, true];
+private _economicBuildings = nearestObjects [_economicSitePosition, _repairTypes, 250];
 {
-    [_x] call A3A_fnc_repairRuinedBuilding;
+    [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
 } forEach _economicBuildings;
 
 // Notify players about successful rebuild
 private _nameX = [_economicSite] call A3A_fnc_localizar;
 ["TaskSucceeded", ["", format [localize "STR_notifiers_rebuild_assets_success", _nameX]]] remoteExec ["BIS_fnc_showNotification",[teamPlayer, civilian]];
 
-Info_2("%1 Site %2 has been rebuilt.", 
-    if (_economicSite in factories) then {"Factory"} else {"Resource"}, 
-    str _economicSite);
+Info_1("%1 has been Rebuilt.", _economicSite);
