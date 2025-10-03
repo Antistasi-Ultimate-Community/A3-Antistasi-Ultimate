@@ -114,15 +114,7 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_armor";
         _taskIcon = "destroy";
-        _vehiclePool = (_milFaction get "vehiclesTanks") //sketti code stop-gap, compileMissionAssets doesn't handle vics per faction
-        + (_milFaction get "vehiclesAA")
-        + (_milFaction get "vehiclesArtillery")
-        + (_milFaction get "vehiclesLightAPCs")
-        + (_milFaction get "vehiclesAPCs")
-        + (_milFaction get "vehiclesLightTanks")
-        + (_milFaction get "vehiclesAirborne")
-        + (_milFaction get "vehiclesIFVs");
-        _typeVehObj = selectRandom (_vehiclePool);
+        _typeVehObj = selectRandom (_milFaction get "vehiclesArmor");
     };
     case "prisoners":
     {
