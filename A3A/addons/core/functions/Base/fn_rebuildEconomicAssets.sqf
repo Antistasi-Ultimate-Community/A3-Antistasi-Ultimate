@@ -21,7 +21,7 @@ private _repairTypes = ["Building", "House"]; // So depots and such in resources
 private _economicSitePosition = getMarkerPos _economicSite;
 private _economicBuildings = nearestObjects [_economicSitePosition, _repairTypes, 250];
 {
-    [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
+    [_x] call A3A_fnc_repairRuinedBuilding;
 } forEach _economicBuildings;
 
 // Notify players about successful rebuild
