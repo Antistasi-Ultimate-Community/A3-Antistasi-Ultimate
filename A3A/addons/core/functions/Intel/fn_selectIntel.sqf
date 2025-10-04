@@ -52,7 +52,7 @@ private _text = "";
 private _sideName = _faction get "name";
 private _intelContent = -1;
 
-if (!disableTrader && !isTraderQuestCompleted && !isTraderQuestAssigned) then {
+if (!disableTrader && {!isTraderQuestCompleted && {!isTraderQuestAssigned}}) then {
     private _thresholds = createHashMapFromArray [
         ["Civilian", 20],
         ["Small", 20],
