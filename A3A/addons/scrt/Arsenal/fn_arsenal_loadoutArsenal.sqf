@@ -2571,7 +2571,9 @@ switch _mode do {
 			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {loadbackpack player};
 		};
 
-		if (_loadOld isNotEqualTo _load) then {
+		private _loadChanged = (_loadOld isNotEqualTo _load);
+
+		if (_loadChanged) then {
 			_amountOld = parseNumber (_ctrlList lnbtext [_lbcursel,2]);
 			if(_add > 0)then{
 				_ctrlList lnbsettext [[_lbcursel,2],str (_amountOld + _count)];
@@ -2590,7 +2592,7 @@ switch _mode do {
 
 		_ctrlLoadCargo progresssetposition (_load select 0);
 
-		if (_loadOld isNotEqualTo _load) then {
+		if (_loadChanged) then {
 			private _loadPercentage = load player;
 			private _loadAbs = loadAbs player;
 			private _loadLimit = getNumber(configFile >> "CfgInventoryGlobalVariable" >> "maxSoldierLoad");
