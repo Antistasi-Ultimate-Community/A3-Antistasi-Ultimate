@@ -69,7 +69,7 @@ if (_side in [Occupants, Invaders]) then {
         (_faction getOrDefault ["vehiclesAirborne", [], true]) +
         (_faction getOrDefault ["vehiclesIFVs", [], true])
     );
-    _faction set ["vehiclesArmor", _vehArmor, true];
+    _faction set ["vehiclesArmor", _vehArmor];
 };
 
 _faction;
