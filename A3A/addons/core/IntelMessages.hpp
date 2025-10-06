@@ -1,10 +1,10 @@
 class IntelMessages {
     notFound[] = {
         "a wet noodle in the officers breast pocket.",
-        "a candy wrapper meticulously folded and stowed in the soldier's billfold",
+        "a candy wrapper meticulously folded and stowed in the soldier's billfold.",
         "a damp snotrag. You wish you hadn't checked that leg pocket.",
-        "the top-half of a DND character sheet for 'Dirk Man-Thrust'",
-        "the exact coordinates for a big cache of weapons that was cleared out yesterday",
+        "the top-half of a DND character sheet for 'Dirk Man-Thrust'.",
+        "the exact coordinates for a big cache of weapons that was cleared out yesterday.",
         "a hand-drawn picture of a tank with the words 'My Other Car' scrawled underneath.",
         "a receipt for 47 tacos, all with 'extra onions.'",
         "a doodle of a dragon fighting what looks suspiciously like a refrigerator.",
