@@ -32,10 +32,12 @@ private _disp = findDisplay HR_GRG_IDD_Garage;
         _x ctrlEnable false;
     };
 } forEach HR_GRG_Cats;
+
 //refresh new category
 private _disp = findDisplay HR_GRG_IDD_Garage;
 _newCtrl = _disp displayCtrl (HR_GRG_IDC_CatUndercoverCar + _index);
 [_newCtrl, _index] call HR_GRG_fnc_reloadCategory;
+
 //activate new category
 _newCtrl ctrlEnable true;
 _newCtrl ctrlShow true;
@@ -56,3 +58,5 @@ private _text = switch _index do {
 };
 _textCtrl = _disp displayCtrl HR_GRG_IDC_CatText;
 _textCtrl ctrlSetStructuredText text _text;
+
+[true] spawn HR_GRG_fnc_toggleConfirmBttn;
