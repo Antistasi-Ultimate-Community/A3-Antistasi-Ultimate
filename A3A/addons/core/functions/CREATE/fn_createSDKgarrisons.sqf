@@ -14,7 +14,7 @@ _positionX = getMarkerPos (_markerX);
 
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
-if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {
+if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///maaaaaaybe we should save vehicles near ANY friendly marker?
 	if (!(_markerX in citiesX)) then {
 		private _veh = createVehicle [FactionGet(reb,"flag"), _positionX, [],0, "NONE"];
 		_veh setFlagTexture FactionGet(reb,"flagTexture");
@@ -68,35 +68,75 @@ if (_typeCrew in _garrison) then {
 
 // Move riflemen into saved static weapons in area
 {
-	if !(isNil {_x getVariable "lockedForAI"}) then { continue };
-	// Statics loaded into vehicle via ACE are attached to their vehicle; don't mount those
-	if (!(isNull attachedTo _x) && (_x in (attachedTo _x getVariable["ace_cargo_loaded", []]))) then { continue };
-	private _index = _garrison findIf {_x isEqualTo FactionGet(reb,"unitRifle")};
-	if (_index == -1) exitWith {};
-	private _unit = objNull;
-	if (typeOf _x in FactionGet(all,"staticMortars")) then {
-		if (isNull _groupMortars) then { _groupMortars = createGroup teamPlayer };
-		_unit = [_groupMortars, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
-		_unit moveInGunner _x;
+    private _veh = _x; // Rename to avoid variable shadowing
+    if !(isNil {_veh getVariable "lockedForAI"}) then { continue };
+    if (!(isNull attachedTo _veh) && {_veh in (attachedTo _veh getVariable ["ace_cargo_loaded", []])}) then { continue };
 
-		[_groupMortars] call A3A_fnc_artilleryAdd;
-	} else {
-		if (isNull _groupStatics) then { _groupStatics = createGroup teamPlayer };
-		_unit = [_groupStatics, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
-		_unit moveInGunner _x;
-	};
-	[_unit,_markerX] call A3A_fnc_FIAinitBases;
-	_soldiers pushBack _unit;
-	_garrison deleteAT _index;
+    // Get all available crew positions
+    private _crewPositions = [];
+    
+    // Check gunner position
+    if (isNull gunner _veh) then {
+        _crewPositions pushBack ["Gunner", []];
+    };
+    
+    // Check commander position
+    if ((_veh emptyPositions "Commander") > 0 && isNull commander _veh) then {
+        _crewPositions pushBack ["Commander", []];
+    };
+    
+    // Check turret positions - FIXED TURRET UNIT CHECK
+    private _emptyTurrets = allTurrets [_veh, false] select { isNull (_veh turretUnit _x) };
+    { _crewPositions pushBack ["Turret", _x] } forEach _emptyTurrets;
+
+    // Process each position
+    {
+        if (count _garrison == 0) exitWith {};
+        private _role = _x#0;
+        private _turretPath = _x#1;
+        
+        // Find rifleman in garrison
+        private _index = _garrison findIf { _x == FactionGet(reb,"unitRifle") };
+        if (_index == -1) exitWith {};
+        
+        // Create unit - FIXED TYPEOF CHECK
+        private _unitGroup = if (typeOf _veh in FactionGet(all,"staticMortars")) then {
+            if (isNull _groupMortars) then { _groupMortars = createGroup teamPlayer };
+            _groupMortars
+        } else {
+            if (isNull _groupStatics) then { _groupStatics = createGroup teamPlayer };
+            _groupStatics
+        };
+        
+        private _unit = [_unitGroup, _garrison#_index, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
+        
+        // Assign position
+        switch (_role) do {
+            case "Gunner": { 
+                _unit moveInGunner _veh;
+                if (_unitGroup == _groupMortars) then {
+                    [_unitGroup] call A3A_fnc_artilleryAdd;
+                };
+            };
+            case "Commander": { _unit moveInCommander _veh };
+            case "Turret": { _unit moveInTurret [_veh, _turretPath] };
+        };
+        
+        // Initialize and track unit
+        [_unit,_markerX] call A3A_fnc_FIAinitBases;
+        _soldiers pushBack _unit;
+        _garrison deleteAt _index;
+        
+    } forEach _crewPositions;
+    
 } forEach _staticsX;
-
 
 // Make A3A_rebelGarrisonGroupSize groups out of the remainder of the garrison
 _garrison = _garrison call A3A_fnc_garrisonReorg;
 
 private _totalUnits = count _garrison;
 private _countUnits = 0;
-private _countGroup = A3A_rebelGarrisonGroupSize;
+private _countGroup = 8; //could set a parametr here to control size of the groups
 private _groupX = grpNull;
 
 while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do {
@@ -112,6 +152,8 @@ while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do {
 	_soldiers pushBack _unit;
 	_countUnits = _countUnits + 1;
 	_countGroup = _countGroup + 1;
+	_groupX setBehaviour "AWARE";
+	_groupX setCombatMode "YELLOW";
 	sleep 0.5;
 };
 

@@ -90,7 +90,12 @@ HR_GRG_fnc_Hint = {
     ] call A3A_fnc_customHint;
 };
 HR_GRG_fnc_vehInit = {
-    if (_this isKindOf "StaticWeapon") then {staticsToSave pushBack _this; publicVariable "staticsToSave"};
+    if ((_this isKindOf  "LandVehicle") || (_this isKindOf  "Ship")) then {
+		staticsToSave pushBack _this; 
+		publicVariable "staticsToSave";
+        UngaragedVehicles pushBack _this; 
+		publicVariable "UngaragedVehicles";
+	};
     _this setVariable ["ownerX",getPlayerUID player,true];
     [_this, TeamPlayer] call A3A_fnc_AIVEHinit;
 }; //is passed vehicle as _this

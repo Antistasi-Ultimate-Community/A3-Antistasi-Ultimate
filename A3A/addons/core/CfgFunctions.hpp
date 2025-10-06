@@ -157,6 +157,7 @@ class CfgFunctions
             class moveHQ {};
             class mrkUpdate {};
             class mrkWIN {};
+            class moveOutCrew {};
             class numericRank {};
             class onHeadlessClientDisconnect {};
             class onPlayerDisconnect {};
@@ -174,7 +175,6 @@ class CfgFunctions
             class returnMuzzle {};
             class revealToPlayer {};
             class scheduler {};
-            class moveOutCrew {};
             class sellVehicle {};
             class setMarkerAlphaForSide {};
             class setPlaneLoadout {};
@@ -189,6 +189,7 @@ class CfgFunctions
             class unlockStatic {};
             class unlockVehicle {};
             class updateRebelStatics {};
+            class vehicleBoxRestore {};
             class zoneCheck {};
             class checkWinCondition {};
             class checkLossCondition {};
