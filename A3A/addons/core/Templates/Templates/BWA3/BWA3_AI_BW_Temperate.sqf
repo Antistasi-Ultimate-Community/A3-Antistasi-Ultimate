@@ -658,7 +658,7 @@ private _medicTemplate = {
     [["medBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
     ["facewear"] call _fnc_setFacewear;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -743,7 +743,7 @@ private _engineerTemplate = {
     ["backpacks"] call _fnc_setBackpack;
     ["facewear"] call _fnc_setFacewear;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -771,7 +771,7 @@ private _latTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["facewear"] call _fnc_setFacewear;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["ATLaunchers"] call _fnc_setLauncher;
@@ -800,7 +800,7 @@ private _atTemplate = {
     ["backpacks"] call _fnc_setBackpack;
     ["facewear"] call _fnc_setFacewear;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["lightATLaunchers"] call _fnc_setLauncher;
@@ -828,7 +828,7 @@ private _aaTemplate = {
     ["backpacks"] call _fnc_setBackpack;
     ["facewear"] call _fnc_setFacewear;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;
