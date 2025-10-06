@@ -1,0 +1,2 @@
+_lightArmedVehicles append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf", "B_G_Pickup_Rocket_rf", "AU_I_G_Pickup_Minigun_R"];
+_lightUnarmedVehicles pushBack "a3u_black_Pickup_rival_rf";

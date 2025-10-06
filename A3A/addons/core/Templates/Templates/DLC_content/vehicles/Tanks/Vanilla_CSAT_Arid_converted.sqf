@@ -1,0 +1,1 @@
+_tanks append ["O_MBT_04_cannon_F", "O_MBT_04_command_F"];

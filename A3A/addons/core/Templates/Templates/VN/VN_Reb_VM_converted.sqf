@@ -1,0 +1,186 @@
+///////////////////////////
+//   Rebel Information   //
+///////////////////////////
+
+["name", "VM"] call _fnc_saveToTemplate;
+
+["flag", "vn_flag_lao_dmg"] call _fnc_saveToTemplate;
+["flagTexture", "\A3\Data_F\Flags\flag_blue_co.paa"] call _fnc_saveToTemplate;
+["flagMarkerType", "vn_flag_lao"] call _fnc_saveToTemplate;
+
+//////////////////////////
+//  Mission/HQ Objects  //
+//////////////////////////
+
+// All of bellow are optional overrides.
+["firstAidKits", ["vn_b_item_firstaidkit", "vn_o_item_firstaidkit"]] call _fnc_saveToTemplate;  // Relies on autodetection. However, item is tested for for help and reviving.
+["mediKits", ["vn_b_item_medikit_01", "vn_o_item_medikit_01"]] call _fnc_saveToTemplate;  // Relies on autodetection. However, item is tested for for help and reviving.
+["toolKits", ["vn_b_item_toolkit"]] call _fnc_saveToTemplate;  // Relies on autodetection.
+["itemMaps", ["vn_b_item_map"]] call _fnc_saveToTemplate;  // Relies on autodetection.
+
+["vehicleHealthStation", ["Land_vn_tent_mash_02_01", 75]] call _fnc_saveToTemplate;
+
+["diveGear", ["vn_b_uniform_seal_09_01", "vn_b_acc_seal_01", "vn_b_vest_seal_01"]] call _fnc_saveToTemplate;
+
+["flyGear", ["vn_b_uniform_heli_01_01"]] call _fnc_saveToTemplate;
+
+private _vehiclesData = call _fnc_createLoadoutData;
+
+_vehiclesData set ["vehiclesBasic", ["vn_c_bicycle_01"]];
+_vehiclesData set ["vehiclesLightUnarmed", ["vn_b_wheeled_lr2a_01_aus_army", "vn_b_wheeled_lr2a_02_aus_army"]];
+_vehiclesData set ["vehiclesLightArmed", ["vn_i_wheeled_lr2a_mg_01_fank_71"]];
+_vehiclesData set ["vehiclesTruck", ["vn_i_wheeled_m54_01_marines"]];
+_vehiclesData set ["vehiclesAT", ["vn_b_wheeled_lr2a_mg_03_aus_army"]];
+_vehiclesData set ["vehiclesAA", ["vn_b_wheeled_lr2a_mg_02_aus_army"]];
+
+_vehiclesData set ["vehiclesBoat", ["vn_i_boat_02_mg_00_fank_70", "vn_i_boat_01_mg_00_fank_70"]];
+
+_vehiclesData set ["vehiclesPlane", ["vn_o_air_mig19_gun"]];
+
+_vehiclesData set ["vehiclesCivCar", ["vn_c_car_02_01", "vn_c_car_01_01","vn_c_car_03_01","vn_c_wheeled_m151_02","vn_c_wheeled_m151_01","vn_c_car_04_01"]];
+_vehiclesData set ["vehiclesCivTruck", ["vn_b_wheeled_m54_01_airport"]];
+_vehiclesData set ["vehiclesCivHeli", ["vn_b_air_uh1d_04_09"]];
+_vehiclesData set ["vehiclesCivBoat", ["vn_c_boat_08_01"]];
+_vehiclesData set ["vehiclesCivSupply", ["vn_i_wheeled_m54_03_marines"]];
+
+_vehiclesData set ["staticMGs", ["vn_i_fank_71_static_m1919a4_low", "vn_i_fank_71_static_m1919a6", "vn_i_fank_71_static_m1919a4_high"]];
+_vehiclesData set ["staticAT", ["vn_i_fank_71_static_m40a1rr", "vn_i_static_m101_01"]];
+_vehiclesData set ["staticAA", ["vn_i_fank_70_static_zgu1_01", "vn_i_fank_71_static_m2_high"]];
+_vehiclesData set ["staticMortars", ["vn_i_static_mortar_m2"]];
+_vehiclesData set ["staticMortarMagHE", "vn_mortar_m2_mag_he_x8"];
+_vehiclesData set ["staticMortarMagSmoke", "vn_mortar_m2_mag_wp_x8"];
+
+_vehiclesData set ["minesAT", "vn_mine_m15_mag"];
+_vehiclesData set ["minesAPERS", "vn_mine_m14_mag"];
+
+["vehiclesData", [
+    _vehiclesData
+]] call _fnc_saveVehiclesToTemplate;
+
+
+["breachingExplosivesAPC", [["vn_mine_m112_remote_mag", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["vn_mine_satchel_remote_02_mag", 1], ["vn_mine_m112_remote_mag", 2]]] call _fnc_saveToTemplate;
+
+#include "VN_Reb_Vehicle_Attributes.sqf"
+
+///////////////////////////
+//  Rebel Starting Gear  //
+///////////////////////////
+
+private _initialRebelEquipment = [
+    "vn_sten", "vn_sten_mag", "vn_sten_t_mag",
+    "vn_mc10", "vn_mc10_mag", "vn_mc10_t_mag",
+    "vn_m10", "vn_m10_mag",
+    "vn_type64", "vn_type64_mag",
+    "vn_m127",
+    "vn_p38s",
+    "vn_m19_binocs_grey", "vn_mx991", "vn_mx991_red",
+    "vn_m_mk2_knife_01", "vn_m_axe_01",
+    "vn_m18_white_mag", "vn_molotov_grenade_mag", "vn_m127_mag", "vn_mine_punji_03_mag",
+    "B_FieldPack_oli", "vn_b_vest_usarmy_01",
+    "vn_c_pack_01"
+];
+
+["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
+
+private _rebUniforms = [
+    "vn_o_uniform_vc_01_01",
+    "vn_o_uniform_vc_01_02",
+    "vn_o_uniform_vc_02_07",
+    "vn_o_uniform_vc_03_02",
+    "vn_o_uniform_vc_04_02",
+    "vn_o_uniform_vc_05_01",
+    "vn_o_uniform_vc_02_05",
+    "vn_o_uniform_vc_04_03",
+    "vn_o_uniform_vc_03_03"
+];
+
+["uniforms", _rebUniforms] call _fnc_saveToTemplate;
+
+["headgear", [
+    "vn_c_conehat_02",
+    "vn_c_conehat_01",
+    "vn_b_headband_05",
+    "vn_b_headband_04",
+    "vn_b_headband_01",
+    "vn_o_boonie_vc_01_01",
+    "vn_o_boonie_vc_01_02"
+]] call _fnc_saveToTemplate;
+
+/////////////////////
+///  Identities   ///
+/////////////////////
+
+["faces", ["AsianHead_A3_01", "AsianHead_A3_02", "AsianHead_A3_03", "AsianHead_A3_04", "AsianHead_A3_05", "AsianHead_A3_06", "AsianHead_A3_07"]] call _fnc_saveToTemplate;
+["voices", ["Male01CHI", "Male02CHI", "Male03CHI"]] call _fnc_saveToTemplate;
+
+//////////////////////////
+//       Loadouts       //
+//////////////////////////
+
+private _loadoutData = call _fnc_createLoadoutData;
+_loadoutData set ["maps", ["ItemMap"]];
+_loadoutData set ["watches", ["ItemWatch"]];
+_loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["binoculars", ["Binocular"]];
+
+_loadoutData set ["uniforms", _rebUniforms];
+
+_loadoutData set ["glasses", ["G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
+_loadoutData set ["goggles", ["G_Lowprofile"]];
+_loadoutData set ["facemask", ["G_Bandanna_blk", "G_Bandanna_oli", "G_Bandanna_khk", "G_Bandanna_tan", "G_Bandanna_beast", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_aviator"]];
+
+_loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
+_loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
+_loadoutData set ["items_medical_medic", ["MEDIC"] call A3A_fnc_itemset_medicalSupplies];
+_loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials];
+
+////////////////////////
+//  Rebel Unit Types  //
+///////////////////////.
+
+private _squadLeaderTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1]] call _fnc_setFacewear;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+    ["binoculars"] call _fnc_addBinoculars;
+};
+
+private _riflemanTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1]] call _fnc_setFacewear;
+    
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+};
+
+private _prefix = "militia";
+private _unitTypes = [
+    ["Petros", _squadLeaderTemplate],
+    ["SquadLeader", _squadLeaderTemplate],
+    ["Rifleman", _riflemanTemplate],
+    ["staticCrew", _riflemanTemplate],
+    ["Medic", _riflemanTemplate, [["medic", true]]],
+    ["Engineer", _riflemanTemplate, [["engineer", true]]],
+    ["ExplosivesExpert", _riflemanTemplate, [["explosiveSpecialist", true]]],
+    ["Grenadier", _riflemanTemplate],
+    ["LAT", _riflemanTemplate],
+    ["AT", _riflemanTemplate],
+    ["AA", _riflemanTemplate],
+    ["MachineGunner", _riflemanTemplate],
+    ["Marksman", _riflemanTemplate],
+    ["Sniper", _riflemanTemplate],
+    ["Unarmed", _riflemanTemplate]
+];
+
+[_prefix, _unitTypes, _loadoutData] call _fnc_generateAndSaveUnitsToTemplate;

@@ -1,0 +1,21 @@
+_aa pushBack "gm_ge_army_gepard1a1_noinsignia";
+_basic append ["gm_ge_army_k125","gm_dk_army_bibera0_noinsignia"];
+_lightTanks append ["gm_dk_army_Leopard1a3_noinsignia","gm_ge_army_Leopard1a1_noinsignia","gm_ge_army_Leopard1a1a2_noinsignia","gm_ge_army_Leopard1a3a1_noinsignia","gm_ge_army_Leopard1a5_noinsignia"];
+_militiaAPCs append ["gm_ge_army_fuchsa0_reconnaissance_noinsignia","gm_ge_army_fuchsa0_engineer_noinsignia","gm_ge_army_fuchsa0_command_noinsignia","gm_ge_army_luchsa2_noinsignia","gm_ge_army_luchsa1_noinsignia","gm_dk_army_m113a1dk_apc_noinsignia","gm_dk_army_m113a1dk_command_noinsignia","gm_dk_army_m113a1dk_engineer_noinsignia","gm_dk_army_m113a2dk_noinsignia","gm_ge_army_m113a1g_apc_noinsignia","gm_ge_army_m113a1g_apc_milan_noinsignia","gm_ge_army_m113a1g_command_noinsignia"];
+_IFVs append ["gm_dk_army_m113a2dk_noinsignia","gm_ge_army_marder1a1plus_noinsignia","gm_ge_army_marder1a1a_noinsignia","gm_ge_army_marder1a2_noinsignia"];
+_militiaTrucks append ["gm_pl_army_ural4320_cargo","gm_ge_army_u1300l_cargo"];
+_militiaCars append ["gm_ge_army_iltis_cargo","gm_pl_army_uaz469_cargo","gm_dk_army_typ253_cargo","gm_dk_army_typ247_cargo","gm_dk_army_typ1200_cargo"];
+_militiaLightArmed append ["gm_ge_army_iltis_milan","gm_ge_army_iltis_mg3"];
+_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+_airborneVehicles pushBack "gm_dk_army_m113a2dk_noinsignia";
+_Trucks append ["gm_ge_army_u1300l_cargo","gm_ge_army_kat1_451_cargo"];
+_cargoTrucks append ["gm_dk_army_u1300l_container","gm_ge_army_kat1_454_cargo","gm_ge_army_kat1_451_container","gm_ge_army_kat1_452_container"];
+_ammoTrucks append ["gm_ge_army_kat1_451_reammo","gm_ge_army_kat1_454_reammo"];
+_repairTrucks append ["gm_ge_army_u1300l_repair","gm_dk_army_bpz2a0_noinsignia"];
+_fuelTrucks pushBack "gm_ge_army_kat1_451_refuel";
+_medicalTrucks append ["gm_ge_army_m113a1g_medic_noinsignia","gm_ge_army_u1300l_medic","gm_dk_army_m113a1dk_medic_noinsignia"];
+_helisLight append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_swooper_noinsignia"];
+_transportHelicopters append ["gm_ge_army_ch53g_noinsignia","gm_ge_army_ch53gs_noinsignia"];
+_helisAttack append ["gm_ge_army_bo105p_pah1a1_noinsignia","gm_ge_army_bo105p_pah1_noinsignia"];
+
+_airPatrol append ["gm_ge_army_bo105m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_noinsignia","gm_ge_army_bo105p1m_vbh_swooper_noinsignia"];
