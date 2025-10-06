@@ -214,10 +214,6 @@
         {
             prefix = "jcaie_stock";
         };
-        class weapons_ef : weapons_base
-        {
-            prefix = "ef";
-        };
         class weapons_mpp : weapons_base
         {
             prefix = "mpp_stock";
