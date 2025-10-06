@@ -9435,6 +9435,21 @@
             </Key>
         </Container>
         <Container name="intel_not_found_messages">
+            <!--
+                To indicate that there are translations for a specific language,
+                add their _exact_ locale string of "STR_antistasi_dialogs_generic_button_yes_text"
+                to this ID.
+
+                For example, once translations of `STR_antistasi_intel_not_found_XXX` are completed
+                for German, add
+
+                &lt;German&gt;Ja&lt;/German&gt;
+
+                to `STR_antistasi_intel_translated`.
+            -->
+            <Key ID="STR_antistasi_intel_translated">
+                <Original>Yes</Original>
+            </Key>
             <Key ID="STR_antistasi_intel_not_found_000">
                 <Original>a wet noodle in the officers breast pocket.</Original>
             </Key>
