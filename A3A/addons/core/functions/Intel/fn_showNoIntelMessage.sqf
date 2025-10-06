@@ -24,6 +24,6 @@ private _message = format[
     selectRandom getArray(configFile >> "A3A" >> "IntelMessages" >> "notFound")
 ];
 
-[localize "STR_intel_no_structtext_header", _message] call A3A_fnc_customHint;
+[localize "STR_intel_search_intel_header", _message] call A3A_fnc_customHint;
 
 nil;
