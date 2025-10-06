@@ -9238,6 +9238,227 @@
                 <French>Vous avez trouvé un paquet de %1 clés de décryptage!&lt;br/&gt;Cela permettra à votre faction de décrypter les appels de soutien.</French>
             </Key>
         </Container>
+        <Container name="intel_not_found_messages">
+            <Key ID="STR_antistasi_intel_not_found_000">
+                <Original>a wet noodle in the officers breast pocket.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_001">
+                <Original>a candy wrapper meticulously folded and stowed in the soldier's billfold.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_002">
+                <Original>a damp snotrag. You wish you hadn't checked that leg pocket.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_003">
+                <Original>the top-half of a DND character sheet for 'Dirk Man-Thrust'.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_004">
+                <Original>the exact coordinates for a big cache of weapons that was cleared out yesterday.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_005">
+                <Original>a hand-drawn picture of a tank with the words 'My Other Car' scrawled underneath.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_006">
+                <Original>a receipt for 47 tacos, all with 'extra onions.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_007">
+                <Original>a doodle of a dragon fighting what looks suspiciously like a refrigerator.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_008">
+                <Original>the lyrics to 'Never Gonna Give You Up,' handwritten line by line on a cocktail napkin.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_009">
+                <Original>a broken yo-yo with 'Top Secret' carved into the side.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_010">
+                <Original>someone's grocery list: 'bread, milk, tactical nuke, eggs.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_011">
+                <Original>a dog-eared romance novel, bookmarked at a very dramatic kiss.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_012">
+                <Original>a shoebox lid labeled 'evidence,' containing only lint.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_013">
+                <Original>a fake passport with the photo of a cat.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_014">
+                <Original>a sock. It is crunchy. Best not to ask.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_015">
+                <Original>a handwritten flowchart labeled 'Plan B: Panic.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_016">
+                <Original>a rock with googly eyes glued on.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_017">
+                <Original>a sketch of a tank wearing a cowboy hat.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_018">
+                <Original>a fortune cookie slip that reads: 'You will fail this mission.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_019">
+                <Original>a jar of pickles with one pickle missing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_020">
+                <Original>a crumpled napkin that says 'BRING MORE NAPKINS.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_021">
+                <Original>a bingo card with every square marked 'Free Space.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_022">
+                <Original>a tiny notebook filled entirely with the word 'butt.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_023">
+                <Original>a rubber chicken dressed in camouflage paint.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_024">
+                <Original>a doodle of stick figures labeled 'enemy forces.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_025">
+                <Original>a pile of receipts showing bulk orders of glitter.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_026">
+                <Original>a comic strip titled 'Sergeant Fartbeard' with only one panel.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_027">
+                <Original>a single shoelace tied in 37 knots.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_028">
+                <Original>a Sudoku filled entirely with the number 7.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_029">
+                <Original>a love letter addressed to 'My Dearest Microwave.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_030">
+                <Original>a crayon drawing of a stickman holding a bazooka.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_031">
+                <Original>a half-eaten granola bar in a classified envelope.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_032">
+                <Original>a cassette tape labeled 'Sounds of War' that is just whale songs.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_033">
+                <Original>a box of cereal with every toy prize missing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_034">
+                <Original>a crumpled napkin with 'Don't trust Yussuf' in three different handwritings.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_035">
+                <Original>a Polaroid of an empty room with the word 'soon' scrawled on it.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_036">
+                <Original>a to-do list: 1. Wake up. 2. Betray everyone. 3. Lunch.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_037">
+                <Original>a magazine clipping of a man flexing with the caption 'Inspiration.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_038">
+                <Original>a single glove filled with jelly.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_039">
+                <Original>a flash drive with the private key to the Antistasi Ultimate Github repo.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_040">
+                <Original>a flash drive containing only a 3-second recording of somebody coughing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_041">
+                <Original>a pamphlet titled 'How to Hide Evidence' with sections highlighted.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_042">
+                <Original>a coupon for 20% off a store that closed in 1998.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_043">
+                <Original>a paper airplane with 'TOP SECRET' stamped on the wing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_044">
+                <Original>a children's menu colored entirely in red crayon.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_045">
+                <Original>a friendship bracelet made from shoelaces.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_046">
+                <Original>a detailed report on sandwich stores in the local area.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_047">
+                <Original>a single fortune cookie with no fortune inside.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_048">
+                <Original>a hairbrush missing every single bristle.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_049">
+                <Original>a scrap of paper: 'Remember to delete this note.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_050">
+                <Original>a harmonica with teeth marks in it.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_051">
+                <Original>a drawing of a cat wearing night-vision goggles.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_052">
+                <Original>a stick of gum, already chewed.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_053">
+                <Original>a recipe for 'explosive chili' with doodles in the margins.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_054">
+                <Original>a rusty spoon wrapped in velvet.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_055">
+                <Original>a Pokémon card bent into origami.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_056">
+                <Original>a tiny vial labeled 'Tears of A3U devs.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_057">
+                <Original>a business card: 'Todd, Assassin. Have gun, will travel.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_058">
+                <Original>a stapled stack of papers: every page is blank.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_059">
+                <Original>a fortune cookie slip: 'You should have stayed home today.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_060">
+                <Original>a peanut butter sandwich fossilized in wax paper.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_061">
+                <Original>a napkin sketch of a treasure map to 'The Bathroom.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_062">
+                <Original>a matchbook with only one match, damp and useless.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_063">
+                <Original>a seashell labeled 'Property of the Navy.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_064">
+                <Original>a half-used crossword with every answer being 'BUTT.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_065">
+                <Original>a list of names, all crossed out except 'Jeff???'.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_066">
+                <Original>a ball of yarn with a classified tag on it.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_067">
+                <Original>a rolled-up poster of a muscled guy holding a cat.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_068">
+                <Original>a note that says 'This is not important intel.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_069">
+                <Original>a ticket stub for 'Shrek 2' opening night.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_070">
+                <Original>a fake, 15 of clubs playing card.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_071">
+                <Original>a packet of ramen seasoning, no noodles.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_072">
+                <Original>a binder labeled 'Master Plan' with only page numbers inside.</Original>
+            </Key>
+        </Container>
         <Container name="tasks">
             <Key ID="STR_tasks_attackHq_header">
                 <Original>Defend Petros</Original>
