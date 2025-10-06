@@ -78,6 +78,28 @@ FIX_LINE_NUMBERS()
 
 #define IDCS	[IDCS_LEFT,IDCS_RIGHT]
 
+#define ASSIGNED_ITEMS [\
+	IDC_RSCDISPLAYARSENAL_TAB_MAP,\
+	IDC_RSCDISPLAYARSENAL_TAB_GPS,\
+	IDC_RSCDISPLAYARSENAL_TAB_RADIO,\
+	IDC_RSCDISPLAYARSENAL_TAB_COMPASS,\
+	IDC_RSCDISPLAYARSENAL_TAB_WATCH,\
+	IDC_RSCDISPLAYARSENAL_TAB_NVGS\
+]
+
+#define LOADOUT_MAP [\
+	IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,\
+	IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,\
+	IDC_RSCDISPLAYARSENAL_TAB_HANDGUN,\
+	IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,\
+	IDC_RSCDISPLAYARSENAL_TAB_VEST,\
+	IDC_RSCDISPLAYARSENAL_TAB_BACKPACK,\
+	IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR,\
+	IDC_RSCDISPLAYARSENAL_TAB_GOGGLES,\
+	IDC_RSCDISPLAYARSENAL_TAB_BINOCULARS,\
+	ASSIGNED_ITEMS\
+]
+
 #define INITTYPES\
 		_types = [];\
 		_types set [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,["Uniform"]];\
@@ -430,7 +452,7 @@ switch _mode do {
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
-	case "customEvents":{
+	case "customEvents": {
 		_display = _this select 0;
 
 		//Keys
@@ -512,6 +534,10 @@ switch _mode do {
 
 			_ctrlIcon = _display displayctrl (IDC_RSCDISPLAYARSENAL_ICON + _idc);
 			_ctrlTab = _display displayctrl (IDC_RSCDISPLAYARSENAL_TAB + _idc);
+			_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _idc);
+			if (_idc in [IDCS_LEFT] && {!(_idc in ASSIGNED_ITEMS)}) then {
+				_ctrlList ctrladdeventhandler ["lbdblclick","['OverrideTab', _this select 0] call SCRT_fnc_arsenal_loadoutArsenal"];
+			};
 			{
 				_x ctrlRemoveAllEventHandlers "buttonclick";
 				if (_idc in [IDCS_LEFT]) then {
@@ -527,30 +553,46 @@ switch _mode do {
 			_ctrlSort ctrlRemoveAllEventHandlers "lbselchanged";
 			_ctrlSort ctrladdeventhandler ["lbselchanged",format ["['SortBy',[_this,%1]] call SCRT_fnc_arsenal_loadoutArsenal;",_idc]];
 
-      //Delete "Sort by mod" as it doesn't work currently.
-      if (lbSize _ctrlSort > 1) then {
-        _ctrlSort lbDelete 1;
-      };
+			//Delete "Sort by mod" as it doesn't work currently.
+			if (lbSize _ctrlSort > 1) then {
+			_ctrlSort lbDelete 1;
+			};
 
 
-	  private _sortByAmountIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_BY_AMOUNT");
-      private _sortDefaultIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_DEFAULT");
-	private _sortColorIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_COLOR");
-	  private _sortModIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_MOD");
+			private _sortByAmountIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_BY_AMOUNT");
+			private _sortDefaultIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_DEFAULT");
+			private _sortColorIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_COLOR");
+			private _sortModIndex = _ctrlSort lbadd (localize "STR_JNA_SORT_MOD");
 
-      _ctrlSort lbSetValue [0, SORT_ALPHABETICAL];
-      _ctrlSort lbSetValue [_sortByAmountIndex, SORT_AMOUNT];
-      _ctrlSort lbSetValue [_sortDefaultIndex, SORT_DEFAULT];
-	  _ctrlSort lbSetValue [_sortColorIndex, SORT_COLOR];
-	  _ctrlSort lbSetValue [_sortModIndex, SORT_MOD];
+			_ctrlSort lbSetValue [0, SORT_ALPHABETICAL];
+			_ctrlSort lbSetValue [_sortByAmountIndex, SORT_AMOUNT];
+			_ctrlSort lbSetValue [_sortDefaultIndex, SORT_DEFAULT];
+			_ctrlSort lbSetValue [_sortColorIndex, SORT_COLOR];
+			_ctrlSort lbSetValue [_sortModIndex, SORT_MOD];
 
-      lbSortByValue _ctrlSort;
+			lbSortByValue _ctrlSort;
 
 			_ctrlSort lbsetcursel _sort;
 			_sortValues set [_idc,_sort];
 
 		} foreach IDCS;
 		uinamespace setvariable ["jn_fnc_arsenal_sort",_sortValues];
+	};
+
+	case "OverrideTab": {
+		_this params ["_control"];
+
+		private _display = ctrlParent _control;
+		private _IDC = ctrlIDC _control;
+		private _tabBtnCtrl = _display displayCtrl (_IDC - 30);
+		private _iconBgndCtrl = _display displayCtrl (_IDC - 130);
+		private _override = _tabBtnCtrl getVariable ["OverrideTab", false];
+		private _colorTab = [[0,1,0,1], [0,0,0,1]] select (_override);
+		_tabBtnCtrl setVariable ["OverrideTab", !_override];
+		_tabBtnCtrl ctrlSetBackgroundColor _colorTab;
+		_tabBtnCtrl ctrlCommit 0;
+		_iconBgndCtrl ctrlSetTextColor _colorTab;
+		_iconBgndCtrl ctrlCommit 0;
 	};
 
   case "SortBy":{
@@ -851,7 +893,8 @@ switch _mode do {
 		];
 
 		//--- Weapon magazines and attachments
-		_showItems = _index in [IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_HANDGUN];
+		//_showItems = _index in [IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON,IDC_RSCDISPLAYARSENAL_TAB_HANDGUN];
+		_showItems = false;
 		_fadeItems = [1,0] select _showItems;
 		{
 			_idc = _x;
@@ -886,7 +929,8 @@ switch _mode do {
 		};
 
 		//--- Containers
-		_showCargo = _index in [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,IDC_RSCDISPLAYARSENAL_TAB_VEST,IDC_RSCDISPLAYARSENAL_TAB_BACKPACK];
+		//_showCargo = _index in [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,IDC_RSCDISPLAYARSENAL_TAB_VEST,IDC_RSCDISPLAYARSENAL_TAB_BACKPACK];
+		_showCargo = false;
 		_fadeCargo = [1,0] select _showCargo;
 		{
 			_idc = _x;
@@ -1348,6 +1392,64 @@ switch _mode do {
 				_lbAdd = _ctrlList lbadd _emptyString;
 				_data = str ["",0,""];
 				_ctrlList lbsetdata [_lbAdd,_data];
+			};
+		};
+
+		// * Filter primary and secondary weapons available according to unit type / class, all items to what's unlocked
+		_inventory = switch (_index) do {
+			// If item is in A3A_rebelGear, it should already be unlocked or its qty should be > jna_minItemMember select _index
+			case (IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON): {
+				private _loadoutName = currentRebelLoadout call SCRT_fnc_misc_getLoadoutName;
+				switch (_loadoutName) do {
+					case ("MACHINEGUNNER"): { 
+						_inventory select { (_x select 0) in (A3A_rebelGear get "MachineGuns") }
+					};
+					case ("STATICCREW");
+					case ("MEDIC"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "SMGs") }
+					};
+					case ("GRENADIER"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "GrenadeLaunchers") }
+					};
+					case ("SNIPER"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "SniperRifles") }
+					};
+					default {
+						_inventory select { (_x select 0) in ((A3A_rebelGear get "Rifles") + (A3A_rebelGear get "SMGs") + (A3A_rebelGear get "Shotguns")) }
+					};
+				};
+			};
+			case (IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON): {
+				private _loadoutName = currentRebelLoadout call SCRT_fnc_misc_getLoadoutName;
+				switch (_loadoutName) do {
+					case ("RIFLEMAN"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "RocketLaunchers") && {(_x select 0) in (missionNamespace getVariable "allDisposable")} }
+					};
+					case ("LAT"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "RocketLaunchers") }
+					};
+					case ("AT"): {
+						_inventory select { (_x select 0) in ((A3A_rebelGear get "RocketLaunchers") + (A3A_rebelGear get "MissileLaunchersAT")) }
+					};
+					case ("AA"): {
+						_inventory select { (_x select 0) in (A3A_rebelGear get "MissileLaunchersAA") }
+					};
+					default { [] };
+				};
+			};
+			case (IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG);
+			case (IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2);
+			case (IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG);
+			case (IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL): {
+				_inventory select {
+					private _amountCfg = getNumber (configfile >> "CfgMagazines" >> _x select 0 >> "count");
+					(_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ((jna_minItemMember select _index) * _amountCfg)}}
+				}
+			};
+
+			default {
+				// item unlocked (qty == -1) OR (unlocks disabled AND item qty more than min items)
+				_inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= (jna_minItemMember select _index)}} }
 			};
 		};
 
@@ -2014,7 +2116,7 @@ switch _mode do {
 
 				};
 				_lastCargoListSelected = uiNamespace getVariable ["jna_lastCargoListSelected", IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG];
-				['TabSelectRight',[_display,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG]] call SCRT_fnc_arsenal_loadoutArsenal;
+				//['TabSelectRight',[_display,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG]] call SCRT_fnc_arsenal_loadoutArsenal;
 			};
 			case IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR: {
 				_oldItem = headgear player;
@@ -3018,6 +3120,22 @@ switch _mode do {
 		_display = _this select 0;
 
 		private _loadout = getUnitLoadout player;
+		
+		{
+			if (_forEachIndex isEqualTo 9) then {
+				/*{
+					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
+					if !(_control getVariable ["OverrideTab", false]) then { (_loadout select 9) set [_forEachIndex, nil] };
+				} forEach (_x);*/
+			} else {
+				private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
+				private _item = _loadout select _forEachIndex;
+				if (_item isEqualType []) then { _item set [1, nil] };
+				if !(_control getVariable ["OverrideTab", false]) then { _loadout set [_forEachIndex, nil] };
+			};
+		} forEach LOADOUT_MAP;
+
+		rebelLoadouts deleteAt currentRebelLoadout;
 		rebelLoadouts set [currentRebelLoadout, _loadout];
 		publicVariable "rebelLoadouts";
 
@@ -3039,12 +3157,24 @@ switch _mode do {
 			removeBackpack player;
 		};
 
-		private _loadout = rebelLoadouts get currentRebelLoadout;
-
-		if (isNil "_loadout") then {
-			[player, 0, currentRebelLoadout] call A3A_fnc_equipRebel;
-		} else {
-			player setUnitLoadout _loadout;
+		private _rebelLoadouts = +rebelLoadouts;
+		private _loadout = _rebelLoadouts get currentRebelLoadout;
+		[player, 0, currentRebelLoadout] call A3A_fnc_equipRebel;
+		if (!isNil "_loadout") then {
+			player setUnitLoadout +_loadout;
+			{
+				if (_forEachIndex isEqualTo 9) then {
+					/*{
+						private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
+						private _item = (_loadout select 9) select _forEachIndex;
+						if (!isNil "_item") then { ["OverrideTab", _control] call SCRT_fnc_arsenal_loadoutArsenal };
+					} forEach (_x);*/
+				} else {
+					private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
+					private _item = _loadout select _forEachIndex;
+					if (!isNil "_item") then { ["OverrideTab", _control] call SCRT_fnc_arsenal_loadoutArsenal };
+				};
+			} forEach LOADOUT_MAP;
 		};
 	};
 
