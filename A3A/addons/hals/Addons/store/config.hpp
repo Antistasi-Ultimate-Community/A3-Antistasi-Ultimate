@@ -458,7 +458,6 @@ class cfgHALsStore
 				"sniperriflescw",
 				"launcherscw",
 				"launchermagazinescw",
-				"riflegrenadescw",
 				"muzzlescw",
 				"magazinescw", 
 				"pointerscw",
