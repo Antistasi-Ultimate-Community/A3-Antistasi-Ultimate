@@ -53,3 +53,4 @@
 #include "vehicles_marksmen.hpp"
 #include "vehicles_contact.hpp"
 #include "vehicles_kart.hpp"
+#include "vehicles_ScifiVP.hpp"
