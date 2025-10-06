@@ -100,6 +100,8 @@ private _fnc_saveVehiclesToTemplate = {
 			_dataStore set [_vehicleType, _vehiclesX];
 		} forEach (_vehiclesData);
 	} forEach (_data);
+	
+	_dataStore set [_name, "template"]; // indicates that vehiclesData came from the template / template file was already converted
 };
 
 {

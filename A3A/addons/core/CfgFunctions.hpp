@@ -707,6 +707,7 @@ class CfgFunctions
             class compileGroups {};
             class compileMissionAssets {};
             class getLoadout {};
+            class convertFaction {};
             class loadFaction {};
             class loadRivals {};
             class loadAddon {};
