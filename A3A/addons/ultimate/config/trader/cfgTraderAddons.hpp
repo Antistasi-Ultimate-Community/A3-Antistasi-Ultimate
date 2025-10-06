@@ -384,3 +384,14 @@
         addons[] = {"F16_Norwegian_Reskin"};
         vehicles = "CUP_NorAF_F16";
     };
+    class addons_ef : addons_base
+    {
+        addons[] = {"EF_Marines"};
+        weapons = "weapons_ef";
+        vehicles = "vehicles_ef";
+    };
+    class addons_mpp : addons_base
+    {
+        addons[] = {"MPP_PISTOLS"};
+        weapons = "weapons_mpp";
+    };

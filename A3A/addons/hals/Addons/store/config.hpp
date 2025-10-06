@@ -83,6 +83,7 @@ class cfgHALsStore
 		#include "config\JCAIA.hpp"
 		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
+		#include "config\mpp.hpp"
 	};
 
 	class stores 
@@ -954,6 +955,17 @@ class cfgHALsStore
 			categories[] = {
 				"vestsJCA",
 				"facewearJCA"
+			};
+		};
+		class mpp_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsMPP",
+				"pointersMPP",
+				"muzzlesMPP",
+				"opticsMPP",
+				"magazinesMPP"
 			};
 		};
 	};
