@@ -546,6 +546,18 @@
                 <Korean>미 육군.\n공격적이고 압도적인 힘.\n이 팩션을 사용하면 냉전 모드가 활성화됩니다(해당 시간대와 대략 맞는 차량과 무기만 사용됩니다).</Korean>
                 <French>United States Army.\nForce agressive et écrasante.\nL'utilisation de cette faction activera le mode Guerre froide (il n'y aura que l'utilisation de véhicules et d'armes qui correspondent à peu près à la chronologie).</French>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_RAV">
+                <Original>A relatively small military force composed of mercenaries from Russian territory. Their main mission is to defend cargo ships from FIA attacks, but according to some AAN investigations, the Altian government commissioned them for other reasons that are not yet clear. The Raven group has several armored and non-armored vehicles,static defensive weapons and a small air force consisting of helicopters and drones.</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_FIA">
+                <Original>From simple street criminals to arms smugglers, the FIA ​​is characterized by its ability to gather under its influence all those who do not support the military government. Although composed mainly of civilians and some AAF deserters, this paramilitary force can rely on foreign-funded weapons and rudimentary and captured enemy vehicles.</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_AAF">
+                <Original>After the coup, the AAF underwent several changes and received several funds for equipment modernization, with particular attention also to the navy which is responsible for cutting the FIA ​​supply lines. Thanks to Akhanteros, the AAF can count on various vehicles and weapons (some of their own production under license).</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_TFAegis">
+                <Original>Aegis is a task force composed of US military personnel; their goal is to support the government in the fight against the FIA ​​and to protect the civilian population. The TFA has several light armored vehicles and a small air force, their intervention in the conflict is limited by the Altian government.</Original>
+            </Key>
         </Container>
         <Container name="magRepack">
             <Key ID="STR_magRepack_init">
