@@ -19,6 +19,8 @@ Returns:
 Author:
     UnseenKill
 ---------------------------------------------------------------------------- */
+Verbose_1("_this=%1",_this);
+
 params[
     ["_object", objNull, [objNull]]
 ];

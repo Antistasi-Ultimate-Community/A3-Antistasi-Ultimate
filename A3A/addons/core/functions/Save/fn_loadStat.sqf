@@ -395,7 +395,7 @@ if (_varName in specialVarLoads) then {
                     _veh setVectorDirAndUp [_xVectorDir,_xVectorUp];
                 };
 
-                Debug_5("staticsX: #%1 (prio %2): created %3 @%4 (%5)",_index,_prio,_typeVehX,getPosATL _veh,_veh);
+                Debug_5("staticsX: #%1 (prio %2): created %3 @%4 (%5)",_index,_priority,_typeVehX,getPosATL _veh,_veh);
 
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
