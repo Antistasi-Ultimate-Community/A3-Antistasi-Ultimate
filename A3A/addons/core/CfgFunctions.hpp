@@ -203,6 +203,7 @@ class CfgFunctions
             class terrainManipulatorBuilderEH {};
             class terrainManipulatorOnPlacerShowEH {};
             class terrainManipulatorPostInitClient {};
+            class terrainManipulatorPostInitServer {};
             class initBuildableObjects {};
             class initBuilderMonitors {};
             class initPlacerDB {};
