@@ -327,3 +327,5 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 }];
 
 A3A_building_EHDB set [EACH_FRAME_EH, _eventHanderEachFrame];
+
+[QGVAR(BuildingPlacerShow), [player, true]] call CBA_fnc_serverEvent;

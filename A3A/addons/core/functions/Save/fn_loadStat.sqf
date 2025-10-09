@@ -374,16 +374,17 @@ if (_varName in specialVarLoads) then {
             _list = _list apply {
                 _x params["_class"];
                 _index = _index - 1;
-                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), _index, _x];
+                [[([_class] call CBA_fnc_getObjectConfig) >> QGVAR(restorePriority), "NUMBER", 25] call CBA_fnc_getConfigEntry, _index, _x];
             };
 
             // Sort descending; first index wins unless equal, then it's the original order
             _list sort false;
             _list apply {
-                _x params["","","_data"];
+                _x params["_priority","_index","_data"];
                 _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
-                Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
+
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save
@@ -393,6 +394,9 @@ if (_varName in specialVarLoads) then {
                     _veh setPosWorld _posVeh;
                     _veh setVectorDirAndUp [_xVectorDir,_xVectorUp];
                 };
+
+                Debug_5("staticsX: #%1 (prio %2): created %3 @%4 (%5)",_index,_prio,_typeVehX,getPosATL _veh,_veh);
+
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
@@ -408,15 +412,18 @@ if (_varName in specialVarLoads) then {
                     };
 
                     if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
-                        Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
-                        [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
+                        private _code = getText(configOf _veh >> QGVAR(onBuildingLoaded));
+                        Debug_4("calling %1 (%2) on %3 with params %4", QGVAR(onBuildingLoaded), _code, typeOf _veh, [_veh]);
+                        [_veh] call compile _code;
                     };
                 };
                 if (!isNil "_state") then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
             };
+
             publicVariable "staticsToSave";
+            publicVariable QGVAR(terrainManipulators);
         };
 
         case 'tasks': {

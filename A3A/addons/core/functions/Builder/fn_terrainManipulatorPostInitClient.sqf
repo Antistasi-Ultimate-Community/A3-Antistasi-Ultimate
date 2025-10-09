@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_handlerTerrainObjectHiderPostInitClient
+Function: A3A_fnc_terrainManipulatorPostInitClient
 
 Description:
     CBA extended post-init handler for terrain object hider base buildable objects (client side).

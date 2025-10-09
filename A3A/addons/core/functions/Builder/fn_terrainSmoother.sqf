@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+
 /// original author https://steamcommunity.com/profiles/76561199005611926
 /// slightly modified by wersal
 
@@ -6,6 +8,8 @@ params [
     ["_radius", 0, [0]],
     ["_smoothingRadius", 0, [0]]
 ];
+
+Debug_1("_this=%1",_this);
 
 private _center = getPos _object;
 private _targetHeight = getTerrainHeightASL _center;

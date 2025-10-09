@@ -36,8 +36,8 @@ class CfgVehicles {
         authors[] = {"wersal454", "UnseenKill"};
 
         EGVAR(core,restorePriority) = 95;
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingCompleted) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
+        EGVAR(core,onBuildingLoaded) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
 
         class EGVAR(core,Properties) {
             actions[] = {"terrainCleaner", "terrainSmootherExperimental"};
@@ -79,8 +79,8 @@ class CfgVehicles {
         model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
         EGVAR(core,restorePriority) = 100;
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingCompleted) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
+        EGVAR(core,onBuildingLoaded) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
 
         class EGVAR(core,Properties) {
             actions[] = {"terrainSmoother", "hideObject"};
@@ -139,8 +139,8 @@ class CfgVehicles {
         model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
         EGVAR(core,restorePriority) = 100;
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingCompleted) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
+        EGVAR(core,onBuildingLoaded) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
 
         class EGVAR(core,Properties) {
             actions[] = {"terrainCleaner", "hideObject"};
@@ -203,8 +203,8 @@ class CfgVehicles {
         model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
         EGVAR(core,restorePriority) = 90;
-        EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
-        EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+        EGVAR(core,onBuildingCompleted) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
+        EGVAR(core,onBuildingLoaded) = QUOTE(call FUNCMAIN(terrainManipulatorBuilderEH));
 
         class EGVAR(core,Properties) {
             actions[] = {"terrainCleaner", "hideObject"};
@@ -266,19 +266,22 @@ class CfgVehicles {
 class Extended_InitPost_EventHandlers {
     class A3AU_TerrainSmoother_Base_F {
         class ADDON {
-            clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
+            clientInit = QUOTE(call FUNCMAIN(terrainManipulatorPostInitClient));
+            serverInit = QUOTE(call FUNCMAIN(terrainManipulatorPostInitServer));
         };
     };
 
     class A3AU_VegetationCleaner_Base_F {
         class ADDON {
-            clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
+            clientInit = QUOTE(call FUNCMAIN(terrainManipulatorPostInitClient));
+            serverInit = QUOTE(call FUNCMAIN(terrainManipulatorPostInitServer));
         };
     };
 
     class GVAR(BB_TerrainObjectHider_Base) {
         class ADDON {
-            clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
+            clientInit = QUOTE(call FUNCMAIN(terrainManipulatorPostInitClient));
+            serverInit = QUOTE(call FUNCMAIN(terrainManipulatorPostInitServer));
         };
     };
 };

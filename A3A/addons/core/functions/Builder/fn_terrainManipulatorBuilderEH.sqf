@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
-Function: A3A_fnc_handlerTerrainManipulator
+Function: A3A_fnc_terrainManipulatorBuilderEH
 
 Description:
     Post complete/load handler for terrain manipulator base builder objects.
@@ -31,6 +31,8 @@ private _actions = getArray(_properties >> "actions");
 if (A3U_HelipadTerrainSmoothing && { "terrainSmootherExperimental" in _actions }) then {
     _actions pushBack "terrainSmoother";
 };
+
+Debug_3("%1 (%2) executing actions: %3",typeOf _object,_object,_actions);
 
 if ("terrainCleaner" in _actions) then {
     [_object, getNumber(_properties >> "cleanRadius"), getArray(_properties >> "cleanTerrainTypes")] call A3A_fnc_terrainCleaner;
