@@ -30,10 +30,11 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_unit", "_weaponType", ["_totalMagWeight", 50]];
+params ["_unit", "_weaponData", ["_totalMagWeight", 50]];
 
 call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from server if we're out of date
 
+private _weaponType = if (_weaponData isEqualType []) then { _weaponData select 0} else { _weaponData };
 private ["_weapon", "_isPrimary"];
 if (isClass (configFile >> "CfgWeapons" >> _weaponType)) then {
     _weapon = _weaponType;
@@ -66,12 +67,12 @@ if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
     private _config = configFile >> "CfgWeapons" >> _weapon;
     private _glmuzzle = getArray (_config >> "muzzles") select 1;		// guaranteed by category
     _glmuzzle = configName (_config >> _glmuzzle);                      // bad-case fix. compatibleMagazines is case-sensitive as of 2.12
-    private _glmag = (A3A_rebelGear get "Magazines") getOrDefault [_glmuzzle, ""] select 0;
+    private _glmag = if (_weaponData isEqualType [] && {!isNil {_weaponData select 5}}) then { _weaponData select 5 select 0 } else { (A3A_rebelGear get "Magazines") getOrDefault [_glmuzzle, ""] select 0 };
     if (_glmag != "") then { _unit addMagazines [_glmag, 5] };
 };
 
 if !(_weapon in (weapons _unit)) then { _unit addWeapon _weapon };
-private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
+private _magazine = if (_weaponData isEqualType [] && {!isNil {_weaponData select 4}}) then { _weaponData select 4 select 0 } else { selectRandom ((A3A_rebelGear get "Magazines") get _weapon) };
 if (!isNil "_magazine" && {!("Disposable" in _categories)}) then {
     private _magweight = 5 max getNumber (configFile >> "CfgMagazines" >> _magazine >> "mass");
     _unit addWeaponItem [_weapon, _magazine];
@@ -79,7 +80,7 @@ if (!isNil "_magazine" && {!("Disposable" in _categories)}) then {
 };
 
 // Optics
-private _compatOptics = A3A_rebelOpticsCache getOrDefault [_weapon, []];
+private _compatOptics = if (_weaponData isEqualType [] && {!isNil {_weaponData select 3}}) then { [_weaponData select 3] } else { A3A_rebelOpticsCache getOrDefault [_weapon, []] };
 if (isNil "_compatOptics") then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
     private _opticType = switch (_weaponType) do {
@@ -98,7 +99,7 @@ if (isNil "_compatOptics") then {
 };
 
 // Silencers/Muzzles
-private _compatSilencers = A3A_rebelSilencersCache getOrDefault [_weapon, []];
+private _compatSilencers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 1}}) then { [_weaponData select 1] } else { A3A_rebelSilencersCache getOrDefault [_weapon, []] };
 if (isNil "_compatSilencers") then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatSilencers = _compatItems arrayIntersect (A3A_rebelGear get "MuzzleAttachments");
@@ -107,7 +108,7 @@ if (isNil "_compatSilencers") then {
 };
 
 // Bipods
-private _compatBipods = A3A_rebelBipodsCache getOrDefault [_weapon, []];
+private _compatBipods = if (_weaponData isEqualType [] && {!isNil {_weaponData select 6}}) then { [_weaponData select 6] } else { A3A_rebelBipodsCache getOrDefault [_weapon, []] };
 if (_isPrimary && {isNil "_compatBipods"}) then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatBipods = _compatItems arrayIntersect (A3A_rebelGear get "Bipods");

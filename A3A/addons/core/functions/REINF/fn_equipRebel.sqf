@@ -168,6 +168,27 @@ private _fnc_addHandgun = {
     [_unit, _weaponType, 10] call A3A_fnc_randomWeapon;
 };
 
+private _fnc_addBinoculars = {
+    params ["_unit", "_overrideClass"];
+
+    if !(_typeTag isEqualTo "SquadLeader") exitWith {};
+    private _binoType = if !(isNil "_overrideClass") then { _overrideClass } else { "Binoculars" };
+    [_unit, _binoType, 5] call A3A_fnc_randomWeapon;
+};
+
+private _fnc_addAssignedItems = {
+    params ["_unit", "_overrideClass"];
+
+    if (isNil "_overrideClass") then {
+        _unit call _fnc_addRadio;
+        _unit linkItem (selectRandom (A3A_faction_reb get "compasses"));
+        _unit linkItem (selectRandom (A3A_faction_reb get "maps"));
+        _unit linkItem (selectRandom (A3A_faction_reb get "watches"));
+    } else {
+        { if (!isNil "_x") then { _unit linkItem _x } } forEach (_overrideClass);
+    };
+};
+
 private _fnc_addClassEquip = {
     params ["_unit"];
 
@@ -323,10 +344,12 @@ if (!isNil "_customLoadout") then {
     if (isNil {_customLoadout select 7}) then { _unit call _fnc_addFacewear };
     if (isNil {_customLoadout select 4}) then { _unit call _fnc_addVest };
     if (isNil {_customLoadout select 5}) then { _unit call _fnc_addBackpack };
-    if (isNil {_customLoadout select 0}) then { _unit call _fnc_addPrimary } else { [_unit, primaryWeapon _unit] call _fnc_addPrimary };
-    if (isNil {_customLoadout select 1}) then { _unit call _fnc_addSecondary } else { [_unit, secondaryWeapon _unit] call _fnc_addSecondary };
-    if (isNil {_customLoadout select 2}) then { _unit call _fnc_addHandgun } else { [_unit, handgunWeapon _unit] call _fnc_addHandgun };
-
+    if (isNil {_customLoadout select 0}) then { _unit call _fnc_addPrimary } else { [_unit, _customLoadout select 0] call _fnc_addPrimary };
+    if (isNil {_customLoadout select 1}) then { _unit call _fnc_addSecondary } else { [_unit, _customLoadout select 1] call _fnc_addSecondary };
+    if (isNil {_customLoadout select 2}) then { _unit call _fnc_addHandgun } else { [_unit, _customLoadout select 2] call _fnc_addHandgun };
+    //if (isNil {_customLoadout select 8}) then { _unit call _fnc_addBinoculars } else { [_unit, _customLoadout select 8] call _fnc_addBinoculars }; // TODO: Need to fix this
+    if (isNil {_customLoadout select 9}) then { _unit call _fnc_addAssignedItems } else { [_unit, _customLoadout select 9] call _fnc_addAssignedItems };
+    
     // * Don't cheese allowing launchers with rifleman.
     // * If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it.
     // * LAT / AT / AA is guaranteed.
@@ -342,14 +365,12 @@ if (!isNil "_customLoadout") then {
     _unit call _fnc_addPrimary;
     _unit call _fnc_addSecondary;
     _unit call _fnc_addHandgun;
-    _unit call _fnc_addNightEquip;
+    //_unit call _fnc_addBinoculars; // TODO: Need to fix this
+    _unit call _fnc_addAssignedItems;
+    _unit call _fnc_addNightEquip; // TODO: Need to rework this for compat with overridden weapon pointers - move to randomWeapon like the rest of the weapon accessories?
 };
 
-_unit call _fnc_addRadio;
-_unit call _fnc_addClassEquip;
-_unit linkItem (selectRandom (A3A_faction_reb get "compasses"));
-_unit linkItem (selectRandom (A3A_faction_reb get "maps"));
-_unit linkItem (selectRandom (A3A_faction_reb get "watches"));
+_unit call _fnc_addClassEquip; // TODO: Need to rework / remove this if cargo is overridden
 
 // remove backpack if empty, otherwise squad troops will throw it on the ground
 if (backpackItems _unit isEqualTo []) then { removeBackpack _unit };
