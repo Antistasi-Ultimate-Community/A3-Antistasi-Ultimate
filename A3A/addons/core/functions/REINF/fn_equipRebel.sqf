@@ -187,6 +187,11 @@ private _fnc_addAssignedItems = {
     } else {
         { if (!isNil "_x") then { _unit linkItem _x } } forEach (_overrideClass);
     };
+
+    if ((hmd _unit) isEqualTo "" && {isNil "_overrideClass" || {!isNil {_overrideClass select 5}}}) then {
+        private _nvg = selectRandomWeighted (A3A_rebelGear get "NVGs");
+        if (!isNil "_nvg") then { _unit linkItem _nvg };
+    };
 };
 
 private _fnc_addClassEquip = {
@@ -238,82 +243,6 @@ private _fnc_addClassEquip = {
     };
 };
 
-private _fnc_addNightEquip = {
-    params ["_unit", "_overrideClass"];
-
-    private _nvg = if (!isNil "_overrideClass") then { _overrideClass } else { selectRandomWeighted (A3A_rebelGear get "NVGs") };
-    if (_nvg != "") then { 
-        _unit linkItem _nvg;
-        private _weapon = primaryWeapon _unit;
-        private _compatLasers = A3A_rebelLasersCache get _weapon;
-        if (isNil "_compatLasers") then {
-            private _compatItems = compatibleItems _weapon; // cached, should be fast
-            _compatLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
-            A3A_rebelLasersCache set [_weapon, _compatLasers];
-        };
-        if (_compatLasers isNotEqualTo []) then {
-            private _LaserAttachment = selectRandom _compatLasers;
-            _unit addPrimaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
-        };
-        private _weaponsecondary = secondaryWeapon _unit;
-        private _compatSecondaryLasers = A3A_rebelLasersCache get _weaponsecondary;
-        if (isNil "_compatSecondaryLasers") then {
-            private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
-            _compatSecondaryLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
-            A3A_rebelLasersCache set [_weaponsecondary, _compatSecondaryLasers];
-        };
-        if (_compatSecondaryLasers isNotEqualTo []) then {
-            private _LaserAttachment = selectRandom _compatSecondaryLasers;
-            _unit addSecondaryWeaponItem _LaserAttachment;		// should be used automatically by AI as necessary
-        };
-        private _weaponhandgun = handgunWeapon _unit;
-        private _compatHandgunLasers = A3A_rebelLasersCache get _weaponhandgun;
-        if (isNil "_compatHandgunLasers") then {
-            private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
-            _compatHandgunLasers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
-            A3A_rebelLasersCache set [_weaponhandgun, _compatHandgunLasers];
-        };
-        if (_compatHandgunLasers isNotEqualTo []) then {
-            private _LaserAttachment = selectRandom _compatHandgunLasers;
-            _unit addHandgunItem _LaserAttachment;		// should be used automatically by AI as necessary
-        };
-    } else {
-        private _weapon = primaryWeapon _unit;
-        private _compatLights = A3A_rebelFlashlightsCache get _weapon;
-        if (isNil "_compatLights") then {
-            private _compatItems = compatibleItems _weapon; // cached, should be fast
-            _compatLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
-            A3A_rebelFlashlightsCache set [_weapon, _compatLights];
-        };
-        if (_compatLights isNotEqualTo []) then {
-            private _flashlight = selectRandom _compatLights;
-            _unit addPrimaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
-        };
-        private _weaponsecondary = secondaryWeapon _unit;
-        private _compatSecondaryLights = A3A_rebelFlashlightsCache get _weaponsecondary;
-        if (isNil "_compatSecondaryLights") then {
-            private _compatItems = compatibleItems _weaponsecondary; // cached, should be fast
-            _compatSecondaryLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
-            A3A_rebelFlashlightsCache set [_weaponsecondary, _compatSecondaryLights];
-        };
-        if (_compatSecondaryLights isNotEqualTo []) then {
-            private _flashlight = selectRandom _compatSecondaryLights;
-            _unit addSecondaryWeaponItem _flashlight;		// should be used automatically by AI as necessary
-        };
-        private _weaponhandgun = handgunWeapon _unit;
-        private _compatHandgunLights = A3A_rebelFlashlightsCache get _weaponhandgun;
-        if (isNil "_compatHandgunLights") then {
-            private _compatItems = compatibleItems _weaponhandgun; // cached, should be fast
-            _compatHandgunLights = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
-            A3A_rebelFlashlightsCache set [_weaponhandgun, _compatHandgunLights];
-        };
-        if (_compatHandgunLights isNotEqualTo []) then {
-            private _flashlight = selectRandom _compatHandgunLights;
-            _unit addHandgunItem _flashlight;		// should be used automatically by AI as necessary
-        };
-    };
-};
-
 private _fnc_addUniform = {
     params ["_unit", "_overrideClass"];
 
@@ -344,11 +273,11 @@ if (!isNil "_customLoadout") then {
     if (isNil {_customLoadout select 7}) then { _unit call _fnc_addFacewear };
     if (isNil {_customLoadout select 4}) then { _unit call _fnc_addVest };
     if (isNil {_customLoadout select 5}) then { _unit call _fnc_addBackpack };
+    if (isNil {_customLoadout select 9}) then { _unit call _fnc_addAssignedItems } else { [_unit, _customLoadout select 9] call _fnc_addAssignedItems };
     if (isNil {_customLoadout select 0}) then { _unit call _fnc_addPrimary } else { [_unit, _customLoadout select 0] call _fnc_addPrimary };
     if (isNil {_customLoadout select 1}) then { _unit call _fnc_addSecondary } else { [_unit, _customLoadout select 1] call _fnc_addSecondary };
     if (isNil {_customLoadout select 2}) then { _unit call _fnc_addHandgun } else { [_unit, _customLoadout select 2] call _fnc_addHandgun };
     //if (isNil {_customLoadout select 8}) then { _unit call _fnc_addBinoculars } else { [_unit, _customLoadout select 8] call _fnc_addBinoculars }; // TODO: Need to fix this
-    if (isNil {_customLoadout select 9}) then { _unit call _fnc_addAssignedItems } else { [_unit, _customLoadout select 9] call _fnc_addAssignedItems };
     
     // * Don't cheese allowing launchers with rifleman.
     // * If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it.
@@ -362,12 +291,11 @@ if (!isNil "_customLoadout") then {
     _unit call _fnc_addFacewear;
     _unit call _fnc_addVest;
     _unit call _fnc_addBackpack;
+    _unit call _fnc_addAssignedItems;
     _unit call _fnc_addPrimary;
     _unit call _fnc_addSecondary;
     _unit call _fnc_addHandgun;
     //_unit call _fnc_addBinoculars; // TODO: Need to fix this
-    _unit call _fnc_addAssignedItems;
-    _unit call _fnc_addNightEquip; // TODO: Need to rework this for compat with overridden weapon pointers - move to randomWeapon like the rest of the weapon accessories?
 };
 
 _unit call _fnc_addClassEquip; // TODO: Need to rework / remove this if cargo is overridden

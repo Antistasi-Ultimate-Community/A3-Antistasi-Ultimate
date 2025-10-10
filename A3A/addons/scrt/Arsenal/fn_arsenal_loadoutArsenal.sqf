@@ -3243,6 +3243,7 @@ switch _mode do {
 
 		private _rebelLoadouts = +rebelLoadouts;
 		private _loadout = _rebelLoadouts get currentRebelLoadout;
+		player setUnitLoadout (configFile >> "EmptyLoadout"); // need to give the player an empty loadout first, so that non-unlocked items from player loadouts aren't carried over into the AI loadout
 		[player, 0, currentRebelLoadout] call A3A_fnc_equipRebel;
 		
 		if (isNil "_loadout") exitWith {};

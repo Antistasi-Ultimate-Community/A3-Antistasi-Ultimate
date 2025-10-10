@@ -8,7 +8,7 @@
     
     Params:
         _unit <OBJECT> <Default: None> the unit to equip
-        _weaponType <STRING> <Default: None> the type of weapon, e.g. "MachineGuns", or a classname for a specific weapon
+        _weaponData <STRING> <Default: None> the type of weapon, e.g. "MachineGuns", or a classname for a specific weapon, or an array of weapon with all accessories
         _totalMagWeight <SCALAR> <Default: 50> total mass of weapon magazines to add
     
     Dependencies:
@@ -34,15 +34,16 @@ params ["_unit", "_weaponData", ["_totalMagWeight", 50]];
 
 call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from server if we're out of date
 
-private _weaponType = if (_weaponData isEqualType []) then { _weaponData select 0} else { _weaponData };
-private ["_weapon", "_isPrimary"];
-if (isClass (configFile >> "CfgWeapons" >> _weaponType)) then {
-    _weapon = _weaponType;
-    _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect ([_weaponType] call A3A_fnc_equipmentClassToCategories)) isEqualTo [];
-} else {
+private _weapon = if (_weaponData isEqualType []) then { _weaponData select 0} else { _weaponData };
+private ["_weaponType", "_isPrimary"];
+if (isClass (configFile >> "CfgWeapons" >> _weapon)) then {
+    _weaponType = ([_weapon] call A3A_fnc_equipmentClassToCategories) select 0;
     _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect [_weaponType]) isEqualTo [];
+} else {
+    _weaponType = _weapon;
+    _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect [_weapon]) isEqualTo [];
 
-    private _pool = A3A_rebelGear get _weaponType;
+    private _pool = A3A_rebelGear get _weapon;
     if (_isPrimary && {_pool isEqualTo []}) then {
         _pool = A3A_rebelGear get "Rifles";
         if (_pool isEqualTo []) then {
@@ -79,10 +80,28 @@ if (!isNil "_magazine" && {!("Disposable" in _categories)}) then {
     _unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
 };
 
+private _compatItems = compatibleItems _weapon;
+
+// Pointers
+private _nvg = hmd _unit;
+private _compatPointers = [];
+if (_nvg != "") then {
+    _compatPointers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 2}}) then { _weaponData select 2 } else { A3A_rebelLasersCache get _weapon };
+    if (isNil "_compatPointers") then {
+        _compatPointers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
+        A3A_rebelLasersCache set [_weapon, _compatPointers];
+    };
+} else {
+    _compatPointers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 2}}) then { _weaponData select 2 } else { A3A_rebelFlashlightsCache get _weapon };
+    if (isNil "_compatPointers") then {
+        _compatPointers = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
+        A3A_rebelFlashlightsCache set [_weapon, _compatPointers];
+    };
+};
+
 // Optics
-private _compatOptics = if (_weaponData isEqualType [] && {!isNil {_weaponData select 3}}) then { [_weaponData select 3] } else { A3A_rebelOpticsCache getOrDefault [_weapon, []] };
+private _compatOptics = if (_weaponData isEqualType [] && {!isNil {_weaponData select 3}}) then { [_weaponData select 3] } else { A3A_rebelOpticsCache get _weapon };
 if (isNil "_compatOptics") then {
-    private _compatItems = compatibleItems _weapon; // cached, should be fast
     private _opticType = switch (_weaponType) do {
         case ("Handguns"): { "OpticsAll" };
         case ("Rifles");
@@ -99,24 +118,23 @@ if (isNil "_compatOptics") then {
 };
 
 // Silencers/Muzzles
-private _compatSilencers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 1}}) then { [_weaponData select 1] } else { A3A_rebelSilencersCache getOrDefault [_weapon, []] };
+private _compatSilencers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 1}}) then { [_weaponData select 1] } else { A3A_rebelSilencersCache get _weapon };
 if (isNil "_compatSilencers") then {
-    private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatSilencers = _compatItems arrayIntersect (A3A_rebelGear get "MuzzleAttachments");
     // save in cache
     A3A_rebelSilencersCache set [_weapon, _compatSilencers];
 };
 
 // Bipods
-private _compatBipods = if (_weaponData isEqualType [] && {!isNil {_weaponData select 6}}) then { [_weaponData select 6] } else { A3A_rebelBipodsCache getOrDefault [_weapon, []] };
+private _compatBipods = if (_weaponData isEqualType [] && {!isNil {_weaponData select 6}}) then { [_weaponData select 6] } else { A3A_rebelBipodsCache get _weapon };
 if (_isPrimary && {isNil "_compatBipods"}) then {
-    private _compatItems = compatibleItems _weapon; // cached, should be fast
     _compatBipods = _compatItems arrayIntersect (A3A_rebelGear get "Bipods");
     // save in cache
     A3A_rebelBipodsCache set [_weapon, _compatBipods];
 };
 
 //// silencers and bipods
-if (_compatOptics isNotEqualTo []) then { _unit addWeaponItem [_weapon, selectRandom _compatOptics] };
-if (_compatSilencers isNotEqualTo []) then { _unit addWeaponItem [_weapon, selectRandom _compatSilencers] };
-if (_compatBipods isNotEqualTo []) then { _unit addWeaponItem [_weapon, selectRandom _compatBipods] };
+if (!isNil "_compatPointers" && {_compatPointers isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatPointers] };
+if (!isNil "_compatOptics" && {_compatOptics isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatOptics] };
+if (!isNil "_compatSilencers" && {_compatSilencers isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatSilencers] };
+if (!isNil "_compatBipods" && {_compatBipods isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatBipods] };
