@@ -197,6 +197,8 @@ private _fnc_addAssignedItems = {
 private _fnc_addClassEquip = {
     params ["_unit"];
 
+    private _items = items _unit;
+    
     switch (_typeTag) do {
         case ("Rifleman"): {
             [_unit, "Grenades", 2] call _fnc_addGrenades;
@@ -205,22 +207,34 @@ private _fnc_addClassEquip = {
         case ("ExplosivesExpert"): {
             _unit enableAIFeature ["MINEDETECTION", true]; //This should prevent them from Stepping on the Mines as an "Expert" (It helps, they still step on them)
 
-            private _mineDetector = selectRandomWeighted (A3A_rebelGear get "MineDetectors");
-            if !(isNil "_mineDetector") then { _unit addItem _mineDetector };
+            private _hasMineDetector = (_items arrayIntersect (A3A_rebelGear get "MineDetectors")) isNotEqualTo [];
+            if (!_hasMineDetector) then {
+                private _mineDetector = selectRandomWeighted (A3A_rebelGear get "MineDetectors");
+                if !(isNil "_mineDetector") then { _unit addItem _mineDetector };
+            };
 
-            private _toolkit = selectRandomWeighted (A3A_rebelGear get "Toolkits");
-            if !(isNil "_toolkit") then { _unit addItem _toolkit };
+            private _hasToolkit = (_items arrayIntersect (A3A_rebelGear get "Toolkits")) isNotEqualTo [];
+            if (!_hasToolkit) then {
+                private _toolkit = selectRandomWeighted (A3A_rebelGear get "Toolkits");
+                if !(isNil "_toolkit") then { _unit addItem _toolkit };
+            };
 
+            [_unit, "Grenades", 2] call _fnc_addGrenades;
             [_unit, 50] call _fnc_addCharges;
         };
         case ("Engineer"): {
-            private _toolkit = selectRandomWeighted (A3A_rebelGear get "Toolkits");
-            if !(isNil "_toolkit") then { _unit addItem _toolkit };
+            [_unit, "SmokeGrenades", 3] call _fnc_addGrenades;
+
+            private _hasToolkit = (_items arrayIntersect (A3A_rebelGear get "Toolkits")) isNotEqualTo [];
+            if (!_hasToolkit) then {
+                private _toolkit = selectRandomWeighted (A3A_rebelGear get "Toolkits");
+                if !(isNil "_toolkit") then { _unit addItem _toolkit };
+            };
 
             [_unit, 50] call _fnc_addCharges;
         };
         case ("Medic"): {
-            [_unit, "SmokeGrenades", 2] call _fnc_addGrenades;
+            [_unit, "SmokeGrenades", 5] call _fnc_addGrenades;
 
             // not-so-temporary hack
             private _medItems = [];
@@ -235,6 +249,7 @@ private _fnc_addClassEquip = {
             } forEach _medItems;
         };
         case ("SquadLeader"): {
+            [_unit, "Grenades", 1] call _fnc_addGrenades;
             [_unit, "SmokeGrenades", 2] call _fnc_addGrenades;
         };
         default {
