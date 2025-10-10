@@ -176,6 +176,12 @@
                 <Korean>차량 소지품을 아스널로 아이템 옮기기</Korean>
                 <French>Déplacer des objets de l'inventaire des véhicules vers l'arsenal</French>
             </Key>
+            <Key ID="STR_JNA_OVERRIDE">
+                <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave.</Original>
+            </Key>
+            <Key ID="STR_JNA_OVERRIDE_CARGO">
+                <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave. Note that saving a cargo container (Uniform, Vest, or Backpack) also saves all of the contents of that container.</Original>
+            </Key>
         </Container>
     </Package>
 </Project>

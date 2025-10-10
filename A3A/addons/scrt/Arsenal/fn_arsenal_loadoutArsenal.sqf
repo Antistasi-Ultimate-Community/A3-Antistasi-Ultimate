@@ -554,6 +554,7 @@ switch _mode do {
 			
 			if !(_idc in IDCS_CARGO) then {
 				_ctrlList ctrladdeventhandler ["lbdblclick","['OverrideTab', _this select 0] call SCRT_fnc_arsenal_loadoutArsenal"];
+				_ctrlTab ctrlSetTooltip ([localize "STR_JNA_OVERRIDE", localize "STR_JNA_OVERRIDE_CARGO"] select (_idc in [IDC_RSCDISPLAYARSENAL_TAB_UNIFORM, IDC_RSCDISPLAYARSENAL_TAB_VEST, IDC_RSCDISPLAYARSENAL_TAB_BACKPACK]));
 			};
 
 			{
