@@ -38,10 +38,10 @@ private _weapon = if (_weaponData isEqualType []) then { _weaponData select 0} e
 private ["_weaponType", "_isPrimary"];
 if (isClass (configFile >> "CfgWeapons" >> _weapon)) then {
     _weaponType = ([_weapon] call A3A_fnc_equipmentClassToCategories) select 0;
-    _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect [_weaponType]) isEqualTo [];
+    _isPrimary = _weaponType in ["Handguns", "RocketLaunchers", "MissileLaunchers"];
 } else {
     _weaponType = _weapon;
-    _isPrimary = (["Handguns", "RocketLaunchers", "MissileLaunchers"] arrayIntersect [_weapon]) isEqualTo [];
+    _isPrimary = _weaponType in ["Handguns", "RocketLaunchers", "MissileLaunchers"];
 
     private _pool = A3A_rebelGear get _weapon;
     if (_isPrimary && {_pool isEqualTo []}) then {
