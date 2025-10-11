@@ -187,7 +187,11 @@ allMagBullet = allMagBullet select { getText (configFile >> "CfgMagazines" >> _x
 allMagBullet = allMagBullet select { !(_x in A3U_forbiddenItems) };
 
 //Remove False NVGs
-allNVGs = allNVGs select { getarray (configFile >> "CfgWeapons" >> _x >> "visionMode") isnotequalto ["Normal","Normal"]};
+dummyNVGs = allNVGs select { (getArray (configFile >> "CfgWeapons" >> _x >> "visionMode")) findIf {_x in ["NVG","TI"]} == -1  };
+
+// or this one /// dummyNVGs = allNVGs select { getArray (configFile >> "CfgWeapons" >> _x >> "visionMode") isEqualTo ["Normal","Normal"]};
+
+allNVGs = allNVGs select { (getArray (configFile >> "CfgWeapons" >> _x >> "visionMode")) findIf {_x in ["NVG","TI"]} != -1 };
 
 private _removableDefaultItems = [
 	[allFirstAidKits,"FirstAidKit","firstAidKits"],
