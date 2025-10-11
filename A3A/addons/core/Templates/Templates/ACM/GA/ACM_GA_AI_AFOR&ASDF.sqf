@@ -30,11 +30,11 @@ _vehiclesCargoTrucks = ["acm_gm_aaf2028_afor_ge_wheeled_kat1_451_cargo"];
 _vehiclesAmmoTrucks = ["acm_gm_aaf2028_afor_ge_wheeled_kat1_454_reammo", "acm_gm_aaf2028_afor_ge_wheeled_kat1_451_reammo"];
 _vehiclesRepairTrucks = ["acm_gm_aaf2028_afor_ge_wheeled_fuchsa0_engineer"];
 _vehiclesFuelTrucks = ["acm_gm_aaf2028_afor_ge_wheeled_kat1_451_refuel"];
-_vehiclesMedical = ["acm_gm_aaf2028_afor_dk_tracked_m113a1dk_medic"];
+_vehiclesMedical = ["acm_gm_aaf2028_afor_dk_tracked_m113a1dk_medic", "acm_gm_aaf2028_afor_ge_wheeled_fuchsa0_medic"];
 _vehiclesTanks = ["acm_gm_aaf2028_afor_ge_tracked_leopard2a4R"];
 if (_hasQAV) then { _vehiclesTanks pushBack "acm_gm_aaf2028_afor_gb_tracked_qav_challenger2" };
 _vehiclesAA = ["acm_gm_aaf2028_asdf_tracked_Gepard"]; // from ASDF
-_vehiclesLightAPCs = ["acm_gm_aaf2028_afor_us_wheeled_fuchsa0_command", "acm_gm_aaf2028_afor_ge_wheeled_fuchsa0_engineer", "acm_gm_aaf2028_afor_ge_wheeled_fuchsa0_recon"];
+_vehiclesLightAPCs = ["acm_gm_aaf2028_afor_us_wheeled_fuchsa0_command", "acm_gm_aaf2028_afor_ge_wheeled_fuchsa0_engineer", "acm_gm_aaf2028_afor_ge_wheeled_fuchsa0_recon", "acm_gm_aaf2028_afor_ge_wheeled_fuchsa1_jammer"];
 _vehiclesAPCs = [
     "acm_gm_aaf2028_afor_dk_tracked_m113a1DK_apc", "acm_gm_aaf2028_afor_dk_tracked_m113a1dk_command", "acm_gm_aaf2028_afor_dk_tracked_m113a1dk_engineer",
     "acm_gm_aaf2028_afor_ge_tracked_m113a1g_apc", "acm_gm_aaf2028_afor_ge_tracked_m113a1g_apc_milan"
@@ -52,10 +52,11 @@ _vehiclesHelisLight = ["acm_gm_aaf2028_afor_us_heli_UH80"];
 _vehiclesHelisTransport = ["acm_gm_aaf2028_afor_ge_heli_ch53gs", "acm_gm_aaf2028_afor_us_heli_UH80"];
 _vehiclesHelisAttack = ["acm_gm_aaf2028_afor_ge_heli_bo105p_pah1a1"];
 _vehiclesHelisLightAttack = ["acm_gm_aaf2028_afor_ge_heli_bo105p_pah1a1"];
-_vehiclesArtillery = ["acm_gm_aaf2028_afor_ge_wheeled_kat1_463_mlrs", "acm_gm_aaf2028_afor_dk_tracked_m109"];
+_vehiclesArtillery = ["acm_gm_aaf2028_afor_ge_wheeled_kat1_463_mlrs", "acm_gm_aaf2028_afor_dk_tracked_m109", "acm_gm_aaf2028_afor_ge_tracked_m113a1g_apc_mortar"];
 _magazines = [
     ["acm_gm_aaf2028_afor_ge_wheeled_kat1_463_mlrs",["gm_36Rnd_mlrs_110mm_he_dm21","gm_36Rnd_mlrs_110mm_icm_dm602","gm_36Rnd_mlrs_110mm_mine_dm711"]],
-    ["acm_gm_aaf2028_afor_dk_tracked_m109",["gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602"]]
+    ["acm_gm_aaf2028_afor_dk_tracked_m109",["gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602"]],
+    ["acm_gm_aaf2028_afor_ge_tracked_m113a1g_apc_mortar", ["gm_40Rnd_120mm_he_dm51","gm_10Rnd_120mm_illum_dm26","gm_10Rnd_120mm_smoke_dm25"]]
 ];
 _uavsAttack = ["acm_gm_aaf2028_afor_us_plane_MQ4A"];
 _uavsPortable = [];
