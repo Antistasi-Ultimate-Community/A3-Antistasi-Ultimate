@@ -32,8 +32,8 @@ private _staticAA = [];
 //["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 //["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-["minesAT", "CSLA_PtMiBa3_mag"] call _fnc_saveToTemplate;
-["minesAPERS", "CSLA_PPMiNa_mag"] call _fnc_saveToTemplate;
+["mineAT", "CSLA_PtMiBa3_mag"] call _fnc_saveToTemplate;
+["mineAPERS", "CSLA_PPMiNa_mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["CSLA_IVZ", 1], ["CSLA_TNT0100g", 2]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["CSLA_IVZ", 1]]] call _fnc_saveToTemplate;

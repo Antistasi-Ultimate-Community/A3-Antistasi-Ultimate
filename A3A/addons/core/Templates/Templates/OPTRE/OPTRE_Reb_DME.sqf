@@ -44,8 +44,8 @@ private _vehiclesCivCar = ["OPTRE_M12_CIV", "OPTRE_Genet"];
 ["staticMortarMagSmoke", "OPTRE_10Rnd_122mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["staticMortarMagFlare", "OPTRE_10Rnd_122mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-["minesAT", "ATMine_Range_Mag"] call _fnc_saveToTemplate;
-["minesAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
+["mineAT", "ATMine_Range_Mag"] call _fnc_saveToTemplate;
+["mineAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;

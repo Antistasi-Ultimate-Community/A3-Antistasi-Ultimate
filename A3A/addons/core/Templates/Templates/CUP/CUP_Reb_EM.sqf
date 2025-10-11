@@ -10,40 +10,33 @@
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_soviet_co.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "a3u_flag_soviet_ea"] call _fnc_saveToTemplate;
 
-private _vehiclesData = call _fnc_createLoadoutData;
+["vehiclesBasic", ["CUP_C_TT650_TK_CIV"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["a3u_cup_uaz_unarmed_convertible_1", "a3u_cup_uaz_unarmed_convertible_2", "CUP_B_UAZ_Open_CDF", "CUP_O_Hilux_unarmed_CHDKZ"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["CUP_B_UAZ_MG_CDF", "CUP_O_Hilux_DSHKM_CHDKZ"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["a3u_cup_kamaz_olive", "a3u_cup_kamaz_open_olive"]] call _fnc_saveToTemplate;
+["vehiclesAT", ["CUP_B_UAZ_METIS_CDF", "CUP_O_Hilux_metis_CHDKZ", "CUP_O_Hilux_SPG9_CHDKZ"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_O_Hilux_igla_CHDKZ", "CUP_O_Hilux_zu23_CHDKZ"]] call _fnc_saveToTemplate;
+["vehiclesBoat", ["CUP_O_PBX_RU"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesBasic", ["CUP_C_TT650_TK_CIV"]];
-_vehiclesData set ["vehiclesLightUnarmed", ["a3u_cup_uaz_unarmed_convertible_1", "a3u_cup_uaz_unarmed_convertible_2", "CUP_B_UAZ_Open_CDF", "CUP_O_Hilux_unarmed_CHDKZ"]];
-_vehiclesData set ["vehiclesLightArmed", ["CUP_B_UAZ_MG_CDF", "CUP_O_Hilux_DSHKM_CHDKZ"]];
-_vehiclesData set ["vehiclesTruck", ["a3u_cup_kamaz_olive", "a3u_cup_kamaz_open_olive"]];
-_vehiclesData set ["vehiclesAT", ["CUP_B_UAZ_METIS_CDF", "CUP_O_Hilux_metis_CHDKZ", "CUP_O_Hilux_SPG9_CHDKZ"]];
-_vehiclesData set ["vehiclesAA", ["CUP_O_Hilux_igla_CHDKZ", "CUP_O_Hilux_zu23_CHDKZ"]];
-_vehiclesData set ["vehiclesBoat", ["CUP_O_PBX_RU"]];
+["vehiclesPlane", ["CUP_B_Su25_Dyn_CDF"]] call _fnc_saveToTemplate;       // replace from civ varient s
+["vehiclesCivPlane", ["CUP_C_CESSNA_CIV"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesPlane", ["CUP_B_Su25_Dyn_CDF"]];       // replace from civ varient s
-_vehiclesData set ["vehiclesCivPlane", ["CUP_C_CESSNA_CIV"]];
+["vehiclesCivCar", ["CUP_C_Lada_CIV"]] call _fnc_saveToTemplate;
+["vehiclesCivTruck", ["CUP_C_Ural_Open_Civ_03"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesCivCar", ["CUP_C_Lada_CIV"]];
-_vehiclesData set ["vehiclesCivTruck", ["CUP_C_Ural_Open_Civ_03"]];
-_vehiclesData set ["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU"]];
-_vehiclesData set ["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]];
+["staticMGs", ["CUP_O_DSHKM_ChDKZ", "CUP_O_DSHkM_MiniTriPod_ChDKZ"]] call _fnc_saveToTemplate;
+["staticAT", ["CUP_O_SPG9_ChDKZ"]] call _fnc_saveToTemplate;
+["staticAA", ["CUP_O_ZU23_ChDKZ"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["staticMGs", ["CUP_O_DSHKM_ChDKZ", "CUP_O_DSHkM_MiniTriPod_ChDKZ"]];
-_vehiclesData set ["staticAT", ["CUP_O_SPG9_ChDKZ"]];
-_vehiclesData set ["staticAA", ["CUP_O_ZU23_ChDKZ"]];
+["staticMortars", ["CUP_O_2b14_82mm_ChDKZ"]] call _fnc_saveToTemplate;
+["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-_vehiclesData set ["staticMortars", ["CUP_O_2b14_82mm_ChDKZ"]];
-_vehiclesData set ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"];
-_vehiclesData set ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"];
-_vehiclesData set ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"];
-
-_vehiclesData set ["mineAT", "CUP_MineE_M"];
-_vehiclesData set ["mineAPERS", "APERSMine_Range_Mag"];
-
-["vehiclesData", [
-    _vehiclesData
-]] call _fnc_saveVehiclesToTemplate;
-
+["mineAT", "CUP_MineE_M"] call _fnc_saveToTemplate;
+["mineAPERS", "APERSMine_Range_Mag"] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;

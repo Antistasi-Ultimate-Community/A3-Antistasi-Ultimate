@@ -2,9 +2,7 @@
 //       Vehicles       //
 //////////////////////////    
 
-private _vehiclesData = call _fnc_createLoadoutData;
-
-_vehiclesData set ["vehiclesCivCar", [
+["vehiclesCivCar", [
     "CUP_O_Hilux_unarmed_TK_CIV", 0.5
     , "CUP_C_LR_Transport_CTK", 0.5
     , "CUP_C_Bus_City_TKCIV", 0.2
@@ -14,38 +12,33 @@ _vehiclesData set ["vehiclesCivCar", [
     , "CUP_C_Golf4_random_Civ", 0.5
     , "CUP_C_Octavia_CIV", 0.5
     , "CUP_C_Pickup_unarmed_CIV", 0.5
-    ]];
+    ]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesCivIndustrial", [
+["vehiclesCivIndustrial", [
     "CUP_C_V3S_Open_TKC", 0.3
     , "CUP_C_V3S_Covered_TKC", 0.2
     , "CUP_C_Ural_Civ_01", 0.2
-]];
+]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesCivBoat", [
+["vehiclesCivBoat", [
     "CUP_C_Fishing_Boat_Chernarus", 0.2
     , "CUP_C_PBX_CIV", 0.7
     , "CUP_C_Zodiac_CIV", 0.7
-]];
+]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesCivRepair", [
+["vehiclesCivRepair", [
     "C_Truck_02_box_F", 0.1
     , "C_Offroad_01_repair_F", 0.1
-]];
+]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesCivMedical", [
+["vehiclesCivMedical", [
     "CUP_C_S1203_Ambulance_CIV", 0.1
-]];
+]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesCivFuel", [
+["vehiclesCivFuel", [
     "C_Truck_02_fuel_F", 0.1
     , "C_Van_01_fuel_F", 0.1
-]];
-
-["vehiclesData", [
-    _vehiclesData
-]] call _fnc_saveVehiclesToTemplate;
-
+]] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///

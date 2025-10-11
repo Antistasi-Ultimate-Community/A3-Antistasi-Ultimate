@@ -13,90 +13,75 @@
 //       Vehicles       //
 //////////////////////////
 
-private _vehiclesData = call _fnc_createLoadoutData;
-
-_vehiclesData set ["vehiclesDropPod", ["SpaceshipCapsule_01_F"]]; 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate;
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesBasic", ["B_Quadbike_01_F"]];
-_vehiclesData set ["vehiclesLightUnarmed", ["CUP_B_UAZ_Open_ACR", "CUP_B_UAZ_Unarmed_ACR", "CUP_B_LR_Transport_CZ_W"]];
-_vehiclesData set ["vehiclesLightArmed", ["CUP_B_HMMWV_AGS_GPK_ACR", "CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_HMMWV_M2_GPK_ACR", "CUP_B_LR_Special_Des_CZ_D", "CUP_B_UAZ_SPG9_ACR", "CUP_B_UAZ_METIS_ACR", "CUP_B_UAZ_MG_ACR", "CUP_B_UAZ_AGS30_ACR", "CUP_B_Dingo_CZ_Wdl", "CUP_B_Dingo_GL_CZ_Wdl"]];
-_vehiclesData set ["vehiclesTrucks", ["CUP_B_T810_Armed_CZ_WDL", "CUP_B_T810_Unarmed_CZ_WDL"]];
-_vehiclesData set ["vehiclesCargoTrucks", []];
-_vehiclesData set ["vehiclesAmmoTrucks", ["CUP_B_T810_Reammo_CZ_WDL"]];
-_vehiclesData set ["vehiclesRepairTrucks", ["CUP_B_T810_Repair_CZ_WDL"]];
-_vehiclesData set ["vehiclesFuelTrucks", ["CUP_B_T810_Refuel_CZ_WDL"]];
-_vehiclesData set ["vehiclesMedical", ["CUP_B_LR_Ambulance_CZ_W", "CUP_B_BMP2_AMB_CZ"]];
-_vehiclesData set ["vehiclesLightAPCs", ["CUP_B_BRDM2_HQ_CZ", "CUP_B_BRDM2_CZ", "CUP_B_BRDM2_CZ"]];
-_vehiclesData set ["vehiclesAPCs", ["CUP_B_BMP2_CZ"]];
-_vehiclesData set ["vehiclesIFVs", []];
-_vehiclesData set ["vehiclesTanks", ["CUP_B_T72_CZ"]];
-_vehiclesData set ["vehiclesAA", ["CUP_B_nM1097_AVENGER_USA_WDL"]];
-_vehiclesData set ["vehiclesAirborne", ["CUP_B_BRDM2_HQ_CZ", "CUP_B_BRDM2_CZ", "CUP_B_BRDM2_CZ"]];
-_vehiclesData set ["vehiclesLightTanks",  ["CUP_B_BMP2_CZ"]];
+["vehiclesBasic", ["B_Quadbike_01_F"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["CUP_B_UAZ_Open_ACR", "CUP_B_UAZ_Unarmed_ACR", "CUP_B_LR_Transport_CZ_W"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["CUP_B_HMMWV_AGS_GPK_ACR", "CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_HMMWV_M2_GPK_ACR", "CUP_B_LR_Special_Des_CZ_D", "CUP_B_UAZ_SPG9_ACR", "CUP_B_UAZ_METIS_ACR", "CUP_B_UAZ_MG_ACR", "CUP_B_UAZ_AGS30_ACR", "CUP_B_Dingo_CZ_Wdl", "CUP_B_Dingo_GL_CZ_Wdl"]] call _fnc_saveToTemplate;
+["vehiclesTrucks", ["CUP_B_T810_Armed_CZ_WDL", "CUP_B_T810_Unarmed_CZ_WDL"]] call _fnc_saveToTemplate;
+["vehiclesCargoTrucks", []] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["CUP_B_T810_Reammo_CZ_WDL"]] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", ["CUP_B_T810_Repair_CZ_WDL"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["CUP_B_T810_Refuel_CZ_WDL"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["CUP_B_LR_Ambulance_CZ_W", "CUP_B_BMP2_AMB_CZ"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["CUP_B_BRDM2_HQ_CZ", "CUP_B_BRDM2_CZ", "CUP_B_BRDM2_CZ"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["CUP_B_BMP2_CZ"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", []] call _fnc_saveToTemplate;
+["vehiclesTanks", ["CUP_B_T72_CZ"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_B_nM1097_AVENGER_USA_WDL"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["CUP_B_BRDM2_HQ_CZ", "CUP_B_BRDM2_CZ", "CUP_B_BRDM2_CZ"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["CUP_B_BMP2_CZ"]] call _fnc_saveToTemplate;
 
 
-_vehiclesData set ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]];
-_vehiclesData set ["vehiclesGunBoats", ["CUP_B_RHIB2Turret_USMC"]];
-_vehiclesData set ["vehiclesAmphibious", []];
+["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
+["vehiclesGunBoats", ["CUP_B_RHIB2Turret_USMC"]] call _fnc_saveToTemplate;
+["vehiclesAmphibious", []] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesPlanesCAS", ["CUP_B_L39_CZ"]];
-_vehiclesData set ["vehiclesPlanesAA", ["CUP_B_L39_CZ"]];
-_vehiclesData set ["vehiclesPlanesTransport", []];
+["vehiclesPlanesCAS", ["CUP_B_L39_CZ"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["CUP_B_L39_CZ"]] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesHelisLight", ["CUP_B_Mi171Sh_Unarmed_ACR"]];
-_vehiclesData set ["vehiclesHelisTransport", ["CUP_B_Mi171Sh_Unarmed_ACR"]];
-_vehiclesData set ["vehiclesHelisLightAttack", ["CUP_B_Mi171Sh_ACR"]];
-_vehiclesData set ["vehiclesHelisAttack", ["CUP_B_Mi35_Dynamic_CZ", "CUP_B_Mi35_Dynamic_CZ_Dark"]];
+["vehiclesHelisLight", ["CUP_B_Mi171Sh_Unarmed_ACR"]] call _fnc_saveToTemplate;
+["vehiclesHelisTransport", ["CUP_B_Mi171Sh_Unarmed_ACR"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["CUP_B_Mi171Sh_ACR"]] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", ["CUP_B_Mi35_Dynamic_CZ", "CUP_B_Mi35_Dynamic_CZ_Dark"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesAirPatrol", ["CUP_B_Mi171Sh_Unarmed_ACR","CUP_B_Mi171Sh_ACR"]];
+["vehiclesAirPatrol", ["CUP_B_Mi171Sh_Unarmed_ACR","CUP_B_Mi171Sh_ACR"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesArtillery", ["CUP_B_RM70_CZ"]];
+["vehiclesArtillery", ["CUP_B_RM70_CZ"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [["CUP_B_RM70_CZ", ["CUP_40Rnd_GRAD_HE"]]]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["uavsAttack", ["CUP_B_USMC_DYN_MQ9"]];
-_vehiclesData set ["uavsPortable", ["B_UAV_01_F"]];
+["uavsAttack", ["CUP_B_USMC_DYN_MQ9"]] call _fnc_saveToTemplate;
+["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
 
+["vehiclesMilitiaLightArmed", ["CUP_B_UAZ_MG_CDF"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaTrucks", ["CUP_B_Ural_CDF"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["CUP_B_UAZ_Open_CDF"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["CUP_B_BRDM2_HQ_CZ", "CUP_B_BRDM2_CZ"]] call _fnc_saveToTemplate;
 
+["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]];
+["staticMGs", ["CUP_B_DSHKM_ACR"]] call _fnc_saveToTemplate;
+["staticAT", ["CUP_B_TOW2_TriPod_US"]] call _fnc_saveToTemplate;
+["staticAA", ["CUP_B_RBS70_ACR"]] call _fnc_saveToTemplate;
+["staticMortars", ["CUP_B_2b14_82mm_ACR"]] call _fnc_saveToTemplate;
+["staticHowitzers", ["CUP_O_D30_RU"]] call _fnc_saveToTemplate;
 
-_vehiclesData set ["staticMGs", ["CUP_B_DSHKM_ACR"]];
-_vehiclesData set ["staticAT", ["CUP_B_TOW2_TriPod_US"]];
-_vehiclesData set ["staticAA", ["CUP_B_RBS70_ACR"]];
-_vehiclesData set ["staticMortars", ["CUP_B_2b14_82mm_ACR"]];
-_vehiclesData set ["staticHowitzers", ["CUP_O_D30_RU"]];
+["vehicleRadar", ""] call _fnc_saveToTemplate;
+["vehicleSam", ""] call _fnc_saveToTemplate;
 
-_vehiclesData set ["vehicleRadar", ""];
-_vehiclesData set ["vehicleSam", ""];
+["howitzerMagazineHE", "CUP_30Rnd_122mmHE_D30_M"] call _fnc_saveToTemplate;
 
-_vehiclesData set ["howitzerMagazineHE", "CUP_30Rnd_122mmHE_D30_M"];
+["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-_vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"];
-_vehiclesData set ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"];
-_vehiclesData set ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"];
-
-_vehiclesData set ["minefieldAT", ["CUP_Mine"]];
-_vehiclesData set ["minefieldAPERS", ["APERSMine"]];
-
-private _eliteVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
-private _militaryVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
-private _militiaVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
-
-_militiaVehiclesData set ["vehiclesLightArmed", ["CUP_B_UAZ_MG_CDF"]];
-_militiaVehiclesData set ["vehiclesTrucks", ["CUP_B_Ural_CDF"]];
-_militiaVehiclesData set ["vehiclesLightUnarmed", ["CUP_B_UAZ_Open_CDF"]];
-_militiaVehiclesData set ["vehiclesAPCs", ["CUP_B_BRDM2_HQ_CZ", "CUP_B_BRDM2_CZ"]];
-
-["vehiclesData", [
-    _militiaVehiclesData,
-    _militaryVehiclesData,
-    _eliteVehiclesData
-]] call _fnc_saveVehiclesToTemplate;
-
+["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;
+["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
 #include "CUP_Vehicle_Attributes.sqf"
 

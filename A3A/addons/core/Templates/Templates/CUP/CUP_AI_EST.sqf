@@ -80,8 +80,8 @@ if (_hasEF) then {
     ["B_T_MBT_01_arty_F", ["32Rnd_155mm_Mo_shells"]]
 ]] call _fnc_saveToTemplate;			//this line determines ammo to be used with specified SPA, hashMap makes sure that SPA gets proper ammo
 
-_vehiclesData set ["uavsAttack", ["EST_AirForce_MQ4", "EST_AirForce_MQ9", "EST_Navy_UCAV"]]; 				//this line determines attack UAVs -- Example: _vehiclesData set ["uavsAttack", ["B_UAV_02_CAS_F"]] -- Array, can contain multiple assets
-["uavsPortable", ["EST_Army_Darter"]]; 				//this line determines portable UAVs -- Example: _vehiclesData set ["uavsPortable", ["B_UAV_01_F"]] -- Array, can contain multiple assets
+["uavsAttack", ["EST_AirForce_MQ4", "EST_AirForce_MQ9", "EST_Navy_UCAV"]] call _fnc_saveToTemplate; 				//this line determines attack UAVs -- Example: ["uavsAttack", ["B_UAV_02_CAS_F"]] -- Array, can contain multiple assets
+["uavsPortable", ["EST_Army_Darter"]] call _fnc_saveToTemplate; 				//this line determines portable UAVs -- Example: ["uavsPortable", ["B_UAV_01_F"]] -- Array, can contain multiple assets
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
 ["vehiclesMilitiaLightArmed", ["EST_Army_Offroad_Armed"]] call _fnc_saveToTemplate; //this line determines lightly armed militia vehicles -- Example: ["vehiclesMilitiaLightArmed", ["B_G_Offroad_01_armed_F"]] -- Array, can contain multiple assets
@@ -92,42 +92,24 @@ _vehiclesData set ["uavsAttack", ["EST_AirForce_MQ4", "EST_AirForce_MQ9", "EST_N
 
 ["vehiclesPolice", ["EST_Police_Offroad", "EST_Police_Offroad_Comms", "EST_Police_Offroad_Covered", "EST_Police_Detective_Offroad", "EST_Police_Detective_Offroad_Comms", "EST_Police_Detective_Offroad_Covered", "EST_Van_Cargo_Police", "EST_Van_Transport_Police"]] call _fnc_saveToTemplate; 			//this line determines police cars -- Example: ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] -- Array, can contain multiple assets
 
-["vehicleRadar", "EST_AirForce_Static_Radar"];                  // vehicle with radar
-_vehiclesData set ["vehicleSam", "EST_AirForce_Static_SAM"];                    // vehicle with SAM
+["vehicleRadar", "EST_AirForce_Static_Radar"] call _fnc_saveToTemplate;                  // vehicle with radar
+["vehicleSam", "EST_AirForce_Static_SAM"] call _fnc_saveToTemplate;                    // vehicle with SAM
 
-_vehiclesData set ["staticMGs", ["EST_Army_M2_Raised"]]; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
-_vehiclesData set ["staticAT", ["CUP_B_TOW2_TriPod_USMC"]]; 					//this line determinesstatic ATs -- Example: _vehiclesData set ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
-["staticAA", ["CUP_B_Stinger_AA_pod_Base_USMC"]]; 					//this line determines static AAs -- Example: _vehiclesData set ["staticAA", ["B_static_AA_F"]] -- Array, can contain multiple assets
-["staticMortars", ["B_Mortar_01_F"]]; 				//this line determines static mortars -- Example: _vehiclesData set ["staticMortars", ["B_Mortar_01_F"]] -- Array, can contain multiple assets
-["staticHowitzers", ["EST_Army_M119A2_Turret"]];							//this line determines static howitzers. Basically it's just a stronger mortar, use same syntax as above.
+["staticMGs", ["EST_Army_M2_Raised"]] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
+["staticAT", ["CUP_B_TOW2_TriPod_USMC"]] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
+["staticAA", ["CUP_B_Stinger_AA_pod_Base_USMC"]] call _fnc_saveToTemplate; 					//this line determines static AAs -- Example: ["staticAA", ["B_static_AA_F"]] -- Array, can contain multiple assets
+["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate; 				//this line determines static mortars -- Example: ["staticMortars", ["B_Mortar_01_F"]] -- Array, can contain multiple assets
+["staticHowitzers", ["EST_Army_M119A2_Turret"]] call _fnc_saveToTemplate;							//this line determines static howitzers. Basically it's just a stronger mortar, use same syntax as above.
 
-_vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"]; 			//this line determines available HE-shells for the static mortars - !needs to be compatible with the mortar! -- Example: _vehiclesData set ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] - ENTER ONLY ONE OPTION
-["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"]; 		//this line determines smoke-shells for the static mortar - !needs to be compatible with the mortar! -- Example: _vehiclesData set ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] - ENTER ONLY ONE OPTION
-["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"];		//this line determines flare shells for the static mortar - !needs to be compatible with the mortar! -- Example: _vehiclesData set ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Flare_white"] - ENTER ONLY ONE OPTION
+["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate; 			//this line determines available HE-shells for the static mortars - !needs to be compatible with the mortar! -- Example: ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] - ENTER ONLY ONE OPTION
+["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate; 		//this line determines smoke-shells for the static mortar - !needs to be compatible with the mortar! -- Example: ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] - ENTER ONLY ONE OPTION
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;		//this line determines flare shells for the static mortar - !needs to be compatible with the mortar! -- Example: ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Flare_white"] - ENTER ONLY ONE OPTION
 
-["howitzerMagazineHE", "CUP_30Rnd_105mmHE_M119_M"];			//this line determines available HE-shells for the static howitzers - !needs to be compatible with the howitzer! -- same syntax as above - ENTER ONLY ONE OPTION
+["howitzerMagazineHE", "CUP_30Rnd_105mmHE_M119_M"] call _fnc_saveToTemplate;			//this line determines available HE-shells for the static howitzers - !needs to be compatible with the howitzer! -- same syntax as above - ENTER ONLY ONE OPTION
 
 //Minefield definition
-_vehiclesData set ["minefieldAT", ["CUP_Mine"]];
-_vehiclesData set ["minefieldAPERS", ["APERSMine"]];
-
-private _eliteVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
-private _militaryVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
-private _militiaVehiclesData = _vehiclesData call _fnc_copyLoadoutData;
-
-_militiaVehiclesData set ["vehiclesLightArmed", ["EST_Offroad_Armed_Army"]];
-_militiaVehiclesData set ["vehiclesTrucks", ["B_G_Van_01_transport_F"]] -- Array, can contain multiple assets
-["vehiclesMilitiaCars", ["EST_Offroad_Army_MP", "EST_Offroad_Comms_Army_MP", "EST_Offroad_Covered_Army_MP", "EST_Offroad_Army_MP_Beacon"]];
-_militiaVehiclesData set ["vehiclesLightUnarmed", ["B_G_Offroad_01_F"]] -- Array, can contain multiple assets
-
-["vehiclesMilitiaAPCs", ["EST_Army_MP_Marid"]];
-
-["vehiclesData", [
-    _militiaVehiclesData,
-    _militaryVehiclesData,
-    _eliteVehiclesData
-]] call _fnc_saveVehiclesToTemplate;
-
+["minefieldAT", ["CUP_Mine"]] call _fnc_saveToTemplate;
+["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
