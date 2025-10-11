@@ -342,6 +342,13 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
+    class plusGarrison: AIParams
+    {
+        title = $STR_A3AU_old_garrison_spawn;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
     class radiomanSupport: AIParams
     {
         title = $STR_A3AU_radioman_support;
@@ -1096,6 +1103,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
         default = 1;
+        lockInGame = 1;
     };
     class vehicleLockpickTime: VehicleLootParams
     {
