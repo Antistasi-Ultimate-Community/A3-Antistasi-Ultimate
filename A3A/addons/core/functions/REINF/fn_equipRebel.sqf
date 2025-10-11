@@ -171,8 +171,8 @@ private _fnc_addHandgun = {
 private _fnc_addBinoculars = {
     params ["_unit", "_overrideClass"];
 
-    if !(_typeTag isEqualTo "SquadLeader") exitWith {};
-    private _binoType = if !(isNil "_overrideClass") then { _overrideClass } else { "Binoculars" };
+    if (isNil "_overrideClass" && (_typeTag isNotEqualTo "SquadLeader")) exitWith {};
+    private _binoType = if !(isNil "_overrideClass") then { _overrideClass } else { "Binocular" };
     [_unit, _binoType, 5] call A3A_fnc_randomWeapon;
 };
 
@@ -292,7 +292,7 @@ if (!isNil "_customLoadout") then {
     if (isNil {_customLoadout select 0}) then { _unit call _fnc_addPrimary } else { [_unit, _customLoadout select 0] call _fnc_addPrimary };
     if (isNil {_customLoadout select 1}) then { _unit call _fnc_addSecondary } else { [_unit, _customLoadout select 1] call _fnc_addSecondary };
     if (isNil {_customLoadout select 2}) then { _unit call _fnc_addHandgun } else { [_unit, _customLoadout select 2] call _fnc_addHandgun };
-    //if (isNil {_customLoadout select 8}) then { _unit call _fnc_addBinoculars } else { [_unit, _customLoadout select 8] call _fnc_addBinoculars }; // TODO: Need to fix this
+    if (isNil {_customLoadout select 8}) then { _unit call _fnc_addBinoculars } else { [_unit, _customLoadout select 8] call _fnc_addBinoculars };
     
     // * Don't cheese allowing launchers with rifleman.
     // * If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it.
@@ -310,10 +310,10 @@ if (!isNil "_customLoadout") then {
     _unit call _fnc_addPrimary;
     _unit call _fnc_addSecondary;
     _unit call _fnc_addHandgun;
-    //_unit call _fnc_addBinoculars; // TODO: Need to fix this
+    _unit call _fnc_addBinoculars;
 };
 
-_unit call _fnc_addClassEquip; // TODO: Need to rework / remove this if cargo is overridden
+_unit call _fnc_addClassEquip;
 
 // remove backpack if empty, otherwise squad troops will throw it on the ground
 if (backpackItems _unit isEqualTo []) then { removeBackpack _unit };
