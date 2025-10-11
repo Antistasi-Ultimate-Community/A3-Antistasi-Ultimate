@@ -95,6 +95,13 @@ class vehicles_sog : vehicles_base
     ITEM(vn_b_air_oh6a_05_noinsignia, 11800, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(vn_b_air_oh6a_02_noinsignia, 11800, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(vn_b_air_oh6a_03_noinsignia, 11800, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_b_air_ch34_03_01_noinsignia, 7750, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_i_air_ch34_01_02_noinsignia, 7750, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_i_air_ch34_02_02, 7750, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_i_air_ch34_02_01_noinsignia, 7750, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_b_air_ch34_04_02_noinsignia, 11472, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_b_air_ch34_04_03_noinsignia, 11472, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(vn_b_air_ch34_04_04_noinsignia, 11472, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(vn_o_air_mi2_02_01_noinsignia, 14400, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(vn_o_air_mi2_01_01_noinsignia, 9550, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(vn_o_air_mi2_05_03_noinsignia, 22004, "HELI", VEHICLE_CONDITION_HELI);

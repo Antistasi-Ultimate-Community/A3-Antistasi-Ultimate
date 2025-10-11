@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "CfgWorlds.hpp"
 
 class CfgPatches 
 {

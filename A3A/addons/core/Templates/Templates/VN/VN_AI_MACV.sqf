@@ -124,6 +124,7 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 "vn_b_GreekHead_A3_11_11", "vn_b_GreekHead_A3_12_11", "vn_b_LivonianHead_10_09", "vn_b_LivonianHead_2_04",
 "vn_b_TanoanHead_A3_06_11", "vn_b_TanoanHead_A3_07_10", "vn_b_WhiteHead_19_08", "vn_b_WhiteHead_26_02",
 "vn_b_WhiteHead_27_01", "WhiteHead_08", "WhiteHead_10", "WhiteHead_11", "WhiteHead_12"]] call _fnc_saveToTemplate;
+"NATOMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
