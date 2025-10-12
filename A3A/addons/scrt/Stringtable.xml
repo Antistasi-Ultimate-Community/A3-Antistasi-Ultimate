@@ -3223,12 +3223,24 @@
                 <Korean>드디어 자유다!</Korean>
                 <French>Je suis enfin libre !</French>
             </Key>
+            <Key ID="STR_chats_splash_over">
+                <Original>Splash, over.</Original>
+            </Key>
             <Key ID="STR_chats_splash_out">
-                <Original>Splash. Out.</Original>
+                <Original>Splash, out.</Original>
                 <Russian>Попадание.</Russian>
                 <Chinesesimp>弹着，完毕。</Chinesesimp>
                 <Korean>착탄 확인바람, 이상.</Korean>
                 <French>Impact</French>
+            </Key>
+            <Key ID="STR_chats_shot_over">
+                <Original>Shot, over.</Original>
+            </Key>
+            <Key ID="STR_chats_shot_out">
+                <Original>Shot, out.</Original>
+            </Key>
+            <Key ID="STR_chats_rounds_complete">
+                <Original>Rounds complete.</Original>
             </Key>
             <Key ID="STR_chats_mortar_barrage_confirm">
                 <Original>Acknowledged. Fire mission is inbound. ETA %1 secs for the first impact.</Original>
