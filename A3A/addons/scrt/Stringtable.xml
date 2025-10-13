@@ -2115,6 +2115,13 @@
                 <Korean>보급 실행 퇴출 지점</Korean>
                 <French>Fin de l'approvisionnement</French>
             </Key>
+            <Key ID="STR_support_supply_run_ground">
+                <Original>Ground Resupply Point</Original>
+                <Russian>Пункт наземного снабжения</Russian>
+                <Chinesesimp>地面补给点</Chinesesimp>
+                <Korean>지상 보급 지점</Korean>
+                <French>Point de ravitaillement terrestre</French>
+            </Key>
             <Key ID="STR_support_barrage">
                 <Original>Barrage</Original>
                 <Russian>Обстрел</Russian>
@@ -7601,6 +7608,20 @@
                 <Korean>비행기가 상공을 비행해서 보급상자를 지정한 위치로 떨어뜨립니다.</Korean>
                 <French>L'avion survole et largue une caisse contenant des munitions et des fournitures médicales à la position spécifiée.</French>
             </Key>
+            <Key ID="STR_commander_menu_scg_title">
+                <Original>Ground Resupply</Original>
+                <Russian>Наземное снабжение</Russian>
+                <Chinesesimp>地面补给</Chinesesimp>
+                <Korean>지상 보급</Korean>
+                <French>Ravitaillement terrestre</French>
+            </Key>
+            <Key ID="STR_commander_menu_scg_tooltip">
+                <Original>A truck brings a crate with ammunition and medical supplies to the specified position.</Original>
+                <Russian>Грузовик доставляет ящик с боеприпасами и медицинскими принадлежностями в указанную позицию.</Russian>
+                <Chinesesimp>卡车将装有弹药和医疗用品的板条箱运送到指定位置。</Chinesesimp>
+                <Korean>트럭이 탄약 및 의료 물품이 든 상자를 지정된 위치로 운반합니다.</Korean>
+                <French>Un camion apporte une caisse de munitions et de fournitures médicales à la position spécifiée.</French>
+            </Key>
             <Key ID="STR_commander_menu_hba_title">
                 <Original>HE Bomb Airstrike</Original>
                 <Russian>Авиаудар фугасными бомбами</Russian>
@@ -8187,6 +8208,13 @@
                 <Chinesesimp>花费 %1 支援点和 %2%3</Chinesesimp>
                 <Korean>%1 지원 포인트와 %2%3를 소모합니다</Korean>
                 <French>Coûts %1 points de support et %2%3</French>
+            </Key>
+            <Key ID="STR_commander_menu_abilities_cost_support_point_hr_and_money">
+                <Original>Costs %1 HR, %2 support points and %2%3</Original>
+                <Russian>Стоимость: %1 ЧР, %2 очков поддержки и %3%4</Russian>
+                <Chinesesimp>消耗%1人力，%2支援点与%3%4</Chinesesimp>
+                <Korean>비용: %1 인력, %2 지원 점수 및 %3%4</Korean>
+                <French>Coûte %1 RH, %2 points de soutien et %3%4</French>
             </Key>
             <Key ID="STR_commander_menu_abilities_cost_airstrike">
                 <Original>Costs 1 Airstrike</Original>
