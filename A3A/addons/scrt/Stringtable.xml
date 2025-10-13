@@ -5532,11 +5532,18 @@
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
-                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
-                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
-                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
-                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
-                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+                <Original>Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Russian>Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+            </Key>
+            <Key ID="STR_params_limitWeaponsByUnitType">
+                <Original>Limit AI custom loadout weapon selections by unit type</Original>
+                <Russian>Ограничение выбора пользовательского оружия ИИ по типу юнитов</Russian>
+                <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
+                <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
+                <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
@@ -8540,11 +8547,11 @@
                 <French>l'équipement a été sauvegardé</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_loadout_title">
-                <Original>Loadout Arsenal. Note that custom uniforms will be not applied and still be randomized on actual rebels. If headgear has no armor, it will also be randomized.</Original>
-                <Russian>Арсенал для снаряжения. Имейте ввиду, что униформа не будет применена и все равно будет рандомизирована. Кроме того, если на головном уборе нет брони, он также будет рандомизирован.</Russian>
-                <Chinesesimp>加载装备库。 请注意，定制制服将不会应用，并且仍然会随机分配给实际的抵抗军。 另外，如果头饰没有护甲，也会随机生成。</Chinesesimp>
-                <Korean>아스널에서 로드아웃을 지정합니다. 커스텀 유니폼은 적용되지 않으며 여전히 무작위로 결정됩니다. 또한 헤드기어에 방탄 능력이 없는 경우에도 무작위로 결정됩니다.</Korean>
-                <French>Equipement d'Arsenal. Notez que les uniformes personnalisés ne seront pas appliqués et seront toujours aléatoires sur les rebelles réels. De même, si le couvre-chef n'a pas d'armure, il sera également aléatoire.</French>
+                <Original>Loadout Arsenal</Original>
+                <Russian>Арсенал для снаряжения</Russian>
+                <Chinesesimp>装备军械库</Chinesesimp>
+                <Korean>아스널에서 로드아웃을 지정합니다</Korean>
+                <French>Equipement d'Arsenal</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_tooltip">
                 <Original>Sets loadout for future use by this infantry class.</Original>

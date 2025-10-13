@@ -733,6 +733,13 @@ class Params
         default = 5;
         lockInGame = 1;
     };
+    class limitWeaponsByUnitType : ExperimentalParams
+    {
+        title = $STR_params_limitWeaponsByUnitType;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
 
     class BalanceParams: AllParams
     {
