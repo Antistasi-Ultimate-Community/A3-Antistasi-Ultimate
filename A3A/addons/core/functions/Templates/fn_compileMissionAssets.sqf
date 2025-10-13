@@ -19,11 +19,11 @@ License: MIT License
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-#define OccAndInv(VAR) (FactionGetOrDefault(occ, VAR, []) + FactionGetOrDefault(inv, VAR, []))
-#define Reb(VAR) FactionGetOrDefault(reb, VAR, [])
-#define Riv(VAR) FactionGetOrDefault(riv, VAR, [])
-#define Occ(VAR) FactionGetOrDefault(occ, VAR, [])
-#define Inv(VAR) FactionGetOrDefault(inv, VAR, [])
+#define Reb(VAR) ((flatten FactionGetOrDefault(reb, VAR, [])) select {_x isEqualType ""})
+#define Riv(VAR) ((flatten FactionGetOrDefault(riv, VAR, [])) select {_x isEqualType ""})
+#define Occ(VAR) ((flatten FactionGetOrDefault(occ, VAR, [])) select {_x isEqualType ""})
+#define Inv(VAR) ((flatten FactionGetOrDefault(inv, VAR, [])) select {_x isEqualType ""})
+#define OccAndInv(VAR) (Occ(VAR) + Inv(VAR))
 
 A3A_faction_all = createHashMap;
 //setVar expects an array
@@ -98,14 +98,14 @@ setVar("vehiclesSDV", OccAndInv("vehiclesSDV"));
 setVar("vehiclesPolice", OccAndInv("vehiclesPolice"));
 setVar("vehiclesAttack", OccAndInv("vehiclesAttack"));
 setVar("vehiclesAmmoTrucks", OccAndInv("vehiclesAmmoTrucks"));
-setVar("vehiclesLightAPCs", OccAndInv("vehiclesLightAPCs") + OccAndInv("vehiclesMilitiaAPCs") + OccAndInv("vehiclesAirborne"));
-setVar("vehiclesMedical", OccAndInv("vehiclesMedical") + ((A3A_faction_civ get "vehiclesCivMedical") select {_x isEqualType ""}));
-setVar("vehiclesAPCs", OccAndInv("vehiclesAPCs") + Riv("vehiclesRivalsAPCs") + ("APC" call _fnc_extractMarketClasses));
+setVar("vehiclesLightAPCs", OccAndInv("vehiclesLightAPCs") + OccAndInv("vehiclesAirborne"));
+setVar("vehiclesMedical", OccAndInv("vehiclesMedical") + ((FactionGetTieredFT(A3A_faction_civ, "vehiclesCivMedical", 0)) select {_x isEqualType ""}));
+setVar("vehiclesAPCs", OccAndInv("vehiclesAPCs") + Riv("vehiclesAPCs") + ("APC" call _fnc_extractMarketClasses));
 setVar("vehiclesIFVs", OccAndInv("vehiclesIFVs") );
-setVar("vehiclesUAVs", OccAndInv("uavsAttack")+ OccAndInv("uavsPortable") + Riv("vehiclesRivalsUavs") + ("UAV" call _fnc_extractMarketClasses));
+setVar("vehiclesUAVs", OccAndInv("uavsAttack")+ OccAndInv("uavsPortable") + Riv("vehiclesUavs") + ("UAV" call _fnc_extractMarketClasses));
 setVar("vehiclesAA", OccAndInv("vehiclesAA") + ("AA" call _fnc_extractMarketClasses) + Reb("vehiclesAA"));
 setVar("vehiclesArtillery", OccAndInv("vehiclesArtillery") + ("ARTILLERY" call _fnc_extractMarketClasses));
-setVar("vehiclesTanks", OccAndInv("vehiclesTanks") + Riv("vehiclesRivalsTanks") + ("TANK" call _fnc_extractMarketClasses));
+setVar("vehiclesTanks", OccAndInv("vehiclesTanks") + Riv("vehiclesTanks") + ("TANK" call _fnc_extractMarketClasses));
 setVar("vehiclesTransportAir", OccAndInv("vehiclesHelisLight") + OccAndInv("vehiclesHelisTransport") + OccAndInv("vehiclesPlanesTransport"));
 setVar("vehiclesHelisLight", OccAndInv("vehiclesHelisLight") );
 setVar("vehiclesHelisLightAttack", OccAndInv("vehiclesHelisLightAttack") );
@@ -143,32 +143,26 @@ setVar("staticHowitzers", OccAndInv("staticHowitzers"));
 [A3A_faction_civ, "variants"] call _fnc_setHashmap;
 
 //Rivals
-private _vehRivalsArmor = Riv("vehiclesRivalsAPCs") + Riv("vehiclesRivalsTanks");
+private _vehRivalsArmor = Riv("vehiclesAPCs") + Riv("vehiclesTanks");
 setVar("vehiclesRivalsArmor", _vehRivalsArmor);
 
-private _vehRivalsLight = Riv("vehiclesRivalsCars") + Riv("vehiclesRivalsLightArmed") + Riv("vehiclesRivalsTrucks");
+private _vehRivalsLight = Riv("vehiclesLightUnarmed") + Riv("vehiclesLightArmed") + Riv("vehiclesTrucks");
 setVar("vehiclesRivalsLight", _vehRivalsLight);
 
 private _vehRivalsStatics = Riv("staticMGs") + Riv("staticAT") + Riv("staticAA");
 setVar("vehiclesRivalsStatics", _vehRivalsStatics);
 
-private _vehRivalsAir = Riv("vehiclesRivalsHelis");
+private _vehRivalsAir = Riv("vehiclesHelis");
 setVar("vehiclesRivalsAir", _vehRivalsAir);
 
-private _vehRivals = Riv("vehiclesRivalsAPCs") 
-+ Riv("vehiclesRivalsTanks") 
-+ Riv("vehiclesRivalsTrucks") 
-+ Riv("vehiclesRivalsCars") 
-+ Riv("vehiclesRivalsLightArmed") 
-+ Riv("vehiclesRivalsUavs")
-+ Riv("vehiclesRivalsHelis");
+private _vehRivals = Riv("vehiclesAPCs") 
++ Riv("vehiclesTanks") 
++ Riv("vehiclesTrucks") 
++ Riv("vehiclesLightUnarmed") 
++ Riv("vehiclesLightArmed") 
++ Riv("vehiclesUavs")
++ Riv("vehiclesHelis");
 setVar("vehiclesRivals", _vehRivals);
-
-private _vehMilitia = OccAndInv("vehiclesMilitiaCars")
-+ OccAndInv("vehiclesMilitiaTrucks")
-+ OccAndInv("vehiclesMilitiaLightArmed")
-+ OccAndInv("vehiclesMilitiaAPCs");
-setVar("vehiclesMilitia", _vehMilitia);
 
 //boats
 private _vehBoats = OccAndInv("vehiclesTransportBoats") + OccAndInv("vehiclesGunBoats") + Reb("vehiclesBoat");
@@ -198,26 +192,23 @@ setVar("vehiclesFixedWing", _vehFixedWing);
 //trucks to carry infantry
 private _vehTrucks =
 OccAndInv("vehiclesTrucks")
-+ OccAndInv("vehiclesMilitiaTrucks")
-+ Riv("vehiclesRivalsTrucks")
++ Riv("vehiclesTrucks")
 + Reb("vehiclesTruck");
 setVar("vehiclesTrucks", _vehTrucks);
 
 //Armed cars
 private _carsArmed =
 OccAndInv("vehiclesLightArmed")
-+ OccAndInv("vehiclesMilitiaLightArmed")
 + Reb("vehiclesLightArmed")
-+ Riv("vehiclesRivalsLightArmed")
++ Riv("vehiclesLightArmed")
 + ("ARMEDCAR" call _fnc_extractMarketClasses);
 setVar("vehiclesLightArmed", _carsArmed);
 
 //Unarmed cars
 private _carsUnarmed =
 OccAndInv("vehiclesLightUnarmed")      // anything else?
-+ OccAndInv("vehiclesMilitiaCars")
 + OccAndInv("vehiclesPolice")
-+ Riv("vehiclesRivalsCars")
++ Riv("vehiclesLightUnarmed")
 + ("UNARMEDCAR" call _fnc_extractMarketClasses)
 + Reb("vehiclesLightUnarmed");
 setVar("vehiclesLightUnarmed", _carsUnarmed);
@@ -247,9 +238,6 @@ setVar("vehiclesReb", _vehReb);
 //trucks that can cary logistics cargo
 private _vehCargoTrucks = (_vehTrucks + OccAndInv("vehiclesCargoTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
 setVar("vehiclesCargoTrucks", _vehCargoTrucks);
-
-private _vehMilitiaCargoTrucks = (_vehTrucks + OccAndInv("vehiclesMilitiaTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
-setVar("vehiclesMilitiaCargoTrucks", _vehMilitiaCargoTrucks);
 
 missionNamespace setVariable ["A3A_faction_all", A3A_faction_all, true];
 A3A_faction_all

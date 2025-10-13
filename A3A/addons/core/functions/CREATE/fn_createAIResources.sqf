@@ -42,12 +42,12 @@ if (_frontierX) then {
 		private _pos = [getPos _road, 7, _dirveh + 270] call BIS_Fnc_relPos;
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
-			private _typeVehX = selectRandom (_faction get "staticAT");
+			private _typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticAT"));
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
 			_veh setDir _dirVeh + 180;
-			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
@@ -58,12 +58,12 @@ if (_frontierX) then {
 			_vehiclesX pushBack _bunker;
 			_bunker setDir _dirveh;
 			_pos = getPosATL _bunker;
-			private _typeVehX = selectRandom (_faction get "staticAT");
+			private _typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticAT"));
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
 			_veh setDir _dirVeh + 180;
-			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
@@ -136,16 +136,17 @@ private _veh = nil;
 if (_spawnParameter isEqualType []) then {
 	_spawnsUsed pushBack _spawnParameter#2;
 	private _typeVehX = call {
-		if (FactionGet(civ,"vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandom (_faction get "vehiclesRepairTrucks") };
-		if (FactionGet(civ,"vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandom (_faction get "vehiclesFuelTrucks") };
+		if (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivRepair", 0) isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesRepairTrucks")) };
+		if (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivFuel", 0) isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesFuelTrucks")) };
 		private _types = if (!_isFIA) then {
-			(_faction get "vehiclesTrucks") + (_faction get "vehiclesCargoTrucks")
+			(FactionGoDTiered(_faction, "vehiclesTrucks")) +
+			(FactionGetTiered(_faction, "vehiclesCargoTrucks"))
 		} else {
-			_faction get "vehiclesMilitiaTrucks"
+			FactionGoDTieredFT(_faction, "vehiclesTrucks", 0)
 		};
-		_types = _types select { _x in FactionGet(all,"vehiclesCargoTrucks") };
-		if (count _types == 0) then { _types = (_faction get "vehiclesCargoTrucks") } else { _types }; // failsafe didn't work?
-		selectRandom _types;
+		// dirty, but weighted lists are a little more annoying to cleanup than normal arrays
+		{ if (!(_x in flatten FactionGet(all,"vehiclesCargoTrucks"))) then { private _index = _types find _x; _types deleteAt _index; _types deleteAt (_index + 1)} } forEach (+_types select {_x isEqualType ""});
+		selectRandomWeighted ([_types, FactionGetTiered(_faction, "vehiclesCargoTrucks")] select (count _types isEqualTo 0));
 	};
 	isNil {
 		_veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "NONE"];

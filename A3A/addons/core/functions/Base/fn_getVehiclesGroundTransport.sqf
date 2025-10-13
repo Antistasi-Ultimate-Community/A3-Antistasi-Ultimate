@@ -9,6 +9,9 @@ Arguments:
 Return value:
     <ARRAY> [vehType, weight, vehType2, weight2, ...]
 */
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 params ["_side", "_level"];
 _level = (_level max 1 min 10) - 1;
 private _faction = [A3A_faction_occ, A3A_faction_inv] select (_side == Invaders);
@@ -53,20 +56,20 @@ if (_faction get "vehiclesAPCs" isEqualTo []) then {
 
 // only occupants use militia vehicle types?
 if (_side == Occupants) then {
-    [_faction get "vehiclesPolice", _policeWeight] call _fnc_addArrayToWeights;
-    [_faction get "vehiclesMilitiaCars", _milCarWeight] call _fnc_addArrayToWeights;
-    [_faction get "vehiclesMilitiaTrucks", _milTruckWeight] call _fnc_addArrayToWeights;
-    private _milApc = _faction get "vehiclesMilitiaAPCs";
+    [FactionGetTiered(_faction, "vehiclesPolice"), _policeWeight] call _fnc_addArrayToWeights;
+    [FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0), _milCarWeight] call _fnc_addArrayToWeights;
+    [FactionGetTieredFT(_faction, "vehiclesTrucks", 0), _milTruckWeight] call _fnc_addArrayToWeights;
+    private _milApc = FactionGetTieredFT(_faction, "vehiclesAPCs", 0);
     if (_milApc isNotEqualTo []) then {
         [_milApc, _milApcWeight] call _fnc_addArrayToWeights;
     };
 };
-[_faction get "vehiclesLightUnarmed", _carWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesLightArmedTroop", _armedCarWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesTrucks", _truckWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesLightAPCs", _lapcWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesAPCs", _apcWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesIFVs", _ifvWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesTanks", _tankWeight] call _fnc_addArrayToWeights;
-[_faction get "vehiclesLightTanks", _ltankWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesLightUnarmed"), _carWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesLightArmedTroop"), _armedCarWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesTrucks"), _truckWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesLightAPCs"), _lapcWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesAPCs"), _apcWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesIFVs"), _ifvWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesTanks"), _tankWeight] call _fnc_addArrayToWeights;
+[FactionGetTiered(_faction, "vehiclesLightTanks"), _ltankWeight] call _fnc_addArrayToWeights;
 _vehWeights;

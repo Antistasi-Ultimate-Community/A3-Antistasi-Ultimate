@@ -29,7 +29,7 @@ private _vehicle = [_markerOrigin, _vehicleType] call A3A_fnc_spawnVehicleAtMark
 if(isNull _vehicle) exitWith {objNull};
 
 // Fill cargo turrets with crew for attack helis
-private _isAttackHeli = _vehicleType in FactionGet(all, "vehiclesHelisAttack") + FactionGet(all, "vehiclesHelisLightAttack");
+private _isAttackHeli = _vehicleType in flatten (FactionGet(all, "vehiclesHelisAttack") + FactionGet(all, "vehiclesHelisLightAttack"));
 private _crewGroup = [_side, _vehicle, nil, _isAttackHeli] call A3A_fnc_createVehicleCrew;
 {
     [_x, nil, nil, _resPool] call A3A_fnc_NATOinit
@@ -44,8 +44,8 @@ private _cargoGroup = grpNull;
 /*     private _groupType = call {
         if (_troopType == "Normal") exitWith { [_vehicleType, _side] call A3A_fnc_cargoSeats };
         if (_troopType == "Specops") exitWith { selectRandom (_faction get "groupSpecOpsRandom") };
-        if (_troopType == "Air") exitWith { [_faction get "groupTierAA"] call SCRT_fnc_unit_getTiered };
-        if (_troopType == "Tank") exitWith { [_faction get "groupTierAT"] call SCRT_fnc_unit_getTiered };
+        if (_troopType == "Air") exitWith { FactionGetTiered(_faction, "groupTierAA") };
+        if (_troopType == "Tank") exitWith { FactionGetTiered(_faction, "groupTierAT") };
     }; */
     ///if (_expectedCargo < count _groupType) then { _groupType resize _expectedCargo };           // trim to cargo seat count
     private _groupType = selectRandom (_faction get "groupSpecOpsRandom");

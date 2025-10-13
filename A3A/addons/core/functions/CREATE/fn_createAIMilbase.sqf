@@ -30,12 +30,12 @@ private _faction = Faction(_sideX);
 /////////////////////////////
 // SPAWNING SAM SITE	  //
 ////////////////////////////
-private _radarType = _faction getOrDefault ["vehicleRadar", ""];
-private _samType = _faction getOrDefault ["vehicleSam", ""];
+private _radarType = FactionGoDTiered(_faction, "vehicleRadar");
+private _samType = FactionGoDTiered(_faction, "vehicleSam");
 
 // In case of array
-if (_radarType isEqualType [] && {_radarType isNotEqualTo []}) then {_radarType = selectRandom _radarType};
-if (_samType isEqualType [] && {_samType isNotEqualTo []}) then {_samType = selectRandom _samType};
+if (_radarType isEqualType [] && {_radarType isNotEqualTo []}) then {_radarType = selectRandomWeighted _radarType};
+if (_samType isEqualType [] && {_samType isNotEqualTo []}) then {_samType = selectRandomWeighted _samType};
 
 // In case of empty array
 if (_samType isEqualType [] && {_samType isEqualTo []}) then {_samType = ""};
@@ -97,14 +97,14 @@ if (_frontierX) then {
 	if (count _roads != 0) then {
 		private _groupX = createGroup _sideX;
 		_groups pushBack _groupX;
-		private _typeVehX = selectRandom (_faction get "staticAT");
+		private _typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticAT"));
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
 			_veh setDir _dirVeh + 180;
-			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
@@ -119,7 +119,7 @@ if (_frontierX) then {
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
 			_veh setDir _dirVeh + 180;
-			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
@@ -175,14 +175,14 @@ private _countX = 0;
 // Mortar spawning
 private _groupX = createGroup _sideX;
 _groups pushBack _groupX;
-private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 while {true} do {
 	private _spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 	if (_spawnParameter isEqualType false) exitWith {};
 
 	_spawnsUsed pushBack _spawnParameter#2;
 
-	_typeVehX = selectRandom (_faction get "staticMortars");
+	_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticMortars"));
 	_veh = _typeVehX createVehicle (_spawnParameter select 0);
 	_veh setDir (_spawnParameter select 1);
 	_unit = [_groupX, _typeUnit, _positionX, [], 0, "CAN_COLLIDE"] call A3A_fnc_createUnit;
@@ -267,7 +267,7 @@ if (!_busy) then
 		];
 
 	{
-		private _vehs = _faction get _x;
+		private _vehs = FactionGoDTiered(_faction, _x) select {_x isEqualType ""};
 		if (_vehs isEqualTo []) then {continue};
 		private _weight = (_typeWeight select _forEachIndex) / count _vehs;
 		{
@@ -318,7 +318,7 @@ private _vehTypeWeights = [
 ];
 
 {
-	private _vehs = _faction get _x;
+	private _vehs = FactionGoDTiered(_faction, _x) select {_x isEqualType ""};
 	if (_vehs isEqualTo []) then {continue};
 	private _weight = (_vehTypeWeights select _forEachIndex) / count _vehs;
 	{
@@ -394,7 +394,7 @@ if (random 10 < (tierWar + difficultyCoef)) then {
 
 		private _veh = nil;
 		isNil {
-			_veh = createVehicle [selectRandom (_faction get "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+			_veh = createVehicle [selectRandomWeighted FactionGetTiered(_faction, "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 			_veh setDir (_spawnParameter select 1);
 		};
 
@@ -418,7 +418,7 @@ if (random 10 < (tierWar + difficultyCoef)) then {
   [_x, true] call A3U_fnc_setLock;
 } forEach _vehiclesX;
 
-private _boatType = selectRandom (_faction get "vehiclesGunBoats");
+private _boatType = selectRandomWeighted FactionGoDTiered(_faction, "vehiclesGunBoats");
 private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
 if (count _mrkMar > 0) then {
 	private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_typeVehX];
@@ -441,8 +441,14 @@ if (count _mrkMar > 0) then {
 ////////////////////////////
 
 if (random 100 < (30 + tierWar * 6)) then {
-	private _heavyVehPool =  (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks");
-	private _type = selectRandom _heavyVehPool;
+	private _heavyVehPool =  (
+		FactionGetTiered(_faction, "vehiclesTanks") + 
+		FactionGetTiered(_faction, "vehiclesAPCs") + 
+		FactionGetTiered(_faction, "vehiclesLightAPCs") + 
+		FactionGetTiered(_faction, "vehiclesIFVs") + 
+		FactionGetTiered(_faction, "vehiclesLightTanks")
+	);
+	private _type = selectRandomWeighted _heavyVehPool;
 
 	private _road = [_positionX] call A3A_fnc_findNearestGoodRoad;
 	if (_road distance2D _positionX > 800) exitWith {};

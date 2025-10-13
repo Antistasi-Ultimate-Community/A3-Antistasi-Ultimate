@@ -26,7 +26,7 @@ private _mrkFinal = createMarker [format ["LOG%1", random 100], _positionX];
 private _nameDest = [_city] call A3A_fnc_localizar;
 _mrkFinal setMarkerShape "ICON";
 
-private _bankVehicleClass = selectRandom (FactionGet(reb, "vehiclesCivSupply"));
+private _bankVehicleClass = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivSupply", 0));
 
 private _pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,_bankVehicleClass];
 

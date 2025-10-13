@@ -50,9 +50,9 @@ if (_grpIdx == -1) then {
 
 // create surrender box
 private _surrenderCrateType = if (_unit getVariable ["isRival", false]) then {
-	A3A_faction_riv get "surrenderCrate"
+	FactionGet(riv, "surrenderCrate")
 } else {
-	(Faction(_unitSide)) get "surrenderCrate"
+	FactionGet(_unitSide, "surrenderCrate");
 };
 private _boxX = _surrenderCrateType createVehicle position _unit;
 _boxX allowDamage false;

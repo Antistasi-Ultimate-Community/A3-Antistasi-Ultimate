@@ -29,7 +29,7 @@ params [
 
 private _countX = 0;
 private _arrayGroups = [_faction, "groupsTierSmall"] call SCRT_fnc_unit_flattenTier;
-private _sniperGroup = [_faction get "groupTierSniper"] call SCRT_fnc_unit_getTiered;
+private _sniperGroup = FactionGetTiered(_faction, "groupTierSniper");
 
 if ([_marker, false] call A3A_fnc_fogCheck < 0.3) then {
 	_arrayGroups deleteAt 0;

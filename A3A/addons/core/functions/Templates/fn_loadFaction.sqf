@@ -81,6 +81,29 @@ private _fnc_saveNames = {
     ["lastNames", _lastNames] call _fnc_saveToTemplate;
 };
 
+private _fnc_saveVehiclesToTemplate = {
+	params ["_name", "_data"];
+
+	{
+		private _tier = _forEachIndex;
+		private _vehiclesData = _x;
+		{
+			private _vehicleType = _x;
+			private _vehicles = _y;
+			private _vehiclesX = _dataStore getOrDefault [_vehicleType, []];
+			//if (_vehicles isEqualType "") then { _vehicles = [_vehicles] };
+			if (_vehicles isEqualType [] && {!isNil {_vehicles select 0}}) then {
+				if (isNil {_vehicles select 1} || {(_vehicles select 1) isEqualType ""}) then { _vehicles = flatten (_vehicles apply {[_x, 1]}) };
+				_vehicles = [_vehicles] call A3A_fnc_normalizeWeights;
+			};
+			_vehiclesX set [_tier, _vehicles];
+			_dataStore set [_vehicleType, _vehiclesX];
+		} forEach (_vehiclesData);
+	} forEach (_data);
+	
+	_dataStore set [_name, "template"]; // indicates that vehiclesData came from the template / template file was already converted
+};
+
 {
 	call compile preprocessFileLineNumbers _x;
 } forEach _filepaths;

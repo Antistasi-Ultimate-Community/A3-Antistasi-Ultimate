@@ -8,7 +8,7 @@ private _morty0 = units _groupX select 0;
 private _morty1 = units _groupX select 1;
 
 (getArray (configFile/"CfgVehicles"/_typeX/"assembleInfo"/"dissasembleTo")) params ["_b0", "_b1"];
-_morty0 setVariable ["typeOfSoldier", if (_typeX in FactionGet(reb,"staticMGs")) then { "StaticGunner" } else { "StaticMortar" }];
+_morty0 setVariable ["typeOfSoldier", if (_typeX in flatten FactionGet(reb,"staticMGs")) then { "StaticGunner" } else { "StaticMortar" }];
 while {(alive _morty0) and (alive _morty1)} do
 	{
 	waitUntil {sleep 1; {((unitReady _x) and (alive _x))} count units _groupX == count units _groupX};

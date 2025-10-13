@@ -27,7 +27,7 @@ switch (outpostType) do {
         _costTextBox ctrlSetText format [localize "STR_commander_menu_establish_garrison_cost", _hr, _costs, A3A_faction_civ get "currencySymbol"];
     };
     case ("ROADBLOCK"): {
-        _costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
+        _costs = [(FactionGetTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) # 0] call A3A_fnc_vehiclePrice;
         _hr = 0; //static gunner
         {
             _costs = _costs + (server getVariable [_x,0]);
@@ -36,7 +36,7 @@ switch (outpostType) do {
         _costTextBox ctrlSetText format [localize "STR_commander_menu_establish_garrison_cost", _hr, _costs, A3A_faction_civ get "currencySymbol"];
     };
     case ("AA"): {
-        _costs = [(A3A_faction_reb get "staticAA") # 0] call A3A_fnc_vehiclePrice;
+        _costs = [(FactionGetTieredFT(A3A_faction_reb, "staticAA", 0)) # 0] call A3A_fnc_vehiclePrice;
         _hr = 0;
         {
             _costs = _costs + (server getVariable [_x,0]); 
@@ -45,7 +45,7 @@ switch (outpostType) do {
        _costTextBox ctrlSetText format [localize "STR_commander_menu_establish_garrison_cost", _hr, _costs, A3A_faction_civ get "currencySymbol"];
     };
     case ("AT"): {
-        _costs = [(A3A_faction_reb get "staticAT") # 0] call A3A_fnc_vehiclePrice; //AT
+        _costs = [(FactionGetTieredFT(A3A_faction_reb, "staticAT", 0)) # 0] call A3A_fnc_vehiclePrice; //AT
         _hr = 0;
         {
             _costs = _costs + (server getVariable [_x,0]); 
@@ -54,7 +54,7 @@ switch (outpostType) do {
        _costTextBox ctrlSetText format [localize "STR_commander_menu_establish_garrison_cost", _hr, _costs, A3A_faction_civ get "currencySymbol"];
     };
     case ("HMG"): {
-        _costs = [(A3A_faction_reb get "staticMGs") # 0] call A3A_fnc_vehiclePrice;
+        _costs = [(FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0)) # 0] call A3A_fnc_vehiclePrice;
         _hr = 0;
         {
             _costs = _costs + (server getVariable [_x,0]); 

@@ -170,7 +170,7 @@ private _fnc_validateWeightedArray = {
         if !(
             (_y#_i) isEqualType ""
             && (_y#(_i+1)) isEqualType 0
-        ) exitWith { _invalidReasons pushBack ("Entry "+(str _entry)+" is not in propper weighted array format, expected an array in format [<String> Class, <Scalar> Weight, ...]") };
+        ) exitWith { _invalidReasons pushBack ("Entry "+(str _entry)+" is not in proper weighted array format, expected an array in format [<String> Class, <Scalar> Weight, ...]") };
         ["CfgVehicles", _y#_i, _entry] call _fnc_validClassCaseSensitive;
     };
 };
@@ -302,6 +302,8 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
         };
         case "diveGear"; //Mixed CFGVehicles and CFGGlasses
         case "flyGear";
+        case "firstNames";
+        case "lastNames";
         case "voices"; //CfgVoice maybe later
         case "sfVoices";
         case "milVoices";

@@ -27,7 +27,7 @@ _vehicle setVariable ["airspaceControl", true, true];
 private _airType = -1;
 if(_vehicle isKindOf "Helicopter") then
 {
-    if((typeOf _vehicle) in (FactionGet(reb,"vehiclesCivHeli"))) then
+    if((typeOf _vehicle) in (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0))) then
     {
         _airType = CIV_HELI;
     }

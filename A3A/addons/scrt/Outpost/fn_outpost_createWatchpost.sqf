@@ -22,7 +22,7 @@ private _taskId = "outpostTask" + str A3A_taskCount;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 private _typeGroup = A3A_faction_reb get "groupSniper";
-private _typeVehX = (A3A_faction_reb get "vehiclesBasic") select 0;
+private _typeVehX = (FactionGetTieredFT(A3A_faction_reb, "vehiclesBasic", 0)) select 0;
 
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _typeGroup] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Watch"];
