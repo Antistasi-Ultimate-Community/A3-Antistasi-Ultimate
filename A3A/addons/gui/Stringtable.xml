@@ -3634,6 +3634,17 @@
                 <Portuguese>Este parâmetro não pode ser alterado para um salvamento existente.</Portuguese>
                 <Chinesesimp>无法为现有保存更改此参数。</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_ingame">
+                <Original>This parameter cannot be changed while in game.</Original>
+                <Czech>Tento parametr nelze změnit ve hře.</Czech>
+                <French>Ce paramètre ne peut pas être modifié pendant le jeu.</French>
+                <Italian>Questo parametro non può essere modificato durante il gioco.</Italian>
+                <Korean>이 매개변수는 게임 중에는 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить во время игры.</Russian>
+                <Polish>Tego parametru nie można zmienić w grze.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado durante o jogo.</Portuguese>
+                <Chinesesimp>此参数在游戏中无法更改。</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_warning">
                 <Original>Enabling rivals may have unintended side effects (e.g. possibility of default invader faction appearing) when invaders are disabled.</Original>
                 <Czech>Zapnutí soupeřů může mít nezamýšlené vedlejší účinky (např. možnost zobrazení výchozí frakce útočníků), když jsou útočníci deaktivováni.</Czech>

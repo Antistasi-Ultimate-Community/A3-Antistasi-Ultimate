@@ -8021,6 +8021,20 @@
                 <French>Cette option permet de sauvegarder le jeu en cours. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
                 <Chinesesimp>使用此选项可保存当前游戏。它确实以“侠盗猎车手”的方式保存了最重要的数据。</Chinesesimp>
             </Key>
+            <Key ID="STR_commander_menu_edit_params_button">
+                <Original>EDIT SAVE PARAMETERS</Original>
+                <Russian>РЕДАКТИРОВАНИЕ ПАРАМЕТРОВ СОХРАНЕНИЯ</Russian>
+                <Chinesesimp>编辑保存参数</Chinesesimp>
+                <Korean>저장 매개변수 편집</Korean>
+                <French>MODIFIER LES PARAMÈTRES DE SAUVEGARDE</French>
+            </Key>
+            <Key ID="STR_commander_menu_edit_params_button_tooltip">
+                <Original>Use this option to edit your current game parameters. Note that not all parameters can be changed in game.</Original>
+                <Russian>Используйте эту опцию для редактирования текущих параметров игры. Обратите внимание, что не все параметры могут быть изменены в игре.</Russian>
+                <Korean>이 옵션을 사용하여 현재 게임 매개 변수를 편집합니다. 게임에서 모든 매개변수를 변경할 수 있는 것은 아닙니다.</Korean>
+                <French>Utilisez cette option pour modifier vos paramètres de jeu actuels. Notez que tous les paramètres ne peuvent pas être modifiés dans le jeu.</French>
+                <Chinesesimp>使用此选项可编辑您当前的游戏参数。请注意，并非所有参数都可以在游戏中更改。</Chinesesimp>
+            </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
