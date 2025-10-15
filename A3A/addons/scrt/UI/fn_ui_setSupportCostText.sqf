@@ -1,3 +1,5 @@
+#include "..\defines.inc"
+
 disableSerialization;
 
 private _display = findDisplay 60000;
@@ -20,7 +22,7 @@ switch (supportType) do {
     };
     case ("SUPPLY_GROUND"): {
         private _hrCost = 3;
-        private _vehCost = [(A3A_faction_reb get "vehiclesTruck") # 0] call A3A_fnc_vehiclePrice;
+        private _vehCost = [(FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0)) # 0] call A3A_fnc_vehiclePrice;
         _costTextBox ctrlSetText format [localize "STR_commander_menu_abilities_cost_support_point_hr_and_money", 1, _hrCost, _vehCost, A3A_faction_civ get "currencySymbol"];
     };
     case ("VEH_AIRDROP"): {

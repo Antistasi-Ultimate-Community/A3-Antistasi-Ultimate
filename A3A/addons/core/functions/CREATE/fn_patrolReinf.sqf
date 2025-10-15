@@ -23,9 +23,9 @@ ServerInfo_5("Spawning PatrolReinf. Dest:%1 Orig:%2 Size:%3 Side:%4 Land:%5",_mr
 private _vehicleType = if (_isLand) then {
 	selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
 } else {
-	private _transportPlanes = FactionGetTiered(_faction, "vehiclesPlanesTransport");
-	private _transportHelis = FactionGetTiered(_faction, "vehiclesHelisTransport");
-	if (count _groupType <= 4) then { _transportHelis append (FactionGetTiered(_faction, "vehiclesHelisLight")) };
+	private _transportPlanes = FactionGetTiered(_faction, "vehiclesPlanesTransport") select {_x isEqualType ""};
+	private _transportHelis = FactionGetTiered(_faction, "vehiclesHelisTransport") select {_x isEqualType ""};
+	if (count _groupType <= 4) then { _transportHelis append (FactionGetTiered(_faction, "vehiclesHelisLight") select {_x isEqualType ""}) };
 
 	private _transportsWeighted = [];
 	{ _transportsWeighted append [_x, 1 / count _transportPlanes] } forEach _transportPlanes;

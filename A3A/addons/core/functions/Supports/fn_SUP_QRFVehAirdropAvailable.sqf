@@ -18,9 +18,9 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 if(tierWar < 2) exitWith {-1};
 
 private _allAA = (
-    (FactionGetTiered(all, "vehiclesPlanesAA")) +
-    (FactionGetTiered(all, "vehiclesAA")) +
-    (FactionGetTiered(all, "staticAA"))
+    (FactionGetTiered(A3A_faction_all, "vehiclesPlanesAA")) +
+    (FactionGetTiered(A3A_faction_all, "vehiclesAA")) +
+    (FactionGetTiered(A3A_faction_all, "staticAA"))
 );
 if (typeOf _target in _allAA) exitWith { 0 };
 

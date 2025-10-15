@@ -4,7 +4,7 @@ private _filename = "fn_cargoSeats";
 params ["_veh", "_sideX"];
 
 private _faction = Faction(_sideX);
-/* private _isOrbital = _veh in ((_faction get "vehiclesDropPod")); */
+/* private _isOrbital = _veh in (flatten (_faction get "vehiclesDropPod")); */
 private _isMilitia = _veh in flatten (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0) + FactionGetTieredFT(_faction, "vehiclesTrucks", 0) + FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0) + FactionGetTieredFT(_faction, "vehiclesAPCs", 0));
 //private _isRivals = _veh in FactionGet(all, "vehiclesRivals");
 
@@ -13,7 +13,7 @@ private _crewSeats = [_veh, false] call BIS_fnc_crewCount; // Number of crew sea
 private _cargoSeats = _totalSeats - _crewSeats;
 if (_veh in flatten (_faction get "vehiclesPolice")) then { _cargoSeats = 6 min _cargoSeats };
 
-/* if (_veh in (_faction get "vehiclesDropPod")) exitWith {selectRandom [_faction, "groupsTierSquads", 2] call SCRT_fnc_unit_flattenTier }; *////;
+/* if (_veh in flatten (_faction get "vehiclesDropPod")) exitWith {selectRandom [_faction, "groupsTierSquads", 2] call SCRT_fnc_unit_flattenTier }; *////;
 
 if (_cargoSeats < 2) exitwith { [] };
 

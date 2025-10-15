@@ -19,6 +19,7 @@ if (lifeState _unit == "INCAPACITATED") exitWith {
 };
 
 private _unitSide = side group _unit;
+private _faction = Faction(_unitSide);
 _unit allowDamage false;		// give players a couple of seconds to stop shooting
 _unit setCaptive true;
 _unit stop true;
@@ -49,11 +50,7 @@ if (_grpIdx == -1) then {
 };
 
 // create surrender box
-private _surrenderCrateType = if (_unit getVariable ["isRival", false]) then {
-	FactionGet(riv, "surrenderCrate")
-} else {
-	FactionGet(_unitSide, "surrenderCrate");
-};
+private _surrenderCrateType = _faction get "surrenderCrate";
 private _boxX = _surrenderCrateType createVehicle position _unit;
 _boxX allowDamage false;
 clearMagazineCargoGlobal _boxX;

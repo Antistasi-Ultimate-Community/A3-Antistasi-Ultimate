@@ -37,8 +37,8 @@ private _tankWeight =      [ 0,  0,  0, 15, 20, 25, 30, 35, 40, 50] select _leve
 private _ltankWeight =     [ 0, 0, 15, 25, 30, 35, 30, 25, 20, 15] select _level;
 
 // Assumption is that at least one of APC or battle bus exists
-if (_faction get "vehiclesTanks" isEqualTo []) then { _tankWeight = _tankWeight + _ltankWeight };
-if (_faction get "vehiclesLightTanks" isEqualTo []) then { _ltankWeight = _ltankWeight + _ifvWeight };
+if (FactionGetTiered(_faction, "vehiclesTanks") isEqualTo []) then { _tankWeight = _tankWeight + _ltankWeight };
+if (FactionGetTiered(_faction, "vehiclesLightTanks") isEqualTo []) then { _ltankWeight = _ltankWeight + _ifvWeight };
 
 if (_faction getOrDefault ["attributeMoreTrucks", false]) then {
     _truckWeight =     [60, 60, 60, 60, 60, 60, 55, 50, 45, 40] select _level;
@@ -47,10 +47,10 @@ if (_faction getOrDefault ["attributeMoreTrucks", false]) then {
     _ifvWeight =       [ 0,  0,  2,  4,  6,  8, 12, 16, 20, 25] select _level;
 };
 
-if (_faction get "vehiclesLightAPCs" isEqualTo []) then { _apcWeight = _apcWeight + _lapcWeight/2; _truckWeight = _truckWeight + _lapcWeight/2; };
-if (_faction get "vehiclesIFVs" isEqualTo []) then { _apcWeight = _apcWeight + _ifvWeight };
-if (_faction get "vehiclesAPCs" isEqualTo []) then {
-    if (_faction get "vehiclesLightAPCs" isEqualTo []) exitWith { _ifvWeight = _ifvWeight + _apcWeight };
+if (FactionGetTiered(_faction, "vehiclesLightAPCs") isEqualTo []) then { _apcWeight = _apcWeight + _lapcWeight/2; _truckWeight = _truckWeight + _lapcWeight/2; };
+if (FactionGetTiered(_faction, "vehiclesIFVs") isEqualTo []) then { _apcWeight = _apcWeight + _ifvWeight };
+if (FactionGetTiered(_faction, "vehiclesAPCs") isEqualTo []) then {
+    if (FactionGetTiered(_faction, "vehiclesLightAPCs") isEqualTo []) exitWith { _ifvWeight = _ifvWeight + _apcWeight };
     _lapcWeight = _lapcWeight + _apcWeight;
 };
 

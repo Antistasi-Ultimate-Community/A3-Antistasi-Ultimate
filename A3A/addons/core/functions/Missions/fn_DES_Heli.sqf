@@ -161,7 +161,7 @@ _escortWP setWaypointBehaviour "SAFE";
 Debug_2("Placed Group: %1 in Lite Vehicle and set waypoint %2", _typeGroup, _posCrash);
 
 //creating repair vehicle
-_typeVeh = selectRandom (_faction get "vehiclesRepairTrucks");
+_typeVeh = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesRepairTrucks"));
 private _vehicleDataR = [position _roadR, 0,_typeVeh, _sideX] call A3A_fnc_spawnVehicle;
 private _vehR = _vehicleDataR select 0;
 _vehR limitSpeed 50;

@@ -34,7 +34,7 @@ if (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"v
     _vehicle setVehicleRadar 1;
 };
 
-if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod")) then
+if (_vehicle isKindOf "Air" || typeOf _vehicle in flatten (_faction get "vehiclesDropPod")) then
 {
     if (_vehType in flatten (FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight")) || _vtol != "" || (typeOf _vehicle in flatten (_faction get "vehiclesDropPod"))) exitWith
     {
@@ -49,7 +49,7 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
             if(_x distance2D _landPos < 20) exitWith { _landPos = [0, 0, 0] };
         } forEach _landPosBlacklist;
         
-        if (typeOf _vehicle in (_faction get "vehiclesDropPod") ) exitWith {
+        if (typeOf _vehicle in flatten (_faction get "vehiclesDropPod") ) exitWith {
             [_vehicle, _cargoGroup, _posDestination, _posOrigin] spawn A3A_fnc_OrbitalLanding; // , _crewGroup
         };
         {

@@ -26,5 +26,4 @@ if (_tierWar != tierWar) then
 	if (!_silent) then { [petros,"tier",""] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]] };
 	//Updates the vehicles and groups for the sites
 	[] call A3A_fnc_updatePreference;
-	{ _x call A3U_fnc_updateVehiclesData } forEach ["occ", "inv"];
 };

@@ -1,3 +1,5 @@
+#include "..\defines.inc"
+
 if(!isNil "supportCooldown" && {supportCooldown}) exitWith {
     [
 		localize "STR_notifiers_fail_type",
@@ -136,7 +138,7 @@ switch (supportType) do {
     case ("SUPPLY_GROUND"): {
         supportPoints = supportPoints - 1;
         publicVariable "supportPoints";
-        private _vehCost = [(A3A_faction_reb get "vehiclesTruck") # 0] call A3A_fnc_vehiclePrice;
+        private _vehCost = [(FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0)) # 0] call A3A_fnc_vehiclePrice;
         [-3,-_vehCost] remoteExec ["A3A_fnc_resourcesFIA",2];
     };
     case ("SUPPLY");

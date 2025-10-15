@@ -84,7 +84,7 @@ if (_typeX == "rem") then {
 			_costs = round (_costs * 0.75);
 		};
 		case (_roadblockFIA): {
-			_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice; //car with mg
+			_costs = [(FactionGetTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) # 0] call A3A_fnc_vehiclePrice; //car with mg
 			_hr = 1; //static gunner
 			{
 				_costs = _costs + (server getVariable [_x,0]);

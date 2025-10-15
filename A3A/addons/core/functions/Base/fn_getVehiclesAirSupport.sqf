@@ -31,11 +31,11 @@ private _casDiveWeight =   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] select _level;
 
 // eventually add dive bombers?
 
-if (_faction get "vehiclesHelisLightAttack" isEqualTo []) then { _AHWeight = _AHWeight + _lightAHWeight };
-if (_faction get "vehiclesHelisAttack" isEqualTo []) then { _casWeight = _casWeight + _AHWeight };
-if (_faction get "vehiclesPlanesCAS" isEqualTo []) then { _AHWeight = _AHWeight + _casWeight };
+if (FactionGetTiered(_faction, "vehiclesHelisLightAttack") isEqualTo []) then { _AHWeight = _AHWeight + _lightAHWeight };
+if (FactionGetTiered(_faction, "vehiclesHelisAttack") isEqualTo []) then { _casWeight = _casWeight + _AHWeight };
+if (FactionGetTiered(_faction, "vehiclesPlanesCAS") isEqualTo []) then { _AHWeight = _AHWeight + _casWeight };
 
-if (_faction get "vehiclesPlanesCAS" isNotEqualTo []) then {
+if (FactionGetTiered(_faction, "vehiclesPlanesCAS") isNotEqualTo []) then {
     _vehWeights append ["CAS", _casWeight];
     _vehWeights append ["CASDIVE", _casDiveWeight];
 };
