@@ -5832,6 +5832,13 @@
                 <Korean>자격이 있는 멤버가 없을 때 게스트가 지휘관이 될 수 있도록 허용</Korean>
                 <French>Permettre aux invités de devenir commandant lorsqu'aucun membre n'est éligible</French>
             </Key>
+            <Key ID="STR_params_helipadTerrainSmoothing">
+                <Original>Enable helipad terrain smoothing</Original>
+                <Russian>Включить сглаживание рельефа под вертолетные площадки</Russian>
+                <Chinesesimp>启用直升机停机坪地形平滑处理</Chinesesimp>
+                <Korean>헬리패드 지형 평활화 활성화</Korean>
+                <French>Activer le lissage du terrain des hélipads</French>
+            </Key>
             <Key ID="STR_params_memberSlots">
                 <Original>Percentage of Reserved Slots for Members</Original>
                 <Russian>Количество зарезервированных слотов для членов сервера</Russian>
