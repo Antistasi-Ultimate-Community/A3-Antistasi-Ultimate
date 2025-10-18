@@ -1,5 +1,10 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+
+// Script wants to sleep a couple of lines further down. When calling garbage
+// cleaner from commander menu, this script is called in unscheduled env, though.
+if (!canSuspend) exitWith { [] spawn A3A_fnc_garbageCleaner };
+
 // Do not localise timeSpan, it is broadcast to all connected clients.
 private _timeSinceLastGC = [[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,0,0,false,2] call A3A_fnc_timeSpan_format;
 [localize "STR_antistasi_dialogs_open_clean_garbage_title", format [localize "STR_antistasi_dialogs_open_clean_garbage_exit", _timeSinceLastGC]] remoteExec ["A3A_fnc_customHint", 0];
