@@ -229,10 +229,19 @@ if (isPlayer A3A_setupPlayer) then {
 //add admin as member if not on loggin
 addMissionEventHandler ["OnUserAdminStateChanged", {
     params ["_networkId", "_loggedIn", "_votedIn"];
-    private _uid = (getUserInfo _networkId)#2;
-    if !(_uid in membersX) then {
-        membersX pushBackUnique (getUserInfo _networkId)#2;
-        publicVariable "membersX";
+
+    // userInfo is empty when somebody logs out
+    if (!_loggedIn) exitWith {};
+
+    private _userInfo = getUserInfo _networkId;
+
+    if (_userInfo isNotEqualTo []) then {
+        private _uid = _userInfo#2;
+
+        if !(_uid in membersX) then {
+            membersX pushBack _uid;
+            publicVariable "membersX";
+        };
     };
 }];
 
