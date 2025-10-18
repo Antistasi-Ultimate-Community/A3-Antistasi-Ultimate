@@ -203,6 +203,7 @@ class CfgFunctions {
 			class ui_populateVehicleBox {};
 			class ui_populateBlackMarket {};
 
+			class ui_editParamsMenu {};
 			class ui_createRebelLoadoutMenu {};
 
 			class ui_launchSupport {};
@@ -234,6 +235,7 @@ class CfgFunctions {
 			class support_smokeBarrage {};
 			class support_planeParadropRun {};
 			class support_lootHeli {};
+			class support_groundResupply {};
 		};
 
 		class Composition {

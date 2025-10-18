@@ -32,12 +32,12 @@ private _faction = Faction(_sideX);
 // SPAWNING SAM SITE	  //
 ////////////////////////////
 
-private _radarType = _faction getOrDefault ["vehicleRadar", ""];
-private _samType = _faction getOrDefault ["vehicleSam", ""];
+private _radarType = FactionGoDTiered(_faction, "vehicleRadar");
+private _samType = FactionGoDTiered(_faction, "vehicleSam");
 
 // In case of array
-if (_radarType isEqualType [] && {_radarType isNotEqualTo []}) then {_radarType = selectRandom _radarType};
-if (_samType isEqualType [] && {_samType isNotEqualTo []}) then {_samType = selectRandom _samType};
+if (_radarType isEqualType [] && {_radarType isNotEqualTo []}) then {_radarType = selectRandomWeighted _radarType};
+if (_samType isEqualType [] && {_samType isNotEqualTo []}) then {_samType = selectRandomWeighted _samType};
 
 // In case of empty array
 if (_samType isEqualType [] && {_samType isEqualTo []}) then {_samType = ""};
@@ -97,14 +97,14 @@ if (_frontierX) then {
 	if (count _roads != 0) then {
 		private _groupX = createGroup _sideX;
 		_groups pushBack _groupX;
-		private _typeVehX = selectRandom (_faction get "staticAT");
+		private _typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticAT"));
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
 			_veh setDir _dirVeh + 180;
-			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
@@ -119,7 +119,7 @@ if (_frontierX) then {
 			_vehiclesX pushBack _veh;
 			_veh setPos _pos;
 			_veh setDir _dirVeh + 180;
-			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+			private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
@@ -174,13 +174,13 @@ private _countX = 0;
 // Mortar spawning
 private _groupX = createGroup _sideX;
 _groups pushBack _groupX;
-private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+private _typeUnit = FactionGetTiered(_faction, "unitTierStaticCrew");
 while {true} do {
 	private _spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 	if (_spawnParameter isEqualType false) exitWith {};
 
 	_spawnsUsed pushBack _spawnParameter#2;
-	_typeVehX = selectRandom (_faction get "staticMortars");
+	_typeVehX = selectRandomWeighted (FactionGetTiered(_faction, "staticMortars"));
 	_veh = _typeVehX createVehicle (_spawnParameter select 0);
 	_veh setDir (_spawnParameter select 1);
 	_unit = [_groupX, _typeUnit, _positionX, [], 0, "CAN_COLLIDE"] call A3A_fnc_createUnit;
@@ -233,9 +233,9 @@ if (!_busy) then {
 		private _hangar = objNull;
 		private _spawnParameter = [_markerX, "Plane"] call A3A_fnc_findSpawnPosition;
 		if(_spawnParameter isEqualType []) then {
-			private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
-			private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
-			private _uavsAttack = _faction getOrDefault ["uavsAttack", []];
+			private _vehiclesPlanesCAS = FactionGetTiered(_faction, "vehiclesPlanesCAS") select {_x isEqualType ""};
+			private _vehiclesPlanesAA = FactionGetTiered(_faction, "vehiclesPlanesAA") select {_x isEqualType ""};
+			private _uavsAttack = FactionGoDTiered(_faction, "uavsAttack") select {_x isEqualType ""};
 
 			private _vehPool = [];
 			{
@@ -273,13 +273,13 @@ if (!_busy) then {
 			[_veh, _sideX] call A3A_fnc_AIVEHinit;
 		} else {
 			if !(_runwaySpawnLocation isEqualTo []) then {
-				private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
-				private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
-				private _vehiclesPlanesLargeCAS = _faction get "vehiclesPlanesLargeCAS";
-				private _vehiclesPlanesLargeAA = _faction get "vehiclesPlanesLargeAA";
-				private _vehiclesPlanesTransport = _faction get "vehiclesPlanesTransport";
-				private _vehiclesPlanesGunship = _faction getOrDefault ["vehiclesPlanesGunship", []];
-				private _uavsAttack = _faction getOrDefault ["uavsAttack", []];
+				private _vehiclesPlanesCAS = FactionGetTiered(_faction, "vehiclesPlanesCAS") select {_x isEqualType ""};
+				private _vehiclesPlanesAA = FactionGetTiered(_faction, "vehiclesPlanesAA") select {_x isEqualType ""};
+				private _vehiclesPlanesLargeCAS = FactionGoDTiered(_faction, "vehiclesPlanesLargeCAS") select {_x isEqualType ""};
+				private _vehiclesPlanesLargeAA = FactionGoDTiered(_faction, "vehiclesPlanesLargeAA") select {_x isEqualType ""};
+				private _vehiclesPlanesTransport = FactionGoDTiered(_faction, "vehiclesPlanesTransport") select {_x isEqualType ""};
+				private _vehiclesPlanesGunship = FactionGoDTiered(_faction, "vehiclesPlanesGunship") select {_x isEqualType ""};
+				private _uavsAttack = FactionGoDTiered(_faction, "uavsAttack") select {_x isEqualType ""};
 				private _vehPool = [];
 				{
 				    _vehPool pushBack _x;
@@ -374,7 +374,7 @@ if (!_busy) then
 		];
 
 	{
-		private _vehs = _faction get _x;
+		private _vehs = FactionGetTiered(_faction, _x) select {_x isEqualType ""};
 		if (_vehs isEqualTo []) then {continue};
 		private _weight = (_typeWeight select _forEachIndex) / count _vehs;
 		{
@@ -425,7 +425,7 @@ private _vehTypeWeights = [
 ];
 
 {
-	private _vehs = _faction get _x;
+	private _vehs = FactionGetTiered(_faction, _x) select {_x isEqualType ""};
 	if (_vehs isEqualTo []) then {continue};
 	private _weight = (_vehTypeWeights select _forEachIndex) / count _vehs;
 	{
@@ -500,7 +500,7 @@ for "_i" from 1 to _max do {
 
 	private _veh = nil;
 	isNil {
-		_veh = createVehicle [selectRandom (_faction get "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+		_veh = createVehicle [selectRandomWeighted FactionGetTiered(_faction, "vehiclesAA"), (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
 		_veh setDir (_spawnParameter select 1);
   	};
 
@@ -523,7 +523,7 @@ for "_i" from 1 to _max do {
   [_x, true] call A3U_fnc_setLock;
 } forEach _vehiclesX;
 
-private _boatType = selectRandom (_faction get "vehiclesGunBoats");
+private _boatType = selectRandomWeighted FactionGoDTiered(_faction, "vehiclesGunBoats");
 private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
 if (count _mrkMar > 0) then {
 	private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_typeVehX];
@@ -549,8 +549,14 @@ if (random 100 < (20 + tierWar * 3)) then {
 	private _road = [_positionX] call A3A_fnc_findNearestGoodRoad;
 	if (_road distance2D _positionX > 800) exitWith {};
 
-	private _heavyVehPool =  (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesLightAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks");
-	private _type = selectRandom _heavyVehPool;
+	private _heavyVehPool = (
+		FactionGetTiered(_faction, "vehiclesTanks") + 
+		FactionGetTiered(_faction, "vehiclesAPCs") + 
+		FactionGetTiered(_faction, "vehiclesLightAPCs") + 
+		FactionGetTiered(_faction, "vehiclesIFVs") + 
+		FactionGetTiered(_faction, "vehiclesLightTanks")
+	);
+	private _type = selectRandomWeighted _heavyVehPool;
 
 	private _heavyVehicle = [_type, (position _road), 15, 10] call A3A_fnc_safeVehicleSpawn;
 	if (isNull _heavyVehicle) exitWith {};
@@ -563,7 +569,7 @@ if (random 100 < (20 + tierWar * 3)) then {
 	[_heavyVehicle, _sideX] call A3A_fnc_AIVEHinit;
 	{[_x,_markerX] call A3A_fnc_NATOinit} forEach (units _group);
 
-	if (_type in ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightAPCs"))) then {
+	if (_type in flatten ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightAPCs"))) then {
 		sleep 1;
 		private _troopGroup = [(position _road), _sideX, (selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier))] call A3A_fnc_spawnGroup;
 		{_x assignAsCargo _heavyVehicle;_x moveInCargo _heavyVehicle; _soldiers pushBack _x; [_x] joinSilent _group; [_x,"",false] call A3A_fnc_NATOinit} forEach units _troopGroup;

@@ -1,8 +1,14 @@
 //////////////////////////
+// VehiclesData Hashmap //
+//////////////////////////
+
+private _vehiclesData = call _fnc_createLoadoutData;
+
+//////////////////////////
 //       Loadout        //
 //////////////////////////
 
-// All of bellow are optional overrides.
+// All of below are optional overrides.
 ["firstAidKits", ["FirstAidKit"]] call _fnc_saveToTemplate;  // However, item is tested for for help and reviving.
 ["mediKits", ["Medikit"]] call _fnc_saveToTemplate;  // However, item is tested for for help and reviving.
 

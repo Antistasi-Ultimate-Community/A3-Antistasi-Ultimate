@@ -134,7 +134,7 @@ private _crewClasses = [
 	A3A_faction_reb get "unitEng"
 ];
 
-private _truckClass = selectRandom (A3A_faction_reb get "vehiclesTruck");
+private _truckClass = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0));
 private _truck = createVehicle [_truckClass, [_startingRoadPosition select 0, _startingRoadPosition select 1, 0.9], [], 0, "CAN_COLLIDE"];
 _truck setDir _dirVeh;
 _truck setDamage (random [0.3,0.5,0.7]);
@@ -276,9 +276,9 @@ if (dateToNumber date < _dateLimitNum) then {
 	if (_isDifficult) then {
 		Info("Creating small minefield near ambush.");
 		private _minesCount = round random [3,5,7];
-		private _mines = (_faction get "minefieldAPERS");
+		private _mines = (FactionGetTiered(A3A_faction_inv, "minefieldAPERS"));
 		for "_i" from 1 to _minesCount do {
-			private _mineX = createMine [selectRandom _mines, _startingRoadPosition, [], 25];
+			private _mineX = createMine [selectRandomWeighted _mines, _startingRoadPosition, [], 25];
 			Rivals revealMine _mineX;
 			_vehicles pushBack _mineX;
 	#if __A3_DEBUG__

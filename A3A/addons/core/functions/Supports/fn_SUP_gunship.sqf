@@ -37,7 +37,7 @@ if (_side == Occupants) then {
 } else {
     _oppositeSide = Occupants;
 };
-private _vehType = selectRandom (_faction get "vehiclesPlanesGunship");
+private _vehType = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesPlanesGunship"));
 if (isNil "_vehType") exitWith { Debug_1("No gunship for faction.", _supportName); -1; };
 
 private _targArray = [];

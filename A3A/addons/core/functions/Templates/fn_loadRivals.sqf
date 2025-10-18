@@ -20,6 +20,7 @@ private _factionDefaultFile = "EnemyDefaults";
 _factionDefaultFile = QPATHTOFOLDER(Templates\Templates\FactionDefaults) + "\" + _factionDefaultFile + ".sqf";
 
 private _faction = [[_factionDefaultFile,_file]] call A3A_fnc_loadFaction;
+if (isNil {_faction get "vehiclesData"} || {(_faction get "vehiclesData") isNotEqualTo "template"}) then { _faction = _faction call A3A_fnc_convertFaction };
 private _factionPrefix = "riv";
 missionNamespace setVariable ["A3A_faction_" + _factionPrefix, _faction];
 [_faction, _factionPrefix] call A3A_fnc_compileGroups;

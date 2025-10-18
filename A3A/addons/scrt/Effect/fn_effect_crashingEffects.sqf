@@ -63,7 +63,7 @@ _lightSource attachTo [_object, [0, 0, 0]];
 
 sleep 11;
 
-if (typeOf _object in (_faction get "vehiclesDropPod") ) then {
+if (typeOf _object in flatten (_faction get "vehiclesDropPod") ) then {
 
 	setAperture 10;
 	waitUntil {sleep 0.1; getPos _object select 2 < 2500};

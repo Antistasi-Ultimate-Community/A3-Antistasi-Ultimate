@@ -37,7 +37,7 @@ Info_2("%1 will be used as center of the event at %2 position.", name _player, s
 private _finPosition = [_originPosition, 2500, (random 360)] call BIS_fnc_relPos;
 
 private _spawnPosition = [_originPosition, 1400, 1600, 0, 0, 1] call BIS_fnc_findSafePos;
-private _civHeliData = [[(_spawnPosition select 0), (_spawnPosition select 1), 100 + random 200], 0, selectRandom (A3A_faction_civ get "vehiclesCivHeli"), civilian] call A3A_fnc_spawnVehicle;
+private _civHeliData = [[(_spawnPosition select 0), (_spawnPosition select 1), 100 + random 200], 0, selectRandomWeighted (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivHeli", 0)), civilian] call A3A_fnc_spawnVehicle;
 private _heliVeh = _civHeliData select 0;
 [_heliVeh, civilian] call A3A_fnc_AIVEHinit;
 private _heliCrew = _civHeliData select 1;

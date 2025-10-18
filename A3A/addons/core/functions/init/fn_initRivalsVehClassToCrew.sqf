@@ -34,21 +34,12 @@ FIX_LINE_NUMBERS()
 private _allVehClassToCrew = [
 // Vehicles categories at the top have higher priority than bellow.
 // So if "Tank_F" is in both NATOLand and NATOTanks, NATOTanks should be ABOVE NATOLand, as NATOTanks is a specialised child.
-    //[FactionGet(all,"vehiclesMilitia"), [FactionGet(riv,"unitRifle")]],
-    [FactionGet(all,"vehiclesRivalsArmor"),[FactionGet(riv,"unitCrew")]],
-    [FactionGet(all,"vehiclesRivalsLight"),[FactionGet(riv,"unitRifle")]],
-    [FactionGet(all,"vehiclesRivalsStatics"),[FactionGet(riv,"unitRifle")]],
-    [FactionGet(riv,"vehiclesRivalsUavs"), ["O_UAV_AI"]],
-    [FactionGet(all,"vehiclesRivalsAir"),[FactionGet(riv,"unitRifle")]],    ///why FactionGet(all and not riv? why c_man and not  FactionGet(civ,"unitMan")? why no FactionGet(inv ?
-    [FactionGet(all,"vehiclesRivals"),[FactionGet(riv,"unitRifle")]]/* ,
-
-    [FactionGet(all,"vehiclesFixedWing"),[FactionGet(riv,"unitCrew")]],
-    [FactionGet(all,"vehiclesArmor"), [FactionGet(riv,"unitCrew")]],          // <- vehiclesArmor has nested arrays; therefore, it needs to be flattened. (will change with arty template change)
-    [FactionGet(all,"vehiclesHelis"), [FactionGet(riv,"unitCrew")]],
-    [FactionGet(all,"vehicleRadars"), ["O_UAV_AI"]],
-    [FactionGet(all,"vehicleSams"), ["O_UAV_AI"]],
-    [FactionGet(all,"vehiclesUAVs"), ["O_UAV_AI"]],
-    [FactionGet(all, "vehiclesPolice"), [FactionGet(riv,"unitRifle")]]       // < vehiclesPolice is a single classname; therefore, it needs to be put into an array. */
+    [flatten FactionGet(all,"vehiclesRivalsArmor"),[FactionGet(riv,"unitCrew")]],
+    [flatten FactionGet(all,"vehiclesRivalsLight"),[FactionGet(riv,"unitRifle")]],
+    [flatten FactionGet(all,"vehiclesRivalsStatics"),[FactionGet(riv,"unitRifle")]],
+    [flatten FactionGet(riv,"vehiclesRivalsUavs"), ["O_UAV_AI"]],
+    [flatten FactionGet(all,"vehiclesRivalsAir"),[FactionGet(riv,"unitRifle")]],    ///why FactionGet(all and not riv? why c_man and not  FactionGet(civ,"unitMan")? why no FactionGet(inv ?
+    [flatten FactionGet(all,"vehiclesRivals"),[FactionGet(riv,"unitRifle")]]
 ];
 // ⬆ STOP EDITING HERE 👋 THANK YOU, COME AGAIN ⬆
 

@@ -290,7 +290,7 @@ while {_lifeTime > 0} do
                             }
                             else
                             {
-                                if(_target in FactionGet(all,"vehiclesAPCs")) then
+                                if(_target in flatten FactionGet(all,"vehiclesAPCs")) then
                                 {
                                     //APC, use mainly AP and rarely rockets
                                     _mainGunnerList pushBack [_target, 18, _antiAPCBelt, 4];

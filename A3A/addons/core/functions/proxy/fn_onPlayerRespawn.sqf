@@ -171,7 +171,7 @@ if (side group _newUnit == teamPlayer) then
 		{
 			_containerX = _this select 1;
 			_typeX = typeOf _containerX;
-			if (((_containerX isKindOf "CAManBase") and (!alive _containerX)) or (_typeX in [A3A_faction_occ get "ammobox", A3A_faction_inv get "ammobox"])) then
+			if (((_containerX isKindOf "CAManBase") and (!alive _containerX)) or (_typeX in [FactionGet(occ, "surrenderCrate"), FactionGet(inv, "surrenderCrate")])) then
 			{
 				if ({if (((side _x== Invaders) or (side _x== Occupants)) and (_x knowsAbout _playerX > 1.4)) exitWith {1}} count allUnits > 0) then
 				{

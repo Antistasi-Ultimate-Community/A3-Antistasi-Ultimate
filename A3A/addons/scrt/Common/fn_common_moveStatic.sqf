@@ -22,7 +22,7 @@ if (([_playerX] call A3A_fnc_countAttachedObjects) > 0) exitWith {
 };
 
 private _carryableBoxes = [
-	FactionGet(reb,"lootCrate"),
+	FactionGet(reb, "lootCrate"),
 	FactionGet(occ,"equipmentBox"),
 	FactionGet(inv,"equipmentBox")
 ];

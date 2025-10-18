@@ -53,10 +53,24 @@ private _fnc_spawngroups = {
 		_wp setWaypointType "SAD";
 		_InfGroups pushBack _InfGroup;
 
-		private _vehicles = if (_difficult) then {selectRandom ((_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesTanks") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
-					} else {selectRandom
-					((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + 
-					(_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"))
+		private _vehicles = if (_difficult) then {
+			selectRandomWeighted (
+				(FactionGoDTiered(_faction, "vehiclesAirborne")) +
+				(FactionGoDTiered(_faction, "vehiclesLightTanks")) +
+				(FactionGoDTiered(_faction, "vehiclesTanks")) +
+				(FactionGoDTiered(_faction, "vehiclesAPCs")) +
+				(FactionGoDTiered(_faction, "vehiclesIFVs"))
+			)
+		} else {
+			selectRandomWeighted (
+				(FactionGoDTiered(_faction, "vehiclesLightUnarmed")) +
+				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
+				(FactionGoDTiered(_faction, "vehiclesAirborne")) +
+				(FactionGoDTiered(_faction, "vehiclesLightTanks")) +
+				(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
+				(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
+				(FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0))
+			)
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
 		diag_log _vehicles;
 		_vehicledata = [_skirmishpositionActuall, 0, _vehicles, _side] call A3A_fnc_spawnVehicle;
@@ -66,7 +80,7 @@ private _fnc_spawngroups = {
 		_vehiclegroup setBehaviourStrong "AWARE";
 		units _vehiclegroup join _InfGroup;
 		if (_difficult) then {
-			_UAVtype = selectRandom (_faction get "uavsPortable");
+			_UAVtype = selectRandomWeighted (FactionGetTiered(_faction, "uavsPortable"));
 			_uav = createVehicle [_UAVtype, _skirmishpositionActuall, [], 0, "FLY"];
 			[_side, _uav] call A3A_fnc_createVehicleCrew;
 			_vehiclesArray pushBack _uav;
@@ -87,8 +101,18 @@ private _fnc_spawngroups = {
 		_wp setWaypointType "SAD";
 		_Rivalsgroups pushBack _Rivalsgroup;
 
-		private _vehicles2 = if (_difficult2) then {selectRandom ((A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"))} else {selectRandom ((A3A_faction_riv get "vehiclesRivalsCars") + 
-		(A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsTrucks"))};
+		private _vehicles2 = if (_difficult2) then {
+			selectRandomWeighted (
+				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) +
+				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0))
+			)
+		} else {
+			selectRandomWeighted (
+				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightUnarmed", 0)) +
+				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0)) +
+				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesTrucks", 0))
+			)
+		};
 		diag_log _vehicles2;
 		_vehicledata2 = [_skirmishpositionActuall2, 0,_vehicles2, _side2] call A3A_fnc_RivalsSpawnVehicle;
 		_vehicle2 = _vehicledata2 select 0;

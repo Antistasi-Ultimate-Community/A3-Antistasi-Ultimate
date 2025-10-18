@@ -24,7 +24,7 @@ params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos",
 private _airport = [_side, _targPos] call A3A_fnc_availableBasesAir;
 if (isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _supportName); -1; };
 
-private _planeType = selectRandom (Faction(_side) get "uavsAttack");
+private _planeType = selectRandomWeighted (FactionGetTiered(_faction, "uavsAttack"));
 
 private _aggro = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
 if (_delay < 0) then { _delay = (0.5 + random 1) * (300 - 15*tierWar - 1*_aggro) };

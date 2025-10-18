@@ -8,7 +8,7 @@ private _faction = Faction(_sideX);
 private _totalSeats = [_veh, true] call BIS_fnc_crewCount; // Number of total seats: crew + non-FFV cargo/passengers + FFV cargo/passengers
 private _crewSeats = [_veh, false] call BIS_fnc_crewCount; // Number of crew seats only
 private _cargoSeats = _totalSeats - _crewSeats;
-if (_veh in (_faction get "vehiclesPolice")) then { _cargoSeats = 6 min _cargoSeats };
+if (_veh in flatten (_faction get "vehiclesPolice")) then { _cargoSeats = 6 min _cargoSeats };
 
 if (_cargoSeats < 2) exitwith { [] };
 

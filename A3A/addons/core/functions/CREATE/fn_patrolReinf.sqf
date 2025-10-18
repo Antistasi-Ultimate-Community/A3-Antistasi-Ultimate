@@ -21,11 +21,11 @@ private _isLand = if (_lowAir) then { true } else {						// land markers guarant
 ServerInfo_5("Spawning PatrolReinf. Dest:%1 Orig:%2 Size:%3 Side:%4 Land:%5",_mrkDest,_mrkOrigin,_numTroops,_side,_isLand);
 
 private _vehicleType = if (_isLand) then {
-	selectRandom (_faction get "vehiclesTrucks");
+	selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
 } else {
-	private _transportPlanes = _faction get "vehiclesPlanesTransport";
-	private _transportHelis = _faction get "vehiclesHelisTransport";
-	if (count _groupType <= 4) then { _transportHelis append (_faction get "vehiclesHelisLight") };
+	private _transportPlanes = FactionGetTiered(_faction, "vehiclesPlanesTransport") select {_x isEqualType ""};
+	private _transportHelis = FactionGetTiered(_faction, "vehiclesHelisTransport") select {_x isEqualType ""};
+	if (count _groupType <= 4) then { _transportHelis append (FactionGetTiered(_faction, "vehiclesHelisLight") select {_x isEqualType ""}) };
 
 	private _transportsWeighted = [];
 	{ _transportsWeighted append [_x, 1 / count _transportPlanes] } forEach _transportPlanes;
