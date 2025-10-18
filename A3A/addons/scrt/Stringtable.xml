@@ -8527,6 +8527,48 @@
                 <Korean>반군 로드아웃</Korean>
                 <French>Équipements des rebelles</French>
             </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_load_caption">
+                <Original>Total load</Original>
+                <Russian>Общий вес</Russian>
+                <Chinesesimp>总重量</Chinesesimp>
+                <Korean>총 중량</Korean>
+                <French>Charge totale</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_fatal">
+                <Original>UNIT CARRYING TOO MUCH</Original>
+                <Russian>ЮНИТ ПЕРЕГРУЖЕН</Russian>
+                <Chinesesimp>单位负载过重</Chinesesimp>
+                <Korean>유닛이 너무 많은 짐을 지고 있습니다</Korean>
+                <French>UNITÉ SURCHARGÉE</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_warning">
+                <Original>Almost overloaded</Original>
+                <Russian>Почти перегружено</Russian>
+                <Chinesesimp>几乎超载</Chinesesimp>
+                <Korean>거의 과적</Korean>
+                <French>Presque surchargé</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_uniform">
+                <Original>Uniform</Original>
+                <Russian>Униформа</Russian>
+                <Chinesesimp>制服</Chinesesimp>
+                <Korean>유니폼</Korean>
+                <French>Uniforme</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_vest">
+                <Original>Vest</Original>
+                <Russian>Жилет</Russian>
+                <Chinesesimp>背心</Chinesesimp>
+                <Korean>조끼</Korean>
+                <French>Gilet</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_backpack">
+                <Original>Backpack</Original>
+                <Russian>Рюкзак</Russian>
+                <Chinesesimp>背包</Chinesesimp>
+                <Korean>배낭</Korean>
+                <French>Sac à dos</French>
+            </Key>
         </Container>
         <Container name="dialog_build_minefield">
             <Key ID="STR_antistasi_rivals_tab_header">
