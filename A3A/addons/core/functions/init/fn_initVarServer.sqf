@@ -667,6 +667,13 @@ DECLARE_SERVER_VAR(reinforceMarkerInvaders, []);
 DECLARE_SERVER_VAR(canReinforceOccupants, []);
 DECLARE_SERVER_VAR(canReinforceInvaders, []);
 
+////////////////////////////
+//     MISCELLANEOUS     ///
+////////////////////////////
+
+GVAR(terrainManipulators) = [];
+[QGVAR(BuildingPlacerShow), { call FUNCMAIN(terrainManipulatorOnPlacerShowEH) }] call CBA_fnc_addEventHandler;
+
 /////////////////////////////////////////
 //     SYNCHRONISE SERVER VARIABLES   ///
 /////////////////////////////////////////

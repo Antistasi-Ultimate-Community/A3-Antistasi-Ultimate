@@ -367,9 +367,24 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'staticsX': {
-            for "_i" from 0 to (count _varvalue) - 1 do {
-                (_varValue#_i) params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+            private _list = +_varValue;
+            private _index = count _list;
+
+            // Retain original order but prioritize after `restorePriority` property
+            _list = _list apply {
+                _x params["_class"];
+                _index = _index - 1;
+                [[([_class] call CBA_fnc_getObjectConfig) >> QGVAR(restorePriority), "NUMBER", 25] call CBA_fnc_getConfigEntry, _index, _x];
+            };
+
+            // Sort descending; first index wins unless equal, then it's the original order
+            _list sort false;
+            _list apply {
+                _x params["_priority","_index","_data"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
+
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save
@@ -379,23 +394,36 @@ if (_varName in specialVarLoads) then {
                     _veh setPosWorld _posVeh;
                     _veh setVectorDirAndUp [_xVectorDir,_xVectorUp];
                 };
+
+                Debug_5("staticsX: #%1 (prio %2): created %3 @%4 (%5)",_index,_priority,_typeVehX,getPosATL _veh,_veh);
+
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
-                    if (_veh isKindOf "StaticWeapon") exitWith { staticsToSave pushBack _veh };
-                    if (_veh isKindOf "Building") exitWith {
-                        _veh setVariable ["A3A_building", true, true];
-                        if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
-                            [_veh] call A3A_fnc_terrainCleaner;
+                    switch true do {
+                        case (_veh isKindOf "StaticWeapon"): {
+                            staticsToSave pushBack _veh;
                         };
-                        A3A_buildingsToSave pushBack _veh;
+
+                        case (_veh isKindOf "Building"): {
+                            _veh setVariable ["A3A_building", true, true];
+                            A3A_buildingsToSave pushBack _veh;
+                        };
+                    };
+
+                    if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
+                        private _code = getText(configOf _veh >> QGVAR(onBuildingLoaded));
+                        Debug_4("calling %1 (%2) on %3 with params %4", QGVAR(onBuildingLoaded), _code, typeOf _veh, [_veh]);
+                        [_veh] call compile _code;
                     };
                 };
                 if (!isNil "_state") then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
             };
+
             publicVariable "staticsToSave";
+            publicVariable QGVAR(terrainManipulators);
         };
 
         case 'tasks': {

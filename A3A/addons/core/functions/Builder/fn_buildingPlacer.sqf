@@ -69,6 +69,11 @@ private _userActions = [
             private _objIndex = _tempArray find (A3A_building_EHDB # CURSOR_OBJECT);
             if (_objIndex == -1) exitWith {};
 
+            attachedObjects (_tempArray # _objIndex) apply {
+                detach _x;
+                deleteVehicle _x;
+            };
+
             deleteVehicle (_tempArray deleteAt _objIndex);
             private _buildData = _buildArray deleteAt _objIndex;
             private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
@@ -322,3 +327,5 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 }];
 
 A3A_building_EHDB set [EACH_FRAME_EH, _eventHanderEachFrame];
+
+[QGVAR(BuildingPlacerShow), [player, true]] call CBA_fnc_serverEvent;

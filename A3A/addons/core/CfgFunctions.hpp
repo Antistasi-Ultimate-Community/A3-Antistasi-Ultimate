@@ -200,6 +200,10 @@ class CfgFunctions
             class buildingComplete {};
             class buildingPlacer {};
             class buildingPlacerStart {};
+            class terrainManipulatorBuilderEH {};
+            class terrainManipulatorOnPlacerShowEH {};
+            class terrainManipulatorPostInitClient {};
+            class terrainManipulatorPostInitServer {};
             class initBuildableObjects {};
             class initBuilderMonitors {};
             class initPlacerDB {};
