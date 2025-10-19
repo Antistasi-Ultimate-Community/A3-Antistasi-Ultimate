@@ -661,6 +661,20 @@
             <Key ID="STR_antistasi_mission_info_regero_blurb_text">
                 <Original>It's time for King Petros</Original>
             </Key>
+            <Key ID="STR_antistasi_mission_info_drakovac_mapname_text">
+                <Original>Antistasi Ultimate - Drakovac</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_drakovac_mapname_short_text">
+                <Original>Antistasi Ultimate - Drakovac</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_drakovac_blurb_text">
+                <Original>Whether we wanted it or not, we stepped into a war with occupants and invaders on Drakovac.</Original>
+                <Russian>Хотим мы того или нет, но мы начали войну против оккупантов и захвачтиков Драковац.</Russian>
+                <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Drakovac.</German>
+                <Chinesesimp>无论我们愿意与否，我们都与德拉科瓦茨的占领者和入侵者进行了一场战争。</Chinesesimp>
+                <Korean>우리가 원하든 원하지 않든, 우리는 드라코바츠의 점령자 및 침략자들과 전쟁에 뛰어들었습니다.</Korean>
+                <French>Que nous le voulions ou non, nous sommes entrés dans une guerre avec les occupants et les envahisseurs sur Drakovac.</French>
+            </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>
                 <Russian>Автоматически загружать последнее сохранение после задержки</Russian>
