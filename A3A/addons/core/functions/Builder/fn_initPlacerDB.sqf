@@ -26,7 +26,7 @@ params [
 
 
 A3A_building_EHDB = [
-	// SPACE_PRESSED (unused)
+	// ROTATION_STEP (false = default rotation, <number> = rotation step in degrees)
 	false,
 	// ROTATION_MODE_CW
 	false,
@@ -71,8 +71,27 @@ A3A_building_EHDB = [
 	-1,
 	// USER_ACTION_EHS
 	[],
-	// KEY_UP_EH (unused)
-	-1,
+	// ROTATION_STEP_FUNC
+	{
+		params[["_direction", 1, [0]]];
+
+		private _steps = [7.5, 15, 30, 45, 60, 90];
+		private _stepping = A3A_building_EHDB # ROTATION_STEP;
+		private _newIndex = if (_stepping isEqualType false) then {
+			[0, count(_steps) - 1] select (_direction < 0);
+		} else {
+			private _index = (_steps find _stepping) + _direction;
+			[_index, false] select (_index < 0 || { _index >= count _steps });
+		};
+
+		if (_newIndex isEqualType false) exitWith {
+			A3A_building_EHDB set [ROTATION_STEP, false];
+			systemChat "Rotation stepping disabled";
+		};
+
+		A3A_building_EHDB set [ROTATION_STEP, _steps#_newIndex];
+		systemChat format["Rotation step set to %1°", _steps#_newIndex];
+	},
 	// EACH_FRAME_EH
 	-1,
 	// UPDATE_BB

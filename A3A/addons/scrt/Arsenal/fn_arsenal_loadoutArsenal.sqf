@@ -2705,7 +2705,9 @@ switch _mode do {
 			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {loadbackpack player};
 		};
 
-		if!(_loadOld isEqualTo _load)then{
+		private _loadChanged = (_loadOld isNotEqualTo _load);
+
+		if (_loadChanged) then {
 			_amountOld = parseNumber (_ctrlList lnbtext [_lbcursel,2]);
 			if(_add > 0)then{
 				_ctrlList lnbsettext [[_lbcursel,2],str (_amountOld + _count)];
@@ -2717,12 +2719,41 @@ switch _mode do {
 		};
 
 		_load = switch _selected do{
-			case IDC_RSCDISPLAYARSENAL_TAB_UNIFORM: {loaduniform player};
-			case IDC_RSCDISPLAYARSENAL_TAB_VEST: {loadvest player};
-			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {loadbackpack player};
+			case IDC_RSCDISPLAYARSENAL_TAB_UNIFORM: {[loaduniform player, getContainerMaxLoad uniform player, "STR_antistasi_dialogs_hq_button_rebel_loadouts_container_uniform"]};
+			case IDC_RSCDISPLAYARSENAL_TAB_VEST: {[loadvest player, getContainerMaxLoad vest player, "STR_antistasi_dialogs_hq_button_rebel_loadouts_container_vest"]};
+			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK: {[loadbackpack player, getContainerMaxLoad backpack player, "STR_antistasi_dialogs_hq_button_rebel_loadouts_container_backpack"]};
 		};
 
-		_ctrlLoadCargo progresssetposition _load;
+		_ctrlLoadCargo progresssetposition (_load select 0);
+
+		if (_loadChanged) then {
+			private _loadPercentage = load player;
+			private _loadAbs = loadAbs player;
+			private _loadLimit = getNumber(configFile >> "CfgInventoryGlobalVariable" >> "maxSoldierLoad");
+			private _message = [];
+
+			_message pushBack format["%1 %2%3 (%4/%5)", 
+				localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_load_caption", 
+				(_loadPercentage * 100) toFixed 1, "%", _loadAbs, _loadLimit
+			];
+
+			switch true do {
+				case (_loadPercentage >= 1): {
+					_message pushBack localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_fatal";
+					playSound "A3AP_UiFailure";
+				};
+				case (_loadPercentage >= 0.8): {
+					_message pushBack localize "STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_warning";
+				};
+			};
+
+			_message pushBack format["%1: %2%3 (%4/%5)", localize(_load select 2), 
+				(100 * (_load select 0)) toFixed 1, "%",
+				((_load select 0) * (_load select 1)) toFixed 1, _load select 1
+			];
+
+			['showMessage',[_display, _message joinString " | "]] call SCRT_fnc_arsenal_loadoutArsenal;
+		};
 
 		["SelectItemRight",[_display,_ctrlList,_index]] call SCRT_fnc_arsenal_loadoutArsenal;
 	};

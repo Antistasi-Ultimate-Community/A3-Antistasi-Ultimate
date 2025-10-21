@@ -17,18 +17,12 @@ class CfgPatches
 };
 
 #include "CfgFunctions.hpp"
+#include "patches\cfgVehicles.hpp"
 
 class cfgWeapons
 {
     class ItemRadio;
     #include "patches\cfgWeapons.hpp"
-};
-
-class cfgVehicles
-{
-    class Item_Base_F;
-    class Thing;
-    #include "patches\cfgVehicles.hpp"
 };
 
 class RscBackPicture;
