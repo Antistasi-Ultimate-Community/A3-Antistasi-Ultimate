@@ -56,8 +56,7 @@ private _truckClass = selectRandomWeighted (
 
 if (_truckClass == "") exitWith {
     Error("No trucks, problems with template, aborting Vehicle Move Event.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+    [VEH_MOVE] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
 private _truckVehicleData = [_roadPosition, _dirveh, _truckClass, _side] call A3A_fnc_spawnVehicle;
