@@ -23,8 +23,9 @@ _mrkFinal setMarkerShape "ICON";
 
 // Creating the vehicle
 private _civDisabled = (A3A_faction_civ getOrDefault ["attributeLowCiv", false] || {A3A_faction_civ getOrDefault ["attributeCivNonHuman", false]});
-private _vehiclePool = if (_civDisabled) then { _faction get "vehiclesMilitiaTrucks" } else { A3A_faction_civ get "vehiclesCivIndustrial" } select { _x isEqualType "" }; // * convert weighted list to normal array 
-private _bankVehicleClass = selectRandom (A3A_faction_reb getOrDefault ["vehiclesCivSupply", _vehiclePool]);
+private _vehiclePool = if (_civDisabled) then { FactionGetTiered(_faction, "vehiclesMilitiaTrucks") } else { FactionGetTieredFT(A3A_faction_civ, "vehiclesCivIndustrial", 0) };
+private _rebVehPool = FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivSupply", 0);
+private _bankVehicleClass = selectRandomWeighted ([_rebVehPool, _vehiclePool] select (_rebVehPool isEqualTo [[],[],[]]));
 private _pos = _posbase findEmptyPosition [1, 50, _bankVehicleClass];
 private _truckX = _bankVehicleClass createVehicle _pos;
 
