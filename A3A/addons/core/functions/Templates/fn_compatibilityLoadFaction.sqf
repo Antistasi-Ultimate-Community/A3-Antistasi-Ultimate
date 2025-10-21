@@ -67,16 +67,11 @@ if (_side in [Occupants, Invaders]) then {
     } forEach (_faction get "vehiclesLightArmed");
     _faction set ["vehiclesLightArmedTroop", _lightArmedTroop];
 
-    private _vehArmor = (
-        (_faction getOrDefault ["vehiclesTanks", [], true]) +
-        (_faction getOrDefault ["vehiclesAA", [], true]) +
-        (_faction getOrDefault ["vehiclesArtillery", [], true]) +
-        (_faction getOrDefault ["vehiclesLightAPCs", [], true]) +
-        (_faction getOrDefault ["vehiclesAPCs", [], true]) +
-        (_faction getOrDefault ["vehiclesLightTanks", [], true]) +
-        (_faction getOrDefault ["vehiclesAirborne", [], true]) +
-        (_faction getOrDefault ["vehiclesIFVs", [], true])
-    );
+    private _vehArmor = [[], [], []];
+    {
+        private _vehicles = _faction getOrDefault [_x, [[], [], []], true];
+        { _x append (_vehicles select _forEachIndex) } forEach (_vehArmor);
+    } forEach ( ["vehiclesTanks", "vehiclesAA", "vehiclesArtillery", "vehiclesLightAPCs", "vehiclesAPCs", "vehiclesLightTanks", "vehiclesAirborne", "vehiclesIFVs"] );
     _faction set ["vehiclesArmor", _vehArmor];
 };
 
