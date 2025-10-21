@@ -67,7 +67,7 @@ while {true} do { // This isn't great and would be better to figure out an alter
 };
 
 // selecting classnames
-private _reconVehicle = selectRandom (_faction get "vehiclesDropPod");
+private _reconVehicle = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesDropPod"));
 private _reconVehicleDummyClass = _reconVehicle;
 if (_reconVehicle == "SpaceshipCapsule_01_F") then {
 	_reconVehicle = "SpaceshipCapsule_01_wreck_F";
@@ -76,12 +76,19 @@ if (_reconVehicle == "SpaceshipCapsule_01_F") then {
 private _pilotClass = _faction get "unitPilot";
 
 private _searchHeliClass =  if (_difficult) then {
-    selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack") + (_faction get "vehiclesHelisAttack"))
+    selectRandomWeighted (
+        (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
+        (FactionGoDTiered(_faction, "vehiclesHelisLightAttack")) +
+        (FactionGoDTiered(_faction, "vehiclesHelisAttack"))
+    )
 } else {
-    selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisLightAttack"))
+    selectRandomWeighted (
+        (FactionGoDTiered(_faction, "vehiclesHelisLight")) +
+        (FactionGoDTiered(_faction, "vehiclesHelisLightAttack"))
+    )
 };
 
-private _cargoTruckClass = selectRandom (_faction get "vehiclesTrucks");
+private _cargoTruckClass = selectRandomWeighted (FactionGetTiered(_faction, "vehiclesTrucks"));
 
 //selecting blackbox
 private _blackboxClass = "";
@@ -401,7 +408,7 @@ _heliInfGroup = [_missionOriginPos, _sideX, _specOpsArray] call A3A_fnc_spawnGro
 _landPos = [_crashsiteactual, 30, 100, 10, 0, 0.25, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
 private _totalSeats = [typeOf _cargoVehicle, false] call BIS_fnc_crewCount; 
 private _heliInfGroupSize = count units _heliInfGroup;
-if(_searchHeliClass in (_faction get "vehiclesHelisLight")) then {
+if(_searchHeliClass in flatten (_faction get "vehiclesHelisLight")) then {
     private _roll = random 100;
 	if(_roll >= 50) then {
         [_searchHeliVeh, _heliInfGroup, _crashsiteactual, _cargoGroupSpawnpositon, _heliVehicleGroup] spawn A3A_fnc_fastrope;

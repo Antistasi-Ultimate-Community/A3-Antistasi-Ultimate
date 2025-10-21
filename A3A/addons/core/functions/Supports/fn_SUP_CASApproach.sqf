@@ -41,13 +41,13 @@ Debug_1("Starting ammo: %1", _ammoHM);
 private _fnc_getFireMatrix =
 {
     params ["_targetType", "_allowHeavyWeapon"];
-    if (_targetType in FactionGet(all,"vehiclesTanks")) exitWith
+    if (_targetType in flatten FactionGet(all,"vehiclesTanks")) exitWith
     {
         Debug_1("%1 target is tank", _supportName);
         if(_allowHeavyWeapon) exitWith { [[true, 25, 3, 1], [true, 25, 3, 1], [true, 35, 3, 1]] };
         [[true, 20, 3, 1], [true, 20, 3, 1], [true, 30, 3, 0]];
     };
-    if (_targetType in FactionGet(all,"vehiclesArmor")) exitWith
+    if (_targetType in flatten FactionGet(all,"vehiclesArmor")) exitWith
     {
         Debug_1("%1 target is APC", _supportName);
         if(_allowHeavyWeapon) exitWith { [[true, 30, 3, 1], [true, 30, 3, 1], [true, 30, 3, 0]] };

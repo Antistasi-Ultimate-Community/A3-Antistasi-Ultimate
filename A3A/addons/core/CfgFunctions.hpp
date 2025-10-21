@@ -97,8 +97,7 @@ class CfgFunctions
             class itemType {};
             class launcherInfo {};
             class loot {};
-            class randomRifle {};
-            class randomHandgun {};
+            class randomWeapon {};
             class transfer {};
             class unlockEquipment {};
             class vehicleSort {};
@@ -710,6 +709,7 @@ class CfgFunctions
             class compileGroups {};
             class compileMissionAssets {};
             class getLoadout {};
+            class convertFaction {};
             class loadFaction {};
             class loadRivals {};
             class loadAddon {};
@@ -799,6 +799,7 @@ class CfgFunctions
             class isEngineer {};
             class localLog {};
             class log {};
+            class normalizeWeights {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};

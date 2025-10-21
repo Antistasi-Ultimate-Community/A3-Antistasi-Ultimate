@@ -38,7 +38,7 @@
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["Flex_CUP_NLAF_BTR80"]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["Flex_CUP_BOC_Su25_Dyn"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["Flex_CUP_NLAF_C47"]] call _fnc_saveToTemplate;
 

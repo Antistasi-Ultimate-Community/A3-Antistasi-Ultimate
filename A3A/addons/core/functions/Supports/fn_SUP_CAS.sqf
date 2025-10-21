@@ -27,9 +27,9 @@ if (isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _sup
 private _faction = Faction(_side);
 private _vehType = "";
 if (A3A_UAVSpawnChance < 0.2) then {
-    _vehType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS"));
+    _vehType = selectRandomWeighted (FactionGoDTiered(_faction, "vehiclesPlanesCAS") + FactionGoDTiered(_faction, "vehiclesPlanesLargeCAS"));
 } else {
-    _vehType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS") + (_faction get "uavsAttack"));
+    _vehType = selectRandomWeighted (FactionGoDTiered(_faction, "vehiclesPlanesCAS") + FactionGoDTiered(_faction, "vehiclesPlanesLargeCAS") + FactionGoDTiered(_faction, "uavsAttack"));
 };
 
 private _aggro = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};

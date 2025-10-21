@@ -23,17 +23,17 @@ switch (_mode) do
     {
         // * Populate the Parameter Type Dropdown
         private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
-        private _advParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_adv_label");
-        private _expParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_exp_label");
-        private _extParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_ext_label");
+        private _balParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bal_label");
+        private _eqpParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_eqp_label");
+        private _bldParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bld_label");
         private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
 
         _paramsType lbSetValue [_basicParamsIndex, 0];
-        _paramsType lbSetValue [_advParamsIndex, 1];
-        _paramsType lbSetValue [_expParamsIndex, 2];
-        _paramsType lbSetValue [_extParamsIndex, 3];
+        _paramsType lbSetValue [_balParamsIndex, 1];
+        _paramsType lbSetValue [_eqpParamsIndex, 2];
+        _paramsType lbSetValue [_bldParamsIndex, 3];
         _paramsType lbSetValue [_devParamsIndex, 4];
-
+        
         _paramsType lbSetCurSel _basicParamsIndex;
 
         // * Create ALL the param controls
@@ -191,11 +191,11 @@ switch (_mode) do
     {
         private _shownTypes = switch (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) do {
             case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
-            case (0): { ["Basic"] };
-            case (1): { ["Ultimate", "Script", "Plus", "Member", "Builder", "Balance", "Equipment", "Loot"] };
-            case (2): { ["Experimental"] };
-            case (3): { ["Extender"] };
-            case (4): { ["Development"] };
+            case (0): { ["Basic", "Scenario", "Member", "Script", "Timer"] };
+            case (1): { ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"] };
+            case (2): { ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"] };
+            case (3): { ["Builder"] };
+            case (4): { ["Extender", "Experimental", "Development"] };
         };
 
         private _rowCount = -1;
@@ -272,12 +272,13 @@ switch (_mode) do
             } forEach _vals;
 
             if (_savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}) then { // we're loading an existing save
-                private _locked = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
-                _x setVariable ["locked", _locked];
+                private _lockOnSave = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
+                private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
+                _x setVariable ["locked", _lockOnSave || _lockInGame];
 
-                if (_locked) then {
+                if (_lockOnSave || _lockInGame) then {
                     _x ctrlEnable false;
-                    _x ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_param_locked");
+                    _x ctrlSetTooltip (localize (["STR_antistasi_dialogs_setup_param_locked", "STR_antistasi_dialogs_setup_param_locked_ingame"] select (_lockInGame)));
                 };
             } else {
                 // reset params to enabled if we're creating a new game or if all we did was load old params (to create a new game)

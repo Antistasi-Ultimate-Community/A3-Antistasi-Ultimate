@@ -12,13 +12,15 @@ Environment: Any
 Public: Yes
 
 Example:
-[_faction get "unitRifle"] call SCRT_fnc_unit_getTiered;
+FactionGetTiered(_faction, "unitRifle");
 */
 
 params [
     ["_tieredArray", [], [[]]],
 	["_forceTier", -1, [0]]
 ];
+
+if (count _tieredArray < 3) exitWith {};
 
 if (_forceTier != -1) exitWith {
     _tieredArray select _forceTier

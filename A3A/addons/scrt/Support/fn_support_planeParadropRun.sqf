@@ -1,3 +1,6 @@
+#include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 private _positionOrigin = getMarkerPos supportMarkerOrigin;
 private _positionDestination = getMarkerPos supportMarkerDestination;
 
@@ -7,7 +10,7 @@ private _angleOrigin = _angle - 180;
 private _originPosition = [_positionOrigin, 2000, _angleOrigin] call BIS_fnc_relPos;
 private _finPosition = [_positionDestination, 2000, _angle] call BIS_fnc_relPos;
 
-private _planeType = (A3A_faction_reb get "vehiclesPlane") # 0;
+private _planeType = (FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0)) # 0;
 private _planeData = [_originPosition, _angle, _planeType, teamPlayer] call A3A_fnc_spawnVehicle;
 paradropPlane = _planeData select 0;
 private _planeCrew = _planeData select 1;

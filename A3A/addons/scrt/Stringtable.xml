@@ -546,6 +546,18 @@
                 <Korean>미 육군.\n공격적이고 압도적인 힘.\n이 팩션을 사용하면 냉전 모드가 활성화됩니다(해당 시간대와 대략 맞는 차량과 무기만 사용됩니다).</Korean>
                 <French>United States Army.\nForce agressive et écrasante.\nL'utilisation de cette faction activera le mode Guerre froide (il n'y aura que l'utilisation de véhicules et d'armes qui correspondent à peu près à la chronologie).</French>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_RAV">
+                <Original>A relatively small military force composed of mercenaries from Russian territory. Their main mission is to defend cargo ships from FIA attacks, but according to some AAN investigations, the Altian government commissioned them for other reasons that are not yet clear. The Raven group has several armored and non-armored vehicles,static defensive weapons and a small air force consisting of helicopters and drones.</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_FIA">
+                <Original>From simple street criminals to arms smugglers, the FIA ​​is characterized by its ability to gather under its influence all those who do not support the military government. Although composed mainly of civilians and some AAF deserters, this paramilitary force can rely on foreign-funded weapons and rudimentary and captured enemy vehicles.</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_AAF">
+                <Original>After the coup, the AAF underwent several changes and received several funds for equipment modernization, with particular attention also to the navy which is responsible for cutting the FIA ​​supply lines. Thanks to Akhanteros, the AAF can count on various vehicles and weapons (some of their own production under license).</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_TFAegis">
+                <Original>Aegis is a task force composed of US military personnel; their goal is to support the government in the fight against the FIA ​​and to protect the civilian population. The TFA has several light armored vehicles and a small air force, their intervention in the conflict is limited by the Altian government.</Original>
+            </Key>
         </Container>
         <Container name="magRepack">
             <Key ID="STR_magRepack_init">
@@ -2102,6 +2114,13 @@
                 <Chinesesimp>补给转运（结束点）</Chinesesimp>
                 <Korean>보급 실행 퇴출 지점</Korean>
                 <French>Fin de l'approvisionnement</French>
+            </Key>
+            <Key ID="STR_support_supply_run_ground">
+                <Original>Ground Resupply Point</Original>
+                <Russian>Пункт наземного снабжения</Russian>
+                <Chinesesimp>地面补给点</Chinesesimp>
+                <Korean>지상 보급 지점</Korean>
+                <French>Point de ravitaillement terrestre</French>
             </Key>
             <Key ID="STR_support_barrage">
                 <Original>Barrage</Original>
@@ -5513,11 +5532,18 @@
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
-                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
-                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
-                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
-                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
-                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+                <Original>Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Russian>Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+            </Key>
+            <Key ID="STR_params_limitWeaponsByUnitType">
+                <Original>Limit AI custom loadout weapon selections by unit type</Original>
+                <Russian>Ограничение выбора пользовательского оружия ИИ по типу юнитов</Russian>
+                <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
+                <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
+                <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
@@ -6086,6 +6112,118 @@
                 <Chinesesimp>真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
                 <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
                 <French>Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
+            </Key>
+            <Key ID="STR_params_scenarioParams">
+                <Original>SCENARIO OPTIONS</Original>
+                <Russian>ВАРИАНТЫ СЦЕНАРИЕВ</Russian>
+                <Chinesesimp>方案选项</Chinesesimp>
+                <Korean>시나리오 옵션</Korean>
+                <French>OPTIONS DE SCÉNARIO</French>
+            </Key>
+            <Key ID="STR_params_scriptParams">
+                <Original>BUNDLED SCRIPT OPTIONS</Original>
+                <Russian>ОПЦИИ ВСТРОЕННЫХ СКРИПТОВ</Russian>
+                <Chinesesimp>捆绑脚本选项</Chinesesimp>
+                <Korean>번들 스크립트 옵션</Korean>
+                <French>OPTIONS DE SCRIPT GROUPÉES</French>
+            </Key>
+            <Key ID="STR_params_timerParams">
+                <Original>TIMER OPTIONS</Original>
+                <Russian>ВАРИАНТЫ ТАЙМЕРА</Russian>
+                <Chinesesimp>定时器选项</Chinesesimp>
+                <Korean>타이머 옵션</Korean>
+                <French>OPTIONS DE MINUTERIE</French>
+            </Key>
+            <Key ID="STR_params_rebelBalanceParams">
+                <Original>REBEL BALANCE OPTIONS</Original>
+                <Russian>ВАРИАНТЫ БАЛАНСА ПОВСТАНЦЕВ</Russian>
+                <Chinesesimp>REBEL 余额选项</Chinesesimp>
+                <Korean>반란군 밸런스 옵션</Korean>
+                <French>OPTIONS D'ÉQUILIBRAGE REBEL</French>
+            </Key>
+            <Key ID="STR_params_aiBalanceParams">
+                <Original>AI BALANCE OPTIONS</Original>
+                <Russian>ВАРИАНТЫ БАЛАНСА ИИ</Russian>
+                <Chinesesimp>AI 余额选项</Chinesesimp>
+                <Korean>AI 밸런스 옵션</Korean>
+                <French>OPTIONS D'ÉQUILIBRAGE DE L'IA</French>
+            </Key>
+            <Key ID="STR_params_miscBalanceParams">
+                <Original>MISC BALANCE OPTIONS</Original>
+                <Russian>РАЗЛИЧНЫЕ ВАРИАНТЫ БАЛАНСА</Russian>
+                <Chinesesimp>杂项平衡选项</Chinesesimp>
+                <Korean>기타 균형 옵션</Korean>
+                <French>OPTIONS DE SOLDE DIVERSES</French>
+            </Key>
+            <Key ID="STR_params_unlockParams">
+                <Original>LOOT UNLOCK OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗБЛОКИРОВКИ ДОБЫЧИ</Russian>
+                <Chinesesimp>战利品解锁选项</Chinesesimp>
+                <Korean>전리품 잠금 해제 옵션</Korean>
+                <French>OPTIONS DE DÉBLOCAGE DU BUTIN</French>
+            </Key>
+            <Key ID="STR_params_crateParams">
+                <Original>LOOT CRATE OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗБЛОКИРОВКИ ДОБЫЧИ</Russian>
+                <Chinesesimp>战利品箱选项</Chinesesimp>
+                <Korean>전리품 상자 옵션</Korean>
+                <French>OPTIONS DE CAISSE À BUTIN</French>
+            </Key>
+            <Key ID="STR_params_vehicleLootParams">
+                <Original>VEHICLE LOOT OPTIONS</Original>
+                <Russian>ВАРИАНТЫ ДОБЫЧИ ТРАНСПОРТНЫХ СРЕДСТВ</Russian>
+                <Chinesesimp>车辆战利品选项</Chinesesimp>
+                <Korean>전차 전리품 옵션</Korean>
+                <French>OPTIONS DE BUTIN DE VÉHICULE</French>
+            </Key>
+            <Key ID="STR_params_miscLootParams">
+                <Original>MISC LOOT OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗНОЙ ДОБЫЧИ</Russian>
+                <Chinesesimp>杂项战利品选项</Chinesesimp>
+                <Korean>기타 전리품 옵션</Korean>
+                <French>DIVERSES OPTIONS DE BUTIN</French>
+            </Key>
+            <Key ID="STR_params_ai">
+                <Original>AI OPTIONS</Original>
+                <Russian>ОПЦИИ ИИ</Russian>
+                <Chinesesimp>人工智能选项</Chinesesimp>
+                <Korean>AI 옵션</Korean>
+                <French>OPTIONS D'IA</French>
+            </Key>
+            <Key ID="STR_params_blackmarket">
+                <Original>BLACK MARKET OPTIONS</Original>
+                <Russian>ВАРИАНТЫ ЧЕРНОГО РЫНКА</Russian>
+                <Chinesesimp>黑市期权</Chinesesimp>
+                <Korean>암시장 옵션</Korean>
+                <French>OPTIONS DU MARCHÉ NOIR</French>
+            </Key>
+            <Key ID="STR_params_member">
+                <Original>MEMBER OPTIONS</Original>
+                <Russian>ВАРИАНТЫ УЧАСТНИКОВ</Russian>
+                <Chinesesimp>会员选项</Chinesesimp>
+                <Korean>회원 옵션</Korean>
+                <French>OPTIONS POUR LES MEMBRES</French>
+            </Key>
+            <Key ID="STR_params_extender">
+                <Original>EXTENDER OPTIONS</Original>
+                <Russian>ОПЦИИ УДЛИНИТЕЛЯ</Russian>
+                <Chinesesimp>扩展器选项</Chinesesimp>
+                <Korean>익스텐더 옵션</Korean>
+                <French>OPTIONS DE RALLONGE</French>
+            </Key>
+            <Key ID="STR_params_experimental">
+                <Original>EXPERIMENTAL OPTIONS</Original>
+                <Russian>ЭКСПЕРИМЕНТАЛЬНЫЕ ВАРИАНТЫ</Russian>
+                <Chinesesimp>实验选项</Chinesesimp>
+                <Korean>实验选项</Korean>
+                <French>OPTIONS EXPÉRIMENTALES</French>
+            </Key>
+            <Key ID="STR_params_development">
+                <Original>DEVELOPMENT OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗВИТИЯ</Russian>
+                <Chinesesimp>开发选项</Chinesesimp>
+                <Korean>개발 옵션</Korean>
+                <French>OPTIONS DE DÉVELOPPEMENT</French>
             </Key>
         </Container>
         <Container name="roles">
@@ -7596,6 +7734,20 @@
                 <Korean>비행기가 상공을 비행해서 보급상자를 지정한 위치로 떨어뜨립니다.</Korean>
                 <French>L'avion survole et largue une caisse contenant des munitions et des fournitures médicales à la position spécifiée.</French>
             </Key>
+            <Key ID="STR_commander_menu_scg_title">
+                <Original>Ground Resupply</Original>
+                <Russian>Наземное снабжение</Russian>
+                <Chinesesimp>地面补给</Chinesesimp>
+                <Korean>지상 보급</Korean>
+                <French>Ravitaillement terrestre</French>
+            </Key>
+            <Key ID="STR_commander_menu_scg_tooltip">
+                <Original>A truck brings a crate with ammunition and medical supplies to the specified position.</Original>
+                <Russian>Грузовик доставляет ящик с боеприпасами и медицинскими принадлежностями в указанную позицию.</Russian>
+                <Chinesesimp>卡车将装有弹药和医疗用品的板条箱运送到指定位置。</Chinesesimp>
+                <Korean>트럭이 탄약 및 의료 물품이 든 상자를 지정된 위치로 운반합니다.</Korean>
+                <French>Un camion apporte une caisse de munitions et de fournitures médicales à la position spécifiée.</French>
+            </Key>
             <Key ID="STR_commander_menu_hba_title">
                 <Original>HE Bomb Airstrike</Original>
                 <Russian>Авиаудар фугасными бомбами</Russian>
@@ -7995,6 +8147,20 @@
                 <French>Cette option permet de sauvegarder le jeu en cours. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
                 <Chinesesimp>使用此选项可保存当前游戏。它确实以“侠盗猎车手”的方式保存了最重要的数据。</Chinesesimp>
             </Key>
+            <Key ID="STR_commander_menu_edit_params_button">
+                <Original>EDIT SAVE PARAMETERS</Original>
+                <Russian>РЕДАКТИРОВАНИЕ ПАРАМЕТРОВ СОХРАНЕНИЯ</Russian>
+                <Chinesesimp>编辑保存参数</Chinesesimp>
+                <Korean>저장 매개변수 편집</Korean>
+                <French>MODIFIER LES PARAMÈTRES DE SAUVEGARDE</French>
+            </Key>
+            <Key ID="STR_commander_menu_edit_params_button_tooltip">
+                <Original>Use this option to edit your current game parameters. Note that not all parameters can be changed in game.</Original>
+                <Russian>Используйте эту опцию для редактирования текущих параметров игры. Обратите внимание, что не все параметры могут быть изменены в игре.</Russian>
+                <Korean>이 옵션을 사용하여 현재 게임 매개 변수를 편집합니다. 게임에서 모든 매개변수를 변경할 수 있는 것은 아닙니다.</Korean>
+                <French>Utilisez cette option pour modifier vos paramètres de jeu actuels. Notez que tous les paramètres ne peuvent pas être modifiés dans le jeu.</French>
+                <Chinesesimp>使用此选项可编辑您当前的游戏参数。请注意，并非所有参数都可以在游戏中更改。</Chinesesimp>
+            </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
@@ -8182,6 +8348,13 @@
                 <Chinesesimp>花费 %1 支援点和 %2%3</Chinesesimp>
                 <Korean>%1 지원 포인트와 %2%3를 소모합니다</Korean>
                 <French>Coûts %1 points de support et %2%3</French>
+            </Key>
+            <Key ID="STR_commander_menu_abilities_cost_support_point_hr_and_money">
+                <Original>Costs %1 HR, %2 support points and %2%3</Original>
+                <Russian>Стоимость: %1 ЧР, %2 очков поддержки и %3%4</Russian>
+                <Chinesesimp>消耗%1人力，%2支援点与%3%4</Chinesesimp>
+                <Korean>비용: %1 인력, %2 지원 점수 및 %3%4</Korean>
+                <French>Coûte %1 RH, %2 points de soutien et %3%4</French>
             </Key>
             <Key ID="STR_commander_menu_abilities_cost_airstrike">
                 <Original>Costs 1 Airstrike</Original>
@@ -8493,11 +8666,11 @@
                 <French>l'équipement a été sauvegardé</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_loadout_title">
-                <Original>Loadout Arsenal. Note that custom uniforms will be not applied and still be randomized on actual rebels. If headgear has no armor, it will also be randomized.</Original>
-                <Russian>Арсенал для снаряжения. Имейте ввиду, что униформа не будет применена и все равно будет рандомизирована. Кроме того, если на головном уборе нет брони, он также будет рандомизирован.</Russian>
-                <Chinesesimp>加载装备库。 请注意，定制制服将不会应用，并且仍然会随机分配给实际的抵抗军。 另外，如果头饰没有护甲，也会随机生成。</Chinesesimp>
-                <Korean>아스널에서 로드아웃을 지정합니다. 커스텀 유니폼은 적용되지 않으며 여전히 무작위로 결정됩니다. 또한 헤드기어에 방탄 능력이 없는 경우에도 무작위로 결정됩니다.</Korean>
-                <French>Equipement d'Arsenal. Notez que les uniformes personnalisés ne seront pas appliqués et seront toujours aléatoires sur les rebelles réels. De même, si le couvre-chef n'a pas d'armure, il sera également aléatoire.</French>
+                <Original>Loadout Arsenal</Original>
+                <Russian>Арсенал для снаряжения</Russian>
+                <Chinesesimp>装备军械库</Chinesesimp>
+                <Korean>아스널에서 로드아웃을 지정합니다</Korean>
+                <French>Equipement d'Arsenal</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_tooltip">
                 <Original>Sets loadout for future use by this infantry class.</Original>

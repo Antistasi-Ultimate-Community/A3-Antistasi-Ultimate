@@ -55,9 +55,15 @@ waitUntil {sleep 1; (call SCRT_fnc_misc_getRebelPlayers) findIf {_x inArea [_pos
 Info("Setting things in motion...");
 
 private _escortClass = if(_difficultX) then { 
-    selectRandom ((_faction get "vehiclesAPCs") + (_faction get "vehiclesLightAPCs"))
+    selectRandomWeighted (
+        (FactionGoDTiered(_faction, "vehiclesAPCs")) +
+        (FactionGoDTiered(_faction, "vehiclesLightAPCs"))
+    )
 } else {
-    selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesLightUnarmed"))
+    selectRandomWeighted (
+        (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
+        (FactionGoDTiered(_faction, "vehiclesLightUnarmed"))
+    )
 };
 
 if (isNil "_escortClass") exitWith {
@@ -176,7 +182,7 @@ if(count _smokes > 0) then {
     private _height = random [500, 1000, 1300];
     private _direction = [_initialPlanePosition, _positionX] call BIS_fnc_DirTo;
 
-    _planeType = selectRandom (FactionGet(reb, "vehiclesPlane"));
+    _planeType = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0));
     _planeData = [[_initialPlanePosition select 0, _initialPlanePosition select 1, _height], _direction, _planeType, teamPlayer] call A3A_fnc_spawnVehicle;
     _planeVeh = _planeData select 0;
     _planeVeh setPosATL [getPosATL _planeVeh select 0, getPosATL _planeVeh select 1, _height];

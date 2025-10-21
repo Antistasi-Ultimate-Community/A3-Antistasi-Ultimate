@@ -34,7 +34,7 @@ if (spawner getVariable _markerX != 2) then {
 	private _road = [getPos _antennaDead] call A3A_fnc_findNearestGoodRoad;
 	private _pos = position _road;
 	_pos = _pos findEmptyPosition [1,60,"B_T_Truck_01_repair_F"];
-	private _veh = createVehicle [selectRandom (FactionGet(occ,"vehiclesRepairTrucks")), _pos, [], 0, "NONE"];
+	private _veh = createVehicle [selectRandom ([A3A_faction_occ,"vehiclesRepairTrucks"] call SCRT_fnc_unit_flattenTier), _pos, [], 0, "NONE"];
 	_veh allowdamage false;
 	_veh setDir (getDir _road);
 	[_veh, Occupants] call A3A_fnc_AIVEHinit;

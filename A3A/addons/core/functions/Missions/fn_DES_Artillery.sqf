@@ -31,13 +31,13 @@ private _artilleryShellClass = nil;
 private _mgClass = nil;
 private _mgCrewClass = nil;
 
-private _mortarsPool = _faction getOrDefault ["staticMortars", []];
-private _artilleryPool = _faction getOrDefault ["vehiclesArtillery", []];
-private _howitzersPool = _faction getOrDefault ["staticHowitzers", []];
+private _mortarsPool = FactionGoDTiered(_faction, "staticMortars");
+private _artilleryPool = FactionGoDTiered(_faction, "vehiclesArtillery");
+private _howitzersPool = FactionGoDTiered(_faction, "staticHowitzers");
 
-private _mortarMagazine = _faction get "mortarMagazineHE";
-private _artilleryMagazine = _faction get "magazines";
-private _howitzerMagazine = _faction get "howitzerMagazineHE";
+private _mortarMagazine = FactionGetTiered(_faction, "mortarMagazineHE");
+private _artilleryMagazine = FactionGetTiered(_faction, "magazines");
+private _howitzerMagazine = FactionGetTiered(_faction, "howitzerMagazineHE");
 
 private _infantrySquadArray = [
     selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),
@@ -70,8 +70,8 @@ switch (true) do
 	};
 };
 
-_mgClass = selectRandom (_faction get "staticMGs");
-_mgCrewClass = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+_mgClass = selectRandomWeighted (FactionGetTiered(_faction, "staticMGs"));
+_mgCrewClass = FactionGetTiered(_faction, "unitTierStaticCrew");
 
 if (isNil "_artilleryClass" || {isNil "_artilleryShellClass" || {isNil "_mgClass" || {isNil "_mgCrewClass"}}}) exitWith {
 	["DES"] remoteExec ["A3A_fnc_missionRequest",2];

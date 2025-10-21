@@ -8,7 +8,7 @@ if (!isServer and hasInterface) exitWith {};
 params ["_typeX", "_positionTel", "_quantity", "_mine"];
 
 private _typeExp = FactionGet(reb,"unitExp");
-private _typeTruck = FactionGet(reb,"vehiclesTruck") # 0;
+private _typeTruck = FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0) # 0;
 
 private _costs = 2*(server getVariable _typeExp) + ([_typeTruck] call A3A_fnc_vehiclePrice);
 [-2,(-1*_costs)] remoteExec ["A3A_fnc_resourcesFIA",2];
