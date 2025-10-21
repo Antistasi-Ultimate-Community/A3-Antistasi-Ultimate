@@ -215,15 +215,7 @@ setVar("vehiclesLightUnarmed", _carsUnarmed);
 setVar("vehiclesLight", _carsArmed + _carsUnarmed);
 
 //all Occ&Inv armor
-private _vehArmor =
-getVar("vehiclesTanks")
-+ getVar("vehiclesAA")
-+ getVar("vehiclesArtillery")
-+ getVar("vehiclesLightAPCs")
-+ getVar("vehiclesAPCs")
-+ getVar("vehiclesLightTanks")
-+ getVar("vehiclesAirborne")
-+ getVar("vehiclesIFVs");
+private _vehArmor = OccAndInv("vehiclesArmor");
 setVar("vehiclesArmor", _vehArmor);
 
 //rebel vehicles
