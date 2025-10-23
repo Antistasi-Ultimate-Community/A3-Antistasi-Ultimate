@@ -248,10 +248,10 @@ private _fnc_createVehicleWithEffects = {
     
     // Проверка на тяжелую технику через массивы фракций
     private _isHeavy = _class in (
-        (_faction get "vehiclesAPCs") + 
-        (_faction get "vehiclesIFVs") + 
-        (_faction get "vehiclesLightTanks") + 
-        (_faction get "vehiclesMilitiaAPCs")
+        (FactionGetTiered(_faction, "vehiclesAPCs")) + 
+        (FactionGetTiered(_faction, "vehiclesIFVs")) + 
+        (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
+        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
     );
     
     // Переворачивание для не-тяжелой техники
@@ -275,10 +275,10 @@ private _fnc_createCrew = {
     
     private _crewGroup = createGroup _side;
     private _crewType = if (_class in (
-        (_faction get "vehiclesAPCs") + 
-        (_faction get "vehiclesIFVs") + 
-        (_faction get "vehiclesLightTanks") + 
-        (_faction get "vehiclesMilitiaAPCs")
+        (FactionGetTiered(_faction, "vehiclesAPCs")) + 
+        (FactionGetTiered(_faction, "vehiclesIFVs")) + 
+        (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
+        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
     )) then {
         _faction get "unitCrew"
     } else {

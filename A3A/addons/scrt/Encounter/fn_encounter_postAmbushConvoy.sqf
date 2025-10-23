@@ -104,25 +104,25 @@ private _convoySpacing = 15;
     if (_currentIndex == 1) then {
         private _specialVehicles = [];
         if (_isFia) then {
-            _specialVehicles = (_faction get "vehiclesMilitiaTrucks") + (_faction get "vehiclesFuelTrucks") + (_faction get "vehiclesAmmoTrucks") + (_faction get "vehiclesMedical");
+            _specialVehicles = (FactionGetTieredFT(_faction, "vehiclesTrucks", 0)) + (FactionGetTiered(_faction, "vehiclesFuelTrucks")) + (FactionGetTiered(_faction, "vehiclesAmmoTrucks")) + (FactionGetTiered(_faction, "vehiclesMedical"));
         } else {
-            _specialVehicles = (_faction get "vehiclesAA") + (_faction get "vehiclesTrucks") + (_faction get "vehiclesFuelTrucks") + (_faction get "vehiclesAmmoTrucks") + (_faction get "vehiclesRepairTrucks");
+            _specialVehicles = (FactionGetTiered(_faction, "vehiclesAA")) + (FactionGetTiered(_faction, "vehiclesTrucks")) + (FactionGetTiered(_faction, "vehiclesFuelTrucks")) + (FactionGetTiered(_faction, "vehiclesAmmoTrucks")) + (FactionGetTiered(_faction, "vehiclesRepairTrucks"));
         };
         
         if (count _specialVehicles > 0) then {
-            _vehicleClass = selectRandom _specialVehicles;
+            _vehicleClass = selectRandomWeighted _specialVehicles;
         } else {
             _vehicleClass = if (_isFia) then {
-                selectRandom ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaAPCs"))
+                selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) + (FactionGetTieredFT(_faction, "vehiclesAPCs", 0)))
             } else {
-                selectRandom ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs"))
+                selectRandomWeighted ((FactionGetTiered(_faction, "vehiclesAPCs")) + (FactionGetTiered(_faction, "vehiclesIFVs")))
             };
         };
     } else {
         _vehicleClass = if (_isFia) then {
-            selectRandom ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaAPCs"))
+            selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) + (FactionGetTieredFT(_faction, "vehiclesAPCs", 0)))
         } else {
-            selectRandom ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesLightArmed"))
+            selectRandomWeighted ((FactionGetTiered(_faction, "vehiclesAPCs")) + (FactionGetTiered(_faction, "vehiclesIFVs")) + (FactionGetTiered(_faction, "vehiclesLightTanks")) + (FactionGetTiered(_faction, "vehiclesLightArmed")))
         };
     };
 
@@ -227,11 +227,11 @@ private _convoySpacing = 15;
     
     private _crewClass = if (
         _vehicleClass in (
-            (_faction get "vehiclesAPCs") + 
-            (_faction get "vehiclesIFVs") + 
-            (_faction get "vehiclesLightTanks") + 
-            (_faction get "vehiclesMilitiaAPCs") +
-            (_faction get "vehiclesAA")
+            (FactionGetTiered(_faction, "vehiclesAPCs")) + 
+            (FactionGetTiered(_faction, "vehiclesIFVs")) + 
+            (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
+            (FactionGetTieredFT(_faction, "vehiclesAPCs", 0)) +
+            (FactionGetTiered(_faction, "vehiclesAA"))
         )
     ) then {
         _faction get "unitCrew"
@@ -241,8 +241,8 @@ private _convoySpacing = 15;
     
     private _groupCrew = createGroup _side;
     private _crewCount = switch (true) do {
-        case (_vehicleClass in ((_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAA"))): { 3 };
-        case (_currentIndex == 1 && {_vehicleClass in ((_faction get "vehiclesFuelTrucks") + (_faction get "vehiclesAmmoTrucks"))}): { 2 };
+        case (_vehicleClass in ((FactionGetTiered(_faction, "vehiclesAPCs")) + (FactionGetTiered(_faction, "vehiclesIFVs")) + (FactionGetTiered(_faction, "vehiclesLightTanks")) + (FactionGetTieredFT(_faction, "vehiclesAPCs", 0)) + (FactionGetTiered(_faction, "vehiclesAA")))): { 3 };
+        case (_currentIndex == 1 && {_vehicleClass in ((FactionGetTiered(_faction, "vehiclesFuelTrucks")) + (FactionGetTiered(_faction, "vehiclesAmmoTrucks")))}): { 2 };
         default { [2,3,4] select _currentIndex };
     };
     

@@ -76,9 +76,9 @@ if (_vehicleClass == "") exitWith {
 };
 
 private _crewClass = if (_vehicleClass in (
-    flatten (_faction get "vehiclesAPCs") +  
-    flatten (_faction get "vehiclesIFVs") + 
-    flatten (_faction get "vehiclesLightTanks")
+    flatten (FactionGetTiered(_faction, "vehiclesAPCs")) +  
+    flatten (FactionGetTiered(_faction, "vehiclesIFVs")) + 
+    flatten (FactionGetTiered(_faction, "vehiclesLightTanks"))
 )) then {
     _faction get "unitCrew"
 } else {

@@ -149,7 +149,7 @@ private _fnc_spawnForces = {
 };
 
 // Spawn police forces (Occupants)
-[Occupants, _cityPos getPos [100, random 360], (A3A_faction_occ get "vehiclesPolice"), (A3A_faction_occ get "groupPolice")] call _fnc_spawnPoliceForces;
+[Occupants, _cityPos getPos [100, random 360], (FactionGetTiered(A3A_faction_occ, "vehiclesPolice")), (A3A_faction_occ get "groupPolice")] call _fnc_spawnPoliceForces;
 
 // Spawn rival forces
 [Rivals, _cityPos getPos [300, random 360 + 180], (A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsCars"), (selectRandom (A3A_faction_riv get "groupsSentry"))] call _fnc_spawnForces;

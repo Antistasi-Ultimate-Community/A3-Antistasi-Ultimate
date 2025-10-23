@@ -70,9 +70,9 @@ private _faction = Faction(_side);
 
 private _isFia = if (random 10 > tierWar) then {true} else {false};
 private _vehicleClass = if (_isFia) then {
-    selectRandom ((_faction get "vehiclesMilitiaLightArmed") +  (_faction get "vehiclesMilitiaAPCs"));
+    selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) +  (FactionGetTieredFT(_faction, "vehiclesMilitiaAPCs", 0)));
 } else {
-    selectRandom ((_faction get "vehiclesAPCs") +  (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesLightArmed"));
+    selectRandomWeighted ((FactionGetTiered(_faction, "vehiclesAPCs")) +  (FactionGetTiered(_faction, "vehiclesIFVs")) + (FactionGetTiered(_faction, "vehiclesLightTanks")) + (FactionGetTiered(_faction, "vehiclesLightArmed")));
 };
 
 if (_vehicleClass == "") exitWith {
@@ -81,7 +81,7 @@ if (_vehicleClass == "") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
-private _MedicalVehicleClass = selectRandom ((_faction get "vehiclesMedical") + (_faction get "vehiclesHelisTransport")); // Get a random medical vehicle class
+private _MedicalVehicleClass = selectRandomWeighted ((FactionGetTiered(_faction, "vehiclesMedical")) + (FactionGetTiered(_faction, "vehiclesHelisTransport"))); // Get a random medical vehicle class
 
 if (_MedicalVehicleClass == "") exitWith {
     Error("No vehicle class, aborting.");
@@ -122,10 +122,10 @@ _vehicles pushBack _crashedVehicle;
 private _groupCrew = createGroup _side;
 
 private _crewClass = if (_vehicleClass in (
-    (_faction get "vehiclesAPCs") +  
-    (_faction get "vehiclesIFVs") + 
-    (_faction get "vehiclesLightTanks") + 
-    (_faction get "vehiclesMilitiaAPCs")
+    (FactionGetTiered(_faction, "vehiclesAPCs")) +  
+    (FactionGetTiered(_faction, "vehiclesIFVs")) + 
+    (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
+    (FactionGetTiered(_faction, "vehiclesMilitiaAPCs"))
 )) then {
     _faction get "unitCrew"
 } else {

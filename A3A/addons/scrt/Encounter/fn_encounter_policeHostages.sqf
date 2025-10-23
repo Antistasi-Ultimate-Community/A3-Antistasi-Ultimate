@@ -52,7 +52,7 @@ private _vehiclePos = _roadPos getPos [4, _roadDir - 90]; // 4m left from center
 private _vehicleDir = _roadDir;
 
 // Spawn police vehicle
-private _policeVeh = selectRandom (A3A_faction_occ get "vehiclesPolice");
+private _policeVeh = selectRandomWeighted (FactionGetTiered(A3A_faction_occ, "vehiclesPolice"));
 private _vehData = [_vehiclePos, _vehicleDir, _policeVeh, Occupants] call A3A_fnc_spawnVehicle;
 private _policeVehicle = _vehData#0;
 [_policeVehicle, Occupants] call A3A_fnc_AIVEHinit;
