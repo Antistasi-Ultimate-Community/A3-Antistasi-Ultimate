@@ -39,7 +39,7 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 		};
 
 		private _vehicle = if (random 100 < (((100 - 20 * inactivityLevelRivals) - 10) max 0)) then {
-			selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+			selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 		} else {
 			""
 		};
@@ -55,12 +55,12 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 
 		private _vehicle = switch (true) do {
             case ((random 100) < 25): {
-				selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+				selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 			};
 			case ((random 100) < 15): {
-				private _apcs = FactionGetTieredFT(A3A_faction_riv, "vehiclesAPCs", 0);
+				private _apcs = FactionGetRival(A3A_faction_riv, "vehiclesAPCs");
 				if (_apcs isEqualTo []) then {
-					selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+					selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 				} else {
 					selectRandomWeighted _apcs;
 				};
@@ -76,19 +76,19 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 		private _group = selectRandom (A3A_faction_riv get "groupsSquad");
 		private _vehicle = switch (true) do {
 			case ((random 100) < 35): {
-				selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+				selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 			};
             case ((random 100) < 25): {
-				private _apcs = FactionGetTieredFT(A3A_faction_riv, "vehiclesAPCs", 0);
+				private _apcs = FactionGetRival(A3A_faction_riv, "vehiclesAPCs");
 				if (_apcs isEqualTo []) then {
-					selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+					selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 				} else {
 					selectRandomWeighted _apcs;
 				};
 			};
             case ((random 100) < 15): {
-				private _tanks = FactionGetTieredFT(A3A_faction_riv, "vehiclesTanks", 0);
-				private _apcs = FactionGetTieredFT(A3A_faction_riv, "vehiclesAPCs", 0);
+				private _tanks = FactionGetRival(A3A_faction_riv, "vehiclesTanks");
+				private _apcs = FactionGetRival(A3A_faction_riv, "vehiclesAPCs");
 
 				switch (true) do {
 					case (_tanks isNotEqualTo []): {
@@ -98,7 +98,7 @@ private _groupAndVehicleToSpawn = switch (inactivityLevelRivals) do {
 						selectRandomWeighted _apcs;
 					};
 					default {
-						selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+						selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 					};
 				};
 			};

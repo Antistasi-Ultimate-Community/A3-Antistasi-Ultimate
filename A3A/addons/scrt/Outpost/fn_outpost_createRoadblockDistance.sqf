@@ -7,7 +7,7 @@ if (!isServer and hasInterface) exitWith {};
 
 private _positionX = getMarkerPos _markerX;
 private _riflemanType = A3A_faction_reb get "unitRifle";
-private _typeVehX = (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) select 0;
+private _typeVehX = (FactionGetRebel(A3A_faction_reb, "vehiclesLightArmed")) select 0;
 
 private _radiusX = 1;
 private _garrison = garrison getVariable [_markerX, []];

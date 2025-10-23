@@ -49,7 +49,7 @@ switch (true) do {
 			_typeCar = selectRandomWeighted (
 				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 				(FactionGoDTiered(_faction, "vehiclesLightAPCs")) +
-				(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0))
+				(FactionGoDMilitia(_faction, "vehiclesAPCs"))
 			);
 		};
 	};
@@ -64,8 +64,8 @@ switch (true) do {
 			_typePatrol = "AIR";
 		} else {
 			_typeCar = selectRandomWeighted (
-				(FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) +
-				(FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0))
+				(FactionGetMilitia(_faction, "vehiclesLightArmed")) +
+				(FactionGetMilitia(_faction, "vehiclesLightUnarmed"))
 			);	
 		};
 	};
@@ -79,8 +79,8 @@ switch (true) do {
 		} else {
 			_typeCar = selectRandomWeighted (
 				(FactionGoDTiered(_faction, "vehiclesPolice")) + 
-				(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-				(FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0)) +
+				(FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+				(FactionGoDMilitia(_faction, "vehiclesLightUnarmed")) +
 				(FactionGoDTiered(_faction, "vehiclesBasic"))
 			);
 		};

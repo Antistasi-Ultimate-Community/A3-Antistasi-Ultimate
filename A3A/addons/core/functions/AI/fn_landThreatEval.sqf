@@ -19,7 +19,7 @@ if (getMarkerPos _x distance _positionX < distanceSPWN) then
 	_staticsX = staticsToSave select {_x inArea _analyzed};
 	if (count _staticsX > 0) then
 		{
-		_threat = _threat + ({typeOf _x in FactionGetTieredFT(A3A_faction_reb, "staticMortars", 0)} count _staticsX) + (2*({typeOf _x in FactionGetTieredFT(A3A_faction_reb,"staticAT", 0)} count _staticsX))
+		_threat = _threat + ({typeOf _x in FactionGetRebel(A3A_faction_reb, "staticMortars")} count _staticsX) + (2*({typeOf _x in FactionGetTieredFT(A3A_faction_reb,"staticAT", 0)} count _staticsX))
 		};
 	};
 } forEach ((markersX - citiesX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA) select {sidesX getVariable [_x,sideUnknown] != _sideX});

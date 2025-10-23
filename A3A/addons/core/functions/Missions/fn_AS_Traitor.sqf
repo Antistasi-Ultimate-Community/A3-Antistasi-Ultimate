@@ -107,7 +107,7 @@ if (count _roadCon > 0) then {
 };
 
 private _posVeh = [_posroad, 3, _dirveh + 90] call BIS_Fnc_relPos;
-private _vehType = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightUnarmed", 0));
+private _vehType = selectRandomWeighted (FactionGetRebel(A3A_faction_reb, "vehiclesLightUnarmed"));
 private _veh = _vehType createVehicle _posVeh;
 _veh allowDamage false;
 _veh setDir _dirVeh;

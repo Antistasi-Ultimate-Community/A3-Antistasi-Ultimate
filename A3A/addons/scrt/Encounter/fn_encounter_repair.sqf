@@ -45,7 +45,7 @@ private _faction = Faction(_side);
 
 private _isFia = if (random 10 > tierWar) then {true} else {false};
 private _vehicleClass = if (_isFia) then {
-    selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) +  (FactionGetTieredFT(_faction, "vehiclesAPCs", 0)));
+    selectRandomWeighted ((FactionGetMilitia(_faction, "vehiclesLightArmed")) +  (FactionGetMilitia(_faction, "vehiclesAPCs")));
 } else {
     selectRandomWeighted ((FactionGetTiered(_faction, "vehiclesAPCs")) +  (FactionGetTiered(_faction, "vehiclesIFVs")) + (FactionGetTiered(_faction, "vehiclesLightTanks")) + (FactionGetTiered(_faction, "vehiclesLightArmed")))
 };
@@ -112,7 +112,7 @@ private _crewClass = if (_vehicleClass in (
     (FactionGetTiered(_faction, "vehiclesAPCs")) +  
     (FactionGetTiered(_faction, "vehiclesIFVs")) + 
     (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
-    (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
+    (FactionGetMilitia(_faction, "vehiclesAPCs"))
 )) then {
     _faction get "unitCrew"
 } else {

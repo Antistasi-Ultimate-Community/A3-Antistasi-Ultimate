@@ -90,7 +90,7 @@ if (count _sites > 0 && {_sites findIf {private _markerPos = getMarkerPos _x; _m
     };
 };
 
-private _mortar = [selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "staticMortars", 0)), _spawnPosition, 5, 5, true] call A3A_fnc_safeVehicleSpawn;
+private _mortar = [selectRandomWeighted (FactionGetRival(A3A_faction_riv, "staticMortars")), _spawnPosition, 5, 5, true] call A3A_fnc_safeVehicleSpawn;
 [_mortar, Rivals] call A3A_fnc_AIVEHinit;
 _vehicles pushBack _mortar;
 
@@ -115,7 +115,7 @@ private _patrolPosition = [
 ] call BIS_fnc_findSafePos;
 
 private _carPos =  [_spawnPosition, (random [4,6,8]), (random 360)] call BIS_fnc_relPos;
-private _car = (selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightUnarmed", 0))) createVehicle _spawnPosition;
+private _car = (selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightUnarmed"))) createVehicle _spawnPosition;
 private _dirCar = [_mortar, _car] call BIS_fnc_dirTo;
 _car setDir _dirCar + (random 90);
 [_car, Rivals] call A3A_fnc_AIVEHinit;

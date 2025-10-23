@@ -134,7 +134,7 @@ private _crewClasses = [
 	A3A_faction_reb get "unitEng"
 ];
 
-private _truckClass = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0));
+private _truckClass = selectRandomWeighted (FactionGetRebel(A3A_faction_reb, "vehiclesTruck"));
 private _truck = createVehicle [_truckClass, [_startingRoadPosition select 0, _startingRoadPosition select 1, 0.9], [], 0, "CAN_COLLIDE"];
 _truck setDir _dirVeh;
 _truck setDamage (random [0.3,0.5,0.7]);

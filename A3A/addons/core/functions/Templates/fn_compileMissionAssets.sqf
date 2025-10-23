@@ -99,7 +99,7 @@ setVar("vehiclesPolice", OccAndInv("vehiclesPolice"));
 setVar("vehiclesAttack", OccAndInv("vehiclesAttack"));
 setVar("vehiclesAmmoTrucks", OccAndInv("vehiclesAmmoTrucks"));
 setVar("vehiclesLightAPCs", OccAndInv("vehiclesLightAPCs") + OccAndInv("vehiclesAirborne"));
-setVar("vehiclesMedical", OccAndInv("vehiclesMedical") + ((FactionGetTieredFT(A3A_faction_civ, "vehiclesCivMedical", 0)) select {_x isEqualType ""}));
+setVar("vehiclesMedical", OccAndInv("vehiclesMedical") + ((FactionGetCivil(A3A_faction_civ, "vehiclesCivMedical")) select {_x isEqualType ""}));
 setVar("vehiclesAPCs", OccAndInv("vehiclesAPCs") + Riv("vehiclesAPCs") + ("APC" call _fnc_extractMarketClasses));
 setVar("vehiclesIFVs", OccAndInv("vehiclesIFVs") );
 setVar("vehiclesUAVs", OccAndInv("uavsAttack")+ OccAndInv("uavsPortable") + Riv("vehiclesUavs") + ("UAV" call _fnc_extractMarketClasses));

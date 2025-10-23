@@ -8,7 +8,7 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-private _mgClass = (FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0)) # 0;
+private _mgClass = (FactionGetRebel(A3A_faction_reb, "staticMGs")) # 0;
 
 private _props = [];
 

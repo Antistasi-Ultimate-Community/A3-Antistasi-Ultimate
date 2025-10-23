@@ -16,8 +16,8 @@ if (_oversizeChance > 25) then {
 
 if ((random 100) < _oversizeChance) then {
     private _vehiclePool = if (_isFia) then {
-        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0)) +
-        (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0))
+        (FactionGetMilitia(_faction, "vehiclesAPCs")) +
+        (FactionGetMilitia(_faction, "vehiclesLightArmed"))
          //TODO: vehiclesMilitiaTanks
     } else {
         (FactionGoDTiered(_faction, "vehiclesAPCs")) +

@@ -251,7 +251,7 @@ private _fnc_createVehicleWithEffects = {
         (FactionGetTiered(_faction, "vehiclesAPCs")) + 
         (FactionGetTiered(_faction, "vehiclesIFVs")) + 
         (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
-        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
+        (FactionGetMilitia(_faction, "vehiclesAPCs"))
     );
     
     // Переворачивание для не-тяжелой техники
@@ -278,7 +278,7 @@ private _fnc_createCrew = {
         (FactionGetTiered(_faction, "vehiclesAPCs")) + 
         (FactionGetTiered(_faction, "vehiclesIFVs")) + 
         (FactionGetTiered(_faction, "vehiclesLightTanks")) + 
-        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
+        (FactionGetMilitia(_faction, "vehiclesAPCs"))
     )) then {
         _faction get "unitCrew"
     } else {

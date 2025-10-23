@@ -25,7 +25,7 @@ if (_typeX isEqualType "") then {
     if (_typeX isEqualTo FactionGet(reb,"unitRifle")) then { [_markerX] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
 
     if (_typeX == FactionGet(reb,"unitCrew")) then {
-        private _veh = (FactionGetTieredFT(A3A_faction_reb, "staticMortars", 0)) # 0 createVehicle _positionX;
+        private _veh = (FactionGetRebel(A3A_faction_reb, "staticMortars")) # 0 createVehicle _positionX;
         [_veh] call A3A_fnc_artilleryAdd;
 
         _unit assignAsGunner _veh;

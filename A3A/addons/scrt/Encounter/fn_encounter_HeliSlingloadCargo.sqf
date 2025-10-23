@@ -95,7 +95,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 			(FactionGoDTiered(_faction, "vehiclesAirborne")) +
 			(FactionGoDTiered(_faction, "vehiclesAA")) +
 			(FactionGoDTiered(_faction, "vehiclesLightTanks")) +
-			(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
+			(FactionGoDMilitia(_faction, "vehiclesAPCs")) +
 			(FactionGoDTiered(_faction, "vehiclesAPCs")) +
 			(FactionGoDTiered(_faction, "vehiclesIFVs")) +
 			_csatPods
@@ -163,7 +163,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 			(FactionGoDTiered(_faction, "vehiclesAirborne")) +
 			(FactionGoDTiered(_faction, "vehiclesAA")) +
 			(FactionGoDTiered(_faction, "vehiclesLightTanks")) +
-			(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
+			(FactionGoDMilitia(_faction, "vehiclesAPCs")) +
 			(FactionGoDTiered(_faction, "vehiclesAPCs")) +
 			(FactionGoDTiered(_faction, "vehiclesIFVs")) +
 			_regPods

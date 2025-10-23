@@ -182,7 +182,7 @@ if(count _smokes > 0) then {
     private _height = random [500, 1000, 1300];
     private _direction = [_initialPlanePosition, _positionX] call BIS_fnc_DirTo;
 
-    _planeType = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0));
+    _planeType = selectRandomWeighted (FactionGetRebel(A3A_faction_reb, "vehiclesPlane"));
     _planeData = [[_initialPlanePosition select 0, _initialPlanePosition select 1, _height], _direction, _planeType, teamPlayer] call A3A_fnc_spawnVehicle;
     _planeVeh = _planeData select 0;
     _planeVeh setPosATL [getPosATL _planeVeh select 0, getPosATL _planeVeh select 1, _height];

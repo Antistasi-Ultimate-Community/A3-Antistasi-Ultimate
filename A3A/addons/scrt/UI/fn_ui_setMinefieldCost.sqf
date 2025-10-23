@@ -36,7 +36,7 @@ if (count _availableMinesPool < 1) then {
 	_quantity = _mineQuantity select 0;
 };
 
-_costs = (2*(server getVariable (A3A_faction_reb get "unitExp"))) + ([(FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0)) # 0] call A3A_fnc_vehiclePrice);
+_costs = (2*(server getVariable (A3A_faction_reb get "unitExp"))) + ([(FactionGetRebel(A3A_faction_reb, "vehiclesTruck")) # 0] call A3A_fnc_vehiclePrice);
 _hr = 2;
 _costTextBox ctrlSetText format [localize "STR_commander_menu_minefield_cost", minefieldType, _hr, _costs, A3A_faction_civ get "currencySymbol"];
 

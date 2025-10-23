@@ -5,7 +5,7 @@ params ["_veh", "_sideX"];
 
 private _faction = Faction(_sideX);
 /* private _isOrbital = _veh in (flatten (_faction get "vehiclesDropPod")); */
-private _isMilitia = _veh in flatten (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0) + FactionGetTieredFT(_faction, "vehiclesTrucks", 0) + FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0) + FactionGetTieredFT(_faction, "vehiclesAPCs", 0));
+private _isMilitia = _veh in flatten (FactionGetMilitia(_faction, "vehiclesLightArmed") + FactionGetMilitia(_faction, "vehiclesTrucks") + FactionGetMilitia(_faction, "vehiclesLightUnarmed") + FactionGetMilitia(_faction, "vehiclesAPCs"));
 //private _isRivals = _veh in FactionGet(all, "vehiclesRivals");
 
 private _totalSeats = [_veh, true] call BIS_fnc_crewCount; // Number of total seats: crew + non-FFV cargo/passengers + FFV cargo/passengers

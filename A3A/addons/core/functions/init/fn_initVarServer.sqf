@@ -430,20 +430,20 @@ private _fnc_filterAndWeightArray = {
 private _civVehicles = [];
 private _civVehiclesWeighted = [];
 
-_civVehiclesWeighted append ([FactionGetTieredFT(A3A_faction_civ, "vehiclesCivCar", 0), 4] call _fnc_filterAndWeightArray);
-_civVehiclesWeighted append ([FactionGetTieredFT(A3A_faction_civ, "vehiclesCivIndustrial", 0), 1] call _fnc_filterAndWeightArray);
-_civVehiclesWeighted append ([FactionGetTieredFT(A3A_faction_civ, "vehiclesCivMedical", 0), 0.1] call _fnc_filterAndWeightArray);
-_civVehiclesWeighted append ([FactionGetTieredFT(A3A_faction_civ, "vehiclesCivRepair", 0), 0.1] call _fnc_filterAndWeightArray);
-_civVehiclesWeighted append ([FactionGetTieredFT(A3A_faction_civ, "vehiclesCivFuel", 0), 0.1] call _fnc_filterAndWeightArray);
+_civVehiclesWeighted append ([FactionGetCivil(A3A_faction_civ, "vehiclesCivCar"), 4] call _fnc_filterAndWeightArray);
+_civVehiclesWeighted append ([FactionGetCivil(A3A_faction_civ, "vehiclesCivIndustrial"), 1] call _fnc_filterAndWeightArray);
+_civVehiclesWeighted append ([FactionGetCivil(A3A_faction_civ, "vehiclesCivMedical"), 0.1] call _fnc_filterAndWeightArray);
+_civVehiclesWeighted append ([FactionGetCivil(A3A_faction_civ, "vehiclesCivRepair"), 0.1] call _fnc_filterAndWeightArray);
+_civVehiclesWeighted append ([FactionGetCivil(A3A_faction_civ, "vehiclesCivFuel"), 0.1] call _fnc_filterAndWeightArray);
 
 /*for "_i" from 0 to (count _civVehiclesWeighted - 2) step 2 do {
 	_civVehicles pushBack (_civVehiclesWeighted select _i);
 };*/
 _civVehicles = _civVehiclesWeighted select {_x isEqualType ""};
 
-_civVehicles append FactionGetTieredFT(A3A_faction_reb, "vehiclesCivCar", 0);
-_civVehicles append FactionGetTieredFT(A3A_faction_reb, "vehiclesCivTruck", 0);
-_civVehicles append FactionGetTieredFT(A3A_faction_reb, "vehiclesCivSupply", 0);
+_civVehicles append FactionGetRebel(A3A_faction_reb, "vehiclesCivCar");
+_civVehicles append FactionGetRebel(A3A_faction_reb, "vehiclesCivTruck");
+_civVehicles append FactionGetRebel(A3A_faction_reb, "vehiclesCivSupply");
 
 DECLARE_SERVER_VAR(arrayCivVeh, _civVehicles);
 DECLARE_SERVER_VAR(civVehiclesWeighted, _civVehiclesWeighted);
@@ -453,7 +453,7 @@ private _civBoats = [];
 private _civBoatsWeighted = [];
 
 // Boats don't need any re-weighting, so just copy the data
-private _civBoatData = FactionGetTieredFT(A3A_faction_civ, "vehiclesCivBoat", 0);
+private _civBoatData = FactionGetCivil(A3A_faction_civ, "vehiclesCivBoat");
 for "_i" from 0 to (count _civBoatData - 2) step 2 do {
 	private _boat = _civBoatData select _i;
 	if (_boat call _fnc_vehicleIsValid) then {
@@ -466,7 +466,7 @@ for "_i" from 0 to (count _civBoatData - 2) step 2 do {
 DECLARE_SERVER_VAR(civBoats, _civBoats);
 DECLARE_SERVER_VAR(civBoatsWeighted, _civBoatsWeighted);
 
-private _undercoverVehicles = (arrayCivVeh - ["C_Quadbike_01_F"]) + FactionGetTieredFT(A3A_faction_reb, "vehiclesCivBoat", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesCivPlane", 0);
+private _undercoverVehicles = (arrayCivVeh - ["C_Quadbike_01_F"]) + FactionGetRebel(A3A_faction_reb, "vehiclesCivBoat") + FactionGetRebel(A3A_faction_reb, "vehiclesCivHeli") + FactionGetRebel(A3A_faction_reb, "vehiclesCivPlane");
 DECLARE_SERVER_VAR(undercoverVehicles, _undercoverVehicles);
 
 //////////////////////////////////////
@@ -550,7 +550,7 @@ private _groundVehicleThreat = createHashMap;
 { _groundVehicleThreat set [_x, 40] } forEach FactionGet(all, "staticMGs");
 { _groundVehicleThreat set [_x, 60] } forEach FactionGet(all, "vehiclesLightArmed");
 { _groundVehicleThreat set [_x, 80] } forEach (FactionGet(all, "staticAA") + FactionGet(all, "staticAT") + FactionGet(all, "staticMortars"));
-{ _groundVehicleThreat set [_x, 80] } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesAA", 0) + FactionGetTieredFT(A3A_faction_Reb, "vehiclesAT", 0));
+{ _groundVehicleThreat set [_x, 80] } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesAA") + FactionGetRebel(A3A_faction_Reb, "vehiclesAT"));
 { _groundVehicleThreat set [_x, 90] } forEach (flatten FactionGet(all, "vehiclesLightAPCs"));
 { _groundVehicleThreat set [_x, 120] } forEach (flatten FactionGet(all, "vehiclesAPCs"));
 { _groundVehicleThreat set [_x, 180] } forEach (flatten FactionGet(all, "vehiclesLightTanks"));
@@ -570,20 +570,20 @@ _fnc_setPriceIfValid =
 	};
 };
 
-{ [_rebelVehicleCosts, _x, 100] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesBasic", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach ((FactionGetTieredFT(A3A_faction_reb, "vehiclesCivCar", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesCivBoat", 0)) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 600] call _fnc_setPriceIfValid } forEach ((FactionGetTieredFT(A3A_faction_reb, "vehiclesCivTruck", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesMedical", 0)) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 300] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightUnarmed", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 800] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 500] call _fnc_setPriceIfValid } forEach ((FactionGetTieredFT(A3A_faction_reb, "staticMGs", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesBoat", 0)) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 1000] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "staticAT", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "staticAA", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 2500] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "staticMortars", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 1500] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesAA", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesAT", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach (FactionGetTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0) select {_x isEqualType ""});
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach ((FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesCivPlane", 0)) select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 100] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesBasic") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach ((FactionGetRebel(A3A_faction_reb, "vehiclesCivCar") + FactionGetRebel(A3A_faction_reb, "vehiclesCivBoat")) select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 600] call _fnc_setPriceIfValid } forEach ((FactionGetRebel(A3A_faction_reb, "vehiclesCivTruck") + FactionGetRebel(A3A_faction_reb, "vehiclesMedical")) select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 300] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesTruck") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesLightUnarmed") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 800] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesLightArmed") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 500] call _fnc_setPriceIfValid } forEach ((FactionGetRebel(A3A_faction_reb, "staticMGs") + FactionGetRebel(A3A_faction_reb, "vehiclesBoat")) select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 1000] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "staticAT") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "staticAA") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 2500] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "staticMortars") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 1500] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesAA") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesAT") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach (FactionGetRebel(A3A_faction_reb, "vehiclesCivHeli") select {_x isEqualType ""});
+{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach ((FactionGetRebel(A3A_faction_reb, "vehiclesPlane") + FactionGetRebel(A3A_faction_reb, "vehiclesCivPlane")) select {_x isEqualType ""});
 
 
 // Template overrides

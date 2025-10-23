@@ -67,9 +67,9 @@ private _fnc_spawngroups = {
 				(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 				(FactionGoDTiered(_faction, "vehiclesAirborne")) +
 				(FactionGoDTiered(_faction, "vehiclesLightTanks")) +
-				(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
-				(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-				(FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0))
+				(FactionGoDMilitia(_faction, "vehiclesAPCs")) +
+				(FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+				(FactionGoDMilitia(_faction, "vehiclesLightUnarmed"))
 			)
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
 		diag_log _vehicles;
@@ -103,14 +103,14 @@ private _fnc_spawngroups = {
 
 		private _vehicles2 = if (_difficult2) then {
 			selectRandomWeighted (
-				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) +
-				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0))
+				(FactionGoDRival(A3A_faction_riv, "vehiclesAPCs")) +
+				(FactionGoDRival(A3A_faction_riv, "vehiclesTanks"))
 			)
 		} else {
 			selectRandomWeighted (
-				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightUnarmed", 0)) +
-				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0)) +
-				(FactionGoDTieredFT(A3A_faction_riv, "vehiclesTrucks", 0))
+				(FactionGoDRival(A3A_faction_riv, "vehiclesLightUnarmed")) +
+				(FactionGoDRival(A3A_faction_riv, "vehiclesLightArmed")) +
+				(FactionGoDRival(A3A_faction_riv, "vehiclesTrucks"))
 			)
 		};
 		diag_log _vehicles2;

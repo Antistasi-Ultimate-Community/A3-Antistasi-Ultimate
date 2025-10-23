@@ -12,14 +12,14 @@ private _isCivilian = false;
 switch (_category) do {
     case "civilian": {
         private _civilianVehicles = (
-			(FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivCar", 0)) +
-			(FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivTruck", 0)) +
-			(FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivBoat", 0))
+			(FactionGoDRebel(A3A_faction_reb, "vehiclesCivCar")) +
+			(FactionGoDRebel(A3A_faction_reb, "vehiclesCivTruck")) +
+			(FactionGoDRebel(A3A_faction_reb, "vehiclesCivBoat"))
 		) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 		
 		private _civAircrafts = (
-			(FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0)) +
-			FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivPlane", 0)
+			(FactionGoDRebel(A3A_faction_reb, "vehiclesCivHeli")) +
+			FactionGoDRebel(A3A_faction_reb, "vehiclesCivPlane")
 		) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		if (_civAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
@@ -30,26 +30,26 @@ switch (_category) do {
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civcars": {
-        private _civilianVehicles = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivCar", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+        private _civilianVehicles = (FactionGoDRebel(A3A_faction_reb, "vehiclesCivCar")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		_isCivilian = true;
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civtrucks": {
-        private _civilianVehicles = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivTruck", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+        private _civilianVehicles = (FactionGoDRebel(A3A_faction_reb, "vehiclesCivTruck")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		_isCivilian = true;
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civboats": {
-        private _civilianVehicles =	(FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivBoat", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+        private _civilianVehicles =	(FactionGoDRebel(A3A_faction_reb, "vehiclesCivBoat")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 
 		_isCivilian = true;
 		_vehicleClasses = _civilianVehicles;
     };
 	case "civheli": {
         private _civilianVehicles = [];
-		private _civAircrafts = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+		private _civAircrafts = (FactionGoDRebel(A3A_faction_reb, "vehiclesCivHeli")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 		if (_civAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_civilianVehicles append _civAircrafts;
 		};
@@ -60,7 +60,7 @@ switch (_category) do {
 	case "civplane": {
         private _civilianVehicles = [];
 		
-		private _civAircrafts = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesCivPlane", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+		private _civAircrafts = (FactionGoDRebel(A3A_faction_reb, "vehiclesCivPlane")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 		if (_civAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_civilianVehicles append _civAircrafts;
 		};
@@ -70,27 +70,27 @@ switch (_category) do {
     };
 	case "military": {
 		private _militaryVehicles = (
-			FactionGoDTieredFT(A3A_faction_reb, "vehiclesBasic", 0) + 
-			FactionGoDTieredFT(A3A_faction_reb, "vehiclesTruck", 0) + 
-			FactionGoDTieredFT(A3A_faction_reb, "vehiclesLightUnarmed", 0) +
-			FactionGoDTieredFT(A3A_faction_reb, "vehiclesBoat", 0) + 
-			FactionGoDTieredFT(A3A_faction_reb, "vehiclesMedical", 0)
+			FactionGoDRebel(A3A_faction_reb, "vehiclesBasic") + 
+			FactionGoDRebel(A3A_faction_reb, "vehiclesTruck") + 
+			FactionGoDRebel(A3A_faction_reb, "vehiclesLightUnarmed") +
+			FactionGoDRebel(A3A_faction_reb, "vehiclesBoat") + 
+			FactionGoDRebel(A3A_faction_reb, "vehiclesMedical")
 		) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 
 		if (tierWar > 2) then {
-			private _availableVehs = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+			private _availableVehs = (FactionGoDRebel(A3A_faction_reb, "vehiclesLightArmed")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 
 		if (tierWar > 3) then {
 			private _availableVehs = (
-				FactionGoDTieredFT(A3A_faction_reb, "vehiclesAT", 0) + 
-				FactionGoDTieredFT(A3A_faction_reb, "vehiclesAA", 0)
+				FactionGoDRebel(A3A_faction_reb, "vehiclesAT") + 
+				FactionGoDRebel(A3A_faction_reb, "vehiclesAA")
 			) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 
-		private _milAircrafts = FactionGoDTieredFT(A3A_faction_reb, "vehiclesPlane", 0) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+		private _milAircrafts = FactionGoDRebel(A3A_faction_reb, "vehiclesPlane") select {_x isNotEqualTo "" && {_x isEqualType ""}};
 		if (_milAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_militaryVehicles append _milAircrafts;
 		};
@@ -98,29 +98,29 @@ switch (_category) do {
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarybasic": {
-		private _militaryVehicles = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesBasic", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		private _militaryVehicles = (FactionGoDRebel(A3A_faction_reb, "vehiclesBasic")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarytrucks": {
-		private _militaryVehicles = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesTruck", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		private _militaryVehicles = (FactionGoDRebel(A3A_faction_reb, "vehiclesTruck")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarylightunarmed": {
-		private _militaryVehicles = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesLightUnarmed", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		private _militaryVehicles = (FactionGoDRebel(A3A_faction_reb, "vehiclesLightUnarmed")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militaryboats": {
-		private _militaryVehicles = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesBoat", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		private _militaryVehicles = (FactionGoDRebel(A3A_faction_reb, "vehiclesBoat")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarymedical": {
-		private _militaryVehicles =	(FactionGoDTieredFT(A3A_faction_reb, "vehiclesMedical", 0))	select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		private _militaryVehicles =	(FactionGoDRebel(A3A_faction_reb, "vehiclesMedical"))	select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militarylightarmed": {
 		private _militaryVehicles =[];
 		if (tierWar > 2) then {
-			private _availableVehs = (FactionGoDTieredFT(A3A_faction_reb, "vehiclesLightArmed", 0)) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+			private _availableVehs = (FactionGoDRebel(A3A_faction_reb, "vehiclesLightArmed")) select {_x isNotEqualTo "" && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 		_vehicleClasses = _militaryVehicles;
@@ -129,7 +129,7 @@ switch (_category) do {
 		private _militaryVehicles =[];
 		if (tierWar > 3) then {
 			private _availableVehs = 
-				(FactionGoDTieredFT(A3A_faction_reb, "vehiclesAT", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+				(FactionGoDRebel(A3A_faction_reb, "vehiclesAT")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 		_vehicleClasses = _militaryVehicles;
@@ -138,14 +138,14 @@ switch (_category) do {
 		private _militaryVehicles =[];
 		if (tierWar > 3) then {
 			private _availableVehs = 
-				(FactionGoDTieredFT(A3A_faction_reb, "vehiclesAA", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+				(FactionGoDRebel(A3A_faction_reb, "vehiclesAA")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_militaryVehicles append _availableVehs;
 		};
 		_vehicleClasses = _militaryVehicles;
 	};
 	case "militaryplane": {
 		private _militaryVehicles =[];
-		private _milAircrafts = FactionGoDTieredFT(A3A_faction_reb, "vehiclesPlane", 0) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+		private _milAircrafts = FactionGoDRebel(A3A_faction_reb, "vehiclesPlane") select {_x isNotEqualTo "" && {_x isEqualType ""}};
 		if (_milAircrafts isNotEqualTo [] && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}) then {
 			_militaryVehicles append _milAircrafts;
 		};
@@ -155,22 +155,22 @@ switch (_category) do {
 		private _statics = [];
 		
 		if (tierWar > 2) then {
-			private _availableVehs = (FactionGoDTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+			private _availableVehs = (FactionGoDRebel(A3A_faction_reb, "staticMGs")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 
-		(FactionGoDTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		(FactionGoDRebel(A3A_faction_reb, "staticMGs")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 
 		if (tierWar > 3) then {
 			private _availableVehs = (
-				FactionGoDTieredFT(A3A_faction_reb, "staticAT", 0) +
-				FactionGoDTieredFT(A3A_faction_reb, "staticAA", 0)
+				FactionGoDRebel(A3A_faction_reb, "staticAT") +
+				FactionGoDRebel(A3A_faction_reb, "staticAA")
 			) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 
 		if (tierWar > 4) then {
-			private _mortars = FactionGoDTieredFT(A3A_faction_reb, "staticMortars", 0) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+			private _mortars = FactionGoDRebel(A3A_faction_reb, "staticMortars") select {_x isNotEqualTo "" && {_x isEqualType ""}};
 			if (_mortars isNotEqualTo []) then {
 				_statics append _mortars;
 			};
@@ -182,16 +182,16 @@ switch (_category) do {
 		private _statics = [];
 		
 		if (tierWar > 2) then {
-			private _availableVehs = (FactionGoDTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+			private _availableVehs = (FactionGoDRebel(A3A_faction_reb, "staticMGs")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
-		(FactionGoDTieredFT(A3A_faction_reb, "staticMGs", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+		(FactionGoDRebel(A3A_faction_reb, "staticMGs")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 		_vehicleClasses = _statics;
 	};
 	case "staticAT": {
 		private _statics = [];
 		if (tierWar > 3) then {
-			private _availableVehs = (FactionGoDTieredFT(A3A_faction_reb, "staticAT", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+			private _availableVehs = (FactionGoDRebel(A3A_faction_reb, "staticAT")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 		_vehicleClasses = _statics;
@@ -199,7 +199,7 @@ switch (_category) do {
 	case "staticAA": {
 		private _statics = [];
 		if (tierWar > 3) then {
-			private _availableVehs = (FactionGoDTieredFT(A3A_faction_reb, "staticAA", 0)) select {_x isNotEqualTo [] && {_x isEqualType ""}};
+			private _availableVehs = (FactionGoDRebel(A3A_faction_reb, "staticAA")) select {_x isNotEqualTo [] && {_x isEqualType ""}};
 			_statics append _availableVehs;
 		};
 		_vehicleClasses = _statics;
@@ -207,7 +207,7 @@ switch (_category) do {
 	case "staticMORTAR": {
 		private _statics = [];
 		if (tierWar > 4) then {
-			private _mortars = FactionGoDTieredFT(A3A_faction_reb, "staticMortars", 0) select {_x isNotEqualTo "" && {_x isEqualType ""}};
+			private _mortars = FactionGoDRebel(A3A_faction_reb, "staticMortars") select {_x isNotEqualTo "" && {_x isEqualType ""}};
 			if (_mortars isNotEqualTo []) then {
 				_statics append _mortars;
 			};

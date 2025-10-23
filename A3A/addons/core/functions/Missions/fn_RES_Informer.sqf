@@ -229,7 +229,7 @@ for "_i" from 0 to _roadblockCount do {
             (FactionGoDTiered(_faction, "vehiclesLightArmed"))
         )
     } else {
-        selectRandomWeighted (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0))
+        selectRandomWeighted (FactionGetMilitia(_faction, "vehiclesLightArmed"))
     };
 
     private _roadblockVehicleData = [_roadblockPosition, 0, _typeVehX, _side] call A3A_fnc_spawnVehicle;

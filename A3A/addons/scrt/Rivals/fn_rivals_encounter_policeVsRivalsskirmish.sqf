@@ -152,7 +152,7 @@ private _fnc_spawnForces = {
 [Occupants, _cityPos getPos [100, random 360], (FactionGetTiered(A3A_faction_occ, "vehiclesPolice")), (A3A_faction_occ get "groupPolice")] call _fnc_spawnPoliceForces;
 
 // Spawn rival forces
-[Rivals, _cityPos getPos [300, random 360 + 180], (A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsCars"), (selectRandom (A3A_faction_riv get "groupsSentry"))] call _fnc_spawnForces;
+[Rivals, _cityPos getPos [300, random 360 + 180], (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed")) + (FactionGetRival(A3A_faction_riv, "vehiclesLightUnarmed")), (selectRandom (A3A_faction_riv get "groupsSentry"))] call _fnc_spawnForces;
 
 // Set mutual hostility
 {_x setCombatMode "YELLOW"} forEach _groups;

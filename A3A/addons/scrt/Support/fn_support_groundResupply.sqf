@@ -7,7 +7,7 @@ private _position = markerPos supportMarkerOrigin;
 
 private _crewType = A3A_faction_reb get "unitCrew";
 private _squadType = [_crewType];
-private _truckType = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0));
+private _truckType = selectRandomWeighted (FactionGetRebel(A3A_faction_reb, "vehiclesTruck"));
 
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _squadType] call A3A_fnc_spawnGroup;
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;

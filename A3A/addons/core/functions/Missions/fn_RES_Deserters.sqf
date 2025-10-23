@@ -66,9 +66,9 @@ private _vehiclePatrol = "";
 private _stolenVehicle = "";
 _vehiclePatrolType = selectRandomWeighted (
 	(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
-	(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-	(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
-	(FactionGoDTieredFT(_faction, "vehiclesTrucks", 0))
+	(FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+	(FactionGoDMilitia(_faction, "vehiclesAPCs")) +
+	(FactionGoDMilitia(_faction, "vehiclesTrucks"))
 );
 _stolenVehicleType = if (_difficultX) then {
     selectRandomWeighted (
@@ -80,10 +80,10 @@ _stolenVehicleType = if (_difficultX) then {
     selectRandomWeighted (
 		(FactionGoDTiered(_faction, "vehiclesLightArmed")) +
 		(FactionGoDTiered(_faction, "vehiclesTrucks")) +
-		(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-		(FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0)) +
-		(FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
-		(FactionGoDTieredFT(_faction, "vehiclesTrucks", 0))
+		(FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+		(FactionGoDMilitia(_faction, "vehiclesLightUnarmed")) +
+		(FactionGoDMilitia(_faction, "vehiclesAPCs")) +
+		(FactionGoDMilitia(_faction, "vehiclesTrucks"))
 	);
 }; 
 private _nearbyPos = [_spawnPos, 200, 300, 3, 0, 5, 0] call BIS_fnc_findSafePos;

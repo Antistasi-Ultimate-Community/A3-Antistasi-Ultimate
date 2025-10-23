@@ -57,8 +57,8 @@ private _faction = Faction(_side);
 private _isFia = if (random 10 > tierWar) then {true} else {false};
 private _vehicleClass = if (_isFia) then {
     selectRandomWeighted (
-        (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) +
-        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
+        (FactionGetMilitia(_faction, "vehiclesLightArmed")) +
+        (FactionGetMilitia(_faction, "vehiclesAPCs"))
     );
 } else {
     selectRandomWeighted (

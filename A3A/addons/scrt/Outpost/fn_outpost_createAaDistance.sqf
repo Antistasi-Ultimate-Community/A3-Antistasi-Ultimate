@@ -8,7 +8,7 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-private _aaClass = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "staticAA", 0));
+private _aaClass = selectRandomWeighted (FactionGetRebel(A3A_faction_reb, "staticAA"));
 
 private _props = [];
 

@@ -54,7 +54,7 @@ private _roadPosition = getPos (_road select 0);
 
 private _convoy = [];
 
-private _civVehicles = selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesCivCar", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivIndustrial", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivFuel", 0)));
+private _civVehicles = selectRandomWeighted ((FactionGetCivil(_faction, "vehiclesCivCar")) + (FactionGetCivil(_faction, "vehiclesCivIndustrial")) + (FactionGetCivil(_faction, "vehiclesCivFuel")));
 
 if (_civVehicles == "") exitWith {
     Error("No civ vehicles available, aborting Vehicle Move Event.");
@@ -126,7 +126,7 @@ private _fnc_fillcargo = {
 
 for '_i' from round random 3 to 5 do
 {
-    private _civVehicles = selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesCivCar", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivIndustrial", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivFuel", 0)));
+    private _civVehicles = selectRandomWeighted ((FactionGetCivil(_faction, "vehiclesCivCar")) + (FactionGetCivil(_faction, "vehiclesCivIndustrial")) + (FactionGetCivil(_faction, "vehiclesCivFuel")));
 	private _vehObj = [_civVehicles, "civillian"] call _fnc_spawnConvoyVehicle;
 	//[_vehObj,_civVehicles] call _fnc_fillcargo;
 	_convoyobj pushBack _vehObj;

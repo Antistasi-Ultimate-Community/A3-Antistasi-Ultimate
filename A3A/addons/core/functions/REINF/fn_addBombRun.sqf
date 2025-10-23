@@ -18,7 +18,7 @@ if (_near isEqualTo []) exitWith {
 	[localize "STR_A3A_reinf_airstrike_header", format [localize "STR_A3A_reinf_airstrike_hq_airp",FactionGet(reb,"name")]] call SCRT_fnc_misc_deniedHint;
 };
 
-private _rebAircraftTypes = FactionGetTieredFT(A3A_faction_reb,"vehiclesPlane", 0) + FactionGetTieredFT(A3A_faction_reb,"vehiclesCivPlane", 0) + FactionGetTieredFT(A3A_faction_reb, "vehiclesCivHeli", 0);
+private _rebAircraftTypes = FactionGetTieredFT(A3A_faction_reb,"vehiclesPlane", 0) + FactionGetTieredFT(A3A_faction_reb,"vehiclesCivPlane", 0) + FactionGetRebel(A3A_faction_reb, "vehiclesCivHeli");
 if (typeOf _veh in _rebAircraftTypes) exitWith {
 	[localize "STR_A3A_reinf_airstrike_header", format [localize "STR_A3A_reinf_airstrike_reb_planes",FactionGet(reb,"name")]] call SCRT_fnc_misc_deniedHint;
 };

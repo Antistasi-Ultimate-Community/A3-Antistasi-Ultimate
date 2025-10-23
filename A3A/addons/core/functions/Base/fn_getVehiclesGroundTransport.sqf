@@ -57,9 +57,9 @@ if (FactionGetTiered(_faction, "vehiclesAPCs") isEqualTo []) then {
 // only occupants use militia vehicle types?
 if (_side == Occupants) then {
     [FactionGetTiered(_faction, "vehiclesPolice"), _policeWeight] call _fnc_addArrayToWeights;
-    [FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0), _milCarWeight] call _fnc_addArrayToWeights;
-    [FactionGetTieredFT(_faction, "vehiclesTrucks", 0), _milTruckWeight] call _fnc_addArrayToWeights;
-    private _milApc = FactionGetTieredFT(_faction, "vehiclesAPCs", 0);
+    [FactionGetMilitia(_faction, "vehiclesLightUnarmed"), _milCarWeight] call _fnc_addArrayToWeights;
+    [FactionGetMilitia(_faction, "vehiclesTrucks"), _milTruckWeight] call _fnc_addArrayToWeights;
+    private _milApc = FactionGetMilitia(_faction, "vehiclesAPCs");
     if (_milApc isNotEqualTo []) then {
         [_milApc, _milApcWeight] call _fnc_addArrayToWeights;
     };

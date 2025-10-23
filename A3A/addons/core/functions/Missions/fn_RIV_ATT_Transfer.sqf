@@ -199,7 +199,7 @@ _lootContainerPosition = position _lootContainer;
 // Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
 _lootContainer addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 [_lootContainer] call A3A_Logistics_fnc_addLoadAction;
-private _truckClass = selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesTrucks", 0));
+private _truckClass = selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesTrucks"));
 private _vehiclePosAndDir = [_lootContainerPosition, _truckClass, 50, true] call SCRT_fnc_common_findSafePositionForVehicle; 
 private _truck = createVehicle [_truckClass, (_vehiclePosAndDir select 0), [], 0 , "CAN_COLLIDE"];
 _truck setDir (_vehiclePosAndDir select 1);
@@ -207,7 +207,7 @@ _truck setDir (_vehiclePosAndDir select 1);
 _vehicles append [_truck, _lootContainer];
 if (_isDifficult) then {
     _truckPosition = position _truck;
-    private _prizeClass = selectRandomWeighted ((FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0)) + (FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightUnarmed", 0)) + (FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) + (FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0)) + (FactionGoDTieredFT(A3A_faction_riv, "vehiclesHelis", 0)));
+    private _prizeClass = selectRandomWeighted ((FactionGoDRival(A3A_faction_riv, "vehiclesLightArmed")) + (FactionGoDRival(A3A_faction_riv, "vehiclesLightUnarmed")) + (FactionGoDRival(A3A_faction_riv, "vehiclesAPCs")) + (FactionGoDRival(A3A_faction_riv, "vehiclesTanks")) + (FactionGoDRival(A3A_faction_riv, "vehiclesHelis")));
     private _vehiclePosAndDir = [_truckPosition, _prizeClass, 50, true] call SCRT_fnc_common_findSafePositionForVehicle; 
     private _prizeVehicle = createVehicle [_prizeClass, (_vehiclePosAndDir select 0), [], 0 , "CAN_COLLIDE"];
     _prizeVehicle setDir (_vehiclePosAndDir select 1);
@@ -270,9 +270,9 @@ if (_isDifficult) then {
 //  Patrol vehicle 	                        //
 //////////////////////////////////////////////
 private _vehicleClass = if (_isDifficult) then {
-    selectRandomWeighted ((FactionGoDTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0)) + (FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) + (FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0)));
+    selectRandomWeighted ((FactionGoDRival(A3A_faction_riv, "vehiclesLightArmed")) + (FactionGoDRival(A3A_faction_riv, "vehiclesAPCs")) + (FactionGoDRival(A3A_faction_riv, "vehiclesTanks")));
 } else {
-    selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0));
+    selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"));
 };
 private _vehiclePosAndDir = [_hideoutPosition, _vehicleClass, 250, true] call SCRT_fnc_common_findSafePositionForVehicle; 
 private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_RivalsSpawnVehicle;
@@ -289,13 +289,13 @@ _vehicles pushBack _patrolVeh;
 private _vehicletransferClass = if (_isDifficult) then {
     selectRandomWeighted (
         FactionGetTiered(_faction, "vehiclesCargoTrucks") +
-        (FactionGoDTieredFT(A3A_faction_riv, "vehiclesAPCs", 0)) +
-        (FactionGoDTieredFT(A3A_faction_riv, "vehiclesTanks", 0))
+        (FactionGoDRival(A3A_faction_riv, "vehiclesAPCs")) +
+        (FactionGoDRival(A3A_faction_riv, "vehiclesTanks"))
     );
 } else {
     selectRandomWeighted (
         FactionGetTiered(_faction, "vehiclesCargoTrucks") +
-        (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightArmed", 0))
+        (FactionGetRival(A3A_faction_riv, "vehiclesLightArmed"))
     );
 }; ///check if vehicle is cargo truck or vehicle to transfer, if cargo truck create or move loot crate to truck.
 private _escortvehicle = if (_isDifficult) then {
@@ -310,10 +310,10 @@ private _escortvehicle = if (_isDifficult) then {
     selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
         (FactionGoDTiered(_faction, "vehiclesTrucks")) +
-        (FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-        (FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0)) +
-        (FactionGoDTieredFT(_faction, "vehiclesAPCs", 0)) +
-        (FactionGoDTieredFT(_faction, "vehiclesTrucks", 0))
+        (FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+        (FactionGoDMilitia(_faction, "vehiclesLightUnarmed")) +
+        (FactionGoDMilitia(_faction, "vehiclesAPCs")) +
+        (FactionGoDMilitia(_faction, "vehiclesTrucks"))
     );
 }; //check if vehicle is truck, if yes create a group and move in
 private _convoylead = if (_isDifficult) then {
@@ -325,9 +325,9 @@ private _convoylead = if (_isDifficult) then {
     selectRandomWeighted (
         (FactionGoDTiered(_faction, "vehiclesLightArmed")) +
         (FactionGoDTiered(_faction, "vehiclesTrucks")) +
-        (FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-        (FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0)) +
-        (FactionGoDTieredFT(_faction, "vehiclesTrucks", 0)) +
+        (FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+        (FactionGoDMilitia(_faction, "vehiclesLightUnarmed")) +
+        (FactionGoDMilitia(_faction, "vehiclesTrucks")) +
         (FactionGoDTiered(_faction, "vehiclesLightUnarmed"))
     );
 };

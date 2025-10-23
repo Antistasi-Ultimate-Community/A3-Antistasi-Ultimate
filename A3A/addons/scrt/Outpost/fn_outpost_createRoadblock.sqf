@@ -23,7 +23,7 @@ private _taskId = "outpostTask" + str A3A_taskCount;
 
 private _riflemanType = A3A_faction_reb get "unitRifle";
 private _squadType = A3A_faction_reb get "groupSquad";
-private _truckType = selectRandomWeighted (FactionGetTieredFT(A3A_faction_reb, "vehiclesTruck", 0));
+private _truckType = selectRandomWeighted (FactionGetRebel(A3A_faction_reb, "vehiclesTruck"));
 
 _formatX = [_riflemanType] + _squadType;
 

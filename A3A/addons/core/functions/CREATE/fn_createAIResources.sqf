@@ -136,13 +136,13 @@ private _veh = nil;
 if (_spawnParameter isEqualType []) then {
 	_spawnsUsed pushBack _spawnParameter#2;
 	private _typeVehX = call {
-		if (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivRepair", 0) isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesRepairTrucks")) };
-		if (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivFuel", 0) isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesFuelTrucks")) };
+		if (FactionGetCivil(A3A_faction_civ, "vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesRepairTrucks")) };
+		if (FactionGetCivil(A3A_faction_civ, "vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesFuelTrucks")) };
 		private _types = if (!_isFIA) then {
 			(FactionGoDTiered(_faction, "vehiclesTrucks")) +
 			(FactionGetTiered(_faction, "vehiclesCargoTrucks"))
 		} else {
-			FactionGoDTieredFT(_faction, "vehiclesTrucks", 0)
+			FactionGoDMilitia(_faction, "vehiclesTrucks")
 		};
 		// dirty, but weighted lists are a little more annoying to cleanup than normal arrays
 		{ if (!(_x in flatten FactionGet(all,"vehiclesCargoTrucks"))) then { private _index = _types find _x; _types deleteAt _index; _types deleteAt (_index + 1)} } forEach (+_types select {_x isEqualType ""});

@@ -63,9 +63,9 @@ private _fnc_spawngroups = {
 				FactionGetTiered(_faction, "vehiclesLightArmed") +
 				FactionGetTiered(_faction, "vehiclesAirborne") +
 				FactionGetTiered(_faction, "vehiclesLightTanks") +
-				FactionGetTieredFT(_faction, "vehiclesAPCs", 0) +
-				FactionGetTieredFT(_faction, "vehiclesLightArmed", 0) +
-				FactionGetTieredFT(_faction, "vehiclesLightUnarmed", 0)
+				FactionGetMilitia(_faction, "vehiclesAPCs") +
+				FactionGetMilitia(_faction, "vehiclesLightArmed") +
+				FactionGetMilitia(_faction, "vehiclesLightUnarmed")
 			)
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
 		diag_log _vehicles;

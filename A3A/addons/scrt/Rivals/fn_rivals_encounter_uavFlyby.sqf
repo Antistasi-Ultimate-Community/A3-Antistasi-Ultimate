@@ -6,7 +6,7 @@ params [["_overridePosition", []]];
 
 Info("UAV Flyby random event init.");
 
-if ((FactionGetTieredFT(A3A_faction_riv, "vehiclesUavs", 0)) isEqualTo []) exitWith {
+if ((FactionGetRival(A3A_faction_riv, "vehiclesUavs")) isEqualTo []) exitWith {
 	Info("No supported UAVs, rerolling another event.");
     [UAVGRENADE] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
@@ -91,7 +91,7 @@ for "_i" from 0 to _uavQuantity - 1 do {
 
 	_spawnPosition pushBack ((_spawnPosition select 2) + _height);
 
-	private _uav = createVehicle [selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesUavs", 0)), _spawnPosition, [], 0, "FLY"];
+	private _uav = createVehicle [selectRandomWeighted (FactionGetRival(A3A_faction_riv, "vehiclesUavs")), _spawnPosition, [], 0, "FLY"];
 	private _angle =  [_spawnPosition,_originPosition] call BIS_fnc_dirTo;
 	_uav setDir _angle;
 

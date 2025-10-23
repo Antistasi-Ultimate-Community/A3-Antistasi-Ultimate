@@ -235,8 +235,8 @@ private _veh = nil;
 if (_spawnParameter isEqualType []) then {
 	_spawnsUsed pushBack _spawnParameter#2;
 	private _typeVehX = call {
-		if (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivRepair", 0) isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesRepairTrucks")) };
-		if (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivFuel", 0) isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesFuelTrucks")) };
+		if (FactionGetCivil(A3A_faction_civ, "vehiclesCivRepair") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesRepairTrucks")) };
+		if (FactionGetCivil(A3A_faction_civ, "vehiclesCivFuel") isEqualTo [] and random 1 < 0.1) exitWith { selectRandomWeighted (FactionGetTiered(_faction, "vehiclesFuelTrucks")) };
 		private _types = if (!_isFIA) then {
 			(FactionGoDTiered(_faction, "vehiclesTrucks")) + 
 			(FactionGoDTiered(_faction, "vehiclesCargoTrucks")) + 
@@ -244,9 +244,9 @@ if (_spawnParameter isEqualType []) then {
 			(FactionGoDTiered(_faction, "vehiclesLightUnarmed")) + 
 			(FactionGoDTiered(_faction, "vehiclesLightArmed"))
 		} else {
-			(FactionGoDTieredFT(_faction, "vehiclesTrucks", 0)) +
-			(FactionGoDTieredFT(_faction, "vehiclesLightArmed", 0)) +
-			(FactionGoDTieredFT(_faction, "vehiclesLightUnarmed", 0)) +
+			(FactionGoDMilitia(_faction, "vehiclesTrucks")) +
+			(FactionGoDMilitia(_faction, "vehiclesLightArmed")) +
+			(FactionGoDMilitia(_faction, "vehiclesLightUnarmed")) +
 			(FactionGoDTiered(_faction, "vehiclesBasic")) //we should use them somewhere at least
 		};
 		selectRandomWeighted ([_types, FactionGetTiered(_faction, "vehiclesCargoTrucks")] select (count _types isEqualTo 0));
