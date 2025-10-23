@@ -22,11 +22,11 @@
 #define FactionGetMilitia(FACVAR, VEHVAR) FactionGetTieredFT(FACVAR, VEHVAR, 0)
 #define FactionGetCivil(FACVAR, VEHVAR) FactionGetTieredFT(FACVAR, VEHVAR, 0)
 #define FactionGetRival(FACVAR, VEHVAR) FactionGetTieredFT(FACVAR, VEHVAR, 0)
-#define FactionGetRebel(FACVAR, VEHCAR) FactionGetTieredFT(FACVAR, VEHVAR, 0)
+#define FactionGetRebel(FACVAR, VEHVAR) FactionGetTieredFT(FACVAR, VEHVAR, 0)
 #define FactionGoDMilitia(FACVAR, VEHVAR) FactionGoDTieredFT(FACVAR, VEHVAR, 0)
 #define FactionGoDCivil(FACVAR, VEHVAR) FactionGoDTieredFT(FACVAR, VEHVAR, 0)
 #define FactionGoDRival(FACVAR, VEHVAR) FactionGoDTieredFT(FACVAR, VEHVAR, 0)
-#define FactionGoDRebel(FACVAR, VEHCAR) FactionGoDTieredFT(FACVAR, VEHVAR, 0)
+#define FactionGoDRebel(FACVAR, VEHVAR) FactionGoDTieredFT(FACVAR, VEHVAR, 0)
 
 
 #define GetTiered(FACVAR, UNITVAR) ((FACVAR get UNITVAR) select (switch true do {case (tierWar < 5):{0}; case (tierWar < 8 && {tierWar > 4}):{1}; case (tierWar > 7):{2};}))
