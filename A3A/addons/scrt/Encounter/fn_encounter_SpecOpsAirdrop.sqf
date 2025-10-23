@@ -1,4 +1,5 @@
 #include "..\defines.inc"
+#include "Constants.inc"
 FIX_LINE_NUMBERS()
 
 Info("Post Ambush Vehicle Event Init.");
