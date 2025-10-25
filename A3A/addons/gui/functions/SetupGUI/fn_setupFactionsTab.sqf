@@ -79,6 +79,9 @@ switch (_mode) do
     case ("update"): {
         _params params ["_listboxes"];
 
+        // ! look away now lest you have an aneurysm looking at all the duplicated code
+        // ! not much to be done when the same items need to be accessed both from here and from inside the event handlers :(
+
         private _rebLBCtrl = _display displayCtrl A3A_IDC_SETUP_REBELSLISTBOX;
         private _civLBCtrl = _display displayCtrl A3A_IDC_SETUP_CIVILIANSLISTBOX;
         private _invLBCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
@@ -218,6 +221,112 @@ switch (_mode) do
             }];
             _rivLBCtrl setVariable ["LBHandler", _rivLBHandler];
         };
+
+        private _modCGCtrl = _display displayCtrl A3A_IDC_SETUP_OVERRIDES;
+        private _dlcCGCtrl = _display displayCtrl A3A_IDC_SETUP_DLCCONTENT;
+        private _addCGCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT;
+        
+        private _dlcCGHandler = _dlcCGCtrl getVariable "LBHandler";
+        if (!isNil "_dlcCGHandler") then { _dlcCGCtrl ctrlRemoveEventHandler ["MouseMoving", _dlcCGHandler] };
+        _dlcCGHandler = _dlcCGCtrl ctrlAddEventHandler ["MouseMoving", {
+            params ["_dlcCGCtrl", "_xPos", "_yPos", "_mouseOver"];
+
+            private _display = findDisplay A3A_IDD_SETUPDIALOG;
+            private _dlcBGCtrl = _display displayCtrl A3A_IDC_SETUP_DLCCONTENT_BG;
+            //private _dlcBoxCtrl = _display displayCtrl A3A_IDC_SETUP_DLCCONTENT_BOX;
+            private _dlcBoxCtrl = _display displayCtrl A3A_IDC_SETUP_DLCBOX;
+            private _addCGCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT;
+            private _addLabelCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_LABEL;
+            private _addBGCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_BG;
+            //private _addBoxCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_BOX;
+            private _addBoxCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONVICSBOX;
+
+            private _dlcCGx = 124 * GRID_W;
+            private _dlcCGy = 26 * GRID_H;
+            private _dlcCGw = 32 * GRID_W;
+            private _dlcCGh = 22 * GRID_H;
+
+            private _addCGx = 124 * GRID_W;
+            private _addCGy = 50 * GRID_H;
+            private _addCGw = 32 * GRID_W;
+            private _addCGh = 46 * GRID_H;
+            
+            if (_mouseOver) then {
+                if (_dlcCGCtrl getVariable "Expanded") exitWith {};
+                _dlcCGCtrl setVariable ["Expanded", true];
+                
+                _dlcCGCtrl ctrlSetPosition [_dlcCGx, _dlcCGy, _dlcCGw, _dlcCGh + (20 * GRID_H)];
+                { _x ctrlSetPosition [0, 4 * GRID_H, _dlcCGw, _dlcCGh + (16 * GRID_H)] } forEach [_dlcBGCtrl, _dlcBoxCtrl];
+
+                _addCGCtrl ctrlSetPosition [_addCGx, _addCGy + (20 * GRID_H), _addCGw, _addCGh - (20 * GRID_H)];
+                _addLabelCtrl ctrlSetPosition [0, 0, _addCGw, 4 * GRID_H];
+                {_x ctrlSetPosition [0, 4 * GRID_H, _addCGw, _addCGh - (24 * GRID_H)] } forEach [_addBGCtrl, _addBoxCtrl];
+
+                { _x ctrlCommit 0.4 } forEach [_dlcCGCtrl, _dlcBGCtrl, _dlcBoxCtrl, _addCGCtrl, _addLabelCtrl, _addBGCtrl, _addBoxCtrl];
+            } else {
+                _dlcCGCtrl ctrlSetPosition [_dlcCGx, _dlcCGy, _dlcCGw, _dlcCGh];
+                {_x ctrlSetPosition [0, 4 * GRID_H, _dlcCGw, _dlcCGh - (4 * GRID_H)] } forEach [_dlcBGCtrl, _dlcBoxCtrl];
+
+                _addCGCtrl ctrlSetPosition [_addCGx, _addCGy, _addCGw, _addCGh];
+                _addLabelCtrl ctrlSetPosition [0, 0, _addCGw, 4 * GRID_H];
+                {_x ctrlSetPosition [0, 4 * GRID_H, _addCGw, _addCGh - (4 * GRID_H)] } forEach [_addBGCtrl, _addBoxCtrl];
+
+                { _x ctrlCommit 0.4 } forEach [_dlcCGCtrl, _dlcBGCtrl, _dlcBoxCtrl, _addCGCtrl, _addLabelCtrl, _addBGCtrl, _addBoxCtrl];
+                _dlcCGCtrl setVariable ["Expanded", false];
+            };
+        }];
+        _dlcCGCtrl setVariable ["LBHandler", _dlcCGHandler];
+
+        private _addCGHandler = _addCGCtrl getVariable "LBHandler";
+        if (!isNil "_addCGHandler") then { _addCGCtrl ctrlRemoveEventHandler ["MouseMoving", _addCGHandler] };
+        _addCGHandler = _addCGCtrl ctrlAddEventHandler ["MouseMoving", {
+            params ["_addCGCtrl", "_xPos", "_yPos", "_mouseOver"];
+
+            private _display = findDisplay A3A_IDD_SETUPDIALOG;
+            private _dlcCGCtrl = _display displayCtrl A3A_IDC_SETUP_DLCCONTENT;
+            private _dlcBGCtrl = _display displayCtrl A3A_IDC_SETUP_DLCCONTENT_BG;
+            //private _dlcBoxCtrl = _display displayCtrl A3A_IDC_SETUP_DLCCONTENT_BOX;
+            private _dlcBoxCtrl = _display displayCtrl A3A_IDC_SETUP_DLCBOX;
+            private _addLabelCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_LABEL;
+            private _addBGCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_BG;
+            //private _addBoxCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_BOX;
+            private _addBoxCtrl = _display displayCtrl A3A_IDC_SETUP_ADDONVICSBOX;
+
+            private _dlcCGx = 124 * GRID_W;
+            private _dlcCGy = 26 * GRID_H;
+            private _dlcCGw = 32 * GRID_W;
+            private _dlcCGh = 22 * GRID_H;
+
+            private _addCGx = 124 * GRID_W;
+            private _addCGy = 50 * GRID_H;
+            private _addCGw = 32 * GRID_W;
+            private _addCGh = 46 * GRID_H;
+            
+            if (_mouseOver) then {
+                if (_addCGCtrl getVariable "Expanded") exitWith {};
+                _addCGCtrl setVariable ["Expanded", true];
+                
+                _dlcCGCtrl ctrlSetPosition [_dlcCGx, _dlcCGy, _dlcCGw, _dlcCGh - (18 * GRID_H)];
+                { _x ctrlSetPosition [0, 4 * GRID_H, _dlcCGw, _dlcCGh - (14 * GRID_H)] } forEach [_dlcBGCtrl, _dlcBoxCtrl];
+
+                _addCGCtrl ctrlSetPosition [_addCGx, _addCGy - (18 * GRID_H), _addCGw, _addCGh + (18 * GRID_H)];
+                _addLabelCtrl ctrlSetPosition [0, 0, _addCGw, 4 * GRID_H];
+                {_x ctrlSetPosition [0, 4 * GRID_H, _addCGw, _addCGh + (14 * GRID_H)] } forEach [_addBGCtrl, _addBoxCtrl];
+
+                { _x ctrlCommit 0.4 } forEach [_dlcCGCtrl, _dlcBGCtrl, _dlcBoxCtrl, _addCGCtrl, _addLabelCtrl, _addBGCtrl, _addBoxCtrl];
+            } else {
+                _dlcCGCtrl ctrlSetPosition [_dlcCGx, _dlcCGy, _dlcCGw, _dlcCGh];
+                {_x ctrlSetPosition [0, 4 * GRID_H, _dlcCGw, _dlcCGh - (4 * GRID_H)] } forEach [_dlcBGCtrl, _dlcBoxCtrl];
+
+                _addCGCtrl ctrlSetPosition [_addCGx, _addCGy, _addCGw, _addCGh];
+                _addLabelCtrl ctrlSetPosition [0, 0, _addCGw, 4 * GRID_H];
+                {_x ctrlSetPosition [0, 4 * GRID_H, _addCGw, _addCGh - (4 * GRID_H)] } forEach [_addBGCtrl, _addBoxCtrl];
+
+                { _x ctrlCommit 0.4 } forEach [_dlcCGCtrl, _dlcBGCtrl, _dlcBoxCtrl, _addCGCtrl, _addLabelCtrl, _addBGCtrl, _addBoxCtrl];
+                _addCGCtrl setVariable ["Expanded", false];
+            };
+        }];
+        _addCGCtrl setVariable ["LBHandler", _addCGHandler];
     };
 
     case ("factionSelected"):

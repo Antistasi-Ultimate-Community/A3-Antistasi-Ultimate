@@ -182,6 +182,28 @@ class Params
         title = $STR_params_rebelFactionStartingMoney;
         values[] = {0,1000,2500,5000,10000};
         texts[] = {"0","1000","2500","5000","10000"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 2500;
+                medium = 1000;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 5000;
+                medium = 2500;
+                hard = 1000;
+            };
+            class large
+            {
+                easy = 10000;
+                medium = 5000;
+                hard = 1000;
+            };
+        };
         default = 1000;
         lockOnSave = 1;
     };

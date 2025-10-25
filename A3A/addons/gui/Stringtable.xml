@@ -3175,15 +3175,15 @@
         </Container>
         <Container name="setup_dialog">
             <Key ID="STR_antistasi_dialogs_setup_titlebar">
-                <Original>ANTISTASI Ultimate SETUP</Original>
-                <Czech>NASTAVENÍ ANTISTASI Ultimate</Czech>
-                <French>CONFIGURATION D'ANTISTASI Ultimate</French>
-                <Italian>CONFIGURAZIONE ANTISTASI Ultimate</Italian>
+                <Original>ANTISTASI ULTIMATE SETUP</Original>
+                <Czech>NASTAVENÍ ANTISTASI ULTIMATE</Czech>
+                <French>CONFIGURATION D'ANTISTASI ULTIMATE</French>
+                <Italian>CONFIGURAZIONE ANTISTASI ULTIMATE</Italian>
                 <Korean>안티스타시 플러스 설정</Korean>
-                <Russian>НАСТРОЙКА ANTISTASI Ultimate</Russian>
-                <Polish>KONFIGURACJA ANTYSTASI Ultimate</Polish>
-                <Portuguese>ANTISTASI Ultimate SETUP</Portuguese>
-                <Chinesesimp>ANTISTASI Ultimate设置</Chinesesimp>
+                <Russian>НАСТРОЙКА ANTISTASI ULTIMATE</Russian>
+                <Polish>KONFIGURACJA ANTYSTASI ULTIMATE</Polish>
+                <Portuguese>ANTISTASI ULTIMATE SETUP</Portuguese>
+                <Chinesesimp>ANTISTASI ULTIMATE设置</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_loadgame_tab_button">
                 <Original>Load Game</Original>
@@ -3272,6 +3272,36 @@
                 <Polish>Parametry przedłużacza</Polish>
                 <Portuguese>Parâmetros do extensor</Portuguese>
                 <Chinesesimp>扩展器参数</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_size">
+                <Original>Group</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_soloSize_label">
+                <Original>Solo</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_smallSize_label">
+                <Original>Small</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_medSize_label">
+                <Original>Medium</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_largeSize_label">
+                <Original>Large</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_diff">
+                <Original>Difficulty</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_easyDiff_label">
+                <Original>Easy</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_medDiff_label">
+                <Original>Medium</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_hardDiff_label">
+                <Original>Hard</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_cstm">
+                <Original>Custom</Original>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Development Parameters</Original>
@@ -3493,6 +3523,9 @@
                 <Portuguese>DLC</Portuguese>
                 <Chinesesimp>DLC</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_overrides">
+                <Original>Availability Overrides</Original>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_override_map_limits">
                 <Original>Override map limits</Original>
                 <Czech>Přepsat limity map</Czech>
@@ -3706,6 +3739,22 @@
                 <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
                 <French>Ce paramètre ne peut pas être modifié lorsque les déverrouillages sont désactivés globalement.</French>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets">
+                <Original>Parameter Presets</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_new_preset_name">
+                <Original>New preset name</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_save_preset">
+                <Original>Save Preset</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_delete_preset">
+                <Original>Delete Preset</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_rename_preset">
+                <Original>Rename Preset</Original>
+            </Key>
+
         </Container>
         <Container name="setup_dialog_table">
             <Key ID="STR_antistasi_setup_dialog_table_map">
