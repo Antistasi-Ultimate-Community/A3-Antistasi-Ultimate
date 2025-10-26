@@ -160,7 +160,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
 
                 // Game load options
-                class ParamsPresetsGroup : A3A_ControlsGroupNoScrollbars {
+                class GameOptionsGroup : A3A_ControlsGroupNoScrollbars {
                     x = 126 * GRID_W;
                     y = 4 * GRID_H;
                     w = 30 * GRID_W;
