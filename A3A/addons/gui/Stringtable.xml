@@ -3347,6 +3347,9 @@
                 <Portuguese>Começar jogo</Portuguese>
                 <Chinesesimp>开始游戏</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_load_game_options">
+                <Original>Game Options</Original>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_create_new_game">
                 <Original>Create new game</Original>
                 <Czech>Vytvořit novou hru</Czech>
