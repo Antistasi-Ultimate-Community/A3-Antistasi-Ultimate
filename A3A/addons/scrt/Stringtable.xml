@@ -5552,6 +5552,20 @@
                 <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
                 <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
             </Key>
+            <Key ID="STR_params_unconChanceEny">
+                <Original>Chance for downed enemy AI to become unconscious instead of killed after taking sufficient damage</Original>
+                <Russian>Вероятность того, что сбитый вражеский ИИ потеряет сознание, а не убьется после получения достаточного урона</Russian>
+                <Chinesesimp>被击倒的敌方 AI 在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
+                <Korean>쓰러진 적 AI가 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
+                <French>Chance pour l'IA ennemie abattue de devenir inconsciente au lieu d'être tuée après avoir subi suffisamment de dégâts.</French>
+            </Key>
+            <Key ID="STR_params_unconChanceReb">
+                <Original>Chance for downed rebels to become unconscious instead of killed after taking sufficient damage</Original>
+                <Russian>Шанс для сбитых повстанцев потерять сознание, а не погибнуть после получения достаточного урона.</Russian>
+                <Chinesesimp>被击倒的叛军在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
+                <Korean>쓰러진 반란군이 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
+                <French>Chance pour les rebelles abattus de perdre connaissance au lieu d'être tués après avoir subi suffisamment de dégâts</French>
+            </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
