@@ -30,8 +30,14 @@ if (_marker isEqualTo "") exitWith {};
 
 // Find all non-mortar statics within marker
 private _statics = staticsToSave inAreaArray _marker;
-_statics = _statics select { _x isKindOf "StaticWeapon" and !(_x isKindOf "StaticMortar") };           // may include bunkers. Don't bother with mortars yet
+_statics = _statics select {!(_x isKindOf "StaticMortar") and !(_x isKindOf "Air")};           // may include bunkers. Don't bother with mortars yet //why not bother with mortars?
 if (count _statics == 0) exitWith {};
+
+if (_target in UngaragedVehicles) then {
+    private _deleteVeh = UngaragedVehicles find _target;
+    UngaragedVehicles deleteAt _deleteVeh;
+    publicVariable "UngaragedVehicles";
+};
 
 // Find unlocked & unoccupied statics
 private _freeStatics = _statics select {
@@ -62,20 +68,82 @@ private _staticGroup = grpNull;
 if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
 
 {
-    if (count _possibleCrew == 0) exitWith {};
-    private _unit = _possibleCrew deleteAt 0;
-    [_unit] joinSilent _staticGroup;
-    [_x, clientOwner] remoteExec ["setOwner", 2];                      // otherwise unit tends to jump back off for some reason
-    [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];            // required because joinSilent won't switch locality if the group is empty
+    private _veh = _x;
+    private _assignedUnits = [];
+    
+    // 1. Get all possible positions
+    private _allTurrets = allTurrets _veh;
+    private _positions = [];
+    
+    // 2. Check main positions
+    if (isNull gunner _veh) then {
+        _positions pushBack ["Gunner", [-1]];
+    };
+    
+    if ((_veh emptyPositions "Commander") > 0 && isNull commander _veh) then {
+        _positions pushBack ["Commander", [-1]];
+    };
+    
+    // 3. Add turrets
+    {
+        if (isNull (_veh turretUnit _x)) then {
+            _positions pushBack ["Turret", _x];
+        };
+    } forEach _allTurrets;
 
-    // Wait until the unit is local before we do anything else
-    [_unit, _x] spawn {
-        params ["_unit", "_static"];
-        private _timeout = time + 10;
-        waitUntil { sleep 1; _timeout < time or (local _unit and local _static) };
-        if (isNull objectParent _unit and isNull gunner _static and isNull objectParent _static and isNull attachedTo _static) then {
-            _unit assignAsGunner _static;
-            _unit moveInGunner _static;
+    // 4. Assign units
+    {
+        if (count _possibleCrew == 0) exitWith {};
+        private _unit = _possibleCrew deleteAt 0;
+        _assignedUnits pushBack _unit;
+        
+        switch (_x#0) do {
+            case "Gunner": {
+                _unit assignAsGunner _veh;
+                _unit moveInGunner _veh;
+            };
+            case "Commander": {
+                _unit assignAsCommander _veh;
+                _unit moveInCommander _veh;
+            };
+            case "Turret": {
+                if !(_x#1 isEqualTo [-1]) then {
+                    _unit assignAsTurret [_veh, _x#1];
+                    _unit moveInTurret [_veh, _x#1];
+                };
+            };
+        };
+    } forEach _positions;
+
+    // 5. Fix lost assignments
+    if (count _assignedUnits > 0) then {
+        [_assignedUnits] joinSilent _staticGroup;
+        [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];
+        
+        // Double check after 1 second
+        [_veh, _assignedUnits] spawn {
+            params ["_veh", "_units"];
+            sleep 1;
+            {
+                if (isNull objectParent _x) then {
+                    switch (assignedVehicleRole _x) do {
+                        case ["Gunner"]: { _x moveInGunner _veh };
+                        case ["Commander"]: { _x moveInCommander _veh };
+                        case ["Turret"]: { 
+                            private _path = _x call BIS_fnc_turretPath;
+                            if !(_path isEqualTo []) then {
+                                _x moveInTurret [_veh, _path];
+                            };
+                        };
+                    };
+                };
+            } forEach _units;
         };
     };
+    
+    _veh setVehicleRadar 1;
+    
 } forEach _freeStatics;
+
+_staticGroup setBehaviour "AWARE";
+_staticGroup setCombatMode "YELLOW";

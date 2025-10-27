@@ -397,7 +397,7 @@ if (_varName in specialVarLoads) then {
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
                     switch true do {
-                        case (_veh isKindOf "StaticWeapon"): {
+                        case (_veh isKindOf "StaticWeapon" || {_veh isKindOf "LandVehicle" || {_veh isKindOf "Ship"}}): {
                             staticsToSave pushBack _veh;
                         };
 
