@@ -24,4 +24,7 @@ if (_delete) then {
 _namespace setVariable ["antistasiUltimateCustomParamPresets", _customPresets];
 
 //[localize "STR_A3A_save_persisent_save",_saveHintText] remoteExecCall ["A3A_fnc_customHint",0,false];
+
+if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
+
 Info("Params preset save completed");
