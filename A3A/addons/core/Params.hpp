@@ -727,6 +727,7 @@ class Params
     class unconChanceEny : ExperimentalParams
     {
         title = $STR_params_unconChanceEny;
+        tooltip = $STR_params_unconChanceEny_desc;
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         default = 10;
@@ -734,6 +735,7 @@ class Params
     class unconChanceReb : ExperimentalParams
     {
         title = $STR_params_unconChanceReb;
+        tooltip = $STR_params_unconChanceReb_desc;
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         default = 10;
