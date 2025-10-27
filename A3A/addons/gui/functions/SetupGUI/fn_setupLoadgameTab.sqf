@@ -96,7 +96,7 @@ switch (_mode) do
         if (_factions isNotEqualTo (_display getVariable "savedFactions")) then {
             _display setVariable ["savedFactions", _factions];
             ["fillFactions"] call A3A_fnc_setupFactionsTab;
-            ["fillContent"] call A3A_fnc_setupContentTab;
+            ["fillContent"] call A3A_fnc_setupFactionsTab;
         };
 
         // If it's not a new game or load params or copy game is checked, load params
@@ -212,7 +212,7 @@ switch (_mode) do
 
         // Factions tab: [factions, addonvics, DLC]
         private _factions = ["getFactions"] call A3A_fnc_setupFactionsTab;
-        private _contentData = ["getContent"] call A3A_fnc_setupContentTab;
+        private _contentData = ["getContent"] call A3A_fnc_setupFactionsTab;
         _saveData set ["factions", _factions];
         _saveData set ["addonVics", _contentData#0];
         _saveData set ["DLC", _contentData#1];

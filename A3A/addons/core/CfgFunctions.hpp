@@ -593,6 +593,7 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
@@ -606,6 +607,7 @@ class CfgFunctions
             class savePlayerStat {};
             class setStatVariable {};
             class saveLoop {};
+            class saveParamPreset {};
             class writebackSaveVar {};
         };
 
