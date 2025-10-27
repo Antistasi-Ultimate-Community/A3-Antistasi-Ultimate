@@ -5553,6 +5553,13 @@
                 <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
             </Key>
             <Key ID="STR_params_unconChanceEny">
+                <Original>Enemy AI unconscious chance</Original>
+                <Russian>Неосознанный шанс вражеского ИИ</Russian>
+                <Chinesesimp>敌方AI无意识几率</Chinesesimp>
+                <Korean>적 AI 무의식 확률</Korean>
+                <French>Chance inconsciente de l'IA ennemie</French>
+            </Key>
+            <Key ID="STR_params_unconChanceEny_desc">
                 <Original>Chance for downed enemy AI to become unconscious instead of killed after taking sufficient damage</Original>
                 <Russian>Вероятность того, что сбитый вражеский ИИ потеряет сознание, а не убьется после получения достаточного урона</Russian>
                 <Chinesesimp>被击倒的敌方 AI 在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
@@ -5560,6 +5567,13 @@
                 <French>Chance pour l'IA ennemie abattue de devenir inconsciente au lieu d'être tuée après avoir subi suffisamment de dégâts.</French>
             </Key>
             <Key ID="STR_params_unconChanceReb">
+                <Original>Rebel AI unconscious chance</Original>
+                <Russian>Бессознательный шанс ИИ повстанцев</Russian>
+                <Chinesesimp>叛军AI无意识几率</Chinesesimp>
+                <Korean>반란군 AI 무의식 확률</Korean>
+                <French>Hasard inconscient de l'IA rebelle</French>
+            </Key>
+            <Key ID="STR_params_unconChanceReb_desc">
                 <Original>Chance for downed rebels to become unconscious instead of killed after taking sufficient damage</Original>
                 <Russian>Шанс для сбитых повстанцев потерять сознание, а не погибнуть после получения достаточного урона.</Russian>
                 <Chinesesimp>被击倒的叛军在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
