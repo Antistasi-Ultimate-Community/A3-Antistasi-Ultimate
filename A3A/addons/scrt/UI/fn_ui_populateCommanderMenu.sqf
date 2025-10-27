@@ -80,46 +80,68 @@ supportType = "SMOKE";
 outpostType = "WATCHPOST";
 minefieldType = "APERSMine";
 
-//Support Combobox 
+//Support Combobox
+lbAdd [1750, localize "STR_commander_menu_scg_title"];
+lbSetData [1750, 0, "SUPPLY_GROUND"];
+lbSetTooltip [1750, 0, localize "STR_commander_menu_scg_tooltip"];
+
 lbAdd [1750, localize "STR_commander_menu_smoke_barrage_title"];
-lbSetData [1750, 0, "SMOKE"];
-lbSetTooltip [1750, 0, localize "STR_commander_menu_smoke_barrage_tooltip"];
+lbSetData [1750, 1, "SMOKE"];
+lbSetTooltip [1750, 1, localize "STR_commander_menu_smoke_barrage_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_flare_barrage_title"];
-lbSetData [1750, 1, "FLARE"];
-lbSetTooltip [1750, 1, localize "STR_commander_menu_flare_barrage_tooltip"];
+lbSetData [1750, 2, "FLARE"];
+lbSetTooltip [1750, 2, localize "STR_commander_menu_flare_barrage_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_lva_title"];
-lbSetData [1750, 2, "VEH_AIRDROP"];
-lbSetTooltip [1750, 2, localize "STR_commander_menu_lva_tooltip"];
+lbSetData [1750, 3, "VEH_AIRDROP"];
+lbSetTooltip [1750, 3, localize "STR_commander_menu_lva_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_rpr_title"];
-lbSetData [1750, 3, "RECON"];
-lbSetTooltip [1750, 3, localize "STR_commander_menu_rpr_tooltip"];
+lbSetData [1750, 4, "RECON"];
+lbSetTooltip [1750, 4, localize "STR_commander_menu_rpr_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_sca_title"];
-lbSetData [1750, 4, "SUPPLY"];
-lbSetTooltip [1750, 4, localize "STR_commander_menu_sca_tooltip"];
+lbSetData [1750, 5, "SUPPLY"];
+lbSetTooltip [1750, 5, localize "STR_commander_menu_sca_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_hba_title"];
-lbSetData [1750, 5, "HE"];
-lbSetTooltip [1750, 5, localize "STR_commander_menu_hba_tooltip"];
+lbSetData [1750, 6, "HE"];
+lbSetTooltip [1750, 6, localize "STR_commander_menu_hba_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_cba_title"];
-lbSetData [1750, 6, "CLUSTER"];
-lbSetTooltip [1750, 6, localize "STR_commander_menu_cba_tooltip"];
+lbSetData [1750, 7, "CLUSTER"];
+lbSetTooltip [1750, 7, localize "STR_commander_menu_cba_tooltip"];
 
 lbAdd [1750, localize "STR_commander_menu_chemba_title"];
-lbSetData [1750, 7, "CHEMICAL"];
-lbSetTooltip [1750, 7, localize "STR_commander_menu_chemba_tooltip"];
+lbSetData [1750, 8, "CHEMICAL"];
+lbSetTooltip [1750, 8, localize "STR_commander_menu_chemba_tooltip"];
 
 private _hasVn = "VN" isEqualTo ((A3A_Reb_template splitString "_") select 0);
 
 if (napalmEnabled) then { 
 	lbAdd [1750, localize "STR_commander_menu_na_title"];
-	lbSetData [1750, 8, "NAPALM"];
-	lbSetTooltip [1750, 8, localize "STR_commander_menu_na_tooltip"];
+	lbSetData [1750, 9, "NAPALM"];
+	lbSetTooltip [1750, 9, localize "STR_commander_menu_na_tooltip"];
 
+	if (!_hasVn) then {
+		lbAdd [1750, localize "STR_commander_menu_paradrop_title"];
+		lbSetData [1750, 10, "PARADROP"];
+		lbSetTooltip [1750, 10, localize "STR_commander_menu_paradrop_tooltip"];
+		 
+		if (lootCratesEnabled) then {
+			lbAdd [1750, localize "STR_commander_menu_loot_heli_title"];
+			lbSetData [1750, 11, "LOOTHELI"];
+			lbSetTooltip [1750, 11, localize "STR_commander_menu_loot_heli_tooltip"];
+		};
+	} else {
+		if (lootCratesEnabled) then {
+			lbAdd [1750, localize "STR_commander_menu_loot_heli_title"];
+			lbSetData [1750, 10, "LOOTHELI"];
+			lbSetTooltip [1750, 10, localize "STR_commander_menu_loot_heli_tooltip"];
+		};
+	};
+} else {
 	if (!_hasVn) then {
 		lbAdd [1750, localize "STR_commander_menu_paradrop_title"];
 		lbSetData [1750, 9, "PARADROP"];
@@ -135,24 +157,6 @@ if (napalmEnabled) then {
 			lbAdd [1750, localize "STR_commander_menu_loot_heli_title"];
 			lbSetData [1750, 9, "LOOTHELI"];
 			lbSetTooltip [1750, 9, localize "STR_commander_menu_loot_heli_tooltip"];
-		};
-	};
-} else {
-	if (!_hasVn) then {
-		lbAdd [1750, localize "STR_commander_menu_paradrop_title"];
-		lbSetData [1750, 8, "PARADROP"];
-		lbSetTooltip [1750, 8, localize "STR_commander_menu_paradrop_tooltip"];
-		 
-		if (lootCratesEnabled) then {
-			lbAdd [1750, localize "STR_commander_menu_loot_heli_title"];
-			lbSetData [1750, 9, "LOOTHELI"];
-			lbSetTooltip [1750, 9, localize "STR_commander_menu_loot_heli_tooltip"];
-		};
-	} else {
-		if (lootCratesEnabled) then {
-			lbAdd [1750, localize "STR_commander_menu_loot_heli_title"];
-			lbSetData [1750, 8, "LOOTHELI"];
-			lbSetTooltip [1750, 98, localize "STR_commander_menu_loot_heli_tooltip"];
 		};
 	};
 };
@@ -210,7 +214,7 @@ private _gameInfoText = format [
 	worldName,
     QUOTE(VERSION_FULL),
     minWeaps,
-    [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select limitedFT,
+    (getArray (configFile >> "A3A" >> "Params" >> "limitedFT" >> "texts")) select limitedFT,
     [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select areRivalsEnabled,
 	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];

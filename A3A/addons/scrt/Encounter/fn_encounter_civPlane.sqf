@@ -25,9 +25,8 @@ if (_lowCiv || _civNonHuman) exitWith {
 
 private _civPlane = (A3A_faction_civ getOrDefault ["vehiclesCivPlanes", []]);
 if (_civPlane isEqualTo []) exitWith {
-    Error("No civ plane found, aborting.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+    Error("No civ plane found, rerolling.");
+    [CIV_PLANE] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
 private _originPosition = position _player;
@@ -37,7 +36,7 @@ Info_2("%1 will be used as center of the event at %2 position.", name _player, s
 private _finPosition = [_originPosition, 3500, (random 360)] call BIS_fnc_relPos;
 
 private _spawnPosition = [_originPosition, 2400, 2600, 0, 0, 1] call BIS_fnc_findSafePos;
-private _civPlaneData = [[(_spawnPosition select 0), (_spawnPosition select 1), 100 + random 200], 0, selectRandom (A3A_faction_civ get "vehiclesCivPlanes"), civilian] call A3A_fnc_spawnVehicle;
+private _civPlaneData = [[(_spawnPosition select 0), (_spawnPosition select 1), 100 + random 200], 0, selectRandomWeighted (FactionGetTieredFT(A3A_faction_civ, "vehiclesCivPlanes", 0)), civilian] call A3A_fnc_spawnVehicle;
 private _planeVeh = _civPlaneData select 0;
 [_planeVeh, civilian] call A3A_fnc_AIVEHinit;
 private _planeCrew = _civPlaneData select 1;
@@ -48,7 +47,7 @@ private _planeGroup = _civPlaneData select 2;
 _groups pushBack _planeGroup;
 _vehicles pushBack _planeVeh;
 
-private _height = 550 + (random 150);
+private _height = 100 + (random 150);
 _planeVeh flyInHeight _height;
 _planeVeh setPosATL (_spawnPosition vectorAdd [0, 0, _height]);
 _planeVeh setDir ([_planeVeh, _originPosition] call BIS_fnc_dirTo);

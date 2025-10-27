@@ -32,7 +32,7 @@ _heli flyInHeight 120;
 
 sleep 2;
 private _lootCratePosition = (getPos _heli) vectorAdd [0, 0, -4];
-private _lootCrate = createVehicle [A3A_faction_occ get "ammobox", _lootCratePosition, [], 0, "NONE"];
+private _lootCrate = createVehicle [FactionGet(occ, "surrenderCrate"), _lootCratePosition, [], 0, "NONE"];
 _lootCrate allowDamage false;
 clearBackpackCargoGlobal _lootCrate;
 clearItemCargoGlobal _lootCrate;

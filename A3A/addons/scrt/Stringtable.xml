@@ -546,6 +546,18 @@
                 <Korean>미 육군.\n공격적이고 압도적인 힘.\n이 팩션을 사용하면 냉전 모드가 활성화됩니다(해당 시간대와 대략 맞는 차량과 무기만 사용됩니다).</Korean>
                 <French>United States Army.\nForce agressive et écrasante.\nL'utilisation de cette faction activera le mode Guerre froide (il n'y aura que l'utilisation de véhicules et d'armes qui correspondent à peu près à la chronologie).</French>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_RAV">
+                <Original>A relatively small military force composed of mercenaries from Russian territory. Their main mission is to defend cargo ships from FIA attacks, but according to some AAN investigations, the Altian government commissioned them for other reasons that are not yet clear. The Raven group has several armored and non-armored vehicles,static defensive weapons and a small air force consisting of helicopters and drones.</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_FIA">
+                <Original>From simple street criminals to arms smugglers, the FIA ​​is characterized by its ability to gather under its influence all those who do not support the military government. Although composed mainly of civilians and some AAF deserters, this paramilitary force can rely on foreign-funded weapons and rudimentary and captured enemy vehicles.</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_AAF">
+                <Original>After the coup, the AAF underwent several changes and received several funds for equipment modernization, with particular attention also to the navy which is responsible for cutting the FIA ​​supply lines. Thanks to Akhanteros, the AAF can count on various vehicles and weapons (some of their own production under license).</Original>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_TFAegis">
+                <Original>Aegis is a task force composed of US military personnel; their goal is to support the government in the fight against the FIA ​​and to protect the civilian population. The TFA has several light armored vehicles and a small air force, their intervention in the conflict is limited by the Altian government.</Original>
+            </Key>
         </Container>
         <Container name="magRepack">
             <Key ID="STR_magRepack_init">
@@ -2102,6 +2114,13 @@
                 <Chinesesimp>补给转运（结束点）</Chinesesimp>
                 <Korean>보급 실행 퇴출 지점</Korean>
                 <French>Fin de l'approvisionnement</French>
+            </Key>
+            <Key ID="STR_support_supply_run_ground">
+                <Original>Ground Resupply Point</Original>
+                <Russian>Пункт наземного снабжения</Russian>
+                <Chinesesimp>地面补给点</Chinesesimp>
+                <Korean>지상 보급 지점</Korean>
+                <French>Point de ravitaillement terrestre</French>
             </Key>
             <Key ID="STR_support_barrage">
                 <Original>Barrage</Original>
@@ -5033,6 +5052,13 @@
                 <French>Autoriser les explosifs déverrouillés</French>
                 <Chinesesimp>允许解锁爆炸物</Chinesesimp>
             </Key>
+            <Key ID="STR_params_allowUnlockedTNVG">
+                <Original>Allow TNVGs/ENVGs to become unlocked</Original>
+                <Russian>Разрешить разблокировку TNVGs/ENVGs</Russian>
+                <Korean>TNVGs/ENVGs 잠금 해제 허용</Korean>
+                <French>Autoriser le déverrouillage des TNVGs/ENVGs</French>
+                <Chinesesimp>允许解锁TNVGs/ENVGs</Chinesesimp>
+              </Key>
             <Key ID="STR_params_startWithLongRangeRadio">
                 <Original>[TFAR] Start with Long Range Radio</Original>
                 <Russian>[TFAR] Начинать с рюкзаков ДВ-радиосвязи </Russian>
@@ -5513,11 +5539,18 @@
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
-                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
-                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
-                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
-                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
-                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+                <Original>Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
+                <Russian>Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
+                <Chinesesimp>每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
+                <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
+                <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
+            </Key>
+            <Key ID="STR_params_limitWeaponsByUnitType">
+                <Original>Limit AI custom loadout weapon selections by unit type</Original>
+                <Russian>Ограничение выбора пользовательского оружия ИИ по типу юнитов</Russian>
+                <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
+                <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
+                <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
@@ -5665,6 +5698,20 @@
                 <Korean>상자의 장비 가방 최대 수량</Korean>
                 <French>Quantité maximale de sacs à dos dans les caisses</French>
             </Key>
+            <Key ID="STR_params_rebelGarrisonGroupSize">
+                <Original>How many rebels can be in one garrison group?</Original>
+                <Russian>Сколько повстанцев может одной группе гарнизона?</Russian>
+                <Chinesesimp>每个驻军小组中的反抗军人数</Chinesesimp>
+                <Korean>한 개 주둔군 그룹에 몇 명의 반군이 포함될 수 있습니까?</Korean>
+                <French>Combien de rebelles peuvent être dans un groupe de garnison ?</French>
+            </Key>
+            <Key ID="STR_params_rebelGarrisonGroupSize_desc">
+                <Original>How many rebels can be in one garrison group? Total amount of garrison soldiers will be divided by this number and spread into groups.</Original>
+                <Russian>Настраивает количество повстанцев которые могут быть в одной группе гарнизона. Общее количество солдат в гарнизоне будет разделено на это число и солдаты будут распределены на группы.</Russian>
+                <Chinesesimp>设置每个驻军小组中可包含的反抗军人数。总驻军人数将按此数值分配至各小组。</Chinesesimp>
+                <Korean>한 개 주둔군 그룹에 포함될 수 있는 반군 인원을 설정합니다. 총 주둔군 병력 수를 이 수치로 나누어 각 그룹에 배분됩니다.</Korean>
+                <French>Définit le nombre de rebelles pouvant être dans un groupe de garnison. Le nombre total de soldats de la garnison sera divisé par ce nombre et réparti en groupes.</French>
+            </Key>
             <Key ID="STR_params_rebelGarrisonLimit">
                 <Original>How many rebels can be garrisoned (1.5x for airports and milbases, 0.5x for resources and factories)?</Original>
                 <Russian>Сколько повстанцев может в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов)?</Russian>
@@ -5673,8 +5720,8 @@
                 <French>Combien de rebelles peuvent être mis en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines) ?</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit_desc">
-                <Original>How many rebel troops can be in garrison. Note that No limit option may affect performance as there might be too many troops for CPU to handle.</Original>
-                <Russian>Настраивает максимальное количество солдат-повстанцев, которое может быть в гарнизоне. Опция "No Limit" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
+                <Original>How many rebel troops can be in garrison. Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
+                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне. Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
                 <Chinesesimp>有多少反抗军可以驻守。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
                 <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
                 <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
@@ -5817,6 +5864,13 @@
                 <Chinesesimp>允许客人在没有成员符合条件时成为指挥官</Chinesesimp>
                 <Korean>자격이 있는 멤버가 없을 때 게스트가 지휘관이 될 수 있도록 허용</Korean>
                 <French>Permettre aux invités de devenir commandant lorsqu'aucun membre n'est éligible</French>
+            </Key>
+            <Key ID="STR_params_helipadTerrainSmoothing">
+                <Original>Enable helipad terrain smoothing</Original>
+                <Russian>Включить сглаживание рельефа под вертолетные площадки</Russian>
+                <Chinesesimp>启用直升机停机坪地形平滑处理</Chinesesimp>
+                <Korean>헬리패드 지형 평활화 활성화</Korean>
+                <French>Activer le lissage du terrain des hélipads</French>
             </Key>
             <Key ID="STR_params_memberSlots">
                 <Original>Percentage of Reserved Slots for Members</Original>
@@ -6065,6 +6119,118 @@
                 <Chinesesimp>真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
                 <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
                 <French>Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
+            </Key>
+            <Key ID="STR_params_scenarioParams">
+                <Original>SCENARIO OPTIONS</Original>
+                <Russian>ВАРИАНТЫ СЦЕНАРИЕВ</Russian>
+                <Chinesesimp>方案选项</Chinesesimp>
+                <Korean>시나리오 옵션</Korean>
+                <French>OPTIONS DE SCÉNARIO</French>
+            </Key>
+            <Key ID="STR_params_scriptParams">
+                <Original>BUNDLED SCRIPT OPTIONS</Original>
+                <Russian>ОПЦИИ ВСТРОЕННЫХ СКРИПТОВ</Russian>
+                <Chinesesimp>捆绑脚本选项</Chinesesimp>
+                <Korean>번들 스크립트 옵션</Korean>
+                <French>OPTIONS DE SCRIPT GROUPÉES</French>
+            </Key>
+            <Key ID="STR_params_timerParams">
+                <Original>TIMER OPTIONS</Original>
+                <Russian>ВАРИАНТЫ ТАЙМЕРА</Russian>
+                <Chinesesimp>定时器选项</Chinesesimp>
+                <Korean>타이머 옵션</Korean>
+                <French>OPTIONS DE MINUTERIE</French>
+            </Key>
+            <Key ID="STR_params_rebelBalanceParams">
+                <Original>REBEL BALANCE OPTIONS</Original>
+                <Russian>ВАРИАНТЫ БАЛАНСА ПОВСТАНЦЕВ</Russian>
+                <Chinesesimp>REBEL 余额选项</Chinesesimp>
+                <Korean>반란군 밸런스 옵션</Korean>
+                <French>OPTIONS D'ÉQUILIBRAGE REBEL</French>
+            </Key>
+            <Key ID="STR_params_aiBalanceParams">
+                <Original>AI BALANCE OPTIONS</Original>
+                <Russian>ВАРИАНТЫ БАЛАНСА ИИ</Russian>
+                <Chinesesimp>AI 余额选项</Chinesesimp>
+                <Korean>AI 밸런스 옵션</Korean>
+                <French>OPTIONS D'ÉQUILIBRAGE DE L'IA</French>
+            </Key>
+            <Key ID="STR_params_miscBalanceParams">
+                <Original>MISC BALANCE OPTIONS</Original>
+                <Russian>РАЗЛИЧНЫЕ ВАРИАНТЫ БАЛАНСА</Russian>
+                <Chinesesimp>杂项平衡选项</Chinesesimp>
+                <Korean>기타 균형 옵션</Korean>
+                <French>OPTIONS DE SOLDE DIVERSES</French>
+            </Key>
+            <Key ID="STR_params_unlockParams">
+                <Original>LOOT UNLOCK OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗБЛОКИРОВКИ ДОБЫЧИ</Russian>
+                <Chinesesimp>战利品解锁选项</Chinesesimp>
+                <Korean>전리품 잠금 해제 옵션</Korean>
+                <French>OPTIONS DE DÉBLOCAGE DU BUTIN</French>
+            </Key>
+            <Key ID="STR_params_crateParams">
+                <Original>LOOT CRATE OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗБЛОКИРОВКИ ДОБЫЧИ</Russian>
+                <Chinesesimp>战利品箱选项</Chinesesimp>
+                <Korean>전리품 상자 옵션</Korean>
+                <French>OPTIONS DE CAISSE À BUTIN</French>
+            </Key>
+            <Key ID="STR_params_vehicleLootParams">
+                <Original>VEHICLE LOOT OPTIONS</Original>
+                <Russian>ВАРИАНТЫ ДОБЫЧИ ТРАНСПОРТНЫХ СРЕДСТВ</Russian>
+                <Chinesesimp>车辆战利品选项</Chinesesimp>
+                <Korean>전차 전리품 옵션</Korean>
+                <French>OPTIONS DE BUTIN DE VÉHICULE</French>
+            </Key>
+            <Key ID="STR_params_miscLootParams">
+                <Original>MISC LOOT OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗНОЙ ДОБЫЧИ</Russian>
+                <Chinesesimp>杂项战利品选项</Chinesesimp>
+                <Korean>기타 전리품 옵션</Korean>
+                <French>DIVERSES OPTIONS DE BUTIN</French>
+            </Key>
+            <Key ID="STR_params_ai">
+                <Original>AI OPTIONS</Original>
+                <Russian>ОПЦИИ ИИ</Russian>
+                <Chinesesimp>人工智能选项</Chinesesimp>
+                <Korean>AI 옵션</Korean>
+                <French>OPTIONS D'IA</French>
+            </Key>
+            <Key ID="STR_params_blackmarket">
+                <Original>BLACK MARKET OPTIONS</Original>
+                <Russian>ВАРИАНТЫ ЧЕРНОГО РЫНКА</Russian>
+                <Chinesesimp>黑市期权</Chinesesimp>
+                <Korean>암시장 옵션</Korean>
+                <French>OPTIONS DU MARCHÉ NOIR</French>
+            </Key>
+            <Key ID="STR_params_member">
+                <Original>MEMBER OPTIONS</Original>
+                <Russian>ВАРИАНТЫ УЧАСТНИКОВ</Russian>
+                <Chinesesimp>会员选项</Chinesesimp>
+                <Korean>회원 옵션</Korean>
+                <French>OPTIONS POUR LES MEMBRES</French>
+            </Key>
+            <Key ID="STR_params_extender">
+                <Original>EXTENDER OPTIONS</Original>
+                <Russian>ОПЦИИ УДЛИНИТЕЛЯ</Russian>
+                <Chinesesimp>扩展器选项</Chinesesimp>
+                <Korean>익스텐더 옵션</Korean>
+                <French>OPTIONS DE RALLONGE</French>
+            </Key>
+            <Key ID="STR_params_experimental">
+                <Original>EXPERIMENTAL OPTIONS</Original>
+                <Russian>ЭКСПЕРИМЕНТАЛЬНЫЕ ВАРИАНТЫ</Russian>
+                <Chinesesimp>实验选项</Chinesesimp>
+                <Korean>实验选项</Korean>
+                <French>OPTIONS EXPÉRIMENTALES</French>
+            </Key>
+            <Key ID="STR_params_development">
+                <Original>DEVELOPMENT OPTIONS</Original>
+                <Russian>ВАРИАНТЫ РАЗВИТИЯ</Russian>
+                <Chinesesimp>开发选项</Chinesesimp>
+                <Korean>개발 옵션</Korean>
+                <French>OPTIONS DE DÉVELOPPEMENT</French>
             </Key>
         </Container>
         <Container name="roles">
@@ -7575,6 +7741,20 @@
                 <Korean>비행기가 상공을 비행해서 보급상자를 지정한 위치로 떨어뜨립니다.</Korean>
                 <French>L'avion survole et largue une caisse contenant des munitions et des fournitures médicales à la position spécifiée.</French>
             </Key>
+            <Key ID="STR_commander_menu_scg_title">
+                <Original>Ground Resupply</Original>
+                <Russian>Наземное снабжение</Russian>
+                <Chinesesimp>地面补给</Chinesesimp>
+                <Korean>지상 보급</Korean>
+                <French>Ravitaillement terrestre</French>
+            </Key>
+            <Key ID="STR_commander_menu_scg_tooltip">
+                <Original>A truck brings a crate with ammunition and medical supplies to the specified position.</Original>
+                <Russian>Грузовик доставляет ящик с боеприпасами и медицинскими принадлежностями в указанную позицию.</Russian>
+                <Chinesesimp>卡车将装有弹药和医疗用品的板条箱运送到指定位置。</Chinesesimp>
+                <Korean>트럭이 탄약 및 의료 물품이 든 상자를 지정된 위치로 운반합니다.</Korean>
+                <French>Un camion apporte une caisse de munitions et de fournitures médicales à la position spécifiée.</French>
+            </Key>
             <Key ID="STR_commander_menu_hba_title">
                 <Original>HE Bomb Airstrike</Original>
                 <Russian>Авиаудар фугасными бомбами</Russian>
@@ -7974,6 +8154,20 @@
                 <French>Cette option permet de sauvegarder le jeu en cours. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
                 <Chinesesimp>使用此选项可保存当前游戏。它确实以“侠盗猎车手”的方式保存了最重要的数据。</Chinesesimp>
             </Key>
+            <Key ID="STR_commander_menu_edit_params_button">
+                <Original>EDIT SAVE PARAMETERS</Original>
+                <Russian>РЕДАКТИРОВАНИЕ ПАРАМЕТРОВ СОХРАНЕНИЯ</Russian>
+                <Chinesesimp>编辑保存参数</Chinesesimp>
+                <Korean>저장 매개변수 편집</Korean>
+                <French>MODIFIER LES PARAMÈTRES DE SAUVEGARDE</French>
+            </Key>
+            <Key ID="STR_commander_menu_edit_params_button_tooltip">
+                <Original>Use this option to edit your current game parameters. Note that not all parameters can be changed in game.</Original>
+                <Russian>Используйте эту опцию для редактирования текущих параметров игры. Обратите внимание, что не все параметры могут быть изменены в игре.</Russian>
+                <Korean>이 옵션을 사용하여 현재 게임 매개 변수를 편집합니다. 게임에서 모든 매개변수를 변경할 수 있는 것은 아닙니다.</Korean>
+                <French>Utilisez cette option pour modifier vos paramètres de jeu actuels. Notez que tous les paramètres ne peuvent pas être modifiés dans le jeu.</French>
+                <Chinesesimp>使用此选项可编辑您当前的游戏参数。请注意，并非所有参数都可以在游戏中更改。</Chinesesimp>
+            </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
@@ -8161,6 +8355,13 @@
                 <Chinesesimp>花费 %1 支援点和 %2%3</Chinesesimp>
                 <Korean>%1 지원 포인트와 %2%3를 소모합니다</Korean>
                 <French>Coûts %1 points de support et %2%3</French>
+            </Key>
+            <Key ID="STR_commander_menu_abilities_cost_support_point_hr_and_money">
+                <Original>Costs %1 HR, %2 support points and %2%3</Original>
+                <Russian>Стоимость: %1 ЧР, %2 очков поддержки и %3%4</Russian>
+                <Chinesesimp>消耗%1人力，%2支援点与%3%4</Chinesesimp>
+                <Korean>비용: %1 인력, %2 지원 점수 및 %3%4</Korean>
+                <French>Coûte %1 RH, %2 points de soutien et %3%4</French>
             </Key>
             <Key ID="STR_commander_menu_abilities_cost_airstrike">
                 <Original>Costs 1 Airstrike</Original>
@@ -8472,11 +8673,11 @@
                 <French>l'équipement a été sauvegardé</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_loadout_title">
-                <Original>Loadout Arsenal. Note that custom uniforms will be not applied and still be randomized on actual rebels. If headgear has no armor, it will also be randomized.</Original>
-                <Russian>Арсенал для снаряжения. Имейте ввиду, что униформа не будет применена и все равно будет рандомизирована. Кроме того, если на головном уборе нет брони, он также будет рандомизирован.</Russian>
-                <Chinesesimp>加载装备库。 请注意，定制制服将不会应用，并且仍然会随机分配给实际的抵抗军。 另外，如果头饰没有护甲，也会随机生成。</Chinesesimp>
-                <Korean>아스널에서 로드아웃을 지정합니다. 커스텀 유니폼은 적용되지 않으며 여전히 무작위로 결정됩니다. 또한 헤드기어에 방탄 능력이 없는 경우에도 무작위로 결정됩니다.</Korean>
-                <French>Equipement d'Arsenal. Notez que les uniformes personnalisés ne seront pas appliqués et seront toujours aléatoires sur les rebelles réels. De même, si le couvre-chef n'a pas d'armure, il sera également aléatoire.</French>
+                <Original>Loadout Arsenal</Original>
+                <Russian>Арсенал для снаряжения</Russian>
+                <Chinesesimp>装备军械库</Chinesesimp>
+                <Korean>아스널에서 로드아웃을 지정합니다</Korean>
+                <French>Equipement d'Arsenal</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_tooltip">
                 <Original>Sets loadout for future use by this infantry class.</Original>
@@ -8512,6 +8713,48 @@
                 <Chinesesimp>抵抗军装备</Chinesesimp>
                 <Korean>반군 로드아웃</Korean>
                 <French>Équipements des rebelles</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_load_caption">
+                <Original>Total load</Original>
+                <Russian>Общий вес</Russian>
+                <Chinesesimp>总重量</Chinesesimp>
+                <Korean>총 중량</Korean>
+                <French>Charge totale</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_fatal">
+                <Original>UNIT CARRYING TOO MUCH</Original>
+                <Russian>ЮНИТ ПЕРЕГРУЖЕН</Russian>
+                <Chinesesimp>单位负载过重</Chinesesimp>
+                <Korean>유닛이 너무 많은 짐을 지고 있습니다</Korean>
+                <French>UNITÉ SURCHARGÉE</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_overload_warning">
+                <Original>Almost overloaded</Original>
+                <Russian>Почти перегружено</Russian>
+                <Chinesesimp>几乎超载</Chinesesimp>
+                <Korean>거의 과적</Korean>
+                <French>Presque surchargé</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_uniform">
+                <Original>Uniform</Original>
+                <Russian>Униформа</Russian>
+                <Chinesesimp>制服</Chinesesimp>
+                <Korean>유니폼</Korean>
+                <French>Uniforme</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_vest">
+                <Original>Vest</Original>
+                <Russian>Жилет</Russian>
+                <Chinesesimp>背心</Chinesesimp>
+                <Korean>조끼</Korean>
+                <French>Gilet</French>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_backpack">
+                <Original>Backpack</Original>
+                <Russian>Рюкзак</Russian>
+                <Chinesesimp>背包</Chinesesimp>
+                <Korean>배낭</Korean>
+                <French>Sac à dos</French>
             </Key>
         </Container>
         <Container name="dialog_build_minefield">
@@ -8838,6 +9081,9 @@
                 <Chinesesimp>搜索完成，但你一无所获。</Chinesesimp>
                 <Korean>검색을 완료했지만 아무것도 찾지 못했습니다.</Korean>
                 <French>La recherche est terminée, mais vous n'avez rien trouvé.</French>
+            </Key>
+            <Key ID="STR_intel_search_failure_alternate_description">
+                <Original>You find nothing of significance but %1</Original>
             </Key>
         </Container>
         <Container name="intel">
@@ -9219,6 +9465,242 @@
                 <Chinesesimp>您找到了 %1 个解密密钥包！&lt;br/&gt;这将允许你的派系破译敌人的支援通信。</Chinesesimp>
                 <Korean>%1의 암호 해독 키 패키지를 찾았습니다!&lt;br/&gt;그것들은 당신의 팩션이 지원 요청을 해독할 수 있게 해줍니다.</Korean>
                 <French>Vous avez trouvé un paquet de %1 clés de décryptage!&lt;br/&gt;Cela permettra à votre faction de décrypter les appels de soutien.</French>
+            </Key>
+        </Container>
+        <Container name="intel_not_found_messages">
+            <!--
+                To indicate that there are translations for a specific language,
+                add their _exact_ locale string of "STR_antistasi_dialogs_generic_button_yes_text"
+                to this ID.
+
+                For example, once translations of `STR_antistasi_intel_not_found_XXX` are completed
+                for German, add
+
+                &lt;German&gt;Ja&lt;/German&gt;
+
+                to `STR_antistasi_intel_translated`.
+            -->
+            <Key ID="STR_antistasi_intel_translated">
+                <Original>Yes</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_000">
+                <Original>a wet noodle in the officers breast pocket.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_001">
+                <Original>a candy wrapper meticulously folded and stowed in the soldier's billfold.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_002">
+                <Original>a damp snotrag. You wish you hadn't checked that leg pocket.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_003">
+                <Original>the top-half of a DND character sheet for 'Dirk Man-Thrust'.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_004">
+                <Original>the exact coordinates for a big cache of weapons that was cleared out yesterday.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_005">
+                <Original>a hand-drawn picture of a tank with the words 'My Other Car' scrawled underneath.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_006">
+                <Original>a receipt for 47 tacos, all with 'extra onions.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_007">
+                <Original>a doodle of a dragon fighting what looks suspiciously like a refrigerator.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_008">
+                <Original>the lyrics to 'Never Gonna Give You Up,' handwritten line by line on a cocktail napkin.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_009">
+                <Original>a broken yo-yo with 'Top Secret' carved into the side.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_010">
+                <Original>someone's grocery list: 'bread, milk, tactical nuke, eggs.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_011">
+                <Original>a dog-eared romance novel, bookmarked at a very dramatic kiss.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_012">
+                <Original>a shoebox lid labeled 'evidence,' containing only lint.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_013">
+                <Original>a fake passport with the photo of a cat.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_014">
+                <Original>a sock. It is crunchy. Best not to ask.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_015">
+                <Original>a handwritten flowchart labeled 'Plan B: Panic.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_016">
+                <Original>a rock with googly eyes glued on.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_017">
+                <Original>a sketch of a tank wearing a cowboy hat.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_018">
+                <Original>a fortune cookie slip that reads: 'You will fail this mission.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_019">
+                <Original>a jar of pickles with one pickle missing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_020">
+                <Original>a crumpled napkin that says 'BRING MORE NAPKINS.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_021">
+                <Original>a bingo card with every square marked 'Free Space.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_022">
+                <Original>a tiny notebook filled entirely with the word 'butt.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_023">
+                <Original>a rubber chicken dressed in camouflage paint.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_024">
+                <Original>a doodle of stick figures labeled 'enemy forces.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_025">
+                <Original>a pile of receipts showing bulk orders of glitter.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_026">
+                <Original>a comic strip titled 'Sergeant Fartbeard' with only one panel.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_027">
+                <Original>a single shoelace tied in 37 knots.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_028">
+                <Original>a Sudoku filled entirely with the number 7.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_029">
+                <Original>a love letter addressed to 'My Dearest Microwave.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_030">
+                <Original>a crayon drawing of a stickman holding a bazooka.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_031">
+                <Original>a half-eaten granola bar in a classified envelope.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_032">
+                <Original>a cassette tape labeled 'Sounds of War' that is just whale songs.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_033">
+                <Original>a box of cereal with every toy prize missing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_034">
+                <Original>a crumpled napkin with 'Don't trust Yussuf' in three different handwritings.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_035">
+                <Original>a Polaroid of an empty room with the word 'soon' scrawled on it.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_036">
+                <Original>a to-do list: 1. Wake up. 2. Betray everyone. 3. Lunch.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_037">
+                <Original>a magazine clipping of a man flexing with the caption 'Inspiration.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_038">
+                <Original>a single glove filled with jelly.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_039">
+                <Original>a flash drive with the private key to the Antistasi Ultimate Github repo.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_040">
+                <Original>a flash drive containing only a 3-second recording of somebody coughing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_041">
+                <Original>a pamphlet titled 'How to Hide Evidence' with sections highlighted.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_042">
+                <Original>a coupon for 20% off a store that closed in 1998.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_043">
+                <Original>a paper airplane with 'TOP SECRET' stamped on the wing.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_044">
+                <Original>a children's menu colored entirely in red crayon.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_045">
+                <Original>a friendship bracelet made from shoelaces.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_046">
+                <Original>a detailed report on sandwich stores in the local area.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_047">
+                <Original>a single fortune cookie with no fortune inside.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_048">
+                <Original>a hairbrush missing every single bristle.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_049">
+                <Original>a scrap of paper: 'Remember to delete this note.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_050">
+                <Original>a harmonica with teeth marks in it.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_051">
+                <Original>a drawing of a cat wearing night-vision goggles.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_052">
+                <Original>a stick of gum, already chewed.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_053">
+                <Original>a recipe for 'explosive chili' with doodles in the margins.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_054">
+                <Original>a rusty spoon wrapped in velvet.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_055">
+                <Original>a Pokémon card bent into origami.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_056">
+                <Original>a tiny vial labeled 'Tears of A3U devs.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_057">
+                <Original>a business card: 'Todd, Assassin. Have gun, will travel.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_058">
+                <Original>a stapled stack of papers: every page is blank.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_059">
+                <Original>a fortune cookie slip: 'You should have stayed home today.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_060">
+                <Original>a peanut butter sandwich fossilized in wax paper.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_061">
+                <Original>a napkin sketch of a treasure map to 'The Bathroom.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_062">
+                <Original>a matchbook with only one match, damp and useless.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_063">
+                <Original>a seashell labeled 'Property of the Navy.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_064">
+                <Original>a half-used crossword with every answer being 'BUTT.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_065">
+                <Original>a list of names, all crossed out except 'Jeff???'.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_066">
+                <Original>a ball of yarn with a classified tag on it.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_067">
+                <Original>a rolled-up poster of a muscled guy holding a cat.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_068">
+                <Original>a note that says 'This is not important intel.'</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_069">
+                <Original>a ticket stub for 'Shrek 2' opening night.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_070">
+                <Original>a fake, 15 of clubs playing card.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_071">
+                <Original>a packet of ramen seasoning, no noodles.</Original>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_072">
+                <Original>a binder labeled 'Master Plan' with only page numbers inside.</Original>
             </Key>
         </Container>
         <Container name="tasks">
@@ -14442,6 +14924,22 @@
                 <Korean>건물 배치기를 취소합니다.</Korean>
                 <French>Annuler le placement du bâtiment.</French>
             </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerAlign_title">
+                <Original>Building Placer: Align</Original>
+                <German>Gebäudeplatzierung: Ausrichten</German>
+                <Russian>Строитель: Выравнивание</Russian>
+                <Chinesesimp>建筑放置器 - 对齐</Chinesesimp>
+                <Korean>건물 배치기 - 정렬</Korean>
+                <French>Constructeur: Aligner</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerAlign_desc">
+                <Original>Copy alignment of another building to current object.</Original>
+                <German>Die Ausrichtung eines anderen Gebäudes auf das aktuelle Objekt kopieren.</German>
+                <Russian>Скопировать выравнивание другого здания на текущее.</Russian>
+                <Chinesesimp>将另一个建筑物的对齐方式复制到当前对象。</Chinesesimp>
+                <Korean>다른 건물의 정렬을 현재 객체에 복사합니다.</Korean>
+                <French>Copier l'alignement d'un autre bâtiment sur l'objet actuel.</French>
+            </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerDelete_title">
                 <Original>Building Placer: Delete</Original>
                 <German>Gebäudeplatzierung: Löschen</German>
@@ -14521,6 +15019,38 @@
                 <Chinesesimp>顺时针旋转建筑物。</Chinesesimp>
                 <Korean>건물을 시계 방향으로 회전합니다.</Korean>
                 <French>Faire pivoter le bâtiment dans le sens des aiguilles d'une montre.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepDecrease_title">
+                <Original>Building Placer: Rotate Step Decrease</Original>
+                <German>Gebäudeplatzierung: Schrittweite verringern</German>
+                <Russian>Строитель: Уменьшить шаг вращения</Russian>
+                <Chinesesimp>建筑放置器 - 减少旋转步长</Chinesesimp>
+                <Korean>건물 배치기 - 회전 단계 감소</Korean>
+                <French>Constructeur: Diminuer le pas de rotation</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepDecrease_desc">
+                <Original>Decrease the rotation step.</Original>
+                <German>Die Schrittweite der Drehung verringern.</German>
+                <Russian>Уменьшить шаг вращения.</Russian>
+                <Chinesesimp>减少旋转步长。</Chinesesimp>
+                <Korean>회전 단계를 감소시킵니다.</Korean>
+                <French>Diminuer le pas de rotation.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepIncrease_title">
+                <Original>Building Placer: Rotate Step Increase</Original>
+                <German>Gebäudeplatzierung: Schrittweite erhöhen</German>
+                <Russian>Строитель: Увеличить шаг вращения</Russian>
+                <Chinesesimp>建筑放置器 - 增加旋转步长</Chinesesimp>
+                <Korean>건물 배치기 - 회전 단계 증가</Korean>
+                <French>Constructeur: Augmenter le pas de rotation</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepIncrease_desc">
+                <Original>Increase the rotation step.</Original>
+                <German>Die Schrittweite der Drehung erhöhen.</German>
+                <Russian>Увеличить шаг вращения.</Russian>
+                <Chinesesimp>增加旋转步长。</Chinesesimp>
+                <Korean>회전 단계를 증가시킵니다.</Korean>
+                <French>Augmenter le pas de rotation.</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerSnapToSurface_title">
                 <Original>Building Placer: Snap to surface</Original>

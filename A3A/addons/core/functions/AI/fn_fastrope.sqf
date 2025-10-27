@@ -5,7 +5,7 @@ params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
 
 private _vehType = typeOf _veh;
 
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
+if (_vehType in flatten (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport"))) then {
     _veh setVehicleRadar 1;
 };
 
@@ -16,15 +16,6 @@ private _yRef = 1;
 private _landpos = [];
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
-/* if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) then {}else{
-	{_x disableAI "TARGET"; _x disableAI "AUTOTARGET"} foreach units _heli;
-}; */
-
-/* while {true} do
-	{
- 	_landpos = _positionX getPos [_dist,random 360];
- 	if (!surfaceIsWater _landpos) exitWith {};
-	}; */
 _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
 _landpos set [2,0];
 {_x setBehaviour "CARELESS";} forEach units _heli;
@@ -109,7 +100,7 @@ private _driverturret = _helicopter weaponsTurret [0];
 private _gunnerturret = _helicopter weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
-if (_veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
+if (_veh in flatten (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"))) exitWith {
     [_veh, _heli, _positionX] spawn A3A_fnc_attackHeli;
 };
 

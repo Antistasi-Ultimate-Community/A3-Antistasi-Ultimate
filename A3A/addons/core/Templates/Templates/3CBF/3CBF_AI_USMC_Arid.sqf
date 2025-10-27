@@ -748,7 +748,7 @@ private _medicTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
+    ["carbines"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -839,7 +839,7 @@ private _engineerTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
+    ["carbines"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

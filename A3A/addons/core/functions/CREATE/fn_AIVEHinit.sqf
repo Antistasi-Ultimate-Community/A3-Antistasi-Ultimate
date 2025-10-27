@@ -55,7 +55,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 	// isn't this section basically supposed to be all ground vehicles?
 	if (_side == teamPlayer or _side == civilian) exitWith {};				// arguable
 
-	if (_typeX in FactionGet(all,"vehiclesArmor")) then { _veh call A3A_fnc_addActionBreachVehicle };
+	if (_typeX in flatten FactionGet(all,"vehiclesArmor")) then { _veh call A3A_fnc_addActionBreachVehicle };
 
 	switch (true) do {
 		case (_veh isKindOf "Car"): {
@@ -67,7 +67,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 			};
 		};
 
-		case (_typeX in FactionGet(all,"vehiclesAPCs") + FactionGet(all,"vehiclesIFVs") + FactionGet(all,"vehiclesLightAPCs")): {
+		case (_typeX in flatten (FactionGet(all,"vehiclesAPCs") + FactionGet(all,"vehiclesIFVs") + FactionGet(all,"vehiclesLightAPCs"))): {
 			_veh addEventHandler ["HandleDamage",{private _veh = _this select 0; if (!canFire _veh) then {[_veh] call A3A_fnc_smokeCoverAuto; _veh removeEventHandler ["HandleDamage",_thisEventHandler]};if (((_this select 1) find "wheel" != -1) and (_this select 4=="") and (!isPlayer driver (_veh))) then {0;} else {(_this select 2);}}];
 			_veh setVariable ["within",true];
 			_veh addEventHandler ["GetOut", {private _veh = _this select 0; if (side (_this select 2) != teamPlayer) then {if (_veh getVariable "within") then {_veh setVariable ["within",false];[_veh] call A3A_fnc_smokeCoverAuto}}}];
@@ -85,7 +85,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 			if (crew _veh isNotEqualTo []) then { deleteVehicleCrew _veh };
 			[_side, _veh] call A3A_fnc_createVehicleCrew;
 		};
-		case (_typeX in (FactionGet(all,"vehiclesFixedWing") + FactionGet(all,"vehiclesHelis"))): {
+		case (_typeX in flatten ((FactionGet(all,"vehiclesFixedWing") + FactionGet(all,"vehiclesHelis")))): {
 			_veh addEventHandler ["GetIn", {
 				if (_this select 1 != "driver") exitWith {};
 				_unit = _this select 2;
@@ -95,7 +95,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 				};
 			}];
 
-			if (_veh isKindOf "Helicopter" && {_typeX in FactionGet(all,"vehiclesTransportAir")}) then {
+			if (_veh isKindOf "Helicopter" && {_typeX in flatten FactionGet(all,"vehiclesTransportAir")}) then {
 				_veh setVariable ["within",true];
 				_veh addEventHandler ["GetOut", {private _veh = _this select 0; if ((isTouchingGround _veh) and (isEngineOn _veh)) then {if (side (_this select 2) != teamPlayer) then {if (_veh getVariable "within") then {_veh setVariable ["within",false]; [_veh] call A3A_fnc_smokeCoverAuto}}}}];
 				_veh addEventHandler ["GetIn", {private _veh = _this select 0; if (side (_this select 2) != teamPlayer) then {_veh setVariable ["within",true]}}];
@@ -212,6 +212,13 @@ if (_side != teamPlayer) then
 		};
 		_veh removeEventHandler ["GetIn", _thisEventHandler];
 	}];
+};
+
+if (_veh isKindOf "Air") then {
+    /// add check for invaders/rivals/occupants
+	if (_side == Invaders || _side == Occupants || _side == Rivals) then {
+    	[_veh,_side] spawn A3A_fnc_airspaceControlAI;
+	};
 };
 
 if(_veh isKindOf "Air") then

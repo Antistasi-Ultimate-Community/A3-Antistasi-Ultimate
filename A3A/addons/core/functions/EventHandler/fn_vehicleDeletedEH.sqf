@@ -11,7 +11,7 @@ if (!isNil "_spawnPlace") then { [_spawnPlace] call A3A_fnc_freeSpawnPositions }
 
 private _side = _veh getVariable ["ownerSide", teamPlayer];
 private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeof _veh, 0];
-if (!alive _veh || {(_side != Occupants && _side != Invaders) || {_vehCost == 0 || {_veh in (A3A_faction_all get "vehiclesRivals")}}}) exitWith {};
+if (!alive _veh || {(_side != Occupants && _side != Invaders) || {_vehCost == 0 || {_veh in flatten (A3A_faction_all get "vehiclesRivals")}}}) exitWith {};
 
 // Apparently some vehicles (eg. CUP C47, su25) return an empty array for getAllHitPointsDamage
 Debug_1("Calculating damage for vehicle type %1", typeof _veh);

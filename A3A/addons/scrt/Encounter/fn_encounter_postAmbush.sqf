@@ -15,6 +15,13 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
+private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+
+if !(_frontLine isEqualTo []) exitWith {
+    Error("Position is near frontline, need to select appropriate event.");
+    [VEH_POSTAMBUSH] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
+};
+
 private _originPosition = position _player;
 
 Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
@@ -38,16 +45,28 @@ _crater setDir _dirveh;
 _crater setVectorUp surfaceNormal getPos _crater;
 _others pushBack _crater;
 
+private _smokeEffect = "test_EmptyObjectForSmoke" createVehicle (getPos _crater); 
+_smokeEffect attachTo [_crater,[0,0,-1]];
+_others pushBack _smokeEffect;
+
 private _marker = [(markersX select {sidesX getVariable [_x, sideUnknown] != teamPlayer}), _originPosition] call BIS_fnc_nearestPosition;
 //probably should be a distance check, but who cares
 private _side = sidesX getVariable [_marker, Occupants];
 private _faction = Faction(_side);
 
-private _isFia = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
+private _isFia = if (random 10 > tierWar) then {true} else {false};
 private _vehicleClass = if (_isFia) then {
-    selectRandom ((_faction get "vehiclesMilitiaLightArmed") +  (_faction get "vehiclesMilitiaAPCs"));
+    selectRandomWeighted (
+        (FactionGetTieredFT(_faction, "vehiclesLightArmed", 0)) +
+        (FactionGetTieredFT(_faction, "vehiclesAPCs", 0))
+    );
 } else {
-    selectRandom ((_faction get "vehiclesAPCs") +  (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesLightArmed"));
+    selectRandomWeighted (
+        (FactionGoDTiered(_faction, "vehiclesAPCs")) +
+        (FactionGoDTiered(_faction, "vehiclesIFVs")) +
+        (FactionGoDTiered(_faction, "vehiclesLightTanks")) +
+        (FactionGoDTiered(_faction, "vehiclesLightArmed"))
+    );
 };
 
 if (_vehicleClass == "") exitWith {
@@ -57,22 +76,47 @@ if (_vehicleClass == "") exitWith {
 };
 
 private _crewClass = if (_vehicleClass in (
-    (_faction get "vehiclesAPCs") +  
-    (_faction get "vehiclesIFVs") + 
-    (_faction get "vehiclesLightTanks") + 
-    (_faction get "vehiclesMilitiaAPCs")
+    flatten (_faction get "vehiclesAPCs") +  
+    flatten (_faction get "vehiclesIFVs") + 
+    flatten (_faction get "vehiclesLightTanks")
 )) then {
     _faction get "unitCrew"
 } else {
     [(_faction get "unitRifle")] call SCRT_fnc_unit_getTiered
 };
 
+sleep 0.2;
 
-private _crashedVehicle = createVehicle [_vehicleClass, [_roadPosition select 0, _roadPosition select 1, 0.9], [], 0, "CAN_COLLIDE"];
+private _crashedVehicle = createVehicle [_vehicleClass, [_roadPosition select 0, _roadPosition select 1, 1], [], 0, "CAN_COLLIDE"];
 _crashedVehicle setDir _dirveh;
 _crashedVehicle setDamage 0.7;
-_crashedVehicle setHit ["wheel_2_1_steering", 1];
-_crashedVehicle setHit ["wheel_1_1_steering", 1];
+// For wheeled vehicles
+private _wheels = [
+    "wheel_1_1_steering", "wheel_2_1_steering",
+    "wheel_1_2_steering", "wheel_2_2_steering",
+    "wheel_1_3_steering", "wheel_2_3_steering"
+];
+// Select 1-4 random wheels
+for "_i" from 1 to (1 + floor random 3) do {
+    private _wheel = selectRandom _wheels;
+    _vehicle setHit [_wheel, 1];
+    _wheels = _wheels - [_wheel];
+};
+// For tracked vehicles
+// Damage a random track
+if (random 1 <= 0.7) then {
+    _vehicle setHit ["HitLTrack", 1];
+} else {
+    _vehicle setHit ["HitRTrack", 1];
+};
+// Additional damage
+if (random 1 < 0.3) then {
+    _vehicle setHit ["HitEngine", 0.5 + random 0.5];
+};
+// Universal damage
+if (random 1 < 0.4) then {
+    _vehicle setHit ["HitFuel", 0.3 + random 0.7];
+};
 _crashedVehicle setFuel 0;
 [_crashedVehicle, _side] call A3A_fnc_AIVEHinit;
 _vehicles pushBack _crashedVehicle;
@@ -121,7 +165,7 @@ waitUntil {
     sleep 5; 
     time > _timeOut || 
     {!alive _crashedVehicle || 
-    {(call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < distanceSPWN} == -1
+    {(call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < 1400} == -1
 }}};
 
 {[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;

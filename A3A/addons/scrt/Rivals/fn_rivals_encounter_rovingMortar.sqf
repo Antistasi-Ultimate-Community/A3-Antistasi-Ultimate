@@ -90,7 +90,7 @@ if (count _sites > 0 && {_sites findIf {private _markerPos = getMarkerPos _x; _m
     };
 };
 
-private _mortar = [selectRandom (A3A_faction_riv get "staticMortars"), _spawnPosition, 5, 5, true] call A3A_fnc_safeVehicleSpawn;
+private _mortar = [selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "staticMortars", 0)), _spawnPosition, 5, 5, true] call A3A_fnc_safeVehicleSpawn;
 [_mortar, Rivals] call A3A_fnc_AIVEHinit;
 _vehicles pushBack _mortar;
 
@@ -99,7 +99,7 @@ Info_1("Roving mortar has been created at %1 position.", str _spawnPosition);
 private _mortarGroup = [Rivals, _mortar, A3A_faction_riv get "unitRifle"] call A3A_fnc_RivalsCreateVehicleCrew;
 _groups pushBack _mortarGroup;
 
-_mortar setVariable ["shellType", A3A_faction_riv get "mortarMagazineHE", true];
+_mortar setVariable ["shellType", FactionGetTieredFT(A3A_faction_riv, "mortarMagazineHE", 0), true];
 [_mortar] call A3A_fnc_addArtilleryTrailEH;
 
 private _patrolPosition = [
@@ -115,7 +115,7 @@ private _patrolPosition = [
 ] call BIS_fnc_findSafePos;
 
 private _carPos =  [_spawnPosition, (random [4,6,8]), (random 360)] call BIS_fnc_relPos;
-private _car = (selectRandom (A3A_faction_riv get "vehiclesRivalsCars")) createVehicle _spawnPosition;
+private _car = (selectRandomWeighted (FactionGetTieredFT(A3A_faction_riv, "vehiclesLightUnarmed", 0))) createVehicle _spawnPosition;
 private _dirCar = [_mortar, _car] call BIS_fnc_dirTo;
 _car setDir _dirCar + (random 90);
 [_car, Rivals] call A3A_fnc_AIVEHinit;
@@ -178,6 +178,7 @@ private _minSleepTime = (1 - ((5 - inactivityLevelRivals) + 1) * 0.1) * _setupTi
 private _sleepTime = _minSleepTime + random (_setupTime - _minSleepTime);
 
 _mortarGroup deleteGroupWhenEmpty true;
+sleep 10;
 [_mortar, _mortarGroup, _supportName, _sleepTime] spawn SCRT_fnc_rivals_mortarRoutine;
 
 private _timeOut = time + 1800;

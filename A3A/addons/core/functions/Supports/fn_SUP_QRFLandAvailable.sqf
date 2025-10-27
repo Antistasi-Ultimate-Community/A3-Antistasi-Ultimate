@@ -16,6 +16,6 @@ FIX_LINE_NUMBERS()
 params ["_target", "_side", "_maxSpend", "_availTypes"];
 
 
-if (_target in (A3A_faction_all get "vehiclesFixedWing")) exitWith { 0 };     // Arguable but whatever
+if (_target in flatten (A3A_faction_all get "vehiclesFixedWing")) exitWith { 0 };     // Arguable but whatever
 
 1;

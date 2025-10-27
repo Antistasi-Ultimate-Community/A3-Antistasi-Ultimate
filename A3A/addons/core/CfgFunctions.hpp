@@ -97,8 +97,7 @@ class CfgFunctions
             class itemType {};
             class launcherInfo {};
             class loot {};
-            class randomRifle {};
-            class randomHandgun {};
+            class randomWeapon {};
             class transfer {};
             class unlockEquipment {};
             class vehicleSort {};
@@ -115,6 +114,7 @@ class CfgFunctions
             class aggressionUpdateLoop {};
             class AILoadInfo {};
             class airspaceControl {};
+            class airspaceControlAI {};
             class blackout {};
             class buildHQ {};
             class calculateAggression {};
@@ -166,6 +166,7 @@ class CfgFunctions
             class playableUnits {};
             class getSideRadioTowerInfluence {};
             class rebuildAssets {};
+            class rebuildEconomicAssets {};
             class rebuildRadioTower {};
             class relocateHQObjects {};
             class repairRuinedBuilding {};
@@ -200,6 +201,8 @@ class CfgFunctions
             class buildingComplete {};
             class buildingPlacer {};
             class buildingPlacerStart {};
+            class handlerTerrainManipulator {};
+            class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
             class initBuilderMonitors {};
             class initPlacerDB {};
@@ -326,6 +329,7 @@ class CfgFunctions
             class addArtilleryTrailEH {};
             class enemyUnitDeletedEH {};
             class enemyUnitKilledEH {};
+            class RC40_attack_EH {};
             class vehicleDeletedEH {};
         };
 
@@ -401,6 +405,7 @@ class CfgFunctions
             class searchIntelOnLeader {};
             class selectIntel {};
             class showIntel {};
+            class showNoIntelMessage {};
         };
 
         class keybinds {
@@ -707,6 +712,7 @@ class CfgFunctions
             class compileGroups {};
             class compileMissionAssets {};
             class getLoadout {};
+            class convertFaction {};
             class loadFaction {};
             class loadRivals {};
             class loadAddon {};
@@ -796,6 +802,7 @@ class CfgFunctions
             class isEngineer {};
             class localLog {};
             class log {};
+            class normalizeWeights {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};

@@ -93,69 +93,65 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_ammo",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_ammo";
         _taskIcon = "rearm";
-        _typeVehObj = selectRandom (_milFaction get "vehiclesAmmoTrucks");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_milFaction, "vehiclesAmmoTrucks"));
     };
     case "fuel":
 	{
 		_textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_fuel",_nameOrigin,_displayTime,_nameDest];
 		_taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_fuel";
 		_taskIcon = "refuel";
-		_typeVehObj = selectRandom (_milFaction get "vehiclesFuelTrucks");
+		_typeVehObj = selectRandomWeighted (FactionGetTiered(_milFaction, "vehiclesFuelTrucks"));
 	};
     case "repair":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_repair",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_repair";
         _taskIcon = "repair";
-        _typeVehObj = selectRandom (_milFaction get "vehiclesRepairTrucks");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_milFaction, "vehiclesRepairTrucks"));
     };
     case "armor":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_armor";
         _taskIcon = "destroy";
-        _typeVehObj = selectRandom (_milFaction get "vehiclesArmor");
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_milFaction, "vehiclesArmor"));
     };
     case "prisoners":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_prisoners",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_prisoners";
         _taskIcon = "run";
-        _typeVehObj = selectRandom ( switch true do {
-            case (tierWar < 5): { (_milFaction get "vehiclesMilitiaTrucks") };
-            case (tierWar < 7): { (_milFaction get "vehiclesMilitiaTrucks") + (_milFaction get "vehiclesTrucks") };
-            default { (_milFaction get "vehiclesTrucks") };
-        });
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_milFaction, "vehiclesTrucks"));
     };
     case "reinforcements":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_reinf",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_reinf";
         _taskIcon = "meet";
-        _typeVehObj = selectRandom ( switch true do {
-            case (tierWar < 5): { (_milFaction get "vehiclesMilitiaTrucks") };
-            case (tierWar < 7): { (_milFaction get "vehiclesMilitiaTrucks") + (_milFaction get "vehiclesTrucks") };
-            default { (_milFaction get "vehiclesTrucks") };
-        });
+        _typeVehObj = selectRandomWeighted (FactionGetTiered(_milFaction, "vehiclesTrucks"));
     };
     case "money":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_money";
         _taskIcon = "takeoff"; ///"truck" icon doesn't exist
-        _vehiclePool = if (_civDisabled) then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction get "vehiclesCivIndustrial" } select { _x isEqualType "" }; // * convert weighted list to normal array
-        _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
+        _vehiclePool = if (_civDisabled) then { FactionGetTieredFT(_milFaction, "vehiclesTrucks", 0) } else { FactionGetTieredFT(_civFaction, "vehiclesCivIndustrial", 0) };
+        _vehiclesCS = FactionGoDTieredFT(_rebFaction, "vehiclesCivSupply", 0);
+        _typeVehObj = selectRandomWeighted ([_vehiclesCS, _vehiclePool] select (_vehiclesCS isEqualTo []));
     };
     case "supplies":
     {
         _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
         _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
         _taskIcon = "box";
-        _vehiclePool = if (_civDisabled) then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction getOrDefault ["vehiclesCivMedical", _civFaction get "vehiclesCivIndustrial"] } select { _x isEqualType "" }; // * convert weighted list to normal array
-        _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
+        _vehiclesMil = FactionGetTiered(_milFaction, "vehiclesTrucks", 0);
+        _vehiclesMed = FactionGoDTiered(_civFaction, "vehiclesCivMedical", 0);
+        _vehiclesInd = FactionGoDTiered(_civFaction, "vehiclesCivIndustrial", 0);
+        _vehiclePool = if (_civDisabled) then { _vehiclesMil } else { if (_vehiclesMed isEqualTo []) then { _vehiclesInd } else { _vehiclesMed } };
+        _vehiclesCS = FactionGetTieredFT(_rebFaction, "vehiclesCivSupply", 0);
+        _typeVehObj = selectRandom ([_vehiclesCS, _vehiclePool] select (_vehiclesCS isEqualTo []));
     };
 };
-//_typeVehObj = selectRandom (if (tierWar < 5) then {FactionGet(_sideshort, "vehiclesMilitiaCargoTrucks")} else {_faction get "vehiclesTrucks"});
 
 // Find suitable nav points for origin/dest
 private _posOrigin = navGrid select ([_mrkOrigin] call A3A_fnc_getMarkerNavPoint) select 0;
@@ -341,11 +337,10 @@ for "_i" from 1 to _countX do
 
 // Lead vehicle
 sleep 2;
-private _typeVehX = selectRandom ( switch true do {
-    case (_sideX == Occupants && random 4 < tierWar): { (_milFaction get "vehiclesPolice") };
-    case (tierWar < 5): { (_milFaction get "vehiclesMilitiaLightArmed") };
-    case (tierWar < 7): { (_milFaction get "vehiclesLightArmed") + (_milFaction get "vehiclesMilitiaLightArmed") };
-    default { (_milFaction get "vehiclesLightArmed") };
+private _typeVehX = selectRandom (if (_sideX == Occupants && random 4 < tierWar) then {
+    FactionGetTiered(_faction, "vehiclesPolice")
+} else {
+    FactionGetTiered(_faction, "vehiclesLightArmed")
 });
 private _LeadText = localize "STR_marker_convoy_lead_vehicle";
 private _vehLead = [_typeVehX, _LeadText] call _fnc_spawnConvoyVehicle;

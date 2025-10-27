@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
 #define KEY_ESCAPE 1
 #define TIME_WINDOW 5
 
@@ -53,7 +55,7 @@ if (!canMove paradropPlane || {!alive paradropPlane || {!alive (driver paradropP
     [localize "STR_A3AP_paradrop_header", localize "STR_A3AP_paradrop_abort_plane_noncapable"] call SCRT_fnc_misc_deniedHint;
 };
 
-private _totalSeats = [(A3A_faction_reb get "vehiclesPlane") # 0, true] call BIS_fnc_crewCount;
+private _totalSeats = [(FactionGetTieredFT(A3A_faction_reb, "vehiclesPlane", 0)) # 0, true] call BIS_fnc_crewCount;
 private _occupiedSeats = count (crew paradropPlane);
 
 if ((_totalSeats - _occupiedSeats) < 0) exitWith {

@@ -29,10 +29,9 @@ Info_2("%1 will be used as center of the event at %2 position.", name _player, s
 
 private _city = if (_originPosition isEqualType "") then {_originPosition} else {[citiesX, _originPosition] call BIS_fnc_nearestPosition};
 
-if (_city isEqualTo []) exitWith {
-    Info("No cities in proximity, aborting civ convoy Event.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+if (_cities isEqualTo []) exitWith {
+    Info("No cities in proximity, rerolling another event.");
+    [CIV_CONVOY] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
 private _anotherCity = selectRandom (citiesX select {_x != _city});
@@ -55,7 +54,7 @@ private _roadPosition = getPos (_road select 0);
 
 private _convoy = [];
 
-private _civVehicles = selectRandomWeighted ((_faction get "vehiclesCivCar") + (_faction get "vehiclesCivIndustrial") + (_faction get "vehiclesCivFuel"));
+private _civVehicles = selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesCivCar", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivIndustrial", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivFuel", 0)));
 
 if (_civVehicles == "") exitWith {
     Error("No civ vehicles available, aborting Vehicle Move Event.");
@@ -127,7 +126,7 @@ private _fnc_fillcargo = {
 
 for '_i' from round random 3 to 5 do
 {
-    private _civVehicles = selectRandomWeighted ((_faction get "vehiclesCivCar") + (_faction get "vehiclesCivIndustrial") + (_faction get "vehiclesCivFuel"));
+    private _civVehicles = selectRandomWeighted ((FactionGetTieredFT(_faction, "vehiclesCivCar", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivIndustrial", 0)) + (FactionGetTieredFT(_faction, "vehiclesCivFuel", 0)));
 	private _vehObj = [_civVehicles, "civillian"] call _fnc_spawnConvoyVehicle;
 	//[_vehObj,_civVehicles] call _fnc_fillcargo;
 	_convoyobj pushBack _vehObj;

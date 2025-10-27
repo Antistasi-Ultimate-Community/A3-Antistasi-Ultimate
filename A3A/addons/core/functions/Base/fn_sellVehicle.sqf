@@ -84,49 +84,48 @@ private _typeX = typeOf _veh;
 private _costs = call {
     if (_typeX in _blacklistedAssets) exitWith {0};
     if (_veh isKindOf "StaticWeapon") exitWith {100};			// in case rebel static is same as enemy statics
-    if (_typeX in (FactionGet(all,"vehiclesReb") + FactionGet(reb,"vehiclesCivCar") + FactionGet(reb,"vehiclesCivTruck"))) exitWith { ([_typeX] call A3A_fnc_vehiclePrice) / 2 };
+    if (_typeX in flatten (FactionGet(all,"vehiclesReb") + FactionGet(reb,"vehiclesCivCar") + FactionGet(reb,"vehiclesCivTruck"))) exitWith { ([_typeX] call A3A_fnc_vehiclePrice) / 2 };
 
-    private _rebAa = FactionGet(reb, "vehiclesAA");
+    private _rebAa = flatten FactionGet(reb, "vehiclesAA");
     if (_rebAa isNotEqualTo [] && {_typeX isEqualTo _rebAa}) exitWith {([_typeX] call A3A_fnc_vehiclePrice) / 2};
 
     if (
         (_typeX in arrayCivVeh)
         or (_typeX in civBoats)
-        or (_typeX in (FactionGet(reb,"vehiclesCivBoat") + FactionGet(reb,"vehiclesCivCar") + FactionGet(reb,"vehiclesCivTruck")))
+        or (_typeX in flatten (FactionGet(reb,"vehiclesCivBoat") + FactionGet(reb,"vehiclesCivCar") + FactionGet(reb,"vehiclesCivTruck")))
     ) exitWith {100};
     if (
-        (_typeX in FactionGet(all,"vehiclesLight"))
-        or (_typeX in OccAndInv("vehiclesTrucks"))
-        or (_typeX in OccAndInv("vehiclesCargoTrucks"))
-        or (_typeX in OccAndInv("vehiclesMilitiaTrucks"))
-        or (_typeX in FactionGet(reb,"vehiclesTruck"))
+        (_typeX in flatten FactionGet(all,"vehiclesLight"))
+        or (_typeX in flatten OccAndInv("vehiclesTrucks"))
+        or (_typeX in flatten OccAndInv("vehiclesCargoTrucks"))
+        or (_typeX in flatten FactionGet(reb,"vehiclesTruck"))
     ) exitWith {750};
     if (
-        (_typeX in FactionGet(all,"vehiclesBoats"))
-        or (_typeX in FactionGet(all,"vehiclesLightAPCs"))
-        or (_typeX in OccAndInv("vehiclesAmmoTrucks"))
-        or (_typeX in OccAndInv("vehiclesRepairTrucks"))
-        or (_typeX in OccAndInv("vehiclesFuelTrucks"))
-        or (_typeX in OccAndInv("vehiclesMedical"))
+        (_typeX in flatten FactionGet(all,"vehiclesBoats"))
+        or (_typeX in flatten FactionGet(all,"vehiclesLightAPCs"))
+        or (_typeX in flatten OccAndInv("vehiclesAmmoTrucks"))
+        or (_typeX in flatten OccAndInv("vehiclesRepairTrucks"))
+        or (_typeX in flatten OccAndInv("vehiclesFuelTrucks"))
+        or (_typeX in flatten OccAndInv("vehiclesMedical"))
     ) exitWith {1500};
-    if (_typeX in [FactionGet(reb,"vehiclesCivHeli")]) exitWith {([_typeX] call A3A_fnc_vehiclePrice) / 2};
-    if (_typeX in (FactionGet(all,"vehiclesHelisLight"))) exitWith {3000};
+    if (_typeX in flatten [FactionGet(reb,"vehiclesCivHeli")]) exitWith {([_typeX] call A3A_fnc_vehiclePrice) / 2};
+    if (_typeX in flatten FactionGet(all,"vehiclesHelisLight")) exitWith {3000};
     if (
-        (_typeX in FactionGet(all,"vehiclesAPCs"))
-        || (_typeX in FactionGet(all,"vehiclesIFVs"))
-        || (_typeX in FactionGet(all,"vehiclesHelisLightAttack"))
-        || (_typeX in FactionGet(all,"vehiclesTransportAir"))
-        || (_typeX in FactionGet(all,"vehiclesUAVs"))
+        (_typeX in flatten FactionGet(all,"vehiclesAPCs"))
+        || (_typeX in flatten FactionGet(all,"vehiclesIFVs"))
+        || (_typeX in flatten FactionGet(all,"vehiclesHelisLightAttack"))
+        || (_typeX in flatten FactionGet(all,"vehiclesTransportAir"))
+        || (_typeX in flatten FactionGet(all,"vehiclesUAVs"))
     ) exitWith {2500};
-    if (_typeX in FactionGet(all,"vehiclesLightTanks")) exitWith {3500};
+    if (_typeX in flatten FactionGet(all,"vehiclesLightTanks")) exitWith {3500};
     if (
-        (_typeX in FactionGet(all,"vehiclesHelisAttack"))
-        or (_typeX in FactionGet(all,"vehiclesTanks"))
-        or (_typeX in FactionGet(all,"vehiclesAA"))
-        or (_typeX in FactionGet(all,"vehiclesArtillery"))
+        (_typeX in flatten FactionGet(all,"vehiclesHelisAttack"))
+        or (_typeX in flatten FactionGet(all,"vehiclesTanks"))
+        or (_typeX in flatten FactionGet(all,"vehiclesAA"))
+        or (_typeX in flatten FactionGet(all,"vehiclesArtillery"))
     ) exitWith {6500};
-    if (_typeX in (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA") + FactionGet(all,"vehiclesPlanesLargeAA") + FactionGet(all,"vehiclesPlanesLargeCAS"))) exitWith {7500};
-    if (_typeX in (FactionGet(all,"vehiclesPlanesGunship"))) exitWith {10000};
+    if (_typeX in flatten (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA") + FactionGet(all,"vehiclesPlanesLargeAA") + FactionGet(all,"vehiclesPlanesLargeCAS"))) exitWith {7500};
+    if (_typeX in flatten (FactionGet(all,"vehiclesPlanesGunship"))) exitWith {10000};
     0;
 };
 
