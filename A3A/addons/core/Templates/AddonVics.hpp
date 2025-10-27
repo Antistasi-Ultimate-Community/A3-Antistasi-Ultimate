@@ -116,9 +116,9 @@ class AddonVics
         requiredAddons[] = {"CSLA_CIV"};
         //format {side, file relative to path}
         files[] = { {"Civ", "csla_Civ.sqf"} };
-        displayName = "CSLA Iron Curtian Vehicle Pack";
-        description = "CSLA Iron Curtian civilian vehicle pack(don't forget to enable cdlc above!)";
-        loadedMessage = "CSLA Iron Curtian loaded, civilian vehicle pool expanded";
+        displayName = "CSLA Iron Curtain Vehicle Pack";
+        description = "CSLA Iron Curtain civilian vehicle pack(don't forget to enable cdlc above!)";
+        loadedMessage = "CSLA Iron Curtain loaded, civilian vehicle pool expanded";
     };
 
     class D3S

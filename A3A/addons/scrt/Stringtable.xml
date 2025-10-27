@@ -5713,18 +5713,18 @@
                 <French>Définit le nombre de rebelles pouvant être dans un groupe de garnison. Le nombre total de soldats de la garnison sera divisé par ce nombre et réparti en groupes.</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit">
-                <Original>How many rebels can be garrisoned (1.5x for airports and milbases, 0.5x for resources and factories)?</Original>
-                <Russian>Сколько повстанцев может в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов)?</Russian>
-                <Chinesesimp>抵抗军可以驻守多少（机场和军事基地1.5x，资源和工厂0.5x）？</Chinesesimp>
-                <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까? (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
-                <French>Combien de rebelles peuvent être mis en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines) ?</French>
+                <Original>How many rebels can be garrisoned?</Original>
+                <Russian>Сколько повстанцев может в гарнизоне?</Russian>
+                <Chinesesimp>抵抗军可以驻守多少？</Chinesesimp>
+                <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까?</Korean>
+                <French>Combien de rebelles peuvent être mis en garnison?</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit_desc">
-                <Original>How many rebel troops can be in garrison. Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
-                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне. Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
-                <Chinesesimp>有多少反抗军可以驻守。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
-                <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
-                <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
+                <Original>How many rebel troops can be in garrison (1.5x for airports and milbases, 0.5x for resources and factories). Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
+                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов). Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
+                <Chinesesimp>有多少反抗军可以驻守(机场和军事基地1.5x，资源和工厂0.5x)。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
+                <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다. (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
+                <French>Nombre de troupes rebelles pouvant se trouver en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines). Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
             </Key>
             <Key ID="STR_params_UAVSpawnChance">
                 <Original>UAV spawn chance at airfields</Original>
