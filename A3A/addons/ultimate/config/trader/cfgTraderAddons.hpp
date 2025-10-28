@@ -328,3 +328,8 @@
         weapons = "weapons_ef";
         vehicles = "vehicles_ef";
     };
+    class addons_mpp : addons_base
+    {
+        addons[] = {"MPP_PISTOLS"};
+        weapons = "weapons_mpp";
+    };
