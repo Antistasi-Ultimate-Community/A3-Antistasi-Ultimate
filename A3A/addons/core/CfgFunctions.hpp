@@ -404,6 +404,7 @@ class CfgFunctions
             class searchIntelOnLeader {};
             class selectIntel {};
             class showIntel {};
+            class showNoIntelMessage {};
         };
 
         class keybinds {
