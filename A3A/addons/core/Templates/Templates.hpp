@@ -717,5 +717,9 @@ class Templates
     // ***************************** Cold War ReArmed *****************************
 
     #include "Templates\CWR\templates.hpp"
+	
+    // ***************************** Korsac *****************************
+
+    #include "Templates\KOR\templates.hpp"
 
 };
