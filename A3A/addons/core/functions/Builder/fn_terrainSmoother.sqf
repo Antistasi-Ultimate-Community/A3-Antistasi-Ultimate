@@ -1,11 +1,14 @@
 /// original author https://steamcommunity.com/profiles/76561199005611926
 /// slightly modified by wersal
 
-params ["_object"];
+params [
+    ["_object", objNull, [objNull]],
+    ["_radius", 0, [0]],
+    ["_smoothingRadius", 0, [0]]
+];
+
 private _center = getPos _object;
 private _targetHeight = getTerrainHeightASL _center;
-private _radius = 22;
-private _smoothingRadius = 34;
 private _gridSize = getTerrainInfo #2;
 
 // Optimization: pre-calculate center coordinates
