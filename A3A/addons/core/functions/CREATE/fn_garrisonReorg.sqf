@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-if (count _this <= 8) exitWith {_this};
+if (count _this <= A3A_rebelGarrisonGroupSize) exitWith {_this};
 private _SLcount = {_x in FactionGet(all,"SquadLeaders")} count _this;
 private _medCount = {_x in FactionGet(all,"Medics")} count _this;
 if ((_SLcount == 0) and (_medCount == 0)) exitWith {_this};
@@ -22,7 +22,7 @@ private _result = [];
 while {!(_pool isEqualTo [])} do
 	{
 	_squad = [];
-	_countX = 8;
+	_countX = A3A_rebelGarrisonGroupSize;
 	if (_slCount > 0) then
 		{
 		_squad pushBack _slClass;
