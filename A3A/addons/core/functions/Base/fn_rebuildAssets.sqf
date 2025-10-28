@@ -5,12 +5,19 @@ params ["_site", "_position"];
 
 private _leave = false;
 private _antennaDead = objNull;
+private _economyDead = ""; // Rebuild Factories and Resources Variables Definition
 
 if (_site in outposts) then {
 	_antennasDead = antennasDead select {_x inArea _site};
 	if (count _antennasDead > 0) then {
 		_antennaDead = _antennasDead select 0;
 	};
+};
+
+// Check if the site is a destroyed economy site
+if ((_site in factories || _site in resourcesX) && _site in destroyedSites) then {
+	_economyDead = _site;
+	Debug_1("Rebuilding Economic Site %1", _economyDead);
 };
 
 switch (true) do {
@@ -30,6 +37,20 @@ switch (true) do {
 			30
 		] spawn SCRT_fnc_ui_showMessage;
 	};
+	// Rebuild Economic Assets and building repair start
+	case (_economyDead != ""): {
+		Debug_1("Calling A3A_fnc_rebuildEconomicAssets for %1", _economyDead);
+		[_economyDead] remoteExec ["A3A_fnc_rebuildEconomicAssets", 2]; // Call the actual function that rebuilds the economic site
+
+		private _name = [_site] call A3A_fnc_localizar;
+		[
+			localize "STR_notifiers_success_type",
+			localize "STR_notifiers_rebuild_assets_header",
+			parseText format [localize "STR_notifiers_rebuild_assets_success", _name],
+			30
+		] spawn SCRT_fnc_ui_showMessage;
+	};
+	// Rebuild Economic Assets and building repair end
 
 	case (!isNull _antennaDead): {
 		private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500,  true];
