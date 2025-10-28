@@ -143,6 +143,7 @@ class CfgFunctions
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
+            class getVehicleSellPrice {};
             class vehicleBoxRestore {};
             class initPetros {};
             class isFrontline {};
@@ -199,12 +200,16 @@ class CfgFunctions
             class buildingComplete {};
             class buildingPlacer {};
             class buildingPlacerStart {};
+            class handlerTerrainManipulator {};
+            class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
             class placeBuilderObjects {};
             class processBuildingTimeouts {};
+            class terrainCleaner {};
+            class terrainSmoother {};
         };
 
         class Collections {
@@ -323,6 +328,7 @@ class CfgFunctions
             class addArtilleryTrailEH {};
             class enemyUnitDeletedEH {};
             class enemyUnitKilledEH {};
+            class RC40_attack_EH {};
             class vehicleDeletedEH {};
         };
 
@@ -398,6 +404,7 @@ class CfgFunctions
             class searchIntelOnLeader {};
             class selectIntel {};
             class showIntel {};
+            class showNoIntelMessage {};
         };
 
         class keybinds {
@@ -750,6 +757,7 @@ class CfgFunctions
             class secondsToTimeSpan {};
             class systemTime_format_S {};
             class timeSpan_format {};
+            class systemTimeDurationToTimeSpan {};
         };
 
         class UI {

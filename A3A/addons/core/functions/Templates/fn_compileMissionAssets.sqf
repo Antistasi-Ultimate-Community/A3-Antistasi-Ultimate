@@ -224,15 +224,7 @@ setVar("vehiclesLightUnarmed", _carsUnarmed);
 setVar("vehiclesLight", _carsArmed + _carsUnarmed);
 
 //all Occ&Inv armor
-private _vehArmor =
-getVar("vehiclesTanks")
-+ getVar("vehiclesAA")
-+ getVar("vehiclesArtillery")
-+ getVar("vehiclesLightAPCs")
-+ getVar("vehiclesAPCs")
-+ getVar("vehiclesLightTanks")
-+ getVar("vehiclesAirborne")
-+ getVar("vehiclesIFVs");
+private _vehArmor = OccAndInv("vehiclesArmor");
 setVar("vehiclesArmor", _vehArmor);
 
 //rebel vehicles
@@ -247,6 +239,9 @@ setVar("vehiclesReb", _vehReb);
 //trucks that can cary logistics cargo
 private _vehCargoTrucks = (_vehTrucks + OccAndInv("vehiclesCargoTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
 setVar("vehiclesCargoTrucks", _vehCargoTrucks);
+
+private _vehMilitiaCargoTrucks = (_vehTrucks + OccAndInv("vehiclesMilitiaTrucks")) select { [_x] call A3A_Logistics_fnc_getVehCapacity > 1 };
+setVar("vehiclesMilitiaCargoTrucks", _vehMilitiaCargoTrucks);
 
 missionNamespace setVariable ["A3A_faction_all", A3A_faction_all, true];
 A3A_faction_all
