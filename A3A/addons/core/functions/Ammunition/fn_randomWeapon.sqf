@@ -86,13 +86,13 @@ private _compatItems = compatibleItems _weapon;
 private _nvg = hmd _unit;
 private _compatPointers = [];
 if (_nvg != "") then {
-    _compatPointers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 2}}) then { _weaponData select 2 } else { A3A_rebelLasersCache get _weapon };
+    _compatPointers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 2}}) then { [_weaponData select 2] } else { A3A_rebelLasersCache get _weapon };
     if (isNil "_compatPointers") then {
         _compatPointers = _compatItems arrayIntersect (A3A_rebelGear get "LaserAttachments");
         A3A_rebelLasersCache set [_weapon, _compatPointers];
     };
 } else {
-    _compatPointers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 2}}) then { _weaponData select 2 } else { A3A_rebelFlashlightsCache get _weapon };
+    _compatPointers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 2}}) then { [_weaponData select 2] } else { A3A_rebelFlashlightsCache get _weapon };
     if (isNil "_compatPointers") then {
         _compatPointers = _compatItems arrayIntersect (A3A_rebelGear get "LightAttachments");
         A3A_rebelFlashlightsCache set [_weapon, _compatPointers];
