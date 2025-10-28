@@ -887,6 +887,14 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
         default = 0;
     };
+    class allowUnlockedTNVG: EquipmentParams
+    { 
+        attr[] = {"server"};
+        title = $STR_params_allowUnlockedTNVG;
+        values[] = {1,0};
+        texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
+        default = 0;
+    };
     class startWithLongRangeRadio: EquipmentParams
     {
         attr[] = {"server"};

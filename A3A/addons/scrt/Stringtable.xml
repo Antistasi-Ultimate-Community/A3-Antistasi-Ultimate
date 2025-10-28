@@ -5033,6 +5033,13 @@
                 <French>Autoriser les explosifs déverrouillés</French>
                 <Chinesesimp>允许解锁爆炸物</Chinesesimp>
             </Key>
+            <Key ID="STR_params_allowUnlockedTNVG">
+                <Original>Allow TNVGs/ENVGs to become unlocked</Original>
+                <Russian>Разрешить разблокировку TNVGs/ENVGs</Russian>
+                <Korean>TNVGs/ENVGs 잠금 해제 허용</Korean>
+                <French>Autoriser le déverrouillage des TNVGs/ENVGs</French>
+                <Chinesesimp>允许解锁TNVGs/ENVGs</Chinesesimp>
+              </Key>
             <Key ID="STR_params_startWithLongRangeRadio">
                 <Original>[TFAR] Start with Long Range Radio</Original>
                 <Russian>[TFAR] Начинать с рюкзаков ДВ-радиосвязи </Russian>
