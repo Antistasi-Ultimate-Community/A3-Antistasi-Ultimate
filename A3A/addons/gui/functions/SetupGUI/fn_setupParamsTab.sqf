@@ -272,12 +272,13 @@ switch (_mode) do
             } forEach _vals;
 
             if (_savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}) then { // we're loading an existing save
-                private _locked = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
-                _x setVariable ["locked", _locked];
+                private _lockOnSave = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
+                private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
+                _x setVariable ["locked", _lockOnSave || _lockInGame];
 
-                if (_locked) then {
+                if (_lockOnSave || _lockInGame) then {
                     _x ctrlEnable false;
-                    _x ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_param_locked");
+                    _x ctrlSetTooltip (localize (["STR_antistasi_dialogs_setup_param_locked", "STR_antistasi_dialogs_setup_param_locked_ingame"] select (_lockInGame)));
                 };
             } else {
                 // reset params to enabled if we're creating a new game or if all we did was load old params (to create a new game)

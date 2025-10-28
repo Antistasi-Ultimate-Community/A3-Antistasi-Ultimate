@@ -4,7 +4,7 @@
 
 class CfgPatches 
 {
-    class PATCHNAME(SPE) 
+    class PATCHNAME(SPEX) 
     {
         name = COMPONENT_NAME;
         units[] = {};

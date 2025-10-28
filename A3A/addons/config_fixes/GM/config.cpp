@@ -4,7 +4,7 @@
 
 class CfgPatches 
 {
-    class PATCHNAME(CSLA) 
+    class PATCHNAME(GM) 
     {
         name = COMPONENT_NAME;
         units[] = {};
