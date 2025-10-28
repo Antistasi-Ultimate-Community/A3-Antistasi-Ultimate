@@ -724,6 +724,13 @@ class Params
         texts[] = {"5", "10", "15", "20"};
         default = 5;
     };
+    class A3U_HelipadTerrainSmoothing: ExperimentalParams
+    {
+        title = $STR_params_helipadTerrainSmoothing;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
 
     class BalanceParams
     {
@@ -883,6 +890,14 @@ class Params
     {
         attr[] = {"server"};
         title = $STR_params_allowUnlockedExplosives;
+        values[] = {1,0};
+        texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
+        default = 0;
+    };
+    class allowUnlockedTNVG: EquipmentParams
+    { 
+        attr[] = {"server"};
+        title = $STR_params_allowUnlockedTNVG;
         values[] = {1,0};
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
         default = 0;

@@ -333,3 +333,8 @@
         addons[] = {"TKE_Ext_Core_V"};
         vehicles = "vehicles_ScifiVP";
     };
+    class addons_mpp : addons_base
+    {
+        addons[] = {"MPP_PISTOLS"};
+        weapons = "weapons_mpp";
+    };

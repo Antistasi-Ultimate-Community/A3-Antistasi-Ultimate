@@ -5033,6 +5033,13 @@
                 <French>Autoriser les explosifs déverrouillés</French>
                 <Chinesesimp>允许解锁爆炸物</Chinesesimp>
             </Key>
+            <Key ID="STR_params_allowUnlockedTNVG">
+                <Original>Allow TNVGs/ENVGs to become unlocked</Original>
+                <Russian>Разрешить разблокировку TNVGs/ENVGs</Russian>
+                <Korean>TNVGs/ENVGs 잠금 해제 허용</Korean>
+                <French>Autoriser le déverrouillage des TNVGs/ENVGs</French>
+                <Chinesesimp>允许解锁TNVGs/ENVGs</Chinesesimp>
+              </Key>
             <Key ID="STR_params_startWithLongRangeRadio">
                 <Original>[TFAR] Start with Long Range Radio</Original>
                 <Russian>[TFAR] Начинать с рюкзаков ДВ-радиосвязи </Russian>
@@ -5831,6 +5838,13 @@
                 <Chinesesimp>允许客人在没有成员符合条件时成为指挥官</Chinesesimp>
                 <Korean>자격이 있는 멤버가 없을 때 게스트가 지휘관이 될 수 있도록 허용</Korean>
                 <French>Permettre aux invités de devenir commandant lorsqu'aucun membre n'est éligible</French>
+            </Key>
+            <Key ID="STR_params_helipadTerrainSmoothing">
+                <Original>Enable helipad terrain smoothing</Original>
+                <Russian>Включить сглаживание рельефа под вертолетные площадки</Russian>
+                <Chinesesimp>启用直升机停机坪地形平滑处理</Chinesesimp>
+                <Korean>헬리패드 지형 평활화 활성화</Korean>
+                <French>Activer le lissage du terrain des hélipads</French>
             </Key>
             <Key ID="STR_params_memberSlots">
                 <Original>Percentage of Reserved Slots for Members</Original>
@@ -14456,6 +14470,22 @@
                 <Korean>건물 배치기를 취소합니다.</Korean>
                 <French>Annuler le placement du bâtiment.</French>
             </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerAlign_title">
+                <Original>Building Placer: Align</Original>
+                <German>Gebäudeplatzierung: Ausrichten</German>
+                <Russian>Строитель: Выравнивание</Russian>
+                <Chinesesimp>建筑放置器 - 对齐</Chinesesimp>
+                <Korean>건물 배치기 - 정렬</Korean>
+                <French>Constructeur: Aligner</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerAlign_desc">
+                <Original>Copy alignment of another building to current object.</Original>
+                <German>Die Ausrichtung eines anderen Gebäudes auf das aktuelle Objekt kopieren.</German>
+                <Russian>Скопировать выравнивание другого здания на текущее.</Russian>
+                <Chinesesimp>将另一个建筑物的对齐方式复制到当前对象。</Chinesesimp>
+                <Korean>다른 건물의 정렬을 현재 객체에 복사합니다.</Korean>
+                <French>Copier l'alignement d'un autre bâtiment sur l'objet actuel.</French>
+            </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerDelete_title">
                 <Original>Building Placer: Delete</Original>
                 <German>Gebäudeplatzierung: Löschen</German>
@@ -14535,6 +14565,38 @@
                 <Chinesesimp>顺时针旋转建筑物。</Chinesesimp>
                 <Korean>건물을 시계 방향으로 회전합니다.</Korean>
                 <French>Faire pivoter le bâtiment dans le sens des aiguilles d'une montre.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepDecrease_title">
+                <Original>Building Placer: Rotate Step Decrease</Original>
+                <German>Gebäudeplatzierung: Schrittweite verringern</German>
+                <Russian>Строитель: Уменьшить шаг вращения</Russian>
+                <Chinesesimp>建筑放置器 - 减少旋转步长</Chinesesimp>
+                <Korean>건물 배치기 - 회전 단계 감소</Korean>
+                <French>Constructeur: Diminuer le pas de rotation</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepDecrease_desc">
+                <Original>Decrease the rotation step.</Original>
+                <German>Die Schrittweite der Drehung verringern.</German>
+                <Russian>Уменьшить шаг вращения.</Russian>
+                <Chinesesimp>减少旋转步长。</Chinesesimp>
+                <Korean>회전 단계를 감소시킵니다.</Korean>
+                <French>Diminuer le pas de rotation.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepIncrease_title">
+                <Original>Building Placer: Rotate Step Increase</Original>
+                <German>Gebäudeplatzierung: Schrittweite erhöhen</German>
+                <Russian>Строитель: Увеличить шаг вращения</Russian>
+                <Chinesesimp>建筑放置器 - 增加旋转步长</Chinesesimp>
+                <Korean>건물 배치기 - 회전 단계 증가</Korean>
+                <French>Constructeur: Augmenter le pas de rotation</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerRotateStepIncrease_desc">
+                <Original>Increase the rotation step.</Original>
+                <German>Die Schrittweite der Drehung erhöhen.</German>
+                <Russian>Увеличить шаг вращения.</Russian>
+                <Chinesesimp>增加旋转步长。</Chinesesimp>
+                <Korean>회전 단계를 증가시킵니다.</Korean>
+                <French>Augmenter le pas de rotation.</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerSnapToSurface_title">
                 <Original>Building Placer: Snap to surface</Original>
