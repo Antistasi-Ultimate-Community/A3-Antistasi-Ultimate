@@ -266,7 +266,7 @@ switch (_mode) do
             case (lbCurSel _presetCstmCtrl isNotEqualTo -1): { [lbCurSel _presetCstmCtrl] };
         };
         private _presetParams = if (_selectedPreset isEqualType []) then { ["getPresetParams", [_selectedPreset]] call A3A_fnc_setupParamsTab };
-        private _presetParamsHM = if (!isNil "_presetParams") then { createHashmapFromArray _presetParams } else { createHashmap };
+        private _presetParamsHM = if (!isNil "_presetParams") then { createHashmapFromArray _presetParams } else { nil };
         
         // Should be array of [varname, value] pairs
         // Written by setupLoadgameTab
@@ -283,7 +283,7 @@ switch (_mode) do
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
 
-            private _saved = ([_presetParamsHM, _savedParamsHM] select (_lockOnSave && _saveExists)) getOrDefault [configName _cfg, getNumber (_cfg/"default")];
+            private _saved = ([_presetParamsHM, _savedParamsHM] select (isNil "_presetParamsHM" || {_lockOnSave && _saveExists})) getOrDefault [configName _cfg, getNumber (_cfg/"default")];
             if (_saved isEqualType true) then { _saved = [0, 1] select _saved };            // bool -> number conversion
 
             private "_index";
