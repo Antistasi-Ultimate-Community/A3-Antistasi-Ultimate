@@ -61,7 +61,7 @@ if (_oldCfg isNotEqualTo []) then {
         };
 
         if ([_addons] call A3U_fnc_hasAddon) then {
-            _modsetsSet set [_prefix, true];
+            _modsets pushBackUnique _prefix;
             [format ["Added %1 to _modsets list (old version). It is now deprecated and should be updated ASAP.", _prefix]] call A3U_fnc_log;
         };
     } forEach _oldCfg;
