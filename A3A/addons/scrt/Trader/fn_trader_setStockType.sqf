@@ -18,31 +18,25 @@ params ["_traderX"];
 private _modsets = [];
 
 // DLC to modset mapping (used for all sections)
-private _dlcModsets = [
-    ["ws", "ws", []],
-    ["mark", "marksmen", []],
-    ["orange", "lawsofwar", []],
-    ["tank", "tanks", []],
-    ["expansion", "apex", []],
-    ["enoch", "contact", []],
-    ["jets", "jets", []],
-    ["aow", "artofwar", []],
-    ["kart", "kart", []],
-    ["gm", "globmob", []],
-    ["csla", "csla", []],
-    ["rf", "rf", []],
-    ["vn", "vn", [["nickelsteel", "vnx_b_air_ac119_02_01"]]],
-    ["spe", "ww2cdlc", [["spex", "SPEX_M2_60"]]],
-    ["ef", "ef", []]
+private _modsetToDLC = createHashMapFromArray [
+    ["ws", "ws"],
+    ["marksmen", "mark"],
+    ["lawsofwar", "orange"],
+    ["tanks", "tank"],
+    ["apex", "expansion"],
+    ["contact", "enoch"],
+    ["jets", "jets"],
+    ["artofwar", "aow"],
+    ["kart", "kart"],
+    ["globmob", "gm"],
+    ["csla", "csla"],
+    ["rf", "rf"],
+    ["vn", "vn"],
+    [["nickelsteel", "vnx_b_air_ac119_02_01"], "vn"],
+    ["ww2cdlc", "spe"],
+    [["spex", "SPEX_M2_60"], "spe"],
+    ["ef", "ef"]
 ];
-
-// Build a mapping from modset to DLC
-private _modsetToDLC = createHashMap;
-{
-    _x params ["_dlc", "_modset", ["_additional", []]];
-    _modsetToDLC set [_modset, _dlc];
-    { _modsetToDLC set [_x#0, _dlc] } forEach _additional;
-} forEach _dlcModsets;
 
 // Process old config format with DLC check
 private _oldCfg = (configFile >> "A3U" >> "traderMods") call BIS_fnc_getCfgSubClasses;
