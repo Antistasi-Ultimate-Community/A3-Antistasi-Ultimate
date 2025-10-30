@@ -52,12 +52,10 @@ if (_oldCfg isNotEqualTo []) then {
         private _prefix = getText (configFile >> "A3U" >> "traderMods" >> _x >> "prefix");
 
         // Check if this modset is associated with a DLC
-        if (_modsetToDLC getOrDefault [_prefix, ""] != "") then {
-            private _dlc = _modsetToDLC get _prefix;
-            if !(_dlc in A3A_enabledDLC) then {
-                [format ["Skipped DLC-based modset %1 (DLC %2 not enabled)", _prefix, _dlc]] call A3U_fnc_log;
-                continue;
-            };
+        private _dlc = _modsetToDLC get _prefix;
+        if (!isNil "_dlc" && {!(_dlc in A3A_enabledDLC)}) then {
+            [format ["Skipped DLC-based modset %1 (DLC %2 not enabled)", _prefix, _dlc]] call A3U_fnc_log;
+            continue;
         };
 
         if ([_addons] call A3U_fnc_hasAddon) then {
