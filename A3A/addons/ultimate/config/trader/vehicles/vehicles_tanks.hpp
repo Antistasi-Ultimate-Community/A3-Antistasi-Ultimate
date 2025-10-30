@@ -1,5 +1,5 @@
 
-class vehicles_tanks(dlc) : vehicles_base
+class vehicles_tanks : vehicles_base
 {
     ITEM(I_LT_01_AA_F, 21000, "AA", VEHICLE_CONDITION_AA);
     ITEM(I_LT_01_scout_F, 3000, "AA", VEHICLE_CONDITION_AA);
