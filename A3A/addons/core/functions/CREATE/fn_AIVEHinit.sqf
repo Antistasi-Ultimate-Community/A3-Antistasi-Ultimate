@@ -118,7 +118,7 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
 	if (_markers isEqualTo []) exitWith {};
 	if !(_typeX isKindOf "StaticMortar") then {
-		if (_veh in UngaragedVehicles) then {
+		if (_veh in ungaragedVehicles) then {
 			[_veh, "ungaragedstatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
 			_veh setVariable ["lockedForAI", true, true]; 
 		} else {
