@@ -603,6 +603,18 @@
                 <Chinesesimp>Antistasi - Liberation of Pulau</Chinesesimp>
                 <Korean>안티스타시 얼티밋 - Pulau 해방</Korean>
             </Key>
+            <Key ID="STR_antistasi_mission_info_Korsac_blurb_text">
+                <Original>We will fight in the Fields!</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Korsac_description_text">
+                <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Korsac_mapname_short_text">
+                <Original>Antistasi Ultimate Korsac</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Korsac_mapname_text">
+                <Original>Antistasi Ultimate - Korsac</Original>
+            </Key>
             <Key ID="STR_antistasi_mission_info_isladuala3_blurb_text">
               <Original>African Islands under siege</Original>
               <Italian>Isole Africane sott'assedio</Italian>
@@ -639,6 +651,15 @@
               <Russian>Antistasi - Освобождение Исла Дуала</Russian>
               <Czech>Antistasi - Osvobození Ostrova Duala</Czech>
               <Chinesesimp>Antistasi - 解放 Isla Duala</Chinesesimp>
+            </Key>
+			<Key ID="STR_antistasi_mission_info_regero_mapname_text">
+                <Original>Antistasi Ultimate - Kingdom of Regero</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_regero_mapname_short_text">
+                <Original>Antistasi Ultimate - Regero</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_regero_blurb_text">
+                <Original>It's time for King Petros</Original>
             </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>
