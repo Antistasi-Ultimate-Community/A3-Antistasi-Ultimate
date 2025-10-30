@@ -5119,7 +5119,7 @@
             </Key>
             <Key ID="STR_params_autoland_tooltip">
                 <Original>Adds aircraft action that lands it via script, if cerian conditions are met</Original>
-                <Russian>Добавляет действие для самолётов, которое при помощи скрипта если выполнены определённые условия</Russian>
+                <Russian>Добавляет действие для самолётов, которое при помощи скрипта сажает самолёт если выполнены определённые условия</Russian>
                 <Chinesesimp>通过脚本添加飞机动作（需满足特定条件）</Chinesesimp>
                 <Korean>특정 조건 충족 시 스크립트로 항공기 액션 추가</Korean>
                 <French>Ajoute une action aérienne via un script si les conditions sont remplies</French>
