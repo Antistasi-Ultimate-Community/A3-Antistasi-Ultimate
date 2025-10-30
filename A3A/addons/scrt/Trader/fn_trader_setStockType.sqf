@@ -91,7 +91,7 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
     };
 
     if ([_addons] call A3U_fnc_hasAddon) then {
-        _modsetsSet set [_prefix, true];
+        _modsets pushBackUnique _prefix;
         [format ["Added %1 to _modsets list.", _prefix]] call A3U_fnc_log;
     };
 } forEach _cfg;
