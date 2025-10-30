@@ -92,8 +92,7 @@ if (_typeCrew in _garrison) then {
     // Process each position
     {
         if (count _garrison == 0) exitWith {};
-        private _role = _x#0;
-        private _turretPath = _x#1;
+        _x params ["_role", "_turretPath"];
         
         // Find rifleman in garrison
         private _index = _garrison findIf { _x == FactionGet(reb,"unitRifle") };
