@@ -188,7 +188,6 @@ class CfgFunctions
             class unlockStatic {};
             class unlockVehicle {};
             class updateRebelStatics {};
-            class vehicleBoxRestore {};
             class zoneCheck {};
             class checkWinCondition {};
             class checkLossCondition {};
