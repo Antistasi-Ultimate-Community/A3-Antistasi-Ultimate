@@ -15,7 +15,7 @@ FIX_LINE_NUMBERS()
 
 params ["_traderX"];
 
-private _modsetsSet = createHashMap;
+private _modsets = [];
 
 // DLC to modset mapping (used for all sections)
 private _dlcModsets = [
