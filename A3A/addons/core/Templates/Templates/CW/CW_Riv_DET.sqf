@@ -2,7 +2,7 @@
 //   Rivals Information   //
 ///////////////////////////
 
-["name", "Death Watch"] call _fnc_saveToTemplate;
+["name", "Deathwatch"] call _fnc_saveToTemplate;
 ["nameLeader", "Pre Vizsla"] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
@@ -45,14 +45,14 @@
 ["vehiclesRivalsTrucks", ["CW_Mando_argon_transport"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", ["3AS_ISP_Transport"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", ["3AS_PX10_REB_UP"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", ["ls_ground_aat_black"]] call _fnc_saveToTemplate;
+["vehiclesRivalsTanks", ["ls_vehicle_aat_black"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["3AS_Aegis_Shuttle_Pirate_F"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["3as_uas2"]] call _fnc_saveToTemplate;			
 
 ["staticLowWeapons", [
 	"3AS_HeavyRepeater_Unarmoured"
 ]] call _fnc_saveToTemplate;
-["staticMortars", ["ls_merc_mortar"]] call _fnc_saveToTemplate;
+["staticMortars", ["ls_vehicle_mortar_mercenary"]] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 
@@ -92,21 +92,21 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", ["ItemGPS"]];
-_loadoutData set ["NVGs", ["ls_mandalorian_rangefinder_nvg"]];
+_loadoutData set ["NVGs", ["ls_mandalorian_rangefinder"]];
 _loadoutData set ["binoculars", ["JLTS_CloneBinocular_black"]];
 _loadoutData set ["Rangefinder", ["JLTS_CloneBinocular_black"]];
 
 _loadoutData set ["uniforms", [
-	"ls_mandalorian_undersuit_uniform"
+	"ls_mandalorianUniform"
 ]];
 
-_loadoutData set ["offuniforms", ["ls_mandalorian_undersuit_uniform"]];
-_loadoutData set ["vests", ["ls_mandalorian_deathwatchGrunt_vest", "ls_mandalorian_deathwatchSergeant_vest"]];
-_loadoutData set ["heavyVests", ["ls_mandalorian_deathwatchGrunt_vest", "ls_mandalorian_deathwatchSergeant_vest", "ls_mandalorian_deathwatchCaptain_vest"]];
-_loadoutData set ["atBackpacks", ["ls_mandalorian_demo_backpack", "ls_mandalorian_heavy_backpack"]];
-_loadoutData set ["backpacks", ["ls_mandalorian_standard_backpack", "ls_mandalorian_light_backpack"]];
-_loadoutData set ["helmets", ["ls_mandalorian_deathwatchGrunt_helmet", "ls_mandalorian_deathwatchGrunt_helmet", "ls_mandalorian_deathwatchSergeant_helmet"]];
-_loadoutData set ["heavyHelmets", ["ls_mandalorian_deathwatchGrunt_helmet", "ls_mandalorian_deathwatchGrunt_helmet", "ls_mandalorian_deathwatchSergeant_helmet", "ls_mandalorian_deathwatchCaptain_helmet"]];
+_loadoutData set ["offuniforms", ["ls_mandalorianUniform"]];
+_loadoutData set ["vests", ["ls_mandalorianVest_deathwatchGrunt", "ls_mandalorianVest_deathwatchSergeant"]];
+_loadoutData set ["heavyVests", ["ls_mandalorianVest_deathwatchCaptain", "ls_mandalorianVest_deathwatchSergeant", "ls_mandalorian_deathwatchCaptain_vest"]];
+_loadoutData set ["atBackpacks", ["ls_mandalorianBackpack_demo", "ls_mandalorianBackpack_heavy"]];
+_loadoutData set ["backpacks", ["ls_mandalorianBackpack", "ls_mandalorianBackpack_light"]];
+_loadoutData set ["helmets", ["ls_mandalorianHelmet_deathwatchGrunt", "ls_mandalorianHelmet_deathwatchGrunt", "ls_mandalorianHelmet_deathwatchSergeant"]];
+_loadoutData set ["heavyHelmets", ["ls_mandalorianHelmet_deathwatchSergeant", "ls_mandalorianHelmet_deathwatchCaptain", "ls_mandalorianHelmet_deathwatchSergeant"]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies]; //this line defines the basic medical loadout for vanilla
@@ -141,59 +141,59 @@ _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
 _loadoutData set ["rifles", [
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["ls_weapon_westar35c", "", "", "",  ["ls_magazine_westar35c"], [], ""],
+	["ls_weapon_westar35c", "", "", "",  ["ls_magazine_westar35c"], [], ""],
 	["3AS_Cinnagaran_Carbine_F", "", "", "3AS_Optic_Cinnagaran_1_F",  ["3AS_Cinnagaran_Carbine_F"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""]
+	["ls_weapon_westar35s", "", "", "",  ["ls_magazine_westar35s"], [], ""]
 ]];
 _loadoutData set ["tunedRifles", [
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["ls_weapon_westar35c", "", "", "",  ["ls_magazine_westar35c"], [], ""],
 	["3AS_Arkanian_F", "", "", "3AS_Optic_Arkanian_1_F",  ["3AS_40Rnd_EM50_Mag"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "swlw_westar35s_scope",  ["SWLW_Westar35S_Mag"], [], ""]
+	["ls_weapon_westar35s", "", "", "",  ["ls_magazine_westar35s"], [], ""],
+	["ls_weapon_westar35s", "", "", "ls_cows_westar35s_scope",  ["ls_magazine_westar35s"], [], ""]
 ]];
 _loadoutData set ["enforcerRifles", [
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["ls_weapon_westar35c", "", "", "",  ["ls_magazine_westar35c"], [], ""],
+	["ls_weapon_westar35c", "", "", "",  ["ls_magazine_westar35c"], [], ""],
 	["3AS_Arkanian_Stock_F", "", "", "3AS_Optic_Arkanian_2_F",  ["3AS_40Rnd_EM50_Mag"], [], ""],
 	["3AS_Cinnagaran_Carbine_F", "", "", "3AS_Optic_Cinnagaran_1_F",  ["3AS_Cinnagaran_Carbine_F"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "",  ["SWLW_Westar35S_Mag"], [], ""],
-	["ls_weapon_westar35s_primary", "", "", "swlw_westar35s_scope",  ["SWLW_Westar35S_Mag"], [], ""]
+	["ls_weapon_westar35s", "", "", "",  ["ls_magazine_westar35s"], [], ""],
+	["ls_weapon_westar35s", "", "", "ls_cows_westar35s_scope",  ["ls_magazine_westar35s"], [], ""]
 ]];
 _loadoutData set ["carbines", [
-	["ls_weapon_westar35c_primary", "", "", "",  ["SWLW_westar35c_Mag"], [], ""],
+	["ls_weapon_westar35c", "", "", "",  ["ls_magazine_westar35c"], [], ""],
 	["3AS_Cinnagaran_Carbine_F", "", "", "3AS_Optic_Cinnagaran_1_F",  ["3AS_Cinnagaran_Carbine_F"], [], ""]
 ]];
 _loadoutData set ["grenadeLaunchers", [
-	["SWLW_WestarM5_UGL", "", "", "", ["SWLW_WestarM5_standard_Mag"], ["SWLW_WestarM5_g_Mag"], ""],
-	["SWLW_WestarM5_UGL", "", "", "swlw_westarm5_scope", ["SWLW_WestarM5_standard_Mag"], ["SWLW_WestarM5_g_Mag"], ""]
+	["ls_weapon_westarM5_ugl", "", "", "", ["ls_magazine_westarM5"], ["ls_3Rnd_40mw_G76_HEF_mag"], ""],
+	["ls_weapon_westarM5_ugl", "", "", "ls_cows_westarM5_scope", ["ls_magazine_westarM5"], ["ls_3Rnd_40mw_G76_HEF_mag"], ""]
 ]];
 _loadoutData set ["machineGuns", [
-	["SWLW_WestarM5", "", "", "", ["SWLW_WestarM5_Mag"], [], ""],
-	["SWLW_WestarM5", "", "", "swlw_westarm5_scope", ["SWLW_WestarM5_Mag"], [], ""]
+	["ls_weapon_westarM5", "", "", "", ["ls_magazine_westarM5"], [], ""],
+	["ls_weapon_westarM5", "", "", "ls_cows_westarM5_scope", ["ls_magazine_westarM5"], [], ""]
 ]];
 _loadoutData set ["marksmanRifles", [
-	["SWLW_sniper", "", "", "swlw_sniper_scope", ["SWLW_sniper_Mag"], [], ""]
+	["ls_weapon_mercenarySniper", "", "", "ls_cows_mercenarySniper_scope", ["ls_magazine_mercenarySniper"], [], ""]
 ]];
-_loadoutData set ["lightATLaunchers", ["ls_weapon_rps6"]];
+_loadoutData set ["lightATLaunchers", ["ls_weapon_rps6_loaded"]];
 _loadoutData set ["ATLaunchers", [
-["ls_weapon_rps6", "", "", "", ["ls_mag_rpg_1rnd"], [], ""]
+["ls_weapon_rps6", "", "", "", ["ls_magazine_rps6_heat"], [], ""]
 ]];
-_loadoutData set ["lightHELaunchers", ["ls_weapon_rps6"]];
-_loadoutData set ["AALaunchers", ["SWLW_PLX1_AA"]];
-_loadoutData set ["sidearms", ["ls_weapon_westar35sa_secondary"]];
+_loadoutData set ["lightHELaunchers", ["ls_weapon_rps6_loaded"]];
+_loadoutData set ["AALaunchers", ["ls_weapon_e60r_aa"]];
+_loadoutData set ["sidearms", ["ls_weapon_westar35sa"]];
 
 //////////////////////////
 //    Misc Loadouts     //
 //////////////////////////
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["vests", ["ls_mandalorian_deathwatchGrunt_vest"]];
-_crewLoadoutData set ["helmets", ["ls_mandalorian_deathwatchGrunt_helmet"]];
+_crewLoadoutData set ["vests", ["ls_mandalorianVest_deathwatchGrunt"]];
+_crewLoadoutData set ["helmets", ["ls_mandalorianHelmet_deathwatchGrunt"]];
 
 private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["vests", ["ls_mandalorian_deathwatchGrunt_vest"]];
-_pilotLoadoutData set ["helmets", ["ls_mandalorian_deathwatchGrunt_helmet"]];
+_pilotLoadoutData set ["vests", ["ls_mandalorianVest_deathwatchGrunt"]];
+_pilotLoadoutData set ["helmets", ["ls_mandalorianHelmet_deathwatchGrunt"]];
 
 
 // ##################### DO NOT TOUCH ANYTHING BELOW THIS LINE #####################
