@@ -152,16 +152,16 @@
                 <Polish>Odbuduj</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebuild_assets_tooltip">
-                <Original>Rebuilds radio towers and military buildings on selected marker. Cost 5000.</Original>
-                <French>Reconstruit les tours radio et les bâtiments militaires sur le marqueur sélectionné. Coût 5000.</French>
-                <Russian>Восстанавливает радиовышки и военные здания на выбранном маркере. Стоимость 5000.</Russian>
-                <German>Baut Funktürme und Militärgebäude auf ausgewählten Markern wieder auf. 5000 gekostet.</German>
-                <Czech>Obnovuje rádiové věže a vojenské budovy na vybrané značce. Cena 5000.</Czech>
-                <Chinesesimp>在选定的标记上重建无线电塔和军事建筑。 成本5000。</Chinesesimp>
-                <Korean>선택한 마커에 라디오 타워와 군사 건물을 재건설합니다. 비용 5000.</Korean>
-                <Italian>Ricostruisce le torri radio e gli edifici militari sull'indicatore selezionato. Costo 5000.</Italian>
-                <Spanish>Reconstruye torres de radio y edificios militares en el marcador seleccionado. Costo 5000.</Spanish>
-                <Polish>Odbudowuje wieże radiowe i budynki wojskowe na wybranym znaczniku. Koszt 5000.</Polish>
+                <Original>Rebuilds factories, resources, radio towers and military buildings on selected marker. Cost 5000.</Original>
+                <French>Reconstruit les usines, ressources, tours radio et bâtiments militaires sur le marqueur sélectionné. Coût 5000.</French>
+                <Russian>Восстанавливает фабрики, ресурсы, радиовышки и военные здания на выбранном маркере. Стоимость 5000.</Russian>
+                <German>Stellt Fabriken, Ressourcen, Funktürme und Militärgebäude am ausgewählten Marker wieder her. Kosten 5000.</German>
+                <Czech>Obnoví továrny, zdroje, radiové věže a vojenské budovy na vybraném markeru. Cena 5000.</Czech>
+                <Chinesesimp>在选定的标记上重建工厂, 资源, 无线电塔和军事建筑。费用5000。</Chinesesimp>
+                <Korean>선택한 마커에 공장, 자원, 무전탑 및 군사 건물을 재건합니다. 비용 5000.</Korean>
+                <Italian>Ricostruisce fabbriche, risorse, torri radio e edifici militari sul marcatore selezionato. Costo 5000.</Italian>
+                <Spanish>Reconstruye fábricas, recursos, torres de radio y edificios militares en el marcador seleccionado. Coste 5000.</Spanish>
+                <Polish>Odbudowuje fabryki, zasoby, wieże radiowe i budynki wojskowe na wybranym markerze. Koszt 5000.</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
                 <Original>Train Rebel Troops</Original>
