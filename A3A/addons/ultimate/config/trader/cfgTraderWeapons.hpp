@@ -178,3 +178,7 @@
         {
             prefix = "ef";
         };
+        class weapons_mpp : weapons_base
+        {
+            prefix = "mpp_stock";
+        };
