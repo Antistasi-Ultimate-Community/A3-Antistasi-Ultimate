@@ -141,7 +141,7 @@ if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
         };
     };
     
-    _veh setVehicleRadar 1;
+    _veh setVehicleRadar (getNumber (configOf _veh >> "radarType") in [2,4]);
     
 } forEach _freeStatics;
 
