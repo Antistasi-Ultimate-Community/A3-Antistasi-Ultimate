@@ -111,9 +111,6 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
     };
 } forEach _dlcModsets;
 
-// Convert set to array
-private _modsets = keys _modsetsSet;
-
 // Handle vanilla modset
 if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
     _modsets pushBackUnique "vanilla";
