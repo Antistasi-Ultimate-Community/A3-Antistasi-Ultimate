@@ -33,10 +33,10 @@ private _statics = staticsToSave inAreaArray _marker;
 _statics = _statics select {!(_x isKindOf "StaticMortar") and !(_x isKindOf "Air")};           // may include bunkers. Don't bother with mortars yet //why not bother with mortars?
 if (count _statics == 0) exitWith {};
 
-if (_target in UngaragedVehicles) then {
-    private _deleteVeh = UngaragedVehicles find _target;
-    UngaragedVehicles deleteAt _deleteVeh;
-    publicVariable "UngaragedVehicles";
+if (_target in ungaragedVehicles) then {
+    private _deleteVeh = ungaragedVehicles find _target;
+    ungaragedVehicles deleteAt _deleteVeh;
+    publicVariable "ungaragedVehicles";
 };
 
 // Find unlocked & unoccupied statics
