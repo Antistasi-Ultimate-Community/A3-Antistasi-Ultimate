@@ -107,7 +107,7 @@ if (_typeCrew in _garrison) then {
             _groupStatics
         };
         
-        private _unit = [_unitGroup, _garrison#_index, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
+        private _unit = [_unitGroup, _garrison select _index, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
         
         // Assign position
         switch (_role) do {
