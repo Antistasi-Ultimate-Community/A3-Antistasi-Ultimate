@@ -115,9 +115,8 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
 private _modsets = keys _modsetsSet;
 
 // Handle vanilla modset
-private _vanillaModset = ["vanilla"];
 if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
-    _modsets append _vanillaModset;
+    _modsets pushBackUnique "vanilla";
 };
 
 if ("coldWar" in A3A_factionEquipFlags) then { // 3cbf cold war //why do it this way?
