@@ -98,18 +98,14 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
 
 // Process DLC modsets with enabled check
 {
-    _x params ["_dlc", "_modset", ["_additional", []]];
-    if (_dlc in A3A_enabledDLC) then {
-        _modsetsSet set [_modset, true];
-        
-        {
-            _x params ["_addModset", "_checkClass"];
-            if (isClass (configFile >> "cfgVehicles" >> _checkClass)) then {
-                _modsetsSet set [_addModset, true];
-            };
-        } forEach _additional;
+    if !(_y in A3A_enabledDLC) then { continue };
+
+    if (_x isEqualType "") then {
+        _modsets pushBackUnique _x;
+    } else {
+        if (isClass (configFile >> "cfgVehicles" >> _x select 1)) then { _modsets pushBackUnique (_x select 0) };
     };
-} forEach _dlcModsets;
+} forEach (_modsetToDLC);
 
 // Handle vanilla modset
 if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
