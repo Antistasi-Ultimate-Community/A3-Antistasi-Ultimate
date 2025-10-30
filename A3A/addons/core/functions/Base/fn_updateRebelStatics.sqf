@@ -146,4 +146,4 @@ if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
 } forEach _freeStatics;
 
 _staticGroup setBehaviour "AWARE";
-_staticGroup setCombatMode "YELLOW";
+_staticGroup setCombatMode "WHITE";
