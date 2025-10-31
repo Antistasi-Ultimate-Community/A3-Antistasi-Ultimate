@@ -49,7 +49,7 @@ _AirDropPosition = [_outpostPosition, 100, 300, 10, 0, 10, 0, [], [[0,0,0],[0,0,
 _AirDropPositionActuall = [_AirDropPosition, 40, 100, 10, 0, 5, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
 
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; 
-_InfGroup = [_AirDropPositionActuall, _side, _specOpsArray] call A3A_fnc_spawnGroup;
+private _InfGroup = [_AirDropPositionActuall, _side, _specOpsArray] call A3A_fnc_spawnGroup;
 {[_x] call A3A_fnc_NATOinit} forEach units _InfGroup;
 _InfGroup setBehaviourStrong "SAFE";
 private _wp = _InfGroup addWaypoint [_AirDropPosition, 50];
