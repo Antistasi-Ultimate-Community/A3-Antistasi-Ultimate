@@ -48,7 +48,7 @@ private _planeGroup = _civPlaneData select 2;
 _groups pushBack _planeGroup;
 _vehicles pushBack _planeVeh;
 
-private _height = 100 + (random 150);
+private _height = 150 + (random 150);
 _planeVeh flyInHeight _height;
 _planeVeh setPosATL (_spawnPosition vectorAdd [0, 0, _height]);
 _planeVeh setDir ([_planeVeh, _originPosition] call BIS_fnc_dirTo);
