@@ -30,7 +30,7 @@ Info_2("%1 will be used as center of the event at %2 position.", name _player, s
 
 private _city = if (_originPosition isEqualType "") then {_originPosition} else {[citiesX, _originPosition] call BIS_fnc_nearestPosition};
 
-if (_cities isEqualTo []) exitWith {
+if (isNil "_city" || {_city isEqualTo ""} || {_city isEqualTo objNull} || {_city isEqualTo locationNull}) exitWith {
     Info("No cities in proximity, rerolling another event.");
     [CIV_CONVOY] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
