@@ -6,6 +6,7 @@ Info("medical Event Init.");
 
 private _vehicles = [];
 private _groups = [];
+private _others = [];
 
 private _player = selectRandom (call SCRT_fnc_misc_getRebelPlayers);
 
