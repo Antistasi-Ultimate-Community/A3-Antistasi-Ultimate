@@ -39,7 +39,7 @@ private _faction = Faction(_side);
 private _outpostPosition = getMarkerPos _outpost;
 
 if (_outpostPosition isEqualTo []) exitWith {
-    Info("No spawn positions in proximity, aborting Heli slingload cargo Event.");
+    Info("No spawn positions in proximity, aborting SpecOps Airdrop Event.");
     isEventInProgress = false;
     publicVariableServer "isEventInProgress";
 };
