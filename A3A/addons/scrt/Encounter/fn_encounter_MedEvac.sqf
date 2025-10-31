@@ -6,6 +6,7 @@ Info("medical Event Init.");
 
 private _vehicles = [];
 private _groups = [];
+private _others = [];
 
 private _player = selectRandom (call SCRT_fnc_misc_getRebelPlayers);
 
@@ -16,14 +17,6 @@ if (isNil "_player") exitWith {
 };
 
 private _originPosition = position _player;
-
-/* private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
-
-if !(_frontLine isEqualTo []) exitWith {
-    Error("Position is near frontline, need to select appropriate event.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
-}; */
 
 Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
 
