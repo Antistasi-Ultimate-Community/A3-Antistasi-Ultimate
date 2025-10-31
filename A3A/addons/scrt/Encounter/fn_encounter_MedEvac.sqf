@@ -206,7 +206,7 @@ private _positionCrashedVehicle = getPos _crashedVehicle;
 private _flaer = "F_40mm_Red" createVehicle _positionCrashedVehicle;
 private _smokeGrenade = "SmokeShellRed" createVehicle _positionCrashedVehicle;
 
-_flaer setPos [(_positionCrashedVehicle select 0) - 4, (_positionCrashedVehicle select 1) + 4, 0];
+_flare setPos [(_positionCrashedVehicle select 0) - 4, (_positionCrashedVehicle select 1) + 4, 0];
 _smokeGrenade setPos [(_positionCrashedVehicle select 0) - 5, (_positionCrashedVehicle select 1) + 5, 0];
 
 sleep 20;
