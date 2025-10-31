@@ -81,6 +81,7 @@ waitUntil {
 private _smokeGrenade = "SmokeShellRed" createVehicle _AirDropPosition;
 
 private _smokes = _AirDropPosition nearObjects ["SmokeShell", 200];
+_others append _smokes;
 private _planeVeh = objNull;
 
 if(count _smokes > 0) then {
@@ -196,6 +197,23 @@ if(alive _planeVeh) then {
 
 _planeVeh limitSpeed 1000;
 _planeVeh flyInHeight 200;
+
+waitUntil { sleep 2; getPos _box1 select 2 < 3 && getPos _box2 select 2 < 3};
+_box1 allowDamage true;
+_box2 allowDamage true;
+
+private _chemLight = "Chemlight_green";
+private _light1 = _chemLight createVehicle (getPosATL _box1);
+_light1 attachTo [_box1, [0,0,0]];
+private _light2 = _chemLight createVehicle (getPosATL _box2);
+_light2 attachTo [_box2, [0,0,0]];
+
+_others append [_light1, _light2];
+
+detach _light1;
+detach _light2;
+
+_vehicles append _others;
 
 waitUntil { 
     sleep 5; 
