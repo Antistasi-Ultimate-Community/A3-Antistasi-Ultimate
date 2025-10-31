@@ -98,7 +98,7 @@ private _convoySpacing = 15;
         _roadPosition = _roadPosition getPos [_latOffset, _roadDir + 90];
     };
 
-    private _isFia = if (random 10 > tierWar) then {true} else {false};
+    private _isFia = random 10 > tierWar;
     private _vehicleClass = "";
 
     // Vehicle class selection
