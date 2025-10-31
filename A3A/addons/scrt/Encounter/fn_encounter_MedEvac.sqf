@@ -85,7 +85,7 @@ if (_vehicleClass == "") exitWith {
 private _MedicalVehicleClass = selectRandom ((_faction get "vehiclesMedical") + (_faction get "vehiclesHelisTransport")); // Get a random medical vehicle class
 
 if (_MedicalVehicleClass == "") exitWith {
-    Error("No vehicle class, aborting.");
+    Error("No medical vehicle class, aborting.");
     isEventInProgress = false;
     publicVariableServer "isEventInProgress";
 };
