@@ -44,7 +44,7 @@ private _marker = [(markersX select {sidesX getVariable [_x, sideUnknown] != tea
 private _side = sidesX getVariable [_marker, Occupants];
 private _faction = Faction(_side);
 
-private _isFia = if (random 10 > tierWar) then {true} else {false};
+private _isFia = random 10 > tierWar;
 private _vehicleClass = if (_isFia) then {
     selectRandom ((_faction get "vehiclesMilitiaLightArmed") +  (_faction get "vehiclesMilitiaAPCs"));
 } else {
