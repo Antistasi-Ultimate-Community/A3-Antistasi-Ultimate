@@ -60,7 +60,7 @@ if (_vehicleClass == "") exitWith {
 private _repairVehicleClass = selectRandom ((_faction get "vehiclesRepairTrucks")); // Get random repair vehicle
 
 if (_repairVehicleClass == "") exitWith {
-    Error("No vehicle class, aborting.");
+    Error("No repair vehicle class, aborting.");
     isEventInProgress = false;
     publicVariableServer "isEventInProgress";
 };
