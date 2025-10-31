@@ -15,7 +15,7 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
-private _cities = citiesX select {sidesX getVariable [_x, sideUnknown] != teamPlayer && {spawner getVariable _x != 2}};
+private _cities = citiesX select {sidesX getVariable [_x, sideUnknown] != teamPlayer && {spawner getVariable _x != 2} && {!(_x in destroyedSites)}};
 
 if (_cities isEqualTo []) exitWith {
     Info("No neutral cities available, aborting event.");
