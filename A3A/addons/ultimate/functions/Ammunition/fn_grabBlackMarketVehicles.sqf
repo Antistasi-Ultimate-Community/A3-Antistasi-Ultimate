@@ -15,6 +15,17 @@ private _blackMarketStock = [];
 private _ignoreList = [];
 private _baseCfg = (configFile >> "A3U" >> "traderAddons");
 
+// Define blocking DLCs (CDLC) - these should block vanilla vehicles
+private _blockingDLCs = createHashMapFromArray [
+    ["ws", true],
+    ["gm", true],
+    ["csla", true],
+    ["rf", true],
+    ["vn", true],
+    ["spe", true],
+    ["ef", true]
+];
+
 private _categories = [
     ["jets", "vehicles_jets"],
     ["kart", "vehicles_kart"],
@@ -32,6 +43,9 @@ private _categories = [
     ["gm", "vehicles_gm"],
     ["ef", "vehicles_ef"]
 ];
+
+// Track if we have any blocking vehicles (from CDLC or custom mods)
+private _hasBlockingVehicles = false;
 
 // Processing all categories in a single loop
 {
@@ -55,6 +69,11 @@ private _categories = [
                 private _condition = compile getText (_vehicleCfg >> _x >> "condition");
                 _blackMarketStock pushBack [_x, _price, _type, _condition];
                 [format ["Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition], _fnc_scriptName] call A3U_fnc_log;
+                
+                // Mark as blocking if this is a CDLC
+                if (_blockingDLCs getOrDefault [_dlc, false]) then {
+                    _hasBlockingVehicles = true;
+                };
             } forEach _vehicles;
         } else {
             // For disabled DLCs: add to ignoreList
@@ -83,6 +102,11 @@ private _categories = [
                     private _condition = compile getText (_addCfg >> _x >> "condition");
                     _blackMarketStock pushBack [_x, _price, _type, _condition];
                     [format ["Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition], _fnc_scriptName] call A3U_fnc_log;
+                    
+                    // Mark as blocking if this is a CDLC
+                    if (_blockingDLCs getOrDefault [_dlc, false]) then {
+                        _hasBlockingVehicles = true;
+                    };
                 } forEach _addVehicles;
             } else {
                 // For disabled DLCs: add to ignoreList
@@ -94,6 +118,9 @@ private _categories = [
 
 // Remove duplicates from ignore list
 _ignoreList = _ignoreList arrayIntersect _ignoreList;
+
+// Track if we have any custom mod vehicles (not from DLC)
+private _hasCustomModVehicles = false;
 
 // Processing general configurations with ignore list check
 private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses; 
@@ -130,29 +157,30 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
         private _type = getText (_vehicleCfg >> _x >> "type");
         private _condition = compile getText (_vehicleCfg >> _x >> "condition");
         _blackMarketStock pushBack [_x, _price, _type, _condition];
+        _hasCustomModVehicles = true; // Mark that we have custom mod vehicles
 
         [format ["Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition], _fnc_scriptName] call A3U_fnc_log;
     } forEach _vehicles;
 } forEach _cfg;
 
-// Special cases
-if (_blackMarketStock isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
-	private _vehicleCfg = (_baseCfg >> "traderVehicles" >> "vehicles_vanilla");
-	private _vehicles = _vehicleCfg call BIS_fnc_getCfgSubClasses;
+// Special cases - only add vanilla if no blocking vehicles OR vanillaArmsDealer is true
+if ((!_hasBlockingVehicles && !_hasCustomModVehicles) || {vanillaArmsDealer isEqualTo true}) then {
+    private _vehicleCfg = (_baseCfg >> "traderVehicles" >> "vehicles_vanilla");
+    private _vehicles = _vehicleCfg call BIS_fnc_getCfgSubClasses;
 
-	{
-		if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-			[format["%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x], _fnc_scriptName] call A3U_fnc_log;
-			continue;
-		};
+    {
+        if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
+            [format["%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x], _fnc_scriptName] call A3U_fnc_log;
+            continue;
+        };
+        
+        private _price = getNumber (_vehicleCfg >> _x >> "price");
+        private _type = getText (_vehicleCfg >> _x >> "type");
+        private _condition = compile getText (_vehicleCfg >> _x >> "condition");
+        _blackMarketStock pushBack [_x, _price, _type, _condition];
 
-		private _price = getNumber (_vehicleCfg >> _x >> "price");
-		private _type = getText (_vehicleCfg >> _x >> "type");
-		private _condition = compile getText (_vehicleCfg >> _x >> "condition");
-		_blackMarketStock pushBack [_x, _price, _type, _condition];
-
-		[format ["Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition], _fnc_scriptName] call A3U_fnc_log;
-	} forEach _vehicles;
+        [format ["Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition], _fnc_scriptName] call A3U_fnc_log;
+    } forEach _vehicles;
 };
 
 A3U_blackMarketStock = _blackMarketStock;

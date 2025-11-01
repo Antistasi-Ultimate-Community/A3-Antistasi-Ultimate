@@ -32,10 +32,25 @@ private _modsetToDLC = createHashMapFromArray [
     ["csla", "csla"],
     ["rf", "rf"],
     ["vn", "vn"],
-    [["nickelsteel", "vnx_b_air_ac119_02_01"], "vn"],
     ["ww2cdlc", "spe"],
-    [["spex", "SPEX_M2_60"], "spe"],
     ["ef", "ef"]
+];
+
+// Special modsets that require class checks
+private _specialModsets = [
+    ["nickelsteel", "vn", "vnx_b_air_ac119_02_01"],
+    ["spex", "spe", "SPEX_M2_60"]
+];
+
+// Define which DLC/CDLC are considered modsets (block vanilla)
+private _modsetDLCs = createHashMapFromArray [
+    ["ws", true],
+    ["globmob", true],
+    ["csla", true],
+    ["rf", true],
+    ["vn", true],
+    ["ww2cdlc", true],
+    ["ef", true]
 ];
 
 // Process old config format with DLC check
@@ -86,19 +101,43 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
     };
 } forEach _cfg;
 
-// Process DLC modsets with enabled check
+// Process regular DLC modsets with enabled check
 {
-    if !(_y in A3A_enabledDLC) then { continue };
-
-    if (_x isEqualType "") then {
-        _modsets pushBackUnique _x;
-    } else {
-        if (isClass (configFile >> "cfgVehicles" >> _x select 1)) then { _modsets pushBackUnique (_x select 0) };
+    private _modset = _x;
+    private _dlc = _y;
+    
+    if (_dlc in A3A_enabledDLC) then {
+        _modsets pushBackUnique _modset;
     };
-} forEach (_modsetToDLC);
+} forEach _modsetToDLC;
 
-// Handle vanilla modset
-if (_modsets isEqualTo [] || {vanillaArmsDealer isEqualTo true}) then {
+// Process special modsets with class checks
+{
+    _x params ["_modset", "_dlc", "_checkClass"];
+    
+    if (_dlc in A3A_enabledDLC && {isClass (configFile >> "cfgVehicles" >> _checkClass)}) then {
+        _modsets pushBackUnique _modset;
+    };
+} forEach _specialModsets;
+
+// Check if we have any blocking modsets (CDLC or custom mods)
+private _hasBlockingModsets = false;
+{
+    private _currentModset = _x;
+    // Blocking modsets are: CDLC modsets OR any custom mods (not in _modsetToDLC and not in _specialModsets)
+    private _isSpecialModset = false;
+    {
+        if (_x#0 == _currentModset) exitWith { _isSpecialModset = true; };
+    } forEach _specialModsets;
+    
+    if (_modsetDLCs getOrDefault [_currentModset, false] || 
+        (isNil {_modsetToDLC get _currentModset} && !_isSpecialModset)) then {
+        _hasBlockingModsets = true;
+    };
+} forEach _modsets;
+
+// Handle vanilla modset - only add if no blocking modsets OR vanillaArmsDealer is true
+if (!_hasBlockingModsets || {vanillaArmsDealer isEqualTo true}) then {
     _modsets pushBackUnique "vanilla";
 };
 
