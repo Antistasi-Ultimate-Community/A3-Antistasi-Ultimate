@@ -8,7 +8,7 @@ switch (_mode) do {
 		createDialog "A3A_SetupDialog_InGame";
 
 		private _display = findDisplay A3A_IDD_SETUPDIALOG;
-		private _params = ([missionNamespace, "A3A_saveData", []] call BIS_fnc_getServerVariable) get "params";
+		private _params = ([missionNamespace, "A3A_saveData", createHashMap] call BIS_fnc_getServerVariable) getOrDefault["params", []];
 		_display setVariable ["savedParams", _params];
 
 		["switchTab", ["params"]] call A3A_fnc_setupDialog;
