@@ -141,6 +141,13 @@ _groups pushBack _groupCrew;
 {
 	_x doMove _roadPosition;
 	removeAllWeapons _x;
+    _x leaveVehicle _crashedVehicle;
+    doGetOut _x;
+    unassignVehicle _x;
+} forEach (units _groupCrew);
+
+{
+    _x setPos (_crashedVehicle getPos [3 + random 5, random 360]);
 } forEach (units _groupCrew);
 
 private _groupCrewInjured = createGroup civilian;
@@ -183,8 +190,21 @@ if (_MedicalVehicle isKindOf "Air") then {
 
 private _timeOut = time + 1200;
 
+private _signalsCreated = false;
 waitUntil { 
     sleep 2; 
+    
+    if (!_signalsCreated && (_MedicalVehicle distance2D _crashedVehicle) < 200) then {
+        private _positionCrashedVehicle = getPos _crashedVehicle;
+        private _flare = "F_40mm_Red" createVehicle _positionCrashedVehicle;
+        _others pushBack _flare;
+        private _smokeGrenade = "SmokeShellRed" createVehicle _positionCrashedVehicle;
+        _others pushBack _smokeGrenade;
+        _flare setPos [(_positionCrashedVehicle select 0) - 4, (_positionCrashedVehicle select 1) + 4, 0];
+        _smokeGrenade setPos [(_positionCrashedVehicle select 0) - 5, (_positionCrashedVehicle select 1) + 5, 0];
+        _signalsCreated = true;
+    };
+    
     time > _timeOut || 
     {!alive _crashedVehicle || 
     {
@@ -194,15 +214,6 @@ waitUntil {
         (_MedicalVehicle distance2D _crashedVehicle) < 100
     }}
 };
-
-private _positionCrashedVehicle = getPos _crashedVehicle;
-private _flare = "F_40mm_Red" createVehicle _positionCrashedVehicle;
-_others pushBack _flare;
-private _smokeGrenade = "SmokeShellRed" createVehicle _positionCrashedVehicle;
-_others pushBack _smokeGrenade;
-
-_flare setPos [(_positionCrashedVehicle select 0) - 4, (_positionCrashedVehicle select 1) + 4, 0];
-_smokeGrenade setPos [(_positionCrashedVehicle select 0) - 5, (_positionCrashedVehicle select 1) + 5, 0];
 
 _vehicles append _others;
 
@@ -235,7 +246,7 @@ waitUntil {
 		(call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < 1400} == -1
 	}|| 
     {
-        (_MedicalVehicle distance2D (getMarkerPos _marker)) < 100
+        (_MedicalVehicle distance2D (getMarkerPos _marker)) > 100
     }}
 };
 
