@@ -388,7 +388,7 @@ for "_i" from 1 to _vehicleCountLose do {
 
 // Survivor behavior script
 private _spawnSurvivor = {
-    params ["_group","_faction","_pos"];
+    params ["_group","_faction","_pos","_roadPos"];
     private _unitType = [(_faction get "unitRifle")] call SCRT_fnc_unit_getTiered;
     private _unit = [_group, _unitType, _pos, [], 5, "NONE"] call A3A_fnc_createUnit;
     _unit setDamage random [0.4, 0.6, 0.8];
@@ -428,10 +428,10 @@ private _spawnSurvivor = {
         };
     } else {
         _unit setDamage 0.8;
-        [_unit] spawn {
-            params ["_unit"];
+        [_unit, _roadPos] spawn {
+            params ["_unit", "_roadPos"];
             while {alive _unit} do {
-                private _movePos = _roadPosition getPos [random 50, random 360];
+                private _movePos = _roadPos getPos [random 50, random 360];
                 _unit doMove _movePos;
                 sleep 120 + random 180;
             };
@@ -443,7 +443,7 @@ private _spawnSurvivor = {
 private _survivorGroup = createGroup _winningSide;
 for "_i" from 1 to (2 + floor(random 4)) do {
     private _spawnPos = [_roadPosition, 10, 45] call _fnc_findPos;
-    [_survivorGroup, _winFaction, _spawnPos] call _spawnSurvivor;
+    [_survivorGroup, _winFaction, _spawnPos, _roadPosition] call _spawnSurvivor;
 };
 _groups pushBack _survivorGroup;
 
