@@ -5,11 +5,11 @@
 ["name", "Mandalorian"] call _fnc_saveToTemplate;
 
 ["flag", "ls_flag_mandalorian"] call _fnc_saveToTemplate;
-["flagTexture", "\LS_statics_props\flags\data\flag_mandalorian.paa"] call _fnc_saveToTemplate;
+["flagTexture", "ls\core\addons\data\flags\flag_mandalorian_ca.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "mando_marker_red"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CW_Quadbike"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["lsd_civ_lancerBike"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["ls_vehicle_105kLancer_civ"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["CW_Offroad_Mando_HMG"]] call _fnc_saveToTemplate;
 ["vehiclesTruck", ["CW_Mando_argon_transport"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["CW_Offroad_Mando_AT"]] call _fnc_saveToTemplate;
@@ -17,7 +17,7 @@
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["442_a10_plane_cas"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["ls_vehicle_z98"]] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["C_Offroad_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["C_Van_01_transport_F"]] call _fnc_saveToTemplate;
@@ -27,46 +27,17 @@
 ["staticMGs", ["3AS_HeavyRepeater_Unarmoured"]] call _fnc_saveToTemplate;
 ["staticAT", ["3as_ParticleCannon"]] call _fnc_saveToTemplate;
 ["staticAA", ["AA_Turret"]] call _fnc_saveToTemplate;
-["staticMortars", ["ls_merc_mortar"]] call _fnc_saveToTemplate;
+["staticMortars", ["ls_vehicle_mortar_mercenary"]] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 
 ["mineAT", "ATMine_Range_Mag"] call _fnc_saveToTemplate;
 ["mineAPERS", "APERSBoundingMine_Range_Mag"] call _fnc_saveToTemplate;
 
-["breachingExplosivesAPC", [["SWLW_clones_spec_demo_mag", 1], ["SWLW_clones_spec_breach_mag", 1]]] call _fnc_saveToTemplate;
-["breachingExplosivesTank", [["SWLW_clones_spec_demo_mag", 1], ["SWLW_clones_spec_breach_mag", 2]]] call _fnc_saveToTemplate;
+["breachingExplosivesAPC", [["ls_explosive_demoCharge_magazine", 1], ["ls_explosive_breachCharge_magazine", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["ls_explosive_demoCharge_magazine", 1], ["ls_explosive_breachCharge_magazine", 2]]] call _fnc_saveToTemplate;
 
 #include "CW_Reb_Vehicle_Attributes.sqf"
-
-//////////////////////////////////////
-//       Antistasi Plus Stuff       //
-//////////////////////////////////////
-
-["blackMarketStock", [
-    ["3AS_StationaryTurret", 3000, "STATICAT", {tierWar > 3}],
-    ["3as_XX9", 50000, "STATICMG", {tierWar > 8}],
-
-
-    ["3AS_Barc", 1750, "CAR", {true}],
-    ["3AS_BarcSideCar", 2050, "CAR", {true}],
-	["3AS_ISP", 3000, "CAR", {true}],
-	["3AS_ISP_Transport", 2500, "CAR", {true}],
-
-    ["3AS_RTT", 6000, "APC", {true}],
-
-    ["3AS_AAT_Woodland", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["3AS_AAT_Desert", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["3AS_AAT_Tropical", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["3AS_AAT_Winter", 20000, "TANK", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    
-    ["3AS_RX200_Base", 30000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-
-    ["3as_arc_170_red", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-
-    ["3as_LAAT_Mk2", 25000, "HELI", {tierWar > 4 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["3as_LAAT_Mk1", 35000, "HELI", {tierWar > 6 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
-]] call _fnc_saveToTemplate;
 
 ///////////////////////////
 //  Rebel Starting Gear  //
@@ -74,24 +45,24 @@
 
 private _initialRebelEquipment = [
     "JLTS_DP23", "JLTS_DP23_mag",
-    "ls_weapon_westar35sa_secondary","SWLW_westar35sa_Mag",
-    ["ls_weapon_rps6_disposable", 5],
-    ["SWLW_clones_spec_breach_mag", 10], ["SWLW_clones_spec_demo_mag", 3],
+    "ls_weapon_westar35sa","ls_magazine_westar35sa",
+    ["ls_weapon_rps6_loaded", 5],
+    ["ls_explosive_breachCharge_magazine", 10], ["ls_explosive_demoCharge_magazine", 3],
     "3AS_ThermalDetonator","SmokeShell",
-    "SWLB_CEE_Recon_Lieutenant","SWLB_CEE_Officer_Tactical", // we could give them proper vests, but they might be getting removed from legion, so we'll be safe
-    "ls_mandalorian_vizslaGrunt_helmet","ls_mandalorian_vizslaSergeant_helmet","ls_mandalorian_vizslaCaptain_helmet","ls_mandalorian_ordoGrunt_helmet","ls_mandalorian_ordoSergeant_helmet",
-    "ls_mandalorian_standard_backpack", "ls_mandalorian_light_backpack", "ls_mandalorian_demo_backpack","ls_mandalorian_heavy_backpack","ls_mandalorian_medic_backpack",
-    "SWLB_clone_commander_binocular_night"
+    "ls_vest_poncho","ls_vest_poncho_partnerBlack", "ls_vest_poncho_partnerWhite", "ls_vest_poncho_peaceBlue", "ls_vest_poncho_peaceGreen", "ls_vest_poncho_peaceRed", "ls_vest_poncho_sidestripeBlue", "ls_vest_poncho_sidestripeBrown", "ls_vest_poncho_sidestripeRed", "ls_vest_poncho_sidestripeWhite",
+    "ls_mandalorianHelmet_eldarGrunt","ls_mandalorianHelmet_eldarSergeant","ls_mandalorianHelmet_ordoGrunt","ls_mandalorianHelmet_ordoSergeant", "ls_mandalorianHelmet_traditional",
+    "ls_mandalorianBackpack", "ls_mandalorianBackpack_light", "ls_mandalorianBackpack_demo","ls_mandalorianBackpack_heavy","ls_mandalorianBackpack_medic",
+    "JLTS_CloneBinocular_black"
 ];
 
-if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","SWLB_comlink_hush98","tf_anprc154"]};
-if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["ls_mandalorian_tro_backpack"]};
-if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","JLTS_clone_comlink","TFAR_anprc154"]};
-if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["JLTS_Clone_ARC_backpack"]};
+if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","ls_radios_hush98","tf_anprc154"]};
+if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["ls_mandalorianBackpack_radio"]};
+if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","ls_radios_hush98","TFAR_anprc154"]};
+if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["ls_mandalorianBackpack_radio"]};
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-    "ls_mandalorian_undersuit_uniform"
+    "ls_mandalorianUniform"
 ];
 
 private _dlcUniforms = [];
@@ -123,9 +94,9 @@ _loadoutData set ["binoculars", ["JLTS_CloneBinocular_black"]];
 
 _loadoutData set ["uniforms", _rebUniforms];
 
-_loadoutData set ["glasses", ["ls_jn_goggles_facewear"]];
-_loadoutData set ["goggles", ["lsd_gar_p1Interior_hud", "lsd_gar_p2Interior_hud", "SWLB_clone_p1_HUD", "SWLB_clone_p2_HUD"]];
-_loadoutData set ["facemask", ["ls_misc_poncho_facewear", "ls_misc_poncho_partnerBlack_facewear", "ls_misc_poncho_partnerWhite_facewear", "ls_misc_poncho_sideStripeBlue_facewear", "ls_misc_poncho_sideStripeRed_facewear", "ls_misc_poncho_sideStripeWhite_facewear", "ls_misc_poncho_sideStripeBrown_facewear"]];
+_loadoutData set ["glasses", []];
+_loadoutData set ["goggles", ["ls_clone_phase1_hud", "ls_clone_phase2_hud"]];
+_loadoutData set ["facemask", []];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
