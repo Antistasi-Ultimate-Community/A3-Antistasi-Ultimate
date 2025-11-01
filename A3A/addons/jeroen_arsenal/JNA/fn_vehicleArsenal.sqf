@@ -557,7 +557,7 @@ switch _mode do {
 
 		private _objectSelected = uiNamespace getVariable "jn_object_selected";
 
-		_maximumLoad = getNumber(configfile >> "CfgVehicles" >> (typeOf _objectSelected) >> "maximumLoad");
+		_maximumLoad = maxLoad _objectSelected;
 
 		_ctrlLoadCargo = _display displayctrl IDC_RSCDISPLAYARSENAL_LOADCARGO;
 		_load = _maximumLoad * (1 - progressposition _ctrlLoadCargo);
@@ -645,7 +645,7 @@ switch _mode do {
 
 		_ctrlLoadCargo = _display displayctrl IDC_RSCDISPLAYARSENAL_LOADCARGO;
 		//save old weight
-		_max = getNumber(configfile >> "CfgVehicles" >> (typeOf _objectSelected) >> "maximumLoad");
+		_max = maxLoad _objectSelected;
 
 		_amountOld = parseNumber (_ctrlList lnbtext [_lbcursel,2]);
 		//remove or add

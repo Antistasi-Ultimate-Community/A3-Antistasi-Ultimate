@@ -8,32 +8,11 @@
 //////////////////////////////////////
 //       	Identities    			//
 //////////////////////////////////////
-["faces", [
-	"RussianHead_1", 
-	"RussianHead_2", 
-	"RussianHead_3", 
-	"RussianHead_4", 
-	"RussianHead_5", 
-	"WhiteHead_29", 
-	"WhiteHead_30", 
-	"LivonianHead_1", 
-	"LivonianHead_2",
-	"LivonianHead_3",
-	"LivonianHead_4",
-	"LivonianHead_5",
-	"LivonianHead_6",
-	"LivonianHead_7",
-	"LivonianHead_8",
-	"LivonianHead_9",
-	"LivonianHead_10",
-	"GreekHead_A3_02",
-	"GreekHead_A3_06",
-	"GreekHead_A3_03",
-	"GreekHead_A3_04",
-	"AsianHead_A3_03",
-	"AsianHead_A3_06"
-]] call _fnc_saveToTemplate; 
-["voices", ["Male01POL", "Male02POL", "Male03POL", "Male01RUS", "Male02RUS", "Male03RUS"]] call _fnc_saveToTemplate;
+["faces", ["cwr3_face_hammer","Barklem",
+"TanoanHead_A3_06","TanoanHead_A3_01","TanoanHead_A3_09","TanoanHead_A3_07",
+"TanoanHead_A3_05","TanoanHead_A3_04","TanoanHead_A3_03","TanoanHead_A3_02",
+"AfricanHead_01","AfricanHead_03","AfricanHead_02"]] call _fnc_saveToTemplate;
+["voices", ["Male01FRE", "Male02FRE", "Male03FRE", "Male01ENGFRE", "Male02ENGFRE"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //

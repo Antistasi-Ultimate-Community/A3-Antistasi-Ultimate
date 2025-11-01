@@ -99,9 +99,6 @@ switch (gameMode) do {
 	case 3: {
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_gamemode"],format [localize "STR_antistasi_journal_entry_text_gamemode_2",_nameOcc,_nameReb]]]
 	};
-	case 4: {
-		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_gamemode"],format [localize "STR_antistasi_journal_entry_text_gamemode_1",_nameInv,_nameReb]]]
-	};
 	Default {
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_gamemode"],format [localize "STR_antistasi_journal_entry_text_gamemode_4",_nameOcc,_nameInv,_nameReb]]]
 	};

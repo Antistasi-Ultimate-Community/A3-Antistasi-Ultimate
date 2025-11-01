@@ -1,8 +1,11 @@
 private _vehicle = cursorTarget;
 
 if(isNil "_vehicle" || {isNull _vehicle}) exitWith {};
-if !(_vehicle isKindOf "LandVehicle") exitWith {
+
+private _hasFlipWarning = _vehicle getVariable ["A3U_hasFlipWarning", false];
+if (!(_vehicle isKindOf "LandVehicle") && (!_hasFlipWarning)) exitWith {
     [localize "STR_unflip_fail_header", localize "STR_unflip_fail_wrong_type"] call SCRT_fnc_misc_deniedHint;
+    _vehicle setVariable ["A3U_hasFlipWarning", true, true];
 };
 
 private _isAlive = alive _vehicle;
@@ -55,3 +58,4 @@ if (([_vx,_vy] findIf {_x > 80 || _x < -80}) != -1) then {
 };
 
 playSound "A3AP_UiSuccess";
+_vehicle setVariable ["A3U_hasFlipWarning", false, true];

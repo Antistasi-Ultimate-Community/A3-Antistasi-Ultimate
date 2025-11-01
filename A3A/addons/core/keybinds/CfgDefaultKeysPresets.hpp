@@ -1,4 +1,5 @@
 #include "\a3\ui_f\hpp\definedikcodes.inc"
+
 class CfgDefaultKeysPresets {
     class Arma2 {
         class Mappings {
@@ -8,6 +9,18 @@ class CfgDefaultKeysPresets {
             GVAR(earPlugs)[] = {DIK_END};
             GVAR(customHintDismiss)[] = {DIK_PGDN};
             GVAR(commanderRebelMenu)[] = {DIK_TAB};
+
+            GVAR(buildingPlacerAbort)[] = {DIK_ESCAPE, DIK_Y};
+            GVAR(buildingPlacerAlign)[] = {};
+            GVAR(buildingPlacerDelete)[] = {DIK_C};
+            GVAR(buildingPlacerPlace)[] = {DIK_SPACE};
+            GVAR(buildingPlacerRepair)[] = {DIK_T};
+            GVAR(buildingPlacerRotateCCW)[] = {DIK_E};
+            GVAR(buildingPlacerRotateCW)[] = {DIK_R};
+            GVAR(buildingPlacerRotateStepDecrease)[] = {};
+            GVAR(buildingPlacerRotateStepIncrease)[] = {};
+            GVAR(buildingPlacerSnapToSurface)[] = {DIK_LALT};
+            GVAR(buildingPlacerUnsafeMode)[] = {DIK_LSHIFT};
         };
     };
 };

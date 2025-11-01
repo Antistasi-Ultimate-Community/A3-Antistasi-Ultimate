@@ -71,13 +71,26 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     h = 5 * GRID_H;
                 };
 
+                class TabFiller : A3A_Text
+                {
+                    idc = -1;
+                    x = 120 * GRID_W;
+                    y = 0;
+                    w = 2 * GRID_W;
+                    h = 5 * GRID_H;
+                    colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                };
+
                 class SaveInfoText : A3A_Text
                 {
                     idc = A3A_IDC_SETUP_SAVEINFOTEXT;
-                    x = 120 * GRID_W;
+                    x = 122 * GRID_W;
                     y = 0;
-                    w = 40 * GRID_W;
+                    w = 38 * GRID_W;
                     h = 5 * GRID_H;
+                    colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                    style = ST_CENTER;
+                    font = A3A_BUTTON_FONT;
                 };
             };
         };
@@ -512,6 +525,56 @@ class A3A_SetupDialog : A3A_TabbedDialog
             };
         };
 
+    };
+};
+
+class A3A_SetupDialog_InGame : A3A_SetupDialog
+{
+    class ControlsBackground : ControlsBackground
+    {
+        delete TitleBarBackground;
+        class TabsBackground : TabsBackground {};
+        class Background : Background {};
+    };
+
+    class Controls : Controls
+    {
+        delete TitlebarText;
+
+        class TabButtons : TabButtons
+        {
+            class Controls : Controls
+            {
+                class ParamsTabText : A3A_Text
+                {
+                    idc = A3A_IDC_SETUP_SAVEINFOTEXT;
+                    x = 0;
+                    y = 0;
+                    w = 122 * GRID_W;
+                    h = 5 * GRID_H;
+                    colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                    style = ST_CENTER;
+                    font = A3A_BUTTON_FONT;
+                    text = $STR_antistasi_dialogs_setup_params_tab_button;
+                };
+
+                class ParamsTabButton : A3A_Button
+                {
+                    idc = A3A_IDC_SETUP_PARAMSTABBUTTON;
+                    text = $STR_antistasi_dialogs_hq_button_rebel_set_loadout_button;
+                    onButtonClick = "['SaveParams'] call SCRT_fnc_ui_editParamsMenu;";
+                    x = 122 * GRID_W;
+                    y = 0;
+                    w = 38 * GRID_W;
+                    h = 5 * GRID_H;
+                };
+            };
+        };
+
+        delete LoadgameTab;
+        delete FactionsTab;
+        delete ContentTab;
+        class ParamsTab : ParamsTab {};
     };
 };
 
