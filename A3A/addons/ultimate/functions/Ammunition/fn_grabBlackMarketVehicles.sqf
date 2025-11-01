@@ -36,7 +36,7 @@ private _categories = [
 // Processing all categories in a single loop
 {
     _x params ["_dlc", "_category", ["_additional", []]];
-    private _isEnabled = _dlc in A3A_enabledDLC;
+    private _isEnabled = _dlc in ([missionNamespace, "A3A_enabledDLC", []] call BIS_fnc_getServerVariable);
     private _vehicleCfg = (_baseCfg >> "traderVehicles" >> _category);
     
     // Processing main category
