@@ -1025,6 +1025,13 @@
                 <Korean>지휘관만 이 기능에 액세스할 수 있습니다.</Korean>
                 <French>Seul le commandant a accès à cette fonction.</French>
             </Key>
+            <Key ID="STR_generic_admin_only">
+                <Original>Only an admin has access to this function.</Original>
+                <Russian>Доступ к этой функции есть только у администратора.</Russian>
+                <Chinesesimp>只有管理员才能访问此功能。</Chinesesimp>
+                <Korean>관리자만 이 기능에 액세스할 수 있습니다.</Korean>
+                <French>Seul un administrateur a accès à cette fonction.</French>
+            </Key>
             <Key ID="STR_generic_commander_reroll">
                 <Original>Reroll</Original>
                 <Russian>Реролл</Russian>
