@@ -175,7 +175,7 @@ _groups pushBack _groupMedevac;
 [_MedicalVehicle, _side] call A3A_fnc_AIVEHinit;
 _MedicalVehicle setDir _dirvehMedical; // Random direction for the medical vehicle
 
-private _wp = _groupMedevac addWaypoint [_roadPosition, 15];
+private _wp = _groupMedevac addWaypoint [_roadPosition, 20];
 _wp setWaypointCombatMode "SAFE";
 if (_MedicalVehicle isKindOf "Air") then {
 	_wp setWaypointType "GETOUT";
