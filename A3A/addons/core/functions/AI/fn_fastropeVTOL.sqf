@@ -40,20 +40,6 @@ _veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);     
 waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
 // Landing path setup for vtol
-private _endPos = _landpos;
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 3000) or !(canMove _veh)};
-_veh limitSpeed ((0.8 * (getNumber(configOf _veh >> "maxSpeed"))) min 500);         // to slow down vtols
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 2000) or !(canMove _veh)};
-_veh limitSpeed ((0.7 * (getNumber(configOf _veh >> "maxSpeed"))) min 400);         // to slooow down vtols
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 1500) or !(canMove _veh)};
-_veh limitSpeed ((0.6 * (getNumber(configOf _veh >> "maxSpeed"))) min 250);         // to slow down vtols even more
-
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
-_veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);         // to slow down vtols even more
-
-waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
-
-// Landing path setup
 private _endPos = getPosASL _landPad;
 private _startPos = getPosASL _veh;
 private _midPos = _endPos vectorAdd [0,0,_midHeight];
@@ -63,13 +49,10 @@ private _velocityVector = +_initialVelocity;
 _initialVelocity = vectorMagnitude _initialVelocity;
 private _initialSpeed = speed _veh/3.6;
 //We got the initial velocity of the heli
-private _initialSpeed = vectorMagnitude _initialVelocity;
 private _distance = _startPos distance _midPos;
 private _landingTime = _distance/_initialVelocity * 1.35;
 private _maxAngle = ((_initialVelocity * _initialVelocity/3600) * 35) min 35;
 //Starting land approach with bezier curve
-private _landingTime = _distance / _initialSpeed * 1.35;
-private _maxAngle = ((_initialSpeed * _initialSpeed / 3600) * 35) min 35;
 private _startToMidVector = _midPos vectorDiff _startPos;
 private _midToEndVector = _endPos vectorDiff _midPos;
 private _vectorDir = vectorDir _veh;
