@@ -798,7 +798,7 @@ private _aaTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-	[selectRandom ["carbines", "smgs"]] call _fnc_setPrimary;
+	[selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["AALaunchers"] call _fnc_setLauncher;

@@ -87,7 +87,7 @@ _caller setVariable ["cancelIntelSearch", nil];
 
 if(_wasCancelled) exitWith
 {
-    [(localize "STR_intel_no_structtext_header"), (localize "STR_cancel_search_tooltip")] call A3A_fnc_customHint;
+    [(localize "STR_intel_search_intel_header"), (localize "STR_cancel_search_tooltip")] call A3A_fnc_customHint;
     _caller setVariable ["intelFound", nil];
     _squadLeader setVariable ["intelSearchDone", nil, true];
 };
@@ -96,14 +96,14 @@ if(_caller getVariable ["intelFound", false]) then {
     private _hasIntel = _squadLeader getVariable ["hasIntel", false];
     if(_hasIntel) then
     {
-        [(localize "STR_intel_no_structtext_header"), (localize "STR_intel_search_success_description")] call A3A_fnc_customHint;
+        [(localize "STR_intel_search_intel_header"), (localize "STR_intel_search_success_description")] call A3A_fnc_customHint;
         ["Small", _side] remoteExec ["A3A_fnc_selectIntel", 2];
         [5, _caller] call A3A_fnc_addScorePlayer;
         [50,_caller] call A3A_fnc_addMoneyPlayer;
     }
     else
     {
-        [(localize "STR_intel_no_structtext_header"), (localize "STR_intel_search_failure_description")] call A3A_fnc_customHint;
+        [] call A3A_fnc_showNoIntelMessage;
     };
 }
 else
