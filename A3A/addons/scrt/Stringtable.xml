@@ -5478,6 +5478,22 @@
                 <Portuguese>Permitir conversas com civis</Portuguese>
                 <Turkish>Sivillerle konuşmaya izin ver</Turkish>
             </Key>
+            <Key ID="STR_params_specialPressEH">
+                <Original>Use special behaviour for press. Makes press follow and observe bots and players during shootouts.</Original>
+                <Russian>Использовать особое поведение для прессы. Заставляет прессу следовать за ботами и игроками и наблюдать за ними во время перестрелок.</Russian>
+                <German>Spezialverhalten für Presse einsetzen. Lässt die Presse Bots und Spieler während Schießereien verfolgen und beobachten.</German>
+                <Italian>Utilizza un comportamento speciale per la stampa. Fa sì che la stampa segua e osservi i bot e i giocatori durante gli scontri a fuoco.</Italian>
+                <Spanish>Usar comportamiento especial para prensa. Hace que la prensa siga y observe a los bots y jugadores durante los tiroteos.</Spanish>
+                <French>Utiliser un comportement spécial pour la presse. La presse suit et observe les bots et les joueurs pendant les fusillades.</French>
+                <Korean>언론인 특별 행동 사용. 교전 중 봇과 플레이어를 따라다니며 관찰합니다.</Korean>
+                <Japanese>報道関係者の特殊な行動を使用。交戦中にボットとプレイヤーを追従して観察します。</Japanese>
+                <Chinesesimp>使用记者的特殊行为。让记者在交火期间跟随并观察机器人和玩家。</Chinesesimp>
+                <Chinese>使用記者的特殊行為。讓記者在交火期間跟隨並觀察機器人和玩家。</Chinese>
+                <Polish>Użyj specjalnego zachowania dla prasy. Sprawia, że prasa podąża za i obserwuje boty oraz graczy podczas strzelanin.</Polish>
+                <Czech>Použít speciální chování pro tisk. Nutí tisk následovat a pozorovat boty a hráče během přestřelek.</Czech>
+                <Portuguese>Usar comportamento especial para imprensa. Faz a imprensa seguir e observar bots e jogadores durante tiroteios.</Portuguese>
+                <Turkish>Basın için özel davranış kullan. Basının çatışmalar sırasında botları ve oyuncuları takip etmesini ve gözlemlemesini sağlar.</Turkish>
+            </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
                 <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>

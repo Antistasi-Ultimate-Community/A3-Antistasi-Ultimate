@@ -645,6 +645,13 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
+    class specialPressEH: ExperimentalParams
+    {
+        title = $STR_params_specialPressEH;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
     class blackMarketIgnoreRequirements : ExperimentalParams
     {
         title = $STR_params_blackMarketIgnoreRequirements;

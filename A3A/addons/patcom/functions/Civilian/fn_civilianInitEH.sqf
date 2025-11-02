@@ -58,7 +58,7 @@ if (_civNotHuman) exitWith
     ["civInit", [_unit]] call EFUNC(Events,triggerEvent);
 };
 
-if (_press) then {
+if (_press && specialPressEH) then {
     _unit addEventHandler["FiredNear", {
         params ["_unit", "_firer"];
             _unit removeEventHandler [_thisEvent, _thisEventHandler];
