@@ -50,20 +50,33 @@ private _supportName = format ["%1%2", _type, A3A_supportCount];
 // Spend radio key to boost support's reveal value if available
 _reveal = [_side, _targPos, _reveal] call A3A_fnc_useRadioKey;
 
-// create function returns <0 if it couldn't do anything
-private _createFunc = missionNamespace getVariable ("A3A_fnc_SUP_" + _type);
-private _resourceCost = [_supportName, _side, _resPool, _maxSpend, _target, _targPos, _reveal, _delay] call _createFunc;
-if (_resourceCost < 0) exitWith { A3A_supportCallInProgress = nil; "" };
+try {
+    private _createFunc = missionNamespace getVariable ("A3A_fnc_SUP_" + _type);
 
-[-_resourceCost, _side, _resPool] call A3A_fnc_addEnemyResources;
+    if (isNil "_createFunc") then { throw format['"A3A_fnc_SUP_%1" not found', _type] };
 
-// This (and whole callpos business) can be cleaned up a lot with the commander system
-if (_caller isEqualType []) then {
-    // support spends should only care about defence pool?
-    // because that's what it's being used to manage
-    // [side, callpos, targpos, resources, starttime]
-    private _spendTarg = [_targPos, _target] select (_target isEqualType objNull and {_target isKindOf "Air"});
-    A3A_supportSpends pushBack [_side, _caller, _spendTarg, _resourceCost, time];
+    // create function returns <0 if it couldn't do anything
+    private _resourceCost = [_supportName, _side, _resPool, _maxSpend, _target, _targPos, _reveal, _delay] call _createFunc;
+
+    if (isNil "_resourceCost") then { throw format['"A3A_fnc_SUP_%1" failed to return a resource cost', _type] };
+    if (_resourceCost < 0) then { throw false };
+
+    [-_resourceCost, _side, _resPool] call A3A_fnc_addEnemyResources;
+
+    // This (and whole callpos business) can be cleaned up a lot with the commander system
+    if (_caller isEqualType []) then {
+        // support spends should only care about defence pool?
+        // because that's what it's being used to manage
+        // [side, callpos, targpos, resources, starttime]
+        private _spendTarg = [_targPos, _target] select (_target isEqualType objNull and {_target isKindOf "Air"});
+        A3A_supportSpends pushBack [_side, _caller, _spendTarg, _resourceCost, time];
+    };
+} catch {
+    _supportName = "";
+
+    if (_exception isEqualType "") then {
+        Error_3("Failed to create %1 support %2: %3", _side, _type, _exception);
+    };
 };
 
 A3A_supportCallInProgress = nil;

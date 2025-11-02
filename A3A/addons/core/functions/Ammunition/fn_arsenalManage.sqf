@@ -103,7 +103,7 @@ private _sortedNVs = [];
 {
 	private _amount = (_x select 1);
 	private _thermal = getArray (configFile >> "CfgWeapons" >> (_x select 0) >> "thermalMode");	// only exists for ENVGs
-	if (_amount > 0 && _thermal isEqualTo []) then {
+	if (_amount > 0 && ((_thermal isEqualTo []) or (allowUnlockedTNVG isEqualTo 1))) then {
 		_totalNV = _totalNV + _amount;
 		_sortedNVs pushBack [_amount, _x select 0];		// sort param in the first element
 	};

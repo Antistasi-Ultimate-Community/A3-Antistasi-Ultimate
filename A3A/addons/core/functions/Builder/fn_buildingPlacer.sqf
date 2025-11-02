@@ -61,6 +61,23 @@ private _userActions = [
         }
     ],
     [
+        QGVAR(buildingPlacerAlign),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            private _source = (A3A_building_EHDB # CURSOR_OBJECT);
+            private _object = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+
+            if (isNull _source || isNull _object) exitWith {};
+
+            private _direction = getDir _source;
+
+            A3A_building_EHDB set [BUILD_OBJECT_TEMP_DIR, _direction];
+            _object setDir _direction;
+
+            systemChat format["Aligned object to %1 (%2°)", getText(configOf _source >> "displayName"), _direction];
+        }
+    ],
+    [
         QGVAR(buildingPlacerDelete),
         EVENT_TYPE_DEACTIVATE,
         {
@@ -68,6 +85,11 @@ private _userActions = [
             private _buildArray = (A3A_building_EHDB # BUILD_OBJECTS_ARRAY);
             private _objIndex = _tempArray find (A3A_building_EHDB # CURSOR_OBJECT);
             if (_objIndex == -1) exitWith {};
+
+            attachedObjects (_tempArray # _objIndex) apply {
+                detach _x;
+                deleteVehicle _x;
+            };
 
             deleteVehicle (_tempArray deleteAt _objIndex);
             private _buildData = _buildArray deleteAt _objIndex;
@@ -175,6 +197,20 @@ private _userActions = [
         }
     ],
     [
+        QGVAR(buildingPlacerRotateStepDecrease),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            [-1] call (A3A_building_EHDB # ROTATION_STEP_FUNC);
+        }
+    ],
+    [
+        QGVAR(buildingPlacerRotateStepIncrease),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            [1] call (A3A_building_EHDB # ROTATION_STEP_FUNC);
+        }
+    ],
+    [
         QGVAR(buildingPlacerSnapToSurface),
         EVENT_TYPE_DEACTIVATE,
         {
@@ -246,20 +282,23 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
         ["setContextKey", ["cancel", getText (configof _intersectObj >> "displayName")]] call A3A_fnc_setupPlacerHints;
     };
 
-    if (A3A_building_EHDB # ROTATION_MODE_CCW) then {
-        private _direction = ((A3A_building_EHDB # BUILD_OBJECT_TEMP_DIR) - diag_deltaTime * 120);
+    if ((A3A_building_EHDB # ROTATION_MODE_CW) || { A3A_building_EHDB # ROTATION_MODE_CCW }) then {
+        private _multiplier = [-1, 1] select (A3A_building_EHDB # ROTATION_MODE_CW);
+        private _delta = if ((A3A_building_EHDB # ROTATION_STEP) isEqualType false) then {
+            diag_deltaTime * 120
+        } else {
+            // with rotation stepping, only rotate once per frame then wait for the next key press
+            A3A_building_EHDB set[ROTATION_MODE_CCW, false];
+            A3A_building_EHDB set[ROTATION_MODE_CW, false];
+
+            (A3A_building_EHDB # ROTATION_STEP)
+        };
+
+        private _direction = (A3A_building_EHDB # BUILD_OBJECT_TEMP_DIR) + _multiplier * _delta;
         A3A_building_EHDB set [BUILD_OBJECT_TEMP_DIR, _direction];
         _object setDir _direction;
         _stateChange = true;
     };
-
-    if (A3A_building_EHDB # ROTATION_MODE_CW) then {
-        private _direction = ((A3A_building_EHDB # BUILD_OBJECT_TEMP_DIR) + diag_deltaTime * 120);
-        A3A_building_EHDB set [BUILD_OBJECT_TEMP_DIR, _direction];
-        _object setDir _direction;
-        _stateChange = true;
-    };
-
     
     if (A3A_building_EHDB # GUI_BUTTON_PRESSED) then {
         A3A_building_EHDB set [GUI_BUTTON_PRESSED, false];
