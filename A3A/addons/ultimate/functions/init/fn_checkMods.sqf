@@ -94,6 +94,19 @@ if (["exile_client"] call A3U_fnc_hasAddon) then {
     _addons pushBack localize "STR_A3AU_init_mods_warning_Exile";
 };
 
+private _hasViewDistanceMod = ["DynamicViewDistance"] call A3U_fnc_hasAddon || 
+                            ["viewdistance_taw"] call A3U_fnc_hasAddon || 
+                            ["DTVD"] call A3U_fnc_hasAddon || 
+                            ["Perceptive"] call A3U_fnc_hasAddon || 
+                            ["CHVD"] call A3U_fnc_hasAddon;
+
+if (_hasViewDistanceMod) then {
+    private _text = localize "STR_A3AU_init_mods_warning_viewdistance";
+    [_text, localize "STR_A3AU_init_mods_warning_header"] call A3U_fnc_popup;
+};
+
+sleep 5;
+
 if (_addons isNotEqualTo []) exitWith {
     private _addonText = _addons joinString ", ";
 

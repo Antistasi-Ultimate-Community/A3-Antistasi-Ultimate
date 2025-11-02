@@ -175,6 +175,14 @@
             <French>Lifeline Revive AI</French>
             <Chinesesimp>Lifeline Revive AI</Chinesesimp>
         </Key>
+        <Key ID="STR_A3AU_init_mods_warning_viewdistance">
+            <Original>Antistasi view distance settings disabled because one of the following mods were loaded: Dynamic View Distance, TAW, Dom's View Distance, Perceptive, CH View Distance.</Original>
+            <English>Antistasi view distance settings disabled because one of the following mods were loaded: Dynamic View Distance, TAW, Dom's View Distance, Perceptive, CH View Distance.</English>
+            <Russian>Настройки дальности прорисовки Antistasi отключены, так как один из следующих модов был загружен: Dynamic View Distance, TAW, Dom's View Distance, Perceptive, CH View Distance.</Russian>
+            <Korean>다음 모드 중 하나가 로드되어 Antistasi 시야 거리 설정이 비활성화되었습니다: Dynamic View Distance, TAW, Dom's View Distance, Perceptive, CH View Distance.</Korean>
+            <French>Les paramètres de distance de vue d'Antistasi ont été désactivés car l'un des mods suivants était chargé : Dynamic View Distance, TAW, Dom's View Distance, Perceptive, CH View Distance.</French>
+            <Chinesesimp>由于加载了以下模组之一，Antistasi 视野距离设置已被禁用：Dynamic View Distance, TAW, Dom's View Distance, Perceptive, CH View Distance.</Chinesesimp>
+        </Key>
     </Package>
     <Package name="ported">
         <Key ID="STR_A3A_fn_support_showIntStpCll_TANK">
