@@ -74,6 +74,7 @@ _initialVelocity set [2, 0];
 private _velocityVector = +_initialVelocity;
 _initialVelocity = vectorMagnitude _initialVelocity;
 private _initialSpeed = speed _helicopter/3.6;
+//We got the initial velocity of the heli
 
 private _distance = _startPos distance _midPos;
 private _landingTime = _distance/_initialVelocity * 1.35;
