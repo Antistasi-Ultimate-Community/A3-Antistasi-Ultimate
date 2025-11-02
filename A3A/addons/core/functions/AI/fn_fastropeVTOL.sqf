@@ -40,7 +40,7 @@ _veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);     
 waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
 // Landing path setup for vtol
-private _endPos = getPosASL _landPad;
+private _endPos = _landpos;
 private _startPos = getPosASL _veh;
 private _midPos = _endPos vectorAdd [0,0,_midHeight];
 private _initialVelocity = (velocity _veh);
