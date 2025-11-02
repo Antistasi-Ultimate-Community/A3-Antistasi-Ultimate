@@ -267,6 +267,7 @@ if (sunOrMoon < 1) then {
     };
 };
 
+[group _unit] spawn A3A_fnc_RC40_attack_EH;
 
 //Reveals all air vehicles to the unit, if it is either gunner of a vehicle or equipped with a launcher
 if (_unit == gunner objectParent _unit or {(secondaryWeapon _unit) in allAA}) then

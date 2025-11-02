@@ -57,6 +57,7 @@ if !(_unitDefinition isEqualTo []) exitWith {
 	private _unit = _group createUnit [_unitClass, _position, _markers, _placement, _special];
     [_unit] joinSilent _group; // normally, this command is literally pointless. But when we're mixing base classes (e.g opfor) but spawning them as blufor (swap enemy sides selection), it'll make them fight each other unless we do this
 
+        [_group] spawn A3A_fnc_RC40_attack_EH;
 
     if (_canSkip isEqualTo false) then {
 	    _unit setUnitLoadout selectRandom _loadouts;
@@ -85,4 +86,7 @@ if !(_unitDefinition isEqualTo []) exitWith {
 
 private _unit = _group createUnit [_type, _position, _markers, _placement, _special];
 _unit setVariable ["unitType", _type, true];
+
+[_group] spawn A3A_fnc_RC40_attack_EH;
+
 _unit
