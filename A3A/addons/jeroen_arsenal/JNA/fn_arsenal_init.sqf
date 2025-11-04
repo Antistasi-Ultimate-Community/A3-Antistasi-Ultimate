@@ -139,7 +139,10 @@ if(hasInterface)then{
                 default { "Rifleman" };
             };
 
+            private _array = [_player, true] call jn_fnc_arsenal_cargoToArray;
+            _player setUnitLoadout (configFile >> "EmptyLoadout");
             [_player, 0, _prefix + _loadout] call A3A_fnc_equipRebel;
+            _array call jn_fnc_arsenal_addItem;
         },
         [],
         6,
