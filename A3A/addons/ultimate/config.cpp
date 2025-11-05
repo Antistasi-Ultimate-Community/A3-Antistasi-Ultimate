@@ -5,10 +5,10 @@ class CfgPatches
     class ADDON 
     {
         name = COMPONENT_NAME;
-        units[] = {};
+        units[] = {"A3U_Rebels_Base", "A3U_Rebels_Rifleman"};
         weapons[] = {"TFAR_SCR536"};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_Events"};
+        requiredAddons[] = {"A3A_Events", "A3_Characters_F"};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
@@ -17,7 +17,9 @@ class CfgPatches
 };
 
 #include "CfgFunctions.hpp"
+#include "patches\cfgFactionClasses.hpp"
 #include "patches\cfgVehicles.hpp"
+#include "patches\cfgGroups.hpp"
 
 class cfgWeapons
 {

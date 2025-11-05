@@ -261,6 +261,46 @@ class CfgVehicles {
             previewHeight = 30;
         };
     };
+
+    // Custom classes for Antistasi Units / Vehicles in Eden / Zeus
+    class I_Soldier_base_F;
+    class A3U_Rebels_Base: I_Soldier_base_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+        displayName = "Rebel Base";
+        faction = "A3U_Rebels";
+        editorSubcategory = "EdSubcat_Personnel";
+        //icon = "";
+        //picture = "";
+        //role = "";
+        //nameSound = "";
+        //textSingular = "";
+        //textPlural = "";
+        uniformClass = "";
+        backpack = "";
+        items[] = {};
+        respawnItems[] = {};
+        linkedItems[] = {};
+        respawnLinkedItems[] = {};
+        weapons[] = {"Throw", "Put"};
+        respawnWeapons[] = {"Throw", "Put"};
+        magazines[] = {};
+        respawnMagazines[] = {};
+        //genericNames = "";
+        //identityTypes[] = {};
+    };
+    class A3U_Rebels_Rifleman: A3U_Rebels_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Rebel Rifleman";
+        //icon = "";
+        //picture = "";
+        role = "Rifleman";
+        nameSound = "veh_infantry_s";
+        textSingular = "infantry";
+        textPlural = "infantry";
+    };
 };
 
 class Extended_InitPost_EventHandlers {
