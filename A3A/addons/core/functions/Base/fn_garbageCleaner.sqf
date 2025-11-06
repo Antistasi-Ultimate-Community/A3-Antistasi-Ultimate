@@ -18,24 +18,10 @@ private _fnc_distCheck = {
 	if (_rebelSpawners inAreaArray [getPosATL _object, _dist, _dist] isEqualTo []) then { deleteVehicle _object };
 };
 
-// Cleanup constructed buildings
-private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
-_rebMarkers pushBack "Synd_HQ";
-// ^ Add extra plus related stuff
-
-A3A_buildingsToSave = A3A_buildingsToSave select {
-	// Keep if there are rebel spawners within 500m
-	if (_rebelSpawners inAreaArray [getPosATL _x, 500, 500] isNotEqualTo []) then { continueWith true };
-
-	// Delete if outside mission distance (temporary)
-	if (_x distance2d markerPos "Synd_HQ" > distanceMission) then { deleteVehicle _x; continueWith false };
-
-	// Delete if not within a rebel marker
-	private _building = _x;
-	private _indexes = _rebMarkers inAreaArrayIndexes [getPosATL _x, 500, 500];
-	if (-1 != _indexes findIf { _building inArea _rebMarkers#_x } ) then { continueWith true };
-	deleteVehicle _x; false;
-};
+// Cull A3A_buildingsToSave if over limit (e.g. if limit was lowered after builds placed)
+// For example, this would allow *intentionally* removing builds by setting the limit to 0 and running the garbage cleaner
+// i.e. a way to clear no longer needed builds, or to fix performance issues from too many builds
+if (count (A3A_buildingsToSave) >= A3A_builderLimit) then { A3A_buildingsToSave = A3A_buildingsToSave select [0, A3A_builderLimit - 1] };
 
 Debug("Moving dead solders out of vehicles...")
 {
