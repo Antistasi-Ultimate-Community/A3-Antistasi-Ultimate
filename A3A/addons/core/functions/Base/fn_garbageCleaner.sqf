@@ -53,17 +53,19 @@ if (A3A_hasACE) then {
 	{ deleteVehicle _x } forEach (allMissionObjects "ace_cookoff_Turret_MBT_01");			//MBT turret wrecks
 	{ deleteVehicle _x } forEach (allMissionObjects "ace_cookoff_Turret_MBT_02");
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_Grave");
-	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_big");		// ACE trench objects
-	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_small");
+	//{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_big");		// ACE trench objects
+	//{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_small");
 };
 
 // Base type for trenches is Base_Bag_F, so we can't use that
+/*
 if (isClass (configFile >> "CfgVehicles" >> "GRAD_envelope_short")) then {
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_short");	// GRAD trench objects
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_giant");
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_vehicle");
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_long");
 };
+*/
 
 if (isClass (configFile/"CfgPatches"/"rhsgref_main")) then {//ToDo: these should be moved to owner mod detection and not the broad one as we may allow some rhs factions without all of rhs modset loaded
 	{ deleteVehicle _x } forEach (allMissionObjects "rhs_a10_acesII_seat");		// Ejection seat for A-10 and F-22
