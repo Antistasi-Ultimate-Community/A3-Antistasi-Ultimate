@@ -119,7 +119,7 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 	if (_markers isEqualTo []) exitWith {};
 	if !(_typeX isKindOf "StaticMortar") then {
 	    [_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-		if (_veh in UngaragedVehicles) then {
+		if (_veh in ungaragedVehicles) then {
 			_veh setVariable ["lockedForAI", true, true]; 
 		} else {
 			if (_side == teamPlayer && {!isNil "serverInitDone"}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
