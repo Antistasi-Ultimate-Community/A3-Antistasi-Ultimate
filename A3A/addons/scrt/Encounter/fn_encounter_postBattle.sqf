@@ -48,7 +48,6 @@ private _road = objNull;
 private _radiusX = 5;
 
 private _cityPositions = citiesX apply {getMarkerPos _x};
-// Добавляем позиции военных объектов
 private _militaryPositions = (outposts + milbases + airportsX) apply {getMarkerPos _x};
 
 while {true} do {
@@ -56,7 +55,6 @@ while {true} do {
     
     if (count _road > 0 && {_road findIf {
         private _roadPos = position _x;
-        // Основное условие с добавленной проверкой на военные базы
         (_roadPos distance2D _originPosition > 500) &&
         ({_roadPos distance2D _x < 700} count _cityPositions == 0) &&
         ({_roadPos distance2D _x < 700} count _militaryPositions == 0)
@@ -83,7 +81,7 @@ private _dirveh = if (count _roadcon > 0) then {
 
 private _roadPosition = getPos _selectedRoad;
 
-for "_i" from 0 to (random [3,4,5]) do {
+for "_i" from 0 to (random [1,2,3]) do {
     private _firePosition = 
     [
         _roadPosition, 
@@ -96,6 +94,9 @@ for "_i" from 0 to (random [3,4,5]) do {
 
     private _fireEffectEmitter = "#particlesource" createVehicle _firePosition;
     [_fireEffectEmitter, "BigDestructionFire"] remoteExec ["setParticleClass", 0, _fireEffectEmitter];
+    /* private _smokeEffect = "test_EmptyObjectForSmoke" createVehicle (getPos _fireEffectEmitter); 
+    _smokeEffect attachTo [_fireEffectEmitter,[0,0,-1]];
+    _others pushBack _smokeEffect; */ ///doesn't work for whatever reason
 
     private _lightEffectEmitter = "#lightpoint" createVehicle _firePosition; 
     [_lightEffectEmitter, 0.3] remoteExec ["setLightBrightness", 0, _lightEffectEmitter];
@@ -131,31 +132,31 @@ private _surenderGroup = createGroup civilian;
 private _fnc_findPos = {
     params ["_center", "_min", "_max", ["_side", nil]];
     private _pos = [];
-    private _majorAxis = _max;        // Длинная ось вдоль дороги
-    private _minorAxis = _max * 0.3;  // Короткая ось поперек дороги
+    private _majorAxis = _max;        // Major axis along the road
+    private _minorAxis = _max * 0.3;  // Minor axis across the road
     private _attempts = 0;
 
     while {_attempts < 50} do {
-        // Генерация точки в эллипсе
+        // Generate point in ellipse
         private _angle = random 360;
         private _radius = sqrt(random 1) * _majorAxis;
         private _x = _radius * cos(_angle);
         private _y = _radius * sin(_angle) * (_minorAxis / _majorAxis);
 
-        // Поворот координат согласно направлению дороги
+        // Rotate coordinates according to road direction
         private _rotX = _x * cos(_dirveh) - _y * sin(_dirveh);
         private _rotY = _x * sin(_dirveh) + _y * cos(_dirveh);
 
-        // Смещение к центру
+        // Offset to center
         _pos = [_center#0 + _rotX, _center#1 + _rotY, 0];
 
-        // Проверка минимального расстояния от центра
+        // Check minimum distance from center
         if (_pos distance2D _center < _min) then {_attempts = _attempts + 1; continue;};
 
-        // Определение стороны относительно дороги
+        // Determine side relative to road
         if (!isNil "_side") then {
-            // Вычисляем смещение относительно направления дороги
-            private _lateralOffset = _rotY;  // Y-компонента после поворота
+            // Calculate offset relative to road direction
+            private _lateralOffset = _rotY;  // Y-component after rotation
             
             if (
                 (_side == "win" && _lateralOffset < 0) || 
@@ -163,7 +164,7 @@ private _fnc_findPos = {
             ) then {_attempts = _attempts + 1; continue;};
         };
 
-        // Проверка коллизий
+        // Check collisions
         if (
             (_spawnedPositions findIf {_x distance2D _pos < 15} != -1) ||
             (count (nearestObjects [_pos, ["All"], 7]) > 0)
@@ -183,11 +184,11 @@ _vehicleCountLose = (_vehicleCountLose max 1) min 3;
 
 private _isFIA = (random 10 > tierWar);
 
-// Функция создания техники с кратером
+// Function to create vehicle with crater effects
 private _fnc_createVehicleWithEffects = {
     params ["_pos", "_dir", "_class", "_side", "_isLoser", "_faction"];
     
-    // Создаем кратер с 40% вероятностью
+    // Create crater with 40% probability
     private _crater = objNull;
     if (random 1 < 0.4 && {_craterPositions findIf {_x distance2D _pos < 10} == -1}) then {
         _crater = createVehicle ["CraterLong", _pos, [], 0, "CAN_COLLIDE"];
@@ -195,59 +196,62 @@ private _fnc_createVehicleWithEffects = {
         _crater setVectorUp surfaceNormal _pos;
         _craterPositions pushBack _pos;
         _others pushBack _crater;
+        private _smokeEffect = "test_EmptyObjectForSmoke" createVehicle (getPos _crater); 
+        _smokeEffect attachTo [_crater,[0,0,-1]];
+        _others pushBack _smokeEffect;
     };
     
-    // Корректируем позицию для техники
+    // Adjust position for vehicle
     private _vehiclePos = if (!isNull _crater) then {
         _crater getPos [random [0,1.5,3], random 360]
     } else {
         _pos
     };
     
-    // Создаем технику
+    // Create vehicle
     private _vehicle = createVehicle [_class, [_vehiclePos select 0, _vehiclePos select 1, 1.5], [], 0, "CAN_COLLIDE"];
     _vehicle setDir _dir;
     
-    // Общие повреждения
+    // General damage
     _vehicle setDamage random [0.5, 0.7, 0.9];
     _vehicle setFuel 0;
     
-    // В блоке создания техники после setFuel:
+    // In vehicle creation block after setFuel:
     if (random 1 <= 0.7) then {
-        // Для колёсной техники
+        // For wheeled vehicles
 		private _wheels = [
 		    "wheel_1_1_steering", "wheel_2_1_steering",
 		    "wheel_1_2_steering", "wheel_2_2_steering",
 		    "wheel_1_3_steering", "wheel_2_3_steering"
 		];
 
-		// Выбираем 1-4 случайных колеса
+		// Select 1-4 random wheels
 		for "_i" from 1 to (1 + floor random 3) do {
 		    private _wheel = selectRandom _wheels;
 		    _vehicle setHit [_wheel, 1];
 		    _wheels = _wheels - [_wheel];
 		};
 
-		// Для гусеничной техники
-		// Повреждаем случайную гусеницу
+		// For tracked vehicles
+		// Damage random track
 		if (random 1 <= 0.7) then {
 		    _vehicle setHit ["HitLTrack", 1];
 		} else {
 		    _vehicle setHit ["HitRTrack", 1];
 		};
 
-		// Дополнительные повреждения
+		// Additional damage
 		if (random 1 <= 0.3) then {
 		    _vehicle setHit ["HitEngine", 0.5 + random 0.5];
 		};
 
-		// Универсальные повреждения
+		// Universal damage
 		if (random 1 <= 0.4) then {
 		    _vehicle setHit ["HitFuel", 0.3 + random 0.7];
 		};
     };
     
-    // Проверка на тяжелую технику через массивы фракций
+    // Check for heavy vehicles via faction arrays
     private _isHeavy = _class in (
         (_faction get "vehiclesAPCs") + 
         (_faction get "vehiclesIFVs") + 
@@ -255,13 +259,13 @@ private _fnc_createVehicleWithEffects = {
         (_faction get "vehiclesMilitiaAPCs")
     );
     
-    // Переворачивание для не-тяжелой техники
+    // Flip for non-heavy vehicles
     if (!_isHeavy && {random 1 > 0.3}) then {
         _vehicle setVectorUp [random 0.3, random 0.3, 1];
         _vehicle setPosATL (getPosATL _vehicle vectorAdd [0,0,0.5]);
     };
     
-    // Инициализация и эффекты
+    // Initialization and effects
     [_vehicle, _side] call A3A_fnc_AIVEHinit;
     if (random 1 <= 0.3) then {
         [_vehiclePos, 5000] remoteExec ["SCRT_fnc_effect_createBurningDebrisEffect", 0];
@@ -270,7 +274,7 @@ private _fnc_createVehicleWithEffects = {
     _vehicle;
 };
 
-// Функция создания экипажа
+// Function to create crew
 private _fnc_createCrew = {
     params ["_vehicle", "_class", "_side", "_faction", "_isLoser"];
     
@@ -323,7 +327,7 @@ private _fnc_createCrew = {
     _groups pushBack _crewGroup;
 };
 
-// Спавн техники победившей стороны
+// Spawn winning side vehicles
 for "_i" from 1 to _vehicleCountWin do {
     private _spawnPos = [_roadPosition, 10, 60, "win"] call _fnc_findPos;
     private _vehicleClass = if (_isFIA) then {
@@ -335,7 +339,7 @@ for "_i" from 1 to _vehicleCountWin do {
                     (_winFaction get "vehiclesLightArmed"))
     };
 
-    // Направление к центру дороги с отклонением
+    // Direction towards road center with deviation
     private _baseDir = _spawnPos getDir _roadPosition;
     private _vehicleDir = _baseDir + (random [ -15, 0, 15 ]);
     
@@ -354,7 +358,7 @@ for "_i" from 1 to _vehicleCountWin do {
     _vehicles pushBack _vehicle;
 };
 
-// Спавн техники проигравшей стороны
+// Spawn losing side vehicles
 for "_i" from 1 to _vehicleCountLose do {
     private _spawnPos = [_roadPosition, 5, 60, "lose"] call _fnc_findPos;
     private _vehicleClass = if (_isFIA) then {
@@ -366,7 +370,7 @@ for "_i" from 1 to _vehicleCountLose do {
                     (_loseFaction get "vehiclesLightTanks"))
     };
 
-    // Направление к центру дороги с отклонением
+    // Direction towards road center with deviation
     private _baseDir = _spawnPos getDir _roadPosition;
     private _vehicleDir = _baseDir + (random [ -15, 0, 15 ]);
     
