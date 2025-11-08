@@ -71,7 +71,7 @@ Debug("Final target choice list:");
 private _arePunishmentsAllowed = ((enablePunishments isEqualTo 1) && (tierWar >= A3U_setting_tierWarPunishments));
 
 Info("Logging available targets: Original, Culled");
-InfoArray(_targets);
+InfoArray("Original Targets:", _targets);
 
 private _minWeight = selectMax _weights / 10;
 private _culledTargets = [];
@@ -85,7 +85,7 @@ private _culledTargets = [];
     if (_weight > _minWeight) then { _culledTargets append [_x, _weight] };
 } forEach _targets;
 
-InfoArray(_culledTargets);
+InfoArray("Culled Targets:", _culledTargets);
 
 // Now we just pick a target
 private _target = selectRandomWeighted _culledTargets;
