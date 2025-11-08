@@ -97,8 +97,7 @@ class CfgFunctions
             class itemType {};
             class launcherInfo {};
             class loot {};
-            class randomRifle {};
-            class randomHandgun {};
+            class randomWeapon {};
             class transfer {};
             class unlockEquipment {};
             class vehicleSort {};
