@@ -1,8 +1,7 @@
 <hr>
 <div align="center">
   <a href="https://antistasiultimate.com">
-    <img alt="Antistasi Ultimate" src="https://antistasiultimate.com/images/banners/images_banner_rebel.png">
-    <!-- <img alt="Antistasi Ultimate" width="150" height="150" src="https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/assets/78276788/10d6e9f2-66bc-47a7-9ff5-2054b65b0e26"> -->
+    <img alt="Antistasi Ultimate" width="150" height="150" src="https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/assets/78276788/10d6e9f2-66bc-47a7-9ff5-2054b65b0e26">
   </a>
   </a>
   <h1>Antistasi Ultimate</h1>
