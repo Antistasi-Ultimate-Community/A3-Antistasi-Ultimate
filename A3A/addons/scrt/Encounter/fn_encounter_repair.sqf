@@ -18,8 +18,9 @@ if (isNil "_player") exitWith {
 private _originPosition = position _player;
 
 private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player <= distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
-if !(_frontLine isEqualTo []) exitWith {
+if !(_frontlineSitesNearPlayer isEqualTo []) exitWith {
     Error("Position is near frontline, need to select appropriate event.");
     [VEH_REPAIR] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
@@ -147,7 +148,11 @@ while {true} do {
     _radiusX = _radiusX + 5;
 };
 
-private _roadconRepair = roadsConnectedto ((_roadRepair select {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500}) select 0); // Guaranteed by search condition
+private _roadconRepair = roadsConnectedto ((_roadRepair select {
+    (position _x) distance2D _originPosition > 500 && 
+    (position _x) distance2D _roadPosition > 500 &&
+    (position _x) distance2D (getPos _crashedVehicle) > 100
+}) select 0); // Guaranteed by search condition
 private _dirvehRepair = if (count _roadconRepair > 0) then {[_roadRepair select 0, _roadconRepair select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPositionRepair = getPos (_roadRepair select 0);
 
@@ -160,7 +165,7 @@ _groups pushBack _groupRepair;
 _repairVehicle setDir _dirvehRepair; 
 
 // Send repair vehicle to crash site
-private _wp = _groupRepair addWaypoint [_roadPosition, 4];
+private _wp = _groupRepair addWaypoint [_roadPosition, 2];
 _wp setWaypointCombatMode "SAFE";
 private _timeOut = time + 1200;
 
@@ -172,7 +177,7 @@ waitUntil {
         (call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < 1400} == -1
     } || 
     {
-        (_repairVehicle distance2D _crashedVehicle) < 20
+        (_repairVehicle distance2D _crashedVehicle) < 15
     }}
 };
 
@@ -198,9 +203,12 @@ private _count = 0;
 
 sleep 10;
 // Return to base
-private _wp = _groupRepair addWaypoint [(getMarkerPos _marker), 40];
+private _nearestBase = [(outposts + milbases + airportsX + factories) select {sidesX getVariable [_x, sideUnknown] == _side}, _marker] call BIS_fnc_nearestPosition;
+private _targetMarker = if (isNil "_nearestBase" || {_nearestBase == ""}) then {_marker} else {_nearestBase};
+
+private _wp = _groupRepair addWaypoint [(getMarkerPos _targetMarker), 40];
 _wp setWaypointCombatMode "SAFE";
-private _wp2 = _groupCrew addWaypoint [(getMarkerPos _marker), 40];
+private _wp2 = _groupCrew addWaypoint [(getMarkerPos _targetMarker), 40];
 _wp2 setWaypointCombatMode "SAFE";
 
 waitUntil { 
@@ -211,7 +219,7 @@ waitUntil {
         (call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < 1400} == -1
     }|| 
     {
-        (_repairVehicle distance2D (getMarkerPos _marker)) < 100
+        (_repairVehicle distance2D (getMarkerPos _targetMarker)) < 100
     }}
 };
 
