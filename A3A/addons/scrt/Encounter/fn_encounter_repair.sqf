@@ -181,7 +181,7 @@ waitUntil {
     }}
 };
 
-sleep 15;
+sleep 60;
 
 // Repair effects
 _crashedVehicle setDamage 0;
