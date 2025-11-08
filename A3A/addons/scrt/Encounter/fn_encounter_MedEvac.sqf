@@ -58,7 +58,7 @@ private _dirveh = if (count _roadcon > 0) then {
 
 private _roadPosition = getPos _selectedRoad;
 
-private _marker = [(markersX select {sidesX getVariable [_x, sideUnknown] != teamPlayer}), _originPosition] call BIS_fnc_nearestPosition;
+private _marker = [((outposts + milbases + airportsX) select {sidesX getVariable [_x, sideUnknown] != teamPlayer}), _originPosition] call BIS_fnc_nearestPosition;
 private _side = sidesX getVariable [_marker, Occupants];
 private _faction = Faction(_side);
 
