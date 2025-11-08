@@ -257,4 +257,4 @@ waitUntil {
 isEventInProgress = false;
 publicVariableServer "isEventInProgress";
 
-Info("Post Ambush Vehicle Event clean up complete.");
+Info("Medevac Event clean up complete.");
