@@ -17,8 +17,9 @@ if (isNil "_player") exitWith {
 };
 
 private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player <= distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
-if !(_frontLine isEqualTo []) exitWith {
+if !(_frontlineSitesNearPlayer isEqualTo []) exitWith {
     Error("Position is near frontline, need to select appropriate event.");
     [VEH_POSTAMBUSH] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
@@ -93,23 +94,23 @@ private _wheels = [
 // Select 1-4 random wheels
 for "_i" from 1 to (1 + floor random 3) do {
     private _wheel = selectRandom _wheels;
-    _vehicle setHit [_wheel, 1];
+    _crashedVehicle setHit [_wheel, 1];
     _wheels = _wheels - [_wheel];
 };
 // For tracked vehicles
 // Damage a random track
 if (random 1 <= 0.7) then {
-    _vehicle setHit ["HitLTrack", 1];
+    _crashedVehicle setHit ["HitLTrack", 1];
 } else {
-    _vehicle setHit ["HitRTrack", 1];
+    _crashedVehicle setHit ["HitRTrack", 1];
 };
 // Additional damage
 if (random 1 < 0.3) then {
-    _vehicle setHit ["HitEngine", 0.5 + random 0.5];
+    _crashedVehicle setHit ["HitEngine", 0.5 + random 0.5];
 };
 // Universal damage
 if (random 1 < 0.4) then {
-    _vehicle setHit ["HitFuel", 0.3 + random 0.7];
+    _crashedVehicle setHit ["HitFuel", 0.3 + random 0.7];
 };
 _crashedVehicle setFuel 0;
 [_crashedVehicle, _side] call A3A_fnc_AIVEHinit;
