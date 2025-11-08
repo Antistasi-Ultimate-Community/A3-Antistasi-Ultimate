@@ -76,11 +76,6 @@ InfoArray("Original Targets:", _targets);
 private _minWeight = selectMax _weights / 10;
 private _culledTargets = [];
 {
-    if (!_arePunishmentsAllowed && {(_x#0) in citiesX}) then {
-        Info_1("Skipping %1 as an invader target.", _x#0);
-        continue
-    }; // Skip cities here rather than leaving it to the else statement later
-
     private _weight = _weights select _forEachIndex;
     if (_weight > _minWeight) then { _culledTargets append [_x, _weight] };
 } forEach _targets;
@@ -105,12 +100,17 @@ if (sidesX getVariable _originMrk != _side) exitWith {
 
 
 if (_targetMrk in citiesX) exitWith {
-    if (_side == Invaders) then {
+    if (_side isEqualTo Invaders && {_arePunishmentsAllowed}) then {
         // Punishment, unsimulated
         Info_2("Starting punishment mission from %1 to %2", _originMrk, _targetMrk);
         [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
         bigAttackInProgress = true; publicVariable "bigAttackInProgress";
         [_targetMrk, _originMrk] spawn A3A_fnc_invaderPunish;
+    } else {
+        // Supply convoy, unsimulated
+        Info_2("Sending supply convoy from %1 to %2", _originMrk, _targetMrk);
+        [-200, _side, "attack"] call A3A_fnc_addEnemyResources;
+        [[_targetMrk, _originMrk, "Supplies", "attack"],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
     };
     true;
 };
