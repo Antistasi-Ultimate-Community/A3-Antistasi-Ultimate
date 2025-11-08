@@ -39,7 +39,7 @@ while {true} do {
     } != -1}) exitWith {};
     
     _radiusX = _radiusX + 5;
-    if (_radiusX > 150) exitWith {_road = [];};
+    if (_radiusX > 250) exitWith {_road = [];};
 };
 
 if (count _road == 0) exitWith {
@@ -205,14 +205,15 @@ waitUntil {
         _signalsCreated = true;
     };
     
-    time > _timeOut || 
-    {!alive _crashedVehicle || 
+    time > _timeOut || {!alive _crashedVehicle} || 
+    {(call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < 1400} == -1} || 
     {
-        (call SCRT_fnc_misc_getRebelPlayers) findIf {_x distance2D (position _crashedVehicle) < 1400} == -1
-    } || 
-    {
-        (_MedicalVehicle distance2D _crashedVehicle) < 100
-    }}
+        if (_MedicalVehicle isKindOf "Air") then {
+            (isTouchingGround _MedicalVehicle) //hopefully this will fix idling
+        } else {
+            _MedicalVehicle distance2D _crashedVehicle < 100
+        }
+    }
 };
 
 _vehicles append _others;
