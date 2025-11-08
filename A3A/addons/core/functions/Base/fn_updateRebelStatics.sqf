@@ -124,20 +124,20 @@ if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
         [_veh, _assignedUnits] spawn {
             params ["_veh", "_units"];
             sleep 1;
-            {
-                if (isNull objectParent _x) then {
-                    switch (assignedVehicleRole _x) do {
-                        case ["Gunner"]: { _x moveInGunner _veh };
-                        case ["Commander"]: { _x moveInCommander _veh };
-                        case ["Turret"]: { 
+            // Sanity check; vehicle _can_ be gone, blown up, whatever
+            if isNull(_veh) exitWith {};
+            _units select { !isNull _x && { isNull objectParent _x } && { assignedVehicleRole _x isNotEqualTo [] } } apply {
+                switch (assignedVehicleRole _x select 0) do {
+                    case "commander": { _x moveInCommander _veh };
+                    case "gunner": { _x moveInGunner _veh };
+                    case "turret": {
                             private _path = _x call BIS_fnc_turretPath;
                             if !(_path isEqualTo []) then {
                                 _x moveInTurret [_veh, _path];
                             };
-                        };
                     };
                 };
-            } forEach _units;
+            };
         };
     };
     
