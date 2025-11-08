@@ -70,14 +70,22 @@ Debug("Final target choice list:");
 // Cull anything worse than 10:1 value ratio, otherwise we'll launch some really stupid attacks occasionally
 private _arePunishmentsAllowed = ((enablePunishments isEqualTo 1) && (tierWar >= A3U_setting_tierWarPunishments));
 
+diag_log "Logging available targets: Original, Culled";
+diag_log _targets;
+
 private _minWeight = selectMax _weights / 10;
 private _culledTargets = [];
 {
-    if (!_arePunishmentsAllowed && {(_x#0) in citiesX}) then {continue}; // Skip cities here rather than leaving it to the else statement later
+    if (!_arePunishmentsAllowed && {(_x#0) in citiesX}) then {
+        diag_log format ["Skipping %1 as an invader target.", (_x#0)];
+        continue
+    }; // Skip cities here rather than leaving it to the else statement later
 
     private _weight = _weights select _forEachIndex;
     if (_weight > _minWeight) then { _culledTargets append [_x, _weight] };
 } forEach _targets;
+
+diag_log _culledTargets;
 
 // Now we just pick a target
 private _target = selectRandomWeighted _culledTargets;
