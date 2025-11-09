@@ -562,7 +562,7 @@ class A3A_SetupDialog_InGame : A3A_SetupDialog
                 {
                     idc = A3A_IDC_SETUP_PARAMSTABBUTTON;
                     text = $STR_antistasi_dialogs_hq_button_rebel_set_loadout_button;
-                    onButtonClick = "['SaveParams'] call SCRT_fnc_ui_editParamsMenu;";
+                    onButtonClick = "['SaveParams'] spawn SCRT_fnc_ui_editParamsMenu;";
                     x = 122 * GRID_W;
                     y = 0;
                     w = 38 * GRID_W;

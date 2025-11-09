@@ -62,6 +62,16 @@ private _gameInfoText = format [
 
 ((findDisplay 70000) displayCtrl 2011) ctrlSetText _gameInfoText;
 
+if ((call BIS_fnc_admin) isEqualTo 2) then {
+    ctrlShow [5200, true];
+	ctrlEnable [5200, true];
+	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");
+} else {
+    ctrlShow [5200, false];
+	ctrlEnable [5200, false];
+	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_generic_admin_only");
+};
+
 if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {
     ((findDisplay 70000) displayCtrl 5300) ctrlShow false;
 };
