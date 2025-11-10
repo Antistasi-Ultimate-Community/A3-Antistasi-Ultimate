@@ -278,11 +278,14 @@ switch (_mode) do
             private _thisCtrl = _x;
             private _cfg = _x getVariable "config";
             private _vals = getArray (_cfg/"values");
-            private _locked = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0 || {!isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0}};
+            private _lockOnSave = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
+            private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
+            private _locked = _lockOnSave || _lockInGame;
+            
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
 
-            private _saved = ([_presetParamsHM, _savedParamsHM] select (isNil "_presetParamsHM" || {_lockOnSave && _saveExists})) getOrDefault [configName _cfg, getNumber (_cfg/"default")];
+            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParamsHM } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber (_cfg/"default")];
             if (_saved isEqualType true) then { _saved = [0, 1] select _saved };            // bool -> number conversion
 
             private "_index";
@@ -303,7 +306,7 @@ switch (_mode) do
             if (_saveExists) then { // we're loading an existing save
                 _x setVariable ["locked", _locked];
 
-                if (_lockOnSave || _lockInGame) then {
+                if (_locked) then {
                     _x ctrlEnable false;
                     _x ctrlSetTooltip (localize (["STR_antistasi_dialogs_setup_param_locked", "STR_antistasi_dialogs_setup_param_locked_ingame"] select (_lockInGame)));
                 };
@@ -387,11 +390,15 @@ switch (_mode) do
 
     case ("clearLBSelection"):
     {
-        _params params ["_lb"];
+        _params params ["_listboxes"];
+        if !(_listboxes isEqualType []) then { _listboxes = [_listboxes] };
 
-        lbClear _lb;
-        _lb lbSetCurSel -1;
-        ["populatePresetLB", [_lb]] call A3A_fnc_setupParamsTab;
+        {
+            private _lb = _x;
+            lbClear _lb;
+            _lb lbSetCurSel -1;
+            ["populatePresetLB", [_lb]] call A3A_fnc_setupParamsTab;
+        } forEach _listboxes;
     };
 
     case ("updatePresetSelections"):
@@ -413,8 +420,7 @@ switch (_mode) do
                 ["clearLBSelection", [_presetCstmCtrl]] call A3A_fnc_setupParamsTab;
             };
             case (_control isEqualTo _presetCstmCtrl && {_lbCurSel isNotEqualTo -1}): {
-                ["clearLBSelection", [_presetSizeCtrl]] call A3A_fnc_setupParamsTab;
-                ["clearLBSelection", [_presetDiffCtrl]] call A3A_fnc_setupParamsTab;              
+                ["clearLBSelection", [[_presetSizeCtrl, _presetDiffCtrl]]] call A3A_fnc_setupParamsTab;
             };
         };
 
