@@ -1,5 +1,8 @@
 #include "..\script_component.hpp"
 
+// Despite the name patches, this folder was only ever meant to contain the radio files. 
+// Changing the folder name would require changing a bunch of texture paths. So don't, unless you hate yourself.
+
 class CfgPatches 
 {
     class PATCHNAME(TFAR)

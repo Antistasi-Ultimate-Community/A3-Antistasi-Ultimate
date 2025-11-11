@@ -1,24 +1,21 @@
-class CBA_Extended_EventHandlers_base;
-
-class CfgVehicles {
-    class Item_Base_F;
-    class Thing;
-
-    class Item_TFAR_SCR536: Item_Base_F {
-        scope = 2;
-        scopeCurator = 2;
-        displayName = "SCR-536";
-        author = AUTHOR;
-        vehicleClass = "Items";
-        class TransportItems {
-            class _xx_TFAR_SCR536 {
-                name="TFAR_SCR536";
-                count=1;
-            };
+class Item_TFAR_SCR536: Item_Base_F 
+{
+    scope = 2;
+    scopeCurator = 2;
+    displayName = "SCR-536";
+    author = AUTHOR;
+    vehicleClass = "Items";
+    class TransportItems 
+    {
+        class _xx_TFAR_SCR536 
+        {
+            name="TFAR_SCR536";
+            count=1;
         };
     };
+};
 
-class Prop_TFAR_SCR536 : Thing
+class Prop_TFAR_SCR536: Thing 
 {
     destrType = "DestructNo";
     scope = 2;
