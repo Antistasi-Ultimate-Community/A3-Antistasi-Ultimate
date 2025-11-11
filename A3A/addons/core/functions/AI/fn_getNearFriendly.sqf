@@ -40,10 +40,8 @@ params [
     ["_excludeInVehicles", true]
 ];
 
-private _allUnits = allUnits select {
+allUnits select {
     side _x == _targetSide &&
     {_x distance _centerPos <= _radius} &&
-    {if (_excludeInVehicles) then {isNull objectParent _x} else {true}}
+	{!_excludeInVehicles || {isNull objectParent _x}}
 };
-
-_allUnits
