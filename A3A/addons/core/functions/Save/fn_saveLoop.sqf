@@ -187,18 +187,18 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 
 _arrayEst = [];
 {
-	// Include buyable items marked as saveable
-	// TODO: Do we need to refund the others?
-	if (typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
-		_arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
-		continue;
-	};
+    // Include buyable items marked as saveable
+    // TODO: Do we need to refund the others?
+    if (typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
+        _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
+        continue;
+    };
 
-	if (fullCrew [_x, "", true] isEqualTo []) then { continue };			// no crew seats, not in utilityItems, not saved
-	if (_x isKindOf "StaticWeapon") then { continue };						// static weapons are accounted for in staticsToSave
-	if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };		// no AI-crewed vehicles, those are refunded
+    if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
+    if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
+    if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
 
-	_arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
+    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
 
 } forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
 
@@ -208,6 +208,7 @@ _arrayEst = [];
 		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
 	};
 } forEach staticsToSave;
+
 
 private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
 _rebMarkers pushBack "Synd_HQ";
@@ -238,7 +239,6 @@ _arrayConstructions = [];
 } forEach constructionsToSave;
 ["constructionsX", _arrayConstructions] call A3A_fnc_setStatVariable;
 
-["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 [] call A3A_fnc_arsenalManage;
 
 _jna_dataList = [];
