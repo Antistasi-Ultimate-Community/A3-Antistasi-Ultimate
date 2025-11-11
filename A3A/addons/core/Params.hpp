@@ -153,6 +153,9 @@ class Params
     {
         type = "Member";
         title = $STR_params_member;
+        values[] = {""};
+        texts[] = {""};
+        default = "";
         lockInGame = 1;
     };
     class membershipEnabled: MemberParams
