@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 
 params ["_target", "_side"];
 
-private _helped = _unit getVariable ["helped", objNull];
+private _helped = _target getVariable ["helped", objNull];
 if !(isNull _helped) exitWith { _helped };
 
 // AIs don't ask for help if there's a downed player in the group
