@@ -1672,6 +1672,11 @@ if (_type == "AA") then
         {
             _loadout = ["LIB_1Rnd_SC250"];
         };
+		case "SPE_FW190F8_noinsignia";
+		case "SPE_FW190F8": {
+            _loadout = ["SPE_250Rnd_MG151","SPE_250Rnd_MG151","SPE_400Rnd_MG131","SPE_400Rnd_MG131","","","","",""];
+            _plane setVariable ["mainGun", "SPE_2xMG151"];
+        };
 	    // Clone Wars Planes (3AS)
         case "3AS_ARC_170_Red";
 		case "3AS_ARC_170_Yellow";
