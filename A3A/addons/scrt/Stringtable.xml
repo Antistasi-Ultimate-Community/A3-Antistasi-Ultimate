@@ -6821,6 +6821,13 @@
                 <Korean>집결 지점</Korean>
                 <French>Point de ralliement</French>
             </Key>
+            <Key ID="STR_dialogs_RP_movingVehicle_fail">
+                <Original>You can't establish a rally point while moving in a vehicle.</Original>
+                <Russian>Вы не можете установить точку сбора, находясь в движущемся транспортном средстве.</Russian>
+                <Chinesesimp>在车辆移动时无法设定集合点。</Chinesesimp>
+                <Korean>차량 이동 중에는 집결 지점을 설정할 수 없습니다.</Korean>
+                <French>Vous ne pouvez pas établir un point de rassemblement en vous déplaçant dans un véhicule.</French>
+            </Key>
             <Key ID="STR_dialogs_RP_abolish_fail">
                 <Original>The rally point can only be abolished at the HQ or near the Rally Point itself.</Original>
                 <Russian>Точка сбора может быть упразднена только рядом с штабом или самим пунктом сбора.</Russian>
@@ -11053,6 +11060,20 @@
                 <Chinesesimp>把AI踢出这个固定武器</Chinesesimp>
                 <Korean>이 무기에서 인공지능 내보내기</Korean>
                 <French>Faire partir l'IA de cette arme</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_move_vehicle_allow_ai">
+                <Original>Allow AIs to use this vehicle</Original>
+                <Russian>Разрешить ИИ-юнитам использовать эту технику</Russian>
+                <Chinesesimp>允许AI使用此固定武器</Chinesesimp>
+                <Korean>인공지능이 이 무기를 사용하도록 허용</Korean>
+                <French>Autoriser les IA à utiliser cette arme</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_move_vehicle_prevent_ai">
+                <Original>Prevent AIs from using this vehicle</Original>
+                <Russian>Запретить ИИ-юнитам использовать эту технику</Russian>
+                <Chinesesimp>禁止AI使用此固定武器</Chinesesimp>
+                <Korean>인공지능이 이 무기를 사용하지 못하도록 금지</Korean>
+                <French>Empêcher les IA d'utiliser cette arme</French>
             </Key>
             <Key ID="STR_antistasi_actions_buy_vehicle_distance_check_failure">
                 <Original>You can't buy vehicles while there are enemies near you.</Original>

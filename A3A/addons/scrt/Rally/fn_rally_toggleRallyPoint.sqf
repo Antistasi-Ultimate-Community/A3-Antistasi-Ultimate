@@ -7,6 +7,10 @@ if (rallyPointSpawnCount isEqualTo 0) exitWith
 	[_warningText,0,safezoneY+0.5] spawn BIS_fnc_dynamicText; 
 };
 
+if (objectParent player isNotEqualTo player && {speed objectParent player > 0}) exitWith {
+    [localize "STR_dialogs_RP_header", localize "STR_dialogs_RP_movingVehicle_fail"] call SCRT_fnc_misc_deniedHint;
+};
+
 private _rallyPointClass = FactionGet(reb,"rallyPoint");
 
 if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
