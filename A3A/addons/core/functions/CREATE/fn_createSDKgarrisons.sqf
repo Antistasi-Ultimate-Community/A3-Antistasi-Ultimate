@@ -63,7 +63,7 @@ if (_typeCrew in _garrison) then {
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 		_soldiers pushBack _unit;
 	} forEach (_garrison select {_x == _typeCrew});
-	_garrison deleteAt (_garrison find _typeCrew);;
+	_garrison deleteAt (_garrison find _typeCrew);
 };
 
 // Move riflemen into saved static weapons in area
