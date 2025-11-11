@@ -98,8 +98,11 @@ if (sidesX getVariable _originMrk != _side) exitWith {
     false;
 };
 
+private _resourcesAttackSide = [A3A_resourcesAttackOcc, A3A_resourcesAttackInv] select (_side isEqualTo Invaders);
+private _resourcesDefenceSide = [A3A_resourcesDefenceOcc, A3A_resourcesDefenceInv] select (_side isEqualTo Invaders);
 
 if (_targetMrk in citiesX) exitWith {
+    Info_2("%1 was in citiesX. Side: %2.", _targetMrk, _side);
     if (_side isEqualTo Invaders && {_arePunishmentsAllowed}) then {
         // Punishment, unsimulated
         Info_2("Starting punishment mission from %1 to %2", _originMrk, _targetMrk);
@@ -112,6 +115,7 @@ if (_targetMrk in citiesX) exitWith {
         [-200, _side, "attack"] call A3A_fnc_addEnemyResources;
         [[_targetMrk, _originMrk, "Supplies", "attack"],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
     };
+    Info_3("Resources for: %1. | Attack: %2 | Defence: %3 |", _side, _resourcesAttackSide, _resourcesDefenceSide);
     true;
 };
 
