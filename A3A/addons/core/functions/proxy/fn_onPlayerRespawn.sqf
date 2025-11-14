@@ -232,7 +232,7 @@ if (side group _newUnit == teamPlayer) then
 		private _veh = _this select 1;
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
 		if (_veh isKindOf "StaticWeapon") then {
-			if (not(_veh in staticsToSave)) then {
+			if (not(_veh in (staticsToSave apply {_x select 0}))) then {
 				staticsToSave pushBack _veh;
 				publicVariable "staticsToSave";
 			};

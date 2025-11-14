@@ -139,7 +139,10 @@ _costs = round (_costs * (1-damage _veh));
 
 [0,_costs] remoteExec ["A3A_fnc_resourcesFIA",2];
 
-if (_veh in staticsToSave) then {staticsToSave = staticsToSave - [_veh]; publicVariable "staticsToSave"};
+if (_veh in (staticsToSave apply {_x select 0})) then {
+    staticsToSave = staticsToSave select {_x select 0 != _veh};
+    publicVariable "staticsToSave";
+};
 
 [_veh,true] call A3A_fnc_empty;
 

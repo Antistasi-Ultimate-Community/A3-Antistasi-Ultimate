@@ -78,6 +78,20 @@ DECLARE_SERVER_VAR(A3A_activeTasks, []);
 DECLARE_SERVER_VAR(A3A_taskCount, 0);
 //List of statics (MGs, AA, etc) that will be saved and loaded.
 DECLARE_SERVER_VAR(staticsToSave, []);
+// Convert old format to new format if needed
+if (count staticsToSave > 0 && {!(staticsToSave#0 isEqualType [])}) then {
+    private _convertedStatics = [];
+    {
+        if (_x isEqualType []) then {
+            _convertedStatics pushBack _x; // Already in new format
+        } else {
+            _convertedStatics pushBack [_x, false]; // Convert object to [object, false]
+        };
+    } forEach staticsToSave;
+    staticsToSave = _convertedStatics;
+    publicVariable "staticsToSave";
+    diag_log "Converted staticsToSave from old to new format";
+};
 DECLARE_SERVER_VAR(ungaragedVehicles, []);
 //Whether the players have access to radios.
 DECLARE_SERVER_VAR(haveRadio, false);

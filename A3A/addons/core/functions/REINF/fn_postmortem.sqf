@@ -18,9 +18,9 @@ if (isNull _group) then
 {
     Debug_1("Group for victim :: %1, no group found! Removing from Statics list.",_victim);
 
-	if (_victim in staticsToSave) then
+	if (_victim in (staticsToSave apply {_x select 0})) then
     {
-        staticsToSave = staticsToSave - [_victim];
+        staticsToSave = staticsToSave select {_x select 0 != _victim};
         publicVariable "staticsToSave";
     };
 };

@@ -38,10 +38,14 @@ _staticsNear = _staticsNear select {(crew _x) isequalto []};
 
 // Only get statics which are not currently assigned. Also no AI-locked or cargo-loaded statics.
 _staticsNear = _staticsNear select {
-    ((_x getVariable ["lockedForAi", false]) == false) &&
-    ((_x getVariable ["PATCOM_STATIC_ASSIGNED", false]) == false) && (
-        (isNull attachedTo _x) ||
-        { !(_x in (attachedTo _x getVariable["ace_cargo_loaded", []])) }
+    private _vehicle = _x select 0;
+    private _lockedParam = _x select 1;
+    
+    // Check both variable and parameter
+    ((isNil {_vehicle getVariable "lockedForAI"}) && {!_lockedParam}) &&
+    ((_vehicle getVariable ["PATCOM_STATIC_ASSIGNED", false]) == false) && (
+        (isNull attachedTo _vehicle) ||
+        { !(_vehicle in (attachedTo _vehicle getVariable["ace_cargo_loaded", []])) }
     )
 };
 

@@ -41,7 +41,7 @@ _textX = format [
     , count (_units#8)
     , count (_units#9)
     , count (_units#10)
-    , {_x distance _positionX < _size} count staticsToSave
+    , {(_x select 0) distance _positionX < _size} count staticsToSave
     , _estatic
     , if (_limit != -1) then {format ["/%1", _limit]} else {""}
 ];

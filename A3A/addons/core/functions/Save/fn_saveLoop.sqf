@@ -155,7 +155,7 @@ _resourcesBackground = server getVariable "resourcesFIA";
 				if (vehicle _friendX != _friendX) then {
 					_veh = vehicle _friendX;
 					_typeVehX = typeOf _veh;
-					if (not(_veh in staticsToSave)) then {
+					if (not(_veh in (staticsToSave apply {_x select 0}))) then {
 						if ((_veh isKindOf "StaticWeapon") or (driver _veh == _friendX)) then {
 							if (group _friendX in (hcAllGroups theBoss)) then {
 								_resourcesBackground = _resourcesBackground + ([_typeVehX] call A3A_fnc_vehiclePrice);
@@ -195,7 +195,7 @@ _arrayEst = [];
     };
 
     if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
-    if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
+    if (_x in (staticsToSave apply {_x select 0})) then { continue };  // Skip anything already being saved by staticsToSave
     if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
 
     _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
@@ -204,7 +204,7 @@ _arrayEst = [];
 
 
 {
-	if (alive _vehicle) then { // and !(surfaceIsWater position _vehicle) and (isNull attachedTo _vehicle)
+	if (alive _x) then { // and !(surfaceIsWater position _x) and (isNull attachedTo _x)
 		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
 	};
 } forEach staticsToSave;

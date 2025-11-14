@@ -29,7 +29,7 @@ if !(_target isEqualType "") then
 if (_marker isEqualTo "") exitWith {};
 
 // Find all non-mortar statics within marker
-private _statics = staticsToSave inAreaArray _marker;
+private _statics = (staticsToSave select {(_x select 0) inArea _marker}) apply {_x select 0};
 _statics = _statics select {!(_x isKindOf "StaticMortar") and !(_x isKindOf "Air")};           // may include bunkers. Don't bother with mortars yet //why not bother with mortars?
 if (count _statics == 0) exitWith {};
 
@@ -40,9 +40,20 @@ if (_target in ungaragedVehicles) then {
 };
 
 // Find unlocked & unoccupied statics
+// Convert statics array to new format if needed
+if (count _statics > 0 && {!(_statics#0 isEqualType [])}) then {
+    _statics = _statics apply { 
+        if (_x isEqualType []) then { _x } else { [_x, false] }
+    };
+};
+
 private _freeStatics = _statics select {
-    isNil { _x getVariable "lockedForAI" }
-    and isNull (gunner _x)
+    private _vehicle = if (_x isEqualType []) then { _x select 0 } else { _x };
+    private _lockedParam = if (_x isEqualType []) then { _x select 1 } else { false };
+    
+    (isNil { _vehicle getVariable "lockedForAI" }) && 
+    (!_lockedParam) && 
+    (isNull (gunner _vehicle))
 };
 if (count _freeStatics == 0) exitWith {};
 
@@ -59,7 +70,7 @@ if (count _possibleCrew == 0) exitWith {};
 // Identify current local static group for marker, if any
 private _staticGroup = grpNull;
 {
-    private _unit = gunner _x;
+    private _unit = gunner (_x select 0);
     if (isNull _unit or !(local _unit)) then { continue };
     if !(_unit getVariable ["markerX", ""] isEqualTo _marker) then { continue };
     _staticGroup = group _unit; break;
@@ -68,7 +79,7 @@ private _staticGroup = grpNull;
 if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
 
 {
-    private _veh = _x;
+    private _veh = _x select 0; // Extract vehicle from the array
     private _assignedUnits = [];
     
     // 1. Get all possible positions

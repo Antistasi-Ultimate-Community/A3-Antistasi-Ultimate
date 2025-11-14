@@ -327,8 +327,8 @@ if (_winner == teamPlayer) then {
 	private _staticWeapons = nearestObjects [_positionX, ["LandVehicle", "Ship"], _size * 1.5, true];
 	{
 		[_x, teamPlayer, true] call A3A_fnc_vehKilledOrCaptured;
-		if !(_x in staticsToSave) then {
-			staticsToSave pushBack _x;
+		if !(_x in (staticsToSave apply {_x select 0})) then {
+    		staticsToSave pushBack [_x, false]; // false as default parameter
 		};
 	} forEach _staticWeapons;
 	publicVariable "staticsToSave";
@@ -347,7 +347,7 @@ else
 	{
 	//Remove static weapons near the marker from the saved statics array
 	private _staticWeapons = nearestObjects [_positionX, ["LandVehicle", "Ship"], _size * 1.5, true];
-	staticsToSave = staticsToSave - _staticWeapons;
+	staticsToSave = staticsToSave select {!((_x select 0) in _staticWeapons)};
 	publicVariable "staticsToSave";
 	{
 		[_x, _winner, true] call A3A_fnc_vehKilledOrCaptured;

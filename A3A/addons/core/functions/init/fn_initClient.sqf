@@ -284,8 +284,8 @@ player addEventHandler ["WeaponAssembled", {
     private _veh = _this select 1;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
     if (_veh isKindOf "StaticWeapon") then {
-        if (not(_veh in staticsToSave)) then {
-            staticsToSave pushBack _veh;
+        if (not(_veh in (staticsToSave apply {_x select 0}))) then {
+            staticsToSave pushBack [_veh, false]; // Add with default true parameter
             publicVariable "staticsToSave";
         };
         _markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};

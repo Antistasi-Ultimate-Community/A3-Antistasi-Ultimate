@@ -16,10 +16,10 @@ if (getMarkerPos _x distance _positionX < distanceSPWN) then
 	_analyzed = _x;
 	_garrison = garrison getVariable [_analyzed,[]];
 	_threat = _threat + (floor((count _garrison)/8));
-	_staticsX = staticsToSave select {_x inArea _analyzed};
+	_staticsX = staticsToSave select {(_x select 0) inArea _analyzed};
 	if (count _staticsX > 0) then
 		{
-		_threat = _threat + ({typeOf _x in FactionGet(reb,"staticMortars")} count _staticsX) + (2*({typeOf _x in FactionGet(reb,"staticAT")} count _staticsX))
+		_threat = _threat + ({typeOf (_x select 0) in FactionGet(reb,"staticMortars")} count _staticsX) + (2*({typeOf (_x select 0) in FactionGet(reb,"staticAT")} count _staticsX))
 		};
 	};
 } forEach ((markersX - citiesX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA) select {sidesX getVariable [_x,sideUnknown] != _sideX});

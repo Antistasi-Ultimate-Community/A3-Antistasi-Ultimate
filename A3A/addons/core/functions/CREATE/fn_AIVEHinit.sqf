@@ -115,15 +115,29 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 };
 
 if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
-	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
-	if (_markers isEqualTo []) exitWith {};
-	if !(_typeX isKindOf "StaticMortar") then {
-	    [_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-		if (_veh in ungaragedVehicles) then {
-			_veh setVariable ["lockedForAI", true, true]; 
-		} else {
-			if (_side == teamPlayer && {!isNil "serverInitDone"}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
+    private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
+    if (_markers isEqualTo []) exitWith {};
+    if !(_typeX isKindOf "StaticMortar") then {
+        [_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+        private _lockedForAI = if (_veh in ungaragedVehicles) then { true } else { false };
+        _veh setVariable ["lockedForAI", _lockedForAI, true]; 
+        
+        // Update or add to staticsToSave
+        private _index = staticsToSave findIf {
+		    if (_x isEqualType []) then {
+		        _x select 0 == _veh
+		    } else {
+		        _x == _veh  // Handle old format during transition
+		    };
 		};
+        if (_index != -1) then {
+            staticsToSave set [_index, [_veh, _lockedForAI]];
+        } else {
+            staticsToSave pushBack [_veh, _lockedForAI];
+        };
+        publicVariable "staticsToSave";
+        
+        if (_side == teamPlayer && {!isNil "serverInitDone"}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
     };
 };
 

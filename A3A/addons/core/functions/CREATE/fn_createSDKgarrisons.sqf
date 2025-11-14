@@ -37,7 +37,7 @@ if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///ma
 };
 
 private _size = [_markerX] call A3A_fnc_sizeMarker;
-private _staticsX = staticsToSave select {_x distance2D _positionX < _size};
+private _staticsX = staticsToSave select {(_x select 0) distance2D _positionX < _size};
 
 private _garrison = [];
 _garrison = _garrison + (garrison getVariable [_markerX,[]]);
@@ -68,8 +68,9 @@ if (_typeCrew in _garrison) then {
 
 // Move riflemen into saved static weapons in area
 {
-    private _veh = _x; // Rename to avoid variable shadowing
-    if !(isNil {_veh getVariable "lockedForAI"}) then { continue };
+    private _veh = _x select 0; // Rename to avoid variable shadowing // Get vehicle from staticsToSave entry
+    private _lockedForAI = _x select 1; // Get our saved parameter 
+    if (!(isNil {_veh getVariable "lockedForAI"}) || {_lockedForAI}) then { continue };
     if (!(isNull attachedTo _veh) && {_veh in (attachedTo _veh getVariable ["ace_cargo_loaded", []])}) then { continue };
 
     // Get all available crew positions
@@ -179,5 +180,5 @@ waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 deleteGroup _groupStatics;
 deleteGroup _groupMortars;
 
-{if (!(_x in staticsToSave)) then {deleteVehicle _x}} forEach _vehiclesX;
+{if (!(_x in (staticsToSave apply {_x select 0}))) then {deleteVehicle _x}} forEach _vehiclesX;
 ["locationSpawned", [_markerX, "RebelOutpost", false]] call EFUNC(Events,triggerEvent);

@@ -368,22 +368,38 @@ if (_varName in specialVarLoads) then {
 
         case 'staticsX': {
             private _list = +_varValue;
+            
+            // Convert old format to new during load if needed
+            if (count _list > 0 && {!(_list#0 isEqualType [])}) then {
+                _list = _list apply { 
+                    if (_x isEqualType []) then { _x } else { [_x, false] }
+                };
+            };
             private _index = count _list;
-
+        
             // Retain original order but prioritize after `restorePriority` property
             _list = _list apply {
                 _x params["_class"];
                 _index = _index - 1;
                 [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), _index, _x];
             };
-
+        
             // Sort descending; first index wins unless equal, then it's the original order
             _list sort false;
             _list apply {
                 _x params["","","_data"];
-                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+                
+                // Handle both old and new data formats
+                private _typeVehX = _data select 0;
+                private _posVeh = _data select 1;
+                private _xVectorUp = _data select 2;
+                private _xVectorDir = _data select 3;
+                private _state = if (count _data > 4) then { _data select 4 } else { [] };
+                private _lockedParam = if (count _data > 5) then { _data select 5 } else { false };
+                
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
                 Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
+                
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save
@@ -393,28 +409,32 @@ if (_varName in specialVarLoads) then {
                     _veh setPosWorld _posVeh;
                     _veh setVectorDirAndUp [_xVectorDir,_xVectorUp];
                 };
+                
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
+                
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
                     switch true do {
                         case (_veh isKindOf "StaticWeapon");
                         case (_veh isKindOf "LandVehicle");
                         case (_veh isKindOf "Ship"): {
-                            staticsToSave pushBack _veh;
+                            staticsToSave pushBack [_veh, _lockedParam];
                         };
-
+        
                         case (_veh isKindOf "Building"): {
                             _veh setVariable ["A3A_building", true, true];
                             A3A_buildingsToSave pushBack _veh;
                         };
                     };
-
+        
                     if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
                         Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
                         [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
                     };
                 };
-                if (!isNil "_state") then {
+                
+                // Only call setState if we have actual state data (not our lockedForAI parameter)
+                if (!isNil "_state" && {_state isEqualType []} && {count _state > 0}) then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
             };
