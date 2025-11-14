@@ -296,7 +296,7 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Hilux_hiluxV2_unarmed : TRIPLES(AD
     };
 };
 
-class CUP_WheeledVehicles_CUP_WheeledVehicles_Hilux_hiluxV2_awed_unarmed : TRIPLES(ADDON,Nodes,Base)
+class CUP_WheeledVehicles_CUP_WheeledVehicles_Hilux_hiluxV2_armored_unarmed : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
     {
