@@ -204,7 +204,7 @@ _arrayEst = [];
 
 
 {
-	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
+	if (alive _vehicle) then { // and !(surfaceIsWater position _vehicle) and (isNull attachedTo _vehicle)
 		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
 	};
 } forEach staticsToSave;
