@@ -101,10 +101,10 @@ if (_text isEqualTo "") then {
     switch (true) do {
         case (_intelType isEqualTo "Civilian"): {
             _intelContent = selectRandomWeighted [
-                MONEY, 0.2,
-                WEAPON, 0.2,
-                DECRYPTION_KEY, 0.2,
-                TRAITOR, 0.1
+                MONEY, 0.15,
+                WEAPON, 0.05,
+                DECRYPTION_KEY, 0.5,
+                TRAITOR, 0.3
             ];
 
             switch (_intelContent) do
