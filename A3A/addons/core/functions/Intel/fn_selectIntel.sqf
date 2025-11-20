@@ -74,8 +74,8 @@ private _fnc_addWeapon = {
     private _magazine = selectRandom compatibleMagazines _newWeapon;
 
     private _quantity = [
-        [A3A_guestItemLimit, (50 - A3A_guestItemLimit) / 2, 50], // base QTYs on guestItemLimit for consistency with other arsenal functionality when unlocks disabled
-        [0.6 * minWeaps, minWeaps, 1.2 * minWeaps]
+        [A3A_guestItemLimit / 10, A3A_guestItemLimit / 4, 50], // base QTYs on guestItemLimit for consistency with other arsenal functionality when unlocks disabled
+        [minWeaps / 10, minWeaps / 4, minWeaps]
     ] select (minWeaps > 0);
     _quantity = ceil (random _quantity); // in case unlocks disabled and A3A_guestItemLimit is set to 0, at least give 1
     
