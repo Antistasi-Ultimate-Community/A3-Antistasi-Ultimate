@@ -7,10 +7,6 @@ if (rallyPointSpawnCount isEqualTo 0) exitWith
 	[_warningText,0,safezoneY+0.5] spawn BIS_fnc_dynamicText; 
 };
 
-if (objectParent player isNotEqualTo player && {speed objectParent player > 0}) exitWith {
-    [localize "STR_dialogs_RP_header", localize "STR_dialogs_RP_movingVehicle_fail"] call SCRT_fnc_misc_deniedHint;
-};
-
 private _rallyPointClass = FactionGet(reb,"rallyPoint");
 
 if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
@@ -66,6 +62,10 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 
     if (player != theBoss) exitWith {
         [localize "STR_dialogs_RP_header", localize "STR_dialogs_RP_comm_only_fail"] call SCRT_fnc_misc_deniedHint;
+    };
+
+    if (!isNull objectParent player) exitWith {
+        [localize "STR_dialogs_RP_header", localize "STR_dialogs_RP_inVehicle_fail"] call SCRT_fnc_misc_deniedHint;
     };
 
     _cost = _finalCost;

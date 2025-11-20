@@ -6837,12 +6837,12 @@
                 <Korean>집결 지점</Korean>
                 <French>Point de ralliement</French>
             </Key>
-            <Key ID="STR_dialogs_RP_movingVehicle_fail">
-                <Original>You can't establish a rally point while moving in a vehicle.</Original>
-                <Russian>Вы не можете установить точку сбора, находясь в движущемся транспортном средстве.</Russian>
-                <Chinesesimp>在车辆移动时无法设定集合点。</Chinesesimp>
-                <Korean>차량 이동 중에는 집결 지점을 설정할 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas établir un point de rassemblement en vous déplaçant dans un véhicule.</French>
+            <Key ID="STR_dialogs_RP_inVehicle_fail">
+                <Original>You can't establish a rally point while in a vehicle.</Original>
+                <Russian>Нельзя установить точку сбора, находясь в автомобиле.</Russian>
+                <Chinesesimp>你不能在车内建立集合点。</Chinesesimp>
+                <Korean>차량 안에서는 집결 지점을 설정할 수 없습니다.</Korean>
+                <French>On ne peut pas établir de point de rassemblement en étant dans un véhicule.</French>
             </Key>
             <Key ID="STR_dialogs_RP_abolish_fail">
                 <Original>The rally point can only be abolished at the HQ or near the Rally Point itself.</Original>
