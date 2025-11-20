@@ -181,9 +181,10 @@ private _fnc_addAssignedItems = {
 
     if (isNil "_overrideClass") then {
         _unit call _fnc_addRadio;
-        _unit linkItem (selectRandom (A3A_faction_reb get "compasses"));
-        _unit linkItem (selectRandom (A3A_faction_reb get "maps"));
-        _unit linkItem (selectRandom (A3A_faction_reb get "watches"));
+        {
+            private _item = selectRandom _x;
+            if (!isNil {"_item"}) then { _unit linkItem _item };
+        } forEach [unlockedMaps, unlockedCompasses, unlockedWatches]; // should be populated even with no unlocks; GPS not included due to potential of including UAV terminals
     } else {
         { if (!isNil "_x") then { _unit linkItem _x } } forEach (_overrideClass);
     };
