@@ -553,7 +553,7 @@ class Params
     class A3A_removeRestore: RebelBalanceParams
     {
         title = $STR_A3A_Params_removeRestore_title;
-        values[] = {0, 1};
+        values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
@@ -1269,5 +1269,5 @@ class Params
         values[] = {0,3,5,10,20};
         texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
         default = 0;
-    };
+};
 };
