@@ -34,9 +34,9 @@ if (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"v
     _vehicle setVehicleRadar 1;
 };
 
-if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod")) then
+if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) then
 {
-    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") || _vtol != "" || (typeOf _vehicle in (_faction get "vehiclesDropPod"))) exitWith
+    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all, "vehiclesDropPod") || _vtol != "") exitWith
     {
         //Transport helicopter or VTOL
         _landPos = [_posDestination, 200, 400, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
@@ -49,7 +49,7 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
             if(_x distance2D _landPos < 20) exitWith { _landPos = [0, 0, 0] };
         } forEach _landPosBlacklist;
         
-        if (typeOf _vehicle in (_faction get "vehiclesDropPod") ) exitWith {
+        if (_vehType in FactionGet(all, "vehiclesDropPod")) exitWith {
             [_vehicle, _cargoGroup, _posDestination, _posOrigin] spawn A3A_fnc_OrbitalLanding; // , _crewGroup
         };
         {
