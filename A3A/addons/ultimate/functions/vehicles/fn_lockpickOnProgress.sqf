@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+
 params ["_target", "_caller", "_actionId", "_frame", "_maxFrame"];
 
 if !([_caller, _target] call A3U_fnc_canLockpick) exitWith { [_target] call A3U_fnc_lockpickCleanup };
