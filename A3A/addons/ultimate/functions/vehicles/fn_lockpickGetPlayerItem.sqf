@@ -26,7 +26,7 @@ if !assert(params[
 if !assert(!isNull _unit) exitWith { "" };
 if !GVAR(allowLockpickKits) exitWith { "" };
 
-private _mags = magazineCargo player select {
+private _mags = magazineCargo _unit select {
     _x isKindOf QGVAR(LockpickKitBase)
 } apply {
     [getNumber(configFile >> "CfgMagazines" >> _x >> "count"), _x];

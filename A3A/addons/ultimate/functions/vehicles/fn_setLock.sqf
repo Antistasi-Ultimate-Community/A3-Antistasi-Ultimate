@@ -37,9 +37,9 @@ if (!isServer && hasInterface) exitWith {
 
 if (enableVehicleAutoLock isEqualTo false) exitWith {false};
 
-if (isNull _vehicle || 
-    { _vehicle isKindOf "Static" } ||
-    { !alive _vehicle }
+if (isNull _vehicle ||
+    { !alive _vehicle } || 
+    { _vehicle isKindOf "Static" }
 ) exitWith {false};
 
 _vehicle lock _state;

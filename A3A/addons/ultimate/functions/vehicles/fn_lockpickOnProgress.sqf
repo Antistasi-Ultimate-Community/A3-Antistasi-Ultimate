@@ -20,6 +20,7 @@ if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_unit] call A3U
         [player, _target getVariable QGVAR(lockpickUsed)] call A3U_fnc_useMagazineItem;
         [_target] call A3U_fnc_lockpickCleanup;
 
+        // Re-add lockpick hold-action after a short delay
         [{
             call A3U_fnc_lockpick;
         }, [_target], 2.5] call CBA_fnc_waitAndExecute;
