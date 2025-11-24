@@ -1,4 +1,4 @@
-#include "..\script_component.hpp"
+#include "..\..\script_component.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3U_fnc_useMagazineItem
 
