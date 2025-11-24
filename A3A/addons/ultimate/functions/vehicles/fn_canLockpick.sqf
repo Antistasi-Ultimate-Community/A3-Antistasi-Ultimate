@@ -46,7 +46,7 @@ if !([_target] call A3U_fnc_isLocked) exitWith { false };
 if (_forDisplayOnly) exitWith { true };
 
 // Allow engineers
-if ([_unit] call A3U_fnc_isEngineer) exitWith { true };
+if ([_unit] call A3A_fnc_isEngineer) exitWith { true };
 
 GVAR(allowLockpickKits) && {
     magazines _unit findIf {
