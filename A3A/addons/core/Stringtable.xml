@@ -152,16 +152,16 @@
                 <Polish>Odbuduj</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebuild_assets_tooltip">
-                <Original>Rebuilds radio towers and military buildings on selected marker. Cost 5000.</Original>
-                <French>Reconstruit les tours radio et les bâtiments militaires sur le marqueur sélectionné. Coût 5000.</French>
-                <Russian>Восстанавливает радиовышки и военные здания на выбранном маркере. Стоимость 5000.</Russian>
-                <German>Baut Funktürme und Militärgebäude auf ausgewählten Markern wieder auf. 5000 gekostet.</German>
-                <Czech>Obnovuje rádiové věže a vojenské budovy na vybrané značce. Cena 5000.</Czech>
-                <Chinesesimp>在选定的标记上重建无线电塔和军事建筑。 成本5000。</Chinesesimp>
-                <Korean>선택한 마커에 라디오 타워와 군사 건물을 재건설합니다. 비용 5000.</Korean>
-                <Italian>Ricostruisce le torri radio e gli edifici militari sull'indicatore selezionato. Costo 5000.</Italian>
-                <Spanish>Reconstruye torres de radio y edificios militares en el marcador seleccionado. Costo 5000.</Spanish>
-                <Polish>Odbudowuje wieże radiowe i budynki wojskowe na wybranym znaczniku. Koszt 5000.</Polish>
+                <Original>Rebuilds factories, resources, radio towers and military buildings on selected marker. Cost 5000.</Original>
+                <French>Reconstruit les usines, ressources, tours radio et bâtiments militaires sur le marqueur sélectionné. Coût 5000.</French>
+                <Russian>Восстанавливает фабрики, ресурсы, радиовышки и военные здания на выбранном маркере. Стоимость 5000.</Russian>
+                <German>Stellt Fabriken, Ressourcen, Funktürme und Militärgebäude am ausgewählten Marker wieder her. Kosten 5000.</German>
+                <Czech>Obnoví továrny, zdroje, radiové věže a vojenské budovy na vybraném markeru. Cena 5000.</Czech>
+                <Chinesesimp>在选定的标记上重建工厂, 资源, 无线电塔和军事建筑。费用5000。</Chinesesimp>
+                <Korean>선택한 마커에 공장, 자원, 무전탑 및 군사 건물을 재건합니다. 비용 5000.</Korean>
+                <Italian>Ricostruisce fabbriche, risorse, torri radio e edifici militari sul marcatore selezionato. Costo 5000.</Italian>
+                <Spanish>Reconstruye fábricas, recursos, torres de radio y edificios militares en el marcador seleccionado. Coste 5000.</Spanish>
+                <Polish>Odbudowuje fabryki, zasoby, wieże radiowe i budynki wojskowe na wybranym markerze. Koszt 5000.</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
                 <Original>Train Rebel Troops</Original>
@@ -6078,11 +6078,11 @@
         </Container>
         <Container name="intel_civilian_interaction">
         <Key ID="STR_antistasi_intel_weapon_informant">
-            <Original>An informant gave you the location of a warehouse containing stashes of the<br/> %1.<br/> You have acquired %2 of this weapon.</Original>
-            <Russian>Информатор сообщил вам место склада с тайниками, содержащими <br/> %1.<br/> Вы получили %2 единиц этого оружия.</Russian>
-            <Chinesesimp>一名线人提供了藏有<br/> %1.<br/>的仓库位置。您已获得该武器的%2件。</Chinesesimp>
-            <Korean>정보원이 당신에게<br/> %1.<br/>을(를) 보관한 창고 위치를 알려주었습니다이 무기 %2개를 획득했습니다.</Korean>
-            <French>Un informateur vous a donné l'emplacement d'un entrepôt contenant des stocks de <br/> %1.<br/> Vous avez acquis %2 de cette arme.</French>
+            <Original>An informant gave you the location of a warehouse containing stashes of the&lt;br/&gt; %1.&lt;br/&gt; You have acquired %2 of this weapon.</Original>
+            <Russian>Информатор сообщил вам место склада с тайниками, содержащими &lt;br/&gt; %1.&lt;br/&gt; Вы получили %2 единиц этого оружия.</Russian>
+            <Chinesesimp>一名线人提供了藏有&lt;br/&gt; %1.&lt;br/&gt;的仓库位置。您已获得该武器的%2件。</Chinesesimp>
+            <Korean>정보원이 당신에게&lt;br/&gt; %1.&lt;br/&gt;을(를) 보관한 창고 위치를 알려주었습니다이 무기 %2개를 획득했습니다.</Korean>
+            <French>Un informateur vous a donné l'emplacement d'un entrepôt contenant des stocks de &lt;br/&gt; %1.&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
         </Key>
         <Key ID="STR_antistasi_intel_weapon_convoy">
             <Original>A weapons convoy has been intercepted by local militia and rerouted to your HQ. You have received %1x %2.</Original>
@@ -6106,11 +6106,11 @@
             <French>En signe de bonne volonté et de soutien à la cause, un marchand d'armes anonyme a livré une caisse d'armes à votre QG. Vous avez reçu %1x %2.</French>
         </Key>
         <Key ID="STR_antistasi_intel_weapon_supplydata">
-            <Original>You found the supply data for the<br/> %1.<br/> You have acquired %2 of this weapon.</Original>
-            <Russian>Вы нашли данные о поставках для<br/> %1.<br/> Вы получили %2 единиц этого оружия.</Russian>
-            <Chinesesimp>你找到了<br/> %1.<br/>的供应数据。你已获得该武器的%2件。</Chinesesimp>
-            <Korean>당신은<br/> %1.<br/>의 보급 데이터를 찾았습니다.이 무기 %2개를 획득했습니다.</Korean>
-            <French>Vous avez trouvé les données d'approvisionnement pour le<br/> %1.<br/> Vous avez acquis %2 de cette arme.</French>
+            <Original>You found the supply data for the&lt;br/&gt; %1.&lt;br/&gt; You have acquired %2 of this weapon.</Original>
+            <Russian>Вы нашли данные о поставках для&lt;br/&gt; %1.&lt;br/&gt; Вы получили %2 единиц этого оружия.</Russian>
+            <Chinesesimp>你找到了&lt;br/&gt; %1.&lt;br/&gt;的供应数据。你已获得该武器的%2件。</Chinesesimp>
+            <Korean>당신은&lt;br/&gt; %1.&lt;br/&gt;의 보급 데이터를 찾았습니다.이 무기 %2개를 획득했습니다.</Korean>
+            <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt; %1.&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
         </Key>
         </Container>
     </Package>

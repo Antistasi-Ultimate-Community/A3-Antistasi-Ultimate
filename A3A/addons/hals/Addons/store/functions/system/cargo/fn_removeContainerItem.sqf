@@ -43,7 +43,7 @@ try {
 
                     _weapons set [_curIndex, []];
                 } else {
-                    _weapon set [_forEachIndex, ""];
+                    _weapon set [_forEachIndex, ["", []] select (_forEachIndex in [4, 5])];
                 };
 
                 throw true;

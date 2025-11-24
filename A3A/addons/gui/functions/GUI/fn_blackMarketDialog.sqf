@@ -40,9 +40,8 @@ switch (_mode) do
         ['on'] call SCRT_fnc_ui_toggleMenuBlur;
 
         private _vehicleType = (uiNamespace getVariable ["bm_vehicleTypeBox", ""]);
-        private _categoryIndex = _vehicleType lbValue lbCurSel _vehicleType;
-
-        diag_log _categoryIndex;
+        private _cursel = lbCurSel _vehicleType;
+        private _categoryIndex = _vehicleType lbValue _cursel;
 
         private _display = findDisplay A3A_IDD_BLACKMARKETVEHICLEDIALOG;
 

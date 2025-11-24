@@ -265,7 +265,7 @@ if (_varName in specialVarLoads) then {
                 _posAnt = _varvalue select _i;
                 _mrk = [mrkAntennas, _posAnt] call BIS_fnc_nearestPosition;
                 _antenna = [antennas,_mrk] call BIS_fnc_nearestPosition;
-                {if ([antennas,_x] call BIS_fnc_nearestPosition == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
+                {if (([antennas,_x] call BIS_fnc_nearestPosition) == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
                 antennas = antennas - [_antenna];
                 antennasDead pushBack _antenna;
                 _antenna removeAllEventHandlers "Killed";
@@ -367,9 +367,23 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'staticsX': {
-            for "_i" from 0 to (count _varvalue) - 1 do {
-                (_varValue#_i) params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+            private _list = +_varValue;
+            private _index = count _list;
+
+            // Retain original order but prioritize after `restorePriority` property
+            _list = _list apply {
+                _x params["_class"];
+                _index = _index - 1;
+                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), _index, _x];
+            };
+
+            // Sort descending; first index wins unless equal, then it's the original order
+            _list sort false;
+            _list apply {
+                _x params["","","_data"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
+                Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save
@@ -382,13 +396,20 @@ if (_varName in specialVarLoads) then {
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
-                    if (_veh isKindOf "StaticWeapon") exitWith { staticsToSave pushBack _veh };
-                    if (_veh isKindOf "Building") exitWith {
-                        _veh setVariable ["A3A_building", true, true];
-                        if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
-                            [_veh] call A3A_fnc_terrainCleaner;
+                    switch true do {
+                        case (_veh isKindOf "StaticWeapon"): {
+                            staticsToSave pushBack _veh;
                         };
-                        A3A_buildingsToSave pushBack _veh;
+
+                        case (_veh isKindOf "Building"): {
+                            _veh setVariable ["A3A_building", true, true];
+                            A3A_buildingsToSave pushBack _veh;
+                        };
+                    };
+
+                    if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
+                        Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
+                        [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
                     };
                 };
                 if (!isNil "_state") then {
