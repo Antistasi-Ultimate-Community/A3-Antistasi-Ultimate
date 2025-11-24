@@ -25,7 +25,7 @@ Author:
 ---------------------------------------------------------------------------- */
 if !assert(params[
     ["_unit", nil, [objNull]],
-    ["_target", nil, [objNull]],
+    ["_target", nil, [objNull]]
 ]) exitWith { false };
 
 if !assert(!isNull _unit) exitWith { false };
