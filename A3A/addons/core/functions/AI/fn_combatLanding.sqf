@@ -136,26 +136,32 @@ while {_interval < 0.9999} do
     if ((getPos _helicopter select 2) < 0.25 ) exitwith{_helicopter setdamage 0; sleep 1; _helicopter setdamage _dam;};
 };
 sleep 0.1;
+[_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
+
 _helicopter engineOn true; ///keep the engine running
 if(canMove _helicopter || alive _driver) then {
     [_helicopter, "open"] spawn A3A_fnc_HeliDoors;
+    sleep 0.25;
 };
 
 _cargoGroup leaveVehicle _helicopter;
-
-private _second = false;
 {
-  if (_second) then {
-    _x action ["Eject", _helicopter];
+    if ((vehicle _x) isEqualTo _helicopter) then {
+        _x leaveVehicle _helicopter;
+        sleep 0.15;
+        if ((vehicle _x) isEqualTo _helicopter) then {
+            _x action ["Eject", _helicopter];
+            sleep 0.05;
+        };
+    };
     unassignVehicle _x;
-    _second = false;
-  } else {
-    _second = true;
-    _x leaveVehicle _helicopter;
-  };
-  private _second = true;
 } forEach units _cargoGroup;
 
+waitUntil {sleep 1; (!alive _helicopter) || {!canMove _helicopter || {!alive _driver || {/*count assignedCargo _helicopter isEqualTo 0*/ count (crew _helicopter) isEqualTo count (units _crewGroup)}}}};
+
+deleteVehicle _landPad;
+
+if (count units _cargoGroup isEqualTo 0) exitWith {};
 private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 10];
 _cargoWP1 setWaypointType "MOVE";
 _cargoWP1 setWaypointBehaviour "AWARE";
@@ -165,46 +171,26 @@ _cargoWP2 setWaypointType "SAD";
 _cargoWP2 setWaypointBehaviour "COMBAT";
 _cargoGroup spawn A3A_fnc_attackDrillAI;
 
-
-if(!canMove _helicopter || !alive _driver) exitWith { deleteVehicle _landPad };
-
-// Dirty hack to stop the heli lurching around near the ground
-private _dismountTime = count units _cargoGroup - 3;
-[_helicopter, time + _dismountTime, _midHeight, _landPad] spawn {
-    params ["_heli", "_endTime", "_flyHeight", "_landPad"];
-    while { time < _endTime } do {
-        _heli setVelocity [0,0,-0.65];
-        sleep 1;
-    };
-    if (!isEngineOn _heli) then { _heli engineOn true;};
-    _heli flyInHeight _flyHeight;
-    deleteVehicle _landPad;
-};
-[_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
-
-_helicopter engineOn true;  ///still keeping the engine running
-
-sleep _dismountTime;
-
-_helicopter engineOn true;  ///we must keep the engine running
+if(!alive _helicopter || {!canMove _helicopter || {!alive _driver}}) exitWith {};
+if (!isEngineOn _helicopter) then { _helicopter engineOn true;};
 if(canMove _helicopter || alive _driver) then {
     [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
 };
+_helicopter flyInHeight _midHeight;
 
 private _weapons = count weapons _helicopter;
 private _driverturret = _helicopter weaponsTurret [0];
 private _gunnerturret = _helicopter weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
+if (
+    _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
+    {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
+) exitWith {
     _helicopter action ["LandGearUp", _helicopter];
     [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
 };
 
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
-    _helicopter action ["LandGearUp", _helicopter];
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
-};
 // Heli RTB
 private _vehWP1 = _crewGroup addWaypoint [_originPos, 0];
 _vehWP1 setWaypointType "MOVE";
