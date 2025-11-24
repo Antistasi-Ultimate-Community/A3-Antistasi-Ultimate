@@ -1,5 +1,5 @@
 /*
-	Macro: ERROR_WITH_TITLE()
+	Macro: ITEM(CLASSNAME, PRICE, STOCK)
 
 	Parameters:
 	0: CLASSNAME - Classname of item
