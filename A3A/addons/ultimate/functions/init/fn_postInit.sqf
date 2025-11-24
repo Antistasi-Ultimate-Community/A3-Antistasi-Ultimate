@@ -1,16 +1,16 @@
 #include "..\..\script_component.hpp"
 
-[{
+["isNotDeadPlayer", {
     params["_unit"];
     alive _unit;
-}, "isNotDeadPlayer"] call A3U_fnc_addInteractionCondition;
+}] call A3U_fnc_addInteractionCondition;
 
-[{
+["isNotDeadTarget", {
     params["","_target"];
     alive _target;
-}, "isNotDeadTarget"] call A3U_fnc_addInteractionCondition;
+}] call A3U_fnc_addInteractionCondition;
 
-[{
+["isNotOutOfRange", {
     params["_unit","_target"];
     _unit distance _target < 10;
-}, "isNotOutOfRange"] call A3U_fnc_addInteractionCondition;
+}] call A3U_fnc_addInteractionCondition;
