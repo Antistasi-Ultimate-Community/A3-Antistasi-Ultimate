@@ -89,5 +89,4 @@ if (isNil "_unitType") then {
 };
 //Spawn the crew
 _group = [_group, _veh, _unitType] call A3A_fnc_createVehicleCrew;
-
 [_veh, crew _veh, _group];
