@@ -33,7 +33,7 @@ private _removeOk = true;
 
 if (_unlockVehicle) then {
     try {
-        if !([_target] call A3U_fnc_isEngineer) then {
+        if !([player] call A3U_fnc_isEngineer) then {
             if !GVAR(allowLockpickKits) then { throw "Lockpick kits are disabled" };
 
             private _lockpickKit = [player] call A3U_fnc_lockpickGetPlayerItem;
@@ -45,7 +45,7 @@ if (_unlockVehicle) then {
             if !([player, _lockpickKit] call A3U_fnc_useMagazineItem) then { throw "Failure to use magazine item" };
         };
 
-        [_target, false] remoteExecCall ["A3U_fnc_setLock", owner _target];
+        [_vehicle, false] remoteExecCall ["A3U_fnc_setLock", owner _vehicle];
     } catch {
         Error_1("Vehicle won't be unlocked: %1", _exception);
         _removeOk = false;
@@ -53,12 +53,12 @@ if (_unlockVehicle) then {
 };
 
 if (_removeOk) then {
-    _target setVariable[QGVAR(lockpickUsed), nil];
-    _target setVariable[QGVAR(lockpickWillBreak), nil];
+    _vehicle setVariable[QGVAR(lockpickUsed), nil];
+    _vehicle setVariable[QGVAR(lockpickWillBreak), nil];
 
-    if (_target getVariable[QGVAR(lockpickAction), false] isNotEqualTo false) then {
-        [_target, _target getVariable QGVAR(lockpickAction)] call BIS_fnc_holdActionRemove;
-        _target setVariable[QGVAR(lockpickAction), nil];
+    if (_vehicle getVariable[QGVAR(lockpickAction), false] isNotEqualTo false) then {
+        [_vehicle, _vehicle getVariable QGVAR(lockpickAction)] call BIS_fnc_holdActionRemove;
+        _vehicle setVariable[QGVAR(lockpickAction), nil];
     };
 };
 

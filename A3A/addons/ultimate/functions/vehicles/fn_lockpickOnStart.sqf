@@ -35,11 +35,11 @@ if !GVAR(allowLockpickKits) then {
 } else {
     if !([_unit, _vehicle] call A3U_fnc_canLockpick) then {
         [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer_no_lockpicks"] call A3A_fnc_customHint;
-    };
-
-    if !([_unit] call A3U_fnc_isEngineer) then {
-        _vehicle setVariable[QGVAR(lockpickWillBreak), random 100 < GVAR(lockpickKitBreakChance)];
-        _vehicle setVariable[QGVAR(lockpickUsed), [_unit] call A3U_fnc_lockpickGetPlayerItem];
+    } else {
+        if !([_unit] call A3U_fnc_isEngineer) then {
+            _vehicle setVariable[QGVAR(lockpickWillBreak), random 100 < GVAR(lockpickKitBreakChance)];
+            _vehicle setVariable[QGVAR(lockpickUsed), [_unit] call A3U_fnc_lockpickGetPlayerItem];
+        };
     };
 };
 
