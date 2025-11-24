@@ -33,7 +33,7 @@ private _removeOk = true;
 
 if (_unlockVehicle) then {
     try {
-        if !([player] call A3U_fnc_isEngineer) then {
+        if !([player] call A3A_fnc_isEngineer) then {
             if !GVAR(allowLockpickKits) then { throw "Lockpick kits are disabled" };
 
             private _lockpickKit = [player] call A3U_fnc_lockpickGetPlayerItem;

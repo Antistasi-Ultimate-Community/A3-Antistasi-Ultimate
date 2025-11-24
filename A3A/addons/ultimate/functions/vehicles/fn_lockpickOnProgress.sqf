@@ -12,7 +12,7 @@ if (_frame == 2) then {
     [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_start", _vehicleName]] call A3A_fnc_customHint;
 };
 
-if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_unit] call A3U_fnc_isEngineer) }) exitWith {
+if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_unit] call A3A_fnc_isEngineer) }) exitWith {
     private _breakFrame = random _maxFrame;
 
     if (_frame >= _breakFrame) then {
