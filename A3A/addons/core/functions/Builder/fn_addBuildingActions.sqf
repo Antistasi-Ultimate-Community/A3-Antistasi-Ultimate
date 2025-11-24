@@ -15,7 +15,7 @@ params ["_plankObject", "_holdTime"];
     "Build",
     "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    "player call A3A_fnc_isEngineer and (player distance _target < 8)",
+    "isNull objectParent player && {player call A3A_fnc_isEngineer && {(player distance _target < 8)}}",
     "[player] call A3A_fnc_canFight and (player distance _target < 10)",
     {},
     {},

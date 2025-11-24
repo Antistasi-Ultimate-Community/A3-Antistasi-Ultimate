@@ -5560,11 +5560,11 @@
                 <French>Chance pour l'IA ennemie abattue de devenir inconsciente au lieu d'être tuée après avoir subi suffisamment de dégâts.</French>
             </Key>
             <Key ID="STR_params_unconChanceReb">
-                <Original>Rebel AI unconscious chance</Original>
-                <Russian>Бессознательный шанс ИИ повстанцев</Russian>
-                <Chinesesimp>叛军AI无意识几率</Chinesesimp>
-                <Korean>반란군 AI 무의식 확률</Korean>
-                <French>Hasard inconscient de l'IA rebelle</French>
+                <Original>Rebel AI and player unconscious chance</Original>
+                <Russian>Искусственный интеллект повстанцев и бессознательный шанс игрока</Russian>
+                <Chinesesimp>叛军AI和玩家无意识的机率</Chinesesimp>
+                <Korean>반란군 AI와 플레이어 무의식 확률</Korean>
+                <French>IA rebelle et chance inconsciente du joueur</French>
             </Key>
             <Key ID="STR_params_unconChanceReb_desc">
                 <Original>Chance for downed rebels to become unconscious instead of killed after taking sufficient damage</Original>
@@ -6848,6 +6848,13 @@
                 <Chinesesimp>集结点</Chinesesimp>
                 <Korean>집결 지점</Korean>
                 <French>Point de ralliement</French>
+            </Key>
+            <Key ID="STR_dialogs_RP_inVehicle_fail">
+                <Original>You can't establish a rally point while in a vehicle.</Original>
+                <Russian>Нельзя установить точку сбора, находясь в автомобиле.</Russian>
+                <Chinesesimp>你不能在车内建立集合点。</Chinesesimp>
+                <Korean>차량 안에서는 집결 지점을 설정할 수 없습니다.</Korean>
+                <French>On ne peut pas établir de point de rassemblement en étant dans un véhicule.</French>
             </Key>
             <Key ID="STR_dialogs_RP_abolish_fail">
                 <Original>The rally point can only be abolished at the HQ or near the Rally Point itself.</Original>
