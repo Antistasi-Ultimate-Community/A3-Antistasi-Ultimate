@@ -1251,4 +1251,4 @@ class Params
         texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
         default = 1;
     };
-    };
+};
