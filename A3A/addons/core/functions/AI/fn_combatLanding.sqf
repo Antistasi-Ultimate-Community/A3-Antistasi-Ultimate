@@ -22,7 +22,7 @@ if (_vehType in vehFastRope) then {
     {
         // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 2m
         // * visiblePosition isn't perfect (especially with large boulder / cliff objects), but the best option without a ton of bounding box / vertex math
-        if ((visiblePosition _x) select 2 > 2) then { _forceFastrope = true };
+        if ((visiblePosition _x) select 2 > 2) exitWith { _forceFastrope = true };
     } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
 };
 if (_forceFastrope) exitWith {
