@@ -15,7 +15,7 @@ Example:
     (begin example)
     ["isNotDeadPlayer", {
         params["_player"];
-        !(_player isEqualTo objNull) && { alive _player }
+        (!isNull _player) && { alive _player }
     }] call A3A_fnc_addInteractionCondition;
     (end example)
 

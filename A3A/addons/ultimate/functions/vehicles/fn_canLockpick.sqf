@@ -42,7 +42,7 @@ if !([_unit, _target] call A3U_fnc_canInteract) exitWith { false };
 // Vehicle is unlocked
 if !([_target] call A3U_fnc_isLocked) exitWith { false };
 
-// Display-only checks
+// Display-only checks (whether hold-action is to be shown)
 if (_forDisplayOnly) exitWith { true };
 
 // Allow engineers
