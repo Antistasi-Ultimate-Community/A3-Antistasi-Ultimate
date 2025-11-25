@@ -37,5 +37,4 @@ if (_mags isEqualTo []) exitWith { "" };
 
 // Always return the most abundant lockpick kit class
 _mags sort false;
-
 _mags select 0 select 1;
