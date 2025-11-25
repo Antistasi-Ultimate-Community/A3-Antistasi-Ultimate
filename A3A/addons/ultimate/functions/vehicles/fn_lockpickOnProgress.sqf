@@ -19,7 +19,7 @@ if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_caller] call A
         [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_tool_break"] call A3A_fnc_customHint;
         [_target, QGVAR(LockpickToolBreak)] remoteExecCall["say3D", 0, true];
 
-        [player, _target getVariable QGVAR(lockpickUsed)] call A3U_fnc_useMagazineItem;
+        [_caller, _target getVariable QGVAR(lockpickUsed)] call A3U_fnc_useMagazineItem;
         [_target] call A3U_fnc_lockpickCleanup;
 
         // Re-add lockpick hold-action after a short delay

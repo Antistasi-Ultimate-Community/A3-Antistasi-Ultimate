@@ -8,8 +8,6 @@ Description:
 Parameters:
     0: _vehicle - the vehicle being lockpicked <OBJECT>
     1: _unit - the unit that is lockpicking <OBJECT>
-    2: _actionId - the action ID <NUMBER>
-    3: _arguments - the arguments passed to the action <ARRAY>
 
 Optional:
 
@@ -21,12 +19,13 @@ Returns:
 Author:
     UnseenKill
 ---------------------------------------------------------------------------- */
-params[
-    ["_vehicle", objNull, [objNull]],
-    ["_unit", objNull, [objNull]],
-    ["_actionId", 0, [0]],
-    ["_arguments", [], [[]]]
-];
+if !assert(params[
+    ["_vehicle", nil, [objNull]],
+    ["_unit", nil, [objNull]]
+]) exitWith {};
+
+if !assert(!isNull _vehicle) exitWith {};
+if !assert(!isNull _unit) exitWith {};
 
 if !GVAR(allowLockpickKits) then {
     if !([_unit] call A3A_fnc_isEngineer) then {
