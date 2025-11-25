@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
+params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli", ["_landPos", []], ["_reinf", false]];
 
 private _vehType = typeOf _veh;
 
@@ -9,11 +9,8 @@ if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehicles
     _veh setVehicleRadar 1;
 };
 
-private _reinf = if (count _this > 5) then {_this select 5} else {false};
-
 private _xRef = 2;
 private _yRef = 1;
-private _landpos = [];
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
 /* if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) then {}else{
@@ -25,8 +22,10 @@ private _dist = if (_reinf) then {30} else {100 + random 100};
  	_landpos = _positionX getPos [_dist,random 360];
  	if (!surfaceIsWater _landpos) exitWith {};
 	}; */
-_landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
-_landpos set [2,0];
+if (_landPos isEqualTo []) then {
+    _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
+    _landpos set [2,0]
+};
 {_x setBehaviour "CARELESS";} forEach units _heli;
 private _wp = _heli addWaypoint [_landpos, 0];
 _wp setWaypointType "MOVE";
@@ -50,7 +49,7 @@ if (alive _veh && canMove _veh) then
 	[_veh] call A3A_fnc_smokeCoverAuto;
 	{
 		if (!alive _x) then { continue };
-		
+
 		[_veh,_x,_xRef,_yRef] spawn {
 			private ["_veh","_unit","_d","_xRef","_yRef"];
 			_veh = _this select 0;

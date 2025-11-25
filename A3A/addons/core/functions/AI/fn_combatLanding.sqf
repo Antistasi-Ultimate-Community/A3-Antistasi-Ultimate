@@ -17,6 +17,19 @@ params ["_helicopter", "_crewGroup", "_cargoGroup", "_posDestination", "_originP
 
 private _vehType = typeOf _helicopter;
 
+private _forceFastrope = false;
+if (_vehType in vehFastRope) then {
+    {
+        // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 2m
+        // * visiblePosition isn't perfect (especially with large boulder / cliff objects), but the best option without a ton of bounding box / vertex math
+        if ((visiblePosition _x) select 2 > 2) then { _forceFastrope = true };
+    } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
+};
+if (_forceFastrope) exitWith {
+    ERROR("A3A_fnc_combatLanding called, but position has tall terrain objects - calling A3A_fnc_fastrope instead.");
+    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn A3A_fnc_fastrope;
+};
+
 if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
     _helicopter setVehicleRadar 1;
 };
@@ -25,7 +38,8 @@ if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehicles
 _crewGroup setVariable ["A3A_AIScriptHandle", _thisScript];
 _cargoGroup setVariable ["A3A_AIScriptHandle", _thisScript];
 
-private _landPad = createVehicle ["Land_HelipadEmpty_F", _landPos, [], 0, "NONE"];
+private _helipadClass = ["Land_HelipadEmpty_F", "Land_HelipadSquare_F"] select (debug);
+private _landPad = createVehicle [_helipadClass, _landPos, [], 0, "NONE"];
 _helicopter setVariable ["LandingPad", _landPad, true];             // cleared up (eventually) by heli deletion handler
 
 //Create the waypoints for the crewGroup
@@ -161,15 +175,16 @@ waitUntil {sleep 1; (!alive _helicopter) || {!canMove _helicopter || {!alive _dr
 
 deleteVehicle _landPad;
 
-if (count units _cargoGroup isEqualTo 0) exitWith {};
-private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 10];
-_cargoWP1 setWaypointType "MOVE";
-_cargoWP1 setWaypointBehaviour "AWARE";
-_cargoWP1 setWaypointSpeed "FULL";
-private _cargoWP2 = _cargoGroup addWaypoint [_posDestination, 50];
-_cargoWP2 setWaypointType "SAD";
-_cargoWP2 setWaypointBehaviour "COMBAT";
-_cargoGroup spawn A3A_fnc_attackDrillAI;
+if (count (units _cargoGroup select {alive _x}) > 0) then {
+    private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 10];
+    _cargoWP1 setWaypointType "MOVE";
+    _cargoWP1 setWaypointBehaviour "AWARE";
+    _cargoWP1 setWaypointSpeed "FULL";
+    private _cargoWP2 = _cargoGroup addWaypoint [_posDestination, 50];
+    _cargoWP2 setWaypointType "SAD";
+    _cargoWP2 setWaypointBehaviour "COMBAT";
+    _cargoGroup spawn A3A_fnc_attackDrillAI;
+};
 
 if(!alive _helicopter || {!canMove _helicopter || {!alive _driver}}) exitWith {};
 if (!isEngineOn _helicopter) then { _helicopter engineOn true;};
