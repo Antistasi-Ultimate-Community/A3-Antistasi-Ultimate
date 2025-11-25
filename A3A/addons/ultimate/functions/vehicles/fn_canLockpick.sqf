@@ -31,13 +31,13 @@ if !assert(params[
 if !assert(!isNull _unit) exitWith { false };
 if !assert(!isNull _target) exitWith { false };
 
-private _forDisplayOnly = params[2, false, [true]];
+private _forDisplayOnly = param[2, false, [true]];
 
 // Vehicle is missing required variable
 if (_target getVariable[QGVAR(lockpickAction), false] isEqualTo false) exitWith { false };
 
 // Generic interaction checks
-if !(call A3U_fnc_canInteract) exitWith { false };
+if !([_unit, _target] call A3U_fnc_canInteract) exitWith { false };
 
 // Vehicle is unlocked
 if !([_target] call A3U_fnc_isLocked) exitWith { false };
@@ -50,6 +50,6 @@ if ([_unit] call A3A_fnc_isEngineer) exitWith { true };
 
 GVAR(allowLockpickKits) && {
     magazines _unit findIf {
-        _x isKindOf QGVAR(LockpickKitBase)
+        _x isKindOf[QGVAR(LockpickKitBase), configFile >> "CfgMagazines"]
     } != -1
 };

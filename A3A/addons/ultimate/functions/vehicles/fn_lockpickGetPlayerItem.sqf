@@ -27,7 +27,7 @@ if !assert(!isNull _unit) exitWith { "" };
 if !GVAR(allowLockpickKits) exitWith { "" };
 
 private _mags = magazineCargo _unit select {
-    _x isKindOf QGVAR(LockpickKitBase)
+    _x isKindOf[QGVAR(LockpickKitBase), configFile >> "CfgMagazines"]
 } apply {
     [getNumber(configFile >> "CfgMagazines" >> _x >> "count"), _x];
 };

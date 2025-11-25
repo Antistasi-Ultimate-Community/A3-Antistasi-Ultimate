@@ -22,14 +22,14 @@ Scope:
 Author:
     UnseenKill
 ---------------------------------------------------------------------------- */
-params[
-    ["_vehicle", objNull, [objNull]],
-    ["_unlockVehicle", false, [false]]
-];
+if !assert(params[
+    ["_vehicle", nil, [objNull]]
+]) exitWith {};
 
 if !assert(!isNull _vehicle) exitWith {};
 
 private _removeOk = true;
+private _unlockVehicle = param[1, false, [true]];
 
 if (_unlockVehicle) then {
     try {

@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 
-params ["_target", "_caller", "_actionId", "_frame", "_maxFrame"];
+params ["_target", "_caller", "_actionId", "_arguments", "_frame", "_maxFrame"];
 
 if !([_caller, _target] call A3U_fnc_canLockpick) exitWith { [_target] call A3U_fnc_lockpickCleanup };
 
@@ -12,7 +12,7 @@ if (_frame == 2) then {
     [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_start", _vehicleName]] call A3A_fnc_customHint;
 };
 
-if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_unit] call A3A_fnc_isEngineer) }) exitWith {
+if (_target getVariable[QGVAR(lockpickWillBreak), false] && { !([_caller] call A3A_fnc_isEngineer) }) exitWith {
     private _breakFrame = random _maxFrame;
 
     if (_frame >= _breakFrame) then {

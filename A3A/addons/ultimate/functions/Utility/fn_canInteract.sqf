@@ -29,16 +29,15 @@ Scope:
 Author:
     UnseenKill
 ---------------------------------------------------------------------------- */
-params[
-    ["_unit", objNull, [objNull]],
-    ["_target", objNull, [objNull]],
-    ["_exceptions", [], [[]]]
-];
+if !assert(params[
+    ["_unit", nil, [objNull]],
+    ["_target", nil, [objNull]]
+]) exitWith { false };
 
 if !assert(!isNull _unit) exitWith { false };
 if !assert(!isNull _target) exitWith { false };
 
-_exceptions = _exceptions apply { toLowerANSI _x };
+private _exceptions = param[2, [], [[]]] apply { toLowerANSI _x };
 
 keys GVAR(interactionConditions) findIf {
     (_x in _exceptions) || { !([_unit, _target] call (GVAR(interactionConditions) get _x)) }
