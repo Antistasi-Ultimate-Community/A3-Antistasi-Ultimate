@@ -709,6 +709,9 @@
                 <Italian>Non puoi mettere un veicolo bloccato nel garage</Italian>
                 <Polish>Nie możesz garażować zablokowanego pojazdu</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Feedback_addVehicle_Attached">
+                <Original>You can't garage an object that's attached to another vehicle</Original>
+            </Key>
             <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_badLocation">
                 <Original>You and the vehicle need to be in a %1 garrisons surroundings in order to garage it</Original>
