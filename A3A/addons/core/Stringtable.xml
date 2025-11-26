@@ -6113,5 +6113,31 @@
             <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt; %1.&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
         </Key>
         </Container>
+        <Container name="A3A_Community_Ports">
+            <Key ID="STR_A3A_Params_generic_disabled">
+                <Original>Disabled</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_1min">
+                <Original>1 minute</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_2min">
+                <Original>2 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_5min">
+                <Original>5 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_10min">
+                <Original>10 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_15min">
+                <Original>15 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_20min">
+                <Original>20 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_30min">
+                <Original>30 minutes</Original>
+            </Key>
+        </Container>
     </Package>
 </Project>
