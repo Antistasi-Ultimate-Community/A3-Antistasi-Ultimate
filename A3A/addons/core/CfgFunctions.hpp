@@ -817,6 +817,7 @@ class CfgFunctions
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
+            class remainingAmmo {};
             class remainingFuel {};
             class rotateItem {};
         };

@@ -651,6 +651,9 @@
                 <Italian>Oggetto immagazzinato</Italian>
                 <Polish>Przechowywany przedmiot</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Feedback_addVehicle_Ammo_sold">
+                <Original>Ammo crate sold</Original>
+            </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Fuel_sold">
                 <Original>Fuel sold</Original>
                 <French>Carburant vendu</French>
