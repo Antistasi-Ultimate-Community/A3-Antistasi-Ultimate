@@ -41,14 +41,10 @@
 #define HR_GRG_IDC_BttnSource 1700116
 #define HR_GRG_IDC_BttnStatics 1700117
 //-- unsused --\\
-#define HR_GRG_IDC_CatAPC 1700118
-#define HR_GRG_IDC_CatArmored 1700119
-#define HR_GRG_IDC_CatAA 1700120
-#define HR_GRG_IDC_CatArty 1700121
-#define HR_GRG_IDC_CatUnmanned 1700127
-#define HR_GRG_IDC_BttnUnmanned 1700128
-#define HR_GRG_IDC_CatVTOL 1700129
-#define HR_GRG_IDC_BttnVTOL 1700130
+#define HR_GRG_IDC_CatUnmanned 1700118
+#define HR_GRG_IDC_BttnUnmanned 1700119
+#define HR_GRG_IDC_CatVTOL 1700120
+#define HR_GRG_IDC_BttnVTOL 1700121
 
 //-- extra --\\
 #define HR_GRG_IDC_BttnMounts 1700170
@@ -91,9 +87,7 @@
 ///#define HideVicIcon "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\unknown_ca.paa"
 #define HideVicIcon "\A3\soft_f_gamma\Hatchback_01\Data\UI\car_CA.paa"
 #define CarIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\car_ca.paa"
-#define APCIcon "\A3\armor_f_gamma\APC_Wheeled_03\data\UI\APC_Wheeled_03_ca.paa"
 #define ArmorIcon "\A3\armor_f_gamma\APC_Wheeled_03\data\UI\APC_Wheeled_03_ca.paa" //\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\tank_ca.paa
-#define ArmoredIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\tank_ca.paa"
 #define AirIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\helicopter_ca.paa"
 #define UnmannedIcon "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\portrait_UGV_01_CA.paa"
 #define HeliIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\helicopter_ca.paa"
@@ -102,8 +96,6 @@
 #define BoatIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\naval_ca.paa"
 #define StaticIcon "\a3\ui_f\data\GUI\Rsc\RscDisplayGarage\static_ca.paa"
 #define SourceIcon "\A3\soft_f_gamma\Truck_02\Data\UI\Truck_02_fuel_CA.paa"
-#define ArtyIcon "\A3\Soft_F_Gamma\Truck_02\Data\UI\Truck_02_MRL_CA.paa"
-#define AAIcon "\A3\armor_f_beta\APC_Tracked_02\Data\UI\APC_Tracked_02_aa_ca.paa"
 
 #define DriverIcon "\a3\ui_f\data\IGUI\RscIngameUI\RscUnitInfo\role_driver_ca.paa"
 #define GunnerIcon "\a3\ui_f\data\IGUI\RscIngameUI\RscUnitInfo\role_gunner_ca.paa"
