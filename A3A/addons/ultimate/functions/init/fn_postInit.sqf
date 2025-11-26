@@ -10,6 +10,11 @@
     alive _target;
 }] call A3U_fnc_addInteractionCondition;
 
+["isNotInVehiclePlayer", {
+    params["_unit"];
+    isNull objectParent _unit;
+}] call A3U_fnc_addInteractionCondition;
+
 ["isNotOutOfRange", {
     params["_unit","_target"];
     _unit distance _target < 10;
