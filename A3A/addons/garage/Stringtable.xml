@@ -199,6 +199,9 @@
                 <Italian>Texture</Italian>
                 <Polish>Tekstury</Polish>
             </Key>
+            <Key ID="STR_HR_GRG_Generic_HelipadDisabled">
+                <Original>You can only access garaged helicopters from helipads</Original>
+            </Key>
             <Key ID="STR_HR_GRG_Generic_Anim">
                 <Original>Customize</Original>
                 <French>Personnaliser</French>
@@ -748,7 +751,7 @@
             </Key>
             <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_airBlocked">
-                <Original>You can't garage an aircraft while you are not near an Airport which belongs to %1. Please move your aircraft to an Airport under your control to garage it</Original>
+                <Original>You can't garage an aircraft while you are not near an airbase which belongs to %1, or a built helipad for helicopters.</Original>
                 <French>Vous ne pouvez pas garer un aéronef tant que vous n'êtes pas à proximité d'un aéroport appartenant à %1. Veuillez déplacer votre aéronef vers un aéroport sous votre contrôle pour le garer</French>
                 <Russian>Вы не можете переместить авиационную технику в гараж если Вы не возле аэропорта принадлежащего фракции %1. Пожалуйста, переместите вашу технику к аэропорту под вашим контролем для перемещения её в гараж.</Russian>
                 <Korean>%1 소속의 공항 근처에 있지 않으면 항공기를 정비할 수 없습니다. 정비하려면 항공기를 당신이 통제하는 공항으로 이동하십시오</Korean>

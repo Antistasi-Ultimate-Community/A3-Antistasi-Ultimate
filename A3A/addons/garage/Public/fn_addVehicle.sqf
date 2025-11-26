@@ -43,7 +43,9 @@ if (!isNil "traderMarker") then {
 	_friendlyMarkers pushBack traderMarker;
 };
 private _inArea = _friendlyMarkers findIf { count ([_player, _vehicle] inAreaArray _x) > 1 || {count ([_player, _vehicle] inAreaArray [(getMarkerPos _x), 50, 50]) > 1} };
-if !(_inArea > -1) exitWith {["STR_HR_GRG_Feedback_addVehicle_badLocation",[FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+private _nearHelipads = nearestObjects [_vehicle, ["a3a_helipad"], 30, true];
+private _isNearHelipad = (count _nearHelipads > 0) && (_vehicle isKindOf "Helicopter");
+if (_inArea == -1 && {!_isNearHelipad}) exitWith {["STR_HR_GRG_Feedback_addVehicle_badLocation",[FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     //No hostiles near
 
@@ -116,8 +118,9 @@ if ((call HR_GRG_VehCap - _capacity) < (_countStatics + 1)) exitWith { ["STR_HR_
 
 /* //Block air garage outside of airbase
 if (
-    (_class isKindOf "Air")
-    && {count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (_player inArea _x)}) < 1} //no airports
+    ((_class isKindOf "Air")
+    && {count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (_player inArea _x)}) < 1 //no airports
+    }) && {!_isNearHelipad} // near helipad
 ) exitWith {["STR_HR_GRG_Feedback_addVehicle_airBlocked", [FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 */
 //here to allow adaption of external Antistasi system without needing to addapt code under APL-ND
