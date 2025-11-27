@@ -11,3 +11,5 @@ waitUntil {!isMenuOpen};
 
 _camera cameraEffect ["Terminate", "Back"];
 camDestroy _camera;
+
+[call CBA_fnc_currentUnit, true] call CBA_optics_fnc_restartCamera;
