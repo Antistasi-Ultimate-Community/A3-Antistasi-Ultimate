@@ -139,10 +139,12 @@ if(hasInterface)then{
                 default { "Rifleman" };
             };
 
-            private _array = [_player, true] call jn_fnc_arsenal_cargoToArray;
+            // store player's current items in arsenal before emptying loadout
+            ([_player, true] call jn_fnc_arsenal_cargoToArray) call jn_fnc_arsenal_addItem;
             _player setUnitLoadout (configFile >> "EmptyLoadout");
             [_player, 0, _prefix + _loadout] call A3A_fnc_equipRebel;
-            _array call jn_fnc_arsenal_addItem;
+            // remove player's current items from arsenal after equipping loadout, since equipRebel doesn't do it (prevent item duplication with unlocks disabled)
+            ([_player, true] call jn_fnc_arsenal_cargoToArray) call jn_fnc_arsenal_removeItem;
         },
         [],
         6,
