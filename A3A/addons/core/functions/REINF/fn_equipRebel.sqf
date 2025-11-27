@@ -278,6 +278,10 @@ private _fnc_addUniform = {
     };
 };
 
+// store player's current items in arsenal before emptying loadout
+([_unit, true] call jn_fnc_arsenal_cargoToArray) call jn_fnc_arsenal_addItem;
+_unit setUnitLoadout (configFile >> "EmptyLoadout");
+            
 if (!isNil "_customLoadout") then {
     // * Apply the loadout, then override it
     private _tempLoadout = +_customLoadout;
@@ -320,4 +324,12 @@ if (backpackItems _unit isEqualTo []) then { removeBackpack _unit };
 
 Verbose_3("Class %1, type %2, loadout %3", _unitType, _recruitType, str (getUnitLoadout _unit));
 
-if (_recruitType isEqualTo 0) then { _unit setVariable ["orgLoadout", getUnitLoadout _unit, true] };
+if (A3U_AITakeFromArsenal) then {
+    // remove unit's current items from arsenal after equipping loadout (prevent item duplication with unlocks disabled)
+    ([_unit, true] call jn_fnc_arsenal_cargoToArray) call jn_fnc_arsenal_removeItem;
+};
+
+// re-generate A3A_rebelGear to avoid equipping items that are no longer available or quantity decremented below min quantity for equipping
+// avoid filling JIP queue
+// do this every time, so *added* items are always reflected in generation, not just *removed* items
+[] remoteExecCall ["A3A_fnc_generateRebelGear", 2, false];
