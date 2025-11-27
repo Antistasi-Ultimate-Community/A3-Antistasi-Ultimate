@@ -678,7 +678,7 @@ private _latTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 4] call _fnc_addMagazines;
 
     [selectRandom ["ATLaunchers", "lightATLaunchers"]] call _fnc_setLauncher;
@@ -707,7 +707,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 4] call _fnc_addMagazines;
 
     [selectRandom ["lightATLaunchers", "heavyATLaunchers"]] call _fnc_setLauncher;
