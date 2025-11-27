@@ -145,6 +145,9 @@ if(hasInterface)then{
             [_player, 0, _prefix + _loadout] call A3A_fnc_equipRebel;
             // remove player's current items from arsenal after equipping loadout, since equipRebel doesn't do it (prevent item duplication with unlocks disabled)
             ([_player, true] call jn_fnc_arsenal_cargoToArray) call jn_fnc_arsenal_removeItem;
+            // re-generate A3A_rebelGear to avoid equipping items that are no longer available or quantity decremented below min quantity for equipping
+            // avoid filling JIP queue
+            [] remoteExecCall ["A3A_fnc_generateRebelGear", 2, false];
         },
         [],
         6,
