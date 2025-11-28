@@ -1208,6 +1208,14 @@ class Params
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         default = 10;
     };
+    class A3U_Zombies : ExperimentalParams
+    {
+        title = $STR_params_A3U_Zombies;
+        tooltip = $STR_params_A3U_Zombies_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
 
     class DevelopmentParamsSpacer : AllParams
     {
