@@ -23,7 +23,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill
 ---------------------------------------------------------------------------- */
 if !assert(params[
     ["_name", nil, [""]],
