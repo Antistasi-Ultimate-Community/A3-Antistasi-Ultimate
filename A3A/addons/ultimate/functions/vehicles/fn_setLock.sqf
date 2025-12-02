@@ -23,7 +23,8 @@
     
     Return:
         true/false <BOOL>
-*/  
+*/
+#include "..\..\script_component.hpp"
 
 params [
     ["_vehicle", ObjNull],
@@ -31,7 +32,7 @@ params [
 ];
 
 if (!isServer && hasInterface) exitWith {
-    ["Server-side function was not called on the server? Aborting", _fnc_scriptName] call A3U_fnc_log;
+    Error("Server-side function was not called on the server? Aborting");
 };
 
 if (enableVehicleAutoLock isEqualTo false) exitWith {false};
@@ -47,6 +48,6 @@ if (_state isEqualTo true) then {
     [_vehicle] call A3U_fnc_addLockpickAction;
 };
 
-[format["%1 has been locked. State: %2", typeOf _vehicle, _state], _fnc_scriptName] call A3U_fnc_log;
+Debug_2("%1 has been locked. State: %2", typeOf _vehicle, _state);
 
 true;

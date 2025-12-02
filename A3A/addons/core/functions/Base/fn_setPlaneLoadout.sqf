@@ -92,14 +92,14 @@ if ((typeOf _plane) in _cfg) exitWith
         } forEach _loadout;
     } else {
         _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-        Debug(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+        Debug_1(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
         {
             _plane setPylonLoadout [_forEachIndex + 1, _x, true];
             _plane setVariable ["loadout", _loadout];
         } forEach _loadout;
     };
 
-    [format["Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout], _fnc_scriptName] call A3U_fnc_log;
+    Debug_2("Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout);
 };
 
 if (_type == "CASDIVE") then
@@ -1914,4 +1914,4 @@ if !(_loadout isEqualTo []) then
     } forEach _loadout;
 };
 
-[format["Given plane class %1 a loadout of %2", typeOf _plane, _loadout], _fnc_scriptName] call A3U_fnc_log;
+Debug_2("Given plane class %1 a loadout of %2", typeOf _plane, _loadout);

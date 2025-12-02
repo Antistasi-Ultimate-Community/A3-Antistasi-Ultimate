@@ -12,7 +12,6 @@
     [] call A3U_fnc_grabBlackMarketVehicles;
 */
 #include "..\..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 private _blackMarketStock = [];
 private _ignoreList = [];
@@ -64,13 +63,14 @@ private _hasBlockingVehicles = false;
             // For enabled DLCs: add to blackMarketStock
             {
                 if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-                    Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+                    Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
                     continue;
                 };
                 private _price = getNumber (_vehicleCfg >> _x >> "price");
                 private _type = getText (_vehicleCfg >> _x >> "type");
                 private _condition = compile getText (_vehicleCfg >> _x >> "condition");
                 _blackMarketStock pushBack [_x, _price, _type, _condition];
+                Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
                 Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
                 
                 // Mark as blocking if this is a CDLC
@@ -97,13 +97,14 @@ private _hasBlockingVehicles = false;
                 // For enabled DLCs: add to blackMarketStock
                 {
                     if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-                        Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+                        Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
                         continue;
                     };
                     private _price = getNumber (_addCfg >> _x >> "price");
                     private _type = getText (_addCfg >> _x >> "type");
                     private _condition = compile getText (_addCfg >> _x >> "condition");
                     _blackMarketStock pushBack [_x, _price, _type, _condition];
+                    Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
                     Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
                     
                     // Mark as blocking if this is a CDLC
@@ -147,12 +148,12 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
     {
         // Check if vehicle is in ignore list
         if (_x in _ignoreList) then {
-            Verbose_1("Skipped %1 because it belongs to a disabled DLC.", _x);
+            Verbose_1("Skipped %1 because it belongs to a disabled DLC", _x);
             continue;
         };
         
         if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-            Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+            Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
             continue;
         };
 
@@ -162,6 +163,7 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
         _blackMarketStock pushBack [_x, _price, _type, _condition];
         _hasCustomModVehicles = true; // Mark that we have custom mod vehicles
 
+        Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
         Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
     } forEach _vehicles;
 } forEach _cfg;
@@ -173,7 +175,7 @@ if ((!_hasBlockingVehicles && !_hasCustomModVehicles) || {vanillaArmsDealer isEq
 
     {
         if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-            Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+            Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
             continue;
         };
         
@@ -182,6 +184,7 @@ if ((!_hasBlockingVehicles && !_hasCustomModVehicles) || {vanillaArmsDealer isEq
         private _condition = compile getText (_vehicleCfg >> _x >> "condition");
         _blackMarketStock pushBack [_x, _price, _type, _condition];
 
+        Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
         Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
     } forEach _vehicles;
 };
