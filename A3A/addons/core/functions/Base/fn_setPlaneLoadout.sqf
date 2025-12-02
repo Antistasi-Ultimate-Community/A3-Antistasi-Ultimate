@@ -92,7 +92,7 @@ if ((typeOf _plane) in _cfg) exitWith
         } forEach _loadout;
     } else {
         _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-        Debug_1(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+        Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
         {
             _plane setPylonLoadout [_forEachIndex + 1, _x, true];
             _plane setVariable ["loadout", _loadout];
@@ -1907,7 +1907,7 @@ if !(_loadout isEqualTo []) then
     } forEach _loadout;
 } else {
     _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-    Debug(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+    Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
     {
         _plane setPylonLoadout [_forEachIndex + 1, _x, true];
         _plane setVariable ["loadout", _loadout];
