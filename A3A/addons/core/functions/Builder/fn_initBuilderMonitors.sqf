@@ -42,7 +42,7 @@ while { true } do {
     if (isNil { cursorObject getVariable "A3A_building" }) then { sleep 1; continue };
     if (!isNil { cursorObject getVariable "A3A_build_removeAction" }) then { sleep 1; continue };
 
-    diag_log format ["Adding remove action for item %1", cursorObject];
+    Debug_1("Adding remove action for item %1", cursorObject);
     cursorObject setVariable ["A3A_build_removeAction", true];
     [
         cursorObject,
