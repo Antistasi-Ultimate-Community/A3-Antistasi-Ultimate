@@ -282,7 +282,7 @@ class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
             idc = -1;
             text = A3A_Icon_Requirements;
             onButtonClick = "";
-            url = "https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate/wiki/Arms-Dealer#vehicle-unlock-requirements";
+            url = "https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Arms-Dealer#vehicle-unlock-requirements";
             x = DIALOG_X + DIALOG_W * GRID_W - 10 * GRID_W;
             y = DIALOG_Y - 10 * GRID_H;
         };

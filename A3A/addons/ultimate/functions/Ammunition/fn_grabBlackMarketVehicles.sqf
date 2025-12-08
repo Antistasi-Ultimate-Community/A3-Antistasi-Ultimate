@@ -12,6 +12,7 @@
     [] call A3U_fnc_grabBlackMarketVehicles;
 */
 #include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
 private _blackMarketStock = [];
 private _ignoreList = [];
@@ -146,7 +147,7 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
     {
         // Check if vehicle is in ignore list
         if (_x in _ignoreList) then {
-            Verbose_1("Skipped %1 because it belongs to a disabled DLC", _x);
+            Verbose_1("Skipped %1 because it belongs to a disabled DLC.", _x);
             continue;
         };
         

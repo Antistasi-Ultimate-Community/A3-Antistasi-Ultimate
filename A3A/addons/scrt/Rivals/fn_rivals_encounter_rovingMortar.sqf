@@ -178,6 +178,7 @@ private _minSleepTime = (1 - ((5 - inactivityLevelRivals) + 1) * 0.1) * _setupTi
 private _sleepTime = _minSleepTime + random (_setupTime - _minSleepTime);
 
 _mortarGroup deleteGroupWhenEmpty true;
+sleep 10;
 [_mortar, _mortarGroup, _supportName, _sleepTime] spawn SCRT_fnc_rivals_mortarRoutine;
 
 private _timeOut = time + 1800;
