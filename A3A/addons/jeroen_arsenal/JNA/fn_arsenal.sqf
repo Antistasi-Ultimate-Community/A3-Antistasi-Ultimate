@@ -301,6 +301,7 @@ switch _mode do {
 		["SaveTFAR"] call jn_fnc_arsenal;
 		private _object = missionnamespace getVariable ["jna_object",objNull];
 		["Open",[nil,_object,player,false]] call bis_fnc_arsenal;
+		if (isNil {profileNamespace getVariable "A3U_11_8_5_arsenal_update_ack"} && {uiNamespace getVariable ["isLoadoutArsenal", false]}) then { ["ShowUpdateMessage"] spawn SCRT_fnc_arsenal_loadoutArsenal };
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////

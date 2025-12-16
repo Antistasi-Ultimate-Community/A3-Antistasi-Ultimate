@@ -330,6 +330,22 @@ switch _mode do {
 		missionnamespace setvariable ["bis_fnc_arsenal_data",_data];
 	};
 
+	case "ShowUpdateMessage": {
+		private _display = uiNamespace getVariable "arsenalDisplay";
+		private _ackUpdate = [
+			format [localize "STR_A3U_arsenal_update_message", localize "STR_A3U_arsenal_update_ack"],
+			localize "STR_A3U_arsenal_update_header",
+			localize "STR_A3U_arsenal_update_ack",
+			localize "STR_A3U_arsenal_update_ok",
+			_display,
+			false,
+			false
+		] call BIS_fnc_guiMessage;
+		if (!_ackUpdate) exitWith {};
+		profileNamespace setVariable ["A3U_11_8_5_arsenal_update_ack", true];
+		saveProfileNamespace;
+	};
+
 	/////////////////////////////////////////////////////////////////////////////////////////// Externaly called
 	case "Open": {
 		Info("JNA open arsenal");
