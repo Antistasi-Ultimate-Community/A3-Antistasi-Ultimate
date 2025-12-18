@@ -59,6 +59,7 @@ private _fnc_getAvailableMagazines = {
     private _hasMags = false;
     private _allMags = jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL;
     private _cmpMags = compatibleMagazines ([[_baseClass, _class], _class] select (_baseClass == ""));
+    if (_cmpMags isEqualTo ["CBA_FakeLauncherMagazine"]) then { _cmpMags = compatibleMagazines (_class + "_Loaded") }; // handle fake launchers
     {
         _x params ["_magClass", "_magQty"];
         private _unlocked = [_magQty == -1, _magQty == -1 || {_magQty > A3A_guestItemLimit}] select (minWeaps < 0);
