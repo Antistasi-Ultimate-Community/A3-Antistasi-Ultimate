@@ -61,7 +61,6 @@ private _fnc_spawngroups = {
 					((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + 
 					(_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"))
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
-		diag_log _vehicles;
 		_vehicledata = [_skirmishpositionActuall, 0, _vehicles, _side] call A3A_fnc_spawnVehicle;
 		_vehicle = _vehicledata select 0;
 		_vehiclegroup = _vehicledata select 2;
@@ -92,7 +91,6 @@ private _fnc_spawngroups = {
 
 		private _vehicles2 = if (_difficult2) then {selectRandom ((A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"))} else {selectRandom ((A3A_faction_riv get "vehiclesRivalsCars") + 
 		(A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsTrucks"))};
-		diag_log _vehicles2;
 		_vehicledata2 = [_skirmishpositionActuall2, 0,_vehicles2, _side2] call A3A_fnc_RivalsSpawnVehicle;
 		_vehicle2 = _vehicledata2 select 0;
 		_vehiclegroup2 = _vehicledata2 select 2;

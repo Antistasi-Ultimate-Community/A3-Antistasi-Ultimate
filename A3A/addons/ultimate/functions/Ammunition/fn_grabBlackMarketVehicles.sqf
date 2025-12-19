@@ -64,7 +64,7 @@ private _hasBlockingVehicles = false;
             // For enabled DLCs: add to blackMarketStock
             {
                 if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-                    Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+                    Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
                     continue;
                 };
                 private _price = getNumber (_vehicleCfg >> _x >> "price");
@@ -97,7 +97,7 @@ private _hasBlockingVehicles = false;
                 // For enabled DLCs: add to blackMarketStock
                 {
                     if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-                        Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+                        Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
                         continue;
                     };
                     private _price = getNumber (_addCfg >> _x >> "price");
@@ -152,7 +152,7 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
         };
         
         if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-            Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+            Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
             continue;
         };
 
@@ -173,7 +173,7 @@ if ((!_hasBlockingVehicles && !_hasCustomModVehicles) || {vanillaArmsDealer isEq
 
     {
         if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-            Verbose_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
+            Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
             continue;
         };
         

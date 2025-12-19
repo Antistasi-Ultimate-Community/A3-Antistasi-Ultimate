@@ -197,7 +197,6 @@ switch (_mode) do
     {
         private _display = findDisplay A3A_IDD_BUYVEHICLEDIALOG;
         private _selectedCategory = _params select 0;
-        diag_log _selectedCategory;
 
         private _selectedTabIDC = -1;
         switch (_selectedCategory) do

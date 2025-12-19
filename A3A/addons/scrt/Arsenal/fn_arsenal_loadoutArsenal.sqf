@@ -332,7 +332,7 @@ switch _mode do {
 
 	/////////////////////////////////////////////////////////////////////////////////////////// Externaly called
 	case "Open": {
-		diag_log "JNA open arsenal";
+		Info("JNA open arsenal");
 		jna_dataList = _this select 0;
 		["SaveTFAR"] call SCRT_fnc_arsenal_loadoutArsenal;
 		private _object = missionnamespace getVariable ["jna_object",objNull];
@@ -436,12 +436,12 @@ switch _mode do {
 			private _backpackRadio = player call TFAR_fnc_backpackLr;
 			if (!isNil "_backpackRadio" && {count _backpackRadio >= 2}) then {
 				if (isNil "jna_backpackRadioSettings" || {typeName jna_backpackRadioSettings != typeName []}) exitWith {
-					diag_log "[Antistasi] Error: Arsenal failed to restore TFAR longrange radio settings due to invalid saved setting";
+					Error("Arsenal failed to restore TFAR longrange radio settings due to invalid saved setting");
 				};
 				[_backpackRadio select 0, _backpackRadio select 1, jna_backpackRadioSettings] call TFAR_fnc_setLrSettings;
-				diag_log "[Antistasi] TFAR longrange radio settings restored on arsenal exit.";
+				Verbose("TFAR longrange radio settings restored on arsenal exit.");
 			} else {
-				diag_log "[Antistasi] No longrange radio found on arsenal exit.";
+				Verbose("No longrange radio found on arsenal exit.");
 			};
 			//Arsenal gives players base TFAR radio items. TFAR will, at some point, replace this with an 'instanced' version.
 			//This can cause freq to reset. To fix, check if we have a radio first, and wait around if we do, but TFAR isn't showing it.
@@ -455,12 +455,12 @@ switch _mode do {
 					//Doesn't hurt to be careful!
 					if (!isNil "_swRadio") then {
 						if (isNil "jna_swRadioSettings" || {typeName jna_swRadioSettings != typeName []}) exitWith {
-							diag_log "[Antistasi] Error: Arsenal failed to restore TFAR shortwave radio settings due to invalid saved setting";
+							Error("Arsenal failed to restore TFAR shortwave radio settings due to invalid saved setting");
 						};
 						[_swRadio, jna_swRadioSettings] call TFAR_fnc_setSwSettings;
-						diag_log "[Antistasi] TFAR shortwave radio settings restored on arsenal exit.";
+						Verbose("TFAR shortwave radio settings restored on arsenal exit.");
 					} else {
-						diag_log "[Antistasi] No shortwave radio found on arsenal exit.";
+						Verbose("No shortwave radio found on arsenal exit.");
 					};
 				};
 			};
@@ -682,7 +682,6 @@ switch _mode do {
 	            private _amount = _data select 1;
 	            private _displayName = _data select 2;
 	            private _dlcName = _data select 3;
-				diag_log _dlcName;
 	  
 	            _displayNameArray pushBack _displayName;
 				_modArray pushBack _dlcName;
@@ -2159,7 +2158,6 @@ switch _mode do {
 						[_index, _item]call jn_fnc_arsenal_removeItem;
 					};
 				};
-				diag_log ["_oldItem",_oldItem,_item];
 
 			};
 			case IDC_RSCDISPLAYARSENAL_TAB_GOGGLES: {
@@ -3223,7 +3221,6 @@ switch _mode do {
 			if !(_control getVariable ["OverrideTab", false]) then { _item set [_forEachIndex, nil] };
 		} forEach IDCS_ASSIGNED_ITEMS;
 
-		diag_log _loadout;
 		rebelLoadouts deleteAt currentRebelLoadout;
 		rebelLoadouts set [currentRebelLoadout, _loadout];
 		publicVariable "rebelLoadouts";
