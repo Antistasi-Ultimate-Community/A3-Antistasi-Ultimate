@@ -91,9 +91,7 @@ HR_GRG_fnc_Hint = {
 };
 HR_GRG_fnc_vehInit = {
     if ((_this isKindOf  "LandVehicle") || (_this isKindOf  "Ship")) then {
-		staticsToSave pushBack _this; 
-		publicVariable "staticsToSave";
-        ungaragedVehicles pushBack _this; 
+		ungaragedVehicles pushBack _this; 
 		publicVariable "ungaragedVehicles";
 	};
     _this setVariable ["ownerX",getPlayerUID player,true];
