@@ -27,25 +27,20 @@ HR_GRG_canOverrideLock = {
 
 //condition to automatically close garage/placement as if canceled
 HR_GRG_CP_closeCnd = {
+    params [["_closeDistance", 25]];
     (!([player] call A3A_fnc_canFight))
     || {(!isNull HR_GRG_accessPoint)
-        && {player distance HR_GRG_accessPoint > 25}
+        && {player distance HR_GRG_accessPoint > _closeDistance}
     }
 };
 
-HR_GRG_Cnd_canAccessAir = {
+HR_GRG_Cnd_isAirbase  = {
     count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) 
     and (HR_GRG_accessPoint inArea _x)}) > 0 
     || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) 
     and (HR_GRG_accessPoint inArea _x)}) > 0 
     || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] 
     && HR_GRG_accessPoint distance2D _x <= 100}) > 0
-};
-HR_GRG_Cnd_canAccessPlane = {
-    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 
-};
-HR_GRG_Cnd_canAccessHeli = {
-    count (airportsX select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) and (HR_GRG_accessPoint inArea _x)}) > 0 || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] && HR_GRG_accessPoint distance2D _x <= 100}) > 0
 };
 
 // Return lock limit for specified player

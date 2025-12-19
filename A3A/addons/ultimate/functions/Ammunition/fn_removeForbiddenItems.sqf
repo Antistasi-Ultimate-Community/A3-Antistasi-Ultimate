@@ -34,10 +34,10 @@ private _start = diag_tickTime;
 	} forEach A3U_forbiddenItems;
 } forEach _arrays;
  
-Verbose("Removing forbidden items from a ton of arrays.");
-
+Info("Currently removing forbidden items from a ton of arrays. This may take a while. (Time exponentially expands as more stuff needs to be iterated through!)");
+ 
 private _stop = diag_tickTime;
  
-Verbose_1("Forbidden items removal took approximately: %1 seconds.", round(_stop - _start));
+Info_1("Forbidden items removal took approximately: %1 seconds.",round(_stop - _start));
 
 missionNamespace setVariable ["A3U_loot_removedForbiddenItems", true];

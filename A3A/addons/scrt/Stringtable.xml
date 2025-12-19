@@ -151,6 +151,34 @@
                 <Korean>. 하지만 몇 번만 쏠 양 밖에 없다</Korean>
                 <French>mais il n'y a que peu de photos pour cela</French>
             </Key>
+            <Key ID="STR_A3U_arsenal_update_header">
+                <Original>AU 11.8.5 AI Custom Loadouts</Original>
+                <Russian>AU 11.8.5 Пользовательские снаряжения ИИ</Russian>
+                <Chinesesimp>AU 11.8.5 AI 自定义装备</Chinesesimp>
+                <Korean>AU 11.8.5 AI 커스텀 장비 구성</Korean>
+                <French>AU 11.8.5 Équipements personnalisés de l'IA</French>
+            </Key>
+            <Key ID="STR_A3U_arsenal_update_message">
+                <Original>Custom loadout functionality has changed. Double-click an item in the list to save it into your custom loadout. Double-click again to unsave. Note that saving a cargo container (Uniform, Vest, or Backpack) also saves all of the contents of that container. When saved, the tab icon for the item should turn green. Click %1 to not show this message again.</Original>
+                <Russian>Функциональность пользовательского снаряжения изменилась. Дважды кликните по предмету из списка, чтобы сохранить его в пользовательском наборе. Дважды кликните ещё раз для снятия сохранения. Обратите внимание, что сохранение грузового контейнера (формы, жилета или рюкзака) также сохраняет всё содержимое этого контейнера. При сохранении значок вкладки для предмета должен стать зелёным. Нажмите %1, чтобы не показывать это сообщение снова.</Russian>
+                <Chinesesimp>自定义装备功能发生了变化。 双击列表中的物品以保存到你的自定义装备中。 再次双击以取消保存。 注意，保存货物容器（制服、背心或背包）也会保存该容器的所有内容。 保存后，该物品的标签图标应变为绿色。 点击%1以避免再次显示此信息。</Chinesesimp>
+                <Korean>커스텀 로드아웃 기능이 변경되었습니다. 목록에서 아이템을 더블 클릭하면 사용자 지정 로드아웃에 저장됩니다. 저장 해제하려면 다시 더블 클릭하세요. 화물 컨테이너(유니폼, 조끼, 배낭)를 저장하면 해당 컨테이너의 모든 내용물이 저장됩니다. 이 메시지가 다시 나타나지 않도록 %1을 클릭하세요.</Korean>
+                <French>La fonctionnalité d'équipement personnalisé a changé. Double-cliquez sur un élément de la liste pour l'enregistrer dans votre équipement personnalisé. Double-cliquez à nouveau pour désenregistrer. Note que sauvegarder un conteneur (uniforme, gilet ou sac à dos) sauvegarde également tout le contenu de ce conteneur. Une fois enregistré, l'icône d'onglet de l'article devrait devenir verte. Cliquez sur %1 pour ne plus afficher ce message.</French>
+            </Key>
+            <Key ID="STR_A3U_arsenal_update_ack">
+                <Original>Acknowledge</Original>
+                <Russian>Подтвердить</Russian>
+                <Chinesesimp>收到</Chinesesimp>
+                <Korean>확인해 드립니다</Korean>
+                <French>Accuser réception</French>
+            </Key>
+            <Key ID="STR_A3U_arsenal_update_ok">
+                <Original>OK</Original>
+                <Russian>ХОРОШО</Russian>
+                <Chinesesimp>还行</Chinesesimp>
+                <Korean>그래</Korean>
+                <French>D'ACCORD</French>
+            </Key>
         </Container>
         <Container name="blackmarket">
             <Key ID="STR_A3AP_blackmarket_seap">
@@ -3188,12 +3216,24 @@
                 <Korean>드디어 자유다!</Korean>
                 <French>Je suis enfin libre !</French>
             </Key>
+            <Key ID="STR_chats_splash_over">
+                <Original>Splash, over.</Original>
+            </Key>
             <Key ID="STR_chats_splash_out">
-                <Original>Splash. Out.</Original>
+                <Original>Splash, out.</Original>
                 <Russian>Попадание.</Russian>
                 <Chinesesimp>弹着，完毕。</Chinesesimp>
                 <Korean>착탄 확인바람, 이상.</Korean>
                 <French>Impact</French>
+            </Key>
+            <Key ID="STR_chats_shot_over">
+                <Original>Shot, over.</Original>
+            </Key>
+            <Key ID="STR_chats_shot_out">
+                <Original>Shot, out.</Original>
+            </Key>
+            <Key ID="STR_chats_rounds_complete">
+                <Original>Rounds complete.</Original>
             </Key>
             <Key ID="STR_chats_mortar_barrage_confirm">
                 <Original>Acknowledged. Fire mission is inbound. ETA %1 secs for the first impact.</Original>

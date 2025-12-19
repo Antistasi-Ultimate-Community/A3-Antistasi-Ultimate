@@ -24,6 +24,8 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+#include "..\script_component.hpp"
+
 params[
     ["_container",objNull,[objNull]],
     ["_item","",[""]],
@@ -70,7 +72,7 @@ private _mass = switch true do {
     };
     default {
         // It's a croak out
-        diag_log format["SCRT_fnc_misc_canAddItemToContainer(%1): item not item, magazine or weapon", _item];
+        Error_1("SCRT_fnc_misc_canAddItemToContainer(%1): item not item, magazine or weapon", _item);
 
         -1
     };
