@@ -152,6 +152,7 @@ class CfgFunctions
             class localizar {};
             class lockStatic {};
             class logPerformance {};
+            class manageFlagAccess {};
             class markerChange {};
             class moveHQ {};
             class mrkUpdate {};
@@ -817,6 +818,7 @@ class CfgFunctions
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
+            class remainingAmmo {};
             class remainingFuel {};
             class rotateItem {};
         };

@@ -1235,4 +1235,14 @@ class Params
         texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
         default = 1;
     };
+
+    // * Ported from community, deliberately not categorized in Ultimate so it's not shown, and default changed to 0 to disable for now to preserve our existing behavior
+    // * only included here to not break A3A_fnc_manageFlagAccess
+    class A3A_flagGarageBlock
+    {
+        title = $STR_A3A_Params_garageAccessTimer_title;
+        values[] = {0,3,5,10,20};
+        texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
+        default = 0;
+    };
 };
