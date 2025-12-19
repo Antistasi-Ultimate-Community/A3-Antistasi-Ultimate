@@ -1209,6 +1209,45 @@ class Params
         default = "";
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
+    class limitWeaponsByUnitType : ExperimentalParams
+    {
+        title = $STR_params_limitWeaponsByUnitType;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
+    class A3U_HelipadTerrainSmoothing: ExperimentalParams
+    {
+        title = $STR_params_helipadTerrainSmoothing;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class unconChanceEny : ExperimentalParams
+    {
+        title = $STR_params_unconChanceEny;
+        tooltip = $STR_params_unconChanceEny_desc;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        default = 10;
+    };
+    class unconChanceReb : ExperimentalParams
+    {
+        title = $STR_params_unconChanceReb;
+        tooltip = $STR_params_unconChanceReb_desc;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        default = 10;
+    };
+    class A3U_enableVehiclesForAI : ExperimentalParams
+    {
+        title = $STR_params_enableVehiclesForAI;
+        tooltip = $STR_params_enableVehiclesForAI_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+        lockInGame = 1;
+    };
 
     class DevelopmentParamsSpacer : AllParams
     {
