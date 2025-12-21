@@ -4087,6 +4087,13 @@
                 <Korean>%1이(가) 재건축되었습니다.</Korean>
                 <French>%1 reconstruit.</French>
             </Key>
+            <Key ID="STR_notifiers_rebuild_assets_nothing_to_rebuild">
+                <Original>Nothing to rebuild in %1.</Original>
+                <Russian>Нечего восстанавливать в %1.</Russian>
+                <Chinesesimp>%1 中没有可重建的内容。</Chinesesimp>
+                <Korean>%1에서 재건축할 것이 없습니다.</Korean>
+                <French>Rien à reconstruire dans %1.</French>
+            </Key>
             <Key ID="STR_notifiers_rebuild_assets_info">
                 <Original>Click on any friendly marker to rebuild radio towers and military buildings there.&lt;br/&gt;Cost: %1%2.</Original>
                 <Russian>Нажмите на любой дружественный маркер, чтобы восстановить там радиовышки и военные здания/укрепления.&lt;br/&gt;Стоимость: %1%2</Russian>
