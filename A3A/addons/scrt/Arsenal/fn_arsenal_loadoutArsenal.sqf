@@ -1404,7 +1404,7 @@ switch _mode do {
 	case "CreateList":{
 		_display =  _this select 0;
 		_index = _this select 1;
-		_inventory = _this select 2;
+		_orgInventory = _this select 2;
 		_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _index);
 		_type = (ctrltype _ctrlList == 102);
 		if _type then{
@@ -1440,6 +1440,7 @@ switch _mode do {
 		};
 
 		// * Filter primary and secondary weapons available according to unit type / class, all items to what's unlocked
+		private _inventory = +_orgInventory;
 		_inventory = switch (_index) do {
 			// If item is in A3A_rebelGear, it should already be unlocked or its qty should be > jna_minItemMember select _index
 			case (IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON): {
@@ -1460,7 +1461,7 @@ switch _mode do {
 						_inventory select { (_x select 0) in (A3A_rebelGear get "SniperRifles") }
 					};
 					default {
-						_inventory select { (_x select 0) in ((A3A_rebelGear get "Rifles") + (A3A_rebelGear get "SMGs") + (A3A_rebelGear get "Shotguns") + (A3A_rebelGear get "SniperRifles")) }
+						_inventory select { (_x select 0) in ((A3A_rebelGear get "Rifles") + (A3A_rebelGear get "SMGs") + (A3A_rebelGear get "Shotguns")) }
 					};
 				};
 			};
@@ -1497,6 +1498,9 @@ switch _mode do {
 				// item unlocked (qty == -1) OR (unlocks disabled AND item qty more than min items)
 				_inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= (jna_minItemMember select _index)}} }
 			};
+		};
+		if (_index isEqualTo 0 && {_inventory isEqualTo []}) then {
+			_inventory = _orgInventory select { (_x select 0) in flatten (A3A_faction_reb get "initialRebelEquipment") }
 		};
 
 		//fill
