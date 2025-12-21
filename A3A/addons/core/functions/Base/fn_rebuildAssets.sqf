@@ -79,7 +79,7 @@ switch (true) do {
 	default {
 		private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500,  true];
 
-		private _destroyedCount = count destroyedBuildings; diag_log _destroyedCount;
+		private _destroyedCount = count destroyedBuildings;
 		{
 			[_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
 		} forEach _militaryBuildings;
