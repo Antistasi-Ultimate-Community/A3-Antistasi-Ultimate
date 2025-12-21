@@ -1460,7 +1460,7 @@ switch _mode do {
 						_inventory select { (_x select 0) in (A3A_rebelGear get "SniperRifles") }
 					};
 					default {
-						_inventory select { (_x select 0) in ((A3A_rebelGear get "Rifles") + (A3A_rebelGear get "SMGs") + (A3A_rebelGear get "Shotguns")) }
+						_inventory select { (_x select 0) in ((A3A_rebelGear get "Rifles") + (A3A_rebelGear get "SMGs") + (A3A_rebelGear get "Shotguns") + (A3A_rebelGear get "SniperRifles")) }
 					};
 				};
 			};
