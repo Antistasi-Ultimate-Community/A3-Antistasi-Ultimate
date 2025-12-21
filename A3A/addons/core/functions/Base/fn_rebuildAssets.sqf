@@ -20,6 +20,30 @@ if ((_site in factories || _site in resourcesX) && _site in destroyedSites) then
 	Debug_1("Rebuilding Economic Site %1", _economyDead);
 };
 
+private _name = [_site] call A3A_fnc_localizar;
+
+private _rebuildSuccess = {
+	params ["_message", ["_name", _name]];
+	[
+		localize "STR_notifiers_success_type",
+		localize "STR_notifiers_rebuild_assets_header",
+		parseText format [localize _message, _name],
+		30
+	] spawn SCRT_fnc_ui_showMessage;
+
+	[0,-5000] remoteExec ["A3A_fnc_resourcesFIA",2];
+};
+
+private _rebuildFail = {
+	params ["_message", ["_name", _name]];
+	[
+		localize "STR_notifiers_fail_type",
+		localize "STR_notifiers_rebuild_assets_header",
+		parsetext format [localize _message, _name],
+		30
+	] spawn SCRT_fnc_ui_showMessage;
+};
+
 switch (true) do {
 	case (_site in citiesX): {
 		[0, 10, _position] remoteExec ["A3A_fnc_citySupportChange",2];
@@ -29,26 +53,14 @@ switch (true) do {
 		destroyedSites deleteAt(destroyedSites find _site);
 		publicVariable "destroyedSites";
 
-		private _name = [_site] call A3A_fnc_localizar;
-		[
-			localize "STR_notifiers_success_type",
-			localize "STR_notifiers_rebuild_assets_header",
-			parseText format [localize "STR_notifiers_rebuild_assets_success", _name],
-			30
-		] spawn SCRT_fnc_ui_showMessage;
+		["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
 	};
 	// Rebuild Economic Assets and building repair start
 	case (_economyDead != ""): {
 		Debug_1("Calling A3A_fnc_rebuildEconomicAssets for %1", _economyDead);
 		[_economyDead] remoteExec ["A3A_fnc_rebuildEconomicAssets", 2]; // Call the actual function that rebuilds the economic site
 
-		private _name = [_site] call A3A_fnc_localizar;
-		[
-			localize "STR_notifiers_success_type",
-			localize "STR_notifiers_rebuild_assets_header",
-			parseText format [localize "STR_notifiers_rebuild_assets_success", _name],
-			30
-		] spawn SCRT_fnc_ui_showMessage;
+		["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
 	};
 	// Rebuild Economic Assets and building repair end
 
@@ -61,30 +73,27 @@ switch (true) do {
 
 		[_antennaDead] remoteExec ["A3A_fnc_rebuildRadioTower", 2];
 
-		private _name = [_site] call A3A_fnc_localizar;
-		[
-			localize "STR_notifiers_success_type",
-			localize "STR_notifiers_rebuild_assets_header",
-			parseText format [localize "STR_notifiers_rebuild_assets_radiotower_success", _name],
-			30
-		] spawn SCRT_fnc_ui_showMessage;
+		["STR_notifiers_rebuild_assets_radiotower_success"] call _rebuildSuccess;
 	};
 
 	default {
 		private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500,  true];
 
+		private _destroyedCount = count destroyedBuildings; diag_log _destroyedCount;
 		{
 			[_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
 		} forEach _militaryBuildings;
 
-		private _name = [_site] call A3A_fnc_localizar;
-		[
-			localize "STR_notifiers_success_type",
-			localize "STR_notifiers_rebuild_assets_header",
-			parseText format [localize "STR_notifiers_rebuild_assets_success", _name],
-			30
-		] spawn SCRT_fnc_ui_showMessage;
+		[_name, _destroyedCount, _rebuildFail, _rebuildSuccess] spawn {
+			// has to be spawned IOT use a brief sleep, because it takes some time for destroyedBuildings to update
+			// otherwise, it will repair any destroyed buildings but think none were repaired and give the wrong message
+			params ["_name", "_destroyedCount", "_rebuildFail", "_rebuildSuccess"];
+			sleep 0.5;
+			if ((count destroyedBuildings) isEqualTo _destroyedCount) exitWith {
+				["STR_notifiers_rebuild_assets_nothing_to_rebuild", _name] call _rebuildFail;
+			};
+			
+			["STR_notifiers_rebuild_assets_success", _name] call _rebuildSuccess;
+		};
 	};
 };
-
-[0,-5000] remoteExec ["A3A_fnc_resourcesFIA",2];
