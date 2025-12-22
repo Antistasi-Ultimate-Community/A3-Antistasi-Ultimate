@@ -122,4 +122,7 @@ while {_totalNV >= minWeaps} do {
 // Publish the unlocked categories (once each)
 { publicVariable ("unlocked" + _x) } forEach keys _categoriesToPublish;
 
+// Update A3A_rebelGear
+[] call A3A_fnc_generateRebelGear;
+
 _updated
