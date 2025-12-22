@@ -50,7 +50,11 @@ switch (true) do {
     	[Occupants, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
     	[Invaders, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
 
-		destroyedSites deleteAt(destroyedSites find _site);
+		private _destroyedSite = destroyedSites find _site;
+		if (_destroyedSite == -1) exitWith {
+			["STR_notifiers_rebuild_assets_nothing_to_rebuild", _name] call _rebuildFail;
+		};
+		destroyedSites deleteAt(_destroyedSite);
 		publicVariable "destroyedSites";
 
 		["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
@@ -77,23 +81,17 @@ switch (true) do {
 	};
 
 	default {
-		private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500,  true];
+		[clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
 
-		private _destroyedCount = count destroyedBuildings;
+		private _militaryBuildings = (nearestObjects [_position, A3A_buildingWhitelist, 500,  true]) select {_x in destroyedBuildings};
+		if (_militaryBuildings isEqualTo []) exitWith {
+			["STR_notifiers_rebuild_assets_nothing_to_rebuild", _name] call _rebuildFail;
+		};
+		
 		{
 			[_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
 		} forEach _militaryBuildings;
-
-		[_name, _destroyedCount, _rebuildFail, _rebuildSuccess] spawn {
-			// has to be spawned IOT use a brief sleep, because it takes some time for destroyedBuildings to update
-			// otherwise, it will repair any destroyed buildings but think none were repaired and give the wrong message
-			params ["_name", "_destroyedCount", "_rebuildFail", "_rebuildSuccess"];
-			sleep 0.5;
-			if ((count destroyedBuildings) isEqualTo _destroyedCount) exitWith {
-				["STR_notifiers_rebuild_assets_nothing_to_rebuild", _name] call _rebuildFail;
-			};
-			
-			["STR_notifiers_rebuild_assets_success", _name] call _rebuildSuccess;
-		};
+		["STR_notifiers_rebuild_assets_success", _name] call _rebuildSuccess;
+		[clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
 	};
 };
