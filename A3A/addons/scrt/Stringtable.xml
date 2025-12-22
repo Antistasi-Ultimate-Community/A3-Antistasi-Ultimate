@@ -4052,6 +4052,13 @@
                 <Korean>%1이(가) 재건축되었습니다.</Korean>
                 <French>%1 reconstruit.</French>
             </Key>
+            <Key ID="STR_notifiers_rebuild_assets_nothing_to_rebuild">
+                <Original>Nothing to rebuild in %1.</Original>
+                <Russian>Нечего восстанавливать в %1.</Russian>
+                <Chinesesimp>%1 中没有可重建的内容。</Chinesesimp>
+                <Korean>%1에서 재건축할 것이 없습니다.</Korean>
+                <French>Rien à reconstruire dans %1.</French>
+            </Key>
             <Key ID="STR_notifiers_rebuild_assets_info">
                 <Original>Click on any friendly marker to rebuild radio towers and military buildings there.&lt;br/&gt;Cost: %1%2.</Original>
                 <Russian>Нажмите на любой дружественный маркер, чтобы восстановить там радиовышки и военные здания/укрепления.&lt;br/&gt;Стоимость: %1%2</Russian>
@@ -5577,6 +5584,20 @@
                 <Chinesesimp>仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
+            </Key>
+            <Key ID="STR_params_loadoutArsenalDefaultOverride">
+                <Original>Set all tabs in the AI custom loadout arsenal to be saved by default</Original>
+                <Russian>По умолчанию сохранять все вкладки в пользовательском арсенале снаряжения ИИ</Russian>
+                <Chinesesimp>将 AI 自定义装备库中的所有选项卡设为默认保存</Chinesesimp>
+                <Korean>AI 커스텀 로드아웃 아스널의 모든 탭을 기본적으로 저장</Korean>
+                <French>Enregistrer par défaut tous les onglets de l'arsenal de chargements personnalisés de l'IA</French>
+            </Key>
+            <Key ID="STR_params_loadoutArsenalDefaultOverride_desc">
+                <Original>If enabled, legacy custom loadout behavior will be preserved; when saving a loadout, all items in the loadout will be saved unless specifically excluded. If disabled, only the items in tabs specifically enabled will be saved. All other items will be randomized.</Original>
+                <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Все остальные предметы будут рандомизированы.</Russian>
+                <Chinesesimp>启用时，会保留旧版自定义装备行为；保存装备时，除非被明确排除，否则装备中的所有物品都会被保存。禁用时，只有在专门启用的选项卡中的物品会被保存，其他所有物品将被随机化。</Chinesesimp>
+                <Korean>활성화하면 기존 커스텀 로드아웃 동작이 유지됩니다. 로드아웃을 저장할 때 명시적으로 제외하지 않는 한 로드아웃의 모든 항목이 저장됩니다. 비활성화하면 명시적으로 활성화된 탭의 항목만 저장되며, 나머지 항목은 무작위로 선택됩니다.</Korean>
+                <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
             </Key>
             <Key ID="STR_params_limitWeaponsByUnitType">
                 <Original>Limit AI custom loadout weapon selections by unit type</Original>

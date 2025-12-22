@@ -1178,12 +1178,20 @@ class Params
         default = "";
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
+    class loadoutArsenalDefaultOverride : ExperimentalParams
+    {
+        title = $STR_params_loadoutArsenalDefaultOverride;
+        tooltip = $STR_params_loadoutArsenalDefaultOverride_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
     class limitWeaponsByUnitType : ExperimentalParams
     {
         title = $STR_params_limitWeaponsByUnitType;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 1;
+        default = 0;
     };
     class A3U_HelipadTerrainSmoothing: ExperimentalParams
     {
