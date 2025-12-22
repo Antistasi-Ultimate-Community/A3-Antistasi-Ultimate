@@ -107,10 +107,6 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 				} forEach crew _object1;
 			}]; ///needs testing
 		};
-
-		case (_veh isKindOf "StaticWeapon"): {
-			_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
-		};
 	};
 };
 
@@ -119,12 +115,22 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 	if (_markers isEqualTo []) exitWith {};
 	if (_typeX isKindOf "StaticMortar") exitWith {};
 	if (_side isNotEqualTo teamPlayer) exitWith {};
-	[_veh, _side] spawn {
-		waitUntil { sleep 0.1; !isNil "serverInitDone" };
-		params ["_veh", "_side"];
-		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave}));
-		[_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-	};	
+	if (_veh isKindOf "StaticWeapon") then {
+		_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
+		[_veh, _side] spawn {
+			waitUntil { sleep 0.1; !isNil "serverInitDone" };
+			params ["_veh", "_side"];
+			_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave}));
+			[_veh, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+		};
+	} else {
+		[_veh, _side] spawn {
+			waitUntil { sleep 0.1; !isNil "serverInitDone" };
+			params ["_veh", "_side"];
+			_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave}));
+			[_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+		};
+	};
 };
 
 if (_side == civilian) then {
