@@ -65,7 +65,13 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["vehiclesMilitiaCars", ["UK3CB_ADM_B_LR_Closed", "UK3CB_ADM_B_LR_Open"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", ["rhsgref_hidf_m113a3_m2", "rhsgref_hidf_m113a3_unarmed"]] call _fnc_saveToTemplate;
 
-["vehiclesPolice", ["UK3CB_CPD_B_UAZ_Closed", "UK3CB_CPD_B_Gaz24", "UK3CB_CPD_B_Lada", "UK3CB_CPD_B_S1203"]] call _fnc_saveToTemplate;
+["vehiclesPolice", [
+    "UK3CB_TPD_B_Hilux_Closed", "UK3CB_TPD_B_Hilux_M2", "UK3CB_TPD_B_Hilux_Open", "UK3CB_TPD_B_MB4WD_Unarmed", "UK3CB_TPD_B_MB4WD_LMG",
+    "UK3CB_TPD_B_LR_Softtop_Transport_Closed", "UK3CB_TPD_B_LR_Softtop_Transport_Open", "UK3CB_TPD_B_LR_Opentop_M240", "UK3CB_TPD_B_LR_WMIK_M2", "UK3CB_TPD_B_LR_WMIK_M240",
+    "UK3CB_TPD_B_Landcruiser_POL", "UK3CB_TPD_B_M1030", "UK3CB_TPD_B_Offroad_Unarmed", "UK3CB_TPD_B_Offroad_Comms", "UK3CB_TPD_B_Offroad_Covered", "UK3CB_TPD_B_Offroad_HMG", "UK3CB_TPD_B_Offroad_Services",
+    "UK3CB_TPD_B_Pickup", "UK3CB_TPD_B_Pickup_M2", "UK3CB_TPD_B_LSV_01_Light", "UK3CB_TPD_B_LSV_01", "UK3CB_TPD_B_LSV_02", "UK3CB_TPD_B_Quadbike", "UK3CB_TPD_B_SUV_POL",
+    "UK3CB_TPD_B_Transit_Cargo", "UK3CB_TPD_B_Van_Transport", "UK3CB_TPD_B_Transit_Service", "UK3CB_TPD_B_Transit_Transport", "UK3CB_TPD_B_GIGN_Transit_Transport", "UK3CB_TPD_B_YAVA"
+]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["RHS_M2StaticMG_D"]] call _fnc_saveToTemplate;
 ["staticAT", ["RHS_TOW_TriPod_WD"]] call _fnc_saveToTemplate;
@@ -455,18 +461,26 @@ _militaryLoadoutData set ["sidearms", ["rhsusf_weap_m9"]];
 ///////////////////////////////
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_policeLoadoutData set ["uniforms", ["U_B_GEN_Soldier_F", "U_B_GEN_Commander_F"]];
-_policeLoadoutData set ["vests", ["V_TacVest_blk_POLICE"]];
-private _helmets = ["H_Cap_police"];
+_policeLoadoutData set ["uniforms", ["UK3CB_TPD_B_U_JumperUniform_01", "UK3CB_TPD_B_U_JumperUniform_02", "UK3CB_TPD_B_U_JumperUniform_03", "UK3CB_TPD_B_U_JumperUniform_04"]];
+_policeLoadoutData set ["vests", ["UK3CB_TPD_B_V_TacVest_01", "UK3CB_TPD_B_V_TacVest_02", "UK3CB_TPD_B_V_TacVest_MED_01", "UK3CB_TPD_B_V_TacVest_MED_02"]];
+private _helmets = ["H_MilCap_gen_F", "UK3CB_TPD_B_H_Patrol_Cap", "UK3CB_TPD_B_H_Cap_01", "UK3CB_TPD_B_H_Radio_Cap_01", "UK3CB_TPD_B_H_Cap_02", "UK3CB_TPD_B_H_Radio_Cap_02", "UK3CB_TPD_B_H_Cap_Earpiece_01", "UK3CB_TPD_B_H_Cap_Earpiece_02", "UK3CB_TPD_B_H_Cap_Headset_01", "UK3CB_TPD_B_H_Cap_Headset_02"];
 if (_hasLawsOfWar) then {
     _helmets pushBack "H_PASGT_basic_blue_F";
 };
 _policeLoadoutData set ["helmets", _helmets];
 _policeLoadoutData set ["SMGs", [
-["UK3CB_M16_Carbine", "", "", "", ["rhs_mag_20Rnd_556x45_M193_Stanag", "rhs_mag_20Rnd_556x45_M193_Stanag", "rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red"], [], ""],
-["rhs_weap_M590_8RD", "", "", "", ["rhsusf_8Rnd_00Buck", "rhsusf_8Rnd_Slug"], [], ""],
-["rhs_weap_M590_5RD", "", "", "", ["rhsusf_5Rnd_00Buck", "rhsusf_5Rnd_Slug"], [], ""],
-["rhs_weap_m3a1", "", "", "", ["rhsgref_30rnd_1143x23_M1911B_SMG", "rhsgref_30rnd_1143x23_M1T_SMG"], [], ""]
+    ["UK3CB_MP5A2", "", "", "", ["UK3CB_MP5_30Rnd_9x19_Magazine_R", "UK3CB_MP5_30Rnd_9x19_Magazine"], [], ""], 3,
+    ["rhs_weap_M590_8RD", "", "", "", ["rhsusf_8Rnd_00Buck", "rhsusf_8Rnd_Slug"], [], ""], 1,
+    ["rhs_weap_M590_5RD", "", "", "", ["rhsusf_5Rnd_00Buck", "rhsusf_5Rnd_Slug"], [], ""], 1
+]];
+_policeLoadoutData set ["Carbines", [
+    ["uk3cb_ar18_carbine", "", "", "", ["UK3CB_AR18_30Rnd_556x45_R", "UK3CB_AR18_30Rnd_556x45"], [], ""], 3,
+    ["uk3cb_m2a1_carbine_blk", "", "", "", ["UK3CB_M1_30Rnd_30Carbine_Magazine_R", "UK3CB_M1_15Rnd_30Carbine_Magazine_R"], [], ""], 2
+]];
+_policeLoadoutData set ["Rifles", [
+    ["uk3cb_ar18", "", "", "", ["UK3CB_AR18_30Rnd_556x45_R", "UK3CB_AR18_30Rnd_556x45"], [], ""], 3,
+    ["UK3CB_M14DMR_Railed_BLK", "rhsusf_acc_ACOG", "", "", ["UK3CB_M14_20Rnd_762x51_R", "UK3CB_M14_20Rnd_762x51"], [], ""], 1,
+    ["uk3cb_enfield_l42", "uk3cb_optic_no32", "", "", [], [], ""], 1
 ]];
 _policeLoadoutData set ["sidearms", ["rhs_weap_makarov_pm"]];
 
@@ -930,7 +944,7 @@ private _policeTemplate = {
     ["uniforms"] call _fnc_setUniform;
 
 
-    ["SMGs"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.3, "SMGs", 0.5]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
