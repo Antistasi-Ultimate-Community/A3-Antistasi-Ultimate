@@ -632,7 +632,7 @@ switch _mode do {
 		if !((_IDC - IDC_RSCDISPLAYARSENAL_LIST) in [IDCS_RIGHT]) exitWith {};
 		private _idcs_override = _tabBtnCtrl getVariable ["OverrideIDCs", []];
 		{
-			if (ctrlEnabled (_display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x))) then {
+			if (ctrlEnabled (_display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x)) || {_force && {_x in [0,1,2]}}) then {
 				if (_override) then { _idcs_override pushBackUnique _x } else { _idcs_override = _idcs_override - [_x] };
 				_tabBtnCtrl setVariable ["OverrideIDCs", _idcs_override];
 			};
@@ -3210,8 +3210,8 @@ switch _mode do {
 			switch (_forEachIndex) do {
 				case (0); // primary weapon
 				case (1); // secondary weapon
-				case (2); // handgun
-				case (8): { // binoculars
+				case (2): { // handgun
+				//case (8): { // binoculars don't currently support accessory tabs in the arsenal
 					if !(_control getVariable ["OverrideTab", false]) exitWith { _loadout set [_forEachIndex, nil] };
 					{
 						private _controlRight = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
@@ -3229,7 +3229,8 @@ switch _mode do {
 					} forEach IDCS_CARGO;*/
 				};
 				case (6); // headgear
-				case (7): { // goggles
+				case (7); // goggles
+				case (8): { // binoculars
 					if !(_control getVariable ["OverrideTab", false]) then { _loadout set [_forEachIndex, nil]; };
 				};
 			};
@@ -3268,47 +3269,58 @@ switch _mode do {
 		player setUnitLoadout (configFile >> "EmptyLoadout"); // need to give the player an empty loadout first, so that non-unlocked items from player loadouts aren't carried over into the AI loadout
 		[player, 0, currentRebelLoadout] call A3A_fnc_equipRebel;
 		
-		if (isNil "_loadout") exitWith {};
+		private _fnc_overrideTab = {
+			params ["_ctrlIDC", "_override"];
+			private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _ctrlIDC);
+			["OverrideTab", [_control, _override]] call SCRT_fnc_arsenal_loadoutArsenal;
+		};
+
+		if (isNil "_loadout") exitWith {
+			{
+				[_x, loadoutArsenalDefaultOverride] call _fnc_overrideTab;
+				if !(_forEachIndex in [0,1,2,8]) then { continue };
+				{ [_x, loadoutArsenalDefaultOverride] call _fnc_overrideTab } forEach IDCS_WEAPON_ACCESSORIES;
+			} forEach IDCS_LOADOUT;
+
+			{ [_x, loadoutArsenalDefaultOverride] call _fnc_overrideTab } forEach IDCS_ASSIGNED_ITEMS;
+		};
+
 		player setUnitLoadout +_loadout;
 		{
-			private _ctrlIDC = _x;
-			private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
 			private _category = _forEachIndex;
 			private _item = _loadout select _category;
 
 			switch (_forEachIndex) do {
 				case (0); // primary weapon
 				case (1); // secondary weapon
-				case (2); // handgun
-				case (8): { // binoculars
+				case (2): { // handgun
+				//case (8): { // binoculars don't currently support accessory tabs in the arsenal
 					if (isNil "_item") exitWith {};
-					["OverrideTab", [_control, true]] call SCRT_fnc_arsenal_loadoutArsenal;
+					[_x, true] call _fnc_overrideTab;
+					if (_item isEqualTo []) exitWith {};
 					{
-						private _controlRight = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
 						if (_item isEqualType [] && {!isNil {_item select (_forEachIndex + 1)}}) then {
 							private _ctrlTabRight = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + _x);
 							private _idcs_override = (_ctrlTabRight getVariable ["OverrideIDCs", []]) + [_category];
 							_ctrlTabRight setVariable ["OverrideIDCs", _idcs_override];
-							["OverrideTab", [_controlRight, true]] call SCRT_fnc_arsenal_loadoutArsenal;
+							[_x, true] call _fnc_overrideTab;
 						};
 					} forEach IDCS_WEAPON_ACCESSORIES;
 				};
 				case (3); // uniform
 				case (4); // vest
-				case (5): { // backpack
-					if (!isNil "_item") exitWith { ["OverrideTab", [_control, true]] call SCRT_fnc_arsenal_loadoutArsenal };
-				};
+				case (5);
 				case (6); // headgear
-				case (7): { // goggles
-					if (!isNil "_item") exitWith { ["OverrideTab", [_control, true]] call SCRT_fnc_arsenal_loadoutArsenal };
+				case (7); // goggles
+				case (8): { // binoculars
+					if (!isNil "_item") exitWith { [_x, true] call _fnc_overrideTab };
 				};
 			};
 		} forEach IDCS_LOADOUT;
 
 		{
-			private _control = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
 			private _item = _loadout select 9;
-			if (!isNil "_item" && {!isNil {_item select _forEachIndex}}) then { ["OverrideTab", [_control, true]] call SCRT_fnc_arsenal_loadoutArsenal };
+			if (!isNil "_item" && {!isNil {_item select _forEachIndex}}) then { [_x, true] call _fnc_overrideTab };
 		} forEach IDCS_ASSIGNED_ITEMS;
 	};
 
