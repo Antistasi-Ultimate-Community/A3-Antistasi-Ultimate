@@ -90,7 +90,7 @@ if (_patrol) then {
 	[_markerX, _positionX, _sideX, _faction] call SCRT_fnc_location_createPatrols;
 };
 
-if (_frontierX and {_markerX in outposts}) then {
+if (_frontierX and {_markerX in outposts} && {!A3U_disableMortars}) then {
 	_typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
 	_typeVehX = selectRandom (_faction get "staticMortars");
 	_spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
