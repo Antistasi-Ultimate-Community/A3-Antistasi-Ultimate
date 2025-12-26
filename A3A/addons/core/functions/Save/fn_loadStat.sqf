@@ -42,7 +42,8 @@ if (isNil "specialVarLoads") then {
         "destroyedMilAdmins",
         "rebelLoadouts", "randomizeRebelLoadoutUniforms",
         "areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
-        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones"
+        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones",
+        "occupantsRadioKeys", "invaderRadioKeys"
     ] createHashMapFromArray [];
 };
 
@@ -713,6 +714,16 @@ if (_varName in specialVarLoads) then {
 
             publicVariable "unlockedVehicleTypes";
         };
+
+        case 'occupantsRadioKeys': {
+			occupantsRadioKeys = _varValue;
+			publicVariable "occupantsRadioKeys";
+		};
+		
+		case 'invaderRadioKeys': {
+			invaderRadioKeys = _varValue;
+			publicVariable "invaderRadioKeys";
+		};
     };
 } else {
     call compile format ["%1 = %2",_varName,_varValue];
