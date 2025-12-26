@@ -135,6 +135,7 @@ if (isNil "unlockedVehicleTypes") then {
 
 ["invaderRadioKeys", invaderRadioKeys] call A3A_fnc_setStatVariable;
 ["occupantsRadioKeys", occupantsRadioKeys] call A3A_fnc_setStatVariable;
+
 Info_1("Saving revealed zones: %1", _revealedZones);
 Info_1("Saving unlocked vehicle types: %1", unlockedVehicleTypes);
 Info_1("Saving invaders radio keys: %1", invaderRadioKeys);
