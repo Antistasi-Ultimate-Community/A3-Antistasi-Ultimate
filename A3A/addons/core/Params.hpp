@@ -1144,6 +1144,16 @@ class Params
     class enableVehicleAutoLock: VehicleLootParams
     {
         title = $STR_params_enableVehicleAutoLock;
+        tooltip = $STR_params_enableVehicleAutoLock_desc;
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        default = 1;
+        lockInGame = 1;
+    };
+    class enableVehicleAutoLockCiv: VehicleLootParams
+    {
+        title = $STR_params_enableVehicleAutoLockCiv;
+        tooltip = $STR_params_enableVehicleAutoLockCiv_desc;
         values[] = {0,1};
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
         default = 1;
