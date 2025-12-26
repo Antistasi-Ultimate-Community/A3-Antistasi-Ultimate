@@ -723,14 +723,14 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'occupantsRadioKeys': {
-			occupantsRadioKeys = _varValue;
-			publicVariable "occupantsRadioKeys";
-		};
+            occupantsRadioKeys = _varValue;
+            publicVariable "occupantsRadioKeys";
+        };
 		
-		case 'invaderRadioKeys': {
-			invaderRadioKeys = _varValue;
-			publicVariable "invaderRadioKeys";
-		};
+        case 'invaderRadioKeys': {
+            invaderRadioKeys = _varValue;
+            publicVariable "invaderRadioKeys";
+        };
     };
 } else {
     call compile format ["%1 = %2",_varName,_varValue];
