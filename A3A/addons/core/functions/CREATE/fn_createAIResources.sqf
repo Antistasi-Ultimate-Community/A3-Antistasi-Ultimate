@@ -113,7 +113,17 @@ if (_patrol) then {
 };
 
 private _typeVehX = _faction get "flag";
-private _flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
+private _flagX = nil;
+_spawnParameter = [_markerX, "flag"] call A3A_fnc_findSpawnPosition;
+if (_spawnParameter isEqualType []) then {
+	_spawnsUsed pushBack _spawnParameter#2;
+
+	_flagX = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "NONE"];
+	_flagX setDir (_spawnParameter select 1); // this probably doesn't matter, but eh why not?
+} else {
+	Warning_1("Could not find flag placement marker for resource %1; falling back to marker center.", _markerX);
+	_flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
+};
 _flagX allowDamage false;
 [_flagX,"take"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_flagX];
 _vehiclesX pushBack _flagX;
