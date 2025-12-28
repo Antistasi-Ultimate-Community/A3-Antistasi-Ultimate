@@ -1,6 +1,29 @@
 class Params
 {
-    /* * If adding a new section, you need to add
+    /* 
+        * Parameter class structure and guidelines:
+        
+        class ParamClass : ParentClass // all fields are required unless specified otherwise
+        {
+            type = "TypeString"; // Used to group parameters in the GUI. Required for section titles, can be inherited for actual parameters.
+            title = $STR_params_name; // stringtable entry for the parameter or section name
+            tooltip = $STR_params_name_desc; // stringtable entry for the parameter tooltip (optional)
+            values[] = {0,1,2,3}; // integer values for the actual parameter value. If values is {0,1} they will be converted to boolean when loading the save.
+            texts[] = {""}; // string values for the parameter options, shown in the setup GUI dropdown
+            default = 0; // default integer value for the parameter
+            lockOnSave = 0; // Set to 1 if parameter should not be changeable after saving a game (optional, default 0)
+            lockInGame = 0; // Set to 1 if parameter value should not be changeable while in-game (optional, default 0)
+            lockCondition = "false;"; // SQF code run while setup GUI is open that returns true/false to determine if the parameter should be changeable (optional, default "false;" (meaning, not locked))
+            class dependencies { // this block is used to define which other parameters depend on this one, and what values they should take when this parameter is set to a certain value (optional)
+                class AnotherParameterName { // the name of the parameter this one affects (must match the class name in this file){
+                    value = -1; // the value of this parameter that triggers the dependency
+                    dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value'
+                    lockedByDependency = 1; // set to 1 if the dependent parameter should be locked when this dependency is active (optional, default 0)
+                };
+            };
+        };
+    
+        * If adding a new section, you need to add
 
         class XXXParams : AllParams
         {
@@ -77,6 +100,9 @@ class Params
     {
         lockOnSave = 0;
         lockInGame = 0;
+        lockCondition = "false;";
+        lockedByDependency = 0;
+        class dependencies {};
     };
 
     class BasicParams : AllParams
@@ -936,6 +962,16 @@ class Params
         values[] = {10,15,20,25,30,35,40,45,50,100,200,500,-1};
         texts[] = {"10","15","20","25","30","35","40","45","50","100","200","500",$STR_params_server_unlock_no_unlocks};
         default = 25;
+        class dependencies {
+            class unlockedUnlimitedAmmo {
+                value = -1;
+                dependentValue = 0;
+                lockedByDependency = 1;
+            };
+            class allowGuidedLaunchers : unlockedUnlimitedAmmo {};
+            class allowUnlockedExplosives : unlockedUnlimitedAmmo {};
+            class allowUnlockedTNVG : unlockedUnlimitedAmmo {};
+        };
     };
     class A3A_guestItemLimit: UnlockParams
     {
@@ -1258,14 +1294,13 @@ class Params
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         default = 10;
+        lockCondition = "A3A_hasACEMedical;";
+        lockConditionTooltip = $STR_params_unconChance_lockCondition;
     };
-    class unconChanceReb : ExperimentalParams
+    class unconChanceReb : unconChanceEny
     {
         title = $STR_params_unconChanceReb;
         tooltip = $STR_params_unconChanceReb_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
-        default = 10;
     };
     class A3U_enableVehiclesForAI : ExperimentalParams
     {

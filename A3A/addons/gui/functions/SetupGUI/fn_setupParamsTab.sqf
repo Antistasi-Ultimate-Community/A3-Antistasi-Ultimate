@@ -102,11 +102,7 @@ switch (_mode) do
                 _valsCtrl ctrlCommit 0;
                 _allCtrls pushBack _valsCtrl;
 
-                _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
-                    private _display = findDisplay A3A_IDD_SETUPDIALOG;
-                    private _newGame = cbChecked (_display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX);
-                    _display setVariable ["paramsChangedSinceReset", _newGame];
-                }];
+                _valsCtrl ctrlAddEventHandler ["LBSelChanged", { ["paramChangedHandler", _this] call A3A_fnc_setupParamsTab; }];
 
                 if (configName _x isEqualTo "gameMode") then {
                     _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
@@ -146,7 +142,7 @@ switch (_mode) do
                     }];
                 };
 
-                if (configName _x isEqualTo "minWeaps") then {
+                /*if (configName _x isEqualTo "minWeaps") then {
                     _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
                         params ["_thisCtrl", "_index"];
                         private _display = findDisplay A3A_IDD_SETUPDIALOG;
@@ -200,7 +196,7 @@ switch (_mode) do
                             };
                         };
                     }];
-                };
+                };*/
             };
         } forEach ("true" configClasses (A3A_SETUP_CONFIGFILE/"A3A"/"Params"));
 
@@ -282,8 +278,8 @@ switch (_mode) do
             private _cfg = _x getVariable "config";
             private _vals = getArray (_cfg/"values");
             private _lockOnSave = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
-            private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
-            private _locked = _lockOnSave || _lockInGame;
+            /*private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
+            private _locked = _lockOnSave || _lockInGame;*/
             
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
@@ -306,19 +302,20 @@ switch (_mode) do
                 _thisCtrl lbSetColor [_forEachIndex, [[0.85, 0.85, 0, 1], [1, 1, 1, 1]] select (_forEachIndex isEqualTo _index)]
             } forEach _vals;
 
-            if (_saveExists) then { // we're loading an existing save
+            /*if (_saveExists) then { // we're loading an existing save
                 _x setVariable ["locked", _locked];
 
                 if (_locked) then {
                     _x ctrlEnable false;
-                    _x ctrlSetTooltip (localize (["STR_antistasi_dialogs_setup_param_locked", "STR_antistasi_dialogs_setup_param_locked_ingame"] select (_lockInGame)));
+                    _x ctrlSetTooltip (localize (["STR_antistasi_dialogs_setup_param_locked_saveexists", "STR_antistasi_dialogs_setup_param_locked_ingame"] select (_lockInGame)));
                 };
             } else {
                 // reset params to enabled if we're creating a new game or if all we did was load old params (to create a new game)
-                _x setVariable ["locked", false];
+                _x setVariable ["locked", _lockByCond];
                 _x ctrlEnable true;
                 _x ctrlSetTooltip "";
-            };
+            };*/
+            ["updateParamLock", [_x, _saveExists]] call A3A_fnc_setupParamsTab;
         } forEach (_paramsTable getVariable "allCtrls");
     };
 
@@ -488,6 +485,71 @@ switch (_mode) do
         if (isNil "_presetName") then { _presetName = _presetData select 0 };
         [_presetName, [], true] call A3A_fnc_saveParamPreset;
         lbDelete [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _presetIndex];
+    };
+
+    case ("updateParamLock"):
+    {
+        _params params ["_thisCtrl", ["_saveExists", false]];
+
+        private _fnc_setLock = {
+            params ["_lock", "_lockReason"];
+            _thisCtrl setVariable ["locked", _lock];
+            _thisCtrl ctrlEnable !(_lock);
+            _thisCtrl ctrlSetTooltip _lockReason;
+        };
+
+        private _cfg = _thisCtrl getVariable "config";
+
+        switch true do {
+            case (_saveExists && {getNumber (_cfg/"lockOnSave") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_saveexists"] };
+            case (!isNil {serverInitDone} && {getNumber (_cfg/"lockInGame") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_ingame"] };
+            case (call compile getText (_cfg/"lockCondition")): { [true, localize "STR_antistasi_dialogs_setup_param_locked_bycondition"] };
+            case (_thisCtrl getVariable ["lockedByDependency", false]): {
+                private _lockCondTooltip = getTextRaw (_cfg/"lockConditionTooltip");
+                if (isNil "_lockCondTooltip" || _lockCondTooltip isEqualTo "") then { _lockCondTooltip = "STR_antistasi_dialogs_setup_param_locked_bydependency" };
+                [true, localize _lockCondTooltip]
+            };
+            default { [false, ""] }
+        } call _fnc_setLock;
+    };
+
+    case ("paramChangedHandler"):
+    {
+        _params params ["_thisCtrl", "_index"];
+
+        // set the params changed variable for use when switching between saves or to / from new game
+        private _newGame = cbChecked (_display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX);
+        _display setVariable ["paramsChangedSinceReset", _newGame];
+        
+        
+        // update dependent param values
+        private _allValsCtrls = _paramsTable getVariable "allValsCtrls";
+        private _dependencies = "true" configClasses ((_thisCtrl getVariable "config")/"dependencies");
+        if (_dependencies isEqualTo []) exitWith {};
+        
+        {
+            private _cfg = _x;
+            private _cfgName = configName _cfg;
+            private _value = getNumber (_cfg/"value");
+            private _depVal = getNumber (_cfg/"dependentValue");
+            private _lockByDep = getNumber (_cfg/"lockedByDependency") isEqualTo 1;
+
+            private _depCtrl = _allValsCtrls select {_x select 0 isEqualTo _cfgName } select 0 select 1;
+            private _depCfg = _depCtrl getVariable "config";
+            
+            if ((_thisCtrl lbValue _index) isEqualTo _value) then {
+                private _depVals = getArray (_depCfg/"values");
+                private _depIdx = _depVals find _depVal;
+                if (_depIdx isEqualTo -1) exitWith {};
+                _depCtrl lbSetCurSel _depIdx;
+
+                _depCtrl setVariable ["lockedByDependency", true];
+            } else {
+                _depCtrl setVariable ["lockedByDependency", false];
+            };
+
+            ["updateParamLock", [_depCtrl]] call A3A_fnc_setupParamsTab;
+        } forEach (_dependencies);
     };
 };
 

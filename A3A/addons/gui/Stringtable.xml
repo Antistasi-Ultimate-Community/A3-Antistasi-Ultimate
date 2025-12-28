@@ -3788,7 +3788,7 @@
                 <Korean>"%1"(으)로 명명, </Korean>
                 <French>nom "%1", </French>
             </Key>
-            <Key ID="STR_antistasi_dialogs_setup_param_locked">
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_saveexists">
                 <Original>This parameter cannot be changed for an existing save.</Original>
                 <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
@@ -3809,6 +3809,28 @@
                 <Polish>Tego parametru nie można zmienić w grze.</Polish>
                 <Portuguese>Este parâmetro não pode ser alterado durante o jogo.</Portuguese>
                 <Chinesesimp>此参数在游戏中无法更改。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_bycondition">
+                <Original>This parameter cannot be changed because conditions are not met.</Original>
+                <Czech>Tento parametr nelze změnit, protože nejsou splněny podmínky.</Czech>
+                <French>Ce paramètre ne peut pas être modifié car les conditions ne sont pas remplies.</French>
+                <Italian>Questo parametro non può essere modificato perché le condizioni non sono soddisfatte.</Italian>
+                <Korean>이 매개변수는 조건이 충족되지 않아 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить, потому что не выполняются условия.</Russian>
+                <Polish>Tego parametru nie można zmienić, ponieważ warunki nie są spełnione.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado porque as condições não são atendidas.</Portuguese>
+                <Chinesesimp>由于条件不满足，无法更改此参数。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_bydependency">
+                <Original>This parameter cannot be changed because it is locked by other parameters.</Original>
+                <Czech>Tento parametr nelze změnit, protože je zamčen jinými parametry.</Czech>
+                <French>Ce paramètre ne peut pas être modifié car il est verrouillé par d'autres paramètres.</French>
+                <Italian>Questo parametro non può essere modificato perché è bloccato da altri parametri.</Italian>
+                <Korean>이 매개변수는 다른 매개변수에 의해 잠겨 있어 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить, так как он заблокирован другими параметрами.</Russian>
+                <Polish>Tego parametru nie można zmienić, ponieważ jest zablokowany przez inne parametry.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado porque está bloqueado por outros parâmetros.</Portuguese>
+                <Chinesesimp>此参数被其他参数锁定，无法更改。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_warning">
                 <Original>Enabling rivals may have unintended side effects (e.g. possibility of default invader faction appearing) when invaders are disabled.</Original>

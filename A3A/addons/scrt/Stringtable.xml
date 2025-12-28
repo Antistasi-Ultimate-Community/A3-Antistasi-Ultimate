@@ -5634,6 +5634,13 @@
                 <Korean>쓰러진 반란군이 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
                 <French>Chance pour les rebelles abattus de perdre connaissance au lieu d'être tués après avoir subi suffisamment de dégâts</French>
             </Key>
+            <Key ID="STR_params_unconChance_lockCondition">
+                <Original>This parameter is locked because ACE Medical is enabled, which disables Antistasi's unconscious / revive system.</Original>
+                <Russian>Этот параметр заблокирован, потому что активирован ACE Medical, который отключает бессознательную/возрожденную систему Антистаси.</Russian>
+                <Chinesesimp>这个参数被锁定是因为启用了ACE医疗，这会禁用Antistasi的无意识/复活系统。</Chinesesimp>
+                <Korean>이 매개변수는 ACE Medical이 활성화되어 Antistasi의 무의식/부활 시스템을 비활성화하기 때문에 잠겨 있습니다.</Korean>
+                <French>Ce paramètre est verrouillé car ACE Medical est activé, ce qui désactive le système d'inconscience / de réanimation d'Antistasi.</French>
+            </Key>
             <Key ID="STR_params_enableVehiclesForAI">
                 <Original>Enable AI to man vehicles left near friendly markers by default</Original>
                 <Russian>По умолчанию разрешите ИИ управлять турелями и орудиями транспортных средств, оставленными рядом с дружественными маркерами</Russian>
