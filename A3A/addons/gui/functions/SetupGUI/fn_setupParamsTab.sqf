@@ -427,7 +427,7 @@ switch (_mode) do
             private _cfg = _x;
             private _cfgName = configName _cfg;
             private _value = getNumber (_cfg/"value");
-            private _depVal = getNumber (_cfg/"dependentValue");
+            private _depVal = [_cfg, "dependentValue"] call BIS_fnc_returnConfigEntry;
             private _lockByDep = getNumber (_cfg/"lockedByDependency") isEqualTo 1;
 
             private _depCtrl = _allValsCtrls select {_x select 0 isEqualTo _cfgName } select 0 select 1;
@@ -436,9 +436,7 @@ switch (_mode) do
             if ((_thisCtrl lbValue _index) isEqualTo _value) then {
                 private _depVals = getArray (_depCfg/"values");
                 private _depIdx = _depVals find _depVal;
-                if (_depIdx isEqualTo -1) exitWith {};
-                _depCtrl lbSetCurSel _depIdx;
-
+                if (!isNil "_depVal" && {_depIdx isNotEqualTo -1}) then { _depCtrl lbSetCurSel _depIdx };
                 _depCtrl setVariable ["lockedByDependency", _lockByDep];
             } else {
                 _depCtrl setVariable ["lockedByDependency", false];
@@ -452,7 +450,7 @@ switch (_mode) do
         if (configName (_thisCtrl getVariable "config") isEqualTo "gameMode") then {
             private _invDisabled = (_thisCtrl lbValue _index) isEqualTo 3;
             private _invSelCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
-            private _rivEnaCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 1); // ! fragile if param order changes, should fix
+            private _rivEnaCtrl = _allValsCtrls select {_x select 0 isEqualTo "areRivalsEnabled" } select 0 select 1;
 
             _invSelCtrl ctrlEnable !_invDisabled;
             _invSelCtrl ctrlSetTooltip (localize (["", "STR_antistasi_dialogs_setup_inv_disabled"] select _invDisabled));
