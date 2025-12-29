@@ -7,14 +7,14 @@
                 <French>Annuler</French>
                 <Russian>Отмена</Russian>
                 <Chinesesimp>取消</Chinesesimp>
-                <German>Placeholder</German>
+                <German>Abbrechen</German>
                 <Italian>Cancella</Italian>
-                <Portuguese>Placeholder</Portuguese>
+                <Portuguese>Cancelar</Portuguese>
                 <Spanish>Cancelar</Spanish>
                 <Korean>취소</Korean>
-                <Japanese>Placeholder</Japanese>
+                <Japanese>キャンセル</Japanese>
                 <Polish>Anuluj</Polish>
-                <Turkish>Placeholder</Turkish>
+                <Turkish>İptal</Turkish>
                 <Czech>Zrušit</Czech>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Lock">
