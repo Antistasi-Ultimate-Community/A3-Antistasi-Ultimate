@@ -164,6 +164,9 @@
             <Key ID="STR_A3AU_Zeus_VehicleType_Medical">
                 <Original>Medical Vehicle</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Police">
+                <Original>Police Vehicle</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_APC">
                 <Original>APC</Original>
             </Key>

@@ -496,6 +496,7 @@
 		crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Cars";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -573,6 +574,7 @@
 		crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_APCs";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -605,6 +607,7 @@
 		crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Tanks";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -630,6 +633,7 @@
         displayName = $STR_A3AU_Zeus_VehicleType_Boat;
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Boats";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -655,6 +659,7 @@
         displayName = $STR_A3AU_Zeus_VehicleType_Heli;
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Helicopters";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -680,13 +685,14 @@
         displayName = $STR_A3AU_Zeus_VehicleType_TransportHeli;
         GVAR(vehType) = QUOTE(vehiclesHelisTransport);
     };
-	class A3U_Invaders_Vehicle_Plane_Base : Air_F {
+	class A3U_Invaders_Vehicle_Plane_Base : Plane_Base_F {
         scope = 2;
         scopeCurator = 2;
 		crew = "A3U_Invaders_Other_Pilot";
         displayName = $STR_A3AU_Zeus_VehicleType_Plane;
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Planes";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -715,6 +721,7 @@
         crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Turrets";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -740,8 +747,10 @@
         scope = 2;
         scopeCurator = 2;
         displayName = $STR_A3AU_Zeus_VehicleType_Mortar;
+        crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Turrets";
+        side = 0;
         GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(staticMortars);
         class EventHandlers {

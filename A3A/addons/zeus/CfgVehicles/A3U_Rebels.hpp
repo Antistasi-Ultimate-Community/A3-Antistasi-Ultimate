@@ -124,6 +124,7 @@
 		crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Cars";
+		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
         class EventHandlers {
             class ADDON {
@@ -173,6 +174,7 @@
         displayName = $STR_A3AU_Zeus_VehicleType_Boat;
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Boats";
+		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
         GVAR(vehType) = QUOTE(vehiclesBoat);
         class EventHandlers {
@@ -192,21 +194,23 @@
         displayName = $STR_A3AU_Zeus_VehicleType_CivHeli;
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Helicopters";
+		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
-        GVAR(vehType) = QUOTE(vehiclesHelicopter);
+        GVAR(vehType) = QUOTE(vehiclesCivHeli);
         class EventHandlers {
             class ADDON {
                 PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
             };
         };
     };
-	class A3U_Rebels_Vehicle_Plane : Air_F {
+	class A3U_Rebels_Vehicle_Plane : Plane_Base_F {
         scope = 2;
         scopeCurator = 2;
 		crew = "A3U_Rebels_staticCrew";
         displayName = $STR_A3AU_Zeus_VehicleType_Plane;
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Planes";
+		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
         GVAR(vehType) = QUOTE(vehiclesPlane);
         class EventHandlers {
@@ -226,6 +230,7 @@
         crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Turrets";
+		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
         class EventHandlers {
             class ADDON {
@@ -251,8 +256,10 @@
         scope = 2;
         scopeCurator = 2;
         displayName = $STR_A3AU_Zeus_VehicleType_Mortar;
+		crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Turrets";
+		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
         GVAR(vehType) = QUOTE(staticMortars);
         class EventHandlers {

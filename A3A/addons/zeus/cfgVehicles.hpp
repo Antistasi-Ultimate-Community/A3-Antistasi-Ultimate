@@ -22,8 +22,8 @@ class CfgVehicles {
     class Helicopter_F : Helicopter {
         class EventHandlers;
     };
-    class Air;
-    class Air_F : Air {
+    class Plane;
+    class Plane_Base_F : Plane {
         class EventHandlers;
     };
     class StaticWeapon;
