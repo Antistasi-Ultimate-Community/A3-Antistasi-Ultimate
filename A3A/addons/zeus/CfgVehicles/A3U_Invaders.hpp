@@ -9,12 +9,12 @@
         displayName = "Invaders Base";
         faction = "A3U_Invaders";
         editorSubcategory = "EdSubcat_Personnel";
-        //icon = "";
-        //picture = "";
-        //role = "";
-        //nameSound = "";
-        //textSingular = "";
-        //textPlural = "";
+        icon = "iconMan";
+        picture = "";
+        role = "Rifleman";
+        nameSound = "veh_infantry_s";
+        textSingular = "infantry";
+        textPlural = "infantry";
         uniformClass = "";
         backpack = "";
         items[] = {};
@@ -25,8 +25,6 @@
         respawnWeapons[] = {"Throw", "Put"};
         magazines[] = {};
         respawnMagazines[] = {};
-        //genericNames = "";
-        //identityTypes[] = {};
         GVAR(unitFaction) = QUOTE(inv);
         class EventHandlers {
             class ADDON {
@@ -48,6 +46,7 @@
     };
     class A3U_Invaders_Militia_SquadLeader : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
+        icon = "iconManLeader";
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
@@ -58,16 +57,29 @@
     };
     class A3U_Invaders_Militia_Medic : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Medic;
+        attendant = 1;
+        icon = "iconManMedic";
+        picture = "pictureHeal";
         role = "CombatLifeSaver";
+        nameSound = "veh_infantry_medic_s";
+        textSingular = "medic";
+        textPlural = "medics";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_Militia_Engineer : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Engineer;
+        canDeactivateMines = 1;
+        engineer = 1;
+        icon = "iconManEngineer";
+        picture = "pictureRepair";
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_Militia_ExplosivesExpert : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_EExpert;
+        canDeactivateMines = 1;
+        icon = "iconManExplosive";
+        picture = "pictureExplosive";
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
@@ -78,12 +90,20 @@
     };
     class A3U_Invaders_Militia_LAT : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_LAT;
+        icon = "iconManAT";
         role = "MissileSpecialist";
+        nameSound = "veh_infantry_AT_s";
+        textSingular = "AT soldier";
+        textPlural = "AT soldiers";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_Militia_AT : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
+        iconManAT = "iconManAT";
         role = "ATSpecialist";
+        nameSound = "veh_infantry_AT_s";
+        textSingular = "AT soldier";
+        textPlural = "AT soldiers";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_Militia_AA : A3U_Invaders_Militia_Rifleman {
@@ -93,7 +113,11 @@
     };
     class A3U_Invaders_Militia_MachineGunner : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
+        icon = "iconManMG";
         role = "MachineGunner";
+        nameSound = "veh_infantry_MG_s";
+        textSingular = "machinegunner";
+        textPlural = "machinegunners";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_Militia_Marksman : A3U_Invaders_Militia_Rifleman {
@@ -104,11 +128,17 @@
     class A3U_Invaders_Militia_Sniper : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
+        nameSound = "veh_infantry_sniper_s";
+        textSingular = "sniper";
+        textPlural = "snipers";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Invaders_Militia_PatrolSniper : A3U_Invaders_Militia_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
+        nameSound = "veh_infantry_sniper_s";
+        textSingular = "sniper";
+        textPlural = "snipers";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Invaders_Militia_PatrolSpotter : A3U_Invaders_Militia_Rifleman {
@@ -123,6 +153,7 @@
     };
     class A3U_Invaders_Military_SquadLeader : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
+        icon = "iconManLeader";
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
@@ -133,16 +164,29 @@
     };
     class A3U_Invaders_Military_Medic : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Medic;
+        attendant = 1;
+        icon = "iconManMedic";
+        picture = "pictureHeal";
         role = "CombatLifeSaver";
+        nameSound = "veh_infantry_medic_s";
+        textSingular = "medic";
+        textPlural = "medics";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_Military_Engineer : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Engineer;
+        canDeactivateMines = 1;
+        engineer = 1;
+        icon = "iconManEngineer";
+        picture = "pictureRepair";
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_Military_ExplosivesExpert : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_EExpert;
+        canDeactivateMines = 1;
+        icon = "iconManExplosive";
+        picture = "pictureExplosive";
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
@@ -153,12 +197,20 @@
     };
     class A3U_Invaders_Military_LAT : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_LAT;
+        icon = "iconManAT";
         role = "MissileSpecialist";
+        nameSound = "veh_infantry_AT_s";
+        textSingular = "AT soldier";
+        textPlural = "AT soldiers";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_Military_AT : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
+        icon = "iconManAT";
         role = "ATSpecialist";
+        nameSound = "veh_infantry_AT_s";
+        textSingular = "AT soldier";
+        textPlural = "AT soldiers";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_Military_AA : A3U_Invaders_Military_Rifleman {
@@ -168,7 +220,11 @@
     };
     class A3U_Invaders_Military_MachineGunner : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
+        icon = "iconManMG";
         role = "MachineGunner";
+        nameSound = "veh_infantry_MG_s";
+        textSingular = "machinegunner";
+        textPlural = "machinegunners";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_Military_Marksman : A3U_Invaders_Military_Rifleman {
@@ -179,11 +235,17 @@
     class A3U_Invaders_Military_Sniper : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
+        nameSound = "veh_infantry_sniper_s";
+        textSingular = "sniper";
+        textPlural = "snipers";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Invaders_Military_PatrolSniper : A3U_Invaders_Military_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
+        nameSound = "veh_infantry_sniper_s";
+        textSingular = "sniper";
+        textPlural = "snipers";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Invaders_Military_PatrolSpotter : A3U_Invaders_Military_Rifleman {
@@ -198,6 +260,7 @@
     };
     class A3U_Invaders_Elite_SquadLeader : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
+        icon = "iconManLeader";
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
@@ -208,16 +271,29 @@
     };
     class A3U_Invaders_Elite_Medic : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Medic;
+        attendant = 1;
+        icon = "iconManMedic";
+        picture = "pictureHeal";
         role = "CombatLifeSaver";
+        nameSound = "veh_infantry_medic_s";
+        textSingular = "medic";
+        textPlural = "medics";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_Elite_Engineer : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Engineer;
+        canDeactivateMines = 1;
+        engineer = 1;
+        icon = "iconManEngineer";
+        picture = "pictureRepair";
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_Elite_ExplosivesExpert : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_EExpert;
+        canDeactivateMines = 1;
+        icon = "iconManExplosive";
+        picture = "pictureExplosive";
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
@@ -228,12 +304,20 @@
     };
     class A3U_Invaders_Elite_LAT : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_LAT;
+        icon = "iconManAT";
         role = "MissileSpecialist";
+        nameSound = "veh_infantry_AT_s";
+        textSingular = "AT soldier";
+        textPlural = "AT soldiers";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_Elite_AT : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
+        icon = "iconManAT";
         role = "ATSpecialist";
+        nameSound = "veh_infantry_AT_s";
+        textSingular = "AT soldier";
+        textPlural = "AT soldiers";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_Elite_AA : A3U_Invaders_Elite_Rifleman {
@@ -243,7 +327,11 @@
     };
     class A3U_Invaders_Elite_MachineGunner : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
+        icon = "iconManMG";
         role = "MachineGunner";
+        nameSound = "veh_infantry_MG_s";
+        textSingular = "machinegunner";
+        textPlural = "machinegunners";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_Elite_Marksman : A3U_Invaders_Elite_Rifleman {
@@ -254,11 +342,17 @@
     class A3U_Invaders_Elite_Sniper : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
+        nameSound = "veh_infantry_sniper_s";
+        textSingular = "sniper";
+        textPlural = "snipers";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Invaders_Elite_PatrolSniper : A3U_Invaders_Elite_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
+        nameSound = "veh_infantry_sniper_s";
+        textSingular = "sniper";
+        textPlural = "snipers";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Invaders_Elite_PatrolSpotter : A3U_Invaders_Elite_Rifleman {
@@ -268,11 +362,15 @@
     };
     class A3U_Invaders_SpecialForces_Rifleman : A3U_Invaders_Militia_Rifleman {
         editorSubcategory = "A3U_SpecialForces";
+        nameSound = "veh_infantry_SF_s";
+        textSingular = "specop";
+        textPlural = "specops";
         GVAR(unitPrefix) = QUOTE(SF);
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Invaders_SpecialForces_SquadLeader : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
+        icon = "iconManLeader";
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
@@ -283,16 +381,26 @@
     };
     class A3U_Invaders_SpecialForces_Medic : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Medic;
+        attendant = 1;
+        icon = "iconManMedic";
+        picture = "pictureHeal";
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_SpecialForces_Engineer : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_Engineer;
+        canDeactivateMines = 1;
+        engineer = 1;
+        icon = "iconManEngineer";
+        picture = "pictureRepair";
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_SpecialForces_ExplosivesExpert : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_EExpert;
+        canDeactivateMines = 1;
+        icon = "iconManExplosive";
+        picture = "pictureExplosive";
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
@@ -303,11 +411,13 @@
     };
     class A3U_Invaders_SpecialForces_LAT : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_LAT;
+        icon = "iconManAT";
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_SpecialForces_AT : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
+        icon = "iconManAT";
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
@@ -318,6 +428,7 @@
     };
     class A3U_Invaders_SpecialForces_MachineGunner : A3U_Invaders_SpecialForces_Rifleman {
         displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
+        icon = "iconManMG";
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
@@ -338,6 +449,7 @@
     };
     class A3U_Invaders_Police_SquadLeader : A3U_Invaders_Police_Standard {
         displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
+        icon = "iconManLeader";
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
@@ -351,11 +463,18 @@
     class A3U_Invaders_Other_Pilot : A3U_Invaders_Other_Crew {
         displayName = $STR_A3AU_Zeus_UnitType_Pilot;
         role = "Pilot";
+        nameSound = "veh_infantry_pilot_s";
+        textSingular = "pilot";
+        textPlural = "pilots";
         GVAR(unitType) = QUOTE(Pilot);
     };
     class A3U_Invaders_Other_Official : A3U_Invaders_Other_Crew {
         displayName = $STR_A3AU_Zeus_UnitType_Official;
+        icon = "iconManOfficer";
         role = "Officer";
+        nameSound = "veh_infantry_officer_s";
+        textSingular = "officer";
+        textPlural = "officers";
         GVAR(unitType) = QUOTE(Official);
     };
     class A3U_Invaders_Other_Traitor : A3U_Invaders_Other_Crew {
@@ -367,4 +486,267 @@
         displayName = $STR_A3AU_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
+    };
+
+    // ------------ Invader Vehicles ------------ //
+    class A3U_Invaders_Vehicle_Base : Car_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+		crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Cars";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_Basic : A3U_Invaders_Vehicle_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_Basic;
+        GVAR(vehType) = QUOTE(vehiclesBasic);
+    };
+    class A3U_Invaders_Vehicle_LightUnarmed : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_LightUnarmed;
+        GVAR(vehType) = QUOTE(vehiclesLightUnarmed);
+    };
+    class A3U_Invaders_Vehicle_MilitiaCar : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_MilitiaCar;
+        GVAR(vehType) = QUOTE(vehiclesMilitiaCars);
+    };
+    class A3U_Invaders_Vehicle_Police : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_Police;
+        GVAR(vehType) = QUOTE(vehiclesPolice);
+    };
+    class A3U_Invaders_Vehicle_LightArmed : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_LightArmed;
+        GVAR(vehType) = QUOTE(vehiclesLightArmed);
+    };
+    class A3U_Invaders_Vehicle_MilitiaLightArmed : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_MilitiaLightArmed;
+        GVAR(vehType) = QUOTE(vehiclesMilitiaLightArmed);
+    };
+    class A3U_Invaders_Vehicle_Truck : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_Truck;
+        GVAR(vehType) = QUOTE(vehiclesTrucks);
+    };
+    class A3U_Invaders_Vehicle_CargoTruck : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_CargoTruck;
+        GVAR(vehType) = QUOTE(vehiclesCargoTrucks);
+    };
+    class A3U_Invaders_Vehicle_AmmoTruck : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_AmmoTruck;
+        GVAR(vehType) = QUOTE(vehiclesAmmoTrucks);
+    };
+    class A3U_Invaders_Vehicle_RepairTruck : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_RepairTruck;
+        GVAR(vehType) = QUOTE(vehiclesRepairTrucks);
+    };
+    class A3U_Invaders_Vehicle_FuelTruck : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_FuelTruck;
+        GVAR(vehType) = QUOTE(vehiclesFuelTrucks);
+    };
+    class A3U_Invaders_Vehicle_MilitiaTruck : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_MilitiaTruck;
+        GVAR(vehType) = QUOTE(vehiclesMilitiaTrucks);
+    };
+    class A3U_Invaders_Vehicle_Medical : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_Medical;
+        GVAR(vehType) = QUOTE(vehiclesMedical);
+    };
+    class A3U_Invaders_Vehicle_AA : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_AA;
+		editorSubcategory = "EdSubcat_AAs";
+        GVAR(vehType) = QUOTE(vehiclesAA);
+    };
+    class A3U_Invaders_Vehicle_AT : A3U_Invaders_Vehicle_Basic {
+        displayName = $STR_A3AU_Zeus_VehicleType_AT;
+        GVAR(vehType) = QUOTE(vehiclesAT);
+    };
+    class A3U_Invaders_Vehicle_APC_Base : APC_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+		crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_APCs";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_APC : A3U_Invaders_Vehicle_APC_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_LightAPC;
+        GVAR(vehType) = QUOTE(vehiclesAPCs);
+    }; 
+    class A3U_Invaders_Vehicle_LightAPC : A3U_Invaders_Vehicle_APC {
+        displayName = $STR_A3AU_Zeus_VehicleType_APC;
+        GVAR(vehType) = QUOTE(vehiclesLightAPCs);
+    };
+    class A3U_Invaders_Vehicle_MilitiaAPC : A3U_Invaders_Vehicle_APC {
+        displayName = $STR_A3AU_Zeus_VehicleType_MilitiaAPC;
+        GVAR(vehType) = QUOTE(vehiclesMilitiaAPCs);
+    };
+    class A3U_Invaders_Vehicle_IFV : A3U_Invaders_Vehicle_APC {
+        displayName = $STR_A3AU_Zeus_VehicleType_IFV;
+        GVAR(vehType) = QUOTE(vehiclesIFVs);
+    };
+    class A3U_Invaders_Vehicle_Tank_Base : Tank_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+		crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Tanks";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_Tank : A3U_Invaders_Vehicle_Tank_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_Tank;
+        GVAR(vehType) = QUOTE(vehiclesTanks);
+    };
+    class A3U_Invaders_Vehicle_LightTank : A3U_Invaders_Vehicle_Tank {
+        displayName = $STR_A3AU_Zeus_VehicleType_LightTank;
+        GVAR(vehType) = QUOTE(vehiclesLightTanks);
+    };
+    class A3U_Invaders_Vehicle_Boat_Base : Ship_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+		crew = "A3U_Invaders_Other_Crew";
+        displayName = $STR_A3AU_Zeus_VehicleType_Boat;
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Boats";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_TransportBoat : A3U_Invaders_Vehicle_Boat_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_TransportBoat;
+        GVAR(vehType) = QUOTE(vehiclesTransportBoats);
+    }; 
+    class A3U_Invaders_Vehicle_GunBoat : A3U_Invaders_Vehicle_TransportBoat {
+        displayName = $STR_A3AU_Zeus_VehicleType_GunBoat;
+        GVAR(vehType) = QUOTE(vehiclesGunBoats);
+    };
+    class A3U_Invaders_Vehicle_Heli_Base : Helicopter_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+		crew = "A3U_Invaders_Other_Pilot";
+        displayName = $STR_A3AU_Zeus_VehicleType_Heli;
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Helicopters";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_LightHeli : A3U_Invaders_Vehicle_Heli_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_LightHeli;
+        GVAR(vehType) = QUOTE(vehiclesHelisLight);
+    };
+    class A3U_Invaders_Vehicle_LightAttackHeli : A3U_Invaders_Vehicle_LightHeli {
+        displayName = $STR_A3AU_Zeus_VehicleType_LightAttackHeli;
+        GVAR(vehType) = QUOTE(vehiclesHelisLightAttack);
+    };
+    class A3U_Invaders_Vehicle_AttackHeli : A3U_Invaders_Vehicle_LightHeli {
+        displayName = $STR_A3AU_Zeus_VehicleType_AttackHeli;
+        GVAR(vehType) = QUOTE(vehiclesHelisAttack);
+    };
+    class A3U_Invaders_Vehicle_TransportHeli : A3U_Invaders_Vehicle_LightHeli {
+        displayName = $STR_A3AU_Zeus_VehicleType_TransportHeli;
+        GVAR(vehType) = QUOTE(vehiclesHelisTransport);
+    };
+	class A3U_Invaders_Vehicle_Plane_Base : Air_F {
+        scope = 2;
+        scopeCurator = 2;
+		crew = "A3U_Invaders_Other_Pilot";
+        displayName = $STR_A3AU_Zeus_VehicleType_Plane;
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Planes";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_CASPlane : A3U_Invaders_Vehicle_Plane_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_CASPlane;
+        GVAR(vehType) = QUOTE(vehiclesPlanesCAS);
+    };
+    class A3U_Invaders_Vehicle_AAPlane : A3U_Invaders_Vehicle_Plane_Base {
+        displayName = $STR_A3AU_Zeus_VehicleType_AAPlane;
+        GVAR(vehType) = QUOTE(vehiclesPlanesAA);
+    };
+    class A3U_Invaders_Vehicle_TransportPlane : A3U_Invaders_Vehicle_Plane_Base {
+        displayName = $STR_A3AU_Zeus_VehicleType_TransportPlane;
+        GVAR(vehType) = QUOTE(vehiclesPlanesTransport);
+    };
+    class A3U_Invaders_Vehicle_Turret_Base : StaticWeapon_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+        crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Turrets";
+        GVAR(vehFaction) = QUOTE(inv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Invaders_Vehicle_StaticMG : A3U_Invaders_Vehicle_Turret_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_StaticMG;
+        GVAR(vehType) = QUOTE(staticMGs);
+    };
+    class A3U_Invaders_Vehicle_StaticAT : A3U_Invaders_Vehicle_StaticMG {
+        displayName = $STR_A3AU_Zeus_VehicleType_StaticAT;
+        GVAR(vehType) = QUOTE(staticAT);
+    };
+    class A3U_Invaders_Vehicle_StaticAA : A3U_Invaders_Vehicle_StaticMG {
+        displayName = $STR_A3AU_Zeus_VehicleType_StaticAA;
+        GVAR(vehType) = QUOTE(staticAA);
+    };
+	class A3U_Invaders_Vehicle_Mortar : StaticMortar_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3AU_Zeus_VehicleType_Mortar;
+        faction = "A3U_Invaders";
+        editorSubcategory = "EdSubcat_Turrets";
+        GVAR(vehFaction) = QUOTE(inv);
+        GVAR(vehType) = QUOTE(staticMortars);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
     };

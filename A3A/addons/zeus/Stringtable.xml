@@ -131,14 +131,56 @@
             <Key ID="STR_A3AU_Zeus_VehicleType_Basic">
                 <Original>Basic Vehicle</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaCar">
+                <Original>Militia Car</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_LightUnarmed">
                 <Original>Light Unarmed Vehicle</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_LightArmed">
                 <Original>Light Armed Vehicle</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaLightArmed">
+                <Original>Militia Light Armed Vehicle</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_Truck">
                 <Original>Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaTruck">
+                <Original>Militia Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CargoTruck">
+                <Original>Cargo Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_AmmoTruck">
+                <Original>Ammo Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_RepairTruck">
+                <Original>Repair Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_FuelTruck">
+                <Original>Fuel Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Medical">
+                <Original>Medical Vehicle</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_APC">
+                <Original>APC</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_LightAPC">
+                <Original>Light APC</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaAPC">
+                <Original>Militia APC</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_IFV">
+                <Original>IFV</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Tank">
+                <Original>Tank</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_LightTank">
+                <Original>Light Tank</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_AA">
                 <Original>AA Vehicle</Original>
@@ -149,8 +191,44 @@
             <Key ID="STR_A3AU_Zeus_VehicleType_Boat">
                 <Original>Boat</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_TransportBoat">
+                <Original>Transport Boat</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_GunBoat">
+                <Original>Gun Boat</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Heli">
+                <Original>Helicopter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_LightHeli">
+                <Original>Light Helicopter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_LightAttackHeli">
+                <Original>Light Attack Helicopter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_AttackHeli">
+                <Original>Attack Helicopter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_TransportHeli">
+                <Original>Transport Helicopter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivHeli">
+                <Original>Civilian Helicopter</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_Plane">
                 <Original>Plane</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CASPlane">
+                <Original>CAS Plane</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_AAPlane">
+                <Original>CAP AA Plane</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_TransportPlane">
+                <Original>Transport Plane</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivPlane">
+                <Original>Civilian Plane</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_CivCar">
                 <Original>Civilian Car</Original>
@@ -160,12 +238,6 @@
             </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_CivBoat">
                 <Original>Civilian Boat</Original>
-            </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivPlane">
-                <Original>Civilian Plane</Original>
-            </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivHeli">
-                <Original>Civilian Helicopter</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_VehicleType_StaticMG">
                 <Original>Static Machine Gun</Original>

@@ -1,4 +1,4 @@
-    // ------------ Rebels ------------ //
+    // ------------ Rebel Units ------------ //
     class I_Soldier_base_F : SoldierWB {
         class EventHandlers;
     };
@@ -116,6 +116,7 @@
         GVAR(unitType) = QUOTE(Unarmed);
     };
 
+	// ------------ Rebel Vehicles ------------ //
     class A3U_Rebels_Vehicle_Base : Car_F {
         scope = 1;
         scopeCurator = 1;
@@ -225,7 +226,6 @@
         crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Turrets";
-        // displayName = "Test";
         GVAR(vehFaction) = QUOTE(reb);
         class EventHandlers {
             class ADDON {

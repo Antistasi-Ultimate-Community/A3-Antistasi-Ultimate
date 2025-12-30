@@ -6,6 +6,14 @@ class CfgVehicles {
     class Car_F : Car {
         class EventHandlers;
     };
+    class APC;
+    class APC_F : APC {
+        class EventHandlers;
+    };
+    class Tank;
+    class Tank_F : Tank {
+        class EventHandlers;
+    };
     class Ship;
     class Ship_F : Ship {
         class EventHandlers;
