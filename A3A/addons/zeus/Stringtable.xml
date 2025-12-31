@@ -262,20 +262,98 @@
             <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad">
                 <Original>Infantry Squad</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Militia">
+                <Original>Infantry Squad (Militia)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Military">
+                <Original>Infantry Squad (Military)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Elite">
+                <Original>Infantry Squad (Elite)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_SpecialForces">
+                <Original>Infantry Squad (Special Forces)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Police">
+                <Original>Infantry Squad (Police)</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team">
                 <Original>Infantry Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Militia">
+                <Original>Infantry Team (Militia)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Military">
+                <Original>Infantry Team (Military)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Elite">
+                <Original>Infantry Team (Elite)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_SpecialForces">
+                <Original>Infantry Team (Special Forces)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Police">
+                <Original>Infantry Team (Police)</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam">
                 <Original>Machine Gun Team</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Militia">
+                <Original>Machine Gun Team (Militia)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Military">
+                <Original>Machine Gun Team (Military)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Elite">
+                <Original>Machine Gun Team (Elite)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_SpecialForces">
+                <Original>Machine Gun Team (Special Forces)</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam">
                 <Original>AT Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Militia">
+                <Original>AT Team (Militia)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Military">
+                <Original>AT Team (Military)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Elite">
+                <Original>AT Team (Elite)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_SpecialForces">
+                <Original>AT Team (Special Forces)</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam">
                 <Original>AA Team</Original>
             </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_Militia">
+                <Original>AA Team (Militia)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_Military">
+                <Original>AA Team (Military)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_Elite">
+                <Original>AA Team (Elite)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_SpecialForces">
+                <Original>AA Team (Special Forces)</Original>
+            </Key>
             <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam">
                 <Original>Sniper Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Militia">
+                <Original>Sniper Team (Militia)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Military">
+                <Original>Sniper Team (Military)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Elite">
+                <Original>Sniper Team (Elite)</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_SpecialForces">
+                <Original>Sniper Team (Special Forces)</Original>
             </Key>
             <Key ID="STR_A3AU_Zeus_GroupType_Weapons">
                 <Original>Weapons</Original>
