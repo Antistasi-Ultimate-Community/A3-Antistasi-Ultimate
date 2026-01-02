@@ -291,12 +291,16 @@
         <Key ID="STR_A3AU_action_lockpick_not_engineer_no_lockpicks">
             <Original>Since you're not an engineer, you need a lockpick kit to start lockpicking.</Original>
             <Russian>Поскольку вы не инженер, вам нужен набор отмычек, чтобы начать взлом.</Russian>
+            <Korean>엔지니어가 아니기 때문에 자물쇠 따기를 시작하려면 락픽 키트가 필요합니다.</Korean>
+            <Chinesesimp>由于你不是工程师，你需要一个撬锁工具包来开始撬锁。</Chinesesimp>
             <German>Da du kein Ingenieur bist, benötigst du ein Dietrich-Set, um mit dem Knacken zu beginnen.</German>
             <French>Comme vous n'êtes pas ingénieur, vous avez besoin d'un kit de crochetage pour commencer le crochetage.</French>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_tool_break">
             <Original>Your soldiery hands aren't used to fine work. The lockpick broke. Try again.</Original>
             <Russian>Ваши солдатские руки не привыкли к тонкой работе. Отмычка сломалась. Попробуйте снова.</Russian>
+            <Korean>당신의 군인 손은 섬세한 작업에 익숙하지 않습니다. 락픽이 부러졌습니다. 다시 시도하세요.</Korean>
+            <Chinesesimp>你的士兵之手不习惯精细的工作
             <German>Deine Soldatenhände sind nicht an feine Arbeiten gewöhnt. Der Dietrich ist gebrochen. Versuche es erneut.</German>
             <French>Vos mains de soldat ne sont pas habituées à un travail de précision. La serrure a cassé. Essayez encore.</French>
         </Key>
@@ -317,6 +321,7 @@
             <Russian>Многоразовый набор отмычек</Russian>
             <Korean>다회용 락픽 키트</Korean>
             <Chinesesimp>多次使用撬锁工具包</Chinesesimp>
+            <French>Kit de crochetage à usages multiples</French>
         </Key>
         <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse_Desc">
             <Original>This kit contains multiple lockpick tools to unlock vehicles if you're not an engineer.</Original>
