@@ -381,7 +381,7 @@ if (_varName in specialVarLoads) then {
             _list sort false;
             _list apply {
                 _x params["","","_data"];
-                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_manned"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
                 Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
@@ -417,8 +417,8 @@ if (_varName in specialVarLoads) then {
                 if (!isNil "_state") then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
-                if (!isNil "_manned" && {_manned}) then {
-                    staticsToMan pushBack _veh;
+                if (!isNil "_customization") then {
+                    ([_veh] + _customization) call BIS_fnc_initVehicle;
                 };
             };
             publicVariable "staticsToSave";
