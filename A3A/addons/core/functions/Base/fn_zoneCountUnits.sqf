@@ -120,6 +120,9 @@ if (_npcUnits isNotEqualTo []) then {
     }, [_npcUnits, _npcCallback]] call CBA_fnc_execNextFrame;
 };
 
+// In case we picked up any game logic...
+_sidesCount deleteAT "LOGIC";
+
 #if __A3A_DEBUG__
 if !assert(count keys _sidesCount == 4) then {
     Error_3("ZoneCountUnits at %1 found %2 sides (%3), expected 4", _position, count _sidesCount, keys _sidesCount);
