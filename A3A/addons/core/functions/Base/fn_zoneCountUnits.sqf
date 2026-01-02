@@ -121,7 +121,7 @@ if (_npcUnits isNotEqualTo []) then {
 };
 
 // In case we picked up any game logic...
-_sidesCount deleteAT "LOGIC";
+_sidesCount deleteAT sideLogic;
 
 #if __A3A_DEBUG__
 if !assert(count keys _sidesCount == 4) then {
