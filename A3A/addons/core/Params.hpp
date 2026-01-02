@@ -61,7 +61,7 @@ class Params
         _paramsType lbSetValue [_bldParamsIndex, 3];
         _paramsType lbSetValue [_devParamsIndex, 4];
         _paramsType lbSetValue [_sdcParamsIndex, 5]; // and give it an integer value here
-
+        
         _paramsType lbSetCurSel _basicParamsIndex;
 
         * and then add a new case with the above integer value in the _shownTypes switch like:
@@ -135,7 +135,7 @@ class Params
         attr[] = {"server"};
         title = $STR_params_randomEvents;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
     class createAmbientSounds: ScenarioParams
@@ -162,21 +162,21 @@ class Params
     {
         title = $STR_params_server_membership_title;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
     class A3A_guestCommander: MemberParams
     {
         title = $STR_params_guestCommander;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
     class tkPunish: MemberParams
     {
         title = $STR_params_server_teamkill_title;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
     class ScriptParamsSpacer : BasicParams
@@ -476,7 +476,7 @@ class Params
         attr[] = {"server"};
         title = $STR_params_startWithLongRangeRadio;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
     class aceFood: RebelBalanceParams
@@ -498,7 +498,7 @@ class Params
     {
         title = $STR_params_reviveKitsEnabled;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
     class A3A_reviveTime: RebelBalanceParams
@@ -519,7 +519,7 @@ class Params
     {
         title = $STR_A3AU_use_downed_notification;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
     class rallyPointSpawnCount: RebelBalanceParams
@@ -554,7 +554,7 @@ class Params
     {
         title = $STR_A3A_Params_removeRestore_title;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
     };
     class limitedFT: RebelBalanceParams
@@ -568,7 +568,7 @@ class Params
     class fastTravelEnemyCheck: RebelBalanceParams
     {
         title = $STR_params_fastTravelEnemyCheck;
-        values[] = {0, 1};
+        values[] = {0,1};
         texts[] = {$STR_params_fastTravelEnemyCheck_player, $STR_params_fastTravelEnemyCheck_team};
         default = 0;
     };
@@ -764,7 +764,7 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
-    
+
     class BMParamsSpacer : AllParams
     {
         type = "BlackMarket";
@@ -1277,5 +1277,5 @@ class Params
         values[] = {0,3,5,10,20};
         texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
         default = 0;
-};
+    };
 };
