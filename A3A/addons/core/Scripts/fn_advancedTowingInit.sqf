@@ -406,7 +406,7 @@ SA_Attach_Tow_Ropes = {
 SA_Take_Tow_Ropes = {
 	params ["_vehicle","_player"];
 	if(local _vehicle) then {
-		diag_log format ["Take Tow Ropes Called %1", _this];
+		Debug_1("Take Tow Ropes Called %1", _this);
 		private ["_existingTowRopes","_hitchPoint","_rope"];
 		_existingTowRopes = _vehicle getVariable ["SA_Tow_Ropes",[]];
 		if(count _existingTowRopes == 0) then {

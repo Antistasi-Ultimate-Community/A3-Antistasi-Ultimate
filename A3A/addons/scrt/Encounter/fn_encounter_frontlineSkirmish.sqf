@@ -1,3 +1,4 @@
+#include "Constants.inc"
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -14,35 +15,22 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
-private _originPosition = position _player;
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
-
-/* private _potentialOutposts = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {
-    sidesX getVariable [_x, sideUnknown] != teamPlayer && {(getMarkerPos _x) distance2D _player < distanceSPWN*5}
-}; */
-/* private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontline && {sidesX getVariable [_x,sideUnknown] != teamPlayer}) && {(getMarkerPos _x) distance2D _player < distanceSPWN*2}};
-diag_log _frontLine;
-diag_log _frontLine;
-diag_log _frontLine;
-diag_log _frontLine;
-
-diag_log _frontLine; */
 private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
-private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player < distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
+private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player <= distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
 if (_frontlineSitesNearPlayer isEqualTo []) exitWith {
-    Info("No outposts in proximity, aborting Skirmish fronline Event.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+    Info("No outposts in proximity, aborting Skirmish fronline Event and rerolling for another.");
+    [SKIRMISH_FRONTLINE] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
-
 private _FrontlineOutpost = selectRandom _frontlineSitesNearPlayer;
 
 private _side = Occupants;
 private _side2 = Invaders;
 private _faction = Faction(_side);
 private _faction2 = Faction(_side2);
-private _FrontlineOutpostPosition = _originPosition ;//getMarkerPos _FrontlineOutpost;
+private _FrontlineOutpostPosition = getMarkerPos _FrontlineOutpost;
+
+Info_2("Frontline outpost %1 at %2 will be used as center of the event.", _FrontlineOutpost, str _FrontlineOutpostPosition);
 
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};     ///
 private _specOpsArray2 = if (_difficult2) then {selectRandom (_faction2 get "groupSpecOpsRandom")} else {selectRandom ([_faction2, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
@@ -67,7 +55,6 @@ private _fnc_spawngroups = {
 					((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + 
 					(_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars"))
 		};///add a check for a crew or vehicle type, if met order getout because weak vehicle or unarmed.
-		diag_log _vehicles;
 		_skirmishpositionActuallveh = [_skirmishpositionActuall, 10, 50, 10, 0, 5, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
 		_vehicledata = [_skirmishpositionActuallveh, 0, _vehicles, _side] call A3A_fnc_spawnVehicle;
 		_vehicle = _vehicledata select 0;
@@ -102,7 +89,6 @@ private _fnc_spawngroups = {
 					((_faction2 get "vehiclesLightUnarmed") + (_faction2 get "vehiclesLightArmed") + (_faction2 get "vehiclesAirborne") + (_faction2 get "vehiclesLightTanks") + (_faction2 get "vehiclesMilitiaAPCs") + 
 					(_faction2 get "vehiclesMilitiaLightArmed") + (_faction2 get "vehiclesMilitiaCars"))
 		};
-		diag_log _vehicles2;
 		_skirmishpositionActuall2veh = [_skirmishpositionActuall2, 10, 50, 10, 0, 5, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
 		_vehicledata2 = [_skirmishpositionActuall2veh, 0,_vehicles2, _side2] call A3A_fnc_spawnVehicle;
 		_vehicle2 = _vehicledata2 select 0;

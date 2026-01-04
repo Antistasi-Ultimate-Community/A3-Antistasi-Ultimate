@@ -16,6 +16,8 @@
     _indexed  <ARRAY>
 */
 
+#include "..\..\script_component.hpp"
+
 params ["_data"];
 
 private _start = diag_tickTime;
@@ -32,7 +34,6 @@ private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOp
         private _itemAttachments = [];
         private _item = _x;
         if (_item isEqualType []) then {
-            // diag_log format["Test: %1", _item];
             _originalItem = _item;
             _item = _item select 0;
             if (count _originalItem > 1) then {
@@ -43,11 +44,8 @@ private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOp
         {
             if (_item in _indexed) exitWith {}; // element is already indexed, ignore
             if (_item in _x) then {
-                diag_log format["%1 is already unlocked", _item]; 
+                Verbose_1("%1 is already unlocked", _item);
                 _indexed pushBack _item;
-
-                // _array = _array - [_item];
-                // diag_log format["Removing %1 from array", _item];
             };
         } forEach _unlocks;
 
@@ -58,12 +56,9 @@ private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOp
                 private _hasAttachments = if (_itemAttachments findIf {_x != ""} != -1) then {true} else {false};
 
                 if (!_hasAttachments) then {
-                    diag_log format["%1 is already unlocked as a weapon", _item];
+                    Verbose_1("%1 is already unlocked as a weapon", _item);
                     _indexed pushBack _originalItem;
                 };
-            
-                // _array = _array - [_originalItem];
-                // diag_log format["Removing %1 from array", _originalItem];
             };
         } forEach [unlockedWeapons];
     } forEach _array;
@@ -71,6 +66,6 @@ private _unlocks = (unlockedHeadgear + unlockedVests + unlockedNVGs + unlockedOp
 
 private _stop = diag_tickTime;
 
-[format ["Loot Search Took Approximately: %1 seconds.",round(_stop - _start)]] call A3U_fnc_log;
+Verbose_1("Loot Search Took Approximately: %1 seconds.",round(_stop - _start));
 
 _indexed
