@@ -27,12 +27,14 @@ switch (_mode) do
         private _eqpParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_eqp_label");
         private _bldParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bld_label");
         private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
+        private _extParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_ext_label");
 
         _paramsType lbSetValue [_basicParamsIndex, 0];
         _paramsType lbSetValue [_balParamsIndex, 1];
         _paramsType lbSetValue [_eqpParamsIndex, 2];
         _paramsType lbSetValue [_bldParamsIndex, 3];
         _paramsType lbSetValue [_devParamsIndex, 4];
+        _paramsType lbSetValue [_extParamsIndex, 5];
         
         _paramsType lbSetCurSel _basicParamsIndex;
 
@@ -195,7 +197,8 @@ switch (_mode) do
             case (1): { ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"] };
             case (2): { ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"] };
             case (3): { ["Builder"] };
-            case (4): { ["Extender", "Experimental", "Development"] };
+            case (4): { ["Experimental", "Development"] };
+            case (5): { ["Extender"] };
         };
 
         private _rowCount = -1;

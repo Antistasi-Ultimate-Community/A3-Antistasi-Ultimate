@@ -3307,15 +3307,15 @@
                 <Chinesesimp>扩展器参数</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
-                <Original>Extender, Experimental, and Development Parameters</Original>
-                <Czech>Parametry vývoje</Czech>
-                <French>Paramètres de développement</French>
-                <Italian>Parametri di sviluppo</Italian>
-                <Korean>개발 매개 변수</Korean>
-                <Russian>Параметры разработки</Russian>
-                <Polish>Parametry rozwojowe</Polish>
-                <Portuguese>Parâmetros de desenvolvimento</Portuguese>
-                <Chinesesimp>开发参数</Chinesesimp>
+                <Original>Experimental and Development Parameters</Original>
+                <Czech>Experimentální a vývojové parametry</Czech>
+                <French>Paramètres expérimentaux et de développement</French>
+                <Italian>Parametri sperimentali e di sviluppo</Italian>
+                <Korean>실험 및 개발 매개변수</Korean>
+                <Russian>Экспериментальные и разработочные параметры</Russian>
+                <Polish>Parametry eksperymentalne i rozwojowe</Polish>
+                <Portuguese>Parâmetros experimentais e de desenvolvimento</Portuguese>
+                <Chinesesimp>实验与开发参数</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_content_tab_button">
                 <Original>Additional Content</Original>

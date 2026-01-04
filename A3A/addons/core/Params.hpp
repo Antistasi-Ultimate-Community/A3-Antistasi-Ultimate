@@ -153,6 +153,9 @@ class Params
     {
         type = "Member";
         title = $STR_params_member;
+        values[] = {""};
+        texts[] = {""};
+        default = "";
         lockInGame = 1;
     };
     class membershipEnabled: MemberParams
@@ -1175,12 +1178,20 @@ class Params
         default = "";
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
+    class loadoutArsenalDefaultOverride : ExperimentalParams
+    {
+        title = $STR_params_loadoutArsenalDefaultOverride;
+        tooltip = $STR_params_loadoutArsenalDefaultOverride_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
     class limitWeaponsByUnitType : ExperimentalParams
     {
         title = $STR_params_limitWeaponsByUnitType;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 1;
+        default = 0;
     };
     class A3U_HelipadTerrainSmoothing: ExperimentalParams
     {
@@ -1204,6 +1215,15 @@ class Params
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         default = 10;
+    };
+    class A3U_enableVehiclesForAI : ExperimentalParams
+    {
+        title = $STR_params_enableVehiclesForAI;
+        tooltip = $STR_params_enableVehiclesForAI_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+        lockInGame = 1;
     };
 
     class DevelopmentParamsSpacer : AllParams
@@ -1231,5 +1251,15 @@ class Params
         values[] = {-1,1,2};
         texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
         default = 1;
+    };
+
+    // * Ported from community, deliberately not categorized in Ultimate so it's not shown, and default changed to 0 to disable for now to preserve our existing behavior
+    // * only included here to not break A3A_fnc_manageFlagAccess
+    class A3A_flagGarageBlock
+    {
+        title = $STR_A3A_Params_garageAccessTimer_title;
+        values[] = {0,3,5,10,20};
+        texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
+        default = 0;
     };
 };
