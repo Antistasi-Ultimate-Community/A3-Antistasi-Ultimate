@@ -178,7 +178,7 @@ private _hmd = hmd _unit;
 if (sunOrMoon < 1) then { // Night time conditions
     if (_unitPrefix isNotEqualTo "SF" && {_unitPrefix isNotEqualTo "elite"} && {_unit != leader (group _unit)}) then { // Regular units (non-SF, non-elite, non-leader)
         if (tierWar < 4) then {
-            if (_hmd != "" && {!_hmd in dummyNVGs}) then { // Remove only non-dummy NVGs
+            if (_hmd != "" && {!(_hmd in dummyNVGs)}) then { // Remove only non-dummy NVGs
                 _unit unassignItem _hmd;
                 _unit removeItem _hmd;
                 _hmd = "";
