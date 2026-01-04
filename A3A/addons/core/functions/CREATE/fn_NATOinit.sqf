@@ -209,7 +209,7 @@ if (sunOrMoon < 1) then { // Night time conditions
                             _hmd = _arr select 0;
                             _unit removeItem _hmd;
                         };
-                        case (_hmd != "" && {!_hmd in dummyNVGs}): { // Remove only real NVGs
+                        case (_hmd != "" && {!(_hmd in dummyNVGs)}): { // Remove only real NVGs
                             _unit unassignItem _hmd;
                             _unit removeItem _hmd;
                         };
