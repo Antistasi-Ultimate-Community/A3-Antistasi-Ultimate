@@ -765,9 +765,6 @@
 
 			ITEM(MineDetector, 500, MISC_STOCK);
 
-			ITEM(EGVAR(ultimate,LockpickKit_SingleUse), 350, MISC_STOCK);
-			ITEM(EGVAR(ultimate,LockpickKit_MultiUse), 1750, MISC_STOCK);
-
 			ITEM(I_IR_Grenade, 250, MISC_STOCK);
 			ITEM(O_IR_Grenade, 250, MISC_STOCK);
 			ITEM(B_IR_Grenade, 250, MISC_STOCK);
