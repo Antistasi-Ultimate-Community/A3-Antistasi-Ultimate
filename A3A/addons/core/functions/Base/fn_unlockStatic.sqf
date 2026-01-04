@@ -12,4 +12,9 @@ params ["_target"];     //, "_caller", "_actionId", "_arguments"];
 
 _target setVariable ["lockedForAI", nil, true];
 
+if (!(_target in staticsToSave)) then {
+    staticsToSave pushBack _target;
+    publicVariable "staticsToSave";
+};
+
 [_target] remoteExec ["A3A_fnc_updateRebelStatics", 2];

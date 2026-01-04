@@ -35,7 +35,7 @@ _items append [
     [_fuelDrum#0, _fuelDrum#1, localize "STR_A3AP_buyvehdialog_fuel_drum", "refuel", ["fuel", "move", "save", "rotate"]],
     [_fuelTank#0, _fuelTank#1, localize "STR_A3AP_buyvehdialog_fuel_tank", "refuel", ["cmmdr", "fuel", "place", "move", "rotate", "save"]],
     [_medTent#0, _medTent#1, localize "STR_A3AP_buyvehdialog_medical_tent", "heal", ["place", "move", "rotate", "pack"]],
-    [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "place", "move", "rotate", "save"]],
+    [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "ammo", "place", "move", "rotate", "save"]],
     [_repairStation#0, _repairStation#1, localize "STR_A3AP_buyvehdialog_repair_station", "repair", ["cmmdr", "place", "move", "rotate", "pack", "save"]],
     [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "", ["move"]],
     ["Land_PlasticCase_01_small_black_F", 250, "Build Box (Extra Small)", "", ["place", "move", "build"]],

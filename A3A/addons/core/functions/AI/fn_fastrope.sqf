@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
+params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli", ["_landPos", []], ["_reinf", false]];
 
 private _vehType = typeOf _veh;
 
@@ -9,15 +9,15 @@ if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehicles
     _veh setVehicleRadar 1;
 };
 
-private _reinf = if (count _this > 5) then {_this select 5} else {false};
-
 private _xRef = 2;
 private _yRef = 1;
-private _landpos = [];
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
-_landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
-_landpos set [2,0];
+if (_landPos isEqualTo []) then {
+    _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
+    _landpos set [2,0]
+};
+
 {_x setBehaviour "CARELESS";} forEach units _heli;
 private _wp = _heli addWaypoint [_landpos, 0];
 _wp setWaypointType "MOVE";
@@ -42,32 +42,32 @@ if (alive _veh && canMove _veh) then
 {   
 	[_veh] call A3A_fnc_smokeCoverAuto;
 	{
-	[_veh,_x,_xRef,_yRef] spawn
-		{
-		private ["_veh","_unit","_d","_xRef","_yRef"];
-		_veh = _this select 0;
-		_unit = _this select 1;
-		_xRef = _this select 2;
-		_yRef = _this select 3;
-		waitUntil {((speed _veh < 1) and (speed _veh > -1))};
-		_d = -1;
-		unassignVehicle _unit;
-		moveOut _unit;
-		if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};			// Avoid placing dead units underground after vehicle crashes
-		_veh setVectorUp [0,0,1];
-		[_unit,"gunner_standup01"] remoteExec ["switchmove"];
-		_unit attachTo [_veh, [_xRef,_yRef,_d]];
-		while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do
-			{
-			_unit attachTo [_veh, [2,1,_d]];
-			_d = _d - 0.35;
-			sleep 0.005;
+		if (!alive _x) then { continue };
+
+		[_veh,_x,_xRef,_yRef] spawn {
+			private ["_veh","_unit","_d","_xRef","_yRef"];
+			_veh = _this select 0;
+			_unit = _this select 1;
+			_xRef = _this select 2;
+			_yRef = _this select 3;
+			waitUntil {((speed _veh < 1) and (speed _veh > -1))};
+			_d = -1;
+			unassignVehicle _unit;
+			moveOut _unit;
+			if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};			// Avoid placing dead units underground after vehicle crashes
+			_veh setVectorUp [0,0,1];
+			[_unit,"gunner_standup01"] remoteExec ["switchmove"];
+			_unit attachTo [_veh, [_xRef,_yRef,_d]];
+			while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do {
+				_unit attachTo [_veh, [2,1,_d]];
+				_d = _d - 0.35;
+				sleep 0.005;
 			};
-		detach _unit;
-		[_unit,""] remoteExec ["switchMove"];
-		sleep 0.5;
+			detach _unit;
+			[_unit,""] remoteExec ["switchMove"];
+			sleep 0.5;
 		};
-	sleep (2 + random 2);
+		sleep (2 + random 2);
 	} forEach units _groupX;
 };
 
