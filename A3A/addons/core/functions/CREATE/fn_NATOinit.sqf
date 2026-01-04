@@ -216,7 +216,7 @@ if (sunOrMoon < 1) then { // Night time conditions
                     };
                     _hmd = "";
                 } else {
-                    if!(_hmd in dummyNVGs) then { // Assign only real NVGs
+                    if !(_hmd in dummyNVGs) then { // Assign only real NVGs
                         _unit assignItem _hmd;
                     };
                 };
