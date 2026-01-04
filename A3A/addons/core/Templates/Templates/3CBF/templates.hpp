@@ -103,7 +103,7 @@
     {
         side = "Civ";
         flagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
-        name = "3CBF Vanilla";
+        name = "3CBF";
         file = "3CBF_Civ";
         description = $STR_A3AP_setupFactionsTab_vanilla_civ;
     };
