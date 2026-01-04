@@ -191,7 +191,7 @@ if (sunOrMoon < 1) then { // Night time conditions
             };
         };
     } else { // Elite units (SF/elite) handling
-        private _arr = (allNVGs arrayIntersect (items _unit)) select {!_x in dummyNVGs}; // Filter only real NVGs
+        private _arr = (allNVGs arrayIntersect (items _unit));
         if (_arr isNotEqualTo [] || {_hmd != "" && {!(_hmd in dummyNVGs)}}) then {
             if ((10 - tierWar) > random 10 && {_unit != leader (group _unit)}) then {
                 if (_hmd == "" || {_hmd in dummyNVGs}) then { // Take from inventory if dummy is equipped
