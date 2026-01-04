@@ -265,11 +265,8 @@ if (sunOrMoon < 1) then { // Night time conditions
     } else { // Elite units handling
         private _arr = (allNVGs arrayIntersect (items _unit));
         if (count _arr > 0) then {
-            // Search for real NVGs to remove (ignore dummies)
-            private _realNVGs = _arr select {!(_x in dummyNVGs)};
-            if (count _realNVGs > 0) then {
-                _hmd = _realNVGs select 0;
-                _unit removeItem _hmd;
+            	_hmd = _arr select 0;
+            	_unit removeItem _hmd;
             };
         };
     };
