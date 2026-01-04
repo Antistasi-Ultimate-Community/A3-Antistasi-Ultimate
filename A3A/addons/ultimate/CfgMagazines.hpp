@@ -11,7 +11,7 @@ class GVAR(LockpickKitBase) : CA_Magazine
 
 class GVAR(LockpickKit_MultiUse) : GVAR(LockpickKitBase)
 {
-    scope = 1;
+    scope = 2;
     count = 5;
     mass = 25;
     displayname = "$STR_A3AU_Asset_LockpickKit_MultiUse";
@@ -20,7 +20,7 @@ class GVAR(LockpickKit_MultiUse) : GVAR(LockpickKitBase)
 
 class GVAR(LockpickKit_SingleUse) : GVAR(LockpickKitBase)
 {
-    scope = 1;
+    scope = 2;
     count = 1;
     mass = 7.5;
     displayname = "$STR_A3AU_Asset_LockpickKit_SingleUse";
