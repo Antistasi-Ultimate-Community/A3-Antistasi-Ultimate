@@ -33,6 +33,7 @@ class cfgHALsStore
 		#include "config\3cbbaf.hpp"
 		#include "config\3cbf.hpp"
 		#include "config\3cbfcw.hpp"
+		#include "config\a3u.hpp"
 		#include "config\aegis.hpp"
 		#include "config\bwa.hpp"
 		#include "config\csa38.hpp"
@@ -105,6 +106,13 @@ class cfgHALsStore
 				"opticsVanilla",
 				"magazinesVanilla",  
 				"miscVanilla"
+			};
+		};
+		class a3u
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"miscA3U"
 			};
 		};
 		////DLC
