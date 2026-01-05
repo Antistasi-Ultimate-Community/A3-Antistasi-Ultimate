@@ -13,6 +13,7 @@ Optional:
     1: _diameterExtendedCaptureArea - Whether to use average marker size only (traditional, 0) or
         anti-flag yoinking marker additional diameter (default: 0) <NUMBER>
     2: _npcCallback - Callback to execute for each NPC (group != teamPlayer) in the zone, receives the unit as parameter <CODE>
+    3: _friendliesInArea - Array reference to be filled with friendly units in the area <ARRAY>
 
 Example:
     (begin example)
@@ -41,7 +42,8 @@ Author:
 params[
     ["_inPos", [], [[], ""]],
     ["_diameterExtendedCaptureArea", 0, [0]],
-    ["_npcCallback", nil, [{}]]
+    ["_npcCallback", nil, [{}]],
+    ["_friendliesInArea", nil, [[]]]
 ];
 
 Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3", _inPos, _diameterExtendedCaptureArea, VARDEF(_npcCallback));
@@ -99,6 +101,16 @@ if (_useExtendedCount && { _inPos isEqualType "" }) then {
     };
 };
 
+// Fill friendlies array if requested
+if !(isNil "_friendliesInArea") then {
+    _units select {
+        (isPlayer _x) && {side _x == teamPlayer}
+    } apply {
+        _friendliesInArea pushBack _x;
+    };
+};
+
+// Execute NPC callback later
 if !(isNil "_npcCallback") then {
     private _npcUnits = _units select {
         // No air units, no dead or unconscious
