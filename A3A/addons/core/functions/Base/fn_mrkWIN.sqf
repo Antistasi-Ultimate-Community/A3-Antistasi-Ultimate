@@ -60,9 +60,10 @@ _flagX setVariable ["A3A_flagCaptureETA", serverTime + 10, true];
 
 ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3", _outpostGridSquare, _markerX, str player);
 
+private _friendliesInArea = [];
 private _counts = [_markerX, A3A_diameterExtendedCaptureArea, {
     player reveal (_this select 0);
-}] call A3A_fnc_zoneCountUnits;
+}, _friendliesInArea] call A3A_fnc_zoneCountUnits;
 
 private _rebelValue = _counts get teamPlayer;
 private _enemyValue = (_counts get Occupants) + (_counts get Invaders);
@@ -101,20 +102,20 @@ A3A_isPlayerCapturingFlag = nil;
 player removeAction _cancelActionID;
 player playMove "";
 
-private _capRadius = ((markerSize _markerX select 0) + (markerSize _markerX select 1)) / 2;
-_capRadius = 50 max _capRadius;
+if (_friendliesInArea isEqualTo []) then {
+    private _capRadius = ((markerSize _markerX select 0) + (markerSize _markerX select 1)) / 2;
+    _capRadius = 50 max _capRadius;
+    _friendliesInArea = ([_capRadius,0,_markerPos,teamPlayer] call A3A_fnc_distanceUnits) select { isPlayer _x };
+};
 
-{
-    if (isPlayer _x) then
-    {
-        [round (2 * tierWar),_x] remoteExec ["A3A_fnc_addScorePlayer",_x];
-        [round (100 * tierWar),_x] remoteExec ["A3A_fnc_addMoneyPlayer",_x];
-        if (captive _x) then
-        {
-            [_x,false] remoteExec ["setCaptive",_x];
-        };
-    }
-} forEach ([_capRadius,0,_markerPos,teamPlayer] call A3A_fnc_distanceUnits);
+_friendliesInArea apply {
+    [round (2 * tierWar), _x] remoteExec ["A3A_fnc_addScorePlayer", _x];
+    [round (100 * tierWar), _x] remoteExec ["A3A_fnc_addMoneyPlayer", _x];
+
+    if (captive _x) then {
+        [_x, false] remoteExec ["setCaptive", _x];
+    };
+};
 
 ServerInfo_3("Outpost at %1 (%2): Flag capture completed by %3", _outpostGridSquare, _markerX, str player);
 [teamPlayer,_markerX] remoteExec ["A3A_fnc_markerChange",2];
