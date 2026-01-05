@@ -41,10 +41,10 @@ Author:
 params[
     ["_inPos", [], [[], ""]],
     ["_diameterExtendedCaptureArea", 0, [0]],
-    ["_npcCallback", {}, [{}]]
+    ["_npcCallback", nil, [{}]]
 ];
 
-Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3", _inPos, _diameterExtendedCaptureArea, _npcCallback);
+Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3", _inPos, _diameterExtendedCaptureArea, VARDEF(_npcCallback));
 
 private _useExtendedCount = (_diameterExtendedCaptureArea > 0);
 private _positionAndRadius = if (_inPos isEqualType []) then {
@@ -99,25 +99,27 @@ if (_useExtendedCount && { _inPos isEqualType "" }) then {
     };
 };
 
-private _npcUnits = _units select {
-    // No air units, no dead or unconscious
-    !(vehicle _x isKindOf "Air") && { _x call A3A_fnc_canFight }
-} select {
-    private _value = linearConversion[_radius / 2, _radius, _position distance2d _x, 1, 0, true];
-    _sidesCount set[side _x, (_sidesCount get side _x) + _value];
+if !(isNil "_npcCallback") then {
+    private _npcUnits = _units select {
+        // No air units, no dead or unconscious
+        !(vehicle _x isKindOf "Air") && { _x call A3A_fnc_canFight }
+    } select {
+        private _value = linearConversion[_radius / 2, _radius, _position distance2d _x, 1, 0, true];
+        _sidesCount set[side _x, (_sidesCount get side _x) + _value];
 
-    Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
+        Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
 
-    side _x in [Occupants, Invaders];
-};
+        side _x in [Occupants, Invaders];
+    };
 
-if (_npcUnits isNotEqualTo []) then {
-    [{
-        params["_units", "_callback"];
-        _units apply {
-            [_x] call _callback;
-        };
-    }, [_npcUnits, _npcCallback]] call CBA_fnc_execNextFrame;
+    if (_npcUnits isNotEqualTo []) then {
+        [{
+            params["_units", "_callback"];
+            _units apply {
+                [_x] call _callback;
+            };
+        }, [_npcUnits, _npcCallback]] call CBA_fnc_execNextFrame;
+    };
 };
 
 // In case we picked up any game logic...
