@@ -189,16 +189,13 @@ _arrayEst = [];
 {
     // Include buyable items marked as saveable
     // TODO: Do we need to refund the others?
-    if (typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
-        _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
-        continue;
-    };
+    if !(typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
+		if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
+		if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
+		if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
+	};
 
-    if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
-    if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
-    if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
-
-    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
+    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState, [_x] call BIS_fnc_getVehicleCustomization];
 
 } forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
 
@@ -211,7 +208,7 @@ private _nearFriendlyMarker = {
 
 {
 	if ((!alive _x) || {(surfaceIsWater position _x) || {(!isNull attachedTo _x) || {(!(_x call _nearFriendlyMarker))}}}) then { continue };
-	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x, nil, _x in staticsToMan];
+	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x, nil, [_x] call BIS_fnc_getVehicleCustomization, _x in staticsToMan];
 } forEach staticsToSave;
 
 
@@ -221,7 +218,7 @@ _rebMarkers pushBack "Synd_HQ";
 	if (isOnRoad _x && {A3A_builderAllowRoads isEqualTo false}) then {continue};
 	if (surfaceIsWater getPosASL _x) then {continue};
 
-	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
+	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x];
 } forEach A3A_buildingsToSave;
 
 reverse _arrayEst;

@@ -30,4 +30,8 @@ while {isMenuOpen} do {
 _camera cameraEffect ["Terminate", "Back"];
 camDestroy _camera;
 
-[call CBA_fnc_currentUnit, true] call CBA_optics_fnc_restartCamera;
+// Loading of optics addon can be fully suppressed; make sure function exists.
+// See CBA addons\optics\XEH_preInit.sqf:7
+if !(isNil "CBA_optics_fnc_restartCamera") then {
+    [call CBA_fnc_currentUnit, true] call CBA_optics_fnc_restartCamera;
+};
