@@ -203,10 +203,15 @@ _arrayEst = [];
 } forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
 
 
+private _nearFriendlyMarker = {
+	params ["_obj"];
+	private _nearestMarker = [markersX, _obj] call BIS_fnc_nearestPosition;
+	(sidesX getVariable [_nearestMarker, sideUnknown] isEqualTo teamPlayer) && {_obj inArea _nearestMarker};
+};
+
 {
-	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
-		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
-	};
+	if ((!alive _x) || {(surfaceIsWater position _x) || {(!isNull attachedTo _x) || {(!(_x call _nearFriendlyMarker))}}}) then { continue };
+	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x, nil, _x in staticsToMan];
 } forEach staticsToSave;
 
 
