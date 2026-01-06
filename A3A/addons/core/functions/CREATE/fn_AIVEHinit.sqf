@@ -123,7 +123,7 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 		[_veh, _flagAction] remoteExec ["A3A_fnc_flagAction", [teamPlayer, civilian], _veh];
 		
 		if !(locked _veh < 2) exitWith {};
-		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_veh in staticsToSave && {_veh in staticsToMan || {A3U_enableVehiclesForAI}}));
+		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select ((A3U_enableVehiclesForAI || {_veh in staticsToMan}) && {_veh in staticsToSave}));
 
 		// add *all* rebel vehicles to staticsToSave since we don't have an appropriate rebelVehicles var
 		// only vehicles in staticsToSave AND near a rebel marker will actually be saved during the save loop
