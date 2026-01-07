@@ -12,9 +12,10 @@ params ["_target"];      //, "_caller", "_actionId", "_arguments"];
 
 _target setVariable ["lockedForAI", true, true]; 
 
-if (_target in staticsToMan) then {
-    staticsToMan deleteAt (staticsToMan find _target);
-    publicVariable "staticsToMan";
+private _index = staticsToFlip find _target;
+if (_index isNotEqualTo -1) then {
+    staticsToFlip deleteAt _index;
+    publicVariable "staticsToFlip";
 };
 
 // kick any AIs out of the vehicle
