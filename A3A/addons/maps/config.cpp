@@ -88,6 +88,7 @@ class CfgMissions
 	A3A_Mission(VTF_Korsac, "Antistasi Ultimate - Korsac")
 	A3A_Mission(VTF_Korsac_Winter, "Antistasi Ultimate - Korsac Winter")
 	A3A_Mission(regero, "Antistasi Ultimate - Kingdom of Regero")
+	A3A_Mission(drakovac, "Antistasi Ultimate - Drakovac")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif
