@@ -113,7 +113,6 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
 	if (_markers isEqualTo []) exitWith {};
-	if (_typeX isKindOf "StaticMortar") exitWith {};
 	if (_side isNotEqualTo teamPlayer) exitWith {};
 	
 	private _staticVehInit = {
