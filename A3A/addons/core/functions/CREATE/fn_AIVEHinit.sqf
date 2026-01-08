@@ -113,23 +113,32 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
 	if (_markers isEqualTo []) exitWith {};
-	if (_typeX isKindOf "StaticMortar") exitWith {};
 	if (_side isNotEqualTo teamPlayer) exitWith {};
+	
+	private _staticVehInit = {
+		waitUntil { sleep 0.1; !isNil "serverInitDone" };
+		params ["_veh", "_flagAction"];
+		
+		[_veh, _flagAction] remoteExec ["A3A_fnc_flagAction", [teamPlayer, civilian], _veh];
+		
+		if !(locked _veh < 2) exitWith {};
+		private _saved = _veh in staticsToSave;
+		private _flipped = _veh in staticsToFlip;
+		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_saved && {XOR(A3U_enableVehiclesForAI, _flipped)}));
+
+		// add *all* rebel vehicles to staticsToSave since we don't have an appropriate rebelVehicles var
+		// only vehicles in staticsToSave AND near a rebel marker will actually be saved during the save loop
+		// this just ensures that the vehicles left near rebel markers are saved regardless of whether they're manned or not
+		if (_saved) exitWith {};
+		staticsToSave pushBack _veh;
+		publicVariable "staticsToSave";
+	};
+
 	if (_veh isKindOf "StaticWeapon") then {
 		_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
-		[_veh, _side] spawn {
-			waitUntil { sleep 0.1; !isNil "serverInitDone" };
-			params ["_veh", "_side"];
-			if (locked _veh < 2) then { _veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave})) };
-			[_veh, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-		};
+		[_veh, "static"] spawn _staticVehInit;
 	} else {
-		[_veh, _side] spawn {
-			waitUntil { sleep 0.1; !isNil "serverInitDone" };
-			params ["_veh", "_side"];
-			_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave}));
-			[_veh, "vehiclestatic"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-		};
+		[_veh, "vehiclestatic"] spawn _staticVehInit;
 	};
 };
 
