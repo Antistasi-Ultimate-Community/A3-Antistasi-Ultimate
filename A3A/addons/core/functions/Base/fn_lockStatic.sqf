@@ -12,11 +12,8 @@ params ["_target"];      //, "_caller", "_actionId", "_arguments"];
 
 _target setVariable ["lockedForAI", true, true]; 
 
-private _index = staticsToFlip find _target;
-if (_index isNotEqualTo -1) then {
-    staticsToFlip deleteAt _index;
-    publicVariable "staticsToFlip";
-};
+if (A3U_enableVehiclesForAI) then { staticsToFlip pushBackUnique _target } else { staticsToFlip = staticsToFlip - [_target] };
+publicVariable "staticsToFlip";
 
 // kick any AIs out of the vehicle
 {

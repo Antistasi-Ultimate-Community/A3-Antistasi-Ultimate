@@ -12,10 +12,7 @@ params ["_target"];     //, "_caller", "_actionId", "_arguments"];
 
 _target setVariable ["lockedForAI", nil, true];
 
-private _index = staticsToFlip find _target;
-if (_index isEqualTo -1) then {
-    staticsToFlip pushBack _target;
-    publicVariable "staticsToFlip";
-};
+if (A3U_enableVehiclesForAI) then { staticsToFlip = staticsToFlip - [_target] } else { staticsToFlip pushBackUnique _target };
+publicVariable "staticsToFlip";
 
 [_target] remoteExec ["A3A_fnc_updateRebelStatics", 2];
