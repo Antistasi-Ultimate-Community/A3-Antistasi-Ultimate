@@ -120,7 +120,7 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 		[_veh, _side] spawn {
 			waitUntil { sleep 0.1; !isNil "serverInitDone" };
 			params ["_veh", "_side"];
-			_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave}));
+			if (locked _veh < 2) then { _veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (A3U_enableVehiclesForAI && {_veh in staticsToSave})) };
 			[_veh, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
 		};
 	} else {
