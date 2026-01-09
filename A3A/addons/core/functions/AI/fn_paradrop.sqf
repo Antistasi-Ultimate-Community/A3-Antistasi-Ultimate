@@ -76,17 +76,45 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, 0];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
+if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
+    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 3000};
+    _vehicle limitSpeed ((0.8 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 500);         // to slow down vtols
+    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 2000};
+    _vehicle limitSpeed ((0.7 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 400);         // to slooow down vtols
+    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 1500};
+    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250);         // to slow down vtols even more
+} else {
+    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 1000};
+    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250);         // to slow down heli
+};
+
+[_vehicle, _dropPos] spawn {
+    params ["_vehicle", "_dropPos"];
+    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 800};
+    while {_vehicle distance2D _dropPos > 675} do {
+        [_vehicle, "CMFlareLauncher"] call BIS_fnc_fire;
+        [_vehicle, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
+        [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
+        sleep 0.3;
+    };
+};
+
 waitUntil {sleep 1; (currentWaypoint _groupPilot > 0) || (!alive _vehicle) || (!canMove _vehicle)};
 
 if(currentWaypoint _groupPilot > 0) then
 {
     ServerDebug_1("Drop pos %1 reached", _dropPos);
     _vehicle setCollisionLight true;
+
+    private _vehicleVelocity = velocity _vehicle;
+    private _troopVelocity = [(_vehicleVelocity select 0) * 0.2, (_vehicleVelocity select 1) * 0.2, -1];
+
     {
         unAssignVehicle _x;
         //Move them into alternating left/right positions, so their parachutes are less likely to kill each other
         private _pos = if (_forEachIndex % 2 == 0) then {_vehicle modeltoWorld [7, -20, -5]} else {_vehicle modeltoWorld [-7, -20, -5]};
         _x setPosASL AGLtoASL _pos;
+        _x setVelocity _troopVelocity;
         _x spawn
         {
             sleep (getPosATL _this # 2 / 70);      // can't fall faster than that, save some checks
@@ -112,9 +140,39 @@ if(currentWaypoint _groupPilot > 0) then
         };
         sleep 0.5;
   	} forEach units _groupJumper;
+
+    [_vehicle, _exitPos] spawn {
+        params ["_vehicle", "_exitPos"];
+        sleep 2;
+        private _timeout = 0;
+        while {_timeout < 1.5 && alive _vehicle && canMove _vehicle} do {
+            [_vehicle, "CMFlareLauncher"] call BIS_fnc_fire;
+            [_vehicle, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
+            [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
+            _timeout = _timeout + 0.3;
+            sleep 0.3;
+        };
+    };
 };
 
 while {count waypoints _groupJumper > 0} do { deleteWaypoint [_groupJumper, 0] };
+
+private _weapons = count weapons _vehicle;
+private _driverturret = _vehicle weaponsTurret [0];
+private _gunnerturret = _vehicle weaponsTurret [-1];
+private _weaponsturret = count _driverturret + count _gunnerturret;
+
+if (
+    _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
+    {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
+) exitWith {
+    [_vehicle, _groupPilot, _targetPosition] spawn A3A_fnc_attackHeli;
+};
+
+private _wp2 = _groupPilot addWaypoint [_originPosition, 0];
+_wp2 setWaypointType "MOVE";
+_wp2 setWaypointSpeed "FULL";
+_wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
 
 // Waiting here because Arma likes to randomly delete paratrooper waypoints on landing
 waitUntil { sleep 1; isTouchingGround leader _groupJumper };
@@ -132,21 +190,3 @@ if !(_isReinforcement) then
     _wpClear setWaypointType "SAD";
     _groupJumper spawn A3A_fnc_attackDrillAI;
 };
-
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
-
-if (_vehType in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
-};
-
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
-    [_vehicle, _groupPilot, _targetPosition] spawn A3A_fnc_attackHeli
-};
-
-private _wp2 = _groupPilot addWaypoint [_originPosition, 0];
-_wp2 setWaypointType "MOVE";
-_wp2 setWaypointSpeed "FULL";
-_wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];

@@ -88,6 +88,29 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, -1];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
+if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
+    waitUntil {sleep 1; (_plane distance2D _dropPos) < 3000};
+    _plane limitSpeed ((0.8 * (getNumber(configOf _plane >> "maxSpeed"))) min 500);         // to slow down vtols
+    waitUntil {sleep 1; (_plane distance2D _dropPos) < 2000};
+    _plane limitSpeed ((0.7 * (getNumber(configOf _plane >> "maxSpeed"))) min 400);         // to slooow down vtols
+    waitUntil {sleep 1; (_plane distance2D _dropPos) < 1500};
+    _plane limitSpeed ((0.6 * (getNumber(configOf _plane >> "maxSpeed"))) min 250);         // to slow down vtols even more
+} else {
+    waitUntil {sleep 1; (_plane distance2D _dropPos) < 1000};
+    _plane limitSpeed ((0.6 * (getNumber(configOf _plane >> "maxSpeed"))) min 250);         // to slow down heli
+};
+
+[_plane, _dropPos] spawn {
+    params ["_plane", "_dropPos"];
+    waitUntil {sleep 1; (_plane distance2D _dropPos) < 800};
+    while {_plane distance2D _dropPos > 675} do {
+        [_plane, "CMFlareLauncher"] call BIS_fnc_fire;
+        [_plane, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
+        [_plane, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
+        sleep 0.3;
+    };
+};
+
 waitUntil {sleep 1; (_plane getVariable ["dropPosReached", false]) || {!alive _plane || {!canMove _plane}}};
 
 if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["planeDead", false])}) then {
@@ -105,6 +128,10 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
     private _apc = _apcData select 0;
     private _apcCrew = _apcData select 1;
     private _apcGroup = _apcData select 2;
+
+    private _planeVelocity = velocity _plane;
+    private _troopVelocity = [(_planeVelocity select 0) * 0.2, (_planeVelocity select 1) * 0.2, -1];
+    _apc setVelocity [(_planeVelocity select 0) * 0.2, (_planeVelocity select 1) * 0.2, -1];
 
     _plane setVariable ["apc", _apc, true]; // broadcast in case of HC
 
@@ -182,11 +209,14 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
         _groupJumper spawn A3A_fnc_attackDrillAI;
     };
 
+    sleep 1;
+
     {
         unAssignVehicle _x;
         // Move them into alternating left/right positions, so their parachutes are less likely to kill each other
         private _pos = if (_forEachIndex % 2 == 0) then {_plane modeltoWorld [7, -20, -5]} else {_plane modeltoWorld [-7, -20, -5]};
         _x setPos _pos;
+        _x setVelocity _troopVelocity;
         _x spawn {
             waitUntil {sleep 0.25; ((getPos _this) select 2) < 150};
             _this addBackpack "B_Parachute";
@@ -198,6 +228,17 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
         };
         sleep 0.25;
     } forEach units _groupJumper;
+
+    [_plane, _exitPos] spawn {
+        params ["_plane", "_exitPos"];
+        sleep 2;
+        while {_plane distance2D _exitPos > 100 && alive _plane && canMove _plane && _plane distance2D _exitPos < 500} do {
+            [_plane, "CMFlareLauncher"] call BIS_fnc_fire;
+            [_plane, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
+            [_plane, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
+            sleep 0.3;
+        };
+    };
 };
 
 private _weapons = count weapons _plane;
