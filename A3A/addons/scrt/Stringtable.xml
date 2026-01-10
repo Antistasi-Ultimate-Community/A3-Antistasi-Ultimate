@@ -5669,6 +5669,18 @@
                 <Korean>기본적으로 아군 표시 근처에 남겨둔 차량(지휘관/포수 좌석)을 조작할 수 있도록 반란군 AI를 활성화하세요. 플레이어는 여전히 특정 차량과 상호작용하여 AI 사용을 활성화하거나 비활성화할 수 있습니다.</Korean>
                 <French>Activez par défaut l'IA rebelle pour manœuvrer les véhicules (siège commandant / mitrailleuse) laissés près des marqueurs alliés par défaut. Notez que les joueurs peuvent toujours activer ou désactiver l'utilisation de véhicules spécifiques par l'IA en interagissant avec le véhicule.</French>
             </Key>
+            <Key ID="STR_params_disablePATCOMMortars">
+                <Original>Disable PATCOM/Virtual Artillery</Original>
+            </Key>
+            <Key ID="STR_params_disablePATCOMMortars_desc">
+                <Original>Disables virtual and PATCOM artillery.\nVirtual artillery is artillery that technically exists in the world, but can't reasonably be countered.\nPATCOM artillery is the AI handler for physical artillery, resulting in unfair accuracy and reaction.</Original>
+            </Key>
+            <Key ID="STR_params_disableMortars">
+                <Original>Disable Physical Artillery</Original>
+            </Key>
+            <Key ID="STR_params_disableMortars_desc">
+                <Original>Disables physical artillery from being utilised by enemies. Does not disable artillery missions.</Original>
+            </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
