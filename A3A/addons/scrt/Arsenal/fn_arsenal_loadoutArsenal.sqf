@@ -1444,7 +1444,7 @@ switch _mode do {
 		_inventory = switch (_index) do {
 			// If item is in A3A_rebelGear, it should already be unlocked or its qty should be > jna_minItemMember select _index
 			case (IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON): {
-				if !(limitWeaponsByUnitType) exitWith { _inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= (jna_minItemMember select _index)}} } };
+				if !(limitWeaponsByUnitType) exitWith { _inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ([_index, _x select 0] call _minItemsMember)}} } };
 				private _loadoutName = currentRebelLoadout call SCRT_fnc_misc_getLoadoutName;
 				switch (_loadoutName) do {
 					case ("MACHINEGUNNER"): { 
@@ -1466,7 +1466,7 @@ switch _mode do {
 				};
 			};
 			case (IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON): {
-				if !(limitWeaponsByUnitType) exitWith { _inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= (jna_minItemMember select _index)}} } };
+				if !(limitWeaponsByUnitType) exitWith { _inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ([_index, _x select 0] call _minItemsMember)}} } };
 				private _loadoutName = currentRebelLoadout call SCRT_fnc_misc_getLoadoutName;
 				switch (_loadoutName) do {
 					case ("RIFLEMAN"): {
@@ -1488,15 +1488,12 @@ switch _mode do {
 			case (IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2);
 			case (IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG);
 			case (IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL): {
-				_inventory select {
-					private _amountCfg = getNumber (configfile >> "CfgMagazines" >> _x select 0 >> "count");
-					(_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ((jna_minItemMember select _index) * _amountCfg)}}
-				}
+				_inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ([_index, _x select 0] call _minItemsMember)}} }
 			};
 
 			default {
 				// item unlocked (qty == -1) OR (unlocks disabled AND item qty more than min items)
-				_inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= (jna_minItemMember select _index)}} }
+				_inventory select { (_x select 1) == -1 || {minWeaps < 0 && {(_x select 1) >= ([_index, _x select 0] call _minItemsMember)}} }
 			};
 		};
 		if (_index isEqualTo 0 && {_inventory isEqualTo []}) then {
