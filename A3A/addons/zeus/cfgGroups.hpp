@@ -668,7 +668,7 @@ class CfgGroups {
 	};
 	class EAST {
 		class A3U_Invaders {
-			name = $STR_A3U_Zeus_Faction_Occupants;
+			name = $STR_A3U_Zeus_Faction_Invaders;
 			class Infantry_Militia {
 				name = $STR_A3U_Zeus_GroupType_Infantry_Militia;
 				
