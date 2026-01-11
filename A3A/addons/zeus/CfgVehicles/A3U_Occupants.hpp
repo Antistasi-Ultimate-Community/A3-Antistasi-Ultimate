@@ -556,12 +556,12 @@
         //crew = "A3U_Occupants_Other_Crew";
         faction = "A3U_Occupants";
         side = 1;
-        displayName = $STR_A3U_Zeus_VehicleType_LightAPC;
+        displayName = $STR_A3U_Zeus_VehicleType_APC;
         GVAR(vehFaction) = QUOTE(occ);
         GVAR(vehType) = QUOTE(vehiclesAPCs);
     }; 
     class A3U_Occupants_Vehicle_LightAPC : A3U_Occupants_Vehicle_APC {
-        displayName = $STR_A3U_Zeus_VehicleType_APC;
+        displayName = $STR_A3U_Zeus_VehicleType_LightAPC;
         GVAR(vehType) = QUOTE(vehiclesLightAPCs);
     };
     class A3U_Occupants_Vehicle_MilitiaAPC : A3U_Occupants_Vehicle_APC {
