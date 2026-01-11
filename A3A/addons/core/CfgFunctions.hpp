@@ -257,8 +257,10 @@ class CfgFunctions
             class createAIMilAdmin {};
             class createAttackForceAir {};
             class createAttackForceLand {};
+            class createAttackForceLandMilitia {};
             class createAttackForceMixed {};
             class createAttackForceOrbital {};
+            class createAttackForcePolice {};
             class createAttackVehicle {};
             class createAttackVehicleOrbital {};
             class createSDKGarrisons {};

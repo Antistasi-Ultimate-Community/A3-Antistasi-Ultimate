@@ -1,6 +1,6 @@
 /*  
 Maintainer: Silence
-    Create land attack force, police
+    Create land attack force, militia focused
 
 Scope: Server or HC
 Environment: Scheduled (sleeps between unit spawns)
@@ -11,7 +11,9 @@ Arguments:
     <POS or STRING> Position or marker of target location for attack force
     <STRING> Resource pool to use
     <INTEGER> Total number of vehicles to create
-    <STRING> Optional, troop type to use (Default: "Police")
+    <INTEGER> Number of attack/support vehicles to create
+    <INTEGER> Optional, tier modifier to apply to vehicle selection (Default: 0)
+    <STRING> Optional, troop type to use (Default: "Normal")
 
 Return array:
     <SCALAR> Resources spent
@@ -22,9 +24,9 @@ Return array:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_side", "_base", "_target", "_resPool", "_vehCount", ["_tierMod", 0], ["_troopType", "Police"]];
+params ["_side", "_base", "_target", "_resPool", "_vehCount", "_vehAttackCount", ["_tierMod", 0], ["_troopType", "Normal"]];
 private _targpos = if (_target isEqualType []) then { _target } else { markerPos _target };
-// private _transportRatio = 1 - _vehAttackCount / _vehCount;
+private _transportRatio = 1 - _vehAttackCount / _vehCount;
 
 if (_tierMod isEqualTo 0) then {_tierMod = 1};
 
@@ -34,11 +36,15 @@ private _crewGroups = [];
 private _cargoGroups = [];
 
 private _transportPool = [];
+private _supportPool = [];
 
 private _faction = Faction(_side);
-_transportPool = _faction get "vehiclesPolice";
+_transportPool = _faction get "vehiclesMilitiaCars";
+_transportPoolTrucks = _faction get "vehiclesMilitiaTrucks";
+_supportPool = _faction get "vehiclesMilitiaLightArmed";
 
 private _numTransports = 0;
+private _isTransport = _vehAttackCount < _vehCount;            // normal case, first vehicle should be a transport
 private _landPosBlacklist = [];
 
 private _route = [getMarkerPos (_base), getMarkerPos (_target)];
@@ -53,16 +59,16 @@ for "_i" from 1 to _vehCount do {
     private _vehType = ObjNull;
 
     // Attempt to grab veh types
-    _vehType = selectRandom _transportPool;
+    _vehType = selectRandom ([_supportPool, _transportPool] select _isTransport);
     if (isNil "_vehType") then {
         Error_1("Failed to grab land vehicle, attempting to grab a transport vehicle.", _base);
-        // exit early, somehow police have no vehicles
+        _vehType = selectRandom _transportPool;
     };
 
     private _vehData = [_vehType, _troopType, _resPool, _landPosBlacklist, _side, _base, _targPos] call A3A_fnc_createAttackVehicle;
     if !(_vehData isEqualType []) exitWith {
         Error_1("Failed to spawn land vehicle at marker %1", _base);
-    }; // couldn't create for some reason, assume we're out of spawn places?
+    };          // couldn't create for some reason, assume we're out of spawn places?
 
     private _vehicle = (_vehData#0);
 
@@ -80,9 +86,10 @@ for "_i" from 1 to _vehCount do {
     private _crewCost = 10 * (count units (_vehData#1) + count units (_vehData#2));
     _resourcesSpent = _resourcesSpent + _vehCost + _crewCost;
 
-    _numTransports = _numTransports + 1;
+    if (_isTransport) then { _numTransports = _numTransports + 1 };
+    _isTransport = _vehAttackCount == 0 or (_numTransports / _i) < _transportRatio;
 
-    [_vehicle, _route, _vehicles, 120, false, true, [12, 24], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
+    [_vehicle, _route, _vehicles, 60, false, true, [12, 24], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
 
     sleep 10;
 };

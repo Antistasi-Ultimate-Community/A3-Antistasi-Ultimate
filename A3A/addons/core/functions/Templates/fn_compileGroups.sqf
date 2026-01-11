@@ -288,6 +288,14 @@ if (_prefix in ["occ", "inv"]) exitWith {
         _faction get "unitPoliceOfficer", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt"
         , _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt"
     ]];
+    _faction set ["groupPoliceOfficers", [
+        _faction get "unitPoliceOfficer", 
+        _faction get "unitPoliceOfficer", 
+        _faction get "unitPoliceOfficer",
+        _faction get "unitPoliceOfficer",
+        _faction get "unitPoliceOfficer",
+        _faction get "unitPoliceOfficer"
+    ]];
 
 };
 

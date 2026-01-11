@@ -44,7 +44,7 @@ if (_expectedCargo >= 2) then
     private _groupType = call {
         if (_isAirdrop) exitWith { selectRandom ([_faction get "groupsTierAirborne"] call SCRT_fnc_unit_getTiered) };
         if (_troopType == "Normal") exitWith { [_vehicleType, _side] call A3A_fnc_cargoSeats };
-        if (_troopType == "Police") exitWith { _faction get "groupPoliceSquad" };
+        if (_troopType == "Police") exitWith { _faction get "groupPoliceOfficers" };
         if (_troopType == "Specops") exitWith { selectRandom (_faction get "groupSpecOpsRandom") };
         if (_troopType == "Air") exitWith { [_faction get "groupTierAA"] call SCRT_fnc_unit_getTiered };
         if (_troopType == "Tank") exitWith { [_faction get "groupTierAT"] call SCRT_fnc_unit_getTiered };
