@@ -133,8 +133,13 @@ if (isNil "unlockedVehicleTypes") then {
 
 ["unlockedVehicleTypes", unlockedVehicleTypes] call A3A_fnc_setStatVariable;
 
+["invaderRadioKeys", invaderRadioKeys] call A3A_fnc_setStatVariable;
+["occupantsRadioKeys", occupantsRadioKeys] call A3A_fnc_setStatVariable;
+
 Info_1("Saving revealed zones: %1", _revealedZones);
 Info_1("Saving unlocked vehicle types: %1", unlockedVehicleTypes);
+Info_1("Saving invaders radio keys: %1", invaderRadioKeys);
+Info_1("Saving occupants radio keys: %1", occupantsRadioKeys);
 //Antistasi Ultimate variables ^
 
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];

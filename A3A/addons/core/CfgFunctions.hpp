@@ -191,6 +191,7 @@ class CfgFunctions
             class unlockVehicle {};
             class updateRebelStatics {};
             class zoneCheck {};
+            class zoneCountUnits {};
             class checkWinCondition {};
             class checkLossCondition {};
         };
@@ -316,7 +317,6 @@ class CfgFunctions
             class createDialog_shouldLoadPersonalSave {};
             class fastTravelRadio {};
             class mineDialog {};
-            class moveHQObject {};
             class persistentSave {};
             class skiptime {};
             class squadOptions {};
@@ -814,10 +814,11 @@ class CfgFunctions
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
-            class dropObject {};
+            class dropItem {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
+            class isCarrying {};
             class remainingAmmo {};
             class remainingFuel {};
             class rotateItem {};
