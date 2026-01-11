@@ -110,6 +110,15 @@ private _fnc_addGrenades = {
     } forEach _types;
 };
 
+private _fnc_hasMags = {
+    params ["_unit", "_weaponData"];
+
+    private _weapon = if (_weaponData isEqualType []) then { _weaponData select 0 } else { _weaponData };
+    private _compatibleMags = compatibleMagazines _weapon;
+    private _unitMags = magazineCargo _unit;
+    (_compatibleMags arrayIntersect _unitMags) isNotEqualTo [];
+};
+
 private _fnc_addPrimary = {
     params ["_unit", "_overrideClass"];
 
@@ -131,7 +140,8 @@ private _fnc_addPrimary = {
     };
     
     if (isNil "_weaponType" || {_weaponType isEqualTo []}) exitWith {};
-    [_unit, _weaponType, _totalMagWeight] call A3A_fnc_randomWeapon;
+    private _hasMags = !(_weaponType in keys A3A_rebelGear) && {[_unit, _weaponType] call _fnc_hasMags};
+    [_unit, _weaponType, [_totalMagWeight, 0] select (_hasMags)] call A3A_fnc_randomWeapon;
 };
 
 private _fnc_addSecondary = {
@@ -159,7 +169,8 @@ private _fnc_addSecondary = {
     };
 
     if (isNil "_weapon" || {_weapon isEqualTo []}) exitWith {};
-    [_unit, _weapon, 100] call A3A_fnc_randomWeapon;
+    private _hasMags = [_unit, _weapon] call _fnc_hasMags;
+    [_unit, _weapon, [100, 0] select (_hasMags)] call A3A_fnc_randomWeapon;
 };
 
 private _fnc_addHandgun = {
@@ -168,7 +179,8 @@ private _fnc_addHandgun = {
     private _weaponType = if !(isNil "_overrideClass") then { _overrideClass } else { "Handguns" };
     
     if (isNil "_weaponType" || {_weaponType isEqualTo []}) exitWith {};
-    [_unit, _weaponType, 10] call A3A_fnc_randomWeapon;
+    private _hasMags = !(_weaponType in keys A3A_rebelGear) && {[_unit, _weaponType] call _fnc_hasMags};
+    [_unit, _weaponType, [10, 0] select (_hasMags)] call A3A_fnc_randomWeapon;
 };
 
 private _fnc_addBinoculars = {
