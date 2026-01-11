@@ -219,6 +219,42 @@ private _fnc_addAssignedItems = {
     };
 };
 
+private _fnc_addItemSet = {
+    params ["_unit", "_itemSet"];
+
+    private _items = items _unit;
+
+    private _itemsToAdd = [];
+    {
+        for "_i" from 1 to (_x#1) do { _itemsToAdd pushBack (_x#0) };
+    } forEach (_itemSet);
+
+    if ((_itemsToAdd arrayIntersect _items) isEqualTo []) then {
+        { _unit addItem _x } forEach _itemsToAdd;
+    };
+};
+
+private _fnc_addMedItems = {
+    params ["_unit"];
+
+    private _level = switch (_typeTag) do {
+        case ("Rifleman");
+        case ("Engineer");
+        case ("Grenadier");
+        case ("SquadLeader"): {
+            "STANDARD";
+        };
+        case ("Medic"): {
+            "MEDIC";
+        };
+        default {
+            "MINIMAL";
+        };
+    };
+    
+    [_unit, [_level, independent] call A3A_fnc_itemset_medicalSupplies] call _fnc_addItemSet;
+};
+
 private _fnc_addClassEquip = {
     params ["_unit"];
 
@@ -255,16 +291,6 @@ private _fnc_addClassEquip = {
             [_unit, 50] call _fnc_addCharges;
         };
         case ("Medic"): {
-            // not-so-temporary hack
-            private _medItems = [];
-            {
-                for "_i" from 1 to (_x#1) do { _medItems pushBack (_x#0) };
-            } forEach (["MEDIC",independent] call A3A_fnc_itemset_medicalSupplies);
-
-            if ((_medItems arrayIntersect _items) isEqualTo []) then {
-                { _unit addItemToBackpack _x } forEach _medItems;
-            };
-
             if ([_unit, "SmokeGrenades"] call _fnc_hasItemType) exitWith {};
             [_unit, "SmokeGrenades", 5] call _fnc_addGrenades;
         };
@@ -277,29 +303,15 @@ private _fnc_addClassEquip = {
             Warning_1("Unit class does not have class-specific items to add to loadout: %1", _typeTag);
         };
     };
+
+    [_unit, [] call A3A_fnc_itemset_miscEssentials] call _fnc_addItemSet;
+    [_unit] call _fnc_addMedItems;
 };
 
 private _fnc_addUniform = {
     params ["_unit", "_overrideClass"];
 
     if (isNil "_overrideClass") then { _unit forceAddUniform (selectRandom (A3A_faction_reb get 'uniforms')) };
-
-    private _uniform = uniformContainer _unit;
-
-    switch (_typeTag) do {
-        case ("Rifleman");
-        case ("Engineer");
-        case ("Grenadier");
-        case ("SquadLeader"): {
-            { _uniform addItemCargo _x; } forEach ((["STANDARD", independent] call A3A_fnc_itemset_medicalSupplies) + ([] call A3A_fnc_itemset_miscEssentials));
-        };
-        case ("Medic"): {
-            { _uniform addItemCargo _x; } forEach ([] call A3A_fnc_itemset_miscEssentials);
-        };
-        default {
-            { _uniform addItemCargo _x; } forEach ((["MINIMAL", independent] call A3A_fnc_itemset_medicalSupplies) + ([] call A3A_fnc_itemset_miscEssentials));
-        };
-    };
 };
 
 if (!isNil "_customLoadout") then {
