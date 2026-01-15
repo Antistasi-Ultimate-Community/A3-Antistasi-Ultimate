@@ -74,6 +74,7 @@
 "WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
 
 "GermanMen" call _fnc_saveNames;
+["currencySymbol", "DM"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
