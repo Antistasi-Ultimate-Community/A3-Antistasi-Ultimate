@@ -174,6 +174,8 @@ _wp2 setWaypointType "MOVE";
 _wp2 setWaypointSpeed "FULL";
 _wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
 
+_vehicle limitSpeed (2 * getNumber(configOf _vehicle >> "maxSpeed"));	// remove the limit
+
 // Waiting here because Arma likes to randomly delete paratrooper waypoints on landing
 waitUntil { sleep 1; isTouchingGround leader _groupJumper };
 
