@@ -253,6 +253,8 @@ if (
     [_plane, _groupPilot, _targetPosition] spawn A3A_fnc_attackHeli;
 };
 
+_plane limitSpeed (2 * getNumber(configOf _plane >> "maxSpeed"));	// remove the limit
+
 private _wp2 = _groupPilot addWaypoint [_originPosition, -1];
 _wp2 setWaypointType "MOVE";
 _wp2 setWaypointSpeed "FULL";
