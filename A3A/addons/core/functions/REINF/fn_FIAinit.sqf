@@ -101,3 +101,5 @@ if (player == leader _unit) then {
 		_victim setVariable ["spawner",nil,true];
 	}];
 };
+
+["FIAinit", [_unit, _preserveIdentity]] call EFUNC(Events,triggerEvent);

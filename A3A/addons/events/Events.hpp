@@ -157,13 +157,18 @@ class Events {
         isLocal = 1;
         class params {
             class _0 {
-                description = "Side of the faction loaded"; // One of: ["Occ", "Inv", "Reb", "Civ", "Riv"]
+                description = "Side of the faction loaded"; // One of: [west, east, resistance, civilian, opfor]
+                types[] = {"SIDE"};
+                optional = 0;
+            };
+            class _1 {
+                description = "Type of the faction loaded"; // One of: ["Occ", "Inv", "Reb", "Civ", "Riv"]
                 types[] = {"STRING"};
                 optional = 0;
             };
         };
     };
-    class rebelUnitEquipped {
+    class FIAinit {
         isLocal = 1;
         class params {
             class _0 {
