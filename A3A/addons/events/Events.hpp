@@ -168,7 +168,7 @@ class Events {
             };
         };
     };
-    class FIAinit {
+    class rebelUnitEquipped {
         isLocal = 1;
         class params {
             class _0 {
@@ -184,6 +184,21 @@ class Events {
             class _2 {
                 description = "Unit class used to equip the unit"; // e.g. "unitUnarmed", "unitRifleman", etc.
                 types[] = {"STRING"};
+                optional = 1;
+            };
+        };
+    };
+    class FIAinit {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Unit being initialized";
+                types[] = {"OBJECT"};
+                optional = 0;
+            };
+            class _1 {
+                description = "Preserve Identity flag";
+                types[] = {"BOOL"};
                 optional = 1;
             };
         };
