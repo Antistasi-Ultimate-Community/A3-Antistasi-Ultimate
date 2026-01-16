@@ -321,4 +321,6 @@ while {true} do {
 		
 		publicVariable "unlockedVehicleTypes";
 	};
+
+	["resourceCheckComplete", []] call EFUNC(Events,triggerEvent);
 };

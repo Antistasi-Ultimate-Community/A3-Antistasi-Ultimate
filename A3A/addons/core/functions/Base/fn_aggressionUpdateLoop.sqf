@@ -13,7 +13,7 @@ while {true} do
     publicVariable "A3A_activePlayerCount";
 
     //Sleep if no player is online
-    if (A3A_activePlayerCount == 0) then { sleep 60; continue };
+    if (A3A_activePlayerCount == 0) then { ["aggressionUpdateLoopComplete", []] call EFUNC(Events,triggerEvent); sleep 60; continue };
 
     waitUntil {!prestigeIsChanging};
     prestigeIsChanging = true;
@@ -109,6 +109,8 @@ while {true} do
         };
     };
 
+    ["aggressionUpdateLoopComplete", []] call EFUNC(Events,triggerEvent);
+    
     sleep 60;
 };
 

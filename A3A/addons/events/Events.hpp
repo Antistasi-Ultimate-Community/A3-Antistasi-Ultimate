@@ -153,6 +153,15 @@ class Events {
     class saveLoopComplete {
         isLocal = 1;
     };
+    class resourceCheckComplete {
+        isLocal = 1;
+    };
+    class aggressionUpdateLoopComplete {
+        isLocal = 1;
+    };
+    class garbageCleanerComplete {
+        isLocal = 1;
+    };
     class factionLoaded {
         isLocal = 1;
         class params {
