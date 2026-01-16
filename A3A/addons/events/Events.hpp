@@ -153,6 +153,16 @@ class Events {
     class saveLoopComplete {
         isLocal = 1;
     };
+    class factionLoaded {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Side of the faction loaded"; // One of: ["Occ", "Inv", "Reb", "Civ", "Riv"]
+                types[] = {"STRING"};
+                optional = 0;
+            };
+        };
+    };
 /*
     class Example {
         isLocal = 1;
