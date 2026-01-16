@@ -68,14 +68,7 @@ if !(_unitDefinition isEqualTo []) exitWith {
     [_unit] joinSilent _group; // normally, this command is literally pointless. But when we're mixing base classes (e.g opfor) but spawning them as blufor (swap enemy sides selection), it'll make them fight each other unless we do this
 
     if (_canSkip isEqualTo false) then {
-	    if (A3U_Zombies) then {
-			// this is a dirty hack to get around WBK's classes running an init event handler on the unit classes to set their loadouts - defaulting to vanilla loadouts
-			// let the EH run, then override the loadout with the antistasi-generated civ loadouts
-			// Todo: create antistasi zombie unit classes that inherit from WBK classes but don't have that init EH (or create custom EH to use antistasi loadouts)
-			[_unit, _loadouts] spawn {_this params ["_unit", "_loadouts"]; sleep 0.2; _unit setUnitLoadout selectRandom _loadouts}
-		} else {
-			_unit setUnitLoadout selectRandom _loadouts
-		};
+	    _unit setUnitLoadout selectRandom _loadouts;
     };
 	_unit setVariable ["unitType", _type, true];
 
