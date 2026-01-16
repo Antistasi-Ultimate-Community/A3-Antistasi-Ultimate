@@ -71,6 +71,8 @@ try {
         private _spendTarg = [_targPos, _target] select (_target isEqualType objNull and {_target isKindOf "Air"});
         A3A_supportSpends pushBack [_side, _caller, _spendTarg, _resourceCost, time];
     };
+
+    ["supportCalled", [_type, _side]] call EFUNC(Events,triggerEvent);
 } catch {
     _supportName = "";
 

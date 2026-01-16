@@ -203,6 +203,21 @@ class Events {
             };
         };
     };
+    class supportCalled {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Type of support called";
+                types[] = {"STRING"};
+                optional = 0;
+            };
+            class _1 {
+                description = "Side calling the support";
+                types[] = {"SIDE"};
+                optional = 0;
+            };
+        };
+    };
 /*
     class Example {
         isLocal = 1;
