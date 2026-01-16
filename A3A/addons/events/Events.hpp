@@ -144,6 +144,9 @@ class Events {
             };
         };
     };
+    class initClientComplete {
+        isLocal = 1;
+    };
     class initServerComplete {
         isLocal = 1;
     };
