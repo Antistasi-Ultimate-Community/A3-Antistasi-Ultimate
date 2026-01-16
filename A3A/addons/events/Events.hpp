@@ -144,6 +144,12 @@ class Events {
             };
         };
     };
+    class initServerComplete {
+        isLocal = 1;
+    };
+    class saveLoopComplete {
+        isLocal = 1;
+    };
 /*
     class Example {
         isLocal = 1;
