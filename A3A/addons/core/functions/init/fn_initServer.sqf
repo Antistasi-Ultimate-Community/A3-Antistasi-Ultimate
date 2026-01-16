@@ -309,7 +309,6 @@ addMissionEventHandler ["EntityKilled", {
 serverInitDone = true; publicVariable "serverInitDone";
 Info("Setting serverInitDone as true");
 A3A_startupState = "completed"; publicVariable "A3A_startupState";
-["initServerComplete", []] call EFUNC(Events,triggerEvent);
 
 
 // ********************* Initialize loops *******************************************
@@ -409,3 +408,4 @@ if (enableSpectrumDevice) then {
 };
 
 Info("initServer completed");
+["initServerComplete", []] call EFUNC(Events,triggerEvent);
