@@ -218,6 +218,16 @@ class Events {
             };
         };
     };
+    class unitDowned {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Unit that was downed"; // same event for both downed rebels and enemies
+                types[] = {"OBJECT"};
+                optional = 0;
+            };
+        };
+    };
 /*
     class Example {
         isLocal = 1;

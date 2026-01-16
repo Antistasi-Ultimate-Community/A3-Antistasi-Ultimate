@@ -79,6 +79,8 @@ private _makeUnconscious =
 	if (isPlayer _unit) then {_unit allowDamage false};
 	private _fromside = if (!isNull _injurer) then {side group _injurer} else {sideUnknown};
 	[_unit,_fromside] spawn A3A_fnc_unconscious;
+
+	["unitDowned", [_unit]] call EFUNC(Events,triggerEvent);
 };
 
 if (_part == "") then
