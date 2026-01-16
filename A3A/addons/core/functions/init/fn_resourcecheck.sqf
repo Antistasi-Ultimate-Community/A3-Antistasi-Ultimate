@@ -302,7 +302,7 @@ while {true} do {
 				_vehicleTypesUnlocked pushBack (_x#1);
 				_vehicleTypesUnlockedNotify pushBack (_x#1);
 				
-				[_text, _fnc_scriptName] call A3U_fnc_log;
+				Info(_text);
 			};
 		} forEach _conditions;
 

@@ -49,6 +49,8 @@ _para setPos getPos _obj;
 _obj lock false;
 _obj attachTo [_para, _attachTo];
 
+_para setVectorUp [0,0,1];
+
 [_obj, _para] spawn {
 	params ["_obj","_para"];
 

@@ -333,7 +333,7 @@
 
 			ITEM(B_Carryall_eaf_F, 400, MISC_STOCK);
 			ITEM(B_Carryall_green_F, 400, MISC_STOCK);
-			ITEM(B_Carryall_taiga_F, 400, MISC_STOCK);;
+			ITEM(B_Carryall_taiga_F, 400, MISC_STOCK);
 			ITEM(B_Carryall_wdl_F, 400, MISC_STOCK);
 
 			ITEM(B_CombinationUnitRespirator_01_F, 500, MISC_STOCK);

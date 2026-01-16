@@ -9,13 +9,13 @@
                 <Spanish>RECLUTAR UNIDADES</Spanish>
                 <Italian>RECLUTA UNITA</Italian>
                 <Polish>ZWERBUJ JEDNOSTKI</Polish>
-                <Portuguese>Placeholder</Portuguese>
+                <Portuguese>UNIDADES DE RECRUTAMENTO</Portuguese>
                 <Russian>НАНЯТЬ СОЛДАТ</Russian>
-                <German>Placeholder</German>
+                <German>REKRUTIERUNGSEINHEITEN</German>
                 <Chinesesimp>招募单位</Chinesesimp>
                 <Korean>유닛 모집</Korean>
-                <Japanese>Placeholder</Japanese>
-                <Turkish>Placeholder</Turkish>
+                <Japanese>新兵部隊</Japanese>
+                <Turkish>YENI PERSONEL BIRIMLERI</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_militiaman">
                 <Original>Militiaman</Original>
@@ -951,13 +951,13 @@
             <Key ID="STR_antistasi_dialogs_main_fast_travel_tooltip">
                 <Original>This is a placeholder</Original>
                 <Korean>이건 꼭 필요한 요소는 아닙니다</Korean>
-                <Russian>/</Russian>
+                <Russian>Это временная заглушка</Russian>
                 <French>Ceci est un espace réservé</French>
                 <Chinesesimp>这是一个占位符</Chinesesimp>
                 <Czech>Toto je zástupný symbol</Czech>
                 <Italian>Questo è un segnaposto</Italian>
                 <Spanish>Esto es un marcador de posición</Spanish>
-                <Polish>To jest placeholder</Polish>
+                <Polish>To jest tymczasowy zastępca</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_undercover">
                 <Original>Go Undercover</Original>
@@ -3307,15 +3307,15 @@
                 <Chinesesimp>扩展器参数</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
-                <Original>Extender, Experimental, and Development Parameters</Original>
-                <Czech>Parametry vývoje</Czech>
-                <French>Paramètres de développement</French>
-                <Italian>Parametri di sviluppo</Italian>
-                <Korean>개발 매개 변수</Korean>
-                <Russian>Параметры разработки</Russian>
-                <Polish>Parametry rozwojowe</Polish>
-                <Portuguese>Parâmetros de desenvolvimento</Portuguese>
-                <Chinesesimp>开发参数</Chinesesimp>
+                <Original>Experimental and Development Parameters</Original>
+                <Czech>Experimentální a vývojové parametry</Czech>
+                <French>Paramètres expérimentaux et de développement</French>
+                <Italian>Parametri sperimentali e di sviluppo</Italian>
+                <Korean>실험 및 개발 매개변수</Korean>
+                <Russian>Экспериментальные и разработочные параметры</Russian>
+                <Polish>Parametry eksperymentalne i rozwojowe</Polish>
+                <Portuguese>Parâmetros experimentais e de desenvolvimento</Portuguese>
+                <Chinesesimp>实验与开发参数</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_content_tab_button">
                 <Original>Additional Content</Original>

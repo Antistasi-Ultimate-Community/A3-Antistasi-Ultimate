@@ -15,6 +15,7 @@
     Return:
     _message   <STRING>
 */
+#include "..\..\script_component.hpp"
 
 params [
     ["_amount", 2],
@@ -49,7 +50,7 @@ private _unhiddenMarkers = [];
     };
 } forEach markersX;
 
-if (_availableMarkers isEqualTo []) exitWith {["Aborting function. All markers are revealed already.", _fnc_scriptName] call A3U_fnc_log};
+if (_availableMarkers isEqualTo []) exitWith {Verbose("Aborting function. All markers are revealed already.")};
 
 // Grab random markers (if available)
 for "_i" from 0 to (_amount - 1) do {
@@ -67,7 +68,7 @@ private _markerGrids = _message+"<br/><br/>The following zones have been reveale
     _markerGrids = _markerGrids + "<br/>" + _gridPos + "<br/>" + (_name select 0) + "<br/>"; // <br/> gridcoords <br/> zonetype <br/>
 } forEach _unhiddenMarkers;
 
-[format["%1 marker(s) were revealed."], _fnc_scriptName] call A3U_fnc_log;
+Info("Marker(s) were revealed.");
 
 ["Zone Information", _markerGrids] remoteExec ["A3A_fnc_customHint", 0, false];
 
