@@ -228,6 +228,21 @@ class Events {
             };
         };
     };
+    class unitRevived {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Unit that was revived";
+                types[] = {"OBJECT"};
+                optional = 0;
+            };
+            class _1 {
+                description = "Medic unit that performed the revive";
+                types[] = {"OBJECT"};
+                optional = 0;
+            };
+        };
+    };
 /*
     class Example {
         isLocal = 1;

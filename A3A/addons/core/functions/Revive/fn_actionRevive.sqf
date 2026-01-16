@@ -169,4 +169,6 @@ if ((_sideX != side (group _medic)) and ((_sideX == Occupants) or (_sideX == Inv
 };
 _cured setVariable ["incapacitated",false,true];        // why is this applied later? check
 
+["unitRevived", [_cured, _medic]] call EFUNC(Events,triggerEvent);
+
 true;
