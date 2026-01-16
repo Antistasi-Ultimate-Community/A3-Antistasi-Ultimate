@@ -163,6 +163,26 @@ class Events {
             };
         };
     };
+    class rebelUnitEquipped {
+        isLocal = 1;
+        class params {
+            class _0 {
+                description = "Unit that was equipped";
+                types[] = {"OBJECT"};
+                optional = 0;
+            };
+            class _1 {
+                description = "Rebel recruit type"; // type of recruit; 0 = player or player's squad, 1 = high command unit, 2 = garrison unit
+                types[] = {"SCALAR"};
+                optional = 0;
+            };
+            class _2 {
+                description = "Unit class used to equip the unit"; // e.g. "unitUnarmed", "unitRifleman", etc.
+                types[] = {"STRING"};
+                optional = 1;
+            };
+        };
+    };
 /*
     class Example {
         isLocal = 1;

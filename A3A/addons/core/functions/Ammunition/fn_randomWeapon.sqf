@@ -21,7 +21,7 @@
         Scheduled, any machine
     
     Usage:
-        [_unit, "MachineGuns", 150] call A3A_fnc_equipRebel;
+        [_unit, "MachineGuns", 150] call A3A_fnc_randomWeapon;
     
     Return:
         Nothing
