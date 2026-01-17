@@ -85,4 +85,4 @@ if (isClass (configFile/"CfgPatches"/"rhsgref_main")) then {//ToDo: these should
 missionNamespace setVariable ["A3A_lastGarbageCleanTime",serverTime,true];
 Info("Garbage clean completed");
 
-["garbageCleanerComplete", []] call EFUNC(Events,triggerEvent);
+["garbageCleanerComplete", []] spawn EFUNC(Events,triggerEvent);

@@ -275,4 +275,4 @@ if (_unit == gunner objectParent _unit or {(secondaryWeapon _unit) in allAA}) th
         if (!isNull driver _x) then { _unit reveal [_x, 1.5] };
     } forEach (_unit nearEntities ["Air", distanceSPWN*1]);
 };
-["AIInit", [_unit, _side, _marker, _unit getVariable "spawner"]] call EFUNC(Events,triggerEvent);
+["AIInit", [_unit, _side, _marker, _unit getVariable "spawner"]] spawn EFUNC(Events,triggerEvent);

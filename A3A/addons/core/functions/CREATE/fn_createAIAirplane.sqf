@@ -583,7 +583,7 @@ if (random 100 < (20 + tierWar * 3)) then {
 
 { _x setVariable ["originalPos", getPosATL _x] } forEach _vehiclesX;
 
-["locationSpawned", [_markerX, "Airport", true]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "Airport", true]] spawn EFUNC(Events,triggerEvent);
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
@@ -610,4 +610,4 @@ if (!isNil "_ammoBox") then {
 	private _lootCD = 120*16 / ([_markerX] call A3A_fnc_garrisonSize);
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
-["locationSpawned", [_markerX, "Airport", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "Airport", false]] spawn EFUNC(Events,triggerEvent);

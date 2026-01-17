@@ -408,4 +408,4 @@ if (enableSpectrumDevice) then {
 };
 
 Info("initServer completed");
-["initServerComplete", []] call EFUNC(Events,triggerEvent);
+["initServerComplete", []] spawn EFUNC(Events,triggerEvent);

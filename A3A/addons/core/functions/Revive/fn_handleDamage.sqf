@@ -80,7 +80,7 @@ private _makeUnconscious =
 	private _fromside = if (!isNull _injurer) then {side group _injurer} else {sideUnknown};
 	[_unit,_fromside] spawn A3A_fnc_unconscious;
 
-	["unitDowned", [_unit]] call EFUNC(Events,triggerEvent);
+	["unitDowned", [_unit]] spawn EFUNC(Events,triggerEvent);
 };
 
 if (_part == "") then

@@ -88,7 +88,7 @@ private _makeUnconscious =
 
 	[_unit,_injurer] spawn A3A_fnc_unconsciousAAF;
 
-	["unitDowned", [_unit]] call EFUNC(Events,triggerEvent);
+	["unitDowned", [_unit]] spawn EFUNC(Events,triggerEvent);
 };
 
 if (side _injurer == teamPlayer) then

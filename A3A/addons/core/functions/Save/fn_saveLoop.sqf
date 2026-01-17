@@ -493,4 +493,4 @@ _saveHintText = [
 [localize "STR_A3A_save_persisent_save",_saveHintText] remoteExecCall ["A3A_fnc_customHint",0,false];
 Info("Persistent Save Completed");
 
-["saveLoopComplete", []] call EFUNC(Events,triggerEvent);
+["saveLoopComplete", []] spawn EFUNC(Events,triggerEvent);

@@ -327,4 +327,4 @@ Verbose_3("Class %1, type %2, loadout %3", _unitType, _recruitType, str (getUnit
 
 if (_recruitType isEqualTo 0) then { _unit setVariable ["orgLoadout", getUnitLoadout _unit, true] };
 
-["rebelUnitEquipped", [_unit, _recruitType, _forceClass]] call EFUNC(Events,triggerEvent);
+["rebelUnitEquipped", [_unit, _recruitType, _forceClass]] spawn EFUNC(Events,triggerEvent);

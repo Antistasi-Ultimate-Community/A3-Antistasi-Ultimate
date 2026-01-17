@@ -77,7 +77,7 @@ switch (true) do {
 		_marker setMarkerColor colorTeamPlayer;
 		_marker setMarkerText _textX;
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		["RebelControlCreated", [_marker, "watchpost"]] call EFUNC(Events,triggerEvent);
+		["RebelControlCreated", [_marker, "watchpost"]] spawn EFUNC(Events,triggerEvent);
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

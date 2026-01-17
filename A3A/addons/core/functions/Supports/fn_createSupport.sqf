@@ -72,7 +72,7 @@ try {
         A3A_supportSpends pushBack [_side, _caller, _spendTarg, _resourceCost, time];
     };
 
-    ["supportCalled", [_type, _side]] call EFUNC(Events,triggerEvent);
+    ["supportCalled", [_type, _side]] spawn EFUNC(Events,triggerEvent);
 } catch {
     _supportName = "";
 

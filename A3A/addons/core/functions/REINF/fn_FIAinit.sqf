@@ -102,4 +102,4 @@ if (player == leader _unit) then {
 	}];
 };
 
-["FIAinit", [_unit, _preserveIdentity]] call EFUNC(Events,triggerEvent);
+["FIAinit", [_unit, _preserveIdentity]] spawn EFUNC(Events,triggerEvent);

@@ -168,7 +168,7 @@ for "_i" from 0 to (count _groups) - 1 do {
 	};
 };
 
-["locationSpawned", [_markerX, "RebelOutpost", true]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "RebelOutpost", true]] spawn EFUNC(Events,triggerEvent);
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
@@ -180,4 +180,4 @@ deleteGroup _groupStatics;
 deleteGroup _groupMortars;
 
 {if (!(_x in staticsToSave)) then {deleteVehicle _x}} forEach _vehiclesX;
-["locationSpawned", [_markerX, "RebelOutpost", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "RebelOutpost", false]] spawn EFUNC(Events,triggerEvent);
