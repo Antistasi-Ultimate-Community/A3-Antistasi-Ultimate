@@ -46,7 +46,7 @@ params[
     ["_friendliesInArea", nil, [[]]]
 ];
 
-Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3", _inPos, _diameterExtendedCaptureArea, VARDEF(_npcCallback));
+Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3", _inPos, _diameterExtendedCaptureArea, VARDEF(_npcCallback,"N/A"));
 
 private _useExtendedCount = (_diameterExtendedCaptureArea > 0);
 private _positionAndRadius = if (_inPos isEqualType []) then {
