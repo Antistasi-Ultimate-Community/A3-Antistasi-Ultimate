@@ -110,20 +110,20 @@ if !(isNil "_friendliesInArea") then {
     };
 };
 
+private _npcUnits = _units select {
+    // No air units, no dead or unconscious
+    !(vehicle _x isKindOf "Air") && { _x call A3A_fnc_canFight }
+} select {
+    private _value = linearConversion[_radius / 2, _radius, _position distance2d _x, 1, 0, true];
+    _sidesCount set[side _x, (_sidesCount get side _x) + _value];
+
+    Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
+
+    side _x in [Occupants, Invaders];
+};
+
 // Execute NPC callback later
 if !(isNil "_npcCallback") then {
-    private _npcUnits = _units select {
-        // No air units, no dead or unconscious
-        !(vehicle _x isKindOf "Air") && { _x call A3A_fnc_canFight }
-    } select {
-        private _value = linearConversion[_radius / 2, _radius, _position distance2d _x, 1, 0, true];
-        _sidesCount set[side _x, (_sidesCount get side _x) + _value];
-
-        Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
-
-        side _x in [Occupants, Invaders];
-    };
-
     if (_npcUnits isNotEqualTo []) then {
         [{
             params["_units", "_callback"];
