@@ -20,63 +20,77 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
+["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
+
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
+
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate; 	//Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_NATO_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
-["vehiclesBasic", []] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
-["vehiclesLightUnarmed", ["EST_Offroad_Army", "EST_Offroad_Comms_Army", "EST_Offroad_Covered_Army", "EST_Strider_Army"]] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
-["vehiclesLightArmed",["EST_Offroad_Armed_Army", "EST_Strider_Army_HMG", "EST_Strider_Army_GMG"]] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
-["vehiclesTrucks", ["EST_Tatra_Unarmed", "EST_MTVR_Covered"]] call _fnc_saveToTemplate; 			//this line determines the trucks -- Example: ["vehiclesTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
-["vehiclesCargoTrucks", ["EST_Tatra_Unarmed", "EST_MTVR_Covered"]] call _fnc_saveToTemplate; 		//this line determines cargo trucks -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
-["vehiclesAmmoTrucks", ["EST_Tatra_Ammo", "EST_MTVR_Ammo"]] call _fnc_saveToTemplate; 		//this line determines ammo trucks -- Example: ["vehiclesAmmoTrucks", ["B_Truck_01_ammo_F"]] -- Array, can contain multiple assets
-["vehiclesRepairTrucks", ["EST_Offroad_Repair_Army", "EST_Tatra_Repair", "EST_MTVR_Repair"]] call _fnc_saveToTemplate; 		//this line determines repair trucks -- Example: ["vehiclesRepairTrucks", ["B_Truck_01_Repair_F"]] -- Array, can contain multiple assets
-["vehiclesFuelTrucks", ["EST_Tatra_Fuel", "EST_MTVR_Fuel"]] call _fnc_saveToTemplate;		//this line determines fuel trucks -- Array, can contain multiple assets
+["vehiclesBasic", ["EST_Quadbike"]] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
+["vehiclesLightUnarmed", ["EST_Army_Offroad", "EST_Army_Offroad_Comms", "EST_Army_Offroad_Covered", "EST_Strider_Army"]] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
+["vehiclesLightArmed",["EST_Army_Offroad_Armed", "EST_Strider_Army_HMG", "EST_Strider_Army_GMG"]] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
+["vehiclesTrucks", ["EST_MTVR_Covered", "EST_Tatra_Unarmed"]] call _fnc_saveToTemplate; 			//this line determines the trucks -- Example: ["vehiclesTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
+["vehiclesCargoTrucks", ["EST_MTVR_Covered", "EST_Tatra_Unarmed"]] call _fnc_saveToTemplate; 		//this line determines cargo trucks -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]] -- Array, can contain multiple assets
+["vehiclesAmmoTrucks", ["EST_MTVR_Ammo", "EST_Tatra_Ammo"]] call _fnc_saveToTemplate; 		//this line determines ammo trucks -- Example: ["vehiclesAmmoTrucks", ["B_Truck_01_ammo_F"]] -- Array, can contain multiple assets
+["vehiclesRepairTrucks", ["EST_Tatra_Repair", "EST_MTVR_Repair", "EST_Army_Offroad_Repair"]] call _fnc_saveToTemplate; 		//this line determines repair trucks -- Example: ["vehiclesRepairTrucks", ["B_Truck_01_Repair_F"]] -- Array, can contain multiple assets
+["vehiclesFuelTrucks", ["EST_MTVR_Fuel", "EST_Tatra_Fuel"]] call _fnc_saveToTemplate;		//this line determines fuel trucks -- Array, can contain multiple assets
 ["vehiclesMedical", ["EST_Army_Marid_Medical"]] call _fnc_saveToTemplate;			//this line determines medical vehicles -- Array, can contain multiple assets
 ["vehiclesAPCs", ["EST_Army_Marid"]] call _fnc_saveToTemplate; 				//this line determines APCs -- Example: ["vehiclesAPCs", ["B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_CRV_F"]] -- Array, can contain multiple assets
 ["vehiclesTanks", ["EST_Army_Challenger2"]] call _fnc_saveToTemplate; 			//this line determines tanks -- Example: ["vehiclesTanks", ["B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"]] -- Array, can contain multiple assets
-["vehiclesLightTanks", ["EST_Army_Rhino", "EST_Army_Rhino_UP"]] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
+["vehiclesLightTanks", ["EST_Army_Hunter", "EST_Army_Hunter_UP", "EST_Army_Hunter_UP_APX_S", "EST_Army_Hunter_APX_S"]] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
 ["vehiclesAA", ["EST_Avenger"]] call _fnc_saveToTemplate; 				//this line determines AA vehicles -- Example: ["vehiclesAA", ["B_APC_Tracked_01_AA_F"]] -- Array, can contain multiple assets
-["vehiclesLightAPCs", ["EST_Army_Marid_Unarmed"]] call _fnc_saveToTemplate;			//this line determines light APCs
-["vehiclesIFVs", ["EST_Army_Mora"]] call _fnc_saveToTemplate;				//this line determines IFVs
+["vehiclesLightAPCs", ["EST_Army_Marid_HMG", "EST_Army_Marid_Unarmed"]] call _fnc_saveToTemplate;			//this line determines light APCs
+["vehiclesIFVs", ["EST_Army_Brawler", "EST_Army_Brawler_APX_S", "EST_Army_Brawler_APX_S2"]] call _fnc_saveToTemplate;				//this line determines IFVs
 
 
-["vehiclesTransportBoats", ["EST_Army_RHIB"]] call _fnc_saveToTemplate; 	//this line determines transport boats -- Example: ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] -- Array, can contain multiple assets
-["vehiclesGunBoats", ["EST_Navy_Speedboat_Minigun", "EST_Navy_Speedboat_HMG"]] call _fnc_saveToTemplate; 			//this line determines gun boats -- Example: ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] -- Array, can contain multiple assets
+["vehiclesTransportBoats", ["EST_Navy_Assault_Boat", "EST_Navy_RHIB"]] call _fnc_saveToTemplate; 	//this line determines transport boats -- Example: ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] -- Array, can contain multiple assets
+["vehiclesGunBoats", ["EST_Navy_Speedboat_HMG", "EST_Navy_Speedboat_Minigun"]] call _fnc_saveToTemplate; 			//this line determines gun boats -- Example: ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] -- Array, can contain multiple assets
 ["vehiclesAmphibious", []] call _fnc_saveToTemplate; 		//this line determines amphibious vehicles  -- Example: ["vehiclesAmphibious", ["B_APC_Wheeled_01_cannon_F"]] -- Array, can contain multiple assets
 
 //Add FFAA Hornet Submod
-private _vehiclesPlanesCAS = ["EST_Gryphon", "EST_Navy_AV8B"];
-private _vehiclesPlanesAA = ["EST_Gryphon"];
+private _vehiclesPlanesCAS = ["EST_Sparrowhawk", "EST_Navy_VF17"];
+private _vehiclesPlanesAA = ["EST_Sparrowhawk"];
 
-if (isClass (configFile >> "CfgPatches" >> "Estraria_Hornet")) then {
-    _vehiclesPlanesCAS append ["EST_Hornet", "EST_Hornet_Navy"];
-    _vehiclesPlanesAA append ["EST_Hornet", "EST_Hornet_Navy"];
+if (isClass (configFile >> "CfgPatches" >> "Estraria_Soft_FFAA")) then {
+    _vehiclesPlanesCAS append ["EST_Peregrine", "EST_Peregrine_Navy"];
+    _vehiclesPlanesAA append ["EST_Peregrine", "EST_Peregrine_Navy"];
 };
 
 ["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["EST_AirForce_C130J", "EST_Navy_C130J", "EST_Army_V22_Infantry", "EST_Army_V22_RampGun", "EST_Navy_V22_Infantry", "EST_Navy_V22_RampGun"]] call _fnc_saveToTemplate; 	//this line determines transport planes -- Example: ["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] -- Array, can contain multiple assets
+["vehiclesPlanesTransport", ["EST_AirForce_CC22", "EST_Navy_CC22", "EST_Navy_NRA3", "EST_Navy_TRDC_Infantry", "EST_Navy_TRDC_RampGun", "EST_Army_TRDC_RampGun", "EST_Army_TRDC_Infantry"]] call _fnc_saveToTemplate; 	//this line determines transport planes -- Example: ["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] -- Array, can contain multiple assets
 
-["vehiclesHelisLight", ["EST_Hellcat_Unarmed"]] call _fnc_saveToTemplate; 		//this line determines light helis -- Example: ["vehiclesHelisLight", ["B_Heli_Light_01_F"]] -- Array, can contain multiple assets
-["vehiclesHelisTransport", ["EST_Army_Mohawk", "EST_Navy_Puma_HC1", "EST_Navy_Puma_HC2"]] call _fnc_saveToTemplate; 	//this line determines transport helis -- Example: ["vehiclesHelisTransport", ["B_Heli_Transport_01_F"]] -- Array, can contain multiple assets
-["vehiclesHelisLightAttack", ["EST_Hellcat_Armed"]] call _fnc_saveToTemplate;		// this line determines light attack helicopters
-["vehiclesHelisAttack", ["EST_Blackfoot_Army", "EST_Blackfoot_Navy"]] call _fnc_saveToTemplate; 		//this line determines attack helis -- Example: ["vehiclesHelisAttack", ["B_Heli_Attack_01_F"]] -- Array, can contain multiple assets
+["vehiclesHelisLight", ["EST_UH26_Unarmed"]] call _fnc_saveToTemplate; 		//this line determines light helis -- Example: ["vehiclesHelisLight", ["B_Heli_Light_01_F"]] -- Array, can contain multiple assets
+["vehiclesHelisTransport", ["EST_Army_Heron", "EST_Navy_Gannet", "EST_Navy_Gannet_Mod1"]] call _fnc_saveToTemplate; 	//this line determines transport helis -- Example: ["vehiclesHelisTransport", ["B_Heli_Transport_01_F"]] -- Array, can contain multiple assets
+["vehiclesHelisLightAttack", ["EST_UH26_Armed"]] call _fnc_saveToTemplate;		// this line determines light attack helicopters
 
-["vehiclesArtillery", []] call _fnc_saveToTemplate;		//this line determines SPAs
-["magazines", createHashMapFromArray []] call _fnc_saveToTemplate;			//this line determines ammo to be used with specified SPA, hashMap makes sure that SPA gets proper ammo
+private _vehiclesHelisAttack = ["EST_AH45A_Army", "EST_AH45B_Army", "EST_AH45D_Army", "EST_AH45A_Navy", "EST_AH45B_Navy"];
+
+if (_hasEF) then {
+    _vehiclesHelisAttack append ["EST_AH45E_Army", "EST_AH45E_Navy"];
+};
+
+["vehiclesHelisAttack", _vehiclesHelisAttack] call _fnc_saveToTemplate; 		//this line determines attack helis -- Example: ["vehiclesHelisAttack", ["B_Heli_Attack_01_F"]] -- Array, can contain multiple assets
+
+["vehiclesArtillery", ["B_T_MBT_01_mlrs_F", "B_T_MBT_01_arty_F"]] call _fnc_saveToTemplate;		//this line determines SPAs
+["magazines", createHashMapFromArray [
+    ["B_T_MBT_01_mlrs_F", ["12Rnd_230mm_rockets"]],
+    ["B_T_MBT_01_arty_F", ["32Rnd_155mm_Mo_shells"]]
+]] call _fnc_saveToTemplate;			//this line determines ammo to be used with specified SPA, hashMap makes sure that SPA gets proper ammo
 
 ["uavsAttack", ["EST_AirForce_MQ4", "EST_AirForce_MQ9", "EST_Navy_UCAV"]] call _fnc_saveToTemplate; 				//this line determines attack UAVs -- Example: ["uavsAttack", ["B_UAV_02_CAS_F"]] -- Array, can contain multiple assets
 ["uavsPortable", ["EST_Army_Darter"]] call _fnc_saveToTemplate; 				//this line determines portable UAVs -- Example: ["uavsPortable", ["B_UAV_01_F"]] -- Array, can contain multiple assets
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["EST_Offroad_Armed_Army"]] call _fnc_saveToTemplate; //this line determines lightly armed militia vehicles -- Example: ["vehiclesMilitiaLightArmed", ["B_G_Offroad_01_armed_F"]] -- Array, can contain multiple assets
-["vehiclesMilitiaTrucks", ["EST_Tatra_Unarmed", "EST_MTVR_Covered"]] call _fnc_saveToTemplate; 	//this line determines militia trucks (unarmed) -- Example: ["vehiclesMilitiaTrucks", ["B_G_Van_01_transport_F"]] -- Array, can contain multiple assets
-["vehiclesMilitiaCars", ["EST_Offroad_Army_MP", "EST_Offroad_Comms_Army_MP", "EST_Offroad_Covered_Army_MP", "EST_Offroad_Army_MP_Beacon"]] call _fnc_saveToTemplate; 		//this line determines militia cars (unarmed) -- Example: ["vehiclesMilitiaCars", ["B_G_Offroad_01_F"]] -- Array, can contain multiple assets
+["vehiclesMilitiaLightArmed", ["EST_Army_Offroad_Armed"]] call _fnc_saveToTemplate; //this line determines lightly armed militia vehicles -- Example: ["vehiclesMilitiaLightArmed", ["B_G_Offroad_01_armed_F"]] -- Array, can contain multiple assets
+["vehiclesMilitiaTrucks", ["EST_MTVR_Covered", "EST_Tatra_Unarmed"]] call _fnc_saveToTemplate; 	//this line determines militia trucks (unarmed) -- Example: ["vehiclesMilitiaTrucks", ["B_G_Van_01_transport_F"]] -- Array, can contain multiple assets
+["vehiclesMilitiaCars", ["EST_Army_Offroad_MP", "EST_Army_Offroad_Comms_MP", "EST_Army_Offroad_Covered_MP"]] call _fnc_saveToTemplate; 		//this line determines militia cars (unarmed) -- Example: ["vehiclesMilitiaCars", ["B_G_Offroad_01_F"]] -- Array, can contain multiple assets
 
-["vehiclesMilitiaAPCs", ["EST_Army_MP_Marid"]] call _fnc_saveToTemplate;						//this line determines militia APCs
+["vehiclesMilitiaAPCs", ["EST_Army_Offroad_Armed", "EST_Army_MP_Marid", "EST_Army_MP_Marid_HMG"]] call _fnc_saveToTemplate;						//this line determines militia APCs
 
-["vehiclesPolice", ["EST_Offroad_Police", "EST_Offroad_Comms_Police", "EST_Offroad_Covered_Police", "EST_Offroad_Police_Detective", "EST_Offroad_Comms_Police_Detective", "EST_Offroad_Covered_Police_Detective", "EST_Van_Cargo_Police", "EST_Van_Transport_Police"]] call _fnc_saveToTemplate; 			//this line determines police cars -- Example: ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] -- Array, can contain multiple assets
+["vehiclesPolice", ["EST_Police_Offroad", "EST_Police_Offroad_Comms", "EST_Police_Offroad_Covered", "EST_Police_Detective_Offroad", "EST_Police_Detective_Offroad_Comms", "EST_Police_Detective_Offroad_Covered", "EST_Van_Cargo_Police", "EST_Van_Transport_Police"]] call _fnc_saveToTemplate; 			//this line determines police cars -- Example: ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] -- Array, can contain multiple assets
 
 ["vehicleRadar", "EST_AirForce_Static_Radar"] call _fnc_saveToTemplate;                  // vehicle with radar
 ["vehicleSam", "EST_AirForce_Static_SAM"] call _fnc_saveToTemplate;                    // vehicle with SAM
@@ -167,13 +181,13 @@ _loadoutData set ["NVGs", ["CUP_NVG_1PN138", "CUP_NVG_PVS15_black", "CUP_NVG_PVS
 _loadoutData set ["binoculars", ["Binocular"]];		//this line determines the binoculars
 _loadoutData set ["rangefinders", ["Rangefinder", "CUP_LRTV"]];
 
-_loadoutData set ["traitorUniforms", ["EST_CombatUni_Woodland_GreenTee", "EST_CombatUni_Woodland_BrownTee", "EST_CombatUni_Woodland_BlackTee"]];		//this line determines traitor uniforms for traitor mission
+_loadoutData set ["traitorUniforms", ["EST_CombatUniform_PoloBlack_Army_Woodland", "EST_CombatUniform_PoloGreen_Army_Woodland", "EST_CombatUniform_PoloTan_Army_Woodland", "EST_CombatUniform_TeeBrown_Army_Woodland", "EST_CombatUniform_TeeGreen_Army_Woodland", "EST_CombatUniform_TeeGrey_Army_Woodland"]];		//this line determines traitor uniforms for traitor mission
 _loadoutData set ["traitorVests", ["V_TacVest_blk", "V_TacVest_oli", "V_Chestrig_oli", "V_Chestrig_blk"]];			//this line determines traitor vesets for traitor mission
 _loadoutData set ["traitorHats", ["EST_Cap_Woodland","EST_PatrolCap_Woodland"]];			//this line determines traitor headgear for traitor missions
 
-_loadoutData set ["officerUniforms", ["EST_Police_CombatUni_CIT", "EST_Police_CombatUni_CIT_Rolled"]];		//this line determines officer uniforms for assassination mission
-_loadoutData set ["officerVests", ["V_Rangemaster_belt", "Tac_Vest_EST_Police"]];			//this line determines officer vesets for assassination mission
-_loadoutData set ["officerHats", ["EST_Beret_Main", "EST_PatrolCap_Police", "EST_PatrolCap_Woodland"]];	//this line determines officer headgear for assassination missions
+_loadoutData set ["officerUniforms", ["EST_CombatUniform_Police_CIT", "EST_CombatUniform_Rolled_Police_CIT"]];		//this line determines officer uniforms for assassination mission
+_loadoutData set ["officerVests", ["Rangemaster_Belt_EST_Black", "EPC_MK1_EST_Police"]];			//this line determines officer vesets for assassination mission
+_loadoutData set ["officerHats", ["EST_Beret_Army_MP", "EST_PatrolCap_Police_Headset", "EST_PatrolCap_Police"]];	//this line determines officer headgear for assassination missions
 
 _loadoutData set ["uniforms", []];					//don't fill this line - this is only to set the variable
 _loadoutData set ["slUniforms", []];
@@ -181,14 +195,14 @@ _loadoutData set ["vests", []];						//don't fill this line - this is only to se
 _loadoutData set ["Hvests", []];
 _loadoutData set ["sniVests", ["CUP_V_B_RRV_Scout", "CUP_V_B_RRV_Scout2", "CUP_V_B_RRV_Scout3_GRN", "Tac_Vest_EST_Woodland"]];
 _loadoutData set ["backpacks", []];					//don't fill this line - this is only to set the variable
-_loadoutData set ["longRangeRadios", []];
-_loadoutData set ["atBackpacks", ["Carryall_EST_Olive", "Carryall_EST_Woodland"]];
+_loadoutData set ["longRangeRadios", ["Radiopack_EST_Woodland"]];
+_loadoutData set ["atBackpacks", ["Carryall_EST_Green", "Carryall_EST_Woodland", "Carryall_EST_Olive"]];
 _loadoutData set ["helmets", []];					//don't fill this line - this is only to set the variable
 _loadoutData set ["slHat", ["EST_Beret_Main", "EST_Beret_Army", "EST_Beret_AirForce", "EST_Beret_Navy"]];
 _loadoutData set ["sniHats", ["EST_Boonie_Woodland", "EST_Boonie_Woodland_Headset", "EST_Cap_Headphones_Woodland"]];
 
-_loadoutData set ["glasses", ["None", "BVC_Glasses_Ballistic_Black_Blue", "BVC_Glasses_Ballistic_Black_Clear", "BVC_Glasses_Ballistic_Black_Orange", "BVC_Glasses_Ballistic_Black_Tint", "BVC_Glasses_Ballistic_Black_White", "BVC_Glasses_Ballistic_Black_Yellow", "BVC_Bandana_Black", "BVC_Bandana_Sport_Black", "BVC_Bandana_Green", "BVC_Bandana_Sport_Green", "BVC_Sport_Black"]];	//cosmetics
-_loadoutData set ["goggles", ["None", "BVC_Balaclava_Black", "BVC_Balaclava2_Black", "BVC_Balaclava3_Black", "BVC_Balaclava4_Black", "BVC_Balaclava5_Black", "BVC_Balaclava6_Black", "BVC_Balaclava7_Black", "BVC_Balaclava_Green", "BVC_Balaclava2_Green", "BVC_Balaclava3_Green", "BVC_Balaclava4_Green", "BVC_Balaclava5_Green", "BVC_Balaclava6_Green", "BVC_Balaclava7_Green"]];		//cosmetics
+_loadoutData set ["glasses", ["", "BVC_Glasses_Ballistic_Black_Blue", "BVC_Glasses_Ballistic_Black_Clear", "BVC_Glasses_Ballistic_Black_Orange", "BVC_Glasses_Ballistic_Black_Tint", "BVC_Glasses_Ballistic_Black_White", "BVC_Glasses_Ballistic_Black_Yellow", "BVC_Bandana_Black", "BVC_Bandana_Sport_Black", "BVC_Bandana_Green", "BVC_Bandana_Sport_Green", "BVC_Sport_Black"]];	//cosmetics
+_loadoutData set ["goggles", ["", "BVC_Balaclava_Black", "BVC_Balaclava2_Black", "BVC_Balaclava3_Black", "BVC_Balaclava4_Black", "BVC_Balaclava5_Black", "BVC_Balaclava6_Black", "BVC_Balaclava7_Black", "BVC_Balaclava_Green", "BVC_Balaclava2_Green", "BVC_Balaclava3_Green", "BVC_Balaclava4_Green", "BVC_Balaclava5_Green", "BVC_Balaclava6_Green", "BVC_Balaclava7_Green"]];		//cosmetics
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies]; //this line defines the basic medical loadout for vanilla
@@ -230,11 +244,11 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_sfLoadoutData set ["uniforms", ["EST_Army_CombatUni_Black", "EST_Army_CombatUni_Black_Rolled", "EST_CombatUni_Black_BlackTee", "EST_CombatUni_Black_Polo_Black"]];
-_sfLoadoutData set ["vests", ["GA_Carrier_Rig_EST_Black", "GA_Carrier_Lite_EST_Black_Trygon", "GA_Carrier_Lite_EST_Black"]];
-_sfLoadoutData set ["Hvests", ["GA_Carrier_GL_EST_Black"]];
+_sfLoadoutData set ["uniforms", ["EST_CombatUniform_Black", "EST_CombatUniform_Collared_Black", "EST_CombatUniform_PoloBlack_Black", "EST_CombatUniform_Rolled_Black", "EST_CombatUniform_TeeBlack_Black", "EST_CombatUniform_Black_Unmarked", "EST_CombatUniform_Rolled_Black_Unmarked", "EST_CombatUniform_PoloBlack_Army_Woodland", "EST_CombatUniform_Navy_Lagoon_BlackTop", "EST_CombatUniform_Collared_Navy_Lagoon_BlackTop", "EST_CombatUniform_Rolled_Navy_Lagoon_BlackTop", "EST_CombatUniform_PoloBlack_Navy_Lagoon"]];
+_sfLoadoutData set ["vests", ["EPC_MK2_Light_EST_Black", "EPC_MK2_Rig_EST_Black", "CUP_V_B_JPC_Black_Light", "CUP_V_PMC_CIRAS_Black_TL", "CUP_V_PMC_CIRAS_Black_Patrol", "CUP_V_PMC_CIRAS_Black_Grenadier", "CUP_V_PMC_CIRAS_Black_Empty", "CUP_V_PMC_CIRAS_Black_Veh"]];
+_sfLoadoutData set ["Hvests", ["EPC_MK2_Heavy_EST_Black", "EPC_MK2_EOD_EST_Black"]];
 _sfLoadoutData set ["backpacks", ["Assaultpack_EST_Black", "Assaultpack_Special_EST_WelpYoureHere", "Carryall_EST_Black", "Fieldpack_EST_Black", "Kitbag_EST_Black", "Kitbag_EST_Black_Medic"]];
-_sfLoadoutData set ["helmets", ["EST_EnhancedCombatHelmet_Black", "EST_EnhancedCombatHelmet_Black_Unmarked"]];
+_sfLoadoutData set ["helmets", ["EST_CombatHelmet_Army_Black", "EST_CombatHelmetEnhanced_Army_Black", "EST_CombatHelmetHeadset_Army_Black", "EST_CombatHelmetLight_Army_Black", "EST_CombatHelmetLightEnhanced_Army_Black", "EST_CombatHelmetMandible_Army_Black", "EST_CombatHelmetCamo_Army_Black", "EST_CombatHelmet_Black", "EST_CombatHelmetEnhanced_Black", "EST_CombatHelmetHeadset_Black", "EST_CombatHelmetLight_Black", "EST_CombatHelmetLightEnhanced_Black", "EST_CombatHelmetMandible_Black", "EST_CombatHelmetCamo_Black"]];
 _sfLoadoutData set ["binoculars", ["CUP_SOFLAM"]];
 
 _sfLoadoutData set ["lightATLaunchers", [
@@ -398,12 +412,11 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_eliteLoadoutData set ["uniforms", ["EST_Army_CombatUni_Woodland", "EST_Army_CombatUni_Woodland_BrownTop", "EST_Army_CombatUni_Woodland_BrownTop_Rolled", "EST_Army_CombatUni_Woodland_GreenTop", "EST_Army_CombatUni_Woodland_GreenTop_Rolled", "EST_Army_CombatUni_Woodland_BlackTop", "EST_Army_CombatUni_Woodland_BlackTop_Rolled", "EST_Army_CombatUni_Woodland_Rolled", "EST_CombatUni_Green", "EST_CombatUni_Green_Rolled"]];
-_eliteLoadoutData set ["slUniforms", ["U_I_OfficerUniform"]];
-_eliteLoadoutData set ["vests", ["GA_Carrier_Lite_EST_Woodland", "GA_Carrier_Lite_EST_Woodland_Shiza", "GA_Carrier_Lite_EST_Woodland_Townshend", "GA_Carrier_Rig_EST_Woodland", "GA_Carrier_Rig_EST_Woodland_Grillbone", "GA_Carrier_Rig_EST_Woodland_ThePieGuy"]];
-_eliteLoadoutData set ["Hvests", ["GA_Carrier_GL_EST_Woodland"]];
+_eliteLoadoutData set ["uniforms", ["EST_CombatUniform_Army_Woodland", "EST_CombatUniform_Army_Woodland_BrownTop", "EST_CombatUniform_Collared_Army_Woodland_BrownTop", "EST_CombatUniform_Rolled_Army_Woodland_BrownTop", "EST_CombatUniform_Army_Woodland_GreenTop", "EST_CombatUniform_Collared_Army_Woodland_GreenTop", "EST_CombatUniform_Rolled_Army_Woodland_GreenTop", "EST_CombatUniform_Army_Woodland_GreyTop", "EST_CombatUniform_Collared_Army_Woodland_GreyTop", "EST_CombatUniform_Rolled_Army_Woodland_GreyTop", "EST_CombatUniform_Rolled_Army_Woodland"]];
+_eliteLoadoutData set ["vests", ["EPC_MK1_EST_Woodland", "EPC_MK2_Light_EST_Woodland", "EPC_MK2_Light_EST_Woodland_Shiza", "EPC_MK2_Rig_EST_Woodland_Grillbone", "EPC_MK2_Rig_EST_Woodland_ThePieGuy", "EPC_MK2_Rig_EST_Woodland_Townshend", "CUP_V_PMC_CIRAS_OD_Veh", "CUP_V_PMC_CIRAS_OD_Empty", "CUP_V_PMC_CIRAS_OD_Grenadier", "CUP_V_PMC_CIRAS_OD_TL"]];
+_eliteLoadoutData set ["Hvests", ["EPC_MK2_Heavy_EST_Woodland"]];
 _eliteLoadoutData set ["backpacks", ["Assaultpack_EST_Woodland", "Assaultpack_Special_EST_Blarcy", "Assaultpack_Special_EST_CovaX", "Assaultpack_Special_EST_Wood_Flag", "Assaultpack_Special_EST_Wood_FlagLowVis", "Assaultpack_Special_EST_Grillbone", "Assaultpack_Special_EST_Shiza", "Assaultpack_Special_EST_ThePieGuy", "Assaultpack_Special_EST_Townshend", "Assaultpack_Special_EST_Trygon", "Carryall_EST_Woodland", "Fieldpack_EST_Woodland", "Kitbag_EST_Woodland", "Kitbag_EST_Woodland_Medic"]];
-_eliteLoadoutData set ["helmets", ["EST_EnhancedCombatHelmet_Woodland", "EST_EnhancedCombatHelmet_Black_Unmarked", "EST_EnhancedCombatHelmet_Green", "EST_EnhancedCombatHelmet_Black"]];
+_eliteLoadoutData set ["helmets", ["EST_CombatHelmet_Woodland", "EST_CombatHelmetEnhanced_Woodland", "EST_CombatHelmetHeadset_Woodland", "EST_CombatHelmetLight_Woodland", "EST_CombatHelmetLightEnhanced_Woodland", "EST_CombatHelmetMandible_Woodland", "EST_CombatHelmetCamo_Woodland", "EST_CombatHelmet_Green", "EST_CombatHelmetHeadset_Green", "EST_CombatHelmetLight_Green"]];
 _eliteLoadoutData set ["binoculars", ["CUP_LRTV"]];
 
 _eliteLoadoutData set ["lightATLaunchers", [
@@ -609,12 +622,11 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militaryLoadoutData set ["uniforms", ["EST_Army_CombatUni_Woodland", "EST_Army_CombatUni_Woodland_BrownTop", "EST_Army_CombatUni_Woodland_BrownTop_Rolled", "EST_Army_CombatUni_Woodland_GreenTop", "EST_Army_CombatUni_Woodland_GreenTop_Rolled", "EST_Army_CombatUni_Woodland_Rolled", "EST_CombatUni_Green", "EST_CombatUni_Green_Rolled", "EST_CombatUni_Woodland_Polo_Green", "EST_CombatUni_Woodland_Polo_Tan"]];
-_militaryLoadoutData set ["slUniforms", ["EST_Army_CombatUni_Woodland"]];
-_militaryLoadoutData set ["vests", ["CUP_V_B_PASGT_no_bags_OD", "CUP_V_B_PASGT_OD"]];
-_militaryLoadoutData set ["Hvests", ["CUP_V_B_PASGT_no_bags_OD", "CUP_V_B_PASGT_OD"]];
-_militaryLoadoutData set ["backpacks", ["Assaultpack_EST_Olive", "Assaultpack_EST_Woodland", "Assaultpack_Special_EST_Blarcy", "Assaultpack_Special_EST_CovaX", "Assaultpack_Special_EST_Wood_Flag", "Assaultpack_Special_EST_Wood_FlagLowVis", "Assaultpack_Special_EST_Grillbone", "Assaultpack_Special_EST_Shiza", "Assaultpack_Special_EST_ThePieGuy", "Assaultpack_Special_EST_Townshend", "Assaultpack_Special_EST_Trygon", "Fieldpack_EST_Olive", "Fieldpack_EST_Woodland", "Kitbag_EST_Olive", "Kitbag_EST_Olive_Medic", "Kitbag_EST_Woodland", "Kitbag_EST_Woodland_Medic"]];
-_militaryLoadoutData set ["helmets", ["EST_CombatHelmet_Woodland", "EST_CombatHelmet_Green", "EST_CombatHelmetLight_Woodland", "EST_CombatHelmetLight_Green"]];
+_militaryLoadoutData set ["uniforms", ["EST_CombatUniform_Army_Woodland", "EST_CombatUniform_Army_Woodland_BrownTop", "EST_CombatUniform_Collared_Army_Woodland_BrownTop", "EST_CombatUniform_Rolled_Army_Woodland_BrownTop", "EST_CombatUniform_Army_Woodland_GreenTop", "EST_CombatUniform_Collared_Army_Woodland_GreenTop", "EST_CombatUniform_Rolled_Army_Woodland_GreenTop", "EST_CombatUniform_Army_Woodland_GreyTop", "EST_CombatUniform_Collared_Army_Woodland_GreyTop", "EST_CombatUniform_Rolled_Army_Woodland_GreyTop", "EST_CombatUniform_Rolled_Army_Woodland"]];
+_militaryLoadoutData set ["vests", ["EPC_MK1_EST_Olive", "EPC_MK1_EST_Woodland"]];
+_militaryLoadoutData set ["Hvests", ["EPC_MK1_EST_Olive", "EPC_MK1_EST_Woodland"]];
+_militaryLoadoutData set ["backpacks", ["Assaultpack_EST_Woodland", "Assaultpack_EST_Woodland", "Assaultpack_Special_EST_CovaX", "Assaultpack_Special_EST_Wood_Flag", "Assaultpack_Special_EST_Wood_FlagLowVis", "Assaultpack_Special_EST_Grillbone", "Assaultpack_Special_EST_Shiza", "Assaultpack_Special_EST_ThePieGuy", "Assaultpack_Special_EST_Townshend", "Assaultpack_Special_EST_Trygon", "Fieldpack_EST_Woodland", "Kitbag_EST_Woodland", "Kitbag_EST_Woodland_Medic"]];
+_militaryLoadoutData set ["helmets", ["EST_CombatHelmetLight_Green", "EST_CombatHelmetLight_Woodland", "EST_CombatHelmetLightEnhanced_Woodland"]];
 _militaryLoadoutData set ["binoculars", ["Rangefinder"]];
 
 _militaryLoadoutData set ["lightATLaunchers", [
@@ -765,9 +777,9 @@ _militaryLoadoutData set ["sidearms", [
 ///////////////////////////////
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_policeLoadoutData set ["uniforms", ["EST_Police_CombatUni_CIT", "EST_Police_CombatUni_CIT_Rolled", "EST_Outfit_Police_05", "EST_Outfit_Police_06", "EST_Outfit_Police_03", "EST_Outfit_Police_04"]];
-_policeLoadoutData set ["vests", ["Tac_Vest_EST_Police"]];
-_policeLoadoutData set ["helmets", ["EST_PatrolCap_Police"]];
+_policeLoadoutData set ["uniforms", ["EST_CombatUniform_Police_CIT", "EST_CombatUniform_Collared_Police_CIT", "EST_CombatUniform_Rolled_Police_CIT", "EST_PoloUniform_Police_01", "EST_PoloUniform_Police_02", "EST_PoloUniform_Police_03", "EST_PoloUniform_Police_04"]];
+_policeLoadoutData set ["vests", ["Tac_Vest_EST_Police", "Rangemaster_Belt_EST_Brown", "Rangemaster_Belt_EST_Black", "Rangemaster_Belt_EST_Woodland"]];
+_policeLoadoutData set ["helmets", ["EST_PatrolCap_Police", "EST_PatrolCap_Police_Headset"]];
 
 _policeLoadoutData set ["SMGs", [
 ["CUP_smg_EVO", "", "CUP_acc_Flashlight", "", ["CUP_30Rnd_9x19_EVO"], [], ""],
@@ -786,11 +798,11 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militiaLoadoutData set ["uniforms", ["EST_CombatUni_Green", "EST_CombatUni_Green_Rolled"]];
+_militiaLoadoutData set ["uniforms", ["EST_CombatUniform_TeeBrown_Army_Woodland", "EST_CombatUniform_TeeGreen_Army_Woodland", "EST_CombatUniform_TeeGrey_Army_Woodland"]];
 _militiaLoadoutData set ["vests", ["Tac_Vest_EST_MP", "Tac_Vest_EST_Woodland"]];
 _militiaLoadoutData set ["Hvests", ["Tac_Vest_EST_MP", "Tac_Vest_EST_Woodland"]];
-_militiaLoadoutData set ["backpacks", ["Assaultpack_EST_Olive", "Assaultpack_EST_Black", "Fieldpack_EST_Black", "Fieldpack_EST_Olive"]];
-_militiaLoadoutData set ["helmets", ["EST_CombatHelmetLight_Green", "EST_CombatHelmetLight_MP"]];
+_militiaLoadoutData set ["backpacks", ["Assaultpack_EST_Woodland", "Assaultpack_Special_EST_Wood_Flag", "Assaultpack_Special_EST_Wood_FlagLowVis", "Fieldpack_EST_Woodland"]];
+_militiaLoadoutData set ["helmets", ["EST_CombatHelmetLight_Green", "EST_CombatHelmetLight_MP", "EST_CombatHelmetLight_Woodland"]];
 
 _militiaLoadoutData set ["ATLaunchers", ["CUP_launch_M136"]];
 
@@ -845,15 +857,15 @@ _militiaLoadoutData set ["sidearms", [
 
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData; 
-_crewLoadoutData set ["uniforms", ["EST_CombatUni_Green", "EST_CombatUni_Green_Rolled"]];
-_crewLoadoutData set ["vests", ["Rangemaster_Belt_Black", "Tac_Vest_EST_Woodland", "V_TacVest_oli"]];
-_crewLoadoutData set ["helmets", ["EST_CrewHelmet_Olive", "EST_CrewHelmet_Woodland"]];
+_crewLoadoutData set ["uniforms", ["EST_CombatUniform_PoloGreen_Army_Woodland", "EST_CombatUniform_TeeGreen_Army_Woodland"]];
+_crewLoadoutData set ["vests", ["BVC_Osprey_Mk4_Crewman_Green"]];
+_crewLoadoutData set ["helmets", ["EST_CrewHelmet_Woodland"]];
 
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["EST_Army_HeliFlightSuit"]];
-_pilotLoadoutData set ["vests", ["Rangemaster_Belt_Black"]];
-_pilotLoadoutData set ["helmets", ["EST_HeliCrewHelmet_EA", "EST_HeliCrewHelmet_EA_Eyes", "EST_HeliCrewHelmet_EA_Fazbear", "EST_HeliCrewHelmet_EA_Flag", "EST_HeliCrewHelmet_EA_Man", "EST_HeliPilotHelmet_EA", "EST_HeliPilotHelmet_EA_Eyes", "EST_HeliPilotHelmet_EA_Flag"]];
+_pilotLoadoutData set ["uniforms", ["EST_Coveralls_Brown", "EST_Coveralls_Navy", "EST_Coveralls_Olive", "EST_Coveralls_Tan", "EST_Flightsuit_AirForce", "EST_Flightsuit_Navy"]];
+_pilotLoadoutData set ["vests", []];
+_pilotLoadoutData set ["helmets", ["EST_HeliCrewHelmet_EA", "EST_HeliCrewHelmet_EA_Eyes", "EST_HeliCrewHelmet_EA_Fazbear", "EST_HeliCrewHelmet_EA_Flag", "EST_HeliCrewHelmet_EA_Man", "EST_HeliCrewHelmet_EN", "EST_HeliCrewHelmet_EN_Flag", "EST_HeliCrewHelmet_EN_IMWT", "EST_HeliCrewHelmet_EN_Kawaii", "EST_HeliCrewHelmet_EN_Schizoid", "EST_HeliCrewHelmet_EN_Sunset", "EST_HeliPilotHelmet_EA", "EST_HeliPilotHelmet_EA_Eyes", "EST_HeliPilotHelmet_EA_Flag", "EST_HeliPilotHelmet_EN", "EST_HeliPilotHelmet_EN_Flag", "EST_HeliPilotHelmet_EN_IMWT", "EST_HeliPilotHelmet_EN_Sunset", "EST_Pilot_Helmet_AirForce", "EST_Pilot_Helmet_AirForce_Mothman", "EST_Pilot_Helmet_Navy"]];
 
 
 

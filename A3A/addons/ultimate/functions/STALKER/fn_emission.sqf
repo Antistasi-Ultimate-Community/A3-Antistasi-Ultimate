@@ -13,6 +13,7 @@
     Author:
         Silence
 */
+#include "..\..\script_component.hpp"
 
 private _emissionMin = missionNamespace getVariable ["A3U_setting_emissionMinimum",45];
 private _emissionMax = missionNamespace getVariable ["A3U_setting_emissionMaximum",60];
@@ -25,4 +26,4 @@ private _emissionSpeedMax = missionNamespace getVariable ["A3U_setting_emissionS
 //["Emission Notification", "An emission storm has been detected.<br/><br/>Seek shelter immediately.<br/><br/>Vehicles protect you just as well as buildings.", true] remoteExec ["A3A_fnc_customHint", 0, false];
 // ^ We can't hook onto the emission function, so that won't work
 
-[format ["Started Emissions with params: %1", [_emissionMin, _emissionMax, _emissionSpeedMin, _emissionSpeedMax]], _fnc_scriptName] call A3U_fnc_log;
+Info_4("Started Emissions with params: [%1, %2, %3, %4]", _emissionMin, _emissionMax, _emissionSpeedMin, _emissionSpeedMax);

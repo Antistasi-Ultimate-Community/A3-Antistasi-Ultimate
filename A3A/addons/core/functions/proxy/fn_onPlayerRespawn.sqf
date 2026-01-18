@@ -119,7 +119,7 @@ if (side group _newUnit == teamPlayer) then
 			};
         };
 
-		default {diag_log format["Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath]};
+		default {Error_1("Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath)};
     };
 
 	disableUserInput false;

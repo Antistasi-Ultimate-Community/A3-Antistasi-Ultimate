@@ -42,6 +42,11 @@ class CfgUserActions {
         tooltip = $STR_A3A_keyActions_buildingPlacerAbort_desc;
     };
 
+    class GVAR(buildingPlacerAlign) {
+        displayName = $STR_A3A_keyActions_buildingPlacerAlign_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerAlign_desc;
+    };
+
     class GVAR(buildingPlacerDelete) {
         displayName = $STR_A3A_keyActions_buildingPlacerDelete_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerDelete_desc;
@@ -65,6 +70,16 @@ class CfgUserActions {
     class GVAR(buildingPlacerRotateCW) {
         displayName = $STR_A3A_keyActions_buildingPlacerRotateCW_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerRotateCW_desc;
+    };
+
+    class GVAR(buildingPlacerRotateStepDecrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateStepDecrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateStepDecrease_desc;
+    };
+
+    class GVAR(buildingPlacerRotateStepIncrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateStepIncrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateStepIncrease_desc;
     };
 
     class GVAR(buildingPlacerSnapToSurface) {

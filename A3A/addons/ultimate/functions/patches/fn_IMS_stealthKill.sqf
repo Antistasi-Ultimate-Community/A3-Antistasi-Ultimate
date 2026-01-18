@@ -1,6 +1,8 @@
+#include "..\..\script_component.hpp"
+
 params [["_unit", player]];
 
-["IMS Stealth Kill EH Added", _fnc_scriptName] call A3U_fnc_log;
+Info("IMS Stealth Kill EH Added");
 
 _unit setVariable ["IMS_EventHandler_StealthKill",{
     _unit = _this select 0;

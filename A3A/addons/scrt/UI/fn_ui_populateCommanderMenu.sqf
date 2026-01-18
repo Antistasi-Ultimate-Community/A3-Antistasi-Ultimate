@@ -210,7 +210,7 @@ private _gameInfoText = format [
 	worldName,
     QUOTE(VERSION_FULL),
     minWeaps,
-    [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select limitedFT,
+    (getArray (configFile >> "A3A" >> "Params" >> "limitedFT" >> "texts")) select limitedFT,
     [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select areRivalsEnabled,
 	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];
@@ -224,6 +224,17 @@ private _fiaTrainingText = format [localize "STR_commander_menu_skill_level_titl
 //showing reroll button if task was completed
 if (!isTraderQuestCompleted) then {
 	(_display displayCtrl 6014) ctrlShow false;
+};
+
+
+if (isServer || {(call BIS_fnc_admin) isEqualTo 2}) then {
+	ctrlShow [5200, true];
+	ctrlEnable [5200, true];
+	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");
+} else {
+	ctrlShow [5200, true];
+	ctrlEnable [5200, false];
+	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_generic_admin_only");
 };
 
 if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {

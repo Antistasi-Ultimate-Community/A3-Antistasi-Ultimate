@@ -92,14 +92,14 @@ if ((typeOf _plane) in _cfg) exitWith
         } forEach _loadout;
     } else {
         _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-        Debug(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+        Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
         {
             _plane setPylonLoadout [_forEachIndex + 1, _x, true];
             _plane setVariable ["loadout", _loadout];
         } forEach _loadout;
     };
 
-    [format["Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout], _fnc_scriptName] call A3U_fnc_log;
+    Debug_2("Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout);
 };
 
 if (_type == "CASDIVE") then
@@ -1672,6 +1672,11 @@ if (_type == "AA") then
         {
             _loadout = ["LIB_1Rnd_SC250"];
         };
+		case "SPE_FW190F8_noinsignia";
+		case "SPE_FW190F8": {
+            _loadout = ["SPE_250Rnd_MG151","SPE_250Rnd_MG151","SPE_400Rnd_MG131","SPE_400Rnd_MG131","","","","",""];
+            _plane setVariable ["mainGun", "SPE_2xMG151"];
+        };
 	    // Clone Wars Planes (3AS)
         case "3AS_ARC_170_Red";
 		case "3AS_ARC_170_Yellow";
@@ -1905,11 +1910,11 @@ if !(_loadout isEqualTo []) then
     } forEach _loadout;
 } else {
     _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-    Debug(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+    Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
     {
         _plane setPylonLoadout [_forEachIndex + 1, _x, true];
         _plane setVariable ["loadout", _loadout];
     } forEach _loadout;
 };
 
-[format["Given plane class %1 a loadout of %2", typeOf _plane, _loadout], _fnc_scriptName] call A3U_fnc_log;
+Debug_2("Given plane class %1 a loadout of %2", typeOf _plane, _loadout);

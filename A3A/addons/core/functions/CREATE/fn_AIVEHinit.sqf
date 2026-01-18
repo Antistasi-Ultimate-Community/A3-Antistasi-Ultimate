@@ -21,7 +21,7 @@ if (fullCrew [_veh, "", true] isEqualTo []) exitWith {
 	if (typeof _veh in A3A_utilityItemHM) then { _veh call A3A_fnc_initObject };
 };
 
-_veh setVehicleRadar 0; ///might break something
+_veh setVehicleRadar ([0, 1] select (getNumber(configOf _veh >> "radarType") in [2, 4]));
 _veh setVehicleReceiveRemoteTargets true;
 _veh setVehicleReportRemoteTargets true;
 _veh setVehicleReportOwnPosition true;
@@ -107,15 +107,38 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 				} forEach crew _object1;
 			}]; ///needs testing
 		};
+	};
+};
 
-		case (_veh isKindOf "StaticWeapon"): {
-			_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
+if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
+	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
+	if (_markers isEqualTo []) exitWith {};
+	if (_side isNotEqualTo teamPlayer) exitWith {};
+	
+	private _staticVehInit = {
+		waitUntil { sleep 0.1; !isNil "serverInitDone" };
+		params ["_veh", "_flagAction"];
+		
+		[_veh, _flagAction] remoteExec ["A3A_fnc_flagAction", [teamPlayer, civilian], _veh];
+		
+		if !(locked _veh < 2) exitWith {};
+		private _saved = _veh in staticsToSave;
+		private _flipped = _veh in staticsToFlip;
+		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_saved && {XOR(A3U_enableVehiclesForAI, _flipped)}));
 
-			if !(_typeX isKindOf "StaticMortar") then {
-				[_veh, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
-				if (_side == teamPlayer && !isNil {serverInitDone}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
-			};
-		};
+		// add *all* rebel vehicles to staticsToSave since we don't have an appropriate rebelVehicles var
+		// only vehicles in staticsToSave AND near a rebel marker will actually be saved during the save loop
+		// this just ensures that the vehicles left near rebel markers are saved regardless of whether they're manned or not
+		if (_saved) exitWith {};
+		staticsToSave pushBack _veh;
+		publicVariable "staticsToSave";
+	};
+
+	if (_veh isKindOf "StaticWeapon") then {
+		_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
+		[_veh, "static"] spawn _staticVehInit;
+	} else {
+		[_veh, "vehiclestatic"] spawn _staticVehInit;
 	};
 };
 
