@@ -1,6 +1,6 @@
     class AMF_Base
     {
-        requiredAddons[] = {"AMF_Patches"};
+        requiredAddons[] = {"AMF_Patches", "hlcweapons_core", "hlcweapons_XM8"}; // iirc the old NIArms mod also has _core, but not _xm8
         basepath = QPATHTOFOLDER(Templates\Templates\AMF);
         logo = QPATHTOFOLDER(Pictures\antistasi_ultimate_logo.paa);
         priority = 80;
