@@ -10,12 +10,12 @@
     {
         side = "Occ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\AMF\images\flag_france_co.paa);
-        name = "French Army";
+        name = "French Army (Woodland)";
         file = "AMF_AI_Army";
     };
-    // class AMF_Army_Tan : AMF_Army
-    // {
-    //     name = "French Army (Desert)";
-    //     file = "AMF_AI_Army_Tan";
-    //     climate[] = {"arid"};
-    // };
+    class AMF_Army_Tan : AMF_Army
+    {
+        name = "French Army (Desert)";
+        file = "AMF_AI_Army_Tan";
+        climate[] = {"arid"};
+    };
