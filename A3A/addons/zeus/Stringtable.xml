@@ -356,6 +356,14 @@
                 <Original>Mortar Team</Original>
             </Key>
         </Container>
+        <Container name="ModuleTypes">
+            <Key ID="STR_A3U_Zeus_ModuleType_Supports">
+                <Original>[A3U] Supports</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_Airstrike">
+                <Original>Airstrike</Original>
+            </Key>
+        </Container>
         <Container name="Misc">
             <Key ID="STR_A3U_Zeus_Misc_Dialog_Header">
                 <Original>Zeus Additions for Antistasi Ultimate</Original>

@@ -36,4 +36,10 @@ class CfgFactionClasses
 		//icon = "\A3A\addons\ultimate\data\civ_icon.paa";
 		priority = 1;
 	};
+
+	// modules
+	class GVAR(Supports) {
+        displayName = "$STR_A3U_Zeus_ModuleType_Supports";
+        side = 7;
+    };
 };

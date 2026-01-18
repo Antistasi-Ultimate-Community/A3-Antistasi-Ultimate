@@ -120,10 +120,26 @@ class CfgVehicles {
         };
     };
     
+    class Module_F;
+    class GVAR(Module_Base) : Module_F {
+        scope = 1;
+        scopeCurator = 1;
+        category = ""; // * native, needed
+        displayName = ""; // * native, needed
+        function = ""; // ! used by initModule EH in ZEN
+        class EventHandlers {
+            init = QUOTE(_this call FUNC(initModule));
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+        };
+    };
+
     // Custom classes for Antistasi Units / Vehicles in Eden / Zeus
     #include "CfgVehicles\A3U_Rebels.hpp"
     #include "CfgVehicles\A3U_Occupants.hpp"
     #include "CfgVehicles\A3U_Invaders.hpp"
     #include "CfgVehicles\A3U_Rivals.hpp"
     #include "CfgVehicles\A3U_Civilians.hpp"
+
+    // Custom modules for Antistasi supports / events in Zeus
+    #include "CfgVehicles\A3U_Modules.hpp"
 };

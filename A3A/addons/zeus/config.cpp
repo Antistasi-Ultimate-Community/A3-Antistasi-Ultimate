@@ -293,7 +293,12 @@ class CfgPatches
             QGVAR(Civilians_Base),
             QGVAR(Civilians_Man),
             QGVAR(Civilians_Press),
-            QGVAR(Civilians_Worker)
+            QGVAR(Civilians_Worker),
+
+            // modules
+            QGVAR(Module_Base),
+            QGVAR(Module_Support_Base),
+            QGVAR(Module_Support_Airstrike)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
