@@ -133,7 +133,7 @@
     };
     class addons_amf : addons_base
     {
-        addons[] = {"AMF_FAMAS", "r3f_armes"};
+        addons[] = {"AMF_Patches"};
         vehicles = "vehicles_amf";
     };
     class addons_wmempire : addons_base
