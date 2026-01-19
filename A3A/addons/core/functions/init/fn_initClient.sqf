@@ -612,7 +612,7 @@ player addAction[
     false,
     false,
     "",
-    QUOTE(!(_this getVariable[QQGVAR(isTeardownActive), false]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
+    QUOTE(!(_this getVariable[ARR_2(QQGVAR(isTeardownActive),false)]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
 ];
 
 player addAction[
@@ -623,7 +623,7 @@ player addAction[
     false,
     false,
     "",
-    QUOTE((_this getVariable[QQGVAR(isTeardownActive), false]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
+    QUOTE((_this getVariable[ARR_2(QQGVAR(isTeardownActive),false)]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
 ];
 
 [allCurators] remoteExecCall ["A3A_fnc_initZeusLogging",0];
