@@ -156,7 +156,7 @@ if (_isControl) then
         private _weightPolice = linearConversion [0, 60, _aggr, 1.0, 0.0, true]; 
         private _weightMilitia = linearConversion [40, 60, _aggr, 0.2, 1.0, true] * linearConversion [60, 85, _aggr, 1.0, 0.3, true];
         private _weightAPC = linearConversion [40, 80, _aggr, 0.0, 1.0, true]; 
-        private _weightTank = linearConversion [70, 100, _aggr, 0.0, 1.0, true];
+        private _weightTank = linearConversion [70, 120, _aggr, 0.0, 1.0, true];
 
         private _vehicleCategories = [ 
             "vehiclesPolice", _weightPolice, 

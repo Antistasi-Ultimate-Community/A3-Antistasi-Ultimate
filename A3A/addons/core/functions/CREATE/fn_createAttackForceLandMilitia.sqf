@@ -89,7 +89,7 @@ for "_i" from 1 to _vehCount do {
     if (_isTransport) then { _numTransports = _numTransports + 1 };
     _isTransport = _vehAttackCount == 0 or (_numTransports / _i) < _transportRatio;
 
-    [_vehicle, _route, _vehicles, 60, false, true, [12, 24], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
+    [_vehicle, _route, _vehicles, 60, false, true, [15, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
 
     sleep 10;
 };

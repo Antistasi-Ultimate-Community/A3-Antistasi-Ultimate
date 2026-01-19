@@ -82,7 +82,7 @@ for "_i" from 1 to _vehCount do {
 
     _numTransports = _numTransports + 1;
 
-    [_vehicle, _route, _vehicles, 120, false, true, [12, 24], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
+    [_vehicle, _route, _vehicles, 120, false, true, [15, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
 
     sleep 10;
 };
