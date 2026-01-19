@@ -21,20 +21,20 @@
 
 ["vehiclesBasic", ["B_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["amf_pvp_01_top_DA_f", "AMF_VBL_DA_762_01_F", "AMF_VBL_762_DA", "AMF_VB2L_DA"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["amf_VBAE_01_DA_f", "AMF_VBMR_L_DA_02", "AMF_VBMRL_762_DA"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["amf_VBAE_01_TDF_f", "AMF_VBMR_L_TDF_01", "AMF_VBMRL_762_DA"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["B_Truck_01_transport_F"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["B_Truck_01_covered_F", "B_Truck_01_transport_F"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["B_Truck_01_ammo_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["B_Truck_01_Repair_F"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["B_Truck_01_fuel_F"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["AMF_VBMR_SAN_DA"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["AMF_VBMR_HMG_DA", "AMF_VBMR_GENIE_DA", "AMF_VBMR_L_DA_01"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["AMF_VBMR_HMG_DA", "AMF_VBCI_DA_01_F", "AMF_EBRC_DA_01", "B_AMF_AMX10_RCR_03_F"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["B_AMF_AMX10_RCR_03_F", "B_AMF_VAB_ULTIMA_TOP_X8_F", "AMF_VBMR_COMMANDEMENT_DA", "AMF_VBCI_DA_01_F"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["AMF_VBMR_SAN_TDF"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["AMF_VBMR_HMG_TDF", "AMF_VBMR_GENIE_TDF", "AMF_VBMR_L_TDF_01"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["AMF_VBMR_HMG_TDF", "AMF_VBCI_DA_01_F", "AMF_EBRC_TDF_01", "B_AMF_AMX10_RCR_03_F"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["B_AMF_AMX10_RCR_03_F", "B_AMF_VAB_ULTIMA_TOP_X8_F", "AMF_VBMR_COMMANDEMENT_TDF", "AMF_VBCI_DA_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["AMF_VBCI_DA_01_F", "B_AMF_AMX10_RCR_03_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["B_AMF_AMX10_RCR_SEPAR_03_F", "AMF_EBRC_DA_01"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["B_AMF_TANK_DA_01_F", "B_AMF_TANK_DA_02_F"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["AMF_VBMR_ARX30_DA"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["B_AMF_AMX10_RCR_SEPAR_03_F", "AMF_EBRC_TDF_01"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["B_AMF_TANK_DA_01_F", "B_AMF_TANK_TDF_02_F"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["AMF_VBMR_ARX30_TDF"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] call _fnc_saveToTemplate;
@@ -61,7 +61,7 @@
 ["vehiclesMilitiaLightArmed", ["AMF_VBL_762_DA"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["B_Truck_01_transport_F"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["amf_pvp_01_mag_DA_f"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["AMF_VBCI_DA_01_F", "AMF_VBMR_DEF_DA"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["AMF_VBCI_DA_01_F", "AMF_VBMR_DEF_TDF"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["AMF_VBMRL_762_ONU", "AMF_VBMR_VOA_ONU"]] call _fnc_saveToTemplate;
 
