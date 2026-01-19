@@ -15,7 +15,40 @@ class planeLoadouts
             bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         }; */
-
+/// stuff added for updated PRACS
+        class PRACS_SLA_SU22
+        {
+            loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","","","rhs_mag_upk23_ofz","rhs_mag_upk23_ofz","","","","","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1"};
+            mainGun = "rhs_weap_gsh23l";
+            bombRacks[] = {"PRACS_FAB_500_M54_Launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class PRACS_F16CJR
+        {
+            loadout[] = {"PRACS_AIM9M_WT_X1","PRACS_AIM9M_WT_X1","","","","","PRACS_GBU8_X1","PRACS_GBU8_X1","",""};
+            bombRacks[] = {"PRACS_GBU8_launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class PRACS_SLA_Su25
+        {
+            loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","","","","","PRACS_FAB_500_M62_X1","PRACS_FAB_500_M62_X1","PRACS_FAB_500_M62_X1","PRACS_FAB_500_M62_X1"};
+            mainGun = "PRACS_GSH_30_2_30mm";
+            bombRacks[] = {"PRACS_FAB_500_M62_Launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class PRACS_A4M
+        {
+            loadout[] = {"PRACS_AIM9M_X1","PRACS_AIM9M_X1","PRACS_Mk83_X1","PRACS_Mk83_X1","PRACS_Mk84_X1"};
+            bombRacks[] = {"PRACS_Mk84_Launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class PRACS_SLA_MiG27
+        {
+            loadout[] = {"PRACS_AA11_X1","PRACS_AA11_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","",""};
+            mainGun = "PRACS_Gsh_6_30";
+            bombRacks[] = {"PRACS_FAB_500_M54_Launcher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
         /// TFC
         class TFC_CP140_dynamicLoadout
         {
@@ -483,7 +516,37 @@ class planeLoadouts
             rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
         }; */
-
+///stuff added for updated PRACS
+        class PRACS_SLA_SU22
+        {
+            loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","PRACS_KH29T_X1","PRACS_KH29T_X1","rhs_mag_upk23_btz","rhs_mag_upk23_btz","PRACS_Kh25_mt_X1","PRACS_Kh25_mt_X1","","","","","",""};
+            mainGun = "rhs_weap_gsh23l";
+            missileLauncher[] = {"PRACS_Kh25_mt_launcher"};
+        };
+        class PRACS_A4M
+        {
+            loadout[] = {"PRACS_AIM9M_X1","PRACS_AIM9M_X1","PRACS_Zuni_5_Right_X8","PRACS_Zuni_5_LEFT_X8","PRACS_Zuni_5_X12"};
+            rocketLauncher[] = {"PRACS_Zuni_Launcher"};
+        };
+        class PRACS_F16CJR
+        {
+            loadout[] = {"PRACS_AIM9M_WT_X1","PRACS_AIM9M_WT_X1","PRACS_Python_3_WT_X1","PRACS_Python_3_WT_X1","PRACS_70mm_FFAR_X57","PRACS_70mm_FFAR_X57","PRACS_AGM65_F_X2","PRACS_AGM65_F_X2","",""};
+            missileLauncher[] = {"PRACS_AGM65F_launcher"};
+	        rocketLauncher[] = {"PRACS_FFARLauncher"};
+        };
+        class PRACS_SLA_Su25
+        {
+            loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","rhs_mag_ub32_s5","rhs_mag_ub32_s5","rhs_mag_ub32_s5","rhs_mag_ub32_s5","rhs_mag_ub32_s5","rhs_mag_ub32_s5","rhs_mag_b13l_s13b","rhs_mag_b13l_s13b"};
+            mainGun = "PRACS_GSH_30_2_30mm";
+            rocketLauncher[] = {"rhs_weap_s5"};
+        };
+        class PRACS_SLA_MiG27
+        {
+            loadout[] = {"PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","rhs_mag_ub32_s5ko","rhs_mag_ub32_s5ko","",""};
+            mainGun = "PRACS_Gsh_6_30"
+            bombRacks[] = {"PRACS_FAB_500_M54_Launcher"};
+            rocketLauncher[] = {"rhs_weap_s5ko"};
+        };
         /// TFC
         class TFC_CP140_dynamicLoadout
         {
@@ -978,6 +1041,7 @@ class planeLoadouts
             loadout[] = {"OPTRE_3Rnd_Jackknife_sabre_missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_3Rnd_Jackknife_sabre_missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_M1024_2000Rnd_30mm"};
         };
         /// TFC
+
         class TFC_CP140_dynamicLoadout
         {
             loadout[] = {"PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_AMRAAM_C_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_C_x2","PylonRack_Missile_AMRAAM_C_x2"};
@@ -1366,6 +1430,34 @@ class planeLoadouts
             mainGun = "Twin_Cannon_20mm_gunpod";
             rocketLauncher[] = {"Rocket_04_AP_Plane_CAS_01_F","Rocket_04_HE_Plane_CAS_01_F","missiles_DAR"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
+        };
+        class PRACS_SLA_MiG23
+        {
+            loadout[] = {"PRACS_AA8_X2_L","PRACS_AA8_X2_R","PRACS_R24R_X1","PRACS_R24R_X1"};
+            mainGun = "PRACS_Gsh_6_23";
+            missileLauncher[] = {"PRACS_R60_Launcher","PRACS_R24_Launcher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+        class PRACS_F16
+        {
+            loadout[] = {"PRACS_AIM9M_WT_X1","PRACS_AIM9M_WT_X1","PRACS_AIM120_WT_X1","PRACS_AIM120_WT_X1","PRACS_AIM120_X1","PRACS_AIM120_X1","PRACS_AIM120_X2","PRACS_AIM7_X1","",""};
+            mainGun = "PRACS_M61A2_20mm";
+            missileLauncher[] = {"PRACS_AIM120_Launcher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+		class PRACS_SLA_MiG21
+        {
+            loadout[] = {"PRACS_AA8_X2_L","PRACS_AA8_X2_R","PRACS_AA2_X1","PRACS_AA2_X1"};
+            mainGun = "PRACS_Gsh_6_23";
+            missileLauncher[] = {"PRACS_R60_Launcher","PRACS_AA2_Launcher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
+        };
+		class PRACS_SLA_MiG29
+        {
+            loadout[] = {"PRACS_R77_M29_X1","PRACS_R77_M29_X1","PRACS_AA11_M29_X1","PRACS_AA11_M29_X1","PRACS_AA11_M29_X1","PRACS_AA11_M29_X1","","rhs_BVP3026_CMFlare_Chaff_Magazine_x2"};
+            mainGun = "rhs_weap_gsh301";
+            missileLauncher[] = {"PRACS_R77_Launcher","PRACS_R73_Launcher"};
+            diveParams[] = {1000, 600, 180, 55, 15, {0,0}};
         };
     };
 };
