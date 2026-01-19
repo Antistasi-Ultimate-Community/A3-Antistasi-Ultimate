@@ -2,11 +2,12 @@ class CfgFunctions
 {
     class ADDON
     {
-        class functions
+        class init
         {
-            file = QPATHTOFOLDER(functions);
-            class unitInit {};
-            class vehicleInit {};
+            file = QPATHTOFOLDER(functions\init);
+            class initUnit {};
+            class initVehicle {};
+            class initModule {};
         };
     };
 };

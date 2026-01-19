@@ -363,6 +363,60 @@
             <Key ID="STR_A3U_Zeus_ModuleType_Support_Airstrike">
                 <Original>Airstrike</Original>
             </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_Artillery">
+                <Original>Artillery</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_ASF">
+                <Original>Air Superiority Fighter</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_CarpetBomb">
+                <Original>Carpet Bombing</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_CAS">
+                <Original>CAS</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_CASDive">
+                <Original>CAS Dive</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_CruiseMissile">
+                <Original>Cruise Missile</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_Gunship">
+                <Original>Gunship</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_Howitzer">
+                <Original>Howitzer</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_Mortar">
+                <Original>Mortar</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_OrbitalStrike">
+                <Original>Orbital Strike</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_QRFAir">
+                <Original>Air QRF</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_QRFLand">
+                <Original>Land QRF</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_QRFOrbital">
+                <Original>Orbital QRF</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_QRFVehAirdrop">
+                <Original>Vehicle Airdrop QRF</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_SAM">
+                <Original>Surface-to-Air Missile</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_Tank">
+                <Original>Tank</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_UAV">
+                <Original>UAV</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Support_UAVAttack">
+                <Original>UAV Attack</Original>
+            </Key>
         </Container>
         <Container name="Misc">
             <Key ID="STR_A3U_Zeus_Misc_Dialog_Header">

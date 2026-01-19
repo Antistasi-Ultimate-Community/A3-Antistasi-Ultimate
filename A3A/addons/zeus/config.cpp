@@ -298,7 +298,7 @@ class CfgPatches
             // modules
             QGVAR(Module_Base),
             QGVAR(Module_Support_Base),
-            QGVAR(Module_Support_Airstrike)
+            QGVAR(Module_Support_QRFAir)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

@@ -634,7 +634,7 @@
         displayName = $STR_A3U_Zeus_VehicleType_TransportPlane;
         GVAR(vehType) = QUOTE(vehiclesPlanesTransport);
     };
-    class GVAR(Occupants_Vehicle_StaticMG) : GVAR(Vehicle_StaticWeapon_Base) {
+    class GVAR(Occupants_Vehicle_StaticMG) : GVAR(Vehicle_StaticMG_Base) {
         scope = 2;
         scopeCurator = 2;
         faction = QGVAR(Occupants);
@@ -643,12 +643,22 @@
         GVAR(vehFaction) = QUOTE(occ);
         GVAR(vehType) = QUOTE(staticMGs);
     };
-    class GVAR(Occupants_Vehicle_StaticAT) : GVAR(Occupants_Vehicle_StaticMG) {
+    class GVAR(Occupants_Vehicle_StaticAT) : GVAR(Vehicle_StaticAT_Base) {
+        scope = 2;
+        scopeCurator = 2;
+        faction = QGVAR(Occupants);
+        side = 1;
         displayName = $STR_A3U_Zeus_VehicleType_StaticAT;
+        GVAR(vehFaction) = QUOTE(occ);
         GVAR(vehType) = QUOTE(staticAT);
     };
-    class GVAR(Occupants_Vehicle_StaticAA) : GVAR(Occupants_Vehicle_StaticMG) {
+    class GVAR(Occupants_Vehicle_StaticAA) : GVAR(Vehicle_StaticAA_Base) {
+        scope = 2;
+        scopeCurator = 2;
+        faction = QGVAR(Occupants);
+        side = 1;
         displayName = $STR_A3U_Zeus_VehicleType_StaticAA;
+        GVAR(vehFaction) = QUOTE(occ);
         GVAR(vehType) = QUOTE(staticAA);
     };
 	class GVAR(Occupants_Vehicle_Mortar) : GVAR(Vehicle_StaticMortar_Base) {

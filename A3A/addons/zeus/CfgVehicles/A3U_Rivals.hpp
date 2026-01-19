@@ -167,7 +167,7 @@
         GVAR(vehFaction) = QUOTE(riv);
         GVAR(vehType) = QUOTE(vehiclesRivalsHelis);
     };
-    class GVAR(Rivals_Vehicle_StaticWpn) : GVAR(Vehicle_StaticWeapon_Base) {
+    class GVAR(Rivals_Vehicle_StaticWpn) : GVAR(Vehicle_StaticMG_Base) {
         scope = 2;
         scopeCurator = 2;
         faction = QGVAR(Rivals);

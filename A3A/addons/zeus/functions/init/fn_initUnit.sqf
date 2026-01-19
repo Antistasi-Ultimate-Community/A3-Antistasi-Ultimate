@@ -22,13 +22,13 @@
 	
 	Usage:
 		Only intended to be called from the PostInit event handler of Zeus-spawned A3U vehicles.
-		[_unit, "occ", "military", "Rifleman"] call A3U_zeus_fnc_unitInit;
+		[_unit, "occ", "military", "Rifleman"] call A3U_zeus_fnc_initUnit;
 	
 	Return:
 		Nothing
 */
 
-#include "..\script_component.hpp"
+#include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 params ["_unit", "_unitFaction", "_unitPrefix", "_unitType"];

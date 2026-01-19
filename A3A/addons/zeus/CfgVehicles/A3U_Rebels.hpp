@@ -190,7 +190,7 @@
         displayName = $STR_A3U_Zeus_VehicleType_CivPlane;
         GVAR(vehType) = QUOTE(vehiclesCivPlane);
     };
-	class GVAR(Rebels_Vehicle_StaticMG) : GVAR(Vehicle_StaticWeapon_Base) {
+	class GVAR(Rebels_Vehicle_StaticMG) : GVAR(Vehicle_StaticMG_Base) {
         scope = 2;
         scopeCurator = 2;
         displayName = $STR_A3U_Zeus_VehicleType_StaticMG;
@@ -199,12 +199,22 @@
         GVAR(vehFaction) = QUOTE(reb);
         GVAR(vehType) = QUOTE(staticMGs);
     };
-    class GVAR(Rebels_Vehicle_StaticAT) : GVAR(Rebels_Vehicle_StaticMG) {
+    class GVAR(Rebels_Vehicle_StaticAT) : GVAR(Vehicle_StaticAT_Base) {
+        scope = 2;
+        scopeCurator = 2;
+        faction = QGVAR(Rebels);
+        side = 2;
         displayName = $STR_A3U_Zeus_VehicleType_StaticAT;
+        GVAR(vehFaction) = QUOTE(reb);
         GVAR(vehType) = QUOTE(staticAT);
     };
-    class GVAR(Rebels_Vehicle_StaticAA) : GVAR(Rebels_Vehicle_StaticMG) {
+    class GVAR(Rebels_Vehicle_StaticAA) : GVAR(Vehicle_StaticAA_Base) {
+        scope = 2;
+        scopeCurator = 2;
+        faction = QGVAR(Rebels);
+        side = 2;
         displayName = $STR_A3U_Zeus_VehicleType_StaticAA;
+        GVAR(vehFaction) = QUOTE(reb);
         GVAR(vehType) = QUOTE(staticAA);
     };
 	class GVAR(Rebels_Vehicle_Mortar) : GVAR(Vehicle_StaticMortar_Base) {

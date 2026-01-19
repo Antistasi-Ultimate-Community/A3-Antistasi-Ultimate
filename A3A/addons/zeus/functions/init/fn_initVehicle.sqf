@@ -23,13 +23,13 @@
 	
 	Usage:
 		Only intended to be called from the PostInit event handler of Zeus-spawned A3U vehicles.
-		[_vehObj, "reb", "vehiclesLightArmed"] call A3U_zeus_fnc_vehicleInit;
+		[_vehObj, "reb", "vehiclesLightArmed"] call A3U_zeus_fnc_initVehicle;
 	
 	Return:
 		Nothing
 */
 
-#include "..\script_component.hpp"
+#include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 if (!isServer) exitWith {}; // ! on dedicated, code is run on the server and all clients, (re)creating the actual vehicle for every client and blowing them all up
