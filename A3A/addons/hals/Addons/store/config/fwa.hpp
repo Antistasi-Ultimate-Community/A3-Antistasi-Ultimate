@@ -58,7 +58,7 @@
 
 			ITEM(sp_fwa_falo_factory_50_41, 1500, RIFLE_STOCK); // sp_fwa_30Rnd_Straight_762_FAL_Metric
 			ITEM(sp_fwa_falo_factory_50_42, 1500, RIFLE_STOCK);
-			ITEM(sp_fwa_fal_t48_falo_bipod, 1600, RIFLE_STOCK);
+			ITEM(sp_fwa_fal_t48_falo, 1600, RIFLE_STOCK);
 
 			ITEM(sp_fwa_fm2429, 500, RIFLE_STOCK); // sp_fwa_25Rnd_75x54_fm2429
 
