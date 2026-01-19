@@ -605,25 +605,25 @@ _layer = ["statisticsX"] call bis_fnc_rscLayer;
 
 // Build mode user actions
 player addAction[
-    "Turn build mode ON",
-    { (_this select 1) setVariable[QGVAR(isBuildModeActive), true] },
+    localize "STR_A3A_base_teardownMode_ON",
+    { (_this select 1) setVariable[QGVAR(isTeardownActive), true] },
     [],
     0,
     false,
     false,
     "",
-    QUOTE(!(_this getVariable[QQGVAR(isBuildModeActive), false]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
+    QUOTE(!(_this getVariable[QQGVAR(isTeardownActive), false]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
 ];
 
 player addAction[
-    "Turn build mode OFF",
-    { (_this select 1) setVariable[QGVAR(isBuildModeActive), false] },
+    localize "STR_A3A_base_teardownMode_OFF",
+    { (_this select 1) setVariable[QGVAR(isTeardownActive), false] },
     [],
     0,
     false,
     false,
     "",
-    QUOTE((_this getVariable[QQGVAR(isBuildModeActive), false]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
+    QUOTE((_this getVariable[QQGVAR(isTeardownActive), false]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
 ];
 
 [allCurators] remoteExecCall ["A3A_fnc_initZeusLogging",0];
