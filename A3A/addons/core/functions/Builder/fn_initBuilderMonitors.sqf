@@ -49,7 +49,7 @@ while { true } do {
         "Destroy",
         "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
         "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-        QUOTE((isNull objectParent player) && { player getVariable[QQGVAR(isBuildModeActive), false] }),
+        QUOTE((isNull objectParent player) && { player getVariable[QQGVAR(isTeardownActive), false] }),
         "[player] call A3A_fnc_canFight",
         {},
         {},
