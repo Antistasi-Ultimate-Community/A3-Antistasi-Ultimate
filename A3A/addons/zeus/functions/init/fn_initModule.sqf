@@ -33,7 +33,7 @@ params ["_module"];
 if (isNil "_module") exitWith {};
 
 private _cfg = configOf _module;
-private _args = getArray (_cfg >> "arguments");
+private _args = (configProperties [_cfg >> "arguments"]) apply { _x call BIS_fnc_getCfgData };
 private _function = getText (_cfg >> "function");
 
 Debug_3("Initializing module: %1 with args: %2 and function: %3", _module, _args, _function);

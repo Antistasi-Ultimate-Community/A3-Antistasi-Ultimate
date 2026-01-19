@@ -298,7 +298,25 @@ class CfgPatches
             // modules
             QGVAR(Module_Base),
             QGVAR(Module_Support_Base),
-            QGVAR(Module_Support_QRFAir)
+            QGVAR(Module_Support_Airstrike),
+            QGVAR(Module_Support_ASF),
+            QGVAR(Module_Support_CAS),
+            QGVAR(Module_Support_CASDive),
+            QGVAR(Module_Support_CarpetBomb),
+            QGVAR(Module_Support_Gunship),
+            QGVAR(Module_Support_Artillery),
+            QGVAR(Module_Support_Mortar),
+            QGVAR(Module_Support_Howitzer),
+            QGVAR(Module_Support_SAM),
+            QGVAR(Module_Support_CruiseMissile),
+            QGVAR(Module_Support_QRFLand),
+            QGVAR(Module_Support_QRFAir),
+            QGVAR(Module_Support_QRFVehAirdrop),
+            QGVAR(Module_Support_QRFOrbital),
+            QGVAR(Module_Support_OrbitalStrike),
+            QGVAR(Module_Support_UAV),
+            QGVAR(Module_Support_UAVAttack),
+            QGVAR(Module_Support_Tank)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
