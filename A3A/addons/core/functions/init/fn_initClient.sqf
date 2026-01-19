@@ -603,6 +603,29 @@ _layer = ["statisticsX"] call bis_fnc_rscLayer;
 //Load the player's personal save.
 [] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
 
+// Build mode user actions
+player addAction[
+    "Turn build mode ON",
+    { (_this select 1) setVariable[QGVAR(isBuildModeActive), true] },
+    [],
+    0,
+    false,
+    false,
+    "",
+    QUOTE(!(_this getVariable[QQGVAR(isBuildModeActive), false]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
+];
+
+player addAction[
+    "Turn build mode OFF",
+    { (_this select 1) setVariable[QGVAR(isBuildModeActive), false] },
+    [],
+    0,
+    false,
+    false,
+    "",
+    QUOTE((_this getVariable[QQGVAR(isBuildModeActive), false]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
+];
+
 [allCurators] remoteExecCall ["A3A_fnc_initZeusLogging",0];
 
 if (magRepack) then {
