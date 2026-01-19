@@ -41,8 +41,8 @@ _transportPool = _faction get "vehiclesPolice";
 private _numTransports = 0;
 private _landPosBlacklist = [];
 
-private _route = [getMarkerPos (_base), getMarkerPos (_target)];
-// private _route = [getMarkerPos (_base), getMarkerPos (_target)] call A3A_fnc_findPath;
+private _route = [getMarkerPos (_base), _targpos];
+// private _route = [getMarkerPos (_base), _targpos] call A3A_fnc_findPath;
 // private _routeClean = [];
 // {_routeClean pushBack (_x#0)} forEach _route; // lazy but works
 
@@ -82,7 +82,7 @@ for "_i" from 1 to _vehCount do {
 
     _numTransports = _numTransports + 1;
 
-    [_vehicle, _route, _vehicles, 120, false, true, [15, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
+    // [_vehicle, _route, _vehicles, 120, false, true, [15, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
 
     sleep 10;
 };

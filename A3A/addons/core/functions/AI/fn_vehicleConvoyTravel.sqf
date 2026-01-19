@@ -108,12 +108,12 @@ while {true} do
             if (_followDir vectorDotProduct _targDir <= 0) then {_dist = 0};
         };
 
-        if (_vehicle distance _leadVehicle >= (_convoyDistanceMax * 8)) then { // Make sure no vehicles get left behind, forces _leadVehicle to slow
-            private _leaderSpeed = linearConversion [_convoyDistanceMin, _convoyDistanceMax, _dist, (speed _vehicle / 2), (speed _vehicle), true];
-            _leadVehicle limitSpeed _leaderSpeed;
-        };
+        // if (_vehicle distance _leadVehicle >= (_convoyDistanceMax * 8)) then { // Make sure no vehicles get left behind, forces _leadVehicle to slow
+        //     private _leaderSpeed = linearConversion [_convoyDistanceMin, _convoyDistanceMax, _dist, (speed _vehicle / 2), (speed _vehicle), true];
+        //     _leadVehicle limitSpeed _leaderSpeed;
+        // }; // Kinda works? But because we don't have advanced logic, there's a case where the "lead vehicle" ends up right at the back...
 
-        private _speed = if (_dist < _convoyDistanceMax) then { 
+        private _speed = if (_dist < _convoyDistanceMax) then {
             linearConversion [_convoyDistanceMin,_convoyDistanceMax,_dist,0.01,_maxSpeed,true] 
         } else { 
             linearConversion [_convoyDistanceMin*2,_convoyDistanceMax*2,_dist,_maxSpeed,2*_maxSpeed,true]

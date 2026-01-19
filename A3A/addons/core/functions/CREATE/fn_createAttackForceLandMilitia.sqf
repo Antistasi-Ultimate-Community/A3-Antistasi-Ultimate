@@ -47,8 +47,8 @@ private _numTransports = 0;
 private _isTransport = _vehAttackCount < _vehCount;            // normal case, first vehicle should be a transport
 private _landPosBlacklist = [];
 
-private _route = [getMarkerPos (_base), getMarkerPos (_target)];
-// private _route = [getMarkerPos (_base), getMarkerPos (_target)] call A3A_fnc_findPath;
+private _route = [getMarkerPos (_base), _targpos];
+// private _route = [getMarkerPos (_base), _targpos] call A3A_fnc_findPath;
 // private _routeClean = [];
 // {_routeClean pushBack (_x#0)} forEach _route; // lazy but works
 
