@@ -98,7 +98,7 @@ switch (_type) do {
 		};
 
 		private _possibleFrontlineMarkers = ([airportsX + milbases + outposts + seaports + factories + resourcesX, petros, true] call A3A_fnc_findIfNearAndHostile) select {_x call A3A_fnc_isFrontlineNoFia};
-		if (_possibleFrontlineMarkers isNotEqualTo []) exitWith {
+		if (_possibleFrontlineMarkers isNotEqualTo []) then {
 			_site = selectRandom _possibleFrontlineMarkers;
 			[[_site],"A3A_fnc_CON_Outpost_Compet"] remoteExec ["A3A_fnc_scheduler",2];
 		} else {
