@@ -317,6 +317,7 @@
 			ITEM(sp_fwa_muzzle_greasegun, 100, MZ_STOCK);
 			ITEM(sp_fwa_muzzle_sionicsmaw556, 500, MZ_STOCK);
 			ITEM(sp_fwa_muzzle_sionicsm14ss1, 500, MZ_STOCK);
+			ITEM(sp_fwa_muzzle_garand_flash_hider, 100, MZ_STOCK);
 			ITEM(sp_fwa_muzzle_m1_flash_hider, 100, MZ_STOCK);
 		};
 
