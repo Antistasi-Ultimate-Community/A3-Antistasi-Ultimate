@@ -50,22 +50,22 @@ for "_i" from 1 to 36 do {
 
 private _emptyDisplay = findDisplay 46 createDisplay "A3A_teamLeaderBuilder";
 A3A_building_EHDB set [BUILD_DISPLAY, _emptyDisplay];
-call (A3A_building_EHDB # UPDATE_BB); 
+call (A3A_building_EHDB get UPDATE_BB); 
 
 private _userActions = [
     [
         QGVAR(buildingPlacerAbort),
         EVENT_TYPE_DEACTIVATE,
         {
-            [] call (A3A_building_EHDB # END_BUILD_FUNC);
+            [] call (A3A_building_EHDB get END_BUILD_FUNC);
         }
     ],
     [
         QGVAR(buildingPlacerAlign),
         EVENT_TYPE_DEACTIVATE,
         {
-            private _source = (A3A_building_EHDB # CURSOR_OBJECT);
-            private _object = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+            private _source = (A3A_building_EHDB get CURSOR_OBJECT);
+            private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
 
             if (isNull _source || isNull _object) exitWith {};
 
@@ -81,9 +81,9 @@ private _userActions = [
         QGVAR(buildingPlacerDelete),
         EVENT_TYPE_DEACTIVATE,
         {
-            private _tempArray = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY);
-            private _buildArray = (A3A_building_EHDB # BUILD_OBJECTS_ARRAY);
-            private _objIndex = _tempArray find (A3A_building_EHDB # CURSOR_OBJECT);
+            private _tempArray = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY);
+            private _buildArray = (A3A_building_EHDB get BUILD_OBJECTS_ARRAY);
+            private _objIndex = _tempArray find (A3A_building_EHDB get CURSOR_OBJECT);
             if (_objIndex == -1) exitWith {};
 
             attachedObjects (_tempArray # _objIndex) apply {
@@ -93,7 +93,7 @@ private _userActions = [
 
             deleteVehicle (_tempArray deleteAt _objIndex);
             private _buildData = _buildArray deleteAt _objIndex;
-            private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
+            private _supply = (A3A_building_EHDB get AVAILABLE_MONEY);
             A3A_building_EHDB set [AVAILABLE_MONEY, _supply + (_buildData#4)];
             ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
         }
@@ -106,15 +106,15 @@ private _userActions = [
                 ["Build Placer", format["There are too many builds. %1/%2", (count A3A_buildingsToSave), A3A_builderLimit]] call A3A_fnc_customHint;
             };
 
-            private _tempObject = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+            private _tempObject = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
             if (isObjectHidden _tempObject) exitWith {};
-            if ((A3A_building_EHDB # BUILD_OBJECT_SELECTED_STRING) isEqualTo "Land_Can_V2_F") exitWith {};	// temp objects not built.
+            if ((A3A_building_EHDB get BUILD_OBJECT_SELECTED_STRING) isEqualTo "Land_Can_V2_F") exitWith {};	// temp objects not built.
 
-            if (_tempObject distance (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB # BUILD_RADIUS)) exitWith {};
+            if (_tempObject distance (A3A_building_EHDB get BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB get BUILD_RADIUS)) exitWith {};
             //if (isOnRoad getPosATL _tempObject) exitwith {};	// can't build on roads
             
-            private _price = (A3A_building_EHDB # OBJECT_PRICE);
-            private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
+            private _price = (A3A_building_EHDB get OBJECT_PRICE);
+            private _supply = (A3A_building_EHDB get AVAILABLE_MONEY);
 
             // TODO: Hints don't work here, just hope players are watching the numbers for now
             if (_price > _supply) exitWith {};
@@ -130,8 +130,8 @@ private _userActions = [
             _vehicle setVectorDirAndUp _dirAndUp;
             //playSound3D[getMissionPath "Sounds\hammer.ogg", player];
 
-            (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
-            (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, objNull, _position, _dirAndUp, _price];
+            (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
+            (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, objNull, _position, _dirAndUp, _price];
 
             _tempObject hideObject true;		// prevent unintentional double-builds
         }
@@ -140,12 +140,12 @@ private _userActions = [
         QGVAR(buildingPlacerRepair),
         EVENT_TYPE_DEACTIVATE,
         {
-            private _ruin = (A3A_building_EHDB # CURSOR_OBJECT);
+            private _ruin = (A3A_building_EHDB get CURSOR_OBJECT);
             if !(_ruin isKindOf "Ruins") exitWith {};
             private _building = _ruin getVariable "building";
             if (isNil "_building") then { _building = _ruin getVariable "BIS_fnc_createRuin_object" };
             if (isNil "_building") exitWith {};																	// non-rebuildable ruin
-            if (-1 != (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
+            if (-1 != (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
 
             // Calculate repair cost from bounding box
             private _bbsize = (boundingBoxReal _building # 1) vectorDiff (boundingBoxReal _building # 0);
@@ -153,7 +153,7 @@ private _userActions = [
             _price = 10 * round (_price / 10);
 
             // TODO: Sort out hints or something?
-            private _supply = (A3A_building_EHDB # AVAILABLE_MONEY);
+            private _supply = (A3A_building_EHDB get AVAILABLE_MONEY);
             if(_price > _supply) exitWith {};
             A3A_building_EHDB set [AVAILABLE_MONEY, _supply - _price];
             ["updateMoney"] call A3A_fnc_teamLeaderRTSPlacerDialog;
@@ -164,8 +164,8 @@ private _userActions = [
             _vehicle setDir getDir _building;
             _vehicle setPosATL [_oldPos#0, _oldPos#1, 0];
 
-            (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, _building, nil, nil, _price];
-            (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
+            (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, _building, nil, nil, _price];
+            (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
         }
     ],
     [
@@ -200,40 +200,40 @@ private _userActions = [
         QGVAR(buildingPlacerRotateStepDecrease),
         EVENT_TYPE_DEACTIVATE,
         {
-            [-1] call (A3A_building_EHDB # ROTATION_STEP_FUNC);
+            [-1] call (A3A_building_EHDB get ROTATION_STEP_FUNC);
         }
     ],
     [
         QGVAR(buildingPlacerRotateStepIncrease),
         EVENT_TYPE_DEACTIVATE,
         {
-            [1] call (A3A_building_EHDB # ROTATION_STEP_FUNC);
+            [1] call (A3A_building_EHDB get ROTATION_STEP_FUNC);
         }
     ],
     [
         QGVAR(buildingPlacerSnapToSurface),
         EVENT_TYPE_DEACTIVATE,
         {
-            A3A_building_EHDB set [SNAP_SURFACE_MODE, !(A3A_building_EHDB # SNAP_SURFACE_MODE)];
+            A3A_building_EHDB set [SNAP_SURFACE_MODE, !(A3A_building_EHDB get SNAP_SURFACE_MODE)];
 
             // change the text color to tell that you have entered the mode
             private _display = uiNamespace getVariable "A3A_placerHint_display";
             private _altText = (_display displayCtrl IDC_PLACERHINT_ALT_TEXT);
 
-            _altText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB # SNAP_SURFACE_MODE));
+            _altText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB get SNAP_SURFACE_MODE));
         }
     ],
     [
         QGVAR(buildingPlacerUnsafeMode),
         EVENT_TYPE_DEACTIVATE,
         {
-            A3A_building_EHDB set [UNSAFE_MODE, !(A3A_building_EHDB # UNSAFE_MODE)];
+            A3A_building_EHDB set [UNSAFE_MODE, !(A3A_building_EHDB get UNSAFE_MODE)];
 
             // change the text color to tell that you have entered the mode
             private _display = uiNamespace getVariable "A3A_placerHint_display";
             private _shiftText = (_display displayCtrl IDC_PLACERHINT_SHIFT_TEXT);
 
-            _shiftText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB # UNSAFE_MODE));
+            _shiftText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB get UNSAFE_MODE));
         }
     ]
 ];
@@ -246,7 +246,7 @@ A3A_building_EHDB set[USER_ACTION_EHS, _userActions apply {
 
 private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private _stateChange = false;
-    private _object = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+    private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
     private _vehiclePos = screenToWorld getMousePosition;
     
     //change in position
@@ -268,7 +268,7 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
         private _building = _ruin getVariable "building";
         if (isNil "_building") exitWith {};																	// non-rebuildable ruin
         if (_building in antennasDead) exitWith {};                                                         // don't use this for radio towers
-        if (-1 != (A3A_building_EHDB # BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
+        if (-1 != (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
 
         // Calculate repair cost from bounding box
         private _bbsize = (boundingBoxReal _building # 1) vectorDiff (boundingBoxReal _building # 0);
@@ -277,35 +277,35 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
         ["setContextKey", ["rebuild", _price]] call A3A_fnc_setupPlacerHints;
     };
 
-    if (_intersectObj in (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY)) then {
+    if (_intersectObj in (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY)) then {
         // show C key
         ["setContextKey", ["cancel", getText (configof _intersectObj >> "displayName")]] call A3A_fnc_setupPlacerHints;
     };
 
-    if ((A3A_building_EHDB # ROTATION_MODE_CW) || { A3A_building_EHDB # ROTATION_MODE_CCW }) then {
-        private _multiplier = [-1, 1] select (A3A_building_EHDB # ROTATION_MODE_CW);
-        private _delta = if ((A3A_building_EHDB # ROTATION_STEP) isEqualType false) then {
+    if ((A3A_building_EHDB get ROTATION_MODE_CW) || { A3A_building_EHDB get ROTATION_MODE_CCW }) then {
+        private _multiplier = [-1, 1] select (A3A_building_EHDB get ROTATION_MODE_CW);
+        private _delta = if ((A3A_building_EHDB get ROTATION_STEP) isEqualType false) then {
             diag_deltaTime * 120
         } else {
             // with rotation stepping, only rotate once per frame then wait for the next key press
             A3A_building_EHDB set[ROTATION_MODE_CCW, false];
             A3A_building_EHDB set[ROTATION_MODE_CW, false];
 
-            (A3A_building_EHDB # ROTATION_STEP)
+            (A3A_building_EHDB get ROTATION_STEP)
         };
 
-        private _direction = (A3A_building_EHDB # BUILD_OBJECT_TEMP_DIR) + _multiplier * _delta;
+        private _direction = (A3A_building_EHDB get BUILD_OBJECT_TEMP_DIR) + _multiplier * _delta;
         A3A_building_EHDB set [BUILD_OBJECT_TEMP_DIR, _direction];
         _object setDir _direction;
         _stateChange = true;
     };
     
-    if (A3A_building_EHDB # GUI_BUTTON_PRESSED) then {
+    if (A3A_building_EHDB get GUI_BUTTON_PRESSED) then {
         A3A_building_EHDB set [GUI_BUTTON_PRESSED, false];
         _stateChange = true;
     };
     
-    if (A3A_building_EHDB # SNAP_SURFACE_MODE) then {
+    if (A3A_building_EHDB get SNAP_SURFACE_MODE) then {
         private _posASL = AGLtoASL _vehiclePos;
         private _intersects = lineIntersectsSurfaces [_posASL vectorAdd [0,0,100], _posASL vectorAdd [0,0,-100], _object];
         if (count _intersects > 0) then {
@@ -316,9 +316,9 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 
 
     // Camera clamping
-    private _centerPos = getPosATL (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER);
+    private _centerPos = getPosATL (A3A_building_EHDB get BUILD_RADIUS_OBJECT_CENTER);
     private _cameraPos = getPosATL A3A_cam;
-    private _buildRad = A3A_building_EHDB # BUILD_RADIUS;
+    private _buildRad = A3A_building_EHDB get BUILD_RADIUS;
 
     private _camClampPos = [0,0,0];
     _camClampPos set [0, _cameraPos#0 max (_centerPos#0 - _buildRad) min (_centerPos#0 + _buildRad)];
@@ -333,7 +333,7 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     if (!_stateChange) exitWith {};
 
     _object setPosATL _vehiclePos;
-    _object setDir (A3A_building_EHDB # BUILD_OBJECT_TEMP_DIR);
+    _object setDir (A3A_building_EHDB get BUILD_OBJECT_TEMP_DIR);
 
     // Conform for terrain surface normal in vicinity. Kinda works
     private _normTotal = surfaceNormal _vehiclePos;
@@ -343,13 +343,13 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     _object setVectorUp vectorNormalized _normTotal;
 
     private _hide = call {
-        if (_object distance (A3A_building_EHDB # BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB # BUILD_RADIUS)) exitWith {true};
+        if (_object distance (A3A_building_EHDB get BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB get BUILD_RADIUS)) exitWith {true};
         if (surfaceIsWater _vehiclePos) exitWith {true};
-        if (A3A_building_EHDB # UNSAFE_MODE) exitWith {false};
-        if (A3A_building_EHDB # SNAP_SURFACE_MODE) exitWith {false};				// implies unsafe anyway
+        if (A3A_building_EHDB get UNSAFE_MODE) exitWith {false};
+        if (A3A_building_EHDB get SNAP_SURFACE_MODE) exitWith {false};				// implies unsafe anyway
 
         // collison check, god arma what I would give for collison trigers (looking at you unity, BGE had them and it was made by 20ish guys)
-        if (isNil "A3A_buildingRays") then { call (A3A_building_EHDB # UPDATE_BB) };
+        if (isNil "A3A_buildingRays") then { call (A3A_building_EHDB get UPDATE_BB) };
 
         -1 != A3A_buildingRays findIf {
             _x params ["_start", "_end"];
