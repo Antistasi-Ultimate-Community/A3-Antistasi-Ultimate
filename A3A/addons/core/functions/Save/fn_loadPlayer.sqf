@@ -38,6 +38,8 @@ _unit setUnitRank _rank;
 _unit setVariable ["rankX", _rank, true];
 _unit setVariable ["moneyX", _money, true];
 
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM], owner _unit] call CBA_fnc_ownerEvent;
+
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];
 
