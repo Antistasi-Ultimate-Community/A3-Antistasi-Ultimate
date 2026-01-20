@@ -800,6 +800,8 @@ class CfgFunctions
             class isEngineer {};
             class localLog {};
             class log {};
+            class onClientInitDone {};
+            class onServerInitDone {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};

@@ -1,5 +1,10 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 
+#define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
+#define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
+
+#define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
+
 #undef PREP
 #undef PREPSUB
 #define PREP(fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(functions\DOUBLES(fn,fncName).sqf)
