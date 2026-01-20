@@ -1,7 +1,7 @@
 /*
 Author: [Killerswin2, Hakon (Stole his bb code)]
     team leader structured placer. Allows teamleaders to gain access to a
-    rts like camera to place objects. 
+    rts like camera to place objects.
 Arguments:
 1. <object> object that will center placement
 2. <number> number that is used for the radius of placement
@@ -9,7 +9,7 @@ Return Value:
 NONE
 Scope: Client
 Environment: Unscheduled
-Public: 
+Public:
 no
 Example:
 [player, 100] call A3A_fnc_buildingPlacer.sqf
@@ -56,7 +56,7 @@ for "_i" from 1 to 36 do {
 
 private _emptyDisplay = findDisplay 46 createDisplay "A3A_teamLeaderBuilder";
 A3A_building_EHDB set [BUILD_DISPLAY, _emptyDisplay];
-call (A3A_building_EHDB get UPDATE_BB); 
+call (A3A_building_EHDB get UPDATE_BB);
 
 private _userActions = [
     [
@@ -118,7 +118,7 @@ private _userActions = [
 
             if (_tempObject distance (A3A_building_EHDB get BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB get BUILD_RADIUS)) exitWith {};
             //if (isOnRoad getPosATL _tempObject) exitwith {};	// can't build on roads
-            
+
             private _price = (A3A_building_EHDB get OBJECT_PRICE);
             private _supply = (A3A_building_EHDB get AVAILABLE_MONEY);
 
@@ -250,7 +250,7 @@ A3A_building_EHDB set[USER_ACTION_EHS, _userActions apply {
     [_actionName, _eventType, addUserActionEventHandler[_actionName, _eventType, _callback]];
 }];
 
-private _showObjectAlignHelpers = __SHOW_OBJECT_ALIGN_HELPERS__ || 
+private _showObjectAlignHelpers = __SHOW_OBJECT_ALIGN_HELPERS__ ||
     // Set this in console to force showing building place helpers
     { missionNamespace getVariable[QGVAR(debugBuildingPlacerHelpers), false] };
 
@@ -323,7 +323,7 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
     private _vehiclePos = screenToWorld getMousePosition;
     private["_vehicleVectorUp"];
-    
+
     //change in position
     if (_object distance2d _vehiclePos > 0.1) then {
         _stateChange = true;
@@ -374,7 +374,7 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
         _object setDir _direction;
         _stateChange = true;
     };
-    
+
     if (A3A_building_EHDB get SNAP_SURFACE_MODE) then {
         private _posASL = AGLtoASL _vehiclePos;
         private _intersects = lineIntersectsSurfaces [_posASL vectorAdd [0,0,100], _posASL vectorAdd [0,0,-100], _object, objNull, true, 1, "GEOM"];
@@ -398,11 +398,11 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private _camClampPos = [0,0,0];
     _camClampPos set [0, _cameraPos#0 max (_centerPos#0 - _buildRad) min (_centerPos#0 + _buildRad)];
     _camClampPos set [1, _cameraPos#1 max (_centerPos#1 - _buildRad) min (_centerPos#1 + _buildRad)];
-    
+
     // make the clamp a sphere instead of a weird rectangle
     _camClampPos set [2, _cameraPos#2 max (_centerPos#2 + 5) min (_centerPos#2 + _buildRad)];
     A3A_cam setPosATL _camClampPos;
-    
+
 
     // Object render state update
     if (!_stateChange) exitWith {};
