@@ -248,6 +248,7 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private _stateChange = false;
     private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
     private _vehiclePos = screenToWorld getMousePosition;
+    private["_vehicleVectorUp"];
     
     //change in position
     if (_object distance2d _vehiclePos > 0.1) then {
@@ -302,11 +303,14 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     
     if (A3A_building_EHDB get SNAP_SURFACE_MODE) then {
         private _posASL = AGLtoASL _vehiclePos;
-        private _intersects = lineIntersectsSurfaces [_posASL vectorAdd [0,0,100], _posASL vectorAdd [0,0,-100], _object];
+        private _intersects = lineIntersectsSurfaces [_posASL vectorAdd [0,0,100], _posASL vectorAdd [0,0,-100], _object, objNull, true, 1, "GEOM"];
+
         if (count _intersects > 0) then {
             _vehiclePos = ASLtoAGL (_intersects select 0 select 0);
+            _vehicleVectorUp = _intersects select 0 select 1;
+
+            _stateChange = true;
         };
-        _stateChange = true;
     };
 
 
@@ -330,12 +334,24 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     _object setPosATL _vehiclePos;
     _object setDir (A3A_building_EHDB get BUILD_OBJECT_TEMP_DIR);
 
-    // Conform for terrain surface normal in vicinity. Kinda works
-    private _normTotal = surfaceNormal _vehiclePos;
-    {
-        _normTotal = _normTotal vectorAdd (surfaceNormal (_vehiclePos vectorAdd _x));
-    } forEach [[-2,0], [2,0], [0,-2], [0,2]];
-    _object setVectorUp vectorNormalized _normTotal;
+    private _normal = switch true do {
+        case !(isNil "_vehicleVectorUp"): {
+            _vehicleVectorUp;
+        };
+        case isArray(configOf _object >> QGVAR(buildingPlacerVectorUp)): {
+            getArray(configOf _object >> QGVAR(buildingPlacerVectorUp));
+        };
+        default {
+            // Conform for terrain surface normal in vicinity. Kinda works
+            private _normTotal = surfaceNormal _vehiclePos;
+            {
+                _normTotal = _normTotal vectorAdd (surfaceNormal (_vehiclePos vectorAdd _x));
+            } forEach [[-2,0], [2,0], [0,-2], [0,2]];
+            vectorNormalized _normTotal;
+        };
+    };
+
+    _object setVectorUp _normal;
 
     private _hide = call {
         if (_object distance (A3A_building_EHDB get BUILD_RADIUS_OBJECT_CENTER) > (A3A_building_EHDB get BUILD_RADIUS)) exitWith {true};

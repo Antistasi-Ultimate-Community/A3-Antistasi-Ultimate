@@ -1,6 +1,18 @@
 class CfgVehicles
 {
     class Box_Syndicate_Ammo_F;
+    class House_Small_F;
+    class Strategic;
+
+    // <Force building placer to ignore surface normals and use their up vectors>
+    class FlagCarrierCore: Strategic {
+        GVAR(buildingPlacerVectorUp)[] = {0,0,1};
+    };
+
+    class Lamps_base_F: House_Small_F {
+        GVAR(buildingPlacerVectorUp)[] = {0,0,1};
+    };
+    // </Force building placer to ignore surface normals and use their up vectors>
 
     class A3AP_Box_Syndicate_Ammo_F : Box_Syndicate_Ammo_F 
     {
