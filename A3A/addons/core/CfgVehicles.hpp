@@ -1,5 +1,6 @@
 class CfgVehicles
 {
+    class Box_NATO_Uniforms_F;
     class Box_Syndicate_Ammo_F;
     class House_Small_F;
     class Strategic;
@@ -14,10 +15,10 @@ class CfgVehicles
     };
     // </Force building placer to ignore surface normals and use their up vectors>
 
-    class A3AP_Box_Syndicate_Ammo_F : Box_Syndicate_Ammo_F 
-    {
+    class A3AP_Box_Syndicate_Ammo_F : Box_Syndicate_Ammo_F {
         armor = 2000;
     };
+
     // Rebel AI unit types
 
     //don't need to change this one?
@@ -195,6 +196,33 @@ class CfgVehicles
         class TransportWeapons{};
         class TransportItems{};
         class TransportBackpacks{};
+    };
+
+    class GVAR(Box_BuildingPlacer_Decorations): Box_NATO_Uniforms_F {
+        displayName = "Decorations Box";
+
+        class TransportItems {};
+        GVAR(buildableObjects)[] = {
+            {"Land_CampingChair_V2_white_F", 25},
+            {"Land_CampingTable_F", 50},
+            {"Land_CampingTable_small_F", 30},
+            {"Land_CampingTable_small_white_F", 35},
+            {"Land_CampingTable_white_F", 55},
+            {"Land_CampingChair_V1_F", 20},
+            {"Land_Camping_Light_F", 40},
+            {"Land_Laptop_F", 100},
+            {"Land_Laptop_device_F", 150},
+            {"Land_Portable_generator_F", 200},
+            {"Land_SatellitePhone_F", 120},
+            {"Land_TentLamp_01_suspended_red_F", 80},
+            {"Land_TentLamp_01_suspended_F", 80}
+        };
+
+        /* Generator property:
+        
+        GVAR(buildableObjectsCode) = QUOTE((_this select 0) pushBack[ARR_2(QQUOTE(Land_Portable_generator_F),200)]);
+
+         */
     };
 
     class Land_PaperBox_01_small_closed_white_med_F;

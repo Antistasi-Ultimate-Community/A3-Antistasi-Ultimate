@@ -44,7 +44,7 @@ switch (_mode) do
 		private _moneyCtrl = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMONEY;
 		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB get AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
 
-		private _buildableObjects = A3A_buildableObjects;
+		private _buildableObjects = EGVAR(core,tlDialogBuildableObjects);
 		
 		private _boxWidth = round ((ctrlPosition _buildControlsGroup # 2) / GRID_W);
 		private _itemsPerRow = floor ((_boxWidth - 6) / 36);			// minimum 32 + 4 grids per tile

@@ -23,6 +23,19 @@ params [
 	["_teamLeaderBox", objNull, [objNull]]
 ];
 
+GVAR(tlDialogBuildableObjects) = A3A_buildableObjects;
+
+if (isArray(configOf _teamLeaderBox >> QGVAR(buildableObjects))) then {
+	private _buildableObjects = getArray(configOf _teamLeaderBox >> QGVAR(buildableObjects));
+
+	if isText(configOf _teamLeaderBox >> QGVAR(buildableObjectsCode)) then {
+		private _code = getText(configOf _teamLeaderBox >> QGVAR(buildableObjectsCode));
+		[_buildableObjects] call compile _code;
+	};
+
+	GVAR(tlDialogBuildableObjects) = _buildableObjects;
+};
+
 A3A_building_EHDB = createHashMapFromArray[
     // ROTATION_STEP - (false = default rotation, <number> = rotation step in degrees)
     [ROTATION_STEP, false],
