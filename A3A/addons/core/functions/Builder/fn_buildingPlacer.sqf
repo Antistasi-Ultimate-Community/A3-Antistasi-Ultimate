@@ -300,11 +300,6 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
         _stateChange = true;
     };
     
-    if (A3A_building_EHDB get GUI_BUTTON_PRESSED) then {
-        A3A_building_EHDB set [GUI_BUTTON_PRESSED, false];
-        _stateChange = true;
-    };
-    
     if (A3A_building_EHDB get SNAP_SURFACE_MODE) then {
         private _posASL = AGLtoASL _vehiclePos;
         private _intersects = lineIntersectsSurfaces [_posASL vectorAdd [0,0,100], _posASL vectorAdd [0,0,-100], _object];
