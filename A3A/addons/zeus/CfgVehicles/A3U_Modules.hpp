@@ -1,13 +1,14 @@
 	// Supports
 	class GVAR(Module_Support_Base) : GVAR(Module_Base) {
+		curatorCanAttach = 1;
 		category = QGVAR(Supports);
 		class arguments {
 			type = "";
-			side = Occupants;
+			side = QUOTE(Occupants);
 			caller = QUOTE(attack);
 			maxSpend = 500;
-			target = false;
-			position = getPosATL _module;
+			target = QUOTE(false);
+			position = QUOTE(getPosATL _module);
 			reveal = 1;
 			delay = 0;
 		};

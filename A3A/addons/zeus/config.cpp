@@ -295,8 +295,10 @@ class CfgPatches
             QGVAR(Civilians_Press),
             QGVAR(Civilians_Worker),
 
-            // modules
+            // base modules
             QGVAR(Module_Base),
+
+            // support modules
             QGVAR(Module_Support_Base),
             QGVAR(Module_Support_Airstrike),
             QGVAR(Module_Support_ASF),
