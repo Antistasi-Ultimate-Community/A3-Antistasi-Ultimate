@@ -3,6 +3,7 @@ class CfgVehicles
     class Box_NATO_Uniforms_F;
     class Box_Syndicate_Ammo_F;
     class House_Small_F;
+    class NonStrategic;
     class Strategic;
 
     // <Force building placer to ignore surface normals and use their up vectors>
@@ -215,7 +216,8 @@ class CfgVehicles
             {"Land_Portable_generator_F", 200},
             {"Land_SatellitePhone_F", 120},
             {"Land_TentLamp_01_suspended_red_F", 80},
-            {"Land_TentLamp_01_suspended_F", 80}
+            {"Land_TentLamp_01_suspended_F", 80},
+            {QGVAR(Chemlight_Red), 15}
         };
 
         /* Generator property:
@@ -223,6 +225,37 @@ class CfgVehicles
         GVAR(buildableObjectsCode) = QUOTE((_this select 0) pushBack[ARR_2(QQUOTE(Land_Portable_generator_F),200)]);
 
          */
+    };
+
+    class GVAR(Chemlight_Base): NonStrategic {
+        displayName = "Chemlight (Base)";
+        author = AUTHOR;
+        model = "\A3\Weapons_f\chemlight\chemlight_blue_lit.p3d";
+        destrType = "DestructNo";
+        armor = 200;
+        scope = 0;
+
+        class LightParams {
+            color[] = {1, 1, 1};
+            ambient[] = {0.006, 0.008, 0.01};
+            intensity = 1000;
+            useFlare = 1;
+            flareMaxDistance = 150;
+            flareSize = 1;
+        };
+
+        class EventHandlers {
+            init = QUOTE(call FUNCMAIN(attachLightFromConfig));
+        };
+    };
+
+    class GVAR(Chemlight_Red): GVAR(Chemlight_Base) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Red)";
+
+        class LightParams : LightParams {
+            color[] = {1, 0.08, 0.16};
+        };
     };
 
     class Land_PaperBox_01_small_closed_white_med_F;
