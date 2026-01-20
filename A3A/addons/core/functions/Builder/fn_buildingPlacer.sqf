@@ -132,6 +132,7 @@ private _userActions = [
             private _dirAndUp = [vectorDir _tempObject, vectorUp _tempObject];
 
             private _vehicle = typeof _tempObject createVehicleLocal [0,0,0];
+            _vehicle enableSimulation false;
             _vehicle setPosWorld _position;
             _vehicle setVectorDirAndUp _dirAndUp;
             //playSound3D[getMissionPath "Sounds\hammer.ogg", player];
@@ -167,6 +168,7 @@ private _userActions = [
             // Place imitation of repaired building
             private _oldPos = getPosATL _building;
             private _vehicle = typeof _building createVehicleLocal [0,0,0];
+            _vehicle enableSimulation false;
             _vehicle setDir getDir _building;
             _vehicle setPosATL [_oldPos#0, _oldPos#1, 0];
 
