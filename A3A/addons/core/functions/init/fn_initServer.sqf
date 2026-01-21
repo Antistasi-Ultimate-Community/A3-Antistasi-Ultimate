@@ -312,7 +312,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 
 // Because CBA events are blocking, we can't have third party stuff block us 
 // from executing the stuff below. So we spawn it.
-[CBA_EVENT_SERVER_INIT_DONE, []] spawn CBA_fnc_localEvent;
+[CBA_EVENT_SERVER_INIT_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
 
 // ********************* Initialize loops *******************************************
 

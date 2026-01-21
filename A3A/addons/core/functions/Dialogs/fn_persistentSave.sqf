@@ -15,7 +15,7 @@ private _uuid = [] call CBA_fnc_createUUID;
 
 // Subscribers to the event can add data to this hashmap to be saved along with
 // the player data.
-[CBA_EVENT_CLIENT_PLAYER_SAVE, [_additionalData]] call CBA_fnc_localEvent;
+[CBA_EVENT_CLIENT_PLAYER_SAVE, [_additionalData]] call FUNCMAIN(triggerLocalEvent);
 
 Info_1("Sending save player request for UID %1", getPlayerUID player);
 Verbose_2("Additional data: %1", _additionalData);
