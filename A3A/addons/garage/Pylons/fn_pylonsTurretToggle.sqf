@@ -48,11 +48,11 @@ if (_switch && !(HR_GRG_Turrets isEqualTo [])) then {
 _ctrl setVariable ["HR_GRG_turret", _turret];
 
 if (_turret isEqualTo [0]) then {
-    Debug_1("Turret switched to Gunner, Ctrl: %1",_ctrl);
+    Trace_1("Turret switched to Gunner, Ctrl: %1",_ctrl);
     _ctrl ctrlSetText GunnerIcon;
     _ctrl ctrlSetTooltip localize "STR_HR_GRG_Pylons_Gunner";
 } else {
-    Debug_1("Turret switched to Driver, Ctrl: %1",_ctrl);
+    Trace_1("Turret switched to Driver, Ctrl: %1",_ctrl);
     _ctrl ctrlSetText DriverIcon;
     _ctrl ctrlSetTooltip localize "STR_HR_GRG_Pylons_Driver";
 };

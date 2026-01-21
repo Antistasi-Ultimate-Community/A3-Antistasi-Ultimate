@@ -23,8 +23,8 @@
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 params ["_ctrl", "_index", ["_blockPylonChange", false]];
-Debug("Updating preset selection");
-if (_index isEqualTo 0) exitWith {Debug("Custom preset");};//custom preset, dont change anything with the pylons
+Trace("Updating preset selection");
+if (_index isEqualTo 0) exitWith {Trace("Custom preset");};//custom preset, dont change anything with the pylons
 
 //get all preset loudouts
 private _presetCtrl = (HR_GRG_Pylon_GeneralCtrls#1);
@@ -39,19 +39,19 @@ if ( ( { !(_x isEqualTo "") } count _equiped ) isEqualTo 0 ) then { _equiped = [
 
 //if we are updating from new pylons
 if (_blockPylonChange) exitWith {
-    Debug("Pylon change blocked, only preset control updated");
+    Trace("Pylon change blocked, only preset control updated");
     _selIndex = _loudouts findIf { _x isEqualTo _equiped};
     _presetCtrl lbSetCurSel _selIndex;
 };
 
 //selecting a preset
 private _selectedLoudout = _loudouts#_index;
-if (_equiped isEqualTo _selectedLoudout) exitWith {Debug("Preset already sett");};//already equiped
+if (_equiped isEqualTo _selectedLoudout) exitWith {Trace("Preset already sett");};//already equiped
 
-Debug("Applying a preset");
+Trace("Applying a preset");
     //empty preset
 if (_selectedLoudout isEqualTo []) exitWith {
-    Debug("Empty preset applied");
+    Trace("Empty preset applied");
     {
         _x params ["_combo", "_mirrorIndex", "_button", "_comboIndex"];
 
@@ -91,4 +91,4 @@ private _dataCount = (count HR_GRG_PylonData) -1;
     //update pylon magazine
     _combo lbSetCurSel _selIndex;
 } forEach _selectedLoudout;
-Debug("Preset applied");
+Trace("Preset applied");

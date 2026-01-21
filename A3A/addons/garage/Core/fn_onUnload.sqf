@@ -22,7 +22,7 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Debug("Closing Garage");
+Trace("Closing Garage");
 
 [] call HR_GRG_onCloseEvent;
 

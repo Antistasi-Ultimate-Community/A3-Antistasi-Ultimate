@@ -25,7 +25,7 @@ if !(isClass (missionConfigFile/"A3A")) exitWith {};//not A3 Antistasi mission
 FIX_LINE_NUMBERS()
 if (!isServer) exitWith {};
 
-Debug("Running server init");
+Trace("Running server init");
 if (!isNil "HR_GRG_Init") exitWith {};//init already run.
 
 if (isNil "HR_GRG_Vehicles") then {[] call HR_GRG_fnc_loadSaveData};

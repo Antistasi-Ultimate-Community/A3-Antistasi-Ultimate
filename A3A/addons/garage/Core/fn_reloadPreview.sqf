@@ -20,7 +20,7 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Debug("Reloading preview");
+Trace("Reloading preview");
 HR_GRG_SelectedVehicles params ["_catIndex", "_vehUID", "_class"];
 
 //delete old vehicle
@@ -39,10 +39,10 @@ HR_GRG_previewVeh enableSimulation false;
 //get vehicle data
 private _cat = HR_GRG_Vehicles#_catIndex;
 private _veh = _cat get _vehUID;
-Debug_1("ReloadPreview - Veh: %1", _veh);
+Trace_1("ReloadPreview - Veh: %1", _veh);
 
 //set state
-Debug_1("Preview vehicle State: %1", _veh#4);
+Trace_1("Preview vehicle State: %1", _veh#4);
 HR_GRG_previewVehState = _veh#4;
 [HR_GRG_previewVeh, HR_GRG_previewVehState] call HR_GRG_fnc_setState;
 HR_GRG_previewVeh allowDamage false;
