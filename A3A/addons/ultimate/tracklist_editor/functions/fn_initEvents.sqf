@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_ultimate_tracklist_editor_fnc_overrideMusic
+Function: A3A_ultimate_tracklist_editor_fnc_initEvents
 
 Description:
-    Override default music script
+    Set up load/save and music event handlers
 
 Parameters:
 
@@ -11,7 +11,7 @@ Optional:
 
 Example:
     (begin example)
-    [] call A3A_ultimate_tracklist_editor_fnc_overrideMusic;
+    [] call A3A_ultimate_tracklist_editor_fnc_initEvents;
     (end example)
 
 Returns:
@@ -20,12 +20,24 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(overrideMusic),_this);
+TRACE_1(QFUNC(initEvents),_this);
 
-GVAR(A3A_fnc_music) = A3A_fnc_music;
-A3A_fnc_music = {
-    call FUNC(music);
-};
+[CBA_EVENT_CLIENT_PLAYER_LOAD, {
+    TRACE_1(QFUNC(eventOnLoad),_this);
+    if assert(params[["_saveData", nil, [createHashMap]]]) then {
+        GVAR(tracks) = _saveData get QGVAR(tracks);
+        [] call FUNC(verifyLoadedTracks);
+    };
+}] call CBA_fnc_addEventHandler;
+
+[CBA_EVENT_CLIENT_PLAYER_SAVE, {
+    TRACE_1(QFUNC(eventOnSave),_this);
+    if assert(params[["_saveData", nil, [createHashMap]]]) then {
+        if (GVAR(tracks) isEqualType createHashMap) then {
+            _saveData set[QGVAR(tracks), +GVAR(tracks)];
+        };
+    };
+}] call CBA_fnc_addEventHandler;
 
 addMusicEventHandler["MusicStop", {
     TRACE_2(QFUNC(MusicStop),_this,musicON);
@@ -39,7 +51,7 @@ addMusicEventHandler["MusicStop", {
     };
 
     private _pause = GVAR(pause);
-    private _delay = [_pause / 2, _pause] call FUNCMAIN(utilRandomRange);
+    private _delay = [_pause / 2, _pause] call FUNCMAIN(randomRange);
 
     TRACE_2(QFUNC(MusicStop),_pause,_delay);
 

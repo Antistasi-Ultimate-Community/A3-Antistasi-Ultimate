@@ -475,7 +475,6 @@ class CfgFunctions
             class makePlayerBossIfEligible {};
             class memberAdd {};
             class membersList {};
-            class music {};
             class promotePlayer {};
             class radioJam {};
             class ranksMP {};
@@ -789,6 +788,7 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class arrayRange {};
             class basicBackpack {};
             class classNameToModel {};
             class countAttachedObjects {};
@@ -797,11 +797,13 @@ class CfgFunctions
             class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
+            class isDayTime {};
             class isEngineer {};
             class localLog {};
             class log {};
             class onClientInitDone {};
             class onServerInitDone {};
+            class randomRange {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};

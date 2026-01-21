@@ -22,10 +22,10 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onInitPlaylistTree),_this);
 
-params[
-    ["_control",controlNull,[controlNull]],
-    ["_config",configNull,[configNull]]
-];
+if !assert(params[
+    ["_control", controlNull, [controlNull]],
+    ["_config", configNull, [configNull]]
+]) exitWith {};
 
 if !assert(!isNull _control) exitWith {};
 if !assert(!isNull _config) exitWith {};

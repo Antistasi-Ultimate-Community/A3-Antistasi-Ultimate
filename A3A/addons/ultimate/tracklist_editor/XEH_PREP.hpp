@@ -1,9 +1,9 @@
 PREP(exportPlaylist);
 PREP(importPlaylist);
+PREP(initEvents);
 PREP(music);
 PREP(onDialogOpen);
 PREP(onInitPlaylistTree);
-PREP(overrideMusic);
 PREP(playNextTrack);
 PREP(playTrack);
 PREP(savePlaylist);

@@ -28,12 +28,12 @@ private _tree = _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_STATICT
 
 private _count = _tree tvCount[];
 
-[0, _count - 1] call FUNCMAIN(utilRange) apply {
+[0, _count - 1] call FUNCMAIN(arrayRange) apply {
     private _index = _x;
     private _section = _tree tvData[_index];
     private _leaves = _tree tvCount[_index];
 
-    GVAR(tracks) set[_section, [0, _leaves - 1] call FUNCMAIN(utilRange) apply {
+    GVAR(tracks) set[_section, [0, _leaves - 1] call FUNCMAIN(arrayRange) apply {
         _tree tvData[_index, _x];
     }];
 };

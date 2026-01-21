@@ -30,7 +30,7 @@ if !isNil QGVAR(waitScript) then {
 private _key = switch true do {
     case (behaviour player isEqualTo "COMBAT"): { "combat" };
     case (behaviour player isEqualTo "STEALTH"): { "stealth" };
-    case !([] call FUNCMAIN(utilIsDaytime)): { "night" };
+    case !([] call FUNCMAIN(isDaytime)): { "night" };
     default { "default" };
 };
 

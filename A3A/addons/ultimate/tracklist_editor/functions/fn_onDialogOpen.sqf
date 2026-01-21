@@ -20,9 +20,9 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onDialogOpen),_this);
 
-params[
-    ["_display",displayNull,[displayNull]]
-];
+if !assert(params[
+    ["_display", displayNull, [displayNull]]
+]) exitWith {};
 
 if !assert(!isNull _display) exitWith {};
 
@@ -133,7 +133,7 @@ _control ctrlAddEventHandler["LBSelChanged", {
     if (_valid) then {
         private _count = _tree tvCount[_path select 0];
 
-        _valid = -1 isEqualTo (([0, _count - 1] call FUNCMAIN(utilRange)) findIf {
+        _valid = -1 isEqualTo (([0, _count - 1] call FUNCMAIN(arrayRange)) findIf {
             private _class = _tree tvData[_path select 0, _x];
             (_track isEqualTo _class);
         });
