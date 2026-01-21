@@ -1,25 +1,31 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_ultimate_tracklist_editor_fnc_verifyLoadedTracks
+Function: A3A_ultimate_tracklist_editor_fnc_onPlayerLoadData
 
 Description:
-    Verify loaded tracks data from player save data.
+    CBA event callback when loaded player data is available.
 
 Parameters:
+    0: _loadData - Loaded save game data <HASHMAP>
 
 Optional:
-
-Example:
 
 Returns:
     Nothing
 
+Environment:
+    Client, Unscheduled
+
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-Trace_1(QFUNC(verifyLoadedTracks),_this);
+Trace_1(QFUNC(onPlayerLoadData),_this);
 
-Info("Custom playlist not loaded, initializing...");
+if !assert(params[
+    ["_loadData", nil, [createHashMap]]
+]) exitWith {};
+
+GVAR(tracks) = _loadData get QGVAR(tracks);
 
 if (isNil QGVAR(tracks)) then {
     Info("No saved tracks found, using tracks from config");

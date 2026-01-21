@@ -22,22 +22,8 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNC(initEvents),_this);
 
-[CBA_EVENT_CLIENT_PLAYER_LOAD, {
-    Trace_1(QFUNC(eventOnLoad),_this);
-    if assert(params[["_saveData", nil, [createHashMap]]]) then {
-        GVAR(tracks) = _saveData get QGVAR(tracks);
-        [] call FUNC(verifyLoadedTracks);
-    };
-}] call CBA_fnc_addEventHandler;
-
-[CBA_EVENT_CLIENT_PLAYER_SAVE, {
-    Trace_1(QFUNC(eventOnSave),_this);
-    if assert(params[["_saveData", nil, [createHashMap]]]) then {
-        if (GVAR(tracks) isEqualType createHashMap) then {
-            _saveData set[QGVAR(tracks), +GVAR(tracks)];
-        };
-    };
-}] call CBA_fnc_addEventHandler;
+[CBA_EVENT_CLIENT_PLAYER_LOAD, { call FUNC(onPlayerLoadData) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_CLIENT_PLAYER_SAVE, { call FUNC(onPlayerSaveData) }] call CBA_fnc_addEventHandler;
 
 addMusicEventHandler["MusicStop", {
     Trace_2(QFUNC(MusicStop),_this,musicON);
