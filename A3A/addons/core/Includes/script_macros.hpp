@@ -1,4 +1,5 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
+#include "script_macros_undef.hpp"
 
 // Client-only event; after client initialization; params=[]
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))

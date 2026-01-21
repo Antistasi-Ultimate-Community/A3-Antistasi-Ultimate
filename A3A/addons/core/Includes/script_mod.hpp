@@ -34,6 +34,10 @@
     #define AUTHORS "Antistasi Dev Team, Barbolani"
 #endif
 
+#if __A3_DEBUG__
+    #define DEBUG_MODE_FULL
+#endif // __A3_DEBUG__
+
 #include "script_macros.hpp"
 #include "common.inc"
 
