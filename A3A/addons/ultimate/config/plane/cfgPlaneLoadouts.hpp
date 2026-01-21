@@ -472,6 +472,17 @@ class planeLoadouts
             bombRacks[] = {"CUP_Vblauncher_Mk82_veh","CUP_Vblauncher_GBU12_veh","BombCluster_03_F","BombCluster_01_F"};
             diveParams[] = {1000, 600, 180, 55, 15, {0, 0}};
         };
+        
+        //Aegis CDF 2035
+        class O_R_Plane_CAS_02_dynamicLoadout_F
+        {
+            loadout[] = {"PylonRack_1Rnd_Missile_AA_03_F","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonMissile_1Rnd_Bomb_03_F","PylonMissile_1Rnd_Bomb_03_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_1Rnd_Missile_AA_03_F"};
+            mainGun = "Cannon_30mm_Plane_CAS_02_F";
+            rocketLauncher[] = {"Rocket_03_HE_Plane_CAS_02_F"};
+            missileLauncher[] = {"Missile_AA_03_Plane_CAS_02_F", "Missile_AGM_01_Plane_CAS_02_F"};
+            bombRacks[] = {"Bomb_03_Plane_CAS_02_F"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
     };
     
     class CAS
@@ -968,6 +979,16 @@ class planeLoadouts
             rocketLauncher[] = {"Rocket_04_AP_Plane_CAS_01_F","Rocket_04_HE_Plane_CAS_01_F","missiles_DAR"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
         };
+
+        //Aegis CDF 2035
+        class O_R_Plane_CAS_02_dynamicLoadout_F
+        {
+            loadout[] = {"PylonRack_1Rnd_Missile_AA_03_F","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonMissile_1Rnd_Bomb_03_F","PylonMissile_1Rnd_Bomb_03_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_1Rnd_Missile_AA_03_F"};
+            mainGun = "Cannon_30mm_Plane_CAS_02_F";
+            rocketLauncher[] = {"Rocket_03_HE_Plane_CAS_02_F"};
+            missileLauncher[] = {"Missile_AA_03_Plane_CAS_02_F", "Missile_AGM_01_Plane_CAS_02_F"};
+            bombRacks[] = {"Bomb_03_Plane_CAS_02_F"};
+        };
     };
    
     class AA
@@ -1366,6 +1387,14 @@ class planeLoadouts
             mainGun = "Twin_Cannon_20mm_gunpod";
             rocketLauncher[] = {"Rocket_04_AP_Plane_CAS_01_F","Rocket_04_HE_Plane_CAS_01_F","missiles_DAR"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
+        };
+
+        //Aegis CDF 2035
+        class O_R_Plane_Fighter_02_F
+        {
+            loadout[] = {"PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1"};
+            mainGun = "weapon_Fighter_Gun_30mm";
+            missileLauncher[] = {"weapon_R73Launcher", "weapon_R77Launcher"};
         };
     };
 };
