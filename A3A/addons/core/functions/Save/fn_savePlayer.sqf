@@ -1,5 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+Trace_1(QFUNCMAIN(savePlayer),_this);
+
 if (!isServer) exitWith {
     Error("Miscalled server-only function");
 };
@@ -8,7 +10,7 @@ if (!isServer) exitWith {
 	_playerUnit setVariable[QGVAR(saveUUID), _uuid, owner _playerUnit]; \
 }
 
-params ["_playerId", "_playerUnit", ["_globalSave", false], ["_additionalData", nil, [createHashMap]], ["_uuid", nil, [""]]];
+params ["_playerId", "_playerUnit", ["_globalSave", false], ["_pluginsData", nil, [createHashMap]], ["_uuid", nil, [""]]];
 
 _playerUnit = _playerUnit getVariable ["owner", _playerUnit];		// save the real player, not remote controlled AIs
 
@@ -90,10 +92,13 @@ if (_globalSave) then
 };
 _playerHM set ["moneyX", _totalMoney];
 
-// Put any additional data into the player hashmap without overwriting
-_playerHM merge[_additionalData, false];
+if !(isNil "_pluginsData") then {
+	_playerHM set ["pluginsData", _pluginsData];
+};
+
 SET_UUID();
 
+Trace_1(QFUNCMAIN(savePlayer),_playerHM);
 Info_4("Saved player %1: %2 rank, %3 money, %4 score", _playerId, _rankPlayer, _totalMoney toFixed 0, _scorePlayer);
 
 true;
