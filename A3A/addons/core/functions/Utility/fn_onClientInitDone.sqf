@@ -25,7 +25,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-Debug_2(QFUNCMAIN(onClientInitDone),_this);
+Trace_1(QFUNCMAIN(onClientInitDone),_this);
 
 if !assert(params[
     ["_callback", nil, [{}]]
