@@ -25,7 +25,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-Debug_2(QFUNCMAIN(onServerInitDone),_this);
+Trace_1(QFUNCMAIN(onServerInitDone),_this);
 
 // This event fires early; no need to forward to clients
 if !assert(isServer) exitWith {};
