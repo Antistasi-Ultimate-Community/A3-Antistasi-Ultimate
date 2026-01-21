@@ -1,6 +1,5 @@
 PREP(exportPlaylist);
 PREP(importPlaylist);
-PREP(loadTracks);
 PREP(music);
 PREP(onDialogOpen);
 PREP(onInitPlaylistTree);
@@ -9,3 +8,4 @@ PREP(playNextTrack);
 PREP(playTrack);
 PREP(savePlaylist);
 PREP(toggleCopyPasteControl);
+PREP(verifyLoadedTracks);

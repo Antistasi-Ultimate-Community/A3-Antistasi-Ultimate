@@ -7,7 +7,7 @@ GVAR(waitScript) = nil;
 [CBA_EVENT_CLIENT_PLAYER_LOAD, {
     if assert(params[["_saveData", nil, [createHashMap]]]) then {
         GVAR(tracks) = _saveData get QGVAR(tracks);
-        [] call FUNC(loadTracks);
+        [] call FUNC(verifyLoadedTracks);
     };
 }] call CBA_fnc_addEventHandler;
 

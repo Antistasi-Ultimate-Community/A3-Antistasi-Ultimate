@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_ultimate_tracklist_editor_fnc_loadTracks
+Function: A3A_ultimate_tracklist_editor_fnc_verifyLoadedTracks
 
 Description:
-    Load tracks from the config file or saved game data
+    Verify loaded tracks data from player save data.
 
 Parameters:
 
@@ -17,16 +17,11 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-#pragma hemtt ignore_variables ["A3A_ultimate_tracklist_editor_tracks"]
-TRACE_1(QFUNC(loadTracks),_this);
+TRACE_1(QFUNC(verifyLoadedTracks),_this);
 
 INFO("Custom playlist not loaded, initializing...");
 
-if !(is3DENPreview || is3DENMultiplayer) then {
-    [QGVAR(tracks)] call A3A_fnc_getStatVariable;
-};
-
-if isNil QGVAR(tracks) then {
+if (isNil QGVAR(tracks)) then {
     INFO("No saved tracks found, using tracks from config");
     GVAR(tracks) = false;
 } else {
@@ -47,7 +42,7 @@ if (GVAR(tracks) isNotEqualTo false) then {
 
     ["Combat","Stealth","Night","Default"] apply {
         private _key = toLower _x;
-        GVAR(tracks) set[_key, getArray(configFile >> QGVAR(Config) >> "Tracks" >> _x >> "tracks")];
+        GVAR(tracks) set[_key, getArray(configFile >> QUOTE(PREFIX) >> QGVAR(Config) >> "Tracks" >> _x >> "tracks")];
     };
 };
 
