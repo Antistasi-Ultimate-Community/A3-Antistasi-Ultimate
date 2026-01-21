@@ -26,23 +26,23 @@ if (A3A_hasACEMedical) then {
         if (_usedItem in ["ACE_atropine", "ACE_epinephrine", "ACE_morphine"]) then {
             ServerInfo_3("Player: %1 used %2 on %3",name _caller,_usedItem,name _target);
         };
-    }] call CBA_fnc_addEventHandler;
+    }] call FUNCMAIN(addEventHandler);
 };
 
 ["ace_explosives_place", {
     params ["_explosive","_dir","_pitch","_unit"];
     if (captive player && _unit == player) then { player setCaptive false };
-}] call CBA_fnc_addEventHandler;
+}] call FUNCMAIN(addEventHandler);
 
 ["ace_throwableThrown", { 
     params ["_unit", "_throwable"]; 
     if (captive player && _unit == player) then { player setCaptive false }; 
-}] call CBA_fnc_addEventHandler;
+}] call FUNCMAIN(addEventHandler);
 
 ["ace_towing_ropeDeployed", {
     params ["_unit", "_target", "_ropeClass"];
     if (captive player && _unit == player) then { player setCaptive false };
-}] call CBA_fnc_addEventHandler;
+}] call FUNCMAIN(addEventHandler);
 
 [boxX, boxX] call ace_common_fnc_claim;	//Disables ALL Ace Interactions
 [vehicleBox, VehicleBox] call ace_common_fnc_claim;	//Disables ALL Ace Interactions

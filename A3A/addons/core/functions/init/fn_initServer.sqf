@@ -312,7 +312,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 
 // Because CBA events are blocking, we can't have third party stuff block us 
 // from executing the stuff below. So we spawn it.
-[CBA_EVENT_SERVER_INIT_DONE, []] spawn CBA_fnc_localEvent;
+[CBA_EVENT_SERVER_INIT_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
 
 // ********************* Initialize loops *******************************************
 
@@ -385,7 +385,7 @@ if(A3A_hasZen) then
             //now add the logging to the module
             [[getAssignedCuratorLogic _unit]] remoteExecCall ["A3A_fnc_initZeusLogging",0];
         };
-    }] call CBA_fnc_addEventHandler;
+    }] call FUNCMAIN(addEventHandler);
 };
 
 if(A3A_hasACE) then 
@@ -400,7 +400,7 @@ if(A3A_hasACE) then
             //now add the logging to the module
             [[getAssignedCuratorLogic _unit]] remoteExecCall ["A3A_fnc_initZeusLogging",0];
         };
-    }] call CBA_fnc_addEventHandler;
+    }] call FUNCMAIN(addEventHandler);
 };
 
 call A3U_fnc_initZones;

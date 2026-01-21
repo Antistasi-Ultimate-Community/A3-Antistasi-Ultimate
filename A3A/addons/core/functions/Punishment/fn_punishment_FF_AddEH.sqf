@@ -58,15 +58,15 @@ if (A3A_hasACE) then {
     ["ace_firedPlayer", {
         params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
         [_unit,_weapon,_projectile] call A3A_fnc_punishment_FF_checkNearHQ;
-    }] call CBA_fnc_addEventHandler;
+    }] call FUNCMAIN(addEventHandler);
     ["ace_explosives_place", {
         params ["_explosive","_dir","_pitch","_unit"];
         [_unit,"Put",_explosive] call A3A_fnc_punishment_FF_checkNearHQ;
-    }] call CBA_fnc_addEventHandler;
+    }] call FUNCMAIN(addEventHandler);
     ["ace_throwableThrown", {
         params ["_unit", "_throwable"];
         [_unit,"Throw",_throwable] call A3A_fnc_punishment_FF_checkNearHQ;
-    }] call CBA_fnc_addEventHandler;
+    }] call FUNCMAIN(addEventHandler);
 } else {
     _unit addEventHandler ["FiredMan", {
         params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];

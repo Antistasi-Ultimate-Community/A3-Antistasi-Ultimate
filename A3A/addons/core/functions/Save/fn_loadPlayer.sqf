@@ -38,8 +38,7 @@ _unit setUnitRank _rank;
 _unit setVariable ["rankX", _rank, true];
 _unit setVariable ["moneyX", _money, true];
 
-Debug_3("Sending event %1 to %2 with payload %3",CBA_EVENT_CLIENT_PLAYER_LOAD,owner _unit,_playerHM);
-[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM], owner _unit] call CBA_fnc_ownerEvent;
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM], owner _unit] call FUNCMAIN(triggerOwnerEvent);
 
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];

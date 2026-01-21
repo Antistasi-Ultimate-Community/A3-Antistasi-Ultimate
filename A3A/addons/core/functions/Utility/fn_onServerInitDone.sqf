@@ -35,6 +35,6 @@ if !assert(params[
 
 private _params = param[1, []];
 
-[CBA_EVENT_SERVER_INIT_DONE, _callback, RETDEF(_params,nil)] call CBA_fnc_addEventHandlerArgs;
+[CBA_EVENT_SERVER_INIT_DONE, _callback, RETNIL(_params)] call FUNCMAIN(addEventHandler);
 
 nil;

@@ -20,7 +20,7 @@ _unit setVariable ["score", 0, true];
 _unit setVariable ["rankX", "PRIVATE", true];
 _unit setUnitRank "PRIVATE";
 
-[CBA_EVENT_CLIENT_PLAYER_LOAD, [createHashMap], owner _unit] call CBA_fnc_ownerEvent;
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [createHashMap], owner _unit] call FUNCMAIN(triggerOwnerEvent);
 
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];

@@ -34,9 +34,9 @@ if !assert(params[
 private _params = param[1, []];
 
 if (hasInterface) exitWith {
-    [CBA_EVENT_CLIENT_INIT_DONE, _callback, RETDEF(_params,nil)] call CBA_fnc_addEventHandlerArgs;
+    [CBA_EVENT_CLIENT_INIT_DONE, _callback, RETNIL(_params)] call FUNCMAIN(addEventHandler);
 };
 
-[CBA_EVENT_CLIENT_INIT_DONE, _callback, RETDEF(_params,nil)] remoteExecCall["CBA_fnc_addEventHandlerArgs", -2];
+[CBA_EVENT_CLIENT_INIT_DONE, _callback, RETNIL(_params)] remoteExecCall[QFUNCMAIN(addEventHandler), -2];
 
 nil;
