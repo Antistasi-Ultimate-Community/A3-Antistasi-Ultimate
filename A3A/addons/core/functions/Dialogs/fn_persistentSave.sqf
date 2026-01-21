@@ -16,6 +16,10 @@ private _uuid = [] call CBA_fnc_createUUID;
 // Subscribers to the event can add data to this hashmap to be saved along with
 // the player data.
 [CBA_EVENT_CLIENT_PLAYER_SAVE, [_additionalData]] call CBA_fnc_localEvent;
+
+Info_1("Sending save player request for UID %1", getPlayerUID player);
+Verbose_2("Additional data: %1", _additionalData);
+
 [getPlayerUID player, player, nil, _additionalData, _uuid] remoteExecCall ["A3A_fnc_savePlayer", 2];
 
 // If we're not the boss, we're done here. The call came from the rebel menu, so close it.
@@ -31,6 +35,8 @@ if (player isNotEqualTo theBoss) exitWith {
 	params["_uuid"];
 	private _timeout = diag_tickTime + 10;
 
+	Debug_1("Waiting for UUID acknowledgement: %1", _uuid);
+
 	waitUntil {
 		(diag_tickTime > _timeout) ||
 		{ player getVariable[QGVAR(saveUUID), ""] isEqualTo _uuid }
@@ -40,5 +46,6 @@ if (player isNotEqualTo theBoss) exitWith {
 		Error("Timeout waiting for boss player data save to complete. Continuing with main save.");
 	};
 
+	Debug_1("Calling save loop after UUID acknowledgement: %1", _uuid);
 	[] remoteExecCall ["A3A_fnc_saveLoop", 2];
 };
