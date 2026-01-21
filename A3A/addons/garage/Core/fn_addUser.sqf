@@ -29,7 +29,7 @@ if (
 ) exitWith {false};
 
 if (isNil "HR_GRG_Users") then {HR_GRG_Users = []};
-Debug_1("Adding user: %1", _client);
+Trace_1("Adding user: %1", _client);
 HR_GRG_Users pushBack _client;
 _client publicVariableClient "HR_GRG_Vehicles";
 _client publicVariableClient "HR_GRG_Sources";

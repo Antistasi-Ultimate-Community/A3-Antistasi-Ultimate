@@ -313,6 +313,7 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
 #endif
 
 #ifdef Log_Trace
+    #define Trace(MESSAGE) _LOG_Message_FileLine("Trace",MESSAGE,__FILE__,__LINE__)
     #define Trace_1(MESSAGE,A) _LOG_Message_FileLine("Trace",PFORMAT_1(MESSAGE,A),__FILE__,__LINE__)
     #define Trace_2(MESSAGE,A,B) _LOG_Message_FileLine("Trace",PFORMAT_2(MESSAGE,A,B),__FILE__,__LINE__)
     #define Trace_3(MESSAGE,A,B,C) _LOG_Message_FileLine("Trace",PFORMAT_3(MESSAGE,A,B,C),__FILE__,__LINE__)

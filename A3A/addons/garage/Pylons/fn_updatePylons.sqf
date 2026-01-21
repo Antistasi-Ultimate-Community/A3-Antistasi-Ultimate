@@ -21,7 +21,7 @@
 HR_GRG_UpdatePylons = false;
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Debug("Updating equiped pylons");
+Trace("Updating equiped pylons");
 //update data
 private _pylonLoudout = [];
 {
@@ -30,7 +30,7 @@ private _pylonLoudout = [];
     _pylonLoudout pushBack [_forEachIndex + 1, _data, false, _button getVariable ["HR_GRG_turret", []] ];
 } forEach HR_GRG_PylonData;
 HR_GRG_Pylons = _pylonLoudout;
-Debug_1("Pylon Loadout: %1", HR_GRG_Pylons);
+Trace_1("Pylon Loadout: %1", HR_GRG_Pylons);
 [controlNull, -1, true] call HR_GRG_fnc_PylonsPresetChanged;
 
 //update preview pylon loudout

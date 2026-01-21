@@ -53,6 +53,6 @@ private _sources = [+(HR_GRG_Sources#0),+(HR_GRG_Sources#1),+(HR_GRG_Sources#2)]
     } forEach _x;
 } forEach _garage;
 
-Debug("Save data generated");
+Trace("Save data generated");
 //return save data struct
 [_garage, _UID, _sources];

@@ -24,7 +24,7 @@
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 ['HR_GRG','Loading Garage, please wait...'] call BIS_fnc_startLoadingScreen;
-Debug("Opening Garage");
+Trace("Opening Garage");
 
 //if for some reason the server init has not been done, do it now
 if (isNil "HR_GRG_Init") then {remoteExecCall ["HR_GRG_fnc_initServer",2]};

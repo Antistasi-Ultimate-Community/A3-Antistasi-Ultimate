@@ -22,8 +22,8 @@
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 params ["_ctrl", "_catIndex"];
-if (isNil "HR_GRG_Vehicles") exitWith {Debug("Reloading category canceled no garage data");};
-Debug("Reloading category");
+if (isNil "HR_GRG_Vehicles") exitWith {Trace("Reloading category canceled no garage data");};
+Trace("Reloading category");
 
 lbClear _ctrl;
 private _selected = -1;
