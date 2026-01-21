@@ -324,6 +324,18 @@ class CfgFunctions
             class unit_recruit {};
         };
 
+        class Events {
+            file = QPATHTOFOLDER(functions\Events);
+            class addEventHandler {};
+            class removeEventHandler {};
+            class triggerGlobalEvent {};
+            class triggerLocalEvent {};
+            class triggerOwnerEvent {};
+            class triggerRemoteEvent {};
+            class triggerServerEvent {};
+            class triggerTargetEvent {};
+        };
+
         class EventHandler {
             file = QPATHTOFOLDER(functions\EventHandler);
             class addArtilleryTrailEH {};
