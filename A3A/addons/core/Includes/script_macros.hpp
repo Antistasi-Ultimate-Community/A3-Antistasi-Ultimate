@@ -1,8 +1,5 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 
-#define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
-#define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
-
 // Client-only event; after client initialization; params=[]
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
 // Client-only event; on personal save loaded; params=[Hashmap saveData]
