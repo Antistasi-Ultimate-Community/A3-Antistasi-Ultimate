@@ -22,7 +22,7 @@
 FIX_LINE_NUMBERS()
 params [["_reloadMounts", false, [true]]];
 private _class = HR_GRG_SelectedVehicles param [2, "", [""]];
-Trace("Reloading Extras");
+Debug("Reloading Extras");
 //Mounts
 private _disp = findDisplay HR_GRG_IDD_Garage;
 private _ctrlExtraMounts = _disp displayCtrl HR_GRG_IDC_ExtraMounts;
@@ -71,7 +71,7 @@ if (_vehNodes isEqualType []) then {
             _ctrlExtraMounts lbSetValue [_index, _x];
             _ctrlExtraMounts lbsetpicture [_index,checkboxTextures select (_checkedOut isEqualTo HR_GRG_PlayerUID)];
             _ctrlExtraMounts lbSetTextRight [_index, format ["Size: %1", _size]];
-            Trace_4("Mount Added to list | Class: %1 | UID: %2 | Checked: %3 | Size: %4", _staticClass, _x, (_checkedOut isEqualTo HR_GRG_PlayerUID), _type);
+            Debug_4("Mount Added to list | Class: %1 | UID: %2 | Checked: %3 | Size: %4", _staticClass, _x, (_checkedOut isEqualTo HR_GRG_PlayerUID), _type);
         };
     } forEach (HR_GRG_Vehicles#HR_GRG_STATICINDEX);//statics
     lbSort _ctrlExtraMounts;

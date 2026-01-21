@@ -23,7 +23,7 @@
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 params ["_checked"];
-Trace_1("Toggeling mirror functionaity: %1",_checked);
+Debug_1("Toggeling mirror functionaity: %1",_checked);
 if (_checked) then {
     {
         _x params ["_combo", "_mirroredIndex", "_button"];

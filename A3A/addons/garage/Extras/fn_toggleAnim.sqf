@@ -20,7 +20,7 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Trace("Toggling a animation");
+Debug("Toggling a animation");
 params ["_ctrl"];
 private _index = lbCurSel _ctrl;
 _ctrl lbSetCurSel -1;

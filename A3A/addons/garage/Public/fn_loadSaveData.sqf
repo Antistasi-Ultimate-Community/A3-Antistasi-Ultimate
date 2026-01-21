@@ -74,8 +74,8 @@ HR_GRG_Sources = +_sources;
 } forEach HR_GRG_Sources;
 
 if _validSave then {
-    Trace("Garage restored");
+    Debug("Garage restored");
 } else {
-    Trace("New garage loaded");
+    Debug("New garage loaded");
 };
 true;

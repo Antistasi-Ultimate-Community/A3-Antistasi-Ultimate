@@ -38,7 +38,7 @@ private _sourceEmptied = false;
 private _stateChanges = [];
 while {count (HR_GRG_Sources#1) > 0} do {
     if (_neededCapacity == 0) exitWith {};
-    Trace_1("Needed capacity: %1", _neededCapacity);
+    Debug_1("Needed capacity: %1", _neededCapacity);
 
     private _sourceUID = HR_GRG_Sources#1#0;
     private _sourceData = (HR_GRG_Vehicles#HR_GRG_SOURCEINDEX) get _sourceUID;
@@ -54,7 +54,7 @@ while {count (HR_GRG_Sources#1) > 0} do {
     } else {
         (_fuelData # 1) * _transportFuel;
     };
-    Trace_1("Fuel cargo: %1", _fuelCargo);
+    Debug_1("Fuel cargo: %1", _fuelCargo);
 
     if (_fuelCargo < _neededCapacity) then {
         _neededCapacity = _neededCapacity - _fuelCargo;
@@ -80,5 +80,5 @@ if (_sourceEmptied) then { [1] call HR_GRG_fnc_declairSources; };
     _vehicle, 1 - (_neededCapacity / _maxFuel)/*convert needed fuel to precentage so fuel can be applied*/
 ] remoteExecCall ["setFuel", owner _vehicle];
 
-Trace_1("setting vehicle fuel to %1", 1 - (_neededCapacity/_maxFuel));
+Debug_1("setting vehicle fuel to %1", 1 - (_neededCapacity/_maxFuel));
 true;

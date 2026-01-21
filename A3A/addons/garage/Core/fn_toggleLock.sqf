@@ -26,7 +26,7 @@ params ["_UID", "_player", "_selectedVehicle"];
 if (!isServer) exitWith {};
 _selectedVehicle params [["_catIndex", -1], ["_vehUID", -1]];
 if ( (_catIndex isEqualTo -1) || (_vehUID isEqualTo -1) ) exitWith {};
-Trace_2("Attempting to toggle lock for vehicle at cat: %1 | Vehicle ID: %2", _catIndex, _vehUID);
+Debug_2("Attempting to toggle lock for vehicle at cat: %1 | Vehicle ID: %2", _catIndex, _vehUID);
 
 private _cat = HR_GRG_Vehicles#_catIndex;
 private _veh = _cat get _vehUID;
@@ -38,7 +38,7 @@ _success = call {
     if (_player call HR_GRG_canOverrideLock) exitWith { _UID = ""; Info_5("Commander unlock | Vehicle ID: %1 | Owner: %2 [%3] | Commander: %4 [%5]", _vehUID, _owner, _lock, name _player, _UID); true };
     false
 };
-if (!_success) exitWith { Trace("Failed to toggle lock") };
+if (!_success) exitWith { Debug("Failed to toggle lock") };
 
 // If we're trying to lock a non-source vehicle, check player isn't at the lock limit
 if (_lock isEqualTo "" && !(_vehUID in flatten HR_GRG_Sources) && {[_UID] call HR_GRG_fnc_getLockCount >= _player call HR_GRG_getLockLimit}) exitWith {

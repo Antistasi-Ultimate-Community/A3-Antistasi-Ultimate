@@ -20,7 +20,7 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Trace("Changeing texture");
+Debug("Changeing texture");
 params ["_ctrl"];
 private _index = lbCurSel _ctrl;
 _ctrl lbSetCurSel -1;

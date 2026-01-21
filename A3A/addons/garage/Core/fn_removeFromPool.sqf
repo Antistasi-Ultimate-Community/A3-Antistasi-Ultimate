@@ -23,7 +23,7 @@
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 params [["_UID", "", [""]], ["_player", objNull, [objNull]], ["_removeMounts",false,[false]]];
-Trace_1("Removing vehicles from garage with UID: %1", _UID);
+Debug_1("Removing vehicles from garage with UID: %1", _UID);
 if (_UID isEqualTo "") exitWith {false};
 
 //find vehicles to remove

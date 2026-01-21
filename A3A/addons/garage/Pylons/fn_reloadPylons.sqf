@@ -20,14 +20,14 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Trace("Reloading pylons menu");
+Debug("Reloading pylons menu");
 private _disp = findDisplay HR_GRG_IDD_Garage;
 private _ctrlGroup = _disp displayCtrl HR_GRG_IDC_ExtraPylons;
 
 ////////////////////
 //clear old ctrls //
 ////////////////////
-Trace("Clearing old pylon controls");
+Debug("Clearing old pylon controls");
 { //ToDo: find a better way to clear the controls under this control group
     if (ctrlParentControlsGroup _x isEqualTo _ctrlGroup) then {ctrlDelete _x};
 } forEach allControls _disp;
@@ -35,7 +35,7 @@ Trace("Clearing old pylon controls");
 ///////////////
 // Base menu //
 ///////////////
-Trace("Prepping base info");
+Debug("Prepping base info");
 private _baseOffset = 0;
 private _IDCCount = 1;
 private _pylonsCfg = (configFile >> "CfgVehicles" >> typeOf HR_GRG_previewVeh >> "Components" >> "TransportPylonsComponent");
@@ -52,7 +52,7 @@ private _fullCrew = fullCrew [HR_GRG_previewVeh,"",true];
 //////////////////
 //mirror button //
 //////////////////
-Trace("Creating mirror functionality");
+Debug("Creating mirror functionality");
 private _cbCtrl = _disp displayCtrl HR_GRG_IDC_ExtraPylonsMirrorCheckbox;
 _cbCtrl ctrlAddEventHandler ["CheckedChanged", {[(_this select 1) == 1] call HR_GRG_fnc_pylonToggleMirror}];
 
@@ -62,7 +62,7 @@ _cbTextCtrl ctrlSetText localize "STR_HR_GRG_Pylons_Mirror";
 ////////////////////
 //preset loudouts //
 ////////////////////
-Trace("Get preset control and add preset data");
+Debug("Get preset control and add preset data");
 private _presetComboCtrl = _disp displayCtrl HR_GRG_IDC_ExtraPylonsPresetsCombo;
 
 lbClear _presetComboCtrl;
@@ -89,10 +89,10 @@ HR_GRG_Pylon_GeneralCtrls = [_cbCtrl, _presetComboCtrl];
 ////////////////////
 // Dynamic pylons //
 ////////////////////
-Trace("Starting to add pylons controls, consists of controls for text, turret button and pylon mag combo box");
+Debug("Starting to add pylons controls, consists of controls for text, turret button and pylon mag combo box");
 private _curPylons = getPylonMagazines HR_GRG_previewVeh;
 {
-    Trace_1("Adding pylon controls for pylon: %1", configName _x);
+    Debug_1("Adding pylon controls for pylon: %1", configName _x);
     //general info
     private _mags = HR_GRG_previewVeh getCompatiblePylonMagazines (_forEachIndex + 1);
     private _pylonMag = _curPylons#_forEachIndex;
@@ -151,14 +151,14 @@ private _curPylons = getPylonMagazines HR_GRG_previewVeh;
     HR_GRG_PylonData pushBack [_comboCtrl, _mirroredIndex - 1, _btnCtrl, _selected];
     _baseOffset = _baseOffset + 8 * GRID_NOUISCALE_H;
 } forEach ("true" configClasses (_pylonsCfg >> "Pylons"));
-Trace("Done adding pylons controls");
+Debug("Done adding pylons controls");
 
 
 ///////////////////////////
 // Handle no pylons case //
 ///////////////////////////
 if (_IDCCount isEqualTo 1) then {
-    Trace("No pylons were found, creating hint text");
+    Debug("No pylons were found, creating hint text");
     private _textCtrl = _disp ctrlCreate ["HR_GRG_RscStructuredTextNoBG", -1, _ctrlGroup];
     _textCtrl ctrlSetPosition [
         1 * GRID_NOUISCALE_W
@@ -171,4 +171,4 @@ if (_IDCCount isEqualTo 1) then {
 };
 
 HR_GRG_UpdatePylons = true;
-Trace("Pylons menu reloaded");
+Debug("Pylons menu reloaded");

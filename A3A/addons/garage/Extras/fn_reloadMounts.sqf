@@ -20,7 +20,7 @@
 */
 #include "defines.inc"
 FIX_LINE_NUMBERS()
-Trace("Reloading mounts");
+Debug("Reloading mounts");
 private _disp = findDisplay HR_GRG_IDD_Garage;
 private _ctrl = _disp displayCtrl HR_GRG_IDC_ExtraMounts;
 private _cat = HR_GRG_vehicles#HR_GRG_STATICINDEX;
@@ -43,7 +43,7 @@ for "_i" from 0 to (lbSize _ctrl) -1 do {
 HR_GRG_Mounts = HR_GRG_Mounts select { _x in _newMounts };
 HR_GRG_Mounts append (_newMounts - HR_GRG_Mounts);
 
-Trace_1("reloadMounts - Remaining mounts | %1", HR_GRG_Mounts);
+Debug_1("reloadMounts - Remaining mounts | %1", HR_GRG_Mounts);
 
 
 //add new statics
