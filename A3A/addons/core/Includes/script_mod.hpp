@@ -1,10 +1,7 @@
 #define MAINPREFIX x
-#define MODFOLDER A3A
 #ifndef PREFIX
     #define PREFIX A3A
 #endif
-
-#include "common.inc"
 
 #include "script_version.hpp"
 #if PATCHLVL > 0
@@ -21,7 +18,7 @@
 // probably should move to script_version.hpp?
 #define MINIMUM_MISSION_VERSION_AR 10,0,0
 
-#define REQUIRED_VERSION 2.06
+#define REQUIRED_VERSION 2.20
 
 #ifdef COMPONENT_BEAUTIFIED
     #define COMPONENT_NAME QUOTE(PREFIX - COMPONENT_BEAUTIFIED)
@@ -38,10 +35,11 @@
 #endif
 
 #include "script_macros.hpp"
+#include "common.inc"
 
-#define PATHTOFOLDER_SYS(var1,var2,var3) \MAINPREFIX\##var1\SUBPREFIX\##var2\##var3
-#define PATHTOFOLDER(var1) PATHTOFOLDER_SYS(MODFOLDER,COMPONENT,var1)
+#define PATHTOFOLDER(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
 #define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
 
-#define EPATHTOFOLDER(var1,var2) PATHTOFOLDER_SYS(MODFOLDER,var1,var2)
+#define EPATHTOFOLDER(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
+// Should akshually be called QEPATHTOFOLDER ...
 #define EQPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
