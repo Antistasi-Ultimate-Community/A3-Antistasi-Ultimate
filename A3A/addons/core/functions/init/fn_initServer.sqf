@@ -385,7 +385,7 @@ if(A3A_hasZen) then
             //now add the logging to the module
             [[getAssignedCuratorLogic _unit]] remoteExecCall ["A3A_fnc_initZeusLogging",0];
         };
-    }] call FUNCMAIN(addEventHandler);
+    }] call CBA_fnc_addEventHandler;
 };
 
 if(A3A_hasACE) then 
@@ -400,7 +400,7 @@ if(A3A_hasACE) then
             //now add the logging to the module
             [[getAssignedCuratorLogic _unit]] remoteExecCall ["A3A_fnc_initZeusLogging",0];
         };
-    }] call FUNCMAIN(addEventHandler);
+    }] call CBA_fnc_addEventHandler;
 };
 
 call A3U_fnc_initZones;

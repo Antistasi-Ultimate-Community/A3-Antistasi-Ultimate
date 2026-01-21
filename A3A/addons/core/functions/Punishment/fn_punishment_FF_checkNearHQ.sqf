@@ -31,7 +31,7 @@ Examples ACE:
 		params ["_explosive","_dir","_pitch","_unit"];
 		[_unit,"Put",_explosive] call A3A_fnc_punishment_FF_checkNearHQ;
 	};
-	["ace_explosives_place", _EH_ace_explosives_place] call FUNCMAIN(addEventHandler);
+	["ace_explosives_place", _EH_ace_explosives_place] call CBA_fnc_addEventHandler;
 
 Author: Caleb Serafin
 License: MIT License, Copyright (c) 2019 Barbolani & The Official Antistasi Community

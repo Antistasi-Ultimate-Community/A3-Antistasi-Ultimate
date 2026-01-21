@@ -424,7 +424,7 @@ if (A3A_hasACE) then {
     ["ace_explosives_place", {
         params ["_explosive","_dir","_pitch","_unit"];
         if (_unit == player) then { player setCaptive false };
-    }] call FUNCMAIN(addEventHandler);
+    }] call CBA_fnc_addEventHandler;
 };
 
 // Prevent players getting shot by their own AIs. EH is respawn-persistent

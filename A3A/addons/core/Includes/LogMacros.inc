@@ -105,8 +105,14 @@
 #define _LOG_STANDARD_FORMAT(LEVEL, MESSAGE) ( (systemTimeUTC call A3A_fnc_systemTime_format_S) + " | " + _LOG_prefix + " | "+ LEVEL \
 + " | File: " + ( if (isNil "_fnc_scriptName") then {__FILE__ select [count __FILE__-(reverse __FILE__ find '\'), 1e6]} else {_fnc_scriptName} ) \
 + " | " + MESSAGE + ( if (!isNil "_fnc_scriptNameParent" && {_fnc_scriptNameParent isNotEqualTo _fnc_scriptName}) then { " | Called By: " + _fnc_scriptNameParent} else {""} ) )
+#define _LOG_STANDARD_FORMAT_FILELINE(LEVEL,MESSAGE,LOGFILE,LOGLINE) format['%1 | %2 | %3 | File: %4:%5 | %6', \
+    systemTimeUTC call A3A_fnc_systemTime_format_S, _LOG_prefix, LEVEL, LOGFILE, LOGLINE, MESSAGE]
 
 #define _LOG_Message(LEVEL, MESSAGE) private _LOG_logLine = _LOG_STANDARD_FORMAT(LEVEL, MESSAGE); {diag_log text _x} forEach _LOG_breakUpLogLine(_LOG_logLine);
+#define _LOG_Message_FileLine(LEVEL,MESSAGE,LOGFILE,LOGLINE) if (2 < RETDEF(LogLevel,4)) then { \
+    private _LOG_logLine = _LOG_STANDARD_FORMAT_FILELINE(LEVEL,MESSAGE,LOGFILE,LOGLINE); \
+    {diag_log text _x} forEach _LOG_breakUpLogLine(_LOG_logLine); \
+}
 #define _LOG_ServerMessage(LEVEL, MESSAGE) \
 if (isServer) then { _LOG_Message(LEVEL, MESSAGE) } else { \
 private _LOG_LogLine = _LOG_STANDARD_FORMAT(LEVEL, MESSAGE) + format [" | Client: %1 [%2]", player, clientOwner]; \
@@ -307,22 +313,22 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
 #endif
 
 #ifdef Log_Trace
-    #define Trace_1(MESSAGE,A) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_1(MESSAGE,A)) }
-    #define Trace_2(MESSAGE,A,B) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B)) }
-    #define Trace_3(MESSAGE,A,B,C) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B,C)) }
-    #define Trace_4(MESSAGE,A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B,C,D)) }
-    #define Trace_5(MESSAGE,A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E)) }
-    #define Trace_6(MESSAGE,A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E,F)) }
-    #define Trace_7(MESSAGE,A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E,F,G)) }
-    #define Trace_8(MESSAGE,A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E,F,G,H)) }
+    #define Trace_1(MESSAGE,A) _LOG_Message_FileLine("Trace",PFORMAT_1(MESSAGE,A),__FILE__,__LINE__)
+    #define Trace_2(MESSAGE,A,B) _LOG_Message_FileLine("Trace",PFORMAT_2(MESSAGE,A,B),__FILE__,__LINE__)
+    #define Trace_3(MESSAGE,A,B,C) _LOG_Message_FileLine("Trace",PFORMAT_3(MESSAGE,A,B,C),__FILE__,__LINE__)
+    #define Trace_4(MESSAGE,A,B,C,D) _LOG_Message_FileLine("Trace",PFORMAT_4(MESSAGE,A,B,C,D),__FILE__,__LINE__)
+    #define Trace_5(MESSAGE,A,B,C,D,E) _LOG_Message_FileLine("Trace",PFORMAT_5(MESSAGE,A,B,C,D,E),__FILE__,__LINE__)
+    #define Trace_6(MESSAGE,A,B,C,D,E,F) _LOG_Message_FileLine("Trace",PFORMAT_6(MESSAGE,A,B,C,D,E,F),__FILE__,__LINE__)
+    #define Trace_7(MESSAGE,A,B,C,D,E,F,G) _LOG_Message_FileLine("Trace",PFORMAT_7(MESSAGE,A,B,C,D,E,F,G),__FILE__,__LINE__)
+    #define Trace_8(MESSAGE,A,B,C,D,E,F,G,H) _LOG_Message_FileLine("Trace",PFORMAT_8(MESSAGE,A,B,C,D,E,F,G,H),__FILE__,__LINE__)
     #define ServerTrace_1(MESSAGE,A) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_1(MESSAGE,A)) }
     #define ServerTrace_2(MESSAGE,A,B) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B)) }
-    #define ServerTrace_3(MESSAGE,A,B,C) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B,C)) }
-    #define ServerTrace_4(MESSAGE,A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B,C,D)) }
-    #define ServerTrace_5(MESSAGE,A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E)) }
-    #define ServerTrace_6(MESSAGE,A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E,F)) }
-    #define ServerTrace_7(MESSAGE,A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E,F,G)) }
-    #define ServerTrace_8(MESSAGE,A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_2(MESSAGE,A,B,C,D,E,F,G,H)) }
+    #define ServerTrace_3(MESSAGE,A,B,C) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_3(MESSAGE,A,B,C)) }
+    #define ServerTrace_4(MESSAGE,A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_4(MESSAGE,A,B,C,D)) }
+    #define ServerTrace_5(MESSAGE,A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_5(MESSAGE,A,B,C,D,E)) }
+    #define ServerTrace_6(MESSAGE,A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_6(MESSAGE,A,B,C,D,E,F)) }
+    #define ServerTrace_7(MESSAGE,A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_7(MESSAGE,A,B,C,D,E,F,G)) }
+    #define ServerTrace_8(MESSAGE,A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",PFORMAT_8(MESSAGE,A,B,C,D,E,F,G,H)) }
     #define TraceArray(Message,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array joinString _LOG_newLine) + _LOG_newLine + "]")) }
     #define ServerTraceArray(Message,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", (Message + " [" + _LOG_newLine + (Array joinString _LOG_newLine) + _LOG_newLine + "]")) }
     #define TraceArrayFormat(Message,Frmat,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
