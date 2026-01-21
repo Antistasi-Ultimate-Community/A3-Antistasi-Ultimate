@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_exportPlaylist
+Function: A3A_ultimate_tracklist_editor_fnc_exportPlaylist
 
 Description:
     Export playlist to editor control for copying
@@ -16,7 +16,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(exportPlaylist),_this);
 

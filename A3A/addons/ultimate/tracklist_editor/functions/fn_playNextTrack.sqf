@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_playNextTrack
+Function: A3A_ultimate_tracklist_editor_fnc_playNextTrack
 
 Description:
     Play the next track depending on environment (combat, time of day, etc.)
@@ -11,14 +11,14 @@ Optional:
 
 Example:
     (begin example)
-    [] call A3USPCM_music_fnc_playNextTrack;
+    [] call A3A_ultimate_tracklist_editor_fnc_playNextTrack;
     (end example)
 
 Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(playNextTrack),_this);
 

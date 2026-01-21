@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_onInitPlaylistTree
+Function: A3A_ultimate_tracklist_editor_fnc_onInitPlaylistTree
 
 Description:
     Convert static placeholder control to playlist tree control
@@ -18,7 +18,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onInitPlaylistTree),_this);
 

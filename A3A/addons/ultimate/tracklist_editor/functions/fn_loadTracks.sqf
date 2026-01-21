@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_loadTracks
+Function: A3A_ultimate_tracklist_editor_fnc_loadTracks
 
 Description:
     Load tracks from the config file or saved game data
@@ -15,9 +15,9 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-#pragma hemtt ignore_variables ["A3USPCM_music_tracks"]
+#pragma hemtt ignore_variables ["A3A_ultimate_tracklist_editor_tracks"]
 TRACE_1(QFUNC(loadTracks),_this);
 
 INFO("Custom playlist not loaded, initializing...");
