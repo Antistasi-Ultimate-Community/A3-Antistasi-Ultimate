@@ -23,7 +23,7 @@ if (_change) then {
     ctrlSetText [(_idc + 3), _representation];
 
     if (_action isEqualTo "NONE") exitWith {};
-    if (_action isEqualTo "MUSIC") exitWith { [] call EFUNC(ultimate_tracklist_editor,music) };
+    if (_action isEqualTo "MUSIC") exitWith { [] call EFUNC(DOUBLES(ultimate,tracklist_editor),music) };
     if (_action isEqualTo "PARADROP") exitWith {
         if (isPlayerParadropable) then {
             [] spawn {

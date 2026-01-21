@@ -909,7 +909,7 @@ class commanderMenu
 					h = "3 * pixelGridNoUIScale * pixelH";	
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;
-					action = QUOTE(while {dialog} do {closeDialog 0}; createDialog QQEGVAR(ultimate_tracklist_editor,dialog));
+					action = QUOTE(while {dialog} do {closeDialog 0}; createDialog QQEGVAR(DOUBLES(ultimate,tracklist_editor),dialog));
 				};
 
 				class paradropButton: ScrtRscControlsGroupNoScrollbarsMain 
