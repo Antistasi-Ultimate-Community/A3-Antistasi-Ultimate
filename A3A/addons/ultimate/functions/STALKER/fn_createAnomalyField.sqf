@@ -15,6 +15,7 @@
 */
 
 // I had to rewrite the diwako spawning logic from scratch because the original doesn't take into account water, out of bounds, etc.
+#include "..\..\script_component.hpp"
 
 params [["_anomalyAmount", 40]];
 
@@ -47,7 +48,7 @@ private _fnc_createMarker = {
     _marker setMarkerPos (getPos _anomaly);
 };
 
-[format ["Creating anomaly field, anomaly amount: %1", _anomalyAmount], _fnc_scriptName] call A3U_fnc_log;
+Debug_1("Creating anomaly field, anomaly amount: %1", _anomalyAmount);
 
 for "_i" from 1 to _anomalyAmount do {
     private _pos = call _fnc_grabPos;
@@ -87,6 +88,6 @@ for "_i" from 1 to _anomalyAmount do {
     };
 };
 
-[format ["Created anomaly field, anomaly amount final: %1", count _anomalies], _fnc_scriptName] call A3U_fnc_log;
+Debug_1("Created anomaly field, anomaly amount final: %1", count _anomalies);
 
 _anomalies

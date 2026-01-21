@@ -152,10 +152,12 @@ class CfgFunctions
             class localizar {};
             class lockStatic {};
             class logPerformance {};
+            class manageFlagAccess {};
             class markerChange {};
             class moveHQ {};
             class mrkUpdate {};
             class mrkWIN {};
+            class moveOutCrew {};
             class numericRank {};
             class onHeadlessClientDisconnect {};
             class onPlayerDisconnect {};
@@ -174,7 +176,6 @@ class CfgFunctions
             class returnMuzzle {};
             class revealToPlayer {};
             class scheduler {};
-            class moveOutCrew {};
             class sellVehicle {};
             class setMarkerAlphaForSide {};
             class setPlaneLoadout {};
@@ -328,7 +329,6 @@ class CfgFunctions
             class addArtilleryTrailEH {};
             class enemyUnitDeletedEH {};
             class enemyUnitKilledEH {};
-            class RC40_attack_EH {};
             class vehicleDeletedEH {};
         };
 
@@ -437,7 +437,7 @@ class CfgFunctions
             class LOG_Airdrop {};
             class LOG_Crashsite {};
             class LOG_Crashsite_Satellite{};
-            class LOG_Helicrash {};;
+            class LOG_Helicrash {};
             class missionRequest {};
             class REP_Antenna {};
             class RES_Deserters {};
@@ -818,6 +818,7 @@ class CfgFunctions
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
+            class remainingAmmo {};
             class remainingFuel {};
             class rotateItem {};
         };

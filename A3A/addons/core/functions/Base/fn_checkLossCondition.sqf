@@ -69,5 +69,5 @@ switch (lossCondition) do
         };
     };
 
-    default {diag_log format["Loss condition was not recognized. Condition given: %1", lossCondition]};
+    default {Error_1("Loss condition was not recognized. Condition given: %1", lossCondition)};
 };

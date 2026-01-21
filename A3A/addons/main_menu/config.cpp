@@ -330,7 +330,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			y = "safeZoneY + safeZoneH - 0.34";
 			text = QPATHTOFOLDER(data\buttons\GitB.paa); // Path to button image
 			tooltip="GitHub Page";
-			url = "https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate";
+			url = "https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate";
 			onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB_Hov.paa""";
 			onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB.paa""";
 			onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB_Hov.paa""";
