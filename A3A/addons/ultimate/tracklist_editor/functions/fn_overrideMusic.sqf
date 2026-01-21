@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_overrideMusic
+Function: A3A_ultimate_tracklist_editor_fnc_overrideMusic
 
 Description:
     Override default music script
@@ -11,14 +11,14 @@ Optional:
 
 Example:
     (begin example)
-    [] call A3USPCM_music_fnc_overrideMusic;
+    [] call A3A_ultimate_tracklist_editor_fnc_overrideMusic;
     (end example)
 
 Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(overrideMusic),_this);
 

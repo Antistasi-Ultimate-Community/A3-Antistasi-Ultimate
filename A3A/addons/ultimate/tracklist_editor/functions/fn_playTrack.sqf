@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_playTrack
+Function: A3A_ultimate_tracklist_editor_fnc_playTrack
 
 Description:
     Play a track
@@ -13,15 +13,15 @@ Optional:
 
 Example:
     (begin example)
-    ["Track08_Night_ambient"] call A3USPCM_music_fnc_playTrack;
-    ["Track08_Night_ambient", false] call A3USPCM_music_fnc_playTrack;
+    ["Track08_Night_ambient"] call A3A_ultimate_tracklist_editor_fnc_playTrack;
+    ["Track08_Night_ambient", false] call A3A_ultimate_tracklist_editor_fnc_playTrack;
     (end example)
 
 Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(playTrack),_this);
 

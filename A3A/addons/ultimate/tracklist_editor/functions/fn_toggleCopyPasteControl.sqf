@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_music_fnc_toggleCopyPasteControl
+Function: A3A_ultimate_tracklist_editor_fnc_toggleCopyPasteControl
 
 Description:
     Toggle copy/paste control in playlist editor dialog
@@ -18,7 +18,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(toggleCopyPasteControl),_this);
 
