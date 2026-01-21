@@ -38,7 +38,11 @@ _unit setUnitRank _rank;
 _unit setVariable ["rankX", _rank, true];
 _unit setVariable ["moneyX", _money, true];
 
-[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM], owner _unit] call FUNCMAIN(triggerOwnerEvent);
+if (isNil { _playerHM get "pluginsData" }) then {
+    _playerHM set["pluginsData", createHashMap];
+};
+
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM get "pluginsData"], owner _unit] call FUNCMAIN(triggerOwnerEvent);
 
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];
