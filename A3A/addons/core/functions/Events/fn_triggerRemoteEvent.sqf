@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
 Function: A3A_fnc_triggerRemoteEvent
 
