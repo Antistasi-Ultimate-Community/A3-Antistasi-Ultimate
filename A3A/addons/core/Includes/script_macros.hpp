@@ -37,7 +37,7 @@
 #define PREPSUB(folder,fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(folder\DOUBLES(fn,fncName).sqf)
 
 #undef VARDEF
-#define VARDEF RETDEF
+#define VARDEF(a,b) RETDEF(a,b)
 
 /* -------------------------------------------
 Macro: XOR

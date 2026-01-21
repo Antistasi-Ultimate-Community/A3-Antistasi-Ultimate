@@ -49,4 +49,4 @@
 
 // Should akshually be called QEPATHTOFOLDER ...
 // Keep the typo as an alias so ~1000 files don't show up in PR
-#define EQPATHTOFOLDER QEPATHTOFOLDER
+#define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
