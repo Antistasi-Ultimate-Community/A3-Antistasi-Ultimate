@@ -66,6 +66,6 @@ Info("initACEUnconsciousHandler started");
 
 	if (side _nearestUnit == teamPlayer) then { [_unit] spawn A3A_fnc_surrenderAction };
 
-}] call FUNCMAIN(addEventHandler);
+}] call CBA_fnc_addEventHandler;
 
 Info("initACEUnconsciousHandler completed");
