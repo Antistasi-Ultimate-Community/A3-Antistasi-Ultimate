@@ -62,14 +62,14 @@ Author:
 
 #undef PATHTO_FNC
 #define PATHTO_FNC(func) class func { \
-    file = 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(FUNCTION_NAME_INSERT,func))'; \
+    file = QUOTE(PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(FUNCTION_NAME_INSERT,func))); \
     CFGFUNCTION_HEADER; \
     RECOMPILE; \
 }
 // No #undef here, as SPATHTO_FNC is new. Adapt to folder layouts where
 // functions live in categorized subfolders.
 #define SPATHTO_FNC(folder,func) class func { \
-    file = 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\folder\DOUBLES(FUNCTION_NAME_INSERT,func))'; \
+    file = QUOTE(PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\folder\DOUBLES(FUNCTION_NAME_INSERT,func))); \
     CFGFUNCTION_HEADER; \
     RECOMPILE; \
 }
