@@ -6,7 +6,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_ultimate"};
+        requiredAddons[] = {QEGVAR(ultimage,trader_selling), "ace_interaction"};
+        skipWhenMissingDependencies = 1;
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
@@ -14,5 +15,4 @@ class CfgPatches {
     };
 };
 
-#include "CfgEventHandlers.hpp"
-#include "dialog.hpp"
+#include "CfgVehicles.hpp"
