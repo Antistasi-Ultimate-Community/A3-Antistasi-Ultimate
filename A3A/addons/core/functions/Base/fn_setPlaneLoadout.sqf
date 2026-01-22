@@ -608,6 +608,10 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["weapon_KAB250Launcher","LK_weapon_LS6_500KG","BombCluster_02_F"]];
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        default
+        {
+            Error_1("Plane type %1 currently not supported for CASDIVE, please add the case!", typeOf _plane);
+        };
     };
 };
 
