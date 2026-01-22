@@ -1,0 +1,39 @@
+#include "..\script_component.hpp"
+#include "..\RscDefine.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3USPCM_store_fnc_updateItemCount
+
+Description:
+    Update amount edit control with item count
+
+Parameters:
+    0: _control - Control of listbox <CONTROL>
+    1: _index - Index of selected item <NUMBER>
+
+Returns:
+    Nothing
+
+Author:
+    goreSplatter
+---------------------------------------------------------------------------- */
+TRACE_1(QFUNC(updateItemCount),_this);
+params[["_control",controlNull,[controlNull]], ["_index",0,[0]]];
+
+if (_index < 0) exitWith {};
+
+private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
+if !assert(!isNull _display) exitWith {};
+
+private _itemIndex = _control lnbData[_index, 0];
+private _items = _control getVariable[QGVAR(items), []];
+private _data = _items select parseNumber _itemIndex;
+
+if (_data get "price" isEqualTo false) exitWith {};
+
+private _edit = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT;
+_edit ctrlSetText str(_data get "count");
+[] call FUNC(updateUiFromSelection);
+
+GVAR(allowAmountAutoUpdate) = true;
+
+nil;
