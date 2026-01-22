@@ -34,7 +34,7 @@
 ["vehiclesIFVs", ["AMF_VBCI_CE_01_F", "B_AMF_AMX10_RCR_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["B_AMF_AMX10_RCR_SEPAR_01_F", "AMF_EBRC_CE_01"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["B_AMF_TANK_01", "B_AMF_TANK_CE_02_F"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["AMF_VBMR_ARX30_CE"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["AMF_VBMR_ARX30_CE", "AMF_VBMR_MISTRAL_CE"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] call _fnc_saveToTemplate;
@@ -69,12 +69,12 @@
 ["staticAT", ["AMF_WiredGuided_mmp_F"]] call _fnc_saveToTemplate;
 ["staticAA", ["B_static_AA_F"]] call _fnc_saveToTemplate;
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
-["staticHowitzers", []] call _fnc_saveToTemplate;
+["staticHowitzers", ["AMF_Mo120_01_CE_F"]] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "B_Radar_System_01_F"] call _fnc_saveToTemplate;
 ["vehicleSam", "B_SAM_System_03_F"] call _fnc_saveToTemplate;
 
-["howitzerMagazineHE", ""] call _fnc_saveToTemplate;
+["howitzerMagazineHE", "AMF_8Rnd_120mm_OE"] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
