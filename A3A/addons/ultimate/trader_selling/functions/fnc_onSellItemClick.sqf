@@ -39,9 +39,7 @@ try {
     private _amount = parseNumber ctrlText(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT);
     private _price = _data get "price";
 
-    if (_data get "sellable") then {
-        _price = _price * HALs_store_sellFactor;
-    } else {
+    if !(_data get "sellable") then {
         Trace_2(QFUNC(onSellItemClick),"purge",_data);
         _amount = _data get "count";
     };
