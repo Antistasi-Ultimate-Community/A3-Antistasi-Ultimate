@@ -2,7 +2,7 @@
 //   Side Information   //
 //////////////////////////
 
-
+#include "..\..\..\script_component.hpp
 ["name", "Royal Army Corps"] call _fnc_saveToTemplate; 						
 ["spawnMarkerName", "Sahrani Army Support Corridor"] call _fnc_saveToTemplate; 			
 
