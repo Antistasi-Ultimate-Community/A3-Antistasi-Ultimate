@@ -64,7 +64,7 @@
 
 ["vehiclesPolice", ["PRACS_M1097_Scout"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["RHS_M2StaticMG_WD","PRACS_Paratrooper_mk19_static"]] call _fnc_saveToTemplate;
+["staticMGs", ["RHS_M2StaticMG_WD"]] call _fnc_saveToTemplate;
 ["staticAT", ["RHS_TOW_TriPod_WD"]] call _fnc_saveToTemplate;
 ["staticAA", ["RHS_Stinger_AA_pod_WD"]] call _fnc_saveToTemplate;
 ["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;
