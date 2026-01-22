@@ -86,7 +86,6 @@
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
 			ITEM(sp_fwa_ar10, 1475, RIFLE_STOCK); // sp_fwa_20Rnd_762_ar10
-			ITEM(sp_fwa_ar10_alu, 1475, RIFLE_STOCK);
 			ITEM(sp_fwa_ar10_od, 1475, RIFLE_STOCK);
 			ITEM(sp_fwa_ar10_porto, 1500, RIFLE_STOCK);
 			ITEM(sp_fwa_ar10_porto_alu, 1500, RIFLE_STOCK);
