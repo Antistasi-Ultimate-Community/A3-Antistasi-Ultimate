@@ -30,4 +30,4 @@ private _sorted = [];
 } forEach _items;
 
 _sorted sort true;
-_sorted apply { _x select 1 };
+_sorted apply { _x select -1 };
