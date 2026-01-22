@@ -6,6 +6,8 @@ Description:
     Result event handler function for
     CBA_EVENT_CLIENT_TRADER_SELLING_GETITEMPRICE event.
 
+    Get price of item from HALs store addon.
+
 Parameters:
     0: _class - Class name of item to appraise <STRING>
     1: _config - Item configuration <CONFIG>

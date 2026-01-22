@@ -3,7 +3,9 @@
 Function: A3A_ultimate_trader_selling_fnc_getItemPrice
 
 Description:
-    Get price of item from HALs store addon
+    Get price of item by iterating through appraisal functions.
+
+    Maybe see `A3A_fnc_traderSellingAppraiseItem` for more context.
 
 Parameters:
     0: _class - Class name of item <STRING>
