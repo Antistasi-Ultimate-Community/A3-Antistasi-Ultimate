@@ -373,6 +373,7 @@ _elite65Muzzles = [ "muzzle_snds_H", 1, "muzzle_mzls_H", 1, "", 5];
 _elite556Muzzles = [ "muzzle_snds_M", 1, "muzzle_mzls_M", 1, "", 5];
 _elite762DMRMuzzles = [ "muzzle_snds_B", 1, "muzzle_mzls_B", 1, "aegis_muzzle_snds_sr25_blk", 1, "", 5];
 _elite762Muzzles = [ "muzzle_snds_B", 1, "muzzle_mzls_B", 1, "aegis_muzzle_snds_pbs_762_blk", 1, "", 5];
+_elite58Muzzles = [ "muzzle_mzls_58_F", 1, "", 5];
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _eliteLoadoutData set ["uniforms", ["U_I_CDF_Uniform_01_gloves_digi_F", "U_I_CDF_Uniform_01_shortsleeve_gloves_digi_F", "U_I_CDF_Uniform_01_F", "U_I_CDF_Uniform_01_gloves_F", "U_I_CDF_Uniform_01_shortsleeve_F", "U_I_CDF_Uniform_01_shortsleeve_gloves_F", "U_I_CDF_Gorka_01_wdl_F"]];
@@ -423,7 +424,23 @@ _eliteLoadoutData set ["slRifles", [
     ["Aegis_arifle_M4A1_short_F", _elite556Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
 
     ["Aegis_arifle_AK103_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], [], ""],
-    ["Aegis_arifle_AK103_GL_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""]
+    ["Aegis_arifle_AK103_GL_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""],
+
+    ["arifle_AK12_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_AK12_Mag_Tracer_F", "30Rnd_545x39_AK12_Mag_F"], [], ""],
+    ["arifle_AK12_GL_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_AK12_Mag_Tracer_F", "30Rnd_545x39_AK12_Mag_F"], ["1Rnd_Smoke_Grenade_shell"], ""],
+
+    ["Aegis_arifle_AKM74_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+    ["Aegis_arifle_AKM74_GL_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""],
+
+    ["Aegis_arifle_AKS74_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["arifle_AKSM_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["arifle_AK12U_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["arifle_NCAR15_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
+    ["arifle_NCAR15B_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
+    ["arifle_NCAR15_GL_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["1Rnd_HE_Grenade_shell"], ""]
 ]];
 
 _eliteLoadoutData set ["rifles", [
@@ -436,14 +453,30 @@ _eliteLoadoutData set ["rifles", [
     ["Aegis_arifle_M4A1_F", _elite556Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
     ["Aegis_arifle_M4A1_grip_F", _elite556Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
 
-    ["Aegis_arifle_AK103_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], [], ""]
+    ["Aegis_arifle_AK103_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], [], ""],
+
+    ["arifle_AK12_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_AK12_Mag_Tracer_F", "30Rnd_545x39_AK12_Mag_F"], [], ""],
+    ["arifle_AK12_GL_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_AK12_Mag_Tracer_F", "30Rnd_545x39_AK12_Mag_F"], ["1Rnd_Smoke_Grenade_shell"], ""],
+
+    ["Aegis_arifle_AKM74_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+    ["Aegis_arifle_AKM74_GL_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""],
+
+    ["Aegis_arifle_AKS74_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["arifle_NCAR15_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""]
 ]];
 _eliteLoadoutData set ["carbines", [
     ["arifle_CDF_AK19U_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_AK19_CDF_Mag_Green_F", "30Rnd_556x45_AK19_CDF_Mag_F", "30Rnd_556x45_AK19_CDF_Mag_Green_Tracer_F", "30Rnd_556x45_AK19_CDF_Mag_Tracer_F"], [], ""],
 
     ["arifle_MXC_Black_F", _elite65Muzzles, _eliteRails, _eliteOptics, ["30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag_Tracer"], [], ""],
 
-    ["Aegis_arifle_M4A1_short_F", _elite556Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""]
+    ["Aegis_arifle_M4A1_short_F", _elite556Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
+
+    ["arifle_AKSM_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["arifle_AK12U_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["arifle_NCAR15B_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""]
 ]];
 
 _eliteLoadoutData set ["designatedGrenadeLaunchers", [
@@ -457,14 +490,28 @@ _eliteLoadoutData set ["grenadeLaunchers", [
 
     ["Aegis_arifle_M4A1_GL_F", _elite556Muzzles, _eliteRails, _eliteOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_Tracer_Green"], ["1Rnd_HE_Grenade_shell"], ""],
 
-    ["Aegis_arifle_AK103_GL_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""]
+    ["Aegis_arifle_AK103_GL_plum_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["30Rnd_762x39_polymer_Black_Mag_Tracer_Green_F", "30Rnd_762x39_polymer_Black_Mag_Green_F"], ["1Rnd_HE_Grenade_shell"], ""],
+
+    ["arifle_AK12_GL_545_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_AK12_Mag_Tracer_F", "30Rnd_545x39_AK12_Mag_F"], ["1Rnd_HE_Grenade_shell"], ""],
+
+    ["Aegis_arifle_AKM74_GL_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["30Rnd_545x39_Mag_Tracer_Green_F", "30Rnd_545x39_Mag_Green_F"], ["1Rnd_HE_Grenade_shell"], ""],
+
+    ["arifle_NCAR15_GL_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["1Rnd_HE_Grenade_shell"], ""]
 ]];
 
 _eliteLoadoutData set ["machineGuns", [
-    ["LMG_Mk200_F", _elite65Muzzles, _eliteRails, _eliteOptics, ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Red"], [], ""]
+    ["LMG_Mk200_F", _elite65Muzzles, _eliteRails, _eliteOptics, ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Red"], [], ""],
+
+    ["arifle_NCAR15_MG_F", _elite58Muzzles, _eliteRails, _eliteOptics, ["100Rnd_580x42_Mag_F", "100Rnd_580x42_Mag_Tracer_F"], [], ""],
+
+    ["Aegis_arifle_RPK74M_F", _elite545Muzzles, _eliteRails, _eliteOptics, ["Aegis_45Rnd_545x39_Mag_Tracer_Green_F", "Aegis_60Rnd_545x39_Mag_Green_F"], [], ""],
+
+    ["LMG_Zafir_black_F", _elite762Muzzles, _eliteRails, _eliteOptics, ["150Rnd_762x54_Box", "150Rnd_762x54_Box_Tracer"], [], ""]
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
-    ["Aegis_arifle_SR25_MR_blk_F", _elite762DMRMuzzles, _eliteRails, _eliteLROptics, ["Aegis_20Rnd_762x51_SMAG"], [], ""]
+    ["Aegis_arifle_SR25_MR_blk_F", _elite762DMRMuzzles, _eliteRails, _eliteLROptics, ["Aegis_20Rnd_762x51_SMAG"], [], ""],
+
+    ["Aegis_srifle_SVD_blk_f", _elite762DMRMuzzles, _eliteRails, _eliteLROptics, ["10Rnd_762x54_Mag", "Aegis_10Rnd_762x54_SVD_Green_Mag_F"], [], ""]
 ]];
 
 _eliteLoadoutData set ["sniperRifles", [
