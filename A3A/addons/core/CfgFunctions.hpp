@@ -331,6 +331,7 @@ class CfgFunctions
             SPATHTO_FNC(Events,triggerLocalEvent);
             SPATHTO_FNC(Events,triggerOwnerEvent);
             SPATHTO_FNC(Events,triggerRemoteEvent);
+            SPATHTO_FNC(Events,triggerResultEvent);
             SPATHTO_FNC(Events,triggerServerEvent);
             SPATHTO_FNC(Events,triggerTargetEvent);
         };

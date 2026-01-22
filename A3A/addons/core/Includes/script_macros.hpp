@@ -4,8 +4,11 @@
 
 // Define CfgPatches class name for, well, patches.
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
-// CBA uses "fnc", we use "fn" to look for function source files ...
-#define FUNCTION_NAME_INSERT fn
+
+#ifndef FUNCTION_NAME_INSERT
+    // CBA uses "fnc", we use "fn" to look for function source files ...
+    #define FUNCTION_NAME_INSERT fn
+#endif // FUNCTION_NAME_INSERT
 
 /* -------------------------------------------
 Sub-component support
