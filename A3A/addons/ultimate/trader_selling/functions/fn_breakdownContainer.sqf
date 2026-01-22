@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_breakdownContainer
+Function: A3A_ultimate_trader_selling_fnc_breakdownContainer
 
 Description:
     Breakdown weapons, backpack contents from container
@@ -17,7 +17,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[
     ["_container",objNull,[objNull]],
@@ -52,7 +52,7 @@ _items apply {
             _container addItemCargoGlobal[_item, _count];
         };
         default {
-            ERROR_2("Unknown type for %1: %2",_item,_info get "type");
+            Error_2("Unknown type for %1: %2",_item,_info get "type");
         };
     };
 };

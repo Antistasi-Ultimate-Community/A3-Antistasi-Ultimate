@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_onSellItemClick
+Function: A3A_ultimate_trader_selling_fnc_onSellItemClick
 
 Description:
     Sell button click event handler
@@ -13,9 +13,9 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onSellItemClick),_this);
+Trace_1(QFUNC(onSellItemClick),_this);
 
 params[
     ["_control",controlNull,[controlNull]]
@@ -28,7 +28,7 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
 private _items = _list getVariable[QGVAR(items), []];
 private _index = lnbCurSelRow _list;
 
-TRACE_1(QFUNC(onSellItemClick),_index);
+Trace_1(QFUNC(onSellItemClick),_index);
 
 try {
     if (_index < 0) then { throw false };
@@ -41,7 +41,7 @@ try {
     if (_data get "sellable") then {
         _price = _price * HALs_store_sellFactor;
     } else {
-        TRACE_2(QFUNC(onSellItemClick),"purge",_data);
+        Trace_2(QFUNC(onSellItemClick),"purge",_data);
         _amount = _data get "count";
     };
 
@@ -50,7 +50,7 @@ try {
 
     if (_amount <= 0 || { _amount > _count }) then { throw false };
 
-    TRACE_4(QFUNC(onSellItemClick),_class,_price,_amount,_count);
+    Trace_4(QFUNC(onSellItemClick),_class,_price,_amount,_count);
 
     if !([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
         _list lnbSetText[[_index, 1], str((_items select _itemIndex) get "count")];
@@ -63,7 +63,7 @@ try {
     [] call FUNC(updateUiFromSelection);
     GVAR(allowAmountAutoUpdate) = true;
 } catch {
-    WARNING("something went wrong");
+    Warning("something went wrong");
     GVAR(allowAmountAutoUpdate) = nil;
 };
 

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_onSellDialogOpen
+Function: A3A_ultimate_trader_selling_fnc_onSellDialogOpen
 
 Description:
     Initialize better selling dialog
@@ -17,11 +17,11 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 disableSerialization;
 
-TRACE_1(QFUNC(onSellDialogOpen),_this);
+Trace_1(QFUNC(onSellDialogOpen),_this);
 
 params[["_display",displayNull,[displayNull]]];
 
@@ -40,7 +40,7 @@ private _wantSelectionDataControls = "getNumber(_x >> 'wantSelectionData') > 0" 
 
 _display setVariable[QGVAR(wantSelectionDataControls), _wantSelectionDataControls];
 
-TRACE_1(QFUNC(onSellDialogOpen),_wantSelectionDataControls);
+Trace_1(QFUNC(onSellDialogOpen),_wantSelectionDataControls);
 
 // Close button
 
@@ -129,7 +129,7 @@ _control ctrlAddEventHandler["CheckedChanged", {
     params[["_display",displayNull,[displayNull]]];
 
     waitUntil { isNull _display || { GVAR(sellContainerReady) } };
-    TRACE_1("sellContainerReady",GVAR(sellContainerReady));
+    Trace_1("sellContainerReady",GVAR(sellContainerReady));
 
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];

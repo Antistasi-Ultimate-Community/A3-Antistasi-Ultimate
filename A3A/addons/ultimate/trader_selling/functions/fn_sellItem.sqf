@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_sellItem
+Function: A3A_ultimate_trader_selling_fnc_sellItem
 
 Description:
     Sell item
@@ -17,7 +17,7 @@ Returns:
     Whether item was sold completely <BOOL>
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[
     ["_class","",[""]],
@@ -34,7 +34,7 @@ private _type = _item get "type";
 private _count = _item get "count";
 private _payout = if (_price isEqualTo false) then [{ false }, { _price * _amount }];
 
-TRACE_5(QFUNC(sellItem),_class,_type,_price,_amount,_payout);
+Trace_5(QFUNC(sellItem),_class,_type,_price,_amount,_payout);
 
 switch _type do {
     case "backpack": { _container addBackpackCargoGlobal[_class, -_amount] };

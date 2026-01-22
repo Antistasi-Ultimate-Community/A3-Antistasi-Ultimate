@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_onSellAllClick
+Function: A3A_ultimate_trader_selling_fnc_onSellAllClick
 
 Description:
     Handle sell all button click event
@@ -15,9 +15,9 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onSellAllClick),_this);
+Trace_1(QFUNC(onSellAllClick),_this);
 
 params[
     ["_control", controlNull, [controlNull]]
@@ -28,7 +28,7 @@ if !assert(!isNull _display) exitWith {};
 
 private _data = _control getVariable[QGVAR(itemData), false];
 
-TRACE_1(QFUNC(onSellAllClick),_data);
+Trace_1(QFUNC(onSellAllClick),_data);
 
 if (_data isEqualType false) exitWith {};
 
@@ -62,7 +62,7 @@ if (_confirm < diag_tickTime) exitWith {
 
 };
 
-TRACE_1(QFUNC(onSellAllClick),_data);
+Trace_1(QFUNC(onSellAllClick),_data);
 allControls _display apply { _x ctrlEnable false };
 _control setVariable[QGVAR(confirm), 0];
 
@@ -120,7 +120,7 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
             };
 
             if !([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
-                WARNING("something went wrong; aborting loop");
+                Warning("something went wrong; aborting loop");
                 break;
             } else {
                 _list lnbDeleteRow _index;
@@ -133,7 +133,7 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
         GVAR(allowAmountAutoUpdate) = nil;
         [] call FUNC(updateUiFromSelection);
     } catch {
-        TRACE_1(QFUNC(onSellAllClick),"aborted");
+        Trace_1(QFUNC(onSellAllClick),"aborted");
     };
 };
 

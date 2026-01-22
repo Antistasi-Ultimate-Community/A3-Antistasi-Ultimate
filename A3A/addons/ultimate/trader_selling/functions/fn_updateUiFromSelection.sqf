@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_updateUiFromSelection
+Function: A3A_ultimate_trader_selling_fnc_updateUiFromSelection
 
 Description:
     Update UI elements based on selected item in sell dialog
@@ -14,7 +14,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};

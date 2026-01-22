@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_filterGroupedByType
+Function: A3A_ultimate_trader_selling_fnc_filterGroupedByType
 
 Description:
     Filter items by type and group them
@@ -14,7 +14,7 @@ Returns:
     Items array <ARRAY>
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[["_items",nil,[createHashMap]]];
 

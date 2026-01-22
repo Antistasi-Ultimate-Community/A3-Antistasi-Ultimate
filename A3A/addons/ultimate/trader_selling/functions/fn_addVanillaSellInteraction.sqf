@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_addVanillaSellInteraction
+Function: A3A_ultimate_trader_selling_fnc_addVanillaSellInteraction
 
 Description:
     Adds a vanilla sell interaction to the class.
@@ -12,16 +12,16 @@ Optional:
 
 Example:
     (begin example)
-    [_object] call A3USPCM_store_fnc_addVanillaSellInteraction;
+    [_object] call A3A_ultimate_trader_selling_fnc_addVanillaSellInteraction;
     (end example)
 
 Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(addVanillaSellInteraction),_this);
+Trace_1(QFUNC(addVanillaSellInteraction),_this);
 
 if EGVAR(main,AceHaveAddon) exitWith {};
 

@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_canStartAdvancedSelling
+Function: A3A_ultimate_trader_selling_fnc_canStartAdvancedSelling
 
 Description:
     Condition callback for ACE3 interaction
@@ -16,7 +16,7 @@ Returns:
     <BOOL>
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[["_container",objNull,[objNull]], ["_player",objNull,[objNull]]];
 

@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_filterSortByAmount
+Function: A3A_ultimate_trader_selling_fnc_filterSortAlphabetically
 
 Description:
-    Sort sellable items by amount
+    Filter items alphabetically
 
 Parameters:
     0: _items - Item hash map <HASHMAP>
@@ -14,7 +14,7 @@ Returns:
     Items array <ARRAY>
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[["_items",nil,[createHashMap]]];
 
@@ -24,11 +24,10 @@ private _sorted = [];
 
 {
     _sorted pushBack[
-        (20000 - (_y get "count")),
         getText((_y get "config") >> _x >> "displayName"),
         _y
     ]
 } forEach _items;
 
 _sorted sort true;
-_sorted apply { _x select 2 };
+_sorted apply { _x select 1 };

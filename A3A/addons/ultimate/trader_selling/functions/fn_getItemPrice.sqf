@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_getItemPrice
+Function: A3A_ultimate_trader_selling_fnc_getItemPrice
 
 Description:
     Get price of item from HALs store addon
@@ -12,14 +12,14 @@ Optional:
 
 Example:
     (begin example)
-    ["16Rnd_9x21_Mag"] call A3USPCM_store_fnc_getItemPrice;
+    ["16Rnd_9x21_Mag"] call A3A_ultimate_trader_selling_fnc_getItemPrice;
     (end example)
 
 Returns:
     Result array [isSellable, priceOrReason] <ARRAY> 
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[
     ["_class", "", [""]]

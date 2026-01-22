@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_onProtectItemClick
+Function: A3A_ultimate_trader_selling_fnc_onProtectItemClick
 
 Description:
     Handle item protection click event
@@ -15,9 +15,9 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onProtectItemClick),_this);
+Trace_1(QFUNC(onProtectItemClick),_this);
 
 params[
     ["_control", controlNull, [controlNull]]
@@ -30,14 +30,14 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
 private _items = _list getVariable[QGVAR(items), []];
 private _index = lnbCurSelRow _list;
 
-TRACE_1(QFUNC(onProtectItemClick),_index);
+Trace_1(QFUNC(onProtectItemClick),_index);
 
 if (_index < 0) exitWith {};
 
 private _itemIndex = parseNumber(_list lnbData[_index, 0]);
 private _data = _items select _itemIndex;
 
-TRACE_1(QFUNC(onProtectItemClick),_data);
+Trace_1(QFUNC(onProtectItemClick),_data);
 
 if ((_data get "class") in (_display getVariable QGVAR(protected))) then {
     _display getVariable QGVAR(protected) deleteAt(_data get "class");

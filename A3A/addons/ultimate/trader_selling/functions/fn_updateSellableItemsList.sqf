@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_updateSellableItemsList
+Function: A3A_ultimate_trader_selling_fnc_updateSellableItemsList
 
 Description:
     Populate sellable items list taking into regard filters, sort
@@ -15,7 +15,7 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 params[["_quitIfListEmpty", false, [false]]];
 

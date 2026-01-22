@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_startAdvancedSelling
+Function: A3A_ultimate_trader_selling_fnc_startAdvancedSelling
 
 Description:
     User interaction callback handler for starting advanced selling
@@ -16,7 +16,7 @@ Returns:
     <BOOL>
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 _this spawn {
     params[["_container",objNull,[objNull]]];
@@ -47,7 +47,7 @@ _this spawn {
                 case "magazine": { configFile >> "CfgMagazines" };
                 case "backpack": { configFile >> "CfgVehicles" };
                 default { 
-                    ERROR_2("unknown type for %1: %2",_x,_y get "type");
+                    Error_2("unknown type for %1: %2",_x,_y get "type");
                     configNull;
                 };
             }];

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_store_fnc_updateItemCount
+Function: A3A_ultimate_trader_selling_fnc_updateItemCount
 
 Description:
     Update amount edit control with item count
@@ -14,9 +14,9 @@ Returns:
     Nothing
 
 Author:
-    goreSplatter
+    UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(updateItemCount),_this);
+Trace_1(QFUNC(updateItemCount),_this);
 params[["_control",controlNull,[controlNull]], ["_index",0,[0]]];
 
 if (_index < 0) exitWith {};
