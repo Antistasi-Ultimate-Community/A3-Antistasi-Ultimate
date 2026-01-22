@@ -53,6 +53,7 @@ try {
     };
 
     private _price = [CBA_EVENT_CLIENT_TRADER_SELLING_GETITEMPRICE, [_class, _config, _type]] call FUNCMAIN(triggerResultEvent);
+    Trace_3(QFUNC(getItemPrice),_class,_type,_price);
 
     if (isNil "_price") then {
         throw LSTRING(AdvSell_Reason_ItemUnconfigured);
