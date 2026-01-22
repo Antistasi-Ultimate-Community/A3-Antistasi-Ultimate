@@ -269,10 +269,10 @@ _loadoutData set ["goggles", ["G_Combat", "G_Combat_Goggles_blk_F"]];
 _sfOptics = ["optic_ACO_grn", 1, "optic_Aco", 1, "optic_Holosight", 1, "optic_Hamr", 1, "optic_ACO_grn_AK_F", 1, "Aegis_optic_ACOG", 1, "Aegis_optic_1p87", 1, "Aegis_optic_ICO", 1, "Aegis_optic_ROS", 1, "optic_LRCO_blk_F", 1, "", 1];
 _sfLROptics = [ "optic_DMS", 1,  "optic_MRCO", 1,  "optic_LRPS", 1,  "optic_Nightstalker", 1,  "optic_NVS", 1,  "optic_tws", 1];
 _sfRails = [ "acc_pointer_IR", 1, "acc_flashlight", 1, "Aegis_acc_pointer_DM", 1, "", 1];
-_sf545Muzzles = [ "muzzle_mzls_545", 1, "aegis_muzzle_snds_pbs_545_blk", 1, "muzzle_snds_545", 1, "", 1];
-_sf65Muzzles = [ "muzzle_snds_H", 1, "muzzle_mzls_H", 1, "", 1];
-_sf556Muzzles = [ "muzzle_snds_M", 1, "muzzle_mzls_M", 1, "", 1];
-_sf762Muzzles = [ "muzzle_snds_B", 1, "muzzle_mzls_B", 1, "aegis_muzzle_snds_sr25_blk", 1, "", 1];
+_sf545Muzzles = [ "muzzle_mzls_545", 0.3, "aegis_muzzle_snds_pbs_545_blk", 1, "muzzle_snds_545", 1, "", 0.3];
+_sf65Muzzles = [ "muzzle_snds_H", 1, "muzzle_mzls_H", 0.3, "", 0.3];
+_sf556Muzzles = [ "muzzle_snds_M", 1, "muzzle_mzls_M", 0.3, "", 0.3];
+_sf762Muzzles = [ "muzzle_snds_B", 1, "muzzle_mzls_B", 0.3, "aegis_muzzle_snds_sr25_blk", 1, "", 0.3];
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _sfLoadoutData set ["uniforms", ["U_I_CDF_Uniform_01_gloves_digi_F", "U_I_CDF_Uniform_01_shortsleeve_gloves_digi_F", "U_I_CDF_Gorka_01_wdl_F"]];
