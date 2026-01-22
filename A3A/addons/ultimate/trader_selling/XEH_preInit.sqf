@@ -1,5 +1,5 @@
 #include "script_component.hpp"
 
-ADDON = false;
+SUBADDON = false;
 #include "XEH_PREP.hpp"
-ADDON = true;
+SUBADDON = true;

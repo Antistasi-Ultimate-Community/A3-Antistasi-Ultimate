@@ -1,179 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
-    <Package name="Store">
-        <Key ID="STR_A3USPCM_Store_AdvSell_CantSell">
+    <Package name="Ultimate_Trader_Selling">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_CantSell">
             <English>Can't sell item because: %1</English>
             <German>Kann Gegenstand nicht verkaufen weil: %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_ConfirmBreakdown">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_ConfirmBreakdown">
             <English>Contents of container need to be broken down first. Continue with breakdown?</English>
             <German>Inhalte des Containers muss zerlegt werden. Mit Zerlegung fortfahren?</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_DblClickHint">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_DblClickHint">
             <English>Double click an item to enter its amount.</English>
             <German>Doppelklicke auf einen Gegenstand, um seine Menge einzugeben.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_DisplayNameShort">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_DisplayNameShort">
             <English>Advanced selling</English>
             <German>Verbesserter Verkauf</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_InteractionSell_DisplayName">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_InteractionSell_DisplayName">
             <English>Advanced sell items to trader</English>
             <German>Erweiterter Verkauf an Händler</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_NothingToSell">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_NothingToSell">
             <English>There are no items to sell.</English>
             <German>Es gibt keine Gegenstände zu verkaufen.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_Reason_ItemForbidden">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_Reason_ItemForbidden">
             <English>Item is in A3U blacklist</English>
             <German>Gegenstand ist auf der A3U Blacklist</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_Reason_ItemUnconfigured">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_Reason_ItemUnconfigured">
             <English>Item has no price in A3U</English>
             <German>Gegenstand hat keinen Preis in A3U</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_AdvSell_Reason_ItemUnlocked">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_Reason_ItemUnlocked">
             <English>Item is unlocked in Arsenal</English>
             <German>Gegenstand ist im Arsenal freigeschaltet</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Component">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Component">
             <English>A3USPCM - Store Component</English>
             <German>A3USPCM - Store Komponente</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnAgain">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnAgain">
             <English>Again</English>
             <German>Nochmal</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnClose">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnClose">
             <English>X</English>
             <German>X</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnProtect">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnProtect">
             <English>Protect</English>
             <German>Schützen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnProtect_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnProtect_Tooltip">
             <English>Protect an item from being sold/purged when using "sell/purge all"</English>
             <German>Schützt einen Gegenstand davor, beim "Alles verkaufen/entfernen" verkauft/entfernt zu werden</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurge">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnPurge">
             <English>Purge</English>
             <German>Entfernen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurgeAll">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnPurgeAll">
             <English>Purge all</English>
             <German>Alle entfernen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip">
             <English>WARNING: purges all _visible_ unprotected items, not ALL of the current item</English>
             <German>WARNUNG: entfernt alle _sichtbaren_ ungeschützten Gegenstände, nicht ALLE des aktuellen Gegenstands</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip_Confirm">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip_Confirm">
             <English>Click me again in the next five seconds to _really_ purge every unprotected item.</English>
             <German>Klicke innerhalb der nächsten fünf Sekunden noch einmal, um _wirklich_ alle ungeschützten Gegenstände zu entfernen.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSell">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnSell">
             <English>Sell</English>
             <German>Verkaufen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSellAll">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnSellAll">
             <English>Sell all</English>
             <German>Alle verkaufen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip">
             <English>WARNING: sells all _visible_ unprotected items, not ALL of the current item</English>
             <German>WARNUNG: verkauft alle _sichtbaren_ ungeschützten Gegenstände, nicht ALLE des aktuellen Gegenstands</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip_Confirm">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip_Confirm">
             <English>Click me again in the next five seconds to _really_ sell every unprotected item.</English>
             <German>Klicke innerhalb der nächsten fünf Sekunden noch einmal, um _wirklich_ alle ungeschützten Gegenstände zu verkaufen.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnUnprotect">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnUnprotect">
             <English>Unprotect</English>
             <German>Freigeben</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_GroupedByType">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_FilterSelect_GroupedByType">
             <English>Group items by type, then sort alphabetically</English>
             <German>Gruppiere Gegenstände nach Typ, dann sortiere alphabetisch</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_SortAlphabetically">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_FilterSelect_SortAlphabetically">
             <English>Sort items alphabetically</English>
             <German>Sortiere Gegenstände alphabetisch</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_SortByAmount">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_FilterSelect_SortByAmount">
             <English>Sort items by amount</English>
             <German>Sortiere Gegenstände nach Anzahl</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_SortByPrice">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_FilterSelect_SortByPrice">
             <English>Sort items by price</English>
             <German>Sortiere Gegenstände nach Preis</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FrameItemInfo">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_FrameItemInfo">
             <English>Item name goes here</English>
             <German>Item Name hier</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelAmount">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_LabelAmount">
             <English>Amount:</English>
             <German>Anzahl:</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelItemInfoCount">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_LabelItemInfoCount">
             <English>Amount in container:</English>
             <German>Anzahl im Container:</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelItemSalePrice">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_LabelItemSalePrice">
             <English>Item sale price:</English>
             <German>Item Verkaufspreis:</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelShowUnsellable">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_LabelShowUnsellable">
             <English>Show unsellable items</English>
             <German>Unverkaufbare Items anzeigen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelTotalSale">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_LabelTotalSale">
             <English>Total sale:</English>
             <German>Gesamtverkauf:</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_StaticTitle">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_StaticTitle">
             <English>A3USPCM Faster Loot Selling</English>
             <German>A3USPCM Schnelleres Loot Verkaufen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_StaticWaitForBreakdown">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_StaticWaitForBreakdown">
             <English>Please wait a moment while container items are broken down.</English>
             <German>Bitte warten Sie einen Moment, während die Container-Items aufgebrochen werden.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_TextItemCount">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_TextItemCount">
             <English>0</English>
             <German>0</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_TextItemPrice">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_TextItemPrice">
             <English>0</English>
             <German>0</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_TextTotalSale">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_TextTotalSale">
             <English>0</English>
             <German>0</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Settings_playKaching_DisplayName">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Settings_playKaching_DisplayName">
             <English>Play "kaching" sound when selling</English>
             <German>Spiele Sound beim Verkaufen ab</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Settings_playKaching_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Settings_playKaching_Tooltip">
             <English>Plays an annoying sound when selling via the "Better Selling" feature</English>
             <German>Spielt einen nervigen Sound ab, wenn über die "Besser Verkaufen"-Funktion verkauft wird</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Settings_sellDelay_DisplayName">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Settings_sellDelay_DisplayName">
             <English>Delay between auto sales</English>
             <German>Verzögerung zwischen automatischen Verkäufen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Settings_sellDelay_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Settings_sellDelay_Tooltip">
             <English>Short delay between auto sales</English>
             <German>Kurze Verzögerung zwischen automatischen Verkäufen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Settings_sellForbidden_DisplayName">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Settings_sellForbidden_DisplayName">
             <English>Also sell A3U "forbidden" items</English>
             <German>Auch A3U "verbotene" Gegenstände verkaufen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Store_Settings_sellForbidden_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Settings_sellForbidden_Tooltip">
             <English>Allows selling of items that are normally not sellable</English>
             <German>Erlaubt den Verkauf von normalerweise nicht verkaufbaren Gegenständen</German>
         </Key>

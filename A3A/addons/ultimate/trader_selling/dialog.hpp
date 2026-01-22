@@ -1,4 +1,4 @@
-#include "\z\a3uspcm\addons\main\ui_define.hpp"
+#include "\x\A3A\addons\core\ui_define.hpp"
 #include "RscDefine.hpp"
 
 // Replace attributes:
