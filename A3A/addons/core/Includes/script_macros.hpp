@@ -90,6 +90,11 @@ Author:
     #define PREPMAIN(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(FUNCTION_NAME_INSERT,var1))', 'FUNCMAIN(var1)'] call SLX_XEH_COMPILE_NEW
 #endif
 
+// Quote quote
+#ifndef QQUOTE
+    #define QQUOTE(var1) QUOTE(QUOTE(var1))
+#endif // QQUOTE
+
 // VARDEF used everywhere is CBA's RETDEF.
 #undef VARDEF
 #define VARDEF(a,b) RETDEF(a,b)
