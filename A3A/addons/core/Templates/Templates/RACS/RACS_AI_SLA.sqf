@@ -2,6 +2,7 @@
 //   Side Information   //
 //////////////////////////
 
+#include "..\..\..\script_component.hpp"
 ["name", "Liberation Army"] call _fnc_saveToTemplate; 						
 ["spawnMarkerName", "Sahrani Liberation Army Support Corridor"] call _fnc_saveToTemplate; 			
 
@@ -18,15 +19,15 @@
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
 ["vehiclesBasic", ["B_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["PRACS_SLA_BTR40", "PRACS_SLA_UAZ_open", "PRACS_SLA_UAZ", "PRACS_SLA_MTLB"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["PRACS_SLA_BTR40_NSV", "PRACS_SLA_UAZ_DSHKM", "PRACS_SLA_Tigr", "PRACS_SLA_UAZ_A_AGS", "PRACS_SLA_UAZ_A_SPG9", "PRACS_SLA_UAZ_A_AT", "PRACS_SLA_BRDM"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["PRACS_SLA_UAZ_open", "PRACS_SLA_UAZ", "PRACS_SLA_MTLB"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["PRACS_SLA_UAZ_DSHKM", "PRACS_SLA_Tigr", "PRACS_SLA_UAZ_A_AGS", "PRACS_SLA_UAZ_A_SPG9", "PRACS_SLA_UAZ_A_AT", "PRACS_SLA_BRDM"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["PRACS_SLA_MAZ_Transport", "PRACS_SLA_URAL", "rhs_kraz255b1_cargo_open_vdv", "rhs_zil131_open_msv", "rhs_zil131_msv"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["PRACS_SLA_MAZ_Transport", "PRACS_SLA_URAL","rhs_kraz255b1_cargo_open_vdv", "rhs_zil131_open_msv"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["PRACS_SLA_MTLB_AMMO", "PRACS_SLA_Ural_Ammo", "PRACS_SLA_MAZ_ammo"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["PRACS_SLA_URAL_Repair"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["PRACS_SLA_URAL_Fuel", "rhs_kraz255b1_fuel_vdv"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["PRACS_SLA_MTLB_AMB", "PRACS_SLA_Ural_AMB"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["PRACS_SLA_BTR40_AT", "PRACS_SLA_Type63_AT","PRACS_SLA_Type63", "PRACS_SLA_BRDM","PRACS_SLA_Type63_AGS", "PRACS_SLA_BTR60", "PRACS_SLA_BTR40_AGS"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["PRACS_SLA_Type63_AT","PRACS_SLA_Type63", "PRACS_SLA_BRDM","PRACS_SLA_Type63_AGS", "PRACS_SLA_BTR60", "PRACS_SLA_BTR40_AGS"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["PRACS_SLA_BMD1", "PRACS_SLA_BMD2"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["PRACS_SLA_BTR80", "PRACS_SLA_BTR80A"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["PRACS_SLA_BMP1", "PRACS_SLA_BMP2", "PRACS_SLA_BMP3"]] call _fnc_saveToTemplate;
@@ -59,7 +60,7 @@
 ["vehiclesMilitiaLightArmed", ["PRACS_SLA_UAZ_DSHKM"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["PRACS_SLA_URAL_SPLF", "PRACS_SLA_URAL_Open_SPLF"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["PRACS_SLA_UAZ_open_SPLF"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["PRACS_SLA_BTR40_SPLF"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["PRACS_SLA_BTR40_SPLF", "PRACS_SLA_BTR40_NSV", "PRACS_SLA_BTR40_AT"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["PRACS_SLA_URAL_BG", "PRACS_SLA_UAZ_open_Border_guard", "PRACS_SLA_BRDM_BG", "PRACS_SLA_BTR60_BG"]] call _fnc_saveToTemplate;
 
@@ -104,7 +105,7 @@ _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 
 _loadoutData set ["missileATLaunchers", [
-    ["rhs_weap_rpg7", "", "", "", ["rhs_rpg7_PG7VR_mag", "rhs_rpg7_PG7VR_mag"], [], ""]
+    ["rhs_weap_rpg7", "", "", "rhs_acc_pgo7v2", ["rhs_rpg7_PG7VL_mag", "rhs_rpg7_PG7VR_mag"], [], ""]
 ]];
 _loadoutData set ["AALaunchers", [
     ["rhs_weap_igla", "", "", "", ["rhs_mag_9k38_rocket"], [], ""]
@@ -210,7 +211,7 @@ _sfLoadoutData set ["glVests", ["PRACS_SLA_6sh92_VOG", "PRACS_SLA_6sh92_VOG_SF"]
 _sfLoadoutData set ["backpacks", ["PRACS_SLA_cammo_RD54"]];
 _sfLoadoutData set ["slBackpacks", ["PRACS_SLA_RD54"]];
 _sfLoadoutData set ["atBackpacks", ["PRACS_SLA_cammo_RD54"]];
-_sfLoadoutData set ["helmets", ["PRACS_SLA_Booniehat"]];
+_sfLoadoutData set ["helmets", ["PRACS_SLA_6B27M_ess"]];
 _sfLoadoutData set ["slHat", ["PRACS_SLA_6B27M_ess"]];
 _sfLoadoutData set ["sniHats", ["PRACS_SLA_Soft_Cap"]];
 _sfLoadoutData set ["NVGs", ["NVGoggles_OPFOR"]];
@@ -340,13 +341,13 @@ _militaryLoadoutData set ["carbines", [
     ["rhs_weap_ak74m", "rhs_acc_dtk", "", "", ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N6M_plum_AK"], [], ""]
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", "", "rhs_acc_rakurspm", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK"], ["rhs_VOG25"], "rhs_acc_dtk"]
+    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", "", "rhs_acc_rakurspm", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK"], ["rhs_VOG25"], ""]
 ]];
 _militaryLoadoutData set ["SMGs", [
     ["PRACS_HK33", "", "", "rhsusf_acc_rm05", ["PRACS_30rd_HK33_mag"], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
-    ["PRACS_rpk74m_ACO", "", "", "", ["rhs_60Rnd_545X39_7N22_AK", "rhs_60Rnd_545X39_7N22_AK", "rhs_60Rnd_545X39_7N22_AK"], [], "rhs_acc_dtkrpk"],
+    ["PRACS_rpk74m_ACO", "rhs_acc_dtkrpk", "", "", ["rhs_60Rnd_545X39_7N22_AK", "rhs_60Rnd_545X39_7N22_AK", "rhs_60Rnd_545X39_7N22_AK"], [], ""],
     ["rhs_weap_pkm", "", "", "", ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR"], [], ""]
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
@@ -405,11 +406,7 @@ _militiaLoadoutData set ["rifles", [
     ["rhs_weap_savz58p", "", "", "", ["rhs_30Rnd_762x39mm_Savz58"], [], ""]	
 ]];
 _militiaLoadoutData set ["carbines", [
-    ["rhs_weap_ak74n", "", "", "rhs_acc_dtk1983", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK"], [], ""],
-    ["rhs_weap_aks74", "rhs_acc_dtk1983", "", "", ["rhs_30Rnd_545x39_7N6_AK", "rhs_30Rnd_545x39_7N6_AK", "rhs_30Rnd_545x39_7N6_AK"], [], ""],
-    ["rhs_weap_akm", "rhs_acc_dtkakm", "", "", ["rhs_30Rnd_762x39mm"], [], ""],
-    ["rhs_weap_akms", "rhs_acc_dtkakm", "", "", ["rhs_30Rnd_762x39mm"], [], ""],
-    ["rhs_weap_savz58p", "", "", "", ["rhs_30Rnd_762x39mm_Savz58"], [], ""]	
+    ["rhs_weap_aks74", "rhs_acc_dtk1983", "", "", ["rhs_30Rnd_545x39_7N6_AK", "rhs_30Rnd_545x39_7N6_AK", "rhs_30Rnd_545x39_7N6_AK"], [], ""]
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
     ["rhs_weap_akm_gp25", "", "", "rhs_acc_dtkakm", ["rhs_30Rnd_762x39mm_bakelite"], ["rhs_VOG25", "rhs_VOG25", "rhs_VOG25"], ""]
