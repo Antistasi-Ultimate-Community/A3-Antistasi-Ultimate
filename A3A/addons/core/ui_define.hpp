@@ -27,6 +27,7 @@ FORWARD(RscStructuredText);
 FORWARD(RscText);
 FORWARD(RscTextCheckBox);
 
+#define UI_FONT_DEFAULT font = "PuristaMedium"
 #include "ui_const.hpp"
 
 #endif // __HAS_A3ACORE_UI_DEFINE_HPP__
