@@ -36,9 +36,10 @@ if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 GVAR(sellContainer) = _container;
 GVAR(sellContainerReady) = false;
 
-if !([_container] call FUNCMAIN(makeObjectLocal)) exitWith {};
+if !([GVAR(sellContainer)] call FUNCMAIN(makeObjectLocal)) exitWith {};
+[GVAR(sellContainer), true] remoteExecCall["lockInventory", -2, GVAR(sellContainer)];
 
-[_container, {
+[GVAR(sellContainer), {
     if !assert(params[["_container",objNull,[objNull]], ["_items",nil,[createHashMap]]]) exitWith {};
     if !assert(!isNull _container) exitWith {};
     if !assert(!isNil "_items") exitWith {};

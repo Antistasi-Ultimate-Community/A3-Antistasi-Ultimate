@@ -8,6 +8,7 @@ PREP(filterSortByPrice);
 PREP(getItemPrice);
 PREP(onProtectItemClick);
 PREP(onSellAllClick);
+PREP(onSellDialogClose);
 PREP(onSellDialogOpen);
 PREP(onSellItemClick);
 PREP(sellItem);

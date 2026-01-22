@@ -64,7 +64,7 @@ $[
 class GVAR(sellDialog) {
     idd = 6119821;
     onLoad = QUOTE(call FUNC(onSellDialogOpen));
-    onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(menuDisplay),nil)]);
+    onUnload = QUOTE(call FUNC(onSellDialogClose));
 	movingEnable = 1;
 
     class Filters {
