@@ -1,4 +1,5 @@
 #include "\x\A3A\addons\core\ui_define.hpp"
+#include "\x\A3A\addons\scrt\defines.hpp"
 #include "RscDefine.hpp"
 
 // Replace attributes:
@@ -25,6 +26,16 @@ $[
 	[1605,"BtnImport",[1,"Import",["0.62375 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.0567187 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
+
+class GVAR(headerBase): headerBase {
+	fade = 0;
+	colorBackground[] = {0,0,0,0.8};
+};
+
+class GVAR(ButtonBase): ButtonBase {
+	fade = 0;
+};
+
 class GVAR(dialog) {
     idd = 6119822;
     onLoad = QUOTE(call FUNC(onDialogOpen));
@@ -36,7 +47,7 @@ class GVAR(dialog) {
 		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Gegiti)
 		////////////////////////////////////////////////////////
 
-		class StaticTitle: RscText
+		class StaticTitle: GVAR(headerBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_STATICTITLE;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_StaticTitle);
@@ -44,7 +55,6 @@ class GVAR(dialog) {
 			y = QUOTE(0.181 * safezoneH + safezoneY);
 			w = QUOTE(0.551719 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 			moving = 1;
 		};
 		class StaticBackground: RscText
@@ -56,7 +66,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.561 * safezoneH);
 			colorBackground[] = {0,0,0,0.8};
 		};
-		class BtnClose: RscButton
+		class BtnClose: GVAR(ButtonBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNCLOSE;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_BtnClose);
@@ -85,6 +95,8 @@ class GVAR(dialog) {
 			idcRight = -1;
 			drawSideArrows = false;
 
+			font = "PuristaMedium";
+
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_LISTALLTRACKS;
 			x = QUOTE(0.226719 * safezoneW + safezoneX);
 			y = QUOTE(0.236 * safezoneH + safezoneY);
@@ -97,6 +109,8 @@ class GVAR(dialog) {
 			onLoad = QUOTE(_this spawn FUNC(onInitPlaylistTree));
 			fade = 1;
 
+			font = "PuristaMedium";
+
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_STATICTREEPOSITION;
 			x = QUOTE(0.561875 * safezoneW + safezoneX);
 			y = QUOTE(0.28 * safezoneH + safezoneY);
@@ -104,7 +118,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.44 * safezoneH);
 			colorBackground[] = {0.4,0,0,1};
 		};
-		class BtnRemove: RscButton
+		class BtnRemove: GVAR(ButtonBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNREMOVE;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_BtnRemove);
@@ -112,10 +126,9 @@ class GVAR(dialog) {
 			y = QUOTE(0.236 * safezoneH + safezoneY);
 			w = QUOTE(0.108281 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 			tooltip = CSTRING(RscA3USPCMTracklistEditorDialog_BtnRemove_tooltip);
 		};
-		class BtnAddSelection: RscButton
+		class BtnAddSelection: GVAR(ButtonBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNADDSELECTION;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_BtnAddSelection);
@@ -123,10 +136,9 @@ class GVAR(dialog) {
 			y = QUOTE(0.236 * safezoneH + safezoneY);
 			w = QUOTE(0.108281 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 			tooltip = CSTRING(RscA3USPCMTracklistEditorDialog_BtnAddSelection_tooltip);
 		};
-		class BtnSavePlaylist: RscButton
+		class BtnSavePlaylist: GVAR(ButtonBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_BtnSavePlaylist);
@@ -134,9 +146,8 @@ class GVAR(dialog) {
 			y = QUOTE(0.731 * safezoneH + safezoneY);
 			w = QUOTE(0.0876563 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 		};
-		class BtnExport: RscButton
+		class BtnExport: GVAR(ButtonBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNEXPORT;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_BtnExport);
@@ -144,9 +155,8 @@ class GVAR(dialog) {
 			y = QUOTE(0.731 * safezoneH + safezoneY);
 			w = QUOTE(0.0567187 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 		};
-		class BtnImport: RscButton
+		class BtnImport: GVAR(ButtonBase)
 		{
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNIMPORT;
 			text = CSTRING(RscA3USPCMTracklistEditorDialog_BtnImport);
@@ -154,7 +164,6 @@ class GVAR(dialog) {
 			y = QUOTE(0.731 * safezoneH + safezoneY);
 			w = QUOTE(0.0567187 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
