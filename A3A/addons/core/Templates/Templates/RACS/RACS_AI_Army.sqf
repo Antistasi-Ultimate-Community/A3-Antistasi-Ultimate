@@ -67,7 +67,7 @@
 ["staticMGs", ["RHS_M2StaticMG_WD","PRACS_Paratrooper_mk19_static"]] call _fnc_saveToTemplate;
 ["staticAT", ["RHS_TOW_TriPod_WD"]] call _fnc_saveToTemplate;
 ["staticAA", ["RHS_Stinger_AA_pod_WD"]] call _fnc_saveToTemplate;
-["staticMortars", ["PRACS_SLA_2B14"]] call _fnc_saveToTemplate;
+["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;
 ["staticHowitzers", ["PRACS_M1", "PRACS_M198"]] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "PRACS_MPQ64_Sentinel"] call _fnc_saveToTemplate;
@@ -77,7 +77,7 @@
 ["PRACS_155mm_HE_M189_x25",
 "PRACS_155mm_HE_M1_x25"]] call _fnc_saveToTemplate;
 
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["mortarMagazineHE", "rhs_12Rnd_m821_HE"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
