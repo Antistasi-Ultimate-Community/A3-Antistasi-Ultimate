@@ -90,8 +90,8 @@
             <German>Zeile %1: Versionskonflikt</German>
         </Key>
         <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_StaticTitle">
-            <English>A3USPCM Playlist Editor</English>
-            <German>A3USPCM Playlist Editor</German>
+            <English>In-game music tracklist editor</English>
+            <German>In-Game Musik Playlist-Editor</German>
         </Key>
         <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_Category_DisplayName">
             <English>Music player (customizable)</English>
