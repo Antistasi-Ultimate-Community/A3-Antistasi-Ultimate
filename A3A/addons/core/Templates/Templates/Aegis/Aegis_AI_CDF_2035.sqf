@@ -85,16 +85,9 @@ private _policeVehs = if (_hasContact) then {
 
 ["staticMGs", ["I_CDF_HMG_02_high_F"]] call _fnc_saveToTemplate;
 ["staticAT", ["I_CDF_Static_AT_F"]] call _fnc_saveToTemplate;
-["staticAA", _staticAA] call _fnc_saveToTemplate;
+["staticAA", ["I_CDF_Static_AA_F"]] call _fnc_saveToTemplate;
 ["staticMortars", ["I_CDF_Mortar_01_F"]] call _fnc_saveToTemplate;
 ["staticHowitzers", []] call _fnc_saveToTemplate;
-
-private _staticAA = ["I_CDF_Static_AA_F"];
-
-//If Western Sahara DLC
-if (_hasWs) then {
-    _staticAA pushBack "I_CDF_ZU23_F";
-};
 
 ["vehicleRadar", "I_CDF_Radar_System_01_F"] call _fnc_saveToTemplate;
 ["vehicleSam", "I_CDF_SAM_System_03_F"] call _fnc_saveToTemplate;
