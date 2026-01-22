@@ -26,7 +26,7 @@ params[
 
 if !assert(!isNull _container) exitWith {};
 
-private _items = [_container] call FUNCMAIN(utilContainerContentFlattened);
+private _items = [_container] call FUNC(utilContainerContentFlattened);
 
 clearBackpackCargoGlobal _container;
 clearItemCargoGlobal _container;

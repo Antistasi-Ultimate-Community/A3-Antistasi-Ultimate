@@ -26,4 +26,4 @@ if (!isNull _player && { !isNull objectParent _player }) exitWith {false};
 if (missionNamespace getVariable["traderX",false] isEqualTo false) exitWith {false};
 if (_container distance2D traderX > ADVANCED_SELLING_RANGE) exitWith {false};
 
-[_container] call FUNCMAIN(utilVehicleHasCargo);
+[_container] call FUNCMAIN(vehicleHasCargo);

@@ -816,6 +816,7 @@ class CfgFunctions
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
+            class vehicleHasCargo {};
             class vehicleTextureSync {};
             class vehicleWillCollideAtPosition {};
             class getRoadDirection {};

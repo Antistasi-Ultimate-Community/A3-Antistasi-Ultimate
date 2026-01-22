@@ -15,3 +15,4 @@ PREP(startAdvancedSelling);
 PREP(updateItemCount);
 PREP(updateSellableItemsList);
 PREP(updateUiFromSelection);
+PREP(utilContainerContentFlattened);
