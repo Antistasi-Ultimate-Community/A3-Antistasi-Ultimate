@@ -15,7 +15,7 @@ class planeLoadouts
             bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         }; */
-/// stuff added for updated PRACS
+/// PRACS
         class PRACS_SLA_SU22
         {
             loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","","","rhs_mag_upk23_ofz","rhs_mag_upk23_ofz","","","","","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1"};
@@ -461,7 +461,7 @@ class planeLoadouts
             rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
         }; */
-///stuff added for updated PRACS
+/// PRACS
         class PRACS_SLA_SU22
         {
             loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","PRACS_KH29T_X1","PRACS_KH29T_X1","rhs_mag_upk23_btz","rhs_mag_upk23_btz","PRACS_Kh25_mt_X1","PRACS_Kh25_mt_X1","","","","","",""};
@@ -1260,6 +1260,7 @@ class planeLoadouts
             rocketLauncher[] = {"Rocket_04_AP_Plane_CAS_01_F","Rocket_04_HE_Plane_CAS_01_F","missiles_DAR"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
         };
+        // PRACS
         class PRACS_SLA_MiG23
         {
             loadout[] = {"PRACS_AA8_X2_L","PRACS_AA8_X2_R","PRACS_R24R_X1","PRACS_R24R_X1"};
