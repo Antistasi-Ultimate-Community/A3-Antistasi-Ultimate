@@ -45,15 +45,7 @@ try {
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO ctrlSetText getText((_data get "config") >> (_data get "class") >> "displayName");
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMDESCRIPTION ctrlSetStructuredText parseText format["<t size='0.5'>%1</t>", _description];
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMCOUNT ctrlSetText str(_data get "count");
-
-    if (_data get "type" isEqualTo "weapon") then {
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText getText((_data get "config") >> (_data get "class") >> "picture");
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
-    } else {
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText getText((_data get "config") >> (_data get "class") >> "picture");
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
-    };
-
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText getText((_data get "config") >> (_data get "class") >> "picture");
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnProtect);
 
     if ((_data get "class") in (_display getVariable QGVAR(protected))) then { throw true };
@@ -118,7 +110,6 @@ try {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText "";
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO ctrlSetText "";
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlEnable false;
     };
 };
