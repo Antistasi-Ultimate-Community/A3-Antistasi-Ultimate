@@ -218,7 +218,7 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
 
 #ifdef Log_Info
     #define Info(Message) if (1 < VARDEF(LogLevel,4)) then { _LOG_Message("Info", Message) }
-    #define Info_1(Message, A) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A]; _LOG_Message("Info", _msg) }
+    #define Info_1(Message, A) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A]; _LOG_Message("Info", _msg) };
     #define Info_2(Message, A,B) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B]; _LOG_Message("Info", _msg) }
     #define Info_3(Message, A,B,C) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C]; _LOG_Message("Info", _msg) }
     #define Info_4(Message, A,B,C,D) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D]; _LOG_Message("Info", _msg) }
@@ -403,9 +403,4 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
     #define ServerVerboseArray(Message, Array)
     #define VerboseArrayFormat(Message, Frmat, Array)
     #define ServerVerboseArrayFormat(Message, Frmat, Array)
-#endif
-
-// This could be a rant about the POS code that's the garage and its heinous license model. But it's not.
-#if COMPONENT == "garage"
-    #define Info_1(Message, A) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A]; _LOG_Message("Info", _msg) };
 #endif

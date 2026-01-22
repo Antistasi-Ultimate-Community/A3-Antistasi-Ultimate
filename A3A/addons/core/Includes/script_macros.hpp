@@ -1,28 +1,43 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 //#include "script_macros_undef.hpp"
+#include "cba_events.hpp"
 
-// Client-only event; after client initialization; params=[]
-#define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
-// Client-only event; on personal save loaded; params=[Hashmap saveData]
-#define CBA_EVENT_CLIENT_PLAYER_LOAD QUOTE(TRIPLES(PREFIX,event,clientPlayerLoad))
-// Client-only event; on personal save; params=[Hashmap saveData]
-#define CBA_EVENT_CLIENT_PLAYER_SAVE QUOTE(TRIPLES(PREFIX,event,clientPlayerSave))
-// Server-only event; after server initialization; params=[]
-#define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
-// Server-only event; on game save; params=[]
-#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
-
+// Define CfgPatches class name for, well, patches.
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
+// CBA uses "fnc", we use "fn" to look for function source files ...
+#define FUNCTION_NAME_INSERT fn
 
-#ifdef SUBCOMPONENT
+/* -------------------------------------------
+Sub-component support
+
+    If SUBCOMPONENT is defined in "script_component.hpp", adjust various macros
+    to account for the subcomponent structure.
+
+    Subcomponents live inside a component folder, e.g.
+        addons\<component>\<subcomponent>\
+    but otherwise replicate main component structure.
+
+    Still, file locator macros (e.g. PATHTOF) will need to be adjusted for the
+    additional folder layer.
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
+#ifndef SUBCOMPONENT
+    #define COMPONENT_PATH_FRAGMENT COMPONENT
+    #define COMPONENT_PATH_FRAGMENT_F COMPONENT_F
+#else // SUBCOMPONENT
+    #define COMPONENT_PATH_FRAGMENT COMPONENT\SUBCOMPONENT
+    #define COMPONENT_PATH_FRAGMENT_F COMPONENT_F\SUBCOMPONENT
+
     #undef COMPILE_FILE
-    #define COMPILE_FILE(var1) COMPILE_FILE_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)
+    #define COMPILE_FILE(var1) COMPILE_FILE_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,var1)
 
     #undef COMPILE_FILE_CFG
-    #define COMPILE_FILE_CFG(var1) COMPILE_FILE_CFG_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)
+    #define COMPILE_FILE_CFG(var1) COMPILE_FILE_CFG_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,var1)
 
     #undef COMPILE_SCRIPT
-    #define COMPILE_SCRIPT(var1) compileScript ['PATHTO_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)']
+    #define COMPILE_SCRIPT(var1) compileScript ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,var1)']
 
     #undef FUNC
     #define FUNC(var1) TRIPLES(SUBADDON,fnc,var1)
@@ -34,7 +49,7 @@
     #define LOG_SYS_FORMAT(LEVEL,MESSAGE) format ['[%1] (%2) %3: %4', toUpper 'PREFIX', 'SUBADDON', LEVEL, MESSAGE]
 
     #undef PATHTOF
-    #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT\SUBCOMPONENT,var1)
+    #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT_PATH_FRAGMENT,var1)
 
     // Localization strings macros
     #undef CSTRING
@@ -45,13 +60,49 @@
     #define LLSTRING(var1) (localize LSTRING(var1))
 #endif // SUBCOMPONENT
 
-#undef PREP
-#undef PREPSUB
-#define PREP(fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(functions\DOUBLES(fn,fncName).sqf)
-#define PREPSUB(folder,fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(folder\DOUBLES(fn,fncName).sqf)
+#undef PATHTO_FNC
+#define PATHTO_FNC(func) class func { \
+    file = QUOTE(PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(FUNCTION_NAME_INSERT,func))); \
+    CFGFUNCTION_HEADER; \
+    RECOMPILE; \
+}
+// No #undef here, as SPATHTO_FNC is new. Adapt to folder layouts where
+// functions live in categorized subfolders.
+#define SPATHTO_FNC(folder,func) class func { \
+    file = QUOTE(PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\folder\DOUBLES(FUNCTION_NAME_INSERT,func))); \
+    CFGFUNCTION_HEADER; \
+    RECOMPILE; \
+}
 
+// Function definition macros with compile cache support.
+// Need to be overwritten from CBA because of our different function source file
+// naming convention (CBA functions\fnc_foo.sqf vs our functions\fn_foo.sqf). 
+#undef PREP
+#undef PREPMAIN
+#ifdef DISABLE_COMPILE_CACHE
+    #define PREP(var1) FUNC(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))'
+    #define PREPMAIN(var1) FUNCMAIN(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))'
+#else
+    #define PREP(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))', 'FUNC(var1)'] call SLX_XEH_COMPILE_NEW
+    #define PREPMAIN(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))', 'FUNCMAIN(var1)'] call SLX_XEH_COMPILE_NEW
+#endif
+
+// VARDEF used everywhere is CBA's RETDEF.
 #undef VARDEF
 #define VARDEF(a,b) RETDEF(a,b)
+
+// More or less alias macros for PATHTOF, but used everywhere in Antistasi to
+// especially locate UI resources etc. Keep it as an alias to avoid changing
+// hundreds of files.
+#define PATHTOFOLDER(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
+#define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
+
+#define EPATHTOFOLDER(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
+#define QEPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
+
+// Should akshually be called QEPATHTOFOLDER ...
+// Keep the typo as an alias so ~1000 files don't show up in PR
+#define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
 
 /* -------------------------------------------
 Macro: XOR

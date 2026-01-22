@@ -325,15 +325,14 @@ class CfgFunctions
         };
 
         class Events {
-            file = QPATHTOFOLDER(functions\Events);
-            class addEventHandler {};
-            class removeEventHandler {};
-            class triggerGlobalEvent {};
-            class triggerLocalEvent {};
-            class triggerOwnerEvent {};
-            class triggerRemoteEvent {};
-            class triggerServerEvent {};
-            class triggerTargetEvent {};
+            SPATHTO_FNC(Events,addEventHandler);
+            SPATHTO_FNC(Events,removeEventHandler);
+            SPATHTO_FNC(Events,triggerGlobalEvent);
+            SPATHTO_FNC(Events,triggerLocalEvent);
+            SPATHTO_FNC(Events,triggerOwnerEvent);
+            SPATHTO_FNC(Events,triggerRemoteEvent);
+            SPATHTO_FNC(Events,triggerServerEvent);
+            SPATHTO_FNC(Events,triggerTargetEvent);
         };
 
         class EventHandler {

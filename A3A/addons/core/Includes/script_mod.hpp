@@ -36,17 +36,13 @@
 
 #if __A3_DEBUG__
     #define DEBUG_MODE_FULL
+    #define DISABLE_COMPILE_CACHE
+    #define RECOMPILE // [Disable for release]
+#else // __A3_DEBUG__
+    // Remove CfgFunction adding headers and disable SCRIPT macro (comment out to enable for debugging)
+    #define SKIP_FUNCTION_HEADER // [Enable for release]
+    #define SKIP_SCRIPT_NAME // [Enable for release]
 #endif // __A3_DEBUG__
 
 #include "script_macros.hpp"
 #include "common.inc"
-
-#define PATHTOFOLDER(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
-#define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
-
-#define EPATHTOFOLDER(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
-#define QEPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
-
-// Should akshually be called QEPATHTOFOLDER ...
-// Keep the typo as an alias so ~1000 files don't show up in PR
-#define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
