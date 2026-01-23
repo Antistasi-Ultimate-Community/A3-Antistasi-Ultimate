@@ -335,6 +335,7 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
     #define TraceArrayFormat(Message,Frmat,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
     #define ServerTraceArrayFormat(Message,Frmat,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
 #else
+    #define Trace(Message,A)
     #define Trace_1(Message,A)
     #define Trace_2(Message,A,B)
     #define Trace_3(Message,A,B,C)
