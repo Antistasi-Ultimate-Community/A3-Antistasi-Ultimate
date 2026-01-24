@@ -7,7 +7,7 @@
 ["spawnMarkerName", "Sahrani Liberation Army Support Corridor"] call _fnc_saveToTemplate; 			
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate; 						
-["flagTexture", "\PRACS_SLA_Core\Flags\flag_north_co_mrk.paa"] call _fnc_saveToTemplate;		
+["flagTexture", "\PRACS_SLA_Core\Flags\flag_north_co.paa"] call _fnc_saveToTemplate;		
 ["flagMarkerType", "PRACS_SLA_Flag_mrk"] call _fnc_saveToTemplate;
 
 //////////////////////////
