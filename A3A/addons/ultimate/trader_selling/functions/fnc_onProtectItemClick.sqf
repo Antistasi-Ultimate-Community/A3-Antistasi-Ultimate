@@ -45,7 +45,7 @@ if ((_data get "class") in (_display getVariable QGVAR(protected))) then {
     _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], ""];
 } else {
     _display getVariable QGVAR(protected) set[_data get "class", true];
-    _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], QPATHTOEF(assets,ui\lock-icon.paa)];
+    _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], QPATHTOF(ui\lock-icon.paa)];
 };
 
 GVAR(allowAmountAutoUpdate) = false;
