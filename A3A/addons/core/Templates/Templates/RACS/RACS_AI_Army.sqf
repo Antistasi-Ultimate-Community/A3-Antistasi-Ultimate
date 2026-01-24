@@ -2,12 +2,12 @@
 //   Side Information   //
 //////////////////////////
 
-#include "..\..\..\script_component.hpp
+#include "..\..\..\script_component.hpp"
 ["name", "Royal Army Corps"] call _fnc_saveToTemplate; 						
 ["spawnMarkerName", "Sahrani Army Support Corridor"] call _fnc_saveToTemplate; 			
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate; 						
-["flagTexture", "\PRACS_Core\Flags\KingdomofSahrani_co_mrk.paa"] call _fnc_saveToTemplate;			
+["flagTexture", "\PRACS_Core\Flags\KingdomofSahrani_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "PRACS_Sahrani_Flag_mrk"] call _fnc_saveToTemplate; 	
 
 //////////////////////////
@@ -50,7 +50,7 @@
 
 ["vehiclesArtillery", ["PRACS_M109A6","PRACS_M115"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["PRACS_M115", ["PRACS_203mm_HE_M106x30"]],
+["PRACS_M115", ["PRACS_203mm_HE_M106_x30"]],
 ["PRACS_M109A6", ["PRACS_155mm_HE_M109A6_x25"]]
 ]] call _fnc_saveToTemplate;
 
@@ -68,14 +68,12 @@
 ["staticAT", ["RHS_TOW_TriPod_WD"]] call _fnc_saveToTemplate;
 ["staticAA", ["RHS_Stinger_AA_pod_WD"]] call _fnc_saveToTemplate;
 ["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;
-["staticHowitzers", ["PRACS_M1", "PRACS_M198"]] call _fnc_saveToTemplate;
+["staticHowitzers", ["PRACS_M198"]] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "PRACS_MPQ64_Sentinel"] call _fnc_saveToTemplate;
 ["vehicleSam", "PRACS_M727_SEM_IHAWK"] call _fnc_saveToTemplate;
 
-["howitzerMagazineHE", 
-["PRACS_155mm_HE_M189_x25",
-"PRACS_155mm_HE_M1_x25"]] call _fnc_saveToTemplate;
+["howitzerMagazineHE", "PRACS_155mm_HE_M198x25"] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "rhs_12Rnd_m821_HE"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
