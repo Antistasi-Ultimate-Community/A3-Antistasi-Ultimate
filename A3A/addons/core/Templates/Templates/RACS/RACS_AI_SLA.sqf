@@ -40,7 +40,7 @@
 ["vehiclesAmphibious", ["PRACS_SLA_BRDM", "PRACS_SLA_BTR60", "PRACS_SLA_PT76_NAVY"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlanesCAS", ["PRACS_SLA_SU22","PRACS_SLA_Su25", "PRACS_SLA_MiG27"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["PRACS_SLA_MiG21", "PRACS_SLA_MiG23"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["PRACS_SLA_MiG21", "PRACS_SLA_MiG23", "PRACS_SLA_MiG29"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["PRACS_AN12B"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["PRACS_SLA_Mi8amt", "PRACS_SLA_Z11W_B2"]] call _fnc_saveToTemplate;
