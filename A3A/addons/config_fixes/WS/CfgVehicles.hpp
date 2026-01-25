@@ -138,15 +138,6 @@ class CfgVehicles
         faction = "OPF_T_F";
         hiddenSelectionsTextures[] = {"a3\soft_f_exp\truck_02\data\truck_02_kab_ghex_co.paa","lxws\vehicles_f_lxws\truck_02\data\truck_02_cargo_olive_co.paa","a3\soft_f_beta\truck_02\data\truck_02_int_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_base_sfia_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_sfia_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_1_hex_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_2_sfia_co.paa","lxws\vehicles_f_lxws\truck_02\data\addons_black_co.paa"};
     };
-    
-    //Green-Camo
-    class a3a_I_E_Truck_02_zu23_F : O_Tura_Truck_02_aa_lxWS
-    {
-        side = 2;
-        crew = "I_E_Soldier_F";
-        faction = "IND_E_F";
-        hiddenSelectionsTextures[] = {"a3\soft_f_enoch\truck_02\data\truck_02_kab_eaf_co.paa","lxws\vehicles_f_lxws\truck_02\data\truck_02_cargo_eaf_co.paa","a3\soft_f_enoch\truck_02\data\truck_02_int_eaf_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_base_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_1_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_2_green_co.paa","lxws\vehicles_f_lxws\truck_02\data\addons_black_co.paa"};
-    };
 
 	class Heli_Light_02_dynamicLoadout_base_F: Heli_Light_02_base_F 
     {

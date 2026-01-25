@@ -10,7 +10,7 @@ _transportHelicopters pushback "B_D_Heli_Transport_01_lxWS";
 _uavsPortable pushBack "B_UAV_02_lxWS";
 
 _staticAA pushBack "I_Tura_ZU23_lxWS";
-_aa append ["a3a_I_E_Truck_02_zu23_F", "a3a_ldf_Offroad_AA", "a3a_ldf_Offroad_armor_AA"];
+_aa append ["a3a_ldf_Truck_02_aa", "a3a_ldf_Offroad_AA", "a3a_ldf_Offroad_armor_AA"];
 _cargoTrucks append ["I_E_Truck_02_cargo_lxWS", "I_E_Truck_02_flatbed_lxWS"];
 
 _airPatrol append ["B_D_Heli_Light_01_lxWS","B_D_Heli_Light_01_dynamicLoadout_lxWS"];
