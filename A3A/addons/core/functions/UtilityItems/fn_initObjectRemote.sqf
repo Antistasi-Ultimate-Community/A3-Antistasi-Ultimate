@@ -35,8 +35,8 @@ private _flags = (A3A_utilityItemHM get typeof _object) # 4;
 // TODO: Do we really want rotate on everything?
 if ("move" in _flags) then {
     _object addAction [
-        "Carry object",
-        A3A_fnc_carryItem,
+        localize "STR_A3A_carryObject",
+        { [_this#3, true] call A3A_fnc_carryItem },
         _object, 1.5, true, true, "",
         "!(call A3A_fnc_isCarrying) and (vehicle _this == _this)
             and (isNull attachedTo _originalTarget)", 8
