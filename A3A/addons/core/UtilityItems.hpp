@@ -37,7 +37,7 @@ class UtilityItems {
 
     class GVAR(Box_BuildingPlacer_Decorations): BuildBox {
         scope = 1;
-        price = 500;
+        price = 2500;
     };
 
     class GVAR(Box_BuildingPlacer_Chemlights): BuildBox {
