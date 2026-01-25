@@ -18,6 +18,9 @@ class CfgVehicles
     class O_Tura_Truck_02_aa_lxWS;
     class O_Tura_ZU23_lxWS;
 	class Heli_Light_02_base_F;
+    class I_G_Offroad_AA_lxWS;
+    class I_Tura_Offroad_armor_AA_lxWS;
+    class I_A_Truck_02_aa_lxWS;
 	//class Heli_Light_02_dynamicLoadout_base_F;
 	//class O_Heli_Light_02_dynamicLoadout_F;
 	//class B_ION_Heli_Light_02_dynamicLoadout_lxWS;
