@@ -737,6 +737,30 @@
                 <French>Aegis</French>
                 <Chinesesimp>Aegis</Chinesesimp>
             </Key>
+            <Key ID="STR_A3AU_Atlas">
+                <Original>Atlas</Original>
+                <English>Atlas</English>
+                <Russian>Atlas</Russian>
+                <Korean>Atlas</Korean>
+                <French>Atlas</French>
+                <Chinesesimp>Atlas</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Police">
+                <Original>Aegis Police</Original>
+                <English>Aegis Police</English>
+                <Russian>Aegis Police</Russian>
+                <Korean>Aegis Police</Korean>
+                <French>Aegis Police</French>
+                <Chinesesimp>Aegis Police</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_OpposingForces">
+                <Original>Atlas Opposing Forces</Original>
+                <English>Atlas Opposing Forces</English>
+                <Russian>Atlas Opposing Forces</Russian>
+                <Korean>Atlas Opposing Forces</Korean>
+                <French>Atlas Opposing Forces</French>
+                <Chinesesimp>Atlas Opposing Forces</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_Braf">
                 <Original>BRAF</Original>
                 <English>BRAF</English>
