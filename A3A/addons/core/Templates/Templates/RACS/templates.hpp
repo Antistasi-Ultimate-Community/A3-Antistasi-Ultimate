@@ -25,7 +25,7 @@
     class RACS_QB : RACS_Army
     {
         side = "Riv";
-        flagTexture = "\PRACS_Core\Flags\KingdomofSahrani_co_mrk.paa";
+        flagTexture = "flagTexture = "\PRACS_Core\Flags\KingdomofSahrani_co.paa";
         name = "Sahrani Queens Battalion";
         file = "RACS_Riv_QB";
         description = "Ruled by Isabella Ximénez, this faction are the remnants of the old RACS.";
