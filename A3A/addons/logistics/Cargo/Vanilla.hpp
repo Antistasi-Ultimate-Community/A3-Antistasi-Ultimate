@@ -142,6 +142,13 @@ class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_cargonet_F_p3d : TRIP
     size = 2;
 };
 
+class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_large_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.51};
+    rotation[] = {1,0,0};
+    size = 2;
+};
+
 class A3_Structures_F_Heli_Items_Luggage_PlasticCase_01_medium_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,0.19};
