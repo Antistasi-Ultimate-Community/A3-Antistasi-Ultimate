@@ -42,7 +42,7 @@ class lxRF_vehicles_rf_pickup_01_pickup_01_hmg_rf_p3d : TRIPLES(ADDON,Nodes,Base
 
 class lxRF_vehicles_rf_pickup_01_pickup_01_aat_rf_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-        class Nodes
+    class Nodes
     {
         class Node1
         {
@@ -80,7 +80,17 @@ class lxRF_vehicles_rf_pickup_01_pickup_01_unarmed_rf_p3d : TRIPLES(ADDON,Nodes,
     };
 };
 
-class lxRF_vehicles_rf_pickup_01_pickup_01_rcws_rf_p3d : lxRF_vehicles_rf_pickup_01_pickup_01_unarmed_rf_p3d {};
+class lxRF_vehicles_rf_pickup_01_pickup_01_rcws_rf_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-2,-1.02};
+        };
+    };
+};
+
 
 class lxRF_vehicles_rf_pickup_01_pickup_01_mmg_rf_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -128,6 +138,168 @@ class lxRF_vehicles_rf_pickup_01_pickup_01_comms_rf_p3d : TRIPLES(ADDON,Nodes,Ba
         {
             offset[] = {0,-2.3,-1};
             seats[] = {3,4};
+        };
+    };
+};
+
+class lxRF_vehicles_rf_pickup_01_pickup_01_rocket_rf_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-2,-1.02};
+            seats[] = {1,2};
+        };
+    };
+};
+
+
+
+class lxRF_air_rf_Heli_Light_03_Heli_Light_03_Unarmed_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,1.3,-0.91};
+        };
+    };
+};
+
+class lxRF_air_rf_Heli_Light_03_Heli_Light_03_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,1.3,-0.91};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_02_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,2.29,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_01A_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,3.4,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_01A_civ_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.35,2.3,-1.61};
+        };
+        class Node2
+        {
+            offset[] = {-0.35,1.5,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_01_civ_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.35,2.3,-1.61};
+        };
+        class Node2
+        {
+            offset[] = {-0.35,1.5,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_04_rescue_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,2.3,-1.61};
+        };
+        class Node2
+        {
+            offset[] = {0.35,1.5,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_01A_civ_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.35,2.3,-1.61};
+        };
+        class Node2
+        {
+            offset[] = {-0.35,1.5,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_01_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,3.4,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_03_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,3.4,-1.61};
+        };
+    };
+};
+
+class lxRF_air_rf_heli_medium_ec_Heli_EC_04_RF_p3d : TRIPLES(ADDON,Nodes,Base)
+{   canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,3.4,-1.61};
+        };
+    };
+};
+
+class A3_Soft_F_EPC_Truck_03_Truck_03_fuel_F_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.9,-2.8,0.94};
         };
     };
 };
