@@ -114,3 +114,20 @@ class lxRF_vehicles_rf_pickup_01_pickup_01_service_rf_p3d : TRIPLES(ADDON,Nodes,
         };
     };
 };
+
+class lxRF_vehicles_rf_pickup_01_pickup_01_comms_rf_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.5,-1};
+            seats[] = {5,6};
+        };
+        class Node2
+        {
+            offset[] = {0,-2.3,-1};
+            seats[] = {3,4};
+        };
+    };
+};
