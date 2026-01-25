@@ -1,4 +1,4 @@
-class I_APC_Wheeled_03_turretless_F : I_APC_Wheeled_03_cannon_F
+class I_APC_Wheeled_03_turretless_F : I_APC_Wheeled_03_cannon_F ///add unarmed bobcat
 {
 	displayName = "AFV-4 Gorgon (Unarmed)";
 	threat[] = {0,0,0};
