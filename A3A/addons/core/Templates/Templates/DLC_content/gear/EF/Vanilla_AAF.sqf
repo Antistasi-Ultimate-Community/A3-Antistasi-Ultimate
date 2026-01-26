@@ -20,3 +20,4 @@
 (_militiaLoadoutData get "glVests") pushBack "EF_V_AAV_Support_Olive";
 (_militiaLoadoutData get "helmets") append ["EF_H_HelmetB_light_black_slick","EF_H_Protecta"];
 
+(_loadoutData get "goggles") pushback "EF_G_Protecta";
