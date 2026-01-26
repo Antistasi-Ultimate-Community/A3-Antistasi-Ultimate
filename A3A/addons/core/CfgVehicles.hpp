@@ -293,6 +293,8 @@ class CfgVehicles
         armor = 200;
         scope = 0;
 
+        EGVAR(core,isBuilding) = 1;
+
         class LightParams {
             color[] = {1, 1, 1};
             ambient[] = {0.006, 0.008, 0.01};
