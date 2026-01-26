@@ -208,7 +208,13 @@ _arrayEst = [];
 private _nearFriendlyMarker = {
 	params ["_obj"];
 	private _nearestMarker = [markersX, _obj] call BIS_fnc_nearestPosition;
-	(sidesX getVariable [_nearestMarker, sideUnknown] isEqualTo teamPlayer) && {_obj inArea _nearestMarker};
+	(sidesX getVariable [_nearestMarker, sideUnknown] isEqualTo teamPlayer) && {_obj inArea[
+		markerPos _nearestMarker,
+		(markerSize _nearestMarker select 0) max 100,
+		(markerSize _nearestMarker select 1) max 100,
+		markerDir _nearestMarker,
+		markerShape _nearestMarker isEqualTo "RECTANGLE"
+	]};
 };
 
 {
