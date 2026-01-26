@@ -33,7 +33,7 @@
 ["vehiclesIFVs", ["PRACS_SLA_BMP1", "PRACS_SLA_BMP2", "PRACS_SLA_BMP3"]] call _fnc_saveToTemplate;
 ["vehiclesLightTanks",  ["PRACS_SLA_PT76", "PRACS_SLA_T72B"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["PRACS_SLA_T72BV", "PRACS_SLA_T80U", "PRACS_SLA_T90_SA"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["PRACS_SLA_BTR40_AAM","PRACS_SLA_MTLB_S60","PRACS_SLA_MTLB_ZU23","PRACS_SLA_Type63_ADA", "PRACS_SLA_URAL_Zu23", "PRACS_SLA_2S6M_Tunguska", "PRACS_SLA_SA13", "PRACS_SLA_SA8", "PRACS_SLA_SA9", "PRACS_SLA_ZSU23","PRACS_SLA_Ural_ZPU4"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["PRACS_SLA_BTR40_AAM","PRACS_SLA_MTLB_S60","PRACS_SLA_MTLB_ZU23","PRACS_SLA_Type63_ADA", "PRACS_SLA_URAL_Zu23", "PRACS_SLA_2S6M_Tunguska", "PRACS_SLA_SA8", "PRACS_SLA_SA9", "PRACS_SLA_ZSU23","PRACS_SLA_Ural_ZPU4"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["PRACS_SLA_GoFast"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["PRACS_SLA_GoFast_gun"]] call _fnc_saveToTemplate;
@@ -70,8 +70,8 @@
 ["staticMortars", ["PRACS_SLA_2B14"]] call _fnc_saveToTemplate;
 ["staticHowitzers", ["PRACS_SLA_M46"]] call _fnc_saveToTemplate;
 
-["vehicleRadar", "PRACS_P37_Radar"] call _fnc_saveToTemplate;
-["vehicleSam", "PRACS_SLA_S60"] call _fnc_saveToTemplate;
+["vehicleRadar", "PRACS_SLA_1S91"] call _fnc_saveToTemplate;
+["vehicleSam", "PRACS_SLA_SA6"] call _fnc_saveToTemplate;
 
 ["howitzerMagazineHE", "PRACS_130mm_X32"] call _fnc_saveToTemplate;
 
