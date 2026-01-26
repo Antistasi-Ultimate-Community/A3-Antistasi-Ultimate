@@ -404,6 +404,7 @@ if (_varName in specialVarLoads) then {
                             staticsToSave pushBack _veh;
                         };
 
+                        case (getNumber(configOf _veh >> QGVAR(isBuilding)) == 1);
                         case (_veh isKindOf "Building"): {
                             _veh setVariable ["A3A_building", true, true];
                             A3A_buildingsToSave pushBack _veh;
