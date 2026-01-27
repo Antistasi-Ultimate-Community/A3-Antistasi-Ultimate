@@ -12,7 +12,11 @@ _planesAA append ["CUP_I_AV8B_DYN_AAF","CUP_I_L39_AAF","CUP_I_SU34_AAF","CUP_B_G
 
 _lightTanks append ["CUP_I_T55_NAPA","CUP_I_T72_NAPA","CUP_B_Challenger2_Woodland_BAF"];
 _planesTransport append ["CUP_I_C130J_AAF"];
-_policeVehs append ["CUP_C_S1203_Militia_CIV"];
+
+if !(isNil "_policeVehs") then {
+    _policeVehs append ["CUP_C_S1203_Militia_CIV"];
+};
+
 _helisLight append ["CUP_I_Wildcat_Unarmed_Digital_AAF","CUP_I_Wildcat_Unarmed_Green_AAF"];
 _transportHelicopters append ["CUP_I_412_Military_Radar_AAF","CUP_I_412_Mil_Transport_AAF","CUP_I_412_Mil_Utility_AAF"];
 _helisLightAttack append ["CUP_I_Wildcat_Digital_AAF","CUP_I_Wildcat_Green_AAF","CUP_I_412_Military_Armed_AAF","CUP_I_412_dynamicLoadout_AAF","CUP_I_Ka60_GL_Digi_AAF","CUP_I_Ka60_Digi_AAF"];

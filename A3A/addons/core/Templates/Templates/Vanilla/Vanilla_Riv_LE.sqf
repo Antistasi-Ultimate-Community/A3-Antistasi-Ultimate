@@ -156,6 +156,10 @@ if (_hasSPE) then {
 	_trucks append ["SPE_FR_M3_Halftrack_Unarmed_Open_noinsignia","SPE_FR_M3_Halftrack_Unarmed_noinsignia"];
 };
 
+if (_hasEF) then {
+	#include "..\DLC_content\vehicles\EF\Vanilla_Rivals.sqf" 
+};
+
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;

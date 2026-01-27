@@ -20,7 +20,11 @@ _ammoTrucks append ["CSLA_V3Sa_CSLA_PLdvK59V3S_noinsignia"];
 _repairTrucks append ["CSLA_DTP90_CSLA_PLdvK59V3S_noinsignia","CSLA_V3Sr_CSLA_PLdvK59V3S_noinsignia"];
 _fuelTrucks append ["CSLA_V3Sf_noinsignia"];
 _medicalTrucks append ["CSLA_OZV90_CSLA_PLdvK59V3S_noinsignia"];
-_policeVehs append ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200PO","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"];
+
+if !(isNil "_policeVehs") then {
+	_policeVehs append ["CSLA_CIV_ADA1600VB","CSLA_CIV_Sarka1200PO","CSLA_CIV_Sarka1200VB","CSLA_AZU_VB"];
+};
+
 _artillery append ["CSLA_ShKH77_CSLA_PLdvK59V3S_noinsignia","CSLA_RM70_CSLA_PLdvK59V3S_noinsignia","CSLA_RM51_CSLA_PLdvK59V3S_noinsignia"];
 
 _airPatrol append ["CSLA_Mi17pylons_CSLA_PLdvK59V3S_noinsignia"];

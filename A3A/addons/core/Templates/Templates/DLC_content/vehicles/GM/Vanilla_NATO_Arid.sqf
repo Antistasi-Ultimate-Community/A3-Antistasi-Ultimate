@@ -6,7 +6,11 @@ _IFVs append ["gm_dk_army_m113a2dk_noinsignia","gm_ge_army_marder1a1plus_noinsig
 _militiaTrucks append ["gm_pl_army_ural4320_cargo","gm_ge_army_u1300l_cargo"];
 _militiaCars append ["gm_ge_army_iltis_cargo","gm_pl_army_uaz469_cargo","gm_dk_army_typ253_cargo","gm_dk_army_typ247_cargo","gm_dk_army_typ1200_cargo"];
 _militiaLightArmed append ["gm_ge_army_iltis_milan","gm_ge_army_iltis_mg3"];
-_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+
+if !(isNil "_policeVehs") then {
+	_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+};
+
 _airborneVehicles pushBack "gm_dk_army_m113a2dk_noinsignia";
 _Trucks append ["gm_ge_army_u1300l_cargo","gm_ge_army_kat1_451_cargo"];
 _cargoTrucks append ["gm_dk_army_u1300l_container","gm_ge_army_kat1_454_cargo","gm_ge_army_kat1_451_container","gm_ge_army_kat1_452_container"];

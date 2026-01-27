@@ -6,7 +6,11 @@ _IFVs append ["gm_dk_army_m113a2dk_noinsignia","gm_ge_army_marder1a1plus_noinsig
 _militiaTrucks append ["gm_pl_army_ural4320_cargo","gm_ge_army_u1300l_cargo"];
 _militiaCars append ["gm_ge_army_iltis_cargo","gm_pl_army_uaz469_cargo","gm_dk_army_typ253_cargo","gm_dk_army_typ247_cargo","gm_dk_army_typ1200_cargo"];
 _militiaLightArmed append ["gm_ge_army_iltis_milan","gm_ge_army_iltis_mg3"];
-_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+
+if !(isNil "_policeVehs") then {
+	_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+};
+
 _airborneVehicles pushBack "gm_dk_army_m113a2dk_noinsignia";
 _Trucks append ["gm_ge_army_u1300l_cargo","gm_ge_army_kat1_451_cargo"];
 _cargoTrucks append ["gm_dk_army_u1300l_container","gm_ge_army_kat1_454_cargo","gm_ge_army_kat1_451_container","gm_ge_army_kat1_452_container"];
@@ -39,7 +43,6 @@ _militiaAPCs append ["gm_gc_army_btr60pa_noinsignia","gm_gc_army_btr60pa_dshkm_n
 _militiaTrucks append ["gmx_aaf_kat1_451_cargo_wdl","gmx_aaf_u1300l_cargo_wdl","gm_gc_bgs_ural4320_cargo_noinsignia"];
 _militiaCars append ["gm_dk_army_typ1200_cargo","gm_dk_army_typ253_cargo","gm_dk_army_typ253_mp","gm_gc_bgs_p601_noinsignia","gm_gc_bgs_uaz469_cargo_noinsignia","gm_gc_army_brdm2um_noinsignia","gmx_aaf_iltis_cargo_wdl"];
 _militiaLightArmed append ["gmx_aaf_iltis_milan_wdl","gm_ge_army_iltis_mg3","gm_gc_army_brdm2_noinsignia","gm_gc_army_uaz469_spg9_noinsignia","gm_gc_army_uaz469_dshkm_noinsignia"];
-_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
 _lightTanks append ["gm_gc_army_bmp1sp2_noinsignia","gm_gc_army_pt76b_noinsignia",
 "gmx_aaf_leopard1a1a1_wdl","gm_ge_army_Leopard1a1a2_noinsignia","gmx_aaf_leopard1a3_wdl","gm_ge_army_Leopard1a3a1_noinsignia","gmx_aaf_leopard1a5_wdl","gm_gc_army_t55_noinsignia",
 "gm_gc_army_t55a_noinsignia","gm_gc_army_t55ak_noinsignia","gm_gc_army_t55am2_noinsignia","gm_gc_army_t55am2b_noinsignia","gm_pl_army_t55ak_noinsignia"

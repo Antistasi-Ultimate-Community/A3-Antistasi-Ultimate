@@ -214,3 +214,54 @@ class ef_ef_lcc_m_ef_lcc_p3d : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
+
+class ef_ef_gyra_m_ef_gyra_unarmed_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,-1.35,-0.872};
+        };
+    };
+};
+class ef_ef_gyra_m_ef_gyra_antiair_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,-1.35,-0.998};
+        };
+    };
+};
+class ef_ef_gyra_m_ef_gyra_hmg_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,-1.32,-1.45};
+        };
+    };
+};
+class ef_ef_gyra_m_ef_gyra_mortar_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,-1.32,-0.872};
+        };
+    };
+};
+class ef_ef_gyra_m_ef_gyra_armed_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,-1.32,-0.998};
+        };
+    };
+};

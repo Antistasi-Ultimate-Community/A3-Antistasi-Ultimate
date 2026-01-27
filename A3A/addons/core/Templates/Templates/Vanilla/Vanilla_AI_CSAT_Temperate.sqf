@@ -48,12 +48,12 @@ private _cargoTrucks = ["O_T_Truck_02_F", "O_T_Truck_02_transport_F", "O_T_Truck
 ["vehiclesFuelTrucks", ["O_T_Truck_02_fuel_F", "O_T_Truck_03_fuel_ghex_F"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["O_T_Truck_02_Medical_F", "O_T_Truck_03_medical_ghex_F"]] call _fnc_saveToTemplate;
 private _lightAPCs = ["O_T_APC_Wheeled_02_rcws_v2_ghex_F"];
-["vehiclesAPCs", ["O_T_APC_Wheeled_02_rcws_v2_ghex_F"]] call _fnc_saveToTemplate;
+private _APCs = ["O_T_APC_Wheeled_02_rcws_v2_ghex_F"];
 private _IFVs = ["O_T_APC_Tracked_02_cannon_ghex_F"];
-private _Airborne = ["O_T_APC_Wheeled_02_rcws_v2_ghex_F","O_T_UGV_01_rcws_ghex_F"];
+private _airborneVehicles = ["O_T_APC_Wheeled_02_rcws_v2_ghex_F","O_T_UGV_01_rcws_ghex_F"];
 ["vehiclesLightTanks", ["O_T_UGV_01_rcws_ghex_F"]] call _fnc_saveToTemplate;
 private _tanks = ["O_T_MBT_02_cannon_ghex_F","O_T_MBT_02_railgun_ghex_F"];
-["vehiclesAA", ["O_T_APC_Tracked_02_AA_ghex_F"]] call _fnc_saveToTemplate;
+private _aa = ["O_T_APC_Tracked_02_AA_ghex_F"];
 
 private _transportBoat = ["O_T_Boat_Transport_01_F"];
 private _gunBoat = ["O_Boat_Armed_01_hmg_F"];
@@ -74,9 +74,10 @@ private _helisLightAttack = ["O_Heli_Light_02_dynamicLoadout_F"];
 private _airPatrol = ["O_Heli_Light_02_unarmed_F", "O_Heli_Light_02_dynamicLoadout_F"];
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 
-["vehiclesArtillery", ["O_T_MBT_02_arty_ghex_F"]] call _fnc_saveToTemplate;
+private _artillery = ["O_T_MBT_02_arty_ghex_F"];
 ["magazines", createHashMapFromArray [
-["O_T_MBT_02_arty_ghex_F",["32Rnd_155mm_Mo_shells_O", "2Rnd_155mm_Mo_Cluster_O", "6Rnd_155mm_Mo_mine_O"]]
+["O_T_MBT_02_arty_ghex_F",["32Rnd_155mm_Mo_shells_O", "2Rnd_155mm_Mo_Cluster_O", "6Rnd_155mm_Mo_mine_O"]],
+["EF_O_Gyra_Mortar_OPF_T",["EF_6Rnd_120mm_Mo_Shells"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["O_T_UAV_04_CAS_F","O_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
@@ -136,10 +137,12 @@ if (_hasTanks) then {
 
 if (_hasWs) then {
     #include "..\DLC_content\vehicles\WS\Vanilla_CSAT_Temparate.sqf"
+    #include "..\DLC_content\vehicles\WS\police_APC.sqf"
 };
 
 if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
+    #include "..\DLC_content\vehicles\EF\Vanilla_CSAT_Temparate.sqf"
+    #include "..\DLC_content\vehicles\EF\police_APC.sqf"
 };
 
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
@@ -147,6 +150,7 @@ if (_hasEF) then {
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
+["vehiclesAA", _aa] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", _lightUnarmed] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", _lightArmed] call _fnc_saveToTemplate;
 ["howitzerMagazineHE", "6Rnd_120mm_HE_shells_RF","2Rnd_120mm_Mo_Cluster_RF"] call _fnc_saveToTemplate;
@@ -155,10 +159,12 @@ if (_hasEF) then {
 ["vehiclesPolice", _policeVehs] call _fnc_saveToTemplate;
 ["vehicleRadar", _radar] call _fnc_saveToTemplate;
 ["vehicleSam", _SAM] call _fnc_saveToTemplate;
+["vehiclesArtillery", _artillery] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
+["vehiclesAPCs", _APCs] call _fnc_saveToTemplate;
 ["vehiclesIFVs", _IFVs] call _fnc_saveToTemplate;
-["vehiclesAirborne", _Airborne] call _fnc_saveToTemplate;
+["vehiclesAirborne", _airborneVehicles] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", _lightAPCs] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", _cargoTrucks] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", _militiaAPCs] call _fnc_saveToTemplate;
@@ -677,6 +683,7 @@ if (_hasSOG) then {
 
 if (_hasEF) then {
     #include "..\DLC_content\gear\EF\Vanilla_CSAT_Temparate.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_CSAT_Temparate.sqf"
 };
 //
 

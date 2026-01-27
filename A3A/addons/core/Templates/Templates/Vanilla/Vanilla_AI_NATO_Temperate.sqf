@@ -138,6 +138,7 @@ if (_hasTanks) then {
 //If Western Sahara DLC
 if (_hasWs) then {
     #include "..\DLC_content\vehicles\WS\Vanilla_NATO_Temparate.sqf"
+    #include "..\DLC_content\vehicles\WS\police_APC.sqf"
 };
 
 if (_hasRF) then {
@@ -154,6 +155,7 @@ if (_hasCSLA) then {
 
 if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
+    #include "..\DLC_content\vehicles\EF\police_APC.sqf"
 };
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;

@@ -79,7 +79,8 @@ private _artillery = ["B_T_MBT_01_arty_F","B_T_MBT_01_mlrs_F"];
 ["magazines", createHashMapFromArray [
     ["B_T_MBT_01_arty_F",["32Rnd_155mm_Mo_shells", "2Rnd_155mm_Mo_Cluster", "6Rnd_155mm_Mo_mine"]],
     ["B_T_MBT_01_mlrs_F",["12Rnd_230mm_rockets", "12Rnd_230mm_rockets_cluster"]],
-    ["APC_Wheeled_01_mortar_base_lxWS",["64Rnd_60mm_Mo_guided_lxWS"]]
+    ["APC_Wheeled_01_mortar_base_lxWS",["64Rnd_60mm_Mo_guided_lxWS"]],
+    ["EF_B_T_Gyra_Mortar_BLU",["EF_6Rnd_120mm_Mo_Shells"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
@@ -138,6 +139,7 @@ if (_hasTanks) then {
 //If Western Sahara DLC
 if (_hasWs) then {
     #include "..\DLC_content\vehicles\WS\Vanilla_NATO_Tropical.sqf"
+    #include "..\DLC_content\vehicles\WS\police_APC.sqf"
 };
 
 if (_hasRF) then {
@@ -154,6 +156,7 @@ if (_hasCSLA) then {
 
 if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
+    #include "..\DLC_content\vehicles\EF\police_APC.sqf"
 };
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;

@@ -72,6 +72,10 @@ if (_hasContact) then {
 	_lightUnarmedVehicles pushBack "C_Offroad_01_covered_F";
 };
 
+if (_hasEF) then {
+	#include "..\DLC_content\vehicles\EF\Vanilla_Rivals.sqf" 
+};
+
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;

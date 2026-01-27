@@ -10,7 +10,9 @@ _planesTransport append ["CUP_I_C130J_AAF"];
 
 _lightTanks append ["CUP_I_T55_NAPA","CUP_I_T72_NAPA","CUP_B_Challenger2_Woodland_BAF"];
 
-_policeVehs append ["CUP_C_S1203_Militia_CIV"];
+if !(isNil "_policeVehs") then {
+    _policeVehs append ["CUP_C_S1203_Militia_CIV"];
+};
 
 _helisLight append ["CUP_I_Wildcat_Unarmed_Digital_AAF","CUP_I_Wildcat_Unarmed_Green_AAF"];
 _transportHelicopters append ["CUP_I_412_Military_Radar_AAF","CUP_I_412_Mil_Transport_AAF","CUP_I_412_Mil_Utility_AAF"];

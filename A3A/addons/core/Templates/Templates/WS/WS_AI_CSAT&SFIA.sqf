@@ -79,7 +79,9 @@ private _artillery = ["O_MBT_02_arty_F", "O_SFIA_Truck_02_MRL_lxWS"];
 ["O_SFIA_Truck_02_MRL_lxWS", ["12Rnd_230mm_rockets", "12Rnd_230mm_rockets_cluster"]],
 ["O_MBT_02_arty_F",["32Rnd_155mm_Mo_shells_O", "2Rnd_155mm_Mo_Cluster_O", "6Rnd_155mm_Mo_mine_O"]],
 ["gm_pl_army_2s1",["gm_1Rnd_122x447mm_he_of462","gm_1Rnd_122x447mm_he_3of56"]],
-["gm_pl_army_ural375d_mlrs",["gm_40Rnd_mlrs_122mm_he_9m22u","gm_40Rnd_mlrs_122mm_icm_9m218","gm_40Rnd_mlrs_122mm_mine_9m28k"]]
+["gm_pl_army_ural375d_mlrs",["gm_40Rnd_mlrs_122mm_he_9m22u","gm_40Rnd_mlrs_122mm_icm_9m218","gm_40Rnd_mlrs_122mm_mine_9m28k"]],
+["EF_O_Gyra_Mortar_OPF",["EF_6Rnd_120mm_Mo_Shells"]],
+["EF_O_Gyra_Mortar_SFIA",["EF_6Rnd_120mm_Mo_Shells"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["O_UAV_02_dynamicLoadout_F", "O_T_UAV_04_CAS_F"]] call _fnc_saveToTemplate;
@@ -142,6 +144,7 @@ if (_hasTanks) then {
 //If GM cdlc + extra AAF mod
 if (_hasGM) then {
     #include "..\DLC_content\vehicles\GM\WS_SFIA_militia.sqf"
+    #include "..\DLC_content\vehicles\WS\police_APC.sqf"
 };
 
 if (_hasCSLA) then {
@@ -157,7 +160,8 @@ if (_hasSPE) then {
 };
 
 if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
+    #include "..\DLC_content\vehicles\EF\WS_CSAT&SFIA.sqf"
+    #include "..\DLC_content\vehicles\EF\police_APC.sqf"
 };
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
@@ -935,6 +939,7 @@ if (_hasSPE) then {
 
 if (_hasEF) then {
     #include "..\DLC_content\gear\EF\WS_CSAT&SFIA.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_CSAT_Arid.sqf"
 };
 
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {

@@ -26,6 +26,8 @@ _backpacks append ["EF_B_AssaultPack_coy","EF_B_Carryall_coy","EF_B_Kitbag_coy",
 
 (_pilotLoadoutData get "uniforms") pushback "EF_U_B_CrewCoveralls_Navy";
 
-_heavyVests append ["EF_V_AAV_Olive", "EF_V_AAV_Support_Olive", "EF_V_AAV_Coy", "EF_V_AAV_Support_Coy", "EF_V_AAV_Support_Black", "EF_V_AAV_Black"];
+_heavyVests append ["EF_V_AAV_Olive", "EF_V_AAV_Support_Olive", "EF_V_AAV_Diver_NoReb_Olive", "EF_V_AAV_Coy", "EF_V_AAV_Support_Coy", "EF_V_AAV_Diver_NoReb_Coy", "EF_V_AAV_Support_Black", "EF_V_AAV_Black", "EF_V_AAV_Diver_NoReb_Black"];
 
 _vests append ["EF_V_CCR_Support_Black", "EF_V_CCR_Support_Coy", "EF_V_CCR_Support_Olive"];
+
+(_loadoutData get "fullmask")pushback "EF_G_Protecta";

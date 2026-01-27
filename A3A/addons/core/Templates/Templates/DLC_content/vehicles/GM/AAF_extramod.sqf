@@ -16,7 +16,11 @@ _unarmedVehicles append ["gm_gc_army_brdm2um_noinsignia","gmx_aaf_iltis_cargo_wd
 _armedVehicles append ["gmx_aaf_iltis_milan_wdl","gm_ge_army_iltis_mg3"];
 _militiaCars append ["gm_dk_army_typ1200_cargo","gm_dk_army_typ253_cargo","gm_dk_army_typ253_mp","gm_gc_bgs_p601_noinsignia","gm_gc_bgs_uaz469_cargo_noinsignia"];
 _militiaLightArmed append ["gmx_aaf_iltis_milan_wdl","gm_ge_army_iltis_mg3","gm_gc_army_brdm2_noinsignia","gm_gc_army_uaz469_spg9_noinsignia","gm_gc_army_uaz469_dshkm_noinsignia"];
-_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+
+if !(isNil "_policeVehs") then {
+	_policeVehs append ["gm_gc_pol_p601","gm_ge_pol_typ1200","gm_ge_pol_typ253","gm_ge_pol_w123"];
+};
+
 _lightTanks append ["gm_gc_army_bmp1sp2_noinsignia","gm_gc_army_pt76b_noinsignia"];
 _airborneVehicles append ["gmx_aaf_luchsa1_wdl","gmx_aaf_luchsa2_wdl","gmx_aaf_fuchsa0_reconnaissance_wdl","gmx_aaf_fuchsa0_command_wdl"];
 _aa append ["gmx_aaf_gepard1a1_wdl","gm_gc_army_zsu234v1_noinsignia"];

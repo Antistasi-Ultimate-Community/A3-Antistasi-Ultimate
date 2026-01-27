@@ -20,6 +20,17 @@
 			ITEM(ef_arifle_mxar_gl_khk, 1400, RIFLE_STOCK);
 		};
 
+		class smgEF
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_EF", localize "STR_A3AU_smgs"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
+
+			ITEM(EF_smg_Diplomat, 500, RIFLE_STOCK);
+			ITEM(EF_smg_Diplomat_Hex, 500, RIFLE_STOCK);
+			ITEM(EF_smg_Diplomat_Ghex, 500, RIFLE_STOCK);
+			ITEM(EF_smg_Diplomat_Coy, 500, RIFLE_STOCK);
+		};
+
 		class handgunsEF
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_EF", localize "STR_A3AU_handguns"]);
@@ -56,7 +67,10 @@
 			ITEM(ef_snds_mxar, 1000, MZ_STOCK);
 			ITEM(ef_snds_mxar_coy, 1000, MZ_STOCK);
 			ITEM(ef_snds_mxar_khk, 1000, MZ_STOCK);
-			ITEM(ef_snds_mxar_sand, 600, MZ_STOCK);
+			ITEM(ef_snds_mxar_sand, 1000, MZ_STOCK);
+
+			ITEM(EF_smg_Diplomat_Coy, 600, MZ_STOCK);
+			ITEM(ef_snds_diplomat_coy, 600, MZ_STOCK);
 		};
 
 		class opticsEF
@@ -109,6 +123,17 @@
 			class EF_100Rnd_65x39_caseless_coy_mag 
 			{
 				price = 1000;
+				stock = MAGAZINE_STOCK;
+			};
+
+			class EF_Diplomat_25Rnd_9x19_Coy_Mag
+			{
+				price = 100;
+				stock = MAGAZINE_STOCK;
+			};
+			class EF_Diplomat_25Rnd_9x19_Mag
+			{
+				price = 100;
 				stock = MAGAZINE_STOCK;
 			};
 		};
@@ -166,12 +191,14 @@
 			ITEM(EF_V_AAV_Scout_Black, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Support_Black, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_TL_Black, 1500, MISC_STOCK);
+			ITEM(EF_V_AAV_Diver_NoReb_Black, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Diver_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Rifleman_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Sailor_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Scout_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Support_Coy, 1500, MISC_STOCK);
+			ITEM(EF_V_AAV_Diver_NoReb_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_TL_Coy, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Olive, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Diver_Olive, 1500, MISC_STOCK);
@@ -180,6 +207,7 @@
 			ITEM(EF_V_AAV_Scout_Olive, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_Support_Olive, 1500, MISC_STOCK);
 			ITEM(EF_V_AAV_TL_Olive, 1500, MISC_STOCK);
+			ITEM(EF_V_AAV_Diver_NoReb_Olive, 1500, MISC_STOCK);
 			ITEM(EF_V_CCR_Rifleman_Black, 1000, MISC_STOCK);
 			ITEM(EF_V_CCR_Scout_Black, 1000, MISC_STOCK);
 			ITEM(EF_V_CCR_Support_Black, 1000, MISC_STOCK);

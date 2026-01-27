@@ -3,4 +3,8 @@
 ["I_LT_01_AA_F", ["Indep_Olive", 1]],
 ["I_LT_01_cannon_F", ["Indep_Olive", 1]],
 ["I_LT_01_AT_F", ["Indep_Olive", 1]],
-["I_LT_01_scout_F",["Indep_Olive", 1]]
+["I_LT_01_scout_F",["Indep_Olive", 1]],
+["B_AAA_System_01_F", ["Green", 0.8, "Sand", 0, "LightGrey", 0.2]],
+["B_SAM_System_01_F", ["Green", 0.8, "Sand", 0, "LightGrey", 0.2, "MJTF", 0.2]],
+["B_SAM_System_02_F", ["Green", 0.8, "Sand", 0, "LightGrey", 0.2]],
+["B_SAM_System_03_F", ["Olive", 0.8, "Sand", 0]]

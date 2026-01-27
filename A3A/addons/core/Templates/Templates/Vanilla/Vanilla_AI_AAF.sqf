@@ -131,6 +131,7 @@ if (_hasJets) then {
 //If Western Sahara DLC
 if (_hasWs) then {
     #include "..\DLC_content\vehicles\WS\Vanilla_AAF.sqf"
+    #include "..\DLC_content\vehicles\WS\police_APC.sqf"
 };
 
 //If GM cdlc + extra AAF mod
@@ -152,6 +153,7 @@ if (_hasSPE) then {
 
 if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_AAF.sqf"
+    #include "..\DLC_content\vehicles\EF\police_APC.sqf"
 };
 
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
@@ -759,6 +761,7 @@ if (_hasSPE) then {
 
 if (_hasEF) then {
     #include "..\DLC_content\gear\EF\Vanilla_AAF.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_AAF.sqf"
 };
 
 //////mod content

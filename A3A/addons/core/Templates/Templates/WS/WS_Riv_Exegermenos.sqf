@@ -70,6 +70,10 @@ if (_hasRF) then {
 	_lightUnarmedVehicles pushBack "a3u_black_Pickup_rival_rf";
 };
 
+if (_hasEF) then {
+	#include "..\DLC_content\vehicles\EF\Vanilla_Rivals.sqf" 
+};
+
 ["vehiclesRivalsLightArmed", _lightArmedVehicles] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", _trucks] call _fnc_saveToTemplate;
 ["vehiclesRivalsCars", _lightUnarmedVehicles] call _fnc_saveToTemplate;

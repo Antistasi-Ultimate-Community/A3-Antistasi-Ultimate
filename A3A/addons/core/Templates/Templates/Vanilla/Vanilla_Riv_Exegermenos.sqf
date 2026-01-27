@@ -111,6 +111,10 @@ if (_hasSPE) then {
 	#include "..\DLC_content\vehicles\SPE\Vanilla_Rivals.sqf" 
 };
 
+if (_hasEF) then {
+	#include "..\DLC_content\vehicles\EF\Vanilla_Rivals.sqf" 
+};
+
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;

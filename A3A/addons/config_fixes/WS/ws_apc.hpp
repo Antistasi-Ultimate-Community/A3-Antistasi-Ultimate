@@ -4,6 +4,7 @@
 //Ion
 
 class APC_Wheeled_01_base_F;
+class O_APC_Wheeled_02_unarmed_lxWS;
 class APC_Wheeled_01_command_base_lxWS : APC_Wheeled_01_base_F { class EventHandlers; };    // also used for NATO
 class B_ION_APC_Wheeled_01_command_lxWS: APC_Wheeled_01_command_base_lxWS {};
 class a3a_ION_APC_Wheeled_01_command_lxWS : B_ION_APC_Wheeled_01_command_lxWS
@@ -32,6 +33,17 @@ class a3a_ION_APC_Wheeled_01_atgm : B_D_APC_Wheeled_01_atgm_lxWS {
     faction = "BLU_ION_lxWS";
     textureList[] = {"ION_BLACK", 1};
     hiddenSelectionsTextures[] = {"lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_ion_base_CO.paa","lxws\vehicles_f_lxws\data\APC_Wheeled_01\apc_wheeled_ion_adds_co.paa","lxws\vehicles_f_lxws\data\APC_Wheeled_01\apc_wheeled_ion_tows_co.paa","a3\armor_f\Data\camonet_AAF_stripe_desert_CO.paa","lxws\vehicles_f_lxws\data\APC_Wheeled_01\cage_black_CO.paa","lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_ion_lxws_CO.paa"};
+};
+
+//GEN
+class a3a_O_APC_Wheeled_02_GEN_unarmed_lxWS : O_APC_Wheeled_02_unarmed_lxWS
+{
+    crew = "B_GEN_Commander_F";
+    faction = "BLU_GEN_F";
+    side = 1;
+    hiddenSelectionsTextures[] = {"lxWS\vehicles_1_f_lxws\APC_Wheeled_02\data\marid_ext01_gen_co.paa","lxWS\vehicles_1_f_lxws\APC_Wheeled_02\data\marid_ext02_gen_co.paa","A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa","lxWS\vehicles_1_f_lxws\APC_Wheeled_02\data\cage_gen_co.paa","lxWS\vehicles_1_f_lxws\APC_Wheeled_02\data\marid_adds02_gen_co.paa"};
+    textureList[] = {"Gendarmerie",1};
+    animationList[] = {"showBags",0.5,"showCanisters",0.5,"showTools",0.5,"showCamonetHull",0.3,"showSLATHull",0.3};
 };
 
 //NATO

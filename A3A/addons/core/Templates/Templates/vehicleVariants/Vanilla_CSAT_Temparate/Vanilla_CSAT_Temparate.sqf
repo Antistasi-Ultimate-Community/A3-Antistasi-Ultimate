@@ -14,9 +14,10 @@
 ["O_T_MBT_04_command_F", ["Grey", 0.2, "Jungle", 0.4, "Hex", 0, "GreenHex", 0.4]],
 ["O_T_MBT_04_cannon_F", ["Grey", 0.2, "Jungle", 0.4, "Hex", 0, "GreenHex", 0.4]],
 ["O_T_MBT_02_cannon_ghex_F", ["Grey", 0.4, "Hex", 0, "GreenHex", 0.6]],
-["O_Heli_Light_02_unarmed_F", ["Black", 0.4 , "Blackcustom", 0.2, "Opfor",0]],
-["O_Heli_Light_02_dynamicLoadout_F", ["Black", 0.4 , "Blackcustom", 0.2, "Opfor",0]]
-
+["O_Heli_Light_02_unarmed_F", ["Black", 0.4, "Blackcustom", 0.2, "Opfor",0]],
+["O_Heli_Light_02_dynamicLoadout_F", ["Black", 0.4, "Blackcustom", 0.2, "Opfor",0]],
+["O_Radar_System_02_F", ["JungleHex", 1]],
+["O_SAM_System_04_F", ["JungleHex", 1]]
 
 
 

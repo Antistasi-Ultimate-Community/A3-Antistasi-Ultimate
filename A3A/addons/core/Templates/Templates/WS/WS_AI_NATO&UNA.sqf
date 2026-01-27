@@ -85,7 +85,9 @@ private _artillery = ["B_MBT_01_arty_F","B_MBT_01_mlrs_F","APC_Wheeled_01_mortar
     ["gm_pl_army_2s1",["gm_1Rnd_122x447mm_he_of462","gm_1Rnd_122x447mm_he_3of56"]],
     ["gm_pl_army_ural375d_mlrs",["gm_40Rnd_mlrs_122mm_he_9m22u","gm_40Rnd_mlrs_122mm_icm_9m218","gm_40Rnd_mlrs_122mm_mine_9m28k"]],
     ["gmx_aaf_m109_wdl",["gm_1Rnd_155mm_he_dm21","gm_1Rnd_155mm_he_dm111","gm_1Rnd_155mm_icm_dm602"]],
-    ["gmx_aaf_kat1_463_mlrs_wdl",["gm_36Rnd_mlrs_110mm_he_dm21","gm_36Rnd_mlrs_110mm_icm_dm602","gm_36Rnd_mlrs_110mm_mine_dm711"]]
+    ["gmx_aaf_kat1_463_mlrs_wdl",["gm_36Rnd_mlrs_110mm_he_dm21","gm_36Rnd_mlrs_110mm_icm_dm602","gm_36Rnd_mlrs_110mm_mine_dm711"]],
+    ["EF_B_Gyra_Mortar_BLU",["EF_6Rnd_120mm_Mo_Shells"]],
+    ["EF_B_Gyra_Mortar_UNA",["EF_6Rnd_120mm_Mo_Shells"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "B_UAV_05_F", "B_T_UAV_03_dynamicLoadout_F"]] call _fnc_saveToTemplate;
@@ -98,7 +100,7 @@ private _militiaTrucks = ["B_UN_Truck_01_transport_lxWS","B_UN_Truck_01_covered_
 private _militiaCars = ["B_UN_MRAP_01_lxWS","B_UN_Offroad_lxWS","B_UN_Offroad_Armor_lxWS"];
 private _militiaAPCs = ["B_UN_APC_Wheeled_01_command_lxWS","B_UNA_APC_Wheeled_02_hmg_lxWS","B_UNA_APC_Wheeled_02_unarmed_lxWS"];
 
-private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+private _policeVehs = ["B_GEN_Offroad_01_gen_F","B_GEN_APC_Wheeled_02_hmg_lxWS","a3a_O_APC_Wheeled_02_GEN_unarmed_lxWS"];
 
 private _staticMG = ["B_G_HMG_02_high_F", "B_HMG_01_high_F"];
 private _staticAT = ["B_static_AT_F","B_GMG_01_high_F"];
@@ -156,7 +158,8 @@ if (_hasGM) then {
 };
 
 if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
+    #include "..\DLC_content\vehicles\EF\WS_NATO&UNA.sqf"
+    #include "..\DLC_content\vehicles\EF\police_APC.sqf"
 };
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;

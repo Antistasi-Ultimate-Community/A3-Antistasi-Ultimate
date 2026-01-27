@@ -220,7 +220,8 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-				"riflesEF", 
+				"riflesEF",
+				"smgEF", 
 				"handgunsEF", 
 				"magazinesEF", 
 				"navigationEF", 

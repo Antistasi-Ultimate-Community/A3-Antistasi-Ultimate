@@ -69,15 +69,16 @@ private _gunship = [];
 private _transportHelicopters = ["EF_B_Heli_Transport_01_MJTF_Des"];
 
 private _helisLight = ["B_Heli_Light_01_F"];
-private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
+private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F", "a3a_EF_B_Heli_Transport_01_pylons_MJTF_Des"];
 private _helisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
 
-private _airPatrol = ["B_Heli_Light_01_F","B_Heli_Light_01_dynamicLoadout_F"];
+private _airPatrol = ["B_Heli_Light_01_F","B_Heli_Light_01_dynamicLoadout_F", "a3a_EF_B_Heli_Transport_01_pylons_MJTF_Des"];
 
 private _artillery = ["B_MBT_01_mlrs_F"];
 ["magazines", createHashMapFromArray [
     ["B_MBT_01_mlrs_F",["12Rnd_230mm_rockets", "12Rnd_230mm_rockets_cluster"]],
-    ["APC_Wheeled_01_mortar_base_lxWS", ["64Rnd_60mm_Mo_guided_lxWS"]]
+    ["APC_Wheeled_01_mortar_base_lxWS", ["64Rnd_60mm_Mo_guided_lxWS"]],
+    ["EF_B_Gyra_Mortar_BLU",["EF_6Rnd_120mm_Mo_Shells"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "B_UAV_05_F", "B_T_UAV_03_dynamicLoadout_F"]] call _fnc_saveToTemplate;
@@ -439,7 +440,7 @@ if (_hasWs) then {
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
 _sfLoadoutData set ["uniforms", ["EF_U_B_MarineCombatUniform_Diver_Des"]];//this line determines uniforms for special forces -- Example: ["U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt"] -- Array, can contain multiple assets
-_sfLoadoutData set ["vests", ["EF_V_AAV_Rifleman_Black", "EF_V_AAV_Scout_Black"]];
+_sfLoadoutData set ["vests", ["EF_V_AAV_Rifleman_Black", "EF_V_AAV_Scout_Black", "EF_V_AAV_Diver_NoReb_Black"]];
 _sfLoadoutData set ["glVests", ["EF_V_AAV_Support_Black"]];
 _sfLoadoutData set ["Hvests", ["EF_V_AAV_TL_Black"]];
 _sfLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
@@ -487,7 +488,9 @@ _sfLoadoutData set ["grenadeLaunchers", [
 ]];
 _sfLoadoutData set ["SMGs", [
 ["SMG_01_F", "muzzle_snds_acp", "", "optic_Holosight_smg_blk_F", [], [], ""],
-["SMG_01_F", "muzzle_snds_acp", "", "ef_optic_microsight", [], [], ""]
+["SMG_01_F", "muzzle_snds_acp", "", "ef_optic_microsight", [], [], ""],
+["EF_smg_Diplomat","ef_snds_diplomat","acc_pointer_IR","ef_optic_microsight",["EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag"], [], ""],
+["EF_smg_Diplomat","muzzle_snds_l","acc_pointer_IR","ef_optic_microsight",["EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
 ["arifle_MX_SW_Black_F", "ef_snds_mxar", "acc_pointer_IR", "optic_Holosight_blk_F", ["100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_black_mag_tracer"], [], "bipod_01_F_blk"],
@@ -520,7 +523,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
 _eliteLoadoutData set ["uniforms", ["EF_U_B_MarineCombatUniform_Diver_Des"]];//this line determines uniforms for special forces -- Example: ["U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt"] -- Array, can contain multiple assets
-_eliteLoadoutData set ["vests", ["EF_V_AAV_Rifleman_Black", "EF_V_AAV_Scout_Black"]];
+_eliteLoadoutData set ["vests", ["EF_V_AAV_Rifleman_Black", "EF_V_AAV_Scout_Black", "EF_V_AAV_Diver_NoReb_Black"]];
 _eliteLoadoutData set ["glVests", ["EF_V_AAV_Support_Black"]];
 _eliteLoadoutData set ["Hvests", ["EF_V_AAV_TL_Black"]];
 _eliteLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
@@ -568,7 +571,9 @@ _eliteLoadoutData set ["grenadeLaunchers", [
 ]];
 _eliteLoadoutData set ["SMGs", [
 ["SMG_01_F", "", "", "optic_Holosight_smg_blk_F", [], [], ""],
-["SMG_01_F", "", "", "ef_optic_microsight", [], [], ""]
+["SMG_01_F", "", "", "ef_optic_microsight", [], [], ""],
+["EF_smg_Diplomat","","acc_pointer_IR","ef_optic_microsight",["EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag"], [], ""],
+["EF_smg_Diplomat_Coy","","acc_pointer_IR","ef_optic_microsight_coy",["EF_Diplomat_25Rnd_9x19_Coy_Mag","EF_Diplomat_25Rnd_9x19_Coy_Mag","EF_Diplomat_25Rnd_9x19_Coy_Mag","EF_Diplomat_25Rnd_9x19_Coy_Mag"], [], ""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
 ["arifle_MX_SW_Black_F", "", "acc_pointer_IR", "optic_Holosight_blk_F", ["100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_black_mag_tracer"], [], "bipod_01_F_blk"],
@@ -601,7 +606,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
 _militaryLoadoutData set ["uniforms", ["EF_U_B_MarineCombatUniform_Des_5", "EF_U_B_MarineCombatUniform_Des_4"]];
-_militaryLoadoutData set ["vests", ["EF_V_AAV_Rifleman_Coy", "EF_V_AAV_Scout_Coy"]];
+_militaryLoadoutData set ["vests", ["EF_V_AAV_Rifleman_Coy", "EF_V_AAV_Scout_Coy", "EF_V_AAV_Diver_NoReb_Coy"]];
 _militaryLoadoutData set ["Hvests", ["EF_V_AAV_TL_Coy"]];
 _militaryLoadoutData set ["glVests", ["EF_V_AAV_Support_Coy"]];
 _militaryLoadoutData set ["backpacks", ["EF_B_Carryall_coy", "EF_B_Kitbag_coy", "EF_B_Kitbag_coy", "EF_B_RaiderPack_coy", "EF_B_RaiderPack_coy"]];
@@ -680,7 +685,8 @@ _policeLoadoutData set ["SMGs", [
 ["SMG_03_TR_camo", "", "acc_flashlight", "optic_Aco_smg", ["50Rnd_570x28_SMG_03","50Rnd_570x28_SMG_03","50Rnd_570x28_SMG_03"], [], ""],
 ["SMG_03C_TR_camo", "", "acc_flashlight", "optic_Aco_smg", ["50Rnd_570x28_SMG_03","50Rnd_570x28_SMG_03","50Rnd_570x28_SMG_03"], [], ""],
 ["SMG_03C_TR_camo", "", "acc_flashlight", "optic_Aco_smg", ["50Rnd_570x28_SMG_03","50Rnd_570x28_SMG_03","50Rnd_570x28_SMG_03"], [], ""],
-["SMG_02_F", "", "acc_flashlight", "optic_Aco_smg", [], [], ""]
+["SMG_02_F", "", "acc_flashlight", "optic_Aco_smg", [], [], ""],
+["EF_smg_Diplomat","","acc_flashlight","ef_optic_microsight",["EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag","EF_Diplomat_25Rnd_9x19_Mag"], [], ""]
 ]];
 _policeLoadoutData set ["sidearms", ["hgun_P07_blk_F"]];
 
