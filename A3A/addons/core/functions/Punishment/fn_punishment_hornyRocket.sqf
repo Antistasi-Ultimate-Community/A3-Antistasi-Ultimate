@@ -99,7 +99,9 @@ _detainee setDir 90;
 [_missile, _detainee, _chair, _UID, _originalPos] spawn {
     params ["_missile", "_target", "_chair", "_UID", "_originalPos"];
 
-    waitUntil {sleep 0.5; (getPosATL _missile select 2) > 1500 || isNull _missile};  
+    waitUntil {sleep 0.5; (getPosATL _missile select 2) > 1500 || isNull _missile}; 
+
+    [_UID,"forgive"] call A3A_fnc_punishment_release; 
     
     // Detach and cleanup
     detach _chair;
@@ -114,9 +116,6 @@ _detainee setDir 90;
     // Apply velocity and delete chair
     _target setVelocity (velocity _chair);     
     deleteVehicle _chair;
-    
-    
-    [_UID,"forgive"] call A3A_fnc_punishment_release;
 };
 
 true;
