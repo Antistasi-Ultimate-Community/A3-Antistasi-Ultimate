@@ -241,7 +241,7 @@ if(alive _planeVeh) then {
     sleep 1;
 
     private _box2Class = [ 
-        (["CargoNet_01_barrels_F", "Land_FoodSacks_01_cargo_brown_F", "CargoNet_01_box_F"] select (random 100 < 50)),
+        (selectRandom ["CargoNet_01_barrels_F", "Land_FoodSacks_01_cargo_brown_F", "CargoNet_01_box_F"]),
         _faction get "ammobox"
     ] select _difficultX;
 
