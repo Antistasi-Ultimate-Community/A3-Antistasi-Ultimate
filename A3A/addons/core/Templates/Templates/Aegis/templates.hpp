@@ -159,7 +159,7 @@
     {
         requiredAddons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02", "A3_Atlas_Armor_F_Atlas_APC_Tracked_02", "A3_Opf_Armor_F_Opf_APC_Tracked_02", "jam_cdf_core"};
         side = "Occ";
-        flagTexture = "\A3_Atlas\UI_F_Atlas\Data\CfgMarkers\CDF_CA.paa";
+        flagTexture = "\A3_Atlas\Data_F_Atlas\Flags\flag_CDF_CO.paa";
         name = "Aegis CDF";
         file = "Aegis_AI_CDF_2035";
     };

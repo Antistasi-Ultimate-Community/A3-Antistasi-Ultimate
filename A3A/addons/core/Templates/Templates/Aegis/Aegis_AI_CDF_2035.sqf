@@ -14,7 +14,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["spawnMarkerName", format [localize "STR_supportcorridor", "CDF"]] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
-["flagTexture", "\A3_Atlas\UI_F_Atlas\Data\CfgMarkers\CDF_CA.paa"] call _fnc_saveToTemplate;
+["flagTexture", "\A3_Atlas\Data_F_Atlas\Flags\flag_CDF_CO.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_CDF"] call _fnc_saveToTemplate;
 
 //////////////////////////
