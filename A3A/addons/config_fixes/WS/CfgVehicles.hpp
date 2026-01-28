@@ -93,7 +93,7 @@ class CfgVehicles
         crew = "I_E_Soldier_F";
         faction = "IND_E_F";
         side = 2;
-        hiddenSelectionsTextures[] = {"a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_adds_black_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_armor_rust_co.paa"};
+        hiddenSelectionsTextures[] = {"a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_adds_black_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_armor_rust_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_base_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_1_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_2_green_co.paa","lxws\vehicles_f_lxws\Offroad_01\data\adds\offroad_01_metal_frame_green_CO.paa"};
     };
     class a3a_ldf_Offroad_armor_aa : I_Tura_Offroad_armor_AA_lxWS
     {
@@ -101,7 +101,7 @@ class CfgVehicles
         crew = "I_E_Soldier_F";
         faction = "IND_E_F";
         side = 2;
-        hiddenSelectionsTextures[] = {"a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_adds_black_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_armor_rust_co.paa"};
+        hiddenSelectionsTextures[] = {"a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","a3\soft_f_enoch\offroad_01\data\offroad_01_ext_eaf_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_adds_black_co.paa","lxws\vehicles_f_lxws\offroad_01\data\offroad_01_armor_rust_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_base_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_1_green_co.paa","lxws\vehicles_f_lxws\zu23\data\zu23_addon_2_green_co.paa","lxws\vehicles_f_lxws\Offroad_01\data\adds\offroad_01_metal_frame_green_CO.paa"};
     };
     class a3a_ldf_Truck_02_aa : I_A_Truck_02_aa_lxWS
     {

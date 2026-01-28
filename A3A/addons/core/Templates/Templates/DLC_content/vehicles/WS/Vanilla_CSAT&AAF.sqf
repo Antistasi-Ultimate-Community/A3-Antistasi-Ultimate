@@ -1,4 +1,4 @@
-_aa append ["O_SFIA_Truck_02_aa_lxWS", "I_A_Truck_02_aa_lxWS", "O_G_Offroad_AA_lxWS", "O_Tura_Offroad_armor_AA_lxWS"];
+_aa append ["O_SFIA_Truck_02_aa_lxWS", "I_A_Truck_02_aa_lxWS", "O_G_Offroad_AA_lxWS"];
 _staticAA append ["O_SFIA_ZU23_lxWS", "I_Tura_ZU23_lxWS"];
 _airborneVehicles pushback "O_APC_Wheeled_02_hmg_lxWS";
 _cargoTrucks append ["O_Truck_02_cargo_lxWS", "O_Truck_02_flatbed_lxWS", "I_Truck_02_flatbed_lxWS", "I_Truck_02_cargo_lxWS"];
