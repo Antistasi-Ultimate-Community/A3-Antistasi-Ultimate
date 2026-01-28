@@ -84,6 +84,7 @@ _varspace setVariable ["lastOffenceTime",_currentTime];
 _varspace setVariable ["overhead",_overhead];
 _varspace setVariable ["name",_name];
 _varspace setVariable ["player",_originalBody];
+_varspace setVariable ["victim",_victim]; // Store victim info for later use
 
 ///////////////Victim Notifier//////////////
 private _injuredComrade = "";

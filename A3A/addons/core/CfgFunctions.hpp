@@ -529,7 +529,7 @@ class CfgFunctions
             class punishment_FF_checkNearHQ {};
             class punishment_FF_addEH {};
             class punishment_oceanGulag {};
-            class punishment_HornyRocket {};
+            class punishment_hornyRocket {};
             class punishment_release {};
             class punishment_removeActionForgive {};
             class punishment_sentence_client {};
