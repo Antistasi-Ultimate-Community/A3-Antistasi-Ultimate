@@ -1,6 +1,6 @@
 /*
 Function:
-    A3A_fnc_punishment_new_method
+    A3A_fnc_punishment_hornyRocket
 
 Description:
     Implements the new punishment method that sends player on a missile ride.
