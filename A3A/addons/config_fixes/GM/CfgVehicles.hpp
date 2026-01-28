@@ -110,6 +110,72 @@ class CfgVehicles
 	class gm_pl_army_t55ak;
 	class gm_ge_adak_bo105m_vbh;
 	class gm_ge_army_bo105p_pah1a1;
+	//1.6 update
+	class gm_ge_army_fuchsa1_jammer;
+	class gm_ge_army_rakjpz2;
+	class gm_ge_army_Leopard1a4;
+	class gm_ge_army_m113a1g_mortar;
+	class gm_ge_army_fuchsa0_medic;
+
+	class gm_gc_army_bmp1p;
+	class gm_gc_army_brdm2_9p133;
+
+	class gm_pl_army_brdm2_9p133;
+	class gm_pl_army_brdm2rkh;
+
+	class gm_ge_army_fuchsa1_jammer_noinsignia : gm_ge_army_fuchsa1_jammer
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_ge_army_rakjpz2_noinsignia : gm_ge_army_rakjpz2
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_ge_army_Leopard1a4_noinsignia : gm_ge_army_Leopard1a4
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_ge_army_m113a1g_mortar_noinsignia : gm_ge_army_m113a1g_mortar
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_ge_army_fuchsa0_medic_noinsignia : gm_ge_army_fuchsa0_medic
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+
+	class gm_gc_army_bmp1p_noinsignia : gm_gc_army_bmp1p
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_gc_army_brdm2_9p133_noinsignia : gm_gc_army_brdm2_9p133
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+
+	class gm_pl_army_brdm2_9p133_noinsignia : gm_pl_army_brdm2_9p133
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_pl_army_brdm2rkh_noinsignia : gm_pl_army_brdm2rkh
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+
+	class gm_gc_army_brdm2rkh_noinsignia : gm_gc_army_brdm2rkh
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
 
 	class gm_dk_army_m113a1dk_apc_noinsignia : gm_dk_army_m113a1dk_apc
 	{
@@ -282,6 +348,11 @@ class CfgVehicles
 		gm_InsigniasDefaultFlag = "gm_insignia_none";
 	};
 	class gm_ge_army_Leopard1a1_noinsignia : gm_ge_army_Leopard1a1
+	{
+		gm_InsigniasDefaultNation = "gm_insignia_none";
+		gm_InsigniasDefaultFlag = "gm_insignia_none";
+	};
+	class gm_ge_army_Leopard1a1a1_noinsignia : gm_ge_army_Leopard1a1a1
 	{
 		gm_InsigniasDefaultNation = "gm_insignia_none";
 		gm_InsigniasDefaultFlag = "gm_insignia_none";

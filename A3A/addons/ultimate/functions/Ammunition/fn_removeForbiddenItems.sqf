@@ -11,6 +11,8 @@
     Usage:
     [_arrays] call A3U_fnc_removeForbiddenItems;
 */
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
 params [ 
 	["_arrays", [lootBasicItem,lootNVG,lootItem,lootWeapon,lootAttachment,lootMagazine,lootGrenade,lootExplosive,lootBackpack,lootHelmet,lootVest,lootDevice,allRifles,allHandguns,allMachineGuns,allShotguns,allSMGs,allSniperRifles,allRocketLaunchers,allMissileLaunchers,allHeadgear,allArmoredHeadgear,allVests,allArmoredVests]] 
@@ -26,16 +28,16 @@ private _start = diag_tickTime;
 	{ 
 		private _index = _array find _x; 
 		if (_index isNotEqualTo -1 && {getNumber (configFile >> "A3U" >> "forbiddenItems" >> _x >> "appearInCrates") isEqualTo 0}) then {
-            [format ["Removed %1 from %2", _x, _array]] call A3U_fnc_log;
+            Verbose_2("Removed %1 from %2", _x, _array);
 			_array deleteAt (_index);
 		};
 	} forEach A3U_forbiddenItems;
 } forEach _arrays;
  
-["Currently removing forbidden items from a ton of arrays. This may take a while. (Time exponentially expands as more stuff needs to be iterated through!)"] call A3U_fnc_log; 
+Info("Currently removing forbidden items from a ton of arrays. This may take a while. (Time exponentially expands as more stuff needs to be iterated through!)");
  
 private _stop = diag_tickTime;
  
-[format ["Forbidden items removal took approximately: %1 seconds.",round(_stop - _start)]] call A3U_fnc_log;
+Info_1("Forbidden items removal took approximately: %1 seconds.",round(_stop - _start));
 
 missionNamespace setVariable ["A3U_loot_removedForbiddenItems", true];

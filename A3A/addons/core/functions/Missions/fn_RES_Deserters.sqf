@@ -45,7 +45,6 @@ if (count _potentials > 0) then {
 		_posHouse pushBack _postmp;
 	};
 };
-diag_log _countX;
 private _taskId = "RES" + str A3A_taskCount;
 if (count _potentials > 0) then {
 	[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],localize "STR_A3A_Missions_RES_Deserters_task_header",_markerX],_spawnPos,false,0,true,"run",true] call BIS_fnc_taskCreate;///add stringtables

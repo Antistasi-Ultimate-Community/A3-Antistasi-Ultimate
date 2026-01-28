@@ -440,7 +440,7 @@ class A3A_MainDialog : A3A_TabbedDialog
                         {
                             idc = A3A_IDC_GARAGEVEHICLEBUTTON;
                             text = $STR_antistasi_dialogs_main_garage_vehicle;
-                            onButtonClick = "closeDialog 0; [cursorObject, clientOwner, call HR_GRG_dLock, player] remoteExecCall ['HR_GRG_fnc_addVehicle',2];";
+                            onButtonClick = "closeDialog 0; [cursorTarget, clientOwner, call HR_GRG_dLock, player] remoteExecCall ['HR_GRG_fnc_addVehicle',2];";
                             x = 32 * GRID_W;
                             y = 0 * GRID_H;
                             w = 22 * GRID_W;

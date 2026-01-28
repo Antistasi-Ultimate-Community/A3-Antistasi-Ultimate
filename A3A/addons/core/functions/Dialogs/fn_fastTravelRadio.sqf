@@ -139,7 +139,7 @@ if ([getMarkerPos _base] call A3A_fnc_enemyNearCheck) exitWith {
 	openMap [false,false];
 };
 
-if (_positionTel distance getMarkerPos _base < 50) then {
+if (_positionTel distance getMarkerPos _base < 500) then {
 	private _positionX = [getMarkerPos _base, 10, random 360] call BIS_Fnc_relPos;
 	private _distanceX = round (((position _boss) distance _positionX)/200);
 	private _forcedX = false;
