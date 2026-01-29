@@ -490,13 +490,13 @@ class A3_Soft_F_Enoch_Tractor_01_Tractor_01_F : TRIPLES(ADDON,Cargo,Base)
 /////////Size 5
 class A3_Soft_F_Exp_Offroad_02_Offroad_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,-0.15,1.53};
+    offset[] = {0,-0.3,1.4};
     rotation[] = {0,1,0};
     size = 5;
 };
 class A3_Soft_F_Exp_Offroad_02_Offroad_02_AT_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,0,1.8};
+    offset[] = {0,0.25,1.4};
     rotation[] = {0,1,0};
     size = 5;
     isWeapon = 1;
@@ -504,11 +504,11 @@ class A3_Soft_F_Exp_Offroad_02_Offroad_02_AT_F_p3d : TRIPLES(ADDON,Cargo,Base)
 };
 class A3_Soft_F_Exp_Offroad_02_Offroad_02_LMG_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,0,2.16};
+    offset[] = {0,-0.1,2.16};
     rotation[] = {0,1,0};
     size = 5;
     isWeapon = 1;
-    recoil = 500;
+    recoil = 250;
 };
 /////////Size 6
 class A3_boat_f_Boat_Transport_01_Boat_Transport_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
