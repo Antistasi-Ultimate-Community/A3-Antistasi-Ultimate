@@ -1311,6 +1311,23 @@
 			ITEM(U_SPE_GER_Soldier_M36_Boots, 50, MISC_STOCK);
 			ITEM(U_SPE_GER_Soldier_camo5_gaiter, 50, MISC_STOCK);
 			ITEM(U_SPE_GER_Soldier_camo5_boot, 50, MISC_STOCK);
+
+			//1.1.2 update
+			ITEM(U_SPE_US_1LT, 50, MISC_STOCK);
+			ITEM(U_SPE_US_2LT, 50, MISC_STOCK);
+			ITEM(U_SPE_US_CPT, 50, MISC_STOCK);
+			ITEM(U_SPE_US_Private_low, 50, MISC_STOCK);
+			ITEM(U_SPE_US_M43_low, 50, MISC_STOCK);
+			ITEM(U_SPE_US_M43_hbt_low, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_knife, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_Medic, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_flag, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_flag_knife, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_flag_Medic, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_flag_arm, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_flag_arm_knife, 50, MISC_STOCK);
+			ITEM(U_SPE_US_AB_Uniform_M43_glove_flag_arm_Medic, 50, MISC_STOCK);
 			////uniforms
 		};
 
@@ -1601,6 +1618,15 @@
 			ITEM(V_SPE_erla_VestG43, 50, MISC_STOCK);
 			ITEM(V_SPE_OST_sword, 50, MISC_STOCK);
 			ITEM(V_SPE_OST_officer, 50, MISC_STOCK);
+
+			// 1.1.2 update
+			ITEM(V_SPE_erla_VestGrenadier, 50, MISC_STOCK);
+			ITEM(V_SPE_GER_VestGrenadier, 50, MISC_STOCK);
+			ITEM(V_SPE_DAK_VestGrenadier, 50, MISC_STOCK);
+			ITEM(V_SPE_GER_FSJ_camo_VestGrenadier, 50, MISC_STOCK);
+			ITEM(V_SPE_GER_FSJ_VestGrenadier, 50, MISC_STOCK);
+			ITEM(V_SPE_GER_FSJ_blau_VestGrenadier, 50, MISC_STOCK);
+			ITEM(V_SPE_GER_FSJ_camo_Pio, 50, MISC_STOCK);
 			///vests
 		};
 		
