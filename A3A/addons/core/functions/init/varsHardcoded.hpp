@@ -15,8 +15,8 @@ Author:
 // Whether statics crewed in outposts should scan their horizon
 GVAR(rebelStaticsScanHorizon) = true;
 
-// Used as distance in calls to SCRT_fnc_common_scanHorizon
-GVAR(scanHorizonDistance) = 300;
+// Used as height in calls to SCRT_fnc_common_scanHorizon for A/A units
+GVAR(scanHorizonHeight) = 300;
 
 // When getting marker sizes for zero-size markers (emplacements), pretend
 // they're really this big.
