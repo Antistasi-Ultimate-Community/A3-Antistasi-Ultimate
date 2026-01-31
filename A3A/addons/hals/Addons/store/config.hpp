@@ -358,8 +358,27 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
+				"launchersspex",
+				"handgunsspex",
+				"smgspex",
+				"mgspex",
+				"riflesspex",
+				"sniperriflesspex",
+				"launchersspex",
+				"launchermagazinesspex",
+				"riflegrenadesspex",
+				"muzzlesspex",
+				"magazinesspex", 
+				"specialweaponsspex",
+				"pointersspex",
+				"navigationspex",
+				"miscspex",
+				"underbarrelspex",
 				"helmetsspex",
-				"launchersspex"
+				"uniformsspex",
+				"backpacksspex",
+				"vestsspex",
+				"facewearspex"
 			};
 		};
 		////

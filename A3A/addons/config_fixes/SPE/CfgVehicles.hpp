@@ -324,8 +324,8 @@ class CfgVehicles
 	};
 	class SPE_P47_noinsignia : SPE_P47
     {
-		hiddenSelectionsTextures[] = {"WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Fuselage_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Wings_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Cockpit_1_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Cockpit_2_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Misc_co.paa","\a3\data_f\clear_empty.paa",""};
-	};
+		hiddenSelectionsTextures[] = {"WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Fuselage_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Wings_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Cockpit_1_co.paa","WW2\SPE_Assets_t\Vehicles\Planes_t\P47\P47_Cockpit_2_co.paa","\a3\data_f\clear_empty.paa","\a3\data_f\clear_empty.paa",""};
+	};                             
 	///1.1 update
 	class SPE_Milice_R200_Unarmed_noinsignia : SPE_Milice_R200_Unarmed
     {
