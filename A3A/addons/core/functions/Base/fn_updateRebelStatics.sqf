@@ -64,87 +64,106 @@ if (isNull _staticGroup) then {
     _staticGroup = createGroup [teamPlayer, true];
 };
 
-{
-    private _veh = _x;
-    private _assignedUnits = [];
-    
+private _assignedUnits = [];
+
+_freeStatics apply {
+    private _vehicle = _x;
+
     // 1. Get all possible positions
-    private _allTurrets = allTurrets _veh;
+    private _allTurrets = allTurrets _vehicle;
     private _positions = [];
-    
+
     // 2. Check main positions
-    if (isNull gunner _veh) then {
+    if (isNull gunner _vehicle) then {
         _positions pushBack ["Gunner", [-1]];
     };
-    
-    if ((_veh emptyPositions "Commander") > 0 && isNull commander _veh) then {
+
+    if (isNull commander _vehicle && { _vehicle emptyPositions "Commander" > 0 }) then {
         _positions pushBack ["Commander", [-1]];
     };
-    
+
     // 3. Add turrets
     {
-        if (isNull (_veh turretUnit _x)) then {
+        if (isNull (_vehicle turretUnit _x)) then {
             _positions pushBack ["Turret", _x];
         };
     } forEach _allTurrets;
 
     // 4. Assign units
     {
-        if (count _possibleCrew == 0) exitWith {};
+        if (_possibleCrew isEqualTo []) exitWith {};
         private _unit = _possibleCrew deleteAt 0;
+
+        _unit setVariable[QGVAR(assignedVehicle), _vehicle];
         _assignedUnits pushBack _unit;
-        
-        switch (_x#0) do {
+
+        _x params["_position","_turret"];
+
+        switch (_position) do {
             case "Gunner": {
-                _unit assignAsGunner _veh;
-                _unit moveInGunner _veh;
+                _unit assignAsGunner _vehicle;
+                _unit moveInGunner _vehicle;
             };
             case "Commander": {
-                _unit assignAsCommander _veh;
-                _unit moveInCommander _veh;
+                _unit assignAsCommander _vehicle;
+                _unit moveInCommander _vehicle;
             };
             case "Turret": {
-                if !(_x#1 isEqualTo [-1]) then {
-                    _unit assignAsTurret [_veh, _x#1];
-                    _unit moveInTurret [_veh, _x#1];
+                if (_turret isNotEqualTo [-1]) then {
+                    _unit assignAsTurret [_vehicle, _turret];
+                    _unit moveInTurret [_vehicle, _turret];
                 };
             };
         };
     } forEach _positions;
 
-    // 5. Fix lost assignments
-    if (count _assignedUnits > 0) then {
-        [_assignedUnits] joinSilent _staticGroup;
-        [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];
-        
-        // Double check after 1 second
-        [_veh, _assignedUnits] spawn {
-            params ["_veh", "_units"];
-            sleep 1;
-            // Sanity check; vehicle _can_ be gone, blown up, whatever
-            if (isNull _veh) exitWith {};
+    _vehicle setVehicleRadar ([0, 1] select (getNumber(configOf _vehicle >> "radarType") in [2, 4]));
+};
 
-            {
-                if (isNull _veh) exitWith {};
-                if (isNull objectParent _x) then {
-                    switch (assignedVehicleRole _x) do {
-                        case ["Gunner"]: { _x moveInGunner _veh };
-                        case ["Commander"]: { _x moveInCommander _veh };
-                        case ["Turret"]: {
-                            private _path = _x call BIS_func_turretPath;
-                            if !(_path isEqualTo []) then {
-                                _x moveInTurret [_veh, _path];
-                            };
-                        };
+// 5. Fix lost assignments
+if (_assignedUnits isNotEqualTo []) then {
+    [_assignedUnits] joinSilent _staticGroup;
+    [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];
+
+    // Double check after 1 second
+    [_assignedUnits] spawn {
+        params ["_units"];
+        sleep 1;
+
+        _units select {
+            (alive _x) && { isNull objectParent _x } &&
+            { !isNull(_x getVariable[QGVAR(assignedVehicle), objNull]) } &&
+            { alive(_x getVariable QGVAR(assignedVehicle)) }
+        } apply {
+            private _vehicle = _unit getVariable QGVAR(assignedVehicle);
+
+            switch (assignedVehicleRole _x) do {
+                case ["Gunner"]: { _x moveInGunner _vehicle };
+                case ["Commander"]: { _x moveInCommander _vehicle };
+                case ["Turret"]: {
+                    private _path = _x call BIS_func_turretPath;
+                    if (_path isNotEqualTo []) then {
+                        _x moveInTurret [_vehicle, _path];
                     };
                 };
-            } forEach _units;
+            };
         };
     };
-    
-    _veh setVehicleRadar ([0, 1] select (getNumber(configOf _veh >> "radarType") in [2, 4]));
-    
-} forEach _freeStatics;
+
+    // Start scanning horizon after five seconds
+    if GVAR(rebelStaticsScanHorizon) then {
+        [_assignedUnits] spawn {
+            params["_units"];
+            sleep 5;
+
+            _units
+                select { !isNull objectParent _x } // If assignment still didn't work, don't bother
+                apply { [_x, GVAR(scanHorizonDistance)] spawn SCRT_fnc_common_scanHorizon };
+        };
+    };
+};
 
 _staticGroup setBehaviour "AWARE";
 _staticGroup setCombatMode "WHITE";
+
+nil;
