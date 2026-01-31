@@ -75,11 +75,11 @@ _freeStatics apply {
 
     // 2. Check main positions
     if (isNull gunner _vehicle) then {
-        _positions pushBack ["Gunner", [-1]];
+        _positions pushBack ["Gunner"];
     };
 
-    if (isNull commander _vehicle && { _vehicle emptyPositions "Commander" > 0 }) then {
-        _positions pushBack ["Commander", [-1]];
+    if (isNull commander _vehicle) then {
+        _positions pushBack ["Commander"];
     };
 
     // 3. Add turrets
@@ -97,7 +97,7 @@ _freeStatics apply {
         _unit setVariable[QGVAR(assignedVehicle), _vehicle];
         _assignedUnits pushBack _unit;
 
-        _x params["_position","_turret"];
+        _x params["_position",["_turret", nil]];
 
         switch (_position) do {
             case "Gunner": {
@@ -135,17 +135,16 @@ if (_assignedUnits isNotEqualTo []) then {
             { !isNull(_x getVariable[QGVAR(assignedVehicle), objNull]) } &&
             { alive(_x getVariable QGVAR(assignedVehicle)) }
         } apply {
+            private _unit = _x;
             private _vehicle = _unit getVariable QGVAR(assignedVehicle);
+            private _assignedRole = assignedVehicleRole _unit;
 
-            switch (assignedVehicleRole _x) do {
-                case ["Gunner"]: { _x moveInGunner _vehicle };
-                case ["Commander"]: { _x moveInCommander _vehicle };
-                case ["Turret"]: {
-                    private _path = _x call BIS_func_turretPath;
-                    if (_path isNotEqualTo []) then {
-                        _x moveInTurret [_vehicle, _path];
-                    };
-                };
+            _assignedRole params[["_type", ""], ["_turret", []]];
+
+            switch (toLower _type) do {
+                case "gunner": { _x moveInGunner _vehicle };
+                case "commander": { _x moveInCommander _vehicle };
+                case "turret": { _x moveInTurret[_vehicle, _turret] };
             };
         };
     };
