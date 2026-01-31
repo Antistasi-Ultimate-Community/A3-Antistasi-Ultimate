@@ -339,6 +339,7 @@ class CfgFunctions
             class countGarrison {};
             class createGarrison {};
             class createGarrisonLine {};
+            class crewLocationStatics {};
             class getGarrison {};
             class getGarrisonRatio {};
             class getGarrisonStatus {};
