@@ -130,7 +130,7 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 		publicVariable "staticsToSave";
 	};
 
-	if ([_veh] call A3A_fnc_nearFriendlyMarker) then {
+	if ([_veh] call A3A_fnc_isWithinNearestFriendlyMarker) then {
 		if (_veh isKindOf "StaticWeapon") then {
 			_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
 			[_veh, "static"] spawn _staticVehInit;
