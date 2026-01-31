@@ -795,10 +795,13 @@ class CfgFunctions
             class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
+            class isEmplacementMarker {};
             class isEngineer {};
+            class isWithinMarkerArea {};
+            class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
-            class nearFriendlyMarker {};
+            class nearestFriendlyMarker {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
