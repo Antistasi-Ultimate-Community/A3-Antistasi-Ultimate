@@ -8,8 +8,8 @@ Description:
     watchpost, roadblock, etc.
 
 Parameters:
-    0: _marker - Location markler name <STRING>
-    1: _emplacementType - Type of emplacement <TYPE>
+    0: _marker - Location marker name <STRING>
+    1: _locationType - Type of location (City, Synd_HQ, emplacements...) <STRING>
     2: _hasSpawned - Whether the location has just been spawned (true) or despawned (false) <BOOL>
 
 Optional:
@@ -27,26 +27,26 @@ if !(isServer) exitWith { Error("A3A_fnc_crewLocationStatics called on client!")
 
 if !assert(params[
     ["_marker", nil, [""]],
-    ["_emplacementType", nil, [""]],
+    ["_locationType", nil, [""]],
     ["_hasSpawned", nil, [false]]
 ]) exitWith {};
 
-Debug_3("location spawned at marker=%1, type=%2, spawned=%3",str _marker,str _emplacementType,str _hasSpawned);
+Debug_3("Location spawned at marker=%1, type=%2, spawned=%3",str _marker,str _locationType,str _hasSpawned);
 
 if !(_hasSpawned) exitWith {
-    Debug_1("Location at marker %1 despawned, skipping crewing statics",str _marker);
+    Debug_2("Location %1 at marker %2 despawned, skipping crewing statics",str _locationType,str _marker);
 };
 
-if !(_emplacementType in [
+if !(_locationType in [
     "RebelAAEmpl",
     "RebelAtEmpl",
     "RebelHmgEmpl",
     "RebelRoadblock"
 ]) exitWith {
-    Debug_1("Not interested in emplacement type %1",str _emplacementType);
+    Debug_1("Not interested in location type %1",str _locationType);
 };
 
-Debug_1("Crewing statics/vehicles near marker %1",str _emplacementType);
+Debug_2("Crewing statics/vehicles near %1 marker %2",str _locationType,str _marker);
 [_marker] spawn A3A_fnc_updateRebelStatics;
 
 nil;

@@ -6,7 +6,8 @@ Function: A3A_fnc_isWithinMarkerArea
 Description:
     Check if a given position/object is within the area of a specified marker.
 
-    For zero-size markers, assume a default radius of 50 meters.
+    For zero-size markers, assume a default radius of
+    GVAR(zeroSizeMarkerBlowup) meters.
 
 Parameters:
     0: _position - The position/object to check <ARRAY,OBJECT>
@@ -14,7 +15,7 @@ Parameters:
 
 Optional:
     2: _zeroSizeRadius - The radius to use if the marker size is zero <SCALAR>
-        (Default: 50)
+        (Default: GVAR(zeroSizeMarkerBlowup))
 
 Example:
     (begin example)
@@ -43,7 +44,6 @@ if (markerType _markerName isEqualTo "") exitWith {
 };
 
 private _zeroSizeRadius = param[2, GVAR(zeroSizeMarkerBlowup), [0]];
-_zeroSizeRadius = 2 * _zeroSizeRadius; // diameter
 
 _position inArea[
     markerPos _markerName,
