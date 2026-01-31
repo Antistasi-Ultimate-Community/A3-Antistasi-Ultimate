@@ -14,7 +14,7 @@ Optional:
 Example:
     (begin example)
     ["Synd_HQ"] call A3A_fnc_isEmplacementMarker; // returns false
-    ["RebelAAEmpl_1"] call A3A_fnc_isEmplacementMarker; // returns true
+    ["FIAHmgpost715.606"] call A3A_fnc_isEmplacementMarker; // returns true
     (end example)
 
 Returns:
