@@ -15,51 +15,54 @@ params ["_target"];
 
 // If position or object target, identify rebel marker
 private _marker = _target;
-if !(_target isEqualType "") then
-{
-    _marker = "";
-    private _markers = markersX select { _target inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
-    private _mindist = 10000;
-    {
-        private _dist = (getMarkerPos _x) distance2d _target;
-        if (_dist > _mindist) then { continue };
-        _marker = _x; _mindist = _dist;
-    } forEach _markers;
+if !(_target isEqualType "") then {
+    // Arbitrary search limit of 500m
+    _marker = [_target, 500] call A3A_fnc_nearestFriendlyMarker;
 };
 if (_marker isEqualTo "") exitWith {};
 
-// Find all non-mortar statics within marker
-private _statics = staticsToSave inAreaArray _marker;
-_statics = _statics select {!(_x isKindOf "Air")};           // may include bunkers.
-if (count _statics == 0) exitWith {};
+// Find all non-mortar statics within marker; may include bunkers.
+private _statics = staticsToSave select {
+    !(_x isKindOf "Air") &&
+    { [_x, _marker] call A3A_fnc_isWithinMarkerArea };
+};
+if (_statics isEqualTo []) exitWith {};
 
 // Find unlocked & unoccupied statics
 private _freeStatics = _statics select {
-    isNil { _x getVariable "lockedForAI" }
-    and isNull (gunner _x)
+    (isNull gunner _x) &&
+    { !(_x getVariable["lockedForAI", false]) }
 };
-if (count _freeStatics == 0) exitWith {};
+if (_freeStatics isEqualTo []) exitWith {};
 
 // Identify all garrison riflemen in area
-private _possibleCrew = allUnits inAreaArray _marker;
-_possibleCrew = _possibleCrew select {
-    _x getVariable ["markerX", ""] isEqualTo _marker
-    and _x getVariable ["UnitType", ""] isEqualTo FactionGet(reb,"unitRifle")
-    and isNull objectParent _x
-    and [_x] call A3A_fnc_canFight
+private _possibleCrew = allUnits select {
+    (isNull objectParent _x) &&
+    { _x getVariable ["markerX", ""] isEqualTo _marker } &&
+    { _x getVariable ["UnitType", ""] isEqualTo FactionGet(reb,"unitRifle") } &&
+    { [_x] call A3A_fnc_canFight } &&
+    { [_x, _marker] call A3A_fnc_isWithinMarkerArea }
 };
-if (count _possibleCrew == 0) exitWith {};
+if (_possibleCrew isEqualTo []) exitWith {};
 
 // Identify current local static group for marker, if any
 private _staticGroup = grpNull;
-{
-    private _unit = gunner _x;
-    if (isNull _unit or !(local _unit)) then { continue };
-    if !(_unit getVariable ["markerX", ""] isEqualTo _marker) then { continue };
-    _staticGroup = group _unit; break;
-} forEach _statics;
 
-if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
+_statics findIf {
+    private _unit = gunner _x;
+
+    (!isNull _unit) &&
+    { local _unit } &&
+    { _unit getVariable ["markerX", ""] isEqualTo _marker } &&
+    {
+        _staticGroup = group _unit;
+        true;
+    };
+};
+
+if (isNull _staticGroup) then {
+    _staticGroup = createGroup [teamPlayer, true];
+};
 
 {
     private _veh = _x;
