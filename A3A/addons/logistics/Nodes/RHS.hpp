@@ -966,6 +966,18 @@ class rhsusf_addons_rhsusf_matv_m1240a1_m2crows : TRIPLES(ADDON,Nodes,Base)
 };
 class rhsusf_addons_rhsusf_matv_m1240a1_mk19crows : rhsusf_addons_rhsusf_matv_m1240a1_m2crows {};
 
+class rhsusf_addons_rhsusf_melb_MELB_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0,0.6,-0.85};
+        };
+    };
+};
+
 class rhsgref_addons_rhsgref_a2port_armor_brdm2_BRDM2_HQ_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
