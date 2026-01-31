@@ -155,9 +155,15 @@ if (_assignedUnits isNotEqualTo []) then {
             params["_units"];
             sleep 5;
 
-            _units
-                select { !isNull objectParent _x } // If assignment still didn't work, don't bother
-                apply { [_x, GVAR(scanHorizonDistance)] spawn SCRT_fnc_common_scanHorizon };
+            _units = _units select { !isNull objectParent _x }; // If assignment still didn't work, don't bother
+            _units apply {
+                // If we're in a vehicle with both gunner and commander
+                // (i.e. a TANK), don't have both turrets scanning wildly; only
+                // have the commander do it.
+                if (isNull commander _vehicle || { _x isEqualTo commander _vehicle }) then {
+                    [_x] spawn SCRT_fnc_common_scanHorizon
+                };
+            };
         };
     };
 };
