@@ -12,6 +12,9 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 
+// Whether statics crewed in outposts should scan their horizon
+GVAR(rebelStaticsScanHorizon) = true;
+
 // Used as distance in calls to SCRT_fnc_common_scanHorizon
 GVAR(scanHorizonDistance) = 300;
 
