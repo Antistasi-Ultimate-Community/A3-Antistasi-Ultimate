@@ -33,12 +33,6 @@ private _statics = staticsToSave inAreaArray _marker;
 _statics = _statics select {!(_x isKindOf "Air")};           // may include bunkers.
 if (count _statics == 0) exitWith {};
 
-if (_target in ungaragedVehicles) then {
-    private _deleteVeh = ungaragedVehicles find _target;
-    ungaragedVehicles deleteAt _deleteVeh;
-    publicVariable "ungaragedVehicles";
-};
-
 // Find unlocked & unoccupied statics
 private _freeStatics = _statics select {
     isNil { _x getVariable "lockedForAI" }
