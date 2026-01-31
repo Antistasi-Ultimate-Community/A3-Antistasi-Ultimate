@@ -407,7 +407,7 @@ if (random 10 < (tierWar + difficultyCoef)) then {
 		_vehiclesX pushBack _veh;
 
 		sleep 1;
-		[gunner _veh, GVAR(scanHorizonDistance)] spawn SCRT_fnc_common_scanHorizon;
+		[gunner _veh] spawn SCRT_fnc_common_scanHorizon;
 
 		_veh setVariable ["originalPos", getPosATL _veh];
 	};
