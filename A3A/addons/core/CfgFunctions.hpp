@@ -798,6 +798,7 @@ class CfgFunctions
             class isEngineer {};
             class localLog {};
             class log {};
+            class nearFriendlyMarker {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
