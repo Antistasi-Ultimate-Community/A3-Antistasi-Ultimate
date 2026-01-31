@@ -157,6 +157,8 @@ if (_assignedUnits isNotEqualTo []) then {
 
             _units = _units select { !isNull objectParent _x }; // If assignment still didn't work, don't bother
             _units apply {
+                private _vehicle = _x getVariable[QGVAR(assignedVehicle), objNull];
+
                 // If we're in a vehicle with both gunner and commander
                 // (i.e. a TANK), don't have both turrets scanning wildly; only
                 // have the commander do it.

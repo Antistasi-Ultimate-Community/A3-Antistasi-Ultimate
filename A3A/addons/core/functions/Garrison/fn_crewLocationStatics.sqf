@@ -46,7 +46,10 @@ if !(_locationType in [
     Debug_1("Not interested in location type %1",str _locationType);
 };
 
-Debug_2("Crewing statics/vehicles near %1 marker %2",str _locationType,str _marker);
-[_marker] spawn A3A_fnc_updateRebelStatics;
+[{
+    params["_marker","_locationType"];
+    Debug_2("Crewing statics/vehicles near %1 marker %2",str _locationType,str _marker);
+    [_marker] spawn A3A_fnc_updateRebelStatics;
+}, [_marker, _locationType], 5] call CBA_fnc_waitAndExecute;
 
 nil;
