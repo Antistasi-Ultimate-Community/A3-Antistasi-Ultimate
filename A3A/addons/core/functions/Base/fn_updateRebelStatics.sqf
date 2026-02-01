@@ -66,7 +66,6 @@ if (isNull _staticGroup) then {
 
 private _assignedUnits = [];
 
-scopeName = "main";
 _freeStatics apply {
     private _vehicle = _x;
 
@@ -92,7 +91,7 @@ _freeStatics apply {
 
     // 4. Assign units
     {
-        if (_possibleCrew isEqualTo []) then { breakTo "main" };
+        if (_possibleCrew isEqualTo []) then { break };
         private _unit = _possibleCrew deleteAt 0;
 
         _unit setVariable[QGVAR(assignedVehicle), _vehicle];
