@@ -66,6 +66,7 @@ if (isNull _staticGroup) then {
 
 private _assignedUnits = [];
 
+scopeName = "main";
 _freeStatics apply {
     private _vehicle = _x;
 
