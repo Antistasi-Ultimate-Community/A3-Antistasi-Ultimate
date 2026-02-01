@@ -161,9 +161,9 @@ if (_assignedUnits isNotEqualTo []) then {
 
                 // If we're in a vehicle with both gunner and commander
                 // (i.e. a TANK), don't have both turrets scanning wildly; only
-                // have the commander do it.
+                // have the commander do it. Don't scan if they're in a building.
                 if (isNull commander _vehicle || { _x isEqualTo commander _vehicle }) then {
-                    [_x] spawn SCRT_fnc_common_scanHorizon
+                    [_x, nil, false] spawn SCRT_fnc_common_scanHorizon;
                 };
             };
         };
