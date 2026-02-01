@@ -21,7 +21,7 @@ if !(_target isEqualType "") then {
 };
 if (_marker isEqualTo "") exitWith {};
 
-// Find all non-mortar statics within marker; may include bunkers.
+// Find all statics within marker; may include bunkers.
 private _statics = staticsToSave select {
     !(_x isKindOf "Air") &&
     { [_x, _marker] call A3A_fnc_isWithinMarkerArea };
