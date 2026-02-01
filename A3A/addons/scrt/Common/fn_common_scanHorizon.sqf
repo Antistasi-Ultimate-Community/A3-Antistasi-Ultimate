@@ -1,4 +1,6 @@
-params ["_man", ["_sightHeight", 0]];
+params ["_man", ["_sightHeight", 0], ["_force", true, [true]]];
+
+if (!_force && { insideBuilding _man == 1 }) exitWith {};
 
 while { (alive _man) && { !isNull objectParent _man } } do {
     {
