@@ -91,7 +91,7 @@ _freeStatics apply {
 
     // 4. Assign units
     {
-        if (_possibleCrew isEqualTo []) exitWith {};
+        if (_possibleCrew isEqualTo []) then { breakTo "main" };
         private _unit = _possibleCrew deleteAt 0;
 
         _unit setVariable[QGVAR(assignedVehicle), _vehicle];
