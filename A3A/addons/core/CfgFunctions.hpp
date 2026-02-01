@@ -466,8 +466,9 @@ class CfgFunctions
 
         class OrgPlayers {
             file = QPATHTOFOLDER(functions\OrgPlayers);
-            class addScorePlayer {};
             class addMoneyPlayer {};
+            class addScorePlayer {};
+            class addTearDownActions {};
             class donateMoney {};
             class donateMoneyPercentage {};
             class isMember {};

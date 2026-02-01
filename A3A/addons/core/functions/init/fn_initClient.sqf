@@ -581,7 +581,8 @@ mapX addAction [localize "STR_antistasi_actions_ai_load_info", { [] remoteExec [
         nil,0,false,true,"", "(_this == theBoss) and (isNull objectParent _this) and !(call A3A_fnc_isCarrying)", 4];
 } forEach [boxX, flagX, vehicleBox, mapX];
 
-[] spawn A3A_fnc_unitTraits;
+[] call A3A_fnc_unitTraits;
+[] call A3A_fnc_addTeardownActions;
 
 // Get list of buildable objects, has map (and template?) dependency
 call A3A_fnc_initBuildableObjects;
@@ -602,29 +603,6 @@ _layer = ["statisticsX"] call bis_fnc_rscLayer;
 
 //Load the player's personal save.
 [] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
-
-// Build mode user actions
-player addAction[
-    localize "STR_A3A_base_teardownMode_ON",
-    { (_this select 1) setVariable[QGVAR(isTeardownActive), true] },
-    [],
-    1.6,
-    false,
-    false,
-    "",
-    QUOTE(!(_this getVariable[ARR_2(QQGVAR(isTeardownActive),false)]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
-];
-
-player addAction[
-    localize "STR_A3A_base_teardownMode_OFF",
-    { (_this select 1) setVariable[QGVAR(isTeardownActive), false] },
-    [],
-    1.6,
-    false,
-    false,
-    "",
-    QUOTE((_this getVariable[ARR_2(QQGVAR(isTeardownActive),false)]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
-];
 
 [allCurators] remoteExecCall ["A3A_fnc_initZeusLogging",0];
 
