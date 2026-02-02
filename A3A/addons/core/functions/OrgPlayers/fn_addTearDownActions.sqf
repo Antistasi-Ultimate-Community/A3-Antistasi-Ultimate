@@ -22,9 +22,6 @@ Author:
 if (!hasInterface) exitWith {};
 if !assert(!isNull player) exitWith {};
 
-if (player getVariable[QGVAR(hasTeardownActions), false]) exitWith {};
-player setVariable[QGVAR(hasTeardownActions), true];
-
 // Build mode user actions
 player addAction[
     localize "STR_A3A_base_teardownMode_ON",
