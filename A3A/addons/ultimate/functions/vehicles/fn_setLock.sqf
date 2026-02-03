@@ -27,7 +27,7 @@
 #include "..\..\script_component.hpp"
 
 params [
-    ["_vehicle", ObjNull],
+    ["_vehicle", objNull],
     ["_state", false]
 ];
 
@@ -37,9 +37,10 @@ if (!isServer && hasInterface) exitWith {
 
 if (enableVehicleAutoLock isEqualTo false) exitWith {false};
 
-if (_vehicle isEqualTo ObjNull || {isNil "_vehicle"}) exitWith {false};
-if (_vehicle isKindOf "Static") exitWith {false};
-if (!(alive _vehicle)) exitWith {false};
+if (isNull _vehicle ||
+    { !alive _vehicle } || 
+    { _vehicle isKindOf "Static" }
+) exitWith {false};
 
 _vehicle lock _state;
 [_vehicle, _state] remoteExecCall ["lockInventory", 0, _vehicle];
