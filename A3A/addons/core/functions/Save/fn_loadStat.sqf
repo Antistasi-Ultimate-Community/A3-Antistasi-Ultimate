@@ -42,7 +42,8 @@ if (isNil "specialVarLoads") then {
         "destroyedMilAdmins",
         "rebelLoadouts", "randomizeRebelLoadoutUniforms",
         "areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
-        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones"
+        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones",
+        "occupantsRadioKeys", "invaderRadioKeys"
     ] createHashMapFromArray [];
 };
 
@@ -381,7 +382,7 @@ if (_varName in specialVarLoads) then {
             _list sort false;
             _list apply {
                 _x params["","","_data"];
-                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
                 Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
@@ -417,8 +418,15 @@ if (_varName in specialVarLoads) then {
                 if (!isNil "_state") then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
+                if (!isNil "_customization") then {
+                    ([_veh] + _customization) call BIS_fnc_initVehicle;
+                };
+                if (!isNil "_flipped" && {_flipped}) then {
+                    staticsToFlip pushBack _veh;
+                };
             };
             publicVariable "staticsToSave";
+            publicVariable "staticsToFlip";
             publicVariable "A3A_buildingsToSave";
         };
 
@@ -712,6 +720,16 @@ if (_varName in specialVarLoads) then {
             };
 
             publicVariable "unlockedVehicleTypes";
+        };
+
+        case 'occupantsRadioKeys': {
+            occupantsRadioKeys = _varValue;
+            publicVariable "occupantsRadioKeys";
+        };
+		
+        case 'invaderRadioKeys': {
+            invaderRadioKeys = _varValue;
+            publicVariable "invaderRadioKeys";
         };
     };
 } else {

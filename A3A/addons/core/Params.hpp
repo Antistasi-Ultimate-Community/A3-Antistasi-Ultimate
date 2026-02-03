@@ -1113,6 +1113,16 @@ class Params
     class enableVehicleAutoLock: VehicleLootParams
     {
         title = $STR_params_enableVehicleAutoLock;
+        tooltip = $STR_params_enableVehicleAutoLock_desc;
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        default = 1;
+        lockInGame = 1;
+    };
+    class enableVehicleAutoLockCiv: VehicleLootParams
+    {
+        title = $STR_params_enableVehicleAutoLockCiv;
+        tooltip = $STR_params_enableVehicleAutoLockCiv_desc;
         values[] = {0,1};
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
         default = 1;
@@ -1242,6 +1252,21 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
         lockInGame = 0;
+    class EGVAR(ultimate,allowLockpickKits) : ExperimentalParams
+    {
+        title = $STR_params_ultimate_allowLockpickKits;
+        tooltip = $STR_params_ultimate_allowLockpickKits_Tooltip;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class EGVAR(ultimate,lockpickKitBreakChance) : ExperimentalParams
+    {
+        title = $STR_params_ultimate_lockpickKitBreakChance;
+        tooltip = $STR_params_ultimate_lockpickKitBreakChance_Tooltip;
+        values[] = {0, 10, 20, 25, 30, 40, 50};
+        texts[] = {"0%", "10%", "20%", "25%", "30%", "40%", "50%"};
+        default = 25;
     };
 
     class DevelopmentParamsSpacer : AllParams

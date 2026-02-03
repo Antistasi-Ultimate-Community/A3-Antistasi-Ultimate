@@ -133,8 +133,13 @@ if (isNil "unlockedVehicleTypes") then {
 
 ["unlockedVehicleTypes", unlockedVehicleTypes] call A3A_fnc_setStatVariable;
 
+["invaderRadioKeys", invaderRadioKeys] call A3A_fnc_setStatVariable;
+["occupantsRadioKeys", occupantsRadioKeys] call A3A_fnc_setStatVariable;
+
 Info_1("Saving revealed zones: %1", _revealedZones);
 Info_1("Saving unlocked vehicle types: %1", unlockedVehicleTypes);
+Info_1("Saving invaders radio keys: %1", invaderRadioKeys);
+Info_1("Saving occupants radio keys: %1", occupantsRadioKeys);
 //Antistasi Ultimate variables ^
 
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];
@@ -189,24 +194,26 @@ _arrayEst = [];
 {
     // Include buyable items marked as saveable
     // TODO: Do we need to refund the others?
-    if (typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
-        _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
-        continue;
-    };
+    if !(typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
+		if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
+		if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
+		if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
+	};
 
-    if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
-    if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
-    if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
-
-    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
+    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState, [_x] call BIS_fnc_getVehicleCustomization];
 
 } forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
 
 
+private _nearFriendlyMarker = {
+	params ["_obj"];
+	private _nearestMarker = [markersX, _obj] call BIS_fnc_nearestPosition;
+	(sidesX getVariable [_nearestMarker, sideUnknown] isEqualTo teamPlayer) && {_obj inArea _nearestMarker};
+};
+
 {
-	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
-		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
-	};
+	if ((!alive _x) || {(surfaceIsWater position _x) || {(!isNull attachedTo _x) || {(!(_x call _nearFriendlyMarker))}}}) then { continue };
+	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x, nil, [_x] call BIS_fnc_getVehicleCustomization, _x in staticsToFlip];
 } forEach staticsToSave;
 
 
@@ -216,7 +223,7 @@ _rebMarkers pushBack "Synd_HQ";
 	if (isOnRoad _x && {A3A_builderAllowRoads isEqualTo false}) then {continue};
 	if (surfaceIsWater getPosASL _x) then {continue};
 
-	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
+	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x];
 } forEach A3A_buildingsToSave;
 
 reverse _arrayEst;
