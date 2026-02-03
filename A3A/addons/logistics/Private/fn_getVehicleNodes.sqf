@@ -24,9 +24,9 @@ configProperties [(_config/"Nodes"), "true", true] apply {[
     // Node occupation status (0 = occupied, 1 = free)
     1,
     // Node position offset relative to vehicle model
-    ["offset", "ARRAY", [0, 0, 0]] call CBA_fnc_getConfigEntry,
+    [_x >> "offset", "ARRAY", [0, 0, 0]] call CBA_fnc_getConfigEntry,
     // Cargo seat indices blocked if node is occupied
-    ["seats", "ARRAY", []] call CBA_fnc_getConfigEntry,
+    [_x >> "seats", "ARRAY", []] call CBA_fnc_getConfigEntry,
     // If node can be used for coupling (accomodating space for cargo-size > 1) with previous node
-    ["canCouple", "NUMBER", 1] call CBA_fnc_getConfigEntry
+    [_x >> "canCouple", "NUMBER", 1] call CBA_fnc_getConfigEntry
 ]};
