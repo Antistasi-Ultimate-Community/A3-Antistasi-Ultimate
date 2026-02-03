@@ -65,6 +65,8 @@ if (isServer) then {
 	//Antistasi Ultimate variables
 	["revealedZones"] call A3A_fnc_getStatVariable; publicVariable "revealedZones";
 	["unlockedVehicleTypes"] call A3A_fnc_getStatVariable; publicVariable "unlockedVehicleTypes";
+	["occupantsRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "occupantsRadioKeys";
+	["invaderRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "invaderRadioKeys";
 
 	//===========================================================================
 
