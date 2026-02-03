@@ -30,6 +30,8 @@
         -9: Units in cargo seats blocking loading
 */
 #include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 params [ ["_vehicle", objNull, [objNull] ], ["_object", objNull, [objNull] ] ];
 if !(alive _vehicle) exitWith {-1}; //vehicle destroyed
 if !(alive _object) exitWith {-2}; //cargo destroyed
@@ -92,17 +94,21 @@ while { isNil "_node" } do {
     _sequenceStart = _sequenceStart + 1;
 
     // End of nodes reached, no vacancy, break
-    if (_sequenceStart >= (count _nodes)) then { break };
+    if (_sequenceStart >= count _nodes) then { break };
 
     // Starting at current sequence start, try to find a sequence of free nodes
     private _thisSequence = [];
 
     for "_n" from 0 to (_sequenceLength - 1) do {
-        private _thisNode = _nodes select (_sequenceStart + _n);
+        if ((_sequenceStart + _n) >= count _nodes) then { break };
+
+        private _thisNode = _nodes select(_sequenceStart + _n);
 
         _thisNode params["_free","","","_canCouple"];
 
-        if (_free isEqualTo 1 && { _canCouple isEqualTo 1 }) then {
+        if (_free isNotEqualTo 1) then { break };
+
+        if ((_n isEqualTo 0) || { _canCouple isEqualTo 1 }) then {
             _thisSequence pushBack _thisNode;
         };
     };
