@@ -108,7 +108,7 @@ class bwa3_nh90_bwa3_nh90_p3d : TRIPLES(ADDON,Nodes,Base)
         {
             offset[] = {0.550178,-2.55,1.0234};
             seats[] = {};
+            canCouple = 0;
         };
     };
 };
-
