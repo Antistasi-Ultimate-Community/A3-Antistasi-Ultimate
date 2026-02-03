@@ -975,7 +975,7 @@ class rhsusf_addons_rhsusf_melb_MELB_p3d : TRIPLES(ADDON,Nodes,Base)
         class Node1
         {
             offset[] = {0,0.8049,-1.183};
-            seats[] = {};
+            seats[] = {0};
         };
     };
 };
