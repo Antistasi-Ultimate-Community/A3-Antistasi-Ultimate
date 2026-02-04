@@ -516,7 +516,7 @@ for "_i" from 1 to _max do {
 	_vehiclesX pushBack _veh;
 
 	sleep 1;
-	[(gunner _veh), 300] spawn SCRT_fnc_common_scanHorizon;
+	[gunner _veh, GVAR(scanHorizonHeight)] spawn SCRT_fnc_common_scanHorizon;
 
 	_veh setVariable ["originalPos", getPosATL _veh];
 };
