@@ -54,14 +54,7 @@ private _InfGroup = [_AirDropPositionActuall, _side, _specOpsArray] call A3A_fnc
 _InfGroup setBehaviourStrong "SAFE";
 private _wp = _InfGroup addWaypoint [_AirDropPosition, 50];
 _wp setWaypointType "SAD";
-/* if (_difficult) then {
-	_UAVtype = selectRandom (_faction get "uavsPortable");
-	_uav = createVehicle [_UAVtype, _AirDropPositionActuall, [], 0, "FLY"];
-	[_side, _uav] call A3A_fnc_createVehicleCrew;
-	_vehicles pushBack _uav;
-	_groupUAV = group (crew _uav select 1);
-	{[_x] joinSilent _InfGroup} forEach units _groupUAV;
-}; */
+
 _groups pushBack _InfGroup;
 [_InfGroup, "Patrol_Attack", 0, 50, 100, true, _AirDropPosition, true] call A3A_fnc_patrolLoop;
 
@@ -149,7 +142,9 @@ if(alive _planeVeh) then {
     
     private _boxType = selectRandom [
         "CargoNet_01_barrels_F",
-        "Land_FoodSacks_01_cargo_brown_F", (selectRandom (_faction get "vehiclesLightArmed"))
+        "Land_FoodSacks_01_cargo_brown_F",
+        "CargoNet_01_box_F",
+        (selectRandom (_faction get "vehiclesLightArmed"))
     ]; //change the boxes
 
     _planeVeh allowDamage false;
@@ -166,7 +161,7 @@ if(alive _planeVeh) then {
     sleep 1;
 
     private _box2Class = [ 
-        (["CargoNet_01_barrels_F", "Land_FoodSacks_01_cargo_brown_F"] select (random 100 < 50)),
+        (selectRandom ["CargoNet_01_barrels_F", "Land_FoodSacks_01_cargo_brown_F", "CargoNet_01_box_F"]),
         _faction get "ammobox"
     ] select _difficult;
 
@@ -211,6 +206,16 @@ if(alive _planeVeh) then {
 
     detach _light1;
     detach _light2;
+};
+
+sleep 5; //probably enough time for them to land
+if ((getPosASL _box1) select 2 < 0) then { //in case box ends up underwater
+    _box1 setVariable ["SalvageCrate", true, true];
+    [_box1] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _box1];
+};
+if ((getPosASL _box2) select 2 < 0) then { //in case box ends up underwater
+    _box2 setVariable ["SalvageCrate", true, true];
+    [_box2] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _box2];
 };
 
 _vehicles append _others;
