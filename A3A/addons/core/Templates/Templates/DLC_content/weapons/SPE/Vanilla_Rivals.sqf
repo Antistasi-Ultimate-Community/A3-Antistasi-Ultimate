@@ -1,5 +1,7 @@
 _rpgs append [
-    ["SPE_M1A1_Bazooka", "", "", "", ["SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6"], [], ""]
+    ["SPE_M1A1_Bazooka", "", "", "", ["SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6"], [], ""],
+    ["SPE_M9A1_Bazooka", "", "", "", ["SPE_1Rnd_60mm_M6A3","SPE_1Rnd_60mm_M6A3","SPE_1Rnd_60mm_M6A3"], [], ""],
+    ["SPE_M9_Bazooka", "", "", "", ["SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6","SPE_1Rnd_60mm_M6"], [], ""]
 ];
 _rifles append [
     ["SPE_STG44","","","",["SPE_30Rnd_792x33","SPE_30Rnd_792x33","SPE_30rnd_792x33_t"],[],""],

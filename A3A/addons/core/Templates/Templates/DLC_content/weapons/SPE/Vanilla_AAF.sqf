@@ -40,8 +40,8 @@
     ["SPE_LMG_303_Mk2","","","",["SPE_30Rnd_770x56","SPE_30Rnd_770x56_AP_MKI","SPE_30Rnd_770x56_MKVIII"],[],""], 2
 ]; */
 (_militiaLoadoutData get "sniperRifles") append [
-    ["SPE_M1903A4_Springfield","","","",["SPE_5Rnd_762x63","SPE_5Rnd_762x63_M1","SPE_5Rnd_762x63_t","SPE_5Rnd_762x63_M2_AP"],[],""], 3,
-    ["SPE_K98ZF39","","","",["SPE_5Rnd_792x57","SPE_5Rnd_792x57_t","SPE_5Rnd_792x57_SMK","SPE_5Rnd_792x57_sS"],[],""], 3
+    ["SPE_M1903A4_Springfield","","","",["SPE_5Rnd_762x63","SPE_5Rnd_762x63_M1","SPE_5Rnd_762x63_t","SPE_5Rnd_762x63_M2_AP"],[],""], 1,
+    ["SPE_K98ZF39","","","",["SPE_5Rnd_792x57","SPE_5Rnd_792x57_t","SPE_5Rnd_792x57_SMK","SPE_5Rnd_792x57_sS"],[],""], 1
 ];
 //////////////////////////////////////////////////////
 (_loadoutData get "lightATLaunchers") append [

@@ -1,4 +1,4 @@
-		class handgunsspe{
+		class handgunsspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_handguns"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
 			
@@ -7,7 +7,7 @@
 			
 		};
 
-		class smgspe{
+		class smgspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_smgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 		
@@ -19,7 +19,7 @@
 			ITEM(SPEX_M1928A1_Thompson, 300, RIFLE_STOCK); // SPEX_50Rnd_Thompson_45ACP SPEX_50Rnd_Thompson_45ACP_t 
 		};
 
-		class riflesspe{
+		class riflesspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_rifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
@@ -30,7 +30,7 @@
 			ITEM(SPEX_No4_Mk1_Enfield_dunkel, 230, RIFLE_STOCK); //NORMAL: SPE_5Rnd_770x56 SPE_5Rnd_770x56_AP_MKI SPE_5Rnd_770x56_MKVIII
 		};
 
-		class mgspe{
+		class mgspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_mgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";	
 
@@ -38,13 +38,12 @@
 			
 		};
 
-		class sniperriflesspe{
+		class sniperriflesspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_sniperRifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 		
 			ITEM(SPEX_No4_Mk1_Enfield_Scoped, 570, RIFLE_STOCK); // SAME AS SPE_M1903A3_Springfield
 			ITEM(SPEX_No4_Mk1_Enfield_Scoped_dunkel, 570, RIFLE_STOCK); // SAME AS SPE_M1903A3_Springfield
-			ITEM(SPEX_No4_Mk1_Enfield_Scoped, 570, RIFLE_STOCK); // SAME AS SPE_M1903A3_Springfield
 		};
 		
 		class launchersspex
@@ -62,7 +61,7 @@
 
 		}; 
 
-		class launchermagazinesspe{
+		class launchermagazinesspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_launcherAmmo"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";
 
@@ -70,7 +69,7 @@
 			
 		};
 
-		class miscspe{
+		class miscspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_misc"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 			
@@ -80,7 +79,7 @@
 			
 		};
 
-		class muzzlesspe{
+		class muzzlesspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spearhead", localize "STR_A3AU_muzzles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemMuzzle_ca.paa";
 			
@@ -88,12 +87,10 @@
 			ITEM(SPEX_ACC_P1907_Bayo, 75, MZ_STOCK);
 
 			ITEM(SPEX_ACC_No4_Mk2_Bayo, 75, MZ_STOCK);
-
-			ITEM(SPEX_ACC_No4_Mk2_Bayo, 75, MZ_STOCK);
 			
 		};
 
-		class magazinesspe{
+		class magazinesspex{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_magazines"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\cargoMag_ca.paa";		
 			
@@ -887,7 +884,7 @@
 			ITEM(U_SPEX_PL_INF_BD_STRZ, 50, MISC_STOCK);
 		};
 
-		class vestsspe
+		class vestsspex
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_vests"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
@@ -1070,7 +1067,7 @@
 			ITEM(V_SPEX_cw_vest_p37_N97_sten_P41_Tin, 50, MISC_STOCK);
 		};
 
-		class backpacksspe
+		class backpacksspex
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_backpacks"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
@@ -1369,15 +1366,15 @@
 			ITEM(B_SPEX_GER_ST_camo_MG_Full_zelt, 50, MISC_STOCK)
 		};
 
-		class facewearspe
+		/* class facewearspex
 		{
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_spex", localize "STR_A3AU_facewear"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 			///facewear
 
-		};
+		}; */
 
-		class navigationspe
+		class navigationspex
 		{
 			displayName = __EVAL(formatText ["%1 %2, %3 %4 %5", localize "STR_A3AU_spex", localize "STR_A3AU_gps", localize "STR_A3AU_binoculars", localize "STR_A3AU_and", localize "STR_A3AU_nvgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\compass_ca.paa";

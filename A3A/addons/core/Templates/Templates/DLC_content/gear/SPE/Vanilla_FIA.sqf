@@ -34,6 +34,7 @@ _initialRebelEquipment append [
     "SPE_US_Mk_3",
     "SPE_M39",
     "SPE_Shg24",
+    "SPE_5Rnd_770x56",
     ["SPE_Shg24x7",20],
     ["SPE_US_TNT_4pound_mag",5],
     ["SPE_US_TNT_half_pound_mag",5],

@@ -209,5 +209,12 @@ _backpacks append [
 (_loadoutData get "headgear") append [
 	"H_SPE_CIV_Worker_Cap_1",
     "H_SPE_CIV_Worker_Cap_2",
-    "H_SPE_CIV_Worker_Cap_3"
+    "H_SPE_CIV_Worker_Cap_3",
+	"H_SPE_US_HBT_cap",
+	"H_SPE_US_HBT_cap_up",
+	"H_SPE_US_HBT_cap_polar",
+	"H_SPE_US_HBT_cap_rear",
+	"H_SPE_US_jeep_cap",
+	"H_SPE_US_jeep_cap_polar",
+	"H_SPE_US_jeep_cap_rear"
 ];

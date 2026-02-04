@@ -100,6 +100,10 @@ if (_hasSPE) then {
 	#include "..\DLC_content\vehicles\SPE\Vanilla_Rivals.sqf" 
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_Rivals.sqf"
+};
+
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;
 ["mortarAmmo", ["Sh_82mm_AMOS"]] call _fnc_saveToTemplate;
@@ -240,6 +244,10 @@ if (_hasSPE) then {
 
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\weapons\Vanilla_Rivals.sqf"
 };
 
 _loadoutData set ["rifles", _rifles];

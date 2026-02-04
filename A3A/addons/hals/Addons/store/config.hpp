@@ -377,8 +377,8 @@ class cfgHALsStore
 				"helmetsspex",
 				"uniformsspex",
 				"backpacksspex",
-				"vestsspex",
-				"facewearspex"
+				"vestsspex"
+				//"facewearspex"
 			};
 		};
 		////

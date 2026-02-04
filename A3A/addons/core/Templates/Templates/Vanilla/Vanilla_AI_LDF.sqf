@@ -153,6 +153,10 @@ if (_hasSPE) then {
     #include "..\DLC_content\vehicles\SPE\Vanilla_LDF.sqf"
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\vehicles\Vanilla_AAF.sqf"
+};
+
 if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
 };
@@ -749,6 +753,10 @@ if (_hasEF) then {
 
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_LDF.sqf"
+};
+
+if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
+	#include "..\MOD_content\SPEX\weapons\Vanilla_AAF.sqf"
 };
 
 /////////////////////////////////
