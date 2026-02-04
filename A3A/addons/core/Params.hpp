@@ -1243,6 +1243,24 @@ class Params
         default = 1;
         lockInGame = 1;
     };
+    class A3U_disablePATCOMMortars : ExperimentalParams
+    {
+        title = $STR_params_disablePATCOMMortars;
+        tooltip = $STR_params_disablePATCOMMortars_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+        lockInGame = 1;
+    };
+    class A3U_disableMortars : ExperimentalParams
+    {
+        title = $STR_params_disableMortars;
+        tooltip = $STR_params_disableMortars_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+        lockInGame = 0;
+    };
     class EGVAR(ultimate,allowLockpickKits) : ExperimentalParams
     {
         title = $STR_params_ultimate_allowLockpickKits;
