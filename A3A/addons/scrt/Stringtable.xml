@@ -6462,6 +6462,12 @@
                 <Korean>개발 옵션</Korean>
                 <French>OPTIONS DE DÉVELOPPEMENT</French>
             </Key>
+            <Key ID="STR_params_A3U_Zombies">
+                <Original>Antistasi Zombies</Original>
+            </Key>
+            <Key ID="STR_params_A3U_Zombies_desc">
+                <Original>Zombie mode. Selected civilian faction will all be zombies, hostile to all warring factions. Take control of civlian towns / cities to clear the infestation and return the civilian populace to the AO.</Original>
+            </Key>
         </Container>
         <Container name="roles">
             <Key ID="STR_role_default_commander_role_name">
