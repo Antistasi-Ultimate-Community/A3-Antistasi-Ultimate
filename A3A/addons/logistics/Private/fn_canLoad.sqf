@@ -106,11 +106,14 @@ while { isNil "_node" } do {
 
         _thisNode params["_free","","","_canCouple"];
 
+        // Ocupando, break
         if (_free isNotEqualTo 1) then { break };
 
-        if ((_n isEqualTo 0) || { _canCouple isEqualTo 1 }) then {
-            _thisSequence pushBack _thisNode;
-        };
+        // If we're trying to load size>1 cargo here, any node after the base
+        // node needs to have `canCouple` set. If not, break, search for next.
+        if ((_n isNotEqualTo 0) && { _canCouple isNotEqualTo 1 }) then { break };
+
+        _thisSequence pushBack _thisNode;
     };
 
     // If we found a full sequence, assign it to _node
