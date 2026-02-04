@@ -1,3 +1,4 @@
+#include "..\..\script_component.hpp"
 /*
     Author:
         Maxx, Silence
@@ -26,45 +27,24 @@
 
 params ["_vehicle"];
 
-[ 
+if isNull(_vehicle) exitWith {};
+
+_vehicle setVariable[QGVAR(lockpickAction), [ 
     _vehicle,
     localize "STR_A3AU_action_lockpick_title",
     "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
     "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    "isNull objectParent _this && {_this distance _target < 10} && {alive _target} && {_target call A3U_fnc_isLocked}",
-    "(_caller distance _target < 10) && {_caller call A3A_fnc_isEngineer}",
-    {
-        params ["_target", "_caller", "_actionId", "_arguments"];
-
-        // private _closestZone = (sidesX getVariable [([call A3U_fnc_lockpickZones, _caller] call BIS_fnc_nearestPosition), sideUnknown]);
-        // if (_closestZone isEqualTo teamPlayer) exitWith {
-        //     [_target, _actionId] call BIS_fnc_holdActionRemove;
-        //     [_target, false] remoteExecCall ["A3U_fnc_setLock", (owner _target)];
-        // };
-        // Re-enable if instant lockpicking after capture is desired
-
-        if !(_caller call A3A_fnc_isEngineer) then {
-            [localize "STR_A3AU_action_lockpick_title", localize "STR_A3AU_action_lockpick_not_engineer"] call A3A_fnc_customHint;
-        };
-    },
-    {
-        params ["_target", "_caller", "_actionId", "_arguments", "_frame", "_maxFrame"];
-
-        [_target, _caller, _actionId, _frame, _maxFrame] call A3U_fnc_lockpickOnProgress;
-    },
-    {
-        params ["_target", "_caller", "_actionId", "_arguments"];
-
-        [_target, _caller, _actionId] call A3U_fnc_lockpickOnSuccess;
-    },
-    {
-        params ["_target", "_caller", "_actionId", "_arguments"];
-        
-        [_target, _caller] call A3U_fnc_lockpickOnFail;
-    },
+    QUOTE([ARR_3(_this,_target,true)] call A3U_fnc_canLockpick),
+    QUOTE([ARR_2(_caller,_target)] call A3U_fnc_canLockpick),
+    { call A3U_fnc_lockpickOnStart },
+    { call A3U_fnc_lockpickOnProgress },
+    { call A3U_fnc_lockpickOnSuccess },
+    { call A3U_fnc_lockpickOnFail },
     [],
     vehicleLockpickTime,
     2026,
     false,
     false
-] call BIS_fnc_holdActionAdd;
+] call BIS_fnc_holdActionAdd];
+
+nil;
