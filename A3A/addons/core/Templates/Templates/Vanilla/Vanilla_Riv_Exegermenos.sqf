@@ -50,7 +50,6 @@ private _faces = [
 	"RussianHead_5"
 ]; 
 ["voices", ["Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE","Male01ENGFRE","Male02ENGFRE","male01rus","male02rus","male03rus"]] call _fnc_saveToTemplate;
-["faces", _faces] call _fnc_saveToTemplate;
 
 if (_hasSOG) then {
   _faces append [
@@ -58,6 +57,8 @@ if (_hasSOG) then {
 	#include "..\DLC_content\faces\SOG\SOG_faces_greek.sqf"
   ];
 };
+
+["faces", _faces] call _fnc_saveToTemplate;
 //////////////////////////
 //       Vehicles       //
 //////////////////////////

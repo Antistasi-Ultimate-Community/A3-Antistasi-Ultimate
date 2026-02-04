@@ -28,8 +28,7 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 private _faces = ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem","TanoanHead_A3_01","TanoanHead_A3_02","TanoanHead_A3_03","TanoanHead_A3_04","TanoanHead_A3_05","TanoanHead_A3_06","TanoanHead_A3_07","TanoanHead_A3_08"];
 private _voices = ["Male01ENGFRE","Male02ENGFRE","male01fre","male02fre","male03fre"];
-["voices", _voices] call _fnc_saveToTemplate;
-["faces", _faces] call _fnc_saveToTemplate;
+
 if (_hasSPE) then {
   _faces append [
     #include "..\DLC_content\faces\SPE\SPE_white.sqf"
@@ -59,6 +58,10 @@ if (_hasWS) then {
     #include "..\DLC_content\faces\WS\WS_african.sqf"
   ];
 };
+
+["voices", _voices] call _fnc_saveToTemplate;
+["faces", _faces] call _fnc_saveToTemplate;
+
 //////////////////////////
 //       Vehicles       //
 //////////////////////////

@@ -45,13 +45,21 @@
 ["gm_ge_army_Leopard1a1a2_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
 ["gm_ge_army_Leopard1a3a1_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
 ["gm_ge_army_Leopard1a5_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_ge_army_Leopard1a1a1_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+///1.6 update
+["gm_dk_army_Leopard1a5dk1",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_dk_army_Leopard1a5dk1_dozer",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_ge_army_m113a1g_mortar_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_ge_army_fuchsa0_medic_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_ge_army_fuchsa1_jammer_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_ge_army_Leopard1a4_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
+["gm_ge_army_rakjpz2_noinsignia",["gm_merdc_wht", 0.5,"gm_carc_tan",0.5]],
 
-
-["gm_ge_army_bo105p1m_vbh_swooper_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_un",0.4]],
-["gm_ge_army_bo105p1m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_un",0.4]],
-["gm_ge_army_bo105m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_un",0.4]],
-["gm_ge_army_bo105p_pah1_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_un",0.4]],
-["gm_ge_army_bo105p_pah1a1_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_un",0.4]],
+["gm_ge_army_bo105p1m_vbh_swooper_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2,"gm_ge_un",0.4]],
+["gm_ge_army_bo105p1m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2,"gm_ge_un",0.4]],
+["gm_ge_army_bo105m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2,"gm_ge_un",0.4]],
+["gm_ge_army_bo105p_pah1_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2,"gm_ge_un",0.4]],
+["gm_ge_army_bo105p_pah1a1_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2,"gm_ge_un",0.4]],
 ["gm_ge_army_ch53gs_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_olo",0.2 ,"gm_ge_olu",0.2,"gm_ge_un",0.4]],
 ["gm_ge_army_ch53g_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_olo",0.2 ,"gm_ge_olu",0.2,"gm_ge_un",0.4]],
 
@@ -130,4 +138,7 @@
 ["gm_pl_airforce_mi2t_noinsignia",["gm_pl_un",1]],
 ["gm_pl_airforce_mi2urn_noinsignia",["gm_pl_un",1]],
 ["gm_pl_airforce_mi2urpg_noinsignia",["gm_pl_un",1]],
-["gm_pl_airforce_mi2us_noinsignia",["gm_pl_un",1]]
+["gm_pl_airforce_mi2us_noinsignia",["gm_pl_un",1]],
+///1.6 update
+["gm_gc_army_bmp1p_noinsignia",["gm_pl_un",1]],
+["gm_gc_army_brdm2_9p133_noinsignia",["gm_pl_un",1]]

@@ -18,16 +18,7 @@ _dlcUniforms append [
     "U_C_HeliPilotCoveralls_Black_RF"
 ];
 
-_dlcheadgear append [
-    "H_Helmet_HardHat_White_RF",
-    "H_Helmet_HardHat_Yellow_RF",
-    "H_Helmet_HardHat_Green_RF",
-    "H_Helmet_HardHat_Red_RF",
-    "H_Helmet_HardHat_Orange_RF",
-    "H_Helmet_HardHat_Blue_RF",
-    "H_Helmet_HardHat_Black_RF",
-    "H_Cap_marshal_blue_RF"
-];
+_dlcheadgear pushBack "H_Cap_marshal_blue_RF";
 
 (_loadoutData get "facemask") pushBack "G_Bandanna_yellow_RF";
 (_loadoutData get "glasses") append ["G_Glasses_black_RF","G_Glasses_white_RF"];

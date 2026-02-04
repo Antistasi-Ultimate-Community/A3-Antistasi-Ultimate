@@ -22,9 +22,11 @@
 ["gm_dk_army_bpz2a0_noinsignia", ["gm_drapolive",1]],
 ["gm_dk_army_Leopard1a3_noinsignia", ["gm_drapolive",1]],
 ["gm_dk_army_m113a2dk_noinsignia", ["gm_drapolive",1]],
-["gm_ge_army_bo105p1m_vbh_swooper_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2]],
-["gm_ge_army_bo105p1m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2]],
-["gm_ge_army_bo105m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2]],
+["gm_ge_army_bo105p1m_vbh_swooper_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2]],
+["gm_ge_army_bo105p1m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2]],
+["gm_ge_army_bo105m_vbh_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2]],
+["gm_ge_army_bo105p_pah1a1_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2]],
+["gm_ge_army_bo105p_pah1_noinsignia", ["gm_ge_oli",0.8 ,"gm_ge_hornet",0.2,"gm_ge_hornet1",0.2]],
 ["gm_ge_army_ch53gs_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_olo",0.2 ,"gm_ge_olu",0.2]],
 ["gm_ge_army_ch53g_noinsignia",["gm_ge_oli",0.8 ,"gm_ge_olo",0.2 ,"gm_ge_olu",0.2]],
 ["gm_ge_army_fuchsa0_reconnaissance_noinsignia",["gm_drapolive",1]],
@@ -50,4 +52,19 @@
 ["gm_ge_army_Leopard1a1_noinsignia",["gm_drapolive",1]],
 ["gm_ge_army_Leopard1a1a2_noinsignia",["gm_drapolive",1]],
 ["gm_ge_army_Leopard1a3a1_noinsignia",["gm_drapolive",1]],
-["gm_ge_army_Leopard1a5_noinsignia",["gm_drapolive",1]]
+["gm_ge_army_Leopard1a5_noinsignia",["gm_drapolive",1]],
+["gm_ge_army_Leopard1a1a1_noinsignia",["gm_drapolive",1]],
+
+///for LDF
+["gm_pl_airforce_mi2urp_noinsignia",["gm_pl_wdl",0.3,"gm_pl_oli",0.7]],
+["gm_pl_airforce_mi2urpg_noinsignia",["gm_pl_wdl",0.3,"gm_pl_oli",0.7]],
+["gm_pl_airforce_mi2urs_noinsignia",["gm_pl_wdl",0.3,"gm_pl_oli",0.7]],
+
+///1.6 update
+["gm_dk_army_Leopard1a5dk1",["gm_drapolive",1]],
+["gm_dk_army_Leopard1a5dk1_dozer",["gm_drapolive",1]],
+["gm_ge_army_m113a1g_mortar_noinsignia",["gm_drapolive",1]],
+["gm_ge_army_fuchsa0_medic_noinsignia",["gm_ge_oli_rc",1]],
+["gm_ge_army_fuchsa1_jammer_noinsignia",["gm_drapolive",1]],
+["gm_ge_army_Leopard1a4_noinsignia",["gm_drapolive",1]],
+["gm_ge_army_rakjpz2_noinsignia",["gm_drapolive",1]]

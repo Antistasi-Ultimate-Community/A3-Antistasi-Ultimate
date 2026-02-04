@@ -41,5 +41,7 @@
 ["gm_gc_airforce_mi2p_noinsignia",["gm_gc_brb",1]],
 ["gm_gc_airforce_mi2t_noinsignia",["gm_gc_brb",1]],
 ["gm_gc_airforce_mi2urn_noinsignia",["gm_gc_brb",1]],
-["gm_gc_airforce_mi2us_noinsignia",["gm_gc_brb",1]]
-
+["gm_gc_airforce_mi2us_noinsignia",["gm_gc_brb",1]],
+///1.6 update
+["gm_gc_army_bmp1p_noinsignia",["gm_pkhv4",1]],
+["gm_gc_army_brdm2_9p133_noinsignia",["gm_pkhv4",1]]

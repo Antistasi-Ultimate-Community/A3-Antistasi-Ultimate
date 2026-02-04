@@ -522,6 +522,7 @@
 				price = 525;
 				stock = MAGAZINE_STOCK;
 			};
+			
 			///////////////////////////////////////////////////////
 			// DMRs, Sniper Rifles
 			///////////////////////////////////////////////////////
@@ -549,8 +550,6 @@
 				price = 125;
 				stock = MAGAZINE_STOCK;
 			};
-
-
 			
 			///////////////////////////////////////////////////////
 			// MGs
@@ -661,7 +660,7 @@
 
 			ITEM(H_HelmetCrew_O_ghex_F, 700, MISC_STOCK);
 
-			ITEM(H_Helmet_Skate, 200, MISC_STOCK);
+			ITEM(H_Helmet_Skate, 70, MISC_STOCK);
 
 			ITEM(G_Balaclava_TI_blk_F, 900, MISC_STOCK);
 			ITEM(G_Balaclava_TI_G_blk_F, 900, MISC_STOCK);

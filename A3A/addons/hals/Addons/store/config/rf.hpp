@@ -326,4 +326,12 @@
 			ITEM(U_C_PilotJacket_open_brown_RF, 1000, MISC_STOCK);
 			ITEM(U_C_PilotJacket_lbrown_RF, 1000, MISC_STOCK);
 			ITEM(U_C_PilotJacket_open_lbrown_RF, 1000, MISC_STOCK);
+
+			ITEM(H_Helmet_HardHat_White_RF, 100, MISC_STOCK);
+    		ITEM(H_Helmet_HardHat_Yellow_RF, 100, MISC_STOCK);
+    		ITEM(H_Helmet_HardHat_Green_RF, 100, MISC_STOCK);
+    		ITEM(H_Helmet_HardHat_Red_RF, 100, MISC_STOCK);
+    		ITEM(H_Helmet_HardHat_Orange_RF, 100, MISC_STOCK);
+    		ITEM(H_Helmet_HardHat_Blue_RF, 100, MISC_STOCK);
+    		ITEM(H_Helmet_HardHat_Black_RF, 100, MISC_STOCK);
 		};

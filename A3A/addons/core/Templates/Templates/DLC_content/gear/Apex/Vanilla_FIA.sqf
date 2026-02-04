@@ -26,6 +26,6 @@ _dlcUniforms append [
     "U_I_C_Soldier_Para_5_F"
 ];
 
-_dlcheadgear append [
+/* _dlcheadgear append [
     "H_Helmet_Skate"
-];
+]; */

@@ -234,7 +234,8 @@ private _faces = [
 private _sffaces = ["RussianHead_1","RussianHead_2","RussianHead_3","RussianHead_4","RussianHead_5"];
 if (_hasWs) then {
     _faces append [
-        #include "..\DLC_content\faces\WS\WS_african.sqf"
+        #include "..\DLC_content\faces\WS\WS_african.sqf",
+        #include "..\DLC_content\faces\WS\WS_afcrican_camo.sqf" ///this is a relic from #576, but what am I, stupid?
     ];
 };
 if (_hasSOG) then {
