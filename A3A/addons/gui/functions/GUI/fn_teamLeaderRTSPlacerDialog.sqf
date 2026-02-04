@@ -33,7 +33,7 @@ switch (_mode) do
 		private _display = findDisplay A3A_IDD_TEAMLEADERDIALOG;
 		private _moneyCtrl = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMONEY;
 
-		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB # AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
+		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB get AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
 	};
 	case ("onLoad"):
     {
@@ -42,9 +42,9 @@ switch (_mode) do
 		private _buildControlsGroup = _parent controlsGroupCtrl A3A_IDC_TEAMLEADERBUILDINGGROUP;
 
 		private _moneyCtrl = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMONEY;
-		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB # AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
+		_moneyCtrl ctrlSetText format ["%1 %2", A3A_building_EHDB get AVAILABLE_MONEY, A3A_faction_civ get "currencySymbol"];
 
-		private _buildableObjects = A3A_buildableObjects;
+		private _buildableObjects = EGVAR(core,tlDialogBuildableObjects);
 		
 		private _boxWidth = round ((ctrlPosition _buildControlsGroup # 2) / GRID_W);
 		private _itemsPerRow = floor ((_boxWidth - 6) / 36);			// minimum 32 + 4 grids per tile
@@ -100,12 +100,12 @@ switch (_mode) do
 					call A3A_initBuildingDB;
 				};
 
-				private _object = (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+				private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
 				private _className = _control getVariable ["className", "Land_Tyres_F"];
 				if (_className == typeof _object) exitWith {};			// refire, potentially caused by hitting space
 
 				private _price = _control getVariable ["price", 0];
-				private _supply = A3A_building_EHDB # AVAILABLE_MONEY;
+				private _supply = A3A_building_EHDB get AVAILABLE_MONEY;
 				if (_price > _supply) exitWith {};			// TODO: Should disable buttons based on available money?
 
 				A3A_building_EHDB set [BUILD_OBJECT_SELECTED_STRING, _className];		// why does this exist?
@@ -122,7 +122,7 @@ switch (_mode) do
 				_object setDir _vehDir;
 				_object setVariable[QEGVAR(core,isTempObject), true, true];
 				A3A_building_EHDB set [BUILD_OBJECT_TEMP_OBJECT, _object];
-				call (A3A_building_EHDB # UPDATE_BB);
+				call (A3A_building_EHDB get UPDATE_BB);
 			}];
 
 			if (_price isNotEqualTo 0) then {

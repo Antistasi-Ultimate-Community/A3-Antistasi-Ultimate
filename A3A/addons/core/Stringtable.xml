@@ -5052,6 +5052,28 @@
                 <Spanish>Ya estas llevando algo</Spanish>
                 <Polish>Już coś nosisz.</Polish>
             </Key>
+            <Key ID="STR_A3A_Utility_Items_Box_BuildingPlacer_Chemlights">
+                <Original>Chemlights box</Original>
+                <French>Boîte de bâtons lumineux</French>
+                <Korean>형광봉 상자</Korean>
+                <Russian>Коробка с химическими светильниками</Russian>
+                <Chinesesimp>化学发光棒箱</Chinesesimp>
+                <Italian>Scatola di Bastoncini Luminosi</Italian>
+                <Czech>Box s chemickými světly</Czech>
+                <Spanish>Caja de luces químicas</Spanish>
+                <Polish>Pudełko z pałeczkami chemicznymi</Polish>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations">
+                <Original>Base decorations box</Original>
+                <French>Boîte de décorations de base</French>
+                <Korean>기지 장식 상자</Korean>
+                <Russian>Коробка с декорациями базы</Russian>
+                <Chinesesimp>基地装饰箱</Chinesesimp>
+                <Italian>Scatola decorazioni base</Italian>
+                <Czech>Box s dekoracemi základen</Czech>
+                <Spanish>Caja de decoraciones de la base</Spanish>
+                <Polish>Pudełko z dekoracjami bazy</Polish>
+            </Key>
         </Container>
         <Container name="time_units">
             <!--Note

@@ -789,6 +789,8 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class attachLight {};
+            class attachLightFromConfig {};
             class basicBackpack {};
             class classNameToModel {};
             class countAttachedObjects {};
