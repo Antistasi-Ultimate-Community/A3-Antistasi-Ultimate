@@ -8,6 +8,7 @@ class DOUBLES(ADDON,Nodes)
 
     #include "Nodes\3CBBAF.hpp"
     #include "Nodes\3CBFactions.hpp"
+    #include "Nodes\BWMod.hpp"
     #include "Nodes\CUP.hpp"
     #include "Nodes\CSLA.hpp"
     #include "Nodes\D3S.hpp"
