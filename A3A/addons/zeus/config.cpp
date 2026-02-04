@@ -297,28 +297,49 @@ class CfgPatches
 
             // base modules
             QGVAR(Module_Base),
-
-            // support modules
             QGVAR(Module_Support_Base),
-            QGVAR(Module_Support_Airstrike),
-            QGVAR(Module_Support_ASF),
-            QGVAR(Module_Support_CAS),
-            QGVAR(Module_Support_CASDive),
-            QGVAR(Module_Support_CarpetBomb),
-            QGVAR(Module_Support_Gunship),
-            QGVAR(Module_Support_Artillery),
-            QGVAR(Module_Support_Mortar),
-            QGVAR(Module_Support_Howitzer),
-            QGVAR(Module_Support_SAM),
-            QGVAR(Module_Support_CruiseMissile),
-            QGVAR(Module_Support_QRFLand),
-            QGVAR(Module_Support_QRFAir),
-            QGVAR(Module_Support_QRFVehAirdrop),
-            QGVAR(Module_Support_QRFOrbital),
-            QGVAR(Module_Support_OrbitalStrike),
-            QGVAR(Module_Support_UAV),
-            QGVAR(Module_Support_UAVAttack),
-            QGVAR(Module_Support_Tank)
+
+            // occupant support modules
+            QGVAR(Module_Support_Occupants_Airstrike),
+            QGVAR(Module_Support_Occupants_ASF),
+            QGVAR(Module_Support_Occupants_CAS),
+            QGVAR(Module_Support_Occupants_CASDive),
+            QGVAR(Module_Support_Occupants_CarpetBomb),
+            QGVAR(Module_Support_Occupants_Gunship),
+            QGVAR(Module_Support_Occupants_Artillery),
+            QGVAR(Module_Support_Occupants_Mortar),
+            QGVAR(Module_Support_Occupants_Howitzer),
+            QGVAR(Module_Support_Occupants_SAM),
+            QGVAR(Module_Support_Occupants_CruiseMissile),
+            QGVAR(Module_Support_Occupants_QRFLand),
+            QGVAR(Module_Support_Occupants_QRFAir),
+            QGVAR(Module_Support_Occupants_QRFVehAirdrop),
+            QGVAR(Module_Support_Occupants_QRFOrbital),
+            QGVAR(Module_Support_Occupants_OrbitalStrike),
+            QGVAR(Module_Support_Occupants_UAV),
+            QGVAR(Module_Support_Occupants_UAVAttack),
+            QGVAR(Module_Support_Occupants_Tank),
+
+            // invader support modules
+            QGVAR(Module_Support_Invaders_Airstrike),
+            QGVAR(Module_Support_Invaders_ASF),
+            QGVAR(Module_Support_Invaders_CAS),
+            QGVAR(Module_Support_Invaders_CASDive),
+            QGVAR(Module_Support_Invaders_CarpetBomb),
+            QGVAR(Module_Support_Invaders_Gunship),
+            QGVAR(Module_Support_Invaders_Artillery),
+            QGVAR(Module_Support_Invaders_Mortar),
+            QGVAR(Module_Support_Invaders_Howitzer),
+            QGVAR(Module_Support_Invaders_SAM),
+            QGVAR(Module_Support_Invaders_CruiseMissile),
+            QGVAR(Module_Support_Invaders_QRFLand),
+            QGVAR(Module_Support_Invaders_QRFAir),
+            QGVAR(Module_Support_Invaders_QRFVehAirdrop),
+            QGVAR(Module_Support_Invaders_QRFOrbital),
+            QGVAR(Module_Support_Invaders_OrbitalStrike),
+            QGVAR(Module_Support_Invaders_UAV),
+            QGVAR(Module_Support_Invaders_UAVAttack),
+            QGVAR(Module_Support_Invaders_Tank)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

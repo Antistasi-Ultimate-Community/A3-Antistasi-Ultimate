@@ -357,8 +357,11 @@
             </Key>
         </Container>
         <Container name="ModuleTypes">
-            <Key ID="STR_A3U_Zeus_ModuleType_Supports">
-                <Original>[A3U] Supports</Original>
+            <Key ID="STR_A3U_Zeus_ModuleType_Supports_Occupants">
+                <Original>[A3U] Supports (Occupants)</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Supports_Invaders">
+                <Original>[A3U] Supports (Invaders)</Original>
             </Key>
             <Key ID="STR_A3U_Zeus_ModuleType_Support_Airstrike">
                 <Original>Airstrike</Original>
@@ -427,6 +430,9 @@
             </Key>
             <Key ID="STR_A3U_Zeus_Misc_Dialog_NoVehicleOfType">
                 <Original>Faction %1 has no vehicles of type %2</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_Misc_Dialog_NoSupportOfType">
+                <Original>Faction has no support of type %1</Original>
             </Key>
         </Container>
     </Package>

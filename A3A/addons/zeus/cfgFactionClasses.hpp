@@ -38,8 +38,12 @@ class CfgFactionClasses
 	};
 
 	// modules
-	class GVAR(Supports) {
-        displayName = "$STR_A3U_Zeus_ModuleType_Supports";
+	class GVAR(Supports_Occupants) {
+        displayName = "$STR_A3U_Zeus_ModuleType_Supports_Occupants";
         side = 7;
     };
+	class GVAR(Supports_Invaders) {
+		displayName = "$STR_A3U_Zeus_ModuleType_Supports_Invaders";
+		side = 7;
+	};
 };
