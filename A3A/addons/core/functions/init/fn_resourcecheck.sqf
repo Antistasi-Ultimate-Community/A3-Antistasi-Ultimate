@@ -108,7 +108,7 @@ while {true} do {
 			[_city] call A3A_fnc_mrkUpdate;
 
 			private _closestAdminMarker = [milAdministrationsX, _city] call BIS_fnc_nearestPosition;
-			if ((getMarkerPos _closestAdminMarker) distance2D (getMarkerPos _city) < 800) then {
+			if (_closestAdminMarker isEqualType "" && {(getMarkerPos _closestAdminMarker) distance2D (getMarkerPos _city) < 800}) then {
 				private _milAdministration = [A3A_milAdministrations, _closestAdminMarker] call BIS_fnc_nearestPosition;
 				[_milAdministration, "SILENT"] call SCRT_fnc_location_removeMilAdmin;
 			};
