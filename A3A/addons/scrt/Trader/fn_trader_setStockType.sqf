@@ -141,6 +141,9 @@ if (!_hasBlockingModsets || {vanillaArmsDealer isEqualTo true}) then {
     _modsets pushBackUnique "vanilla";
 };
 
+// Always add A3A Ultimate modset
+_modsets pushBackUnique "a3u";
+
 if ("coldWar" in A3A_factionEquipFlags) then { // 3cbf cold war //why do it this way?
     _modsets pushBack "3cbfcw";
 };
