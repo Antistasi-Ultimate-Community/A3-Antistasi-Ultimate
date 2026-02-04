@@ -30,7 +30,7 @@ if (_marker isEqualTo "") exitWith {};
 
 // Find all non-mortar statics within marker
 private _statics = staticsToSave inAreaArray _marker;
-_statics = _statics select {!(_x isKindOf "StaticMortar") and !(_x isKindOf "Air")};           // may include bunkers. Don't bother with mortars yet //why not bother with mortars?
+_statics = _statics select {!(_x isKindOf "Air")};           // may include bunkers.
 if (count _statics == 0) exitWith {};
 
 if (_target in ungaragedVehicles) then {
