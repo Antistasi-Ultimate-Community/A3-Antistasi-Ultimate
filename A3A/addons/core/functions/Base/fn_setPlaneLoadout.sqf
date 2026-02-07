@@ -270,7 +270,7 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["rhs_weap_s25", "rhs_weap_s25of"]];
             _plane setVariable ["diveParams", [1000, 600, 200, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
-        ///S.O.G. nickel steel
+         ///S.O.G. nickel steel
         case "vnx_b_air_ac119_04_01_noinsignia";
         case "vnx_b_air_ac119_04_01":
         {
@@ -279,16 +279,68 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [800, 400, 110, 55, 30, [500, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m) 650
         };
         ///S.O.G.
+        case "vn_b_air_f4b_usmc_ucas";
+        case "vn_b_air_f4b_usmc_sead";
+        case "vn_b_air_f4b_usmc_mr";
+        case "vn_b_air_f4b_usmc_mbmb";
+        case "vn_b_air_f4b_usmc_lrbmb";
+        case "vn_b_air_f4b_usmc_lbmb";
+        case "vn_b_air_f4b_usmc_hcas";
+        case "vn_b_air_f4b_usmc_hbmb";
+        case "vn_b_air_f4b_usmc_cbu";
+        case "vn_b_air_f4b_usmc_cas";
+        case "vn_b_air_f4b_usmc_cap";
+        case "vn_b_air_f4b_usmc_bmb";
+        case "vn_b_air_f4b_usmc_at";
+        case "vn_b_air_f4c_ucas";
+        case "vn_b_air_f4c_sead";
+        case "vn_b_air_f4c_mr";
+        case "vn_b_air_f4c_mbmb";
+        case "vn_b_air_f4c_lrbmb";
+        case "vn_b_air_f4c_lbmb";
+        case "vn_b_air_f4c_hcas";
+        case "vn_b_air_f4c_hbmb";
+        case "vn_b_air_f4c_gbu";
+        case "vn_b_air_f4c_ehcas";
+        case "vn_b_air_f4c_chico";
+        case "vn_b_air_f4c_cbu";
         case "vn_b_air_f4c_cas";
-        case "vn_b_air_f4c_at_noinsignia";
+        case "vn_b_air_f4c_cap";
+        case "vn_b_air_f4c_bmb";
+        case "vn_b_air_f4c_at";
+        case "vn_b_air_f4b_navy_ucas";
+        case "vn_b_air_f4b_navy_sead";
+        case "vn_b_air_f4b_navy_mr";
+        case "vn_b_air_f4b_navy_mbmb";
+        case "vn_b_air_f4b_navy_lrbmb";
+        case "vn_b_air_f4b_navy_lbmb";
+        case "vn_b_air_f4b_navy_hcas";
+        case "vn_b_air_f4b_navy_hbmb";
+        case "vn_b_air_f4b_navy_gbu";
+        case "vn_b_air_f4b_navy_ehcas";
+        case "vn_b_air_f4b_navy_cbu";
+        case "vn_b_air_f4b_navy_cas";
+        case "vn_b_air_f4b_navy_cap";
+        case "vn_b_air_f4b_navy_bmb";
+        case "vn_b_air_f4b_navy_at";
+        case "vn_b_air_f4c_cas";
         case "vn_b_air_f4c_at":
         {
             _loadout = ["","","vn_bomb_500_mk82_he_mag_x1","vn_bomb_750_blu1b_fb_mag_x1","","","","","","",""];
             _plane setVariable ["bombRacks", ["vn_bomb_mk82_he_launcher","vn_bomb_blu1b_750_fb_launcher"]];
             _plane setVariable ["diveParams", [1100, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "vn_b_air_f100d_sead";
+        case "vn_b_air_f100d_mr";
+        case "vn_b_air_f100d_mbmb";
+        case "vn_b_air_f100d_lbmb";
+        case "vn_b_air_f100d_hcas";
+        case "vn_b_air_f100d_hbmb";
+        case "vn_b_air_f100d_ehcas";
+        case "vn_b_air_f100d_cbu";
+        case "vn_b_air_f100d_cap";
+        case "vn_b_air_f100d_bmb";
         case "vn_b_air_f100d_cas";
-        case "vn_b_air_f100d_at_noinsignia";
         case "vn_b_air_f100d_at":
         {
             _loadout = ["","","vn_fuel_f100_335_mag","vn_fuel_f100_335_mag","vn_bomb_500_blu1b_fb_mag_x1","vn_bomb_500_mk82_he_mag_x1"];
@@ -296,6 +348,12 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["vn_bomb_blu1b_500_fb_launcher", "vn_bomb_mk82_he_launcher"]];
             _plane setVariable ["diveParams", [1100, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "vn_o_air_mig19_mr";
+        case "vn_o_air_mig19_hbmb";
+        case "vn_o_air_mig19_gun";
+        case "vn_o_air_mig19_cas";
+        case "vn_o_air_mig19_cap";
+        case "vn_o_air_mig19_bmb";
         case "vn_o_air_mig19_at_noinsignia";
         case "vn_o_air_mig19_at":
         {
@@ -304,6 +362,14 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["vn_bomb_500_fab250_he_mag_x1"]];
             _plane setVariable ["diveParams", [1100, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
+        case "vn_o_air_mig21_mr";
+        case "vn_o_air_mig21_hcas";
+        case "vn_o_air_mig21_hbmb";
+        case "vn_o_air_mig21_gun";
+        case "vn_o_air_mig21_cap";
+        case "vn_o_air_mig21_bmb";
+        case "vn_o_air_mig21_atgm";
+        case "vn_o_air_mig21_at";
         case "vn_o_air_mig21_cas_noinsignia";
         case "vn_o_air_mig21_cas":
         {
