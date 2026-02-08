@@ -16,6 +16,13 @@ class vehicles_nickelsteel : vehicles_base
     ITEM(vnx_b_air_ov10a_navy_cap, 57800, "PLANE", VEHICLE_CONDITION_PLANE);
     ITEM(vnx_b_air_a4e_ran_at, 81500, "PLANE", VEHICLE_CONDITION_PLANE);
     ITEM(vnx_b_air_a4e_usn_sead, 81500, "PLANE", VEHICLE_CONDITION_PLANE);
+    ITEM(vnx_b_armor_m50_01, 33000, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(vnx_b_armor_m50a1_01, 33500, "TANK", VEHICLE_CONDITION_TANK);
+    ITEM(vnx_b_armor_lvte1_01_usmc, 13900, "APC", VEHICLE_CONDITION_APC);
+    ITEM(vnx_b_armor_lvtp5_01, 7400, "APC", VEHICLE_CONDITION_APC);
+    ITEM(vnx_b_armor_lvtp5c_01_usmc, 5400, "APC", VEHICLE_CONDITION_APC);
+    ITEM(vnx_b_armor_lvtr1_01_usmc, 9800, "APC", VEHICLE_CONDITION_APC);
+    ITEM(vnx_b_armor_m163_01, 11500, "AA", VEHICLE_CONDITION_AA);
 
     ITEM(vnx_o_wheeled_tuktuk_01_kr, 540, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
     ITEM(vnx_c_wheeled_tuktuk_01_01, 740, "UNARMEDCAR", VEHICLE_CONDITION_UNARMEDCAR);
