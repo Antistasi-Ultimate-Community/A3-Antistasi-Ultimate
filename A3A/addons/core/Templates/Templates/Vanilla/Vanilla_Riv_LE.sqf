@@ -144,6 +144,10 @@ if (_hasSOG) then {
     "vn_b_armor_m113_acav_03_noinsignia","vn_b_armor_m113_acav_05_noinsignia","vn_b_armor_m113_01_noinsignia"];
 };
 
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_Rivals.sqf"
+};
+
 if (_hasSPE) then {
 	_staticLowWeapons append ["SPE_ST_MG34_Lafette_Deployed","SPE_ST_MG42_Lafette_Deployed","SPE_GER_SearchLight","SPE_FR_M1919A6_Bipod","SPE_FR_M1919_M2_Trench_Deployed"];
 	_staticAT append ["SPE_ST_FlaK_36","SPE_ST_Pak40","SPE_ST_leFH18_AT","SPE_FR_57mm_M1"];
@@ -294,6 +298,7 @@ if (_hasSPE) then {
     ["US85_UH60", ["addESSS",0.5,"addWinch",0.5]],
     ["US85_UH60M240", ["addWinch",0.5]],
 	#include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
+	#include "..\vehicleAnimations\vehicleAnimations_NickelSteel.sqf",
 	#include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
 ]] call _fnc_saveToTemplate;
 

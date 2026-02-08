@@ -92,6 +92,11 @@
 
 #include "VN_Vehicle_Attributes.sqf"
 
+["animations", [
+    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_NickelSteel.sqf"
+]] call _fnc_saveToTemplate;
+
 ["flares", ["vn_40mm_m583_flare_w_ammo", "vn_40mm_m661_flare_g_ammo", "vn_40mm_m662_flare_r_ammo", "vn_40mm_m695_flare_y_ammo"]] call _fnc_saveToTemplate;
 
 /////////////////////

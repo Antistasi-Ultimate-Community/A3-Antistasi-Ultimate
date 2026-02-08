@@ -24,9 +24,9 @@
 
 ["flyGear", ["vn_b_uniform_heli_01_01"]] call _fnc_saveToTemplate;
 
-["vehiclesBasic", ["vn_c_bicycle_01"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["vn_b_wheeled_lr2a_01_aus_army", "vn_b_wheeled_lr2a_02_aus_army"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["vn_i_wheeled_lr2a_mg_01_fank_71"]] call _fnc_saveToTemplate;
+private _vehiclesBasic = ["vn_c_bicycle_01"];
+private _vehiclesLightUnarmed = ["vn_b_wheeled_lr2a_01_aus_army", "vn_b_wheeled_lr2a_02_aus_army"];
+private _vehiclesLightArmed = ["vn_i_wheeled_lr2a_mg_01_fank_71"];
 ["vehiclesTruck", ["vn_i_wheeled_m54_01_marines"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["vn_b_wheeled_lr2a_mg_03_aus_army"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["vn_b_wheeled_lr2a_mg_02_aus_army"]] call _fnc_saveToTemplate;
@@ -35,11 +35,26 @@
 
 ["vehiclesPlane", ["vn_o_air_mig19_gun"]] call _fnc_saveToTemplate;
 
-["vehiclesCivCar", ["vn_c_car_02_01", "vn_c_car_01_01","vn_c_car_03_01","vn_c_wheeled_m151_02","vn_c_wheeled_m151_01","vn_c_car_04_01"]] call _fnc_saveToTemplate;
+private _vehiclesCivCar = ["vn_c_car_02_01", "vn_c_car_01_01","vn_c_car_03_01","vn_c_wheeled_m151_02","vn_c_wheeled_m151_01","vn_c_car_04_01"];
 ["vehiclesCivTruck", ["vn_b_wheeled_m54_01_airport"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["vn_b_air_uh1d_04_09"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["vn_c_boat_08_01"]] call _fnc_saveToTemplate;
 ["vehiclesCivSupply", ["vn_i_wheeled_m54_03_marines"]] call _fnc_saveToTemplate;
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+    _vehiclesCivCar pushBack "vnx_c_wheeled_tuktuk_01_01";
+
+    _vehiclesLightUnarmed pushBack "vnx_o_wheeled_tuktuk_01_vc";
+
+    _vehiclesLightArmed append ["vnx_o_wheeled_tuktuk_mg_02_vc","vnx_o_wheeled_tuktuk_mg_01_vc"];
+
+    _vehiclesBasic pushBack "vnx_o_wheeled_tuktuk_01_vc";
+};
+
+["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
+["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
 
 ["staticMGs", ["vn_i_fank_71_static_m1919a4_low", "vn_i_fank_71_static_m1919a6", "vn_i_fank_71_static_m1919a4_high"]] call _fnc_saveToTemplate;
 ["staticAT", ["vn_i_fank_71_static_m40a1rr", "vn_i_static_m101_01"]] call _fnc_saveToTemplate;

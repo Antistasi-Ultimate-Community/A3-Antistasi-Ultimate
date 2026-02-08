@@ -205,7 +205,7 @@ if (_type == "CASDIVE") then
         {
             _loadout = ["PylonMissile_1Rnd_Mk82_F","PylonMissile_1Rnd_BombCluster_03_F"];
             _plane setVariable ["bombRacks", ["Mk82BombLauncher","BombCluster_03_F"]];
-            _plane setVariable ["diveParams", [800, 600, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+            _plane setVariable ["diveParams", [900, 600, 180, 60, 40, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         case "B_T_UAV_03_dynamicLoadout_F":
         {
@@ -270,13 +270,120 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["rhs_weap_s25", "rhs_weap_s25of"]];
             _plane setVariable ["diveParams", [1000, 600, 200, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
-         ///S.O.G. nickel steel
+        ///S.O.G. nickel steel
         case "vnx_b_air_ac119_04_01_noinsignia";
         case "vnx_b_air_ac119_04_01":
         {
             _loadout = ["vn_bomb_15000_blu82_dc_parachute_mag_x1"]; //"vn_v_launcher_mk24"
             _plane setVariable ["bombRacks", ["vn_bomb_blu82_dc_parachute_launcher"]];
             _plane setVariable ["diveParams", [800, 400, 110, 55, 30, [500, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m) 650
+        };
+        "vnx_b_air_ov10a_aus_covey";
+        "vnx_b_air_ov10a_navy_bmb";
+        "vnx_b_air_ov10a_navy_fac";
+        "vnx_b_air_ov10a_navy_hbmb";
+        "vnx_b_air_ov10a_navy_lbmb";
+        "vnx_b_air_ov10a_navy_mbmb";
+        "vnx_b_air_ov10a_at";
+        "vnx_b_air_ov10a_bmb";
+        "vnx_b_air_ov10a_cap";
+        "vnx_b_air_ov10a_cas";
+        "vnx_b_air_ov10a_covey";
+        "vnx_b_air_ov10a_cryer";
+        "vnx_b_air_ov10a_ehcas";
+        "vnx_b_air_ov10a_hbmb";
+        "vnx_b_air_ov10a_hcas";
+        "vnx_b_air_ov10a_lbmb";
+        "vnx_b_air_ov10a_mbmb";
+        "vnx_b_air_ov10a_ucas";
+        "vnx_b_air_ov10a_usmc_bmb";
+        "vnx_b_air_ov10a_usmc_fac";
+        "vnx_b_air_ov10a_usmc_hbmb";
+        "vnx_b_air_ov10a_usmc_lbmb";
+        "vnx_b_air_ov10a_usmc_mbmb":
+        {
+            _loadout = ["","","","","","vnx_bomb_1000_mk83_he_mag_x1","vnx_bomb_1000_mk83_he_mag_x1","vnx_bomb_1000_mk83_he_mag_x1","vnx_bomb_1000_mk83_he_mag_x1","vnx_bomb_500_blu1b_fb_mag_x1"];
+            _plane setVariable ["bombRacks", ["vnx_bomb_mk83_he_launcher","vnx_bomb_blu1b_500_fb_launcher"]];
+            _plane setVariable ["diveParams", [1100, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
+        //ov10 but with 2 more pylons
+        "vnx_b_air_ov10a_navy_at";
+        "vnx_b_air_ov10a_navy_cap";
+        "vnx_b_air_ov10a_navy_cas";
+        "vnx_b_air_ov10a_navy_ehcas";
+        "vnx_b_air_ov10a_navy_hcas";
+        "vnx_b_air_ov10a_navy_hunter";
+        "vnx_b_air_ov10a_navy_killer";
+        "vnx_b_air_ov10a_navy_mr";
+        "vnx_b_air_ov10a_navy_ucas";
+        "vnx_b_air_ov10a_usmc_at";
+        "vnx_b_air_ov10a_usmc_cap";
+        "vnx_b_air_ov10a_usmc_cas";
+        "vnx_b_air_ov10a_usmc_ehcas";
+        "vnx_b_air_ov10a_usmc_hcas";
+        "vnx_b_air_ov10a_usmc_mr";
+        "vnx_b_air_ov10a_usmc_ucas":
+        {
+            _loadout = ["","","","","","vnx_bomb_250_mk81_dc_mag_x1","vnx_bomb_250_mk81_dc_mag_x1","vnx_bomb_500_mk82_se_mag_x1","vnx_bomb_500_mk82_se_mag_x1","vnx_bomb_500_mk82_he_mag_x1","vnx_bomb_250_mk81_dc_mag_x1","vnx_bomb_250_mk81_dc_mag_x1"];
+            _plane setVariable ["bombRacks", ["vnx_bomb_mk81_dc_launcher","vnx_bomb_mk82_se_launcher","vnx_bomb_mk82_he_launcher"]];
+            _plane setVariable ["diveParams", [1100, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
+        "vnx_b_air_a4e_ran_at";
+        "vnx_b_air_a4e_ran_bmb";
+        "vnx_b_air_a4e_ran_cap";
+        "vnx_b_air_a4e_ran_cas";
+        "vnx_b_air_a4e_ran_cbu";
+        "vnx_b_air_a4e_ran_ehcas";
+        "vnx_b_air_a4e_ran_gbu";
+        "vnx_b_air_a4e_ran_hbmb";
+        "vnx_b_air_a4e_ran_hcas";
+        "vnx_b_air_a4e_ran_lbmb";
+        "vnx_b_air_a4e_ran_mbmb";
+        "vnx_b_air_a4e_ran_mr";
+        "vnx_b_air_a4e_ran_sead";
+        "vnx_b_air_a4e_usn_at";
+        "vnx_b_air_a4e_usn_bmb";
+        "vnx_b_air_a4e_usn_cap";
+        "vnx_b_air_a4e_usn_cas";
+        "vnx_b_air_a4e_usn_cbu";
+        "vnx_b_air_a4e_usn_ehcas";
+        "vnx_b_air_a4e_usn_gbu";
+        "vnx_b_air_a4e_usn_hbmb";
+        "vnx_b_air_a4e_usn_hcas";
+        "vnx_b_air_a4e_usn_lbmb";
+        "vnx_b_air_a4e_usn_mbmb";
+        "vnx_b_air_a4e_usn_mr";
+        "vnx_b_air_a4e_usn_sead";
+        "vnx_b_air_a4e_usmc_at";
+        "vnx_b_air_a4e_usmc_bmb";
+        "vnx_b_air_a4e_usmc_cap";
+        "vnx_b_air_a4e_usmc_cas";
+        "vnx_b_air_a4e_usmc_cbu";
+        "vnx_b_air_a4e_usmc_ehcas";
+        "vnx_b_air_a4e_usmc_gbu";
+        "vnx_b_air_a4e_usmc_hbmb";
+        "vnx_b_air_a4e_usmc_hcas";
+        "vnx_b_air_a4e_usmc_lbmb";
+        "vnx_b_air_a4e_usmc_mbmb";
+        "vnx_b_air_a4e_usmc_mr";
+        "vnx_b_air_a4e_usmc_sead";
+        "vnx_b_air_a4e_rnzaf_at";
+        "vnx_b_air_a4e_rnzaf_bmb";
+        "vnx_b_air_a4e_rnzaf_cap";
+        "vnx_b_air_a4e_rnzaf_cas";
+        "vnx_b_air_a4e_rnzaf_cbu";
+        "vnx_b_air_a4e_rnzaf_ehcas";
+        "vnx_b_air_a4e_rnzaf_gbu";
+        "vnx_b_air_a4e_rnzaf_hbmb";
+        "vnx_b_air_a4e_rnzaf_hcas";
+        "vnx_b_air_a4e_rnzaf_lbmb";
+        "vnx_b_air_a4e_rnzaf_mbmb";
+        "vnx_b_air_a4e_rnzaf_mr";
+        "vnx_b_air_a4e_rnzaf_sead":
+        {
+            _loadout = ["","","","vnx_bomb_500_mk82_se_mag_x2","vnx_bomb_500_mk82_se_mag_x2","vnx_bomb_1000_mk83_he_mag_x1","vnx_bomb_1000_mk83_he_mag_x1","vnx_bomb_2000_mk84_he_mag_x1"];
+            _plane setVariable ["bombRacks", ["vnx_bomb_mk82_se_launcher","vnx_bomb_mk83_he_launcher","vnx_bomb_mk84_he_launcher"]];
+            _plane setVariable ["diveParams", [1100, 600, 170, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         ///S.O.G.
         case "vn_b_air_f4b_usmc_ucas";
@@ -911,8 +1018,9 @@ if (_type == "CAS") then
         case "O_UAV_02_dynamicLoadout_F";
         case "B_UAV_02_dynamicLoadout_F":
         {
-            _loadout = ["PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles"];
+            _loadout = ["PylonRack_12Rnd_missiles","PylonRack_3Rnd_LG_scalpel"];
             _plane setVariable ["rocketLauncher", ["missiles_DAR"]];
+            _plane setVariable ["missileLauncher", ["missiles_SCALPEL"]];
             _plane setVariable ["diveParams", [600, 400, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla APEX UAV
@@ -992,7 +1100,159 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["rhs_weap_s8", "rhs_weap_s8df"]];
             _plane setVariable ["missileLauncher", ["rhs_weap_kh25mtp_Launcher"]];
         };
+        ///S.O.G. nickel steel
+        "vnx_b_air_ov10a_aus_covey";
+        "vnx_b_air_ov10a_navy_bmb";
+        "vnx_b_air_ov10a_navy_fac";
+        "vnx_b_air_ov10a_navy_hbmb";
+        "vnx_b_air_ov10a_navy_lbmb";
+        "vnx_b_air_ov10a_navy_mbmb";
+        "vnx_b_air_ov10a_at";
+        "vnx_b_air_ov10a_bmb";
+        "vnx_b_air_ov10a_cap";
+        "vnx_b_air_ov10a_cas";
+        "vnx_b_air_ov10a_covey";
+        "vnx_b_air_ov10a_cryer";
+        "vnx_b_air_ov10a_ehcas";
+        "vnx_b_air_ov10a_hbmb";
+        "vnx_b_air_ov10a_hcas";
+        "vnx_b_air_ov10a_lbmb";
+        "vnx_b_air_ov10a_mbmb";
+        "vnx_b_air_ov10a_ucas";
+        "vnx_b_air_ov10a_usmc_bmb";
+        "vnx_b_air_ov10a_usmc_fac";
+        "vnx_b_air_ov10a_usmc_hbmb";
+        "vnx_b_air_ov10a_usmc_lbmb";
+        "vnx_b_air_ov10a_usmc_mbmb":
+        {
+            _loadout = ["","","","","","vnx_rocket_ffar_lau3_m229_he_x19_02","vnx_rocket_ffar_lau3_m229_he_x19_01","vnx_rocket_ffar_lau10_mk32_atap_x4","vnx_rocket_ffar_lau10_mk63_he_x4","vnx_gunpod_mk4_twin_02_v_750_mag"];
+            _plane setVariable ["mainGun", "vnx_gunpod_mk4_twin"];
+            _plane setVariable ["rocketLauncher", ["vnx_rocket_ffar_275in_launcher_m229","vnx_rocket_ffar_5in_atap_launcher","vnx_rocket_ffar_5in_hefrag_launcher"]];
+        };
+        //ov10 but with 2 more pylons
+        "vnx_b_air_ov10a_navy_at";
+        "vnx_b_air_ov10a_navy_cap";
+        "vnx_b_air_ov10a_navy_cas";
+        "vnx_b_air_ov10a_navy_ehcas";
+        "vnx_b_air_ov10a_navy_hcas";
+        "vnx_b_air_ov10a_navy_hunter";
+        "vnx_b_air_ov10a_navy_killer";
+        "vnx_b_air_ov10a_navy_mr";
+        "vnx_b_air_ov10a_navy_ucas";
+        "vnx_b_air_ov10a_usmc_at";
+        "vnx_b_air_ov10a_usmc_cap";
+        "vnx_b_air_ov10a_usmc_cas";
+        "vnx_b_air_ov10a_usmc_ehcas";
+        "vnx_b_air_ov10a_usmc_hcas";
+        "vnx_b_air_ov10a_usmc_mr";
+        "vnx_b_air_ov10a_usmc_ucas":
+        {
+            _loadout = ["","","","","","vnx_gunpod_suu11_v_1500_mag","vnx_gunpod_suu11_v_1500_mag","vnx_rocket_ffar_lau3_m156_wp_x19_02","vnx_rocket_ffar_lau3_m229_he_x19_02","vnx_gunpod_suu11_v_1500_mag","vnx_rocket_ffar_ov10_lau10_mk63_he_02_x2","vnx_rocket_ffar_ov10_lau10_mk32_atap_02_x2"];
+            _plane setVariable ["mainGun", "vnx_gunpod_suu11"];
+            _plane setVariable ["rocketLauncher", ["vnx_rocket_ffar_5in_atap_launcher","vnx_rocket_ffar_275in_launcher_m156","vnx_rocket_ffar_275in_launcher_m229","vnx_rocket_ffar_5in_hefrag_launcher"]];
+        };
+        "vnx_b_air_a4e_ran_at";
+        "vnx_b_air_a4e_ran_bmb";
+        "vnx_b_air_a4e_ran_cap";
+        "vnx_b_air_a4e_ran_cas";
+        "vnx_b_air_a4e_ran_cbu";
+        "vnx_b_air_a4e_ran_ehcas";
+        "vnx_b_air_a4e_ran_gbu";
+        "vnx_b_air_a4e_ran_hbmb";
+        "vnx_b_air_a4e_ran_hcas";
+        "vnx_b_air_a4e_ran_lbmb";
+        "vnx_b_air_a4e_ran_mbmb";
+        "vnx_b_air_a4e_ran_mr";
+        "vnx_b_air_a4e_ran_sead";
+        "vnx_b_air_a4e_usn_at";
+        "vnx_b_air_a4e_usn_bmb";
+        "vnx_b_air_a4e_usn_cap";
+        "vnx_b_air_a4e_usn_cas";
+        "vnx_b_air_a4e_usn_cbu";
+        "vnx_b_air_a4e_usn_ehcas";
+        "vnx_b_air_a4e_usn_gbu";
+        "vnx_b_air_a4e_usn_hbmb";
+        "vnx_b_air_a4e_usn_hcas";
+        "vnx_b_air_a4e_usn_lbmb";
+        "vnx_b_air_a4e_usn_mbmb";
+        "vnx_b_air_a4e_usn_mr";
+        "vnx_b_air_a4e_usn_sead";
+        "vnx_b_air_a4e_usmc_at";
+        "vnx_b_air_a4e_usmc_bmb";
+        "vnx_b_air_a4e_usmc_cap";
+        "vnx_b_air_a4e_usmc_cas";
+        "vnx_b_air_a4e_usmc_cbu";
+        "vnx_b_air_a4e_usmc_ehcas";
+        "vnx_b_air_a4e_usmc_gbu";
+        "vnx_b_air_a4e_usmc_hbmb";
+        "vnx_b_air_a4e_usmc_hcas";
+        "vnx_b_air_a4e_usmc_lbmb";
+        "vnx_b_air_a4e_usmc_mbmb";
+        "vnx_b_air_a4e_usmc_mr";
+        "vnx_b_air_a4e_usmc_sead";
+        "vnx_b_air_a4e_rnzaf_at";
+        "vnx_b_air_a4e_rnzaf_bmb";
+        "vnx_b_air_a4e_rnzaf_cap";
+        "vnx_b_air_a4e_rnzaf_cas";
+        "vnx_b_air_a4e_rnzaf_cbu";
+        "vnx_b_air_a4e_rnzaf_ehcas";
+        "vnx_b_air_a4e_rnzaf_gbu";
+        "vnx_b_air_a4e_rnzaf_hbmb";
+        "vnx_b_air_a4e_rnzaf_hcas";
+        "vnx_b_air_a4e_rnzaf_lbmb";
+        "vnx_b_air_a4e_rnzaf_mbmb";
+        "vnx_b_air_a4e_rnzaf_mr";
+        "vnx_b_air_a4e_rnzaf_sead":
+        {
+            _loadout = ["","vnx_gunpod_mk12_100_mag","vnx_gunpod_mk12_100_mag","vnx_missile_agm45_01_mag_x1","vnx_bomb_agm62_mag_01_x1","vnx_missile_agm88_mag_x1","vnx_missile_agm12c_mag_01_x1","vnx_missile_lau34_agm12b_mag_01_x1"];
+            _plane setVariable ["mainGun", "vnx_gunpod_mk12"];
+            _plane setVariable ["missileLauncher", ["vnx_missile_agm12b_launcher","vnx_missile_agm45_launcher","vnx_bomb_agm62_launcher","vnx_missile_agm12c_launcher"]];
+        };
         ///S.O.G.
+        case "vn_b_air_f4b_usmc_ucas";
+        case "vn_b_air_f4b_usmc_sead";
+        case "vn_b_air_f4b_usmc_mr";
+        case "vn_b_air_f4b_usmc_mbmb";
+        case "vn_b_air_f4b_usmc_lrbmb";
+        case "vn_b_air_f4b_usmc_lbmb";
+        case "vn_b_air_f4b_usmc_hcas";
+        case "vn_b_air_f4b_usmc_hbmb";
+        case "vn_b_air_f4b_usmc_cbu";
+        case "vn_b_air_f4b_usmc_cas";
+        case "vn_b_air_f4b_usmc_cap";
+        case "vn_b_air_f4b_usmc_bmb";
+        case "vn_b_air_f4b_usmc_at";
+        case "vn_b_air_f4c_ucas";
+        case "vn_b_air_f4c_sead";
+        case "vn_b_air_f4c_mr";
+        case "vn_b_air_f4c_mbmb";
+        case "vn_b_air_f4c_lrbmb";
+        case "vn_b_air_f4c_lbmb";
+        case "vn_b_air_f4c_hcas";
+        case "vn_b_air_f4c_hbmb";
+        case "vn_b_air_f4c_gbu";
+        case "vn_b_air_f4c_ehcas";
+        case "vn_b_air_f4c_chico";
+        case "vn_b_air_f4c_cbu";
+        case "vn_b_air_f4c_cas";
+        case "vn_b_air_f4c_cap";
+        case "vn_b_air_f4c_bmb";
+        case "vn_b_air_f4c_at";
+        case "vn_b_air_f4b_navy_ucas";
+        case "vn_b_air_f4b_navy_sead";
+        case "vn_b_air_f4b_navy_mr";
+        case "vn_b_air_f4b_navy_mbmb";
+        case "vn_b_air_f4b_navy_lrbmb";
+        case "vn_b_air_f4b_navy_lbmb";
+        case "vn_b_air_f4b_navy_hcas";
+        case "vn_b_air_f4b_navy_hbmb";
+        case "vn_b_air_f4b_navy_gbu";
+        case "vn_b_air_f4b_navy_ehcas";
+        case "vn_b_air_f4b_navy_cbu";
+        case "vn_b_air_f4b_navy_cas";
+        case "vn_b_air_f4b_navy_cap";
+        case "vn_b_air_f4b_navy_bmb";
+        case "vn_b_air_f4b_navy_at";
         case "vn_b_air_f4c_cas";
         case "vn_b_air_f4c_at":
         {
@@ -1000,6 +1260,16 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["vn_rocket_ffar_275in_launcher_m229"]];
             _plane setVariable ["missileLauncher", ["vn_missile_agm45_launcher"]];
         };
+        case "vn_b_air_f100d_sead";
+        case "vn_b_air_f100d_mr";
+        case "vn_b_air_f100d_mbmb";
+        case "vn_b_air_f100d_lbmb";
+        case "vn_b_air_f100d_hcas";
+        case "vn_b_air_f100d_hbmb";
+        case "vn_b_air_f100d_ehcas";
+        case "vn_b_air_f100d_cbu";
+        case "vn_b_air_f100d_cap";
+        case "vn_b_air_f100d_bmb";
         case "vn_b_air_f100d_cas";
         case "vn_b_air_f100d_at":
         {
@@ -1008,6 +1278,12 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["vn_rocket_ffar_275in_launcher_m229"]];
             _plane setVariable ["missileLauncher", ["vn_missile_agm45_launcher"]];
         };
+        case "vn_o_air_mig19_mr";
+        case "vn_o_air_mig19_hbmb";
+        case "vn_o_air_mig19_gun";
+        case "vn_o_air_mig19_cas";
+        case "vn_o_air_mig19_cap";
+        case "vn_o_air_mig19_bmb";
         case "vn_o_air_mig19_at_noinsignia";
         case "vn_o_air_mig19_at":
         {
@@ -1016,6 +1292,14 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["vn_rocket_s5_heat_launcher"]];
             _plane setVariable ["missileLauncher", ["vn_missile_kh66_launcher"]];
         };
+        case "vn_o_air_mig21_mr";
+        case "vn_o_air_mig21_hcas";
+        case "vn_o_air_mig21_hbmb";
+        case "vn_o_air_mig21_gun";
+        case "vn_o_air_mig21_cap";
+        case "vn_o_air_mig21_bmb";
+        case "vn_o_air_mig21_atgm";
+        case "vn_o_air_mig21_at";
         case "vn_o_air_mig21_cas_noinsignia";
         case "vn_o_air_mig21_cas":
         {
@@ -1550,12 +1834,14 @@ if (_type == "AA") then
             _loadout = ["PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F"];
             _plane setVariable ["mainGun", "gatling_30mm_VTOL_02"];
             _plane setVariable ["missileLauncher", ["Missile_AA_03_Plane_CAS_02_F"]];
+            _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla JETS UAV
         case "B_UAV_05_F":
         {
             _loadout = ["PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
             _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
+            _plane setVariable ["diveParams", [1000, 600, 180, 55, 20, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla UAV
         case "I_UAV_02_dynamicLoadout_F";
@@ -1564,11 +1850,7 @@ if (_type == "AA") then
         {
             _loadout = ["PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
             _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
-        };
-        case "B_T_UAV_03_dynamicLoadout_F":
-        {
-            _loadout = ["PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
-            _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
+            _plane setVariable ["diveParams", [600, 400, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
 	    ///Aegis/Atlas
         case "Atlas_B_A_Plane_Fighter_05_Stealth_F";
@@ -1643,21 +1925,194 @@ if (_type == "AA") then
         {
             _loadout = ["rhs_mag_R73M_APU73","rhs_mag_R73M_APU73","rhs_mag_R73M_APU73","rhs_mag_R73M_APU73"];
         };
-        case "vn_b_air_f4c_cap":
+        ///S.O.G. nickel steel
+        "vnx_b_air_ov10a_aus_covey";
+        "vnx_b_air_ov10a_navy_bmb";
+        "vnx_b_air_ov10a_navy_fac";
+        "vnx_b_air_ov10a_navy_hbmb";
+        "vnx_b_air_ov10a_navy_lbmb";
+        "vnx_b_air_ov10a_navy_mbmb";
+        "vnx_b_air_ov10a_at";
+        "vnx_b_air_ov10a_bmb";
+        "vnx_b_air_ov10a_cap";
+        "vnx_b_air_ov10a_cas";
+        "vnx_b_air_ov10a_covey";
+        "vnx_b_air_ov10a_cryer";
+        "vnx_b_air_ov10a_ehcas";
+        "vnx_b_air_ov10a_hbmb";
+        "vnx_b_air_ov10a_hcas";
+        "vnx_b_air_ov10a_lbmb";
+        "vnx_b_air_ov10a_mbmb";
+        "vnx_b_air_ov10a_ucas";
+        "vnx_b_air_ov10a_usmc_bmb";
+        "vnx_b_air_ov10a_usmc_fac";
+        "vnx_b_air_ov10a_usmc_hbmb";
+        "vnx_b_air_ov10a_usmc_lbmb";
+        "vnx_b_air_ov10a_usmc_mbmb":
+        {
+            _loadout = ["","vnx_gunpod_m60_v_500_mag","vnx_gunpod_m60_v_500_mag","vnx_gunpod_m60_v_500_mag","vnx_gunpod_m60_v_500_mag","vnx_missile_lau7_aim9b_02_mag_x1","vnx_missile_lau7_aim9b_01_mag_x1","vnx_gunpod_suu11_v_1500_mag","vnx_gunpod_suu11_v_1500_mag","vnx_gunpod_mk4_twin_02_v_750_mag"];
+        };
+        //ov10 but with 2 more pylons
+        "vnx_b_air_ov10a_navy_at";
+        "vnx_b_air_ov10a_navy_cap";
+        "vnx_b_air_ov10a_navy_cas";
+        "vnx_b_air_ov10a_navy_ehcas";
+        "vnx_b_air_ov10a_navy_hcas";
+        "vnx_b_air_ov10a_navy_hunter";
+        "vnx_b_air_ov10a_navy_killer";
+        "vnx_b_air_ov10a_navy_mr";
+        "vnx_b_air_ov10a_navy_ucas";
+        "vnx_b_air_ov10a_usmc_at";
+        "vnx_b_air_ov10a_usmc_cap";
+        "vnx_b_air_ov10a_usmc_cas";
+        "vnx_b_air_ov10a_usmc_ehcas";
+        "vnx_b_air_ov10a_usmc_hcas";
+        "vnx_b_air_ov10a_usmc_mr";
+        "vnx_b_air_ov10a_usmc_ucas":
+        {
+            _loadout = ["","vnx_gunpod_m60_v_500_mag","vnx_gunpod_m60_v_500_mag","vnx_gunpod_m60_v_500_mag","vnx_gunpod_m60_v_500_mag","vnx_gunpod_suu11_v_1500_mag","vnx_gunpod_suu11_v_1500_mag","vnx_missile_lau7_aim9d_02_mag_x1","vnx_missile_lau7_aim9d_01_mag_x1","vnx_gunpod_gpu2_v_250_mag","vnx_missile_lau7_aim9b_02_mag_x1","vnx_missile_lau7_aim9b_01_mag_x1"];
+        };
+        "vnx_b_air_a4e_ran_at";
+        "vnx_b_air_a4e_ran_bmb";
+        "vnx_b_air_a4e_ran_cap";
+        "vnx_b_air_a4e_ran_cas";
+        "vnx_b_air_a4e_ran_cbu";
+        "vnx_b_air_a4e_ran_ehcas";
+        "vnx_b_air_a4e_ran_gbu";
+        "vnx_b_air_a4e_ran_hbmb";
+        "vnx_b_air_a4e_ran_hcas";
+        "vnx_b_air_a4e_ran_lbmb";
+        "vnx_b_air_a4e_ran_mbmb";
+        "vnx_b_air_a4e_ran_mr";
+        "vnx_b_air_a4e_ran_sead";
+        "vnx_b_air_a4e_usn_at";
+        "vnx_b_air_a4e_usn_bmb";
+        "vnx_b_air_a4e_usn_cap";
+        "vnx_b_air_a4e_usn_cas";
+        "vnx_b_air_a4e_usn_cbu";
+        "vnx_b_air_a4e_usn_ehcas";
+        "vnx_b_air_a4e_usn_gbu";
+        "vnx_b_air_a4e_usn_hbmb";
+        "vnx_b_air_a4e_usn_hcas";
+        "vnx_b_air_a4e_usn_lbmb";
+        "vnx_b_air_a4e_usn_mbmb";
+        "vnx_b_air_a4e_usn_mr";
+        "vnx_b_air_a4e_usn_sead";
+        "vnx_b_air_a4e_usmc_at";
+        "vnx_b_air_a4e_usmc_bmb";
+        "vnx_b_air_a4e_usmc_cap";
+        "vnx_b_air_a4e_usmc_cas";
+        "vnx_b_air_a4e_usmc_cbu";
+        "vnx_b_air_a4e_usmc_ehcas";
+        "vnx_b_air_a4e_usmc_gbu";
+        "vnx_b_air_a4e_usmc_hbmb";
+        "vnx_b_air_a4e_usmc_hcas";
+        "vnx_b_air_a4e_usmc_lbmb";
+        "vnx_b_air_a4e_usmc_mbmb";
+        "vnx_b_air_a4e_usmc_mr";
+        "vnx_b_air_a4e_usmc_sead";
+        "vnx_b_air_a4e_rnzaf_at";
+        "vnx_b_air_a4e_rnzaf_bmb";
+        "vnx_b_air_a4e_rnzaf_cap";
+        "vnx_b_air_a4e_rnzaf_cas";
+        "vnx_b_air_a4e_rnzaf_cbu";
+        "vnx_b_air_a4e_rnzaf_ehcas";
+        "vnx_b_air_a4e_rnzaf_gbu";
+        "vnx_b_air_a4e_rnzaf_hbmb";
+        "vnx_b_air_a4e_rnzaf_hcas";
+        "vnx_b_air_a4e_rnzaf_lbmb";
+        "vnx_b_air_a4e_rnzaf_mbmb";
+        "vnx_b_air_a4e_rnzaf_mr";
+        "vnx_b_air_a4e_rnzaf_sead":
+        {
+            _loadout = ["","vnx_gunpod_mk12_100_mag","vnx_gunpod_mk12_100_mag","vn_missile_aim9x_rail_mag_x1","vn_missile_aim9x_rail_mag_x1","vnx_missile_lau7_aim9b_03_mag_x1","vnx_missile_lau7_aim9d_03_mag_x1","vnx_gunpod_mk4_twin_02_v_750_mag"];
+        };
+        ///S.O.G.
+        case "vn_b_air_f4b_usmc_ucas";
+        case "vn_b_air_f4b_usmc_sead";
+        case "vn_b_air_f4b_usmc_mr";
+        case "vn_b_air_f4b_usmc_mbmb";
+        case "vn_b_air_f4b_usmc_lrbmb";
+        case "vn_b_air_f4b_usmc_lbmb";
+        case "vn_b_air_f4b_usmc_hcas";
+        case "vn_b_air_f4b_usmc_hbmb";
+        case "vn_b_air_f4b_usmc_cbu";
+        case "vn_b_air_f4b_usmc_cas";
+        case "vn_b_air_f4b_usmc_cap";
+        case "vn_b_air_f4b_usmc_bmb";
+        case "vn_b_air_f4b_usmc_at";
+        case "vn_b_air_f4c_ucas";
+        case "vn_b_air_f4c_sead";
+        case "vn_b_air_f4c_mr";
+        case "vn_b_air_f4c_mbmb";
+        case "vn_b_air_f4c_lrbmb";
+        case "vn_b_air_f4c_lbmb";
+        case "vn_b_air_f4c_hcas";
+        case "vn_b_air_f4c_hbmb";
+        case "vn_b_air_f4c_gbu";
+        case "vn_b_air_f4c_ehcas";
+        case "vn_b_air_f4c_chico";
+        case "vn_b_air_f4c_cbu";
+        case "vn_b_air_f4c_cas";
+        case "vn_b_air_f4c_cap";
+        case "vn_b_air_f4c_bmb";
+        case "vn_b_air_f4c_at";
+        case "vn_b_air_f4b_navy_ucas";
+        case "vn_b_air_f4b_navy_sead";
+        case "vn_b_air_f4b_navy_mr";
+        case "vn_b_air_f4b_navy_mbmb";
+        case "vn_b_air_f4b_navy_lrbmb";
+        case "vn_b_air_f4b_navy_lbmb";
+        case "vn_b_air_f4b_navy_hcas";
+        case "vn_b_air_f4b_navy_hbmb";
+        case "vn_b_air_f4b_navy_gbu";
+        case "vn_b_air_f4b_navy_ehcas";
+        case "vn_b_air_f4b_navy_cbu";
+        case "vn_b_air_f4b_navy_cas";
+        case "vn_b_air_f4b_navy_cap";
+        case "vn_b_air_f4b_navy_bmb";
+        case "vn_b_air_f4b_navy_at";
+        case "vn_b_air_f4c_cas";
+        case "vn_b_air_f4c_at":
         {
             _loadout = ["vn_fuel_f4_370_mag","vn_fuel_f4_370_mag","","","vn_fuel_f4_600_mag","vn_missile_f4_lau7_aim9e_mag_x2","vn_missile_f4_lau7_aim9e_mag_x2","vn_missile_aim7e2_mag_x1","vn_missile_aim7e2_mag_x1","vn_missile_aim7e2_mag_x1","vn_missile_aim7e2_mag_x1"];
         };
-        case "vn_b_air_f100d_cap":
+        case "vn_b_air_f100d_sead";
+        case "vn_b_air_f100d_mr";
+        case "vn_b_air_f100d_mbmb";
+        case "vn_b_air_f100d_lbmb";
+        case "vn_b_air_f100d_hcas";
+        case "vn_b_air_f100d_hbmb";
+        case "vn_b_air_f100d_ehcas";
+        case "vn_b_air_f100d_cbu";
+        case "vn_b_air_f100d_cap";
+        case "vn_b_air_f100d_bmb";
+        case "vn_b_air_f100d_cas";
+        case "vn_b_air_f100d_at":
         {
             _loadout = ["vn_rocket_ffar_f4_lau59_m229_he_x21","vn_rocket_ffar_f4_lau59_m229_he_x21","vn_fuel_f100_335_mag","vn_fuel_f100_335_mag","vn_missile_aim9e_mag_x1","vn_missile_aim9e_mag_x1"];
         };
-        case "vn_o_air_mig19_cap_noinsignia";
-        case "vn_o_air_mig19_cap":
+        case "vn_o_air_mig19_mr";
+        case "vn_o_air_mig19_hbmb";
+        case "vn_o_air_mig19_gun";
+        case "vn_o_air_mig19_cas";
+        case "vn_o_air_mig19_cap";
+        case "vn_o_air_mig19_bmb";
+        case "vn_o_air_mig19_at_noinsignia";
+        case "vn_o_air_mig19_at":
         {
             _loadout = ["vn_missile_mig19_01_aa2_mag_x1","vn_missile_mig19_01_aa2_mag_x1","vn_missile_mig19_01_aa2_mag_x1","vn_missile_mig19_01_aa2_mag_x1"];
         };
-        case "vn_o_air_mig21_cap_noinsignia";
-        case "vn_o_air_mig21_cap":
+        case "vn_o_air_mig21_mr";
+        case "vn_o_air_mig21_hcas";
+        case "vn_o_air_mig21_hbmb";
+        case "vn_o_air_mig21_gun";
+        case "vn_o_air_mig21_cap";
+        case "vn_o_air_mig21_bmb";
+        case "vn_o_air_mig21_atgm";
+        case "vn_o_air_mig21_at";
+        case "vn_o_air_mig21_cas_noinsignia";
+        case "vn_o_air_mig21_cas":
         {
             _loadout = ["vn_missile_mig21_aa2_mag_x1","vn_missile_mig21_aa2_mag_x1","vn_gunpod_gsh23l_v_200_mag"];
         };

@@ -23,40 +23,49 @@
 ["surrenderCrate", "vn_o_ammobox_04"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
-["vehiclesBasic", ["vn_b_wheeled_m274_01_01"]] call _fnc_saveToTemplate;
+private _basic = ["vn_b_wheeled_m274_01_01"];
 ["vehiclesLightUnarmed", ["vn_b_wheeled_m151_01", "vn_b_wheeled_m151_02"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["vn_b_wheeled_m151_mg_02", "vn_b_wheeled_m151_mg_04", "vn_b_wheeled_m151_mg_06", "vn_b_wheeled_m151_mg_03", "vn_b_wheeled_m151_mg_05", "vn_b_wheeled_m54_mg_02", "vn_b_armor_m132_01"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["vn_b_wheeled_m54_01", "vn_b_wheeled_m54_02"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", []] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["vn_b_wheeled_m54_ammo"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["vn_b_wheeled_m54_repair"]] call _fnc_saveToTemplate;
+private _repairTrucks = ["vn_b_wheeled_m54_repair"];
 ["vehiclesFuelTrucks", ["vn_b_wheeled_m54_fuel"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["vn_b_armor_m577_02"]] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", ["vn_b_wheeled_m54_mg_03", "vn_b_wheeled_m54_mg_01", "vn_b_armor_m113_01"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["vn_b_armor_m113_01"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["vn_b_armor_m113_acav_04", "vn_b_armor_m113_acav_02", "vn_b_armor_m113_acav_01", "vn_b_armor_m113_acav_06", "vn_b_armor_m113_acav_03", "vn_b_armor_m113_acav_05", "vn_b_armor_m113_01"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", []] call _fnc_saveToTemplate;
+private _IFVs = [];
 
 ["vehiclesLightTanks",  ["vn_b_armor_m41_01_01"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["vn_b_armor_m48_01_01", "vn_b_armor_m67_01_01"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["vn_b_wheeled_m54_mg_02"]] call _fnc_saveToTemplate;
+private _aa = ["vn_b_wheeled_m54_mg_02"];
 
 ["vehiclesTransportBoats", ["vn_o_boat_02_01", "vn_b_boat_10_01", "vn_b_boat_09_01"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["vn_b_boat_13_02", "vn_b_boat_06_02", "vn_b_boat_05_02", "vn_b_boat_12_02"]] call _fnc_saveToTemplate;
 
 private _planesCAS = ["vn_b_air_f4c_at", "vn_b_air_f100d_at"];
-["vehiclesPlanesAA", ["vn_b_air_f4c_cap", "vn_b_air_f100d_cap"]] call _fnc_saveToTemplate;
+private _planesAA = ["vn_b_air_f4c_cap", "vn_b_air_f100d_cap"];
 private _transportplanes = [];
 private _gunship = [];
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	_gunship pushBack "vnx_b_air_ac119_01_01";
   	_transportplanes append ["vnx_b_air_ac119_02_01","vnx_b_air_ac119_02_02"];
-	_planesCAS pushBack "vnx_b_air_ac119_04_01";
+	_planesCAS append ["vnx_b_air_ac119_04_01_noinsignia","vnx_b_air_ov10a_usmc_bmb","vnx_b_air_ov10a_usmc_at","vnx_b_air_a4e_usn_at"];
+	_planesAA append ["vnx_b_air_ov10a_usmc_bmb","vnx_b_air_ov10a_usmc_at","vnx_b_air_a4e_usn_at"];
+	_aa append ["vnx_b_armor_m163_01"];
+	_IFVs append ["vnx_b_armor_lvtp5_01","vnx_b_armor_lvtp5c_01_usmc"];
+	_repairTrucks append ["vnx_b_armor_lvtr1_01_usmc"];
+	_basic append ["vnx_b_armor_lvte1_01_usmc"];
 };
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _transportplanes] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
-
+["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
+["vehiclesIFVs", _IFVs] call _fnc_saveToTemplate;
+["vehiclesAA", _aa] call _fnc_saveToTemplate;
+["vehiclesBasic", _basic] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", _repairTrucks] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["vn_b_air_ch34_01_01"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["vn_b_air_uh1c_07_01", "vn_b_air_uh1d_02_01", "vn_b_air_ch34_01_01", "vn_b_air_ch34_03_01", "vn_b_air_ch47_04_02", "vn_b_air_ch47_04_01", "vn_b_air_ch47_01_02", "vn_b_air_ch47_01_01"]] call _fnc_saveToTemplate;
@@ -99,6 +108,11 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ["minefieldAPERS", ["vn_mine_m14"]] call _fnc_saveToTemplate;
 
 #include "VN_Vehicle_Attributes.sqf"
+
+["animations", [
+    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_NickelSteel.sqf"
+]] call _fnc_saveToTemplate;
 
 ["flares", ["vn_40mm_m583_flare_w_ammo", "vn_40mm_m661_flare_g_ammo", "vn_40mm_m662_flare_r_ammo", "vn_40mm_m695_flare_y_ammo"]] call _fnc_saveToTemplate;
 

@@ -5,11 +5,14 @@
     ["vnx_m50_smg_fold","","","",["vnx_m50_smg_mag","vnx_m50_smg_mag","vnx_m50_smg_mag"], [], ""],
     ["vnx_m45_sf","vn_s_m45_camo","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
     ["vnx_m45_sf","vn_s_m45","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
-    ["vnx_m45_sf","vn_s_mpu","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""]
+    ["vnx_m45_sf","vn_s_mpu","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
+    ["vnx_m38_smg","","","",["vnx_m38_smg_32_mag","vnx_m38_smg_32_mag","vnx_m38_smg_32_t_mag"], [], ""]
 ];
 (_policeLoadoutData get "sidearms") append [
     ["vnx_hd_02","","","",["vnx_hd_02_mag","vnx_hd_02_mag","vnx_hd_02_mag"], [], ""],
-    ["vnx_gjet","","","",["vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag"], [], ""]
+    ["vnx_gjet","","","",["vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag"], [], ""],
+    ["vnx_c96","","","",["vnx_c96_mag","vnx_c96_mag","vnx_c96_mag","vnx_c96_t_mag"], [], ""],
+    ["vnx_p08","","","",["vnx_p08_mag","vnx_p08_mag","vnx_p08_mag","vnx_p08_mag"], [], ""]
 ];
 
 (_militiaLoadoutData get "slRifles") append [

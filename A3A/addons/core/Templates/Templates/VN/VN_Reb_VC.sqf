@@ -24,9 +24,9 @@
 
 ["flyGear", ["vn_b_uniform_heli_01_01"]] call _fnc_saveToTemplate;
 
-["vehiclesBasic", ["vn_o_bicycle_01_vcmf"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["vn_o_wheeled_btr40_01_vcmf"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["vn_o_wheeled_z157_mg_01_vcmf", "vn_o_wheeled_btr40_mg_02_vcmf", "vn_o_wheeled_btr40_mg_01_vcmf", "vn_o_wheeled_btr40_mg_04_vcmf"]] call _fnc_saveToTemplate;
+private _vehiclesBasic = ["vn_o_bicycle_01_vcmf"];
+private _vehiclesLightUnarmed = ["vn_o_wheeled_btr40_01_vcmf"];
+private _vehiclesLightArmed = ["vn_o_wheeled_z157_mg_01_vcmf", "vn_o_wheeled_btr40_mg_02_vcmf", "vn_o_wheeled_btr40_mg_01_vcmf", "vn_o_wheeled_btr40_mg_04_vcmf"];
 ["vehiclesTruck", ["vn_o_wheeled_z157_01_vcmf", "vn_o_wheeled_z157_02_vcmf"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["vn_o_wheeled_btr40_mg_05_vcmf"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["vn_o_wheeled_btr40_mg_03_vcmf", "vn_o_wheeled_z157_mg_02_vcmf"]] call _fnc_saveToTemplate;
@@ -35,11 +35,26 @@
 
 ["vehiclesPlane", ["vn_o_air_mig19_gun"]] call _fnc_saveToTemplate;
 
-["vehiclesCivCar", ["vn_c_car_02_01", "vn_c_car_01_01","vn_c_car_03_01","vn_c_wheeled_m151_02","vn_c_wheeled_m151_01","vn_c_car_04_01"]] call _fnc_saveToTemplate;
+private _vehiclesCivCar = ["vn_c_car_02_01", "vn_c_car_01_01","vn_c_car_03_01","vn_c_wheeled_m151_02","vn_c_wheeled_m151_01","vn_c_car_04_01"];
 ["vehiclesCivTruck", ["vn_b_wheeled_m54_01_airport"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["vn_b_air_uh1d_04_09"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["vn_c_boat_08_01"]] call _fnc_saveToTemplate;
 ["vehiclesCivSupply", ["vn_i_wheeled_m54_03_marines"]] call _fnc_saveToTemplate;
+
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+    _vehiclesCivCar pushBack "vnx_c_wheeled_tuktuk_01_01";
+
+    _vehiclesLightUnarmed pushBack "vnx_o_wheeled_tuktuk_01_vc";
+
+    _vehiclesLightArmed append ["vnx_o_wheeled_tuktuk_mg_02_vc","vnx_o_wheeled_tuktuk_mg_01_vc"];
+
+    _vehiclesBasic pushBack "vnx_o_wheeled_tuktuk_01_vc";
+};
+
+["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
+["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
 
 ["staticMGs", ["vn_o_vc_static_dp28_high", "vn_o_vc_static_m1910_low_02", "vn_o_vc_static_m1910_low_01", "vn_o_vc_static_sgm_low_02", "vn_o_vc_static_sgm_low_01"]] call _fnc_saveToTemplate;
 ["staticAT", ["vn_o_vc_static_d44", "vn_o_vc_static_type56rr"]] call _fnc_saveToTemplate;

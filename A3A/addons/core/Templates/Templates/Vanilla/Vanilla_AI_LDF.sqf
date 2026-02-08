@@ -206,6 +206,7 @@ if (_hasEF) then {
     #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_NickelSteel.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;

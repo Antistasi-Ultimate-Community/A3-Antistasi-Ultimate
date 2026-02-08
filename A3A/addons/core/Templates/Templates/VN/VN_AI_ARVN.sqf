@@ -43,6 +43,8 @@
 private _transportplanes = [];
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	_transportplanes append ["vnx_i_air_ac119_02_01"];
+	_planesCAS append ["vnx_b_air_a4e_usn_at"];
+	_planesAA append ["vnx_b_air_a4e_usn_at"];
 };
 ["vehiclesPlanesTransport", _transportplanes] call _fnc_saveToTemplate;
 
@@ -87,6 +89,11 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ["minefieldAPERS", ["vn_mine_m14"]] call _fnc_saveToTemplate;
 
 #include "VN_Vehicle_Attributes.sqf"
+
+["animations", [
+    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_NickelSteel.sqf"
+]] call _fnc_saveToTemplate;
 
 ["flares", ["vn_40mm_m583_flare_w_ammo", "vn_40mm_m661_flare_g_ammo", "vn_40mm_m662_flare_r_ammo", "vn_40mm_m695_flare_y_ammo"]] call _fnc_saveToTemplate;
 

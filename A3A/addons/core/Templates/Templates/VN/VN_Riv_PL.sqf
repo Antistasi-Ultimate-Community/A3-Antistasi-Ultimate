@@ -37,6 +37,11 @@
 ["minefieldAT", ["vn_mine_tripwire_arty"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["vn_mine_punji_02"]] call _fnc_saveToTemplate;
 
+["animations", [
+    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_NickelSteel.sqf"
+]] call _fnc_saveToTemplate;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////

@@ -333,7 +333,12 @@ class cfgHALsStore
 				"opticsnickelsteel",
 				"magazinesnickelsteel",
 				"helmetsnickelsteel",
-				"uniformsnickelsteel"
+				"uniformsnickelsteel",
+				"pointersnickelsteel",
+				"miscnickelsteel",
+				"vestsnickelsteel",
+				"sniperriflesnickelsteel",
+				"specialWeaponsnickelsteel"
 			};
 		};
 		class ww2cdlc

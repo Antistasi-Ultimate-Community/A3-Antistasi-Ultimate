@@ -5,11 +5,14 @@
     ["vnx_m50_smg_fold","","","",["vnx_m50_smg_mag","vnx_m50_smg_mag","vnx_m50_smg_mag"], [], ""],
     ["vnx_m45_sf","vn_s_m45_camo","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
     ["vnx_m45_sf","vn_s_m45","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
-    ["vnx_m45_sf","vn_s_mpu","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""]
+    ["vnx_m45_sf","vn_s_mpu","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
+    ["vnx_m38_smg","","","",["vnx_m38_smg_32_mag","vnx_m38_smg_32_mag","vnx_m38_smg_32_t_mag"], [], ""]
 ];
 (_policeLoadoutData get "sidearms") append [
     ["vnx_hd_02","","","",["vnx_hd_02_mag","vnx_hd_02_mag","vnx_hd_02_mag"], [], ""],
-    ["vnx_gjet","","","",["vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag"], [], ""]
+    ["vnx_gjet","","","",["vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag","vnx_gjet_mag"], [], ""],
+    ["vnx_c96","","","",["vnx_c96_mag","vnx_c96_mag","vnx_c96_mag","vnx_c96_t_mag"], [], ""],
+    ["vnx_p08","","","",["vnx_p08_mag","vnx_p08_mag","vnx_p08_mag","vnx_p08_mag"], [], ""]
 ];
 
 (_militiaLoadoutData get "slRifles") append [
@@ -18,7 +21,9 @@
 ];
 (_militiaLoadoutData get "rifles") append [
     ["vnx_l1a1_05","","","",["vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_t_mag"],[],""],
-    ["vnx_l1a1_05_camo","","","",["vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_t_mag"],[],""]
+    ["vnx_l1a1_05_camo","","","",["vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_t_mag"],[],""],
+    ["vnx_stg44","","","",["vnx_stg44_mag","vnx_stg44_mag","vnx_stg44_mag","vnx_stg44_t_mag"],[],""],
+    ["vnx_no4","","","",["vnx_no4_mag","vnx_no4_mag","vnx_no4_mag","vnx_no4_t_mag"],[],""]
 ];
 (_militiaLoadoutData get "carbines") append [
     ["vnx_l1a1_04","","","",["vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_mag","vn_l1a1_30_t_mag"],[],""],
@@ -35,7 +40,14 @@
     ["vnx_m50_smg_fold","","","",["vnx_m50_smg_mag","vnx_m50_smg_mag","vnx_m50_smg_mag"], [], ""],
     ["vnx_m45_sf","vn_s_m45_camo","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
     ["vnx_m45_sf","vn_s_m45","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
-    ["vnx_m45_sf","vn_s_mpu","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""]
+    ["vnx_m45_sf","vn_s_mpu","","",["vn_m45_mag","vn_m45_mag","vn_m45_mag"], [], ""],
+    ["vnx_m38_smg","","","",["vnx_m38_smg_32_mag","vnx_m38_smg_32_mag","vnx_m38_smg_32_t_mag"], [], ""]
+];
+(_militiaLoadoutData get "sniperRifles") append [
+    ["vnx_no4_sniper","","vnx_b_no4","",["vnx_no4_mag","vnx_no4_mag","vnx_no4_mag","vnx_no4_t_mag"],[],]
+];
+(_militiaLoadoutData get "grenadeLaunchers") append [
+    ["vnx_m201z","","","",["vnx_37mm_cs_mag","vnx_37mm_cs_mag","vnx_37mm_cs_spray_mag","vnx_37mm_flare_mag","vnx_37mm_cs_fin_mag","vnx_37mm_baton_mag","vnx_37mm_cs_skat_mag"], [], ""]
 ];
 
 (_militaryLoadoutData get "slRifles") append [

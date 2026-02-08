@@ -809,3 +809,131 @@ class vnx_wheeled_f_vietnam_05_tuktuk_vnx_wheeled_tuktuk_mg_02_p3d : TRIPLES(ADD
     };
 };
 
+class vnx_air_f_vietnam_06_ov10_vnx_air_ov10a_01_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,1.76,-0.815};
+        };
+        class Node2
+        {
+            offset[] = {0,0.96,-0.815};
+            canCouple = 0;
+        };
+        class Node3
+        {
+            offset[] = {0,0.16,-0.815};
+            canCouple = 0;
+        };
+    };
+};
+class vnx_armor_f_vietnam_05_m113_vnx_armor_m163_01_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.35,-0.93,-1.852};
+            seats[] = {0};
+        };
+    };
+};
+class vnx_armor_f_vietnam_06_lvtp5_vnx_armor_lvte1_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-1.9,-1.745};
+        };
+        class Node2
+        {
+            offset[] = {0,1,-1.745};
+            canCouple = 0;
+        };
+    };
+};
+class vnx_armor_f_vietnam_05_lvtp5_vnx_armor_lvtp5_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.02,1.8,-1.5};
+            seats[] = {23,17};
+        };
+        class Node2
+        {
+            offset[] = {0.02,1,-1.5};
+            seats[] = {22,16};
+        };
+        class Node3
+        {
+            offset[] = {0.02,0.2,-1.5};
+            seats[] = {15,14,20,21};
+        };
+        class Node4
+        {
+            offset[] = {0.02,-0.6,-1.5};
+            seats[] = {19,13,18,12};
+        };
+    };
+};
+class vnx_armor_f_vietnam_06_lvtp5_vnx_armor_lvtp5c_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.775,-1.835};
+        };
+        class Node2
+        {
+            offset[] = {0,2.3,-1.83};
+            canCouple = 0;
+        };
+        class Node3
+        {
+            offset[] = {0,1.5,-1.83};
+            seats[] = {3};
+        };
+    };
+};
+class vnx_armor_f_vietnam_06_lvtp5_vnx_armor_lvtr1_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    canLoadWeapon = 0;
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0.03,-1.35,-2.08};
+        };
+        class Node2
+        {
+            offset[] = {0.03,-2.15,-2.08};
+        };
+    };
+};
+class vnx_armor_f_vietnam_06_m50_spr_vnx_armor_m50_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.1,1.9,-1.06};
+        };
+    };
+};
+class vnx_armor_f_vietnam_06_m50_spr_vnx_armor_m50a1_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.1,1.9,-1};
+        };
+    };
+};
+
