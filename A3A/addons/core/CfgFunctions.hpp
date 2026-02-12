@@ -204,6 +204,7 @@ class CfgFunctions
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
+            class initBuilderCollisionHelper {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};

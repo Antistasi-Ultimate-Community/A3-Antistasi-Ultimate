@@ -41,6 +41,8 @@ params [
 if(!isNil "A3A_building_EHDB") exitwith {};
 
 [_centerObject, _buildingRadius, _teamLeaderBox] call A3A_fnc_initPlacerDB;
+[_centerObject, _buildingRadius] spawn A3A_fnc_initBuilderCollisionHelper;
+
 ("A3A_PlacerHint" call BIS_fnc_rscLayer) cutRsc ["A3A_PlacerHints", "PLAIN", -1, false];
 A3A_cam = "camcurator" camCreate (position _centerObject vectorAdd [0,0,5]);
 A3A_cam cameraEffect ["Internal", "top"];

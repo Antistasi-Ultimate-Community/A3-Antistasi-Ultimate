@@ -76,7 +76,11 @@ A3A_building_EHDB = createHashMapFromArray[
     // BUILD_OBJECT_SELECTED_STRING -
     [BUILD_OBJECT_SELECTED_STRING, "Land_Can_V2_F"],
     // BUILD_OBJECT_TEMP_OBJECT -
-    [BUILD_OBJECT_TEMP_OBJECT, "Land_Can_V2_F" createVehicleLocal [0,0,0]],
+    [BUILD_OBJECT_TEMP_OBJECT, [] call {
+		private _object = "Land_Can_V2_F" createVehicleLocal [0,0,0];
+		_object setVariable[QGVAR(uuid), [] call CBA_fnc_createUUID];
+		_object;
+	}],
     // BUILD_OBJECT_TEMP_OBJECT_ARRAY -
     [BUILD_OBJECT_TEMP_OBJECT_ARRAY, []],
 	// END_BUILD_FUNC

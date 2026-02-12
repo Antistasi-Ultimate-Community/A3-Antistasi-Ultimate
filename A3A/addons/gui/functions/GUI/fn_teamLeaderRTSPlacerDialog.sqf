@@ -208,7 +208,8 @@ switch (_mode) do
                 _object hideObject true;			// Otherwise it might not get checked, with some weird input combo
                 _object setPos _vehPos;
                 _object setDir _vehDir;
-                _object setVariable[QEGVAR(core,isTempObject), true, true];
+                _object setVariable[QEGVAR(core,isTempObject), true];
+                _object setVariable[QEGVAR(core,uuid), [] call CBA_fnc_createUUID];
                 A3A_building_EHDB set [BUILD_OBJECT_TEMP_OBJECT, _object];
                 call (A3A_building_EHDB get UPDATE_BB);
             }];
