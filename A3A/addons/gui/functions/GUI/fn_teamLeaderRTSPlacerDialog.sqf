@@ -136,12 +136,12 @@ switch (_mode) do
             _buildTime ctrlSetPosition[1 * GRID_W, 19 * GRID_H, 4 * GRID_W, 4 * GRID_H];
             _buildTime ctrlSetText A3A_Icon_Construct;
             _buildTime ctrlCommit 0;
-    
-            // show stuff
-            _itemControlsGroup ctrlSetFade 0;
-            _itemControlsGroup ctrlCommit 0.1;
 
         } forEach _buildableObjects;
+    
+        // show stuff
+        _itemControlsGroup ctrlSetFade 0;
+        _itemControlsGroup ctrlCommit 0.1;
 
         // EH to block camera zoom while mouse is over the selection dialog
         _display displayAddEventHandler ["MouseMoving", {
