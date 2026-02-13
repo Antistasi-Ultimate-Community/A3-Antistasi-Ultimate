@@ -62,10 +62,20 @@ FUNC(builderCollisionHelperTriggerCondition) = {
 // Temporary event handler when new objects are found in the trigger area.
 // Update collision detection for temporary object and everything new.
 private _eh = [GVAR(builderCollisionEvent), {
-    Debug_2("builder-eh(%1): %2",GVAR(builderCollisionEvent),_this);
     params["_objects"];
+
+    // During placer shutdown the DB or temp object may already be gone.
+    if (isNil "A3A_building_EHDB") exitWith {};
+
     private _tempObject = A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT;
-    _objects apply { _tempObject disableCollisionWith _x };
+    if (isNull _tempObject) exitWith {};
+
+    // Ignore null objects and the temp object itself.
+    private _validObjects = _objects select { !isNull _x && { _x != _tempObject } };
+    if (_validObjects isEqualTo []) exitWith {};
+
+    Debug_2("builder-eh(%1): %2",GVAR(builderCollisionEvent),_validObjects);
+    _validObjects apply { _tempObject disableCollisionWith _x };
 }] call CBA_fnc_addEventHandler;
 
 // Spools us up a routine to check whether the temporary builder object has
