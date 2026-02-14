@@ -102,6 +102,23 @@ class lxRF_vehicles_rf_pickup_01_pickup_01_rcws_rf_p3d : TRIPLES(ADDON,Nodes,Bas
     };
 };
 
+class lxRF_vehicles_rf_pickup_01_pickup_01_minigun_rf_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.035,-1.4,-0.511};
+            seats[] = {4,3};
+        };
+        class Node2
+        {
+            offset[] = {-0.035,-2.2,-0.511};
+            seats[] = {2,1};
+        };
+    };
+};
+
 
 class lxRF_vehicles_rf_pickup_01_pickup_01_mmg_rf_p3d : TRIPLES(ADDON,Nodes,Base)
 {
