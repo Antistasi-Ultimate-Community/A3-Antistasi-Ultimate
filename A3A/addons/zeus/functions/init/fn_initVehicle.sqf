@@ -44,16 +44,6 @@ params ["_emptyVeh", "_vehFaction", "_vehType", ["_withCrew", true]];
 private _faction = missionNamespace getVariable ("A3A_Faction_" + _vehFaction);
 if (isNil "_faction") exitWith {};
 
-private _pos = position _emptyVeh;
-deleteVehicle _emptyVeh;
-
-private _typeX = selectRandom (_faction get _vehType);
-if (isNil "_typeX") exitWith {
-	private _message = format [localize "STR_A3U_Zeus_Misc_Dialog_NoVehicleOfType", _faction get "name", _vehType];
-	[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
-};
-
-private _veh = _typeX createVehicle _pos;
 private _side = switch (_vehFaction) do {
 	case "occ": { west };
 	case "inv";
@@ -62,6 +52,18 @@ private _side = switch (_vehFaction) do {
 	case "civ": { civilian };
 };
 if (isNil "_side") exitWith {};
+
+private _pos = position _emptyVeh;
+deleteVehicle _emptyVeh;
+
+private _vehPool = _faction get _vehType;
+private _typeX = if (_side isEqualTo civilian) then { selectRandomWeighted _vehPool } else { selectRandom _vehPool };
+if (isNil "_typeX") exitWith {
+	private _message = format [localize "STR_A3U_Zeus_Misc_Dialog_NoVehicleOfType", _faction get "name", _vehType];
+	[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
+};
+
+private _veh = _typeX createVehicle _pos;
 [_veh, _side] call A3A_fnc_AIVEHinit;
 
 private _crewFunc = [A3A_fnc_createVehicleCrew, A3A_fnc_RivalsCreateVehicleCrew] select (_vehFaction isEqualTo "riv");

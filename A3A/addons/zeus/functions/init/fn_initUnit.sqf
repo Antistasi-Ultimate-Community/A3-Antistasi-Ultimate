@@ -51,11 +51,16 @@ switch (_unitFaction) do {
 	};
 	case ("occ");
 	case ("inv");
-	case ("riv"): {
+	case ("riv");
+	case ("civ"): {
 		private _faction = missionNamespace getVariable ("A3A_faction_" + _unitFaction);
 		if (isNil "_faction") exitWith {};
 		_unit setUnitLoadout selectRandom (((_faction get "loadouts") get (format ["%1_%2", _unitPrefix, _unitType])) select 0);
-		[_unit, "", false] call A3A_fnc_NATOinit;
+		if (_unitFaction isEqualTo "civ") then {
+			[_unit] spawn A3A_fnc_civilianInitEH
+		} else {
+			[_unit, "", false] call A3A_fnc_NATOinit
+		};
 	};
 	default {
 		Error_2("Unknown faction %1 for unit %2", _unitFaction, _unit)

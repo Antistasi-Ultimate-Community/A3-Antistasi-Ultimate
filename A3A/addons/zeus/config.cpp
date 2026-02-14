@@ -295,6 +295,13 @@ class CfgPatches
             QGVAR(Civilians_Press),
             QGVAR(Civilians_Worker),
 
+            // civilian vehicles
+            QGVAR(Civilians_Vehicle_Car),
+            QGVAR(Civilians_Vehicle_Industrial),
+            QGVAR(Civilians_Vehicle_Repair),
+            QGVAR(Civilians_Vehicle_Medical),
+            QGVAR(Civilians_Vehicle_Boat),
+
             // base modules
             QGVAR(Module_Base),
             QGVAR(Module_Support_Base),
