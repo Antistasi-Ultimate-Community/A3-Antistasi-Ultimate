@@ -506,7 +506,6 @@ if (A3A_hasACE) then
 
 boxX allowDamage false;			// hmm...
 boxX addAction [format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_transfer_to_arsenal"], {[] spawn A3A_fnc_empty;}, 3];
-boxX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 if (A3A_hasACE) then { [boxX, boxX] call ace_common_fnc_claim;};	//Disables ALL Ace Interactions
 flagX allowDamage false;
 if(playerRecruitAI isEqualTo 1) then 
@@ -514,7 +513,6 @@ if(playerRecruitAI isEqualTo 1) then
     flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], {if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {["Recruit Unit", "You cannot recruit units while there are enemies near you."] call A3A_fnc_customHint;} else { [] spawn A3A_fnc_unit_recruit; }},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)"];
 };
 flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\run_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_rally_point_travel"], {[] spawn SCRT_fnc_rally_travelToRallyPoint},nil,0,false,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && (side (group _this) == teamPlayer) && (!isNil 'isRallyPointPlaced' && {isRallyPointPlaced})",4];
-flagX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
 //Adds a light to the flag
 private _flagLight = "#lightpoint" createVehicle (getPos flagX);
@@ -536,9 +534,7 @@ vehicleBox addAction [format ["<img image='a3\ui_f\data\igui\cfg\simpletasks\typ
         createDialog "A3A_BuyVehicleDialog";
     }
 },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
-vehicleBox addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
-call A3A_fnc_dropObject;
 mapX allowDamage false;
 mapX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\map_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_map_info"], A3A_fnc_cityinfo,nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) && (side (group _this) == teamPlayer)", 4];
 
@@ -579,7 +575,11 @@ mapX addAction [
 	4
 ];
 mapX addAction [localize "STR_antistasi_actions_ai_load_info", { [] remoteExec ["A3A_fnc_AILoadInfo",2];},nil,0,false,true,"","((_this == theBoss) || (serverCommandAvailable ""#logout""))"];
-mapX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
+
+{
+    _x addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, 
+        nil,0,false,true,"", "(_this == theBoss) and (isNull objectParent _this) and !(call A3A_fnc_isCarrying)", 4];
+} forEach [boxX, flagX, vehicleBox, mapX];
 
 [] spawn A3A_fnc_unitTraits;
 
