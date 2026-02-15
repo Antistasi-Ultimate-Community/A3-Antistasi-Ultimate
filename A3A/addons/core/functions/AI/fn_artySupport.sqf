@@ -20,39 +20,41 @@ _hasArtillery = false;
 _areAlive = false;
 
 {
-_soldierX = _x;
-_veh = vehicle _soldierX;
-if ((_veh != _soldierX) and (not(_veh in _artyArray))) then
+	_soldierX = _x;
+	_veh = vehicle _soldierX;
+	if ((_veh != _soldierX) and (not(_veh in _artyArray))) then
 	{
-	if (( "Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _veh >> "availableForSupportTypes")))) then
+		if (( "Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _veh >> "availableForSupportTypes")))) then
 		{
-		_hasArtillery = true;
-		if ((canFire _veh) and (alive _veh) and (isNil "typeAmmunition")) then
+			_hasArtillery = true;
+			if ((canFire _veh) and (alive _veh) and (isNil "typeAmmunition")) then
 			{
-			_areAlive = true;
-#ifdef UseDoomGUI
-	ERROR("Disabled due to UseDoomGUI Switch.")
-#else
-			createDialog "mortarType";
-#endif
-			waitUntil {!dialog or !(isNil "typeAmmunition")};
-			if !(isNil "typeAmmunition") then
+				_areAlive = true;
+				
+				#ifdef UseDoomGUI
+					ERROR("Disabled due to UseDoomGUI Switch.")
+				#else
+					createDialog "mortarType";
+				#endif
+				
+				waitUntil {!dialog or !(isNil "typeAmmunition")};
+				if !(isNil "typeAmmunition") then
 				{
-				_typeAmmunition = typeAmmunition;
-				{
-				if (_x select 0 == _typeAmmunition) then
+					_typeAmmunition = typeAmmunition;
 					{
-					_hasAmmunition = _hasAmmunition + 1;
-					};
-				} forEach magazinesAmmo _veh;
+						if (_x select 0 == _typeAmmunition) then
+						{
+							_hasAmmunition = _hasAmmunition + 1;
+						};
+					} forEach magazinesAmmo _veh;
 				};
-			if (_hasAmmunition > 0) then
+				if (_hasAmmunition > 0) then
 				{
-				if (unitReady _veh) then
+					if (unitReady _veh) then
 					{
-					_areReady = true;
-					_artyArray pushBack _veh;
-					_artyRoundsArr pushBack (((magazinesAmmo _veh) select 0)select 1);
+						_areReady = true;
+						_artyArray pushBack _veh;
+						_artyRoundsArr pushBack (((magazinesAmmo _veh) select 0)select 1);
 					};
 				};
 			};

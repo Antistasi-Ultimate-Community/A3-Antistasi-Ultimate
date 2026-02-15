@@ -3,12 +3,11 @@
 //////////////////////////
 
 #include "..\..\..\script_component.hpp"
-
 ["name", "Royal Army Corps"] call _fnc_saveToTemplate; 						
 ["spawnMarkerName", "Sahrani Army Support Corridor"] call _fnc_saveToTemplate; 			
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate; 						
-["flagTexture", "\PRACS_Core\Flags\KingdomofSahrani_co_mrk.paa"] call _fnc_saveToTemplate;			
+["flagTexture", "\PRACS_Core\Flags\KingdomofSahrani_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "PRACS_Sahrani_Flag_mrk"] call _fnc_saveToTemplate; 	
 
 //////////////////////////
@@ -20,37 +19,38 @@
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
 ["vehiclesBasic", ["B_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["PRACS_M1025", "PRACS_M1025_marine"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["PRACS_M1025_M2", "PRACS_M1151_M240"]] call _fnc_saveToTemplate;
-["vehiclesTrucks", ["PRACS_M250_open", "PRACS_M250"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["PRACS_M1025", "PRACS_M1025_marine", "PRACS_M998_Command", "PRACS_M998_cargo_open", "PRACS_M1097_Scout", "PRACS_M1025", "PRACS_m548_open"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["PRACS_M1025_M2", "PRACS_M1025_Mk19", "PRACS_M1151_M240", "PRACS_M1151_Mk19", "PRACS_M1165_M134_QSB", "PRACS_M1165_M2", "PRACS_M966_TOW"]] call _fnc_saveToTemplate;
+["vehiclesTrucks", ["PRACS_M250_open", "PRACS_M250", "PRACS_m548"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["PRACS_M250_open", "PRACS_M250"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["PRACS_M250_Ammo"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["PRACS_M250_Ammo", "PRACS_m548_ammo"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["PRACS_M250_Repair"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["PRACS_M250_fuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["PRACS_M250_AMB"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["PRACS_M1117"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["PRACS_M1117", "PRACS_BMR_M2"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["PRACS_BMR_M2"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["PRACS_M1117", "PRACS_BMR_M2"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["PRACS_M60A3", "PRACS_M88"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["PRACS_M1A1_AIM", "PRACS_M60A3", "PRACS_FV107"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["PRACS_M163_MACHBET", "PRACS_M163_VADS"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["PRACS_M250_fuel", "PRACS_m548_fuel"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["PRACS_M250_AMB", "PRACS_M113_MED"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["PRACS_M1117","PRACS_M113_M2", "PRACS_M113_M240", "PRACS_M113_mk19"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["PRACS_FV101", "PRACS_FV107"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["PRACS_BMR_M2", "PRACS_BMR_A3_M3_SFOD", "PRACS_BMR_A3_Mk19", "PRACS_BMR_A3_GA1", "PRACS_BMR_ATGM", "PRACS_BMR_TOW"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", ["PRACS_BMR_IFV", "PRACS_Pizarro", "PRACS_Pizarro_SLE"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["PRACS_FV107", "PRACS_FV101","PRACS_VEC_M242","PRACS_VEC_MGS"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["PRACS_M1A1_AIM", "PRACS_M60S", "PRACS_M60A3"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["PRACS_M163_MACHBET", "PRACS_M163_VADS", "PRACS_M163_PIVADS","PRACS_m48_chapparal", "PRACS_m48_chapparal_EH", "PRACS_BMR_AD"]] call _fnc_saveToTemplate;
 
-["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
+["vehiclesTransportBoats", ["PRACS_RHIB"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["PRACS_Mk5_SOCR"]] call _fnc_saveToTemplate;
-["vehiclesAmphibious", ["PRACS_BMR_HQ"]] call _fnc_saveToTemplate;
+["vehiclesAmphibious", ["PRACS_BMR_M2"]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["PRACS_A4M", "PRACS_F16CJR", "PRACS_F16CJ"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["PRACS_MirageIII"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["PRACS_C130"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["PRACS_A4M", "PRACS_F16CJR"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["PRACS_F16"]] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", ["PRACS_C130", "PRACS_P3C"]] call _fnc_saveToTemplate;
 
-["vehiclesHelisLight", ["PRACS_UH1H"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["PRACS_Sa330_Puma"]] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", ["PRACS_UH1H_CAS"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["PRACS_AH1S"]] call _fnc_saveToTemplate;
+["vehiclesHelisLight", ["PRACS_UH1H","PRACS_MH6S"]] call _fnc_saveToTemplate;
+["vehiclesHelisTransport", ["PRACS_Sa330_Puma", "PRACS_CH53"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["PRACS_UH1H_CAS","PRACS_AH6M"]] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", ["PRACS_AH1S","PRACS_RAH6"]] call _fnc_saveToTemplate;
 
-["vehiclesArtillery", ["PRACS_M109A6"]] call _fnc_saveToTemplate;
+["vehiclesArtillery", ["PRACS_M109A6","PRACS_M115"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
+["PRACS_M115", ["PRACS_203mm_HE_M106_x30"]],
 ["PRACS_M109A6", ["PRACS_155mm_HE_M109A6_x25"]]
 ]] call _fnc_saveToTemplate;
 
@@ -60,22 +60,22 @@
 ["vehiclesMilitiaLightArmed", ["PRACS_M1025_M2"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["PRACS_M250_open"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["PRACS_M998_cargo_open"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["PRACS_M1117"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["PRACS_M1117","PRACS_M113_M2"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["PRACS_M1097_Scout"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["RHS_M2StaticMG_WD"]] call _fnc_saveToTemplate;
 ["staticAT", ["RHS_TOW_TriPod_WD"]] call _fnc_saveToTemplate;
 ["staticAA", ["RHS_Stinger_AA_pod_WD"]] call _fnc_saveToTemplate;
-["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
-["staticHowitzers", ["PRACS_M1"]] call _fnc_saveToTemplate;
+["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;
+["staticHowitzers", ["PRACS_M198"]] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "PRACS_MPQ64_Sentinel"] call _fnc_saveToTemplate;
-["vehicleSam", "PRACS_MiM23_HAWK"] call _fnc_saveToTemplate;
+["vehicleSam", "PRACS_M727_SEM_IHAWK"] call _fnc_saveToTemplate;
 
-["howitzerMagazineHE", "PRACS_155mm_HE_M1_x25"] call _fnc_saveToTemplate;
+["howitzerMagazineHE", "PRACS_155mm_HE_M198x25"] call _fnc_saveToTemplate;
 
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["mortarMagazineHE", "rhs_12Rnd_m821_HE"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
@@ -266,6 +266,7 @@ _eliteLoadoutData set ["vests", ["PRACS_O_CIRAS_rifleman"]];
 _eliteLoadoutData set ["mgVests", ["PRACS_O_CIRAS_MG_SF"]];
 _eliteLoadoutData set ["medVests", ["PRACS_O_CIRAS_medic"]];
 _eliteLoadoutData set ["slVests", ["PRACS_O_CIRAS_SF"]];
+_eliteLoadoutData set ["slHat", ["PRACS_LWH_6TDES", "PRACS_LWH_ESS_6TDES"]];
 _eliteLoadoutData set ["glVests", ["PRACS_O_CIRAS_G3_grenadier"]];
 _eliteLoadoutData set ["engVests", ["PRACS_O_CIRAS_G3_Recon"]];
 _eliteLoadoutData set ["backpacks", ["PRACS_Assault_pack"]];
@@ -321,6 +322,7 @@ _militaryLoadoutData set ["vests", ["PRACS_RFP_CIRAS_rifleman"]];
 _militaryLoadoutData set ["mgVests", ["PRACS_RFP_CIRAS_MG"]];
 _militaryLoadoutData set ["medVests", ["PRACS_RFP_CIRAS_G3_medic"]];
 _militaryLoadoutData set ["slVests", ["PRACS_RFP_CIRAS_SL"]];
+_militaryLoadoutData set ["slHat", ["PRACS_LWH_6TDES", "PRACS_LWH_ESS_6TDES"]];
 _militaryLoadoutData set ["glVests", ["PRACS_RFP_CIRAS_grenadier_SF"]];
 _militaryLoadoutData set ["engVests", ["PRACS_RFP_CIRAS_G3_Recon"]];
 _militaryLoadoutData set ["backpacks", ["PRACS_Assault_pack"]];
@@ -391,12 +393,13 @@ _policeLoadoutData set ["sidearms", [
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", ["PRACS_M10_1ID_uniform"]];
-_militiaLoadoutData set ["vests", ["PRACS_C_CIRAS_GAL_rifleman"]];
+_militiaLoadoutData set ["vests", ["PRACS_C_CIRAS_GAL_rifleman"]];																																					
 _militiaLoadoutData set ["sniVests", ["PRACS_C_CIRAS_Recon_SF"]];
 _militiaLoadoutData set ["backpacks", ["PRACS_FieldPack"]];
 _militiaLoadoutData set ["slBackpacks", ["PRACS_FieldPack"]];
 _militiaLoadoutData set ["atBackpacks", ["PRACS_FieldPack"]];
 _militiaLoadoutData set ["helmets", ["PRACS_LWH_6TDES", "PRACS_LWH_ESS_6TDES"]];
+_militiaLoadoutData set ["slHat", ["PRACS_LWH_6TDES", "PRACS_LWH_ESS_6TDES"]];
 _militiaLoadoutData set ["sniHats", ["PRACS_LWH_HS_6TDES"]];
 
 _militiaLoadoutData set ["lightATLaunchers", ["rhs_weap_M136_hp"]];
@@ -421,6 +424,9 @@ _militiaLoadoutData set ["machineGuns", [
 ]];
 _militiaLoadoutData set ["marksmanRifles", [
     ["rhs_weap_svdp", "", "", "rhs_acc_pso1m2", ["rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1"], [], ""]
+]];
+_militiaLoadoutData set ["sniperRifles", [
+["rhs_weap_m40a5", "", "rhsusf_acc_nxs_3515x50_md", "rhsusf_acc_harris_swivel", ["rhsusf_5Rnd_762x51_AICS_m118_special_Mag"], [], ""]
 ]];
 _militiaLoadoutData set ["sidearms", [
     ["rhsusf_weap_glock17g4", "", "acc_flashlight_pistol", "", [], [], ""]
