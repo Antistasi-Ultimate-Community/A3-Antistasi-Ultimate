@@ -55,7 +55,7 @@ private _IFVs = ["O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_30mm_lxWS"];
 private _airborneVehicles = ["O_APC_Wheeled_02_rcws_v2_F","O_APC_Wheeled_02_hmg_lxWS"];
 private _lightTanks = ["O_UGV_01_rcws_F"];
 private _tanks = ["O_MBT_02_cannon_F","O_MBT_02_railgun_F","O_SFIA_MBT_02_cannon_lxWS"];
-private _aa = ["O_APC_Tracked_02_AA_F","O_SFIA_Truck_02_aa_lxWS","O_SFIA_APC_Tracked_02_AA_lxWS"];
+private _aa = ["O_APC_Tracked_02_AA_F","O_SFIA_Truck_02_aa_lxWS","O_SFIA_APC_Tracked_02_AA_lxWS","O_G_Offroad_AA_lxWS","O_Tura_Offroad_armor_AA_lxWS"];
 
 private _transportBoat = ["O_Boat_Transport_01_F"];
 private _gunBoat = ["O_Boat_Armed_01_hmg_F"];
