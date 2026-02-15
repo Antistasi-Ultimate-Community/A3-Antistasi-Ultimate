@@ -12506,6 +12506,34 @@
                 <Korean>오브젝트 돌리기</Korean>
                 <French>Faire pivoter l'objet</French>
             </Key>
+            <Key ID="STR_A3A_packObject">
+                <Original>Pack object</Original>
+                <Russian>Упаковать предмет</Russian>
+                <Chinesesimp>打包物体</Chinesesimp>
+                <Korean>오브젝트 포장하기</Korean>
+                <French>Empaquetter l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_unpackObject">
+                <Original>Unpack object</Original>
+                <Russian>Распаковать предмет</Russian>
+                <Chinesesimp>解包物体</Chinesesimp>
+                <Korean>오브젝트 풀기</Korean>
+                <French>Déballer l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_buildingplacer">
+                <Original>Building placer</Original>
+                <Russian>Планировщик зданий</Russian>
+                <Chinesesimp>建筑规划器</Chinesesimp>
+                <Korean>건물 배치 도구</Korean>
+                <French>Outil de placement de bâtiments</French>
+            </Key>
+            <Key ID="STR_A3A_openDoors">
+                <Original>Open Doors</Original>
+                <Russian>Открыть двери</Russian>
+                <Chinesesimp>打开门</Chinesesimp>
+                <Korean>문 열기</Korean>
+                <French>Ouvrir les portes</French>
+            </Key>
         </Container>
         <Container name="A3A_init">
             <Key ID="STR_A3A_cityinfo_header">
