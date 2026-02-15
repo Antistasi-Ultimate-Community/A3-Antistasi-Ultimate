@@ -5599,6 +5599,27 @@
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_title">
+                <Original>Location defense/capture area</Original>
+                <Russian>Зона захвата/защиты локации</Russian>
+                <Chinesesimp>位置防御/捕获区域</Chinesesimp>
+                <Korean>위치 방어/점령 지역</Korean>
+                <French>Zone de défense/capture de l'emplacement</French>
+            </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_tooltip">
+                <Original>When capturing/defending locations, use an additional circular area diameter around the flag AND the full zone size to consider unit presences.</Original>
+                <Russian>При захвате/защите локаций используйте дополнительную круговую область вокруг флага И полный размер зоны для учета присутствия юнитов.</Russian>
+                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域和整个区域大小来考虑单位存在。</Chinesesimp>
+                <Korean>위치를 점령/방어할 때, 깃발 주위의 추가 원형 영역과 전체 구역 크기를 사용하여 유닛 존재를 고려합니다.</Korean>
+                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau ET la taille complète de la zone pour considérer la présence des unités.</French>
+            </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_traditional">
+                <Original>Traditional</Original>
+                <Russian>Традиционный</Russian>
+                <Chinesesimp>传统</Chinesesimp>
+                <Korean>전통적인</Korean>
+                <French>Traditionnel</French>
+            </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>
                 <Russian>Начните только с разблокированным пистолетом</Russian>

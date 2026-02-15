@@ -176,7 +176,7 @@ savingServer = true;					// lock out saves until this is changed
 
 prestigeIsChanging = false;
 
-zoneCheckInProgress = false;
+zoneChecksMutex = createHashMap;
 garrisonIsChanging = false;
 movingMarker = false;
 markersChanging = [];
