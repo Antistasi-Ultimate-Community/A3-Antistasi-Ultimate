@@ -30,6 +30,8 @@
         -9: Units in cargo seats blocking loading
 */
 #include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 params [ ["_vehicle", objNull, [objNull] ], ["_object", objNull, [objNull] ] ];
 if !(alive _vehicle) exitWith {-1}; //vehicle destroyed
 if !(alive _object) exitWith {-2}; //cargo destroyed
@@ -82,16 +84,44 @@ if (isNil "_nodes") then {
 if (_nodes isEqualTo []) exitWith {-7};
 
 //enough free nodes to load cargo
-private "_node";
-{
-    private _currentNodes = [];
-    for "_i" from 0 to _objNodeType - 1 do {
-        private _currentNode = _forEachIndex + _i;
-        if (isNil {_nodes#_currentNode}) exitWith {};//zero divisor block
-        if (((_nodes#_currentNode)#0) isEqualTo 1) then {_currentNodes pushBack _nodes#_currentNode};
+
+private["_node","_sequenceLength","_sequenceStart"];
+
+_sequenceLength = _objNodeType; // just confusing to read "nodeType" when it refers to size
+_sequenceStart = -1;
+
+while { isNil "_node" } do {
+    _sequenceStart = _sequenceStart + 1;
+
+    // End of nodes reached, no vacancy, break
+    if (_sequenceStart >= count _nodes) then { break };
+
+    // Starting at current sequence start, try to find a sequence of free nodes
+    private _thisSequence = [];
+
+    for "_n" from 0 to (_sequenceLength - 1) do {
+        if ((_sequenceStart + _n) >= count _nodes) then { break };
+
+        private _thisNode = _nodes select(_sequenceStart + _n);
+
+        _thisNode params["_free","","","_canCouple"];
+
+        // Ocupando, break
+        if (_free isNotEqualTo 1) then { break };
+
+        // If we're trying to load size>1 cargo here, any node after the base
+        // node needs to have `canCouple` set. If not, break, search for next.
+        if ((_n isNotEqualTo 0) && { _canCouple isNotEqualTo 1 }) then { break };
+
+        _thisSequence pushBack _thisNode;
     };
-    if ((count _currentNodes) isEqualTo _objNodeType) exitWith {_node = _currentNodes};
-} forEach _nodes;
+
+    // If we found a full sequence, assign it to _node
+    if (_sequenceLength isEqualTo count _thisSequence) then {
+        _node = _thisSequence;
+    };
+};
+
 if (isNil "_node") exitWith {-8};
 
 //block loading if crew in node seats

@@ -340,4 +340,6 @@ radioSoundsIn = ["a3\dubbing_radio_f\sfx\in2a.ogg", "a3\dubbing_radio_f\sfx\in2b
 radioSoundsMid = ["a3\dubbing_radio_f\sfx\radionoise1.ogg", "a3\dubbing_radio_f\sfx\radionoise2.ogg", "a3\dubbing_radio_f\sfx\radionoise3.ogg"];
 radioSoundsOut = ["a3\dubbing_radio_f\sfx\out2a.ogg", "a3\dubbing_radio_f\sfx\out2b.ogg", "a3\dubbing_radio_f\sfx\out2c.ogg"];
 
+#include "varsHardcoded.hpp"
+
 Info("initVarCommon completed");
