@@ -6,7 +6,7 @@ if (!isServer) exitWith {
 
 params ["_playerId", "_unit"];
 
-if !(_playerId in A3A_playerSaveData) then {
+if !(_playerId in A3A_playerSaveData) exitWith {
     Info_1("No save found for player ID %1", _playerId);
 	[_playerId, _unit] call A3A_fnc_resetPlayer;
 };

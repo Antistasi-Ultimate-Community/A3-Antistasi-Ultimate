@@ -52,6 +52,7 @@ class A3AU_TerrainSmoother_Base_F: Land_Shovel_F
     authors[] = {"wersal454", "UnseenKill"};
     model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+    EGVAR(core,isBuilding) = 1;
     EGVAR(core,restorePriority) = 100;
     EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
@@ -123,6 +124,7 @@ class A3AU_VegetationCleaner_Base_F: Land_Axe_F
     authors[] = {"wersal454", "UnseenKill"};
     model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+    EGVAR(core,isBuilding) = 1;
     EGVAR(core,restorePriority) = 100;
     EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
@@ -195,6 +197,7 @@ class GVAR(BB_TerrainObjectHider_Base) : Land_ButaneTorch_F
     authors[] = {"UnseenKill"};
     model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+    EGVAR(core,isBuilding) = 1;
     EGVAR(core,restorePriority) = 90;
     EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);

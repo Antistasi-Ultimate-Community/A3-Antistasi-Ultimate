@@ -296,6 +296,22 @@
             <Portuguese>Você precisa ser um engenheiro para começar a arrombar fechaduras</Portuguese>
             <Turkish>Kilit açmaya başlamak için mühendis olmalısın</Turkish>
         </Key>
+        <Key ID="STR_A3AU_action_lockpick_not_engineer_no_lockpicks">
+            <Original>Since you're not an engineer, you need a lockpick kit to start lockpicking.</Original>
+            <Russian>Поскольку вы не инженер, вам нужен набор отмычек, чтобы начать взлом.</Russian>
+            <Korean>엔지니어가 아니기 때문에 자물쇠 따기를 시작하려면 락픽 키트가 필요합니다.</Korean>
+            <Chinesesimp>由于你不是工程师，你需要一个撬锁工具包来开始撬锁。</Chinesesimp>
+            <German>Da du kein Ingenieur bist, benötigst du ein Dietrich-Set, um mit dem Knacken zu beginnen.</German>
+            <French>Comme vous n'êtes pas ingénieur, vous avez besoin d'un kit de crochetage pour commencer le crochetage.</French>
+        </Key>
+        <Key ID="STR_A3AU_action_lockpick_tool_break">
+            <Original>Your soldiery hands aren't used to fine work. The lockpick broke. Try again.</Original>
+            <Russian>Ваши солдатские руки не привыкли к тонкой работе. Отмычка сломалась. Попробуйте снова.</Russian>
+            <Korean>당신의 군인 손은 섬세한 작업에 익숙하지 않습니다. 락픽이 부러졌습니다. 다시 시도하세요.</Korean>
+            <Chinesesimp>你的士兵之手不习惯精细的工作
+            <German>Deine Soldatenhände sind nicht an feine Arbeiten gewöhnt. Der Dietrich ist gebrochen. Versuche es erneut.</German>
+            <French>Vos mains de soldat ne sont pas habituées à un travail de précision. La serrure a cassé. Essayez encore.</French>
+        </Key>
     </Package>
     <Package name="Arsenal">
         <Key ID="STR_JNA_SCT_QUICK_EQUIP">
@@ -304,6 +320,40 @@
             <Korean>빠른 장비 로드아웃</Korean>
             <Chinesesimp>快速装备</Chinesesimp>
             <French>Équipement rapide</French>
+        </Key>
+    </Package>
+    <Package name="Assets">
+        <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse">
+            <Original>Multi-use Lockpick Kit</Original>
+            <German>Mehrfacher Satz Dietriche</German>
+            <Russian>Многоразовый набор отмычек</Russian>
+            <Korean>다회용 락픽 키트</Korean>
+            <Chinesesimp>多次使用撬锁工具包</Chinesesimp>
+            <French>Kit de crochetage à usages multiples</French>
+        </Key>
+        <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse_Desc">
+            <Original>This kit contains multiple lockpick tools to unlock vehicles if you're not an engineer.</Original>
+            <German>Dieser Satz enthält mehrere Dietriche, um Fahrzeuge zu entriegeln, wenn du kein Ingenieur bist.</German>
+            <Russian>Этот набор содержит несколько инструментов для вскрытия замков, чтобы открыть транспортные средства, если вы не инженер.</Russian>
+            <Korean>이 키트에는 엔지니어가 아닌 경우 차량 잠금을 해제하는 데 사용할 수 있는 여러 개의 락픽 도구가 포함되어 있습니다.</Korean>
+            <Chinesesimp>此工具包包含多个撬锁工具，用于在您不是工程师的情况下解锁车辆。</Chinesesimp>
+            <French>Ce kit contient plusieurs outils de crochetage pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
+        </Key>
+        <Key ID="STR_A3AU_Asset_LockpickKit_SingleUse">
+            <Original>Single-use Lockpick Kit</Original>
+            <German>Einmal-Dietrich</German>
+            <Russian>Одноразовый набор отмычек</Russian>
+            <Korean>일회용 락픽 키트</Korean>
+            <Chinesesimp>一次性撬锁工具包</Chinesesimp>
+            <French>Kit de crochetage à usage unique</French>
+        </Key>
+        <Key ID="STR_A3AU_Asset_LockpickKit_SingleUse_Desc">
+            <Original>This kit contains a single-use lockpick tool to unlock vehicles if you're not an engineer.</Original>
+            <German>Dieser Satz enthält ein einmal verwendbares Dietrich-Werkzeug, um Fahrzeuge zu entriegeln, wenn du kein Ingenieur bist.</German>
+            <Russian>Этот набор содержит одноразовый инструмент для вскрытия замков, чтобы открыть транспортные средства, если вы не инженер.</Russian>
+            <Korean>이 키트에는 엔지니어가 아닌 경우 차량 잠금을 해제하는 데 사용할 수 있는 일회용 락픽 도구가 포함되어 있습니다.</Korean>
+            <Chinesesimp>此工具包包含一个一次性撬锁工具，用于在您不是工程师的情况下解锁车辆。</Chinesesimp>
+            <French>Ce kit contient un outil de crochetage à usage unique pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
         </Key>
     </Package>
 </Project>

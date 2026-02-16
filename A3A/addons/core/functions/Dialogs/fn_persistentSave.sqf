@@ -3,11 +3,12 @@
 /* Before rework, this function was essentially:
  *
  * if (player isEqualTo theBoss):
- *     doTheGlobalSaveWithoutSavingPlayerData;
+ *     doTheGlobalSaveAndSaveAllPlayerData;
  * else:
  *     doPlayerDataSave;
  *
- * Now, we always do the player data save first, and if we're not the boss, we just exit after that.
+ * Now, we always do the player data save first to include plugin save data, and
+ * if we're not the boss, we just exit after that.
  */
 
 private _pluginsData = createHashMap;
