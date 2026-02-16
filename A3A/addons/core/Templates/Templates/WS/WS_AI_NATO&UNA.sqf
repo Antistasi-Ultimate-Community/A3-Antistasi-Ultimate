@@ -55,7 +55,7 @@ private _IFVs = ["B_APC_Tracked_01_rcws_F"];
 private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F","B_UGV_01_rcws_F","a3a_APC_Wheeled_03_cannon_blufor_F"];
 private _lightTanks = ["B_UGV_01_rcws_F"];
 private _tanks = ["B_MBT_01_cannon_F","B_MBT_01_TUSK_F","B_MBT_03_cannon_lxWS"];
-private _aa = ["B_APC_Tracked_01_AA_F"];
+private _aa = ["B_APC_Tracked_01_AA_F","I_G_Offroad_AA_lxWS","I_Tura_Offroad_armor_AA_lxWS"];
 
 private _transportBoat = ["B_Boat_Transport_01_F"];
 private _gunBoat = ["B_Boat_Armed_01_minigun_F","a3a_Boat_Armed_01_hmg_blufor_F"];

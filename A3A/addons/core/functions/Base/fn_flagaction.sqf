@@ -295,17 +295,17 @@ switch _typeX do
     };
     case "static":
     {
-        private _cond = "(isPlayer _this) and (_target getVariable ['ownerSide', teamPlayer] == teamPlayer) and (isNull attachedTo _target) and ";
-        _flag addAction [localize "STR_antistasi_actions_move_static_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", _cond+"!isNil {_target getVariable 'lockedForAI'}", 4];
-        _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", _cond+"isNil {_target getVariable 'lockedForAI'}", 4];
+        private _cond = "(isPlayer _this) && {isNull objectParent _this} && {_target getVariable ['ownerSide', teamPlayer] == teamPlayer} && {locked _target < 2} && {isNull attachedTo _target} && {_this call A3A_fnc_isMember} && ";
+        _flag addAction [localize "STR_antistasi_actions_move_static_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", _cond+"{!isNil {_target getVariable 'lockedForAI'}}", 4];
+        _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", _cond+"{isNil {_target getVariable 'lockedForAI'}}", 4];
     //    _flag addAction [localize "STR_antistasi_actions_move_static_kick_ai", A3A_fnc_lockStatic, nil, 1, true, false, "", _cond+"isNil {_target getVariable 'lockedForAI'} and !(isNull gunner _target) and !(isPlayer gunner _target)}", 4];
-        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "",  _cond+"(count crew _target == 0) and (isNull objectParent _this) and !(call A3A_fnc_isCarrying)", 4];
+        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "",  _cond+"{crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}", 4];
     };
     case "vehiclestatic":
     {
-        private _cond = "(_target getVariable ['ownerSide', teamPlayer] == teamPlayer) and (isNull attachedTo _target) and (_this call A3A_fnc_isMember) and ";
-        _flag addAction [localize "STR_antistasi_actions_move_vehicle_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", _cond+"!isNil {_target getVariable 'lockedForAI'}", 4];
-        _flag addAction [localize "STR_antistasi_actions_move_vehicle_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", _cond+"isNil {_target getVariable 'lockedForAI'}", 4];
+        private _cond = "(_target getVariable ['ownerSide', teamPlayer] == teamPlayer) && {locked _target < 2} && {isNull attachedTo _target} && {_this call A3A_fnc_isMember} && ";
+        _flag addAction [localize "STR_antistasi_actions_move_vehicle_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", _cond+"{!isNil {_target getVariable 'lockedForAI'}}", 4];
+        _flag addAction [localize "STR_antistasi_actions_move_vehicle_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", _cond+"{isNil {_target getVariable 'lockedForAI'}}", 4];
     };
     case "rivals_quest":
     {
