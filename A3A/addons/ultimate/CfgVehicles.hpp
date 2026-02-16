@@ -272,7 +272,7 @@ class FlagCarrier: FlagCarrierCore
 };
 
 class Land_Noticeboard_F;
-class GVAR(BaseAssemblyAreaSign): Land_Noticeboard_F 
+class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F 
 {
     scope = 2;
     displayName = "Garrison Assembly Area Sign";
