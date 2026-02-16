@@ -142,7 +142,7 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
 
     [_apc, _side, _resPool] call A3A_fnc_AIVEHinit;
 
-    [_apc, _plane, _groupJumper, _targetPosition, _apcCrew, _apcGroup] spawn {
+    [_apc, _plane, _groupJumper, _dropPos, _apcCrew, _apcGroup] spawn {
         params ["_apc", "_plane", "_groupJumper", "_targetPos", "_apcCrew", "_apcGroup"];
 
         waitUntil {((getPos _apc) select 2) < 150};
