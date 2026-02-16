@@ -21,7 +21,6 @@ class optre_madrigal {
 		BUILDABLES_HISTORIC,
 		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_GREEN,
-		BUILDABLES_SCIFI,
 		BUILDABLES_TEMPERATE
 	};
 	// Needs to be re-done when possible
