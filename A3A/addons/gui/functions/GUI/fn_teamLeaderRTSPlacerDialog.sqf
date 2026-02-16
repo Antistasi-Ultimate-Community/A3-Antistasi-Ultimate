@@ -39,7 +39,8 @@ switch (_mode) do
     {
         _params params[
             ["_buildableObjects", EGVAR(core,tlDialogBuildableObjects), [[]]],
-            ["_createBackButton", false, [true]]
+            ["_createBackButton", false, [true]],
+            ["_restoreScrollValues", [0,0], [[]], 2]
         ];
 
         // First call for top-level menu, reset menu stack
@@ -113,7 +114,11 @@ switch (_mode) do
             [_button];
         };
 
-        _buildControlsGroup ctrlSetScrollValues[0, 0];
+        [{
+            params["_control","_scrollValues"];
+            _control ctrlSetScrollValues _scrollValues;
+        }, [_buildControlsGroup, _restoreScrollValues]] call CBA_fnc_execNextFrame;
+
         allControls _buildControlsGroup apply { ctrlDelete _x };
 
         if (_createBackButton) then {
@@ -170,9 +175,13 @@ switch (_mode) do
 
             if !(isNil { _button getVariable "subMenu" }) then {
                 _button setVariable["returnMenu", [_buildableObjects, _createBackButton]];
+                _button setVariable["hostControl", _buildControlsGroup];
                 _button ctrlAddEventHandler["ButtonClick", {
                     params["_control"];
-                    GVAR(builderMenuStack) = [_control getVariable "returnMenu"] + GVAR(builderMenuStack);
+                    private _scrollValues = ctrlScrollValues(_control getVariable "hostControl");
+                    private _returnMenu = _control getVariable "returnMenu";
+                    _returnMenu params["_buildableObjects","_createBackButton"];
+                    GVAR(builderMenuStack) = [[_buildableObjects, _createBackButton, _scrollValues]] + GVAR(builderMenuStack);
                 }];
             };
 
