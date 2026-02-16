@@ -481,7 +481,7 @@ if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fn
     private _loadedTemplateInfoXML = A3A_loadedTemplateInfoXML apply {[true,_x#0,_x#1]};	// Remove and simplify when the list above is empty and can be deleted.
     _modsAndLoadText append _loadedTemplateInfoXML;
 
-    if (count _modsAndLoadText isEqualTo 0) exitWith {};
+    if (!_enableInitMessages || {count _modsAndLoadText isEqualTo 0}) exitWith {};
     private _textXML = "<t align='left'>" + ((_modsAndLoadText apply { "<t color='#f0d498'>" + _x#1 + ":</t>" + _x#2 }) joinString "<br/>") + "</t>";
     if (_enableInitMessages) then { [localize "STR_A3A_initClient_mods_header",_textXML] call A3A_fnc_customHint };
 };
