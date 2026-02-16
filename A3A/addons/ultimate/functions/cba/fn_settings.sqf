@@ -174,12 +174,12 @@ if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
 };
 
 [
-    "A3U_setting_enableInitMessages", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
-    "CHECKBOX", // setting type
-    "$STR_A3U_setting_enableInitMessages", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
-    "Antistasi Ultimate", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    "A3U_setting_enableInitMessages",
+    "CHECKBOX",
+    ["$STR_A3U_setting_enableInitMessages", "$STR_A3U_setting_enableInitMessages_desc"],
+    "Antistasi Ultimate",
     true,
-    false, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    false,
     {  
         params ["_value"];
 		profileNamespace setVariable ["A3U_setting_enableInitMessages",_value];
@@ -187,12 +187,12 @@ if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
 ] call CBA_fnc_addSetting;
 
 [
-    "A3U_setting_enableIntroAnimation", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
-    "CHECKBOX", // setting type
-    "$STR_A3U_setting_enableIntroAnimation", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
-    "Antistasi Ultimate", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    "A3U_setting_enableIntroAnimation",
+    "CHECKBOX",
+    ["$STR_A3U_setting_enableIntroAnimation", "$STR_A3U_setting_enableIntroAnimation_desc"],
+    "Antistasi Ultimate",
     true,
-    false, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    false,
     {  
         params ["_value"];
 		profileNamespace setVariable ["A3U_setting_enableIntroAnimation",_value];
