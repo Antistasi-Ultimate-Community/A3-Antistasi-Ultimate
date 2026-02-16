@@ -4414,6 +4414,17 @@
                 <Spanish>Menú de Construcción</Spanish>
                 <Polish>Menu Budowy</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_bunkers">
+                <Original>Bunkers</Original>
+                <French>Bunkers</French>
+                <Chinesesimp>掩体</Chinesesimp>
+                <Russian>Бункеры</Russian>
+                <Korean>벙커</Korean>
+                <Italian>Bunker</Italian>
+                <Czech>Bunkry</Czech>
+                <Spanish>Bunkers</Spanish>
+                <Polish>Bunkry</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_category_clutter">
                 <Original>Clutter</Original>
                 <French>Désordre</French>
@@ -4480,6 +4491,28 @@
                 <Spanish>Pequeñas</Spanish>
                 <Polish>Małe</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_helipads">
+                <Original>Landing pads</Original>
+                <French>Zones d'atterrissage</French>
+                <Chinesesimp>降落区</Chinesesimp>
+                <Russian>Посадочные площадки</Russian>
+                <Korean>착륙 패드</Korean>
+                <Italian>Piazzuole di atterraggio</Italian>
+                <Czech>Přistávací plochy</Czech>
+                <Spanish>Plataformas de aterrizaje</Spanish>
+                <Polish>Lądowiska</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_junk">
+                <Original>Junk</Original>
+                <French>Ferraille</French>
+                <Chinesesimp>废铁</Chinesesimp>
+                <Russian>Хлам</Russian>
+                <Korean>잡동사니</Korean>
+                <Italian>Rottami</Italian>
+                <Czech>Harampádí</Czech>
+                <Spanish>Chatarra</Spanish>
+                <Polish>Złom</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_category_large_objects">
                 <Original>Large Objects</Original>
                 <French>Grands objets</French>
@@ -4502,6 +4535,28 @@
                 <Spanish>Luces</Spanish>
                 <Polish>Światła</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_military">
+                <Original>Military</Original>
+                <French>Militaire</French>
+                <Chinesesimp>军事</Chinesesimp>
+                <Russian>Военные</Russian>
+                <Korean>군사</Korean>
+                <Italian>Militare</Italian>
+                <Czech>Vojenské</Czech>
+                <Spanish>Militar</Spanish>
+                <Polish>Wojskowe</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_military_hesco">
+                <Original>HESCO Barriers</Original>
+                <French>Barrières HESCO</French>
+                <Chinesesimp>赫斯科防护障碍</Chinesesimp>
+                <Russian>Баррикады HESCO</Russian>
+                <Korean>HESCO 방벽</Korean>
+                <Italian>Barriere HESCO</Italian>
+                <Czech>HESCO zábrany</Czech>
+                <Spanish>Barreras HESCO</Spanish>
+                <Polish>Zapory HESCO</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_category_obstacles">
                 <Original>Obstacles</Original>
                 <French>Obstacles</French>
@@ -4513,6 +4568,17 @@
                 <Spanish>Obstáculos</Spanish>
                 <Polish>Przeszkody</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_sandbags">
+                <Original>Sandbags</Original>
+                <French>Sacs de sable</French>
+                <Chinesesimp>沙袋</Chinesesimp>
+                <Russian>Мешки с песком</Russian>
+                <Korean>모래주머니</Korean>
+                <Italian>Sacchi di sabbia</Italian>
+                <Czech>Pytle s pískem</Czech>
+                <Spanish>Sacos de arena</Spanish>
+                <Polish>Worki z piaskiem</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_category_tents">
                 <Original>Tents</Original>
                 <French>Tentes</French>
@@ -4523,6 +4589,17 @@
                 <Czech>Stany</Czech>
                 <Spanish>Tiendas de campaña</Spanish>
                 <Polish>Namioty</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_terrain_modifiers">
+                <Original>Terrain Modifiers</Original>
+                <French>Modificateurs de terrain</French>
+                <Chinesesimp>地形修饰</Chinesesimp>
+                <Russian>Модификаторы местности</Russian>
+                <Korean>지형 수정자</Korean>
+                <Italian>Modificatori del terreno</Italian>
+                <Czech>Modifikátory terénu</Czech>
+                <Spanish>Modificadores de terreno</Spanish>
+                <Polish>Modyfikatory terenu</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_small_trench">
                 <Original>Small Trench</Original>
