@@ -1057,7 +1057,7 @@ class rhsusf_addons_rhsusf_stryker_rhsusf_m1126_m2_p3d : TRIPLES(ADDON,Nodes,Bas
         class Node5
         {
             offset[] = {0.324367,-1.69647,-1.2699};
-            seats[] = {4,5};
+            seats[] = {4,5,6};
         };
     };
 };
