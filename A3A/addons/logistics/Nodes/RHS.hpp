@@ -1050,7 +1050,7 @@ class rhsusf_addons_rhsusf_stryker_rhsusf_m1126_m2_p3d : TRIPLES(ADDON,Nodes,Bas
         class Node4
         {
             offset[] = {0.324479,-2.13499,-1.26959};
-            seats[] = {6,7};
+            seats[] = {6,7,8};
             canCouple = 0;
         };
 
@@ -1088,14 +1088,14 @@ class rhsusf_addons_rhsusf_stryker_rhsusf_m1127_m2_p3d : TRIPLES(ADDON,Nodes,Bas
         class Node3
         {
             offset[] = {0.560389,-2.13499,-1.26959};
-            seats[] = {6,7};
+            seats[] = {6,7,8};
             canCouple = 0;
         };
 
         class Node4
         {
             offset[] = {0.560137,-1.69647,-1.2699};
-            seats[] = {4,5};
+            seats[] = {4,5,6};
         };
     };
 };
@@ -1110,6 +1110,7 @@ class rhsusf_addons_rhsusf_stryker_rhsusf_m1134_p3d : TRIPLES(ADDON,Nodes,Base)
         {
             offset[] = {0.1516,-2.4392,-0.177};
             seats[] = {};
+            turrets[] = {{3}};
         };
     };
 };
@@ -1142,14 +1143,14 @@ class rhsusf_addons_rhsusf_stryker_rhsusf_m1132_m2_p3d : TRIPLES(ADDON,Nodes,Bas
         class Node4
         {
             offset[] = {0.024479,-3.18771,-1.26959};
-            seats[] = {6,7};
+            seats[] = {6,7,8};
             canCouple = 0;
         };
 
         class Node5
         {
             offset[] = {0.0243669,-2.74919,-1.2699};
-            seats[] = {4,5};
+            seats[] = {4,5,6};
         };
     };
 };
