@@ -387,7 +387,7 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_LR_model_LeftHand_CUP_LR_Special_p
 
 class cup_wheeledvehicles_cup_wheeledvehicles_wolfhound_CUP_wolfhound_GMG_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-	canLoadWeapon = 1;
+    canLoadWeapon = 1;
     class Nodes
     {
         class Node1
@@ -472,7 +472,7 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_NewM998_model_CUP_nM1038_4s_p3d : 
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_M1151_models_CUP_nM1151_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-	canLoadWeapon = 0;
+    canLoadWeapon = 0;
     class Nodes
     {
         class Node1
@@ -487,8 +487,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_M1151_models_CUP_nM1151_ogpk_mk19_
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_HMMWV_model_CUP_m1151_m2_gpk_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -503,8 +503,8 @@ class cup_wheeledvehicles_cup_wheeledvehicles_hmmwv_model_cup_M998_crows : CUP_W
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_UpHMMWV_CUP_M1151_Deploy_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -517,8 +517,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_UpHMMWV_CUP_M1151_MK19_p3d : CUP_W
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_UpHMMWV_CUP_GMV_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -676,8 +676,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Ural_cup_Ural_open_p3d : TRIPLES(A
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_SUV_CUP_SUV_Armored_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-	   canLoadWeapon = 0;
-       class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
        class Node1
        {
@@ -688,8 +688,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_SUV_CUP_SUV_Armored_p3d : TRIPLES(
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Dingo_CUP_Dingo2a2_MG_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-	   canLoadWeapon = 0;
-       class Nodes
+    canLoadWeapon = 0;
+    class Nodes
    {
        class Node1
        {
@@ -702,8 +702,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Dingo_CUP_Dingo2a2_p3d : CUP_Wheel
 /* pending turn out seat fix
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Boxer_CUP_Boxer_gmg_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -733,8 +733,8 @@ class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP_bvp1 : TRIPLES(ADDON,Nodes
 /* pending turn out seat fix
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -748,8 +748,8 @@ class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2 : TRIPLES(ADDON,Node
 /* pending turret seat fix
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_ambulance : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -767,8 +767,8 @@ class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_ambulance : TRIPLES(
 
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_HQ : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -779,8 +779,8 @@ class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_HQ : TRIPLES(ADDON,N
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_BMP3_CUP_BMP3 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -791,8 +791,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_BMP3_CUP_BMP3 : TRIPLES(ADDON,Node
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BRDM2_CUP_BRDM2_HQ_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -803,8 +803,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_BRDM2_CUP_BRDM2_HQ_p3d : TRIPLES(A
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR40_cup_btr40 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -816,8 +816,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR40_cup_btr40 : TRIPLES(ADDON,No
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR40_CUP_btr40_dskm : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -830,8 +830,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR40_CUP_btr40_dskm : TRIPLES(ADD
 /* pending turn out seat fix
 class cup_wheeledvehicles_cup_wheeledvehicles_btr60_CUP_BTR60 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -849,8 +849,8 @@ class cup_wheeledvehicles_cup_wheeledvehicles_btr60_CUP_BTR60 : TRIPLES(ADDON,No
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR80_CUP_BTR_80_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -873,8 +873,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR80_CUP_BTR_80A_p3d : CUP_Wheele
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR90_CUP_BTR90_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -886,8 +886,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR90_CUP_BTR90_p3d : TRIPLES(ADDO
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR90_CUP_BTR90_HQ : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -950,8 +950,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Vodnik_CUP_GAZ39371_Vodnik_Unarmed
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Vodnik_CUP_GAZ39371_Vodnik_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -964,8 +964,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Vodnik_CUP_GAZ39371_Vodnik_GMG_p3d
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Vodnik_CUP_GAZ39371_Vodnik_HMG_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1002,8 +1002,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Vodnik_CUP_GAZ39371_Vodnik_MedEvac
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_bulldog_RWS : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1017,8 +1017,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_bulldog : CUP_Tr
 /* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1032,8 +1032,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_p3d : TRIPLES(AD
 /* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_ambulance_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1046,8 +1046,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_ambulance_p3d : 
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_FV510_CUP_FV510_BAF : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1059,8 +1059,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_FV510_CUP_FV510_BAF : TRIPLES(ADDO
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_MCV80_CUP_MCV80_BAF : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1072,8 +1072,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_MCV80_CUP_MCV80_BAF : TRIPLES(ADDO
 
 class cup_wheeledvehicles_cup_wheeledvehicles_Mastiff_CUP_Mastiff_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1087,8 +1087,8 @@ class cup_wheeledvehicles_cup_wheeledvehicles_Mastiff_CUP_Mastiff_GMG_p3d : cup_
 
 class cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1103,8 +1103,8 @@ class cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_GMG_p3d : c
 /* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_AAV_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1123,8 +1123,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_AAV_p3d : TRIPLES(ADDON,No
 /* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_aav_unarmed_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1142,8 +1142,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_aav_unarmed_p3d : TRIPLES(
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_NewM113_CUP_m113a1_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1156,8 +1156,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_NewM113_CUP_m113a3_p3d : CUP_Track
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_NewM113_CUP_m113a3_mhq_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -1175,8 +1175,8 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_NewM113_CUP_m113a1_mhq_p3d : CUP_T
 
 class cup_TrackedVehicles_CUP_TrackedVehicles_Bradley_CUP_M2A2_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1190,8 +1190,8 @@ class cup_TrackedVehicles_CUP_TrackedVehicles_Bradley_CUP_M7_p3d : cup_TrackedVe
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1126_ICV_m2 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1207,8 +1207,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1130_CV : CUP_Wheeled
 /* pending turn out seat fix
 class cup_wheeledvehicles_cup_wheeledvehicles_lav25_CUP_LAV25_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1222,8 +1222,8 @@ class cup_wheeledvehicles_cup_wheeledvehicles_lav25_cup_lav25m240_p3d : cup_whee
 
 class cup_wheeledvehicles_cup_wheeledvehicles_lav25_cup_lav_hq_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 1;
-        class Nodes
+    canLoadWeapon = 1;
+    class Nodes
     {
         class Node1
         {
@@ -1238,8 +1238,8 @@ class cup_wheeledvehicles_cup_wheeledvehicles_lav25_cup_lav_hq_p3d : TRIPLES(ADD
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_RG31_CUP_RG31_50 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1252,8 +1252,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_RG31_CUP_RG31_mk19 : CUP_WheeledVe
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_RG31_CUP_RG31_50_GC : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1265,8 +1265,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_RG31_CUP_RG31_50_GC : TRIPLES(ADDO
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_RG31_CUP_RG31_MK5E_50 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1283,8 +1283,8 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_RG31_CUP_RG31_MK5E_50 : TRIPLES(AD
 
 class cup_airvehicles_cup_airvehicles_mi6_int73_mi6a_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1347,8 +1347,8 @@ class cup_airvehicles_cup_airvehicles_mi6_int73_mi6a_p3d : TRIPLES(ADDON,Nodes,B
 
 class cup_airvehicles_cup_airvehicles_mi6_int73_mi6t_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1363,8 +1363,8 @@ class cup_airvehicles_cup_airvehicles_mi6_int73_mi6t_p3d : TRIPLES(ADDON,Nodes,B
 
 class CUP_AirVehicles_CUP_AirVehicles_Mi8_model_CUP_Mi_8AMT_VIV : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1395,8 +1395,8 @@ class CUP_AirVehicles_CUP_AirVehicles_Mi8_model_CUP_Mi_8AMT_VIV : TRIPLES(ADDON,
 
 class CUP_AirVehicles_CUP_AirVehicles_Mi8_model_CUP_Mi_8MT : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1434,8 +1434,8 @@ class CUP_AirVehicles_CUP_AirVehicles_Mi8_model_CUP_Mi_8MTV_3 : CUP_AirVehicles_
 
 class CUP_AirVehicles_CUP_AirVehicles_Mi8_model_CUP_Mi_8AMT : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1472,8 +1472,8 @@ class CUP_AirVehicles_CUP_AirVehicles_Mi8_model_CUP_Mi_8AMT : TRIPLES(ADDON,Node
 
 class cup_airvehicles_cup_airvehicles_ch53e_usec_ch53_e_viv_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1520,8 +1520,8 @@ class cup_airvehicles_cup_airvehicles_ch53e_usec_ch53_e_viv_p3d : TRIPLES(ADDON,
 
 class cup_airvehicles_cup_airvehicles_ch53e_usec_ch53_e_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1577,8 +1577,8 @@ class cup_airvehicles_cup_airvehicles_ch53e_usec_ch53_e_p3d : TRIPLES(ADDON,Node
 
 class CUP_AirVehicles_CUP_AirVehicles_CH47_CUP_CH_47F_VIV_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1625,8 +1625,8 @@ class CUP_AirVehicles_CUP_AirVehicles_CH47_CUP_CH_47F_VIV_p3d : TRIPLES(ADDON,No
 
 class CUP_AirVehicles_CUP_AirVehicles_CH47_CUP_CH_47F_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1682,8 +1682,8 @@ class CUP_AirVehicles_CUP_AirVehicles_CH47_CUP_CH_47F_p3d : TRIPLES(ADDON,Nodes,
 
 class CUP_AirVehicles_CUP_AirVehicles_MH47E_CUP_MH47E_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1694,8 +1694,8 @@ class CUP_AirVehicles_CUP_AirVehicles_MH47E_CUP_MH47E_p3d : TRIPLES(ADDON,Nodes,
 
 class cup_airvehicles_cup_airvehicles_mv22_CUP_MV22_VIV_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1734,8 +1734,8 @@ class cup_airvehicles_cup_airvehicles_mv22_CUP_MV22_VIV_p3d : TRIPLES(ADDON,Node
 
 class cup_airvehicles_cup_airvehicles_mv22_cup_mv22_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1783,8 +1783,8 @@ class cup_airvehicles_cup_airvehicles_mv22_CUP_MV22_RampGun_p3d : cup_airvehicle
 
 class CUP_AirVehicles_CUP_AirVehicles_C130J_CUP_c130j_Cargo_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
@@ -1851,8 +1851,8 @@ class CUP_AirVehicles_CUP_AirVehicles_C130J_CUP_c130j_Cargo_p3d : TRIPLES(ADDON,
 
 class CUP_AirVehicles_CUP_AirVehicles_C130J_CUP_c130j_p3d : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0;
-        class Nodes
+    canLoadWeapon = 0;
+    class Nodes
     {
         class Node1
         {
