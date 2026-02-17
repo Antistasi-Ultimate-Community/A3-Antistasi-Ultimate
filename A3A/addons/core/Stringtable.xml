@@ -4557,6 +4557,17 @@
                 <Spanish>Barreras HESCO</Spanish>
                 <Polish>Zapory HESCO</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_miscellaneous">
+                <Original>Miscellaneous</Original>
+                <French>Divers</French>
+                <Chinesesimp>杂项</Chinesesimp>
+                <Russian>Разное</Russian>
+                <Korean>기타</Korean>
+                <Italian>Varie</Italian>
+                <Czech>Různé</Czech>
+                <Spanish>Varios</Spanish>
+                <Polish>Różne</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_category_obstacles">
                 <Original>Obstacles</Original>
                 <French>Obstacles</French>
