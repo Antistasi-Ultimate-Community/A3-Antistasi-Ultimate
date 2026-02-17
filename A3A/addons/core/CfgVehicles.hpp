@@ -185,6 +185,20 @@ class CfgVehicles
         class TransportBackpacks{};
     };
 
+    class Box_NATO_AmmoVeh_F;
+    class A3AU_Build_Box_Humongous : Box_NATO_AmmoVeh_F {
+        displayName = "Build Box (Humongous)";
+        hiddenSelectionsTextures[] = {QPATHTOFOLDER(Pictures\items\A3AU_Build_Box_Humongous.paa),"A3\Weapons_F\Ammoboxes\data\AmmoVeh_CO.paa"};
+
+        ace_dragging_canDrag = 0;
+        ace_dragging_canCarry = 0;
+
+        class TransportMagazines{};
+        class TransportWeapons{};
+        class TransportItems{};
+        class TransportBackpacks{};
+    };
+
     class Land_PaperBox_01_small_closed_white_med_F;
     class A3AU_moneyCrate_small_01 : Land_PaperBox_01_small_closed_white_med_F {
         displayName = "Money Crate (Small)";
