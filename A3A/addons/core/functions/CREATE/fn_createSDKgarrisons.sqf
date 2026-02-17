@@ -40,7 +40,7 @@ private _size = [_markerX] call A3A_fnc_sizeMarker;
 private _staticsX = staticsToSave select {_x distance2D _positionX < _size};
 private _assemblyPositions = nearestObjects[_positionX, ["Building"], _size, true]
 	select { alive _x && { _x inArea _markerX } && { getNumber(configOf _x >> QGVAR(aiBunchUpPriority)) > 0 } }
-	apply { [[getPosATL _x select 0, getPosATL _x select 1, 0], getNumber(configOf _x >> QGVAR(aiBunchUpPriority))] };
+	apply { [(getPosATL _x) vectorMultiply [1,1,0], getNumber(configOf _x >> QGVAR(aiBunchUpPriority))] };
 
 // Always exclude priority=1 if higher priorities are found
 private _haveHigher = _assemblyPositions findIf { _x select 1 > 1 } != -1;
