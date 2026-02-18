@@ -212,6 +212,23 @@ class CfgVehicles
         class TransportBackpacks{};
     };
 
+    class Box_NATO_AmmoVeh_F;
+    class A3AU_Build_Box_Humongous : Box_NATO_AmmoVeh_F {
+        displayName = "Build Box (Humongous)";
+        hiddenSelectionsTextures[] = {QPATHTOFOLDER(Pictures\items\A3AU_Build_Box_Humongous.paa),"A3\Weapons_F\Ammoboxes\data\AmmoVeh_CO.paa"};
+
+        ace_cargo_blockUnloadCarry = 1;
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 6;
+        ace_dragging_canDrag = 0;
+        ace_dragging_canCarry = 0;
+
+        class TransportMagazines{};
+        class TransportWeapons{};
+        class TransportItems{};
+        class TransportBackpacks{};
+    };
+
     class GVAR(Box_BuildingPlacer_Additions_Base): Box_NATO_Uniforms_F {
         scope = 0;
         scopeCurator = 0;
