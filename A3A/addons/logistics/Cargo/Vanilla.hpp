@@ -382,7 +382,7 @@ class A3_Static_F_Jets_AAA_system_01_AAA_system_01_F_p3d : TRIPLES(ADDON,Cargo,B
     size = 7;
     recoil = 1500;
     isWeapon = 1;
-};///сделано
+};
 class A3_Static_F_Jets_SAM_system_01_SAM_system_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.752};
@@ -390,7 +390,7 @@ class A3_Static_F_Jets_SAM_system_01_SAM_system_01_F_p3d : TRIPLES(ADDON,Cargo,B
     size = 7;
     recoil = 750;
     isWeapon = 1;
-};///сделано
+};
 class A3_Static_F_Jets_SAM_system_02_SAM_system_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.962};
@@ -398,13 +398,13 @@ class A3_Static_F_Jets_SAM_system_02_SAM_system_02_F_p3d : TRIPLES(ADDON,Cargo,B
     size = 8;
     recoil = 750;
     isWeapon = 1;
-};///сделано
+};
 class A3_Static_F_Sams_Radar_System_02_Radar_System_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,3.85};
     rotation[] = {1,0,0};
     size = 10;
-};///сделано
+};
 class A3_Static_F_Sams_SAM_system_04_SAM_system_04_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,2.168};
@@ -412,13 +412,13 @@ class A3_Static_F_Sams_SAM_system_04_SAM_system_04_F_p3d : TRIPLES(ADDON,Cargo,B
     size = 10;
     recoil = 750;
     isWeapon = 1;
-};///сделано
+};
 class A3_Static_F_Sams_Radar_System_01_Radar_System_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,2.87};
     rotation[] = {1,0,0};
     size = 10;
-};///сделано
+};
 class A3_Static_F_Sams_SAM_system_03_SAM_system_03_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,3.79};
@@ -426,7 +426,7 @@ class A3_Static_F_Sams_SAM_system_03_SAM_system_03_F_p3d : TRIPLES(ADDON,Cargo,B
     size = 10;
     recoil = 750;
     isWeapon = 1;
-};///сделано
+};
 class A3_Static_F_Destroyer_Ship_Gun_01_Ship_Gun_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,2.74};
@@ -434,7 +434,7 @@ class A3_Static_F_Destroyer_Ship_Gun_01_Ship_Gun_01_F_p3d : TRIPLES(ADDON,Cargo,
     size = 10;
     recoil = 1700;
     isWeapon = 1;
-};///сделано
+};
 class A3_Static_F_Destroyer_Ship_MRLS_01_Ship_MRLS_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.39};
@@ -442,7 +442,7 @@ class A3_Static_F_Destroyer_Ship_MRLS_01_Ship_MRLS_01_F_p3d : TRIPLES(ADDON,Carg
     size = 12;
     recoil = 1000;
     isWeapon = 1;
-};///сделано
+};
 ////////////Vehicles
 /////////Size 1
 class a3_Soft_F_Enoch_UGV_02_UGV_02_F : TRIPLES(ADDON,Cargo,Base)
@@ -690,7 +690,7 @@ class A3_soft_f_beta_MRAP_03_MRAP_03_unarmed_F : TRIPLES(ADDON,Cargo,Base)
     offset[] = {0,0.2,1.71};
     rotation[] = {0,1,0};
     size = 7;
-};///доделано
+};
 class A3_soft_f_MRAP_02_MRAP_02_hmg_F : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0.75,2.65};
@@ -706,13 +706,13 @@ class A3_soft_f_MRAP_02_MRAP_02_gmg_F : TRIPLES(ADDON,Cargo,Base)
     size = 7;
     recoil = 250;
     isWeapon = 1;
-};///доделано
+};
 class A3_soft_f_MRAP_02_MRAP_02_unarmed_F : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0.55,2.305};
     rotation[] = {0,1,0};
     size = 7;
-};///доделано
+};
 class A3_soft_f_MRAP_01_MRAP_01_gmg_F : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0.75,2.57};
@@ -720,7 +720,7 @@ class A3_soft_f_MRAP_01_MRAP_01_gmg_F : TRIPLES(ADDON,Cargo,Base)
     size = 7;
     recoil = 250;
     isWeapon = 1;
-};///доделано
+};
 class A3_soft_f_MRAP_01_MRAP_01_hmg_F : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0.75,2.57};
@@ -733,7 +733,7 @@ class A3_soft_f_MRAP_01_MRAP_01_hmg_F : TRIPLES(ADDON,Cargo,Base)
     offset[] = {0,0.75,1.9};
     rotation[] = {0,1,0};
     size = 7;
-};///доделано
+};
 class A3_armor_f_beta_APC_Wheeled_02_APC_Wheeled_02_rcws_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {-0.24,0.3,2.6};
@@ -912,7 +912,7 @@ class A3_armor_f_beta_APC_Tracked_01_APC_Tracked_01_aa_F : TRIPLES(ADDON,Cargo,B
     isWeapon = 1;
 };
 ////////Size 10
-//All Size 10 and above Vehicles should probably be considered as weapons so they can be transported in capable Vehicles
+//All Size 10 and above Vehicles should probably be considered as weapons so they can be transported only in capable Vehicles
 class a3_Soft_F_Gamma_Truck_01_Truck_01_cargo_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,2.1};
