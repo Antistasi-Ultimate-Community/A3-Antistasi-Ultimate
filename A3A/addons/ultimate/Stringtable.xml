@@ -381,4 +381,38 @@
             <French>Ce kit contient un outil de crochetage à usage unique pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
         </Key>
     </Package>
+    <Package name="CBA-settings">
+        <Key ID="STR_A3U_setting_enableInitMessages">
+            <Original>Enable Init Messages</Original>
+            <German>Initialnachrichten aktivieren</German>
+            <Russian>Включить начальные сообщения</Russian>
+            <Korean>초기 메시지 활성화</Korean>
+            <Chinesesimp>启用初始化消息</Chinesesimp>
+            <French>Activer les messages d'initialisation</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableInitMessages_desc">
+            <Original>Enable popup messages during / after client initialization relating to basic gamemode and loaded mods information.</Original>
+            <German>Popup-Nachrichten während / nach der Client-Initialisierung aktivieren, die sich auf grundlegende Spielmodi und geladene Mods beziehen.</German>
+            <Russian>Включить всплывающие сообщения во время / после инициализации клиента, относящиеся к основному игровому режиму и загруженным модам.</Russian>
+            <Korean>클라이언트 초기화 중 / 후에 기본 게임 모드 및 로드된 모드 정보와 관련된 팝업 메시지를 활성화합니다.</Korean>
+            <Chinesesimp>在客户端初始化期间/之后启用与基本游戏模式和已加载的模组信息相关的弹出消息。</Chinesesimp>
+            <French>Activer les messages contextuels pendant / après l'initialisation du client concernant le mode de jeu de base et les mods chargés.</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableIntroAnimation">
+            <Original>Enable Intro Animation</Original>
+            <German>Intro-Animation aktivieren</German>
+            <Russian>Включить вступительную анимацию</Russian>
+            <Korean>인트로 애니메이션 활성화</Korean>
+            <Chinesesimp>启用开场动画</Chinesesimp>
+            <French>Activer l'animation d'introduction</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableIntroAnimation_desc">
+            <Original>Enable orbiting camera intro animation at end of client initialization.</Original>
+            <German>Orbitierende Kamera-Intro-Animation am Ende der Client-Initialisierung aktivieren.</German>
+            <Russian>Включить анимацию вступительной камеры в конце инициализации клиента.</Russian>
+            <Korean>클라이언트 초기화가 끝날 때 궤도 카메라 인트로 애니메이션 활성화.</Korean>
+            <Chinesesimp>在客户端初始化结束时启用环绕摄像机的开场动画。</Chinesesimp>
+            <French>Activer l'animation d'introduction de la caméra orbitale à la fin de l'initialisation du client.</French>
+        </Key>
+    </Package>
 </Project>
