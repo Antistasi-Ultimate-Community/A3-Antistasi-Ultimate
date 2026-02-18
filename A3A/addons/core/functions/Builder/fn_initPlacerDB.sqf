@@ -1,4 +1,6 @@
+#include "..\..\script_component.hpp"
 #include "placerDefines.hpp"
+FIX_LINE_NUMBERS()
 
 /*
 Author: [Killerswin2]
@@ -13,70 +15,107 @@ Environment: Unscheduled
 Public:
 no
 Example:
-[player, 100] call A3A_fnc_initBuildingDB
+[player, 100] call A3A_fnc_initPlacerDB
 */
-
-
-
 params [
 	["_buildCenter", player, [objNull]],
 	["_buildRadius", 20,[0]],
 	["_teamLeaderBox", objNull, [objNull]]
 ];
 
+GVAR(tlDialogBuildableObjects) = A3A_buildableObjects;
 
-A3A_building_EHDB = [
-	// ROTATION_STEP (false = default rotation, <number> = rotation step in degrees)
-	false,
-	// ROTATION_MODE_CW
-	false,
-	// ROTATION_MODE_CCW
-	false,
-	// GUI_BUTTON_PRESSED
-	false,
-	// UNSAFE_MODE
-	false,
-	// BUILD_OBJECTS_ARRAY
-	[],
-	// BUILD_OBJECT_SELECTED_STRING
-	"Land_Can_V2_F",
-	// BUILD_OBJECT_TEMP_OBJECT
-	"Land_Can_V2_F" createVehicleLocal [0,0,0],
-	// BUILD_OBJECT_TEMP_OBJECT_ARRAY
-	[],
+if (isArray(configOf _teamLeaderBox >> QGVAR(buildableObjects))) then {
+	private _buildableObjects = getArray(configOf _teamLeaderBox >> QGVAR(buildableObjects));
+
+	if isText(configOf _teamLeaderBox >> QGVAR(buildableObjectsCode)) then {
+		private _code = getText(configOf _teamLeaderBox >> QGVAR(buildableObjectsCode));
+		[_buildableObjects] call compile _code;
+	};
+
+	GVAR(tlDialogBuildableObjects) = _buildableObjects;
+};
+
+A3A_building_EHDB = createHashMapFromArray[
+    // ROTATION_STEP - (false = default rotation, <number> = rotation step in degrees)
+    [ROTATION_STEP, false],
+    // ROTATION_MODE_CW -
+    [ROTATION_MODE_CW, false],
+    // ROTATION_MODE_CCW -
+    [ROTATION_MODE_CCW, false],
+	// Z_OFFSET_VALUE -
+	[Z_OFFSET_VALUE, 0],
+	// Z_OFFSET_MODE_DECREASE -
+	[Z_OFFSET_MODE_DECREASE, false],
+	// Z_OFFSET_MODE_INCREASE -
+	[Z_OFFSET_MODE_INCREASE, false],
+	// Z_OFFSET_STEP -
+	[Z_OFFSET_STEP, 0.1],
+	// Z_OFFSET_STEP_FUNC
+	[Z_OFFSET_STEP_FUNC, {
+		params[["_direction", 1, [0]]];
+
+		private _steps = [0.1, 0.2, 0.5, 1, 2, 4, 8, 16];
+		private _stepping = A3A_building_EHDB get Z_OFFSET_STEP;
+		private _index = (_steps find _stepping) + _direction;
+		private _newIndex = switch true do {
+			case (_index < 0): { count(_steps) - 1 };
+			case (_index >= count _steps): { 0 };
+			default { _index };
+		};
+
+		A3A_building_EHDB set [Z_OFFSET_STEP, _steps#_newIndex];
+		systemChat format["Z-Offset move speed changed to %1x", _steps#_newIndex];
+	}],
+    // GUI_BUTTON_PRESSED -
+    [GUI_BUTTON_PRESSED, false],
+    // UNSAFE_MODE -
+    [UNSAFE_MODE, false],
+    // BUILD_OBJECTS_ARRAY -
+    [BUILD_OBJECTS_ARRAY, []],
+    // BUILD_OBJECT_SELECTED_STRING -
+    [BUILD_OBJECT_SELECTED_STRING, "Land_Can_V2_F"],
+    // BUILD_OBJECT_TEMP_OBJECT -
+    [BUILD_OBJECT_TEMP_OBJECT, [] call {
+		private _object = "Land_Can_V2_F" createVehicleLocal [0,0,0];
+		_object setVariable[QGVAR(uuid), [] call CBA_fnc_createUUID];
+		_object;
+	}],
+    // BUILD_OBJECT_TEMP_OBJECT_ARRAY -
+    [BUILD_OBJECT_TEMP_OBJECT_ARRAY, []],
 	// END_BUILD_FUNC
-	{
+	[END_BUILD_FUNC, {
 		// Finished so release
-		private _remMoney = (A3A_building_EHDB # AVAILABLE_MONEY);
-		[A3A_building_EHDB # TEAMLEADER_BOX, player, false, _remMoney] remoteExecCall ["A3A_fnc_lockBuilderBox", 2];
+		private _remMoney = (A3A_building_EHDB get AVAILABLE_MONEY);
+		[A3A_building_EHDB get TEAMLEADER_BOX, player, false, _remMoney] remoteExecCall ["A3A_fnc_lockBuilderBox", 2];
 		{deleteVehicle _x} forEach A3A_boundingCircle;
-		{deleteVehicle _x} forEach (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT_ARRAY);
+		{deleteVehicle _x} forEach (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY);
 		{
 			_x params["_actionName", "_eventType", "_ehID"];
 			removeUserActionEventHandler[_actionName, _eventType, _ehID];
-		} forEach (A3A_building_EHDB # USER_ACTION_EHS);
-		removeMissionEventHandler ["EachFrame", (A3A_building_EHDB # EACH_FRAME_EH)];
-		(A3A_building_EHDB # BUILD_DISPLAY) closeDisplay 1;
+		} forEach (A3A_building_EHDB get USER_ACTION_EHS);
+		removeMissionEventHandler ["EachFrame", (A3A_building_EHDB get EACH_FRAME_EH)];
+		(A3A_building_EHDB get BUILD_DISPLAY) closeDisplay 1;
 		A3A_cam cameraEffect ["terminate", "back"];
 		camDestroy A3A_cam;
-		deleteVehicle (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT);
+		deleteVehicle (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
 		("A3A_PlacerHint" call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
-		private _params = (A3A_building_EHDB # BUILD_OBJECTS_ARRAY);
+		private _params = (A3A_building_EHDB get BUILD_OBJECTS_ARRAY);
 		A3A_buildingRays = nil;
 		A3A_building_EHDB = nil;
 		player enableSimulation true;
 		[_params] remoteExecCall ["A3A_fnc_placeBuilderObjects", 2];
-	},
-	// BUILD_DISPLAY
-	-1,
-	// USER_ACTION_EHS
-	[],
+	}],
+    // BUILD_DISPLAY -
+    [BUILD_DISPLAY, -1],
+    // USER_ACTION_EHS -
+    [USER_ACTION_EHS, []],
 	// ROTATION_STEP_FUNC
-	{
+	[ROTATION_STEP_FUNC, {
 		params[["_direction", 1, [0]]];
 
 		private _steps = [7.5, 15, 30, 45, 60, 90];
-		private _stepping = A3A_building_EHDB # ROTATION_STEP;
+		private _stepping = A3A_building_EHDB get ROTATION_STEP;
 		private _newIndex = if (_stepping isEqualType false) then {
 			[0, count(_steps) - 1] select (_direction < 0);
 		} else {
@@ -91,12 +130,12 @@ A3A_building_EHDB = [
 
 		A3A_building_EHDB set [ROTATION_STEP, _steps#_newIndex];
 		systemChat format["Rotation step set to %1°", _steps#_newIndex];
-	},
-	// EACH_FRAME_EH
-	-1,
+	}],
+    // EACH_FRAME_EH -
+    [EACH_FRAME_EH, -1],
 	// UPDATE_BB
-	{
-		private _bb = (0 boundingBoxReal (A3A_building_EHDB # BUILD_OBJECT_TEMP_OBJECT));
+	[UPDATE_BB, {
+		private _bb = (0 boundingBoxReal (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT));
 		private _back = (_bb#0#1);
 		private _front = (_bb#1#1);
 		private _top = (_bb#1#2);
@@ -164,27 +203,27 @@ A3A_building_EHDB = [
 			,[[_right,_front,_knee], [_right,_back,_knee]]
 			,[[_right,_back,_knee], [_left,_back,_knee]]
 		];
-	},
-	// BUILD_RADIUS_OBJECT_CENTER
-	_buildCenter,
-	// BUILD_RADIUS
-	_buildRadius,
-	// HOLD_TIME (unused)
-	15,
-	// OBJECT_PRICE
-	0,
-	// BUILD_OBJECT_TEMP_DIR
-	0,
-	// TEAMLEADER_BOX
-	_teamLeaderBox,
-	// ELEVATION_MODE_UP (unused)
-	false,
-	// ELEVATION_MODE_DOWN (unused)
-	false,
-	// SNAP_SURFACE_MODE
-	false,
-	// AVAILABLE_MONEY
-	_teamLeaderBox getVariable ["A3A_build_money", 0],
-	// CURSOR_OBJECT
-	objNull
+	}],
+    // BUILD_RADIUS_OBJECT_CENTER -
+    [BUILD_RADIUS_OBJECT_CENTER, _buildCenter],
+    // BUILD_RADIUS -
+    [BUILD_RADIUS, _buildRadius],
+    // HOLD_TIME - (unused)
+    [HOLD_TIME, 15],
+    // OBJECT_PRICE -
+    [OBJECT_PRICE, 0],
+    // BUILD_OBJECT_TEMP_DIR -
+    [BUILD_OBJECT_TEMP_DIR, 0],
+    // TEAMLEADER_BOX -
+    [TEAMLEADER_BOX, _teamLeaderBox],
+    // ELEVATION_MODE_UP - (unused)
+    [ELEVATION_MODE_UP, false],
+    // ELEVATION_MODE_DOWN - (unused)
+    [ELEVATION_MODE_DOWN, false],
+    // SNAP_SURFACE_MODE -
+    [SNAP_SURFACE_MODE, false],
+    // AVAILABLE_MONEY -
+    [AVAILABLE_MONEY, _teamLeaderBox getVariable ["A3A_build_money", 0]],
+    // CURSOR_OBJECT -
+    [CURSOR_OBJECT, objNull]
 ];

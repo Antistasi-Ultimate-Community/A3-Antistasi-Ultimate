@@ -4802,6 +4802,204 @@
                 <Polish>Menu Budowy</Polish>
                 <Turkish>İnşa Menüsü</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_bunkers">
+                <Original>Bunkers</Original>
+                <French>Bunkers</French>
+                <Chinesesimp>掩体</Chinesesimp>
+                <Russian>Бункеры</Russian>
+                <Korean>벙커</Korean>
+                <Italian>Bunker</Italian>
+                <Czech>Bunkry</Czech>
+                <Spanish>Bunkers</Spanish>
+                <Polish>Bunkry</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_clutter">
+                <Original>Clutter</Original>
+                <French>Désordre</French>
+                <Chinesesimp>杂物</Chinesesimp>
+                <Russian>Мусор</Russian>
+                <Korean>잡동사니</Korean>
+                <Italian>Ingombrante</Italian>
+                <Czech>Nepořádek</Czech>
+                <Spanish>Desorden</Spanish>
+                <Polish>Bałagan</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_camo_nets">
+                <Original>Camouflage Nets</Original>
+                <French>Filets de camouflage</French>
+                <Chinesesimp>伪装网</Chinesesimp>
+                <Russian>Маскировочные сети</Russian>
+                <Korean>위장망</Korean>
+                <Italian>Reti mimetiche</Italian>
+                <Czech>Krycí sítě</Czech>
+                <Spanish>Redes de Camuflaje</Spanish>
+                <Polish>Siatki Maskujące</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_cargo_crates">
+                <Original>Cargo Crates</Original>
+                <French>Caisses de transport</French>
+                <Chinesesimp>货物箱</Chinesesimp>
+                <Russian>Грузовые ящики</Russian>
+                <Korean>화물 상자</Korean>
+                <Italian>Scatole di Carico</Italian>
+                <Czech>Nákladové bedny</Czech>
+                <Spanish>Cajas de Carga</Spanish>
+                <Polish>Skrzynie Transportowe</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_cargo_crates_large">
+                <Original>Large</Original>
+                <French>Grandes</French>
+                <Chinesesimp>大型</Chinesesimp>
+                <Russian>Большие</Russian>
+                <Korean>대형</Korean>
+                <Italian>Grandi</Italian>
+                <Czech>Velké</Czech>
+                <Spanish>Grandes</Spanish>
+                <Polish>Duże</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_cargo_crates_medium">
+                <Original>Medium</Original>
+                <French>Moyennes</French>
+                <Chinesesimp>中型</Chinesesimp>
+                <Russian>Средние</Russian>
+                <Korean>중형</Korean>
+                <Italian>Medie</Italian>
+                <Czech>Střední</Czech>
+                <Spanish>Medianas</Spanish>
+                <Polish>Średnie</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_cargo_crates_small">
+                <Original>Small</Original>
+                <French>Petites</French>
+                <Chinesesimp>小型</Chinesesimp>
+                <Russian>Малые</Russian>
+                <Korean>소형</Korean>
+                <Italian>Piccole</Italian>
+                <Czech>Malé</Czech>
+                <Spanish>Pequeñas</Spanish>
+                <Polish>Małe</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_helipads">
+                <Original>Landing pads</Original>
+                <French>Zones d'atterrissage</French>
+                <Chinesesimp>降落区</Chinesesimp>
+                <Russian>Посадочные площадки</Russian>
+                <Korean>착륙 패드</Korean>
+                <Italian>Piazzuole di atterraggio</Italian>
+                <Czech>Přistávací plochy</Czech>
+                <Spanish>Plataformas de aterrizaje</Spanish>
+                <Polish>Lądowiska</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_junk">
+                <Original>Junk</Original>
+                <French>Ferraille</French>
+                <Chinesesimp>废铁</Chinesesimp>
+                <Russian>Хлам</Russian>
+                <Korean>잡동사니</Korean>
+                <Italian>Rottami</Italian>
+                <Czech>Harampádí</Czech>
+                <Spanish>Chatarra</Spanish>
+                <Polish>Złom</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_large_objects">
+                <Original>Large Objects</Original>
+                <French>Grands objets</French>
+                <Chinesesimp>大型物体</Chinesesimp>
+                <Russian>Крупные объекты</Russian>
+                <Korean>대형 물체</Korean>
+                <Italian>Grandi Oggetti</Italian>
+                <Czech>Velké objekty</Czech>
+                <Spanish>Objetos grandes</Spanish>
+                <Polish>Duze Obiekty</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_lights">
+                <Original>Lights</Original>
+                <French>Lumières</French>
+                <Chinesesimp>灯光</Chinesesimp>
+                <Russian>Освещение</Russian>
+                <Korean>조명</Korean>
+                <Italian>Luci</Italian>
+                <Czech>Světlomety</Czech>
+                <Spanish>Luces</Spanish>
+                <Polish>Światła</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_military">
+                <Original>Military</Original>
+                <French>Militaire</French>
+                <Chinesesimp>军事</Chinesesimp>
+                <Russian>Военные</Russian>
+                <Korean>군사</Korean>
+                <Italian>Militare</Italian>
+                <Czech>Vojenské</Czech>
+                <Spanish>Militar</Spanish>
+                <Polish>Wojskowe</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_military_hesco">
+                <Original>HESCO Barriers</Original>
+                <French>Barrières HESCO</French>
+                <Chinesesimp>赫斯科防护障碍</Chinesesimp>
+                <Russian>Баррикады HESCO</Russian>
+                <Korean>HESCO 방벽</Korean>
+                <Italian>Barriere HESCO</Italian>
+                <Czech>HESCO zábrany</Czech>
+                <Spanish>Barreras HESCO</Spanish>
+                <Polish>Zapory HESCO</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_miscellaneous">
+                <Original>Miscellaneous</Original>
+                <French>Divers</French>
+                <Chinesesimp>杂项</Chinesesimp>
+                <Russian>Разное</Russian>
+                <Korean>기타</Korean>
+                <Italian>Varie</Italian>
+                <Czech>Různé</Czech>
+                <Spanish>Varios</Spanish>
+                <Polish>Różne</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_obstacles">
+                <Original>Obstacles</Original>
+                <French>Obstacles</French>
+                <Chinesesimp>障碍物</Chinesesimp>
+                <Russian>Препятствия</Russian>
+                <Korean>장애물</Korean>
+                <Italian>Ostacoli</Italian>
+                <Czech>Překážky</Czech>
+                <Spanish>Obstáculos</Spanish>
+                <Polish>Przeszkody</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_sandbags">
+                <Original>Sandbags</Original>
+                <French>Sacs de sable</French>
+                <Chinesesimp>沙袋</Chinesesimp>
+                <Russian>Мешки с песком</Russian>
+                <Korean>모래주머니</Korean>
+                <Italian>Sacchi di sabbia</Italian>
+                <Czech>Pytle s pískem</Czech>
+                <Spanish>Sacos de arena</Spanish>
+                <Polish>Worki z piaskiem</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_tents">
+                <Original>Tents</Original>
+                <French>Tentes</French>
+                <Chinesesimp>帐篷</Chinesesimp>
+                <Russian>Палатки</Russian>
+                <Korean>텐트</Korean>
+                <Italian>Gonfiabili</Italian>
+                <Czech>Stany</Czech>
+                <Spanish>Tiendas de campaña</Spanish>
+                <Polish>Namioty</Polish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_construction_menu_category_terrain_modifiers">
+                <Original>Terrain Modifiers</Original>
+                <French>Modificateurs de terrain</French>
+                <Chinesesimp>地形修饰</Chinesesimp>
+                <Russian>Модификаторы местности</Russian>
+                <Korean>지형 수정자</Korean>
+                <Italian>Modificatori del terreno</Italian>
+                <Czech>Modifikátory terénu</Czech>
+                <Spanish>Modificadores de terreno</Spanish>
+                <Polish>Modyfikatory terenu</Polish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_construction_menu_small_trench">
                 <Original>Small Trench</Original>
                 <French>Petite tranchée</French>
@@ -5496,6 +5694,28 @@
                 <Spanish>Ya estas llevando algo</Spanish>
                 <Polish>Już coś nosisz.</Polish>
                 <Turkish>Zaten bir şey taşıyorsunuz.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Box_BuildingPlacer_Chemlights">
+                <Original>Chemlights box</Original>
+                <French>Boîte de bâtons lumineux</French>
+                <Korean>형광봉 상자</Korean>
+                <Russian>Коробка с химическими светильниками</Russian>
+                <Chinesesimp>化学发光棒箱</Chinesesimp>
+                <Italian>Scatola di Bastoncini Luminosi</Italian>
+                <Czech>Box s chemickými světly</Czech>
+                <Spanish>Caja de luces químicas</Spanish>
+                <Polish>Pudełko z pałeczkami chemicznymi</Polish>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations">
+                <Original>Base decorations box</Original>
+                <French>Boîte de décorations de base</French>
+                <Korean>기지 장식 상자</Korean>
+                <Russian>Коробка с декорациями базы</Russian>
+                <Chinesesimp>基地装饰箱</Chinesesimp>
+                <Italian>Scatola decorazioni base</Italian>
+                <Czech>Box s dekoracemi základen</Czech>
+                <Spanish>Caja de decoraciones de la base</Spanish>
+                <Polish>Pudełko z dekoracjami bazy</Polish>
             </Key>
         </Container>
         <Container name="time_units">

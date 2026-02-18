@@ -263,3 +263,28 @@ class GVAR(BB_TerrainObjectHider_Circle30x30) : GVAR(BB_TerrainObjectHider_Base)
         previewHeight = 30;
     };
 };
+
+// Redirect AI to bunch up here
+class FlagCarrierCore;
+class FlagCarrier: FlagCarrierCore
+{
+    EGVAR(core,aiBunchUpPriority) = 1;
+};
+
+class Land_Noticeboard_F;
+class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F 
+{
+    scope = 2;
+    displayName = "Garrison Assembly Area Sign";
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+    hiddenSelectionsTextures[] = {QPATHTOFOLDER(data\a3a_BaseAssemblyAreaSign.paa)};
+
+    EGVAR(core,aiBunchUpPriority) = 100; // Higher than FlagCarrier so AI will prefer to bunch up here instead of the flag
+    EGVAR(core,buildingPlacerVectorUp)[] = {0,0,1};
+
+    class EventHandlers 
+    {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+    };
+};
