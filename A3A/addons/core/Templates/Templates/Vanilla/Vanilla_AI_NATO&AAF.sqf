@@ -152,8 +152,12 @@ if (_hasRF) then {
 };
 
 //If GM cdlc + extra AAF mod
-if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl") && _hasGM) then {
-    #include "..\DLC_content\vehicles\GM\Vanilla_NATO&AAF.sqf"
+if (_hasGM) then {
+    if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl")) then {
+        #include "..\DLC_content\vehicles\GM\Vanilla_NATO&AAF.sqf"
+    } else {
+        #include "..\DLC_content\vehicles\GM\Vanilla_NATO_Arid.sqf" ///should probably make a proper file
+    };
 };
 
 if (_hasCSLA) then {
