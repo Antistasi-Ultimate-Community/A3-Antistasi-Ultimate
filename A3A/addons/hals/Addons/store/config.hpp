@@ -388,7 +388,7 @@ class cfgHALsStore
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
 				"handgunsAegis",
-				"launcherMagazinesAegis",
+				//"launcherMagazinesAegis",
 				"riflesAegis",
 				"specialWeaponsAegis", 
 				"mgAegis", 
@@ -397,7 +397,7 @@ class cfgHALsStore
 				"pointersAegis", 
 				"muzzlesAegis", 
 				"opticsAegis", 
-				"magazinesAegis ",
+				"magazinesAegis",
 				"navigationAegis",  
 				"miscAegis", 
 				"backpacksAegis", 
