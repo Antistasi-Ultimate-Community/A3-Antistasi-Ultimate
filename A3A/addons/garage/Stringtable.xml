@@ -723,6 +723,9 @@
                 <Polish>Przechowywany przedmiot</Polish>
                 <Turkish>Öğe depolandı</Turkish>
             </Key>
+            <Key ID="STR_HR_GRG_Feedback_addVehicle_HostileUAV">
+                <Original>You can't garage a drone that doesnt belong to your side. Hack this drone before trying to garage it.</Original>
+            </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Ammo_sold">
                 <Original>Ammo crate sold</Original>
                 <Turkish>Mühimmat sandığı satıldı</Turkish>
