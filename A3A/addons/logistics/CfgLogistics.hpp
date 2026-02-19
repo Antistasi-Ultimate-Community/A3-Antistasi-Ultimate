@@ -71,14 +71,14 @@ class DOUBLES(ADDON,Cargo)
     #include "Cargo\SPE.hpp"
     #include "Cargo\SPEX.hpp"
     #include "Cargo\UNS.hpp"
-    #include "Cargo\Vanilla.hpp"
-    #include "Cargo\OPTRE.hpp" // has to be here. It uses the class for the vanilla fuel drum
     #include "Cargo\VN.hpp"
     #include "Cargo\Nickelsteel.hpp"
     #include "Cargo\WS.hpp"
     #include "Cargo\CW.hpp"
     #include "Cargo\FFAA.hpp"
 	#include "Cargo\NFtS.hpp"
+    #include "Cargo\Vanilla.hpp" //just in case some class has vanilla depended model
+    #include "Cargo\OPTRE.hpp" // has to be here. It uses the class for the vanilla fuel drum
 };
 
 class DOUBLES(ADDON,Packable) {

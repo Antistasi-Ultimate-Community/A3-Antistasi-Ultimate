@@ -149,17 +149,44 @@ class A3_armor_f_gamma_APC_Wheeled_03_APC_Wheeled_03_cannon_F_p3d : TRIPLES(ADDO
 };
 
 //////////////////NATO APC 1
+
 class A3_armor_f_beta_APC_Tracked_01_APC_Tracked_01_rcws_F : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
     {
         class Node1
         {
-            offset[] = {-0.04,-2.3,-0.157};
+            offset[] = {-0.554099,-1.9266,-0.1295};
+            seats[] = {};
         };
         class Node2
         {
-            offset[] = {-0.04,-3.1,-0.157};
+            offset[] = {-0.553999,-3.1033,-0.1311};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node3
+        {
+            offset[] = {0.479299,-1.9266,-0.1295};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node4
+        {
+            offset[] = {0.483599,-3.1033,-0.1311};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node5
+        {
+            offset[] = {-1.2158,-4.20609,-0.1846};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node6
+        {
+            offset[] = {1.091,-4.20609,-0.1846};
+            seats[] = {};
         };
     };
 };
@@ -170,11 +197,32 @@ class A3_armor_f_beta_APC_Tracked_01_APC_Tracked_01_crv_F : TRIPLES(ADDON,Nodes,
     {
         class Node1
         {
-            offset[] = {-0.04,-2.3,-0.157};
+            offset[] = {-0.554099,-1.9266,-0.1295};
+            seats[] = {};
         };
         class Node2
         {
-            offset[] = {-0.04,-3.1,-0.157};
+            offset[] = {-0.553999,-3.1033,-0.1311};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node3
+        {
+            offset[] = {0.479299,-1.9266,-0.1295};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node4
+        {
+            offset[] = {0.483599,-3.1033,-0.1311};
+            seats[] = {};
+            canCouple = 0;
+        };
+        class Node5
+        {
+            offset[] = {-1.2158,-4.20609,-0.1846};
+            seats[] = {};
+            canCouple = 0;
         };
     };
 };

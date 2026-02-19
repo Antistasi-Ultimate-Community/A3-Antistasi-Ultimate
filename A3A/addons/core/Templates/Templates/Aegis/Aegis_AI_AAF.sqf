@@ -45,7 +45,7 @@ private _cargoTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F","I_Truc
 private _ammoTrucks = ["I_Truck_02_ammo_F"];
 private _repairTrucks = ["I_Truck_02_box_F"];
 private _fuelTrucks = ["I_Truck_02_fuel_F"];
-private _medicalTrucks = ["I_Truck_02_medical_F","I_UGV_01_medical_F"];
+private _medicalTrucks = ["I_Truck_02_medical_F","I_UGV_01_medical_F","I_APC_Wheeled_03_med_F","Aegis_I_APC_Wheeled_04_export_med_F"];
 private _lightAPCs = ["Aegis_I_APC_Wheeled_04_export_F"];
 private _APCs = ["I_APC_Wheeled_03_cannon_F","Aegis_I_APC_Wheeled_04_cannon_F"];
 private _IFVs = ["I_APC_tracked_03_cannon_F"];
@@ -88,9 +88,9 @@ private _uavsPortable = ["I_UAV_01_F","I_UAV_02_lxWS"];
 private _militiaLightArmed = ["B_G_Offroad_01_armed_F","a3a_Offroad_02_LMG_black_F"];
 private _militiaTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
 private _militiaCars = ["B_G_Offroad_01_F","I_C_Offroad_02_unarmed_F"];
-private _militiaAPCs = ["Aegis_I_G_APC_Wheeled_04_export_F"]; 
+private _militiaAPCs = ["Aegis_I_G_APC_Wheeled_04_export_F","I_APC_Wheeled_03_unarmed_F","Aegis_I_APC_Wheeled_04_export_unarmed_F"]; 
 
-private _policeVehs = ["Police_I_P_Offroad_01_police_F","Police_I_P_Offroad_01_comms_F","Police_I_P_Offroad_01_covered_F","B_GEN_Offroad_01_gen_F","B_GEN_Offroad_01_covered_F", "B_GEN_Offroad_01_comms_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F"];
+private _policeVehs = ["Police_I_P_Offroad_01_police_F","Police_I_P_Offroad_01_comms_F","Police_I_P_Offroad_01_covered_F","B_GEN_Offroad_01_gen_F","B_GEN_Offroad_01_covered_F", "B_GEN_Offroad_01_comms_F","B_GEN_Van_02_vehicle_F","B_GEN_Van_02_transport_F","B_GEN_APC_Wheeled_02_hmg_lxWS","a3a_GEN_APC_Wheeled_02_unarmed_lxWS"];
 
 private _staticMG = ["I_HMG_02_high_F","I_HMG_01_high_F"];
 private _staticAT = ["I_static_AT_F","I_GMG_01_high_F"];
@@ -846,6 +846,7 @@ _eliteLoadoutData set ["goggles", [
 ]];
 
 _eliteAccessories = ["acc_pointer_IR", 5, "saber_light_khaki_lxWS",5,"saber_light_ir_lxWS", 2.5,"Aegis_acc_pointer_DM_Khaki", 2.5,"Aegis_acc_pointer_DM", 2.5];
+_eliteSlOptics = ["optic_ACO_grn", 1, "optic_Holosight_blk_F", 2, "optic_Hamr", 4, "optic_MRCO", 3,"Aegis_optic_ACOG", 3,"Aegis_optic_ACOG_khaki", 3,"optic_r1_high_lxWS", 3,"optic_r1_high_khaki_lxWS", 3,"Aegis_optic_ICO", 3,"Aegis_optic_ICO_khaki", 3,"optic_LRCO_blk_F", 3,"Aegis_optic_ROS", 3,"optic_ERCO_blk_F", 4];
 _eliteTlOptics = ["optic_ACO_grn", 1, "optic_Holosight_blk_F", 2, "optic_Hamr", 4, "optic_MRCO", 3,"Aegis_optic_ACOG", 3,"Aegis_optic_ACOG_khaki", 3,"optic_r1_high_lxWS", 3,"optic_r1_high_khaki_lxWS", 3,"Aegis_optic_ICO", 3,"Aegis_optic_ICO_khaki", 3,"optic_LRCO_blk_F", 3,"Aegis_optic_ROS", 3,"optic_ERCO_blk_F", 4];
 _eliteRifleOptics = ["optic_ACO_grn", 1.5, "optic_Holosight_blk_F", 3.5, "optic_Hamr", 3, "optic_MRCO", 2,"optic_r1_low_lxWS", 3,"optic_r1_low_khaki_lxWS", 3,"Aegis_optic_ICO", 3,"Aegis_optic_ICO_khaki", 3,"optic_LRCO_blk_F", 3,"Aegis_optic_ROS", 3,"optic_ERCO_blk_F", 2.5];
 _eliteRifleMuzzel556 = ["muzzle_mzls_M", 2];
@@ -855,45 +856,45 @@ _eliteRifleMuzzel65 = ["muzzle_mzls_H", 2];
 _eliteBipods = ["", 2, "bipod_01_F_khk", 1.5, "bipod_02_F_lush", 1.5];
 
 _eliteLoadoutData set ["slRifles", [
-["arifle_Mk20_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["arifle_Mk20_plain_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 1.25,
-["arifle_Mk20_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
-["arifle_Mk20_GL_plain_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 2,
-["arifle_AUG_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Tracer_Green_F"], [], ""], 2.75,
-["arifle_AUG_GL_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Tracer_Green_F"], _slglammo, ""], 4,
-["Atlas_Arifle_famasG2_Grip_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["Atlas_Arifle_famasG2_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["Atlas_Arifle_famasG2_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
-["Aegis_arifle_M16A4_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_green", "75Rnd_556x45_Stanag_green_lxWS"], [], _eliteBipods], 2.75,
-["Aegis_arifle_M16A4_FG_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_green", "75Rnd_556x45_Stanag_green_lxWS"], [], _eliteBipods], 2.75,
-["Aegis_arifle_M16A4_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_green", "75Rnd_556x45_Stanag_green_lxWS"], _slglammo, ""], 4,
-["Aegis_arifle_M4A1_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["Aegis_arifle_M4A1_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["Aegis_arifle_M4A1_grip_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["Aegis_arifle_M4A1_grip_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["Aegis_arifle_M4A1_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
-["Aegis_arifle_M4A1_GL_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
-["arifle_SCAR_L_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["arifle_SCAR_L_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["arifle_SCAR_L_grip_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["arifle_SCAR_L_grip_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
-["arifle_SCAR_L_GL_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["arifle_SCAR_L_GL_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["arifle_SCAR_black_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteTlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
-["arifle_SCAR_khaki_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteTlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
-["arifle_SCAR_grip_black_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteTlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
-["arifle_SCAR_grip_khaki_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteTlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
-["arifle_SCAR_GL_black_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteTlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], _slglammo, ""], 4,
-["arifle_SCAR_GL_khaki_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteTlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], _slglammo, ""], 4,
-["arifle_TRG21_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["75Rnd_556x45_Stanag_lxWS", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["arifle_TRG21_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteTlOptics, ["75Rnd_556x45_Stanag_lxWS", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
-["arifle_MSBS65_UBS_F", _eliteRifleMuzzel65, _eliteAccessories, _eliteTlOptics,["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Slug","6Rnd_12Gauge_Slug"], ""], 2,
-["arifle_MSBS65_UBS_F", _eliteRifleMuzzel65, _eliteAccessories, _eliteTlOptics,["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Slug","6Rnd_12Gauge_Slug"], ""], 5.5,
-["sgun_aa40_lxWS","muzzle_snds_12Gauge_lxWS",_eliteAccessories,_eliteTlOptics,["20Rnd_12Gauge_AA40_Pellets_lxWS","20Rnd_12Gauge_AA40_Slug_lxWS","8Rnd_12Gauge_AA40_Smoke_lxWS","8Rnd_12Gauge_AA40_HE_lxWS"], [], _eliteBipods], 4,
-["Aegis_sgun_AA40_khk_lxWS","muzzle_snds_12Gauge_lxWS",_eliteAccessories,_eliteTlOptics,["20Rnd_12Gauge_AA40_Pellets_lxWS","20Rnd_12Gauge_AA40_Slug_lxWS","8Rnd_12Gauge_AA40_Smoke_lxWS","8Rnd_12Gauge_AA40_HE_lxWS"], [], _eliteBipods], 4,
-["arifle_Galat_lxWS",_eliteRifleMuzzel762,_eliteAccessories,_eliteTlOptics,["30Rnd_762x39_Mag_F","30Rnd_762x39_Mag_F","30Rnd_762x39_Mag_F","30Rnd_762x39_Mag_F"], [], ""], 2,
-["arifle_SLR_V_lxWS",_eliteRifleMuzzel762,"",_eliteTlOptics,["30Rnd_762x51_slr_reload_tracer_green_lxWS","30Rnd_762x51_slr_reload_tracer_green_lxWS","30Rnd_762x51_slr_tracer_green_lxWS"], [], ""], 4,
-["arifle_Velko_lxWS",_eliteRifleMuzzel556,_eliteAccessories,_eliteTlOptics,["35Rnd_556x45_Velko_reload_tracer_red_lxWS","35Rnd_556x45_Velko_reload_tracer_red_lxWS","50Rnd_556x45_Velko_reload_tracer_red_lxWS"], [], ""], 4
+["arifle_Mk20_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["arifle_Mk20_plain_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 1.25,
+["arifle_Mk20_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
+["arifle_Mk20_GL_plain_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 2,
+["arifle_AUG_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Tracer_Green_F"], [], ""], 2.75,
+["arifle_AUG_GL_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Green_F", "30Rnd_556x45_AUG_Mag_Tracer_Green_F"], _slglammo, ""], 4,
+["Atlas_Arifle_famasG2_Grip_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["Atlas_Arifle_famasG2_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["Atlas_Arifle_famasG2_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
+["Aegis_arifle_M16A4_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_green", "75Rnd_556x45_Stanag_green_lxWS"], [], _eliteBipods], 2.75,
+["Aegis_arifle_M16A4_FG_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_green", "75Rnd_556x45_Stanag_green_lxWS"], [], _eliteBipods], 2.75,
+["Aegis_arifle_M16A4_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["30Rnd_556x45_Stanag_green", "30Rnd_556x45_Stanag_green", "75Rnd_556x45_Stanag_green_lxWS"], _slglammo, ""], 4,
+["Aegis_arifle_M4A1_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["Aegis_arifle_M4A1_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["Aegis_arifle_M4A1_grip_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["Aegis_arifle_M4A1_grip_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["Aegis_arifle_M4A1_GL_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
+["Aegis_arifle_M4A1_GL_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], _slglammo, ""], 4,
+["arifle_SCAR_L_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["arifle_SCAR_L_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["arifle_SCAR_L_grip_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["arifle_SCAR_L_grip_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], _eliteBipods], 2.75,
+["arifle_SCAR_L_GL_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Mag_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["arifle_SCAR_L_GL_khaki_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["150Rnd_556x45_Drum_Green_Mag_Tracer_F", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["arifle_SCAR_black_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteSlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
+["arifle_SCAR_khaki_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteSlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
+["arifle_SCAR_grip_black_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteSlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
+["arifle_SCAR_grip_khaki_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteSlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], [], _eliteBipods], 2.75,
+["arifle_SCAR_GL_black_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteSlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], _slglammo, ""], 4,
+["arifle_SCAR_GL_khaki_F", _eliteRifleMuzzel762, _eliteAccessories, _eliteSlOptics, ["20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag"], _slglammo, ""], 4,
+["arifle_TRG21_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["75Rnd_556x45_Stanag_lxWS", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["arifle_TRG21_black_F", _eliteRifleMuzzel556, _eliteAccessories, _eliteSlOptics, ["75Rnd_556x45_Stanag_lxWS", "75Rnd_556x45_Stanag_lxWS", "30Rnd_556x45_Stanag_Tracer_Yellow"], [], ""], 2.75,
+["arifle_MSBS65_UBS_F", _eliteRifleMuzzel65, _eliteAccessories, _eliteSlOptics,["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Slug","6Rnd_12Gauge_Slug"], ""], 2,
+["arifle_MSBS65_UBS_F", _eliteRifleMuzzel65, _eliteAccessories, _eliteSlOptics,["30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag","30Rnd_65x39_caseless_msbs_mag_Tracer"], ["6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Pellets","6Rnd_12Gauge_Slug","6Rnd_12Gauge_Slug"], ""], 5.5,
+["sgun_aa40_lxWS","muzzle_snds_12Gauge_lxWS",_eliteAccessories,_eliteSlOptics,["20Rnd_12Gauge_AA40_Pellets_lxWS","20Rnd_12Gauge_AA40_Slug_lxWS","8Rnd_12Gauge_AA40_Smoke_lxWS","8Rnd_12Gauge_AA40_HE_lxWS"], [], _eliteBipods], 4,
+["Aegis_sgun_AA40_khk_lxWS","muzzle_snds_12Gauge_lxWS",_eliteAccessories,_eliteSlOptics,["20Rnd_12Gauge_AA40_Pellets_lxWS","20Rnd_12Gauge_AA40_Slug_lxWS","8Rnd_12Gauge_AA40_Smoke_lxWS","8Rnd_12Gauge_AA40_HE_lxWS"], [], _eliteBipods], 4,
+["arifle_Galat_lxWS",_eliteRifleMuzzel762,_eliteAccessories,_eliteSlOptics,["30Rnd_762x39_Mag_F","30Rnd_762x39_Mag_F","30Rnd_762x39_Mag_F","30Rnd_762x39_Mag_F"], [], ""], 2,
+["arifle_SLR_V_lxWS",_eliteRifleMuzzel762,"",_eliteSlOptics,["30Rnd_762x51_slr_reload_tracer_green_lxWS","30Rnd_762x51_slr_reload_tracer_green_lxWS","30Rnd_762x51_slr_tracer_green_lxWS"], [], ""], 4,
+["arifle_Velko_lxWS",_eliteRifleMuzzel556,_eliteAccessories,_eliteSlOptics,["35Rnd_556x45_Velko_reload_tracer_red_lxWS","35Rnd_556x45_Velko_reload_tracer_red_lxWS","50Rnd_556x45_Velko_reload_tracer_red_lxWS"], [], ""], 4
 ]];
 
 _eliteLoadoutData set ["rifles", [

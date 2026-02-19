@@ -86,26 +86,32 @@ class lxws_vehicles_f_lxws_Truck_02_Truck_02_cargo_lxWS_p3d : TRIPLES(ADDON,Node
     };
 };
 ///////////APC
-//////CSAT APC 1
+//////CSAT APC wheeled 2
 class lxws_vehicles_1_f_lxws_APC_Wheeled_02_APC_Wheeled_02_unarmed_lxws_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
     {
+        
         class Node1
         {
-            offset[] = {0.215,-1.6,-0.1};
+            offset[] = {0.215,-1.8244,-0.0166001};
+            seats[] = {};
+            canCouple = 0;
         };
         class Node2
         {
-            offset[] = {0.215,-2.4,-0.1};
+            offset[] = {0.215,-3.0553,-0.1};
+            seats[] = {};
         };
         class Node3
         {
-            offset[] = {0.215,-3.2,-0.1};
+            offset[] = {0.215,-3.927,-0.1};
+            seats[] = {};
         };
         class Node4
         {
-            offset[] = {0.215,-4,-0.1};
+            offset[] = {1.027,-1.1478,-0.1063};
+            canCouple = 0;
         };
     };
 };
