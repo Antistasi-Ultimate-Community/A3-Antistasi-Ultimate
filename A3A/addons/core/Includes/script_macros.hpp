@@ -10,3 +10,5 @@
 
 #define ADDONLOADED(addon) EADDONLOADED(A3A,addon)
 #define EADDONLOADED(prefix,addon)(isClass (configFile/QUOTE(CfgPatches)/QDOUBLES(prefix,addon)))
+
+#define QQUOTE(var1) QUOTE(QUOTE(var1))

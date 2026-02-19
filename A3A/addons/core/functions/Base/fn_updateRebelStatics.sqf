@@ -4,7 +4,7 @@
     Attempts to find existing local garrison static group, otherwise creates one.
 
     Arguments:
-    0. <Array> or <String>. Position within marker or marker name.
+    0. <Array>, <String> or <Object>. Position/unit within marker or marker name.
 
     Scope: Wherever you want to put garrison groups, probably server or HC
 */
@@ -15,139 +15,162 @@ params ["_target"];
 
 // If position or object target, identify rebel marker
 private _marker = _target;
-if !(_target isEqualType "") then
-{
-    _marker = "";
-    private _markers = markersX select { _target inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
-    private _mindist = 10000;
-    {
-        private _dist = (getMarkerPos _x) distance2d _target;
-        if (_dist > _mindist) then { continue };
-        _marker = _x; _mindist = _dist;
-    } forEach _markers;
+if !(_target isEqualType "") then {
+    // Arbitrary search limit of 500m
+    _marker = [_target, 500] call A3A_fnc_nearestFriendlyMarker;
 };
 if (_marker isEqualTo "") exitWith {};
 
-// Find all non-mortar statics within marker
-private _statics = staticsToSave inAreaArray _marker;
-_statics = _statics select {!(_x isKindOf "Air")};           // may include bunkers.
-if (count _statics == 0) exitWith {};
-
-if (_target in ungaragedVehicles) then {
-    private _deleteVeh = ungaragedVehicles find _target;
-    ungaragedVehicles deleteAt _deleteVeh;
-    publicVariable "ungaragedVehicles";
+// Find all statics within marker; may include bunkers.
+private _statics = staticsToSave select {
+    !(_x isKindOf "Air") &&
+    { [_x, _marker] call A3A_fnc_isWithinMarkerArea };
 };
+if (_statics isEqualTo []) exitWith {};
 
 // Find unlocked & unoccupied statics
 private _freeStatics = _statics select {
-    isNil { _x getVariable "lockedForAI" }
-    and isNull (gunner _x)
+    (isNull gunner _x) &&
+    { !(_x getVariable["lockedForAI", false]) }
 };
-if (count _freeStatics == 0) exitWith {};
+if (_freeStatics isEqualTo []) exitWith {};
 
 // Identify all garrison riflemen in area
-private _possibleCrew = allUnits inAreaArray _marker;
-_possibleCrew = _possibleCrew select {
-    _x getVariable ["markerX", ""] isEqualTo _marker
-    and _x getVariable ["UnitType", ""] isEqualTo FactionGet(reb,"unitRifle")
-    and isNull objectParent _x
-    and [_x] call A3A_fnc_canFight
+private _possibleCrew = allUnits select {
+    (isNull objectParent _x) &&
+    { _x getVariable ["markerX", ""] isEqualTo _marker } &&
+    { _x getVariable ["UnitType", ""] isEqualTo FactionGet(reb,"unitRifle") } &&
+    { [_x] call A3A_fnc_canFight } &&
+    { [_x, _marker] call A3A_fnc_isWithinMarkerArea }
 };
-if (count _possibleCrew == 0) exitWith {};
+if (_possibleCrew isEqualTo []) exitWith {};
 
 // Identify current local static group for marker, if any
 private _staticGroup = grpNull;
-{
+
+_statics findIf {
     private _unit = gunner _x;
-    if (isNull _unit or !(local _unit)) then { continue };
-    if !(_unit getVariable ["markerX", ""] isEqualTo _marker) then { continue };
-    _staticGroup = group _unit; break;
-} forEach _statics;
 
-if (isNull _staticGroup) then { _staticGroup = createGroup [teamPlayer, true] };
+    (!isNull _unit) &&
+    { local _unit } &&
+    { _unit getVariable ["markerX", ""] isEqualTo _marker } &&
+    {
+        _staticGroup = group _unit;
+        true;
+    };
+};
 
-{
-    private _veh = _x;
-    private _assignedUnits = [];
-    
+if (isNull _staticGroup) then {
+    _staticGroup = createGroup [teamPlayer, true];
+};
+
+private _assignedUnits = [];
+
+_freeStatics apply {
+    private _vehicle = _x;
+
     // 1. Get all possible positions
-    private _allTurrets = allTurrets _veh;
+    private _allTurrets = allTurrets _vehicle;
     private _positions = [];
-    
+
     // 2. Check main positions
-    if (isNull gunner _veh) then {
-        _positions pushBack ["Gunner", [-1]];
+    if (isNull gunner _vehicle) then {
+        _positions pushBack ["Gunner"];
     };
-    
-    if ((_veh emptyPositions "Commander") > 0 && isNull commander _veh) then {
-        _positions pushBack ["Commander", [-1]];
+
+    if (isNull commander _vehicle) then {
+        _positions pushBack ["Commander"];
     };
-    
+
     // 3. Add turrets
     {
-        if (isNull (_veh turretUnit _x)) then {
+        if (isNull (_vehicle turretUnit _x)) then {
             _positions pushBack ["Turret", _x];
         };
     } forEach _allTurrets;
 
     // 4. Assign units
     {
-        if (count _possibleCrew == 0) exitWith {};
+        if (_possibleCrew isEqualTo []) then { break };
         private _unit = _possibleCrew deleteAt 0;
+
+        _unit setVariable[QGVAR(assignedVehicle), _vehicle];
         _assignedUnits pushBack _unit;
-        
-        switch (_x#0) do {
+
+        _x params["_position",["_turret", nil]];
+
+        switch (_position) do {
             case "Gunner": {
-                _unit assignAsGunner _veh;
-                _unit moveInGunner _veh;
+                _unit assignAsGunner _vehicle;
+                _unit moveInGunner _vehicle;
             };
             case "Commander": {
-                _unit assignAsCommander _veh;
-                _unit moveInCommander _veh;
+                _unit assignAsCommander _vehicle;
+                _unit moveInCommander _vehicle;
             };
             case "Turret": {
-                if !(_x#1 isEqualTo [-1]) then {
-                    _unit assignAsTurret [_veh, _x#1];
-                    _unit moveInTurret [_veh, _x#1];
+                if (_turret isNotEqualTo [-1]) then {
+                    _unit assignAsTurret [_vehicle, _turret];
+                    _unit moveInTurret [_vehicle, _turret];
                 };
             };
         };
     } forEach _positions;
 
-    // 5. Fix lost assignments
-    if (count _assignedUnits > 0) then {
-        [_assignedUnits] joinSilent _staticGroup;
-        [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];
-        
-        // Double check after 1 second
-        [_veh, _assignedUnits] spawn {
-            params ["_veh", "_units"];
-            sleep 1;
-            // Sanity check; vehicle _can_ be gone, blown up, whatever
-            if (isNull _veh) exitWith {};
+    _vehicle setVehicleRadar ([0, 1] select (getNumber(configOf _vehicle >> "radarType") in [2, 4]));
+};
 
-            {
-                if (isNull _veh) exitWith {};
-                if (isNull objectParent _x) then {
-                    switch (assignedVehicleRole _x) do {
-                        case ["Gunner"]: { _x moveInGunner _veh };
-                        case ["Commander"]: { _x moveInCommander _veh };
-                        case ["Turret"]: {
-                            private _path = _x call BIS_func_turretPath;
-                            if !(_path isEqualTo []) then {
-                                _x moveInTurret [_veh, _path];
-                            };
-                        };
-                    };
-                };
-            } forEach _units;
+// 5. Fix lost assignments
+if (_assignedUnits isNotEqualTo []) then {
+    [_assignedUnits] joinSilent _staticGroup;
+    [_staticGroup, clientOwner] remoteExec ["setGroupOwner", 2];
+
+    // Double check after 1 second
+    [_assignedUnits] spawn {
+        params ["_units"];
+        sleep 1;
+
+        _units select {
+            (alive _x) && { isNull objectParent _x } &&
+            { !isNull(_x getVariable[QGVAR(assignedVehicle), objNull]) } &&
+            { alive(_x getVariable QGVAR(assignedVehicle)) }
+        } apply {
+            private _unit = _x;
+            private _vehicle = _unit getVariable QGVAR(assignedVehicle);
+            private _assignedRole = assignedVehicleRole _unit;
+
+            _assignedRole params[["_type", ""], ["_turret", []]];
+
+            switch (toLower _type) do {
+                case "gunner": { _x moveInGunner _vehicle };
+                case "commander": { _x moveInCommander _vehicle };
+                case "turret": { _x moveInTurret[_vehicle, _turret] };
+            };
         };
     };
-    
-    _veh setVehicleRadar ([0, 1] select (getNumber(configOf _veh >> "radarType") in [2, 4]));
-    
-} forEach _freeStatics;
+
+    // Start scanning horizon after five seconds
+    if GVAR(rebelStaticsScanHorizon) then {
+        [_assignedUnits] spawn {
+            params["_units"];
+            sleep 5;
+
+            _units = _units select { !isNull objectParent _x }; // If assignment still didn't work, don't bother
+            _units apply {
+                private _vehicle = _x getVariable[QGVAR(assignedVehicle), objNull];
+
+                // If we're in a vehicle with both gunner and commander
+                // (i.e. a TANK), don't have both turrets scanning wildly; only
+                // have the commander do it. Don't scan if they're in a building.
+                if (isNull commander _vehicle || { _x isEqualTo commander _vehicle }) then {
+                    [_x, nil, false] spawn SCRT_fnc_common_scanHorizon;
+                };
+            };
+        };
+    };
+};
 
 _staticGroup setBehaviour "AWARE";
 _staticGroup setCombatMode "WHITE";
+
+nil;
