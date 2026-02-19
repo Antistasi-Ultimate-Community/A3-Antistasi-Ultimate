@@ -224,8 +224,6 @@ if (!_busy) then {
 		_pos = _runwaySpawnLocation select 0;
 		_ang = _runwaySpawnLocation select 1;
 	};
-	private _groupX = createGroup _sideX;
-	_groups pushBack _groupX;
 	_countX = 0;
 	private _vehCount = round (random [2, 4, 5]);
 	while {_countX < _vehCount} do {
