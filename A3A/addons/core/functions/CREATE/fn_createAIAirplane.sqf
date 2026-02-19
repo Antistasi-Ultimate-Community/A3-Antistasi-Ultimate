@@ -310,7 +310,7 @@ if (!_busy) then {
 				} forEach _vehiclesPlanesGunship;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack ((A3A_UAVSpawnChance - 0.1) max 0);
+				    _vehPool pushBack ((A3A_UAVSpawnChance - 10) max 0);
 				} forEach _uavsAttack;
 				_typeVehX = selectRandomWeighted _vehPool;
 				if (!isNil "_typeVehX") then {
