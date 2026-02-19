@@ -739,14 +739,18 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-				"riflesfwa", 
+				"handgunsFWA",
+				"smgfwa",
 				"mgfwa",
-				"sniperRiflesfwa", 
-				"smgfwa", 
-				"opticsfwa", 
-				"muzzlesfwa", 
-				"magazinesfwa",
-				"underbarrelfwa"
+				"riflesfwa",
+				"sniperRiflesfwa",
+				"launchersFWA",
+				"launchermagazinesFWA",
+				"riflegrenadesFWA",
+				"muzzlesfwa",
+				"opticsfwa",
+				"underbarrelfwa",
+				"magazinesfwa"
 			};
 		};
 		

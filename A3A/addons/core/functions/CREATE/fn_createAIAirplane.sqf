@@ -178,6 +178,9 @@ private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTi
 while {true} do {
 	private _spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 	if (_spawnParameter isEqualType false) exitWith {};
+	if (A3U_disableMortars) exitWith {
+    	Debug("Exiting mortar creation; Param was set to disabled.");
+	};
 
 	_spawnsUsed pushBack _spawnParameter#2;
 	_typeVehX = selectRandom (_faction get "staticMortars");
@@ -511,7 +514,7 @@ for "_i" from 1 to _max do {
 	_vehiclesX pushBack _veh;
 
 	sleep 1;
-	[(gunner _veh), 300] spawn SCRT_fnc_common_scanHorizon;
+	[gunner _veh, GVAR(scanHorizonHeight)] spawn SCRT_fnc_common_scanHorizon;
 
 	_veh setVariable ["originalPos", getPosATL _veh];
 };
