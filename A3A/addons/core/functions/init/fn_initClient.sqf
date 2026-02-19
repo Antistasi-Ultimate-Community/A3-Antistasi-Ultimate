@@ -581,7 +581,8 @@ mapX addAction [localize "STR_antistasi_actions_ai_load_info", { [] remoteExec [
         nil,0,false,true,"", "(_this == theBoss) and (isNull objectParent _this) and !(call A3A_fnc_isCarrying)", 4];
 } forEach [boxX, flagX, vehicleBox, mapX];
 
-[] spawn A3A_fnc_unitTraits;
+[] call A3A_fnc_unitTraits;
+[] call A3A_fnc_addTeardownActions;
 
 // Get list of buildable objects, has map (and template?) dependency
 call A3A_fnc_initBuildableObjects;
