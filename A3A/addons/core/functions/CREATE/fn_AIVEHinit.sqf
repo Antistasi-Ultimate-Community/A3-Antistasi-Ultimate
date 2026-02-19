@@ -53,7 +53,8 @@ _veh call A3A_fnc_vehicleTextureSync;
 private _typeX = typeOf _veh;
 if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 	// isn't this section basically supposed to be all ground vehicles?
-	if (_side == teamPlayer or _side == civilian) exitWith {};				// arguable
+	if (_side isEqualTo teamPlayer) exitWith {};				// arguable
+	if (_side isEqualTo civilian && {enableVehicleAutoLockCiv}) exitWith { [_veh, true] call A3U_fnc_setLock};
 
 	if (_typeX in FactionGet(all,"vehiclesArmor")) then { _veh call A3A_fnc_addActionBreachVehicle };
 
@@ -111,10 +112,6 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 };
 
 if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
-	private _markers = markersX select { _veh inArea _x && {sidesX getVariable [_x, sideUnknown] == teamPlayer} };
-	if (_markers isEqualTo []) exitWith {};
-	if (_side isNotEqualTo teamPlayer) exitWith {};
-	
 	private _staticVehInit = {
 		waitUntil { sleep 0.1; !isNil "serverInitDone" };
 		params ["_veh", "_flagAction"];
@@ -134,11 +131,13 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 		publicVariable "staticsToSave";
 	};
 
-	if (_veh isKindOf "StaticWeapon") then {
-		_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
-		[_veh, "static"] spawn _staticVehInit;
-	} else {
-		[_veh, "vehiclestatic"] spawn _staticVehInit;
+	if ([_veh] call A3A_fnc_isWithinNearestFriendlyMarker) then {
+		if (_veh isKindOf "StaticWeapon") then {
+			_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
+			[_veh, "static"] spawn _staticVehInit;
+		} else {
+			[_veh, "vehiclestatic"] spawn _staticVehInit;
+		};
 	};
 };
 

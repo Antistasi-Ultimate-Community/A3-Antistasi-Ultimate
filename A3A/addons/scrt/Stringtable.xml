@@ -5369,6 +5369,27 @@
                 <Korean>적 차량 잠금 장치 활성화</Korean>
                 <French>Activer les verrous des véhicules ennemis</French>
             </Key>
+            <Key ID="STR_params_enableVehicleAutoLock_desc">
+                <Original>Should unoccupied enemy vehicles be locked automatically, requiring lockpicking by an engineer rebel?</Original>
+                <Russian>Должны ли незанятые вражеские машины автоматически блокироваться, требуя взлома замков инженерным повстанцем?</Russian>
+                <Chinesesimp>空置的敌方车辆是否应该自动锁定，需要工程师叛军开锁？</Chinesesimp>
+                <Korean>비어 있는 적 차량은 자동으로 잠겨서 엔지니어 반란군이 자물쇠 따기를 해야 하나요?</Korean>
+                <French>Les véhicules ennemis inoccupés doivent-ils être verrouillés automatiquement, nécessitant un crochetage par un rebelle ingénieur?</French>
+            </Key>
+            <Key ID="STR_params_enableVehicleAutoLockCiv">
+                <Original>Enable Civilian Vehicle Locks</Original>
+                <Russian>Включить замки гражданских автомобилей</Russian>
+                <Chinesesimp>启用民用车辆锁</Chinesesimp>
+                <Korean>민간 차량 잠금장치 활성화</Korean>
+                <French>Activez les verrous des véhicules civils</French>
+            </Key>
+            <Key ID="STR_params_enableVehicleAutoLockCiv_desc">
+                <Original>Should unoccupied civilian vehicles be locked automatically, requiring lockpicking by an engineer rebel?</Original>
+                <Russian>Должны ли свободные гражданские автомобили автоматически блокироваться, требуя вскрытия замков инженером-повстанцем?</Russian>
+                <Chinesesimp>空置的民用车辆是否应该自动锁闭，需要工程师叛军开锁？</Chinesesimp>
+                <Korean>비인 민간 차량은 자동으로 잠겨서 엔지니어 반군이 자물쇠 따기를 해야 할까요?</Korean>
+                <French>Les véhicules civils inoccupés doivent-ils être verrouillés automatiquement, nécessitant le crochetage par un rebelle ingénieur?</French>
+            </Key>
             <Key ID="STR_params_vehicleLockpickTime">
                 <Original>Amount of time in seconds to lockpick a vehicle</Original>
                 <Russian>Время в секундах для взлома автомобиля</Russian>
@@ -5578,6 +5599,27 @@
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_title">
+                <Original>Location defense/capture area</Original>
+                <Russian>Зона захвата/защиты локации</Russian>
+                <Chinesesimp>位置防御/捕获区域</Chinesesimp>
+                <Korean>위치 방어/점령 지역</Korean>
+                <French>Zone de défense/capture de l'emplacement</French>
+            </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_tooltip">
+                <Original>When capturing/defending locations, use an additional circular area diameter around the flag AND the full zone size to consider unit presences.</Original>
+                <Russian>При захвате/защите локаций используйте дополнительную круговую область вокруг флага И полный размер зоны для учета присутствия юнитов.</Russian>
+                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域和整个区域大小来考虑单位存在。</Chinesesimp>
+                <Korean>위치를 점령/방어할 때, 깃발 주위의 추가 원형 영역과 전체 구역 크기를 사용하여 유닛 존재를 고려합니다.</Korean>
+                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau ET la taille complète de la zone pour considérer la présence des unités.</French>
+            </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_traditional">
+                <Original>Traditional</Original>
+                <Russian>Традиционный</Russian>
+                <Chinesesimp>传统</Chinesesimp>
+                <Korean>전통적인</Korean>
+                <French>Traditionnel</French>
+            </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>
                 <Russian>Начните только с разблокированным пистолетом</Russian>
@@ -5647,6 +5689,70 @@
                 <Chinesesimp>默认让叛军AI作留在友军标记附近的车辆（指挥官/炮手座位）。请注意，玩家仍然可以通过与载具互动来启用或禁用AI对特定载具的使用。</Chinesesimp>
                 <Korean>기본적으로 아군 표시 근처에 남겨둔 차량(지휘관/포수 좌석)을 조작할 수 있도록 반란군 AI를 활성화하세요. 플레이어는 여전히 특정 차량과 상호작용하여 AI 사용을 활성화하거나 비활성화할 수 있습니다.</Korean>
                 <French>Activez par défaut l'IA rebelle pour manœuvrer les véhicules (siège commandant / mitrailleuse) laissés près des marqueurs alliés par défaut. Notez que les joueurs peuvent toujours activer ou désactiver l'utilisation de véhicules spécifiques par l'IA en interagissant avec le véhicule.</French>
+            </Key>
+            <Key ID="STR_params_disablePATCOMMortars">
+                <Original>Disable PATCOM/Virtual Artillery</Original>
+                <Russian>Отключить PATCOM/виртуальную артиллерию</Russian>
+                <German>PATCOM-/virtuelle Artillerie deaktivieren</German>
+                <Italian>Disabilita artiglieria PATCOM/virtuale</Italian>
+                <Spanish>Desactivar artillería PATCOM/virtual</Spanish>
+                <French>Désactiver l’artillerie PATCOM/virtuelle</French>
+                <Portuguese>Desativar artilharia PATCOM/virtual</Portuguese>
+                <Polish>Wyłącz artylerię PATCOM/wirtualną</Polish>
+                <Czech>Zakázat PATCOM/virtuální dělostřelectvo</Czech>
+                <Turkish>PATCOM/Sanal Topçuyu Devre Dışı Bırak</Turkish>
+                <Korean>PATCOM/가상 포병 비활성화</Korean>
+                <Japanese>PATCOM／仮想砲兵を無効化</Japanese>
+                <Chinesesimp>禁用 PATCOM / 虚拟火炮</Chinesesimp>
+                <Chinese>停用 PATCOM／虛擬砲兵</Chinese>
+            </Key>
+            <Key ID="STR_params_disablePATCOMMortars_desc">
+                <Original>Disables virtual and PATCOM artillery.\nVirtual artillery is artillery that technically exists in the world, but can't reasonably be countered.\nPATCOM artillery is the AI handler for physical artillery, resulting in unfair accuracy and reaction.</Original>
+                <Russian>Отключает виртуальную артиллерию и артиллерию PATCOM.\nВиртуальная артиллерия технически существует в мире, но не может быть эффективно подавлена.\nАртиллерия PATCOM — это ИИ-управление физической артиллерией, приводящее к нечестной точности и скорости реакции.</Russian>
+                <German>Deaktiviert virtuelle Artillerie und PATCOM-Artillerie.\nVirtuelle Artillerie existiert technisch in der Spielwelt, kann jedoch nicht sinnvoll bekämpft werden.\nPATCOM-Artillerie ist die KI-Steuerung physischer Artillerie und führt zu unfairer Genauigkeit und Reaktionszeit.</German>
+                <Italian>Disabilita l’artiglieria virtuale e PATCOM.\nL’artiglieria virtuale esiste tecnicamente nel mondo di gioco, ma non può essere contrastata in modo ragionevole.\nL’artiglieria PATCOM è la gestione IA dell’artiglieria fisica, con precisione e reazione ingiustamente elevate.</Italian>
+                <Spanish>Desactiva la artillería virtual y PATCOM.\nLa artillería virtual existe técnicamente en el mundo, pero no puede contrarrestarse de forma razonable.\nLa artillería PATCOM es el controlador de IA de la artillería física, lo que resulta en una precisión y reacción injustas.</Spanish>
+                <French>Désactive l’artillerie virtuelle et PATCOM.\nL’artillerie virtuelle existe techniquement dans le monde, mais ne peut pas être raisonnablement contrée.\nL’artillerie PATCOM est la gestion IA de l’artillerie physique, entraînant une précision et une réactivité injustes.</French>
+                <Portuguese>Desativa a artilharia virtual e PATCOM.\nA artilharia virtual existe tecnicamente no mundo, mas não pode ser combatida de forma razoável.\nA artilharia PATCOM é o controlador de IA da artilharia física, resultando em precisão e reação injustas.</Portuguese>
+                <Polish>Wyłącza artylerię wirtualną oraz PATCOM.\nArtyleria wirtualna technicznie istnieje w świecie gry, ale nie da się jej rozsądnie zwalczać.\nArtyleria PATCOM to obsługa artylerii fizycznej przez SI, co skutkuje nieuczciwą celnością i czasem reakcji.</Polish>
+                <Czech>Zakáže virtuální a PATCOM dělostřelectvo.\nVirtuální dělostřelectvo technicky existuje ve světě hry, ale nelze jej rozumně eliminovat.\nPATCOM dělostřelectvo je řízení fyzického dělostřelectva pomocí AI, což vede k neférové přesnosti a reakci.</Czech>
+                <Turkish>Sanal ve PATCOM topçusunu devre dışı bırakır.\nSanal topçu teknik olarak dünyada vardır, ancak makul şekilde karşılık verilemez.\nPATCOM topçusu, fiziksel topçunun yapay zekâ tarafından yönetilmesidir ve adil olmayan isabet ve tepki süresine yol açar.</Turkish>
+                <Korean>가상 포병과 PATCOM 포병을 비활성화합니다.\n가상 포병은 기술적으로 세계에 존재하지만 합리적으로 대응할 수 없습니다.\nPATCOM 포병은 물리적 포병을 제어하는 AI로, 불공정한 정확도와 반응 속도를 초래합니다.</Korean>
+                <Japanese>仮想砲兵およびPATCOM砲兵を無効化します。\n仮想砲兵は技術的には世界に存在しますが、現実的に対抗することができません。\nPATCOM砲兵は物理砲兵を制御するAIで、不公平な精度と反応速度をもたらします。</Japanese>
+                <Chinesesimp>禁用虚拟火炮和 PATCOM 火炮。\n虚拟火炮在技术上存在于世界中，但几乎无法被合理反制。\nPATCOM 火炮是对实体火炮的 AI 控制，导致不公平的精度和反应速度。</Chinesesimp>
+                <Chinese>停用虛擬砲兵與 PATCOM 砲兵。\n虛擬砲兵在技術上存在於世界中，但幾乎無法被合理反制。\nPATCOM 砲兵是對實體砲兵的 AI 控制，導致不公平的精準度與反應速度。</Chinese>
+            </Key>
+            <Key ID="STR_params_disableMortars">
+                <Original>Disable Physical Artillery</Original>
+                <Russian>Отключить физическую артиллерию</Russian>
+                <German>Physische Artillerie deaktivieren</German>
+                <Italian>Disabilita artiglieria fisica</Italian>
+                <Spanish>Desactivar artillería física</Spanish>
+                <French>Désactiver l’artillerie physique</French>
+                <Portuguese>Desativar artilharia física</Portuguese>
+                <Polish>Wyłącz artylerię fizyczną</Polish>
+                <Czech>Zakázat fyzické dělostřelectvo</Czech>
+                <Turkish>Fiziksel Topçuyu Devre Dışı Bırak</Turkish>
+                <Korean>물리적 포병 비활성화</Korean>
+                <Japanese>物理砲兵を無効化</Japanese>
+                <Chinesesimp>禁用实体火炮</Chinesesimp>
+                <Chinese>停用實體砲兵</Chinese>
+            </Key>
+            <Key ID="STR_params_disableMortars_desc">
+                <Original>Disables physical artillery from being utilised by enemies. Does not disable artillery missions.</Original>
+                <Russian>Запрещает противникам использовать физическую артиллерию. Артиллерийские задания не отключаются.</Russian>
+                <German>Verhindert, dass Gegner physische Artillerie einsetzen. Artilleriemissionen werden nicht deaktiviert.</German>
+                <Italian>Impedisce ai nemici di utilizzare l’artiglieria fisica. Le missioni di artiglieria non vengono disabilitate.</Italian>
+                <Spanish>Impide que los enemigos utilicen artillería física. No desactiva las misiones de artillería.</Spanish>
+                <French>Empêche les ennemis d’utiliser l’artillerie physique. N’affecte pas les missions d’artillerie.</French>
+                <Portuguese>Impede que os inimigos utilizem artilharia física. Não desativa missões de artilharia.</Portuguese>
+                <Polish>Uniemożliwia przeciwnikom korzystanie z artylerii fizycznej. Nie wyłącza misji artyleryjskich.</Polish>
+                <Czech>Zabraňuje nepřátelům používat fyzické dělostřelectvo. Nezakazuje dělostřelecké mise.</Czech>
+                <Turkish>Düşmanların fiziksel topçuyu kullanmasını engeller. Topçu görevlerini devre dışı bırakmaz.</Turkish>
+                <Korean>적이 물리적 포병을 사용하지 못하도록 합니다. 포병 임무는 비활성화되지 않습니다.</Korean>
+                <Japanese>敵が物理砲兵を使用できなくします。砲兵ミッションは無効化されません。</Japanese>
+                <Chinesesimp>禁止敌人使用实体火炮。不影响火炮任务。</Chinesesimp>
+                <Chinese>禁止敵人使用實體砲兵。不會停用砲兵任務。</Chinese>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
@@ -5809,18 +5915,18 @@
                 <French>Définit le nombre de rebelles pouvant être dans un groupe de garnison. Le nombre total de soldats de la garnison sera divisé par ce nombre et réparti en groupes.</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit">
-                <Original>How many rebels can be garrisoned (1.5x for airports and milbases, 0.5x for resources and factories)?</Original>
-                <Russian>Сколько повстанцев может в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов)?</Russian>
-                <Chinesesimp>抵抗军可以驻守多少（机场和军事基地1.5x，资源和工厂0.5x）？</Chinesesimp>
-                <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까? (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
-                <French>Combien de rebelles peuvent être mis en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines) ?</French>
+                <Original>How many rebels can be garrisoned?</Original>
+                <Russian>Сколько повстанцев может в гарнизоне?</Russian>
+                <Chinesesimp>抵抗军可以驻守多少？</Chinesesimp>
+                <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까?</Korean>
+                <French>Combien de rebelles peuvent être mis en garnison?</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit_desc">
-                <Original>How many rebel troops can be in garrison. Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
-                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне. Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
-                <Chinesesimp>有多少反抗军可以驻守。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
-                <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
-                <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
+                <Original>How many rebel troops can be in garrison (1.5x for airports and milbases, 0.5x for resources and factories). Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
+                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов). Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
+                <Chinesesimp>有多少反抗军可以驻守(机场和军事基地1.5x，资源和工厂0.5x)。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
+                <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다. (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
+                <French>Nombre de troupes rebelles pouvant se trouver en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines). Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
             </Key>
             <Key ID="STR_params_UAVSpawnChance">
                 <Original>UAV spawn chance at airfields</Original>
@@ -5829,6 +5935,34 @@
             <Key ID="STR_params_UAVSpawnChance_desc">
                 <Original>Adjusts spawn chance of UAVs at enemy airfields. The higher the chance, the less likely other fixed wing aircrafts will be spawned</Original>
                 <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+            </Key>
+            <Key ID="STR_params_ultimate_allowLockpickKits">
+                <Original>Allow Lockpick Kits</Original>
+                <Russian>Разрешить наборы отмычек</Russian>
+                <Chinesesimp>允许使用撬锁工具包</Chinesesimp>
+                <Korean>잠금 해제 키트를 허용합니다</Korean>
+                <French>Autoriser les kits de crochetage</French>
+            </Key>
+            <Key ID="STR_params_ultimate_allowLockpickKits_Tooltip">
+                <Original>Allow non-engineer players to use lockpick kits to unlock vehicles</Original>
+                <Russian>Разрешить неинженерам использовать наборы отмычек для разблокировки транспортных средств</Russian>
+                <Chinesesimp>允许非工程师玩家使用撬锁工具包解锁车辆</Chinesesimp>
+                <Korean>비 엔지니어 플레이어가 차량 잠금을 해제하기 위해 잠금 해제 키트를 사용할 수 있도록 허용</Korean>
+                <French>Permettre aux joueurs non-ingénieurs d'utiliser des kits de crochetage pour déverrouiller des véhicules</French>
+            </Key>
+            <Key ID="STR_params_ultimate_lockpickKitBreakChance">
+                <Original>Lockpick Kit Break Chance</Original>
+                <Russian>Шанс поломки набора отмычек</Russian>
+                <Chinesesimp>撬锁工具包破损几率</Chinesesimp>
+                <Korean>잠금 해제 키트 파손 확률</Korean>
+                <French>Chance de rupture du kit de crochetage</French>
+            </Key>
+            <Key ID="STR_params_ultimate_lockpickKitBreakChance_Tooltip">
+                <Original>Chance that a lockpick kit will break upon use</Original>
+                <Russian>Шанс поломки набора отмычек при использовании</Russian>
+                <Chinesesimp>撬锁工具包使用时的破损几率</Chinesesimp>
+                <Korean>잠금 해제 키트를 사용할 때 파손될 확률</Korean>
+                <French>Chance qu'un kit de crochetage se casse lors de son utilisation</French>
             </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
@@ -12371,6 +12505,34 @@
                 <Chinesesimp>旋转物体</Chinesesimp>
                 <Korean>오브젝트 돌리기</Korean>
                 <French>Faire pivoter l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_packObject">
+                <Original>Pack object</Original>
+                <Russian>Упаковать предмет</Russian>
+                <Chinesesimp>打包物体</Chinesesimp>
+                <Korean>오브젝트 포장하기</Korean>
+                <French>Empaquetter l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_unpackObject">
+                <Original>Unpack object</Original>
+                <Russian>Распаковать предмет</Russian>
+                <Chinesesimp>解包物体</Chinesesimp>
+                <Korean>오브젝트 풀기</Korean>
+                <French>Déballer l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_buildingplacer">
+                <Original>Building placer</Original>
+                <Russian>Планировщик зданий</Russian>
+                <Chinesesimp>建筑规划器</Chinesesimp>
+                <Korean>건물 배치 도구</Korean>
+                <French>Outil de placement de bâtiments</French>
+            </Key>
+            <Key ID="STR_A3A_openDoors">
+                <Original>Open Doors</Original>
+                <Russian>Открыть двери</Russian>
+                <Chinesesimp>打开门</Chinesesimp>
+                <Korean>문 열기</Korean>
+                <French>Ouvrir les portes</French>
             </Key>
         </Container>
         <Container name="A3A_init">

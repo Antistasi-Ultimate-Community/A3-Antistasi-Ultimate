@@ -674,6 +674,13 @@
                 <Chinesesimp>Tanks</Chinesesimp>
                 <Korean>Tanks</Korean>
             </Key>
+            <Key ID="STR_A3AU_Ultimate">
+                <Original>Antistasi Ultimate</Original>
+                <English>Antistasi Ultimate</English>
+                <Russian>Antistasi Ultimate</Russian>
+                <Chinesesimp>Antistasi Ultimate</Chinesesimp>
+                <Korean>Antistasi Ultimate</Korean>
+            </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
                 <English>Kkiv 2035</English>

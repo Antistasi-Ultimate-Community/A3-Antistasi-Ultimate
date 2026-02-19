@@ -1,5 +1,5 @@
 /*
-	Macro: ERROR_WITH_TITLE()
+	Macro: ITEM(CLASSNAME, PRICE, STOCK)
 
 	Parameters:
 	0: CLASSNAME - Classname of item
@@ -33,6 +33,7 @@ class cfgHALsStore
 		#include "config\3cbbaf.hpp"
 		#include "config\3cbf.hpp"
 		#include "config\3cbfcw.hpp"
+		#include "config\a3u.hpp"
 		#include "config\aegis.hpp"
 		#include "config\atlas.hpp"
 		#include "config\opposingforces.hpp"
@@ -108,6 +109,13 @@ class cfgHALsStore
 				"opticsVanilla",
 				"magazinesVanilla",  
 				"miscVanilla"
+			};
+		};
+		class a3u
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"miscA3U"
 			};
 		};
 		////DLC
@@ -779,14 +787,18 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-				"riflesfwa", 
+				"handgunsFWA",
+				"smgfwa",
 				"mgfwa",
-				"sniperRiflesfwa", 
-				"smgfwa", 
-				"opticsfwa", 
-				"muzzlesfwa", 
-				"magazinesfwa",
-				"underbarrelfwa"
+				"riflesfwa",
+				"sniperRiflesfwa",
+				"launchersFWA",
+				"launchermagazinesFWA",
+				"riflegrenadesFWA",
+				"muzzlesfwa",
+				"opticsfwa",
+				"underbarrelfwa",
+				"magazinesfwa"
 			};
 		};
 		
