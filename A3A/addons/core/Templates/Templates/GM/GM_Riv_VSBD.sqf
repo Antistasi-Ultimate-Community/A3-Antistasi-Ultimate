@@ -29,6 +29,8 @@
 ]] call _fnc_saveToTemplate; 
 ["voices", ["gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07", "gm_voice_male_deu_01","gm_voice_male_deu_02"]] call _fnc_saveToTemplate;
 
+"GermanMen" call _fnc_saveNames;
+
 //////////////////////////
 //       Vehicles       //
 //////////////////////////

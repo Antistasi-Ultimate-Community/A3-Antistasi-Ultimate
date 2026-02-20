@@ -20,7 +20,7 @@ private _groups = [];
 _pilots = [];
 _conquered = false;
 _groupX = grpNull;
-_isFIA = false;
+_useVehicle = false;
 _leave = false;
 A3A_hasIFA = false;
 
@@ -36,11 +36,11 @@ if (_isControl) then
 {
     if (_sideX == Occupants) then
     {
-    if ((random 10 > (tierWar + difficultyCoef)) and (!([_markerX] call A3A_fnc_isFrontline))) then
-        {
-            _isFIA = true;
-        }
-    };
+        if (!([_markerX] call A3A_fnc_isFrontline)) then // (random 10 > (tierWar + difficultyCoef)) and 
+            {
+                _useVehicle = true;
+            }
+        };
 
     // Attempt to find nearby road with two connected roads
     _radiusX = 20;
@@ -62,7 +62,7 @@ if (_isControl) then
         _dirveh = [_roads select 0, _roadscon select 0] call BIS_fnc_DirTo;
     };
 
-    if (!_isFIA) then
+    if (!_useVehicle) then
     {
         _groupE = grpNull;
         if !(A3A_hasIFA) then
@@ -151,38 +151,34 @@ if (_isControl) then
     }
     else
     {
-        private _vehicleGet = "";
-        switch (true) do 
-        {
-            private _tier9Vehicle = (_faction getOrDefault ["vehiclesLightTanks", []]);
-            if (_tier9Vehicle isEqualTo []) then {
-                _tier9Vehicle = "vehiclesAirborne";
-            };
+        private _aggr = [aggressionOccupants, aggressionInvaders] select (_sideX == Invaders);
 
-            case (tierWar >= 9): // if higher or equal to 9, grab military light tank (or airborne, if light tank not found)
-            {
-                _vehicleGet = _tier9Vehicle;
-            };
-            case (tierWar >= 6): // if higher or equal to 6, grab military APC
-            {
-                _vehicleGet = "vehiclesAPCs";
-            };
-            case (tierWar >= 3): // if higher or equal to 3, grab militia light armed car
-            {
-                _vehicleGet = "vehiclesMilitiaLightArmed";
-            };
-            default // incase it's less than 3 (or something is broken), just grab militia car
-            {
-                _vehicleGet = "vehiclesMilitiaCars";
-            };
-        };
-        _typeVehX = selectRandom (_faction get _vehicleGet);
+        private _weightPolice = linearConversion [0, 60, _aggr, 1.0, 0.0, true]; 
+        private _weightMilitia = linearConversion [40, 60, _aggr, 0.2, 1.0, true] * linearConversion [60, 85, _aggr, 1.0, 0.3, true];
+        private _weightAPC = linearConversion [40, 80, _aggr, 0.0, 1.0, true]; 
+        private _weightTank = linearConversion [70, 120, _aggr, 0.0, 1.0, true];
+
+        private _vehicleCategories = [ 
+            "vehiclesPolice", _weightPolice, 
+            "vehiclesMilitiaLightArmed", _weightMilitia, 
+            "vehiclesAPCs", _weightAPC, 
+            "vehiclesLightTanks", _weightTank 
+        ];
+
+        private _vehicleCategory = selectRandomWeighted _vehicleCategories;
+        private _fallbackVehicle = selectRandom (_faction get "vehiclesAPCs");
+
+        Debug_2("Chosen %1 as vehicle category. tierWar is %2", _vehicleCategory, tierWar);
+
+        _typeVehX = selectRandom (_faction getOrDefault [_vehicleCategory, _fallbackVehicle]);
         _veh = _typeVehX createVehicle getPos (_roads select 0);
         _veh setDir _dirveh + 90;
         [_veh, _sideX] call A3A_fnc_AIVEHinit;
         _vehiclesX pushBack _veh;
         sleep 1;
-        _typeGroup = selectRandom (_faction get "groupsMilitiaMedium");
+        _typeGroup = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "groupPoliceOfficers"} else {
+            [_faction get "groupTierFireteam"] call SCRT_fnc_unit_getTiered;
+        };
         _groupX = [_positionX, _sideX, _typeGroup, true] call A3A_fnc_spawnGroup;
         if !(isNull _groupX) then
         {
