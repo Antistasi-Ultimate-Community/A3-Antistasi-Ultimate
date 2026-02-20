@@ -43,7 +43,7 @@ if (isNil "A3A_building_EHDB") exitWith {};
             private _radiusY = getNumber(_config >> "previewHeight");
             private _points = [];
 
-            for "_angle" from 0 to 360 step 20 do {
+            for "_angle" from 0 to 360 step 10 do {
                 _points pushBack[_radiusX * cos (_angle), _radiusY * sin (_angle), 0];
             };
 
