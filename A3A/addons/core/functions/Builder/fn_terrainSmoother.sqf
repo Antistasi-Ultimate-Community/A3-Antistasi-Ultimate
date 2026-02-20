@@ -43,7 +43,7 @@ for "_dx" from -_radius to _radius step _gridSize do {
     };
 };
 [_mainZonePoints] call _fnc_processTerrain;
-
+//
 // Smoothing zone (34m radius)
 private _smoothingRadiusSqr = _smoothingRadius * _smoothingRadius;
 private _smoothingPoints = [];
