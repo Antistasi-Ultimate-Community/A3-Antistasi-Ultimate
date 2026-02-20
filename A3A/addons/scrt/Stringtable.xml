@@ -151,6 +151,34 @@
                 <Korean>. 하지만 몇 번만 쏠 양 밖에 없다</Korean>
                 <French>mais il n'y a que peu de photos pour cela</French>
             </Key>
+            <Key ID="STR_A3U_arsenal_update_header">
+                <Original>AU 11.8.5 AI Custom Loadouts</Original>
+                <Russian>AU 11.8.5 Пользовательские снаряжения ИИ</Russian>
+                <Chinesesimp>AU 11.8.5 AI 自定义装备</Chinesesimp>
+                <Korean>AU 11.8.5 AI 커스텀 장비 구성</Korean>
+                <French>AU 11.8.5 Équipements personnalisés de l'IA</French>
+            </Key>
+            <Key ID="STR_A3U_arsenal_update_message">
+                <Original>Custom loadout functionality has changed. Double-click an item in the list to save it into your custom loadout. Double-click again to unsave. Note that saving a cargo container (Uniform, Vest, or Backpack) also saves all of the contents of that container. When saved, the tab icon for the item should turn green. Click %1 to not show this message again.</Original>
+                <Russian>Функциональность пользовательского снаряжения изменилась. Дважды кликните по предмету из списка, чтобы сохранить его в пользовательском наборе. Дважды кликните ещё раз для снятия сохранения. Обратите внимание, что сохранение грузового контейнера (формы, жилета или рюкзака) также сохраняет всё содержимое этого контейнера. При сохранении значок вкладки для предмета должен стать зелёным. Нажмите %1, чтобы не показывать это сообщение снова.</Russian>
+                <Chinesesimp>自定义装备功能发生了变化。 双击列表中的物品以保存到你的自定义装备中。 再次双击以取消保存。 注意，保存货物容器（制服、背心或背包）也会保存该容器的所有内容。 保存后，该物品的标签图标应变为绿色。 点击%1以避免再次显示此信息。</Chinesesimp>
+                <Korean>커스텀 로드아웃 기능이 변경되었습니다. 목록에서 아이템을 더블 클릭하면 사용자 지정 로드아웃에 저장됩니다. 저장 해제하려면 다시 더블 클릭하세요. 화물 컨테이너(유니폼, 조끼, 배낭)를 저장하면 해당 컨테이너의 모든 내용물이 저장됩니다. 이 메시지가 다시 나타나지 않도록 %1을 클릭하세요.</Korean>
+                <French>La fonctionnalité d'équipement personnalisé a changé. Double-cliquez sur un élément de la liste pour l'enregistrer dans votre équipement personnalisé. Double-cliquez à nouveau pour désenregistrer. Note que sauvegarder un conteneur (uniforme, gilet ou sac à dos) sauvegarde également tout le contenu de ce conteneur. Une fois enregistré, l'icône d'onglet de l'article devrait devenir verte. Cliquez sur %1 pour ne plus afficher ce message.</French>
+            </Key>
+            <Key ID="STR_A3U_arsenal_update_ack">
+                <Original>Acknowledge</Original>
+                <Russian>Подтвердить</Russian>
+                <Chinesesimp>收到</Chinesesimp>
+                <Korean>확인해 드립니다</Korean>
+                <French>Accuser réception</French>
+            </Key>
+            <Key ID="STR_A3U_arsenal_update_ok">
+                <Original>OK</Original>
+                <Russian>ХОРОШО</Russian>
+                <Chinesesimp>还行</Chinesesimp>
+                <Korean>그래</Korean>
+                <French>D'ACCORD</French>
+            </Key>
         </Container>
         <Container name="blackmarket">
             <Key ID="STR_A3AP_blackmarket_seap">
@@ -3188,12 +3216,24 @@
                 <Korean>드디어 자유다!</Korean>
                 <French>Je suis enfin libre !</French>
             </Key>
+            <Key ID="STR_chats_splash_over">
+                <Original>Splash, over.</Original>
+            </Key>
             <Key ID="STR_chats_splash_out">
-                <Original>Splash. Out.</Original>
+                <Original>Splash, out.</Original>
                 <Russian>Попадание.</Russian>
                 <Chinesesimp>弹着，完毕。</Chinesesimp>
                 <Korean>착탄 확인바람, 이상.</Korean>
                 <French>Impact</French>
+            </Key>
+            <Key ID="STR_chats_shot_over">
+                <Original>Shot, over.</Original>
+            </Key>
+            <Key ID="STR_chats_shot_out">
+                <Original>Shot, out.</Original>
+            </Key>
+            <Key ID="STR_chats_rounds_complete">
+                <Original>Rounds complete.</Original>
             </Key>
             <Key ID="STR_chats_mortar_barrage_confirm">
                 <Original>Acknowledged. Fire mission is inbound. ETA %1 secs for the first impact.</Original>
@@ -4011,6 +4051,13 @@
                 <Chinesesimp>重建 %1。</Chinesesimp>
                 <Korean>%1이(가) 재건축되었습니다.</Korean>
                 <French>%1 reconstruit.</French>
+            </Key>
+            <Key ID="STR_notifiers_rebuild_assets_nothing_to_rebuild">
+                <Original>Nothing to rebuild in %1.</Original>
+                <Russian>Нечего восстанавливать в %1.</Russian>
+                <Chinesesimp>%1 中没有可重建的内容。</Chinesesimp>
+                <Korean>%1에서 재건축할 것이 없습니다.</Korean>
+                <French>Rien à reconstruire dans %1.</French>
             </Key>
             <Key ID="STR_notifiers_rebuild_assets_info">
                 <Original>Click on any friendly marker to rebuild radio towers and military buildings there.&lt;br/&gt;Cost: %1%2.</Original>
@@ -5336,6 +5383,27 @@
                 <Korean>적 차량 잠금 장치 활성화</Korean>
                 <French>Activer les verrous des véhicules ennemis</French>
             </Key>
+            <Key ID="STR_params_enableVehicleAutoLock_desc">
+                <Original>Should unoccupied enemy vehicles be locked automatically, requiring lockpicking by an engineer rebel?</Original>
+                <Russian>Должны ли незанятые вражеские машины автоматически блокироваться, требуя взлома замков инженерным повстанцем?</Russian>
+                <Chinesesimp>空置的敌方车辆是否应该自动锁定，需要工程师叛军开锁？</Chinesesimp>
+                <Korean>비어 있는 적 차량은 자동으로 잠겨서 엔지니어 반란군이 자물쇠 따기를 해야 하나요?</Korean>
+                <French>Les véhicules ennemis inoccupés doivent-ils être verrouillés automatiquement, nécessitant un crochetage par un rebelle ingénieur?</French>
+            </Key>
+            <Key ID="STR_params_enableVehicleAutoLockCiv">
+                <Original>Enable Civilian Vehicle Locks</Original>
+                <Russian>Включить замки гражданских автомобилей</Russian>
+                <Chinesesimp>启用民用车辆锁</Chinesesimp>
+                <Korean>민간 차량 잠금장치 활성화</Korean>
+                <French>Activez les verrous des véhicules civils</French>
+            </Key>
+            <Key ID="STR_params_enableVehicleAutoLockCiv_desc">
+                <Original>Should unoccupied civilian vehicles be locked automatically, requiring lockpicking by an engineer rebel?</Original>
+                <Russian>Должны ли свободные гражданские автомобили автоматически блокироваться, требуя вскрытия замков инженером-повстанцем?</Russian>
+                <Chinesesimp>空置的民用车辆是否应该自动锁闭，需要工程师叛军开锁？</Chinesesimp>
+                <Korean>비인 민간 차량은 자동으로 잠겨서 엔지니어 반군이 자물쇠 따기를 해야 할까요?</Korean>
+                <French>Les véhicules civils inoccupés doivent-ils être verrouillés automatiquement, nécessitant le crochetage par un rebelle ingénieur?</French>
+            </Key>
             <Key ID="STR_params_vehicleLockpickTime">
                 <Original>Amount of time in seconds to lockpick a vehicle</Original>
                 <Russian>Время в секундах для взлома автомобиля</Russian>
@@ -5545,12 +5613,47 @@
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_title">
+                <Original>Location defense/capture area</Original>
+                <Russian>Зона захвата/защиты локации</Russian>
+                <Chinesesimp>位置防御/捕获区域</Chinesesimp>
+                <Korean>위치 방어/점령 지역</Korean>
+                <French>Zone de défense/capture de l'emplacement</French>
+            </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_tooltip">
+                <Original>When capturing/defending locations, use an additional circular area diameter around the flag AND the full zone size to consider unit presences.</Original>
+                <Russian>При захвате/защите локаций используйте дополнительную круговую область вокруг флага И полный размер зоны для учета присутствия юнитов.</Russian>
+                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域和整个区域大小来考虑单位存在。</Chinesesimp>
+                <Korean>위치를 점령/방어할 때, 깃발 주위의 추가 원형 영역과 전체 구역 크기를 사용하여 유닛 존재를 고려합니다.</Korean>
+                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau ET la taille complète de la zone pour considérer la présence des unités.</French>
+            </Key>
+            <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_traditional">
+                <Original>Traditional</Original>
+                <Russian>Традиционный</Russian>
+                <Chinesesimp>传统</Chinesesimp>
+                <Korean>전통적인</Korean>
+                <French>Traditionnel</French>
+            </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>
                 <Russian>Начните только с разблокированным пистолетом</Russian>
                 <Chinesesimp>仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
+            </Key>
+            <Key ID="STR_params_loadoutArsenalDefaultOverride">
+                <Original>Set all tabs in the AI custom loadout arsenal to be saved by default</Original>
+                <Russian>По умолчанию сохранять все вкладки в пользовательском арсенале снаряжения ИИ</Russian>
+                <Chinesesimp>将 AI 自定义装备库中的所有选项卡设为默认保存</Chinesesimp>
+                <Korean>AI 커스텀 로드아웃 아스널의 모든 탭을 기본적으로 저장</Korean>
+                <French>Enregistrer par défaut tous les onglets de l'arsenal de chargements personnalisés de l'IA</French>
+            </Key>
+            <Key ID="STR_params_loadoutArsenalDefaultOverride_desc">
+                <Original>If enabled, legacy custom loadout behavior will be preserved; when saving a loadout, all items in the loadout will be saved unless specifically excluded. If disabled, only the items in tabs specifically enabled will be saved. All other items will be randomized.</Original>
+                <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Все остальные предметы будут рандомизированы.</Russian>
+                <Chinesesimp>启用时，会保留旧版自定义装备行为；保存装备时，除非被明确排除，否则装备中的所有物品都会被保存。禁用时，只有在专门启用的选项卡中的物品会被保存，其他所有物品将被随机化。</Chinesesimp>
+                <Korean>활성화하면 기존 커스텀 로드아웃 동작이 유지됩니다. 로드아웃을 저장할 때 명시적으로 제외하지 않는 한 로드아웃의 모든 항목이 저장됩니다. 비활성화하면 명시적으로 활성화된 탭의 항목만 저장되며, 나머지 항목은 무작위로 선택됩니다.</Korean>
+                <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
             </Key>
             <Key ID="STR_params_limitWeaponsByUnitType">
                 <Original>Limit AI custom loadout weapon selections by unit type</Original>
@@ -5574,11 +5677,11 @@
                 <French>Chance pour l'IA ennemie abattue de devenir inconsciente au lieu d'être tuée après avoir subi suffisamment de dégâts.</French>
             </Key>
             <Key ID="STR_params_unconChanceReb">
-                <Original>Rebel AI unconscious chance</Original>
-                <Russian>Бессознательный шанс ИИ повстанцев</Russian>
-                <Chinesesimp>叛军AI无意识几率</Chinesesimp>
-                <Korean>반란군 AI 무의식 확률</Korean>
-                <French>Hasard inconscient de l'IA rebelle</French>
+                <Original>Rebel AI and player unconscious chance</Original>
+                <Russian>Искусственный интеллект повстанцев и бессознательный шанс игрока</Russian>
+                <Chinesesimp>叛军AI和玩家无意识的机率</Chinesesimp>
+                <Korean>반란군 AI와 플레이어 무의식 확률</Korean>
+                <French>IA rebelle et chance inconsciente du joueur</French>
             </Key>
             <Key ID="STR_params_unconChanceReb_desc">
                 <Original>Chance for downed rebels to become unconscious instead of killed after taking sufficient damage</Original>
@@ -5586,6 +5689,84 @@
                 <Chinesesimp>被击倒的叛军在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
                 <Korean>쓰러진 반란군이 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
                 <French>Chance pour les rebelles abattus de perdre connaissance au lieu d'être tués après avoir subi suffisamment de dégâts</French>
+            </Key>
+            <Key ID="STR_params_enableVehiclesForAI">
+                <Original>Enable AI to man vehicles left near friendly markers by default</Original>
+                <Russian>По умолчанию разрешите ИИ управлять турелями и орудиями транспортных средств, оставленными рядом с дружественными маркерами</Russian>
+                <Chinesesimp>默认启用AI作放置在友方标记附近的车辆</Chinesesimp>
+                <Korean>기본적으로 아군 표식 근처에 배치된 차량을 AI가 조작하도록 활성화하세요</Korean>
+                <French>Permettre à l'IA de manœuvrer par défaut les véhicules laissés près des marqueurs alliés</French>
+            </Key>
+            <Key ID="STR_params_enableVehiclesForAI_desc">
+                <Original>Enable rebel AI to man vehicles (commander / gunner seat) left near friendly markers by default. Note that players can still still enable or disable AI use of specific vehicles by interacting with the vehicle.</Original>
+                <Russian>По умолчанию разрешите ИИ повстанцев садиться на места командира и стрелка в технике, оставленной рядом с маркерами. Обратите внимание, что игроки всё ещё могут запретить или разрешить ИИ использование отдельной техники , путем взаимодействия с ней.</Russian>
+                <Chinesesimp>默认让叛军AI作留在友军标记附近的车辆（指挥官/炮手座位）。请注意，玩家仍然可以通过与载具互动来启用或禁用AI对特定载具的使用。</Chinesesimp>
+                <Korean>기본적으로 아군 표시 근처에 남겨둔 차량(지휘관/포수 좌석)을 조작할 수 있도록 반란군 AI를 활성화하세요. 플레이어는 여전히 특정 차량과 상호작용하여 AI 사용을 활성화하거나 비활성화할 수 있습니다.</Korean>
+                <French>Activez par défaut l'IA rebelle pour manœuvrer les véhicules (siège commandant / mitrailleuse) laissés près des marqueurs alliés par défaut. Notez que les joueurs peuvent toujours activer ou désactiver l'utilisation de véhicules spécifiques par l'IA en interagissant avec le véhicule.</French>
+            </Key>
+            <Key ID="STR_params_disablePATCOMMortars">
+                <Original>Disable PATCOM/Virtual Artillery</Original>
+                <Russian>Отключить PATCOM/виртуальную артиллерию</Russian>
+                <German>PATCOM-/virtuelle Artillerie deaktivieren</German>
+                <Italian>Disabilita artiglieria PATCOM/virtuale</Italian>
+                <Spanish>Desactivar artillería PATCOM/virtual</Spanish>
+                <French>Désactiver l’artillerie PATCOM/virtuelle</French>
+                <Portuguese>Desativar artilharia PATCOM/virtual</Portuguese>
+                <Polish>Wyłącz artylerię PATCOM/wirtualną</Polish>
+                <Czech>Zakázat PATCOM/virtuální dělostřelectvo</Czech>
+                <Turkish>PATCOM/Sanal Topçuyu Devre Dışı Bırak</Turkish>
+                <Korean>PATCOM/가상 포병 비활성화</Korean>
+                <Japanese>PATCOM／仮想砲兵を無効化</Japanese>
+                <Chinesesimp>禁用 PATCOM / 虚拟火炮</Chinesesimp>
+                <Chinese>停用 PATCOM／虛擬砲兵</Chinese>
+            </Key>
+            <Key ID="STR_params_disablePATCOMMortars_desc">
+                <Original>Disables virtual and PATCOM artillery.\nVirtual artillery is artillery that technically exists in the world, but can't reasonably be countered.\nPATCOM artillery is the AI handler for physical artillery, resulting in unfair accuracy and reaction.</Original>
+                <Russian>Отключает виртуальную артиллерию и артиллерию PATCOM.\nВиртуальная артиллерия технически существует в мире, но не может быть эффективно подавлена.\nАртиллерия PATCOM — это ИИ-управление физической артиллерией, приводящее к нечестной точности и скорости реакции.</Russian>
+                <German>Deaktiviert virtuelle Artillerie und PATCOM-Artillerie.\nVirtuelle Artillerie existiert technisch in der Spielwelt, kann jedoch nicht sinnvoll bekämpft werden.\nPATCOM-Artillerie ist die KI-Steuerung physischer Artillerie und führt zu unfairer Genauigkeit und Reaktionszeit.</German>
+                <Italian>Disabilita l’artiglieria virtuale e PATCOM.\nL’artiglieria virtuale esiste tecnicamente nel mondo di gioco, ma non può essere contrastata in modo ragionevole.\nL’artiglieria PATCOM è la gestione IA dell’artiglieria fisica, con precisione e reazione ingiustamente elevate.</Italian>
+                <Spanish>Desactiva la artillería virtual y PATCOM.\nLa artillería virtual existe técnicamente en el mundo, pero no puede contrarrestarse de forma razonable.\nLa artillería PATCOM es el controlador de IA de la artillería física, lo que resulta en una precisión y reacción injustas.</Spanish>
+                <French>Désactive l’artillerie virtuelle et PATCOM.\nL’artillerie virtuelle existe techniquement dans le monde, mais ne peut pas être raisonnablement contrée.\nL’artillerie PATCOM est la gestion IA de l’artillerie physique, entraînant une précision et une réactivité injustes.</French>
+                <Portuguese>Desativa a artilharia virtual e PATCOM.\nA artilharia virtual existe tecnicamente no mundo, mas não pode ser combatida de forma razoável.\nA artilharia PATCOM é o controlador de IA da artilharia física, resultando em precisão e reação injustas.</Portuguese>
+                <Polish>Wyłącza artylerię wirtualną oraz PATCOM.\nArtyleria wirtualna technicznie istnieje w świecie gry, ale nie da się jej rozsądnie zwalczać.\nArtyleria PATCOM to obsługa artylerii fizycznej przez SI, co skutkuje nieuczciwą celnością i czasem reakcji.</Polish>
+                <Czech>Zakáže virtuální a PATCOM dělostřelectvo.\nVirtuální dělostřelectvo technicky existuje ve světě hry, ale nelze jej rozumně eliminovat.\nPATCOM dělostřelectvo je řízení fyzického dělostřelectva pomocí AI, což vede k neférové přesnosti a reakci.</Czech>
+                <Turkish>Sanal ve PATCOM topçusunu devre dışı bırakır.\nSanal topçu teknik olarak dünyada vardır, ancak makul şekilde karşılık verilemez.\nPATCOM topçusu, fiziksel topçunun yapay zekâ tarafından yönetilmesidir ve adil olmayan isabet ve tepki süresine yol açar.</Turkish>
+                <Korean>가상 포병과 PATCOM 포병을 비활성화합니다.\n가상 포병은 기술적으로 세계에 존재하지만 합리적으로 대응할 수 없습니다.\nPATCOM 포병은 물리적 포병을 제어하는 AI로, 불공정한 정확도와 반응 속도를 초래합니다.</Korean>
+                <Japanese>仮想砲兵およびPATCOM砲兵を無効化します。\n仮想砲兵は技術的には世界に存在しますが、現実的に対抗することができません。\nPATCOM砲兵は物理砲兵を制御するAIで、不公平な精度と反応速度をもたらします。</Japanese>
+                <Chinesesimp>禁用虚拟火炮和 PATCOM 火炮。\n虚拟火炮在技术上存在于世界中，但几乎无法被合理反制。\nPATCOM 火炮是对实体火炮的 AI 控制，导致不公平的精度和反应速度。</Chinesesimp>
+                <Chinese>停用虛擬砲兵與 PATCOM 砲兵。\n虛擬砲兵在技術上存在於世界中，但幾乎無法被合理反制。\nPATCOM 砲兵是對實體砲兵的 AI 控制，導致不公平的精準度與反應速度。</Chinese>
+            </Key>
+            <Key ID="STR_params_disableMortars">
+                <Original>Disable Physical Artillery</Original>
+                <Russian>Отключить физическую артиллерию</Russian>
+                <German>Physische Artillerie deaktivieren</German>
+                <Italian>Disabilita artiglieria fisica</Italian>
+                <Spanish>Desactivar artillería física</Spanish>
+                <French>Désactiver l’artillerie physique</French>
+                <Portuguese>Desativar artilharia física</Portuguese>
+                <Polish>Wyłącz artylerię fizyczną</Polish>
+                <Czech>Zakázat fyzické dělostřelectvo</Czech>
+                <Turkish>Fiziksel Topçuyu Devre Dışı Bırak</Turkish>
+                <Korean>물리적 포병 비활성화</Korean>
+                <Japanese>物理砲兵を無効化</Japanese>
+                <Chinesesimp>禁用实体火炮</Chinesesimp>
+                <Chinese>停用實體砲兵</Chinese>
+            </Key>
+            <Key ID="STR_params_disableMortars_desc">
+                <Original>Disables physical artillery from being utilised by enemies. Does not disable artillery missions.</Original>
+                <Russian>Запрещает противникам использовать физическую артиллерию. Артиллерийские задания не отключаются.</Russian>
+                <German>Verhindert, dass Gegner physische Artillerie einsetzen. Artilleriemissionen werden nicht deaktiviert.</German>
+                <Italian>Impedisce ai nemici di utilizzare l’artiglieria fisica. Le missioni di artiglieria non vengono disabilitate.</Italian>
+                <Spanish>Impide que los enemigos utilicen artillería física. No desactiva las misiones de artillería.</Spanish>
+                <French>Empêche les ennemis d’utiliser l’artillerie physique. N’affecte pas les missions d’artillerie.</French>
+                <Portuguese>Impede que os inimigos utilizem artilharia física. Não desativa missões de artilharia.</Portuguese>
+                <Polish>Uniemożliwia przeciwnikom korzystanie z artylerii fizycznej. Nie wyłącza misji artyleryjskich.</Polish>
+                <Czech>Zabraňuje nepřátelům používat fyzické dělostřelectvo. Nezakazuje dělostřelecké mise.</Czech>
+                <Turkish>Düşmanların fiziksel topçuyu kullanmasını engeller. Topçu görevlerini devre dışı bırakmaz.</Turkish>
+                <Korean>적이 물리적 포병을 사용하지 못하도록 합니다. 포병 임무는 비활성화되지 않습니다.</Korean>
+                <Japanese>敵が物理砲兵を使用できなくします。砲兵ミッションは無効化されません。</Japanese>
+                <Chinesesimp>禁止敌人使用实体火炮。不影响火炮任务。</Chinesesimp>
+                <Chinese>禁止敵人使用實體砲兵。不會停用砲兵任務。</Chinese>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
@@ -5748,18 +5929,18 @@
                 <French>Définit le nombre de rebelles pouvant être dans un groupe de garnison. Le nombre total de soldats de la garnison sera divisé par ce nombre et réparti en groupes.</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit">
-                <Original>How many rebels can be garrisoned (1.5x for airports and milbases, 0.5x for resources and factories)?</Original>
-                <Russian>Сколько повстанцев может в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов)?</Russian>
-                <Chinesesimp>抵抗军可以驻守多少（机场和军事基地1.5x，资源和工厂0.5x）？</Chinesesimp>
-                <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까? (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
-                <French>Combien de rebelles peuvent être mis en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines) ?</French>
+                <Original>How many rebels can be garrisoned?</Original>
+                <Russian>Сколько повстанцев может в гарнизоне?</Russian>
+                <Chinesesimp>抵抗军可以驻守多少？</Chinesesimp>
+                <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까?</Korean>
+                <French>Combien de rebelles peuvent être mis en garnison?</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit_desc">
-                <Original>How many rebel troops can be in garrison. Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
-                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне. Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
-                <Chinesesimp>有多少反抗军可以驻守。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
-                <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다.</Korean>
-                <French>Nombre de troupes rebelles pouvant se trouver en garnison. Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
+                <Original>How many rebel troops can be in garrison (1.5x for airports and milbases, 0.5x for resources and factories). Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
+                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов). Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
+                <Chinesesimp>有多少反抗军可以驻守(机场和军事基地1.5x，资源和工厂0.5x)。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
+                <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다. (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
+                <French>Nombre de troupes rebelles pouvant se trouver en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines). Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
             </Key>
             <Key ID="STR_params_UAVSpawnChance">
                 <Original>UAV spawn chance at airfields</Original>
@@ -5768,6 +5949,34 @@
             <Key ID="STR_params_UAVSpawnChance_desc">
                 <Original>Adjusts spawn chance of UAVs at enemy airfields. The higher the chance, the less likely other fixed wing aircrafts will be spawned</Original>
                 <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+            </Key>
+            <Key ID="STR_params_ultimate_allowLockpickKits">
+                <Original>Allow Lockpick Kits</Original>
+                <Russian>Разрешить наборы отмычек</Russian>
+                <Chinesesimp>允许使用撬锁工具包</Chinesesimp>
+                <Korean>잠금 해제 키트를 허용합니다</Korean>
+                <French>Autoriser les kits de crochetage</French>
+            </Key>
+            <Key ID="STR_params_ultimate_allowLockpickKits_Tooltip">
+                <Original>Allow non-engineer players to use lockpick kits to unlock vehicles</Original>
+                <Russian>Разрешить неинженерам использовать наборы отмычек для разблокировки транспортных средств</Russian>
+                <Chinesesimp>允许非工程师玩家使用撬锁工具包解锁车辆</Chinesesimp>
+                <Korean>비 엔지니어 플레이어가 차량 잠금을 해제하기 위해 잠금 해제 키트를 사용할 수 있도록 허용</Korean>
+                <French>Permettre aux joueurs non-ingénieurs d'utiliser des kits de crochetage pour déverrouiller des véhicules</French>
+            </Key>
+            <Key ID="STR_params_ultimate_lockpickKitBreakChance">
+                <Original>Lockpick Kit Break Chance</Original>
+                <Russian>Шанс поломки набора отмычек</Russian>
+                <Chinesesimp>撬锁工具包破损几率</Chinesesimp>
+                <Korean>잠금 해제 키트 파손 확률</Korean>
+                <French>Chance de rupture du kit de crochetage</French>
+            </Key>
+            <Key ID="STR_params_ultimate_lockpickKitBreakChance_Tooltip">
+                <Original>Chance that a lockpick kit will break upon use</Original>
+                <Russian>Шанс поломки набора отмычек при использовании</Russian>
+                <Chinesesimp>撬锁工具包使用时的破损几率</Chinesesimp>
+                <Korean>잠금 해제 키트를 사용할 때 파손될 확률</Korean>
+                <French>Chance qu'un kit de crochetage se casse lors de son utilisation</French>
             </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
@@ -6834,6 +7043,13 @@
                 <Chinesesimp>集结点</Chinesesimp>
                 <Korean>집결 지점</Korean>
                 <French>Point de ralliement</French>
+            </Key>
+            <Key ID="STR_dialogs_RP_inVehicle_fail">
+                <Original>You can't establish a rally point while in a vehicle.</Original>
+                <Russian>Нельзя установить точку сбора, находясь в автомобиле.</Russian>
+                <Chinesesimp>你不能在车内建立集合点。</Chinesesimp>
+                <Korean>차량 안에서는 집결 지점을 설정할 수 없습니다.</Korean>
+                <French>On ne peut pas établir de point de rassemblement en étant dans un véhicule.</French>
             </Key>
             <Key ID="STR_dialogs_RP_abolish_fail">
                 <Original>The rally point can only be abolished at the HQ or near the Rally Point itself.</Original>
@@ -9140,7 +9356,7 @@
                 <Original>The screen says:&lt;br/&gt;&lt;br/&gt;Prepare to die!</Original>
                 <Russian>На экране написано:&lt;br/&gt;&lt;br/&gt; готовься к смерти!</Russian>
                 <Chinesesimp>屏幕上写着：&lt;br/&gt;&lt;br/&gt;傻逼去死吧！</Chinesesimp>
-                <Korean>화면에 이렇게 표시되었습니다:&lt;br/&gt;&lt;br/&gt;;죽을 준비나 해라!</Korean>
+                <Korean>화면에 이렇게 표시되었습니다:&lt;br/&gt;&lt;br/&gt;죽을 준비나 해라!</Korean>
                 <French>L'écran indique:&lt;br/&gt;&lt;br/&gt;Préparez-vous à mourir!</French>
             </Key>
             <Key ID="STR_intel_laptop_no_range_description">
@@ -9496,225 +9712,299 @@
             -->
             <Key ID="STR_antistasi_intel_translated">
                 <Original>Yes</Original>
+                <Russian>Да</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_000">
                 <Original>a wet noodle in the officers breast pocket.</Original>
+                <Russian>мокрую лапшу из нагрудного кармана офицера.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_001">
                 <Original>a candy wrapper meticulously folded and stowed in the soldier's billfold.</Original>
+                <Russian>тщательно сложенный фантик от конфеты в солдатском бумажнике.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_002">
                 <Original>a damp snotrag. You wish you hadn't checked that leg pocket.</Original>
+                <Russian>мокрый носовой платок. Вы жалеете, что заглянули в тот набедренный карман.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_003">
                 <Original>the top-half of a DND character sheet for 'Dirk Man-Thrust'.</Original>
+                <Russian>верхнюю половину листа персонажа для НРИ какого-то 'Дирка Мощнотолкача'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_004">
                 <Original>the exact coordinates for a big cache of weapons that was cleared out yesterday.</Original>
+                <Russian>точные координаты огромной заначки с оружием, которую... расчистили ещё вчера.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_005">
                 <Original>a hand-drawn picture of a tank with the words 'My Other Car' scrawled underneath.</Original>
+                <Russian>рисунок танка от руки, под которым каракулями выведено: 'Моя вторая тачка'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_006">
                 <Original>a receipt for 47 tacos, all with 'extra onions.'</Original>
+                <Russian>чек за 47 тако, все с 'дополнительным майонезом'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_007">
                 <Original>a doodle of a dragon fighting what looks suspiciously like a refrigerator.</Original>
+                <Russian>каракули, на которых дракон сражается с чем-то, что до боли похоже на холодильник.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_008">
                 <Original>the lyrics to 'Never Gonna Give You Up,' handwritten line by line on a cocktail napkin.</Original>
+                <Russian>текст песни 'Never Gonna Give You Up', аккуратно построчно переписанный на бумажной салфетке.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_009">
                 <Original>a broken yo-yo with 'Top Secret' carved into the side.</Original>
+                <Russian>сломанный йо-йо с выцарапанной на боку надписью 'Совершенно Секретно'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_010">
                 <Original>someone's grocery list: 'bread, milk, tactical nuke, eggs.'</Original>
+                <Russian>чей-то список покупок: 'хлеб, молоко, тактическая боеголовка, яйца'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_011">
                 <Original>a dog-eared romance novel, bookmarked at a very dramatic kiss.</Original>
+                <Russian>зачитанный до дыр любовный роман, с закладкой на месте очень драматичного поцелуя.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_012">
                 <Original>a shoebox lid labeled 'evidence,' containing only lint.</Original>
+                <Russian>крышку от обувной коробки с надписью 'улики', внутри только пыль.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_013">
                 <Original>a fake passport with the photo of a cat.</Original>
+                <Russian>фальшивый паспорт с фотографией кота.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_014">
                 <Original>a sock. It is crunchy. Best not to ask.</Original>
+                <Russian>носок. засохший... Лучше не спрашивать.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_015">
                 <Original>a handwritten flowchart labeled 'Plan B: Panic.'</Original>
+                <Russian>нарисованную от руки блок-схему с заголовком 'План Б: Паника'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_016">
                 <Original>a rock with googly eyes glued on.</Original>
+                <Russian>камень с приклеенными выпуклыми глазами.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_017">
                 <Original>a sketch of a tank wearing a cowboy hat.</Original>
+                <Russian>набросок танка в ушанке.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_018">
                 <Original>a fortune cookie slip that reads: 'You will fail this mission.'</Original>
+                <Russian>бумажку из предсказательного печенья: 'В этой миссии вас ждёт провал'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_019">
                 <Original>a jar of pickles with one pickle missing.</Original>
+                <Russian>банку с солёными огурцами, в которой не хватает одного огурца.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_020">
                 <Original>a crumpled napkin that says 'BRING MORE NAPKINS.'</Original>
+                <Russian>смятый носовой платок, на котором написано: 'ПРИНЕСИ БОЛЬШЕ НОСОВЫХ ПЛАТКОВ'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_021">
                 <Original>a bingo card with every square marked 'Free Space.'</Original>
+                <Russian>карточку для игры в лото, где на всех полях отмечено 'Свободная клетка'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_022">
                 <Original>a tiny notebook filled entirely with the word 'butt.'</Original>
+                <Russian>крошечный блокнотик, целиком заполненный словом 'жопа'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_023">
                 <Original>a rubber chicken dressed in camouflage paint.</Original>
+                <Russian>резиновую курицу, раскрашенную под камуфляж.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_024">
                 <Original>a doodle of stick figures labeled 'enemy forces.'</Original>
+                <Russian>каракули в виде человечков из палочек с подписью 'силы противника'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_025">
                 <Original>a pile of receipts showing bulk orders of glitter.</Original>
+                <Russian>пачку чеков на оптовые закупки блёсток.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_026">
                 <Original>a comic strip titled 'Sergeant Fartbeard' with only one panel.</Original>
+                <Russian>комикс под названием 'Сержант Пердобород' всего с одной картинкой.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_027">
                 <Original>a single shoelace tied in 37 knots.</Original>
+                <Russian>один шнурок, завязанный в 37 узлов.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_028">
                 <Original>a Sudoku filled entirely with the number 7.</Original>
+                <Russian>судоку, полностью заполненную цифрой 7.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_029">
                 <Original>a love letter addressed to 'My Dearest Microwave.'</Original>
+                <Russian>любовное письмо, адресованное 'Моей драгоценной... Микроволновке'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_030">
                 <Original>a crayon drawing of a stickman holding a bazooka.</Original>
+                <Russian>рисунок мелком: человечек из палочек с базукой.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_031">
                 <Original>a half-eaten granola bar in a classified envelope.</Original>
+                <Russian>половину съеденного злакового батончика в конверте со штампом 'совершенно секретно'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_032">
                 <Original>a cassette tape labeled 'Sounds of War' that is just whale songs.</Original>
+                <Russian>кассету с надписью 'Звуки Войны', на которой записано только пение китов.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_033">
                 <Original>a box of cereal with every toy prize missing.</Original>
+                <Russian>коробку от хлопьев, из которой пропали все игрушки-сюрпризы.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_034">
                 <Original>a crumpled napkin with 'Don't trust Yussuf' in three different handwritings.</Original>
+                <Russian>смятый носовой платок, на котором тремя разными почерками написано: 'Не доверяй Юсуфу'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_035">
                 <Original>a Polaroid of an empty room with the word 'soon' scrawled on it.</Original>
+                <Russian>полароидный снимок пустой комнаты с каракулями 'скоро'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_036">
                 <Original>a to-do list: 1. Wake up. 2. Betray everyone. 3. Lunch.</Original>
+                <Russian>список дел: 1. Проснуться. 2. Предать всех. 3. Обед.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_037">
                 <Original>a magazine clipping of a man flexing with the caption 'Inspiration.'</Original>
+                <Russian>вырезку из журнала с качком, напрягающим бицепс, и подписью 'Вдохновение'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_038">
                 <Original>a single glove filled with jelly.</Original>
+                <Russian>одну перчатку, набитую желе.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_039">
                 <Original>a flash drive with the private key to the Antistasi Ultimate Github repo.</Original>
+                <Russian>флешку с приватным ключом к репозиторию Antistasi Ultimate на Github.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_040">
                 <Original>a flash drive containing only a 3-second recording of somebody coughing.</Original>
+                <Russian>флешку, на которой нет ничего, кроме 3-секундной записи чьего-то кашля.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_041">
                 <Original>a pamphlet titled 'How to Hide Evidence' with sections highlighted.</Original>
+                <Russian>брошюрку под названием 'Как прятать улики' с выделенными маркером разделами.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_042">
                 <Original>a coupon for 20% off a store that closed in 1998.</Original>
+                <Russian>купон на скидку 20% в магазин, который закрылся в 1998-м.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_043">
                 <Original>a paper airplane with 'TOP SECRET' stamped on the wing.</Original>
+                <Russian>бумажный самолётик с печатью 'СОВЕРШЕННО СЕКРЕТНО' на крыле.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_044">
                 <Original>a children's menu colored entirely in red crayon.</Original>
+                <Russian>детское меню из кафе, полностью раскрашенное красным мелком.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_045">
                 <Original>a friendship bracelet made from shoelaces.</Original>
+                <Russian>браслет дружбы, сплетённый из шнурков.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_046">
                 <Original>a detailed report on sandwich stores in the local area.</Original>
+                <Russian>детальный отчёт о точках общепита с шаурмой в окрестностях.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_047">
                 <Original>a single fortune cookie with no fortune inside.</Original>
+                <Russian>одно предсказательное печенье без бумажки внутри.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_048">
                 <Original>a hairbrush missing every single bristle.</Original>
+                <Russian>расчёску, на которой не осталось ни одной щетинки.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_049">
                 <Original>a scrap of paper: 'Remember to delete this note.'</Original>
+                <Russian>клочок бумаги: 'Не забудь стереть эту записку'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_050">
                 <Original>a harmonica with teeth marks in it.</Original>
+                <Russian>гармошку со следами зубов.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_051">
                 <Original>a drawing of a cat wearing night-vision goggles.</Original>
+                <Russian>рисунок кота в очках ночного видения.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_052">
                 <Original>a stick of gum, already chewed.</Original>
+                <Russian>жвачку, уже пожеванную.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_053">
                 <Original>a recipe for 'explosive chili' with doodles in the margins.</Original>
+                <Russian>рецепт 'взрывного чили' с каракулями на полях.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_054">
                 <Original>a rusty spoon wrapped in velvet.</Original>
+                <Russian>ржавую ложку, завёрнутую в бархат.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_055">
                 <Original>a Pokémon card bent into origami.</Original>
+                <Russian>карточку 'Покемон', согнутую в оригами.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_056">
                 <Original>a tiny vial labeled 'Tears of A3U devs.'</Original>
+                <Russian>крохотный пузырёк с надписью 'Слёзы разработчиков A3U'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_057">
                 <Original>a business card: 'Todd, Assassin. Have gun, will travel.'</Original>
+                <Russian>визитку: 'Тодд, киллер. Есть пушка, готов к командировкам'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_058">
                 <Original>a stapled stack of papers: every page is blank.</Original>
+                <Russian>скреплённые скрепкой листы бумаги: все страницы пустые.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_059">
                 <Original>a fortune cookie slip: 'You should have stayed home today.'</Original>
+                <Russian>бумажку из печенья: 'Тебе сегодня стоило остаться дома'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_060">
                 <Original>a peanut butter sandwich fossilized in wax paper.</Original>
+                <Russian>бутерброд с арахисовой пастой, окаменевший в вощёной бумаге.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_061">
                 <Original>a napkin sketch of a treasure map to 'The Bathroom.'</Original>
+                <Russian>набросок карты сокровищ на салфетке с маршрутом до 'Туалета'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_062">
                 <Original>a matchbook with only one match, damp and useless.</Original>
+                <Russian>спичечный коробок с одной единственной сырой и бесполезной спичкой.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_063">
                 <Original>a seashell labeled 'Property of the Navy.'</Original>
+                <Russian>ракушку с биркой 'Собственность Военно-Морского Флота'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_064">
                 <Original>a half-used crossword with every answer being 'BUTT.'</Original>
+                <Russian>половину заполненного кроссворда, где все ответы — 'ЖОПА'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_065">
                 <Original>a list of names, all crossed out except 'Jeff???'.</Original>
+                <Russian>список имён, все зачёркнуты, кроме 'Серёга???'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_066">
                 <Original>a ball of yarn with a classified tag on it.</Original>
+                <Russian>клубок ниток с грифом 'Секретно'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_067">
                 <Original>a rolled-up poster of a muscled guy holding a cat.</Original>
+                <Russian>свёрнутый в трубку постер с качком, держащим на руках кота.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_068">
                 <Original>a note that says 'This is not important intel.'</Original>
+                <Russian>записку: 'Это не важная информация'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_069">
                 <Original>a ticket stub for 'Shrek 2' opening night.</Original>
+                <Russian>билет в кино с премьеры 'Шрэк 2'.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_070">
                 <Original>a fake, 15 of clubs playing card.</Original>
+                <Russian>фальшивую игральную карту — пятнадцать крести.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_071">
                 <Original>a packet of ramen seasoning, no noodles.</Original>
+                <Russian>пакет приправы от лапши быстрого приготовления, без самой лапши.</Russian>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_072">
                 <Original>a binder labeled 'Master Plan' with only page numbers inside.</Original>
+                <Russian>папку с надписью 'Генеральный План', внутри только пронумерованные пустые листы.</Russian>
             </Key>
         </Container>
         <Container name="tasks">
@@ -11075,6 +11365,20 @@
                 <Korean>이 무기에서 인공지능 내보내기</Korean>
                 <French>Faire partir l'IA de cette arme</French>
             </Key>
+            <Key ID="STR_antistasi_actions_move_vehicle_allow_ai">
+                <Original>Allow AIs to use this vehicle</Original>
+                <Russian>Разрешить ИИ-юнитам использовать эту технику</Russian>
+                <Chinesesimp>允许AI使用此固定武器</Chinesesimp>
+                <Korean>인공지능이 이 무기를 사용하도록 허용</Korean>
+                <French>Autoriser les IA à utiliser cette arme</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_move_vehicle_prevent_ai">
+                <Original>Prevent AIs from using this vehicle</Original>
+                <Russian>Запретить ИИ-юнитам использовать эту технику</Russian>
+                <Chinesesimp>禁止AI使用此固定武器</Chinesesimp>
+                <Korean>인공지능이 이 무기를 사용하지 못하도록 금지</Korean>
+                <French>Empêcher les IA d'utiliser cette arme</French>
+            </Key>
             <Key ID="STR_antistasi_actions_buy_vehicle_distance_check_failure">
                 <Original>You can't buy vehicles while there are enemies near you.</Original>
                 <Russian>Вы не можете покупать технику пока рядом с вами враги.</Russian>
@@ -12222,6 +12526,34 @@
                 <Chinesesimp>旋转物体</Chinesesimp>
                 <Korean>오브젝트 돌리기</Korean>
                 <French>Faire pivoter l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_packObject">
+                <Original>Pack object</Original>
+                <Russian>Упаковать предмет</Russian>
+                <Chinesesimp>打包物体</Chinesesimp>
+                <Korean>오브젝트 포장하기</Korean>
+                <French>Empaquetter l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_unpackObject">
+                <Original>Unpack object</Original>
+                <Russian>Распаковать предмет</Russian>
+                <Chinesesimp>解包物体</Chinesesimp>
+                <Korean>오브젝트 풀기</Korean>
+                <French>Déballer l'objet</French>
+            </Key>
+            <Key ID="STR_A3A_buildingplacer">
+                <Original>Building placer</Original>
+                <Russian>Планировщик зданий</Russian>
+                <Chinesesimp>建筑规划器</Chinesesimp>
+                <Korean>건물 배치 도구</Korean>
+                <French>Outil de placement de bâtiments</French>
+            </Key>
+            <Key ID="STR_A3A_openDoors">
+                <Original>Open Doors</Original>
+                <Russian>Открыть двери</Russian>
+                <Chinesesimp>打开门</Chinesesimp>
+                <Korean>문 열기</Korean>
+                <French>Ouvrir les portes</French>
             </Key>
         </Container>
         <Container name="A3A_init">
@@ -13821,7 +14153,7 @@
             <Key ID="STR_A3A_punishment_guilty">
                 <Original> has been found guilty of FF (3+ Strikes).&lt;br/&gt;&lt;br/&gt;If you believe this is a mistake, you can forgive him with the corresponding scroll-menu action.</Original>
                 <Russian> был признан виновным в дружественном огне (3+ случая).&lt;br/&gt;&lt;br/&gt;Если вы думаете, что это ошибка правосудия, вы можете простить его соответствующим действием в контекстном меню на колёсико мыши.</Russian>
-                <Chinesesimp>已被判误伤（3次以上）。&lt;br/&gt;&lt;br/&gt;;如果您认为这是误判，您可以通过鼠标滚轮菜单中的适当操作来原谅它。</Chinesesimp>
+                <Chinesesimp>已被判误伤（3次以上）。&lt;br/&gt;&lt;br/&gt;如果您认为这是误判，您可以通过鼠标滚轮菜单中的适当操作来原谅它。</Chinesesimp>
                 <Korean>이(가) 아군오사(3회 이상 공격)에 대해 유죄 판결을 받았습니다.&lt;br/&gt;&lt;br/&gt;실수인 것 같다고 생각한다면 그에 대한 스크롤 메뉴 행동으로 그를 용서할 수 있습니다.</Korean>
                 <French> a été reconnu coupable de tirs amis (plus de trois incidents)..&lt;br/&gt;&lt;br/&gt;Si vous pensez qu'il s'agit d'une erreur, vous pouvez lui pardonner avec l'action correspondante du menu déroulant.</French>
             </Key>
@@ -14425,7 +14757,7 @@
             <Key ID="STR_A3A_Base_commsMp_unlock_tier4_theBoss">
                 <Original>&lt;br/&gt;&lt;t size='0.6'&gt;AA and AT Emplacements are available for building; AA/AT squads and teams are available for recruitment.&lt;/t&gt;</Original>
                 <Russian>&lt;br/&gt;&lt;t size='0.6'&gt;Зенитные и противотанковые огневые точки доступны для постройки, также появляется возможность нанимать ПВО/ПТ-расчёты и отряды.&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;;防空/反坦克阵地可建设，防空/反坦克班及小队可招募。&lt;/t&gt;</Chinesesimp>
+                <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;防空/反坦克阵地可建设，防空/反坦克班及小队可招募。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;t size='0.6'&gt;대공, 대전차화기 포대를 지을 수 있고, 대공/대전차화기 분대와 팀을 모집할 수 있습니다.&lt;/t&gt;</Korean>
                 <French>&lt;br/&gt;&lt;t size='0.6'&gt;Les emplacements AA, AT sont disponibles à la construction, les escouades et équipes AA/AT sont disponibles au recrutement.&lt;/t&gt;</French>
             </Key>

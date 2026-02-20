@@ -12,6 +12,9 @@ params ["_target"];      //, "_caller", "_actionId", "_arguments"];
 
 _target setVariable ["lockedForAI", true, true]; 
 
+if (A3U_enableVehiclesForAI) then { staticsToFlip pushBackUnique _target } else { staticsToFlip = staticsToFlip - [_target] };
+publicVariable "staticsToFlip";
+
 // kick any AIs out of the vehicle
 {
     if (isPlayer _x) then { continue };

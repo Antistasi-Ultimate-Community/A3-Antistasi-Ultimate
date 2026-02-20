@@ -11,11 +11,11 @@
                 <Chinesesimp>加载以前的个人存档?</Chinesesimp>
                 <Korean>이전 저장 데이터를 로드 하시겠습니까?</Korean>
                 <Italian>Caricare il salvataggio personale precedente?</Italian>
-                <Portuguese>Placeholder</Portuguese>
+                <Portuguese>Carregar o save pessoal anterior?</Portuguese>
                 <Spanish>¿Cargar el guardado personal?</Spanish>
-                <Japanese>Placeholder</Japanese>
+                <Japanese>以前の個人用セーブデータを読み込む?</Japanese>
                 <Polish>Załadować poprzedni zapis gry?</Polish>
-                <Turkish>Placeholder</Turkish>
+                <Turkish>Önceki kişisel kaydı yükleyelim mi?</Turkish>
             </Key>
         </Container>
         <Container name="dialog_headquarters">
@@ -727,8 +727,8 @@
             <Key ID="STR_A3AU_downed_help">
                 <Original>I am injured comrades! Help!</Original>
                 <English>I am injured comrades! Help!</English>
-                <Russian>Placeholder</Russian>
-                <Korean>Placeholder</Korean>
+                <Russian>Я ранен, товарищи! Справка!</Russian>
+                <Korean>나는 부상당했다, 동지들! 도움말!</Korean>
                 <Chinesesimp>我受伤了! 救命!</Chinesesimp>
             </Key>
         </Container>
@@ -5303,6 +5303,20 @@
                 <Korean>&lt;br/&gt; - 재급유되었습니다</Korean>
                 <French>&lt;br/&gt; - ravitaillé en carburant</French>
             </Key>
+            <Key ID="STR_A3A_base_teardownMode_ON">
+                <Original>Turn teardown mode ON</Original>
+                <Russian>Включить режим разборки</Russian>
+                <Chinesesimp>开启拆卸模式</Chinesesimp>
+                <Korean>분해 모드 켜기</Korean>
+                <French>Activer le mode de démontage</French>
+            </Key>
+            <Key ID="STR_A3A_base_teardownMode_OFF">
+                <Original>Turn teardown mode OFF</Original>
+                <Russian>Выключить режим разборки</Russian>
+                <Chinesesimp>关闭拆卸模式</Chinesesimp>
+                <Korean>분해 모드 끄기</Korean>
+                <French>Désactiver le mode de démontage</French>
+            </Key>
             <Key ID="STR_A3A_Utility_Items_Last_Time_Purchase">
                 <Original>You already bought one, wait %1 seconds before you can buy another.</Original>
                 <Russian>Вы уже купили одну, подождите %1 секунд прежде чем купить ещё раз</Russian>
@@ -6033,14 +6047,14 @@
             <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
                 <English>Notify Players When Downed</English>
-                <Russian>Placeholder</Russian>
+                <Russian>Уведомлять игроков при падении</Russian>
                 <Chinesesimp>玩家倒地时提示</Chinesesimp>
                 <Korean>쓰러질 시 플레이어에게 알림</Korean>
             </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
                 <English>Disable Arms Dealer</English>
-                <Russian>Placeholder</Russian>
+                <Russian>Обезвредить торговца оружием</Russian>
                 <Chinesesimp>取消军火商</Chinesesimp>
                 <Korean>암거래상 비활성화</Korean>
             </Key>
@@ -6112,6 +6126,44 @@
             <Korean>당신은&lt;br/&gt; %1.&lt;br/&gt;의 보급 데이터를 찾았습니다.이 무기 %2개를 획득했습니다.</Korean>
             <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt; %1.&lt;br/&gt; Vous avez acquis %2 de cette arme.</French>
         </Key>
+        </Container>
+        <Container name="A3A_Community_Ports">
+            <Key ID="STR_A3A_Params_generic_disabled">
+                <Original>Disabled</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_1min">
+                <Original>1 minute</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_2min">
+                <Original>2 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_3min">
+                <Original>3 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_5min">
+                <Original>5 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_10min">
+                <Original>10 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_15min">
+                <Original>15 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_20min">
+                <Original>20 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_Params_generic_30min">
+                <Original>30 minutes</Original>
+            </Key>
+            <Key ID="STR_A3A_fn_base_manageFlagAccess_title">
+                <Original>Service Access</Original>
+            </Key>
+            <Key ID="STR_A3A_fn_base_manageFlagAccess_main">
+                <Original>The rebel logistics network needs more time to connect to this recently captured area.&lt;br/&gt;&lt;br/&gt;You can access the %1 menu in %2.</Original>
+            </Key>
+             <Key ID="STR_A3A_Params_garageAccessTimer_title">
+                <Original>Simulate logistics by blocking flag functions after capture for X minutes</Original>
+            </Key>
         </Container>
     </Package>
 </Project>

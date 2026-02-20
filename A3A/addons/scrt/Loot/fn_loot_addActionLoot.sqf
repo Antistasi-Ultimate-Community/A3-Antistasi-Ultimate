@@ -3,6 +3,8 @@
 	description: Adds auto looter action to vehicle.
 	returns: nothing
 */
+#include "..\script_component.hpp"
+
 params ["_vehicle"];
 
 private _lootActionID = _vehicle getVariable ["lootActionID", Nil];
@@ -33,7 +35,7 @@ _lootActionID = [_vehicle,
 	false
 ] call BIS_fnc_holdActionAdd;
 
-diag_log format ["%1: [Antistasi] | INFO | fn_loot_addActionLoot | Loot action to loot truck has been added.",servertime];
+Verbose("Loot action to loot truck has been added.");
 
 _vehicle setVariable ["lootActionID", _lootActionID, false];
 

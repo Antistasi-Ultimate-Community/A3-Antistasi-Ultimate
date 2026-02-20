@@ -14,12 +14,12 @@ params [
 ];
 
 if (!isServer && hasInterface) exitWith {
-	["fillLootCrate was not called on the server? Recalling on server", _fnc_scriptName] call A3U_fnc_log;
+	Error("fillLootCrate was not called on the server? Recalling on server");
 	_this remoteExec ["A3A_fnc_fillLootCrate", 2];
 };
 
 if (isNil "A3U_forbiddenItems") then {
-	["A3U_forbiddenItems is nil, attempting to recreate the value", _fnc_scriptName] call A3U_fnc_log;
+	Error("A3U_forbiddenItems is nil, attempting to recreate the value");
 	call A3U_fnc_grabForbiddenItems;
 };
 

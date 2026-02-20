@@ -23,22 +23,24 @@
     
     Return:
         true/false <BOOL>
-*/  
+*/
+#include "..\..\script_component.hpp"
 
 params [
-    ["_vehicle", ObjNull],
+    ["_vehicle", objNull],
     ["_state", false]
 ];
 
 if (!isServer && hasInterface) exitWith {
-    ["Server-side function was not called on the server? Aborting", _fnc_scriptName] call A3U_fnc_log;
+    Error("Server-side function was not called on the server? Aborting");
 };
 
 if (enableVehicleAutoLock isEqualTo false) exitWith {false};
 
-if (_vehicle isEqualTo ObjNull || {isNil "_vehicle"}) exitWith {false};
-if (_vehicle isKindOf "Static") exitWith {false};
-if (!(alive _vehicle)) exitWith {false};
+if (isNull _vehicle ||
+    { !alive _vehicle } || 
+    { _vehicle isKindOf "Static" }
+) exitWith {false};
 
 _vehicle lock _state;
 [_vehicle, _state] remoteExecCall ["lockInventory", 0, _vehicle];
@@ -47,6 +49,6 @@ if (_state isEqualTo true) then {
     [_vehicle] call A3U_fnc_addLockpickAction;
 };
 
-[format["%1 has been locked. State: %2", typeOf _vehicle, _state], _fnc_scriptName] call A3U_fnc_log;
+Debug_2("%1 has been locked. State: %2", typeOf _vehicle, _state);
 
 true;

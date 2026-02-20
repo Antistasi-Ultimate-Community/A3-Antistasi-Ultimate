@@ -70,14 +70,17 @@ Debug("Final target choice list:");
 // Cull anything worse than 10:1 value ratio, otherwise we'll launch some really stupid attacks occasionally
 private _arePunishmentsAllowed = ((enablePunishments isEqualTo 1) && (tierWar >= A3U_setting_tierWarPunishments));
 
+Info("Logging available targets: Original, Culled");
+InfoArray("Original Targets:", _targets);
+
 private _minWeight = selectMax _weights / 10;
 private _culledTargets = [];
 {
-    if (!_arePunishmentsAllowed && {(_x#0) in citiesX}) then {continue}; // Skip cities here rather than leaving it to the else statement later
-
     private _weight = _weights select _forEachIndex;
     if (_weight > _minWeight) then { _culledTargets append [_x, _weight] };
 } forEach _targets;
+
+InfoArray("Culled Targets:", _culledTargets);
 
 // Now we just pick a target
 private _target = selectRandomWeighted _culledTargets;
@@ -95,15 +98,24 @@ if (sidesX getVariable _originMrk != _side) exitWith {
     false;
 };
 
+private _resourcesAttackSide = [A3A_resourcesAttackOcc, A3A_resourcesAttackInv] select (_side isEqualTo Invaders);
+private _resourcesDefenceSide = [A3A_resourcesDefenceOcc, A3A_resourcesDefenceInv] select (_side isEqualTo Invaders);
 
 if (_targetMrk in citiesX) exitWith {
-    if (_side == Invaders) then {
+    Info_2("%1 was in citiesX. Side: %2.", _targetMrk, _side);
+    if (_side isEqualTo Invaders && {_arePunishmentsAllowed}) then {
         // Punishment, unsimulated
         Info_2("Starting punishment mission from %1 to %2", _originMrk, _targetMrk);
         [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
         bigAttackInProgress = true; publicVariable "bigAttackInProgress";
         [_targetMrk, _originMrk] spawn A3A_fnc_invaderPunish;
+    } else {
+        // Supply convoy, unsimulated
+        Info_2("Sending supply convoy from %1 to %2", _originMrk, _targetMrk);
+        [-200, _side, "attack"] call A3A_fnc_addEnemyResources;
+        [[_targetMrk, _originMrk, "Supplies", "attack"],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
     };
+    Info_3("Resources for: %1. | Attack: %2 | Defence: %3 |", _side, _resourcesAttackSide, _resourcesDefenceSide);
     true;
 };
 
@@ -111,6 +123,7 @@ if (_targetMrk == "Synd_HQ") exitWith {
     Info_2("Starting HQ attack from %1", _originMrk);
     [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
     bigAttackInProgress = true; publicVariable "bigAttackInProgress";
+    HQAttackInProgress = true; publicVariable "HQAttackInProgress";
     [_side, _originMrk] spawn A3A_fnc_attackHQ;
     true;
 };

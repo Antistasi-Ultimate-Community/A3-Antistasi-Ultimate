@@ -39,7 +39,7 @@ private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", f
 if (_lowCiv || _civNonHuman) exitWith {false};
 
 if (!isServer && hasInterface) exitWith {
-    ["Server-side function was not called on the server? Aborting", _fnc_scriptName] call A3U_fnc_log;
+    Error("Server-side function was not called on the server? Aborting");
 };
 
 [_unit] remoteExecCall ["A3A_fnc_dialogCiv", 0, _unit];

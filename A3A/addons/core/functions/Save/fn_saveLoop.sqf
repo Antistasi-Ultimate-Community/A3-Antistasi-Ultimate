@@ -133,8 +133,13 @@ if (isNil "unlockedVehicleTypes") then {
 
 ["unlockedVehicleTypes", unlockedVehicleTypes] call A3A_fnc_setStatVariable;
 
-diag_log format["Saving revealed zones: %1", _revealedZones];
-diag_log format["Saving unlocked vehicle types: %1", unlockedVehicleTypes];
+["invaderRadioKeys", invaderRadioKeys] call A3A_fnc_setStatVariable;
+["occupantsRadioKeys", occupantsRadioKeys] call A3A_fnc_setStatVariable;
+
+Info_1("Saving revealed zones: %1", _revealedZones);
+Info_1("Saving unlocked vehicle types: %1", unlockedVehicleTypes);
+Info_1("Saving invaders radio keys: %1", invaderRadioKeys);
+Info_1("Saving occupants radio keys: %1", occupantsRadioKeys);
 //Antistasi Ultimate variables ^
 
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];
@@ -186,37 +191,52 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 ["HR_Garage", [] call HR_GRG_fnc_getSaveData] call A3A_fnc_setStatVariable;
 
 _arrayEst = [];
-{
-	// Include buyable items marked as saveable
-	// TODO: Do we need to refund the others?
-	if (typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
-		_arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
-		continue;
+
+// Collect all vehicles to save
+vehicles select {
+	!(_x in staticsToSave) && // Skip anything already being saved by staticsToSave
+	{ !(typeOf _x in A3A_utilityItemHM) || { "save" in ((A3A_utilityItemHM get typeOf _x) select 4) } } &&
+	{ fullCrew[_x, "", true] isNotEqualTo [] } && // no crew seats, not in utilityItems, not saved
+	{ crew _x findIf { (alive _x) && (!isPlayer _x) } == -1 } // no AI-crewed vehicles, those are refunded
+} apply {
+    _arrayEst pushBackUnique _x;
+};
+
+// Collect all statics to save
+staticsToSave select {
+	(!surfaceIsWater position _x) &&
+	{ isNull attachedTo _x }
+} apply {
+	_arrayEst pushBackUnique _x;
+};
+
+// Bring out your dead. Ignore vehicles not near friendly markers.
+_arrayEst = _arrayEst select {
+	(alive _x) && { [_x] call A3A_fnc_isWithinNearestFriendlyMarker };
+};
+
+// Push buildings to save; ignore dead or outside friendly markers.
+A3A_buildingsToSave select {
+	(A3A_builderAllowRoads || { !isOnRoad _x }) &&
+	{ !surfaceIsWater getPosASL _x }
+} apply {
+	_arrayEst pushBackUnique _x;
+};
+
+// Build save data
+_arrayEst = _arrayEst apply {
+	private _properties = [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x];
+
+	if !(_x isKindOf "Building") then {
+		_properties append[
+			[_x] call HR_GRG_fnc_getState,
+			[_x] call BIS_fnc_getVehicleCustomization,
+			_x in staticsToFlip
+		];
 	};
 
-	if (fullCrew [_x, "", true] isEqualTo []) then { continue };			// no crew seats, not in utilityItems, not saved
-	if (_x isKindOf "StaticWeapon") then { continue };						// static weapons are accounted for in staticsToSave
-	if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };		// no AI-crewed vehicles, those are refunded
-
-	_arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
-
-} forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
-
-
-{
-	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
-		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
-	};
-} forEach staticsToSave;
-
-private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
-_rebMarkers pushBack "Synd_HQ";
-{
-	if (isOnRoad _x && {A3A_builderAllowRoads isEqualTo false}) then {continue};
-	if (surfaceIsWater getPosASL _x) then {continue};
-
-	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
-} forEach A3A_buildingsToSave;
+	_properties;
+};
 
 reverse _arrayEst;
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
@@ -238,7 +258,6 @@ _arrayConstructions = [];
 } forEach constructionsToSave;
 ["constructionsX", _arrayConstructions] call A3A_fnc_setStatVariable;
 
-["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 [] call A3A_fnc_arsenalManage;
 
 _jna_dataList = [];

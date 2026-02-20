@@ -1025,3 +1025,22 @@ Author:
 ------------------------------------------- */
 #define IS_ADMIN_LOGGED_SYS(x) x##shutdown
 #define IS_ADMIN_LOGGED serverCommandAvailable 'IS_ADMIN_LOGGED_SYS(#)'
+
+/* -------------------------------------------
+Macro: XOR
+    Evaluates to true if exactly one of both values is true
+
+Parameters:
+    VAR1 - the first variable to evaluate
+    VAR2 - the second variable to evaluate
+
+Example:
+    (begin example)
+        // return "true" if exactly one of a and b is true
+        XOR(a, b);
+    (end)
+
+Author:
+    Bohemia Interactive (https://community.bistudio.com/wiki/Operators)
+------------------------------------------- */
+#define XOR(VAR1,VAR2) (((VAR1) || (VAR2)) && !((VAR1) && (VAR2)))
