@@ -104,7 +104,7 @@ private _driverturret = _veh weaponsTurret [0];
 private _gunnerturret = _veh weaponsTurret [-1];
 private _weaponsturret = count _driverturret + count _gunnerturret;
 
-if (_veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
+if (alive _veh && ( _veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"))) exitWith {
     [_veh, _heli, _positionX] spawn A3A_fnc_attackHeli;
 };
 
