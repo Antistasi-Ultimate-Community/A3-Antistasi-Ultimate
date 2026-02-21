@@ -198,7 +198,6 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
         lockInGame = 1;
-        lockInGame = 1;
     };
     class RRTurretMagazines: ScriptParams
     {
@@ -356,9 +355,9 @@ class Params
     };
     class radiomanSupport: AIParams
     {
-        title = $STR_params_recruitToPlayerSquad;
+        title = $STR_A3AU_radioman_support;
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {$STR_A3AU_dialogs_radioman_support,$STR_A3AU_dialogs_squadleader_support};
         default = 0;
     };
     class playerRecruitAI: AIParams
@@ -374,7 +373,6 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
-        lockInGame = 0;
     };
     class aiControlTime: AIParams
     {
@@ -526,11 +524,10 @@ class Params
     };
     class rallyPointSpawnCount: RebelBalanceParams
     {
-        title = $STR_params_rebelGarrisonGroupSize;
-        tooltip = $STR_params_rebelGarrisonGroupSize_desc;
-        values[] = {2, 4, 6, 8, 10, 12, 14, 16};
-        texts[] = {"2", "4", "6", "8", "10", "12", "14", "16"};
-        default = 8;
+        title = $STR_params_rallyPointSpawnCount;
+        values[] = {3, 5, 10, 15, 20, 30, 0};
+        texts[] = {"3", "5", "10", "15", "20", "30", $STR_params_afk_disabled};
+        default = 10;
     };
     class staminaEnabled: RebelBalanceParams
     {
@@ -566,6 +563,7 @@ class Params
         values[] = {0,1,2,3};
         texts[] = {$STR_params_allowFT_0, $STR_params_allowFT_1, $STR_params_allowFT_2, $STR_params_civ_traffic_none};
         default = 0;
+        lockInGame = 1;
     };
     class fastTravelEnemyCheck: RebelBalanceParams
     {
@@ -589,30 +587,7 @@ class Params
         texts[] = {"∞", "16", "24", "32"};
         default = 24;
     };
-    class A3U_HelipadTerrainSmoothing: ExperimentalParams
-    {
-        title = $STR_params_helipadTerrainSmoothing;
-        values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
-    };
-    class loadoutsToGenerate: ExperimentalParams
-    {
-        title = $STR_params_loadoutsToGenerate;
-        values[] = {5, 10, 15, 20};
-        texts[] = {"5", "10", "15", "20"};
-        default = 5;
-    };
-    class A3A_diameterExtendedCaptureArea: ExperimentalParams
-    {
-        title = $STR_A3A_Params_diameterExtendedCaptureArea_title;
-        tooltip = $STR_A3A_Params_diameterExtendedCaptureArea_tooltip;
-        values[] = {0,150,250,300,350,400,450,500};
-        texts[] = {$STR_A3A_Params_diameterExtendedCaptureArea_traditional, "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
-        default = 0;
-    };
-
-    class BalanceParams
+    class A3A_rebelGarrisonGroupSize: RebelBalanceParams
     {
         title = $STR_params_rebelGarrisonGroupSize;
         tooltip = $STR_params_rebelGarrisonGroupSize_desc;
@@ -675,9 +650,10 @@ class Params
     };
     class A3A_attackHQProximityMul: AIBalanceParams
     {
-        title = $STR_params_builderPermissions;
-        values[] = {1, 2, 3};
-        texts[] = {"Team leaders", "Engineers", "Both"};
+        attr[] = {"server"};
+        title = $STR_params_enemyPref;
+        values[] = {1,2,3,5,8};
+        texts[] =  {$STR_params_enemyPref_nc,"2x","3x","5x","8x"};
         default = 3;
     };
     class A3A_enemySkillMul: AIBalanceParams
@@ -696,24 +672,25 @@ class Params
     };
     class aiAccuracyCeiling: AIBalanceParams
     {
-        title = $STR_params_builderBuildTime;
-        values[] = {0, 4, 5, 6, 7, 8, 9, 10};
-        texts[] = {"DEBUG (Instant)", "0.4x", "0.5x", "0.6x", "0.7x", "0.8x", "0.9x", "1.0x"};
-        default = 5;
+        title = $STR_params_aiAccuracyCeiling;
+        values[] = {10, 20, 30, 40, 45, 50, 60, 70, 80, 90, 100};
+        texts[] = {"0.1", "0.2", "0.3", "0.4", "0.45", "0.5", "0.6", "0.7", "0.8", "0.9", "1"};
+        default = 45;
     };
     class napalmEnabled: AIBalanceParams
     {
-        title = $STR_params_builderAllowRoads;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
-    };
-    class allowUnfairSupports: AIBalanceParams
-    {
-        title = $STR_params_saveZeusBuildings;
+        title = $STR_params_napalmEnabled;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
+    };
+    class allowUnfairSupports: AIBalanceParams
+    {
+        attr[] = {"server"};
+        title = $STR_params_allowUnfairSupports;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
     };
     class allowFuturisticSupports: AIBalanceParams
     {
@@ -940,15 +917,15 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
         default = 0;
     };
-    class allowUnlockedTNVG: EquipmentParams
-    { 
+    class allowUnlockedTNVG: UnlockParams
+    {
         attr[] = {"server"};
         title = $STR_params_allowUnlockedTNVG;
         values[] = {1,0};
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
         default = 0;
     };
-    class startWithLongRangeRadio: EquipmentParams
+    class cosmeticsEnabled: UnlockParams
     {
         title = $STR_A3AU_cosmetics;
         values[] = {0,1};
@@ -1231,6 +1208,14 @@ class Params
         title = $STR_params_helipadTerrainSmoothing;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class A3A_diameterExtendedCaptureArea: ExperimentalParams
+    {
+        title = $STR_A3A_Params_diameterExtendedCaptureArea_title;
+        tooltip = $STR_A3A_Params_diameterExtendedCaptureArea_tooltip;
+        values[] = {0,150,250,300,350,400,450,500};
+        texts[] = {$STR_A3A_Params_diameterExtendedCaptureArea_traditional, "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
         default = 0;
     };
     class unconChanceEny : ExperimentalParams

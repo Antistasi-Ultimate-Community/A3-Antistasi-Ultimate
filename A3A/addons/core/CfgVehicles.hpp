@@ -161,19 +161,6 @@ class CfgVehicles
             QPATHTOFOLDER(Pictures\items\AmmoBox_black_CO.paa)
         };
 	};
-    class A3AU_Build_Box_base: NATO_Box_Base {
-        author = AUTHOR;
-        hiddenSelections[] = 
-        {
-            "Camo_Signs",
-            "Camo"
-        };
-        hiddenSelectionsTextures[] = 
-        {
-            QPATHTOFOLDER(Pictures\items\AmmoBox_signs_CA.paa),
-            QPATHTOFOLDER(Pictures\items\AmmoBox_black_CO.paa)
-        };
-	};
 
 	class A3AU_Build_Box_Large_1: A3AU_Build_Box_base {
         mapSize = 2.3399999;

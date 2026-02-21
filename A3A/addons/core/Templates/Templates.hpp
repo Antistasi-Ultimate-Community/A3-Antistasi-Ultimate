@@ -721,10 +721,6 @@ class Templates
 	// ***************************** Mixed Era Factions *****************************
 
     #include "Templates\ERA\templates.hpp"
-	
-	  // ***************************** Mixed Era Factions *****************************
-
-    #include "Templates\ERA\templates.hpp"
   
     // ***************************** Korsac *****************************
 
