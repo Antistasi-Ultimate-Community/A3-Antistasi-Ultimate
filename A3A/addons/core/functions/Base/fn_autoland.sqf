@@ -72,7 +72,7 @@ while {alive _vehicle && {count crew _vehicle > 0}} do {
                 } forEach (crew _vehicle);
                 [_vehicle, clientOwner, call HR_GRG_dLock, _pilot, true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
             },
-            [_vehicle], 1.5, true, true, "", "driver vehicle player == player", 40
+            [_vehicle], 1.5, false, true, "", "_this isEqualTo driver _originalTarget", 40
         ];
         _actionAdded = true;
     };
