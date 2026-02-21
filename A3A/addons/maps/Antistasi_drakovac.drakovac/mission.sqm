@@ -270,7 +270,7 @@ class Mission
 					name="Airports";
 					class Entities
 					{
-						items=37;
+						items=45;
 						class Item0
 						{
 							dataType="Marker";
@@ -753,6 +753,103 @@ class Mission
 							b=12.158;
 							angle=122.28157;
 							id=375;
+						};
+						class Item37
+						{
+							dataType="Marker";
+							position[]={1689.4313,15,2150.5356};
+							name="spawnPoint_1";
+							type="hd_start";
+							angle=16.050673;
+							id=2046;
+						};
+						class Item38
+						{
+							dataType="Marker";
+							position[]={10971.689,3.9599071,11377.673};
+							name="spawnPoint_2";
+							type="hd_start";
+							angle=159.02037;
+							id=2053;
+						};
+						class Item39
+						{
+							dataType="Marker";
+							position[]={10945.324,3.1894372,11470.347};
+							name="airp_2_flag";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=247.64926;
+							id=2089;
+						};
+						class Item40
+						{
+							dataType="Marker";
+							position[]={10921.815,3.1730001,11520.759};
+							name="airp_2_ammo";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=248.22198;
+							id=2090;
+							atlOffset=0.00031685829;
+						};
+						class Item41
+						{
+							dataType="Marker";
+							position[]={10924.951,3.167012,11512.939};
+							name="airp_2_ammo_1";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=248.22195;
+							id=2091;
+						};
+						class Item42
+						{
+							dataType="Marker";
+							position[]={1462.4114,11.97,1867.5919};
+							name="airp_flag";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=290.12604;
+							id=2093;
+						};
+						class Item43
+						{
+							dataType="Marker";
+							position[]={1500.1234,11.97,1944.578};
+							name="airp_ammo";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=290.12601;
+							id=2094;
+						};
+						class Item44
+						{
+							dataType="Marker";
+							position[]={1497.4771,11.97,1937.4102};
+							name="airp_ammo_1";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=290.12598;
+							id=2095;
 						};
 					};
 					id=0;
