@@ -27,7 +27,7 @@ params [
 
 private _referencePos = getPosWorld _unit;
 private _nearestMarkers = [allMapMarkers, _referencePos] call BIS_fnc_nearestPosition;
-_markers = _markers select {(getMarkerPos _x distance2D getMarkerPos _nearestMarkers < (distanceMission * 2)) && (sidesX getVariable [_x,sideUnknown] != teamPlayer)};
+_markers = _markers select {((getMarkerPos _x distance2D getMarkerPos _nearestMarkers) < distanceMission) && (sidesX getVariable [_x,sideUnknown] != teamPlayer)};
 _markers = [_markers,[],{_referencePos distanceSqr getMarkerPos _x},"ASCEND"] call BIS_fnc_sortBy;
 
 if (!_createList && {_markers isNotEqualTo []}) exitWith {

@@ -2,7 +2,6 @@
 FIX_LINE_NUMBERS()
 
 params ["_markerX", "_vehicleX", "_vehiclecustomazationX"];
-params ["_markerX", "_vehicleX", "_vehiclecustomazationX"];
 
 if (!isServer and hasInterface) exitWith {};
 

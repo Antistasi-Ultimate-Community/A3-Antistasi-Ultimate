@@ -479,8 +479,6 @@ if (random 100 < (30 + tierWar * 6)) then {
 
 ["locationSpawned", [_markerX, "Milbase", true]] call EFUNC(Events,triggerEvent);
 
-{ [_x, true] call A3U_fnc_setLock; } forEach _vehiclesX;
-
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
 _spawnsUsed call A3A_fnc_freeSpawnPositions;

@@ -5,13 +5,9 @@
             <Original>Player classes permitted to use the building placer</Original>
             <Chinesesimp>允许放置建筑的玩家类型</Chinesesimp>
             <Korean>구조물 배치기를 사용할 수 있는 플레이어 병과</Korean>
-            <Chinesesimp>允许放置建筑的玩家类型</Chinesesimp>
-            <Korean>구조물 배치기를 사용할 수 있는 플레이어 병과</Korean>
         </Key>
         <Key ID="STR_params_builderLimit">
             <Original>Build limit</Original>
-            <Chinesesimp>建筑上限</Chinesesimp>
-            <Korean>구조물 제한</Korean>
             <Chinesesimp>建筑上限</Chinesesimp>
             <Korean>구조물 제한</Korean>
         </Key>
@@ -19,13 +15,9 @@
             <Original>Allow buildings to be saved on roads</Original>
             <Chinesesimp>允许保留道路上的建筑物</Chinesesimp>
             <Korean>도로에 구조물을 저장할 수 있도록 허용</Korean>
-            <Chinesesimp>允许保留道路上的建筑物</Chinesesimp>
-            <Korean>도로에 구조물을 저장할 수 있도록 허용</Korean>
         </Key>
         <Key ID="STR_params_builderBuildTime">
             <Original>Build hold time multiplier</Original>
-            <Chinesesimp>建筑留存时间乘数</Chinesesimp>
-            <Korean>건설 홀드 시간 배수</Korean>
             <Chinesesimp>建筑留存时间乘数</Chinesesimp>
             <Korean>건설 홀드 시간 배수</Korean>
         </Key>
@@ -166,6 +158,22 @@
             <Korean>Dismemberment</Korean>
             <French>Dismemberment</French>
             <Chinesesimp>Dismemberment</Chinesesimp>
+        </Key>
+        <Key ID="STR_A3AU_init_mods_warning_Exile">
+            <Original>Exile</Original>
+            <English>Exile</English>
+            <Russian>Exile</Russian>
+            <Korean>Exile</Korean>
+            <French>Exile</French>
+            <Chinesesimp>Exile</Chinesesimp>
+        </Key>
+        <Key ID="STR_A3AU_init_mods_warning_Lifeline">
+            <Original>Lifeline Revive AI</Original>
+            <English>Lifeline Revive AI</English>
+            <Russian>Lifeline Revive AI</Russian>
+            <Korean>Lifeline Revive AI</Korean>
+            <French>Lifeline Revive AI</French>
+            <Chinesesimp>Lifeline Revive AI</Chinesesimp>
         </Key>
     </Package>
     <Package name="ported">

@@ -22,7 +22,6 @@
     License: MIT / (APL-ND) the license switch is noted in the code
 */
 params [ ["_vehicle", objNull, [objNull]], ["_client", 2, [0]], ["_lockUID", ""], ["_player", objNull, [objNull]], ["_autoland", false, [false]]];
-params [ ["_vehicle", objNull, [objNull]], ["_client", 2, [0]], ["_lockUID", ""], ["_player", objNull, [objNull]], ["_autoland", false, [false]]];
 #include "defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -135,7 +134,6 @@ if (
 */
 //here to allow adaption of external Antistasi system without needing to addapt code under APL-ND
 private _broadcastReportedVehsAndStaticsToSave = {
-    publicVariable "staticsToSave";
 };
 //_this is vehicle
 private _deleteFromReportedVehsAndStaticsToSave = {

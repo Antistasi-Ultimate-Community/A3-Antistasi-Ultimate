@@ -148,6 +148,14 @@ if (isClass (configfile >> "CBA_Extended_EventHandlers")) then {
 
 };
 
+// sell button
+HR_GRG_disableSellButton = false;
+
+HR_GRG_addResources = {
+    params ["_money"];
+    [0,_money] call A3A_fnc_resourcesFIA;
+};
+
 HR_GRG_fnc_addVehicleUAVCompat = {
     private _veh = _this select 0;
     if (unitisUAV _veh && {crew _veh isNotEqualTo []}) then {

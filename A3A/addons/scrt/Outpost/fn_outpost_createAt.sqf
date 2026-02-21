@@ -28,8 +28,6 @@ _groupX setGroupId ["Post"];
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
 private _vehType = selectRandom (A3A_faction_reb get "vehiclesLightUnarmed");
 _pos = position _road findEmptyPosition [1,30, _vehType];
-private _vehType = selectRandom (A3A_faction_reb get "vehiclesLightUnarmed");
-_pos = position _road findEmptyPosition [1,30, _vehType];
 _truckX = _vehType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
@@ -85,7 +83,6 @@ switch (true) do {
 		_marker setMarkerText _textX;
 		_garrison = A3A_faction_reb get "groupAtEmpl";
 		garrison setVariable [_marker,_garrison,true];
-		staticPositions setVariable [_marker, [_position, _turretDirection], true];
 		staticPositions setVariable [_marker, [_position, _turretDirection], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "atemplacement"]] call EFUNC(Events,triggerEvent);

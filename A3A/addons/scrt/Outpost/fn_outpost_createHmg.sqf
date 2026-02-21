@@ -82,7 +82,6 @@ switch (true) do {
 		_garrison = A3A_faction_reb get "groupHmgEmpl";
 		garrison setVariable [_marker,_garrison,true];
 		staticPositions setVariable [_marker, [_position, _turretDirection], true];
-		staticPositions setVariable [_marker, [_position, _turretDirection], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "hmgemplacement"]] call EFUNC(Events,triggerEvent);
 

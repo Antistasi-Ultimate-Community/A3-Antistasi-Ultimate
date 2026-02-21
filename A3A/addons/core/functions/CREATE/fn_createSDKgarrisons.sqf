@@ -129,12 +129,14 @@ if (_typeCrew in _garrison) then {
     } forEach _crewPositions;
     
 } forEach _staticsX;
-// Make 8-man groups out of the remainder of the garrison
+
+
+// Make A3A_rebelGarrisonGroupSize groups out of the remainder of the garrison
 _garrison = _garrison call A3A_fnc_garrisonReorg;
 
 private _totalUnits = count _garrison;
 private _countUnits = 0;
-private _countGroup = 8; //could set a parametr here to control size of the groups
+private _countGroup = A3A_rebelGarrisonGroupSize;
 private _groupX = grpNull;
 
 while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do {

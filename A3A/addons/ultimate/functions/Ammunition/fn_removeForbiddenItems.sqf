@@ -12,6 +12,7 @@
     [_arrays] call A3U_fnc_removeForbiddenItems;
 */
 #include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
 params [ 
 	["_arrays", [lootBasicItem,lootNVG,lootItem,lootWeapon,lootAttachment,lootMagazine,lootGrenade,lootExplosive,lootBackpack,lootHelmet,lootVest,lootDevice,allRifles,allHandguns,allMachineGuns,allShotguns,allSMGs,allSniperRifles,allRocketLaunchers,allMissileLaunchers,allHeadgear,allArmoredHeadgear,allVests,allArmoredVests]] 

@@ -1,6 +1,5 @@
 _unarmedVehicles append ["B_Pickup_rf","B_Pickup_Comms_rf"];
 _armedVehicles append ["B_Pickup_mmg_rf", "B_ION_Pickup_rcws_rf", "AU_B_Pickup_Minigun_RF"];
-_armedVehicles append ["B_Pickup_mmg_rf", "B_ION_Pickup_rcws_rf", "AU_B_Pickup_Minigun_RF"];
 _militiaLightArmed pushBack "B_Pickup_hmg_rf";
 _militiaCars append ["B_Pickup_rf","B_Pickup_Comms_rf"];
 _aa pushBack "B_Pickup_aat_rf";

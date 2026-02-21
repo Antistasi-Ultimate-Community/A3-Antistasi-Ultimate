@@ -57,9 +57,6 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 private _vehiclesPlanesCAS = ["SPE_FW190F8"];
 private _vehiclesPlanesLargeCAS = [];
 private _vehiclesPlanesAA = ["SPE_FW190F8"];
-private _vehiclesPlanesCAS = ["SPE_FW190F8"];
-private _vehiclesPlanesLargeCAS = [];
-private _vehiclesPlanesAA = ["SPE_FW190F8"];
 private _vehiclesPlanesTransport = [];
 
 if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {

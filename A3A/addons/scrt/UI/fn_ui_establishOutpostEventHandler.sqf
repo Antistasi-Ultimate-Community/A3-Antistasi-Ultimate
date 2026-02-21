@@ -4,7 +4,6 @@ FIX_LINE_NUMBERS()
 
 params ["_mode"];
 myGlobalResult = nil;
-myGlobalResult = nil;
 if(_mode == "ADD") then {
     [
         "establishOutpost",
@@ -126,7 +125,6 @@ if(_mode == "ADD") then {
                 outpostDirection setMarkerTypeLocal "hd_dot";
                 outpostDirection setMarkerTextLocal format [localize "STR_marker_outpost_direction", outpostType];
 
-                turretDirection = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
                 turretDirection = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
 
                 [

@@ -171,6 +171,7 @@ private _opticsMidCount = 0;
             // Secondary Weapons
             case "RocketLaunchers": {
                 if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
+                if !([_class, _categories] call _fnc_getAvailableMagazines) exitWith {}; // * Don't add weapon to hashmap if we don't have mags for it
                 _arrayWeight = [_class, _categories] call A3A_fnc_itemArrayWeight;
                 _array = _rebelGear getOrDefault ["RocketLaunchers", [], true]; 
                 [_array, _class, _amount, _arrayWeight] call _fnc_addItem;

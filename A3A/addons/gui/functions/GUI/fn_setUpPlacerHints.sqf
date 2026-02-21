@@ -60,7 +60,7 @@ switch (_mode) do
         };
         if (_keyType == "rebuild") exitWith {
             (_display displayCtrl IDC_PLACERHINT_T) ctrlShow true;
-            _textCtrl ctrlSetText format ["T: Rebuild for %1 %2", _keyData, A3A_faction_civ get "currencySymbol"];
+            _textCtrl ctrlSetText format ["%1: Rebuild for %2 %3", ACTION_KEY(buildingPlacerRepair), _keyData, A3A_faction_civ get "currencySymbol"];
         };
         _textCtrl ctrlSetText "";
     };
