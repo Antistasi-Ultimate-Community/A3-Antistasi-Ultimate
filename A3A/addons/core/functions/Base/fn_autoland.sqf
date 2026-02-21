@@ -61,35 +61,46 @@ private _fn_checkActionConditions = {
 };
 
 // Main loop
+private _actionAdded = false;
+private _actionID = -1;
+private _firstPassDone = false;
+
 while {alive _vehicle && {count crew _vehicle > 0}} do {
     // Update action
-    private _shouldAddAction = [_vehicle] call _fn_checkActionConditions;
-    
-    if (_shouldAddAction && !_actionAdded) then {
-        _actionID = _vehicle addAction [
-            localize "STR_antistasi_actions_autoland",
-            { 
-                params ["_vehicle"];
-                private _vehiclePos = getPos _vehicle;
-                private _locations = airportsX select {sidesX getVariable [_x, sideUnknown] == teamPlayer};
-                private _selectedMarker = [_locations, _vehiclePos] call BIS_fnc_nearestPosition;
-                _selectedMarkerPos = getMarkerPos _selectedMarker;
-                private _pilot = driver _vehicle;
+    private _condition = [_vehicle] call _fn_checkActionConditions;
+    if (_condition) then {
+        if (!_actionAdded) then {
+            private _autoShow = _firstPassDone;
+
+            _actionID = _vehicle addAction [
+                localize "STR_antistasi_actions_autoland",
                 {
-                    _x setPos _selectedMarkerPos;
-                } forEach (crew _vehicle);
-                [_vehicle, clientOwner, call HR_GRG_dLock, _pilot, true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
-            },
-            [_vehicle], 1.5, true, true, "", "_this isEqualTo driver _originalTarget", 40
-        ];
-        _actionAdded = true;
+                    params ["_target", "_caller", "_actionId", "_arguments"];
+                    private _vehicle = _arguments select 0;
+                    private _locations = airportsX select {sidesX getVariable [_x, sideUnknown] == teamPlayer};
+                    private _selectedMarker = [_locations, getPos _vehicle] call BIS_fnc_nearestPosition;
+                    private _selectedMarkerPos = getMarkerPos _selectedMarker;
+                    { _x setPos _selectedMarkerPos; } forEach (crew _vehicle);
+                    [_vehicle, clientOwner, call HR_GRG_dLock, driver _vehicle, true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+                },
+                [_vehicle],
+                1.5,
+                _autoShow,
+                true,
+                "",
+                "_this isEqualTo driver _originalTarget",
+                40
+            ];
+
+            _actionAdded = true;
+            _firstPassDone = true;
+        };
+    } else {
+        if (_actionAdded) then {
+            _vehicle removeAction _actionID;
+            _actionAdded = false;
+        };
     };
-    
-    if (!_shouldAddAction && _actionAdded) then {
-        _vehicle removeAction _actionID;
-        _actionAdded = false;
-    };
-    
     sleep 1;
 };
 
