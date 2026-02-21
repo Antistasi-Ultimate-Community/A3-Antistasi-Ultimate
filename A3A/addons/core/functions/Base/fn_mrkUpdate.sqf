@@ -33,18 +33,53 @@ if (_marker in airportsX) then {
 
     _mrkD setMarkerColorLocal ([colorOccupants, colorInvaders] select (_mrkSide == Invaders));
 };
+private _positionX = getMarkerPos (_mrkD);
 
 private _mrkText = call {
-    if (_marker in airportsX) exitWith { format [localize "STR_airbase", _faction get "name"] };
-    if (_marker in outposts) exitWith { format [localize "STR_outpost", _faction get "name"] };
-    if (_marker in resourcesX) exitWith { localize "STR_resources" };
-    if (_marker in factories) exitWith { localize "STR_factory" };
-    if (_marker in milbases) exitWith { format [localize "STR_milbase", _faction get "name"] };
-    if (_marker in seaports) exitWith {
-        if (toLowerANSI worldName in ["enoch", "vn_khe_sanh", "esseker"]) then {
-            localize "STR_port_river"
+    if (_marker in airportsX) exitWith {
+        private _airfieldNames = (localize "STR_A3AU_airfieldNames") splitString "|";
+        private _markerIndex = airportsX find _marker;
+        private _airfieldName = if (_markerIndex >= 0 && _markerIndex < count _airfieldNames) then {
+            _airfieldNames select _markerIndex
         } else {
-            localize "STR_port_sea"
+            ""
+        };
+        format [localize "STR_airbase", _faction get "name", _airportName]
+    };
+    if (_marker in outposts) exitWith {
+        private _outpostNames = (localize "STR_A3AU_outpostNames") splitString "|";
+        private _markerIndex = outposts find _marker;
+        private _outpostName = if (_markerIndex >= 0 && _markerIndex < count _outpostNames) then {
+            _outpostNames select _markerIndex
+        } else {
+            ""
+        };
+        format [localize "STR_outpost", _faction get "name", _outpostName]
+    };
+    if (_marker in resourcesX) exitWith { format [localize "STR_resources", [citiesX, _positionX] call BIS_fnc_nearestPosition] };
+    if (_marker in factories) exitWith { format [localize "STR_factory", [citiesX, _positionX] call BIS_fnc_nearestPosition] };
+    if (_marker in milbases) exitWith {
+        private _milbaseNames = (localize "STR_A3AU_milbaseNames") splitString "|";
+        private _markerIndex = milbases find _marker;
+        private _milbaseName = if (_markerIndex >= 0 && _markerIndex < count _milbaseNames) then {
+            _milbaseNames select _markerIndex
+        } else {
+            ""
+        };
+        format [localize "STR_milbase", _faction get "name", _milbaseName]
+    };
+    if (_marker in seaports) exitWith {
+        private _seaportNames = (localize "STR_A3AU_seaportNames") splitString "|";
+        private _markerIndex = seaports find _marker;
+        private _seaportName = if (_markerIndex >= 0 && _markerIndex < count _seaportNames) then {
+            _seaportNames select _markerIndex
+        } else {
+            ""
+        };
+        if (toLowerANSI worldName in ["enoch", "vn_khe_sanh", "esseker"]) then {
+            format [localize "STR_port_river", _seaportName]
+        } else {
+            format [localize "STR_port_sea", _seaportName]
         };
     };
     ""; // city

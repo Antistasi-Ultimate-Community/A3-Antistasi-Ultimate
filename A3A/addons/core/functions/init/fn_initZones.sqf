@@ -352,7 +352,7 @@ private _milAdminPositions = getArray (_mapInfo/"milAdministrations");
 	_mrkAdm setMarkerShapeLocal "ICON";
 	_mrkAdm setMarkerTypeLocal "loc_MilAdministration";
 	_mrkAdm setMarkerColorLocal colorOccupants;
-	_mrkAdm setMarkerTextLocal localize "STR_milAdministration";
+	_mrkAdm setMarkerTextLocal format [localize "STR_milAdministration", [citiesX, _administration] call BIS_fnc_nearestPosition];
 	_mrkAdm setMarkerAlpha 0.75;
 
 	sidesX setVariable [_mrkAdm, Occupants, true];
