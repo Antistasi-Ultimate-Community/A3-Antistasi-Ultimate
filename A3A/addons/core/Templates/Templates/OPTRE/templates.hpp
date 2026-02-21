@@ -20,7 +20,7 @@
     {
         name = "UNSC Desert";
         file = "OPTRE_AI_UNSC_desert";
-        climate[] = {"arid", "temperate"};
+        climate[] = {"arid"};
     };
     class OPTRE_UNSC_snow : OPTRE_UNSC
     {
