@@ -12,9 +12,9 @@ FIX_LINE_NUMBERS()
 */
 params ["_vehicle"];
 if (_vehicle getVariable ["autolandAction", false]) exitWith {};
-if (_vehicle isKindOf "Helicopter") then {
-    if (getNumber (configOf _vehicle >> "vtol") <= 0 ) exitWith {};
-}; // Exit if helicopter
+// Exit if helicopter
+if (_vehicle isKindOf "Helicopter" && {getNumber(configOf _vehicle >> "vtol") == 0}) exitWith {};
+
 
 _vehicle setVariable ["autolandAction", true, true];
 
