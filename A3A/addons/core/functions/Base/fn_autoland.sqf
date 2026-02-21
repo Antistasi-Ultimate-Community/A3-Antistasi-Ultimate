@@ -40,11 +40,19 @@ private _fn_checkActionConditions = {
     };
 
     // Check conditions
-    private _vehPos = getPosASL _vehicle;
     private _inFriendlyAirport = _friendlyAirports findIf {
-        (getMarkerPos _x distance2D _vehPos < _detectionRange) &&
-        ((_vehPos select 2) - (getMarkerPos _x select 2) < _actionHeightLimit) &&
-        ((_vehPos select 2) - (getMarkerPos _x select 2) >= 10) ///tried to disable the action if plane is below 10 meters... doesn't work
+        private _airportPosAGL = markerPos [_x, true];
+        private _airportPosASL = AGLToASL _airportPosAGL;
+        private _vehiclePosASL = getPosASL _vehicle;
+
+        private _heightAbove = (_vehiclePosASL select 2) - (_airportPosASL select 2);
+        private _horizontalDist = _airportPosASL distance2D _vehiclePosASL;
+
+        diag_log format ["[DEBUG] %1: horiz=%2, heightAbove=%3", _x, _horizontalDist, _heightAbove];
+
+        (_horizontalDist < _detectionRange) &&
+        (_heightAbove >= 10) &&
+        (_heightAbove < _actionHeightLimit)
     } != -1;
 
     private _isSlowEnough = speed _vehicle < _actionSpeedLimit;
@@ -72,7 +80,7 @@ while {alive _vehicle && {count crew _vehicle > 0}} do {
                 } forEach (crew _vehicle);
                 [_vehicle, clientOwner, call HR_GRG_dLock, _pilot, true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
             },
-            [_vehicle], 1.5, false, true, "", "_this isEqualTo driver _originalTarget", 40
+            [_vehicle], 1.5, true, true, "", "_this isEqualTo driver _originalTarget", 40
         ];
         _actionAdded = true;
     };
