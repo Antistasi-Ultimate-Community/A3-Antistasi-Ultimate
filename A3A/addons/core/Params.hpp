@@ -148,7 +148,7 @@ class Params
         texts[] = {$STR_params_game_mode_1,$STR_params_game_mode_2,$STR_params_game_mode_3};
         default = 1;
         lockOnSave = 1;
-        lockInGame = 1; // Causes issues in commander menu dialog when changed. Haven't investigated yet.
+        lockInGame = 1;
         class dependencies
         {
             class areRivalsEnabled
@@ -194,6 +194,18 @@ class Params
         tooltip = $STR_params_server_riv_difficulty_desc;
         values[] = {1,2,3};
         texts[] = {$STR_params_server_riv_difficulty_easy, $STR_params_server_riv_difficulty_medium, $STR_params_server_riv_difficulty_hard};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 2;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 2;
     };
     class victoryCondition: ScenarioParams
@@ -202,6 +214,18 @@ class Params
         tooltip = $STR_A3AU_victory_condition_desc;
         values[] = {0,1,2,3,4};
         texts[] = {$STR_A3AU_normal_victory,$STR_A3AU_total_victory,$STR_A3AU_economic_victory,$STR_A3AU_logistical_victory,$STR_A3AU_political_victory};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 4;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class lossCondition: ScenarioParams
@@ -210,6 +234,18 @@ class Params
         tooltip = $STR_A3AU_loss_condition_desc;
         values[] = {0,1,2,3};
         texts[] = {$STR_A3AU_loss_condition_pop_death,$STR_A3AU_loss_condition_hr,$STR_A3AU_loss_condition_money,$STR_A3AU_loss_condition_all};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
         lockOnSave = 1;
     };
@@ -250,6 +286,23 @@ class Params
         tooltip = $STR_params_server_membership_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 1;
     };
     class A3A_guestCommander: MemberParams
@@ -266,6 +319,18 @@ class Params
         tooltip = $STR_params_server_teamkill_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
     };
     class ScriptParamsSpacer : BasicParams
@@ -359,6 +424,28 @@ class Params
         tooltip = $STR_params_afk_desc;
         values[] = {120,300,900,1800,9999999};
         texts[] = {"2","5","15","30", $STR_params_afk_disabled};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 9999999;
+                medium = 9999999;
+                hard = 9999999;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 900;
+                medium = 300;
+                hard = 120;
+            };
+            class large
+            {
+                easy = 300;
+                medium = 120;
+                hard = 120;
+            };
+        };
         default = 300;
         class dependencies
         {
@@ -376,6 +463,23 @@ class Params
         tooltip = $STR_params_afk_uav_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 1;
     };
     class A3A_isZeusAFK: TimerParams
@@ -384,6 +488,23 @@ class Params
         tooltip = $STR_params_afk_zeus_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 1;
     };
     class A3A_GCThreshold: TimerParams
@@ -392,7 +513,34 @@ class Params
         tooltip = $STR_params_gc_threshold_desc;
         values[] = {3600, 7200, 10800, 14400, 9999999};
         texts[] = {"1", "2", "3", "4", $STR_params_afk_disabled};
-        Default = 9999999;
+        class difficulty
+        {
+            class solo
+            {
+                easy = 9999999;
+                medium = 9999999;
+                hard = 9999999;
+            };
+            class small
+            {
+                easy = 10800;
+                medium = 10800;
+                hard = 10800;
+            };
+            class medium
+            {
+                easy = 7200;
+                medium = 7200;
+                hard = 7200;
+            };
+            class large
+            {
+                easy = 3600;
+                medium = 3600;
+                hard = 3600;
+            };
+        };
+        default = 9999999;
     };
     class settingsTimeMultiplier: TimerParams
     {
@@ -427,6 +575,23 @@ class Params
         tooltip = $STR_params_spawnDistance_desc;
         values[] = {700,800,900,1000,1100,1200,1300,1400,1500};
         texts[] = {"700","800","900","1000","1100","1200", "1300" ,"1400", "1500"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1500;
+                medium = 1500;
+                hard = 1500;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1100;
+                medium = 1100;
+                hard = 1100;
+            };
+            class large : medium {};
+        };
         default = 1100;
     };
     class enemyNearDistance: AIParams
@@ -435,6 +600,18 @@ class Params
         tooltip = $STR_params_enemyCheckDistance_desc;
         values[] = {100,200,300,400,500};
         texts[] = {"100","200","300","400","500"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 100;
+                medium = 300;
+                hard = 500;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 300;
     };
     class globalCivilianMax: AIParams
@@ -478,6 +655,18 @@ class Params
         tooltip = $STR_params_allowCivDialog_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
     };
     class zombiesUncapped: AIParams
@@ -486,6 +675,23 @@ class Params
         tooltip = $STR_A3AU_uncap_zombie_spawn_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : solo {};
+        };
         default = 0;
     };
     class plusGarrison: AIParams
@@ -502,6 +708,18 @@ class Params
         tooltip = $STR_A3AU_radioman_support_desc;
         values[] = {0,1};
         texts[] = {$STR_A3AU_dialogs_radioman_support,$STR_A3AU_dialogs_squadleader_support};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class playerRecruitAI: AIParams
@@ -510,6 +728,18 @@ class Params
         tooltip = $STR_params_playerRecruitAI_desc;
         values[] = {1,0};
         texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
         class dependencies
         {
@@ -527,6 +757,18 @@ class Params
         tooltip = $STR_params_recruitToPlayerSquad_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class aiControlTime: AIParams
@@ -543,6 +785,18 @@ class Params
         tooltip = $STR_params_unconsciousAiPossess_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
         lockInGame = 0;
     };
@@ -552,6 +806,18 @@ class Params
         tooltip = $STR_params_loadoutsToGenerate_desc;
         values[] = {5, 10, 15, 20};
         texts[] = {"5", "10", "15", "20"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 5;
+                medium = 10;
+                hard = 20;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 5;
         lockInGame = 1;
     };
@@ -575,6 +841,33 @@ class Params
         tooltip = $STR_params_playerStartingMoney_desc;
         values[] = {0, 100, 200, 500, 1000, 2500};
         texts[] = {"0", "100", "200", "500","1000","2500"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 2500;
+                medium = 1000;
+                hard = 500;
+            };
+            class small
+            {
+                easy = 1000;
+                medium = 500;
+                hard = 200;
+            };
+            class medium
+            {
+                easy = 500;
+                medium = 200;
+                hard = 100;
+            };
+            class large
+            {
+                easy = 200;
+                medium = 100;
+                hard = 0;
+            };
+        };
         default = 500;
         lockOnSave = 1;
     };
@@ -615,6 +908,28 @@ class Params
         tooltip = $STR_params_deathPenalty_desc;
         values[] = {0, 15, 30, 50, 75, 100};
         texts[] = {"0%", "15%", "30%", "50%", "75%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 50;
+                hard = 100;
+            };
+            class small
+            {
+                easy = 15;
+                medium = 50;
+                hard = 100;
+            };
+            class medium
+            {
+                easy = 30;
+                medium = 50;
+                hard = 100;
+            };
+            class large : solo {};
+        };
         default = 30;
     };
     class initialHr: RebelBalanceParams
@@ -623,6 +938,28 @@ class Params
         tooltip = $STR_params_initialHr_desc;
         values[] = {0, 8, 16, 24, 32, 50};
         texts[] = {"0","8","16","24","32","50"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 32;
+                medium = 16;
+                hard = 8;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 24;
+                medium = 16;
+                hard = 8;
+            };
+            class large
+            {
+                easy = 16;
+                medium = 8;
+                hard = 0;
+            };
+        };
         default = 8;
         lockOnSave = 1;
     };
@@ -657,6 +994,18 @@ class Params
         tooltip = $STR_A3AU_hr_loss_desc;
         values[] = {0,1,2};
         texts[] = {$STR_A3AU_no_hr_loss,$STR_A3AU_yes_hr_loss,$STR_A3AU_yes_hr_loss_w_msg};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 2;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class maxSupportPoints: RebelBalanceParams
@@ -665,6 +1014,18 @@ class Params
         tooltip = $STR_params_maxSupportPoints_desc;
         values[] = {1,2,3,4,5,6};
         texts[] = {"1","2","3","4","5","6"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 6;
+                medium = 4;
+                hard = 2;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 3;
     };
     class pistolStart : RebelBalanceParams
@@ -673,6 +1034,23 @@ class Params
         tooltip = $STR_params_pistolStart_desc;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : solo {};
+        };
         default = 0;
         lockOnSave = 1;
         lockInGame = 1;
@@ -684,6 +1062,23 @@ class Params
         tooltip = $STR_params_startWithLongRangeRadio_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : solo {};
+        };
         default = 1;
     };
     class aceFood: RebelBalanceParams
@@ -711,6 +1106,23 @@ class Params
         tooltip = $STR_params_reviveKitsEnabled_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : solo {};
+        };
         default = 1;
     };
     class A3A_reviveTime: RebelBalanceParams
@@ -719,6 +1131,18 @@ class Params
         tooltip = $STR_params_revive_time_desc;
         values[] = {8,12,16,24,32};
         texts[] = {"8","12","16","24","32"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 8;
+                medium = 16;
+                hard = 32;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 16;
     };
     class A3A_selfReviveMethods: RebelBalanceParams
@@ -727,6 +1151,23 @@ class Params
         tooltip = $STR_A3A_Params_selfReviveMethods_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_A3A_Params_selfReviveMethods_withstand};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : solo {};
+        };
         default = 0;
     };
     class useDownedNotification: RebelBalanceParams
@@ -735,6 +1176,18 @@ class Params
         tooltip = $STR_A3AU_use_downed_notification_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class rallyPointSpawnCount: RebelBalanceParams
@@ -743,6 +1196,33 @@ class Params
         tooltip = $STR_params_rallyPointSpawnCount_desc;
         values[] = {3, 5, 10, 15, 20, 30, 0};
         texts[] = {"3", "5", "10", "15", "20", "30", $STR_params_afk_disabled};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 5;
+                hard = 3;
+            };
+            class small
+            {
+                easy = 15;
+                medium = 10;
+                hard = 5;
+            };
+            class medium
+            {
+                easy = 20;
+                medium = 15;
+                hard = 10;
+            };
+            class large
+            {
+                easy = 30;
+                medium = 20;
+                hard = 15;
+            };
+        };
         default = 10;
     };
     class staminaEnabled: RebelBalanceParams
@@ -751,6 +1231,18 @@ class Params
         tooltip = $STR_A3AU_stamina_enabled_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
     };
     class fatigueEnabled: RebelBalanceParams
@@ -759,6 +1251,18 @@ class Params
         tooltip = $STR_A3AU_fatigue_enabled_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
     };
     class swayEnabled: RebelBalanceParams
@@ -767,6 +1271,18 @@ class Params
         tooltip = $STR_A3AU_sway_enabled_desc;
         values[] = {0,25,50,75,100};
         texts[] = {"0%","25%","50%","75%","100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 50;
+                hard = 100;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 100;
     };
     class A3A_removeRestore: RebelBalanceParams
@@ -775,6 +1291,23 @@ class Params
         tooltip = $STR_A3A_Params_removeRestore_title;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : solo {};
+        };
         default = 0;
     };
     class limitedFT: RebelBalanceParams
@@ -783,6 +1316,28 @@ class Params
         tooltip = $STR_params_allowFT_desc;
         values[] = {0,1,2,3};
         texts[] = {$STR_params_allowFT_0, $STR_params_allowFT_1, $STR_params_allowFT_2, $STR_params_civ_traffic_none};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 3;
+            };
+            class small
+            {
+                easy = 0;
+                medium = 2;
+                hard = 3;
+            };
+            class medium : small {};
+            class large
+            {
+                easy = 1;
+                medium = 2;
+                hard = 3;
+            };
+        };
         default = 0;
         lockInGame = 1;
         class dependencies
@@ -800,6 +1355,23 @@ class Params
         tooltip = $STR_params_fastTravelEnemyCheck_desc;
         values[] = {0,1};
         texts[] = {$STR_params_fastTravelEnemyCheck_player, $STR_params_fastTravelEnemyCheck_team};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 0;
     };
     class unflipPersonCount: RebelBalanceParams
@@ -808,6 +1380,23 @@ class Params
         tooltip = $STR_params_unflipPersonCount_desc;
         values[] = {1, 2, 3, 4};
         texts[] = {"1","2","3","4"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 2;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 2;
+                medium = 3;
+                hard = 4;
+            };
+            class large : medium {};
+        };
         default = 3;
     };
     class A3A_rebelGarrisonLimit: RebelBalanceParams
@@ -816,6 +1405,18 @@ class Params
         tooltip = $STR_params_rebelGarrisonLimit_desc;
         values[] = {-1, 16, 24, 32};
         texts[] = {"∞", "16", "24", "32"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = -1;
+                medium = 24;
+                hard = 16;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 24;
     };
     class A3A_rebelGarrisonGroupSize: RebelBalanceParams
@@ -845,6 +1446,33 @@ class Params
         tooltip = $STR_params_overall_enemy_res_balance_desc;
         values[] = {4,6,8,10,11,12,13,14,17,20,24,28};
         texts[] =  {"0.4x","0.6x","0.8x","1.0x","1.1x", "1.2x","1.3x", "1.4x","1.7x","2.0x","2.4x","2.8x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 8;
+                medium = 12;
+                hard = 20;
+            };
+            class small
+            {
+                easy = 10;
+                medium = 14;
+                hard = 20;
+            };
+            class medium
+            {
+                easy = 12;
+                medium = 17;
+                hard = 24;
+            };
+            class large
+            {
+                easy = 14;
+                medium = 20;
+                hard = 28;
+            };
+        };
         default = 11;
         lockInGame = 1;
     };
@@ -855,6 +1483,33 @@ class Params
         tooltip = $STR_params_response_balance_desc;
         values[] = {4,6,8,10,12,14,17,20,24,28};
         texts[] =  {"0.4x","0.6x","0.8x","1.0x","1.2x","1.4x","1.7x","2.0x","2.4x","2.8x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 8;
+                medium = 12;
+                hard = 20;
+            };
+            class small
+            {
+                easy = 10;
+                medium = 14;
+                hard = 20;
+            };
+            class medium
+            {
+                easy = 12;
+                medium = 17;
+                hard = 24;
+            };
+            class large
+            {
+                easy = 14;
+                medium = 20;
+                hard = 28;
+            };
+        };
         default = 10;
         lockInGame = 1;
     };
@@ -865,6 +1520,33 @@ class Params
         tooltip = $STR_params_resource_balance_inv_desc;
         values[] = {10,11,12,13,14,15,16,17,18,19,20};
         texts[] =  {"1.0x","1.1x","1.2x","1.3x","1.4x","1.5x","1.6x","1.7x","1.8x","1.9x","2.0x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 12;
+                hard = 14;
+            };
+            class small
+            {
+                easy = 12;
+                medium = 14;
+                hard = 16;
+            };
+            class medium
+            {
+                easy = 14;
+                medium = 16;
+                hard = 18;
+            };
+            class large
+            {
+                easy = 16;
+                medium = 18;
+                hard = 20;
+            };
+        };
         default = 12;
         lockInGame = 1;
     };
@@ -874,6 +1556,23 @@ class Params
         tooltip = $STR_params_enablePunishments_desc;
         values[] = {1,0};
         texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : solo {};
+        };
         default = 1;
     };
     class A3A_enemyResponseTime: AIBalanceParams
@@ -883,6 +1582,28 @@ class Params
         tooltip = $STR_A3A_Params_enemyResponseTime_desc;
         values[] = {20,15,10,7,5};
         texts[] =  {$STR_A3A_Params_generic_veryslow, $STR_A3A_Params_generic_slow, $STR_A3A_Params_generic_normal, $STR_A3A_Params_generic_fast, $STR_A3A_Params_generic_veryfast};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 20;
+                medium = 15;
+                hard = 10;
+            };
+            class small
+            {
+                easy = 15;
+                medium = 10;
+                hard = 7;
+            };
+            class medium
+            {
+                easy = 10;
+                medium = 7;
+                hard = 5;
+            };
+            class large : medium {};
+        };
         default = 10;
     };
     class A3A_attackHQProximityMul: AIBalanceParams
@@ -892,6 +1613,18 @@ class Params
         tooltip = $STR_params_enemyPref_desc;
         values[] = {1,2,3,5,8};
         texts[] =  {$STR_params_enemyPref_nc,"2x","3x","5x","8x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 3;
+                hard = 5;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 3;
     };
     class A3A_enemySkillMul: AIBalanceParams
@@ -900,6 +1633,23 @@ class Params
         tooltip = $STR_params_A3A_enemySkillMul_desc;
         values[] = {0,1,2,3,4};
         texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 2;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 2;
+                medium = 3;
+                hard = 4;
+            };
+            class large : medium {};
+        };
         default = 2;
     };
     class A3A_rebelSkillMul: AIBalanceParams
@@ -908,6 +1658,28 @@ class Params
         tooltip = $STR_params_A3A_rebelSkillMul_desc;
         values[] = {0,1,2,3,4};
         texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 4;
+                medium = 3;
+                hard = 2;
+            };
+            class small
+            {
+                easy = 3;
+                medium = 2;
+                hard = 1;
+            };
+            class medium
+            {
+                easy = 2;
+                medium = 1;
+                hard = 0;
+            };
+            class large : solo {};
+        };
         default = 2;
     };
     class aiAccuracyCeiling: AIBalanceParams
@@ -916,6 +1688,18 @@ class Params
         tooltip = $STR_params_aiAccuracyCeiling_desc;
         values[] = {10, 20, 30, 40, 45, 50, 60, 70, 80, 90, 100};
         texts[] = {"0.1", "0.2", "0.3", "0.4", "0.45", "0.5", "0.6", "0.7", "0.8", "0.9", "1"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 20;
+                medium = 50;
+                hard = 80;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 45;
     };
     class napalmEnabled: AIBalanceParams
@@ -924,6 +1708,23 @@ class Params
         tooltip = $STR_params_napalmEnabled_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : solo {};
+        };
         default = 1;
     };
     class allowUnfairSupports: AIBalanceParams
@@ -933,6 +1734,23 @@ class Params
         tooltip = $STR_params_allowUnfairSupports_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 0;
     };
     class allowFuturisticSupports: AIBalanceParams
@@ -951,6 +1769,23 @@ class Params
         tooltip = $STR_params_allowFuturisticUnfairSupports_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 0;
     };
     class A3A_UAVSpawnChance: AIBalanceParams
@@ -959,6 +1794,28 @@ class Params
         tooltip = $STR_params_UAVSpawnChance_desc;
         values[] = {0, 10, 20, 30, 50, 100, 200};
         texts[] = {"0", "10%", "20%", "30%", "50%", "100%", "200%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 100;
+                medium = 50;
+                hard = 10;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 50;
+                medium = 30;
+                hard = 10;
+            };
+            class large
+            {
+                easy = 20;
+                medium = 10;
+                hard = 0;
+            };
+        };
         default = 20;
     };
     class distanceMission: AIBalanceParams
@@ -967,6 +1824,33 @@ class Params
         tooltip = $STR_params_distanceMission_desc;
         values[] = {2000,3000,4000,6000,8000,10000,12000};
         texts[] = {"2000","3000","4000","6000","8000","10000","12000"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 2000;
+                medium = 3000;
+                hard = 4000;
+            };
+            class small
+            {
+                easy = 3000;
+                medium = 4000;
+                hard = 6000;
+            };
+            class medium
+            {
+                easy = 4000;
+                medium = 6000;
+                hard = 8000;
+            };
+            class large
+            {
+                easy = 6000;
+                medium = 8000;
+                hard = 10000;
+            };
+        };
         default = 3000;
     };
     class MiscBalanceParamsSpacer : AIParamsSpacer
@@ -988,6 +1872,23 @@ class Params
         tooltip = $STR_params_server_friendlymarkers_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : medium {};
+        };
         default = 1;
     };
     class hideEnemyMarkers: MiscBalanceParams
@@ -996,6 +1897,23 @@ class Params
         tooltip = $STR_A3AU_hide_enemy_markers_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class large : medium {};
+        };
         default = 0;
         lockInGame = 1;
     };
@@ -1005,6 +1923,28 @@ class Params
         tooltip = $STR_A3AU_hide_enemy_markers_recon_plane_distance_desc;
         values[] = {100, 300, 500, 1000, 1500, 2000};
         texts[] = {"100", "300", "500", "1000", "1500", "2000"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 500;
+                medium = 1000;
+                hard = 1500;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 300;
+                medium = 500;
+                hard = 1000;
+            };
+            class large
+            {
+                easy = 100;
+                medium = 300;
+                hard = 500;
+            };
+        };
         default = 500;
     };
     class playerIcons: MiscBalanceParams
@@ -1013,6 +1953,23 @@ class Params
         tooltip = $STR_params_playerIcons_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : medium {};
+        };
         default = 1;
     };
     class AIParamsSpacer2 : AllParams
@@ -1039,6 +1996,18 @@ class Params
         tooltip = $STR_A3AU_disable_trader;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 0;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
         lockOnSave = 1; // Causes errors if disabling trader after already having found him in a save
         class dependencies
@@ -1068,6 +2037,18 @@ class Params
         tooltip = $STR_params_blackMarketIgnoreRequirements_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class A3U_blackMarketDiscountVehicle : BMParams
@@ -1102,6 +2083,23 @@ class Params
         tooltip = $STR_params_builderPermissions_desc;
         values[] = {1, 2, 3};
         texts[] = {"Team leaders", "Engineers", "Both"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 3;
+                medium = 3;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 3;
+                medium = 2;
+                hard = 2;
+            };
+            class large : medium {};
+        };
         default = 3;
     };
     class A3A_builderLimit: BuilderParams
@@ -1118,6 +2116,33 @@ class Params
         tooltip = $STR_params_builderBuildTime_desc;
         values[] = {0, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"DEBUG (Instant)", "0.4x", "0.5x", "0.6x", "0.7x", "0.8x", "0.9x", "1.0x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 4;
+                medium = 6;
+                hard = 8;
+            };
+            class small
+            {
+                easy = 5;
+                medium = 7;
+                hard = 9;
+            };
+            class medium
+            {
+                easy = 6;
+                medium = 8;
+                hard = 10;
+            };
+            class large
+            {
+                easy = 8;
+                medium = 9;
+                hard = 10;
+            };
+        };
         default = 5;
     };
     class A3A_builderAllowRoads: BuilderParams
@@ -1126,6 +2151,18 @@ class Params
         tooltip = $STR_params_builderAllowRoads_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class saveZeusBuildings: BuilderParams
@@ -1165,6 +2202,28 @@ class Params
         tooltip = $STR_params_server_unlock_threshold_desc;
         values[] = {10,15,20,25,30,35,40,45,50,100,200,500,-1};
         texts[] = {"10","15","20","25","30","35","40","45","50","100","200","500",$STR_params_server_unlock_no_unlocks};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 15;
+                hard = 20;
+            };
+            class small
+            {
+                easy = 15;
+                medium = 20;
+                hard = 25;
+            };
+            class medium
+            {
+                easy = 25;
+                medium = 50;
+                hard = -1;
+            };
+            class large : medium {};
+        };
         default = 25;
         class dependencies
         {
@@ -1186,6 +2245,28 @@ class Params
         tooltip = $STR_params_A3A_guestItemLimit_desc;
         values[] = {0,10,15,25,40};
         texts[] = {$STR_params_A3A_no_limit,"10","15","25","40"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 10;
+                hard = 15;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 10;
+                medium = 15;
+                hard = 25;
+            };
+            class large
+            {
+                easy = 15;
+                medium = 25;
+                hard = 40;
+            };
+        };
         default = 25;
     };
     class unlockedUnlimitedAmmo: UnlockParams
@@ -1195,6 +2276,18 @@ class Params
         tooltip = $STR_params_unlockedUnlimitedAmmo_desc;
         values[] = {1,0};
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text, $STR_antistasi_dialogs_generic_button_no_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class allowGuidedLaunchers: UnlockParams
@@ -1204,6 +2297,18 @@ class Params
         tooltip = $STR_params_allowGuidedLaunchers_desc;
         values[] = {1,0};
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text, $STR_antistasi_dialogs_generic_button_no_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
     };
     class allowUnlockedExplosives: UnlockParams
@@ -1213,6 +2318,18 @@ class Params
         tooltip = $STR_params_allowUnlockedExplosives_desc;
         values[] = {1,0};
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class allowUnlockedTNVG: UnlockParams
@@ -1222,6 +2339,18 @@ class Params
         tooltip = $STR_params_allowUnlockedTNVG_desc;
         values[] = {1,0};
         texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class cosmeticsEnabled: UnlockParams
@@ -1251,6 +2380,18 @@ class Params
         tooltip = $STR_params_lootCrateHeli_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
         class dependencies
         {
@@ -1269,6 +2410,18 @@ class Params
         tooltip = $STR_params_lootCrateDistance_desc;
         values[] = {10, 25, 50, 75, 100, 200, 300, 400};
         texts[] = {"10", "25", "50", "75", "100", "200", "300", "400"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 100;
+                medium = 50;
+                hard = 10;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 50;
     };
     class lootCratePrice: CrateParams
@@ -1277,6 +2430,28 @@ class Params
         tooltip = $STR_params_lootCratePrice_desc;
         values[] = {100, 200, 300, 400, 500};
         texts[] = {"100", "200", "300", "400", "500"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 100;
+                medium = 200;
+                hard = 300;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 200;
+                medium = 300;
+                hard = 400;
+            };
+            class large
+            {
+                easy = 300;
+                medium = 400;
+                hard = 500;
+            };
+        };
         default = 100;
     };
     class lootCrateUnlockedItems: CrateParams
@@ -1301,6 +2476,18 @@ class Params
         tooltip = $STR_params_crateWepNumMax_desc;
         values[] = {0,1,3,5,8,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","8","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 15;
+                medium = 10;
+                hard = 5;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 8;
     };
     class crateItemTypeMax: CrateParams
@@ -1317,6 +2504,18 @@ class Params
         tooltip = $STR_params_crateItemNumMax_desc;
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 5;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 5;
     };
     class crateAmmoTypeMax: CrateParams
@@ -1333,6 +2532,18 @@ class Params
         tooltip = $STR_params_crateAmmoNumMax_desc;
         values[] = {0,1,3,5,10,15,20,25,30};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","25","30"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 30;
+                medium = 20;
+                hard = 10;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 20;
     };
     class crateExplosiveTypeMax: CrateParams
@@ -1349,6 +2560,18 @@ class Params
         tooltip = $STR_params_crateExplosiveNumMax_desc;
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 5;
+                hard = 3;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 5;
     };
     class crateAttachmentTypeMax: CrateParams
@@ -1365,6 +2588,18 @@ class Params
         tooltip = $STR_params_crateAttachmentNumMax_desc;
         values[] = {0,1,3,5,10,15,20,25,30};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","25","30"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 25;
+                medium = 15;
+                hard = 5;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 15;
     };
     class crateBackpackTypeMax: CrateParams
@@ -1381,6 +2616,18 @@ class Params
         tooltip = $STR_params_crateBackpackNumMax_desc;
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 5;
+                medium = 3;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 3;
     };
     class crateVestTypeMax: CrateParams
@@ -1397,6 +2644,18 @@ class Params
         tooltip = $STR_params_crateVestNumMax_desc;
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 5;
+                medium = 3;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 3;
     };
     class crateHelmetTypeMax: CrateParams
@@ -1413,6 +2672,18 @@ class Params
         tooltip = $STR_params_crateHelmetNumMax_desc;
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 5;
+                medium = 3;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 3;
     };
     class crateDeviceTypeMax: CrateParams
@@ -1429,6 +2700,18 @@ class Params
         tooltip = $STR_params_crateDeviceNumMax_desc;
         values[] = {0,1,3,5,10,15};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 5;
+                medium = 3;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 3;
     };
     class VehicleLootParamsSpacer : LootParams
@@ -1450,6 +2733,18 @@ class Params
         tooltip = $STR_params_enableVehicleAutoLock_desc;
         values[] = {0,1};
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
         lockInGame = 1;
     };
@@ -1459,6 +2754,18 @@ class Params
         tooltip = $STR_params_enableVehicleAutoLockCiv_desc;
         values[] = {0,1};
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
         lockInGame = 1;
         class dependencies
@@ -1476,6 +2783,18 @@ class Params
         tooltip = $STR_params_vehicleLockpickTime_desc;
         values[] = {30,60,120};
         texts[] = {"30s", "60s", "120s"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 30;
+                medium = 60;
+                hard = 120;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 60;
     };
     class MiscLootParamsSpacer : LootParams
@@ -1497,6 +2816,23 @@ class Params
         tooltip = $STR_params_helmetLossChance_desc;
         values[] = {0,33,66,100};
         texts[] = {$STR_params_helmetLossChance_0,$STR_params_helmetLossChance_1,$STR_params_helmetLossChance_2,$STR_params_helmetLossChance_3};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 33;
+                hard = 66;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 33;
+                medium = 66;
+                hard = 100;
+            };
+            class large : solo {};
+        };
         default = 33;
         class dependencies
         {
@@ -1562,6 +2898,18 @@ class Params
         tooltip = $STR_params_limitWeaponsByUnitType_desc;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class A3U_HelipadTerrainSmoothing: ExperimentalParams
@@ -1570,6 +2918,18 @@ class Params
         tooltip = $STR_params_helipadTerrainSmoothing_desc;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class unconChanceEny : ExperimentalParams
@@ -1578,6 +2938,33 @@ class Params
         tooltip = $STR_params_unconChanceEny_desc;
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 8;
+                hard = 6;
+            };
+            class small
+            {
+                easy = 8;
+                medium = 6;
+                hard = 4;
+            };
+            class medium
+            {
+                easy = 6;
+                medium = 4;
+                hard = 2;
+            };
+            class large
+            {
+                easy = 4;
+                medium = 2;
+                hard = 0;
+            };
+        };
         default = 10;
         lockCondition = "A3A_hasACEMedical;";
         lockConditionTooltip = $STR_params_unconChance_lockCondition;
@@ -1593,6 +2980,18 @@ class Params
         tooltip = $STR_params_enableVehiclesForAI_desc;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
         lockInGame = 1;
     };
@@ -1602,6 +3001,18 @@ class Params
         tooltip = $STR_params_ultimate_allowLockpickKits_Tooltip;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class EGVAR(ultimate,lockpickKitBreakChance) : ExperimentalParams
@@ -1610,6 +3021,33 @@ class Params
         tooltip = $STR_params_ultimate_lockpickKitBreakChance_Tooltip;
         values[] = {0, 10, 20, 25, 30, 40, 50};
         texts[] = {"0%", "10%", "20%", "25%", "30%", "40%", "50%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 10;
+                hard = 20;
+            };
+            class small
+            {
+                easy = 10;
+                medium = 20;
+                hard = 30;
+            };
+            class medium
+            {
+                easy = 20;
+                medium = 30;
+                hard = 40;
+            };
+            class large
+            {
+                easy = 30;
+                medium = 40;
+                hard = 50;
+            };
+        };
         default = 25;
     };
 
