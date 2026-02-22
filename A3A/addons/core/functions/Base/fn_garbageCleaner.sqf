@@ -1,5 +1,10 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+
+// Script wants to sleep a couple of lines further down. When calling garbage
+// cleaner from commander menu, this script is called in unscheduled env, though.
+if (!canSuspend) exitWith { [] spawn A3A_fnc_garbageCleaner };
+
 // Do not localise timeSpan, it is broadcast to all connected clients.
 private _timeSinceLastGC = [[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,0,0,false,2] call A3A_fnc_timeSpan_format;
 [localize "STR_antistasi_dialogs_open_clean_garbage_title", format [localize "STR_antistasi_dialogs_open_clean_garbage_exit", _timeSinceLastGC]] remoteExec ["A3A_fnc_customHint", 0];
@@ -13,24 +18,11 @@ private _fnc_distCheck = {
 	if (_rebelSpawners inAreaArray [getPosATL _object, _dist, _dist] isEqualTo []) then { deleteVehicle _object };
 };
 
-// Cleanup constructed buildings
-private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
-_rebMarkers pushBack "Synd_HQ";
-// ^ Add extra plus related stuff
-
-A3A_buildingsToSave = A3A_buildingsToSave select {
-	// Keep if there are rebel spawners within 500m
-	if (_rebelSpawners inAreaArray [getPosATL _x, 500, 500] isNotEqualTo []) then { continueWith true };
-
-	// Delete if outside mission distance (temporary)
-	if (_x distance2d markerPos "Synd_HQ" > distanceMission) then { deleteVehicle _x; continueWith false };
-
-	// Delete if not within a rebel marker
-	private _building = _x;
-	private _indexes = _rebMarkers inAreaArrayIndexes [getPosATL _x, 500, 500];
-	if (-1 != _indexes findIf { _building inArea _rebMarkers#_x } ) then { continueWith true };
-	deleteVehicle _x; false;
-};
+// Cull A3A_buildingsToSave if over limit (e.g. if limit was lowered after builds placed)
+// For example, this would allow *intentionally* removing builds by setting the limit to 0 and running the garbage cleaner
+// i.e. a way to clear no longer needed builds, or to fix performance issues from too many builds
+if (count (A3A_buildingsToSave) >= A3A_builderLimit) then { A3A_buildingsToSave = A3A_buildingsToSave select [0, A3A_builderLimit - 1] };
+publicVariable "A3A_buildingsToSave";
 
 Debug("Moving dead solders out of vehicles...")
 {
@@ -62,17 +54,19 @@ if (A3A_hasACE) then {
 	{ deleteVehicle _x } forEach (allMissionObjects "ace_cookoff_Turret_MBT_01");			//MBT turret wrecks
 	{ deleteVehicle _x } forEach (allMissionObjects "ace_cookoff_Turret_MBT_02");
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_Grave");
-	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_big");		// ACE trench objects
-	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_small");
+	//{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_big");		// ACE trench objects
+	//{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "ACE_envelope_small");
 };
 
 // Base type for trenches is Base_Bag_F, so we can't use that
+/*
 if (isClass (configFile >> "CfgVehicles" >> "GRAD_envelope_short")) then {
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_short");	// GRAD trench objects
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_giant");
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_vehicle");
 	{ [_x, 200] call _fnc_distCheck } forEach (allMissionObjects "GRAD_envelope_long");
 };
+*/
 
 if (isClass (configFile/"CfgPatches"/"rhsgref_main")) then {//ToDo: these should be moved to owner mod detection and not the broad one as we may allow some rhs factions without all of rhs modset loaded
 	{ deleteVehicle _x } forEach (allMissionObjects "rhs_a10_acesII_seat");		// Ejection seat for A-10 and F-22

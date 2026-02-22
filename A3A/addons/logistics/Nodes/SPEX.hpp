@@ -236,3 +236,19 @@ class WW2_SPEX_addons_Assets_m_Vehicles_Planes_m_SPEX_WACO_p3d : TRIPLES(ADDON,N
         };
     };
 };
+
+class WW2_SPEX_addons_Assets_m_Vehicles_Trucks_m_Bedford_MWD_SPEX_Bedford_MWD_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+        class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,0,-0.25};
+        };
+        class Node2
+        {
+            offset[] = {0,-0.8,-0.25};
+        };
+    };
+};
+

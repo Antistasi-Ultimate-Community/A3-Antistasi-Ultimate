@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 params ["_mode"];
 
 if(_mode == "ADD") then {
@@ -39,7 +41,7 @@ if(_mode == "ADD") then {
                         [[_location],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
                     };
 			    } else {
-                    ["No rival missions are possible, invaders are defeated and location isn't a city.", _fnc_scriptName] call A3U_fnc_log;
+                    Debug("No rival missions are possible, invaders are defeated and location isn't a city.");
                     [_location, "NOINVADER"] remoteExecCall ["SCRT_fnc_rivals_destroyLocation",2];
                 };
             };

@@ -11,8 +11,7 @@
 */
 
 
-#include "\A3\ui_f\hpp\defineDIKCodes.inc"
-#include "\A3\Ui_f\hpp\defineResinclDesign.inc"
+#include "..\defineCommon.inc"
 
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
@@ -297,11 +296,12 @@ switch _mode do {
 
 	/////////////////////////////////////////////////////////////////////////////////////////// Externaly called
 	case "Open": {
-		diag_log "JNA open arsenal";
+		Info("JNA open arsenal");
 		jna_dataList = _this select 0;
 		["SaveTFAR"] call jn_fnc_arsenal;
 		private _object = missionnamespace getVariable ["jna_object",objNull];
 		["Open",[nil,_object,player,false]] call bis_fnc_arsenal;
+		if (isNil {profileNamespace getVariable "A3U_11_8_5_arsenal_update_ack"} && {uiNamespace getVariable ["isLoadoutArsenal", false]}) then { ["ShowUpdateMessage"] spawn SCRT_fnc_arsenal_loadoutArsenal };
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -401,12 +401,12 @@ switch _mode do {
 			private _backpackRadio = player call TFAR_fnc_backpackLr;
 			if (!isNil "_backpackRadio" && {count _backpackRadio >= 2}) then {
 				if (isNil "jna_backpackRadioSettings" || {typeName jna_backpackRadioSettings != typeName []}) exitWith {
-					diag_log "[Antistasi] Error: Arsenal failed to restore TFAR longrange radio settings due to invalid saved setting";
+					Error("Arsenal failed to restore TFAR longrange radio settings due to invalid saved setting");
 				};
 				[_backpackRadio select 0, _backpackRadio select 1, jna_backpackRadioSettings] call TFAR_fnc_setLrSettings;
-				diag_log "[Antistasi] TFAR longrange radio settings restored on arsenal exit.";
+				Verbose("TFAR longrange radio settings restored on arsenal exit.");
 			} else {
-				diag_log "[Antistasi] No longrange radio found on arsenal exit.";
+				Verbose("No longrange radio found on arsenal exit.");
 			};
 			//Arsenal gives players base TFAR radio items. TFAR will, at some point, replace this with an 'instanced' version.
 			//This can cause freq to reset. To fix, check if we have a radio first, and wait around if we do, but TFAR isn't showing it.
@@ -420,12 +420,12 @@ switch _mode do {
 					//Doesn't hurt to be careful!
 					if (!isNil "_swRadio") then {
 						if (isNil "jna_swRadioSettings" || {typeName jna_swRadioSettings != typeName []}) exitWith {
-							diag_log "[Antistasi] Error: Arsenal failed to restore TFAR shortwave radio settings due to invalid saved setting";
+							Error("Arsenal failed to restore TFAR shortwave radio settings due to invalid saved setting");
 						};
 						[_swRadio, jna_swRadioSettings] call TFAR_fnc_setSwSettings;
-						diag_log "[Antistasi] TFAR shortwave radio settings restored on arsenal exit.";
+						Verbose("TFAR shortwave radio settings restored on arsenal exit.");
 					} else {
-						diag_log "[Antistasi] No shortwave radio found on arsenal exit.";
+						Verbose("No shortwave radio found on arsenal exit.");
 					};
 				};
 			};
@@ -615,7 +615,6 @@ switch _mode do {
 						private _amount = _data select 1;
 						private _displayName = _data select 2;
 						private _dlcName = _data select 3;
-						diag_log _dlcName;
 			
 						_displayNameArray pushBack _displayName;
 						_modArray pushBack _dlcName;
@@ -980,7 +979,7 @@ switch _mode do {
 			};
 			case IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2: {
 				_ctrlListPrimaryWeapon = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON);
-				if (!ctrlEnabled _ctrlListPrimaryWeapon) exitWith { [] };
+				if (!ctrlEnabled _ctrlListPrimaryWeapon || {primaryWeapon player isEqualTo ""}) exitWith { [] };
 				
 				_weapon = primaryWeapon player;
 				// below from core\functions\Ammunition\fn_randomRifle.sqf
@@ -1028,6 +1027,7 @@ switch _mode do {
 			};
 			case IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG2: {
 				_weapon = primaryWeapon player;
+				if (_weapon isEqualTo "") exitWith {};
 				_weaponCfg = configFile >> "CfgWeapons" >> _weapon;
 				_muzzle = configName (_weaponCfg >> (getArray (_weaponCfg >> "muzzles") select 1));
 				_item = "";
@@ -2034,7 +2034,6 @@ switch _mode do {
 						[_index, _item]call jn_fnc_arsenal_removeItem;
 					};
 				};
-				diag_log ["_oldItem",_oldItem,_item];
 
 			};
 			case IDC_RSCDISPLAYARSENAL_TAB_GOGGLES: {
@@ -2371,6 +2370,7 @@ switch _mode do {
 				// will probably break with anything weird like a masterkey / underbarrel shotgun or something else I can't think of rn
 				_index = IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL;
 				_weapon = primaryWeapon player;
+				if (_weapon isEqualTo "") exitWith {};
 				_weaponCfg = configFile >> "CfgWeapons" >> _weapon;
 				_muzzle = configName (_weaponCfg >> (getArray (_weaponCfg >> "muzzles") select 1));
 				_oldMag = "";
@@ -3057,12 +3057,10 @@ switch _mode do {
 			_itemsUnifrom pushback ["ACE_Chemlight_HiRed",1];
 			_itemsUnifrom pushBack ["ACE_Flashlight_MX991",1];
 		};
-		diag_log ["_itemsUnifrom1",_itemsUnifrom];
 		//check items that already exist
 		{
 			_itemsUnifrom = [_itemsUnifrom,_x] call jn_fnc_arsenal_removeFromArray;
 		} forEach (uniformItems player);
-		diag_log ["_itemsUnifrom2",_itemsUnifrom];
 		//add non existing items to uniform
 		{
 			_item = _x select 0;
@@ -3120,12 +3118,11 @@ switch _mode do {
 		};
 
 
-		diag_log ["_itemsBackpack1",_itemsBackpack];
 		//check items that already exist
 		{
 			_itemsBackpack = [_itemsBackpack,_x] call jn_fnc_arsenal_removeFromArray;
 		} forEach (backpackitems player);
-		diag_log ["_itemsBackpack2",_itemsBackpack];
+
 		//add non existing items
 		{
 			_item = _x select 0;
@@ -3146,9 +3143,7 @@ switch _mode do {
 		{
 			_index = _x select 0;
 			_item = _x select 1;
-			diag_log ["error",_index, _item] ;
 			_itemCurrent = ["ListCurSel",[_index]] call jn_fnc_arsenal;
-			diag_log ["error",_index, _item,_itemCurrent] ;
 			if(_itemCurrent isEqualTo "")then{
 				player linkitem _item;
 

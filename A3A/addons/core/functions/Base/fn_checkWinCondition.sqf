@@ -103,5 +103,5 @@ switch (victoryCondition) do
         };
     };
 
-    default {diag_log format["Victory condition was not recognized. Condition given: %1", victoryCondition]};
+    default {Error_1("Victory condition was not recognized. Condition given: %1", victoryCondition)};
 };

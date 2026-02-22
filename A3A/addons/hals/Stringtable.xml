@@ -674,6 +674,13 @@
                 <Chinesesimp>Tanks</Chinesesimp>
                 <Korean>Tanks</Korean>
             </Key>
+            <Key ID="STR_A3AU_Ultimate">
+                <Original>Antistasi Ultimate</Original>
+                <English>Antistasi Ultimate</English>
+                <Russian>Antistasi Ultimate</Russian>
+                <Chinesesimp>Antistasi Ultimate</Chinesesimp>
+                <Korean>Antistasi Ultimate</Korean>
+            </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
                 <English>Kkiv 2035</English>
@@ -1014,6 +1021,14 @@
                 <Korean>HAFM</Korean>
                 <French>HAFM</French>
                 <Chinesesimp>HAFM</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_MPP_ARSENAL">
+                <Original>MPP</Original>
+                <German>MPP</German>
+                <Russian>MPP</Russian>
+                <Chinesesimp>MPP</Chinesesimp>
+                <Korean>MPP</Korean>
+                <French>MPP</French>
             </Key>
             <!-- <Key ID="STR_A3AU_PROJINF">
                 <Original>P.I.</Original>

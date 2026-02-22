@@ -1,6 +1,8 @@
 class vehicles_ws : vehicles_base
 {
     ITEM(I_A_Truck_02_aa_lxWS, 6200, "AA", VEHICLE_CONDITION_AA);
+    ITEM(I_Tura_Offroad_armor_AA_lxWS, 6350, "AA", VEHICLE_CONDITION_AA);
+    ITEM(I_G_Offroad_AA_lxWS, 6100, "AA", VEHICLE_CONDITION_AA);
     ITEM(APC_Wheeled_01_command_base_lxWS, 12720, "APC", VEHICLE_CONDITION_APC);
     ITEM(APC_Wheeled_01_atgm_base_lxWS, 32970, "APC", VEHICLE_CONDITION_APC);
     ITEM(O_APC_Tracked_02_30mm_lxWS, 32150, "APC", VEHICLE_CONDITION_APC);

@@ -1,5 +1,4 @@
-#include "\A3\ui_f\hpp\defineDIKCodes.inc"
-#include "\A3\Ui_f\hpp\defineResinclDesign.inc"
+#include "..\defineCommon.inc"
 
 //items that need to be removed from arsenal
 _arrayPlaced = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
@@ -294,9 +293,6 @@ _weapons = [_inventory select 6,_inventory select 7,_inventory select 8];
 				_indexAcc = _itemAcc call jn_fnc_arsenal_itemType;
 
 				call {
-					diag_log "_itemCounts";
-					diag_log [_itemCounts];
-					diag_log [_indexAcc];
 					if ((_indexAcc != -1) AND ([_itemCounts select _indexAcc, _itemAcc] call jn_fnc_arsenal_itemCount == -1)) exitWith {
 						switch _index do{
 							case IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON:{player addPrimaryWeaponItem _itemAcc;};
@@ -461,8 +457,6 @@ _arrayAdd = [_arrayPlaced, _arrayTaken] call _subtractArrays; //remove items tha
 _arrayRemove = [_arrayTaken, _arrayPlaced] call _subtractArrays;
 
 _arrayAdd call jn_fnc_arsenal_addItem;
-diag_log _arrayTaken;
-diag_log _arrayPlaced;
 _arrayRemove call jn_fnc_arsenal_removeItem;
 
 //create text for missing and replaced items

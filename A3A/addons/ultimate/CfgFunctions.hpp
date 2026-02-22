@@ -28,6 +28,7 @@ class CfgFunctions
             class init {};
             class initZones {};
             class popup {};
+            class postInit {};
         };
         class main_menu
         {
@@ -58,22 +59,29 @@ class CfgFunctions
         class Utility
         {
             file = QPATHTOFOLDER(functions\Utility);
+            class addInteractionCondition {};
+            class canInteract {};
             class exportCrate {};
             class exportPylons {};
             class exportTowns {};
             class hasAddon {};
             class log {};
             class logisticsGrabSeats {};
+            class useMagazineItem {};
             class weightTest {};
         };
         class vehicles
         {
             file = QPATHTOFOLDER(functions\vehicles);
             class addLockpickAction {};
+            class canLockpick {};
             class isLocked {};
             class lockpick {};
+            class lockpickCleanup {};
+            class lockpickGetPlayerItem {};
             class lockpickOnFail {};
             class lockpickOnProgress {};
+            class lockpickOnStart {};
             class lockpickOnSuccess {};
             class lockpickZones {};
             class setLock {};
