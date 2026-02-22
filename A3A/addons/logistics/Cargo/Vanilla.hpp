@@ -122,7 +122,27 @@ class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d : TRI
     size = 2;
 };
 
+class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_water_F_p3d : A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d {};
+
+class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_small_stacked_F_p3d : A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d {};
+
+class A3_Props_F_Orange_Humanitarian_Supplies_WaterBottle_01_stack_F_p3d : A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d {};
+
+class A3_Structures_F_Civ_Constructions_Pallet_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.1};
+    rotation[] = {1,0,0};
+    size = 2;
+}
+
 class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_cargonet_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.51};
+    rotation[] = {1,0,0};
+    size = 2;
+};
+
+class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_large_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,0.51};
     rotation[] = {1,0,0};
@@ -149,6 +169,8 @@ class A3_Weapons_F_Ammoboxes_Proxy_UsBasicAmmoBox_p3d : TRIPLES(ADDON,Cargo,Base
     rotation[] = {0,0,0};
     size = 1;
 };
+
+class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_small_closed_F_p3d : A3_Weapons_F_Ammoboxes_Proxy_UsBasicAmmoBox_p3d {};
 
 class A3_Weapons_F_Ammoboxes_Proxy_UsBasicExplosives_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -473,29 +495,30 @@ class A3_Soft_F_Enoch_Tractor_01_Tractor_01_F : TRIPLES(ADDON,Cargo,Base)
     size = 4;
 };
 /////////Size 5
+
+/////////Size 6
 class A3_Soft_F_Exp_Offroad_02_Offroad_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,-0.15,1.53};
+    offset[] = {0.05,-0.35,1.415};
     rotation[] = {0,1,0};
-    size = 5;
+    size = 6;
 };
 class A3_Soft_F_Exp_Offroad_02_Offroad_02_AT_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,0,1.8};
+    offset[] = {0.05,-0.34,1.42};
     rotation[] = {0,1,0};
-    size = 5;
+    size = 6;
     isWeapon = 1;
     recoil = 500;
 };
 class A3_Soft_F_Exp_Offroad_02_Offroad_02_LMG_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
-    offset[] = {0,0,2.16};
+    offset[] = {0.05,-0.375,2};
     rotation[] = {0,1,0};
-    size = 5;
+    size = 6;
     isWeapon = 1;
-    recoil = 500;
+    recoil = 250;
 };
-/////////Size 6
 class A3_boat_f_Boat_Transport_01_Boat_Transport_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.26};

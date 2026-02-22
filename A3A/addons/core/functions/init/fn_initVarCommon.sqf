@@ -69,7 +69,7 @@ aggregateCategories = ["Weapons", "Items", "Magazines", "Explosives"];
 //It's recommended that these categories be used with caution.
 specialCategories = ["AA", "AT", "GrenadeLaunchers", "LightAttachments", "LaserAttachments", "Chemlights", "SmokeGrenades", "LaunchedSmokeGrenades", "LaunchedFlares", "HandFlares", "IRGrenades","LaserBatteries",
 	"RebelUniforms", "CivilianUniforms", "BackpacksEmpty", "BackpacksTool", "BackpacksStatic", "BackpacksDevice", "BackpacksRadio", "CivilianVests", "ArmoredVests", "ArmoredHeadgear", "CosmeticHeadgear",
-	"CosmeticGlasses", "ThermalNVGs", "OpticsClose", "OpticsMid", "OpticsLong", "ExplosiveCharges", "Disposable"];
+	"CosmeticGlasses", "ThermalNVGs", "OpticsClose", "OpticsMid", "OpticsLong", "ExplosiveCharges", "Disposable", "MinesAPERS", "MinesAT"]; ///could probably do some smart check for silencers and bipods, but I don't know anything about their configs
 
 
 allCategoriesExceptSpecial = weaponCategories + itemCategories + magazineCategories + explosiveCategories + otherCategories + aggregateCategories;
@@ -344,5 +344,7 @@ medicAnims = ["AinvPknlMstpSnonWnonDnon_medic_1","AinvPknlMstpSnonWnonDnon_medic
 radioSoundsIn = ["a3\dubbing_radio_f\sfx\in2a.ogg", "a3\dubbing_radio_f\sfx\in2b.ogg", "a3\dubbing_radio_f\sfx\in2c.ogg"];
 radioSoundsMid = ["a3\dubbing_radio_f\sfx\radionoise1.ogg", "a3\dubbing_radio_f\sfx\radionoise2.ogg", "a3\dubbing_radio_f\sfx\radionoise3.ogg"];
 radioSoundsOut = ["a3\dubbing_radio_f\sfx\out2a.ogg", "a3\dubbing_radio_f\sfx\out2b.ogg", "a3\dubbing_radio_f\sfx\out2c.ogg"];
+
+#include "varsHardcoded.hpp"
 
 Info("initVarCommon completed");

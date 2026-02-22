@@ -84,7 +84,6 @@ while {true} do
     _side reportRemoteTarget [_laser, 300];
     _laser confirmSensorTarget [_side, true];
     _launcher fireAtTarget [_laser, "weapon_vls_01"];
-    diag_log (currentMagazine _launcher);
     [_reveal, getPosATL _targetObj, _side, "CRUISEMISSILE", _targetObj, 60] spawn A3A_fnc_showInterceptedSupportCall;
 
     _launcher setWeaponReloadingTime [gunner _launcher, currentMuzzle gunner _launcher, 0.001];

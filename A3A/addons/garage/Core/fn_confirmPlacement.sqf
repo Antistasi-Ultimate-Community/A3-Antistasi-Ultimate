@@ -25,7 +25,7 @@
 
     License: APL-ND
 */
-#include "..\script_component.hpp"
+#include "defines.inc"
 #include "\a3\ui_f\hpp\definedikcodes.inc"
 params [
     ["_class", "", [""]]
@@ -85,6 +85,7 @@ HR_GRG_cleanUp = {
     HR_GRG_keyHint = nil;
     HR_GRG_placing = false;
     HR_GRG_accessPoint = objNull;
+    HR_GRG_accessLimit = nil;
 };
 
 //create display vehicle localy
@@ -97,6 +98,9 @@ HR_GRG_dispVehicle allowDamage false;
 HR_GRG_dispVehicle lock true;
 HR_GRG_dispVehicle lockInventory true;
 HR_GRG_dispVehicle setDir HR_GRG_dir;
+
+private _vehicleType = [_class] call HR_GRG_fnc_getCatIndex;
+HR_GRG_placeDistance = [25, 150] select (_vehicleType in (HR_GRG_BLOCKAIRINDEX + HR_GRG_BOATINDEX));
 [HR_GRG_dispVehicle, HR_GRG_curTexture, HR_GRG_curAnims] call BIS_fnc_initVehicle;
 HR_GRG_dispMounts = [];
 {
@@ -264,7 +268,7 @@ HR_GRG_EH_keyDown = findDisplay 46 displayAddEventHandler ["KeyDown", {
 
         if (_key isNotEqualTo DIK_SPACE) exitWith {
             // Tell callback that the vehicle wasn't placed
-            ([objNull] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callBackPlace;
+            ([objNull] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callbackPlace;
         };
 
         //create vehicle
@@ -299,7 +303,7 @@ HR_GRG_EH_keyDown = findDisplay 46 displayAddEventHandler ["KeyDown", {
             } forEach HR_GRG_CP_pylons;
         };
         _veh spawn {sleep 0.5;_this allowDamage true;_this enableSimulation true; { _x allowDamage true; } forEach (attachedObjects _this); };
-        ([_veh] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callBackPlace;
+        ([_veh] + HR_GRG_CP_callBackArgs) call HR_GRG_CP_callbackPlace;
     };
 
     //block key press if valid key
@@ -399,14 +403,14 @@ HR_GRG_EH_EF = addMissionEventHandler ["EachFrame", {
         ,17001
     ] spawn BIS_fnc_dynamicText;
 
-    if (call HR_GRG_CP_closeCnd || EGVAR(core,keys_battleMenu)) exitWith {
+    if ([HR_GRG_placeDistance] call HR_GRG_CP_closeCnd || EGVAR(core,keys_battleMenu)) exitWith {
         [clientOwner, player, "HR_GRG_fnc_releaseAllVehicles"] remoteExecCall ["HR_GRG_fnc_execForGarageUsers", 2];
         call HR_GRG_cleanUp
     };
 
     if (HR_GRG_renderPlacementRays) then { //Debug render
         HR_GRG_dispSquare params ["_adjustment", "_square"];
-        _square params ["_a","_b"];
+        _square params ["_a","_b","_c"];
         drawLine3D [HR_GRG_dispVehicle modelToWorldVisual _adjustment,HR_GRG_dispVehicle modelToWorldVisual (_adjustment vectorAdd [_a,0,0]), [0.9,0,0,1]];
         drawLine3D [HR_GRG_dispVehicle modelToWorldVisual _adjustment,HR_GRG_dispVehicle modelToWorldVisual (_adjustment vectorAdd [0,_b,0]), [0.9,0,0,1]];
         drawLine3D [HR_GRG_dispVehicle modelToWorldVisual _adjustment,HR_GRG_dispVehicle modelToWorldVisual (_adjustment vectorAdd [0,0,_c]), [0.9,0,0,1]];

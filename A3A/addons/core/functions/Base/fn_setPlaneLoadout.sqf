@@ -92,14 +92,14 @@ if ((typeOf _plane) in _cfg) exitWith
         } forEach _loadout;
     } else {
         _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-        Debug(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+        Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
         {
             _plane setPylonLoadout [_forEachIndex + 1, _x, true];
             _plane setVariable ["loadout", _loadout];
         } forEach _loadout;
     };
 
-    [format["Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout], _fnc_scriptName] call A3U_fnc_log;
+    Debug_2("Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout);
 };
 
 if (_type == "CASDIVE") then
@@ -196,7 +196,7 @@ if (_type == "CASDIVE") then
         {
             _loadout = ["PylonMissile_Bomb_GBU12_x1","PylonMissile_1Rnd_BombCluster_01_F"];
             _plane setVariable ["bombRacks", ["weapon_GBU12Launcher","BombCluster_01_F"]];
-            _plane setVariable ["diveParams", [1000, 700, 180, 60, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+            _plane setVariable ["diveParams", [1300, 900, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla UAV
         case "I_UAV_02_dynamicLoadout_F";
@@ -205,7 +205,13 @@ if (_type == "CASDIVE") then
         {
             _loadout = ["PylonMissile_1Rnd_Mk82_F","PylonMissile_1Rnd_BombCluster_03_F"];
             _plane setVariable ["bombRacks", ["Mk82BombLauncher","BombCluster_03_F"]];
-            _plane setVariable ["diveParams", [900, 600, 180, 60, 40, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+            _plane setVariable ["diveParams", [800, 600, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
+        case "B_T_UAV_03_dynamicLoadout_F":
+        {
+            _loadout = ["PylonMissile_1Rnd_Mk82_F","PylonMissile_1Rnd_BombCluster_03_F"];
+            _plane setVariable ["bombRacks", ["Mk82BombLauncher","BombCluster_03_F"]];
+            _plane setVariable ["diveParams", [800, 600, 90, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Aegis F-35
         case "Atlas_B_A_Plane_Fighter_05_ard_F";
@@ -605,108 +611,6 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["weapon_KAB250Launcher","LK_weapon_LS6_500KG","BombCluster_02_F"]];
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
-        //Project RACS
-        case "PRACS_F16CJ":
-        {
-            _loadout = ["","","","","PRACS_BLU1B_X3","PRACS_M117_X1","PRACS_Mk81_MERX6","PRACS_Mk81_snake_X2","PRACS_F16_Bellytank_X1","PRACS_F16_CFT_X1"];
-            _plane setVariable ["mainGun", "PRACS_M61A2_20mm"];
-            _plane setVariable ["bombRacks", ["PRACS_DummyLauncher","PRACS_BLU1B_Launcher","PRACS_M117_Launcher","PRACS_Mk81_Launcher","PRACS_Mk81_Snake_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_F16CJR":
-        {
-            _loadout = ["","","","","PRACS_GBU8_X1","PRACS_Mk82_X6","PRACS_CBU_100_X6","PRACS_Mk84_X1","PRACS_F16_Bellytank_X1","PRACS_F16_CFT_X1"];
-            _plane setVariable ["mainGun", "PRACS_M61A2_20mm"];
-            _plane setVariable ["bombRacks", ["PRACS_DummyLauncher","PRACS_GBU8_launcher","PRACS_CBU_100_Launcher","PRACS_Mk84_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_F16":
-        {
-            _loadout = ["","","","","PRACS_Mk82_X6","PRACS_Mk81_MERX6","PRACS_CBU_100_X2","PRACS_Mk82_snake_X6","PRACS_F16_Bellytank_X1","PRACS_F16_CFT_X1"];
-            _plane setVariable ["mainGun", "PRACS_M61A2_20mm"];
-            _plane setVariable ["bombRacks", ["PRACS_DummyLauncher","PRACS_Mk82_Launcher","PRACS_Mk81_Launcher","PRACS_CBU_100_Launcher","PRACS_Mk82_Snake_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_Mohawk_Navy";
-        case "PRACS_Mohawk":
-        {
-            _loadout = ["PRACS_Mk81_MERX3","PRACS_Mk81_MERX3","PRACS_70mm_AP_X19","PRACS_70mm_FFAR_X19","PRACS_Mk81_MERX6"];
-            _plane setVariable ["mainGun", "PRACS_MR39B_20mm"];
-            _plane setVariable ["bombRacks", ["PRACS_Mk83_X1","PRACS_CBU_100_X1","PRACS_gp1000_X1","PRACS_M117_X1","PRACS_BLU1B_X1","PRACS_BLU1B_X1"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_MirageIII":
-        {
-            _loadout = ["PRACS_Mk81_MERX3","PRACS_Mk81_MERX3","PRACS_70mm_AP_X19","PRACS_70mm_FFAR_X19","PRACS_Mk81_MERX6"];
-            _plane setVariable ["mainGun", "PRACS_DEFA_552_30mm"];
-            _plane setVariable ["bombRacks", ["PRACS_Mk81_Launcher","PRACS_CBU_100_Launcher","PRACS_Mk83_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_MirageV":
-        {
-            _loadout = ["PRACS_M117_X1","PRACS_Mk81_snake_X1","PRACS_GBU10_X1","PRACS_GBU8_X1","PRACS_Mk82_snake_X6","PRACS_Mk81_MERX6","PRACS_CBU_100_X1","PRACS_CBU_100_X1","PRACS_Mk82_X6"];
-            _plane setVariable ["mainGun", "PRACS_DEFA_552_30mm"];
-            _plane setVariable ["bombRacks", ["PRACS_Mk82_Launcher","PRACS_M117_Launcher","PRACS_Mk81_Snake_Launcher","PRACS_GBU10_Launcher","PRACS_GBU8_launcher","PRACS_Mk82_Snake_Launcher","PRACS_Mk81_Launcher","PRACS_CBU_100_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_A4M_Navy";
-        case "PRACS_A4M_Marine";
-        case "PRACS_A4M":
-        {
-            _loadout = ["PRACS_CBU_100_X2","PRACS_CBU_100_X2","PRACS_CBU_100_X2","PRACS_CBU_100_X1","PRACS_Mk81_MERX6"];
-            _plane setVariable ["mainGun", "PRACS_DEFA_552_30mm"];
-            _plane setVariable ["bombRacks", ["PRACS_CBU_100_Launcher","PRACS_Mk81_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_P3C":
-        {
-            _loadout = ["PRACS_Mk84_X1","PRACS_Mk84_X1","PRACS_M117_X1","PRACS_M117_X1","PRACS_Mk84_X1","PRACS_Mk84_X1","PRACS_Mk84_X1","PRACS_Mk84_X1"];
-            _plane setVariable ["bombRacks", ["PRACS_Mk84_Launcher","PRACS_M117_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        ///RACS (SLA)
-        case "PRACS_SLA_MiG21":
-        {
-            _loadout = ["","","PRACS_FAB_500_M62_X1","PRACS_ZB500_X1"];
-            _plane setVariable ["mainGun", "PRACS_Gsh_6_23"];
-            _plane setVariable ["bombRacks", ["PRACS_FAB_500_M62_Launcher","PRACS_ZB500_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_SLA_MiG23":
-        {
-            _loadout = ["","","PRACS_FAB_1500_M54_X1","PRACS_FAB_1500_M54_X1"];
-            _plane setVariable ["mainGun", "PRACS_Gsh_6_23"];
-            _plane setVariable ["bombRacks", ["PRACS_FAB_1500_M54_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_SLA_MiG27":
-        {
-            _loadout = ["PRACS_KAB1500kr_X1","PRACS_FAB_500_M62_X1","PRACS_RBK_500_SPBE_X1","PRACS_RBK_250_PTAB_X1","PRACS_FAB_250_M62_X1","PRACS_RBK_500_375_X1"];
-            _plane setVariable ["mainGun", "PRACS_Gsh_6_30"];
-            _plane setVariable ["bombRacks", ["PRACS_FAB_250_M62_Launcher","PRACS_KAB1500kr_Launcher","PRACS_FAB_500_M62_Launcher","PRACS_RBK_500_SPBE_Launcher","PRACS_RBK_250_PTAB_Launcher","PRACS_RBK_500_375_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_SLA_MIG28":
-        {
-            _loadout = ["","","PRACS_RBK_500_375_X1","PRACS_FAB_500_M54_X1","PRACS_RBK_500_375_X1","PRACS_RBK_500_ZAB_X1"];
-            _plane setVariable ["mainGun", "PRACS_NR23_23mm"];
-            _plane setVariable ["bombRacks", ["PRACS_RBK_500_375_Launcher","PRACS_FAB_500_M54_Launcher","PRACS_RBK_500_ZAB_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_SLA_SU22":
-        {
-            _loadout = ["","","PRACS_KAB1500kr_X1","PRACS_KAB1500kr_X1","PRACS_FAB_100_X6","PRACS_FAB_100_X6","PRACS_FAB_250_M54_X1","PRACS_FAB_250_M54_X1","PRACS_FAB_250_M54_X1","PRACS_FAB_250_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1"];
-            _plane setVariable ["mainGun", "PRACS_NR30_30mm"];
-            _plane setVariable ["bombRacks", ["PRACS_KAB1500kr_Launcher","PRACS_FAB_100_Launcher","PRACS_FAB_250_M54_Launcher","PRACS_FAB_500_M54_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
-        case "PRACS_SLA_Su25":
-        {
-            _loadout = ["","","PRACS_ZB500_X1","PRACS_RBK_500_SPBE_X1","PRACS_RBK_500_375_X1","PRACS_RBK_250_PTAB_X1","PRACS_FAB_500_M62_X1","PRACS_FAB_500_M62_X1","PRACS_FAB_500_M62_X1","PRACS_FAB_500_M62_X1"];
-            _plane setVariable ["mainGun", "PRACS_GSH_30_2_30mm"];
-            _plane setVariable ["bombRacks", ["PRACS_ZB500_Launcher","PRACS_RBK_500_SPBE_Launcher","PRACS_RBK_500_375_Launcher","PRACS_RBK_250_PTAB_Launcher","PRACS_FAB_500_M62_Launcher"]];
-            _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
-        };
         default
         {
             Error_1("Plane type %1 currently not supported for CASDIVE, please add the case!", typeOf _plane);
@@ -830,8 +734,8 @@ if (_type == "CAS") then
         //Vanilla JETS UAV
         case "B_UAV_05_F":
         {
-            _loadout = ["PylonMissile_Missile_HARM_INT_x1","PylonMissile_Missile_AGM_02_x2"];
-            _plane setVariable ["missileLauncher", ["weapon_HARMLauncher","weapon_AGM_65Launcher"]];
+            _loadout = ["PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles"];
+            _plane setVariable ["rocketLauncher", ["missiles_DAR"]];
             _plane setVariable ["diveParams", [1000, 600, 180, 55, 20, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla UAV
@@ -839,9 +743,8 @@ if (_type == "CAS") then
         case "O_UAV_02_dynamicLoadout_F";
         case "B_UAV_02_dynamicLoadout_F":
         {
-            _loadout = ["PylonRack_12Rnd_missiles","PylonRack_3Rnd_LG_scalpel"];
+            _loadout = ["PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles"];
             _plane setVariable ["rocketLauncher", ["missiles_DAR"]];
-            _plane setVariable ["missileLauncher", ["missiles_SCALPEL"]];
             _plane setVariable ["diveParams", [600, 400, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla APEX UAV
@@ -849,6 +752,12 @@ if (_type == "CAS") then
         {
             _loadout = ["4Rnd_LG_Jian"];
             _plane setVariable ["missileLauncher", ["missiles_Jian"]];
+            _plane setVariable ["diveParams", [600, 400, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
+        case "B_T_UAV_03_dynamicLoadout_F":
+        {
+            _loadout = ["PylonRack_12Rnd_missiles","PylonRack_12Rnd_missiles"];
+            _plane setVariable ["rocketLauncher", ["missiles_DAR"]];
             _plane setVariable ["diveParams", [600, 400, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Aegis experimental CAS plane without rocket launchers, let's see how this will play out
@@ -1158,7 +1067,7 @@ if (_type == "CAS") then
             _plane setVariable ["missileLauncher", ["3as_ARC_Missile_AGM"]];
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
-        case "3as_Tri_Fighter_dynamicLoadout":
+        case "3AS_Tri_Fighter_DynamicLoadout":
         {
             _loadout = ["3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP","3AS_PylonRack_Vulture_12Rnd_Rocket_HEAP"];
             _plane setVariable ["mainGun", "3AS_Vulture_Cannon"];
@@ -1473,14 +1382,12 @@ if (_type == "AA") then
             _loadout = ["PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F","PylonRack_1Rnd_Missile_AA_03_F"];
             _plane setVariable ["mainGun", "gatling_30mm_VTOL_02"];
             _plane setVariable ["missileLauncher", ["Missile_AA_03_Plane_CAS_02_F"]];
-            _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla JETS UAV
         case "B_UAV_05_F":
         {
             _loadout = ["PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
             _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
-            _plane setVariable ["diveParams", [1000, 600, 180, 55, 20, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla UAV
         case "I_UAV_02_dynamicLoadout_F";
@@ -1489,7 +1396,11 @@ if (_type == "AA") then
         {
             _loadout = ["PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
             _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
-            _plane setVariable ["diveParams", [600, 400, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
+        case "B_T_UAV_03_dynamicLoadout_F":
+        {
+            _loadout = ["PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
+            _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
         };
 	    ///Aegis/Atlas
         case "Atlas_B_A_Plane_Fighter_05_Stealth_F";
@@ -1659,6 +1570,11 @@ if (_type == "AA") then
         {
             _loadout = ["LIB_1Rnd_SC250"];
         };
+		case "SPE_FW190F8_noinsignia";
+		case "SPE_FW190F8": {
+            _loadout = ["SPE_250Rnd_MG151","SPE_250Rnd_MG151","SPE_400Rnd_MG131","SPE_400Rnd_MG131","","","","",""];
+            _plane setVariable ["mainGun", "SPE_2xMG151"];
+        };
 	    // Clone Wars Planes (3AS)
         case "3AS_ARC_170_Red";
 		case "3AS_ARC_170_Yellow";
@@ -1670,7 +1586,7 @@ if (_type == "AA") then
             _plane setVariable ["mainGun", "3as_ARC_Light_Canon"];
             _plane setVariable ["missileLauncher", ["weapon_BIM9xLauncher","weapon_AMRAAMLauncher"]];
         };
-        case "3as_Tri_Fighter_dynamicLoadout":
+        case "3AS_Tri_Fighter_DynamicLoadout":
         {
             _loadout = ["3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA","3AS_PylonRack_Vulture_1Rnd_Missile_AA"];
             _plane setVariable ["mainGun", "3AS_Vulture_Cannon"];
@@ -1892,11 +1808,11 @@ if !(_loadout isEqualTo []) then
     } forEach _loadout;
 } else {
     _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-    Debug(format["Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane]);
+    Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
     {
         _plane setPylonLoadout [_forEachIndex + 1, _x, true];
         _plane setVariable ["loadout", _loadout];
     } forEach _loadout;
 };
 
-[format["Given plane class %1 a loadout of %2", typeOf _plane, _loadout], _fnc_scriptName] call A3U_fnc_log;
+Debug_2("Given plane class %1 a loadout of %2", typeOf _plane, _loadout);

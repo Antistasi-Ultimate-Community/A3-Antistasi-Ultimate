@@ -1,27 +1,68 @@
 ## What type of PR is this?
-1. [ ] Bug
-2. [ ] Change
-3. [ ] Enhancement
-4. [ ] Miscellaneous
+- [ ] Bug
+- [ ] Change
+- [ ] Feature
+- [ ] Miscellaneous
 
-### What have you changed and why?
-Information:
+<details><summary><i><b>
+Sub-categories:
+</b></i></summary>
 
-### Please specify which Issue this PR Resolves (If Applicable).
-"This PR closes #XXXX!"
+- [ ] Template
+- [ ] Map
+- [ ] Config
+- [ ] Function
+- [ ] Localization
 
-### Please verify the following.
+</details>
 
-1. [ ] Have you loaded the mission in LAN host?
-2. [ ] Have you loaded the mission on a dedicated server?
+## What have you changed, and why?
 
-### Is further testing or are further changes required?
+**Information:**
 
-1. [ ] No
-2. [ ] Yes (Please provide further detail below.)
+> ...
 
-### How can the changes be tested?
-Steps:
+**How can your changes be tested, or reproduced?**
 
-********************************************************
+> ...
+
+**Does this PR include changes not authored by you?**
+
+- [ ] No
+- [ ] Yes (See below)
+
+<details><summary><i><b>
+Further info:
+</b></i></summary><br>
+
+- [ ] I confirm that I, and by extension this repository, can legally use these third-party changes. (Provide links or author attribution.)
+
+> ...
+
+</details>
+
+## Please verify the following (If possible).
+
+`*` - Mandatory
+
+- [ ] These changes are my own, or I have written permission to use them. `*`
+- [ ] These changes are ready for review, or will be marked as a draft. `*`
+- [ ] I have loaded the mission in LAN host.
+- [ ] I have loaded the mission on a dedicated server.
+
+Is further work needed?
+
+- [ ] Needs further testing.
+- [ ] Needs further changes.
+- [ ] Needs to be converted to a draft.
+
+## Please specify which Issue this PR Resolves (If Applicable).
+This PR closes #XYZ.
+
+<hr><details><summary><i><b>
 Notes:
+</b></i></summary><br>
+
+> ...
+
+</details>

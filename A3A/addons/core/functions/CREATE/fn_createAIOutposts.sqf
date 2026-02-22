@@ -90,7 +90,7 @@ if (_patrol) then {
 	[_markerX, _positionX, _sideX, _faction] call SCRT_fnc_location_createPatrols;
 };
 
-if (_frontierX and {_markerX in outposts}) then {
+if (_frontierX and {_markerX in outposts} && {!A3U_disableMortars}) then {
 	_typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
 	_typeVehX = selectRandom (_faction get "staticMortars");
 	_spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
@@ -342,6 +342,11 @@ for "_i" from 0 to (count _array - 1) do {
 	};
 };
 ["locationSpawned", [_markerX, "Outpost", true]] call EFUNC(Events,triggerEvent);
+
+{
+	if (_x isKindOf "Static" || _x isKindOf "StaticWeapon") then {continue};
+	[_x, true] call A3U_fnc_setLock;
+} forEach _vehiclesX;
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 

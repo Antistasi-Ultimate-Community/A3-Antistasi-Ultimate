@@ -3,6 +3,8 @@ FIX_LINE_NUMBERS()
 params ["_key"];
 if !(isClass (missionConfigFile/"A3A")) exitWith {}; //not a3a mission
 
+private _hadDialog = dialog;
+
 switch (_key) do {
     case QGVAR(customHintDismiss): {
         [] call A3A_fnc_customHintDismiss;
@@ -14,6 +16,8 @@ switch (_key) do {
     case QGVAR(battleMenu): {
         if (player getVariable ["incapacitated",false]) exitWith {};
         if (player getVariable ["owner",player] != player) exitWith {};
+        if (clientOwner in (server getVariable ["jna_playersInArsenal",[]])) exitWith {};
+        if (!isNull curatorCamera) exitWith {};
         GVAR(keys_battleMenu) = true; //used to block certain actions when menu is open
     #ifdef UseDoomGUI
         ERROR("Disabled due to UseDoomGUI Switch.")
@@ -78,6 +82,8 @@ switch (_key) do {
                 closeDialog 0;closeDialog 0;
             };
         };
+        if (clientOwner in (server getVariable ["jna_playersInArsenal",[]])) exitWith {};
+        if (!isNull curatorCamera) exitWith {};
 
         [] call SCRT_fnc_ui_toggleCommanderMenu;
     };
@@ -86,3 +92,18 @@ switch (_key) do {
         Error_1("Key action not registered: %1", _key)
     };
 };
+
+if (!_hadDialog) then {
+    // Have to spawn the mouse cursor center function because arty menu is spawned, too
+    [
+        {
+            if (dialog) then {
+                setMousePosition [0.5, 0.5];
+            };
+        },
+        [],
+        0.05
+    ] call CBA_fnc_waitAndExecute;
+};
+
+nil;

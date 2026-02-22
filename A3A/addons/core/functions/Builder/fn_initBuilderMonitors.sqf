@@ -10,8 +10,13 @@ Arguments: None
 FIX_LINE_NUMBERS()
 
 Info("initBuilderMonitors started");
-if !(player call A3A_fnc_isEngineer) exitWith {};
-Info("initBuilderMonitors started2");
+
+// delay execution since `A3A_fnc_unitTraits` is also spawned before this spawn
+// on busy servers, player might not be recognized as engineer yet
+uiSleep 10;
+
+if !(player call A3A_fnc_isEngineer) exitWith { Info("initBuilderMonitors: Player is not an engineer, exiting"); };
+Info("initBuilderMonitors starting handlers");
 
 // EH to draw icons for nearby under-construction objects
 A3A_buildDrawIconsEH = addMissionEventHandler ["Draw3D", {
@@ -37,14 +42,14 @@ while { true } do {
     if (isNil { cursorObject getVariable "A3A_building" }) then { sleep 1; continue };
     if (!isNil { cursorObject getVariable "A3A_build_removeAction" }) then { sleep 1; continue };
 
-    diag_log format ["Adding remove action for item %1", cursorObject];
+    Debug_1("Adding remove action for item %1", cursorObject);
     cursorObject setVariable ["A3A_build_removeAction", true];
     [
         cursorObject,
         "Destroy",
         "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
         "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-        "true",                                         // was player getUnitTrait 'engineer'
+        QUOTE((isNull objectParent player) && { player getVariable[ARR_2(QQGVAR(isTeardownActive),false)] }),
         "[player] call A3A_fnc_canFight",
         {},
         {},
@@ -55,6 +60,7 @@ while { true } do {
         },
         {},
         [],
-        10
+        10,
+        -100
     ] call BIS_fnc_holdActionAdd;
 };

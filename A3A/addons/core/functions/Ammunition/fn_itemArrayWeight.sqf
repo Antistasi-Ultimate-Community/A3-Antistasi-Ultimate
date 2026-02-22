@@ -31,11 +31,11 @@ if (_class in allWeapons) then {
 	if (isNil "_magcfg") then { _magcfg = (compatibleMagazines _class) # 0 call A3A_fnc_itemConfig};
 	private _ammocfg = getText (_magcfg >> "ammo") call A3A_fnc_itemConfig;
 	private _firemode = getArray (_config >> "modes") # 0; // primary firemode ("SINGLE", "FULLAUTO", etc)
-	private _modecfg = [_config >> _firemode, _config] select (_firemode == "this");
+	private _modecfg = [_config >> _firemode, _config] select (isNil "_fireMode" || {_firemode == "this"});
 
 	private _weight = (_config call A3A_fnc_itemConfigMass); // Mass / Weight
 	private _accuracy = getNumber (_modecfg >> "dispersion"); // Dispersion / Accuracy
-	private _reloadtime = getNumber (_modecfg >> "reloadTime");
+	private _reloadTime = getNumber (_modecfg >> "reloadTime");
 	private _rof = if (_reloadTime == 0) then {0} else {1 / _reloadTime};
 	private _magcap = getNumber (_magcfg >> "count"); // Mag Capacity
 	private _hit = getNumber ( _ammocfg >> "hit");
@@ -68,7 +68,7 @@ if (_class in allWeapons) then {
 		case "MissileLaunchersAT";
 		case "MissileLaunchersAA";
 		case "SecondaryWeaponsCatchAll" : { _arrayWeight = 1 }; // placeholder catchall for launchers
-		case "Handguns" : { _arrayWeight = round (_rof + _magcap + (_impact * 20000) - (_weight * 2.5)) }; // Handguns. Array weight favors weapons with high RoF, Mag capacity, and impact force while heavily discriminating against weight, since it's a backup weapon.
+		case "Handguns" : { _arrayWeight = round (_rof + _magcap + (_impact / 2) - (_weight * 2.5)) }; // Handguns. Array weight favors weapons with high RoF, Mag capacity, and impact force while heavily discriminating against weight, since it's a backup weapon.
 		case "ArmoredVests";
 		case "CivilianVests";
 		case "ArmoredHeadgear";

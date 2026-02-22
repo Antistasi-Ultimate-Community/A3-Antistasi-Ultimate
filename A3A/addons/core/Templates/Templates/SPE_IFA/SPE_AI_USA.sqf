@@ -21,7 +21,13 @@
 
 ["vehiclesBasic", ["SPE_US_G503_MB_Open"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["SPE_US_G503_MB", "SPE_US_G503_MB_Armoured"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["SPE_US_G503_MB_M1919_Armoured", "SPE_US_G503_MB_M2_Armoured", "SPE_US_G503_MB_M2_PATROL", "SPE_US_G503_MB_M1919_PATROL"]] call _fnc_saveToTemplate;
+private _vehiclesLightArmed = ["SPE_US_G503_MB_M1919_Armoured", "SPE_US_G503_MB_M2_Armoured", "SPE_US_G503_MB_M2_PATROL", "SPE_US_G503_MB_M1919_PATROL"];
+
+if (isClass (configFile >> "CfgPatches" >> "SPEV_Core")) then {
+    _vehiclesLightArmed append ["SPEV_T17E1"];
+};
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+
 ["vehiclesTrucks", ["SPE_US_M3_Halftrack_Unarmed", "SPE_CCKW_353_Open", "SPE_CCKW_353"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["SPE_CCKW_353_Open"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["SPE_US_M3_Halftrack_Ammo", "SPE_CCKW_353_Ammo"]] call _fnc_saveToTemplate;
@@ -52,16 +58,29 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 ["vehiclesTransportBoats", _vehiclesTransportBoats] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _vehiclesGunBoats] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["SPE_P47"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["SPE_P47"]] call _fnc_saveToTemplate;
-
+private _vehiclesPlanesCAS = ["SPE_P47"];
+private _vehiclesPlanesLargeCAS = [];
+private _vehiclesPlanesAA = ["SPE_P47"];
 private _vehiclesPlanesTransport = [];
+
+if (isClass (configFile >> "CfgPatches" >> "sab_flyinglegends")) then {
+    _vehiclesPlanesCAS append ["sab_fl_p51d","sab_fl_p51b","sab_fl_f4f","sab_fl_sbd","sab_fl_f4u","sab_fl_f4u"];
+	_vehiclesPlanesAA append ["sab_fl_p51d","sab_fl_p51b"];
+};
+if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
+    _vehiclesPlanesCAS append ["sab_sw_tbf","sab_sw_p40"];
+	_vehiclesPlanesLargeCAS append ["sab_sw_a26"];
+	_vehiclesPlanesAA append ["sab_sw_p40","sab_sw_p38"];
+};
 if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
     _vehiclesPlanesTransport append ["SPEX_C47_Skytrain"];
 };
 if (isClass (configFile >> "CfgPatches" >> "JK_US_Air_F_DC3")) then {
     _vehiclesPlanesTransport append ["JK_B_C47_F"];
 };
+["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", []] call _fnc_saveToTemplate;
@@ -223,7 +242,7 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["uniforms", ["U_SPE_US_AB_Uniform_M42_padded_gas", "U_SPE_US_AB_Uniform_M42_padded_gas_glove", "U_SPE_US_AB_Uniform_M42_padded_gas_knife", "U_SPE_US_AB_Uniform_M42_padded_gas_506", "", ""]];
+_sfLoadoutData set ["uniforms", ["U_SPE_US_AB_Uniform_M42_padded_gas", "U_SPE_US_AB_Uniform_M42_padded_gas_glove", "U_SPE_US_AB_Uniform_M42_padded_gas_knife", "U_SPE_US_AB_Uniform_M42_padded_gas_506"]];
 _sfLoadoutData set ["vests", ["V_SPE_US_Vest_AB_padded_1","V_SPE_US_Vest_AB_padded_thompson","V_SPE_US_Vest_AB_padded_mk2"]];
 _sfLoadoutData set ["glVests", ["V_SPE_US_Vest_AB_padded_eng"]];
 _sfLoadoutData set ["Hvests", ["V_SPE_US_Vest_AB_padded_M1919"]];
@@ -231,7 +250,7 @@ _sfLoadoutData set ["backpacks", ["B_SPE_US_M36","B_SPE_US_M36_Bandoleer","B_SPE
 _sfLoadoutData set ["helmets", ["H_SPE_US_AB_Helmet","H_SPE_US_AB_Helmet_Net","H_SPE_US_AB_Helmet_polar","H_SPE_US_AB_Helmet_os","H_SPE_US_AB_Helmet_Scrim","H_SPE_US_AB_Helmet_Net_os"]];
 _sfLoadoutData set ["sniHats", ["H_SPE_US_AB_Helmet","H_SPE_US_AB_Helmet_Net","H_SPE_US_AB_Helmet_polar","H_SPE_US_AB_Helmet_os","H_SPE_US_AB_Helmet_Scrim","H_SPE_US_AB_Helmet_Net_os"]];
 _sfLoadoutData set ["slHat", ["H_SPE_US_AB_Helmet_CO", "H_SPE_US_AB_Helmet_CO_ns"]];
-_sfLoadoutData set ["binoculars", ["LIB_Binocular_US"]];
+_sfLoadoutData set ["binoculars", ["SPE_Binocular_US"]];
 
 //SF Weapons
 _sfLoadoutData set ["rifles", [

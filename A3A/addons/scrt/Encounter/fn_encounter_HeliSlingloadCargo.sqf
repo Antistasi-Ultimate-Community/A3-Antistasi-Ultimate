@@ -1,3 +1,4 @@
+#include "Constants.inc"
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -5,7 +6,7 @@ Info("Helicopter slingload cargo Event Init.");
 
 private _vehicles = [];
 private _groups = [];
-private _difficult = random 10 < tierWar;
+private _difficult = random 10 < tierWar; ///
 
 private _player = selectRandom (call SCRT_fnc_misc_getRebelPlayers);
 
@@ -23,13 +24,22 @@ private _potentialOutposts = (outposts + milbases + airportsX + resourcesX + fac
     sidesX getVariable [_x, sideUnknown] != teamPlayer && {(getMarkerPos _x) distance2D _player < distanceSPWN*5}
 };
 
-if (_potentialOutposts isEqualTo []) exitWith {
-    Info("No outposts in proximity, aborting Heli slingload cargo Event.");
+private _potentialControl = ([controlsX, _player, true] call A3A_fnc_findIfNearAndHostile) select {!isOnRoad (getMarkerPos _x)};
+
+if ((_potentialOutposts isEqualTo []) && (_potentialControl isEqualTo [])) exitWith {
+    Info("No outposts or control in proximity, aborting Heli slingload cargo Event.");
     isEventInProgress = false;
     publicVariableServer "isEventInProgress";
 };
 
-private _outpost = selectRandom _potentialOutposts;
+private _outpost = locationNull;
+
+if ((random 100 <= 40) && !(_potentialControl isEqualTo [])) then {
+ 	_outpost = selectRandom _potentialControl;
+} else {
+	_outpost = selectRandom _potentialOutposts;
+};
+
 private _side = sidesX getVariable [_outpost, sideUnknown];
 private _faction = Faction(_side);
 private _outpostPosition = getMarkerPos _outpost;
@@ -43,14 +53,6 @@ if (_potentialspawnPosition isEqualTo []) exitWith {
     publicVariableServer "isEventInProgress";
 };
 private _spawnPosition = selectRandom _potentialspawnPosition;
-/* if (_spawnPosition == _outpost) then {
-	while {true} do {
-		_potentialspawnPosition = (outposts + milbases + airportsX + resourcesX + factories) select {
-    	sidesX getVariable [_x, sideUnknown] != teamPlayer && _x != _outpost && sidesX getVariable [_x, sideUnknown] == _side  &&  {(getMarkerPos _x) distance2D _player < distanceSPWN}};
-		_spawnPosition = selectRandom _potentialspawnPosition;
-		if (_spawnPosition != _outpost) exitwith{};
-	};
-}; */
 
 private _actualspawnPosition = getMarkerPos _spawnPosition;
 
@@ -72,9 +74,8 @@ private _heliVehicleData = [_actualspawnPosition, 90, _HeliClass, _side] call A3
 private _heliVehicle = _heliVehicleData select 0;
 private _lootCrateTest = [_ammoBoxType, _actualspawnPosition, 20, 5, true] call A3A_fnc_safeVehicleSpawn;
 if !(_heliVehicle canSlingLoad _lootCrateTest) exitwith {
-    Error("Your heli can't do shit, aborting.");
-    isEventInProgress = false;
-    publicVariableServer "isEventInProgress";
+    Info("Your heli can't do shit, rerolling.");
+    [VEH_SLINGLOADTRANSPORT] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 deleteVehicle _lootCrateTest;
 ///new
@@ -87,9 +88,6 @@ private _lootCrate = objNull;
 private _attempts = 15;
 
 if (_HeliClass == "O_Heli_Transport_04_F") then {
-	_HeliClass = "O_Heli_Transport_04_F";
-	/* _lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
-	(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (selectRandom _csatPods)); */
 	while {_attempts != 0} do {
 		private _csatPods = ["Land_Pod_Heli_Transport_04_covered_F" , "Land_Pod_Heli_Transport_04_bench_F" , "Land_Pod_Heli_Transport_04_medevac_F" , "Land_Pod_Heli_Transport_04_repair_F", "Land_Pod_Heli_Transport_04_fuel_F" , "Land_Pod_Heli_Transport_04_ammo_F" , "Land_Pod_Heli_Transport_04_box_F"];
 		_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + 
@@ -101,7 +99,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 		};
 		deleteVehicle _lootCrate;
 		_attempts = _attempts - 1;
-		sleep 0.05;
+		sleep 0.08;
 	};
 	deleteVehicle _lootCrate;
 	{
@@ -149,9 +147,6 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 		_lootCrate addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 	};
 } else {
-	//if (_HeliClass typeOf "Heli_Transport_03_base_F") then {
-	/* _lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + (_faction get "vehiclesAA") + 
-	(_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (selectRandom _regPods)); ///light armored vehicles + light tanks + pods */
 	while {_attempts != 0 } do {
 		private _regPods = ["B_Slingload_01_Cargo_F", "B_Slingload_01_Ammo_F", "B_Slingload_01_Medevac_F", "B_Slingload_01_Repair_F", "B_Slingload_01_Fuel_F"];
 		_lootcrateType = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesLightArmed") + (_faction get "vehiclesAirborne") + 
@@ -244,16 +239,46 @@ _wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) 
 
 _wp2 setWaypointBehaviour "CARELESS";
 sleep 4;
+
+private _InfGroup = grpNull;
+
+if (_outpost in _potentialControl) then {
+	_SlingloadPositionActuall = [_outpostPosition, 40, 100, 10, 0, 5, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+	_InfGroup = [_SlingloadPositionActuall, _side, _specOpsArray] call A3A_fnc_spawnGroup;
+	{[_x] call A3A_fnc_NATOinit} forEach units _InfGroup;
+	_InfGroup setBehaviourStrong "SAFE";
+	private _wp = _InfGroup addWaypoint [_outpostPosition, 50];
+	_wp setWaypointType "SAD";
+	/* if (_difficult) then {
+		_UAVtype = selectRandom (_faction get "uavsPortable");
+		_uav = createVehicle [_UAVtype, _SlingloadPositionActuall, [], 0, "FLY"];
+		[_side, _uav] call A3A_fnc_createVehicleCrew;
+		_vehicles pushBack _uav;
+		_groupUAV = group (crew _uav select 1);
+		{[_x] joinSilent _InfGroup} forEach units _groupUAV;
+	}; */ //something is 100% wrong with portable uavs on redfor side
+	[_InfGroup, "Patrol_Attack", 0, 50, 100, true, _outpostPosition, true] call A3A_fnc_patrolLoop;
+};
+
 //private _timeOut = time + 1800;
 waitUntil { sleep 2; getSlingLoad _heliVehicle  == objNull || getPos _lootCrate select 2 < 3};
 private _smokeGrenade = selectRandom allSmokeGrenades; //notife player where sweet loot has landed
 private _smoke = _smokeGrenade createVehicle (getPosATL _lootCrate);
 _smoke attachTo [_lootCrate, [0,0,0] ];
+
+private _chemLight = "Chemlight_green"; //notife player where box is (during night)
+private _light = _chemLight createVehicle (getPosATL _lootCrate);
+_light attachTo [_lootCrate, [0,0,0]];
 sleep 5;
 detach _smoke;
+detach _light;
+
 _lootCrate allowDamage true;
 {[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
 sleep 360;
+if (_outpost in _potentialControl) then {
+	_groups pushBack _InfGroup;
+};
 if (_lootCrate distance2D _wpDropPos < 50) then {
 	_vehicles pushBack _lootCrate;
 	{[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;

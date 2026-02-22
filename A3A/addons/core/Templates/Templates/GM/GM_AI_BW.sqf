@@ -114,6 +114,8 @@
     "gm_WhiteHead_19_camo_01","gm_WhiteHead_20_camo_01","gm_WhiteHead_21_camo_01"
 ]] call _fnc_saveToTemplate;
 
+"GermanMen" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
@@ -848,7 +850,7 @@ private _sniperTemplate = {
     ["uniforms"] call _fnc_setUniform;
 
 
-    [["sniperRifles", "marksmanRifles"] call _fnc_fallback] call _fnc_setPrimary;;
+    [["sniperRifles", "marksmanRifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 7] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

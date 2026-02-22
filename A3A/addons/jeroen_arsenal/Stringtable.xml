@@ -45,6 +45,8 @@
             <Key ID="STR_JNA_SORT_MOD">
                 <Original>Sort by mod/dlc</Original>
                 <Russian>Сортировка по моду/дополнению</Russian>
+                <Chinesesimp>按模组/DLC排序</Chinesesimp>
+                <Korean>모드/DLC 별로 정렬</Korean>
             </Key>
             <Key ID="STR_JNA_SORT_DEFAULT">
                 <Original>Default</Original>
@@ -173,6 +175,12 @@
                 <Chinesesimp>将载具库存内物品移动到军火库</Chinesesimp>
                 <Korean>차량 소지품을 아스널로 아이템 옮기기</Korean>
                 <French>Déplacer des objets de l'inventaire des véhicules vers l'arsenal</French>
+            </Key>
+            <Key ID="STR_JNA_OVERRIDE">
+                <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave.</Original>
+            </Key>
+            <Key ID="STR_JNA_OVERRIDE_CARGO">
+                <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave. Note that saving a cargo container (Uniform, Vest, or Backpack) also saves all of the contents of that container.</Original>
             </Key>
         </Container>
     </Package>

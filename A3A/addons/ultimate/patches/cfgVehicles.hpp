@@ -5,9 +5,9 @@ class Item_TFAR_SCR536: Item_Base_F
     displayName = "SCR-536";
     author = AUTHOR;
     vehicleClass = "Items";
-    class TransportItems
+    class TransportItems 
     {
-        class _xx_TFAR_SCR536
+        class _xx_TFAR_SCR536 
         {
             name="TFAR_SCR536";
             count=1;
@@ -15,7 +15,7 @@ class Item_TFAR_SCR536: Item_Base_F
     };
 };
 
-class Prop_TFAR_SCR536 : Thing
+class Prop_TFAR_SCR536: Thing 
 {
     destrType = "DestructNo";
     scope = 2;

@@ -36,13 +36,6 @@ switch (gameMode) do {
 			_aggrString = "";
 		};
 	};
-	case 4: {
-		if (!areInvadersDefeated) then {
-			_aggrString = format [localize "STR_info_bar_aggr", A3A_faction_inv get "name", [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
-		} else {
-			_aggrString = "";
-		};
-	};
 	default {
 		switch (true) do {
 			case (!areOccupantsDefeated && {!areInvadersDefeated}): {
@@ -71,19 +64,19 @@ if (limitHR != 0) then {
 
 _aggrString = _aggrString + _rivalsActivityTxt;
 
-if (isNil "theBoss") exitWith {
+if (isNil "theBoss" || {theBoss isEqualTo objNull}) exitWith {
 	_textX = format [
-		"<t size='0.67' shadow='2'>" + (localize "STR_info_bar_final_string_2"), 
-		_rank, 
+		"<t size='0.67' shadow='2'>" + (localize "STR_info_bar_final_string_1"), 
 		(server getVariable "hr") toFixed 0, 
-		A3A_faction_reb get "name", 
-		(server getVariable "resourcesFIA") toFixed 0, 
+		_rank, 
+		"None",
 		(_player getVariable "moneyX") toFixed 0, 
 		_aggrString, 
 		tierWar, 
 		_ucovertxt, 
 		_rallytxt, 
-		A3A_faction_civ get "currencySymbol"
+		A3A_faction_civ get "currencySymbol",
+		_hrMax
 	];
 
 	_setText ctrlSetStructuredText (parseText format ["%1", _textX]);

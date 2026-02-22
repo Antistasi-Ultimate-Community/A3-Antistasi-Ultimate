@@ -37,12 +37,13 @@ if (isNil "specialVarLoads") then {
         "supportPoints",
         "constructionsX",
         "watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "hmgpostsFIA",
-        "traderDiscount", "isTraderQuestCompleted","traderPosition",
+        "traderDiscount", "isTraderQuestAssigned", "isTraderQuestCompleted","traderPosition",
         "areOccupantsDefeated", "areInvadersDefeated",
         "destroyedMilAdmins",
         "rebelLoadouts", "randomizeRebelLoadoutUniforms",
         "areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
-        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones"
+        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones",
+        "occupantsRadioKeys", "invaderRadioKeys"
     ] createHashMapFromArray [];
 };
 
@@ -265,7 +266,7 @@ if (_varName in specialVarLoads) then {
                 _posAnt = _varvalue select _i;
                 _mrk = [mrkAntennas, _posAnt] call BIS_fnc_nearestPosition;
                 _antenna = [antennas,_mrk] call BIS_fnc_nearestPosition;
-                {if ([antennas,_x] call BIS_fnc_nearestPosition == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
+                {if (([antennas,_x] call BIS_fnc_nearestPosition) == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
                 antennas = antennas - [_antenna];
                 antennasDead pushBack _antenna;
                 _antenna removeAllEventHandlers "Killed";
@@ -367,9 +368,23 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'staticsX': {
-            for "_i" from 0 to (count _varvalue) - 1 do {
-                (_varValue#_i) params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+            private _list = +_varValue;
+            private _index = count _list;
+
+            // Retain original order but prioritize after `restorePriority` property
+            _list = _list apply {
+                _x params["_class"];
+                _index = _index - 1;
+                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), _index, _x];
+            };
+
+            // Sort descending; first index wins unless equal, then it's the original order
+            _list sort false;
+            _list apply {
+                _x params["","","_data"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
+                Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save
@@ -382,17 +397,38 @@ if (_varName in specialVarLoads) then {
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
-                    if (_veh isKindOf "StaticWeapon") exitWith { staticsToSave pushBack _veh };
-                    if (_veh isKindOf "Building") exitWith {
-                        _veh setVariable ["A3A_building", true, true];
-                        A3A_buildingsToSave pushBack _veh;
+                    switch true do {
+                        case (_veh isKindOf "StaticWeapon");
+                        case (_veh isKindOf "LandVehicle");
+                        case (_veh isKindOf "Ship"): {
+                            staticsToSave pushBack _veh;
+                        };
+
+                        case (getNumber(configOf _veh >> QGVAR(isBuilding)) == 1);
+                        case (_veh isKindOf "Building"): {
+                            _veh setVariable ["A3A_building", true, true];
+                            A3A_buildingsToSave pushBack _veh;
+                        };
+                    };
+
+                    if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
+                        Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
+                        [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
                     };
                 };
                 if (!isNil "_state") then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
+                if (!isNil "_customization") then {
+                    ([_veh] + _customization) call BIS_fnc_initVehicle;
+                };
+                if (!isNil "_flipped" && {_flipped}) then {
+                    staticsToFlip pushBack _veh;
+                };
             };
             publicVariable "staticsToSave";
+            publicVariable "staticsToFlip";
+            publicVariable "A3A_buildingsToSave";
         };
 
         case 'tasks': {
@@ -445,6 +481,11 @@ if (_varName in specialVarLoads) then {
             testingTimerIsActive = _varValue;
         };
 
+        case 'isTraderQuestAssigned': {
+            isTraderQuestAssigned = _varvalue;  
+            publicVariable "isTraderQuestAssigned";
+        };
+
         case 'isTraderQuestCompleted': {
             isTraderQuestCompleted = _varvalue;  
             publicVariable "isTraderQuestCompleted";
@@ -465,9 +506,7 @@ if (_varName in specialVarLoads) then {
 
         case 'traderPosition': {
 			if(count _varvalue > 0) then {
-                isTraderQuestAssigned = true;
-                publicVariable "isTraderQuestAssigned";
-				traderX = [_varvalue] call SCRT_fnc_trader_createTrader; 
+                traderX = [_varvalue] call SCRT_fnc_trader_createTrader; 
 				publicVariable "traderX";
 				[traderX] call SCRT_fnc_trader_setStockType;
 				[traderX] remoteExecCall ["SCRT_fnc_trader_addVehicleMarketAction", 0, true];
@@ -682,6 +721,16 @@ if (_varName in specialVarLoads) then {
             };
 
             publicVariable "unlockedVehicleTypes";
+        };
+
+        case 'occupantsRadioKeys': {
+            occupantsRadioKeys = _varValue;
+            publicVariable "occupantsRadioKeys";
+        };
+		
+        case 'invaderRadioKeys': {
+            invaderRadioKeys = _varValue;
+            publicVariable "invaderRadioKeys";
         };
     };
 } else {

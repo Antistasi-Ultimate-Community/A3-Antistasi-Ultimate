@@ -121,7 +121,7 @@ switch (_mode) do
                 _display = findDisplay 7000;
                 _commanderMap = _display displayCtrl 7201;
                 _mapScale = ctrlMapScale _commanderMap;
-                diag_log(format ["MAP SCALE: %1", _mapScale]);
+                Verbose_1("MAP SCALE: %1", _mapScale);
                 sleep 1;
             };
         };

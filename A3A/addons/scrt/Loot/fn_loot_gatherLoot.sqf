@@ -105,14 +105,14 @@ private _data = [];
     switch (true) do {
         case (_lootContainer isKindOf "Man"): {
 
-            _assignedItems = assignedItems _lootContainer;
-            _lootContainerMagazines = magazines _lootContainer;
-            _vest = vest _lootContainer;
-            _headgear = headgear _lootContainer;
-            _backpack = backpack _lootContainer;
-            _lootContainerWeapons = weapons _lootContainer;
+            private _assignedItems = assignedItems _lootContainer;
+            private _lootContainerMagazines = magazines _lootContainer;
+            private _vest = vest _lootContainer;
+            private _headgear = headgear _lootContainer;
+            private _backpack = backpack _lootContainer;
+            private _lootContainerWeapons = weaponsItems _lootContainer;
 
-            if ((lootCrateUnlockedItems isEqualTo true)) then {
+            if (lootCrateUnlockedItems isEqualTo true) then {
 
                 _data = [_assignedItems, _lootContainerMagazines, _lootContainerWeapons];
             
@@ -168,8 +168,8 @@ private _data = [];
             if (count _lootContainerWeapons > 0) then {
                 {
                     if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedWeapons}) exitWith {_lootContainer removeWeaponGlobal _x};
-                    _vehicle addWeaponCargoGlobal [_x, 1];
-                    _lootContainer removeWeaponGlobal _x;
+                    _lootContainer addWeaponWithAttachmentsCargoGlobal [_x, 1];
+                    _lootContainer removeWeaponGlobal (_x#0);
                 } forEach _lootContainerWeapons;
             };
 

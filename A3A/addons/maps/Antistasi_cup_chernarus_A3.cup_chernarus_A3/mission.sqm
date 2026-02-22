@@ -4926,7 +4926,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={327.44272,294.71216,9425.6963};
-			name="outp_1_vehicle_1";
+			name="outp_9_vehicle";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorGreen";
@@ -9326,7 +9326,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={12684.431,235.94411,9666.127};
-			name="fact_5_vehicle_1";
+			name="fact_6_vehicle";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorGreen";
@@ -13975,7 +13975,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3725.3784,361.81479,14751.793};
-			name="outp_17_vehicle_1";
+			name="outp_25_vehicle";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorGreen";

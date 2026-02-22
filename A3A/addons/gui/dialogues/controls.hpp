@@ -92,6 +92,28 @@ class A3A_SectionLabelLeft : A3A_Text
     colorBackground[] = {0,0,0,1};
 };
 
+class A3A_SectionStructuredLabelLeft : A3A_StructuredText
+{
+    style = ST_RIGHT;
+    size = GUI_TEXT_SIZE_SPECIAL;
+    colorBackground[] = {0,0,0,1};
+    class Attributes
+	{
+		align = "right";
+	};
+};
+
+class A3A_SectionStructuredLabelLeftHQstore : A3A_StructuredText
+{
+    style = ST_RIGHT;
+    size = GUI_TEXT_SIZE_LARGE;
+    colorBackground[] = {0,0,0,0};
+    class Attributes
+	{
+		align = "right";
+	};
+};
+
 class A3A_SectionLabelRight : A3A_SectionLabelLeft
 {
     style = ST_LEFT;
@@ -409,6 +431,21 @@ class A3A_ShortcutButton : A3A_CtrlDefault
         font = "PuristaLight";
         color = "#FFFFFF";
         align = "center";
+    };
+};
+
+class A3A_ShortcutButtonSmall : A3A_ShortcutButton
+{
+    size = GUI_TEXT_SIZE_SMALL;
+    sizeEx = GUI_TEXT_SIZE_SMALL;
+    sizeExSecondary = GUI_TEXT_SIZE_SMALL;
+
+    class TextPos
+    {
+        left = 2 * GRID_W;
+        right = 2 * GRID_W;
+        top = 1 * GRID_H;
+        bottom = 1 * GRID_H;
     };
 };
 

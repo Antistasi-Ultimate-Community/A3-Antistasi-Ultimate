@@ -17,7 +17,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 private _vehiclesLightUnarmed = ["Opf_B_P_Offroad_01_F"];
 private _vehiclesLightArmed = ["Opf_B_P_Offroad_01_armed_F"];
 private _vehiclesAt = ["Opf_B_P_Offroad_01_AT_F"];
-["vehiclesTruck", ["Opf_B_P_Truck_02_transport_F"]] call _fnc_saveToTemplate;;
+["vehiclesTruck", ["Opf_B_P_Truck_02_transport_F"]] call _fnc_saveToTemplate;
 private _vehiclesAA = [];
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
@@ -210,6 +210,8 @@ if (_hasContact) then {
     "WhiteHead_13", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17", "WhiteHead_18",
     "WhiteHead_19", "WhiteHead_20", "WhiteHead_21"
 ]] call _fnc_saveToTemplate;
+"EnochMen" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////

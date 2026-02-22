@@ -403,6 +403,25 @@ class Templates
         file = "RHS_AI_SAF";
     };
 
+	class GSB2022_Occ: RHS_Base
+    {  
+        requiredAddons[] = {"rhsgref_main", "rhssaf_c_vehicles", "rhs_c_tanks", "RHS_US_A2Port_Armor", "gsb_rhs_22_infantry"}; 
+        side = "Occ";
+        flagTexture = "\gsb_rhs_22_main\DATA\flags\flag_marker_gsb_22_co.paa";
+        name = "RHS GSB 2022";
+        file = "RHS_AI_GSB";
+        description = "Mix of Western and Eastern Assets.";
+    };
+
+    class ZAVB_Riv: RHS_Base
+    {
+        requiredAddons[] = {"rhsgref_main", "rhssaf_c_vehicles", "rhs_c_tanks", "RHS_US_A2Port_Armor", "gsb_rhs_22_infantry", "ACM_CDF_GSFL"};
+        side = "Riv";
+        flagTexture = "\gsb_rhs_22_main\DATA\flags\flag_marker_gsb_22_co.paa";
+        name = "RHS S-ZAVB";
+        file = "RHS_Riv_SZAVB";
+    };
+
     //************* VN ********************************************************
 
     class VN_Base : Base
@@ -469,6 +488,15 @@ class Templates
         name = "VN PL";
         file = "VN_Riv_PL";
         description = $STR_A3AP_setupFactionsTab_pl;
+    };
+
+    class VN_Riv_HM : VN_Base
+    {
+        side = "Riv";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\VN\flags\royal_lao_army.paa);
+        name = "VN HM";
+        file = "VN_Riv_HM";
+        description = $STR_A3AP_setupFactionsTab_hm;
     };
 
     class VN_Civ : VN_Base
@@ -689,5 +717,13 @@ class Templates
     // ***************************** Cold War ReArmed *****************************
 
     #include "Templates\CWR\templates.hpp"
+	
+	  // ***************************** Mixed Era Factions *****************************
+
+    #include "Templates\ERA\templates.hpp"
+  
+    // ***************************** Korsac *****************************
+
+    #include "Templates\KOR\templates.hpp"
 
 };

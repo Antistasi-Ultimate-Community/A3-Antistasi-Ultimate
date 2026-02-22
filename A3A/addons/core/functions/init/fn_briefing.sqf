@@ -99,9 +99,6 @@ switch (gameMode) do {
 	case 3: {
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_gamemode"],format [localize "STR_antistasi_journal_entry_text_gamemode_2",_nameOcc,_nameReb]]]
 	};
-	case 4: {
-		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_gamemode"],format [localize "STR_antistasi_journal_entry_text_gamemode_1",_nameInv,_nameReb]]]
-	};
 	Default {
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_gamemode"],format [localize "STR_antistasi_journal_entry_text_gamemode_4",_nameOcc,_nameInv,_nameReb]]]
 	};
@@ -127,7 +124,7 @@ switch (victoryCondition) do
 		player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_Default_2"],format [localize "STR_antistasi_journal_entry_text_Default_political"]]];
 	};
 	
-	default {diag_log format["Victory condition was not recognized. Condition given: %1", victoryCondition]};
+	default {Error_1("Victory condition was not recognized. Condition given: %1", victoryCondition)};
 };
 // Default Welcome stuff.
 player createDiaryRecord ["Diary",[format [localize "STR_antistasi_journal_entry_header_Default_3"],format [localize "STR_antistasi_journal_entry_text_Default_3",_nameInv]]];

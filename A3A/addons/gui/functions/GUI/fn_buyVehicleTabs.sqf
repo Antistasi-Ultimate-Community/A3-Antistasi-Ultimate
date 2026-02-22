@@ -87,10 +87,31 @@ if (_tab isEqualTo "vehicles") then
         _previewPicture ctrlSetText _editorPreview;
         _previewPicture ctrlCommit 0;
 
+        private _label = _display ctrlCreate ["A3A_SectionStructuredLabelLeftHQstore", -1, _itemControlsGroup]; ///A3A_PictureStroke
+        _label ctrlSetPosition [36 * GRID_W, 0.55 * GRID_H, 8 * GRID_W, 8 * GRID_H];
+        private _dlc = "";
+        private _addons = configsourceaddonlist _configClass;
+        if (count _addons > 0) then {
+        	private _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);
+        	if (count _mods > 0) then {
+        		_dlc = _mods select 0;
+        	};
+        };
+        private _dlcParams = modParams [_dlc,["logo","logoOver"]];
+        private _logo = _dlcParams param [0,""];
+        private _logoOver = _dlcParams param [1,""];
+        private _fieldManualTopicAndHint = getarray (configfile >> "cfgMods" >> _dlc >> "fieldManualTopicAndHint");
+        _label ctrlseteventhandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
+        private _OriginsText = composeText [
+            "",image _logo
+        ];
+        _label ctrlSetStructuredText _OriginsText;
+        _label ctrlCommit 0;
+
         private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
         _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
         _button ctrlSetText _displayName;
-        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, "€"];
+        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_button_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
         _button setVariable ["className", _className];
         _button setVariable ["model", _model];
         _button ctrlAddEventHandler ["ButtonClick", {
@@ -151,8 +172,8 @@ if (_tab isEqualTo "vehicles") then
         };
 
         private _priceText = _display ctrlCreate ["A3A_InfoTextRight", -1, _itemControlsGroup];
-        _priceText ctrlSetPosition[23 * GRID_W, 21 * GRID_H, 20 * GRID_W, 3 * GRID_H];
-        _priceText ctrlSetText format ["%1 €",_price];
+        _priceText ctrlSetPosition [23 * GRID_W, 21 * GRID_H, 20 * GRID_W, 3 * GRID_H];
+        _priceText ctrlSetText format ["%1 %2",_price, A3A_faction_civ get "currencySymbol"];
         _priceText ctrlCommit 0;
 
         // Undercover icon
@@ -352,7 +373,7 @@ if  (_tab in ["other"]) then
         private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
         _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
         _button ctrlSetText _displayName;
-        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_item_tooltip", _displayName, _price, "€"];
+        _button ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_item_tooltip", _displayName, _price, A3A_faction_civ get "currencySymbol"];
         _button setVariable ["className", _className];
         _button setVariable ["model", _model];
 
@@ -428,7 +449,7 @@ if  (_tab in ["other"]) then
 
         private _priceText = _display ctrlCreate ["A3A_InfoTextRight", -1, _itemControlsGroup];
         _priceText ctrlSetPosition[23 * GRID_W, 21 * GRID_H, 20 * GRID_W, 3 * GRID_H];
-        _priceText ctrlSetText format ["%1 €",_price];
+        _priceText ctrlSetText format ["%1 %2",_price, A3A_faction_civ get "currencySymbol"];
         _priceText ctrlCommit 0;
 
         private _itemPic = _display ctrlCreate ["A3A_PictureStroke", -1, _itemControlsGroup];
