@@ -235,7 +235,7 @@ switch (_mode) do
         // Set data & function for confirmation, then open confirmation box
         _display setVariable ["confirmData", [_confirmText, A3A_fnc_setupLoadgameTab, "startGameConfirm"]];
         _display setVariable ["newSaveData", _saveData];
-        diag_log format ["Prepared save data: %1", _saveData];
+        Debug_1("Prepared save data: %1", _saveData);
         createDialog "A3A_SetupConfirmDialog";
     };
 

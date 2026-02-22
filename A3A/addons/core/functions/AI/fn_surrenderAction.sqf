@@ -85,6 +85,11 @@ if (_backpack != "") then {
 };
 _unit setUnitLoadout [ [], [], [], [uniform _unit, []], [], [], "", "", [], ["","","","","",""] ];
 
+//find and properly dispose dropped weapons
+{
+	_boxX addWeaponWithAttachmentsCargoGlobal [(weaponsItemsCargo _x) select 0, 1];
+	deleteVehicle _x;
+} forEach nearestObjects [_unit,["WeaponHolderSimulated"],5,true];
 
 if (_unitSide == Occupants) then {
 	[-2, 0, getPos _unit] remoteExec ["A3A_fnc_citySupportChange", 2];

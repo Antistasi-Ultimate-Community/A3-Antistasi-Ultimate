@@ -276,6 +276,20 @@ class rebelMenu
 					colorText[] = {1,1,1,0.7};
 				};
 
+				class EditParamsButton: ButtonBase
+				{			
+					idc = 5200;
+					text = $STR_commander_menu_edit_params_button;
+					tooltip= $STR_commander_menu_edit_params_button_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "30 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;
+					action = "['onLoad'] spawn SCRT_fnc_ui_editParamsMenu;";
+				};
+
 				class saveGameButton: ButtonBase
 				{		
 					idc = 5300;

@@ -1,5 +1,5 @@
 /*
-	Macro: ERROR_WITH_TITLE()
+	Macro: ITEM(CLASSNAME, PRICE, STOCK)
 
 	Parameters:
 	0: CLASSNAME - Classname of item
@@ -33,6 +33,7 @@ class cfgHALsStore
 		#include "config\3cbbaf.hpp"
 		#include "config\3cbf.hpp"
 		#include "config\3cbfcw.hpp"
+		#include "config\a3u.hpp"
 		#include "config\aegis.hpp"
 		#include "config\bwa.hpp"
 		#include "config\csa38.hpp"
@@ -83,6 +84,7 @@ class cfgHALsStore
 		#include "config\JCAIA.hpp"
 		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
+		#include "config\mpp.hpp"
 	};
 
 	class stores 
@@ -106,7 +108,14 @@ class cfgHALsStore
 				"miscVanilla"
 			};
 		};
-    
+		class a3u
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"miscA3U"
+			};
+		};
+		////DLC
 		class apex 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -126,7 +135,6 @@ class cfgHALsStore
 				"miscApex"
 			};
 		};
-
 		class lawsofwar 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -134,7 +142,6 @@ class cfgHALsStore
 				"miscLawsofwar"
 			};
 		};
-
 		class contact
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -153,7 +160,6 @@ class cfgHALsStore
 				"miscContact"
 			};
 		};
-
 		class marksmen
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -167,7 +173,6 @@ class cfgHALsStore
 				"magazinesMarksmen"
 			};
 		};
-
 		class jets 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -175,7 +180,6 @@ class cfgHALsStore
 				"miscJets"
 			};
 		};
-
 		class kart
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -184,7 +188,6 @@ class cfgHALsStore
 				"magazinesKart"
 			};
 		};
-
 		class tanks
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -194,7 +197,6 @@ class cfgHALsStore
 				"miscTanks"
 			};
 		};
-
 		class artofwar
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -202,16 +204,8 @@ class cfgHALsStore
 				"miscArtofwar"
 			};
 		};
-
-		class kkiv2035
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"sniperRifleskkiv2035",
-				"magazineskkiv2035"
-			};
-		};
-    
+		////
+		////CDLC
 		class rf 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -230,7 +224,6 @@ class cfgHALsStore
 				"miscRF"
 			};
 		};
-
 		class ef 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -245,7 +238,6 @@ class cfgHALsStore
 				"miscEF"
 			};
 		};
-    
 		class ws 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -262,7 +254,6 @@ class cfgHALsStore
 				"miscWs"
 			};
 		};
-
 		class csla 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -279,6 +270,116 @@ class cfgHALsStore
 				"miscCSLA"
 			};
 		};
+		class globmob 
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsgm", 
+				"riflesgm", 
+				"mggm",
+				"sniperRiflesgm", 
+				"smggm", 
+				"launchersgm", 
+				"launcherMagazinesgm", 
+				"opticsgm", 
+				"pointersgm", 
+				"muzzlesgm", 
+				"magazinesgm",
+				"underbarrelgm",
+				"navigationgm", 
+				"miscgm",
+				"helmetsgm",
+				"uniformsgm",
+				"backpacksgm",
+				"vestsgm",
+				"faceweargm"
+			};
+		};
+		class vn
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsvn",
+				"smgvn",
+				"mgvn",
+				"riflesvn",
+				"sniperriflesvn",
+				"launchersvn",
+				"specialWeaponsvn",
+				"launchermagazinesvn",
+				"riflegrenadesvn",
+				"muzzlesvn",
+				"pointersvn",
+				"opticsvn",
+				"underbarrelvn",
+				"magazinesvn",
+				"miscvn",
+				"helmetsvn",
+				"uniformsvn",
+				"backpacksvn",
+				"vestsvn",
+				"facewearvn",
+				"untilityvn"
+			};
+		};
+		class nickelsteel
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsnickelsteel",
+				"smgnickelsteel",
+				"mgnickelsteel",
+				"riflesnickelsteel",
+				"opticsnickelsteel",
+				"magazinesnickelsteel",
+				"helmetsnickelsteel",
+				"uniformsnickelsteel"
+			};
+		};
+		class ww2cdlc
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsspe",
+				"smgspe",
+				"mgspe",
+				"riflesspe",
+				"sniperriflesspe",
+				"launchersspe",
+				"launchermagazinesspe",
+				"riflegrenadesspe",
+				"muzzlesspe",
+				"magazinesspe", 
+				"specialweaponsspe",
+				"pointersspe",
+				"navigationspe",
+				"miscspe",
+				"underbarrelspe",
+				"helmetsspe",
+				"uniformsspe",
+				"backpacksspe",
+				"vestsspe",
+				"facewearspe"
+			};
+		};
+		class spex
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"helmetsspex",
+				"launchersspex"
+			};
+		};
+		////
+		class kkiv2035
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"sniperRifleskkiv2035",
+				"magazineskkiv2035"
+			};
+		};
+    
 		class aegis 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -365,7 +466,6 @@ class cfgHALsStore
 				"sniperriflescw",
 				"launcherscw",
 				"launchermagazinescw",
-				"riflegrenadescw",
 				"muzzlescw",
 				"magazinescw", 
 				"pointerscw",
@@ -403,49 +503,6 @@ class cfgHALsStore
 				"magazineswmemp",
 				"opticswmemp"
 
-			};
-		};
-
-		class vn
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"handgunsvn",
-				"smgvn",
-				"mgvn",
-				"riflesvn",
-				"sniperriflesvn",
-				"launchersvn",
-				"specialWeaponsvn",
-				"launchermagazinesvn",
-				"riflegrenadesvn",
-				"muzzlesvn",
-				"pointersvn",
-				"opticsvn",
-				"underbarrelvn",
-				"magazinesvn",
-				"miscvn",
-				"helmetsvn",
-				"uniformsvn",
-				"backpacksvn",
-				"vestsvn",
-				"facewearvn",
-				"untilityvn"
-			};
-		};
-
-		class nickelsteel
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"handgunsnickelsteel",
-				"smgnickelsteel",
-				"mgnickelsteel",
-				"riflesnickelsteel",
-				"opticsnickelsteel",
-				"magazinesnickelsteel",
-				"helmetsnickelsteel",
-				"uniformsnickelsteel"
 			};
 		};
 		
@@ -507,42 +564,6 @@ class cfgHALsStore
 				"miscifaa",
 				"opticsifaa",
 				"underbarrelifaa"
-			};
-		};
-
-		class ww2cdlc
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"handgunsspe",
-				"smgspe",
-				"mgspe",
-				"riflesspe",
-				"sniperriflesspe",
-				"launchersspe",
-				"launchermagazinesspe",
-				"riflegrenadesspe",
-				"muzzlesspe",
-				"magazinesspe", 
-				"specialweaponsspe",
-				"pointersspe",
-				"navigationspe",
-				"miscspe",
-				"underbarrelspe",
-				"helmetsspe",
-				"uniformsspe",
-				"backpacksspe",
-				"vestsspe",
-				"facewearspe"
-			};
-		};
-
-		class spex
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"helmetsspex",
-				"launchersspex"
 			};
 		};
 		
@@ -698,32 +719,6 @@ class cfgHALsStore
 			};
 		};
 		
-		class globmob 
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"handgunsgm", 
-				"riflesgm", 
-				"mggm",
-				"sniperRiflesgm", 
-				"smggm", 
-				"launchersgm", 
-				"launcherMagazinesgm", 
-				"opticsgm", 
-				"pointersgm", 
-				"muzzlesgm", 
-				"magazinesgm",
-				"underbarrelgm",
-				"navigationgm", 
-				"miscgm",
-				"helmetsgm",
-				"uniformsgm",
-				"backpacksgm",
-				"vestsgm",
-				"faceweargm"
-			};
-		};
-		
 		class niarms 
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
@@ -744,14 +739,18 @@ class cfgHALsStore
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
-				"riflesfwa", 
+				"handgunsFWA",
+				"smgfwa",
 				"mgfwa",
-				"sniperRiflesfwa", 
-				"smgfwa", 
-				"opticsfwa", 
-				"muzzlesfwa", 
-				"magazinesfwa",
-				"underbarrelfwa"
+				"riflesfwa",
+				"sniperRiflesfwa",
+				"launchersFWA",
+				"launchermagazinesFWA",
+				"riflegrenadesFWA",
+				"muzzlesfwa",
+				"opticsfwa",
+				"underbarrelfwa",
+				"magazinesfwa"
 			};
 		};
 		
@@ -967,6 +966,17 @@ class cfgHALsStore
 			categories[] = {
 				"vestsJCA",
 				"facewearJCA"
+			};
+		};
+		class mpp_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsMPP",
+				"pointersMPP",
+				"muzzlesMPP",
+				"opticsMPP",
+				"magazinesMPP"
 			};
 		};
 	};

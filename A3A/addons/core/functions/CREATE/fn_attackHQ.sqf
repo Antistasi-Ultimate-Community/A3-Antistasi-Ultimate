@@ -114,6 +114,7 @@ if (!alive _origPetros) then {
 };
 
 bigAttackInProgress = false; publicVariable "bigAttackInProgress";
+HQAttackInProgress = false; publicVariable "HQAttackInProgress";
 forcedSpawn = forcedSpawn - ["Synd_HQ"]; publicVariable "forcedSpawn";
 
 [_taskId, "DEF_HQ", 1200] spawn A3A_fnc_taskDelete;
