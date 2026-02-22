@@ -1,3 +1,4 @@
+//fn_outpost_createAa
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -39,7 +40,7 @@ theBoss hcSetGroup [_groupX];
 
 private _units = units _groupX;
 
-waitUntil {
+waitUntil {//
 	sleep 1;
 	(!isNil "cancelEstabTask" && {cancelEstabTask}) || 
 	{_units findIf {[_x] call A3A_fnc_canFight} == -1 || 
@@ -75,6 +76,9 @@ switch (true) do {
 		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
 		_vehiclecustomazation = _curentlySelectedVehicleCustomization;
 		spawner setVariable [format[_marker + "_vehiclecustomazation"], _vehiclecustomazation];
+		if (isNil "aapostsData") then { aapostsData = []; };
+		aapostsData pushBack [_marker, [_vehicle, _curentlySelectedVehicleCustomization]];
+		publicVariable "aapostsData";
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "n_antiair";
 		_marker setMarkerColor colorTeamPlayer;

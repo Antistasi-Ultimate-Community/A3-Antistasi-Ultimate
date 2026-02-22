@@ -593,79 +593,115 @@ if (_varName in specialVarLoads) then {
 			};
 		};
 		case 'roadblocksFIA': {
-			if (count (_varValue select 0) == 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_mrk = createMarker [format ["FIARoadblock%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_support";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_roadblock",FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					roadblocksFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
-			};			
-		};
+            {
+                _positionX = _x select 0;
+                _garrison = _x select 1;
+                _vehicleData = if (count _x > 2) then { _x select 2 } else { ["", [], 90] };
+                _mrk = createMarker [format ["FIARoadblock%1", random 1000], _positionX];
+                _mrk setMarkerShape "ICON";
+                _mrk setMarkerType "n_support";
+                _mrk setMarkerColor colorTeamPlayer;
+                _mrk setMarkerText format [localize "STR_marker_roadblock",FactionGet(reb,"name")];
+                spawner setVariable [_mrk, 2, true];
+                if (count _garrison > 0) then { garrison setVariable [_mrk, _garrison, true]; };
+                roadblocksFIA pushBack _mrk;
+                sidesX setVariable [_mrk, teamPlayer, true];
+
+                // Восстанавливаем roadblocksData
+                if (isNil "roadblocksData") then { roadblocksData = []; };
+                roadblocksData pushBack [_mrk, _vehicleData];
+
+                // Дублируем в spawner для совместимости со старым кодом
+                _vehicleData params ["_vehicleClass", "_customization", "_direction"];
+                spawner setVariable [(_mrk + "_vehicle"), _vehicleClass];
+                spawner setVariable [(_mrk + "_vehiclecustomazation"), _customization];
+                spawner setVariable [(_mrk + "_vehicledirection"), _direction];
+            } forEach _varvalue;
+            publicVariable "roadblocksData";
+        };
 		case 'aapostsFIA': {
-			if (count (_varValue select 0) >= 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_staticPositions = _x select 2;
-					_mrk = createMarker [format ["FIAAApost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_antiair";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_aa_empl",FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
-					aapostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
-			};	
-		};
+            if (count (_varValue select 0) >= 2) then {
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _staticPositions = _x select 2;
+                    _vehicleData = if (count _x > 3) then { _x select 3 } else { ["", []] };
+                    _mrk = createMarker [format ["FIAAApost%1", random 1000], _positionX];
+                    _mrk setMarkerShape "ICON";
+                    _mrk setMarkerType "n_antiair";
+                    _mrk setMarkerColor colorTeamPlayer;
+                    _mrk setMarkerText format [localize "STR_marker_aa_empl", FactionGet(reb,"name")];
+                    spawner setVariable [_mrk, 2, true];
+                    if (count _garrison > 0) then { garrison setVariable [_mrk, _garrison, true]; };
+                    if (count _staticPositions > 0) then { staticPositions setVariable [_mrk, _staticPositions, true]; };
+                    aapostsFIA pushBack _mrk;
+                    sidesX setVariable [_mrk, teamPlayer, true];
+        
+                    if (isNil "aapostsData") then { aapostsData = []; };
+                    aapostsData pushBack [_mrk, _vehicleData];
+                    _vehicleData params [["_vehicleClass", ""], ["_customization", []]];
+                    spawner setVariable [(_mrk + "_vehicle"), _vehicleClass];
+                    spawner setVariable [(_mrk + "_vehiclecustomazation"), _customization];
+                } forEach _varvalue;
+                publicVariable "aapostsData";
+            };
+        };
 		case 'atpostsFIA': {
-			if (count (_varValue select 0) >= 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_staticPositions = _x select 2;
-					_mrk = createMarker [format ["FIAATpost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_armor";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_at_empl", FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
-					atpostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
-			};		
-		};
+            if (count (_varValue select 0) >= 2) then {
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _staticPositions = _x select 2;
+                    _vehicleData = if (count _x > 3) then { _x select 3 } else { ["", []] };
+                    _mrk = createMarker [format ["FIAATpost%1", random 1000], _positionX];
+                    _mrk setMarkerShape "ICON";
+                    _mrk setMarkerType "n_armor";
+                    _mrk setMarkerColor colorTeamPlayer;
+                    _mrk setMarkerText format [localize "STR_marker_at_empl", FactionGet(reb,"name")];
+                    spawner setVariable [_mrk, 2, true];
+                    if (count _garrison > 0) then { garrison setVariable [_mrk, _garrison, true]; };
+                    if (count _staticPositions > 0) then { staticPositions setVariable [_mrk, _staticPositions, true]; };
+                    atpostsFIA pushBack _mrk;
+                    sidesX setVariable [_mrk, teamPlayer, true];
+
+                    if (isNil "atpostsData") then { atpostsData = []; };
+                    atpostsData pushBack [_mrk, _vehicleData];
+                    _vehicleData params [["_vehicleClass", ""], ["_customization", []]];
+                    spawner setVariable [(_mrk + "_vehicle"), _vehicleClass];
+                    spawner setVariable [(_mrk + "_vehiclecustomazation"), _customization];
+                } forEach _varvalue;
+                publicVariable "atpostsData";
+            };
+        };
 		case 'hmgpostsFIA': {
-			if (count (_varValue select 0) >= 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_staticPositions = _x select 2;
-					_mrk = createMarker [format ["FIAHmgpost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_unknown";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_hmg_empl", FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
-					hmgpostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
-			}	
-		};
+            if (count (_varValue select 0) >= 2) then {
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _staticPositions = _x select 2;
+                    _vehicleData = if (count _x > 3) then { _x select 3 } else { ["", []] }; // обратная совместимость
+                    _mrk = createMarker [format ["FIAHmgpost%1", random 1000], _positionX];
+                    _mrk setMarkerShape "ICON";
+                    _mrk setMarkerType "n_unknown";
+                    _mrk setMarkerColor colorTeamPlayer;
+                    _mrk setMarkerText format [localize "STR_marker_hmg_empl", FactionGet(reb,"name")];
+                    spawner setVariable [_mrk, 2, true];
+                    if (count _garrison > 0) then { garrison setVariable [_mrk, _garrison, true]; };
+                    if (count _staticPositions > 0) then { staticPositions setVariable [_mrk, _staticPositions, true]; };
+                    hmgpostsFIA pushBack _mrk;
+                    sidesX setVariable [_mrk, teamPlayer, true];
+
+                    // Восстанавливаем hmgpostsData
+                    if (isNil "hmgpostsData") then { hmgpostsData = []; };
+                    hmgpostsData pushBack [_mrk, _vehicleData];
+                    // Записываем в spawner для обратной совместимости
+                    _vehicleData params [["_vehicleClass", ""], ["_customization", []]];
+                    spawner setVariable [(_mrk + "_vehicle"), _vehicleClass];
+                    spawner setVariable [(_mrk + "_vehiclecustomazation"), _customization];
+                } forEach _varvalue;
+                publicVariable "hmgpostsData";
+            };
+        };
 
         case 'rebelLoadouts': {
 			rebelLoadouts = _varvalue; 

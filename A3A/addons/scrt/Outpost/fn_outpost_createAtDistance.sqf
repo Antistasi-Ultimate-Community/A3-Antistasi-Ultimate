@@ -1,3 +1,4 @@
+//fn_outpost_createAtDistance
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -49,7 +50,7 @@ if (!(_staticPositionInfo isEqualTo [])) then {
         ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
     };
 };
-
+//
 _veh lock 3;
 
 sleep 0.5;
@@ -125,6 +126,12 @@ if ({alive _x} count units _groupX == 0) then {
 	_nul = [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	deleteMarker _markerX;
 	["TaskFailed", ["", (localize "STR_notifiers_emplacement_lost")]] remoteExec ["BIS_fnc_showNotification", 0];
+
+    // Очистка данных
+    if (!isNil "atpostsFIA") then {
+        atpostsFIA = atpostsFIA select { (_x select 0) != _markerX };
+        publicVariable "atpostsFIA";
+    };
 };
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2) or (!(_markerX in atpostsFIA))};

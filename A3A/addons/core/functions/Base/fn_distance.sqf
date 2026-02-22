@@ -236,30 +236,101 @@ private _processFIAMarker = {
                     [[_marker],"SCRT_fnc_outpost_createWatchpostDistance"] call A3A_fnc_scheduler;
                 };
                 case (_marker in roadblocksFIA): {
-                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
-                    diag_log _markerVehicle;
-                    diag_log _markerVehicle;
-                    diag_log _markerVehicle;
-                    diag_log _markerVehicle;
-                    diag_log _markerVehicle;
-                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
-                    private _vehicledirection = spawner getVariable [(_marker + "_vehicledirection"), 90];
-                    [[_marker,_markerVehicle,_markerVehicleCustomazation,_vehicledirection],"SCRT_fnc_outpost_createRoadblockDistance"] call A3A_fnc_scheduler;
+                    // Инициализируем значения по умолчанию
+                    private _vehicle = objNull;
+                    private _customization = [];
+                    private _direction = 90;
+                
+                    // Ищем данные в roadblocksData
+                    {
+                        if ((_x select 0) == _marker) exitWith {
+                            private _data = _x select 1;
+                            _vehicle = _data select 0;
+                            _customization = _data select 1;
+                            _direction = _data select 2;
+                        };
+                    } forEach (missionNamespace getVariable ["roadblocksData", []]);
+                
+                    // Отладка (можно убрать)
+                    diag_log format ["fn_distance: roadblock %1 -> vehicle: %2, custom: %3, dir: %4", _marker, _vehicle, _customization, _direction];
+                
+                    // Если класс техники пустой или не определён – ставим objNull
+                    if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then { _vehicle = objNull; };
+                
+                    // Записываем данные в spawner для обратной совместимости
+                    spawner setVariable [(_marker + "_vehicle"), _vehicle];
+                    spawner setVariable [(_marker + "_vehiclecustomazation"), _customization];
+                    spawner setVariable [(_marker + "_vehicledirection"), _direction];
+                
+                    // Вызов функции спауна с гарантированно определёнными переменными
+                    [[_marker, _vehicle, _customization, _direction], "SCRT_fnc_outpost_createRoadblockDistance"] call A3A_fnc_scheduler;
                 };
+                    /* private _vehicleData = [];
+                    {
+                        if ((_x select 0) == _marker) exitWith { _vehicleData = _x select 1; };
+                    } forEach (missionNamespace getVariable ["roadblocksData", []]);
+                    _vehicleData params [["_vehicle", objNull], ["_customization", []], ["_direction", 90]];
+                    diag_log "fn_distance";
+                    diag_log _vehicle;
+                    diag_log _customization;
+                    diag_log _direction;
+                    if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then { _vehicle = objNull; }; */
+                    //[[_marker,_vehicle,_customization,_direction],"SCRT_fnc_outpost_createRoadblockDistance"] call A3A_fnc_scheduler;
+                //};
                 case (_marker in aapostsFIA): {
-                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
-                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
-                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createAaDistance"] call A3A_fnc_scheduler;
+                    private _vehicle = objNull;
+                    private _customization = [];
+                    {
+                        if ((_x select 0) == _marker) exitWith {
+                            private _data = _x select 1;
+                            _vehicle = _data select 0;
+                            _customization = _data select 1;
+                        };
+                    } forEach (missionNamespace getVariable ["aapostsData", []]);
+                
+                    if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then { _vehicle = objNull; };
+                
+                    spawner setVariable [(_marker + "_vehicle"), _vehicle];
+                    spawner setVariable [(_marker + "_vehiclecustomazation"), _customization];
+                
+                    [[_marker, _vehicle, _customization], "SCRT_fnc_outpost_createAaDistance"] call A3A_fnc_scheduler;
                 };
                 case (_marker in atpostsFIA): {
-                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
-                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
-                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createAtDistance"] call A3A_fnc_scheduler;
+                    private _vehicle = objNull;
+                    private _customization = [];
+                    {
+                        if ((_x select 0) == _marker) exitWith {
+                            private _data = _x select 1;
+                            _vehicle = _data select 0;
+                            _customization = _data select 1;
+                        };
+                    } forEach (missionNamespace getVariable ["atpostsData", []]);
+
+                    if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then { _vehicle = objNull; };
+
+                    spawner setVariable [(_marker + "_vehicle"), _vehicle];
+                    spawner setVariable [(_marker + "_vehiclecustomazation"), _customization];
+
+                    [[_marker, _vehicle, _customization], "SCRT_fnc_outpost_createAtDistance"] call A3A_fnc_scheduler;
                 };
                 case (_marker in hmgpostsFIA): {
-                    private _markerVehicle = spawner getVariable [(_marker + "_vehicle"), ObjNull];
-                    private _markerVehicleCustomazation = spawner getVariable [(_marker + "_vehiclecustomazation"), ObjNull];
-                    [[_marker,_markerVehicle,_markerVehicleCustomazation],"SCRT_fnc_outpost_createHmgDistance"] call A3A_fnc_scheduler;
+                    private _vehicle = objNull;
+                    private _customization = [];
+                    {
+                        if ((_x select 0) == _marker) exitWith {
+                            private _data = _x select 1;
+                            _vehicle = _data select 0;
+                            _customization = _data select 1;
+                        };
+                    } forEach (missionNamespace getVariable ["hmgpostsData", []]);
+                
+                    if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then { _vehicle = objNull; };
+                
+                    // Обновляем spawner для обратной совместимости
+                    spawner setVariable [(_marker + "_vehicle"), _vehicle];
+                    spawner setVariable [(_marker + "_vehiclecustomazation"), _customization];
+                
+                    [[_marker, _vehicle, _customization], "SCRT_fnc_outpost_createHmgDistance"] call A3A_fnc_scheduler;
                 };
 
                 case !(_marker in controlsX): {

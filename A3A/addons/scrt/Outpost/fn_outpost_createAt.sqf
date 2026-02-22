@@ -1,3 +1,4 @@
+//fn_outpost_createAt
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -45,7 +46,7 @@ waitUntil {
 	{_units findIf {[_x] call A3A_fnc_canFight} == -1 || 
 	{{alive _x && {_x distance _position < 35}} count units _groupX > 0 ||
 	{(dateToNumber date > _dateLimitNum)}}}
-};
+};//
 
 switch (true) do {
 	case (!isNil "cancelEstabTask" && {cancelEstabTask}): {
@@ -75,6 +76,9 @@ switch (true) do {
 		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
 		_vehiclecustomazation = _curentlySelectedVehicleCustomization;
 		spawner setVariable [format[_marker + "_vehiclecustomazation"], _vehiclecustomazation];
+		if (isNil "atpostsData") then { atpostsData = []; };
+		atpostsData pushBack [_marker, [_vehicle, _curentlySelectedVehicleCustomization]];
+		publicVariable "atpostsData";
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];

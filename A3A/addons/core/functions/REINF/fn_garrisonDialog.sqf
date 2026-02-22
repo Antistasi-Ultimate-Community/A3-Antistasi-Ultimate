@@ -42,36 +42,68 @@ if (_typeX == "rem") then {
 			_costs = round (_costs * 0.85);
 		};
 		case (_roadblockFIA): {
-		    private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
-
-			if (_vehicle isEqualType "") then {
-			    _vehicle = nearestObject [markerPos _site, _vehicle];
-			};
-
-			if (isNull _vehicle) then {
-				_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
-			} else {
-				if (!isNull _vehicle && alive _vehicle) then {
-					_costs = 0;
-					_vehicle lock 0;
-		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
-		    	};
-			};
+		    // 1. Получаем данные о технике из roadblocksData
+		    private _vehicleData = [];
+		    {
+		        if ((_x select 0) == _site) exitWith { _vehicleData = _x select 1; };
+		    } forEach (missionNamespace getVariable ["roadblocksData", []]);
+		    _vehicleData params [["_vehicleClass", ""], ["_customization", []], ["_direction", 90]];
+		
+		    // 2. Пытаемся найти реальный объект техники
+		    private _vehicle = objNull;
+		    if (_vehicleClass != "") then {
+		        _vehicle = nearestObject [markerPos _site, _vehicleClass];
+		        if (isNull _vehicle) then { _vehicle = objNull; };
+		    };
+		
+		    // 3. Расчёт компенсации / возврат в гараж
+		    if (isNull _vehicle) then {
+		        // Техники нет – начисляем компенсацию
+		        _costs = [_vehicleClass] call A3A_fnc_vehiclePrice;
+		        if (_costs == 0) then { // если класс не распознан, берём цену по умолчанию
+		            _costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
+		        };
+		    } else {
+		        if (alive _vehicle) then {
+		            // Техника жива – возвращаем в гараж
+		            _costs = 0;
+		            _vehicle lock 0;
+		            [_vehicle, clientOwner, call HR_GRG_dLock, theBoss, true] remoteExecCall ['HR_GRG_fnc_addVehicle', 2];
+		        } else {
+		            // Техника мертва – начисляем компенсацию
+		            _costs = [_vehicleClass] call A3A_fnc_vehiclePrice;
+		        };
+		    };
+		
+		    // 4. Обработка гарнизона (без изменений)
 		    _garrison = garrison getVariable [_site, []];
-
 		    private _aliveUnits = allUnits select {
 		        _x getVariable ["markerX", ""] == _site && alive _x
 		    };
-
 		    _hr = count _aliveUnits;
 		    {
 		        _costs = _costs + (server getVariable [_x, 0]);
 		    } forEach _garrison;
-
 		    { deleteVehicle _x } forEach _aliveUnits;
-
 		    _costs = round (_costs * 0.85);
-		    _hr = _hr + 1; // static gunner
+		    _hr = _hr + 1; // статический наводчик
+		
+		    // 5. Удаление маркера и записей
+		    garrison setVariable [_site, nil, true];
+		    roadblocksFIA = roadblocksFIA - [_site]; publicVariable "roadblocksFIA";
+		    markersX = markersX - [_site]; publicVariable "markersX";
+		    deleteMarker _site;
+		    sidesX setVariable [_site, nil, true];
+		
+		    // 6. Удаление данных о технике
+		    if (!isNil "roadblocksData") then {
+		        roadblocksData = roadblocksData select { (_x select 0) != _site };
+		        publicVariable "roadblocksData";
+		    };
+			// Очистка spawner переменных (опционально, но рекомендуется)
+			spawner setVariable [(_site + "_vehicle"), nil];
+			spawner setVariable [(_site + "_vehiclecustomazation"), nil];
+			spawner setVariable [(_site + "_vehicledirection"), nil];
 		};
 		case (_aapostFIA): {
 			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
@@ -104,6 +136,16 @@ if (_typeX == "rem") then {
 
 		    _costs = round (_costs * 0.85);
 		    _hr = _hr + 1; // static gunner
+
+			// Очистка aapostsData
+		    if (!isNil "aapostsData") then {
+		        aapostsData = aapostsData select { (_x select 0) != _site };
+		        publicVariable "aatpostsData";
+		    };
+
+		    // Очистка spawner переменных (если не было сделано ранее)
+		    spawner setVariable [(_site + "_vehicle"), nil];
+		    spawner setVariable [(_site + "_vehiclecustomazation"), nil];
 		};
 		case (_atpostFIA): {
 			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
@@ -136,6 +178,16 @@ if (_typeX == "rem") then {
 
 		    _costs = round (_costs * 0.85);
 		    _hr = _hr + 1; // static gunner
+
+			// Очистка atpostsData
+		    if (!isNil "atpostsData") then {
+		        atpostsData = atpostsData select { (_x select 0) != _site };
+		        publicVariable "atpostsData";
+		    };
+
+		    // Очистка spawner переменных (если не было сделано ранее)
+		    spawner setVariable [(_site + "_vehicle"), nil];
+		    spawner setVariable [(_site + "_vehiclecustomazation"), nil];
 		};
 		case (_hmgpostFIA): {
 			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
@@ -168,6 +220,16 @@ if (_typeX == "rem") then {
 
 		    _costs = round (_costs * 0.85);
 		    _hr = _hr + 1; // static gunner
+
+			// Очистка hmgpostsData
+		    if (!isNil "hmgpostsData") then {
+		        hmgpostsData = hmgpostsData select { (_x select 0) != _site };
+		        publicVariable "hmgpostsData";
+		    };
+
+		    // Очистка spawner переменных (если не было сделано ранее)
+		    spawner setVariable [(_site + "_vehicle"), nil];
+		    spawner setVariable [(_site + "_vehiclecustomazation"), nil];
 		};
 		default {
 			{

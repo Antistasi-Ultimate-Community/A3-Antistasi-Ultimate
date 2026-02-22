@@ -1,3 +1,5 @@
+///fn_outpost_createRoadblock
+
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -89,13 +91,21 @@ switch (true) do {
 		sidesX setVariable [_marker,teamPlayer,true];
 		markersX pushBack _marker;
 		publicVariable "markersX";
+		diag_log "JUST CREATE ROADBLOCK NO DISTANCE";
+		diag_log _vehicle;
+		diag_log _vehicle;
+		diag_log _vehicle;
+		// Запись в spawner (для оперативного использования)
 		spawner setVariable [_marker,2,true]; ///we need to sent selected vehicle with marker to save it and when marker/roadblock spawns it will spawn with selected vehicle(always)
-		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
-		diag_log _vehicle;
-		diag_log _vehicle;
-		diag_log _vehicle;
-		spawner setVariable [format[_marker + "_vehiclecustomazation"], _curentlySelectedVehicleCustomization];
-		spawner setVariable [format[_marker + "_vehicledirection"], _vehicledirection];
+		//spawner setVariable [format[_marker + "_vehicle"], _vehicle];
+		spawner setVariable [(_marker + "_vehicle"), _vehicle];
+		spawner setVariable [(_marker + "_vehiclecustomazation"), _curentlySelectedVehicleCustomization];
+		spawner setVariable [(_marker + "_vehicledirection"), _vehicledirection];
+		
+		// Запись в roadblocksData (для сохранения)
+		if (isNil "roadblocksData") then { roadblocksData = []; };
+		roadblocksData pushBack [_marker, [_vehicle, _curentlySelectedVehicleCustomization, _vehicledirection]];
+		publicVariable "roadblocksData";
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "n_support";
 		_marker setMarkerColor colorTeamPlayer;

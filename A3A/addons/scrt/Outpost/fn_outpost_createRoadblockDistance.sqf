@@ -1,9 +1,17 @@
+///fn_outpost_createRoadblockDistance
+
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
 params ["_markerX","_vehicleX","_vehiclecustomazationX","_vehicledirectionX"]; ///step 5
 
 if (!isServer and hasInterface) exitWith {};
+
+diag_log "CREATE ROADBLOCK DISTANCE";
+diag_log _markerX;
+diag_log _vehicleX;
+diag_log _vehiclecustomazationX;
+diag_log _vehicledirectionX;
 
 private _positionX = getMarkerPos _markerX;
 private _riflemanType = A3A_faction_reb get "unitRifle";
@@ -132,6 +140,12 @@ if ({alive _x} count units _groupX == 0) then {
 	_nul = [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	deleteMarker _markerX;
 	["TaskFailed", ["", (localize "STR_notifiers_roadblock_lost")]] remoteExec ["BIS_fnc_showNotification", 0];
+
+    // Очистка данных
+    if (!isNil "roadblocksData") then {
+        roadblocksData = roadblocksData select { (_x select 0) != _markerX };
+        publicVariable "roadblocksData";
+    };
 };
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2) or (!(_markerX in roadblocksFIA))};

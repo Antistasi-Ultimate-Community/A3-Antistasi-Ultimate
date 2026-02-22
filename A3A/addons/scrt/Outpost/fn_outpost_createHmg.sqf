@@ -1,3 +1,4 @@
+//fn_outpost_createHmg
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -46,7 +47,7 @@ waitUntil {
 	{{alive _x && {_x distance _position < 35}} count units _groupX > 0 ||
 	{(dateToNumber date > _dateLimitNum)}}}
 };
-
+//
 switch (true) do {
 	case (!isNil "cancelEstabTask" && {cancelEstabTask}): {
 		[_hrCost,_moneyCost] remoteExec ["A3A_fnc_resourcesFIA",2];
@@ -75,6 +76,9 @@ switch (true) do {
 		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
 		_vehiclecustomazation = _curentlySelectedVehicleCustomization;
 		spawner setVariable [format[_marker + "_vehiclecustomazation"], _vehiclecustomazation];
+		if (isNil "hmgpostsData") then { hmgpostsData = []; };
+		hmgpostsData pushBack [_marker, [_vehicle, _curentlySelectedVehicleCustomization]];
+		publicVariable "hmgpostsData";
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "n_unknown";
 		_marker setMarkerColor colorTeamPlayer;
