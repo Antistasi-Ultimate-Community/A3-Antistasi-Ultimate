@@ -2938,6 +2938,18 @@ class Params
         tooltip = $STR_A3A_Params_diameterExtendedCaptureArea_tooltip;
         values[] = {0,150,250,300,350,400,450,500};
         texts[] = {$STR_A3A_Params_diameterExtendedCaptureArea_traditional, "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 300;
+                hard = 500;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
     };
     class unconChanceEny : ExperimentalParams
@@ -3009,6 +3021,18 @@ class Params
         tooltip = $STR_params_disablePATCOMMortars_desc;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
         lockInGame = 1;
     };
@@ -3018,6 +3042,18 @@ class Params
         tooltip = $STR_params_disableMortars_desc;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 0;
         lockInGame = 0;
     };
