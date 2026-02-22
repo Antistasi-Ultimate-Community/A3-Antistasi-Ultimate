@@ -86,7 +86,7 @@ switch (_mode) do
                 _textCtrl ctrlCommit 0;
             };
 
-            if (_title isNotEqualTo "" && {_texts isNotEqualTo [""]}) then {
+            if (_title isNotEqualTo "" && {_texts isNotEqualTo []}) then {
                 private _valsCtrl = _display ctrlCreate ["A3A_ComboBox_Small", A3A_IDC_SETUP_PARAMSVALS + _forEachIndex, _paramsTable];
                 _allValsCtrls pushBack [configName _x, _valsCtrl];
                 _valsCtrl ctrlEnable false;

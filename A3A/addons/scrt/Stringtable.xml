@@ -6692,8 +6692,8 @@
                 <Korean>무제한</Korean>
                 <French>Illimité</French>
             </Key>
-            <Key ID="STR_params_builder_header">
-                <Original>BUILDER BOX OPTIONS</Original>
+            <Key ID="STR_params_builderParams">
+                <Original>Builder Params</Original>
                 <Chinesesimp>建筑箱设置</Chinesesimp>
                 <Korean>건설 상자 설정</Korean>
             </Key>
@@ -7204,6 +7204,13 @@
                 <French>Options liées aux membres du serveur et aux fonctionnalités d'adhésion, y compris les créneaux réservés et les permissions spéciales.</French>
             </Key>
             -->
+            <Key ID="STR_params_builder">
+                <Original>BUILDER OPTIONS</Original>
+                <Russian>ОПЦИИ СТРОИТЕЛЯ</Russian>
+                <Chinesesimp>建造者选项</Chinesesimp>
+                <Korean>빌더 옵션</Korean>
+                <French>OPTIONS DU CONSTRUCTEUR</French>
+            </Key>
             <Key ID="STR_params_extender">
                 <Original>EXTENDER OPTIONS</Original>
                 <Russian>ОПЦИИ УДЛИНИТЕЛЯ</Russian>

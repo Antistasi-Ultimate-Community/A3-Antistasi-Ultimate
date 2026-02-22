@@ -9,7 +9,7 @@ class Params
             title = $STR_params_name; // stringtable entry for the parameter or section name
             tooltip = $STR_params_name_desc; // stringtable entry for the parameter tooltip (optional)
             values[] = {0,1,2,3}; // integer values for the actual parameter value. If values is {0,1} they will be converted to boolean when loading the save.
-            texts[] = {""}; // string values for the parameter options, shown in the setup GUI dropdown
+            texts[] = {}; // string values for the parameter options, shown in the setup GUI dropdown
             default = 0; // default integer value for the parameter
             lockOnSave = 0; // Set to 1 if parameter should not be changeable after saving a game (optional, default 0)
             lockInGame = 0; // Set to 1 if parameter value should not be changeable while in-game (optional, default 0)
@@ -63,9 +63,9 @@ class Params
         class Spacer102: SuperDuperCoolParams
         {
             title = $STR_SuperDuperCool_params_name;
-            values[] = {""};
-            texts[] = {""};
-            default = "";
+            values[] = {};
+            texts[] = {};
+            default = 0;
         };
         class aReallyCoolParam: SuperDuperCoolParams
         {
@@ -136,9 +136,9 @@ class Params
         type = "Scenario";
         title = $STR_params_scenarioParams;
         tooltip = $STR_params_scenarioParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class gameMode: ScenarioParams
     {
@@ -236,9 +236,9 @@ class Params
         type = "Member";
         title = $STR_params_member;
         tooltip = $STR_params_member_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
         lockInGame = 1;
     };
     class membershipEnabled: MemberParams
@@ -274,9 +274,9 @@ class Params
         type = "Script";
         title = $STR_params_scriptParams;
         tooltip = $STR_params_scriptParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class magRepack: ScriptParams
     {
@@ -322,9 +322,9 @@ class Params
         type = "Timer";
         title = $STR_params_timerParams;
         tooltip = $STR_params_timerParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class autoSave: TimerParams
     {
@@ -400,6 +400,10 @@ class Params
         default = 1;
         lockInGame = 1;
     };
+    class BasicParamsSpacer : AllParams
+    {
+        type = "Basic";
+    };
 
     class AIParamsSpacer : AllParams
     {
@@ -410,9 +414,9 @@ class Params
         type = "AI";
         title = $STR_params_ai;
         tooltip = $STR_params_ai_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class distanceSPWN: AIParams
     {
@@ -555,9 +559,9 @@ class Params
         type = "RebelBalance";
         title = $STR_params_rebelBalanceParams;
         tooltip = $STR_params_rebelBalanceParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class initialPlayerMoney: RebelBalanceParams
     {
@@ -818,9 +822,9 @@ class Params
         type = "AIBalance";
         title = $STR_params_aiBalanceParams;
         tooltip = $STR_params_aiBalanceParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class A3A_enemyBalanceMul: AIBalanceParams
     {
@@ -958,9 +962,9 @@ class Params
         type = "MiscBalance";
         title = $STR_params_miscBalanceParams;
         tooltip = $STR_params_miscBalanceParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class playerMarkersEnabled: MiscBalanceParams
     {
@@ -993,6 +997,10 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
+    class AIParamsSpacer2 : AllParams
+    {
+        type = "AI";
+    };
 
     class BMParamsSpacer : AllParams
     {
@@ -1003,9 +1011,9 @@ class Params
         type = "BlackMarket";
         title = $STR_params_blackmarket;
         tooltip = $STR_params_blackmarket_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class disableTrader: BMParams
     {
@@ -1066,6 +1074,7 @@ class Params
     class BuilderParams : AllParams
     {
         type = "Builder";
+        title = $STR_params_builder;
     };
     class A3A_builderPermissions: BuilderParams
     {
@@ -1126,9 +1135,9 @@ class Params
         type = "Unlocks";
         title = $STR_params_unlockParams;
         tooltip = $STR_params_unlockParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class minWeaps: UnlockParams
     {
@@ -1210,9 +1219,9 @@ class Params
         type = "Crates";
         title = $STR_params_crateParams;
         tooltip = $STR_params_crateParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class lootCratesEnabled: CrateParams
     {
@@ -1409,9 +1418,9 @@ class Params
         type = "VehicleLoot";
         title = $STR_params_vehicleLootParams;
         tooltip = $STR_params_vehicleLootParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class enableVehicleAutoLock: VehicleLootParams
     {
@@ -1456,9 +1465,9 @@ class Params
         type = "MiscLoot";
         title = $STR_params_miscLootParams;
         tooltip = $STR_params_miscLootParams_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class helmetLossChance: MiscLootParams
     {
@@ -1484,6 +1493,10 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
     };
+    class BMParamsSpacer2 : AllParams
+    {
+        type = "BlackMarket";
+    };
 
     class ExtenderParamsSpacer : AllParams
     {
@@ -1494,9 +1507,9 @@ class Params
         type = "Extender";
         title = $STR_params_extender;
         tooltip = $STR_params_extender_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
 
     class ExperimentalParamsSpacer : AllParams
@@ -1508,9 +1521,9 @@ class Params
         type = "Experimental";
         title = $STR_params_experimental;
         tooltip = $STR_params_experimental_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
     class loadoutArsenalDefaultOverride : ExperimentalParams
@@ -1587,9 +1600,9 @@ class Params
         type = "Development";
         title = $STR_params_development;
         tooltip = $STR_params_development_desc;
-        values[] = {""};
-        texts[] = {""};
-        default = "";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
     class LogLevel: DevelopmentParams
     {
