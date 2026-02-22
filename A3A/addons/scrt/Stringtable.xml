@@ -10426,7 +10426,6 @@
                 <Korean>매우 많은 돈을 싣은 트럭이 %1에서 %3으로 이동하며, %2에서 출발하려고 합니다. 트럭을 훔쳐서 본부로 가져오십시오. 그 자금들은 매우 환영받을 것입니다.</Korean>
                 <French>Un transport de fonds est en cours de %1 à %3, et il est sur le point de partir à %2. Volez ce camion et apportez-le au QG. Ces fonds seront les bienvenus.</French>
             </Key>
-            </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_header_food">
                 <Original>Intercept Food Convoy</Original>
                 <Russian>Перехватите конвой с едой</Russian>
