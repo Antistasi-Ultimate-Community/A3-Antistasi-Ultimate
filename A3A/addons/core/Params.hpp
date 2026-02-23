@@ -135,7 +135,7 @@ class Params
     {
         type = "Scenario";
         title = $STR_params_scenarioParams;
-        tooltip = $STR_params_scenarioParams_desc;
+        //tooltip = $STR_params_scenarioParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -274,7 +274,7 @@ class Params
     {
         type = "Member";
         title = $STR_params_member;
-        tooltip = $STR_params_member_desc;
+        //tooltip = $STR_params_member_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -341,7 +341,7 @@ class Params
     {
         type = "Script";
         title = $STR_params_scriptParams;
-        tooltip = $STR_params_scriptParams_desc;
+        //tooltip = $STR_params_scriptParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -389,7 +389,7 @@ class Params
     {
         type = "Timer";
         title = $STR_params_timerParams;
-        tooltip = $STR_params_timerParams_desc;
+        //tooltip = $STR_params_timerParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -564,7 +564,7 @@ class Params
     {
         type = "AI";
         title = $STR_params_ai;
-        tooltip = $STR_params_ai_desc;
+        //tooltip = $STR_params_ai_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -830,7 +830,7 @@ class Params
     {
         type = "RebelBalance";
         title = $STR_params_rebelBalanceParams;
-        tooltip = $STR_params_rebelBalanceParams_desc;
+        //tooltip = $STR_params_rebelBalanceParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -1435,7 +1435,7 @@ class Params
     {
         type = "AIBalance";
         title = $STR_params_aiBalanceParams;
-        tooltip = $STR_params_aiBalanceParams_desc;
+        //tooltip = $STR_params_aiBalanceParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -1861,7 +1861,7 @@ class Params
     {
         type = "MiscBalance";
         title = $STR_params_miscBalanceParams;
-        tooltip = $STR_params_miscBalanceParams_desc;
+        //tooltip = $STR_params_miscBalanceParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -1985,7 +1985,7 @@ class Params
     {
         type = "BlackMarket";
         title = $STR_params_blackmarket;
-        tooltip = $STR_params_blackmarket_desc;
+        //tooltip = $STR_params_blackmarket_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2191,7 +2191,7 @@ class Params
     {
         type = "Unlocks";
         title = $STR_params_unlockParams;
-        tooltip = $STR_params_unlockParams_desc;
+        //tooltip = $STR_params_unlockParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2369,7 +2369,7 @@ class Params
     {
         type = "Crates";
         title = $STR_params_crateParams;
-        tooltip = $STR_params_crateParams_desc;
+        //tooltip = $STR_params_crateParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2722,7 +2722,7 @@ class Params
     {
         type = "VehicleLoot";
         title = $STR_params_vehicleLootParams;
-        tooltip = $STR_params_vehicleLootParams_desc;
+        //tooltip = $STR_params_vehicleLootParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2805,7 +2805,7 @@ class Params
     {
         type = "MiscLoot";
         title = $STR_params_miscLootParams;
-        tooltip = $STR_params_miscLootParams_desc;
+        //tooltip = $STR_params_miscLootParams_desc;
         values[] = {};
         texts[] = {};
         default = 0;
@@ -3121,7 +3121,7 @@ class Params
     {
         type = "Development";
         title = $STR_params_development;
-        tooltip = $STR_params_development_desc;
+        //tooltip = $STR_params_development_desc;
         values[] = {};
         texts[] = {};
         default = 0;

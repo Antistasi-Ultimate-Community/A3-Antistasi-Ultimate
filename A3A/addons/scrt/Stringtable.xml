@@ -7046,7 +7046,7 @@
                 <Korean>아군 인공지능 숙련도</Korean>
                 <French>Compétence de l'IA amie</French>
             </Key>
-            <Key ID="STR_params_A3A_enemySkillMul_desc">
+            <Key ID="STR_params_A3A_rebelSkillMul_desc">
                 <Original>General rebel AI skill modifier. Total skill is also affected by rebel training level and cannot exceed configured AI skill in Arma 3 server.cfg.</Original>
                 <Russian>Общий модификатор навыка вражеского ИИ. Общий навык также зависит от уровня подготовки повстанцев и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
                 <Chinesesimp>一般敌方 AI 技能修改器。总技能还受叛军训练等级的影响，且不能超过 Arma 3 server.cfg 中配置的 AI 技能。</Chinesesimp>

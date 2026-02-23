@@ -6240,7 +6240,7 @@
              <Key ID="STR_A3A_Params_garageAccessTimer_title">
                 <Original>Simulate logistics by blocking flag functions after capture for X minutes</Original>
             </Key>
-            <Key ID="STR_A3A_Params_garageAccessTimer_title_desc">
+            <Key ID="STR_A3A_Params_garageAccessTimer_desc">
                 <Original>Time (in minutes) after capturing a zone before players can access the garage via the flag at that zone.</Original>
             </Key>
         </Container>
