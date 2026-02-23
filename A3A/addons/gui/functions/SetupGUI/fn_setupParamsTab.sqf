@@ -110,28 +110,39 @@ switch (_mode) do
         _paramsTable setVariable ["allTextCtrls", _allTextCtrls];
         _paramsTable setVariable ["allValsCtrls", _allValsCtrls];
 
-        ["update"] call A3A_fnc_setupParamsTab;
+        ["update", [0]] call A3A_fnc_setupParamsTab;
     };
 
 	case ("update"):
     {
-        private _shownTypes = switch (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) do {
-            case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
-            case (0): { ["Basic", "Scenario", "Member", "Script", "Timer"] };
-            case (1): { ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"] };
-            case (2): { ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"] };
-            case (3): { ["Builder"] };
-            case (4): { ["Experimental", "Development"] };
-            case (5): { ["Extender"] };
-        };
+        _params params ["_filter"]; // * <SCALAR> (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) if switching tabs, <STRING> (_searchString) if using parameter search
+        if (isNil "_filter") then { _filter = 0 };
 
+        private "_filterExpression";
         private _rowCount = -1;
         private _allValsCtrls = createHashMapFromArray (_paramsTable getVariable "allValsCtrls");
-        {
-            private _textCtrl = _x select 1;
-            private _valsCtrl = _allValsCtrls get (_x select 0);
 
-            if ((_textCtrl getVariable "type") in _shownTypes) then {
+        _filterExpression = if (_filter isEqualType 0) then {{
+            private _shownTypes = switch (_filter) do {
+                case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
+                case (0): { ["Basic", "Scenario", "Member", "Script", "Timer"] };
+                case (1): { ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"] };
+                case (2): { ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"] };
+                case (3): { ["Builder"] };
+                case (4): { ["Experimental", "Development"] };
+                case (5): { ["Extender"] };
+            };
+            ((_this select 1) getVariable "type") in _shownTypes
+        }} else {{
+            private _searchResults = (_paramsTable getVariable "allTextCtrls") select { private _title = toLower ctrlText (_x select 1); (_title find _searchString) isNotEqualTo -1 } apply { _x select 0 };
+            ((_this select 0) in _searchResults) 
+        }};
+
+        {
+            _x params ["_cfgName", "_textCtrl"];
+            private _valsCtrl = _allValsCtrls get _cfgName;
+
+            if (_x call _filterExpression) then {
                 _rowCount = _rowCount + 1;
                 _textCtrl ctrlEnable true;
                 _textCtrl ctrlSetPosition [0, GRID_H*_rowCount*4, GRID_W*112, GRID_H*4];
@@ -155,7 +166,7 @@ switch (_mode) do
             };
             _textCtrl ctrlCommit 0;
             if (!isNil "_valsCtrl") then { _valsCtrl ctrlCommit 0 };
-        } forEach (_paramsTable getVariable "allTextCtrls");
+        } forEach (_paramsTable getVariable "allTextCtrls");   
 
         _paramsTable ctrlSetScrollValues [0,-1];
     };
@@ -465,5 +476,26 @@ switch (_mode) do
             _rivSelCtrl ctrlSetTooltip (localize (["", "STR_antistasi_dialogs_setup_riv_disabled"] select _rivDisabled));
         };
     };
-};
 
+    case ("updateSearch"):
+    {
+        private _searchEditBox = _display displayCtrl A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
+        private _searchButton = _display displayCtrl A3A_IDC_SETUP_PARAMSSEARCH_BUTTON;
+        private _searchString = ctrlText _searchEditBox;
+        private _searchActive = _searchButton getVariable ["active", true];
+
+
+        if (_searchActive && {_searchString isNotEqualTo ""}) then {
+            _searchEditBox ctrlEnable false;
+            _searchButton setVariable ["active", false];
+            _searchButton ctrlSetText ("\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_end_ca.paa");
+            ["update", [_searchString]] call A3A_fnc_setupParamsTab;
+        } else {
+            _searchEditBox ctrlSetText "";
+            _searchEditBox ctrlEnable true;
+            _searchButton setVariable ["active", true];
+            _searchButton ctrlSetText ("\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa");
+            ["update", [lbCurSel A3A_IDC_SETUP_PARAMSTYPE]] call A3A_fnc_setupParamsTab;
+        };
+    };
+};

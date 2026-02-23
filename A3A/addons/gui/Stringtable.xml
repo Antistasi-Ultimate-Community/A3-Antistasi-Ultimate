@@ -3959,6 +3959,17 @@
                 <Portuguese>Renomear predefinição</Portuguese>
                 <Chinesesimp>重命名预设</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_search">
+                <Original>Parameter Search</Original>
+                <Czech>Vyhledávání parametrů</Czech>
+                <French>Recherche de paramètres</French>
+                <Italian>Ricerca parametri</Italian>
+                <Korean>매개변수 검색</Korean>
+                <Russian>Поиск параметров</Russian>
+                <Polish>Wyszukiwanie parametrów</Polish>
+                <Portuguese>Pesquisa de parâmetros</Portuguese>
+                <Chinesesimp>参数搜索</Chinesesimp>
+            </Key>
         </Container>
         <Container name="setup_dialog_table">
             <Key ID="STR_antistasi_setup_dialog_table_map">

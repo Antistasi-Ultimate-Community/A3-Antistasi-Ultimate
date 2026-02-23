@@ -110,7 +110,7 @@ switch (_mode) do
         {
             case ("loadgame"): { ["update"] call A3A_fnc_setupLoadgameTab };
             case ("factions"): { ["update"] call A3A_fnc_setupFactionsTab };
-            case ("params"): { ["update"] call A3A_fnc_setupParamsTab };
+            case ("params"): { ["update", [0]] call A3A_fnc_setupParamsTab };
         };
     };
 

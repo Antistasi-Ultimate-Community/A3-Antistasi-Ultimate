@@ -461,7 +461,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 class ParamsTypesComboBox: A3A_ComboBox {
                     idc = A3A_IDC_SETUP_PARAMSTYPE;
                     colorBackground[] = {0,0,0,1};
-                    onLBSelChanged = "['update'] call A3A_fnc_setupParamsTab";
+                    onLBSelChanged = "['update', [_this select 1]] call A3A_fnc_setupParamsTab";
                     x = 4 * GRID_W;
                     y = 4 * GRID_H;
                     w = 118 * GRID_W;
@@ -482,10 +482,47 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     h = 88 * GRID_H;
                 };
 
+                // Parameter search box
+                class ParamsSearchGroup: A3A_ControlsGroupNoScrollbars {
+                    x = 124 * GRID_W;
+                    y = 4 * GRID_H;
+                    w = 30 * GRID_W;
+                    h = 8 * GRID_H;
+
+                    class controls {
+                        class ParamsSearchLabel: A3A_SectionLabelRight {
+                            idc = A3A_IDC_SETUP_PARAMSSEARCH_TEXT;
+                            text = $STR_antistasi_dialogs_setup_params_search;
+                            x = 0;
+                            y = 0;
+                            w = 30 * GRID_W;
+                            h = 4 * GRID_H;
+                            colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                            style = ST_CENTER + ST_UPPERCASE;
+                            font = A3A_BUTTON_FONT;
+                        };
+                        class ParamsSearchEditBox: A3A_Edit {
+                            idc = A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
+                            x = 0;
+                            y = 4 * GRID_H;
+                            w = 26 * GRID_W;
+                            h = 4 * GRID_H;
+                        };
+                        class ParamsSearchButton: A3A_ActivePicture {
+                            idc = A3A_IDC_SETUP_PARAMSSEARCH_BUTTON;
+                            text = "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa";
+                            onButtonClick = "['updateSearch'] call A3A_fnc_setupParamsTab";
+                            x = 26 * GRID_W;
+                            y = 4 * GRID_H;
+                            w = 4 * GRID_W;
+                            h = 4 * GRID_H;
+                        };
+                    };
+                }
                 // Parameter presets (pre-defined)
                 class ParamsPresetsGroup : A3A_ControlsGroupNoScrollbars {
                     x = 124 * GRID_W;
-                    y = 4 * GRID_H;
+                    y = 14 * GRID_H;
                     w = 30 * GRID_W;
                     h = 20 * GRID_H;
 
@@ -512,7 +549,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             idc = -1;
                             text = $STR_antistasi_dialogs_setup_params_preset_size;
                             x = 0;
-                            y = 8 * GRID_H;
+                            y = 6 * GRID_H;
                             w = 12 * GRID_W;
                             h = 4 * GRID_H;
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
@@ -523,25 +560,25 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             colorBackground[] = {0,0,0,1};
                             onLBSelChanged = "['updatePresetSelections', [_this select 0, _this select 1]] call A3A_fnc_setupParamsTab";
                             x = 12 * GRID_W;
-                            y = 8 * GRID_H;
+                            y = 6 * GRID_H;
                             w = 18 * GRID_W;
                             h = 4 * GRID_H;
                         };
                         class ParamsDifficultyText : ParamsGroupSizeText {
                             text = $STR_antistasi_dialogs_setup_params_preset_diff;
-                            y = 12 * GRID_H;
+                            y = 10 * GRID_H;
                         };
                         class ParamsDifficulty: ParamsGroupSize {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
-                            y = 12 * GRID_H;
+                            y = 10 * GRID_H;
                         };
                         class ParamsCustomText : ParamsGroupSizeText {
                             text = $STR_antistasi_dialogs_setup_params_preset_cstm;
-                            y = 16 * GRID_H;
+                            y = 14 * GRID_H;
                         };
                         class ParamsCustomPreset: ParamsGroupSize {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
-                            y = 16 * GRID_H;
+                            y = 14 * GRID_H;
                         };
                     };
                 };
@@ -549,7 +586,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 // Parameter presets (save/rename/delete custom)
                 class ParamsPresetsCustomGroup : A3A_ControlsGroupNoScrollbars {
                     x = 124 * GRID_W;
-                    y = 32 * GRID_H;
+                    y = 34 * GRID_H;
                     w = 30 * GRID_W;
                     h = 26 * GRID_H;
 
