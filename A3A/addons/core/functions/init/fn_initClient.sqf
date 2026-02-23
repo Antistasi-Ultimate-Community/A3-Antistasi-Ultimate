@@ -675,3 +675,66 @@ if (staminaEnabled isEqualTo false) then {
 
 private _newWeaponSway = swayEnabled / 100;
 player setCustomAimCoef _newWeaponSway;
+
+A3A_localMarkerText = createHashMap;
+[] spawn {
+
+    disableSerialization;
+
+    while {true} do {
+
+        waitUntil { visibleMap };
+
+        private _display = findDisplay 12;
+        if (isNull _display) then { continue };
+
+        private _ctrlMap = _display displayCtrl 51;
+        if (isNull _ctrlMap) then { continue };
+
+        private _textVisible = true;   // assume visible initially
+        private _threshold = 0.1;
+
+        private _eh = _ctrlMap ctrlAddEventHandler ["Draw", {
+
+            params ["_map"];
+
+            private _zoom = ctrlMapScale _map;
+            private _shouldShow = (_zoom < _threshold);
+
+            // Only react when state changes
+            if (_shouldShow != _textVisible) then {
+
+                {
+                    private _realText = A3A_localMarkerText getOrDefault [_x, ""];
+                    if (_realText != "") then {
+
+                        if (_shouldShow) then {
+                            _x setMarkerTextLocal _realText;
+                        } else {
+                            _x setMarkerTextLocal "";
+                        };
+
+                    };
+
+                } forEach (keys A3A_localMarkerText);
+
+                _textVisible = _shouldShow;
+            };
+
+        }];
+
+        waitUntil { !visibleMap };
+
+        _ctrlMap ctrlRemoveEventHandler ["Draw", _eh];
+
+        // Restore text when map closes
+        {
+            private _realText = A3A_localMarkerText getOrDefault [_x, ""];
+            if (_realText != "") then {
+                _x setMarkerTextLocal _realText;
+            };
+        } forEach (keys A3A_localMarkerText);
+
+        uiSleep 0.1;
+    };
+};

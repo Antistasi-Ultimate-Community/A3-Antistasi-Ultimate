@@ -194,6 +194,7 @@ if (!_hardCodedAntennas) then {
         _mrkFinal setMarkerTypeLocal "loc_Transmitter";
         _mrkFinal setMarkerColorLocal "ColorBlack";
         _mrkFinal setMarkerText localize "STR_radiotower";
+		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
         _x addEventHandler [
             "Killed",
@@ -241,6 +242,7 @@ if (count _posAntennas > 0) then {
 				_mrkFinal setMarkerTypeLocal "loc_Transmitter";
 				_mrkFinal setMarkerColorLocal "ColorBlack";
 				_mrkFinal setMarkerText localize "STR_radiotower";
+				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
 
 				_antenna addEventHandler [
@@ -354,6 +356,7 @@ private _milAdminPositions = getArray (_mapInfo/"milAdministrations");
 	_mrkAdm setMarkerColorLocal colorOccupants;
 	_mrkAdm setMarkerTextLocal format [localize "STR_milAdministration", [citiesX, _administration] call BIS_fnc_nearestPosition];
 	_mrkAdm setMarkerAlpha 0.75;
+	_mrkAdm setMarkerShadow false;
 
 	sidesX setVariable [_mrkAdm, Occupants, true];
 

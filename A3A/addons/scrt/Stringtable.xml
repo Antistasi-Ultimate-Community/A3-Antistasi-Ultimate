@@ -6551,11 +6551,11 @@
         </Container>
         <Container name="marker_names">
             <Key ID="STR_outpost">
-                <Original>%1 %2 Outpost</Original>
-                <Russian>Аванпост %1 %2</Russian>
-                <Chinesesimp>%1 %2 哨站</Chinesesimp>
-                <Korean>%1 %2 전초 기지</Korean>
-                <French>%1 %2 Avant-poste</French>
+                <Original>%1 Outpost</Original>
+                <Russian>Аванпост %1</Russian>
+                <Chinesesimp>%1 哨站</Chinesesimp>
+                <Korean>%1 전초 기지</Korean>
+                <French>%1 Avant-poste</French>
             </Key>
             <Key ID="STR_airbase">
                 <Original>%1 %2 Airbase</Original>
@@ -6593,18 +6593,18 @@
                 <French>%1 Port maritime</French>
             </Key>
             <Key ID="STR_milbase">
-                <Original>%1 %2 Military Base</Original>
-                <Russian>Военная база %1 %2</Russian>
-                <Chinesesimp>%1 %2 军事基地</Chinesesimp>
-                <Korean>%1 %2 군사 기지</Korean>
-                <French>%1 %2 Base militaire</French>
+                <Original>%1 Military Base</Original>
+                <Russian>Военная база %1</Russian>
+                <Chinesesimp>%1 军事基地</Chinesesimp>
+                <Korean>%1 군사 기지</Korean>
+                <French>%1 Base militaire</French>
             </Key>
             <Key ID="STR_radiotower">
-                <Original>%1 Radio Tower</Original>
-                <Russian>%1 Радиовышка</Russian>
-                <Chinesesimp>%1 无线电塔</Chinesesimp>
-                <Korean>%1 통신탑</Korean>
-                <French>%1 Tour radio</French>
+                <Original>Radio Tower</Original>
+                <Russian>Радиовышка</Russian>
+                <Chinesesimp>无线电塔</Chinesesimp>
+                <Korean>통신탑</Korean>
+                <French>Tour radio</French>
             </Key>
             <Key ID="STR_supportcorridor">
                 <Original>%1 Support Corridor</Original>

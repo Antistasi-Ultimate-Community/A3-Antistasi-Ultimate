@@ -43,3 +43,9 @@ class CfgVehicles
 {
     #include "CfgVehicles.hpp"
 };
+
+class CfgMarkers
+{
+    #include "CfgMarkers.hpp"
+};
+

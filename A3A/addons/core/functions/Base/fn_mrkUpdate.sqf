@@ -14,20 +14,20 @@ if (_marker in airportsX) then {
     if (_marker in destroyedSites and _marker in citiesX) exitWith { _mrkD setMarkerColorLocal "ColorBlack" };
     if (_mrkSide == teamPlayer) exitWith {
         if (_marker in milbases) then {
-            _mrkD setMarkerTypeLocal "n_hq";
+            _mrkD setMarkerTypeLocal "A3AU_milbase_mrk_I";
         };
         if (_marker in seaports) then {
-            _mrkD setMarkerTypeLocal "n_naval";
+            _mrkD setMarkerTypeLocal "A3AU_seaport_mrk_I";
         };
         _mrkD setMarkerColorLocal colorTeamPlayer;
     };
 
     if (_marker in milbases) then {
-        private _markerType = if (_mrkSide == Invaders) then {"o_hq"} else {"b_hq"};
+        private _markerType = if (_mrkSide == Invaders) then {"A3AU_milbase_mrk_O"} else {"A3AU_milbase_mrk_B"};
         _mrkD setMarkerTypeLocal _markerType;
     };
     if (_marker in seaports) then {
-        private _markerType = if (_mrkSide == Invaders) then {"o_naval"} else {"b_naval"};
+        private _markerType = if (_mrkSide == Invaders) then {"A3AU_seaport_mrk_O"} else {"A3AU_seaport_mrk_B"};
         _mrkD setMarkerTypeLocal _markerType;
     };
 
@@ -44,7 +44,7 @@ private _mrkText = call {
         } else {
             ""
         };
-        format [localize "STR_airbase", _faction get "name", _airportName]
+        format [localize "STR_airbase", _faction get "name", _airfieldName]
     };
     if (_marker in outposts) exitWith {
         private _outpostNames = (localize "STR_A3AU_outpostNames") splitString "|";
@@ -54,7 +54,7 @@ private _mrkText = call {
         } else {
             ""
         };
-        format [localize "STR_outpost", _faction get "name", _outpostName]
+        format [localize "STR_outpost", _outpostName]
     };
     if (_marker in resourcesX) exitWith { format [localize "STR_resources", [citiesX, _positionX] call BIS_fnc_nearestPosition] };
     if (_marker in factories) exitWith { format [localize "STR_factory", [citiesX, _positionX] call BIS_fnc_nearestPosition] };
@@ -66,7 +66,7 @@ private _mrkText = call {
         } else {
             ""
         };
-        format [localize "STR_milbase", _faction get "name", _milbaseName]
+        format [localize "STR_milbase", _milbaseName]
     };
     if (_marker in seaports) exitWith {
         private _seaportNames = (localize "STR_A3AU_seaportNames") splitString "|";
@@ -96,4 +96,7 @@ if (_mrkSide == teamPlayer) then {
         ];
     };
 };
+
+A3A_localMarkerText set [_mrkD, _mrkText];
 _mrkD setMarkerText _mrkText;
+_mrkD setMarkerShadow true;
