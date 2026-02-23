@@ -118,11 +118,7 @@ switch (_mode) do
         _params params ["_filter"]; // * <SCALAR> (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) if switching tabs, <STRING> (_searchString) if using parameter search
         if (isNil "_filter") then { _filter = 0 };
 
-        private "_filterExpression";
-        private _rowCount = -1;
-        private _allValsCtrls = createHashMapFromArray (_paramsTable getVariable "allValsCtrls");
-
-        _filterExpression = if (_filter isEqualType 0) then {{
+        private _filterExpression = if (_filter isEqualType 0) then {{
             private _shownTypes = switch (_filter) do {
                 case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
                 case (0): { ["Basic", "Scenario", "Member", "Script", "Timer"] };
@@ -138,6 +134,8 @@ switch (_mode) do
             ((_this select 0) in _searchResults) 
         }};
 
+        private _rowCount = -1;
+        private _allValsCtrls = createHashMapFromArray (_paramsTable getVariable "allValsCtrls");
         {
             _x params ["_cfgName", "_textCtrl"];
             private _valsCtrl = _allValsCtrls get _cfgName;
