@@ -116,7 +116,7 @@ switch (_mode) do
 	case ("update"):
     {
         _params params ["_filter"]; // * <SCALAR> (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) if switching tabs, <STRING> (_searchString) if using parameter search
-        if (isNil "_filter") then { _filter = 0 };
+        if (isNil "_filter") then { _filter = lbCurSel A3A_IDC_SETUP_PARAMSTYPE};
 
         private _filterExpression = if (_filter isEqualType 0) then {{
             private _shownTypes = switch (_filter) do {
