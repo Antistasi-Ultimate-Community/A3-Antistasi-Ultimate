@@ -46,7 +46,7 @@
             </Key>
             <Key ID="STR_A3AP_buyvehdialog_ammo_station">
                 <Original>Ammo Station</Original>
-                <Russian>Пункт боепитания</Russian>
+                <Russian>Склад боеприпасов</Russian>
                 <Korean>탄약고</Korean>
                 <French>Station de munitions</French>
                 <Chinesesimp>弹药箱</Chinesesimp>
@@ -174,7 +174,7 @@
             </Key>
             <Key ID="STR_A3U_arsenal_update_ok">
                 <Original>OK</Original>
-                <Russian>ХОРОШО</Russian>
+                <Russian>ОК</Russian>
                 <Chinesesimp>还行</Chinesesimp>
                 <Korean>그래</Korean>
                 <French>D'ACCORD</French>
@@ -197,7 +197,7 @@
             </Key>
             <Key ID="STR_A3AP_blackmarket_header">
                 <Original>Vehicle Black Market is Not Available</Original>
-                <Russian>Чёрный рынок транспорта недоступен</Russian>
+                <Russian>Чёрный рынок техники недоступен</Russian>
                 <Chinesesimp>载具黑市不可用</Chinesesimp>
                 <Korean>차량 암시장을 사용할 수 없음</Korean>
                 <French>Le marché noir des véhicules n'est pas disponible</French>
@@ -269,7 +269,7 @@
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_natoandldf">
                 <Original>North Atlantic Treaty Organization and Livonian Defense Force (NATO and LDF).\nAfter successful combined training in Livonia, tension between CSAT and NATO increased. LDF decided to let NATO build more bases to increase their chances if their eastern neighbor makes a move.</Original>
-                <Russian>Организация Североатлантического договора и Вооруженные Силы Ливонии (НАТО и ВСЛ).\После успешных совместных учений в Ливонии напряженность в отношениях между CSAT и НАТО возросла. Вооруженные силы Ливии решили позволить НАТО построить больше своих баз, чтобы увеличить свои шансы, если их восточный сосед начнёт действовать.</Russian>
+                <Russian>Организация Североатлантического договора и Вооруженные Силы Ливонии (НАТО и ВСЛ).\После успешных совместных учений в Ливонии напряженность в отношениях между CSAT и НАТО возросла. Вооруженные силы Ливонии решили позволить НАТО построить больше своих баз, чтобы увеличить свои шансы, если их восточный сосед начнёт действовать.</Russian>
                 <Chinesesimp>北大西洋公约组织和利沃尼亚国防军（NATO 和 LDF）。\n在利沃尼亚成功进行联合训练后，CSAT 和 NATO 之间的紧张局势加剧。LDF 决定让 NATO 建造更多基地，以增加其东部邻国采取行动的机会。</Chinesesimp>
                 <Korean>북대서양 조약 기구와 리보니아 방위군(NATO와 LDF).\n리보니아에서 성공적인 합동 훈련 이후, CSAT과 NATO 간의 긴장이 고조되었습니다. LDF는 '동쪽의 이웃'이 움직일 경우 기회를 늘리기 위해 NATO가 더 많은 기지를 건설하도록 결정했습니다.</Korean>
             </Key>
@@ -313,7 +313,7 @@
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ard">
                 <Original>Ardistan Army (ARD).\nArmy of former Soviet client state still using a lot of their equipment.</Original>
-                <Russian>Армия Ардистана (ARD).\nАрмия одного из бывших саттелитов Советского Союза, до сих использующая его вооружение и экипировку.</Russian>
+                <Russian>Армия Ардистана (ARD).\nАрмия одного из бывших сателлитов Советского Союза, до сих использующая его вооружение и экипировку.</Russian>
                 <Chinesesimp>阿迪斯坦军队 (ARD)。\n前苏联加盟国的军队，仍在使用大量苏联装备。</Chinesesimp>
                 <Korean>아르디스탄군(ARD).\n구 소련 위성국의 군대로 여전히 많은 장비를 사용하고 있습니다.</Korean>
                 <French>Armée de l'Ardistan (ARD).\nL'armée de l'ancien État client de l'Union soviétique utilise encore une grande partie de son équipement.</French>
@@ -362,7 +362,7 @@
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_aegis_aukus">
                 <Original>A trilateral security pact between Australia, United Kingdom, United States (AUKUS).\nVery versatile faction with best military equipment from three worlds.</Original>
-                <Russian>Тройственный оборонный пакт между Австралией, Объединённым Королевством и США (AUKUS).\nОчень разносторонняя фракция с лучшими вещами из трех миров.</Russian>
+                <Russian>Тройственный оборонный пакт между Австралией, Объединённым Королевством и США (AUKUS).\nОчень разносторонняя фракция с лучшим вооружением из трех миров.</Russian>
                 <Chinesesimp>澳大利亚、英国、美国（AUKUS）的三边安全条约。\n非常全面的派别，拥有三个世界最好的军事装备。</Chinesesimp>
                 <Korean>호주, 영국, 미국 간의 3자 안보 협정(AUKUS).\n3세계 최고의 군사 장비를 가진 매우 다재다능한 팩션입니다.</Korean>
                 <French>Un pacte de sécurité trilatéral entre l'Australie, le Royaume-Uni et les États-Unis (AUKUS).\nUne faction très polyvalente dotée des meilleurs équipements militaires des trois mondes.</French>
@@ -372,18 +372,18 @@
                 <Russian>ВС России.\nСовременная номеклатура вооружений и техники странным образом синергирует с архаичной экипировкой времён середины 20 века.</Russian>
                 <Chinesesimp>俄罗斯武装力量。武器和车辆的现代命名法奇怪地与20世纪中期的古旧装备协同起来。</Chinesesimp>
                 <Korean>러시아군.\n무기와 차량의 현대 명명법은 이상하게도 20세기 중반의 구식 장비와 시너지 효과를 냅니다.</Korean>
-                <French>Forces armées de la Russie.\nLa nomenclature moderne des armes et des véhicules s'accorde étrangement avec l'équipement archaïque du milieu du 20e siècle.</French>
+                <French>Forces armées de la Russie.\nLa nomenclatuТаксистанаre moderne des armes et des véhicules s'accorde étrangement avec l'équipement archaïque du milieu du 20e siècle.</French>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_aegis_pla">
                 <Original>People's Liberation Army (PLA).\nHighly organized military force with interesting innovations in camouflage and small arms.</Original>
-                <Russian>Вооруженные силы Алтиса (AAF).\nВысокоорганизованная сила с интересными нововведениями в области маскировки и стрелкового оружия.</Russian>
+                <Russian>Народно-Освободительная Армия (PLA).\nВысокоорганизованная сила с интересными нововведениями в области маскировки и стрелкового оружия.</Russian>
                 <Chinesesimp>人民解放军（PLA）。\n组织严密的军事力量，在伪装和小型武器方面有有趣的创新。</Chinesesimp>
                 <Korean>인민해방군(PLA).\n위장무늬와 소형 화기에 대한 흥미로운 혁신을 가진 고도로 조직화된 군대입니다.</Korean>
                 <French>Armée populaire de libération (APL).\nForce militaire très organisée qui présente des innovations intéressantes en matière de camouflage et d'armes légères.</French>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_fia_rhs">
                 <Original>Freedom and Independence Army (FIA).\nGarands and grease guns.</Original>
-                <Russian>Армия свободы и независимости (FIA).\n Гаранды и маслёнки.</Russian>
+                <Russian>Армия свободы и независимости (FIA).\n Гаранды и гриз-ганы.</Russian>
                 <Chinesesimp>自由独立军（FIA）。\n加兰德和黄油枪。</Chinesesimp>
                 <Korean>자유독립군(FIA).\n개런드와 그리스 건.</Korean>
                 <French>Armée de la liberté et de l'indépendance (FIA).\nGarands et grease guns.</French>
@@ -499,7 +499,7 @@
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ti">
                 <Original>Takistan Insurgents (TI).\nMembers of various militant movements across the Middle East.</Original>
-                <Russian>Повстанцы Таксистана (TI).\nЧлены различных военизированных движений на Ближнем Востоке.</Russian>
+                <Russian>Повстанцы Такистана (TI).\nЧлены различных военизированных движений на Ближнем Востоке.</Russian>
                 <Chinesesimp>塔吉克斯坦叛乱分子（TI）。\n整个中东地区各种激进运动的成员。</Chinesesimp>
                 <Korean>타키스탄 반군(TI).\n중동 전역에 걸쳐 있는 다양한 전투 행동을 하는 구성원들입니다.</Korean>
                 <French>Insurgés du Takistan (TI).\nMembres de divers mouvements militants au Moyen-Orient.</French>
@@ -611,7 +611,7 @@
             </Key>
             <Key ID="STR_magRepack_mkay">
                 <Original>Mmkay</Original>
-                <Russian>П'нятненько</Russian>
+                <Russian>П'нятно</Russian>
                 <Chinesesimp>Mmkay</Chinesesimp>
                 <Korean>Mmkay</Korean>
                 <French>Mm okay</French>
@@ -723,7 +723,7 @@
             </Key>
             <Key ID="STR_magRepack_keybindings">
                 <Original>Keybindings</Original>
-                <Russian>Связка клавиш</Russian>
+                <Russian>Сочетание клавиш</Russian>
                 <Chinesesimp>按键绑定</Chinesesimp>
                 <Korean>키 설정</Korean>
                 <French>Raccourcis clavier</French>
@@ -1025,14 +1025,14 @@
             </Key>
             <Key ID="STR_A3AP_error_aicontrol_generic">
                 <Original>You can't do that while you are controlling AI.</Original>
-                <Russian>Вы не может сделать это, пока контролируете ИИ-бойца.</Russian>
+                <Russian>Вы не можете сделать это, пока контролируете ИИ-бойца.</Russian>
                 <Chinesesimp>在你控制AI的时候，你不能这么做。</Chinesesimp>
                 <Korean>당신이 인공지능을 조종하는 동안에는 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas le faire lorsque vous contrôlez l'IA.</French>
             </Key>
             <Key ID="STR_A3AP_error_enemynear_generic">
                 <Original>You can't do that while enemies are nearby.</Original>
-                <Russian>Вы не может сделать это, пока рядом враги.</Russian>
+                <Russian>Вы не можете сделать это, пока рядом враги.</Russian>
                 <Chinesesimp>当敌人在附近时，你不能这样做。</Chinesesimp>
                 <Korean>적들이 근처에 있을 때는 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas le faire lorsque des ennemis sont à proximité.</French>
@@ -1074,7 +1074,7 @@
             </Key>
             <Key ID="STR_generic_ai_control_one_only">
                 <Original>You must select from HC or Squad Bars, not both.</Original>
-                <Russian>Вы должны выбрать отряд или бойца либо через панель командования (HC), либо панель отряда, но не через оба одновременно.</Russian>
+                <Russian>Вы должны выбрать или отряд в режиме главнокомандующего, или бойца своего отряда, не оба сразу.</Russian>
                 <Chinesesimp>您必须从 HC 或 Squad Bars 中选择，不能同时选择。</Chinesesimp>
                 <Korean>둘 다가 아닌 하이 커맨드 또는 분대 표시줄에서 선택해야 합니다.</Korean>
                 <French>Vous devez sélectionner HC ou Squad Bars, pas les deux.</French>
@@ -1167,21 +1167,21 @@
             </Key>
             <Key ID="STR_cover_before_revive_header">
                 <Original>Cover Before Revive</Original>
-                <Russian>Укрытие перед реанимацией</Russian>
+                <Russian>Найти укрытие перед реанимацией</Russian>
                 <Chinesesimp>复活队友之前找掩护</Chinesesimp>
                 <Korean>소생 전 엄폐</Korean>
                 <French>S'abriter avant la réanimation</French>
             </Key>
             <Key ID="STR_cover_before_revive_desc_1">
                 <Original>AI soldiers will not take you to cover before healing, they will attempt to revive you in place.</Original>
-                <Russian>ИИ-соотрядники не будут тащить вас в укрытие перед тем, как поднять, они будут пытаться лечитсья вас сразу на месте ранения.</Russian>
+                <Russian>ИИ-соотрядники не будут тащить вас в укрытие перед тем, как реанимировать, они будут пытаться лечить вас сразу на месте ранения.</Russian>
                 <Chinesesimp>AI 士兵在治疗前不会带你去掩体，他们会尝试在原地复活你。</Chinesesimp>
                 <Korean>인공지능 병사들이 치료 전에 엄호하지 않고 제자리에서 당신을 소생하려고 시도할 것입니다.</Korean>
                 <French>Les soldats IA ne vous mettront pas à l'abri avant de vous soigner, ils tenteront de vous réanimer sur place.</French>
             </Key>
             <Key ID="STR_cover_before_revive_desc_2">
                 <Original>AI will take you to nearby cover before attempting to revive you.</Original>
-                <Russian>ИИ-соотрядники будут тащить вас в ближайшее укрытие перед тем, как поднять.</Russian>
+                <Russian>ИИ-соотрядники будут тащить вас в ближайшее укрытие перед тем, как реанимировать.</Russian>
                 <Chinesesimp>AI 会带你到附近的掩体，然后再尝试救你。</Chinesesimp>
                 <Korean>인공지능은 당신을 소생하려고 시도하기 전에 당신을 근처 엄폐물로 옮길 것입니다.</Korean>
                 <French>L'IA vous emmènera à l'abri avant de tenter de vous réanimer.</French>
@@ -1197,7 +1197,7 @@
             </Key>
             <Key ID="STR_watchpost_deploy_desc">
                 <Original>We are sending a team to establish a watchpost. Use HC to send the team to their destination. Do this before %1</Original>
-                <Russian>Мы отправляем отряд для создания пункта наблюдения. Используйте панель командования (HC) для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
+                <Russian>Мы отправляем отряд для создания пункта наблюдения. Используйте режим главнокомандующего для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
                 <Chinesesimp>我们正派遣一个小组去建立一个哨所。 使用 HC 将团队发送到目的地。 在 %1 之前执行此任务</Chinesesimp>
                 <Korean>우린 감시초소를 배치하기 위해 팀을 보낼 것입니다. 하이 커맨드를 사용하여 팀을 목적지로 보내십시오. %1 안에 완료하십시오.</Korean>
                 <French>Nous envoyons une équipe pour établir un poste de surveillance. Utilisez HC pour envoyer l'équipe à destination. Faites-le avant %1</French>
@@ -1211,7 +1211,7 @@
             </Key>
             <Key ID="STR_roadblock_deploy_desc">
                 <Original>We are sending a team to establish a roadblock. Use HC to send the team to their destination. Do this before %1</Original>
-                <Russian>Мы отправляем отряд для развёртывания блокпоста. Используйте панель командования (HC) для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
+                <Russian>Мы отправляем отряд для развёртывания блокпоста. Используйте режим главнокомандующего для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
                 <Chinesesimp>我们正派出一个小组去设置路障。 使用 HC 将团队发送到目的地。 在 %1 之前执行此任务</Chinesesimp>
                 <Korean>우린 검문소를 배치하기 위해 팀을 보낼 것입니다. 하이 커맨드를 사용하여 팀을 목적지로 보내십시오. %1 안에 완료하십시오.</Korean>
                 <French>Nous envoyons une équipe pour établir un barrage routier. Utilisez HC pour envoyer l'équipe à destination. Faites-le avant %1</French>
@@ -1225,7 +1225,7 @@
             </Key>
             <Key ID="STR_hmgempl_deploy_desc">
                 <Original>We are sending a team to establish a HMG Emplacement. Use HC to send the team to their destination. Do this before %1</Original>
-                <Russian>Мы отправляем отряд для развёртывания пулемётного гнезда. Используйте панель командования (HC) для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
+                <Russian>Мы отправляем отряд для развёртывания пулемётного гнезда. Используйте режим главнокомандующего для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
                 <Chinesesimp>我们正在派遣一个团队去建立一个重机枪阵地。 使用 HC 将团队发送到目的地。 在 %1 之前执行此任务</Chinesesimp>
                 <Korean>우린 중기관총 포대를 배치하기 위해 팀을 보낼 것입니다. 하이 커맨드를 사용하여 팀을 목적지로 보내십시오. %1 안에 완료하십시오.</Korean>
                 <French>Nous envoyons une équipe pour établir un emplacement de HMG. Utilisez HC pour envoyer l'équipe à destination. Faites-le avant %1</French>
@@ -1253,7 +1253,7 @@
             </Key>
             <Key ID="STR_aaempl_deploy_desc">
                 <Original>We are sending a team to establish an AA Emplacement. Use HC to send the team to their destination. Do this before %1</Original>
-                <Russian>Мы отправляем отряд для развёртывания зенитной огневой точки. Используйте панель командования (HC) для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
+                <Russian>Мы отправляем отряд для развёртывания зенитной огневой точки. Используйте режим главнокомандующего для отправки отряда в их пункт назначения. Сделайте это до %1</Russian>
                 <Chinesesimp>我们正在派遣一个团队去建立一个防空阵地。 使用 HC 将团队发送到目的地。 在 %1 之前执行此任务</Chinesesimp>
                 <Korean>우린 대공화기 포대를 배치하기 위해 팀을 보낼 것입니다. 하이 커맨드를 사용하여 팀을 목적지로 보내십시오. %1 안에 완료하십시오.</Korean>
                 <French>Nous envoyons une équipe pour établir une position AA. Utilisez HC pour envoyer l'équipe à destination. Faites-le avant %1</French>
@@ -1269,7 +1269,7 @@
             </Key>
             <Key ID="STR_veh_callback_constructions">
                 <Original>Light and heavy fortifications can only be built off roads, in friendly areas.</Original>
-                <Russian>Лёгкие и тяжелые фортификации могут быть построены только вне дорог в дружественных зонах.</Russian>
+                <Russian>Лёгкие и тяжелые фортификации могут быть построены только вне дорог и только в дружественных зонах.</Russian>
                 <Chinesesimp>轻型和重型防御工事只能建在友好地区的公路旁。</Chinesesimp>
                 <Korean>경량과 중량 요새화 진지는 우호적인 지역의 오프로드에서만 건설 가능합니다.</Korean>
                 <French>Les fortifications légères et lourdes ne peuvent être construites qu'en dehors des routes, dans des zones amies.</French>
@@ -1402,7 +1402,7 @@
             </Key>
             <Key ID="STR_comms_mp_loot_heli">
                 <Original>&lt;t size='0.6'&gt;Our loot helicopter and its crew helps us gather the scattered &lt;t size='0.6' color='#660080'&gt;equipment&lt;/t&gt;. They will drop the crate with gathered loot near your position.&lt;/t&gt;</Original>
-                <Russian>&lt;t size='0.6'&gt;вертолёт %1 и его экипаж поможет нам с разбросанной вокруг &lt;t size='0.6' color='#660080'&gt;добычей&lt;/t&gt;. Они бросят ящик с собранной добычей рядом с вашей позицией.&lt;/t&gt;</Russian>
+                <Russian>&lt;t size='0.6'&gt;Вертолёт %1 и его экипаж поможет нам с разбросанной вокруг &lt;t size='0.6' color='#660080'&gt;добычей&lt;/t&gt;. Они бросят ящик с собранной добычей рядом с вашей позицией.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;%1 直升机和它的乘员会帮助我们 &lt;t size='0.6' color='#660080'&gt;loot&lt;/t&gt;. 他们会把装满战利品的板条箱扔到你的位置附近。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1의 헬리콥터와 승무원들이 흩어진 &lt;t size='0.6' color='#660080'&gt;전리품&lt;/t&gt;을 모으기 위해 도와줍니다. 그들은 당신 위치 근처에 모은 전리품과 함께 상자를 떨어뜨릴 것입니다.&lt;/t&gt;</Korean>
                 <French>&lt;t size='0.6'&gt;L'hélicoptère %1 et son équipage nous aident à récupérer &lt;t size='0.6' color='#660080'&gt;le butin&lt;/t&gt;. Ils déposeront la caisse contenant le butin près de votre position.&lt;/t&gt;</French>
@@ -1592,7 +1592,7 @@
             </Key>
             <Key ID="STR_end_mission_factionDefeat_subtitle">
                 <Original>Faction was defeated</Original>
-                <Russian>Фракции нанесли поражение</Russian>
+                <Russian>Фракция была побеждена</Russian>
                 <Chinesesimp>派系被击败</Chinesesimp>
                 <Korean>팩션이 패배해였습니다</Korean>
                 <French>La faction a été vaincue</French>
@@ -1606,7 +1606,7 @@
             </Key>
             <Key ID="STR_end_mission_noJip_title">
                 <Original>Can't startup as PvP</Original>
-                <Russian>Не могу запустить как PvP</Russian>
+                <Russian>Запуск в режиме PvP невозможен</Russian>
                 <Chinesesimp>不能作为PvP启动</Chinesesimp>
                 <Korean>PvP로 시작할 수 없음</Korean>
                 <French>Ne peut pas démarrer en PvP</French>
@@ -1774,7 +1774,7 @@
             </Key>
             <Key ID="STR_end_mission_no_hr_defeat_desc">
                 <Original>You have lost too much manpower, no one is left to fight for the cause.</Original>
-                <Russian>Вы потеряли слишком много живой силы, некому больше бороться за правое дело.</Russian>
+                <Russian>Вы потеряли слишком много живой силы, некому больше бороться за ваше дело.</Russian>
                 <Chinesesimp>你们已经损失了太多人力，已经没有人能够为这个事业而奋斗了。</Chinesesimp>
                 <Korean>너무나 많은 병력을 잃었고, 이 대의를 위해 싸울 사람이 아무도 남지 않았습니다.</Korean>
             </Key>
@@ -1810,9 +1810,9 @@
             </Key>
             <Key ID="STR_end_mission_hardcore_defeat_desc">
                 <Original>You have tried to fight against all odds, but yet you still failed.</Original>
-                <Russian>Вы пытались бороться вопреки всему, но всё равно потерпели неудачу. ГГ ВП</Russian>
-                <Chinesesimp>你尝试克服一切困难，但你仍然失败了。GG WP</Chinesesimp>
-                <Korean>당신은 모든 역경에 맞서 싸우려고 고군분투했지만 여전히 실패했습니다. GG 수고</Korean>
+                <Russian>Вы пытались бороться вопреки всему, но всё равно потерпели неудачу.</Russian>
+                <Chinesesimp>你尝试克服一切困难，但你仍然失败了。</Chinesesimp>
+                <Korean>당신은 모든 역경에 맞서 싸우려고 고군분투했지만 여전히 실패했습니다.</Korean>
             </Key>
         </Container>
         <Container name="markers">
@@ -1883,7 +1883,7 @@
             </Key>
             <Key ID="STR_qrf_marker_aa">
                 <Original>AA</Original>
-                <Russian>самоходный зенитный комплекс</Russian>
+                <Russian>ПВО</Russian>
                 <Chinesesimp>防空</Chinesesimp>
                 <Korean>대공</Korean>
                 <French>AA</French>
@@ -2071,7 +2071,7 @@
             </Key>
             <Key ID="STR_marker_roving_mortar_target">
                 <Original>Roving Mortar Target</Original>
-                <Russian>Цель мобильного миномёта</Russian>
+                <Russian>Цель кочующего миномёта</Russian>
                 <Chinesesimp>机动迫击炮目标</Chinesesimp>
                 <Korean>이동식 박격포 표적</Korean>
                 <French>Cible de mortier mobile</French>
@@ -2496,7 +2496,7 @@
             </Key>
             <Key ID="STR_cut_text_paradrop_notification_1">
                 <Original>&lt;t color='#d3d9df' size='2'&gt; The commander has begun a paradrop insertion at a marked location. You will be moved into the plane in %1 seconds. Press ESCAPE if you don't want to be moved into the airplane. Parachutes will automatically deploy upon jumping from the plane.&lt;/t&gt;</Original>
-                <Russian>&lt;t color='#d3d9df' size='2'&gt;Командир использует десантирование с парашютами на определенную позицию. Вас переместит в самолёт через %1 секунд. Нажмите ESCAPE, если вы не хотите перемещаться в самолёт и остаться на земле. Парашют будет автоматически прикреплен после парашютирования, нет нужды его брать отдельно.&lt;/t&gt;</Russian>
+                <Russian>&lt;t color='#d3d9df' size='2'&gt;Командир инициировал десантирование с парашютами на указанную позицию. Вас переместит в самолёт через %1 секунд. Нажмите ESCAPE, если вы хотите не перемещаться в самолёт, а остаться на земле. Парашют будет автоматически прикреплен во время прыжка, нет нужды его брать отдельно.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#d3d9df' size='2'&gt;指挥官在某些位置使用集体空投。 您将在 %1 秒后进入飞机。 如果您不想进入飞机，请按 ESCAPE ，跳伞时降落伞会自动携带，不需要自己带。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#d3d9df' size='2'&gt;지휘관이 특정 위치에 공수강하 진입을 사용합니다. %1초 후에 비행기로 이동합니다. 비행기 안으로 이동하지 않으려면 ESC를 누르십시오. 낙하산은 비행기에서 점프할 때 자동으로 펼쳐집니다.&lt;/t&gt;</Korean>
                 <French>&lt;t color='#d3d9df' size='2'&gt;Le commandant utilise l'insertion de paradrop à un endroit donné. Vous allez être déplacé dans l'avion dans %1 secondes. Appuyez sur ESCAPE si vous ne voulez pas être déplacé dans l'avion. Les parachutes seront automatiquement appliqués lors du saut de l'avion.&lt;/t&gt;</French>
@@ -2554,14 +2554,14 @@
             </Key>
             <Key ID="STR_hints_membership_header">
                 <Original>Server Membership</Original>
-                <Russian>Участие на сервере</Russian>
+                <Russian>Постоянные участники сервера</Russian>
                 <Chinesesimp>服务器会员</Chinesesimp>
                 <Korean>서버 멤버십</Korean>
                 <French>Membres du serveur</French>
             </Key>
             <Key ID="STR_hints_membership_all">
                 <Original>Membership is enabled but members list is empty. Current players will be added to the member list.</Original>
-                <Russian>Участие включено, но в списке никого нет. Текущие игроки будут добавлены в список участников сервера.</Russian>
+                <Russian>Возможность постоянного участия включена, но в списке никого нет. Текущие игроки будут добавлены в список постоянных участников сервера.</Russian>
                 <Chinesesimp>成员资格已启用，但成员列表为空。 当前玩家将被添加到成员列表中。</Chinesesimp>
                 <Korean>멤버십을 사용할 수 있지만 멤버 목록이 비어 있습니다. 현재 플레이어가 멤버 목록에 추가됩니다.</Korean>
                 <French>L'adhésion est activée mais la liste des membres est vide. Les joueurs actuels seront ajoutés à la liste des membres.</French>
@@ -2680,14 +2680,14 @@
             </Key>
             <Key ID="STR_hints_hc_transfer_header">
                 <Original>High Command Transfer</Original>
-                <Russian>Передача командования (HC)</Russian>
+                <Russian>Передача командования</Russian>
                 <Chinesesimp>高级指挥转移</Chinesesimp>
                 <Korean>하이 커맨드 전송</Korean>
                 <French>Transfert du haut commandement</French>
             </Key>
             <Key ID="STR_hints_hc_transfer_success">
                 <Original>Group %1 has been transfered to your command.&lt;br/&gt;&lt;br/&gt;Groups are managed from the High Command bar (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;</Original>
-                <Russian>Группа %1 была переведена под ваше командование.&lt;br/&gt;&lt;br/&gt;Группами можно управлять через панель командования (HC) (По умолчанию:CTRL+Пробел)&lt;br/&gt;&lt;br/&gt;</Russian>
+                <Russian>Группа %1 была переведена под ваше командование.&lt;br/&gt;&lt;br/&gt;Группами можно управлять в режиме главнокомандующего (Ctrl + Пробел)&lt;br/&gt;&lt;br/&gt;</Russian>
                 <Chinesesimp> %1 组已转移到您的指挥下。&lt;br/&gt;&lt;br/&gt;从高级命令栏管理（默认：CTRL+SPACE）&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
                 <Korean>%1 그룹이 당신 지휘 하에 들어갔습니다.&lt;br/&gt;&lt;br/&gt;그룹은 하이 커맨드 표시줄(기본값: 컨트롤 + 스페이스)에서 관리됩니다.&lt;br/&gt;&lt;br/&gt;</Korean>
                 <French>Le groupe %1 a été transféré sous votre commandement.&lt;br/&gt;&lt;br/&gt;Les groupes sont gérés à partir de la barre de commande supérieure (par défaut : CTRL+ESPACE)&lt;br/&gt;&lt;br/&gt;</French>
@@ -2787,7 +2787,7 @@
             </Key>
             <Key ID="STR_chats_action_revive_no_fak_me">
                 <Original>I'm out of first aid kits and I have no medikit!</Original>
-                <Russian>У меня нет медпакето и нет аптечки!</Russian>
+                <Russian>У меня нет медпакетов и нет аптечки!</Russian>
                 <Chinesesimp>我没有急救包了，也没有医疗箱！</Chinesesimp>
                 <Korean>구급상자도 응급처치도구도 다 떨어졌습니다!</Korean>
                 <French>Je n'ai plus de trousses de premiers secours et je n'ai pas de Medikit !</French>
@@ -2871,7 +2871,7 @@
             </Key>
             <Key ID="STR_chats_autoloot_rearm_in_progress">
                 <Original>I am currently rearming. Cancelling.</Original>
-                <Russian>Я уже перевооружаюсь. Галя, отмена.</Russian>
+                <Russian>Я уже перевооружаюсь. Отмена.</Russian>
                 <Chinesesimp>我正在重新武装，取消。</Chinesesimp>
                 <Korean>현재 재무장 중입니다. 취소합니다.</Korean>
                 <French>Je suis en train de réarmer. Annulation.</French>
@@ -3018,7 +3018,7 @@
             </Key>
             <Key ID="STR_chats_autoloot_vest">
                 <Original>Picking up a vest.</Original>
-                <Russian>Подбираю бронежилет.</Russian>
+                <Russian>Подбираю жилет.</Russian>
                 <Chinesesimp>拿起急救包。</Chinesesimp>
                 <Korean>방탄복을 줍는 중.</Korean>
                 <French>Ramasser un gilet</French>
@@ -3260,7 +3260,7 @@
             </Key>
             <Key ID="STR_notifiers_mortar_crew_killed">
                 <Original>Mortar Support crew killed</Original>
-                <Russian>Экипаж миномёта поддержки учичтожен</Russian>
+                <Russian>Экипаж миномёта поддержки уничтожен</Russian>
                 <Chinesesimp>迫击炮支援人员阵亡</Chinesesimp>
                 <Korean>박격포 지원 사수가 죽었습니다</Korean>
                 <French>L'équipe de soutien du mortier a été tuée</French>
@@ -3386,13 +3386,13 @@
             </Key>
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital">
                 <Original>A %1 orbital QRF just dropped</Original>
-                <Russian>Орбитальный десант %1 приземлились</Russian>
+                <Russian>Орбитальный десант %1 высадился</Russian>
                 <Chinesesimp>%1 轨道快反部队刚刚降落</Chinesesimp>
                 <Korean>%1의 궤도 신속대응군이 방금 착륙했습니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital_marker">
                 <Original>Orbital QRF</Original>
-                <Russian>Орибальный СБР</Russian>
+                <Russian>Орбитальные СБР</Russian>
                 <Chinesesimp>轨道快反部队</Chinesesimp>
                 <Korean>궤도 신속대응군</Korean>
             </Key>
@@ -3405,7 +3405,7 @@
             </Key>
             <Key ID="STR_notifiers_SUP_execute_airstrike_marker">
                 <Original>Airstrike</Original>
-                <Russian>Авиудар</Russian>
+                <Russian>Авиаудар</Russian>
                 <Chinesesimp>空袭</Chinesesimp>
                 <Korean>공습</Korean>
                 <French>Frappe aérienne</French>
@@ -3968,21 +3968,21 @@
             </Key>
             <Key ID="STR_notifiers_roving_mortar_crew_destroyed">
                 <Original>%1's roving mortar destroyed</Original>
-                <Russian>Мобильный миномёт %1 уничтожен</Russian>
+                <Russian>Кочующий миномёт %1 уничтожен</Russian>
                 <Chinesesimp>%1 的机动迫击炮被摧毁</Chinesesimp>
                 <Korean>%1의 이동식 박격포가 파괴되었습니다</Korean>
                 <French>Le mortier mobile de %1 a été détruit</French>
             </Key>
             <Key ID="STR_notifiers_roving_mortar_stolen">
                 <Original>%1's roving mortar has been stolen</Original>
-                <Russian>Мобильный миномёт %1 был украден</Russian>
+                <Russian>Кочующий миномёт %1 был украден</Russian>
                 <Chinesesimp>%1 的机动迫击炮被偷了</Chinesesimp>
                 <Korean>%1의 이동식 박격포가 도난당했습니다</Korean>
                 <French>Le mortier mobile de %1 a été volé</French>
             </Key>
             <Key ID="STR_notifiers_roving_mortar_crew_killed">
                 <Original>%1's roving mortar crew killed</Original>
-                <Russian>Расчёт мобильного миномёта %1 был уничтожен</Russian>
+                <Russian>Расчёт кочующего миномёта %1 был уничтожен</Russian>
                 <Chinesesimp>%1 的迫击炮手阵亡了</Chinesesimp>
                 <Korean>%1의 이동식 박격포 사수가 죽었습니다</Korean>
                 <French>L'équipe de mortiers itinérante de %1 a été tuée</French>
@@ -4417,14 +4417,14 @@
             </Key>
             <Key ID="STR_notifiers_paradrop_no_players_ready">
                 <Original>No players are ready for jump. Make sure that players pressed PARADROP switch button in Game Options menu (TAB key by default or map-on-tripod action).</Original>
-                <Russian>Ни один игрок не готов к прыжку с парашюта. Убедитесь, что игроки нажали кнопку-переключатель ДЕСАНТИРОВАНИЕ в меню параметров игры (клавиша TAB по умолчанию или действие карты на штативе).</Russian>
+                <Russian>Ни один игрок не готов к прыжку с парашютом. Убедитесь, что игроки нажали кнопку-переключатель ДЕСАНТИРОВАНИЕ в меню параметров игры (клавиша TAB по умолчанию или действие карты на треноге).</Russian>
                 <Chinesesimp>没有玩家准备跳跃。 确保玩家按下游戏选项菜单中的 PARADROP 开关按钮（默认 TAB 键）。</Chinesesimp>
                 <Korean>점프할 준비가 된 플레이어가 없습니다. 플레이어가 게임 옵션 메뉴에서 공수강하 버튼을 눌렀는지 확인하십시오.(기본적으로 탭 키 또는 삼각대 지도 행동)</Korean>
                 <French>Aucun joueur n'est prêt à sauter. Assurez-vous que les joueurs ont appuyé sur le bouton PARADROP dans le menu Options du jeu (touche TAB par défaut ou action de la carte sur le trépied).</French>
             </Key>
             <Key ID="STR_notifiers_paradrop_no_players_ready_2">
                 <Original>Players who are ready to jump should be alive, on their feet, not doing anything with vehicles and be at the rebel HQ.</Original>
-                <Russian>Игроки, готовящиеся к прыжку с парашюта, должны быть живы, на ногах, ничего не делать с техникой и находиться в штабе повстанцев.</Russian>
+                <Russian>Игроки, готовящиеся к прыжку с парашютом, должны быть живы, на ногах, ничего не делать с техникой и находиться в штабе повстанцев.</Russian>
                 <Chinesesimp>准备跳伞的玩家必须活着，并且站着，不能在车上，并且在抵抗军总部。</Chinesesimp>
                 <Korean>점프할 준비가 된 플레이어들은 살아 있어야 하고, 발로 서 있어야 하며, 차량으로 아무것도 하지 말아야 하며, 아군 본부에 있어야 합니다.</Korean>
                 <French>Les joueurs prêts à sauter doivent être vivants, debout, ne rien faire avec les véhicules et se trouver au QG des rebelles.</French>
@@ -4749,7 +4749,7 @@
             </Key>
             <Key ID="STR_garrison_error_zone_lost">
                 <Original>%1 group is back to HC control because the zone which was pointed to garrison has been lost.</Original>
-                <Russian>Группа %1 вернулась под контроль командования (HC), т.к. зона, указанная для гарнизона, утрачена.</Russian>
+                <Russian>Группа %1 вернулась в распоряжение главнокомандующего, т.к. зона, указанная для гарнизона, утрачена.</Russian>
                 <Chinesesimp>%1 组返回 HC 控制，因为指向驻军的区域已经丢失。</Chinesesimp>
                 <Korean>%1 그룹은 주둔지로 지정된 구역을 잃었기 때문에 하이 커맨드 통제로 돌아갔습니다.</Korean>
                 <French>Le groupe %1 est revenu sous le contrôle de HC car la zone qui était pointée vers la garnison a été perdue.</French>
@@ -4791,7 +4791,7 @@
             </Key>
             <Key ID="STR_garrison_error_enemies_near">
                 <Original>You can't recruit units into garrison when enemies are near the zone.</Original>
-                <Russian>Вы не можете новых бойцов в гарнизон, когда враги находятся рядом с зоной.</Russian>
+                <Russian>Вы не можете нанимать новых бойцов в гарнизон, когда враги находятся рядом с зоной.</Russian>
                 <Chinesesimp>当敌人靠近该区域时，你不能招募单位进入驻军。</Chinesesimp>
                 <Korean>적이 근처에 있을 때는 주둔지에 유닛을 모집할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas recruter d'unités en garnison lorsque des ennemis se trouvent à proximité de la zone.</French>
@@ -4884,7 +4884,7 @@
             </Key>
             <Key ID="STR_params_server_membership_title">
                 <Original>Enable Server Membership</Original>
-                <Russian>Включить участие на сервере</Russian>
+                <Russian>Включить систему постоянных игроков</Russian>
                 <Chinesesimp>启用服务器成员资格</Chinesesimp>
                 <Korean>서버 멤버십 활성화</Korean>
                 <French>Activer l'appartenance à un serveur</French>
@@ -5129,7 +5129,7 @@
             </Key>
             <Key ID="STR_params_helmetLossSound">
                 <Original>Play sound on helmet loss</Original>
-                <Russian>Звук при потере шлема</Russian>
+                <Russian>Звуковой сигнал при потере шлема</Russian>
                 <Chinesesimp>头盔丢失时发出声音</Chinesesimp>
                 <Korean>헬멧 분실 시 소리 내기</Korean>
                 <French>Faites du bruit en cas de perte de casque</French>
@@ -5323,7 +5323,7 @@
             </Key>
             <Key ID="STR_params_enable_HR_cap">
                 <Original>Enable HR cap</Original>
-                <Russian>Начальные людские ресурсы</Russian>
+                <Russian>Включить ограничение людских ресурсов</Russian>
                 <Chinesesimp>启用人力上限</Chinesesimp>
                 <Korean>인력 한도 활성화</Korean>
             </Key>
@@ -5364,7 +5364,7 @@
             </Key>
             <Key ID="STR_params_enableVehicleAutoLock">
                 <Original>Enable Enemy Vehicle Locks</Original>
-                <Russian>Закрывать замки на вражеских машинах</Russian>
+                <Russian>Активировать замки на вражеских машинах</Russian>
                 <Chinesesimp>启用敌方车辆锁</Chinesesimp>
                 <Korean>적 차량 잠금 장치 활성화</Korean>
                 <French>Activer les verrous des véhicules ennemis</French>
@@ -5378,7 +5378,7 @@
             </Key>
             <Key ID="STR_params_enableVehicleAutoLockCiv">
                 <Original>Enable Civilian Vehicle Locks</Original>
-                <Russian>Включить замки гражданских автомобилей</Russian>
+                <Russian>Активировать замки гражданских автомобилей</Russian>
                 <Chinesesimp>启用民用车辆锁</Chinesesimp>
                 <Korean>민간 차량 잠금장치 활성화</Korean>
                 <French>Activez les verrous des véhicules civils</French>
@@ -5560,10 +5560,12 @@
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle">
                 <Original>Black Market Vehicle Discount</Original>
+                <Russian>Скидка на технику на чёрном рынке</Russian>
                 <Korean>암시장 차량 할인</Korean>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
                 <Original>Black Market Equipment Discount</Original>
+                <Russian>Скидка на оружие и экипировку на чёрном рынке</Russian>
                 <Korean>암시장 장비 할인</Korean>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
@@ -5574,7 +5576,7 @@
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover">
                 <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
-                <Russian>Выключить скрипт для автоматического отбрасываения дымов (помогает с производительностью)</Russian>
+                <Russian>Выключить скрипт для автоматической постановки дымовых завес (помогает с производительностью)</Russian>
                 <Chinesesimp>禁用自动烟雾覆盖脚本（有助于提高性能）</Chinesesimp>
                 <Korean>자동 연막 숨기 스크립트 비활성화 (성능 향상에 도움)</Korean>
             </Key>
@@ -5874,14 +5876,14 @@
             </Key>
             <Key ID="STR_params_crateVestTypeMax">
                 <Original>Maximum Vest Types in Crates</Original>
-                <Russian>Максимальное количество типов бронежилетов в ящиках</Russian>
+                <Russian>Максимальное количество типов жилетов в ящиках</Russian>
                 <Chinesesimp>箱子里的背心类型</Chinesesimp>
                 <Korean>상자의 조끼 최대 유형 갯수</Korean>
                 <French>Types de gilets maximums dans les caisses</French>
             </Key>
             <Key ID="STR_params_crateVestNumMax">
                 <Original>Maximum Vest Quantity in Crates</Original>
-                <Russian>Максимальное количество бронежилетов в ящиках</Russian>
+                <Russian>Максимальное количество жилетов в ящиках</Russian>
                 <Chinesesimp>箱子里的背心数量</Chinesesimp>
                 <Korean>상자의 조끼 최대 수량</Korean>
                 <French>Quantité maximale de gilets dans les caisses</French>
@@ -6022,12 +6024,14 @@
             </Key>
             <Key ID="STR_params_lootCratePrice">
                 <Original>Loot crate price</Original>
+                <Russian>Стоимость ящика-сборщика добычи</Russian>
                 <Korean>전리품 상자 가격</Korean>
                 <French>Prix de la caisse de butin</French>
                 <Chinesesimp>战利品箱价格</Chinesesimp>
             </Key>
             <Key ID="STR_params_lootCrateUnlockedItems">
                 <Original>Loot crate ignores unlocked items</Original>
+                <Russian>Ящика-сборщик добычи игнорирует разблокированные предметы</Russian>
                 <Korean>전리품 상자가 해금된 아이템 무시</Korean>
                 <French>La caisse de butin ignore les objets débloqués</French>
                 <Chinesesimp>战利品箱忽略已解锁的物品</Chinesesimp>
@@ -6041,7 +6045,7 @@
             </Key>
             <Key ID="STR_params_distanceMission">
                 <Original>Mission Distance</Original>
-                <Russian>Максимальная расстояние для миссий</Russian>
+                <Russian>Максимальное расстояние для миссий</Russian>
                 <Chinesesimp>任务距离</Chinesesimp>
                 <Korean>임무 거리</Korean>
                 <French>Distance de la mission</French>
@@ -6090,7 +6094,7 @@
             </Key>
             <Key ID="STR_params_guestCommander">
                 <Original>Allow guests to become commander when no members are eligible</Original>
-                <Russian>Позволить гостям становиться Командирами, когда отсутствуют участники сервера</Russian>
+                <Russian>Позволить гостям становиться Командирами, когда отсутствуют постоянные участники сервера</Russian>
                 <Chinesesimp>允许客人在没有成员符合条件时成为指挥官</Chinesesimp>
                 <Korean>자격이 있는 멤버가 없을 때 게스트가 지휘관이 될 수 있도록 허용</Korean>
                 <French>Permettre aux invités de devenir commandant lorsqu'aucun membre n'est éligible</French>
@@ -6104,7 +6108,7 @@
             </Key>
             <Key ID="STR_params_memberSlots">
                 <Original>Percentage of Reserved Slots for Members</Original>
-                <Russian>Количество зарезервированных слотов для участников сервера</Russian>
+                <Russian>Количество зарезервированных слотов для постоянных участников сервера</Russian>
                 <Chinesesimp>会员预留名额百分比</Chinesesimp>
                 <Korean>멤버를 위한 예비 슬롯 백분율</Korean>
                 <French>Pourcentage de créneaux réservés aux membres</French>
@@ -6118,7 +6122,7 @@
             </Key>
             <Key ID="STR_params_max_distance_to_member_hq">
                 <Original>Max distance of guests from the closest member or HQ (in kilometers)</Original>
-                <Russian>Макс. расстояние от гостей до ближайшего участника сервера (в километрах)</Russian>
+                <Russian>Макс. расстояние от гостей до ближайшего постоянного участника сервера (в километрах)</Russian>
                 <Chinesesimp>游客与最近的成员或HQ的最大距离（以公里为单位）</Chinesesimp>
                 <Korean>가장 가까운 멤버 또는 본부로부터의 최대 게스트 거리 (km)</Korean>
                 <French>Distance maximale des invités par rapport au membre ou au siège le plus proche (en kilomètres)</French>
@@ -6401,21 +6405,21 @@
             </Key>
             <Key ID="STR_params_crateParams">
                 <Original>LOOT CRATE OPTIONS</Original>
-                <Russian>НАСТРОЙКИ ЯЩИКОВ ДЛЯ СБОРА ДОБЫЧИ</Russian>
+                <Russian>НАСТРОЙКИ ЯЩИКОВ С ТРОФЕЯМИ</Russian>
                 <Chinesesimp>战利品箱选项</Chinesesimp>
                 <Korean>전리품 상자 옵션</Korean>
                 <French>OPTIONS DE CAISSE À BUTIN</French>
             </Key>
             <Key ID="STR_params_vehicleLootParams">
                 <Original>VEHICLE LOOT OPTIONS</Original>
-                <Russian>НАСТРОЙКИ ТРАНСПОРТНЫХ СРЕДСТВ ДЛЯ СБОРА ДОБЫЧИ</Russian>
+                <Russian>НАСТРОЙКИ ТРОФЕЙНОЙ ТЕХНИКИ</Russian>
                 <Chinesesimp>车辆战利品选项</Chinesesimp>
                 <Korean>전차 전리품 옵션</Korean>
                 <French>OPTIONS DE BUTIN DE VÉHICULE</French>
             </Key>
             <Key ID="STR_params_miscLootParams">
                 <Original>MISC LOOT OPTIONS</Original>
-                <Russian>ОСТАЛЬНЫЕ НАСТРОЙКИ ДОБЫЧИ</Russian>
+                <Russian>ОСТАЛЬНЫЕ НАСТРОЙКИ</Russian>
                 <Chinesesimp>杂项战利品选项</Chinesesimp>
                 <Korean>기타 전리품 옵션</Korean>
                 <French>DIVERSES OPTIONS DE BUTIN</French>
@@ -6436,7 +6440,7 @@
             </Key>
             <Key ID="STR_params_member">
                 <Original>MEMBER OPTIONS</Original>
-                <Russian>НАСТРОЙКИ УЧАСТНИКОВ</Russian>
+                <Russian>НАСТРОЙКИ ПОСТОЯННЫХ УЧАСТНИКОВ</Russian>
                 <Chinesesimp>会员选项</Chinesesimp>
                 <Korean>회원 옵션</Korean>
                 <French>OPTIONS POUR LES MEMBRES</French>
@@ -6508,7 +6512,7 @@
             </Key>
             <Key ID="STR_role_grenadier">
                 <Original>You have selected a Grenadier role.&lt;br/&gt;&lt;br/&gt;Grenadiers have a slight bonus on carry capacity, but are easy to spot.</Original>
-                <Russian>Вы выбрали роль гранатомётчика.&lt;br/&gt;&lt;br/&gt;Гранатомётчик имеет небольшой бонус к переносимому весу, но является более заметным.</Russian>
+                <Russian>Вы выбрали роль гренадёра.&lt;br/&gt;&lt;br/&gt;Гренадёр имеет небольшой бонус к переносимому весу, но является более заметным.</Russian>
                 <Chinesesimp>您选择了掷弹兵角色。&lt;br/&gt;&lt;br/&gt;掷弹兵在携带能力上有轻微的加成，但很容易被发现。</Chinesesimp>
                 <Korean>당신은 유탄수 역할을 선택했습니다.&lt;br/&gt;&lt;br/&gt;유탄수는 운반 용량에 약간의 보너스가 주어지지만 발견되기 쉽습니다.</Korean>
             </Key>
@@ -6774,14 +6778,14 @@
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_bad_medic_1">
                 <Original>You can't stay undercover while healing a compromised resistance member!</Original>
-                <Russian>Вы не можете оставаться под прикрытием во время лечения скомпрометированного участника сопротивления!</Russian>
+                <Russian>Вы не можете оставаться под прикрытием во время лечения скомпрометированного повстанца!</Russian>
                 <Chinesesimp>你不能一边伪装一边治疗一个受伤的反抗军成员！</Chinesesimp>
                 <Korean>당신은 위험에 처한 저항군을 치료하는 동안 위장 상태에 있을 수 없습니다!</Korean>
                 <French>Vous ne pouvez pas rester en état d'infiltration tout en soignant un membre de la résistance compromis!</French>
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_bad_medic_2">
                 <Original>You can't stay Undercover while healing a compromised resistance member&lt;br/&gt;The enemy added you to Wanted List!</Original>
-                <Russian>Вы не можете оставаться под прикрытием во время лечения скомпрометированного участника сопротивления!&lt;br/&gt;Враг добавил вас в список разыскиваемых лиц!</Russian>
+                <Russian>Вы не можете оставаться под прикрытием во время лечения скомпрометированного повстанца!&lt;br/&gt;Враг добавил вас в список разыскиваемых лиц!</Russian>
                 <Chinesesimp>你不能一边伪装一边治疗一个受伤的反抗军成员！&lt;br/&gt;敌人已将你加入通缉名单！</Chinesesimp>
                 <Korean>당신은 위험에 처한 저항군을 치료하는 동안 위장 상태에 있을 수 없습니다&lt;br/&gt;적군이 당신을 수배자 목록에 추가했습니다!</Korean>
                 <French>Vous ne pouvez pas rester sous couverture tout en soignant un membre de la résistance compromis&lt;br/&gt;L'ennemi vous a ajouté à la liste des personnes recherchées!</French>
@@ -7046,7 +7050,7 @@
             </Key>
             <Key ID="STR_dialogs_RP_enemies_near_fail">
                 <Original>You can't establish rally point when enemies are surrounding you.</Original>
-                <Russian>Не получится установить точку сбору, пока рядом с вами враги.</Russian>
+                <Russian>Не получится установить точку сбора, пока рядом с вами враги.</Russian>
                 <Chinesesimp>当你附近有敌人时，你将无法设置集结点。</Chinesesimp>
                 <Korean>적들이 당신을 포위하고 있을 때는 집결 지점을 만들 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas établir un point de ralliement lorsque des ennemis vous encerclent.</French>
@@ -7148,7 +7152,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_grenadier_title">
                 <Original>Grenadier</Original>
-                <Russian>Стрелок-гранатомётчик</Russian>
+                <Russian>Гренадёр</Russian>
                 <Chinesesimp>掷弹兵</Chinesesimp>
                 <Korean>유탄수</Korean>
                 <French>Grenadier</French>
@@ -7162,7 +7166,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_lat_title">
                 <Original>Light AT</Original>
-                <Russian>ПТ гранатомётчик</Russian>
+                <Russian>Стрелок (ПТ)</Russian>
                 <Chinesesimp>AT兵</Chinesesimp>
                 <Korean>대전차병</Korean>
                 <French>AT léger</French>
@@ -7255,28 +7259,28 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_add_server_member_title">
                 <Original>Add Server Member</Original>
-                <Russian>Добавить участника сервера</Russian>
+                <Russian>Добавить постоянного участника сервера</Russian>
                 <Chinesesimp>添加服务器成员</Chinesesimp>
                 <Korean>서버 멤버 추가</Korean>
                 <French>Ajouter un membre du serveur</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_add_server_member_tooltip">
                 <Original>Use this option to add the player you are currently looking at to the members list.</Original>
-                <Russian>Используйте эту опцию для добавления игрока, на которого вы в текущий момент смотрите, в список участников сервера.</Russian>
+                <Russian>Используйте эту опцию для добавления игрока, на которого вы в текущий момент смотрите, в список постоянных участников сервера.</Russian>
                 <Chinesesimp>使用此选项将您当前看的玩家添加到服务器成员列表中。</Chinesesimp>
                 <Korean>현재 보고 있는 플레이어를 멤버 목록에 추가하려면 이 옵션을 사용하십시오.</Korean>
                 <French>Utilisez cette option pour ajouter le joueur que vous êtes en train de regarder à la liste des membres du serveur.</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_remove_server_member_title">
                 <Original>Remove Server Member</Original>
-                <Russian>Удалить участника сервера</Russian>
+                <Russian>Удалить постоянного участника сервера из списка</Russian>
                 <Chinesesimp>移除服务器成员</Chinesesimp>
                 <Korean>서버 멤버 제거</Korean>
                 <French>Supprimer un membre du serveur</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_remove_server_member_tooltip">
                 <Original>Use this option to remove the player you are currently looking at from the members list.</Original>
-                <Russian>Используйте эту опцию для удаления игрока, на которого вы в текущий момент смотрите, из списка участников сервера.</Russian>
+                <Russian>Используйте эту опцию для удаления игрока, на которого вы в текущий момент смотрите, из списка постоянных участников сервера.</Russian>
                 <Chinesesimp>使用此选项从服务器成员列表中删除您当前正在看的玩家。</Chinesesimp>
                 <Korean>현재 보고 있는 플레이어를 멤버 목록에 제거하려면 이 옵션을 사용하십시오.</Korean>
                 <French>Utilisez cette option pour supprimer le joueur que vous êtes en train de regarder de la liste des membres.</French>
@@ -7458,7 +7462,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_fast_travel_tooltip">
                 <Original>Teleport you and/or your squad or a HC selected squad to a friendly zone depending on several factors.</Original>
-                <Russian>Телепортируйте себя и/или свой отряд или отряд, выбранный через панель командования (HC), в дружественную зону в зависимости от нескольких факторов.</Russian>
+                <Russian>Телепортируйте себя и/или свой отряд или отряд, выбранный в режиме главнокомандующего, в дружественную зону в зависимости от нескольких факторов.</Russian>
                 <Chinesesimp>根据你的选择，传送你或你的小队或指挥部所选择的小队到友好区域。</Chinesesimp>
                 <Korean>몇 가지 요소에 따라 당신과 당신의 분대 또는 하이 커맨드가 선택한 분대를 우호 지역으로 순간이동시킵니다.</Korean>
                 <French>Téléportez vous et/ou votre escouade ou une escouade sélectionnée par HC vers une zone amie en fonction de plusieurs facteurs.</French>
@@ -7707,14 +7711,14 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_success">
                 <Original>Group %1 at your command.&lt;br/&gt;&lt;br/&gt;Groups are managed from the High Command bar (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;If the group gets stuck, use the AI Control feature to make them start moving. Mounted Static teams tend to get stuck (solving this is WiP)&lt;br/&gt;&lt;br/&gt;To assign a vehicle for this group, look at some vehicle, and use Vehicle Squad Mngmt option in Y menu.</Original>
-                <Russian>Отряд %1 теперь под вашим командованием.&lt;br/&gt;&lt;br/&gt;Отрядами можно управлять из панели командования (HC) (По умолчанию:CTRL+Пробел).&lt;br/&gt;&lt;br/&gt;Если отряд застрял где-либо, используйте функцию прямого управления, чтобы освободить их и заставить двигаться дальше.&lt;br/&gt;&lt;br/&gt;Чтобы назначить технику конкретному отряду, посмотрите на технику, затем воспользуйтесь соответствующей опцией в Y-меню.</Russian>
+                <Russian>Отряд %1 теперь под вашим командованием.&lt;br/&gt;&lt;br/&gt;Отрядами можно управлять в режиме главнокомандующего (Ctrl + Пробел).&lt;br/&gt;&lt;br/&gt;Если отряд застрял где-либо, используйте функцию прямого управления, чтобы освободить их и заставить двигаться дальше.&lt;br/&gt;&lt;br/&gt;Чтобы назначить технику конкретному отряду, посмотрите на технику, затем воспользуйтесь соответствующей опцией в меню (Y).</Russian>
                 <Chinesesimp>第 %1 组听您指挥。&lt;br/&gt;&lt;br/&gt;如果小组卡住了，使用 AI 控制功能让他们开始移动。&lt;br/&gt;&lt;br/&gt;如果AI小组卡住了，使用 AI 控制功能让他们开始移动。已部署不动的小队经常会有这个问题。(解决这个问题的方法是 WiP)&lt;br/&gt;&lt;br/&gt;如果要给这个小组分配一辆载具，看着一辆载具，对它按 Y 在菜单中使用 分配小队车辆 。</Chinesesimp>
                 <Korean>%1 그룹은 이제 당신 휘하입니다.&lt;br/&gt;&lt;br/&gt;그룹은 하이 커맨드 표시줄(기본값: 컨트롤 + 스페이스)에서 관리할 수 있습니다.&lt;br/&gt;&lt;br/&gt;그룹이 끼었다면 인공지능 조종 기능을 사용하여 옮기십시오. 고정화기 팀이 끼이는 경향이 있습니다(현재 이 문제를 해결 중입니다).&lt;br/&gt;&lt;br/&gt;이 그룹에 차량을 할당하려면 차랑을 보고 Y 메뉴의 차량 분대 관리 설정을 사용하십시오.</Korean>
                 <French>Les escouades sont gérés à partir de la barre de commande supérieure (par défaut : CTRL+Espace).&lt;br/&gt;&lt;br/&gt;Si une escouade est bloqué, utilisez la fonction de contrôle de l'IA pour qu'il se mette en mouvement. Les équipes statiques montées ont tendance à rester bloquées (résoudre ce problème est WiP).&lt;br/&gt;&lt;br/&gt;Pour assigner un véhicule à ce groupe, utilisez les paramètres de gestion de l'escouade de véhicules dans le menu Y.</French>
             </Key>
             <Key ID="STR_antistasi_dialogs_add_recruit_squad_tooltip">
                 <Original>Recruit new squads and manage them with the HC Module (CTRL + SPACE).</Original>
-                <Russian>Нанимайте новые отряды и управляйте ими через панель командования (HC) (CTRL + SPACE).</Russian>
+                <Russian>Нанимайте новые отряды и управляйте ими в режиме главнокомандующего (Ctrl + Пробел).</Russian>
                 <Chinesesimp>招募新小队并使用 HC 模块（CTRL + SPACE）管理他们。</Chinesesimp>
                 <Korean>새 분대를 모집하고 하이 커맨드 모듈(컨트롤 + 스페이스)로 관리합니다.</Korean>
                 <French>Recrutez de nouvelles escouades et gérez-les avec le module HC (CTRL + ESPACE).</French>
@@ -7742,7 +7746,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_share_faction_money_tooltip">
                 <Original>Shares faction money between server members.</Original>
-                <Russian>Распределяет деньги фракции между участниками сервера.</Russian>
+                <Russian>Распределяет деньги фракции между постоянными участниками сервера.</Russian>
                 <Chinesesimp>服务器成员之间分享派系金钱。</Chinesesimp>
                 <Korean>서버 멤버 간에 팩션 자금을 공유합니다.</Korean>
                 <French>Partage de l'argent des factions entre les membres du serveur.</French>
@@ -8440,14 +8444,14 @@
             </Key>
             <Key ID="STR_commander_menu_server_members_header">
                 <Original>Server Members</Original>
-                <Russian>Участники сервера</Russian>
+                <Russian>Постоянные участники сервера</Russian>
                 <Chinesesimp>服务器成员</Chinesesimp>
                 <Korean>서버 멤버</Korean>
                 <French>Membres du serveur</French>
             </Key>
             <Key ID="STR_commander_menu_server_members_disabled">
                 <Original>Server Members feature is disabled.</Original>
-                <Russian>Функция участников сервера отключена.</Russian>
+                <Russian>Функция постоянных участников сервера отключена.</Russian>
                 <Chinesesimp>服务器会员功能被禁用</Chinesesimp>
                 <Korean>서버 멤버 기능을 사용할 수 없습니다.</Korean>
                 <French>La fonction Membres du serveur est désactivée.</French>
@@ -8739,7 +8743,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_arty_high_command_transfer_tooltip">
                 <Original>Transfers your current AI squadmates to High Command, allows them to be used by commander as separate squad.</Original>
-                <Russian>Передаёт ИИ-бойцов из вашего отряда в панель командования (HC), позволяя их использовать как отдельный отряд.</Russian>
+                <Russian>Передаёт ИИ-бойцов из вашего отряда в подчинение главнокомандующего, позволяя их использовать как отдельный отряд.</Russian>
                 <Chinesesimp>将 AI 士兵从你的小队传递到高级指挥菜单，允许他们作为一个单独的小队使用。</Chinesesimp>
                 <Korean>현재 인공지능 분대원을 하이 커맨드로 이동하여 지휘관이 별도의 분대로 사용할 수 있도록 합니다.</Korean>
                 <French>Transfère vos coéquipiers IA actuels vers le Haut Commandement, leur permettant d'être utilisés par le commandant en tant qu'escouade séparée.</French>
@@ -8960,7 +8964,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_container_vest">
                 <Original>Vest</Original>
-                <Russian>Бронежилет</Russian>
+                <Russian>Жилет</Russian>
                 <Chinesesimp>背心</Chinesesimp>
                 <Korean>조끼</Korean>
                 <French>Gilet</French>
@@ -9326,7 +9330,7 @@
             </Key>
             <Key ID="STR_rivals_intel_first_task">
                 <Original>Our communications have been compromised by an unknown signal all across %1, it's everywhere. We deciphered the signal's content, it contains a message to us. It's an unknown faction manifesto - they're calling themselves &lt;t color='#800000'&gt;%2&lt;/t&gt;, they're well armed and prepared, and their leader, %3, has declared war on us.</Original>
-                <Russian>Наша связь была скомпрометирована неизвестным сигналом везде в %1. Мы расшифровали содержание сигнала, в нем есть сообщение для нас. Это манифест неизвестной фракции - они называют себя &lt;t color='#800000'&gt;%2&lt;/t&gt;, они хорошо вооружены и подготовлены, а их лидер, %3, объявил нам войну.</Russian>
+                <Russian>Наша связь была скомпрометирована неизвестным сигналом по всему региону. Мы расшифровали содержание сигнала, в нем есть сообщение для нас. Это манифест неизвестной фракции - они называют себя &lt;t color='#800000'&gt;%2&lt;/t&gt;, они хорошо вооружены и подготовлены, а их лидер, %3, объявил нам войну.</Russian>
                 <Chinesesimp>我们的通信已被整个 %1 的未知信号所覆盖。 我们破译了信号的内容，它包含给我们的信息。 这是一个未知的派系宣言 - 他们称自己为&lt;t color='#800000'&gt;%2&lt;/t&gt;, 他们全副武装且准备充分，他们的领导人 %3 已向我们宣战。</Chinesesimp>
                 <Korean>%1의 모든 지역에서 알 수 없는 신호에 의해 손상되었으며 현재 모든 곳에서 발견되었습니다. 우린 신호 내용을 해독했고, 그건 바로 우리에게 보내는 메시지였습니다. 그들은 스스로를 &lt;t color='#800000'&gt;%2&lt;/t&gt;(이)라고 부르는 미확인 팩션을 선언하는 것이었고, 그들은 잘 무장하고 준비되어 있으며, 그들의 지도자인 %3이(가) 우리에게 선전포고를 했습니다.</Korean>
                 <French>Nos communications ont été compromises par un signal inconnu à travers tout le %1, il est partout maintenant. Nous avons déchiffré le contenu du signal, il contient un message pour nous. C'est un manifeste d'une faction inconnue - ils se nomment eux-mêmes &lt;t color='#800000'&gt;%2&lt;/t&gt;, ils sont bien armés et préparés, et leur chef, %3, nous a déclaré la guerre.</French>
@@ -9593,7 +9597,7 @@
             </Key>
             <Key ID="STR_intel_discount">
                 <Original>We have found some information about undiscovered hidden smuggler routes and gave them to Arms Dealer. In return, he paid us for information and increased discount by %1 percent for any item in his store.</Original>
-                <Russian>Мы нашли ценные разведданные о подпольной сети контрабандистов, их маршрутах. Мы отдали эти данные Оружейному Торговцу. Взамен он заплатил нам за информацию и увеличил перманентную скидку на %1 процент(ов) на всё оружие в его асортименте.</Russian>
+                <Russian>Мы нашли ценные разведданные о подпольной сети контрабандистов, их маршрутах. Мы отдали эти данные Оружейному Торговцу. Взамен он заплатил нам за информацию и увеличил перманентную скидку на %1 процент(ов) на всё оружие в его ассортименте.</Russian>
                 <Chinesesimp>我们找到了一些关于未被发现的走私者隐藏路线的情报，并将其提供给了军火商。 作为回报，他向我们支付情报费用，并为他的军火商商店中的任何商品增加 %1% 的折扣。</Chinesesimp>
                 <Korean>우린 발견되지 않은 숨겨진 밀수 경로에 대한 정보를 발견했고 그것들을 암거래상에게 주었습니다. 그 대가로, 그는 우리에게 정보에 대한 대가를 지불했고 암거래 시장에 있는 모든 아이템에 대해 %1퍼센트의 할인을 받았습니다.</Korean>
                 <French>Nous avons trouvé des informations sur des routes de contrebande cachées et nous les avons données au marchand d'armes. En retour, il nous a payé pour les informations et a augmenté la remise de %1 pour cent pour n'importe quel article dans son magasin de vente d'armes.</French>
@@ -9614,14 +9618,14 @@
             </Key>
             <Key ID="STR_intel_convoy_route">
                 <Original>We found some information about a possible convoy route from the %1 to the %2. The route has been marked on map. We can prepare an ambush for it.</Original>
-                <Russian>У нас есть информация о возможном маршуте конвоя из %1 в %2. Мы можем подготовить засаду на него. Маршрут отмечен на карте.</Russian>
+                <Russian>У нас есть информация о возможном маршруте конвоя из %1 в %2. Мы можем подготовить засаду на него. Маршрут отмечен на карте.</Russian>
                 <Chinesesimp>我们找到了可能会有从 %1 到 %2 的护航车队路线图。 我们可以准备埋伏。 路线在地图上有标注。</Chinesesimp>
                 <Korean>%1에서 %2까지의 가능한 호송 경로에 대한 정보를 찾았습니다. 경로가 지도에 표시되었습니다. 그 곳에 매복을 준비할 수 있습니다.</Korean>
                 <French>Nous avons trouvé des informations sur l'itinéraire possible d'un convoi de %1 à %2. L'itinéraire a été marqué sur la carte. Nous pouvons préparer une embuscade.</French>
             </Key>
             <Key ID="STR_intel_convoy_route_outdated">
                 <Original>We found some outdated information about possible convoy routes on %1. We sold it on the black market for a small amount of cash.</Original>
-                <Russian>Мы нашли информацию информацию о возможном маршуте конвоя на %1, но, к сожалению, она устарела. Мы продали информацию на чёрном рынке за бесценок.</Russian>
+                <Russian>Мы нашли информацию информацию о возможном маршруте конвоя на %1, но, к сожалению, она устарела. Мы продали информацию на чёрном рынке за бесценок.</Russian>
                 <Chinesesimp>我们发现了一些关于 %1 上可能的车队路线过时信息。 我们在黑市上以微薄的价格出售了它。</Chinesesimp>
                 <Korean>%1에서 가능한 호송 경로에 대한 오래된 정보를 발견했습니다. 우린 그것을 암시장에 헐값에 팔았습니다.</Korean>
                 <French>Nous avons trouvé des informations obsolètes sur les itinéraires possibles des convois sur %1. Nous les avons vendues au marché noir pour une somme minuscule.</French>
@@ -10393,7 +10397,7 @@
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_header_repair">
                 <Original>Intercept repair vehicle.</Original>
-                <Russian>Перехватите ремонтную машину.</Russian>
+                <Russian>Перехватите ремонтную технику.</Russian>
                 <French>Interceptez le véhicule de réparation.</French>
                 <German>Reparaturfahrzeug abfangen.</German>
                 <Italian>Intercetta il veicolo di riparazione.</Italian>
@@ -10745,7 +10749,7 @@
             </Key>
             <Key ID="STR_A3A_Missions_RES_Shipwreck_task_desc">
                 <Original>A smuggler's ship has crashed in %1. We must rescue any survivors before %2. Bring them to HQ.</Original>
-                <Russian>Корабль контрабандистов потерпел крушение in %1. We must rescue survivors before %2. Bring them to HQ.</Russian>
+                <Russian>Корабль контрабандистов потерпел крушение in %1. Мы должны успеть спасти выживших до %2. Привезите их в штаб.</Russian>
                 <Chinesesimp>走私者的船在 %1 坠毁。 我们必须在 %2 之前营救幸存者。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 밀수업자의 배가 난파되었습니다. %2 이전에 생존자를 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
                 <French>Le vaisseau d'un contrebandier s'est écrasé à %1. Nous devons sauver les survivants avant %2. Amenez-les au QG.</French>
@@ -11778,7 +11782,7 @@
             </Key>
             <Key ID="STR_reveal_text">
                 <Original>Tell me where your comrades are!</Original>
-                <Russian>Скажи мне, где твои товарищи?</Russian>
+                <Russian>Говори, где твои товарищи!</Russian>
                 <Chinesesimp>告诉我，你的战友们在哪里！</Chinesesimp>
                 <Korean>네놈의 동지들이 어딨는지 불어!</Korean>
                 <French>Dites-moi où sont vos camarades !</French>
@@ -12441,7 +12445,7 @@
             </Key>
             <Key ID="STR_rivals_activity_roving_mortar_description">
                 <Original>&lt;t color='#800000'&gt;%1&lt;/t&gt; is setting up roving mortar nearby our positions!</Original>
-                <Russian>&lt;t color='#800000'&gt;%1&lt;/t&gt; разворачивают мобильный миномёт неподалёку от нас!</Russian>
+                <Russian>&lt;t color='#800000'&gt;%1&lt;/t&gt; разворачивают кочующий миномёт неподалёку от нас!</Russian>
                 <Chinesesimp>&lt;t color='#800000'&gt;%1&lt;/t&gt; 在离我们不远的地方部署一个机动迫击炮！</Chinesesimp>
                 <Korean>&lt;t color='#800000'&gt;%1&lt;/t&gt;이(가) 우리 위치 근처에 이동식 박격포를 설치하고 있습니다!</Korean>
                 <French>&lt;t color='#800000'&gt;%1&lt;/t&gt; met en place des mortiers itinérants à proximité de nos positions !</French>
@@ -12545,7 +12549,7 @@
             </Key>
             <Key ID="STR_A3A_cityinfo_general_info">
                 <Original>%7&lt;br/&gt;&lt;br/&gt;Total Population: %1&lt;br/&gt;%6 Support: %2&lt;br/&gt;%5 Support: %3 &lt;br/&gt;&lt;br/&gt;Murdered Population: %4&lt;br/&gt;&lt;br/&gt;Click on the zone</Original>
-                <Russian>%7&lt;br/&gt;&lt;br/&gt;Общее население: %1&lt;br/&gt;Поддержка %6: %2&lt;br/&gt;Поддержка %5: %3 &lt;br/&gt;&lt;br/&gt;Убитое население: %4&lt;br/&gt;&lt;br/&gt;Выберите локацию</Russian>
+                <Russian>%7&lt;br/&gt;&lt;br/&gt;Общее население: %1&lt;br/&gt;Поддержка %6: %2&lt;br/&gt;Поддержка %5: %3 &lt;br/&gt;&lt;br/&gt;Убитое население: %4&lt;br/&gt;&lt;br/&gt;Нажмите на локацию</Russian>
                 <Chinesesimp>%7&lt;br/&gt;&lt;br/&gt;总人口: %1&lt;br/&gt;%6 支持率: %2&lt;br/&gt;%5 支持率: %3 &lt;br/&gt;&lt;br/&gt;被杀人口: %4&lt;br/&gt;&lt;br/&gt;点击任意位置</Chinesesimp>
                 <Korean>%7&lt;br/&gt;&lt;br/&gt;총 인구: %1&lt;br/&gt;%6 지지: %2&lt;br/&gt;%5 지지: %3 &lt;br/&gt;&lt;br/&gt;살해된 인구: %4&lt;br/&gt;&lt;br/&gt;구역을 클릭하십시오</Korean>
                 <French>%7&lt;br/&gt;&lt;br/&gt;Population totale: %1&lt;br/&gt;%6 Soutien: %2&lt;br/&gt;%5 Soutien: %3 &lt;br/&gt;&lt;br/&gt;Population assassinée: %4&lt;br/&gt;&lt;br/&gt;Cliquez sur la zone</French>
@@ -12783,7 +12787,7 @@
             </Key>
             <Key ID="STR_A3A_initClient_server_admin">
                 <Original>You are not in the members list, but as you are Server Admin, you have been added. Welcome!</Original>
-                <Russian>Вы не в списке участников сервера, но, так как вы являетесь администратором сервера, вас добавили в него. Добро пожаловать!</Russian>
+                <Russian>Вы не в списке постоянных участников сервера, но, так как вы являетесь администратором сервера, вас добавили в него. Добро пожаловать!</Russian>
                 <Chinesesimp>您不在会员列表中，但由于您是Server Admin，所以您已被添加。 欢迎光临！</Chinesesimp>
                 <Korean>당신은 멤버 목록에 없지만 서버 관리자이므로 추가되었습니다. 환영합니다!</Korean>
                 <French>Vous n'êtes pas dans la liste des membres, mais comme vous êtes Server Admin, vous avez été ajouté. Bienvenue!</French>
@@ -13269,7 +13273,7 @@
             </Key>
             <Key ID="STR_A3A_ai_artySupport_must_select_2">
                 <Original>You must select an artillery group or it is a Mobile Mortar and it's moving.</Original>
-                <Russian>Вы должны выбрать артиллерийскую группу или это должен быть мобильный миномёт и он должен двигаться.</Russian>
+                <Russian>Вы должны выбрать артиллерийскую группу или это должен быть кочующий миномёт, и он должен двигаться.</Russian>
                 <Chinesesimp>你必须选择一个炮兵小队，否则它是移动迫击炮并且它正在移动。</Chinesesimp>
                 <Korean>포병 그룹을 선택하거나 이동하는 이동식 박격포를 선택해야 합니다.</Korean>
                 <French>Vous devez sélectionner un groupe d'artillerie ou un mortier mobile qui se déplace.</French>
@@ -13499,7 +13503,7 @@
             </Key>
             <Key ID="STR_A3A_reinf_vehStat_one_group">
                 <Original>You must select only one group on the HC bar.</Original>
-                <Russian>Вы должны выбрать только одну группу на панели командования (HC).</Russian>
+                <Russian>Вы должны выбрать только одну группу в режиме главнокомандующего.</Russian>
                 <Chinesesimp>您只能在高级指挥面板中选择一个小队。</Chinesesimp>
                 <Korean>하이 커맨드 표시줄에서 그룹을 하나만 선택해야 합니다.</Korean>
                 <French>Vous ne devez sélectionner qu'un seul groupe dans la barre HC.</French>
@@ -13632,7 +13636,7 @@
             </Key>
             <Key ID="STR_A3A_reinf_reinfPlayer_only_members">
                 <Original>Only Server Members can recruit AI units.</Original>
-                <Russian>Только участники сервера могут нанимать ИИ-бойцов.</Russian>
+                <Russian>Только постоянные участники сервера могут нанимать ИИ-бойцов.</Russian>
                 <Chinesesimp>只有服务器会员才能招募AI单位。</Chinesesimp>
                 <Korean>서버 멤버만 인공지능을 모집할 수 있습니다.</Korean>
                 <French>Seuls les membres du serveur peuvent recruter des unités d'IA.</French>
@@ -13758,7 +13762,7 @@
             </Key>
             <Key ID="STR_A3A_reinf_control_squad_only_commander">
                 <Original>Only the commander has the ability to control HC units.</Original>
-                <Russian>Только Командир имеет возможность контролировать отряды через панель командования (HC).</Russian>
+                <Russian>Только Командир имеет возможность контролировать отряды в режиме главнокомандующего.</Russian>
                 <Chinesesimp>只有指挥官才有能力控制HC单位。</Chinesesimp>
                 <Korean>지휘관만이 하이 커맨드 유닛을 통제할 수 있습니다.</Korean>
                 <French>Seul le commandant a la capacité de contrôler les unités HC.</French>
@@ -13807,7 +13811,7 @@
             </Key>
             <Key ID="STR_A3A_reinf_minefield_task_desc">
                 <Original>An Engineer Team has been deployed under your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.</Original>
-                <Russian>Отряд инженеров был развернут, вы можете управлять им через панель командования (HC). Когда они доедут до отмеченной позиции, они начнут раскладывать %1 мины в этой зоне. Прикройте их, пока они это делают.</Russian>
+                <Russian>Отряд инженеров был развернут, вы можете управлять им в режиме главнокомандующего. Когда они доедут до отмеченной позиции, они начнут устанавливать %1 мины в этой зоне. Прикрывайте их, пока они это делают.</Russian>
                 <Chinesesimp>一个工程师团队已经部署在你的命令与高级指挥选项。一旦他们到达目的地，他们将开始在该地区部署%1地雷。同时掩护他们。</Chinesesimp>
                 <Korean>하이 커맨드 설정을 사용하여 공병 팀이 당신의 명령에 따라 배치되었습니다. 그들이 위치에 도달하면 해당 지역에 %1 지뢰를 배치하기 시작할 것입니다. 그 동안 그들을 엄호하십시오.</Korean>
                 <French>Une escouade d'ingénieurs a été déployée sous votre commandement (menu Haut Commandement). Lorsqu'ils atteindront la position marquée, ils commenceront à poser %1 mines dans cette zone. Couvrez-les pendant qu'ils le font.</French>
@@ -13933,7 +13937,7 @@
             </Key>
             <Key ID="STR_A3A_reinf_addSquadVeh_select_1hc">
                 <Original>You must select only one group on the HC bar.</Original>
-                <Russian>Вы должны выбрать только одну группу на панели командования (HC).</Russian>
+                <Russian>Вы должны выбрать только одну группу в режиме главнокомандующего.</Russian>
                 <Chinesesimp>只能在HC栏上选择小队。</Chinesesimp>
                 <Korean>하이 커맨드 표시줄에서 그룹을 하나만 선택해야 합니다.</Korean>
                 <French>Vous ne devez sélectionner qu'un seul groupe dans la barre HC.</French>
@@ -14017,7 +14021,7 @@
             </Key>
             <Key ID="STR_A3A_reinf_addFIASquadHC_error_too_many_hc">
                 <Original>You have too many high command squads active. Disband or garrison some to recruit more.</Original>
-                <Russian>У вас слишком много отрядов в панели командования (HC). Распустите или отправьте некоторые из них в гарнизон, чтобы иметь возможность нанять новый отряд.</Russian>
+                <Russian>У вас слишком много отрядов в режиме главнокомандующего. Распустите или отправьте некоторые из них в гарнизон, чтобы иметь возможность нанять новый отряд.</Russian>
                 <Chinesesimp>你激活了太多的高级指挥小队。 解散或驻军一些以招募更多。</Chinesesimp>
                 <Korean>활성화된 하이 커맨드 분대가 너무 많습니다. 더 모집하려면 일부를 해산시키거나 주둔시키십시오.</Korean>
                 <French>Vous avez trop d'escouades de haut commandement actives. Dissolvez ou mettez en garnison certaines d'entre elles pour en recruter d'autres.</French>
@@ -14306,7 +14310,7 @@
             </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_no_towing">
                 <Original>You can't fast travel with your tow rope out or with a vehicle in tow.</Original>
-                <Russian>Вы не можете быстро путешествовать, пока у вашей техники не убран буксировочный трос.</Russian>
+                <Russian>Вы не можете быстро путешествовать, пока у вашей техники не убран буксировочный трос или он находится у вас в руках.</Russian>
                 <Chinesesimp>你不能在拉出拖车绳或连接载具的情况下快速行驶。</Chinesesimp>
                 <Korean>견인 로프를 빼거나 차량을 연결한 상태에서는 빠른 이동을 할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas effectuer de déplacement rapide si vous avez un câble de remorquage dans les mains ou si un véhicule est attaché.</French>
@@ -14439,7 +14443,7 @@
             </Key>
             <Key ID="STR_A3A_Dialogs_mineDialog_desc">
                 <Original>An Explosive Specialist is available on your High Command bar.&lt;br/&gt;&lt;br/&gt;Send him anywhere on the map to deactivate mines. He will load his truck with mines he found.&lt;br/&gt;&lt;br/&gt;Upon returning back to HQ he will unload mines stored in his vehicle.</Original>
-                <Russian>Инженер-подрывник доступен в вашей панели командования (HC).&lt;br/&gt;&lt;br/&gt;Отправьте его куда-либо обезвреживать мины. Он загрузит в своё транспортное средство все мины, что найдёт.&lt;br/&gt;&lt;br/&gt;До возвращения в штаб мины будут находиться в его транспортном средстве.</Russian>
+                <Russian>Инженер-подрывник доступен в режиме главнокомандующего.&lt;br/&gt;&lt;br/&gt;Отправьте его обезвреживать мины где это необходимо. Он загрузит в своё транспортное средство все мины, что найдёт.&lt;br/&gt;&lt;br/&gt;До возвращения в штаб мины будут находиться в его транспортном средстве.</Russian>
                 <Chinesesimp>炸弹工程师在您的高级指挥面板中可用。&lt;br/&gt;&lt;br/&gt;把他派到某个地方去拆除地雷。 他会将他发现的所有地雷装载到他的车辆中。&lt;br/&gt;&lt;br/&gt;在他返回总部之前，这些地雷将留在他的载具中。</Chinesesimp>
                 <Korean>폭파전문가는 하이 커맨드 표시줄에서 사용할 수 있습니다.&lt;br/&gt;&lt;br/&gt;그를 지도상의 아무 곳에나 보내서 지뢰를 제거하게 하십시오. 그가 찾은 지뢰를 트럭에 싣을 것입니다.&lt;br/&gt;&lt;br/&gt;본부로 돌아오자마자 그는 차량에 저장된 지뢰를 내릴 것입니다.</Korean>
                 <French>Un spécialiste des explosifs est disponible sur votre barre de haut commandement.&lt;br/&gt;&lt;br/&gt;Envoyez-le n'importe où sur la carte pour désactiver des mines. Il chargera son camion avec les mines qu'il a trouvées.&lt;br/&gt;&lt;br/&gt;À son retour au QG, il déchargera les mines stockées dans son véhicule.</French>
@@ -14518,7 +14522,7 @@
             </Key>
             <Key ID="STR_A3A_OrgPlayers_donateMoney_success">
                 <Original>You have donated %1%2 to the cause. This will raise your status among our forces.</Original>
-                <Russian>Вы пожертвовали %1%2 на общее благо. Это поднимет вашу репутацию среди участников нашего движения.</Russian>
+                <Russian>Вы пожертвовали %1%2 на общее благо. Это поднимет вашу репутацию внутри нашего движения.</Russian>
                 <Chinesesimp>已为该事业捐赠了 %1%2。 这将提高你在我们部队中的地位。</Chinesesimp>
                 <Korean>%1%2을(를) 기부하였습니다. 이 행위는 우리 군대에서 당신의 지위를 높일 것입니다.</Korean>
                 <French>Vous avez fait un don de %1%2 à la cause. Cela augmentera votre statut au sein de nos forces.</French>
@@ -14546,7 +14550,7 @@
             </Key>
             <Key ID="STR_A3A_OrgPlayers_membership_only_admins">
                 <Original>Only Server Admins or hosters can add a new member.</Original>
-                <Russian>Только администраторы сервера или хост могут добавлять новых участников.</Russian>
+                <Russian>Только администраторы сервера или хост могут добавлять новых постоянных участников.</Russian>
                 <Chinesesimp>只有服务器管理员或主机才能添加新成员。</Chinesesimp>
                 <Korean>서버 관리자 또는 호스트만 새 멤버를 추가할 수 있습니다.</Korean>
                 <French>Seuls les administrateurs de serveur ou les hébergeurs peuvent ajouter un nouveau membre.</French>
@@ -14574,35 +14578,35 @@
             </Key>
             <Key ID="STR_A3A_OrgPlayers_membership_alreadymember">
                 <Original>This player is already a member of this server.</Original>
-                <Russian>Этот игрок уже является участником сервера.</Russian>
+                <Russian>Этот игрок уже является постоянным участником сервера.</Russian>
                 <Chinesesimp>该玩家已经是本服会员</Chinesesimp>
                 <Korean>해당 플레이어는 이미 이 서버의 멤버입니다.</Korean>
                 <French>Ce joueur est déjà membre de ce serveur.</French>
             </Key>
             <Key ID="STR_A3A_OrgPlayers_membership_success_add">
                 <Original>%1 has been added to the Server Members List.</Original>
-                <Russian>%1 был добавлен в список участников сервера.</Russian>
+                <Russian>%1 был добавлен в список постоянных участников сервера.</Russian>
                 <Chinesesimp>%1 已添加到服务器成员列表中。</Chinesesimp>
                 <Korean>%1이(가) 서버 멤버 목록에 추가되었습니다.</Korean>
                 <French>%1 a été ajouté à la liste des membres du serveur.</French>
             </Key>
             <Key ID="STR_A3A_OrgPlayers_membership_success_add_target">
                 <Original>You have been added to the Server Members list.</Original>
-                <Russian>Вы были добавлены в список участников сервера.</Russian>
+                <Russian>Вы были добавлены в список постоянных участников сервера.</Russian>
                 <Chinesesimp>您已被添加到服务器成员列表中。</Chinesesimp>
                 <Korean>당신은 서버 멤버 목록에 추가되었습니다.</Korean>
                 <French>Vous avez été ajouté à la liste des membres du serveur.</French>
             </Key>
             <Key ID="STR_A3A_OrgPlayers_membership_success_remove">
                 <Original>%1 has been removed from the Server Members List.</Original>
-                <Russian>%1 был удалён из списка участников сервера.</Russian>
+                <Russian>%1 был удалён из списка постоянных участников сервера.</Russian>
                 <Chinesesimp>%1 已从服务器成员列表中删除。</Chinesesimp>
                 <Korean>%1이(가) 서버 멤버 목록에서 제거되었습니다.</Korean>
                 <French>%1 a été supprimé de la liste des membres du serveur.</French>
             </Key>
             <Key ID="STR_A3A_OrgPlayers_membership_success_remove_target">
                 <Original>You have been removed from the Server Members list.</Original>
-                <Russian>Вы были удалены из списка участников сервера.</Russian>
+                <Russian>Вы были удалены из списка постоянных участников сервера.</Russian>
                 <Chinesesimp>您已从服务器成员列表中删除。</Chinesesimp>
                 <Korean>당신은 서버 멤버 목록에서 제거되었습니다.</Korean>
                 <French>Vous avez été retiré de la liste des membres du serveur.</French>
@@ -14688,7 +14692,7 @@
             </Key>
             <Key ID="STR_A3A_Base_canMoveHq_arsenal_petros_picked">
                 <Original>Put Petros down before you move the HQ!</Original>
-                <Russian>Поставьте Петроса на место, прежде чем двигать штаб!</Russian>
+                <Russian>Отпустите Петроса, прежде чем двигать штаб!</Russian>
                 <Chinesesimp>搬总部之前先把Petros放下！</Chinesesimp>
                 <Korean>본부를 옮기기 전에 백두로를 내려놓으십시오!</Korean>
                 <French>Déposez Petros avant de déplacer le QG !</French>
@@ -15181,7 +15185,7 @@
             </Key>
             <Key ID="STR_A3A_Logistics_tryLoad_blocking_plane_cargo">
                 <Original>%1 can not load cargo while units are blocking the cargo plane.</Original>
-                <Russian>%1 не может принять груз, пока бойцы блокируют блокируют транспортный самолёт.</Russian>
+                <Russian>%1 не может принять груз, пока бойцы занимают грузовую платформу.</Russian>
                 <Chinesesimp>有单位挡住货物时，%1无法装货。</Chinesesimp>
                 <Korean>%1은(는) 유닛이 막고 있는 동안에는 화물을 적재할 수 없습니다.</Korean>
                 <French>%1 ne peut pas charger de cargaison alors que des unités bloquent l'avion cargo.</French>

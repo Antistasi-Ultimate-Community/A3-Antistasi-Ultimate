@@ -76,7 +76,7 @@
                 <Original>Grenadier</Original>
                 <French>Grenadier</French>
                 <Korean>유탄수</Korean>
-                <Russian>Стрелок-гранатомётчик</Russian>
+                <Russian>Гренадёр</Russian>
                 <Chinesesimp>掷弹手</Chinesesimp>
                 <Czech>Granátometčík</Czech>
                 <Italian>Granatiere</Italian>
@@ -98,7 +98,7 @@
                 <Original>Antitank</Original>
                 <French>Anti-char</French>
                 <Korean>대전차병</Korean>
-                <Russian>Гранатомётчик</Russian>
+                <Russian>Стрелок (ПТ)</Russian>
                 <Chinesesimp>反坦克手</Chinesesimp>
                 <Czech>Protitankový střelec</Czech>
                 <Italian>Fuciliere Anti-Carro</Italian>
@@ -155,7 +155,7 @@
                 <Original>Only the commander can access the commander tab</Original>
                 <French>Seul le commandant peut accéder à l'onglet commandant</French>
                 <Korean>지휘관만 지휘관 탭에 액세스할 수 있습니다</Korean>
-                <Russian>Только командир имеет доступ к командирскому меню</Russian>
+                <Russian>Только Командир имеет доступ к командирскому меню</Russian>
                 <Chinesesimp>只有指挥官可以访问指挥官选项卡</Chinesesimp>
                 <Czech>Na kartu velitele má přístup pouze velitel</Czech>
                 <Italian>Solo il comandante può accedere al menu comandante</Italian>
@@ -651,7 +651,7 @@
             <Key ID="STR_antistasi_dialogs_buy_item_custom_hint_commander_only">
                 <Original>Only the Commander may buy this item.</Original>
                 <Chinesesimp>只有指挥官可以购买此物品</Chinesesimp>
-                <Russian>Только командир может купить этот предмет.</Russian>
+                <Russian>Только Командир может купить этот предмет.</Russian>
                 <Korean>지휘관만 이 아이템을 살 수 있습니다.</Korean>
                 <French>Seul le commandant peut acheter cet article.</French>
             </Key>
@@ -1040,7 +1040,7 @@
                 <Original>Set Eligible</Original>
                 <French>Devenir Éligible</French>
                 <Korean>인계하기</Korean>
-                <Russian>Включить возможность встать на дожность Командира</Russian>
+                <Russian>Включить возможность стать Командиром</Russian>
                 <Chinesesimp>赋予资格</Chinesesimp>
                 <Czech>Nastavit způsobilý</Czech>
                 <Italian>Mettiti Eleggibile</Italian>
@@ -1051,7 +1051,7 @@
                 <Original>Set Ineligible</Original>
                 <French>Devenir Inéligible</French>
                 <Korean>박탈하기</Korean>
-                <Russian>Выключить возможность встать на дожность Командира</Russian>
+                <Russian>Выключить возможность стать Командиром</Russian>
                 <Chinesesimp>取消资格</Chinesesimp>
                 <Czech>Nastavit nezpůsobilý</Czech>
                 <Italian>Mettiti Ineleggibile</Italian>
@@ -2229,7 +2229,7 @@
                 <Original>HR:</Original>
                 <French>RH:</French>
                 <Korean>인력:</Korean>
-                <Russian>HR:</Russian>
+                <Russian>Люди:</Russian>
                 <Chinesesimp>人力</Chinesesimp>
                 <Czech>HR:</Czech>
                 <Italian>RU:</Italian>
@@ -2374,7 +2374,7 @@
                 <Original>Grenadier</Original>
                 <French>Grenadier</French>
                 <Korean>유탄수</Korean>
-                <Russian>Стрелок-гранатомётчик</Russian>
+                <Russian>Гренадёр</Russian>
                 <Chinesesimp>掷弹手</Chinesesimp>
                 <Czech>Granátometčík</Czech>
                 <Italian>Granatiere</Italian>
@@ -2418,7 +2418,7 @@
                 <Original>AT</Original>
                 <French>AT</French>
                 <Korean>대전차병</Korean>
-                <Russian>Гранатомётчик</Russian>
+                <Russian>Стрелок (ПТ)</Russian>
                 <Chinesesimp>反坦克手</Chinesesimp>
                 <Czech>AT</Czech>
                 <Italian>Fuciliere Anti-Carro</Italian>
@@ -2429,7 +2429,7 @@
                 <Original>Not enough money/HR</Original>
                 <French>Pas assez d'argent/RH</French>
                 <Korean>자금/인력이 부족합니다</Korean>
-                <Russian>Недостаточно денег/ЧР</Russian>
+                <Russian>Недостаточно денег/ЛР</Russian>
                 <Chinesesimp>人力/资金不足</Chinesesimp>
                 <Czech>Nedostatek peněz/HR</Czech>
                 <Italian>Non hai abbastanza soldi/RU</Italian>
@@ -3064,7 +3064,7 @@
                 <Original>You do not have enough HR for this request (%1 required)</Original>
                 <French>Vous n'avez pas assez de RH pour cette demande (%1 requis)</French>
                 <Korean>이 요청을 수행할 인력이 부족합니다 (%1 필요)</Korean>
-                <Russian>У вас недостаточно ЧР для этого (%1 необходимо)</Russian>
+                <Russian>У вас недостаточно людских ресурсов для этого (необходимо %1)</Russian>
                 <Chinesesimp>您没有足够的人力来处理此请求（需要 %1 个）</Chinesesimp>
                 <Czech>Pro tuto žádost nemáte dostatek HR (vyžadováno%1)</Czech>
                 <Italian>Non hai abbastanza RU per questa richiesta (%1 necessario)</Italian>
@@ -3075,7 +3075,7 @@
                 <Original>You do not have enough money for this request (%1 %2 required)</Original>
                 <French>Vous n'avez pas assez d'argent pour cette demande (%1 %2 requis)</French>
                 <Korean>이 요청을 수행할 자금이 부족합니다 (%1 %2 필요)</Korean>
-                <Russian>У вас недостаточно денег для этого (%1 %2 необходимо)</Russian>
+                <Russian>У вас недостаточно денег для этого (необходимо %1 %2)</Russian>
                 <Chinesesimp>您没有足够的金钱来处理此请求（需要 %1 ）</Chinesesimp>
                 <Czech>Na tuto žádost nemáte dostatek peněz (vyžadováno%1 %2)</Czech>
                 <Italian>Non hai abbastanza denaro per questa richiesta (%1 %2 necessari)</Italian>
@@ -3644,7 +3644,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_factions">
                 <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
-                <Russian>%1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
+                <Russian>где %1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
                 <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
                 <Korean>반란군은 %1, 민간인은 %2, 점령군은 %3, 침략군은 %4, 라이벌은 %5입니까?</Korean>
                 <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
