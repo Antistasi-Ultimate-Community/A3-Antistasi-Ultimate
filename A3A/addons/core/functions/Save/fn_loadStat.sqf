@@ -173,7 +173,12 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'HR_Garage': {
-            [_varValue] call HR_GRG_fnc_loadSaveData;
+            _varValue params ["_garage", "_UID", "_sources"];
+            _garage = _garage apply {
+                (toArray _x) params ["_keys", "_values"];
+                (_keys apply {if (_x isEqualType "") then { parseNumber _x } else { _x }}) createHashMapFromArray _values
+            };
+            [[_garage, _UID, _sources]] call HR_GRG_fnc_loadSaveData;
         };
 
         case 'destroyedBuildings': {
@@ -198,12 +203,18 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'minesX': {
-            for "_i" from 0 to (count _varvalue) - 1 do {
-                (_varvalue select _i) params ["_typeMine", "_posMine", "_detected", "_dirMine"];
+            {
+                _x params ["_typeMine", "_posMine", "_detected", "_dirMine"];
                 private _mineX = createVehicle [_typeMine, _posMine, [], 0, "CAN_COLLIDE"];
                 if !(isNil "_dirMine") then { _mineX setDir _dirMine };
+                _detected = _detected apply { switch (_x) do {
+                    case (0): { Invaders };
+                    case (1): { Occupants };
+                    case (2): { teamPlayer };
+                    default { _x }; // loading old variable data, already stored as a SIDE
+                }};
                 {_x revealMine _mineX} forEach _detected;
-            };
+            } forEach (_varValue);
         };
 
         case 'garrison': {

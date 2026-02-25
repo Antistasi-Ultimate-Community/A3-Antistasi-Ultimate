@@ -11,62 +11,81 @@ if (isServer) then {
 	} forEach (airportsX + resourcesX + factories + outposts + seaports + milbases);
 
 	A3A_saveVersion = 0;
-	["version"] call A3A_fnc_getStatVariable;
-	["mrkSDK"] call A3A_fnc_getStatVariable;
-	["mrkCSAT"] call A3A_fnc_getStatVariable;
-	["destroyedSites"] call A3A_fnc_getStatVariable;
-	["minesX"] call A3A_fnc_getStatVariable;
-	["antennas"] call A3A_fnc_getStatVariable;
-	["hr"] call A3A_fnc_getStatVariable;
-	["dateX"] call A3A_fnc_getStatVariable;
-	["weather"] call A3A_fnc_getStatVariable;
-	["prestigeOPFOR"] call A3A_fnc_getStatVariable;
-	["prestigeBLUFOR"] call A3A_fnc_getStatVariable;
-	["resourcesFIA"] call A3A_fnc_getStatVariable;
-	["garrison"] call A3A_fnc_getStatVariable;
-	["usesWurzelGarrison"] call A3A_fnc_getStatVariable;
-	["skillFIA"] call A3A_fnc_getStatVariable;
-	["membersX"] call A3A_fnc_getStatVariable;
-    ["HR_Garage"] call A3A_fnc_getStatVariable;
-    ["A3A_fuelAmountleftArray"] call A3A_fnc_getStatVariable;
-	["destroyedBuildings"] call A3A_fnc_getStatVariable;
-	["enemyResources"] call A3A_fnc_getStatVariable;
-	["HQKnowledge"] call A3A_fnc_getStatVariable;
+	{ [_x] call A3A_fnc_getStatVariable } forEach [
+		"version",
+		"mrkSDK",
+		"mrkCSAT",
+		"destroyedSites",
+		"minesX",
+		"antennas",
+		"hr",
+		"dateX",
+		"weather",
+		"prestigeOPFOR",
+		"prestigeBLUFOR",
+		"resourcesFIA",
+		"garrison",
+		"usesWurzelGarrison",
+		"skillFIA",
+		"membersX",
+		"HR_Garage",
+		"A3A_fuelAmountleftArray",
+		"destroyedBuildings",
+		"enemyResources",
+		"HQKnowledge",
+		"killZones",
+		"controlsSDK",
+		"bombRuns",
+		"jna_dataList",
+		"watchpostsFIA",
+		"roadblocksFIA",
+		"aapostsFIA",
+		"hmgpostsFIA",
+		"atpostsFIA",
+		"supportPoints",
+		"areOccupantsDefeated",
+		"areInvadersDefeated",
+		"isTraderQuestAssigned",
+		"isTraderQuestCompleted",
+		"traderPosition",
+		"traderDiscount",
+		"destroyedMilAdmins",
+		"rebelLoadouts",
+		"randomizeRebelLoadoutUniforms",
+		"areRivalsDiscovered",
+		"areRivalsDefeated",
+		"rivalsLocationsMap",
+		"rivalsExcludedLocations",
+		"nextRivalsLocationReveal",
+		"constructionsX",
+		"isRivalsDiscoveryQuestAssigned",
+		"revealedZones",
+		"unlockedVehicleTypes",
+		"occupantsRadioKeys",
+		"invaderRadioKeys",
+		"aggressionOccupants",
+		"aggressionInvaders",
+		"inactivityRivals",
+		"chopForest",
+		"posHQ",
+		"nextTick",
+		"staticsX",
+		"wurzelGarrison",
+		"testingTimerIsActive",
+		"tasks"
+	];
 
-	["killZones"] call A3A_fnc_getStatVariable;
-	["controlsSDK"] call A3A_fnc_getStatVariable;
-	["bombRuns"] call A3A_fnc_getStatVariable;
-	["jna_dataList"] call A3A_fnc_getStatVariable;
-
-	//Antistasi Plus variables
-	["watchpostsFIA"] call A3A_fnc_getStatVariable; publicVariable "watchpostsFIA";
-	["roadblocksFIA"] call A3A_fnc_getStatVariable; publicVariable "roadblocksFIA";
-	["aapostsFIA"] call A3A_fnc_getStatVariable; publicVariable "aapostsFIA";
-	["hmgpostsFIA"] call A3A_fnc_getStatVariable; publicVariable "hmgpostsFIA";
-	["atpostsFIA"] call A3A_fnc_getStatVariable; publicVariable "atpostsFIA";
-	["supportPoints"] call A3A_fnc_getStatVariable;
-	["areOccupantsDefeated"] call A3A_fnc_getStatVariable;
-	["areInvadersDefeated"] call A3A_fnc_getStatVariable;
-	["isTraderQuestAssigned"] call A3A_fnc_getStatVariable;
-	["isTraderQuestCompleted"] call A3A_fnc_getStatVariable;
-	["traderPosition"] call A3A_fnc_getStatVariable;
-	["traderDiscount"] call A3A_fnc_getStatVariable;
-	["destroyedMilAdmins"] call A3A_fnc_getStatVariable;
-	["rebelLoadouts"] call A3A_fnc_getStatVariable;
-	["randomizeRebelLoadoutUniforms"] call A3A_fnc_getStatVariable;
-	["areRivalsDiscovered"] call A3A_fnc_getStatVariable;
-	["areRivalsDefeated"] call A3A_fnc_getStatVariable;
-	["rivalsLocationsMap"] call A3A_fnc_getStatVariable;
-	["rivalsExcludedLocations"] call A3A_fnc_getStatVariable;
-	["nextRivalsLocationReveal"] call A3A_fnc_getStatVariable;
-	["constructionsX"] call A3A_fnc_getStatVariable;
-	["isRivalsDiscoveryQuestAssigned"] call A3A_fnc_getStatVariable;
-
-	//Antistasi Ultimate variables
-	["revealedZones"] call A3A_fnc_getStatVariable; publicVariable "revealedZones";
-	["unlockedVehicleTypes"] call A3A_fnc_getStatVariable; publicVariable "unlockedVehicleTypes";
-	["occupantsRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "occupantsRadioKeys";
-	["invaderRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "invaderRadioKeys";
+	{ publicVariable _x } forEach [
+		"watchpostsFIA",
+		"roadblocksFIA",
+		"aapostsFIA",
+		"hmgpostsFIA",
+		"atpostsFIA",
+		"revealedZones",
+		"unlockedVehicleTypes",
+		"occupantsRadioKeys",
+		"invaderRadioKeys"
+	];
 
 	//===========================================================================
 
@@ -103,30 +122,8 @@ if (isServer) then {
 		[_x] call A3A_fnc_mrkUpdate
 	} forEach (markersX - controlsX);
 
-	if (count watchpostsFIA > 0) then {
-		markersX = markersX + watchpostsFIA;
-		publicVariable "markersX";
-	};
-
-	if (count roadblocksFIA > 0) then {
-		markersX = markersX + roadblocksFIA;
-		publicVariable "markersX";
-	};
-
-	if (count aapostsFIA > 0) then {
-		markersX = markersX + aapostsFIA;
-		publicVariable "markersX";
-	};
-
-	if (count atpostsFIA > 0) then {
-		markersX = markersX + atpostsFIA;
-		publicVariable "markersX";
-	};
-
-	if (count hmgpostsFIA > 0) then {
-		markersX = markersX + hmgpostsFIA;
-		publicVariable "markersX";
-	};
+	markersX append (watchpostsFIA + roadblocksFIA + aapostsFIA + atpostsFIA + hmgpostsFIA);
+	publicVariable "markersX";
 
 	{
 		if (_x in destroyedSites) then {
@@ -136,18 +133,8 @@ if (isServer) then {
 	} forEach citiesX;
 
     //Load aggro stacks and level and calculate current level
-    ["aggressionOccupants"] call A3A_fnc_getStatVariable;
-	["aggressionInvaders"] call A3A_fnc_getStatVariable;
     [true] call A3A_fnc_calculateAggression;
-
-	["inactivityRivals"] call A3A_fnc_getStatVariable;
 	[true] call SCRT_fnc_rivals_calculateActivity;
-
-	["chopForest"] call A3A_fnc_getStatVariable;
-
-	["posHQ"] call A3A_fnc_getStatVariable;
-	["nextTick"] call A3A_fnc_getStatVariable;
-	["staticsX"] call A3A_fnc_getStatVariable;
 
 	{_x setPos getMarkerPos respawnTeamPlayer} forEach ((call A3A_fnc_playableUnits) select {side _x == teamPlayer});
 	_sites = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
@@ -171,16 +158,9 @@ if (isServer) then {
 		[outposts, "Outpost", [1,1,0]] spawn A3A_fnc_createGarrison;
 		[seaports, "Other", [1,0,0]] spawn A3A_fnc_createGarrison;
 
-	} else {
-		//Garrison save in wurzelformat, load it
-        Info("WurzelGarrison found, loading it!");
-		["wurzelGarrison"] call A3A_fnc_getStatVariable;
 	};
 
-    //Load state of testing timer
-    ["testingTimerIsActive"] call A3A_fnc_getStatVariable;
-
-	// Load all player data into A3A_playerSaveData hashmap. Works around issues with game copies
+    // Load all player data into A3A_playerSaveData hashmap. Works around issues with game copies
 	_savedPlayers = "savedPlayers" call A3A_fnc_returnSavedStat;
 	if (isNil "_savedPlayers") then { _savedPlayers = [] };
 	{
@@ -197,9 +177,6 @@ if (isServer) then {
     Info("Persistent Load Completed.");
 
 	["locationSpawned", QGVAR(crewLocationStatics), { call A3A_fnc_crewLocationStatics }] call EFUNC(Events,addEventListener);
-
-	// uh, why here?
-	["tasks"] call A3A_fnc_getStatVariable;
 
 	statsLoaded = 0; publicVariable "statsLoaded";
 	petros allowdamage true;

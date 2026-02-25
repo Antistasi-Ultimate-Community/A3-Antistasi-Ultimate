@@ -124,19 +124,24 @@ switch (_mode) do
         private _prettyMapHM = createHashMapFromArray [
             ["vt7", "Virolahti"]
             ,["sara", "Sahrani"]
-            ,["Cam_Lao_Nam", "Cam Lao Nam"]
+            ,["cam_lao_nam", "Cam Lao Nam"]
             ,["vn_khe_sanh", "Khe Sanh"]
             ,["chernarus_autumn", "Chernarus (A)"]
             ,["chernarus_summer", "Chernarus (S)"]
             ,["chernarus_winter", "Chernarus (W)"]
-            ,["Enoch", "Livonia"]
+            ,["enoch", "Livonia"]
             ,["tem_anizay", "Anizay"]
-            ,["cup_chernarus_A3", "Chernarus 2020"]
+            ,["cup_chernarus_a3", "Chernarus 2020"]
             ,["brf_sumava", "Šumava"]
+            ,["green_sea", "Green Sea"]
+            ,["tem_kujari", "Kujari"]
+            ,["gm_weferlingen_summer", "Weferlingen (S)"]
+            ,["gm_weferlingen_winter", "Weferlingen (W)"]
+            ,["takistan", "Takistan"]
         ];
         {
             private _realMap = _x get "map";
-            _x set ["mapStr", _prettyMapHM getOrDefault [_realMap, _realMap]];
+            _x set ["mapStr", _prettyMapHM getOrDefault [toLower _realMap, _realMap]];
             _x set ["fileStr", ["Old", "New"] select ((_x get "serverID") isEqualType false)];
             if (!isNil {_x get "ended"}) then { _x set ["timeStr", "Ended"]; continue };
             if (!isNil {_x get "saveTime"}) then {
