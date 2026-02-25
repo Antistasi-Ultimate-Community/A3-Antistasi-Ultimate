@@ -15416,6 +15416,70 @@
                 <Korean>안전하지 않은 모드를 전환합니다.</Korean>
                 <French>Basculer en mode non sécurisé.</French>
             </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetDecrease_title">
+                <Original>Building Placer: Z-Offset Decrease</Original>
+                <German>Gebäudeplatzierung: Z-Versatz verringern</German>
+                <Russian>Строитель: Уменьшить смещение по оси Z</Russian>
+                <Chinesesimp>建筑放置器 - 减少Z轴偏移</Chinesesimp>
+                <Korean>건물 배치기 - Z-오프셋 감소</Korean>
+                <French>Constructeur: Diminuer le décalage en Z</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetDecrease_desc">
+                <Original>Decrease the Z-offset (move it down) of the object when using snap-to-surface mode.</Original>
+                <German>Den Z-Versatz des Objekts verringern (nach unten bewegen), wenn der An-Oberfläche-Anpassen-Modus verwendet wird.</German>
+                <Russian>Уменьшить смещение по оси Z (опустить вниз) объекта при использовании режима привязки к поверхности.</Russian>
+                <Chinesesimp>在使用吸附到地面模式时，减少对象的Z轴偏移（向下移动）。</Chinesesimp>
+                <Korean>표면에 스냅 모드를 사용할 때 객체의 Z-오프셋을 감소시킵니다(아래로 이동).</Korean>
+                <French>Diminuer le décalage en Z (descendre) de l'objet lors de l'utilisation du mode accrocher à la surface.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetIncrease_title">
+                <Original>Building Placer: Z-Offset Increase</Original>
+                <German>Gebäudeplatzierung: Z-Versatz erhöhen</German>
+                <Russian>Строитель: Увеличить смещение по оси Z</Russian>
+                <Chinesesimp>建筑放置器 - 增加Z轴偏移</Chinesesimp>
+                <Korean>건물 배치기 - Z-오프셋 증가</Korean>
+                <French>Constructeur: Augmenter le décalage en Z</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetIncrease_desc">
+                <Original>Increase the Z-offset (move it up) of the object when using snap-to-surface mode.</Original>
+                <German>Den Z-Versatz erhöhen (nach oben bewegen), wenn der An-Oberfläche-Anpassen-Modus verwendet wird.</German>
+                <Russian>Увеличить смещение по оси Z (поднять вверх) объекта при использовании режима привязки к поверхности.</Russian>
+                <Chinesesimp>在使用吸附到地面模式时，增加对象的Z轴偏移（向上移动）。</Chinesesimp>
+                <Korean>표면에 스냅 모드를 사용할 때 객체의 Z-오프셋을 증가시킵니다(위로 이동).</Korean>
+                <French>Augmenter le décalage en Z (monter) de l'objet lors de l'utilisation du mode accrocher à la surface.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZStepDecrease_title">
+                <Original>Building Placer: Z-Step Decrease</Original>
+                <German>Gebäudeplatzierung: Z-Schrittweite verringern</German>
+                <Russian>Строитель: Уменьшить шаг по оси Z</Russian>
+                <Chinesesimp>建筑放置器 - 减少Z轴步长</Chinesesimp>
+                <Korean>건물 배치기 - Z-단계 감소</Korean>
+                <French>Constructeur: Diminuer le pas en Z</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZStepDecrease_desc">
+                <Original>Decrease the Z-step when adjusting Z-offset in snap-to-surface mode.</Original>
+                <German>Die Z-Schrittweite verringern, wenn der Z-Versatz im An-Oberfläche-Anpassen-Modus angepasst wird.</German>
+                <Russian>Уменьшить шаг по оси Z при регулировке смещения по оси Z в режиме привязки к поверхности.</Russian>
+                <Chinesesimp>在吸附到地面模式下调整Z轴偏移时，减少Z轴步长。</Chinesesimp>
+                <Korean>표면에 스냅 모드에서 Z-오프셋을 조정할 때 Z-단계를 감소시킵니다.</Korean>
+                <French>Diminuer le pas en Z lors de l'ajustement du décalage en Z en mode accrocher à la surface.</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZStepIncrease_title">
+                <Original>Building Placer: Z-Step Increase</Original>
+                <German>Gebäudeplatzierung: Z-Schrittweite erhöhen</German>
+                <Russian>Строитель: Увеличить шаг по оси Z</Russian>
+                <Chinesesimp>建筑放置器 - 增加Z轴步长</Chinesesimp>
+                <Korean>건물 배치기 - Z-단계 증가</Korean>
+                <French>Constructeur: Augmenter le pas en Z</French>
+            </Key>
+            <Key ID="STR_A3A_keyActions_buildingPlacerZStepIncrease_desc">
+                <Original>Increase the Z-step when adjusting Z-offset in snap-to-surface mode.</Original>
+                <German>Die Z-Schrittweite erhöhen, wenn der Z-Versatz im An-Oberfläche-Anpassen-Modus angepasst wird.</German>
+                <Russian>Увеличить шаг по оси Z при регулировке смещения по оси Z в режиме привязки к поверхности.</Russian>
+                <Chinesesimp>在吸附到地面模式下调整Z轴偏移时，增加Z轴步长。</Chinesesimp>
+                <Korean>표면에 스냅 모드에서 Z-오프셋을 조정할 때 Z-단계를 증가시킵니다.</Korean>
+                <French>Augmenter le pas en Z lors de l'ajustement du décalage en Z en mode accrocher à la surface.</French>
+            </Key>
         </Container>
     </Package>
 </Project>
