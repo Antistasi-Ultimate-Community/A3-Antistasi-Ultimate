@@ -35,6 +35,13 @@ class UtilityItems {
         price = 5000;
     };
 
+    class A3AU_Build_Box_Humongous: BuildBox {
+        scope = 1;
+        displayName = "Build Box (Humongous)";
+        price = 15000;
+        flags[] = {"place", "build"};
+    };
+
     class GVAR(Box_BuildingPlacer_Decorations): BuildBox {
         scope = 1;
         price = 5000;
