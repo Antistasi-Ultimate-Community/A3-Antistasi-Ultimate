@@ -205,6 +205,7 @@ class CfgFunctions
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
+            class initBuilderCollisionHelper {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
@@ -322,6 +323,18 @@ class CfgFunctions
             class squadOptions {};
             class squadRecruit {};
             class unit_recruit {};
+        };
+
+        class Events {
+            SPATHTO_FNC(Events,addEventHandler);
+            SPATHTO_FNC(Events,removeEventHandler);
+            SPATHTO_FNC(Events,triggerGlobalEvent);
+            SPATHTO_FNC(Events,triggerLocalEvent);
+            SPATHTO_FNC(Events,triggerOwnerEvent);
+            SPATHTO_FNC(Events,triggerRemoteEvent);
+            SPATHTO_FNC(Events,triggerResultEvent);
+            SPATHTO_FNC(Events,triggerServerEvent);
+            SPATHTO_FNC(Events,triggerTargetEvent);
         };
 
         class EventHandler {
@@ -791,6 +804,8 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class attachLight {};
+            class attachLightFromConfig {};
             class basicBackpack {};
             class classNameToModel {};
             class countAttachedObjects {};
@@ -806,6 +821,8 @@ class CfgFunctions
             class localLog {};
             class log {};
             class nearestFriendlyMarker {};
+            class onClientInitDone {};
+            class onServerInitDone {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};

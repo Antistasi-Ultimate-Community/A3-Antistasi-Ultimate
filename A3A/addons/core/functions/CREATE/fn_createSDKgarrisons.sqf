@@ -38,6 +38,21 @@ if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///ma
 
 private _size = [_markerX] call A3A_fnc_sizeMarker;
 private _staticsX = staticsToSave select {_x distance2D _positionX < _size};
+private _assemblyPositions = nearestObjects[_positionX, ["Building"], _size, true]
+	select { alive _x && { _x inArea _markerX } && { getNumber(configOf _x >> QGVAR(aiBunchUpPriority)) > 0 } }
+	apply { [(getPosATL _x) vectorMultiply [1,1,0], getNumber(configOf _x >> QGVAR(aiBunchUpPriority))] };
+
+// Always exclude priority=1 if higher priorities are found
+private _haveHigher = _assemblyPositions findIf { _x select 1 > 1 } != -1;
+if (_haveHigher) then {
+	_assemblyPositions = _assemblyPositions select { _x select 1 > 1 };
+};
+
+if (_assemblyPositions isNotEqualTo []) then {
+	private _positionsX = [];
+	_assemblyPositions apply { _positionsX append _x };
+	_positionX = selectRandomWeighted _positionsX;
+};
 
 private _garrison = [];
 _garrison = _garrison + (garrison getVariable [_markerX,[]]);
@@ -164,7 +179,7 @@ for "_i" from 0 to (count _groups) - 1 do {
 			_groups append _garrisonGroup;
 		};
 	} else {
-		[_groupX, "Patrol_Defend", 0, 150, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
+		[_groupX, "Patrol_Defend", 0, 150, -1, true, getMarkerPos _markerX, false] call A3A_fnc_patrolLoop;
 	};
 };
 

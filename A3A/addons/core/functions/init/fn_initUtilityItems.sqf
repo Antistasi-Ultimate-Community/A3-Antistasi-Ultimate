@@ -37,13 +37,25 @@ _items append [
     [_medTent#0, _medTent#1, localize "STR_A3AP_buyvehdialog_medical_tent", "heal", ["place", "move", "rotate", "pack"]],
     [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "ammo", "place", "move", "rotate", "save"]],
     [_repairStation#0, _repairStation#1, localize "STR_A3AP_buyvehdialog_repair_station", "repair", ["cmmdr", "place", "move", "rotate", "pack", "save"]],
-    [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "", ["move"]],
-    ["Land_PlasticCase_01_small_black_F", 250, "Build Box (Extra Small)", "", ["place", "move", "build"]],
-    ["Land_PlasticCase_01_medium_black_F", 500, "Build Box (Small)", "", ["place", "move", "build"]],
-    ["A3AU_Build_Box_Large_1", 2500, "Build Box (Medium)", "", ["place", "move", "build"]],
-    ["Land_PlasticCase_01_large_black_F", 5000, "Build Box (Large)", "", ["place", "move", "build"]]
+    [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "", ["move"]]
     // TODO: get larger box from somewhere
 ];
+
+"getNumber (_x >> 'scope') > 0" configClasses(configFile >> QUOTE(PREFIX) >> "UtilityItems") apply {
+    private _displayName = getText(_x >> "displayName");
+
+    if (_displayName == "") then {
+        _displayName = getText(configFile >> "CfgVehicles" >> (configName _x) >> "displayName");
+    };
+
+    _items pushBack[
+        configName _x,
+        getNumber(_x >> "price"),
+        _displayName,
+        getText(_x >> "iconType"),
+        getArray(_x >> "flags")
+    ];
+};
 
 if(A3A_hasACE) then {
     _items pushBack [_medCrate#0, _medCrate#1, localize "STR_A3AP_buyvehdialog_medical_box", "heal", ["noclear", "move"]];

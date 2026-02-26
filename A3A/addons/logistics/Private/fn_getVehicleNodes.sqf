@@ -27,6 +27,8 @@ configProperties [(_config/"Nodes"), "true", true] apply {[
     [_x >> "offset", "ARRAY", [0, 0, 0]] call CBA_fnc_getConfigEntry,
     // Cargo seat indices blocked if node is occupied
     [_x >> "seats", "ARRAY", []] call CBA_fnc_getConfigEntry,
+    // Turret indices blocked if node is occupied (optional)
+    [_x >> "turrets", "ARRAY", []] call CBA_fnc_getConfigEntry,
     // If node can be used for coupling (accomodating space for cargo-size > 1) with previous node
     [_x >> "canCouple", "NUMBER", 1] call CBA_fnc_getConfigEntry
 ]};
