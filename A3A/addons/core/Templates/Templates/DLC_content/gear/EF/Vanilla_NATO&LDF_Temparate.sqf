@@ -13,11 +13,11 @@
 (_eliteLoadoutData get "glVests") append ["EF_V_AAV_Support_Olive", "EF_V_AAV_Support_Black"];
 
 (_militaryLoadoutData get "NVGs") pushBack "EF_LPNVG";
-(_militaryLoadoutData get "backpacks") pushBack "EF_B_RaiderPack_black";
+(_militaryLoadoutData get "backpacks") pushBack "EF_B_RaiderPack_olive";
 (_militaryLoadoutData get "helmets") append ["EF_H_Protecta", "EF_H_HelmetB_light_black_slick", "EF_H_HelmetB_light_wdl_slick", "EF_H_MCH", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_BasicNet_Olive", "EF_H_MCH_BasicNet_Wdl"];
-(_militaryLoadoutData get "Hvests") append ["EF_V_CCR_Support_Olive", "EF_V_CCR_TL_Olive", "EF_V_CCR_Support_Black", "EF_V_CCR_TL_Black", "EF_V_AAV_Support_Olive", "EF_V_AAV_TL_Olive", "EF_V_AAV_TL_Black", "EF_V_AAV_Support_Black"];
-(_militaryLoadoutData get "vests") append ["EF_V_CCR_Rifleman_Olive", "EF_V_CCR_Scout_Olive", "EF_V_CCR_Rifleman_Black", "EF_V_CCR_Scout_Black", "EF_V_AAV_Olive", "EF_V_AAV_Black", "EF_V_AAV_Diver_NoReb_Olive", "EF_V_AAV_Diver_NoReb_Black"];
-(_militaryLoadoutData get "glVests") append ["EF_V_AAV_Support_Olive", "EF_V_AAV_Support_Black"];
+(_militaryLoadoutData get "Hvests") append ["EF_V_CCR_Support_Olive", "EF_V_CCR_TL_Olive", "EF_V_CCR_Support_Black", "EF_V_CCR_TL_Black", "EF_V_AAV_Support_Olive", "EF_V_AAV_TL_Olive"];
+(_militaryLoadoutData get "vests") append ["EF_V_CCR_Rifleman_Olive", "EF_V_CCR_Scout_Olive", "EF_V_CCR_Rifleman_Black", "EF_V_CCR_Scout_Black", "EF_V_AAV_Olive", "EF_V_AAV_Diver_NoReb_Olive"];
+(_militaryLoadoutData get "glVests") append ["EF_V_AAV_Support_Olive"];
 
 /////////
 (_militiaLoadoutData get "NVGs") append ["EF_LPNVG_T", "EF_LPNVG"];
