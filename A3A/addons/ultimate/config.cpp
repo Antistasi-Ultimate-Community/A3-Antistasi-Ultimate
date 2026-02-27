@@ -49,3 +49,7 @@ class CfgMarkers
     #include "CfgMarkers.hpp"
 };
 
+class CfgMarkerColors
+{
+    #include "CfgMarkerColors.hpp"
+};

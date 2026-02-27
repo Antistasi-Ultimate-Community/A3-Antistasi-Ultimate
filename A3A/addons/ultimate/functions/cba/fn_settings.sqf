@@ -90,6 +90,33 @@
     }
 ] call CBA_fnc_addSetting;
 
+private _namesOfBlindness = ["Standard Vision","Protanopia","Deuteranopia","Tritanopia"];
+private _blindnessColors = [
+    "ColorBLUFOR|ColorOPFOR|ColorCIV|ColorGUER|ColorBrown",                                 // Standard
+    "ColorBLUFOR|ColorOrange|A3AU_Color_Light_Gray|ColorYellow|A3AU_Color_Dark_Purple",     // Protanopia
+    "ColorBLUFOR|ColorOrange|A3AU_Color_Light_Gray|ColorYellow|A3AU_Color_Tan",             // Deuteranopia
+    "ColorOrange|ColorOPFOR|A3AU_Color_Light_Gray|ColorGUER|ColorCivilian"                  // Tritanopia
+];
+[
+    "A3AU_setting_colorBlindness",
+    "LIST",
+    "Color Blindness Settings (Requires Restart!)",
+    ["Antistasi Ultimate", "Accessibility Settings"],
+    [_blindnessColors, _namesOfBlindness, 0],
+    false,
+    {  
+        params ["_value"];
+		missionNamespace setVariable ["A3AU_setting_colorBlindness",_value,true];
+        
+        private _factionColor = _value splitString "|";
+        colorOccupants = _factionColor select 0;
+        colorInvaders = _factionColor select 1;
+        colorCivilian = _factionColor select 2;
+        colorTeamPlayer = _factionColor select 3;
+        colorRivals = _factionColor select 4;
+    }
+] call CBA_fnc_addSetting;
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_emissionMinimum", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
