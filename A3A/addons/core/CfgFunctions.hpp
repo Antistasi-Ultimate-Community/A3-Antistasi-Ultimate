@@ -191,6 +191,7 @@ class CfgFunctions
             class unlockVehicle {};
             class updateRebelStatics {};
             class zoneCheck {};
+            class zoneCountUnits {};
             class checkWinCondition {};
             class checkLossCondition {};
         };
@@ -204,6 +205,7 @@ class CfgFunctions
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
+            class initBuilderCollisionHelper {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
@@ -316,12 +318,23 @@ class CfgFunctions
             class createDialog_shouldLoadPersonalSave {};
             class fastTravelRadio {};
             class mineDialog {};
-            class moveHQObject {};
             class persistentSave {};
             class skiptime {};
             class squadOptions {};
             class squadRecruit {};
             class unit_recruit {};
+        };
+
+        class Events {
+            SPATHTO_FNC(Events,addEventHandler);
+            SPATHTO_FNC(Events,removeEventHandler);
+            SPATHTO_FNC(Events,triggerGlobalEvent);
+            SPATHTO_FNC(Events,triggerLocalEvent);
+            SPATHTO_FNC(Events,triggerOwnerEvent);
+            SPATHTO_FNC(Events,triggerRemoteEvent);
+            SPATHTO_FNC(Events,triggerResultEvent);
+            SPATHTO_FNC(Events,triggerServerEvent);
+            SPATHTO_FNC(Events,triggerTargetEvent);
         };
 
         class EventHandler {
@@ -341,6 +354,7 @@ class CfgFunctions
             class countGarrison {};
             class createGarrison {};
             class createGarrisonLine {};
+            class crewLocationStatics {};
             class getGarrison {};
             class getGarrisonRatio {};
             class getGarrisonStatus {};
@@ -467,8 +481,9 @@ class CfgFunctions
 
         class OrgPlayers {
             file = QPATHTOFOLDER(functions\OrgPlayers);
-            class addScorePlayer {};
             class addMoneyPlayer {};
+            class addScorePlayer {};
+            class addTearDownActions {};
             class donateMoney {};
             class donateMoneyPercentage {};
             class isMember {};
@@ -789,6 +804,8 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class attachLight {};
+            class attachLightFromConfig {};
             class basicBackpack {};
             class classNameToModel {};
             class countAttachedObjects {};
@@ -797,9 +814,15 @@ class CfgFunctions
             class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
+            class isEmplacementMarker {};
             class isEngineer {};
+            class isWithinMarkerArea {};
+            class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
+            class nearestFriendlyMarker {};
+            class onClientInitDone {};
+            class onServerInitDone {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
@@ -814,10 +837,11 @@ class CfgFunctions
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
-            class dropObject {};
+            class dropItem {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
+            class isCarrying {};
             class remainingAmmo {};
             class remainingFuel {};
             class rotateItem {};

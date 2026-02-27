@@ -49,7 +49,7 @@ while { true } do {
         "Destroy",
         "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
         "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-        "isNull objectParent player",                                         // was player getUnitTrait 'engineer'
+        QUOTE((isNull objectParent player) && { player getVariable[ARR_2(QQGVAR(isTeardownActive),false)] }),
         "[player] call A3A_fnc_canFight",
         {},
         {},

@@ -65,6 +65,8 @@ if (isServer) then {
 	//Antistasi Ultimate variables
 	["revealedZones"] call A3A_fnc_getStatVariable; publicVariable "revealedZones";
 	["unlockedVehicleTypes"] call A3A_fnc_getStatVariable; publicVariable "unlockedVehicleTypes";
+	["occupantsRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "occupantsRadioKeys";
+	["invaderRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "invaderRadioKeys";
 
 	//===========================================================================
 
@@ -186,13 +188,15 @@ if (isServer) then {
 		private _playerData = createHashMap;
 		{
 			_playerData set [_x, [_uid, _x] call A3A_fnc_retrievePlayerStat];
-		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage"];
+		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "pluginsData"];
 
 		if (isNil {_playerData get "moneyX"}) then { Error_1("Saved player %1 has no money var", _uid); continue };
 		A3A_playerSaveData set [_uid, _playerData];
 	} forEach _savedPlayers;
 
     Info("Persistent Load Completed.");
+
+	["locationSpawned", QGVAR(crewLocationStatics), { call A3A_fnc_crewLocationStatics }] call EFUNC(Events,addEventListener);
 
 	// uh, why here?
 	["tasks"] call A3A_fnc_getStatVariable;

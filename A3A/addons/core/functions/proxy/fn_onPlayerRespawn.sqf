@@ -260,9 +260,9 @@ if (side group _newUnit == teamPlayer) then
 		}];
 	};
 
-	[] spawn A3A_fnc_unitTraits;
+	[] call A3A_fnc_unitTraits;
+	[] call A3A_fnc_addTeardownActions;
 	[] spawn A3A_fnc_statistics;
-	call A3A_fnc_dropObject;
 } else {
 	_oldUnit setVariable ["spawner",nil,true];
 	_newUnit setVariable ["spawner",true,true];
