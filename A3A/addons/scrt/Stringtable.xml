@@ -1618,7 +1618,7 @@
             </Key>
             <Key ID="STR_comms_mp_taxes_income">
                 <Original>&lt;t size='0.6' color='#C1C0BB'&gt;Income&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: +%1&lt;br/&gt;Money: +%2%3</Original>
-                <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Доход&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: +%1&lt;br/&gt;Деньги: +%2%3</Russian>
+                <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Доход&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;ЛР: +%1&lt;br/&gt;Деньги: +%2%3</Russian>
                 <Chinesesimp>&lt;t size='0.6' color='#C1C0BB'&gt;收入&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: +%1&lt;br/&gt;钱: +%2%3</Chinesesimp>
                 <Korean>&lt;t size='0.6' color='#C1C0BB'&gt;소득&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;인력: +%1&lt;br/&gt;자금: +%2%3</Korean>
                 <French>&lt;t size='0.6' color='#C1C0BB'&gt;Revenu&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: +%1&lt;br/&gt;Argent: +%2%3</French>
@@ -1738,7 +1738,7 @@
             </Key>
             <Key ID="STR_comms_res_FIA_1">
                 <Original>&lt;t size='0.6' color='#C1C0BB'&gt;%5 Resources&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %3%1&lt;br/&gt;Money: %4%2 %6</Original>
-                <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Ресурсы %5&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %3%1&lt;br/&gt;Деньги: %4%2 %6</Russian>
+                <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Ресурсы %5&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;ЛР: %3%1&lt;br/&gt;Деньги: %4%2 %6</Russian>
                 <Chinesesimp>&lt;t size='0.6' color='#C1C0BB'&gt;%5 资源&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %3%1&lt;br/&gt;钱: %4%2 %6</Chinesesimp>
                 <Korean>&lt;t size='0.6' color='#C1C0BB'&gt;%5 자원채취소&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;인력: %3%1&lt;br/&gt;자금: %4%2 %6</Korean>
                 <French>&lt;t size='0.6' color='#C1C0BB'&gt;%5 Ressources&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %3%1&lt;br/&gt;Argent: %4%2 %6</French>
@@ -1746,7 +1746,7 @@
             </Key>
             <Key ID="STR_comms_res_FIA_2">
                 <Original>&lt;t size='0.6' color='#C1C0BB'&gt;%3 Resources&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %2%1</Original>
-                <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Ресурсы %3.&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %2%1</Russian>
+                <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Ресурсы %3.&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;ЛР: %2%1</Russian>
                 <Chinesesimp>&lt;t size='0.6' color='#C1C0BB'&gt;%3 资源&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %2%1</Chinesesimp>
                 <Korean>&lt;t size='0.6' color='#C1C0BB'&gt;%3 자원채취소&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;인력: %2%1</Korean>
                 <French>&lt;t size='0.6' color='#C1C0BB'&gt;%3 Resources&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;HR: %2%1</French>
@@ -2790,7 +2790,7 @@
             </Key>
             <Key ID="STR_chats_player_kia">
                 <Original>A player has been killed in action! (%1 HR)</Original>
-                <Russian>Игрок погиб в бою! (%1 HR)</Russian>
+                <Russian>Игрок погиб в бою! (%1 ЛР)</Russian>
                 <Chinesesimp>一名玩家在战斗中阵亡！（%1 人力）</Chinesesimp>
                 <Turkish>Bir oyuncu çatışmada öldü! (%1 İK)</Turkish>
             </Key>
@@ -4820,7 +4820,7 @@
             </Key>
             <Key ID="STR_notifiers_disband_success">
                 <Original>Garrison removed.&lt;br/&gt;Recovered Money: %1%3.&lt;br/&gt;Recovered HR: %2</Original>
-                <Russian>Гарнизон удален.&lt;br/&gt;Возвращенные деньги: %1%3.&lt;br/&gt;Возвращенные HR: %2.</Russian>
+                <Russian>Гарнизон удален.&lt;br/&gt;Возвращенные деньги: %1%3.&lt;br/&gt;Возвращенные ЛР: %2.</Russian>
                 <Chinesesimp>驻军已被撤走。&lt;br/&gt;返回的钱：%1%3.&lt;br/&gt;返回的HR：%2</Chinesesimp>
                 <Korean>주둔군을 제거했습니다.&lt;br/&gt;환불된 자금: %1%3.&lt;br/&gt;환불된 인력: %2</Korean>
                 <French>Garnison enlevée.&lt;br/&gt;Argent récupéré: %1%3.&lt;br/&gt;RH récupérée: %2</French>
@@ -4876,7 +4876,7 @@
             </Key>
             <Key ID="STR_notifiers_establish_outpost_not_enough">
                 <Original>You do not have enough resources to establish a new outpost.&lt;br/&gt;%1 HR and %2%3 needed.</Original>
-                <Russian>Недостаточно ресурсов для установления своей локации/огневой точки.&lt;br/&gt;Необходимо %1 HR и %2%3.</Russian>
+                <Russian>Недостаточно ресурсов для установления своей локации/огневой точки.&lt;br/&gt;Необходимо %1 ЛР и %2%3.</Russian>
                 <Chinesesimp>您没有足够的资源来建立新的前哨站。&lt;br/&gt;需要 %1 人力 和 %2%3</Chinesesimp>
                 <Korean>새 전초 기지를 구축하기에 충분한 자원을 가지고 있지 않습니다.&lt;br/&gt;%1 인력과 %2%3이(가) 필요합니다.</Korean>
                 <French>Vous n'avez pas assez de ressources pour établir un nouvel avant-poste.&lt;br/&gt;%1 HR et %2%3 nécessaires.</French>
@@ -5092,7 +5092,7 @@
             </Key>
             <Key ID="STR_notifiers_minefield_enough_resources">
                 <Original>You do not have enough resources to establish a new minefield.&lt;br/&gt; %1 HR and %2%3 needed.</Original>
-                <Russian>У вас недостаточно ресурсов для установки нового минного поля.&lt;br/&gt;Требуется %1 HR и %2%3.</Russian>
+                <Russian>У вас недостаточно ресурсов для установки нового минного поля.&lt;br/&gt;Требуется %1 ЛР и %2%3.</Russian>
                 <Chinesesimp>你没有足够的资源来建立新的雷区。&lt;br/&gt; 需要 %1 HR 和 %2%3。</Chinesesimp>
                 <Korean>자원이 부족하여 새 지뢰지대를 설립할 수 없습니다.&lt;br/&gt; %1 인력과 %2%3이(가) 필요합니다.</Korean>
                 <French>Vous n'avez pas assez de ressources pour créer un nouveau champ de mines.&lt;br/&gt; %1 HR et %2%3 nécessaires.</French>
@@ -5230,7 +5230,7 @@
             </Key>
             <Key ID="STR_A3AU_HR_warning_info">
                 <Original>%1 only has %2 HR left!</Original>
-                <Russian>У %1 осталось только %2 HR!</Russian>
+                <Russian>У %1 осталось только %2 ЛР!</Russian>
                 <Chinesesimp>%1 仅剩下 %2 人力！</Chinesesimp>
                 <Korean>%1의 인력이 %2 밖에 남지 않았습니다!</Korean>
                 <Turkish>%1 biriminin sadece %2 İK puanı kaldı!</Turkish>
@@ -5441,7 +5441,7 @@
             </Key>
             <Key ID="STR_garrison_error_no_hr">
                 <Original>You don't have enough HR for this recruitment.</Original>
-                <Russian>Вам не хватает HR, чтобы добавить нового бойца в гарнизон.</Russian>
+                <Russian>Вам не хватает ЛР, чтобы добавить нового бойца в гарнизон.</Russian>
                 <Chinesesimp>您没有足够的人力来向你的驻军添加新的单位。</Chinesesimp>
                 <Korean>신병 모집을 위한 인력이 부족합니다.</Korean>
                 <French>Vous manquez de ressources humaines pour procéder à un nouveau recrutement.</French>
@@ -7830,7 +7830,7 @@
             </Key>
             <Key ID="STR_info_bar_final_string_1">
                 <Original>Commander: %3 | %2 | HR: %1%10 | Money: %4 %9 %5 War Level: %6 | Undercover: %7 | Rally Point: %8&lt;/t&gt;</Original>
-                <Russian>Командир: %3 | %2 | HR: %1%10 | Деньги: %4 %9 %5 Уровень войны: %6 | Маскировка: %7 | Точка сбора: %8&lt;/t&gt;</Russian>
+                <Russian>Командир: %3 | %2 | ЛР: %1%10 | Деньги: %4 %9 %5 Уровень войны: %6 | Маскировка: %7 | Точка сбора: %8&lt;/t&gt;</Russian>
                 <Chinesesimp>指挥官: %3 | %2 | 人力: %1%10 | 钱: %4 %9 %5 战争等级: %6 | 伪装: %7 | 集结点: %8&lt;/t&gt;</Chinesesimp>
                 <Korean>지휘관: %3 | %2 | 인력: %1%10 | 자금: %4 %9 %5 전쟁 레벨: %6 | 위장: %7 | 집결 지점: %8&lt;/t&gt;</Korean>
                 <French>Commandant: %3 | %2 | HR: %1%10 | Argent: %4 %9 %5 Niveau de guerre: %6 | Sous couverture: %7 | Point de ralliement: %8</French>
@@ -7838,7 +7838,7 @@
             </Key>
             <Key ID="STR_info_bar_final_string_2">
                 <Original>%1 | HR: %2%11 | %3 Money: %4 %10 | Money: %5 %10 %6 War Level: %7 | Undercover: %8 | Rally Point: %9&lt;/t&gt;</Original>
-                <Russian>%1 | HR: %2%11 | Деньги %3: %4 %10 | Деньги: %5 %10 %6 Уровень войны: %7 | Маскировка: %8 | Точка сбора: %9&lt;/t&gt;</Russian>
+                <Russian>%1 | ЛР: %2%11 | Деньги %3: %4 %10 | Деньги: %5 %10 %6 Уровень войны: %7 | Маскировка: %8 | Точка сбора: %9&lt;/t&gt;</Russian>
                 <Chinesesimp>%1 | 人力: %2%11 | %3 钱: %4 %10 | 钱: %5 %10 %6 战争等级: %7 | 伪装: %8 | 集结点: %9&lt;/t&gt;</Chinesesimp>
                 <Korean>%1 | 인력: %2%11 | %3 자금: %4 %10 | 자금: %5 %10 %6 전쟁 레벨: %7 | 위장: %8 | 집결 지점: %9&lt;/t&gt;</Korean>
                 <French>%1 | HR: %2%11 | %3 Money: %4 %10 | Argent: %5 %10 %6 Niveau de guerre: %7 | Sous couverture: %8 | Point de ralliement: %9&lt;/t&gt;</French>
@@ -8002,7 +8002,7 @@
             </Key>
             <Key ID="STR_dialog_cost_hire">
                 <Original>Cost: %1%3. HR: %2.</Original>
-                <Russian>Стоимость: %1%3. HR: %2.</Russian>
+                <Russian>Стоимость: %1%3. ЛР: %2.</Russian>
                 <Chinesesimp>成本：%1%3 人力资源部：%2</Chinesesimp>
                 <Korean>가격: %1%3. 인력: %2.</Korean>
                 <French>Coût: %1%3. RH : %2.</French>
@@ -9252,7 +9252,7 @@
             </Key>
             <Key ID="STR_commander_menu_minefield_cost">
                 <Original>Cost: 5 %1s, %2 HR and %3%4</Original>
-                <Russian>Стоимость: 5 мин, %2 HR и %3%4</Russian>
+                <Russian>Стоимость: 5 мин, %2 ЛР и %3%4</Russian>
                 <Chinesesimp>成本: 5 %1, %2 人力 和 %3%4</Chinesesimp>
                 <Korean>가격: 5개의 %1, %2 인력과 %3%4</Korean>
                 <French>Coût: 5 %1s, %2 HR et %3%4</French>
@@ -9811,7 +9811,7 @@
             </Key>
             <Key ID="STR_commander_menu_establish_garrison_cost">
                 <Original>Costs %1 HR and %2%3</Original>
-                <Russian>Стоимость: %1 HR и %2%3</Russian>
+                <Russian>Стоимость: %1 ЛР и %2%3</Russian>
                 <Chinesesimp>花费 %1 人力 和 %2%3</Chinesesimp>
                 <Korean>%1 인력과 %2%3를 소모합니다</Korean>
                 <French>Coûts %1 HR et %2%3</French>
@@ -10049,7 +10049,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_convoy_text">
                 <Original>Convoy Ambush</Original>
-                <Russian>Засады на конвой</Russian>
+                <Russian>Засады на конвои</Russian>
                 <Chinesesimp>车队伏击</Chinesesimp>
                 <Korean>호송대 매복</Korean>
                 <French>Embuscade de convoi</French>
@@ -14625,7 +14625,7 @@
             </Key>
             <Key ID="STR_A3A_save_persisent_save_0">
                 <Original> Assets:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR: </Original>
-                <Russian> Имущество:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR: </Russian>
+                <Russian> Имущество:&lt;br/&gt;&lt;t color='#f0d498'&gt;ЛР: </Russian>
                 <Chinesesimp>资产:&lt;br/&gt;&lt;t color='#f0d498'&gt;人力: </Chinesesimp>
                 <Korean> 자산:&lt;br/&gt;&lt;t color='#f0d498'&gt;인력: </Korean>
                 <French> Actifs:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR:</French>

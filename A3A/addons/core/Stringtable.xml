@@ -2598,7 +2598,7 @@
                 <Czech>Počet civilistů</Czech>
                 <Chinesesimp>平民生成</Chinesesimp>
                 <Korean>민간인 스폰</Korean>
-                <Russian>Лимит Гражд.</Russian>
+                <Russian>Лимит гражданских</Russian>
                 <Italian>Spawn Civili</Italian>
                 <Spanish>Spawn Civil</Spanish>
                 <Polish>Pojawianie się Cywili</Polish>
@@ -2611,7 +2611,7 @@
                 <Czech>Zvýšit nebo snížit procento městského civilního obyvatelstva, které vznikají. V 0% se v každém městě vynoří pouze jeden civilista.</Czech>
                 <Chinesesimp>增加或减少市民的生成比例。0% 时每个城市只会生成一个平民。</Chinesesimp>
                 <Korean>도시의 민간인 스폰 비율을 늘리거나 줄입니다. 0%의 경우 각 도시에서 민간인이 1명만 스폰됩니다.</Korean>
-                <Russian>Увеличьте или уменьшите процент возрождающегося гражданского населения города. При 0% в каждом городе появится только одно гражданское лицо.</Russian>
+                <Russian>Увеличьте или уменьшите процент появляющегося гражданского населения города. При 0% в каждом городе появится только один гражданский.</Russian>
                 <Italian>Aumenta o diminuisci la percentuale di popolazione civilie che spawnerà nelle città. Allo 0% verrà generato un solo civile in ogni città.</Italian>
                 <Spanish>Aumenta o disminuye el porcentaje de civiles que pueden aparecer en una ciudad. En el 0% sólo un civil aparecerá en cada ciudad</Spanish>
                 <Polish>Zwiększ lub zmniejsz odsetek ludności cywilnej, która się pojawia w miastach. Przy 0% w każdym mieście pojawi się tylko jeden cywil.</Polish>
