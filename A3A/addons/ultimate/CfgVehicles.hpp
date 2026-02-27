@@ -52,6 +52,7 @@ class A3AU_TerrainSmoother_Base_F: Land_Shovel_F
     authors[] = {"wersal454", "UnseenKill"};
     model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+    EGVAR(core,isBuilding) = 1;
     EGVAR(core,restorePriority) = 100;
     EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
@@ -123,6 +124,7 @@ class A3AU_VegetationCleaner_Base_F: Land_Axe_F
     authors[] = {"wersal454", "UnseenKill"};
     model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+    EGVAR(core,isBuilding) = 1;
     EGVAR(core,restorePriority) = 100;
     EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
@@ -195,6 +197,7 @@ class GVAR(BB_TerrainObjectHider_Base) : Land_ButaneTorch_F
     authors[] = {"UnseenKill"};
     model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
 
+    EGVAR(core,isBuilding) = 1;
     EGVAR(core,restorePriority) = 90;
     EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
     EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
@@ -258,5 +261,30 @@ class GVAR(BB_TerrainObjectHider_Circle30x30) : GVAR(BB_TerrainObjectHider_Base)
         cleanRadius = 30;
         previewWidth = 30;
         previewHeight = 30;
+    };
+};
+
+// Redirect AI to bunch up here
+class FlagCarrierCore;
+class FlagCarrier: FlagCarrierCore
+{
+    EGVAR(core,aiBunchUpPriority) = 1;
+};
+
+class Land_Noticeboard_F;
+class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F 
+{
+    scope = 2;
+    displayName = "Garrison Assembly Area Sign";
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+    hiddenSelectionsTextures[] = {QPATHTOFOLDER(data\a3a_BaseAssemblyAreaSign.paa)};
+
+    EGVAR(core,aiBunchUpPriority) = 100; // Higher than FlagCarrier so AI will prefer to bunch up here instead of the flag
+    EGVAR(core,buildingPlacerVectorUp)[] = {0,0,1};
+
+    class EventHandlers 
+    {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
     };
 };

@@ -9,6 +9,8 @@
     ["I_G_Offroad_01_armor_base_lxWS", ["rebCost", 500]],
     ["I_G_Offroad_01_armor_armed_lxWS", ["rebCost", 1100]],
     ["I_G_Offroad_01_armor_AT_lxWS", ["rebCost", 1500]],
+    ["I_Tura_Truck_02_aa_lxWS", ["rebCost", 1550]],
+    ["I_Tura_Offroad_armor_AA_lxWS", ["rebCost", 1650]],
 
     ///apex
     ["I_C_Offroad_02_unarmed_F", ["rebCost", 150]],

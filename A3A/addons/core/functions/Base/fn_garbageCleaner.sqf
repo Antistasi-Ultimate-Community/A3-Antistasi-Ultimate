@@ -24,11 +24,11 @@ private _fnc_distCheck = {
 if (count (A3A_buildingsToSave) >= A3A_builderLimit) then { A3A_buildingsToSave = A3A_buildingsToSave select [0, A3A_builderLimit - 1] };
 publicVariable "A3A_buildingsToSave";
 
-Debug("Moving dead solders out of vehicles...")
+Debug("Moving dead solders out of vehicles...");
 {
 	if !(isNull objectParent _x) then { moveOut _x };
 } forEach allDeadMen;
-Debug("Finished moving soldiers out of vehicles; executing garbage clean.")
+Debug("Finished moving soldiers out of vehicles; executing garbage clean.");
 sleep 0.5;
 
 { deleteVehicle _x } forEach allDead;
