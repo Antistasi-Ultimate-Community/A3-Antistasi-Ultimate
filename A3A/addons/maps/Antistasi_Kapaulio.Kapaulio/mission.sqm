@@ -3860,7 +3860,7 @@ class Mission
 					dataType="Marker";
 					position[]={7455.9814,2.7037606e+12,16905.93};
 					name="respawn_guerrila";
-					type="hd_flag";
+					type="A3AU_RebalHQ_mrk";
 					colorName="ColorGUER";
 					id=36;
 					atlOffset=2.7037606e+12;

@@ -1716,7 +1716,7 @@ class Mission
 			position[]={3846.7134,2.7037606e+12,7856.458};
 			name="respawn_guerrila";
 			text="Your Headquarters";
-			type="hd_flag";
+			type="A3AU_RebalHQ_mrk";
 			colorName="ColorGUER";
 			id=9353;
 			atlOffset=2.7037606e+12;
