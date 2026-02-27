@@ -19,10 +19,10 @@ class winthera3 {
 	climate = "arctic";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_SAND,
 		BUILDABLES_ARCTIC,
-		BUILDABLES_CUP,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_CUP
 	};
     // Needs to be re-done when possible
 };
