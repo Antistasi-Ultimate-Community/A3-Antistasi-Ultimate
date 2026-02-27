@@ -4088,7 +4088,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_edit_save">
                 <Original>Editing save with ID: %1</Original>
-                <Russian>Выбран файл ID: %1</Russian>
+                <Russian>Выбрана игра с ID: %1</Russian>
                 <Chinesesimp>编辑存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 편집: %1</Korean>
                 <French>Modification de la sauvegarde (ID : %1)</French>
@@ -4096,7 +4096,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
-                <Russian>Копирование ID: %1</Russian>
+                <Russian>Копия игры с ID: %1</Russian>
                 <Chinesesimp>复制存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 복사: %1</Korean>
                 <French>Copie de la sauvegarde (ID : %1)</French>
