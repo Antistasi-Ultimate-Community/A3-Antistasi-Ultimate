@@ -126,7 +126,7 @@
             </Key>
             <Key ID="STR_A3AP_arsenal_scarcity_4">
                 <Original>If I want one I need to take it before someone else does</Original>
-                <Russian>Если я хочу этим пользоваться, мне надо взять это до того, как возьмёт кто-то ещё</Russian>
+                <Russian>Если я хочу использовать это оружие, мне нужно взять его до того, как это сделает кто-то другой</Russian>
                 <Chinesesimp>如果你想拿到这些装备得趁早</Chinesesimp>
                 <Korean>만약 내가 뭘 원한다면 다른 사람이 가져가기 전에 내가 먼저 가져야 한다</Korean>
                 <French>Si j'en veux un, je dois le prendre avant que quelqu'un d'autre ne le fasse.</French>
@@ -150,7 +150,7 @@
             </Key>
             <Key ID="STR_A3AP_arsenal_scarcity_ammo_1">
                 <Original>, and there is enough ammo for it</Original>
-                <Russian> и для оружия достаточно боеприпасов.</Russian>
+                <Russian>, и для оружия достаточно боеприпасов.</Russian>
                 <Chinesesimp>，有足够的弹药</Chinesesimp>
                 <Korean>. 그리고 탄약도 충분하다</Korean>
                 <French>et il y a assez de munitions pour cela</French>
@@ -158,7 +158,7 @@
             </Key>
             <Key ID="STR_A3AP_arsenal_scarcity_ammo_2">
                 <Original>, and there is still some ammo for it</Original>
-                <Russian> и есть некоторое количество подходящих боеприпасов.</Russian>
+                <Russian>, и есть некоторое количество подходящих боеприпасов.</Russian>
                 <Chinesesimp>，还剩点弹药</Chinesesimp>
                 <Korean>. 그래도 아직 탄약은 조금 남아 있다</Korean>
                 <French>et il y a encore des munitions pour ça</French>

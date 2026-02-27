@@ -3616,7 +3616,7 @@
                 <French>Paramètres de l'extenseur</French>
                 <Italian>Parametri dell'extender</Italian>
                 <Korean>확장 매개 변수</Korean>
-                <Russian>Параметры ретранслятора</Russian>
+                <Russian>Параметры расширений</Russian>
                 <Polish>Parametry przedłużacza</Polish>
                 <Portuguese>Parâmetros do extensor</Portuguese>
                 <Chinesesimp>扩展器参数</Chinesesimp>
@@ -3628,7 +3628,7 @@
                 <French>Paramètres expérimentaux et de développement</French>
                 <Italian>Parametri sperimentali e di sviluppo</Italian>
                 <Korean>실험 및 개발 매개변수</Korean>
-                <Russian>Параметры для экспериментов и разработки</Russian>
+                <Russian>Экспериментальные параметры и настройки для разработки</Russian>
                 <Polish>Parametry eksperymentalne i rozwojowe</Polish>
                 <Portuguese>Parâmetros experimentais e de desenvolvimento</Portuguese>
                 <Chinesesimp>实验与开发参数</Chinesesimp>
@@ -4088,7 +4088,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_edit_save">
                 <Original>Editing save with ID: %1</Original>
-                <Russian>Редактирование сохранения с ID: %1</Russian>
+                <Russian>Выбран файл ID: %1</Russian>
                 <Chinesesimp>编辑存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 편집: %1</Korean>
                 <French>Modification de la sauvegarde (ID : %1)</French>
@@ -4096,7 +4096,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
-                <Russian>Копирование сохранения с ID: %1</Russian>
+                <Russian>Копирование ID: %1</Russian>
                 <Chinesesimp>复制存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 복사: %1</Korean>
                 <French>Copie de la sauvegarde (ID : %1)</French>
