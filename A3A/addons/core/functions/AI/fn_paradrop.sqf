@@ -41,6 +41,12 @@ private _groupPilot = group driver _vehicle;
     _x setBehaviour "CARELESS";
 } foreach (units _groupPilot);
 
+{
+    _x setVariable ["jumpSave_Backpack", backpack _x];
+    _x setVariable ["jumpSave_BackpackItems", backpackItems _x];
+    removebackpack _x;
+} forEach (units _groupJumper);
+
 private _targetPosition = if(_target isEqualType "") then {getMarkerPos _target} else {_target};
 private _originPosition = getMarkerPos _originMarker;
 
@@ -105,6 +111,11 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
     };
 };
 
+if(canMove _vehicle || alive _groupPilot) then {
+    [_vehicle, "open"] spawn A3A_fnc_HeliDoors;
+    sleep 0.25;
+};
+
 waitUntil {sleep 1; (currentWaypoint _groupPilot > 0) || (!alive _vehicle) || (!canMove _vehicle)};
 if !(alive _vehicle) exitWith {};
 
@@ -119,35 +130,53 @@ if(currentWaypoint _groupPilot > 0) then
     {
         unassignVehicle _x;
         //Move them into alternating left/right positions, so their parachutes are less likely to kill each other
-        private _sideOffset = [1, -1] select(forEachIndex % 2 == 0);
-        private _pos = _vehicle modeltoWorld [7 * _sideOffset, -20, -5];
-        _x setPosASL AGLtoASL _pos;
+        private _sideOffset = [1, -1] select (_forEachIndex % 2 == 0);
+        private _pos = _vehicle modelToWorld [7 * _sideOffset, -20, -5];
+        _x setPosASL (AGLtoASL _pos);
         _x setVelocity _troopVelocity;
-        _x spawn
-        {
-            sleep (getPosATL _this # 2 / 70);      // can't fall faster than that, save some checks
-            waitUntil {sleep 0.25; getPosATL _this # 2 < 120};
-            private _chute = createVehicle ["Steerable_Parachute_F", getPosATL _this, [], 0, "CAN_COLLIDE"];
-            _this moveInDriver _chute;
+
+        removeBackpack _x;
+
+        _x spawn {
+            params ["_unit"];
+
+            sleep (getPosATL _unit # 2 / 70);      // can't fall faster than that, save some checks
+            waitUntil {sleep 0.25; getPosATL _unit # 2 < 120};
+
+            _unit addBackpack "B_Parachute";
             if !("lowTech" in A3A_factionEquipFlags) then {
-                private _smokeGrenade = selectRandom allSmokeGrenades;
                 if !(disableAutoSmokeCover) then {
-                    private _smoke = _smokeGrenade createVehicle (getPosATL _this);
-                    _smoke attachTo [_this,[0,0,0]];
-                    waitUntil { sleep 1; isTouchingGround _this};
-                    deleteVehicle _chute;
-                    detach _smoke;
-                } else {
-                    waitUntil { sleep 1; isTouchingGround _this};
-                    deleteVehicle _chute;
+                    private _smokeGrenade = selectRandom allSmokeGrenades;
+                    private _smoke = _smokeGrenade createVehicle (getPosATL _unit);
+                    _smoke attachTo [_unit, [0,0,0]];
+                    _unit setVariable ["jumpSave_Smoke", _smoke];
                 };
-            }else{
-                waitUntil { sleep 1; isTouchingGround _this};
-                deleteVehicle _chute;
+            };
+
+            private _startLand = time;
+            waitUntil {
+                sleep 0.5;
+                isTouchingGround _unit || (time - _startLand > 30)
+            };
+
+            private _smoke = _unit getVariable "jumpSave_Smoke";
+            if (!isNil "_smoke") then {
+                detach _smoke;
+            };
+
+            removeBackpack _unit;
+
+            private _oldBackpack = _unit getVariable "jumpSave_Backpack";
+            private _oldItems = _unit getVariable "jumpSave_BackpackItems";
+            if (_oldBackpack != "") then {
+                _unit addBackpack _oldBackpack;
+                {
+                    _unit addItemToBackpack _x;
+                } forEach _oldItems;
             };
         };
         sleep 0.5;
-  	} forEach units _groupJumper;
+    } forEach units _groupJumper;
 
     [_vehicle, _exitPos] spawn {
         params ["_vehicle", "_exitPos"];
@@ -159,6 +188,9 @@ if(currentWaypoint _groupPilot > 0) then
             [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
             _timeout = _timeout + 0.3;
             sleep 0.3;
+        };
+        if(canMove _vehicle || alive _groupPilot) then {
+            [_vehicle, "close"] spawn A3A_fnc_HeliDoors;
         };
     };
 };

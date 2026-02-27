@@ -123,6 +123,8 @@ _lootCrate attachTo [_para, [0, 0, -1.2]];
 		isNull _para 
 		|| 
 		(count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+		|| 
+        (time - _startTime) > 30
 	};
 		
 	_para disableCollisionWith _obj;

@@ -55,6 +55,8 @@ _para setVectorUp [0,0,1];
 	params ["_obj","_para"];
 
 	private _smokeShellVariants = ["SmokeShellRed", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"];
+
+	private _startTime = time;
 		
 	waitUntil {
 		sleep 0.01;
@@ -63,10 +65,12 @@ _para setVectorUp [0,0,1];
 		isNull _para 
 		|| 
 		(count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+		|| 
+        (time - _startTime) > 30
 	};
 		
 	_para disableCollisionWith _obj;
-	_obj setVectorUp [0,0,1];
+	_obj setVectorUp [0,0,1]; ///should we reset the object's direction?
 	_obj setVelocity [0,0,0];
 	detach _obj;
 	
