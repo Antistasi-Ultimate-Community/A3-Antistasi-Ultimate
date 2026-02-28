@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <Project name="A3-Antistasi">
     <Package name="A3-Antistasi Mission">
         <Container name="HR_GRG">
@@ -23,11 +23,10 @@
                 <Russian>(Раз)Блок</Russian>
                 <Korean>잠금(해제)</Korean>
                 <Spanish>(Des)Bloquear</Spanish>
-                <Chinesesimp>上锁/解锁</Chinesesimp>
+                <Chinesesimp>解锁/锁定</Chinesesimp>
                 <Czech>Odemknout/Zamknout</Czech>
                 <Italian>Sblocca</Italian>
                 <Polish>Odblokuj / Zablokuj</Polish>
-                <Turkish>Kilit(A/K)</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Confirm">
                 <Original>Confirm</Original>
@@ -39,7 +38,6 @@
                 <Czech>Potvrdit</Czech>
                 <Italian>Conferma</Italian>
                 <Polish>Potwierdź</Polish>
-                <Turkish>Onayla</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Cars">
                 <Original>Cars</Original>
@@ -51,7 +49,6 @@
                 <Czech>Auta</Czech>
                 <Italian>Automobili</Italian>
                 <Polish>Samochody</Polish>
-                <Turkish>Araçlar</Turkish>
             </Key>
             <Key ID="STR_HR_Garage_Generic_capacity">
                 <Original>Available space in garage</Original>
@@ -63,7 +60,6 @@
                 <Czech>Dostupný prostor v garáži</Czech>
                 <Italian>Spazio disponibile nel garage</Italian>
                 <Polish>Dostępne miejsce w garażu</Polish>
-                <Turkish>Garaj Mevcut Kapasitesi</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Armored">
                 <Original>Armor</Original>
@@ -75,12 +71,11 @@
                 <Czech>Pancíř</Czech>
                 <Italian>Armatura</Italian>
                 <Polish>Pojazdy Opancerzone</Polish>
-                <Turkish>Zırhlı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Unmanned">
                 <Original>Unmanned</Original>
                 <Russian>Беспилотники</Russian>
-                <Turkish>İnsansiz</Turkish>
+                <Chinesesimp>无人装备</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Air">
                 <Original>Aircraft</Original>
@@ -99,42 +94,42 @@
             <Key ID="STR_HR_GRG_Generic_Heli">
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
-                <Turkish>Helikopter</Turkish>
+                <Chinesesimp>直升机</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Cars_Сivilian">
-              <Original>Сivilian vehicles</Original>
-              <Russian>Гражданская техника</Russian>
-              <Turkish>Sivil Araçlar</Turkish>
+                <Original>Сivilian vehicles</Original>
+                <Russian>Гражданская техника</Russian>
+                <Chinesesimp>民用车辆</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_APC">
                 <Original>APC/IFV</Original>
                 <Russian>БТР/БМП</Russian>
-                <Turkish>ZPA/ZMA</Turkish>
+                <Chinesesimp>装甲输送车/步兵战车</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AA">
                 <Original>Anti-air</Original>
                 <Russian>ПВО</Russian>
-                <Turkish>Hava-Sav</Turkish>
+                <Chinesesimp>防空武器</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Arty">
                 <Original>Artillery</Original>
                 <Russian>Артиллерия</Russian>
-                <Turkish>Topçu</Turkish>
+                <Chinesesimp>火炮</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Heli">
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
-                <Turkish>Helikopterler</Turkish>
+                <Chinesesimp>直升机</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Plane">
                 <Original>Planes</Original>
                 <Russian>Самолёты</Russian>
-                <Turkish>Uçaklar</Turkish>
+                <Chinesesimp>固定翼飞机</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_VTOL">
                 <Original>VTOL</Original>
                 <Russian>СВВП</Russian>
-                <Turkish>DKİ</Turkish>
+                <Chinesesimp>垂直起降飞行器</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_HeliDisabled">
                 <Original>You can only access helicopters if a rebel helipad, friendly airfield, or military base is nearby.</Original>
@@ -142,11 +137,10 @@
                 <Russian>Вы можете получить доступ к вертолётам только если рядом есть повстанческая вертолётная площадка, дружественный аэродром или военная база.</Russian>
                 <Korean>반군 헬리패드, 아군 공군 기지 또는 군사 기지가 근처에 있어야 헬리콥터를 사용할 수 있습니다.</Korean>
                 <Spanish>Solo puedes acceder a helicópteros si hay un helipuerto rebelde, una base aérea aliada o una base militar cerca.</Spanish>
-                <Chinesesimp>只有附近有叛军直升机坪、友方空军基地或军事基地时，你才能使用直升机。</Chinesesimp>
+                <Chinesesimp>friendly airfield</Chinesesimp>
                 <Czech>Vrtulníky můžete využívat pouze tehdy, pokud je poblíž rebelský heliport, spojenecká letecká základna nebo vojenská základna.</Czech>
                 <Italian>Puoi accedere agli elicotteri solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
                 <Polish>Możesz korzystać ze śmigłowców tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
-                <Turkish>Helikopterlere yalnızca bir isyancı helikopter pisti, dost havaalanı veya askeri üs yakınındaysa erişebilirsiniz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
                 <Original>You can only access aircraft if a rebel helipad, friendly airfield, or military base is nearby.</Original>
@@ -154,11 +148,10 @@
                 <Russian>Вы можете получить доступ к авиации только если рядом есть повстанческая вертолётная площадка, дружественный аэродром или военная база.</Russian>
                 <Korean>반군 헬리패드, 아군 공군 기지 또는 군사 기지가 근처에 있어야 항공기를 사용할 수 있습니다.</Korean>
                 <Spanish>Solo puedes acceder a aeronaves si hay un helipuerto rebelde, una base aérea aliada o una base militar cerca.</Spanish>
-                <Chinesesimp>你只能在附近有叛军直升机坪、友方空军基地或军事基地时使用飞行器。</Chinesesimp>
+                <Chinesesimp>friendly airfield</Chinesesimp>
                 <Czech>Letadla můžete využívat pouze tehdy, pokud je poblíž rebelský heliport, spojenecká letecká základna nebo vojenská základna.</Czech>
                 <Italian>Puoi accedere agli aeromobili solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
                 <Polish>Możesz korzystać z samolotów tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
-                <Turkish>Hava araçlarına yalnızca bir isyancı helikopter pisti, dost havaalanı veya askeri üs yakınındaysa erişebilirsiniz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Boat">
                 <Original>Ships</Original>
@@ -170,7 +163,6 @@
                 <Czech>Lodě</Czech>
                 <Italian>Barche</Italian>
                 <Polish>Statki</Polish>
-                <Turkish>Tekneler</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Source">
                 <Original>Resource vehicles</Original>
@@ -182,7 +174,6 @@
                 <Czech>Zdrojová vozidla</Czech>
                 <Italian>Veicoli delle risorse</Italian>
                 <Polish>Pojazdy zasobów</Polish>
-                <Turkish>İkmal Araçları</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Static">
                 <Original>Statics</Original>
@@ -194,7 +185,6 @@
                 <Czech>Statické zbraně</Czech>
                 <Italian>Armi Fisse</Italian>
                 <Polish>Stanowiska bojowe</Polish>
-                <Turkish>Statik Silahlar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Mounts">
                 <Original>Mounts</Original>
@@ -202,11 +192,10 @@
                 <Russian>Прикрепить к</Russian>
                 <Korean>탑재</Korean>
                 <Spanish>Montadas</Spanish>
-                <Chinesesimp>挂载</Chinesesimp>
+                <Chinesesimp>搭载武器</Chinesesimp>
                 <Czech>Mounti</Czech>
                 <Italian>Armi Montate</Italian>
                 <Polish>Bron Montowana</Polish>
-                <Turkish>Genel Montajlar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Texture">
                 <Original>Texture</Original>
@@ -218,11 +207,10 @@
                 <Czech>Textura</Czech>
                 <Italian>Texture</Italian>
                 <Polish>Tekstury</Polish>
-                <Turkish>Kaplamalar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_HelipadDisabled">
                 <Original>You can only access garaged helicopters from helipads</Original>
-                <Turkish>Garajdaki helikopterlere yalnızca helikopter pistlerinden erişebilirsiniz</Turkish>
+                <Chinesesimp>你只能从直升机坪取出已存放的直升机</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Anim">
                 <Original>Customize</Original>
@@ -234,7 +222,6 @@
                 <Czech>Přizpůsobit</Czech>
                 <Italian>Modifica</Italian>
                 <Polish>Dostosuj</Polish>
-                <Turkish>Özelleştirme</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Pylons">
                 <Original>Pylons</Original>
@@ -246,7 +233,6 @@
                 <Czech>Pylony</Czech>
                 <Italian>Equipaggiamenti</Italian>
                 <Polish>Pylony</Polish>
-                <Turkish>Silahlandır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_PylonDisabled">
                 <Original>Pylons require an ammo source to edit</Original>
@@ -254,11 +240,10 @@
                 <Russian>Для редактирования пилонов необходим источник боеприпасов</Russian>
                 <Korean>무장창을 편집하려면 탄약차량이 필요합니다.</Korean>
                 <Spanish>Los pilones necesitan de un sitio con munición para ser editados</Spanish>
-                <Chinesesimp>编辑挂架需要可用弹药来源</Chinesesimp>
+                <Chinesesimp>编辑挂架需要弹药补给源</Chinesesimp>
                 <Czech>Pylony vyžadují úpravu zdroje munice</Czech>
                 <Italian>Per editare gli equipaggiamenti dinamici hai bisogno di una fonte di munizioni</Italian>
                 <Polish>Pylony wymagają źródła amunicji do edycji</Polish>
-                <Turkish>Silah askılarını düzenlemek için bir mühimmat kaynağı gerekir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_full">
                 <Original>Full</Original>
@@ -270,7 +255,6 @@
                 <Czech>Plný</Czech>
                 <Italian>Pieno</Italian>
                 <Polish>Pełny</Polish>
-                <Turkish>Dolu</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_capacity">
                 <Original>Available space in garage</Original>
@@ -278,11 +262,10 @@
                 <Russian>Доступное место в гараже</Russian>
                 <Korean>사용 가능한 차고 공간</Korean>
                 <Spanish>Espacio disponible en el garaje</Spanish>
-                <Chinesesimp>车库的可用容量</Chinesesimp>
+                <Chinesesimp>车库可用容量</Chinesesimp>
                 <Czech>Dostupný prostor v garáži</Czech>
                 <Italian>Spazio disponibile nel garage</Italian>
                 <Polish>Dostępne miejsce w garażu</Polish>
-                <Turkish>Garajdaki kullanılabilir alan</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_SellVeh">
                 <Original>Sell Vehicle</Original>
@@ -290,11 +273,10 @@
                 <Russian>Продать технику</Russian>
                 <Korean>차량 판매</Korean>
                 <Spanish>Vender vehículo</Spanish>
-                <Chinesesimp>出售车辆</Chinesesimp>
+                <Chinesesimp>出售载具</Chinesesimp>
                 <Czech>Prodat vozidlo</Czech>
                 <Italian>Vendere veicolo</Italian>
                 <Polish>Sprzedaj pojazd</Polish>
-                <Turkish>Aracı Sat</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_Header">
                 <Original>Sources:</Original>
@@ -302,11 +284,10 @@
                 <Russian>Источники ресурсов:</Russian>
                 <Korean>차량들:</Korean>
                 <Spanish>Fuentes:</Spanish>
-                <Chinesesimp>来源:</Chinesesimp>
+                <Chinesesimp>补给源：</Chinesesimp>
                 <Czech>Zdroje:</Czech>
                 <Italian>Fonti:</Italian>
                 <Polish>Źródła:</Polish>
-                <Turkish>Kaynaklar:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Available">
                 <Original>Vehicles will be rearmed when ungaraged</Original>
@@ -314,11 +295,10 @@
                 <Russian>Техника будет перезаряжена после вывода из гаража</Russian>
                 <Korean>차고에서 꺼내면 차량이 재무장됩니다</Korean>
                 <Spanish>Los vehículos serán rearmados cuando los saques</Spanish>
-                <Chinesesimp>从车库中被取出的载具会被重新武装</Chinesesimp>
+                <Chinesesimp>从车库取出载具时将补充弹药</Chinesesimp>
                 <Czech>Vozidla budou přezbrojena když budou vyndána z garáže</Czech>
                 <Italian>I veicoli saranno riarmati quando lasceranno il garage</Italian>
                 <Polish>Pojazdy zostaną dozbrojone, gdy zostaną wyciągnięte z garażu</Polish>
-                <Turkish>Araçlar garajdan çıkarıldığında yeniden mühimmatlandırılacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Unavailable">
                 <Original>Vehicles won't be rearmed when ungaraged as the garage lacks an ammo source</Original>
@@ -326,11 +306,10 @@
                 <Russian>Техника не будет перезаряжена после вывода из гаража из-за отсутствия источников боеприпасов</Russian>
                 <Korean>차고에 탄약차량이 없기 때문에 차고에서 꺼낼 때 차량은 재무장되지 않습니다</Korean>
                 <Spanish>Los vehículos no serán rearmados una vez fuera ya que el garaje necesita un punto de munición cerca</Spanish>
-                <Chinesesimp>缺乏弹药来源时从车库中被取出的载具不会被重新武装</Chinesesimp>
+                <Chinesesimp>因车库缺乏弹药补给源，取出载具时将不补充弹药</Chinesesimp>
                 <Czech>Vozidla nebudou přezbrojena když budou vyndána z garáže jelikož garáž nemá dostatek muničních zdrojů</Czech>
                 <Italian>I veicoli non saranno riarmati quando lasceranno il garage poichè non è presente una fonte di munizioni</Italian>
                 <Polish>Pojazdy nie zostaną dobrojone, gdy zostaną wyciągnięte z garażu, ponieważ w garażu brakuje źródła amunicji</Polish>
-                <Turkish>Garajda mühimmat kaynağı bulunmadığı için araçlar garajdan çıkarıldığında yeniden mühimmatlandırılmayacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Disabled">
                 <Original>Rearm disabled by server</Original>
@@ -338,11 +317,10 @@
                 <Russian>Перезарядка отключена сервером</Russian>
                 <Korean>서버에 의해 비활성화되었습니다</Korean>
                 <Spanish>Rearme deshabilitado por el servidor</Spanish>
-                <Chinesesimp>服务器设置禁用了重新武装</Chinesesimp>
+                <Chinesesimp>服务器已禁用弹药补充</Chinesesimp>
                 <Czech>Přezbrojení deaktivováno podle serveru</Czech>
                 <Italian>Riarmo disabilitato dal server</Italian>
                 <Polish>Dozbrajanie wyłączone w ustawieniach serwera</Polish>
-                <Turkish>Yeniden silahlandırma sunucu tarafından kapatıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Available">
                 <Original>Vehicles will be refueled when ungaraged</Original>
@@ -350,11 +328,10 @@
                 <Russian>Техника будет заправлена после вывода из гаража</Russian>
                 <Korean>차고에서 꺼내면 차량이 재급유됩니다</Korean>
                 <Spanish>Los vehículos serán repostados cuando los saques</Spanish>
-                <Chinesesimp>从车库中被取出的载具会被加满油</Chinesesimp>
+                <Chinesesimp>从车库取出载具时将加满燃油</Chinesesimp>
                 <Czech>Vozidla budou dotankována když budou vyndána z garáže</Czech>
                 <Italian>I veicoli saranno riforniti di carburante quando lasceranno il garage</Italian>
                 <Polish>Pojazdy zostaną zatankowane, gdy zostaną wyciągnięte z garażu</Polish>
-                <Turkish>Araçlar garajdan çıkarıldığında yakıt ikmali yapılacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Unavailable">
                 <Original>Vehicles won't be refueled when ungaraged as the garage lacks a fuel source</Original>
@@ -362,11 +339,10 @@
                 <Russian>Техника не будет заправлена после вывода из гаража из-за отсутствия источников топлива</Russian>
                 <Korean>차고에 유류차량이 없기 때문에 차고에서 꺼낼 때 차량은 재급유되지 않습니다</Korean>
                 <Spanish>Los vehículos no serán repostados cuando los saques pues no hay un punto de repostaje</Spanish>
-                <Chinesesimp>缺乏油料来源时从车库中被取出的载具不会被重新加油</Chinesesimp>
+                <Chinesesimp>因车库缺乏燃油补给源，取出载具时将不补充燃油</Chinesesimp>
                 <Czech>Vozidla nebudou dotankována když budou vyndána z garáže jelikož garáž nemá dostatek palivových zdrojů</Czech>
                 <Italian>I veicoli non saranno riforniti quando lasceranno il garage poichè non è presente una fonte di carburante</Italian>
                 <Polish>Pojazdy nie zostaną zatankowane, gdy zostaną wyciągnięte z garażu, ponieważ w garażu brakuje źródła paliwa</Polish>
-                <Turkish>Garajda yakıt kaynağı bulunmadığı için araçlar garajdan çıkarıldığında yakıt ikmali yapılmayacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Disabled">
                 <Original>Refuel disabled by server settings</Original>
@@ -374,11 +350,10 @@
                 <Russian>Заправка отключена настройками сервера</Russian>
                 <Korean>서버에 의해 비활성화되었습니다</Korean>
                 <Spanish>Repostaje deshabilitado por el servidor</Spanish>
-                <Chinesesimp>服务器设置禁用了燃料补充</Chinesesimp>
+                <Chinesesimp>服务器已禁用燃油补充</Chinesesimp>
                 <Czech>Dotankování vypnuto v nastavení serveru</Czech>
                 <Italian>Rifornimenti disabilitato dal server</Italian>
                 <Polish>Tankowanie wyłączone w ustawieniach serwera</Polish>
-                <Turkish>Yakıt ikmali sunucu ayarları tarafından devre dışı bırakıldı.</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Available">
                 <Original>Vehicles will be repaired when ungaraged</Original>
@@ -386,11 +361,10 @@
                 <Russian>Техника будет отремонтирована после вывода из гаража</Russian>
                 <Korean>차고에서 꺼내면 차량이 수리됩니다</Korean>
                 <Spanish>Los vehículos serán reparados cuando los saques</Spanish>
-                <Chinesesimp>从车库中被取出的载具会被维修</Chinesesimp>
+                <Chinesesimp>从车库取出载具时将修复损伤</Chinesesimp>
                 <Czech>Vozidla budou opravena když budou vyndána z garáže</Czech>
                 <Italian>I veicoli saranno riparati quando lasceranno il garage</Italian>
                 <Polish>Pojazdy zostaną naprawione, gdy zostaną wyciągnięte z garażu</Polish>
-                <Turkish>Araçlar garajdan çıkarıldığında onarılacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Unavailable">
                 <Original>Vehicles won't be repaired when ungaraged as the garage lacks a repair source</Original>
@@ -398,11 +372,10 @@
                 <Russian>Техника не будет отремонтирована при выводе из гаража из-за отсутствия ремонтных машин</Russian>
                 <Korean>차고에 수리차량이 없기 때문에 차고에서 꺼낼 때 차량은 수리되지 않습니다</Korean>
                 <Spanish>Los vehículos no serán reparados cuando los ssaques pues no hay un sitio de reparación cerca</Spanish>
-                <Chinesesimp>缺乏维修来源时从车库中被取出的载具不会被重新维修</Chinesesimp>
+                <Chinesesimp>因车库缺乏维修补给源，取出载具时将不进行修复</Chinesesimp>
                 <Czech>Vozidla nebudou opravena když budou vyndána z garáže jelikož garáž nemá dostatek opravných zdrojů</Czech>
                 <Italian>I veicoli non saranno riparati quando lasceranno il garage poichè non è presente una fonte di pezzi di ricambio</Italian>
                 <Polish>Pojazdy nie zostaną naprawione, gdy zostaną wyciągnięte z garażu, ponieważ w garażu brakuje zasobów naprawczych</Polish>
-                <Turkish>Garajda onarım kaynağı bulunmadığı için araçlar garajdan çıkarıldığında onarılmayacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Disabled">
                 <Original>Repair disabled by server settings</Original>
@@ -410,11 +383,10 @@
                 <Russian>Ремонт отключен настройками сервера</Russian>
                 <Korean>서버에 의해 비활성화되었습니다</Korean>
                 <Spanish>Reparación deshabilitada por el servidor</Spanish>
-                <Chinesesimp>服务器设置禁用了载具维修</Chinesesimp>
+                <Chinesesimp>服务器已禁用维修</Chinesesimp>
                 <Czech>Opravování vypnuto v nastavení serveru</Czech>
                 <Italian>Riparazioni disabilitate dalle impostazioni del server</Italian>
                 <Polish>Naprawianie wyłączone w ustawieniach serwera</Polish>
-                <Turkish>Onarım sunucu ayarları tarafından devre dışı bırakıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isAmmoSource">
                 <Original>Vehicle is an ammo source</Original>
@@ -422,11 +394,10 @@
                 <Russian>Эта техника - источник боеприпасов</Russian>
                 <Korean>해당 차량은 탄약차량입니다</Korean>
                 <Spanish>El vehículo es un punto de munición</Spanish>
-                <Chinesesimp>当前载具可提供弹药</Chinesesimp>
+                <Chinesesimp>当前载具可为弹药补给源</Chinesesimp>
                 <Czech>Vozidlo je zdrojem munice</Czech>
                 <Italian>Il veicolo è una fonte di munizioni</Italian>
                 <Polish>Pojazd jest źródłem amunicji</Polish>
-                <Turkish>Bu araç mühimmat kaynağı olarak kullanılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isFuelSource">
                 <Original>Vehicle is a fuel source</Original>
@@ -434,11 +405,10 @@
                 <Russian>Эта техника - источник топлива</Russian>
                 <Korean>해당 차량은 유류차량입니다</Korean>
                 <Spanish>El vehículo es un punto de repostaje</Spanish>
-                <Chinesesimp>当前载具可提供油料</Chinesesimp>
+                <Chinesesimp>当前载具可为燃油补给源</Chinesesimp>
                 <Czech>Vozidlo je zdrojem paliva</Czech>
                 <Italian>Il veicolo è una fonte di carburante</Italian>
                 <Polish>Pojazd jest źródłem paliwa</Polish>
-                <Turkish>Bu araç yakıt kaynağı olarak kullanılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isRepairSource">
                 <Original>Vehicle is a repair source</Original>
@@ -446,11 +416,10 @@
                 <Russian>Эта техника является ремонтной</Russian>
                 <Korean>해당 차량은 정비차량입니다</Korean>
                 <Spanish>El vehículo es un punto de reparación</Spanish>
-                <Chinesesimp>当前载具可提供维修</Chinesesimp>
+                <Chinesesimp>当前载具可为维修补给源</Chinesesimp>
                 <Czech>Vozidlo je zdrojem opravy</Czech>
                 <Italian>Il veicolo è una fonte di pezzi di ricambio</Italian>
                 <Polish>Pojazd jest źródłem naprawy</Polish>
-                <Turkish>Bu araç onarım kaynağı olarak kullanılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isNotSource">
                 <Original>Vehicle is not a source</Original>
@@ -458,11 +427,10 @@
                 <Russian>Эта техника не является источником каких-либо ресурсов</Russian>
                 <Korean>해당 차량은 어느 종류의 차량도 아닙니다</Korean>
                 <Spanish>El vehículo no tiene una función de punto</Spanish>
-                <Chinesesimp>当前载具无法提供弹药/油料/维修</Chinesesimp>
+                <Chinesesimp>当前载具不能作为补给源</Chinesesimp>
                 <Czech>Vozidlo není zdrojem</Czech>
                 <Italian>Il veicolo non è una fonte di nulla</Italian>
                 <Polish>Pojazd nie jest źródłem</Polish>
-                <Turkish>Bu araç kaynak olarak kullanılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Seats">
                 <Original>Seats:</Original>
@@ -470,11 +438,10 @@
                 <Russian>Места:</Russian>
                 <Korean>좌석:</Korean>
                 <Spanish>Asientos:</Spanish>
-                <Chinesesimp>座位:</Chinesesimp>
+                <Chinesesimp>载员座位：</Chinesesimp>
                 <Czech>Sedadla:</Czech>
                 <Italian>Sedili:</Italian>
                 <Polish>Siedzenia:</Polish>
-                <Turkish>Koltuklar:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Cargo">
                 <Original>Cargo:</Original>
@@ -482,11 +449,10 @@
                 <Russian>Грузовой отсек:</Russian>
                 <Korean>화물:</Korean>
                 <Spanish>Cargamento:</Spanish>
-                <Chinesesimp>货物:</Chinesesimp>
+                <Chinesesimp>货舱容量：</Chinesesimp>
                 <Czech>Náklad:</Czech>
                 <Italian>Cargo:</Italian>
                 <Polish>Ładunek:</Polish>
-                <Turkish>Kargo:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_AceCargo">
                 <Original>Ace Cargo:</Original>
@@ -494,11 +460,10 @@
                 <Russian>Грузовой отсек ACE:</Russian>
                 <Korean>ACE 화물:</Korean>
                 <Spanish>Cargamento de ACE:</Spanish>
-                <Chinesesimp>ACE货物:</Chinesesimp>
+                <Chinesesimp>ACE货舱：</Chinesesimp>
                 <Czech>ACE Cargo:</Czech>
                 <Italian>Ace Cargo:</Italian>
                 <Polish>Ładunek ACE:</Polish>
-                <Turkish>Ace Kargo:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Capacity">
                 <Original>Capacity:</Original>
@@ -506,11 +471,10 @@
                 <Russian>Вместимость:</Russian>
                 <Korean>용량:</Korean>
                 <Spanish>Capacidad:</Spanish>
-                <Chinesesimp>容量:</Chinesesimp>
+                <Chinesesimp>容量：</Chinesesimp>
                 <Czech>Kapacita:</Czech>
                 <Italian>Capacità:</Italian>
                 <Polish>Pojemność:</Polish>
-                <Turkish>Kapasite:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Available">
                 <Original>Available:</Original>
@@ -518,11 +482,10 @@
                 <Russian>Доступно:</Russian>
                 <Korean>사용 가능 여부:</Korean>
                 <Spanish>Disponible:</Spanish>
-                <Chinesesimp>可用:</Chinesesimp>
+                <Chinesesimp>可用：</Chinesesimp>
                 <Czech>Dostupný:</Czech>
                 <Italian>Disponibile:</Italian>
                 <Polish>Dostępny:</Polish>
-                <Turkish>Mevcut:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_cannotBeSold">
                 <Original>Cannot be sold.</Original>
@@ -534,7 +497,6 @@
                 <Czech>Nelze prodat.</Czech>
                 <Italian>Non può essere venduto.</Italian>
                 <Polish>Nie można sprzedać.</Polish>
-                <Turkish>Satılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Speed">
                 <Original>Top speed:</Original>
@@ -542,11 +504,10 @@
                 <Russian>Максимальная скорость:</Russian>
                 <Korean>최대 속도:</Korean>
                 <Spanish>Velocidad max:</Spanish>
-                <Chinesesimp>最大速度:</Chinesesimp>
+                <Chinesesimp>最高速度：</Chinesesimp>
                 <Czech>Nejvyšší rychlost:</Czech>
                 <Italian>Velocità Massima:</Italian>
                 <Polish>Prędkość Maksymalna:</Polish>
-                <Turkish>Azami hız:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_HP">
                 <Original>Horsepower:</Original>
@@ -554,11 +515,10 @@
                 <Russian>Лошадиные силы:</Russian>
                 <Korean>마력:</Korean>
                 <Spanish>CV:</Spanish>
-                <Chinesesimp>马力:</Chinesesimp>
+                <Chinesesimp>马力：</Chinesesimp>
                 <Czech>Koňských sil:</Czech>
                 <Italian>Cavalli:</Italian>
                 <Polish>Moc:</Polish>
-                <Turkish>Beygir gücü:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Mass">
                 <Original>Mass:</Original>
@@ -566,11 +526,10 @@
                 <Russian>Вес:</Russian>
                 <Korean>부피:</Korean>
                 <Spanish>Masa:</Spanish>
-                <Chinesesimp>重量:</Chinesesimp>
+                <Chinesesimp>重量：</Chinesesimp>
                 <Czech>Hmotnost:</Czech>
                 <Italian>Massa:</Italian>
                 <Polish>Masa:</Polish>
-                <Turkish>Kütle:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_salePrice">
                 <Original>Sell Price:</Original>
@@ -582,7 +541,6 @@
                 <Czech>Prodejní cena:</Czech>
                 <Italian>Prezzo di vendita:</Italian>
                 <Polish>Cena sprzedaży:</Polish>
-                <Turkish>Satış fiyatı:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_fullRefuel">
                 <Original>Vehicle can be fully refueled with</Original>
@@ -590,11 +548,10 @@
                 <Russian>Техника может быть полностью заправлена с помощью</Russian>
                 <Korean>차량에 연료를 완전히 주입할 수 있습니다:</Korean>
                 <Spanish>El vehículo puede ser completamente repostado con</Spanish>
-                <Chinesesimp>可以补满燃油:</Chinesesimp>
+                <Chinesesimp>载具可完全加满燃油：</Chinesesimp>
                 <Czech>Vozidlo lze plně dotankovat</Czech>
                 <Italian>Il veicolo può essere completamente rifornito usando</Italian>
                 <Polish>Pojazd można w pełni zatankować za pomocą</Polish>
-                <Turkish>Araç tamamen yakıt ikmali yapılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_partialRefuel">
                 <Original>Vehicle can only be partially refueled to</Original>
@@ -602,11 +559,10 @@
                 <Russian>Техника можеть быть лишь частично заправлена</Russian>
                 <Korean>차량에 연료를 일부만 주입할 수 있습니다:</Korean>
                 <Spanish>El vehículo solo puede ser repostado parcialmente a</Spanish>
-                <Chinesesimp>可补充部分燃油:</Chinesesimp>
+                <Chinesesimp>载具只能部分补充燃油至：</Chinesesimp>
                 <Czech>Vozidlo lze částečně dotankovat</Czech>
                 <Italian>Il veicolo può essere parzialmente rifornito usando</Italian>
                 <Polish>Pojazd można zatankować tylko częściowo do</Polish>
-                <Turkish>Araç yalnızca kısmen yakıt ikmali yapılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_noRefuel">
                 <Original>Vehicle cannot be refueled</Original>
@@ -614,11 +570,10 @@
                 <Russian>Техника не может быть заправлена</Russian>
                 <Korean>차량에 연료를 주입할 수 없습니다</Korean>
                 <Spanish>El vehículo no puede ser repostado</Spanish>
-                <Chinesesimp>无法补充燃油:</Chinesesimp>
+                <Chinesesimp>载具无法补充燃油：</Chinesesimp>
                 <Czech>Vozidlo nelze dotankovat</Czech>
                 <Italian>Il veicolo non può essere rifornito</Italian>
                 <Polish>Pojazd nie może być zatankowany</Polish>
-                <Turkish>Bu araca yakıt ikmali yapılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_factionFuel">
                 <Original>Faction has</Original>
@@ -630,7 +585,6 @@
                 <Czech>Frakce má</Czech>
                 <Italian>La Fazione ha</Italian>
                 <Polish>Frakcje mają</Polish>
-                <Turkish>Fraksiyonun sahip</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_openGarage_Action">
                 <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Open garage&lt;/t&gt;</Original>
@@ -642,20 +596,17 @@
                 <Czech>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Otevřít Garáž&lt;/t&gt;</Czech>
                 <Italian>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Apri Garage&lt;/t&gt;</Italian>
                 <Polish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Otwórz Garaż</Polish>
-                <Turkish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Garajı aç&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_addVehicle_Action">
-                <!--%1 is display name of vehicle-->
                 <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</Original>
                 <French>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</French>
                 <Russian>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Стоянка %1</Russian>
                 <Korean>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; %1 넣기</Korean>
                 <Spanish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garaje %1</Spanish>
-                <Chinesesimp>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; 载具库 %1</Chinesesimp>
+                <Chinesesimp>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; 存入 %1</Chinesesimp>
                 <Czech>&lt;img image = '\ a3 \ ui_f \ Data \ Gui \ rsc \ rscdisplayArsenal \ SpaceGarage_ca.paa'&gt; &lt;/img&gt; garáž %1</Czech>
                 <Italian>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</Italian>
                 <Polish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garaż%1</Polish>
-                <Turkish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garaj %1</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Null">
                 <Original>You are not looking at a vehicle</Original>
@@ -663,11 +614,10 @@
                 <Russian>Вы не смотрите на технику</Russian>
                 <Korean>차량을 보고 있지 않습니다</Korean>
                 <Spanish>No estás mirando a un vehículo</Spanish>
-                <Chinesesimp>你没有看着任何一个载具</Chinesesimp>
+                <Chinesesimp>你没有对准任何载具</Chinesesimp>
                 <Czech>Nedíváte se na vozidlo</Czech>
                 <Italian>Non stai guardando un veicolo</Italian>
                 <Polish>Nie patrzysz na żaden pojazd</Polish>
-                <Turkish>Herhangi bir araca bakmıyorsunuz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_confirm_NullSelection">
                 <Original>No vehicle selected</Original>
@@ -675,11 +625,10 @@
                 <Russian>Техника не выбрана</Russian>
                 <Korean>차량을 선택하지 않았습니다</Korean>
                 <Spanish>Sin vehículo seleccionado</Spanish>
-                <Chinesesimp>没有选择任何载具</Chinesesimp>
+                <Chinesesimp>未选择载具</Chinesesimp>
                 <Czech>Žádné vozidlo</Czech>
                 <Italian>Nessun veicolo selezionato</Italian>
                 <Polish>Nie wybrano pojazdu</Polish>
-                <Turkish>Herhangi bir araç seçilmedi</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_SATow">
                 <Original>You can't garage a Vehicle with your Tow Rope out or a Vehicle attached</Original>
@@ -687,11 +636,10 @@
                 <Russian>Вы не можете завести в гараж технику с буксировочным тросом или присоединённой им техникой</Russian>
                 <Korean>견인 로프를 빼거나 차량에 부착한 상태에서는 차량을 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar un vehículo con una cuerda atada a él ni remolcando a otro vehículo</Spanish>
-                <Chinesesimp>你不能停放任何带有拖车绳的载具</Chinesesimp>
+                <Chinesesimp>无法存入带有拖车绳或正在拖曳其他载具的车辆</Chinesesimp>
                 <Czech>Nemůžete garážovat vozidlo, které je taženo a nebo má vytažená tažná lana</Czech>
                 <Italian>Non può mettere nel garage un veicolo con la Fune da Traino dispiegata o con un Veicolo attaccato</Italian>
                 <Polish>Nie możesz garażować pojazdu z wyciągniętą liną holowniczą lub podłączonym pojazdem</Polish>
-                <Turkish>Çekme halatı takılıyken veya bağlı bir araç varken aracı garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_LTC">
                 <Original>Loot crate stored</Original>
@@ -699,11 +647,10 @@
                 <Russian>Ящик с трофеями перемещен хранилище</Russian>
                 <Korean>전리품 상자 저장 완료</Korean>
                 <Spanish>Caja almacenada</Spanish>
-                <Chinesesimp>已存放战利品箱</Chinesesimp>
+                <Chinesesimp>战利品箱已存入</Chinesesimp>
                 <Czech>Kořistní bedna uložená</Czech>
                 <Italian>Loot Crate immagazzinata</Italian>
                 <Polish>Przechowywana skrzynka z łupami</Polish>
-                <Turkish>Yağma sandığı depoya alındı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Item_Stored">
                 <Original>Item stored</Original>
@@ -711,15 +658,14 @@
                 <Russian>Предмет складирован</Russian>
                 <Korean>아이템 저장 완료</Korean>
                 <Spanish>Objeto almacenado</Spanish>
-                <Chinesesimp>已存放物品</Chinesesimp>
+                <Chinesesimp>物品已存入</Chinesesimp>
                 <Czech>Položka uložená</Czech>
                 <Italian>Oggetto immagazzinato</Italian>
                 <Polish>Przechowywany przedmiot</Polish>
-                <Turkish>Öğe depolandı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Ammo_sold">
                 <Original>Ammo crate sold</Original>
-                <Turkish>Mühimmat sandığı satıldı</Turkish>
+                <Chinesesimp>弹药箱已出售</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Fuel_sold">
                 <Original>Fuel sold</Original>
@@ -727,11 +673,10 @@
                 <Russian>Топливо продано</Russian>
                 <Korean>연료 판매 완료</Korean>
                 <Spanish>Gasolina vendida</Spanish>
-                <Chinesesimp>已出售油料</Chinesesimp>
+                <Chinesesimp>燃油已出售</Chinesesimp>
                 <Czech>Prodané palivo</Czech>
                 <Italian>Carburante venduto</Italian>
                 <Polish>Sprzedano paliwo</Polish>
-                <Turkish>Yakıt satıldı.</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_commander_only">
                 <Original>This object can only be garaged by the commander</Original>
@@ -739,11 +684,10 @@
                 <Russian>Источники топлива могут быть перемещены в гараж только Командиром</Russian>
                 <Korean>유류차량은 지휘관만 차고에 넣을 수 있습니다</Korean>
                 <Spanish>Los puntos de gasolina solo pueden ser almacenados por el comandante</Spanish>
-                <Chinesesimp>任何油料来源只能由指挥官存放</Chinesesimp>
+                <Chinesesimp>此物品仅可由指挥官存入</Chinesesimp>
                 <Czech>Zdroje paliva mohou být garážovány pouze velitelem</Czech>
                 <Italian>Le fonti di carburante possono essere inserite nel garage solo dal comandante</Italian>
                 <Polish>Źródła paliwa mogą być garażowane tylko przez dowódcę</Polish>
-                <Turkish>Bu nesneyi sadece komutan garaja alabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Distance">
                 <Original>You can't garage vehicles that are more than 25m away from you</Original>
@@ -751,11 +695,10 @@
                 <Russian>Вы не можете завести в гараж технику, находящуюся дальше 25 метров от вас</Russian>
                 <Korean>25m 이상 떨어진 차량은 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar vehículos que estén a más de 25 metros de tí</Spanish>
-                <Chinesesimp>你不能存放任何离你超过25米的载具</Chinesesimp>
+                <Chinesesimp>无法存入距离你超过25米的载具</Chinesesimp>
                 <Czech>Nemůžete garážová vozidla, která jsou od vás více než 25 metrů</Czech>
                 <Italian>Non puoi mettere un veicolo nel garage se si trova a più di 25m da te</Italian>
                 <Polish>Nie możesz garażować pojazdów znajdujących się dalej niż 25m od Ciebie</Polish>
-                <Turkish>25 metreden daha uzakta olan araçları garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Destroyed">
                 <Original>You can't garage a destroyed vehicle</Original>
@@ -763,11 +706,10 @@
                 <Russian>Вы не можете завести в гараж уничтоженную технику</Russian>
                 <Korean>파괴된 차량은 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar un vehículo destruido</Spanish>
-                <Chinesesimp>你不能存放已经彻底损坏的车辆</Chinesesimp>
+                <Chinesesimp>无法存入已损毁的载具</Chinesesimp>
                 <Czech>Nemůžete garáže zničené vozidlo</Czech>
                 <Italian>Non puoi mettere un veicolo distrutto nel garage</Italian>
                 <Polish>Nie możesz garażować zniszczonego pojazdu</Polish>
-                <Turkish>Yok edilmiş araçlar garaja alınamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Locked">
                 <Original>You can't garage a locked vehicle</Original>
@@ -775,28 +717,25 @@
                 <Russian>Вы не можете завести в гараж закрытую технику</Russian>
                 <Korean>잠긴 차량은 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar un vehículo que esté cerrado</Spanish>
-                <Chinesesimp>你不能存放上锁的载具</Chinesesimp>
+                <Chinesesimp>无法存入已锁定的载具</Chinesesimp>
                 <Czech>Nemůžete garážové zamčené vozidlo</Czech>
                 <Italian>Non puoi mettere un veicolo bloccato nel garage</Italian>
                 <Polish>Nie możesz garażować zablokowanego pojazdu</Polish>
-                <Turkish>Kilitli araçlar garaja alınamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Attached">
                 <Original>You can't garage an object that's attached to another vehicle</Original>
-                <Turkish>Bir araca bağlı nesneler garaja alınamaz</Turkish>
+                <Chinesesimp>无法存入挂载在其他载具上的物品</Chinesesimp>
             </Key>
-            <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_badLocation">
                 <Original>You and the vehicle need to be in a %1 garrisons surroundings in order to garage it</Original>
                 <French>Vous et le véhicule devez être dans les alentours d'une garnisons %1 afin de le ranger</French>
                 <Russian>Вы и ваша техника должны быть внутри гарнизона фракции %1 для перемещения её в гараж</Russian>
                 <Korean>해당 차량을 차고에 넣으려면 당신과 차량이 %1 주둔지 주변에 있어야 합니다</Korean>
                 <Spanish>Tu vehículo y tú necesitais estar en los alrededores de una guarnición de %1 para almacenarlo</Spanish>
-                <Chinesesimp>存放车辆需要周边存在 %1 驻军</Chinesesimp>
+                <Chinesesimp>你和载具需位于 %1 驻军范围内才能存入</Chinesesimp>
                 <Czech>Vy a vozidlo musíte být v prostředí %1 posádek abyste jej mohli garážovat</Czech>
                 <Italian>Tu e il veicolo dovete essere nelle %1 vicinanze di una guarnigione per poter inserirlo nel garage</Italian>
                 <Polish>Ty i pojazd musicie znajdować się w otoczeniu garnizonów %1, aby garażować go</Polish>
-                <Turkish>Aracı garaja almak için siz ve araç %1 garnizonunun yakınında olmalısınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesEngaging">
                 <Original>You can't garage vehicles while enemies are engaging you</Original>
@@ -804,11 +743,10 @@
                 <Russian>Вы не можете завести технику в гараж, когда вас атакует противник</Russian>
                 <Korean>적들이 당신과 교전하는 동안에는 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar vehículos mientras el enemigo te está atacando</Spanish>
-                <Chinesesimp>你不能在与敌人交战时存放载具</Chinesesimp>
+                <Chinesesimp>交战中无法存入载具</Chinesesimp>
                 <Czech>Nemůžete garážová vozidla, zatímco na vás nepřátelé útočí</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage mentre dei nemici ti stanno ingaggiando</Italian>
                 <Polish>Nie możesz garażować pojazdów, gdy wrogowie cię atakują</Polish>
-                <Turkish>Düşmanlarla çatışma halindeyken araçları garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesNear">
                 <Original>You can't garage vehicles while enemies are near you</Original>
@@ -816,24 +754,21 @@
                 <Russian>Вы не можете завести технику в гараж, когда рядом с вами противник</Russian>
                 <Korean>적들이 가까이 있는 동안에는 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar vehículos mientras el enemigo está cerca</Spanish>
-                <Chinesesimp>你不能在敌人附近存放载具</Chinesesimp>
+                <Chinesesimp>附近有敌人时无法存入载具</Chinesesimp>
                 <Czech>Nemůžete garážová vozidla, zatímco nepřátelé jsou blízko vás</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage poichè ci sono nemici nelle vicinanze</Italian>
                 <Polish>Nie możesz garażować pojazdów, gdy wrogowie są blisko ciebie</Polish>
-                <Turkish>Yakınınızda düşmanlar varken araçları garaja alamazsınız</Turkish>
             </Key>
-            <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_airBlocked">
                 <Original>You can't garage an aircraft while you are not near an airbase which belongs to %1, or a built helipad for helicopters.</Original>
                 <French>Vous ne pouvez pas garer un aéronef tant que vous n'êtes pas à proximité d'un aéroport appartenant à %1. Veuillez déplacer votre aéronef vers un aéroport sous votre contrôle pour le garer</French>
                 <Russian>Вы не можете переместить авиационную технику в гараж если Вы не возле аэропорта принадлежащего фракции %1. Пожалуйста, переместите вашу технику к аэропорту под вашим контролем для перемещения её в гараж.</Russian>
                 <Korean>%1 소속의 공항 근처에 있지 않으면 항공기를 정비할 수 없습니다. 정비하려면 항공기를 당신이 통제하는 공항으로 이동하십시오</Korean>
                 <Spanish>No puedes almacenar una nave si no estás cerca de un aeropuerto que pertenezca a %1. Porfavor, mueve tu nave a un aeropuerto vajo tu control para almacenarla.</Spanish>
-                <Chinesesimp>你不能在不属于 1% 的机场附近存放飞行器，移动到附近的友军机场来存取它</Chinesesimp>
+                <Chinesesimp>or a built helipad for helicopters.</Chinesesimp>
                 <Czech>Letadlo nemůžete garáže, když nejste poblíž letiště, které patří %1. Přesuňte prosím své letadlo na letiště pod kontrolou, abyste jej garáže</Czech>
                 <Italian>Non puoi inserire un veivolo nel garage se ti trovi lontano da un Aereoporto di appartenenza %1. Per favore sposta il veivolo ad un aereoporto sotto il controllo alleato in modo da poter conservarlo nel garage</Italian>
                 <Polish>Nie możesz garażować samolotu, gdy nie znajdujesz się w pobliżu lotniska, które należy do %1. Przenieś swój samolot na lotnisko pod Twoją kontrolą, aby go garażować</Polish>
-                <Turkish>%1’e ait bir hava üssüne ya da helikopter pistine yakın değilseniz hava aracı garaja alınamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_GenericFail">
                 <Original>You can't garage this</Original>
@@ -841,11 +776,10 @@
                 <Russian>Вы не можете завести это в гараж</Russian>
                 <Korean>이건 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar esto</Spanish>
-                <Chinesesimp>你不能存放这个</Chinesesimp>
+                <Chinesesimp>无法存入此物品</Chinesesimp>
                 <Czech>Nemůžete to garážovat</Czech>
                 <Italian>Questo non può essere messo nel garage</Italian>
                 <Polish>Nie możesz tego garażować</Polish>
-                <Turkish>Bunu garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_inVehicle">
                 <Original>You can't garage a vehicle while in another vehicle</Original>
@@ -853,11 +787,10 @@
                 <Russian>Вы не можете завести в гараж технику, находясь в другой технике</Russian>
                 <Korean>다른 차량에 있는 동안에는 차량을 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar un vehículo mientrás estás en otro vehículo</Spanish>
-                <Chinesesimp>你不能在载具内存放另一个载具</Chinesesimp>
+                <Chinesesimp>在载具内无法存入另一载具</Chinesesimp>
                 <Czech>V jiném vozidle nemůžete garážovat vozidla</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage mentre ti trovi dentro un altro veicolo</Italian>
                 <Polish>Nie możesz garażować pojazdu, będąc w innym pojeździe</Polish>
-                <Turkish>Başka bir araçtayken bir aracı garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Crewed">
                 <Original>You can't garage a vehicle with crew inside</Original>
@@ -865,11 +798,10 @@
                 <Russian>Вы не можете завести в гараж технику людьми внутри</Russian>
                 <Korean>승무원이 탑승한 차량은 차고에 넣을 수 없습니다</Korean>
                 <Spanish>No puedes almacenar un vehículo si hay personas dentro</Spanish>
-                <Chinesesimp>你不能存放有人的载具</Chinesesimp>
+                <Chinesesimp>无法存入有乘员的载具</Chinesesimp>
                 <Czech>Nemůžete garážovat vozidlo s posádkou uvnitř</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage se l'equipaggio si trova ancora all'interno</Italian>
                 <Polish>Nie możesz garażować pojazdu z załogą w środku</Polish>
-                <Turkish>İçinde mürettebat varken bir aracı garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Capacity">
                 <Original>There's not enough room to garage this vehicle</Original>
@@ -877,24 +809,21 @@
                 <Russian>В гараже недостаточно места для этой техники</Russian>
                 <Korean>이 차량을 차고에 넣을 공간이 충분하지 않습니다</Korean>
                 <Spanish>No hay espacio suficiente para almacenar este vehículo</Spanish>
-                <Chinesesimp>没有足够空间存放载具</Chinesesimp>
+                <Chinesesimp>车库容量不足，无法存入此载具</Chinesesimp>
                 <Czech>Není dostatek prostoru pro garážování tohoto vozidla</Czech>
                 <Italian>Non c'è abbastanza spazio per mettere questo veicolo nel garage</Italian>
                 <Polish>Nie ma wystarczająco dużo miejsca na garażowanie tego pojazdu</Polish>
-                <Turkish>Bu aracı garaja almak için yeterli alan yok</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Success">
-                <!--%1 is display name of vehicle-->
                 <Original>%1 Garaged</Original>
                 <French>%1 garé</French>
                 <Russian>%1 перемещен/перемещена в гараж</Russian>
                 <Korean>%1 넣음</Korean>
                 <Spanish>%1 Almacenado</Spanish>
-                <Chinesesimp>%1 已经被存放</Chinesesimp>
+                <Chinesesimp>%1 已存入</Chinesesimp>
                 <Czech>%1 garážováno</Czech>
                 <Italian>%1 Inserito nel Garage</Italian>
                 <Polish>%1 Garażowany</Polish>
-                <Turkish>%1 Garaja Alındı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_requestMount_Denied">
                 <Original>Can't mount static</Original>
@@ -902,11 +831,10 @@
                 <Russian>Нельзя установить стационарное орудие</Russian>
                 <Korean>고정화기를 탑재할 수 없습니다</Korean>
                 <Spanish>No puede montarse una estática</Spanish>
-                <Chinesesimp>无法装载固定式武器</Chinesesimp>
+                <Chinesesimp>无法装载固定武器</Chinesesimp>
                 <Czech>Nelze namontovat statiku</Czech>
                 <Italian>Impossibile montare l'arma fissa</Italian>
                 <Polish>Nie można zamontować broni statycznej</Polish>
-                <Turkish>Statik silah yerleştirilemez</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_comOnly">
                 <Original>Only the Commander can sell vehicles.</Original>
@@ -914,11 +842,10 @@
                 <Russian>Только командующий может продавать технику.</Russian>
                 <Korean>차량을 판매할 수 있는 사람은 지휘관뿐입니다.</Korean>
                 <Spanish>Solo el comandante puede vender vehículos.</Spanish>
-                <Chinesesimp>只有指挥官可以出售车辆。</Chinesesimp>
+                <Chinesesimp>仅指挥官可出售载具</Chinesesimp>
                 <Czech>Jen velitel může prodávat vozidla.</Czech>
                 <Italian>Solo il comandante può vendere i veicoli.</Italian>
                 <Polish>Tylko dowódca może sprzedawać pojazdy.</Polish>
-                <Turkish>Araçları yalnızca komutan satabilir.</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_locked">
                 <Original>You cannot sell a locked vehicle. If this is your vehicle, make sure to unlock it first.</Original>
@@ -926,11 +853,10 @@
                 <Russian>Вы не можете продать заблокированную технику. Если это ваша техника, сначала разблокируйте его.</Russian>
                 <Korean>잠긴 차량은 판매할 수 없습니다. 만약 이 차량이 당신의 것이라면 먼저 잠금을 해제하세요.</Korean>
                 <Spanish>No puedes vender un vehículo bloqueado. Si es tu vehículo, asegúrate de desbloquearlo primero.</Spanish>
-                <Chinesesimp>您无法出售已锁定的车辆。如果这是您的车辆，请先解锁。</Chinesesimp>
+                <Chinesesimp>make sure to unlock it first.</Chinesesimp>
                 <Czech>Nemůžete prodat zamknuté vozidlo. Pokud je to vaše vozidlo, nejprve ho odemkněte.</Czech>
                 <Italian>Non puoi vendere un veicolo bloccato. Se questo è il tuo veicolo, assicurati di sbloccarlo prima.</Italian>
                 <Polish>Nie możesz sprzedać zablokowanego pojazdu. Jeśli to twój pojazd, najpierw go odblokuj.</Polish>
-                <Turkish>Kilitli bir aracı satamazsınız. Bu araç size aitse, önce kilidini açtığınızdan emin olun</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_noPrice">
                 <Original>This vehicle is not suitable for our marketplace.</Original>
@@ -938,11 +864,10 @@
                 <Russian>Эта техника не подходит для нашего рынка.</Russian>
                 <Korean>이 차량은 우리 시장에 적합하지 않습니다.</Korean>
                 <Spanish>Este vehículo no es adecuado para nuestro mercado.</Spanish>
-                <Chinesesimp>此车辆不适合我们的市场。</Chinesesimp>
+                <Chinesesimp>此载具不符合我方市场需求</Chinesesimp>
                 <Czech>Toto vozidlo není vhodné pro náš trh.</Czech>
                 <Italian>Questo veicolo non è adatto al nostro mercato.</Italian>
                 <Polish>Ten pojazd nie nadaje się na nasz rynek.</Polish>
-                <Turkish>Bu araç pazaryerimizde satılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_sold">
                 <Original>Vehicle sold for %1.</Original>
@@ -950,11 +875,10 @@
                 <Russian>Техника продана за %1.</Russian>
                 <Korean>차량이 %1 €에 판매되었습니다.</Korean>
                 <Spanish>Vehículo vendido por %1.</Spanish>
-                <Chinesesimp>车辆已以 %1 售出。</Chinesesimp>
+                <Chinesesimp>载具已售出，获得 %1</Chinesesimp>
                 <Czech>Vozidlo prodáno za %1.</Czech>
                 <Italian>Veicolo venduto per %1.</Italian>
                 <Polish>Pojazd sprzedany za %1.</Polish>
-                <Turkish>Araç %1 karşılığında satıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_toggleLock_limit">
                 <Original>You have too many vehicles locked</Original>
@@ -968,33 +892,29 @@
                 <Czech>Máš až moc zamknutých vozidel</Czech>
                 <Portuguese>Existem muitos veículos trancados</Portuguese>
                 <Turkish>Çok fazla kilitli aracın var</Turkish>
-                <Chinesesimp>你已上锁过多载具</Chinesesimp>
+                <Chinesesimp>你锁定的载具数量已达上限</Chinesesimp>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_checkedOutToolTip">
-                <!-- name is appended on at the start with a space in between-->
                 <Original>is looking at this vehicle.</Original>
                 <French>regarde ce véhicule.</French>
                 <Russian>смотрит на эту технику</Russian>
                 <Korean>이(가) 이 차량을 보고 있습니다</Korean>
                 <Spanish>está mirando a este vehículo</Spanish>
-                <Chinesesimp>正看着这辆载具</Chinesesimp>
+                <Chinesesimp>正在查看此载具</Chinesesimp>
                 <Czech>dívá se na toto vozidlo.</Czech>
                 <Italian>sta guardando questo veicolo</Italian>
                 <Polish>patrzy na ten pojazd.</Polish>
-                <Turkish>bu araca bakıyor</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_LockedToolTip">
-                <!-- name is appended on at the end with a spcae in between-->
                 <Original>Vehicle is locked by</Original>
                 <French>Le véhicule est verrouillé par</French>
                 <Russian>Эта техника закрыта</Russian>
                 <Korean>에 의해 차량이 잠겼습니다</Korean>
                 <Spanish>El vehículo ha sido cerrado por</Spanish>
-                <Chinesesimp>载具被上锁，它属于</Chinesesimp>
+                <Chinesesimp>载具已被锁定，所有者：</Chinesesimp>
                 <Czech>Vozidlo je uzamčeno</Czech>
                 <Italian>Il veicolo è bloccato da</Italian>
                 <Polish>Pojazd jest zablokowany przez</Polish>
-                <Turkish>kişisi aracı kilitledi</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_LockedToolTip_Ago">
                 <Original>%1: %2 ago</Original>
@@ -1006,20 +926,17 @@
                 <Czech>%1: před %2</Czech>
                 <Italian>%1: %2 fa</Italian>
                 <Polish>%1: %2 temu</Polish>
-                <Turkish>%1: %2 önce</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_Rotation">
-                <!--Keybinds are hardcoded to key DIK codes: DIK_E, DIK_Q, DIK_ESCAPE, DIK_RETURN, and DIK_SPACE-->
                 <Original>&lt;t size='0.6'&gt;Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;br/&gt;Place: Space&lt;/t&gt;</Original>
                 <French>&lt;t size='0.6'&gt;Tourner à gauche: Q &lt;br/&gt;Tourner à droite: E &lt;br/&gt;Annuler: Entrer/ESC &lt;br/&gt;Placer: Espace&lt;/t&gt;</French>
                 <Russian>&lt;t size='0.6'&gt;Поворот влево: Q &lt;br/&gt;Поворот вправо: E &lt;br/&gt;Отменить: Enter/ESC &lt;br/&gt;Поставить: Space&lt;/t&gt;</Russian>
                 <Korean>&lt;t size='0.6'&gt;좌회전: Q &lt;br/&gt;우회전: E &lt;br/&gt;취소: Enter/ESC &lt;br/&gt;배치: Space&lt;/t&gt;</Korean>
                 <Spanish>&lt;t size='0.6'&gt;Rotar Izq: Q &lt;br/&gt;Rotar Der: E &lt;br/&gt;Cancelar: Enter/ESC &lt;br/&gt;Confirmar: Espacio&lt;/t&gt;</Spanish>
-                <Chinesesimp>&lt;t size='0.6'&gt;向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;br/&gt;放置: 空格&lt;/t&gt;</Chinesesimp>
+                <Chinesesimp>&lt;t size='0.6'&gt;左旋: Q &lt;br/&gt;右旋: E &lt;br/&gt;取消: 回车/ESC &lt;br/&gt;放置: 空格&lt;/t&gt;</Chinesesimp>
                 <Czech>&lt;t size = '0,6'&gt; otočit doleva: Q &lt;br/&gt; Otočení vpravo: E &lt;br/&gt; Zrušit: Enter/Esc &lt;br/&gt; Místo: Space &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Rotea a Sinistra: Q &lt;br/&gt;Rotea a Destra: E &lt;br/&gt;Cancella: Invio/ESC &lt;br/&gt;Piazza: Spazio&lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Obróć w Lewo: Q &lt;br/&gt;Obróć w Prawo: E &lt;br/&gt;Anuluj: Enter / ESC &lt;br/&gt;Postaw: Spacja&lt;/t&gt;</Polish>
-                <Turkish>&lt;t size='0.6'&gt;Sola Döndür: Q &lt;br/&gt;Sağ Döndür: E &lt;br/&gt;İptal: Enter/ESC &lt;br/&gt;Yerleştir: Space&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_TooFar">
                 <Original>&lt;t size='0.6'&gt;Can't place vehicle that far away &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
@@ -1027,11 +944,10 @@
                 <Russian>&lt;t size='0.6'&gt;Невозможно поставить технику так далеко &lt;br/&gt;Отменить: Enter/ESC &lt;/t&gt;</Russian>
                 <Korean>&lt;t size='0.6'&gt;차량을 그렇게 멀리 배치할 수 없습니다&lt;br/&gt;취소: Enter/ESC &lt;/t&gt;</Korean>
                 <Spanish>&lt;t size='0.6'&gt;No puedes poner el vehículo tan lejos &lt;br/&gt;Cancelar: Enter/ESC &lt;/t&gt;</Spanish>
-                <Chinesesimp>&lt;t size='0.6'&gt;无法将载具放的这么远 &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
+                <Chinesesimp>&lt;t size='0.6'&gt;距离过远，无法放置载具&lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
                 <Czech>&lt;t size = '0,6'&gt; nelze umístit vozidlo tak daleko &lt;br/&gt; Zrušit: Enter/Esc &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Impossibile piazzare il veicolo così lontano &lt;br/&gt;Cancella: Invio/ESC &lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Nie można umieścić pojazdu tak daleko &lt;br/&gt;Anuluj: Enter / ESC &lt;/t&gt;</Polish>
-                <Turkish>&lt;t size='0.6'&gt;Araç bu kadar uzağa konumlandırılamaz &lt;br/&gt;İptal: Enter/ESC &lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_Blocked">
                 <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
@@ -1039,11 +955,10 @@
                 <Russian>&lt;t size='0.6'&gt;Что-то мешает размещению &lt;br/&gt; Поворот влево: Q &lt;br/&gt;Поворот вправо: E &lt;br/&gt;Отменить: Enter/ESC &lt;/t&gt;</Russian>
                 <Korean>&lt;t size='0.6'&gt;무언가가 배치를 막고 있습니다&lt;br/&gt;좌회전: Q &lt;br/&gt;우회전: E &lt;br/&gt;취소: Enter/ESC &lt;/t&gt;</Korean>
                 <Spanish>&lt;t size='0.6'&gt;Algo está bloqueando el sitio &lt;br/&gt; Rotar Izq: Q &lt;br/&gt;Rotar Der: E &lt;br/&gt;Cancelar: Enter/ESC &lt;/t&gt;</Spanish>
-                <Chinesesimp>&lt;t size='0.6'&gt;有物体遮挡了放置位置 &lt;br/&gt; 向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
+                <Chinesesimp>&lt;t size='0.6'&gt;有物体阻挡，无法放置&lt;br/&gt;左旋: Q &lt;br/&gt;右旋: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
                 <Czech>&lt;t size = '0,6'&gt; Něco blokuje umístění &lt;br/&gt; otočit doleva: Q &lt;br/&gt; Otočení vpravo: E &lt;br/&gt; Zrušit: Enter/Esc &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Qualcosa sta bloccando il piazzamento &lt;br/&gt; Rotea a Sinistra: Q &lt;br/&gt;Rotea a Destra: E &lt;br/&gt;Cancella: Invio/ESC &lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Coś blokuje umieszczenie &lt;br/&gt; Obróć w Lewo: Q &lt;br/&gt;Obróć w Prawo: E &lt;br/&gt;Anuluj: Enter / ESC &lt;/t&gt;</Polish>
-                <Turkish>&lt;t size='0.6'&gt;Bir şey yerleştirmeyi engelliyor &lt;br/&gt; Sola Döndür: Q &lt;br/&gt;Sağ Döndür: E &lt;br/&gt;İptal: Enter/ESC &lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CallbackFailed">
                 <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
@@ -1051,11 +966,10 @@
                 <Russian>&lt;t size='0.6'&gt;Что-то мешает размещению &lt;br/&gt; Поворот влево: Q &lt;br/&gt;Поворот вправо: E &lt;br/&gt;Отменить: Enter/ESC &lt;/t&gt;</Russian>
                 <Korean>&lt;t size='0.6'&gt;무언가가 배치를 막고 있습니다&lt;br/&gt;좌회전: Q &lt;br/&gt;우회전: E &lt;br/&gt;취소: Enter/ESC &lt;/t&gt;</Korean>
                 <Spanish>&lt;t size='0.6'&gt;Algo está bloqueando el sitio&lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Spanish>
-                <Chinesesimp>&lt;t size='0.6'&gt;有物体遮挡了放置位置 &lt;br/&gt; 向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
+                <Chinesesimp>&lt;t size='0.6'&gt;有物体阻挡，无法放置&lt;br/&gt;左旋: Q &lt;br/&gt;右旋: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
                 <Czech>&lt;t size = '0,6'&gt; Něco blokuje umístění &lt;br/&gt; otočit doleva: Q &lt;br/&gt; Otočení vpravo: E &lt;br/&gt; Zrušit: Enter/Esc &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Qualcosa sta bloccando il piazzamento &lt;br/&gt; Rotea a Sinistra: Q &lt;br/&gt;Rotea a Destra: E &lt;br/&gt;Cancella: Invio/ESC &lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Coś blokuje umieszczenie &lt;br/&gt; Obróć w Lewo: Q &lt;br/&gt;Obróć w Prawo: E &lt;br/&gt;Anuluj: Enter / ESC &lt;/t&gt;</Polish>
-                <Turkish>&lt;t size='0.6'&gt;Bir şey yerleştirmeyi engelliyor &lt;br/&gt; Sola Döndür: Q &lt;br/&gt;Sağ Döndür: E &lt;br/&gt;İptal: Enter/ESC &lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_Cam_Controls">
                 <Original>Camera controls</Original>
@@ -1067,7 +981,6 @@
                 <Czech>Ovládací prvky kamery</Czech>
                 <Italian>Controlli Camera</Italian>
                 <Polish>Sterowanie kamerą</Polish>
-                <Turkish>Kamera Kontrolleri</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_Cam_Rotate">
                 <Original>Rotate: Right Mouse Button + Move mouse</Original>
@@ -1075,11 +988,10 @@
                 <Russian>Поворот: ПКМ + Движение мыши</Russian>
                 <Korean>회전: 오른쪽 마우스 버튼 + 마우스 이동</Korean>
                 <Spanish>Rotar: Click derecho del Ratón + Mover Ratón</Spanish>
-                <Chinesesimp>旋转:按下鼠标右键并移动鼠标</Chinesesimp>
+                <Chinesesimp>旋转: 鼠标右键 + 移动</Chinesesimp>
                 <Czech>Otočit: Pravé tlačítko myši + přesunout myš</Czech>
                 <Italian>Rotea: Tasto destro del mouse + Muovi il mouse</Italian>
                 <Polish>Obróć: Prawy Przycisk Myszy + Przesuń mysz</Polish>
-                <Turkish>Döndür: Sağ Fare Tuşu + Fareyi Hareket Ettir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_Cam_Zoom">
                 <Original>Zoom: Right Mouse Button + Mouse wheel</Original>
@@ -1087,11 +999,10 @@
                 <Russian>Приближение: ПКМ + Колесико мыши</Russian>
                 <Korean>확대 및 축소: 오른쪽 마우스 버튼 + 마우스 휠</Korean>
                 <Spanish>Zoom: Click derecho del Ratón + Rueda del Ratón</Spanish>
-                <Chinesesimp>缩放:按下鼠标右键并使用鼠标滚轮</Chinesesimp>
+                <Chinesesimp>缩放: 鼠标右键 + 滚轮</Chinesesimp>
                 <Czech>Zoom: Pravé tlačítko myši + kolo myši</Czech>
                 <Italian>Zoom: Tasto destro del mouse+ Rotella del mouse</Italian>
                 <Polish>Zoom: Prawy Przycisk Myszy + Kółko myszy</Polish>
-                <Turkish>Yakınlaş/Uzaklaş: Sağ Fare Tuşu + Fare Tekerleği</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Mirror">
                 <Original>Mirror</Original>
@@ -1103,7 +1014,6 @@
                 <Czech>Zrcadlo</Czech>
                 <Italian>Specchio</Italian>
                 <Polish>Symetria</Polish>
-                <Turkish>Aynalama</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_CustomPreset">
                 <Original>[Custom preset]</Original>
@@ -1115,9 +1025,7 @@
                 <Czech>[Vlastní předvolba]</Czech>
                 <Italian>[Preset Custom]</Italian>
                 <Polish>[Ustawienie niestandardowe]</Polish>
-                <Turkish>[Özel Ayar]</Turkish>
             </Key>
-            <!--%1 is pylon number-->
             <Key ID="STR_HR_GRG_Pylons_PylonText">
                 <Original>Pylon %1</Original>
                 <Russian>Пилон %1</Russian>
@@ -1128,7 +1036,6 @@
                 <Czech>Pylon %1</Czech>
                 <Italian>Equipaggiamento %1</Italian>
                 <Polish>Pylon %1</Polish>
-                <Turkish>Askı noktası %1</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Empty">
                 <Original>[Empty]</Original>
@@ -1140,7 +1047,6 @@
                 <Czech>[Prázdný]</Czech>
                 <Italian>[Vuoto]</Italian>
                 <Polish>[Pusty]</Polish>
-                <Turkish>[Boş]</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_noPylons">
                 <Original>No pylon customizations for:</Original>
@@ -1148,11 +1054,10 @@
                 <Russian>Нет доступных точек подвески для:</Russian>
                 <Korean>다음에 대한 무장창 커스텀은 없음:</Korean>
                 <Spanish>No hay personalizaciones de pilones para:</Spanish>
-                <Chinesesimp>该载具无法改变挂架</Chinesesimp>
+                <Chinesesimp>此载具无可自定义挂架</Chinesesimp>
                 <Czech>Žádné přizpůsobení pylonu pro:</Czech>
                 <Italian>Nessuna modifica equipaggiamento per:</Italian>
                 <Polish>Brak ustawień pylonów dla:</Polish>
-                <Turkish>Şu araçta silah askısı özelleştirilemez:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Gunner">
                 <Original>Gunner</Original>
@@ -1164,7 +1069,6 @@
                 <Czech>Střelec</Czech>
                 <Italian>Artigliere</Italian>
                 <Polish>Strzelec</Polish>
-                <Turkish>Nişancı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Driver">
                 <Original>Driver</Original>
@@ -1176,191 +1080,190 @@
                 <Czech>Řidič</Czech>
                 <Italian>Pilota</Italian>
                 <Polish>Kierowca</Polish>
-                <Turkish>Sürücü</Turkish>
             </Key>
         </Container>
         <Container name="HR_GRG_settings">
             <Key ID="STR_A3A_inc_public_config_baseCapLong">
-              <Original>Base capacity of the garage at War Level 1.</Original>
-              <Italian>Capacità del garage della base at Livello Guerra 1.</Italian>
-              <French>Capacité de base du garage au niveau de guerre 1.</French>
-              <Korean>전쟁 레벨 1의 기본 차고 수용량입니다.</Korean>
-              <Russian>Базовая вместимость гаража на 1 уровне войны.</Russian>
-              <Czech>Základní kapacita garáže v úrovni války 1.</Czech>
-              <Turkish>Garajın Savaş Seviyesi 1’deki kapasitesi.</Turkish>
+                <Original>Base capacity of the garage at War Level 1.</Original>
+                <Italian>Capacità del garage della base at Livello Guerra 1.</Italian>
+                <French>Capacité de base du garage au niveau de guerre 1.</French>
+                <Korean>전쟁 레벨 1의 기본 차고 수용량입니다.</Korean>
+                <Russian>Базовая вместимость гаража на 1 уровне войны.</Russian>
+                <Czech>Základní kapacita garáže v úrovni války 1.</Czech>
+                <Chinesesimp>战争等级1时车库的基础容量</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_baseCapTitle">
-              <Original>Base Capacity</Original>
-              <Italian>Capienza della Base</Italian>
-              <French>Capacité de Base</French>
-              <Korean>기본 수용량</Korean>
-              <Russian>Базовая вместимость</Russian>
-              <Polish>Pojemność bazy</Polish>
-              <Czech>Základní kapacita</Czech>
-              <Turkish>Temel Kapasite</Turkish>
+                <Original>Base Capacity</Original>
+                <Italian>Capienza della Base</Italian>
+                <French>Capacité de Base</French>
+                <Korean>기본 수용량</Korean>
+                <Russian>Базовая вместимость</Russian>
+                <Polish>Pojemność bazy</Polish>
+                <Czech>Základní kapacita</Czech>
+                <Chinesesimp>基础容量</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_capIncLong">
-              <Original>Capacity increase per War Level for the garage.</Original>
-              <Italian>Capacità del garage incrementata per Livello Guerra.</Italian>
-              <French>Augmentation de la capacité du garage par niveau de guerre.</French>
-              <Korean>전쟁 레벨이 오를 때마다 차고의 수용량이 증가합니다.</Korean>
-              <Russian>Увеличение вместимости гаража за каждый уровень войны.</Russian>
-              <Czech>Zvýšení kapacity garáže dle úrovně války.</Czech>
-              <Turkish>Garajın Savaş Seviyesi başına kapasite artışı</Turkish>
+                <Original>Capacity increase per War Level for the garage.</Original>
+                <Italian>Capacità del garage incrementata per Livello Guerra.</Italian>
+                <French>Augmentation de la capacité du garage par niveau de guerre.</French>
+                <Korean>전쟁 레벨이 오를 때마다 차고의 수용량이 증가합니다.</Korean>
+                <Russian>Увеличение вместимости гаража за каждый уровень войны.</Russian>
+                <Czech>Zvýšení kapacity garáže dle úrovně války.</Czech>
+                <Chinesesimp>每提升一级战争等级增加的车库容量</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_capIncTitle">
-              <Original>Capacity Increase</Original>
-              <Italian>Incremento Capacità</Italian>
-              <French>Augmentation de la capacité</French>
-              <Korean>수용량 증가</Korean>
-              <Russian>Увеличение вместимости</Russian>
-              <Czech>Zvýšení kapacity</Czech>
-              <Turkish>Kapasite Artışı</Turkish>
+                <Original>Capacity Increase</Original>
+                <Italian>Incremento Capacità</Italian>
+                <French>Augmentation de la capacité</French>
+                <Korean>수용량 증가</Korean>
+                <Russian>Увеличение вместимости</Russian>
+                <Czech>Zvýšení kapacity</Czech>
+                <Chinesesimp>容量增量</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRearmLong">
-              <Original>Vehicles won't be rearmed when taken from the garage.</Original>
-              <Italian>I veicoli non saranno riarmati quando lasceranno il garage.</Italian>
-              <French>Les Véhicules ne sont pas réarmé quand ils sont pris du garage.</French>
-              <Korean>차고에서 차량을 가져오면 차량이 재무장되지 않습니다.</Korean>
-              <Russian>Техника не будет перевооружена при выводе из гаража.</Russian>
-              <Czech>Vozidla nebudou přezbrojena po vyndání z garáže</Czech>
-              <Turkish>Araçlar garajdan çıkarıldığında yeniden mühimmatlandırılmaz</Turkish>
+                <Original>Vehicles won't be rearmed when taken from the garage.</Original>
+                <Italian>I veicoli non saranno riarmati quando lasceranno il garage.</Italian>
+                <French>Les Véhicules ne sont pas réarmé quand ils sont pris du garage.</French>
+                <Korean>차고에서 차량을 가져오면 차량이 재무장되지 않습니다.</Korean>
+                <Russian>Техника не будет перевооружена при выводе из гаража.</Russian>
+                <Czech>Vozidla nebudou přezbrojena po vyndání z garáže</Czech>
+                <Chinesesimp>从车库取出载具时将不补充弹药</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRearmTitle">
-              <Original>Disable garage rearm</Original>
-              <Italian>Disabilita riarmamento garage</Italian>
-              <French>Désactiver le réarmement depuis le garage</French>
-              <Korean>차고 재무장 비활성화</Korean>
-              <Russian>Выключить перевооружение в гараже</Russian>
-              <Czech>Vypnout přezbrojení vozidel v garáži</Czech>
-              <Turkish>Garaj yeniden mühimmatlandırmayı kapat</Turkish>
+                <Original>Disable garage rearm</Original>
+                <Italian>Disabilita riarmamento garage</Italian>
+                <French>Désactiver le réarmement depuis le garage</French>
+                <Korean>차고 재무장 비활성화</Korean>
+                <Russian>Выключить перевооружение в гараже</Russian>
+                <Czech>Vypnout přezbrojení vozidel v garáži</Czech>
+                <Chinesesimp>禁用车库弹药补充</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRefuelLong">
-              <Original>Vehicles won't be refueled when taken from the garage.</Original>
-              <Italian>I veicoli non saranno riforniti quando lasceranno il garage.</Italian>
-              <French>Les véhicules ne seront pas ravitaillés en carburant lorsqu'ils seront sortis du garage.</French>
-              <Korean>차고에서 차량을 가져오면 차량이 재급유되지 않습니다.</Korean>
-              <Russian>Техника не будет заправляться при выводе из гаража.</Russian>
-              <Czech>Vozidla nebudou natankována po vyndání z garáže</Czech>
-              <Turkish>Araçlar garajdan çıkarıldığında yakıt ikmali yapılmaz</Turkish>
+                <Original>Vehicles won't be refueled when taken from the garage.</Original>
+                <Italian>I veicoli non saranno riforniti quando lasceranno il garage.</Italian>
+                <French>Les véhicules ne seront pas ravitaillés en carburant lorsqu'ils seront sortis du garage.</French>
+                <Korean>차고에서 차량을 가져오면 차량이 재급유되지 않습니다.</Korean>
+                <Russian>Техника не будет заправляться при выводе из гаража.</Russian>
+                <Czech>Vozidla nebudou natankována po vyndání z garáže</Czech>
+                <Chinesesimp>从车库取出载具时将不补充燃油</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRefuelTitle">
-              <Original>Disable garage refuel</Original>
-              <Italian>Disabilita rifornimento garage</Italian>
-              <French>Désactiver le ravitaillement depuis le garage</French>
-              <Korean>차고 재급유 비활성화</Korean>
-              <Russian>Выключить заправку в гараже</Russian>
-              <Czech>Vypnout tankování vozidel v garáži</Czech>
-              <Turkish>Garaj yakıt ikmalini kapat</Turkish>
+                <Original>Disable garage refuel</Original>
+                <Italian>Disabilita rifornimento garage</Italian>
+                <French>Désactiver le ravitaillement depuis le garage</French>
+                <Korean>차고 재급유 비활성화</Korean>
+                <Russian>Выключить заправку в гараже</Russian>
+                <Czech>Vypnout tankování vozidel v garáži</Czech>
+                <Chinesesimp>禁用车库燃油补充</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRepairLong">
-              <Original>Vehicles won't be repaired when taken from the garage.</Original>
-              <Italian>I veicoli non saranno riparati quando lasceranno il garage.</Italian>
-              <French>Les véhicules ne sont pas réparés lorsqu'ils sont retirés du garage.</French>
-              <Korean>차고에서 차량을 가져오면 차량이 수리되지 않습니다.</Korean>
-              <Russian>Техника не будет отремонтирована при выводе из гаража.</Russian>
-              <Czech>Vozidla nebudou opraveny po vyndání z garáže</Czech>
-              <Turkish>Araçlar garajdan çıkarıldığında onarılmaz</Turkish>
+                <Original>Vehicles won't be repaired when taken from the garage.</Original>
+                <Italian>I veicoli non saranno riparati quando lasceranno il garage.</Italian>
+                <French>Les véhicules ne sont pas réparés lorsqu'ils sont retirés du garage.</French>
+                <Korean>차고에서 차량을 가져오면 차량이 수리되지 않습니다.</Korean>
+                <Russian>Техника не будет отремонтирована при выводе из гаража.</Russian>
+                <Czech>Vozidla nebudou opraveny po vyndání z garáže</Czech>
+                <Chinesesimp>从车库取出载具时将不进行维修</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRepairTitle">
-              <Original>Disable garage repair</Original>
-              <Italian>Disabilita riparazione garage</Italian>
-              <French>Désactiver la réparation depuis le garage</French>
-              <Korean>차량 수리 비활성화</Korean>
-              <Russian>Выключить ремонт в гараже</Russian>
-              <Czech>Vypnout opravování vozidel v garáži</Czech>
-              <Turkish>Garaj onarımını kapat</Turkish>
+                <Original>Disable garage repair</Original>
+                <Italian>Disabilita riparazione garage</Italian>
+                <French>Désactiver la réparation depuis le garage</French>
+                <Korean>차량 수리 비활성화</Korean>
+                <Russian>Выключить ремонт в гараже</Russian>
+                <Czech>Vypnout opravování vozidel v garáži</Czech>
+                <Chinesesimp>禁用车库维修</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_guestLimitLong">
-              <Original>Maximum number of vehicles that can be locked by a guest at once.</Original>
-              <Italian>Massimo numero di veicoli che possono essere chiusi da un ospite all'unisono.</Italian>
-              <French>Nombre maximum de véhicules pouvant être verrouillés simultanément par un invité.</French>
-              <Korean>게스트가 한 번에 잠글 수 있는 최대 차량 수입니다.</Korean>
-              <Russian>Максимальное количество транспортных средств, которые гость может заблокировать одновременно.</Russian>
-              <Czech>Maximální možný počet zamčených vozidel návštěvníky</Czech>
-              <Turkish>Konuk oyuncuların aynı anda kilitleyebileceği maksimum araç sayısı</Turkish>
+                <Original>Maximum number of vehicles that can be locked by a guest at once.</Original>
+                <Italian>Massimo numero di veicoli che possono essere chiusi da un ospite all'unisono.</Italian>
+                <French>Nombre maximum de véhicules pouvant être verrouillés simultanément par un invité.</French>
+                <Korean>게스트가 한 번에 잠글 수 있는 최대 차량 수입니다.</Korean>
+                <Russian>Максимальное количество транспортных средств, которые гость может заблокировать одновременно.</Russian>
+                <Czech>Maximální možný počet zamčených vozidel návštěvníky</Czech>
+                <Chinesesimp>访客可同时锁定的最大载具数量</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_guestLimitTitle">
-              <Original>Guest lock limit</Original>
-              <Italian>Limite chiusura ospiti</Italian>
-              <French>Limire de verrouillage pour les invités</French>
-              <Korean>게스트 잠금 제한</Korean>
-              <Russian>Лимит блокировки техники гостем</Russian>
-              <Czech>Limit zamčení návštěvníky</Czech>
-              <Turkish>Konuk Kilit Limiti</Turkish>
+                <Original>Guest lock limit</Original>
+                <Italian>Limite chiusura ospiti</Italian>
+                <French>Limire de verrouillage pour les invités</French>
+                <Korean>게스트 잠금 제한</Korean>
+                <Russian>Лимит блокировки техники гостем</Russian>
+                <Czech>Limit zamčení návštěvníky</Czech>
+                <Chinesesimp>访客锁定上限</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_lockOnGarageLong">
-              <Original>Lock vehicles automatically when garaged.</Original>
-              <Italian>Chiudi veicoli automaticamente quando parcheggiati nel garage.</Italian>
-              <French>Verrouiller automatiquement les véhicules lorsqu'ils sont garés.</French>
-              <Korean>차고로 이동하면 자동으로 차량을 잠급니다.</Korean>
-              <Russian>Автоматически запирать технику, когда она находятся в гараже.</Russian>
-              <Czech>Automaticky uzamknout vozidla při garážování.</Czech>
-              <Turkish>Araçları garaja alındığında otomatik olarak kilitle</Turkish>
+                <Original>Lock vehicles automatically when garaged.</Original>
+                <Italian>Chiudi veicoli automaticamente quando parcheggiati nel garage.</Italian>
+                <French>Verrouiller automatiquement les véhicules lorsqu'ils sont garés.</French>
+                <Korean>차고로 이동하면 자동으로 차량을 잠급니다.</Korean>
+                <Russian>Автоматически запирать технику, когда она находятся в гараже.</Russian>
+                <Czech>Automaticky uzamknout vozidla při garážování.</Czech>
+                <Chinesesimp>存入车库时自动锁定载具</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_lockOnGarageTitle">
-              <Original>Lock garaged vehicles</Original>
-              <Italian>Chiudi veicoli parcheggiati nel garage</Italian>
-              <French>Verrouiller les véhicules garés</French>
-              <Korean>차고로 간 차량 잠금</Korean>
-              <Russian>Запирать технику в гараже</Russian>
-              <Czech>Uzamknout garážovaná vozidla</Czech>
-              <Turkish>Garajdaki araçları kilitle</Turkish>
+                <Original>Lock garaged vehicles</Original>
+                <Italian>Chiudi veicoli parcheggiati nel garage</Italian>
+                <French>Verrouiller les véhicules garés</French>
+                <Korean>차고로 간 차량 잠금</Korean>
+                <Russian>Запирать технику в гараже</Russian>
+                <Czech>Uzamknout garážovaná vozidla</Czech>
+                <Chinesesimp>自动锁定存入的载具</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_memberLimitLong">
-              <Original>Maximum number of vehicles that can be locked by a member at once.</Original>
-              <Italian>Massimo numero di veicoli che possono essere chiusi da un membro all'unisono.</Italian>
-              <French>Nombre maximum de véhicules pouvant être verrouillés simultanément par un membre.</French>
-              <Korean>멤버가 한 번에 잠글 수 있는 최대 차량 수입니다.</Korean>
-              <Russian>Максимальное количество транспортных средств, которые участником может заблокировать одновременно.</Russian>
-              <Czech>Maximální možný počet zamčených vozidel členy</Czech>
-              <Turkish>Bir üyenin aynı anda kilitleyebileceği araç sayısı</Turkish>
+                <Original>Maximum number of vehicles that can be locked by a member at once.</Original>
+                <Italian>Massimo numero di veicoli che possono essere chiusi da un membro all'unisono.</Italian>
+                <French>Nombre maximum de véhicules pouvant être verrouillés simultanément par un membre.</French>
+                <Korean>멤버가 한 번에 잠글 수 있는 최대 차량 수입니다.</Korean>
+                <Russian>Максимальное количество транспортных средств, которые участником может заблокировать одновременно.</Russian>
+                <Czech>Maximální možný počet zamčených vozidel členy</Czech>
+                <Chinesesimp>成员可同时锁定的最大载具数量</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_memberLimitTitle">
-              <Original>Member lock limit</Original>
-              <Italian>Limite chiusura membri</Italian>
-              <French>Limire de verrouillage pour les membres</French>
-              <Korean>멤버 잠금 제한</Korean>
-              <Russian>Лимит блокировки техники участником</Russian>
-              <Czech>Limit uzamknutí členy</Czech>
-              <Turkish>Üye Kilit Sınırı</Turkish>
+                <Original>Member lock limit</Original>
+                <Italian>Limite chiusura membri</Italian>
+                <French>Limire de verrouillage pour les membres</French>
+                <Korean>멤버 잠금 제한</Korean>
+                <Russian>Лимит блокировки техники участником</Russian>
+                <Czech>Limit uzamknutí členy</Czech>
+                <Chinesesimp>成员锁定上限</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_placeRaysLong">
-              <Original>Debug setting: Enables the placement rays used to check for vehicle collision.</Original>
-              <Italian>Settaggio debug: Abilità il posizionamento di raggi uttilizzati per controllare le collisioni veicolari.</Italian>
-              <French>Paramètre de débogage : Active les rayons de placement utilisés pour vérifier les collisions de véhicules.</French>
-              <Korean>디버그 설정: 차량 충돌을 확인하는 데 사용되는 배치선을 활성화합니다.</Korean>
-              <Russian>Настройка отладки: Включает лучи размещения, используемые для проверки на столкновение транспортного средства.</Russian>
-              <Czech>Nastavení ladění: Povolit zobrazení paprsků pro sledování kolizí vozidel.</Czech>
-              <Turkish>Debug ayarı: Araç çarpışmasını kontrol eden yerleştirme ışınlarını açar.</Turkish>
+                <Original>Debug setting: Enables the placement rays used to check for vehicle collision.</Original>
+                <Italian>Settaggio debug: Abilità il posizionamento di raggi uttilizzati per controllare le collisioni veicolari.</Italian>
+                <French>Paramètre de débogage : Active les rayons de placement utilisés pour vérifier les collisions de véhicules.</French>
+                <Korean>디버그 설정: 차량 충돌을 확인하는 데 사용되는 배치선을 활성화합니다.</Korean>
+                <Russian>Настройка отладки: Включает лучи размещения, используемые для проверки на столкновение транспортного средства.</Russian>
+                <Czech>Nastavení ladění: Povolit zobrazení paprsků pro sledování kolizí vozidel.</Czech>
+                <Chinesesimp>调试设置：显示用于检测载具碰撞的放置射线</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_placeRaysTitle">
-              <Original>Render placement rays</Original>
-              <Italian>Renderizza raggi di posizionamento</Italian>
-              <French>Rendu des rayons de placement</French>
-              <Korean>배치선 활성화</Korean>
-              <Russian>Показывать лучи размещения</Russian>
-              <Czech>Zobrazit paprsky při pokládání</Czech>
-              <Turkish>Yerleştirme ışınlarını göster</Turkish>
+                <Original>Render placement rays</Original>
+                <Italian>Renderizza raggi di posizionamento</Italian>
+                <French>Rendu des rayons de placement</French>
+                <Korean>배치선 활성화</Korean>
+                <Russian>Показывать лучи размещения</Russian>
+                <Czech>Zobrazit paprsky při pokládání</Czech>
+                <Chinesesimp>显示放置射线</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_pylonEditingLong">
-              <Original>Allows pylons to be edited in the arsenal, as long as an ammo source is available.</Original>
-              <Italian>Permetti di modificare i piloni nell'arsenale, finché vi è una fonte di munizioni disponibile.</Italian>
-              <French>Permet d'éditer des pylônes dans l'arsenal, à condition qu'une source de munitions soit disponible.</French>
-              <Korean>탄약 공급원이 있는 한 무기고에서 무장창을 편집하는 것을 허용합니다.</Korean>
-              <Russian>Позволяет редактировать пилоны в арсенале, если доступен источник боеприпасов.</Russian>
-              <Czech>Povolí úpravu pylonů v arzenáli, pokud je dostupná munice.</Czech>
-              <Turkish>Mühimmat kaynağı mevcut olduğu sürece, silah askıları Arsenal’de düzenlenebilir.</Turkish>
+                <Original>Allows pylons to be edited in the arsenal, as long as an ammo source is available.</Original>
+                <Italian>Permetti di modificare i piloni nell'arsenale, finché vi è una fonte di munizioni disponibile.</Italian>
+                <French>Permet d'éditer des pylônes dans l'arsenal, à condition qu'une source de munitions soit disponible.</French>
+                <Korean>탄약 공급원이 있는 한 무기고에서 무장창을 편집하는 것을 허용합니다.</Korean>
+                <Russian>Позволяет редактировать пилоны в арсенале, если доступен источник боеприпасов.</Russian>
+                <Czech>Povolí úpravu pylonů v arzenáli, pokud je dostupná munice.</Czech>
+                <Chinesesimp>as long as an ammo source is available.</Chinesesimp>
             </Key>
             <Key ID="STR_A3A_inc_public_config_pylonEditingTitle">
-              <Original>Allow pylon editing</Original>
-              <Italian>Permetti la modifica dei piloni</Italian>
-              <French>Permettre l'édition des pylônes</French>
-              <Korean>무장창 편집 허용</Korean>
-              <Russian>Разрешить редактирование пилона</Russian>
-              <Czech>Povolit úpravu pylónů</Czech>
-              <Turkish>Silah askısı düzenlemeye izin ver</Turkish>
+                <Original>Allow pylon editing</Original>
+                <Italian>Permetti la modifica dei piloni</Italian>
+                <French>Permettre l'édition des pylônes</French>
+                <Korean>무장창 편집 허용</Korean>
+                <Russian>Разрешить редактирование пилона</Russian>
+                <Czech>Povolit úpravu pylónů</Czech>
+                <Chinesesimp>允许编辑挂架</Chinesesimp>
             </Key>
-          </Container>
+        </Container>
     </Package>
 </Project>
