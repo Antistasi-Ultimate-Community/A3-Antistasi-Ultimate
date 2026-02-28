@@ -8,18 +8,18 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=5667;
+		nextID=6006;
 	};
 	class LayerIndexProvider
 	{
-		nextID=231;
+		nextID=275;
 	};
 	class Camera
 	{
-		pos[]={7694.0439,214.20482,21837.834};
-		dir[]={-0.5788849,-0.62558061,0.52310717};
-		up[]={-0.46417195,0.78013217,0.41944695};
-		aside[]={0.67048299,-2.7951319e-07,0.74197733};
+		pos[]={4221.8716,366.00696,20165.631};
+		dir[]={0.62474662,-0.32029957,-0.7121768};
+		up[]={0.21126482,0.94730192,-0.24083105};
+		aside[]={-0.75177634,2.8056093e-07,-0.65948564};
 	};
 };
 binarizationWanted=0;
@@ -357,7 +357,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1784;
+		items=1802;
 		class Item0
 		{
 			dataType="Object";
@@ -931,7 +931,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4785.6465,46.484104,11734.175};
+				position[]={4785.6465,10.716944,11734.175};
 				angles[]={0,3.6888604,0};
 			};
 			side="Empty";
@@ -941,14 +941,14 @@ class Mission
 			};
 			id=845;
 			type="Land_GuardBox_01_brown_F";
-			atlOffset=36.560318;
+			atlOffset=0.79315948;
 		};
 		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4788.1816,46.419102,11732.748};
+				position[]={4788.1816,10.651941,11732.748};
 				angles[]={0,3.6888604,0};
 			};
 			side="Empty";
@@ -958,14 +958,14 @@ class Mission
 			};
 			id=846;
 			type="Land_GuardBox_01_green_F";
-			atlOffset=36.496658;
+			atlOffset=0.72949791;
 		};
 		class Item30
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4790.5068,46.322849,11731.063};
+				position[]={4790.5068,10.555689,11731.063};
 				angles[]={0,3.6888604,0};
 			};
 			side="Empty";
@@ -975,7 +975,7 @@ class Mission
 			};
 			id=847;
 			type="Land_GuardBox_01_smooth_F";
-			atlOffset=36.403748;
+			atlOffset=0.63658714;
 		};
 		class Item31
 		{
@@ -1146,17 +1146,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4781.873,48.248886,11737.235};
+				position[]={4781.873,12.481726,11737.235};
 				angles[]={0,0.53222382,0};
 			};
 			side="Empty";
-			flags=1;
+			flags=5;
 			class Attributes
 			{
 			};
 			id=851;
 			type="Land_GuardTower_02_F";
-			atlOffset=0.50853348;
+			atlOffset=9.5367432e-07;
 		};
 		class Item42
 		{
@@ -10380,7 +10380,7 @@ class Mission
 			b=93.678162;
 			angle=112.91341;
 			id=272;
-			atlOffset=2.5207825;
+			atlOffset=14.495117;
 		};
 		class Item594
 		{
@@ -12745,7 +12745,7 @@ class Mission
 			name="Misc Markers";
 			class Entities
 			{
-				items=12;
+				items=11;
 				class Item0
 				{
 					dataType="Marker";
@@ -12795,18 +12795,6 @@ class Mission
 				class Item5
 				{
 					dataType="Marker";
-					position[]={4322.8887,338.98779,19934.486};
-					name="detectPlayer_1";
-					markerType="RECTANGLE";
-					type="rectangle";
-					a=303.29782;
-					b=551.00049;
-					angle=149.47533;
-					id=138;
-				};
-				class Item6
-				{
-					dataType="Marker";
 					position[]={4854.0801,339.00208,19048.514};
 					name="detectPlayer_2";
 					markerType="RECTANGLE";
@@ -12816,7 +12804,7 @@ class Mission
 					angle=149.47533;
 					id=139;
 				};
-				class Item7
+				class Item6
 				{
 					dataType="Marker";
 					position[]={12108.997,140.21632,21827.717};
@@ -12829,7 +12817,7 @@ class Mission
 					id=140;
 					atlOffset=1.5258789e-05;
 				};
-				class Item8
+				class Item7
 				{
 					dataType="Marker";
 					position[]={1106.0488,476.60352,23250.205};
@@ -12841,7 +12829,7 @@ class Mission
 					angle=314.00854;
 					id=141;
 				};
-				class Item9
+				class Item8
 				{
 					dataType="Marker";
 					position[]={2136.4697,108.54636,12681.61};
@@ -12854,7 +12842,7 @@ class Mission
 					id=142;
 					atlOffset=-7.6293945e-06;
 				};
-				class Item10
+				class Item9
 				{
 					dataType="Marker";
 					position[]={12324.964,140.00322,21601.674};
@@ -12862,7 +12850,7 @@ class Mission
 					type="hd_start";
 					id=4747;
 				};
-				class Item11
+				class Item10
 				{
 					dataType="Marker";
 					position[]={18828.629,81.737,13116.76};
@@ -25355,7 +25343,7 @@ class Mission
 					colorName="ColorBrown";
 					a=20.351999;
 					b=12.158;
-					angle=350.57471;
+					angle=350.57468;
 					id=4692;
 				};
 				class Item49
@@ -25368,7 +25356,7 @@ class Mission
 					colorName="ColorBrown";
 					a=20.351999;
 					b=12.158;
-					angle=350.57468;
+					angle=350.57465;
 					id=4693;
 				};
 				class Item50
@@ -25511,7 +25499,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=259.3042;
+					angle=259.30417;
 					id=4708;
 				};
 				class Item61
@@ -25610,7 +25598,7 @@ class Mission
 					colorName="ColorWEST";
 					a=127.9091;
 					b=99.523102;
-					angle=0.055634379;
+					angle=0.055634376;
 					id=897;
 				};
 				class Item1
@@ -25718,7 +25706,7 @@ class Mission
 					colorName="ColorWEST";
 					a=143.94427;
 					b=36.70929;
-					angle=321.9631;
+					angle=321.96307;
 					id=4804;
 					atlOffset=-0.033084869;
 				};
@@ -26776,7 +26764,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=202.53914;
+					angle=202.53912;
 					id=4718;
 				};
 				class Item12
@@ -26945,7 +26933,7 @@ class Mission
 					colorName="ColorBrown";
 					a=20.351999;
 					b=12.158;
-					angle=43.544331;
+					angle=43.544327;
 					id=4740;
 					atlOffset=7.6293945e-06;
 				};
@@ -27076,7 +27064,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=92.796616;
+					angle=92.796608;
 					id=4768;
 				};
 				class Item35
@@ -28013,7 +28001,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=41.755989;
+					angle=41.755985;
 					id=4813;
 				};
 				class Item12
@@ -28040,7 +28028,7 @@ class Mission
 					colorName="ColorOrange";
 					a=64.427132;
 					b=122.90619;
-					angle=63.432659;
+					angle=63.432652;
 					id=5457;
 					atlOffset=0.042955399;
 				};
@@ -28067,7 +28055,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=155.56566;
+					angle=155.56564;
 					id=5459;
 					atlOffset=0.00029373169;
 				};
@@ -28628,7 +28616,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=209.53293;
+					angle=209.53291;
 					id=2549;
 					atlOffset=0.00035476685;
 				};
@@ -28642,7 +28630,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=201.2635;
+					angle=201.26349;
 					id=2550;
 				};
 				class Item42
@@ -28655,7 +28643,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=200.7699;
+					angle=200.76988;
 					id=2551;
 				};
 				class Item43
@@ -28750,7 +28738,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=47.291191;
+					angle=47.291187;
 					id=4761;
 				};
 				class Item50
@@ -28856,7 +28844,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=88.748344;
+					angle=88.748337;
 					id=4917;
 				};
 				class Item58
@@ -28895,7 +28883,7 @@ class Mission
 					colorName="ColorGreen";
 					a=62.958549;
 					b=88.88932;
-					angle=351.91891;
+					angle=351.91888;
 					id=5387;
 					atlOffset=0.51138306;
 				};
@@ -28937,7 +28925,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=2.1177964;
+					angle=2.1177962;
 					id=5455;
 					atlOffset=0.00077438354;
 				};
@@ -28964,7 +28952,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=60.859707;
+					angle=60.859699;
 					id=5461;
 				};
 				class Item66
@@ -29017,7 +29005,7 @@ class Mission
 					colorName="ColorGreen";
 					a=100.3614;
 					b=31.057959;
-					angle=277.13147;
+					angle=277.13144;
 					id=5621;
 					atlOffset=-0.14328003;
 				};
@@ -29045,22 +29033,22 @@ class Mission
 					colorName="ColorGreen";
 					a=148.61839;
 					b=162.97195;
-					angle=231.61798;
+					angle=231.61797;
 					id=5632;
 				};
 				class Item72
 				{
 					dataType="Marker";
-					position[]={7624.896,119.44362,21909.758};
+					position[]={7644.1914,119.44362,21849.084};
 					name="outpost_61";
 					markerType="RECTANGLE";
 					type="rectangle";
 					colorName="ColorGreen";
 					a=46.359493;
-					b=70.296921;
-					angle=342.60211;
+					b=102.88319;
+					angle=339.9581;
 					id=5660;
-					atlOffset=0.29640198;
+					atlOffset=-0.088645935;
 				};
 				class Item73
 				{
@@ -29072,13 +29060,13 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=323.22025;
+					angle=323.22021;
 					id=5666;
-					atlOffset=7.6293945e-06;
+					atlOffset=1.5258789e-05;
 				};
 			};
 			id=1503;
-			atlOffset=-73.459915;
+			atlOffset=-72.120529;
 		};
 		class Item1387
 		{
@@ -29151,7 +29139,7 @@ class Mission
 					colorName="ColorBrown";
 					a=71.629082;
 					b=61.106976;
-					angle=90.04155;
+					angle=90.041542;
 					id=1615;
 				};
 				class Item5
@@ -29190,7 +29178,7 @@ class Mission
 					colorName="ColorBrown";
 					a=58.970146;
 					b=77.801491;
-					angle=50.905888;
+					angle=50.905884;
 					id=1628;
 					atlOffset=0.45743179;
 				};
@@ -29323,7 +29311,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=348.42377;
+					angle=348.42374;
 					id=4920;
 				};
 				class Item18
@@ -29364,7 +29352,7 @@ class Mission
 					colorName="ColorBrown";
 					a=54.059242;
 					b=55.074554;
-					angle=327.1712;
+					angle=327.17117;
 					id=5509;
 				};
 				class Item21
@@ -29487,7 +29475,7 @@ class Mission
 					colorName="ColorGreen";
 					a=5;
 					b=5;
-					angle=242.40298;
+					angle=242.40297;
 					id=5629;
 				};
 			};
@@ -73990,7 +73978,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={15204.606,52.316208,12767.88};
-				angles[]={0,2.8504803,-0};
+				angles[]={0,2.8504803,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74006,7 +73994,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={15258.186,40.39563,12793.352};
-				angles[]={-0,0.5907588,0};
+				angles[]={0,0.5907588,0};
 			};
 			side="Empty";
 			flags=4;
@@ -74022,7 +74010,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13410.643,10.803245,15252.896};
-				angles[]={0,0.13452737,-0};
+				angles[]={0,0.13452737,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74038,7 +74026,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13439.144,11.136408,15419.893};
-				angles[]={0,3.2493856,-0};
+				angles[]={0,3.2493856,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74047,6 +74035,7 @@ class Mission
 			};
 			id=5624;
 			type="Land_Cargo_Patrol_V1_F";
+			atlOffset=-4.7683716e-07;
 		};
 		class Item1750
 		{
@@ -74054,7 +74043,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13395.916,10.866518,15397.695};
-				angles[]={0,2.0507078,-0};
+				angles[]={0,2.0507078,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74063,6 +74052,7 @@ class Mission
 			};
 			id=5625;
 			type="Land_Cargo_Patrol_V1_F";
+			atlOffset=-4.7683716e-07;
 		};
 		class Item1751
 		{
@@ -74078,6 +74068,7 @@ class Mission
 			};
 			id=5626;
 			type="Land_Cargo_HQ_V1_F";
+			atlOffset=4.7683716e-07;
 		};
 		class Item1752
 		{
@@ -74085,7 +74076,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12032.679,7.8731303,12646.877};
-				angles[]={0,1.4564087,-0};
+				angles[]={0,1.4564087,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74102,7 +74093,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12151.57,7.9358726,12648.149};
-				angles[]={0,4.5436478,-0};
+				angles[]={0,4.5436478,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74118,7 +74109,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10138.692,351.90707,21261.592};
-				angles[]={0,3.7139056,-0};
+				angles[]={0,3.7139056,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74135,7 +74126,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10319.218,374.49033,21294.439};
-				angles[]={0,5.4855623,-0};
+				angles[]={0,5.4855623,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74451,7 +74442,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10184.496,347.43637,21229.982};
-				angles[]={0,0.66719127,-0};
+				angles[]={0,0.66719127,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74468,7 +74459,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10292.836,367.36047,21263.283};
-				angles[]={0,0.66719127,-0};
+				angles[]={0,0.66719127,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74493,6 +74484,7 @@ class Mission
 			};
 			id=5656;
 			type="Land_BagBunker_Small_F";
+			atlOffset=0.00012207031;
 		};
 		class Item1776
 		{
@@ -74565,7 +74557,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7595.2598,123.67369,21920.051};
-				angles[]={0,1.8453966,-0};
+				angles[]={0,1.8453966,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74581,7 +74573,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7638.5117,120.64246,21938.666};
-				angles[]={0,3.0116756,-0};
+				angles[]={0,3.0116756,0};
 			};
 			side="Empty";
 			flags=5;
@@ -74590,6 +74582,7 @@ class Mission
 			};
 			id=5663;
 			type="Land_BagBunker_Tower_F";
+			atlOffset=7.6293945e-06;
 		};
 		class Item1782
 		{
@@ -74597,7 +74590,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7644.5981,125.68746,21856.684};
-				angles[]={-0,4.4231262,0};
+				angles[]={0,4.4231262,0};
 			};
 			side="Empty";
 			flags=4;
@@ -74613,7 +74606,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7612.8755,129.68747,21848.924};
-				angles[]={-0,1.2583561,0};
+				angles[]={0,1.2583561,0};
 			};
 			side="Empty";
 			flags=4;
@@ -74622,6 +74615,4944 @@ class Mission
 			};
 			id=5665;
 			type="Land_BagBunker_Small_F";
+		};
+		class Item1784
+		{
+			dataType="Marker";
+			position[]={4316.1523,339.0004,20006.936};
+			name="outpost_18";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGUER";
+			a=594.12952;
+			b=393.974;
+			angle=58.91124;
+			id=5672;
+		};
+		class Item1785
+		{
+			dataType="Layer";
+			name="ares milbase";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Layer";
+					name="UDacha (Detailed)_1";
+					class Entities
+					{
+						items=259;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4346.4429,340.33755,20028.898};
+								angles[]={-0,4.1797228,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5674;
+							type="Land_Tank_rust_F";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4325.6919,339.39932,20039.445};
+								angles[]={-0,2.61589,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5675;
+							type="Land_BagFence_Long_F";
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4321.5571,339.39932,20036.986};
+								angles[]={-0,2.6160471,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5676;
+							type="Land_BagFence_Long_F";
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4329.7319,339.39932,20041.723};
+								angles[]={-0,2.6157854,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5677;
+							type="Land_BagFence_Long_F";
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4317.4248,339.39932,20034.447};
+								angles[]={-0,2.61446,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5678;
+							type="Land_BagFence_Long_F";
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4340.5977,339.5278,20035.643};
+								angles[]={-0,5.7885184,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5679;
+							type="Land_PalletTrolley_01_yellow_F";
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4338.6479,339.5278,20038.984};
+								angles[]={-0,5.7911344,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5680;
+							type="Land_PalletTrolley_01_yellow_F";
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4340.2539,340.33289,20037.65};
+								angles[]={-0,5.7434855,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5681;
+							type="Land_Cargo10_grey_F";
+						};
+						class Item8
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4342.291,340.33289,20034.211};
+								angles[]={-0,5.7431502,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5682;
+							type="Land_Cargo10_grey_F";
+						};
+						class Item9
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4338.2397,340.33289,20040.961};
+								angles[]={-0,5.7434506,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5683;
+							type="Land_Cargo10_grey_F";
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4333.9561,339.39932,20044.176};
+								angles[]={-0,2.6151569,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5684;
+							type="Land_BagFence_Long_F";
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4313.2017,339.39932,20031.982};
+								angles[]={-0,2.6148634,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5685;
+							type="Land_BagFence_Long_F";
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4337.3384,339.39932,20044.547};
+								angles[]={-0,3.3764875,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5686;
+							type="Land_BagFence_Long_F";
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4311.2471,339.40512,20028.424};
+								angles[]={0.0024897563,4.8455663,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5687;
+							type="Land_BagFence_Long_F";
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4340.9126,339.39932,20043.742};
+								angles[]={-0,3.3770287,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5688;
+							type="Land_BagFence_Long_F";
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4345.6318,339.39932,20038.203};
+								angles[]={-0,4.1833181,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5689;
+							type="Land_BagFence_Long_F";
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4343.5513,339.39932,20041.795};
+								angles[]={-0,4.1827068,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5690;
+							type="Land_BagFence_Long_F";
+						};
+						class Item17
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4348.0474,339.39932,20034.008};
+								angles[]={-0,4.1835623,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5691;
+							type="Land_BagFence_Long_F";
+						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4309.1841,339.4147,20025.145};
+								angles[]={0.00084572798,2.6150177,6.2815294};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5692;
+							type="Land_BagFence_Long_F";
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4350.4463,339.39932,20030.096};
+								angles[]={-0,4.183527,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5693;
+							type="Land_BagFence_Long_F";
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4352.856,339.39932,20025.893};
+								angles[]={-0,4.1832657,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5695;
+							type="Land_BagFence_Long_F";
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4304.9692,339.42969,20022.678};
+								angles[]={0.0033296358,2.6155455,6.2790279};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5696;
+							type="Land_BagFence_Long_F";
+						};
+						class Item22
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4336.9902,339.39932,20057.424};
+								angles[]={-0,2.6158025,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5697;
+							type="Land_BagFence_Long_F";
+						};
+						class Item23
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4300.0747,339.43152,20025.781};
+								angles[]={0.0033296358,4.1769848,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5698;
+							type="Land_BagFence_Short_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item24
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4300.5469,339.45346,20020.107};
+								angles[]={0.0016558425,2.6369967,6.2790279};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5699;
+							type="Land_BagFence_Long_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item25
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4333.4409,339.39932,20059.254};
+								angles[]={-0,4.1824799,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5700;
+							type="Land_BagFence_Long_F";
+						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4350.2891,339.40042,20052.658};
+								angles[]={6.2815661,0.34045237,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5701;
+							type="Land_BagFence_Long_F";
+						};
+						class Item27
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4347.1416,339.40329,20055.826};
+								angles[]={6.2815294,4.181695,0.00084572798};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5702;
+							type="Land_BagFence_Long_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item28
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4341.0352,339.40182,20059.713};
+								angles[]={-0,2.616204,0.00084572798};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5703;
+							type="Land_BagFence_Long_F";
+						};
+						class Item29
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4345.0659,339.40518,20059.42};
+								angles[]={-0,4.1818342,0.00084572798};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5704;
+							type="Land_BagFence_Long_F";
+						};
+						class Item30
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4331.0229,339.39932,20063.451};
+								angles[]={-0,4.1815023,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5705;
+							type="Land_BagFence_Long_F";
+						};
+						class Item31
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4294.7349,339.40152,20035.648};
+								angles[]={0.0016194459,4.1776829,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5706;
+							type="Land_BagFence_Short_F";
+						};
+						class Item32
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4296.6138,339.47357,20017.896};
+								angles[]={0.0016558425,2.6373756,6.2790279};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5707;
+							type="Land_BagFence_Long_F";
+						};
+						class Item33
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4354.8696,339.40076,20052.865};
+								angles[]={6.2815661,2.616204,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5708;
+							type="Land_BagFence_Long_F";
+						};
+						class Item34
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4326.9009,339.39932,20067.111};
+								angles[]={-0,4.1818199,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5710;
+							type="Land_BagFence_Long_F";
+						};
+						class Item35
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4292.2651,339.49274,20015.43};
+								angles[]={0.0016558425,2.637727,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5712;
+							type="Land_BagFence_Long_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item36
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4358.9136,339.39932,20055.158};
+								angles[]={-0,2.616204,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5713;
+							type="Land_BagFence_Long_F";
+						};
+						class Item37
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4289.334,339.39484,20044.984};
+								angles[]={-0,4.1781387,6.2823396};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5714;
+							type="Land_BagFence_Short_F";
+						};
+						class Item38
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4367.1157,340.16751,20043.135};
+								angles[]={-0,5.7787967,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5715;
+							type="Land_Wreck_Ural_F";
+						};
+						class Item39
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4324.4146,339.39932,20071.502};
+								angles[]={-0,4.181818,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5716;
+							type="Land_BagFence_Long_F";
+						};
+						class Item40
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4371.4609,340.16751,20034.902};
+								angles[]={-0,2.5441043,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5717;
+							type="Land_Wreck_Ural_F";
+						};
+						class Item41
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4364.9824,339.70499,20053.016};
+								angles[]={0,4.1825151,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5718;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item42
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4368.0771,339.70499,20047.805};
+								angles[]={0,4.1828117,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5719;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item43
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4362.0938,339.70499,20058.207};
+								angles[]={0,4.1831608,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5720;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item44
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4371.2695,339.70499,20042.629};
+								angles[]={0,4.1829338,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5721;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item45
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4359.0088,339.70499,20063.379};
+								angles[]={0,4.1833181,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5722;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item46
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4374.2656,339.70499,20037.43};
+								angles[]={0,4.1824102,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5723;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item47
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4332.668,340.16278,19983.08};
+								angles[]={0.0016558425,5.7558441,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5726;
+							type="Land_Goal_F";
+						};
+						class Item48
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4326.4741,339.42825,19982.689};
+								angles[]={0.0016558425,5.7612286,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5727;
+							type="Land_BagFence_Long_F";
+						};
+						class Item49
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4283.7715,339.39111,20054.471};
+								angles[]={0.0016558425,4.1799316,6.2790279};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5728;
+							type="Land_BagFence_Short_F";
+						};
+						class Item50
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4356.0142,339.70499,20068.553};
+								angles[]={0,4.1830912,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5729;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item51
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4341.3628,339.39151,20075.422};
+								angles[]={-0,4.1817989,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5730;
+							type="Land_StallWater_F";
+						};
+						class Item52
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4377.3584,339.70499,20032.207};
+								angles[]={0,4.1821136,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5732;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item53
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4377.4565,339.82956,20026.74};
+								angles[]={-0,2.544029,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5733;
+							type="Land_Wreck_BMP2_F";
+						};
+						class Item54
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4322.437,339.44547,19980.438};
+								angles[]={0.0016558425,5.7609172,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5736;
+							type="Land_BagFence_Long_F";
+						};
+						class Item55
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4320.2329,339.39932,20079.088};
+								angles[]={-0,4.1812749,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5738;
+							type="Land_BagFence_Long_F";
+						};
+						class Item56
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4352.9194,339.70499,20073.764};
+								angles[]={0,4.1824799,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5739;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item57
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4380.4487,339.70499,20027.006};
+								angles[]={0,4.1818171,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5743;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item58
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4353.9688,339.39932,19983.871};
+								angles[]={-0,5.7616143,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5744;
+							type="Land_BagFence_Long_F";
+						};
+						class Item59
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4358.5737,339.39932,19986.604};
+								angles[]={-0,5.7614918,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5745;
+							type="Land_BagFence_Long_F";
+						};
+						class Item60
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4362.8008,339.39932,19989.08};
+								angles[]={-0,5.7613382,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5747;
+							type="Land_BagFence_Long_F";
+						};
+						class Item61
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4317.9258,339.4631,19977.703};
+								angles[]={0.00084572798,5.7609715,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5749;
+							type="Land_BagFence_Long_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item62
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4281.8452,339.82178,20004.496};
+								angles[]={0,1.0414461,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5750;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item63
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4284.9292,339.81766,19999.324};
+								angles[]={0,1.039945,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5751;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item64
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4349.835,339.70499,20078.936};
+								angles[]={0,4.1803856,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5754;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item65
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4367.4199,339.39932,19991.811};
+								angles[]={-0,5.761209,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5755;
+							type="Land_BagFence_Long_F";
+						};
+						class Item66
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4341.6865,339.56934,20081.973};
+								angles[]={-0,4.180665,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5756;
+							type="Land_GymBench_01_F";
+						};
+						class Item67
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4278.7471,339.82471,20009.67};
+								angles[]={0,1.0413412,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5757;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item68
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4381.4517,339.60803,20016.141};
+								angles[]={-0,5.7367187,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5758;
+							type="Land_Wreck_T72_hull_F";
+						};
+						class Item69
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4287.9263,339.81015,19994.104};
+								angles[]={0,1.0406781,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5759;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item70
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4278.0586,339.40359,20064.578};
+								angles[]={0.00084572798,4.1797748,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5760;
+							type="Land_BagFence_Short_F";
+						};
+						class Item71
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4358.3418,339.0907,19983.529};
+								angles[]={-0,3.1292787,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5762;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item72
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4317.8184,339.39932,20083.307};
+								angles[]={-0,4.1811543,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5763;
+							type="Land_BagFence_Long_F";
+						};
+						class Item73
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4383.4341,339.70499,20021.824};
+								angles[]={0,4.1816597,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5764;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item74
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4353.1475,339.39932,19980.027};
+								angles[]={-0,4.1896448,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5766;
+							type="Land_BagFence_Long_F";
+						};
+						class Item75
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4275.7617,339.81534,20014.828};
+								angles[]={0,1.0420569,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5768;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item76
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4291.019,339.80243,19988.938};
+								angles[]={0,1.0420047,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5771;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item77
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4372.0435,339.39932,19994.428};
+								angles[]={-0,5.7616401,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5772;
+							type="Land_BagFence_Long_F";
+						};
+						class Item78
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4340.6226,339.56934,20084.063};
+								angles[]={-0,4.1800718,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5773;
+							type="Land_GymBench_01_F";
+						};
+						class Item79
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4367.9956,339.0907,19989.229};
+								angles[]={-0,3.2213275,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5774;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item80
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4313.7837,339.47879,19975.313};
+								angles[]={0.00084572798,5.7615166,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5775;
+							type="Land_BagFence_Long_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item81
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4372.3608,339.07413,19992.645};
+								angles[]={-0,0.31146213,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5777;
+							type="Land_WheelChock_01_F";
+						};
+						class Item82
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4272.666,339.79987,20020.061};
+								angles[]={0,1.0413588,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5778;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item83
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4346.7407,339.70499,20084.121};
+								angles[]={0,4.180089,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5780;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item84
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4372.8691,339.07413,19992.604};
+								angles[]={-0,4.947001,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5781;
+							type="Land_WheelChock_01_F";
+						};
+						class Item85
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4294.0054,339.79868,19983.758};
+								angles[]={0,1.0420047,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5783;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item86
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4376.6445,339.39932,19997.158};
+								angles[]={-0,5.7617607,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5784;
+							type="Land_BagFence_Long_F";
+						};
+						class Item87
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4386.5288,339.70499,20016.637};
+								angles[]={0,4.1815901,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5787;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item88
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4269.6743,339.78998,20025.25};
+								angles[]={0,1.0412542,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5790;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item89
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4360.644,339.07413,19978.955};
+								angles[]={-0,1.9052967,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5792;
+							type="Land_WheelChock_01_F";
+						};
+						class Item90
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4377.6523,339.0907,19994.92};
+								angles[]={-0,3.1873639,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5793;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item91
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4380.9673,339.39932,19999.748};
+								angles[]={-0,5.7612805,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5794;
+							type="Land_BagFence_Long_F";
+						};
+						class Item92
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4360.6748,339.07413,19978.545};
+								angles[]={-0,1.4608487,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5796;
+							type="Land_WheelChock_01_F";
+						};
+						class Item93
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4297.0962,339.80231,19978.557};
+								angles[]={0,1.0408176,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5798;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item94
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4309.166,339.49426,19972.59};
+								angles[]={6.2823396,5.7608447,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5799;
+							type="Land_BagFence_Long_F";
+						};
+						class Item95
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4355.7891,339.39932,19975.4};
+								angles[]={-0,4.1894016,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5800;
+							type="Land_BagFence_Long_F";
+						};
+						class Item96
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4365.9619,338.98001,19981.563};
+								angles[]={-0,5.7454615,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5801;
+							type="Land_HelipadSquare_F";
+						};
+						class Item97
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4366.3208,339.0907,19981.764};
+								angles[]={-0,4.1473122,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5802;
+							type="PortableHelipadLight_01_yellow_F";
+						};
+						class Item98
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4271.7642,339.41574,20075.225};
+								angles[]={0.00084572798,4.1803694,6.2798557};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5803;
+							type="Land_BagFence_Short_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item99
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4266.5801,339.79459,20030.438};
+								angles[]={0,1.0421616,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5806;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item100
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4385.5854,339.39932,20002.488};
+								angles[]={-0,5.7612357,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5808;
+							type="Land_BagFence_Long_F";
+						};
+						class Item101
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4375.2729,339.0907,19987.15};
+								angles[]={-0,4.1512909,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5809;
+							type="PortableHelipadLight_01_yellow_F";
+						};
+						class Item102
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4375.6636,338.98001,19987.359};
+								angles[]={-0,5.7468672,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5811;
+							type="Land_HelipadSquare_F";
+						};
+						class Item103
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4300.0874,339.81134,19973.365};
+								angles[]={0,1.0414461,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5812;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item104
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4389.6279,339.70499,20011.441};
+								angles[]={0,4.1823225,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5813;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item105
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4344.792,339.86969,20091.48};
+								angles[]={-0,4.1799703,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5816;
+							type="Land_BagBunker_Large_F";
+						};
+						class Item106
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4304.5498,339.49719,19969.955};
+								angles[]={-0,5.7613382,6.2823396};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5819;
+							type="Land_BagFence_Long_F";
+						};
+						class Item107
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4358.2979,339.39932,19971.041};
+								angles[]={-0,4.1894016,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5823;
+							type="Land_BagFence_Long_F";
+						};
+						class Item108
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4389.8052,339.39932,20004.963};
+								angles[]={-0,5.7616839,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5824;
+							type="Land_BagFence_Long_F";
+						};
+						class Item109
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4363.9844,339.0907,19973.979};
+								angles[]={-0,4.4456186,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5825;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item110
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4263.4941,339.81332,20035.631};
+								angles[]={0,1.0413588,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5826;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item111
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4303.083,339.80408,19968.168};
+								angles[]={0,1.0418476,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5829;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item112
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4373.6182,339.0907,19979.471};
+								angles[]={-0,4.2197475,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5830;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item113
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4392.6152,339.70499,20006.26};
+								angles[]={0,4.1826372,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5831;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item114
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4310.9414,339.39932,20095.018};
+								angles[]={-0,4.1820297,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5832;
+							type="Land_BagFence_Long_F";
+						};
+						class Item115
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4339.1831,339.70499,20096.836};
+								angles[]={0,4.1820955,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5833;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item116
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4378.5874,339.07413,19981.789};
+								angles[]={-0,4.9447441,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5834;
+							type="Land_WheelChock_01_F";
+						};
+						class Item117
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4378.8169,339.07413,19981.336};
+								angles[]={-0,0.31690761,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5836;
+							type="Land_WheelChock_01_F";
+						};
+						class Item118
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4383.3569,339.0907,19985.266};
+								angles[]={-0,4.1239071,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5838;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item119
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4306.1738,339.79453,19962.967};
+								angles[]={0,1.0416728,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5839;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item120
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4360.96,339.39447,19966.547};
+								angles[]={6.2798738,4.1893139,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5840;
+							type="Land_BagFence_Long_F";
+						};
+						class Item121
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4258.1768,339.98877,20041.082};
+								angles[]={0.00084572798,1.0422757,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5841;
+							type="Land_BagBunker_Large_F";
+						};
+						class Item122
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4308.4072,339.39932,20099.23};
+								angles[]={-0,4.1819143,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5843;
+							type="Land_BagFence_Long_F";
+						};
+						class Item123
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4336.0884,339.70499,20102.023};
+								angles[]={0,4.182498,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5844;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item124
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4308.562,341.05984,19987.588};
+								angles[]={0,5.7503519,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5845;
+							type="Land_BC_Basket_F";
+							atlOffset=0.099334717;
+						};
+						class Item125
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4309.2695,339.78326,19957.758};
+								angles[]={0,1.0423535,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5846;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item126
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4398.189,339.86969,20001.166};
+								angles[]={-0,4.1826487,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5848;
+							type="Land_BagBunker_Large_F";
+						};
+						class Item127
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4255.8389,339.80917,20048.311};
+								angles[]={0,1.0421265,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5850;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item128
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4363.708,339.3793,19961.988};
+								angles[]={-0,4.1892967,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5851;
+							type="Land_BagFence_Long_F";
+						};
+						class Item129
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4386.2056,339.82794,19971.379};
+								angles[]={-0,4.1816769,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5852;
+							type="Land_DieselGroundPowerUnit_01_F";
+						};
+						class Item130
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4323.2607,339.39151,20106.01};
+								angles[]={-0,4.1824174,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5853;
+							type="Land_StallWater_F";
+						};
+						class Item131
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4306.3296,339.39932,20102.928};
+								angles[]={-0,4.1825552,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5854;
+							type="Land_BagFence_Long_F";
+						};
+						class Item132
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4366.4717,340.12451,19961.777};
+								angles[]={-0,5.7295909,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5856;
+							type="Land_JetEngineStarter_01_F";
+						};
+						class Item133
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4332.9976,339.70499,20107.225};
+								angles[]={0,4.1823225,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5857;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item134
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4362.0581,339.3793,19958.463};
+								angles[]={-0,5.7610712,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5858;
+							type="Land_BagFence_Long_F";
+						};
+						class Item135
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4357.5508,339.3793,19955.76};
+								angles[]={-0,5.7609982,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5859;
+							type="Land_BagFence_Long_F";
+						};
+						class Item136
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4400.1753,339.70499,19993.559};
+								angles[]={0,4.1830912,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5860;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item137
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4252.7441,339.79617,20053.521};
+								angles[]={0,1.0417079,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5861;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item138
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4352.8237,339.3793,19953.117};
+								angles[]={-0,5.761013,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5862;
+							type="Land_BagFence_Long_F";
+						};
+						class Item139
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4311.9033,339.93423,19950.625};
+								angles[]={6.2815294,1.0420866,6.2815294};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5863;
+							type="Land_BagBunker_Large_F";
+						};
+						class Item140
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4384.729,340.29337,19963.518};
+								angles[]={6.2798738,2.6148427,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5864;
+							type="Land_Cargo40_grey_F";
+						};
+						class Item141
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4348.3247,339.38278,19950.4};
+								angles[]={6.2815294,5.7609329,6.2815294};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5865;
+							type="Land_BagFence_Long_F";
+						};
+						class Item142
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4356.1729,339.05411,19952.664};
+								angles[]={-0,2.7577157,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5866;
+							type="Land_WheelChock_01_F";
+						};
+						class Item143
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4355.5903,339.05411,19952.373};
+								angles[]={-0,2.2652185,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5867;
+							type="Land_WheelChock_01_F";
+						};
+						class Item144
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4361.2056,339.07068,19954.373};
+								angles[]={-0,4.3558354,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5868;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item145
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4329.9067,339.70569,20112.428};
+								angles[]={0,4.1827765,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5869;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item146
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4343.9893,339.3876,19947.912};
+								angles[]={6.2823396,5.7608461,6.2815294};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5870;
+							type="Land_BagFence_Long_F";
+						};
+						class Item147
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4302.9941,339.39932,20108.938};
+								angles[]={-0,4.180912,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5871;
+							type="Land_BagFence_Long_F";
+						};
+						class Item148
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4351.478,339.07068,19948.539};
+								angles[]={-0,4.1494551,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5872;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item149
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4249.7456,339.78497,20058.766};
+								angles[]={0,1.0419172,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5873;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item150
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4386.4854,340.2883,19960.695};
+								angles[]={-0,2.6264317,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5874;
+							type="Land_Cargo40_grey_F";
+						};
+						class Item151
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4403.3672,339.70499,19988.383};
+								angles[]={0,4.1826191,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5875;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item152
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4339.4771,339.39563,19945.189};
+								angles[]={-0,5.7610312,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5876;
+							type="Land_BagFence_Long_F";
+						};
+						class Item153
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4316.9243,339.74612,19945.076};
+								angles[]={0,1.0422314,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5877;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item154
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4335.3359,339.39749,19942.805};
+								angles[]={6.2798557,5.7608027,6.2823396};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5879;
+							type="Land_BagFence_Long_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item155
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4300.9224,339.39932,20112.545};
+								angles[]={-0,4.1814165,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5880;
+							type="Land_BagFence_Long_F";
+						};
+						class Item156
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4341.7773,339.08026,19942.822};
+								angles[]={6.2823396,2.724746,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5881;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item157
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4388.1631,340.2883,19957.719};
+								angles[]={-0,2.6224875,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5882;
+							type="Land_Cargo40_grey_F";
+						};
+						class Item158
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4326.9072,339.71344,20117.611};
+								angles[]={0,4.1827946,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5883;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item159
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4359.2295,338.95999,19946.646};
+								angles[]={-0,5.7492013,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5884;
+							type="Land_HelipadSquare_F";
+						};
+						class Item160
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4358.8901,339.07068,19946.494};
+								angles[]={-0,3.6995099,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5885;
+							type="PortableHelipadLight_01_yellow_F";
+						};
+						class Item161
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4248.5757,339.30792,20066.52};
+								angles[]={0.003311686,4.1841745,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5886;
+							type="Land_GarbagePallet_F";
+						};
+						class Item162
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4246.6577,339.78384,20063.922};
+								angles[]={0,1.0422314,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5887;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item163
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4330.731,339.40088,19940.063};
+								angles[]={6.2815294,5.7606139,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5888;
+							type="Land_BagFence_Long_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item164
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4247.79,339.32254,20067.637};
+								angles[]={0.32934284,4.1955423,0.19499867};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5889;
+							type="Land_JunkPile_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item165
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4302.395,339.40228,20115.553};
+								angles[]={6.2823396,2.6422443,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5890;
+							type="Land_BagFence_Long_F";
+						};
+						class Item166
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4320.0176,339.72971,19939.91};
+								angles[]={0,1.0423187,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5891;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item167
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4406.3511,339.70499,19983.188};
+								angles[]={0,4.1828117,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5892;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item168
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4349.8193,339.07083,19941.061};
+								angles[]={-0,4.0905008,6.2823396};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5893;
+							type="PortableHelipadLight_01_yellow_F";
+						};
+						class Item169
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4349.4263,338.96048,19940.826};
+								angles[]={-0,5.7430162,6.2823396};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5895;
+							type="Land_HelipadSquare_F";
+						};
+						class Item170
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4326.1094,339.40356,19937.447};
+								angles[]={6.2823396,5.7615895,6.2806959};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5897;
+							type="Land_BagFence_Long_F";
+						};
+						class Item171
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4366.834,339.07068,19944.643};
+								angles[]={-0,2.1432374,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5898;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item172
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4344.0308,339.05411,19937.807};
+								angles[]={-0,4.9437881,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5899;
+							type="Land_WheelChock_01_F";
+						};
+						class Item173
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4323.8271,339.72476,20122.795};
+								angles[]={0,4.1821833,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5900;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item174
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4344.272,339.05411,19937.355};
+								angles[]={-0,0.31411523,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5901;
+							type="Land_WheelChock_01_F";
+						};
+						class Item175
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4296.8359,341.05981,20006.764};
+								angles[]={0,2.6049047,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5902;
+							type="Land_BC_Basket_F";
+							atlOffset=0.083709717;
+						};
+						class Item176
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4243.6646,339.76785,20069.133};
+								angles[]={0,1.042179,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5903;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item177
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4307.0537,340.33124,20121.025};
+								angles[]={6.2798557,0.11310478,0.0033296358};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5904;
+							type="Land_Cargo20_grey_F";
+						};
+						class Item178
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4362.3291,339.05411,19941.311};
+								angles[]={-0,0.30824831,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5905;
+							type="Land_WheelChock_01_F";
+						};
+						class Item179
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4362.5449,339.05411,19941.076};
+								angles[]={-0,1.3597565,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5906;
+							type="Land_WheelChock_01_F";
+						};
+						class Item180
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4357.1123,339.07068,19938.857};
+								angles[]={-0,3.5616143,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5907;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item181
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4323.1045,339.71381,19934.695};
+								angles[]={0,1.0420917,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5908;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item182
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4409.4502,339.70499,19977.992};
+								angles[]={0,4.1826725,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5909;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item183
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4347.4321,339.07068,19933.189};
+								angles[]={-0,3.6032231,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5910;
+							type="PortableHelipadLight_01_red_F";
+						};
+						class Item184
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4305.1675,340.33771,20124.848};
+								angles[]={6.2798557,5.7497287,0.0033296358};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5911;
+							type="Land_Cargo20_grey_F";
+						};
+						class Item185
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4282.396,339.70499,20116.158};
+								angles[]={0,2.6149654,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5912;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item186
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4287.5928,339.70499,20119.176};
+								angles[]={0,2.6145816,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5913;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item187
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4320.833,339.7326,20127.973};
+								angles[]={0,4.1821833,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5914;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item188
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4240.5796,339.74939,20074.326};
+								angles[]={0,1.0434357,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5915;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=3.0517578e-05;
+						};
+						class Item189
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4266.7349,339.70499,20107.004};
+								angles[]={0,2.6150873,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5916;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item190
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4292.7759,339.70499,20122.258};
+								angles[]={0,2.6140401,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5917;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item191
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4326.1978,339.69861,19929.508};
+								angles[]={0,1.0420395,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5918;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item192
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4261.5381,339.70499,20103.986};
+								angles[]={0,2.6146855,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5919;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item193
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4409.5596,341.11136,19969.66};
+								angles[]={0,2.609834,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5920;
+							type="Land_Shed_Small_F";
+						};
+						class Item194
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4276.937,339.39932,20115.557};
+								angles[]={-0,4.1821165,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5921;
+							type="Land_BagFence_Long_F";
+						};
+						class Item195
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4297.9678,339.71262,20125.285};
+								angles[]={0,2.6142321,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5922;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item196
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4269.7451,339.39932,20111.117};
+								angles[]={-0,4.1825151,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5923;
+							type="Land_BagFence_Long_F";
+						};
+						class Item197
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4412.542,339.70499,19972.826};
+								angles[]={0,4.1828642,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5924;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item198
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4278.2168,339.70499,20117.063};
+								angles[]={0,4.1820612,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5925;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item199
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4365.7314,339.80792,19934.707};
+								angles[]={-0,4.1804705,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5926;
+							type="Land_DieselGroundPowerUnit_01_F";
+						};
+						class Item200
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4256.3516,339.71173,20100.951};
+								angles[]={0,2.6144936,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5927;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item201
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4267.728,339.70499,20111.189};
+								angles[]={0,1.0406781,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5928;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item202
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4314.6162,343.94693,20130.629};
+								angles[]={0,2.599571,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5929;
+							type="Land_Cargo_Patrol_V2_F";
+						};
+						class Item203
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4303.1533,339.74329,20128.344};
+								angles[]={0,2.6144764,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5930;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item204
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4251.1636,339.72409,20097.914};
+								angles[]={0,2.6135168,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5931;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item205
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4275.4287,339.39932,20118.225};
+								angles[]={-0,4.1816611,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5932;
+							type="Land_BagFence_Long_F";
+						};
+						class Item206
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4308.3433,339.77112,20131.355};
+								angles[]={0,2.6140049,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5933;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item207
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4268.1484,339.39932,20113.758};
+								angles[]={-0,4.1814327,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5934;
+							type="Land_BagFence_Long_F";
+						};
+						class Item208
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4237.584,339.73254,20079.502};
+								angles[]={0,1.0433658,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5935;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item209
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4355.915,339.80792,19928.908};
+								angles[]={-0,4.1834745,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5936;
+							type="Land_DieselGroundPowerUnit_01_F";
+						};
+						class Item210
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4317.6416,339.7507,20133.184};
+								angles[]={0,4.1828814,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5937;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item211
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4329.1914,339.68732,19924.297};
+								angles[]={0,1.0421616,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5938;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item212
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4245.9707,339.72665,20094.85};
+								angles[]={0,2.6139352,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5939;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item213
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4313.5361,339.77362,20134.42};
+								angles[]={0,2.6141796,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5940;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item214
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4238.916,343.90417,20085.93};
+								angles[]={0,2.6202011,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5941;
+							type="Land_Cargo_Patrol_V2_F";
+						};
+						class Item215
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4273.9414,339.39932,20120.744};
+								angles[]={-0,4.181294,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5942;
+							type="Land_BagFence_Long_F";
+						};
+						class Item216
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4415.6284,339.70367,19967.609};
+								angles[]={0,4.1828814,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5943;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item217
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4387.4609,339.9375,19940.447};
+								angles[]={0,2.606221,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5944;
+							type="Land_Bunker_F";
+						};
+						class Item218
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4266.6592,339.39932,20116.283};
+								angles[]={-0,4.1816773,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5945;
+							type="Land_BagFence_Long_F";
+						};
+						class Item219
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4380.8481,339.14059,19936.025};
+								angles[]={-0,1.0386709,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5946;
+							type="Land_MobileLandingPlatform_01_F";
+						};
+						class Item220
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4275.1299,339.70499,20122.277};
+								angles[]={0,4.1815901,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5947;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item221
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4394.6694,339.9375,19944.623};
+								angles[]={0,2.6061337,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5948;
+							type="Land_Bunker_F";
+						};
+						class Item222
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4240.7832,339.7251,20091.814};
+								angles[]={0,2.6148779,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5949;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item223
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4264.7349,339.70499,20116.4};
+								angles[]={0,1.0403465,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5950;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item224
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4401.8804,339.9375,19948.811};
+								angles[]={0,2.6062558,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5951;
+							type="Land_Bunker_F";
+						};
+						class Item225
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4234.3862,339.71866,20084.711};
+								angles[]={0,1.0413588,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5952;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item226
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4272.3374,339.39932,20123.385};
+								angles[]={-0,4.1816072,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5953;
+							type="Land_BagFence_Long_F";
+						};
+						class Item227
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4265.1621,339.39932,20118.938};
+								angles[]={-0,4.1814518,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5954;
+							type="Land_BagFence_Long_F";
+						};
+						class Item228
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4273.5244,339.70499,20124.998};
+								angles[]={0,4.1814499,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5955;
+							type="Land_Wall_IndCnc_Pole_F";
+						};
+						class Item229
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4274.3862,339.39429,20125.615};
+								angles[]={-0,2.5568976,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5956;
+							type="Land_BagFence_Short_F";
+						};
+						class Item230
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4235.5938,339.71866,20088.744};
+								angles[]={0,2.6151395,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5957;
+							type="Land_Wall_IndCnc_4_F";
+							atlOffset=-3.0517578e-05;
+						};
+						class Item231
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4332.2808,339.68497,19919.094};
+								angles[]={0,1.0420569,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5958;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item232
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4409.0903,339.9375,19952.988};
+								angles[]={0,2.6063433,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5959;
+							type="Land_Bunker_F";
+						};
+						class Item233
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4262.1821,339.39429,20118.387};
+								angles[]={-0,5.7047324,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5960;
+							type="Land_BagFence_Short_F";
+						};
+						class Item234
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4272.8364,339.94565,20126.195};
+								angles[]={-0,2.625751,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5961;
+							type="Land_BagBunker_Small_F";
+						};
+						class Item235
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4418.6152,339.6864,19962.43};
+								angles[]={0,4.1827946,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5962;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item236
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4383.9849,339.68497,19931.859};
+								angles[]={0,5.7558198,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5963;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item237
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4367.2012,340.13458,19924.141};
+								angles[]={-0,2.6188397,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5964;
+							type="Land_Goal_F";
+						};
+						class Item238
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4389.1753,339.68497,19934.91};
+								angles[]={0,5.7561636,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5965;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item239
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4262.4761,339.94565,20120.199};
+								angles[]={-0,2.6256309,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5966;
+							type="Land_BagBunker_Small_F";
+						};
+						class Item240
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4378.7979,339.68497,19928.824};
+								angles[]={0,5.7559786,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5967;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item241
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4394.3613,339.68497,19937.945};
+								angles[]={0,5.7561374,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5968;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item242
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4373.6045,339.68497,19925.738};
+								angles[]={0,5.755537,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5969;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item243
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4399.6523,339.68497,19940.984};
+								angles[]={0,5.7562823,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5970;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item244
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4368.4165,339.68497,19922.727};
+								angles[]={0,5.7554512,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5971;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item245
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4404.8433,339.68497,19944.01};
+								angles[]={0,5.755652,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5972;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item246
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4363.2339,339.68527,19919.645};
+								angles[]={0,5.7541494,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5974;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item247
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4417.9854,343.86499,19956.107};
+								angles[]={0,5.7527633,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5975;
+							type="Land_Cargo_Patrol_V2_F";
+						};
+						class Item248
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4410.0308,339.68497,19947.047};
+								angles[]={0,5.7547183,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5976;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item249
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4335.3701,339.68497,19913.939};
+								angles[]={0,1.041289,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5977;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item250
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4357.9331,339.6882,19916.623};
+								angles[]={0,5.754137,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5978;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item251
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4415.2261,339.68497,19950.088};
+								angles[]={0,5.7549906,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5979;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item252
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4421.7158,339.68497,19957.209};
+								angles[]={0,4.1830215,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5980;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item253
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4352.8481,339.686,19913.59};
+								angles[]={0,5.7560606,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5981;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item254
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4341.4912,343.86499,19911.203};
+								angles[]={0,5.7508836,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+							};
+							id=5982;
+							type="Land_Cargo_Patrol_V2_F";
+						};
+						class Item255
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4420.4082,339.68497,19953.133};
+								angles[]={0,5.7561498,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5983;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item256
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4347.6626,339.68497,19910.555};
+								angles[]={0,5.7565403,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5984;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item257
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4338.4702,339.68497,19908.719};
+								angles[]={0,1.0420395,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5985;
+							type="Land_Wall_IndCnc_4_F";
+						};
+						class Item258
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4342.3677,339.68539,19907.504};
+								angles[]={0,5.7565737,-0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								skill=0.2;
+								disableSimulation=1;
+							};
+							id=5986;
+							type="Land_Wall_IndCnc_4_F";
+						};
+					};
+					id=5673;
+					atlOffset=0.00021362305;
+				};
+			};
+			id=5987;
+			atlOffset=0.00021362305;
+		};
+		class Item1786
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4313.1763,341.02246,20110.867};
+				angles[]={-0,2.6202638,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5989;
+			type="Land_Mil_Barracks";
+		};
+		class Item1787
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4330.5342,341.02246,20079.295};
+				angles[]={-0,2.6202638,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5990;
+			type="Land_Mil_Barracks";
+		};
+		class Item1788
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4322.3169,341.02246,20093.545};
+				angles[]={-0,2.6202638,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5991;
+			type="Land_Mil_Barracks";
+		};
+		class Item1789
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4256.8569,340.37885,20084.854};
+				angles[]={0.003311686,1.0513741,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5992;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1790
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4269.2188,340.36646,20091.936};
+				angles[]={0.0016558425,1.0417947,6.2815294};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5993;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1791
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4288.6895,340.41321,20025.645};
+				angles[]={0.0058287857,5.778398,6.2823396};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5994;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1792
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4283.1133,340.37393,20035.443};
+				angles[]={0.0016558425,5.7791734,6.2798557};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5995;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1793
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4278.2612,340.37833,20045.023};
+				angles[]={0.00084572798,5.7769356,6.2798557};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5996;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1794
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4266.5171,340.40952,20064.682};
+				angles[]={0.0024897563,5.7648873,6.2790279};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5997;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1795
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4272.9263,340.3996,20054.482};
+				angles[]={0.0016558425,5.7599568,6.278194};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5998;
+			type="Land_Mil_Barracks_i";
+		};
+		class Item1796
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4302.668,338.57394,19997.045};
+				angles[]={0,2.6014132,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5999;
+			type="Land_BC_Court_F";
+		};
+		class Item1797
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4332.1558,344.07007,20025.295};
+				angles[]={0,1.0406779,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6001;
+			type="Land_Radar_01_HQ_F";
+		};
+		class Item1798
+		{
+			dataType="Marker";
+			position[]={4326.1948,339.02313,19955.508};
+			name="outp_18_vehicle";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGreen";
+			a=5;
+			b=5;
+			angle=330.54669;
+			id=6002;
+		};
+		class Item1799
+		{
+			dataType="Marker";
+			position[]={4347.6963,338.97943,19967.768};
+			name="outp_18_vehicle_1";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGreen";
+			a=5;
+			b=5;
+			angle=330.54666;
+			id=6003;
+		};
+		class Item1800
+		{
+			dataType="Marker";
+			position[]={4350.5884,338.98001,19996.057};
+			name="outp_18_vehicle_2";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGreen";
+			a=5;
+			b=5;
+			angle=330.54666;
+			id=6004;
+		};
+		class Item1801
+		{
+			dataType="Marker";
+			position[]={4365.1094,338.98001,20005.313};
+			name="outp_18_vehicle_3";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGreen";
+			a=5;
+			b=5;
+			angle=330.54666;
+			id=6005;
 		};
 	};
 	class Connections
