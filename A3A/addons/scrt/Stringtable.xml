@@ -6775,6 +6775,54 @@
                 <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
                 <Turkish>Düşman havalimanlarındaki İHA'ların belirme şansını ayarlar. Şans ne kadar yüksek olursa, diğer sabit kanatlı uçakların belirme olasılığı o kadar düşük olur</Turkish>
             </Key>
+            <Key ID="STR_params_aaTroopsSpawnChance">
+                <Original>AA troops spawn</Original>
+                <Russian>Шанс появления бойцов с ПВО</Russian>
+                <Chinesesimp>防空部队生成几率</Chinesesimp>
+                <Korean>대공 병력 출현 확률</Korean>
+                <French>Chance d\'apparition des troupes AA</French>
+                <Turkish>Hava savunma birliklerinin ortaya çıkma şansı</Turkish>
+            </Key>
+            <Key ID="STR_params_aaTroopsSpawnChance_desc">
+                <Original>Adjusts spawn chance of enemy troops carying AA launchers. Percentage under 50 will replace AA groups with regular ones</Original>
+                <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+                <Chinesesimp>调整携带防空发射器的敌军士兵生成几率。低于50%时，防空部队将被普通部队替代。</Chinesesimp>
+                <Korean>적군이 대공 발사기를 휴대하고 출현할 확률을 조정합니다. 50% 미만일 경우 대공 부대가 일반 부대로 대체됩니다.</Korean>
+                <French>Ajuste la probabilité d\'apparition des troupes ennemies équipées de lanceurs AA. Un pourcentage inférieur à 50 remplacera les groupes AA par des groupes réguliers.</French>
+                <Turkish>Düşman birliklerinin hava savunma fırlatıcılarıyla ortaya çıkma şansını ayarlar. Yüzde 50'nin altındaki değerlerde, hava savunma grupları normal birliklerle değiştirilir.</Turkish>
+            </Key>
+            <Key ID="STR_params_atTroopsSpawnChance">
+                <Original>AT troops spawn</Original>
+                <Russian>Шанс появления бойцов с ПТ</Russian>
+                <Chinesesimp>反坦克部队生成几率</Chinesesimp>
+                <Korean>대전차 병력 출현 확률</Korean>
+                <French>Chance d\'apparition des troupes AT</French>
+                <Turkish>Tanksavar birliklerinin ortaya çıkma şansı</Turkish>
+            </Key>
+            <Key ID="STR_params_atTroopsSpawnChance_desc">
+                <Original>Adjusts spawn chance of enemy troops carying AT launchers. Percentage under 50 will replace AT groups with regular ones</Original>
+                <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+                <Chinesesimp>调整携带反坦克发射器的敌军士兵生成几率。低于50%时，反坦克部队将被普通部队替代。</Chinesesimp>
+                <Korean>적군이 대전차 발사기를 휴대하고 출현할 확률을 조정합니다. 50% 미만일 경우 대전차 부대가 일반 부대로 대체됩니다.</Korean>
+                <French>Ajuste la probabilité d\'apparition des troupes ennemies équipées de lanceurs AT. Un pourcentage inférieur à 50 remplacera les groupes AT par des groupes réguliers.</French>
+                <Turkish>Düşman birliklerinin tanksavar fırlatıcılarıyla ortaya çıkma şansını ayarlar. Yüzde 50'nin altındaki değerlerde, tanksavar grupları normal birliklerle değiştirilir.</Turkish>
+            </Key>
+            <Key ID="STR_params_latTroopsSpawnChance">
+                <Original>LAT troops spawn</Original>
+                <Russian>Шанс появления бойцов с легкими ПТ</Russian>
+                <Chinesesimp>轻型反坦克部队生成几率</Chinesesimp>
+                <Korean>경대전차 병력 출현 확률</Korean>
+                <French>Chance d\'apparition des troupes LAT</French>
+                <Turkish>Hafif tanksavar birliklerinin ortaya çıkma şansı</Turkish>
+            </Key>
+            <Key ID="STR_params_latTroopsSpawnChance_desc">
+                <Original>Adjusts spawn chance of enemy troops carying LAT launchers. Percentage under 50 will replace LAT groups with regular ones</Original>
+                <Russian>Настраивает шанс появления БПЛА на вражеских аэродромах, чем выше шанс, тем реже будут появлятся другие виды самолётов</Russian>
+                <Chinesesimp>调整携带轻型反坦克发射器的敌军士兵生成几率。低于50%时，轻型反坦克部队将被普通部队替代。</Chinesesimp>
+                <Korean>적군이 경대전차 발사기를 휴대하고 출현할 확률을 조정합니다. 50% 미만일 경우 경대전차 부대가 일반 부대로 대체됩니다.</Korean>
+                <French>Ajuste la probabilité d\'apparition des troupes ennemies équipées de lanceurs LAT. Un pourcentage inférieur à 50 remplacera les groupes LAT par des groupes réguliers.</French>
+                <Turkish>Düşman birliklerinin hafif tanksavar fırlatıcılarıyla ortaya çıkma şansını ayarlar. Yüzde 50'nin altındaki değerlerde, hafif tanksavar grupları normal birliklerle değiştirilir.</Turkish>
+            </Key>
             <Key ID="STR_params_ultimate_allowLockpickKits">
                 <Original>Allow Lockpick Kits</Original>
                 <Russian>Разрешить наборы отмычек</Russian>

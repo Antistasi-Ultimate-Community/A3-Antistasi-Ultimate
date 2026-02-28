@@ -723,6 +723,30 @@ class Params
         texts[] = {"2000","3000","4000","6000","8000","10000","12000"};
         default = 3000;
     };
+    class aaChance : AIBalanceParams
+    {
+        title = $STR_params_aaTroopsSpawnChance;
+        tooltip = $STR_params_aaTroopsSpawnChance_desc;
+        values[] = {0, 0.1, 0.2, 0.3, 0.5, 1};
+        texts[] = {"0", "10%", "20%", "30%", "50%", "100%"};
+        default = 0.2;
+    };
+    class atChance : AIBalanceParams
+    {
+        title = $STR_params_atTroopsSpawnChance;
+        tooltip = $STR_params_atTroopsSpawnChance_desc;
+        values[] = {0, 0.1, 0.2, 0.3, 0.5, 1};
+        texts[] = {"0", "10%", "20%", "30%", "50%", "100%"};
+        default = 0.2;
+    };
+    class latChance : AIBalanceParams
+    {
+        title = $STR_params_latTroopsSpawnChance;
+        tooltip = $STR_params_latTroopsSpawnChance_desc;
+        values[] = {0, 0.1, 0.2, 0.3, 0.5, 1};
+        texts[] = {"0", "10%", "20%", "30%", "50%", "100%"};
+        default = 0.2;
+    };
     class MiscBalanceParamsSpacer : AIParamsSpacer
     {
         type = "MiscBalance";
