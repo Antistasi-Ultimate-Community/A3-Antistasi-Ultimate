@@ -173,8 +173,8 @@ _loadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515"]];
 _loadoutData set ["atBackpacks", []];
 _loadoutData set ["slBackpacks", []];
 _loadoutData set ["helmets", []];
-_loadoutData set ["slHat", ["OPTRE_UNSC_CH252A_Black_Helmet"]];
-_loadoutData set ["sniHats", ["OPTRE_UNSC_CH252A_Black_Helmet"]];
+_loadoutData set ["slHat", ["OPTRE_UNSC_CH252_Helmet_Vacuum_URB"]];
+_loadoutData set ["sniHats", ["OPTRE_UNSC_CH252_Helmet2_Vacuum_URB"]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
@@ -413,6 +413,7 @@ _militiaLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["helmets", ["OPTRE_FC_CH255_Helmet_SNO"]];
+_militiaLoadoutData set ["slHat", ["OPTRE_FC_CH255_Helmet_URB_Visor"]];
 _militiaLoadoutData set ["sniHats", ["OPTRE_FC_CH255_Helmet_SNO_Visor"]];
 
 _militiaLoadoutData set ["rifles", [
@@ -420,9 +421,6 @@ _militiaLoadoutData set ["rifles", [
 ]];
 _militiaLoadoutData set ["carbines", [
     ["OPTRE_MA5A", "", "", "", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag"], [], ""]
-]];
-_militiaLoadoutData set ["grenadeLaunchers", [
-    ["OPTRE_M319", "", "", "", ["M319_HE_Grenade_Shell", "M319_Smoke", "OPTRE_signalSmokeB"], [], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
     ["OPTRE_MA37K", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""]
@@ -587,7 +585,7 @@ private _grenadierTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["grenadeLaunchers"] call _fnc_setPrimary;
+    [["grenadeLaunchers", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
     ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
 

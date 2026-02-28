@@ -44,13 +44,6 @@
         file = "OPTRE_AI_Covenant";
         description = "The Covenant (With OPTRE elites)";
     };
-    class OPTRE_Cov_Grunts : OPTRE_Cov
-    {
-        requiredAddons[] = {"OPTRE_Core", "OPTRE_FC_Core", "WBK_Halo_Alients"};
-        name = "Covenant (WBK Elites)";
-        file = "OPTRE_AI_Covenant_Grunts";
-        description = "The Covenant (With Webknights elites and grunts)";
-    };
     class OPTRE_Ins : OPTRE_Cov
     {
         flagTexture = QPATHTOFOLDER(Templates\Templates\OPTRE\images\flag_insurrection_ca.paa);
