@@ -120,12 +120,7 @@ if (_sideX == Invaders) then {
 	_nul = [_veh, Occupants] call A3A_fnc_AIVEHinit;
 	if ((random 100 < aggressionOccupants) or (_difficultX)) then
 		{
-		private _groupsTierSquads = if (random 100 <= 40) then {
-		  "groupsTierSquads" 
-		} else {
-		  "groupsTierSquadsNoAA" 
-		};
-		_groupX = [getPos _houseX,Occupants, selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)] call A3A_fnc_spawnGroup;
+		_groupX = [getPos _houseX,Occupants, selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)] call A3A_fnc_spawnGroup;
 		sleep 1;
 		}
 	else

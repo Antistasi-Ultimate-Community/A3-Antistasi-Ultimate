@@ -79,10 +79,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 
 		private _typeGroup = [
 		    _faction get "groupPoliceSquad",
-		    selectRandom ([
-		        [_faction, "groupsTierSquads", 0] call SCRT_fnc_unit_flattenTier,
-		        [_faction, "groupsTierSquadsNoAA", 0] call SCRT_fnc_unit_flattenTier
-		    ] select (random 100 > 40))
+			selectRandom ([_faction, "groupsTierSquads", 0] call SCRT_fnc_unit_flattenTier)
 		] select _difficultX;
 
 		private _group2Position = [_positionX, 450, 700, 0, 0] call BIS_fnc_findSafePos;

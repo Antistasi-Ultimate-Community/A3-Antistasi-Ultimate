@@ -45,7 +45,9 @@ if (count _potentials > 0) then {
 		_posHouse pushBack _postmp;
 	};
 };
+
 private _taskId = "RES" + str A3A_taskCount;
+
 if (count _potentials > 0) then {
 	[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],localize "STR_A3A_Missions_RES_Deserters_task_header",_markerX],_spawnPos,false,0,true,"run",true] call BIS_fnc_taskCreate;///add stringtables
 	[_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
@@ -53,32 +55,28 @@ if (count _potentials > 0) then {
 	[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],localize "STR_A3A_Missions_RES_Deserters_task_header",_markerX],_positionX,false,0,true,"run",true] call BIS_fnc_taskCreate;
 	[_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 };
+
 waitUntil {
     sleep 1;
     (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_spawnPos, distanceSPWN1, distanceSPWN1] isNotEqualTo [] || {dateToNumber date > _dateLimitNum}
 };
-private _groupsTierMedium = if (random 100 <= 40) then {
-  "groupsTierMedium" 
-} else {
-  "groupsTierMediumNoAA" 
-};
-private _groupsTierSquads = if (random 100 <= 40) then {
-  "groupsTierSquads" 
-} else {
-  "groupsTierSquadsNoAA" 
-};
+
 private _infantrySquadArray = [
-    selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier),
-    selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)
+    selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier),
+    selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)
 ] select _difficultX;
+
 private _vehiclePatrol = "";
 private _stolenVehicle = "";
+
 _vehiclePatrolType = selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesMilitiaTrucks"));
+
 _stolenVehicleType = if (_difficultX) then {
     selectRandom ((_faction get "vehiclesLightAPCs") +(_faction get "vehiclesLightArmed") + (_faction get "vehiclesTrucks"));
 } else {
     selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesTrucks") + (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaCars") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesMilitiaTrucks"));
 }; 
+
 private _nearbyPos = [_spawnPos, 200, 300, 3, 0, 5, 0] call BIS_fnc_findSafePos;
 private _patrolGroup1 = [_nearbyPos, _sideX, _infantrySquadArray] call A3A_fnc_spawnGroup;
 { 
@@ -88,16 +86,21 @@ private _PatrolvehData  = [_nearbyPos, 0,_vehiclePatrolType, _sideX] call A3A_fn
 private _Patrolveh = _PatrolvehData select 0;
 private _vehCrew = _PatrolvehData select 1;
 private _patrolVehgroup = _PatrolvehData select 2;
+
 { 
     [_x] call A3A_fnc_NATOinit;
 } forEach _vehCrew;
+
 [_Patrolveh, _sideX] call A3A_fnc_AIVEHinit;
+
 private _stolenVehicleSpawnPos = [_spawnPos, 5, 50, 3, 0, 5, 0] call BIS_fnc_findSafePos;
 private _stolenVehicle = createVehicle [_stolenVehicleType, _stolenVehicleSpawnPos, [], 0, "NONE"];
 [_stolenVehicle, teamPlayer] call A3A_fnc_AIVEHinit;
+
 //private _stolenVehgroup = group driver _StolenVehGroup;///not sure how to transfer command of units inside vehicle to player, so for now vehicle will stay empty
 private _patrolGroup2 = [];
 private _soldersPatrol = [];
+
 if (_difficultX) then {
 	_nearbyPos = [_spawnPos, 100, 150, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 	_patrolGroup2 = [_nearbyPos, _sideX, _infantrySquadArray] call A3A_fnc_spawnGroup;
@@ -106,19 +109,24 @@ if (_difficultX) then {
     	[_x] call A3A_fnc_NATOinit;
 	} forEach units _patrolGroup2;
 };
+
 _soldersPatrol append units _patrolGroup1;
 _soldersPatrol append units _patrolVehgroup;
 waitUntil {
     sleep 1;
     (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_spawnPos, 500, 500] isNotEqualTo [] || {dateToNumber date > _dateLimitNum}
 };
+
 [_patrolGroup1, _stolenVehicleSpawnPos, 15] call bis_fnc_taskPatrol;
 [_patrolVehgroup, _stolenVehicleSpawnPos, 15] call bis_fnc_taskPatrol;
+
 if (_difficultX) then {
 	[_patrolGroup2, _stolenVehicleSpawnPos, 15] call bis_fnc_taskPatrol;
 };
+
 private _grpDeserters = createGroup teamPlayer;
 private _unit = objNull;
+
 private _unitTypes = [(_faction get "unitMilitiaGrunt"),(_faction get "unitMilitiaMarksman"),
 (_faction get "unitMilitiaGrenadier"),(_faction get "unitMilitiaSniper"),
 (_faction get "unitMilitiaMedic"),(_faction get "unitCrew"),(_faction get "unitPilot"),
@@ -127,6 +135,7 @@ private _unitTypes = [(_faction get "unitMilitiaGrunt"),(_faction get "unitMilit
 "loadouts_occ_militia_MachineGunner","loadouts_occ_military_MachineGunner","loadouts_occ_elite_MachineGunner","loadouts_occ_militia_Rifleman","loadouts_occ_military_Rifleman",
 "loadouts_occ_elite_Rifleman","loadouts_occ_militia_Marksman","loadouts_occ_military_Marksman","loadouts_occ_elite_Marksman","loadouts_occ_militia_Sniper",
 "loadouts_occ_military_Sniper","loadouts_occ_elite_Sniper"];
+
 for "_i" from 0 to _countX do {
 	_unitRandom = selectRandom _unitTypes;
 	if (_sideX == Occupants) then {
@@ -165,13 +174,14 @@ waitUntil {
 };
 
 {
-_x setCaptive false;
-_x enableAI "MOVE";
-_x enableAI "AUTOTARGET";
-_x enableAI "TARGET";
-_x setUnitPos "UP";
-_x setBehaviour "AWARE";
+	_x setCaptive false;
+	_x enableAI "MOVE";
+	_x enableAI "AUTOTARGET";
+	_x enableAI "TARGET";
+	_x setUnitPos "UP";
+	_x setBehaviour "AWARE";
 } forEach _Deserters;
+
 sleep 30;
 {_x allowDamage true;} forEach _Deserters;
 
@@ -212,7 +222,9 @@ if ({alive _x} count _Deserters == 0) then {
     [(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
 	{[_x] join _grpDeserters; [_x] orderGetin false} forEach _Deserters;
 };
+
 sleep 60;
+
 private _items = [];
 private _ammunition = [];
 private _weaponsX = [];
@@ -225,7 +237,9 @@ private _weaponsX = [];
 	};
 	deleteVehicle _unit;
 } forEach _Deserters;
+
 deleteGroup _grpDeserters;
+
 {boxX addWeaponCargoGlobal [_x,1]} forEach _weaponsX;
 {boxX addMagazineCargoGlobal [_x,1]} forEach _ammunition;
 {boxX addItemCargoGlobal [_x,1]} forEach _items;/// add every item deserter have to the box, current system seems doesn't work

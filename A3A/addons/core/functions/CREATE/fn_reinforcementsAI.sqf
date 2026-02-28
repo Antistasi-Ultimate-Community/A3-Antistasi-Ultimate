@@ -36,18 +36,8 @@ while {killZoneRemove >= 1} do
 
 private _fnc_pickSquadType = {
 	params ["_count", "_faction"];
-	private _groupsTierMedium = if (random 100 <= 40) then {
-	    "groupsTierMedium" 
-	} else {
-	    "groupsTierMediumNoAA" 
-	};
-	private _groupsTierSquads = if (random 100 <= 40) then {
-	    "groupsTierSquads" 
-	} else {
-	    "groupsTierSquadsNoAA" 
-	};
-	if (_numTroops == 8) exitWith { selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
-	selectRandom ([_faction, _groupsTierMedium] call SCRT_fnc_unit_flattenTier);
+	if (_numTroops == 8) exitWith { selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
+	selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier);
 };
 
 {

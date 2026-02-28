@@ -32,23 +32,8 @@ private _FrontlineOutpostPosition = getMarkerPos _FrontlineOutpost;
 
 Info_2("Frontline outpost %1 at %2 will be used as center of the event.", _FrontlineOutpost, str _FrontlineOutpostPosition);
 
-private _specOpsPool = if (random 100 <= 40) then {
-    _faction get "groupSpecOpsRandom" 
-} else {
-    _faction get "groupSpecOpsRandomNoAA" 
-};
-private _specOpsPool2 = if (random 100 <= 40) then {
-    _faction2 get "groupSpecOpsRandom"
-} else {
-    _faction2 get "groupSpecOpsRandomNoAA"
-};
-private _groupsTierSquads = if (random 100 <= 40) then {
-  "groupsTierSquads" 
-} else {
-  "groupsTierSquadsNoAA" 
-};
-private _specOpsArray = if (_difficult) then {selectRandom _specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
-private _specOpsArray2 = if (_difficult2) then {selectRandom _specOpsPool2} else {selectRandom ([_faction2, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
+private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};     ///
+private _specOpsArray2 = if (_difficult2) then {selectRandom (_faction2 get "groupSpecOpsRandom")} else {selectRandom ([_faction2, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
 
 _skirmishposition = [_FrontlineOutpostPosition, distanceSPWN*0.7, distanceSPWN, 10, 0, 10, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos; ///pos player , distance distance spwn
 _skirmishposition2 = [_skirmishposition, 250, 350, 10, 0, 10, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;

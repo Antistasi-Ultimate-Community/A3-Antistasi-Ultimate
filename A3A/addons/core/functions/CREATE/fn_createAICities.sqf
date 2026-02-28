@@ -29,12 +29,7 @@ private _isAAF = true;
 private _params = nil;
 if (_markerX in destroyedSites) then {
 	_isAAF = false;
-	private _specOpsArray = if (random 100 <= 40) then {
-        _faction get "groupSpecOpsRandom" 
-	} else {
-	    _faction get "groupSpecOpsRandomNoAA" 
-	};
-	_params = [_positionX,Invaders, selectRandom _specOpsArray];
+	_params = [_positionX,Invaders, selectRandom (_faction get "groupSpecOpsRandom")];
 } else {
 	_num = round (_num * (_prestigeOPFOR + _prestigeBLUFOR)/100);
 	private _frontierX = [_markerX] call A3A_fnc_isFrontline;

@@ -191,12 +191,7 @@ if (!debug) then {_mrkCrash setMarkerAlphaLocal 0};
 
 //creating guard
 private ["_guard", "_guardWP", "_vehGuard"];
-private _groupsTierSquads = if (random 100 <= 40) then {
-  "groupsTierSquads" 
-} else {
-  "groupsTierSquadsNoAA" 
-};
-_typeGroup = selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier);
+_typeGroup = selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier);
 //if not patrol heli
 if !(_typeVehH in (_faction get "vehiclesHelisLight")) then {
     //spawning guard inf

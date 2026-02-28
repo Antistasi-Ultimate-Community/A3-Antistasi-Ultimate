@@ -32,19 +32,9 @@ private _faction = Faction(_side);
 private _faction2 = Faction(_side2);
 private _FrontlineOutpostPosition = getMarkerPos _FrontlineOutpost;
 
-private _specOpsPool = if (random 100 <= 40) then {
-    _faction get "groupSpecOpsRandom" 
-} else {
-    _faction get "groupSpecOpsRandomNoAA" 
-};
-private _groupsTierSquads = if (random 100 <= 40) then {
-  "groupsTierSquads" 
-} else {
-  "groupsTierSquadsNoAA" 
-};
 Info_2("Frontline outpost %1 at %2 will be used as center of the event.", _FrontlineOutpost, str _FrontlineOutpostPosition);
 
-private _specOpsArray = if (_difficult) then {_specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
+private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
 private _specOpsArray2 = if (_difficult2) then {selectRandom (A3A_faction_riv get "groupsSquad")} else {selectRandom ((A3A_faction_riv get "groupsFireteam") + (A3A_faction_riv get "groupsSentry") + (A3A_faction_riv get "groupsAA") + (A3A_faction_riv get "groupsAT"))};
 
 //(selectRandom ((A3A_faction_riv get "groupsSentry") + (A3A_faction_riv get "groupsAA") + (A3A_faction_riv get "groupsAT"))); //not very good

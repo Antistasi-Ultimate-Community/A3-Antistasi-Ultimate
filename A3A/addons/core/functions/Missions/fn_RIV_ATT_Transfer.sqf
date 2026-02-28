@@ -1,9 +1,13 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 params ["_marker"];
+
 //Mission: Prevent transfer of gear and vehicels to Rivals
+
 if (!isServer and hasInterface) exitWith {};
+
 private _positionX = getMarkerPos _marker;
+
 private _hideoutPosition = [
     _positionX, //center
     0, //minimal distance
@@ -15,17 +19,21 @@ private _hideoutPosition = [
     [], //blacklist positions
     [_positionX, _positionX] //default position
 ] call BIS_fnc_findSafePos;
+
 private _radGrad = [_hideoutPosition, 0] call BIS_fnc_terrainGradAngle;
 private _outOfBounds = _hideoutPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
 private _InvBases = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {sidesX getVariable [_x, sideUnknown] == Invaders};
 private _isTooCloseToOutposts = _InvBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 500 || _hideoutPosition inArea _x } != -1;
 private _CloseToOutposts = _InvBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 1000 || _hideoutPosition inArea _x } != -1;
 private _transferConvoyPossibleSpawnMarkers = _InvBases select {_hideoutPosition distance2d (getMarkerPos _x) < 4000}; //
+
 if (_transferConvoyPossibleSpawnMarkers isEqualTo []) exitWith {
     [[_marker],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
 };
+
 private _transferConvoySpawnPosMarker = selectRandom _transferConvoyPossibleSpawnMarkers;
 private _transferConvoySpawnPos = getMarkerPos _transferConvoySpawnPosMarker;
+
 private _fnc_createLight = {
     params [["_position", []]];
     if (_position isEqualTo []) exitWith {};
@@ -35,6 +43,7 @@ private _fnc_createLight = {
     [_light, [0.3, 0.1, 0.05]] remoteExecCall ["setLightColor", 0, _light];
     _light
 };
+
 Info_1("Prevent transfer task initialization started, marker: %1.", _marker);
 
 private _vehicles = [];
@@ -69,15 +78,20 @@ if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _hideoutPosition || {surf
         _radiusX = _radiusX + 5;
     };
 };
+
 {  
 	[_x, true] remoteExec ["hideObject", 0, true];
 } forEach nearestTerrainObjects [_hideoutPosition, [], 50, false, true];
+
 private _posOrigin = navGrid select ([_transferConvoySpawnPosMarker] call A3A_fnc_getMarkerNavPoint) select 0;
 private _posDest = navGrid select ([_marker] call A3A_fnc_getMarkerNavPoint) select 0;
 private _route = [_posOrigin, _posDest] call A3A_fnc_findPath;
 private _pathState = [];
+
 _route = _route apply { _x select 0 };			// reduce to position array
+
 if (_route isEqualTo []) then { _route = [_posOrigin, _posDest] };
+
 private _fnc_spawnConvoyVehicle = {
     params ["_vehType", "_markName"];//,""
     ServerDebug_1("Spawning vehicle type %1", _vehType);
@@ -102,6 +116,7 @@ private _fnc_spawnConvoyVehicle = {
     _markNames pushBack _markName;
     _veh;
 };
+
 //////////////////////////////////////////////
 //  Task        	                        //
 //////////////////////////////////////////////
@@ -133,21 +148,28 @@ private _lootContainer = nil;
 private _vehObj = nil;
 private _tempVeh = "Land_LampShabby_off_F" createVehicleLocal _hideoutPosition;
 private _atlPos = getPosATL _tempVeh;
+
 deleteVehicle _tempVeh;
+
 private _compositionMap = createHashMapFromArray [
     ["COMP1", SCRT_fnc_composition_rivals1],
     ["COMP2", SCRT_fnc_composition_rivals2],
     ["COMP3", SCRT_fnc_composition_rivals3]
 ];
+
 private _fnc = _compositionMap get (selectRandom ["COMP1", "COMP2", "COMP3"]);
+
 private _objects = [_atlPos, (random 360), (call _fnc)] call BIS_fnc_objectsMapper;
+
 {_x setVectorUp surfaceNormal getPos _x} forEach _objects;
+
 _vehicles append _objects;
 //////////////////////////////////////////////
 //  Loot or Vehicle	with loot               //
 //////////////////////////////////////////////
 private _iterations = 0;
 private _lootContainerPosition = nil;
+
 while {true} do {
     _lootContainerPosition = [
         _hideoutPosition, //center
@@ -163,11 +185,14 @@ while {true} do {
     if (_iterations isEqualTo 50) exitWith {};
     _iterations = _iterations + 1;
 };
+
 private _cacheType = A3A_faction_riv get "ammobox";
+
 private _emptyPos = _lootContainerPosition findEmptyPosition [0, 15, _cacheType];
 if (_emptyPos isNotEqualTo []) then {
     _lootContainerPosition = _emptyPos;
 };
+
 private _direction = random 360;
 //fake loot container for findEmptyPosition as it can't work with dynamic objects
 _lootContainer = ["Land_PaperBox_closed_F", (AGLToASL _lootContainerPosition)] call BIS_fnc_createSimpleObject;
@@ -179,6 +204,7 @@ private _propsPool = [
     "CargoNet_01_box_F",
     "Land_MetalBarrel_F"
 ];
+
 for "_i" from 0 to _propsCount do {
     private _propClass = selectRandom _propsPool;
     private _propPosition = _lootContainerPosition findEmptyPosition [2, 10, _propClass];
@@ -190,6 +216,7 @@ for "_i" from 0 to _propsCount do {
     _prop setVectorUp surfaceNormal getPos _prop;
     _vehicles pushBack _prop;
 };
+
 deleteVehicle _lootContainer;
 _lootContainer = createVehicle [_cacheType, _lootContainerPosition, [], 0 , "CAN_COLLIDE"];
 [_lootContainer] spawn A3A_fnc_fillLootCrate;
@@ -199,12 +226,15 @@ _lootContainerPosition = position _lootContainer;
 // Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
 _lootContainer addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 [_lootContainer] call A3A_Logistics_fnc_addLoadAction;
+
 private _truckClass = selectRandom (A3A_faction_riv get "vehiclesRivalsTrucks");
 private _vehiclePosAndDir = [_lootContainerPosition, _truckClass, 50, true] call SCRT_fnc_common_findSafePositionForVehicle; 
 private _truck = createVehicle [_truckClass, (_vehiclePosAndDir select 0), [], 0 , "CAN_COLLIDE"];
 _truck setDir (_vehiclePosAndDir select 1);
 [_truck, Rivals] call A3A_fnc_AIVEHinit;
+
 _vehicles append [_truck, _lootContainer];
+
 if (_isDifficult) then {
     _truckPosition = position _truck;
     private _prizeClass = selectRandom ((A3A_faction_riv get "vehiclesRivalsLightArmed") + (A3A_faction_riv get "vehiclesRivalsCars") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks") + (A3A_faction_riv get "vehiclesRivalsHelis"));
@@ -219,6 +249,7 @@ Info_1("Loot container on %1 position.", str (position _lootContainer));
 {
     [_x,false] remoteExec ["setCaptive",0,_x];
 } forEach ((call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_hideoutPosition, distanceSPWN1, distanceSPWN1]);
+
 //////////////////////////////////////////////
 //  Patrols 	                            //
 //////////////////////////////////////////////
@@ -231,6 +262,7 @@ if (_isDifficult) then {
     _patrolCount = 2;
     _patrolPool = A3A_faction_riv get "groupsFireteam";
 };
+
 for "_i" from 0 to _patrolCount do {
     private _position = [
         _hideoutPosition, //center
@@ -249,6 +281,7 @@ for "_i" from 0 to _patrolCount do {
     [_patrolGroup, "Patrol_Area", 25, 100, 250, true, _positionX, false] call A3A_fnc_patrolLoop;
     _groups pushBack _patrolGroup;
 };
+
 if (_isDifficult) then {
     private _position = [
         _hideoutPosition, //center
@@ -266,6 +299,7 @@ if (_isDifficult) then {
     [_sentry, _hideoutPosition, 100] call bis_fnc_taskPatrol;
     _groups pushBack _sentry;
 };
+
 //////////////////////////////////////////////
 //  Patrol vehicle 	                        //
 //////////////////////////////////////////////
@@ -274,22 +308,28 @@ private _vehicleClass = if (_isDifficult) then {
 } else {
     selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed");
 };
+
 private _vehiclePosAndDir = [_hideoutPosition, _vehicleClass, 250, true] call SCRT_fnc_common_findSafePositionForVehicle; 
 private _patrolVehicleData = [(_vehiclePosAndDir select 0), 0, _vehicleClass, Rivals] call A3A_fnc_RivalsSpawnVehicle;
 private _patrolVeh = _patrolVehicleData select 0;
 _patrolVeh setDir (_vehiclePosAndDir select 1);
+
 private _patrolVehCrew = _patrolVehicleData select 1;
 private _patrolVehGroup = _patrolVehicleData select 2;
+
 {[_x] call A3A_fnc_NATOinit} forEach _patrolVehCrew;
 [_patrolVeh, Rivals] call A3A_fnc_AIVEHinit;
+
 _groups pushBack _patrolVehGroup;
 _vehicles pushBack _patrolVeh;
 [_patrolVehGroup, _hideoutPosition, 250] call bis_fnc_taskPatrol;
     
-private _vehicletransferClass = if (_isDifficult) then { selectRandom ((_faction get "vehiclesCargoTrucks") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"));
-    } else {
-        selectRandom ((_faction get "vehiclesCargoTrucks") + (A3A_faction_riv get "vehiclesRivalsLightArmed"));
-    }; ///check if vehicle is cargo truck or vehicle to transfer, if cargo truck create or move loot crate to truck.
+private _vehicletransferClass = if (_isDifficult) then { 
+    selectRandom ((_faction get "vehiclesCargoTrucks") + (A3A_faction_riv get "vehiclesRivalsAPCs") + (A3A_faction_riv get "vehiclesRivalsTanks"));
+} else {
+    selectRandom ((_faction get "vehiclesCargoTrucks") + (A3A_faction_riv get "vehiclesRivalsLightArmed"));
+}; ///check if vehicle is cargo truck or vehicle to transfer, if cargo truck create or move loot crate to truck.
+
 private _escortvehicle = if (_isDifficult) then {
     selectRandom ((_faction get "vehiclesLightAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightArmed") + 
     (_faction get "vehiclesTrucks"));
@@ -297,6 +337,7 @@ private _escortvehicle = if (_isDifficult) then {
     selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesTrucks") + (_faction get "vehiclesMilitiaLightArmed") + 
     (_faction get "vehiclesMilitiaCars") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesMilitiaTrucks"));
 }; //check if vehicle is truck, if yes create a group and move in
+
 private _convoylead = if (_isDifficult) then {
     selectRandom ((_faction get "vehiclesLightArmed") + (_faction get "vehiclesTrucks"));
 } else {
@@ -309,17 +350,7 @@ private _markNames = [];
 private _soldiers = [];
         
 private _convoyVehicles = [];
-private _specOpsPool = if (random 100 <= 40) then {
-    _faction get "groupSpecOpsRandom" 
-} else {
-    _faction get "groupSpecOpsRandomNoAA" 
-};
-private _groupsTierSquads = if (random 100 <= 40) then {
-  "groupsTierSquads" 
-} else {
-  "groupsTierSquadsNoAA" 
-};
-private _specOpsArray = if (_difficult) then {selectRandom _specOpsPool} else {selectRandom ([_faction, _groupsTierSquads] call SCRT_fnc_unit_flattenTier)};
+private _specOpsArray = if (_isDifficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
 private _vehEscort = [_escortvehicle, "Escort vehicle"] call _fnc_spawnConvoyVehicle;
 if (_escortvehicle in FactionGet(all,"vehiclesArmor")) then { _vehEscort allowCrewInImmobile true };			// move this to AIVEHinit at some point?
     

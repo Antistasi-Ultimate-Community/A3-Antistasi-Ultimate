@@ -191,31 +191,26 @@ if (_isControl) then
 else
 {
 	_markersX = markersX select {(getMarkerPos _x distance _positionX < distanceSPWN) and (sidesX getVariable [_x,sideUnknown] == teamPlayer)};
-	_markersX = _markersX - ["Synd_HQ"] - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;
-	_frontierX = if (count _markersX > 0) then {true} else {false};
-	if (_frontierX) then
-	{
-		private _specOpsArray = if (random 100 <= 40) then {
-    	    _faction get "groupSpecOpsRandom" 
-		} else {
-		    _faction get "groupSpecOpsRandomNoAA" 
-		};
-		_cfg = selectRandom _specOpsArray;
-		if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then
-		{
-			_sideX = Occupants;
-		};
-		_size = [_markerX] call A3A_fnc_sizeMarker;
-		if ({if (_x inArea _markerX) exitWith {1}} count allMines == 0) then
-		{
-			Debug_1("Creating a Minefield at %1", _markerX);
-			private _mines = (_faction get "minefieldAPERS");
-			for "_i" from 1 to 45 do {
-				_mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
-				_sideX revealMine _mineX;
-			};
-		};
-		_groupX = [_positionX,_sideX, _cfg] call A3A_fnc_spawnGroup;
+    _markersX = _markersX - ["Synd_HQ"] - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;
+    _frontierX = if (count _markersX > 0) then {true} else {false};
+    if (_frontierX) then
+    {
+        _cfg =  selectRandom (_faction get "groupSpecOpsRandom");
+        if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then
+        {
+            _sideX = Occupants;
+        };
+        _size = [_markerX] call A3A_fnc_sizeMarker;
+        if ({if (_x inArea _markerX) exitWith {1}} count allMines == 0) then
+        {
+            Debug_1("Creating a Minefield at %1", _markerX);
+            private _mines = (_faction get "minefieldAPERS");
+            for "_i" from 1 to 45 do {
+                _mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
+                _sideX revealMine _mineX;
+            };
+        };
+        _groupX = [_positionX,_sideX, _cfg] call A3A_fnc_spawnGroup;
 
         [_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
         _groups pushBack _groupX;

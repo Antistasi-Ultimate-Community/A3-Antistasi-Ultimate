@@ -155,13 +155,6 @@ if (_prefix in ["occ", "inv"]) exitWith {
         _faction get "groupTierAT"
     ]];
 
-    _faction set ["groupsTierMediumNoAA", [
-        _fireteams,
-        _sniperTeams,
-        _faction get "groupTierAT", 
-        _faction get "groupTierAT"
-    ]];
-
     _faction set ["groupsTierAirborne", [
         _fireteams,
         [
@@ -214,43 +207,6 @@ if (_prefix in ["occ", "inv"]) exitWith {
     };
     _faction set ["groupsTierSquads", _squads];
 
-    private _squadsNoAA = [];
-    for "_i" from 1 to 5 do {
-       _squadsNoAA pushBack [
-            [
-                unit(militia, "SquadLeader"),
-                selectRandomWeighted [unit(militia, "LAT"), 2, unit(militia, "MachineGunner"), 1],
-                selectRandomWeighted [unit(militia, "Rifleman"), 1.25, unit(militia, "Grenadier"), 1],
-                selectRandomWeighted [unit(militia, "MachineGunner"), 2, unit(militia, "Marksman"), 1],
-                selectRandomWeighted [unit(militia, "LAT"), 2, unit(militia, "AT"), 1],
-                selectRandomWeighted [unit(militia, "LAT"), 1, unit(militia, "Rifleman"), 3],
-                selectRandomWeighted [unit(militia, "Rifleman"), 2, unit(militia, "Radioman"), 1],
-                unit(militia, "Medic")
-            ],
-            [
-                unit(military, "SquadLeader"),
-                selectRandomWeighted [unit(military, "LAT"), 2, unit(military, "MachineGunner"), 1],
-                selectRandomWeighted [unit(military, "Rifleman"), 1, unit(military, "Grenadier"), 1],
-                selectRandomWeighted [unit(military, "MachineGunner"), 2, unit(military, "Marksman"), 1],
-                selectRandomWeighted [unit(military, "LAT"), 1.5, unit(military, "AT"), 1.25],
-                selectRandomWeighted [unit(military, "LAT"), 1, unit(military, "Rifleman"), 3],
-                selectRandomWeighted [unit(military, "Rifleman"), 1.5, unit(military, "Radioman"), 1],
-                unit(military, "Medic")
-            ],
-            [
-                unit(elite, "SquadLeader"),
-                selectRandomWeighted [unit(elite, "LAT"), 2, unit(elite, "MachineGunner"), 1],
-                selectRandomWeighted [unit(elite, "Rifleman"), 1.25, unit(elite, "Grenadier"), 1],
-                selectRandomWeighted [unit(elite, "MachineGunner"), 2, unit(elite, "Marksman"), 1],
-                selectRandomWeighted [unit(elite, "LAT"), 1, unit(elite, "AT"), 1.5],
-                selectRandomWeighted [unit(elite, "LAT"), 1, unit(elite, "Rifleman"), 2],
-                selectRandomWeighted [unit(elite, "Rifleman"), 1, unit(elite, "Radioman"), 1],
-                unit(elite, "Medic")
-            ]
-        ];
-    };
-    _faction set ["groupsTierSquadsNoAA", _squadsNoAA];//
-
     //compatibility with loadStat as it can't use tier flattener
     _faction set ["groupLoadStatReplacement", [
         unit(military, "SquadLeader"),
@@ -261,19 +217,6 @@ if (_prefix in ["occ", "inv"]) exitWith {
         unit(military, "LAT"),
         unit(military, "AT"),
         unit(military, "AA"),
-        unit(military, "Radioman"),
-        unit(military, "Medic")
-    ]];
-
-    _faction set ["groupLoadStatReplacementNoAA", [
-        unit(military, "SquadLeader"),
-        unit(military, "LAT"),
-        unit(military, "MachineGunner"),
-        unit(military, "Rifleman"),
-        unit(military, "Grenadier"),
-        unit(military, "LAT"),
-        unit(military, "AT"),
-        unit(military, "LAT"),
         unit(military, "Radioman"),
         unit(military, "Medic")
     ]];
@@ -301,29 +244,6 @@ if (_prefix in ["occ", "inv"]) exitWith {
 
     _faction set ["groupSpecOpsRandom", _specOpsRandom];
     //_faction set ["groupSpecOpsSniper", [unit(SF, "Sniper"), unit(SF, "Rifleman")]];
-
-    private _specOpsRandomNoAA = [];
-    for "_i" from 1 to 6 do {
-        _specOpsRandomNoAA pushBack [
-            unit(SF, "SquadLeader"),
-            unit(SF, "Rifleman"),
-            unit(SF, "Radioman"),
-            selectRandom [unit(SF, "Grenadier"), unit(SF, "MachineGunner")],
-            selectRandomWeighted [unit(SF, "LAT"), 2, unit(SF, "AT"), 1],
-            unit(SF, "Medic"),
-            selectRandomWeighted [unit(SF, "Marksman"), 2, unit(SF, "Sniper"), 1],
-            selectRandom [
-                unit(SF, "ExplosivesExpert")
-                , unit(SF, "LAT")
-                , unit(SF, "Grenadier")
-                , unit(SF, "Sniper")
-                , unit(SF, "Engineer")
-                , unit(SF, "MachineGunner")
-            ]
-        ];
-    };
-
-    _faction set ["groupSpecOpsRandomNoAA", _specOpsRandomNoAA];
 
     //militia
     _faction set ["groupsMilitiaSmall", [
