@@ -13953,7 +13953,7 @@
             <Key ID="STR_A3A_punishment_client_notification">
                 <Original>Please do not teamkill. Stare at the turtles for %1 more seconds.</Original>
                 <Russian>Пожалуйста, не убивай своих больше. Пока попялься на черепашек ещё %1 секунд.</Russian>
-                <Chinesesimp>请勿击杀队友。请继续盯着乌龟看 %1 秒。</Chinesesimp>
+                <Chinesesimp>请勿击杀队友。继续盯着乌龟看 %1 秒。</Chinesesimp>
                 <Korean>팀킬을 하지 마십시오. %1초 동안 거북이나 보고 있으십시오.</Korean>
                 <French>S'il vous plaît, ne tuez plus les vôtres. Pendant que vous survolez les tortues pendant encore %1 secondes.</French>
             </Key>
