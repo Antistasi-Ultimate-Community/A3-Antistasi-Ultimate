@@ -1,3 +1,5 @@
+#include "..\defines.inc"
+
 params ["_thingX"];
 
 private _playerX = player;
@@ -19,8 +21,8 @@ _thingX attachTo [_playerX, [0, _spacing, _height]];
 private _fnc_placeObject = {
 	params [["_thingX", objNull], ["_playerX", objNull], ["_dropObjectActionIndex", -1]];
 
-	if (isNull _thingX) exitWith {diag_log "[Antistasi] Error, trying to place invalid object"};
-	if (isNull _playerX) exitWith {diag_log "[Antistasi] Error, trying to place object with invalid player"};
+	if (isNull _thingX) exitWith {Error("Error, trying to place invalid object")};
+	if (isNull _playerX) exitWith {Error("Error, trying to place object with invalid player")};
 
 	if (!(_thingX getVariable ["objectBeingMoved", false])) exitWith {};
 

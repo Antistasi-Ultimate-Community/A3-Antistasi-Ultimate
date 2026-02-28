@@ -1,0 +1,290 @@
+// Please for the love of god, use Allman indentation in massive config files like this. It's damn near impossible to decipher classes in K&R
+
+// Helipads
+class Helipad_base_F;
+class A3AU_RebHelipad_base_F: Helipad_base_F 
+{
+    accuracy = 1000;
+    author = AUTHOR;
+    authors[] = {"wersal454", "UnseenKill"};
+
+    EGVAR(core,restorePriority) = 95;
+    EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+    EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+
+    class EGVAR(core,Properties) 
+    {
+        actions[] = {"terrainCleaner", "terrainSmootherExperimental"};
+        cleanRadius = 30;
+        cleanTerrainTypes[] = {};
+        smoothRadius[] = {40, 70}; // <main zone>,<smoothing zone>
+    };
+};
+class A3AU_RebHelipad_Circle_F: A3AU_RebHelipad_base_F 
+{
+    scope = 2;
+    scopeCurator = 2;
+
+    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0;
+    editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadCircle_F.jpg";
+    model = "\A3\Structures_F\Mil\Helipads\HelipadCircle_F.p3d";
+};
+class A3AU_RebHelipad_Square_F: A3AU_RebHelipad_base_F 
+{
+    scope = 2;
+    scopeCurator = 2;
+
+    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0;
+    editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadSquare_F.jpg";
+    mapSize = 11.92;
+    model = "\A3\Structures_F\Mil\Helipads\HelipadSquare_F.p3d";
+    icon = "iconObject_1x1";
+};
+
+// Terrain Smoothers
+class Land_Shovel_F;
+class A3AU_TerrainSmoother_Base_F: Land_Shovel_F 
+{
+    scope = 0; // Hide from editor
+    scopeCurator = 0; // Hide from Zeus
+    displayName = "Terrain Smoother Base";
+    author = AUTHOR;
+    authors[] = {"wersal454", "UnseenKill"};
+    model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
+
+    EGVAR(core,isBuilding) = 1;
+    EGVAR(core,restorePriority) = 100;
+    EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+    EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+
+    class EGVAR(core,Properties) 
+    {
+        actions[] = {"terrainSmoother", "hideObject"};
+        previewShape = "ellipse"; // ellipse or rectangle
+        smoothRadius[] = {0, 0}; // <main zone>,<smoothing zone>
+    };
+};
+class A3AU_TerrainSmoother_VerySmall_F: A3AU_TerrainSmoother_Base_F 
+{
+    scope = 2;
+    displayName = "Terrain Smoother (4 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        previewWidth = 4;
+        previewHeight = 4;
+        smoothRadius[] = {4, 8};
+    };
+};
+class A3AU_TerrainSmoother_Small_F: A3AU_TerrainSmoother_Base_F 
+{
+    scope = 2;
+    displayName = "Terrain Smoother (8 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        previewWidth = 8;
+        previewHeight = 8;
+        smoothRadius[] = {8, 16};
+    };
+};
+class A3AU_TerrainSmoother_Medium_F: A3AU_TerrainSmoother_Base_F 
+{
+    scope = 2;
+    displayName = "Terrain Smoother (15 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        previewWidth = 15;
+        previewHeight = 15;
+        smoothRadius[] = {15, 27};
+    };
+};
+class A3AU_TerrainSmoother_Large_F: A3AU_TerrainSmoother_Base_F 
+{
+    scope = 2;
+    displayName = "Terrain Smoother (30 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        previewWidth = 30;
+        previewHeight = 30;
+        smoothRadius[] = {30, 42};
+    };
+};
+
+// Vegetation Cleaner
+class Land_Axe_F;
+class A3AU_VegetationCleaner_Base_F: Land_Axe_F 
+{
+    scope = 0; // Hide from editor
+    scopeCurator = 0; // Hide from Zeus
+    displayName = "Vegetation Cleaner Base";
+    author = AUTHOR;
+    authors[] = {"wersal454", "UnseenKill"};
+    model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
+
+    EGVAR(core,isBuilding) = 1;
+    EGVAR(core,restorePriority) = 100;
+    EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+    EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+
+    class EGVAR(core,Properties) 
+    {
+        actions[] = {"terrainCleaner", "hideObject"};
+        cleanRadius = 0;
+        cleanTerrainTypes[] = {"ROCKS", "ROCK", "TREE", "BUSH", "SMALL TREE", "HIDE"};
+        previewShape = "ellipse"; // ellipse or rectangle
+    };
+};
+class A3AU_VegetationCleaner_VerySmall_F: A3AU_VegetationCleaner_Base_F 
+{
+    scope = 2;
+    displayName = "Vegetation Cleaner (4 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 4;
+        previewWidth = 4;
+        previewHeight = 4;
+    };
+};
+class A3AU_VegetationCleaner_Small_F: A3AU_VegetationCleaner_Base_F 
+{
+    scope = 2;
+    displayName = "Vegetation Cleaner (8 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 8;
+        previewWidth = 8;
+        previewHeight = 8;
+    };
+};
+class A3AU_VegetationCleaner_Medium_F: A3AU_VegetationCleaner_Base_F 
+{
+    scope = 2;
+    displayName = "Vegetation Cleaner (15 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 15;
+        previewWidth = 15;
+        previewHeight = 15;
+    };
+};
+class A3AU_VegetationCleaner_Large_F: A3AU_VegetationCleaner_Base_F 
+{
+    scope = 2;
+    displayName = "Vegetation Cleaner (30 m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 30;
+        previewWidth = 30;
+        previewHeight = 30;
+    };
+};
+
+// Base Builders
+class Land_ButaneTorch_F;
+class GVAR(BB_TerrainObjectHider_Base) : Land_ButaneTorch_F 
+{ // BB -> base builder
+    scope = 0; // Hide from editor
+    scopeCurator = 0; // Hide from Zeus
+    displayName = "Terrain Cleaner Base";
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+    model = "\A3\Structures_F_Bootcamp\VR\Helpers\VR_3DSelector_01_F.p3d";
+
+    EGVAR(core,isBuilding) = 1;
+    EGVAR(core,restorePriority) = 90;
+    EGVAR(core,onBuildingCompleted) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+    EGVAR(core,onBuildingLoaded) = QUOTE(call A3A_fnc_handlerTerrainManipulator);
+
+    class EGVAR(core,Properties) 
+    {
+        actions[] = {"terrainCleaner", "hideObject"};
+        cleanRadius = 0;
+        cleanTerrainTypes[] = {};
+        previewShape = "ellipse"; // ellipse or rectangle
+    };
+
+    class EventHandlers 
+    {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+    };
+};
+class GVAR(BB_TerrainObjectHider_Circle4x4) : GVAR(BB_TerrainObjectHider_Base) 
+{
+    scope = 2;
+    displayName = "Terrain Cleaner (4m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 4;
+        previewWidth = 4;
+        previewHeight = 4;
+    };
+};
+class GVAR(BB_TerrainObjectHider_Circle8x8) : GVAR(BB_TerrainObjectHider_Base) 
+{
+    scope = 2;
+    displayName = "Terrain Cleaner (8m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 8;
+        previewWidth = 8;
+        previewHeight = 8;
+    };
+};
+class GVAR(BB_TerrainObjectHider_Circle15x15) : GVAR(BB_TerrainObjectHider_Base) 
+{
+    scope = 2;
+    displayName = "Terrain Cleaner (15m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 15;
+        previewWidth = 15;
+        previewHeight = 15;
+    };
+};
+class GVAR(BB_TerrainObjectHider_Circle30x30) : GVAR(BB_TerrainObjectHider_Base)
+{
+    scope = 2;
+    displayName = "Terrain Cleaner (30m)";
+
+    class EGVAR(core,Properties): EGVAR(core,Properties) 
+    {
+        cleanRadius = 30;
+        previewWidth = 30;
+        previewHeight = 30;
+    };
+};
+
+// Redirect AI to bunch up here
+class FlagCarrierCore;
+class FlagCarrier: FlagCarrierCore
+{
+    EGVAR(core,aiBunchUpPriority) = 1;
+};
+
+class Land_Noticeboard_F;
+class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F 
+{
+    scope = 2;
+    displayName = "Garrison Assembly Area Sign";
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+    hiddenSelectionsTextures[] = {QPATHTOFOLDER(data\a3a_BaseAssemblyAreaSign.paa)};
+
+    EGVAR(core,aiBunchUpPriority) = 100; // Higher than FlagCarrier so AI will prefer to bunch up here instead of the flag
+    EGVAR(core,buildingPlacerVectorUp)[] = {0,0,1};
+
+    class EventHandlers 
+    {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+    };
+};

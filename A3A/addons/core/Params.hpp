@@ -153,6 +153,9 @@ class Params
     {
         type = "Member";
         title = $STR_params_member;
+        values[] = {""};
+        texts[] = {""};
+        default = "";
         lockInGame = 1;
     };
     class membershipEnabled: MemberParams
@@ -1110,6 +1113,16 @@ class Params
     class enableVehicleAutoLock: VehicleLootParams
     {
         title = $STR_params_enableVehicleAutoLock;
+        tooltip = $STR_params_enableVehicleAutoLock_desc;
+        values[] = {0,1};
+        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        default = 1;
+        lockInGame = 1;
+    };
+    class enableVehicleAutoLockCiv: VehicleLootParams
+    {
+        title = $STR_params_enableVehicleAutoLockCiv;
+        tooltip = $STR_params_enableVehicleAutoLockCiv_desc;
         values[] = {0,1};
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
         default = 1;
@@ -1175,18 +1188,34 @@ class Params
         default = "";
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
+    class loadoutArsenalDefaultOverride : ExperimentalParams
+    {
+        title = $STR_params_loadoutArsenalDefaultOverride;
+        tooltip = $STR_params_loadoutArsenalDefaultOverride_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
     class limitWeaponsByUnitType : ExperimentalParams
     {
         title = $STR_params_limitWeaponsByUnitType;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 1;
+        default = 0;
     };
     class A3U_HelipadTerrainSmoothing: ExperimentalParams
     {
         title = $STR_params_helipadTerrainSmoothing;
         values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class A3A_diameterExtendedCaptureArea: ExperimentalParams
+    {
+        title = $STR_A3A_Params_diameterExtendedCaptureArea_title;
+        tooltip = $STR_A3A_Params_diameterExtendedCaptureArea_tooltip;
+        values[] = {0,150,250,300,350,400,450,500};
+        texts[] = {$STR_A3A_Params_diameterExtendedCaptureArea_traditional, "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
         default = 0;
     };
     class unconChanceEny : ExperimentalParams
@@ -1204,6 +1233,49 @@ class Params
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         default = 10;
+    };
+    class A3U_enableVehiclesForAI : ExperimentalParams
+    {
+        title = $STR_params_enableVehiclesForAI;
+        tooltip = $STR_params_enableVehiclesForAI_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+        lockInGame = 1;
+    };
+    class A3U_disablePATCOMMortars : ExperimentalParams
+    {
+        title = $STR_params_disablePATCOMMortars;
+        tooltip = $STR_params_disablePATCOMMortars_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+        lockInGame = 1;
+    };
+    class A3U_disableMortars : ExperimentalParams
+    {
+        title = $STR_params_disableMortars;
+        tooltip = $STR_params_disableMortars_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+        lockInGame = 0;
+    };
+    class EGVAR(ultimate,allowLockpickKits) : ExperimentalParams
+    {
+        title = $STR_params_ultimate_allowLockpickKits;
+        tooltip = $STR_params_ultimate_allowLockpickKits_Tooltip;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
+    class EGVAR(ultimate,lockpickKitBreakChance) : ExperimentalParams
+    {
+        title = $STR_params_ultimate_lockpickKitBreakChance;
+        tooltip = $STR_params_ultimate_lockpickKitBreakChance_Tooltip;
+        values[] = {0, 10, 20, 25, 30, 40, 50};
+        texts[] = {"0%", "10%", "20%", "25%", "30%", "40%", "50%"};
+        default = 25;
     };
 
     class DevelopmentParamsSpacer : AllParams
@@ -1231,5 +1303,15 @@ class Params
         values[] = {-1,1,2};
         texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
         default = 1;
+    };
+
+    // * Ported from community, deliberately not categorized in Ultimate so it's not shown, and default changed to 0 to disable for now to preserve our existing behavior
+    // * only included here to not break A3A_fnc_manageFlagAccess
+    class A3A_flagGarageBlock
+    {
+        title = $STR_A3A_Params_garageAccessTimer_title;
+        values[] = {0,3,5,10,20};
+        texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
+        default = 0;
     };
 };
