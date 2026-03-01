@@ -1,3 +1,7 @@
+params [
+    ["_quickMarker", "", [""]]
+];
+
 private _markersX = markersX + [respawnTeamPlayer];
 
 // private _titleStr = localize "STR_A3A_fn_dialogs_ftradio_title";
@@ -60,7 +64,16 @@ positionTel = [];
 [localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_click"] call A3A_fnc_customHint;
 if (!visibleMap) then {openMap true};
 showCommandingMenu "";
-onMapSingleClick "positionTel = _pos; true";
+if !(_quickMarker == "") then {
+	private _quickMarkerPosition = getMarkerPos _quickMarker;
+
+	_quickMarkerPosition set [0, (_quickMarkerPosition select 0) + 0.1];
+	_quickMarkerPosition set [1, (_quickMarkerPosition select 1) + 0.1];
+	// I have to add a slight offset because this shit will take a different marker if its set exactly on the marker i want to tp to....
+	positionTel = _quickMarkerPosition;
+} else {
+	onMapSingleClick "positionTel = _pos; true";
+};
 
 waitUntil {sleep 1; (count positionTel > 0) or {not visiblemap}};
 onMapSingleClick "";
