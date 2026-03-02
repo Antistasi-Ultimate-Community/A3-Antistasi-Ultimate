@@ -46,6 +46,7 @@ _updateList = {
 //find node point and seats
 private _nodeOffset = [0,0,0];
 private _seats = [];
+private _turrets = [];
 
 if ((_node#0) isEqualType []) then {
     //offset
@@ -55,9 +56,10 @@ if ((_node#0) isEqualType []) then {
     private _diff = _offsetOne vectorDiff _offsetTwo;
     _nodeOffset = _offsetTwo vectorAdd [0,(_diff#1)/2,0];
 
-    //seats
+    //seats & turrets
     {
         _seats append (_x#2);
+        _turrets append (_x#3);
     } forEach _node;
 
     //update cargo list
@@ -69,6 +71,8 @@ if ((_node#0) isEqualType []) then {
     _nodeOffset = (_node#1);
     //seats
     _seats append (_node#2);
+    //turrets
+    _turrets append (_node#3);
     //update list
     [_vehicle , _node] call _updateList;
 };
@@ -89,9 +93,9 @@ private _yStart = _bbVehicle + _bbCargo - 0.1;
 private _yEnd = _location#1;
 _cargo setVariable ["AttachmentOffset", _location];
 
-//block seats
+//block seats & turrets
 [_cargo, true] remoteExec ["A3A_Logistics_fnc_toggleLock", 0, "A3A_Logistics_toggleLock" + _objStringCargo];
-[_vehicle, true, _seats] remoteExecCall ["A3A_Logistics_fnc_toggleLock", 0, "A3A_Logistics_toggleLock" + _objStringVehicle];
+[_vehicle, true, [_seats, _turrets]] remoteExecCall ["A3A_Logistics_fnc_toggleLock", 0, "A3A_Logistics_toggleLock" + _objStringVehicle];
 _cargo engineOn false;
 
 //break undercover

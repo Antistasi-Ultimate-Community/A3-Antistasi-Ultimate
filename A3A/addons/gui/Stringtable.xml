@@ -15,7 +15,7 @@
                 <Chinesesimp>招募单位</Chinesesimp>
                 <Korean>유닛 모집</Korean>
                 <Japanese>新兵部隊</Japanese>
-                <Turkish>YENI PERSONEL BIRIMLERI</Turkish>
+                <Turkish>YENI BİRİM AL</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_militiaman">
                 <Original>Militiaman</Original>
@@ -27,6 +27,7 @@
                 <Italian>Miliziano</Italian>
                 <Spanish>Milicianos</Spanish>
                 <Polish>Milicjant</Polish>
+                <Turkish>Yerel Milis</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_autorifleman">
                 <Original>Autorifleman</Original>
@@ -38,6 +39,7 @@
                 <Italian>Fuciliere Automatico</Italian>
                 <Spanish>Ametrallador</Spanish>
                 <Polish>Celowniczy KM</Polish>
+                <Turkish>Otomatik Nişancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_medic">
                 <Original>Medic</Original>
@@ -49,6 +51,7 @@
                 <Italian>Medico</Italian>
                 <Spanish>Medico</Spanish>
                 <Polish>Sanitariusz</Polish>
+                <Turkish>Sıhhiyeci</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_engineer">
                 <Original>Engineer</Original>
@@ -60,6 +63,7 @@
                 <Italian>Ingegnere</Italian>
                 <Spanish>Ingeniero</Spanish>
                 <Polish>Inżynier</Polish>
+                <Turkish>Mühendis</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_bomb_specialist">
                 <Original>Sapper</Original>
@@ -71,6 +75,7 @@
                 <Italian>Specialista Esplosivi</Italian>
                 <Spanish>Artificiero</Spanish>
                 <Polish>Saper</Polish>
+                <Turkish>Mayın Uzmanı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_grenadier">
                 <Original>Grenadier</Original>
@@ -82,6 +87,7 @@
                 <Italian>Granatiere</Italian>
                 <Spanish>Granadero</Spanish>
                 <Polish>Grenadier</Polish>
+                <Turkish>Bombacı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_marksman">
                 <Original>Marksman</Original>
@@ -93,6 +99,7 @@
                 <Italian>Tiratore Scelto</Italian>
                 <Spanish>Tirador</Spanish>
                 <Polish>Strzelec Wyborowy</Polish>
+                <Turkish>Nişancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_units_antitank">
                 <Original>Antitank</Original>
@@ -104,6 +111,7 @@
                 <Italian>Fuciliere Anti-Carro</Italian>
                 <Spanish>Antitanque</Spanish>
                 <Polish>Celowniczy PPANC</Polish>
+                <Turkish>Tank Savar</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main">
@@ -117,6 +125,7 @@
                 <Italian>OPZIONI DI BATTAGLIA</Italian>
                 <Spanish>OPCIONES DE BATALLA</Spanish>
                 <Polish>OPCJE BITWY</Polish>
+                <Turkish>SAVAŞ SEÇENEKLERİ</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_player_tab_button">
                 <Original>Player</Original>
@@ -128,6 +137,7 @@
                 <Italian>Giocatore</Italian>
                 <Spanish>Jugador</Spanish>
                 <Polish>Gracz</Polish>
+                <Turkish>Oyuncu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_tab_button">
                 <Original>Commander</Original>
@@ -139,6 +149,7 @@
                 <Italian>Comandante</Italian>
                 <Spanish>Comandante</Spanish>
                 <Polish>Dowódca</Polish>
+                <Turkish>Komutan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tab_button">
                 <Original>Admin</Original>
@@ -150,6 +161,7 @@
                 <Italian>Moderatore</Italian>
                 <Spanish>Administrador</Spanish>
                 <Polish>Admin</Polish>
+                <Turkish>Admin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_tab_disabled_tooltip">
                 <Original>Only the commander can access the commander tab</Original>
@@ -161,6 +173,7 @@
                 <Italian>Solo il comandante può accedere al menu comandante</Italian>
                 <Spanish>Solo el comandante puede acceder a la ficha del comandante</Spanish>
                 <Polish>Tylko dowódca ma dostęp do zakładki dowódcy</Polish>
+                <Turkish>Bu sekmeye sadece komutan erişim sağlayabilir</Turkish>
             </Key>
         </Container>
         <Container name="dialog_recruit_squad">
@@ -174,6 +187,7 @@
                 <Italian>RECLUTA SQUADRA</Italian>
                 <Spanish>RECLUTAR ESCUADRA</Spanish>
                 <Polish>ZWERBUJ ODDZIAŁ</Polish>
+                <Turkish>MANGA KUR</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_inf_squad">
                 <Original>Inf. Squad</Original>
@@ -185,6 +199,7 @@
                 <Italian>Squadra di Fant.</Italian>
                 <Spanish>Escuadra de Inf.</Spanish>
                 <Polish>Oddział Piechoty</Polish>
+                <Turkish>Piyade Mangası</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_inf_team">
                 <Original>Inf. Team</Original>
@@ -196,6 +211,7 @@
                 <Italian>Team di Fant.</Italian>
                 <Spanish>Equipo de inf.</Spanish>
                 <Polish>Drużyna Piechoty</Polish>
+                <Turkish>Piyade Takımı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_at_team">
                 <Original>AT Team</Original>
@@ -207,6 +223,7 @@
                 <Italian>Team Anti-Carro</Italian>
                 <Spanish>Equipo AT</Spanish>
                 <Polish>Drużyna PPANC</Polish>
+                <Turkish>AT Takımı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_mg_team">
                 <Original>MG Team</Original>
@@ -218,6 +235,7 @@
                 <Italian>Team MG</Italian>
                 <Spanish>Equipo de Ametralladora</Spanish>
                 <Polish>Drużyna KM</Polish>
+                <Turkish>MG Takımı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_mortar_team">
                 <Original>Mortar Team</Original>
@@ -229,6 +247,7 @@
                 <Italian>Team Mortaio</Italian>
                 <Spanish>Equipo de Mortero</Spanish>
                 <Polish>Drużyna z Moździerzem</Polish>
+                <Turkish>Havan Takımı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_sniper_team">
                 <Original>Sniper Team</Original>
@@ -240,6 +259,7 @@
                 <Italian>Team di Cecchini</Italian>
                 <Spanish>Equipo de Tiradores</Spanish>
                 <Polish>Dwójka Snajperska</Polish>
+                <Turkish>K.Nişancı Takımı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_at_car">
                 <Original>AT Car</Original>
@@ -251,6 +271,7 @@
                 <Italian>Auto Anti-Carro</Italian>
                 <Spanish>Coche AT</Spanish>
                 <Polish>Pojazd PPANC</Polish>
+                <Turkish>AT Araba</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_aa_truck">
                 <Original>AA Truck</Original>
@@ -262,6 +283,7 @@
                 <Italian>Camion Anti-Aereo</Italian>
                 <Spanish>Camión AA</Spanish>
                 <Polish>Pojazd PLOT</Polish>
+                <Turkish>AA Kamyon</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_recruit_squad_include_vehicle_label">
                 <Original>Include vehicle</Original>
@@ -273,6 +295,7 @@
                 <Italian>Includi veicolo</Italian>
                 <Spanish>Incluir vehículo</Spanish>
                 <Polish>Uwzględnij Pojazd</Polish>
+                <Turkish>Araç ekle</Turkish>
             </Key>
         </Container>
         <Container name="dialogs_generic">
@@ -286,6 +309,7 @@
                 <Italian>Sì</Italian>
                 <Spanish>SI</Spanish>
                 <Polish>Tak</Polish>
+                <Turkish>Evet</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_no">
                 <Original>No</Original>
@@ -297,6 +321,7 @@
                 <Italian>No</Italian>
                 <Spanish>NO</Spanish>
                 <Polish>Nie</Polish>
+                <Turkish>Hayır</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_days">
                 <Original>days</Original>
@@ -308,6 +333,7 @@
                 <Italian>giorni</Italian>
                 <Spanish>días</Spanish>
                 <Polish>dni</Polish>
+                <Turkish>günler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_hours">
                 <Original>hours</Original>
@@ -319,6 +345,7 @@
                 <Italian>ore</Italian>
                 <Spanish>horas</Spanish>
                 <Polish>godziny</Polish>
+                <Turkish>saatler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_minutes">
                 <Original>minutes</Original>
@@ -330,6 +357,7 @@
                 <Italian>minuti</Italian>
                 <Spanish>minutos</Spanish>
                 <Polish>minuty</Polish>
+                <Turkish>dakikalar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_seconds">
                 <Original>seconds</Original>
@@ -341,6 +369,7 @@
                 <Italian>secondi</Italian>
                 <Spanish>segundos</Spanish>
                 <Polish>sekundy</Polish>
+                <Turkish>saniyeler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_day">
                 <Original>day</Original>
@@ -352,6 +381,7 @@
                 <Italian>giorno</Italian>
                 <Spanish>día</Spanish>
                 <Polish>dzień</Polish>
+                <Turkish>gün</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_hour">
                 <Original>hour</Original>
@@ -363,6 +393,7 @@
                 <Italian>ora</Italian>
                 <Spanish>horas</Spanish>
                 <Polish>godzina</Polish>
+                <Turkish>saat</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_minute">
                 <Original>minute</Original>
@@ -374,6 +405,7 @@
                 <Italian>minuto</Italian>
                 <Spanish>minutos</Spanish>
                 <Polish>minuta</Polish>
+                <Turkish>dakika</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_second">
                 <Original>second</Original>
@@ -385,6 +417,7 @@
                 <Italian>secondo</Italian>
                 <Spanish>segundos</Spanish>
                 <Polish>sekunda</Polish>
+                <Turkish>saniye</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_days_short">
                 <Original>d</Original>
@@ -396,6 +429,7 @@
                 <Italian>g</Italian>
                 <Spanish>d</Spanish>
                 <Polish>d</Polish>
+                <Turkish>g</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_hours_short">
                 <Original>h</Original>
@@ -407,6 +441,7 @@
                 <Italian>o</Italian>
                 <Spanish>h</Spanish>
                 <Polish>h</Polish>
+                <Turkish>s</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_minutes_short">
                 <Original>m</Original>
@@ -418,6 +453,7 @@
                 <Italian>m</Italian>
                 <Spanish>m</Spanish>
                 <Polish>m</Polish>
+                <Turkish>dk</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_seconds_short">
                 <Original>s</Original>
@@ -429,6 +465,7 @@
                 <Italian>s</Italian>
                 <Spanish>s</Spanish>
                 <Polish>s</Polish>
+                <Turkish>sn</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_generic_aggression">
                 <Original>aggression</Original>
@@ -440,6 +477,7 @@
                 <Italian>aggressione</Italian>
                 <Spanish>agresión</Spanish>
                 <Polish>agresja</Polish>
+                <Turkish>saldırganlık</Turkish>
             </Key>
         </Container>
         <Container name="dialog_load_last_save">
@@ -453,6 +491,7 @@
                 <Italian>CARICARE L'ULTIMO SALVATAGGIO?</Italian>
                 <Spanish>¿CARGAR ÚLTIMA PARTIDA?</Spanish>
                 <Polish>WCZYTAĆ OSTATNI ZAPIS GRY?</Polish>
+                <Turkish>SON KAYDI YÜKLE?</Turkish>
             </Key>
         </Container>
         <Container name="dialog_buy_vehicle">
@@ -466,6 +505,7 @@
                 <Italian>COMPRA VEICOLO</Italian>
                 <Spanish>COMPRAR VEHÍCULO</Spanish>
                 <Polish>KUP POJAZD</Polish>
+                <Turkish>ARAÇ SATIN AL</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_war_level_tip">
                 <Original>Note that rebel vehicle stock expands as war evolves.</Original>
@@ -473,6 +513,7 @@
                 <Chinesesimp>请注意，随着战争的发展，反抗军的载具数量会增加。</Chinesesimp>
                 <Korean>전쟁이 진행될 때마다 저항군의 차량 재고가 증가한다는 것을 알아두세요.</Korean>
                 <French>Notez que le stock de véhicules des rebelles s'accroît au fur et à mesure que la guerre évolue.</French>
+                <Turkish>İsyancı araç stoğunun savaş ilerledikçe arttığını unutmayın</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_black_market_tip">
                 <Original>Black market vehicle stock depends on current War Level and various achieved milestones.</Original>
@@ -480,6 +521,7 @@
                 <Chinesesimp>黑市上可买的载具清单取决于当前的战争水平和反抗军的各种成功。</Chinesesimp>
                 <Korean>암시장 차량 재고는 현재 전쟁 레벨과 달성한 다양한 이정표에 따라 달라집니다.</Korean>
                 <French>Le stock de véhicules du marché noir dépend du niveau de guerre actuel et des différentes étapes franchies.</French>
+                <Turkish>Karaborsa araçları, Savaş Seviyesi ve tamamlanan görevler doğrultusunda belirlenir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_button">
                 <Original>Purchase</Original>
@@ -491,6 +533,7 @@
                 <Italian>Acquista</Italian>
                 <Spanish>Compra</Spanish>
                 <Polish>Kupno</Polish>
+                <Turkish>Satın al</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_button_tooltip">
                 <Original>Buy %1 for %2 %3</Original>
@@ -502,6 +545,7 @@
                 <Italian>Compra %1 per %2 %3</Italian>
                 <Spanish>Comprar %1 por %2 %3</Spanish>
                 <Polish>Kup %1 za %2 %3</Polish>
+                <Turkish>%1’i %2 %3 karşılığında al</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button">
                 <Original>Deliver</Original>
@@ -513,6 +557,7 @@
                 <Italian>Consegnare</Italian>
                 <Spanish>Entregar</Spanish>
                 <Polish>Dostarczyć</Polish>
+                <Turkish>Teslim Et</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_deliver_button_tooltip">
                 <Original>Deliver %1 to garage for %2 %3</Original>
@@ -524,6 +569,7 @@
                 <Italian>Consegna %1 all'officina per %2 %3</Italian>
                 <Spanish>Entrega %1 al garaje por %2 %3</Spanish>
                 <Polish>Dostarcz %1 do garażu za %2 %3</Polish>
+                <Turkish>%1’i garaja teslim et, karşılığında %2 %3 al</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_undercover_tooltip">
                 <Original>This vehicle can go undercover</Original>
@@ -535,6 +581,7 @@
                 <Italian>Questo veicolo può andare sottocopertura</Italian>
                 <Spanish>Este vehículo puede pasar desapercibido</Spanish>
                 <Polish>Ten pojazd może działać incognito</Polish>
+                <Turkish>Bu araç gizliliğe uygundur</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_driver_tooltip">
                 <Original>Driver / Pilot</Original>
@@ -546,6 +593,7 @@
                 <Italian>Autista / Pilota</Italian>
                 <Spanish>Conductor / Piloto</Spanish>
                 <Polish>Kierowca / Pilot</Polish>
+                <Turkish>Sürücü / Pilot</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_copilot_tooltip">
                 <Original>Co-Pilot</Original>
@@ -557,6 +605,7 @@
                 <Italian>Co-Pilota</Italian>
                 <Spanish>Copiloto</Spanish>
                 <Polish>Drugi Pilot</Polish>
+                <Turkish>Yardımcı Pilot</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_commander_tooltip">
                 <Original>Commander</Original>
@@ -568,6 +617,7 @@
                 <Italian>Comandante</Italian>
                 <Spanish>Comandante</Spanish>
                 <Polish>Dowódca</Polish>
+                <Turkish>Komutan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_gunner_tooltip">
                 <Original>Gunner</Original>
@@ -579,6 +629,7 @@
                 <Italian>Artigliere</Italian>
                 <Spanish>Tirador</Spanish>
                 <Polish>Strzelec</Polish>
+                <Turkish>Nişancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_passenger_tooltip">
                 <Original>Passenger seat</Original>
@@ -590,6 +641,7 @@
                 <Italian>Sedile passeggero</Italian>
                 <Spanish>Asiento del pasajero</Spanish>
                 <Polish>Siedzenie pasażera</Polish>
+                <Turkish>Yolcu koltuğu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_ffv_tooltip">
                 <Original>FFV seat</Original>
@@ -601,6 +653,7 @@
                 <Italian>Sedile FFV</Italian>
                 <Spanish>Asiento de tirador</Spanish>
                 <Polish>Siedzenie FFV</Polish>
+                <Turkish>FFV Koltuğu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_gunner_amount_tooltip">
                 <Original>%1 Gunners</Original>
@@ -612,6 +665,7 @@
                 <Italian>%1 Artiglieri</Italian>
                 <Spanish>%1 tiradores</Spanish>
                 <Polish>%1 Miejsca Strzeleckie</Polish>
+                <Turkish>%1 Nişancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_passenger_amount_tooltip">
                 <Original>%1 Passenger seats</Original>
@@ -623,6 +677,7 @@
                 <Italian>%1 Sedili Passeggero</Italian>
                 <Spanish>%1 asientos de pasajeros</Spanish>
                 <Polish>%1 Miejsca Pasażera</Polish>
+                <Turkish>%1 Yolcu koltuğu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_ffv_amount_tooltip">
                 <Original>%1 FFV seats</Original>
@@ -634,12 +689,14 @@
                 <Italian>Sedile FFV</Italian>
                 <Spanish>%1 asientos de tiradores</Spanish>
                 <Polish>%1 Miejsca FFV</Polish>
+                <Turkish>%1 FFV koltuğu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_item_tooltip">
                 <Original>Buy %1 for %2 %3</Original>
                 <Chinesesimp>以 %2 %3 的价格购买 %1</Chinesesimp>
                 <Korean>%2%3에 %1 구매</Korean>
                 <French>Acheter %1 pour %2 %3</French>
+                <Turkish>%1’i %2 %3 karşılığında al</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_item_custom_hint_header">
                 <Original>Purchase Item</Original>
@@ -647,6 +704,7 @@
                 <Russian>Парашют</Russian>
                 <Korean>아이템 구매</Korean>
                 <French>Acheter un article</French>
+                <Turkish>Öğe Satın Al</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_item_custom_hint_commander_only">
                 <Original>Only the Commander may buy this item.</Original>
@@ -654,6 +712,7 @@
                 <Russian>Только командир может купить этот предмет.</Russian>
                 <Korean>지휘관만 이 아이템을 살 수 있습니다.</Korean>
                 <French>Seul le commandant peut acheter cet article.</French>
+                <Turkish>Bu öğeyi yalnızca komutan satın alabilir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civ">
                 <Original>Civilian</Original>
@@ -662,42 +721,49 @@
                 <Spanish>Civil</Spanish>
                 <French>Civils</French>
                 <Chinesesimp>平民</Chinesesimp>
+                <Turkish>Sivil</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civall">
                 <Original>All Civilian</Original>
                 <Russian>Вся гражданская техника</Russian>
                 <Chinesesimp>所有平民</Chinesesimp>
                 <Korean>모든 민간용</Korean>
+                <Turkish>Tüm Sivil</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civcars">
                 <Original>Civilian Cars</Original>
                 <Russian>Гражданские машины</Russian>
                 <Chinesesimp>平民车辆</Chinesesimp>
                 <Korean>민간 차량</Korean>
+                <Turkish>Sivil Arabalar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civtrucks">
                 <Original>Civilian Trucks</Original>
                 <Russian>Гражданские грузовики</Russian>
                 <Chinesesimp>平民卡车</Chinesesimp>
                 <Korean>민간 트럭</Korean>
+                <Turkish>Sivil Kamyonlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civboats">
                 <Original>Civilian Boats</Original>
                 <Russian>Гражданские лодки</Russian>
                 <Chinesesimp>平民船只</Chinesesimp>
                 <Korean>민간 보트</Korean>
+                <Turkish>Sivil Tekneler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civheli">
                 <Original>Civilian Heli</Original>
                 <Russian>Гражданские вертолёты</Russian>
                 <Chinesesimp>平民直升机</Chinesesimp>
                 <Korean>민간 헬기</Korean>
+                <Turkish>Sivil Heli.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civplanes">
                 <Original>Civilian Planes</Original>
                 <Russian>Гражданские самолёты</Russian>
                 <Chinesesimp>平民飞机</Chinesesimp>
                 <Korean>민간 항공기</Korean>
+                <Turkish>Sivil Uçaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reb">
                 <Original>Rebel</Original>
@@ -706,156 +772,182 @@
                 <Spanish>Rebelde</Spanish>
                 <French>Rebelle</French>
                 <Chinesesimp>反抗军</Chinesesimp>
+                <Turkish>İsyancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reball">
                 <Original>All Rebel</Original>
                 <Russian>Вся техника повстанцев</Russian>
                 <Chinesesimp>所有反抗军</Chinesesimp>
                 <Korean>모든 반군용</Korean>
+                <Turkish>Tüm İsyancılar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebbasic">
                 <Original>Rebel Basics</Original>
                 <Russian>Базовая техника повстанцев</Russian>
                 <Chinesesimp>反抗军基础</Chinesesimp>
                 <Korean>반군용 기본 차량</Korean>
+                <Turkish>İsyancı Temelleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebtrucks">
                 <Original>Rebel Trucks</Original>
                 <Russian>Грузовики повстанцев</Russian>
                 <Chinesesimp>反抗军卡车</Chinesesimp>
                 <Korean>반군용 트럭</Korean>
+                <Turkish>İsyancı Kamyonları</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightunarmed">
                 <Original>Rebel Unarmed</Original>
                 <Russian>Неворуженные машины повстанцев</Russian>
                 <Chinesesimp>反抗军无武装</Chinesesimp>
                 <Korean>반군용 비무장 차량</Korean>
+                <Turkish>İsyancı Silahsız</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebboats">
                 <Original>Rebel Boats</Original>
                 <Russian>Лодки повстанцев</Russian>
                 <Chinesesimp>反抗军船只</Chinesesimp>
                 <Korean>반군용 보트</Korean>
+                <Turkish>İsyancı Tekneleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebmedical">
                 <Original>Rebel Medical</Original>
                 <Russian>Медицинский транспорт повстанцев</Russian>
                 <Chinesesimp>反抗军医疗</Chinesesimp>
                 <Korean>반군용 의료 차량</Korean>
+                <Turkish>İsyancı Sağlık</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightarmed">
                 <Original>Rebel Armed</Original>
                 <Russian>Вооруженные машины повстанцев</Russian>
                 <Chinesesimp>反抗军有武装</Chinesesimp>
                 <Korean>반군용 무장 차량</Korean>
+                <Turkish>İsyancı Silahlılar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebat">
                 <Original>Rebel AT</Original>
                 <Russian>ПТ техника повстанцев</Russian>
                 <Chinesesimp>反抗军反坦克</Chinesesimp>
                 <Korean>반군용 대전차차량</Korean>
+                <Turkish>İsyancı AT</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebaa">
                 <Original>Rebel AA</Original>
                 <Russian>ПВО техника повстанцев</Russian>
                 <Chinesesimp>反抗军对空</Chinesesimp>
                 <Korean>반군용 대공차량</Korean>
+                <Turkish>İsyancı AA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebplane">
                 <Original>Rebel Plane</Original>
                 <Russian>Самолёты повстанцев</Russian>
                 <Chinesesimp>反抗军飞机</Chinesesimp>
                 <Korean>반군용 항공기</Korean>
+                <Turkish>İsyancı Uçaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
                 <Original>All Statics</Original>
                 <Russian>Все турели</Russian>
                 <Chinesesimp>所有静态</Chinesesimp>
                 <Korean>모든 고정화기</Korean>
+                <Turkish>Tüm Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticMG">
                 <Original>MG Statics</Original>
                 <Russian>Пулеметные турели</Russian>
                 <Chinesesimp>静态机枪</Chinesesimp>
                 <Korean>고정 기관총</Korean>
+                <Turkish>MG Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAT">
                 <Original>AT Statics</Original>
                 <Russian>ПТ турели</Russian>
                 <Chinesesimp>静态反坦克</Chinesesimp>
                 <Korean>고정 대전차포</Korean>
+                <Turkish>AT Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAA">
                 <Original>AA Statics</Original>
                 <Russian>ПВО турели</Russian>
                 <Chinesesimp>静态对空</Chinesesimp>
                 <Korean>고정 대공포</Korean>
+                <Turkish>AA Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticmortars">
                 <Original>Mortars</Original>
                 <Russian>Миномёты</Russian>
                 <Chinesesimp>迫击炮</Chinesesimp>
                 <Korean>박격포</Korean>
+                <Turkish>Havanlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_med_tooltip">
                 <Original>This station will help you heal up</Original>
                 <Russian>Эта станция поможет вам вылечиться</Russian>
                 <Chinesesimp>这个将帮助你医疗</Chinesesimp>
                 <Korean>이 스테이션은 당신의 치료를 도웁니다.</Korean>
+                <Turkish>Bu istasyon sağlık yenileme sağlar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_ammo_tooltip">
                 <Original>Ammo station</Original>
                 <Russian>Склад боеприпасов</Russian>
                 <Chinesesimp>弹药站</Chinesesimp>
                 <Korean>탄약고</Korean>
+                <Turkish>Mühimmat İstasyonu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_repair_tooltip">
                 <Original>This station can repair vehicles</Original>
                 <Russian>Эта станция может чинить технику</Russian>
                 <Chinesesimp>这个可以维修载具</Chinesesimp>
                 <Korean>이 스테이션은 차량을 수리할 수 있습니다.</Korean>
+                <Turkish>Bu istasyon araç tamiri sağlar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_select">
                 <Original>Select</Original>
                 <Russian>Выбрать</Russian>
                 <Chinesesimp>选择</Chinesesimp>
                 <Korean>선택</Korean>
+                <Turkish>Seç</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_all">
                 <Original>All vehicles</Original>
                 <Russian>Вся техника</Russian>
                 <Chinesesimp>所有车辆</Chinesesimp>
                 <Korean>모든 차량</Korean>
+                <Turkish>Tüm Araçlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_arty">
                 <Original>Artillery</Original>
                 <Russian>Артиллерия</Russian>
                 <Chinesesimp>炮兵</Chinesesimp>
                 <Korean>야포</Korean>
+                <Turkish>Topçu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_apc">
                 <Original>APC</Original>
                 <Russian>Бронетранспортёры</Russian>
                 <Chinesesimp>APC</Chinesesimp>
                 <Korean>보병수송장갑차</Korean>
+                <Turkish>ZPT</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_AA">
                 <Original>AA</Original>
                 <Russian>ПВО</Russian>
                 <Chinesesimp>AA</Chinesesimp>
                 <Korean>대공포</Korean>
+                <Turkish>AA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_uav">
                 <Original>UAV/UGV</Original>
                 <Russian>БПЛА/БПА</Russian>
                 <Chinesesimp>无人机/无人车</Chinesesimp>
                 <Korean>무인기/무인차</Korean>
+                <Turkish>İHA/İKA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_tank">
                 <Original>Tanks</Original>
                 <Russian>Танки</Russian>
                 <Chinesesimp>坦克</Chinesesimp>
                 <Korean>전차</Korean>
+                <Turkish>Tanklar</Turkish>
             </Key>
             <!-- <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
                 <Original>Statics</Original>
@@ -866,30 +958,35 @@
                 <Russian>Вертолёты</Russian>
                 <Chinesesimp>直升机</Chinesesimp>
                 <Korean>헬리콥터</Korean>
+                <Turkish>Helikopter</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_plane">
                 <Original>Planes</Original>
                 <Russian>Самолёты</Russian>
                 <Chinesesimp>飞机</Chinesesimp>
                 <Korean>항공기</Korean>
+                <Turkish>Uçaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_armedcar">
                 <Original>Armed cars</Original>
                 <Russian>Вооруженные автомобили</Russian>
                 <Chinesesimp>武装车辆</Chinesesimp>
                 <Korean>무장 차량</Korean>
+                <Turkish>Silahlı Araba</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_unarmedcar">
                 <Original>Unarmed cars</Original>
                 <Russian>Безоружные автомобили</Russian>
                 <Chinesesimp>无武装车辆</Chinesesimp>
                 <Korean>비무장 차량</Korean>
+                <Turkish>Silahsız Araba</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_boat">
                 <Original>Boats</Original>
                 <Russian>Лодки</Russian>
                 <Chinesesimp>船只</Chinesesimp>
                 <Korean>보트</Korean>
+                <Turkish>Tekneler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_static">
                 <Original>Statics</Original>
@@ -898,6 +995,7 @@
                 <Spanish>Estáticas</Spanish>
                 <French>Statique</French>
                 <Chinesesimp>静态</Chinesesimp>
+                <Turkish>Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_other">
                 <Original>Other</Original>
@@ -906,6 +1004,7 @@
                 <Spanish>Otras</Spanish>
                 <French>Autres</French>
                 <Chinesesimp>其他</Chinesesimp>
+                <Turkish>Diğer</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_refuel_tooltip">
                 <Original>This item can refuel others.\n%1 max fuel is %2.</Original>
@@ -913,6 +1012,7 @@
                 <Russian>Этот предмет может заправлять другие машины.\n%1 максимум топлива %2.</Russian>
                 <Korean>이 아이템은 다른 차량을 재급유할 수 있습니다.\n%1의 최대 연료량은 %2입니다.</Korean>
                 <French>Cet objet peut en ravitailler d'autres.\n%1 Le carburant maximum est de %2.</French>
+                <Turkish>Bu öğe diğerlerini yakıtlandırabilir.\n%1 maksimum yakıt %2’dir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_loot_tooltip">
                 <Original>This item can collect loot.</Original>
@@ -920,6 +1020,7 @@
                 <Russian>Этот предмет может собирать трофеи.</Russian>
                 <Korean>이 아이템은 전리품을 수집할 수 있습니다.</Korean>
                 <French>Cet objet peut collecter du butin.</French>
+                <Turkish>Bu öğe ganimet toplayabilir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_light_tooltip">
                 <Original>This item provides light source.</Original>
@@ -927,6 +1028,7 @@
                 <Russian>Этот предмет излучает свет.</Russian>
                 <Korean>이 아이템은 광원을 제공합니다.</Korean>
                 <French>Cet article fournit une source lumineuse.</French>
+                <Turkish>Bu öğe ışık kaynağı sağlar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_revivekitbox_tooltip">
                 <Original>This item contains certain amount of Combat Readiness Recovery kits.</Original>
@@ -934,6 +1036,7 @@
                 <Chinesesimp>这个物品包含一定数量的战备恢复包。</Chinesesimp>
                 <Korean>이 아이템은 일정량의 전투 준비 복구 키트가 들어 있습니다.</Korean>
                 <French>Cet objet contient un certain nombre de kits de récupération de l'état de préparation au combat.</French>
+                <Turkish>Bu öğe belirli sayıda Savaş Hazırlığı Yenileme kiti içerir</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_player">
@@ -947,6 +1050,7 @@
                 <Italian>Viaggio Rapido</Italian>
                 <Spanish>Viaje Rápido</Spanish>
                 <Polish>Szybka Podróż</Polish>
+                <Turkish>Hızlı Seyahat</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_tooltip">
                 <Original>This is a placeholder</Original>
@@ -958,6 +1062,7 @@
                 <Italian>Questo è un segnaposto</Italian>
                 <Spanish>Esto es un marcador de posición</Spanish>
                 <Polish>To jest tymczasowy zastępca</Polish>
+                <Turkish>Bu bir yer tutucudur</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_undercover">
                 <Original>Go Undercover</Original>
@@ -969,6 +1074,7 @@
                 <Italian>Vai Sottocopertura</Italian>
                 <Spanish>Ir Encubierto</Spanish>
                 <Polish>Bądź Inognito</Polish>
+                <Turkish>Gizlen</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_construct">
                 <Original>Construct</Original>
@@ -980,6 +1086,7 @@
                 <Italian>Costruisci</Italian>
                 <Spanish>Construir</Spanish>
                 <Polish>Buduj</Polish>
+                <Turkish>İnşa Et</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management">
                 <Original>AI Management</Original>
@@ -991,6 +1098,7 @@
                 <Italian>Gestione IA</Italian>
                 <Spanish>Gestionar IA</Spanish>
                 <Polish>Zarządzanie AI</Polish>
+                <Turkish>AI Yönetimi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_text_commander">
                 <Original>Commander</Original>
@@ -1002,6 +1110,7 @@
                 <Italian>Comandante</Italian>
                 <Spanish>Comandante</Spanish>
                 <Polish>Dowódca</Polish>
+                <Turkish>Komutan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_text_eligible">
                 <Original>Eligible</Original>
@@ -1013,6 +1122,7 @@
                 <Italian>Eleggibile</Italian>
                 <Spanish>Elegible</Spanish>
                 <Polish>Odpowiedni</Polish>
+                <Turkish>Uygun</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_text_ineligible">
                 <Original>Ineligible</Original>
@@ -1024,6 +1134,7 @@
                 <Italian>Ineleggibile</Italian>
                 <Spanish>Inelegible</Spanish>
                 <Polish>Nieodpowiedni</Polish>
+                <Turkish>Uygun değil</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_button_resign">
                 <Original>Resign</Original>
@@ -1035,6 +1146,7 @@
                 <Italian>Dimettiti</Italian>
                 <Spanish>Renunciar</Spanish>
                 <Polish>Rezygnacja</Polish>
+                <Turkish>Çekil</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_button_set_eligible">
                 <Original>Set Eligible</Original>
@@ -1046,6 +1158,7 @@
                 <Italian>Mettiti Eleggibile</Italian>
                 <Spanish>Ser Elegible</Spanish>
                 <Polish>Ustaw jako Odpowiedni</Polish>
+                <Turkish>Uygun Olarak Ayarla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_button_set_ineligible">
                 <Original>Set Ineligible</Original>
@@ -1057,6 +1170,7 @@
                 <Italian>Mettiti Ineleggibile</Italian>
                 <Spanish>Ser Inelegible</Spanish>
                 <Polish>Ustaw jako Nieodpowiedni</Polish>
+                <Turkish>Uygunsuz Olarak Ayarla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_donate">
                 <Original>Donate Money</Original>
@@ -1068,6 +1182,7 @@
                 <Italian>Dona Soldi</Italian>
                 <Spanish>Donar Dinero</Spanish>
                 <Polish>Przekaż pieniądze</Polish>
+                <Turkish>Para Bağışla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hide_top_bar">
                 <Original>Hide top bar</Original>
@@ -1079,6 +1194,7 @@
                 <Italian>Nascondi la barra superiore</Italian>
                 <Spanish>Ocultar barra superior</Spanish>
                 <Polish>Ukryj górny pasek</Polish>
+                <Turkish>Üst Çubuğu Gizle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_vehicles">
                 <Original>Vehicles</Original>
@@ -1090,6 +1206,7 @@
                 <Italian>Veicoli</Italian>
                 <Spanish>Vehículos</Spanish>
                 <Polish>Pojazdy</Polish>
+                <Turkish>Araçlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_garage_vehicle">
                 <Original>Garage</Original>
@@ -1101,6 +1218,7 @@
                 <Italian>Garage</Italian>
                 <Spanish>Garaje</Spanish>
                 <Polish>Garaż</Polish>
+                <Turkish>Garaj</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_unlock_vehicle">
                 <Original>Unlock</Original>
@@ -1112,6 +1230,7 @@
                 <Italian>Sblocca</Italian>
                 <Spanish>Abrir</Spanish>
                 <Polish>Odblokuj</Polish>
+                <Turkish>Kilit Aç</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_lock_vehicle">
                 <Original>Lock</Original>
@@ -1123,6 +1242,7 @@
                 <Italian>Blocca</Italian>
                 <Spanish>Cerrar</Spanish>
                 <Polish>Zablokuj</Polish>
+                <Turkish>Kilitle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_sell_vehicle">
                 <Original>Sell</Original>
@@ -1134,6 +1254,7 @@
                 <Italian>Vendi</Italian>
                 <Spanish>Vender</Spanish>
                 <Polish>Sprzedaj</Polish>
+                <Turkish>Sat</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_add_to_air_support">
                 <Original>Add to air support</Original>
@@ -1145,6 +1266,7 @@
                 <Italian>Aggiungi al supporto aereo</Italian>
                 <Spanish>Añadir apoyo aéreo</Spanish>
                 <Polish>Dodaj do wsparcia powietrznego</Polish>
+                <Turkish>Hava desteğine ekle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_no_vehicle">
                 <Original>No vehicle detected</Original>
@@ -1156,6 +1278,7 @@
                 <Italian>Nessun veicolo rilevato</Italian>
                 <Spanish>No se ha detectado vehículo</Spanish>
                 <Polish>Nie wykryto pojazdu</Polish>
+                <Turkish>Araç algılanmadı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_not_eligible_vehicle_tooltip">
                 <Original>Not eligible vehicle</Original>
@@ -1167,6 +1290,7 @@
                 <Italian>Veicolo non idoneo</Italian>
                 <Spanish>Vehículo no elegible</Spanish>
                 <Polish>Pojazd nie kwalifikuje się</Polish>
+                <Turkish>Uygun olmayan araç</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_only_tooltip">
                 <Original>Commander only</Original>
@@ -1178,6 +1302,7 @@
                 <Italian>Solo per il comandante</Italian>
                 <Spanish>Solo comandante</Spanish>
                 <Polish>Tylko dowódca</Polish>
+                <Turkish>Sadece Komutan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_members_only">
                 <Original>Members only function</Original>
@@ -1189,6 +1314,7 @@
                 <Italian>Funzione solo per i Membri</Italian>
                 <Spanish>Función solo para Miembros</Spanish>
                 <Polish>Funkcja tylko dla członków serwera</Polish>
+                <Turkish>Üyelere Özel İşlev</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_player_money_text">
                 <Original>Current money:\n%1 %2</Original>
@@ -1200,6 +1326,7 @@
                 <Italian>Denaro attuale:\n%1 %2</Italian>
                 <Spanish>Dinero:\n%1 %2</Spanish>
                 <Polish>Aktualne pieniądze:\n%1 %2</Polish>
+                <Turkish>Mevcut para:\n%1 %2</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_sl_tooltip">
                 <Original>Only available to squad leaders</Original>
@@ -1211,6 +1338,7 @@
                 <Italian>Solo disponibile per i capisquadra</Italian>
                 <Spanish>Solo disponible para líderes de escuadras</Spanish>
                 <Polish>Dostępne tylko dla dowódców oddziałów</Polish>
+                <Turkish>Sadece manga liderleri erişebilir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_no_ai_tooltip">
                 <Original>Needs AI group members\nYou can recruit them at the flag</Original>
@@ -1222,6 +1350,7 @@
                 <Italian>Necessita un compagno di gruppo IA\nPuoi reclutarli alla bandiera</Italian>
                 <Spanish>Necesitas grupo de miembros de la IA\nPuedes reclutarlos en la bandera</Spanish>
                 <Polish>Potrzebuje członków grupy AI\nMożesz ich rekrutować przy fladze</Polish>
+                <Turkish>AI grup üyeleri gerekli.\nBayraktan manga kurabilirsiniz</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_donate">
@@ -1235,6 +1364,7 @@
                 <Italian>Denaro Attuale</Italian>
                 <Spanish>Dinero Actual</Spanish>
                 <Polish>Ilośc pięniedzy</Polish>
+                <Turkish>Mevcut Para</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_donate_label">
                 <Original>Donate</Original>
@@ -1246,6 +1376,7 @@
                 <Italian>Dona</Italian>
                 <Spanish>Donar</Spanish>
                 <Polish>Podaruj</Polish>
+                <Turkish>Bağış Yap</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_donate_player">
                 <Original>Donate to Player</Original>
@@ -1257,6 +1388,7 @@
                 <Italian>Dona al Giocatore</Italian>
                 <Spanish>Donar a Jugador</Spanish>
                 <Polish>Podaruj Graczu</Polish>
+                <Turkish>Oyuncuya Bağışla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_donate_faction">
                 <Original>Donate to Faction</Original>
@@ -1268,6 +1400,7 @@
                 <Italian>Dona alla Fazione</Italian>
                 <Spanish>Donar a Facción</Spanish>
                 <Polish>Podaruj Frakcji</Polish>
+                <Turkish>Birliğe Bağışla</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_commander">
@@ -1281,6 +1414,7 @@
                 <Italian>Gruppi Alto Comando</Italian>
                 <Spanish>Grupos del Alto Mando</Spanish>
                 <Polish>Grupy HC</Polish>
+                <Turkish>Üst Komuta Grupları</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_remote_control_tooltip">
                 <Original>Remote control group leader</Original>
@@ -1292,6 +1426,7 @@
                 <Italian>Controlla capo gruppo da remoto</Italian>
                 <Spanish>Control remoto de Líder de Grupo</Spanish>
                 <Polish>Przejmij kontrole nad liderem grupy</Polish>
+                <Turkish>Uzaktan kontrol Grup Lideri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_unit_count_tooltip">
                 <Original>Number of units in the group\nAble to combat / Total number of units</Original>
@@ -1303,6 +1438,7 @@
                 <Italian>Numero di unità nel gruppo\nAbile di combattere / Numero totale di unità</Italian>
                 <Spanish>Número de unidades en el grupo\nCapaces de combatir / Total número de unidades</Spanish>
                 <Polish>Liczba jednostek w grupie\nZdolni do walki / Całkowita liczba jednostek</Polish>
+                <Turkish>Gruptaki birim sayısı\nSavaşabilir / Toplam birim sayısı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_combat_mode">
                 <Original>Combat mode</Original>
@@ -1314,6 +1450,7 @@
                 <Italian>Modalità di Combattimento</Italian>
                 <Spanish>Modo de Combate</Spanish>
                 <Polish>Tryb walki</Polish>
+                <Turkish>Çatışma Modu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_vehicle">
                 <Original>Vehicle</Original>
@@ -1325,6 +1462,7 @@
                 <Italian>Veicolo</Italian>
                 <Spanish>Vehículo</Spanish>
                 <Polish>Pojazd</Polish>
+                <Turkish>Araç</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_button">
                 <Original>Fire Mission</Original>
@@ -1336,6 +1474,7 @@
                 <Italian>Missione di Fuoco</Italian>
                 <Spanish>Misión de Fuego</Spanish>
                 <Polish>Misja Ogniowa</Polish>
+                <Turkish>Topçu Görevi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_mount">
                 <Original>Mount</Original>
@@ -1347,6 +1486,7 @@
                 <Italian>Monta</Italian>
                 <Spanish>Embarcar</Spanish>
                 <Polish>Wsiadać</Polish>
+                <Turkish>Bin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_dismount">
                 <Original>Dismount</Original>
@@ -1358,6 +1498,7 @@
                 <Italian>Smonta</Italian>
                 <Spanish>Desembarcar</Spanish>
                 <Polish>Wysiadać</Polish>
+                <Turkish>Boşalt</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_add_vehicle">
                 <Original>Add Vehicle</Original>
@@ -1369,6 +1510,7 @@
                 <Italian>Aggiungi Veicolo</Italian>
                 <Spanish>Añadir Vehículo</Spanish>
                 <Polish>Dodaj pojazd</Polish>
+                <Turkish>Araç Ekle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_garrison">
                 <Original>Garrison</Original>
@@ -1380,6 +1522,7 @@
                 <Italian>Guarnigione</Italian>
                 <Spanish>Guranición</Spanish>
                 <Polish>Garnizon</Polish>
+                <Turkish>Garnizon</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_dismiss">
                 <Original>Dismiss</Original>
@@ -1391,6 +1534,7 @@
                 <Italian>Dimetti</Italian>
                 <Spanish>Desmovilizar</Spanish>
                 <Polish>Odwołaj</Polish>
+                <Turkish>Dağıt</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_label">
                 <Original>Fire mission</Original>
@@ -1402,6 +1546,7 @@
                 <Italian>Missione di Fuoco</Italian>
                 <Spanish>Misión de Fuego</Spanish>
                 <Polish>Misja ogniowa</Polish>
+                <Turkish>Topçu Görevi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_ammo">
                 <Original>Ammo</Original>
@@ -1413,6 +1558,7 @@
                 <Italian>Munizioni</Italian>
                 <Spanish>Munición</Spanish>
                 <Polish>Amunicja</Polish>
+                <Turkish>Mühimmat</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_ammo_he">
                 <Original>HE</Original>
@@ -1424,6 +1570,7 @@
                 <Italian>AE</Italian>
                 <Spanish>HE</Spanish>
                 <Polish>Odłamkowo-Burzący</Polish>
+                <Turkish>HE</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_ammo_smoke">
                 <Original>Smoke</Original>
@@ -1435,6 +1582,7 @@
                 <Italian>Fumogeno</Italian>
                 <Spanish>Humo</Spanish>
                 <Polish>Dymny</Polish>
+                <Turkish>Duman</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_shell_type_label">
                 <Original>Shell type</Original>
@@ -1446,6 +1594,7 @@
                 <Italian>Tipo di Proiettile</Italian>
                 <Spanish>Tipo de proyectil</Spanish>
                 <Polish>Rodzaj pocisku</Polish>
+                <Turkish>Mermi Türü</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_shell_type_he">
                 <Original>HE</Original>
@@ -1457,6 +1606,7 @@
                 <Italian>AE</Italian>
                 <Spanish>HE</Spanish>
                 <Polish>Odłamkowo-Burzący</Polish>
+                <Turkish>HE</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_shell_type_smoke">
                 <Original>Smoke</Original>
@@ -1468,6 +1618,7 @@
                 <Italian>Fumogeno</Italian>
                 <Spanish>Humo</Spanish>
                 <Polish>Dymny</Polish>
+                <Turkish>Duman</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_type_label">
                 <Original>Mission type</Original>
@@ -1479,6 +1630,7 @@
                 <Italian>Tipo di Missione</Italian>
                 <Spanish>Tipo de misión</Spanish>
                 <Polish>Typ misji</Polish>
+                <Turkish>Görev Türü</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_type_point">
                 <Original>Point</Original>
@@ -1490,6 +1642,7 @@
                 <Italian>Punto</Italian>
                 <Spanish>Punto</Spanish>
                 <Polish>Punkt</Polish>
+                <Turkish>Nokta</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_type_barrage">
                 <Original>Barrage</Original>
@@ -1501,6 +1654,7 @@
                 <Italian>Sbarramento</Italian>
                 <Spanish>Bombardeo</Spanish>
                 <Polish>Ostrzał</Polish>
+                <Turkish>Yaylım ateşi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_rounds_label">
                 <Original>Rounds</Original>
@@ -1512,6 +1666,7 @@
                 <Italian>Colpi</Italian>
                 <Spanish>Rondas</Spanish>
                 <Polish>Pociski</Polish>
+                <Turkish>Atış Sayısı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_position_label">
                 <Original>Position</Original>
@@ -1523,6 +1678,7 @@
                 <Italian>Posizione</Italian>
                 <Spanish>Posición</Spanish>
                 <Polish>Pozycja</Polish>
+                <Turkish>Atış Konumu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_set">
                 <Original>SET</Original>
@@ -1534,6 +1690,7 @@
                 <Italian>IMPOSTA</Italian>
                 <Spanish>Listo</Spanish>
                 <Polish>USTAW</Polish>
+                <Turkish>AYARLA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_position_start_label">
                 <Original>Start</Original>
@@ -1545,6 +1702,7 @@
                 <Italian>Inizio</Italian>
                 <Spanish>Inicio</Spanish>
                 <Polish>Start</Polish>
+                <Turkish>Başla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_position_end_label">
                 <Original>End</Original>
@@ -1556,6 +1714,7 @@
                 <Italian>Fine</Italian>
                 <Spanish>Final</Spanish>
                 <Polish>Koniec</Polish>
+                <Turkish>Bitir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_fire_button">
                 <Original>Fire</Original>
@@ -1567,6 +1726,7 @@
                 <Italian>Fuoco</Italian>
                 <Spanish>Fuego</Spanish>
                 <Polish>Ognia</Polish>
+                <Turkish>Ateş</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_button">
                 <Original>Air Support</Original>
@@ -1578,6 +1738,7 @@
                 <Italian>Supporto Aereo</Italian>
                 <Spanish>Soporte Aéreo</Spanish>
                 <Polish>Wsparcie Powietrzne</Polish>
+                <Turkish>Hava Desteği</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_garbage_clean_button">
                 <Original>Garbage Clean</Original>
@@ -1589,6 +1750,7 @@
                 <Italian>Pulizia Spazzatura</Italian>
                 <Spanish>Limpieza de Basura</Spanish>
                 <Polish>Wyczyść Śmieci</Polish>
+                <Turkish>Çöp Temizliği</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_garbage_clean_all">
                 <Original>Garbage Clean All</Original>
@@ -1600,6 +1762,7 @@
                 <Italian>Pulisci Tutta la Spazzatura</Italian>
                 <Spanish>Liempieza total de Basura</Spanish>
                 <Polish>Wyczyść Śmieci Wszytkie</Polish>
+                <Turkish>Tümünü Temizle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_garbage_clean_hq">
                 <Original>Garbage Clean HQ</Original>
@@ -1611,6 +1774,7 @@
                 <Italian>Pulisci Spazzatura all'HQ</Italian>
                 <Spanish>Limpieza de Basura del CG</Spanish>
                 <Polish>Wyczyść Śmieci przy HQ</Polish>
+                <Turkish>Karargâhı Temizle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_not_deployed_tooltip">
                 <Original>Unable to fire. Mortar is not deployed.</Original>
@@ -1622,6 +1786,7 @@
                 <Italian>Impossibile sparare. Il mortaio non schierato.</Italian>
                 <Spanish>Imposible disparar. Morteros no desplegados.</Spanish>
                 <Polish>Nie można strzelać. Moździerz nie jest rozstawiony.</Polish>
+                <Turkish>Ateş edilemiyor. Havan henüz kurulmadı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_medic">
                 <Original>Has medic capability</Original>
@@ -1633,6 +1798,7 @@
                 <Italian>Ha un medico operativo</Italian>
                 <Spanish>Tiene un médico operativo</Spanish>
                 <Polish>Ma sanitariusza</Polish>
+                <Turkish>Sıhhiye yeteneğine sahip</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_at">
                 <Original>Has AT capability</Original>
@@ -1644,6 +1810,7 @@
                 <Italian>Ha capacità Anti-Carro</Italian>
                 <Spanish>Tiene diponibles AT</Spanish>
                 <Polish>Posiada zdolność PPANC</Polish>
+                <Turkish>AT yeteneğine sahip</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_aa">
                 <Original>Has AA capability</Original>
@@ -1655,6 +1822,7 @@
                 <Italian>Ha capacità Anti-Aeree</Italian>
                 <Spanish>Tiene disponibles AA</Spanish>
                 <Polish>Posiada zdolność PLOT</Polish>
+                <Turkish>AA yeteneğine sahip</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_mortar_deployed">
                 <Original>Mortar is deployed</Original>
@@ -1666,6 +1834,7 @@
                 <Italian>Mortaio Schierato</Italian>
                 <Spanish>Morteros desplegados</Spanish>
                 <Polish>Moździerz jest rozstawiony</Polish>
+                <Turkish>Havan yerleştirildi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_mortar_not_deployed">
                 <Original>Mortar is not deployed</Original>
@@ -1677,6 +1846,7 @@
                 <Italian>Mortaio non schierato</Italian>
                 <Spanish>Morteros NO desplegados</Spanish>
                 <Polish>Moździerz nie jest rozstawiony</Polish>
+                <Turkish>Havan yerleştirilmedi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_static_weapon_deployed">
                 <Original>Static weapon is deployed</Original>
@@ -1688,6 +1858,7 @@
                 <Italian>Arma Fissa schierata</Italian>
                 <Spanish>Arma estática desplegada</Spanish>
                 <Polish>Broń statyczna jest rozstawiona</Polish>
+                <Turkish>Statik silah yerleştirildi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_has_static_weapon_not_deployed">
                 <Original>Static weapon is not deployed</Original>
@@ -1699,6 +1870,7 @@
                 <Italian>Arma Fissa non schierata</Italian>
                 <Spanish>Arma estática NO desplegada</Spanish>
                 <Polish>Broń statyczna nie jest rozstawiona</Polish>
+                <Turkish>Statik silah yerleştirilmedi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_no_groups">
                 <Original>&lt;t align='center'&gt;You have no high command groups.&lt;/t&gt;&lt;br /&gt;&lt;t align='center'&gt;You can recruit them at the flag.&lt;/t&gt;</Original>
@@ -1710,6 +1882,7 @@
                 <Italian>&lt;t align='center'&gt;Non hai gruppi Alto Comando.&lt;/t&gt;&lt;br /&gt;&lt;t align='center'&gt;Puoi reclutarli alla bandiera.&lt;/t&gt;</Italian>
                 <Spanish>&lt;t align='center'&gt;No tienes grupos del Alto Mando.&lt;/t&gt;&lt;br /&gt;&lt;t align='center'&gt;Puedes reclutarlos en la bandera.&lt;/t&gt;</Spanish>
                 <Polish>&lt;t align='center'&gt;Nie masz żadnych grup.&lt;/t&gt;&lt;br /&gt;&lt;t align='center'&gt;Możesz je zrekrutować przy fladze.&lt;/t&gt;</Polish>
+                <Turkish>&lt;t align='center'&gt;Yüksek komuta birliğin yok.&lt;/t&gt;&lt;br /&gt;&lt;t align='center'&gt;bayraktan göreve asker alabilirsin.&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_rounds_barrage_tooltip">
                 <Original>Number of rounds set by barrage length</Original>
@@ -1721,6 +1894,7 @@
                 <Italian>Numero di colpi stabilito dalla lunghezza dello sbarramento</Italian>
                 <Spanish>Numero de bombas establecidas por lo largo del bombardeo</Spanish>
                 <Polish>Liczba pocisków ustalona przez długość ostrzału</Polish>
+                <Turkish>Atış sayısı, Yaylım ateşi süresine göre belirlenir.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_click_map">
                 <Original>CLICK MAP</Original>
@@ -1732,6 +1906,7 @@
                 <Italian>CLICCA LA MAPPA</Italian>
                 <Spanish>CLICK MAPA</Spanish>
                 <Polish>KLIKNIJ NA MAPIE</Polish>
+                <Turkish>HARİTADAN SEÇ</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_not_set">
                 <Original>NOT SET</Original>
@@ -1743,6 +1918,7 @@
                 <Italian>NON SETTATO</Italian>
                 <Spanish>NO SELECCIONADO</Spanish>
                 <Polish>NIE USTAWIONO</Polish>
+                <Turkish>AYARLANMADI</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_mission_position_not_set_tooltip">
                 <Original>Strike position not set</Original>
@@ -1754,6 +1930,7 @@
                 <Italian>Posizione dei colpi non settata</Italian>
                 <Spanish>Posición del ataque no seleccionada</Spanish>
                 <Polish>Pozycja ostrzału nie jest ustawiona</Polish>
+                <Turkish>Taarruz noktası ayarlanmadı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_fire_misison_no_ammo_tooltip">
                 <Original>Not enough ammo</Original>
@@ -1765,6 +1942,7 @@
                 <Italian>Mancano munizioni</Italian>
                 <Spanish>Sin munición suficiente</Spanish>
                 <Polish>Za mało amunicji</Polish>
+                <Turkish>Mühimmat yetersiz</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_no_radio">
                 <Original>No radio</Original>
@@ -1776,6 +1954,7 @@
                 <Italian>No Radio</Italian>
                 <Spanish>Sin radio</Spanish>
                 <Polish>Brak radia</Polish>
+                <Turkish>Telsiz yok</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_air_support">
@@ -1789,6 +1968,7 @@
                 <Italian>Punti Supporto Aereo:</Italian>
                 <Spanish>Puntos de Soporte Aéreo</Spanish>
                 <Polish>Punkty wsparcia lotniczego:</Polish>
+                <Turkish>Hava Desteği Puanı:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_aircraft_used">
                 <Original>Aircraft used:</Original>
@@ -1800,6 +1980,7 @@
                 <Italian>Veivolo usato:</Italian>
                 <Spanish>Naves usadas:</Spanish>
                 <Polish>Użyte samoloty:</Polish>
+                <Turkish>Kullanılan Hava Aracı:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_info">
                 <Original>Get more air support points using the 'Add to Air Support' button in the vehicle section on the player tab.</Original>
@@ -1811,6 +1992,7 @@
                 <Italian>Acquisisci più punti supporto aereo usando il pulsante "Aggiungi al Supporto Aereo" nella sezione veicolo nel menu del giocatore.</Italian>
                 <Spanish>Consigue mas puntos de soporte aéreo usando el boton de 'Añadir a Soporte Aéreo' en la sección del vehículo en la hoja del jugador.</Spanish>
                 <Polish>Zdobądź więcej punktów wsparcia powietrznego za pomocą przycisku „Dodaj do wsparcia powietrznego” w sekcji pojazdów w zakładce gracza.</Polish>
+                <Turkish>Oyuncu sekmesindeki araçlar bölümünde bulunan 'Hava Desteğine Ekle' butonunu kullanarak daha fazla hava desteği puanı kazanabilirsiniz</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_he_bombs">
                 <Original>HE Bombs</Original>
@@ -1822,6 +2004,7 @@
                 <Italian>Bombe AE</Italian>
                 <Spanish>Bombas HE</Spanish>
                 <Polish>Bomby Odłamkowo-Burzące</Polish>
+                <Turkish>HE Bombalar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_carpet_bombing">
                 <Original>Carpet Bombing</Original>
@@ -1833,6 +2016,7 @@
                 <Italian>Bombardamento al Tappeto</Italian>
                 <Spanish>Bombardeo en Alfombra</Spanish>
                 <Polish>Masowe bombardowanie</Polish>
+                <Turkish>Halı bombardımanı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_napalm">
                 <Original>Napalm Bomb</Original>
@@ -1844,6 +2028,7 @@
                 <Italian>Bombardamento al Napalm</Italian>
                 <Spanish>Bomba de Napalm</Spanish>
                 <Polish>Nalot Napalmowy</Polish>
+                <Turkish>Napalm bombası</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_air_support_no_points_tooltip">
                 <Original>You have no air support points</Original>
@@ -1855,6 +2040,7 @@
                 <Italian>Non hai punti supporto aereo.</Italian>
                 <Spanish>No tienes puntos de soporte aéreo</Spanish>
                 <Polish>Nie masz punktów wsparcia lotniczego</Polish>
+                <Turkish>Hava desteği puanın yok</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_fast_travel">
@@ -1868,6 +2054,7 @@
                 <Italian>Clicca la mappa per selezionare la posizone dove vorresti fare il viaggio rapido.</Italian>
                 <Spanish>Selecciona en el mapa el sitio a donde quieres usar el viaje rápido</Spanish>
                 <Polish>Kliknij mapę, aby wybrać lokalizację, do której chcesz szybko podróżować.</Polish>
+                <Turkish>Hızlı seyahat edeceğin konumu seçmek için haritada tıkla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_group_select_location">
                 <Original>Click the map to select the location you want %1 to fast travel to.</Original>
@@ -1879,6 +2066,7 @@
                 <Italian>Clicca la mappa per selezionare la posizone dove vorresti %1 fare il viaggio rapido.</Italian>
                 <Spanish>Selecciona en el mapa el sitio a donde quieres que %1 use el viaje rápido</Spanish>
                 <Polish>Kliknij mapę, aby wybrać lokalizację, do której %1 ma szybko podróżować.</Polish>
+                <Turkish>%1’in hızlı seyahat edeceği konumu seçmek için haritaya tıkla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_group_will_travel_to">
                 <Original>will travel to</Original>
@@ -1890,6 +2078,7 @@
                 <Italian>viaggerai a</Italian>
                 <Spanish>Viajara a</Spanish>
                 <Polish>Będzie podróżować do</Polish>
+                <Turkish>şuraya seyahat edecek</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_you_will_travel_to">
                 <Original>You will travel to</Original>
@@ -1901,6 +2090,7 @@
                 <Italian>viaggerai a</Italian>
                 <Spanish>Viajaras a</Spanish>
                 <Polish>Będziesz podróżować do</Polish>
+                <Turkish>Şuraya seyahat edeceksin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_time">
                 <Original>This will take</Original>
@@ -1912,6 +2102,7 @@
                 <Italian>Questo prenderà</Italian>
                 <Spanish>Esto llevará</Spanish>
                 <Polish>To zajmie</Polish>
+                <Turkish>Bu işlem sürecek</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_fast_travel_vehicle">
                 <Original>You will bring your vehicle as well as any cargo and passengers along with you.</Original>
@@ -1923,6 +2114,7 @@
                 <Italian>Porterai con te il tuo veicolo compreso il cargo e i passeggeri.</Italian>
                 <Spanish>Llevaras contigo el vehículo así como el cargamento y pasajeros.</Spanish>
                 <Polish>Zabierzesz ze sobą swój pojazd, a także ładunek i pasażerów.</Polish>
+                <Turkish>Araç, yük ve yolcular sizinle birlikte taşınacaktır</Turkish>
             </Key>
         </Container>
         <Container name="dialog_mission_request">
@@ -1936,6 +2128,7 @@
                 <Italian>Conquista</Italian>
                 <Spanish>Conquista</Spanish>
                 <Polish>Podbój</Polish>
+                <Turkish>Hakimiyet</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_destroy">
                 <Original>Destroy</Original>
@@ -1947,6 +2140,7 @@
                 <Italian>Distruggi</Italian>
                 <Spanish>Destruye</Spanish>
                 <Polish>Zniszcz</Polish>
+                <Turkish>İmha Et</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_assassination">
                 <Original>Assassination</Original>
@@ -1958,6 +2152,7 @@
                 <Italian>Assassinio</Italian>
                 <Spanish>Asesinato</Spanish>
                 <Polish>Zamach</Polish>
+                <Turkish>Suikast</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_convoy">
                 <Original>Convoy Ambush</Original>
@@ -1969,6 +2164,7 @@
                 <Italian>Imboscata al Convoglio</Italian>
                 <Spanish>Emboscar Convoy</Spanish>
                 <Polish>Zasadzka na Konwój</Polish>
+                <Turkish>Konvoy Pususu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_rescue">
                 <Original>Rescue</Original>
@@ -1980,6 +2176,7 @@
                 <Italian>Soccorso</Italian>
                 <Spanish>Rescate</Spanish>
                 <Polish>Ratunek</Polish>
+                <Turkish>Kurtarma</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_logistics">
                 <Original>Logistics</Original>
@@ -1991,6 +2188,7 @@
                 <Italian>Logistica</Italian>
                 <Spanish>Logística</Spanish>
                 <Polish>Logistyka</Polish>
+                <Turkish>Lojistik</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_support">
                 <Original>Support</Original>
@@ -2002,6 +2200,7 @@
                 <Italian>Supporto</Italian>
                 <Spanish>Soporte</Spanish>
                 <Polish>Wsparcie</Polish>
+                <Turkish>Destek</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_mission_request_titlebar">
                 <Original>REQUEST MISSION</Original>
@@ -2013,6 +2212,7 @@
                 <Italian>RICHIEDI MISSIONE</Italian>
                 <Spanish>PEDIR MISIÓN</Spanish>
                 <Polish>ŻĄDAJ MISJĘ</Polish>
+                <Turkish>GÖREV İSTE</Turkish>
             </Key>
         </Container>
         <Container name="dialog_hq">
@@ -2026,6 +2226,7 @@
                 <Italian>GESTIONE HQ</Italian>
                 <Spanish>GESTIONAR CG</Spanish>
                 <Polish>ZARZĄDZANIE SZTABEM</Polish>
+                <Turkish>KARARGAH YÖNETİMİ</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_button">
                 <Original>Garrisons</Original>
@@ -2037,6 +2238,7 @@
                 <Italian>Guarnigione</Italian>
                 <Spanish>Guarniciones</Spanish>
                 <Polish>Garnizony</Polish>
+                <Turkish>Garnizonlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_minefields_button">
                 <Original>Minefields</Original>
@@ -2048,6 +2250,7 @@
                 <Italian>Campi Minati</Italian>
                 <Spanish>Campos de Minas</Spanish>
                 <Polish>Pola Minowe</Polish>
+                <Turkish>Mayın Tarlası</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_move_hq_button">
                 <Original>Move HQ</Original>
@@ -2059,6 +2262,7 @@
                 <Italian>Muovi HQ</Italian>
                 <Spanish>Mover GC</Spanish>
                 <Polish>Przenieś Kwaterę Główną</Polish>
+                <Turkish>Karargâhı Taşı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_clear_trees_button">
                 <Original>Clear Foliage</Original>
@@ -2070,6 +2274,7 @@
                 <Italian>Elimina Alberi</Italian>
                 <Spanish>Limpiar Árboles</Spanish>
                 <Polish>Wyczyść Drzewa</Polish>
+                <Turkish>Bitkileri Temizle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_campaign_status">
                 <Original>Campaign Status</Original>
@@ -2081,6 +2286,7 @@
                 <Italian>Stato della Campagna</Italian>
                 <Spanish>Estado de la Campaña</Spanish>
                 <Polish>Stan Kampanii</Polish>
+                <Turkish>Görev Durumu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_war_level">
                 <Original>War level:</Original>
@@ -2092,6 +2298,7 @@
                 <Italian>Livello della Guerra:</Italian>
                 <Spanish>Nivel de Guerra:</Spanish>
                 <Polish>Poziom wojny:</Polish>
+                <Turkish>Savaş Seviyesi:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_aggression">
                 <Original>Aggression:</Original>
@@ -2103,6 +2310,7 @@
                 <Italian>Aggressione:</Italian>
                 <Spanish>Agresión:</Spanish>
                 <Polish>Agresja:</Polish>
+                <Turkish>Saldırganlık:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_occupants_aggression">
                 <Original>Occupants aggression</Original>
@@ -2114,6 +2322,7 @@
                 <Italian>Aggressione degli Occupanti:</Italian>
                 <Spanish>Agresión Ocupante:</Spanish>
                 <Polish>Agresja okupantów</Polish>
+                <Turkish>İşgalci Saldırganlığı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_invader_aggression">
                 <Original>Invader aggression</Original>
@@ -2125,6 +2334,7 @@
                 <Italian>Aggressione dell'Invasore</Italian>
                 <Spanish>Agresión Invasores:</Spanish>
                 <Polish>Agresja najeźdźców</Polish>
+                <Turkish>İstilacı Saldırganlığı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_cities">
                 <Original>Controlled cities</Original>
@@ -2136,6 +2346,7 @@
                 <Italian>Città Controllate</Italian>
                 <Spanish>Ciudades controladas:</Spanish>
                 <Polish>Kontrolowane miasta</Polish>
+                <Turkish>Kontroldeki Şehirler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_outposts">
                 <Original>Controlled outposts</Original>
@@ -2147,6 +2358,7 @@
                 <Italian>Avamposti Controllati</Italian>
                 <Spanish>Bases controladas</Spanish>
                 <Polish>Kontrolowane placówki</Polish>
+                <Turkish>Kontroldeki Karakollar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_airbases">
                 <Original>Controlled airbases</Original>
@@ -2158,6 +2370,7 @@
                 <Italian>Basi Aeree Controllate</Italian>
                 <Spanish>Bases Aéreas controladas</Spanish>
                 <Polish>Kontrolowane bazy lotnicze</Polish>
+                <Turkish>Kontroldeki Hava Üsleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_resources">
                 <Original>Controlled resources</Original>
@@ -2169,6 +2382,7 @@
                 <Italian>Risorse Controllate</Italian>
                 <Spanish>Recursos controlados</Spanish>
                 <Polish>Kontrolowane zasoby</Polish>
+                <Turkish>Kontroldeki Kaynaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_factories">
                 <Original>Controlled factories</Original>
@@ -2180,6 +2394,7 @@
                 <Italian>Fabbriche Controllate</Italian>
                 <Spanish>Fábricas controladas</Spanish>
                 <Polish>Kontrolowane Fabryki</Polish>
+                <Turkish>Kontroldeki Fabrikalar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_seaports">
                 <Original>Controlled seaports</Original>
@@ -2191,6 +2406,7 @@
                 <Italian>Porti Controllati</Italian>
                 <Spanish>Puertos controlados</Spanish>
                 <Polish>Kontrolowane Porty</Polish>
+                <Turkish>Kontroldeki Limanlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_popular_support_tooltip">
                 <Original>Popular support\nYou need 50% to win</Original>
@@ -2202,6 +2418,7 @@
                 <Italian>Supporto Popolare\nHai bisogno del 50% per vincere</Italian>
                 <Spanish>Apoyo Popular\nNecesitas el 50% para ganar</Spanish>
                 <Polish>Wsparcie populacji\nPotrzebujesz 50%, aby wygrać</Polish>
+                <Turkish>Kazanmak için %50\nHalk Desteği gerekir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_dead_population_tooltip">
                 <Original>Dead population\nYou lose when this hits 33%</Original>
@@ -2213,6 +2430,7 @@
                 <Italian>Popolazione Morta\nPerderai se raggiungerà il 33%</Italian>
                 <Spanish>Población fallecida\nCuando llegue al 33% fracasarás</Spanish>
                 <Polish>Martwa populacja\nPrzegrywasz, gdy osiągnie 33%</Polish>
+                <Turkish>Ölü nüfus %33’e\nUlaştığında kaybedersin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_faction_resources">
                 <Original>Faction Resources</Original>
@@ -2224,6 +2442,7 @@
                 <Italian>Risorse Fazione</Italian>
                 <Spanish>Recursos de la Facción</Spanish>
                 <Polish>Zasoby Frakcji</Polish>
+                <Turkish>Birlik Kaynakları</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_hr_label">
                 <Original>HR:</Original>
@@ -2235,6 +2454,7 @@
                 <Italian>RU:</Italian>
                 <Spanish>RH:</Spanish>
                 <Polish>Zasoby ludzkie:</Polish>
+                <Turkish>İK:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_training_level_label">
                 <Original>Training level:</Original>
@@ -2246,6 +2466,7 @@
                 <Italian>Livello Addestramento:</Italian>
                 <Spanish>Nivel de Entrenamiento:</Spanish>
                 <Polish>Poziom szkolenia:</Polish>
+                <Turkish>Eğitim Seviyesi:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_train_button">
                 <Original>Train</Original>
@@ -2257,6 +2478,7 @@
                 <Italian>Addestra</Italian>
                 <Spanish>Entrenar</Spanish>
                 <Polish>Szkól</Polish>
+                <Turkish>Eğit</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_faction_money_label">
                 <Original>Faction money:</Original>
@@ -2268,6 +2490,7 @@
                 <Italian>Denaro della Fazione:</Italian>
                 <Spanish>Dinero de Facción</Spanish>
                 <Polish>Pieniądze frakcji:</Polish>
+                <Turkish>Birlik Parası:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_take_money_button">
                 <Original>Take</Original>
@@ -2279,6 +2502,7 @@
                 <Italian>Prendi</Italian>
                 <Spanish>Tomar</Spanish>
                 <Polish>Weź</Polish>
+                <Turkish>Al</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_rest_environment">
                 <Original>Rest &amp; Environment</Original>
@@ -2290,6 +2514,7 @@
                 <Italian>Riposa &amp; Ambiente</Italian>
                 <Spanish>Descansar &amp; Alrededores</Spanish>
                 <Polish>Odpoczynek i Środowisko</Polish>
+                <Turkish>Dinlenme &amp; Ortam</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_rest_button">
                 <Original>Rest</Original>
@@ -2301,6 +2526,7 @@
                 <Italian>Riposa</Italian>
                 <Spanish>Descansar</Spanish>
                 <Polish>Odpocznij</Polish>
+                <Turkish>Dinlen</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_clear_fog_button">
                 <Original>Clear Fog</Original>
@@ -2312,6 +2538,7 @@
                 <Italian>Elimina Nebbia</Italian>
                 <Spanish>Despejar Niebla</Spanish>
                 <Polish>Wyszyść Mgłe</Polish>
+                <Turkish>Sis Temizle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_stop_rain_button">
                 <Original>Stop Rain</Original>
@@ -2323,6 +2550,7 @@
                 <Italian>Ferma la Pioggia</Italian>
                 <Spanish>Parar Lluvia</Spanish>
                 <Polish>Zatrzymaj Deszcz</Polish>
+                <Turkish>Yağmuru Durdur</Turkish>
             </Key>
         </Container>
         <Container name="dialog_hq_garrisons">
@@ -2336,6 +2564,7 @@
                 <Italian>GUARNIGIONI</Italian>
                 <Spanish>GUARNICIONES</Spanish>
                 <Polish>GARNIZONY</Polish>
+                <Turkish>GARNİZONLAR</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_rifleman">
                 <Original>Rifleman</Original>
@@ -2347,6 +2576,7 @@
                 <Italian>Fuciliere</Italian>
                 <Spanish>Fusilero</Spanish>
                 <Polish>Strzelec</Polish>
+                <Turkish>Nişancı Er</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_squad_leader">
                 <Original>Squad Leader</Original>
@@ -2358,6 +2588,7 @@
                 <Italian>Caposquadra</Italian>
                 <Spanish>Líder de Escuadra</Spanish>
                 <Polish>Dowódca Oddziału</Polish>
+                <Turkish>Manga Lideri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_autorifleman">
                 <Original>Autorifleman</Original>
@@ -2369,6 +2600,7 @@
                 <Italian>Fuciliere Automatico</Italian>
                 <Spanish>Ametrallador</Spanish>
                 <Polish>Celowniczy KM</Polish>
+                <Turkish>Otomatik Nişancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_grenadier">
                 <Original>Grenadier</Original>
@@ -2380,6 +2612,7 @@
                 <Italian>Granatiere</Italian>
                 <Spanish>Granadero</Spanish>
                 <Polish>Grenadier</Polish>
+                <Turkish>Bombacı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_medic">
                 <Original>Medic</Original>
@@ -2391,6 +2624,7 @@
                 <Italian>Medico</Italian>
                 <Spanish>Médico</Spanish>
                 <Polish>Sanitariusz</Polish>
+                <Turkish>Sıhhiye</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_mortar">
                 <Original>Mortar</Original>
@@ -2402,6 +2636,7 @@
                 <Italian>Mortaio</Italian>
                 <Spanish>Morteros</Spanish>
                 <Polish>Moździerz</Polish>
+                <Turkish>Havan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_marksman">
                 <Original>Marksman</Original>
@@ -2413,6 +2648,7 @@
                 <Italian>Tiratore Scelto</Italian>
                 <Spanish>Tirador</Spanish>
                 <Polish>Strzelec Wyborowy</Polish>
+                <Turkish>Nişancı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_at">
                 <Original>AT</Original>
@@ -2424,6 +2660,7 @@
                 <Italian>Fuciliere Anti-Carro</Italian>
                 <Spanish>AT</Spanish>
                 <Polish>Strzelec PPANC</Polish>
+                <Turkish>AT</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_insufficient_resources">
                 <Original>Not enough money/HR</Original>
@@ -2435,6 +2672,7 @@
                 <Italian>Non hai abbastanza soldi/RU</Italian>
                 <Spanish>No hay dinero/RH suficiente</Spanish>
                 <Polish>Za mało pieniędzy/Zasobów ludzkich</Polish>
+                <Turkish>Para veya İK yetersiz</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_under_attack">
                 <Original>Can't manage garrisons when outpost is under attack.</Original>
@@ -2446,6 +2684,7 @@
                 <Italian>Non puoi gestire le guarnigioni quando l'avamposto è sotto attacco.</Italian>
                 <Spanish>No puedes gestionar la guarniciones cuando la base está bajo ataque</Spanish>
                 <Polish>Nie można zarządzać garnizonami, gdy posterunek jest atakowany.</Polish>
+                <Turkish>Karakol saldırı altındayken garnizonları yönetemezsin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_rebuild_assets_button">
                 <Original>Rebuild Assets</Original>
@@ -2457,6 +2696,7 @@
                 <Italian>Ricostruisci Risorse</Italian>
                 <Spanish>Reconstruir Objetos</Spanish>
                 <Polish>Odbuduj Zasoby</Polish>
+                <Turkish>Varlıkları Düzelt</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_dismiss_garrison_button">
                 <Original>Dismiss Garrison</Original>
@@ -2468,6 +2708,7 @@
                 <Italian>Dimetti Guarnigione</Italian>
                 <Spanish>Desmovilizar Guarnición</Spanish>
                 <Polish>Zwolnij garnizon</Polish>
+                <Turkish>Garnizonu Dağıt</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_build_watchpost_button">
                 <Original>Build Watchpost</Original>
@@ -2479,6 +2720,7 @@
                 <Italian>Costruisci Posto di Osservazione</Italian>
                 <Spanish>Construir punto de vigilancia</Spanish>
                 <Polish>Zbuduj strażnice</Polish>
+                <Turkish>Gözcü Yerleştir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_garrisons_remove_watchpost_button">
                 <Original>Remove Watchpost</Original>
@@ -2490,6 +2732,7 @@
                 <Italian>Rimuovi Posto di Osservazione</Italian>
                 <Spanish>Destruir punto de vigilancia</Spanish>
                 <Polish>Usuń strażnice</Polish>
+                <Turkish>Gözcü Kaldır</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_rest_text">
                 <Original>Rest for %1.</Original>
@@ -2501,6 +2744,7 @@
                 <Italian>Riposa per %1.</Italian>
                 <Spanish>Descansar por %1</Spanish>
                 <Polish>Odpocznij przez %1.</Polish>
+                <Turkish>%1 Süre Dinlen</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_wakeup_text">
                 <Original>Time will be %2 when you wake up.</Original>
@@ -2512,6 +2756,7 @@
                 <Italian>L'ora sarà %2 quando ti sveglierai.</Italian>
                 <Spanish>Serán las %2 cuando te despiertes.</Spanish>
                 <Polish>Po przebudzeniu czas będzie wynosił %2.</Polish>
+                <Turkish>Uyanınca saat %2 olacak</Turkish>
             </Key>
         </Container>
         <Container name="dialog_hq_minefields">
@@ -2525,6 +2770,7 @@
                 <Italian>CAMPI MINATI</Italian>
                 <Spanish>CAMPO DE MINAS</Spanish>
                 <Polish>POLA MINOWE</Polish>
+                <Turkish>MAYIN TARLASI</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_minefields_deploy_minefields_label">
                 <Original>Deploy Minefield:</Original>
@@ -2536,6 +2782,7 @@
                 <Italian>Schiera Campo Minato</Italian>
                 <Spanish>Desplegar campo de minas</Spanish>
                 <Polish>Rozmieść Pole Minowe:</Polish>
+                <Turkish>Mayınları Yerleştir:</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_minefields_apers_mines_button">
                 <Original>APERS Mines</Original>
@@ -2547,6 +2794,7 @@
                 <Italian>Mine APERS</Italian>
                 <Spanish>Minas APERS</Spanish>
                 <Polish>Miny PPIECH</Polish>
+                <Turkish>APERS Mayını</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_minefields_at_mines_button">
                 <Original>AT Mines</Original>
@@ -2558,6 +2806,7 @@
                 <Italian>Mine Anti-Carro</Italian>
                 <Spanish>Minas AT</Spanish>
                 <Polish>Miny PPANC</Polish>
+                <Turkish>AT Mayını</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_minefields_remove_minefield_button">
                 <Original>Remove Minefield</Original>
@@ -2569,6 +2818,7 @@
                 <Italian>Rimuovi Campo Minato</Italian>
                 <Spanish>Quitar campo de minas</Spanish>
                 <Polish>Usuń pole minowe</Polish>
+                <Turkish>Mayınları Kaldır</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_admin">
@@ -2582,6 +2832,7 @@
                 <Italian>Informazioni di Debug</Italian>
                 <Spanish>Debug info</Spanish>
                 <Polish>Informacje debugowania</Polish>
+                <Turkish>Debug Bilgi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_reset_hq_button">
                 <Original>Reset HQ</Original>
@@ -2593,6 +2844,7 @@
                 <Italian>Resetta HQ</Italian>
                 <Spanish>Resetear CG</Spanish>
                 <Polish>Zresetuj kwaterę dowodzenia</Polish>
+                <Turkish>Karargâhı Sıfırla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ai_options_label">
                 <Original>AI Options</Original>
@@ -2604,6 +2856,7 @@
                 <Italian>Opzioni IA</Italian>
                 <Spanish>Opciones de IA</Spanish>
                 <Polish>Opcje AI</Polish>
+                <Turkish>AI Ayarları</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_civ_limit_label">
                 <Original>Civ Limit</Original>
@@ -2615,6 +2868,7 @@
                 <Italian>Limite Civ</Italian>
                 <Spanish>Límite Civiles</Spanish>
                 <Polish>Limit Cywili</Polish>
+                <Turkish>Sivil Limiti</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_spawn_distance_label">
                 <Original>Spawn Distance</Original>
@@ -2626,6 +2880,7 @@
                 <Italian>Distanza di Spawn</Italian>
                 <Spanish>Distancia de aparición</Spanish>
                 <Polish>Dystans Pojawiania się</Polish>
+                <Turkish>Doğma Mesafesi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ai_limiter_label">
                 <Original>AI Limiter</Original>
@@ -2637,6 +2892,7 @@
                 <Italian>Limitatore IA</Italian>
                 <Spanish>Límite de IA</Spanish>
                 <Polish>Ogranicznik AI</Polish>
+                <Turkish>AI Sınırlayıcı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ai_section_warning">
                 <Original>BE CAREFUL WHEN EDITING THESE SETTINGS. SETTING THEM TOO HIGH *WILL* BREAK THE GAME.</Original>
@@ -2648,6 +2904,7 @@
                 <Italian>FAI ATTENZIONE QUANDO MODIFICHI QUESTI IMPOSTAZIONI. SETTARLE TROPPO ALTE *ROMPERA'* IL GIOCO.</Italian>
                 <Spanish>CUIDADO AL EDITAR ESTOS VALORES. PONERLOS MUY ALTOS *PUEDE* ROMPER EL JUEGO.</Spanish>
                 <Polish>ZACHOWAJ OSTROŻNOŚĆ PODCZAS EDYCJI TYCH USTAWIEŃ. USTAWIENIE ICH ZBYT WYSOKICH *POWODUJE* PROBLEMY Z GRĄ.</Polish>
+                <Turkish>BU AYARLARI DÜZENLERKEN DİKKATLİ OLUN. ONLARI ÇOK YÜKSEĞE AYARLAMAK OYUNU BOZAR</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ai_commit_button">
                 <Original>Commit</Original>
@@ -2659,6 +2916,7 @@
                 <Italian>Commetti</Italian>
                 <Spanish>Comprometerse</Spanish>
                 <Polish>Zapisz</Polish>
+                <Turkish>Onayla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_petros_button">
                 <Original>Petros</Original>
@@ -2670,6 +2928,7 @@
                 <Italian>Petros</Italian>
                 <Spanish>Petros</Spanish>
                 <Polish>Petros</Polish>
+                <Turkish>Petros</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_arsenal_box_button">
                 <Original>Arsenal Box</Original>
@@ -2681,6 +2940,7 @@
                 <Italian>Arsenale</Italian>
                 <Spanish>Caja del Arsenal</Spanish>
                 <Polish>Arsenał</Polish>
+                <Turkish>Arsenal Kutusu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_vehicle_box_button">
                 <Original>Vehicle Box</Original>
@@ -2692,6 +2952,7 @@
                 <Italian>Cassa Veicolo</Italian>
                 <Spanish>Caja de vehículos</Spanish>
                 <Polish>Skrzynia Pojazdu</Polish>
+                <Turkish>Araç Kutusu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_flag_button">
                 <Original>Flag</Original>
@@ -2703,6 +2964,7 @@
                 <Italian>Bandiera</Italian>
                 <Spanish>Bandera</Spanish>
                 <Polish>Flaga</Polish>
+                <Turkish>Bayrak</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_tent_button">
                 <Original>Tent</Original>
@@ -2714,6 +2976,7 @@
                 <Italian>Tenda</Italian>
                 <Spanish>Tienda</Spanish>
                 <Polish>Namiot</Polish>
+                <Turkish>Çadır</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_map_button">
                 <Original>Map</Original>
@@ -2725,6 +2988,7 @@
                 <Italian>Mappa</Italian>
                 <Spanish>Mapa</Spanish>
                 <Polish>Mapa</Polish>
+                <Turkish>Harita</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_player_management_button">
                 <Original>Player Management</Original>
@@ -2736,6 +3000,7 @@
                 <Italian>Gestione Giocatori</Italian>
                 <Spanish>Gestión de jugadores</Spanish>
                 <Polish>Zarządzanie Graczem</Polish>
+                <Turkish>Oyuncu Yönetimi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ai_confirm_button">
                 <Original>Confirm</Original>
@@ -2747,6 +3012,7 @@
                 <Italian>Conferma</Italian>
                 <Spanish>Confirmar</Spanish>
                 <Polish>Potwierdź</Polish>
+                <Turkish>Onayla</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_label">
                 <Original>Teleport HQ assets to your position</Original>
@@ -2758,6 +3024,7 @@
                 <Italian>Teletrasporta le risorse HQ sulla tua posizione</Italian>
                 <Spanish>Teleportar objetos del CG a tu posición</Spanish>
                 <Polish>Teleportuj zasoby z sztabu na swoją aktualną pozycję</Polish>
+                <Turkish>Karargah varlıklarını konumunuza ışınlayın</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_player_name_label">
                 <Original>Name</Original>
@@ -2769,6 +3036,7 @@
                 <Italian>Nome</Italian>
                 <Spanish>Nombre</Spanish>
                 <Polish>Nazwa</Polish>
+                <Turkish>İsim</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_player_distance_label">
                 <Original>Distance</Original>
@@ -2780,6 +3048,7 @@
                 <Italian>Distanza</Italian>
                 <Spanish>Distancia de aparición</Spanish>
                 <Polish>Dystans</Polish>
+                <Turkish>Mesafe</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_player_uid_label">
                 <Original>PlayerUID</Original>
@@ -2791,6 +3060,7 @@
                 <Italian>UIDGiocatore</Italian>
                 <Spanish>PlayerUID</Spanish>
                 <Polish>UID Gracza</Polish>
+                <Turkish>Oyuncu ID</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_add_member_button">
                 <Original>Add Member</Original>
@@ -2802,6 +3072,7 @@
                 <Italian>Aggiungi Membro</Italian>
                 <Spanish>Añadir Miembro</Spanish>
                 <Polish>Dodaj Członka</Polish>
+                <Turkish>Üye Ekle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_remove_member_button">
                 <Original>Remove Member</Original>
@@ -2813,6 +3084,7 @@
                 <Italian>Rimuovi Membro</Italian>
                 <Spanish>Quitar Miembro</Spanish>
                 <Polish>Usuń Członka</Polish>
+                <Turkish>Üye Çıkart</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_to_player_button">
                 <Original>Teleport to Player</Original>
@@ -2824,6 +3096,7 @@
                 <Italian>Teletrasportati dal Giocatore</Italian>
                 <Spanish>Teleportar Jugador</Spanish>
                 <Polish>Teleportuj się do Gracza</Polish>
+                <Turkish>Oyuncuya Işınlan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_player_to_me_button">
                 <Original>Teleport Player to Me</Original>
@@ -2835,6 +3108,7 @@
                 <Italian>Teletrasporta il Giocatore da Te</Italian>
                 <Spanish>Teleportar Jugador a Mi</Spanish>
                 <Polish>Teleportuj Gracza do Mnie</Polish>
+                <Turkish>Oyuncuyu Yanına Çek</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_kick_player_button">
                 <Original>Kick Player</Original>
@@ -2846,6 +3120,7 @@
                 <Italian>Kicka Giocatore</Italian>
                 <Spanish>Expulsar Jugador</Spanish>
                 <Polish>Wyrzuć Gracza</Polish>
+                <Turkish>Oyuncuyu At</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ban_player_button">
                 <Original>Ban Player</Original>
@@ -2857,6 +3132,7 @@
                 <Italian>Banna Giocatore</Italian>
                 <Spanish>Banear Jugador</Spanish>
                 <Polish>Zbanuj gracza</Polish>
+                <Turkish>Oyuncuyu Yasak</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_copy_uid_button">
                 <Original>Copy UID to Clipboard</Original>
@@ -2868,6 +3144,7 @@
                 <Italian>Copia UID agli appunti</Italian>
                 <Spanish>Copiar UID a Portapapeles</Spanish>
                 <Polish>Skopiuj UID do schowka</Polish>
+                <Turkish>ID Panoya Kopyala</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_ai_management">
@@ -2881,6 +3158,7 @@
                 <Italian>membri del Gruppo IA</Italian>
                 <Spanish>Miembros del Grupo IA</Spanish>
                 <Polish>Członkowie AI Groupy</Polish>
+                <Turkish>AI Grup üyeleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_clear_button">
                 <Original>Clear</Original>
@@ -2892,6 +3170,7 @@
                 <Italian>Cancella</Italian>
                 <Spanish>Despejar Niebla</Spanish>
                 <Polish>Wyczyść</Polish>
+                <Turkish>Temizle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_clear_tooltip">
                 <Original>Clears list selection</Original>
@@ -2903,6 +3182,7 @@
                 <Italian>Cancella la selezione dell'elenco</Italian>
                 <Spanish>Despeja la lista de selección</Spanish>
                 <Polish>Wyczyść wybór listy</Polish>
+                <Turkish>Liste seçimini temizler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_temp_ai_control_button">
                 <Original>Temp. AI Control</Original>
@@ -2914,6 +3194,7 @@
                 <Italian>Temp. Controllo IA</Italian>
                 <Spanish>Control IA Temp.</Spanish>
                 <Polish>Tymczasowa Kontrola AI</Polish>
+                <Turkish>Geçici AI Kontrolü</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_dismiss_button">
                 <Original>Dismiss Unit(s)</Original>
@@ -2925,6 +3206,7 @@
                 <Italian>Dimetti Unità</Italian>
                 <Spanish>Desmovilizar Unidad(es)</Spanish>
                 <Polish>Zwolnij Jednostki</Polish>
+                <Turkish>Birim(leri) Dağıt</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_auto_rearm_button">
                 <Original>Auto Rearm / Loot</Original>
@@ -2936,6 +3218,7 @@
                 <Italian>Auto Riarma / Saccheggia</Italian>
                 <Spanish>Auto Rearme / Botín</Spanish>
                 <Polish>Automatyczne Uzbrajanie \ Zbieranie</Polish>
+                <Turkish>Otomatik Silahlan / Yağma</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_auto_heal_button">
                 <Original>Auto Heal</Original>
@@ -2947,6 +3230,7 @@
                 <Italian>Auto Cura</Italian>
                 <Spanish>Auto Curación</Spanish>
                 <Polish>Automatyczne Leczenie</Polish>
+                <Turkish>Otomatik İyileşme</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_no_ai_control_tooltip">
                 <Original>You can only remote control single units\nSelect exactly one AI in the list</Original>
@@ -2958,6 +3242,7 @@
                 <Italian>Puoi controllare remotamente solo singole unità\nSeleziona esattamente un IA dalla lista</Italian>
                 <Spanish>Sólo puedes contorlar una unidad de forma remota\nSelecciona exactamente una en la lista de la IA</Spanish>
                 <Polish>Możesz zdalnie sterować tylko pojedynczymi jednostkami\nWybierz dokładnie jednego bota z listy</Polish>
+                <Turkish>Yalnızca tek birimi uzaktan kontrol edebilirsiniz \nListeden bir yapay zeka seçin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_ai_management_select_ai_tooltip">
                 <Original>Select AI in the list</Original>
@@ -2969,6 +3254,7 @@
                 <Italian>Seleziona IA nella lista</Italian>
                 <Spanish>Seleciona a la IA en la lista</Spanish>
                 <Polish>Wybierz AI z listy</Polish>
+                <Turkish>Listeden AI seçin</Turkish>
             </Key>
         </Container>
         <Container name="recruit_squad">
@@ -2982,6 +3268,7 @@
                 <Italian>Recluta Squadra</Italian>
                 <Spanish>Reclutar Escuadra</Spanish>
                 <Polish>Rekrutuj Oddział</Polish>
+                <Turkish>Manga Kur</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_commander_only">
                 <Original>Only the Commander has access to this function</Original>
@@ -2993,6 +3280,7 @@
                 <Italian>Solo il Comandante ha accesso a questa funzionalità</Italian>
                 <Spanish>Solo el Comandante tiene acceso a esta función</Spanish>
                 <Polish>Tylko dowódca ma dostęp do tej funkcji</Polish>
+                <Turkish>Bu işleve yalnızca Komutan erişebilir</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_moving_hq">
                 <Original>You cannot recruit a new squad while you are moving your HQ</Original>
@@ -3004,6 +3292,7 @@
                 <Italian>Non puoi reclutare una squadra quando stai muovendo l'HQ</Italian>
                 <Spanish>No puedes reclutar una escuadra mientras mueves el CG</Spanish>
                 <Polish>Nie możesz rekrutować nowego oddziału, gdy przenosisz swoją kwaterę główną</Polish>
+                <Turkish>Karargâhınız taşırken yeni bir manga toplayamazsınız</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_no_radio">
                 <Original>You need a radio in your inventory to be able to give orders to other squads</Original>
@@ -3015,6 +3304,7 @@
                 <Italian>Hai bisogno di avere una radio nel tuo inventario in ordine da poter dare ordini alle altra squadre</Italian>
                 <Spanish>Necesitas una radio en tu inventario para dar ordenes a otras escuadras</Spanish>
                 <Polish>Potrzebujesz radia w ekwipunku, aby móc wydawać rozkazy innym oddziałom</Polish>
+                <Turkish>Telsiz olmadan diğer mangalara emir veremezsiniz</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_no_radio_man">
                 <Original>You need a Radio Man in your group to be able to give orders to other squads</Original>
@@ -3026,6 +3316,7 @@
                 <Italian>Hai bisogno di avere un Operatore Radio nel tuo gruppo in ordine da poter dare ordini alle altra squadre</Italian>
                 <Spanish>Necesitas un Operador de Radio en tu grupo para dar ordenes a otras escuadras</Spanish>
                 <Polish>Potrzebujesz Operatora Radia w swojej grupie, aby móc wydawać rozkazy innym oddziałom</Polish>
+                <Turkish>Diğer mangalara emir verebilmek için grubunuzda bir Telsiz Operatörü olmalı</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_enemies_near">
                 <Original>You cannot recruit squads with enemies near your HQ</Original>
@@ -3037,6 +3328,7 @@
                 <Italian>Non puoi reclutare una squadra quando ci sono nemici nelle vicinanze dell'HQ</Italian>
                 <Spanish>No puedes reclutar escuadras con enemigos cercanos a tu CG</Spanish>
                 <Polish>Nie możesz rekrutować oddziałów gdy wrogowie są w pobliżu twojej kwatery głównej</Polish>
+                <Turkish>Karargâh yakınında düşman varken yeni manga toplayamazsınız</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_unsupported_modset">
                 <Original>The group or vehicle type you requested is not supported in your modset</Original>
@@ -3048,6 +3340,7 @@
                 <Italian>Il tipo di gruppo o veicolo che hai richiesto non supportato dal tuo modset</Italian>
                 <Spanish>El grupo o tipo de vehículo que pediste no es aceptado en tu modset</Spanish>
                 <Polish>Żądana grupa lub typ pojazdu nie jest obsługiwany w twoim zestawie modów</Polish>
+                <Turkish>Bu grup/araç türü mod paketiniz tarafından desteklenmiyor</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_at_disabled_rhsgref">
                 <Original>AT Trucks are disabled in RHS - GREF</Original>
@@ -3059,6 +3352,7 @@
                 <Italian>I camion Anti-Carro sono disabilitati quando usi RHS - GREF</Italian>
                 <Spanish>Los camiones AT están deshabilitados en RHS - GREF</Spanish>
                 <Polish>Pojazdy PPANC są wyłączone w RHS - GREF</Polish>
+                <Turkish>RHS-GREF modunda AT kamyonları devre dışı bırakıldı</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_insufficient_hr">
                 <Original>You do not have enough HR for this request (%1 required)</Original>
@@ -3070,6 +3364,7 @@
                 <Italian>Non hai abbastanza RU per questa richiesta (%1 necessario)</Italian>
                 <Spanish>No tienes suficientes RH para esto (1% requeridos)</Spanish>
                 <Polish>Nie masz wystarczających zasobów ludzkich dla tego żądania (wymagany %1)</Polish>
+                <Turkish>Bu talep için yeterli İK yok (%1 gerekli)</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_insufficient_money">
                 <Original>You do not have enough money for this request (%1 %2 required)</Original>
@@ -3081,6 +3376,7 @@
                 <Italian>Non hai abbastanza denaro per questa richiesta (%1 %2 necessari)</Italian>
                 <Spanish>No tienes suficiente Dinero para esto (1% %2requerido)</Spanish>
                 <Polish>Nie masz wystarczającej ilości pieniędzy na to żądanie (wymagane %1 %2)</Polish>
+                <Turkish>Bu talep için yeterli paranız yok (%1 %2 gerekli)</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_vehicle_purchased">
                 <Original>Vehicle Purchased</Original>
@@ -3092,6 +3388,7 @@
                 <Italian>Veicolo Acquistato</Italian>
                 <Spanish>Vehiculo Comprado</Spanish>
                 <Polish>Pojazd Zakupiony</Polish>
+                <Turkish>Satın Alınan Araç</Turkish>
             </Key>
             <Key ID="STR_antistasi_recruit_squad_spawn_message">
                 <Original>Group %1 at your command.&lt;br/&gt;&lt;br/&gt;Groups are managed from the High Command bar (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;If the group gets stuck, use the AI Control feature to make them start moving. Mounted Static teams tend to get stuck (solving this is WiP)&lt;br/&gt;&lt;br/&gt;To assign a vehicle for this group, look at some vehicle, and use Vehicle Squad Mngmt option in Y menu</Original>
@@ -3103,6 +3400,7 @@
                 <Italian>Gruppo %1 al tuo comando.&lt;br/&gt;&lt;br/&gt;I gruppi vengono gestiti dalla barra dell'Alto Comando(Default: CTRL+SPAZIO)&lt;br/&gt;&lt;br/&gt;Se il gruppo si blocca, usa il controllo IA per farli muovere. Le squadre mobili di solito si incastrano facilmente. (Stiamo cercando di risolvere questo problema)&lt;br/&gt;&lt;br/&gt;Per assegnare un veicolo a questo gruppo, guarda il veicolo, e usa l'opzione Gestione Veicolo di Squadra nel menu che apri con Y</Italian>
                 <Spanish>Grupo %1 a tu mando.&lt;br/&gt;&lt;br/&gt;Los grupos son gestionados des de la barra de HC (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;Si el grupo queda atascado, usa la opción de Control de IA para hacer que se muevan de nuevo. Equipos Estáticos Montados tienden a atascarse (resolver esto es WiP)&lt;br/&gt;&lt;br/&gt;Para asignar un vehículo a este grupo, mira hacia un vehículo y usa la opción de Gestión de Vehículo de Escuadra en el menú de Y</Spanish>
                 <Polish>Grupuj %1 na twoje polecenie.&lt;br/&gt;&lt;br/&gt;Grupy są zarządzane z paska naczelnego dowodzenia (domyślnie: CTRL+SPACJA)&lt;br/&gt;&lt;br/&gt;Jeśli grupa utknie, przejmij nad nimi kontrolę, by zaczęli się ruszać. Drużyny z bronią statyczną mają tendencję do zacinania się (rozwiązanie jest WiP)&lt;br/&gt;&lt;br/&gt;Aby przypisać pojazd do grupy, spójrz na jakiś pojazd i użyj opcji Zarządzanie składem pojazdów w menu Y</Polish>
+                <Turkish>%1 grubu emrinizde.&lt;br/&gt;&lt;br/&gt;Gruplar Yüksek Komut çubuğundan yönetilir (Varsayılan: CTRL +BOŞLUK)&lt;br/&gt;&lt;br/&gt;Grup takılırsa, AI Kontrol özelliğini kullanarak hareket etmelerini sağlayın. Sabit mevzili takımlar takılmaya meyillidir&lt;br/&gt;&lt;br/&gt;Bu gruba araç atamak için bir araca bakın ve Y menüsündeki Araç Manga Yönetimi seçeneğini kullanın</Turkish>
             </Key>
         </Container>
         <Container name="arsenal_limits_dialog">
@@ -3116,6 +3414,7 @@
                 <Italian>LIMITE OSPITI NELL' ARSENALE</Italian>
                 <Spanish>LÍMITE DEL ARSENAL PARA VISITANTES</Spanish>
                 <Polish>OGRANICZENIA ARSENAŁU DLA GOŚCI</Polish>
+                <Turkish>ARSENAL MİSAFİR SINIRLARI</Turkish>
             </Key>
             <Key ID="STR_antistasi_arsenal_limits_dialog_limit">
                 <Original>Limit</Original>
@@ -3127,6 +3426,7 @@
                 <Italian>Limite</Italian>
                 <Spanish>Límite</Spanish>
                 <Polish>Limit</Polish>
+                <Turkish>Limit</Turkish>
             </Key>
             <Key ID="STR_antistasi_arsenal_limits_dialog_current">
                 <Original>Current</Original>
@@ -3138,6 +3438,7 @@
                 <Italian>Attuale</Italian>
                 <Spanish>Actual</Spanish>
                 <Polish>Aktualny</Polish>
+                <Turkish>Şuanki</Turkish>
             </Key>
             <Key ID="STR_antistasi_arsenal_limits_dialog_close">
                 <Original>CLOSE</Original>
@@ -3149,6 +3450,7 @@
                 <Italian>CHIUDI</Italian>
                 <Spanish>CERRAR</Spanish>
                 <Polish>ZAMKNIJ</Polish>
+                <Turkish>KAPAT</Turkish>
             </Key>
             <Key ID="STR_antistasi_arsenal_limits_dialog_step">
                 <Original>STEP</Original>
@@ -3160,6 +3462,7 @@
                 <Italian>STEP</Italian>
                 <Spanish>VALOR</Spanish>
                 <Polish>KROK</Polish>
+                <Turkish>ADIM</Turkish>
             </Key>
             <Key ID="STR_antistasi_arsenal_limits_dialog_reset">
                 <Original>RESET</Original>
@@ -3171,6 +3474,7 @@
                 <Italian>RESET</Italian>
                 <Spanish>REINICIAR</Spanish>
                 <Polish>RESET</Polish>
+                <Turkish>SIFIRLA</Turkish>
             </Key>
         </Container>
         <Container name="setup_dialog">
@@ -3184,6 +3488,7 @@
                 <Polish>KONFIGURACJA ANTYSTASI Ultimate</Polish>
                 <Portuguese>ANTISTASI Ultimate SETUP</Portuguese>
                 <Chinesesimp>ANTISTASI Ultimate设置</Chinesesimp>
+                <Turkish>ANTISTASI Ultimate Kurulum</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_loadgame_tab_button">
                 <Original>Load Game</Original>
@@ -3195,6 +3500,7 @@
                 <Polish>Wczytaj Rozgrywkę</Polish>
                 <Portuguese>Carregar jogo</Portuguese>
                 <Chinesesimp>载入游戏</Chinesesimp>
+                <Turkish>Oyunu Yükle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_faction_tab_button">
                 <Original>Factions</Original>
@@ -3206,6 +3512,7 @@
                 <Polish>Frakcje</Polish>
                 <Portuguese>Fações</Portuguese>
                 <Chinesesimp>派系</Chinesesimp>
+                <Turkish>Birlikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_tab_button">
                 <Original>Params</Original>
@@ -3217,6 +3524,7 @@
                 <Polish>Parametry</Polish>
                 <Portuguese>Parametros</Portuguese>
                 <Chinesesimp>参数</Chinesesimp>
+                <Turkish>Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_tab_button_disabled">
                 <Original>This tab is disabled. To change save parameters, select a save to edit or check the 'Create new game' checkbox.</Original>
@@ -3228,6 +3536,7 @@
                 <Polish>Ta karta jest wyłączona. Aby zmienić parametry zapisu, wybierz zapis do edycji lub zaznacz pole wyboru "Utwórz nową grę".</Polish>
                 <Portuguese>Este separador está desativado. Para alterar os parâmetros de gravação, selecione um salvamento para editar ou marque a caixa de seleção 'Criar novo jogo'.</Portuguese>
                 <Chinesesimp>此选项卡已禁用。要更改保存参数，请选择要编辑的保存或选中"创建新游戏"复选框。</Chinesesimp>
+                <Turkish>Bu sekme devre dışıdır. Kaydetme parametrelerini değiştirmek için düzenlenecek bir kayıt seçin veya 'Yeni oyun oluştur' onay kutusunu işaretleyin</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_basic_label">
                 <Original>Basic Parameters</Original>
@@ -3239,6 +3548,7 @@
                 <Polish>Podstawowe parametry</Polish>
                 <Portuguese>Parâmetros fundamentais</Portuguese>
                 <Chinesesimp>基本参数</Chinesesimp>
+                <Turkish>Temel Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_adv_label">
                 <Original>Advanced Parameters</Original>
@@ -3250,6 +3560,7 @@
                 <Polish>Parametry zaawansowane</Polish>
                 <Portuguese>Parâmetros avançados</Portuguese>
                 <Chinesesimp>高级参数</Chinesesimp>
+                <Turkish>Gelişmiş Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_bal_label">
                 <Original>AI and Balance Parameters</Original>
@@ -3261,6 +3572,7 @@
                 <Polish>Parametry sztucznej inteligencji i balansu</Polish>
                 <Portuguese>Parâmetros de IA e Equilíbrio</Portuguese>
                 <Chinesesimp>AI 和平衡参数</Chinesesimp>
+                <Turkish>AI ve Denge Parametreleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_eqp_label">
                 <Original>Black Market and Loot Parameters</Original>
@@ -3272,6 +3584,7 @@
                 <Polish>Parametry czarnego rynku i łupów</Polish>
                 <Portuguese>Mercado Negro e Parâmetros de Saque</Portuguese>
                 <Chinesesimp>黑市和战利品参数</Chinesesimp>
+                <Turkish>Karaborsa ve Yağma Parametreleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_bld_label">
                 <Original>Builder Parameters</Original>
@@ -3283,6 +3596,7 @@
                 <Polish>Parametry konstruktora</Polish>
                 <Portuguese>Parâmetros do construtor</Portuguese>
                 <Chinesesimp>构建器参数</Chinesesimp>
+                <Turkish>İnşa Parametreleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_exp_label">
                 <Original>Experimental Parameters</Original>
@@ -3294,6 +3608,7 @@
                 <Polish>Parametry eksperymentalne</Polish>
                 <Portuguese>Parâmetros experimentais</Portuguese>
                 <Chinesesimp>实验参数</Chinesesimp>
+                <Turkish>Deneysel Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_ext_label">
                 <Original>Extender Parameters</Original>
@@ -3305,6 +3620,7 @@
                 <Polish>Parametry przedłużacza</Polish>
                 <Portuguese>Parâmetros do extensor</Portuguese>
                 <Chinesesimp>扩展器参数</Chinesesimp>
+                <Turkish>Genişletici Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Experimental and Development Parameters</Original>
@@ -3316,6 +3632,7 @@
                 <Polish>Parametry eksperymentalne i rozwojowe</Polish>
                 <Portuguese>Parâmetros experimentais e de desenvolvimento</Portuguese>
                 <Chinesesimp>实验与开发参数</Chinesesimp>
+                <Turkish>Deneysel ve Geliştirme Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_content_tab_button">
                 <Original>Additional Content</Original>
@@ -3327,6 +3644,7 @@
                 <Polish>Dodatkowa zawartość</Polish>
                 <Portuguese>Conteúdo adicional</Portuguese>
                 <Chinesesimp>附加内容</Chinesesimp>
+                <Turkish>Ek içerik</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_saved_games">
                 <Original>Saved Games</Original>
@@ -3338,6 +3656,7 @@
                 <Polish>Zapisane Rozgrywki</Polish>
                 <Portuguese>Jogos salvos</Portuguese>
                 <Chinesesimp>保存游戏</Chinesesimp>
+                <Turkish>Kayıtlı Oyunlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_start_game">
                 <Original>Start game</Original>
@@ -3349,6 +3668,7 @@
                 <Polish>Rozpocznij Rozgrywkę</Polish>
                 <Portuguese>Começar jogo</Portuguese>
                 <Chinesesimp>开始游戏</Chinesesimp>
+                <Turkish>Oyunu Başlat</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_create_new_game">
                 <Original>Create new game</Original>
@@ -3360,6 +3680,7 @@
                 <Polish>Stwórz Nową Rozgrywkę</Polish>
                 <Portuguese>Criar novo jogo</Portuguese>
                 <Chinesesimp>创建新的游戏</Chinesesimp>
+                <Turkish>Yeni Oyun</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_old_game">
                 <Original>Copy old game</Original>
@@ -3371,6 +3692,7 @@
                 <Polish>Skopiuj Starą Rozgrywkę</Polish>
                 <Portuguese>copiar jogo antigo</Portuguese>
                 <Chinesesimp>加载之前的存档</Chinesesimp>
+                <Turkish>Eski kaydı kopyala</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_load_old_params">
                 <Original>Load old params</Original>
@@ -3382,6 +3704,7 @@
                 <Polish>Wczytaj Stare Parametry</Polish>
                 <Portuguese>Copiar parametros anteriores</Portuguese>
                 <Chinesesimp>复制之前的参数</Chinesesimp>
+                <Turkish>Eski paramet. yükle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_use_new_namespace">
                 <Original>Use New Save Method</Original>
@@ -3393,6 +3716,7 @@
                 <Polish>Użyj nowej metody zapisywania</Polish>
                 <Portuguese>Usar novo método de salvamento</Portuguese>
                 <Chinesesimp>使用新的保存方法</Chinesesimp>
+                <Turkish>Yeni Kaydetme Yöntemini Kullan</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_use_new_namespace_warning">
                 <Original>Warning: This WILL cause save issues if used on a non-Windows-based server.</Original>
@@ -3404,6 +3728,7 @@
                 <Polish>Ostrzeżenie: Spowoduje to problemy z zapisywaniem, jeśli zostanie użyty na serwerze innym niż Windows.</Polish>
                 <Portuguese>Aviso: Isso CAUSARÁ problemas de salvamento se usado em um servidor não baseado no Windows.</Portuguese>
                 <Chinesesimp>警告：如果在非基于 Windows 的服务器上使用，这将导致保存问题。</Chinesesimp>
+                <Turkish>Uyarı: Bu Windows tabanlı olmayan bir sunucuda kullanıldığında kaydetme sorunlarına neden olur</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_set_hq_position">
                 <Original>Set HQ Position</Original>
@@ -3415,6 +3740,7 @@
                 <Polish>Ustaw Pozycję Sztabu</Polish>
                 <Portuguese>Colocar posiçao Posto Comando</Portuguese>
                 <Chinesesimp>设置总部位置</Chinesesimp>
+                <Turkish>Karargâh Belirle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save_name">
                 <Original>New save name</Original>
@@ -3426,6 +3752,7 @@
                 <Polish>Nowa Nazwa Zapisu</Polish>
                 <Portuguese>Novo mone save</Portuguese>
                 <Chinesesimp>新的存档名</Chinesesimp>
+                <Turkish>Yeni Kayıt Adı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_rename_game">
                 <Original>Rename game</Original>
@@ -3437,6 +3764,7 @@
                 <Polish>Zmień Nazwę Rozgrywki</Polish>
                 <Portuguese>Renomear jogo</Portuguese>
                 <Chinesesimp>重命名存档</Chinesesimp>
+                <Turkish>Oyunu yeniden adlandır</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_delete_game">
                 <Original>Delete game</Original>
@@ -3448,6 +3776,7 @@
                 <Polish>Usuń Rozgrywkę</Polish>
                 <Portuguese>Apagar jogo</Portuguese>
                 <Chinesesimp>删除存档</Chinesesimp>
+                <Turkish>Oyunu sil</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_rebels">
                 <Original>Rebels</Original>
@@ -3459,6 +3788,7 @@
                 <Polish>Rebelianci</Polish>
                 <Portuguese>Insurgentes</Portuguese>
                 <Chinesesimp>反抗军</Chinesesimp>
+                <Turkish>İsyancılar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_rivals">
                 <Original>Rivals</Original>
@@ -3470,6 +3800,7 @@
                 <Polish>Rywale</Polish>
                 <Portuguese>Rivais</Portuguese>
                 <Chinesesimp>对手</Chinesesimp>
+                <Turkish>Rakipler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_civilians">
                 <Original>Civilians</Original>
@@ -3481,6 +3812,7 @@
                 <Polish>Cywile</Polish>
                 <Portuguese>Civis</Portuguese>
                 <Chinesesimp>平民</Chinesesimp>
+                <Turkish>Siviller</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_occupants">
                 <Original>Occupants</Original>
@@ -3492,6 +3824,7 @@
                 <Polish>Okupanci</Polish>
                 <Portuguese>Ocupante</Portuguese>
                 <Chinesesimp>占领方</Chinesesimp>
+                <Turkish>İşgalciler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_invaders">
                 <Original>Invaders</Original>
@@ -3503,6 +3836,7 @@
                 <Polish>Najeźdźcy</Polish>
                 <Portuguese>Invasores</Portuguese>
                 <Chinesesimp>侵略方</Chinesesimp>
+                <Turkish>İstilacılar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_addonvics">
                 <Original>Addon vehicles</Original>
@@ -3514,6 +3848,7 @@
                 <Polish>Dodatkowe Pojazdy</Polish>
                 <Portuguese>Veiculos addon</Portuguese>
                 <Chinesesimp>模组载具</Chinesesimp>
+                <Turkish>Eklenti araçlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_dlc">
                 <Original>DLC</Original>
@@ -3525,6 +3860,7 @@
                 <Polish>DLC</Polish>
                 <Portuguese>DLC</Portuguese>
                 <Chinesesimp>DLC</Chinesesimp>
+                <Turkish>DLC</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_override_map_limits">
                 <Original>Override map limits</Original>
@@ -3536,6 +3872,7 @@
                 <Polish>Nadpisz Limity Mapy</Polish>
                 <Portuguese>Substituir limities mapa</Portuguese>
                 <Chinesesimp>覆盖地图限制设置</Chinesesimp>
+                <Turkish>Harita sınırlarını geçersiz kıl</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_override_camo_limits">
                 <Original>Override camo limits</Original>
@@ -3547,6 +3884,7 @@
                 <Polish>Nadpisz Limity Kamuflażu</Polish>
                 <Portuguese>Substituir limities camuflagem</Portuguese>
                 <Chinesesimp>覆盖伪装限制设置</Chinesesimp>
+                <Turkish>Kamuflaj sınırı geçersiz kıl</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_show_missing_mods">
                 <Original>Show missing mods</Original>
@@ -3558,6 +3896,7 @@
                 <Polish>Pokaż Brakujące Mody</Polish>
                 <Portuguese>Mostrar mods em falta</Portuguese>
                 <Chinesesimp>显示缺失的mod</Chinesesimp>
+                <Turkish>Eksik modları göster</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_override_side_limits">
                 <Original>Override side limits</Original>
@@ -3569,6 +3908,7 @@
                 <Polish>Nadpisz Limity Stron</Polish>
                 <Portuguese>Substituir limities lado</Portuguese>
                 <Chinesesimp>覆盖阵营限制设置</Chinesesimp>
+                <Turkish>Yan sınırları geçersiz kıl</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_switch_enemy_sides">
                 <Original>Switch enemy sides</Original>
@@ -3580,6 +3920,7 @@
                 <Polish>Zmień Strony Wroga</Polish>
                 <Portuguese>Mudar lado enimigos</Portuguese>
                 <Chinesesimp>改变敌军阵营</Chinesesimp>
+                <Turkish>Düşman taraflarını değiştir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_title">
                 <Original>CONFIRM ACTION</Original>
@@ -3591,6 +3932,7 @@
                 <Polish>POTWIERDŹ DZIAŁANIE</Polish>
                 <Portuguese>CONFIMAR</Portuguese>
                 <Chinesesimp>确认行动</Chinesesimp>
+                <Turkish>EYLEMİ ONAYLA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_yes">
                 <Original>YES</Original>
@@ -3602,6 +3944,7 @@
                 <Polish>TAK</Polish>
                 <Portuguese>SIM</Portuguese>
                 <Chinesesimp>确认</Chinesesimp>
+                <Turkish>EVET</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_cancel">
                 <Original>CANCEL</Original>
@@ -3613,6 +3956,7 @@
                 <Polish>ANULUJ</Polish>
                 <Portuguese>CANCELAR</Portuguese>
                 <Chinesesimp>取消</Chinesesimp>
+                <Turkish>İPTAL</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_start_create">
                 <Original>Create new game with </Original>
@@ -3620,6 +3964,7 @@
                 <Chinesesimp>创建新游戏</Chinesesimp>
                 <Korean>새 게임 만들기: </Korean>
                 <French>Créer une nouvelle partie avec</French>
+                <Turkish>Yeni oyun: </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_delete">
                 <Original>Are you sure that you want to delete the game with ID %1 on %2?</Original>
@@ -3627,6 +3972,7 @@
                 <Chinesesimp>您确定要删除 %2 上 ID 为 %1 的游戏吗？</Chinesesimp>
                 <Korean>정말 %2에서 ID가 %1인 게임을 삭제하시겠습니까?</Korean>
                 <French>Êtes-vous sûr de vouloir supprimer le partie avec l'ID %1 sur %2 ?</French>
+                <Turkish>%2 üzerindeki %1 kimliğiyle oyunu silmek istediğinizden emin misiniz?</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_start_copy">
                 <Original>Copy game with ID %1, </Original>
@@ -3634,6 +3980,7 @@
                 <Chinesesimp>复制 ID 为 %1 的游戏，</Chinesesimp>
                 <Korean>ID가 %1인 게임 복사, </Korean>
                 <French>Copier la partie avec ID %1,</French>
+                <Turkish>%1 kimliğiyle Oyunu kopyala, </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_start_load">
                 <Original>Load game with ID %1, </Original>
@@ -3641,6 +3988,7 @@
                 <Chinesesimp>加载 ID 为 %1 的游戏，</Chinesesimp>
                 <Korean>ID가 %1인 게임 불러오기, </Korean>
                 <French>Charger la partie avec l' ID %1,</French>
+                <Turkish>%1 kimliğiyle oyunu yükle, </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_factions">
                 <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
@@ -3648,6 +3996,7 @@
                 <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
                 <Korean>반란군은 %1, 민간인은 %2, 점령군은 %3, 침략군은 %4, 라이벌은 %5입니까?</Korean>
                 <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
+                <Turkish>%1 isyancılar, %2 siviller, %3 işgalciler, %4 istilacılar ve %5 rakipler mi?</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
                 <Original>name "%1", </Original>
@@ -3655,6 +4004,7 @@
                 <Chinesesimp>名称“%1”，</Chinesesimp>
                 <Korean>"%1"(으)로 명명, </Korean>
                 <French>nom "%1", </French>
+                <Turkish> isim "%1", </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_param_locked">
                 <Original>This parameter cannot be changed for an existing save.</Original>
@@ -3666,6 +4016,7 @@
                 <Polish>Tego parametru nie można zmienić dla istniejącego zapisu.</Polish>
                 <Portuguese>Este parâmetro não pode ser alterado para um salvamento existente.</Portuguese>
                 <Chinesesimp>无法为现有保存更改此参数。</Chinesesimp>
+                <Turkish>Mevcut bir kayıt için bu parametre değiştirilemez.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_param_locked_ingame">
                 <Original>This parameter cannot be changed while in game.</Original>
@@ -3677,6 +4028,7 @@
                 <Polish>Tego parametru nie można zmienić w grze.</Polish>
                 <Portuguese>Este parâmetro não pode ser alterado durante o jogo.</Portuguese>
                 <Chinesesimp>此参数在游戏中无法更改。</Chinesesimp>
+                <Turkish>Bu parametre oyundayken değiştirilemez.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_warning">
                 <Original>Enabling rivals may have unintended side effects (e.g. possibility of default invader faction appearing) when invaders are disabled.</Original>
@@ -3688,6 +4040,7 @@
                 <Polish>Włączenie rywali może mieć niezamierzone skutki uboczne (np. możliwość pojawienia się domyślnej frakcji najeźdźców), gdy najeźdźcy są wyłączeni.</Polish>
                 <Portuguese>Habilitar rivais pode ter efeitos colaterais não intencionais (por exemplo, possibilidade de fação invasora padrão aparecer) quando invasores são desativados.</Portuguese>
                 <Chinesesimp>当入侵者被禁用时，启用对手可能会产生意想不到的副作用（例如，可能会出现默认入侵者派系）。</Chinesesimp>
+                <Turkish>Rakiplerin etkinleştirilmesi, istilacılar devre dışı iken yan etkilere neden olabilir.(ör. varsayılan istilacı birliklerin ortaya çıkma ihtimali)</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_disabled">
                 <Original>Rival faction is disabled. To select a rival faction, enable the rivals in the parameters tab.</Original>
@@ -3699,6 +4052,7 @@
                 <Polish>Rywalizująca frakcja jest wyłączona. Aby wybrać rywalizującą frakcję, włącz rywali w zakładce parametrów.</Polish>
                 <Portuguese>A fação rival está desativada. Para selecionar uma fação rival, ative os rivais na guia de parâmetros.</Portuguese>
                 <Chinesesimp>敌对派系被禁用。要选择对手派系，请在 parameters 选项卡中启用对手。</Chinesesimp>
+                <Turkish>Rakip birlikler devre dışı. Rakip birlikleri seçmek için Parametreler sekmesinde etkinleştirin.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_inv_disabled">
                 <Original>Invader faction is disabled for this game mode. To select an invader faction, change the game mode in the parameters tab.</Original>
@@ -3710,6 +4064,7 @@
                 <Polish>Frakcja Najeźdźców jest wyłączona w tym trybie gry. Aby wybrać frakcję najeźdźców, zmień tryb gry w zakładce parametrów.</Polish>
                 <Portuguese>A fação Invader está desativada para este modo de jogo. Para selecionar uma fação invasora, altere o modo de jogo na guia de parâmetros.</Portuguese>
                 <Chinesesimp>Invader 派系在此游戏模式中被禁用。要选择入侵者派系，请在参数选项卡中更改游戏模式。</Chinesesimp>
+                <Turkish>İstilacı birlikler bu oyun modu için devre dışı. Bir istilacı birlik seçmek için Parametreler sekmesinden oyun modunu değiştirin.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_locked">
                 <Original>This parameter cannot be enabled if invaders are disabled.</Original>
@@ -3721,6 +4076,7 @@
                 <Polish>Tego parametru nie można włączyć, jeśli intruzi są wyłączeni.</Polish>
                 <Portuguese>Este parâmetro não pode ser ativado se os invasores estiverem desativados.</Portuguese>
                 <Chinesesimp>如果 invaders 被禁用，则无法启用此参数。</Chinesesimp>
+                <Turkish>İstilacılar devre dışıysa bu parametre etkinleştirilemez</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save">
                 <Original>Creating new save</Original>
@@ -3728,6 +4084,7 @@
                 <Chinesesimp>创建新存档</Chinesesimp>
                 <Korean>새 저장 생성</Korean>
                 <French>Création d'une nouvelle sauvegarde</French>
+                <Turkish>Yeni kayıt oluştur</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_edit_save">
                 <Original>Editing save with ID: %1</Original>
@@ -3735,6 +4092,7 @@
                 <Chinesesimp>编辑存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 편집: %1</Korean>
                 <French>Modification de la sauvegarde (ID : %1)</French>
+                <Turkish>%1 ID’li kaydı düzenliyorsunuz</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
@@ -3742,6 +4100,7 @@
                 <Chinesesimp>复制存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 복사: %1</Korean>
                 <French>Copie de la sauvegarde (ID : %1)</French>
+                <Turkish>%1 ID’li kaydı kopyalıyorsunuz</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_unlocks_disabled">
                 <Original>This parameter cannot be changed when unlocks are globally disabled.</Original>
@@ -3749,6 +4108,7 @@
                 <Chinesesimp>全局禁用解锁功能时无法更改此参数。</Chinesesimp>
                 <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
                 <French>Ce paramètre ne peut pas être modifié lorsque les déverrouillages sont désactivés globalement.</French>
+                <Turkish>Açılır öğeler global olarak devre dışıysa bu parametre değiştirilemez</Turkish>
             </Key>
         </Container>
         <Container name="setup_dialog_table">
@@ -3759,6 +4119,7 @@
                 <Chinesesimp>地图</Chinesesimp>
                 <Korean>지도</Korean>
                 <French>Carte</French>
+                <Turkish>Harita</Turkish>
             </Key>
             <Key ID="STR_antistasi_setup_dialog_table_name">
                 <Original>Name</Original>
@@ -3767,6 +4128,7 @@
                 <Chinesesimp>名字</Chinesesimp>
                 <Korean>이름</Korean>
                 <French>Nom</French>
+                <Turkish>İsim</Turkish>
             </Key>
             <Key ID="STR_antistasi_setup_dialog_table_version">
                 <Original>Version</Original>
@@ -3775,6 +4137,7 @@
                 <Chinesesimp>载具</Chinesesimp>
                 <Korean>버전</Korean>
                 <French>Version</French>
+                <Turkish>Sürüm</Turkish>
             </Key>
             <Key ID="STR_antistasi_setup_dialog_table_time">
                 <Original>Time</Original>
@@ -3783,6 +4146,7 @@
                 <Chinesesimp>时间</Chinesesimp>
                 <Korean>시간</Korean>
                 <French>Temps</French>
+                <Turkish>Zaman</Turkish>
             </Key>
             <Key ID="STR_antistasi_setup_dialog_table_file">
                 <Original>File</Original>
@@ -3791,6 +4155,7 @@
                 <Chinesesimp>文件</Chinesesimp>
                 <Korean>파일</Korean>
                 <French>Fichier</French>
+                <Turkish>Dosya</Turkish>
             </Key>
         </Container>
         <Container name="hqpos_dialog">
@@ -3804,6 +4169,7 @@
                 <Polish>Zamknij</Polish>
                 <Portuguese>Fechar</Portuguese>
                 <Chinesesimp>关闭</Chinesesimp>
+                <Turkish>Kapat</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hqpos_feedback_title">
                 <Original>HQ Position</Original>
@@ -3815,6 +4181,7 @@
                 <Polish>Pozycja Sztabu</Polish>
                 <Portuguese>Posiçao Posto Comando</Portuguese>
                 <Chinesesimp>总部位置</Chinesesimp>
+                <Turkish>Karargâh Konumu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hqpos_feedback_nearenemy">
                 <Original>Selected position cannot be near enemy zones.</Original>
@@ -3826,6 +4193,7 @@
                 <Polish>Wybrana pozycja nie może znajdować się w pobliżu stref wroga.</Polish>
                 <Portuguese>Posiçao selecionada nao pode estar perto de zonas enimigas</Portuguese>
                 <Chinesesimp>所选位置不能过于靠近敌占区</Chinesesimp>
+                <Turkish>Seçilen konum düşman bölgelerine yakın olamaz.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hqpos_feedback_inwater">
                 <Original>Selected position cannot be in water.</Original>
@@ -3837,6 +4205,7 @@
                 <Polish>Wybrana pozycja nie może znajdować się w wodzie.</Polish>
                 <Portuguese>Posiçao selecionada nao pode estar na agua</Portuguese>
                 <Chinesesimp>所选位置不能位于水上</Chinesesimp>
+                <Turkish>Seçilen konum suda olamaz.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hqpos_feedback_outsidemap">
                 <Original>Selected position cannot be outside the map.</Original>
@@ -3848,6 +4217,7 @@
                 <Polish>Wybrana pozycja nie może znajdować się poza mapą.</Polish>
                 <Portuguese>Posiçao selecionada nao pode estar fora do mapa</Portuguese>
                 <Chinesesimp>所选位置不能位于地图外</Chinesesimp>
+                <Turkish>Seçilen konum haritanın dışında olamaz</Turkish>
             </Key>
         </Container>
     </Package>
