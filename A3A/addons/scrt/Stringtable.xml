@@ -205,32 +205,6 @@
                 <Turkish>Tamam</Turkish>
             </Key>
         </Container>
-        <Container name="blackmarket">
-            <Key ID="STR_A3AP_blackmarket_seap">
-                <Original>Rebels need to control at least one seaport to access the black market.</Original>
-                <Russian>Повстанцам необходимо контроллировать хотя бы один морской порт для получения доступа к чёрному рынку.</Russian>
-                <Chinesesimp>至少需要控制一个海港才能进入黑市</Chinesesimp>
-                <Korean>반군은 암시장에 접근하기 위해 적어도 하나의 항구를 통제할 필요가 있습니다.</Korean>
-                <French>Les rebelles doivent contrôler au moins un port maritime pour accéder au marché noir.</French>
-                <Turkish>İsyancıların karaborsaya erişebilmesi için en az bir limanı kontrol etmesi gerekir.</Turkish>
-            </Key>
-            <Key ID="STR_A3AP_blackmarket_res">
-                <Original>Rebels need to control at least one resource to access the black market.</Original>
-                <Russian>Повстанцам необходимо контроллировать хотя бы одну ресурсную точку для получения доступа к чёрному рынку.</Russian>
-                <Chinesesimp>至少需要控制一种资源才能进入黑市。</Chinesesimp>
-                <Korean>반군은 암시장에 접근하기 위해 적어도 하나의 자원채취소를 통제할 필요가 있습니다.</Korean>
-                <French>Les rebelles doivent contrôler au moins une ressource pour accéder au marché noir.</French>
-                <Turkish>İsyancıların karaborsaya erişebilmesi için en az bir kaynak bölgesini kontrol etmesi gerekir.</Turkish>
-            </Key>
-            <Key ID="STR_A3AP_blackmarket_header">
-                <Original>Vehicle Black Market is Not Available</Original>
-                <Russian>Чёрный рынок бронетехники недоступен</Russian>
-                <Chinesesimp>载具黑市不可用</Chinesesimp>
-                <Korean>차량 암시장을 사용할 수 없음</Korean>
-                <French>Le marché noir des véhicules n'est pas disponible</French>
-                <Turkish>Araç Karaborsası Mevcut Değil</Turkish>
-            </Key>
-        </Container>
         <Container name="setupFactionsTab">
             <Key ID="STR_A3AP_setupFactionsTab_noLoaded">
                 <Original>This faction is unavailable in the current game setup. Check your CDLCs and/or mods if you want to use it.\nRequired addons: %1</Original>
@@ -1138,14 +1112,6 @@
             </Key>
         </Container>
         <Container name="scrt_generic">
-            <Key ID="STR_A3AP_error_veh_close_to_flag_generic">
-                <Original>You need to be close to the flag to purchase a vehicle.</Original>
-                <Russian>Вам нужно быть поближе к флагу чтобы иметь возможность покупать технику.</Russian>
-                <Chinesesimp>您需要靠近旗子才能购买车辆。</Chinesesimp>
-                <Korean>자량을 구매하려면 깃발에 가까이 있어야 합니다.</Korean>
-                <French>Il faut être proche du drapeau pour pouvoir acheter un véhicule.</French>
-                <Turkish>Araç satın almak için bayrağın yakınında olmalısınız.</Turkish>
-            </Key>
             <Key ID="STR_A3AP_error_veh_not_enough_money_generic">
                 <Original>You do not have enough money for this vehicle: %1%2 required.</Original>
                 <Russian>У вас недостаточно денег дял покупки этой техники: нужно %1%2.</Russian>
@@ -1258,30 +1224,6 @@
                 <French>Renvoyer la brigade</French>
                 <Turkish>Mangayı Dağıt</Turkish>
             </Key>
-            <Key ID="STR_generic_ai_auto_heal">
-                <Original>AI Auto Heal</Original>
-                <Russian>Автолечение ИИ</Russian>
-                <Chinesesimp>AI自动治疗</Chinesesimp>
-                <Korean>인공지능 자동 치료</Korean>
-                <French>Soins automatiques AI</French>
-                <Turkish>YZ Otomatik İyileştirme</Turkish>
-            </Key>
-            <Key ID="STR_generic_ai_auto_heal_off">
-                <Original>Auto Healing disabled.</Original>
-                <Russian>Автолечение ИИ-соотрядников отключено.</Russian>
-                <Chinesesimp>自动治疗禁用。</Chinesesimp>
-                <Korean>자동 치료 비활성화됨.</Korean>
-                <French>Guérison automatique désactivée.</French>
-                <Turkish>Otomatik İyileştirme devre dışı bırakıldı.</Turkish>
-            </Key>
-            <Key ID="STR_generic_ai_auto_heal_on">
-                <Original>Auto Healing enabled.</Original>
-                <Russian>Автолечение ИИ-соотрядников включено.</Russian>
-                <Chinesesimp>自动治疗启用</Chinesesimp>
-                <Korean>자동 치료 활성화됨.</Korean>
-                <French>Guérison automatique activée.</French>
-                <Turkish>Otomatik İyileştirme etkinleştirildi.</Turkish>
-            </Key>
         </Container>
         <Container name="scrt_common">
             <Key ID="STR_unflip_fail_header">
@@ -1331,30 +1273,6 @@
                 <Korean>차량이 너무 무거워서 뒤집으려면 추가적인 차량이 필요합니다.</Korean>
                 <French>Le véhicule est trop lourd, un véhicule supplémentaire est nécessaire pour effectuer le retourner.</French>
                 <Turkish>Araç çok ağır; düzeltme işlemini gerçekleştirmek için ek bir araç gerekiyor.</Turkish>
-            </Key>
-            <Key ID="STR_cover_before_revive_header">
-                <Original>Cover Before Revive</Original>
-                <Russian>Укрытие перед восстановлением</Russian>
-                <Chinesesimp>复活队友之前找掩护</Chinesesimp>
-                <Korean>소생 전 엄폐</Korean>
-                <French>S'abriter avant la réanimation</French>
-                <Turkish>Canlandırmadan Önce Siper Al</Turkish>
-            </Key>
-            <Key ID="STR_cover_before_revive_desc_1">
-                <Original>AI soldiers will not take you to cover before healing, they will attempt to revive you in place.</Original>
-                <Russian>ИИ-соотрядники не будут тащить вас в укрытие перед тем как поднять, они будут пытаться лечитсья вас сразу на месте ранения.</Russian>
-                <Chinesesimp>AI 士兵在治疗前不会带你去掩体，他们会尝试在原地复活你。</Chinesesimp>
-                <Korean>인공지능 병사들이 치료 전에 엄호하지 않고 제자리에서 당신을 소생하려고 시도할 것입니다.</Korean>
-                <French>Les soldats IA ne vous mettront pas à l'abri avant de vous soigner, ils tenteront de vous réanimer sur place.</French>
-                <Turkish>YZ askerleri sizi iyileştirmeden önce sipere taşımayacak, oldukları yerde canlandırmaya çalışacaklar.</Turkish>
-            </Key>
-            <Key ID="STR_cover_before_revive_desc_2">
-                <Original>AI will take you to nearby cover before attempting to revive you.</Original>
-                <Russian>ИИ-соотрядники будут тащить вас в ближайшее укрытие перед тем как поднять.</Russian>
-                <Chinesesimp>AI 会带你到附近的掩体，然后再尝试救你。</Chinesesimp>
-                <Korean>인공지능은 당신을 소생하려고 시도하기 전에 당신을 근처 엄폐물로 옮길 것입니다.</Korean>
-                <French>L'IA vous emmènera à l'abri avant de tenter de vous réanimer.</French>
-                <Turkish>YZ, sizi canlandırmayı denemeden önce yakındaki bir sipere taşıyacak.</Turkish>
             </Key>
         </Container>
         <Container name="scrt_outpost">
@@ -1440,14 +1358,6 @@
             </Key>
         </Container>
         <Container name="veh_callbacks">
-            <Key ID="STR_veh_callback_close_to_flag">
-                <Original>Vehicle must be placed within %1m of the flag.</Original>
-                <Russian>Транспортное средство должно быть размещено в радиусе не более %1 метров от флага.</Russian>
-                <Chinesesimp>载具必须位于旗帜的 %1m 范围内。</Chinesesimp>
-                <Korean>차량은 깃발에서 %1m 이내에 배치해야 합니다.</Korean>
-                <French>Le véhicule doit être placé à moins de 1 mètre du drapeau.</French>
-                <Turkish>Araç, bayrağın %1 m yakınına yerleştirilmelidir.</Turkish>
-            </Key>
             <Key ID="STR_veh_callback_constructions">
                 <Original>Light and heavy fortifications can only be built off roads, in friendly areas.</Original>
                 <Russian>Лёгкие и тяжелые фортификации могут быть построены только вне дорог, а также в дружественных зонах.</Russian>
@@ -1455,14 +1365,6 @@
                 <Korean>경량과 중량 요새화 진지는 우호적인 지역의 오프로드에서만 건설 가능합니다.</Korean>
                 <French>Les fortifications légères et lourdes ne peuvent être construites qu'en dehors des routes, dans des zones amies.</French>
                 <Turkish>Hafif ve ağır tahkimatlar yalnızca yol dışına ve dost bölgelere inşa edilebilir.</Turkish>
-            </Key>
-            <Key ID="STR_veh_callback_constructions_rb">
-                <Original>Roadblocks can only be built on roads.</Original>
-                <Russian>Блокпосты могут быть построены только на дорогах.</Russian>
-                <Chinesesimp>轻型和重型防御工事只能建在友好地区的公路旁。</Chinesesimp>
-                <Korean>경량과 중량 요새화 진지는 우호적인 지역의 오프로드에서만 건설 가능합니다.</Korean>
-                <French>Les barrages routiers ne peuvent être construits que sur des routes.</French>
-                <Turkish>Yol barikatları yalnızca yolların üzerine inşa edilebilir.</Turkish>
             </Key>
             <Key ID="STR_veh_callback_placement_text">
                 <Original>&lt;t size='0.6'&gt;Select %1 position.&lt;br/&gt;Price: %2%3&lt;/t&gt;</Original>
@@ -1584,14 +1486,6 @@
                 <French>&lt;t size='0.6'&gt;Le commandant %1 partage l'argent du rebelle à parts égales entre tous les membres. %2 reçoit sa part - &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;Komutan %1, parayı tüm üyeler arasında eşit olarak paylaştırdı. %2 kendi payını alıyor: &lt;t color='#00FF00'&gt;%3%4&lt;/t&gt;.&lt;/t&gt;</Turkish>
             </Key>
-            <Key ID="STR_comms_mp_ironman_defeat">
-                <Original>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#e60000'&gt;%1 has failed - Petros has been killed by enemy.&lt;/t&gt; Without a leader resistance can't survive. Mission will end shortly...&lt;/t&gt;</Original>
-                <Russian>&lt;t size='0.6'&gt;У &lt;t size='0.6' color='#e60000'&gt;%1 потерпели неудачу - Петрос был убит врагом.&lt;/t&gt; Без лидера сопротивление не выживет. Миссия скоро закончится.&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#e60000'&gt;%1 任务失败 - Petros 已经被敌方杀死。&lt;/t&gt; 没有领袖，反抗军无法生存，任务很快就会失败...&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#e60000'&gt;%1 실패 - 페트로스가 적에게 사살되었습니다.&lt;/t&gt;저항군 지도자 없이는 살아남을 수 없습니다. 임무가 곧 끝날 것입니다...&lt;/t&gt;</Korean>
-                <French>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#e60000'&gt;%1 a échoué - Petros a été tué par l'ennemi.&lt;/t&gt; Sans chef, la résistance ne peut pas survivre. La mission se terminera bientôt...&lt;/t&gt;</French>
-                <Turkish>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#e60000'&gt;%1 başarısız oldu - Petros düşman tarafından öldürüldü.&lt;/t&gt; Bir lider olmadan direniş hayatta kalamaz. Görev kısa süre içinde sona erecek...&lt;/t&gt;</Turkish>
-            </Key>
             <Key ID="STR_comms_mp_RP_ran_out">
                 <Original>&lt;t size='0.6'&gt;&lt;t size='0.6' color='#008000'&gt;Rally point&lt;/t&gt; ran out of remaining travels.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;У &lt;t size='0.6' color='#008000'&gt;точки сбора&lt;/t&gt; кончились очки перемещения.&lt;/t&gt;</Russian>
@@ -1632,14 +1526,6 @@
                 <French>&lt;t size='0.6'&gt;%1 reçoit &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; pour avoir lutté pour %4 !&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;%1, %4 uğruna savaştığı için &lt;t size='0.6' color='#00FF00'&gt;%2%3&lt;/t&gt; kazandı!&lt;/t&gt;</Turkish>
             </Key>
-            <Key ID="STR_comms_mp_hmg_airdrop">
-                <Original>&lt;t size='0.6'&gt;Rebel aircraft drops the &lt;t size='0.6' color='#804000'&gt;HMG&lt;/t&gt; near your position.&lt;/t&gt;</Original>
-                <Russian>&lt;t size='0.6'&gt;Самолёт повстанцев сбрасывает &lt;t size='0.6' color='#804000'&gt;тяжелый пулемёт&lt;/t&gt; рядом с вашей позицией.&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t size='0.6'&gt;抵抗军飞机空投 &lt;t size='0.6' color='#804000'&gt;HMG&lt;/t&gt; 到你的位置附近。&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t size='0.6'&gt;아군 항공기가 당신 위치 근처에 &lt;t size='0.6' color='#804000'&gt;중기관총&lt;/t&gt;을 투하했습니다.&lt;/t&gt;</Korean>
-                <French>&lt;t size='0.6'&gt;Un avion rebelle largue le &lt;t size='0.6' color='#804000'&gt;HMG&lt;/t&gt;près de votre position.&lt;/t&gt;</French>
-                <Turkish>&lt;t size='0.6'&gt;Direniş uçağı konumunuzun yakınına &lt;t size='0.6' color='#804000'&gt;Ağır Makineli Tüfek&lt;/t&gt; bırakıyor.&lt;/t&gt;</Turkish>
-            </Key>
             <Key ID="STR_comms_mp_supply">
                 <Original>&lt;t size='0.6'&gt;Rebel aircraft drops the &lt;t size='0.6' color='#0000ff'&gt;supply crate&lt;/t&gt; near your position.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;Самолёт повстанцев сбрасывает &lt;t size='0.6' color='#0000ff'&gt;ящик с припасами&lt;/t&gt; рядом с вашей позицией.&lt;/t&gt;</Russian>
@@ -1647,14 +1533,6 @@
                 <Korean>&lt;t size='0.6'&gt;아군 항공기가 당신 위치 근처에 &lt;t size='0.6' color='#0000ff'&gt;보급상자&lt;/t&gt;를 투하했습니다.&lt;/t&gt;</Korean>
                 <French>&lt;t size='0.6'&gt;Un avion rebelle largue la &lt;t size='0.6' color='#0000ff'&gt;caisse de ravitaillement&lt;/t&gt; près de votre position.&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;Direniş uçağı konumunuzun yakınına &lt;t size='0.6' color='#0000ff'&gt;erzak sandığı&lt;/t&gt; bırakıyor.&lt;/t&gt;</Turkish>
-            </Key>
-            <Key ID="STR_comms_mp_light_veh">
-                <Original>&lt;t size='0.6'&gt;Rebel aircraft drops the &lt;t size='0.6' color='#804000'&gt;light vehicle&lt;/t&gt; near your position.&lt;/t&gt;</Original>
-                <Russian>&lt;t size='0.6'&gt;Самолёт повстанцев сбрасывает &lt;t size='0.6' color='#804000'&gt;лёгкий транспорт&lt;/t&gt; рядом с вашей позицией.&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t size='0.6'&gt;抵抗军飞机空投&lt;t size='0.6' color='#804000'&gt;轻型载具&lt;/t&gt; 到你的位置附近。&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t size='0.6'&gt;아군 항공기가 당신 위치 근처에 &lt;t size='0.6' color='#804000'&gt;경차량&lt;/t&gt;을 투하했습니다.</Korean>
-                <French>&lt;t size='0.6'&gt;Un avion rebelle largue un &lt;t size='0.6' color='#0000ff'&gt;véhicule léger&lt;/t&gt; près de votre position.&lt;/t&gt;</French>
-                <Turkish>&lt;t size='0.6'&gt;Direniş uçağı konumunuzun yakınına &lt;t size='0.6' color='#804000'&gt;hafif araç&lt;/t&gt; bırakıyor.&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_comms_mp_lootcrate">
                 <Original>&lt;t size='0.6'&gt;Rebel aircraft drops the &lt;t size='0.6' color='#010100'&gt;loot crate&lt;/t&gt; near your position.&lt;/t&gt;</Original>
@@ -1761,7 +1639,7 @@
                 <Turkish>&lt;t size='0.6' color='#C1C0BB'&gt;%5 Kaynakları&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;Para: %4%2 %6</Turkish>
             </Key>
         </Container>
-        <Container name="end_missions">
+        <Container name="end_missions"> /////////////
             <Key ID="STR_end_mission_modUnautorized_title">
                 <Original>Incompatible Mods</Original>
                 <Russian>Несовместимые моды</Russian>
@@ -2085,13 +1963,6 @@
                 <French>MRAP</French>
                 <Turkish>MRAP</Turkish>
             </Key>
-            <Key ID="STR_qrf_marker_heli">
-                <Original>HELI</Original>
-                <Russian>Вертолёт</Russian>
-                <Chinesesimp>直升机</Chinesesimp>
-                <Korean>헬기</Korean>
-                <Turkish>Helikopter</Turkish>
-            </Key>
             <Key ID="STR_qrf_marker_apc">
                 <Original>APC</Original>
                 <Russian>БТР</Russian>
@@ -2123,13 +1994,6 @@
                 <Korean>경장갑차</Korean>
                 <French>APC léger</French>
                 <Turkish>Hafif ZPT</Turkish>
-            </Key>
-            <Key ID="STR_qrf_marker_artillery">
-                <Original>Artillery</Original>
-                <Russian>артиллерия</Russian>
-                <Chinesesimp>炮兵</Chinesesimp>
-                <Korean>야포</Korean>
-                <Turkish>Obüs/Topçu</Turkish>
             </Key>
             <Key ID="STR_qrf_marker_ifv">
                 <Original>IFV</Original>
@@ -2200,14 +2064,6 @@
                 <French>[%4-%3] %1 %2 Convoi</French>
                 <Turkish>[%4-%3] %1 %2 Konvoyu</Turkish>
             </Key>
-            <Key ID="STR_markers_injured_player">
-                <Original>Injured %1</Original>
-                <Russian>Раненый %1</Russian>
-                <Chinesesimp>%1 受伤</Chinesesimp>
-                <Korean>다친 %1</Korean>
-                <French>Blessé %1</French>
-                <Turkish>Yaralı %1</Turkish>
-            </Key>
             <Key ID="STR_officer_dest_pos">
                 <Original>Officer's Destination</Original>
                 <Russian>Пункт назначения офицера</Russian>
@@ -2224,92 +2080,12 @@
                 <French>Emplacement de l'informateur</French>
                 <Turkish>Muhbirin Konumu</Turkish>
             </Key>
-            <Key ID="STR_marker_airdrop">
-                <Original>Vehicle Paradrop</Original>
-                <Russian>Сброс десанта с техникой</Russian>
-                <Chinesesimp>载具空投</Chinesesimp>
-                <Korean>차량 공수</Korean>
-                <French>Véhicule parachuté</French>
-                <Turkish>Araç Paraşüt İndirmesi</Turkish>
-            </Key>
-            <Key ID="STR_marker_airstrike">
-                <Original>Airstrike</Original>
-                <Russian>Удар с воздуха</Russian>
-                <Chinesesimp>空袭</Chinesesimp>
-                <Korean>공습</Korean>
-                <French>Frappe aérienne</French>
-                <Turkish>Hava Saldırısı</Turkish>
-            </Key>
-            <Key ID="STR_marker_asf_target">
-                <Original>ASF Target</Original>
-                <Russian>Цель воздушного перехвата</Russian>
-                <Chinesesimp>空优战斗机目标</Chinesesimp>
-                <Korean>제공전투기 표적</Korean>
-                <French>Cible ASF</French>
-                <Turkish>Hava Üstünlük Hedefi</Turkish>
-            </Key>
-            <Key ID="STR_marker_carpet_bombing">
-                <Original>Carpet Bombing</Original>
-                <Russian>Ковровая бомбардировка</Russian>
-                <Chinesesimp>地毯式空袭</Chinesesimp>
-                <Korean>융단폭격</Korean>
-                <French>Tapis de bombes</French>
-                <Turkish>Halı Bombardımanı</Turkish>
-            </Key>
-            <Key ID="STR_marker_cas_target">
-                <Original>CAS Target</Original>
-                <Russian>Цель поддержки с воздуха</Russian>
-                <Chinesesimp>近距离空中支援目标</Chinesesimp>
-                <Korean>근접항공지원 표적</Korean>
-                <French>Cible CAS</French>
-                <Turkish>Yakın Hava Desteği Hedefi</Turkish>
-            </Key>
-            <Key ID="STR_marker_cruise_missile_target">
-                <Original>Cruise Missile Target</Original>
-                <Russian>Цель крылатой ракеты</Russian>
-                <Chinesesimp>巡航导弹目标</Chinesesimp>
-                <Korean>순항미사일 표적</Korean>
-                <French>Cible du missile de croisière</French>
-                <Turkish>Seyir Füzesi Hedefi</Turkish>
-            </Key>
-            <Key ID="STR_marker_gunship">
-                <Original>Gunship</Original>
-                <Russian>Летающая батарея поддержки</Russian>
-                <Chinesesimp>武装直升机</Chinesesimp>
-                <Korean>건쉽</Korean>
-                <French>Batterie de soutien aérien (Gunship)</French>
-                <Turkish>Ağır Silahlı Helikopter</Turkish>
-            </Key>
-            <Key ID="STR_marker_arty_target">
-                <Original>Artillery Target</Original>
-                <Russian>Цель артиллерии</Russian>
-                <Chinesesimp>炮兵目标</Chinesesimp>
-                <Korean>포병 표적</Korean>
-                <French>Cible d'artillerie</French>
-                <Turkish>Topçu Hedefi</Turkish>
-            </Key>
             <Key ID="STR_marker_logistics_heli">
                 <Original>Logistics helicopter</Original>
                 <Russian>Вертолёт логистики</Russian>
                 <Chinesesimp>后勤直升机</Chinesesimp>
                 <Korean>군수 헬리콥터</Korean>
                 <Turkish>Lojistik Helikopteri</Turkish>
-            </Key>
-            <Key ID="STR_marker_qrf">
-                <Original>Quick Reaction Force</Original>
-                <Russian>Силы быстрого реагирования</Russian>
-                <Chinesesimp>快速反应部队</Chinesesimp>
-                <Korean>신속대응군</Korean>
-                <French>Force de réaction rapide</French>
-                <Turkish>Hızlı Tepki Kuvveti</Turkish>
-            </Key>
-            <Key ID="STR_marker_sam_target">
-                <Original>SAM Target</Original>
-                <Russian>Цель ПВО</Russian>
-                <Chinesesimp>防空导弹目标</Chinesesimp>
-                <Korean>지대공미사일 표적</Korean>
-                <French>Cible SAM</French>
-                <Turkish>Hava Savunma Füzesi Hedefi</Turkish>
             </Key>
             <Key ID="STR_marker_minefield">
                 <Original>%1 Minefield</Original>
@@ -2342,14 +2118,6 @@
                 <Korean>%1 중기관총 포대</Korean>
                 <French>%1 Emplacement HMG</French>
                 <Turkish>%1 Ağır Makineli Tüfek Mevzisi</Turkish>
-            </Key>
-            <Key ID="STR_marker_mortar_empl">
-                <Original>%1 Mortar Emplacement</Original>
-                <Russian>Миномётная огневая точка %1</Russian>
-                <Chinesesimp>%1 迫击炮阵地</Chinesesimp>
-                <Korean>%1 박격포 포대</Korean>
-                <French>%1 Emplacement mortier</French>
-                <Turkish>%1 Havan Mevzisi</Turkish>
             </Key>
             <Key ID="STR_marker_roadblock">
                 <Original>%1 Roadblock</Original>
@@ -2468,22 +2236,6 @@
                 <French>Barrage</French>
                 <Turkish>Salvo</Turkish>
             </Key>
-            <Key ID="STR_support_hmg_airdrop_init">
-                <Original>HMG Airdrop Entry Point</Original>
-                <Russian>Точка входа (сброс тяжелого пулемета)</Russian>
-                <Chinesesimp>空投HMG（进入点）</Chinesesimp>
-                <Korean>중기관총 공수 진입 지점</Korean>
-                <French>Début de largage HMG</French>
-                <Turkish>Ağır Makineli Tüfek Havadan İkmal Giriş Noktası</Turkish>
-            </Key>
-            <Key ID="STR_support_hmg_airdrop_exit">
-                <Original>HMG Airdrop Exit Point</Original>
-                <Russian>Точка выхода (сброс тяжелого пулемета)</Russian>
-                <Chinesesimp>空投HMG（结束点）</Chinesesimp>
-                <Korean>중기관총 공수 퇴출 지점</Korean>
-                <French>Fin de largage de HMG</French>
-                <Turkish>Ağır Makineli Tüfek Havadan İkmal Çıkış Noktası</Turkish>
-            </Key>
             <Key ID="STR_support_light_veh_init">
                 <Original>Light Vehicle Airdrop Entry Point</Original>
                 <Russian>Точка входа (сброс лёгкой техники)</Russian>
@@ -2547,22 +2299,6 @@
                 <Korean>전리품 헬리콥터 수색 지역</Korean>
                 <French>Zone de recherche de l'hélicoptère de récupération</French>
                 <Turkish>Yağma Helikopteri Arama Alanı</Turkish>
-            </Key>
-            <Key ID="STR_support_loot_crate_airdrop_init">
-                <Original>Loot Crate Airdrop Entry Point</Original>
-                <Russian>Точка входа (сброс ящика-сборщика добычи)</Russian>
-                <Chinesesimp>空投战利品箱（进入点）</Chinesesimp>
-                <Korean>전리품 상자 공수 진입 지점</Korean>
-                <French>Début du parachutage de la Caisse de butin</French>
-                <Turkish>Yağma Kasası Havadan İkmal Giriş Noktası</Turkish>
-            </Key>
-            <Key ID="STR_support_loot_crate_airdrop_exit">
-                <Original>Loot Crate Airdrop Entry Point</Original>
-                <Russian>Точка выхода (сброс ящика-сборщика добычи)</Russian>
-                <Chinesesimp>空投战利品箱（结束点）</Chinesesimp>
-                <Korean>전리품 상자 공수 퇴출 지점</Korean>
-                <French>Fin du parachutage de la Caisse de butin</French>
-                <Turkish>Yağma Kasası Havadan İkmal Giriş Noktası</Turkish>
             </Key>
             <Key ID="STR_support_bomb_run_init">
                 <Original>Bomb Run Entry Point</Original>
@@ -2764,14 +2500,6 @@
                 <French>Les missions de soutien nécessitent des villes situées à moins de %1m de votre QG.</French>
                 <Turkish>Destek görevleri için ana karargâhın %1m yakınında şehirler bulunmalıdır.</Turkish>
             </Key>
-            <Key ID="STR_chats_mission_request_no_RES_hint_text">
-                <Original>Rescue missions require cities, airports or beaches within %1m of HQ.</Original>
-                <Russian>Спасательным миссиям требуются требуются города, авиабазы или пляжи ближе %1 метров от вашего штаба.</Russian>
-                <Chinesesimp>救援任务要求城市、机场或海滩距离您的总部不超过 %1m。</Chinesesimp>
-                <Korean>구출 임무를 수행하려면 본부로부터 %1m 가까운 도시, 공항 또는 해변이 필요합니다.</Korean>
-                <French>Les missions de sauvetage nécessitent des villes, des aéroports ou des plages situés à moins de %1m de votre QG.</French>
-                <Turkish>Kurtarma görevleri için ana karargâhın %1m yakınında şehirler, havaalanları veya plajlar bulunmalıdır.</Turkish>
-            </Key>
             <Key ID="STR_chats_mission_request_no_CONVOY_battack_hint_text">
                 <Original>Convoy missions require a calmed status around the island, and now is not the proper time.</Original>
                 <Russian>Засады на конвои требуют нормализации обстановки и спокойного статуса на местности, сейчас не время.</Russian>
@@ -2811,30 +2539,6 @@
                 <Korean>집결 지점에 도착했습니다.</Korean>
                 <French>Vous êtes arrivés au point de rassemblement.</French>
                 <Turkish>Toplanma noktasına ulaştınız.</Turkish>
-            </Key>
-            <Key ID="STR_cut_text_init_waiting">
-                <Original>Waiting for players and server init...</Original>
-                <Russian>Ожидание игроков и инициализации сервера...</Russian>
-                <Chinesesimp>等待玩家和服务器初始化...</Chinesesimp>
-                <Korean>플레이어 및 서버 초기화를 기다리는 중...</Korean>
-                <French>En attente de joueurs et du démarrage du serveur...</French>
-                <Turkish>Oyuncular ve sunucu başlatılması bekleniyor...</Turkish>
-            </Key>
-            <Key ID="STR_cut_text_init_mission">
-                <Original>Starting Mission...</Original>
-                <Russian>Начинаем миссию...</Russian>
-                <Chinesesimp>开始任务...</Chinesesimp>
-                <Korean>임무 시작 중...</Korean>
-                <French>Début de la mission...</French>
-                <Turkish>Görev Başlatılıyor...</Turkish>
-            </Key>
-            <Key ID="STR_hints_FT_NATO">
-                <Original>Fast traveling, please wait...</Original>
-                <Russian>Быстрое путешествие, пожалуйста, подождите...</Russian>
-                <Chinesesimp>正在快速旅行，请稍候...</Chinesesimp>
-                <Korean>빠른 이동 중, 잠시만 기다려 주십시오...</Korean>
-                <French>Voyage rapide, veuillez patienter...</French>
-                <Turkish>Hızlı seyahat ediliyor, lütfen bekleyin...</Turkish>
             </Key>
             <Key ID="STR_hints_FT_timer">
                 <Original>Fast traveling, travel time: %1s, please wait...</Original>
@@ -2918,22 +2622,6 @@
                 <French>Un client sans tête a été déconnecté. Cela entraînera des dysfonctionnements. Retournez au QG pour le sauvegarder au plus vite et demandez à l'administrateur de le redémarrer.</French>
                 <Turkish>Bir Headless Client bağlantısı kesildi. Bu durum aksaklıklara neden olacaktır. En kısa sürede kaydetmek için Karargâha dönün ve bir Adminden yeniden başlatma isteyin.</Turkish>
             </Key>
-            <Key ID="STR_hints_membership_header">
-                <Original>Server Membership</Original>
-                <Russian>Членство на сервере</Russian>
-                <Chinesesimp>服务器会员</Chinesesimp>
-                <Korean>서버 멤버십</Korean>
-                <French>Membres du serveur</French>
-                <Turkish>Sunucu Üyeliği</Turkish>
-            </Key>
-            <Key ID="STR_hints_membership_all">
-                <Original>Membership is enabled but members list is empty. Current players will be added to the member list.</Original>
-                <Russian>Членство включено, но в списке никого нет. Текущие игроки будут добавлены в список членов сервера.</Russian>
-                <Chinesesimp>成员资格已启用，但成员列表为空。 当前玩家将被添加到成员列表中。</Chinesesimp>
-                <Korean>멤버십을 사용할 수 있지만 멤버 목록이 비어 있습니다. 현재 플레이어가 멤버 목록에 추가됩니다.</Korean>
-                <French>L'adhésion est activée mais la liste des membres est vide. Les joueurs actuels seront ajoutés à la liste des membres.</French>
-                <Turkish>Sunucu üyeliği aktif ancak üye listesi boş. Mevcut oyuncular üye listesine eklenecek.</Turkish>
-            </Key>
             <Key ID="STR_hints_intel_no_one_in_range">
                 <Original>No one in range of the intel, need to start from scratch.</Original>
                 <Russian>Нет никакого рядом с разведданными, придётся начать заново.</Russian>
@@ -2958,22 +2646,6 @@
                 <French>Mission de la Banque</French>
                 <Turkish>Banka Soygunu Görevi</Turkish>
             </Key>
-            <Key ID="STR_hints_LOG_drive_back">
-                <Original>Drive the truck with the money back to base to finish this mission.</Original>
-                <Russian>Отвезите грузовик с деньгами обратно на базу, чтобы завершить эту миссию.</Russian>
-                <Chinesesimp>带着钱把卡车开回基地完成这个任务。</Chinesesimp>
-                <Korean>돈을 가지고 트럭을 몰고 기지로 돌아가 임무를 완료하십시오.</Korean>
-                <French>Conduisez le camion avec l'argent jusqu'à la base pour terminer cette mission.</French>
-                <Turkish>Görevi tamamlamak için para yüklü kamyonu üsse geri sürün.</Turkish>
-            </Key>
-            <Key ID="STR_hints_LOG_close_truck">
-                <Original>Don't move the truck away from the bank until the timer is done.</Original>
-                <Russian>Не отвозите грузовик далеко от банка пока процесс не будет завершён.</Russian>
-                <Chinesesimp>在计时器结束之前，不要让卡车远离银行。</Chinesesimp>
-                <Korean>타이머가 끝날 때까지 트럭을 은행에서 멀리 떨어뜨리지 마십시오.</Korean>
-                <French>N'éloignez pas le camion de la banque tant que le délai n'est pas écoulé.</French>
-                <Turkish>Zamanlayıcı dolana kadar kamyonu bankadan uzaklaştırmayın.</Turkish>
-            </Key>
             <Key ID="STR_hints_LOG_objective">
                 <Original>Bring this truck to the %1 Bank and park it in the main entrance.</Original>
                 <Russian>Привезите этот грузовик до банка %1 и припаркуйте его у главного входа.</Russian>
@@ -2981,38 +2653,6 @@
                 <Korean>이 트럭을 %1 은행으로 가져가서 정문에 주차하십시오.</Korean>
                 <French>Apportez ce camion à la banque %1 et garez-le dans l'entrée principale.</French>
                 <Turkish>Bu kamyonu %1 Bankası'na götürün ve ana girişin önüne park edin.</Turkish>
-            </Key>
-            <Key ID="STR_hints_LOG_supplies_header">
-                <Original>Logistics Mission</Original>
-                <Russian>Миссия логистики</Russian>
-                <Chinesesimp>后勤任务</Chinesesimp>
-                <Korean>병참 임무</Korean>
-                <French>Mission logistique</French>
-                <Turkish>Lojistik Görevi</Turkish>
-            </Key>
-            <Key ID="STR_hints_LOG_supplies_success">
-                <Original>Supplies delivered.</Original>
-                <Russian>Припасы доставлены.</Russian>
-                <Chinesesimp>物资送达。</Chinesesimp>
-                <Korean>보급품이 배달되었습니다.</Korean>
-                <French>Fournitures livrées.</French>
-                <Turkish>Erzak teslim edildi.</Turkish>
-            </Key>
-            <Key ID="STR_hints_LOG_supplies_objective">
-                <Original>Stay close to the crate and eliminate all BLUFOR presence in the surrounding area.</Original>
-                <Russian>Держитесь поближе к ящику и очистите окрестности от врагов.</Russian>
-                <Chinesesimp>靠近箱子并清除周围的所有 蓝方部队 存在。</Chinesesimp>
-                <Korean>상자 가까이 가서 주변에 있는 점령군을 모두 청소하십시오.</Korean>
-                <French>Restez près de la caisse et nettoyez toute présence de BLUFOR dans les environs.</French>
-                <Turkish>Kasanın yakınında kalın ve çevredeki tüm BLUFOR unsurlarını etkisiz hale getirin.</Turkish>
-            </Key>
-            <Key ID="STR_hints_LOG_supplies_timer">
-                <Original>Keep the area clear of hostiles for %1 more seconds.</Original>
-                <Russian>Держите область вокруг припасов свободной от врагов еще %1 секунд.</Russian>
-                <Chinesesimp>在%1秒内保持该区域远离敌人。</Chinesesimp>
-                <Korean>%1초 더 해당 영역에 적이 없도록 하십시오.</Korean>
-                <French>Gardez la zone exempte d'hostiles pendant %1 secondes supplémentaires.</French>
-                <Turkish>Alanı %1 saniye daha düşmanlardan temiz tutun.</Turkish>
             </Key>
             <Key ID="STR_hints_promotion_header">
                 <Original>Promotion</Original>
@@ -3118,38 +2758,6 @@
                 <French>Vous n'avez pas de coéquipiers IA actifs.</French>
                 <Turkish>Aktif bir YZ ekip arkadaşınız bulunmuyor.</Turkish>
             </Key>
-            <Key ID="STR_hints_new_game_header">
-                <Original>Initial HQ Placement Selection</Original>
-                <Russian>Первичное размещение штаба</Russian>
-                <Chinesesimp>初始总部安置选择</Chinesesimp>
-                <Korean>최초 본부 배치 선택</Korean>
-                <French>Sélection initiale de l'emplacement du QG</French>
-                <Turkish>Başlangıç Karargah Konumu Seçimi</Turkish>
-            </Key>
-            <Key ID="STR_hints_new_game_1">
-                <Original>Click on the map position where you want to start the game.</Original>
-                <Russian>Выберите кликом позицию на карте где вы хотите начать игру.</Russian>
-                <Chinesesimp>单击您要开始游戏的地图位置。</Chinesesimp>
-                <Korean>게임을 시작할 지도 위치를 클릭하십시오.</Korean>
-                <French>Cliquez sur l'endroit de la carte où vous voulez commencer le jeu.</French>
-                <Turkish>Oyuna başlamak istediğiniz harita konumuna tıklayın.</Turkish>
-            </Key>
-            <Key ID="STR_hints_new_game_2">
-                <Original>Close the map with M to start in the default position.</Original>
-                <Russian>Нажмите M, если вы хотите начать игру на позиции по умолчанию.</Russian>
-                <Chinesesimp>使用 M 关闭地图以从默认位置开始。</Chinesesimp>
-                <Korean>M으로 지도를 닫으면 기본 위치에서 시작합니다.</Korean>
-                <French>Fermez la carte avec M pour revenir à la position par défaut.</French>
-                <Turkish>Varsayılan konumda başlamak için M tuşuyla haritayı kapatın.</Turkish>
-            </Key>
-            <Key ID="STR_hints_new_game_3">
-                <Original>Don't select areas with enemies nearby!\n\nGame experience changes a lot on different starting positions.</Original>
-                <Russian>Не выбирайте позиции рядом с врагами!\n\n Игровой опыт значительно различается на разных стартовых позициях.</Russian>
-                <Chinesesimp>不要选择附近有敌人的区域！\n\n不同的起始位置，游戏体验变化很大。</Chinesesimp>
-                <Korean>근처에 적이 있는 지역을 선택하지 마십시오!\n\n게임 경험은 시작 위치에 따라 많이 달라집니다.</Korean>
-                <French>Ne sélectionnez pas de zones avec des ennemis à proximité !\n\nL'expérience de jeu change beaucoup en fonction de la position de départ.</French>
-                <Turkish>Yakınında düşman bulunan bölgeleri seçmeyin!\n\nOyun deneyimi, farklı başlangıç konumlarına göre büyük ölçüde değişir.</Turkish>
-            </Key>
             <Key ID="STR_hints_new_game_petros_dead_header">
                 <Original>%1 is dead.</Original>
                 <Russian>%1 умер</Russian>
@@ -3223,54 +2831,6 @@
                 <Korean>%1이(가) 끌려가거나 이송되고 있습니다. 치료할 수 없습니다.</Korean>
                 <French>%1 est porté ou transporté, il ne peut pas être soigné.</French>
                 <Turkish>%1 taşınıyor veya naklediliyor, şu anda iyileştirilemez.</Turkish>
-            </Key>
-            <Key ID="STR_chats_radiocheck">
-                <Original>This is %1, radiocheck OK.</Original>
-                <Russian>Это %1, как слышно, приём? Проверка связи.</Russian>
-                <Chinesesimp>这是%1，无线电检查正常。</Chinesesimp>
-                <Korean>여기는 %1, 무전 체크 양호.</Korean>
-                <French>Il s'agit de %1, contrôle radio OK.</French>
-                <Turkish>Ben %1, telsiz kontrolü tamam.</Turkish>
-            </Key>
-            <Key ID="STR_chats_help_success">
-                <Original>You are ready %1.</Original>
-                <Russian>Всё, ты снова готов к бою, %1.</Russian>
-                <Chinesesimp>你准备好了战斗了，%1。</Chinesesimp>
-                <Korean>치료 끝났습니다, %1.</Korean>
-                <French>Vous êtes prêt %1.</French>
-                <Turkish>Hazırsın %1.</Turkish>
-            </Key>
-            <Key ID="STR_chats_help_response">
-                <Original>Wait a minute comrade %1, I will patch you up.</Original>
-                <Russian>Подожди немного, %1, я тебя подлатаю.</Russian>
-                <Chinesesimp>等一下,%1同志，我给你包扎一下。</Chinesesimp>
-                <Korean>잠깐 기다려시오 %1 동지, 내가 치료하겠소.</Korean>
-                <French>Attendez une minute camarade %1, je vais vous rafistoler.</French>
-                <Turkish>Bir dakika bekle %1, seni iyileştireceğim</Turkish>
-            </Key>
-            <Key ID="STR_chats_help_ask">
-                <Original>Comrades, this is %1. I'm wounded!</Original>
-                <Russian>Соотрядники, это %1. Я ранен!</Russian>
-                <Chinesesimp>同志们，这里是%1，我受伤了！</Chinesesimp>
-                <Korean>동지들, 여기는 %1이다. 부상당했다!</Korean>
-                <French>Camarades, ici %1. Je suis blessé !</French>
-                <Turkish>Yoldaşlar, ben %1. Yaralandım!</Turkish>
-            </Key>
-            <Key ID="STR_chats_help_notification_desc">
-                <Original>%1 is on the way to help you.</Original>
-                <Russian>%1 спешит вам на помощь.</Russian>
-                <Chinesesimp>%1正在来帮助您的路上。</Chinesesimp>
-                <Korean>%1이(가) 당신을 도우러 갑니다.</Korean>
-                <French>%1 est en route pour vous aider.</French>
-                <Turkish>%1 yardımınıza geliyor.</Turkish>
-            </Key>
-            <Key ID="STR_chats_help_notification_header">
-                <Original>Medical Help</Original>
-                <Russian>Медицинская помощь</Russian>
-                <Chinesesimp>医疗救助</Chinesesimp>
-                <Korean>의료 지원</Korean>
-                <French>Aide médicale</French>
-                <Turkish>Tıbbi Yardım</Turkish>
             </Key>
             <Key ID="STR_chats_autoloot_rearm_heal_in_progress">
                 <Original>I can't rearm right now. I'm healing a comrade!</Original>
@@ -3496,14 +3056,6 @@
                 <French>Il y a une grande bataille autour, je ne pense pas que l'ennemi enverra un convoi.</French>
                 <Turkish>Büyük bir savaş yaşanıyor; düşmanın herhangi bir konvoy göndereceğini sanmıyorum.</Turkish>
             </Key>
-            <Key ID="STR_chats_mission_request_no_RES">
-                <Original>I have no rescue missions for you. Move our HQ closer to the enemy.</Original>
-                <Russian>У меня нет спасательных миссий в настоящее время. Передвинь штаб ближе к врагу.</Russian>
-                <Chinesesimp>我没有救援任务给你，把我们的总部移到离敌人更近的地方。</Chinesesimp>
-                <Korean>줄 수 있는 구출 임무가 없습니다. 우리 본부를 적에게 더 가까이 옮기십시오.</Korean>
-                <French>Je n'ai pas de missions de sauvetage pour vous. Rapprochez notre QG de l'ennemi.</French>
-                <Turkish>Sana verecek kurtarma görevim yok. Karargâhımızı düşmana daha yakın bir yere taşı.</Turkish>
-            </Key>
             <Key ID="STR_chats_mission_request_no_SUPP">
                 <Original>I have no support missions for you. Move our HQ closer to the enemy.</Original>
                 <Russian>У меня нет задач поддержки в настоящее время. Передвинь штаб ближе к врагу.</Russian>
@@ -3608,10 +3160,6 @@
                 <French>Lancement du barrage de fumigènes. Temps estimé à 30 secondes.</French>
                 <Turkish>Sis perdesi salvosu başlıyor. Tahmini varış süresi 30 saniye.</Turkish>
             </Key>
-            <!-- <Key ID="STR_chats_barrage_smoke">
-                <Original>Player killed in action.</Original>
-                <Russian>Солдат погиб в бою.</Russian>
-            </Key> -->
             <Key ID="STR_chats_airdrop_pilot_smoke">
                 <Original>This is the pilot. I see your smoke in the drop zone. I'm about to drop my cargo on %1 position, please wait.</Original>
                 <Russian>Пилот на связи. Вижу дым в зоне высадки. Я скоро выброшу груз на парашюте на %1 позицию, ожидайте.</Russian>
@@ -3718,22 +3266,6 @@
             </Key>
         </Container>
         <Container name="task_notifiers">
-            <Key ID="STR_notifiers_mortar_destroyed">
-                <Original>Mortar Support Destroyed</Original>
-                <Russian>Миномёт поддержки уничтожен</Russian>
-                <Chinesesimp>迫击炮支援被摧毁</Chinesesimp>
-                <Korean>박격포 지원이 파괴되었습니다</Korean>
-                <French>Support de mortier détruit</French>
-                <Turkish>Havan Desteği İmha Edildi</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_mortar_crew_killed">
-                <Original>Mortar Support crew killed</Original>
-                <Russian>Экипаж миномёта поддержки учичтожен</Russian>
-                <Chinesesimp>迫击炮支援人员阵亡</Chinesesimp>
-                <Korean>박격포 지원 사수가 죽었습니다</Korean>
-                <French>L'équipe de soutien du mortier a été tuée</French>
-                <Turkish>Havan desteği ekibi öldürüldü</Turkish>
-            </Key>
             <Key ID="STR_notifiers_gunship_killed">
                 <Original>Gunship Destroyed</Original>
                 <Russian>Летающая батарея поддержки уничтожена</Russian>
@@ -3758,14 +3290,6 @@
                 <French>Avion CAS détruit</French>
                 <Turkish>Yakın Hava Desteği (YHD) Uçağı İmha Edildi</Turkish>
             </Key>
-            <Key ID="STR_notifiers_cas_crew_killed">
-                <Original>CAS aircraft crew killed</Original>
-                <Russian>Экипаж авиации поддержки с воздуха уничтожен</Russian>
-                <Chinesesimp>CAS 机组人员阵亡</Chinesesimp>
-                <Korean>근접지원항공기 조종사가 죽었습니다</Korean>
-                <French>L'équipage de l'avion de CAS est mort</French>
-                <Turkish>YHD uçağı mürettebatı öldürüldü</Turkish>
-            </Key>
             <Key ID="STR_notifiers_fighter_killed">
                 <Original>Fighter Destroyed</Original>
                 <Russian>Истребитель-перехватчик уничтожен</Russian>
@@ -3774,22 +3298,6 @@
                 <French>Chasseur détruit</French>
                 <Turkish>Avcı Uçağı İmha Edildi</Turkish>
             </Key>
-            <Key ID="STR_notifiers_fighter_crew_killed">
-                <Original>Fighter crew killed</Original>
-                <Russian>Экипаж истребитель-перехватчика уничтожен</Russian>
-                <Chinesesimp>战斗机机组人员阵亡</Chinesesimp>
-                <Korean>전투기 조종사가 죽었습니다</Korean>
-                <French>L'équipage du chasseur est mort</French>
-                <Turkish>Avcı uçağı mürettebatı öldürüldü</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_airstrike_vessel_crew_killed">
-                <Original>Airstrike vessel crew killed</Original>
-                <Russian>Экипаж самолёта авиаудара уничтожен</Russian>
-                <Chinesesimp>空袭机组人员遇难</Chinesesimp>
-                <Korean>공습함선 조종사가 죽었습니다</Korean>
-                <French>L'équipage du navire d'attaque aérienne est mort</French>
-                <Turkish>Hava saldırısı gemisi mürettebatı öldürüldü</Turkish>
-            </Key>
             <Key ID="STR_notifiers_airstrike_vessel_killed">
                 <Original>Airstrike Vessel Destroyed</Original>
                 <Russian>Самолёт авиаудара уничтожен</Russian>
@@ -3797,30 +3305,6 @@
                 <Korean>공습함선이 파괴되었습니다</Korean>
                 <French>Destruction du navire de frappe aérienne</French>
                 <Turkish>Hava Saldırısı Gemisi İmha Edildi</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_airdrop_killed">
-                <Original>Airdrop Plane Destroyed</Original>
-                <Russian>Парашютно-десантный самолёт уничтожен</Russian>
-                <Chinesesimp>空投飞机被摧毁</Chinesesimp>
-                <Korean>공수 항공기가 파괴되었습니다</Korean>
-                <French>Destruction d'un avion de parachutage</French>
-                <Turkish>İkmal Uçağı İmha Edildi</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_airdrop_crew_killed">
-                <Original>Airdrop plane crew killed</Original>
-                <Russian>Экипаж парашютно-десантного самолёта уничтожен</Russian>
-                <Chinesesimp>空投机组人员阵亡</Chinesesimp>
-                <Korean>공수 항공기 조종사가 죽었습니다</Korean>
-                <French>L'équipage d'un avion de parachutage est mort</French>
-                <Turkish>İkmal uçağı mürettebatı öldürüldü</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_SUP_execute_marker">
-                <Original>%1. Target marked on map!</Original>
-                <Russian>%1. Цель отмечена на карте!</Russian>
-                <Chinesesimp>%1。目标在地图上被标记！</Chinesesimp>
-                <Korean>%1. 목표가 지도에 표시되었습니다!</Korean>
-                <French>%1. Cible marquée sur la carte !</French>
-                <Turkish>%1. Hedef haritada işaretlendi!</Turkish>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_QRF">
                 <Original>A land %1 QRF just arrived</Original>
@@ -3862,27 +3346,12 @@
                 <French>Une %1 QRF aéro-mécanisée vient d'arrivée</French>
                 <Turkish>Havadan taşınan bir %1 mekanize Acil Müdahale Gücü az önce ulaştı</Turkish>
             </Key>
-            <Key ID="STR_notifiers_SUP_execute_QRFAirdrop_marker">
-                <Original>Mechanized Air QRF</Original>
-                <Russian>Десантные мех. СБР</Russian>
-                <Chinesesimp>机械化空中快速反应部队</Chinesesimp>
-                <Korean>공수 기계화 신속대응군</Korean>
-                <French>QRF aérienne mécanisée</French>
-                <Turkish>Havadan Taşınan Mekanize Acil Müdahale Gücü</Turkish>
-            </Key>
             <Key ID="STR_notifiers_SUP_execute_QRFOrbital">
                 <Original>A %1 orbital QRF just dropped</Original>
                 <Russian>Орбитальный десант %1 приземлились</Russian>
                 <Chinesesimp>%1 轨道快反部队刚刚降落</Chinesesimp>
                 <Korean>%1의 궤도 신속대응군이 방금 착륙했습니다.</Korean>
                 <Turkish>Yörüngeden bir %1 Acil Müdahale Gücü iniş yaptı</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_SUP_execute_QRFOrbital_marker">
-                <Original>Orbital QRF</Original>
-                <Russian>Орибальный СБР</Russian>
-                <Chinesesimp>轨道快反部队</Chinesesimp>
-                <Korean>궤도 신속대응군</Korean>
-                <Turkish>Yörünge Acil Müdahale Gücü</Turkish>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_airstrike">
                 <Original>%1 is about to execute an airstrike</Original>
@@ -4180,14 +3649,6 @@
                 <French>Un croiseur %1 prépare un missile de croisière</French>
                 <Turkish>Bir %1 kruvazörü, bir seyir füzesini hazır hale getiriyor</Turkish>
             </Key>
-            <Key ID="STR_notifiers_SUP_setup_orbital_strike">
-                <Original>A %1 satellite is preparing an orbital strike</Original>
-                <Russian>Спутник %1 готовится нанести орбитальный удар</Russian>
-                <Chinesesimp>%1 卫星正在准备轨道攻击</Chinesesimp>
-                <Korean>%1의 위성이 궤도폭격을 준비하는 중입니다</Korean>
-                <French>Un satellite %1 prépare une frappe orbitale</French>
-                <Turkish>Bir %1 uydusu yörünge saldırısı hazırlıyor</Turkish>
-            </Key>
             <Key ID="STR_notifiers_SUP_setup_mortar">
                 <Original>%1 is setting up a mortar position</Original>
                 <Russian>%1 готовят минометный обстрел</Russian>
@@ -4304,14 +3765,6 @@
                 <Korean>%1이(가) 방금 반격군을 보냈습니다</Korean>
                 <French>%1 vient d'envoyer une vague d'attaque majeure</French>
                 <Turkish>%1, az önce bir karşı saldırı kuvveti gönderdi</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_attack_destination_update">
-                <Original>Attack Destination Updated</Original>
-                <Russian>Направление атаки обновлено</Russian>
-                <Chinesesimp>攻击目的地更新</Chinesesimp>
-                <Korean>공격 목표 업데이트</Korean>
-                <French>Destination de l'attaque mise à jour</French>
-                <Turkish>Saldırı Hedefi Güncellendi</Turkish>
             </Key>
             <Key ID="STR_notifiers_radiotower_destroyed">
                 <Original>Radiotower Destroyed</Original>
@@ -4585,14 +4038,6 @@
                 <French>%1 a rejoint %2</French>
                 <Turkish>%1, %2 birimine katıldı</Turkish>
             </Key>
-            <Key ID="STR_notifiers_roadblock_destroyed">
-                <Original>Roadblock destroyed</Original>
-                <Russian>Блокпост уничтожен</Russian>
-                <Chinesesimp>路障被摧毁</Chinesesimp>
-                <Korean>검문소 파괴됨</Korean>
-                <French>Barrage routier détruit</French>
-                <Turkish>Yol barikatı imha edildi</Turkish>
-            </Key>
             <Key ID="STR_notifiers_miladmin_destroyed">
                 <Original>Military Administration Destroyed</Original>
                 <Russian>Администрация уничтожена</Russian>
@@ -4722,14 +4167,6 @@
                 <Korean>%1 유닛 숙련도</Korean>
                 <French>%1 Compétences des unités</French>
                 <Turkish>%1 Birim Yeteneği</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_skill_tooltip">
-                <Original>Current level: %2. Next Level Training Cost: %1%3</Original>
-                <Russian>Текущий уровень: %2. Стоимость тренировки до следующего уровня: %1%3</Russian>
-                <Chinesesimp>当前等级：%2。 下一级培训费用：%1%3</Chinesesimp>
-                <Korean>현재 레벨: %2. 다음 레벨 훈련 가격: %1%3</Korean>
-                <French>Niveau actuel: %2. Coût de la formation au niveau suivant: %1%3</French>
-                <Turkish>Mevcut seviye: %2. Sonraki Seviye Eğitim Maliyeti: %1%3</Turkish>
             </Key>
             <Key ID="STR_notifiers_skill_add_error_no_commander">
                 <Original>Only the commander has access to this function.</Original>
@@ -4913,14 +4350,6 @@
                 <Korean>대공/대전차화기 포대를 설립하려면 전쟁 레벨 4 이상이어야 합니다.</Korean>
                 <French>Nécessite un niveau de guerre (WL) 4 pour mettre en place des points de tir antiaériens ou antichars.</French>
                 <Turkish>AA/AT mevzisi kurmak için Savaş Seviyesi 4 olmanız gerekir.</Turkish>
-            </Key>
-            <Key ID="STR_notifiers_establish_wl5">
-                <Original>You need to be at War Level 5 to establish a mortar emplacement.</Original>
-                <Russian>Необходим Уровень Войны (WL) 5 для установки миномётных огневых точек.</Russian>
-                <Chinesesimp>你需要达到战争等级5才能建立迫击炮阵地。</Chinesesimp>
-                <Korean>박격포 포대를 설립하려면 전쟁 레벨 5 이상이어야 합니다.</Korean>
-                <French>Nécessite un niveau de guerre (WL) 5 pour mettre en place des points de tir de mortier.</French>
-                <Turkish>Havan mevzisi kurmak için Savaş Seviyesi 5 olmanız gerekir.</Turkish>
             </Key>
             <Key ID="STR_notifiers_establish_success">
                 <Original>Click on a desired position on map to establish outpost there.</Original>
@@ -5235,16 +4664,8 @@
                 <Korean>%1의 인력이 %2 밖에 남지 않았습니다!</Korean>
                 <Turkish>%1 biriminin sadece %2 İK puanı kaldı!</Turkish>
             </Key>
-        </Container>
+        </Container> //////////////
         <Container name="skip_time_rest">
-            <Key ID="STR_params_rest_button">
-                <Original>REST FOR 8 HOURS</Original>
-                <Russian>ОТДОХНУТЬ 8 ЧАСОВ</Russian>
-                <Chinesesimp>摸鱼休息8小时</Chinesesimp>
-                <Korean>8시간 휴식</Korean>
-                <French>SE REPOSER PENDANT 8 HEURES</French>
-                <Turkish>8 SAAT DİNLEN</Turkish>
-            </Key>
             <Key ID="STR_params_rest_header">
                 <Original>Skip Time / Rest</Original>
                 <Russian>Пропуск времени / Отдых</Russian>
@@ -5359,38 +4780,6 @@
                 <French>Garnison</French>
                 <Turkish>Garnizon</Turkish>
             </Key>
-            <Key ID="STR_garrison_select_zone">
-                <Original>Select the zone where you will send the selected troops as garrison.</Original>
-                <Russian>Выберите зону, куда вы отправите выбранные войска в качестве гарнизона.</Russian>
-                <Chinesesimp>选择您所在的区域，将派遣选定的部队作为驻军。</Chinesesimp>
-                <Korean>선택한 대원을 주둔지로 보낼 구역을 선택하십시오.</Korean>
-                <French>Sélectionnez la zone dans laquelle vous enverrez les troupes sélectionnées en garnison.</French>
-                <Turkish>Seçili birliklerin garnizon olarak gönderileceği bölgeyi seçin.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_not_markerzone">
-                <Original>You must select any %1 zone with marker.</Original>
-                <Russian>Вы должны выбрать любую зону %1 с маркером.</Russian>
-                <Chinesesimp>您必须选择带有标记的任何%1区域。</Chinesesimp>
-                <Korean>마커가 있는 %1 영역을 선택해야 합니다.</Korean>
-                <French>Vous devez sélectionner une zone %1 quelconque avec un marqueur.</French>
-                <Turkish>İşaretli herhangi bir %1 bölgesini seçmelisiniz.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_not_teamplayer">
-                <Original>Selected zone does not belong to %1.</Original>
-                <Russian>Выбранная зона не принадлежит %1.</Russian>
-                <Chinesesimp>所选区域不属于 %1。</Chinesesimp>
-                <Korean>선택한 영역이 %1의 소속이 아닙니다.</Korean>
-                <French>La zone sélectionnée n'appartient pas à %1.</French>
-                <Turkish>Seçilen bölge %1'e ait değil.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_already_in_garrison">
-                <Original>The selected units are already in garrison.</Original>
-                <Russian>Выбранные юниты уже в гарнизоне.</Russian>
-                <Chinesesimp>被选中的单位已经进驻了。</Chinesesimp>
-                <Korean>선택한 유닛이 이미 주둔지에 있습니다.</Korean>
-                <French>Les unités sélectionnées sont déjà en garnison.</French>
-                <Turkish>Seçilen birimler zaten garnizonda bulunuyor</Turkish>
-            </Key>
             <Key ID="STR_garrison_error_no_specific_squads">
                 <Original>You can't add units to player led, Watchpost, Roadblocks or Minefield building squads.</Original>
                 <Russian>Вы не можете добавлять юниты в ведомые игроком отряды, сторожевые посты, блокпосты и отряды строителей минных полей.</Russian>
@@ -5398,46 +4787,6 @@
                 <Korean>플레이어 주도, 감시초소, 검문소 또는 지뢰지대 건설 부대에는 유닛을 추가할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas ajouter d'unités aux unités dirigées par un joueur, aux postes de guet, aux barrages routiers ou aux unités de construction de champs de mines.</French>
                 <Turkish>Oyuncu liderliğindeki mangalara, Gözlem Noktası, Barikat veya Mayın Tarlası inşa ekiplerine birim ekleyemezsin.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_dead_units">
-                <Original>Dead or player-controlled units can't be added to any garrison.</Original>
-                <Russian>Мертвые или контролируемые игроком юниты не могут быть добавлены ни в один гарнизон.</Russian>
-                <Chinesesimp>死亡或玩家控制的单位不能添加到任何驻军。</Chinesesimp>
-                <Korean>사망하거나 플레이어가 조종하는 부대는 주둔지에 추가할 수 없습니다.</Korean>
-                <French>Les unités mortes ou contrôlées par le joueur ne peuvent pas être ajoutées à une garnison.</French>
-                <Turkish>Ölü veya oyuncu kontrollü birimler herhangi bir garnizona eklenemez.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_no_specific_units">
-                <Original>Static crewmen, prisoners, refugees, Petros or unknown units can't be added to any garrison.</Original>
-                <Russian>Статические члены экипажа, пленные, беженцы, Петрос или неизвестные юниты не могут быть добавлены ни в один гарнизон.</Russian>
-                <Chinesesimp>机组、囚犯、难民、Petros或未知单位不能添加到任何驻军。</Chinesesimp>
-                <Korean>고정화기 사수, 죄수, 난민, 페트로스 또는 알려지지 않은 부대는 어떤 주둔지에도 추가될 수 없습니다.</Korean>
-                <French>Les membres d'équipage statiques, les prisonniers, les réfugiés, Petros ou les unités inconnues ne peuvent pas être ajoutés à une garnison.</French>
-                <Turkish>Sabit silah mürettebatı, mahkumlar, mülteciler, Petros veya bilinmeyen birimler herhangi bir garnizona eklenemez.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_add_to_garrison">
-                <Original>Adding units to garrison...</Original>
-                <Russian>Добавление юнитов в гарнизон...</Russian>
-                <Chinesesimp>增设部队驻军...</Chinesesimp>
-                <Korean>주둔지에 유닛 추가 중...</Korean>
-                <French>Ajouter des unités à la garnison...</French>
-                <Turkish>Birimler garnizona ekleniyor...</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_add_to_garrison_hcsquads">
-                <Original>Adding %1 squad to garrison...</Original>
-                <Russian>Добавление отряда %1 в гарнизон...</Russian>
-                <Chinesesimp>正在将%1小队加入驻军...</Chinesesimp>
-                <Korean>주둔지에 %1 분대 추가 중...</Korean>
-                <French>Ajouter l'escouade %1 à la garnison...</French>
-                <Turkish>%1 mangası garnizona ekleniyor...</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_zone_lost">
-                <Original>%1 group is back to HC control because the zone which was pointed to garrison has been lost.</Original>
-                <Russian>Группа %1 вернулась под контроль HC, т.к. зона, указанная для гарнизона, утрачена.</Russian>
-                <Chinesesimp>%1 组返回 HC 控制，因为指向驻军的区域已经丢失。</Chinesesimp>
-                <Korean>%1 그룹은 주둔지로 지정된 구역을 잃었기 때문에 하이 커맨드 통제로 돌아갔습니다.</Korean>
-                <French>Le groupe %1 est revenu sous le contrôle de HC car la zone qui était pointée vers la garnison a été perdue.</French>
-                <Turkish>Garnizon olarak hedeflenen bölge kaybedildiği için %1 grubu tekrar Yüksek Komuta kontrolüne geçti.</Turkish>
             </Key>
             <Key ID="STR_garrison_error_no_hr">
                 <Original>You don't have enough HR for this recruitment.</Original>
@@ -5454,14 +4803,6 @@
                 <Korean>이 종류의 유닛을 추가할 충분한 자금이 부족합니다.(%1%2 필요)</Korean>
                 <French>Vous n'avez pas assez d'argent pour ajouter ce type d'unité (%1%2 nécessaire).</French>
                 <Turkish>Bu tür bir birim için yeterli paranız yok (%1%2 gerekiyor).</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_limit">
-                <Original>Garrison limit has been reached, you can't add any more units.</Original>
-                <Russian>Достигнут лимит гарнизона, вы больше не можете добавлять новые юниты.</Russian>
-                <Chinesesimp>驻军上限已到，不能再添加新单位</Chinesesimp>
-                <Korean>주둔지가 한계에 도달했으며, 더 이상 새 유닛을 추가할 수 없습니다.</Korean>
-                <French>La limite de garnison a été atteinte, vous ne pouvez plus ajouter de nouvelles unités.</French>
-                <Turkish>Garnizon sınırına ulaşıldı, daha fazla birim ekleyemezsin.</Turkish>
             </Key>
             <Key ID="STR_garrison_error_no_mortar">
                 <Original>You can't add mortars to a Roadblock, Watchpost, AA, AT, Mortar, HMG emplacement garrisons.</Original>
@@ -5486,46 +4827,6 @@
                 <Korean>적이 근처에 있을 때는 주둔지에 유닛을 모집할 수 없습니다.</Korean>
                 <French>Vous ne pouvez pas recruter d'unités en garnison lorsque des ennemis se trouvent à proximité de la zone.</French>
                 <Turkish>Bölgenin yakınında düşmanlar varken garnizona birim alamazsın.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_no_mg_gl_sniper_wl">
-                <Original>You can't recruit this type of unit before reaching War Level 2.</Original>
-                <Russian>Вы не можете нанять этот тип юнитов, пока не достигнете 2-го уровня войны.</Russian>
-                <Chinesesimp>在达到战争等级2之前，你不能招募这种类型的单位。</Chinesesimp>
-                <Korean>전쟁 레벨 2에 도달하기 전에는 해당 유형의 유닛을 모집할 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas recruter ce type d'unité avant d'avoir atteint le niveau de guerre 2.</French>
-                <Turkish>Savaş Seviyesi 2'ye ulaşmadan bu tür bir birimi orduya katamazsın.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_no_at_wl">
-                <Original>You can't recruit this type of unit before reaching War Level 4.</Original>
-                <Russian>Вы не можете нанять этот тип юнитов, пока не достигнете 4-го уровня войны.</Russian>
-                <Chinesesimp>在达到战争等级4之前，你不能招募这种类型的单位。</Chinesesimp>
-                <Korean>전쟁 레벨 4에 도달하기 전에는 해당 유형의 유닛을 모집할 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas engager ce type d'unité avant d'avoir atteint le niveau de guerre 4.</French>
-                <Turkish>Savaş Seviyesi 4'e ulaşmadan bu tür bir birimi orduya katamazsın.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_no_at_mortar">
-                <Original>You can't recruit this type of unit before reaching War Level 5.</Original>
-                <Russian>Вы не можете нанять этот тип юнитов, пока не достигнете 5-го уровня войны.</Russian>
-                <Chinesesimp>达到战争等级5之前，你不能招募这种类型的单位。</Chinesesimp>
-                <Korean>전쟁 레벨 5에 도달하기 전에는 해당 유형의 유닛을 모집할 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas engager ce type d'unité avant d'avoir atteint le niveau de guerre 5.</French>
-                <Turkish>Savaş Seviyesi 5'e ulaşmadan bu tür bir birimi orduya katamazsın.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_exceed_limit">
-                <Original>Adding this squad to garrison will exceed garrison limit.</Original>
-                <Russian>Добавление этого отряда в гарнизон превысит лимит гарнизона.</Russian>
-                <Chinesesimp>将此小队加入驻军会超出驻军上限</Chinesesimp>
-                <Korean>이 분대를 주둔지에 추가하면 주둔 수량 제한을 초과하게 됩니다.</Korean>
-                <French>L'ajout de cette escouade à la garnison dépassera la limite de la garnison.</French>
-                <Turkish>Bu mangayı garnizona eklemek, garnizon sınırını aşacaktır.</Turkish>
-            </Key>
-            <Key ID="STR_garrison_error_guest">
-                <Original>You can't add any more troops to this garrison as a guest.</Original>
-                <Russian>Вы больше не можете добавлять юнитов в этот гарнизон как гость.</Russian>
-                <Chinesesimp>你不能再以访客身份向这个驻军添加任何部队。</Chinesesimp>
-                <Korean>이 주둔지에 게스트로서 더 이상 병력을 추가할 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas ajouter de troupes à cette garnison en tant qu'invité.</French>
-                <Turkish>Misafir olarak bu garnizona daha fazla birlik ekleyemezsin.</Turkish>
             </Key>
             <Key ID="STR_garrison_recruit_success">
                 <Original>Unit has been recruited.%1</Original>
@@ -5609,30 +4910,6 @@
                 <French>Prévoir une sanction pour le meurtre des siens</French>
                 <Turkish>Takım Arkadaşını Vurma Cezasını Etkinleştir</Turkish>
             </Key>
-            <Key ID="STR_params_server_max_task_distance">
-                <Original>Max distance from HQ for tasks</Original>
-                <Russian>Максимальное расстояние от штаб-квартиры для задач</Russian>
-                <Chinesesimp>任务与HQ的最大距离</Chinesesimp>
-                <Korean>과업이 활성화되는 본부로부터의 최대 거리</Korean>
-                <French>Distance maximale du siège pour les tâches</French>
-                <Turkish>Görevler için karargahtan maksimum mesafe</Turkish>
-            </Key>
-            <Key ID="STR_params_server_allow_pvp">
-                <Original>Allow PvP Slots</Original>
-                <Russian>Разрешить PvP-слоты</Russian>
-                <Chinesesimp>允许 PvP</Chinesesimp>
-                <Korean>PvP 슬롯 활성화</Korean>
-                <French>Autoriser les emplacements PvP</French>
-                <Turkish>PvP Slotlarına İzin Ver</Turkish>
-            </Key>
-            <Key ID="STR_params_server_allow_pMarkers">
-                <Original>Allow Friendly Player Markers</Original>
-                <Russian>Разрешить метки на дружественных игроках</Russian>
-                <Chinesesimp>允许友方玩家标记</Chinesesimp>
-                <Korean>아군 플레이어 마커 허용</Korean>
-                <French>Autoriser les tags sur les joueurs amis</French>
-                <Turkish>Dost Oyuncu İşaretçilerine İzin Ver</Turkish>
-            </Key>
             <Key ID="STR_params_server_riv_difficulty">
                 <Original>Rivals Difficulty (Activity)</Original>
                 <Russian>Уровень сложности (активности) соперников-повстанцев</Russian>
@@ -5680,14 +4957,6 @@
                 <Korean>언락 금지</Korean>
                 <French>Pas débloqué</French>
                 <Turkish>Kilit açma yok</Turkish>
-            </Key>
-            <Key ID="STR_params_server_member_only_mag">
-                <Original>Number of weapon magazines needed for guests to be able to use them</Original>
-                <Russian>Количество магазинов к оружию, необходимых для того, чтобы гости могли ими пользоваться</Russian>
-                <Chinesesimp>游客能使用的弹夹数量</Chinesesimp>
-                <Korean>게스트가 사용할 수 있도록 필요한 무기 탄창의 갯수</Korean>
-                <French>Nombre de chargeurs d'armes nécessaires pour que les invités puissent les utiliser</French>
-                <Turkish>Misafirlerin kullanabilmesi için gereken silah şarjörü sayısı</Turkish>
             </Key>
             <Key ID="STR_params_civ_traffic">
                 <Original>Civilian traffic</Original>
@@ -5745,14 +5014,6 @@
                 <French>Elevé</French>
                 <Turkish>Yüksek</Turkish>
             </Key>
-            <Key ID="STR_params_civPedestrians">
-                <Original>Maximum number of pedestrians</Original>
-                <Russian>Максимальное количество пешеходов</Russian>
-                <Chinesesimp>最大一般路过平民数量</Chinesesimp>
-                <Korean>최대 보행자 수</Korean>
-                <French>Nombre maximal de pedestrians</French>
-                <Turkish>Maksimum yaya sayısı</Turkish>
-            </Key>
             <Key ID="STR_params_allowFT">
                 <Original>Fast travel allowed targets</Original>
                 <Russian>Цели с быстрым перемещением</Russian>
@@ -5792,22 +5053,6 @@
                 <Korean>인공지능에게 네이팜탄 폭격 활성화</Korean>
                 <French>Activer le bombardement au napalm pour l'IA</French>
                 <Turkish>YZ için Napalm Bombardımanını Etkinleştir</Turkish>
-            </Key>
-            <Key ID="STR_params_teamSwitchDelay">
-                <Original>Delay After Leaving Before a Player Can Join Another Team (PVP, minutes)</Original>
-                <Russian>Задержка после ухода, прежде чем игрок сможет присоединиться к другой команде (PVP, в минутах)</Russian>
-                <Chinesesimp>离开后在玩家可以加入另一支队伍之前的延迟（PVP，分钟）</Chinesesimp>
-                <Korean>플레이어가 다른 팀에 가입하기 전에 떠난 뒤의 딜레이 시간 (PvP, 분)</Korean>
-                <French>Délai après le départ avant qu'un joueur puisse rejoindre une autre équipe (PVP, minutes)</French>
-                <Turkish>Bir Oyuncunun Başka Bir Takıma Katılabilmesi İçin Geçmesi Gereken Süre (PVP, dakika)</Turkish>
-            </Key>
-            <Key ID="STR_params_teamSwitchDelay_nodelay">
-                <Original>No delay</Original>
-                <Russian>Без задержки</Russian>
-                <Chinesesimp>不设延迟</Chinesesimp>
-                <Korean>딜레이 없음</Korean>
-                <French>Pas de délai</French>
-                <Turkish>Gecikme yok</Turkish>
             </Key>
             <Key ID="STR_params_unlockedUnlimitedAmmo">
                 <Original>Do unlocked weapons automatically unlock their standard magazine?</Original>
@@ -5920,21 +5165,6 @@
                 <French>Temps de réanimation des joueurs (en secondes)</French>
                 <Chinesesimp>玩家复活时间（秒）</Chinesesimp>
                 <Turkish>Oyuncular için canlandırma süresi (saniye cinsinden)</Turkish>
-            </Key>
-            <Key ID="STR_params_antistasi_plus">
-                <Original>ANTISTASI PLUS PARAMETERS</Original>
-                <Russian>ПАРАМЕТРЫ ANTISTASI PLUS</Russian>
-                <Chinesesimp>ANTISTASI PLUS参数</Chinesesimp>
-                <Korean>안티스타시 플러스 매개변수</Korean>
-                <French>PARAMÈTRES ANTISTASI PLUS</French>
-                <Turkish>ANTISTASI PLUS PARAMETRELERİ</Turkish>
-            </Key>
-            <Key ID="STR_params_antistasi_scripts">
-                <Original>SCRIPTS</Original>
-                <Russian>СКРИПТЫ</Russian>
-                <Chinesesimp>脚本</Chinesesimp>
-                <Korean>스크립트</Korean>
-                <Turkish>SCRİPTLER</Turkish>
             </Key>
             <Key ID="STR_params_timeMultiplier">
                 <Original>Time Multiplier</Original>
@@ -6195,30 +5425,6 @@
                 <French>Pénalité du joueur en cas de décès (combien d'argent sera perdu en cas de décès)</French>
                 <Turkish>Oyuncu ölüm cezası (Ölündüğünde ne kadar para kaybedilecek)</Turkish>
             </Key>
-            <Key ID="STR_params_attackTiming">
-                <Original>Attack Timing - enemy massive attack frequency (in minutes, base value affected by various conditions and modifiers)</Original>
-                <Russian>Частота массивной атаки противника (в минутах, базовое значение зависит от различных условий и модификаторов).</Russian>
-                <Chinesesimp>敌人的大规模攻击频率（以分钟为单位，基础值受各种条件和修改器影响）</Chinesesimp>
-                <Korean>공격 타이밍 - 적의 대규모 공격 빈도 (분 단위, 다양한 조건과 변형에 영향에 따라 기본값이 달라짐)</Korean>
-                <French>Fréquence des attaques massives de l'ennemi (en minutes, la valeur de base dépend de différentes conditions et modificateurs)</French>
-                <Turkish>Saldırı Zamanlaması - Düşman devasa saldırı sıklığı (Dakika cinsinden, temel değer çeşitli koşullardan ve çarpanlardan etkilenir)</Turkish>
-            </Key>
-            <Key ID="STR_params_ironManMode">
-                <Original>Iron Man Mode - Petros will have a single life. If he dies, the game will end and the save will be erased.</Original>
-                <Russian>Режим Железной Воли - У Петроса одна жизнь, игра закончится и сохранение затрётся при его смерти</Russian>
-                <Chinesesimp>钢铁侠模式-Petros只有一条命，死亡就游戏结束，存档也会被清空</Chinesesimp>
-                <Korean>아이언맨 모드 - 페트로스는 목숨이 하나 뿐이며 그가 죽으면 게임은 끝날 것이며, 세이브도 지워집니다</Korean>
-                <French>Mode Iron Man - Petros n'aura qu'une seule vie et le jeu se terminera s'il meurt, les sauvegardes seront également effacées.</French>
-                <Turkish>Iron Man Modu - Petros'un tek bir canı olacak. Eğer ölürse oyun biter ve kayıt dosyası silinir.</Turkish>
-            </Key>
-            <Key ID="STR_params_ironManMode_1">
-                <Original>Yes (Warning - irreversible for current save)</Original>
-                <Russian>Да (Внимание! Необратимо для текущего сохранения)</Russian>
-                <Chinesesimp>是（警告-当前保存不可逆）</Chinesesimp>
-                <Korean>예 (경고 - 현재 저장을 되돌릴 수 없습니다)</Korean>
-                <French>Oui (Attention - irréversible pour la sauvegarde actuelle)</French>
-                <Turkish>Evet (Uyarı - mevcut kayıt için geri döndürülemez)</Turkish>
-            </Key>
             <Key ID="STR_params_randomEvents">
                 <Original>Enable Random Events</Original>
                 <Russian>Включить случайные события</Russian>
@@ -6250,38 +5456,6 @@
                 <Korean>적 인공지능 유닛 최대 정확도</Korean>
                 <French>Précision maximale des unités IA ennemies</French>
                 <Turkish>Düşman YZ birimleri maksimum isabet oranı</Turkish>
-            </Key>
-            <Key ID="STR_params_occupantFaction_generic">
-                <Original>Occupants faction</Original>
-                <Russian>Фракция оккупантов</Russian>
-                <Chinesesimp>占领者派系</Chinesesimp>
-                <Korean>점령군 팩션</Korean>
-                <French>Faction des occupants</French>
-                <Turkish>İşgalci grubu</Turkish>
-            </Key>
-            <Key ID="STR_params_invadersFaction_generic">
-                <Original>Invaders faction</Original>
-                <Russian>Фракция захватчиков</Russian>
-                <Chinesesimp>侵略者派系</Chinesesimp>
-                <Korean>침략군 팩션</Korean>
-                <French>Faction des envahisseurs</French>
-                <Turkish>İstilacılar grubu</Turkish>
-            </Key>
-            <Key ID="STR_params_coldWarMode">
-                <Original>Cold War mode (US Army and Red Army factions, roughly first half of 1990s, overrides faction settings above)</Original>
-                <Russian>Режим Холодной Войны (армия США и Красная Армия, примерно первая половина 1990-х годов, переопределяет настройки фракции, указанные выше)</Russian>
-                <Chinesesimp>冷战模式（美国陆军和红军派系，大致在1990年代上半叶，覆盖上面的派系设置）</Chinesesimp>
-                <Korean>냉전 모드 (미 육군과 붉은 군대 팩션, 약 1990년대 전반 배경으로 위의 팩션 설정을 재정의함)</Korean>
-                <French>Mode Guerre froide (factions de l'armée américaine et de l'armée rouge, à peu près dans la première moitié des années 1990 ; les paramètres de faction ci-dessus sont ignorés)</French>
-                <Turkish>Soğuk Savaş modu (ABD Ordusu ve Kızıl Ordu grupları, kabaca 1990'ların ilk yarısı, yukarıdaki grup ayarlarını geçersiz kılar)</Turkish>
-            </Key>
-            <Key ID="STR_params_advancedParams">
-                <Original>FOR ADVANCED USERS ONLY</Original>
-                <Russian>ТОЛЬКО ДЛЯ ПРОДВИНУТЫХ ПОЛЬЗОВАТЕЛЕЙ</Russian>
-                <Chinesesimp>仅限高级用户</Chinesesimp>
-                <Korean>고급 유저 전용</Korean>
-                <French>POUR LES UTILISATEURS AVANCÉS UNIQUEMENT</French>
-                <Turkish>SADECE İLERİ DÜZEY KULLANICILAR İÇİN</Turkish>
             </Key>
             <Key ID="STR_params_LogLevel">
                 <Original>Logging Level (Amount of detail in .rpt file)</Original>
@@ -6322,14 +5496,6 @@
                 <Korean>모두</Korean>
                 <French>Tout</French>
                 <Turkish>Hepsi</Turkish>
-            </Key>
-            <Key ID="STR_params_SupportOptions">
-                <Original>SUPPORT SETTINGS</Original>
-                <Russian>НАСТРОЙКИ ПОДДЕРЖКИ</Russian>
-                <Chinesesimp>支援设置</Chinesesimp>
-                <Korean>지원 설정</Korean>
-                <French>PARAMÈTRES DE SOUTIEN</French>
-                <Turkish>DESTEK AYARLARI</Turkish>
             </Key>
             <Key ID="STR_params_allowCivDialog">
                 <Original>Allow talking to civilians</Original>
@@ -6572,22 +5738,6 @@
                 <Chinesesimp>允许敌人使用未来主义的不公平支持</Chinesesimp>
                 <Korean>적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
                 <Turkish>Düşman tarafından fütüristik-haksız desteklerin kullanılmasına izin ver</Turkish>
-            </Key>
-            <Key ID="STR_params_CrateOptions">
-                <Original>LOOT CRATE SETTINGS</Original>
-                <Russian>НАСТРОЙКИ ЯЩИКОВ С ЛУТОМ</Russian>
-                <Chinesesimp>战利品箱设置</Chinesesimp>
-                <Korean>전리품 상자 설정</Korean>
-                <French>PARAMÈTRES DES CAISSES DE BUTIN</French>
-                <Turkish>YAĞMA KUTUSU AYARLARI</Turkish>
-            </Key>
-            <Key ID="STR_params_truelyRandomCrates">
-                <Original>Truly Random Crates: No balance checks for crates</Original>
-                <Russian>Истинно случайные ящики: проверки баланса для ящиков не производится.</Russian>
-                <Chinesesimp>真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
-                <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
-                <French>Des caisses vraiment aléatoires : Pas de vérification de l'équilibre des caisses</French>
-                <Turkish>Gerçekten Rastgele Sandıklar: Sandıklar için denge kontrolü yapılmaz.</Turkish>
             </Key>
             <Key ID="STR_params_crateWepTypeMax">
                 <Original>Maximum Weapon Types in Crates</Original>
@@ -6835,14 +5985,6 @@
                 <French>Nombre maximal de points d'appui</French>
                 <Turkish>Destek Puanı Sınırı</Turkish>
             </Key>
-            <Key ID="STR_params_maxUnits">
-                <Original>Maximum quantity of simultaneously spawnable units</Original>
-                <Russian>Максимальное количество одновременно спавнящихся юнитов</Russian>
-                <Chinesesimp>同时生成单位的最大数量</Chinesesimp>
-                <Korean>동시에 생성 가능한 유닛의 최대 수량</Korean>
-                <French>Nombre maximum d'unités pouvant être produites simultanément</French>
-                <Turkish>Aynı anda oluşturulabilir maksimum birim miktarı</Turkish>
-            </Key>
             <Key ID="STR_params_reviveKitsEnabled">
                 <Original>Enable combat readiness recovery kits</Original>
                 <Russian>Включить наборы восстановления боеспособности</Russian>
@@ -6961,66 +6103,6 @@
                 <French>Activer le lissage du terrain des hélipads</French>
                 <Turkish>Helikopter pisti arazi düzeltmesini etkinleştir</Turkish>
             </Key>
-            <Key ID="STR_params_memberSlots">
-                <Original>Percentage of Reserved Slots for Members</Original>
-                <Russian>Количество зарезервированных слотов для членов сервера</Russian>
-                <Chinesesimp>会员预留名额百分比</Chinesesimp>
-                <Korean>멤버를 위한 예비 슬롯 백분율</Korean>
-                <French>Pourcentage de créneaux réservés aux membres</French>
-                <Turkish>Üyeler için Ayrılmış Slot Yüzdesi</Turkish>
-            </Key>
-            <Key ID="STR_params_memberSlots_all">
-                <Original>All</Original>
-                <Russian>Все</Russian>
-                <Chinesesimp>全部</Chinesesimp>
-                <Korean>모두</Korean>
-                <French>Tous</French>
-                <Turkish>Hepsi</Turkish>
-            </Key>
-            <Key ID="STR_params_max_distance_to_member_hq">
-                <Original>Max distance of guests from the closest member or HQ (in kilometers)</Original>
-                <Russian>Макс. расстояние от гостей до ближайшего члена сервера (в километрах)</Russian>
-                <Chinesesimp>游客与最近的成员或HQ的最大距离（以公里为单位）</Chinesesimp>
-                <Korean>가장 가까운 멤버 또는 본부로부터의 최대 게스트 거리 (km)</Korean>
-                <French>Distance maximale des invités par rapport au membre ou au siège le plus proche (en kilomètres)</French>
-                <Turkish>Misafirlerin en yakın üyeye veya karargaha olan maksimum uzaklığı (kilometre)</Turkish>
-            </Key>
-            <Key ID="STR_params_max_distance_to_member_unlimited">
-                <Original>Unlimited</Original>
-                <Russian>Безгранично</Russian>
-                <Chinesesimp>无限制</Chinesesimp>
-                <Korean>무제한</Korean>
-                <French>Illimité</French>
-                <Turkish>Sınırsız</Turkish>
-            </Key>
-            <Key ID="STR_params_builder_header">
-                <Original>BUILDER BOX OPTIONS</Original>
-                <Chinesesimp>建筑箱设置</Chinesesimp>
-                <Korean>건설 상자 설정</Korean>
-                <Turkish>İNŞAAT KUTUSU SEÇENEKLERİ</Turkish>
-            </Key>
-            <Key ID="STR_params_experimental_header">
-                <Original>EXPERIMENTAL OPTIONS</Original>
-                <Chinesesimp>实验选项</Chinesesimp>
-                <Korean>실험적 설정</Korean>
-                <Turkish>DENEYSEL SEÇENEKLER</Turkish>
-            </Key>
-            <Key ID="STR_params_balance_header">
-                <Original>BALANCE OPTIONS</Original>
-                <Russian>НАСТРОЙКИ БАЛАНСА</Russian>
-                <Chinesesimp>平衡设置</Chinesesimp>
-                <Korean>밸런스 설정</Korean>
-                <French>OPTIONS D'ÉQUILIBRAGE</French>
-                <Turkish>DENGELEME SEÇENEKLERİ</Turkish>
-            </Key>
-            <Key ID="STR_params_membership_header">
-                <Original>MEMBERSHIP OPTIONS</Original>
-                <Russian>НАСТРОЙКИ ЧЛЕНСТВА НА СЕРВЕРЕ</Russian>
-                <Chinesesimp>服务器会员设置</Chinesesimp>
-                <Korean>멤버쉽 설정</Korean>
-                <French>OPTIONS D'ADHÉSION</French>
-                <Turkish>ÜYELİK SEÇENEKLERİ</Turkish>
-            </Key>
             <Key ID="STR_params_overall_enemy_res_balance">
                 <Original>Overall enemy resource balance</Original>
                 <Russian>Общий баланс вражеских ресурсов</Russian>
@@ -7028,78 +6110,6 @@
                 <Korean>전체적인 적군 자원 밸런스</Korean>
                 <French>Équilibre général des ressources de l'ennemi</French>
                 <Turkish>Genel düşman kaynak dengesi</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_trivial">
-                <Original>Trivial</Original>
-                <Russian>Тривиально</Russian>
-                <Chinesesimp>微不足道</Chinesesimp>
-                <Korean>초보</Korean>
-                <French>Trivial</French>
-                <Turkish>Önemsiz</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_veasy">
-                <Original>Very Easy</Original>
-                <Russian>Очень легко</Russian>
-                <Chinesesimp>非常简单</Chinesesimp>
-                <Korean>매우 쉬움</Korean>
-                <French>Très facile</French>
-                <Turkish>Çok Kolay</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_easy">
-                <Original>Easy</Original>
-                <Russian>Легко</Russian>
-                <Chinesesimp>简单</Chinesesimp>
-                <Korean>쉬움</Korean>
-                <French>Facile</French>
-                <Turkish>Kolay</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_easymedium">
-                <Original>Below Normal</Original>
-                <Russian>Ниже Обычного</Russian>
-                <Chinesesimp>低于普通</Chinesesimp>
-                <Korean>조금 쉬움</Korean>
-                <French>Inférieur à la normale</French>
-                <Turkish>Normalin altında</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_medium">
-                <Original>Normal</Original>
-                <Russian>Обычно</Russian>
-                <Chinesesimp>普通</Chinesesimp>
-                <Korean>중간</Korean>
-                <French>Normale</French>
-                <Turkish>Normal</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_mediumhigh">
-                <Original>Above Normal</Original>
-                <Russian>Выше Обычного</Russian>
-                <Chinesesimp>高于普通</Chinesesimp>
-                <Korean>조금 어려움</Korean>
-                <French>Supérieure à la normale</French>
-                <Turkish>Normalin Üstünde</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_hard">
-                <Original>Hard</Original>
-                <Russian>Тяжело</Russian>
-                <Chinesesimp>困难</Chinesesimp>
-                <Korean>어려움</Korean>
-                <French>Très difficile</French>
-                <Turkish>Zor</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_vhard">
-                <Original>Very Hard</Original>
-                <Russian>Очень тяжело</Russian>
-                <Chinesesimp>非常困难</Chinesesimp>
-                <Korean>매우 어려움</Korean>
-                <French>Très difficile</French>
-                <Turkish>Çok Zor</Turkish>
-            </Key>
-            <Key ID="STR_params_difficulty_extreme">
-                <Original>Extreme</Original>
-                <Russian>Экстремально</Russian>
-                <Chinesesimp>地狱</Chinesesimp>
-                <Korean>고수</Korean>
-                <French>Extrême</French>
-                <Turkish>Aşırı</Turkish>
             </Key>
             <Key ID="STR_params_response_balance">
                 <Original>Enemy attack resource balance (relative to overall balance)</Original>
@@ -7189,14 +6199,6 @@
                 <French>Compétence de l'IA amie (également affectée par la compétence du serveur)</French>
                 <Turkish>Dost yapay zeka becerisi (sunucu beceri ayarından da etkilenir)</Turkish>
             </Key>
-            <Key ID="STR_params_equipment_header">
-                <Original>EQUIPMENT OPTIONS</Original>
-                <Russian>НАСТРОЙКИ ЭКИПИРОВКИ</Russian>
-                <Chinesesimp>设备选择</Chinesesimp>
-                <Korean>장비 설정</Korean>
-                <French>OPTIONS D'ÉQUIPEMENT</French>
-                <Turkish>EKİPMAN SEÇENEKLERİ</Turkish>
-            </Key>
             <Key ID="STR_params_A3A_guestItemLimit">
                 <Original>Default number of items needed for guests to be able to use them</Original>
                 <Russian>Минимальное количество предмета для гостей</Russian>
@@ -7212,38 +6214,6 @@
                 <Korean>무제한</Korean>
                 <French>Aucune limite</French>
                 <Turkish>Sınır yok</Turkish>
-            </Key>
-            <Key ID="STR_params_dev_header">
-                <Original>DEVELOPMENT OPTIONS</Original>
-                <Russian>НАСТРОЙКИ РАЗРАБОТКИ И ОТЛАДКИ</Russian>
-                <Chinesesimp>开发者选项</Chinesesimp>
-                <Korean>개발자 설정</Korean>
-                <French>OPTIONS DE DÉVELOPPEMENT</French>
-                <Turkish>GELİŞTİRME SEÇENEKLERİ</Turkish>
-            </Key>
-            <Key ID="STR_params_A3A_GUIDevPreview">
-                <Original>Use In-Development UI Preview.</Original>
-                <Russian>Использовать превью пользовательского интерфейса (в разработке)</Russian>
-                <Chinesesimp>使用预览界面（开发中）</Chinesesimp>
-                <Korean>개발 중인 UI의 미리 보기를 사용합니다.</Korean>
-                <French>Utiliser l'aperçu de l'interface utilisateur (en cours de développement).</French>
-                <Turkish>Geliştirilmekte Olan Arayüz Önizlemesini Kullan.</Turkish>
-            </Key>
-            <Key ID="STR_params_TitleLoot">
-                <Original>LOOT CRATE OPTIONS</Original>
-                <Russian>НАСТРОЙКИ ДОБЫЧИ</Russian>
-                <Chinesesimp>战利品箱选项</Chinesesimp>
-                <Korean>전리품 상자 설정</Korean>
-                <French>OPTIONS POUR LES CAISSES DE BUTIN</French>
-                <Turkish>YAĞMA KASASI SEÇENEKLERİ</Turkish>
-            </Key>
-            <Key ID="STR_params_bobChaosCrates">
-                <Original>Truly Random Crates: Remove all balance checks from Crates</Original>
-                <Russian>Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
-                <Chinesesimp>真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
-                <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
-                <French>Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
-                <Turkish>Gerçekten Rastgele Kasalar: Kasalardaki tüm denge kontrollerini kaldır</Turkish>
             </Key>
             <Key ID="STR_params_scenarioParams">
                 <Original>SCENARIO OPTIONS</Original>
@@ -7372,7 +6342,7 @@
                 <Korean>개발 옵션</Korean>
                 <French>OPTIONS DE DÉVELOPPEMENT</French>
                 <Turkish>GELİŞTİRİCİ SEÇENEKLERİ</Turkish>
-            </Key>
+            </Key> ///////////
         </Container>
         <Container name="roles">
             <Key ID="STR_role_default_commander_role_name">
@@ -7561,15 +6531,6 @@
                 <French>Administration militaire</French>
                 <Turkish>Askeri İdare</Turkish>
             </Key>
-            <Key ID="STR_headquarters">
-                <Original>Your Headquarters</Original>
-                <English>Your Headquarters</English>
-                <Russian>Штаб</Russian>
-                <Korean>당신의 본부</Korean>
-                <French>Votre QG</French>
-                <Chinesesimp>你的总部</Chinesesimp>
-                <Turkish>Karargahınız</Turkish>
-            </Key>
         </Container>
         <Container name="system_chats">
             <Key ID="STR_antistasi_schat_loading_cargo">
@@ -7590,22 +6551,6 @@
             </Key>
         </Container>
         <Container name="undercover">
-            <Key ID="STR_info_bar_undercover_on">
-                <Original>Undercover: &lt;t color='#43A047'&gt;On&lt;/t&gt;</Original>
-                <Russian>Маскировка: &lt;t color='#43A047'&gt;Вкл&lt;/t&gt;</Russian>
-                <Chinesesimp>伪装：&lt;t color='#43A047'&gt;On&lt;/t&gt;</Chinesesimp>
-                <Korean>위장: &lt;t color='#43A047'&gt;켜짐&lt;/t&gt;</Korean>
-                <French>Sous couverture: &lt;t color='#43A047'&gt;On&lt;/t&gt;</French>
-                <Turkish>Gizli Kimlik: &lt;t color='#43A047'&gt;Açık&lt;/t&gt;</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_off">
-                <Original>Undercover: Off</Original>
-                <Russian>Маскировка: Выкл</Russian>
-                <Chinesesimp>伪装：关闭</Chinesesimp>
-                <Korean>위장: 꺼짐</Korean>
-                <French>Sous couverture: Off</French>
-                <Turkish>Gizli Kimlik: Kapalı</Turkish>
-            </Key>
             <Key ID="STR_info_bar_undercover_break_title">
                 <Original>Undercover</Original>
                 <Russian>Маскировка</Russian>
@@ -7613,150 +6558,6 @@
                 <Korean>위장</Korean>
                 <French>Sous couverture</French>
                 <Turkish>Gizli Kimlik</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_unknown">
-                <Original>Your undercover status has been compromised for unknown reason.</Original>
-                <Russian>Ваша маскировка была скомпрометирована по неизвестным причинам.</Russian>
-                <Chinesesimp>伪装因不明原因暴露</Chinesesimp>
-                <Korean>알 수 없는 이유로 위장이 탄로났습니다.</Korean>
-                <French>La couverture a été compromise pour une raison inconnue.</French>
-                <Turkish>Gizli kimliğiniz bilinmeyen bir nedenden dolayı deşifre oldu.</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_garrison_recognition">
-                <Original>The garrison has recognised you!</Original>
-                <Russian>Гарнизон узнал вас!</Russian>
-                <Chinesesimp>驻兵认出了你！</Chinesesimp>
-                <Korean>주둔군이 당신을 알아봤습니다!</Korean>
-                <French>La garnison vous a reconnu !</French>
-                <Turkish>Garnizon sizi tanıdı!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_airspace_violation">
-                <Original>You have violated the airspace of %1!</Original>
-                <Russian>Вы нарушили воздушное пространство %1!</Russian>
-                <Chinesesimp>你侵入了%1的领空！</Chinesesimp>
-                <Korean>당신은 %1의 영공을 침범했습니다!</Korean>
-                <French>Vous avez enfreint l'espace aérien de %1 !</French>
-                <Turkish>%1 hava sahasını ihlal ettiniz!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_too_close">
-                <Original>You have gotten too close to an enemy base, outpost or roadblock!</Original>
-                <Russian>Вы подошли слишком близко к вражеской базе, аванпосту или блокпосту!</Russian>
-                <Chinesesimp>你离敌方基地、前哨站或路障太近了！</Chinesesimp>
-                <Korean>적 기지, 전초 기지, 검문소에 너무 가까이 접근했습니다!</Korean>
-                <French>Vous vous êtes approché trop près d'une base, d'un avant-poste ou d'un barrage ennemi !</French>
-                <Turkish>Bir düşman üssüne, karakoluna veya yol barikat noktasına çok fazla yaklaştınız!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_left_wanted">
-                <Original>You left your vehicle and you are still on the Wanted List!</Original>
-                <Russian>Вы вышли из техники, и вы все еще в розыске!</Russian>
-                <Chinesesimp>你离开了你的车，你仍然在通缉名单上！</Chinesesimp>
-                <Korean>차량에 내렸지만 여전히 수배 중입니다!</Korean>
-                <French>Vous avez laissé votre véhicule et vous êtes toujours sur la liste des personnes recherchées !</French>
-                <Turkish>Aracınızdan ayrıldınız ve hâlâ arananlar listesindesiniz!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_spotted_by_enemy">
-                <Original>You have been reported or spotted by the enemy!</Original>
-                <Russian>О вас доложили или вас заметили враги!</Russian>
-                <Chinesesimp>你被敌人报告或发现了！</Chinesesimp>
-                <Korean>적에게 보고되거나 발견되었습니다!</Korean>
-                <French>Vous avez été signalé ou repéré par l'ennemi !</French>
-                <Turkish>Düşman tarafından rapor edildiniz veya görüldünüz!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_non_civilian_veh">
-                <Original>You have entered a non civilian vehicle!</Original>
-                <Russian>Вы сели в негражданское транспортное средство!</Russian>
-                <Chinesesimp>你进入了非民用车辆！</Chinesesimp>
-                <Korean>민수용이 아닌 차량에 탑승했습니다!</Korean>
-                <French>Vous êtes entré dans un véhicule non civil !</French>
-                <Turkish>Sivil olmayan bir araca bindiniz!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_compromised">
-                <Original>You have entered a compromised vehicle!</Original>
-                <Russian>Вы сели в скомпрометированное транспортное средство!</Russian>
-                <Chinesesimp>你进入了一辆受损车辆！</Chinesesimp>
-                <Korean>위장이 들통난 차량에 탑승했습니다!</Korean>
-                <French>Vous avez pénétré dans un véhicule compromis !</French>
-                <Turkish>Deşifre olmuş bir araca bindiniz!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_explosives">
-                <Original>Enemy has spotted explosives on your vehicle!</Original>
-                <Russian>Враг заметил взрывчатку на вашем транспортном средстве!</Russian>
-                <Chinesesimp>敌人在你的车上发现了炸药！</Chinesesimp>
-                <Korean>적이 차량에서 폭발물을 발견했습니다!</Korean>
-                <French>L'ennemi a repéré des explosifs sur votre véhicule !</French>
-                <Turkish>Düşman aracınızdaki patlayıcıları fark etti!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_towing_suspicious">
-                <Original>You're towing a military or previously reported vehicle!</Original>
-                <Russian>Вы буксируете военное транспортное средство или разыскиваемое гражданское транспортное средство!</Russian>
-                <Chinesesimp>拖的是一辆军用车辆或一辆通缉的民用车辆！</Chinesesimp>
-                <Korean>군용 차량 또는 이전에 보고된 차량을 견인 중입니다!</Korean>
-                <French>Vous remorquez un véhicule militaire ou un véhicule déjà signalé !</French>
-                <Turkish>Askeri veya daha önce rapor edilmiş bir aracı çekiyorsunuz!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_far_away_roads">
-                <Original>You have went too far away from any roads!</Original>
-                <Russian>Вы слишком отъехали или ушли от любых дорог!</Russian>
-                <Chinesesimp>你离得太远或偏离任何道路！</Chinesesimp>
-                <Korean>당신은 도로로부터 너무 멀리 떨어져 있습니다!</Korean>
-                <French>Vous vous êtes trop éloigné de toute route !</French>
-                <Turkish>Yollardan çok fazla uzaklaştınız!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_mil_items_1">
-                <Original>You can't stay Undercover while:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a military uniform!</Original>
-                <Russian>Вы не можете оставаться под прикрытием, если:&lt;br/&gt;&lt;br/&gt; у вас есть какое-либо видимое оружие&lt;br/&gt;Вы в бронежилете или разгрузке&lt;br/&gt;Вы в каске&lt;br/&gt;Вы носите ПНВ&lt;br/&gt;Вы в военной форме!</Russian>
-                <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!</Korean>
-                <French>Vous ne pouvez pas rester sous couverture si:&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez un gilet&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des JVN&lt;br/&gt;Vous portez un uniforme militaire!</French>
-                <Chinesesimp>在下列情况下您无法保持伪装状态：&lt;br/&gt;&lt;br/&gt;武器可见&lt;br/&gt;穿着背心&lt;br/&gt;戴着头盔&lt;br/&gt;戴着夜视镜&lt;br/&gt;穿着军装！</Chinesesimp>
-                <Turkish>Şu durumlarda Gizli Kimliğini koruyamazsın:&lt;br/&gt;&lt;br/&gt;Bir silah görünürse&lt;br/&gt;Yelek giyilirse&lt;br/&gt;Kask takılırsa&lt;br/&gt;Gece görüş gözlüğü takılırsa&lt;br/&gt;Askeri üniforma giyilirse!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_mil_items_2">
-                <Original>You can't stay Undercover while:&lt;br/&gt;&lt;br/&gt;A weapon is visible&lt;br/&gt;Wearing a vest&lt;br/&gt;Wearing a helmet&lt;br/&gt;Wearing NVGs&lt;br/&gt;Wearing a military uniform&lt;br/&gt;Enemy have added you to Wanted list!</Original>
-                <Russian>Вы не можете оставаться под прикрытием, если:&lt;br/&gt;&lt;br/&gt; у вас есть какое-либо видимое оружие&lt;br/&gt;Вы в бронежилете или разгрузке&lt;br/&gt;Вы в каске&lt;br/&gt;Вы носите ПНВ&lt;br/&gt;Вы в военной форме&lt;br/&gt;Враг добавил вас в список разыскиваемых лиц!</Russian>
-                <Korean>다음과 같은 경우에는 위장을 유지할 수 없습니다:&lt;br/&gt;&lt;br/&gt;무기 보임&lt;br/&gt;조끼 착용&lt;br/&gt;헬멧 착용&lt;br/&gt;야시경 착용&lt;br/&gt;군복을 입음!&lt;br/&gt;적이 당신을 수배 목록에 추가했습니다!</Korean>
-                <French>Vous ne pouvez pas rester sous couverture si:&lt;br/&gt;&lt;br/&gt;Une arme est visible&lt;br/&gt;Vous portez un gilet&lt;br/&gt;Vous portez un casque&lt;br/&gt;Vous portez des JVN&lt;br/&gt;Vous portez un uniforme militaire&lt;br/&gt;L'ennemi vous a ajouté à la liste des personnes recherchées!</French>
-                <Chinesesimp>以下情况下您无法保持伪装状态：&lt;br/&gt;&lt;br/&gt;武器可见&lt;br/&gt;穿着背心&lt;br/&gt;戴着头盔&lt;br/&gt;戴着夜视镜&lt;br/&gt;穿着军装&lt;br/&gt;敌人已将您添加到通缉名单中！</Chinesesimp>
-                <Turkish>Şu durumlarda Gizli Kimliğini koruyamazsın:&lt;br/&gt;&lt;br/&gt;Bir silah görünürse&lt;br/&gt;Yelek giyilirse&lt;br/&gt;Kask takılırsa&lt;br/&gt;Gece görüş gözlüğü takılırsa&lt;br/&gt;Askeri üniforma giyilirse&lt;br/&gt;Düşman sizi arananlar listesine eklerse!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_mil_carry">
-                <Original>You're looking very suspicious while carrying military-grade items, and the enemy has noticed it.</Original>
-                <Russian>Вы выглядите очень подозрительно, когда носите предметы военного назначения, и враг это заметил.</Russian>
-                <Chinesesimp>你在携带军事级别的物品时显得非常可疑，被敌人发现了。</Chinesesimp>
-                <Korean>당신은 군용 아이템을 들고 있는 동안 매우 수상해보였고, 적이 그걸 알아차렸습니다.</Korean>
-                <French>Vous avez l'air très suspect lorsque vous transportez des objets de qualité militaire, et l'ennemi l'a remarqué.</French>
-                <Turkish>Askeri düzeyde eşyalar taşırken çok şüpheli görünüyorsunuz ve düşman bunu fark etti.</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_bad_medic_1">
-                <Original>You can't stay undercover while healing a compromised resistance member!</Original>
-                <Russian>Вы не можете оставаться под прикрытием во время лечения скомпрометированного члена сопротивления!</Russian>
-                <Chinesesimp>你不能一边伪装一边治疗一个受伤的反抗军成员！</Chinesesimp>
-                <Korean>당신은 위험에 처한 저항군을 치료하는 동안 위장 상태에 있을 수 없습니다!</Korean>
-                <French>Vous ne pouvez pas rester en état d'infiltration tout en soignant un membre de la résistance compromis!</French>
-                <Turkish>Deşifre olmuş bir direniş üyesini iyileştirirken gizli kimliğini koruyamazsın!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_bad_medic_2">
-                <Original>You can't stay Undercover while healing a compromised resistance member&lt;br/&gt;The enemy added you to Wanted List!</Original>
-                <Russian>Вы не можете оставаться под прикрытием во время лечения скомпрометированного члена сопротивления!&lt;br/&gt;Враг добавил вас в список разыскиваемых лиц!</Russian>
-                <Chinesesimp>你不能一边伪装一边治疗一个受伤的反抗军成员！&lt;br/&gt;敌人已将你加入通缉名单！</Chinesesimp>
-                <Korean>당신은 위험에 처한 저항군을 치료하는 동안 위장 상태에 있을 수 없습니다&lt;br/&gt;적군이 당신을 수배자 목록에 추가했습니다!</Korean>
-                <French>Vous ne pouvez pas rester sous couverture tout en soignant un membre de la résistance compromis&lt;br/&gt;L'ennemi vous a ajouté à la liste des personnes recherchées!</French>
-                <Turkish>Deşifre olmuş bir direniş üyesini iyileştirirken gizli kimliğini koruyamazsın&lt;br/&gt;Düşman sizi arananlar listesine ekledi!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_vtow_ropes">
-                <Original>You can't be undercover while tow ropes are attached to your vehicle!</Original>
-                <Russian>Вы не можете оставаться под прикрытием пока к вашей технике прикреплен буксировочный трос!</Russian>
-                <Korean>견인 로프를 차량에 부착한 상태로 위장 상태에 있을 수 없습니다!</Korean>
-                <French>Vous ne pouvez pas être sous couverture lorsque des câbles de remorquage sont attachés à votre véhicule!</French>
-                <Chinesesimp>当牵引绳系在您的车辆上时，您无法伪装！</Chinesesimp>
-                <Turkish>Aracınıza çekme halatları bağlıyken gizli kimliğinizi koruyamazsınız!</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_undercover_break_reason_tow_ropes">
-                <Original>You can't be undercover and use tow ropes!</Original>
-                <Russian>Вы не можете оставаться под прикрытием пока у вас в руках буксировочный трос!</Russian>
-                <Korean>위장 상태에서 견인 로프를 사용할 수 없습니다!</Korean>
-                <French>On ne peut pas être sous couverture et utiliser des câbles de remorquage!</French>
-                <Chinesesimp>你不能伪装并使用牵引绳！</Chinesesimp>
-                <Turkish>Çekme halatı kullanırken gizli kimlikte kalamazsınız!</Turkish>
             </Key>
         </Container>
         <Container name="info_bar">
@@ -7824,6 +6625,46 @@
                 <French>| %1 Aggr: %2 | %3 Aggr: %4 |</French>
                 <Turkish>| %1 Agres.: %2 | %3 Agres.: %4 |</Turkish>
             </Key>
+            <Key ID="STR_info_bar_aggr_5">
+                <Original>&lt;t color='#AE1330'&gt;Extreme&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#AE1330'&gt;Экстремальная&lt;/t&gt;</Russian>
+                <Chinesesimp>&lt;t color='#AE1330'&gt;草木皆兵&lt;/t&gt;</Chinesesimp>
+                <Korean>&lt;t color='#AE1330'&gt;최대&lt;/t&gt;</Korean>
+                <French>&lt;t color='#AE1330'&gt;Extrême&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#AE1330'&gt;Ekstrem&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_info_bar_aggr_4">
+                <Original>&lt;t color='#CB5C30'&gt;Very High&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#CB5C30'&gt;Очень высокая&lt;/t&gt;</Russian>
+                <Chinesesimp>&lt;t color='#CB5C30'&gt;全面警戒&lt;/t&gt;</Chinesesimp>
+                <Korean>&lt;t color='#CB5C30'&gt;매우 높음&lt;/t&gt;</Korean>
+                <French>&lt;t color='#CB5C30'&gt;Très élevé&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#CB5C30'&gt;Çok Yüksek&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_info_bar_aggr_3">
+                <Original>&lt;t color='#E8A430'&gt;High&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#E8A430'&gt;Высокая&lt;/t&gt;</Russian>
+                <Chinesesimp>&lt;t color='#E8A430'&gt;高度警戒&lt;/t&gt;</Chinesesimp>
+                <Korean>&lt;t color='#E8A430'&gt;높음&lt;/t&gt;</Korean>
+                <French>&lt;t color='#E8A430'&gt;Élevé&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#E8A430'&gt;Yüksek&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_info_bar_aggr_2">
+                <Original>&lt;t color='#D5B276'&gt;Medium&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#D5B276'&gt;Средняя&lt;/t&gt;</Russian>
+                <Chinesesimp>&lt;t color='#D5B276'&gt;警戒&lt;/t&gt;</Chinesesimp>
+                <Korean>&lt;t color='#D5B276'&gt;중간&lt;/t&gt;</Korean>
+                <French>&lt;t color='#D5B276'&gt;Moyen&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#D5B276'&gt;Orta&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_info_bar_aggr_1">
+                <Original>Low</Original>
+                <Russian>Низкая</Russian>
+                <Chinesesimp>松懈</Chinesesimp>
+                <Korean>낮음</Korean>
+                <French>Faible</French>
+                <Turkish>Düşük</Turkish>
+            </Key>
             <Key ID="STR_info_bar_final_string_1">
                 <Original>Commander: %3 | %2 | HR: %1%10 | Money: %4 %9 %5 War Level: %6 | Undercover: %7 | Rally Point: %8&lt;/t&gt;</Original>
                 <Russian>Командир: %3 | %2 | HR: %1%10 | Деньги: %4 %9 %5 Уровень войны: %6 | Маскировка: %7 | Точка сбора: %8&lt;/t&gt;</Russian>
@@ -7879,46 +6720,6 @@
                 <Korean>미미한 활동</Korean>
                 <French>Insignificant</French>
                 <Turkish>Önemsiz</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_aggr_5">
-                <Original>&lt;t color='#AE1330'&gt;Extreme&lt;/t&gt;</Original>
-                <Russian>&lt;t color='#AE1330'&gt;Экстремальная&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t color='#AE1330'&gt;草木皆兵&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t color='#AE1330'&gt;최대&lt;/t&gt;</Korean>
-                <French>&lt;t color='#AE1330'&gt;Extrême&lt;/t&gt;</French>
-                <Turkish>&lt;t color='#AE1330'&gt;Ekstrem&lt;/t&gt;</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_aggr_4">
-                <Original>&lt;t color='#CB5C30'&gt;Very High&lt;/t&gt;</Original>
-                <Russian>&lt;t color='#CB5C30'&gt;Очень высокая&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t color='#CB5C30'&gt;全面警戒&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t color='#CB5C30'&gt;매우 높음&lt;/t&gt;</Korean>
-                <French>&lt;t color='#CB5C30'&gt;Très élevé&lt;/t&gt;</French>
-                <Turkish>&lt;t color='#CB5C30'&gt;Çok Yüksek&lt;/t&gt;</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_aggr_3">
-                <Original>&lt;t color='#E8A430'&gt;High&lt;/t&gt;</Original>
-                <Russian>&lt;t color='#E8A430'&gt;Высокая&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t color='#E8A430'&gt;高度警戒&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t color='#E8A430'&gt;높음&lt;/t&gt;</Korean>
-                <French>&lt;t color='#E8A430'&gt;Élevé&lt;/t&gt;</French>
-                <Turkish>&lt;t color='#E8A430'&gt;Yüksek&lt;/t&gt;</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_aggr_2">
-                <Original>&lt;t color='#D5B276'&gt;Medium&lt;/t&gt;</Original>
-                <Russian>&lt;t color='#D5B276'&gt;Средняя&lt;/t&gt;</Russian>
-                <Chinesesimp>&lt;t color='#D5B276'&gt;警戒&lt;/t&gt;</Chinesesimp>
-                <Korean>&lt;t color='#D5B276'&gt;중간&lt;/t&gt;</Korean>
-                <French>&lt;t color='#D5B276'&gt;Moyen&lt;/t&gt;</French>
-                <Turkish>&lt;t color='#D5B276'&gt;Orta&lt;/t&gt;</Turkish>
-            </Key>
-            <Key ID="STR_info_bar_aggr_1">
-                <Original>Low</Original>
-                <Russian>Низкая</Russian>
-                <Chinesesimp>松懈</Chinesesimp>
-                <Korean>낮음</Korean>
-                <French>Faible</French>
-                <Turkish>Düşük</Turkish>
             </Key>
         </Container>
         <Container name="ranks">
@@ -8265,14 +7066,6 @@
                 <Korean>연발 사격</Korean>
                 <French>Barrage</French>
                 <Turkish>Salvo</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_garage">
-                <Original>Garage</Original>
-                <Russian>Гараж</Russian>
-                <Chinesesimp>载具库</Chinesesimp>
-                <Korean>차고</Korean>
-                <French>Garage</French>
-                <Turkish>Garaj</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_add_server_member_title">
                 <Original>Add Server Member</Original>
@@ -8918,14 +7711,6 @@
                 <French>Nettoie plusieurs choses dans le jeu. A utiliser avec précaution car il fige la mission.</French>
                 <Turkish>Oyundaki çeşitli öğeleri temizler. Görevi dondurduğu için dikkatli kullanın.</Turkish>
             </Key>
-            <Key ID="STR_antistasi_dialogs_open_faction_garage_tooltip">
-                <Original>Look at a vehicle and garage it into faction garage (shared among commanders).</Original>
-                <Russian>Машина, на которую вы смотрите будет поставлена в фракционный гараж (общий для всех командиров).</Russian>
-                <Chinesesimp>查看一辆载具并将其停入派系车库（所有指挥官共享）。</Chinesesimp>
-                <Korean>차량을 보고 팩션 차고에 넣으십시오. (지휘관이 공유)</Korean>
-                <French>Regardez un véhicule et mettez-le dans le garage de la faction (partagé par les commandants).</French>
-                <Turkish>Bir araca bak ve onu grup garajına (komutanlar arasında paylaşımlı) gönder.</Turkish>
-            </Key>
             <Key ID="STR_antistasi_dialogs_sell_vehicle_title">
                 <Original>Sell Vehicle</Original>
                 <Russian>Продать технику</Russian>
@@ -9037,38 +7822,6 @@
                 <Korean>비행기가 상공을 비행해서 2인승 경차량을 지정한 위치로 떨어뜨립니다.</Korean>
                 <French>L'avion survole et dépose un véhicule léger à deux places à l'endroit spécifié.</French>
                 <Turkish>Bir uçak bölge üzerinden uçar ve belirlenen konuma iki kişilik hafif bir araç bırakır.</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_lca_title">
-                <Original>Loot Crate Airdrop</Original>
-                <Russian>Сброс ящика-сборщика добычи</Russian>
-                <Chinesesimp>空投战利品箱</Chinesesimp>
-                <Korean>전리품 상자 공수</Korean>
-                <French>Caisse de butin parachutée</French>
-                <Turkish>Yağma Kasası Hava İndirmesi</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_lca_tooltip">
-                <Original>A plane flies over and drops a loot crate at the specified position.</Original>
-                <Russian>Самолет пролетает и сбрасывает ящик-сборщик лута в указанное место.</Russian>
-                <Chinesesimp>飞机飞过，将战利品箱丢到指定位置。</Chinesesimp>
-                <Korean>비행기가 상공을 비행해서 전리품 상자를 지정한 위치로 떨어뜨립니다.</Korean>
-                <French>L'avion survole et parachute une caisse de butin à la position spécifiée.</French>
-                <Turkish>Bir uçak bölge üzerinden uçar ve belirlenen konuma bir yağma kasası bırakır.</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_hmga_title">
-                <Original>HMG Airdrop</Original>
-                <Russian>Сброс тяжелого пулемёта</Russian>
-                <Chinesesimp>空投重机枪</Chinesesimp>
-                <Korean>중기관총 공수</Korean>
-                <French>L'avion survole et dépose une caisse de butin à la position spécifiée.</French>
-                <Turkish>HMG Hava İndirmesi</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_hmga_tooltip">
-                <Original>A plane flies over and drops a crate with HMG at the specified position.</Original>
-                <Russian>Самолет пролетает и сбрасывает ящик с крупнокалиберным пулеметом в указанное место.</Russian>
-                <Chinesesimp>飞机飞过，将装有重机枪的箱子丢到指定位置。</Chinesesimp>
-                <Korean>비행기가 상공을 비행해서 중기관총을 지정한 위치로 떨어뜨립니다.</Korean>
-                <French>L'avion survole et largue une caisse avec un HMG à la position spécifiée.</French>
-                <Turkish>Bir uçak bölge üzerinden uçar ve belirlenen konuma HMG içeren bir kasa bırakır.</Turkish>
             </Key>
             <Key ID="STR_commander_menu_rpr_title">
                 <Original>Recon Plane Run</Original>
@@ -9390,62 +8143,6 @@
                 <French>Nettoie les déchets (corps, caisses inutilisées, épaves, armes, etc.) sur la carte. Améliore les performances.</French>
                 <Turkish>Harita genelindeki çöpleri (cesetler, kullanılmayan kasalar, enkazlar, silahlar vb.) temizler. Performansı artırır.</Turkish>
             </Key>
-            <Key ID="STR_commander_menu_rest_tooltip">
-                <Original>Skips 8 hours of in-game time. Requires every player to be near HQ.</Original>
-                <Russian>Пропускает 8 часов игрового времени. Требуется, чтобы каждый игрок находился рядом со штаб-квартирой.</Russian>
-                <Chinesesimp>跳过8小时的游戏时间。 要求每个玩家都在总部附近。</Chinesesimp>
-                <Korean>8시간의 게임 내 시간을 건너뜁니다. 모든 플레이어가 본부 근처에 있어야 합니다.</Korean>
-                <French>Passe 8 heures de temps dans le jeu. Exige que chaque joueur soit près du QG.</French>
-                <Turkish>Oyun içi süreyi 8 saat ileri sarar. Tüm oyuncuların karargâh yakınında olmasını gerektirir.</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_max_persistent_contstructions">
-                <Original>Maximum persistent constuctions: %1</Original>
-                <Russian>Макс. кол-во персистентных конструкций: %1</Russian>
-                <Chinesesimp>最大永久建筑：%1</Chinesesimp>
-                <Korean>최대 영구 건축물 수: %1</Korean>
-                <French>Constuctions persistantes maximales : %1</French>
-                <Turkish>Maksimum kalıcı yapı sayısı: %1</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_max_persistent_contstructions_tooltip">
-                <Original>Allows you to set how many persistent (saveable) constructions will be allowed. Affects performance, Last In-First Out principle.</Original>
-                <Russian>Позволяет вам установить, сколько постоянных (сохраняемых, устанавливаемых через меню Zeus) конструкций будет разрешено. Влияет на производительность, принцип Last In-First Out.</Russian>
-                <Chinesesimp>允许您设置允许多少个永久（可保存的，通过 Zeus 菜单设置）建筑。 影响性能，后进先出原则。</Chinesesimp>
-                <Korean>허용되는 (저장 가능한) 영구 건축물의 수를 설정하도록 허용합니다. 성능에 영향을 미치며, 후입선출 법칙을 따릅니다.</Korean>
-                <French>Permet de définir le nombre de constructions persistantes (sauvegardables) autorisées. Affecte les performances, le principe du "dernier entré, premier sorti".</French>
-                <Turkish>Kaç adet kalıcı (kaydedilebilir) yapıya izin verileceğini ayarlamanızı sağlar. Performansı etkiler, "Son Giren İlk Çıkar" (LIFO) prensibiyle çalışır.</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_ai_limit">
-                <Original>Maximum Quantity of AI Units: %1</Original>
-                <Russian>Максимальное количество юнитов ИИ: %1</Russian>
-                <Chinesesimp>最大 AI 单位：%1</Chinesesimp>
-                <Korean>최대 인공지능 유닛 수: %1</Korean>
-                <French>Quantité maximale d'IA : %1</French>
-                <Turkish>Maksimum YZ Birimi Miktarı: %1</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_ai_limit_tooltip">
-                <Original>Sets how much local and simulated AI can spawn in the map. Affects performance and AI ""intelligence"". Use with EXTREME caution, as on very high values performance may tank for everyone. This is not an exact number as vehicles and squad leaders will always spawn.</Original>
-                <Russian>Устанавливает, сколько локального и смоделированного ИИ может появиться на карте. Влияет на производительность и «интеллектуальность» ИИ. Используйте с ЧРЕЗВЫЧАЙНОЙ осторожностью, так как при очень высоких значениях производительность может ухудшиться для всех. Это не точное число, так как транспортные средства и командиры отрядов будут появляться всегда.</Russian>
-                <Chinesesimp>设置地图中可以生成多少本地和模拟 AI。 影响性能和 AI“智能”。 使用时要格外小心，因为在非常高的数值下，可能对每个人性能都不利。 这不是一个确切的数字，因为载具和班长总是会刷出来。</Chinesesimp>
-                <Korean>지도에서 로컬 및 시뮬레이션된 인공지능이 생성할 수 있는 양을 설정합니다. 성능 및 인공지능의 ""지능""에 영향을 미칩니다. 매우 높은 값을 사용할 경우 성능이 저하될 수 있으므로 극도로 주의하여 사용하십시오. 이는 차량과 분대장들이 항상 스폰되기 때문에 정확한 숫자는 아닙니다.</Korean>
-                <French>Définit la quantité d'IA locale et simulée pouvant apparaître sur la carte. Affecte les performances et l'"intelligence" de l'IA. A utiliser avec une prudence EXTRÊME, car avec des valeurs très élevées, les performances peuvent chuter pour tout le monde. Il ne s'agit pas d'un chiffre exact, car des véhicules et des chefs d'escouade apparaîtront toujours.</French>
-                <Turkish>Haritada ne kadar yerel ve simüle edilmiş yapay zekanın ortaya çıkabileceğini ayarlar. Performansı ve yapay zeka ""zekasını"" etkiler. ÇOK DİKKATLİ kullanın; çünkü çok yüksek değerlerde performans herkes için ciddi şekilde düşebilir. Araçlar ve manga liderleri her zaman ortaya çıkacağından bu rakam kesin bir sayı değildir.</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_max_spawn_distance">
-                <Original>Maximum Spawn Distance: %1</Original>
-                <Russian>Макс. дистанция спавна ИИ-акторов: %1</Russian>
-                <Chinesesimp>最大生成距离：%1</Chinesesimp>
-                <Korean>최대 스폰 거리: %1</Korean>
-                <French>Distance maximale d'apparition: %1</French>
-                <Turkish>Maksimum Doğma Mesafesi: %1</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_max_spawn_distance_tooltip">
-                <Original>Affects at which distance from player enemy will spawn. Use this with caution. Set it to lower distances if you feel that you have low performance.</Original>
-                <Russian>Влияет на то, на каком расстоянии от игрока появится враг. Используйте это с осторожностью. Установите его на более низкие расстояния, если вы чувствуете, что у вас низкая производительность.</Russian>
-                <Chinesesimp>玩家敌人生成的距离。 请谨慎使用。 如果你觉得你的电脑性能表现不佳，请将它设置为较低的距离。</Chinesesimp>
-                <Korean>플레이어와 적과의 거리에 영향을 미칩니다. 주의하여 사용하십시오. 성능이 저하된다고 생각되면 더 낮은 거리로 설정하십시오.</Korean>
-                <French>Affecte la distance à laquelle l'ennemi apparaîtra par rapport au joueur. A utiliser avec précaution. Réglez-le sur des distances plus faibles si vous avez l'impression d'avoir de faibles performances.</French>
-                <Turkish>Düşmanların oyuncudan ne kadar uzaklıkta ortaya çıkacağını etkiler. Bunu dikkatli kullanın. Performansınızın düşük olduğunu hissediyorsanız daha kısa mesafelere ayarlayın.</Turkish>
-            </Key>
             <Key ID="STR_commander_menu_about_text">
                 <Original>Antistasi Ultimate - %1, Version: %2, Unlock Weapon Number: %3, Limited Fast Travel: %4, Rivals: %5, Time since GC: %6</Original>
                 <Russian>Antistasi Ultimate - %1, Версия: %2, Кол-во орудий для разблок-ки: %3, Ограниченное быстрое перемещение по карте: %4, Инсургенты: %5, Прошло времени с момента сборки мусора: %6</Russian>
@@ -9493,22 +8190,6 @@
                 <Korean>커스텀 아군 로드아웃에서 유니폼과 비-방탄 헤드기어의 랜덤화를 비활성화/활성화합니다.</Korean>
                 <French>Désactive ou active l'aléatoire de l'uniforme et du couvre-chef non blindé sur les chargements personnalisés des rebelles.</French>
                 <Turkish>Özel direnişçi teçhizatlarında üniforma ve zırhsız başlık rastgeleleştirmesini açar veya kapatır.</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_global_options_title">
-                <Original>Global Options</Original>
-                <Russian>Глобальные настройки</Russian>
-                <Chinesesimp>全局选项</Chinesesimp>
-                <Korean>글로벌 설정</Korean>
-                <French>Options globales</French>
-                <Turkish>Genel Seçenekler</Turkish>
-            </Key>
-            <Key ID="STR_commander_menu_global_options_tooltip">
-                <Original>Options below affect all players.</Original>
-                <Russian>Параметры ниже влияют на всех игроков.</Russian>
-                <Chinesesimp>以下选项影响所有玩家。</Chinesesimp>
-                <Korean>아래 옵션은 모든 플레이어에게 적용됩니다.</Korean>
-                <French>Les options ci-dessous concernent tous les joueurs.</French>
-                <Turkish>Aşağıdaki seçenekler tüm oyuncuları etkiler.</Turkish>
             </Key>
             <Key ID="STR_commander_menu_local_options_title">
                 <Original>Local options</Original>
@@ -9897,22 +8578,6 @@
             </Key>
         </Container>
         <Container name="simple_menu_commander_menu">
-            <Key ID="STR_antistasi_dialogs_ai_healing_options_title">
-                <Original>Healing Options</Original>
-                <Russian>Опции лечения</Russian>
-                <Chinesesimp>治疗选择</Chinesesimp>
-                <Korean>치료 설정</Korean>
-                <French>Options de soins</French>
-                <Turkish>İyileştirme Seçenekleri</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_auto_heal_title">
-                <Original>Auto Heal</Original>
-                <Russian>Автолечение</Russian>
-                <Chinesesimp>自动治疗</Chinesesimp>
-                <Korean>자동 치료</Korean>
-                <French>Guérison automatique</French>
-                <Turkish>Otomatik İyileştirme</Turkish>
-            </Key>
             <Key ID="STR_antistasi_dialogs_garrison_units_title">
                 <Original>Garrison Units / Squads</Original>
                 <Russian>Гарнизоны / отряды</Russian>
@@ -10943,22 +9608,6 @@
                 <French>Les %1 ne sont pas seulement intéressants pour nous - les %2 disposent également d'informations précieuses sur leur réseau souterrain de cachettes et de cellules.</French>
                 <Turkish>%1 sadece bizim için ilginç değil; %2 grubunun da onların gizli sığınak ve hücre ağları hakkında değerli bilgileri var.</Turkish>
             </Key>
-            <Key ID="STR_intel_discount">
-                <Original>We have found some information about undiscovered hidden smuggler routes and gave them to Arms Dealer. In return, he paid us for information and increased discount by %1 percent for any item in his store.</Original>
-                <Russian>Мы нашли ценные разведданные о подпольной сети контрабандистов, их маршрутах. Мы отдали эти данные Оружейному Торговцу. Взамен, он заплатил нам за информацию и увеличил перманентную скидку на %1 процентов на всё оружие в его асортименте.</Russian>
-                <Chinesesimp>我们找到了一些关于未被发现的走私者隐藏路线的情报，并将其提供给了军火商。 作为回报，他向我们支付情报费用，并为他的军火商商店中的任何商品增加 %1% 的折扣。</Chinesesimp>
-                <Korean>우린 발견되지 않은 숨겨진 밀수 경로에 대한 정보를 발견했고 그것들을 암거래상에게 주었습니다. 그 대가로, 그는 우리에게 정보에 대한 대가를 지불했고 암거래 시장에 있는 모든 아이템에 대해 %1퍼센트의 할인을 받았습니다.</Korean>
-                <French>Nous avons trouvé des informations sur des routes de contrebande cachées et nous les avons données au marchand d'armes. En retour, il nous a payé pour les informations et a augmenté la remise de %1 pour cent pour n'importe quel article dans son magasin de vente d'armes.</French>
-                <Turkish>Keşfedilmemiş gizli kaçakçı rotaları hakkında bazı bilgiler bulduk ve bunları Silah Tüccarı'na verdik. Karşılığında bize bilgi için ödeme yaptı ve dükkanındaki tüm ürünlerde geçerli indirimi %%%1 oranında artırdı.</Turkish>
-            </Key>
-            <Key ID="STR_intel_has_access_to">
-                <Original>%1 currently has access to&lt;br/&gt;%2</Original>
-                <Russian>%1 на данный момент имеют доступ к&lt;br/&gt;%2</Russian>
-                <Chinesesimp>%1 当前可以访问</Chinesesimp>
-                <Korean>%1이(가) 현재 다음에 액세스 중입니다:&lt;br/&gt;%2</Korean>
-                <French>%1 a actuellement accès à&lt;br/&gt;%2</French>
-                <Turkish>%1 şu anda şunlara erişebiliyor:&lt;br/&gt;%2</Turkish>
-            </Key>
             <Key ID="STR_intel_convoy_marker">
                 <Original>We found the %2 convoy %1 decryption key!&lt;br/&gt;%3 convoys are marked on the map!</Original>
                 <Russian>Мы расшифровали ключ %1 фракции %2!&lt;br/&gt;%3 конвоев теперь отмечены на карте!</Russian>
@@ -10982,22 +9631,6 @@
                 <Korean>%1에서 가능한 호송 경로에 대한 오래된 정보를 발견했습니다. 우린 그것을 암시장에 헐값에 팔았습니다.</Korean>
                 <French>Nous avons trouvé des informations obsolètes sur les itinéraires possibles des convois sur %1. Nous les avons vendues au marché noir pour une somme minuscule.</French>
                 <Turkish>%1 hakkında olası konvoy rotalarına dair güncelliğini yitirmiş bazı bilgiler bulduk. Bunları karaborsada küçük bir miktar nakit karşılığında sattık.</Turkish>
-            </Key>
-            <Key ID="STR_intel_weapon_unlock">
-                <Original>You found the supply data for the&lt;br/&gt;%1&lt;br/&gt;You have unlocked this weapon!</Original>
-                <Russian>Мы нашли данные о поставках&lt;br/&gt;%1&lt;br/&gt; Это оружие разблокировано!</Russian>
-                <Chinesesimp>您找到了&lt;br/&gt;%1&lt;br/&gt;的供应数据，您现在解锁了这件武器！</Chinesesimp>
-                <Korean>다음 보급 데이터를 찾았습니다:&lt;br/&gt;%1&lt;br/&gt;해당 무기를 언락했습니다!</Korean>
-                <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt;%1&lt;br/&gt;Vous avez débloqué cette arme !</French>
-                <Turkish>Şu silah için ikmal verilerini buldunuz:&lt;br/&gt;%1&lt;br/&gt;Bu silahın kilidini açtınız!</Turkish>
-            </Key>
-            <Key ID="STR_intel_black_market_data">
-                <Original>You found some confidential data, you sold it for %1%2 on the black market!</Original>
-                <Russian>Вы нашли очень ценные конфиденциальные данные и продали их за %1%2 на чёрном рынке!</Russian>
-                <Chinesesimp>您发现了非常有价值的敏感数据并在黑市上以 %1%2 的价格出售！</Chinesesimp>
-                <Korean>당신을 기밀 데이터를 발견했고 그것을 암시장에 %1%2에 팔았습니다!</Korean>
-                <French>Vous avez trouvé des données confidentielles, vous les avez vendues pour %1%2 sur le marché noir!</French>
-                <Turkish>Bazı gizli veriler buldunuz ve bunları karaborsada %1%2 karşılığında sattınız!</Turkish>
             </Key>
             <Key ID="STR_intel_def_resources_plenty">
                 <Original>%1 has plenty of defense reserves available</Original>
@@ -11925,22 +10558,6 @@
                 <French>Un transport de fonds est en cours de %1 à %3, et il est sur le point de partir à %2. Volez ce camion et apportez-le au QG. Ces fonds seront les bienvenus.</French>
                 <Turkish>Bol miktarda para taşıyan bir kamyon %1 mevkisinden %3 mevkisine taşınıyor ve %2 vaktinde hareket etmek üzere. O parayı çalın ve karargaha getirin. Bu fonlar bizim için çok makbule geçecek.</Turkish>
             </Key>
-            <Key ID="STR_A3A_Missions_AS_Convoy_task_header_food">
-                <Original>Intercept Food Convoy</Original>
-                <Russian>Перехватите конвой с едой</Russian>
-                <Chinesesimp>拦截粮食车队</Chinesesimp>
-                <Korean>식량 호송대 방해</Korean>
-                <French>Interception d'un convoi alimentaire</French>
-                <Turkish>Gıda Konvoyunun Önünü Kes</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_food">
-                <Original>A truck with much needed food for the people is about to depart at %2 from the %1 (destination %3). Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
-                <Russian>Грузовик с так необходимой людям едой скоро отъедет из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте еду нуждающимся, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
-                <Chinesesimp>一辆装有急需食物的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
-                <Korean>식량이 매우 필요한 사람들을 위한 식량 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져와서 해당 주민들에게 이 음식들을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
-                <French>Un convoi alimentaire est sur le point de partir à %2 de %1 (destination %3). Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces sacs de nourriture.</French>
-                <Turkish>Halk için çok gerekli olan gıdaları taşıyan bir kamyon, %1 bölgesinden %2 vaktinde hareket etmek üzere (hedef %3). O kamyonu çalın, %3 mevkisine götürün ve oradaki insanların bunun sorumlusunun biz olduğumuzu bilmesini sağlayın.</Turkish>
-            </Key>
             <Key ID="STR_A3A_Missions_DES_Antenna_task_header">
                 <Original>Destroy or Capture Radio Tower</Original>
                 <Russian>Уничтожьте или захватите радиовышку</Russian>
@@ -12296,14 +10913,6 @@
                 <French>Le vaisseau d'un contrebandier s'est écrasé à %1. Nous devons sauver les survivants avant %2. Amenez-les au QG.</French>
                 <Turkish>%1 mevkisinde bir kaçakçı gemisi karaya oturdu. %2 vaktinden önce hayatta kalanları kurtarmalıyız. Onları karargaha getirin.</Turkish>
             </Key>
-            <Key ID="STR_A3A_Missions_under_attack_task_header">
-                <Original>In gratitude for the rescue, smugglers shared with us part of their illegal cargo.</Original>
-                <Russian>В благодарность за спасение контрабандисты поделились с нами частью своего нелегального груза.</Russian>
-                <Chinesesimp>为了感谢救援，走私者与我们分享了他们的部分非法走私货物。</Chinesesimp>
-                <Korean>구조에 대한 감사의 표시로 밀수업자들은 불법 화물의 일부를 우리에게 나눠주었습니다.</Korean>
-                <French>En remerciement de leur sauvetage, les contrebandiers ont partagé avec nous une partie de leur cargaison illégale.</French>
-                <Turkish>Kurtarılmalarına minnettar kalan kaçakçılar, yasa dışı kargolarının bir kısmını bizimle paylaştılar.</Turkish>
-            </Key>
             <Key ID="STR_A3A_Missions_underattack_task_header">
                 <Original>%1 Contact Report</Original>
                 <Russian>Огневой контакт с %1</Russian>
@@ -12460,14 +11069,6 @@
                 <French>Utiliser le kit de récupération de l'état de préparation au combat sur %1</French>
                 <Turkish>%1 üzerinde muharebe hazırlık yenileme kiti kullan</Turkish>
             </Key>
-            <Key ID="STR_antistasi_actions_unconscious_revive_holdKey">
-                <Original>To Stand Up</Original>
-                <Russian>чтобы встать</Russian>
-                <Chinesesimp>站起来</Chinesesimp>
-                <Korean>일으키려면</Korean>
-                <French>Se lever</French>
-                <Turkish>Ayağa Kalkmak İçin</Turkish>
-            </Key>
             <Key ID="STR_antistasi_respawn">
                 <Original>Respawning...</Original>
                 <Russian>Возрождение...</Russian>
@@ -12582,38 +11183,6 @@
                 <Korean>이 차량은 견인되고 있습니다.</Korean>
                 <French>Ce véhicule est sur le point d'être remorqué.</French>
                 <Turkish>Bu araç çekilmek üzere.</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_can't_pickup_tow_ropes_hint">
-                <Original>can't pick up tow ropes from locked vehicle.</Original>
-                <Russian>Невозможно подобрать буксирные тросы из запертой техники.</Russian>
-                <Chinesesimp>不能从锁住的车上捡起拖车绳</Chinesesimp>
-                <Korean>잠긴 차량에서는 견인 로프를 집을 수 없습니다.</Korean>
-                <French>impossible de récupérer les câbles de remorquage d'un véhicule verrouillé.</French>
-                <Turkish>kilitli araçtan çekme halatlarını alamam.</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_can't_put_away_tow_ropes_hint">
-                <Original>can't put away tow ropes in locked vehicle.</Original>
-                <Russian>Невозможно убрать буксировочные тросы в запертую технику.</Russian>
-                <Chinesesimp>锁车后不能收起拖车绳</Chinesesimp>
-                <Korean>잠긴 차량에 견인 로프를 집어 넣을 수 없습니다.</Korean>
-                <French>ne peut pas ranger les câbles de remorquage dans un véhicule verrouillé.</French>
-                <Turkish>kilitli araçta çekme halatlarını kaldıramam</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_can't_take_tow_ropes_hint">
-                <Original>can't take tow ropes from locked vehicle.</Original>
-                <Russian>Невозможно взять буксировочные тросы из запертой техники.</Russian>
-                <Chinesesimp>不能从被锁住的车辆上取下拖车绳</Chinesesimp>
-                <Korean>잠긴 차량에서는 견인 로프를 가져갈 수 없습니다.</Korean>
-                <French>ne peut pas prendre les câbles de remorquage d'un véhicule verrouillé.</French>
-                <Turkish>kilitli araçtan çekme halatlarını alamazsınız</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_can't_attach_tow_ropes_hint">
-                <Original>can't attach tow ropes to locked vehicle.</Original>
-                <Russian>Невозможно прикрепить буксировочные тросы к запертому автомобилю.</Russian>
-                <Chinesesimp>无法将牵引绳连接到锁定的车辆上。</Chinesesimp>
-                <Korean>잠긴 차량에 견인 로프를 걸 수 없습니다.</Korean>
-                <French>ne peut pas attacher des câbles de remorquage à un véhicule verrouillé.</French>
-                <Turkish>kilitli araca çekme halatı takılamaz</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_short_tow_ropes_hint">
                 <Original>The tow ropes are too short. Move vehicle closer.</Original>
@@ -12807,14 +11376,6 @@
                 <French>Acheter des véhicules et des articles</French>
                 <Turkish>Araç ve Eşya Satın Al</Turkish>
             </Key>
-            <Key ID="STR_antistasi_actions_buy_loot_crate">
-                <Original>Buy loot crate</Original>
-                <Russian>Купить ящик-сборщик лута</Russian>
-                <Chinesesimp>购买战利品箱</Chinesesimp>
-                <Korean>전리품 상자 구입</Korean>
-                <French>Acheter une caisse de butin</French>
-                <Turkish>Yağma kasası satın al</Turkish>
-            </Key>
             <Key ID="STR_antistasi_actions_loot_crate">
                 <Original>loot crate</Original>
                 <Russian>ящик-сборщик лута</Russian>
@@ -12879,14 +11440,6 @@
                 <French>Entrer dans %1 en tant que tireur</French>
                 <Turkish>%1 aracına nişancı olarak bin</Turkish>
             </Key>
-            <Key ID="STR_antistasi_actions_delivery_info">
-                <Original>View delivery information</Original>
-                <Russian>Посмотреть информацию о доставке</Russian>
-                <Chinesesimp>查看交货信息</Chinesesimp>
-                <Korean>배달 정보 보기</Korean>
-                <French>Voir les informations sur la livraison</French>
-                <Turkish>Teslimat bilgilerini görüntüle</Turkish>
-            </Key>
             <Key ID="STR_antistasi_actions_ff_forgive">
                 <Original>[Forgive Friendly Fire] </Original>
                 <Russian>[Простить дружественный огонь] </Russian>
@@ -12910,14 +11463,6 @@
                 <Korean>여기에 본부 짓기</Korean>
                 <French>Construire le QG ici</French>
                 <Turkish>Karargahı buraya kur</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_buy_boat">
-                <Original>Buy boat</Original>
-                <Russian>Купить лодку</Russian>
-                <Chinesesimp>买船</Chinesesimp>
-                <Korean>보트 구입</Korean>
-                <French>Acheter un bateau</French>
-                <Turkish>Tekne satın al</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_take_intel">
                 <Original>Take intel</Original>
@@ -13046,14 +11591,6 @@
                 <Korean>인공지능 로드 정보</Korean>
                 <French>Informations sur le chargement AI</French>
                 <Turkish>YZ Yük Bilgisi</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_restore_units">
-                <Original>Restore nearby units</Original>
-                <Russian>Восстановить союзников поблизости</Russian>
-                <Chinesesimp>恢复附近的盟友</Chinesesimp>
-                <Korean>인근 유닛 복구</Korean>
-                <French>Restaurer les unités proches</French>
-                <Turkish>Yakındaki birimleri geri yükle</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_transfer_to_arsenal">
                 <Original>Transfer cargo to Arsenal</Original>
@@ -14055,38 +12592,6 @@
                 <Portuguese>Você já ouviu falar daquele cara da "MaxxLite Armaments"? Tenho ouvido alguns rumores... Posso te contar tudo.</Portuguese>
                 <Turkish>"MaxxLite Armaments" adamını duydun mu? Bazı söylentiler duydum... Sana her şeyi anlatabilirim.</Turkish>
             </Key>
-            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal1">
-                <Original>Sorry I couldn't help, but I’ve seen enemy soldiers patrolling a spot nearby. Might be worth checking out if you’re looking for trouble.</Original>
-                <Russian>Простите, что не смог помочь, но я видел, как враги патрулируют место неподалеку. Возможно, стоит проверить, если вы ищете неприятностей.</Russian>
-                <German>Es tut mir leid, dass ich nicht helfen konnte, aber ich habe gesehen, wie feindliche Soldaten in der Nähe patrouillieren. Vielleicht lohnt es sich, dort nachzusehen, wenn du Ärger suchst.</German>
-                <Italian>Mi dispiace di non poter aiutare, ma ho visto soldati nemici pattugliare un posto qui vicino. Potrebbe valere la pena controllare se stai cercando guai.</Italian>
-                <Spanish>Lo siento, no puedo ayudarte, pero he visto soldados enemigos patrullando un lugar cerca de aquí. Podría valer la pena echarle un vistazo si buscas problemas.</Spanish>
-                <French>Désolé de ne pas pouvoir vous aider, mais j'ai vu des soldats ennemis patrouiller à proximité. Cela pourrait valoir le coup d'œil si vous cherchez des ennuis.</French>
-                <Korean>도움을 드리지 못해 죄송하지만, 근처에서 적 병사들이 순찰하는 것을 봤습니다. 문제가 필요하다면 확인해볼 가치가 있을 겁니다.</Korean>
-                <Japanese>お力になれず申し訳ありませんが、近くで敵兵が巡回しているのを見かけました。もし問題を探しているなら、確認する価値があるかもしれません。</Japanese>
-                <Chinesesimp>很抱歉我无法帮助你，但我看到敌军在附近的一个地点巡逻。如果你想找点麻烦，可能值得查看一下。</Chinesesimp>
-                <Chinese>很抱歉我無法幫助你，但我看到敵軍在附近的一個地點巡邏。如果你想找點麻煩，可能值得查看一下。</Chinese>
-                <Polish>Przepraszam, że nie mogłem pomóc, ale widziałem, jak wrogowie patrolują pobliskie miejsce. Może warto to sprawdzić, jeśli szukasz kłopotów.</Polish>
-                <Czech>Omlouvám se, že nemohu pomoci, ale viděl jsem, jak nepřátelé hlídkují v blízkosti. Možná to stojí za kontrolu, pokud hledáte potíže.</Czech>
-                <Portuguese>Desculpe, não pude ajudar, mas vi soldados inimigos patrulhando um local próximo. Pode valer a pena verificar se você está procurando problemas.</Portuguese>
-                <Turkish>Üzgünüm yardımcı olamadım, ama yakındaki bir yerde düşman askerlerinin devriye gezdiğini gördüm. Sorun arıyorsanız bakmaya değer olabilir.</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_actions_talk_with_civ_fail_zone_reveal2">
-                <Original>Sorry, I don’t have the information you need, but there’s a location I’ve noticed the enemy frequenting. Maybe that’ll help.</Original>
-                <Russian>Простите, у меня нет нужной вам информации, но я заметил место, которое часто посещают враги. Возможно, это поможет.</Russian>
-                <German>Entschuldigung, ich habe nicht die Informationen, die du brauchst, aber ich habe einen Ort bemerkt, den der Feind häufig besucht. Vielleicht hilft dir das.</German>
-                <Italian>Mi dispiace, non ho le informazioni che ti servono, ma ho notato un luogo che i nemici frequentano spesso. Forse potrebbe esserti utile.</Italian>
-                <Spanish>Lo siento, no tengo la información que necesitas, pero he notado un lugar que los enemigos frecuentan. Quizás eso te sirva.</Spanish>
-                <French>Désolé, je n'ai pas les informations dont vous avez besoin, mais j'ai remarqué un endroit fréquenté par l'ennemi. Peut-être que cela pourra vous aider.</French>
-                <Korean>죄송하지만 필요한 정보를 가지고 있지 않습니다. 그러나 적이 자주 드나드는 장소를 본 적이 있습니다. 도움이 될지도 모릅니다.</Korean>
-                <Japanese>申し訳ありませんが、必要な情報を持っていません。ただし、敵が頻繁に出入りする場所を見かけました。それがお役に立つかもしれません。</Japanese>
-                <Chinesesimp>对不起，我没有你需要的信息，但我注意到敌军经常光顾一个地方。也许这会有所帮助。</Chinesesimp>
-                <Chinese>對不起，我沒有你需要的信息，但我注意到敵軍經常光顧一個地方。也許這會有所幫助。</Chinese>
-                <Polish>Przepraszam, nie mam informacji, których potrzebujesz, ale zauważyłem miejsce, które wróg często odwiedza. Może to ci pomoże.</Polish>
-                <Czech>Omlouvám se, nemám informace, které potřebujete, ale všiml jsem si místa, kam nepřátelé často chodí. Možná to pomůže.</Czech>
-                <Portuguese>Desculpe, não tenho as informações que você precisa, mas notei um local que os inimigos frequentam. Talvez isso ajude.</Portuguese>
-                <Turkish>Üzgünüm, ihtiyacınız olan bilgiye sahip değilim, ama düşmanın sık sık gittiği bir yer fark ettim. Belki bu işinize yarar.</Turkish>
-            </Key>
         </Container>
         <Container name="rivals_notifications">
             <Key ID="STR_rivals_destroyed_city">
@@ -14171,30 +12676,6 @@
     </Package>
     <Package name="A3-Antistasi-Namespace">
         <Container name="A3A_UtilityItems">
-            <Key ID="STR_A3A_buy_item_header">
-                <Original>Item Purchase</Original>
-                <Russian>Покупка предмета</Russian>
-                <Chinesesimp>购买物品</Chinesesimp>
-                <Korean>아이템 구입</Korean>
-                <French>Achat d'articles</French>
-                <Turkish>Eşya Satın Al</Turkish>
-            </Key>
-            <Key ID="STR_A3A_buy_item_cooldown">
-                <Original>You already bought one, wait %1 seconds before you can buy another.</Original>
-                <Russian>Вы уже купили один такой предмет, подождите %1 секунд перед покупкой нового.</Russian>
-                <Chinesesimp>您已经购买了其中一件商品，请等待 %1 秒，然后再购买一件新商品。</Chinesesimp>
-                <Korean>이미 하나를 구입했습니다. %1초 후에 다른 것을 구입할 수 있습니다.</Korean>
-                <French>Vous en avez déjà acheté un, attendez %1 secondes avant de pouvoir en acheter un autre.</French>
-                <Turkish>Zaten bir tane aldın, bir tane daha alabilmek için %1 saniye bekle.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_buy_item_insuf_funds">
-                <Original>You can't afford this item.</Original>
-                <Russian>Вам не хватает денег для покупки этого предмета.</Russian>
-                <Chinesesimp>您没有足够的钱购买此商品。</Chinesesimp>
-                <Korean>이 아이템은 구입할 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas vous permettre cet article.</French>
-                <Turkish>Bu ürünü satın alamazsınız.</Turkish>
-            </Key>
             <Key ID="STR_A3A_dropObject">
                 <Original>Drop object</Original>
                 <Russian>Бросить предмет</Russian>
@@ -14593,22 +13074,6 @@
                 <French>Achat d'un véhicule</French>
                 <Turkish>Araç Satın Al</Turkish>
             </Key>
-            <Key ID="STR_A3A_initClient_purchase_light">
-                <Original>Buy Light For %1%2</Original>
-                <Russian>Купить фонарь за %1%2</Russian>
-                <Chinesesimp>以 %1%2 的价格买一盏灯笼</Chinesesimp>
-                <Korean>%1%2에 조명 구입</Korean>
-                <French>Acheter de la lumière pour %1%2</French>
-                <Turkish>%1%2 Karşılığında Aydınlatma Satın Al</Turkish>
-            </Key>
-            <Key ID="STR_A3A_initClient_purchase_generic">
-                <Original>Buy %1 For %2%3</Original>
-                <Russian>Купить %1 за %2%3</Russian>
-                <Chinesesimp>以 %2%3 的价格购买 %1</Chinesesimp>
-                <Korean>%2%3에 %1 구매</Korean>
-                <French>Acheter %1 pour %2%3</French>
-                <Turkish>%2%3 Karşılığında %1 Satın Al</Turkish>
-            </Key>
         </Container>
         <Container name="A3A_save">
             <Key ID="STR_A3A_save_persisent_save">
@@ -14618,30 +13083,6 @@
                 <Korean>영구저장</Korean>
                 <French>Sauvegarde persistante</French>
                 <Turkish>Kalıcı Kayıt</Turkish>
-            </Key>
-            <Key ID="STR_A3A_save_persisent_save_0">
-                <Original> Assets:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR: </Original>
-                <Russian> Имущество:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR: </Russian>
-                <Chinesesimp>资产:&lt;br/&gt;&lt;t color='#f0d498'&gt;人力: </Chinesesimp>
-                <Korean> 자산:&lt;br/&gt;&lt;t color='#f0d498'&gt;인력: </Korean>
-                <French> Actifs:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR:</French>
-                <Turkish> Varlıklar:&lt;br/&gt;&lt;t color='#f0d498'&gt;İK: </Turkish>
-            </Key>
-            <Key ID="STR_A3A_save_persisent_save_1">
-                <Original>&lt;br/&gt;Money: </Original>
-                <Russian>&lt;br/&gt;Деньги: </Russian>
-                <Chinesesimp>&lt;br/&gt;钱: </Chinesesimp>
-                <Korean>&lt;br/&gt;자금: </Korean>
-                <French>&lt;br/&gt;Argent :</French>
-                <Turkish>&lt;br/&gt;Para: </Turkish>
-            </Key>
-            <Key ID="STR_A3A_save_save_game_header">
-                <Original>Save Game</Original>
-                <Russian>Сохранение игры</Russian>
-                <Chinesesimp>保存游戏</Chinesesimp>
-                <Korean>게임 저장</Korean>
-                <French>Sauvegarder la partie</French>
-                <Turkish>Oyunu Kaydet</Turkish>
             </Key>
             <Key ID="STR_A3A_save_save_game_desc">
                 <Original>Server data save is still in progress...</Original>
@@ -14800,270 +13241,6 @@
                 <Korean>위장</Korean>
                 <French>Sous couverture</French>
                 <Turkish>Gizli Kimlik</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_controlai">
-                <Original>You can't go Undercover while you are controlling AI.</Original>
-                <Russian>Вы не можете маскироваться пока вы контроллируете ИИ-юнит.</Russian>
-                <Chinesesimp>当你控制一个 AI 单位时你不能伪装。</Chinesesimp>
-                <Korean>인공지능을 조종하는 동안에는 위장이 불가능합니다.</Korean>
-                <French>Vous ne pouvez pas vous infiltrer lorsque vous contrôlez l'IA.</French>
-                <Turkish>Yapay zeka birimini kontrol ederken gizli kimliğe bürünemezsiniz.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_controlai_output">
-                <Original>No Undercover while controlling AI</Original>
-                <Russian>Нет маскировки пока контроллируется другой ИИ-юнит</Russian>
-                <Chinesesimp>在控制另一个 AI 单元时没有伪装</Chinesesimp>
-                <Korean>인공지능 조종 도중 위장 불가능</Korean>
-                <French>Pas d'infiltration en contrôlant l'IA</French>
-                <Turkish>Yapay zeka kontrol ederken gizli kimlik kullanılamaz</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_alreadyundercover">
-                <Original>You are Undercover already.</Original>
-                <Russian>Вы уже замаскированы.</Russian>
-                <Chinesesimp>你已经伪装了。</Chinesesimp>
-                <Korean>이미 위장 상태입니다.</Korean>
-                <French>Vous êtes déjà sous couverture</French>
-                <Turkish>Zaten gizli kimliktesiniz.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_alreadyundercover_output">
-                <Original>Already undercover</Original>
-                <Russian>Уже замаскирован</Russian>
-                <Chinesesimp>已经伪装</Chinesesimp>
-                <Korean>이미 위장 중</Korean>
-                <French>Déjà sous couverture</French>
-                <Turkish>Zaten gizli kimlikte</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_no_civveh">
-                <Original>You are not in a civilian vehicle.</Original>
-                <Russian>Вы не в гражданском транспортном средстве.</Russian>
-                <Chinesesimp>你不是在民用载具里。</Chinesesimp>
-                <Korean>민간 차량에 타고 있지 않습니다.</Korean>
-                <French>Vous n'êtes pas dans un véhicule civil.</French>
-                <Turkish>Zaten gizli kimlikte</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_no_civveh_output">
-                <Original>In non-civilian vehicle</Original>
-                <Russian>В негражданском транспортном средстве</Russian>
-                <Chinesesimp>在非民用载具上</Chinesesimp>
-                <Korean>민간 차량 미탑승</Korean>
-                <French>Dans un véhicule non civil</French>
-                <Turkish>Sivil olmayan araçta</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_reportedveh">
-                <Original>This vehicle has been reported to the enemy. Change or renew your vehicle in the Garage to go Undercover.</Original>
-                <Russian>Это транспортное средство уже было замечено врагом. Смените транспортное средство или обновите его через действие восстановления ящика с техникой в штабе.</Russian>
-                <Chinesesimp>这辆载具已经被敌人发现了。 通过总部载具箱的恢复动作更换载具或升级载具。</Chinesesimp>
-                <Korean>이 차량은 적에게 보고되었습니다. 차고에서 차량을 교환하거나 재도장하여 위장을 하십시오.</Korean>
-                <French>Ce véhicule a été signalé à l'ennemi. Changez ou renouvelez votre véhicule dans le garage pour vous infiltrer.</French>
-                <Turkish>Bu araç düşmana ihbar edilmiş. Gizli kimliğe bürünmek için aracınızı değiştirin veya Garaj'da yenileyin.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_reportedveh_output">
-                <Original>In reported vehicle</Original>
-                <Russian>В замеченном врагом транспортном средстве</Russian>
-                <Chinesesimp>被通缉的载具</Chinesesimp>
-                <Korean>적에게 보고된 차량</Korean>
-                <French>Véhicules signalés à l'ennemi</French>
-                <Turkish>İhbar edilmiş araçta</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_reported30">
-                <Original>You have been reported in the last 30 minutes therefore you can't go Undercover.</Original>
-                <Russian>Вы были замечены в последние 30 минут, поэтому вы не можете замаскироваться.</Russian>
-                <Chinesesimp>你在过去 30 分钟内被发现，所以你无法伪装自己。</Chinesesimp>
-                <Korean>지난 30분 동안 적에게 보고되었기 때문에 위장할 수 없습니다.</Korean>
-                <French>Vous avez été signalé au cours des 30 dernières minutes, vous ne pouvez donc pas vous infiltrer.</French>
-                <Turkish>Son 30 dakika içinde ihbar edildiniz, bu nedenle gizli kimliğe bürünemezsiniz.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_reported30_output">
-                <Original>Recently reported</Original>
-                <Russian>Недавно замечен</Russian>
-                <Chinesesimp>近期报道</Chinesesimp>
-                <Korean>최근에 적에게 보고됨</Korean>
-                <French>Récemment signalé</French>
-                <Turkish>Yakın zamanda ihbar edildi</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_header">
-                <Original>You can't go Undercover while:&lt;br/&gt;</Original>
-                <Russian>Вы не можете замаскироваться пока:&lt;br/&gt;</Russian>
-                <Chinesesimp>你还不能伪装：&lt;br/&gt;</Chinesesimp>
-                <Korean>다음 조건 동안에는 위장이 불가능합니다:&lt;br/&gt;</Korean>
-                <French>Vous ne pouvez pas vous infiltrer pendant que vous êtes sous couverture:&lt;br/&gt;</French>
-                <Turkish>Şu durumdayken gizli kimliğe bürünemezsiniz:&lt;br/&gt;</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_visible_weapon">
-                <Original>%1&lt;br/&gt;A weapon is visible.</Original>
-                <Russian>%1&lt;br/&gt;Видно оружие.</Russian>
-                <Chinesesimp>%1&lt;br/&gt;的武器可见。</Chinesesimp>
-                <Korean>&lt;br/&gt;무기가 보임.</Korean>
-                <French>%1&lt;br/&gt;Une arme est visible.</French>
-                <Turkish>%1&lt;br/&gt;Görünürde bir silah var.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_visible_weapon_output">
-                <Original>Weapon visible</Original>
-                <Russian>Видимое оружие</Russian>
-                <Chinesesimp>武器可见</Chinesesimp>
-                <Korean>무기 노출</Korean>
-                <French>Arme visible</French>
-                <Turkish>Silah görünüyor</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_visible_weapon_veh">
-                <Original>%1&lt;br/&gt;A weapon is visible while not being driver of a vehicle.</Original>
-                <Russian>%1&lt;br/&gt;Видно оружие не у водителя.</Russian>
-                <Chinesesimp>%1&lt;br/&gt;的武器在不是驾驶员的情况下是可见的.</Chinesesimp>
-                <Korean>%1&lt;br/&gt;차량 운전자가 아닌 상태에서 무기가 보임.</Korean>
-                <French>%1&lt;br/&gt;Une arme est visible lorsque l'on n'est pas au volant d'un véhicule.</French>
-                <Turkish>%1&lt;br/&gt;Araç sürücüsü değilken görünürde bir silah var.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_visible_weapon_veh_output">
-                <Original>Weapon visible on non-driver person</Original>
-                <Russian>Видимое оружие у не-водителя техники</Russian>
-                <Chinesesimp>非驾驶员身上有可见的武器</Chinesesimp>
-                <Korean>비-운전자의 무기 노출</Korean>
-                <French>Arme visible sur une personne autre que le conducteur</French>
-                <Turkish>Sürücü olmayan kişide görünür silah</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_vest">
-                <Original>%1&lt;br/&gt;Wearing a vest.</Original>
-                <Russian>%1&lt;br/&gt;Надет бронежилет или разгрузка.</Russian>
-                <Chinesesimp>%1&lt;br/&gt;穿着防弹衣或者军用背心。</Chinesesimp>
-                <Korean>%1&lt;br/&gt;조끼를 입음.</Korean>
-                <French>%1&lt;br/&gt;Port d'un gilet.</French>
-                <Turkish>%1&lt;br/&gt;Hücum yeleği takılı.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_vest_output">
-                <Original>Vest visible</Original>
-                <Russian>Надет бронежилет или разгрузка</Russian>
-                <Chinesesimp>穿着防弹衣或者军用背心</Chinesesimp>
-                <Korean>조끼 착용</Korean>
-                <French>Gilet visible</French>
-                <Turkish>Yelek görünüyor</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_helmet">
-                <Original>%1&lt;br/&gt;Wearing a helmet.</Original>
-                <Russian>%1&lt;br/&gt;Надет шлем.</Russian>
-                <Chinesesimp>%1&lt;br/&gt;戴着头盔。</Chinesesimp>
-                <Korean>%1&lt;br/&gt;헬멧을 착용함.</Korean>
-                <French>%1&lt;br/&gt;Port d'un casque.</French>
-                <Turkish>%1&lt;br/&gt;Kask takılı.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_helmet_output">
-                <Original>Helmet visible</Original>
-                <Russian>Надет шлем</Russian>
-                <Chinesesimp>戴着头盔</Chinesesimp>
-                <Korean>헬멧 착용</Korean>
-                <French>Casque visible</French>
-                <Turkish>%1&lt;br/&gt;Kask takılı.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_nvg">
-                <Original>%1&lt;br/&gt;Wearing NVGs.</Original>
-                <Russian>"%1&lt;br/&gt;Надет ПНВ.</Russian>
-                <Chinesesimp>&gt;%1&lt;br/&gt;戴着夜视仪。</Chinesesimp>
-                <Korean>%1&lt;br/&gt;야시경 착용함.</Korean>
-                <French>%1&lt;br/&gt;Porter des lunettes de vision nocturne.</French>
-                <Turkish>%1&lt;br/&gt;Gece görüş gözlüğü (NVG) takılı.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_nvg_output">
-                <Original>NVG visible</Original>
-                <Russian>Надет ПНВ</Russian>
-                <Chinesesimp>戴着夜视仪</Chinesesimp>
-                <Korean>야시경 착용</Korean>
-                <French>Lunettes de vision nocturne visible.</French>
-                <Turkish>NVG görünüyor</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_uniform">
-                <Original>%1&lt;br/&gt;Wearing a suspicious uniform.</Original>
-                <Russian>"%1&lt;br/&gt;Надета подозрительная униформа.</Russian>
-                <Chinesesimp>%1&lt;br/&gt;穿着可疑的制服。</Chinesesimp>
-                <Korean>%1&lt;br/&gt;수상한 복장을 착용함.</Korean>
-                <French>%1&lt;br/&gt;Port d'un uniforme suspect.</French>
-                <Turkish>%1&lt;br/&gt;Şüpheli bir üniforma giyiliyor.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_uniform_output">
-                <Original>Suspicious uniform</Original>
-                <Russian>Подозрительная униформа</Russian>
-                <Chinesesimp>可疑的制服</Chinesesimp>
-                <Korean>수상한 복장 착용</Korean>
-                <French>Uniforme suspect</French>
-                <Turkish>Şüpheli üniforma</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_naked_uniform">
-                <Original>%1&lt;br/&gt;Being naked. It's, you know, suspicious.</Original>
-                <Russian>"%1&lt;br/&gt;На вас нет одежды. Знаете, это вообще-то подозрительно.</Russian>
-                <Chinesesimp>%1&lt;br/&gt;赤身裸体。 你知道的，这很可疑。</Chinesesimp>
-                <Korean>%1&lt;br/&gt;알몸입니다. 당연히 수상하겠죠?</Korean>
-                <French>%1&lt;br/&gt;Être dévêtus. Vous savez, c'est suspect.</French>
-                <Turkish>%1&lt;br/&gt;Çıplak olmak. Bilirsiniz, bu oldukça şüpheli bir durum.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_additive_naked_output">
-                <Original>No clothes</Original>
-                <Russian>Нет одежды</Russian>
-                <Chinesesimp>没穿衣服</Chinesesimp>
-                <Korean>옷 없음</Korean>
-                <French>Pas de vêtements</French>
-                <Turkish>Kıyafet yok</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_securebases">
-                <Original>You can't go Undercover near Airports, Military Bases, Outposts, Seaports or Roadblocks.</Original>
-                <Russian>Вы не можете маскироваться рядом с авиабазами, военными базами, аванпостами, портами или блокпостами.</Russian>
-                <Chinesesimp>你不能在机场、军事基地、哨所、海港或路障附近伪装。</Chinesesimp>
-                <Korean>공항, 군사 기지, 전초 기지, 항구 또는 검문소에서는 위장이 불가능합니다.</Korean>
-                <French>Vous ne pouvez pas vous infiltrer près des aéroports, des bases militaires, des avant-postes, des ports maritimes ou des barrages routiers.</French>
-                <Turkish>Havalimanları, Askeri Üsler, Karakollar, Limanlar veya Yol Barikatları yakınındayken gizli kimliğe bürünemezsiniz.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_securebases_output">
-                <Original>Near enemy territory</Original>
-                <Russian>Рядом с вражеской территорией</Russian>
-                <Chinesesimp>敌境附近</Chinesesimp>
-                <Korean>적군 영토 근처</Korean>
-                <French>Près du territoire ennemi</French>
-                <Turkish>Düşman bölgesine yakın</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_spotting">
-                <Original>You can't go Undercover while enemies are spotting you.</Original>
-                <Russian>Вы не можете маскироваться пока на вас смотрят или о вас знают враги.</Russian>
-                <Chinesesimp>当敌人发现你时，你不能去伪装。</Chinesesimp>
-                <Korean>적들이 당신을 발견한 동안에는 위장이 불가능합니다.</Korean>
-                <French>Vous ne pouvez pas vous infiltrer lorsque des ennemis vous repèrent.</French>
-                <Turkish>Düşmanlar sizi izlerken gizli kimliğe bürünemezsiniz.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_spotting_output">
-                <Original>Spotted by enemies</Original>
-                <Russian>Замечен врагом</Russian>
-                <Chinesesimp>被敌人发现</Chinesesimp>
-                <Korean>적에게 포착됨</Korean>
-                <French>Repérés par des ennemis</French>
-                <Turkish>Düşmanlar tarafından fark edildiniz</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_towing_ropes_head">
-                <Original>This vehicle cannot go undercover while it has tow ropes attached</Original>
-                <Russian>Эта техника не может уйти в маскировка пока к ней прикреплен буксировочный трос.</Russian>
-                <Korean>이 차량은 견인줄이 걸려 있는 동안에는 위장이 불가능합니다.</Korean>
-                <French>Ce véhicule ne peut pas être mis à l'abri tant qu'il est équipé de câbles de remorquage.</French>
-                <Chinesesimp>此车辆在系有牵引绳的情况下无法隐蔽行驶</Chinesesimp>
-                <Turkish>Bu araç, çekme halatları takılıyken gizli kimliğe bürünemez.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_towing_ropes">
-                <Original>In vehicle with tow ropes attached</Original>
-                <Russian>В технике с прикрепленным буксировочным тросом</Russian>
-                <Korean>견인줄이 부착된 차량일 경우</Korean>
-                <French>Si le véhicule est équipé d'un câble de remorquage</French>
-                <Chinesesimp>在系有牵引绳的车辆中</Chinesesimp>
-                <Turkish>Çekme halatları takılı araçta</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_towing_ropes_2">
-                <Original>%1&lt;br/&gt;Holding tow ropes.</Original>
-                <Russian>"%1&lt;br/&gt;В руках буксировочный трос.</Russian>
-                <Korean>%1이(가)&lt;br/&gt;견인줄을 잡고 있습니다.</Korean>
-                <French>%1&lt;br/&gt;Tenez la ligne de remorquage.</French>
-                <Chinesesimp>%1&lt;br/&gt;握住牵引绳。</Chinesesimp>
-                <Turkish>%1&lt;br/&gt;Çekme halatı tutuluyor.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_goUndercover_error_towing_ropes_output">
-                <Original>Holding tow ropes</Original>
-                <Russian>Держит буксировочный трос</Russian>
-                <Korean>견인줄을 잡는 중</Korean>
-                <French>Tient la corde de remorquage</French>
-                <Chinesesimp>抓着牵引绳</Chinesesimp>
-                <Turkish>Çekme halatı tutuluyor</Turkish>
             </Key>
         </Container>
         <Container name="A3A_ai">
@@ -15553,14 +13730,6 @@
                 <French>Vous n'avez pas assez d'argent pour ce type d'unité (%1%2 nécessaire).</French>
                 <Turkish>Bu birim türü için yeterli paranız yok (%1%2 gerekli).</Turkish>
             </Key>
-            <Key ID="STR_A3A_reinf_reinfPlayer_no_money_equip">
-                <Original>You don't have enough money to equip this type of unit.</Original>
-                <Russian>У вас недостаточно денег для экипирования данного типа юнита.</Russian>
-                <Korean>이런 종류의 유닛을 장비하는 데 필요한 자금이 부족합니다.</Korean>
-                <French>Vous n'avez pas assez d'argent pour vous équiper de ce type d'unité.</French>
-                <Chinesesimp>您没有足够的钱来装备这种类型的单位。</Chinesesimp>
-                <Turkish>Bu birim türünü donatmak için yeterli paranız yok.</Turkish>
-            </Key>
             <Key ID="STR_A3A_reinf_reinfPlayer_no_weapons_equip">
                 <Original>You don't have enough weapons to equip this type of unit.</Original>
                 <Russian>У вас недостаточно оружия для экипирования данного типа юнита.</Russian>
@@ -15688,14 +13857,6 @@
                 <Korean>조종 중인 유닛이 데미지를 입었기 때문에 원래 유닛으로 돌아갑니다.</Korean>
                 <French>Retour à l'unité d'origine car l'IA contrôlée a été endommagée.</French>
                 <Turkish>Kontrol edilen yapay zeka hasar aldığı için birime geri dönüldü.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_reinf_minefield_task_header">
-                <Original>Minefield Deploy</Original>
-                <Russian>Развертывание минного поля</Russian>
-                <Chinesesimp>雷区部署</Chinesesimp>
-                <Korean>지뢰지대 배치</Korean>
-                <French>Déploiement de champs de mines</French>
-                <Turkish>Mayın Tarlası Döşe</Turkish>
             </Key>
             <Key ID="STR_A3A_reinf_minefield_task_desc">
                 <Original>An Engineer Team has been deployed under your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.</Original>
@@ -16428,62 +14589,6 @@
                 <French>Un spécialiste des explosifs est disponible sur votre barre de haut commandement.&lt;br/&gt;&lt;br/&gt;Envoyez-le n'importe où sur la carte pour désactiver des mines. Il chargera son camion avec les mines qu'il a trouvées.&lt;br/&gt;&lt;br/&gt;À son retour au QG, il déchargera les mines stockées dans son véhicule.</French>
                 <Turkish>Yüksek Komuta çubuğunuzda bir Patlayıcı Uzmanı mevcut.&lt;br/&gt;&lt;br/&gt;Mayınları etkisiz hale getirmesi için onu haritanın herhangi bir yerine gönderin. Bulduğu mayınları kamyonuna yükleyecektir.&lt;br/&gt;&lt;br/&gt;Karargaha döndüğünde, aracında depolanan mayınları boşaltacaktır.</Turkish>
             </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_header">
-                <Original>Move HQ Asset</Original>
-                <Russian>Перемещение имущества штаба</Russian>
-                <Chinesesimp>搬总部资产</Chinesesimp>
-                <Korean>본부 자산 옮기기</Korean>
-                <French>Déménagement des ressources du QG</French>
-                <Turkish>Merkez Varlığını Taşıma</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_error_only_comm">
-                <Original>Only the commander is allowed to move HQ assets.</Original>
-                <Russian>Только командир может двигать имущество штаба.</Russian>
-                <Chinesesimp>只有指挥官才能移动总部资产。</Chinesesimp>
-                <Korean>지휘관만이 본부 자산을 옮길 수 있습니다.</Korean>
-                <French>Seul le commandant est autorisé à déplacer les ressources du QG.</French>
-                <Turkish>Sadece komutan karargah varlıklarını taşıyabilir</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_error_already_moved">
-                <Original>The asset you want to move is being moved by another player.</Original>
-                <Russian>Имущество, которое вы хотите передвинуть, уже двигается другим игроком.</Russian>
-                <Chinesesimp>你要移动的资产正在被其他玩家移动。</Chinesesimp>
-                <Korean>옮길 해당 자산을 다른 플레이어가 옮기고 있습니다.</Korean>
-                <French>Le bien que vous souhaitez déplacer est en train d'être déplacé par un autre joueur.</French>
-                <Turkish>Taşımak istediğiniz varlık başka bir oyuncu tarafından taşınıyor.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_error_veh">
-                <Original>You can't move HQ assets while in a vehicle.</Original>
-                <Russian>Вы не можете двигать имущество штаба находясь в транспортном средстве.</Russian>
-                <Chinesesimp>你不能在载具中移动总部资产。</Chinesesimp>
-                <Korean>차량 내에서는 본부 자산을 옮길 수 없습니다.</Korean>
-                <French>Vous ne pouvez pas déplacer les actifs du QG lorsque vous êtes dans un véhicule.</French>
-                <Turkish>Araç içindeyken karargah varlıklarını taşıyamazsınız.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_error_already_attached">
-                <Original>You have other things attached, you can't move this.</Original>
-                <Russian>Вы уже что-то несёте или двигаете.</Russian>
-                <Chinesesimp>你已经在搬运或移动某物了。</Chinesesimp>
-                <Korean>당신은 다른 것을 부착하고 있어서 이걸 옮길 수 없습니다.</Korean>
-                <French>Vous portez ou déplacez déjà quelque chose.</French>
-                <Turkish>Buna bağlı başka nesneler var, bunu taşıyamazsınız.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_error_closer_center">
-                <Original>This asset needs to be closer to its relative zone center to be moved.</Original>
-                <Russian>Это имущество должно быть ближе к центру штаба чтобы появилась возможность его двигать.</Russian>
-                <Chinesesimp>这处资产应该靠近总部的中心，以便能够移动它。</Chinesesimp>
-                <Korean>이 자산을 옮기려면 해당 구역 중심에 더 가까이 있어야 합니다.</Korean>
-                <French>Ce poste doit être rapproché de son centre de zone relatif pour pouvoir être déplacé.</French>
-                <Turkish>Bu varlığın taşınabilmesi için bölge merkezine daha yakın olması gerekir.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Dialogs_moveHQObject_error_far_center">
-                <Original>This asset can't be moved farther away from its zone center.</Original>
-                <Russian>Это имущество не может быть передвинуто дальше от центра штаба.</Russian>
-                <Chinesesimp>不能将此资产移动到离总部中心更远的地方。</Chinesesimp>
-                <Korean>이 자신은 해당 구역 중심에서 더 멀리 옮길 수 없습니다.</Korean>
-                <French>Ce bien ne peut pas être déplacé plus loin de son centre de zone.</French>
-                <Turkish>Bu varlık bölge merkezinden daha uzağa taşınamaz.</Turkish>
-            </Key>
             <Key ID="STR_A3A_Dialogs_squadOptions_header">
                 <Original>Infantry Squads</Original>
                 <Russian>Пехотные отряды</Russian>
@@ -17048,14 +15153,6 @@
                 <French>Il y a des ennemis dans les environs de cette zone, veuillez en sélectionner une autre.</French>
                 <Turkish>O bölgenin etrafı düşmanlarla sarılmış, lütfen başka bir konum seçin.</Turkish>
             </Key>
-            <Key ID="STR_A3A_Base_sellVehicle_header">
-                <Original>Sell Vehicle</Original>
-                <Russian>Продажа техники</Russian>
-                <Chinesesimp>卖载具</Chinesesimp>
-                <Korean>차량 판매</Korean>
-                <French>Vendre un véhicule</French>
-                <Turkish>Aracı Sat</Turkish>
-            </Key>
             <Key ID="STR_A3A_Base_moveOutCrew_header">
                 <Original>Move out crew</Original>
                 <Russian>Выгнать экипаж из техники</Russian>
@@ -17072,13 +15169,21 @@
                 <Chinesesimp>车辆必须载有叛军乘员或平民乘员。</Chinesesimp>
                 <Turkish>Araçta isyancı mürettebat veya sivil mürettebat bulunmalıdır.</Turkish>
             </Key>
-            <Key ID="STR_A3A_Base_sellVehicle_err0">
-                <Original>Vehicle must be within 50 meters of the HQ marker.</Original>
-                <Russian>Техника должна быть ближе 50 метров от маркера штаба чтобы её можно было продать.</Russian>
-                <Chinesesimp>载具距离总部标志必须小于50米。</Chinesesimp>
-                <Korean>차량은 본부 마커로부터 반경 50m 이하에 있어야 합니다.</Korean>
-                <French>Le véhicule doit être à moins de 50 mètres du quartier général.</French>
-                <Turkish>Araç, Karargâha 50 metre yakınında olmalıdır.</Turkish>
+            <Key ID="STR_A3A_Base_moveOutCrew_success">
+                <Original>Crew moved out.</Original>
+                <Russian>Экипаж покинул технику.</Russian>
+                <French>L'équipage a abandonné le véhicule.</French>
+                <Korean>승무원을 내보냈습니다.</Korean>
+                <Chinesesimp>乘员已移出</Chinesesimp>
+                <Turkish>Mürettebat indirildi.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Base_sellVehicle_header">
+                <Original>Sell Vehicle</Original>
+                <Russian>Продажа техники</Russian>
+                <Chinesesimp>卖载具</Chinesesimp>
+                <Korean>차량 판매</Korean>
+                <French>Vendre un véhicule</French>
+                <Turkish>Aracı Sat</Turkish>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0.1">
                 <Original>Vehicle must be within 50 meters of the HQ marker or airfield.</Original>
@@ -17124,14 +15229,6 @@
                 <Korean>차량 판매 완료.</Korean>
                 <French>Véhicule vendu.</French>
                 <Turkish>Araç Satıldı.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Base_moveOutCrew_success">
-                <Original>Crew moved out.</Original>
-                <Russian>Экипаж покинул технику.</Russian>
-                <French>L'équipage a abandonné le véhicule.</French>
-                <Korean>승무원을 내보냈습니다.</Korean>
-                <Chinesesimp>乘员已移出</Chinesesimp>
-                <Turkish>Mürettebat indirildi.</Turkish>
             </Key>
         </Container>
         <Container name="A3A_CREATE">
