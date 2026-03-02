@@ -19,167 +19,6 @@
             <French>Tous</French>
             <Turkish>Hepsi</Turkish>
         </Key>
-        <!-- <Key ID="STR_HALS_STORE_HANDGUNS">
-            <Original>Handguns</Original>
-            <German>Handfeuerwaffen</German>
-            <Russian>Пистолеты</Russian>
-            <Chinesesimp>手枪</Chinesesimp>
-            <Korean>권총</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_STORE_LAUNCHERS">
-            <Original>Launchers</Original>
-            <German>Trägerraketen</German>
-            <Russian>Пусковые установки, РПГ</Russian>
-            <Chinesesimp>发射器</Chinesesimp>
-            <Korean>발사기</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_STORE_LAUNCHER_AMMO">
-            <Original>Launcher Ammunition</Original>
-            <German>Launcher-Munition</German>
-            <Russian>Боеприпасы для пусковых установок, РПГ</Russian>
-            <Chinesesimp>发射器弹药</Chinesesimp>
-            <Korean>발사기 탄약</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_STORE_SMGS">
-            <Original>Submachine Guns</Original>
-            <German>Maschinenpistole</German>
-            <Russian>Пистолеты-пулемёты</Russian>
-            <Chinesesimp>冲锋枪</Chinesesimp>
-            <Korean>기관단총</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_STORE_MISC">
-            <Original>Misc</Original>
-            <German>Sonstiges</German>
-            <Russian>Прочее</Russian>
-            <Chinesesimp>杂项</Chinesesimp>
-            <Korean>기타</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_ASSAULT_RIFLES_VN">
-            <Original>Assault Rifles, Carbines</Original>
-            <German>Sturmgewehre, Karabiner</German>
-            <Russian>Штурмовые винтовки, карабины</Russian>
-            <Chinesesimp>突击步枪、卡宾枪</Chinesesimp>
-            <Korean>돌격소총, 카빈</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_ASSAULT_RIFLES">
-            <Original>Assault Rifles</Original>
-            <German>Sturmgewehre</German>
-            <Russian>Штурмовые винтовки</Russian>
-            <Chinesesimp>突击步枪</Chinesesimp>
-            <Korean>돌격소총</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_ASSAULT_RIFLES_WS">
-            <Original>Assault Rifles (Western Sahara)</Original>
-            <German>Sturmgewehre (Western Sahara)</German>
-            <Russian>Штурмовые винтовки (Western Sahara)</Russian>
-            <Chinesesimp>突击步枪(Western Sahara DLC)</Chinesesimp>
-            <Korean>돌격소총 (웨스턴 사하라)</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_SPECIAL_WEAPONS">
-            <Original>Special Weapons</Original>
-            <German>Spezielle Waffen</German>
-            <Russian>Спецоружие</Russian>
-            <Chinesesimp>特殊武器</Chinesesimp>
-            <Korean>특수화기</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_MGS">
-            <Original>Machine Guns</Original>
-            <German>Maschinengewehre</German>
-            <Russian>Пулемёты</Russian>
-            <Chinesesimp>机枪</Chinesesimp>
-            <Korean>기관총</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_NAV">
-            <Original>Navigation</Original>
-            <German>Navigation</German>
-            <Russian>Навигация</Russian>
-            <Chinesesimp>夜视仪</Chinesesimp>
-            <Korean>내비게이션</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_SRS">
-            <Original>DMRs, Sniper Rifles, Battle Rifles</Original>
-            <German>Scharfschützengewehre</German>
-            <Russian>Снайперские, самозарядные винтовки</Russian>
-            <Chinesesimp>DMR、狙击步枪、精确步枪</Chinesesimp>
-            <Korean>지정사수소총, 저격소총, 전투소총</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_MAGS">
-            <Original>Magazines</Original>
-            <German>Waffenmagazine</German>
-            <Russian>Магазины</Russian>
-            <Chinesesimp>弹夹</Chinesesimp>
-            <Korean>탄창</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_MAGS_WS">
-            <Original>Magazines (Western Sahara)</Original>
-            <German>Waffenmagazine (Western Sahara)</German>
-            <Russian>Магазины (Western Sahara)</Russian>
-            <Chinesesimp>弹夹(Western Sahara)</Chinesesimp>
-            <Korean>탄창 (웨스턴 사하라)</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_ADD_MAGS">
-            <Original>Magazines (additional)</Original>
-            <German>Zeitschriften (zusätzlich)</German>
-            <Russian>Магазины (дополнительно)</Russian>
-            <Chinesesimp>弹夹(额外)</Chinesesimp>
-            <Korean>탄창 (부가)</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_UB_ACC">
-            <Original>Underbarrel Accessories</Original>
-            <German>Underbarrel-Zubehör</German>
-            <Russian>Подствольные аксессуары</Russian>
-            <Chinesesimp>枪管配件</Chinesesimp>
-            <Korean>하단부착물</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_P_ACC">
-            <Original>Pointer Accessories</Original>
-            <German>Zeigerzubehör</German>
-            <Russian>Указатели, фонарики</Russian>
-            <Chinesesimp>指示器配件</Chinesesimp>
-            <Korean>지시기 액세서리</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_P_ACC_VN">
-            <Original>Pointers, flashlights, bayonets</Original>
-            <German>Zeiger, Taschenlampen, Bajonette</German>
-            <Russian>Указатели, фонарики, штыки</Russian>
-            <Chinesesimp>指示器，手电筒，刺刀</Chinesesimp>
-            <Korean>지시기, 손전등, 총검</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_M_ACC">
-            <Original>Muzzle Accessories</Original>
-            <German>Maulkorb-Zubehör</German>
-            <Russian>Наствольные аксессуары</Russian>
-            <Chinesesimp>枪口配件</Chinesesimp>
-            <Korean>총구 액세서리</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_A_M_ACC">
-            <Original>Muzzle Accessories (additional)</Original>
-            <German>Maulkorb-Zubehör (zusätzlich)</German>
-            <Russian>Наствольные аксессуары (дополнительно)</Russian>
-            <Chinesesimp>枪口配件(额外)</Chinesesimp>
-            <Korean>총구 액세서리 (부가)</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_O_ACC">
-            <Original>Optics Accessories</Original>
-            <German>Optik Zubehör</German>
-            <Russian>Оптика</Russian>
-            <Chinesesimp>光学配件</Chinesesimp>
-            <Korean>광학장비</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_A_O_ACC">
-            <Original>Optics Accessories (additional)</Original>
-            <German>Optik Zubehör (zusätzlich)</German>
-            <Russian>Оптика (дополнительно)</Russian>
-            <Chinesesimp>光学配件(额外)</Chinesesimp>
-            <Korean>광학장비 (부가)</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_R_GRENADES">
-            <Original>Rifle Grenades</Original>
-            <German>Gewehrgranaten</German>
-            <Russian>Винтовочные гранаты</Russian>
-            <Chinesesimp>步枪榴弹</Chinesesimp>
-            <Korean>유탄</Korean>
-        </Key> -->
         <Key ID="STR_HALS_STORE_ACTION">
             <Original>Store</Original>
             <German>Geschäft</German>
@@ -254,28 +93,8 @@
             <French>achetés</French>
             <Turkish>satın alındı</Turkish>
         </Key>
-        <!-- Thanks to JakeHekesFists -->
-        <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
-            <Original>You cannot sell your %1 (%2) because it is not empty.</Original>
-            <Russian>Вы не можете продать %1 (%2), поскольку он не пустой.</Russian>
-            <Chinesesimp>无法出售 %1 (%2), 因为它不是空的。</Chinesesimp>
-            <Korean>%1 (%2)이(가) 비어 있지 않으므로 판매할 수 없습니다.</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_SOLD">
-            <Original>Sold x%1 %2(s) for $%3.</Original>
-            <Russian>Продано x%1 %2(s) за $%3.</Russian>
-            <Chinesesimp>卖掉 %2 x%1 以换取 $%3。</Chinesesimp>
-            <Korean>%1 개의 %2을(를) %3€에 팔았습니다.</Korean>
-        </Key> -->
     </Package>
     <Package name="Dialog">
-        <!-- <Key ID="STR_HALS_STORE_CHECKBOX_AFFORD">
-            <Original>Only show items which the player can afford.</Original>
-            <German>Zeige nur Gegenstände, die sich der Spieler leisten kann.</German>
-            <Russian>Показывать только предметы, на которые хватает денег</Russian>
-            <Chinesesimp>只显示玩家买得起的商品。</Chinesesimp>
-            <Korean>플레이어가 현재 구입 가능한 아이템만 표시합니다.</Korean>
-        </Key> -->
         <Key ID="STR_HALS_STORE_CHECKBOX_AVALIABLE">
             <Original>Only show items that are available for purchase.</Original>
             <Russian>Показывать только предметы, доступные к покупке.</Russian>
@@ -284,13 +103,6 @@
             <French>Seuls les articles disponibles à l'achat sont affichés.</French>
             <Turkish>Sadece satın alınabilir eşyaları göster.</Turkish>
         </Key>
-        <!-- <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
-            <Original>Only show items which are in stock.</Original>
-            <German>Zeige nur Gegenstände, die auf Lager sind.</German>
-            <Russian>Показывать только предметы, доступные для продажи.</Russian>
-            <Chinesesimp>只显示有货的商品。</Chinesesimp>
-            <Korean>재고가 있는 아이템만 표시합니다.</Korean>
-        </Key> -->
         <Key ID="STR_HALS_STORE_CHECKBOX_COMPATIBLE">
             <Original>Only show items compatible with the player's equipped weapons.</Original>
             <German>Zeige nur Gegenstände, die mit der ausgerüsteten Waffe des Spielers kompatibel sind.</German>
@@ -364,13 +176,6 @@
             <French>EN RUPTURE DE STOCK.</French>
             <Turkish>STOKTA YOK.</Turkish>
         </Key>
-        <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
-            <Original>%1¢ more required.</Original>
-            <German>%1¢ mehr benötigt.</German>
-            <Russian>Не хватает %1¢.</Russian>
-            <Chinesesimp>还需要 %1¢。</Chinesesimp>
-            <Korean>%1¢가 더 필요합니다.</Korean>
-        </Key> -->
     </Package>
     <Package name="A3AU_hals_store">
         <!-- category names -->
@@ -1091,7 +896,7 @@
                 <Korean>MPP</Korean>
                 <French>MPP</French>
             </Key>
-            <!-- <Key ID="STR_A3AU_PROJINF">
+            <Key ID="STR_A3AU_PROJINF">
                 <Original>P.I.</Original>
                 <German>P.I.</German>
                 <Russian>P.I.</Russian>
@@ -1105,7 +910,7 @@
                 <Chinesesimp>JCA</Chinesesimp>
                 <Korean>JCA</Korean>
                 <French>JCA</French>
-           </Key> -->
+           </Key>
         </Container>
     </Package>
 </Project>
