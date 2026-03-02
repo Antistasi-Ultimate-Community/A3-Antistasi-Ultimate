@@ -28,5 +28,5 @@ if (
 ) then {
     GVAR(EventRegistry) set [_event, []];
 } else {
-        Warning_1("No listeners for event %1 exists", _event)
+        Warning_1("No listeners for event %1 exists", _event);
 };
