@@ -175,26 +175,26 @@ if((_unit skill "aimingAccuracy") > _decimalAccurancyCap) then {
 
 //Sets NVGs, lights, lasers, radios and spotting skills for the night
 private _hmd = hmd _unit;
-if (sunOrMoon < 1) then {
-    if (_unitPrefix isNotEqualTo "SF" && {_unit != leader (group _unit)}) then {
+if (sunOrMoon < 1) then { // Night time conditions
+    if (_unitPrefix isNotEqualTo "SF" && {_unitPrefix isNotEqualTo "elite"} && {_unit != leader (group _unit)}) then { // Regular units (non-SF, non-elite, non-leader)
         if (tierWar < 4) then {
-            if (_hmd != "") then {
+            if (_hmd != "" && {!(_hmd in dummyNVGs)}) then { // Remove only non-dummy NVGs
                 _unit unassignItem _hmd;
                 _unit removeItem _hmd;
                 _hmd = "";
             };
         } else {
-            if (_hmd != "" && {((10 - tierWar) > random 10)}) then {
+            if (_hmd != "" && {!(_hmd in dummyNVGs)} && {((10 - tierWar) > random 10)}) then { // Remove NVGs considering dummy check
                 _unit unassignItem _hmd;
                 _unit removeItem _hmd;
                 _hmd = "";
             };
-        }
-    } else {
+        };
+    } else { // Elite units (SF/elite) handling
         private _arr = (allNVGs arrayIntersect (items _unit));
-        if (_arr isNotEqualTo [] || {_hmd != ""}) then {
+        if (_arr isNotEqualTo [] || {_hmd != "" && {!(_hmd in dummyNVGs)}}) then {
             if ((10 - tierWar) > random 10 && {_unit != leader (group _unit)}) then {
-                if (_hmd == "") then {
+                if (_hmd == "" || {_hmd in dummyNVGs}) then { // Take from inventory if dummy is equipped
                     _hmd = _arr select 0;
                     _unit removeItem _hmd;
                 } else {
@@ -209,14 +209,16 @@ if (sunOrMoon < 1) then {
                             _hmd = _arr select 0;
                             _unit removeItem _hmd;
                         };
-                        case (_hmd != ""): {
+                        case (_hmd != "" && {!(_hmd in dummyNVGs)}): { // Remove only real NVGs
                             _unit unassignItem _hmd;
                             _unit removeItem _hmd;
                         };
                     };
                     _hmd = "";
                 } else {
-                    _unit assignItem _hmd;
+                    if !(_hmd in dummyNVGs) then { // Assign only real NVGs
+                        _unit assignItem _hmd;
+                    };
                 };
             };
         };
@@ -236,8 +238,7 @@ if (sunOrMoon < 1) then {
         private _lamps = _weaponItems arrayIntersect allLightAttachments;
         if (_lamps isEqualTo []) then {
             private _compatibleLamps = (compatibleItems (primaryWeapon _unit)) arrayIntersect allLightAttachments;
-            if !(_compatibleLamps isEqualTo []) then
-            {
+            if !(_compatibleLamps isEqualTo []) then {
                 _lamp = selectRandom _compatibleLamps;
                 _unit addPrimaryWeaponItem _lamp;
                 _unit assignItem _lamp;
@@ -248,17 +249,20 @@ if (sunOrMoon < 1) then {
         if (_lamp != "") then {
             _unit enableGunLights "AUTO";
         };
-        //Reduce their magical night-time spotting powers.
+        // Reduce their magical night-time spotting powers
         _unit setskill ["spotDistance", _skill * 0.7];
         _unit setskill ["spotTime", _skill * 0.5];
     };
-} else {
-    if (_unitPrefix isNotEqualTo "SF") then {
+} else { // Day time conditions
+    if (_unitPrefix isNotEqualTo "SF" && {_unitPrefix isNotEqualTo "elite"}) then { // Regular units
         if (_hmd != "") then {
-            _unit unassignItem _hmd;
-            _unit removeItem _hmd;
+            // Remove only if NOT a dummy
+            if !(_hmd in dummyNVGs) then {
+                _unit unassignItem _hmd;
+                _unit removeItem _hmd;
+            };
         };
-    } else {
+    } else { // Elite units handling
         private _arr = (allNVGs arrayIntersect (items _unit));
         if (count _arr > 0) then {
             _hmd = _arr select 0;

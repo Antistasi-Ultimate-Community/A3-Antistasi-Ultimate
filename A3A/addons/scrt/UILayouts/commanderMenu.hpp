@@ -492,6 +492,9 @@ class commanderMenu
 					action = "[] call SCRT_fnc_ui_createRebelLoadoutMenu;";
 				};
 
+				/*
+				// ! This no longer does anything since new partial AI loadout system was introduced
+				// ! Leaving it commented out instead of removing it in case we want to use this button for something else later
 				class uniformRandomizeButton: ScrtRscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5500;
@@ -520,6 +523,7 @@ class commanderMenu
 						};
 					};		
 				};
+				*/
 
 				class hqSpacer2: brSpacer 
 				{
