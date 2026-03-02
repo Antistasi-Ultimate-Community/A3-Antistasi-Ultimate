@@ -1864,7 +1864,7 @@
                 <Russian>Вы успешно нанесли поражение своим врагам!&lt;br/&gt;Их военные базы и аэропорты теперь под вашим контролем, ваши враги отступили от конфликта и закрыли свои коридоры поддержки. &lt;br/&gt;Иди отдохни, солдат, ты это заслужил!</Russian>
                 <Chinesesimp>您已成功击溃敌人！&lt;br/&gt;他们的军事基地和机场现已被您控制，您的敌人已退出冲突并关闭了支援走廊。士兵们，去休息吧，这是您应得的！</Chinesesimp>
                 <Korean>당신은 성공적으로 적을 재기불능으로 만들었습니다!&lt;br/&gt;그들의 군사 기지와 공항은 이제 당신의 통제 하에 있고 당신의 적들은 분쟁을 멈추었으며 지원 통로를 닫았습니다. 이제 가서 휴식을 취하세요, 군인 여러분. 당신들은 그럴 자격이 있습니다!</Korean>
-                <Turkish>Düşmanlarını başarıyla felç ettin!<br/>Askeri üsleri ve havaalanları artık kontrolün altında, düşmanların çatışmadan geri çekildi ve destek koridorlarını kapattı. Git biraz dinlen asker, bunu fazlasıyla hak ettin!</Turkish>
+                <Turkish>Düşmanlarını başarıyla felç ettin!&lt;br/&gt;Askeri üsleri ve havaalanları artık kontrolün altında, düşmanların çatışmadan geri çekildi ve destek koridorlarını kapattı. Git biraz dinlen asker, bunu fazlasıyla hak ettin!</Turkish>
             </Key>
             <Key ID="STR_end_mission_defeat_title">
                 <Original>The country is destroyed</Original>
@@ -2500,6 +2500,14 @@
                 <French>Les missions de soutien nécessitent des villes situées à moins de %1m de votre QG.</French>
                 <Turkish>Destek görevleri için ana karargâhın %1m yakınında şehirler bulunmalıdır.</Turkish>
             </Key>
+            <Key ID="STR_chats_mission_request_no_RES_hint_text">
+                <Original>Rescue Missions require Cities, Airports, Military bases or outposts closer than %1m from your HQ.</Original>
+                <Russian>Для спасательных миссий требуются города, аэропорты, военные базы или аванпосты в радиусе %1м от вашей базы.</Russian>
+                <Chinesesimp>救援任务需要在距离您的总部%1米以内的城市、机场、军事基地或前哨。</Chinesesimp>
+                <Korean>구조 임무를 수행하려면 본부에서 %1m 이내에 도시, 공항, 군사 기지 또는 전초기지가 있어야 합니다.</Korean>
+                <French>Les missions de sauvetage nécessitent des villes, des aéroports, des bases militaires ou des avant-postes à moins de %1m de votre QG.</French>
+                <Turkish>Kurtarma Görevleri, Karargahınıza %1m'den daha yakın Şehirler, Havaalanları, Askeri Üsler veya Karakollar gerektirir.</Turkish>
+            </Key>
             <Key ID="STR_chats_mission_request_no_CONVOY_battack_hint_text">
                 <Original>Convoy missions require a calmed status around the island, and now is not the proper time.</Original>
                 <Russian>Засады на конвои требуют нормализации обстановки и спокойного статуса на местности, сейчас не время.</Russian>
@@ -2555,6 +2563,14 @@
                 <Korean>목적지에 도착했습니다.</Korean>
                 <French>Vous êtes arrivé à destination.</French>
                 <Turkish>Hedefe ulaştınız.</Turkish>
+            </Key>
+            <Key ID="STR_hints_FT_disabled">
+                <Original>Fast travel is disabled for this server.</Original>
+                <Russian>Быстрое перемещение отключено на этом сервере.</Russian>
+                <Chinesesimp>此服务器已禁用快速旅行。</Chinesesimp>
+                <Korean>이 서버에서는 빠른 이동이 비활성화되었습니다.</Korean>
+                <French>Le voyage rapide est désactivé pour ce serveur.</French>
+                <Turkish>Bu sunucu için hızlı seyahat devre dışı.</Turkish>
             </Key>
             <Key ID="STR_cut_text_paradrop_notification_1">
                 <Original>&lt;t color='#d3d9df' size='2'&gt; The commander has begun a paradrop insertion at a marked location. You will be moved into the plane in %1 seconds. Press ESCAPE if you don't want to be moved into the airplane. Parachutes will automatically deploy upon jumping from the plane.&lt;/t&gt;</Original>
@@ -2832,6 +2848,14 @@
                 <French>%1 est porté ou transporté, il ne peut pas être soigné.</French>
                 <Turkish>%1 taşınıyor veya naklediliyor, şu anda iyileştirilemez.</Turkish>
             </Key>
+            <Key ID="STR_chats_help_notification_desc">
+                <Original>%1 is on the way to help you.</Original>
+                <Russian>%1 спешит вам на помощь.</Russian>
+                <Chinesesimp>%1正在来帮助您的路上。</Chinesesimp>
+                <Korean>%1이(가) 당신을 도우러 갑니다.</Korean>
+                <French>%1 est en route pour vous aider.</French>
+                <Turkish>%1 yardımınıza geliyor.</Turkish>
+            </Key>
             <Key ID="STR_chats_autoloot_rearm_heal_in_progress">
                 <Original>I can't rearm right now. I'm healing a comrade!</Original>
                 <Russian>Я не могу перевооружиться прямо сейчас. Я лечу товарища!</Russian>
@@ -3055,6 +3079,14 @@
                 <Korean>주변에 큰 전투가 벌어져서 적군이 호송대를 보내지 않을 것 같습니다.</Korean>
                 <French>Il y a une grande bataille autour, je ne pense pas que l'ennemi enverra un convoi.</French>
                 <Turkish>Büyük bir savaş yaşanıyor; düşmanın herhangi bir konvoy göndereceğini sanmıyorum.</Turkish>
+            </Key>
+            <Key ID="STR_chats_mission_request_no_RES">
+                <Original>I have no rescue missions for you. Move our HQ closer to the enemy.</Original>
+                <Russian>У меня нет спасательных миссий в настоящее время. Передвинь штаб ближе к врагу.</Russian>
+                <Chinesesimp>我没有救援任务给你，把我们的总部移到离敌人更近的地方。</Chinesesimp>
+                <Korean>줄 수 있는 구출 임무가 없습니다. 우리 본부를 적에게 더 가까이 옮기십시오.</Korean>
+                <French>Je n'ai pas de missions de sauvetage pour vous. Rapprochez notre QG de l'ennemi.</French>
+                <Turkish>Sana verecek kurtarma görevim yok. Karargâhımızı düşmana daha yakın bir yere taşı.</Turkish>
             </Key>
             <Key ID="STR_chats_mission_request_no_SUPP">
                 <Original>I have no support missions for you. Move our HQ closer to the enemy.</Original>
@@ -3305,6 +3337,14 @@
                 <Korean>공습함선이 파괴되었습니다</Korean>
                 <French>Destruction du navire de frappe aérienne</French>
                 <Turkish>Hava Saldırısı Gemisi İmha Edildi</Turkish>
+            </Key>
+            <Key ID="STR_notifiers_SUP_execute_marker">
+                <Original>%1. Target marked on map!</Original>
+                <Russian>%1. Цель отмечена на карте!</Russian>
+                <Chinesesimp>%1。目标在地图上被标记！</Chinesesimp>
+                <Korean>%1. 목표가 지도에 표시되었습니다!</Korean>
+                <French>%1. Cible marquée sur la carte !</French>
+                <Turkish>%1. Hedef haritada işaretlendi!</Turkish>
             </Key>
             <Key ID="STR_notifiers_SUP_execute_QRF">
                 <Original>A land %1 QRF just arrived</Original>
@@ -4037,6 +4077,14 @@
                 <Korean>%1이(가) %2에 가입했습니다</Korean>
                 <French>%1 a rejoint %2</French>
                 <Turkish>%1, %2 birimine katıldı</Turkish>
+            </Key>
+            <Key ID="STR_notifiers_roadblock_destroyed">
+                <Original>Roadblock destroyed</Original>
+                <Russian>Блокпост уничтожен</Russian>
+                <Chinesesimp>路障被摧毁</Chinesesimp>
+                <Korean>검문소 파괴됨</Korean>
+                <French>Barrage routier détruit</French>
+                <Turkish>Yol barikatı imha edildi</Turkish>
             </Key>
             <Key ID="STR_notifiers_miladmin_destroyed">
                 <Original>Military Administration Destroyed</Original>
@@ -9199,6 +9247,14 @@
                 <Korean>차량 요구사항은 오른쪽 상단 모서리에 있는 메모장을 클릭하여 확인할 수 있습니다.</Korean>
                 <Turkish>Araç gereksinimlerine sağ üst köşedeki not defterine tıklayarak ulaşılabilir.</Turkish>
             </Key>
+            <Key ID="STR_trader_black_market_unlocked">
+                <Original>The following vehicles have been unlocked at the Arms Dealer.&lt;br/&gt;</Original>
+                <Russian>Следующие транспортные средства были разблокированы у Торговца оружием.&lt;br/&gt;</Russian>
+                <Chinesesimp>以下载具已在军火商处解锁。&lt;br/&gt;</Chinesesimp>
+                <Korean>다음 차량이 무기상인에서 잠금 해제되었습니다.&lt;br/&gt;</Korean>
+                <French></French>
+                <Turkish>Aşağıdaki araçlar Silah Tüccarında kilidi açıldı.&lt;br/&gt;</Turkish>
+            </Key>
         </Container>
         <Container name="intel_actions">
             <Key ID="STR_millaptop_getdata_text">
@@ -11888,6 +11944,14 @@
                 <French>Révéler les positions de l'ennemi</French>
                 <Turkish>Düşman Mevzilerini Açığa Çıkar</Turkish>
             </Key>
+            <Key ID="STR_reveal_interrogation_success">
+                <Original>An interrogated soldier gave us some intel about zone locations.</Original>
+                <Russian>Допрошенный солдат предоставил нам информацию о расположении зон.</Russian>
+                <Chinesesimp>一名被审讯的士兵向我们透露了一些关于区域位置的情报。</Chinesesimp>
+                <Korean>심문을 받은 병사가 구역 위치에 대한 정보를 제공했습니다.</Korean>
+                <French>Un soldat interrogé nous a donné des informations sur l'emplacement des zones.</French>
+                <Turkish>Sorgulanan bir asker bize bölge konumları hakkında istihbarat verdi.</Turkish>
+            </Key>
             <Key ID="STR_recruit_to_faction_action">
                 <Original>Recruit to faction</Original>
                 <Russian>Набор во фракцию</Russian>
@@ -12431,6 +12495,54 @@
                 <Czech>Mimochodem jsem viděl nepřátelské patroly pohybující se poblíž. Mohla by to být jedna z jejich klíčových zón. Možná by stálo za to se tam podívat.</Czech>
                 <Portuguese>Aliás, vi patrulhas inimigas movendo-se perto daqui. Pode ser uma das zonas-chave deles. Talvez você deva dar uma olhada mais de perto.</Portuguese>
                 <Turkish>Bu arada, buraya çok uzak olmayan bir yerde düşman devriyelerini gördüm. Bu, onların kilit bölgelerinden biri olabilir. Daha yakından bakmak isteyebilirsiniz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_zone_reveal_default_1">
+                <Original>Civilians sympathetic to our cause gave us some intel on enemy zones.</Original>
+                <Russian>Сочувствующие нашему делу гражданские предоставили нам разведданные о вражеских зонах.</Russian>
+                <German>Zivilisten, die unserer Sache wohlgesonnen sind, gaben uns Informationen über feindliche Zonen.</German>
+                <Italian>I civili simpatizzanti per la nostra causa ci hanno fornito informazioni sulle zone nemiche.</Italian>
+                <Spanish>Civiles simpatizantes de nuestra causa nos dieron información sobre las zonas enemigas.</Spanish>
+                <French>Des civils sympathisants de notre cause nous ont donné des renseignements sur les zones ennemies.</French>
+                <Korean>우리 대의에 동조하는 민간인들이 적 지역에 대한 정보를 제공했습니다.</Korean>
+                <Japanese>我々の大義に賛同する市民から、敵地に関する情報を得た。</Japanese>
+                <Chinesesimp>同情我们事业的平民向我们提供了一些关于敌方区域的情报。</Chinesesimp>
+                <Chinese>同情我們事業的平民向我們提供了一些關於敵方區域的情報。</Chinese>
+                <Polish>Cywile sympatyzujący z naszą sprawą przekazali nam informacje o lokalizacjach wroga.</Polish>
+                <Czech>Civilisté sympatizující s naší věcí nám poskytli informace o nepřátelských zónách.</Czech>
+                <Portuguese>Civis simpatizantes da nossa causa nos deram informações sobre as zonas inimigas.</Portuguese>
+                <Turkish>Davamıza sempati duyan siviller bize düşman bölgeleri hakkında istihbarat verdi.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_zone_reveal_default_2">
+                <Original>A map marked with enemy locations was found by one of our comrades.</Original>
+                <Russian>Карта с отмеченными вражескими позициями была найдена одним из наших товарищей.</Russian>
+                <German>Eine Karte mit markierten feindlichen Standorten wurde von einem unserer Kameraden gefunden.</German>
+                <Italian>Una mappa con le posizioni nemiche segnate è stata trovata da uno dei nostri compagni.</Italian>
+                <Spanish>Uno de nuestros camaradas encontró un mapa con las ubicaciones enemigas marcadas.</Spanish>
+                <French>Une carte marquée des positions ennemies a été trouvée par l'un de nos camarades.</French>
+                <Korean>적 위치가 표시된 지도가 우리 동료 중 한 명에 의해 발견되었습니다.</Korean>
+                <Japanese>敵の位置が記された地図が、同志の一人によって発見された。</Japanese>
+                <Chinesesimp>我们的一个同志找到了一张标有敌人位置的地图。</Chinesesimp>
+                <Chinese>我們的一個同志找到了一張標有敵人位置的地圖。</Chinese>
+                <Polish>Mapa z zaznaczonymi pozycjami wroga została znaleziona przez jednego z naszych towarzyszy.</Polish>
+                <Czech>Mapa s vyznačenými nepřátelskými pozicemi byla nalezena jedním z našich soudruhů.</Czech>
+                <Portuguese>Um mapa com as localizações inimigas marcadas foi encontrado por um dos nossos camaradas.</Portuguese>
+                <Turkish>Düşman konumlarının işaretlendiği bir harita, yoldaşlarımızdan biri tarafından bulundu.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_zones_revealed">
+                <Original>&lt;br/&gt;&lt;br/&gt;The following zones have been revealed:&lt;br/&gt;</Original>
+                <Russian>&lt;br/&gt;&lt;br/&gt;Были обнаружены следующие зоны:&lt;br/&gt;</Russian>
+                <German>&lt;br/&gt;&lt;br/&gt;Die folgenden Zonen wurden aufgedeckt:&lt;br/&gt;</German>
+                <Italian>&lt;br/&gt;&lt;br/&gt;Le seguenti zone sono state rivelate:&lt;br/&gt;</Italian>
+                <Spanish>&lt;br/&gt;&lt;br/&gt;Las siguientes zonas han sido reveladas:&lt;br/&gt;</Spanish>
+                <French>&lt;br/&gt;&lt;br/&gt;Les zones suivantes ont été révélées :&lt;br/&gt;</French>
+                <Korean>&lt;br/&gt;&lt;br/&gt;다음 구역이 드러났습니다:&lt;br/&gt;</Korean>
+                <Japanese>&lt;br/&gt;&lt;br/&gt;以下の地域が明らかになりました：&lt;br/&gt;</Japanese>
+                <Chinesesimp>&lt;br/&gt;&lt;br/&gt;以下区域已被揭示：&lt;br/&gt;</Chinesesimp>
+                <Chinese>&lt;br/&gt;&lt;br/&gt;以下區域已被揭示：&lt;br/&gt;</Chinese>
+                <Polish>&lt;br/&gt;&lt;br/&gt;Następujące strefy zostały ujawnione:&lt;br/&gt;</Polish>
+                <Czech>&lt;br/&gt;&lt;br/&gt;Následující zóny byly odhaleny:&lt;br/&gt;</Czech>
+                <Portuguese>&lt;br/&gt;&lt;br/&gt;As seguintes zonas foram reveladas:&lt;br/&gt;</Portuguese>
+                <Turkish>&lt;br/&gt;&lt;br/&gt;Aşağıdaki bölgeler ortaya çıkarıldı:&lt;br/&gt;</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_success_money1">
                 <Original>I did keep this file that "fell" off of a truck that might be worth something... I hear a particularly sketchy Irish man might be interested! is he Irish? Whatever...</Original>

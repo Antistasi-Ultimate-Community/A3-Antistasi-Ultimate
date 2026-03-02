@@ -41,7 +41,7 @@ private _gameInfoText = format [
 (_display displayCtrl 6013) ctrlSetText ([] call A3A_fnc_membersList);
 
 
-private _fiaTrainingText = format [localize "STR_commander_menu_skill_level_title", A3A_faction_reb get "name", skillFIA];
+private _fiaTrainingText = format [localize "STR_commander_menu_skill_level_title", A3A_faction_reb get "name", skillFIA, SKILL_CAP];
 (_display displayCtrl 3102) ctrlSetText _fiaTrainingText;
 
 //hiding reroll button if conditions are not met

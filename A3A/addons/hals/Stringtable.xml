@@ -896,21 +896,6 @@
                 <Korean>MPP</Korean>
                 <French>MPP</French>
             </Key>
-            <Key ID="STR_A3AU_PROJINF">
-                <Original>P.I.</Original>
-                <German>P.I.</German>
-                <Russian>P.I.</Russian>
-                <Chinesesimp>P.I.</Chinesesimp>
-                <Korean>P.I.</Korean>
-                <French>P.I.</French>
-            <Key ID="STR_A3AU_JCA_ARSENAL">
-                <Original>JCA</Original>
-                <German>JCA</German>
-                <Russian>JCA</Russian>
-                <Chinesesimp>JCA</Chinesesimp>
-                <Korean>JCA</Korean>
-                <French>JCA</French>
-           </Key>
         </Container>
     </Package>
 </Project>

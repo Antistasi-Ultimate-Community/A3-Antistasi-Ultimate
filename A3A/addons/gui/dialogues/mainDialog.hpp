@@ -464,7 +464,7 @@ class A3A_MainDialog : A3A_TabbedDialog
                         {
                             idc = A3A_IDC_SELLVEHICLEBUTTON;
                             text = $STR_antistasi_dialogs_main_sell_vehicle;
-                            onButtonClick = "if (player == theBoss) then {closeDialog 0; nul = [player,cursorObject] remoteExecCall [""A3A_fnc_sellVehicle"",2]} else {[""Sell Vehicle"", ""Only the Commander can sell vehicles""] call A3A_fnc_customHint;};"; // TODO UI-update: Move to fn_playerTab.sqf? this shit is loooong
+                            onButtonClick = "if (player == theBoss) then {closeDialog 0; nul = [player,cursorObject] remoteExecCall [""A3A_fnc_sellVehicle"",2]} else {[localize ""STR_antistasi_journal_entry_header_commander_11"", localize ""STR_HR_GRG_Feedback_sellVehicle_comOnly""] call A3A_fnc_customHint;};"; // TODO UI-update: Move to fn_playerTab.sqf? this shit is loooong
                             x = 56 * GRID_W;
                             y = 0 * GRID_H;
                             w = 22 * GRID_W;

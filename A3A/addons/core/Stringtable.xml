@@ -1916,6 +1916,32 @@
                 <Polish>Oczyszczacz Śmieci</Polish>
                 <Turkish>Çöp Temizleyici</Turkish>
             </Key>
+            <Key ID="STR_antistasi_journal_entry_warning_Options_7">
+                <Original>Only Player Commander has access to this function.</Original>
+                <French>Nettoyeur d'ordures</French>
+                <German>Aufräumen</German>
+                <Czech>Čistič odpadků</Czech>
+                <Chinesesimp>垃圾清理器</Chinesesimp>
+                <Korean>쓰레기 청소</Korean>
+                <Russian>Удаление мусора</Russian>
+                <Italian>Pulitore di rifiuti</Italian>
+                <Spanish>Limpieza de Basura</Spanish>
+                <Polish>Oczyszczacz Śmieci</Polish>
+                <Turkish>Çöp Temizleyici</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_journal_entry_not_implemented">
+                <Original>HQ only garbage clean yet to be implemented.</Original>
+                <French>QG seulement nettoyage des ordures pas encore implémenté.</French>
+                <German>HQ nur Müllreinigung noch nicht implementiert.</German>
+                <Czech>Velitelství pouze úklid odpadků, ještě není implementováno.</Czech>
+                <Chinesesimp>指挥部目前仅实现了垃圾清理功能，其他功能尚未完成。</Chinesesimp>
+                <Korean>본부는 아직 쓰레기 청소만 가능하며, 다른 기능은 구현되지 않았습니다.</Korean>
+                <Russian>Штаб: пока реализована только уборка мусора.</Russian>
+                <Italian>Quartier Generale solo pulizia rifiuti non ancora implementata.</Italian>
+                <Spanish>Cuartel General solo limpieza de basura aún no implementada.</Spanish>
+                <Polish>Kwatera Główna tylko sprzątanie śmieci, jeszcze niezaimplementowane.</Polish>
+                <Turkish>Karargah sadece çöp temizliği henüz uygulanmadı.</Turkish>
+            </Key>
             <Key ID="STR_antistasi_journal_entry_text_Options_7">
                 <Original>Commander only. Will delete things like dropped weapons, magazines, clothing etc.&lt;br/&gt;&lt;br/&gt;Beware, it freezes the game for some time.</Original>
                 <French>Commandant seulement. Supprime des éléments comme les armes au sol, les magazines, les vêtements, etc.&lt;br/&gt;&lt;br/&gt;Attention, cela fige le jeu pendant un certain temps.</French>
