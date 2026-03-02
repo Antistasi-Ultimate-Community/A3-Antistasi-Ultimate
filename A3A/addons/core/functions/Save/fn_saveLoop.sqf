@@ -31,7 +31,7 @@ private _namespace = [profileNamespace, missionProfileNamespace] select _saveToN
 	{
 		if (isNil {_playerData get _x}) then { continue };				// old game data will have missing entries
 		[_uid, _x, _playerData get _x] call A3A_fnc_savePlayerStat;
-	} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage"];
+	} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "pluginsData"];
 } forEach A3A_playerSaveData;
 
 ["savedPlayers", keys A3A_playerSaveData] call A3A_fnc_setStatVariable;
@@ -191,40 +191,52 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 ["HR_Garage", [] call HR_GRG_fnc_getSaveData] call A3A_fnc_setStatVariable;
 
 _arrayEst = [];
-{
-    // Include buyable items marked as saveable
-    // TODO: Do we need to refund the others?
-    if !(typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
-		if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
-		if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
-		if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
-	};
 
-    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState, [_x] call BIS_fnc_getVehicleCustomization];
-
-} forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
-
-
-private _nearFriendlyMarker = {
-	params ["_obj"];
-	private _nearestMarker = [markersX, _obj] call BIS_fnc_nearestPosition;
-	(sidesX getVariable [_nearestMarker, sideUnknown] isEqualTo teamPlayer) && {_obj inArea _nearestMarker};
+// Collect all vehicles to save
+vehicles select {
+	!(_x in staticsToSave) && // Skip anything already being saved by staticsToSave
+	{ !(typeOf _x in A3A_utilityItemHM) || { "save" in ((A3A_utilityItemHM get typeOf _x) select 4) } } &&
+	{ fullCrew[_x, "", true] isNotEqualTo [] } && // no crew seats, not in utilityItems, not saved
+	{ crew _x findIf { (alive _x) && (!isPlayer _x) } == -1 } // no AI-crewed vehicles, those are refunded
+} apply {
+    _arrayEst pushBackUnique _x;
 };
 
-{
-	if ((!alive _x) || {(surfaceIsWater position _x) || {(!isNull attachedTo _x) || {(!(_x call _nearFriendlyMarker))}}}) then { continue };
-	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x, nil, [_x] call BIS_fnc_getVehicleCustomization, _x in staticsToFlip];
-} forEach staticsToSave;
+// Collect all statics to save
+staticsToSave select {
+	(!surfaceIsWater position _x) &&
+	{ isNull attachedTo _x }
+} apply {
+	_arrayEst pushBackUnique _x;
+};
 
+// Bring out your dead. Ignore vehicles not near friendly markers.
+_arrayEst = _arrayEst select {
+	(alive _x) && { [_x] call A3A_fnc_isWithinNearestFriendlyMarker };
+};
 
-private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
-_rebMarkers pushBack "Synd_HQ";
-{
-	if (isOnRoad _x && {A3A_builderAllowRoads isEqualTo false}) then {continue};
-	if (surfaceIsWater getPosASL _x) then {continue};
+// Push buildings to save; ignore dead or outside friendly markers.
+A3A_buildingsToSave select {
+	(A3A_builderAllowRoads || { !isOnRoad _x }) &&
+	{ !surfaceIsWater getPosASL _x }
+} apply {
+	_arrayEst pushBackUnique _x;
+};
 
-	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x];
-} forEach A3A_buildingsToSave;
+// Build save data
+_arrayEst = _arrayEst apply {
+	private _properties = [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x];
+
+	if !(_x isKindOf "Building") then {
+		_properties append[
+			[_x] call HR_GRG_fnc_getState,
+			[_x] call BIS_fnc_getVehicleCustomization,
+			_x in staticsToFlip
+		];
+	};
+
+	_properties;
+};
 
 reverse _arrayEst;
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;

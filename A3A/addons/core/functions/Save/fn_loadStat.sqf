@@ -371,17 +371,18 @@ if (_varName in specialVarLoads) then {
             private _list = +_varValue;
             private _index = count _list;
 
-            // Retain original order but prioritize after `restorePriority` property
+            // Sort by restore priority and z-index (bottom to top), so objects
+            // on top of others aren't created first
             _list = _list apply {
-                _x params["_class"];
+                _x params["_class","_position"];
                 _index = _index - 1;
-                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), _index, _x];
+                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), -(_position select 2), _index, _x];
             };
 
-            // Sort descending; first index wins unless equal, then it's the original order
+            // Sort descending
             _list sort false;
             _list apply {
-                _x params["","","_data"];
+                _x params["","","","_data"];
                 _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
                 Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
@@ -404,6 +405,7 @@ if (_varName in specialVarLoads) then {
                             staticsToSave pushBack _veh;
                         };
 
+                        case (getNumber(configOf _veh >> QGVAR(isBuilding)) == 1);
                         case (_veh isKindOf "Building"): {
                             _veh setVariable ["A3A_building", true, true];
                             A3A_buildingsToSave pushBack _veh;

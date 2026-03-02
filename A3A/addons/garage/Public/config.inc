@@ -85,10 +85,6 @@ HR_GRG_fnc_Hint = {
     ] call A3A_fnc_customHint;
 };
 HR_GRG_fnc_vehInit = {
-    if ((_this isKindOf  "LandVehicle") || (_this isKindOf  "Ship")) then {
-		ungaragedVehicles pushBack _this; 
-		publicVariable "ungaragedVehicles";
-	};
     _this setVariable ["ownerX",getPlayerUID player,true];
     [_this, TeamPlayer] call A3A_fnc_AIVEHinit;
 }; //is passed vehicle as _this
