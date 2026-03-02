@@ -130,6 +130,12 @@ if (_prefix in ["occ", "inv"]) exitWith {
         [unit(elite, "SquadLeader"), unit(elite, "AT"), unit(elite, "AT"), unit(elite, "LAT")]
     ]];
 
+    _faction set ["groupTierFireteam", [
+        [unit(militia, "SquadLeader"), unit(militia, "MachineGunner"), unit(militia, "Medic"), unit(militia, "Rifleman"), unit(militia, "Rifleman"), unit(militia, "Rifleman")],
+        [unit(military, "SquadLeader"), unit(military, "MachineGunner"), unit(military, "Marksman"), unit(military, "Medic"), unit(military, "Rifleman"), unit(military, "LAT")],
+        [unit(elite, "SquadLeader"), unit(elite, "MachineGunner"), unit(elite, "Sniper"), unit(elite, "Medic"), unit(elite, "Rifleman"), unit(elite, "AT")]
+    ]];
+
     private _fireteams = [
         [unit(militia, "SquadLeader"), unit(militia, "MachineGunner"), unit(militia, "Radioman"), unit(militia, "LAT"), unit(militia, "Rifleman")],
         [unit(military, "SquadLeader"), unit(military, "MachineGunner"), unit(military, "Radioman"), unit(military, "LAT"), unit(military, "Grenadier")],
@@ -287,6 +293,14 @@ if (_prefix in ["occ", "inv"]) exitWith {
     _faction set ["groupPoliceSquad", [
         _faction get "unitPoliceOfficer", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt"
         , _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt", _faction get "unitPoliceGrunt"
+    ]];
+    _faction set ["groupPoliceOfficers", [
+        _faction get "unitPoliceOfficer", 
+        _faction get "unitPoliceOfficer", 
+        _faction get "unitPoliceOfficer",
+        _faction get "unitPoliceOfficer",
+        _faction get "unitPoliceOfficer",
+        _faction get "unitPoliceOfficer"
     ]];
 
 };

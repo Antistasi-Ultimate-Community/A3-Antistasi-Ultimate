@@ -50,6 +50,22 @@ class lxws_vehicles_f_lxws_Offroad_01_Offroad_01_armor_hmg_lxWS_p3d : TRIPLES(AD
     recoil = 250;
     isWeapon = 1;
 };
+class lxws_vehicles_f_lxws_Offroad_01_Offroad_01_aa_lxWS_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,2.1};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 1250;
+    isWeapon = 1;
+};
+class lxws_vehicles_f_lxws_Offroad_01_Offroad_01_armor_aa_lxWS_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,2.1};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 1100;
+    isWeapon = 1;
+};
 class lxws_vehicles_1_f_lxws_APC_Wheeled_02_APC_Wheeled_02_HMG_lxws_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {-0.24,0,2.65};

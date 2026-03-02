@@ -14,13 +14,14 @@
     Return:
     true or false respectively  <BOOL>
 */
+#include "..\..\script_component.hpp"
 
 params [
     ["_markers", []]
 ];
 
 if (_markers isEqualTo []) exitWith {
-    ["Function was called with incorrect parameters. Double check them!", _fnc_scriptName] call A3U_fnc_log
+    Error("Function was called with incorrect parameters. Double check them!");
 };
 
 {

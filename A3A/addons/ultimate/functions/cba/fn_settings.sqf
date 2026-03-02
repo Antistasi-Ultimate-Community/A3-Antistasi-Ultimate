@@ -56,7 +56,7 @@
     "SLIDER", // setting type
     "War Level For Elite", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "Antistasi Ultimate", // Pretty name of the category where the setting can be found. Can be stringtable entry.
-    [2, 15, 8, 0],
+    [2, 10, 8, 0],
     true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {  
         params ["_value"];
@@ -172,3 +172,29 @@ if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
         true
     ] call CBA_fnc_addSetting;
 };
+
+[
+    "A3U_setting_enableInitMessages",
+    "CHECKBOX",
+    ["$STR_A3U_setting_enableInitMessages", "$STR_A3U_setting_enableInitMessages_desc"],
+    "Antistasi Ultimate",
+    true,
+    false,
+    {  
+        params ["_value"];
+		profileNamespace setVariable ["A3U_setting_enableInitMessages",_value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_enableIntroAnimation",
+    "CHECKBOX",
+    ["$STR_A3U_setting_enableIntroAnimation", "$STR_A3U_setting_enableIntroAnimation_desc"],
+    "Antistasi Ultimate",
+    true,
+    false,
+    {  
+        params ["_value"];
+		profileNamespace setVariable ["A3U_setting_enableIntroAnimation",_value];
+    }
+] call CBA_fnc_addSetting;

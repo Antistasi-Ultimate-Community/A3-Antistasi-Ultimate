@@ -45,8 +45,8 @@ class WW2_Omaha_Beach {
 	climate = "temperate";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_TEMPERATE,
-		BUILDABLES_SPE,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_SPE
 	};
 };

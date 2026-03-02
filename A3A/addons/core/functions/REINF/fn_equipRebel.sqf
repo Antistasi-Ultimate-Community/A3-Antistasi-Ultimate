@@ -130,6 +130,7 @@ private _fnc_addPrimary = {
         default { 50 };
     };
     
+    if (isNil "_weaponType" || {_weaponType isEqualTo []}) exitWith {};
     [_unit, _weaponType, _totalMagWeight] call A3A_fnc_randomWeapon;
 };
 
@@ -157,7 +158,7 @@ private _fnc_addSecondary = {
         _overrideClass;
     };
 
-    if (isNil "_weapon") exitWith {};
+    if (isNil "_weapon" || {_weapon isEqualTo []}) exitWith {};
     [_unit, _weapon, 100] call A3A_fnc_randomWeapon;
 };
 
@@ -165,6 +166,8 @@ private _fnc_addHandgun = {
     params ["_unit", "_overrideClass"];
 
     private _weaponType = if !(isNil "_overrideClass") then { _overrideClass } else { "Handguns" };
+    
+    if (isNil "_weaponType" || {_weaponType isEqualTo []}) exitWith {};
     [_unit, _weaponType, 10] call A3A_fnc_randomWeapon;
 };
 
@@ -173,6 +176,7 @@ private _fnc_addBinoculars = {
 
     if (isNil "_overrideClass" && (_typeTag isNotEqualTo "SquadLeader")) exitWith {};
     private _binoType = if !(isNil "_overrideClass") then { _overrideClass } else { "Binocular" };
+    if (_binoType isEqualTo []) exitWith {};
     [_unit, _binoType, 5] call A3A_fnc_randomWeapon;
 };
 
@@ -181,9 +185,10 @@ private _fnc_addAssignedItems = {
 
     if (isNil "_overrideClass") then {
         _unit call _fnc_addRadio;
-        _unit linkItem (selectRandom (A3A_faction_reb get "compasses"));
-        _unit linkItem (selectRandom (A3A_faction_reb get "maps"));
-        _unit linkItem (selectRandom (A3A_faction_reb get "watches"));
+        {
+            private _item = selectRandom _x;
+            if (!isNil {"_item"}) then { _unit linkItem _item };
+        } forEach [unlockedMaps, unlockedCompasses, unlockedWatches]; // should be populated even with no unlocks; GPS not included due to potential of including UAV terminals
     } else {
         { if (!isNil "_x") then { _unit linkItem _x } } forEach (_overrideClass);
     };

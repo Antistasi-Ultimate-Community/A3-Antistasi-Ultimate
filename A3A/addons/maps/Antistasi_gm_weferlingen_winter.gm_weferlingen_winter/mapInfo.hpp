@@ -40,8 +40,8 @@ class gm_weferlingen_winter {
 	climate = "arctic";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_ARCTIC,
-		BUILDABLES_GM,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_GM
 	};
 };

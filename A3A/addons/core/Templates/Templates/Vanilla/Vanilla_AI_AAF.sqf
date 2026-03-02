@@ -134,8 +134,12 @@ if (_hasWs) then {
 };
 
 //If GM cdlc + extra AAF mod
-if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl") && _hasGM) then {
-    #include "..\DLC_content\vehicles\GM\AAF_extramod.sqf"
+if (_hasGM) then {
+    if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl")) then {
+        #include "..\DLC_content\vehicles\GM\AAF_extramod.sqf"
+    } else {
+        #include "..\DLC_content\vehicles\GM\Vanilla_NATO_Arid.sqf" ///should probably make a proper file
+    };
 };
 
 if (_hasCSLA) then {
@@ -1171,7 +1175,7 @@ private _crewTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

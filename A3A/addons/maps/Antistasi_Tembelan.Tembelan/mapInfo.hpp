@@ -22,8 +22,8 @@ population numbers are reasonable, hence no need to manually adapt them
 	climate = "temperate";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_GREEN,
-		BUILDABLES_TEMPERATE,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_TEMPERATE
 	};
 };
