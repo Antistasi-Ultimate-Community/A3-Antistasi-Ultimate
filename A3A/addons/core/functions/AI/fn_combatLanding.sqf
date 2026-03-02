@@ -55,10 +55,7 @@ _helicopter flyInHeight _midHeight;
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 
 while {_helicopter distance2D _landPos > 675} do {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 0.3;
+    [_helicopter, 0.3] call A3A_fnc_fireCM;
 };
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 600};
@@ -217,9 +214,6 @@ _crewGroup setCurrentWaypoint _vehWP1;
 waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
 for '_i' from 1 to (5 + (round random 2)) do
 {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 1;
+    [_helicopter, 1] call A3A_fnc_fireCM;
 };
 _helicopter action ["LandGearUp", _helicopter];

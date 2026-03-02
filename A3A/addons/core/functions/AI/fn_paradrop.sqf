@@ -104,10 +104,7 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
     params ["_vehicle", "_dropPos"];
     waitUntil {!(alive _vehicle) || {sleep 1; (_vehicle distance2D _dropPos) < 800}};
     while {(alive _vehicle) && {_vehicle distance2D _dropPos > 675}} do {
-        [_vehicle, "CMFlareLauncher"] call BIS_fnc_fire;
-        [_vehicle, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-        [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-        sleep 0.3;
+        [_vehicle, 0.3] call A3A_fnc_fireCM;
     };
 };
 
@@ -183,9 +180,7 @@ if(currentWaypoint _groupPilot > 0) then
         sleep 2;
         private _timeout = 0;
         while {_timeout < 1.5 && alive _vehicle && canMove _vehicle} do {
-            [_vehicle, "CMFlareLauncher"] call BIS_fnc_fire;
-            [_vehicle, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-            [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
+            [_vehicle, 0.3] call A3A_fnc_fireCM;
             _timeout = _timeout + 0.3;
             sleep 0.3;
         };

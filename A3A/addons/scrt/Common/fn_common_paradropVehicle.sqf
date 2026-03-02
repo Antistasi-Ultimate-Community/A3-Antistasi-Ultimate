@@ -104,10 +104,7 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
     params ["_plane", "_dropPos"];
     waitUntil {sleep 1; (_plane distance2D _dropPos) < 800};
     while {_plane distance2D _dropPos > 675} do {
-        [_plane, "CMFlareLauncher"] call BIS_fnc_fire;
-        [_plane, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-        [_plane, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-        sleep 0.3;
+        [_plane, 0.3] call A3A_fnc_fireCM;
     };
 };
 
@@ -274,10 +271,7 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
         params ["_plane", "_exitPos"];
         sleep 2;
         while {_plane distance2D _exitPos > 100 && alive _plane && canMove _plane && _plane distance2D _exitPos < 500} do {
-            [_plane, "CMFlareLauncher"] call BIS_fnc_fire;
-            [_plane, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-            [_plane, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-            sleep 0.3;
+            [_plane, 0.3] call A3A_fnc_fireCM;
         };
         if(canMove _plane || alive _groupPilot) then {
             [_helicopter, "close"] spawn A3A_fnc_HeliDoors;

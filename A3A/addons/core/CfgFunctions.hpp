@@ -31,6 +31,7 @@ class CfgFunctions
             class fastrope {};
             class fastropeVTOL {};
             class findSafeRoadToUnload {};
+            class fireCMFlare {};
             class fleeToSide {};
             class guardDog {};
             class hasRadio {};
