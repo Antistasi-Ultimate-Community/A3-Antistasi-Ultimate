@@ -1639,7 +1639,7 @@
                 <Turkish>&lt;t size='0.6' color='#C1C0BB'&gt;%5 Kaynakları&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;Para: %4%2 %6</Turkish>
             </Key>
         </Container>
-        <Container name="end_missions"> /////////////
+        <Container name="end_missions">
             <Key ID="STR_end_mission_modUnautorized_title">
                 <Original>Incompatible Mods</Original>
                 <Russian>Несовместимые моды</Russian>
@@ -4664,7 +4664,7 @@
                 <Korean>%1의 인력이 %2 밖에 남지 않았습니다!</Korean>
                 <Turkish>%1 biriminin sadece %2 İK puanı kaldı!</Turkish>
             </Key>
-        </Container> //////////////
+        </Container>
         <Container name="skip_time_rest">
             <Key ID="STR_params_rest_header">
                 <Original>Skip Time / Rest</Original>
@@ -6342,7 +6342,7 @@
                 <Korean>개발 옵션</Korean>
                 <French>OPTIONS DE DÉVELOPPEMENT</French>
                 <Turkish>GELİŞTİRİCİ SEÇENEKLERİ</Turkish>
-            </Key> ///////////
+            </Key>
         </Container>
         <Container name="roles">
             <Key ID="STR_role_default_commander_role_name">
