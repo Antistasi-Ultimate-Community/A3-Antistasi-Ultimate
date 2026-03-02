@@ -27,92 +27,51 @@ _vehicle setVehicleReportOwnPosition true;
 
 private _vehType = typeOf _vehicle;
 
-private _vtol = "";
+private _vtol = (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"vehiclesTransportAir"));
+if (_vtol) then { _vehicle setVehicleRadar 1 };
 
-if (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"vehiclesTransportAir")) then {
-    _vtol = _vehType;
-    _vehicle setVehicleRadar 1;
-};
-
-if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod")) then
+if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) then
 {
-    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") || _vtol != "" || (typeOf _vehicle in (_faction get "vehiclesDropPod"))) exitWith
+    if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all, "vehiclesDropPod") || _vtol) exitWith
     {
         //Transport helicopter or VTOL
-        _landPos = [_posDestination, 200, 400, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+        _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), (sizeOf _vehType) / 2, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
         _posOrigin set [2, 50];
-        
-        _landPosVTOL = [_posDestination, 300, 600, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
 
         {
-            if(_x distance2D _landPos < 20) exitWith { _landPos = [0, 0, 0] };
+            if(_x distance2D _landPos < (sizeOf _vehType)) exitWith { _landPos = [0, 0, 0] };
         } forEach _landPosBlacklist;
         
-        if (typeOf _vehicle in (_faction get "vehiclesDropPod") ) exitWith {
+        if (_vehType in FactionGet(all, "vehiclesDropPod")) exitWith {
             [_vehicle, _cargoGroup, _posDestination, _posOrigin] spawn A3A_fnc_OrbitalLanding; // , _crewGroup
         };
-        {
-            if(_x distance2D _landPosVTOL < 20) exitWith { _landPos = [0, 0, 0] };
-        } forEach _landPosBlacklist;
 
-        if !(_landPos isEqualTo [0,0,0]) then
-        {
-            if (_vtol != "") then {
-                _landPosVTOL set [2, 0];
-                _landPosBlacklist pushBack _landPosVTOL;
-                private _roll = random 100;
-					if(_roll >= 50) then {
-						[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPosVTOL] spawn A3A_fnc_combatLanding;
-					} else {
-                        if(_roll <= 30) then{
-                            [_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop;
-                        } else {
-                            [_vehicle, _cargoGroup, _posDestination, _markerOrigin, _resPool] spawn SCRT_fnc_common_paradropVehicle;
-                        };
-					};
+        if !(_landPos isEqualTo [0,0,0]) then {
+            [_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding
+        } else {
+            if (_vtol) then {
+                call selectRandomWeighted [
+                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL}, 60,
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 30,
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, _resPool] spawn SCRT_fnc_common_paradropVehicle}, 10
+                ];
             } else {
-                private _roll = random 100;
-                _landPos set [2, 0];
-                _landPosBlacklist pushBack _landPos;
-                if(_roll >= 20) then {
-				    [_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding;
-			    } else {
-                    [_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope;
-			    };
-            };
-        }
-        else
-        {
-            if (_vtol != "") then {
-                private _roll = random 100;
-				if(_roll >= 40) then {
-					[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL;
-				} else {
-                    if(_roll <= 30) then {
-                        [_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop;
-                    } else {
-                        [_vehicle, _cargoGroup, _posDestination, _markerOrigin, _resPool] spawn SCRT_fnc_common_paradropVehicle;
-                    };
-				};
-            } else {
-                private _roll = random 100;
-				if(_roll >= 35) then {
-					[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope;
-				} else {
-                    [_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop;
-				};
+                call selectRandomWeighted [
+                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 65,
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 35
+                ];
             };
         };
     };
     if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith 
     {   //Attack helicopter
-        _landPosAttackheli = [_posDestination, 400, 800, 10, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+        _landPosAttackheli = [_posDestination, 400, 800, (sizeOf _vehType) / 2, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
         _posOrigin set [2, 50];
 
         {
-            if(_x distance2D _landPosAttackheli < 20) exitWith { _landPosAttackheli = [0, 0, 0] };
+            if(_x distance2D _landPosAttackheli < (sizeOf _vehType)) exitWith { _landPosAttackheli = [0, 0, 0] };
         } forEach _landPosBlacklist;
 
         if (count units _cargoGroup > 3) then {
@@ -121,15 +80,11 @@ if (_vehicle isKindOf "Air" || typeOf _vehicle in (_faction get "vehiclesDropPod
                 _landPosAttackheli set [2, 0];
                 _landPosBlacklist pushBack _landPosAttackheli;
                 [_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPosAttackheli] spawn A3A_fnc_combatLanding;
-            }
-            else
-            {
-                private _roll = random 100;
-				if(_roll >= 20) then {
-					[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope;
-				} else {
-                    [_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop;
-				};
+            } else {
+                call selectRandomWeighted [
+                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 80,
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 20
+                ];
             };
         } else {
             [_vehicle, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;

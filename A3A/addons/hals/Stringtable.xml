@@ -8,6 +8,7 @@
             <Chinesesimp>军火商商店</Chinesesimp>
             <Korean>암거래상 상점</Korean>
             <French>Magasin de vente d'armes</French>
+            <Turkish>Silah Tüccarı Mağazası</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ALL">
             <Original>All</Original>
@@ -16,6 +17,7 @@
             <Chinesesimp>全部</Chinesesimp>
             <Korean>모두</Korean>
             <French>Tous</French>
+            <Turkish>Hepsi</Turkish>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_HANDGUNS">
             <Original>Handguns</Original>
@@ -185,6 +187,7 @@
             <Chinesesimp>商店</Chinesesimp>
             <Korean>상점</Korean>
             <French>Magasin</French>
+            <Turkish>Mağaza</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_OPEN_ACTION">
             <Original>Open the %1</Original>
@@ -194,6 +197,7 @@
             <Chinesesimp>打开 %1</Chinesesimp>
             <Korean>%1 열어보기</Korean>
             <French>Ouvrir le %1</French>
+            <Turkish>%1 Aç</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
             <Original>Item unavailable.</Original>
@@ -202,6 +206,7 @@
             <Chinesesimp>物品不可用。</Chinesesimp>
             <Korean>아이템 이용 불가.</Korean>
             <French>Article indisponible.</French>
+            <Turkish>Eşya mevcut değil.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_OUTOFSTOCK">
             <Original>Insufficient stock.</Original>
@@ -210,6 +215,7 @@
             <Chinesesimp>已售罄。</Chinesesimp>
             <Korean>재고 부족.</Korean>
             <French>Stock insuffisant.</French>
+            <Turkish>Yetersiz stok.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_TOOEXPENSIVE">
             <Original>Insufficient funds.</Original>
@@ -218,6 +224,7 @@
             <Chinesesimp>资金不足。</Chinesesimp>
             <Korean>자금 부족.</Korean>
             <French>Fonds insuffisants.</French>
+            <Turkish>Yetersiz bakiye.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOEQUIP">
             <Original>Unable to equip.</Original>
@@ -227,6 +234,7 @@
             <Korean>장비 불가.</Korean>
             <French>Impossible d'équiper</French>
             <English>Unable to equip.</English>
+            <Turkish>Kuşanılamıyor.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOCARGOSPACE">
             <Original>Insufficient cargo space.</Original>
@@ -235,6 +243,7 @@
             <Chinesesimp>货舱空间不足。</Chinesesimp>
             <Korean>화물 공간 부족.</Korean>
             <French>Espace de chargement insuffisant.</French>
+            <Turkish>Yetersiz kargo alanı.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_PURCHASED">
             <Original>purchased</Original>
@@ -243,6 +252,7 @@
             <Chinesesimp>成交</Chinesesimp>
             <Korean>구입 완료</Korean>
             <French>achetés</French>
+            <Turkish>satın alındı</Turkish>
         </Key>
         <!-- Thanks to JakeHekesFists -->
         <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
@@ -272,6 +282,7 @@
             <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
             <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
             <French>Seuls les articles disponibles à l'achat sont affichés.</French>
+            <Turkish>Sadece satın alınabilir eşyaları göster.</Turkish>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
             <Original>Only show items which are in stock.</Original>
@@ -287,6 +298,7 @@
             <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
             <Korean>플레이어가 장착한 무기와 호환되는 아이템만 표시합니다.</Korean>
             <French>N'afficher que les objets compatibles avec les armes équipées par le joueur.</French>
+            <Turkish>Sadece kuşanılmış silahlarla uyumlu eşyaları göster.</Turkish>
         </Key>
         <!-- SELL BOX -->
         <Key ID="STR_HALS_STORE_CHECKBOX_SELLFILTER">
@@ -295,6 +307,7 @@
             <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
             <Korean>플레이어가 판매할 수 있는 아이템만 표시합니다.</Korean>
             <French>N'afficher que les objets que le joueur peut vendre.</French>
+            <Turkish>Sadece satılabilecek eşyaları göster.</Turkish>
         </Key>
         <!-- SELL BUTTON -->
         <Key ID="STR_HALS_STORE_BUTTON_SELL">
@@ -304,6 +317,7 @@
             <Chinesesimp>出售</Chinesesimp>
             <Korean>판매</Korean>
             <French>Vendre</French>
+            <Turkish>Sat</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_CHECKBOX_EQUIP">
             <Original>Equip item upon purchase (if possible).</Original>
@@ -312,6 +326,7 @@
             <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
             <Korean>구매 시 장비 착용. (가능 시)</Korean>
             <French>Équiper l'objet lors de l'achat (si possible).</French>
+            <Turkish>Satın alındığında kuşan (mümkünse).</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_BUTTON_PURCHASE">
             <Original>Purchase</Original>
@@ -320,6 +335,7 @@
             <Chinesesimp>购买</Chinesesimp>
             <Korean>구입</Korean>
             <French>Achat</French>
+            <Turkish>Satın Al</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_PRICE">
             <Original>Price</Original>
@@ -328,6 +344,7 @@
             <Chinesesimp>价格</Chinesesimp>
             <Korean>가격</Korean>
             <French>Prix</French>
+            <Turkish>Fiyat</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_INSTOCK">
             <Original>IN STOCK</Original>
@@ -336,6 +353,7 @@
             <Chinesesimp>现货</Chinesesimp>
             <Korean>재고 있음</Korean>
             <French>EN STOCK</French>
+            <Turkish>STOKTA VAR</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_TEXT_NOSTOCK">
             <Original>OUT OF STOCK.</Original>
@@ -344,6 +362,7 @@
             <Chinesesimp>售罄</Chinesesimp>
             <Korean>재고 없음.</Korean>
             <French>EN RUPTURE DE STOCK.</French>
+            <Turkish>STOKTA YOK.</Turkish>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
             <Original>%1¢ more required.</Original>
@@ -363,6 +382,7 @@
                 <Korean>권총</Korean>
                 <French>Armes de poing</French>
                 <Chinesesimp>手枪</Chinesesimp>
+                <Turkish>Tabancalar</Turkish>
             </Key>
             <Key ID="STR_A3AU_smgs">
                 <Original>SMGs</Original>
@@ -371,6 +391,7 @@
                 <Korean>기관단총</Korean>
                 <French>SMGs</French>
                 <Chinesesimp>冲锋枪</Chinesesimp>
+                <Turkish>Hafif Makineli Silahlar</Turkish>
             </Key>
             <Key ID="STR_A3AU_rifles">
                 <Original>Rifles</Original>
@@ -379,6 +400,7 @@
                 <Korean>소총</Korean>
                 <French>Fusils</French>
                 <Chinesesimp>步枪</Chinesesimp>
+                <Turkish>Tüfekler</Turkish>
             </Key>
             <Key ID="STR_A3AU_sniperRifles">
                 <Original>Sniper Rifles</Original>
@@ -387,6 +409,7 @@
                 <Korean>저격소총</Korean>
                 <French>Fusils de sniper</French>
                 <Chinesesimp>狙击步枪</Chinesesimp>
+                <Turkish>Keskin Nişancı Tüfekleri</Turkish>
             </Key>
             <Key ID="STR_A3AU_mgs">
                 <Original>MGs</Original>
@@ -395,6 +418,7 @@
                 <Korean>기관총</Korean>
                 <French>MGs</French>
                 <Chinesesimp>机枪</Chinesesimp>
+                <Turkish>Makineli Tüfekler</Turkish>
             </Key>
             <Key ID="STR_A3AU_launchers">
                 <Original>Launchers</Original>
@@ -403,6 +427,7 @@
                 <Korean>발사기</Korean>
                 <French>Lanceurs</French>
                 <Chinesesimp>发射器</Chinesesimp>
+                <Turkish>Fırlatıcılar</Turkish>
             </Key>
             <Key ID="STR_A3AU_specialWeapons">
                 <Original>Special Weapons</Original>
@@ -411,6 +436,7 @@
                 <Korean>특수화기</Korean>
                 <French>Armes spéciales</French>
                 <Chinesesimp>特殊武器</Chinesesimp>
+                <Turkish>Özel Silahlar</Turkish>
             </Key>
             <Key ID="STR_A3AU_magazines">
                 <Original>Magazines</Original>
@@ -419,6 +445,7 @@
                 <Korean>탄창</Korean>
                 <French>Magasins</French>
                 <Chinesesimp>弹匣</Chinesesimp>
+                <Turkish>Şarjörler</Turkish>
             </Key>
             <Key ID="STR_A3AU_glGrenades">
                 <Original>GL Grenades</Original>
@@ -427,6 +454,7 @@
                 <Korean>유탄발사기</Korean>
                 <French>GL Grenades</French>
                 <Chinesesimp>榴弹</Chinesesimp>
+                <Turkish>Bombaatar Mühimmatları</Turkish>
             </Key>
             <Key ID="STR_A3AU_launcherAmmo">
                 <Original>Missiles and Rockets</Original>
@@ -435,6 +463,7 @@
                 <Korean>미사일과 로켓</Korean>
                 <French>Missiles et roquettes</French>
                 <Chinesesimp>导弹和火箭弹</Chinesesimp>
+                <Turkish>Füzeler ve Roketler</Turkish>
             </Key>
             <Key ID="STR_A3AU_sights">
                 <Original>Sights</Original>
@@ -443,6 +472,7 @@
                 <Korean>조준기</Korean>
                 <French>Vue d'ensemble</French>
                 <Chinesesimp>瞄具</Chinesesimp>
+                <Turkish>Nişangahlar</Turkish>
             </Key>
             <Key ID="STR_A3AU_muzzles">
                 <Original>Muzzle Devices</Original>
@@ -451,6 +481,7 @@
                 <Korean>총구부착물</Korean>
                 <French>Dispositifs de mise à feu</French>
                 <Chinesesimp>枪口装置</Chinesesimp>
+                <Turkish>Namluağzı Aparatları</Turkish>
             </Key>
             <Key ID="STR_A3AU_bipods">
                 <Original>Bipods</Original>
@@ -459,6 +490,7 @@
                 <Korean>양각대</Korean>
                 <French>Bipieds</French>
                 <Chinesesimp>脚架</Chinesesimp>
+                <Turkish>Çatalayak</Turkish>
             </Key>
             <Key ID="STR_A3AU_grips">
                 <Original>Grips</Original>
@@ -467,6 +499,7 @@
                 <Korean>그립</Korean>
                 <French>Crosses</French>
                 <Chinesesimp>握把</Chinesesimp>
+                <Turkish>Tutamaklar</Turkish>
             </Key>
             <Key ID="STR_A3AU_handles">
                 <Original>Handles</Original>
@@ -475,6 +508,7 @@
                 <Korean>손잡이</Korean>
                 <French>Poignées</French>
                 <Chinesesimp>提把</Chinesesimp>
+                <Turkish>Kollar</Turkish>
             </Key>
             <Key ID="STR_A3AU_pointers">
                 <Original>Pointers</Original>
@@ -483,6 +517,7 @@
                 <Korean>레이저 지시기</Korean>
                 <French>Pointeurs</French>
                 <Chinesesimp>指示器</Chinesesimp>
+                <Turkish>Lazerler</Turkish>
             </Key>
             <Key ID="STR_A3AU_flashlights">
                 <Original>Flashlights</Original>
@@ -491,6 +526,7 @@
                 <Korean>손전등</Korean>
                 <French>Lampes de poche</French>
                 <Chinesesimp>手电筒</Chinesesimp>
+                <Turkish>Fenerler</Turkish>
             </Key>
             <Key ID="STR_A3AU_gps">
                 <Original>GPS</Original>
@@ -499,6 +535,7 @@
                 <Korean>GPS</Korean>
                 <French>GPS</French>
                 <Chinesesimp>GPS</Chinesesimp>
+                <Turkish>GPS</Turkish>
             </Key>
             <Key ID="STR_A3AU_binoculars">
                 <Original>Binoculars</Original>
@@ -507,6 +544,7 @@
                 <Korean>쌍안경</Korean>
                 <French>Jumelles</French>
                 <Chinesesimp>望远镜</Chinesesimp>
+                <Turkish>Dürbünler</Turkish>
             </Key>
             <Key ID="STR_A3AU_nvgs">
                 <Original>NVGs</Original>
@@ -515,6 +553,7 @@
                 <Korean>야간투시경</Korean>
                 <French>NVG</French>
                 <Chinesesimp>夜视仪</Chinesesimp>
+                <Turkish>Gece Görüş Gözlükleri</Turkish>
             </Key>
             <Key ID="STR_A3AU_misc">
                 <Original>Misc</Original>
@@ -523,6 +562,7 @@
                 <Korean>기타</Korean>
                 <French>Divers</French>
                 <Chinesesimp>杂项</Chinesesimp>
+                <Turkish>Çeşitli</Turkish>
             </Key>
             <Key ID="STR_A3AU_bagsStatics">
                 <Original>Bags with Statics</Original>
@@ -531,6 +571,7 @@
                 <Korean>고정화기 가방</Korean>
                 <French>Sacs avec statique</French>
                 <Chinesesimp>装有静态武器的背包</Chinesesimp>
+                <Turkish>Statik Silah Çantaları</Turkish>
             </Key>
             <Key ID="STR_A3AU_srMagazines">
                 <Original>Sniper Rifle Magazines</Original>
@@ -539,6 +580,7 @@
                 <Korean>저격소총 탄창</Korean>
                 <French>Magasins de fusils de sniper</French>
                 <Chinesesimp>狙击步枪弹匣</Chinesesimp>
+                <Turkish>K.N.Tüfeği Şarjörleri</Turkish>
             </Key>
             <Key ID="STR_A3AU_camouflage">
                 <Original>Camouflage</Original>
@@ -547,6 +589,7 @@
                 <Korean>위장복</Korean>
                 <French>Camouflage</French>
                 <Chinesesimp>迷彩</Chinesesimp>
+                <Turkish>Kamuflaj</Turkish>
             </Key>
             <Key ID="STR_A3AU_helmets">
                 <Original>Helmets</Original>
@@ -554,6 +597,7 @@
                 <Russian>Шлемы</Russian>
                 <Chinesesimp>头盔</Chinesesimp>
                 <Korean>헬멧</Korean>
+                <Turkish>Kasklar</Turkish>
             </Key>
             <Key ID="STR_A3AU_uniforms">
                 <Original>Uniforms</Original>
@@ -561,6 +605,7 @@
                 <Russian>Униформы</Russian>
                 <Chinesesimp>制服</Chinesesimp>
                 <Korean>유니폼</Korean>
+                <Turkish>Üniformalar</Turkish>
             </Key>
             <Key ID="STR_A3AU_backpacks">
                 <Original>Backpacks</Original>
@@ -568,6 +613,7 @@
                 <Russian>Рюкзаки</Russian>
                 <Chinesesimp>背包</Chinesesimp>
                 <Korean>군장</Korean>
+                <Turkish>Sırt Çantaları</Turkish>
             </Key>
             <Key ID="STR_A3AU_facewear">
                 <Original>Facewear</Original>
@@ -575,6 +621,7 @@
                 <Russian>Очки/шарфы</Russian>
                 <Chinesesimp>面部装备</Chinesesimp>
                 <Korean>페이스웨어</Korean>
+                <Turkish>Yüz Aksesuarları</Turkish>
             </Key>
             <Key ID="STR_A3AU_vests">
                 <Original>Vests</Original>
@@ -582,6 +629,7 @@
                 <Russian>Разгрузки</Russian>
                 <Chinesesimp>背心</Chinesesimp>
                 <Korean>조끼</Korean>
+                <Turkish>Yelekler</Turkish>
             </Key>
             <Key ID="STR_A3AU_utility">
                 <Original>Utility</Original>
@@ -589,6 +637,7 @@
                 <Russian>Служебные</Russian>
                 <Chinesesimp>一般物品</Chinesesimp>
                 <Korean>기타 아이템</Korean>
+                <Turkish>Yardımcı Ekipman</Turkish>
             </Key>
         </Container>
         <!-- helpers -->
@@ -601,6 +650,7 @@
                 <Korean>그리고</Korean>
                 <French>et</French>
                 <Chinesesimp>和</Chinesesimp>
+                <Turkish>ve</Turkish>
             </Key>
             <Key ID="STR_A3AU_barret">
                 <Original>Barret</Original>
@@ -609,6 +659,7 @@
                 <Korean>Barret</Korean>
                 <French>Barret</French>
                 <Chinesesimp>Barret</Chinesesimp>
+                <Turkish>Barret</Turkish>
             </Key>
             <Key ID="STR_A3AU_Vanilla">
                 <Original>Arma 3</Original>
@@ -617,6 +668,7 @@
                 <Korean>아르마 3</Korean>
                 <French>Arma 3</French>
                 <Chinesesimp>Arma 3</Chinesesimp>
+                <Turkish>Arma 3</Turkish>
             </Key>
             <Key ID="STR_A3AU_Apex">
                 <Original>Apex</Original>
@@ -624,6 +676,7 @@
                 <Russian>Apex</Russian>
                 <Chinesesimp>Apex</Chinesesimp>
                 <Korean>Apex</Korean>
+                <Turkish>Apex</Turkish>
             </Key>
             <Key ID="STR_A3AU_Artofwar">
                 <Original>Art of war</Original>
@@ -631,6 +684,7 @@
                 <Russian>Art of war</Russian>
                 <Chinesesimp>Art of war</Chinesesimp>
                 <Korean>Art of war</Korean>
+                <Turkish>Art of war</Turkish>
             </Key>
             <Key ID="STR_A3AU_Contact">
                 <Original>Contact</Original>
@@ -638,6 +692,7 @@
                 <Russian>Contact</Russian>
                 <Chinesesimp>Contact</Chinesesimp>
                 <Korean>Contact</Korean>
+                <Turkish>Contact</Turkish>
             </Key>
             <Key ID="STR_A3AU_Jets">
                 <Original>Jets</Original>
@@ -645,6 +700,7 @@
                 <Russian>Jets</Russian>
                 <Chinesesimp>Jets</Chinesesimp>
                 <Korean>Jets</Korean>
+                <Turkish>Jets</Turkish>
             </Key>
             <Key ID="STR_A3AU_Kart">
                 <Original>Kart</Original>
@@ -652,6 +708,7 @@
                 <Russian>Kart</Russian>
                 <Chinesesimp>Kart</Chinesesimp>
                 <Korean>Kart</Korean>
+                <Turkish>Kart</Turkish>
             </Key>
             <Key ID="STR_A3AU_Lawsofwar">
                 <Original>Laws of war</Original>
@@ -659,6 +716,7 @@
                 <Russian>Laws of war</Russian>
                 <Chinesesimp>Laws of war</Chinesesimp>
                 <Korean>Laws of war</Korean>
+                <Turkish>Laws of war</Turkish>
             </Key>
             <Key ID="STR_A3AU_Marksmen">
                 <Original>Marksmen</Original>
@@ -666,6 +724,7 @@
                 <Russian>Marksmen</Russian>
                 <Chinesesimp>Marksmen</Chinesesimp>
                 <Korean>Marksmen</Korean>
+                <Turkish>Marksmen</Turkish>
             </Key>
             <Key ID="STR_A3AU_Tanks">
                 <Original>Tanks</Original>
@@ -673,6 +732,14 @@
                 <Russian>Tanks</Russian>
                 <Chinesesimp>Tanks</Chinesesimp>
                 <Korean>Tanks</Korean>
+                <Turkish>Tanks</Turkish>
+                </Key>
+            <Key ID="STR_A3AU_Ultimate">
+                <Original>Antistasi Ultimate</Original>
+                <English>Antistasi Ultimate</English>
+                <Russian>Antistasi Ultimate</Russian>
+                <Chinesesimp>Antistasi Ultimate</Chinesesimp>
+                <Korean>Antistasi Ultimate</Korean>
             </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
@@ -680,6 +747,7 @@
                 <Russian>Kkiv 2035</Russian>
                 <Chinesesimp>Kkiv 2035</Chinesesimp>
                 <Korean>Kkiv 2035</Korean>
+                <Turkish>Kkiv 2035</Turkish>
             </Key>
             <Key ID="STR_A3AU_CSLA">
                 <Original>CSLA</Original>

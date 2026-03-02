@@ -20,7 +20,7 @@ private _vehiclesLightUnarmed = ["O_SFIA_Offroad_lxWS","O_Tura_Offroad_armor_lxW
 private _vehiclesLightArmed = ["O_SFIA_Offroad_armed_lxWS","O_Tura_Offroad_armor_armed_lxWS"];
 ["vehiclesTruck", ["I_G_Van_01_transport_F"]] call _fnc_saveToTemplate;
 private _vehiclesAT = ["O_SFIA_Offroad_AT_lxWS","O_Tura_Offroad_armor_AT_lxWS"];
-["vehiclesAA", ["I_G_Offroad_01_AT_F"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["I_Tura_Truck_02_aa_lxWS", "I_G_Offroad_AA_lxWS", "I_Tura_Offroad_armor_AA_lxWS"]] call _fnc_saveToTemplate;
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 

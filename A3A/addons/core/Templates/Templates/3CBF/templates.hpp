@@ -99,6 +99,15 @@
         climate[] = {"arid"};
     };
 
+    class 3CBF_Civ : 3CBF_Base
+    {
+        side = "Civ";
+        flagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
+        name = "3CBF";
+        file = "3CBF_Civ";
+        description = $STR_A3AP_setupFactionsTab_vanilla_civ;
+    };
+
     class 3CBF_TKC: 3CBF_Base
     {
         side = "Civ";
