@@ -18,14 +18,6 @@ if (_vehicle isKindOf "Helicopter" && {getNumber(configOf _vehicle >> "vtol") ==
 
 _vehicle setVariable ["autolandAction", true, true];
 
-// Action parameters
-private _actionSpeedLimit = 350; // Max speed for action (km/h)
-private _actionHeightLimit = 150; // Max height for action (meters)
-
-// Detection parameters
-private _detectionRange = 500;
-private _detectionHeight = 500;
-
 // Variables for addAction
 private _actionAdded = false;
 private _actionID = -1;
@@ -50,12 +42,12 @@ private _fn_checkActionConditions = {
 
         diag_log format ["[DEBUG] %1: horiz=%2, heightAbove=%3", _x, _horizontalDist, _heightAbove];
 
-        (_horizontalDist < _detectionRange) &&
+        (_horizontalDist < GVAR(detectionRange)) &&
         (_heightAbove >= 10) &&
-        (_heightAbove < _actionHeightLimit)
+        (_heightAbove < GVAR(actionHeightLimit))
     } != -1;
 
-    private _isSlowEnough = speed _vehicle < _actionSpeedLimit;
+    private _isSlowEnough = speed _vehicle < GVAR(actionSpeedLimit);
     
     _inFriendlyAirport && _isSlowEnough
 };
@@ -91,7 +83,6 @@ while {alive _vehicle && {count crew _vehicle > 0}} do {
                 "_this isEqualTo driver _originalTarget",
                 40
             ];
-
             _actionAdded = true;
             _firstPassDone = true;
         };
