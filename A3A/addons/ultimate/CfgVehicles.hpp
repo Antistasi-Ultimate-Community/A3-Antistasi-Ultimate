@@ -4,7 +4,6 @@
 
 class Land_HelipadCircle_F;
 class Land_HelipadSquare_F;
-class A3AU_RebHelipad_Square_F: Land_HelipadSquare_F {};
 
 class HouseBase;
 class A3U_StaticHolderBase: HouseBase
