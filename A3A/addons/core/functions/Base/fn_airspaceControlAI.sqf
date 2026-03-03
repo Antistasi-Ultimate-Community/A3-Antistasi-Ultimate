@@ -145,7 +145,7 @@ private _fn_getMarkersInRange = {
 
 // Main detection loop
 while {alive _vehicle} do {
-    private _vehPos = getPosATL _vehicle;
+    private _vehPos = getPosASL _vehicle;
     private _enemySides = [_side] call _fn_getEnemySides;
     
     // Get all potential targets
