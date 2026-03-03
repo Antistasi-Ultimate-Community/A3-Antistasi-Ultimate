@@ -1,9 +1,5 @@
 // Please for the love of god, use Allman indentation in massive config files like this. It's damn near impossible to decipher classes in K&R with 1000 lines
 
-#define SCOPESTATICS scope = 0; scopeCurator = 0
-
-class Land_HelipadCircle_F;
-class Land_HelipadSquare_F;
 
 class HouseBase;
 class A3U_StaticHolderBase: HouseBase
