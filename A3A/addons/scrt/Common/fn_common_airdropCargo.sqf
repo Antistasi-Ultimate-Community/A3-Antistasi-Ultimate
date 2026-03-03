@@ -70,7 +70,12 @@ _para setVectorUp [0,0,1];
 	};
 		
 	_para disableCollisionWith _obj;
-	_obj setVectorUp [0,0,1]; ///should we reset the object's direction?
+
+	private _currentUp = vectorUp _obj;
+	private _angle = acos (_currentUp vectorDotProduct [0,0,1]);
+	if (_angle > 60) then { //adjust orientation only when object is about to tip over
+	    _obj setVectorUp [0,0,1];
+	};
 	_obj setVelocity [0,0,0];
 	detach _obj;
 	
