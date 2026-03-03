@@ -1,4 +1,6 @@
 /*
+    common_paradropVehicle
+
     Performs a paradrop with the given group and vehicle
 
 Arguments:
@@ -88,17 +90,7 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, -1];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
-    waitUntil {sleep 1; (_plane distance2D _dropPos) < 3000};
-    _plane limitSpeed ((0.8 * (getNumber(configOf _plane >> "maxSpeed"))) min 500);         // to slow down vtols
-    waitUntil {sleep 1; (_plane distance2D _dropPos) < 2000};
-    _plane limitSpeed ((0.7 * (getNumber(configOf _plane >> "maxSpeed"))) min 400);         // to slooow down vtols
-    waitUntil {sleep 1; (_plane distance2D _dropPos) < 1500};
-    _plane limitSpeed ((0.6 * (getNumber(configOf _plane >> "maxSpeed"))) min 250);         // to slow down vtols even more
-} else {
-    waitUntil {sleep 1; (_plane distance2D _dropPos) < 1000};
-    _plane limitSpeed ((0.6 * (getNumber(configOf _plane >> "maxSpeed"))) min 250);         // to slow down heli
-};
+[_plane, _dropPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
 
 [_plane, _dropPos] spawn {
     params ["_plane", "_dropPos"];
@@ -279,21 +271,9 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
     };
 };
 
-private _weapons = count weapons _plane;
-private _driverturret = _plane weaponsTurret [0];
-private _gunnerturret = _plane weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
-
-if (
-    alive _vehicle && (
-        _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
-        {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
-    )
-) exitWith {
-    [_plane, _groupPilot, _targetPosition] spawn A3A_fnc_attackHeli;
-};
-
 _plane limitSpeed (2 * getNumber(configOf _plane >> "maxSpeed"));	// remove the limit
+
+if ([_plane, _groupPilot, _targetPosition] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 private _wp2 = _groupPilot addWaypoint [_originPosition, -1];
 _wp2 setWaypointType "MOVE";

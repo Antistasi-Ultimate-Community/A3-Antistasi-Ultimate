@@ -1,6 +1,7 @@
 /*
+    paradrop
 Maintainer: Wurzel0701
-    Performs a paradrop with the given group and vehicle
+    Performs a paradrop with the given group
 
 Arguments:
     <OBJECT> The vehicle from which the drop will be performed
@@ -82,23 +83,7 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, 0];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
-    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 3000}; 
-    if (!alive _vehicle) exitWith {};
-    _vehicle limitSpeed ((0.8 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 500); // to slow down vtols
-
-    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 2000}; 
-    if (!alive _vehicle) exitWith {};
-    _vehicle limitSpeed ((0.7 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 400); // to slooow down vtols
-
-    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 1500};
-    if (!alive _vehicle) exitWith {};
-    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250); // to slow down vtols even more
-} else {
-    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 1000};
-    if (!alive _vehicle) exitWith {};
-    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250); // to slow down heli
-};
+[_vehicle, _dropPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
 
 [_vehicle, _dropPos] spawn {
     params ["_vehicle", "_dropPos"];
@@ -192,26 +177,14 @@ if(currentWaypoint _groupPilot > 0) then
 
 while {count waypoints _groupJumper > 0} do { deleteWaypoint [_groupJumper, 0] };
 
-private _weapons = count weapons _vehicle;
-private _driverturret = _vehicle weaponsTurret [0];
-private _gunnerturret = _vehicle weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
+_vehicle limitSpeed (2 * getNumber(configOf _vehicle >> "maxSpeed"));	// remove the limit
 
-if (
-    alive _vehicle && (
-        _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
-        {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
-    )
-) exitWith {
-    [_vehicle, _groupPilot, _targetPosition] spawn A3A_fnc_attackHeli;
-};
+if ([_vehicle, group driver _vehicle, _targetPosition] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 private _wp2 = _groupPilot addWaypoint [_originPosition, 0];
 _wp2 setWaypointType "MOVE";
 _wp2 setWaypointSpeed "FULL";
 _wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
-
-_vehicle limitSpeed (2 * getNumber(configOf _vehicle >> "maxSpeed"));	// remove the limit
 
 // Waiting here because Arma likes to randomly delete paratrooper waypoints on landing
 waitUntil { sleep 1; isTouchingGround leader _groupJumper };

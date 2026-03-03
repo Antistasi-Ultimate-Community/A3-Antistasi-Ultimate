@@ -190,18 +190,9 @@ if(canMove _helicopter || alive _driver) then {
 };
 _helicopter flyInHeight _midHeight;
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
+_helicopter action ["LandGearUp", _helicopter];
 
-if (
-    _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
-    {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
-) exitWith {
-    _helicopter action ["LandGearUp", _helicopter];
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
-};
+if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 // Heli RTB
 private _vehWP1 = _crewGroup addWaypoint [_originPos, 0];
