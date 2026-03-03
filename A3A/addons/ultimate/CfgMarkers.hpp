@@ -100,6 +100,15 @@ class A3AU_RebalHQ_mrk : A3AU_Factory_mrk
 	size = 36;
 };
 
+class A3AU_dealer_mrk : A3AU_Factory_mrk
+{
+	name = "Antistasi Arms Dealer";
+	icon = QPATHTOFOLDER(data\A3AU_dealer_mrk);
+	texture = QPATHTOFOLDER(data\A3AU_dealer_mrk);
+	markerClass = "A3AU_dealer_mrk";
+	size = 24;
+};
+
 class A3AU_radiotower_mrk : A3AU_Factory_mrk
 {
 	name = "Antistasi Radio Tower";

@@ -193,7 +193,7 @@ if (!_hardCodedAntennas) then {
         _mrkFinal setMarkerShapeLocal "ICON";
         _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
         _mrkFinal setMarkerColorLocal "ColorBlack";
-        _mrkFinal setMarkerText localize "STR_radiotower";
+        _mrkFinal setMarkerText "";
 		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
         _x addEventHandler [
@@ -241,7 +241,7 @@ if (count _posAntennas > 0) then {
 				_mrkFinal setMarkerShapeLocal "ICON";
 				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
 				_mrkFinal setMarkerColorLocal "ColorBlack";
-				_mrkFinal setMarkerText localize "STR_radiotower";
+				_mrkFinal setMarkerText "";
 				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
 

@@ -61,7 +61,7 @@ if (_units findIf {
 
 positionTel = [];
 
-[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_click"] call A3A_fnc_customHint;
+if (_quickMarker == "") then {[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_click"] call A3A_fnc_customHint;};
 if (!visibleMap) then {openMap true};
 showCommandingMenu "";
 if !(_quickMarker == "") then {
@@ -240,6 +240,7 @@ if (_positionTel distance getMarkerPos _base < 500) then {
 	
 	sleep 5;
 	{_x allowDamage true} forEach _ftUnits;
+	['off'] call SCRT_fnc_ui_toggleMenuBlur;
 } else {
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_missclick"] call SCRT_fnc_misc_deniedHint;
 };

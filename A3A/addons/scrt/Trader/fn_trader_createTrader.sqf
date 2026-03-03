@@ -17,7 +17,7 @@ traderObjects = [];
 
 if (isTraderQuestCompleted) then {
 	traderMarker = createMarker ["TraderMarker", _position];
-	traderMarker setMarkerType "hd_objective";
+	traderMarker setMarkerType "A3AU_dealer_mrk";
 	traderMarker setMarkerSize [1, 1];
 	traderMarker setMarkerText (localize "STR_marker_arms_dealer");
 	traderMarker setMarkerColor "ColorUNKNOWN";
