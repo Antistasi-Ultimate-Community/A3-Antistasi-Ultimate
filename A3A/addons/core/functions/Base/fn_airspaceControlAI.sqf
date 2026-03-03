@@ -10,7 +10,7 @@ if (_vehicle getVariable ["airspaceControl", false]) exitWith {};
 _vehicle setVariable ["airspaceControl", true, true];
 
 // Classify aircraft type
-private _airType = if (_vehicle isKindOf "Helicopter") then {MIL_HELI} else {JET};
+private _airType = [JET, MIL_HELI] select (_vehicle isKindOf "Helicopter");
 
 //  						[MIL_HELI, JET]
 private _outpostDetectionRange = [500, 750] select _airType;

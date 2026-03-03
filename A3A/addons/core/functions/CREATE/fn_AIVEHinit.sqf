@@ -238,7 +238,7 @@ if (_side != teamPlayer) then
 
 if (_veh isKindOf "Air") then {
     /// add check for invaders/rivals/occupants
-    if (_side == Invaders || _side == Occupants || _side == Rivals) then {
+    if (_side in [Invaders, Occupants, Rivals]) then {
         [_veh,_side] spawn A3A_fnc_airspaceControlAI;
     } else {
         //Start airspace control script if rebel player enters
