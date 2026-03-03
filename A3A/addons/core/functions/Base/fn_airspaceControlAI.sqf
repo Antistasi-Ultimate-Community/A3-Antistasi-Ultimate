@@ -49,7 +49,7 @@ private _fn_calculateDelay = {
 #define COOLDOWN_MILBASE 60  // Military bases
 #define COOLDOWN_OUTPOST 120 // Outposts
 
-// Добавляем новую функцию для проверки таймаута
+//function to check the timeout
 private _fn_checkCooldown = {
     params ["_marker", "_baseType"];
     
@@ -61,7 +61,7 @@ private _fn_checkCooldown = {
         default {120};
     };
     
-    // Если с последнего вызова прошло больше времени чем кд
+    // If more time has passed since the last call than cd
     (time - _lastCall) > _cooldown
 };
 
