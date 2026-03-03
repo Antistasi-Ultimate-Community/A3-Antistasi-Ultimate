@@ -113,15 +113,6 @@ private _fn_sendSupport = {
     );
 };
 
-/* private _fn_sendSupport = {
-    params ["_vehicle", "_marker", "_threat"];
-    private _markerSide = sidesX getVariable [_marker, sideUnknown];
-    
-    [_markerSide, false, _threat, _vehicle] remoteExec ["A3A_fnc_addRecentDamage", 2];
-    private _revealValue = [getMarkerPos _marker, _markerSide] call A3A_fnc_calculateSupportCallReveal;
-    [_markerSide, _vehicle, markerPos _marker, 4, 1] remoteExec ["A3A_fnc_requestSupport", 2];
-}; */
-
 // Determine enemy factions per side
 private _fn_getEnemySides = {
     params ["_side"];
