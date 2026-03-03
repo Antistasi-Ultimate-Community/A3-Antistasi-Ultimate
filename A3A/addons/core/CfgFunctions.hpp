@@ -269,6 +269,8 @@ class CfgFunctions
             class createUnit {};
             class createVehicleCrew {};
             class createVehicleQRFBehaviour {};
+            class createZoneAmmoBox {};
+            class createZoneFlag {};
             class crewTypeForVehicle {};
             class cycleSpawn {};
             class FIAinitBases {};
