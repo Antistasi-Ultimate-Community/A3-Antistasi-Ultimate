@@ -1,4 +1,5 @@
-// Control types
+//defines.hpp
+// Control types 
 #define CT_STATIC           0
 #define CT_BUTTON           1
 #define CT_EDIT             2
@@ -169,6 +170,7 @@
 
 // Titlebar background
 #define A3A_COLOR_TITLEBAR_BACKGROUND GUI_BCG_COLOR
+#define A3A_COLOR_TITLEBAR_BACKGROUND_SQF [GUI_BCG_RGB, GUI_BCG_ALPHA]
 
 // Tabs Background
 #define A3A_COLOR_TABS_BACKGROUND {0.2,0.2,0.2,0.9}
@@ -371,6 +373,124 @@ class A3A_Picture : A3A_CtrlDefault
     lineSpacing = 0;
 };
 
+class A3A_Button : A3A_Text
+{
+    type = CT_BUTTON;
+    style = ST_CENTER + ST_UPPERCASE;
+
+    w = 20 * GRID_W;
+    h = 6 * GRID_H;
+
+    font = A3A_BUTTON_FONT;
+    borderSize = 0;
+
+    // Colors
+
+    // Text
+    colorText[] = A3A_COLOR_BUTTON_TEXT;
+    colorFocused[] =	A3A_COLOR_BUTTON_FOCUSED;
+    colorDisabled[] = A3A_COLOR_BUTTON_TEXT_DISABLED;
+
+    // Background
+    colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+    colorBackgroundDisabled[] = A3A_COLOR_BUTTON_BACKGROUND_DISABLED;
+    colorBackgroundActive[] =	A3A_COLOR_BUTTON_ACTIVE;
+
+    // Other (not in use so we make it invisible)
+    colorBorder[] = A3A_COLOR_TRANSPARENT;
+    colorShadow[] = A3A_COLOR_TRANSPARENT;
+
+    offsetX = 0;
+    offsetY = 0;
+    offsetPressedX = 0; // Button press pos offset, used to be "pixelW"
+    offsetPressedY = 0; // Changed to 0 to match look to ShortcutButton
+
+    period = 0; // 0
+    periodFocus = 2; // 2
+    periodOver = 0.5; // 0.5
+
+    // Sounds
+    soundClick[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundClick",
+        0.09,
+        1
+    };
+    soundEnter[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundEnter",
+        0.09,
+        1
+    };
+    soundPush[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundPush",
+        0.09,
+        1
+    };
+    soundEscape[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundEscape",
+        0.09,
+        1
+    };
+};
+
+class A3A_ActiveText : A3A_CtrlDefault
+{
+    type = CT_ACTIVETEXT;
+    font = A3A_DEFAULT_FONT;
+    text = "";
+    sizeEx = GUI_TEXT_SIZE_MEDIUM;
+
+    // Colors
+    color[] = A3A_COLOR_TEXT;
+    colorActive[] = A3A_COLOR_ACTIVE;
+    colorDisabled[] = A3A_COLOR_BUTTON_TEXT_DISABLED;
+
+    // Sounds
+    soundEnter[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundEnter",
+        0.09,
+        1
+    };
+    soundPush[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundPush",
+        0.09,
+        1
+    };
+    soundClick[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundClick",
+        0.09,
+        1
+    };
+    soundEscape[] =
+    {
+        "\A3\ui_f\data\sound\RscButton\soundEscape",
+        0.09,
+        1
+    };
+};
+
+class A3A_ActivePicture : A3A_ActiveText
+{
+    style = ST_MULTI + ST_TITLE_BAR;
+    color[] = {1,1,1,0.5};
+    colorActive[] = {1,1,1,1};
+};
+
+class A3A_CloseButton : A3A_ActivePicture
+{
+    text = A3A_Icon_Close;
+    // Uses onMouseButtonClick to not be accidentally triggered by keyboard
+    onMouseButtonClick = "closeDialog 2;";
+    w = 5 * GRID_W;
+    h = 5 * GRID_H;
+};
+
 class A3A_ShortcutButton : A3A_CtrlDefault
 {
     type = CT_SHORTCUTBUTTON;
@@ -553,6 +673,21 @@ class A3A_Slider : A3A_CtrlDefault
     onMouseMoving = "";
     onMouseHolding = "";
     onSliderPosChanged = "";
+};
+
+class A3A_ClickablePicture: A3A_ShortcutButton {
+    colorBackground[] = {1,1,1,1};
+	colorBackgroundFocused[] = {1,1,1,1};
+	colorBackground2[] = {1,1,1,1};
+	color[] = {1,1,1,1};
+	colorFocused[] = {1,1,1,1};
+	color2[] = {1,1,1,1};
+	colorText[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,1};
+	colorSecondary[] = {1,1,1,1};
+	colorFocusedSecondary[] = {1,1,1,1};
+	color2Secondary[] = {1,1,1,1};
+	colorDisabledSecondary[] = {1,1,1,1};
 };
 
 ////////////////////

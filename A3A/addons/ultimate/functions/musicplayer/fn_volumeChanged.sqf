@@ -3,18 +3,25 @@
 
 params ["_ctrlVolume", "_value"];
 
-// Установка громкости через fadeMusic (0 сек. для мгновенного изменения)
+private _display = ctrlParent _ctrlVolume;
+private _volOn = _display displayCtrl 85108;
+private _volOff = _display displayCtrl 85109;
+private _slider = _display displayCtrl 85107;
+
+// Если был включён mute, снимаем его
+if (A3U_muted) then {
+    A3U_muted = false;
+};
+
+// Установка громкости
 A3U_volume = linearConversion [0, 1, _value, 0, 1, true];
 0 fadeMusic A3U_volume;
 
-// Обновление иконки громкости
-private _display = ctrlParent _ctrlVolume;
-private _iconCtrl = _display displayCtrl 85108;
+// Обновляем UI
+_volOn ctrlShow true;
+_volOff ctrlShow false;
+_volOn ctrlSetTooltip "Выключить звук";
+_slider sliderSetPosition A3U_volume;
 
-private _icon = switch true do {
-    case (A3U_volume >= 0.66): {"\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_volume_up_ca.paa"};
-    case (A3U_volume >= 0.33): {"\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_volume_mid_ca.paa"};
-    default {"\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_volume_down_ca.paa"};
-};
-
-_iconCtrl ctrlSetText _icon;
+//_volOn ctrlCommit 0;
+//_volOff ctrlCommit 0;

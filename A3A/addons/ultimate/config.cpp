@@ -22,6 +22,9 @@ class CBA_Extended_EventHandlers_base; // Needed for CfgVehicles.hpp
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
 
+//////////Music radio stuff
+#include "Dialogs.hpp"
+
 class A3U
 {
     #include "config\plane\cfgPlaneLoadouts.hpp"

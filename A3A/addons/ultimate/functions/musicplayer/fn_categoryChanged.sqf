@@ -8,23 +8,27 @@ if (_index == -1) exitWith {
     systemChat "Ошибка: категория не выбрана!";
 };
 
-// Получение категории
-private _category = _ctrlCategory lbText _index;
-systemChat format ["Выбрана категория: %1", _category]; // Отладка
+// Получение категории из данных (нижний регистр)
+private _category = _ctrlCategory lbData _index;
+systemChat format ["Выбрана категория: %1", _category];  // Отладка
 
 // Получение треков
 private _tracks = [_category] call A3U_fnc_getTracksByCategory;
-systemChat format ["Найдено треков: %1", count _tracks]; // Отладка
+systemChat format ["Найдено треков: %1", count _tracks];  // Отладка
 
 private _display = ctrlParent _ctrlCategory;
 private _tracksList = _display displayCtrl 85102;
 
 lbClear _tracksList;
-{
-    _x params ["_name", "_path"];
+if (count _tracks == 0) then {
+    _tracksList lbAdd "Нет треков в категории";
+} else {
+    {
+        _x params ["_name", "_path"];
+        private _idx = _tracksList lbAdd _name;
+        _tracksList lbSetData [_idx, _path];
+    } forEach _tracks;
     
-    private _idx = _tracksList lbAdd _name;
-    _tracksList lbSetData [_idx, _path];
-} forEach _tracks;
-
-[_tracksList, 0] call A3U_fnc_trackChanged; 
+    // Выбираем первый трек в категории
+    _tracksList lbSetCurSel 0;
+};

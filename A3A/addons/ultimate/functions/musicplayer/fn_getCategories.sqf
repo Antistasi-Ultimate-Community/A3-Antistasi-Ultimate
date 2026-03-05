@@ -5,7 +5,7 @@ private _categories = [];
 private _hasUnknown = false;
 
 {
-    private _theme = getText (_x >> "theme");
+    private _theme = toLower getText (_x >> "theme");   // ← нормализация
     
     if (_theme == "") then {
         _hasUnknown = true;
@@ -15,7 +15,7 @@ private _hasUnknown = false;
 } forEach ("true" configClasses (configFile >> "CfgMusic"));
 
 if (_hasUnknown) then {
-    _categories pushBack "Unknown";
+    _categories pushBack "unknown";
 };
 
 _categories

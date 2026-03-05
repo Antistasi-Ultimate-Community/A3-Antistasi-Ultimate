@@ -1,15 +1,17 @@
 //fn_getTrackByCategory.sqf
 #include "..\..\script_component.hpp"
 
-params ["_category"];
+params [["_category", "unknown", [""]]]; // Значение по умолчанию "Unknown"
+private _categoryLower = toLower _category;   // ← нормализация
+
 private _tracks = [];
 
 {
-    private _theme = getText (_x >> "theme");
+    private _theme = toLower getText (_x >> "theme");   // ← нормализация
     private _name = getText (_x >> "name");
     private _path = configName _x;
     
-    // Обработка ТОЛЬКО для треков без названия
+    // Обработка только для треков без названия
     if (_name == "") then {
         // Создаем имя из пути
         _name = _path;
@@ -37,12 +39,12 @@ private _tracks = [];
     };
     
     // Обработка категории
-    if (_category == "Unknown") then {
+    if (_categoryLower == "unknown") then {
         if (_theme == "") then {
             _tracks pushBack [_name, _path];
         };
     } else {
-        if (_theme == _category) then {
+        if (_theme == _categoryLower) then {
             _tracks pushBack [_name, _path];
         };
     };

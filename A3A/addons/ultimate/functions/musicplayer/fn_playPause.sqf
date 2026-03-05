@@ -2,6 +2,14 @@
 #include "..\..\script_component.hpp"
 
 if (A3U_isPlaying) then {
+    A3U_playerState = [
+        A3U_currentTrack,
+        false, // isPlaying
+        A3U_trackProgress,
+        A3U_volume,
+        A3U_trackStartTime,
+        A3U_pausedProgress // pausedProgress
+    ];
     A3U_pausedProgress = A3U_trackProgress;
     playMusic "";
     A3U_isPlaying = false;

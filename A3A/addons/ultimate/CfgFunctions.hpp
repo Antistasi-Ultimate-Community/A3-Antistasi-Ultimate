@@ -111,16 +111,30 @@ class CfgFunctions
             class categoryChanged {};
             class nextTrack {};
             class prevTrack {};
-            class trackChanged {};
             class volumeChanged {};
             class playPause {};
             class playTrack {};
+            class onProgressClick {};
+            class getTrackModIcon {};
             class getTracksByCategory {};
             class initMusicPlayer {};
+            class setupMusicHandlers {};
+            class toggleLoop {};
+            class toggleMute {};
+            class toggleShuffle {};
+            class trackChanged {};
             class trackProgressMonitor {};
             class updatePlayButton {};
             class updateTrackInfo {};
             class addRadioAction {};
+        };
+        class musicplayerdebug
+        {
+            file = QPATHTOFOLDER(functions\musicplayer\debug);
+            class copyDebugToClipboard {};
+            class toggleDebug {};
+            class getTrackDebugInfo {};
+            class updateDebugInfo {};
         };
     };
 };
