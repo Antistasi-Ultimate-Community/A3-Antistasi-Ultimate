@@ -8,6 +8,7 @@ class CfgFunctions
             class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
+            class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
             class assaultBuilding {};
@@ -21,6 +22,7 @@ class CfgFunctions
             class canFight {};
             class captureX {};
             class chargeWithSmoke {};
+            class checkAndSpawnAttack {};
             class combatLanding {};
             class coverage {};
             class destroyBuilding {};
@@ -31,6 +33,7 @@ class CfgFunctions
             class fastrope {};
             class fastropeVTOL {};
             class findSafeRoadToUnload {};
+            class fireCMFlare {};
             class fleeToSide {};
             class guardDog {};
             class hasRadio {};
