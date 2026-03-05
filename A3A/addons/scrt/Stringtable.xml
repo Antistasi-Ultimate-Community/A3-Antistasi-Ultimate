@@ -5613,7 +5613,7 @@
             </Key>
             <Key ID="STR_params_server_membership_desc">
                 <Original>When enabled, server members gain access to member-only features and less item restrictions; guests will be subject to restrictions.</Original>
-                <Russian>При включении члены сервера получают доступ к функциям только для членов и меньшим ограничениям на предметы; гости будут подвергаться ограничениям.</Russian>
+                <Russian>При включении постоянные участники сервера получают доступ к особым функциям и меньшим ограничениям на предметы; гости будут подвергаться ограничениям.</Russian>
                 <Chinesesimp>启用后，服务器成员可获得仅限成员的功能和更少的物品限制；客人将受到限制。</Chinesesimp>
                 <Korean>활성화하면 서버 멤버는 멤버 전용 기능과 항목 제한이 적은 기능을 사용할 수 있으며 손님은 제한을 받습니다.</Korean>
                 <French>Lorsqu'elle est activée, les membres du serveur obtiennent accès aux fonctionnalités réservées aux membres et moins de restrictions d'objets ; les invités seront soumis à des restrictions.</French>
@@ -5628,7 +5628,7 @@
             </Key>
             <Key ID="STR_params_server_friendlymarkers_desc">
                 <Original>When enabled, friendly players will be shown on the map.</Original>
-                <Russian>При включении дружественные игроки будут отображаться на карте.</Russian>
+                <Russian>При включении дружественные игроки будут отображаться на карте (требуется рация).</Russian>
                 <Chinesesimp>启用时，友方玩家将在地图上显示。</Chinesesimp>
                 <Korean>활성화하면 친구 플레이어가 지도에 표시됩니다.</Korean>
                 <French>Lorsqu'elle est activée, les joueurs amicaux seront affichés sur la carte.</French>
@@ -5643,7 +5643,7 @@
             </Key>
             <Key ID="STR_params_server_teamkill_desc">
                 <Original>Toggle punishment for teamkilling. Punishment may vary according to type of instigator (e.g. is admin, is zeus), type of unit killed (player, high-command AI, etc), and whether it was an accidental collision or caused by weapons.</Original>
-                <Russian>Включить наказание за убийство товарищей по команде. Наказание может варьироваться в зависимости от типа инициатора (например, является ли администратором, является ли зевсом), типа убитого юнита (игрок, ИИ высокого командования и т. д.) и является ли это случайным столкновением или вызвано оружием.</Russian>
+                <Russian>Включить наказание за убийство товарищей по команде. Наказание может варьироваться в зависимости от типа инициатора (например, является ли администратором, является ли зевсом), убитого (игрок, ИИ в подчинении главнокомандующего и т.д.), и является ли это случайным столкновением или же результатом применения оружия.</Russian>
                 <Chinesesimp>切换对友伤的惩罚。惩罚可能会根据发起者的类型（例如是否为管理员、是否为宙斯）、被击杀单位的类型（玩家、高级指挥官AI等）以及是否为意外碰撞或由武器引起而变化。</Chinesesimp>
                 <Korean>팀킬에 대한 처벌을 토글합니다. 처벌은 발기인의 유형(예: 관리자 여부, 제우스 여부), 죽은 유닛의 유형(플레이어, 고급 지휘관 AI 등) 및 우발적 충돌 또는 무기로 인한 것인지 여부에 따라 달라질 수 있습니다.</Korean>
                 <French>Basculer la punition pour le meurtre d'équipe. La punition peut varier selon le type d'instigateur (par exemple, est-ce un administrateur, est-ce Zeus), le type d'unité tuée (joueur, IA de haut commandement, etc.) et s'il s'agissait d'une collision accidentelle ou causée par des armes.</French>
@@ -5682,7 +5682,7 @@
             </Key>
             <Key ID="STR_params_server_riv_difficulty_desc">
                 <Original>Sets the activity level of rival rebels: higher settings increase frequency and aggressiveness of their actions.</Original>
-                <Russian>Устанавливает уровень активности соперничающих повстанцев: более высокие настройки увеличивают частоту и агрессивность их действий.</Russian>
+                <Russian>Устанавливает уровень активности соперничающей фракции повстанцев: более высокие настройки увеличивают частоту и агрессивность их действий.</Russian>
                 <Chinesesimp>设置敌对反抗军的活动等级：更高的设置会增加其行动的频率和侵略性。</Chinesesimp>
                 <Korean>라이벌 반군의 활동 수준을 설정합니다: 더 높은 설정은 행동 빈도와 공격성을 증가시킵니다.</Korean>
                 <French>Définit le niveau d'activité des rebelles rivaux : des réglages plus élevés augmentent la fréquence et l'agressivité de leurs actions.</French>
@@ -5721,7 +5721,7 @@
             </Key>
             <Key ID="STR_params_server_unlock_threshold_desc">
                 <Original>Rebels must have this many of any given item stored in the arsenal for the item to permanently unlock.</Original>
-                <Russian>Повстанцы должны иметь это количество любого предмета, хранящегося в арсенале, чтобы предмет был окончательно разблокирован.</Russian>
+                <Russian>Повстанцы должны иметь указанное количество предметов в арсенале, чтобы предмет разблокировался.</Russian>
                 <Chinesesimp>反抗军必须在军械库中存储此数量的任何给定物品，以便该物品永久解锁。</Chinesesimp>
                 <Korean>반란군이 항목을 영구적으로 잠금 해제하기 위해 무기고에 저장해야 하는 해당 항목의 수입니다.</Korean>
                 <French>Les rebelles doivent avoir ce nombre d'un élément donné stocké dans l'arsenal pour que l'élément soit déverrouillé de manière permanente.</French>
@@ -5736,7 +5736,7 @@
             </Key>
             <Key ID="STR_params_server_member_only_mag">
                 <Original>Number of weapon magazines needed for guests to be able to use them</Original>
-                <Russian>Количество магазинов к оружию, необходимых для того, чтобы гости могли ими пользоваться</Russian>
+                <Russian>Необходимое количество магазинов к оружию, чтобы гости могли ими пользоваться</Russian>
                 <Chinesesimp>游客能使用的弹夹数量</Chinesesimp>
                 <Korean>게스트가 사용할 수 있도록 필요한 무기 탄창의 갯수</Korean>
                 <French>Nombre de chargeurs d'armes nécessaires pour que les invités puissent les utiliser</French>
@@ -5767,7 +5767,7 @@
             </Key>
             <Key ID="STR_params_global_civilian_max_desc">
                 <Original>Maximum total number of civilians allowed on the server. Higher values increase world population but may affect performance.</Original>
-                <Russian>Максимальное число гражданских на сервере. Более высокие значения повышают население мира, но могут влиять на производительность.</Russian>
+                <Russian>Максимальное число гражданских на сервере. Более высокие значения повышают заселённость мира, но могут влиять на производительность.</Russian>
                 <Chinesesimp>服务器上允许的最大平民总数。更高的值会增加世界人口，但可能影响性能。</Chinesesimp>
                 <Korean>서버에서 허용되는 최대 민간인 총 수입니다. 값이 클수록 세계 인구가 증가하지만 성능에 영향이 있을 수 있습니다.</Korean>
                 <French>Nombre total maximal de civils autorisés sur le serveur. Des valeurs plus élevées augmentent la population du monde mais peuvent affecter les performances.</French>
@@ -5837,7 +5837,7 @@
             </Key>
             <Key ID="STR_params_allowFT_desc">
                 <Original>Controls fast-travel target restrictions; choose allowed destination types for fast travel mechanics.</Original>
-                <Russian>Управляет ограничениями на цели быстрого перемещения; выбирает допустимые типы пунктов назначения.</Russian>
+                <Russian>Управляет ограничениями быстрого перемещения: определяет разрешённые пункты назначения и отправные точки.</Russian>
                 <Chinesesimp>控制快速旅行的目标限制；选择快速旅行允许的目的地类型。</Chinesesimp>
                 <Korean>빠른 이동의 대상 제한을 제어합니다. 빠른 이동 허용 목적지 유형을 선택하세요.</Korean>
                 <French>Contrôle les restrictions des cibles du voyage rapide ; choisissez les types de destinations autorisées.</French>
@@ -5860,7 +5860,7 @@
             </Key>
             <Key ID="STR_params_allowFT_2">
                 <Original>Only between airports, military bases and HQ</Original>
-                <Russian>Только между аэропортами, военными базами и штаб-квартирами</Russian>
+                <Russian>Только между аэропортами, военными базами и штаб-квартирой</Russian>
                 <Chinesesimp>仅限机场、军事基地和总部之间</Chinesesimp>
                 <Korean>공항, 군 기지, 본부 간에만 가능</Korean>
                 <French>Uniquement entre les aéroports, les bases militaires et les quartiers généraux</French>
@@ -5899,7 +5899,7 @@
             </Key>
             <Key ID="STR_params_unlockedUnlimitedAmmo">
                 <Original>Unlock magazine with weapons</Original>
-                <Russian>Разблокировка оружия автоматически также разблокирует основной боезапас</Russian>
+                <Russian>Разблокировка оружия также автоматически разблокирует основные боеприпасы</Russian>
                 <Chinesesimp>解锁武器时解锁弹匣</Chinesesimp>
                 <Korean>무기 해제 시 탄창 해제</Korean>
                 <French>Déverrouiller les chargeurs lors du déverrouillage des armes</French>
@@ -5907,7 +5907,7 @@
             </Key>
             <Key ID="STR_params_unlockedUnlimitedAmmo_desc">
                 <Original>When enabled, permanently unlocking a weapon will also permanently unlock its standard magazine.</Original>
-                <Russian>При включении окончательная разблокировка оружия также окончательно разблокирует его стандартный магазин.</Russian>
+                <Russian>При включении разблокировка оружия также разблокирует его основные боеприпасы (например, стандартный магазин или пулемётную ленту).</Russian>
                 <Chinesesimp>启用后，永久解锁武器也会永久解锁其标准弹匣。</Chinesesimp>
                 <Korean>활성화하면 무기를 영구적으로 잠금 해제할 때 표준 탄창도 영구적으로 잠금 해제됩니다.</Korean>
                 <French>Lorsqu'elle est activée, le déverrouillage permanent d'une arme déverrouille également de manière permanente son chargeur standard.</French>
@@ -5922,7 +5922,7 @@
             </Key>
             <Key ID="STR_params_allowGuidedLaunchers_desc">
                 <Original>Enable permanently unlocking guided missile launchers.</Original>
-                <Russian>Включить возможность окончательной разблокировки пусковых установок управляемых ракет.</Russian>
+                <Russian>Включить возможность разблокировки пусковых установок управляемых ракет.</Russian>
                 <Chinesesimp>启用永久解锁制导导弹发射器的功能。</Chinesesimp>
                 <Korean>제어 미사일 발사기를 영구적으로 잠금 해제하는 기능을 활성화합니다.</Korean>
                 <French>Activer la possibilité de déverrouiller définitivement les lanceurs de missiles guidés.</French>
@@ -5937,14 +5937,14 @@
             </Key>
             <Key ID="STR_params_allowUnlockedExplosives_desc">
                 <Original>Enable permanently unlocking placeable explosive items.</Original>
-                <Russian>Включить возможность окончательной разблокировки устанавливаемых взрывчатых предметов.</Russian>
+                <Russian>Включить возможность разблокировки устанавливаемой взрывчатки.</Russian>
                 <Chinesesimp>启用永久解锁可放置的爆炸物的功能。</Chinesesimp>
                 <Korean>설치 가능한 폭발물을 영구적으로 잠금 해제하는 기능을 활성화합니다.</Korean>
                 <French>Activer la possibilité de déverrouiller définitivement les objets explosifs plaçables.</French>
             </Key>
             <Key ID="STR_params_allowUnlockedTNVG">
                 <Original>Allow Unlocked TNVGs/ENVGs</Original>
-                <Russian>Разрешить разблокированные TNVG/ENVG</Russian>
+                <Russian>Разрешить разблокировку TNVG/ENVG</Russian>
                 <Korean>언락된 TNVG/ENVG 허용</Korean>
                 <French>Autoriser les TNVG/ENVG déverrouillés</French>
                 <Chinesesimp>允许解锁的TNVG/ENVG</Chinesesimp>
@@ -5952,7 +5952,7 @@
             </Key>
             <Key ID="STR_params_allowUnlockedTNVG_desc">
                 <Original>Enable permanently unlocking enhanced night-vision / thermal imaging devices.</Original>
-                <Russian>Включить возможность окончательной разблокировки усовершенствованных приборов ночного видения / тепловизионных устройств.</Russian>
+                <Russian>Включить возможность разблокировки усовершенствованных приборов ночного видения / тепловизионных устройств.</Russian>
                 <Chinesesimp>启用永久解锁增强型夜视/热成像设备的功能。</Chinesesimp>
                 <Korean>개선된 야간 투시 / 열화상 장치를 영구적으로 잠금 해제하는 기능을 활성화합니다.</Korean>
                 <French>Activer la possibilité de déverrouiller définitivement les dispositifs de vision nocturne améliorée / d'imagerie thermique.</French>
@@ -5967,7 +5967,7 @@
             </Key>
             <Key ID="STR_params_startWithLongRangeRadio_desc">
                 <Original>Add permanently-unlocked long-range radio to initial rebel equipment when starting a game.</Original>
-                <Russian>Добавить окончательно разблокированную радиостанцию большой дальности в начальное снаряжение повстанцев при запуске игры.</Russian>
+                <Russian>Добавить радиостанцию большой дальности в начальное снаряжение повстанцев при запуске игры.</Russian>
                 <Chinesesimp>在游戏启动时将永久解锁的远程无线电添加到初始反抗军装备。</Chinesesimp>
                 <Korean>게임 시작 시 초기 반군 장비에 영구적으로 잠금 해제된 장거리 무선기를 추가합니다.</Korean>
                 <French>Ajouter une radio longue portée déverrouillée de manière permanente à l'équipement initial des rebelles au démarrage du jeu.</French>
@@ -5982,7 +5982,7 @@
             </Key>
             <Key ID="STR_params_aceFood_desc">
                 <Original>Add permanently-unlocked ACE food items to initial rebel equipment when starting a game.</Original>
-                <Russian>Добавить окончательно разблокированные предметы пищи ACE в начальное снаряжение повстанцев при запуске игры.</Russian>
+                <Russian>Добавить продуктовый набор ACE в начальное снаряжение повстанцев при запуске игры.</Russian>
                 <Chinesesimp>在游戏启动时将永久解锁的 ACE 食物物品添加到初始反抗军装备。</Chinesesimp>
                 <Korean>게임 시작 시 초기 반군 장비에 영구적으로 잠금 해제된 ACE 식량 항목을 추가합니다.</Korean>
                 <French>Ajouter des objets alimentaires ACE déverrouillés de manière permanente à l'équipement initial des rebelles au démarrage du jeu.</French>
@@ -5997,7 +5997,7 @@
             </Key>
             <Key ID="STR_params_helmetLossChance_desc">
                 <Original>Chance that a helmet will be lost or destroyed when a unit takes damage to the head.</Original>
-                <Russian>Вероятность того, что шлем будет потерян или уничтожен, когда юнит получает повреждение головы.</Russian>
+                <Russian>Вероятность того, что шлем будет потерян или уничтожен, когда боец получает повреждение головы.</Russian>
                 <Chinesesimp>单位头部受损时头盔丢失或损毁的概率。</Chinesesimp>
                 <Korean>유닛이 머리에 피해를 입을 때 헬멧이 손실되거나 파괴될 확률입니다.</Korean>
                 <French>Probabilité qu'un casque soit perdu ou détruit lorsqu'une unité subit des dégâts à la tête.</French>
@@ -6183,7 +6183,7 @@
             </Key>
             <Key ID="STR_params_unflipPersonCount_desc">
                 <Original>Number of nearby personnel required to right (unflip) a vehicle.</Original>
-                <Russian>Количество близлежащего персонала, необходимого для восстановления (переворачивания) перевёрнутого транспортного средства.</Russian>
+                <Russian>Количество персонала поблизости, необходимое для переворачивания опрокинутого транспортного средства.</Russian>
                 <Chinesesimp>恢复（翻正）倾覆车辆所需的附近人员数量。</Chinesesimp>
                 <Korean>뒤집힌 차량을 바로잡기(복구)하는 데 필요한 근처 인원의 수입니다.</Korean>
                 <French>Nombre de personnels à proximité requis pour redresser (retourner) un véhicule renversé.</French>
@@ -6198,7 +6198,7 @@
             </Key>
             <Key ID="STR_params_magRepack_desc">
                 <Original>When enabled, ammunition magazines can be repacked to consolidate partially-filled magazines into full magazines.</Original>
-                <Russian>При включении боеприпасные магазины можно переупаковать, чтобы объединить частично заполненные магазины в полные магазины.</Russian>
+                <Russian>При включении боеприпасы в инвентаре можно переупаковать, чтобы объединить частично заполненные магазины в полные магазины.</Russian>
                 <Chinesesimp>启用后，弹匣可重新整理，以便将部分填充的弹匣合并为完整弹匣。</Chinesesimp>
                 <Korean>활성화하면 탄약 탄창을 다시 장전하여 부분적으로 채워진 탄창을 완전한 탄창으로 통합할 수 있습니다.</Korean>
                 <French>Lorsqu'elle est activée, les chargeurs de munitions peuvent être rechargés pour consolider les chargeurs partiellement remplis en chargeurs pleins.</French>
@@ -6212,7 +6212,7 @@
             </Key>
             <Key ID="STR_params_ReloadRepackTurretMagazines_desc">
                 <Original>When enabled, vehicle turret magazines can be repacked to consolidate partially-filled magazines into full magazines.</Original>
-                <Russian>При включении магазины башни транспортного средства можно переупаковать, чтобы объединить частично заполненные магазины в полные магазины.</Russian>
+                <Russian>При включении магазины турели или башни техники можно переупаковать, чтобы объединить частично заполненные магазины в полные магазины.</Russian>
                 <Chinesesimp>启用后，车辆炮塔弹匣可重新整理，以便将部分填充的弹匣合并为完整弹匣。</Chinesesimp>
                 <Korean>활성화하면 차량 포탑 탄창을 다시 장전하여 부분적으로 채워진 탄창을 완전한 탄창으로 통합할 수 있습니다.</Korean>
                 <French>Lorsqu'elle est activée, les chargeurs de tourelle de véhicule peuvent être rechargés pour consolider les chargeurs partiellement remplis en chargeurs pleins.</French>
@@ -6227,7 +6227,7 @@
             </Key>
             <Key ID="STR_params_playerIcons_desc">
                 <Original>Enable 3D icons above unconscious players to aid in locating and reviving them.</Original>
-                <Russian>Включает 3D-иконки над без сознания игроками для облегчения поиска и реанимации.</Russian>
+                <Russian>Включает 3D-иконки над тяжелораненными игроками для облегчения поиска и реанимации.</Russian>
                 <Chinesesimp>在昏迷玩家上方启用3D图标，便于定位和复活。</Chinesesimp>
                 <Korean>의식 불명 플레이어 위에 3D 아이콘을 활성화하여 위치 파악 및 소생을 돕습니다.</Korean>
                 <French>Active des icônes 3D au-dessus des joueurs inconscients pour faciliter leur localisation et réanimation.</French>
@@ -6242,14 +6242,14 @@
             </Key>
             <Key ID="STR_params_fastTravelEnemyCheck_desc">
                 <Original>When checking for nearby enemies before allowing fast travel, should the check include only enemies near to the player attempting to fast travel, or enemies near to any unit in the player's squad?</Original>
-                <Russian>При проверке близлежащих врагов перед разрешением быстрого перемещения должна ли проверка включать только врагов рядом с игроком, пытающимся быстро перемещаться, или врагов рядом с любым юнитом в отряде игрока?</Russian>
+                <Russian>При проверке на наличие врагов поблизости перед быстрым перемещением, должна ли проверка проводиться только рядом с игроком, или также рядом с техникой и бойцами в его отряде?</Russian>
                 <Chinesesimp>检查快速旅行前附近敌人时，检查应仅包括靠近尝试快速旅行的玩家的敌人，还是靠近玩家小队中任何单位的敌人？</Chinesesimp>
                 <Korean>빠른 이동을 허용하기 전에 근처 적을 확인할 때, 확인에는 빠른 이동을 시도하는 플레이어 근처의 적만 포함되어야 하는가, 아니면 플레이어 분대의 모든 유닛 근처의 적이 포함되어야 하는가?</Korean>
                 <French>Lors de la vérification des ennemis proches avant d'autoriser les déplacements rapides, la vérification doit-elle inclure uniquement les ennemis près du joueur tentant le déplacement rapide, ou les ennemis près de toute unité de l'escouade du joueur ?</French>
             </Key>
             <Key ID="STR_params_fastTravelEnemyCheck_player">
                 <Original>Check for player only</Original>
-                <Russian>Проверять только путешествующих игроков</Russian>
+                <Russian>Проверять только игроков</Russian>
                 <Chinesesimp>检查玩家</Chinesesimp>
                 <Korean>플레이어만 확인</Korean>
                 <French>Vérification pour le joueur uniquement</French>
@@ -6317,7 +6317,7 @@
             </Key>
             <Key ID="STR_params_enable_HR_cap_desc">
                 <Original>Enable a cap on rebel manpower to limit exponential growth and keep balance under control.</Original>
-                <Russian>Включите ограничение на людские ресурсы повстанцев, чтобы предотвратить экспоненциальный рост и сохранить баланс.</Russian>
+                <Russian>Включает ограничение на людские ресурсы повстанцев, чтобы предотвратить экспоненциальный рост и сохранить баланс.</Russian>
                 <Chinesesimp>启用抵抗军人力上限以限制指数增长并保持平衡。</Chinesesimp>
                 <Korean>반란군 인력의 상한을 활성화하여 급속한 성장을 제한하고 밸런스를 유지합니다.</Korean>
                 <French>Activer un plafond sur la main-d'œuvre rebelle pour limiter la croissance exponentielle et préserver l'équilibre.</French>
@@ -6347,7 +6347,7 @@
             </Key>
             <Key ID="STR_params_rallyPointSpawnCount_desc">
                 <Original>Controls how many times a rally point (fast travel target) can be used before it is removed.</Original>
-                <Russian>Управляет количеством раз, которое может быть использована точка сбора (цель быстрого перемещения), прежде чем она будет удалена.</Russian>
+                <Russian>Управляет количеством раз, которое может быть использована точка сбора (пункт назначения для быстрого перемещения), прежде чем она будет удалена.</Russian>
                 <Chinesesimp>控制集结点（快速旅行目标）在被移除前可使用多少次。</Chinesesimp>
                 <Korean>집결 지점(빠른 이동 대상)을 제거하기 전에 몇 번 사용할 수 있는지 제어합니다.</Korean>
                 <French>Contrôle le nombre de fois qu'un point de rassemblement (destination de voyage rapide) peut être utilisé avant sa suppression.</French>
@@ -6370,7 +6370,7 @@
             </Key>
             <Key ID="STR_params_aiControlTime_desc">
                 <Original>Sets the maximum allowed time (seconds) a player may control an AI unit before returning control to the AI.</Original>
-                <Russian>Устанавливает максимальное допустимое время (в секундах), в течение которого игрок может управлять юнитом ИИ перед возвратом управления ИИ.</Russian>
+                <Russian>Устанавливает максимальное допустимое время (в секундах), в течение которого игрок может управлять ИИ-бойцом перед возвратом управления ИИ.</Russian>
                 <Chinesesimp>设置玩家在将控制权返回给人工智能前可以控制人工智能单位的最长允许时间（秒）。</Chinesesimp>
                 <Korean>플레이어가 AI에 제어를 반환하기 전에 AI 유닛을 제어할 수 있는 최대 허용 시간(초)을 설정합니다.</Korean>
                 <French>Définit le temps maximum autorisé (en secondes) pendant lequel un joueur peut contrôler une unité IA avant de rendre le contrôle à l'IA.</French>
@@ -6385,7 +6385,7 @@
             </Key>
             <Key ID="STR_params_playerRecruitAI_desc">
                 <Original>Allow players to recruit AI units. When enabled, players can recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
-                <Russian>Разрешить игрокам нанимать юниты ИИ. При включении игроки могут нанимать сдавшихся врагов ИИ в свою фракцию, либо увеличивая ЧР, либо добавляя личный состав в отряд игрока.</Russian>
+                <Russian>Разрешить игрокам нанимать ИИ-бойцов. При включении игроки могут нанимать сдавшихся врагов ИИ в свою фракцию, либо увеличивая ЛР, либо добавляя личный состав в отряд игрока.</Russian>
                 <Chinesesimp>允许玩家招募人工智能单位。启用时，玩家可以将投降的敌方人工智能招募到其阵营，增加人力资源或向玩家分队增加人员。</Chinesesimp>
                 <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 항복한 적 AI를 자신의 진영으로 모집할 수 있으며, 인적 자원을 늘리거나 플레이어 분대에 인원을 추가할 수 있습니다.</Korean>
                 <French>Autoriser les joueurs à recruter des unités IA. Lorsqu'elle est activée, les joueurs peuvent recruter des IA ennemies reddues à leur faction, augmentant soit les RH, soit ajoutant du personnel à l'escouade du joueur.</French>
@@ -6400,7 +6400,7 @@
                 </Key>
             <Key ID="STR_params_enableVehicleAutoLock_desc">
                 <Original>Should unoccupied enemy vehicles be locked automatically, requiring lockpicking by an engineer rebel?</Original>
-                <Russian>Должны ли незанятые вражеские машины автоматически блокироваться, требуя взлома замков инженерным повстанцем?</Russian>
+                <Russian>Должны ли незанятые вражеские машины автоматически блокироваться, требуя взлома замков инженером-повстанцем?</Russian>
                 <Chinesesimp>空置的敌方车辆是否应该自动锁定，需要工程师叛军开锁？</Chinesesimp>
                 <Korean>비어 있는 적 차량은 자동으로 잠겨서 엔지니어 반란군이 자물쇠 따기를 해야 하나요?</Korean>
                 <French>Les véhicules ennemis inoccupés doivent-ils être verrouillés automatiquement, nécessitant un crochetage par un rebelle ingénieur?</French>
@@ -6414,7 +6414,7 @@
             </Key>
             <Key ID="STR_params_enableVehicleAutoLockCiv_desc">
                 <Original>Should unoccupied civilian vehicles be locked automatically, requiring lockpicking by an engineer rebel?</Original>
-                <Russian>Должны ли свободные гражданские автомобили автоматически блокироваться, требуя вскрытия замков инженером-повстанцем?</Russian>
+                <Russian>Должны ли пустые гражданские автомобили автоматически блокироваться, требуя вскрытия замков инженером-повстанцем?</Russian>
                 <Chinesesimp>空置的民用车辆是否应该自动锁闭，需要工程师叛军开锁？</Chinesesimp>
                 <Korean>비인 민간 차량은 자동으로 잠겨서 엔지니어 반군이 자물쇠 따기를 해야 할까요?</Korean>
                 <French>Les véhicules civils inoccupés doivent-ils être verrouillés automatiquement, nécessitant le crochetage par un rebelle ingénieur?</French>
@@ -6444,7 +6444,7 @@
             </Key>
             <Key ID="STR_params_recruitToPlayerSquad_desc">
                 <Original>When enabled, recruited AI will join the player's squad directly rather than returning to rebel HQ and increasing the rebel HR pool.</Original>
-                <Russian>При включении набранный ИИ присоединится к отряду игрока напрямую, а не вернётся на базу повстанцев и не пополнит резерв ЧР повстанцев.</Russian>
+                <Russian>При включении присоединившиеся ИИ будут вступать в отряд игрока напрямую, а не возвращаться в штаб-квартиру, чтобы пополнить резерв ЛР повстанцев.</Russian>
                 <Chinesesimp>启用后，招募的AI将直接加入玩家小队，而不是返回反抗军总部并增加反抗军人力资源库。</Chinesesimp>
                 <Korean>활성화하면 모집된 AI는 반군 본부로 돌아가거나 반군 인력 자원 풀을 증가시키는 대신 플레이어 분대에 직접 합류합니다.</Korean>
                 <French>Lorsqu'elle est activée, l'IA recrutée rejoint directement l'escouade du joueur plutôt que de retourner au QG des rebelles et d'augmenter le réservoir de ressources humaines des rebelles.</French>
@@ -6459,7 +6459,7 @@
             </Key>
             <Key ID="STR_params_enablePunishments_desc">
                 <Original>Enable or disable invader faction sending attacks to permanently destroy rebel-controlled civilian towns.</Original>
-                <Russian>Включить или отключить отправку атак фракцией захватчиков для окончательного уничтожения контролируемых повстанцами гражданских городов.</Russian>
+                <Russian>Включить или отключить отправку атак фракцией захватчиков для окончательного уничтожения контролируемых повстанцами населённых пунктов.</Russian>
                 <Chinesesimp>启用或禁用入侵者阵营发起攻击，以永久摧毁反抗军控制的平民城镇。</Chinesesimp>
                 <Korean>침략자 진영이 공격을 보내 반군이 통제하는 민간 도시를 영구적으로 파괴하는 기능을 활성화 또는 비활성화합니다.</Korean>
                 <French>Activer ou désactiver les attaques envoyées par la faction envahisseurs pour détruire définitivement les villes civiles contrôlées par les rebelles.</French>
@@ -6481,7 +6481,7 @@
             </Key>
             <Key ID="STR_params_attackTiming">
                 <Original>Attack Timing - enemy massive attack frequency (in minutes, base value affected by various conditions and modifiers)</Original>
-                <Russian>Частота массивной атаки противника (в минутах, базовое значение зависит от различных условий и модификаторов).</Russian>
+                <Russian>Частота больших атак противника (в минутах, базовое значение зависит от различных условий и модификаторов).</Russian>
                 <Chinesesimp>敌人的大规模攻击频率（以分钟为单位，基础值受各种条件和修改器影响）</Chinesesimp>
                 <Korean>공격 타이밍 - 적의 대규모 공격 빈도 (분 단위, 다양한 조건과 변형에 영향에 따라 기본값이 달라짐)</Korean>
                 <French>Fréquence des attaques massives de l'ennemi (en minutes, la valeur de base dépend de différentes conditions et modificateurs)</French>
@@ -6489,7 +6489,7 @@
             </Key>
             <Key ID="STR_params_ironManMode">
                 <Original>Iron Man Mode - Petros will have a single life. If he dies, the game will end and the save will be erased.</Original>
-                <Russian>Режим Железной Воли - У Петроса одна жизнь, игра закончится и сохранение затрётся при его смерти</Russian>
+                <Russian>Режим Железной Воли - у Петроса одна жизнь, игра закончится и сохранение затрётся при его смерти</Russian>
                 <Chinesesimp>钢铁侠模式-Petros只有一条命，死亡就游戏结束，存档也会被清空</Chinesesimp>
                 <Korean>아이언맨 모드 - 페트로스는 목숨이 하나 뿐이며 그가 죽으면 게임은 끝날 것이며, 세이브도 지워집니다</Korean>
                 <French>Mode Iron Man - Petros n'aura qu'une seule vie et le jeu se terminera s'il meurt, les sauvegardes seront également effacées.</French>
@@ -6513,7 +6513,7 @@
             </Key>
             <Key ID="STR_params_randomEvents_desc">
                 <Original>Enable or disable random world events. When enabled, occasional events may appear that alter gameplay and create variety.</Original>
-                <Russian>Включить или отключить случайные мировые события. При включении могут появляться случайные события, которые изменяют игровой процесс и создают разнообразие.</Russian>
+                <Russian>Включить или отключить случайные мировые события. При включении иногда могут происходить события, которые изменяют игровой процесс и создают разнообразие.</Russian>
                 <Chinesesimp>启用或禁用随机世界事件。启用后，可能出现改变游戏玩法并创造多样性的临时事件。</Chinesesimp>
                 <Korean>임의의 월드 이벤트를 활성화 또는 비활성화합니다. 활성화하면 게임플레이를 변경하고 다양성을 만드는 때때로 이벤트가 나타날 수 있습니다.</Korean>
                 <French>Activer ou désactiver les événements mondiaux aléatoires. Lorsqu'elle est activée, des événements occasionnels peuvent apparaître qui modifient le jeu et créent de la variété.</French>
@@ -6528,7 +6528,7 @@
             </Key>
             <Key ID="STR_params_areRivalsEnabled_desc">
                 <Original>Enable or disable the rival rebel subfaction. When enabled, competing rebel groups will act independently and may interfere with your operations.</Original>
-                <Russian>Включает или отключает соперничающую субфракцию повстанцев. При включении конкурирующие группы повстанцев будут действовать самостоятельно и могут мешать вашим операциям.</Russian>
+                <Russian>Включает или отключает соперничающую подфракцию повстанцев. При включении конкурирующие группы повстанцев будут действовать самостоятельно и могут мешать вашим операциям.</Russian>
                 <Chinesesimp>启用或禁用敌对抵抗军子派系。启用后，竞争的反抗组织会独立行动，并可能干扰你的行动。</Chinesesimp>
                 <Korean>라이벌 반란 서브팩션을 활성화/비활성화합니다. 활성화 시 경쟁하는 반군 그룹이 독립적으로 행동하며 작전에 지장을 줄 수 있습니다.</Korean>
                 <French>Activer ou désactiver la sous-faction rebelle rivale. Lorsqu'elle est activée, des groupes rebelles concurrents agiront indépendamment et pourront gêner vos opérations.</French>
@@ -6598,7 +6598,7 @@
             </Key>
             <Key ID="STR_params_LogLevel_desc">
                 <Original>Sets logging verbosity for debug output; higher levels produce more detailed logs in the .rpt file.</Original>
-                <Russian>Устанавливает уровень детализации журналирования; более высокие значения приводят к подробным записям в .rpt файле.</Russian>
+                <Russian>Устанавливает уровень детализации логирования; более высокие значения приводят к подробным записям в .rpt файле, увеличивая объём и нагрузку на носитель.</Russian>
                 <Chinesesimp>设置日志详细级别；更高级别将在 .rpt 文件中生成更详细的日志。</Chinesesimp>
                 <Korean>디버그 출력의 로그 상세 수준을 설정합니다. 높은 수준은 .rpt 파일에 더 자세한 로그를 생성합니다.</Korean>
                 <French>Définit la verbosité des journaux ; des niveaux supérieurs engendrent des logs plus détaillés dans le fichier .rpt.</French>
@@ -6613,7 +6613,7 @@
             </Key>
             <Key ID="STR_params_A3A_logDebugConsole_desc">
                 <Original>Create a server log entry when certain types of players use the debug console. No players, all non-developer players, or all players.</Original>
-                <Russian>Создаёт запись в журнале сервера, когда определённые типы игроков используют отладочную консоль. Нет игроков, все неразработчики или все игроки.</Russian>
+                <Russian>Создаёт запись в логе сервера, когда определённые типы игроков используют отладочную консоль. Режимы: игнорировать всех, логировать только тех, кто не является разработчиком или логировать всех.</Russian>
                 <Chinesesimp>当某些类型的玩家使用调试控制台时创建服务器日志条目。没有玩家，所有非开发者玩家，或所有玩家。</Chinesesimp>
                 <Korean>특정 유형의 플레이어가 디버그 콘솔을 사용할 때 서버 로그 항목을 생성합니다. 플레이어 없음, 모든 비개발자 플레이어 또는 모든 플레이어.</Korean>
                 <French>Créer une entrée de journal serveur lorsque certains types de joueurs utilisent la console de débogage. Aucun joueur, tous les joueurs non-développeurs ou tous les joueurs.</French>
@@ -6636,7 +6636,7 @@
             </Key>
             <Key ID="STR_params_A3A_logDebugConsole_all">
                 <Original>All</Original>
-                <Russian>Логировать всё</Russian>
+                <Russian>Логировать всех</Russian>
                 <Chinesesimp>全部</Chinesesimp>
                 <Korean>모두</Korean>
                 <French>Tout</French>
@@ -6652,7 +6652,7 @@
             </Key>
             <Key ID="STR_params_allowCivDialog">
                 <Original>Allow talking to civilians</Original>
-                <Russian>Разрешить разговоры с гражданскими</Russian>
+                <Russian>Разрешить разговаривать с гражданскими</Russian>
                 <German>Gespräche mit Zivilisten erlauben</German>
                 <Italian>Permetti di parlare con i civili</Italian>
                 <Spanish>Permitir hablar con civiles</Spanish>
@@ -6675,13 +6675,13 @@
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
-                <Russian>Игнорировать условия разблокировки транспорта на чёрном рынке</Russian>
+                <Russian>Игнорировать условия разблокировки техники на чёрном рынке</Russian>
                 <Korean>암시장 차량 요구사항 무시</Korean>
                 <Turkish>Karaborsa Araç Gereksinimlerini Yoksay</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements_desc">
                 <Original>When enabled, the black market ignores unlock requirements for vehicles, making them purchasable regardless of war level or zones controlled by rebel faction.</Original>
-                <Russian>При включении чёрный рынок игнорирует требования разблокировки для транспортных средств, позволяя покупать их независимо от уровня войны или зон, контролируемых фракцией повстанцев.</Russian>
+                <Russian>При включении чёрный рынок игнорирует требования разблокировки для техники, позволяя покупать их независимо от уровня войны или зон, контролируемых повстанцами.</Russian>
                 <Chinesesimp>启用时，黑市会忽略车辆的解锁要求，使其可购买，不论战争级别或反抗军阵营控制的区域如何。</Chinesesimp>
                 <Korean>활성화하면 암시장은 차량의 언락 요구사항을 무시하여 전쟁 수준이나 반군 진영이 통제하는 지역과 관계없이 구매 가능하게 합니다.</Korean>
                 <French>Lorsqu'elle est activée, la marché noir ignore les conditions de déblocage des véhicules, les rendant achetables indépendamment du niveau de guerre ou des zones contrôlées par la faction rebelle.</French>
@@ -6694,7 +6694,7 @@
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle_desc">
                 <Original>Sets the discount percentage applied to vehicles in the black market; higher values reduce purchase cost.</Original>
-                <Russian>Устанавливает процент скидки на транспорт на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
+                <Russian>Устанавливает процент скидки на технику на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
                 <Chinesesimp>设置黑市车辆的折扣百分比；更高的值降低购买成本。</Chinesesimp>
                 <Korean>암시장에서 차량에 적용되는 할인 비율을 설정합니다. 값이 클수록 구매 비용이 줄어듭니다.</Korean>
                 <French>Définit le pourcentage de remise appliqué aux véhicules sur le marché noir ; des valeurs plus élevées réduisent le coût d'achat.</French>
@@ -6707,7 +6707,7 @@
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon_desc">
                 <Original>Sets the discount percentage applied to weapons/equipment in the black market.</Original>
-                <Russian>Устанавливает процент скидки на оружие/экипировку на черном рынке.</Russian>
+                <Russian>Устанавливает процент скидки на оружие и экипировку на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
                 <Chinesesimp>设置黑市武器/装备的折扣百分比。</Chinesesimp>
                 <Korean>암시장에서 무기/장비에 적용되는 할인 비율을 설정합니다.</Korean>
                 <French>Définit le pourcentage de remise appliqué aux armes/équipements sur le marché noir.</French>
@@ -6721,7 +6721,7 @@
             </Key>
             <Key ID="STR_params_enableSpectrumDevice_desc">
                 <Original>Toggle availability of the spectrum device support item and its effects in-game.</Original>
-                <Russian>Переключает доступность устройства спектра и его эффекты в игре.</Russian>
+                <Russian>Переключает доступность spectrum device и его эффекты в игре.</Russian>
                 <Chinesesimp>切换频谱设备支援物品及其在游戏中的效果是否可用。</Chinesesimp>
                 <Korean>스펙트럼 장치 지원 아이템의 사용 가능 여부와 게임 내 효과를 전환합니다.</Korean>
                 <French>Active ou désactive la disponibilité du dispositif spectre et ses effets en jeu.</French>
@@ -6735,7 +6735,7 @@
             </Key>
             <Key ID="STR_params_disableAutoSmokeCover_desc">
                 <Original>Disable the automatic smoke cover script to save CPU; disabling may reduce some tactical automatic behaviour.</Original>
-                <Russian>Отключает автоматический скрипт дымовой завесы для экономии CPU; это может уменьшить автоматическое тактическое поведение.</Russian>
+                <Russian>Отключает автоматический скрипт дымовой завесы для экономии CPU; это может изменить некоторое автоматическое тактическое поведение.</Russian>
                 <Chinesesimp>禁用自动烟雾掩护脚本以节省CPU；禁用后某些战术自动行为可能减少。</Chinesesimp>
                 <Korean>CPU 절약을 위해 자동 연막 엄폐 스크립트를 비활성화합니다. 비활성화하면 일부 전술 자동 동작이 감소할 수 있습니다.</Korean>
                 <French>Désactive le script de brouillard automatique pour économiser le CPU ; cela peut réduire certains comportements tactiques automatiques.</French>
@@ -6750,7 +6750,7 @@
             </Key>
             <Key ID="STR_params_allowUnfairSupports_desc">
                 <Original>Toggle whether the enemy is allowed to call in unbalanced supports; enabling may increase difficulty unpredictably.</Original>
-                <Russian>Включает/отключает возможность призыва несправедливой поддержки противником; включение может непредсказуемо повысить сложность.</Russian>
+                <Russian>Включает/отключает возможность вызова несправедливой поддержки противником; включение может непредсказуемо повысить сложность.</Russian>
                 <Chinesesimp>切换是否允许敌人调用不平衡支援；启用可能不可预测地增加难度。</Chinesesimp>
                 <Korean>적이 불공평한 지원을 호출할 수 있는지 여부를 전환합니다. 활성화하면 난이도가 예측 불가능하게 증가할 수 있습니다.</Korean>
                 <French>Active ou désactive la possibilité pour l'ennemi d'appeler des soutiens déséquilibrés ; l'activation peut augmenter la difficulté de façon imprévisible.</French>
@@ -6772,7 +6772,7 @@
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
                 <Original>Number of loadouts to generate for each unit type</Original>
-                <Russian>Количество комплектов снаряжения для каждого типа юнитов</Russian>
+                <Russian>Количество комплектов снаряжения для каждого типа бойцов</Russian>
                 <Chinesesimp>每种单位类型要生成的配置数量</Chinesesimp>
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité</French>
@@ -6780,21 +6780,21 @@
             </Key>
             <Key ID="STR_params_loadoutsToGenerate_desc">
                 <Original>Number of AI custom loadouts generated per unit type. Higher values increase variety but may significantly increase load times.</Original>
-                <Russian>Количество пользовательских наборов снаряжения ИИ для каждого типа юнитов. Большее значение повышает разнообразие, но увеличивает время загрузки.</Russian>
+                <Russian>Создаёт указанное количество вариантов снаряжения для каждого типа ИИ-бойцов. Большее значение повышает разнообразие, но может существенно увеличить время загрузки.</Russian>
                 <Chinesesimp>每种单位类型生成的AI自定义装备数量。更高数值增加多样性但会显著增加加载时间。</Chinesesimp>
                 <Korean>단위 유형별로 생성되는 AI 커스텀 로드아웃 수입니다. 값이 클수록 다양성은 증가하지만 로드 시간이 길어집니다.</Korean>
                 <French>Nombre de chargements personnalisés de l'IA générés par type d'unité. Des valeurs plus élevées augmentent la variété mais peuvent allonger considérablement les temps de chargement.</French>
                 </Key>
             <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_title">
                 <Original>Location defense/capture area</Original>
-                <Russian>Зона захвата/защиты локации</Russian>
+                <Russian>Область захвата/защиты локации</Russian>
                 <Chinesesimp>位置防御/捕获区域</Chinesesimp>
                 <Korean>위치 방어/점령 지역</Korean>
                 <French>Zone de défense/capture de l'emplacement</French>
             </Key>
             <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_tooltip">
                 <Original>When capturing/defending locations, use an additional circular area diameter around the flag AND the full zone size to consider unit presences.</Original>
-                <Russian>При захвате/защите локаций используйте дополнительную круговую область вокруг флага И полный размер зоны для учета присутствия юнитов.</Russian>
+                <Russian>При захвате/защите локаций будет использована дополнительная круговая область вокруг флага И полный размер зоны для учета присутствия врагов/союзников.</Russian>
                 <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域和整个区域大小来考虑单位存在。</Chinesesimp>
                 <Korean>위치를 점령/방어할 때, 깃발 주위의 추가 원형 영역과 전체 구역 크기를 사용하여 유닛 존재를 고려합니다.</Korean>
                 <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau ET la taille complète de la zone pour considérer la présence des unités.</French>
@@ -6808,7 +6808,7 @@
             </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>
-                <Russian>Старт только с разблокированным пистолетом</Russian>
+                <Russian>Старт только с разблокированными пистолетами</Russian>
                 <Chinesesimp>仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
@@ -6816,7 +6816,7 @@
             </Key>
             <Key ID="STR_params_pistolStart_desc">
                 <Original>If enabled, the only permanently-unlocked weapons rebels will have at campagin start are pistols.</Original>
-                <Russian>При включении единственным окончательно разблокированным оружием, которое будут иметь повстанцы в начале кампании, будут пистолеты.</Russian>
+                <Russian>При включении единственным разблокированным оружием, которое будут иметь повстанцы в начале кампании, будут пистолеты.</Russian>
                 <Chinesesimp>如果启用，反抗军在战役开始时唯一永久解锁的武器将是手枪。</Chinesesimp>
                 <Korean>활성화하면 반군이 캠페인 시작 시 가질 수 있는 유일한 영구적으로 잠금 해제된 무기는 권총입니다.</Korean>
                 <French>Si activé, la seule arme déverrouillée de manière permanente que les rebelles auront au début de la campagne sera les pistolets.</French>
@@ -6831,7 +6831,7 @@
             </Key>
             <Key ID="STR_params_loadoutArsenalDefaultOverride_desc">
                 <Original>If enabled, legacy custom loadout behavior will be preserved; when saving a loadout, all items in the loadout will be saved unless specifically excluded. If disabled, only the items in tabs specifically enabled will be saved. All other items will be randomized.</Original>
-                <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Все остальные предметы будут рандомизированы.</Russian>
+                <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Предметы в несохранённых вкладках будут рандомизированы.</Russian>
                 <Chinesesimp>启用时，会保留旧版自定义装备行为；保存装备时，除非被明确排除，否则装备中的所有物品都会被保存。禁用时，只有在专门启用的选项卡中的物品会被保存，其他所有物品将被随机化。</Chinesesimp>
                 <Korean>활성화하면 기존 커스텀 로드아웃 동작이 유지됩니다. 로드아웃을 저장할 때 명시적으로 제외하지 않는 한 로드아웃의 모든 항목이 저장됩니다. 비활성화하면 명시적으로 활성화된 탭의 항목만 저장되며, 나머지 항목은 무작위로 선택됩니다.</Korean>
                 <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
@@ -6839,7 +6839,7 @@
             </Key>
             <Key ID="STR_params_limitWeaponsByUnitType">
                 <Original>Limit AI custom loadout weapon selections by unit type</Original>
-                <Russian>Ограничение выбора пользовательского оружия ИИ по типу бойцов</Russian>
+                <Russian>Ограничение выбора оружия ИИ по типу бойцов</Russian>
                 <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
                 <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
                 <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
@@ -6847,7 +6847,7 @@
             </Key>
             <Key ID="STR_params_limitWeaponsByUnitType_desc">
                 <Original>When enabled, AI custom loadouts will limit available weapons according to the type of unit. For example, only machingunners may be equipped with machine guns, and only anti-aircraft specialists can equip anti-aircraft missile launchers. When disabled, any AI can be equipped with any weapon according to unlock parameters.</Original>
-                <Russian>При включении пользовательские загрузки ИИ будут ограничивать доступное оружие в зависимости от типа юнита. Например, только пулемётчики могут быть снабжены пулемётами, а только специалисты ПВО могут снаряжаться ракетными системами ПВО. При отключении любой ИИ может быть снабжен любым оружием в соответствии с параметрами разблокировки.</Russian>
+                <Russian>При включении создание комплектов снаряжения для ИИ-бойцов повстанцев будет ограничено в зависимости от типа бойца. Например, только пулемётчики могут быть снабжены пулемётами, и только специалисты ПВО могут снаряжаться ракетными системами ПВО. При отключении любой ИИ может быть снабжен любым оружием в соответствии с параметрами разблокировки.</Russian>
                 <Chinesesimp>启用后，人工智能自定义装备将根据单位类型限制可用武器。例如，只有机枪手可以配备机枪，只有防空专家才能配备防空导弹发射器。禁用时，任何人工智能都可以根据解锁参数配备任何武器。</Chinesesimp>
                 <Korean>활성화하면 AI 사용자 정의 로드아웃은 단위 유형에 따라 사용 가능한 무기를 제한합니다. 예를 들어 기관총 사수만 기관총으로 무장할 수 있으며 대공 전문가만 대공 미사일 발사기를 장착할 수 있습니다. 비활성화하면 모든 AI는 언락 매개변수에 따라 모든 무기로 무장할 수 있습니다.</Korean>
                 <French>Lorsqu'elle est activée, les charges personnalisées d'IA limiteront les armes disponibles selon le type d'unité. Par exemple, seuls les mitrailleurs peuvent être équipés de mitrailleuses, et seuls les spécialistes de la défense aérienne peuvent s'équiper de lanceurs de missiles anti-aériens. Lorsqu'elle est désactivée, tout IA peut être équipé de n'importe quelle arme selon les paramètres de déblocage.</French>
@@ -6886,14 +6886,14 @@
             </Key>
             <Key ID="STR_params_unconChance_lockCondition">
                 <Original>This parameter is locked because ACE Medical is enabled, which disables Antistasi's unconscious / revive system.</Original>
-                <Russian>Этот параметр заблокирован, потому что активирован ACE Medical, который отключает бессознательную/возрожденную систему Антистаси.</Russian>
+                <Russian>Этот параметр заблокирован, потому что активирован ACE Medical, который отключает в Antistasi систему потери сознания/возрождения.</Russian>
                 <Chinesesimp>这个参数被锁定是因为启用了ACE医疗，这会禁用Antistasi的无意识/复活系统。</Chinesesimp>
                 <Korean>이 매개변수는 ACE Medical이 활성화되어 Antistasi의 무의식/부활 시스템을 비활성화하기 때문에 잠겨 있습니다.</Korean>
                 <French>Ce paramètre est verrouillé car ACE Medical est activé, ce qui désactive le système d'inconscience / de réanimation d'Antistasi.</French>
             </Key>
             <Key ID="STR_params_enableVehiclesForAI">
                 <Original>Enable AI to man vehicles left near friendly markers by default</Original>
-                <Russian>По умолчанию разрешите ИИ управлять турелями и орудиями транспортных средств, оставленными рядом с дружественными маркерами</Russian>
+                <Russian>По умолчанию разрешить ИИ управлять турелями и орудиями техники, оставленной рядом с дружественными маркерами</Russian>
                 <Chinesesimp>默认启用AI作放置在友方标记附近的车辆</Chinesesimp>
                 <Korean>기본적으로 아군 표식 근처에 배치된 차량을 AI가 조작하도록 활성화하세요</Korean>
                 <French>Permettre à l'IA de manœuvrer par défaut les véhicules laissés près des marqueurs alliés</French>
@@ -6901,7 +6901,7 @@
             </Key>
             <Key ID="STR_params_enableVehiclesForAI_desc">
                 <Original>Enable rebel AI to man vehicles (commander / gunner seat) left near friendly markers by default. Note that players can still still enable or disable AI use of specific vehicles by interacting with the vehicle.</Original>
-                <Russian>По умолчанию разрешите ИИ повстанцев садиться на места командира и стрелка в технике, оставленной рядом с маркерами. Обратите внимание, что игроки всё ещё могут запретить или разрешить ИИ использование отдельной техники через действие на ней.</Russian>
+                <Russian>По умолчанию разрешить ИИ повстанцев садиться на места командира и стрелка в технике, оставленной рядом с дружественными маркерами. Обратите внимание, что игроки всё ещё могут запретить или разрешить ИИ использование отдельной техники через действие на ней.</Russian>
                 <Chinesesimp>默认让叛军AI作留在友军标记附近的车辆（指挥官/炮手座位）。请注意，玩家仍然可以通过与载具互动来启用或禁用AI对特定载具的使用。</Chinesesimp>
                 <Korean>기본적으로 아군 표시 근처에 남겨둔 차량(지휘관/포수 좌석)을 조작할 수 있도록 반란군 AI를 활성화하세요. 플레이어는 여전히 특정 차량과 상호작용하여 AI 사용을 활성화하거나 비활성화할 수 있습니다.</Korean>
                 <French>Activez par défaut l'IA rebelle pour manœuvrer les véhicules (siège commandant / mitrailleuse) laissés près des marqueurs alliés par défaut. Notez que les joueurs peuvent toujours activer ou désactiver l'utilisation de véhicules spécifiques par l'IA en interagissant avec le véhicule.</French>
@@ -6925,7 +6925,7 @@
             </Key>
             <Key ID="STR_params_disablePATCOMMortars_desc">
                 <Original>Disables virtual and PATCOM artillery.\nVirtual artillery is artillery that technically exists in the world, but can't reasonably be countered.\nPATCOM artillery is the AI handler for physical artillery, resulting in unfair accuracy and reaction.</Original>
-                <Russian>Отключает виртуальную артиллерию и артиллерию PATCOM.\nВиртуальная артиллерия технически существует в мире, но не может быть эффективно подавлена.\nАртиллерия PATCOM — это ИИ-управление физической артиллерией, приводящее к нечестной точности и скорости реакции.</Russian>
+                <Russian>Отключает виртуальную артиллерию и артиллерию PATCOM.\nВиртуальная артиллерия - это артиллерия, которая технически существует в мире, но не может быть эффективно подавлена.\nАртиллерия PATCOM — это ИИ-управление физической артиллерией, приводящее к нечестной точности и скорости реакции.</Russian>
                 <German>Deaktiviert virtuelle Artillerie und PATCOM-Artillerie.\nVirtuelle Artillerie existiert technisch in der Spielwelt, kann jedoch nicht sinnvoll bekämpft werden.\nPATCOM-Artillerie ist die KI-Steuerung physischer Artillerie und führt zu unfairer Genauigkeit und Reaktionszeit.</German>
                 <Italian>Disabilita l’artiglieria virtuale e PATCOM.\nL’artiglieria virtuale esiste tecnicamente nel mondo di gioco, ma non può essere contrastata in modo ragionevole.\nL’artiglieria PATCOM è la gestione IA dell’artiglieria fisica, con precisione e reazione ingiustamente elevate.</Italian>
                 <Spanish>Desactiva la artillería virtual y PATCOM.\nLa artillería virtual existe técnicamente en el mundo, pero no puede contrarrestarse de forma razonable.\nLa artillería PATCOM es el controlador de IA de la artillería física, lo que resulta en una precisión y reacción injustas.</Spanish>
@@ -6987,7 +6987,7 @@
             </Key>
             <Key ID="STR_params_CrateOptions">
                 <Original>LOOT CRATE SETTINGS</Original>
-                <Russian>НАСТРОЙКИ ЯЩИКОВ С ЛУТОМ</Russian>
+                <Russian>НАСТРОЙКИ ЯЩИКОВ С ТРОФЕЯМИ</Russian>
                 <Chinesesimp>战利品箱设置</Chinesesimp>
                 <Korean>전리품 상자 설정</Korean>
                 <French>PARAMÈTRES DES CAISSES DE BUTIN</French>
@@ -7026,7 +7026,7 @@
             </Key>
             <Key ID="STR_params_crateWepNumMax_desc">
                 <Original>Maximum total weapon quantity in a crate; affects how many weapons may be found in one crate.</Original>
-                <Russian>Максимальное общее количество оружия в ящике; влияет на число оружия, которое можно найти в одном ящике.</Russian>
+                <Russian>Максимальное общее количество оружия, которое можно найти в одном ящике.</Russian>
                 <Chinesesimp>箱子中最大武器总数；影响单个箱子中可找到的武器数量。</Chinesesimp>
                 <Korean>상자 내 무기 총 수의 최대값입니다. 한 상자에서 발견되는 무기 수에 영향을 줍니다.</Korean>
                 <French>Quantité maximale totale d'armes dans une caisse ; affecte le nombre d'armes pouvant être trouvées.</French>
@@ -7041,7 +7041,7 @@
             </Key>
             <Key ID="STR_params_crateItemTypeMax_desc">
                 <Original>Maximum distinct non-weapon item types in a crate (e.g., attachments, consumables).</Original>
-                <Russian>Максимальное количество различных типов предметов в ящике (например, аттачментов, расходников).</Russian>
+                <Russian>Максимальное количество различных типов предметов в ящике (например, аксессуаров, расходников).</Russian>
                 <Chinesesimp>箱子中非武器物品的最大不同类型数（如附件、消耗品）。</Chinesesimp>
                 <Korean>상자 내 비무기 아이템의 서로 다른 유형 최대 수입니다(예: 부착물, 소비재).</Korean>
                 <French>Nombre maximal de types d'objets non armés distincts dans une caisse (ex : accessoires, consommables).</French>
@@ -7056,7 +7056,7 @@
             </Key>
             <Key ID="STR_params_crateItemNumMax_desc">
                 <Original>Maximum number of non-weapon items in a crate; affects item abundance per crate.</Original>
-                <Russian>Максимальное количество не оружейных предметов в ящике; влияет на обилие предметов.</Russian>
+                <Russian>Максимальное количество неоружейных предметов в ящике; влияет на обилие предметов.</Russian>
                 <Chinesesimp>箱子中非武器物品的最大数量；影响每个箱子的物品丰度。</Chinesesimp>
                 <Korean>상자 내 비무기 아이템의 최대 수량입니다. 상자당 아이템 풍부도에 영향.</Korean>
                 <French>Nombre maximal d'objets non armés dans une caisse ; affecte l'abondance d'articles par caisse.</French>
@@ -7251,7 +7251,7 @@
             </Key>
             <Key ID="STR_params_crateDeviceTypeMax_desc">
                 <Original>Maximum distinct device/backpack types in a crate.</Original>
-                <Russian>Максимальное количество типов устройств/рюкзаков в ящике.</Russian>
+                <Russian>Максимальное количество типов рюкзаков с устройствами в ящике.</Russian>
                 <Chinesesimp>箱子中不同设备/背包类型的最大数量。</Chinesesimp>
                 <Korean>상자 내 서로 다른 장비/가방 유형의 최대 수입니다.</Korean>
                 <French>Nombre maximal de types d'appareils/sacs à dos distincts dans une caisse.</French>
@@ -7266,14 +7266,14 @@
             </Key>
             <Key ID="STR_params_crateDeviceNumMax_desc">
                 <Original>Maximum quantity of device backpacks in a crate.</Original>
-                <Russian>Максимальное количество рюкзаков устройств в ящике.</Russian>
+                <Russian>Максимальное количество рюкзаков с устройствами в ящике.</Russian>
                 <Chinesesimp>箱子中设备背包的最大数量。</Chinesesimp>
                 <Korean>상자에 들어갈 수 있는 최대 장비 가방 수입니다.</Korean>
                 <French>Quantité maximale de sacs à dos d'appareils dans une caisse.</French>
             </Key>
             <Key ID="STR_params_rebelGarrisonGroupSize">
                 <Original>How many rebels can be in one garrison group?</Original>
-                <Russian>Сколько повстанцев может одной группе гарнизона?</Russian>
+                <Russian>Сколько повстанцев может быть в одной группе гарнизона?</Russian>
                 <Chinesesimp>每个驻军小组中的反抗军人数</Chinesesimp>
                 <Korean>한 개 주둔군 그룹에 몇 명의 반군이 포함될 수 있습니까?</Korean>
                 <French>Combien de rebelles peuvent être dans un groupe de garnison ?</French>
@@ -7281,7 +7281,7 @@
             </Key>
             <Key ID="STR_params_rebelGarrisonGroupSize_desc">
                 <Original>How many rebels can be in one garrison group? Total amount of garrison soldiers will be divided by this number and spread into groups.</Original>
-                <Russian>Настраивает количество повстанцев, которые могут быть в одной группе гарнизона. Общее количество бойцов в гарнизоне будет разделено на это число и бойцы будут распределены на группы.</Russian>
+                <Russian>Настраивает количество повстанцев, которые могут быть в одной группе гарнизона. Общее количество бойцов в гарнизоне будет разделено на это число и бойцы будут разбиты на соответствующее количество групп.</Russian>
                 <Chinesesimp>设置每个驻军小组中可包含的反抗军人数。总驻军人数将按此数值分配至各小组。</Chinesesimp>
                 <Korean>한 개 주둔군 그룹에 포함될 수 있는 반군 인원을 설정합니다. 총 주둔군 병력 수를 이 수치로 나누어 각 그룹에 배분됩니다.</Korean>
                 <French>Définit le nombre de rebelles pouvant être dans un groupe de garnison. Le nombre total de soldats de la garnison sera divisé par ce nombre et réparti en groupes.</French>
@@ -7289,7 +7289,7 @@
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit">
                 <Original>How many rebels can be garrisoned?</Original>
-                <Russian>Сколько повстанцев может в гарнизоне?</Russian>
+                <Russian>Сколько повстанцев может быть в гарнизоне?</Russian>
                 <Chinesesimp>抵抗军可以驻守多少？</Chinesesimp>
                 <Korean>얼마나 많은 아군을 주둔시킬 수 있습니까?</Korean>
                 <French>Combien de rebelles peuvent être mis en garnison?</French>
@@ -7297,7 +7297,7 @@
             </Key>
             <Key ID="STR_params_rebelGarrisonLimit_desc">
                 <Original>How many rebel troops can be in garrison (1.5x for airports and milbases, 0.5x for resources and factories). Note that ∞ option may affect performance as there might be too many troops for CPU to handle.</Original>
-                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов). Опция "∞" может влиять на производительность так как в гарнизонах может быть слишком много солдат.</Russian>
+                <Russian>Настраивает максимальное количество повстанцев, которое может быть в гарнизоне (1,5x для аэропортов и военных баз, 0,5x для ресурсов и заводов). Опция "∞" может влиять на производительность, так как в гарнизонах может быть слишком много бойцов.</Russian>
                 <Chinesesimp>有多少反抗军可以驻守(机场和军事基地1.5x，资源和工厂0.5x)。 请注意，无限制选项可能会影响性能，因为 CPU 可能无法处理太多部队。</Chinesesimp>
                 <Korean>주둔지에 얼마나 많은 아군을 주둔시킬 수 있습니까? 무제한 옵션은 CPU가 처리하기에 너무 많은 병력이 있을 수 있으므로 성능에 영향을 미칠 수 있습니다. (공항과 군사 가지의 경우 1.5배, 자원채취소와 공장의 경우 0.5배)</Korean>
                 <French>Nombre de troupes rebelles pouvant se trouver en garnison (1,5x pour les aéroports et les bases militaires, 0,5x pour les ressources et les usines). Notez que l'option Pas de limite peut affecter les performances car il pourrait y avoir trop de troupes pour que le CPU puisse les gérer.</French>
@@ -7351,7 +7351,7 @@
             </Key>
             <Key ID="STR_params_saveZeusBuildings_desc">
                 <Original>When enabled, buildings placed via Zeus are saved persistently between sessions.</Original>
-                <Russian>Если включено, сооружения, размещенные через Зевса, сохраняются между сессиями.</Russian>
+                <Russian>Если включено, сооружения, размещенные через Zeus, сохраняются между сессиями.</Russian>
                 <Chinesesimp>启用后，通过宙斯放置的建筑将在会话间持久保存。</Chinesesimp>
                 <Korean>활성화하면 제우스로 배치된 건물이 세션 간에 영구 저장됩니다.</Korean>
                 <French>Si activé, les constructions placées via Zeus sont sauvegardées de manière persistante entre les sessions.</French>
@@ -7366,7 +7366,7 @@
             </Key>
             <Key ID="STR_params_unconsciousAiPossess_desc">
                 <Original>Allow players to possess or control AI while unconscious; enabling this may let downed players influence the battle for a short time.</Original>
-                <Russian>Разрешить игрокам управлять ИИ, находясь без сознания; включение может позволить упавшим игрокам кратковременно влиять на сражение.</Russian>
+                <Russian>Разрешить игрокам управлять ИИ, находясь без сознания; включение может позволить тяжелораненным игрокам кратковременно влиять на сражение.</Russian>
                 <Chinesesimp>允许玩家在失去意识时控制AI；启用将允许倒地玩家在短时间内影响战局。</Chinesesimp>
                 <Korean>플레이어가 의식불명 상태에서도 AI를 조종할 수 있도록 허용합니다. 활성화하면 쓰러진 플레이어가 짧은 시간 동안 전투에 영향을 줄 수 있습니다.</Korean>
                 <French>Permettre aux joueurs de posséder ou contrôler l'IA lorsqu'ils sont inconscients ; l'activation peut permettre aux joueurs blessés d'influencer brièvement la bataille.</French>
@@ -7381,7 +7381,7 @@
             </Key>
             <Key ID="STR_params_maxConstructions_desc">
                 <Original>Maximum allowed persistent constructions; higher limits increase base complexity but may affect performance.</Original>
-                <Russian>Максимально допустимое количество постоянных конструкций; более высокие пределы увеличивают сложность базы, но могут влиять на производительность.</Russian>
+                <Russian>Максимально допустимое количество постоянных конструкций; более высокие лимиты увеличивают сложность базы, но могут влиять на производительность.</Russian>
                 <Chinesesimp>允许的最大持久建筑数量；更高的限制增加基地复杂性，但可能影响性能。</Chinesesimp>
                 <Korean>허용되는 최대 영구 건설 수입니다. 더 높은 제한은 기지 복잡도를 증가시키지만 성능에 영향을 줄 수 있습니다.</Korean>
                 <French>Nombre maximal de constructions persistantes autorisées ; des limites plus élevées augmentent la complexité des bases mais peuvent affecter les performances.</French>
@@ -7403,7 +7403,7 @@
             </Key>
             <Key ID="STR_params_maxUnits">
                 <Original>Maximum quantity of simultaneously spawnable units</Original>
-                <Russian>Максимальное количество одновременно появляющихся юнитов</Russian>
+                <Russian>Максимальное количество одновременно появляющихся бойцов</Russian>
                 <Chinesesimp>同时生成单位的最大数量</Chinesesimp>
                 <Korean>동시에 생성 가능한 유닛의 최대 수량</Korean>
                 <French>Nombre maximum d'unités pouvant être produites simultanément</French>
@@ -7419,7 +7419,7 @@
             </Key>
             <Key ID="STR_params_reviveKitsEnabled_desc">
                 <Original>Infinite-use revive kits that revive players when downed automatically if equipped.</Original>
-                <Russian>Бесконечные наборы для возрождения, которые автоматически возрождают игроков при падении, если они экипированы.</Russian>
+                <Russian>Бесконечные наборы для возрождения, которые автоматически возрождают игроков при тяжёлом ранении, если экипированы.</Russian>
                 <Chinesesimp>无限使用复活包，如果配备，则在玩家倒地时自动复活玩家。</Chinesesimp>
                 <Korean>무한 사용 소생 키트는 장착된 경우 플레이어가 쓰러질 때 자동으로 플레이어를 소생시킵니다.</Korean>
                 <French>Les kits de réanimation à usage illimité qui réaniment automatiquement les joueurs lorsqu'ils sont mis à terre s'ils sont équipés.</French>
@@ -7434,7 +7434,7 @@
             </Key>
             <Key ID="STR_params_lootCrateHeli_desc">
                 <Original>When enabled, rebels may purchase loot crates that gather all lootable equipment within a radius of the crate. Additionally, rebel commander may use support points to call a loot helicopter to gather all loot in a large radius and store it in a crate for players.</Original>
-                <Russian>При включении повстанцы могут приобретать ящики добычи, которые собирают всё добытое оборудование в радиусе ящика. Кроме того, командир повстанцев может использовать точки поддержки, чтобы вызвать вертолёт добычи для сбора всей добычи в большом радиусе и хранения её в ящике для игроков.</Russian>
+                <Russian>При включении повстанцы могут приобретать ящики для сбора добычи, которые собирают всё трофейное оружие и экипировку в радиусе действия ящика. Кроме того, Командир повстанцев может использовать очки поддержки, чтобы вызвать вертолёт, который соберёт всю добычу в большом радиусе и сложит её в ящик.</Russian>
                 <Chinesesimp>启用后，反抗军可购买战利品箱以收集箱子半径内所有可掠夺的装备。此外，反抗军指挥官可以使用支持点来召唤战利品直升机，在大范围内收集所有战利品并将其存储在箱子中供玩家使用。</Chinesesimp>
                 <Korean>활성화하면 반군은 상자 반경 내의 모든 약탈 가능한 장비를 수집하는 전리품 상자를 구입할 수 있습니다. 또한 반군 지휘관은 지원 포인트를 사용하여 전리품 헬리콥터를 호출하여 넓은 범위의 모든 전리품을 수집하고 플레이어용 상자에 저장할 수 있습니다.</Korean>
                 <French>Lorsqu'elle est activée, les rebelles peuvent acheter des caisses de butin qui rassemblent tous les équipements pillables dans un rayon de la caisse. De plus, le commandant rebelle peut utiliser des points de soutien pour appeler un hélicoptère de butin pour rassembler tout le butin dans un grand rayon et le stocker dans une caisse pour les joueurs.</French>
@@ -7449,7 +7449,7 @@
             </Key>
             <Key ID="STR_params_lootCrateDistance_desc">
                 <Original>Maximum radius for loot gathering via loot crate; larger distances allow remote gathering but may imbalance gameplay.</Original>
-                <Russian>Максимальный радиус сбора добычи через ящик добычи; большие расстояния позволяют удалённый сбор, но могут нарушить баланс игры.</Russian>
+                <Russian>Максимальный радиус сбора добычи через ящик для сбора добычи; большие расстояния позволяют удалённый сбор, но могут нарушить баланс игры.</Russian>
                 <Chinesesimp>通过战利品箱进行战利品收集的最大半径；较大的距离允许远程收集，但可能不平衡游戏。</Chinesesimp>
                 <Korean>전리품 상자를 통한 전리품 수집의 최대 반경입니다. 더 큰 거리는 원격 수집을 허용하지만 게임 밸런스를 무너뜨릴 수 있습니다.</Korean>
                 <French>Rayon maximal pour la collecte de butin via caisse de butin ; des distances plus grandes permettent la collecte à distance mais peuvent déséquilibrer le jeu.</French>
@@ -7464,7 +7464,7 @@
             </Key>
             <Key ID="STR_params_lootCratePrice_desc">
                 <Original>Cost to purchase a loot crate; affects economy and frequency of crate usage.</Original>
-                <Russian>Стоимость покупки ящика добычи; влияет на экономику и частоту использования ящика.</Russian>
+                <Russian>Стоимость покупки ящика для сбора добычи; влияет на экономику и частоту использования ящика.</Russian>
                 <Chinesesimp>购买战利品箱的成本；影响经济和箱子的使用频率。</Chinesesimp>
                 <Korean>전리품 상자를 구매하는 비용입니다. 경제 및 상자 사용 빈도에 영향을 줍니다.</Korean>
                 <French>Coût d'achat d'une caisse de butin ; affecte l'économie et la fréquence d'utilisation de la caisse.</French>
@@ -7479,14 +7479,14 @@
             </Key>
             <Key ID="STR_params_lootCrateUnlockedItems_desc">
                 <Original>If disabled, loot crates will not gather equipment that is already unlocked in the rebel arsenal.</Original>
-                <Russian>При отключении ящики добычи не будут собирать оборудование, которое уже разблокировано в арсенале повстанцев.</Russian>
+                <Russian>При отключении ящики для сбора добычи не будут собирать вооружение и экипировку, которые уже разблокированы в арсенале повстанцев.</Russian>
                 <Chinesesimp>如果禁用，战利品箱将不收集反抗军军械库中已解锁的装备。</Chinesesimp>
                 <Korean>비활성화하면 전리품 상자는 반군 무기고에서 이미 잠금 해제된 장비를 수집하지 않습니다.</Korean>
                 <French>Si désactivé, les caisses de butin ne rassembleront pas l'équipement déjà déverrouillé dans l'arsenal rebelle.</French>
             </Key>
             <Key ID="STR_params_spawnDistance">
                 <Original>Enemy spawn distance</Original>
-                <Russian>Радиус появления гарнизонов, противников, событий и.т.д.</Russian>
+                <Russian>Радиус появления противников, гарнизонов, событий и т.п.</Russian>
                 <Chinesesimp>生成敌人、事件等的半径</Chinesesimp>
                 <Korean>적군 스폰 거리</Korean>
                 <French>Distance d'apparition des ennemis</French>
@@ -7494,7 +7494,7 @@
             </Key>
             <Key ID="STR_params_spawnDistance_desc">
                 <Original>Controls how far from players or high-command AI units enemies can spawn; larger distances increase encounter range but may affect performance.</Original>
-                <Russian>Контролирует, на каком расстоянии от игроков или юнитов ИИ высокого командования могут появляться враги; большие расстояния увеличивают диапазон встреч, но могут влиять на производительность.</Russian>
+                <Russian>Контролирует, на каком расстоянии от игроков или ИИ-бойцов в подчинении главнокомандующего могут появляться враги; большие значения увеличивают дистанцию боестолкновений, но могут влиять на производительность.</Russian>
                 <Chinesesimp>控制敌人相对于玩家或高级指挥官AI单位生成的距离；更远的距离增加遭遇范围，但可能影响性能。</Chinesesimp>
                 <Korean>적이 플레이어 또는 고급 지휘관 AI 유닛으로부터 얼마나 떨어진 거리에서 생성되는지 제어합니다. 거리가 멀수록 조우 범위가 커지지만 성능에 영향을 줄 수 있습니다.</Korean>
                 <French>Contrôle la distance à partir de laquelle les ennemis peuvent apparaître par rapport aux joueurs ou aux unités IA du haut commandement ; de plus grandes distances augmentent la portée des rencontres mais peuvent affecter les performances.</French>
@@ -7509,7 +7509,7 @@
             </Key>
             <Key ID="STR_params_distanceMission_desc">
                 <Original>Controls how far from rebel base missions may spawn; larger distances increase variety and potential zones for mission selection but may affect difficulty of completing missions in time.</Original>
-                <Russian>Контролирует, на каком расстоянии от базы повстанцев могут появляться миссии; большие расстояния увеличивают разнообразие и потенциальные зоны для выбора миссий, но могут повлиять на сложность выполнения миссий во время.</Russian>
+                <Russian>Контролирует, на каком расстоянии от базы повстанцев могут появляться миссии; большие расстояния увеличивают разнообразие и потенциальные зоны для выбора миссий, но могут повлиять на сложность выполнения миссий вовремя.</Russian>
                 <Chinesesimp>控制任务距离反抗军基地多远可能生成；更大距离增加多样性和任务选择的潜在区域，但可能影响按时完成任务的难度。</Chinesesimp>
                 <Korean>미션이 반군 기지로부터 얼마나 떨어진 거리에서 생성될 수 있는지 제어합니다. 더 큰 거리는 다양성과 미션 선택을 위한 잠재적 지역을 증가시키지만 제시간에 미션을 완료하는 난이도에 영향을 줄 수 있습니다.</Korean>
                 <French>Contrôle la distance à laquelle les missions peuvent apparaître par rapport à la base rebelle ; de plus grandes distances augmentent la variété et les zones potentielles de sélection des missions mais peuvent affecter la difficulté d'accomplissement des missions à temps.</French>
@@ -7524,7 +7524,7 @@
             </Key>
             <Key ID="STR_params_enemyCheckDistance_desc">
                 <Original>Distance used to check for nearby enemies when performing safety checks (e.g., fast travel, spawning actions).</Original>
-                <Russian>Расстояние, используемое для проверки наличия врагов поблизости при выполнении проверок безопасности (например, при быстром перемещении, спавне).</Russian>
+                <Russian>Расстояние, используемое для проверки наличия врагов поблизости при выполнении проверок безопасности (например, при быстром перемещении, действиях с флагом или гарнизоном).</Russian>
                 <Chinesesimp>在执行安全检查（如快速旅行、生成行为）时用于检查附近敌人的距离。</Chinesesimp>
                 <Korean>안전 검사(예: 빠른 이동, 스폰) 시 근처 적을 확인하는 데 사용되는 거리입니다.</Korean>
                 <French>Distance utilisée pour vérifier la présence d'ennemis à proximité lors des contrôles de sécurité (par ex. voyage rapide, actions d'apparition).</French>
@@ -7546,14 +7546,14 @@
             </Key>
             <Key ID="STR_params_afk_uav_desc">
                 <Original>If enabled, controlling UAVs will count as AFK for the duration defined by AFK timers.</Original>
-                <Russian>Если включено, управление БПЛА будет считаться AFK на время, определенное таймерами AFK.</Russian>
+                <Russian>Если включено, управление БПЛА будет считаться неактивностью, и игрок будет помечен AFK, если включен таймер неактивности.</Russian>
                 <Chinesesimp>启用后，控制无人机将按 AFK 计时器计为 AFK。</Chinesesimp>
                 <Korean>활성화하면 UAV 조종이 AFK 타이머에 따라 AFK로 간주됩니다.</Korean>
                 <French>Si activé, le contrôle des drones sera considéré comme AFK pendant la durée définie par les minuteurs AFK.</French>
             </Key>
             <Key ID="STR_params_afk_zeus_desc">
                 <Original>If enabled, controlling Zeus will count as AFK for the duration defined by AFK timers.</Original>
-                <Russian>Если включено, управление Зевсом будет считаться AFK на время, определенное таймерами AFK.</Russian>
+                <Russian>Если включено, управление Zeus будет считаться неактивностью, и игрок будет помечен AFK, если включен таймер неактивности</Russian>
                 <Chinesesimp>启用后，控制宙斯将被视为 AFK，并按 AFK 计时器计时。</Chinesesimp>
                 <Korean>활성화하면 제우스 조작이 AFK 타이머에 따라 AFK로 간주됩니다.</Korean>
                 <French>Si activé, le contrôle de Zeus sera considéré comme AFK pendant la durée définie par les minuteurs AFK.</French>
@@ -7600,7 +7600,7 @@
             </Key>
             <Key ID="STR_params_guestCommander_desc">
                 <Original>Allow guests to assume the commander role if no eligible members are available. This grants temporary commander privileges.</Original>
-                <Russian>Разрешить гостям становиться командирами, если подходящих участников нет. Это даёт временные права командира.</Russian>
+                <Russian>Разрешить гостям становиться Командирами, если нет подходящих участников. Это даёт временные права Командира.</Russian>
                 <Chinesesimp>如果没有合格成员，允许游客担任指挥官。这将授予临时指挥权限。</Chinesesimp>
                 <Korean>자격 있는 멤버가 없을 경우 게스트가 지휘관 역할을 맡을 수 있도록 허용합니다. 임시 권한이 부여됩니다.</Korean>
                 <French>Permettre aux invités d'assumer le rôle de commandant si aucun membre éligible n'est disponible. Cela confère des privilèges temporaires de commandant.</French>
@@ -7646,7 +7646,7 @@
             </Key>
             <Key ID="STR_params_max_distance_to_member_unlimited">
                 <Original>Unlimited</Original>
-                <Russian>Неограниченно</Russian>
+                <Russian>Неограниченное</Russian>
                 <Chinesesimp>无限制</Chinesesimp>
                 <Korean>무제한</Korean>
                 <French>Illimité</French>
@@ -7654,6 +7654,7 @@
             </Key>
             <Key ID="STR_params_builderParams">
                 <Original>Builder Params</Original>
+                <Russian>Параметры cистемы строительства</Russian>
                 <Chinesesimp>建筑箱设置</Chinesesimp>
                 <Korean>건설 상자 설정</Korean>
                 <Turkish>İNŞAAT KUTUSU SEÇENEKLERİ</Turkish>
@@ -7668,14 +7669,14 @@
             </Key>
             <Key ID="STR_params_builderAllowRoads_desc">
                 <Original>Enables placing and saving builds placed on roads.</Original>
-                <Russian>Включить возможность размещения и сохранения конструкций, размещённых на дорогах.</Russian>
+                <Russian>Включает возможность размещать и сохранять сооружения на дорогах.</Russian>
                 <Chinesesimp>启用在道路上放置和保存的建筑物。</Chinesesimp>
                 <Korean>도로에 배치하고 저장된 건물을 활성화합니다.</Korean>
                 <French>Active le placement et l'enregistrement des constructions placées sur les routes.</French>
             </Key>
             <Key ID="STR_params_builderBuildTime">
                 <Original>Time multiplier for builder construction speed</Original>
-                <Russian>Множитель времени для скорости строительства строителем</Russian>
+                <Russian>Множитель времени для скорости строительства</Russian>
                 <Chinesesimp>建造者建筑速度的时间乘数</Chinesesimp>
                 <Korean>빌더 건설 속도의 시간 배율</Korean>
                 <French>Multiplicateur de temps pour la vitesse de construction des constructeurs</French>
@@ -7683,14 +7684,14 @@
             </Key>
             <Key ID="STR_params_builderBuildTime_desc">
                 <Original>Multiplier or scaling for build times; affects how long constructions take to complete.</Original>
-                <Russian>Множитель/масштаб времени строительства; влияет на то, сколько времени занимает завершение строительства.</Russian>
+                <Russian>Множитель или масштабирование времени строительства; влияет на то, сколько времени занимает завершение строительства.</Russian>
                 <Chinesesimp>构建时间的倍增器或缩放；影响建筑完成所需时间。</Chinesesimp>
                 <Korean>건설 시간에 대한 배수 또는 스케일입니다. 건축 완료까지 소요되는 시간을 조정합니다.</Korean>
                 <French>Multiplicateur ou échelle des temps de construction ; affecte la durée nécessaire à la finition des constructions.</French>
             </Key>
             <Key ID="STR_params_builderLimit">
                 <Original>Build limit</Original>
-                <Russian>Лимит сборок</Russian>
+                <Russian>Лимит конструкций</Russian>
                 <Chinesesimp>建筑限制</Chinesesimp>
                 <Korean>빌드 제한</Korean>
                 <French>Limite de construction</French>
@@ -7705,7 +7706,7 @@
             </Key>
             <Key ID="STR_params_builderPermissions">
                 <Original>Player classes permitted to use the building placer</Original>
-                <Russian>Классы игроков, которым разрешено использовать средство размещения зданий</Russian>
+                <Russian>Классы игроков, которым разрешено использовать систему строительства</Russian>
                 <Chinesesimp>允许使用建筑放置工具的玩家类别</Chinesesimp>
                 <Korean>빌딩 플레이서를 사용할 수 있는 플레이어 클래스</Korean>
                 <French>Classes de joueurs autorisées à utiliser le plaçeur de bâtiments</French>
@@ -7720,6 +7721,7 @@
             </Key>
             <Key ID="STR_params_experimental_header">
                 <Original>EXPERIMENTAL OPTIONS</Original>
+                <Russian>ЭКСПЕРИМЕНТАЛЬНЫЕ НАСТРОЙКИ</Russian>
                 <Chinesesimp>实验选项</Chinesesimp>
                 <Korean>실험적 설정</Korean>
                 <Turkish>DENEYSEL SEÇENEKLER</Turkish>
@@ -7734,7 +7736,7 @@
             </Key>
             <Key ID="STR_params_membership_header">
                 <Original>MEMBERSHIP OPTIONS</Original>
-                <Russian>НАСТРОЙКИ УЧАСТИЯ НА СЕРВЕРЕ</Russian>
+                <Russian>НАСТРОЙКИ ПОСТОЯННОГО УЧАСТИЯ НА СЕРВЕРЕ</Russian>
                 <Chinesesimp>服务器会员设置</Chinesesimp>
                 <Korean>멤버쉽 설정</Korean>
                 <French>OPTIONS D'ADHÉSION</French>
@@ -7750,7 +7752,7 @@
             </Key>
             <Key ID="STR_params_overall_enemy_res_balance_desc">
                 <Original>Adjust overall enemy resource scaling; higher values increase enemy resources across the campaign.</Original>
-                <Russian>Регулирует общее масштабирование ресурсов врага; более высокие значения увеличивают ресурсы врага.</Russian>
+                <Russian>Регулирует общее масштабирование ресурсов врага; более высокие значения увеличивают ресурсы врага во время кампании.</Russian>
                 <Chinesesimp>调整敌人总体资源缩放；更高数值会增加敌人在战役中的资源。</Chinesesimp>
                 <Korean>적 전반의 자원 배율을 조정합니다. 값이 클수록 캠페인 전반에 걸쳐 적의 자원이 늘어납니다.</Korean>
                 <French>Ajuste l'échelle globale des ressources ennemies ; des valeurs plus élevées augmentent les ressources ennemies.</French>
@@ -7837,7 +7839,7 @@
             </Key>
             <Key ID="STR_params_response_balance_desc">
                 <Original>Sets how enemy attack resources scale relative to overall enemy resource settings.</Original>
-                <Russian>Определяет, как ресурсы, используемые для атак врага, масштабируются относительно общего баланса ресурсов.</Russian>
+                <Russian>Определяет, как вражеские ресурсы, используемые для атак, масштабируются относительно общего баланса ресурсов.</Russian>
                 <Chinesesimp>设置敌人攻击资源相对于整体资源设置的缩放方式。</Chinesesimp>
                 <Korean>적군의 공격 자원이 전체 자원 설정에 상대적으로 어떻게 스케일되는지 설정합니다.</Korean>
                 <French>Définit comment les ressources d'attaque ennemies évoluent par rapport aux paramètres globaux.</French>
@@ -7890,7 +7892,7 @@
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul_desc">
                 <Original>General enemy AI skill modifier. Total skill is also affected by active player count and war level and cannot exceed configured AI skill in Arma 3 server.cfg.</Original>
-                <Russian>Общий модификатор навыка вражеского ИИ. Общий навык также зависит от количества активных игроков и уровня войны и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
+                <Russian>Общий модификатор навыка ИИ союзников. Общий навык также зависит от уровня подготовки повстанцев и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
                 <Chinesesimp>一般敌方 AI 技能修改器。总技能还受活跃玩家数量和战争等级的影响，且不能超过 Arma 3 server.cfg 中配置的 AI 技能。</Chinesesimp>
                 <Korean>일반 적 인공지능 숙련도 수정자. 총 숙련도는 활성 플레이어 수와 전쟁 수준의 영향을 받으며 Arma 3 server.cfg에서 구성된 AI 숙련도를 초과할 수 없습니다.</Korean>
                 <French>Modificateur général de compétence de l'IA ennemie. La compétence totale est également affectée par le nombre de joueurs actifs et le niveau de guerre et ne peut pas dépasser la compétence de l'IA configurée dans Arma 3 server.cfg.</French>
@@ -7945,7 +7947,7 @@
             </Key>
             <Key ID="STR_params_A3A_rebelSkillMul_desc">
                 <Original>General rebel AI skill modifier. Total skill is also affected by rebel training level and cannot exceed configured AI skill in Arma 3 server.cfg.</Original>
-                <Russian>Общий модификатор навыка вражеского ИИ. Общий навык также зависит от уровня подготовки повстанцев и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
+                <Russian>Общий модификатор навыка ИИ союзников. Общий навык также зависит от уровня подготовки повстанцев и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
                 <Chinesesimp>一般敌方 AI 技能修改器。总技能还受叛军训练等级的影响，且不能超过 Arma 3 server.cfg 中配置的 AI 技能。</Chinesesimp>
                 <Korean>일반 적 인공지능 숙련도 수정자. 총 숙련도는 반군 훈련 수준의 영향을 받으며 Arma 3 server.cfg에서 구성된 AI 숙련도를 초과할 수 없습니다.</Korean>
                 <French>Modificateur général de compétence de l'IA ennemie. La compétence totale est également affectée par le niveau d'entraînement des rebelles et ne peut pas dépasser la compétence de l'IA configurée dans Arma 3 server.cfg.</French>
@@ -7960,7 +7962,7 @@
             </Key>
             <Key ID="STR_params_A3A_guestItemLimit">
                 <Original>Guest / Rebel AI item limit</Original>
-                <Russian>Минимальное количество, чтобы предмет мог быть использован гостями</Russian>
+                <Russian>>Ограничение минимального количества предметов для ИИ и гостей</Russian>
                 <Chinesesimp>访客物品限制</Chinesesimp>
                 <Korean>게스트 아이템 제한</Korean>
                 <French>Limite d'articles pour les invités</French>
@@ -7968,7 +7970,7 @@
             </Key>
             <Key ID="STR_params_A3A_guestItemLimit_desc">
                 <Original>Quantity of an item that must be in the arsenal before a non-member on the server can use it. When unlocks are globally disabled, rebel AI also cannot use the equipment until this amount is reached.</Original>
-                <Russian>Количество предмета, которое должно быть в арсенале перед тем, как невладелец на сервере может его использовать. Когда разблокировки глобально отключены, боевой ИИ повстанцев также не может использовать оборудование, пока не будет достигнуто это количество.</Russian>
+                <Russian>Количество предметов, которое должно быть в арсенале перед тем, как гость сервера сможет их использовать. Когда разблокировки глобально отключены, ИИ-бойцы повстанцев также не смогут использовать вооружение/экипировку, пока не будет достигнуто их достаточное количество.</Russian>
                 <Chinesesimp>武器库中某个物品的数量，非成员在服务器上可以使用它之前必须拥有。当全局禁用解锁时，叛军AI也无法使用该装备，直到达到该数量为止。</Chinesesimp>
                 <Korean>서버에서 비회원이 사용할 수 있기 전에 아센널에 있어야 하는 항목의 수량입니다. 잠금 해제가 전역적으로 비활성화되면 반군 AI도 이 수량에 도달할 때까지 장비를 사용할 수 없습니다.</Korean>
                 <French>Quantité d'un article qui doit être dans l'arsenal avant qu'un non-membre sur le serveur puisse l'utiliser. Lorsque les déblocages sont désactivés globalement, l'IA rebelle ne peut pas non plus utiliser l'équipement jusqu'à ce que cette quantité soit atteinte.</French>
@@ -7991,7 +7993,7 @@
             </Key>
             <Key ID="STR_params_A3A_GUIDevPreview">
                 <Original>Use In-Development UI Preview.</Original>
-                <Russian>Использовать превью пользовательского интерфейса (в разработке)</Russian>
+                <Russian>Использовать превью пользовательского интерфейса в разработке</Russian>
                 <Chinesesimp>使用预览界面（开发中）</Chinesesimp>
                 <Korean>개발 중인 UI의 미리 보기를 사용합니다.</Korean>
                 <French>Utiliser l'aperçu de l'interface utilisateur (en cours de développement).</French>
@@ -8007,7 +8009,7 @@
             </Key>
             <Key ID="STR_params_bobChaosCrates">
                 <Original>Truly Random Crates: Remove all balance checks from Crates</Original>
-                <Russian>Случайное содержимое ящиков: удаление всех проверок баланса</Russian>
+                <Russian>Полностью случайное содержимое ящиков с трофеями: удаление всех проверок баланса</Russian>
                 <Chinesesimp>真随机箱: 移除箱子上的所有平衡检查</Chinesesimp>
                 <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
                 <French>Des caisses vraiment aléatoires : Suppression de toutes les vérifications d'équilibre dans les caisses</French>
@@ -8049,7 +8051,7 @@
             -->
             <Key ID="STR_params_timerParams">
                 <Original>TIMER OPTIONS</Original>
-                <Russian>НАСТРОЙКИ ТАЙМЕРА</Russian>
+                <Russian>НАСТРОЙКИ ТАЙМЕРОВ</Russian>
                 <Chinesesimp>定时器选项</Chinesesimp>
                 <Korean>타이머 옵션</Korean>
                 <French>OPTIONS DE MINUTERIE</French>
@@ -8117,7 +8119,7 @@
             -->
             <Key ID="STR_params_unlockParams">
                 <Original>LOOT UNLOCK OPTIONS</Original>
-                <Russian>НАСТРОЙКИ РАЗБЛОКИРОВКИ ДОБЫЧИ</Russian>
+                <Russian>НАСТРОЙКИ РАЗБЛОКИРОВКИ ПРЕДМЕТОВ</Russian>
                 <Chinesesimp>战利品解锁选项</Chinesesimp>
                 <Korean>전리품 잠금 해제 옵션</Korean>
                 <French>OPTIONS DE DÉBLOCAGE DU BUTIN</French>
@@ -8236,7 +8238,7 @@
             -->
             <Key ID="STR_params_builder">
                 <Original>BUILDER OPTIONS</Original>
-                <Russian>ОПЦИИ СТРОИТЕЛЯ</Russian>
+                <Russian>НАСТРОЙКИ СИСТЕМЫ СТРОИТЕЛЬСТВА</Russian>
                 <Chinesesimp>建造者选项</Chinesesimp>
                 <Korean>빌더 옵션</Korean>
                 <French>OPTIONS DU CONSTRUCTEUR</French>
@@ -8251,7 +8253,7 @@
             </Key>
             <Key ID="STR_params_extender_desc">
                 <Original>Options related to extender modules and how they interact with base systems.</Original>
-                <Russian>Параметры, связанные с модулями-расширителями и их взаимодействием с базовыми системами.</Russian>
+                <Russian>Настройки, связанные с модулями-расширителями и их взаимодействием с базовыми системами.</Russian>
                 <Chinesesimp>与扩展模块及其与基础系统交互相关的选项。</Chinesesimp>
                 <Korean>확장 모듈 및 기본 시스템과의 상호작용에 대한 옵션입니다.</Korean>
                 <French>Options liées aux modules d'extension et à leur interaction avec les systèmes de base.</French>
