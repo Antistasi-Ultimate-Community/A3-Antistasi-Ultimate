@@ -408,7 +408,8 @@
             </Key>
             <Key ID="STR_A3AU_mgs">
                 <Original>MGs</Original>
-                <Russian>Пулеметы</Russian>
+                <English>MGs</English>
+                <Russian>Пулемёты</Russian>
                 <Korean>기관총</Korean>
                 <French>MGs</French>
                 <Chinesesimp>机枪</Chinesesimp>

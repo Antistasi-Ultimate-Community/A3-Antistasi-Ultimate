@@ -201,7 +201,8 @@ switch (_mode) do
             };
         };
         if (_saveData get "name" != "") then {
-            _confirmText = _confirmText + format [localize "STR_antistasi_dialogs_setup_confirm_game_name", _saveData get "name"];
+            //extra space because localize trims trailing spaces in these localization keys
+            _confirmText = _confirmText + " " + format [localize "STR_antistasi_dialogs_setup_confirm_game_name", _saveData get "name"];
         };
         _saveData set ["useNewNamespace", cbChecked _newSaveCtrl];
 
