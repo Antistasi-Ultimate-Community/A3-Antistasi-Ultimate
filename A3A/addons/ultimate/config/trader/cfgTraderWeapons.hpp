@@ -122,10 +122,6 @@
         {
             prefix = "sfpstock";
         };
-        class weapons_pla : weapons_base
-        {
-            prefix = "plastock";
-        };
         class weapons_bwa3 : weapons_base
         {
             prefix = "bwastock";
@@ -169,10 +165,6 @@
         class weapons_csa38 : weapons_base
         {
             prefix = "csa38";
-        };
-        class weapons_scion : weapons_base
-        {
-            prefix = "scion";
         };
         class weapons_wrs : weapons_base
         {
