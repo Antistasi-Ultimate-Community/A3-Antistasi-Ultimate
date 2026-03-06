@@ -1,13 +1,18 @@
 //fn_getTrackByCategory.sqf
 #include "..\..\script_component.hpp"
 
-params [["_category", "unknown", [""]]]; // Значение по умолчанию "Unknown"
-private _categoryLower = toLower _category;   // ← нормализация
+params [["_category", "unknown", [""]]];
+private _categoryLower = toLower _category;
 
+// Если запрошена категория "actualmusic", возвращаем наш жёсткий список
+if (_categoryLower == "actualmusic") exitWith {
+    call A3U_fnc_getActualTracks
+};
+
+// Иначе обычный поиск по конфигам
 private _tracks = [];
-
 {
-    private _theme = toLower getText (_x >> "theme");   // ← нормализация
+    private _theme = toLower getText (_x >> "theme");
     private _name = getText (_x >> "name");
     private _path = configName _x;
     
@@ -40,13 +45,9 @@ private _tracks = [];
     
     // Обработка категории
     if (_categoryLower == "unknown") then {
-        if (_theme == "") then {
-            _tracks pushBack [_name, _path];
-        };
+        if (_theme == "") then { _tracks pushBack [_name, _path]; };
     } else {
-        if (_theme == _categoryLower) then {
-            _tracks pushBack [_name, _path];
-        };
+        if (_theme == _categoryLower) then { _tracks pushBack [_name, _path]; };
     };
 } forEach ("true" configClasses (configFile >> "CfgMusic"));
 

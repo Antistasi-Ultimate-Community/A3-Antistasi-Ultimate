@@ -34,8 +34,8 @@ if (isNil "A3U_loopEnabled") then { A3U_loopEnabled = false; };
 if (isNil "A3U_muted") then { A3U_muted = false; };
 if (isNil "A3U_volumeBeforeMute") then { A3U_volumeBeforeMute = A3U_volume; };
 
-// Получение категорий
-private _categories = call {
+// Получение категорий (всех)
+private _allCategories = call {
     if (isNil "A3U_fnc_getCategories") then {
         systemChat "Ошибка: Функция A3U_fnc_getCategories не найдена!";
         []
@@ -43,6 +43,24 @@ private _categories = call {
         call A3U_fnc_getCategories
     };
 };
+
+// Применяем фильтр в зависимости от режима
+if (isNil "A3U_categoryMode") then { A3U_categoryMode = false; };
+private _categories = [];
+if (A3U_categoryMode) then {
+    // Режим "все категории" – исключаем actualmusic
+    _categories = +_allCategories;
+    _categories = _categories - ["actualmusic"];
+} else {
+    // Режим "только избранные": проверяем каждую категорию
+    {
+        if ([_x] call A3U_fnc_isCategoryAllowed) then {
+            _categories pushBack _x;
+        };
+    } forEach _allCategories;
+};
+
+diag_log format ["[init] filtered categories: %1", _categories];
 
 // Инициализация UI
 private _display = findDisplay 85000;
@@ -339,6 +357,18 @@ private _shuffleBtn = _display displayCtrl 85114;
 if (!isNull _shuffleBtn) then {
     _shuffleBtn ctrlSetBackgroundColor [0.2,0.2,0.2,1];
     _shuffleBtn ctrlSetTooltip "Случайный порядок (выкл)";
+};
+
+// Инициализация кнопки переключения режима категорий
+private _categoryModeBtn = _display displayCtrl 85116;
+if (!isNull _categoryModeBtn) then {
+    if (A3U_categoryMode) then {
+        _categoryModeBtn ctrlSetBackgroundColor [0.2,0.6,0.2,1];
+        _categoryModeBtn ctrlSetTooltip "Показать только избранные категории";
+    } else {
+        _categoryModeBtn ctrlSetBackgroundColor [1,1,1,1];
+        _categoryModeBtn ctrlSetTooltip "Показать все категории";
+    };
 };
 
 // Инициализация отладочной панели

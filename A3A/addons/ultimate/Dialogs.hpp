@@ -301,10 +301,10 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
         class CategoryModeButton: A3A_ClickablePicture {
             idc = 85116;
             style = ST_PICTURE;
-            x = DIALOG_X + GRID_X(1);
-            y = DIALOG_Y + GRID_Y(44);
-            w = GRID_X(6);
-            h = GRID_Y(6);
+            x = DIALOG_X + GRID_X(0);
+            y = DIALOG_Y + GRID_Y(47);
+            w = GRID_X(3);
+            h = GRID_Y(3);
             text = "";
             animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa"; // иконка фильтра
             animTextureDisabled = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";

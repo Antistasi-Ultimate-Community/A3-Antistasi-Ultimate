@@ -120,11 +120,15 @@ class CfgFunctions
             class toggleLoop {};
             class toggleMute {};
             class toggleShuffle {};
+            class toggleCategoryMode {};
             class trackChanged {};
             class trackProgressMonitor {};
             class updatePlayButton {};
             class updateTrackInfo {};
             class addRadioAction {};
+            class getVanillaAddons {};
+            class getActualTracks {};
+            class isCategoryAllowed {};
         };
         class musicplayerdebug
         {
