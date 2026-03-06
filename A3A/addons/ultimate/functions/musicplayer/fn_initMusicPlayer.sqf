@@ -1,13 +1,21 @@
+//fn_initMusicPlayer.sqf
 #include "..\..\script_component.hpp"
 
-// Инициализация глобальных переменных
+// Инициализация глобальных переменных (расширенное состояние)
 if (isNil "A3U_playerState") then {
     A3U_playerState = [
-        [],     // currentTrack
-        false,  // isPlaying
-        0,      // trackProgress
-        0.5,    // volume
-        0       // trackStartTime
+        [],     // 0: currentTrack
+        false,  // 1: isPlaying
+        0,      // 2: trackProgress
+        0.5,    // 3: volume
+        0,      // 4: trackStartTime
+        [],     // 5: currentTrackList
+        -1,     // 6: currentTrackIndex
+        "",     // 7: currentCategory
+        false,  // 8: categoryMode
+        false,  // 9: muted
+        false,  //10: shuffleEnabled
+        false   //11: loopEnabled
     ];
 };
 
@@ -19,22 +27,27 @@ if (!createDialog "RscDisplayMusicPlayer") exitWith {
     systemChat "Ошибка создания плеера!";
 };
 
-// Восстановление глобального состояния
+// Восстановление глобального состояния (с защитой от старых сохранений)
 A3U_playerState = _savedState;
 
-// Распаковываем состояние
-A3U_currentTrack = A3U_playerState#0;
-A3U_isPlaying = A3U_playerState#1;
-A3U_trackProgress = A3U_playerState#2;
-A3U_volume = A3U_playerState#3;
-A3U_trackStartTime = A3U_playerState#4;
+// Распаковываем состояние с проверкой длины
+A3U_currentTrack = A3U_playerState param [0, []];
+A3U_isPlaying = A3U_playerState param [1, false];
+A3U_trackProgress = A3U_playerState param [2, 0];
+A3U_volume = A3U_playerState param [3, 0.5];
+A3U_trackStartTime = A3U_playerState param [4, 0];
+A3U_currentTrackList = A3U_playerState param [5, []];
+A3U_currentTrackIndex = A3U_playerState param [6, -1];
+A3U_currentCategory = A3U_playerState param [7, ""];
+A3U_categoryMode = A3U_playerState param [8, false];
+A3U_muted = A3U_playerState param [9, false];
+A3U_shuffleEnabled = A3U_playerState param [10, false];
+A3U_loopEnabled = A3U_playerState param [11, false];
 
-if (isNil "A3U_loopEnabled") then { A3U_loopEnabled = false; };
-
-if (isNil "A3U_muted") then { A3U_muted = false; };
+// Дополнительные инициализации (только если нужно)
 if (isNil "A3U_volumeBeforeMute") then { A3U_volumeBeforeMute = A3U_volume; };
 
-// Получение категорий (всех)
+// Получение категорий (всех) по темам
 private _allCategories = call {
     if (isNil "A3U_fnc_getCategories") then {
         systemChat "Ошибка: Функция A3U_fnc_getCategories не найдена!";
@@ -44,28 +57,48 @@ private _allCategories = call {
     };
 };
 
-// Применяем фильтр в зависимости от режима
+// ========== ФОРМИРОВАНИЕ СПИСКА КАТЕГОРИЙ ==========
 if (isNil "A3U_categoryMode") then { A3U_categoryMode = false; };
+
 private _categories = [];
+private _categoryType = ""; // "theme" или "addon"
+
 if (A3U_categoryMode) then {
-    // Режим "все категории" – исключаем actualmusic
+    // Режим "все категории" – используем темы, исключаем actualmusic и vietnam_radio
     _categories = +_allCategories;
-    _categories = _categories - ["actualmusic"];
+    _categories = _categories - ["actualmusic", "vietnam_radio"];
+    _categoryType = "theme";
 } else {
-    // Режим "только избранные": проверяем каждую категорию
+    // Режим "только аддоны + actualmusic + vietnam_radio"
+    private _addons = call A3U_fnc_getNonVanillaAddons;
+    _categories = [];
+    
+    // Сначала actualmusic
+    if (count (call A3U_fnc_getActualTracks) > 0) then {
+        _categories pushBack "actualmusic";
+    };
+    
+    // Затем vietnam_radio
+    if (count (call A3U_fnc_getVietnamRadioTracks) > 0) then {
+        _categories pushBack "vietnam_radio";
+    };
+    
+    // Затем все аддоны
     {
-        if ([_x] call A3U_fnc_isCategoryAllowed) then {
-            _categories pushBack _x;
-        };
-    } forEach _allCategories;
+        _categories pushBack _x;
+    } forEach _addons;
+    
+    _categoryType = "addon";
 };
 
 diag_log format ["[init] filtered categories: %1", _categories];
+// ========== КОНЕЦ ФОРМИРОВАНИЯ ==========
 
 // Инициализация UI
 private _display = findDisplay 85000;
 if (isNull _display) exitWith {systemChat "Ошибка: Диалог не найден!"};
 _display setVariable ["A3U_skipCategoryChange", false];
+_display setVariable ["A3U_categoryType", _categoryType]; // Сохраняем тип
 
 // ========== ГЛОБАЛЬНЫЕ ОБРАБОТЧИКИ МУЗЫКИ ==========
 if (isNil "A3U_musicHandlersInitialized") then {
@@ -79,19 +112,35 @@ if (isNil "A3U_musicHandlersInitialized") then {
             // Можно скорректировать startTime, если нужно, но мы уже установили его вручную
             // A3U_trackStartTime = diag_tickTime - (_currentPosition * _totalLength);
         };
-        A3U_isPlaying = true; // обязательно
+        A3U_isPlaying = true;
         systemChat format ["[MusicStart] class: %1, pos: %2 (ignored)", _musicClass, _currentPosition];
         diag_log format ["[MusicStart] class: %1, pos: %2 (ignored)", _musicClass, _currentPosition];
     }];
 
     A3U_musicStopEH = addMusicEventHandler ["MusicStop", {
         params ["_musicClass", "_ehID", "_currentPosition", "_totalLength"];
-        private _oldProgress = A3U_trackProgress;
-        // Можно обновить прогресс, но это не критично
         A3U_trackProgress = _currentPosition;
         A3U_isPlaying = false;
-        systemChat format ["[MusicStop] class: %1, pos: %2", _musicClass, _currentPosition];
         diag_log format ["[MusicStop] class: %1, pos: %2", _musicClass, _currentPosition];
+
+        // Если трек закончился (близко к 1)
+        if (_currentPosition >= 0.99) then {
+            if (A3U_loopEnabled) then {
+                // Повтор текущего трека
+                if (count A3U_currentTrack > 0) then {
+                    A3U_trackProgress = 0;
+                    playMusic (A3U_currentTrack#1);
+                    A3U_trackStartTime = diag_tickTime;
+                    A3U_isPlaying = true;
+                };
+            } else {
+                [] call A3U_fnc_nextTrack;
+                // После переключения запускаем новый трек (если он есть)
+                if (count A3U_currentTrack > 0) then {
+                    [] call A3U_fnc_playTrack;
+                };
+            };
+        };
     }];
 
     A3U_musicHandlersInitialized = true;
@@ -119,76 +168,117 @@ if (count _categories > 0) then {
         _categoriesList lbSetData [_idx, _x];
     } forEach _categories;
 
-    // Найдем категорию текущего трека
-    private _currentCategory = "";
-    private _currentTrackPath = "";
-    private _foundCategory = false;
-    
-    if (count A3U_currentTrack > 0) then {
-        _currentTrackPath = A3U_currentTrack#1;
-        private _config = configFile >> "CfgMusic" >> _currentTrackPath;
-        if (isClass _config) then {
-            _currentCategory = toLower getText (_config >> "theme");
-            if (_currentCategory == "") then { _currentCategory = "unknown" };
-            
-            // Поиск категории в списке
-            _selectedCategoryIndex = _categories find _currentCategory;
-            if (_selectedCategoryIndex != -1) then { _foundCategory = true; };
-        };
+    // Определяем, какую категорию выбрать
+    private _targetCategory = "";
+    private _targetCategoryFound = false;
+
+    // 1. Пробуем восстановить сохранённую категорию
+    if (A3U_currentCategory != "" && {A3U_currentCategory in _categories}) then {
+        _targetCategory = A3U_currentCategory;
+        _targetCategoryFound = true;
+        _selectedCategoryIndex = _categories find _targetCategory;
     };
-    
-    // Если категория не найдена, используем поиск по трекам
-    if (!_foundCategory && _currentTrackPath != "") then {
+
+    // 2. Если не нашли, пробуем найти категорию по сохранённому треку
+    if (!_targetCategoryFound && {count A3U_currentTrack > 0}) then {
+        private _trackClass = A3U_currentTrack#1;
+        private _nonVanillaAddons = call A3U_fnc_getNonVanillaAddons;
         {
-            private _category = _x;
-            private _tracks = [_category] call A3U_fnc_getTracksByCategory;
-            
+            private _cat = _x;
+            private _tracks = [];
+            if (_cat == "actualmusic") then {
+                _tracks = call A3U_fnc_getActualTracks;
+            } else {
+                if (_cat == "vietnam_radio") then {
+                    _tracks = call A3U_fnc_getVietnamRadioTracks;
+                } else {
+                    if (_cat in _nonVanillaAddons) then {
+                        _tracks = [_cat] call A3U_fnc_getTracksByAddon;
+                    } else {
+                        _tracks = [_cat] call A3U_fnc_getTracksByCategory;
+                    };
+                };
+            };
             {
                 _x params ["_name", "_path"];
-                if (_path == _currentTrackPath) exitWith {
-                    _currentCategory = _category;
-                    _selectedCategoryIndex = _forEachIndex;
-                    _foundCategory = true;
+                if (_path == _trackClass) exitWith {
+                    _targetCategory = _cat;
+                    _targetCategoryFound = true;
                 };
             } forEach _tracks;
-            
-            if (_foundCategory) exitWith {};
+            if (_targetCategoryFound) exitWith {};
         } forEach _categories;
+        if (_targetCategoryFound) then {
+            _selectedCategoryIndex = _categories find _targetCategory;
+        };
     };
-    
-    // Гарантируем корректный индекс категории
-    if (_selectedCategoryIndex < 0 || _selectedCategoryIndex >= count _categories) then {
+
+    // 3. Если ничего не нашли, берём первую категорию
+    if (!_targetCategoryFound) then {
+        _targetCategory = _categories select 0;
         _selectedCategoryIndex = 0;
     };
 
     _display setVariable ["A3U_skipCategoryChange", true];
     
     _categoriesList lbSetCurSel _selectedCategoryIndex;
-    private _categoryName = _categories select _selectedCategoryIndex;
-    
+    private _categoryName = _targetCategory;
+
     // Получаем треки для выбранной категории
-    private _tracks = [_categoryName] call A3U_fnc_getTracksByCategory;
-    
+    private _tracks = [];
+    if (_categoryName == "vietnam_radio") then {
+        _tracks = call A3U_fnc_getVietnamRadioTracks;
+    } else {
+        if (_categoryType == "addon" && _categoryName != "actualmusic") then {
+            _tracks = [_categoryName] call A3U_fnc_getTracksByAddon;
+        } else {
+            _tracks = [_categoryName] call A3U_fnc_getTracksByCategory;
+        };
+    };
+
     // Заполняем список треков
     private _tracksList = _display displayCtrl 85102;
     lbClear _tracksList;
-    
+
     if (count _tracks > 0) then {
         {
             _x params ["_name", "_path"];
             private _idx = _tracksList lbAdd _name;
             _tracksList lbSetData [_idx, _path];
-            if (_path == _currentTrackPath) then { _selectedTrackIndex = _idx; };
         } forEach _tracks;
-        
-        // Выбираем текущий трек
-        if (_selectedTrackIndex != -1) then {
-            _tracksList lbSetCurSel _selectedTrackIndex;
+
+        // Определяем индекс трека
+        private _newTrackIndex = 0;
+        if (count A3U_currentTrack > 0) then {
+            private _savedClass = A3U_currentTrack#1;
+            private _foundIndex = -1;
+            {
+                _x params ["_name", "_path"];
+                if (_path == _savedClass) exitWith { _foundIndex = _forEachIndex; };
+            } forEach _tracks;
+            if (_foundIndex != -1) then {
+                _newTrackIndex = _foundIndex;
+            } else {
+                _newTrackIndex = 0;
+            };
         } else {
-            _tracksList lbSetCurSel 0;
+            _newTrackIndex = 0;
+        };
+
+        _tracksList lbSetCurSel _newTrackIndex;
+        A3U_currentTrackList = _tracks;
+        A3U_currentTrackIndex = _newTrackIndex;
+        A3U_currentCategory = _categoryName;
+
+        // Если сохранённый трек отличается от выбранного, обновляем A3U_currentTrack
+        if (count A3U_currentTrack == 0 || {A3U_currentTrack#1 != (_tracks select _newTrackIndex select 1)}) then {
+            A3U_currentTrack = _tracks select _newTrackIndex;
         };
     } else {
         _tracksList lbAdd "Нет треков в категории";
+        A3U_currentTrackList = [];
+        A3U_currentTrackIndex = -1;
+        A3U_currentCategory = _categoryName;
     };
 
     _display setVariable ["A3U_skipCategoryChange", false];
@@ -227,12 +317,12 @@ if (A3U_muted) then {
     0.5 fadeMusic A3U_volume;
 };
 
-// --- Интерактивный слайдер прогресса (с отладкой) ---
+// --- Интерактивный слайдер прогресса ---
 private _progressSlider = _display displayCtrl 85106;
 _display setVariable ["isDragging", false];
 _display setVariable ["wasPlaying", false];
 
-// Обработчик движения мыши (при зажатой кнопке)
+// Обработчик движения мыши
 _progressSlider ctrlAddEventHandler ["MouseMoving", {
     params ["_ctrl", "_xPos", "_yPos"];
     private _disp = ctrlParent _ctrl;
@@ -258,7 +348,7 @@ _progressSlider ctrlAddEventHandler ["MouseButtonDown", {
     // !!! ВАЖНО: останавливаем музыку, чтобы монитор прогресса не обновлялся
     if (A3U_isPlaying) then {
         playMusic "";
-        A3U_isPlaying = false;      // Останавливаем монитор прогресса
+        A3U_isPlaying = false;
         systemChat "[MouseDown] Music stopped, isPlaying = false";
         diag_log "[MouseDown] Music stopped, isPlaying = false";
     };
@@ -266,7 +356,7 @@ _progressSlider ctrlAddEventHandler ["MouseButtonDown", {
     _disp setVariable ["isDragging", true];
 }];
 
-// Обработчик отпускания кнопки мыши (после перетаскивания)
+// Обработчик отпускания кнопки мыши
 _progressSlider ctrlAddEventHandler ["MouseButtonUp", {
     params ["_ctrl", "_button"];
     private _disp = ctrlParent _ctrl;
@@ -297,14 +387,35 @@ _progressSlider ctrlAddEventHandler ["MouseButtonUp", {
             systemChat format ["[MouseUp] starting at %1 s", _startTime];
             diag_log format ["[MouseUp] starting at %1 s", _startTime];
             playMusic [_trackClass, _startTime];
-            A3U_isPlaying = true;   // Возобновляем монитор
-            0.5 fadeMusic A3U_volume;
+            A3U_isPlaying = true;
+            if (A3U_muted) then {
+                0 fadeMusic 0;
+            } else {
+                0.5 fadeMusic A3U_volume;
+            };
+            
+            // Обновляем UI громкости (слайдер и иконки)
+            private _slider = _disp displayCtrl 85107;
+            private _volOn = _disp displayCtrl 85108;
+            private _volOff = _disp displayCtrl 85109;
+            
+            if (A3U_muted) then {
+                _volOn ctrlShow false;
+                _volOff ctrlShow true;
+                _volOff ctrlSetTooltip "Включить звук";
+                _slider sliderSetPosition 0;
+            } else {
+                _volOn ctrlShow true;
+                _volOff ctrlShow false;
+                _volOn ctrlSetTooltip "Выключить звук";
+                _slider sliderSetPosition A3U_volume;
+            };
         };
     };
     // Если трек не играл, A3U_isPlaying остаётся false, прогресс сохранён
 }];
 
-// Обработчик изменения позиции слайдера (клик по шкале без перетаскивания)
+// Обработчик изменения позиции слайдера (клик по шкале)
 A3U_sliderEH = _progressSlider ctrlAddEventHandler ["SliderPosChanged", {
     params ["_ctrl", "_newPos"];
     private _disp = ctrlParent _ctrl;
@@ -333,10 +444,32 @@ A3U_sliderEH = _progressSlider ctrlAddEventHandler ["SliderPosChanged", {
             systemChat format ["[SliderPosChanged] starting at %1 s", _startTime];
             diag_log format ["[SliderPosChanged] starting at %1 s", _startTime];
             playMusic [_trackClass, _startTime];
-            0.5 fadeMusic A3U_volume;
+            A3U_isPlaying = true;
+            if (A3U_muted) then {
+                0 fadeMusic 0;
+            } else {
+                0.5 fadeMusic A3U_volume;
+            };
+            
+            // Обновляем UI громкости (слайдер и иконки)
+            private _slider = _disp displayCtrl 85107;
+            private _volOn = _disp displayCtrl 85108;
+            private _volOff = _disp displayCtrl 85109;
+            
+            if (A3U_muted) then {
+                _volOn ctrlShow false;
+                _volOff ctrlShow true;
+                _volOff ctrlSetTooltip "Включить звук";
+                _slider sliderSetPosition 0;
+            } else {
+                _volOn ctrlShow true;
+                _volOff ctrlShow false;
+                _volOn ctrlSetTooltip "Выключить звук";
+                _slider sliderSetPosition A3U_volume;
+            };
         };
     };
-    // Если трек на паузе, просто обновляем A3U_trackProgress (уже сделано)
+    // Если трек на паузе, просто обновляем A3U_trackProgress
 }];
 // -------------------------------------------------
 
@@ -352,11 +485,16 @@ if (!isNull _loopBtn) then {
     };
 };
 
-A3U_shuffleEnabled = false;
+// Инициализация кнопки shuffle (без принудительного сброса)
 private _shuffleBtn = _display displayCtrl 85114;
 if (!isNull _shuffleBtn) then {
-    _shuffleBtn ctrlSetBackgroundColor [0.2,0.2,0.2,1];
-    _shuffleBtn ctrlSetTooltip "Случайный порядок (выкл)";
+    if (A3U_shuffleEnabled) then {
+        _shuffleBtn ctrlSetBackgroundColor [0.2,0.6,0.2,1];
+        _shuffleBtn ctrlSetTooltip "Случайный порядок (вкл)";
+    } else {
+        _shuffleBtn ctrlSetBackgroundColor [0.2,0.2,0.2,1];
+        _shuffleBtn ctrlSetTooltip "Случайный порядок (выкл)";
+    };
 };
 
 // Инициализация кнопки переключения режима категорий
@@ -403,7 +541,14 @@ _display displayAddEventHandler ["Unload", {
             A3U_isPlaying,
             if (_duration > 0) then { _currentPos / _duration } else { 0 },
             A3U_volume,
-            A3U_trackStartTime
+            A3U_trackStartTime,
+            A3U_currentTrackList,
+            A3U_currentTrackIndex,
+            A3U_currentCategory,
+            A3U_categoryMode,
+            A3U_muted,
+            A3U_shuffleEnabled,
+            A3U_loopEnabled
         ];
     };
 }];

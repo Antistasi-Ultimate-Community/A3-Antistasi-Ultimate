@@ -65,7 +65,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             idc = 85123;                     // новый IDC
             style = ST_PICTURE;
             x = DIALOG_X - GRID_X(6);        // правая граница панели: -40 + 38 = -2, отступим ещё 1 влево
-            y = DIALOG_Y + GRID_Y(1);         // верхняя граница панели
+            y = DIALOG_Y + GRID_Y(0);         // верхняя граница панели
             w = GRID_X(4);
             h = GRID_Y(4);
             text = "";

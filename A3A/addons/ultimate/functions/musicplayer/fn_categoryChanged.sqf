@@ -13,11 +13,24 @@ if (_index == -1) exitWith {
 
 // Получение категории из данных (нижний регистр)
 private _category = _ctrlCategory lbData _index;
-systemChat format ["Выбрана категория: %1", _category];  // Отладка
+systemChat format ["Выбрана категория: %1", _category];
 
-// Получение треков
-private _tracks = [_category] call A3U_fnc_getTracksByCategory;
-systemChat format ["Найдено треков: %1", count _tracks];  // Отладка
+// Определяем тип категории
+private _categoryType = _display getVariable ["A3U_categoryType", "theme"];
+
+// Получение треков в зависимости от типа
+private _tracks = [];
+if (_category == "vietnam_radio") then {
+    _tracks = call A3U_fnc_getVietnamRadioTracks;
+} else {
+    if (_categoryType == "addon" && _category != "actualmusic") then {
+        _tracks = [_category] call A3U_fnc_getTracksByAddon;
+    } else {
+        _tracks = [_category] call A3U_fnc_getTracksByCategory;
+    };
+};
+
+systemChat format ["Найдено треков: %1", count _tracks];
 
 private _tracksList = _display displayCtrl 85102;
 
@@ -33,4 +46,10 @@ if (count _tracks == 0) then {
     
     // Выбираем первый трек в категории
     _tracksList lbSetCurSel 0;
+    
+    // Сохраняем глобальные данные
+    A3U_currentTrackList = _tracks;
+    A3U_currentTrackIndex = 0;
+    A3U_currentCategory = _category;
+    A3U_currentTrack = _tracks select 0;
 };

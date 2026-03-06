@@ -5,30 +5,30 @@ params ["_ctrlTracks", "_index"];
 
 if (_index == -1) exitWith {};
 
+// Не обновляем, если это тот же трек
 private _newTrack = [_ctrlTracks lbText _index, _ctrlTracks lbData _index];
-if (count A3U_currentTrack > 0 && {A3U_currentTrack#1 == _newTrack#1}) exitWith {
-    systemChat "[trackChanged] same track, ignored";
-    diag_log format ["[trackChanged] same track: %1", _newTrack#1];
-};
+if (count A3U_currentTrack > 0 && {A3U_currentTrack#1 == _newTrack#1}) exitWith {};
 
+// Получение данных трека из списка
 private _trackData = [
     _ctrlTracks lbText _index,
     _ctrlTracks lbData _index
 ];
 
-systemChat format ["[trackChanged] new track: %1, old progress: %2", _trackData#0, A3U_trackProgress];
-diag_log format ["[trackChanged] new track: %1 (%2), old progress: %3", _trackData#0, _trackData#1, A3U_trackProgress];
-
+// Обновление глобальных переменных
 A3U_currentTrack = _trackData;
-A3U_trackProgress = 0; // Сброс прогресса для нового трека
+A3U_trackProgress = 0;
+A3U_currentTrackIndex = _index; // индекс в списке
 
+// Запуск воспроизведения только если плеер был активен
 if (A3U_isPlaying) then {
     [] call A3U_fnc_playTrack;
 };
 
+// Обновление интерфейса
 [] call A3U_fnc_updateTrackInfo;
 
-// Синхронизация громкости (как было)
+// Синхронизация слайдера с мутом
 private _display = findDisplay 85000;
 if (!isNull _display) then {
     private _slider = _display displayCtrl 85107;

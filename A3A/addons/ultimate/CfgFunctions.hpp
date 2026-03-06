@@ -128,6 +128,9 @@ class CfgFunctions
             class addRadioAction {};
             class getVanillaAddons {};
             class getActualTracks {};
+            class getNonVanillaAddons {};
+            class getTracksByAddon {};
+            class getVietnamRadioTracks {};
             class isCategoryAllowed {};
         };
         class musicplayerdebug

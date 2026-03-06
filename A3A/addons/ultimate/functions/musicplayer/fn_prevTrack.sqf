@@ -1,9 +1,39 @@
 //fn_prevTrack.sqf
 #include "..\..\script_component.hpp"
 
-private _display = findDisplay 85000;
-private _ctrl = _display displayCtrl 85102;
-private _currentIndex = lbCurSel _ctrl;
-private _newIndex = (_currentIndex - 1) max 0;
+if (isNil "A3U_currentTrackList") exitWith {};
+if (A3U_currentTrackList isEqualTo []) exitWith {};
 
-_ctrl lbSetCurSel _newIndex;
+private _count = count A3U_currentTrackList;
+private _newIndex = 0;
+
+if (A3U_shuffleEnabled) then {
+    private _currentIndex = A3U_currentTrackIndex;
+    if (_count > 1) then {
+        private _randomIndex = _currentIndex;
+        while {_randomIndex == _currentIndex} do {
+            _randomIndex = floor random _count;
+        };
+        _newIndex = _randomIndex;
+    } else {
+        _newIndex = 0;
+    };
+} else {
+    _newIndex = (A3U_currentTrackIndex - 1) max 0;
+};
+
+private _newTrack = A3U_currentTrackList select _newIndex;
+A3U_currentTrack = _newTrack;
+A3U_currentTrackIndex = _newIndex;
+A3U_trackProgress = 0;
+
+if (A3U_isPlaying) then {
+    [] call A3U_fnc_playTrack;
+};
+
+private _display = findDisplay 85000;
+if (!isNull _display) then {
+    private _tracksList = _display displayCtrl 85102;
+    _tracksList lbSetCurSel _newIndex;
+    [] call A3U_fnc_updateTrackInfo;
+};

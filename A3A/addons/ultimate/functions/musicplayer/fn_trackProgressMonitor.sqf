@@ -39,7 +39,7 @@ while {!isNull findDisplay 85000} do {
                     _slider sliderSetPosition A3U_trackProgress;
                 };
                 
-                // Автопереход при окончании трека с учётом режима повтора
+                // Автопереход при окончании трека – только для повтора
                 if (A3U_trackProgress >= 0.99) then {
                     if (A3U_loopEnabled) then {
                         // Повтор текущего трека
@@ -47,9 +47,8 @@ while {!isNull findDisplay 85000} do {
                         A3U_trackStartTime = diag_tickTime;
                         playMusic (A3U_currentTrack#1);
                         0.5 fadeMusic A3U_volume;
-                    } else {
-                        call A3U_fnc_nextTrack;
                     };
+                    // Для не-loop ничего не делаем – переход произойдёт в MusicStop
                 };
             };
         };

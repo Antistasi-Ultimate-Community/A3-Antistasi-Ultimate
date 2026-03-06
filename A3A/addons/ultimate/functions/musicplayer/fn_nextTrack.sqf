@@ -1,17 +1,14 @@
 //fn_nextTrack.sqf
 #include "..\..\script_component.hpp"
 
-private _display = findDisplay 85000;
-private _ctrl = _display displayCtrl 85102;
-private _count = lbSize _ctrl;
+if (isNil "A3U_currentTrackList") exitWith {};
+if (A3U_currentTrackList isEqualTo []) exitWith {};
 
-if (_count == 0) exitWith {};
-
+private _count = count A3U_currentTrackList;
 private _newIndex = 0;
 
 if (A3U_shuffleEnabled) then {
-    // Выбираем случайный трек, исключая текущий
-    private _currentIndex = lbCurSel _ctrl;
+    private _currentIndex = A3U_currentTrackIndex;
     if (_count > 1) then {
         private _randomIndex = _currentIndex;
         while {_randomIndex == _currentIndex} do {
@@ -19,12 +16,27 @@ if (A3U_shuffleEnabled) then {
         };
         _newIndex = _randomIndex;
     } else {
-        _newIndex = 0; // если только один трек, оставляем его
+        _newIndex = 0;
     };
 } else {
-    // Обычный порядок
-    private _currentIndex = lbCurSel _ctrl;
-    _newIndex = (_currentIndex + 1) min (_count - 1);
+    _newIndex = (A3U_currentTrackIndex + 1) min (_count - 1);
 };
 
-_ctrl lbSetCurSel _newIndex;
+// Устанавливаем новый трек
+private _newTrack = A3U_currentTrackList select _newIndex;
+A3U_currentTrack = _newTrack;
+A3U_currentTrackIndex = _newIndex;
+A3U_trackProgress = 0;
+
+// Если музыка играет, запускаем новый трек
+if (A3U_isPlaying) then {
+    [] call A3U_fnc_playTrack;
+};
+
+// Если диалог открыт, обновляем выделение в списке треков
+private _display = findDisplay 85000;
+if (!isNull _display) then {
+    private _tracksList = _display displayCtrl 85102;
+    _tracksList lbSetCurSel _newIndex;
+    [] call A3U_fnc_updateTrackInfo;
+};
