@@ -114,11 +114,9 @@ class CfgFunctions
             class volumeChanged {};
             class playPause {};
             class playTrack {};
-            class onProgressClick {};
             class getTrackModIcon {};
             class getTracksByCategory {};
             class initMusicPlayer {};
-            class setupMusicHandlers {};
             class toggleLoop {};
             class toggleMute {};
             class toggleShuffle {};

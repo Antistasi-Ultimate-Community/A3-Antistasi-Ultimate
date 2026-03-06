@@ -1,30 +1,41 @@
 //fn_playTrack.sqf
 #include "..\..\script_component.hpp"
 
-//params ["_trackClass"];
 if (A3U_currentTrack isEqualTo []) exitWith {
     systemChat "Ошибка: трек не выбран!";
 };
 
-// Сохраняем состояние
+// Сохраняем состояние (на всякий случай)
 A3U_playerState = [
     A3U_currentTrack,
-    true, // isPlaying
+    true,
     A3U_trackProgress,
     A3U_volume,
-    A3U_trackStartTime,
-    A3U_pausedProgress
+    A3U_trackStartTime
 ];
+
 private _trackClass = A3U_currentTrack#1;
 
+// Останавливаем текущее воспроизведение, если что-то играло
 if (A3U_isPlaying) then {
     0.5 fadeMusic 0;
     playMusic "";
 };
-playMusic _trackClass;
-A3U_isPlaying = true;
-A3U_trackStartTime = diag_tickTime;
 
+// Определяем время старта (в секундах) из текущего прогресса
+private _startTime = 0;
+private _config = configFile >> "CfgMusic" >> _trackClass;
+private _duration = getNumber (_config >> "duration");
+
+if (_duration > 0 && A3U_trackProgress > 0) then {
+    _startTime = A3U_trackProgress * _duration;
+};
+
+playMusic [_trackClass, _startTime];
+A3U_isPlaying = true;
+A3U_trackStartTime = diag_tickTime - _startTime;
+
+// Управление громкостью (учёт мута)
 private _display = findDisplay 85000;
 private _slider = _display displayCtrl 85107;
 

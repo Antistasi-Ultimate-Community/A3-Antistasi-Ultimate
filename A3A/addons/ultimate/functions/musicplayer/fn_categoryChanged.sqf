@@ -3,7 +3,10 @@
 
 params ["_ctrlCategory", "_index"];
 
-// Проверка индекса
+// Если идёт программное заполнение - игнорируем событие
+private _display = ctrlParent _ctrlCategory;
+if (_display getVariable ["A3U_skipCategoryChange", false]) exitWith {};
+
 if (_index == -1) exitWith {
     systemChat "Ошибка: категория не выбрана!";
 };
@@ -16,7 +19,6 @@ systemChat format ["Выбрана категория: %1", _category];  // От
 private _tracks = [_category] call A3U_fnc_getTracksByCategory;
 systemChat format ["Найдено треков: %1", count _tracks];  // Отладка
 
-private _display = ctrlParent _ctrlCategory;
 private _tracksList = _display displayCtrl 85102;
 
 lbClear _tracksList;

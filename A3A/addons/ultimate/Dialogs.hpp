@@ -297,26 +297,73 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
                 align = "left";
             };
         };
-        
-        class TrackProgress: A3A_Progress {
+
+        class CategoryModeButton: A3A_ClickablePicture {
+            idc = 85116;
+            style = ST_PICTURE;
+            x = DIALOG_X + GRID_X(1);
+            y = DIALOG_Y + GRID_Y(44);
+            w = GRID_X(6);
+            h = GRID_Y(6);
+            text = "";
+            animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa"; // иконка фильтра
+            animTextureDisabled = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
+            animTextureOver = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
+            animTextureFocused = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
+            animTexturePressed = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
+            animTextureDefault = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
+            tooltip = "Показать все категории";
+            onButtonClick = "call A3U_fnc_toggleCategoryMode";
+            autoAdjustTexture = true;
+            colorBackground[] = {1,1,1,1};
+            class AttributesImage {
+                font = "RobotoCondensed";
+                color = "#FFFFFF";
+                align = "left";
+            };
+        };
+
+        class TrackProgress: A3A_Slider {
             idc = 85106;
             x = DIALOG_X + GRID_X(1);
             y = DIALOG_Y + GRID_Y(40);
             w = GRID_X(55);
             h = GRID_Y(2);
-            colorBar[] = {0.2,0.6,1,0.8};
+            color[] = {0.2,0.6,1,0.8};
+            style = SL_HORZ;
             texture = "#(argb,8,8,3)color(1,1,1,1)"; // Явное указание текстуры
         };
 
-        /* class TrackProgressClickCatcher: A3A_Button {
-            idc = 85124;                 // новый IDC
+        class TrackTimer: A3A_Text {
+            idc = 85115;
+            x = DIALOG_X + GRID_X(56);
+            y = DIALOG_Y + GRID_Y(34);
+            w = GRID_X(24);
+            h = GRID_Y(4);               // увеличьте высоту, чтобы текст не обрезался
+            style = ST_CENTER;
+            sizeEx = 1.8 * GUI_TEXT_SIZE_LARGE; // вместо GUI_TEXT_SIZE_SMALL
+            colorText[] = {0.8,0.8,0.8,1};
+            text = "00:00 / 00:00";
+        };
+
+        /* class TrackProgressClickCatcher: A3A_Slider {
+            idc = 85124;
             x = DIALOG_X + GRID_X(1);
-            y = DIALOG_Y + GRID_Y(40);
-            w = GRID_X(55);
-            h = GRID_Y(2);
-            text = "";
-            colorBackground[] = {0,0,0,0}; // полностью прозрачный
-            onButtonClick = "call A3U_fnc_onProgressClick";
+            y = DIALOG_Y + GRID_Y(41);
+            w = GRID_X(38);
+            h = GRID_Y(1);
+            style = SL_HORZ;
+            color[] = {0.2,0.6,1,0.8};                // цвет заполненной части (как был colorBar)
+            colorActive[] = {0.2,0.6,1,1};            // цвет при наведении
+            colorDisabled[] = {0.2,0.6,1,0.3};        // если отключён
+            sliderRange[] = {0, 1};                    // диапазон от 0 до 1 (доля трека)
+            sliderPosition = 0;                         // начальная позиция
+            lineSize = 0.01;                            // шаг при клике на стрелки (если они есть)
+            arrowEmpty = "\a3\3DEN\Data\Controls\CtrlXSlider\arrowEmpty_ca.paa";
+            arrowFull = "\a3\3DEN\Data\Controls\CtrlXSlider\arrowFull_ca.paa";
+            border = "\a3\3DEN\Data\Controls\CtrlXSlider\border_ca.paa";
+            thumb = "\a3\3DEN\Data\Controls\CtrlXSlider\thumb_ca.paa"; // можно заменить на прозрачный или убрать совсем
+            onSliderPosChanged = "call A3U_fnc_onProgressSeek";
         }; */
         
         class VolumeControl: A3A_Slider {
@@ -344,7 +391,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             idc = 85108;
             style = ST_PICTURE;
             x = DIALOG_X + GRID_X(65);
-            y = DIALOG_Y + GRID_Y(43.5);
+            y = DIALOG_Y + GRID_Y(43);
             w = GRID_X(6);
             h = GRID_Y(6);
             text = "";
@@ -368,7 +415,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             idc = 85109;
             style = ST_PICTURE;
             x = DIALOG_X + GRID_X(65);
-            y = DIALOG_Y + GRID_Y(43.5);
+            y = DIALOG_Y + GRID_Y(43);
             w = GRID_X(6);
             h = GRID_Y(6);
             text = "";
@@ -406,7 +453,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
         class TrackModIcon: A3A_Picture {
             idc = 85111;                     // IDC для иконки мода
             x = DIALOG_X + GRID_X(57);       // справа от TrackInfo (TrackInfo: x=30, w=50 → 30+50+1)
-            y = DIALOG_Y + GRID_Y(10);         // немного ниже верхней границы (под Title)
+            y = DIALOG_Y + GRID_Y(6);         // немного ниже верхней границы (под Title)
             w = GRID_X(22);                    // ширина 4 клетки
             h = GRID_Y(22);                    // высота 4 клетки
             /* text = "";                         // начальное значение пустое

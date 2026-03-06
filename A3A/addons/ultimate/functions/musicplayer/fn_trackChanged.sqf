@@ -5,29 +5,30 @@ params ["_ctrlTracks", "_index"];
 
 if (_index == -1) exitWith {};
 
-// Не обновляем, если это тот же трек
 private _newTrack = [_ctrlTracks lbText _index, _ctrlTracks lbData _index];
-if (count A3U_currentTrack > 0 && {A3U_currentTrack#1 == _newTrack#1}) exitWith {};
+if (count A3U_currentTrack > 0 && {A3U_currentTrack#1 == _newTrack#1}) exitWith {
+    systemChat "[trackChanged] same track, ignored";
+    diag_log format ["[trackChanged] same track: %1", _newTrack#1];
+};
 
-// Получение данных трека из списка
 private _trackData = [
-    _ctrlTracks lbText _index, // Название трека
-    _ctrlTracks lbData _index  // Путь к аудиофайлу
+    _ctrlTracks lbText _index,
+    _ctrlTracks lbData _index
 ];
 
-// Обновление глобальных переменных
-A3U_currentTrack = _trackData;
-A3U_trackProgress = 0;
+systemChat format ["[trackChanged] new track: %1, old progress: %2", _trackData#0, A3U_trackProgress];
+diag_log format ["[trackChanged] new track: %1 (%2), old progress: %3", _trackData#0, _trackData#1, A3U_trackProgress];
 
-// Запуск воспроизведения только если плеер был активен
+A3U_currentTrack = _trackData;
+A3U_trackProgress = 0; // Сброс прогресса для нового трека
+
 if (A3U_isPlaying) then {
     [] call A3U_fnc_playTrack;
 };
 
-// Обновление интерфейса
 [] call A3U_fnc_updateTrackInfo;
 
-// Синхронизация слайдера с мутом
+// Синхронизация громкости (как было)
 private _display = findDisplay 85000;
 if (!isNull _display) then {
     private _slider = _display displayCtrl 85107;
