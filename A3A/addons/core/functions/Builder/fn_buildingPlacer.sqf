@@ -504,3 +504,5 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 }];
 
 A3A_building_EHDB set [EACH_FRAME_EH, _eventHanderEachFrame];
+
+[CBA_EVENT_CLIENT_BUILDER_START, [getPosATL _centerObject, _buildingRadius]] call FUNCMAIN(triggerLocalEvent);
