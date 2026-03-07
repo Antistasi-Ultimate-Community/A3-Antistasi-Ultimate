@@ -1,6 +1,6 @@
 // Client-only event; after builder mode finished/aborted; params=[]
 #define CBA_EVENT_CLIENT_BUILDER_ABORT QUOTE(TRIPLES(PREFIX,event,clientBuilderAbort))
-// Client-only event; after builder mode started; params=[PositionAGL builderPos, Number builderRadius]
+// Client-only event; after builder mode started; params=[PositionATL builderPos, Number builderRadius]
 #define CBA_EVENT_CLIENT_BUILDER_START QUOTE(TRIPLES(PREFIX,event,clientBuilderStart))
 // Client-only event; after client initialization; params=[]
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
