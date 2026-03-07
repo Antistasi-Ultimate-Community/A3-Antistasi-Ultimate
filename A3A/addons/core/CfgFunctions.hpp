@@ -209,9 +209,13 @@ class CfgFunctions
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
             class initBuilderCollisionHelper {};
+            class initBuilderEvents {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
+            class onBuilderAbort {};
+            class onBuilderStart {};
+            class onTeardownModeChanged {};
             class placeBuilderObjects {};
             class processBuildingTimeouts {};
             class terrainCleaner {};
