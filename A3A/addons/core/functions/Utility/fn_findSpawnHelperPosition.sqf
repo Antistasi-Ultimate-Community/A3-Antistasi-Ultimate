@@ -47,6 +47,8 @@ private _helpers = nearestObjects[markerPos "Synd_HQ", [QEGVAR(ultimate,BaseSpaw
     { (nearestObjects[_x, ["LandVehicle","Air"], 10 max(2 * sizeOf typeOf _x)] - [_x] - (attachedObjects _x)) isEqualTo [] };
 };
 
+Trace_1(QFUNCMAIN(findSpawnHelperPosition),_helpers);
+
 // Found matching, unoccupied spawn helper(s); pick one and return its position and direction.
 if (_helpers isNotEqualTo []) exitWith {
     selectRandom _helpers call {
