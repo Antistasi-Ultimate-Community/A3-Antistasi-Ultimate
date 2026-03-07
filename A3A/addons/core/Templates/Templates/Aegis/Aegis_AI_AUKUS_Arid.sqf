@@ -345,6 +345,10 @@ _sfLoadoutData set ["grenadeLaunchers", [
 _sfLoadoutData set ["designatedGrenadeLaunchers", [
 ["GL_XM25_F", "", "", "", ["5Rnd_25x40mm_HE", "5Rnd_25x40mm_HE", "5Rnd_25x40mm_airburst"], ["5Rnd_25x40mm_HE", "5Rnd_25x40mm_HE", "5Rnd_25x40mm_airburst"], ""]
 ]];
+_sfLoadoutData set ["SMGs", [
+["SMG_04_blk_F", "muzzle_snds_460", "", "optic_Holosight_smg_blk_F", [], [], ""],
+["SMG_04_snd_F", "Aegis_muzzle_snds_460_sand", "", "optic_Holosight_smg", [], [], ""]
+]];
 _sfLoadoutData set ["machineGuns", [
 ["LMG_03_snd_F", "muzzle_snds_m_snd_F", "acc_pointer_IR", "optic_Hamr", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],
 ["LMG_03_snd_F", "muzzle_snds_m_snd_F", "acc_pointer_IR", "optic_NVS", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],
@@ -444,6 +448,10 @@ _eliteLoadoutData set ["grenadeLaunchers", [
 ["arifle_SPAR_01_GL_blk_F", "", "acc_pointer_IR", "optic_Holosight_blk_F", ["30Rnd_556x45_Stanag_red", "30Rnd_556x45_Stanag_red", "30Rnd_556x45_Stanag_Tracer_Red"], ["1Rnd_HE_Grenade_shell", "1Rnd_HEDP_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""],
 ["arifle_SPAR_01_GL_blk_F", "", "acc_pointer_IR", "optic_ERCO_blk_F", ["30Rnd_556x45_Stanag_red", "30Rnd_556x45_Stanag_red", "30Rnd_556x45_Stanag_Tracer_Red"], ["1Rnd_HE_Grenade_shell", "1Rnd_HEDP_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]
 ]];
+_LoadoutData set ["SMGs", [
+["SMG_04_blk_F", "", "", "optic_Holosight_smg_blk_F", [], [], ""],
+["SMG_04_snd_F", "", "", "optic_Holosight_smg", [], [], ""]
+]];
 
 private _mgs = [
     ["LMG_Mk200_plain_F", "muzzle_mzls_H", "acc_pointer_IR", "optic_ERCO_blk_F", ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Red", "200Rnd_65x39_cased_Box_Tracer_Red"], [], "bipod_01_F_blk"],
@@ -535,8 +543,8 @@ _militaryLoadoutData set ["grenadeLaunchers", [
 ["arifle_SA80_GL_snd_F", "", "acc_pointer_IR", "optic_Holosight", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HEDP_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-["SMG_04_blk_F", "", "", "optic_Holosight_smg_blk_F", ["40Rnd_460x30_Mag_F", "40Rnd_460x30_Mag_F"], [], ""],
-["SMG_04_snd_F", "", "", "optic_Holosight_smg", ["40Rnd_460x30_Mag_F", "40Rnd_460x30_Mag_F"], [], ""]
+["SMG_04_blk_F", "", "", "optic_Holosight_smg_blk_F", [], [], ""],
+["SMG_04_snd_F", "", "", "optic_Holosight_smg", [], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
 ["LMG_03_F", "", "acc_flashlight", "optic_MRCO", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],
@@ -622,6 +630,10 @@ _militiaLoadoutData set ["grenadeLaunchers", [
 ["arifle_Mk20_GL_plain_F", "", "acc_flashlight", "", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""],
 ["arifle_AUG_GL_F", "", "acc_flashlight", "", ["30Rnd_556x45_AUG_Mag_F", "30Rnd_556x45_AUG_Mag_F", "30Rnd_556x45_AUG_Mag_Tracer_F"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""],
 ["arifle_AUG_GL_F", "", "acc_flashlight", "optic_Holosight", ["30Rnd_556x45_AUG_Mag_F", "30Rnd_556x45_AUG_Mag_F", "30Rnd_556x45_AUG_Mag_Tracer_F"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell"], ""]
+]];
+_militiaLoadoutData set ["SMGs", [
+["SMG_04_blk_F", "", "", "optic_Holosight_smg_blk_F", [], [], ""],
+["SMG_04_snd_F", "", "", "optic_Holosight_smg", [], [], ""]
 ]];
 _militiaLoadoutData set ["machineGuns", [
 ["LMG_03_F", "", "acc_flashlight", "optic_MRCO", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],

@@ -8,6 +8,7 @@ class CfgFunctions
             class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
+            class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
             class assaultBuilding {};
@@ -21,6 +22,7 @@ class CfgFunctions
             class canFight {};
             class captureX {};
             class chargeWithSmoke {};
+            class checkAndSpawnAttack {};
             class combatLanding {};
             class coverage {};
             class destroyBuilding {};
@@ -31,6 +33,7 @@ class CfgFunctions
             class fastrope {};
             class fastropeVTOL {};
             class findSafeRoadToUnload {};
+            class fireCMFlare {};
             class fleeToSide {};
             class guardDog {};
             class hasRadio {};
@@ -205,6 +208,7 @@ class CfgFunctions
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
+            class initBuilderCollisionHelper {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
@@ -267,6 +271,8 @@ class CfgFunctions
             class createUnit {};
             class createVehicleCrew {};
             class createVehicleQRFBehaviour {};
+            class createZoneAmmoBox {};
+            class createZoneFlag {};
             class crewTypeForVehicle {};
             class cycleSpawn {};
             class FIAinitBases {};
@@ -606,6 +612,7 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
@@ -619,6 +626,7 @@ class CfgFunctions
             class savePlayerStat {};
             class setStatVariable {};
             class saveLoop {};
+            class saveParamPreset {};
             class writebackSaveVar {};
         };
 
@@ -803,6 +811,8 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class attachLight {};
+            class attachLightFromConfig {};
             class basicBackpack {};
             class classNameToModel {};
             class countAttachedObjects {};

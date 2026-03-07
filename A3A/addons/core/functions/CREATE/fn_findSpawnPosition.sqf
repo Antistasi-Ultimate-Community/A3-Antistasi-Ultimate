@@ -4,7 +4,7 @@ Environment: Any. Has network timing risks which should be mitigated using addTi
 
 Arguments:
     <STRING> Marker name to search
-    <STRING> Type of spawn place to search, "vehicle", "mortar", "heli" or "plane"
+    <STRING> Type of spawn place to search, "vehicle", "mortar", "heli", "plane", "sam", "flag", "ammo"
 
 Return Value:
     <ARRAY<
