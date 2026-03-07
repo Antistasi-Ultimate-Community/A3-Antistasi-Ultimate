@@ -27,6 +27,7 @@
                 <Czech>Odemknout/Zamknout</Czech>
                 <Italian>Sblocca</Italian>
                 <Polish>Odblokuj / Zablokuj</Polish>
+                <Turkish>Kilit(A/K)</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Confirm">
                 <Original>Confirm</Original>
@@ -38,6 +39,7 @@
                 <Czech>Potvrdit</Czech>
                 <Italian>Conferma</Italian>
                 <Polish>Potwierdź</Polish>
+                <Turkish>Onayla</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Cars">
                 <Original>Cars</Original>
@@ -49,6 +51,7 @@
                 <Czech>Auta</Czech>
                 <Italian>Automobili</Italian>
                 <Polish>Samochody</Polish>
+                <Turkish>Araçlar</Turkish>
             </Key>
             <Key ID="STR_HR_Garage_Generic_capacity">
                 <Original>Available space in garage</Original>
@@ -60,6 +63,7 @@
                 <Czech>Dostupný prostor v garáži</Czech>
                 <Italian>Spazio disponibile nel garage</Italian>
                 <Polish>Dostępne miejsce w garażu</Polish>
+                <Turkish>Garaj Mevcut Kapasitesi</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Armored">
                 <Original>Armor</Original>
@@ -71,10 +75,12 @@
                 <Czech>Pancíř</Czech>
                 <Italian>Armatura</Italian>
                 <Polish>Pojazdy Opancerzone</Polish>
+                <Turkish>Zırhlı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Unmanned">
                 <Original>Unmanned</Original>
                 <Russian>Беспилотники</Russian>
+                <Turkish>İnsansiz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Air">
                 <Original>Aircraft</Original>
@@ -93,34 +99,42 @@
             <Key ID="STR_HR_GRG_Generic_Heli">
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
+                <Turkish>Helikopter</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Cars_Сivilian">
               <Original>Сivilian vehicles</Original>
               <Russian>Гражданская техника</Russian>
+              <Turkish>Sivil Araçlar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_APC">
                 <Original>APC/IFV</Original>
                 <Russian>БТР/БМП</Russian>
+                <Turkish>ZPA/ZMA</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AA">
                 <Original>Anti-air</Original>
                 <Russian>ПВО</Russian>
+                <Turkish>Hava-Sav</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Arty">
                 <Original>Artillery</Original>
                 <Russian>Артиллерия</Russian>
+                <Turkish>Topçu</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Heli">
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
+                <Turkish>Helikopterler</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Plane">
                 <Original>Planes</Original>
                 <Russian>Самолёты</Russian>
+                <Turkish>Uçaklar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_VTOL">
                 <Original>VTOL</Original>
                 <Russian>СВВП</Russian>
+                <Turkish>DKİ</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_HeliDisabled">
                 <Original>You can only access helicopters if a rebel helipad, friendly airfield, or military base is nearby.</Original>
@@ -132,6 +146,7 @@
                 <Czech>Vrtulníky můžete využívat pouze tehdy, pokud je poblíž rebelský heliport, spojenecká letecká základna nebo vojenská základna.</Czech>
                 <Italian>Puoi accedere agli elicotteri solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
                 <Polish>Możesz korzystać ze śmigłowców tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
+                <Turkish>Helikopterlere yalnızca bir isyancı helikopter pisti, dost havaalanı veya askeri üs yakınındaysa erişebilirsiniz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_AirDisabled">
                 <Original>You can only access aircraft if a rebel helipad, friendly airfield, or military base is nearby.</Original>
@@ -143,6 +158,7 @@
                 <Czech>Letadla můžete využívat pouze tehdy, pokud je poblíž rebelský heliport, spojenecká letecká základna nebo vojenská základna.</Czech>
                 <Italian>Puoi accedere agli aeromobili solo se c'è un eliporto ribelle, una base aerea alleata o una base militare nelle vicinanze.</Italian>
                 <Polish>Możesz korzystać z samolotów tylko wtedy, gdy w pobliżu znajduje się lądowisko rebeliantów, przyjazna baza lotnicza lub baza wojskowa.</Polish>
+                <Turkish>Hava araçlarına yalnızca bir isyancı helikopter pisti, dost havaalanı veya askeri üs yakınındaysa erişebilirsiniz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Boat">
                 <Original>Ships</Original>
@@ -154,6 +170,7 @@
                 <Czech>Lodě</Czech>
                 <Italian>Barche</Italian>
                 <Polish>Statki</Polish>
+                <Turkish>Tekneler</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Source">
                 <Original>Resource vehicles</Original>
@@ -165,6 +182,7 @@
                 <Czech>Zdrojová vozidla</Czech>
                 <Italian>Veicoli delle risorse</Italian>
                 <Polish>Pojazdy zasobów</Polish>
+                <Turkish>İkmal Araçları</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Static">
                 <Original>Statics</Original>
@@ -176,6 +194,7 @@
                 <Czech>Statické zbraně</Czech>
                 <Italian>Armi Fisse</Italian>
                 <Polish>Stanowiska bojowe</Polish>
+                <Turkish>Statik Silahlar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Mounts">
                 <Original>Mounts</Original>
@@ -187,6 +206,7 @@
                 <Czech>Mounti</Czech>
                 <Italian>Armi Montate</Italian>
                 <Polish>Bron Montowana</Polish>
+                <Turkish>Genel Montajlar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Texture">
                 <Original>Texture</Original>
@@ -198,9 +218,11 @@
                 <Czech>Textura</Czech>
                 <Italian>Texture</Italian>
                 <Polish>Tekstury</Polish>
+                <Turkish>Kaplamalar</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_HelipadDisabled">
                 <Original>You can only access garaged helicopters from helipads</Original>
+                <Turkish>Garajdaki helikopterlere yalnızca helikopter pistlerinden erişebilirsiniz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Anim">
                 <Original>Customize</Original>
@@ -212,6 +234,7 @@
                 <Czech>Přizpůsobit</Czech>
                 <Italian>Modifica</Italian>
                 <Polish>Dostosuj</Polish>
+                <Turkish>Özelleştirme</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_Pylons">
                 <Original>Pylons</Original>
@@ -223,6 +246,7 @@
                 <Czech>Pylony</Czech>
                 <Italian>Equipaggiamenti</Italian>
                 <Polish>Pylony</Polish>
+                <Turkish>Silahlandır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_PylonDisabled">
                 <Original>Pylons require an ammo source to edit</Original>
@@ -234,6 +258,7 @@
                 <Czech>Pylony vyžadují úpravu zdroje munice</Czech>
                 <Italian>Per editare gli equipaggiamenti dinamici hai bisogno di una fonte di munizioni</Italian>
                 <Polish>Pylony wymagają źródła amunicji do edycji</Polish>
+                <Turkish>Silah askılarını düzenlemek için bir mühimmat kaynağı gerekir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_full">
                 <Original>Full</Original>
@@ -245,6 +270,7 @@
                 <Czech>Plný</Czech>
                 <Italian>Pieno</Italian>
                 <Polish>Pełny</Polish>
+                <Turkish>Dolu</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_capacity">
                 <Original>Available space in garage</Original>
@@ -256,6 +282,7 @@
                 <Czech>Dostupný prostor v garáži</Czech>
                 <Italian>Spazio disponibile nel garage</Italian>
                 <Polish>Dostępne miejsce w garażu</Polish>
+                <Turkish>Garajdaki kullanılabilir alan</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Generic_SellVeh">
                 <Original>Sell Vehicle</Original>
@@ -267,6 +294,7 @@
                 <Czech>Prodat vozidlo</Czech>
                 <Italian>Vendere veicolo</Italian>
                 <Polish>Sprzedaj pojazd</Polish>
+                <Turkish>Aracı Sat</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_Header">
                 <Original>Sources:</Original>
@@ -278,6 +306,7 @@
                 <Czech>Zdroje:</Czech>
                 <Italian>Fonti:</Italian>
                 <Polish>Źródła:</Polish>
+                <Turkish>Kaynaklar:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Available">
                 <Original>Vehicles will be rearmed when ungaraged</Original>
@@ -289,6 +318,7 @@
                 <Czech>Vozidla budou přezbrojena když budou vyndána z garáže</Czech>
                 <Italian>I veicoli saranno riarmati quando lasceranno il garage</Italian>
                 <Polish>Pojazdy zostaną dozbrojone, gdy zostaną wyciągnięte z garażu</Polish>
+                <Turkish>Araçlar garajdan çıkarıldığında yeniden mühimmatlandırılacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Unavailable">
                 <Original>Vehicles won't be rearmed when ungaraged as the garage lacks an ammo source</Original>
@@ -300,6 +330,7 @@
                 <Czech>Vozidla nebudou přezbrojena když budou vyndána z garáže jelikož garáž nemá dostatek muničních zdrojů</Czech>
                 <Italian>I veicoli non saranno riarmati quando lasceranno il garage poichè non è presente una fonte di munizioni</Italian>
                 <Polish>Pojazdy nie zostaną dobrojone, gdy zostaną wyciągnięte z garażu, ponieważ w garażu brakuje źródła amunicji</Polish>
+                <Turkish>Garajda mühimmat kaynağı bulunmadığı için araçlar garajdan çıkarıldığında yeniden mühimmatlandırılmayacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Disabled">
                 <Original>Rearm disabled by server</Original>
@@ -311,6 +342,7 @@
                 <Czech>Přezbrojení deaktivováno podle serveru</Czech>
                 <Italian>Riarmo disabilitato dal server</Italian>
                 <Polish>Dozbrajanie wyłączone w ustawieniach serwera</Polish>
+                <Turkish>Yeniden silahlandırma sunucu tarafından kapatıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Available">
                 <Original>Vehicles will be refueled when ungaraged</Original>
@@ -322,6 +354,7 @@
                 <Czech>Vozidla budou dotankována když budou vyndána z garáže</Czech>
                 <Italian>I veicoli saranno riforniti di carburante quando lasceranno il garage</Italian>
                 <Polish>Pojazdy zostaną zatankowane, gdy zostaną wyciągnięte z garażu</Polish>
+                <Turkish>Araçlar garajdan çıkarıldığında yakıt ikmali yapılacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Unavailable">
                 <Original>Vehicles won't be refueled when ungaraged as the garage lacks a fuel source</Original>
@@ -333,6 +366,7 @@
                 <Czech>Vozidla nebudou dotankována když budou vyndána z garáže jelikož garáž nemá dostatek palivových zdrojů</Czech>
                 <Italian>I veicoli non saranno riforniti quando lasceranno il garage poichè non è presente una fonte di carburante</Italian>
                 <Polish>Pojazdy nie zostaną zatankowane, gdy zostaną wyciągnięte z garażu, ponieważ w garażu brakuje źródła paliwa</Polish>
+                <Turkish>Garajda yakıt kaynağı bulunmadığı için araçlar garajdan çıkarıldığında yakıt ikmali yapılmayacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Disabled">
                 <Original>Refuel disabled by server settings</Original>
@@ -344,6 +378,7 @@
                 <Czech>Dotankování vypnuto v nastavení serveru</Czech>
                 <Italian>Rifornimenti disabilitato dal server</Italian>
                 <Polish>Tankowanie wyłączone w ustawieniach serwera</Polish>
+                <Turkish>Yakıt ikmali sunucu ayarları tarafından devre dışı bırakıldı.</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Available">
                 <Original>Vehicles will be repaired when ungaraged</Original>
@@ -355,6 +390,7 @@
                 <Czech>Vozidla budou opravena když budou vyndána z garáže</Czech>
                 <Italian>I veicoli saranno riparati quando lasceranno il garage</Italian>
                 <Polish>Pojazdy zostaną naprawione, gdy zostaną wyciągnięte z garażu</Polish>
+                <Turkish>Araçlar garajdan çıkarıldığında onarılacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Unavailable">
                 <Original>Vehicles won't be repaired when ungaraged as the garage lacks a repair source</Original>
@@ -366,6 +402,7 @@
                 <Czech>Vozidla nebudou opravena když budou vyndána z garáže jelikož garáž nemá dostatek opravných zdrojů</Czech>
                 <Italian>I veicoli non saranno riparati quando lasceranno il garage poichè non è presente una fonte di pezzi di ricambio</Italian>
                 <Polish>Pojazdy nie zostaną naprawione, gdy zostaną wyciągnięte z garażu, ponieważ w garażu brakuje zasobów naprawczych</Polish>
+                <Turkish>Garajda onarım kaynağı bulunmadığı için araçlar garajdan çıkarıldığında onarılmayacaktır</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Disabled">
                 <Original>Repair disabled by server settings</Original>
@@ -377,6 +414,7 @@
                 <Czech>Opravování vypnuto v nastavení serveru</Czech>
                 <Italian>Riparazioni disabilitate dalle impostazioni del server</Italian>
                 <Polish>Naprawianie wyłączone w ustawieniach serwera</Polish>
+                <Turkish>Onarım sunucu ayarları tarafından devre dışı bırakıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isAmmoSource">
                 <Original>Vehicle is an ammo source</Original>
@@ -388,6 +426,7 @@
                 <Czech>Vozidlo je zdrojem munice</Czech>
                 <Italian>Il veicolo è una fonte di munizioni</Italian>
                 <Polish>Pojazd jest źródłem amunicji</Polish>
+                <Turkish>Bu araç mühimmat kaynağı olarak kullanılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isFuelSource">
                 <Original>Vehicle is a fuel source</Original>
@@ -399,6 +438,7 @@
                 <Czech>Vozidlo je zdrojem paliva</Czech>
                 <Italian>Il veicolo è una fonte di carburante</Italian>
                 <Polish>Pojazd jest źródłem paliwa</Polish>
+                <Turkish>Bu araç yakıt kaynağı olarak kullanılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isRepairSource">
                 <Original>Vehicle is a repair source</Original>
@@ -410,6 +450,7 @@
                 <Czech>Vozidlo je zdrojem opravy</Czech>
                 <Italian>Il veicolo è una fonte di pezzi di ricambio</Italian>
                 <Polish>Pojazd jest źródłem naprawy</Polish>
+                <Turkish>Bu araç onarım kaynağı olarak kullanılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_isNotSource">
                 <Original>Vehicle is not a source</Original>
@@ -421,6 +462,7 @@
                 <Czech>Vozidlo není zdrojem</Czech>
                 <Italian>Il veicolo non è una fonte di nulla</Italian>
                 <Polish>Pojazd nie jest źródłem</Polish>
+                <Turkish>Bu araç kaynak olarak kullanılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Seats">
                 <Original>Seats:</Original>
@@ -432,6 +474,7 @@
                 <Czech>Sedadla:</Czech>
                 <Italian>Sedili:</Italian>
                 <Polish>Siedzenia:</Polish>
+                <Turkish>Koltuklar:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Cargo">
                 <Original>Cargo:</Original>
@@ -443,6 +486,7 @@
                 <Czech>Náklad:</Czech>
                 <Italian>Cargo:</Italian>
                 <Polish>Ładunek:</Polish>
+                <Turkish>Kargo:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_AceCargo">
                 <Original>Ace Cargo:</Original>
@@ -454,6 +498,7 @@
                 <Czech>ACE Cargo:</Czech>
                 <Italian>Ace Cargo:</Italian>
                 <Polish>Ładunek ACE:</Polish>
+                <Turkish>Ace Kargo:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Capacity">
                 <Original>Capacity:</Original>
@@ -465,6 +510,7 @@
                 <Czech>Kapacita:</Czech>
                 <Italian>Capacità:</Italian>
                 <Polish>Pojemność:</Polish>
+                <Turkish>Kapasite:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Available">
                 <Original>Available:</Original>
@@ -476,6 +522,7 @@
                 <Czech>Dostupný:</Czech>
                 <Italian>Disponibile:</Italian>
                 <Polish>Dostępny:</Polish>
+                <Turkish>Mevcut:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_cannotBeSold">
                 <Original>Cannot be sold.</Original>
@@ -487,6 +534,7 @@
                 <Czech>Nelze prodat.</Czech>
                 <Italian>Non può essere venduto.</Italian>
                 <Polish>Nie można sprzedać.</Polish>
+                <Turkish>Satılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Speed">
                 <Original>Top speed:</Original>
@@ -498,6 +546,7 @@
                 <Czech>Nejvyšší rychlost:</Czech>
                 <Italian>Velocità Massima:</Italian>
                 <Polish>Prędkość Maksymalna:</Polish>
+                <Turkish>Azami hız:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_HP">
                 <Original>Horsepower:</Original>
@@ -509,6 +558,7 @@
                 <Czech>Koňských sil:</Czech>
                 <Italian>Cavalli:</Italian>
                 <Polish>Moc:</Polish>
+                <Turkish>Beygir gücü:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_Mass">
                 <Original>Mass:</Original>
@@ -520,6 +570,7 @@
                 <Czech>Hmotnost:</Czech>
                 <Italian>Massa:</Italian>
                 <Polish>Masa:</Polish>
+                <Turkish>Kütle:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_InfoPanel_salePrice">
                 <Original>Sell Price:</Original>
@@ -531,6 +582,7 @@
                 <Czech>Prodejní cena:</Czech>
                 <Italian>Prezzo di vendita:</Italian>
                 <Polish>Cena sprzedaży:</Polish>
+                <Turkish>Satış fiyatı:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_fullRefuel">
                 <Original>Vehicle can be fully refueled with</Original>
@@ -542,6 +594,7 @@
                 <Czech>Vozidlo lze plně dotankovat</Czech>
                 <Italian>Il veicolo può essere completamente rifornito usando</Italian>
                 <Polish>Pojazd można w pełni zatankować za pomocą</Polish>
+                <Turkish>Araç tamamen yakıt ikmali yapılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_partialRefuel">
                 <Original>Vehicle can only be partially refueled to</Original>
@@ -553,6 +606,7 @@
                 <Czech>Vozidlo lze částečně dotankovat</Czech>
                 <Italian>Il veicolo può essere parzialmente rifornito usando</Italian>
                 <Polish>Pojazd można zatankować tylko częściowo do</Polish>
+                <Turkish>Araç yalnızca kısmen yakıt ikmali yapılabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_noRefuel">
                 <Original>Vehicle cannot be refueled</Original>
@@ -564,6 +618,7 @@
                 <Czech>Vozidlo nelze dotankovat</Czech>
                 <Italian>Il veicolo non può essere rifornito</Italian>
                 <Polish>Pojazd nie może być zatankowany</Polish>
+                <Turkish>Bu araca yakıt ikmali yapılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Refuel_factionFuel">
                 <Original>Faction has</Original>
@@ -575,6 +630,7 @@
                 <Czech>Frakce má</Czech>
                 <Italian>La Fazione ha</Italian>
                 <Polish>Frakcje mają</Polish>
+                <Turkish>Fraksiyonun sahip</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_openGarage_Action">
                 <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Open garage&lt;/t&gt;</Original>
@@ -586,6 +642,7 @@
                 <Czech>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Otevřít Garáž&lt;/t&gt;</Czech>
                 <Italian>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Apri Garage&lt;/t&gt;</Italian>
                 <Polish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Otwórz Garaż</Polish>
+                <Turkish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' size='1.6' shadow=2 /&gt; &lt;t&gt;Garajı aç&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_addVehicle_Action">
                 <!--%1 is display name of vehicle-->
@@ -598,6 +655,7 @@
                 <Czech>&lt;img image = '\ a3 \ ui_f \ Data \ Gui \ rsc \ rscdisplayArsenal \ SpaceGarage_ca.paa'&gt; &lt;/img&gt; garáž %1</Czech>
                 <Italian>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</Italian>
                 <Polish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garaż%1</Polish>
+                <Turkish>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garaj %1</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Null">
                 <Original>You are not looking at a vehicle</Original>
@@ -609,6 +667,7 @@
                 <Czech>Nedíváte se na vozidlo</Czech>
                 <Italian>Non stai guardando un veicolo</Italian>
                 <Polish>Nie patrzysz na żaden pojazd</Polish>
+                <Turkish>Herhangi bir araca bakmıyorsunuz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_confirm_NullSelection">
                 <Original>No vehicle selected</Original>
@@ -620,6 +679,7 @@
                 <Czech>Žádné vozidlo</Czech>
                 <Italian>Nessun veicolo selezionato</Italian>
                 <Polish>Nie wybrano pojazdu</Polish>
+                <Turkish>Herhangi bir araç seçilmedi</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_SATow">
                 <Original>You can't garage a Vehicle with your Tow Rope out or a Vehicle attached</Original>
@@ -631,6 +691,7 @@
                 <Czech>Nemůžete garážovat vozidlo, které je taženo a nebo má vytažená tažná lana</Czech>
                 <Italian>Non può mettere nel garage un veicolo con la Fune da Traino dispiegata o con un Veicolo attaccato</Italian>
                 <Polish>Nie możesz garażować pojazdu z wyciągniętą liną holowniczą lub podłączonym pojazdem</Polish>
+                <Turkish>Çekme halatı takılıyken veya bağlı bir araç varken aracı garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_LTC">
                 <Original>Loot crate stored</Original>
@@ -642,6 +703,7 @@
                 <Czech>Kořistní bedna uložená</Czech>
                 <Italian>Loot Crate immagazzinata</Italian>
                 <Polish>Przechowywana skrzynka z łupami</Polish>
+                <Turkish>Yağma sandığı depoya alındı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Item_Stored">
                 <Original>Item stored</Original>
@@ -653,9 +715,11 @@
                 <Czech>Položka uložená</Czech>
                 <Italian>Oggetto immagazzinato</Italian>
                 <Polish>Przechowywany przedmiot</Polish>
+                <Turkish>Öğe depolandı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Ammo_sold">
                 <Original>Ammo crate sold</Original>
+                <Turkish>Mühimmat sandığı satıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Fuel_sold">
                 <Original>Fuel sold</Original>
@@ -667,6 +731,7 @@
                 <Czech>Prodané palivo</Czech>
                 <Italian>Carburante venduto</Italian>
                 <Polish>Sprzedano paliwo</Polish>
+                <Turkish>Yakıt satıldı.</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_commander_only">
                 <Original>This object can only be garaged by the commander</Original>
@@ -678,6 +743,7 @@
                 <Czech>Zdroje paliva mohou být garážovány pouze velitelem</Czech>
                 <Italian>Le fonti di carburante possono essere inserite nel garage solo dal comandante</Italian>
                 <Polish>Źródła paliwa mogą być garażowane tylko przez dowódcę</Polish>
+                <Turkish>Bu nesneyi sadece komutan garaja alabilir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Distance">
                 <Original>You can't garage vehicles that are more than 25m away from you</Original>
@@ -689,6 +755,7 @@
                 <Czech>Nemůžete garážová vozidla, která jsou od vás více než 25 metrů</Czech>
                 <Italian>Non puoi mettere un veicolo nel garage se si trova a più di 25m da te</Italian>
                 <Polish>Nie możesz garażować pojazdów znajdujących się dalej niż 25m od Ciebie</Polish>
+                <Turkish>25 metreden daha uzakta olan araçları garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Destroyed">
                 <Original>You can't garage a destroyed vehicle</Original>
@@ -700,6 +767,7 @@
                 <Czech>Nemůžete garáže zničené vozidlo</Czech>
                 <Italian>Non puoi mettere un veicolo distrutto nel garage</Italian>
                 <Polish>Nie możesz garażować zniszczonego pojazdu</Polish>
+                <Turkish>Yok edilmiş araçlar garaja alınamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Locked">
                 <Original>You can't garage a locked vehicle</Original>
@@ -711,9 +779,11 @@
                 <Czech>Nemůžete garážové zamčené vozidlo</Czech>
                 <Italian>Non puoi mettere un veicolo bloccato nel garage</Italian>
                 <Polish>Nie możesz garażować zablokowanego pojazdu</Polish>
+                <Turkish>Kilitli araçlar garaja alınamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Attached">
                 <Original>You can't garage an object that's attached to another vehicle</Original>
+                <Turkish>Bir araca bağlı nesneler garaja alınamaz</Turkish>
             </Key>
             <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_badLocation">
@@ -726,6 +796,7 @@
                 <Czech>Vy a vozidlo musíte být v prostředí %1 posádek abyste jej mohli garážovat</Czech>
                 <Italian>Tu e il veicolo dovete essere nelle %1 vicinanze di una guarnigione per poter inserirlo nel garage</Italian>
                 <Polish>Ty i pojazd musicie znajdować się w otoczeniu garnizonów %1, aby garażować go</Polish>
+                <Turkish>Aracı garaja almak için siz ve araç %1 garnizonunun yakınında olmalısınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesEngaging">
                 <Original>You can't garage vehicles while enemies are engaging you</Original>
@@ -737,6 +808,7 @@
                 <Czech>Nemůžete garážová vozidla, zatímco na vás nepřátelé útočí</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage mentre dei nemici ti stanno ingaggiando</Italian>
                 <Polish>Nie możesz garażować pojazdów, gdy wrogowie cię atakują</Polish>
+                <Turkish>Düşmanlarla çatışma halindeyken araçları garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesNear">
                 <Original>You can't garage vehicles while enemies are near you</Original>
@@ -748,6 +820,7 @@
                 <Czech>Nemůžete garážová vozidla, zatímco nepřátelé jsou blízko vás</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage poichè ci sono nemici nelle vicinanze</Italian>
                 <Polish>Nie możesz garażować pojazdów, gdy wrogowie są blisko ciebie</Polish>
+                <Turkish>Yakınınızda düşmanlar varken araçları garaja alamazsınız</Turkish>
             </Key>
             <!--%1 is faction name-->
             <Key ID="STR_HR_GRG_Feedback_addVehicle_airBlocked">
@@ -760,6 +833,7 @@
                 <Czech>Letadlo nemůžete garáže, když nejste poblíž letiště, které patří %1. Přesuňte prosím své letadlo na letiště pod kontrolou, abyste jej garáže</Czech>
                 <Italian>Non puoi inserire un veivolo nel garage se ti trovi lontano da un Aereoporto di appartenenza %1. Per favore sposta il veivolo ad un aereoporto sotto il controllo alleato in modo da poter conservarlo nel garage</Italian>
                 <Polish>Nie możesz garażować samolotu, gdy nie znajdujesz się w pobliżu lotniska, które należy do %1. Przenieś swój samolot na lotnisko pod Twoją kontrolą, aby go garażować</Polish>
+                <Turkish>%1’e ait bir hava üssüne ya da helikopter pistine yakın değilseniz hava aracı garaja alınamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_GenericFail">
                 <Original>You can't garage this</Original>
@@ -771,6 +845,7 @@
                 <Czech>Nemůžete to garážovat</Czech>
                 <Italian>Questo non può essere messo nel garage</Italian>
                 <Polish>Nie możesz tego garażować</Polish>
+                <Turkish>Bunu garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_inVehicle">
                 <Original>You can't garage a vehicle while in another vehicle</Original>
@@ -782,6 +857,7 @@
                 <Czech>V jiném vozidle nemůžete garážovat vozidla</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage mentre ti trovi dentro un altro veicolo</Italian>
                 <Polish>Nie możesz garażować pojazdu, będąc w innym pojeździe</Polish>
+                <Turkish>Başka bir araçtayken bir aracı garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Crewed">
                 <Original>You can't garage a vehicle with crew inside</Original>
@@ -793,6 +869,7 @@
                 <Czech>Nemůžete garážovat vozidlo s posádkou uvnitř</Czech>
                 <Italian>Non puoi inserire un veicolo nel garage se l'equipaggio si trova ancora all'interno</Italian>
                 <Polish>Nie możesz garażować pojazdu z załogą w środku</Polish>
+                <Turkish>İçinde mürettebat varken bir aracı garaja alamazsınız</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Capacity">
                 <Original>There's not enough room to garage this vehicle</Original>
@@ -804,6 +881,7 @@
                 <Czech>Není dostatek prostoru pro garážování tohoto vozidla</Czech>
                 <Italian>Non c'è abbastanza spazio per mettere questo veicolo nel garage</Italian>
                 <Polish>Nie ma wystarczająco dużo miejsca na garażowanie tego pojazdu</Polish>
+                <Turkish>Bu aracı garaja almak için yeterli alan yok</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Success">
                 <!--%1 is display name of vehicle-->
@@ -816,6 +894,7 @@
                 <Czech>%1 garážováno</Czech>
                 <Italian>%1 Inserito nel Garage</Italian>
                 <Polish>%1 Garażowany</Polish>
+                <Turkish>%1 Garaja Alındı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_requestMount_Denied">
                 <Original>Can't mount static</Original>
@@ -827,6 +906,7 @@
                 <Czech>Nelze namontovat statiku</Czech>
                 <Italian>Impossibile montare l'arma fissa</Italian>
                 <Polish>Nie można zamontować broni statycznej</Polish>
+                <Turkish>Statik silah yerleştirilemez</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_comOnly">
                 <Original>Only the Commander can sell vehicles.</Original>
@@ -838,6 +918,7 @@
                 <Czech>Jen velitel může prodávat vozidla.</Czech>
                 <Italian>Solo il comandante può vendere i veicoli.</Italian>
                 <Polish>Tylko dowódca może sprzedawać pojazdy.</Polish>
+                <Turkish>Araçları yalnızca komutan satabilir.</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_locked">
                 <Original>You cannot sell a locked vehicle. If this is your vehicle, make sure to unlock it first.</Original>
@@ -849,6 +930,7 @@
                 <Czech>Nemůžete prodat zamknuté vozidlo. Pokud je to vaše vozidlo, nejprve ho odemkněte.</Czech>
                 <Italian>Non puoi vendere un veicolo bloccato. Se questo è il tuo veicolo, assicurati di sbloccarlo prima.</Italian>
                 <Polish>Nie możesz sprzedać zablokowanego pojazdu. Jeśli to twój pojazd, najpierw go odblokuj.</Polish>
+                <Turkish>Kilitli bir aracı satamazsınız. Bu araç size aitse, önce kilidini açtığınızdan emin olun</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_noPrice">
                 <Original>This vehicle is not suitable for our marketplace.</Original>
@@ -860,6 +942,7 @@
                 <Czech>Toto vozidlo není vhodné pro náš trh.</Czech>
                 <Italian>Questo veicolo non è adatto al nostro mercato.</Italian>
                 <Polish>Ten pojazd nie nadaje się na nasz rynek.</Polish>
+                <Turkish>Bu araç pazaryerimizde satılamaz</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_sellVehicle_sold">
                 <Original>Vehicle sold for %1.</Original>
@@ -871,6 +954,7 @@
                 <Czech>Vozidlo prodáno za %1.</Czech>
                 <Italian>Veicolo venduto per %1.</Italian>
                 <Polish>Pojazd sprzedany za %1.</Polish>
+                <Turkish>Araç %1 karşılığında satıldı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_toggleLock_limit">
                 <Original>You have too many vehicles locked</Original>
@@ -897,6 +981,7 @@
                 <Czech>dívá se na toto vozidlo.</Czech>
                 <Italian>sta guardando questo veicolo</Italian>
                 <Polish>patrzy na ten pojazd.</Polish>
+                <Turkish>bu araca bakıyor</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_LockedToolTip">
                 <!-- name is appended on at the end with a spcae in between-->
@@ -909,6 +994,7 @@
                 <Czech>Vozidlo je uzamčeno</Czech>
                 <Italian>Il veicolo è bloccato da</Italian>
                 <Polish>Pojazd jest zablokowany przez</Polish>
+                <Turkish>kişisi aracı kilitledi</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_LockedToolTip_Ago">
                 <Original>%1: %2 ago</Original>
@@ -920,6 +1006,7 @@
                 <Czech>%1: před %2</Czech>
                 <Italian>%1: %2 fa</Italian>
                 <Polish>%1: %2 temu</Polish>
+                <Turkish>%1: %2 önce</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_Rotation">
                 <!--Keybinds are hardcoded to key DIK codes: DIK_E, DIK_Q, DIK_ESCAPE, DIK_RETURN, and DIK_SPACE-->
@@ -932,6 +1019,7 @@
                 <Czech>&lt;t size = '0,6'&gt; otočit doleva: Q &lt;br/&gt; Otočení vpravo: E &lt;br/&gt; Zrušit: Enter/Esc &lt;br/&gt; Místo: Space &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Rotea a Sinistra: Q &lt;br/&gt;Rotea a Destra: E &lt;br/&gt;Cancella: Invio/ESC &lt;br/&gt;Piazza: Spazio&lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Obróć w Lewo: Q &lt;br/&gt;Obróć w Prawo: E &lt;br/&gt;Anuluj: Enter / ESC &lt;br/&gt;Postaw: Spacja&lt;/t&gt;</Polish>
+                <Turkish>&lt;t size='0.6'&gt;Sola Döndür: Q &lt;br/&gt;Sağ Döndür: E &lt;br/&gt;İptal: Enter/ESC &lt;br/&gt;Yerleştir: Space&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_TooFar">
                 <Original>&lt;t size='0.6'&gt;Can't place vehicle that far away &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
@@ -943,6 +1031,7 @@
                 <Czech>&lt;t size = '0,6'&gt; nelze umístit vozidlo tak daleko &lt;br/&gt; Zrušit: Enter/Esc &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Impossibile piazzare il veicolo così lontano &lt;br/&gt;Cancella: Invio/ESC &lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Nie można umieścić pojazdu tak daleko &lt;br/&gt;Anuluj: Enter / ESC &lt;/t&gt;</Polish>
+                <Turkish>&lt;t size='0.6'&gt;Araç bu kadar uzağa konumlandırılamaz &lt;br/&gt;İptal: Enter/ESC &lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CP_Blocked">
                 <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
@@ -954,6 +1043,7 @@
                 <Czech>&lt;t size = '0,6'&gt; Něco blokuje umístění &lt;br/&gt; otočit doleva: Q &lt;br/&gt; Otočení vpravo: E &lt;br/&gt; Zrušit: Enter/Esc &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Qualcosa sta bloccando il piazzamento &lt;br/&gt; Rotea a Sinistra: Q &lt;br/&gt;Rotea a Destra: E &lt;br/&gt;Cancella: Invio/ESC &lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Coś blokuje umieszczenie &lt;br/&gt; Obróć w Lewo: Q &lt;br/&gt;Obróć w Prawo: E &lt;br/&gt;Anuluj: Enter / ESC &lt;/t&gt;</Polish>
+                <Turkish>&lt;t size='0.6'&gt;Bir şey yerleştirmeyi engelliyor &lt;br/&gt; Sola Döndür: Q &lt;br/&gt;Sağ Döndür: E &lt;br/&gt;İptal: Enter/ESC &lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_CallbackFailed">
                 <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
@@ -965,6 +1055,7 @@
                 <Czech>&lt;t size = '0,6'&gt; Něco blokuje umístění &lt;br/&gt; otočit doleva: Q &lt;br/&gt; Otočení vpravo: E &lt;br/&gt; Zrušit: Enter/Esc &lt;/t&gt;</Czech>
                 <Italian>&lt;t size='0.6'&gt;Qualcosa sta bloccando il piazzamento &lt;br/&gt; Rotea a Sinistra: Q &lt;br/&gt;Rotea a Destra: E &lt;br/&gt;Cancella: Invio/ESC &lt;/t&gt;</Italian>
                 <Polish>&lt;t size='0.6'&gt;Coś blokuje umieszczenie &lt;br/&gt; Obróć w Lewo: Q &lt;br/&gt;Obróć w Prawo: E &lt;br/&gt;Anuluj: Enter / ESC &lt;/t&gt;</Polish>
+                <Turkish>&lt;t size='0.6'&gt;Bir şey yerleştirmeyi engelliyor &lt;br/&gt; Sola Döndür: Q &lt;br/&gt;Sağ Döndür: E &lt;br/&gt;İptal: Enter/ESC &lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_Cam_Controls">
                 <Original>Camera controls</Original>
@@ -976,6 +1067,7 @@
                 <Czech>Ovládací prvky kamery</Czech>
                 <Italian>Controlli Camera</Italian>
                 <Polish>Sterowanie kamerą</Polish>
+                <Turkish>Kamera Kontrolleri</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_Cam_Rotate">
                 <Original>Rotate: Right Mouse Button + Move mouse</Original>
@@ -987,6 +1079,7 @@
                 <Czech>Otočit: Pravé tlačítko myši + přesunout myš</Czech>
                 <Italian>Rotea: Tasto destro del mouse + Muovi il mouse</Italian>
                 <Polish>Obróć: Prawy Przycisk Myszy + Przesuń mysz</Polish>
+                <Turkish>Döndür: Sağ Fare Tuşu + Fareyi Hareket Ettir</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_Cam_Zoom">
                 <Original>Zoom: Right Mouse Button + Mouse wheel</Original>
@@ -998,6 +1091,7 @@
                 <Czech>Zoom: Pravé tlačítko myši + kolo myši</Czech>
                 <Italian>Zoom: Tasto destro del mouse+ Rotella del mouse</Italian>
                 <Polish>Zoom: Prawy Przycisk Myszy + Kółko myszy</Polish>
+                <Turkish>Yakınlaş/Uzaklaş: Sağ Fare Tuşu + Fare Tekerleği</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Mirror">
                 <Original>Mirror</Original>
@@ -1009,6 +1103,7 @@
                 <Czech>Zrcadlo</Czech>
                 <Italian>Specchio</Italian>
                 <Polish>Symetria</Polish>
+                <Turkish>Aynalama</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_CustomPreset">
                 <Original>[Custom preset]</Original>
@@ -1020,6 +1115,7 @@
                 <Czech>[Vlastní předvolba]</Czech>
                 <Italian>[Preset Custom]</Italian>
                 <Polish>[Ustawienie niestandardowe]</Polish>
+                <Turkish>[Özel Ayar]</Turkish>
             </Key>
             <!--%1 is pylon number-->
             <Key ID="STR_HR_GRG_Pylons_PylonText">
@@ -1032,6 +1128,7 @@
                 <Czech>Pylon %1</Czech>
                 <Italian>Equipaggiamento %1</Italian>
                 <Polish>Pylon %1</Polish>
+                <Turkish>Askı noktası %1</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Empty">
                 <Original>[Empty]</Original>
@@ -1043,6 +1140,7 @@
                 <Czech>[Prázdný]</Czech>
                 <Italian>[Vuoto]</Italian>
                 <Polish>[Pusty]</Polish>
+                <Turkish>[Boş]</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_noPylons">
                 <Original>No pylon customizations for:</Original>
@@ -1054,6 +1152,7 @@
                 <Czech>Žádné přizpůsobení pylonu pro:</Czech>
                 <Italian>Nessuna modifica equipaggiamento per:</Italian>
                 <Polish>Brak ustawień pylonów dla:</Polish>
+                <Turkish>Şu araçta silah askısı özelleştirilemez:</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Gunner">
                 <Original>Gunner</Original>
@@ -1065,6 +1164,7 @@
                 <Czech>Střelec</Czech>
                 <Italian>Artigliere</Italian>
                 <Polish>Strzelec</Polish>
+                <Turkish>Nişancı</Turkish>
             </Key>
             <Key ID="STR_HR_GRG_Pylons_Driver">
                 <Original>Driver</Original>
@@ -1076,6 +1176,7 @@
                 <Czech>Řidič</Czech>
                 <Italian>Pilota</Italian>
                 <Polish>Kierowca</Polish>
+                <Turkish>Sürücü</Turkish>
             </Key>
         </Container>
         <Container name="HR_GRG_settings">
@@ -1086,6 +1187,7 @@
               <Korean>전쟁 레벨 1의 기본 차고 수용량입니다.</Korean>
               <Russian>Базовая вместимость гаража на 1 уровне войны.</Russian>
               <Czech>Základní kapacita garáže v úrovni války 1.</Czech>
+              <Turkish>Garajın Savaş Seviyesi 1’deki kapasitesi.</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_baseCapTitle">
               <Original>Base Capacity</Original>
@@ -1095,6 +1197,7 @@
               <Russian>Базовая вместимость</Russian>
               <Polish>Pojemność bazy</Polish>
               <Czech>Základní kapacita</Czech>
+              <Turkish>Temel Kapasite</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_capIncLong">
               <Original>Capacity increase per War Level for the garage.</Original>
@@ -1103,6 +1206,7 @@
               <Korean>전쟁 레벨이 오를 때마다 차고의 수용량이 증가합니다.</Korean>
               <Russian>Увеличение вместимости гаража за каждый уровень войны.</Russian>
               <Czech>Zvýšení kapacity garáže dle úrovně války.</Czech>
+              <Turkish>Garajın Savaş Seviyesi başına kapasite artışı</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_capIncTitle">
               <Original>Capacity Increase</Original>
@@ -1111,6 +1215,7 @@
               <Korean>수용량 증가</Korean>
               <Russian>Увеличение вместимости</Russian>
               <Czech>Zvýšení kapacity</Czech>
+              <Turkish>Kapasite Artışı</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRearmLong">
               <Original>Vehicles won't be rearmed when taken from the garage.</Original>
@@ -1119,6 +1224,7 @@
               <Korean>차고에서 차량을 가져오면 차량이 재무장되지 않습니다.</Korean>
               <Russian>Техника не будет перевооружена при выводе из гаража.</Russian>
               <Czech>Vozidla nebudou přezbrojena po vyndání z garáže</Czech>
+              <Turkish>Araçlar garajdan çıkarıldığında yeniden mühimmatlandırılmaz</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRearmTitle">
               <Original>Disable garage rearm</Original>
@@ -1127,6 +1233,7 @@
               <Korean>차고 재무장 비활성화</Korean>
               <Russian>Выключить перевооружение в гараже</Russian>
               <Czech>Vypnout přezbrojení vozidel v garáži</Czech>
+              <Turkish>Garaj yeniden mühimmatlandırmayı kapat</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRefuelLong">
               <Original>Vehicles won't be refueled when taken from the garage.</Original>
@@ -1135,6 +1242,7 @@
               <Korean>차고에서 차량을 가져오면 차량이 재급유되지 않습니다.</Korean>
               <Russian>Техника не будет заправляться при выводе из гаража.</Russian>
               <Czech>Vozidla nebudou natankována po vyndání z garáže</Czech>
+              <Turkish>Araçlar garajdan çıkarıldığında yakıt ikmali yapılmaz</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRefuelTitle">
               <Original>Disable garage refuel</Original>
@@ -1143,6 +1251,7 @@
               <Korean>차고 재급유 비활성화</Korean>
               <Russian>Выключить заправку в гараже</Russian>
               <Czech>Vypnout tankování vozidel v garáži</Czech>
+              <Turkish>Garaj yakıt ikmalini kapat</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRepairLong">
               <Original>Vehicles won't be repaired when taken from the garage.</Original>
@@ -1151,6 +1260,7 @@
               <Korean>차고에서 차량을 가져오면 차량이 수리되지 않습니다.</Korean>
               <Russian>Техника не будет отремонтирована при выводе из гаража.</Russian>
               <Czech>Vozidla nebudou opraveny po vyndání z garáže</Czech>
+              <Turkish>Araçlar garajdan çıkarıldığında onarılmaz</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_disableRepairTitle">
               <Original>Disable garage repair</Original>
@@ -1159,6 +1269,7 @@
               <Korean>차량 수리 비활성화</Korean>
               <Russian>Выключить ремонт в гараже</Russian>
               <Czech>Vypnout opravování vozidel v garáži</Czech>
+              <Turkish>Garaj onarımını kapat</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_guestLimitLong">
               <Original>Maximum number of vehicles that can be locked by a guest at once.</Original>
@@ -1167,6 +1278,7 @@
               <Korean>게스트가 한 번에 잠글 수 있는 최대 차량 수입니다.</Korean>
               <Russian>Максимальное количество транспортных средств, которые гость может заблокировать одновременно.</Russian>
               <Czech>Maximální možný počet zamčených vozidel návštěvníky</Czech>
+              <Turkish>Konuk oyuncuların aynı anda kilitleyebileceği maksimum araç sayısı</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_guestLimitTitle">
               <Original>Guest lock limit</Original>
@@ -1175,6 +1287,7 @@
               <Korean>게스트 잠금 제한</Korean>
               <Russian>Лимит блокировки техники гостем</Russian>
               <Czech>Limit zamčení návštěvníky</Czech>
+              <Turkish>Konuk Kilit Limiti</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_lockOnGarageLong">
               <Original>Lock vehicles automatically when garaged.</Original>
@@ -1183,6 +1296,7 @@
               <Korean>차고로 이동하면 자동으로 차량을 잠급니다.</Korean>
               <Russian>Автоматически запирать технику, когда она находятся в гараже.</Russian>
               <Czech>Automaticky uzamknout vozidla při garážování.</Czech>
+              <Turkish>Araçları garaja alındığında otomatik olarak kilitle</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_lockOnGarageTitle">
               <Original>Lock garaged vehicles</Original>
@@ -1191,6 +1305,7 @@
               <Korean>차고로 간 차량 잠금</Korean>
               <Russian>Запирать технику в гараже</Russian>
               <Czech>Uzamknout garážovaná vozidla</Czech>
+              <Turkish>Garajdaki araçları kilitle</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_memberLimitLong">
               <Original>Maximum number of vehicles that can be locked by a member at once.</Original>
@@ -1199,6 +1314,7 @@
               <Korean>멤버가 한 번에 잠글 수 있는 최대 차량 수입니다.</Korean>
               <Russian>Максимальное количество транспортных средств, которые участником может заблокировать одновременно.</Russian>
               <Czech>Maximální možný počet zamčených vozidel členy</Czech>
+              <Turkish>Bir üyenin aynı anda kilitleyebileceği araç sayısı</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_memberLimitTitle">
               <Original>Member lock limit</Original>
@@ -1207,6 +1323,7 @@
               <Korean>멤버 잠금 제한</Korean>
               <Russian>Лимит блокировки техники участником</Russian>
               <Czech>Limit uzamknutí členy</Czech>
+              <Turkish>Üye Kilit Sınırı</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_placeRaysLong">
               <Original>Debug setting: Enables the placement rays used to check for vehicle collision.</Original>
@@ -1215,6 +1332,7 @@
               <Korean>디버그 설정: 차량 충돌을 확인하는 데 사용되는 배치선을 활성화합니다.</Korean>
               <Russian>Настройка отладки: Включает лучи размещения, используемые для проверки на столкновение транспортного средства.</Russian>
               <Czech>Nastavení ladění: Povolit zobrazení paprsků pro sledování kolizí vozidel.</Czech>
+              <Turkish>Debug ayarı: Araç çarpışmasını kontrol eden yerleştirme ışınlarını açar.</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_placeRaysTitle">
               <Original>Render placement rays</Original>
@@ -1223,6 +1341,7 @@
               <Korean>배치선 활성화</Korean>
               <Russian>Показывать лучи размещения</Russian>
               <Czech>Zobrazit paprsky při pokládání</Czech>
+              <Turkish>Yerleştirme ışınlarını göster</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_pylonEditingLong">
               <Original>Allows pylons to be edited in the arsenal, as long as an ammo source is available.</Original>
@@ -1231,6 +1350,7 @@
               <Korean>탄약 공급원이 있는 한 무기고에서 무장창을 편집하는 것을 허용합니다.</Korean>
               <Russian>Позволяет редактировать пилоны в арсенале, если доступен источник боеприпасов.</Russian>
               <Czech>Povolí úpravu pylonů v arzenáli, pokud je dostupná munice.</Czech>
+              <Turkish>Mühimmat kaynağı mevcut olduğu sürece, silah askıları Arsenal’de düzenlenebilir.</Turkish>
             </Key>
             <Key ID="STR_A3A_inc_public_config_pylonEditingTitle">
               <Original>Allow pylon editing</Original>
@@ -1239,6 +1359,7 @@
               <Korean>무장창 편집 허용</Korean>
               <Russian>Разрешить редактирование пилона</Russian>
               <Czech>Povolit úpravu pylónů</Czech>
+              <Turkish>Silah askısı düzenlemeye izin ver</Turkish>
             </Key>
           </Container>
     </Package>

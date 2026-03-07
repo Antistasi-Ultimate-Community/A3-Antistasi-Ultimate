@@ -26,6 +26,6 @@ _tanks append ["gmx_aaf_leopard1a1a1_wdl","gm_ge_army_Leopard1a1a2_noinsignia","
 _ammoTrucks append ["gmx_aaf_kat1_451_reammo_wdl","gmx_aaf_kat1_454_reammo_wdl","gm_gc_bgs_ural4320_reammo_noinsignia"];
 _repairTrucks append ["gmx_aaf_u1300l_repair_wdl","gmx_aaf_bpz2a0_wdl","gm_gc_bgs_ural4320_repair_noinsignia"];
 _fuelTrucks append ["gmx_aaf_kat1_451_refuel_wdl","gm_gc_bgs_ural375d_refuel_noinsignia"];
-_medicalTrucks append ["gmx_aaf_u1300l_medic_wdl","gmx_aaf_m113a1g_medic_wdl","ggm_gc_bgs_ural375d_medic_noinsignia"];
+_medicalTrucks append ["gmx_aaf_u1300l_medic_wdl","gmx_aaf_m113a1g_medic_wdl","gm_gc_bgs_ural375d_medic_noinsignia"];
 
 _airPatrol append ["gmx_aaf_bo105m_vbh_wdl","gmx_aaf_bo105p1m_vbh_wdl","gmx_aaf_bo105p1m_vbh_swooper_wdl","gm_gc_airforce_mi2p_noinsignia","gm_gc_bgs_mi2p_noinsignia","gm_gc_airforce_mi2t_noinsignia","gmx_aaf_bo105p_pah1_wdl","gm_gc_airforce_mi2us_noinsignia","gm_gc_airforce_mi2urn_noinsignia","gm_gc_bgs_mi2us_noinsignia"]
