@@ -611,6 +611,45 @@
             <Spanish>Una posición fija de ametralladora pesada para suprimir infantería, vehículos ligeros y objetivos a baja altura.</Spanish>
             <Polish>Stałe stanowisko ciężkiego karabinu maszynowego do tłumienia piechoty, lekkich pojazdów i nisko lecących celów.</Polish>
         </Key>
+        <Key ID="STR_A3U_HOVER_MILBASE_DESC">
+            <Original>Enemy stronghold that may include helicopters, armored vehicles, and mortars.&lt;br /&gt;Contains 2 loot crates and can only be captured from War Tier 3+.</Original>
+            <German>Feindliche Festung mit möglichen Helikoptern, gepanzerten Fahrzeugen und Mörsern.&lt;br /&gt;Enthält 2 Beutekisten und kann erst ab Kriegsstufe 3 erobert werden.</German>
+            <French>Place forte ennemie pouvant inclure des hélicoptères, des véhicules blindés et des mortiers.&lt;br /&gt;Contient 2 caisses de butin et ne peut être capturée qu’à partir du niveau de guerre 3+.</French>
+            <Spanish>Fortificación enemiga que puede incluir helicópteros, vehículos blindados y morteros.&lt;br /&gt;Contiene 2 cajas de botín y solo puede capturarse a partir del Nivel de Guerra 3+.</Spanish>
+            <Italian>Roccaforte nemica che può includere elicotteri, veicoli corazzati e mortai.&lt;br /&gt;Contiene 2 casse di bottino e può essere catturata solo dal Livello di Guerra 3+.</Italian>
+            <Polish>Wrogi bastion, w którym mogą znajdować się śmigłowce, pojazdy opancerzone i moździerze.&lt;br /&gt;Zawiera 2 skrzynie z łupem i można go przejąć dopiero od Poziomu Wojny 3+.</Polish>
+            <Russian>Вражеский опорный пункт, где могут быть вертолёты, бронетехника и миномёты.&lt;br /&gt;Содержит 2 ящика с добычей и может быть захвачен только с уровня войны 3+.</Russian>
+            <Czech>Nepřátelská pevnost, která může obsahovat vrtulníky, obrněná vozidla a minomety.&lt;br /&gt;Obsahuje 2 bedny s kořistí a lze ji obsadit až od úrovně války 3+.</Czech>
+            <Turkish>Helikopterler, zırhlı araçlar ve havanlar içerebilen düşman kalesi.&lt;br /&gt;2 ganimet sandığı içerir ve yalnızca Savaş Seviyesi 3+’ten itibaren ele geçirilebilir.</Turkish>
+            <ChineseSimplified>敌方据点，可能有直升机、装甲车辆和迫击炮。&lt;br /&gt;包含2个战利品箱，并且只能在战争等级3及以上夺取。</ChineseSimplified>
+            <Japanese>ヘリコプター、装甲車両、迫撃砲が配置されている可能性のある敵の拠点。&lt;br /&gt;戦利品箱が2つあり、戦争ティア3以上でのみ制圧可能。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_OUTPOST_DESC">
+            <Original>The most common enemy-held location.&lt;br /&gt;Contains a loot crate and may provide extra intel.</Original>
+            <German>Der häufigste feindlich gehaltene Ort.&lt;br /&gt;Enthält eine Beutekiste und kann zusätzliche Informationen liefern.</German>
+            <French>Le lieu le plus couramment tenu par l’ennemi.&lt;br /&gt;Contient une caisse de butin et peut fournir des renseignements supplémentaires.</French>
+            <Spanish>La ubicación enemiga más común.&lt;br /&gt;Contiene una caja de botín y puede proporcionar información adicional.</Spanish>
+            <Italian>La posizione nemica più comune.&lt;br /&gt;Contiene una cassa di bottino e può fornire informazioni aggiuntive.</Italian>
+            <Polish>Najczęściej spotykana lokacja zajęta przez wroga.&lt;br /&gt;Zawiera skrzynię z łupem i może dostarczyć dodatkowych informacji.</Polish>
+            <Russian>Самая распространённая точка, удерживаемая противником.&lt;br /&gt;Содержит ящик с добычей и может дать дополнительные разведданные.</Russian>
+            <Czech>Nejběžnější nepřátelské stanoviště.&lt;br /&gt;Obsahuje bednu s kořistí a může poskytnout další informace.</Czech>
+            <Turkish>Haritada en yaygın düşman mevzisi.&lt;br /&gt;Bir ganimet sandığı içerir ve ek istihbarat sağlayabilir.</Turkish>
+            <ChineseSimplified>地图上最常见的敌方据点。&lt;br /&gt;包含一个战利品箱，并可能提供额外情报。</ChineseSimplified>
+            <Japanese>敵が占拠している最も一般的な拠点。&lt;br /&gt;戦利品箱があり、追加の情報を入手できることがあります。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_SEAPORT_DESC">
+            <Original>Coastal hub that may have a patrolling enemy boat.&lt;br /&gt;Contains a loot crate and makes it easier to destroy stored boats.</Original>
+            <German>Küstenknotenpunkt, der ein patrouillierendes feindliches Boot haben kann.&lt;br /&gt;Enthält eine Beutekiste und erleichtert das Zerstören gelagerter Boote.</German>
+            <French>Point côtier pouvant avoir un bateau ennemi en patrouille.&lt;br /&gt;Contient une caisse de butin et facilite la destruction des bateaux stockés.</French>
+            <Spanish>Centro costero que puede tener un barco enemigo patrullando.&lt;br /&gt;Contiene una caja de botín y facilita destruir barcos almacenados.</Spanish>
+            <Italian>Hub costiero che può avere una barca nemica in pattuglia.&lt;br /&gt;Contiene una cassa di bottino e rende più facile distruggere le barche immagazzinate.</Italian>
+            <Polish>Nadmorski punkt, przy którym może patrolować wroga łódź.&lt;br /&gt;Zawiera skrzynię z łupem i ułatwia niszczenie przechowywanych łodzi.</Polish>
+            <Russian>Прибрежный узел, где может патрулировать вражеский катер.&lt;br /&gt;Содержит ящик с добычей и упрощает уничтожение хранимых лодок.</Russian>
+            <Czech>Pobřežní uzel, kde může hlídkovat nepřátelský člun.&lt;br /&gt;Obsahuje bednu s kořistí a usnadňuje ničení uložených lodí.</Czech>
+            <Turkish>Devriye gezen bir düşman botu bulunabilen kıyı merkezi.&lt;br /&gt;Bir ganimet sandığı içerir ve depolanmış botları imha etmeyi kolaylaştırır.</Turkish>
+            <ChineseSimplified>沿海据点，可能有敌方巡逻艇。&lt;br /&gt;包含一个战利品箱，并使摧毁存放的船只更容易。</ChineseSimplified>
+            <Japanese>敵の巡回艇がいる可能性のある沿岸拠点。&lt;br /&gt;戦利品箱があり、保管されている船を破壊しやすくなります。</Japanese>
+        </Key>
         <Key ID="STR_A3U_CONTEXT_FASTTRAVEL_PLAYER_ONLY">
             <Original>Only available for player-controlled markers.</Original>
             <French>Disponible uniquement pour les marqueurs contrôlés par le joueur.</French>
