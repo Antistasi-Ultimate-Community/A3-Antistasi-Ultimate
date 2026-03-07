@@ -16,10 +16,18 @@ _unit = [_groupX, _typeExp, getMarkerPos respawnTeamPlayer, [], 0, "NONE"] call 
 _groupX setGroupIdGlobal [format ["MineSw%1",{side (leader _x) == teamPlayer} count allGroups]];
 _minesX = [];
 sleep 1;
-_road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
 
-_truckX = _typeVeh createVehicle _pos;
+private _helperData = ["mineSweep", {
+	private _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
+	private _pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
+	if (_pos isNotEqualTo []) exitWith { _pos };
+	position _road;
+}] call FUNCMAIN(findSpawnHelperPosition);
+
+_helperData params["_spawnPos", "_spawnDir"];
+
+_truckX = _typeVeh createVehicle _spawnPos;
+_truckX setDir _spawnDir;
 
 [_truckX, teamPlayer] call A3A_fnc_AIVEHinit;
 [_unit] spawn A3A_fnc_FIAinit;
