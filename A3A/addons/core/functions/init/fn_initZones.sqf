@@ -192,7 +192,7 @@ if (!_hardCodedAntennas) then {
         _mrkFinal = createMarker [format ["Ant%1", mapGridPosition _x], position _x];
         _mrkFinal setMarkerShapeLocal "ICON";
         _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
-        _mrkFinal setMarkerColorLocal "ColorBlack";
+        _mrkFinal setMarkerColorLocal "ColorWhite";
         _mrkFinal setMarkerText "";
 		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
@@ -240,7 +240,7 @@ if (count _posAntennas > 0) then {
 				_mrkFinal = createMarker [format ["Ant%1", mapGridPosition _antenna], _posAntennas select _i];
 				_mrkFinal setMarkerShapeLocal "ICON";
 				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
-				_mrkFinal setMarkerColorLocal "ColorBlack";
+				_mrkFinal setMarkerColorLocal "ColorWhite";
 				_mrkFinal setMarkerText "";
 				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
@@ -352,20 +352,26 @@ private _milAdminPositions = getArray (_mapInfo/"milAdministrations");
 
 	private _mrkAdm = createMarker [format ["MilAdm%1", mapGridPosition _administration], position _administration];
 	_mrkAdm setMarkerShapeLocal "ICON";
-	_mrkAdm setMarkerTypeLocal "loc_MilAdministration";
+	_mrkAdm setMarkerTypeLocal "A3AU_miladmin_mrk";
 	_mrkAdm setMarkerColorLocal colorOccupants;
-	_mrkAdm setMarkerTextLocal format [localize "STR_milAdministration", [citiesX, _administration] call BIS_fnc_nearestPosition];
+	_mrkAdm setMarkerTextLocal "";
 	_mrkAdm setMarkerAlpha 0.75;
 	_mrkAdm setMarkerShadow false;
 
 	sidesX setVariable [_mrkAdm, Occupants, true];
 
-	spawner setVariable [_mrkAdm, 2, true];
-
 	milAdministrationsX pushBack _mrkAdm;
 
+	[_mrkAdm] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
+
+	spawner setVariable [_mrkAdm, 2, true];
+
 	_administration addEventHandler ["Killed", {
-		[(this select 0), "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+		params ["_killed"];
+		[_killed, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+		
+		private _mrk = [milAdministrationsX, _killed] call BIS_fnc_nearestPosition;
+		[_mrk] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	}];
 } forEach _milAdminPositions;
 

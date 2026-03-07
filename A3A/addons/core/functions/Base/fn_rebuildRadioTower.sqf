@@ -18,7 +18,7 @@ antennas pushBack _antenna; publicVariable "antennas";
 private _mrkFinal = createMarker [format ["Ant%1", mapGridPosition _antenna], getPos _antenna];
 _mrkFinal setMarkerShape "ICON";
 _mrkFinal setMarkerType "A3AU_radiotower_mrk";
-_mrkFinal setMarkerColor "ColorBlack";
+_mrkFinal setMarkerColor "ColorWhite";
 _mrkFinal setMarkerText (localize "STR_radiotower");
 mrkAntennas pushBack _mrkFinal;
 publicVariable "mrkAntennas";

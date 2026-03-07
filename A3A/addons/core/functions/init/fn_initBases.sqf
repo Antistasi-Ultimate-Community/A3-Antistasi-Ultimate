@@ -21,8 +21,8 @@ private _fnc_initMarkerList =
         {
             case (_x in airportsX): 
             {
-                _mrkD setMarkerTypeLocal (["A3AU_airfield_mrk_B", "A3AU_airfield_mrk_O"] select _isInvader);
-                _mrkD setMarkerColorLocal ([colorOccupants, colorInvaders] select _isInvader);
+                _mrkD setMarkerTypeLocal (["flag_NATO", "flag_CSAT"] select _isInvader);
+                _mrkD setMarkerColorLocal "Default";
             };
             case (_x in milbases): 
             {
@@ -71,7 +71,7 @@ private _controlsNATO = controlsX - _controlsCSAT;
 
 private _roadblockPositions = controlsX apply { markerPos _x };
 
-[_mrkCSAT, airportsX, "A3AU_airfield_mrk_B", localize "STR_airbase", true] call _fnc_initMarkerList;
+[_mrkCSAT, airportsX, "flag_NATO", localize "STR_airbase", true] call _fnc_initMarkerList;
 [_mrkCSAT, resourcesX, "A3AU_resource_mrk", localize "STR_resources"] call _fnc_initMarkerList;
 [_mrkCSAT, factories, "A3AU_factory_mrk", localize "STR_factory"] call _fnc_initMarkerList;
 [_mrkCSAT, outposts, "A3AU_outpost_mrk", localize "STR_outpost", true] call _fnc_initMarkerList;

@@ -119,7 +119,7 @@ publicVariable "traderPosition";
 _traderMarker = createMarkerLocal ["TraderMarker", _traderPosition];
 _traderMarker setMarkerTypeLocal "A3AU_dealer_mrk";
 _traderMarker setMarkerSizeLocal [1, 1];
-_traderMarker setMarkerTextLocal (localize "STR_marker_arms_dealer");
+_traderMarker setMarkerTextLocal "";
 _traderMarker setMarkerColorLocal "ColorUNKNOWN";
 _traderMarker setMarkerAlpha 1;
 traderMarker = _traderMarker;

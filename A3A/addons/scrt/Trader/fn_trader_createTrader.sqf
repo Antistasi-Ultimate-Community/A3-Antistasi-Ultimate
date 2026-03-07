@@ -19,7 +19,7 @@ if (isTraderQuestCompleted) then {
 	traderMarker = createMarker ["TraderMarker", _position];
 	traderMarker setMarkerType "A3AU_dealer_mrk";
 	traderMarker setMarkerSize [1, 1];
-	traderMarker setMarkerText (localize "STR_marker_arms_dealer");
+	traderMarker setMarkerText "";
 	traderMarker setMarkerColor "ColorUNKNOWN";
 	traderMarker setMarkerAlpha 1;
 	sidesX setVariable [traderMarker,teamPlayer,true];
