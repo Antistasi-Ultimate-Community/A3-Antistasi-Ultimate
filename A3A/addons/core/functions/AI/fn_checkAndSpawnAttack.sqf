@@ -1,3 +1,4 @@
+#include "..\..\script_component.hpp"
 /*  
 	Author: wersal
 
