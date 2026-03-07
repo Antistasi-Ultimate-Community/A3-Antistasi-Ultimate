@@ -290,17 +290,22 @@ class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F
 };
 
 class Land_VR_Shape_01_cube_1m_F;
-class GVAR(BaseVehicleSpawnHelperArrow) : Land_VR_Shape_01_cube_1m_F 
-{
-    scope = 2;
-    displayName = "Vehicle Spawn Helper";
+class GVAR(BaseSpawnHelper): Land_VR_Shape_01_cube_1m_F {
+    scope = 0;
+
     author = AUTHOR;
     authors[] = {"UnseenKill"};
 
+    GVAR(spawnTypes)[] = {};
     EGVAR(core,buildingPlacerCanPlace) = QUOTE(EGVAR(core,builderBubbleCenter) inArea QQUOTE(Synd_HQ));
 
-    class EventHandlers 
-    {
+    class EventHandlers {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
     };
+};
+
+class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
+    scope = 2;
+    displayName = "Vehicle Spawn Helper";
+    GVAR(spawnTypes)[] = {"hc","mineSweep","outpost"};
 };

@@ -825,6 +825,7 @@ class CfgFunctions
             class createNamespace {};
             class createRandomIdentity {};
             class deleteNamespace {};
+            class findSpawnHelperPosition {};
             class getAdmin {};
             class isEmplacementMarker {};
             class isEngineer {};
