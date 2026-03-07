@@ -6628,12 +6628,11 @@
                 <French>%1 Administration militaire</French>
             </Key>
             <Key ID="STR_headquarters">
-                <Original>Your Headquarters</Original>
-                <English>Your Headquarters</English>
-                <Russian>Штаб</Russian>
-                <Korean>당신의 본부</Korean>
-                <French>Votre QG</French>
-                <Chinesesimp>你的总部</Chinesesimp>
+                <Original>%1 Headquarters</Original>
+                <Russian>%1 Штаб</Russian>
+                <Korean>%1 본부</Korean>
+                <French>%1 Quartier général</French>
+                <Chinesesimp>%1 总部</Chinesesimp>
             </Key>
         </Container>
         <Container name="system_chats">
