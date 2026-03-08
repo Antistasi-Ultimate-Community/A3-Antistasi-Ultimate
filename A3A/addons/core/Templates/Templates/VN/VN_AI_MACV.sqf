@@ -299,6 +299,7 @@ _sfLoadoutData set ["slSidearms", [
 ]];
 _sfLoadoutData set ["carbines", [
 ["vn_xm177_camo", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], [], ""],
+["vn_l34a1", "", "", "", ["vn_l34a1_smg_mag", "vn_l34a1_smg_mag", "vn_l34a1_smg_mag"], [], ""],
 ["vn_xm177", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], [], ""],
 ["vn_xm177_short", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], [], ""],
 ["vn_xm177_short", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], [], ""],
@@ -317,7 +318,7 @@ _sfLoadoutData set ["designatedGrenadeLaunchers", [
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
 ["vn_xm177_m203", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], ["vn_40mm_m381_he_mag", "vn_40mm_m433_hedp_mag", "vn_40mm_m397_ab_mag", "vn_40mm_m680_smoke_w_mag"], ""],
-["vn_xm177_m203", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], ["vn_40mm_m381_he_mag", "vn_40mm_m680_smoke_w_mag", "vn_40mm_m661_flare_g_mag"], ""],
+["vn_l34a1_xm148", "", "", "", ["vn_l34a1_smg_mag", "vn_l34a1_smg_mag", "vn_l34a1_smg_mag"], ["vn_40mm_m381_he_mag", "vn_40mm_m381_he_mag", "vn_40mm_m397_ab_mag"], ""],
 ["vn_m16_m203_camo", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], ["vn_40mm_m381_he_mag", "vn_40mm_m433_hedp_mag", "vn_40mm_m397_ab_mag", "vn_40mm_m680_smoke_w_mag"], ""],
 ["vn_m16_m203_camo", "", "", "", ["vn_m16_40_mag", "vn_m16_40_mag", "vn_m16_40_t_mag"], ["vn_40mm_m381_he_mag", "vn_40mm_m680_smoke_w_mag", "vn_40mm_m661_flare_g_mag"], ""]
 ]];
@@ -336,6 +337,7 @@ _sfLoadoutData set ["marksmanRifles", [
 ["vn_m14_camo", "vn_s_m14", "", "vn_o_9x_m14", ["vn_m14_mag", "vn_m14_mag", "vn_m14_t_mag"], [], "vn_b_camo_m14"],
 ["vn_m14_camo", "vn_s_m14", "", "vn_o_anpvs2_m14", ["vn_m14_mag", "vn_m14_mag", "vn_m14_t_mag"], [], "vn_b_camo_m14"],
 ["vn_m14a1", "vn_s_m14", "", "vn_o_9x_m14", ["vn_m14_mag", "vn_m14_mag", "vn_m14_t_mag"], [], "vn_b_camo_m14a1"],
+["vn_m1carbine_shorty", "", "", "", ["vn_hp_sd_mag", "vn_hp_sd_mag", "vn_hp_sd_mag"], [], ""],
 ["vn_m14a1", "vn_s_m14", "", "vn_o_9x_m14", ["vn_m14_mag", "vn_m14_mag", "vn_m14_t_mag"], [], "vn_b_camo_m14a1"],
 ["vn_m14a1", "vn_s_m14", "", "vn_o_anpvs2_m14", ["vn_m14_mag", "vn_m14_mag", "vn_m14_t_mag"], [], "vn_b_camo_m14a1"]
 ]];
@@ -606,6 +608,25 @@ _militiaLoadoutData set ["sniperRifles", [
 ]];
 _militiaLoadoutData set ["sidearms", ["vn_m1911", "vn_mx991_m1911", "vn_p38s"]];
 
+if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
+    (_militaryLoadoutData get "rifles") append [
+        ["vnx_l1a1_05", "", "", "", ["vn_l1a1_30_02_t_mag", "vn_l1a1_30_02_t_mag", "vn_l1a1_30_02_t_mag"], [], ""],
+        ["vnx_l1a1_05_camo", "", "", "", ["vn_l1a1_20_mag", "vn_l1a1_20_mag", "vn_l1a1_20_mag"], [], ""],
+        ["vnx_l1a1_04", "", "", "", ["vn_l1a1_20_mag", "vn_l1a1_20_mag", "vn_l1a1_20_mag"], [], ""]
+    ];
+
+    (_policeLoadoutData get "rifles") append [
+        ["vnx_m50_smg", "", "", "", ["vnx_m50_smg_t_mag", "vnx_m50_smg_t_mag", "vnx_m50_smg_mag"], [], ""]
+    ];
+    (_policeLoadoutData get "shotguns") append [
+        ["vnx_m77e", "", "", "", ["vnx_m77e_fl_mag", "vnx_m77e_fl_mag", "vnx_m77e_fl_mag"], [], ""],
+        ["vnx_m77e_shorty", "", "", "", ["vnx_m77e_fl_mag", "vnx_m77e_fl_mag", "vnx_m77e_fl_mag"], [], ""]
+    ];
+
+    (_militiaLoadoutData get "carbines") append [
+        ["vnx_m45_sf", "", "", "", ["vn_m45_t_mag", "vn_m45_t_mag", "vn_m45_mag"], [], ""]
+    ];
+};
 
 //////////////////////////
 //    Misc Loadouts     //
