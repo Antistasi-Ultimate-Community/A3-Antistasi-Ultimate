@@ -39,7 +39,7 @@ _object addAction [
     -99,
     false,
     true,
-    "",
+    "driver _target == _this || commander _target == _this || ({getNumber ([_target, _x] call BIS_fnc_turretConfig >> 'isCopilot') > 0 && {_target turretUnit _x == _this}} count allTurrets _target) > 0",
     "true",
     3
 ];
