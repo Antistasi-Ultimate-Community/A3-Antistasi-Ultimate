@@ -6,7 +6,7 @@ if (!isServer) exitWith {
 
 params ["_playerId", "_unit"];
 
-if !(_playerId in A3A_playerSaveData) then {
+if !(_playerId in A3A_playerSaveData) exitWith {
     Info_1("No save found for player ID %1", _playerId);
 	[_playerId, _unit] call A3A_fnc_resetPlayer;
 };
@@ -37,6 +37,12 @@ _unit setVariable ["score", _score, true];
 _unit setUnitRank _rank;
 _unit setVariable ["rankX", _rank, true];
 _unit setVariable ["moneyX", _money, true];
+
+if (isNil { _playerHM get "pluginsData" }) then {
+    _playerHM set["pluginsData", createHashMap];
+};
+
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM get "pluginsData"], owner _unit] call FUNCMAIN(triggerOwnerEvent);
 
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];
