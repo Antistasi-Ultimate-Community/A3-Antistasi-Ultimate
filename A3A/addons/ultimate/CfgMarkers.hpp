@@ -4,7 +4,7 @@ class flag_NATO;
 
 class A3AU_Factory_mrk : n_unknown
 {
-	scope = 1;
+	scope = 2;
 	name = "Antistasi Factory";
 	icon = QPATHTOFOLDER(data\A3AU_factory_mrk);
 	texture = QPATHTOFOLDER(data\A3AU_factory_mrk);
@@ -13,6 +13,15 @@ class A3AU_Factory_mrk : n_unknown
 	markerClass = "A3AU_Factory";
 	size = 24;
 	showEditorMarkerColor = 1;
+};
+
+class A3AU_city_mrk : A3AU_Factory_mrk
+{
+	name = "Antistasi city";
+	icon = QPATHTOFOLDER(data\A3AU_city_mrk);
+	texture = QPATHTOFOLDER(data\A3AU_city_mrk);
+	markerClass = "A3AU_city";
+	size = 20;
 };
 
 class A3AU_Resource_mrk : A3AU_Factory_mrk

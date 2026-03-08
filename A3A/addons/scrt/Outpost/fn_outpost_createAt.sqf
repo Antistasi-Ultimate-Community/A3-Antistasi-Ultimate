@@ -74,14 +74,15 @@ switch (true) do {
 		spawner setVariable [_marker,2,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
-		_marker setMarkerType "n_armor";
+		_marker setMarkerType "A3AU_antitank_mrk";
 		_marker setMarkerColor colorTeamPlayer;
-		_marker setMarkerText _textX;
+		_marker setMarkerText "";
 		_garrison = A3A_faction_reb get "groupAtEmpl";
 		garrison setVariable [_marker,_garrison,true];
 		staticPositions setVariable [_marker, [_position, _direction], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "atemplacement"]] call EFUNC(Events,triggerEvent);
+		[_marker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

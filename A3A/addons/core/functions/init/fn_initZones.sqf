@@ -126,7 +126,7 @@ _cityConfigs apply {
 
 	_dmrk = createMarkerLocal [format ["Dum%1", _nameX], _pos];
 	_dmrk setMarkerShapeLocal "ICON";
-	_dmrk setMarkerTypeLocal "loc_Ruin";
+	_dmrk setMarkerTypeLocal "A3AU_city_mrk";
 	_dmrk setMarkerColor colorOccupants;
 
 	sidesX setVariable [_mrk, Occupants, true];
