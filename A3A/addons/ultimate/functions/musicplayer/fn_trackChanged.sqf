@@ -3,6 +3,9 @@
 
 params ["_ctrlTracks", "_index"];
 
+private _display = ctrlParent _ctrlTracks;
+if (_display getVariable ["A3U_skipTrackChange", false]) exitWith {};
+
 if (_index == -1) exitWith {};
 
 // Не обновляем, если это тот же трек
@@ -20,6 +23,8 @@ A3U_currentTrack = _trackData;
 A3U_trackProgress = 0;
 A3U_currentTrackIndex = _index; // индекс в списке
 
+diag_log format ["[trackChanged] После выбора: track=%1, index=%2", A3U_currentTrack, A3U_currentTrackIndex];
+
 // Запуск воспроизведения только если плеер был активен
 if (A3U_isPlaying) then {
     [] call A3U_fnc_playTrack;
@@ -35,16 +40,18 @@ if (!isNull _display) then {
     private _volOn = _display displayCtrl 85108;
     private _volOff = _display displayCtrl 85109;
 
-    if (A3U_muted) then {
-        _volOn ctrlShow false;
-        _volOff ctrlShow true;
-        _volOff ctrlSetTooltip "Включить звук";
-        _slider sliderSetPosition 0;
-    } else {
-        _volOn ctrlShow true;
-        _volOff ctrlShow false;
-        _volOn ctrlSetTooltip "Выключить звук";
-        _slider sliderSetPosition A3U_volume;
+    if (A3U_playbackMode == "music") then {
+        if (A3U_muted) then {
+            _volOn ctrlShow false;
+            _volOff ctrlShow true;
+            _volOff ctrlSetTooltip "Включить звук";
+            _slider sliderSetPosition 0;
+        } else {
+            _volOn ctrlShow true;
+            _volOff ctrlShow false;
+            _volOn ctrlSetTooltip "Выключить звук";
+            _slider sliderSetPosition A3U_volume;
+        };
     };
 };
 

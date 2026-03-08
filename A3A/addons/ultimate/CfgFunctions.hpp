@@ -132,6 +132,17 @@ class CfgFunctions
             class getTracksByAddon {};
             class getVietnamRadioTracks {};
             class isCategoryAllowed {};
+            class getSoundCategories {};
+            class getSounds {};
+            class getSoundsByCategory {};
+            class playSound3d {};
+            class stopSound {};
+            class getActualMusicSounds {};
+            class getVNRadioSounds {};
+            class getVanillaSoundAddons {};
+            class getNonVanillaSoundAddons {};
+            class toggleLoudspeaker {};
+            class boostChanged {};
         };
         class musicplayerdebug
         {
@@ -140,6 +151,7 @@ class CfgFunctions
             class toggleDebug {};
             class getTrackDebugInfo {};
             class updateDebugInfo {};
+            class getSoundDebugInfo {};
         };
     };
 };

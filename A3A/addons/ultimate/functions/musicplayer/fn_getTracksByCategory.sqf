@@ -2,14 +2,14 @@
 #include "..\..\script_component.hpp"
 
 params [["_category", "unknown", [""]]];
+
+/* // Если режим sound, игнорируем категорию и возвращаем все звуки
+if (!isNil "A3U_playbackMode" && {A3U_playbackMode == "sound"}) exitWith {
+    call A3U_fnc_getSounds
+}; */
+
+// Иначе обычный поиск по конфигам музыки (как раньше)
 private _categoryLower = toLower _category;
-
-// Если запрошена категория "actualmusic", возвращаем наш жёсткий список
-if (_categoryLower == "actualmusic") exitWith {
-    call A3U_fnc_getActualTracks
-};
-
-// Иначе обычный поиск по конфигам
 private _tracks = [];
 {
     private _theme = toLower getText (_x >> "theme");
@@ -23,13 +23,7 @@ private _tracks = [];
         
         // Удаляем распространенные префиксы
         private _prefixes = ["track_", "music_", "sound_", "theme_", "fx_", "amb_", "bgm_"];
-        {
-            if (_name find _x == 0) then {
-                _name = _name select [count _x];
-            };
-        } forEach _prefixes;
-        
-        // Заменяем подчеркивания на пробелы
+        { if (_name find _x == 0) then { _name = _name select [count _x]; }; } forEach _prefixes;
         _name = _name splitString "_" joinString " ";
         
         // Делаем первую букву заглавной

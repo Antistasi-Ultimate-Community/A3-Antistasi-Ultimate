@@ -1,34 +1,45 @@
 //fn_addRadioAction.sqf
 #include "..\..\script_component.hpp"
+/*
+    Добавляет действие на объект для открытия плеера.
+    Параметры:
+        0: OBJECT - объект
+        1: STRING - режим: "sound" (по умолч.) или "music"
+        2: STRING - тип объекта для sound-режима: "car", "helicopter", "plane", "backpack" (по умолч. "car")
+*/
+params [
+    ["_object", objNull, [objNull]],
+    ["_mode", "sound", [""]],
+    ["_objectType", "car", [""]]
+];
 
-params ["_object"];
+if (isNull _object) exitWith {};
 
-/* _object addAction [
-    "\A3\ui_f\data\map\vehicleicons\iconSound_ca.paa", //"Открыть плеер",         // Название действия
-    {
-        [] call A3U_fnc_initMusicPlayer; // Вызов функции инициализации плеера
-    },
-    nil,                     // Аргументы (не требуются)
-    1.5,                     // Приоритет
-    true,                    // Показывать в визоре
-    true,                    // Показывать при наведении
-    "",                      // Условие видимости (всегда)
-    "true",                  // Условие доступности (всегда)
-    3                        // Дистанция взаимодействия (метры)
-]; */
+// Сохраняем тип объекта в переменных объекта для последующего использования в плеере
+_object setVariable ["A3U_objectType", _objectType, true];
+
+private _text = if (_mode == "music") then { "Открыть плеер" } else { "Открыть звуковой плеер" };
+private _icon = "\A3\ui_f\data\map\vehicleicons\iconSound_ca.paa";
 
 _object addAction [
-    format ["<img image='\A3\ui_f\data\map\vehicleicons\iconSound_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", "Открыть плеер"], // или просто "Открыть плеер"
+    format ["<img image='%1' size='1.6' shadow=2 /> <t>%2</t>", _icon, _text],
     {
-        [] call A3U_fnc_initMusicPlayer;
+        params ["_target", "_caller", "_actionId", "_arguments"];
+        _arguments params ["_mode", "_targetObj"];
+        
+        // Для звукового режима проверяем, жив ли объект
+        if (_mode == "sound" && {isNull _targetObj || {!alive _targetObj}}) exitWith {
+            systemChat "Радио повреждено и не работает.";
+        };
+        
+        // Вызываем инициализацию плеера с нужным режимом и объектом (для sound передаём объект)
+        [_mode, if (_mode == "sound") then { _targetObj } else { objNull }] call A3U_fnc_initMusicPlayer;
     },
-    nil,
-    1.5,
-    true,
+    [_mode, _object],
+    -99,
+    false,
     true,
     "",
     "true",
     3
 ];
-
-//_object addAction [format ["<img image='a3\ui_f\data\igui\cfg\actions\takeflag_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_build_hq"], A3A_fnc_buildHQ,nil,0,false,true,"","(_this == theBoss) and (petros != leader group petros)",4];

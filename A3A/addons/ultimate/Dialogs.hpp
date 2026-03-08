@@ -298,6 +298,47 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             };
         };
 
+        // Кнопка Loudspeaker (увеличение дальности)
+        class LoudspeakerButton: A3A_ClickablePicture {
+            idc = 85118;
+            style = ST_PICTURE;
+            x = DIALOG_X + GRID_X(59); // подберите позицию
+            y = DIALOG_Y + GRID_Y(42.5);
+            w = GRID_X(7);
+            h = GRID_Y(7);
+            text = "";
+            animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa"; // иконка динамика
+            animTextureDisabled = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
+            animTextureOver = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
+            animTextureFocused = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
+            animTexturePressed = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
+            animTextureDefault = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
+            tooltip = "Режим громкоговорителя (увеличенная дальность)";
+            onButtonClick = "call A3U_fnc_toggleLoudspeaker";
+            autoAdjustTexture = true;
+            colorBackground[] = {1,1,1,1};
+            class AttributesImage {
+                font = "RobotoCondensed";
+                color = "#FFFFFF";
+                align = "left";
+            };
+        };
+        
+        // Слайдер для усиления громкости (Boost)
+        class BoostSlider: A3A_Slider {
+            idc = 85119;
+            x = DIALOG_X + GRID_X(56.5); // подберите позицию
+            y = DIALOG_Y + GRID_Y(40);
+            w = GRID_X(20);
+            h = GRID_Y(2);
+            style = SL_HORZ;
+            sliderRange[] = {0, 4}; // 0..4 для пяти положений
+            sliderPosition = 0;
+            lineSize = 1;
+            tooltip = "Усиление громкости (0..+5 дБ) (пока что просто увеличивает дистанцию проигрывания)";
+            onSliderPosChanged = "call A3U_fnc_boostChanged";
+        };
+
         class CategoryModeButton: A3A_ClickablePicture {
             idc = 85116;
             style = ST_PICTURE;
@@ -333,11 +374,21 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             style = SL_HORZ;
             texture = "#(argb,8,8,3)color(1,1,1,1)"; // Явное указание текстуры
         };
+        class SoundTrackProgress: A3A_Progress {
+            idc = 85117;
+            x = DIALOG_X + GRID_X(1);
+            y = DIALOG_Y + GRID_Y(40);
+            w = GRID_X(55);
+            h = GRID_Y(2);
+            colorBar[] = {0.2,0.6,1,0.8};
+            //style = SL_HORZ;
+            texture = "#(argb,8,8,3)color(1,1,1,1)"; // Явное указание текстуры
+        };
 
         class TrackTimer: A3A_Text {
             idc = 85115;
             x = DIALOG_X + GRID_X(56);
-            y = DIALOG_Y + GRID_Y(34);
+            y = DIALOG_Y + GRID_Y(30);
             w = GRID_X(24);
             h = GRID_Y(4);               // увеличьте высоту, чтобы текст не обрезался
             style = ST_CENTER;
@@ -345,48 +396,19 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             colorText[] = {0.8,0.8,0.8,1};
             text = "00:00 / 00:00";
         };
-
-        /* class TrackProgressClickCatcher: A3A_Slider {
-            idc = 85124;
-            x = DIALOG_X + GRID_X(1);
-            y = DIALOG_Y + GRID_Y(41);
-            w = GRID_X(38);
-            h = GRID_Y(1);
-            style = SL_HORZ;
-            color[] = {0.2,0.6,1,0.8};                // цвет заполненной части (как был colorBar)
-            colorActive[] = {0.2,0.6,1,1};            // цвет при наведении
-            colorDisabled[] = {0.2,0.6,1,0.3};        // если отключён
-            sliderRange[] = {0, 1};                    // диапазон от 0 до 1 (доля трека)
-            sliderPosition = 0;                         // начальная позиция
-            lineSize = 0.01;                            // шаг при клике на стрелки (если они есть)
-            arrowEmpty = "\a3\3DEN\Data\Controls\CtrlXSlider\arrowEmpty_ca.paa";
-            arrowFull = "\a3\3DEN\Data\Controls\CtrlXSlider\arrowFull_ca.paa";
-            border = "\a3\3DEN\Data\Controls\CtrlXSlider\border_ca.paa";
-            thumb = "\a3\3DEN\Data\Controls\CtrlXSlider\thumb_ca.paa"; // можно заменить на прозрачный или убрать совсем
-            onSliderPosChanged = "call A3U_fnc_onProgressSeek";
-        }; */
         
         class VolumeControl: A3A_Slider {
             idc = 85107;
             style = SL_HORZ;
 	        //type = CT_SLIDER;
             x = DIALOG_X + GRID_X(56.5);
-            y = DIALOG_Y + GRID_Y(39);
+            y = DIALOG_Y + GRID_Y(35);
             w = GRID_X(23);
             h = GRID_Y(4);
             onSliderPosChanged = "call A3U_fnc_volumeChanged";
             tooltip = "Изменение громкости";
         };
 
-        /* class VolumeIcon: A3A_Picture {
-            idc = 85108;
-            x = DIALOG_X + GRID_X(65);
-            y = DIALOG_Y + GRID_Y(43.5);
-            w = GRID_X(6);
-            h = GRID_Y(6);
-            text = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_on_ca.paa"; //"\A3\ui_f\data\map\vehicleicons\iconSound_ca.paa";
-            tooltip = "Громкость";
-        }; */
         class VolumeIconOn: A3A_ClickablePicture {
             idc = 85108;
             style = ST_PICTURE;

@@ -6,7 +6,19 @@ A3U_loopEnabled = !A3U_loopEnabled;
 private _display = findDisplay 85000;
 if (!isNull _display) then {
     private _btn = _display displayCtrl 85113;
-    private _tooltip = if (A3U_loopEnabled) then {"Повтор трека (выкл)"} else {"Повтор трека (вкл)"};
+    private _tooltip = if (A3U_loopEnabled) then {
+        if (A3U_playbackMode == "music") then {
+            "Повтор трека (выкл)"
+        } else {
+            "Повтор звука (выкл)"
+        }
+    } else {
+        if (A3U_playbackMode == "music") then {
+            "Повтор трека (вкл)"
+        } else {
+            "Повтор звука (вкл)"
+        }
+    };
     _btn ctrlSetTooltip _tooltip;
 
     // Меняем цвет иконки

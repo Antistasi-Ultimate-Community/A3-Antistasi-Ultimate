@@ -1,16 +1,22 @@
 #include "..\..\script_component.hpp"
 /*
-    Возвращает иконку мода и его название для указанного класса трека.
+    Возвращает иконку мода и его название для указанного класса трека или звука.
+    В зависимости от глобального режима A3U_playbackMode использует CfgMusic или CfgSounds.
     Параметры:
-        0: STRING - classname трека из CfgMusic
+        0: STRING - classname трека/звука
     Возвращает:
         ARRAY - [путь к иконке, название мода]
 */
-params ["_trackClass"];
+params ["_class"];
 
 private _icon = "";
 private _modName = "";
-private _config = configFile >> "CfgMusic" >> _trackClass;
+private _config = if (isNil "A3U_playbackMode" || {A3U_playbackMode == "music"}) then {
+    configFile >> "CfgMusic" >> _class
+} else {
+    configFile >> "CfgSounds" >> _class
+};
+if (!isClass _config) then { _config = missionConfigFile >> "CfgSounds" >> _class; };
 
 if (isClass _config) then {
     private _addons = configSourceAddonList _config;
