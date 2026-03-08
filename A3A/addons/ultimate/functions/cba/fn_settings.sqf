@@ -117,6 +117,19 @@ private _blindnessColors = [
     }
 ] call CBA_fnc_addSetting;
 
+[
+    "A3AU_setting_alwaysShowMarkerName",
+    "CHECKBOX",
+    "Always show marker names on map (Requires Restart!)",
+    ["Antistasi Ultimate", "Accessibility Settings"],
+    false,
+    false,
+    {  
+        params ["_value"];
+		missionNamespace setVariable ["A3AU_setting_alwaysShowMarkerName",_value,true];
+    }
+] call CBA_fnc_addSetting;
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {
     [
         "A3U_setting_emissionMinimum", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.

@@ -36,6 +36,15 @@ class CfgFunctions
             class isInMenu {};
             class menuImage {};
         };
+        class map
+        {
+            file = QPATHTOFOLDER(functions\map);
+            class mapHover {};
+            class mapTooltip {};
+            class tooltipCreate {};
+            class markerBrowser {};
+            class markerContextMenu {};
+        };
         class REINF
         {
             file = QPATHTOFOLDER(functions\REINF);
