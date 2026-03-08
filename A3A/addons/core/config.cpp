@@ -23,6 +23,7 @@ class CfgPatches {
 class A3A {
     #include "IntelMessages.hpp"
     #include "Templates.hpp"
+    #include "UtilityItems.hpp"
     #include "Params.hpp"
 
 #if __A3_DEBUG__

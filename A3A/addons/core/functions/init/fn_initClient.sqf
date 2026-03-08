@@ -13,6 +13,9 @@ Info_1("Client version: %1", QUOTE(VERSION_FULL));
 
 if (call A3A_fnc_modBlacklist) exitWith {};
 
+private _enableInitMessages = profileNamespace getVariable ["A3U_setting_enableInitMessages", true];
+private _enableIntroAnimation = profileNamespace getVariable ["A3U_setting_enableIntroAnimation", true];
+
 player forceAddUniform "U_C_WorkerCoveralls";
 
 musicON = false;
@@ -163,7 +166,8 @@ private _colorInvaders = Invaders call BIS_fnc_sideColor;
 	_x set [3, 0.33]
 } forEach [_colourTeamPlayer, _colorInvaders];
 
-private _introShot = [
+private _introShot = scriptNull;
+if (_enableIntroAnimation) then { _introShot = [
 	(position petros), // Target position
 	format ["%1, %2 %3", worldName, (localize (rank player)), name player], // SITREP text
 	50, //  altitude
@@ -174,7 +178,7 @@ private _introShot = [
 		["\a3\ui_f\data\map\markers\Nato\o_inf.paa", _colourTeamPlayer, markerPos "insertMrk", 1, 1, 0, "Insertion Point", 0],
 		["\a3\ui_f\data\map\markers\Nato\o_inf.paa", _colorInvaders, markerPos "towerBaseMrk", 1, 1, 0, "Radio Towers", 0]
 	]
-] spawn BIS_fnc_establishingShot;
+] spawn BIS_fnc_establishingShot };
 
 if (playerMarkersEnabled) then {
     [] spawn A3A_fnc_playerMarkers;
@@ -442,14 +446,14 @@ if (membershipEnabled) then {
     };
     if (serverCommandAvailable "#logout") then {
         _isMember = true;
-        [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_admin"] call A3A_fnc_customHint;
+        if (_enableInitMessages) then { [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_admin"] call A3A_fnc_customHint };
     };
 
     if (_isMember) then {
         membersX pushBack (getPlayerUID player);				// potential race condition, but there's only one admin so chance of hitting this is low
         publicVariable "membersX";
     } else {
-        [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_guest"] call A3A_fnc_customHint;
+        if (_enableInitMessages) then { [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_guest"] call A3A_fnc_customHint };
     };
 };
 
@@ -462,7 +466,7 @@ if !(isPlayer leader group player) then {
 
 waitUntil { scriptDone _introshot };
 
-cutText ["","BLACK IN", 3];
+if (_enableIntroAnimation) then { cutText ["","BLACK IN", 3] };
 
 [] remoteExecCall ["A3A_fnc_assignBossIfNone", 2];
 
@@ -477,7 +481,7 @@ if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fn
     private _loadedTemplateInfoXML = A3A_loadedTemplateInfoXML apply {[true,_x#0,_x#1]};	// Remove and simplify when the list above is empty and can be deleted.
     _modsAndLoadText append _loadedTemplateInfoXML;
 
-    if (count _modsAndLoadText isEqualTo 0) exitWith {};
+    if (!_enableInitMessages || {count _modsAndLoadText isEqualTo 0}) exitWith {};
     private _textXML = "<t align='left'>" + ((_modsAndLoadText apply { "<t color='#f0d498'>" + _x#1 + ":</t>" + _x#2 }) joinString "<br/>") + "</t>";
     [localize "STR_A3A_initClient_mods_header",_textXML] call A3A_fnc_customHint;
 };
@@ -675,3 +679,5 @@ if (staminaEnabled isEqualTo false) then {
 
 private _newWeaponSway = swayEnabled / 100;
 player setCustomAimCoef _newWeaponSway;
+
+[CBA_EVENT_CLIENT_INIT_DONE, []] call FUNCMAIN(triggerLocalEvent);
