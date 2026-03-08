@@ -1,4 +1,6 @@
 /*
+	fn_AIVEHinit
+
 	Installs various damage/smoke/kill/capture logic for vehicles
 	Will set and modify the "originalSide" and "ownerSide" variables on the vehicle indicating side ownership
 	If a rebel enters a vehicle, it will be switched to rebel side and added to vehDespawner
@@ -288,4 +290,36 @@ if (_side != teamPlayer) then {///might need to change that, tho I'm not sure
 
 if (!isNull _veh) then {
     ["AIVehInit", [_veh, _side]] call EFUNC(Events,triggerEvent);
+};
+
+// Добавляем SOG-радио, если DLC Vietnam загружен и у техники нет встроенного действия
+if (isClass (configFile >> "CfgPatches" >> "music_f_vietnam") && {!(_veh getVariable ["A3U_SOGRadioAdded", false])}) then {
+    private _config = configFile >> "CfgVehicles" >> typeOf _veh >> "UserActions" >> "music_player";
+    if (!isClass _config) then {
+        _veh addAction [
+            "Radio Jukebox",
+            {
+                params ["_target", "_caller", "_actionId", "_arguments"];
+                ["open"] call vn_fnc_music;
+            },
+            [],
+            -99,
+            false,
+            true,
+            "driver _target == _this",
+            "alive _target",
+            2
+        ];
+        _veh setVariable ["A3U_SOGRadioAdded", true];
+    };
+};
+
+if !(_veh getVariable ["A3U_radioAdded", false]) then {
+    private _type = "car";
+    if (_veh isKindOf "Air") then {
+        if (_veh isKindOf "Helicopter") then { _type = "helicopter"; } else { _type = "plane"; };
+    };
+    if (_veh isKindOf "Ship") then { _type = "car"; };
+    [_veh, "sound", _type] call A3U_fnc_addRadioAction;
+    _veh setVariable ["A3U_radioAdded", true];
 };
