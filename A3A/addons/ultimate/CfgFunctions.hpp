@@ -44,6 +44,7 @@ class CfgFunctions
             class tooltipCreate {};
             class markerBrowser {};
             class markerContextMenu {};
+            class mrkUpdateBulk {};
         };
         class REINF
         {

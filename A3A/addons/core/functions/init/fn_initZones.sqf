@@ -323,57 +323,63 @@ A3A_milAdministrations = [];
 A3A_destroyedMilAdministrations = [];
 
 private _milAdministrationTypes = [
-	"Land_zachytka_nov",
-	"Land_zachytka",
-	"Land_PoliceStation_01_F",
-	"Land_i_Barracks_V1_F", 
-	"Land_Barracks_01_dilapidated_F", 
-	"Land_Barracks_01_grey_F", 
-	"Land_Barracks_01_camo_F", 
-	"Land_i_Barracks_V2_F", 
-	"Land_u_Barracks_V2_F",
-	"Land_vn_i_barracks_v1_f", 
-	"Land_vn_barracks_01_dilapidated_f", 
-	"Land_vn_barracks_01_grey_f", 
-	"Land_vn_barracks_01_camo_f", 
-	"Land_vn_i_barracks_v2_f",
-	"land_gm_euro_office_02"
+    "Land_zachytka_nov",
+    "Land_zachytka",
+    "Land_PoliceStation_01_F",
+    "Land_i_Barracks_V1_F",
+    "Land_Barracks_01_dilapidated_F",
+    "Land_Barracks_01_grey_F",
+    "Land_Barracks_01_camo_F",
+    "Land_i_Barracks_V2_F",
+    "Land_u_Barracks_V2_F",
+    "Land_vn_i_barracks_v1_f",
+    "Land_vn_barracks_01_dilapidated_f",
+    "Land_vn_barracks_01_grey_f",
+    "Land_vn_barracks_01_camo_f",
+    "Land_vn_i_barracks_v2_f",
+    "land_gm_euro_office_02"
 ];
 private _milAdminPositions = getArray (_mapInfo/"milAdministrations");
+private _milAdminMarkersToUpdate = [];
 
 {
-	private _milAdmins = (nearestObjects [_x, _milAdministrationTypes, 30]) select {!isObjectHidden _x && {alive _x}};
-	if (_milAdmins isEqualTo []) then {
-		continue;
-	};
+    private _milAdmins = (nearestObjects [_x, _milAdministrationTypes, 30]) select {
+        !isObjectHidden _x && {alive _x}
+    };
+    if (_milAdmins isEqualTo []) then {
+        continue;
+    };
 
-	private _administration = _milAdmins select 0;
-	A3A_milAdministrations pushBack _administration;
+    private _administration = _milAdmins select 0;
+    A3A_milAdministrations pushBack _administration;
 
-	private _mrkAdm = createMarker [format ["MilAdm%1", mapGridPosition _administration], position _administration];
-	_mrkAdm setMarkerShapeLocal "ICON";
-	_mrkAdm setMarkerTypeLocal "A3AU_miladmin_mrk";
-	_mrkAdm setMarkerColorLocal colorOccupants;
-	_mrkAdm setMarkerTextLocal "";
-	_mrkAdm setMarkerAlpha 0.75;
-	_mrkAdm setMarkerShadow false;
+    private _mrkAdm = createMarker [format ["MilAdm%1", mapGridPosition _administration], position _administration];
+    _mrkAdm setMarkerShapeLocal "ICON";
+    _mrkAdm setMarkerTypeLocal "A3AU_miladmin_mrk";
+    _mrkAdm setMarkerColorLocal colorOccupants;
+    _mrkAdm setMarkerTextLocal "";
+    _mrkAdm setMarkerAlpha 0.75;
+    _mrkAdm setMarkerShadow false;
 
-	sidesX setVariable [_mrkAdm, Occupants, true];
+    _administration setVariable ["A3A_milAdminMarker", _mrkAdm];
 
-	milAdministrationsX pushBack _mrkAdm;
+    sidesX setVariable [_mrkAdm, Occupants, true];
 
-	[_mrkAdm] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
+    milAdministrationsX pushBack _mrkAdm;
+    _milAdminMarkersToUpdate pushBack _mrkAdm;
 
-	spawner setVariable [_mrkAdm, 2, true];
+    spawner setVariable [_mrkAdm, 2, true];
 
-	_administration addEventHandler ["Killed", {
-		params ["_killed"];
-		[_killed, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
-		
-		private _mrk = [milAdministrationsX, _killed] call BIS_fnc_nearestPosition;
-		[_mrk] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
-	}];
+    _administration addEventHandler ["Killed", {
+        params ["_killed"];
+
+        private _markerName = _killed getVariable ["A3A_milAdminMarker", ""];
+
+        [_killed, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+    }];
 } forEach _milAdminPositions;
+
+if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk;};
 
 // markersX append milAdministrationsX;
 

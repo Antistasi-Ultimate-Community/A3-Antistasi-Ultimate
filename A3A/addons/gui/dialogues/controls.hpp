@@ -281,25 +281,25 @@ class A3A_Button : A3A_Text
     // Sounds
     soundClick[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundClick",
+        "\A3\ui_f\data\sound\RscButton\soundClick.wss",
         0.09,
         1
     };
     soundEnter[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEnter",
+        "\A3\ui_f\data\sound\RscButton\soundEnter.wss",
         0.09,
         1
     };
     soundPush[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundPush",
+        "\A3\ui_f\data\sound\RscButton\soundPush.wss",
         0.09,
         1
     };
     soundEscape[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEscape",
+        "\A3\ui_f\data\sound\RscButton\soundEscape.wss",
         0.09,
         1
     };
@@ -371,25 +371,25 @@ class A3A_ShortcutButton : A3A_CtrlDefault
     // Sounds
     soundEnter[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEnter",
+        "\A3\ui_f\data\sound\RscButton\soundEnter.wss",
         0.09,
         1
     };
     soundPush[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundPush",
+        "\A3\ui_f\data\sound\RscButton\soundPush.wss",
         0.09,
         1
     };
     soundClick[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundClick",
+        "\A3\ui_f\data\sound\RscButton\soundClick.wss",
         0.09,
         1
     };
     soundEscape[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEscape",
+        "\A3\ui_f\data\sound\RscButton\soundEscape.wss",
         0.09,
         1
     };
@@ -464,25 +464,25 @@ class A3A_ActiveText : A3A_CtrlDefault
     // Sounds
     soundEnter[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEnter",
+        "\A3\ui_f\data\sound\RscButton\soundEnter.wss",
         0.09,
         1
     };
     soundPush[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundPush",
+        "\A3\ui_f\data\sound\RscButton\soundPush.wss",
         0.09,
         1
     };
     soundClick[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundClick",
+        "\A3\ui_f\data\sound\RscButton\soundClick.wss",
         0.09,
         1
     };
     soundEscape[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEscape",
+        "\A3\ui_f\data\sound\RscButton\soundEscape.wss",
         0.09,
         1
     };
@@ -1266,25 +1266,25 @@ class A3U_RscContextButton : A3A_Button
     // Sounds
     soundEnter[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEnter",
+        "\A3\ui_f\data\sound\RscButton\soundEnter.wss",
         0.09,
         1
     };
     soundPush[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundPush",
+        "\A3\ui_f\data\sound\RscButton\soundPush.wss",
         0.09,
         1
     };
     soundClick[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundClick",
+        "\A3\ui_f\data\sound\RscButton\soundClick.wss",
         0.09,
         1
     };
     soundEscape[] =
     {
-        "\A3\ui_f\data\sound\RscButton\soundEscape",
+        "\A3\ui_f\data\sound\RscButton\soundEscape.wss",
         0.09,
         1
     };

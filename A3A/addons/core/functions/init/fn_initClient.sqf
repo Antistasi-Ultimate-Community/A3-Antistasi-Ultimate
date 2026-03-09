@@ -678,7 +678,7 @@ player setCustomAimCoef _newWeaponSway;
 
 addMissionEventHandler ["Map", {
     params ["_opened"];
-    diag_log format ["[A3U HOVER DEBUG] Map EH opened=%1", _opened];
+    Verbose_1("[A3U HOVER DEBUG] Map EH opened=%1",_opened);
     [false] call A3U_fnc_markerBrowser;   // always force close on open & close
 
     if (_opened) then {

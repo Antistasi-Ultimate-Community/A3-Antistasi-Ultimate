@@ -31,7 +31,7 @@ private _fnc_initMarkerList =
             };
             case (_x in seaports): 
             {
-                _mrkD setMarkerTypeLocal (["A3AU_seaport_mrk_B", "A3AU_seaport_mrk_O"] select _isInvader);
+                _mrkD setMarkerTypeLocal "A3AU_seaport_mrk";
                 _mrkD setMarkerColorLocal ([colorOccupants, colorInvaders] select _isInvader);
             };
             default 

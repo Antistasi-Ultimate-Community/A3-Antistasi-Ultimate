@@ -44,6 +44,14 @@ class CfgVehicles
     #include "CfgVehicles.hpp"
 };
 
+class CfgMarkerClasses
+{
+    class A3AU_MRK
+    {
+        displayName="Antistasi Ultimate Markers";
+    };
+};
+
 class CfgMarkers
 {
     #include "CfgMarkers.hpp"
