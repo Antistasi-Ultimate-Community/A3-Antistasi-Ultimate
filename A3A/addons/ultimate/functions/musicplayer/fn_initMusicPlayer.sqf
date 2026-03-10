@@ -95,17 +95,11 @@ if (A3U_playbackMode == "music") then {
     };
 
     if (A3U_categoryMode) then {
-        // Режим "все категории" – исключаем специальные
+        // Режим "все категории" – исключаем ручные
         _categories = _allCategories - ["actualmusic", "vietnam_radio"];
         _categoryType = "theme";
     } else {
-        // Режим "только избранные" – фильтруем и добавляем специальные в начало
-        private _filtered = [];
-        {
-            if ([_x] call A3U_fnc_isCategoryAllowed) then {
-                _filtered pushBack _x;
-            };
-        } forEach _allCategories;
+        // Режим "только избранные" – ручные категории + не-ванильные аддоны
         _categories = [];
         if (count (call A3U_fnc_getActualTracks) > 0) then {
             _categories pushBack "actualmusic";
@@ -113,12 +107,12 @@ if (A3U_playbackMode == "music") then {
         if (count (call A3U_fnc_getVietnamRadioTracks) > 0) then {
             _categories pushBack "vietnam_radio";
         };
+        private _nonVanillaAddons = call A3U_fnc_getNonVanillaAddons;
         {
             _categories pushBack _x;
-        } forEach (_filtered - ["actualmusic", "vietnam_radio"]);
+        } forEach _nonVanillaAddons;
         _categoryType = "addon";
     };
-
 } else {
     // ---- РЕЖИМ ЗВУКОВ ----
     private _allSoundAddons = call A3U_fnc_getSoundCategories; // все аддоны (сгруппированные)
@@ -129,7 +123,7 @@ if (A3U_playbackMode == "music") then {
         _categoryType = "sound_all";
     } else {
         // Режим "только избранные" – ручные категории + не-ванильные аддоны
-        private _nonVanillaAddons = call A3U_fnc_getNonVanillaSoundAddons;
+        //private _nonVanillaAddons = call A3U_fnc_getNonVanillaSoundAddons; //leave it for now
         _categories = [];
 
         // Добавляем ручные категории
@@ -141,9 +135,9 @@ if (A3U_playbackMode == "music") then {
         };
 
         // Добавляем не-ванильные аддоны
-        {
+        /* {
             _categories pushBack _x;
-        } forEach _nonVanillaAddons;
+        } forEach _nonVanillaAddons; */ //leave it for now
 
         _categoryType = "sound_filtered";
     };

@@ -306,8 +306,8 @@ if (isClass (configFile >> "CfgPatches" >> "music_f_vietnam") && {!(_veh getVari
             -99,
             false,
             true,
+			"",
             "driver _target == _this",
-            "alive _target",
             2
         ];
         _veh setVariable ["A3U_SOGRadioAdded", true];

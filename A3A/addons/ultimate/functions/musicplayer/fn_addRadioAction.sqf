@@ -21,6 +21,20 @@ _object setVariable ["A3U_objectType", _objectType, true];
 private _text = if (_mode == "music") then { "Открыть плеер" } else { "Открыть звуковой плеер" };
 private _icon = "\A3\ui_f\data\map\vehicleicons\iconSound_ca.paa";
 
+// Определяем условие и радиус в зависимости от режима
+private _condition = "";
+private _radius = 3;
+
+if (_mode == "music") then {
+    // Для музыки действие видно всем в радиусе 3 метров
+    _condition = "true";
+    _radius = 3;
+} else {
+    // Для звука действие видно только водителю, командиру и второму пилоту (copilot)
+    _condition = "driver _target == _this || commander _target == _this || ({getNumber ([_target, _x] call BIS_fnc_turretConfig >> 'isCopilot') > 0 && {_target turretUnit _x == _this}} count allTurrets _target) > 0";
+    _radius = -1; // неограниченная дальность (только условие определяет видимость)
+};
+
 _object addAction [
     format ["<img image='%1' size='1.6' shadow=2 /> <t>%2</t>", _icon, _text],
     {
@@ -39,7 +53,7 @@ _object addAction [
     -99,
     false,
     true,
-    "driver _target == _this || commander _target == _this || ({getNumber ([_target, _x] call BIS_fnc_turretConfig >> 'isCopilot') > 0 && {_target turretUnit _x == _this}} count allTurrets _target) > 0",
-    "true",
-    3
+    "",   // shortcut
+    _condition,
+    _radius
 ];

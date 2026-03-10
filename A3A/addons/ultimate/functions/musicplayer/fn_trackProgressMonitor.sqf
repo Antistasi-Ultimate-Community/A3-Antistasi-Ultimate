@@ -68,6 +68,10 @@ while {!isNull findDisplay 85000} do {
                             // Для звуков - перезапуск
                             [] call A3U_fnc_playTrack;
                         };
+                    } else {
+                        if (A3U_playbackMode == "sound") then {
+                            call A3U_fnc_nextTrack;
+                        };
                     };
                 };
             };

@@ -22,25 +22,24 @@ private _categories = [];
 private _categoryType = "";
 
 if (A3U_playbackMode == "music") then {
-    _allCategories = call A3U_fnc_getCategories;
     if (A3U_categoryMode) then {
-        // Все категории, кроме специальных
-        _categories = _allCategories - ["actualmusic", "vietnam_radio"];
+        // Режим "все категории" – все темы, исключая ручные
+        _categories = call A3U_fnc_getCategories;
+        _categories = _categories - ["actualmusic", "vietnam_radio"];
         _categoryType = "theme";
     } else {
-        // Только разрешённые + специальные
+        // Режим "только избранные" – ручные категории + не-ванильные аддоны
+        _categories = [];
+        if (count (call A3U_fnc_getActualTracks) > 0) then {
+            _categories pushBack "actualmusic";
+        };
+        if (count (call A3U_fnc_getVietnamRadioTracks) > 0) then {
+            _categories pushBack "vietnam_radio";
+        };
+        private _nonVanillaAddons = call A3U_fnc_getNonVanillaAddons;
         {
-            if ([_x] call A3U_fnc_isCategoryAllowed) then {
-                _categories pushBack _x;
-            };
-        } forEach _allCategories;
-        private _ordered = [];
-        if (count (call A3U_fnc_getActualTracks) > 0) then { _ordered pushBack "actualmusic"; };
-        if (count (call A3U_fnc_getVietnamRadioTracks) > 0) then { _ordered pushBack "vietnam_radio"; };
-        {
-            _ordered pushBack _x;
-        } forEach (_categories - ["actualmusic", "vietnam_radio"]);
-        _categories = _ordered;
+            _categories pushBack _x;
+        } forEach _nonVanillaAddons;
         _categoryType = "addon";
     };
 } else {
@@ -52,7 +51,7 @@ if (A3U_playbackMode == "music") then {
         _categoryType = "sound_all";
     } else {
         // Только ручные + не-ванильные
-        private _nonVanillaAddons = call A3U_fnc_getNonVanillaSoundAddons;
+        //private _nonVanillaAddons = call A3U_fnc_getNonVanillaSoundAddons; //leave it for later
         _categories = [];
         if (count (call A3U_fnc_getActualMusicSounds) > 0) then {
             _categories pushBack "actualmusic";
@@ -60,9 +59,9 @@ if (A3U_playbackMode == "music") then {
         if (count (call A3U_fnc_getVNRadioSounds) > 0) then {
             _categories pushBack "vnradio";
         };
-        {
+        /* {
             _categories pushBack _x;
-        } forEach _nonVanillaAddons;
+        } forEach _nonVanillaAddons; */ //leave it for later
         _categoryType = "sound_filtered";
     };
 };

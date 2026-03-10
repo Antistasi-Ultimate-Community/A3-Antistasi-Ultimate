@@ -143,6 +143,7 @@ class CfgFunctions
             class getNonVanillaSoundAddons {};
             class toggleLoudspeaker {};
             class boostChanged {};
+            class MusicCache { preInit = 1; };
         };
         class musicplayerdebug
         {

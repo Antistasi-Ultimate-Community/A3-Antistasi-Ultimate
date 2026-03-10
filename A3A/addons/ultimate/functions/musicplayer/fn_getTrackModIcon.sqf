@@ -1,3 +1,4 @@
+//fn_getTrackModIcon.sqf
 #include "..\..\script_component.hpp"
 /*
     Возвращает иконку мода и его название для указанного класса трека или звука.
