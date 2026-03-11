@@ -1,9 +1,22 @@
-#include "..\..\script_component.hpp"
-/*
-    Останавливает воспроизведение звука на целевом объекте, используя сохранённую ссылку.
-    Параметры:
-        0: OBJECT - целевой объект
+// fn_stopSound.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Stops the sound currently playing on a target object.
+        Deletes the sound object stored in the target's variable.
+
+    Params:
+        _target : OBJECT : the source object
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
 */
+
+#include "..\..\script_component.hpp"
+
 params ["_target"];
 
 private _soundObj = _target getVariable ["A3U_currentSoundObj", objNull];

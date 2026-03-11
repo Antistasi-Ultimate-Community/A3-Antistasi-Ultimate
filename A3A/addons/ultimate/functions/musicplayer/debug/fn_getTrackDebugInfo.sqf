@@ -1,48 +1,58 @@
-#include "..\script_component.hpp"
-/*
-    Возвращает структурированный текст с отладочной информацией о треке.
-    Параметры:
-        0: STRING - classname трека из CfgMusic
-    Возвращает:
-        STRING - форматированный текст
+// fn_getTrackDebugInfo.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Returns structured text with debug information about a track.
+
+    Params:
+        _trackClass : STRING : classname of the track from CfgMusic
+
+    Returns:
+        STRING : formatted text with Structured Text tags
+
+    License: VPN-DPC
 */
+
+#include "..\script_component.hpp"
+
 params ["_trackClass"];
 
 private _config = configFile >> "CfgMusic" >> _trackClass;
-if (!isClass _config) exitWith {"<t color='#FF8888'>Трек не найден в CfgMusic</t>"};
+if (!isClass _config) exitWith {format ["<t color='#FF8888'>%1</t>", localize "STR_A3U_track_not_found"]};
 
-// Основные параметры (общие)
+// Basic parameters (common)
 private _name = getText (_config >> "name");
-if (_name == "") then { _name = "<нет name>" };
+if (_name == "") then { _name = localize "STR_A3U_no_name" };
 
 private _theme = getText (_config >> "theme");
-if (_theme == "") then { _theme = "<нет theme>" };
+if (_theme == "") then { _theme = localize "STR_A3U_none" };
 
-private _musicClass = getText (_config >> "musicClass"); // дополнительное поле из примера
-if (_musicClass == "") then { _musicClass = "<нет musicClass>" };
+private _musicClass = getText (_config >> "musicClass"); // additional field from example
+if (_musicClass == "") then { _musicClass = localize "STR_A3U_none" };
 
 private _type = getText (_config >> "type");
-if (_type == "") then { _type = "<нет type>" };
+if (_type == "") then { _type = localize "STR_A3U_none" };
 
 private _duration = getNumber (_config >> "duration");
 
-// Поле sound может быть строкой или массивом
+// Sound field can be a string or an array
 private _sound = getArray (_config >> "sound");
 if (_sound isEqualTo []) then {
-    // если массив пуст, возможно это строка?
+    // if array is empty, maybe it's a string?
     private _soundStr = getText (_config >> "sound");
-    _sound = if (_soundStr != "") then { [_soundStr] } else { ["<нет sound>"] };
+    _sound = if (_soundStr != "") then { [_soundStr] } else { [localize "STR_A3U_no_sound"] };
 };
 
-// Теги (массив строк)
+// Tags (array of strings)
 private _tags = getArray (_config >> "tags");
-private _tagsStr = if (_tags isEqualTo []) then { "<нет tags>" } else { _tags joinString ", " };
+private _tagsStr = if (_tags isEqualTo []) then { localize "STR_A3U_none" } else { _tags joinString ", " };
 
-// Заголовки (массив строк, обычно пустой)
+// Titles (array of strings, usually empty)
 private _titles = getArray (_config >> "titles");
-private _titlesStr = if (_titles isEqualTo []) then { "<нет titles>" } else { _titles joinString ", " };
+private _titlesStr = if (_titles isEqualTo []) then { localize "STR_A3U_none" } else { _titles joinString ", " };
 
-// Информация об аддоне и моде
+// Addon and mod info
 private _addon = "";
 private _modName = "";
 private _modLogo = "";
@@ -58,24 +68,24 @@ if (count _addons > 0) then {
     };
 };
 
-// Форматируем вывод (размер шрифта 0.7, чтобы поместилось много строк)
+// Format output (font size 0.7 to fit many lines)
 private _lines = [];
-_lines pushBack "<t color='#FFFF88'>=== DEBUG INFO ===</t>";
-_lines pushBack format ["Class: %1", _trackClass];
-_lines pushBack format ["Name: %1", _name];
-_lines pushBack format ["Theme: %1", _theme];
-_lines pushBack format ["MusicClass: %1", _musicClass];
-_lines pushBack format ["Type: %1", _type];
-_lines pushBack format ["Duration: %1 s", _duration];
-_lines pushBack format ["Sound: %1", _sound param [0, ""]]; // показываем только путь, остальное опционально
+_lines pushBack format ["<t color='#FFFF88'>%1</t>", localize "STR_A3U_debug_track_header"];
+_lines pushBack format [localize "STR_A3U_debug_class", _trackClass];
+_lines pushBack format [localize "STR_A3U_debug_name", _name];
+_lines pushBack format [localize "STR_A3U_debug_theme", _theme];
+_lines pushBack format [localize "STR_A3U_debug_musicclass", _musicClass];
+_lines pushBack format [localize "STR_A3U_debug_type", _type];
+_lines pushBack format [localize "STR_A3U_debug_duration", _duration];
+_lines pushBack format [localize "STR_A3U_debug_sound", _sound param [0, ""]]; // show only path, rest optional
 if (count _sound > 1) then {
-    _lines pushBack format ["Sound params: volume=%1, pitch=%2", _sound param [1, 1], _sound param [2, 1]];
+    _lines pushBack format [localize "STR_A3U_debug_soundparams", _sound param [1, 1], _sound param [2, 1]];
 };
-_lines pushBack format ["Tags: %1", _tagsStr];
-_lines pushBack format ["Titles: %1", _titlesStr];
-if (_addon != "") then { _lines pushBack format ["Addon: %1", _addon]; };
-if (_modName != "") then { _lines pushBack format ["Mod: %1", _modName]; };
-if (_modLogo != "") then { _lines pushBack format ["Logo: %1", _modLogo]; };
+_lines pushBack format [localize "STR_A3U_debug_tags", _tagsStr];
+_lines pushBack format [localize "STR_A3U_debug_titles", _titlesStr];
+if (_addon != "") then { _lines pushBack format [localize "STR_A3U_debug_addon", _addon]; };
+if (_modName != "") then { _lines pushBack format [localize "STR_A3U_debug_mod", _modName]; };
+if (_modLogo != "") then { _lines pushBack format [localize "STR_A3U_debug_logo", _modLogo]; };
 
 private _result = "<t size='0.7'>" + (_lines joinString "<br/>") + "</t>";
 _result

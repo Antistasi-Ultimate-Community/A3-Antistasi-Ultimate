@@ -1,10 +1,27 @@
-//fn_playPause.sqf
+// fn_playPause.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Handles the play/pause button.
+        For music mode: toggles playback, saves paused position.
+        For sound mode: starts or stops sound via remote execution.
+
+    Params:
+        None
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
+*/
+
 #include "..\..\script_component.hpp"
 
 if (A3U_playbackMode == "music") then {
-    // музыкальный режим
+    // music mode
     if (A3U_isPlaying) then {
-        // Пауза
+        // Pause
         A3U_playerState set [1, false];
         A3U_playerState set [2, A3U_trackProgress];
         A3U_pausedProgress = A3U_trackProgress;
@@ -16,22 +33,21 @@ if (A3U_playbackMode == "music") then {
             if (lbSize _tracksList > 0) then {
                 _tracksList lbSetCurSel 0;
             };
-        diag_log format ["[playPlayPause] start with A3U_currentTrack=%1", A3U_currentTrack];
         } else {
             [] call A3U_fnc_playTrack;
         };
     };
 } else {
-    // Звуковой режим
+    // Sound mode
     private _target = uiNamespace getVariable ["A3U_soundTarget", objNull];
-    if (isNull _target) exitWith { systemChat "Ошибка: нет объекта"; };
+    if (isNull _target) exitWith { systemChat localize "STR_A3U_error_no_object"; };
 
     if (A3U_isPlaying) then {
-        // Останавливаем звук – удаляем все источники на клиентах
+        // Stop sound – delete all sources on clients
         [_target] remoteExec ["A3U_fnc_stopSound", 0];
         A3U_isPlaying = false;
     } else {
-        // Запускаем текущий звук
+        // Start current sound
         [] call A3U_fnc_playTrack;
     };
 };

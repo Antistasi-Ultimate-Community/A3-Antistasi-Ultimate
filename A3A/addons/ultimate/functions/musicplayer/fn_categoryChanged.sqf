@@ -1,47 +1,56 @@
-//fn_categoryChanged.sqf
+// fn_categoryChanged.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Event handler for category list selection.
+        Loads tracks/sounds for the selected category and displays them.
+
+    Params:
+        _ctrlCategory : CONTROL : the category list control
+        _index : NUMBER : selected row index
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
+*/
+
 #include "..\..\script_component.hpp"
 
 params ["_ctrlCategory", "_index"];
 
-// Если идёт программное заполнение - игнорируем событие
+// If this is a programmatic change – ignore the event
 private _display = ctrlParent _ctrlCategory;
 if (_display getVariable ["A3U_skipCategoryChange", false]) exitWith {};
 
-if (_index == -1) exitWith { systemChat "Ошибка: категория не выбрана!"; };
+if (_index == -1) exitWith { systemChat localize "STR_A3U_error_no_category"; };
 
-// Получение категории из данных (нижний регистр)
+// Get category from data (lowercase)
 private _category = _ctrlCategory lbData _index;
-systemChat format ["Выбрана категория: %1", _category];
+systemChat format [localize "STR_A3U_category_selected", _category];
 
-// Определяем тип категории
+// Determine category type
 private _categoryType = _display getVariable ["A3U_categoryType", "theme"];
 private _items = [];
 
 if (A3U_playbackMode == "music") then {
-    // Музыкальный режим
-    if (_category == "vietnam_radio") then {
-        _items = call A3U_fnc_getVietnamRadioTracks;
+    if (_category in A3U_cache_manualMusicCategories) then {
+        private _cacheName = format ["A3U_cache_%1Tracks", _category];
+        _items = missionNamespace getVariable [_cacheName, []];
     } else {
-        if (_category == "actualmusic") then {
-            _items = call A3U_fnc_getActualTracks;
+        if (_categoryType == "addon") then {
+            _items = A3U_cache_tracksByAddon getOrDefault [_category, []];
         } else {
-            if (_categoryType == "addon") then {
-                _items = [_category] call A3U_fnc_getTracksByAddon;
-            } else {
-                _items = [_category] call A3U_fnc_getTracksByCategory;
-            };
+            _items = A3U_cache_tracksByCategory getOrDefault [_category, []];
         };
     };
 } else {
-    // Звуковой режим
-    if (_category == "actualmusic") then {
-        _items = call A3U_fnc_getActualMusicSounds;
+    if (_category in A3U_cache_manualSoundCategories) then {
+        private _cacheName = format ["A3U_cache_%1Sounds", _category];
+        _items = missionNamespace getVariable [_cacheName, []];
     } else {
-        if (_category == "vnradio") then {
-            _items = call A3U_fnc_getVNRadioSounds;
-        } else {
-            _items = [_category] call A3U_fnc_getSoundsByCategory;
-        };
+        _items = A3U_cache_soundsByCategory getOrDefault [_category, []];
     };
 };
 
@@ -49,7 +58,7 @@ private _itemsList = _display displayCtrl 85102;
 lbClear _itemsList;
 
 if (count _items == 0) then {
-    _itemsList lbAdd "Нет элементов в категории";
+    _itemsList lbAdd localize "STR_A3U_category_empty";
 } else {
     {
         _x params ["_name", "_class"];

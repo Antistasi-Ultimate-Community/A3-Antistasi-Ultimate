@@ -1,4 +1,21 @@
-//fn_nextTrack.sqf
+/*  
+    fn_nextTrack
+
+    Author: wersal
+
+    Description:
+        Switches to the next track in the current list.
+        Respects shuffle mode and updates the UI if open.
+
+    Params:
+        None
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
+*/
+
 #include "..\..\script_component.hpp"
 
 if (isNil "A3U_currentTrackList") exitWith {};
@@ -6,8 +23,6 @@ if (A3U_currentTrackList isEqualTo []) exitWith {};
 
 private _count = count A3U_currentTrackList;
 private _newIndex = 0;
-
-diag_log format ["[nextTrack] ДО: track=%1, index=%2", A3U_currentTrack, A3U_currentTrackIndex];
 
 if (A3U_shuffleEnabled) then {
     private _currentIndex = A3U_currentTrackIndex;
@@ -24,20 +39,18 @@ if (A3U_shuffleEnabled) then {
     _newIndex = (A3U_currentTrackIndex + 1) min (_count - 1);
 };
 
-// Устанавливаем новый трек
+// Set the new track
 private _newTrack = A3U_currentTrackList select _newIndex;
 A3U_currentTrack = _newTrack;
 A3U_currentTrackIndex = _newIndex;
 A3U_trackProgress = 0;
 
-diag_log format ["[nextTrack] ПОСЛЕ: track=%1, index=%2", A3U_currentTrack, A3U_currentTrackIndex];
-
-// Если музыка играет, запускаем новый трек
+// If music is playing, start the new track
 if (A3U_isPlaying) then {
     [] call A3U_fnc_playTrack;
 };
 
-// Если диалог открыт, обновляем выделение в списке треков
+// If the dialog is open, update the selection in the track list
 private _display = findDisplay 85000;
 if (!isNull _display) then {
     private _tracksList = _display displayCtrl 85102;

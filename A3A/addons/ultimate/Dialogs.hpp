@@ -1,20 +1,7 @@
-//dialogs.hpp
+// dialogs.hpp
 #include "defines.hpp"
 
 #define COMPONENT musicPlayer
-
-// Дополнительные настройки 
-#define TRACK_UPDATE_INTERVAL 0.1
-#define TRACK_END_THRESHOLD 0.98
-
-#define MIN_VOLUME 0
-#define MAX_VOLUME 1
-#define DEFAULT_VOLUME 0.5
-
-GVAR(currentTrack) = [];
-GVAR(isPlaying) = false;
-GVAR(trackProgress) = 0;
-GVAR(volume) = DEFAULT_VOLUME;
 
 class RscDisplayMusicPlayer: A3A_DefaultDialog {
     idd = 85000;
@@ -26,10 +13,10 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
         class TitleBarBackground: A3A_Background {
             moving = 1;
             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            x = DIALOG_X; ///x = DIALOG_X + GRID_X(0);
-            y = DIALOG_Y - 5 * GRID_H; /// y = DIALOG_Y + GRID_Y(-4);
+            x = DIALOG_X;
+            y = DIALOG_Y - 5 * GRID_H;
             w = GRID_X(DIALOG_W);
-            h = 5 * GRID_H; ///h = GRID_Y(4);
+            h = 5 * GRID_H;
         };
 
         class Background: A3A_Background {
@@ -44,14 +31,14 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
 
         class DebugBackground: A3A_Background {
             idc = 85120;
-            x = DIALOG_X - GRID_X(40);  // слева от основного окна
+            x = DIALOG_X - GRID_X(40);  // left of the main window
             y = DIALOG_Y;
             w = GRID_X(38);
             h = GRID_Y(DIALOG_H);
             colorBackground[] = {0.05, 0.05, 0.05, 0.9};
         };
 
-        // Сам текст отладки
+        // Debug text itself
         class DebugInfo: A3A_StructuredText {
             idc = 85121;
             x = DIALOG_X - GRID_X(39);
@@ -62,10 +49,10 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             colorText[] = {0.9,0.9,0.9,1};
         };
         class DebugCopyButton: A3A_ClickablePicture {
-            idc = 85123;                     // новый IDC
+            idc = 85123;                     // new IDC
             style = ST_PICTURE;
-            x = DIALOG_X - GRID_X(6);        // правая граница панели: -40 + 38 = -2, отступим ещё 1 влево
-            y = DIALOG_Y + GRID_Y(0);         // верхняя граница панели
+            x = DIALOG_X - GRID_X(6);        // right edge of the panel: -40 + 38 = -2, offset another 1 left
+            y = DIALOG_Y + GRID_Y(0);         // top edge of the panel
             w = GRID_X(4);
             h = GRID_Y(4);
             text = "";
@@ -75,7 +62,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTextureFocused = "x\zen\addons\context_actions\ui\copy_ca.paa";
             animTexturePressed = "x\zen\addons\context_actions\ui\copy_ca.paa";
             animTextureDefault = "x\zen\addons\context_actions\ui\copy_ca.paa";
-            tooltip = "Копировать информацию в буфер обмена";
+            tooltip = "$STR_A3U_debug_copy_tooltip";
             onButtonClick = "call A3U_fnc_copyDebugToClipboard";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
@@ -89,7 +76,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
     
     class Controls {
         class Title: A3A_Text {
-            text = "JUKEBOX"; //MUSIC PLAYER music
+            text = "$STR_A3U_dialog_title";
             x = DIALOG_X + GRID_X(0);
             y = DIALOG_Y + GRID_Y(-4);
             w = GRID_X(DIALOG_W);
@@ -101,7 +88,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
         };
 
-        // Тумблер (можно добавить в правую часть заголовка)
+        // Toggle button (can be placed in the right part of the title bar)
         class DebugToggle: A3A_ClickablePicture {
             idc = 85122;
             style = ST_PICTURE;
@@ -109,7 +96,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             y = DIALOG_Y - GRID_Y(4);
             w = GRID_X(4);
             h = GRID_Y(4);
-            text = ""; //"\A3\ui_f\data\map\vehicleicons\iconVehicle_ca.paa"
+            text = "";
             animTextureNormal = "\A3\ui_f\data\map\vehicleicons\iconobject_ca.paa";
             animTextureDisabled = "\A3\ui_f\data\map\vehicleicons\iconobject_ca.paa";
             animTextureOver = "\A3\ui_f\data\map\vehicleicons\iconobject_ca.paa";
@@ -117,7 +104,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTexturePressed = "\A3\ui_f\data\map\vehicleicons\iconobject_ca.paa";
             animTextureDefault = "\A3\ui_f\data\map\vehicleicons\iconobject_ca.paa";
             onButtonClick = "call A3U_fnc_toggleDebug";
-            tooltip = "Показать/скрыть отладочную информацию";
+            tooltip = "$STR_A3U_debug_toggle_tooltip";
             autoAdjustTexture = true;
             class AttributesImage
             {
@@ -167,7 +154,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTextureFocused = "a3\modules_f_curator\data\iconendmission_ca.paa";
             animTexturePressed = "a3\modules_f_curator\data\iconendmission_ca.paa";
             animTextureDefault = "a3\modules_f_curator\data\iconendmission_ca.paa";
-            tooltip = "Воспроизвести";
+            tooltip = "$STR_A3U_play_tooltip";
             color[] = {1,1,1,1};
             // Text
             color2[] = {1,1,1,1}; // Blinking
@@ -208,7 +195,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTextureFocused = "\a3\ui_f_orange\data\cfgorange\missions\action_fragment_ca.paa";
             animTexturePressed = "\a3\ui_f_orange\data\cfgorange\missions\action_fragment_ca.paa";
             animTextureDefault = "\a3\ui_f_orange\data\cfgorange\missions\action_fragment_ca.paa";
-            tooltip = "Предыдущий трек";
+            tooltip = "$STR_A3U_prev_tooltip";
             onButtonClick = "call A3U_fnc_prevTrack";
             autoAdjustTexture = true;
             class AttributesImage
@@ -234,7 +221,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTextureFocused = "\a3\ui_f_orange\data\cfgorange\missions\action_fragment_back_ca.paa";
             animTexturePressed = "\a3\ui_f_orange\data\cfgorange\missions\action_fragment_back_ca.paa";
             animTextureDefault = "\a3\ui_f_orange\data\cfgorange\missions\action_fragment_back_ca.paa";
-            tooltip = "Следующий трек";
+            tooltip = "$STR_A3U_next_tooltip";
             onButtonClick = "call A3U_fnc_nextTrack";
             autoAdjustTexture = true;
             class AttributesImage
@@ -254,17 +241,17 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             w = GRID_X(7);
             h = GRID_Y(7);
             text = "";
-            animTextureNormal = "a3\modules_f_beta\data\firingdrills\restart_ca.paa"; // иконка повтора //"a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa"
+            animTextureNormal = "a3\modules_f_beta\data\firingdrills\restart_ca.paa"; // repeat icon
             animTextureDisabled = "a3\modules_f_beta\data\firingdrills\restart_ca.paa"; 
             animTextureOver = "a3\modules_f_beta\data\firingdrills\restart_ca.paa";
             animTextureFocused = "a3\modules_f_beta\data\firingdrills\restart_ca.paa";
             animTexturePressed = "a3\modules_f_beta\data\firingdrills\restart_ca.paa";
             animTextureDefault = "a3\modules_f_beta\data\firingdrills\restart_ca.paa";
-            tooltip = "Повтор трека (выкл)";
+            tooltip = "$STR_A3U_loop_off_tooltip";
             onButtonClick = "call A3U_fnc_toggleLoop";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
-            // можно добавить подсветку при включении позже через скрипт
+            // can add highlight when enabled later via script
             class AttributesImage {
                 font = "RobotoCondensed";
                 color = "#FFFFFF";
@@ -280,17 +267,17 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             w = GRID_X(6);
             h = GRID_Y(6);
             text = "";
-            animTextureNormal = "x\zen\addons\compositions\ui\randomize_ca.paa"; // иконка повтора
+            animTextureNormal = "x\zen\addons\compositions\ui\randomize_ca.paa"; // shuffle icon
             animTextureDisabled = "x\zen\addons\compositions\ui\randomize_ca.paa";
             animTextureOver = "x\zen\addons\compositions\ui\randomize_ca.paa";
             animTextureFocused = "x\zen\addons\compositions\ui\randomize_ca.paa";
             animTexturePressed = "x\zen\addons\compositions\ui\randomize_ca.paa";
             animTextureDefault = "x\zen\addons\compositions\ui\randomize_ca.paa";
-            tooltip = "Случайный порядок (вкл)";
+            tooltip = "$STR_A3U_shuffle_on_tooltip";
             onButtonClick = "call A3U_fnc_toggleShuffle";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
-            // можно добавить подсветку при включении позже через скрипт
+            // can add highlight when enabled later via script
             class AttributesImage {
                 font = "RobotoCondensed";
                 color = "#FFFFFF";
@@ -298,22 +285,22 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             };
         };
 
-        // Кнопка Loudspeaker (увеличение дальности)
+        // Loudspeaker button (increased range)
         class LoudspeakerButton: A3A_ClickablePicture {
             idc = 85118;
             style = ST_PICTURE;
-            x = DIALOG_X + GRID_X(59); // подберите позицию
+            x = DIALOG_X + GRID_X(59); // adjust position as needed
             y = DIALOG_Y + GRID_Y(42.5);
             w = GRID_X(7);
             h = GRID_Y(7);
             text = "";
-            animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa"; // иконка динамика
+            animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa"; // speaker icon
             animTextureDisabled = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
             animTextureOver = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
             animTextureFocused = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
             animTexturePressed = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
             animTextureDefault = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa";
-            tooltip = "Режим громкоговорителя (увеличенная дальность)";
+            tooltip = "$STR_A3U_loudspeaker_tooltip";
             onButtonClick = "call A3U_fnc_toggleLoudspeaker";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
@@ -324,18 +311,18 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             };
         };
         
-        // Слайдер для усиления громкости (Boost)
+        // Boost slider
         class BoostSlider: A3A_Slider {
             idc = 85119;
-            x = DIALOG_X + GRID_X(56.5); // подберите позицию
+            x = DIALOG_X + GRID_X(56.5); // adjust position as needed
             y = DIALOG_Y + GRID_Y(40);
             w = GRID_X(20);
             h = GRID_Y(2);
             style = SL_HORZ;
-            sliderRange[] = {0, 4}; // 0..4 для пяти положений
+            sliderRange[] = {0, 4}; // 0..4 for five positions
             sliderPosition = 0;
             lineSize = 1;
-            tooltip = "Усиление громкости (0..+5 дБ) (пока что просто увеличивает дистанцию проигрывания)";
+            tooltip = "$STR_A3U_boost_tooltip_long";
             onSliderPosChanged = "call A3U_fnc_boostChanged";
         };
 
@@ -347,13 +334,13 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             w = GRID_X(3);
             h = GRID_Y(3);
             text = "";
-            animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa"; // иконка фильтра
+            animTextureNormal = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa"; // filter icon
             animTextureDisabled = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
             animTextureOver = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
             animTextureFocused = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
             animTexturePressed = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
             animTextureDefault = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa";
-            tooltip = "Показать все категории";
+            tooltip = "$STR_A3U_category_mode_all";
             onButtonClick = "call A3U_fnc_toggleCategoryMode";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
@@ -372,7 +359,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             h = GRID_Y(2);
             color[] = {0.2,0.6,1,0.8};
             style = SL_HORZ;
-            texture = "#(argb,8,8,3)color(1,1,1,1)"; // Явное указание текстуры
+            texture = "#(argb,8,8,3)color(1,1,1,1)"; // Explicit texture definition
         };
         class SoundTrackProgress: A3A_Progress {
             idc = 85117;
@@ -381,8 +368,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             w = GRID_X(55);
             h = GRID_Y(2);
             colorBar[] = {0.2,0.6,1,0.8};
-            //style = SL_HORZ;
-            texture = "#(argb,8,8,3)color(1,1,1,1)"; // Явное указание текстуры
+            texture = "#(argb,8,8,3)color(1,1,1,1)"; // Explicit texture definition
         };
 
         class TrackTimer: A3A_Text {
@@ -390,9 +376,9 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             x = DIALOG_X + GRID_X(56);
             y = DIALOG_Y + GRID_Y(30);
             w = GRID_X(24);
-            h = GRID_Y(4);               // увеличьте высоту, чтобы текст не обрезался
+            h = GRID_Y(4);               // increase height to prevent text clipping
             style = ST_CENTER;
-            sizeEx = 1.8 * GUI_TEXT_SIZE_LARGE; // вместо GUI_TEXT_SIZE_SMALL
+            sizeEx = 1.8 * GUI_TEXT_SIZE_LARGE;
             colorText[] = {0.8,0.8,0.8,1};
             text = "00:00 / 00:00";
         };
@@ -406,7 +392,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             w = GRID_X(23);
             h = GRID_Y(4);
             onSliderPosChanged = "call A3U_fnc_volumeChanged";
-            tooltip = "Изменение громкости";
+            tooltip = "$STR_A3U_volume_change";
         };
 
         class VolumeIconOn: A3A_ClickablePicture {
@@ -423,7 +409,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTextureFocused = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_on_ca.paa";
             animTexturePressed = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_off_ca.paa";
             animTextureDefault = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_on_ca.paa";
-            tooltip = "Выкл звук";
+            tooltip = "$STR_A3U_mute_off";
             onButtonClick = "call A3U_fnc_toggleMute";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
@@ -447,7 +433,7 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
             animTextureFocused = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_off_ca.paa";
             animTexturePressed = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_on_ca.paa";
             animTextureDefault = "a3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_sound_off_ca.paa";
-            tooltip = "Вкл звук";
+            tooltip = "$STR_A3U_mute_on";
             onButtonClick = "call A3U_fnc_toggleMute";
             autoAdjustTexture = true;
             colorBackground[] = {1,1,1,1};
@@ -473,15 +459,11 @@ class RscDisplayMusicPlayer: A3A_DefaultDialog {
         };
 
         class TrackModIcon: A3A_Picture {
-            idc = 85111;                     // IDC для иконки мода
-            x = DIALOG_X + GRID_X(57);       // справа от TrackInfo (TrackInfo: x=30, w=50 → 30+50+1)
-            y = DIALOG_Y + GRID_Y(6);         // немного ниже верхней границы (под Title)
-            w = GRID_X(22);                    // ширина 4 клетки
-            h = GRID_Y(22);                    // высота 4 клетки
-            /* text = "";                         // начальное значение пустое
-            tooltip = "";                       // будет заполняться позже
-            colorText[] = {1,1,1,1};            // обычный цвет
-            colorBackground[] = {0,0,0,0.5};    // полупрозрачный фон для отсутствующей иконки (опционально) */
+            idc = 85111;                     // IDC for mod icon
+            x = DIALOG_X + GRID_X(57);       // to the right of TrackInfo
+            y = DIALOG_Y + GRID_Y(6);         // slightly below the top edge (under Title)
+            w = GRID_X(22);
+            h = GRID_Y(22);
         };
 
         class CloseButton : A3A_CloseButton

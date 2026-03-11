@@ -1,14 +1,31 @@
-//fn_trackProggressMonitor.sqf
+// fn_trackProgressMonitor.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Main loop updating the progress bar and timer.
+        Handles auto‑advance to next track when a track ends.
+        Runs while the player dialog is open.
+
+    Params:
+        None
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
+*/
+
 #include "..\..\script_component.hpp"
 
 private _display = findDisplay 85000;
 if (isNull _display) exitWith {};
 
-// Определяем, какой контрол прогресса использовать
+// Determine which progress control to use
 private _progressCtrl = if (A3U_playbackMode == "music") then {
-    _display displayCtrl 85106  // слайдер
+    _display displayCtrl 85106  // slider
 } else {
-    _display displayCtrl 85117  // простой прогресс-бар
+    _display displayCtrl 85117  // simple progress bar
 };
 
 private _timer = _display displayCtrl 85115;
@@ -39,7 +56,7 @@ while {!isNull findDisplay 85000} do {
                 private _currentTime = diag_tickTime - A3U_trackStartTime;
                 A3U_trackProgress = (_currentTime / _totalDuration) min 1;
                 
-                // Обновление таймера
+                // Update timer
                 private _currentSeconds = _currentTime min _totalDuration;
                 private _timeStr = format ["%1 / %2", 
                     [_currentSeconds] call _fnc_formatTime,
@@ -47,7 +64,7 @@ while {!isNull findDisplay 85000} do {
                 ];
                 _timer ctrlSetText _timeStr;
                 
-                // Обновляем прогресс
+                // Update progress
                 if (A3U_playbackMode == "music") then {
                     if !(_display getVariable ["isDragging", false]) then {
                         _progressCtrl sliderSetPosition A3U_trackProgress;
@@ -56,7 +73,7 @@ while {!isNull findDisplay 85000} do {
                     _progressCtrl progressSetPosition A3U_trackProgress;
                 };
                 
-                // Автопереход при окончании (только для музыки, для звуков можно реализовать loop)
+                // Auto‑advance at track end
                 if (A3U_trackProgress >= 0.99) then {
                     if (A3U_loopEnabled) then {
                         if (A3U_playbackMode == "music") then {
@@ -65,7 +82,7 @@ while {!isNull findDisplay 85000} do {
                             playMusic (A3U_currentTrack#1);
                             0.5 fadeMusic A3U_volume;
                         } else {
-                            // Для звуков - перезапуск
+                            // For sounds – restart
                             [] call A3U_fnc_playTrack;
                         };
                     } else {
@@ -77,7 +94,7 @@ while {!isNull findDisplay 85000} do {
             };
         };
     } else {
-        // Если трек не играет, но выбран, показываем прогресс из переменной
+        // If track is not playing but selected, show progress from variable
         if (count A3U_currentTrack > 0) then {
             private _itemClass = A3U_currentTrack#1;
             private _config = if (A3U_playbackMode == "music") then {

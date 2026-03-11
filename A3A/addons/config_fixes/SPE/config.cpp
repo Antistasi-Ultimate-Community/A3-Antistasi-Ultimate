@@ -21,5 +21,6 @@ class CfgPatches
 
 // Uncomment when needed
 #include "CfgVehicles.hpp"
+#include "CfgSounds.hpp"
 //#include "CfgMarkers.hpp"
 //#include "CfgWeapons.hpp"

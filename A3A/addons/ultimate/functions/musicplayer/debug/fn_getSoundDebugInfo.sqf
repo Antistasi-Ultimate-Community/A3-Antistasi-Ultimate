@@ -1,20 +1,32 @@
-#include "..\script_component.hpp"
-/*
-    Возвращает структурированный текст с отладочной информацией о звуке.
-    Параметры:
-        0: STRING - classname звука из CfgSounds
+// fn_getSoundDebugInfo.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Returns structured text with debug information about a sound.
+
+    Params:
+        _soundClass : STRING : classname of the sound from CfgSounds
+
+    Returns:
+        STRING : formatted text with Structured Text tags
+
+    License: VPN-DPC
 */
+
+#include "..\script_component.hpp"
+
 params ["_soundClass"];
 
 private _config = (configFile >> "CfgSounds" >> _soundClass);
 if (!isClass _config) then { _config = (missionConfigFile >> "CfgSounds" >> _soundClass); };
-if (!isClass _config) exitWith {"<t color='#FF8888'>Звук не найден в CfgSounds</t>"};
+if (!isClass _config) exitWith {format ["<t color='#FF8888'>%1</t>", localize "STR_A3U_sound_not_found"]};
 
 private _name = getText (_config >> "name");
-if (_name == "") then { _name = "<нет name>" };
+if (_name == "") then { _name = localize "STR_A3U_no_name" };
 
 private _soundArray = getArray (_config >> "sound");
-private _file = if (count _soundArray > 0) then { _soundArray select 0 } else { "<нет файла>" };
+private _file = if (count _soundArray > 0) then { _soundArray select 0 } else { localize "STR_A3U_no_file" };
 private _volume = if (count _soundArray > 1) then { _soundArray select 1 } else { 1 };
 private _pitch = if (count _soundArray > 2) then { _soundArray select 2 } else { 1 };
 private _maxDistance = if (count _soundArray > 3) then { _soundArray select 3 } else { 100 };
@@ -37,18 +49,18 @@ if (count _addons > 0) then {
 };
 
 private _lines = [];
-_lines pushBack "<t color='#FFFF88'>=== SOUND DEBUG INFO ===</t>";
-_lines pushBack format ["Class: %1", _soundClass];
-_lines pushBack format ["Name: %1", _name];
-_lines pushBack format ["Theme: %1", _theme];
-_lines pushBack format ["File: %1", _file];
-_lines pushBack format ["Volume: %1", _volume];
-_lines pushBack format ["Pitch: %1", _pitch];
-_lines pushBack format ["Max Distance: %1 m", _maxDistance];
-_lines pushBack format ["Duration: %1 s", _duration];
-_lines pushBack format ["Titles: %1", if (_titles isEqualTo []) then { "<нет>" } else { str _titles }];
-if (_addon != "") then { _lines pushBack format ["Addon: %1", _addon]; };
-if (_modName != "") then { _lines pushBack format ["Mod: %1", _modName]; };
+_lines pushBack format ["<t color='#FFFF88'>%1</t>", localize "STR_A3U_debug_sound_header"];
+_lines pushBack format [localize "STR_A3U_debug_class", _soundClass];
+_lines pushBack format [localize "STR_A3U_debug_name", _name];
+_lines pushBack format [localize "STR_A3U_debug_theme", _theme];
+_lines pushBack format [localize "STR_A3U_debug_file", _file];
+_lines pushBack format [localize "STR_A3U_debug_volume", _volume];
+_lines pushBack format [localize "STR_A3U_debug_pitch", _pitch];
+_lines pushBack format [localize "STR_A3U_debug_maxdist", _maxDistance];
+_lines pushBack format [localize "STR_A3U_debug_duration", _duration];
+_lines pushBack format [localize "STR_A3U_debug_titles", if (_titles isEqualTo []) then { localize "STR_A3U_none" } else { str _titles }];
+if (_addon != "") then { _lines pushBack format [localize "STR_A3U_debug_addon", _addon]; };
+if (_modName != "") then { _lines pushBack format [localize "STR_A3U_debug_mod", _modName]; };
 
 private _result = "<t size='0.7'>" + (_lines joinString "<br/>") + "</t>";
 _result

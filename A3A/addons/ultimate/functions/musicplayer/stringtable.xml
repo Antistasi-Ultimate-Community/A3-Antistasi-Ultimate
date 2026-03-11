@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="A3U">
+  <Package name="MusicPlayer">
+    <!-- Main interface -->
+    <Key ID="STR_A3U_dialog_title">
+      <Original>JUKEBOX</Original>
+      <Russian>JUKEBOX (жукбокс)</Russian>
+    </Key>
+    <Key ID="STR_A3U_play_tooltip">
+      <Original>Play</Original>
+      <Russian>Воспроизвести</Russian>
+    </Key>
+    <Key ID="STR_A3U_pause_tooltip">
+      <Original>Pause</Original>
+      <Russian>Пауза</Russian>
+    </Key>
+    <Key ID="STR_A3U_prev_tooltip">
+      <Original>Previous track</Original>
+      <Russian>Предыдущий трек</Russian>
+    </Key>
+    <Key ID="STR_A3U_next_tooltip">
+      <Original>Next track</Original>
+      <Russian>Следующий трек</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_copy_tooltip">
+      <Original>Copy debug info to clipboard</Original>
+      <Russian>Скопировать информацию в буфер обмена</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_toggle_tooltip">
+      <Original>Show/hide debug info</Original>
+      <Russian>Показать/скрыть отладочную информацию</Russian>
+    </Key>
+    <Key ID="STR_A3U_loop_off_tooltip">
+      <Original>Repeat track (off)</Original>
+      <Russian>Повтор трека (выкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_loop_on_tooltip">
+      <Original>Repeat track (on)</Original>
+      <Russian>Повтор трека (вкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_loop_sound_off">
+      <Original>Repeat sound (off)</Original>
+      <Russian>Повтор звука (выкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_loop_sound_on">
+      <Original>Repeat sound (on)</Original>
+      <Russian>Повтор звука (вкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_shuffle_on_tooltip">
+      <Original>Shuffle (on)</Original>
+      <Russian>Случайный порядок (вкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_shuffle_off_tooltip">
+      <Original>Shuffle (off)</Original>
+      <Russian>Случайный порядок (выкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_loudspeaker_tooltip">
+      <Original>Loudspeaker mode (increased range)</Original>
+      <Russian>Режим громкоговорителя (увеличенная дальность)</Russian>
+    </Key>
+    <Key ID="STR_A3U_boost_tooltip_long">
+      <Original>Volume boost (0..+5 dB) – currently only increases playback distance</Original>
+      <Russian>Усиление громкости (0..+5 дБ) – пока только увеличивает дистанцию</Russian>
+    </Key>
+    <Key ID="STR_A3U_category_mode_all">
+      <Original>Show all categories</Original>
+      <Russian>Показать все категории</Russian>
+    </Key>
+    <Key ID="STR_A3U_category_mode_fav">
+      <Original>Show only favorite categories</Original>
+      <Russian>Показать только избранные категории</Russian>
+    </Key>
+    <Key ID="STR_A3U_mute_off">
+      <Original>Disable sound</Original>
+      <Russian>Выкл. звук</Russian>
+    </Key>
+    <Key ID="STR_A3U_mute_on">
+      <Original>Enable sound</Original>
+      <Russian>Вкл. звук</Russian>
+    </Key>
+    <Key ID="STR_A3U_volume_change">
+        <Original>Volume change</Original>
+        <Russian>Изменение громкости</Russian>
+    </Key>
+    <Key ID="STR_A3U_no_categories">
+      <Original>No categories available</Original>
+      <Russian>Нет доступных категорий</Russian>
+    </Key>
+    <Key ID="STR_A3U_unknown_mod">
+      <Original>Unknown mod</Original>
+      <Russian>Неизвестный мод</Russian>
+    </Key>
+
+    <!-- (addAction) -->
+    <Key ID="STR_A3U_action_open_player">
+      <Original>Open player</Original>
+      <Russian>Открыть плеер</Russian>
+    </Key>
+    <Key ID="STR_A3U_action_open_sound">
+      <Original>Open sound player</Original>
+      <Russian>Открыть звуковой плеер</Russian>
+    </Key>
+    <Key ID="STR_A3U_radio_damaged">
+      <Original>Radio is damaged and does not work.</Original>
+      <Russian>Радио повреждено и не работает.</Russian>
+    </Key>
+
+    <!-- System  message -->
+    <Key ID="STR_A3U_debug_copied">
+      <Original>Debug info copied to clipboard</Original>
+      <Russian>Информация скопирована в буфер обмена</Russian>
+    </Key>
+    <Key ID="STR_A3U_category_selected">
+      <Original>Category selected: %1</Original>
+      <Russian>Выбрана категория: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_category_empty">
+      <Original>No items in category</Original>
+      <Russian>Нет элементов в категории</Russian>
+    </Key>
+    <Key ID="STR_A3U_error_no_object">
+      <Original>Error: no object</Original>
+      <Russian>Ошибка: нет объекта</Russian>
+    </Key>
+    <Key ID="STR_A3U_error_no_track">
+      <Original>Error: no track selected!</Original>
+      <Russian>Ошибка: не выбран трек!</Russian>
+    </Key>
+    <Key ID="STR_A3U_error_no_object_specified">
+      <Original>Error: no object specified</Original>
+      <Russian>Ошибка: не указан объект</Russian>
+    </Key>
+    <Key ID="STR_A3U_shuffle_status">
+      <Original>Shuffle %1</Original>
+      <Russian>Случайный порядок %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_select_track">
+      <Original>Select a track</Original>
+      <Russian>Выберите трек</Russian>
+    </Key>
+    <Key ID="STR_A3U_no_track_selected">
+      <Original>No track selected</Original>
+      <Russian>Нет выбранного трека</Russian>
+    </Key>
+    <Key ID="STR_A3U_boost_tooltip_short">
+      <Original>Boost: +%1 dB</Original>
+      <Russian>Усиление: +%1 дБ</Russian>
+    </Key>
+    <Key ID="STR_A3U_loudspeaker_on">
+      <Original>Loudspeaker mode (on)</Original>
+      <Russian>Режим громкоговорителя (вкл)</Russian>
+    </Key>
+    <Key ID="STR_A3U_loudspeaker_off">
+      <Original>Loudspeaker mode (off)</Original>
+      <Russian>Режим громкоговорителя (выкл)</Russian>
+    </Key>
+
+    <!-- Debug info -->
+    <Key ID="STR_A3U_debug_sound_header">
+      <Original>=== SOUND DEBUG INFO ===</Original>
+      <Russian>=== ИНФОРМАЦИЯ О ЗВУКЕ ===</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_track_header">
+      <Original>=== DEBUG INFO ===</Original>
+      <Russian>=== ОТЛАДОЧНАЯ ИНФОРМАЦИЯ ===</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_class">
+      <Original>Class: %1</Original>
+      <Russian>Класс: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_name">
+      <Original>Name: %1</Original>
+      <Russian>Название: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_theme">
+      <Original>Theme: %1</Original>
+      <Russian>Тема: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_file">
+      <Original>File: %1</Original>
+      <Russian>Файл: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_volume">
+      <Original>Volume: %1</Original>
+      <Russian>Громкость: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_pitch">
+      <Original>Pitch: %1</Original>
+      <Russian>Высота тона: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_maxdist">
+      <Original>Max Distance: %1 m</Original>
+      <Russian>Макс. дистанция: %1 м</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_duration">
+      <Original>Duration: %1 s</Original>
+      <Russian>Длительность: %1 с</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_titles">
+      <Original>Titles: %1</Original>
+      <Russian>Титры: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_addon">
+      <Original>Addon: %1</Original>
+      <Russian>Аддон: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_mod">
+      <Original>Mod: %1</Original>
+      <Russian>Мод: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_musicclass">
+      <Original>MusicClass: %1</Original>
+      <Russian>MusicClass: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_type">
+      <Original>Type: %1</Original>
+      <Russian>Тип: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_tags">
+      <Original>Tags: %1</Original>
+      <Russian>Теги: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_sound">
+      <Original>Sound: %1</Original>
+      <Russian>Звук: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_soundparams">
+      <Original>Sound params: volume=%1, pitch=%2</Original>
+      <Russian>Параметры звука: громкость=%1, высота=%2</Russian>
+    </Key>
+    <Key ID="STR_A3U_debug_logo">
+      <Original>Logo: %1</Original>
+      <Russian>Логотип: %1</Russian>
+    </Key>
+    <Key ID="STR_A3U_no_name">
+      <Original>&lt;no name&gt;</Original>
+      <Russian>&lt;нет названия&gt;</Russian>
+    </Key>
+    <Key ID="STR_A3U_no_file">
+      <Original>&lt;no file&gt;</Original>
+      <Russian>&lt;нет файла&gt;</Russian>
+    </Key>
+    <Key ID="STR_A3U_none">
+      <Original>&lt;none&gt;</Original>
+      <Russian>&lt;нет&gt;</Russian>
+    </Key>
+    <Key ID="STR_A3U_sound_not_found">
+      <Original>Sound not found in CfgSounds</Original>
+      <Russian>Звук не найден в CfgSounds</Russian>
+    </Key>
+    <Key ID="STR_A3U_track_not_found">
+      <Original>Track not found in CfgMusic</Original>
+      <Russian>Трек не найден в CfgMusic</Russian>
+    </Key>
+    <Key ID="STR_A3U_no_sound">
+      <Original>&lt;no sound&gt;</Original>
+      <Russian>&lt;нет звука&gt;</Russian>
+    </Key>
+    <Key ID="STR_A3U_error_creating_player">
+      <Original>Error creating player!</Original>
+      <Russian>Ошибка создания плеера!</Russian>
+    </Key>
+    <Key ID="STR_A3U_error_display_not_found">
+      <Original>Error: Display not found!</Original>
+      <Russian>Ошибка: диалог не найден!</Russian>
+    </Key>
+    <Key ID="STR_A3U_unknown_category">
+      <Original>Unknown</Original>
+      <Russian>Неизвестно</Russian>
+    </Key>
+    <Key ID="STR_A3U_player_initialized">
+      <Original>Player initialized in %1 mode</Original>
+      <Russian>Плеер инициализирован в режиме %1</Russian>
+    </Key>
+
+    <!-- Categories -->
+    <Key ID="STR_A3U_cat_vanillarock_sounds">
+      <Original>Vanilla Rock (Sounds)</Original>
+      <Russian>Vanilla Rock (звуки)</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vanillapop_sounds">
+      <Original>Vanilla Pop (Sounds)</Original>
+      <Russian>Vanilla Pop (звуки)</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vanillametal">
+      <Original>Vanilla Metal</Original>
+      <Russian>Vanilla Metal</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vanilladance">
+      <Original>Vanilla Dance</Original>
+      <Russian>Vanilla Dance</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vanillaambient_sounds">
+      <Original>Vanilla Ambient (Sounds)</Original>
+      <Russian>Vanilla Ambient (звуки)</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vanillachillout">
+      <Original>Vanilla Chillout</Original>
+      <Russian>Vanilla Chillout</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vnradio_tracks">
+      <Original>Vietnam Radio</Original>
+      <Russian>Vietnam Radio</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_vnradio_sounds">
+      <Original>Vietnam Radio (Sounds)</Original>
+      <Russian>Vietnam Radio (звуки)</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_gmradio">
+      <Original>Global Mobilization Radio</Original>
+      <Russian>Global Mobilization Radio</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_rfmusic">
+      <Original>Reaction Forces Music</Original>
+      <Russian>Reaction Forces Music</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_rfost">
+      <Original>Reaction Forces OST</Original>
+      <Russian>Reaction Forces OST</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_spejazz">
+      <Original>Spearhead Jazz</Original>
+      <Russian>Spearhead Jazz</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_speost">
+      <Original>Spearhead OST</Original>
+      <Russian>Spearhead OST</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_specinematic">
+      <Original>Spearhead Cinematic</Original>
+      <Russian>Spearhead Cinematic</Russian>
+    </Key>
+    <Key ID="STR_A3U_cat_wsradio">
+      <Original>Western Sahara Radio</Original>
+      <Russian>Western Sahara Radio</Russian>
+    </Key>
+  </Package>
+</Project>

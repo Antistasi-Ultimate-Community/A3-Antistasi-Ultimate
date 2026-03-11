@@ -1,13 +1,22 @@
-//fn_getTrackModIcon.sqf
-#include "..\..\script_component.hpp"
-/*
-    Возвращает иконку мода и его название для указанного класса трека или звука.
-    В зависимости от глобального режима A3U_playbackMode использует CfgMusic или CfgSounds.
-    Параметры:
-        0: STRING - classname трека/звука
-    Возвращает:
-        ARRAY - [путь к иконке, название мода]
+// fn_getTrackModIcon.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Returns the mod icon and mod name for a given track or sound class.
+        Depending on the global mode A3U_playbackMode, it uses CfgMusic or CfgSounds.
+
+    Params:
+        _class : STRING : classname of the track/sound
+
+    Returns:
+        ARRAY : [icon path, mod name]
+
+    License: VPN-DPC
 */
+
+#include "..\..\script_component.hpp"
+
 params ["_class"];
 
 private _icon = "";

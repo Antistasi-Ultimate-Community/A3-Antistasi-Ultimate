@@ -1,8 +1,26 @@
-//fn_toggleCategoryMode.sqf
+// fn_toggleCategoryMode.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Toggles between "all categories" and "favorites only" modes.
+        Updates the category list and selects the first category.
+
+    Params:
+        None
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
+*/
+
 #include "..\..\script_component.hpp"
 
 private _display = findDisplay 85000;
 if (isNull _display) exitWith {};
+
+if (isNil "A3U_cache_manualMusicCategories") then { call A3U_fnc_musicCache; };
 
 private _btn = _display displayCtrl 85116;
 
@@ -10,69 +28,46 @@ A3U_categoryMode = !A3U_categoryMode;
 
 if (A3U_categoryMode) then {
     _btn ctrlSetBackgroundColor [0.2,0.6,0.2,1];
-    _btn ctrlSetTooltip "Показать только избранные категории";
+    _btn ctrlSetTooltip localize "STR_A3U_category_mode_fav";
 } else {
     _btn ctrlSetBackgroundColor [1,1,1,1];
-    _btn ctrlSetTooltip "Показать все категории";
+    _btn ctrlSetTooltip localize "STR_A3U_category_mode_all";
 };
 
-// Получаем все категории в зависимости от режима
-private _allCategories = [];
+// Get all categories depending on mode
 private _categories = [];
 private _categoryType = "";
 
 if (A3U_playbackMode == "music") then {
     if (A3U_categoryMode) then {
-        // Режим "все категории" – все темы, исключая ручные
-        _categories = call A3U_fnc_getCategories;
-        _categories = _categories - ["actualmusic", "vietnam_radio"];
+        private _allCategories = A3U_cache_allMusicCategories;
+        _categories = _allCategories - A3U_cache_manualMusicCategories;
         _categoryType = "theme";
     } else {
-        // Режим "только избранные" – ручные категории + не-ванильные аддоны
-        _categories = [];
-        if (count (call A3U_fnc_getActualTracks) > 0) then {
-            _categories pushBack "actualmusic";
-        };
-        if (count (call A3U_fnc_getVietnamRadioTracks) > 0) then {
-            _categories pushBack "vietnam_radio";
-        };
-        private _nonVanillaAddons = call A3U_fnc_getNonVanillaAddons;
+        _categories = +A3U_cache_manualMusicCategories;
+        private _nonVanillaAddons = A3U_cache_nonVanillaAddons;
         {
             _categories pushBack _x;
         } forEach _nonVanillaAddons;
         _categoryType = "addon";
     };
 } else {
-    // Звуковой режим
-    _allCategories = call A3U_fnc_getSoundCategories;
     if (A3U_categoryMode) then {
-        // Все категории (аддоны)
-        _categories = _allCategories;
+        _categories = A3U_cache_allSoundCategories;
         _categoryType = "sound_all";
     } else {
-        // Только ручные + не-ванильные
-        //private _nonVanillaAddons = call A3U_fnc_getNonVanillaSoundAddons; //leave it for later
-        _categories = [];
-        if (count (call A3U_fnc_getActualMusicSounds) > 0) then {
-            _categories pushBack "actualmusic";
-        };
-        if (count (call A3U_fnc_getVNRadioSounds) > 0) then {
-            _categories pushBack "vnradio";
-        };
-        /* {
-            _categories pushBack _x;
-        } forEach _nonVanillaAddons; */ //leave it for later
+        _categories = +A3U_cache_manualSoundCategories;
         _categoryType = "sound_filtered";
     };
 };
 
 _display setVariable ["A3U_categoryType", _categoryType];
 
-// Заполняем список категорий
+// Fill the category list
 private _categoriesList = _display displayCtrl 85101;
 lbClear _categoriesList;
 {
-    private _displayName = if (_x == "unknown") then { "Unknown" } else {
+    private _displayName = if (_x == "unknown") then { localize "STR_A3U_unknown_category" } else {
         private _str = _x;
         toUpper (_str select [0,1]) + toLower (_str select [1])
     };
@@ -80,7 +75,7 @@ lbClear _categoriesList;
     _categoriesList lbSetData [_idx, _x];
 } forEach _categories;
 
-// Если список не пуст, выбираем первую категорию и обновляем элементы
+// If the list is not empty, select the first category and update the items
 private _tracksList = _display displayCtrl 85102;
 if (count _categories > 0) then {
     _categoriesList lbSetCurSel 0;
@@ -88,30 +83,22 @@ if (count _categories > 0) then {
 
     private _items = [];
     if (A3U_playbackMode == "music") then {
-        // Музыка: логика как в categoryChanged
-        if (_category == "vietnam_radio") then {
-            _items = call A3U_fnc_getVietnamRadioTracks;
+        if (_category in A3U_cache_manualMusicCategories) then {
+            private _cacheName = format ["A3U_cache_%1Tracks", _category];
+            _items = missionNamespace getVariable [_cacheName, []];
         } else {
-            if (_category == "actualmusic") then {
-                _items = call A3U_fnc_getActualTracks;
+            if (_categoryType == "addon") then {
+                _items = A3U_cache_tracksByAddon getOrDefault [_category, []];
             } else {
-                if (_categoryType == "addon") then {
-                    _items = [_category] call A3U_fnc_getTracksByAddon;
-                } else {
-                    _items = [_category] call A3U_fnc_getTracksByCategory;
-                };
+                _items = A3U_cache_tracksByCategory getOrDefault [_category, []];
             };
         };
     } else {
-        // Звуки
-        if (_category == "actualmusic") then {
-            _items = call A3U_fnc_getActualMusicSounds;
+        if (_category in A3U_cache_manualSoundCategories) then {
+            private _cacheName = format ["A3U_cache_%1Sounds", _category];
+            _items = missionNamespace getVariable [_cacheName, []];
         } else {
-            if (_category == "vnradio") then {
-                _items = call A3U_fnc_getVNRadioSounds;
-            } else {
-                _items = [_category] call A3U_fnc_getSoundsByCategory;
-            };
+            _items = A3U_cache_soundsByCategory getOrDefault [_category, []];
         };
     };
 
@@ -133,7 +120,7 @@ if (count _categories > 0) then {
     };
 } else {
     lbClear _tracksList;
-    _tracksList lbAdd "Нет доступных категорий";
+    _tracksList lbAdd localize "STR_A3U_no_categories";
     A3U_currentTrackList = [];
     A3U_currentTrackIndex = -1;
     A3U_currentCategory = "";

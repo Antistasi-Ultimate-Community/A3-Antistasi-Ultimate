@@ -1,4 +1,20 @@
-//fn_toggleLoop.sqf
+// fn_toggleLoop.sqf
+/*  
+    Author: wersal
+
+    Description:
+        Toggles the loop (repeat) mode for music or sounds.
+        Updates the button appearance.
+
+    Params:
+        None
+
+    Returns:
+        Nothing
+
+    License: VPN-DPC
+*/
+
 #include "..\..\script_component.hpp"
 
 A3U_loopEnabled = !A3U_loopEnabled;
@@ -8,23 +24,23 @@ if (!isNull _display) then {
     private _btn = _display displayCtrl 85113;
     private _tooltip = if (A3U_loopEnabled) then {
         if (A3U_playbackMode == "music") then {
-            "Повтор трека (выкл)"
+            localize "STR_A3U_loop_track_off"
         } else {
-            "Повтор звука (выкл)"
+            localize "STR_A3U_loop_sound_off"
         }
     } else {
         if (A3U_playbackMode == "music") then {
-            "Повтор трека (вкл)"
+            localize "STR_A3U_loop_track_on"
         } else {
-            "Повтор звука (вкл)"
+            localize "STR_A3U_loop_sound_on"
         }
     };
     _btn ctrlSetTooltip _tooltip;
 
-    // Меняем цвет иконки
+    // Change icon color
     if (A3U_loopEnabled) then {
-        _btn ctrlSetBackgroundColor [0.95,0.95,0.95,1]; // светло-серый (акцент)
+        _btn ctrlSetBackgroundColor [0.95,0.95,0.95,1]; // light gray (accent)
     } else {
-        _btn ctrlSetBackgroundColor [1,1,1,1]; // белый
+        _btn ctrlSetBackgroundColor [1,1,1,1]; // white
     };
 };
