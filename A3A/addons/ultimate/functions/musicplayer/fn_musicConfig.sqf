@@ -5,7 +5,15 @@
 
     Description:
         Configuration file for manual categories.
-        Each category is an array: [key, display name, [classes], [types]]
+        Each category is an array: [key, display name, [classes], [types], era]
+
+        Era values:
+            1 = WW2
+            2 = Vietnam
+            3 = Cold War
+            4 = Modern
+            5 = Sci-Fi
+        Categories with era ≤ selected era are shown.
 
     Params:
         None
@@ -23,7 +31,7 @@ private _categories = [
     // Vanilla Rock
     [
         "vanillarock_sounds",
-        "STR_A3U_cat_vanillarock_sounds",
+        localize "STR_A3U_cat_vanillarock_sounds",
         [
             "Track_R_01", "Track_R_02", "Track_R_03", "Track_R_04", "Track_R_05",
             "Track_R_06", "Track_R_07", "Track_R_08", "Track_R_09", "Track_R_10",
@@ -31,92 +39,100 @@ private _categories = [
             "Track_R_16", "Track_R_17", "Track_R_18", "Track_R_19", "Track_R_20",
             "Track_R_21", "Track_R_22", "Track_R_23", "Track_R_24"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // Vanilla Pop
     [
         "vanillapop_sounds",
-        "STR_A3U_cat_vanillapop_sounds",
+        localize "STR_A3U_cat_vanillapop_sounds",
         [
             "Track_P_01", "Track_P_02", "Track_P_03", "Track_P_04", "Track_P_05",
             "Track_P_06", "Track_P_07", "Track_P_08", "Track_P_09", "Track_P_10",
             "Track_P_11", "Track_P_12", "Track_P_13", "Track_P_14", "Track_P_15",
             "Track_P_16", "Track_P_17", "Track_P_18"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // Vanilla Metal
     [
         "vanillametal",
-        "STR_A3U_cat_vanillametal",
+        localize "STR_A3U_cat_vanillametal",
         ["Track_M_01", "Track_M_02", "Track_M_03"],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // Vanilla Dance
     [
         "vanilladance",
-        "STR_A3U_cat_vanilladance",
+        localize "STR_A3U_cat_vanilladance",
         ["Track_D_01", "Track_D_02", "Track_D_03"],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // Vanilla Ambient
     [
         "vanillaambient_sounds",
-        "STR_A3U_cat_vanillaambient_sounds",
+        localize "STR_A3U_cat_vanillaambient_sounds",
         [
             "BackgroundTrack01_F", "BackgroundTrack02_F", "LeadTrack03_F_Bootcamp",
             "LeadTrack02_F_Mark", "C_EA_RadioMusic1", "C_EA_RadioMusic2",
             "LeadTrack02_F_Bootcamp", "Track_O_01"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // Vanilla Chillout – only sounds category
     [
         "vanillachillout",
-        "STR_A3U_cat_vanillachillout",
+        localize "STR_A3U_cat_vanillachillout",
         [
             "Track_C_01", "Track_C_02", "Track_C_03", "Track_C_04", "Track_C_05",
             "Track_C_06", "Track_C_07", "Track_C_08", "Track_C_09", "Track_C_10",
             "Track_C_11", "Track_C_12", "Track_C_13", "Track_C_14", "Track_C_15",
             "Track_C_16", "Track_C_17", "Track_C_18", "Track_C_19", "Track_C_20"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // ===== CDLC CATEGORIES =====
     // vnradio – different class sets for music and sounds
     [
         "vnradio_tracks",
-        "STR_A3U_cat_vnradio_tracks",
+        localize "STR_A3U_cat_vnradio_tracks",
         [
             "vn_trippin", "vn_drafted", "vn_unsung_heroes", "vn_route9",
             "vn_blues_for_suzy", "vn_voodoo_girl", "vn_tequila_highway", "vn_there_it_is",
             "vn_kitty_bar_blues", "vn_fire_in_the_sky", "vn_freedom_bird", "vn_dont_cry_baby",
             "vn_up_here_looking_down", "vn_jungle_boots"
         ],
-        ["music"]
+        ["music"],
+        2
     ],
     [
         "vnradio_sounds",
-        "STR_A3U_cat_vnradio_sounds",
+        localize "STR_A3U_cat_vnradio_sounds",
         [
             "vn_drmm_song_os_01", "vn_drmm_song_os_02", "vn_drmm_song_os_03", "vn_drmm_song_os_04",
             "vn_drmm_song_os_05", "vn_drmm_song_os_06", "vn_drmm_song_os_07", "vn_drmm_song_os_08",
             "vn_drmm_song_os_09", "vn_drmm_song_os_10", "vn_drmm_song_os_11", "vn_drmm_song_os_12",
             "vn_drmm_song_os_13", "vn_drmm_song_os_14"
         ],
-        ["sound"]
+        ["sound"],
+        2
     ],
 
     // gmradio – identical lists
     [
         "gmradio",
-        "STR_A3U_cat_gmradio",
+        localize "STR_A3U_cat_gmradio",
         [
             "gm_preprations", "gm_medley", "gm_limits", "gm_note",
             "gm_intermezzo", "gm_1983", "gm_longplay", "gm_warmup",
@@ -125,13 +141,14 @@ private _categories = [
             "gm_motschuetzen", "gm_instigators", "gm_armyaviation", "gm_1993",
             "gm_redacted", "gm_hopper", "gm_forcerecon", "gm_lasers"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        3
     ],
 
     // rfmusic – identical lists
     [
         "rfmusic",
-        "STR_A3U_cat_rfmusic",
+        localize "STR_A3U_cat_rfmusic",
         [
             "music_action_full_RF",
             "music_combat_full_RF",
@@ -147,13 +164,14 @@ private _categories = [
             "music_night_full_RF",
             "music_calm_full_RF"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // rfost – identical lists
     [
         "rfost",
-        "STR_A3U_cat_rfost",
+        localize "STR_A3U_cat_rfost",
         [
             "OST_01_RF",
             "OST_02_RF",
@@ -167,13 +185,14 @@ private _categories = [
             "OST_10_RF",
             "OST_11_RF"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        4
     ],
 
     // SPE Jazz – identical lists
     [
         "spejazz",
-        "STR_A3U_cat_spejazz",
+        localize "STR_A3U_cat_spejazz",
         [
             "SPE_HoW_40s_Jazz_SRA_Arsenal_Blues",
             "SPE_HoW_40s_Jazz_SRA_Everybody_Loves_My_Baby",
@@ -188,13 +207,14 @@ private _categories = [
             "SPE_HoW_40s_Jazz_FX_NobodyKnowsYou_RadioLoudspeaker_01",
             "SPE_HoW_40s_Jazz_FX_NobodyKnowsYou_Radio_01"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        1
     ],
 
     // SPE OST – identical lists
     [
         "speost",
-        "STR_A3U_cat_speost",
+        localize "STR_A3U_cat_speost",
         [
             "SPE_HoW_Original_Game_Soundtrack_1_Operation_Luttich_Luke_Nemitz",
             "SPE_HoW_Original_Game_Soundtrack_2_Mortain_1944_Luke_Nemitz",
@@ -229,13 +249,14 @@ private _categories = [
             "SPE_HoW_Original_Game_Soundtrack_31_End_Credits_Suite_Luke_Nemitz",
             "SPE_HoW_Original_Game_Soundtrack_32_Spearhead_1944_Alternate_Main_Theme_Luke_Nemitz"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        1
     ],
 
     // SPE Cinematic – identical lists
     [
         "specinematic",
-        "STR_A3U_cat_specinematic",
+        localize "STR_A3U_cat_specinematic",
         [
             "SPE_HoW_Animated_Briefing_Cinematic_Patriotic_Cadence_and_Fanfare",
             "SPE_HoW_Animated_Briefing_Cinematic_Patriotic_Cadence_and_Fanfare_BRASS_ONLY",
@@ -291,13 +312,14 @@ private _categories = [
             "SPE_HoW_VocumPrimitiva_DarkHeroes",
             "SPE_HoW_VocumPrimitiva_NoTurningBack"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        1
     ],
 
     // wsradio – identical lists
     [
         "wsradio",
-        "STR_A3U_cat_wsradio",
+        localize "STR_A3U_cat_wsradio",
         [
             "jukebox_e1_lxWS",
             "jukebox_e2_lxWS",
@@ -336,8 +358,32 @@ private _categories = [
             "jukebox_d4_lxWS",
             "jukebox_d5_lxWS"
         ],
-        ["music", "sound"]
+        ["music", "sound"],
+        1 //tecnically it sound pretty anciet
     ]
 ];
 
+// ========== READ EXTENSIONS FROM CfgA3UMusicClasses (mods) ==========
+/* private _extConfig = configFile >> "CfgA3UMusicCategories";
+if (isClass _extConfig) then {
+    private _extClasses = configClasses _extConfig;
+    {
+        private _cfg = _x;
+        private _key = getText (_cfg >> "key");
+        if (_key == "") then { _key = configName _cfg; };
+        private _displayName = getText (_cfg >> "displayName");
+        if (_displayName == "") then { _displayName = _key; };
+        
+        private _classes = getArray (_cfg >> "classes");
+        private _types = getArray (_cfg >> "types");
+        if (_types isEqualTo []) then { _types = ["music", "sound"]; };
+        private _era = getNumber (_cfg >> "era");
+        if (_era == 0) then { _era = 5; }; // default Modern
+        
+        if (_classes isNotEqualTo []) then {
+            _categories pushBack [_key, _displayName, _classes, _types, _era];
+        };
+    } forEach _extClasses;
+};
+ */ ///not working atm
 _categories // must return the array

@@ -30,8 +30,6 @@ class A3U
     #include "config\plane\cfgPlaneLoadouts.hpp"
     #include "config\cfgForbiddenItems.hpp"
     #include "config\trader\cfgTraderMods.hpp"
-    //#include "config\music\vn_music.hpp"
-    //#include "config\sound\vanilla_songs.hpp"
 };
 
 class CfgMagazines

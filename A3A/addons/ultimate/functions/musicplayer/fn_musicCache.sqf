@@ -23,6 +23,7 @@ private _musicConfigs = "true" configClasses (configFile >> "CfgMusic");
 A3U_cache_allMusicTracks = [];
 A3U_cache_tracksByCategory = createHashMap;
 A3U_cache_tracksByAddon = createHashMap;
+A3U_manualCategoryDisplayNames = createHashMap;
 
 {
     private _cfg = _x;
@@ -152,8 +153,13 @@ if (typeName _categoryConfigs != "ARRAY") then {
 A3U_cache_manualMusicCategories = [];
 A3U_cache_manualSoundCategories = [];
 
+// HashMap for era values (key -> era)
+A3U_categoryEra = createHashMap;
+
 {
-    _x params ["_key", "_displayName", "_classes", "_types"];
+    _x params ["_key", "_displayName", "_classes", "_types", "_era"];
+    A3U_manualCategoryDisplayNames set [_key, _displayName];
+    A3U_categoryEra set [_key, _era];
 
     private _hasMusic = "music" in _types;
     private _hasSound = "sound" in _types;

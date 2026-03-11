@@ -63,13 +63,25 @@ if (A3U_playbackMode == "music") then {
 
 _display setVariable ["A3U_categoryType", _categoryType];
 
+// ========== FILTER BY ERA ==========
+private _era = missionNamespace getVariable ["musicEra", 5];
+_categories = _categories select {
+    private _catEra = A3U_categoryEra getOrDefault [_x, 0];
+    if (_catEra == 0) then { true } else { _catEra <= _era };
+};
+
 // Fill the category list
 private _categoriesList = _display displayCtrl 85101;
 lbClear _categoriesList;
+
 {
-    private _displayName = if (_x == "unknown") then { localize "STR_A3U_unknown_category" } else {
-        private _str = _x;
-        toUpper (_str select [0,1]) + toLower (_str select [1])
+    private _displayName = if (_x in A3U_manualCategoryDisplayNames) then {
+        A3U_manualCategoryDisplayNames get _x
+    } else {
+        if (_x == "unknown") then { localize "STR_A3U_unknown_category" } else {
+            private _str = _x;
+            toUpper (_str select [0,1]) + toLower (_str select [1])
+        }
     };
     private _idx = _categoriesList lbAdd _displayName;
     _categoriesList lbSetData [_idx, _x];

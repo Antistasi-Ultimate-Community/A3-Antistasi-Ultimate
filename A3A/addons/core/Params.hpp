@@ -222,6 +222,21 @@ class Params
         default = 0;
         lockInGame = 1;
     };
+    class musicPlayers: ScriptParams
+    {
+        title = $STR_params_musicPlayers;
+        tooltip = $STR_params_musicPlayers_tooltipp;
+        values[] = {1,2,3};
+        texts[] = {"SOG","Jukebox","Both"};
+        default = 2;
+    };
+    class musicEra: ScriptParams
+    {
+        title = $STR_params_musicEra;
+        values[] = {1,2,3,4,5};
+        texts[] = {"WW2","Vietnam","Cold War","Modern","Sci-Fi"};
+        default = 4;
+    };
     class TimerParamsSpacer : BasicParams
     {
         type = "Timer";

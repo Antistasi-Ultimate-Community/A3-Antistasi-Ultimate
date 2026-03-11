@@ -1,10 +1,11 @@
 // fn_initMusicPlayer.sqf
-/*  
+/*
     Author: wersal
 
     Description:
         Initializes the music/sound player.
         Creates the dialog, restores the state, and populates categories and tracks.
+        Filters categories based on selected era (musicEra parameter).
 
     Params:
         _mode : STRING : operation mode: "music" (default) or "sound"
@@ -89,6 +90,9 @@ if (isNull _display) exitWith {systemChat localize "STR_A3U_error_display_not_fo
 _display setVariable ["A3U_skipCategoryChange", false];
 _display setVariable ["A3U_skipTrackChange", false];
 
+// ========== GET ERA PARAMETER ==========
+private _era = if (!isNil "musicEra") then { musicEra } else { 5 }; // default Modern
+
 // ========== PREPARE DATA DEPENDING ON MODE ==========
 private _categories = [];
 private _categoryType = "";
@@ -97,28 +101,31 @@ if (A3U_playbackMode == "music") then {
     private _allCategories = A3U_cache_allMusicCategories;
 
     if (A3U_categoryMode) then {
+        // "All categories" mode – show everything except manual ones
         _categories = _allCategories - A3U_cache_manualMusicCategories;
         _categoryType = "theme";
     } else {
+        // "Favorites" mode – show only manual categories
         _categories = +A3U_cache_manualMusicCategories;
         _categoryType = "addon";
     };
 } else {
-    // Sound mode
     private _allSoundAddons = A3U_cache_allSoundCategories;
 
     if (A3U_categoryMode) then {
-        // "All categories" mode – show all addons
         _categories = _allSoundAddons;
         _categoryType = "sound_all";
     } else {
-        private _nonVanillaAddons = A3U_cache_nonVanillaSoundAddons;
         _categories = +A3U_cache_manualSoundCategories;
-        {
-            _categories pushBack _x;
-        } forEach _nonVanillaAddons;
         _categoryType = "sound_filtered";
     };
+};
+
+// ========== FILTER CATEGORIES BY ERA ==========
+// For manual categories, use A3U_categoryEra map; for others (addons, themes) show always (or you could assign default era 4)
+_categories = _categories select {
+    private _catEra = A3U_categoryEra getOrDefault [_x, 0];
+    if (_catEra == 0) then { true } else { _catEra <= _era };
 };
 
 _display setVariable ["A3U_categoryType", _categoryType];
@@ -169,7 +176,14 @@ private _fnc_capitalize = {
 };
 
 {
-    private _displayName = if (_x == "unknown") then { localize "STR_A3U_unknown_category" } else { [_x] call _fnc_capitalize };
+    private _displayName = if (_x in A3U_manualCategoryDisplayNames) then {
+        A3U_manualCategoryDisplayNames get _x
+    } else {
+        if (_x == "unknown") then { localize "STR_A3U_unknown_category" } else {
+            private _str = _x;
+            toUpper (_str select [0,1]) + toLower (_str select [1])
+        }
+    };
     private _idx = _categoriesList lbAdd _displayName;
     _categoriesList lbSetData [_idx, _x];
 } forEach _categories;

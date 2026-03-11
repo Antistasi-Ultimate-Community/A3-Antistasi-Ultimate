@@ -28,8 +28,8 @@ if (count _vehCrew == 0) then { //and {("vanilla" in A3A_factionEquipFlags)}
 };
 ["civVehInit", [_veh]] call EFUNC(Events,triggerEvent);
 
-// Добавляем SOG-радио, если DLC Vietnam загружен и у техники нет встроенного действия
-if (isClass (configFile >> "CfgPatches" >> "music_f_vietnam") && {!(_veh getVariable ["A3U_SOGRadioAdded", false])}) then {
+// Add SOG radio if DLC Vietnam is loaded, the vehicle has no built-in action, and player mode includes SOG (1 or 3)
+if ((musicPlayers == 1 || musicPlayers == 3) && isClass (configFile >> "CfgPatches" >> "music_f_vietnam") && !(_veh getVariable ["A3U_SOGRadioAdded", false])) then {
     private _config = configFile >> "CfgVehicles" >> typeOf _veh >> "UserActions" >> "music_player";
     if (!isClass _config) then {
         _veh addAction [
@@ -50,8 +50,8 @@ if (isClass (configFile >> "CfgPatches" >> "music_f_vietnam") && {!(_veh getVari
     };
 };
 
-// Добавляем радио A3U для гражданских
-if !(_veh getVariable ["A3U_radioAdded", false]) then {
+// Add A3U radio for civilian vehicles if player mode includes A3U (2 or 3) and the radio hasn't been added yet
+if ((musicPlayers == 2 || musicPlayers == 3) && !(_veh getVariable ["A3U_radioAdded", false])) then {
     private _type = "car";
     if (_veh isKindOf "Air") then {
         if (_veh isKindOf "Helicopter") then { _type = "helicopter"; } else { _type = "plane"; };
