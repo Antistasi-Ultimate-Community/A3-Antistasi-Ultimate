@@ -233,7 +233,6 @@
             <Chinesesimp>无法装备。</Chinesesimp>
             <Korean>장비 불가.</Korean>
             <French>Impossible d'équiper</French>
-            <English>Unable to equip.</English>
             <Turkish>Kuşanılamıyor.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOCARGOSPACE">
@@ -377,7 +376,6 @@
         <Container name="A3AU_hals_store_categories">
             <Key ID="STR_A3AU_handguns">
                 <Original>Handguns</Original>
-                <English>Handguns</English>
                 <Russian>Пистолеты</Russian>
                 <Korean>권총</Korean>
                 <French>Armes de poing</French>
@@ -386,7 +384,6 @@
             </Key>
             <Key ID="STR_A3AU_smgs">
                 <Original>SMGs</Original>
-                <English>SMGs</English>
                 <Russian>Пистолеты-пулемёты</Russian>
                 <Korean>기관단총</Korean>
                 <French>SMGs</French>
@@ -395,7 +392,6 @@
             </Key>
             <Key ID="STR_A3AU_rifles">
                 <Original>Rifles</Original>
-                <English>Rifles</English>
                 <Russian>Штурмовые Винтовки</Russian>
                 <Korean>소총</Korean>
                 <French>Fusils</French>
@@ -404,7 +400,6 @@
             </Key>
             <Key ID="STR_A3AU_sniperRifles">
                 <Original>Sniper Rifles</Original>
-                <English>Sniper Rifles</English>
                 <Russian>Снайперские Винтовки</Russian>
                 <Korean>저격소총</Korean>
                 <French>Fusils de sniper</French>
@@ -414,7 +409,7 @@
             <Key ID="STR_A3AU_mgs">
                 <Original>MGs</Original>
                 <English>MGs</English>
-                <Russian>Пулеметы</Russian>
+                <Russian>Пулемёты</Russian>
                 <Korean>기관총</Korean>
                 <French>MGs</French>
                 <Chinesesimp>机枪</Chinesesimp>
@@ -422,7 +417,6 @@
             </Key>
             <Key ID="STR_A3AU_launchers">
                 <Original>Launchers</Original>
-                <English>Launchers</English>
                 <Russian>Пусковые Установки</Russian>
                 <Korean>발사기</Korean>
                 <French>Lanceurs</French>
@@ -431,7 +425,6 @@
             </Key>
             <Key ID="STR_A3AU_specialWeapons">
                 <Original>Special Weapons</Original>
-                <English>Special Weapons</English>
                 <Russian>Спецоружие</Russian>
                 <Korean>특수화기</Korean>
                 <French>Armes spéciales</French>
@@ -440,7 +433,6 @@
             </Key>
             <Key ID="STR_A3AU_magazines">
                 <Original>Magazines</Original>
-                <English>Magazines</English>
                 <Russian>Магазины</Russian>
                 <Korean>탄창</Korean>
                 <French>Magasins</French>
@@ -449,7 +441,6 @@
             </Key>
             <Key ID="STR_A3AU_glGrenades">
                 <Original>GL Grenades</Original>
-                <English>GL Grenades</English>
                 <Russian>Подствольные Гранаты</Russian>
                 <Korean>유탄발사기</Korean>
                 <French>GL Grenades</French>
@@ -458,7 +449,6 @@
             </Key>
             <Key ID="STR_A3AU_launcherAmmo">
                 <Original>Missiles and Rockets</Original>
-                <English>Missiles and Rockets</English>
                 <Russian>Ракеты и Реактивные гранаты</Russian>
                 <Korean>미사일과 로켓</Korean>
                 <French>Missiles et roquettes</French>
@@ -467,7 +457,6 @@
             </Key>
             <Key ID="STR_A3AU_sights">
                 <Original>Sights</Original>
-                <English>Sights</English>
                 <Russian>Прицелы</Russian>
                 <Korean>조준기</Korean>
                 <French>Vue d'ensemble</French>
@@ -476,7 +465,6 @@
             </Key>
             <Key ID="STR_A3AU_muzzles">
                 <Original>Muzzle Devices</Original>
-                <English>Muzzle Devices</English>
                 <Russian>Дульные Устройства</Russian>
                 <Korean>총구부착물</Korean>
                 <French>Dispositifs de mise à feu</French>
@@ -485,7 +473,6 @@
             </Key>
             <Key ID="STR_A3AU_bipods">
                 <Original>Bipods</Original>
-                <English>Bipods</English>
                 <Russian>Сошки</Russian>
                 <Korean>양각대</Korean>
                 <French>Bipieds</French>
@@ -494,7 +481,6 @@
             </Key>
             <Key ID="STR_A3AU_grips">
                 <Original>Grips</Original>
-                <English>Grips</English>
                 <Russian>Рукоятки</Russian>
                 <Korean>그립</Korean>
                 <French>Crosses</French>
@@ -503,7 +489,6 @@
             </Key>
             <Key ID="STR_A3AU_handles">
                 <Original>Handles</Original>
-                <English>Handles</English>
                 <Russian>Рукоятки</Russian>
                 <Korean>손잡이</Korean>
                 <French>Poignées</French>
@@ -512,7 +497,6 @@
             </Key>
             <Key ID="STR_A3AU_pointers">
                 <Original>Pointers</Original>
-                <English>Pointers</English>
                 <Russian>ЛЦУ</Russian>
                 <Korean>레이저 지시기</Korean>
                 <French>Pointeurs</French>
@@ -521,7 +505,6 @@
             </Key>
             <Key ID="STR_A3AU_flashlights">
                 <Original>Flashlights</Original>
-                <English>Flashlights</English>
                 <Russian>Фонарики</Russian>
                 <Korean>손전등</Korean>
                 <French>Lampes de poche</French>
@@ -530,7 +513,6 @@
             </Key>
             <Key ID="STR_A3AU_gps">
                 <Original>GPS</Original>
-                <English>GPS</English>
                 <Russian>GPS</Russian>
                 <Korean>GPS</Korean>
                 <French>GPS</French>
@@ -539,7 +521,6 @@
             </Key>
             <Key ID="STR_A3AU_binoculars">
                 <Original>Binoculars</Original>
-                <English>Binoculars</English>
                 <Russian>Бинокли</Russian>
                 <Korean>쌍안경</Korean>
                 <French>Jumelles</French>
@@ -548,7 +529,6 @@
             </Key>
             <Key ID="STR_A3AU_nvgs">
                 <Original>NVGs</Original>
-                <English>NVGs</English>
                 <Russian>ПНВ</Russian>
                 <Korean>야간투시경</Korean>
                 <French>NVG</French>
@@ -557,7 +537,6 @@
             </Key>
             <Key ID="STR_A3AU_misc">
                 <Original>Misc</Original>
-                <English>Misc</English>
                 <Russian>Прочее</Russian>
                 <Korean>기타</Korean>
                 <French>Divers</French>
@@ -566,7 +545,6 @@
             </Key>
             <Key ID="STR_A3AU_bagsStatics">
                 <Original>Bags with Statics</Original>
-                <English>Bags with Statics</English>
                 <Russian>Сумки со Стационарным оружием</Russian>
                 <Korean>고정화기 가방</Korean>
                 <French>Sacs avec statique</French>
@@ -575,7 +553,6 @@
             </Key>
             <Key ID="STR_A3AU_srMagazines">
                 <Original>Sniper Rifle Magazines</Original>
-                <English>Sniper Rifle Magazines</English>
                 <Russian>Магазины для Снайперских Винтовок</Russian>
                 <Korean>저격소총 탄창</Korean>
                 <French>Magasins de fusils de sniper</French>
@@ -584,7 +561,6 @@
             </Key>
             <Key ID="STR_A3AU_camouflage">
                 <Original>Camouflage</Original>
-                <English>Camouflage</English>
                 <Russian>Камуфляж</Russian>
                 <Korean>위장복</Korean>
                 <French>Camouflage</French>
@@ -593,7 +569,6 @@
             </Key>
             <Key ID="STR_A3AU_helmets">
                 <Original>Helmets</Original>
-                <English>Helmets</English>
                 <Russian>Шлемы</Russian>
                 <Chinesesimp>头盔</Chinesesimp>
                 <Korean>헬멧</Korean>
@@ -601,7 +576,6 @@
             </Key>
             <Key ID="STR_A3AU_uniforms">
                 <Original>Uniforms</Original>
-                <English>Uniforms</English>
                 <Russian>Униформы</Russian>
                 <Chinesesimp>制服</Chinesesimp>
                 <Korean>유니폼</Korean>
@@ -609,7 +583,6 @@
             </Key>
             <Key ID="STR_A3AU_backpacks">
                 <Original>Backpacks</Original>
-                <English>Backpacks</English>
                 <Russian>Рюкзаки</Russian>
                 <Chinesesimp>背包</Chinesesimp>
                 <Korean>군장</Korean>
@@ -617,7 +590,6 @@
             </Key>
             <Key ID="STR_A3AU_facewear">
                 <Original>Facewear</Original>
-                <English>Facewear</English>
                 <Russian>Очки/шарфы</Russian>
                 <Chinesesimp>面部装备</Chinesesimp>
                 <Korean>페이스웨어</Korean>
@@ -625,7 +597,6 @@
             </Key>
             <Key ID="STR_A3AU_vests">
                 <Original>Vests</Original>
-                <English>Vests</English>
                 <Russian>Разгрузки</Russian>
                 <Chinesesimp>背心</Chinesesimp>
                 <Korean>조끼</Korean>
@@ -633,7 +604,6 @@
             </Key>
             <Key ID="STR_A3AU_utility">
                 <Original>Utility</Original>
-                <English>Utility</English>
                 <Russian>Служебные</Russian>
                 <Chinesesimp>一般物品</Chinesesimp>
                 <Korean>기타 아이템</Korean>
@@ -644,7 +614,6 @@
         <Container name="A3AU_hals_store_helpers">
             <Key ID="STR_A3AU_and">
                 <Original>and</Original>
-                <English>and</English>
                 <Russian>и</Russian>
                 <German>und</German>
                 <Korean>그리고</Korean>
@@ -654,7 +623,6 @@
             </Key>
             <Key ID="STR_A3AU_barret">
                 <Original>Barret</Original>
-                <English>Barret</English>
                 <Russian>Barret</Russian>
                 <Korean>Barret</Korean>
                 <French>Barret</French>
@@ -663,7 +631,6 @@
             </Key>
             <Key ID="STR_A3AU_Vanilla">
                 <Original>Arma 3</Original>
-                <English>Arma 3</English>
                 <Russian>Арма 3</Russian>
                 <Korean>아르마 3</Korean>
                 <French>Arma 3</French>
@@ -672,7 +639,6 @@
             </Key>
             <Key ID="STR_A3AU_Apex">
                 <Original>Apex</Original>
-                <English>Apex</English>
                 <Russian>Apex</Russian>
                 <Chinesesimp>Apex</Chinesesimp>
                 <Korean>Apex</Korean>
@@ -680,7 +646,6 @@
             </Key>
             <Key ID="STR_A3AU_Artofwar">
                 <Original>Art of war</Original>
-                <English>Art of war</English>
                 <Russian>Art of war</Russian>
                 <Chinesesimp>Art of war</Chinesesimp>
                 <Korean>Art of war</Korean>
@@ -688,7 +653,6 @@
             </Key>
             <Key ID="STR_A3AU_Contact">
                 <Original>Contact</Original>
-                <English>Contact</English>
                 <Russian>Contact</Russian>
                 <Chinesesimp>Contact</Chinesesimp>
                 <Korean>Contact</Korean>
@@ -696,7 +660,6 @@
             </Key>
             <Key ID="STR_A3AU_Jets">
                 <Original>Jets</Original>
-                <English>Jets</English>
                 <Russian>Jets</Russian>
                 <Chinesesimp>Jets</Chinesesimp>
                 <Korean>Jets</Korean>
@@ -704,7 +667,6 @@
             </Key>
             <Key ID="STR_A3AU_Kart">
                 <Original>Kart</Original>
-                <English>Kart</English>
                 <Russian>Kart</Russian>
                 <Chinesesimp>Kart</Chinesesimp>
                 <Korean>Kart</Korean>
@@ -712,7 +674,6 @@
             </Key>
             <Key ID="STR_A3AU_Lawsofwar">
                 <Original>Laws of war</Original>
-                <English>Laws of war</English>
                 <Russian>Laws of war</Russian>
                 <Chinesesimp>Laws of war</Chinesesimp>
                 <Korean>Laws of war</Korean>
@@ -720,7 +681,6 @@
             </Key>
             <Key ID="STR_A3AU_Marksmen">
                 <Original>Marksmen</Original>
-                <English>Marksmen</English>
                 <Russian>Marksmen</Russian>
                 <Chinesesimp>Marksmen</Chinesesimp>
                 <Korean>Marksmen</Korean>
@@ -728,7 +688,6 @@
             </Key>
             <Key ID="STR_A3AU_Tanks">
                 <Original>Tanks</Original>
-                <English>Tanks</English>
                 <Russian>Tanks</Russian>
                 <Chinesesimp>Tanks</Chinesesimp>
                 <Korean>Tanks</Korean>
@@ -736,14 +695,12 @@
                 </Key>
             <Key ID="STR_A3AU_Ultimate">
                 <Original>Antistasi Ultimate</Original>
-                <English>Antistasi Ultimate</English>
                 <Russian>Antistasi Ultimate</Russian>
                 <Chinesesimp>Antistasi Ultimate</Chinesesimp>
                 <Korean>Antistasi Ultimate</Korean>
             </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
-                <English>Kkiv 2035</English>
                 <Russian>Kkiv 2035</Russian>
                 <Chinesesimp>Kkiv 2035</Chinesesimp>
                 <Korean>Kkiv 2035</Korean>
@@ -751,7 +708,6 @@
             </Key>
             <Key ID="STR_A3AU_CSLA">
                 <Original>CSLA</Original>
-                <English>CSLA</English>
                 <Russian>CSLA</Russian>
                 <French>CSLA</French>
                 <Korean>CSLA</Korean>
@@ -759,7 +715,6 @@
             </Key>
             <Key ID="STR_A3AU_RF">
                 <Original>Reaction Forces</Original>
-                <English>Reaction Forces</English>
                 <Russian>Reaction Forces</Russian>
                 <Korean>Reaction Forces</Korean>
                 <French>Force de réaction</French>
@@ -767,7 +722,6 @@
             </Key>
             <Key ID="STR_A3AU_EF">
                 <Original>Expeditionary Forces</Original>
-                <English>Expeditionary Forces</English>
                 <Russian>Expeditionary Forces</Russian>
                 <Korean>Expeditionary Forces</Korean>
                 <French>Force de Expéditionnaire</French>
@@ -775,7 +729,6 @@
             </Key>
             <Key ID="STR_A3AU_3cbbaf">
                 <Original>3CBBAF</Original>
-                <English>3CBBAF</English>
                 <Russian>3CBBAF</Russian>
                 <Korean>3CBBAF</Korean>
                 <French>3CBBAF</French>
@@ -783,7 +736,6 @@
             </Key>
             <Key ID="STR_A3AU_3cbf">
                 <Original>3CB</Original>
-                <English>3CB</English>
                 <Russian>3CB</Russian>
                 <Korean>3CB</Korean>
                 <French>3CB</French>
@@ -791,7 +743,6 @@
             </Key>
             <Key ID="STR_A3AU_3cbfcw">
                 <Original>3CBFCW</Original>
-                <English>3CBFCW</English>
                 <Russian>3CBFCW</Russian>
                 <Korean>3CBFCW</Korean>
                 <French>3CBFCW</French>
@@ -799,7 +750,6 @@
             </Key>
             <Key ID="STR_A3AU_Aegis">
                 <Original>Aegis</Original>
-                <English>Aegis</English>
                 <Russian>Aegis</Russian>
                 <Korean>Aegis</Korean>
                 <French>Aegis</French>
@@ -807,7 +757,6 @@
             </Key>
             <Key ID="STR_A3AU_Braf">
                 <Original>BRAF</Original>
-                <English>BRAF</English>
                 <Russian>BRAF</Russian>
                 <Korean>BRAF</Korean>
                 <French>BRAF</French>
@@ -815,7 +764,6 @@
             </Key>
             <Key ID="STR_A3AU_bwa">
                 <Original>BWA</Original>
-                <English>BWA</English>
                 <Russian>BWA</Russian>
                 <Korean>BWA</Korean>
                 <French>BWA</French>
@@ -823,7 +771,6 @@
             </Key>
             <Key ID="STR_A3AU_csa">
                 <Original>CSA38</Original>
-                <English>CSA38</English>
                 <Russian>CSA38</Russian>
                 <Korean>CSA38</Korean>
                 <French>CSA38</French>
@@ -831,7 +778,6 @@
             </Key>
             <Key ID="STR_A3AU_cup">
                 <Original>CUP</Original>
-                <English>CUP</English>
                 <Russian>CUP</Russian>
                 <Korean>CUP</Korean>
                 <French>CUP</French>
@@ -839,7 +785,6 @@
             </Key>
             <Key ID="STR_A3AU_cw">
                 <Original>CW</Original>
-                <English>CW</English>
                 <Russian>CW</Russian>
                 <Korean>CW</Korean>
                 <French>CW</French>
@@ -847,7 +792,6 @@
             </Key>
             <Key ID="STR_A3AU_empire">
                 <Original>Empire</Original>
-                <English>Empire</English>
                 <Russian>Empire</Russian>
                 <Korean>Empire</Korean>
                 <French>Empire</French>
@@ -855,7 +799,6 @@
             </Key>
             <Key ID="STR_A3AU_ffaa">
                 <Original>FFAA</Original>
-                <English>FFAA</English>
                 <Russian>FFAA</Russian>
                 <Korean>FFAA</Korean>
                 <French>FFAA</French>
@@ -863,7 +806,6 @@
             </Key>
             <Key ID="STR_A3AU_fwa">
                 <Original>FWA</Original>
-                <English>FWA</English>
                 <Russian>FWA</Russian>
                 <Korean>FWA</Korean>
                 <French>FWA</French>
@@ -871,7 +813,6 @@
             </Key>
             <Key ID="STR_A3AU_gm">
                 <Original>GM</Original>
-                <English>GM</English>
                 <Russian>GM</Russian>
                 <Korean>GM</Korean>
                 <French>GM</French>
@@ -879,7 +820,6 @@
             </Key>
             <Key ID="STR_A3AU_ifa">
                 <Original>IFA</Original>
-                <English>IFA</English>
                 <Russian>IFA</Russian>
                 <Korean>IFA</Korean>
                 <French>IFA</French>
@@ -887,7 +827,6 @@
             </Key>
             <Key ID="STR_A3AU_fow">
                 <Original>FoW</Original>
-                <English>FoW</English>
                 <Russian>FoW</Russian>
                 <Korean>FoW</Korean>
                 <French>FoW</French>
@@ -895,7 +834,6 @@
             </Key>
             <Key ID="STR_A3AU_italy">
                 <Original>Pedagne</Original>
-                <English>Pedagne</English>
                 <Russian>Pedagne</Russian>
                 <Korean>Pedagne</Korean>
                 <French>Pedagne</French>
@@ -903,7 +841,6 @@
             </Key>
             <Key ID="STR_A3AU_niarms">
                 <Original>NIArms</Original>
-                <English>NIArms</English>
                 <Russian>NIArms</Russian>
                 <Korean>NIArms</Korean>
                 <French>NIArms</French>
@@ -911,7 +848,6 @@
             </Key>
             <Key ID="STR_A3AU_optre">
                 <Original>OPTRE</Original>
-                <English>OPTRE</English>
                 <Russian>OPTRE</Russian>
                 <Korean>OPTRE</Korean>
                 <French>OPTRE</French>
@@ -919,7 +855,6 @@
             </Key>
             <Key ID="STR_A3AU_pla">
                 <Original>PLA</Original>
-                <English>PLA</English>
                 <Russian>PLA</Russian>
                 <Korean>PLA</Korean>
                 <French>PLA</French>
@@ -927,7 +862,6 @@
             </Key>
             <Key ID="STR_A3AU_rhs">
                 <Original>RHS</Original>
-                <English>RHS</English>
                 <Russian>RHS</Russian>
                 <Korean>RHS</Korean>
                 <French>RHS</French>
@@ -935,7 +869,6 @@
             </Key>
             <Key ID="STR_A3AU_scion">
                 <Original>Scion</Original>
-                <English>Scion</English>
                 <Russian>Scion</Russian>
                 <Korean>Scion</Korean>
                 <French>Scion</French>
@@ -943,7 +876,6 @@
             </Key>
             <Key ID="STR_A3AU_sfp">
                 <Original>SFP</Original>
-                <English>SFP</English>
                 <Russian>SFP</Russian>
                 <Korean>SFP</Korean>
                 <French>SFP</French>
@@ -951,7 +883,6 @@
             </Key>
             <Key ID="STR_A3AU_sma">
                 <Original>SMA</Original>
-                <English>SMA</English>
                 <Russian>SMA</Russian>
                 <Korean>SMA</Korean>
                 <French>SMA</French>
@@ -959,7 +890,6 @@
             </Key>
             <Key ID="STR_A3AU_spearhead">
                 <Original>SPE</Original>
-                <English>SPE</English>
                 <Russian>SPE</Russian>
                 <Korean>SPE</Korean>
                 <French>SPE</French>
@@ -967,14 +897,12 @@
             </Key>
             <Key ID="STR_A3AU_spex">
                 <Original>SPEX</Original>
-                <English>SPEX</English>
                 <Russian>SPEX</Russian>
                 <Korean>SPEX</Korean>
                 <French>SPEX</French>
             </Key>
             <Key ID="STR_A3AU_tow">
                 <Original>Tier 1</Original>
-                <English>Tier 1</English>
                 <Russian>Tier 1</Russian>
                 <Korean>Tier 1</Korean>
                 <French>Tier 1</French>
@@ -982,7 +910,6 @@
             </Key>
             <Key ID="STR_A3AU_unsung">
                 <Original>Unsung</Original>
-                <English>Unsung</English>
                 <Russian>Unsung</Russian>
                 <Korean>Unsung</Korean>
                 <French>Unsung</French>
@@ -990,7 +917,6 @@
             </Key>
             <Key ID="STR_A3AU_vn">
                 <Original>VN</Original>
-                <English>VN</English>
                 <Russian>VN</Russian>
                 <Korean>VN</Korean>
                 <French>VN</French>
@@ -998,14 +924,12 @@
             </Key>
             <Key ID="STR_A3AU_nickelsteel">
                 <Original>Nickel steel</Original>
-                <English>Nickel steel</English>
                 <Russian>Nickel steel</Russian>
                 <Korean>Nickel steel</Korean>
                 <French>Nickel steel</French>
             </Key>
             <Key ID="STR_A3AU_wrs">
                 <Original>Research and Security</Original>
-                <English>Research and Security</English>
                 <Russian>Research and Security</Russian>
                 <Korean>Research and Security</Korean>
                 <French>Research and Security</French>
@@ -1013,7 +937,6 @@
             </Key>
             <Key ID="STR_A3AU_ws">
                 <Original>Western Sahara</Original>
-                <English>Western Sahara</English>
                 <Russian>Western Sahara</Russian>
                 <Korean>Western Sahara</Korean>
                 <French>Western Sahara</French>
@@ -1021,7 +944,6 @@
             </Key>
             <Key ID="STR_A3AU_nfts">
                 <Original>Northern Fronts</Original>
-                <English>Northern Fronts</English>
                 <Russian>Northern Fronts</Russian>
                 <Korean>Northern Fronts</Korean>
                 <French>Northern Fronts</French>
@@ -1029,7 +951,6 @@
             </Key>
             <Key ID="STR_A3AU_eaw">
                 <Original>East Asia War</Original>
-                <English>East Asia War</English>
                 <Russian>East Asia War</Russian>
                 <Korean>East Asia War</Korean>
                 <French>East Asia War</French>
@@ -1037,7 +958,6 @@
             </Key>
             <Key ID="STR_A3AU_cwr">
                 <Original>Cold War ReArmed</Original>
-                <English>Cold War ReArmed</English>
                 <Russian>Cold War ReArmed</Russian>
                 <Korean>Cold War ReArmed</Korean>
                 <French>Cold War ReArmed</French>
@@ -1045,7 +965,6 @@
             </Key>
             <Key ID="STR_A3AU_ylarms">
                 <Original>YLArms</Original>
-                <English>YLArms</English>
                 <Russian>YLArms</Russian>
                 <Korean>YLArms</Korean>
                 <French>YLArms</French>
@@ -1069,7 +988,6 @@
             </Key>
             <Key ID="STR_A3AU_ffp">
                 <Original>FFP</Original>
-                <English>FFP</English>
                 <Russian>FFP</Russian>
                 <Korean>FFP</Korean>
                 <French>FFP</French>
@@ -1077,7 +995,6 @@
             </Key>
             <Key ID="STR_A3AU_hafm">
                 <Original>HAFM</Original>
-                <English>HAFM</English>
                 <Russian>HAFM</Russian>
                 <Korean>HAFM</Korean>
                 <French>HAFM</French>
