@@ -76,6 +76,12 @@ if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {
     ((findDisplay 70000) displayCtrl 5300) ctrlShow false;
 };
 
+// Hide "toggle teardown mode" button
+if !([player] call FUNCMAIN(isEngineer)) then {
+    ctrlShow[5190, false];
+    ctrlEnable[5190, false];
+};
+
 [70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
 [70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
 [70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
