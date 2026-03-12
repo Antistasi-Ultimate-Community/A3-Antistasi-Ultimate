@@ -42,6 +42,11 @@ class CfgSounds
     #include "CfgSounds.hpp"
 };
 
+class CfgMusic
+{
+    #include "CfgMusic.hpp"
+};
+
 class CfgVehicles
 {
     #include "CfgVehicles.hpp"

@@ -27,6 +27,17 @@
 #include "..\..\script_component.hpp"
 
 private _categories = [
+    // ===== CLASSICAL MUSIC =====
+    [
+        "classical_sounds",
+        localize "STR_A3U_cat_classical_music",
+        [
+            "Wagner_Valkyries", "Beethoven_Symphony5", "Grieg_MountainKing"
+        ],
+        ["music", "sound"],
+        1
+    ],
+
     // ===== VANILLA MUSIC (by genre) =====
     // Vanilla Rock
     [
