@@ -6377,28 +6377,6 @@
                 <Korean>자동 연막 숨기 스크립트 비활성화 (성능 향상에 도움)</Korean>
                 <Turkish>Otomatik Sis Perdesi Devre Dışı Bırak (Performansa yardımcı olur)</Turkish>
             </Key>
-            <Key ID="STR_params_musicPlayers">
-                <Original>Choose which music player you want to use</Original>
-                <Russian>Выберите, какой музыкальный плеер использовать</Russian>
-                <Chinesesimp>选择要使用的音乐播放器</Chinesesimp>
-                <Korean>사용할 음악 플레이어를 선택하십시오</Korean>
-                <Turkish>Kullanmak istediğiniz müzik çaları seçin</Turkish>
-            </Key>
-            <Key ID="STR_params_musicPlayers_tooltip">
-                <Original>You can choose between SOGs music player(if SOG is loaded) JUKEBOX or both.</Original>
-                <Russian>Вы можете выбрать между музыкальным плеером SOG (если SOG загружен), JUKEBOX или оба.</Russian>
-                <Chinesesimp>您可以选择SOG音乐播放器（如果已加载SOG）、JUKEBOX或两者。</Chinesesimp>
-                <Korean>SOG 음악 플레이어(SOG가 로드된 경우), JUKEBOX 또는 둘 다 선택할 수 있습니다.</Korean>
-                <French>Vous pouvez choisir entre le lecteur de musique SOG (si SOG est chargé), JUKEBOX ou les deux.</French>
-                <Turkish>SOG müzik çalar (SOG yüklüyse), JUKEBOX veya her ikisi arasında seçim yapabilirsiniz.</Turkish>
-            </Key>
-            <Key ID="STR_params_musicEra">
-                <Original>Choose music era that will be available.</Original>
-                <Russian>Выберите эпоху музыки, которая будет доступна.</Russian>
-                <Chinesesimp>选择可用的音乐时代。</Chinesesimp>
-                <Korean>사용 가능한 음악 시대를 선택하십시오.</Korean>
-                <Turkish>Kullanılabilir müzik dönemini seçin.</Turkish>
-            </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником несправедливых (несбалансированных) вариантов поддержки</Russian>
