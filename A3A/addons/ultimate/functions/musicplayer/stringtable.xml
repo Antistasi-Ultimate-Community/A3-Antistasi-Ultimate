@@ -5,334 +5,584 @@
     <Key ID="STR_A3U_dialog_title">
       <Original>JUKEBOX</Original>
       <Russian>JUKEBOX (жукбокс)</Russian>
+      <Chinesesimp>JUKEBOX</Chinesesimp>
+      <Korean>JUKEBOX</Korean>
+      <Turkish>JUKEBOX</Turkish>
     </Key>
     <Key ID="STR_A3U_play_tooltip">
       <Original>Play</Original>
       <Russian>Воспроизвести</Russian>
+      <Chinesesimp>播放</Chinesesimp>
+      <Korean>재생</Korean>
+      <Turkish>Oynat</Turkish>
     </Key>
     <Key ID="STR_A3U_pause_tooltip">
       <Original>Pause</Original>
       <Russian>Пауза</Russian>
+      <Chinesesimp>暂停</Chinesesimp>
+      <Korean>일시정지</Korean>
+      <Turkish>Duraklat</Turkish>
     </Key>
     <Key ID="STR_A3U_prev_tooltip">
       <Original>Previous track</Original>
       <Russian>Предыдущий трек</Russian>
+      <Chinesesimp>上一首</Chinesesimp>
+      <Korean>이전 트랙</Korean>
+      <Turkish>Önceki parça</Turkish>
     </Key>
     <Key ID="STR_A3U_next_tooltip">
       <Original>Next track</Original>
       <Russian>Следующий трек</Russian>
+      <Chinesesimp>下一首</Chinesesimp>
+      <Korean>다음 트랙</Korean>
+      <Turkish>Sonraki parça</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_copy_tooltip">
       <Original>Copy debug info to clipboard</Original>
       <Russian>Скопировать информацию в буфер обмена</Russian>
+      <Chinesesimp>复制调试信息到剪贴板</Chinesesimp>
+      <Korean>디버그 정보를 클립보드에 복사</Korean>
+      <Turkish>Hata ayıklama bilgilerini panoya kopyala</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_toggle_tooltip">
       <Original>Show/hide debug info</Original>
       <Russian>Показать/скрыть отладочную информацию</Russian>
+      <Chinesesimp>显示/隐藏调试信息</Chinesesimp>
+      <Korean>디버그 정보 표시/숨기기</Korean>
+      <Turkish>Hata ayıklama bilgilerini göster/gizle</Turkish>
     </Key>
     <Key ID="STR_A3U_loop_off_tooltip">
       <Original>Repeat track (off)</Original>
       <Russian>Повтор трека (выкл)</Russian>
+      <Chinesesimp>单曲循环 (关)</Chinesesimp>
+      <Korean>트랙 반복 (끔)</Korean>
+      <Turkish>Parçayı tekrarla (kapalı)</Turkish>
     </Key>
     <Key ID="STR_A3U_loop_on_tooltip">
       <Original>Repeat track (on)</Original>
       <Russian>Повтор трека (вкл)</Russian>
+      <Chinesesimp>单曲循环 (开)</Chinesesimp>
+      <Korean>트랙 반복 (켬)</Korean>
+      <Turkish>Parçayı tekrarla (açık)</Turkish>
     </Key>
     <Key ID="STR_A3U_loop_sound_off">
       <Original>Repeat sound (off)</Original>
       <Russian>Повтор звука (выкл)</Russian>
+      <Chinesesimp>声音循环 (关)</Chinesesimp>
+      <Korean>사운드 반복 (끔)</Korean>
+      <Turkish>Sesi tekrarla (kapalı)</Turkish>
     </Key>
     <Key ID="STR_A3U_loop_sound_on">
       <Original>Repeat sound (on)</Original>
       <Russian>Повтор звука (вкл)</Russian>
+      <Chinesesimp>声音循环 (开)</Chinesesimp>
+      <Korean>사운드 반복 (켬)</Korean>
+      <Turkish>Sesi tekrarla (açık)</Turkish>
     </Key>
     <Key ID="STR_A3U_shuffle_on_tooltip">
       <Original>Shuffle (on)</Original>
       <Russian>Случайный порядок (вкл)</Russian>
+      <Chinesesimp>随机播放 (开)</Chinesesimp>
+      <Korean>셔플 (켬)</Korean>
+      <Turkish>Karıştır (açık)</Turkish>
     </Key>
     <Key ID="STR_A3U_shuffle_off_tooltip">
       <Original>Shuffle (off)</Original>
       <Russian>Случайный порядок (выкл)</Russian>
+      <Chinesesimp>随机播放 (关)</Chinesesimp>
+      <Korean>셔플 (끔)</Korean>
+      <Turkish>Karıştır (kapalı)</Turkish>
     </Key>
     <Key ID="STR_A3U_loudspeaker_tooltip">
       <Original>Loudspeaker mode (increased range)</Original>
       <Russian>Режим громкоговорителя (увеличенная дальность)</Russian>
+      <Chinesesimp>扩音器模式（增加范围）</Chinesesimp>
+      <Korean>확성기 모드 (범위 증가)</Korean>
+      <Turkish>Hoparlör modu (artırılmış menzil)</Turkish>
     </Key>
     <Key ID="STR_A3U_boost_tooltip_long">
       <Original>Volume boost (0..+5 dB) – currently only increases playback distance</Original>
       <Russian>Усиление громкости (0..+5 дБ) – пока только увеличивает дистанцию</Russian>
+      <Chinesesimp>音量增强 (0..+5 dB) – 目前仅增加播放距离</Chinesesimp>
+      <Korean>볼륨 부스트 (0..+5 dB) – 현재는 재생 거리만 증가시킵니다</Korean>
+      <Turkish>Ses artırımı (0..+5 dB) – şu anda yalnızca çalma mesafesini artırır</Turkish>
     </Key>
     <Key ID="STR_A3U_category_mode_all">
       <Original>Show all categories</Original>
       <Russian>Показать все категории</Russian>
+      <Chinesesimp>显示所有分类</Chinesesimp>
+      <Korean>모든 카테고리 표시</Korean>
+      <Turkish>Tüm kategorileri göster</Turkish>
     </Key>
     <Key ID="STR_A3U_category_mode_fav">
       <Original>Show only favorite categories</Original>
       <Russian>Показать только избранные категории</Russian>
+      <Chinesesimp>仅显示收藏分类</Chinesesimp>
+      <Korean>즐겨찾는 카테고리만 표시</Korean>
+      <Turkish>Sadece favori kategorileri göster</Turkish>
     </Key>
     <Key ID="STR_A3U_mute_off">
       <Original>Disable sound</Original>
       <Russian>Выкл. звук</Russian>
+      <Chinesesimp>静音</Chinesesimp>
+      <Korean>음소거</Korean>
+      <Turkish>Sesi kapat</Turkish>
     </Key>
     <Key ID="STR_A3U_mute_on">
       <Original>Enable sound</Original>
       <Russian>Вкл. звук</Russian>
+      <Chinesesimp>取消静音</Chinesesimp>
+      <Korean>음소거 해제</Korean>
+      <Turkish>Sesi aç</Turkish>
     </Key>
     <Key ID="STR_A3U_volume_change">
         <Original>Volume change</Original>
         <Russian>Изменение громкости</Russian>
+        <Chinesesimp>音量调节</Chinesesimp>
+        <Korean>볼륨 변경</Korean>
+        <Turkish>Ses seviyesi değişimi</Turkish>
     </Key>
     <Key ID="STR_A3U_no_categories">
       <Original>No categories available</Original>
       <Russian>Нет доступных категорий</Russian>
+      <Chinesesimp>无可用分类</Chinesesimp>
+      <Korean>사용 가능한 카테고리가 없음</Korean>
+      <Turkish>Kullanılabilir kategori yok</Turkish>
     </Key>
     <Key ID="STR_A3U_unknown_mod">
       <Original>Unknown mod</Original>
       <Russian>Неизвестный мод</Russian>
+      <Chinesesimp>未知模组</Chinesesimp>
+      <Korean>알 수 없는 모드</Korean>
+      <Turkish>Bilinmeyen mod</Turkish>
     </Key>
 
     <!-- (addAction) -->
     <Key ID="STR_A3U_action_open_player">
       <Original>Open player</Original>
       <Russian>Открыть плеер</Russian>
+      <Chinesesimp>打开播放器</Chinesesimp>
+      <Korean>플레이어 열기</Korean>
+      <Turkish>Oynatıcıyı aç</Turkish>
     </Key>
     <Key ID="STR_A3U_action_open_sound">
       <Original>Open sound player</Original>
       <Russian>Открыть звуковой плеер</Russian>
+      <Chinesesimp>打开声音播放器</Chinesesimp>
+      <Korean>사운드 플레이어 열기</Korean>
+      <Turkish>Ses oynatıcısını aç</Turkish>
     </Key>
     <Key ID="STR_A3U_radio_damaged">
       <Original>Radio is damaged and does not work.</Original>
       <Russian>Радио повреждено и не работает.</Russian>
+      <Chinesesimp>收音机已损坏，无法工作。</Chinesesimp>
+      <Korean>라디오가 손상되어 작동하지 않습니다.</Korean>
+      <Turkish>Telsiz hasarlı ve çalışmıyor.</Turkish>
     </Key>
 
-    <!-- System  message -->
+    <!-- System message -->
     <Key ID="STR_A3U_debug_copied">
       <Original>Debug info copied to clipboard</Original>
       <Russian>Информация скопирована в буфер обмена</Russian>
+      <Chinesesimp>调试信息已复制到剪贴板</Chinesesimp>
+      <Korean>디버그 정보가 클립보드에 복사되었습니다</Korean>
+      <Turkish>Hata ayıklama bilgileri panoya kopyalandı</Turkish>
     </Key>
     <Key ID="STR_A3U_category_selected">
       <Original>Category selected: %1</Original>
       <Russian>Выбрана категория: %1</Russian>
+      <Chinesesimp>已选择分类: %1</Chinesesimp>
+      <Korean>선택된 카테고리: %1</Korean>
+      <Turkish>Seçilen kategori: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_category_empty">
       <Original>No items in category</Original>
       <Russian>Нет элементов в категории</Russian>
+      <Chinesesimp>分类中没有项目</Chinesesimp>
+      <Korean>카테고리에 항목이 없음</Korean>
+      <Turkish>Kategoride öğe yok</Turkish>
     </Key>
     <Key ID="STR_A3U_error_no_object">
       <Original>Error: no object</Original>
       <Russian>Ошибка: нет объекта</Russian>
+      <Chinesesimp>错误：没有对象</Chinesesimp>
+      <Korean>오류: 객체가 없음</Korean>
+      <Turkish>Hata: nesne yok</Turkish>
     </Key>
     <Key ID="STR_A3U_error_no_track">
       <Original>Error: no track selected!</Original>
       <Russian>Ошибка: не выбран трек!</Russian>
+      <Chinesesimp>错误：未选择音轨！</Chinesesimp>
+      <Korean>오류: 선택된 트랙이 없습니다!</Korean>
+      <Turkish>Hata: parça seçilmedi!</Turkish>
     </Key>
     <Key ID="STR_A3U_error_no_object_specified">
       <Original>Error: no object specified</Original>
       <Russian>Ошибка: не указан объект</Russian>
+      <Chinesesimp>错误：未指定对象</Chinesesimp>
+      <Korean>오류: 객체가 지정되지 않음</Korean>
+      <Turkish>Hata: nesne belirtilmemiş</Turkish>
     </Key>
     <Key ID="STR_A3U_shuffle_status">
       <Original>Shuffle %1</Original>
       <Russian>Случайный порядок %1</Russian>
+      <Chinesesimp>随机播放 %1</Chinesesimp>
+      <Korean>셔플 %1</Korean>
+      <Turkish>Karıştır %1</Turkish>
     </Key>
     <Key ID="STR_A3U_select_track">
       <Original>Select a track</Original>
       <Russian>Выберите трек</Russian>
+      <Chinesesimp>选择音轨</Chinesesimp>
+      <Korean>트랙 선택</Korean>
+      <Turkish>Bir parça seçin</Turkish>
     </Key>
     <Key ID="STR_A3U_no_track_selected">
       <Original>No track selected</Original>
       <Russian>Нет выбранного трека</Russian>
+      <Chinesesimp>未选择音轨</Chinesesimp>
+      <Korean>선택된 트랙 없음</Korean>
+      <Turkish>Parça seçilmedi</Turkish>
     </Key>
     <Key ID="STR_A3U_boost_tooltip_short">
       <Original>Boost: +%1 dB</Original>
       <Russian>Усиление: +%1 дБ</Russian>
+      <Chinesesimp>增强: +%1 dB</Chinesesimp>
+      <Korean>부스트: +%1 dB</Korean>
+      <Turkish>Artırım: +%1 dB</Turkish>
     </Key>
     <Key ID="STR_A3U_loudspeaker_on">
       <Original>Loudspeaker mode (on)</Original>
       <Russian>Режим громкоговорителя (вкл)</Russian>
+      <Chinesesimp>扩音器模式 (开)</Chinesesimp>
+      <Korean>확성기 모드 (켬)</Korean>
+      <Turkish>Hoparlör modu (açık)</Turkish>
     </Key>
     <Key ID="STR_A3U_loudspeaker_off">
       <Original>Loudspeaker mode (off)</Original>
       <Russian>Режим громкоговорителя (выкл)</Russian>
+      <Chinesesimp>扩音器模式 (关)</Chinesesimp>
+      <Korean>확성기 모드 (끔)</Korean>
+      <Turkish>Hoparlör modu (kapalı)</Turkish>
     </Key>
 
     <!-- Debug info -->
     <Key ID="STR_A3U_debug_sound_header">
       <Original>=== SOUND DEBUG INFO ===</Original>
       <Russian>=== ИНФОРМАЦИЯ О ЗВУКЕ ===</Russian>
+      <Chinesesimp>=== 声音调试信息 ===</Chinesesimp>
+      <Korean>=== 사운드 디버그 정보 ===</Korean>
+      <Turkish>=== SES HATA AYIKLAMA BİLGİSİ ===</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_track_header">
       <Original>=== DEBUG INFO ===</Original>
       <Russian>=== ОТЛАДОЧНАЯ ИНФОРМАЦИЯ ===</Russian>
+      <Chinesesimp>=== 调试信息 ===</Chinesesimp>
+      <Korean>=== 디버그 정보 ===</Korean>
+      <Turkish>=== HATA AYIKLAMA BİLGİSİ ===</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_class">
       <Original>Class: %1</Original>
       <Russian>Класс: %1</Russian>
+      <Chinesesimp>类: %1</Chinesesimp>
+      <Korean>클래스: %1</Korean>
+      <Turkish>Sınıf: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_name">
       <Original>Name: %1</Original>
       <Russian>Название: %1</Russian>
+      <Chinesesimp>名称: %1</Chinesesimp>
+      <Korean>이름: %1</Korean>
+      <Turkish>İsim: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_theme">
       <Original>Theme: %1</Original>
       <Russian>Тема: %1</Russian>
+      <Chinesesimp>主题: %1</Chinesesimp>
+      <Korean>테마: %1</Korean>
+      <Turkish>Tema: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_file">
       <Original>File: %1</Original>
       <Russian>Файл: %1</Russian>
+      <Chinesesimp>文件: %1</Chinesesimp>
+      <Korean>파일: %1</Korean>
+      <Turkish>Dosya: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_volume">
       <Original>Volume: %1</Original>
       <Russian>Громкость: %1</Russian>
+      <Chinesesimp>音量: %1</Chinesesimp>
+      <Korean>볼륨: %1</Korean>
+      <Turkish>Ses seviyesi: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_pitch">
       <Original>Pitch: %1</Original>
       <Russian>Высота тона: %1</Russian>
+      <Chinesesimp>音调: %1</Chinesesimp>
+      <Korean>피치: %1</Korean>
+      <Turkish>Perde: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_maxdist">
       <Original>Max Distance: %1 m</Original>
       <Russian>Макс. дистанция: %1 м</Russian>
+      <Chinesesimp>最大距离: %1 米</Chinesesimp>
+      <Korean>최대 거리: %1 m</Korean>
+      <Turkish>Maksimum Mesafe: %1 m</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_duration">
       <Original>Duration: %1 s</Original>
       <Russian>Длительность: %1 с</Russian>
+      <Chinesesimp>时长: %1 秒</Chinesesimp>
+      <Korean>길이: %1 초</Korean>
+      <Turkish>Süre: %1 sn</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_titles">
       <Original>Titles: %1</Original>
       <Russian>Титры: %1</Russian>
+      <Chinesesimp>标题: %1</Chinesesimp>
+      <Korean>제목: %1</Korean>
+      <Turkish>Başlıklar: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_addon">
       <Original>Addon: %1</Original>
       <Russian>Аддон: %1</Russian>
+      <Chinesesimp>附加组件: %1</Chinesesimp>
+      <Korean>애드온: %1</Korean>
+      <Turkish>Eklenti: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_mod">
       <Original>Mod: %1</Original>
       <Russian>Мод: %1</Russian>
+      <Chinesesimp>模组: %1</Chinesesimp>
+      <Korean>모드: %1</Korean>
+      <Turkish>Mod: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_musicclass">
       <Original>MusicClass: %1</Original>
       <Russian>MusicClass: %1</Russian>
+      <Chinesesimp>音乐类: %1</Chinesesimp>
+      <Korean>MusicClass: %1</Korean>
+      <Turkish>MusicClass: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_type">
       <Original>Type: %1</Original>
       <Russian>Тип: %1</Russian>
+      <Chinesesimp>类型: %1</Chinesesimp>
+      <Korean>유형: %1</Korean>
+      <Turkish>Tür: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_tags">
       <Original>Tags: %1</Original>
       <Russian>Теги: %1</Russian>
+      <Chinesesimp>标签: %1</Chinesesimp>
+      <Korean>태그: %1</Korean>
+      <Turkish>Etiketler: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_sound">
       <Original>Sound: %1</Original>
       <Russian>Звук: %1</Russian>
+      <Chinesesimp>声音: %1</Chinesesimp>
+      <Korean>사운드: %1</Korean>
+      <Turkish>Ses: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_soundparams">
       <Original>Sound params: volume=%1, pitch=%2</Original>
       <Russian>Параметры звука: громкость=%1, высота=%2</Russian>
+      <Chinesesimp>声音参数: 音量=%1, 音调=%2</Chinesesimp>
+      <Korean>사운드 매개변수: 볼륨=%1, 피치=%2</Korean>
+      <Turkish>Ses parametreleri: ses seviyesi=%1, perde=%2</Turkish>
     </Key>
     <Key ID="STR_A3U_debug_logo">
       <Original>Logo: %1</Original>
       <Russian>Логотип: %1</Russian>
+      <Chinesesimp>标志: %1</Chinesesimp>
+      <Korean>로고: %1</Korean>
+      <Turkish>Logo: %1</Turkish>
     </Key>
     <Key ID="STR_A3U_no_name">
       <Original>&lt;no name&gt;</Original>
       <Russian>&lt;нет названия&gt;</Russian>
+      <Chinesesimp>&lt;无名称&gt;</Chinesesimp>
+      <Korean>&lt;이름 없음&gt;</Korean>
+      <Turkish>&lt;isim yok&gt;</Turkish>
     </Key>
     <Key ID="STR_A3U_no_file">
       <Original>&lt;no file&gt;</Original>
       <Russian>&lt;нет файла&gt;</Russian>
+      <Chinesesimp>&lt;无文件&gt;</Chinesesimp>
+      <Korean>&lt;파일 없음&gt;</Korean>
+      <Turkish>&lt;dosya yok&gt;</Turkish>
     </Key>
     <Key ID="STR_A3U_none">
       <Original>&lt;none&gt;</Original>
       <Russian>&lt;нет&gt;</Russian>
+      <Chinesesimp>&lt;无&gt;</Chinesesimp>
+      <Korean>&lt;없음&gt;</Korean>
+      <Turkish>&lt;yok&gt;</Turkish>
     </Key>
     <Key ID="STR_A3U_sound_not_found">
       <Original>Sound not found in CfgSounds</Original>
       <Russian>Звук не найден в CfgSounds</Russian>
+      <Chinesesimp>在 CfgSounds 中未找到声音</Chinesesimp>
+      <Korean>CfgSounds에서 사운드를 찾을 수 없음</Korean>
+      <Turkish>CfgSounds'da ses bulunamadı</Turkish>
     </Key>
     <Key ID="STR_A3U_track_not_found">
       <Original>Track not found in CfgMusic</Original>
       <Russian>Трек не найден в CfgMusic</Russian>
+      <Chinesesimp>在 CfgMusic 中未找到音轨</Chinesesimp>
+      <Korean>CfgMusic에서 트랙을 찾을 수 없음</Korean>
+      <Turkish>CfgMusic'da parça bulunamadı</Turkish>
     </Key>
     <Key ID="STR_A3U_no_sound">
       <Original>&lt;no sound&gt;</Original>
       <Russian>&lt;нет звука&gt;</Russian>
+      <Chinesesimp>&lt;无声音&gt;</Chinesesimp>
+      <Korean>&lt;사운드 없음&gt;</Korean>
+      <Turkish>&lt;ses yok&gt;</Turkish>
     </Key>
     <Key ID="STR_A3U_error_creating_player">
       <Original>Error creating player!</Original>
       <Russian>Ошибка создания плеера!</Russian>
+      <Chinesesimp>创建播放器时出错！</Chinesesimp>
+      <Korean>플레이어 생성 오류!</Korean>
+      <Turkish>Oynatıcı oluşturma hatası!</Turkish>
     </Key>
     <Key ID="STR_A3U_error_display_not_found">
       <Original>Error: Display not found!</Original>
       <Russian>Ошибка: диалог не найден!</Russian>
+      <Chinesesimp>错误：未找到显示界面！</Chinesesimp>
+      <Korean>오류: 디스플레이를 찾을 수 없음!</Korean>
+      <Turkish>Hata: Ekran bulunamadı!</Turkish>
     </Key>
     <Key ID="STR_A3U_unknown_category">
       <Original>Unknown</Original>
       <Russian>Неизвестно</Russian>
+      <Chinesesimp>未知</Chinesesimp>
+      <Korean>알 수 없음</Korean>
+      <Turkish>Bilinmiyor</Turkish>
     </Key>
     <Key ID="STR_A3U_player_initialized">
       <Original>Player initialized in %1 mode</Original>
       <Russian>Плеер инициализирован в режиме %1</Russian>
+      <Chinesesimp>播放器已初始化为 %1 模式</Chinesesimp>
+      <Korean>플레이어가 %1 모드로 초기화됨</Korean>
+      <Turkish>Oynatıcı %1 modunda başlatıldı</Turkish>
     </Key>
 
     <!-- Categories -->
+    <Key ID="STR_A3U_cat_classical_music">
+      <Original>Classical music</Original>
+      <Russian>Классическая музыка</Russian>
+      <Chinesesimp>古典音乐</Chinesesimp>
+      <Korean>클래식 음악</Korean>
+      <Turkish>Klasik müzik</Turkish>
+    </Key>
     <Key ID="STR_A3U_cat_vanillarock_sounds">
       <Original>Vanilla Rock (Sounds)</Original>
       <Russian>Vanilla Rock (звуки)</Russian>
+      <Chinesesimp>原版摇滚 (声音)</Chinesesimp>
+      <Korean>바닐라 록 (사운드)</Korean>
+      <Turkish>Vanilla Rock (Sesler)</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vanillapop_sounds">
       <Original>Vanilla Pop (Sounds)</Original>
       <Russian>Vanilla Pop (звуки)</Russian>
+      <Chinesesimp>原版流行 (声音)</Chinesesimp>
+      <Korean>바닐라 팝 (사운드)</Korean>
+      <Turkish>Vanilla Pop (Sesler)</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vanillametal">
       <Original>Vanilla Metal</Original>
       <Russian>Vanilla Metal</Russian>
+      <Chinesesimp>原版金属</Chinesesimp>
+      <Korean>바닐라 메탈</Korean>
+      <Turkish>Vanilla Metal</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vanilladance">
       <Original>Vanilla Dance</Original>
       <Russian>Vanilla Dance</Russian>
+      <Chinesesimp>原版舞曲</Chinesesimp>
+      <Korean>바닐라 댄스</Korean>
+      <Turkish>Vanilla Dance</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vanillaambient_sounds">
       <Original>Vanilla Ambient (Sounds)</Original>
       <Russian>Vanilla Ambient (звуки)</Russian>
+      <Chinesesimp>原版氛围 (声音)</Chinesesimp>
+      <Korean>바닐라 앰비언트 (사운드)</Korean>
+      <Turkish>Vanilla Ambient (Sesler)</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vanillachillout">
       <Original>Vanilla Chillout</Original>
       <Russian>Vanilla Chillout</Russian>
+      <Chinesesimp>原版休闲</Chinesesimp>
+      <Korean>바닐라 칠아웃</Korean>
+      <Turkish>Vanilla Chillout</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vnradio_tracks">
       <Original>Vietnam Radio</Original>
       <Russian>Vietnam Radio</Russian>
+      <Chinesesimp>越南电台</Chinesesimp>
+      <Korean>베트남 라디오</Korean>
+      <Turkish>Vietnam Radyosu</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_vnradio_sounds">
       <Original>Vietnam Radio (Sounds)</Original>
       <Russian>Vietnam Radio (звуки)</Russian>
+      <Chinesesimp>越南电台 (声音)</Chinesesimp>
+      <Korean>베트남 라디오 (사운드)</Korean>
+      <Turkish>Vietnam Radyosu (Sesler)</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_gmradio">
       <Original>Global Mobilization Radio</Original>
       <Russian>Global Mobilization Radio</Russian>
+      <Chinesesimp>全球动员电台</Chinesesimp>
+      <Korean>글로벌 동원 라디오</Korean>
+      <Turkish>Global Mobilization Radyosu</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_rfmusic">
       <Original>Reaction Forces Music</Original>
       <Russian>Reaction Forces Music</Russian>
+      <Chinesesimp>反应部队音乐</Chinesesimp>
+      <Korean>리액션 포스 음악</Korean>
+      <Turkish>Reaction Forces Müziği</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_rfost">
       <Original>Reaction Forces OST</Original>
       <Russian>Reaction Forces OST</Russian>
+      <Chinesesimp>反应部队原声带</Chinesesimp>
+      <Korean>리액션 포스 OST</Korean>
+      <Turkish>Reaction Forces OST</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_spejazz">
       <Original>Spearhead Jazz</Original>
       <Russian>Spearhead Jazz</Russian>
+      <Chinesesimp>先锋爵士</Chinesesimp>
+      <Korean>스피어헤드 재즈</Korean>
+      <Turkish>Spearhead Caz</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_speost">
       <Original>Spearhead OST</Original>
       <Russian>Spearhead OST</Russian>
+      <Chinesesimp>先锋原声带</Chinesesimp>
+      <Korean>스피어헤드 OST</Korean>
+      <Turkish>Spearhead OST</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_specinematic">
       <Original>Spearhead Cinematic</Original>
       <Russian>Spearhead Cinematic</Russian>
+      <Chinesesimp>先锋电影配乐</Chinesesimp>
+      <Korean>스피어헤드 시네마틱</Korean>
+      <Turkish>Spearhead Sinematik</Turkish>
     </Key>
     <Key ID="STR_A3U_cat_wsradio">
       <Original>Western Sahara Radio</Original>
       <Russian>Western Sahara Radio</Russian>
+      <Chinesesimp>西撒哈拉电台</Chinesesimp>
+      <Korean>서사하라 라디오</Korean>
+      <Turkish>Batı Sahra Radyosu</Turkish>
     </Key>
   </Package>
 </Project>
