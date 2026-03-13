@@ -115,7 +115,9 @@ _lootCrate attachTo [_para, [0, 0, -1.2]];
 	params ["_obj","_para"];
 
 	private _smokeShellVariants = ["SmokeShellRed", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"];
-		
+	
+	private _startTime = time;
+
 	waitUntil {
 		sleep 0.01;
 		((position _obj) select 2) < 2 
@@ -123,10 +125,17 @@ _lootCrate attachTo [_para, [0, 0, -1.2]];
 		isNull _para 
 		|| 
 		(count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+		|| 
+        (time - _startTime) > 30
 	};
 		
 	_para disableCollisionWith _obj;
-	_obj setVectorUp [0,0,1];
+
+	private _currentUp = vectorUp _obj;
+	private _angle = acos (_currentUp vectorDotProduct [0,0,1]);
+	if (_angle > 60) then {
+	    _obj setVectorUp [0,0,1];
+	};
 	_obj setVelocity [0,0,0];
 	detach _obj;
 	
