@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3AU-ultimate">
-    <Package name="A3-Antistasi-builderbox">
-        <Key ID="STR_params_builderPermissions">
-            <Original>Player classes permitted to use the building placer</Original>
-            <Chinesesimp>允许放置建筑的玩家类型</Chinesesimp>
-            <Korean>구조물 배치기를 사용할 수 있는 플레이어 병과</Korean>
-            <Turkish>Bina yerleştirme izni olan sınıflar</Turkish>
-        </Key>
-        <Key ID="STR_params_builderLimit">
-            <Original>Build limit</Original>
-            <Chinesesimp>建筑上限</Chinesesimp>
-            <Korean>구조물 제한</Korean>
-            <Turkish>inşa Limiti</Turkish>
-        </Key>
-        <Key ID="STR_params_builderAllowRoads">
-            <Original>Allow buildings to be saved on roads</Original>
-            <Chinesesimp>允许保留道路上的建筑物</Chinesesimp>
-            <Korean>도로에 구조물을 저장할 수 있도록 허용</Korean>
-            <Turkish>Binaların yollara yerleşmesine izin ver</Turkish>
-        </Key>
-        <Key ID="STR_params_builderBuildTime">
-            <Original>Build hold time multiplier</Original>
-            <Chinesesimp>建筑留存时间乘数</Chinesesimp>
-            <Korean>건설 홀드 시간 배수</Korean>
-            <Turkish>İnşa Süresi Çarpanı</Turkish>
-        </Key>
-    </Package>
     <Package name="A3-Antistasi-Ultimate-functions">
         <Key ID="STR_A3AU_init_mods_warning_header">
             <Original>Warning</Original>
-            <English>Warning</English>
             <Russian>Предупреждение</Russian>
             <Korean>경고</Korean>
             <French>Avertissement</French>
@@ -38,7 +11,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_text">
             <Original>Warning. Addons loaded may not work correctly, or work together.%1%1| %2 |%1%1Consider removing them if you encounter any issues.</Original>
-            <English>Warning. Addons loaded may not work correctly, or work together.%1%1| %2 |%1%1Consider removing them if you encounter any issues.</English>
             <Russian>Внимание! Загруженные моды могут работать некорректно или конфликтовать между собой.%1%1| %2 |%1%1Рекомендуем отключить их в случае возникновения ошибок.</Russian>
             <Korean>경고. 불러온 애드온이 올바르게 작동하지 않거나 함께 작동하지 않을 수 있습니다.%1%1| %2 |%1%1문제가 발생하면 제거하는 것이 좋습니다.</Korean>
             <French>Attention. Les modules complémentaires chargés peuvent ne pas fonctionner correctement ou ne pas fonctionner ensemble.%1%1| %2 |%1%1Envisagez de les supprimer si vous rencontrez des problèmes.</French>
@@ -47,7 +19,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_CUP_RHS">
             <Original>CUP and RHS (Pick One)</Original>
-            <English>CUP and RHS (Pick One)</English>
             <Russian>CUP и RHS (Выберите один из них)</Russian>
             <Korean>CUP와 RHS (하나만 고르십시오)</Korean>
             <French>CUP et RHS (en choisir un)</French>
@@ -56,7 +27,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Advanced_Rappeling">
             <Original>Advanced Rappeling</Original>
-            <English>Advanced Rappeling</English>
             <Russian>Advanced Rappeling</Russian>
             <Korean>Advanced Rappeling</Korean>
             <French>Advanced Rappeling</French>
@@ -65,7 +35,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Advanced_Urban_Rappeling">
             <Original>Advanced Urban Rappeling</Original>
-            <English>Advanced Urban Rappeling</English>
             <Russian>Advanced Urban Rappeling</Russian>
             <Korean>Advanced Urban Rappeling</Korean>
             <French>Advanced Urban Rappeling</French>
@@ -74,7 +43,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_LAMBS_AI">
             <Original>LAMBS AI</Original>
-            <English>LAMBS AI</English>
             <Russian>LAMBS AI</Russian>
             <Korean>LAMBS AI</Korean>
             <French>LAMBS AI</French>
@@ -83,7 +51,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_VCOM_AI">
             <Original>VCOM AI</Original>
-            <English>VCOM AI</English>
             <Russian>VCOM AI</Russian>
             <Korean>VCOM AI</Korean>
             <French>VCOM AI</French>
@@ -92,7 +59,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_AI_CSTG">
             <Original>AI Cannot See Through Grass</Original>
-            <English>AI Cannot See Through Grass</English>
             <Russian>AI Cannot See Through Grass</Russian>
             <Korean>AI Cannot See Through Grass</Korean>
             <French>AI Cannot See Through Grass</French>
@@ -101,7 +67,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ASR_AI3">
             <Original>ASR AI3</Original>
-            <English>ASR AI3</English>
             <Russian>ASR AI3</Russian>
             <Korean>ASR AI3</Korean>
             <French>ASR AI3</French>
@@ -110,7 +75,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ALiVE">
             <Original>ALiVE</Original>
-            <English>ALiVE</English>
             <Russian>ALiVE</Russian>
             <Korean>ALiVE</Korean>
             <French>ALiVE</French>
@@ -119,7 +83,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_MCC_Sandbox_4">
             <Original>MCC Sandbox 4</Original>
-            <English>MCC Sandbox 4</English>
             <Russian>MCC Sandbox 4</Russian>
             <Korean>MCC Sandbox 4</Korean>
             <French>MCC Sandbox 4</French>
@@ -128,7 +91,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ZHC">
             <Original>Zulu Headless Client (ZHC)</Original>
-            <English>Zulu Headless Client (ZHC)</English>
             <Russian>Zulu Headless Client (ZHC)</Russian>
             <Korean>Zulu Headless Client (ZHC)</Korean>
             <French>Zulu Headless Client (ZHC)</French>
@@ -137,7 +99,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_PiR">
             <Original>Project injury Reaction (PiR)</Original>
-            <English>Project injury Reaction (PiR)</English>
             <Russian>Project injury Reaction (PiR)</Russian>
             <Korean>Project injury Reaction (PiR)</Korean>
             <French>Project injury Reaction (PiR)</French>
@@ -146,7 +107,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_WHK">
             <Original>Werthles' Headless Module</Original>
-            <English>Werthles' Headless Module</English>
             <Russian>Werthles' Headless Module</Russian>
             <Korean>Werthles' Headless Module</Korean>
             <French>Werthles' Headless Module</French>
@@ -155,7 +115,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Wargame">
             <Original>ZEUS WARGAME</Original>
-            <English>ZEUS WARGAME</English>
             <Russian>ZEUS WARGAME</Russian>
             <Korean>ZEUS WARGAME</Korean>
             <French>ZEUS WARGAME</French>
@@ -164,7 +123,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_APS">
             <Original>Armor Plates System</Original>
-            <English>Armor Plates System</English>
             <Russian>Armor Plates System</Russian>
             <Korean>Armor Plates System</Korean>
             <French>Armor Plates System</French>
@@ -173,7 +131,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_dis">
             <Original>Dismemberment</Original>
-            <English>Dismemberment</English>
             <Russian>Dismemberment</Russian>
             <Korean>Dismemberment</Korean>
             <French>Dismemberment</French>
@@ -182,7 +139,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Exile">
             <Original>Exile</Original>
-            <English>Exile</English>
             <Russian>Exile</Russian>
             <Korean>Exile</Korean>
             <French>Exile</French>
@@ -191,7 +147,6 @@
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Lifeline">
             <Original>Lifeline Revive AI</Original>
-            <English>Lifeline Revive AI</English>
             <Russian>Lifeline Revive AI</Russian>
             <Korean>Lifeline Revive AI</Korean>
             <French>Lifeline Revive AI</French>

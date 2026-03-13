@@ -110,7 +110,7 @@ private _userActions = [
         QGVAR(buildingPlacerPlace),
         EVENT_TYPE_DEACTIVATE,
         {
-            if (count (A3A_buildingsToSave) >= A3A_builderLimit) exitWith {
+            if (A3A_builderLimit isNotEqualTo -1 && {count (A3A_buildingsToSave) >= A3A_builderLimit}) exitWith {
                 ["Build Placer", format["There are too many builds. %1/%2", (count A3A_buildingsToSave), A3A_builderLimit]] call A3A_fnc_customHint;
             };
 
