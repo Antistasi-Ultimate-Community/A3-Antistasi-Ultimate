@@ -226,6 +226,17 @@ if (!isTraderQuestCompleted) then {
 	(_display displayCtrl 6014) ctrlShow false;
 };
 
+
+if (isServer || {(call BIS_fnc_admin) isEqualTo 2}) then {
+	ctrlShow [5200, true];
+	ctrlEnable [5200, true];
+	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");
+} else {
+	ctrlShow [5200, true];
+	ctrlEnable [5200, false];
+	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_generic_admin_only");
+};
+
 if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {
     (_display displayCtrl 5300) ctrlShow false;
 };

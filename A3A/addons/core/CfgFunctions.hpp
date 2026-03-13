@@ -8,6 +8,7 @@ class CfgFunctions
             class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
+            class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
             class assaultBuilding {};
@@ -21,6 +22,7 @@ class CfgFunctions
             class canFight {};
             class captureX {};
             class chargeWithSmoke {};
+            class checkAndSpawnAttack {};
             class combatLanding {};
             class coverage {};
             class destroyBuilding {};
@@ -31,6 +33,7 @@ class CfgFunctions
             class fastrope {};
             class fastropeVTOL {};
             class findSafeRoadToUnload {};
+            class fireCMFlare {};
             class fleeToSide {};
             class guardDog {};
             class hasRadio {};
@@ -152,10 +155,12 @@ class CfgFunctions
             class localizar {};
             class lockStatic {};
             class logPerformance {};
+            class manageFlagAccess {};
             class markerChange {};
             class moveHQ {};
             class mrkUpdate {};
             class mrkWIN {};
+            class moveOutCrew {};
             class numericRank {};
             class onHeadlessClientDisconnect {};
             class onPlayerDisconnect {};
@@ -174,7 +179,6 @@ class CfgFunctions
             class returnMuzzle {};
             class revealToPlayer {};
             class scheduler {};
-            class moveOutCrew {};
             class sellVehicle {};
             class setMarkerAlphaForSide {};
             class setPlaneLoadout {};
@@ -190,6 +194,7 @@ class CfgFunctions
             class unlockVehicle {};
             class updateRebelStatics {};
             class zoneCheck {};
+            class zoneCountUnits {};
             class checkWinCondition {};
             class checkLossCondition {};
         };
@@ -203,6 +208,7 @@ class CfgFunctions
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
+            class initBuilderCollisionHelper {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
@@ -265,6 +271,8 @@ class CfgFunctions
             class createUnit {};
             class createVehicleCrew {};
             class createVehicleQRFBehaviour {};
+            class createZoneAmmoBox {};
+            class createZoneFlag {};
             class crewTypeForVehicle {};
             class cycleSpawn {};
             class FIAinitBases {};
@@ -315,7 +323,6 @@ class CfgFunctions
             class createDialog_shouldLoadPersonalSave {};
             class fastTravelRadio {};
             class mineDialog {};
-            class moveHQObject {};
             class persistentSave {};
             class skiptime {};
             class squadOptions {};
@@ -323,12 +330,23 @@ class CfgFunctions
             class unit_recruit {};
         };
 
+        class Events {
+            SPATHTO_FNC(Events,addEventHandler);
+            SPATHTO_FNC(Events,removeEventHandler);
+            SPATHTO_FNC(Events,triggerGlobalEvent);
+            SPATHTO_FNC(Events,triggerLocalEvent);
+            SPATHTO_FNC(Events,triggerOwnerEvent);
+            SPATHTO_FNC(Events,triggerRemoteEvent);
+            SPATHTO_FNC(Events,triggerResultEvent);
+            SPATHTO_FNC(Events,triggerServerEvent);
+            SPATHTO_FNC(Events,triggerTargetEvent);
+        };
+
         class EventHandler {
             file = QPATHTOFOLDER(functions\EventHandler);
             class addArtilleryTrailEH {};
             class enemyUnitDeletedEH {};
             class enemyUnitKilledEH {};
-            class RC40_attack_EH {};
             class vehicleDeletedEH {};
         };
 
@@ -341,6 +359,7 @@ class CfgFunctions
             class countGarrison {};
             class createGarrison {};
             class createGarrisonLine {};
+            class crewLocationStatics {};
             class getGarrison {};
             class getGarrisonRatio {};
             class getGarrisonStatus {};
@@ -437,7 +456,7 @@ class CfgFunctions
             class LOG_Airdrop {};
             class LOG_Crashsite {};
             class LOG_Crashsite_Satellite{};
-            class LOG_Helicrash {};;
+            class LOG_Helicrash {};
             class missionRequest {};
             class REP_Antenna {};
             class RES_Deserters {};
@@ -467,8 +486,8 @@ class CfgFunctions
 
         class OrgPlayers {
             file = QPATHTOFOLDER(functions\OrgPlayers);
-            class addScorePlayer {};
             class addMoneyPlayer {};
+            class addScorePlayer {};
             class donateMoney {};
             class donateMoneyPercentage {};
             class isMember {};
@@ -483,6 +502,7 @@ class CfgFunctions
             class theBossToggleEligibility {};
             class theBossTransfer {};
             class theBossSteal {};
+            class toggleTeardownMode {};
             class assignBossIfNone {};
             class tierCheck {};
             class unitTraits {};
@@ -592,6 +612,7 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
@@ -605,6 +626,7 @@ class CfgFunctions
             class savePlayerStat {};
             class setStatVariable {};
             class saveLoop {};
+            class saveParamPreset {};
             class writebackSaveVar {};
         };
 
@@ -789,6 +811,8 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class attachLight {};
+            class attachLightFromConfig {};
             class basicBackpack {};
             class classNameToModel {};
             class countAttachedObjects {};
@@ -797,9 +821,15 @@ class CfgFunctions
             class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
+            class isEmplacementMarker {};
             class isEngineer {};
+            class isWithinMarkerArea {};
+            class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
+            class nearestFriendlyMarker {};
+            class onClientInitDone {};
+            class onServerInitDone {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
@@ -814,10 +844,12 @@ class CfgFunctions
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
-            class dropObject {};
+            class dropItem {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
+            class isCarrying {};
+            class remainingAmmo {};
             class remainingFuel {};
             class rotateItem {};
         };

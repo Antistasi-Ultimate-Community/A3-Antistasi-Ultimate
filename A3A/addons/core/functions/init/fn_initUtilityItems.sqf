@@ -35,7 +35,7 @@ _items append [
     [_fuelDrum#0, _fuelDrum#1, localize "STR_A3AP_buyvehdialog_fuel_drum", "refuel", ["fuel", "move", "save", "rotate"]],
     [_fuelTank#0, _fuelTank#1, localize "STR_A3AP_buyvehdialog_fuel_tank", "refuel", ["cmmdr", "fuel", "place", "move", "rotate", "save"]],
     [_medTent#0, _medTent#1, localize "STR_A3AP_buyvehdialog_medical_tent", "heal", ["place", "move", "rotate", "pack"]],
-    [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "place", "move", "rotate", "save"]],
+    [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "ammo", "place", "move", "rotate", "save"]],
     [_repairStation#0, _repairStation#1, localize "STR_A3AP_buyvehdialog_repair_station", "repair", ["cmmdr", "place", "move", "rotate", "pack", "save"]],
     [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "light", ["move"]],
     ["Land_PlasticCase_01_small_black_F", 250, localize "STR_A3AP_buyvehdialog_BuildBoxExtraSmall", "build", ["place", "move", "build"]],
@@ -48,6 +48,22 @@ _items append [
     ["A3AU_Land_Cargo10_light_blue_F_shoppingCart", 250, localize "STR_A3A_Utility_Items_Name_shoppingcartM", "shop", ["place"]],
     ["A3AU_Land_CargoBox_V1_F_shoppingCart", 100, localize "STR_A3A_Utility_Items_Name_shoppingcartS", "shop", ["place", "move"]]
 ];
+
+"getNumber (_x >> 'scope') > 0" configClasses(configFile >> QUOTE(PREFIX) >> "UtilityItems") apply {
+    private _displayName = getText(_x >> "displayName");
+
+    if (_displayName == "") then {
+        _displayName = getText(configFile >> "CfgVehicles" >> (configName _x) >> "displayName");
+    };
+
+    _items pushBack[
+        configName _x,
+        getNumber(_x >> "price"),
+        _displayName,
+        getText(_x >> "iconType"),
+        getArray(_x >> "flags")
+    ];
+};
 
 if(A3A_hasACE) then {
     _items pushBack [_medCrate#0, _medCrate#1, localize "STR_A3AP_buyvehdialog_medical_box", "heal", ["noclear", "move"]];

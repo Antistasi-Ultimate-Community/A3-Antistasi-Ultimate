@@ -29,7 +29,7 @@ switch (_mode) do
     case ("missionButtonClicked"):
     {
         // Params: 1 : Mission type (AS, DES etc...)
-        Trace("Request mission button clicked");
+        Debug("Request mission button clicked");
 
         // Check for member / commander
         if !(([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) exitWith

@@ -17,6 +17,19 @@ params ["_helicopter", "_crewGroup", "_cargoGroup", "_posDestination", "_originP
 
 private _vehType = typeOf _helicopter;
 
+private _forceFastrope = false;
+if (_vehType in vehFastRope) then {
+    {
+        // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 2m
+        // * visiblePosition isn't perfect (especially with large boulder / cliff objects), but the best option without a ton of bounding box / vertex math
+        if ((visiblePosition _x) select 2 > 2) exitWith { _forceFastrope = true };
+    } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
+};
+if (_forceFastrope) exitWith {
+    Error("A3A_fnc_combatLanding called, but position has tall terrain objects - calling A3A_fnc_fastrope instead.");
+    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn A3A_fnc_fastrope;
+};
+
 if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
     _helicopter setVehicleRadar 1;
 };
@@ -25,7 +38,8 @@ if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehicles
 _crewGroup setVariable ["A3A_AIScriptHandle", _thisScript];
 _cargoGroup setVariable ["A3A_AIScriptHandle", _thisScript];
 
-private _landPad = createVehicle ["Land_HelipadEmpty_F", _landPos, [], 0, "NONE"];
+private _helipadClass = ["Land_HelipadEmpty_F", "Land_HelipadSquare_F"] select (debug);
+private _landPad = createVehicle [_helipadClass, _landPos, [], 0, "NONE"];
 _helicopter setVariable ["LandingPad", _landPad, true];             // cleared up (eventually) by heli deletion handler
 
 //Create the waypoints for the crewGroup
@@ -41,10 +55,7 @@ _helicopter flyInHeight _midHeight;
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 
 while {_helicopter distance2D _landPos > 675} do {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 0.3;
+    [_helicopter, 0.3] call A3A_fnc_fireCMFlare;
 };
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 600};
@@ -136,75 +147,53 @@ while {_interval < 0.9999} do
     if ((getPos _helicopter select 2) < 0.25 ) exitwith{_helicopter setdamage 0; sleep 1; _helicopter setdamage _dam;};
 };
 sleep 0.1;
+[_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
+
 _helicopter engineOn true; ///keep the engine running
 if(canMove _helicopter || alive _driver) then {
     [_helicopter, "open"] spawn A3A_fnc_HeliDoors;
+    sleep 0.25;
 };
 
 _cargoGroup leaveVehicle _helicopter;
-
-private _second = false;
 {
-  if (_second) then {
-    _x action ["Eject", _helicopter];
+    if ((vehicle _x) isEqualTo _helicopter) then {
+        _x leaveVehicle _helicopter;
+        sleep 0.15;
+        if ((vehicle _x) isEqualTo _helicopter) then {
+            _x action ["Eject", _helicopter];
+            sleep 0.05;
+        };
+    };
     unassignVehicle _x;
-    _second = false;
-  } else {
-    _second = true;
-    _x leaveVehicle _helicopter;
-  };
-  private _second = true;
 } forEach units _cargoGroup;
 
-private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 10];
-_cargoWP1 setWaypointType "MOVE";
-_cargoWP1 setWaypointBehaviour "AWARE";
-_cargoWP1 setWaypointSpeed "FULL";
-private _cargoWP2 = _cargoGroup addWaypoint [_posDestination, 50];
-_cargoWP2 setWaypointType "SAD";
-_cargoWP2 setWaypointBehaviour "COMBAT";
-_cargoGroup spawn A3A_fnc_attackDrillAI;
+waitUntil {sleep 1; (!alive _helicopter) || {!canMove _helicopter || {!alive _driver || {/*count assignedCargo _helicopter isEqualTo 0*/ count (crew _helicopter) isEqualTo count (units _crewGroup)}}}};
 
+deleteVehicle _landPad;
 
-if(!canMove _helicopter || !alive _driver) exitWith { deleteVehicle _landPad };
-
-// Dirty hack to stop the heli lurching around near the ground
-private _dismountTime = count units _cargoGroup - 3;
-[_helicopter, time + _dismountTime, _midHeight, _landPad] spawn {
-    params ["_heli", "_endTime", "_flyHeight", "_landPad"];
-    while { time < _endTime } do {
-        _heli setVelocity [0,0,-0.65];
-        sleep 1;
-    };
-    if (!isEngineOn _heli) then { _heli engineOn true;};
-    _heli flyInHeight _flyHeight;
-    deleteVehicle _landPad;
+if (count (units _cargoGroup select {alive _x}) > 0) then {
+    private _cargoWP1 = _cargoGroup addWaypoint [_posDestination, 10];
+    _cargoWP1 setWaypointType "MOVE";
+    _cargoWP1 setWaypointBehaviour "AWARE";
+    _cargoWP1 setWaypointSpeed "FULL";
+    private _cargoWP2 = _cargoGroup addWaypoint [_posDestination, 50];
+    _cargoWP2 setWaypointType "SAD";
+    _cargoWP2 setWaypointBehaviour "COMBAT";
+    _cargoGroup spawn A3A_fnc_attackDrillAI;
 };
-[_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
 
-_helicopter engineOn true;  ///still keeping the engine running
-
-sleep _dismountTime;
-
-_helicopter engineOn true;  ///we must keep the engine running
+if(!alive _helicopter || {!canMove _helicopter || {!alive _driver}}) exitWith {};
+if (!isEngineOn _helicopter) then { _helicopter engineOn true;};
 if(canMove _helicopter || alive _driver) then {
     [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
 };
+_helicopter flyInHeight _midHeight;
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
+_helicopter action ["LandGearUp", _helicopter];
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
-    _helicopter action ["LandGearUp", _helicopter];
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
-};
+if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
-if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
-    _helicopter action ["LandGearUp", _helicopter];
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
-};
 // Heli RTB
 private _vehWP1 = _crewGroup addWaypoint [_originPos, 0];
 _vehWP1 setWaypointType "MOVE";
@@ -216,9 +205,6 @@ _crewGroup setCurrentWaypoint _vehWP1;
 waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
 for '_i' from 1 to (5 + (round random 2)) do
 {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 1;
+    [_helicopter, 1] call A3A_fnc_fireCMFlare;
 };
 _helicopter action ["LandGearUp", _helicopter];

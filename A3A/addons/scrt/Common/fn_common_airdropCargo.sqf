@@ -49,10 +49,14 @@ _para setPos getPos _obj;
 _obj lock false;
 _obj attachTo [_para, _attachTo];
 
+_para setVectorUp [0,0,1];
+
 [_obj, _para] spawn {
 	params ["_obj","_para"];
 
 	private _smokeShellVariants = ["SmokeShellRed", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"];
+
+	private _startTime = time;
 		
 	waitUntil {
 		sleep 0.01;
@@ -61,10 +65,17 @@ _obj attachTo [_para, _attachTo];
 		isNull _para 
 		|| 
 		(count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+		|| 
+        (time - _startTime) > 30
 	};
 		
 	_para disableCollisionWith _obj;
-	_obj setVectorUp [0,0,1];
+
+	private _currentUp = vectorUp _obj;
+	private _angle = acos (_currentUp vectorDotProduct [0,0,1]);
+	if (_angle > 60) then { //adjust orientation only when object is about to tip over
+	    _obj setVectorUp [0,0,1];
+	};
 	_obj setVelocity [0,0,0];
 	detach _obj;
 	

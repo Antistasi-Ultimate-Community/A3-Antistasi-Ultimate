@@ -14,9 +14,17 @@ _positionX = getMarkerPos (_markerX);
 
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
-if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {
+if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///maaaaaaybe we should save vehicles near ANY friendly marker?
 	if (!(_markerX in citiesX)) then {
-		private _veh = createVehicle [FactionGet(reb,"flag"), _positionX, [],0, "NONE"];
+		private _veh = nil;
+		_spawnParameter = [_markerX, "flag"] call A3A_fnc_findSpawnPosition;
+		if (_spawnParameter isEqualType []) then {
+			_veh = createVehicle [FactionGet(reb,"flag"), (_spawnParameter select 0), [], 0, "NONE"];
+			_veh setDir (_spawnParameter select 1); // this probably doesn't matter, but eh why not?
+		} else {
+			Warning_1("Could not find flag placement marker for garrison %1; falling back to marker center.", _markerX);
+			_veh = createVehicle [FactionGet(reb,"flag"), _positionX, [],0, "NONE"];
+		};
 		_veh setFlagTexture FactionGet(reb,"flagTexture");
 		_veh allowDamage false;
 		_vehiclesX pushBack _veh;
@@ -38,6 +46,21 @@ if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {
 
 private _size = [_markerX] call A3A_fnc_sizeMarker;
 private _staticsX = staticsToSave select {_x distance2D _positionX < _size};
+private _assemblyPositions = nearestObjects[_positionX, ["Building"], _size, true]
+	select { alive _x && { _x inArea _markerX } && { getNumber(configOf _x >> QGVAR(aiBunchUpPriority)) > 0 } }
+	apply { [(getPosATL _x) vectorMultiply [1,1,0], getNumber(configOf _x >> QGVAR(aiBunchUpPriority))] };
+
+// Always exclude priority=1 if higher priorities are found
+private _haveHigher = _assemblyPositions findIf { _x select 1 > 1 } != -1;
+if (_haveHigher) then {
+	_assemblyPositions = _assemblyPositions select { _x select 1 > 1 };
+};
+
+if (_assemblyPositions isNotEqualTo []) then {
+	private _positionsX = [];
+	_assemblyPositions apply { _positionsX append _x };
+	_positionX = selectRandomWeighted _positionsX;
+};
 
 private _garrison = [];
 _garrison = _garrison + (garrison getVariable [_markerX,[]]);
@@ -63,31 +86,71 @@ if (_typeCrew in _garrison) then {
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 		_soldiers pushBack _unit;
 	} forEach (_garrison select {_x == _typeCrew});
-	_garrison deleteAt (_garrison find _typeCrew);;
+	_garrison deleteAt (_garrison find _typeCrew);
 };
 
 // Move riflemen into saved static weapons in area
 {
-	if !(isNil {_x getVariable "lockedForAI"}) then { continue };
-	// Statics loaded into vehicle via ACE are attached to their vehicle; don't mount those
-	if (!(isNull attachedTo _x) && (_x in (attachedTo _x getVariable["ace_cargo_loaded", []]))) then { continue };
-	private _index = _garrison findIf {_x isEqualTo FactionGet(reb,"unitRifle")};
-	if (_index == -1) exitWith {};
-	private _unit = objNull;
-	if (typeOf _x in FactionGet(all,"staticMortars")) then {
-		if (isNull _groupMortars) then { _groupMortars = createGroup teamPlayer };
-		_unit = [_groupMortars, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
-		_unit moveInGunner _x;
+    private _veh = _x; // Rename to avoid variable shadowing
+    if !(isNil {_veh getVariable "lockedForAI"}) then { continue };
+    if (!(isNull attachedTo _veh) && {_veh in (attachedTo _veh getVariable ["ace_cargo_loaded", []])}) then { continue };
 
-		[_groupMortars] call A3A_fnc_artilleryAdd;
-	} else {
-		if (isNull _groupStatics) then { _groupStatics = createGroup teamPlayer };
-		_unit = [_groupStatics, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
-		_unit moveInGunner _x;
-	};
-	[_unit,_markerX] call A3A_fnc_FIAinitBases;
-	_soldiers pushBack _unit;
-	_garrison deleteAT _index;
+    // Get all available crew positions
+    private _crewPositions = [];
+    
+    // Check gunner position
+    if (isNull gunner _veh) then {
+        _crewPositions pushBack ["Gunner", []];
+    };
+    
+    // Check commander position
+    if ((_veh emptyPositions "Commander") > 0 && isNull commander _veh) then {
+        _crewPositions pushBack ["Commander", []];
+    };
+    
+    // Check turret positions - FIXED TURRET UNIT CHECK
+    private _emptyTurrets = allTurrets [_veh, false] select { isNull (_veh turretUnit _x) };
+    { _crewPositions pushBack ["Turret", _x] } forEach _emptyTurrets;
+
+    // Process each position
+    {
+        if (count _garrison == 0) exitWith {};
+        _x params ["_role", "_turretPath"];
+        
+        // Find rifleman in garrison
+        private _index = _garrison findIf { _x == FactionGet(reb,"unitRifle") };
+        if (_index == -1) exitWith {};
+        
+        // Create unit - FIXED TYPEOF CHECK
+        private _unitGroup = if (typeOf _veh in FactionGet(all,"staticMortars")) then {
+            if (isNull _groupMortars) then { _groupMortars = createGroup teamPlayer };
+            _groupMortars
+        } else {
+            if (isNull _groupStatics) then { _groupStatics = createGroup teamPlayer };
+            _groupStatics
+        };
+        
+        private _unit = [_unitGroup, _garrison select _index, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
+        
+        // Assign position
+        switch (_role) do {
+            case "Gunner": { 
+                _unit moveInGunner _veh;
+                if (_unitGroup == _groupMortars) then {
+                    [_unitGroup] call A3A_fnc_artilleryAdd;
+                };
+            };
+            case "Commander": { _unit moveInCommander _veh };
+            case "Turret": { _unit moveInTurret [_veh, _turretPath] };
+        };
+        
+        // Initialize and track unit
+        [_unit,_markerX] call A3A_fnc_FIAinitBases;
+        _soldiers pushBack _unit;
+        _garrison deleteAt _index;
+        
+    } forEach _crewPositions;
+    
 } forEach _staticsX;
 
 
@@ -112,6 +175,7 @@ while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do {
 	_soldiers pushBack _unit;
 	_countUnits = _countUnits + 1;
 	_countGroup = _countGroup + 1;
+	_groupX setBehaviour "AWARE";
 	sleep 0.5;
 };
 
@@ -123,7 +187,7 @@ for "_i" from 0 to (count _groups) - 1 do {
 			_groups append _garrisonGroup;
 		};
 	} else {
-		[_groupX, "Patrol_Defend", 0, 150, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
+		[_groupX, "Patrol_Defend", 0, 150, -1, true, getMarkerPos _markerX, false] call A3A_fnc_patrolLoop;
 	};
 };
 

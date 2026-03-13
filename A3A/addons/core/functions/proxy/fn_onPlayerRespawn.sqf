@@ -119,7 +119,7 @@ if (side group _newUnit == teamPlayer) then
 			};
         };
 
-		default {diag_log format["Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath]};
+		default {Error_1("Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath)};
     };
 
 	disableUserInput false;
@@ -260,9 +260,8 @@ if (side group _newUnit == teamPlayer) then
 		}];
 	};
 
-	[] spawn A3A_fnc_unitTraits;
+	[] call A3A_fnc_unitTraits;
 	[] spawn A3A_fnc_statistics;
-	call A3A_fnc_dropObject;
 } else {
 	_oldUnit setVariable ["spawner",nil,true];
 	_newUnit setVariable ["spawner",true,true];
