@@ -3479,16 +3479,16 @@
         </Container>
         <Container name="setup_dialog">
             <Key ID="STR_antistasi_dialogs_setup_titlebar">
-                <Original>ANTISTASI Ultimate SETUP</Original>
-                <Czech>NASTAVENÍ ANTISTASI Ultimate</Czech>
-                <French>CONFIGURATION D'ANTISTASI Ultimate</French>
-                <Italian>CONFIGURAZIONE ANTISTASI Ultimate</Italian>
+                <Original>ANTISTASI ULTIMATE SETUP</Original>
+                <Czech>NASTAVENÍ ANTISTASI ULTIMATE</Czech>
+                <French>CONFIGURATION D'ANTISTASI ULTIMATE</French>
+                <Italian>CONFIGURAZIONE ANTISTASI ULTIMATE</Italian>
                 <Korean>안티스타시 플러스 설정</Korean>
-                <Russian>НАСТРОЙКА ANTISTASI Ultimate</Russian>
-                <Polish>KONFIGURACJA ANTYSTASI Ultimate</Polish>
-                <Portuguese>ANTISTASI Ultimate SETUP</Portuguese>
-                <Chinesesimp>ANTISTASI Ultimate设置</Chinesesimp>
-                <Turkish>ANTISTASI Ultimate Kurulum</Turkish>
+                <Russian>НАСТРОЙКА ANTISTASI ULTIMATE</Russian>
+                <Polish>KONFIGURACJA ANTYSTASI ULTIMATE</Polish>
+                <Portuguese>ANTISTASI ULTIMATE SETUP</Portuguese>
+                <Chinesesimp>ANTISTASI ULTIMATE设置</Chinesesimp>
+                <Turkish>ANTISTASI ULTIMATE KURULUM</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_loadgame_tab_button">
                 <Original>Load Game</Original>
@@ -3622,6 +3622,116 @@
                 <Chinesesimp>扩展器参数</Chinesesimp>
                 <Turkish>Genişletici Parametreler</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_size">
+                <Original>Group</Original>
+                <Czech>Skupina</Czech>
+                <French>Groupe</French>
+                <Italian>Gruppo</Italian>
+                <Korean>그룹</Korean>
+                <Russian>Группа</Russian>
+                <Polish>Grupa</Polish>
+                <Portuguese>Grupo</Portuguese>
+                <Chinesesimp>群</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_soloSize_label">
+                <Original>Solo</Original>
+                <Czech>Pouze</Czech>
+                <French>Seulement</French>
+                <Italian>Solo</Italian>
+                <Korean>오직</Korean>
+                <Russian>Только</Russian>
+                <Polish>Tylko</Polish>
+                <Portuguese>Somente</Portuguese>
+                <Chinesesimp>只</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_smallSize_label">
+                <Original>Small</Original>
+                <Czech>Malý</Czech>
+                <French>Petit</French>
+                <Italian>Piccolo</Italian>
+                <Korean>작다</Korean>
+                <Russian>Маленький</Russian>
+                <Polish>Mały</Polish>
+                <Portuguese>Pequeno</Portuguese>
+                <Chinesesimp>小</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_medSize_label">
+                <Original>Medium</Original>
+                <Czech>Středně</Czech>
+                <French>Douleur moyenne</French>
+                <Italian>Medio</Italian>
+                <Korean>보통</Korean>
+                <Russian>Терпимая</Russian>
+                <Polish>Średni</Polish>
+                <Portuguese>Média</Portuguese>
+                <Chinesesimp>中等</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_largeSize_label">
+                <Original>Large</Original>
+                <Czech>Velký</Czech>
+                <French>Grand</French>
+                <Italian>Grande</Italian>
+                <Korean>큰</Korean>
+                <Russian>Большой</Russian>
+                <Polish>Duży</Polish>
+                <Portuguese>Grande</Portuguese>
+                <Chinesesimp>大</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_diff">
+                <Original>Difficulty</Original>
+                <Czech>Obtížnost</Czech>
+                <French>Difficulté</French>
+                <Italian>Difficoltà</Italian>
+                <Korean>어려움</Korean>
+                <Russian>Трудность</Russian>
+                <Polish>Trudność</Polish>
+                <Portuguese>Dificuldade</Portuguese>
+                <Chinesesimp>困难</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_easyDiff_label">
+                <Original>Easy</Original>
+                <Czech>Snadný</Czech>
+                <French>Facile</French>
+                <Italian>Facile</Italian>
+                <Korean>쉬운</Korean>
+                <Russian>Лёгкий</Russian>
+                <Polish>Łatwy</Polish>
+                <Portuguese>Fácil</Portuguese>
+                <Chinesesimp>容易</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_medDiff_label">
+                <Original>Medium</Original>
+                <Czech>Středně</Czech>
+                <French>Douleur moyenne</French>
+                <Italian>Medio</Italian>
+                <Korean>보통</Korean>
+                <Russian>Терпимая</Russian>
+                <Polish>Średni</Polish>
+                <Portuguese>Média</Portuguese>
+                <Chinesesimp>中等</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_hardDiff_label">
+                <Original>Hard</Original>
+                <Czech>Tvrdý</Czech>
+                <French>Dur</French>
+                <Italian>Duro</Italian>
+                <Korean>힘들다</Korean>
+                <Russian>Трудный</Russian>
+                <Polish>Twardy</Polish>
+                <Portuguese>Duro</Portuguese>
+                <Chinesesimp>硬</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_cstm">
+                <Original>Custom</Original>
+                <Czech>Zvyk</Czech>
+                <French>Coutume</French>
+                <Italian>Costume</Italian>
+                <Korean>관습</Korean>
+                <Russian>Обычай</Russian>
+                <Polish>Zwyczaj</Polish>
+                <Portuguese>Costume</Portuguese>
+                <Chinesesimp>习惯</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Experimental and Development Parameters</Original>
                 <Czech>Experimentální a vývojové parametry</Czech>
@@ -3669,6 +3779,17 @@
                 <Portuguese>Começar jogo</Portuguese>
                 <Chinesesimp>开始游戏</Chinesesimp>
                 <Turkish>Oyunu Başlat</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_load_game_options">
+                <Original>Game Options</Original>
+                <Czech>Možnosti hry</Czech>
+                <French>Options de jeu</French>
+                <Italian>Opzioni di gioco</Italian>
+                <Korean>게임 옵션</Korean>
+                <Russian>Опции игры</Russian>
+                <Polish>Opcje gry</Polish>
+                <Portuguese>Opções de jogo</Portuguese>
+                <Chinesesimp>游戏选项</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_create_new_game">
                 <Original>Create new game</Original>
@@ -3862,6 +3983,17 @@
                 <Chinesesimp>DLC</Chinesesimp>
                 <Turkish>DLC</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_overrides">
+                <Original>Overrides</Original>
+                <Czech>Potlačuje</Czech>
+                <French>Substitue</French>
+                <Italian>Esegue l' override</Italian>
+                <Korean>재정의</Korean>
+                <Russian>Переопределения</Russian>
+                <Polish>Zastępuje</Polish>
+                <Portuguese>Substitui</Portuguese>
+                <Chinesesimp>重写</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_override_map_limits">
                 <Original>Override map limits</Original>
                 <Czech>Přepsat limity map</Czech>
@@ -4006,7 +4138,7 @@
                 <French>nom "%1", </French>
                 <Turkish> isim "%1", </Turkish>
             </Key>
-            <Key ID="STR_antistasi_dialogs_setup_param_locked">
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_saveexists">
                 <Original>This parameter cannot be changed for an existing save.</Original>
                 <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
@@ -4029,6 +4161,28 @@
                 <Portuguese>Este parâmetro não pode ser alterado durante o jogo.</Portuguese>
                 <Chinesesimp>此参数在游戏中无法更改。</Chinesesimp>
                 <Turkish>Bu parametre oyundayken değiştirilemez.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_bycondition">
+                <Original>This parameter cannot be changed because conditions are not met.</Original>
+                <Czech>Tento parametr nelze změnit, protože nejsou splněny podmínky.</Czech>
+                <French>Ce paramètre ne peut pas être modifié car les conditions ne sont pas remplies.</French>
+                <Italian>Questo parametro non può essere modificato perché le condizioni non sono soddisfatte.</Italian>
+                <Korean>이 매개변수는 조건이 충족되지 않아 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить, потому что не выполняются условия.</Russian>
+                <Polish>Tego parametru nie można zmienić, ponieważ warunki nie są spełnione.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado porque as condições não são atendidas.</Portuguese>
+                <Chinesesimp>由于条件不满足，无法更改此参数。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_bydependency">
+                <Original>This parameter cannot be changed because it is locked by other parameters.</Original>
+                <Czech>Tento parametr nelze změnit, protože je zamčen jinými parametry.</Czech>
+                <French>Ce paramètre ne peut pas être modifié car il est verrouillé par d'autres paramètres.</French>
+                <Italian>Questo parametro non può essere modificato perché è bloccato da altri parametri.</Italian>
+                <Korean>이 매개변수는 다른 매개변수에 의해 잠겨 있어 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить, так как он заблокирован другими параметрами.</Russian>
+                <Polish>Tego parametru nie można zmienić, ponieważ jest zablokowany przez inne parametry.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado porque está bloqueado por outros parâmetros.</Portuguese>
+                <Chinesesimp>此参数被其他参数锁定，无法更改。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_warning">
                 <Original>Enabling rivals may have unintended side effects (e.g. possibility of default invader faction appearing) when invaders are disabled.</Original>
@@ -4109,6 +4263,72 @@
                 <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
                 <French>Ce paramètre ne peut pas être modifié lorsque les déverrouillages sont désactivés globalement.</French>
                 <Turkish>Açılır öğeler global olarak devre dışıysa bu parametre değiştirilemez</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets">
+                <Original>Parameter Presets</Original>
+                <Czech>Předvolby parametrů</Czech>
+                <French>Préréglages de paramètres</French>
+                <Italian>Preset dei parametri</Italian>
+                <Korean>매개변수 사전 설정</Korean>
+                <Russian>Предустановки параметров</Russian>
+                <Polish>Predefiniowane ustawienia parametrów</Polish>
+                <Portuguese>Predefinições de parâmetros</Portuguese>
+                <Chinesesimp>参数预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_new_preset_name">
+                <Original>New preset name</Original>
+                <Czech>Název nové předvolby</Czech>
+                <French>Nouveau nom de préréglage</French>
+                <Italian>Nuovo nome del preset</Italian>
+                <Korean>새 사전 설정 이름</Korean>
+                <Russian>Новое имя пресета</Russian>
+                <Polish>Nowa nazwa ustawienia predefiniowanego</Polish>
+                <Portuguese>Novo nome predefinido</Portuguese>
+                <Chinesesimp>新预设名称</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_save_preset">
+                <Original>Save Preset</Original>
+                <Czech>Uložit předvolbu</Czech>
+                <French>Enregistrer le préréglage</French>
+                <Italian>Salva preset</Italian>
+                <Korean>사전 설정 저장</Korean>
+                <Russian>Сохранить предустановку</Russian>
+                <Polish>Zapisz ustawienie wstępne</Polish>
+                <Portuguese>Salvar predefinição</Portuguese>
+                <Chinesesimp>保存预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_delete_preset">
+                <Original>Delete Preset</Original>
+                <Czech>Odstranit předvolbu</Czech>
+                <French>Supprimer le préréglage</French>
+                <Italian>Elimina preset</Italian>
+                <Korean>사전 설정 삭제</Korean>
+                <Russian>Удалить предустановку</Russian>
+                <Polish>Usuń ustawienie predefiniowane</Polish>
+                <Portuguese>Excluir predefinição</Portuguese>
+                <Chinesesimp>删除预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_rename_preset">
+                <Original>Rename Preset</Original>
+                <Czech>Přejmenování přednastavení</Czech>
+                <French>Renommer le préréglage</French>
+                <Italian>Rinomina preset</Italian>
+                <Korean>사전 설정 이름 바꾸기</Korean>
+                <Russian>Переименовать предустановку</Russian>
+                <Polish>Zmień nazwę ustawienia predefiniowanego</Polish>
+                <Portuguese>Renomear predefinição</Portuguese>
+                <Chinesesimp>重命名预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_search">
+                <Original>Parameter Search</Original>
+                <Czech>Vyhledávání parametrů</Czech>
+                <French>Recherche de paramètres</French>
+                <Italian>Ricerca parametri</Italian>
+                <Korean>매개변수 검색</Korean>
+                <Russian>Поиск параметров</Russian>
+                <Polish>Wyszukiwanie parametrów</Polish>
+                <Portuguese>Pesquisa de parâmetros</Portuguese>
+                <Chinesesimp>参数搜索</Chinesesimp>
             </Key>
         </Container>
         <Container name="setup_dialog_table">

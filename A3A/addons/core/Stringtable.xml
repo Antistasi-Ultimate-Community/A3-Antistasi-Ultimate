@@ -752,7 +752,6 @@
             </Key>
             <Key ID="STR_A3AU_dialogs_radioman_support">
                 <Original>Radioman</Original>
-                <English>Radioman</English>
                 <Russian>Радист</Russian>
                 <Korean>무전병</Korean>
                 <Chinesesimp>无线电兵</Chinesesimp>
@@ -760,7 +759,6 @@
             </Key>
             <Key ID="STR_A3AU_ambient_sounds">
                 <Original>Enable Ambient Sounds</Original>
-                <English>Enable Ambient Sounds</English>
                 <Russian>Включить фоновые звуки</Russian>
                 <German>Ambientegeräusche aktivieren</German>
                 <Italian>Abilita suoni ambientali</Italian>
@@ -777,7 +775,6 @@
             </Key>
             <Key ID="STR_A3AU_dialogs_squadleader_support">
                 <Original>Squadleader</Original>
-                <English>Squadleader</English>
                 <Russian>Лидер команды</Russian>
                 <Korean>분대장</Korean>
                 <Chinesesimp>小队长</Chinesesimp>
@@ -3024,7 +3021,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_Credits_name">
                 <Original>Credits</Original>
-                <English>Credits</English>
                 <Russian>Заслуги</Russian>
                 <Korean>크레딧</Korean>
                 <French>Crédits</French>
@@ -3110,7 +3106,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_tutorial_name">
                 <Original>Antistasi Basics</Original>
-                <English>Antistasi Basics</English>
                 <Russian>Основы Antistasi</Russian>
                 <Korean>일반 안티스타시</Korean>
                 <French>Notions d'antistasi</French>
@@ -3128,7 +3123,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_special_keys_name">
                 <Original>Special Keys</Original>
-                <English>Special Keys</English>
                 <Russian>Спец. клавиши</Russian>
                 <Korean>특수 키</Korean>
                 <French>Touches spéciales</French>
@@ -3137,7 +3131,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_features_detail_name">
                 <Original>Features Detail</Original>
-                <English>Features Detail</English>
                 <Russian>Возможности</Russian>
                 <Korean>기능 세부 정보</Korean>
                 <French>Détails des fonctionnalités</French>
@@ -3146,7 +3139,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_ai_management_name">
                 <Original>AI Management</Original>
-                <English>AI Management</English>
                 <Russian>Управление ИИ</Russian>
                 <Korean>AI 관리</Korean>
                 <French>Gestion de l'IA</French>
@@ -5990,20 +5982,6 @@
                 <Korean>&lt;br/&gt; - 재급유되었습니다</Korean>
                 <French>&lt;br/&gt; - ravitaillé en carburant</French>
                 <Turkish>&lt;br/&gt; - yakıt ikmali yapıldı</Turkish>
-                </Key>
-            <Key ID="STR_A3A_base_teardownMode_ON">
-                <Original>Turn teardown mode ON</Original>
-                <Russian>Включить режим разборки</Russian>
-                <Chinesesimp>开启拆卸模式</Chinesesimp>
-                <Korean>분해 모드 켜기</Korean>
-                <French>Activer le mode de démontage</French>
-            </Key>
-            <Key ID="STR_A3A_base_teardownMode_OFF">
-                <Original>Turn teardown mode OFF</Original>
-                <Russian>Выключить режим разборки</Russian>
-                <Chinesesimp>关闭拆卸模式</Chinesesimp>
-                <Korean>분해 모드 끄기</Korean>
-                <French>Désactiver le mode de démontage</French>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Last_Time_Purchase">
                 <Original>You already bought one, wait %1 seconds before you can buy another.</Original>
@@ -6468,6 +6446,14 @@
                 <Chinesesimp>启用自我复苏</Chinesesimp>
                 <Turkish>Kendi kendini canlandırma yöntemleri etkinleştirildi</Turkish>
             </Key>
+            <Key ID="STR_A3A_Params_selfReviveMethods_title">
+                <Original>No: Players cannot self-revive. Withstand: Players can self-revive if they have a first aid kit.</Original>
+                <Russian>Нет: Игроки не могут возрождаться самостоятельно. Выдержка: Игроки могут возрождаться самостоятельно, если у них есть аптечка.</Russian>
+                <Italian>Non: I giocatori non possono auto-rinascere. Resistere: I giocatori possono auto-rinascere se hanno un kit di pronto soccorso.</Italian>
+                <French>Non: Les joueurs ne peuvent pas se réanimer. Résister: Les joueurs peuvent se réanimer s'ils ont une trousse de premiers secours.</French>
+                <Korean>아니요: 플레이어는 자가소생을 할 수 없습니다. 견디기: 플레이어는 구급상자가 있으면 자가소생을 할 수 있습니다.</Korean>
+                <Chinesesimp>否：玩家无法自我复活。承受：玩家如果有急救箱可以自我复活。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3A_Params_selfReviveMethods_withstand">
                 <Original>Withstand</Original>
                 <Russian>Выдержка</Russian>
@@ -6597,6 +6583,12 @@
                 <Korean>적 공군 대응 속도</Korean>
                 <Turkish>Düşman hava desteği hızı</Turkish>
             </Key>
+            <Key ID="STR_A3A_Params_enemyResponseTime_desc">
+                <Original>Modify the time it takes for enemy supports to respond. Total time is also subject to aggression level of the enemy faction.</Original>
+                <Russian>Измените время, необходимое для реакции вражеской поддержки. Общее время также зависит от уровня агрессии вражеской фракции.</Russian>
+                <Chinesesimp>修改敌方支援响应所需的时间。总时间还取决于敌方派系的攻击性水平。</Chinesesimp>
+                <Korean>적 지원이 반응하는 데 걸리는 시간을 수정합니다. 총 시간은 적 진영의 공격성 수준에도 영향을 받습니다.</Korean>
+            </Key>
         </Container>
         <Container name="A3A_GCTracker">
             <Key ID="STR_A3A_GCTracker_tracker_title">
@@ -6630,7 +6622,6 @@
         <Container name="A3AU_SetupParams">
             <Key ID="STR_A3AU_params_name">
                 <Original>ANTISTASI ULTIMATE PARAMETERS</Original>
-                <English>ANTISTASI ULTIMATE PARAMETERS</English>
                 <Russian>ПАРАМЕТРЫ ANTISTASI ULTIMATE</Russian>
                 <Korean>안티스타시 얼티밋 매개변수</Korean>
                 <French>PARAMÈTRES D'ANTISTASI ULTIMATE</French>
@@ -6639,12 +6630,18 @@
             </Key>
             <Key ID="STR_A3AU_cosmetics">
                 <Original>Enable Cosmetics</Original>
-                <English>Enable Cosmetics</English>
                 <Russian>Добавить косметические предметы</Russian>
                 <Korean>설계도 활성화</Korean>
                 <French>Activer les cosmétiques</French>
                 <Chinesesimp>启用装饰性装备</Chinesesimp>
                 <Turkish>Kozmetikleri Etkinleştir</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_cosmetics_desc">
+                <Original>Enable or disable cosmetic headgear (goggles, glasses, masks, etc) from spawning in crates or otherwise appearing randomly in games. Useful when playing with modsets that should not have modern headwear (e.g. OPTRE, Star Wars, etc).</Original>
+                <Russian>Включить или отключить косметические головные уборы (очки, маски и т.д.) для появления в ящиках или случайного появления в игре. Полезно при игре с модами, которые не должны иметь современную головную одежду (например, OPTRE, Star Wars и т.д.).</Russian>
+                <Korean>상자에서 생성되거나 게임에서 무작위로 나타나는 화장용 머리 장식(고글, 안경, 마스크 등)을 활성화하거나 비활성화합니다. 현대적인 머리 장식을 포함하지 않아야 하는 모드셋과 함께 플레이할 때 유용합니다(예: OPTRE, Star Wars 등).</Korean>
+                <French>Activer ou désactiver les coiffes cosmétiques (lunettes, masques, etc.) pour qu'elles apparaissent dans les caisses ou autrement de manière aléatoire dans les jeux. Utile lors de l'utilisation de mods qui ne devraient pas avoir de coiffes modernes (par ex. OPTRE, Star Wars, etc.).</French>
+                <Chinesesimp>启用或禁用化妆头饰（护目镜、眼镜、面具等）在箱子中生成或在游戏中随机出现。当使用不应有现代头饰的模组集时（例如 OPTRE、星球大战等）非常有用。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_uncap_zombie_spawn">
                 <Original>Enable Uncapped Zombie Spawning</Original>
@@ -6655,6 +6652,13 @@
                 <Chinesesimp>启用无限僵尸生成</Chinesesimp>
                 <Turkish>Sınırsız Zombi Oluşumunu Etkinleştir</Turkish>
             </Key>
+            <Key ID="STR_A3AU_uncap_zombie_spawn_desc">
+                <Original>Allow zombies to continue spawning after configured global number of civilians is reached. Increases total number of spawned zombies by 2-3x.</Original>
+                <Russian>Разрешить зомби продолжать появляться после достижения настроенного глобального числа гражданских. Увеличивает общее количество появившихся зомби в 2-3 раза.</Russian>
+                <Korean>설정된 전 세계 민간인 수가 도달한 후에도 좀비가 계속 생성되도록 허용하세요. 생성되는 좀비 총 수가 2-3배 증가합니다.</Korean>
+                <French>Permettre aux zombies de continuer à apparaître une fois le nombre global configuré de civils atteint. Augmente le nombre total de zombies apparus de 2 à 3 fois.</French>
+                <Chinesesimp>允许僵尸在达到配置的全局平民数量后继续生成。生成僵尸总数增加2-3倍。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_old_garrison_spawn">
                 <Original>Use Old Plus Garrison Spawning</Original>
                 <English>Use Old Plus Garrison Spawning</English>
@@ -6664,14 +6668,27 @@
                 <Chinesesimp>使用旧版Antistasi Plus的驻军生成</Chinesesimp>
                 <Turkish>Eski Plus Garnizon Oluşum Sistemini Kullan</Turkish>
             </Key>
+            <Key ID="STR_A3AU_old_garrison_spawn_desc">
+                <Original>Use old method from Antistasi Plus to select units for spawning in garrisons. Does not account as well for changes in war level.</Original>
+                <Russian>Использовать старую логику спавна гарнизонов из Plus. Менее точно учитывает изменения уровня войны.</Russian>
+                <Korean>기존 안티스타시 플러스 주둔지 스폰 방식을 사용합니다. 전쟁 수준의 변화를 잘 반영하지 않습니다.</Korean>
+                <French>Utiliser l'ancienne méthode d'Antistasi Plus pour sélectionner les unités à faire apparaître dans les garnisons. Ne prend pas aussi bien en compte les changements de niveau de guerre.</French>
+                <Chinesesimp>使用旧版Antistasi Plus的方法选择驻军生成的单位。对战争等级的变化考虑不够充分。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_vanilla_weapons_in_arms_dealer">
                 <Original>Include Vanilla Weapons In Arms Dealer</Original>
-                <English>Include Vanilla Weapons In Arms Dealer</English>
                 <Russian>Добавить ванильное оружие/снаряжение/технику в ассортимент торговца оружием</Russian>
                 <Korean>암거래상에 바닐라 무기 포함</Korean>
                 <French>Inclure les armes Vanilla dans les contrats de vente d'armes</French>
                 <Chinesesimp>在军火商中加入原版武器</Chinesesimp>
                 <Turkish>Silah Tüccarına Vanilla Silahları Dahil Et</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_vanilla_weapons_in_arms_dealer_desc">
+                <Original>Weapons and other equipment from the base game is not included in the arms dealer's inventory by default when playing with non-vanilla factions. Enable this setting to include vanilla equipment regardless of factions in use.</Original>
+                <Russian>Оружие и другое снаряжение из базовой игры по умолчанию не включается в инвентарь торговца оружием при игре с не-ванильными фракциями. Включите эту настройку, чтобы включить ванильное снаряжение независимо от используемых фракций.</Russian>
+                <Korean>기본 게임의 무기 및 기타 장비는 비바닐라 진영으로 플레이할 때 기본적으로 암거래상 인벤토리에 포함되지 않습니다. 이 설정을 활성화하면 사용 중인 진영에 관계없이 바닐라 장비를 포함할 수 있습니다.</Korean>
+                <French>Les armes et autres équipements du jeu de base ne sont pas inclus par défaut dans l'inventaire du marchand d'armes lorsque vous jouez avec des factions non-vanilla. Activez cette option pour inclure l'équipement vanilla quel que soit la faction utilisée.</French>
+                <Chinesesimp>在使用非原版阵营时，基础游戏中的武器和其他装备默认不包含在军火商的库存中。启用此设置以无论使用何种阵营都包含原版装备。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_radioman_support">
                 <Original>Support Caller</Original>
@@ -6682,14 +6699,27 @@
                 <Chinesesimp>谁能呼叫支援</Chinesesimp>
                 <Turkish>Destek Çağırıcı</Turkish>
             </Key>
+            <Key ID="STR_A3AU_radioman_support_desc">
+                <Original>Controls which type of enemy AI soldiers can call for support. Selecting squad leader will cause more supports to be called as there are more squad leaders than radioman present in most group compositions.</Original>
+                <Russian>Контролирует, какой тип вражеских солдат ИИ может вызывать поддержку. Выбор командира отряда приведет к вызову большего количества поддержек, так как в большинстве составов групп больше командиров отрядов, чем радистов.</Russian>
+                <Korean>어떤 유형의 적 AI 병사가 지원을 요청할 수 있는지 제어합니다. 분대장을 선택하면 대부분의 그룹 구성에서 라디오맨보다 분대장이 더 많기 때문에 더 많은 지원이 호출됩니다.</Korean>
+                <French>Contrôle quel type de soldats ennemis IA peut appeler du renfort. Sélectionner le chef d'escouade entraînera l'appel de plus de renforts, car il y a plus de chefs d'escouade que de radioman dans la plupart des compositions de groupe.</French>
+                <Chinesesimp>控制哪种类型的敌方AI士兵可以呼叫支援。选择小队长将导致呼叫更多支援，因为在大多数小组组成中，小队长比无线电员更多。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_hide_enemy_markers">
                 <Original>Hide Enemy Zone Markers</Original>
-                <English>Hide Enemy Zone Markers</English>
                 <Russian>Спрятать маркеры вражеских баз</Russian>
                 <French>Cacher les marqueurs ennemis</French>
                 <Korean>적 구역 마커 숨기기</Korean>
                 <Chinesesimp>隐藏敌方区域标记</Chinesesimp>
                 <Turkish>Düşman Bölge İşaretçilerini Gizle</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_hide_enemy_markers_desc">
+                <Original>Locations of enemy zones (outposts, resources, factories, military bases, sea ports, and airports) will not be shown on the map by default. They can be revealed by discovering them in person, with rebel recon planes, or by gathering intel.</Original>
+                <Russian>Местоположения вражеских зон (форпосты, ресурсы, фабрики, военные базы, морские порты и аэропорты) по умолчанию не отображаются на карте. Они могут быть обнаружены лично, с помощью разведывательных самолетов повстанцев или путем сбора разведданных.</Russian>
+                <French>Les emplacements des zones ennemies (avant-postes, ressources, usines, bases militaires, ports maritimes et aéroports) ne seront pas affichés sur la carte par défaut. Ils peuvent être révélés en les découvrant en personne, avec des avions de reconnaissance rebelles ou en recueillant des informations.</French>
+                <Korean>적 구역의 위치(전초기지, 자원, 공장, 군사 기지, 항구 및 공항)는 기본적으로 지도에 표시되지 않습니다. 직접 발견하거나 반군 정찰기를 사용하거나 정보를 수집하여 공개할 수 있습니다.</Korean>
+                <Chinesesimp>敌方区域的位置（前哨、资源、工厂、军事基地、海港和机场）默认不会显示在地图上。 可以通过亲自发现、使用反叛侦察机或收集情报来揭示它们。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers_recon_plane_distance">
                 <Original>Recon Plane Zone Reveal Distance</Original>
@@ -6700,13 +6730,25 @@
                 <Chinesesimp>侦察机侦察距离</Chinesesimp>
                 <Turkish>Keşif Uçağı Bölge Açığa Çıkarma Mesafesi</Turkish>
             </Key>
+            <Key ID="STR_A3AU_hide_enemy_markers_recon_plane_distance_desc">
+                <Original>Radius (in meters) around rebel recon plane within which enemy zones will be revealed.</Original>
+                <Russian>Радиус (в метрах) вокруг разведывательного самолета повстанцев, в пределах которого будут обнаружены вражеские зоны.</Russian>
+                <French>Rayon (en mètres) autour de l'avion de reconnaissance rebelle dans lequel les zones ennemies seront révélées.</French>
+                <Korean>반군 정찰기 주변의 반경(미터 단위) 내에서 적 구역이 공개됩니다.</Korean>
+                <Chinesesimp>反叛侦察机周围的半径（以米为单位）内将显示敌方区域。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_victory_condition">
                 <Original>Victory Condition</Original>
-                <English>Victory Condition</English>
                 <Russian>Условие победы</Russian>
                 <Chinesesimp>胜利条件</Chinesesimp>
                 <Korean>승리 조건</Korean>
                 <Turkish>Zafer Koşulu</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_victory_condition_desc">
+                <Original>Normal Victory: Rebels have higher civilian support then occupants and control all military bases and airports. Total Victory: Rebels have higher civilian support than occupants and control all zones. Economic Victory: Rebels faction money surpasses number of resource zones times 100,000. Logistical Victory: Rebels control all airports, military bases, and sea ports.&lt;br/&gt;Political Victory: Rebels have higher civilian support than occupants.</Original>
+                <Russian>Обычная победа: Повстанцы имеют более высокую гражданскую поддержку, чем у оккупантов, и контролируют все военные базы и аэропорты. Полная победа: Повстанцы имеют большую гражданскую поддержку, чем обитатели, и контролируют все зоны. Экономическая победа: Деньги повстанцев превышают количество ресурсных зон в 100 000. Логистическая победа: Повстанцы контролируют все аэропорты, военные базы и морские порты.&lt;br/&gt;Политическая победа: Повстанцы имеют большую поддержку среди гражданского населения, чем у оккупантов.</Russian>
+                <Chinesesimp>普通胜利：叛军拥有比居民更高的平民支持，控制所有军事基地和机场。 完全胜利：叛军在平民支持度高于居民，控制所有区域。 经济胜利：叛军派系资金超过资源区数量的10万倍。 后勤胜利：叛军控制所有机场， 军事基地和海港。 政治胜利：叛军在平民中支持率高于驻军。</Chinesesimp>
+                <Korean>일반 승리: 반군은 점령군보다 민간 지지가 더 높고 모든 군사 기지와 공항을 장악합니다. 총승: 반군이 거주민보다 민간 지지가 높으며 모든 구역을 장악합니다. 경제적 승리: 반란군 세력 자금이 자원 구역 수를 100,000배로 초과합니다. 물류 승리: 반군이 모든 공항을 장악합니다, 군사 기지와 해상 항구들. 정치적 승리: 반군이 점령군보다 민간인 지지가 더 높습니다.</Korean>
             </Key>
             <Key ID="STR_A3AU_total_victory_deprecated">
                 <Original>Total Victory (deprecated)</Original>
@@ -6726,7 +6768,6 @@
             </Key>
             <Key ID="STR_A3AU_economic_victory">
                 <Original>Economic Victory</Original>
-                <English>Economic Victory</English>
                 <Russian>Экономическая победа</Russian>
                 <Chinesesimp>经济胜利</Chinesesimp>
                 <Korean>경제적 승리</Korean>
@@ -6742,7 +6783,6 @@
             </Key>
             <Key ID="STR_A3AU_normal_victory">
                 <Original>Normal Victory</Original>
-                <English>Normal Victory</English>
                 <Russian>Нормальная победа</Russian>
                 <Chinesesimp>普通胜利</Chinesesimp>
                 <Korean>보통 승리</Korean>
@@ -6750,7 +6790,6 @@
             </Key>
             <Key ID="STR_A3AU_logistical_victory">
                 <Original>Logistical Victory</Original>
-                <English>Logistical Victory</English>
                 <Russian>Логистическая победа</Russian>
                 <Chinesesimp>后勤胜利</Chinesesimp>
                 <Korean>군수적 승리</Korean>
@@ -6762,6 +6801,12 @@
                 <Chinesesimp>死亡时损失人力</Chinesesimp>
                 <Korean>사망 시 인력 손실</Korean>
                 <Turkish>Ölünce İK Kaybet</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_hr_loss_desc">
+                <Original>Disabled: Faction will not lose HR on player death. Enabled: Faction will lose HR on player death. Enabled (with HUD alerts): Faction will lose HR on player death and display warning message with remaining HR.</Original>
+                <Russian>Отключено: Фракция не теряет HR при смерти игрока. Включено: Фракция теряет HR при смерти игрока. Включено (с HUD-оповещениями): Фракция теряет HR при смерти игрока и отображает предупреждающее сообщение с оставшимся HR.</Russian>
+                <Chinesesimp>禁用：派系在玩家死亡时不会损失人力。 启用：派系在玩家死亡时会损失人力。 启用（带HUD警报）：派系在玩家死亡时会损失人力，并显示剩余人力的警告信息。</Chinesesimp>
+                <Korean>비활성화: 플레이어 사망 시 진영이 HR을 잃지 않습니다. 활성화: 플레이어 사망 시 진영이 HR을 잃습니다. 활성화 (HUD 경고 포함): 플레이어 사망 시 진영이 HR을 잃고 남은 HR을 경고 메시지로 표시합니다.</Korean>
             </Key>
             <Key ID="STR_A3AU_no_hr_loss">
                 <Original>Disabled</Original>
@@ -6790,6 +6835,12 @@
                 <Chinesesimp>失败条件</Chinesesimp>
                 <Korean>패배 조건</Korean>
                 <Turkish>Kaybetme Koşulları</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_loss_condition_desc">
+                <Original>Population Death: More than 1/3 of the civilian population is killed. Human Resource Loss: Rebel faction runs out of HR. Financial Loss: Rebel faction runs out of money. Hardcore: Any of the other loss conditions occurs.</Original>
+                <Russian>Гибель населения: Более трети гражданского населения погибает. Потеря человеческих ресурсов: У повстанческой фракции заканчивается HR. Финансовые потери: У повстанческой фракции заканчиваются деньги. Хардкор: Возникают другие условия потерь.</Russian>
+                <Chinesesimp>人口死亡：超过三分之一的平民被杀。 人力资源损失：反抗派系人资耗尽。 经济损失：反抗军派系资金耗尽。 硬核：其他任何损失条件都会出现。</Chinesesimp>
+                <Korean>인구 사망: 민간인 인구의 3분의 1 이상이 사망. 인적 자원 손실: 반란 세력 인력 소진. 재정 손실: 반란 세력 자금 소진. 하드코어: 다른 손실 조건 모두 발생.</Korean>
             </Key>
             <Key ID="STR_A3AU_loss_condition_pop_death">
                 <Original>Population death</Original>
@@ -6835,6 +6886,12 @@
                 <Korean>쓰러질 시 플레이어에게 알림</Korean>
                 <Turkish>Oyuncu Yere Düştüğünde Haber Ver</Turkish>
             </Key>
+            <Key ID="STR_A3AU_use_downed_notification_desc">
+                <Original>No: No notification to other players when players are downed. Yes: Notify other players in global chat when players are downed.</Original>
+                <Russian>Нет: Игроки не получают уведомления о падении других игроков. Да: Уведомлять других игроков в глобальном чате, когда игроки падают.</Russian>
+                <Chinesesimp>否：玩家不会收到其他玩家倒地的通知。 是：当玩家倒地时，在全局聊天中通知其他玩家。</Chinesesimp>
+                <Korean>아니요: 플레이어가 쓰러졌을 때 다른 플레이어에게 알리지 않음. 예: 플레이어가 쓰러졌을 때 글로벌 채팅에서 다른 플레이어에게 알림.</Korean>
+            </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
                 <English>Disable Arms Dealer</English>
@@ -6845,21 +6902,33 @@
             </Key>
             <Key ID="STR_A3AU_stamina_enabled">
                 <Original>Enable Stamina (Vanilla)</Original>
-                <English>Enable Stamina (Vanilla)</English>
                 <Russian>Включить выносливость (Vanilla)</Russian>
                 <Korean>스태미나 활성화 (바닐라)</Korean>
                 <French>Activer l'endurance (Vanilla)</French>
                 <Chinesesimp>启用体力(原版)</Chinesesimp>
                 <Turkish>Dayanıklılığı Etkinleştir (Vanilla)</Turkish>
             </Key>
+            <Key ID="STR_A3AU_stamina_enabled_desc">
+                <Original>Enable Vanilla Stamina system when playing without ACE or other mods that modify stamina.</Original>
+                <Russian>Включить систему выносливости (Vanilla) при игре без ACE или других модов, которые изменяют выносливость.</Russian>
+                <Korean>ACE 또는 스태미나를 수정하는 다른 모드 없이 플레이할 때 바닐라 스태미나 시스템 활성화</Korean>
+                <French>Activer le système d'endurance Vanilla lors de la lecture sans ACE ou d'autres mods qui modifient l'endurance.</French>
+                <Chinesesimp>在没有 ACE 或其他修改体力的模组下，启用原版体力系统。</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_fatigue_enabled">
                 <Original>Enable Fatigue (Vanilla)</Original>
-                <English>Enable Fatigue (Vanilla)</English>
                 <Russian>Включить усталость (Vanilla)</Russian>
                 <Korean>피로도 활성화 (바닐라)</Korean>
                 <French>Activer la fatigue (Vanilla)</French>
                 <Chinesesimp>启用疲劳(原版)</Chinesesimp>
                 <Turkish>Yorgunluğu Etkinleştir (Vanilla)</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_fatigue_enabled_desc">
+                <Original>Enable Vanilla Fatigue system when playing without ACE or other mods that modify fatigue.</Original>
+                <Russian>Включить систему усталости (Vanilla) при игре без ACE или других модов, которые изменяют усталость.</Russian>
+                <Korean>ACE 또는 피로도를 수정하는 다른 모드 없이 플레이할 때 바닐라 피로도 시스템 활성화</Korean>
+                <French>Activer le système de fatigue Vanilla lors de la lecture sans ACE ou d'autres mods qui modifient la fatigue.</French>
+                <Chinesesimp>在没有 ACE 或其他修改疲劳的模组下，启用原版疲劳系统。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_sway_enabled">
                 <Original>Weapon Sway % (Vanilla)</Original>
@@ -6870,9 +6939,15 @@
                 <Chinesesimp>武器晃动 % (原版)</Chinesesimp>
                 <Turkish>Silah Sallanma Yüzdesi % (Vanilla)</Turkish>
             </Key>
+            <Key ID="STR_A3AU_sway_enabled_desc">
+                <Original>Set a static weapon sway % when playing without ACE or other mods that modify weapon sway.</Original>
+                <Russian>Установите статический процент раскачивания оружия при игре без ACE или других модов, которые изменяют раскачивание оружия.</Russian>
+                <Korean>ACE 또는 무기 흔들림을 수정하는 다른 모드 없이 플레이할 때 고정된 무기 흔들림 %를 설정합니다.</Korean>
+                <French>Définir un pourcentage de balancement d'arme statique lors de la lecture sans ACE ou d'autres mods qui modifient le balancement de l'arme.</French>
+                <Chinesesimp>在没有 ACE 或其他修改武器晃动的模组下，设置静态武器晃动百分比。</Chinesesimp>
+            </Key>
             <Key ID="STR_notifiers_reload_turret">
                 <Original>Total: %1. Magazines: </Original>
-                <English>Total: %1. Magazines: </English>
                 <Russian>Всего: %1. Магазины: </Russian>
                 <Chinesesimp>总计: %1. 弹匣:</Chinesesimp>
                 <Korean>합계: %1. 탄창:</Korean>
@@ -6969,6 +7044,9 @@
              <Key ID="STR_A3A_Params_garageAccessTimer_title">
                 <Original>Simulate logistics by blocking flag functions after capture for X minutes</Original>
                 <Turkish>Ele geçirmeden sonra bayrak işlevlerini X dakika engelleyerek lojistiği simüle et</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Params_garageAccessTimer_desc">
+                <Original>Time (in minutes) after capturing a zone before players can access the garage via the flag at that zone.</Original>
             </Key>
         </Container>
     </Package>
