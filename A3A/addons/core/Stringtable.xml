@@ -4125,7 +4125,7 @@
                 <Korean>합계: %1. 탄창:</Korean>
                 <Turkish>Toplam: %1. Şarjörler: </Turkish>
             </Key>
-        </Container>
+        </Container> 
         <Container name="intel_civilian_interaction">
         <Key ID="STR_antistasi_intel_weapon_informant">
             <Original>An informant gave you the location of a warehouse containing stashes of the&lt;br/&gt; %1.&lt;br/&gt; You have acquired %2 of this weapon.</Original>
