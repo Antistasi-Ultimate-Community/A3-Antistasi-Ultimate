@@ -10,7 +10,7 @@
                 <Italian>RECLUTA UNITA</Italian>
                 <Polish>ZWERBUJ JEDNOSTKI</Polish>
                 <Portuguese>UNIDADES DE RECRUTAMENTO</Portuguese>
-                <Russian>НАНЯТЬ СОЛДАТ</Russian>
+                <Russian>НАНЯТЬ БОЙЦОВ</Russian>
                 <German>REKRUTIERUNGSEINHEITEN</German>
                 <Chinesesimp>招募单位</Chinesesimp>
                 <Korean>유닛 모집</Korean>
@@ -33,7 +33,7 @@
                 <Original>Autorifleman</Original>
                 <French>Fusilier mitrailleur</French>
                 <Korean>자동소총수</Korean>
-                <Russian>Пулеметчик</Russian>
+                <Russian>Пулемётчик</Russian>
                 <Chinesesimp>机枪手</Chinesesimp>
                 <Czech>Kulometčík</Czech>
                 <Italian>Fuciliere Automatico</Italian>
@@ -69,7 +69,7 @@
                 <Original>Sapper</Original>
                 <French>Spécialiste des bombes</French>
                 <Korean>폭파전문가</Korean>
-                <Russian>Сапер</Russian>
+                <Russian>Сапёр</Russian>
                 <Chinesesimp>炸弹专家</Chinesesimp>
                 <Czech>Specialista výbušnin</Czech>
                 <Italian>Specialista Esplosivi</Italian>
@@ -81,7 +81,7 @@
                 <Original>Grenadier</Original>
                 <French>Grenadier</French>
                 <Korean>유탄수</Korean>
-                <Russian>Гренадер</Russian>
+                <Russian>Гренадёр</Russian>
                 <Chinesesimp>掷弹手</Chinesesimp>
                 <Czech>Granátometčík</Czech>
                 <Italian>Granatiere</Italian>
@@ -105,7 +105,7 @@
                 <Original>Antitank</Original>
                 <French>Anti-char</French>
                 <Korean>대전차병</Korean>
-                <Russian>Гранатометчик</Russian>
+                <Russian>Стрелок (ПТ)</Russian>
                 <Chinesesimp>反坦克手</Chinesesimp>
                 <Czech>Protitankový střelec</Czech>
                 <Italian>Fuciliere Anti-Carro</Italian>
@@ -167,7 +167,7 @@
                 <Original>Only the commander can access the commander tab</Original>
                 <French>Seul le commandant peut accéder à l'onglet commandant</French>
                 <Korean>지휘관만 지휘관 탭에 액세스할 수 있습니다</Korean>
-                <Russian>Только командир имеет доступ к командирскому меню</Russian>
+                <Russian>Только Командир имеет доступ к командирскому меню</Russian>
                 <Chinesesimp>只有指挥官可以访问指挥官选项卡</Chinesesimp>
                 <Czech>Na kartu velitele má přístup pouze velitel</Czech>
                 <Italian>Solo il comandante può accedere al menu comandante</Italian>
@@ -229,7 +229,7 @@
                 <Original>MG Team</Original>
                 <French>Équipe MG</French>
                 <Korean>기관총 팀</Korean>
-                <Russian>Пулеметный расчет</Russian>
+                <Russian>Пулемётный расчёт</Russian>
                 <Chinesesimp>机枪班组</Chinesesimp>
                 <Czech>MG tým</Czech>
                 <Italian>Team MG</Italian>
@@ -241,7 +241,7 @@
                 <Original>Mortar Team</Original>
                 <French>Équipe Mortier</French>
                 <Korean>박격포반</Korean>
-                <Russian>Минометный расчет</Russian>
+                <Russian>Миномётный расчёт</Russian>
                 <Chinesesimp>迫击炮班组</Chinesesimp>
                 <Czech>Minometný tým</Czech>
                 <Italian>Team Mortaio</Italian>
@@ -253,7 +253,7 @@
                 <Original>Sniper Team</Original>
                 <French>Équipe Sniper</French>
                 <Korean>저격조</Korean>
-                <Russian>Снайперская пара</Russian>
+                <Russian>Снайперская команда</Russian>
                 <Chinesesimp>狙击班组</Chinesesimp>
                 <Czech>Sniper tým</Czech>
                 <Italian>Team di Cecchini</Italian>
@@ -299,6 +299,174 @@
             </Key>
         </Container>
         <Container name="dialogs_generic">
+            <Key ID="STR_antistasi_dialogs_generic_yes">
+                <Original>Yes</Original>
+                <French>Oui</French>
+                <Korean>예</Korean>
+                <Russian>Да</Russian>
+                <Chinesesimp>是</Chinesesimp>
+                <Czech>Ano</Czech>
+                <Italian>Sì</Italian>
+                <Spanish>SI</Spanish>
+                <Polish>Tak</Polish>
+                <Turkish>Evet</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_no">
+                <Original>No</Original>
+                <French>Non</French>
+                <Korean>아니오</Korean>
+                <Russian>Нет</Russian>
+                <Chinesesimp>否</Chinesesimp>
+                <Czech>Ne</Czech>
+                <Italian>No</Italian>
+                <Spanish>NO</Spanish>
+                <Polish>Nie</Polish>
+                <Turkish>Hayır</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_days">
+                <Original>days</Original>
+                <French>jours</French>
+                <Korean>일</Korean>
+                <Russian>дни</Russian>
+                <Chinesesimp>天</Chinesesimp>
+                <Czech>dny</Czech>
+                <Italian>giorni</Italian>
+                <Spanish>días</Spanish>
+                <Polish>dni</Polish>
+                <Turkish>günler</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_hours">
+                <Original>hours</Original>
+                <French>heures</French>
+                <Korean>시간</Korean>
+                <Russian>часы</Russian>
+                <Chinesesimp>时</Chinesesimp>
+                <Czech>hodiny</Czech>
+                <Italian>ore</Italian>
+                <Spanish>horas</Spanish>
+                <Polish>godziny</Polish>
+                <Turkish>saatler</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_minutes">
+                <Original>minutes</Original>
+                <French>minutes</French>
+                <Korean>분</Korean>
+                <Russian>минуты</Russian>
+                <Chinesesimp>分</Chinesesimp>
+                <Czech>minut</Czech>
+                <Italian>minuti</Italian>
+                <Spanish>minutos</Spanish>
+                <Polish>minuty</Polish>
+                <Turkish>dakikalar</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_seconds">
+                <Original>seconds</Original>
+                <French>secondes</French>
+                <Korean>초</Korean>
+                <Russian>секунды</Russian>
+                <Chinesesimp>秒</Chinesesimp>
+                <Czech>sekundy</Czech>
+                <Italian>secondi</Italian>
+                <Spanish>segundos</Spanish>
+                <Polish>sekundy</Polish>
+                <Turkish>saniyeler</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_day">
+                <Original>day</Original>
+                <French>jour</French>
+                <Korean>일</Korean>
+                <Russian>день</Russian>
+                <Chinesesimp>天</Chinesesimp>
+                <Czech>den</Czech>
+                <Italian>giorno</Italian>
+                <Spanish>día</Spanish>
+                <Polish>dzień</Polish>
+                <Turkish>gün</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_hour">
+                <Original>hour</Original>
+                <French>heure</French>
+                <Korean>시간</Korean>
+                <Russian>час</Russian>
+                <Chinesesimp>时</Chinesesimp>
+                <Czech>hodina</Czech>
+                <Italian>ora</Italian>
+                <Spanish>horas</Spanish>
+                <Polish>godzina</Polish>
+                <Turkish>saat</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_minute">
+                <Original>minute</Original>
+                <French>minute</French>
+                <Korean>분</Korean>
+                <Russian>минута</Russian>
+                <Chinesesimp>分</Chinesesimp>
+                <Czech>minuta</Czech>
+                <Italian>minuto</Italian>
+                <Spanish>minutos</Spanish>
+                <Polish>minuta</Polish>
+                <Turkish>dakika</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_second">
+                <Original>second</Original>
+                <French>seconde</French>
+                <Korean>초</Korean>
+                <Russian>секунда</Russian>
+                <Chinesesimp>秒</Chinesesimp>
+                <Czech>druhý</Czech>
+                <Italian>secondo</Italian>
+                <Spanish>segundos</Spanish>
+                <Polish>sekunda</Polish>
+                <Turkish>saniye</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_days_short">
+                <Original>d</Original>
+                <French>j</French>
+                <Korean>일</Korean>
+                <Russian>д</Russian>
+                <Chinesesimp>d</Chinesesimp>
+                <Czech>d</Czech>
+                <Italian>g</Italian>
+                <Spanish>d</Spanish>
+                <Polish>d</Polish>
+                <Turkish>g</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_hours_short">
+                <Original>h</Original>
+                <French>h</French>
+                <Korean>시간</Korean>
+                <Russian>ч</Russian>
+                <Chinesesimp>h</Chinesesimp>
+                <Czech>h</Czech>
+                <Italian>o</Italian>
+                <Spanish>h</Spanish>
+                <Polish>h</Polish>
+                <Turkish>s</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_minutes_short">
+                <Original>m</Original>
+                <French>m</French>
+                <Korean>분</Korean>
+                <Russian>м</Russian>
+                <Chinesesimp>m</Chinesesimp>
+                <Czech>m</Czech>
+                <Italian>m</Italian>
+                <Spanish>m</Spanish>
+                <Polish>m</Polish>
+                <Turkish>dk</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_generic_seconds_short">
+                <Original>s</Original>
+                <French>s</French>
+                <Korean>초</Korean>
+                <Russian>с</Russian>
+                <Chinesesimp>s</Chinesesimp>
+                <Czech>s</Czech>
+                <Italian>s</Italian>
+                <Spanish>s</Spanish>
+                <Polish>s</Polish>
+                <Turkish>sn</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_generic_aggression">
                 <Original>aggression</Original>
                 <French>agression</French>
@@ -310,6 +478,20 @@
                 <Spanish>agresión</Spanish>
                 <Polish>agresja</Polish>
                 <Turkish>saldırganlık</Turkish>
+            </Key>
+        </Container>
+        <Container name="dialog_load_last_save">
+            <Key ID="STR_antistasi_dialogs_load_last_save_titlebar">
+                <Original>LOAD LAST SAVE?</Original>
+                <French>CHARGER LA DERNIÈRE SAUVEGARDE ?</French>
+                <Korean>마지막 저장을 불러옵니까?</Korean>
+                <Russian>ЗАГРУЗИТЬ ПОСЛЕДНЕЕ СОХРАНЕНИЕ?</Russian>
+                <Chinesesimp>加载最近的保存项？</Chinesesimp>
+                <Czech>NAČÍST POSLEDNÍ ULOŽENÍ?</Czech>
+                <Italian>CARICARE L'ULTIMO SALVATAGGIO?</Italian>
+                <Spanish>¿CARGAR ÚLTIMA PARTIDA?</Spanish>
+                <Polish>WCZYTAĆ OSTATNI ZAPIS GRY?</Polish>
+                <Turkish>SON KAYDI YÜKLE?</Turkish>
             </Key>
         </Container>
         <Container name="dialog_buy_vehicle">
@@ -332,6 +514,14 @@
                 <Korean>전쟁이 진행될 때마다 저항군의 차량 재고가 증가한다는 것을 알아두세요.</Korean>
                 <French>Notez que le stock de véhicules des rebelles s'accroît au fur et à mesure que la guerre évolue.</French>
                 <Turkish>İsyancı araç stoğunun savaş ilerledikçe arttığını unutmayın</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_black_market_tip">
+                <Original>Black market vehicle stock depends on current War Level and various achieved milestones.</Original>
+                <Russian>Список техники на чёрном рынке зависит от текущего уровня войны и успехов повстанцев.</Russian>
+                <Chinesesimp>黑市上可买的载具清单取决于当前的战争水平和反抗军的各种成功。</Chinesesimp>
+                <Korean>암시장 차량 재고는 현재 전쟁 레벨과 달성한 다양한 이정표에 따라 달라집니다.</Korean>
+                <French>Le stock de véhicules du marché noir dépend du niveau de guerre actuel et des différentes étapes franchies.</French>
+                <Turkish>Karaborsa araçları, Savaş Seviyesi ve tamamlanan görevler doğrultusunda belirlenir</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_button">
                 <Original>Purchase</Original>
@@ -519,7 +709,7 @@
             <Key ID="STR_antistasi_dialogs_buy_item_custom_hint_commander_only">
                 <Original>Only the Commander may buy this item.</Original>
                 <Chinesesimp>只有指挥官可以购买此物品</Chinesesimp>
-                <Russian>Только командир может купить этот предмет.</Russian>
+                <Russian>Только Командир может купить этот предмет.</Russian>
                 <Korean>지휘관만 이 아이템을 살 수 있습니다.</Korean>
                 <French>Seul le commandant peut acheter cet article.</French>
                 <Turkish>Bu öğeyi yalnızca komutan satın alabilir</Turkish>
@@ -628,7 +818,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightarmed">
                 <Original>Rebel Armed</Original>
-                <Russian>Вооруженные машины повстанцев</Russian>
+                <Russian>Вооружённые машины повстанцев</Russian>
                 <Chinesesimp>反抗军有武装</Chinesesimp>
                 <Korean>반군용 무장 차량</Korean>
                 <Turkish>İsyancı Silahlılar</Turkish>
@@ -663,7 +853,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticMG">
                 <Original>MG Statics</Original>
-                <Russian>Пулеметные турели</Russian>
+                <Russian>Пулемётные турели</Russian>
                 <Chinesesimp>静态机枪</Chinesesimp>
                 <Korean>고정 기관총</Korean>
                 <Turkish>MG Statikler</Turkish>
@@ -759,6 +949,10 @@
                 <Korean>전차</Korean>
                 <Turkish>Tanklar</Turkish>
             </Key>
+            <!-- <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
+                <Original>Statics</Original>
+                <Russian>Стационарные оружия</Russian>
+            </Key> -->
             <Key ID="STR_antistasi_dialogs_vehicle_tab_heli">
                 <Original>Helicopters</Original>
                 <Russian>Вертолёты</Russian>
@@ -775,7 +969,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_armedcar">
                 <Original>Armed cars</Original>
-                <Russian>Вооруженные автомобили</Russian>
+                <Russian>Вооружённые автомобили</Russian>
                 <Chinesesimp>武装车辆</Chinesesimp>
                 <Korean>무장 차량</Korean>
                 <Turkish>Silahlı Araba</Turkish>
@@ -835,6 +1029,14 @@
                 <Korean>이 아이템은 광원을 제공합니다.</Korean>
                 <French>Cet article fournit une source lumineuse.</French>
                 <Turkish>Bu öğe ışık kaynağı sağlar.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_revivekitbox_tooltip">
+                <Original>This item contains certain amount of Combat Readiness Recovery kits.</Original>
+                <Russian>Этот предмет содержит в себе некоторое количество наборов восстановления боеспособности.</Russian>
+                <Chinesesimp>这个物品包含一定数量的战备恢复包。</Chinesesimp>
+                <Korean>이 아이템은 일정량의 전투 준비 복구 키트가 들어 있습니다.</Korean>
+                <French>Cet objet contient un certain nombre de kits de récupération de l'état de préparation au combat.</French>
+                <Turkish>Bu öğe belirli sayıda Savaş Hazırlığı Yenileme kiti içerir</Turkish>
             </Key>
         </Container>
         <Container name="dialog_main_player">
@@ -950,7 +1152,7 @@
                 <Original>Set Eligible</Original>
                 <French>Devenir Éligible</French>
                 <Korean>인계하기</Korean>
-                <Russian>Включить возможность встать на дожность Командира</Russian>
+                <Russian>Включить возможность стать Командиром</Russian>
                 <Chinesesimp>赋予资格</Chinesesimp>
                 <Czech>Nastavit způsobilý</Czech>
                 <Italian>Mettiti Eleggibile</Italian>
@@ -962,7 +1164,7 @@
                 <Original>Set Ineligible</Original>
                 <French>Devenir Inéligible</French>
                 <Korean>박탈하기</Korean>
-                <Russian>Выключить возможность встать на дожность Командира</Russian>
+                <Russian>Выключить возможность стать Командиром</Russian>
                 <Chinesesimp>取消资格</Chinesesimp>
                 <Czech>Nastavit nezpůsobilý</Czech>
                 <Italian>Mettiti Ineleggibile</Italian>
@@ -1286,6 +1488,18 @@
                 <Polish>Wsiadać</Polish>
                 <Turkish>Bin</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_main_hc_dismount">
+                <Original>Dismount</Original>
+                <French>Démonter</French>
+                <Korean>하차</Korean>
+                <Russian>Спешиться</Russian>
+                <Chinesesimp>离开载具</Chinesesimp>
+                <Czech>Sesednout</Czech>
+                <Italian>Smonta</Italian>
+                <Spanish>Desembarcar</Spanish>
+                <Polish>Wysiadać</Polish>
+                <Turkish>Boşalt</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_main_hc_add_vehicle">
                 <Original>Add Vehicle</Original>
                 <French>Ajouter un véhicule</French>
@@ -1566,7 +1780,7 @@
                 <Original>Unable to fire. Mortar is not deployed.</Original>
                 <French>Impossible de tirer. Le mortier n'est pas déployé.</French>
                 <Korean>발사할 수 없습니다. 박격포가 배치되지 않았습니다.</Korean>
-                <Russian>Нет возможности стрелять. Миномет на установлен.</Russian>
+                <Russian>Нет возможности стрелять. Миномёт не установлен.</Russian>
                 <Chinesesimp>无法开火：迫击炮未部署</Chinesesimp>
                 <Czech>Nelze vystřelit. Minomet není rozložen</Czech>
                 <Italian>Impossibile sparare. Il mortaio non schierato.</Italian>
@@ -1614,7 +1828,7 @@
                 <Original>Mortar is deployed</Original>
                 <French>Le mortier est déployé</French>
                 <Korean>박격포가 배치되었습니다</Korean>
-                <Russian>Миномет установлен</Russian>
+                <Russian>Миномёт установлен</Russian>
                 <Chinesesimp>迫击炮已部署</Chinesesimp>
                 <Czech>Minomet je rozložen</Czech>
                 <Italian>Mortaio Schierato</Italian>
@@ -1626,7 +1840,7 @@
                 <Original>Mortar is not deployed</Original>
                 <French>Le mortier n'est pas déployé</French>
                 <Korean>박격포가 배치되지 않았습니다</Korean>
-                <Russian>Миномет не установлен</Russian>
+                <Russian>Миномёт не установлен</Russian>
                 <Chinesesimp>迫击炮未部署</Chinesesimp>
                 <Czech>Minomet není rozložen</Czech>
                 <Italian>Mortaio non schierato</Italian>
@@ -1638,7 +1852,7 @@
                 <Original>Static weapon is deployed</Original>
                 <French>L'arme statique est déployée</French>
                 <Korean>고정화기가 배치되었습니다</Korean>
-                <Russian>Статичное вооружение установлено</Russian>
+                <Russian>Стационарное вооружение установлено</Russian>
                 <Chinesesimp>固定武器已部署</Chinesesimp>
                 <Czech>Je rozložena statická zbraň</Czech>
                 <Italian>Arma Fissa schierata</Italian>
@@ -1650,7 +1864,7 @@
                 <Original>Static weapon is not deployed</Original>
                 <French>L'arme statique n'est pas déployée</French>
                 <Korean>고정화기가 배치되지 않았습니다</Korean>
-                <Russian>Статичное вооружение не установлено</Russian>
+                <Russian>Стационарное вооружение не установлено</Russian>
                 <Chinesesimp>固定武器未部署</Chinesesimp>
                 <Czech>Není rozložena statická zbraň</Czech>
                 <Italian>Arma Fissa non schierata</Italian>
@@ -2098,6 +2312,30 @@
                 <Polish>Agresja:</Polish>
                 <Turkish>Saldırganlık:</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_hq_occupants_aggression">
+                <Original>Occupants aggression</Original>
+                <French>Agressivité des occupants</French>
+                <Korean>점령군 공격성</Korean>
+                <Russian>Агрессия оккупантов</Russian>
+                <Chinesesimp>占领方的进攻性</Chinesesimp>
+                <Czech>Agrese cestujících</Czech>
+                <Italian>Aggressione degli Occupanti:</Italian>
+                <Spanish>Agresión Ocupante:</Spanish>
+                <Polish>Agresja okupantów</Polish>
+                <Turkish>İşgalci Saldırganlığı</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_invader_aggression">
+                <Original>Invader aggression</Original>
+                <French>Agression de l'envahisseur</French>
+                <Korean>침략군 공격성</Korean>
+                <Russian>Агрессия захватчика</Russian>
+                <Chinesesimp>侵略方的进攻性</Chinesesimp>
+                <Czech>Agrese útočníka</Czech>
+                <Italian>Aggressione dell'Invasore</Italian>
+                <Spanish>Agresión Invasores:</Spanish>
+                <Polish>Agresja najeźdźców</Polish>
+                <Turkish>İstilacı Saldırganlığı</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_hq_controlled_cities">
                 <Original>Controlled cities</Original>
                 <French>Villes contrôlées</French>
@@ -2186,7 +2424,7 @@
                 <Original>Dead population\nYou lose when this hits 33%</Original>
                 <French>Population morte\nVous perdez quand cela atteint 33%</French>
                 <Korean>전체 인구의\n33% 이상 잃으면 패배합니다</Korean>
-                <Russian>Мертвое население/nВы проиграете, когда оно достигнет 33%</Russian>
+                <Russian>Мёртвое население/nВы проиграете, когда оно достигнет 33%</Russian>
                 <Chinesesimp>死亡人口 \n 达到 33% 时你会输掉游戏</Chinesesimp>
                 <Czech>Mrtvá populace \n ztratíte, když bude 33%</Czech>
                 <Italian>Popolazione Morta\nPerderai se raggiungerà il 33%</Italian>
@@ -2210,7 +2448,7 @@
                 <Original>HR:</Original>
                 <French>RH:</French>
                 <Korean>인력:</Korean>
-                <Russian>ЧР:</Russian>
+                <Russian>ЛР:</Russian>
                 <Chinesesimp>人力</Chinesesimp>
                 <Czech>HR:</Czech>
                 <Italian>RU:</Italian>
@@ -2270,7 +2508,7 @@
                 <Original>Rest &amp; Environment</Original>
                 <French>Se reposer &amp; Environnement</French>
                 <Korean>휴식 &amp; 환경</Korean>
-                <Russian>Среда &amp;amp; Отдыха</Russian>
+                <Russian>Среда &amp;amp; Отдых</Russian>
                 <Chinesesimp>休息 &amp; 环境</Chinesesimp>
                 <Czech>Odpočinek &amp; prostředí</Czech>
                 <Italian>Riposa &amp; Ambiente</Italian>
@@ -2356,7 +2594,7 @@
                 <Original>Autorifleman</Original>
                 <French>Mitrailleur</French>
                 <Korean>기관총 사수</Korean>
-                <Russian>Пулеметчик</Russian>
+                <Russian>Пулемётчик</Russian>
                 <Chinesesimp>自动步枪手</Chinesesimp>
                 <Czech>Kulometčík</Czech>
                 <Italian>Fuciliere Automatico</Italian>
@@ -2368,7 +2606,7 @@
                 <Original>Grenadier</Original>
                 <French>Grenadier</French>
                 <Korean>유탄수</Korean>
-                <Russian>Гренадер</Russian>
+                <Russian>Гренадёр</Russian>
                 <Chinesesimp>掷弹手</Chinesesimp>
                 <Czech>Granátometčík</Czech>
                 <Italian>Granatiere</Italian>
@@ -2392,7 +2630,7 @@
                 <Original>Mortar</Original>
                 <French>Mortier</French>
                 <Korean>박격포</Korean>
-                <Russian>Миномет</Russian>
+                <Russian>Миномёт</Russian>
                 <Chinesesimp>迫击炮</Chinesesimp>
                 <Czech>Minomet</Czech>
                 <Italian>Mortaio</Italian>
@@ -2416,7 +2654,7 @@
                 <Original>AT</Original>
                 <French>AT</French>
                 <Korean>대전차병</Korean>
-                <Russian>Гранатометчик</Russian>
+                <Russian>Стрелок (ПТ)</Russian>
                 <Chinesesimp>反坦克手</Chinesesimp>
                 <Czech>AT</Czech>
                 <Italian>Fuciliere Anti-Carro</Italian>
@@ -2428,7 +2666,7 @@
                 <Original>Not enough money/HR</Original>
                 <French>Pas assez d'argent/RH</French>
                 <Korean>자금/인력이 부족합니다</Korean>
-                <Russian>Недостаточно денег/ЧР</Russian>
+                <Russian>Недостаточно денег/ЛР</Russian>
                 <Chinesesimp>人力/资金不足</Chinesesimp>
                 <Czech>Nedostatek peněz/HR</Czech>
                 <Italian>Non hai abbastanza soldi/RU</Italian>
@@ -2636,13 +2874,25 @@
                 <Original>Spawn Distance</Original>
                 <French>Distance d'apparition</French>
                 <Korean>스폰 거리</Korean>
-                <Russian>Дистанция спавна</Russian>
+                <Russian>Дистанция появления</Russian>
                 <Chinesesimp>生成距离</Chinesesimp>
                 <Czech>Spawn Vzdálenost</Czech>
                 <Italian>Distanza di Spawn</Italian>
                 <Spanish>Distancia de aparición</Spanish>
                 <Polish>Dystans Pojawiania się</Polish>
                 <Turkish>Doğma Mesafesi</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_main_admin_ai_limiter_label">
+                <Original>AI Limiter</Original>
+                <French>Limite d'IA</French>
+                <Korean>인공지능 제한</Korean>
+                <Russian>Ограничение ИИ</Russian>
+                <Chinesesimp>AI限制</Chinesesimp>
+                <Czech>Omezovač AI</Czech>
+                <Italian>Limitatore IA</Italian>
+                <Spanish>Límite de IA</Spanish>
+                <Polish>Ogranicznik AI</Polish>
+                <Turkish>AI Sınırlayıcı</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_ai_section_warning">
                 <Original>BE CAREFUL WHEN EDITING THESE SETTINGS. SETTING THEM TOO HIGH *WILL* BREAK THE GAME.</Original>
@@ -2715,6 +2965,18 @@
                 <Spanish>Bandera</Spanish>
                 <Polish>Flaga</Polish>
                 <Turkish>Bayrak</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_main_admin_tp_tent_button">
+                <Original>Tent</Original>
+                <French>Tente</French>
+                <Korean>텐트</Korean>
+                <Russian>Палатка</Russian>
+                <Chinesesimp>帐篷</Chinesesimp>
+                <Czech>Stan</Czech>
+                <Italian>Tenda</Italian>
+                <Spanish>Tienda</Spanish>
+                <Polish>Namiot</Polish>
+                <Turkish>Çadır</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_main_admin_tp_map_button">
                 <Original>Map</Original>
@@ -2914,7 +3176,7 @@
                 <Original>Clears list selection</Original>
                 <French>Effacer la sélection de la liste</French>
                 <Korean>목록 선택을 지웁니다</Korean>
-                <Russian>Очитстить выделение в списке</Russian>
+                <Russian>Очистить выделение в списке</Russian>
                 <Chinesesimp>清除选择列表</Chinesesimp>
                 <Czech>Vyčistit výběr seznamu</Czech>
                 <Italian>Cancella la selezione dell'elenco</Italian>
@@ -2996,6 +3258,18 @@
             </Key>
         </Container>
         <Container name="recruit_squad">
+            <Key ID="STR_antistasi_recruit_squad_hint_title">
+                <Original>Recruit Squad</Original>
+                <French>Recruter une escouade</French>
+                <Korean>분대 모집</Korean>
+                <Russian>Нанять отряд</Russian>
+                <Chinesesimp>招募小队</Chinesesimp>
+                <Czech>Náborové družstvo</Czech>
+                <Italian>Recluta Squadra</Italian>
+                <Spanish>Reclutar Escuadra</Spanish>
+                <Polish>Rekrutuj Oddział</Polish>
+                <Turkish>Manga Kur</Turkish>
+            </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_commander_only">
                 <Original>Only the Commander has access to this function</Original>
                 <French>Seul le commandant a accès à cette fonction</French>
@@ -3008,6 +3282,102 @@
                 <Polish>Tylko dowódca ma dostęp do tej funkcji</Polish>
                 <Turkish>Bu işleve yalnızca Komutan erişebilir</Turkish>
             </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_moving_hq">
+                <Original>You cannot recruit a new squad while you are moving your HQ</Original>
+                <French>Vous ne pouvez pas recruter une nouvelle escouade pendant que vous déplacez votre QG</French>
+                <Korean>본부를 이동하는 동안에는 새 분대를 모집할 수 없습니다</Korean>
+                <Russian>Вы не можете нанять новый отряд во время перемещения своего Штаба</Russian>
+                <Chinesesimp>移动总部时不能招募新小队</Chinesesimp>
+                <Czech>Když pohybujete velitelstvím, nemůžete najmout nový tým</Czech>
+                <Italian>Non puoi reclutare una squadra quando stai muovendo l'HQ</Italian>
+                <Spanish>No puedes reclutar una escuadra mientras mueves el CG</Spanish>
+                <Polish>Nie możesz rekrutować nowego oddziału, gdy przenosisz swoją kwaterę główną</Polish>
+                <Turkish>Karargâhınız taşırken yeni bir manga toplayamazsınız</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_no_radio">
+                <Original>You need a radio in your inventory to be able to give orders to other squads</Original>
+                <French>Vous avez besoin d'une radio dans votre inventaire pour pouvoir donner des ordres à d'autres escouades</French>
+                <Korean>다른 분대에 명령을 내리려면 소지품에 무전기가 있어야 합니다</Korean>
+                <Russian>Вам нужно радио в вашем инвентаре, чтобы иметь возможность отдавать приказы другим отрядам</Russian>
+                <Chinesesimp>您需要一台无线电才能向其他小队下达命令</Chinesesimp>
+                <Czech>Potřebujete rádio ve svém inventáři, abyste mohli přidat rozkazy jiným družstvům</Czech>
+                <Italian>Hai bisogno di avere una radio nel tuo inventario in ordine da poter dare ordini alle altra squadre</Italian>
+                <Spanish>Necesitas una radio en tu inventario para dar ordenes a otras escuadras</Spanish>
+                <Polish>Potrzebujesz radia w ekwipunku, aby móc wydawać rozkazy innym oddziałom</Polish>
+                <Turkish>Telsiz olmadan diğer mangalara emir veremezsiniz</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_no_radio_man">
+                <Original>You need a Radio Man in your group to be able to give orders to other squads</Original>
+                <French>Vous avez besoin d'un opérateur radio dans votre groupe pour pouvoir donner des ordres à d'autres escouades</French>
+                <Korean>다른 분대에 명령을 내리려면 당신 그룹 내에 무전병이 있어야 합니다</Korean>
+                <Russian>Вам нужен Радист в вашей группе, чтобы иметь возможность отдавать приказы другим отрядам</Russian>
+                <Chinesesimp>您需要在您的小组中有无线电员才能向其他小队下达命令</Chinesesimp>
+                <Czech>Potřebujete rádio operátora ve vaší skupině, abyste mohli vydávat rozkazy jiným družstvům</Czech>
+                <Italian>Hai bisogno di avere un Operatore Radio nel tuo gruppo in ordine da poter dare ordini alle altra squadre</Italian>
+                <Spanish>Necesitas un Operador de Radio en tu grupo para dar ordenes a otras escuadras</Spanish>
+                <Polish>Potrzebujesz Operatora Radia w swojej grupie, aby móc wydawać rozkazy innym oddziałom</Polish>
+                <Turkish>Diğer mangalara emir verebilmek için grubunuzda bir Telsiz Operatörü olmalı</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_enemies_near">
+                <Original>You cannot recruit squads with enemies near your HQ</Original>
+                <French>Vous ne pouvez pas recruter d'escouades avec des ennemis à proximité de votre QG</French>
+                <Korean>본부 근처에 적이 있는 동안에는 분대를 모집할 수 없습니다</Korean>
+                <Russian>Вы не можете нанимать отряды, когда противник возле вашего Штаба</Russian>
+                <Chinesesimp>当有敌人在附近时你不能在你的总部附近招募小队</Chinesesimp>
+                <Czech>Nemůžete najmout jednotky s nepřáteli poblíž vašeho velitelství</Czech>
+                <Italian>Non puoi reclutare una squadra quando ci sono nemici nelle vicinanze dell'HQ</Italian>
+                <Spanish>No puedes reclutar escuadras con enemigos cercanos a tu CG</Spanish>
+                <Polish>Nie możesz rekrutować oddziałów gdy wrogowie są w pobliżu twojej kwatery głównej</Polish>
+                <Turkish>Karargâh yakınında düşman varken yeni manga toplayamazsınız</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_unsupported_modset">
+                <Original>The group or vehicle type you requested is not supported in your modset</Original>
+                <French>Le groupe ou le type de véhicule que vous avez demandé n'est pas pris en charge dans votre modset</French>
+                <Korean>요청한 그룹 또는 차량이 모드셋에서 지원하는 유형이 아닙니다</Korean>
+                <Russian>Запрашиваемая вами группа или техника не доступна с текущими модами</Russian>
+                <Chinesesimp>你当前的模组不支持所请求的小组或载具类型</Chinesesimp>
+                <Czech>Typ skupiny nebo vozidla, o který jste požádali, není ve vašem ModSetu podporován</Czech>
+                <Italian>Il tipo di gruppo o veicolo che hai richiesto non supportato dal tuo modset</Italian>
+                <Spanish>El grupo o tipo de vehículo que pediste no es aceptado en tu modset</Spanish>
+                <Polish>Żądana grupa lub typ pojazdu nie jest obsługiwany w twoim zestawie modów</Polish>
+                <Turkish>Bu grup/araç türü mod paketiniz tarafından desteklenmiyor</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_at_disabled_rhsgref">
+                <Original>AT Trucks are disabled in RHS - GREF</Original>
+                <French>Les camions AT sont désactivés dans RHS - GREF</French>
+                <Korean>RHS - GREF에서 대전차 트럭이 비활성화됨</Korean>
+                <Russian>ПТ машины отключены в RHS - GREF</Russian>
+                <Chinesesimp>RHS - GREF 中的AT卡车已被禁用</Chinesesimp>
+                <Czech>AT náklaďáky jsou deaktivovány v RHS - GREF</Czech>
+                <Italian>I camion Anti-Carro sono disabilitati quando usi RHS - GREF</Italian>
+                <Spanish>Los camiones AT están deshabilitados en RHS - GREF</Spanish>
+                <Polish>Pojazdy PPANC są wyłączone w RHS - GREF</Polish>
+                <Turkish>RHS-GREF modunda AT kamyonları devre dışı bırakıldı</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_insufficient_hr">
+                <Original>You do not have enough HR for this request (%1 required)</Original>
+                <French>Vous n'avez pas assez de RH pour cette demande (%1 requis)</French>
+                <Korean>이 요청을 수행할 인력이 부족합니다 (%1 필요)</Korean>
+                <Russian>У вас недостаточно людских ресурсов для этого (необходимо %1)</Russian>
+                <Chinesesimp>您没有足够的人力来处理此请求（需要 %1 个）</Chinesesimp>
+                <Czech>Pro tuto žádost nemáte dostatek HR (vyžadováno%1)</Czech>
+                <Italian>Non hai abbastanza RU per questa richiesta (%1 necessario)</Italian>
+                <Spanish>No tienes suficientes RH para esto (1% requeridos)</Spanish>
+                <Polish>Nie masz wystarczających zasobów ludzkich dla tego żądania (wymagany %1)</Polish>
+                <Turkish>Bu talep için yeterli İK yok (%1 gerekli)</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_hint_insufficient_money">
+                <Original>You do not have enough money for this request (%1 %2 required)</Original>
+                <French>Vous n'avez pas assez d'argent pour cette demande (%1 %2 requis)</French>
+                <Korean>이 요청을 수행할 자금이 부족합니다 (%1 %2 필요)</Korean>
+                <Russian>У вас недостаточно денег для этого (необходимо %1 %2)</Russian>
+                <Chinesesimp>您没有足够的金钱来处理此请求（需要 %1 ）</Chinesesimp>
+                <Czech>Na tuto žádost nemáte dostatek peněz (vyžadováno%1 %2)</Czech>
+                <Italian>Non hai abbastanza denaro per questa richiesta (%1 %2 necessari)</Italian>
+                <Spanish>No tienes suficiente Dinero para esto (1% %2requerido)</Spanish>
+                <Polish>Nie masz wystarczającej ilości pieniędzy na to żądanie (wymagane %1 %2)</Polish>
+                <Turkish>Bu talep için yeterli paranız yok (%1 %2 gerekli)</Turkish>
+            </Key>
             <Key ID="STR_antistasi_recruit_squad_hint_vehicle_purchased">
                 <Original>Vehicle Purchased</Original>
                 <French>Véhicule acheté</French>
@@ -3019,6 +3389,18 @@
                 <Spanish>Vehiculo Comprado</Spanish>
                 <Polish>Pojazd Zakupiony</Polish>
                 <Turkish>Satın Alınan Araç</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_recruit_squad_spawn_message">
+                <Original>Group %1 at your command.&lt;br/&gt;&lt;br/&gt;Groups are managed from the High Command bar (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;If the group gets stuck, use the AI Control feature to make them start moving. Mounted Static teams tend to get stuck (solving this is WiP)&lt;br/&gt;&lt;br/&gt;To assign a vehicle for this group, look at some vehicle, and use Vehicle Squad Mngmt option in Y menu</Original>
+                <French>Groupe %1 à votre commande.&lt;br/&gt;&lt;br/&gt;Les groupes sont gérés depuis la barre de commande supérieure (par défaut: CTRL+ESPACE)&lt;br/&gt;&lt;br/&gt;Si le groupe se coince, utilisez la fonction contrôle temporaire de l'IA pour les déplacer. Les équipes statiques montées ont tendance à rester bloquées (résoudre cela est WiP)&lt;br/&gt;&lt;br/&gt;Pour attribuer un véhicule à ce groupe, regardez un véhicule et utilisez l'option Vehicle Squad Mngmt dans le menu Y</French>
+                <Korean>%1 그룹은 이제 당신 휘하에 있습니다.&lt;br/&gt;&lt;br/&gt;그룹은 하이 커맨드 표시줄(기본값: 컨트롤+ 스페이스)에서 관리됩니다.&lt;br/&gt;&lt;br/&gt;그룹이 끼인다면 인공지능 조종 기능을 이용하여 이동을 시키십시오. 탑재된 고정화기 팀이 끼이는 경향이 있습니다 (해결 중에 있습니다).&lt;br/&gt;&lt;br/&gt;이 그룹에 차량을 할당하려면 차량을 보고 Y 메뉴의 차량 분대 관리 설정을 사용하십시오.</Korean>
+                <Russian>Группа %1 под вашим командованием.&lt;br/&gt;&lt;br/&gt;Управление группами происходит из панели Командования (По умолчанию: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;Если группа застряла, используйте Управление ИИ чтобы заставить их двигаться. Отряды со стационарным вооружением любят застревать (решение в разработке)&lt;br/&gt;&lt;br/&gt;Чтобы назначить технику к этой группе, посмотрите на неё и используйте Управление Техникой Отряда в меню на клавише Y.</Russian>
+                <Chinesesimp>%1 小组受你指挥。&lt;br/&gt;&lt;br/&gt;使用高级指挥菜单命令小组。(默认键位: CTRL+空格)&lt;br/&gt;&lt;br/&gt;如果小组卡住不动，可以先用AI控制功能来让他们动起来。已部署的固定式武器小组通常会卡住。(解决方案还在开发中)&lt;br/&gt;&lt;br/&gt;要想给小组分配一辆载具，看向该载具，然后使用Y键菜单中的载具小队管理选项</Chinesesimp>
+                <Czech>Skupina %1 na váš příkaz. &lt;br/&gt; &lt;br/&gt; Skupiny jsou spravovány z panelu vyššího veliteství (výchozí: Ctrl+Space) &lt;br/&gt; &lt;br/&gt; Pokud se skupina uvízne, použijte funkci ovládání AI tak přimět je, aby se začali pohybovat. Rozestavěné statické týmy mají tendenci uvíznout (Je to v řešení) &lt;br/&gt; &lt;br/&gt;K přiřazení vozidla do tého skupiny, podívejte se na nějaké vozidlo a použijte Družstevní vozidlový management možnost v Y menu.</Czech>
+                <Italian>Gruppo %1 al tuo comando.&lt;br/&gt;&lt;br/&gt;I gruppi vengono gestiti dalla barra dell'Alto Comando(Default: CTRL+SPAZIO)&lt;br/&gt;&lt;br/&gt;Se il gruppo si blocca, usa il controllo IA per farli muovere. Le squadre mobili di solito si incastrano facilmente. (Stiamo cercando di risolvere questo problema)&lt;br/&gt;&lt;br/&gt;Per assegnare un veicolo a questo gruppo, guarda il veicolo, e usa l'opzione Gestione Veicolo di Squadra nel menu che apri con Y</Italian>
+                <Spanish>Grupo %1 a tu mando.&lt;br/&gt;&lt;br/&gt;Los grupos son gestionados des de la barra de HC (Default: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;Si el grupo queda atascado, usa la opción de Control de IA para hacer que se muevan de nuevo. Equipos Estáticos Montados tienden a atascarse (resolver esto es WiP)&lt;br/&gt;&lt;br/&gt;Para asignar un vehículo a este grupo, mira hacia un vehículo y usa la opción de Gestión de Vehículo de Escuadra en el menú de Y</Spanish>
+                <Polish>Grupuj %1 na twoje polecenie.&lt;br/&gt;&lt;br/&gt;Grupy są zarządzane z paska naczelnego dowodzenia (domyślnie: CTRL+SPACJA)&lt;br/&gt;&lt;br/&gt;Jeśli grupa utknie, przejmij nad nimi kontrolę, by zaczęli się ruszać. Drużyny z bronią statyczną mają tendencję do zacinania się (rozwiązanie jest WiP)&lt;br/&gt;&lt;br/&gt;Aby przypisać pojazd do grupy, spójrz na jakiś pojazd i użyj opcji Zarządzanie składem pojazdów w menu Y</Polish>
+                <Turkish>%1 grubu emrinizde.&lt;br/&gt;&lt;br/&gt;Gruplar Yüksek Komut çubuğundan yönetilir (Varsayılan: CTRL +BOŞLUK)&lt;br/&gt;&lt;br/&gt;Grup takılırsa, AI Kontrol özelliğini kullanarak hareket etmelerini sağlayın. Sabit mevzili takımlar takılmaya meyillidir&lt;br/&gt;&lt;br/&gt;Bu gruba araç atamak için bir araca bakın ve Y menüsündeki Araç Manga Yönetimi seçeneğini kullanın</Turkish>
             </Key>
         </Container>
         <Container name="arsenal_limits_dialog">
@@ -3097,16 +3479,16 @@
         </Container>
         <Container name="setup_dialog">
             <Key ID="STR_antistasi_dialogs_setup_titlebar">
-                <Original>ANTISTASI Ultimate SETUP</Original>
-                <Czech>NASTAVENÍ ANTISTASI Ultimate</Czech>
-                <French>CONFIGURATION D'ANTISTASI Ultimate</French>
-                <Italian>CONFIGURAZIONE ANTISTASI Ultimate</Italian>
+                <Original>ANTISTASI ULTIMATE SETUP</Original>
+                <Czech>NASTAVENÍ ANTISTASI ULTIMATE</Czech>
+                <French>CONFIGURATION D'ANTISTASI ULTIMATE</French>
+                <Italian>CONFIGURAZIONE ANTISTASI ULTIMATE</Italian>
                 <Korean>안티스타시 플러스 설정</Korean>
-                <Russian>НАСТРОЙКА ANTISTASI Ultimate</Russian>
-                <Polish>KONFIGURACJA ANTYSTASI Ultimate</Polish>
-                <Portuguese>ANTISTASI Ultimate SETUP</Portuguese>
-                <Chinesesimp>ANTISTASI Ultimate设置</Chinesesimp>
-                <Turkish>ANTISTASI Ultimate Kurulum</Turkish>
+                <Russian>НАСТРОЙКА ANTISTASI ULTIMATE</Russian>
+                <Polish>KONFIGURACJA ANTYSTASI ULTIMATE</Polish>
+                <Portuguese>ANTISTASI ULTIMATE SETUP</Portuguese>
+                <Chinesesimp>ANTISTASI ULTIMATE设置</Chinesesimp>
+                <Turkish>ANTISTASI ULTIMATE KURULUM</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_loadgame_tab_button">
                 <Original>Load Game</Original>
@@ -3168,6 +3550,18 @@
                 <Chinesesimp>基本参数</Chinesesimp>
                 <Turkish>Temel Parametreler</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_adv_label">
+                <Original>Advanced Parameters</Original>
+                <Czech>Pokročilé parametry</Czech>
+                <French>Paramètres avancés</French>
+                <Italian>Parametri avanzati</Italian>
+                <Korean>고급 매개 변수</Korean>
+                <Russian>Расширенные параметры</Russian>
+                <Polish>Parametry zaawansowane</Polish>
+                <Portuguese>Parâmetros avançados</Portuguese>
+                <Chinesesimp>高级参数</Chinesesimp>
+                <Turkish>Gelişmiş Parametreler</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_bal_label">
                 <Original>AI and Balance Parameters</Original>
                 <Czech>Umělá inteligence a vyvážení parametrů</Czech>
@@ -3186,7 +3580,7 @@
                 <French>Paramètres du marché noir et du butin</French>
                 <Italian>Mercato nero e parametri del bottino</Italian>
                 <Korean>암시장 및 전리품 매개변수</Korean>
-                <Russian>Параметры черного рынка и лута</Russian>
+                <Russian>Параметры чёрного рынка и лута</Russian>
                 <Polish>Parametry czarnego rynku i łupów</Polish>
                 <Portuguese>Mercado Negro e Parâmetros de Saque</Portuguese>
                 <Chinesesimp>黑市和战利品参数</Chinesesimp>
@@ -3204,17 +3598,139 @@
                 <Chinesesimp>构建器参数</Chinesesimp>
                 <Turkish>İnşa Parametreleri</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_exp_label">
+                <Original>Experimental Parameters</Original>
+                <Czech>Experimentální parametry</Czech>
+                <French>Paramètres expérimentaux</French>
+                <Italian>Parametri sperimentali</Italian>
+                <Korean>실험적 매개 변수</Korean>
+                <Russian>Экспериментальные параметры</Russian>
+                <Polish>Parametry eksperymentalne</Polish>
+                <Portuguese>Parâmetros experimentais</Portuguese>
+                <Chinesesimp>实验参数</Chinesesimp>
+                <Turkish>Deneysel Parametreler</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_ext_label">
                 <Original>Extender Parameters</Original>
                 <Czech>Parametry extenderu</Czech>
                 <French>Paramètres de l'extenseur</French>
                 <Italian>Parametri dell'extender</Italian>
                 <Korean>확장 매개 변수</Korean>
-                <Russian>Параметры ретранслятора</Russian>
+                <Russian>Параметры расширений</Russian>
                 <Polish>Parametry przedłużacza</Polish>
                 <Portuguese>Parâmetros do extensor</Portuguese>
                 <Chinesesimp>扩展器参数</Chinesesimp>
                 <Turkish>Genişletici Parametreler</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_size">
+                <Original>Group</Original>
+                <Czech>Skupina</Czech>
+                <French>Groupe</French>
+                <Italian>Gruppo</Italian>
+                <Korean>그룹</Korean>
+                <Russian>Группа</Russian>
+                <Polish>Grupa</Polish>
+                <Portuguese>Grupo</Portuguese>
+                <Chinesesimp>群</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_soloSize_label">
+                <Original>Solo</Original>
+                <Czech>Pouze</Czech>
+                <French>Seulement</French>
+                <Italian>Solo</Italian>
+                <Korean>오직</Korean>
+                <Russian>Только</Russian>
+                <Polish>Tylko</Polish>
+                <Portuguese>Somente</Portuguese>
+                <Chinesesimp>只</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_smallSize_label">
+                <Original>Small</Original>
+                <Czech>Malý</Czech>
+                <French>Petit</French>
+                <Italian>Piccolo</Italian>
+                <Korean>작다</Korean>
+                <Russian>Маленький</Russian>
+                <Polish>Mały</Polish>
+                <Portuguese>Pequeno</Portuguese>
+                <Chinesesimp>小</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_medSize_label">
+                <Original>Medium</Original>
+                <Czech>Středně</Czech>
+                <French>Douleur moyenne</French>
+                <Italian>Medio</Italian>
+                <Korean>보통</Korean>
+                <Russian>Терпимая</Russian>
+                <Polish>Średni</Polish>
+                <Portuguese>Média</Portuguese>
+                <Chinesesimp>中等</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_largeSize_label">
+                <Original>Large</Original>
+                <Czech>Velký</Czech>
+                <French>Grand</French>
+                <Italian>Grande</Italian>
+                <Korean>큰</Korean>
+                <Russian>Большой</Russian>
+                <Polish>Duży</Polish>
+                <Portuguese>Grande</Portuguese>
+                <Chinesesimp>大</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_diff">
+                <Original>Difficulty</Original>
+                <Czech>Obtížnost</Czech>
+                <French>Difficulté</French>
+                <Italian>Difficoltà</Italian>
+                <Korean>어려움</Korean>
+                <Russian>Трудность</Russian>
+                <Polish>Trudność</Polish>
+                <Portuguese>Dificuldade</Portuguese>
+                <Chinesesimp>困难</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_easyDiff_label">
+                <Original>Easy</Original>
+                <Czech>Snadný</Czech>
+                <French>Facile</French>
+                <Italian>Facile</Italian>
+                <Korean>쉬운</Korean>
+                <Russian>Лёгкий</Russian>
+                <Polish>Łatwy</Polish>
+                <Portuguese>Fácil</Portuguese>
+                <Chinesesimp>容易</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_medDiff_label">
+                <Original>Medium</Original>
+                <Czech>Středně</Czech>
+                <French>Douleur moyenne</French>
+                <Italian>Medio</Italian>
+                <Korean>보통</Korean>
+                <Russian>Терпимая</Russian>
+                <Polish>Średni</Polish>
+                <Portuguese>Média</Portuguese>
+                <Chinesesimp>中等</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_hardDiff_label">
+                <Original>Hard</Original>
+                <Czech>Tvrdý</Czech>
+                <French>Dur</French>
+                <Italian>Duro</Italian>
+                <Korean>힘들다</Korean>
+                <Russian>Трудный</Russian>
+                <Polish>Twardy</Polish>
+                <Portuguese>Duro</Portuguese>
+                <Chinesesimp>硬</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_preset_cstm">
+                <Original>Custom</Original>
+                <Czech>Zvyk</Czech>
+                <French>Coutume</French>
+                <Italian>Costume</Italian>
+                <Korean>관습</Korean>
+                <Russian>Обычай</Russian>
+                <Polish>Zwyczaj</Polish>
+                <Portuguese>Costume</Portuguese>
+                <Chinesesimp>习惯</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Experimental and Development Parameters</Original>
@@ -3222,7 +3738,7 @@
                 <French>Paramètres expérimentaux et de développement</French>
                 <Italian>Parametri sperimentali e di sviluppo</Italian>
                 <Korean>실험 및 개발 매개변수</Korean>
-                <Russian>Экспериментальные и разработочные параметры</Russian>
+                <Russian>Экспериментальные параметры и настройки для разработки</Russian>
                 <Polish>Parametry eksperymentalne i rozwojowe</Polish>
                 <Portuguese>Parâmetros experimentais e de desenvolvimento</Portuguese>
                 <Chinesesimp>实验与开发参数</Chinesesimp>
@@ -3263,6 +3779,17 @@
                 <Portuguese>Começar jogo</Portuguese>
                 <Chinesesimp>开始游戏</Chinesesimp>
                 <Turkish>Oyunu Başlat</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_load_game_options">
+                <Original>Game Options</Original>
+                <Czech>Možnosti hry</Czech>
+                <French>Options de jeu</French>
+                <Italian>Opzioni di gioco</Italian>
+                <Korean>게임 옵션</Korean>
+                <Russian>Опции игры</Russian>
+                <Polish>Opcje gry</Polish>
+                <Portuguese>Opções de jogo</Portuguese>
+                <Chinesesimp>游戏选项</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_create_new_game">
                 <Original>Create new game</Original>
@@ -3456,6 +3983,29 @@
                 <Chinesesimp>DLC</Chinesesimp>
                 <Turkish>DLC</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_overrides">
+                <Original>Overrides</Original>
+                <Czech>Potlačuje</Czech>
+                <French>Substitue</French>
+                <Italian>Esegue l' override</Italian>
+                <Korean>재정의</Korean>
+                <Russian>Переопределения</Russian>
+                <Polish>Zastępuje</Polish>
+                <Portuguese>Substitui</Portuguese>
+                <Chinesesimp>重写</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_override_map_limits">
+                <Original>Override map limits</Original>
+                <Czech>Přepsat limity map</Czech>
+                <French>Outrepasser les limites de la carte</French>
+                <Italian>Sovrascrivi limiti mappa</Italian>
+                <Korean>지도 제한 덮어쓰기</Korean>
+                <Russian>Откл. ограничения карты</Russian>
+                <Polish>Nadpisz Limity Mapy</Polish>
+                <Portuguese>Substituir limities mapa</Portuguese>
+                <Chinesesimp>覆盖地图限制设置</Chinesesimp>
+                <Turkish>Harita sınırlarını geçersiz kıl</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_override_camo_limits">
                 <Original>Override camo limits</Original>
                 <Czech>Přepsat limity kamufláží</Czech>
@@ -3574,7 +4124,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_factions">
                 <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
-                <Russian>%1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
+                <Russian>где %1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
                 <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
                 <Korean>반란군은 %1, 민간인은 %2, 점령군은 %3, 침략군은 %4, 라이벌은 %5입니까?</Korean>
                 <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
@@ -3588,7 +4138,7 @@
                 <French>nom "%1", </French>
                 <Turkish> isim "%1", </Turkish>
             </Key>
-            <Key ID="STR_antistasi_dialogs_setup_param_locked">
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_saveexists">
                 <Original>This parameter cannot be changed for an existing save.</Original>
                 <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
@@ -3611,6 +4161,28 @@
                 <Portuguese>Este parâmetro não pode ser alterado durante o jogo.</Portuguese>
                 <Chinesesimp>此参数在游戏中无法更改。</Chinesesimp>
                 <Turkish>Bu parametre oyundayken değiştirilemez.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_bycondition">
+                <Original>This parameter cannot be changed because conditions are not met.</Original>
+                <Czech>Tento parametr nelze změnit, protože nejsou splněny podmínky.</Czech>
+                <French>Ce paramètre ne peut pas être modifié car les conditions ne sont pas remplies.</French>
+                <Italian>Questo parametro non può essere modificato perché le condizioni non sono soddisfatte.</Italian>
+                <Korean>이 매개변수는 조건이 충족되지 않아 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить, потому что не выполняются условия.</Russian>
+                <Polish>Tego parametru nie można zmienić, ponieważ warunki nie są spełnione.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado porque as condições não são atendidas.</Portuguese>
+                <Chinesesimp>由于条件不满足，无法更改此参数。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_param_locked_bydependency">
+                <Original>This parameter cannot be changed because it is locked by other parameters.</Original>
+                <Czech>Tento parametr nelze změnit, protože je zamčen jinými parametry.</Czech>
+                <French>Ce paramètre ne peut pas être modifié car il est verrouillé par d'autres paramètres.</French>
+                <Italian>Questo parametro non può essere modificato perché è bloccato da altri parametri.</Italian>
+                <Korean>이 매개변수는 다른 매개변수에 의해 잠겨 있어 변경할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя изменить, так как он заблокирован другими параметрами.</Russian>
+                <Polish>Tego parametru nie można zmienić, ponieważ jest zablokowany przez inne parametry.</Polish>
+                <Portuguese>Este parâmetro não pode ser alterado porque está bloqueado por outros parâmetros.</Portuguese>
+                <Chinesesimp>此参数被其他参数锁定，无法更改。</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_riv_param_warning">
                 <Original>Enabling rivals may have unintended side effects (e.g. possibility of default invader faction appearing) when invaders are disabled.</Original>
@@ -3648,6 +4220,18 @@
                 <Chinesesimp>Invader 派系在此游戏模式中被禁用。要选择入侵者派系，请在参数选项卡中更改游戏模式。</Chinesesimp>
                 <Turkish>İstilacı birlikler bu oyun modu için devre dışı. Bir istilacı birlik seçmek için Parametreler sekmesinden oyun modunu değiştirin.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_riv_param_locked">
+                <Original>This parameter cannot be enabled if invaders are disabled.</Original>
+                <Czech>Tento parametr nelze povolit, pokud jsou útočníci zakázáni.</Czech>
+                <French>Ce paramètre ne peut pas être activé si les envahisseurs sont désactivés.</French>
+                <Italian>Questo parametro non può essere abilitato se gli invasori sono disabilitati.</Italian>
+                <Korean>이 매개변수는 침략자가 비활성화되어 있다면 활성화할 수 없습니다.</Korean>
+                <Russian>Этот параметр нельзя включить, если захватчики отключены.</Russian>
+                <Polish>Tego parametru nie można włączyć, jeśli intruzi są wyłączeni.</Polish>
+                <Portuguese>Este parâmetro não pode ser ativado se os invasores estiverem desativados.</Portuguese>
+                <Chinesesimp>如果 invaders 被禁用，则无法启用此参数。</Chinesesimp>
+                <Turkish>İstilacılar devre dışıysa bu parametre etkinleştirilemez</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save">
                 <Original>Creating new save</Original>
                 <Russian>Создание нового сохранения</Russian>
@@ -3658,7 +4242,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_edit_save">
                 <Original>Editing save with ID: %1</Original>
-                <Russian>Редактирование сохранения с ID: %1</Russian>
+                <Russian>Выбрана игра с ID: %1</Russian>
                 <Chinesesimp>编辑存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 편집: %1</Korean>
                 <French>Modification de la sauvegarde (ID : %1)</French>
@@ -3666,7 +4250,7 @@
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_copy_save">
                 <Original>Copying save with ID: %1</Original>
-                <Russian>Копирование сохранения с ID: %1</Russian>
+                <Russian>Копия игры с ID: %1</Russian>
                 <Chinesesimp>复制存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 복사: %1</Korean>
                 <French>Copie de la sauvegarde (ID : %1)</French>
@@ -3679,6 +4263,72 @@
                 <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
                 <French>Ce paramètre ne peut pas être modifié lorsque les déverrouillages sont désactivés globalement.</French>
                 <Turkish>Açılır öğeler global olarak devre dışıysa bu parametre değiştirilemez</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets">
+                <Original>Parameter Presets</Original>
+                <Czech>Předvolby parametrů</Czech>
+                <French>Préréglages de paramètres</French>
+                <Italian>Preset dei parametri</Italian>
+                <Korean>매개변수 사전 설정</Korean>
+                <Russian>Предустановки параметров</Russian>
+                <Polish>Predefiniowane ustawienia parametrów</Polish>
+                <Portuguese>Predefinições de parâmetros</Portuguese>
+                <Chinesesimp>参数预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_new_preset_name">
+                <Original>New preset name</Original>
+                <Czech>Název nové předvolby</Czech>
+                <French>Nouveau nom de préréglage</French>
+                <Italian>Nuovo nome del preset</Italian>
+                <Korean>새 사전 설정 이름</Korean>
+                <Russian>Новое имя пресета</Russian>
+                <Polish>Nowa nazwa ustawienia predefiniowanego</Polish>
+                <Portuguese>Novo nome predefinido</Portuguese>
+                <Chinesesimp>新预设名称</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_save_preset">
+                <Original>Save Preset</Original>
+                <Czech>Uložit předvolbu</Czech>
+                <French>Enregistrer le préréglage</French>
+                <Italian>Salva preset</Italian>
+                <Korean>사전 설정 저장</Korean>
+                <Russian>Сохранить предустановку</Russian>
+                <Polish>Zapisz ustawienie wstępne</Polish>
+                <Portuguese>Salvar predefinição</Portuguese>
+                <Chinesesimp>保存预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_delete_preset">
+                <Original>Delete Preset</Original>
+                <Czech>Odstranit předvolbu</Czech>
+                <French>Supprimer le préréglage</French>
+                <Italian>Elimina preset</Italian>
+                <Korean>사전 설정 삭제</Korean>
+                <Russian>Удалить предустановку</Russian>
+                <Polish>Usuń ustawienie predefiniowane</Polish>
+                <Portuguese>Excluir predefinição</Portuguese>
+                <Chinesesimp>删除预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_rename_preset">
+                <Original>Rename Preset</Original>
+                <Czech>Přejmenování přednastavení</Czech>
+                <French>Renommer le préréglage</French>
+                <Italian>Rinomina preset</Italian>
+                <Korean>사전 설정 이름 바꾸기</Korean>
+                <Russian>Переименовать предустановку</Russian>
+                <Polish>Zmień nazwę ustawienia predefiniowanego</Polish>
+                <Portuguese>Renomear predefinição</Portuguese>
+                <Chinesesimp>重命名预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_search">
+                <Original>Parameter Search</Original>
+                <Czech>Vyhledávání parametrů</Czech>
+                <French>Recherche de paramètres</French>
+                <Italian>Ricerca parametri</Italian>
+                <Korean>매개변수 검색</Korean>
+                <Russian>Поиск параметров</Russian>
+                <Polish>Wyszukiwanie parametrów</Polish>
+                <Portuguese>Pesquisa de parâmetros</Portuguese>
+                <Chinesesimp>参数搜索</Chinesesimp>
             </Key>
         </Container>
         <Container name="setup_dialog_table">
@@ -3787,10 +4437,7 @@
                 <Polish>Wybrana pozycja nie może znajdować się poza mapą.</Polish>
                 <Portuguese>Posiçao selecionada nao pode estar fora do mapa</Portuguese>
                 <Chinesesimp>所选位置不能位于地图外</Chinesesimp>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_crew">
-                <Original>Crew</Original>
-                <Russian>Экипаж</Russian>
+                <Turkish>Seçilen konum haritanın dışında olamaz</Turkish>
             </Key>
         </Container>
     </Package>
