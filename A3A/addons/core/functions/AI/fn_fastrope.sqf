@@ -103,14 +103,7 @@ else
 	_wp2 setWaypointType "MOVE";
 };
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
-
-if (_veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
-    [_veh, _heli, _positionX] spawn A3A_fnc_attackHeli;
-};
+if ([_veh, _heli, _positionX] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 private _wp3 = _heli addWaypoint [_posOrigin, 1];
 _wp3 setWaypointType "MOVE";

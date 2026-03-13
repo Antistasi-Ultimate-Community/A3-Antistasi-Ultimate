@@ -4,7 +4,7 @@ FIX_LINE_NUMBERS()
 
 params ["_marker", "_placementMarker"];
 
-private ["_vehicleMarker", "_heliMarker", "_hangarMarker", "_mortarMarker", "_planeMarker", "_markerPrefix", "_markerSplit", "_first", "_fullName"];
+private ["_vehicleMarker", "_heliMarker", "_hangarMarker", "_mortarMarker", "_planeMarker", "_flagMarker", "_ammoMarker", "_markerPrefix", "_markerSplit", "_first", "_fullName"];
 
 _vehicleMarker = [];
 _heliMarker = [];
@@ -12,6 +12,8 @@ _hangarMarker = [];
 _mortarMarker = [];
 _samMarker = [];
 _planeMarker = [];
+_flagMarker = [];
+_ammoMarker = [];
 
 //Calculating marker prefix
 _markerPrefix = "";
@@ -37,7 +39,7 @@ _mainMarker = getMarkerPos _marker;
   _fullName = format ["%1%2", _markerPrefix, _x];
   if(_mainMarker distance (getMarkerPos _fullName) > 500) then
   {
-    Error_2("Placementmarker %1 is more than 500 meter away from its mainMarker %2. You may want to check that!", _fullName, _marker);
+    Warning_2("Placementmarker %1 is more than 500 meter away from its mainMarker %2. You may want to check that!", _fullName, _marker);
   };
   switch (_first) do
   {
@@ -46,7 +48,9 @@ _mainMarker = getMarkerPos _marker;
     case ("hangar"): {_hangarMarker pushBack _fullName;};
     case ("plane"): {_planeMarker pushBack _fullName;};
     case ("mortar"): {_mortarMarker pushBack _fullName;};
-	case ("sam"): {_samMarker pushBack _fullName;};
+    case ("flag"): {_flagMarker pushBack _fullName;};
+    case ("ammo"): {_ammoMarker pushBack _fullName;};
+    case ("sam"): {_samMarker pushBack _fullName;};
   };
   _fullName setMarkerAlpha 0;
 } forEach _placementMarker;
@@ -54,7 +58,7 @@ _mainMarker = getMarkerPos _marker;
 if(count _vehicleMarker == 0) then
 {
   // Not automatically wrong. Some locations may not have any vehicle places
-  Info_1("InitSpawnPlaces: Could not find any vehicle places on %1!", _marker);
+  Warning_1("InitSpawnPlaces: Could not find any vehicle places on %1!", _marker);
 };
 
 private ["_markerSize", "_distance", "_buildings", "_hangars", "_garages", "_helipads", "_markerX"];
@@ -252,7 +256,21 @@ _samSpawns = [];
   _samSpawns pushBack [_pos, 0];
 } forEach _samMarker;
 
-_spawns = [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns, _samSpawns];
+_flagSpawns = [];
+{
+  _pos = getMarkerPos _x;
+  _pos set [2, ((_pos select 2) + 0.1) max 0.1];
+  _flagSpawns pushBack [_pos, 0];
+} forEach _flagMarker;
+
+_ammoSpawns = [];
+{
+  _pos = getMarkerPos _x;
+  _pos set [2, ((_pos select 2) + 0.1) max 0.1];
+  _ammoSpawns pushBack [_pos, 0];
+} forEach _ammoMarker;
+
+_spawns = [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns, _samSpawns, _flagSpawns, _ammoSpawns]; // ? What is this supposed to do or be used for?
 
 //Debug_2("%1 set to %2", _marker, [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns]);
 
@@ -262,4 +280,4 @@ _spawns = [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns, _samSpawns]
     private _varName = format ["%1_%2", _marker, _x#1];
     spawner setVariable [_varName + "_places", _x#0, true];
     spawner setVariable [_varName + "_used", (_x#0) apply {false}, true];
-} forEach [[_vehicleSpawns, "vehicle"], [_heliSpawns, "heli"], [_planeSpawns, "plane"], [_mortarSpawns, "mortar"], [_samSpawns, "sam"]];
+} forEach [[_vehicleSpawns, "vehicle"], [_heliSpawns, "heli"], [_planeSpawns, "plane"], [_mortarSpawns, "mortar"], [_samSpawns, "sam"], [_flagSpawns, "flag"], [_ammoSpawns, "ammo"]];
