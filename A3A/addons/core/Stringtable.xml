@@ -5982,20 +5982,6 @@
                 <Korean>&lt;br/&gt; - 재급유되었습니다</Korean>
                 <French>&lt;br/&gt; - ravitaillé en carburant</French>
                 <Turkish>&lt;br/&gt; - yakıt ikmali yapıldı</Turkish>
-                </Key>
-            <Key ID="STR_A3A_base_teardownMode_ON">
-                <Original>Turn teardown mode ON</Original>
-                <Russian>Включить режим разборки</Russian>
-                <Chinesesimp>开启拆卸模式</Chinesesimp>
-                <Korean>분해 모드 켜기</Korean>
-                <French>Activer le mode de démontage</French>
-            </Key>
-            <Key ID="STR_A3A_base_teardownMode_OFF">
-                <Original>Turn teardown mode OFF</Original>
-                <Russian>Выключить режим разборки</Russian>
-                <Chinesesimp>关闭拆卸模式</Chinesesimp>
-                <Korean>분해 모드 끄기</Korean>
-                <French>Désactiver le mode de démontage</French>
             </Key>
             <Key ID="STR_A3A_Utility_Items_Last_Time_Purchase">
                 <Original>You already bought one, wait %1 seconds before you can buy another.</Original>
