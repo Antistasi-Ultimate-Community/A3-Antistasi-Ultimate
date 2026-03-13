@@ -196,3 +196,6 @@ _wp3 setWaypointSpeed "NORMAL";
 _wp3 setWaypointBehaviour "CARELESS";
 _wp3 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
 {_x setBehaviour "CARELESS";} forEach units _heli;
+
+[_heli] spawn A3A_fnc_groupDespawner;
+[_veh] spawn A3A_fnc_vehDespawner;

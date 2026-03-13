@@ -93,6 +93,12 @@ private _wp4 = _group addWaypoint [getMarkerPos _airport, 2];
 _wp4 setWaypointType "MOVE";
 _wp4 setWaypointSpeed "FULL";
 
+for '_i' from 1 to 3 do
+{
+    [_plane, 0] call A3A_fnc_fireCMFlare;
+    sleep 1;
+};
+
 private _timeout = time + (_targetPos distance _spawnPos) / 20;
 waitUntil { sleep 2; (currentWaypoint _group > 3) or (time > _timeOut) };
 // could potentially "optimize" with this, or an upper-bounds speed version:

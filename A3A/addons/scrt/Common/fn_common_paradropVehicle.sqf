@@ -279,3 +279,6 @@ private _wp2 = _groupPilot addWaypoint [_originPosition, -1];
 _wp2 setWaypointType "MOVE";
 _wp2 setWaypointSpeed "FULL";
 _wp2 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
+
+[_groupPilot] spawn A3A_fnc_groupDespawner;
+[_vehicle] spawn A3A_fnc_vehDespawner;

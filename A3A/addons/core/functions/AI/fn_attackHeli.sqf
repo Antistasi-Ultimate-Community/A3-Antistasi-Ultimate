@@ -51,5 +51,5 @@ while {true} do {
 
 ServerInfo("Attack heli aborted due to damage");
 _group setVariable ["A3A_AIScriptHandle", nil];
-[_vehicle] spawn A3A_fnc_VEHDespawner;
+//[_vehicle] spawn A3A_fnc_VEHDespawner; //no need, done by a function below
 [_group] spawn A3A_fnc_enemyReturnToBase;
