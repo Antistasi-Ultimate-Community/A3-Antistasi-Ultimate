@@ -188,18 +188,8 @@ if !(_reinf) then {
 	_wp2 setWaypointType "MOVE";
 };
 
-private _weapons = count weapons _veh;
-private _driverturret = _veh weaponsTurret [0];
-private _gunnerturret = _veh weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
+if ([_veh, _heli, _positionX] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
-if (_veh in FactionGet(all,"vehiclesTransportAir") && _weapons > 2 || _weaponsturret > 2) exitWith { //assuming first 2 are laserdesignator and flares
-    [_veh, _heli, _positionX] spawn A3A_fnc_attackHeli;
-};
-
-if (_veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
-    [_veh, _heli, _positionX] spawn A3A_fnc_attackHeli;
-};
 private _wp3 = _heli addWaypoint [_posOrigin, 1];
 _wp3 setWaypointType "MOVE";
 _wp3 setWaypointSpeed "NORMAL";
