@@ -1,8 +1,5 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-if (!isServer) exitWith {
-    Error("Miscalled server-only function");
-};
 
 params ["_presetName", "_presetParams", ["_delete", false]];
 
