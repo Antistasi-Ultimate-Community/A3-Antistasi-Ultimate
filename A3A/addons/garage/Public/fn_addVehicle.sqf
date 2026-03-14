@@ -71,16 +71,11 @@ private _utilityRefund = {
     private _toRefund = 0;
     private _feedBack = "STR_HR_GRG_Feedback_addVehicle_Item_Stored";
     private _itemPrice = _object getVariable ['A3A_itemPrice', 0];
-    if ("loot" in _flags) exitWith {
+    if ("loot" in _flags  || _specialflags == "shop") exitWith {
         ["STR_HR_GRG_Feedback_addVehicle_LTC"] remoteExec ["HR_GRG_fnc_Hint", _client];
         [_object, boxX, true, _itemPrice] call A3A_fnc_ammunitionTransfer;
         _itemPrice;
     };
-<<<<<<< patch-79
-    if ("loot" in _flags || _specialflags == "shop") then {
-        _feedBack = "STR_HR_GRG_Feedback_addVehicle_LTC";
-        [_object, boxX, true] call A3A_fnc_ammunitionTransfer;
-=======
     switch (true) do {
         case ("fuel" in _flags): {
             _toRefund = floor (([_object] call A3A_fnc_remainingFuel) * _itemPrice);
@@ -93,7 +88,6 @@ private _utilityRefund = {
         default {
             _toRefund = _itemPrice;
         };
->>>>>>> unstable
     };
 
     deleteVehicle _object;
