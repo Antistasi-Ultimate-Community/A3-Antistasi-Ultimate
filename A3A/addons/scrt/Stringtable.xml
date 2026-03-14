@@ -6620,7 +6620,7 @@
             </Key>
             <Key ID="STR_params_A3A_logDebugConsole_none">
                 <Original>None</Original>
-                <Russian>Не логировать ничего</Russian>
+                <Russian>Игнорировать всех</Russian>
                 <Chinesesimp>无</Chinesesimp>
                 <Korean>없음</Korean>
                 <French>Aucun</French>
@@ -6839,7 +6839,7 @@
             </Key>
             <Key ID="STR_params_limitWeaponsByUnitType">
                 <Original>Limit AI custom loadout weapon selections by unit type</Original>
-                <Russian>Ограничение выбора оружия ИИ по типу бойцов</Russian>
+                <Russian>Ограничение выбора оружия для ИИ по типу бойцов</Russian>
                 <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
                 <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
                 <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
@@ -7646,7 +7646,7 @@
             </Key>
             <Key ID="STR_params_max_distance_to_member_unlimited">
                 <Original>Unlimited</Original>
-                <Russian>Неограниченное</Russian>
+                <Russian>Не ограничено</Russian>
                 <Chinesesimp>无限制</Chinesesimp>
                 <Korean>무제한</Korean>
                 <French>Illimité</French>
@@ -7883,11 +7883,11 @@
                 <Turkish>Değişiklik yok</Turkish>
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul">
-                <Original>Enemy AI skill</Original>
-                <Russian>Навык вражеских ИИ-солдат</Russian>
-                <Chinesesimp>敌方 AI 单位的技能</Chinesesimp>
-                <Korean>적 인공지능 숙련도</Korean>
-                <French>Compétence de l'IA ennemie</French>
+                <Original>Enemy AI skill (also affected by server skill)</Original>
+                <Russian>Навык вражеских ИИ-солдат (также под влиянием общих настроек игры или сервера)</Russian>
+                <Chinesesimp>敌方 AI 单位的技能（也受一般游戏或服务器设置的影响）</Chinesesimp>
+                <Korean>적 인공지능 숙련도 (서버 숙련도의 영향도 있음)</Korean>
+                <French>Compétence de l'IA ennemie (également affectée par la compétence du serveur)</French>
                 <Turkish>Düşman yapay zeka becerisi (sunucu beceri ayarından da etkilenir)</Turkish>
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul_desc">
@@ -7938,11 +7938,11 @@
                 <Turkish>Çok Yüksek</Turkish>
             </Key>
             <Key ID="STR_params_A3A_rebelSkillMul">
-                <Original>Friendly AI skill</Original>
-                <Russian>Навык дружественных ИИ-бойцов</Russian>
-                <Chinesesimp>友好AI单位的技能</Chinesesimp>
-                <Korean>아군 인공지능 숙련도</Korean>
-                <French>Compétence de l'IA amie</French>
+                <Original>Friendly AI skill (also affected by server skill)</Original>
+                <Russian>Навык дружественных ИИ-бойцов (помимо общих настроек игры или сервера)</Russian>
+                <Chinesesimp>友好AI单位的技能（也受一般游戏或服务器设置的影响）</Chinesesimp>
+                <Korean>아군 인공지능 숙련도 (서버 숙련도의 영향도 있음)</Korean>
+                <French>Compétence de l'IA amie (également affectée par la compétence du serveur)</French>
                 <Turkish>Dost yapay zeka becerisi (sunucu beceri ayarından da etkilenir)</Turkish>
             </Key>
             <Key ID="STR_params_A3A_rebelSkillMul_desc">
