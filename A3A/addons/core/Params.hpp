@@ -1798,9 +1798,10 @@ class Params
     class AIrevivesOutsideSquad: AIBalanceParams
     {
         title = $STR_params_AIrevivesOutsideSquad;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 0;
+        tooltip = $STR_params_AIrevivesOutsideSquad_desc;
+        values[] = {25, 50, 75, 100, -1};
+        texts[] = {"25", "50", "75", "100", $STR_params_afk_disabled};
+        default = -1;
     };
     class allowFuturisticSupports: AIBalanceParams
     {
