@@ -334,7 +334,8 @@ if  (_tab in ["other"]) then
             ["_price", 0],
             ["_buttonText", ""],
             ["_iconType", ""],
-            ["_flags", []]
+            ["_flags", []],
+            ["_tooltip", ""]
         ];
         private _configClass = configFile >> "CfgVehicles" >> _className;
         if (!isClass _configClass) then { continue };
@@ -468,6 +469,10 @@ if  (_tab in ["other"]) then
         };
         _itemPic ctrlSetText _iconPath;
 
+        if (_tooltip != "") then {
+            _itemPic ctrlSetTooltip _tooltip;
+        }; //doesn't seem to work
+
         if (_className in [(A3A_faction_reb get 'vehicleFuelTank')#0, (A3A_faction_reb get 'vehicleFuelDrum')#0]) then {
             private _refuelCount = if (A3A_hasACE) then {getNumber (_configClass >> "ace_refuel_fuelCargo")} else {getNumber (_configClass >> "transportFuel")};
             _itemPic ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_refuel_tooltip", _displayName, _refuelCount];
@@ -493,24 +498,7 @@ if  (_tab in ["other"]) then
         {
             _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_revivekitbox_tooltip";
         };
-        if (_className isEqualTo "Land_PlasticCase_01_small_black_F") then
-        {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
-        };
-        if (_className isEqualTo "Land_PlasticCase_01_medium_black_F") then
-        {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
-        };
-        if (_className isEqualTo "A3AU_Build_Box_Large_1") then
-        {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
-        };
-        if (_className isEqualTo "Land_PlasticCase_01_large_black_F") then
-        {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
-        };
-        if (_className isEqualTo "A3AU_Build_Box_Humongous") then
-        {
+        if (_className in ["Land_PlasticCase_01_small_black_F","Land_PlasticCase_01_medium_black_F", "A3AU_Build_Box_Large_1", "Land_PlasticCase_01_large_black_F", "A3AU_Build_Box_Humongous"]) then {
             _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
         };
         _itemPic ctrlCommit 0;

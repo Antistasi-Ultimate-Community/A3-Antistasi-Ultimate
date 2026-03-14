@@ -37,12 +37,7 @@ _items append [
     [_medTent#0, _medTent#1, localize "STR_A3AP_buyvehdialog_medical_tent", "heal", ["place", "move", "rotate", "pack"]],
     [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "ammo", "place", "move", "rotate", "save"]],
     [_repairStation#0, _repairStation#1, localize "STR_A3AP_buyvehdialog_repair_station", "repair", ["cmmdr", "place", "move", "rotate", "pack", "save"]],
-    [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "light", ["move"]],
-    ["Land_PlasticCase_01_small_black_F", 250, localize "STR_A3AP_buyvehdialog_BuildBoxExtraSmall", "build", ["place", "move", "build"]], //I guess those tags are not needed anymore?
-    ["Land_PlasticCase_01_medium_black_F", 500, localize "STR_A3AP_buyvehdialog_BuildBoxSmall", "build", ["place", "move", "build"]],
-    ["A3AU_Build_Box_Large_1", 2500, localize "STR_A3AP_buyvehdialog_BuildBoxMeduim", "build", ["place", "move", "build"]],
-    ["Land_PlasticCase_01_large_black_F", 5000, localize "STR_A3AP_buyvehdialog_BuildBoxLarge", "build", ["place", "move", "build"]],
-    ["A3AU_Build_Box_Humongous", 5000, localize "STR_A3AP_buyvehdialog_BuildBoxHumongous", "build", ["place", "move", "build"]]
+    [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "light", ["move"]]
     // TODO: get larger box from somewhere
 ];
 
