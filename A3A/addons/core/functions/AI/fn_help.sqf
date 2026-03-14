@@ -66,7 +66,7 @@ if (_medicX != _unit) then
 
     // Actual helping hint for player
     if (player == _unit) then {
-        ["Medical", format ["%1 is on the way to help you.", name _medicX]] call A3A_fnc_customHint;
+        ["Medical", format [localize "STR_chats_help_notification_desc", name _medicX]] call A3A_fnc_customHint;
     };
 
     Debug_2("Medic %1 helping %2", _medicX, _unit);

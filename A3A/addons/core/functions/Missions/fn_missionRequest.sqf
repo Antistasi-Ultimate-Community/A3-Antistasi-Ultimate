@@ -244,8 +244,8 @@ switch (_type) do {
 
 		if (_possibleMarkers isEqualTo []) then {
 			if (!_silent) then {
-				[petros,"globalChat","I have no rescue missions for you. Move our HQ closer to the enemy."] remoteExec ["A3A_fnc_commsMP",_requester];
-				[petros,"hint","Rescue Missions require Cities or Airports closer than 4Km from your HQ.", "Missions"] remoteExec ["A3A_fnc_commsMP",_requester];
+				[petros,"globalChat", localize "STR_chats_mission_request_no_RES"] remoteExec ["A3A_fnc_commsMP",_requester];
+				[petros,"hint",format [localize "STR_chats_mission_request_no_RES_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
 			};
 		} else {
 			private _site = selectRandom _possibleMarkers;

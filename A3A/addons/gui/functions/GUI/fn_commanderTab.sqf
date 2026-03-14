@@ -944,14 +944,14 @@ switch (_mode) do
         {
             [] remoteExec ["A3A_fnc_garbageCleaner",2];
         } else {
-            ["Garbage Cleaner", "Only Player Commander has access to this function."] call A3A_fnc_customHint; // TODO UI-update: stringtable this
+            [localize "STR_antistasi_journal_entry_header_Options_7", localize "STR_antistasi_journal_entry_warning_Options_7"] call A3A_fnc_customHint;
         };
     };
 
     case ("garbageCleanHqButtonClicked"):
     {
         closeDialog 2;
-        ["Garbage Cleaner", "HQ only garbage clean yet to be implemented."] call A3A_fnc_customHint;
+        [localize "STR_antistasi_journal_entry_header_Options_7", localize "STR_antistasi_journal_entry_not_implemented"] call A3A_fnc_customHint;
     };
 
     default

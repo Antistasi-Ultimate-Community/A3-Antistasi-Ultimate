@@ -132,7 +132,7 @@ else
 
     if(_reveal < 0.8) exitWith {};
 
-    _text = format ["%1. Target marked on map!", _text];
+    _text = format [localize "STR_notifiers_SUP_execute_marker", _text];
     private _targetMarker = format ["%1_target_%2", _supportType, A3A_supportMarkerCount];
     private _textMarker = format ["%1_text_%2", _supportType, A3A_supportMarkerCount];
     A3A_supportMarkerCount = A3A_supportMarkerCount + 1;

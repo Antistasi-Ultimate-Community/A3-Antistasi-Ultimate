@@ -33,8 +33,8 @@ if (_amount isEqualTo 0) then {
 if (_message isEqualTo "") then {
     _message = selectRandom
     [
-        "Civilians sympathetic to our cause gave us some intel on enemy zones.", // To-Do: Localize
-        "A map marked with enemy locations was found by one of our comrades." // To-Do: Localize
+       localize "STR_antistasi_zone_reveal_default_1",
+       localize "STR_antistasi_zone_reveal_default_2"
     ];
 };
 
@@ -60,7 +60,7 @@ for "_i" from 0 to (_amount - 1) do {
 
 [_unhiddenMarkers] call A3U_fnc_revealZones; // reveal the zones
 
-private _markerGrids = _message+"<br/><br/>The following zones have been revealed:<br/>"; // To-Do: Localize
+private _markerGrids = _message+"STR_antistasi_zones_revealed";
 
 {
     private _gridPos = (_x call BIS_fnc_posToGrid) joinString "";

@@ -2,7 +2,7 @@ private _markersX = markersX + [respawnTeamPlayer];
 
 // private _titleStr = localize "STR_A3A_fn_dialogs_ftradio_title";
 private _titleStr = "Fast Travel";
-if (limitedFT == 3) exitWith {[_titleStr, "Fast travel is disabled for this server."] call A3A_fnc_customHint}; // [_titleStr, localize "STR_A3A_fn_dialogs_ftradio_no_param"]
+if (limitedFT == 3) exitWith {[_titleStr, localize "STR_A3A_fn_dialogs_ftradio_no_param"] call A3A_fnc_customHint};
 // This needs a proper stringtable ^
 
 if (!isNil "traderMarker") then {

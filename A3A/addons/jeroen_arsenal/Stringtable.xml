@@ -90,15 +90,6 @@
                 <French>Sélectionner un véhicule pour ouvrir l'arsenal qui lui est destiné</French>
                 <Turkish>Araç için Arsenal'i aç</Turkish>
             </Key>
-            <Key ID="STR_JNA_ACT_UNLOAD">
-                <Original>Unload from vehicle</Original>
-                <German>Fahrzeug entladen</German>
-                <Chinesesimp>从载具上卸载</Chinesesimp>
-                <Russian>Выгрузить из транспортного средства</Russian>
-                <Korean>차량에서 하역</Korean>
-                <French>Déchargement du véhicule</French>
-                <Turkish>Araçtan indir</Turkish>
-            </Key>
             <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR1">
                 <Original>You're not looking at an object.</Original>
                 <German>Sie betrachten kein Objekt.</German>

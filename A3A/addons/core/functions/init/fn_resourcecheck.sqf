@@ -308,7 +308,7 @@ while {true} do {
 
 		if (_vehicleTypesUnlockedNotify isEqualTo []) exitWith {false};
 
-		private _unlockedMessages = "The following vehicles have been unlocked at the Arms Dealer.<br/>"; // To-Do: Localize
+		private _unlockedMessages = localize "STR_trader_black_market_unlocked"; // To-Do: Localize
 
 		{
 			private _vehicleType = _x;
