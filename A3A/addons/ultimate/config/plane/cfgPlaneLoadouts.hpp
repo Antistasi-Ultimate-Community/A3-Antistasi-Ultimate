@@ -554,7 +554,7 @@ class planeLoadouts
         class PRACS_SLA_MiG27
         {
             loadout[] = {"PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","rhs_mag_ub32_s5ko","rhs_mag_ub32_s5ko","",""};
-            mainGun = "PRACS_Gsh_6_30"
+            mainGun = "PRACS_Gsh_6_30";
             bombRacks[] = {"PRACS_FAB_500_M54_Launcher"};
             rocketLauncher[] = {"rhs_weap_s5ko"};
         };
