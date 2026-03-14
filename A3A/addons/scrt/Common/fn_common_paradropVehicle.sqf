@@ -100,13 +100,13 @@ _wp1 setWaypointSpeed "NORMAL";
     };
 };
 
-if(canMove _plane || alive _groupPilot) then {
+if(canMove _plane || alive (driver _plane)) then {
     [_plane, "open"] spawn A3A_fnc_HeliDoors;
     sleep 0.25;
 };
 
 waitUntil {sleep 1; (_plane getVariable ["dropPosReached", false]) || {!alive _plane || {!canMove _plane}}};
-if !(alive _vehicle) exitWith {};
+if !(alive _plane) exitWith {};
 
 if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["planeDead", false])}) then {
     Debug("Drop pos reached");
@@ -212,7 +212,7 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
         unassignVehicle _x;
         //Move them into alternating left/right positions, so their parachutes are less likely to kill each other
         private _sideOffset = [1, -1] select (_forEachIndex % 2 == 0);
-        private _pos = _vehicle modelToWorld [7 * _sideOffset, -20, -5];
+        private _pos = _plane modelToWorld [7 * _sideOffset, -20, -5];
         _x setPosASL (AGLtoASL _pos);
         _x setVelocity _troopVelocity;
 
@@ -265,7 +265,7 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
         while {_plane distance2D _exitPos > 100 && alive _plane && canMove _plane && _plane distance2D _exitPos < 500} do {
             [_plane, 0.3] call A3A_fnc_fireCMFlare;
         };
-        if(canMove _plane || alive _groupPilot) then {
+        if(canMove _plane || alive (driver _plane)) then {
             [_plane, "close"] spawn A3A_fnc_HeliDoors;
         };
     };
