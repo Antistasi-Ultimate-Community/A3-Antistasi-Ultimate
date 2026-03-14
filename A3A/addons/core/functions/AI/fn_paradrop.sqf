@@ -93,7 +93,7 @@ _wp1 setWaypointSpeed "NORMAL";
     };
 };
 
-if(canMove _vehicle || alive _groupPilot) then {
+if(canMove _vehicle || alive (driver _vehicle)) then {
     [_vehicle, "open"] spawn A3A_fnc_HeliDoors;
     sleep 0.25;
 };
@@ -169,7 +169,7 @@ if(currentWaypoint _groupPilot > 0) then
             _timeout = _timeout + 0.3;
             sleep 0.3;
         };
-        if(canMove _vehicle || alive _groupPilot) then {
+        if(canMove _vehicle || alive (driver _vehicle)) then {
             [_vehicle, "close"] spawn A3A_fnc_HeliDoors;
         };
     };
