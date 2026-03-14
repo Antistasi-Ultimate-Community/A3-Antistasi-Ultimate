@@ -636,11 +636,7 @@ while {_lifeTime > 0} do
     _lifeTime = _lifeTime - 10;
 };
 
-for '_i' from 1 to 3 do
-{
-    [_gunship, 0.3] call A3A_fnc_fireCMFlare;
-    sleep 1;
-};
+[_gunship, 1.3, 3] call A3A_fnc_fireCMFlare;
 
 _gunship setVariable ["IsActive", false];
 

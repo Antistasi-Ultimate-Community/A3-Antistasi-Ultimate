@@ -99,11 +99,7 @@ while {time < _timeout && canMove _uav} do
 
 _suppData set [4, 0];           // Set activesupport radius to zero, prevents adding further targets
 
-for '_i' from 1 to 3 do
-{
-    [_plane, 0.3] call A3A_fnc_fireCMFlare;
-    sleep 1;
-};
+[_plane, 1.3, 3] call A3A_fnc_fireCMFlare;
 
 //Have the plane fly back home
 if (canMove _uav) then

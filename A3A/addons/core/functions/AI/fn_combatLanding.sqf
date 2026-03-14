@@ -203,8 +203,5 @@ _vehWP1 setWaypointBehaviour "CARELESS";
 
 _crewGroup setCurrentWaypoint _vehWP1;
 waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
-for '_i' from 1 to (5 + (round random 2)) do
-{
-    [_helicopter, 1] call A3A_fnc_fireCMFlare;
-};
+[_helicopter, 1, [5,7]] call A3A_fnc_fireCMFlare;
 _helicopter action ["LandGearUp", _helicopter];

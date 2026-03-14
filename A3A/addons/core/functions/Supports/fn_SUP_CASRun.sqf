@@ -162,11 +162,8 @@ waitUntil { sleep 1; _transform#8 >= 1 };
 
 Debug_1("Gun run for %1 finished, returning control", _supportName);
 _plane setVehicleRadar 0;
-for '_i' from 1 to 3 do
-{
-    [_plane, 0] call A3A_fnc_fireCMFlare;
-    sleep 1;
-};
+
+[_plane, 1, 3] call A3A_fnc_fireCMFlare;
 /*
     if(_interval > 0.25 && (_fireParams#0#0)) then
     {
