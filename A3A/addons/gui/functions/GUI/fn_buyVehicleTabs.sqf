@@ -463,6 +463,7 @@ if  (_tab in ["other"]) then
             case "refuel": { A3A_Icon_Refuel }; 
             case "repair": { A3A_Icon_Repair };
             case "rearm": { A3A_Icon_Rearm };
+            case "build": { A3A_Icon_Build };
             default { "" };
         };
         _itemPic ctrlSetText _iconPath;
@@ -487,6 +488,30 @@ if  (_tab in ["other"]) then
         if (_className isEqualTo (A3A_faction_reb get 'vehicleLightSource')) then
         {
             _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_light_tooltip";
+        };
+        if (_className isEqualTo "Box_NATO_Support_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_revivekitbox_tooltip";
+        };
+        if (_className isEqualTo "Land_PlasticCase_01_small_black_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "Land_PlasticCase_01_medium_black_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "A3AU_Build_Box_Large_1") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "Land_PlasticCase_01_large_black_F") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
+        };
+        if (_className isEqualTo "A3AU_Build_Box_Humongous") then
+        {
+            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip";
         };
         _itemPic ctrlCommit 0;
 
