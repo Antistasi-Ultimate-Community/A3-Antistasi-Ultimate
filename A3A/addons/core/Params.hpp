@@ -3112,7 +3112,7 @@ class Params
         };
         default = 25;
     };
-    class AIrevivesOutsideSquad: AIBalanceParams
+    class AIrevivesOutsideSquad : ExperimentalParams
     {
         title = $STR_params_AIrevivesOutsideSquad;
         tooltip = $STR_params_AIrevivesOutsideSquad_desc;
