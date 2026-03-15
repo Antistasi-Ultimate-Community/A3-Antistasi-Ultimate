@@ -7,6 +7,8 @@ Arguments:
     None
 */
 
+if (A3A_idleTimeout isEqualTo -1) exitWith {}; // AFK disabled
+
 A3A_lastActiveTime = time;
 A3A_lastPlayerDir = getDir player;
 
