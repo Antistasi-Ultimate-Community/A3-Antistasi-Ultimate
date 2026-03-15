@@ -25,11 +25,11 @@ for "_dx" from -_smoothingRadius to _smoothingRadius step _gridSize do {
         _debugBefore pushBack [_x, _y, _h];
     };
 };
-diag_log "=== TERRAIN BEFORE ===";
+Debug("=== TERRAIN BEFORE ===");
 {
-    diag_log format ["BEFORE %1", _x];
+    Debug_1("BEFORE %1", _x);
 } forEach _debugBefore;
-diag_log "=== END TERRAIN BEFORE ===";
+Debug("=== END TERRAIN BEFORE ===");
 
 // General function for terrain height processing
 private _fnc_processTerrain = {
