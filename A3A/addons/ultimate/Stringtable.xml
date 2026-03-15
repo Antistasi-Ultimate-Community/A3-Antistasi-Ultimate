@@ -1,179 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3AU-ultimate">
-    <Package name="A3-Antistasi-builderbox">
-        <Key ID="STR_params_builderPermissions">
-            <Original>Player classes permitted to use the building placer</Original>
-            <Chinesesimp>允许放置建筑的玩家类型</Chinesesimp>
-            <Korean>구조물 배치기를 사용할 수 있는 플레이어 병과</Korean>
-        </Key>
-        <Key ID="STR_params_builderLimit">
-            <Original>Build limit</Original>
-            <Chinesesimp>建筑上限</Chinesesimp>
-            <Korean>구조물 제한</Korean>
-        </Key>
-        <Key ID="STR_params_builderAllowRoads">
-            <Original>Allow buildings to be saved on roads</Original>
-            <Chinesesimp>允许保留道路上的建筑物</Chinesesimp>
-            <Korean>도로에 구조물을 저장할 수 있도록 허용</Korean>
-        </Key>
-        <Key ID="STR_params_builderBuildTime">
-            <Original>Build hold time multiplier</Original>
-            <Chinesesimp>建筑留存时间乘数</Chinesesimp>
-            <Korean>건설 홀드 시간 배수</Korean>
-        </Key>
-    </Package>
     <Package name="A3-Antistasi-Ultimate-functions">
         <Key ID="STR_A3AU_init_mods_warning_header">
             <Original>Warning</Original>
-            <English>Warning</English>
             <Russian>Предупреждение</Russian>
             <Korean>경고</Korean>
             <French>Avertissement</French>
             <Chinesesimp>警告</Chinesesimp>
+            <Turkish>Uyarı</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_text">
             <Original>Warning. Addons loaded may not work correctly, or work together.%1%1| %2 |%1%1Consider removing them if you encounter any issues.</Original>
-            <English>Warning. Addons loaded may not work correctly, or work together.%1%1| %2 |%1%1Consider removing them if you encounter any issues.</English>
             <Russian>Внимание! Загруженные моды могут работать некорректно или конфликтовать между собой.%1%1| %2 |%1%1Рекомендуем отключить их в случае возникновения ошибок.</Russian>
             <Korean>경고. 불러온 애드온이 올바르게 작동하지 않거나 함께 작동하지 않을 수 있습니다.%1%1| %2 |%1%1문제가 발생하면 제거하는 것이 좋습니다.</Korean>
             <French>Attention. Les modules complémentaires chargés peuvent ne pas fonctionner correctement ou ne pas fonctionner ensemble.%1%1| %2 |%1%1Envisagez de les supprimer si vous rencontrez des problèmes.</French>
             <Chinesesimp>警告。加载的插件可能无法正常工作，或无法协同工作。%1%1| %2 |%1%1如果遇到任何问题，请考虑将其删除。</Chinesesimp>
+            <Turkish>Uyarı. Yüklenen eklentiler düzgün çalışmayabilir veya birlikte çalışmayabilir.%1%1| %2 |%1% 1 Herhangi bir sorunla karşılaşırsanız bunları kaldırmayı düşünün.</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_CUP_RHS">
             <Original>CUP and RHS (Pick One)</Original>
-            <English>CUP and RHS (Pick One)</English>
             <Russian>CUP и RHS (Выберите один из них)</Russian>
             <Korean>CUP와 RHS (하나만 고르십시오)</Korean>
             <French>CUP et RHS (en choisir un)</French>
             <Chinesesimp>CUP 和 RHS (二选一)</Chinesesimp>
+            <Turkish>CUP ve RHS (Birini Seç)</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Advanced_Rappeling">
             <Original>Advanced Rappeling</Original>
-            <English>Advanced Rappeling</English>
             <Russian>Advanced Rappeling</Russian>
             <Korean>Advanced Rappeling</Korean>
             <French>Advanced Rappeling</French>
             <Chinesesimp>Advanced Rappeling</Chinesesimp>
+            <Turkish>Advanced Rappeling</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Advanced_Urban_Rappeling">
             <Original>Advanced Urban Rappeling</Original>
-            <English>Advanced Urban Rappeling</English>
             <Russian>Advanced Urban Rappeling</Russian>
             <Korean>Advanced Urban Rappeling</Korean>
             <French>Advanced Urban Rappeling</French>
             <Chinesesimp>Advanced Urban Rappeling</Chinesesimp>
+            <Turkish>Advanced Urban Rappeling</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_LAMBS_AI">
             <Original>LAMBS AI</Original>
-            <English>LAMBS AI</English>
             <Russian>LAMBS AI</Russian>
             <Korean>LAMBS AI</Korean>
             <French>LAMBS AI</French>
             <Chinesesimp>LAMBS AI</Chinesesimp>
+            <Turkish>LAMBS AI</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_VCOM_AI">
             <Original>VCOM AI</Original>
-            <English>VCOM AI</English>
             <Russian>VCOM AI</Russian>
             <Korean>VCOM AI</Korean>
             <French>VCOM AI</French>
             <Chinesesimp>VCOM AI</Chinesesimp>
+            <Turkish>VCOM AI</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_AI_CSTG">
             <Original>AI Cannot See Through Grass</Original>
-            <English>AI Cannot See Through Grass</English>
             <Russian>AI Cannot See Through Grass</Russian>
             <Korean>AI Cannot See Through Grass</Korean>
             <French>AI Cannot See Through Grass</French>
             <Chinesesimp>AI Cannot See Through Grass</Chinesesimp>
+            <Turkish>AI Cannot See Through Grass</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ASR_AI3">
             <Original>ASR AI3</Original>
-            <English>ASR AI3</English>
             <Russian>ASR AI3</Russian>
             <Korean>ASR AI3</Korean>
             <French>ASR AI3</French>
             <Chinesesimp>ASR AI3</Chinesesimp>
+            <Turkish>ASR AI3</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ALiVE">
             <Original>ALiVE</Original>
-            <English>ALiVE</English>
             <Russian>ALiVE</Russian>
             <Korean>ALiVE</Korean>
             <French>ALiVE</French>
             <Chinesesimp>ALiVE</Chinesesimp>
+            <Turkish>ALiVE</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_MCC_Sandbox_4">
             <Original>MCC Sandbox 4</Original>
-            <English>MCC Sandbox 4</English>
             <Russian>MCC Sandbox 4</Russian>
             <Korean>MCC Sandbox 4</Korean>
             <French>MCC Sandbox 4</French>
             <Chinesesimp>MCC Sandbox 4</Chinesesimp>
+            <Turkish>MCC Sandbox 4</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_ZHC">
             <Original>Zulu Headless Client (ZHC)</Original>
-            <English>Zulu Headless Client (ZHC)</English>
             <Russian>Zulu Headless Client (ZHC)</Russian>
             <Korean>Zulu Headless Client (ZHC)</Korean>
             <French>Zulu Headless Client (ZHC)</French>
             <Chinesesimp>Zulu Headless Client (ZHC)</Chinesesimp>
+            <Turkish>Zulu Headless Client (ZHC)</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_PiR">
             <Original>Project injury Reaction (PiR)</Original>
-            <English>Project injury Reaction (PiR)</English>
             <Russian>Project injury Reaction (PiR)</Russian>
             <Korean>Project injury Reaction (PiR)</Korean>
             <French>Project injury Reaction (PiR)</French>
             <Chinesesimp>Project injury Reaction (PiR)</Chinesesimp>
+            <Turkish>Project injury Reaction (PiR)</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_WHK">
             <Original>Werthles' Headless Module</Original>
-            <English>Werthles' Headless Module</English>
             <Russian>Werthles' Headless Module</Russian>
             <Korean>Werthles' Headless Module</Korean>
             <French>Werthles' Headless Module</French>
             <Chinesesimp>Werthles' Headless Module</Chinesesimp>
+            <Turkish>Werthles' Headless Module</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Wargame">
             <Original>ZEUS WARGAME</Original>
-            <English>ZEUS WARGAME</English>
             <Russian>ZEUS WARGAME</Russian>
             <Korean>ZEUS WARGAME</Korean>
             <French>ZEUS WARGAME</French>
             <Chinesesimp>ZEUS WARGAME</Chinesesimp>
+            <Turkish>ZEUS WARGAME</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_APS">
             <Original>Armor Plates System</Original>
-            <English>Armor Plates System</English>
             <Russian>Armor Plates System</Russian>
             <Korean>Armor Plates System</Korean>
             <French>Armor Plates System</French>
             <Chinesesimp>Armor Plates System</Chinesesimp>
+            <Turkish>Armor Plates System</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_dis">
             <Original>Dismemberment</Original>
-            <English>Dismemberment</English>
             <Russian>Dismemberment</Russian>
             <Korean>Dismemberment</Korean>
             <French>Dismemberment</French>
             <Chinesesimp>Dismemberment</Chinesesimp>
+            <Turkish>Dismemberment</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Exile">
             <Original>Exile</Original>
-            <English>Exile</English>
             <Russian>Exile</Russian>
             <Korean>Exile</Korean>
             <French>Exile</French>
             <Chinesesimp>Exile</Chinesesimp>
+            <Turkish>Exile</Turkish>
         </Key>
         <Key ID="STR_A3AU_init_mods_warning_Lifeline">
             <Original>Lifeline Revive AI</Original>
-            <English>Lifeline Revive AI</English>
             <Russian>Lifeline Revive AI</Russian>
             <Korean>Lifeline Revive AI</Korean>
             <French>Lifeline Revive AI</French>
             <Chinesesimp>Lifeline Revive AI</Chinesesimp>
+            <Turkish>Lifeline Revive AI</Turkish>
         </Key>
     </Package>
     <Package name="ported">
@@ -181,6 +159,7 @@
             <Original>%1 just sent a tank platoon.</Original>
             <Chinesesimp>%1刚刚派出了一个坦克排。</Chinesesimp>
             <Korean>%1이(가) 방금 전차소대를 보냈습니다.</Korean>
+            <Turkish>%1 bir tank müfrezesi gönderdi.</Turkish>
         </Key>
     </Package>
     <Package name="Lockpick">
@@ -308,7 +287,7 @@
             <Original>Your soldiery hands aren't used to fine work. The lockpick broke. Try again.</Original>
             <Russian>Ваши солдатские руки не привыкли к тонкой работе. Отмычка сломалась. Попробуйте снова.</Russian>
             <Korean>당신의 군인 손은 섬세한 작업에 익숙하지 않습니다. 락픽이 부러졌습니다. 다시 시도하세요.</Korean>
-            <Chinesesimp>你的士兵之手不习惯精细的工作
+            <Chinesesimp>你的士兵之手不习惯精细的工作</Chinesesimp>
             <German>Deine Soldatenhände sind nicht an feine Arbeiten gewöhnt. Der Dietrich ist gebrochen. Versuche es erneut.</German>
             <French>Vos mains de soldat ne sont pas habituées à un travail de précision. La serrure a cassé. Essayez encore.</French>
         </Key>
@@ -320,7 +299,8 @@
             <Korean>빠른 장비 로드아웃</Korean>
             <Chinesesimp>快速装备</Chinesesimp>
             <French>Équipement rapide</French>
-        </Key>
+            <Turkish>Hızlı Ekipman Kuşan</Turkish>
+            </Key>
     </Package>
     <Package name="Assets">
         <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse">
@@ -354,6 +334,40 @@
             <Korean>이 키트에는 엔지니어가 아닌 경우 차량 잠금을 해제하는 데 사용할 수 있는 일회용 락픽 도구가 포함되어 있습니다.</Korean>
             <Chinesesimp>此工具包包含一个一次性撬锁工具，用于在您不是工程师的情况下解锁车辆。</Chinesesimp>
             <French>Ce kit contient un outil de crochetage à usage unique pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
+        </Key>
+    </Package>
+    <Package name="CBA-settings">
+        <Key ID="STR_A3U_setting_enableInitMessages">
+            <Original>Enable Init Messages</Original>
+            <German>Initialnachrichten aktivieren</German>
+            <Russian>Включить начальные сообщения</Russian>
+            <Korean>초기 메시지 활성화</Korean>
+            <Chinesesimp>启用初始化消息</Chinesesimp>
+            <French>Activer les messages d'initialisation</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableInitMessages_desc">
+            <Original>Enable popup messages during / after client initialization relating to basic gamemode and loaded mods information.</Original>
+            <German>Popup-Nachrichten während / nach der Client-Initialisierung aktivieren, die sich auf grundlegende Spielmodi und geladene Mods beziehen.</German>
+            <Russian>Включить всплывающие сообщения во время / после инициализации клиента, относящиеся к основному игровому режиму и загруженным модам.</Russian>
+            <Korean>클라이언트 초기화 중 / 후에 기본 게임 모드 및 로드된 모드 정보와 관련된 팝업 메시지를 활성화합니다.</Korean>
+            <Chinesesimp>在客户端初始化期间/之后启用与基本游戏模式和已加载的模组信息相关的弹出消息。</Chinesesimp>
+            <French>Activer les messages contextuels pendant / après l'initialisation du client concernant le mode de jeu de base et les mods chargés.</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableIntroAnimation">
+            <Original>Enable Intro Animation</Original>
+            <German>Intro-Animation aktivieren</German>
+            <Russian>Включить вступительную анимацию</Russian>
+            <Korean>인트로 애니메이션 활성화</Korean>
+            <Chinesesimp>启用开场动画</Chinesesimp>
+            <French>Activer l'animation d'introduction</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableIntroAnimation_desc">
+            <Original>Enable orbiting camera intro animation at end of client initialization.</Original>
+            <German>Orbitierende Kamera-Intro-Animation am Ende der Client-Initialisierung aktivieren.</German>
+            <Russian>Включить анимацию вступительной камеры в конце инициализации клиента.</Russian>
+            <Korean>클라이언트 초기화가 끝날 때 궤도 카메라 인트로 애니메이션 활성화.</Korean>
+            <Chinesesimp>在客户端初始化结束时启用环绕摄像机的开场动画。</Chinesesimp>
+            <French>Activer l'animation d'introduction de la caméra orbitale à la fin de l'initialisation du client.</French>
         </Key>
     </Package>
 </Project>
