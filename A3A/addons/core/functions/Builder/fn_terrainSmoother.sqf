@@ -103,11 +103,11 @@ for "_dx" from -_smoothingRadius to _smoothingRadius step _gridSize do {
         _debugAfter pushBack [_x, _y, _h];
     };
 };
-diag_log "=== TERRAIN AFTER ===";
+Debug("=== TERRAIN AFTER ===");
 {
-    diag_log format ["AFTER %1", _x];
+    Debug_1("AFTER %1", _x);
 } forEach _debugAfter;
-diag_log "=== END TERRAIN AFTER ===";
+Debug("=== END TERRAIN AFTER ===");
 
 // === VISUALIZATION OF MODIFIED POINTS AND RADIUS ===
 private _visGroup = createGroup sideLogic; // group for created objects (to be able to delete them later)
