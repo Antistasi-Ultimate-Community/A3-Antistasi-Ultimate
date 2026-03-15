@@ -102,7 +102,6 @@ private _fnc_spawnConvoyVehicle = {
     _markNames pushBack _markName;
     _veh;
 };
-
 //////////////////////////////////////////////
 //  Task        	                        //
 //////////////////////////////////////////////
@@ -191,7 +190,6 @@ for "_i" from 0 to _propsCount do {
     _prop setVectorUp surfaceNormal getPos _prop;
     _vehicles pushBack _prop;
 };
-
 deleteVehicle _lootContainer;
 _lootContainer = createVehicle [_cacheType, _lootContainerPosition, [], 0 , "CAN_COLLIDE"];
 [_lootContainer] spawn A3A_fnc_fillLootCrate;
@@ -292,7 +290,6 @@ private _vehicletransferClass = if (_isDifficult) then { selectRandom ((_faction
     } else {
         selectRandom ((_faction get "vehiclesCargoTrucks") + (A3A_faction_riv get "vehiclesRivalsLightArmed"));
     }; ///check if vehicle is cargo truck or vehicle to transfer, if cargo truck create or move loot crate to truck.
-
 private _escortvehicle = if (_isDifficult) then {
     selectRandom ((_faction get "vehiclesLightAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + (_faction get "vehiclesLightArmed") + 
     (_faction get "vehiclesTrucks"));

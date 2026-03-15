@@ -78,7 +78,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 		Info("Rebels in area, spawning additional group.");
 
 		private _typeGroup = [
-		    _faction get "groupPoliceSquad",
+			_faction get "groupPoliceSquad",
 			selectRandom ([_faction, "groupsTierSquads", 0] call SCRT_fnc_unit_flattenTier)
 		] select _difficultX;
 
