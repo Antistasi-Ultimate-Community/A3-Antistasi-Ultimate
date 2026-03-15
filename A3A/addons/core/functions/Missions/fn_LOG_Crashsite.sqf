@@ -105,6 +105,7 @@ if ("lowTech" in A3A_factionEquipFlags) then {
 } else {
    _blackboxClass = "Land_PortableServer_01_black_F";
 };
+
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};
 //new
 private _infantrySquadArray = selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier);

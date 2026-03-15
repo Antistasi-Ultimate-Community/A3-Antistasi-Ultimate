@@ -57,7 +57,7 @@ else
 
 if(_result != "EMPTY") exitWith
 {
-  if(_result == "SQUAD") then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
+    if(_result == "SQUAD") then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
 };
 
 [];
