@@ -5,7 +5,6 @@ params ["_veh", "_sideX"];
 
 private _faction = Faction(_sideX);
 /* private _isOrbital = _veh in ((_faction get "vehiclesDropPod")); */
-
 private _isMilitia = _veh in ((_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaTrucks") + (_faction get "vehiclesMilitiaCars") + (_faction get "vehiclesMilitiaAPCs"));
 //private _isRivals = _veh in FactionGet(all, "vehiclesRivals");
 
@@ -13,6 +12,7 @@ private _totalSeats = [_veh, true] call BIS_fnc_crewCount; // Number of total se
 private _crewSeats = [_veh, false] call BIS_fnc_crewCount; // Number of crew seats only
 private _cargoSeats = _totalSeats - _crewSeats;
 if (_veh in (_faction get "vehiclesPolice")) then { _cargoSeats = 6 min _cargoSeats };
+
 /* if (_veh in (_faction get "vehiclesDropPod")) exitWith {selectRandom [_faction, "groupsTierSquads", 2] call SCRT_fnc_unit_flattenTier }; *////;
 
 if (_cargoSeats < 2) exitwith { [] };
