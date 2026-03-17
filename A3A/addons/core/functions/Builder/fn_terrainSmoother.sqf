@@ -1,6 +1,8 @@
 /// original author https://steamcommunity.com/profiles/76561199005611926
 /// slightly modified by wersal
 
+#include "..\..\script_component.hpp"
+
 params [
     ["_object", objNull, [objNull]],
     ["_radius", 0, [0]],
