@@ -15,7 +15,7 @@ class planeLoadouts
             bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         }; */
-/// PRACS
+        /// PRACS
         class PRACS_SLA_SU22
         {
             loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","","","rhs_mag_upk23_ofz","rhs_mag_upk23_ofz","","","","","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1"};
