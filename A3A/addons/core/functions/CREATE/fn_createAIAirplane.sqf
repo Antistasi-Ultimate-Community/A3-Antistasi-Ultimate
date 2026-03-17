@@ -227,8 +227,6 @@ if (!_busy) then {
 		_pos = _runwaySpawnLocation select 0;
 		_ang = _runwaySpawnLocation select 1;
 	};
-	private _groupX = createGroup _sideX;
-	_groups pushBack _groupX;
 	_countX = 0;
 	private _vehCount = round (random [2, 4, 5]);
 	while {_countX < _vehCount} do {
@@ -310,7 +308,7 @@ if (!_busy) then {
 				} forEach _vehiclesPlanesGunship;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack ((A3A_UAVSpawnChance - 0.1) max 0);
+				    _vehPool pushBack ((A3A_UAVSpawnChance - 10) max 0);
 				} forEach _uavsAttack;
 				_typeVehX = selectRandomWeighted _vehPool;
 				if (!isNil "_typeVehX") then {

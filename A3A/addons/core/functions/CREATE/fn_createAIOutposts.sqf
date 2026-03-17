@@ -241,9 +241,57 @@ if (_spawnParameter isEqualType []) then {
 	sleep 1;
 };
 
+private _countX = 0;
+private _vehCount = round (random [2, 4, 5]);
+while {_countX < _vehCount} do {
+    private _veh = objNull;
+    private _hangar = objNull;
+    private _spawnParameter = [_markerX, "Plane"] call A3A_fnc_findSpawnPosition;
+    if (_spawnParameter isEqualType []) then {
+        private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
+        private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
+        private _uavsAttack = _faction getOrDefault ["uavsAttack", []];
+        private _vehPool = [];
+        {
+            _vehPool pushBack _x;
+            _vehPool pushBack 1;
+        } forEach _vehiclesPlanesCAS;
+        {
+            _vehPool pushBack _x;
+            _vehPool pushBack 1;
+        } forEach _vehiclesPlanesAA;
+        {
+            _vehPool pushBack _x;
+            _vehPool pushBack A3A_UAVSpawnChance;
+        } forEach _uavsAttack;
+        _spawnsUsed pushBack (_spawnParameter select 2);
+        private _typeVehX = selectRandomWeighted _vehPool;
+        _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+        _veh setDir (_spawnParameter select 1);
+        sleep 0.5;
+        if !(alive _veh) then {
+            _hangar = (nearestObjects [_veh, ["Static"], 20]) select 0;
+            deleteVehicle _hangar;
+            deleteVehicle _veh;
+            _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+            _veh setDir (_spawnParameter select 1);
+            _veh allowDamage false;
+            _veh enableSimulation false;
+            sleep 0.5;
+            _veh enableSimulation true;
+            _veh allowDamage true;
+        };
+        _vehiclesX pushBack _veh;
+        [_veh, _sideX] call A3A_fnc_AIVEHinit;
+    } else {
+        _countX = _vehCount;
+    };
+    _countX = _countX + 1;
+};
+
 { _x setVariable ["originalPos", getPos _x] } forEach _vehiclesX;
 
-private _countX = 0;
+_countX = 0;
 
 if (!isNull _antenna) then {
 	if ((typeOf _antenna == "Land_TTowerBig_1_F") or {typeOf _antenna == "Land_TTowerBig_2_F"}) then {
@@ -275,7 +323,7 @@ if (!isNull _antenna) then {
 
 private _array = [];
 private _subArray = [];
-private _countX = 0;
+_countX = 0;
 _radiusX = _radiusX -1;
 while {_countX <= _radiusX} do {
 	_array pushBack (_garrison select [_countX,7]);

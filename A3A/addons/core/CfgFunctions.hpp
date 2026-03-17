@@ -8,6 +8,7 @@ class CfgFunctions
             class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
+            class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
             class assaultBuilding {};
@@ -21,6 +22,7 @@ class CfgFunctions
             class canFight {};
             class captureX {};
             class chargeWithSmoke {};
+            class checkAndSpawnAttack {};
             class combatLanding {};
             class coverage {};
             class destroyBuilding {};
@@ -31,6 +33,7 @@ class CfgFunctions
             class fastrope {};
             class fastropeVTOL {};
             class findSafeRoadToUnload {};
+            class fireCMFlare {};
             class fleeToSide {};
             class guardDog {};
             class hasRadio {};
@@ -486,7 +489,6 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\OrgPlayers);
             class addMoneyPlayer {};
             class addScorePlayer {};
-            class addTearDownActions {};
             class donateMoney {};
             class donateMoneyPercentage {};
             class isMember {};
@@ -501,6 +503,7 @@ class CfgFunctions
             class theBossToggleEligibility {};
             class theBossTransfer {};
             class theBossSteal {};
+            class toggleTeardownMode {};
             class assignBossIfNone {};
             class tierCheck {};
             class unitTraits {};
@@ -610,6 +613,7 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
@@ -623,6 +627,7 @@ class CfgFunctions
             class savePlayerStat {};
             class setStatVariable {};
             class saveLoop {};
+            class saveParamPreset {};
             class writebackSaveVar {};
         };
 
