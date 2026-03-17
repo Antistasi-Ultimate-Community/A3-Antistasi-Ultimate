@@ -31,9 +31,9 @@ params ["_faction", "_prefix"];
 // AI Group data |
 //---------------|
 
-private _aaGroupChance = if { aaChance <= 0.5 } then {0} else {aaChance};
-private _atGroupChance = if { atChance <= 0.5 } then {0} else {atChance};
-private _latGroupChance = if { latChance <= 0.5 } then {0} else {latChance};
+private _aaGroupChance = if { aaChance <= 50 } then {0} else {aaChance};
+private _atGroupChance = if { atChance <= 50 } then {0} else {atChance};
+private _latGroupChance = if { latChance <= 50 } then {0} else {latChance};
 
 if (_prefix in ["occ", "inv"]) exitWith {
     //singular tiered units
@@ -139,20 +139,20 @@ if (_prefix in ["occ", "inv"]) exitWith {
     _faction set ["groupTierAA", [
         [
             unit(militia, "SquadLeader"),
-            selectRandomWeighted [unit(militia, "AA"), _aaGroupChance, unit(militia, "Rifleman"), 3 - _aaGroupChance],
-            selectRandomWeighted [unit(militia, "AA"), _aaGroupChance, unit(militia, "Rifleman"), 3 - _aaGroupChance],
+            selectRandomWeighted [unit(militia, "AA"), _aaGroupChance, unit(militia, "Rifleman"), 300 - _aaGroupChance],
+            selectRandomWeighted [unit(militia, "AA"), _aaGroupChance, unit(militia, "Rifleman"), 300 - _aaGroupChance],
             unit(militia, "Rifleman")
         ],
         [
             unit(military, "SquadLeader"),
-            selectRandomWeighted [unit(military, "AA"), _aaGroupChance, unit(military, "Rifleman"), 2 - _aaGroupChance],
-            selectRandomWeighted [unit(military, "AA"), _aaGroupChance, unit(military, "Rifleman"), 2 - _aaGroupChance],
+            selectRandomWeighted [unit(military, "AA"), _aaGroupChance, unit(military, "Rifleman"), 200 - _aaGroupChance],
+            selectRandomWeighted [unit(military, "AA"), _aaGroupChance, unit(military, "Rifleman"), 200 - _aaGroupChance],
             unit(military, "Rifleman")
         ],
         [
             unit(elite, "SquadLeader"),
-            selectRandomWeighted [unit(elite, "AA"), _aaGroupChance, unit(elite, "Rifleman"), 1 - _aaGroupChance],
-            selectRandomWeighted [unit(elite, "AA"), _aaGroupChance, unit(elite, "Rifleman"), 1 - _aaGroupChance],
+            selectRandomWeighted [unit(elite, "AA"), _aaGroupChance, unit(elite, "Rifleman"), 100 - _aaGroupChance],
+            selectRandomWeighted [unit(elite, "AA"), _aaGroupChance, unit(elite, "Rifleman"), 100 - _aaGroupChance],
             unit(elite, "Rifleman")
         ]
     ]];
@@ -160,21 +160,21 @@ if (_prefix in ["occ", "inv"]) exitWith {
     _faction set ["groupTierAT", [
         [
             unit(militia, "SquadLeader"),
-            selectRandomWeighted [unit(militia, "AT"), _atGroupChance, unit(militia, "Rifleman"), 3 - _atGroupChance],
-            selectRandomWeighted [unit(militia, "AT"), _atGroupChance, unit(militia, "Rifleman"), 3 - _atGroupChance],
+            selectRandomWeighted [unit(militia, "AT"), _atGroupChance, unit(militia, "Rifleman"), 300 - _atGroupChance],
+            selectRandomWeighted [unit(militia, "AT"), _atGroupChance, unit(militia, "Rifleman"), 300 - _atGroupChance],
             unit(militia, "Rifleman")
         ],
         [
             unit(military, "SquadLeader"),
-            selectRandomWeighted [unit(military, "AT"), _atGroupChance, unit(military, "Rifleman"), 2 - _atGroupChance],
-            selectRandomWeighted [unit(military, "AT"), _atGroupChance, unit(military, "Rifleman"), 2 - _atGroupChance],
+            selectRandomWeighted [unit(military, "AT"), _atGroupChance, unit(military, "Rifleman"), 200 - _atGroupChance],
+            selectRandomWeighted [unit(military, "AT"), _atGroupChance, unit(military, "Rifleman"), 200 - _atGroupChance],
             unit(military, "Rifleman")
         ],
         [
             unit(elite, "SquadLeader"),
-            selectRandomWeighted [unit(elite, "AT"), _atGroupChance, unit(elite, "Rifleman"), 2 - _atGroupChance],
-            selectRandomWeighted [unit(elite, "AT"), _atGroupChance, unit(elite, "Rifleman"), 1 - _atGroupChance],
-            selectRandomWeighted [unit(elite, "LAT"), _latGroupChance, unit(elite, "Rifleman"), 1 - _latGroupChance]
+            selectRandomWeighted [unit(elite, "AT"), _atGroupChance, unit(elite, "Rifleman"), 200 - _atGroupChance],
+            selectRandomWeighted [unit(elite, "AT"), _atGroupChance, unit(elite, "Rifleman"), 100 - _atGroupChance],
+            selectRandomWeighted [unit(elite, "LAT"), _latGroupChance, unit(elite, "Rifleman"), 100 - _latGroupChance]
         ]
     ]];
 
@@ -186,7 +186,7 @@ if (_prefix in ["occ", "inv"]) exitWith {
             unit(military, "Marksman"),
             unit(military, "Medic"),
             unit(military, "Rifleman"),
-            selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 2 - latChance]
+            selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 200 - latChance]
         ],
         [
             unit(elite, "SquadLeader"),
@@ -194,7 +194,7 @@ if (_prefix in ["occ", "inv"]) exitWith {
             unit(elite, "Sniper"),
             unit(elite, "Medic"),
             unit(elite, "Rifleman"),
-            selectRandomWeighted [unit(elite, "AT"), atChance, unit(elite, "Rifleman"), 1 - atChance]
+            selectRandomWeighted [unit(elite, "AT"), atChance, unit(elite, "Rifleman"), 100 - atChance]
         ]
     ]];
 
@@ -203,21 +203,21 @@ if (_prefix in ["occ", "inv"]) exitWith {
             unit(militia, "SquadLeader"),
             unit(militia, "MachineGunner"),
             unit(militia, "Radioman"),
-            selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 3 - latChance],
+            selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 300 - latChance],
             unit(militia, "Rifleman")
         ],
         [
             unit(military, "SquadLeader"),
             unit(military, "MachineGunner"),
             unit(military, "Radioman"),
-            selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 2 - latChance],
+            selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 200 - latChance],
             unit(military, "Grenadier")
         ],
         [
             unit(elite, "SquadLeader"),
             unit(elite, "MachineGunner"),
             unit(elite, "Radioman"),
-            selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 1 - latChance],
+            selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 100 - latChance],
             unit(elite, "Grenadier")
         ]
     ];
@@ -229,7 +229,7 @@ if (_prefix in ["occ", "inv"]) exitWith {
             unit(elite, "SquadLeader"),
             unit(elite, "Marksman"),
             unit(elite, "Radioman"),
-            selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 1 - latChance],
+            selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 100 - latChance],
             unit(elite, "Sniper")
         ]
     ];
@@ -248,22 +248,22 @@ if (_prefix in ["occ", "inv"]) exitWith {
                 unit(militia, "SquadLeader"),
                 unit(militia, "Rifleman"),
                 unit(militia, "MachineGunner"),
-                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 3 - latChance],
-                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 3 - latChance]
+                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 300 - latChance],
+                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 300 - latChance]
             ],
             [
                 unit(military, "SquadLeader"),
                 unit(military, "Rifleman"),
                 unit(military, "MachineGunner"),
-                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 2 - latChance],
-                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 2 - latChance]
+                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 200 - latChance],
+                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 200 - latChance]
             ],
             [
                 unit(elite, "SquadLeader"),
                 unit(elite, "Rifleman"),
                 unit(elite, "MachineGunner"),
-                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 1 - latChance],
-                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 1 - latChance]
+                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 100 - latChance],
+                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 100 - latChance]
             ]
         ],
         [
@@ -272,21 +272,21 @@ if (_prefix in ["occ", "inv"]) exitWith {
                 unit(militia, "Marksman"),
                 unit(militia, "Rifleman"),
                 unit(militia, "Grenadier"),
-                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 2 - latChance]
+                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 200 - latChance]
             ],
             [
                 unit(military, "SquadLeader"),
                 unit(military, "Marksman"),
                 unit(military, "Rifleman"),
                 unit(military, "Grenadier"),
-                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 1 - latChance]
+                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 100 - latChance]
             ],
             [
                 unit(elite, "SquadLeader"),
                 unit(elite, "Marksman"),
                 unit(elite, "Rifleman"),
                 unit(elite, "Grenadier"),
-                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 1 - latChance]
+                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "Rifleman"), 100 - latChance]
             ]
         ]
     ]];
@@ -297,32 +297,32 @@ if (_prefix in ["occ", "inv"]) exitWith {
         _squads pushBack [
             [
                 unit(militia, "SquadLeader"),
-                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "MachineGunner"), 1 - latChance],
-                selectRandomWeighted [unit(militia, "Rifleman"), 1.25, unit(militia, "Grenadier"), 1],
-                selectRandomWeighted [unit(militia, "MachineGunner"), 2, unit(militia, "Marksman"), 1],
-                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "AT"), atChance, unit(militia, "Rifleman"), max(0, 1 - latChance - atChance)],
-                selectRandomWeighted [unit(militia, "AA"), aaChance, unit(militia, "Rifleman"), 3 - aaChance],
-                selectRandomWeighted [unit(militia, "Rifleman"), 2, unit(militia, "Radioman"), 1],
+                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "MachineGunner"), 100 - latChance],
+                selectRandomWeighted [unit(militia, "Rifleman"), 125, unit(militia, "Grenadier"), 100],
+                selectRandomWeighted [unit(militia, "MachineGunner"), 200, unit(militia, "Marksman"), 100],
+                selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "AT"), atChance, unit(militia, "Rifleman"), max(0, 100 - latChance - atChance)],
+                selectRandomWeighted [unit(militia, "AA"), aaChance, unit(militia, "Rifleman"), 300 - aaChance],
+                selectRandomWeighted [unit(militia, "Rifleman"), 200, unit(militia, "Radioman"), 100],
                 unit(militia, "Medic")
             ],
             [
                 unit(military, "SquadLeader"),
-                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "MachineGunner"), 1 - latChance],
-                selectRandomWeighted [unit(military, "Rifleman"), 1, unit(military, "Grenadier"), 1],
-                selectRandomWeighted [unit(military, "MachineGunner"), 2, unit(military, "Marksman"), 1],
-                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "AT"), atChance, unit(military, "Rifleman"), max(0, 1 - latChance - atChance)],
+                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "MachineGunner"), 100 - latChance],
+                selectRandomWeighted [unit(military, "Rifleman"), 100, unit(military, "Grenadier"), 100],
+                selectRandomWeighted [unit(military, "MachineGunner"), 200, unit(military, "Marksman"), 100],
+                selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "AT"), atChance, unit(military, "Rifleman"), max(0, 100 - latChance - atChance)],
                 selectRandomWeighted [unit(military, "AA"), aaChance, unit(military, "Rifleman"), 2 - aaChance],
-                selectRandomWeighted [unit(military, "Rifleman"), 1.5, unit(military, "Radioman"), 1],
+                selectRandomWeighted [unit(military, "Rifleman"), 150, unit(military, "Radioman"), 100],
                 unit(military, "Medic")
             ],
             [
                 unit(elite, "SquadLeader"),
-                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "MachineGunner"), 1 - latChance],
-                selectRandomWeighted [unit(elite, "Rifleman"), 1.25, unit(elite, "Grenadier"), 1],
-                selectRandomWeighted [unit(elite, "MachineGunner"), 2, unit(elite, "Marksman"), 1],
-                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "AT"), atChance, unit(elite, "Rifleman"), max(0, 1 - latChance - atChance)],
-                selectRandomWeighted [unit(elite, "AA"), aaChance, unit(elite, "Rifleman"), 1 - aaChance],
-                selectRandomWeighted [unit(elite, "Rifleman"), 1, unit(elite, "Radioman"), 1],
+                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "MachineGunner"), 100 - latChance],
+                selectRandomWeighted [unit(elite, "Rifleman"), 125, unit(elite, "Grenadier"), 100],
+                selectRandomWeighted [unit(elite, "MachineGunner"), 200, unit(elite, "Marksman"), 100],
+                selectRandomWeighted [unit(elite, "LAT"), latChance, unit(elite, "AT"), atChance, unit(elite, "Rifleman"), max(0, 100 - latChance - atChance)],
+                selectRandomWeighted [unit(elite, "AA"), aaChance, unit(elite, "Rifleman"), 100 - aaChance],
+                selectRandomWeighted [unit(elite, "Rifleman"), 100, unit(elite, "Radioman"), 100],
                 unit(elite, "Medic")
             ]
         ];
@@ -332,13 +332,13 @@ if (_prefix in ["occ", "inv"]) exitWith {
     //compatibility with loadStat as it can't use tier flattener
     _faction set ["groupLoadStatReplacement", [
         unit(military, "SquadLeader"),
-        selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 1 - latChance],
+        selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "Rifleman"), 100 - latChance],
         unit(military, "MachineGunner"),
         unit(military, "Rifleman"),
         unit(military, "Grenadier"),
-        selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "MachineGunner"), 1 - latChance],
-        selectRandomWeighted [unit(military, "AT"), atChance, unit(military, "Rifleman"), 1 - atChance],
-        selectRandomWeighted [unit(military, "AA"), aaChance, unit(military, "Rifleman"), 1 - aaChance],
+        selectRandomWeighted [unit(military, "LAT"), latChance, unit(military, "MachineGunner"), 100 - latChance],
+        selectRandomWeighted [unit(military, "AT"), atChance, unit(military, "Rifleman"), 100 - atChance],
+        selectRandomWeighted [unit(military, "AA"), aaChance, unit(military, "Rifleman"), 100 - aaChance],
         unit(military, "Radioman"),
         unit(military, "Medic")
     ]];
@@ -350,16 +350,16 @@ if (_prefix in ["occ", "inv"]) exitWith {
             unit(SF, "Rifleman"),
             unit(SF, "Radioman"),
             selectRandom [unit(SF, "Grenadier"), unit(SF, "MachineGunner")],
-            selectRandomWeighted [unit(SF, "LAT"), latChance, unit(SF, "AT"), atChance, unit(SF, "Rifleman"), max(0, 1 - latChance - atChance)],
+            selectRandomWeighted [unit(SF, "LAT"), latChance, unit(SF, "AT"), atChance, unit(SF, "Rifleman"), max(0, 100 - latChance - atChance)],
             unit(SF, "Medic"),
-            selectRandomWeighted [unit(SF, "Marksman"), 2, unit(SF, "Sniper"), 1],
+            selectRandomWeighted [unit(SF, "Marksman"), 200, unit(SF, "Sniper"), 100],
             selectRandomWeighted [
-                unit(SF, "ExplosivesExpert"), 3,
+                unit(SF, "ExplosivesExpert"), 300,
                 unit(SF, "AA"), aaChance,
-                unit(SF, "Grenadier"), 3,
-                unit(SF, "Sniper"), 3,
-                unit(SF, "Engineer"), 3,
-                unit(SF, "MachineGunner"), 3
+                unit(SF, "Grenadier"), 300,
+                unit(SF, "Sniper"), 300,
+                unit(SF, "Engineer"), 300,
+                unit(SF, "MachineGunner"), 300
             ]
         ];
     };
@@ -385,7 +385,7 @@ if (_prefix in ["occ", "inv"]) exitWith {
                 unit(militia, "Medic"),
                 unit(militia, "Engineer")
             ],
-            selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 1 - latChance]
+            selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 100 - latChance]
         ];
     };
     _faction set ["groupsMilitiaMedium", _militiaMid];
@@ -397,10 +397,10 @@ if (_prefix in ["occ", "inv"]) exitWith {
             unit(militia, "MachineGunner"),
             unit(militia, "Grenadier"),
             unit(militia, "Rifleman"),
-            selectRandomWeighted [unit(militia, "AT"), atChance, unit(militia, "Rifleman"), 1 - atChance],
-            selectRandomWeighted [unit(militia, "Rifleman"), 2, unit(militia, "Marksman"), 1],
+            selectRandomWeighted [unit(militia, "AT"), atChance, unit(militia, "Rifleman"), 100 - atChance],
+            selectRandomWeighted [unit(militia, "Rifleman"), 200, unit(militia, "Marksman"), 100],
             selectRandom [unit(militia, "Rifleman"), unit(militia, "ExplosivesExpert")],
-            selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 1 - latChance],
+            selectRandomWeighted [unit(militia, "LAT"), latChance, unit(militia, "Rifleman"), 100 - latChance],
             unit(militia, "Medic")
         ];
     };
@@ -458,20 +458,20 @@ if (_prefix isEqualTo "riv") exitWith {
         [
             unit(militia, "CellLeader"),
             unit(militia, "Partisan"),
-            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Partisan"), 3 - _aaGroupChance],
-            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Partisan"), 3 - _aaGroupChance]
+            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Partisan"), 300 - _aaGroupChance],
+            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Partisan"), 300 - _aaGroupChance]
         ],
         [
             unit(militia, "CellLeader"),
             unit(militia, "Mercenary"),
             unit(militia, "Oppressor"),
-            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Mercenary"), 2 - _aaGroupChance]
+            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Mercenary"), 200 - _aaGroupChance]
         ],
         [
             unit(militia, "CellLeader"),
             unit(militia, "Enforcer"),
             unit(militia, "Oppressor"),
-            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Enforcer"), 1 - _aaGroupChance]
+            selectRandomWeighted [unit(militia, "SpecialistAA"), _aaGroupChance, unit(militia, "Enforcer"), 100 - _aaGroupChance]
         ]
     ]];
 
@@ -479,20 +479,20 @@ if (_prefix isEqualTo "riv") exitWith {
         [
             unit(militia, "CellLeader"),
             unit(militia, "Partisan"),
-            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Partisan"), 3 - _latGroupChance],
-            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Partisan"), 3 - _latGroupChance]
+            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Partisan"), 300 - _latGroupChance],
+            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Partisan"), 300 - _latGroupChance]
         ],
         [
             unit(militia, "CellLeader"),
             unit(militia, "Mercenary"),
-            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Mercenary"), 2 - _latGroupChance],
-            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Mercenary"), 2 - _latGroupChance]
+            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Mercenary"), 200 - _latGroupChance],
+            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Mercenary"), 200 - _latGroupChance]
         ],
         [
             unit(militia, "CellLeader"),
             unit(militia, "Enforcer"),
-            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Enforcer"), 1 - _latGroupChance],
-            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Enforcer"), 1 - _latGroupChance]
+            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Enforcer"), 100 - _latGroupChance],
+            selectRandomWeighted [unit(militia, "SpecialistAT"), _latGroupChance, unit(militia, "Enforcer"), 100 - _latGroupChance]
         ]
     ]];
 
@@ -500,10 +500,10 @@ if (_prefix isEqualTo "riv") exitWith {
     for "_i" from 1 to 6 do {
         _fireteams pushBack [
             unit(militia, "CellLeader"),
-            selectRandomWeighted [unit(militia, "Partisan"), 2, unit(militia, "Mercenary"), 1],
-            selectRandomWeighted [unit(militia, "Enforcer"), 2, unit(militia, "Saboteur"), 1.5],
-            selectRandomWeighted [unit(militia, "SpecialistAT"), latChance, unit(militia, "Oppressor"), 1.25 - latChance],
-            selectRandomWeighted [unit(militia, "Medic"), 2, unit(militia, "ExplosivesExpert"), 1.25]
+            selectRandomWeighted [unit(militia, "Partisan"), 200, unit(militia, "Mercenary"), 100],
+            selectRandomWeighted [unit(militia, "Enforcer"), 200, unit(militia, "Saboteur"), 150],
+            selectRandomWeighted [unit(militia, "SpecialistAT"), latChance, unit(militia, "Oppressor"), 125 - latChance],
+            selectRandomWeighted [unit(militia, "Medic"), 200, unit(militia, "ExplosivesExpert"), 125]
         ];
     };
     _faction set ["groupsFireteam", _fireteams];
@@ -512,12 +512,12 @@ if (_prefix isEqualTo "riv") exitWith {
     for "_i" from 1 to 6 do {
         _squads pushBack [
             unit(militia, "CellLeader"),
-            selectRandomWeighted [unit(militia, "Partisan"), 1.75, unit(militia, "Mercenary"), 1],
-            selectRandomWeighted [unit(militia, "Saboteur"), 2, unit(militia, "Enforcer"), 1.5],
-            selectRandomWeighted [unit(militia, "SpecialistAT"), latChance, unit(militia, "Oppressor"), 1.25 - latChance],
-            selectRandomWeighted [unit(militia, "SpecialistAA"), aaChance, unit(militia, "Enforcer"), 1.25 - aaChance],
-            selectRandomWeighted [unit(militia, "Oppressor"), 2, unit(militia, "Sharpshooter"), 1.25],
-            selectRandomWeighted [unit(militia, "SpecialistAT"), latChance, unit(militia, "Oppressor"), 1.25 - latChance],
+            selectRandomWeighted [unit(militia, "Partisan"), 175, unit(militia, "Mercenary"), 100],
+            selectRandomWeighted [unit(militia, "Saboteur"), 200, unit(militia, "Enforcer"), 150],
+            selectRandomWeighted [unit(militia, "SpecialistAT"), latChance, unit(militia, "Oppressor"), 125 - latChance],
+            selectRandomWeighted [unit(militia, "SpecialistAA"), aaChance, unit(militia, "Enforcer"), 125 - aaChance],
+            selectRandomWeighted [unit(militia, "Oppressor"), 200, unit(militia, "Sharpshooter"), 125],
+            selectRandomWeighted [unit(militia, "SpecialistAT"), latChance, unit(militia, "Oppressor"), 125 - latChance],
             unit(militia, "Medic")
         ];
     };

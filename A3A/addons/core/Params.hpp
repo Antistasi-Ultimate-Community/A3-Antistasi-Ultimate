@@ -1899,25 +1899,19 @@ class Params
     {
         title = $STR_params_aaTroopsSpawnChance;
         tooltip = $STR_params_aaTroopsSpawnChance_desc;
-        values[] = {0, 0.1, 0.2, 0.3, 0.5, 1};
-        texts[] = {"0", "10%", "20%", "30%", "50%", "100%"};
+        values[] = {0, 10, 20, 30, 40, 50, 100};
+        texts[] = {"0", "10%", "20%", "30%", "40%", "50%", "100%"};
         default = 0.2;
     };
-    class atChance : AIBalanceParams
+    class atChance : aaChance
     {
         title = $STR_params_atTroopsSpawnChance;
         tooltip = $STR_params_atTroopsSpawnChance_desc;
-        values[] = {0, 0.1, 0.2, 0.3, 0.5, 1};
-        texts[] = {"0", "10%", "20%", "30%", "50%", "100%"};
-        default = 0.2;
     };
-    class latChance : AIBalanceParams
+    class latChance : aaChance
     {
         title = $STR_params_latTroopsSpawnChance;
         tooltip = $STR_params_latTroopsSpawnChance_desc;
-        values[] = {0, 0.1, 0.2, 0.3, 0.5, 1};
-        texts[] = {"0", "10%", "20%", "30%", "50%", "100%"};
-        default = 0.2;
     };
     class A3U_enableVehiclesForAI : AIBalanceParams
     {
