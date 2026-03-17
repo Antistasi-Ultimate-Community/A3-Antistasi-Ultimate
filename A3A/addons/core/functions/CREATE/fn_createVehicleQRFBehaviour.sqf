@@ -56,10 +56,9 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
 
             if (_vtol) then {
                 call selectRandomWeighted [
-                    {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 50,
+                    {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 60,
                     {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL}, 25,
-                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 15,
-                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, _resPool] spawn SCRT_fnc_common_paradropVehicle}, 10
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 15
                 ];
             } else {
                 call selectRandomWeighted [
