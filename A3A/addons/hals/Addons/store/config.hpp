@@ -431,7 +431,10 @@ class cfgHALsStore
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
 				"riflesOpposingForces",
-				"miscOpposingForces"
+				"miscOpposingForces",
+				"uniformsOpposingForces",
+				"vestsOpposingForces",
+				"backpacksOpposingForces"
 			};
 		};
 

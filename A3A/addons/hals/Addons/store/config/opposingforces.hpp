@@ -14,9 +14,19 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_OpposingForces", localize "STR_A3AU_misc"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-			ITEM(V_Pocketed_hunter_F, 200, MISC_STOCK);
-			ITEM(V_Pocketed_wdl_F, 200, MISC_STOCK);
+			ITEM(H_Watchcap_flora, 50, MISC_STOCK);
+			ITEM(H_Shemag_blk, 50, MISC_STOCK);
+			ITEM(H_Shemag_blk_hs, 50, MISC_STOCK);
+			ITEM(H_Shemag_khk_hs, 50, MISC_STOCK);
+			ITEM(H_Shemag_red_hs, 50, MISC_STOCK);
+			ITEM(H_Shemag_red, 50, MISC_STOCK);
+		};
 
+		class uniformsOpposingForces
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_OpposingForces", localize "STR_A3AU_uniforms"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
+		
 			ITEM(Opf_U_O_S_Uniform_01_arid_F, 150, MISC_STOCK);
 			ITEM(Opf_U_O_S_Uniform_01_sweater_flora_F, 150, MISC_STOCK);
 			ITEM(Opf_U_I_I_Uniform_01_ghex_F, 150, MISC_STOCK);
@@ -41,10 +51,22 @@
 			ITEM(Opf_U_O_S_Gorka_01_autumn_F, 500, MISC_STOCK);
 			ITEM(Opf_U_O_S_Gorka_01_summer_F, 500, MISC_STOCK);
 
-			ITEM(H_Watchcap_flora, 50, MISC_STOCK);
-			ITEM(H_Shemag_blk, 50, MISC_STOCK);
-			ITEM(H_Shemag_blk_hs, 50, MISC_STOCK);
-			ITEM(H_Shemag_khk_hs, 50, MISC_STOCK);
-			ITEM(H_Shemag_red_hs, 50, MISC_STOCK);
-			ITEM(H_Shemag_red, 50, MISC_STOCK);
+		};
+
+		class vestsOpposingForces
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_OpposingForces", localize "STR_A3AU_vests"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
+
+			ITEM(V_Pocketed_hunter_F, 200, MISC_STOCK);
+			ITEM(V_Pocketed_wdl_F, 200, MISC_STOCK);
+			
+		};
+
+		class backpacksOpposingForces
+		{
+			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_OpposingForces", localize "STR_A3AU_backpacks"]);
+			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
+
+			ITEM(B_Carryall_green_Partisan_Eng_F, 700, MISC_STOCK);
 		};
