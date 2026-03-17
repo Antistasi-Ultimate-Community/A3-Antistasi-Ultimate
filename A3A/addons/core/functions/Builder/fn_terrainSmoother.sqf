@@ -15,21 +15,23 @@ private _gridSize = getTerrainInfo #2;
 private _centerX = _center select 0;
 private _centerY = _center select 1;
 
-// --- DEBUG: collect before heights ---
-private _debugBefore = [];
-for "_dx" from -_smoothingRadius to _smoothingRadius step _gridSize do {
-    for "_dy" from -_smoothingRadius to _smoothingRadius step _gridSize do {
-        private _x = _centerX + _dx;
-        private _y = _centerY + _dy;
-        private _h = getTerrainHeightASL [_x, _y];
-        _debugBefore pushBack [_x, _y, _h];
+#if __A3_DEBUG__
+    // --- DEBUG: collect before heights ---
+    private _debugBefore = [];
+    for "_dx" from -_smoothingRadius to _smoothingRadius step _gridSize do {
+        for "_dy" from -_smoothingRadius to _smoothingRadius step _gridSize do {
+            private _x = _centerX + _dx;
+            private _y = _centerY + _dy;
+            private _h = getTerrainHeightASL [_x, _y];
+            _debugBefore pushBack [_x, _y, _h];
+        };
     };
-};
-Debug("=== TERRAIN BEFORE ===");
-{
-    Debug_1("BEFORE %1", _x);
-} forEach _debugBefore;
-Debug("=== END TERRAIN BEFORE ===");
+    Debug("=== TERRAIN BEFORE ===");
+    {
+        Debug_1("BEFORE %1", _x);
+    } forEach _debugBefore;
+    Debug("=== END TERRAIN BEFORE ===");
+#endif
 
 // General function for terrain height processing
 private _fnc_processTerrain = {
