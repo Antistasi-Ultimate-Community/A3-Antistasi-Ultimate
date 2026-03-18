@@ -162,7 +162,6 @@ if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append 
 if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","TFAR_anprc154"]};
 if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["TFAR_anprc155","TFAR_anprc155_coyote"]};
 _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
-["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
     "U_IG_Guerilla1_1",
@@ -229,9 +228,6 @@ private _headgear = [
 
 private _dlcheadgear = [];
 
-["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
-
-["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
 /////////////////////
 ///  Identities   ///
 /////////////////////
@@ -240,9 +236,6 @@ private _faces = ["GreekHead_A3_02","GreekHead_A3_03","GreekHead_A3_04",
 "GreekHead_A3_05","GreekHead_A3_06","GreekHead_A3_07","GreekHead_A3_08",
 "GreekHead_A3_09","GreekHead_A3_10","GreekHead_A3_11","GreekHead_A3_12","GreekHead_A3_13",
 "GreekHead_A3_14","Ioannou","Mavros","Sturrock"];
-["voices", ["Male01GRE", "Male02GRE", "Male03GRE", "Male04GRE", "Male05GRE", "Male06GRE"]] call _fnc_saveToTemplate;
-["faces", _faces] call _fnc_saveToTemplate;
-#include "Vanilla_Reb_Vehicle_Attributes.sqf"
 
 //////////////////////////
 //       Loadouts       //
@@ -253,7 +246,6 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
 
 _loadoutData set ["glasses", ["G_Lady_Blue","G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
 _loadoutData set ["goggles", ["G_Lowprofile"]];
@@ -311,6 +303,16 @@ if (_hasSPE) then {
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	#include "..\MOD_content\Nickelsteel\gear\Vanilla_FIA.sqf"
 };
+
+_loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
+
+["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
+
+["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
+
+["voices", ["Male01GRE", "Male02GRE", "Male03GRE", "Male04GRE", "Male05GRE", "Male06GRE"]] call _fnc_saveToTemplate;
+["faces", _faces] call _fnc_saveToTemplate;
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];

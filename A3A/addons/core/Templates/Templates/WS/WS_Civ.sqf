@@ -213,7 +213,7 @@ _loadoutData set ["pressHelmets", ["H_Cap_press", "H_PASGT_basic_blue_press_F","
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
-
+_loadoutData set ["binoculars", ["Camera_lxWS"]];
 
 private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
@@ -245,6 +245,7 @@ private _pressTemplate = {
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
+    ["binoculars"] call _fnc_addBinoculars;
 };
 private _prefix = "militia";
 private _unitTypes = [

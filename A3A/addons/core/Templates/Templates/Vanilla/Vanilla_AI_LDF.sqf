@@ -63,9 +63,9 @@ private _planesTransport = ["B_T_VTOL_01_infantry_F"];
 private _gunship = ["B_T_VTOL_01_armed_F"];
 
 private _helisLight = ["I_E_Heli_light_03_unarmed_F", "B_Heli_Light_01_F"];
-private _transportHelicopters = ["B_Heli_Transport_01_camo_F"];
+private _transportHelicopters = ["B_Heli_Transport_01_camo_F"]; ///note "B_Heli_Transport_01_camo_F" is a hidden class, as off 2.20
 private _helisLightAttack = ["I_E_Heli_light_03_dynamicLoadout_F", "B_Heli_Light_01_armed_F"];
-private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F"];
+private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F","B_Heli_Attack_01_pylons_dynamicLoadout_F"];
 
 private _airPatrol = ["I_E_Heli_light_03_unarmed_F", "B_Heli_Light_01_F", "I_E_Heli_light_03_dynamicLoadout_F", "B_Heli_Light_01_armed_F"];
 

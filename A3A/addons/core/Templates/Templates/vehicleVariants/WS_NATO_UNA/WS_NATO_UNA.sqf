@@ -3,6 +3,7 @@
 ["APC_Wheeled_01_command_base_lxWS", ["BLACK", 0.3, "Sand", 0.7]],
 ["APC_Wheeled_01_atgm_base_lxWS", ["BLACK", 0.3, "Sand", 0.7,"UN_WHITE",0.4]],
 ["APC_Wheeled_01_mortar_base_lxWS", ["BLACK", 0.3, "Sand", 0.7,"UN_WHITE",0.4]],
+["B_Heli_Attack_01_pylons_dynamicLoadout_F", ["Sand", 1, "Green", 0]],
 
 ["O_SFIA_Offroad_AT_lxWS",["WhiteUN",1]],
 ["O_SFIA_Offroad_armed_lxWS",["WhiteUN",1]],

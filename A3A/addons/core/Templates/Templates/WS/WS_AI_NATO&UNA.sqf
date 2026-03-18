@@ -71,10 +71,10 @@ private _gunship = [];
 private _transportHelicopters = ["B_D_Heli_Transport_01_lxWS","B_UN_Heli_Transport_02_lxWS"];
 
 private _helisLight = ["B_D_Heli_Light_01_lxWS"];
-private _helisLightAttack = ["B_D_Heli_Light_01_dynamicLoadout_lxWS"];
-private _helisAttack = ["B_D_Heli_Attack_01_dynamicLoadout_lxWS"];
+private _helisLightAttack = ["B_D_Heli_Light_01_dynamicLoadout_lxWS", "a3a_B_Heli_Transport_01_pylons_F"];
+private _helisAttack = ["B_D_Heli_Attack_01_dynamicLoadout_lxWS", "B_Heli_Attack_01_pylons_dynamicLoadout_F"];
 
-private _airPatrol = ["B_D_Heli_Light_01_lxWS", "B_D_Heli_Light_01_dynamicLoadout_lxWS"];
+private _airPatrol = ["B_D_Heli_Light_01_lxWS", "B_D_Heli_Light_01_dynamicLoadout_lxWS", "a3a_B_Heli_Transport_01_pylons_F", "B_Heli_Attack_01_pylons_dynamicLoadout_F"];
 
 private _artillery = ["B_MBT_01_arty_F","B_MBT_01_mlrs_F","APC_Wheeled_01_mortar_base_lxWS"];
 ["magazines", createHashMapFromArray [
