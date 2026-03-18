@@ -134,6 +134,7 @@ if (_type == "CASDIVE") then
         //Vanilla IND CAS
         case "O_A_Plane_Fighter_03_dynamicLoadout_F";
         case "Atlas_O_T_Plane_Fighter_03_dynamicLoadout_F";
+        case "a3a_Plane_Fighter_03_grey_F";
         case "I_Plane_Fighter_03_dynamicLoadout_F":
         {
             _loadout = ["PylonRack_12Rnd_missiles","PylonRack_3Rnd_LG_scalpel","PylonMissile_1Rnd_Mk82_F","PylonWeapon_300Rnd_20mm_shells","PylonMissile_1Rnd_Mk82_F","PylonRack_3Rnd_LG_scalpel","PylonRack_12Rnd_missiles"];
@@ -654,6 +655,7 @@ if (_type == "CAS") then
             _plane setVariable ["missileLauncher", ["Missile_AGM_01_Plane_CAS_02_F","missiles_Vikhr","missiles_SCALPEL"]];
         };
         //Vanilla IND CAS
+        case "a3a_Plane_Fighter_03_grey_F";
         case "I_Plane_Fighter_03_dynamicLoadout_F":
         {
             _loadout = ["PylonRack_12Rnd_missiles","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonWeapon_300Rnd_20mm_shells","PylonRack_1Rnd_Missile_AGM_02_F","PylonRack_7Rnd_Rocket_04_AP_F","PylonRack_12Rnd_missiles"];
@@ -1334,6 +1336,7 @@ if (_type == "AA") then
         //Vanilla IND CAS
         case "O_A_Plane_Fighter_03_dynamicLoadout_F";
         case "Atlas_O_T_Plane_Fighter_03_dynamicLoadout_F";
+        case "a3a_Plane_Fighter_03_grey_F";
         case "I_Plane_Fighter_03_dynamicLoadout_F":
         {
             _loadout = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_GAA_missiles","PylonWeapon_300Rnd_20mm_shells","PylonRack_1Rnd_GAA_missiles","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];

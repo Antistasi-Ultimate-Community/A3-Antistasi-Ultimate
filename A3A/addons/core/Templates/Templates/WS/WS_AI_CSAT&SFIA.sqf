@@ -60,8 +60,8 @@ private _aa = ["O_APC_Tracked_02_AA_F","O_SFIA_Truck_02_aa_lxWS","O_SFIA_APC_Tra
 private _transportBoat = ["O_Boat_Transport_01_F"];
 private _gunBoat = ["O_Boat_Armed_01_hmg_F"];
 
-private _planesCAS = ["O_Plane_CAS_02_dynamicLoadout_F"];
-private _planesAA = ["O_Plane_CAS_02_dynamicLoadout_F"];
+private _planesCAS = ["O_Plane_CAS_02_dynamicLoadout_F","a3a_Plane_Fighter_03_grey_F"];
+private _planesAA = ["O_Plane_CAS_02_dynamicLoadout_F","a3a_Plane_Fighter_03_grey_F"];
 
 private _planesTransport = [];
 private _gunship = [];

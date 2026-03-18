@@ -74,6 +74,7 @@ class a3a_C_Heli_Transport_02_F : I_Heli_Transport_02_F
     side = 3;
     textureList[] = {"ION",0,"AAF",0,"IDAP",0,"Dahoman",1};
     hiddenSelectionsTextures[] = {"a3\air_f_beta\heli_transport_02\data\skins\heli_transport_02_1_dahoman_co.paa","a3\air_f_beta\heli_transport_02\data\skins\heli_transport_02_2_dahoman_co.paa","a3\air_f_beta\heli_transport_02\data\skins\heli_transport_02_3_dahoman_co.paa","a3\air_f_beta\heli_transport_02\data\heli_transport_02_int_02_co.paa"};
+    editorPreview = QPATHTOFOLDER(Pictures\vehicles\a3a_C_Heli_Transport_02_F.jpg);
 };
 class a3a_C_Heli_Light_02_blue_F : O_Heli_Light_02_unarmed_F
 {
@@ -82,6 +83,7 @@ class a3a_C_Heli_Light_02_blue_F : O_Heli_Light_02_unarmed_F
     side = 3;
     textureList[] = {"Opfor",0,"Black",0,"Blackcustom",0,"Blue",1};
     hiddenSelectionsTextures[] = {"\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_civilian_co.paa","\A3\Air_F\Heli_Light_02\Data\Heli_Light_02_ext_CO.paa","\A3\Air_F_Heli\Heli_Light_02\Data\Heli_Light_02_ext_OPFOR_V2_CO.paa","\A3\Air_F\Heli_Light_02\Data\Heli_Light_02_ext_OPFOR_CO.paa"};
+    editorPreview = QPATHTOFOLDER(Pictures\vehicles\a3a_C_Heli_Light_02_blue_F.jpg);
 };
 
 ///2.20 update (armed ghosthawk)
