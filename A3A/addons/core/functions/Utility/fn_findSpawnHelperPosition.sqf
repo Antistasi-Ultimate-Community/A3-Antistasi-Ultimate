@@ -43,8 +43,13 @@ if !assert(params[
 // or their size * 2, whichever is greater.
 private _size = ["Synd_HQ"] call A3A_fnc_sizeMarker;
 private _helpers = nearestObjects[markerPos "Synd_HQ", [QEGVAR(ultimate,BaseSpawnHelper)], 2 * _size] select {
-    _spawnType in getArray(configOf _x >> QEGVAR(ultimate,spawnTypes)) && 
-    { (nearestObjects[_x, ["LandVehicle","Air"], 10 max(2 * sizeOf typeOf _x)] - [_x] - (attachedObjects _x)) isEqualTo [] };
+    private _helper = _x;
+    _spawnType in getArray(configOf _helper >> QEGVAR(ultimate,spawnTypes)) && {
+        nearestObjects[_helper, ["LandVehicle","Air"], 10 max(2 * sizeOf typeOf _helper)] select {
+            (!isObjectHidden _x) &&
+            { !(_x in attachedObjects _helper) }
+        } isEqualTo []
+    };
 };
 
 Trace_1(QFUNCMAIN(findSpawnHelperPosition),_helpers);
