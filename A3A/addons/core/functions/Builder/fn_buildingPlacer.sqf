@@ -375,34 +375,32 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     //change in position
     if (_object distance2d _vehiclePos > 0.1) then {
         _stateChange = true;
-    };
 
-    // Set up context-sensitive hints (cancel, repair)
-    private _intersects = lineIntersectsSurfaces [getPosASL A3A_cam, AGLtoASL _vehiclePos, _object, A3A_cam];
-    private _intersectObj = if (count _intersects > 0) then { _intersects#0#3 } else { objNull };
-    A3A_building_EHDB set [CURSOR_OBJECT, _intersectObj];
-    ["setContextKey", [""]] call A3A_fnc_setupPlacerHints;
+        // Set up context-sensitive hints (cancel, repair)
+        private _intersects = lineIntersectsObjs[getPosASL A3A_cam, AGLtoASL _vehiclePos, _object, A3A_cam];
+        _intersects params[["_intersectObj", objNull, [objNull]]];
+        A3A_building_EHDB set [CURSOR_OBJECT, _intersectObj];
+        ["setContextKey", [""]] call A3A_fnc_setupPlacerHints;
 
-    //((uiNamespace getVariable "A3A_placerHint_display") displayCtrl IDC_PLACERHINT_TEST_TEXT) ctrlSetText str _intersectObj;
+        if (_intersectObj isKindOf "Ruins") then {
+            // Show T key and rebuild cost
+            private _ruin = _intersectObj;
+            private _building = _ruin getVariable "building";
+            if (isNil "_building") exitWith {};																	// non-rebuildable ruin
+            if (_building in antennasDead) exitWith {};                                                         // don't use this for radio towers
+            if (-1 != (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
 
-    if (_intersectObj isKindOf "Ruins") then {
-        // Show T key and rebuild cost
-        private _ruin = _intersectObj;
-        private _building = _ruin getVariable "building";
-        if (isNil "_building") exitWith {};																	// non-rebuildable ruin
-        if (_building in antennasDead) exitWith {};                                                         // don't use this for radio towers
-        if (-1 != (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) findIf { _x#1 == _building }) exitWith {};		// already rebuilt
+            // Calculate repair cost from bounding box
+            private _bbsize = (boundingBoxReal _building # 1) vectorDiff (boundingBoxReal _building # 0);
+            private _price = 6 * sqrt((_bbsize#0) * (_bbsize#1) * (_bbsize#2));
+            _price = 10 * round (_price / 10);
+            ["setContextKey", ["rebuild", _price]] call A3A_fnc_setupPlacerHints;
+        };
 
-        // Calculate repair cost from bounding box
-        private _bbsize = (boundingBoxReal _building # 1) vectorDiff (boundingBoxReal _building # 0);
-        private _price = 6 * sqrt((_bbsize#0) * (_bbsize#1) * (_bbsize#2));
-        _price = 10 * round (_price / 10);
-        ["setContextKey", ["rebuild", _price]] call A3A_fnc_setupPlacerHints;
-    };
-
-    if (_intersectObj in (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY)) then {
-        // show C key
-        ["setContextKey", ["cancel", getText (configof _intersectObj >> "displayName")]] call A3A_fnc_setupPlacerHints;
+        if (_intersectObj in (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY)) then {
+            // show C key
+            ["setContextKey", ["cancel", getText (configof _intersectObj >> "displayName")]] call A3A_fnc_setupPlacerHints;
+        };
     };
 
     if ((A3A_building_EHDB get ROTATION_MODE_CW) || { A3A_building_EHDB get ROTATION_MODE_CCW }) then {
