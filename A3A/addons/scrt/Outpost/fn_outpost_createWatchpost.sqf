@@ -24,7 +24,7 @@ private _taskId = "outpostTask" + str A3A_taskCount;
 private _typeGroup = A3A_faction_reb get "groupSniper";
 private _typeVehX = (A3A_faction_reb get "vehiclesBasic") select 0;
 
-_groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _typeGroup] call A3A_fnc_spawnGroup;
+_groupX = [["Synd_HQ"] call A3A_fnc_findAiSpawnPosition, teamPlayer, _typeGroup] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Watch"];
 
 private _helperData = ["outpost"] call FUNCMAIN(findSpawnHelperPosition);

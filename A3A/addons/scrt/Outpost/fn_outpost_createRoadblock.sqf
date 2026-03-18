@@ -26,7 +26,7 @@ private _squadType = A3A_faction_reb get "groupSquad";
 private _truckType = selectRandom (A3A_faction_reb get "vehiclesTruck");
 
 private _formatX = [_riflemanType] + _squadType;
-private _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _groupX = [["Synd_HQ"] call A3A_fnc_findAiSpawnPosition, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
 private _helperData = ["outpost"] call FUNCMAIN(findSpawnHelperPosition);
 _helperData params["_spawnPos", "_spawnDir"];
 
