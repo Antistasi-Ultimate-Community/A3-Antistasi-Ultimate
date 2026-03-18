@@ -3130,6 +3130,14 @@ class Params
         };
         default = 25;
     };
+    class AIrevivesOutsideSquad : ExperimentalParams
+    {
+        title = $STR_params_AIrevivesOutsideSquad;
+        tooltip = $STR_params_AIrevivesOutsideSquad_desc;
+        values[] = {25, 50, 75, 100, -1};
+        texts[] = {"25", "50", "75", "100", $STR_params_afk_disabled};
+        default = -1;
+    };
 
     class DevelopmentParamsSpacer : AllParams
     {

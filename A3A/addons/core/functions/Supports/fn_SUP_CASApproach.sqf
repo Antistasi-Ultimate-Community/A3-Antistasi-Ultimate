@@ -83,7 +83,12 @@ private _firedEH = _plane addEventHandler ["Fired", {
         private _dist = _targetObj distance _projectile;
         private _airFric = getNumber (configFile >> "CfgAmmo" >> _ammo >> "airFriction");
         if (_airFric > 0) then { _airFric = _airFric * 0.002 } else { _airFric = _airFric * -1 };            // rockets use different scale
-        private _travTime = (exp (_airFric*_dist) - 1) / (_airFric*_speed);         // Differential equation solution for a = fv^2
+        private _travTime;
+        if (_airFric == 0) then {
+            _travTime = _dist / _speed;                                             // for projectiles with zero friction (hello OPTRE)
+        } else {
+            _travTime = (exp (_airFric * _dist) - 1) / (_airFric * _speed);         // Differential equation solution for a = fv^2
+        };         
         private _timeExp = 2 - 450*_airFric;                                        // slight fudge because airFric acts on fall rate with long travel
         private _fallDist = 0.986 * (4.9 * _travTime ^ _timeExp);                         // 0.986 is cos^2 incidence factor for 1/6 slope
         private _targetPos = (eyePos _targetObj) vectorAdd [0, 0, _fallDist] vectorAdd (velocity _targetObj vectorMultiply _travTime);

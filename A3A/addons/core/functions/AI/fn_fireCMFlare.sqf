@@ -18,4 +18,5 @@ params ["_vehicle", ["_delay", 0.3]];
 [_vehicle, "CMFlareLauncher"] call BIS_fnc_fire;
 [_vehicle, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
 [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
+[_vehicle, "CMFlareLauncherCOV"] call BIS_fnc_fire; ///OPTRE compatibility
 sleep _delay;

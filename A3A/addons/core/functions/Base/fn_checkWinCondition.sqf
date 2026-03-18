@@ -6,7 +6,6 @@ private _hr = server getVariable ["hr",0];
 private _victoryZones = airportsX + milbases + outposts + resourcesX + factories + seaports;
 private _victoryZonesLogistical = airportsX + milbases + seaports;
 private _popTotal = 0;
-private _popKilled = 0;
 private _popReb = 0;
 private _popGov = 0;
 private _popMajority = 0;
@@ -20,7 +19,6 @@ private _missingMoney = ((_economicCalculation - _factionMoney) call BIS_fnc_num
     _cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 
     _popTotal = _popTotal + _numCiv;
-    if (_city in destroyedSites) then { _popKilled = _popKilled + _numCiv; continue };
 
     _popReb = _popReb + (_numCiv * (_supportReb / 100));
     _popGov = _popGov + (_numCiv * (_supportGov / 100));

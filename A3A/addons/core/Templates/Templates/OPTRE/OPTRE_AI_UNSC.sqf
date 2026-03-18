@@ -42,8 +42,8 @@
 ["vehiclesGunBoats", ["optre_catfish_mg_f"]] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["optre_catfish_gauss_f"]] call _fnc_saveToTemplate; // ghost is basically the only vehicle that actually moves on water
 
-["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A_VTOL"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["OPTRE_YSS_1000_A"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A","OPTRE_YSS_1000_A_Single","OPTRE_YSS_1000_A_VTOL","OPTRE_YSS_1000_A_VTOL_Single"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["OPTRE_YSS_1000_A","OPTRE_YSS_1000_A_Single","OPTRE_YSS_1000_A_VTOL","OPTRE_YSS_1000_A_VTOL_Single"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["OPTRE_Pelican_unarmed"]] call _fnc_saveToTemplate; // I pray this works
 
 ["vehiclesPlanesGunship", ["OPTRE_Pelican_armed_70mm","OPTRE_Pelican_armed_SOCOM"]] call _fnc_saveToTemplate;
@@ -114,11 +114,14 @@ _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 
+_loadoutData set ["ATLaunchers", [
+	["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAP"], [], ""]
+]];
 _loadoutData set ["missileATLaunchers", [
-    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]
+    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT_G"], [], ""]
 ]];
 _loadoutData set ["AALaunchers", [
-    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT_Thermal"], [], ""]
+    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT_G_AA"], [], ""]
 ]];
 
 _loadoutData set ["sidearms", []];
@@ -170,8 +173,8 @@ _loadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515"]];
 _loadoutData set ["atBackpacks", []];
 _loadoutData set ["slBackpacks", []];
 _loadoutData set ["helmets", []];
-_loadoutData set ["slHat", ["OPTRE_UNSC_CH252A_Black_Helmet"]];
-_loadoutData set ["sniHats", ["OPTRE_UNSC_CH252A_Black_Helmet"]];
+_loadoutData set ["slHat", ["OPTRE_UNSC_CH252_Helmet_Vacuum_MAR"]];
+_loadoutData set ["sniHats", ["OPTRE_UNSC_CH252_Helmet2_Vacuum_MAR"]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
@@ -410,6 +413,7 @@ _militiaLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["helmets", ["OPTRE_FC_CH255_Helmet"]];
+_militiaLoadoutData set ["slHat", ["OPTRE_FC_CH255_Helmet_URB_Visor"]];
 _militiaLoadoutData set ["sniHats", ["OPTRE_FC_CH255_Helmet"]];
 
 _militiaLoadoutData set ["rifles", [
@@ -417,9 +421,6 @@ _militiaLoadoutData set ["rifles", [
 ]];
 _militiaLoadoutData set ["carbines", [
     ["OPTRE_MA5A", "", "", "", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag"], [], ""]
-]];
-_militiaLoadoutData set ["grenadeLaunchers", [
-    ["OPTRE_M319", "", "", "", ["M319_HE_Grenade_Shell", "M319_Smoke", "OPTRE_signalSmokeB"], [], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
     ["OPTRE_MA37K", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""]
@@ -584,7 +585,7 @@ private _grenadierTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["grenadeLaunchers"] call _fnc_setPrimary;
+    [["grenadeLaunchers", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
     ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
 
