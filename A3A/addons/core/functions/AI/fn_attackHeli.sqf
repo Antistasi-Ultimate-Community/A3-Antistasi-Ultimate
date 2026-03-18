@@ -23,6 +23,8 @@ params ["_vehicle", "_group", "_targPos"];
 // Set script handle so abort routines can remove it later
 _group setVariable ["A3A_AIScriptHandle", _thisScript];
 
+private _midHeight = [60, 80] select (A3A_climate isEqualTo "tropical");
+_vehicle flyInHeight _midHeight; //should probably be done in fn_checkAndSpawnAttack with maybe additional checks for VTOL
 
 while {count waypoints _group > 0} do { deleteWaypoint [_group, 0] };
 _group setBehaviourStrong "COMBAT";
