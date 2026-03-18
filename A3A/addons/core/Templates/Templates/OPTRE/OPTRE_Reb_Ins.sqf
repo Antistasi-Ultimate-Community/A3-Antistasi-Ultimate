@@ -29,11 +29,11 @@ private _vehicleAA = [];
 
 ["vehiclesBoat", ["optre_catfish_ins_mg_f"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["A3U_OPTRE_Pelican_VTOL_unarmed_ins"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["OPTRE_Pelican_unarmed_ins"]] call _fnc_saveToTemplate;
 
 private _vehiclesCivCar = ["OPTRE_M12_CIV", "OPTRE_Genet"];
 ["vehiclesCivTruck", ["C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["OPTRE_ins_falcon_unarmed","OPTRE_Pelican_unarmed_ins"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["OPTRE_ins_falcon_unarmed"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["optre_catfish_ins_unarmed_f"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["OPTRE_Static_M247H_Tripod"]] call _fnc_saveToTemplate;

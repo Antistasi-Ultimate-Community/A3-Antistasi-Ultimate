@@ -44,14 +44,14 @@
 
 ["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A","OPTRE_YSS_1000_A_Single","OPTRE_YSS_1000_A_VTOL","OPTRE_YSS_1000_A_VTOL_Single"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["OPTRE_YSS_1000_A","OPTRE_YSS_1000_A_Single","OPTRE_YSS_1000_A_VTOL","OPTRE_YSS_1000_A_VTOL_Single"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["A3U_OPTRE_Pelican_VTOL_Unarmed", "A3U_OPTRE_Pelican_VTOL_SOCOM_Unarmed", "A3U_OPTRE_Pelican_VTOL_Armed", "A3U_OPTRE_Pelican_VTOL_SOCOM_Armed"]] call _fnc_saveToTemplate; //It works now
+["vehiclesPlanesTransport", ["OPTRE_Pelican_unarmed"]] call _fnc_saveToTemplate; // I pray this works
 
-["vehiclesPlanesGunship", ["A3U_OPTRE_Pelican_VTOL_70mm", "A3U_OPTRE_Pelican_VTOL_SOCOM_Armed"]] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", ["OPTRE_Pelican_armed_70mm","OPTRE_Pelican_armed_SOCOM"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["OPTRE_UNSC_falcon"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["OPTRE_UNSC_falcon_S","OPTRE_Pelican_unarmed","OPTRE_Pelican_unarmed_SOCOM","OPTRE_Pelican_armed","OPTRE_Pelican_armed_SOCOM"]] call _fnc_saveToTemplate;
+["vehiclesHelisTransport", ["OPTRE_UNSC_falcon_s"]] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", ["OPTRE_UNSC_hornet_CAS"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["OPTRE_AV22C_Sparrowhawk", "OPTRE_Pelican_armed_70mm"]] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", ["OPTRE_AV22C_Sparrowhawk"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["OPTRE_M875_SPH"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
