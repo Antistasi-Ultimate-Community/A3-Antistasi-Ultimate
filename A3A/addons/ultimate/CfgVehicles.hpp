@@ -97,7 +97,7 @@ class A3AU_TerrainSmoother_Medium_F: A3AU_TerrainSmoother_Base_F
     {
         previewWidth = 15;
         previewHeight = 15;
-        smoothRadius[] = {15, 27};
+        smoothRadius[] = {15, 30};
     };
 };
 class A3AU_TerrainSmoother_Large_F: A3AU_TerrainSmoother_Base_F 
@@ -109,7 +109,7 @@ class A3AU_TerrainSmoother_Large_F: A3AU_TerrainSmoother_Base_F
     {
         previewWidth = 30;
         previewHeight = 30;
-        smoothRadius[] = {30, 42};
+        smoothRadius[] = {30, 60};
     };
 };
 
@@ -287,4 +287,25 @@ class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F
     {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
     };
+};
+
+class Land_VR_Shape_01_cube_1m_F;
+class GVAR(BaseSpawnHelper): Land_VR_Shape_01_cube_1m_F {
+    scope = 0;
+
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+
+    GVAR(spawnTypes)[] = {};
+    EGVAR(core,buildingPlacerCanPlace) = QUOTE(EGVAR(core,builderBubbleCenter) inArea QQUOTE(Synd_HQ));
+
+    class EventHandlers {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+    };
+};
+
+class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
+    scope = 2;
+    displayName = "Vehicle Spawn Helper";
+    GVAR(spawnTypes)[] = {"hc","mineSweep","outpost"};
 };

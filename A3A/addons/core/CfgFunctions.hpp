@@ -11,6 +11,7 @@ class CfgFunctions
             class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
+            class askAnyoneHelp {};
             class assaultBuilding {};
             class attackDrillAI {};
             class attackHeli {};
@@ -35,6 +36,7 @@ class CfgFunctions
             class findSafeRoadToUnload {};
             class fireCMFlare {};
             class fleeToSide {};
+            class getNearFriendly {};
             class guardDog {};
             class hasRadio {};
             class HeliDoors {};
@@ -205,13 +207,18 @@ class CfgFunctions
             class buildingComplete {};
             class buildingPlacer {};
             class buildingPlacerStart {};
+            class handlerBaseVehicleSpawnPostInitClient {};
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
             class initBuilderCollisionHelper {};
+            class initBuilderEvents {};
             class initBuilderMonitors {};
             class initPlacerDB {};
             class lockBuilderBox {};
+            class onBuilderAbort {};
+            class onBuilderStart {};
+            class onTeardownModeChanged {};
             class placeBuilderObjects {};
             class processBuildingTimeouts {};
             class terrainCleaner {};
@@ -820,9 +827,12 @@ class CfgFunctions
             class createNamespace {};
             class createRandomIdentity {};
             class deleteNamespace {};
+            class findAiSpawnPosition {};
+            class findSpawnHelperPosition {};
             class getAdmin {};
             class isEmplacementMarker {};
             class isEngineer {};
+            class isTeardownEnabled {};
             class isWithinMarkerArea {};
             class isWithinNearestFriendlyMarker {};
             class localLog {};
