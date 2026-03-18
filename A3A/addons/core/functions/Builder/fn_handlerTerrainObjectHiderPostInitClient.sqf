@@ -27,7 +27,9 @@ if !assert(!isNull _object) exitWith {};
 if !(local _object) exitWith {};
 
 // Object not created in base builder preview
-if (isNil "A3A_building_EHDB") exitWith {};
+if (isNil "A3A_building_EHDB") exitWith {
+    GVAR(builderObjectsHidden) pushBackUnique _object;
+};
 
 // Object created in base builder; show outline to local owner only
 [{

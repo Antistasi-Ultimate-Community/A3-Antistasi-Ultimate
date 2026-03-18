@@ -26,9 +26,13 @@ private _typeVehX = (A3A_faction_reb get "vehiclesBasic") select 0;
 
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _typeGroup] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Watch"];
-_road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
-_truckX = _typeVehX createVehicle _pos;
+
+private _helperData = ["outpost"] call FUNCMAIN(findSpawnHelperPosition);
+_helperData params["_spawnPos", "_spawnDir"];
+
+private _truckX = _typeVehX createVehicle _spawnPos;
+_truckX setDir _spawnDir;
+
 _groupX addVehicle _truckX;
 {
     [_x] call A3A_fnc_FIAinit

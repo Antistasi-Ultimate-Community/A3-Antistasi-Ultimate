@@ -17437,6 +17437,15 @@
                 <French>Escouades d'infanterie</French>
                 <Turkish>Piyade Mangaları</Turkish>
             </Key>
+            <Key ID="STR_A3A_Dialogs_teardownActivePleaseDisable_text">
+                <Original>Please disable the active Teardown mode to use this option.</Original>
+                <English>Please disable the active Teardown mode to use this option.</English>
+                <Russian>Пожалуйста, отключите активный режим разрушения, чтобы использовать эту опцию.</Russian>
+                <Chinesesimp>请禁用当前的拆除模式以使用此选项。</Chinesesimp>
+                <Korean>이 옵션을 사용하려면 활성화된 해체 모드를 비활성화하십시오.</Korean>
+                <French>Veuillez désactiver le mode de démolition actif pour utiliser cette option.</French>
+                <Turkish>Bu seçeneği kullanmak için aktif Yıkım modunu devre dışı bırakın.</Turkish>
+            </Key>
         </Container>
         <Container name="A3A_OrgPlayers">
             <Key ID="STR_A3A_OrgPlayers_donateMoney_header">
