@@ -6620,7 +6620,7 @@
             </Key>
             <Key ID="STR_params_A3A_logDebugConsole_none">
                 <Original>None</Original>
-                <Russian>Не логировать ничего</Russian>
+                <Russian>Игнорировать всех</Russian>
                 <Chinesesimp>无</Chinesesimp>
                 <Korean>없음</Korean>
                 <French>Aucun</French>
@@ -6861,7 +6861,7 @@
             </Key>
             <Key ID="STR_params_limitWeaponsByUnitType">
                 <Original>Limit AI custom loadout weapon selections by unit type</Original>
-                <Russian>Ограничение выбора оружия ИИ по типу бойцов</Russian>
+                <Russian>Ограничение выбора оружия для ИИ по типу бойцов</Russian>
                 <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
                 <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
                 <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
@@ -7393,6 +7393,21 @@
                 <Korean>플레이어가 의식불명 상태에서도 AI를 조종할 수 있도록 허용합니다. 활성화하면 쓰러진 플레이어가 짧은 시간 동안 전투에 영향을 줄 수 있습니다.</Korean>
                 <French>Permettre aux joueurs de posséder ou contrôler l'IA lorsqu'ils sont inconscients ; l'activation peut permettre aux joueurs blessés d'influencer brièvement la bataille.</French>
             </Key>
+            <Key ID="STR_params_AIrevivesOutsideSquad">
+                <Original>Allow AI to revive friendly unconscious units outside their squad within a set distance</Original>
+                <Russian>Разрешить ИИ возрождать бойцов без сознания за пределами своего отряда на заданном расстоянии.</Russian>
+                <Chinesesimp>允许AI在设定距离内复活其小队外的友方昏迷单位。</Chinesesimp>
+                <Korean>AI가 자신의 분대 밖에 있는 의식을 잃은 아군 유닛을 설정된 거리 내에서 구호할 수 있도록 허용합니다.</Korean>
+                <French>Permettre à l'IA de relever les unités alliées inconscientes en dehors de leur groupe à une distance définie.</French>
+                <Turkish>AI'nın, belirli bir mesafede kendi takımı dışındaki bilinçsiz dost birlikleri canlandırmasına izin ver.</Turkish>
+            </Key>
+            <Key ID="STR_params_AIrevivesOutsideSquad_desc">
+                <Original>When enabled, if downed AI cannot be revived by any unit within their own squad, other friendly units within this many meters will attempt to revive them. AI will not revive units of another side.</Original>
+                <Russian>Если параметр включен, и выведенный из строя ИИ-юнит не может быть поднят ни одним бойцом своего отряда, другие дружественные юниты в радиусе указанного количества метров попытаются поднять его. ИИ не будет поднимать юнитов другой стороны.</Russian>
+                <Chinesesimp>启用后，如果倒地的人工智能士兵无法被其小队内的任何单位救起，则在此距离（米）内的其他友方单位将尝试救起他们。人工智能不会救起对立阵营的单位。</Chinesesimp>
+                <Korean>활성화되면, 쓰러진 AI가 자신의 분대 내에서 아무도 구호할 수 없을 경우, 이 미터 반경 내의 다른 아군 유닛이 그들을 구호하려 시도합니다. AI는 적대 진영의 유닛은 구호하지 않습니다.</Korean>
+                <French>Lorsque activé, si un IA au sol ne peut être relevé par aucune unité de son propre groupe, d'autres unités alliées dans un rayon de ce nombre de mètres tenteront de le relever. L'IA ne relèvera pas les unités d'un camp adverse.</French>
+            </Key>
             <Key ID="STR_params_maxConstructions">
                 <Original>Maximum quantity of Persistent Constructions</Original>
                 <Russian>Максимальное количество сохраняемых сооружений</Russian>
@@ -7668,7 +7683,7 @@
             </Key>
             <Key ID="STR_params_max_distance_to_member_unlimited">
                 <Original>Unlimited</Original>
-                <Russian>Неограниченное</Russian>
+                <Russian>Не ограничено</Russian>
                 <Chinesesimp>无限制</Chinesesimp>
                 <Korean>무제한</Korean>
                 <French>Illimité</French>
@@ -7905,11 +7920,11 @@
                 <Turkish>Değişiklik yok</Turkish>
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul">
-                <Original>Enemy AI skill</Original>
-                <Russian>Навык вражеских ИИ-солдат</Russian>
-                <Chinesesimp>敌方 AI 单位的技能</Chinesesimp>
-                <Korean>적 인공지능 숙련도</Korean>
-                <French>Compétence de l'IA ennemie</French>
+                <Original>Enemy AI skill (also affected by server skill)</Original>
+                <Russian>Навык вражеских ИИ-солдат (также под влиянием общих настроек игры или сервера)</Russian>
+                <Chinesesimp>敌方 AI 单位的技能（也受一般游戏或服务器设置的影响）</Chinesesimp>
+                <Korean>적 인공지능 숙련도 (서버 숙련도의 영향도 있음)</Korean>
+                <French>Compétence de l'IA ennemie (également affectée par la compétence du serveur)</French>
                 <Turkish>Düşman yapay zeka becerisi (sunucu beceri ayarından da etkilenir)</Turkish>
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul_desc">
@@ -7960,11 +7975,11 @@
                 <Turkish>Çok Yüksek</Turkish>
             </Key>
             <Key ID="STR_params_A3A_rebelSkillMul">
-                <Original>Friendly AI skill</Original>
-                <Russian>Навык дружественных ИИ-бойцов</Russian>
-                <Chinesesimp>友好AI单位的技能</Chinesesimp>
-                <Korean>아군 인공지능 숙련도</Korean>
-                <French>Compétence de l'IA amie</French>
+                <Original>Friendly AI skill (also affected by server skill)</Original>
+                <Russian>Навык дружественных ИИ-бойцов (помимо общих настроек игры или сервера)</Russian>
+                <Chinesesimp>友好AI单位的技能（也受一般游戏或服务器设置的影响）</Chinesesimp>
+                <Korean>아군 인공지능 숙련도 (서버 숙련도의 영향도 있음)</Korean>
+                <French>Compétence de l'IA amie (également affectée par la compétence du serveur)</French>
                 <Turkish>Dost yapay zeka becerisi (sunucu beceri ayarından da etkilenir)</Turkish>
             </Key>
             <Key ID="STR_params_A3A_rebelSkillMul_desc">

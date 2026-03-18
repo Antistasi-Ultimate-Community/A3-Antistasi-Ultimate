@@ -13,19 +13,11 @@ private _xRef = 2;
 private _yRef = 1;
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
-/* if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) then {}else{
-	{_x disableAI "TARGET"; _x disableAI "AUTOTARGET"} foreach units _heli;
-}; */
-
-/* while {true} do
-	{
- 	_landpos = _positionX getPos [_dist,random 360];
- 	if (!surfaceIsWater _landpos) exitWith {};
-	}; */
 if (_landPos isEqualTo []) then {
     _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
     _landpos set [2,0]
 };
+
 {_x setBehaviour "CARELESS";} forEach units _heli;
 private _wp = _heli addWaypoint [_landpos, 0];
 _wp setWaypointType "MOVE";
@@ -34,9 +26,11 @@ _wp setWaypointSpeed "FULL";
 
 _wp setWaypointCompletionRadius 3;
 
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 550) or !(canMove _veh)};
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
+_veh flyInHeight _midHeight;
 
-_veh flyInHeight 12;
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
+_veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);
 
 waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
@@ -80,7 +74,9 @@ if (alive _veh && canMove _veh) then
 waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
-_veh flyInHeight 175;
+_veh flyInHeight _midHeight;
+
+_veh limitSpeed (2 * getNumber(configOf _veh >> "maxSpeed"));	// remove the limit
 
 if (canMove _veh) then {
     [_veh, "close"] spawn A3A_fnc_HeliDoors;
