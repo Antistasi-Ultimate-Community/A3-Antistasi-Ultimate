@@ -355,7 +355,7 @@ class radioComm: SimpleMenuBigger
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_put_garage_tooltip;
-			action = "closeDialog 0; _target = cursorObject; if (isNull _target) then { _target = cursorTarget; }; [_target, clientOwner, call HR_GRG_dLock, player] remoteExec ['HR_GRG_fnc_addVehicleUAVCompat', 2];";
+			action = "closeDialog 0; _target = cursorObject; if (isNull _target) then { _target = cursorTarget; }; [_target, clientOwner, call HR_GRG_dLock, player] remoteExec ['HR_GRG_fnc_addVehicle', 2];";
 		};
 
 		class l4Button: SimpleButton

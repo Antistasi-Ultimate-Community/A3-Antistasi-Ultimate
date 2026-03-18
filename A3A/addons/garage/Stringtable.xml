@@ -248,7 +248,7 @@
                 <Polish>Pylony</Polish>
                 <Turkish>Silahlandır</Turkish>
             </Key>
-            <Key ID="STR_HR_GRG_Generic_PylonDisabled">
+            <Key ID="STR_HR_GRG_Generic_PylonDisabled_noAmmo">
                 <Original>Pylons require an ammo source to edit</Original>
                 <French>Les pylônes nécessitent une source de munitions pour être modifiés</French>
                 <Russian>Для редактирования пилонов необходим источник боеприпасов</Russian>
@@ -259,6 +259,12 @@
                 <Italian>Per editare gli equipaggiamenti dinamici hai bisogno di una fonte di munizioni</Italian>
                 <Polish>Pylony wymagają źródła amunicji do edycji</Polish>
                 <Turkish>Silah askılarını düzenlemek için bir mühimmat kaynağı gerekir</Turkish>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_PylonDisabled_setting">
+                <Original>Pylon editing is disabled on this server</Original>
+            </Key>
+            <Key ID="STR_HR_GRG_Generic_PylonDisabled_newSys">
+                <Original>Pylon editing is now done through the battle menu.\n\nLook at a vehicle and use the RRR button to change pylons</Original>
             </Key>
             <Key ID="STR_HR_GRG_Generic_full">
                 <Original>Full</Original>
@@ -716,6 +722,9 @@
                 <Italian>Oggetto immagazzinato</Italian>
                 <Polish>Przechowywany przedmiot</Polish>
                 <Turkish>Öğe depolandı</Turkish>
+            </Key>
+            <Key ID="STR_HR_GRG_Feedback_addVehicle_HostileUAV">
+                <Original>You can't garage a drone that doesnt belong to your side. Hack this drone before trying to garage it.</Original>
             </Key>
             <Key ID="STR_HR_GRG_Feedback_addVehicle_Ammo_sold">
                 <Original>Ammo crate sold</Original>
