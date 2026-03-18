@@ -42,7 +42,7 @@
 
 ["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A_Single"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["OPTRE_YSS_1000_A_Single"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] call _fnc_saveToTemplate; // I pray this works
+["vehiclesPlanesTransport", ["A3U_OPTRE_Pelican_VTOL_Armed_ins", "A3U_OPTRE_Pelican_VTOL_unarmed_ins"]] call _fnc_saveToTemplate; // I pray this works
 
 ["vehiclesHelisLight", ["OPTRE_ins_falcon_unarmed", "OPTRE_UNSC_falcon_S_ins"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["OPTRE_Pelican_unarmed_ins"]] call _fnc_saveToTemplate;
