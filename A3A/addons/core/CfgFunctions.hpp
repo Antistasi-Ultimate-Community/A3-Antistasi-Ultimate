@@ -11,6 +11,7 @@ class CfgFunctions
             class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
+            class askAnyoneHelp {};
             class assaultBuilding {};
             class attackDrillAI {};
             class attackHeli {};
@@ -35,6 +36,7 @@ class CfgFunctions
             class findSafeRoadToUnload {};
             class fireCMFlare {};
             class fleeToSide {};
+            class getNearFriendly {};
             class guardDog {};
             class hasRadio {};
             class HeliDoors {};

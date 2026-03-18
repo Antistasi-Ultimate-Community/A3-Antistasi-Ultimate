@@ -14,12 +14,6 @@ private _yRef = 1;
 private _landpos = [];
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
-/* while {true} do
-	{
- 	_landpos = _positionX getPos [_dist,random 360];
- 	if (!surfaceIsWater _landpos) exitWith {};
-	}; */
-
 _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
 _landpos set [2,0];
 {_x setBehaviour "CARELESS";} forEach units _heli;
@@ -30,10 +24,15 @@ _wp setWaypointSpeed "FULL";
 
 _wp setWaypointCompletionRadius 3;
 
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 550) or !(canMove _veh)};
-private _midHeight = [100, 150] select (A3A_climate isEqualTo "tropical");
-
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _veh flyInHeight _midHeight;
+
+[_veh, _landpos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
+
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
+_veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);         // to slow down vtols even more
+
+waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
 // Landing path setup for vtol
 private _endPos = _landpos;
@@ -60,8 +59,8 @@ private _angleTarget = 0;
 private _angleIs = 0;
 private _angleDiff = 0;
 private _heightDiff = 0;
-private _driver = driver _veh;
 
+private _driver = driver _veh;
 
 while {_interval < 0.7777} do
 {
@@ -85,9 +84,8 @@ while {_interval < 0.7777} do
 
     private _lineStart = _startPos vectorAdd (_startToMidVector vectorMultiply _interval);
    	private _lineEnd = _midPos vectorAdd (_midToEndVector vectorMultiply _interval);
-    
-    _veh setVelocityTransformation
-    [
+
+    _veh setVelocityTransformation [
         _lineStart,
         _lineEnd,
         _velocityVector,
@@ -124,41 +122,53 @@ _driver action ["VectoringUp", _veh];
 _driver action ["VectoringUp", _veh];
 if (alive _veh && canMove _veh) then
 {
-	[_veh] call A3A_fnc_smokeCoverAuto;
-	{
-	_veh setVelocity [0,0,0];
-	_veh setVectorUp [0,0,1];
-	[_veh,_x,_xRef,_yRef] spawn
-		{
-		private ["_veh","_unit","_d","_xRef","_yRef"];
-		_veh = _this select 0;
-		_unit = _this select 1;
-		_xRef = _this select 2;
-		_yRef = _this select 3;
-		waitUntil {((speed _veh < 1) and (speed _veh > -1))};
-		_d = -1;
-		unassignVehicle _unit;
-		moveOut _unit;
-		if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};	// Avoid placing dead units underground after vehicle crashes
-		_veh setVectorUp [0,0,1];
-		[_unit,"gunner_standup01"] remoteExec ["switchmove"];
-		_unit attachTo [_veh, [_xRef,_yRef,_d]];
-		while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (canMove _veh) and (speed _veh < 10) and (speed _veh > -10)} do
-			{
-			_unit attachTo [_veh, [2,1,_d]];
-			_d = _d - 0.35;
-			private _driver = driver _veh;
-			_veh setVectorUp [0,0,1];
-			_driver action ["VectoringUp", _veh];
-			_veh setVelocity [0,0,0];
-			sleep 0.005;
-			};
-		detach _unit;
-		[_unit,""] remoteExec ["switchMove"];
-		sleep 0.5;
-		};
-	sleep (2 + random 2);
-	} forEach units _groupX;
+    [_veh] call A3A_fnc_smokeCoverAuto;
+    
+    {
+        if (!alive _x) then { continue };
+        
+        _veh setVelocity [0,0,0];
+        _veh setVectorUp [0,0,1];
+        
+        [_veh, _x, _xRef, _yRef] spawn
+        {
+            private ["_veh", "_unit", "_d", "_xRef", "_yRef"];
+            _veh = _this select 0;
+            _unit = _this select 1;
+            _xRef = _this select 2;
+            _yRef = _this select 3;
+            
+            waitUntil {((speed _veh < 1) and (speed _veh > -1))};
+            
+            _d = -1;
+            unassignVehicle _unit;
+            moveOut _unit;
+            
+            if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};
+            
+            _veh setVectorUp [0,0,1];
+            [_unit, "gunner_standup01"] remoteExec ["switchmove"];
+            _unit attachTo [_veh, [_xRef, _yRef, _d]];
+            
+            private _driver = driver _veh;
+            
+            while {((getposATL _unit select 2) > 1) and (canMove _veh) and (abs speed _veh < 10)} do
+            {
+                _unit attachTo [_veh, [2,1,_d]];
+                _d = _d - 0.35;
+                _veh setVectorUp [0,0,1];
+                _driver action ["VectoringUp", _veh];
+                _veh setVelocity [0,0,0];
+                sleep 0.005;
+            };
+            
+            detach _unit;
+            [_unit, ""] remoteExec ["switchMove"];
+            sleep 0.5;
+        };
+        
+        sleep (2 + random 2);
+    } forEach units _groupX;
 };
 
 _driver action ["VTOLVectoringCancel", _veh];
@@ -168,7 +178,9 @@ _driver enableAI "PATH";
 waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
-_veh flyInHeight 175;
+_veh flyInHeight _midHeight;
+
+_veh limitSpeed (2 * getNumber(configOf _veh >> "maxSpeed"));	// remove the limit
 
 if (canMove _veh) then {
     [_veh, "close"] spawn A3A_fnc_HeliDoors;

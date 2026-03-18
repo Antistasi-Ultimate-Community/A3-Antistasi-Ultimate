@@ -20,9 +20,9 @@ private _vehType = typeOf _helicopter;
 private _forceFastrope = false;
 if (_vehType in vehFastRope) then {
     {
-        // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 2m
+        // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 3m
         // * visiblePosition isn't perfect (especially with large boulder / cliff objects), but the best option without a ton of bounding box / vertex math
-        if ((visiblePosition _x) select 2 > 2) exitWith { _forceFastrope = true };
+        if ((visiblePosition _x) select 2 > 3) exitWith { _forceFastrope = true };
     } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
 };
 if (_forceFastrope) exitWith {
@@ -47,17 +47,19 @@ private _vehWP0 = _crewGroup addWaypoint [_landPos, 0];
 _vehWP0 setWaypointType "MOVE";
 _vehWP0 setWaypointSpeed "FULL";
 _vehWP0 setWaypointCompletionRadius 150;
-_vehWP0 setWaypointBehaviour "CARELESS";
+_vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gunners will engage units more aggressively
 
-private _midHeight = [100, 150] select (A3A_climate isEqualTo "tropical");
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
-waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
+[_helicopter, _landPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
 
+waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 while {_helicopter distance2D _landPos > 675} do {
     [_helicopter, 0.3] call A3A_fnc_fireCMFlare;
 };
 
+_helicopter limitSpeed ((0.4 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 150);         // to slow down vehicle even more x2
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 600};
 
 _helicopter flyInHeight 0;                  // helps to keep it near the ground after landing
@@ -122,9 +124,8 @@ while {_interval < 0.9999} do
     private _lineEnd = _midPos vectorAdd (_midToEndVector vectorMultiply _interval);
 
     _helicopter action ["LandGear", _helicopter]; ///forces vehicle to use landing gear
-    
-    _helicopter setVelocityTransformation
-    [
+
+    _helicopter setVelocityTransformation [
         _lineStart,
         _lineEnd,
         _velocityVector,
@@ -189,6 +190,8 @@ if(canMove _helicopter || alive _driver) then {
     [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
 };
 _helicopter flyInHeight _midHeight;
+
+_helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// remove the limit
 
 _helicopter action ["LandGearUp", _helicopter];
 

@@ -8,6 +8,26 @@ class planeLoadouts
     // diveParams[]
     class CASDIVE
     {
+        // OPTRE
+        class OPTRE_YSS_1000_A_VTOL
+        {
+            loadout[] = {"OPTRE_32Rnd_Anvil1_missiles","PylonMissile_1Rnd_Bomb_04_F","OPTRE_32Rnd_Anvil1_missiles","PylonMissile_1Rnd_Mk82_F","OPTRE_M1024_2000Rnd_30mm"};
+            mainGun = "OPTRE_M1024_ASWAC_30mm_MLA";
+            rocketLauncher[] = {"OPTRE_missiles_Anvil1"};
+            bombRacks[] = {"Bomb_04_Plane_CAS_01_F","Mk82BombLauncher"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}}; // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
+        };
+        class OPTRE_YSS_1000_A_VTOL_Single  : OPTRE_YSS_1000_A_VTOL {};
+        //same loadout but with laser as a main gun
+        class OPTRE_YSS_1000_A
+        {
+            loadout[] = {"OPTRE_32Rnd_Anvil1_missiles","PylonMissile_1Rnd_BombCluster_03_F","OPTRE_32Rnd_Anvil1_missiles","PylonMissile_1Rnd_BombCluster_01_F","OPTRE_M1024_2000Rnd_30mm"};
+            mainGun = "OPTRE_M6_Laser_Sabre";
+            rocketLauncher[] = {"OPTRE_missiles_Anvil1"};
+            bombRacks[] = {"BombCluster_03_F","BombCluster_01_F"};
+            diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
+        };
+        class OPTRE_YSS_1000_A_Single  : OPTRE_YSS_1000_A {};
         /* class B_Plane_CAS_01_dynamicLoadout_F
         {
             loadout[] = {"","","","","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_BombCluster_03_F","","","",""};
@@ -15,7 +35,7 @@ class planeLoadouts
             bombRacks[] = {"Bomb_04_Plane_CAS_01_F", "BombCluster_03_F"};
             diveParams[] = {1200, 600, 180, 55, 15, {0,0}};
         }; */
-/// PRACS
+        /// PRACS
         class PRACS_SLA_SU22
         {
             loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","","","rhs_mag_upk23_ofz","rhs_mag_upk23_ofz","","","","","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1","PRACS_FAB_500_M54_X1"};
@@ -520,6 +540,48 @@ class planeLoadouts
     
     class CAS
     {
+        // OPTRE
+        class OPTRE_YSS_1000_A_VTOL
+        {
+            loadout[] = {"OPTRE_32Rnd_Anvil3_missiles","OPTRE_3Rnd_Jackknife_sabre_missile","OPTRE_12Rnd_C2GMLS_missiles","OPTRE_3Rnd_Jackknife_missile","OPTRE_M1024_2000Rnd_30mm"};
+            mainGun = "OPTRE_M1024_ASWAC_30mm_MLA";
+            rocketLauncher[] = {"OPTRE_missiles_Anvil3"};
+            missileLauncher[] = {"OPTRE_missiles_Jackknife_Sabre","OPTRE_missiles_Scorpion","OPTRE_missiles_C2GMLS"};
+        };
+        class OPTRE_YSS_1000_A_VTOL_Single  : OPTRE_YSS_1000_A_VTOL {};
+        //same loadout but with laser as a main gun
+        class OPTRE_YSS_1000_A
+        {
+            loadout[] = {"OPTRE_32Rnd_Anvil3_missiles","OPTRE_3Rnd_Jackknife_sabre_missile","OPTRE_12Rnd_C2GMLS_missiles","OPTRE_3Rnd_Jackknife_missile","OPTRE_M1024_2000Rnd_30mm"};
+            mainGun = "OPTRE_M6_Laser_Sabre";
+            rocketLauncher[] = {"OPTRE_missiles_Anvil3"};
+            missileLauncher[] = {"OPTRE_missiles_Jackknife_Sabre","OPTRE_missiles_Scorpion","OPTRE_missiles_C2GMLS"};
+        };
+        class OPTRE_YSS_1000_A_Single  : OPTRE_YSS_1000_A {};
+        class OPTRE_FC_Type26B_Banshee
+        {
+            loadout[] = {"OPTRE_FC_C2_Battery","OPTRE_FC_C2_Battery","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
+            mainGun = "OPTRE_FC_C2_EWS";
+            rocketLauncher[] = {"OPTRE_FC_T33_FuelRod_Cannon_Veh"};
+        };
+        class OPTRE_FC_Type26B_Ultra_Banshee
+        {
+            loadout[] = {"OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
+            mainGun = "OPTRE_FC_Ghost_Ultra_C2";
+            rocketLauncher[] = {"OPTRE_FC_T33_FuelRod_Cannon_Veh"};
+        };
+        class OPTRE_FC_Type26N_Banshee
+        {
+            loadout[] = {"OPTRE_FC_HeavyNeedle_Cartridge","OPTRE_FC_HeavyNeedle_Cartridge","OPTRE_FC_HeavyNeedle_Cartridge","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
+            mainGun = "OPTRE_FC_T3_HN";
+            rocketLauncher[] = {"OPTRE_FC_T33_FuelRod_Cannon_Veh"};
+        };
+        class OPTRE_FC_Type27_Banshee
+        {
+            loadout[] = {"OPTRE_FC_T56G_Battery","OPTRE_FC_T56G_Battery","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
+            mainGun = "OPTRE_FC_T56_AAG";
+            rocketLauncher[] = {"OPTRE_FC_T33_FuelRod_Cannon_Veh"};
+        };
        /* class B_Plane_CAS_01_dynamicLoadout_F
         {
             loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
@@ -527,7 +589,7 @@ class planeLoadouts
             rocketLauncher[] = {"Rocket_04_HE_Plane_CAS_01_F"};
             missileLauncher[] = {"Missile_AGM_02_Plane_CAS_01_F", "missiles_SCALPEL"};
         }; */
-/// PRACS
+        /// PRACS
         class PRACS_SLA_SU22
         {
             loadout[] = {"PRACS_AA8_X1","PRACS_AA8_X1","PRACS_KH29T_X1","PRACS_KH29T_X1","rhs_mag_upk23_btz","rhs_mag_upk23_btz","PRACS_Kh25_mt_X1","PRACS_Kh25_mt_X1","","","","","",""};
@@ -1057,9 +1119,37 @@ class planeLoadouts
     class AA
     {
         // OPTRE
+        class OPTRE_YSS_1000_A_VTOL
+        {
+            loadout[] = {"OPTRE_STMedusa_6Rnd_AA_Missile","PylonRack_1Rnd_AAA_missiles","OPTRE_STMedusa_6Rnd_AA_Missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_M1024_2000Rnd_30mm"};
+            mainGun = "OPTRE_M1024_ASWAC_30mm_MLA";
+            missileLauncher[] = {"missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F","OPTRE_STMedusa_AAMissile"};
+        };
+        class OPTRE_YSS_1000_A_VTOL_Single  : OPTRE_YSS_1000_A_VTOL {};
+        //same loadout but with laser as a main gun
         class OPTRE_YSS_1000_A
         {
-            loadout[] = {"OPTRE_3Rnd_Jackknife_sabre_missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_3Rnd_Jackknife_sabre_missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_M1024_2000Rnd_30mm"};
+            loadout[] = {"OPTRE_STMedusa_6Rnd_AA_Missile","PylonRack_1Rnd_AAA_missiles","OPTRE_STMedusa_6Rnd_AA_Missile","PylonRack_1Rnd_Missile_AA_04_F","OPTRE_M1024_2000Rnd_30mm"};
+            mainGun = "OPTRE_M6_Laser_Sabre";
+            missileLauncher[] = {"missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F","OPTRE_STMedusa_AAMissile"};
+        };
+        class OPTRE_YSS_1000_A_Single  : OPTRE_YSS_1000_A {};
+        class OPTRE_FC_Type26B_Ultra_Banshee
+        {
+            loadout[] = {"OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_VehAA","OPTRE_FC_T33_FuelRod_Pack_VehAA","OPTRE_FC_T33_FuelRod_Pack_VehAA"};
+            mainGun = "OPTRE_FC_Ghost_Ultra_C2";
+            missileLauncher[] = {"OPTRE_FC_T33_FuelRod_Cannon_VehAA"};
+        };
+        class OPTRE_FC_Type26N_Banshee
+        {
+            loadout[] = {"OPTRE_FC_HeavyNeedle_Cartridge","OPTRE_FC_HeavyNeedle_Cartridge","OPTRE_FC_HeavyNeedle_Cartridge","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_2Rnd_AA_Big_Needler_Mag","OPTRE_2Rnd_AA_Big_Needler_Mag","OPTRE_2Rnd_AA_Big_Needler_Mag","OPTRE_2Rnd_AA_Big_Needler_Mag"};
+            mainGun = "OPTRE_FC_T3_HN";
+            missileLauncher[] = {"OPTRE_AA_Big_Needler"};
+        };
+        class OPTRE_FC_Type27_Banshee
+        {
+            loadout[] = {"OPTRE_FC_T56G_Battery","OPTRE_FC_T56G_Battery","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
+            mainGun = "OPTRE_FC_T56_AAG";
         };
         /// TFC
 
