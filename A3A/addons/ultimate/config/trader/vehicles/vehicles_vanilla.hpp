@@ -42,7 +42,7 @@ class vehicles_vanilla : vehicles_base
     ITEM(B_Heli_Light_01_dynamicLoadout_F, 24600, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Light_01_F, 9000, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Transport_01_F, 11100, "HELI", VEHICLE_CONDITION_HELI);
-    ITEM(B_Heli_Transport_01_pylons_F, 30500, "HELI", VEHICLE_CONDITION_HELI);
+    ITEM(a3a_B_Heli_Transport_01_pylons_F, 30500, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(B_Heli_Attack_01_pylons_dynamicLoadout_F, 42180, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(O_Heli_Attack_02_dynamicLoadout_F, 42475, "HELI", VEHICLE_CONDITION_HELI);
     ITEM(O_Heli_Light_02_unarmed_F, 9600, "HELI", VEHICLE_CONDITION_HELI);
