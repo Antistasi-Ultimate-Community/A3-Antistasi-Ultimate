@@ -86,141 +86,40 @@ class a3a_C_Heli_Light_02_blue_F : O_Heli_Light_02_unarmed_F
 };
 
 ///2.20 update (armed ghosthawk)
-class Heli_Transport_01_pylons_base_F: Heli_Transport_01_base_F
-{
-    class Components;
-};
-class B_Heli_Transport_01_pylons_F: Heli_Transport_01_pylons_base_F 
-{
-    class Components : Components 
-    {
-        class TransportPylonsComponent
-		{
-            uiPicture = "\A3\Air_F_Beta\Heli_Transport_01\Data\UI\Heli_Transport_01_pylons_EDEN_CA.paa";
-            class Presets
-			{
-                class Default 
-				{
-                    attachment[] = {"PylonRack_12Rnd_PGM_missiles","PylonWeapon_2000Rnd_65x39_belt","PylonWeapon_2000Rnd_65x39_belt","PylonRack_12Rnd_PGM_missiles"};
-                    displayName = "Default";
-                };
-                class Empty 
-				{
-                    attachment[] = {};
-                    displayName = "Empty";
-                };
-                class LongRange 
-				{
-                    attachment[] = {"PylonFuelTank_UH80","PylonRack_12Rnd_PGM_missiles","PylonRack_12Rnd_PGM_missiles","PylonFuelTank_UH80"};
-                    displayName = "Long-Range";
-                };
-            };
-            class Pylons 
-			{
-                class Pylon1
-				{
-                    attachment = "PylonRack_12Rnd_PGM_missiles";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    priority = 2;
-                    UIposition[] = {0.625,0.42};
-                };
-                class Pylon2 
-				{
-                    attachment = "PylonRack_12Rnd_PGM_missiles";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    priority = 1;
-                    UIposition[] = {0.555,0.37};
-                };
-                class Pylon3
-				{
-                    attachment = "PylonRack_12Rnd_PGM_missiles";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    mirroredMissilePos = 2;
-                    priority = 1;
-                    UIposition[] = {0.11,0.37};
-                };
-                class Pylon4
-				{
-                    attachment = "PylonRack_12Rnd_PGM_missiles";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    mirroredMissilePos = 1;
-                    priority = 2;
-                    UIposition[] = {0.04,0.42};
-                };
+class Heli_Transport_01_pylons_base_F;
+
+class B_Heli_Transport_01_pylons_F: Heli_Transport_01_pylons_base_F {
+    class Components {
+        class TransportPylonsComponent {
+            class pylons {
+                class Pylon1;
+                class Pylon2;
+                class Pylon3;
+                class Pylon4;
             };
         };
     };
 };
+
 class a3a_B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_pylons_F {
-   class Components : Components 
-   {
-        class TransportPylonsComponent : TransportPylonsComponent 
-		{
-            class Presets
-			{
-                class Default 
-				{
-                    attachment[] = {"PylonRack_12Rnd_PGM_missiles","PylonWeapon_2000Rnd_65x39_belt","PylonWeapon_2000Rnd_65x39_belt","PylonRack_12Rnd_PGM_missiles"};
-                    displayName = "Default";
+    // Add cannons to pylons
+    class Components: Components {
+        class TransportPylonsComponent: TransportPylonsComponent {
+            class pylons: pylons {
+                class Pylon1: Pylon1 {
+                    attachment[] += {"WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
                 };
-                class Empty 
-				{
-                    attachment[] = {};
-                    displayName = "Empty";
+
+                class Pylon2: Pylon2 {
+                    attachment[] += {"WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
                 };
-                class LongRange 
-				{
-                    attachment[] = {"PylonFuelTank_UH80","PylonRack_12Rnd_PGM_missiles","PylonRack_12Rnd_PGM_missiles","PylonFuelTank_UH80"};
-                    displayName = "Long-Range";
+
+                class Pylon3: Pylon3 {
+                    attachment[] += {"WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
                 };
-            };
-            class Pylons 
-			{
-                class Pylon1
-				{
-                    attachment = "PylonRack_12Rnd_missiles";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    priority = 2;
-                    UIposition[] = {0.625,0.42};
-                };
-                class Pylon2 
-				{
-                    attachment = "PylonWeapon_2000Rnd_65x39_belt";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    priority = 1;
-                    UIposition[] = {0.555,0.37};
-                };
-                class Pylon3
-				{
-                    attachment = "PylonWeapon_2000Rnd_65x39_belt";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    mirroredMissilePos = 2;
-                    priority = 1;
-                    UIposition[] = {0.11,0.37};
-                };
-                class Pylon4
-				{
-                    attachment = "PylonRack_12Rnd_missiles";
-                    bay = -1;
-                    hardpoints[] = {"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM","WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
-                    maxweight = 1200;
-                    mirroredMissilePos = 1;
-                    priority = 2;
-                    UIposition[] = {0.04,0.42};
+
+                class Pylon4: Pylon4 {
+                    attachment[] += {"WEAPON_PODS_RF","20MM_TWIN_CANNON","I_ORCA_RIGHT_PYLON"};
                 };
             };
         };
