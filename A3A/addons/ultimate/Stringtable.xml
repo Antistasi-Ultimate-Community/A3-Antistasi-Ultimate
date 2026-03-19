@@ -369,5 +369,21 @@
             <Chinesesimp>在客户端初始化结束时启用环绕摄像机的开场动画。</Chinesesimp>
             <French>Activer l'animation d'introduction de la caméra orbitale à la fin de l'initialisation du client.</French>
         </Key>
+        <Key ID="STR_A3U_setting_spawnHelperShowLocation">
+            <Original>Spawn Helper: Show Location</Original>
+            <German>Spawn-Helfer: Standort anzeigen</German>
+            <Russian>Помощник спавна: показать местоположение</Russian>
+            <Korean>스폰 헬퍼: 위치 표시</Korean>
+            <Chinesesimp>生成助手：显示位置</Chinesesimp>
+            <French>Aide à l'apparition : afficher l'emplacement</French>
+        </Key>
+        <Key ID="STR_A3U_setting_spawnHelperShowLocation_desc">
+            <Original>Render VR circle visualization at vehicle spawn helper locations outside teardown mode.</Original>
+            <German>VR-Kreisvisualisierung an den Standorten des Fahrzeug-Spawn-Helfers außerhalb des Abbaumodus rendern.</German>
+            <Russian>Отображать визуализацию круга VR в местах помощи при спавне транспортных средств вне режима разборки.</Russian>
+            <Korean>해체 모드 외부의 차량 스폰 헬퍼 위치에서 VR 원 시각화를 렌더링합니다.</Korean>
+            <Chinesesimp>在拆卸模式之外的车辆生成助手位置渲染VR圆形可视化。</Chinesesimp>
+            <French>Rendre la visualisation du cercle VR aux emplacements de l'aide à l'apparition des véhicules en dehors du mode de démontage.</French>
+        </Key>
     </Package>
 </Project>

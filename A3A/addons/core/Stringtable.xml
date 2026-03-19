@@ -782,7 +782,6 @@
             </Key>
             <Key ID="STR_A3AU_downed_help">
                 <Original>I am injured comrades! Help!</Original>
-                <English>I am injured comrades! Help!</English>
                 <Russian>Я ранен, товарищи! Помогите!</Russian>
                 <Korean>나는 부상당했다, 동지들! 도움말!</Korean>
                 <Chinesesimp>我受伤了! 救命!</Chinesesimp>
@@ -3114,7 +3113,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_commander_options_name">
                 <Original>Commander Options</Original>
-                <English>Commander Options</English>
                 <Russian>Функции Командира</Russian>
                 <Korean>지휘관 옵션</Korean>
                 <French>Options du commandant</French>
@@ -6446,7 +6444,7 @@
                 <Chinesesimp>启用自我复苏</Chinesesimp>
                 <Turkish>Kendi kendini canlandırma yöntemleri etkinleştirildi</Turkish>
             </Key>
-            <Key ID="STR_A3A_Params_selfReviveMethods_title">
+            <Key ID="STR_A3A_Params_selfReviveMethods_desc">
                 <Original>No: Players cannot self-revive. Withstand: Players can self-revive if they have a first aid kit.</Original>
                 <Russian>Нет: Игроки не могут возрождаться самостоятельно. Выдержка: Игроки могут возрождаться самостоятельно, если у них есть аптечка.</Russian>
                 <Italian>Non: I giocatori non possono auto-rinascere. Resistere: I giocatori possono auto-rinascere se hanno un kit di pronto soccorso.</Italian>
@@ -6645,7 +6643,6 @@
             </Key>
             <Key ID="STR_A3AU_uncap_zombie_spawn">
                 <Original>Enable Uncapped Zombie Spawning</Original>
-                <English>Enable Uncapped Zombie Spawning</English>
                 <Russian>Включить неограниченное появление зомби</Russian>
                 <Korean>무제한 좀비 스폰 활성화</Korean>
                 <French>Activer la création de zombies non plafonnés</French>
@@ -6661,7 +6658,6 @@
             </Key>
             <Key ID="STR_A3AU_old_garrison_spawn">
                 <Original>Use Old Plus Garrison Spawning</Original>
-                <English>Use Old Plus Garrison Spawning</English>
                 <Russian>Использовать старую логику появления гарнизонов из Plus</Russian>
                 <Korean>기존 안티스타시 플러스 주둔지 스폰 사용</Korean>
                 <French>Utiliser la garnison Old Plus</French>
@@ -6692,7 +6688,6 @@
             </Key>
             <Key ID="STR_A3AU_radioman_support">
                 <Original>Support Caller</Original>
-                <English>Support Caller</English>
                 <Russian>Кто вызывает поддержку</Russian>
                 <Korean>지원 요청자</Korean>
                 <French>Appel de soutien</French>
@@ -6723,7 +6718,6 @@
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers_recon_plane_distance">
                 <Original>Recon Plane Zone Reveal Distance</Original>
-                <English>Recon Plane Zone Reveal Distance</English>
                 <Russian>Дистанция открытия маркеров самолётом разведки</Russian>
                 <French>Zone révélée par les avions de reconnaissance.</French>
                 <Korean>정찰기의 정찰 거리</Korean>
@@ -6752,7 +6746,6 @@
             </Key>
             <Key ID="STR_A3AU_total_victory_deprecated">
                 <Original>Total Victory (deprecated)</Original>
-                <English>Total Victory (deprecated)</English>
                 <Russian>Полная победа (устарел)</Russian>
                 <Chinesesimp>全面胜利(已弃用)</Chinesesimp>
                 <Korean>전체적 승리 (비사용)</Korean>
@@ -6760,7 +6753,6 @@
             </Key>
             <Key ID="STR_A3AU_total_victory">
                 <Original>Total Victory</Original>
-                <English>Total Victory</English>
                 <Russian>Полная победа</Russian>
                 <Chinesesimp>全面胜利</Chinesesimp>
                 <Korean>전체적 승리</Korean>
@@ -6775,7 +6767,6 @@
             </Key>
             <Key ID="STR_A3AU_political_victory">
                 <Original>Political Victory</Original>
-                <English>Political Victory</English>
                 <Russian>Политическая победа</Russian>
                 <Chinesesimp>政治胜利</Chinesesimp>
                 <Korean>정치적 승리</Korean>
@@ -6872,7 +6863,6 @@
             </Key>
             <Key ID="STR_A3AU_blackmarket_ignore_requirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
-                <English>Ignore Black Market Vehicle Requirements</English>
                 <Russian>Игнорировать условия разблокировки транспорта на чёрном рынке</Russian>
                 <Chinesesimp>取消黑市车辆解锁条件</Chinesesimp>
                 <Korean>암시장 차량 요구사항 무시</Korean>
@@ -6880,7 +6870,6 @@
             </Key>
             <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
-                <English>Notify Players When Downed</English>
                 <Russian>Уведомлять игроков при тяжёлом ранении</Russian>
                 <Chinesesimp>玩家倒地时提示</Chinesesimp>
                 <Korean>쓰러질 시 플레이어에게 알림</Korean>
@@ -6894,7 +6883,6 @@
             </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
-                <English>Disable Arms Dealer</English>
                 <Russian>Отключить торговца оружием</Russian>
                 <Chinesesimp>取消军火商</Chinesesimp>
                 <Korean>암거래상 비활성화</Korean>
@@ -6932,7 +6920,6 @@
             </Key>
             <Key ID="STR_A3AU_sway_enabled">
                 <Original>Weapon Sway % (Vanilla)</Original>
-                <English>Weapon Sway % (Vanilla)</English>
                 <Russian>Раскачивание оружия % (Vanilla)</Russian>
                 <Korean>무기 흔들림 % (바닐라)</Korean>
                 <French>% de balancement de l'arme (Vanilla)</French>

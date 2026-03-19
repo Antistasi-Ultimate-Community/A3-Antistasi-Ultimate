@@ -105,6 +105,7 @@ A3A_building_EHDB = createHashMapFromArray[
 		A3A_building_EHDB = nil;
 		player enableSimulation true;
 		[_params] remoteExecCall ["A3A_fnc_placeBuilderObjects", 2];
+		[CBA_EVENT_CLIENT_BUILDER_ABORT] call FUNCMAIN(triggerLocalEvent);
 	}],
     // BUILD_DISPLAY -
     [BUILD_DISPLAY, -1],
