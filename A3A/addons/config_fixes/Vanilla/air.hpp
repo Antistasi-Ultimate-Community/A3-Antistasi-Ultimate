@@ -8,7 +8,6 @@ class I_Plane_Fighter_03_dynamicLoadout_F;
 class I_Plane_Fighter_04_F;
 class O_Heli_Light_02_dynamicLoadout_F;
 class O_Heli_Light_02_unarmed_F;
-class Heli_Transport_01_base_F;
 
 //Black
 class a3a_Heli_Light_02_black_F : O_Heli_Light_02_dynamicLoadout_F
