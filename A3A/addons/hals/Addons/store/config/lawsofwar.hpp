@@ -21,4 +21,34 @@
 
 			ITEM(C_UavTerminal, 500, MISC_STOCK);
 
+			ITEM(H_Shemag_red, 50, MISC_STOCK);
+			ITEM(H_EarProtectors_black_F, 50, MISC_STOCK);
+    		ITEM(H_EarProtectors_orange_F, 50, MISC_STOCK);
+    		ITEM(H_EarProtectors_red_F, 50, MISC_STOCK);
+    		ITEM(H_EarProtectors_white_F, 50, MISC_STOCK);
+    		ITEM(H_EarProtectors_yellow_F, 50, MISC_STOCK);
+    		//
+    		ITEM(H_Construction_basic_black_F, 50, MISC_STOCK);
+    		ITEM(H_Construction_basic_orange_F, 50, MISC_STOCK);
+    		ITEM(H_Construction_basic_red_F, 50, MISC_STOCK);
+    		ITEM(H_Construction_basic_vrana_F, 50, MISC_STOCK);
+    		ITEM(H_Construction_basic_white_F, 50, MISC_STOCK);
+    		ITEM(H_Construction_basic_yellow_F, 50, MISC_STOCK);
+    		ITEM(H_Construction_earprot_black_F, 100, MISC_STOCK);
+    		ITEM(H_Construction_earprot_orange_F, 100, MISC_STOCK);
+    		ITEM(H_Construction_earprot_red_F, 100, MISC_STOCK);
+    		ITEM(H_Construction_earprot_vrana_F, 100, MISC_STOCK);
+    		ITEM(H_Construction_earprot_white_F, 100, MISC_STOCK);
+    		ITEM(H_Construction_earprot_yellow_F, 100, MISC_STOCK);
+    		ITEM(H_Construction_headset_black_F, 120, MISC_STOCK);
+    		ITEM(H_Construction_headset_orange_F, 120, MISC_STOCK);
+    		ITEM(H_Construction_headset_red_F, 120, MISC_STOCK);
+    		ITEM(H_Construction_headset_vrana_F, 120, MISC_STOCK);
+    		ITEM(H_Construction_headset_white_F, 120, MISC_STOCK);
+    		ITEM(H_Construction_headset_yellow_F, 120, MISC_STOCK);
+			ITEM(H_HeadSet_black_F, 70, MISC_STOCK);
+    		ITEM(H_HeadSet_orange_F, 70, MISC_STOCK);
+    		ITEM(H_HeadSet_red_F, 70, MISC_STOCK);
+    		ITEM(H_HeadSet_white_F, 70, MISC_STOCK);
+    		ITEM(H_HeadSet_yellow_F, 70, MISC_STOCK);
 		};

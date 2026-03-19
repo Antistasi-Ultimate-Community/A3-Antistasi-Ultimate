@@ -55,7 +55,7 @@ switch (_mode) do
     {
         if (isNil "A3A_setup_saveData") exitWith { Error("onLoad somehow called without save data") };
         ["fillFactions"] call A3A_fnc_setupFactionsTab;
-        ["fillContent"] call A3A_fnc_setupContentTab; 
+        ["fillContent"] call A3A_fnc_setupFactionsTab; 
 
         ["setSaveData"] call A3A_fnc_setupLoadgameTab;
         ["switchTab", ["loadgame"]] call A3A_fnc_setupDialog;
@@ -99,20 +99,18 @@ switch (_mode) do
             case "loadgame": { A3A_IDC_SETUP_LOADGAMETAB };
             case "factions": { A3A_IDC_SETUP_FACTIONSTAB };
             case "params": { A3A_IDC_SETUP_PARAMSTAB };
-            case "content": { A3A_IDC_SETUP_CONTENTTAB };
         };
 
         {
             private _ctrl = _display displayCtrl _x;
             _ctrl ctrlShow (_x == _selectedTabIDC);
-        } forEach [A3A_IDC_SETUP_LOADGAMETAB, A3A_IDC_SETUP_FACTIONSTAB, A3A_IDC_SETUP_PARAMSTAB, A3A_IDC_SETUP_CONTENTTAB];
+        } forEach [A3A_IDC_SETUP_LOADGAMETAB, A3A_IDC_SETUP_FACTIONSTAB, A3A_IDC_SETUP_PARAMSTAB];
 
         switch (_selectedTab) do
         {
             case ("loadgame"): { ["update"] call A3A_fnc_setupLoadgameTab };
             case ("factions"): { ["update"] call A3A_fnc_setupFactionsTab };
             case ("params"): { ["update"] call A3A_fnc_setupParamsTab };
-            case ("content"): { ["update"] call A3A_fnc_setupContentTab };
         };
     };
 

@@ -331,7 +331,7 @@ switch (_mode) do
         // simulate a map click event to select HQ
         if (_selectedMarker isEqualTo "") exitWith
         {
-            Trace("No marker selected, selecting HQ");
+            Debug("No marker selected, selecting HQ");
             _hqMapPos = _garrisonMap ctrlMapWorldToScreen (getMarkerPos "Synd_HQ");
             ["garrisonMapClicked", [_hqMapPos]] call A3A_fnc_hqDialog;
         };
@@ -666,7 +666,7 @@ switch (_mode) do
 
     case ("dismissGarrison"):
     {
-        Trace("Dismissing garrison");
+        Debug("Dismissing garrison");
 
         private _selectedMarker = _garrisonMap getVariable ["selectedMarker", ""];
         [_selectedMarker] spawn A3A_fnc_dismissGarrison;

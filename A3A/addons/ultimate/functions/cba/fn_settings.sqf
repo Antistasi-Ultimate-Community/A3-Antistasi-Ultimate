@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+
 [
     "A3U_setting_enableCosmetics", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type
@@ -212,3 +214,40 @@ if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {
         true
     ] call CBA_fnc_addSetting;
 };
+
+[
+    "A3U_setting_enableInitMessages",
+    "CHECKBOX",
+    ["$STR_A3U_setting_enableInitMessages", "$STR_A3U_setting_enableInitMessages_desc"],
+    "Antistasi Ultimate",
+    true,
+    false,
+    {  
+        params ["_value"];
+		profileNamespace setVariable ["A3U_setting_enableInitMessages",_value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "A3U_setting_enableIntroAnimation",
+    "CHECKBOX",
+    ["$STR_A3U_setting_enableIntroAnimation", "$STR_A3U_setting_enableIntroAnimation_desc"],
+    "Antistasi Ultimate",
+    true,
+    false,
+    {  
+        params ["_value"];
+		profileNamespace setVariable ["A3U_setting_enableIntroAnimation",_value];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(core,spawnHelperShowLocation),
+    "CHECKBOX",
+    ["$STR_A3U_setting_spawnHelperShowLocation", "$STR_A3U_setting_spawnHelperShowLocation_desc"],
+    "Antistasi Ultimate",
+    true, // default
+    true, // global
+    {},   // onchange
+    true  // need restart
+] call CBA_fnc_addSetting;

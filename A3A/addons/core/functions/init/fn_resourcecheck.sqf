@@ -7,10 +7,6 @@ if (!isServer) exitWith {
 //declaring variables outside of the loop increases performance
 private _resAdd = nil;
 private _hrAdd = nil;
-private _popReb = nil;
-private _popGov = nil;
-private _popKilled = nil;
-private _popTotal = nil;
 private _suppBoost = nil;
 private _resBoost = nil;
 
@@ -56,12 +52,12 @@ while {true} do {
 	waitUntil {sleep 15; time >= nextTick};
     waitUntil {sleep 10; A3A_activePlayerCount > 0};
 
+	if (isNil "factories") then { factories = []; };
+	if (isNil "seaports") then { seaports = []; };
+	if (isNil "destroyedSites") then { destroyedSites = []; };
+
 	_resAdd = 25;
 	_hrAdd = 0;
-	_popReb = 0;
-	_popGov = 0;
-	_popKilled = 0;
-	_popTotal = 0;
 
 	_suppBoost = 0.5 * (1+ ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count seaports));
 	_resBoost = 1 + (0.25*({(sidesX getVariable [_x,sideUnknown] == teamPlayer) and !(_x in destroyedSites)} count factories));
@@ -70,14 +66,8 @@ while {true} do {
 		private _city = _x;
 		private _resAddCity = 0;
 		private _hrAddCity = 0;
-		private _cityData = server getVariable _city;
-		_cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
-
-		_popTotal = _popTotal + _numCiv;
-		if (_city in destroyedSites) then { _popKilled = _popKilled + _numCiv; continue };
-
-		_popReb = _popReb + (_numCiv * (_supportReb / 100));
-		_popGov = _popGov + (_numCiv * (_supportGov / 100));
+		private _cityData = server getVariable [_city, [0,0,0,0]];
+		_cityData params [["_numCiv",0], ["_numVeh",0], ["_supportGov",0], ["_supportReb",0]];
 
 		private _radioTowerSide = [_city] call A3A_fnc_getSideRadioTowerInfluence;
 		switch (_radioTowerSide) do
@@ -87,7 +77,8 @@ while {true} do {
 			case Invaders: {[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
 		};
 
-		_resAddCity = _numCiv * (_supportReb / 100) / 3;
+		_resAddCity = (_numCiv * (_supportReb / 100)) / 3;
+		if (!finite _resAddCity) then { _resAddCity = 0; };
 		_hrAddCity = _numCiv * (_supportReb / 10000);
 
 		if (sidesX getVariable [_city,sideUnknown] == Occupants) then
@@ -142,11 +133,16 @@ while {true} do {
 	} forEach resourcesX;
 
 	_resAdd = [_resAdd] call SCRT_fnc_common_rebelSalary;
+	if (isNil "_resAdd" || {!finite _resAdd}) then {
+    	_resAdd = 25000;
+	};
 
-	_hrAdd = ceil _hrAdd;
-	_resAdd = ceil _resAdd;
-	server setVariable ["hr", _hrAdd + (server getVariable "hr"), true];
-	server setVariable ["resourcesFIA", _resAdd + (server getVariable "resourcesFIA"), true];
+	_hrAdd = round _hrAdd;
+	_resAdd = round _resAdd;
+	if (!finite _resAdd) then { _resAdd = 25000; }; //either number is too large or something is broken
+	if (!finite _hrAdd) then { _hrAdd = 30; };
+	server setVariable ["hr", _hrAdd + (server getVariable ["hr", 0]), true];
+	server setVariable ["resourcesFIA", _resAdd + (server getVariable ["resourcesFIA", 0]), true];
 
 	private _rebAirportsQuantity = {sidesX getVariable [_x,sideUnknown] == teamPlayer} count airportsX;
 	bombRuns = bombRuns + 0.25 * _rebAirportsQuantity;
