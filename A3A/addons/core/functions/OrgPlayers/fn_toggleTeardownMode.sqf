@@ -38,6 +38,7 @@ if (isNil "_forceMode") then {
 };
 
 _player setVariable[QGVAR(isTeardownActive), _forceMode];
+[CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED, [_player, _forceMode]] call FUNCMAIN(triggerLocalEvent);
 
 [{
     private _message = [

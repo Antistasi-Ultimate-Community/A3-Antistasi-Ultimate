@@ -355,7 +355,7 @@
         requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_LOM_Equipment", "Flex_CUP_NLAF_Faction"};
         side = "Occ";
         flagTexture = "Flex_CUP_NLAF_Faction\Data\Flag\NLOM_Flag_co.paa";
-        name = "CUP LC NLAF & UN Peacekeepers";
+        name = "CUP LC NLAF & UN";
         description = "After the successful independence from the south and the colonies, the north can count on neighboring allies and UN Peacekeepers. After the civil war, a mainly conscript but well-trained army was formed, even if the government's economic resources are not the best, the army can count on a good choice of vehicles and equipment. The army is composed mainly of motorized and mechanized units with good air support accompanied by a small support militia.";
         file = "CUP_AI_LC_NLAF";
     };
