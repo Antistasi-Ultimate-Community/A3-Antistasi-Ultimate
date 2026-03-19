@@ -26,13 +26,11 @@ if (_vehType in vehFastRope) then {
     } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
 };
 if (_forceFastrope) exitWith {
-    if (_vehType in FactionGet(all,"vehiclesPlanesTransport")) then { //probably need a proper VTOL check
-        Error("A3A_fnc_combatLanding called, but position has tall terrain objects - calling A3A_fnc_fastropeVTOL instead.");
-        [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup] spawn A3A_fnc_fastropeVTOL;
-    } else {
-        Error("A3A_fnc_combatLanding called, but position has tall terrain objects - calling A3A_fnc_fastrope instead.");
-        [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn A3A_fnc_fastrope;
-    };
+    private _functionName = ["A3A_fnc_fastrope", "A3A_fnc_fastropeVTOL"] select (_vehType in FactionGet(all, "vehiclesPlanesTransport"));
+    private _function = missionNamespace getVariable [_functionName, {}];
+    
+    Warning_1("A3A_fnc_combatLanding called, but position has tall terrain objects - spawning %1 instead.", _functionName);
+    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn _function;
 };
 
 if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
