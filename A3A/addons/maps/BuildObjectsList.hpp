@@ -191,5 +191,6 @@
         {QEGVAR(ultimate,BB_TerrainObjectHider_Circle30x30), 5000} \
     }}, \
     {"$STR_antistasi_dialogs_construction_menu_category_miscellaneous", "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Noticeboard_F.jpg", { \
+        {QEGVAR(ultimate,BaseVehicleSpawnHelperArrow), 275}, \
         {QEGVAR(ultimate,BaseAssemblyAreaSign), 275} \
     }}
