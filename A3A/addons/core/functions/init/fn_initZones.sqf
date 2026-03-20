@@ -360,7 +360,7 @@ private _milAdminMarkersToUpdate = [];
     _mrkAdm setMarkerTypeLocal "A3AU_miladmin_mrk";
     _mrkAdm setMarkerColorLocal colorOccupants;
     _mrkAdm setMarkerTextLocal "";
-    _mrkAdm setMarkerAlpha 0.75;
+    _mrkAdm setMarkerAlphaLocal 0.75;
     _mrkAdm setMarkerShadow false;
 
     _administration setVariable ["A3A_milAdminMarker", _mrkAdm];
