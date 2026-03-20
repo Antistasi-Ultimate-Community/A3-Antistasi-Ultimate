@@ -124,9 +124,9 @@ private _isMarkerHidden = {
     if !(_name isEqualType "") exitWith {false};
 
     private _originalMarkerName = [_name] call _getOriginalMarkerName;
-    private _revealedZones = if (isNil "revealedZones") then {[]} else {revealedZones};
-    private _immuneMarkers = if (isNil "markersImmune") then {[]} else {markersImmune};
-    private _hideEnemyMarkers = if (isNil "hideEnemyMarkers") then {false} else {hideEnemyMarkers};
+    private _revealedZones = RETDEF(revealedZones,[]);
+    private _immuneMarkers = RETDEF(immuneMarkers,[]);
+    private _hideEnemyMarkers = RETDEF(hideEnemyMarkers,false);
 
     if (_originalMarkerName == "") exitWith {false};
     if (!_hideEnemyMarkers) exitWith {false};
