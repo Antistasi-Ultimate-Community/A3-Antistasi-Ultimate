@@ -153,7 +153,7 @@ private _markerSide = sidesX getVariable [
 private _markerFaction = [_markerSide] call _getFactionBySide;
 private _factionName = [_markerFaction, "name", ""] call _getHashMapValue;
 
-private _destroyedMilitaryAdministrations = if (isNil "A3A_destroyedMilAdministrations") then {[]} else {A3A_destroyedMilAdministrations};
+private _destroyedMilitaryAdministrations = RETDEF(A3A_destroyedMilAdministrations,[]);
 private _isMilitaryAdministrationDestroyed = _isMilitaryAdministration && {
     _destroyedMilitaryAdministrations findIf {
         !isNull _x && {_markerPosition distance2D _x < 30}
