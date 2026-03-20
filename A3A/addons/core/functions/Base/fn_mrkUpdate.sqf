@@ -214,11 +214,7 @@ private _markerTitle = call {
     if (_markerName in citiesX) exitWith {markerText _markerName};
 
     if (_isRallyPointMarker) exitWith {
-        private _rallyCount = if (isNil "rallyPointSpawnCount") then {
-            "0"
-        } else {
-            str rallyPointSpawnCount
-        };
+        private _rallyCount = str RETDEF(rallyPointSpawnCount,0);
 
         format [localize "STR_marker_RP", _rallyCount]
     };
