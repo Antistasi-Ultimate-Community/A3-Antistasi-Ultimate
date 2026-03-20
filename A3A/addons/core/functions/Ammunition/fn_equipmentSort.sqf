@@ -11,8 +11,6 @@ FIX_LINE_NUMBERS()
 	};
 } forEach allBackpacks;
 
-//allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_AssaultPack_Kerry"); why?
-//allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_CombinationUnitRespirator_01_F"); I kinda understand why, but...
 
 {
 	switch (true) do {
