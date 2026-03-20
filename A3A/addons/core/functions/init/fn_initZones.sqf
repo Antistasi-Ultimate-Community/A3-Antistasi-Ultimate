@@ -344,7 +344,7 @@ private _milAdministrationTypes = [
 private _milAdminPositions = getArray (_mapInfo/"milAdministrations");
 private _milAdminMarkersToUpdate = [];
 
-{
+_milAdminPositions apply {
     private _milAdmins = (nearestObjects [_x, _milAdministrationTypes, 30]) select {
         !isObjectHidden _x && {alive _x}
     };
@@ -379,7 +379,7 @@ private _milAdminMarkersToUpdate = [];
 
         [_killed, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
     }];
-} forEach _milAdminPositions;
+};
 
 if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk;};
 
