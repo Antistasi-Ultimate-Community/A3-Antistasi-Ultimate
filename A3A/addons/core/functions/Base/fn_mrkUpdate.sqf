@@ -65,7 +65,7 @@ if (!_isManagedMarker) exitWith {
 };
 
 private _dummyMarkerName = format ["Dum%1", _markerName];
-private _hasDummyMarker = _dummyMarkerName in allMapMarkers;
+private _hasDummyMarker = markerShape _dummyMarkerName isNotEqualTo "";
 private _visibleMarkerName = [_markerName, _dummyMarkerName] select _hasDummyMarker;
 
 private _getOriginalMarkerName = {
