@@ -47,12 +47,15 @@ if (_tab isEqualTo "vehicles") then
     _objPreview ctrlShow false;
 
     // Add stuff to the buyable vehicles list
-    private _buyableVehiclesList = [_category] call SCRT_fnc_ui_populateBlackMarket;
+    private _buyableVehiclesHM = [_category] call SCRT_fnc_ui_populateBlackMarket;
     private _vehiclesControlsGroup = _display displayCtrl _selectedTab;
 
     private _added = 0;
     {
-        _x params ["_className", "_price", "_canGoUndercover"];
+        private _className = _x;
+        private _price = _y;
+        private _canGoUndercover = false;
+
         private _configClass = (configFile >> "CfgVehicles" >> _className);
         if (!isClass _configClass) then { continue };
 
@@ -75,7 +78,7 @@ if (_tab isEqualTo "vehicles") then
         */
 
         // Add some extra padding to the top if there are 2 rows or less
-        private _topPadding = if (count _buyableVehiclesList < 7) then {5 * GRID_H} else {1 * GRID_H};
+        private _topPadding = if (count keys _buyableVehiclesHM < 7) then {5 * GRID_H} else {1 * GRID_H};
 
         private _itemXpos = 7 * GRID_W + ((7 * GRID_W + 44 * GRID_W) * (_added mod 3)); /// space between first row(?) and left border
         private _itemYpos = (floor (_added / 3)) * (38 * GRID_H) + _topPadding; ///spacer between vehicles
@@ -325,7 +328,7 @@ if (_tab isEqualTo "vehicles") then
         _itemControlsGroup ctrlCommit 0.1;
 
         _added = _added + 1;
-    } forEach _buyableVehiclesList;
+    } forEach _buyableVehiclesHM;
 
     uiNamespace setVariable ["A3U_BM_isTabsComplete", true];
 

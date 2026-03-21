@@ -141,6 +141,13 @@ switch (_mode) do
         private _displayBM = findDisplay A3A_IDD_BLACKMARKETVEHICLEDIALOG;
         private _bmTable = _displayBM displayCtrl A3A_IDC_SETUP_BMTABLE;
 
+        _bmTable ctrlAddEventHandler ["LBSelChanged", {
+            params ["_control", "_selectedIndex"];
+            private _categoryIndex = lbCurSel _control;
+            if (_categoryIndex isEqualTo -1) exitWith {};
+            ["switchTab", [_vehicleType]] call A3A_fnc_blackMarketDialog;
+        }];
+
         private _vehicleTypes = [localize "STR_antistasi_dialogs_vehicle_tab_all", localize "STR_antistasi_dialogs_vehicle_tab_arty", localize "STR_antistasi_dialogs_vehicle_tab_apc", localize "STR_antistasi_dialogs_vehicle_tab_AA",
         localize "STR_antistasi_dialogs_vehicle_tab_uav", localize "STR_antistasi_dialogs_vehicle_tab_tank",localize "STR_antistasi_dialogs_vehicle_tab_statics", localize "STR_antistasi_dialogs_vehicle_tab_heli", 
         localize "STR_antistasi_dialogs_vehicle_tab_plane", localize "STR_antistasi_dialogs_vehicle_tab_armedcar", localize "STR_antistasi_dialogs_vehicle_tab_unarmedcar", localize "STR_antistasi_dialogs_vehicle_tab_boat"];

@@ -26,17 +26,6 @@ class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
 
             class Controls
             {
-                class VehicleTabButton : A3A_Button
-                {
-                    idc = -1;
-                    text = $STR_antistasi_dialogs_vehicle_tab_select;
-                    onButtonClick = "[""switchTab"", [""all""]] call A3A_fnc_blackMarketDialog";
-                    x = 125 * GRID_W;
-                    y = 0;
-                    w = 35 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-
                 class VehicleTabCombo : A3A_ComboBox_Small_BM
                 {
                     idc = A3A_IDC_SETUP_BMTABLE;
@@ -44,8 +33,8 @@ class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
                     access = 1;
                     x = 0 * GRID_W;
                     y = 0;
-                    w = 125 * GRID_W;
-                    h = 5 * GRID_H;/* GRID_H */
+                    w = 160 * GRID_W;
+                    h = 5 * GRID_H;
                 };
             };
         };

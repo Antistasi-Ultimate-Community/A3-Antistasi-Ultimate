@@ -14,7 +14,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-private _blackMarketStock = [];
+private _blackMarketStock = createHashMap;
 private _ignoreList = [];
 private _baseCfg = (configFile >> "A3U" >> "traderAddons");
 
@@ -50,6 +50,24 @@ private _categories = [
 // Track if we have any blocking vehicles (from CDLC or custom mods)
 private _hasBlockingVehicles = false;
 
+private _fnc_addVehicleToStock = {
+    params ["_cfgPath", "_vehicle"];
+    
+    if !(isClass (configFile >> "CfgVehicles" >> _vehicle)) exitWith { Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _vehicle) };
+
+    private _vehCfg = _cfgPath >> _vehicle;
+    private _price = getNumber (_vehCfg >> "price");
+    private _type = getText (_vehCfg >> "type");
+    private _stockType = _blackMarketStock getOrDefault [_type, createHashMap];
+    if (isNil {_stockType get "condition"}) then {
+        private _condition = compile getText (_vehCfg >> "condition");
+        _stockType set ["condition", _condition];
+    };
+    _stockType set [_vehicle, _price];
+    Verbose_4("Adding %1 with price: %2, type: %3", _vehicle, _price, _type);
+    _blackMarketStock set [_type, _stockType];
+};
+
 // Processing all categories in a single loop
 {
     _x params ["_dlc", "_category", ["_additional", []]];
@@ -63,15 +81,7 @@ private _hasBlockingVehicles = false;
         if (_isEnabled) then {
             // For enabled DLCs: add to blackMarketStock
             {
-                if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-                    Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
-                    continue;
-                };
-                private _price = getNumber (_vehicleCfg >> _x >> "price");
-                private _type = getText (_vehicleCfg >> _x >> "type");
-                private _condition = compile getText (_vehicleCfg >> _x >> "condition");
-                _blackMarketStock pushBack [_x, _price, _type, _condition];
-                Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
+                [_vehicleCfg, _x] call _fnc_addVehicleToStock;
                 
                 // Mark as blocking if this is a CDLC
                 if (_blockingDLCs getOrDefault [_dlc, false]) then {
@@ -96,15 +106,7 @@ private _hasBlockingVehicles = false;
             if (_isEnabled && _classExists) then {
                 // For enabled DLCs: add to blackMarketStock
                 {
-                    if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-                        Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
-                        continue;
-                    };
-                    private _price = getNumber (_addCfg >> _x >> "price");
-                    private _type = getText (_addCfg >> _x >> "type");
-                    private _condition = compile getText (_addCfg >> _x >> "condition");
-                    _blackMarketStock pushBack [_x, _price, _type, _condition];
-                    Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
+                    [_addCfg, _x] call _fnc_addVehicleToStock;
                     
                     // Mark as blocking if this is a CDLC
                     if (_blockingDLCs getOrDefault [_dlc, false]) then {
@@ -139,6 +141,8 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
     private _vehicle = getText (_baseCfg >> _x >> "vehicles");
     if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then {continue};
 
+    if 
+
     private _vehicleCfg = (_baseCfg >> "traderVehicles" >> _vehicle);
     if !(isClass _vehicleCfg) then {continue};
     
@@ -151,18 +155,8 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
             continue;
         };
         
-        if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-            Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
-            continue;
-        };
-
-        private _price = getNumber (_vehicleCfg >> _x >> "price");
-        private _type = getText (_vehicleCfg >> _x >> "type");
-        private _condition = compile getText (_vehicleCfg >> _x >> "condition");
-        _blackMarketStock pushBack [_x, _price, _type, _condition];
+        [_vehicleCfg, _x] call _fnc_addVehicleToStock;
         _hasCustomModVehicles = true; // Mark that we have custom mod vehicles
-
-        Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
     } forEach _vehicles;
 } forEach _cfg;
 
@@ -172,17 +166,7 @@ if ((!_hasBlockingVehicles && !_hasCustomModVehicles) || {vanillaArmsDealer isEq
     private _vehicles = _vehicleCfg call BIS_fnc_getCfgSubClasses;
 
     {
-        if !(isClass (configFile >> "CfgVehicles" >> _x)) then {
-            Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _x);
-            continue;
-        };
-        
-        private _price = getNumber (_vehicleCfg >> _x >> "price");
-        private _type = getText (_vehicleCfg >> _x >> "type");
-        private _condition = compile getText (_vehicleCfg >> _x >> "condition");
-        _blackMarketStock pushBack [_x, _price, _type, _condition];
-
-        Verbose_4("Adding %1 with price: %2, type: %3, condition: %4", _x, _price, _type, _condition);
+        [_vehicleCfg, _x] call _fnc_addVehicleToStock;
     } forEach _vehicles;
 };
 
