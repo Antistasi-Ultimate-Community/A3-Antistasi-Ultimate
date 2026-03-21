@@ -27,7 +27,9 @@ if !assert(!isNull _object) exitWith {};
 if !(local _object) exitWith {};
 
 // Object not created in base builder preview
-if (isNil "A3A_building_EHDB") exitWith {};
+if (isNil "A3A_building_EHDB") exitWith {
+    GVAR(builderObjectsHidden) pushBackUnique _object;
+};
 
 // Object created in base builder; show outline to local owner only
 [{
@@ -79,6 +81,6 @@ if (isNil "A3A_building_EHDB") exitWith {};
         _ball attachTo[_object, _offset vectorAdd[0,0,1]];
         A3A_boundingCircle pushBack _ball; // push back to bounding circle spheres; they are deleted once builder is closed
     };
-}, _this, 0.5] call CBA_fnc_waitAndExecute;
+}, _this] call CBA_fnc_execNextFrame;
 
 nil;
