@@ -1,5 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+//fn_ammunitionTransfer
+
 if (!isServer) exitWith {};
 private ["_subObject","_ammunition","_originX","_destinationX"];
 _originX = _this select 0;
@@ -14,7 +16,6 @@ if (isNil {	// Run in unschedule scope.
 		0;  // not nil, will allow script to continue.
 	};
 }) exitWith {};  // Silent exit, likely due to spamming
-
 
 _ammunition= [];
 _items = [];
@@ -61,11 +62,30 @@ if (!isNil "_weaponsItemsCargo") then {
 	};
 };
 
-// if (A3A_hasCup) then {
-// 	_weaponsX = _weaponsX select {
-// 		(!(["_loaded", _x] call BIS_fnc_inString) && {!(["_used", _x] call BIS_fnc_inString)})
-// 	};
-// };
+private _getItemMass = {
+    params ["_item"];
+    private _mass = 0;
+    if (isClass (configFile >> "CfgWeapons" >> _item)) then {
+        _mass = getNumber (configFile >> "CfgWeapons" >> _item >> "mass");
+    };
+    if (_mass == 0 && {isClass (configFile >> "CfgMagazines" >> _item)}) then {
+        _mass = getNumber (configFile >> "CfgMagazines" >> _item >> "mass");
+    };
+    if (_mass == 0 && {isClass (configFile >> "CfgVehicles" >> _item)}) then {
+        _mass = getNumber (configFile >> "CfgVehicles" >> _item >> "mass");
+    };
+    if (_mass == 0) then {
+        switch (true) do {
+            case (_item isKindOf ["Weapon", configFile >> "CfgWeapons"]): { _mass = 3; };
+            case (_item isKindOf ["Magazine", configFile >> "CfgMagazines"]): { _mass = 0.3; };
+            case (_item isKindOf ["ItemCore", configFile >> "CfgWeapons"]): { _mass = 0.1; };
+            default { _mass = 0.05; };
+        };
+    };
+    _mass
+};
+
+private _totalAddedMass = 0;
 
 _weaponsFinal = [];
 _weaponsFinalCount = [];
@@ -79,7 +99,10 @@ _weaponsFinalCount = [];
 
 if (count _weaponsFinal > 0) then {
 	for "_i" from 0 to (count _weaponsFinal) - 1 do {
-		_destinationX addWeaponCargoGlobal [_weaponsFinal select _i,_weaponsFinalCount select _i];
+		private _weapon = _weaponsFinal select _i;
+		private _count = _weaponsFinalCount select _i;
+		_destinationX addWeaponCargoGlobal [_weapon, _count];
+		_totalAddedMass = _totalAddedMass + ([_weapon] call _getItemMass) * _count;
 	};
 };
 
@@ -100,7 +123,10 @@ if (isNil "_ammunition") then {
 
 if (count _ammunitionFinal > 0) then {
 	for "_i" from 0 to (count _ammunitionFinal) - 1 do {
-		_destinationX addMagazineCargoGlobal [_ammunitionFinal select _i,_ammunitionFinalCount select _i];
+		private _mag = _ammunitionFinal select _i;
+		private _count = _ammunitionFinalCount select _i;
+		_destinationX addMagazineCargoGlobal [_mag, _count];
+		_totalAddedMass = _totalAddedMass + ([_mag] call _getItemMass) * _count;
 	};
 };
 
@@ -116,7 +142,10 @@ _itemsFinalCount = [];
 
 if (count _itemsFinal > 0) then {
 	for "_i" from 0 to (count _itemsFinal) - 1 do {
-		_destinationX addItemCargoGlobal [_itemsFinal select _i,_itemsFinalCount select _i];
+		private _item = _itemsFinal select _i;
+		private _count = _itemsFinalCount select _i;
+		_destinationX addItemCargoGlobal [_item, _count];
+		_totalAddedMass = _totalAddedMass + ([_item] call _getItemMass) * _count;
 	};
 };
 
@@ -132,8 +161,125 @@ _backpcksFinalCount = [];
 
 if (count _backpcksFinal > 0) then {
 	for "_i" from 0 to (count _backpcksFinal) - 1 do {
-		_destinationX addBackpackCargoGlobal [_backpcksFinal select _i,_backpcksFinalCount select _i];
+		private _backpack = _backpcksFinal select _i;
+		private _count = _backpcksFinalCount select _i;
+		_destinationX addBackpackCargoGlobal [_backpack, _count];
+		_totalAddedMass = _totalAddedMass + ([_backpack] call _getItemMass) * _count;
 	};
+};
+
+private _thresholdMass = 1000; //should probably set to 5000
+private _currentMass = _destinationX getVariable ["A3A_arsenal_currentMass", getMass _destinationX];
+if (_currentMass == 0) then { _currentMass = 0.01; };
+private _newMass = _currentMass + _totalAddedMass;
+
+if (isNil {_destinationX getVariable "A3A_arsenal_initialMass"}) then {
+    _destinationX setVariable ["A3A_arsenal_initialMass", _currentMass];
+    _destinationX setVariable ["A3A_arsenal_currentMass", _currentMass];
+    _destinationX setVariable ["A3A_arsenal_exploded", false];
+    _destinationX setVariable ["A3A_arsenal_exploding", false];
+};
+
+private _hasExploded = _destinationX getVariable ["A3A_arsenal_exploded", false];
+private _isExploding = _destinationX getVariable ["A3A_arsenal_exploding", false];
+
+private _warning1Messages = [
+    "STR_A3U_Petros_arsenal_warning1a",
+    "STR_A3U_Petros_arsenal_warning1b",
+    "STR_A3U_Petros_arsenal_warning1c"
+];
+private _warning2Messages = [
+    "STR_A3U_Petros_arsenal_warning2a",
+    "STR_A3U_Petros_arsenal_warning2b",
+    "STR_A3U_Petros_arsenal_warning2c"
+];
+
+if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
+    _destinationX setVariable ["A3A_arsenal_exploding", true];
+
+    _destinationX say3D ["A3A_Sound_Crackling", 50, 1, 0, 0, true];
+    sleep 1;
+    private _nearPlayers = allPlayers select { (_x distance _destinationX) < 50 && alive _x };
+    if (count _nearPlayers > 0) then {
+        private _owners = _nearPlayers apply { owner _x };
+        private _message = localize (selectRandom _warning1Messages);
+        _message remoteExec ["systemChat", _owners];
+    };
+
+    [_destinationX] spawn {
+        params ["_box"];
+        sleep 2;
+
+        private _nearPlayers = allPlayers select { (_x distance _box) < 50 && alive _x };
+        if (count _nearPlayers > 0) then {
+            private _owners = _nearPlayers apply { owner _x };
+            private _message = localize (selectRandom _warning2Messages);
+            _message remoteExec ["systemChat", _owners];
+        };
+
+        sleep 3;
+        [petros, "A3A_Audio_Petros_Scream_long"] remoteExec ["say3D", 0];
+
+        _box say3D ["A3A_Sound_Crackling", 50, 1, 0, 0, true];
+        sleep 2;
+
+        private _pos = getPosATL _box;
+        private _radius = 50;
+        private _objects = _box nearObjects _radius;
+        _objects = _objects select {
+            (_x isKindOf "LandVehicle") ||
+            (_x isKindOf "Air") ||
+            (_x isKindOf "Ship") ||
+            (_x isKindOf "Man") ||
+            (simulationEnabled _x)
+        };
+
+        _box say3D ["A3A_Sound_Thud", 200, 1, 0, 0, true];
+
+        { _x allowDamage false; } forEach _objects;
+
+        {
+            private _objPos = getPosATL _x;
+            private _dir = _objPos vectorDiff _pos;
+            private _dist = vectorMagnitude _dir;
+            if (_dist < 0.5) then { _dist = 0.5; };
+            
+            if (_x isKindOf "Man") then {
+                if (local _x) then {
+                    private _force = (1 / _dist) * 20000;
+                    private _forceVec = vectorNormalized _dir vectorMultiply _force;
+                    _x addForce [_forceVec, [0,0,0], false];
+                };
+            } else {
+                private _force = (1 / _dist) * 300;
+                private _vel = vectorNormalized _dir vectorMultiply _force;
+                _x setVelocity _vel;
+            };
+        } forEach _objects;
+
+        sleep 5;
+        { _x allowDamage true; } forEach _objects;
+
+        _box setVariable ["A3A_arsenal_exploded", true];
+        _box setVariable ["A3A_arsenal_exploding", false];
+        _box setVariable ["A3A_arsenal_currentMass", _box getVariable ["A3A_arsenal_initialMass", 0.01]];
+        _box setMass (_box getVariable ["A3A_arsenal_initialMass", 0.01]);
+        _box setVariable ["A3A_arsenal_exploded", false];
+    };
+} else {
+    if (!_hasExploded && !_isExploding) then {
+        _destinationX setVariable ["A3A_arsenal_currentMass", _newMass];
+        _destinationX setMass _newMass;
+
+        _destinationX say3D ["A3A_Sound_Crackling", 50, 1, 0, 0, true];
+        sleep 1;
+        private _nearPlayers = allPlayers select { (_x distance _destinationX) < 50 && alive _x };
+        if (count _nearPlayers > 0) then {
+            private _owners = _nearPlayers apply { owner _x };
+            private _message = localize (selectRandom _warning1Messages);
+            _message remoteExec ["systemChat", _owners];
+        };
+    };
 };
 
 if (count _this == 3) then {

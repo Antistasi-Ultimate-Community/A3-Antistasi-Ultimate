@@ -168,6 +168,9 @@ class CfgFunctions
             class onPlayerDisconnect {};
             class patrolDestinations {};
             class petrosDeathMonitor {};
+            class petrosParty {};
+            class petrosSpook {};
+            class petrosTweaking {};
             class placementSelection {};
             class playableUnits {};
             class getSideRadioTowerInfluence {};

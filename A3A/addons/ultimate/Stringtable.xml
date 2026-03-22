@@ -386,4 +386,708 @@
             <French>Rendre la visualisation du cercle VR aux emplacements de l'aide à l'apparition des véhicules en dehors du mode de démontage.</French>
         </Key>
     </Package>
+    <Package name="Petros-reactions">
+        <Key ID="STR_A3U_Petros_reaction_damage1">
+            <Original>Ouch, that hurts!</Original>
+            <Russian>Ай, больно!</Russian>
+            <German>Aua, das tut weh!</German>
+            <Italian>Ahi, fa male!</Italian>
+            <Spanish>¡Ay, duele!</Spanish>
+            <French>Aïe, ça fait mal!</French>
+            <Korean>아야, 아파!</Korean>
+            <Japanese>痛い！</Japanese>
+            <Chinesesimp>哎哟，好痛！</Chinesesimp>
+            <Chinese>哎喲，好痛！</Chinese>
+            <Polish>Aua, to boli!</Polish>
+            <Czech>Au, to bolí!</Czech>
+            <Portuguese>Ai, dói!</Portuguese>
+            <Turkish>Ah, canım acıdı!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_damage2">
+            <Original>What for?</Original>
+            <Russian>За что?</Russian>
+            <German>Wofür?</German>
+            <Italian>Per cosa?</Italian>
+            <Spanish>¿Por qué?</Spanish>
+            <French>Pour quoi ?</French>
+            <Korean>왜?</Korean>
+            <Japanese>何のために？</Japanese>
+            <Chinesesimp>为什么？</Chinesesimp>
+            <Chinese>為什麼？</Chinese>
+            <Polish>Za co?</Polish>
+            <Czech>Za co?</Czech>
+            <Portuguese>Por quê?</Portuguese>
+            <Turkish>Ne için?</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_damage3">
+            <Original>Oh-oh-oh!</Original>
+            <Russian>Ой-ой-ой!</Russian>
+            <German>Oh-oh-oh!</German>
+            <Italian>Oh-oh-oh!</Italian>
+            <Spanish>¡Oh-oh-oh!</Spanish>
+            <French>Oh-oh-oh!</French>
+            <Korean>오오오!</Korean>
+            <Japanese>あああ！</Japanese>
+            <Chinesesimp>哦哦哦！</Chinesesimp>
+            <Chinese>哦哦哦！</Chinese>
+            <Polish>Ojojoj!</Polish>
+            <Czech>Ojojoj!</Czech>
+            <Portuguese>Oh-oh-oh!</Portuguese>
+            <Turkish>Oh-oh-oh!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_damage4">
+            <Original>That's not fair!</Original>
+            <Russian>Так нечестно!</Russian>
+            <German>Das ist nicht fair!</German>
+            <Italian>Non è giusto!</Italian>
+            <Spanish>¡No es justo!</Spanish>
+            <French>Ce n'est pas juste !</French>
+            <Korean>불공평해!</Korean>
+            <Japanese>それは不公平だ！</Japanese>
+            <Chinesesimp>这不公平！</Chinesesimp>
+            <Chinese>這不公平！</Chinese>
+            <Polish>To niesprawiedliwe!</Polish>
+            <Czech>To není fér!</Czech>
+            <Portuguese>Isso não é justo!</Portuguese>
+            <Turkish>Bu adil değil!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_damage5">
+            <Original>Stop it!</Original>
+            <Russian>Прекратите!</Russian>
+            <German>Hör auf!</German>
+            <Italian>Smettila!</Italian>
+            <Spanish>¡Para!</Spanish>
+            <French>Arrêtez !</French>
+            <Korean>그만해!</Korean>
+            <Japanese>やめて！</Japanese>
+            <Chinesesimp>住手！</Chinesesimp>
+            <Chinese>住手！</Chinese>
+            <Polish>Przestań!</Polish>
+            <Czech>Přestaň!</Czech>
+            <Portuguese>Pare!</Portuguese>
+            <Turkish>Dur!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_damage6">
+            <Original>I'm on your side!</Original>
+            <Russian>Я же свой!</Russian>
+            <German>Ich bin auf eurer Seite!</German>
+            <Italian>Sono dalla vostra parte!</Italian>
+            <Spanish>¡Estoy de su lado!</Spanish>
+            <French>Je suis des vôtres !</French>
+            <Korean>나는 우리 편이야!</Korean>
+            <Japanese>味方だよ！</Japanese>
+            <Chinesesimp>我是自己人！</Chinesesimp>
+            <Chinese>我是自己人！</Chinese>
+            <Polish>Jestem po waszej stronie!</Polish>
+            <Czech>Jsem na vaší straně!</Czech>
+            <Portuguese>Eu estou do seu lado!</Portuguese>
+            <Turkish>Ben sizdenim!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_damage7">
+            <Original>STHAP!</Original>
+            <Russian>АСТАНАВИТЕСЬ!</Russian>
+            <German>Halt!</German>
+            <Italian>Fermati!</Italian>
+            <Spanish>¡Alto!</Spanish>
+            <French>Stop !</French>
+            <Korean>멈춰!</Korean>
+            <Japanese>止まれ！</Japanese>
+            <Chinesesimp>停下！</Chinesesimp>
+            <Chinese>停下！</Chinese>
+            <Polish>Stój!</Polish>
+            <Czech>Zastav se!</Czech>
+            <Portuguese>Pare!</Portuguese>
+            <Turkish>Dur!</Turkish>
+        </Key>
+
+        <Key ID="STR_A3U_Petros_reaction_attached1">
+            <Original>Hey, be careful, I'm not a bag!</Original>
+            <Russian>Эй, осторожнее, я не сумка!</Russian>
+            <German>Hey, vorsichtig, ich bin keine Tasche!</German>
+            <Italian>Ehi, attenzione, non sono una borsa!</Italian>
+            <Spanish>¡Oye, cuidado, no soy una bolsa!</Spanish>
+            <French>Hé, attention, je ne suis pas un sac !</French>
+            <Korean>이봐, 조심해, 나는 가방이 아니야!</Korean>
+            <Japanese>おい、気をつけて、私はカバンじゃないぞ！</Japanese>
+            <Chinesesimp>嘿，小心点，我不是袋子！</Chinesesimp>
+            <Chinese>嘿，小心點，我不是袋子！</Chinese>
+            <Polish>Hej, ostrożnie, nie jestem torbą!</Polish>
+            <Czech>Hej, opatrně, nejsem taška!</Czech>
+            <Portuguese>Ei, cuidado, não sou uma bolsa!</Portuguese>
+            <Turkish>Hey, dikkat et, ben çanta değilim!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached2">
+            <Original>Where are you dragging me? I'm a general!</Original>
+            <Russian>Куда потащили? Я вообще-то генерал!</Russian>
+            <German>Wohin schleppst du mich? Ich bin ein General!</German>
+            <Italian>Dove mi stai trascinando? Sono un generale!</Italian>
+            <Spanish>¿A dónde me arrastras? ¡Soy un general!</Spanish>
+            <French>Où est-ce que tu me traînes ? Je suis un général !</French>
+            <Korean>어디로 끌고 가는 거야? 나는 장군이라고!</Korean>
+            <Japanese>どこに引きずっているんだ？私は将軍だ！</Japanese>
+            <Chinesesimp>你要把我拖到哪里？我是将军！</Chinesesimp>
+            <Chinese>你要把我拖到哪裡？我是將軍！</Chinese>
+            <Polish>Dokąd mnie ciągniesz? Jestem generałem!</Polish>
+            <Czech>Kam mě táhneš? Jsem generál!</Czech>
+            <Portuguese>Onde você está me arrastando? Sou um general!</Portuguese>
+            <Turkish>Beni nereye sürüklüyorsun? Ben bir generalim!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached3">
+            <Original>These bureaucrats again...</Original>
+            <Russian>Опять эти бюрократы...</Russian>
+            <German>Schon wieder diese Bürokraten...</German>
+            <Italian>Ancora questi burocrati...</Italian>
+            <Spanish>Otra vez estos burócratas...</Spanish>
+            <French>Encore ces bureaucrates...</French>
+            <Korean>또 이 관료들...</Korean>
+            <Japanese>またこれらの官僚か...</Japanese>
+            <Chinesesimp>又是这些官僚...</Chinesesimp>
+            <Chinese>又是這些官僚...</Chinese>
+            <Polish>Znowu ci biurokraci...</Polish>
+            <Czech>Zase ti byrokrati...</Czech>
+            <Portuguese>Outra vez esses burocratas...</Portuguese>
+            <Turkish>Yine bu bürokratlar...</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached4">
+            <Original>Don't drop me, or the headquarters will fall apart!</Original>
+            <Russian>Не урони, а то штаб рассыплется!</Russian>
+            <German>Lass mich nicht fallen, sonst fällt das Hauptquartier auseinander!</German>
+            <Italian>Non lasciarmi cadere, o il quartier generale andrà in pezzi!</Italian>
+            <Spanish>No me dejes caer, o el cuartel general se desmoronará!</Spanish>
+            <French>Ne me laisse pas tomber, sinon le quartier général s'effondrera !</French>
+            <Korean>떨어뜨리지 마, 본부가 무너질 거야!</Korean>
+            <Japanese>落とすなよ、本部が崩壊するぞ！</Japanese>
+            <Chinesesimp>别摔了我，否则总部会散架的！</Chinesesimp>
+            <Chinese>別摔了我，否則總部會散架的！</Chinese>
+            <Polish>Nie upuść mnie, bo kwatera główna się rozpadnie!</Polish>
+            <Czech>Nepusť mě, nebo se velitelství rozpadne!</Czech>
+            <Portuguese>Não me derrube, ou o quartel-general vai desmoronar!</Portuguese>
+            <Turkish>Düşürme beni, yoksa karargah dağılır!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached5">
+            <Original>Put me down!</Original>
+            <Russian>Опусти меня!</Russian>
+            <German>Setz mich ab!</German>
+            <Italian>Mettimi giù!</Italian>
+            <Spanish>¡Bájame!</Spanish>
+            <French>Pose-moi !</French>
+            <Korean>내려놔!</Korean>
+            <Japanese>降ろして！</Japanese>
+            <Chinesesimp>放我下来！</Chinesesimp>
+            <Chinese>放我下來！</Chinese>
+            <Polish>Postaw mnie!</Polish>
+            <Czech>Polož mě!</Czech>
+            <Portuguese>Me coloca no chão!</Portuguese>
+            <Turkish>Beni yere indir!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached6">
+            <Original>AAAAAHHH</Original>
+            <Russian>AAAAAAAAA!</Russian>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached7">
+            <Original>Stop tickling me!</Original>
+            <Russian>Перестань меня щекотать!</Russian>
+            <German>Hör auf mich zu kitzeln!</German>
+            <Italian>Smettila di farmi il solletico!</Italian>
+            <Spanish>¡Deja de hacerme cosquillas!</Spanish>
+            <French>Arrête de me chatouiller !</French>
+            <Korean>간지럽히지 마!</Korean>
+            <Japanese>くすぐるな！</Japanese>
+            <Chinesesimp>别挠我痒痒！</Chinesesimp>
+            <Chinese>別撓我癢癢！</Chinese>
+            <Polish>Przestań mnie łaskotać!</Polish>
+            <Czech>Přestaň mě lechtat!</Czech>
+            <Portuguese>Pare de me fazer cócegas!</Portuguese>
+            <Turkish>Beni gıdıklamayı kes!</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached8">
+            <Original>:}</Original>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_attached9">
+            <Original>UwU</Original>
+        </Key>
+
+        <Key ID="STR_A3U_Petros_reaction_detached1">
+            <Original>Phew, finally on the ground.</Original>
+            <Russian>Фух, наконец-то на земле.</Russian>
+            <German>Puh, endlich auf dem Boden.</German>
+            <Italian>Uff, finalmente a terra.</Italian>
+            <Spanish>Uf, por fin en el suelo.</Spanish>
+            <French>Ouf, enfin sur le sol.</French>
+            <Korean>휴, 드디어 땅이다.</Korean>
+            <Japanese>ふぅ、やっと地面だ。</Japanese>
+            <Chinesesimp>呼，终于落地了。</Chinesesimp>
+            <Chinese>呼，終於落地了。</Chinese>
+            <Polish>Uff, w końcu na ziemi.</Polish>
+            <Czech>Uf, konečně na zemi.</Czech>
+            <Portuguese>Ufa, finalmente no chão.</Portuguese>
+            <Turkish>Oh be, sonunda yerde.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_detached2">
+            <Original>So, where's my map?</Original>
+            <Russian>Так, где моя карта?</Russian>
+            <German>Also, wo ist meine Karte?</German>
+            <Italian>Allora, dov'è la mia mappa?</Italian>
+            <Spanish>Bueno, ¿dónde está mi mapa?</Spanish>
+            <French>Bon, où est ma carte ?</French>
+            <Korean>자, 내 지도 어디 있지?</Korean>
+            <Japanese>さて、私の地図はどこだ？</Japanese>
+            <Chinesesimp>那么，我的地图呢？</Chinesesimp>
+            <Chinese>那麼，我的地圖呢？</Chinese>
+            <Polish>Więc, gdzie moja mapa?</Polish>
+            <Czech>Tak, kde je moje mapa?</Czech>
+            <Portuguese>Então, onde está meu mapa?</Portuguese>
+            <Turkish>Evet, haritam nerede?</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_detached3">
+            <Original>Not a bad ride.</Original>
+            <Russian>Неплохо меня прокатили.</Russian>
+            <German>Gar keine schlechte Fahrt.</German>
+            <Italian>Bel giro, non male.</Italian>
+            <Spanish>Buen paseo.</Spanish>
+            <French>Pas mauvais comme balade.</French>
+            <Korean>나쁘지 않은 이동이었어.</Korean>
+            <Japanese>悪くない乗り心地だった。</Japanese>
+            <Chinesesimp>兜风不错。</Chinesesimp>
+            <Chinese>兜風不錯。</Chinese>
+            <Polish>Niezła przejażdżka.</Polish>
+            <Czech>Dobrá jízda.</Czech>
+            <Portuguese>Não foi um mau passeio.</Portuguese>
+            <Turkish>Fena bir yolculuk değildi.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_detached4">
+            <Original>My legs have gone numb.</Original>
+            <Russian>Ноги затекли.</Russian>
+            <German>Meine Beine sind eingeschlafen.</German>
+            <Italian>Mi si sono addormentate le gambe.</Italian>
+            <Spanish>Se me han dormido las piernas.</Spanish>
+            <French>J'ai les jambes engourdies.</French>
+            <Korean>다리가 저렸어.</Korean>
+            <Japanese>足がしびれた。</Japanese>
+            <Chinesesimp>我的腿麻了。</Chinesesimp>
+            <Chinese>我的腿麻了。</Chinese>
+            <Polish>Zdrętwiały mi nogi.</Polish>
+            <Czech>Ztuhly mi nohy.</Czech>
+            <Portuguese>Minhas pernas ficaram dormentes.</Portuguese>
+            <Turkish>Bacaklarım uyuştu.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_detached5">
+            <Original>Finally, I can stretch.</Original>
+            <Russian>Наконец-то можно размяться.</Russian>
+            <German>Endlich kann ich mich strecken.</German>
+            <Italian>Finalmente posso stirarmi.</Italian>
+            <Spanish>Por fin puedo estirarme.</Spanish>
+            <French>Enfin, je peux m'étirer.</French>
+            <Korean>드디어 몸을 풀 수 있겠다.</Korean>
+            <Japanese>やっとストレッチできる。</Japanese>
+            <Chinesesimp>终于可以伸展一下了。</Chinesesimp>
+            <Chinese>終於可以伸展一下了。</Chinese>
+            <Polish>Wreszcie mogę się rozprostować.</Polish>
+            <Czech>Konečně se můžu protáhnout.</Czech>
+            <Portuguese>Finalmente posso me alongar.</Portuguese>
+            <Turkish>Sonunda esneyebilirim.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_reaction_detached6">
+            <Original>And pull my trousers up...please.</Original>
+            <Russian>И портки мне подтяни...пожалуйста</Russian>
+            <German>Und zieh mir meine Hose hoch... bitte.</German>
+            <Italian>E tirarmi su i pantaloni... per favore.</Italian>
+            <Spanish>Y súbeme los pantalones... por favor.</Spanish>
+            <French>Et remonte mon pantalon... s'il te plaît.</French>
+            <Korean>그리고 내 바지 좀 올려줘... 제발.</Korean>
+            <Japanese>そしてズボンを上げて...お願い。</Japanese>
+            <Chinesesimp>把我的裤子提起来...拜托了。</Chinesesimp>
+            <Chinese>把我的褲子提起來...拜託了。</Chinese>
+            <Polish>I podciągnij mi spodnie... proszę.</Polish>
+            <Czech>A vytáhni mi kalhoty... prosím.</Czech>
+            <Portuguese>E puxe minhas calças para cima... por favor.</Portuguese>
+            <Turkish>Ve pantolonumu çek... lütfen.</Turkish>
+        </Key>
+
+        <Key ID="STR_A3U_Petros_revival_zombie">
+            <Original>Braaaaainsss....</Original>
+            <Russian>Мозгииииии....</Russian>
+            <German>Braaaaainsss....</German>
+            <Italian>Braaaaainsss....</Italian>
+            <Spanish>Braaaaainsss....</Spanish>
+            <French>Braaaaainsss....</French>
+            <Korean>브레에에에에에에인즈....</Korean>
+            <Japanese>ブレエエエエインズ....</Japanese>
+            <Chinesesimp>脑脑脑....</Chinesesimp>
+            <Chinese>腦腦腦....</Chinese>
+            <Polish>Braaaaainsss....</Polish>
+            <Czech>Braaaaainsss....</Czech>
+            <Portuguese>Braaaaainsss....</Portuguese>
+            <Turkish>Beyiiiiin....</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_party_start">
+            <Original>Let's get this party going!</Original>
+            <Russian>Погнали вечеринку!</Russian>
+            <German>Lasst uns diese Party starten!</German>
+            <Italian>Diamo inizio alla festa!</Italian>
+            <Spanish>¡Que comience la fiesta!</Spanish>
+            <French>Que la fête commence !</French>
+            <Korean>파티를 시작하자!</Korean>
+            <Japanese>パーティーを始めよう！</Japanese>
+            <Chinesesimp>让我们开始派对吧！</Chinesesimp>
+            <Chinese>讓我們開始派對吧！</Chinese>
+            <Polish>Zacznijmy tę imprezę!</Polish>
+            <Czech>Pojďme rozjet tuhle párty!</Czech>
+            <Portuguese>Vamos começar esta festa!</Portuguese>
+            <Turkish>Parti başlasın!</Turkish>
+        </Key>
+
+        <Key ID="STR_A3U_Petros_strobe_enable">
+            <Original>Strobe enabled! Let's party!</Original>
+            <Russian>Стробоскоп включён! Вечеринка продолжается!</Russian>
+            <German>Strobe aktiviert! Lasst uns feiern!</German>
+            <Italian>Stroboscopio attivato! Festeggiamo!</Italian>
+            <Spanish>¡Estroboscopio activado! ¡A celebrar!</Spanish>
+            <French>Stroboscope activé ! Fêtons ça !</French>
+            <Korean>스트로브 켜짐! 파티 가자!</Korean>
+            <Japanese>ストロボオン！パーティーだ！</Japanese>
+            <Chinesesimp>闪光灯已启用！派对继续！</Chinesesimp>
+            <Chinese>閃光燈已啟用！派對繼續！</Chinese>
+            <Polish>Stroboskop włączony! Imprezujemy!</Polish>
+            <Czech>Stroboskop zapnut! Pojďme párty!</Czech>
+            <Portuguese>Estroboscópio ativado! Vamos festejar!</Portuguese>
+            <Turkish>Stroboskop açıldı! Parti başlasın!</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_strobe_disable">
+            <Original>Strobe disabled. Stay safe.</Original>
+            <Russian>Стробоскоп выключен. Берегите зрение.</Russian>
+            <German>Strobe deaktiviert. Bleibt sicher.</German>
+            <Italian>Stroboscopio disattivato. State attenti.</Italian>
+            <Spanish>Estroboscopio desactivado. Cuídense.</Spanish>
+            <French>Stroboscope désactivé. Restez prudents.</French>
+            <Korean>스트로브 꺼짐. 안전하게.</Korean>
+            <Japanese>ストロボオフ。安全に。</Japanese>
+            <Chinesesimp>闪光灯已关闭。注意安全。</Chinesesimp>
+            <Chinese>閃光燈已關閉。注意安全。</Chinese>
+            <Polish>Stroboskop wyłączony. Uważajcie na siebie.</Polish>
+            <Czech>Stroboskop vypnut. Buďte v bezpečí.</Czech>
+            <Portuguese>Estroboscópio desativado. Fiquem seguros.</Portuguese>
+            <Turkish>Stroboskop kapandı. Dikkatli olun.</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_strobe_warning">
+            <Original>EPILEPSY WARNING, 10 seconds to look away.</Original>
+            <Russian>ВНИМАНИЕ ЭПИЛЕПСИЯ, 10 секунд, чтобы отвернуться.</Russian>
+            <German>EPILEPSIE-WARNUNG, 10 Sekunden zum Wegschauen.</German>
+            <Italian>ATTENZIONE EPILESSIA, 10 secondi per distogliere lo sguardo.</Italian>
+            <Spanish>ADVERTENCIA DE EPILEPSIA, 10 segundos para apartar la mirada.</Spanish>
+            <French>ATTENTION ÉPILEPSIE, 10 secondes pour détourner le regard.</French>
+            <Korean>간질 경고, 10초 동안 시선을 돌리세요.</Korean>
+            <Japanese>てんかん注意、10秒間目をそらしてください。</Japanese>
+            <Chinesesimp>癫痫警告，10秒内移开视线。</Chinesesimp>
+            <Chinese>癲癇警告，10秒內移開視線。</Chinese>
+            <Polish>OSTRZEŻENIE EPILEPSJA, 10 sekund na odwrócenie wzroku.</Polish>
+            <Czech>UPOZORNĚNÍ NA EPILEPSII, 10 sekund na odvrácení zraku.</Czech>
+            <Portuguese>AVISO DE EPILEPSIA, 10 segundos para desviar o olhar.</Portuguese>
+            <Turkish>EPİLEPSİ UYARISI, bakışları çevirmek için 10 saniye.</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_spook_boo">
+            <Original>Booooo</Original>
+            <Russian>Бууууу</Russian>
+            <German>Buuuuuh</German>
+            <Italian>Buuuuuh</Italian>
+            <Spanish>Buuuuuh</Spanish>
+            <French>Bouuuuuh</French>
+            <Korean>부우우우</Korean>
+            <Japanese>ブーーー</Japanese>
+            <Chinesesimp>呜～～</Chinesesimp>
+            <Chinese>嗚～～</Chinese>
+            <Polish>Buuuuuh</Polish>
+            <Czech>Buuuuuh</Czech>
+            <Portuguese>Buuuuuh</Portuguese>
+            <Turkish>Buuuuuh</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_moveHQ_phrase1">
+            <Original>Work again? :|</Original>
+            <Russian>Опять работа? :|</Russian>
+            <German>Schon wieder Arbeit? :|</German>
+            <Italian>Di nuovo al lavoro? :|</Italian>
+            <Spanish>¿Otra vez a trabajar? :|</Spanish>
+            <French>Encore du travail ? :|</French>
+            <Korean>또 일이야? :|</Korean>
+            <Japanese>また仕事か？ :|</Japanese>
+            <Chinesesimp>又要工作？ :|</Chinesesimp>
+            <Chinese>又要工作？ :|</Chinese>
+            <Polish>Znowu praca? :|</Polish>
+            <Czech>Zase práce? :|</Czech>
+            <Portuguese>Trabalho de novo? :|</Portuguese>
+            <Turkish>Yine iş mi? :|</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_moveHQ_phrase2">
+            <Original>Packing boxes again?</Original>
+            <Russian>Снова собирать коробки?</Russian>
+            <German>Schon wieder Kisten packen?</German>
+            <Italian>Ancora a imballare scatole?</Italian>
+            <Spanish>¿Otra vez a empacar cajas?</Spanish>
+            <French>Encore à emballer des cartons ?</French>
+            <Korean>또 상자 싸야 해?</Korean>
+            <Japanese>また箱詰めか？</Japanese>
+            <Chinesesimp>又要打包箱子？</Chinesesimp>
+            <Chinese>又要打包箱子？</Chinese>
+            <Polish>Znowu pakować pudła?</Polish>
+            <Czech>Zase balit krabice?</Czech>
+            <Portuguese>Empacotar caixas de novo?</Portuguese>
+            <Turkish>Yine kutuları mı topluyoruz?</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_moveHQ_phrase3">
+            <Original>Just pick an interesting place.</Original>
+            <Russian>Только выбери место поинтереснее.</Russian>
+            <German>Such dir einfach einen interessanten Ort aus.</German>
+            <Italian>Scegli un posto interessante.</Italian>
+            <Spanish>Elige un lugar interesante.</Spanish>
+            <French>Choisis un endroit intéressant.</French>
+            <Korean>그냥 재미있는 장소를 골라.</Korean>
+            <Japanese>面白い場所を選んでくれ。</Japanese>
+            <Chinesesimp>选个有趣的地方吧。</Chinesesimp>
+            <Chinese>選個有趣的地方吧。</Chinese>
+            <Polish>Wybierz ciekawe miejsce.</Polish>
+            <Czech>Vyber zajímavé místo.</Czech>
+            <Portuguese>Escolha um lugar interessante.</Portuguese>
+            <Turkish>Sadece ilginç bir yer seç.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_moveHQ_phrase4">
+            <Original>Please don't stuff me in a box again (</Original>
+            <Russian>Пожалуйста, не запихивай меня снова в коробку (</Russian>
+            <German>Bitte stopf mich nicht wieder in eine Kiste (</German>
+            <Italian>Per favore, non rimettermi in una scatola (</Italian>
+            <Spanish>Por favor, no me vuelvas a meter en una caja (</Spanish>
+            <French>S'il te plaît, ne me remets pas dans une boîte (</French>
+            <Korean>제발 나를 또 상자에 넣지 마 (</Korean>
+            <Japanese>もう箱に詰めないでくれ (</Japanese>
+            <Chinesesimp>请别再把我塞进箱子里 (</Chinesesimp>
+            <Chinese>請別再把我塞進箱子裡 (</Chinese>
+            <Polish>Proszę, nie pakuj mnie znowu do pudła (</Polish>
+            <Czech>Prosím, nestrkej mě zase do krabice (</Czech>
+            <Portuguese>Por favor, não me enfie de novo numa caixa (</Portuguese>
+            <Turkish>Lütfen beni tekrar kutuya tıkma (</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_buildHQ_party">
+            <Original>WOAH, THE PARTY HAS MOVED, GUYS!</Original>
+            <Russian>ОПА, ВЕЧЕРИНКА ПЕРЕХАЛА, РЕБЯТА!</Russian>
+            <German>WOAH, DIE PARTY IST UMGEZOGEN, LEUTE!</German>
+            <Italian>WOAH, LA FESTA SI È SPOSTATA, RAGAZZI!</Italian>
+            <Spanish>¡WOAH, LA FIESTA SE HA MOVIDO, CHICOS!</Spanish>
+            <French>WOAH, LA FÊTE A DÉMÉNAGÉ, LES GARS !</French>
+            <Korean>워우, 파티가 옮겨갔어, 여러분!</Korean>
+            <Japanese>ワオ、パーティーが移動したぞ、みんな！</Japanese>
+            <Chinesesimp>哇哦，派对搬地方了，伙计们！</Chinesesimp>
+            <Chinese>哇哦，派對搬地方了，夥計們！</Chinese>
+            <Polish>ŁAŁ, IMPREZA SIĘ PRZEPROWADZIŁA, ZAŁOGA!</Polish>
+            <Czech>WOW, PÁRTY SE PŘESTĚHOVALA, LIDI!</Czech>
+            <Portuguese>UAU, A FESTA MUDOU DE LUGAR, PESSOAL!</Portuguese>
+            <Turkish>VAY, PARTİ TAŞINDI, ARKADAŞLAR!</Turkish>
+        </Key>
+    
+        <Key ID="STR_A3U_Petros_buildHQ_phrase1">
+            <Original>Oh, a new district! We should open a coffee shop.</Original>
+            <Russian>О, новый район! Надо бы кофейню открыть.</Russian>
+            <German>Oh, ein neuer Bezirk! Wir sollten ein Café eröffnen.</German>
+            <Italian>Oh, un nuovo quartiere! Dovremmo aprire un bar.</Italian>
+            <Spanish>Oh, ¡un nuevo distrito! Deberíamos abrir una cafetería.</Spanish>
+            <French>Oh, un nouveau quartier ! On devrait ouvrir un café.</French>
+            <Korean>오, 새로운 지역! 커피숍을 열어야겠어.</Korean>
+            <Japanese>おお、新しい地区だ！カフェを開くべきだ。</Japanese>
+            <Chinesesimp>哦，新区域！我们该开家咖啡店。</Chinesesimp>
+            <Chinese>哦，新區域！我們該開家咖啡店。</Chinese>
+            <Polish>O, nowa dzielnica! Powinniśmy otworzyć kawiarnię.</Polish>
+            <Czech>Oh, nová čtvrť! Měli bychom otevřít kavárnu.</Czech>
+            <Portuguese>Oh, um novo distrito! Deveríamos abrir um café.</Portuguese>
+            <Turkish>Oh, yeni bir bölge! Bir kafe açmalıyız.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_buildHQ_phrase2">
+            <Original>HQ moved. Do I have to unpack boxes again?</Original>
+            <Russian>Штаб переехал. Опять мне коробки распаковывать?</Russian>
+            <German>HQ umgezogen. Muss ich wieder Kisten auspacken?</German>
+            <Italian>Quartier generale spostato. Devo di nuovo disimballare scatole?</Italian>
+            <Spanish>Cuartel general trasladado. ¿Tengo que desempacar cajas otra vez?</Spanish>
+            <French>QG déplacé. Je dois encore déballer des cartons ?</French>
+            <Korean>본부가 이사했어. 또 상자 풀어야 해?</Korean>
+            <Japanese>司令部が移った。また箱を開けるのか？</Japanese>
+            <Chinesesimp>总部搬了。我又要拆箱子？</Chinesesimp>
+            <Chinese>總部搬了。我又要拆箱子？</Chinese>
+            <Polish>Dowództwo przeniesione. Znowu mam rozpakowywać pudła?</Polish>
+            <Czech>Velitelství se přestěhovalo. Mám zase rozbalovat krabice?</Czech>
+            <Portuguese>QG mudou. Tenho que desfazer as caixas de novo?</Portuguese>
+            <Turkish>Karargah taşındı. Yine kutuları mı açacağım?</Turkish>
+        </Key>
+        <Key ID="STR_A3U_Petros_buildHQ_phrase3">
+            <Original>Good spot, hopefully the enemy won't find us...</Original>
+            <Russian>Хорошее место, враги не найдут... надеюсь.</Russian>
+            <German>Guter Ort, hoffentlich finden uns die Feinde nicht...</German>
+            <Italian>Bel posto, speriamo che i nemici non ci trovino...</Italian>
+            <Spanish>Buen lugar, espero que los enemigos no nos encuentren...</Spanish>
+            <French>Bon endroit, j'espère que les ennemis ne nous trouveront pas...</French>
+            <Korean>좋은 장소야, 적들이 우리를 못 찾길...</Korean>
+            <Japanese>いい場所だ、敵に見つからないといいが…</Japanese>
+            <Chinesesimp>好地方，希望敌人找不到我们……</Chinesesimp>
+            <Chinese>好地方，希望敵人找不到我們……</Chinese>
+            <Polish>Dobre miejsce, oby wrogowie nas nie znaleźli...</Polish>
+            <Czech>Dobré místo, snad nás nepřítel nenajde...</Czech>
+            <Portuguese>Bom lugar, espero que os inimigos não nos encontrem...</Portuguese>
+            <Turkish>İyi bir yer, umarım düşman bizi bulamaz...</Turkish>
+        </Key>
+
+        <Key ID="STR_A3U_Petros_lootbox_launch1">
+            <Original>Oh... there it goes...</Original>
+            <Russian>Ой... полетела...</Russian>
+            <German>Oh... da fliegt es...</German>
+            <Italian>Oh... eccolo che vola...</Italian>
+            <Spanish>Oh... ahí va...</Spanish>
+            <French>Oh... ça y est...</French>
+            <Korean>오... 저기 간다...</Korean>
+            <Japanese>おっ…飛んでった…</Japanese>
+            <Chinesesimp>哦...它飞走了...</Chinesesimp>
+            <Chinese>哦...它飛走了...</Chinese>
+            <Polish>Och... leci...</Polish>
+            <Czech>Ó... letí...</Czech>
+            <Portuguese>Oh... lá vai ele...</Portuguese>
+            <Turkish>Oh... işte gidiyor...</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_lootbox_launch2">
+            <Original>Whoops! Should've held it tighter.</Original>
+            <Russian>Упс! Надо было держать покрепче.</Russian>
+            <German>Hoppla! Hätte es fester halten sollen.</German>
+            <Italian>Ops! Avrei dovuto tenerlo più stretto.</Italian>
+            <Spanish>¡Ups! Debí haberlo sujetado mejor.</Spanish>
+            <French>Oups ! J'aurais dû le tenir plus fort.</French>
+            <Korean>이런! 꽉 잡을 걸 그랬어.</Korean>
+            <Japanese>おっと！もっとしっかり持つべきだった。</Japanese>
+            <Chinesesimp>哎哟！应该抓紧点的。</Chinesesimp>
+            <Chinese>哎喲！應該抓緊點的。</Chinese>
+            <Polish>Ups! Powinienem trzymać mocniej.</Polish>
+            <Czech>Jejda! Měl jsem to držet pevněji.</Czech>
+            <Portuguese>Ops! Devia ter segurado com mais força.</Portuguese>
+            <Turkish>Hop! Daha sıkı tutmalıydım.</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_lootbox_launch3">
+            <Original>Up, up and away!</Original>
+            <Russian>Вверх, вверх и вдаль!</Russian>
+            <German>Hoch, hoch und davon!</German>
+            <Italian>Su, su e via!</Italian>
+            <Spanish>¡Arriba, arriba y lejos!</Spanish>
+            <French>En haut, en haut et au loin !</French>
+            <Korean>위로, 위로, 저 멀리!</Korean>
+            <Japanese>上へ、上へ、そして彼方へ！</Japanese>
+            <Chinesesimp>向上，向上，飞走了！</Chinesesimp>
+            <Chinese>向上，向上，飛走了！</Chinese>
+            <Polish>W górę, w górę i daleko!</Polish>
+            <Czech>Nahoru, nahoru a pryč!</Czech>
+            <Portuguese>Para cima, para cima e longe!</Portuguese>
+            <Turkish>Yukarı, yukarı ve uzağa!</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_arsenal_warning1a">
+            <Original>Oh-oh!</Original>
+            <Russian>Ой-ой!</Russian>
+            <German>Oh-oh!</German>
+            <Italian>Oh-oh!</Italian>
+            <Spanish>¡Oh-oh!</Spanish>
+            <French>Oh-oh !</French>
+            <Korean>오-오!</Korean>
+            <Japanese>おっと！</Japanese>
+            <Chinesesimp>哦哦！</Chinesesimp>
+            <Chinese>哦哦！</Chinese>
+            <Polish>O-o!</Polish>
+            <Czech>Oh-oh!</Czech>
+            <Portuguese>Oh-oh!</Portuguese>
+            <Turkish>O-oh!</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_arsenal_warning1b">
+            <Original>That's too much!</Original>
+            <Russian>Это слишком много!</Russian>
+            <German>Das ist zu viel!</German>
+            <Italian>È troppo!</Italian>
+            <Spanish>¡Es demasiado!</Spanish>
+            <French>C'est trop !</French>
+            <Korean>그건 너무 많아!</Korean>
+            <Japanese>それは多すぎる！</Japanese>
+            <Chinesesimp>这太多了！</Chinesesimp>
+            <Chinese>這太多了！</Chinese>
+            <Polish>To za dużo!</Polish>
+            <Czech>To je příliš mnoho!</Czech>
+            <Portuguese>É demais!</Portuguese>
+            <Turkish>Bu çok fazla!</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_arsenal_warning1c">
+            <Original>Oopsie daisy!</Original>
+            <Russian>Ой-ой-ой!</Russian>
+            <German>Hoppla!</German>
+            <Italian>Ops!</Italian>
+            <Spanish>¡Uy!</Spanish>
+            <French>Oups !</French>
+            <Korean>어머나!</Korean>
+            <Japanese>おっとっと！</Japanese>
+            <Chinesesimp>哎呀！</Chinesesimp>
+            <Chinese>哎呀！</Chinese>
+            <Polish>Ojej!</Polish>
+            <Czech>Jéje!</Czech>
+            <Portuguese>Opa!</Portuguese>
+            <Turkish>Hoppala!</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_arsenal_warning2a">
+            <Original>GET AWAY! IT'S GONNA BLOW!</Original>
+            <Russian>УХОДИТЕ! СЕЙЧАС РВАНЁТ!</Russian>
+            <German>WEG! ES WIRD EXPLODIEREN!</German>
+            <Italian>ALLONTANATEVI! STA PER ESPLODERE!</Italian>
+            <Spanish>¡ALÉJENSE! ¡VA A EXPLOTAR!</Spanish>
+            <French>ÉLOIGNEZ-VOUS ! ÇA VA EXPLOSER !</French>
+            <Korean>비켜! 터질 거야!</Korean>
+            <Japanese>逃げて！爆発する！</Japanese>
+            <Chinesesimp>快走！要爆炸了！</Chinesesimp>
+            <Chinese>快走！要爆炸了！</Chinese>
+            <Polish>ODSUŃCIE SIĘ! ZARAZ WYBUCHNIE!</Polish>
+            <Czech>USTOUPIT! VYBUCHNE TO!</Czech>
+            <Portuguese>AFASTEM-SE! VAI EXPLODIR!</Portuguese>
+            <Turkish>UZAKLAŞIN! PATLAYACAK!</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_arsenal_warning2b">
+            <Original>RUN! IT'S GONNA BURST!</Original>
+            <Russian>БЕГИТЕ! СЕЙЧАС ВЗОРВЁТСЯ!</Russian>
+            <German>LAUFT! ES WIRD BERSTEN!</German>
+            <Italian>CORRETE! STA PER SCOPPIARE!</Italian>
+            <Spanish>¡CORRAN! ¡VA A REVENTAR!</Spanish>
+            <French>COURREZ ! ÇA VA ÉCLATER !</French>
+            <Korean>달려! 터질 거야!</Korean>
+            <Japanese>走れ！破裂する！</Japanese>
+            <Chinesesimp>快跑！要炸了！</Chinesesimp>
+            <Chinese>快跑！要炸了！</Chinese>
+            <Polish>BIEGAĆ! ZARAZ WYBUCHNIE!</Polish>
+            <Czech>UTEČ! VYBUCHNE TO!</Czech>
+            <Portuguese>CORRAM! VAI EXPLODIR!</Portuguese>
+            <Turkish>KAÇIN! PATLAYACAK!</Turkish>
+        </Key>
+        
+        <Key ID="STR_A3U_Petros_arsenal_warning2c">
+            <Original>DANGER! EXPLOSION IMMINENT!</Original>
+            <Russian>ОПАСНО! ВЗРЫВ НЕИЗБЕЖЕН!</Russian>
+            <German>GEFAHR! EXPLOSION DROHT!</German>
+            <Italian>PERICOLO! ESPLOSIONE IMMINENTE!</Italian>
+            <Spanish>¡PELIGRO! ¡EXPLOSIÓN INMINENTE!</Spanish>
+            <French>DANGER ! EXPLOSION IMMINENTE !</French>
+            <Korean>위험! 곧 터진다!</Korean>
+            <Japanese>危険！爆発は目前！</Japanese>
+            <Chinesesimp>危险！即将爆炸！</Chinesesimp>
+            <Chinese>危險！即將爆炸！</Chinese>
+            <Polish>NIEBEZPIECZEŃSTWO! EKSPLOZJA NIEUCHRONNA!</Polish>
+            <Czech>NEBEZPEČÍ! VÝBUCH HROZÍ!</Czech>
+            <Portuguese>PERIGO! EXPLOSÃO IMINENTE!</Portuguese>
+            <Turkish>TEHLİKE! PATLAMA YAKIN!</Turkish>
+        </Key>
+    </Package>
 </Project>

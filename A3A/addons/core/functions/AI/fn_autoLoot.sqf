@@ -1,3 +1,4 @@
+//fn_autoLoot
 params ["_unit", "_truckX"];
 
 if ((isPlayer _unit) or (player != leader group player)) exitWith {};

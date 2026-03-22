@@ -343,4 +343,63 @@ class CfgSounds
         sound[] = {EQPATHTOFOLDER(patcom,sounds\Civilian\Ambient\Breathing.ogg), 5, 1, 40};
         titles[] = {};
     };
+
+    class A3A_Audio_Petros_Scream_short1
+    {
+        name = "A3A_Audio_Petros_Scream_short1";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Audio_Petros_Scream_short1.ogg", 2, 1, 50};
+        titles[] = {"AAAH"};
+    };
+
+    class A3A_Audio_Petros_Scream_short2
+    {
+        name = "A3A_Audio_Petros_Scream_short2";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Audio_Petros_Scream_short2.ogg", 2, 1, 50};
+        titles[] = {"AAAH"};
+    };
+    
+    class A3A_Audio_Petros_Scream_short3
+    {
+        name = "A3A_Audio_Petros_Scream_short3";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Audio_Petros_Scream_short3.ogg", 2, 1, 50};
+        titles[] = {"AAH"};
+    };
+
+    class A3A_Audio_Petros_Scream_long
+    {
+        name = "A3A_Audio_Petros_Scream_long";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Audio_Petros_Scream_long.ogg", 2, 1, 50};
+        titles[] = {"AAAAAAAAH"};
+    };
+
+    class A3A_Sound_Deflate
+    {
+        name = "A3A_Sound_Deflate";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Sound_Deflate.ogg", 4, 1, 50};
+        titles[] = {};
+    };
+    class A3A_Sound_Inflate
+    {
+        name = "A3A_Sound_Inflate";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Sound_Inflate.ogg", 4, 1, 50};
+        titles[] = {};
+    };
+    class A3A_Sound_Pop
+    {
+        name = "A3A_Sound_Pop";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Sound_Pop.ogg", 32, 1, 200};
+        titles[] = {};
+    };
+    class A3A_Sound_Crackling
+    {
+        name = "A3A_Sound_Crackling";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Sound_Crackling.ogg", 2, 1, 50};
+        titles[] = {};
+    };
+    class A3A_Sound_Thud
+    {
+        name = "A3A_Sound_Thud";
+        sound[] = {"x\A3A\addons\ultimate\data\A3A_Sound_Thud.ogg", 4, 1, 200};
+        titles[] = {};
+    };
 };

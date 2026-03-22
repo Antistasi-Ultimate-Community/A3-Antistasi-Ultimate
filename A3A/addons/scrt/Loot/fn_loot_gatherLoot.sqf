@@ -2,6 +2,7 @@
 FIX_LINE_NUMBERS()
 
 /*
+    fn_lootgatherLoot
 	author: Socrates
 	description: Loots all the bodies and crates near the vehicle or loot crate.
 	returns: nothing
@@ -43,8 +44,91 @@ if(_supplies isEqualTo []) exitWith {
 };
 
 private _moneyEarned = 0;
-
 private _data = [];
+
+private _mass = getMass _vehicle;
+if (_mass == 0) then { _mass = 0.01; };
+_vehicle setVariable ["A3A_lootBox_initialMass", _mass];
+_vehicle setVariable ["A3A_lootBox_currentMass", _mass];
+
+private _lootMass = 0;
+
+private _launchMessages = [
+    "STR_A3U_Petros_lootbox_launch1",
+    "STR_A3U_Petros_lootbox_launch2",
+    "STR_A3U_Petros_lootbox_launch3"
+];
+
+private _getItemMass = {
+    params ["_item"];
+    private _mass = 0;
+
+    if (isClass (configFile >> "CfgWeapons" >> _item)) then {
+        _mass = getNumber (configFile >> "CfgWeapons" >> _item >> "mass");
+    };
+    if (_mass == 0 && {isClass (configFile >> "CfgMagazines" >> _item)}) then {
+        _mass = getNumber (configFile >> "CfgMagazines" >> _item >> "mass");
+    };
+    if (_mass == 0 && {isClass (configFile >> "CfgVehicles" >> _item)}) then {
+        _mass = getNumber (configFile >> "CfgVehicles" >> _item >> "mass");
+    };
+
+    if (_mass == 0) then {
+        switch (true) do {
+            case (_item isKindOf ["Weapon", configFile >> "CfgWeapons"]): { _mass = 3; };
+            case (_item isKindOf ["Magazine", configFile >> "CfgMagazines"]): { _mass = 0.3; };
+            case (_item isKindOf ["ItemCore", configFile >> "CfgWeapons"]): { _mass = 0.1; };
+            default { _mass = 0.05; };
+        };
+    } else {
+        _mass = _mass / 2;
+        _mass = _mass max 0.1;
+    };
+    _mass
+};
+
+private _updateMass = {
+    params ["_box", "_addedMass"];
+    private _currentMass = _box getVariable ["A3A_lootBox_currentMass", getMass _box];
+    _currentMass = _currentMass - _addedMass;
+    if (_currentMass <= 0.1) then { _currentMass = 0.01; };
+    _box setVariable ["A3A_lootBox_currentMass", _currentMass];
+    _box setMass _currentMass;
+    
+    if (_currentMass <= 0.02) then {
+        private _message = localize (selectRandom _launchMessages);
+        {
+            _message remoteExec ["systemChat", _x];
+        } forEach ([10, _vehicle] call SCRT_fnc_common_getNearPlayers);
+        sleep 1;
+        if (isNil {_box getVariable "A3A_lootBox_monitor"}) then {
+            _box setVariable ["A3A_lootBox_monitor", true];
+            [_box] spawn {
+                params ["_box"];
+                private _velocity = [0,0,2];
+                while { true } do {
+                    sleep 0.1;
+                    _box setVelocity _velocity;
+                    if ((getPosATL _box select 2) > 10) then { _velocity = [0,0,5]; };
+                    if ( (getPosATL _box select 2 > 100) || (_box getVariable ["A3A_lootBox_wasHit", false]) ) exitWith { //should also add a time limit
+                        private _fullMass = _box getVariable ["A3A_lootBox_initialMass", 0.01];
+                        _box setVariable ["A3A_lootBox_currentMass", _fullMass];
+                        _box setMass _fullMass;
+                        _box say3D ["A3A_Sound_Pop", 200, 1, 0, 0, true];
+                        addCamShake [10, 1, 125];
+                    };
+                };
+                _box setVariable ["A3A_lootBox_monitor", nil];
+                _box setVariable ["A3A_lootBox_wasHit", nil];
+                _box removeEventHandler ["Hit", _box getVariable ["A3A_lootBox_hitEH", -1]];
+                sleep 4;
+                _box say3D ["A3A_Sound_Deflate", 50, 1, 0, 0, true];
+            };
+            private _hitEH = _box addEventHandler ["Hit", { params ["_box"]; _box setVariable ["A3A_lootBox_wasHit", true]; }];
+            _box setVariable ["A3A_lootBox_hitEH", _hitEH];
+        };
+    };
+};
 
 {
     _lootContainer = _x;
@@ -77,6 +161,7 @@ private _data = [];
                 };
             } else {
                 _vehicle addMagazineCargoGlobal [_x, 1];
+                _lootMass = _lootMass + ([_x] call _getItemMass);
             };
         } forEach _magazines;
     };
@@ -85,6 +170,7 @@ private _data = [];
         {
             if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedBackpacks}) exitWith {};
             _vehicle addBackpackCargoGlobal [_x, 1];
+            _lootMass = _lootMass + ([_x] call _getItemMass);
         } forEach _backpacks;
     };
 
@@ -92,6 +178,7 @@ private _data = [];
         {
             if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedItems}) exitWith {};
             _vehicle addItemCargoGlobal [_x, 1];
+            _lootMass = _lootMass + ([_x] call _getItemMass);
         } forEach _items;
     };
 
@@ -99,6 +186,8 @@ private _data = [];
         {
             if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedWeapons}) exitWith {};
             _vehicle addWeaponWithAttachmentsCargoGlobal [_x, 1];
+            private _weaponClass = _x select 0;
+            _lootMass = _lootMass + ([_weaponClass] call _getItemMass);
         } forEach _weaponsWithAttachments;
     };
 
@@ -128,6 +217,7 @@ private _data = [];
             if (count _assignedItems > 0) then {
                 {
                     _vehicle addItemCargoGlobal [_x,1];
+                    _lootMass = _lootMass + ([_x] call _getItemMass);
                     _lootContainer unassignItem _x;
                     _lootContainer removeItem _x;
                 } forEach _assignedItems;
@@ -142,6 +232,7 @@ private _data = [];
                         };
                     } else {
                         _vehicle addMagazineCargoGlobal [_x, 1];
+                        _lootMass = _lootMass + ([_x] call _getItemMass);
                     };
                     _lootContainer removeMagazines _x;
                 } forEach _lootContainerMagazines;
@@ -150,18 +241,21 @@ private _data = [];
             if (_vest isNotEqualTo "") then {
                 if ((lootCrateUnlockedItems isEqualTo true) && {_vest in unlockedVests}) exitWith {removeVest _lootContainer};
                 _vehicle addItemCargoGlobal [_vest,1];
+                _lootMass = _lootMass + ([_vest] call _getItemMass);
                 removeVest _lootContainer;
             };
 
             if (_headgear isNotEqualTo "") then {
                 if ((lootCrateUnlockedItems isEqualTo true) && {_headgear in unlockedHeadgear}) exitWith {removeHeadgear _lootContainer};
                 _vehicle addItemCargoGlobal [_headgear,1];
+                _lootMass = _lootMass + ([_headgear] call _getItemMass);
                 removeHeadgear _lootContainer;
             };
 
             if (_backpack isNotEqualTo "") then {
                 if ((lootCrateUnlockedItems isEqualTo true) && {_backpack in unlockedBackpacks}) exitWith {removeBackpackGlobal _lootContainer};
                 _vehicle addBackpackCargoGlobal [_backpack,1];
+                _lootMass = _lootMass + ([_backpack] call _getItemMass);
                 removeBackpackGlobal _lootContainer;
             };
 
@@ -169,6 +263,8 @@ private _data = [];
                 {
                     if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedWeapons}) exitWith {_lootContainer removeWeaponGlobal _x};
                     _lootContainer addWeaponWithAttachmentsCargoGlobal [_x, 1];
+                    private _weaponClass = _x select 0;
+                    _lootMass = _lootMass + ([_weaponClass] call _getItemMass);
                     _lootContainer removeWeaponGlobal (_x#0);
                 } forEach _lootContainerWeapons;
             };
@@ -203,3 +299,8 @@ playSound3D ["x\A3A\addons\core\Sounds\Misc\LootSuccess.ogg", _vehicle, false, g
 {
     localize "STR_antistasi_actions_successful_loot_text" remoteExec ["systemChat", _x];
 } forEach ([_radius, _vehicle] call SCRT_fnc_common_getNearPlayers);
+
+_vehicle say3D ["A3A_Sound_Inflate", 50, 1, 0, 0, true];
+sleep 2.5;
+[_vehicle, _lootMass] call _updateMass;
+
