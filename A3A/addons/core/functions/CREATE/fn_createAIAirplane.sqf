@@ -227,8 +227,6 @@ if (!_busy) then {
 		_pos = _runwaySpawnLocation select 0;
 		_ang = _runwaySpawnLocation select 1;
 	};
-	private _groupX = createGroup _sideX;
-	_groups pushBack _groupX;
 	_countX = 0;
 	private _vehCount = round (random [2, 4, 5]);
 	while {_countX < _vehCount} do {
@@ -310,7 +308,7 @@ if (!_busy) then {
 				} forEach _vehiclesPlanesGunship;
 				{
 				    _vehPool pushBack _x;
-				    _vehPool pushBack ((A3A_UAVSpawnChance - 0.1) max 0);
+				    _vehPool pushBack ((A3A_UAVSpawnChance - 10) max 0);
 				} forEach _uavsAttack;
 				_typeVehX = selectRandomWeighted _vehPool;
 				if (!isNil "_typeVehX") then {
@@ -329,31 +327,12 @@ if (!_busy) then {
 	};
 };
 
-private _typeVehX = _faction get "flag";
-private _flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
-_flagX allowDamage false;
-[_flagX,"take"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_flagX];
+([_markerX] call A3A_fnc_createZoneFlag) params ["_flagX", "_flagSpawn"];
 _vehiclesX pushBack _flagX;
-if (flagTexture _flagX != (_faction get "flagTexture")) then {[_flagX,(_faction get "flagTexture")] remoteExec ["setFlagTexture",_flagX]};
+if (!isNil "_flagSpawn") then { _spawnsUsed pushBack _flagSpawn };
 
-// Only create ammoBox if it's been recharged (see reinforcementsAI)
-private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
-{
-	private _ammoBoxType = _faction get "ammobox";
-	private _ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
-	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
-	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
-	[_ammoBox] spawn A3A_fnc_fillLootCrate;
-	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
-
-	[_ammoBox] spawn {
-		sleep 1;    //make sure fillLootCrate finished clearing the crate
-		{
-			_this#0 addItemCargoGlobal [_x, round random [5,15,15]];
-		} forEach (A3A_faction_reb get "flyGear");
-	};
-	_ammoBox;
-};
+([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammoBox", "_ammoBoxSpawn"];
+if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
 
 
 if (!_busy) then

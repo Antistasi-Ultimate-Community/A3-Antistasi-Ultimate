@@ -49,6 +49,12 @@ if (!isTraderQuestCompleted) then {
 	(_display displayCtrl 6014) ctrlShow false;
 };
 
+// Hide "toggle teardown mode" button
+if !([player] call FUNCMAIN(isEngineer)) then {
+    ctrlShow[5190, false];
+    ctrlEnable[5190, false];
+};
+
 //Support menu is always first tab, the only workaround at the moment
 [60000,'LEFT'] spawn SCRT_fnc_ui_changeTab;
 sleep 0.1;

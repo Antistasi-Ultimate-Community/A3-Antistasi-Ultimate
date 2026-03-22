@@ -127,9 +127,24 @@
     };
     class addons_aegis : addons_base
     {
-        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02", "A3_Atlas_Armor_F_Atlas_APC_Tracked_02", "A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02"};
         weapons = "weapons_aegis";
         vehicles = "vehicles_aegis";
+    };
+    class addons_atlas : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02"};
+        weapons = "weapons_atlas";
+    };
+    class addons_police : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02","A3_Police_Data_F_Police"};
+        weapons = "weapons_police";
+    };
+    class addons_opposingforces : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02","A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        weapons = "weapons_opposingforces";
     };
     class addons_amf : addons_base
     {
