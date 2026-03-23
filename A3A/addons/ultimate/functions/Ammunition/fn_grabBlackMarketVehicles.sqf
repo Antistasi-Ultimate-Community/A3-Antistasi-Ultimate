@@ -15,6 +15,7 @@
 FIX_LINE_NUMBERS()
 
 private _blackMarketStock = createHashMap;
+private _blackMarketConds = createHashMap;
 private _ignoreList = [];
 private _baseCfg = (configFile >> "A3U" >> "traderAddons");
 
@@ -58,14 +59,14 @@ private _fnc_addVehicleToStock = {
     private _vehCfg = _cfgPath >> _vehicle;
     private _price = getNumber (_vehCfg >> "price");
     private _type = getText (_vehCfg >> "type");
-    private _stockType = _blackMarketStock getOrDefault [_type, createHashMap];
-    if (isNil {_stockType get "condition"}) then {
+    private _bmStock = _blackMarketStock getOrDefault [_type, createHashMap];
+    if (isNil {_blackMarketConds get _type}) then {
         private _condition = compile getText (_vehCfg >> "condition");
-        _stockType set ["condition", _condition];
+        _blackMarketConds set [_type, _condition];
     };
-    _stockType set [_vehicle, _price];
+    _bmStock set [_vehicle, _price];
     Verbose_4("Adding %1 with price: %2, type: %3", _vehicle, _price, _type);
-    _blackMarketStock set [_type, _stockType];
+    _blackMarketStock set [_type, _bmStock];
 };
 
 // Processing all categories in a single loop
@@ -128,7 +129,7 @@ _ignoreList = _ignoreList arrayIntersect _ignoreList;
 private _hasCustomModVehicles = false;
 
 // Processing general configurations with ignore list check
-private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses; 
+private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
 {
     private _addons = getArray (_baseCfg >> _x >> "addons");
     if (_addons isEqualTo []) then {continue};
@@ -140,8 +141,6 @@ private _cfg = _baseCfg call BIS_fnc_getCfgSubClasses;
     
     private _vehicle = getText (_baseCfg >> _x >> "vehicles");
     if (isNil "_vehicle" || {_vehicle isEqualTo ""}) then {continue};
-
-    if 
 
     private _vehicleCfg = (_baseCfg >> "traderVehicles" >> _vehicle);
     if !(isClass _vehicleCfg) then {continue};
@@ -171,9 +170,11 @@ if ((!_hasBlockingVehicles && !_hasCustomModVehicles) || {vanillaArmsDealer isEq
 };
 
 A3U_blackMarketStock = _blackMarketStock;
+A3U_blackMarketConds = _blackMarketConds;
 
 if (isServer) then {
 	publicVariable "A3U_blackMarketStock"; // May not be the greatest thing but making it work between scopes is annoying
+	publicVariable "A3U_blackMarketConds";
 };
 
 A3U_blackMarketStock;
