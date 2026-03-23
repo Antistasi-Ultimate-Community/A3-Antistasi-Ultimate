@@ -48,6 +48,19 @@ private _allTabs = [
     [A3A_IDC_BLACKMARKETBOAT, A3A_IDC_BLACKMARKETVEHICLESGROUPBOAT, "BOAT"]
 ];
 
+private _fnc_buildTab = {
+    params ["_tabIDC", "_groupIDC", "_category"];
+
+    private _tabBuildState = uiNamespace getVariable ["A3U_BM_tabBuildState", createHashMap];
+    private _buildState = _tabBuildState getOrDefault [_category, 0];
+    if (_buildState > 0) exitWith {};
+
+    _tabBuildState set [_category, 1];
+    uiNamespace setVariable ["A3U_BM_tabBuildState", _tabBuildState];
+
+    [_tabIDC, _groupIDC, _category] spawn A3A_fnc_blackMarketTabs;
+};
+
 switch (_mode) do
 {
     case ("switchTab"):
@@ -63,7 +76,8 @@ switch (_mode) do
         Debug_1("MainDialog switching tab to %1.", _categoryIndex);
 
         if (_categoryIndex < 0 || {_categoryIndex > 11}) exitWith {};
-        private _selectedTabIDC = _allTabs select _categoryIndex select 0;
+        private _selectedTab = _allTabs select _categoryIndex;
+        private _selectedTabIDC = _selectedTab select 0;
 
         // Hide all tabs
         Debug("Hiding all tabs");
@@ -77,6 +91,8 @@ switch (_mode) do
         Debug("Showing selected tab");
         private _selectedTabCtrl = _display displayCtrl _selectedTabIDC;
         _selectedTabCtrl ctrlShow true;
+
+        _selectedTab call _fnc_buildTab;
     };
 
     case ("onLoad"):
@@ -91,9 +107,9 @@ switch (_mode) do
         localize "STR_antistasi_dialogs_vehicle_tab_plane", localize "STR_antistasi_dialogs_vehicle_tab_armedcar", localize "STR_antistasi_dialogs_vehicle_tab_unarmedcar", localize "STR_antistasi_dialogs_vehicle_tab_boat"];
         private _vals = ["all", "artillery", "apc", "aa", "uav", "tank", "statics", "heli", "plane", "armedcar", "unarmedcar", "boat"];
 
-        { _x spawn A3A_fnc_blackMarketTabs } forEach _allTabs;
-
-        waitUntil {sleep 1; uiNamespace getVariable ["A3U_BM_isTabsComplete", false]};
+        uiNamespace setVariable ["A3U_BM_tabBuildState", createHashMapFromArray (_allTabs apply {[_x select 2, 0]})];
+        uiNamespace setVariable ["A3U_BM_vehicleMetadataCache", createHashMap];
+        uiNamespace setVariable ["A3U_BM_dlcMetadataCache", createHashMap];
 
         private _valsCtrl = _bmTable;
         /* _valsCtrl ctrlSetPosition [GRID_W * -30.4, GRID_H*-17.9, GRID_W*125, GRID_H*5]; */
@@ -104,10 +120,19 @@ switch (_mode) do
         } forEach _vals;
         
         private _default = "all";
-        _valsCtrl lbSetCurSel (_vals find _default);
+        private _defaultIndex = _vals find _default;
+        _valsCtrl lbSetCurSel _defaultIndex;
         _valsCtrl lbSetSelected [0, true];
 
         uiNamespace setVariable ["bm_vehicleTypeBox", _valsCtrl];
+
+        {
+            (_displayBM displayCtrl (_x select 0)) ctrlShow false;
+        } forEach _allTabs;
+
+        private _defaultTab = _allTabs select _defaultIndex;
+        (_displayBM displayCtrl (_defaultTab select 0)) ctrlShow true;
+        _defaultTab call _fnc_buildTab;
 
         _bmTable ctrlAddEventHandler ["LBSelChanged", {
             params ["_control", "_selectedIndex"];
@@ -120,6 +145,9 @@ switch (_mode) do
     case ("onUnload"): 
     {
         ['off'] call SCRT_fnc_ui_toggleMenuBlur;
+        uiNamespace setVariable ["A3U_BM_tabBuildState", nil];
+        uiNamespace setVariable ["A3U_BM_vehicleMetadataCache", nil];
+        uiNamespace setVariable ["A3U_BM_dlcMetadataCache", nil];
     };
 
     default
