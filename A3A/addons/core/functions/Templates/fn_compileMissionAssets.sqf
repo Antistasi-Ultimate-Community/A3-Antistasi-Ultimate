@@ -35,7 +35,7 @@ private _fnc_extractMarketClasses = {
     params ["_type"];
     private _stock = A3U_blackMarketStock getOrDefault [_type, createHashMap];
 
-    values _stock;
+    keys _stock;
 };
 
 private _fnc_setHashmap = {
