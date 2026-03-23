@@ -177,6 +177,24 @@ while {count waypoints _groupJumper > 0} do { deleteWaypoint [_groupJumper, 0] }
 
 _vehicle limitSpeed (2 * getNumber(configOf _vehicle >> "maxSpeed"));	// remove the limit
 
+if !(_isReinforcement) then {
+    if ([_vehicle, group driver _vehicle, _targetPosition] call A3A_fnc_checkAndSpawnAttack) exitWith {
+        // Waiting here because Arma likes to randomly delete paratrooper waypoints on landing
+        waitUntil { sleep 1; isTouchingGround leader _groupJumper };
+
+        sleep 10;       // wait until everyone else has landed
+
+        _wpMove = _groupJumper addWaypoint [_targetPosition, 0];
+        _wpMove setWaypointType "MOVE";
+        _wpMove setWaypointBehaviour "AWARE";
+        _groupJumper setCurrentWaypoint _wpMove;
+
+        _wpClear = _groupJumper addWaypoint [_targetPosition, 0];
+        _wpClear setWaypointType "SAD";
+        _groupJumper spawn A3A_fnc_attackDrillAI;
+    };
+};
+
 private _wp2 = _groupPilot addWaypoint [_originPosition, 0];
 _wp2 setWaypointType "MOVE";
 _wp2 setWaypointSpeed "FULL";
@@ -197,10 +215,4 @@ if !(_isReinforcement) then
     _wpClear = _groupJumper addWaypoint [_targetPosition, 0];
     _wpClear setWaypointType "SAD";
     _groupJumper spawn A3A_fnc_attackDrillAI;
-if !(_isReinforcement) then
-{
-    _wpClear = _groupJumper addWaypoint [_targetPosition, 0];
-    _wpClear setWaypointType "SAD";
-    _groupJumper spawn A3A_fnc_attackDrillAI;
-    [_vehicle, group driver _vehicle, _targetPosition] call A3A_fnc_checkAndSpawnAttack;
 };
