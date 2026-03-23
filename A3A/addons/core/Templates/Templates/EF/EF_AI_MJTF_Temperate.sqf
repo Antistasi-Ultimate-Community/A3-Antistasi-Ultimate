@@ -80,7 +80,7 @@ private _artillery = ["B_T_MBT_01_mlrs_F"];
     ["APC_Wheeled_01_mortar_base_lxWS",["64Rnd_60mm_Mo_guided_lxWS"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F", "EF_QAV80_MJTF_Wdl", "EF_QAV80_Stealth_MJTF_Wdl"]] call _fnc_saveToTemplate;
 private _uavsPortable = ["B_UAV_01_F"];
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:

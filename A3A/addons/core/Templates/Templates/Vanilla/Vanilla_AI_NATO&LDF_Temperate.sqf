@@ -89,7 +89,7 @@ private _artillery = ["B_T_MBT_01_arty_F","B_T_MBT_01_mlrs_F","I_E_Truck_02_MRL_
     ["EF_B_T_Gyra_Mortar_BLU",["EF_6Rnd_120mm_Mo_Shells"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
+private _uavsAttack = ["B_UAV_02_dynamicLoadout_F", "B_UAV_05_F", "B_T_UAV_03_dynamicLoadout_F"];
 private _uavsPortable = ["B_UAV_01_F"];
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
@@ -180,6 +180,7 @@ if (_hasEF) then {
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["staticAA", _staticAA] call _fnc_saveToTemplate;
+["uavsAttack", _uavsAttack] call _fnc_saveToTemplate;
 ["uavsPortable", _uavsPortable] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
 ["staticAT", _staticAT] call _fnc_saveToTemplate;

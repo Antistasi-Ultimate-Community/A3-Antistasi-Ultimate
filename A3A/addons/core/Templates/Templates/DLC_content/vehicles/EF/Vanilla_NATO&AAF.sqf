@@ -6,6 +6,10 @@ _IFVs append ["EF_B_AAV9_MJTF_Des", "EF_B_AAV9_50mm_MJTF_Des"];
 _transportBoat pushBack "EF_B_CombatBoat_Unarmed_NATO";
 _gunBoat append ["EF_B_CombatBoat_AT_NATO", "EF_B_CombatBoat_HMG_NATO"];
 
+_planesAA append ["EF_QAV80_Stealth_MJTF_Des"]; ///only AA because CAS has chance to spawn UAV attack
+
+_uavsAttack append ["EF_QAV80_MJTF_Des", "EF_QAV80_Stealth_MJTF_Des"];
+
 _SAM pushBack "EF_LPD_Turret_1_MJTF_Des";
 
 _transportHelicopters append ["EF_B_Heli_Transport_01_MJTF_Wdl", "EF_B_Heli_Transport_01_MJTF_Des"];

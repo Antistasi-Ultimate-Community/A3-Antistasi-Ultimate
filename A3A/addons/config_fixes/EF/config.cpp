@@ -5,7 +5,7 @@
 
 class CfgPatches 
 {
-    class PATCHNAME(WS) 
+    class PATCHNAME(EF) 
     {
         name = COMPONENT_NAME;
         units[] = {};

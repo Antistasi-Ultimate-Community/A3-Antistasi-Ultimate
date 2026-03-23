@@ -14,6 +14,11 @@
 			ITEM(ef_arifle_mxm_coy, 1300, RIFLE_STOCK);
 			ITEM(ef_arifle_mx_gl_coy, 1400, RIFLE_STOCK);
 
+			ITEM(ef_arifle_mx_grip_black, 1250, RIFLE_STOCK);
+			ITEM(ef_arifle_mx_grip, 1250, RIFLE_STOCK);
+			ITEM(ef_arifle_mx_grip_khk, 1250, RIFLE_STOCK);
+			ITEM(ef_arifle_mx_grip_coy, 1250, RIFLE_STOCK);
+
 			ITEM(ef_arifle_mxar_gl, 1400, RIFLE_STOCK);
 			ITEM(ef_arifle_mxar_gl_black, 1400, RIFLE_STOCK);
 			ITEM(ef_arifle_mxar_gl_coy, 1400, RIFLE_STOCK);
