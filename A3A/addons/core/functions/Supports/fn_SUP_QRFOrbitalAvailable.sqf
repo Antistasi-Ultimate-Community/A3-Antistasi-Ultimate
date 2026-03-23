@@ -28,6 +28,8 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 private _allAA = (A3A_faction_all get "vehiclesPlanesAA");
 if (typeOf _target in _allAA) exitWith { 0 };
 
+if (tierWar <= 3) exitWith { 0 };
+
 // Otherwise fine?
 // Could reduce chance for heli or non-infantry targets in general
 // It can technically hit air/tanks, but you wouldn't ram a droppod through a vehicle... wouldn't you?
