@@ -163,7 +163,7 @@
 >    - adds additional functionality for developers to more precisely control logistics cargo nodes for vehicles
 > - Code changes for feature donations/extenders (#770)
 >   - Internal code rework to standardize macros and make porting CBA-standardized code easier, changes to some logging calls, and new events system for extenders to hook into.
-> - Additional Parameters Functionality and Misc SetupGUI Updates (#666)
+> - Additional Parameters Functionality and Misc SetupGUI Updates (#666, #861)
 >   - Adds parameter preset functionality, allowing players to save and load custom presets for all game setup parameters, or select a combination of player group size and desired difficulty for recommended parameter settings
 >   - Adds parameter search bar
 >   - Fixes misc bugs with setup UI
