@@ -197,48 +197,44 @@ fnc_sa_calc_signal_str ={
 				_sa_eh_key=findDisplay 46 displayAddEventHandler ["KeyDown",{
 					params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
 					if (_key in actionKeys "zeroingUp") then {
-						if(_shift) then  {
-							sa_time_k=sa_time_k+0.1;
-							if(sa_time_k>1) then {
-								sa_time_k=1;
-							};
-							hintSilent format ["Discretization step: %1",sa_time_k];
-						}
-						else
-						{
-							_sel_min=missionNamespace getVariable "#EM_SelMin";
-							_sel_max=missionNamespace getVariable "#EM_SelMax";
-							_sel_max=_sel_max+sa_freq_sel_step;
-							_sel_min=_sel_min+sa_freq_sel_step;
-							if (_sel_max>sa_freq_max) then{
-								_sel_max=sa_freq_max;
-								_sel_min=sa_freq_max-sa_freq_window;
-							};
-							missionNamespace setVariable ["#EM_SelMin", _sel_min];
-							missionNamespace setVariable ["#EM_SelMax", _sel_max];
-						};
+					    if(_shift) then  {
+					        sa_time_k = sa_time_k + 0.1;
+					        if(sa_time_k > 1) then {
+					            sa_time_k = 1;
+					        };
+					        ["Spectrum Device", format ["Discretization step: %1", sa_time_k], true] call A3A_fnc_customHint;
+					    } else {
+					        _sel_min = missionNamespace getVariable "#EM_SelMin";
+					        _sel_max = missionNamespace getVariable "#EM_SelMax";
+					        _sel_max = _sel_max + sa_freq_sel_step;
+					        _sel_min = _sel_min + sa_freq_sel_step;
+					        if (_sel_max > sa_freq_max) then {
+					            _sel_max = sa_freq_max;
+					            _sel_min = sa_freq_max - sa_freq_window;
+					        };
+					        missionNamespace setVariable ["#EM_SelMin", _sel_min];
+					        missionNamespace setVariable ["#EM_SelMax", _sel_max];
+					    };
 					};
 					if (_key in actionKeys "zeroingDown") then {
-						if(_shift) then  {
-							sa_time_k=sa_time_k-0.1;
-							if(sa_time_k<0.1) then {
-								sa_time_k=0.1;
-							};
-							hintSilent format ["Discretization step: %1",sa_time_k];
-						}
-						else
-						{
-							_sel_min=missionNamespace getVariable "#EM_SelMin";
-							_sel_max=missionNamespace getVariable "#EM_SelMax";
-							_sel_max=_sel_max-sa_freq_sel_step;
-							_sel_min=_sel_min-sa_freq_sel_step;
-							if (_sel_min<sa_freq_min) then{
-								_sel_max=sa_freq_min+sa_freq_window;
-								_sel_min=sa_freq_min;
-							};
-							missionNamespace setVariable ["#EM_SelMin", _sel_min];
-							missionNamespace setVariable ["#EM_SelMax", _sel_max];
-						};
+					    if(_shift) then  {
+					        sa_time_k = sa_time_k - 0.1;
+					        if(sa_time_k < 0.1) then {
+					            sa_time_k = 0.1;
+					        };
+					        ["Spectrum Device", format ["Discretization step: %1", sa_time_k], true] call A3A_fnc_customHint;
+					    } else {
+					        _sel_min = missionNamespace getVariable "#EM_SelMin";
+					        _sel_max = missionNamespace getVariable "#EM_SelMax";
+					        _sel_max = _sel_max - sa_freq_sel_step;
+					        _sel_min = _sel_min - sa_freq_sel_step;
+					        if (_sel_min < sa_freq_min) then {
+					            _sel_max = sa_freq_min + sa_freq_window;
+					            _sel_min = sa_freq_min;
+					        };
+					        missionNamespace setVariable ["#EM_SelMin", _sel_min];
+					        missionNamespace setVariable ["#EM_SelMax", _sel_max];
+					    };
 					};
 				}];
 			};

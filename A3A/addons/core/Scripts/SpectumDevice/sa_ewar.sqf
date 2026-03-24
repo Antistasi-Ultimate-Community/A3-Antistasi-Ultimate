@@ -13,11 +13,12 @@
 sa_scan_time_k = 0.1;			// scan cycle time parametrs
 sa_scan_temp = 0.5;
 sa_ident_str = -100;			// Minimum signal str for friendly-foe recognition
-sa_jamm_time = 5;				// Jamm time
+sa_jamm_time = 10;				// Jamm time
+sa_exposure_chance = 0.3; // 30% chance to expose player position on failed attempt
 sa_ins_list = [
 	"B_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F",
 	"O_UAV_02_dynamicLoadout_F", "O_T_UAV_04_CAS_F", "I_UAV_02_dynamicLoadout_F"
-]; // UAVs classes with inertial navigation
+]; // UAVs classes with inertial navigation (dont lose waypoints after jamm&start operate acording waypoint program)
 
 sa_scan_progress = 0;
 sa_sel_freq = [];
@@ -58,69 +59,14 @@ fnc_sa_local_add_to_jamm_list = {
 	};
 };
 
-// Scan friendly/foe and jam (antenna 2)
-sa_scan_friendly_foe = {
-	private _chance = 0;
-	private _txt = "";
-	private _unit = [];
-	{
-		if (([_x] call sa_is_signal_uav) in [1,2]) then {
-			_chance = ((_x select 1) - sa_sens_min) / (sa_sens_max - sa_sens_min);
-			_txt = _txt + format ["%1%2 ", round(_chance * 100), "%"];
-			if (_chance >= (random 1)) then {
-				_unit = _x select 0 select 0;
-				[_unit] remoteExec ["fnc_sa_local_add_to_jamm_list", [0,-2] select isDedicated];
-				if (_unit isKindOf "Air") then {
-					private _safeLandPos = [_unit, 1, 250, 2, 0, 4, 0] call BIS_fnc_findSafePos;
-					_wp = (group _unit) addWaypoint [_safeLandPos, 1];
-					_wp setWaypointBehaviour "SAFE";
-					_wp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
-					private _time = time;
-					waitUntil { sleep 0.1; (getPos _unit) select 2 < 1.3 };
-					{
-						_unit deleteVehicleCrew _x;
-					} forEach crew _unit;
-				} else {
-					{
-						_unit deleteVehicleCrew _x;
-					} forEach crew _unit;
-				};
-			};
-		};
-	} forEach sa_sel_freq;
-	
-	if (_chance > 0) then {
-		["UAV Jam", parseText format [sa_str_message_jamm, _txt], true] call A3A_fnc_customHint;
-	} else {
-		["UAV Jam", parseText sa_str_message_jamm_no_target, true] call A3A_fnc_customHint;
-	};
-};
-
-// Jamming routine (antenna 3)
-sa_jamm = {
-	private _chance = 0;
-	private _txt = "";
-	private _unit = [];
-	{
-		if (([_x] call sa_is_signal_uav) in [1,2]) then {
-			_chance = ((_x select 1) - sa_sens_min) / (sa_sens_max - sa_sens_min);
-			_txt = _txt + format ["%1%2 ", round(_chance * 100), "%"];
-			if (_chance >= (random 1)) then {
-				_unit = _x select 0 select 0;
-				[_unit] remoteExec ["fnc_sa_local_add_to_jamm_list", [0,-2] select isDedicated];
-				{
-					_unit deleteVehicleCrew _x;
-				} forEach crew _unit;
-				_unit setHit ["motor", 1, true, objNull, objNull, true];
-			};
-		};
-	} forEach sa_sel_freq;
-	
-	if (_chance > 0) then {
-		["UAV Jam", parseText format [sa_str_message_jamm, _txt], true] call A3A_fnc_customHint;
-	} else {
-		["UAV Jam", parseText sa_str_message_jamm_no_target, true] call A3A_fnc_customHint;
-	};
+fnc_sa_expose_player = {
+    // Reveal player to nearby enemy units
+    params ["_side"];
+	sleep 5;
+    private _nearEnemies = allUnits select { side _x == _side && _x distance player < 200 };
+    {
+        _x reveal [player, 3];
+    } forEach _nearEnemies;
 };
 
 // First antenna: scan and capture
@@ -147,35 +93,159 @@ sa_1st_antenna_swap = {
 		};
 	} forEach sa_sel_freq;
 	
-	// Show scan results
 	["UAV Scan", parseText format [sa_str_message_scan, _friendly_uavs, _enemy_uavs, _other_signals, _weak_signals], true] call A3A_fnc_customHint;
 	
-	private _chance = 0;
+	private _successful = [];
+	private _failed = [];
 	private _txt = "";
-	private _unit = [];
+	private _any_target = false;
 	{
 		if (([_x] call sa_is_signal_uav) in [1,2]) then {
-			_chance = ((_x select 1) - sa_sens_min) / (sa_sens_max - sa_sens_min);
-			_txt = _txt + format ["%1%2 ", round(_chance * 100), "%"];
+			_any_target = true;
+			private _chance = ((_x select 1) - sa_sens_min) / (sa_sens_max - sa_sens_min);
+			private _percent = round(_chance * 100);
+			_txt = _txt + format ["%1%2 ", _percent, "%"];
+			private _unit = _x select 0 select 0;
+			private _unitName = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 			if (_chance >= (random 1)) then {
 				_friendlyGroup = createGroup independent;
-				_unit = _x select 0 select 0;
 				[_unit] remoteExec ["fnc_sa_local_add_to_jamm_list", [0,-2] select isDedicated];
 				{
 					[_x] joinSilent _friendlyGroup;
 				} forEach crew _unit;
+				_successful pushBack _unitName;
+			} else {
+				_failed pushBack [_unitName, _unit];
 			};
 		};
 	} forEach sa_sel_freq;
 	
-	if (_chance > 0) then {
-		["UAV Jam", parseText format [sa_str_message_jamm, _txt], true] call A3A_fnc_customHint;
+	private _msg = "";
+	if (_any_target) then {
+		_msg = format ["Chances: %1<br/>", _txt];
+		if (count _successful > 0) then {
+			_msg = _msg + format ["<t color='#00ff00'>Captured: %1</t><br/>", _successful joinString ", "];
+		};
+		if (count _failed > 0) then {
+			_msg = _msg + format ["<t color='#ff0000'>Failed: %1</t>", (_failed apply {_x#0}) joinString ", "];
+			if (random 1 < sa_exposure_chance) then {
+				_msg = _msg + "<br/><t color='#ff6600'>You have been detected!</t>";
+				private _failedSide = side ((_failed select 0)#1);
+				[_failedSide] spawn fnc_sa_expose_player;
+			};
+		};
+		["UAV capture", parseText _msg, true] call A3A_fnc_customHint;
+	} else {
+		["UAV capture", parseText sa_str_message_jamm_no_target, true] call A3A_fnc_customHint;
+	};
+};
+
+// Scan friendly/foe and jam (antenna 2)
+sa_scan_friendly_foe = {
+	private _successful = [];
+	private _failed = [];
+	private _txt = "";
+	private _any_target = false;
+	{
+		if (([_x] call sa_is_signal_uav) in [1,2]) then {
+			_any_target = true;
+			private _chance = ((_x select 1) - sa_sens_min) / (sa_sens_max - sa_sens_min);
+			private _percent = round(_chance * 100);
+			_txt = _txt + format ["%1%2 ", _percent, "%"];
+			private _unit = _x select 0 select 0;
+			private _unitName = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "displayName");
+			if (_chance >= (random 1)) then {
+				[_unit] remoteExec ["fnc_sa_local_add_to_jamm_list", [0,-2] select isDedicated];
+				if (_unit isKindOf "Air") then {
+					private _safeLandPos = [_unit, 1, 250, 2, 0, 4, 0] call BIS_fnc_findSafePos;
+					_wp = (group _unit) addWaypoint [_safeLandPos, 1];
+					_wp setWaypointBehaviour "SAFE";
+					_wp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
+					private _time = time;
+					waitUntil { sleep 0.1; (getPos _unit) select 2 < 1.3 };
+					{
+						_unit deleteVehicleCrew _x;
+					} forEach crew _unit;
+				} else {
+					{
+						_unit deleteVehicleCrew _x;
+					} forEach crew _unit;
+				};
+				_successful pushBack _unitName;
+			} else {
+				_failed pushBack [_unitName, _unit];
+			};
+		};
+	} forEach sa_sel_freq;
+	
+	private _msg = "";
+	if (_any_target) then {
+		_msg = format ["Chances: %1<br/>", _txt];
+		if (count _successful > 0) then {
+			_msg = _msg + format ["<t color='#00ff00'>Disabled: %1</t><br/>", _successful joinString ", "];
+		};
+		if (count _failed > 0) then {
+			_msg = _msg + format ["<t color='#ff0000'>Failed: %1</t>", (_failed apply {_x#0}) joinString ", "];
+			if (random 1 < sa_exposure_chance) then {
+				_msg = _msg + "<br/><t color='#ff6600'>You have been detected!</t>";
+				private _failedSide = side ((_failed select 0)#1);
+				[_failedSide] spawn fnc_sa_expose_player;
+			};
+		};
+		["UAV Jam and land", parseText _msg, true] call A3A_fnc_customHint;
+	} else {
+		["UAV Jam and land", parseText sa_str_message_jamm_no_target, true] call A3A_fnc_customHint;
+	};
+};
+
+// Jamming routine (antenna 3)
+sa_jamm = {
+	private _successful = [];
+	private _failed = [];
+	private _txt = "";
+	private _any_target = false;
+	{
+		if (([_x] call sa_is_signal_uav) in [1,2]) then {
+			_any_target = true;
+			private _chance = ((_x select 1) - sa_sens_min) / (sa_sens_max - sa_sens_min);
+			private _percent = round(_chance * 100);
+			_txt = _txt + format ["%1%2 ", _percent, "%"];
+			private _unit = _x select 0 select 0;
+			private _unitName = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "displayName");
+			if (_chance >= (random 1)) then {
+				[_unit] remoteExec ["fnc_sa_local_add_to_jamm_list", [0,-2] select isDedicated];
+				{
+					_unit deleteVehicleCrew _x;
+				} forEach crew _unit;
+				_unit setHit ["motor", 1, true, objNull, objNull, true];
+				_successful pushBack _unitName;
+			} else {
+				_failed pushBack [_unitName, _unit];
+			};
+		};
+	} forEach sa_sel_freq;
+	
+	private _msg = "";
+	if (_any_target) then {
+		_msg = format ["Chances: %1<br/>", _txt];
+		if (count _successful > 0) then {
+			_msg = _msg + format ["<t color='#00ff00'>Destroyed: %1</t><br/>", _successful joinString ", "];
+		};
+		if (count _failed > 0) then {
+			_msg = _msg + format ["<t color='#ff0000'>Failed: %1</t>", (_failed apply {_x#0}) joinString ", "];
+			if (random 1 < sa_exposure_chance) then {
+				_msg = _msg + "<br/><t color='#ff6600'>You have been detected!</t>";
+				private _failedSide = side ((_failed select 0)#1);
+				[_failedSide] spawn fnc_sa_expose_player;
+			};
+		};
+		["UAV Jam", parseText _msg, true] call A3A_fnc_customHint;
 	} else {
 		["UAV Jam", parseText sa_str_message_jamm_no_target, true] call A3A_fnc_customHint;
 	};
 };
 
-// Progress bar update (no changes needed)
+// Progress bar update
 [] spawn {
 	waitUntil { player == player };
 	while {true} do {
@@ -221,7 +291,7 @@ _g = [] spawn {
 			missionNamespace setVariable ["#EM_Transmit", _scan_complete];
 			switch ((handgunItems player) select 0) do {
 				case "muzzle_antenna_01_f": { [] call sa_1st_antenna_swap; sa_scan_progress = 0; _scan_complete = false; };
-				case "muzzle_antenna_02_f": { [] call sa_scan_friendly_foe; };
+				case "muzzle_antenna_02_f": { [] call sa_scan_friendly_foe; sa_scan_progress = 0; _scan_complete = false; };
 				case "muzzle_antenna_03_f": { [] call sa_jamm; sa_scan_progress = 0; _scan_complete = false; };
 				default { [] call sa_scan_friendly_foe; };
 			};
