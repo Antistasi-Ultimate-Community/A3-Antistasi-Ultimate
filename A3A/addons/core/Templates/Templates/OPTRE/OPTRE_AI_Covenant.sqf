@@ -5,7 +5,7 @@
 #include "..\..\..\script_component.hpp"
 
 ["name", "Covenant"] call _fnc_saveToTemplate;
-["spawnMarkerName", "Covenant Supercarrier"] call _fnc_saveToTemplate;
+["spawnMarkerName", localize "STR_supportcorridorCovenant"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\OPTRE\images\flag_covenant_ca.paa)] call _fnc_saveToTemplate;
