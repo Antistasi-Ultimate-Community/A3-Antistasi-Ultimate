@@ -28,7 +28,7 @@ params ["_target", "_side", "_maxSpend", "_availTypes"];
 private _allAA = (A3A_faction_all get "vehiclesPlanesAA");
 if (typeOf _target in _allAA) exitWith { 0 };
 
-if (tierWar <= 3) exitWith { 0 };
+if (tierWar < 5) exitWith { 0 };
 
 // Otherwise fine?
 // Could reduce chance for heli or non-infantry targets in general
