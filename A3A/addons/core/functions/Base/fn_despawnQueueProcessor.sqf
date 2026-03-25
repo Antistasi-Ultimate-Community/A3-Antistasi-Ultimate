@@ -31,7 +31,7 @@ Info_1("Processing despawn queue with %1 entities.",count GVAR(despawnQueue));
 GVAR(despawnerRunning) = true;
 
 // Process queue
-GVAR(despawnQueue) = GVAR(despawnQueue) select { 
+GVAR(despawnQueue) = GVAR(despawnQueue) select {
     // Already deleted by somebody else or invalid
     if (isNull _x || { isNil(_x getVariable QGVAR(despawnTTL)) }) then { continueWith false };
 
@@ -50,11 +50,8 @@ GVAR(despawnQueue) = GVAR(despawnQueue) select {
 
     // Get with the cleaning
     Verbose_1("Entity %1 is dead long enough; despawning now.",_x);
-    
-    private _group = group _x;
-    if !(isNull _group || { units _group isNotEqualTo [_x] }) then {
-        deleteGroup _group;
-    };
+
+    group _x deleteGroupWhenEmpty true;
 
     if !(_x isKindOf "CAManBase" || {isNull objectParent _x}) then {
         deleteVehicle _x;
