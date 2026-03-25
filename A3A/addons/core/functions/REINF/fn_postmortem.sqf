@@ -22,7 +22,11 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNCMAIN(postmortem),_this);
 
-if !assert(isServer) exitWith { Error("Function can only be called on the server.") };
+if !assert(isServer) exitWith {
+    Warning("Function can only be called on the server.");
+    _this remoteExecCall[QFUNCMAIN(postmortem), 2];
+};
+
 if !assert(params[
     ["_victim", nil, [objNull]]
 ]) exitWith {};
