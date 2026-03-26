@@ -32,7 +32,10 @@ if !assert(params[
 ]) exitWith {};
 if (isNull _victim) exitWith {};
 
-[CBA_EVENT_SERVER_ENTITY_POSTMORTEM, _this] call FUNCMAIN(triggerLocalEvent);
+if (isNil { _victim getVariable QGVAR(postMortemEventSent) }) then {
+    _victim setVariable[QGVAR(postMortemEventSent), true];
+    [CBA_EVENT_SERVER_ENTITY_POSTMORTEM, _this] call FUNCMAIN(triggerLocalEvent);
+};
 
 [_victim] call FUNCMAIN(despawnQueueEntity);
 
