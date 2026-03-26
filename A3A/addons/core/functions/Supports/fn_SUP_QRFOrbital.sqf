@@ -32,7 +32,7 @@ private _vehCount = 3 min ceil (_maxSpend / A3A_balanceVehicleCost);        // w
 // TODO: bias a bit for tank/APC/static targets?
 private _attackCount = round random ([0, 0, 0.8, 1.5] select _vehCount);
 
-//private _planeType = selectRandom (Faction(_side) get ""vehiclesDropPod"");
+//private _planeType = selectRandom (Faction(_side) get "vehiclesDropPod");
 
 // 1.5 cost factor for air
 private _estResources = 1.5 * _vehCount * A3A_balanceVehicleCost; //(A3A_vehicleResourceCosts get _planeType) + 100;
