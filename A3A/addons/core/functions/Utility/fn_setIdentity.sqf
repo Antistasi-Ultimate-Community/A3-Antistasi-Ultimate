@@ -19,6 +19,8 @@ params ["_unit", "_identity"];           // Don't care about the other params he
 
 if (isNull _unit) exitWith {};
 
+if (_unit getVariable ["skipIdentity", false]) exitWith {};
+
 private _firstName = _identity getOrDefault ["firstName", ""];
 private _lastName = _identity getOrDefault ["lastName", ""];
 

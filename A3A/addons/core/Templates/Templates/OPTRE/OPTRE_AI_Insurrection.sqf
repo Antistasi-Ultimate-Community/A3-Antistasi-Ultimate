@@ -4,8 +4,8 @@
 
 #include "..\..\..\script_component.hpp"
 
-["name", "Insurrection"] call _fnc_saveToTemplate;
-["spawnMarkerName", "Insurrection Frigate"] call _fnc_saveToTemplate;
+["name", localize "STR_A3AP_setupFactionsTab_OPTRE_Ins_name"] call _fnc_saveToTemplate;
+["spawnMarkerName", localize "STR_supportcorridorInsurrection"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\OPTRE\images\flag_insurrection_ca.paa)] call _fnc_saveToTemplate;
@@ -19,35 +19,39 @@
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
-["vehiclesBasic", ["OPTRE_M274_ATV_Ins"]] call _fnc_saveToTemplate;
+["vehiclesBasic", ["OPTRE_M274_ATV_Ins","OPTRE_M12_VBIED_Big","OPTRE_M12_VBIED"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["OPTRE_M12_FAV_ins"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["OPTRE_M12_LRV_ins"]] call _fnc_saveToTemplate; //this line determines light and armed vehicles -- Example: ["vehiclesLightArmed", ["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
-["vehiclesTrucks", ["OPTRE_m1015_mule_ins", "OPTRE_m1015_mule_cover_ins"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["OPTRE_M12_LRV_ins","OPTRE_M12A1_LRV_ins","OPTRE_M12_TD_ins"]] call _fnc_saveToTemplate; //this line determines light and armed vehicles -- Example: ["vehiclesLightArmed", ["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
+["vehiclesTrucks", ["OPTRE_m1015_mule_ins", "OPTRE_m1015_mule_cover_ins","OPTRE_M12_ins_APC"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["OPTRE_m1015_mule_ins", "OPTRE_m1015_mule_cover_ins"]] call _fnc_saveToTemplate;
 ["vehiclesAmmoTrucks", ["OPTRE_m1015_mule_ammo_ins"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["OPTRE_m1015_mule_repair_ins"]] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", ["OPTRE_m1015_mule_repair_ins","OPTRE_M914_RV_ins", "OPTRE_M808R_Engineer_INS"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["OPTRE_m1015_mule_fuel_ins"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["OPTRE_m1015_mule_medical_ins"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["OPTRE_M412_IFV_INS", "OPTRE_M493_M37_RCWS_Ins"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["OPTRE_M413_MGS_INS", "OPTRE_M494_INS"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["OPTRE_M413_MGS_INS", "OPTRE_M412_IFV_INS"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["OPTRE_M494_INS"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  []] call _fnc_saveToTemplate;
-["vehiclesTanks", ["OPTRE_M808B_INS"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["OPTRE_m1015_mule_medical_ins","OPTRE_M12_ins_MED"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["a3a_OPTRE_M411_APC_INS","OPTRE_M493_M37_Ins"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["OPTRE_M413_MGS_INS", "OPTRE_M412_IFV_INS", "OPTRE_M494_INS", "OPTRE_M12_LRV_ins"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["OPTRE_M412_IFV_INS"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", ["OPTRE_M494_INS","OPTRE_M493_M37_RCWS_Ins"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["OPTRE_M413_MGS_INS"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["OPTRE_M808B_INS","OPTRE_M808B_INS_Driverless"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["OPTRE_M12R_AA_ins"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["optre_catfish_ins_unarmed_f"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["optre_catfish_ins_mg_f"]] call _fnc_saveToTemplate;
-["vehiclesAmphibious", ["OPTRE_M412_IFV_INS"]] call _fnc_saveToTemplate;
+["vehiclesAmphibious", ["OPTRE_M412_IFV_INS"]] call _fnc_saveToTemplate; //?
 
-["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A_Single"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["OPTRE_YSS_1000_A_Single"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] call _fnc_saveToTemplate; // I pray this works
+["vehiclesPlanesCAS", ["OPTRE_YSS_1000_A","OPTRE_YSS_1000_A_Single","OPTRE_YSS_1000_A_VTOL","OPTRE_YSS_1000_A_VTOL_Single"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["OPTRE_YSS_1000_A","OPTRE_YSS_1000_A_Single","OPTRE_YSS_1000_A_VTOL","OPTRE_YSS_1000_A_VTOL_Single"]] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", ["OPTRE_Pelican_unarmed_ins"]] call _fnc_saveToTemplate;
 
-["vehiclesHelisLight", ["OPTRE_ins_falcon_unarmed", "OPTRE_UNSC_falcon_S_ins"]] call _fnc_saveToTemplate;
-["vehiclesHelisTransport", ["OPTRE_Pelican_unarmed_ins"]] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", ["OPTRE_UNSC_hornet_ins"]] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", ["OPTRE_UNSC_falcon_armed_S_ins", "OPTRE_INS_MHS_144_Falcon"]] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", ["OPTRE_Pelican_armed_70mm_ins"]] call _fnc_saveToTemplate;
+
+["vehiclesHelisLight", ["a3a_OPTRE_INS_MH_144_Falcon_unarmed", "a3a_OPTRE_INS_MH_144_Falcon_searchlight"]] call _fnc_saveToTemplate;
+["vehiclesHelisTransport", ["OPTRE_Pelican_unarmed_ins","OPTRE_INS_MHS_144_Falcon","OPTRE_UNSC_falcon_S_ins"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["OPTRE_UNSC_hornet_ins","OPTRE_INS_MH_144_Falcon", "OPTRE_ins_falcon_unarmed"]] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", ["OPTRE_ins_falcon","OPTRE_INS_UH_144S_Falcon_DAP"]] call _fnc_saveToTemplate; //need more armed falcon variants
+
+["vehiclesAirPatrol", ["OPTRE_UNSC_hornet_ins","OPTRE_INS_MH_144_Falcon","OPTRE_ins_falcon_unarmed","OPTRE_ins_falcon","OPTRE_INS_UH_144S_Falcon_DAP"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["OPTRE_m1015_mule_mlr_ins_IND"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
@@ -55,23 +59,23 @@
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["OPTRE_mako_drone_CAS_ins"]] call _fnc_saveToTemplate;
-["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
+["uavsPortable", ["OPTRE_OQ40_Minibee_Black_UNSC","OPTRE_OQ_38_Wren_Drone_UNSC"]] call _fnc_saveToTemplate;
 
 ["vehiclesMilitiaLightArmed", ["OPTRE_M12_TD_ins"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaTrucks", ["OPTRE_m1015_mule_cover_ins"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaTrucks", ["OPTRE_M12_ins_APC"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["OPTRE_M12_FAV_ins"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["OPTRE_M12_ins_APC"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["a3a_OPTRE_M411_APC_INS"]] call _fnc_saveToTemplate;
 
-["vehiclesPolice", ["OPTRE_M12_FAV_ins"]] call _fnc_saveToTemplate;
+["vehiclesPolice", ["OPTRE_M12_FAV_ins"]] call _fnc_saveToTemplate; //hmm
 
-["staticMGs", ["OPTRE_Static_M247H_Tripod"]] call _fnc_saveToTemplate;
-["staticAT", ["OPTRE_Static_Gauss"]] call _fnc_saveToTemplate;
-["staticAA", ["OPTRE_Static_AA"]] call _fnc_saveToTemplate;
+["staticMGs", ["OPTRE_AIE_486H_Static_HMG_Innie","OPTRE_M247a1_Static_Innie_MMG"]] call _fnc_saveToTemplate;
+["staticAT", ["OPTRE_Static_M41_Ins","OPTRE_Static_FG75","OPTRE_Static_ATGM_Ins","OPTRE_M460AGL_Static_GMG_innie"]] call _fnc_saveToTemplate;
+["staticAA", ["OPTRE_Static_AA_Ins"]] call _fnc_saveToTemplate;
 ["staticMortars", ["OPTRE_AU_44_INS_Mortar"]] call _fnc_saveToTemplate;
 ["staticHowitzers", []] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "B_Radar_System_01_F"] call _fnc_saveToTemplate;
-["vehicleSam", "OPTRE_Lance_INS"] call _fnc_saveToTemplate;
+["vehicleSam", ["OPTRE_Scythe_INS","OPTRE_Scythe_AA_INS","OPTRE_Lance_INS"]] call _fnc_saveToTemplate;
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;
 
@@ -79,7 +83,7 @@
 ["mortarMagazineSmoke", "OPTRE_10Rnd_122mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["mortarMagazineFlare", "OPTRE_10Rnd_122mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
+["minefieldAT", ["OPTRE_Placed_Mine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
 #include "OPTRE_Vehicle_Attributes.sqf"
@@ -88,14 +92,20 @@
 ///  Identities   ///
 /////////////////////
 
-["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"]] call _fnc_saveToTemplate;
+["insignia", ["OPTRE_Insignia_emblems_uprising",""]] call _fnc_saveToTemplate;
+["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG","Male01ENGFRE","Male02ENGFRE","Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE"]] call _fnc_saveToTemplate;
 ["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
-"GreekHead_A3_05","GreekHead_A3_07","Sturrock","WhiteHead_01","WhiteHead_02",
+"GreekHead_A3_05","GreekHead_A3_07","WhiteHead_01","WhiteHead_02",
 "WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07",
 "WhiteHead_08","WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
 "WhiteHead_15","WhiteHead_16","WhiteHead_18","WhiteHead_19","WhiteHead_20",
-"WhiteHead_21"]] call _fnc_saveToTemplate;
-["sfVoices", ["Male01ENGB", "Male02ENG", "Male03ENGB", "Male04ENG", "Male05ENGB"]] call _fnc_saveToTemplate;
+"WhiteHead_21","WhiteHead_23", "WhiteHead_24", "WhiteHead_25",
+"WhiteHead_26", "WhiteHead_27", "WhiteHead_28", "WhiteHead_29", "WhiteHead_30", "WhiteHead_31", "WhiteHead_32",
+"TanoanHead_A3_02","TanoanHead_A3_04","TanoanHead_A3_03","TanoanHead_A3_05","TanoanHead_A3_07","TanoanHead_A3_01","TanoanHead_A3_06","TanoanHead_A3_09",
+"TanoanHead_A3_08","RussianHead_4","LivonianHead_5","LivonianHead_2","LivonianHead_9","RussianHead_1","LivonianHead_6","LivonianHead_3","RussianHead_3",
+"LivonianHead_1","RussianHead_2","LivonianHead_10","LivonianHead_8","LivonianHead_4","LivonianHead_7","RussianHead_5","Sturrock",
+"WhiteHead_22_l","WhiteHead_22_sa","WhiteHead_22_a","PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03","PersianHead_A3_04_a","PersianHead_A3_04_l","PersianHead_A3_04_sa"]] call _fnc_saveToTemplate;
+//["sfVoices", ["Male01ENGB", "Male02ENG", "Male03ENGB", "Male04ENG", "Male05ENGB"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
@@ -110,25 +120,48 @@ _loadoutData set ["machineGuns", []];
 _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 
+_loadoutData set ["lightATLaunchers", [
+["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "OPTRE_M44_Lykoi_Laser", "", ["OPTRE_M44_Lykoi_HEAT_mag", "OPTRE_M44_Lykoi_HEAT_mag"], [], ""],
+["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_HEAT_mag", "OPTRE_M44_Lykoi_HEAT_mag"], [], ""],
+["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "OPTRE_M44_Lykoi_Laser", "", ["OPTRE_M44_Lykoi_HE_mag", "OPTRE_M44_Lykoi_HE_mag"], [], ""],
+["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_HE_mag", "OPTRE_M44_Lykoi_HE_mag"], [], ""]
+]];
 _loadoutData set ["missileATLaunchers", [
     ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]
 ]];
+_loadoutData set ["ATLaunchers", [
+    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT","OPTRE_M41_Twin_HE","OPTRE_M41_Twin_HEAP","OPTRE_M41_Twin_HEAT_G","OPTRE_M41_Twin_HEAT_SACLOS","OPTRE_M41_Twin_HEAT_SALH"], [], ""]
+]];
 _loadoutData set ["AALaunchers", [
-    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT_Thermal"], [], ""]
+    ["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT_Thermal"], [], ""],
+    ["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "OPTRE_M44_Lykoi_Laser", "", ["OPTRE_M44_Lykoi_AA_mag", "OPTRE_M44_Lykoi_AA_mag"], [], ""],
+    ["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_AA_mag", "OPTRE_M44_Lykoi_AA_mag"], [], ""]
 ]];
 
 _loadoutData set ["sidearms", []];
 _loadoutData set ["glSidearms", []];
 
-_loadoutData set ["ATMines", ["ATMine_Range_Mag"]];
+_loadoutData set ["ATMines", ["UNSCMine_Range_Mag","M41_IED_C_Remote_Mag","M41_IED_Remote_Mag","M41_IED_B_Remote_Mag"]];
 _loadoutData set ["APMines", ["APERSMine_Range_Mag"]];
-_loadoutData set ["lightExplosives", ["DemoCharge_Remote_Mag"]];
-_loadoutData set ["heavyExplosives", ["SatchelCharge_Remote_Mag"]];
+_loadoutData set ["lightExplosives", ["C7_Remote_Mag"]];
+_loadoutData set ["heavyExplosives", ["C12_Remote_Mag","M168_Remote_Mag"]];
 
-_loadoutData set ["antiTankGrenades", []];
+_loadoutData set ["antiTankGrenades", ["OPTRE_c7_remote_throwable_sticky_mag","OPTRE_AU44_122mm_Throwable"]];
 _loadoutData set ["antiInfantryGrenades", ["OPTRE_M9_Frag"]];
-_loadoutData set ["smokeGrenades", ["SmokeShell"]];
-_loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
+_loadoutData set ["smokeGrenades", ["OPTRE_M2_Smoke"]];
+_loadoutData set ["signalsmokeGrenades", [
+    "OPTRE_M2_Smoke_Blue",
+    "OPTRE_M2_Smoke_Green",
+    "OPTRE_M2_Smoke_Orange",
+    "OPTRE_M2_Smoke_Purple",
+    "OPTRE_M2_Smoke_Red",
+    "OPTRE_M2_Smoke_Yellow",
+    "OPTRE_M8_Flare_Blue",
+    "OPTRE_M8_Flare_Green",
+    "OPTRE_M8_Flare",
+    "OPTRE_M8_Flare_White",
+    "OPTRE_M8_Flare_Yellow"
+]];
 
 //Basic equipment. Shouldn't need touching most of the time.
 //Mods might override this, or certain mods might want items removed (No GPSs in WW2, for example)
@@ -145,15 +178,18 @@ _loadoutData set ["traitorUniforms", ["OPTRE_Ins_ER_jacket_brown_surplus"]];
 _loadoutData set ["traitorVests", ["OPTRE_Vest_CMA_Light", "V_Chestrig_blk"]];
 _loadoutData set ["traitorHats", ["OPTRE_CPD_Cap"]];
 
-_loadoutData set ["officerUniforms", ["OPTRE_Ins_ER_jacket_od_surplus"]];
-_loadoutData set ["officerVests", ["OPTRE_Vest_CMA_Light", "V_Chestrig_blk"]];
-_loadoutData set ["officerHats", ["H_Beret_blk"]];
+_loadoutData set ["officerUniforms", ["OPTRE_Ins_BJ_Undersuit_Snw"]];
+_loadoutData set ["officerVests", ["OPTRE_Ins_BJ_Armor"]];
+_loadoutData set ["officerHats", ["OPTRE_ONI_Researcher_Headgear_p"]];
 
 _loadoutData set ["cloakUniforms", []];
-_loadoutData set ["cloakVests", []];
+_loadoutData set ["cloakVests", ["OPTRE_UNSC_M52A_Armor_Sniper_OLI","OPTRE_FC_M52B_Armor_Sniper_URB"]];
 
 _loadoutData set ["uniforms", []];
 _loadoutData set ["slUniforms", []];
+_loadoutData set ["sniUniforms", []];
+_loadoutData set ["medUniforms", []];
+_loadoutData set ["atVests", []];
 _loadoutData set ["mgVests", []];
 _loadoutData set ["medVests", []];
 _loadoutData set ["slVests", []];
@@ -165,7 +201,15 @@ _loadoutData set ["backpacks", []];
 _loadoutData set ["longRangeRadios", ["OPTRE_ANPRC_521_URF", "OPTRE_ANPRC_515"]];
 _loadoutData set ["atBackpacks", []];
 _loadoutData set ["slBackpacks", []];
+_loadoutData set ["medBackpacks", []];
+_loadoutData set ["mgBackpacks", []];
+_loadoutData set ["sniBackpacks", []];
 _loadoutData set ["helmets", []];
+_loadoutData set ["athelmets", []];
+_loadoutData set ["enghelmets", []];
+_loadoutData set ["glhelmets", []];
+_loadoutData set ["medhelmets", []];
+_loadoutData set ["mghelmets", []];
 _loadoutData set ["slHat", ["OPTRE_Ins_URF_Helmet1", "OPTRE_CPD_CH251_URF"]];
 _loadoutData set ["sniHats", ["OPTRE_h_Booniehat_Grey"]];
 
@@ -202,8 +246,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", []];
-_loadoutData set ["goggles", []];
+_loadoutData set ["glasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses",""]];
+_loadoutData set ["goggles", ["OPTRE_Glasses_Cigar","OPTRE_Glasses_Cigarette"]];
 
 //TODO - ACE overrides for misc essentials, medical and engineer gear
 
@@ -212,48 +256,193 @@ _loadoutData set ["goggles", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_sfLoadoutData set ["uniforms", ["OPTRE_Ins_BJ_Undersuit"]];
-_sfLoadoutData set ["vests", ["OPTRE_Ins_BJ_Armor"]];
-_sfLoadoutData set ["mgVests", ["OPTRE_Ins_BJ_Armor"]];
-_sfLoadoutData set ["medVests", ["OPTRE_Ins_BJ_Armor"]];
-_sfLoadoutData set ["glVests", ["OPTRE_Ins_BJ_Armor"]];
-_sfLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black"]];
-_sfLoadoutData set ["slBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
-_sfLoadoutData set ["atBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
-_sfLoadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515"]];
-_sfLoadoutData set ["helmets", ["OPTRE_Ins_BJ_Helmet", "OPTRE_UNSC_CH252_Helmet2_Vacuum_URB", "OPTRE_UNSC_CH252_Helmet_Vacuum_URB_MED"]];
-_sfLoadoutData set ["slHat", ["OPTRE_CH255_Security_Advanced_Type_2_Helmet_Black"]];
-_sfLoadoutData set ["sniHats", ["OPTRE_FC_VX19_Helmet_Urban"]];
+_sfLoadoutData set ["uniforms", ["OPTRE_Ins_BJ_Undersuit","OPTRE_Ins_BJ_Undersuit_Wdl"]];
 
+_sfLoadoutData set ["vests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]]; //make them spartans
+_sfLoadoutData set ["mgVests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_sfLoadoutData set ["medVests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_sfLoadoutData set ["glVests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_sfLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black"]];
+_sfLoadoutData set ["atBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
+_sfLoadoutData set ["mgBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
+_sfLoadoutData set ["medBackpacks", ["OPTRE_ILCS_Rucksack_Medical","OPTRE_UNSC_Rucksack_Medic"]];
+_sfLoadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515"]];
+_sfLoadoutData set ["helmets", ["OPTRE_Ins_BJ_Helmet", "OPTRE_Ins_BJ_Helmet_Wdl"]];
+_sfLoadoutData set ["slHat", ["OPTRE_Ins_BJ_Helmet_Spartan"]];
+_sfLoadoutData set ["slVests", ["OPTRE_Ins_BJ_Armor_Spartan"]];
+_sfLoadoutData set ["slUniforms", ["OPTRE_Ins_BJ_Undersuit_Spartan"]];
+_sfLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack_Heavy_Spartan"]];
+_sfLoadoutData set ["sniUniforms", ["OPTRE_Ins_BJ_Undersuit_Spartan"]];
+_sfLoadoutData set ["sniVests", ["OPTRE_Ins_BJ_Armor_Spartan"]];
+_sfLoadoutData set ["sniHats", ["OPTRE_Ins_BJ_Helmet_Spartan"]];
+_sfLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack_Heavy_Spartan"]];
+
+private _sfoptics = [
+    "OPTRE_BR_Classic_Scope",
+    "OPTRE_BR_Classic_Scope_Raised",
+    "OPTRE_BR_Classic_Scope_UNSC_Raised",
+    "OPTRE_BR_Classic_Scope_UNSC",
+    "OPTRE_BR_Classic_Scope_SLS",
+    "OPTRE_BR_Classic_Scope_SLS_UNSC",
+    "OPTRE_BR_Classic_Scope_SLS_Raised",
+    "OPTRE_BR_Classic_Scope_SLS_UNSC_Raised",
+    "OPTRE_BR45_Scope",
+    "OPTRE_BR55HB_Scope",
+    "OPTRE_BR55HB_Scope_Grey",
+    "OPTRE_M392_Scope",
+    "OPTRE_M393_Scope",
+    "OPTRE_M393_ACOG",
+    "OPTRE_BMR_Scope",
+    "OPTRE_M6C_Scope",
+    "OPTRE_M739_SAW_Smartlink",
+    "OPTRE_SRM_Sight"
+];
+private _sfopticsShort = [
+    "Optre_Evo_Sight_Riser",
+    "Optre_Evo_Sight_Riser_Spartan",
+    "Optre_Evo_Sight",
+    "Optre_Evo_Sight_Spartan",
+    "OPTRE_M12_Optic",
+    "OPTRE_M12_Optic_Green",
+    "OPTRE_M12_Optic_Red",
+    "OPTRE_M7_Sight",
+    "OPTRE_MA5_BUIS",
+    "Optre_Recon_Sight",
+    "Optre_Recon_Sight_Green",
+    "Optre_Recon_Sight_Red",
+    "Optre_Recon_Sight_UNSC",
+    "OPTRE_SLS_M_3B",
+    "OPTRE_SLS_M_3B_UNSC",
+    "OPTRE_M393_EOTECH"
+];
+private _sfrail = ["OPTRE_M12_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6C_Laser","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","OPTRE_M7_Laser","OPTRE_BMR_Laser"];
+private _sfmuzzle = ["OPTRE_M12_Suppressor","OPTRE_M26_LMG_Suppressor","OPTRE_M393_Suppressor","OPTRE_M6_silencer","OPTRE_M6C_compensator","OPTRE_M7_silencer","OPTRE_MA37KSuppressor","OPTRE_MA5Suppressor"];
 _sfLoadoutData set ["slRifles", [
-    ["OPTRE_BR55HB", "", "", "optre_br55hb_scope", ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag"], [], ""]
+    ["OPTRE_BR37", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_10RND_338_SP", "OPTRE_10RND_338_SP", "OPTRE_10RND_338_SP", "OPTRE_10RND_338_AP", "OPTRE_10RND_338_VLD"], [], ""],
+    ["OPTRE_BR45_Black", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR55", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55_Grey", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB_Grey", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_CQS48_Bulldog_Automatic_Innie", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic_Innie", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_HMG38", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_HMG38_Rifle", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], [], ""],
+    ["OPTRE_M319", "", _sfrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _sfrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_M45TAC", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45E", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45A", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45ATAC", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M90A", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_MA32", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_Commando_Red", _sfmuzzle, _sfrail, _sfoptics, ["Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag", "Commando_20Rnd_65_ReloadY_Mag", "Commando_20Rnd_65_TracerY_Mag"], [], ""],
+    //GL
+    ["OPTRE_BR45GL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_BR45GL_black", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32GL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37GL", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA5AGL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37BGL", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32BGL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _sfLoadoutData set ["rifles", [
-    ["OPTRE_MA5B", "", "", "optre_ma5_smartlink", ["OPTRE_60Rnd_762x51_Mag", "OPTRE_60Rnd_762x51_Mag", "OPTRE_60Rnd_762x51_Mag"], [], ""],
-    ["OPTRE_BR55HB", "", "", "optre_br55hb_scope", ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag"], [], ""]
+    ["OPTRE_BR45_Black", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR55", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55_Grey", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB_Grey", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_CQS48_Bulldog_Automatic_Innie", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic_Innie", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_HMG38", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_HMG38_Rifle", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], [], ""],
+    ["OPTRE_M319", "", _sfrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _sfrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_M45TAC", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45E", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45A", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45ATAC", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M90A", _sfmuzzle, _sfrail, _sfopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_MA32", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_Commando_Red", _sfmuzzle, _sfrail, _sfoptics, ["Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag", "Commando_20Rnd_65_ReloadY_Mag", "Commando_20Rnd_65_TracerY_Mag"], [], ""]
 ]];
+private _sfm6Rail = ["OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red"];
 _sfLoadoutData set ["carbines", [
-    ["OPTRE_M392_DMR", "", "optre_dmr_light", "optre_br55hb_scope", ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag"], [], ""],
-    ["OPTRE_Commando", "", "", "optic_Holosight_blk_F", ["Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag"], [], ""]
+    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_Jungle_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Jungle_Tracer", "OPTRE_26Rnd_127x40_Mag_Jungle_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_Jungle_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Jungle_Tracer", "OPTRE_26Rnd_127x40_Mag_Jungle_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_MA37K", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5K", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW"], [], ""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-    ["OPTRE_MA5BGL", "", "", "optre_ma5_smartlink", ["OPTRE_60Rnd_762x51_Mag", "OPTRE_60Rnd_762x51_Mag", "OPTRE_60Rnd_762x51_Mag"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "OPTRE_1Rnd_SmokeGreen_Grenade_shell"], ""]
+    ["OPTRE_M319", "", _sfrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _sfrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_BR45GL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_BR45GL_black", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32GL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37GL", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA5AGL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37BGL", _sfmuzzle, _sfrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32BGL", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _sfLoadoutData set ["SMGs", [
-    ["OPTRE_M7", "", "optre_m7_laser", "optre_m7_sight", [], [], ""],
-    ["OPTRE_M45ATAC", "", "optre_m45_flashlight_green", "", [], [], ""]
+    ["OPTRE_M7", "OPTRE_M7_silencer", _sfrail, _sfopticsShort, ["OPTRE_60Rnd_5x23mm_Mag", "OPTRE_48Rnd_5x23mm_FMJ_Mag", "OPTRE_48Rnd_5x23mm_JHP_Mag", "OPTRE_60Rnd_5x23mm_Mag_tracer_yellow"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
-    ["OPTRE_HMG38", "", "", "OPTRE_BR55HB_Scope", ["OPTRE_100Rnd_30x06_Mag", "OPTRE_100Rnd_30x06_Mag", "OPTRE_100Rnd_30x06_Mag"], [], ""]
+    ["OPTRE_HMG38_Rifle", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], [], ""],
+    ["OPTRE_M247A1", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_200Rnd_762x51_M118_M247A1_Box", "OPTRE_200Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M247A1", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_400Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M247A1_Stripped", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_200Rnd_762x51_M118_M247A1_Box", "OPTRE_200Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M247A1_Stripped", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_400Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M250", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box"], [], "OPTRE_M250_Bipod"],
+    ["OPTRE_M73", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_100Rnd_95x40_Box", "OPTRE_100Rnd_95x40_Box_Tracer_Yellow", "OPTRE_100Rnd_95x40_Box_Tracer"], [], ""],
+    ["OPTRE_M73", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_200Rnd_95x40_Box", "OPTRE_200Rnd_95x40_Box_Tracer_Yellow"], [], ""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-    ["OPTRE_M393_DMR", "", "", "optre_m393_scope", ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag"], [], "bipod_01_f_blk"]
+    ["OPTRE_M392_DMR", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_M393_DMR", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_M393S_DMR", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""]
 ]];
 _sfLoadoutData set ["sniperRifles", [
-    ["OPTRE_SRS99C", "", "", "optre_srs99c_scope", [], [], ""]
+    ["OPTRE_SRM77_S1", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_10Rnd_127x99_noTracer","OPTRE_10Rnd_127x99","OPTRE_5Rnd_127x99_noTracer","OPTRE_5Rnd_127x99"], [], ""],
+    ["OPTRE_SRM77_S1_Green", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_10Rnd_127x99_noTracer","OPTRE_10Rnd_127x99","OPTRE_5Rnd_127x99_noTracer","OPTRE_5Rnd_127x99"], [], ""],
+    ["OPTRE_SRM77_S1_Red", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_10Rnd_127x99_noTracer","OPTRE_10Rnd_127x99","OPTRE_5Rnd_127x99_noTracer","OPTRE_5Rnd_127x99"], [], ""],
+    ["OPTRE_SRM77_S2", "", _sfrail, _sfoptics, ["OPTRE_10Rnd_127x99_Subsonic_noTracer","OPTRE_10Rnd_127x99_Subsonic","OPTRE_5Rnd_127x99_Subsonic_noTracer","OPTRE_5Rnd_127x99_Subsonic"], [], ""],
+    ["OPTRE_SRM77_S2_Green", "", _sfrail, _sfoptics, ["OPTRE_10Rnd_127x99_Subsonic_noTracer","OPTRE_10Rnd_127x99_Subsonic","OPTRE_5Rnd_127x99_Subsonic_noTracer","OPTRE_5Rnd_127x99_Subsonic"], [], ""],
+    ["OPTRE_SRM77_S2_Red", "", _sfrail, _sfoptics, ["OPTRE_10Rnd_127x99_Subsonic_noTracer","OPTRE_10Rnd_127x99_Subsonic","OPTRE_5Rnd_127x99_Subsonic_noTracer","OPTRE_5Rnd_127x99_Subsonic"], [], ""],
+    ["OPTRE_SRS99C", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_4Rnd_145x114_APFSDS_Mag","OPTRE_4Rnd_145x114_APFSDS_Mag","OPTRE_4Rnd_145x114_HVAP_Mag","OPTRE_4Rnd_145x114_HEDP_Mag"], [], ""],
+    ["OPTRE_SRS99C", "OPTRE_SRS99D_Suppressor", _sfrail, _sfoptics, ["OPTRE_4Rnd_145x114_APFSDS_Mag_D","OPTRE_4Rnd_145x114_APFSDS_Mag_D","OPTRE_4Rnd_145x114_HVAP_Mag_D","OPTRE_4Rnd_145x114_HEDP_Mag_D"], [], ""]
 ]];
+private _sfm6MScope = ["OPTRE_M6D_Scope","OPTRE_M6D_Scope_Black","OPTRE_M6D_Scope_Jungle"];
+private _sfm6MRail = ["OPTRE_M6D_IR_Laser","OPTRE_M6D_IR_Black","OPTRE_M6D_IR_Jungle","OPTRE_M6D_Vis_Red_Laser","OPTRE_M6D_Vis_Red_Black","OPTRE_M6D_Vis_Red_Jungle"];
 _sfLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "optre_m6_silencer", "optre_m6g_flashlight", "optre_m6g_scope", [], [], ""]
+    ["OPTRE_M319M", "", "", "", ["M319_HE_Grenade_Shell","M319_Buckshot"], [], ""],
+    ["OPTRE_M319s", "", "", "", ["OPTRE_3Rnd_Smoke_Grenade_shell","M319_Smoke","OPTRE_signalSmokeR"], [], ""],
+    ["OPTRE_M6B", "OPTRE_M6_silencer", _sfrail, _sfm6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6C", "OPTRE_M6_silencer", _sfrail, _sfm6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D", "OPTRE_M6_silencer", _sfm6MRail, _sfm6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6G", "OPTRE_M6_silencer", _sfm6MRail, _sfm6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D_Black", "OPTRE_M6_silencer", _sfm6MRail, _sfm6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D_Jungle", "OPTRE_M6_silencer", _sfm6MRail, _sfm6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M7_Folded", "OPTRE_M7_silencer", _sfrail, _sfopticsShort, ["OPTRE_48Rnd_5x23mm_FMJ_Mag", "OPTRE_48Rnd_5x23mm_JHP_Mag", "OPTRE_60Rnd_5x23mm_Mag_tracer_yellow"], [], ""],
+    ["optre_hgun_comet_F", "OPTRE_MA5Suppressor", _sfrail, _sfopticsShort, ["4Rnd_454Casull", "4Rnd_454Casull", "4Rnd_454Casull", "4Rnd_454Casull"], [], ""],
+    ["optre_hgun_sas10_F", "OPTRE_M6_silencer", _sfrail, _sfopticsShort, ["32Rnd_10mm_Ball", "16Rnd_10mm_AP", "16Rnd_10mm_Ball"], [], ""],
+    ["optre_hgun_sas10_jungle_F", "OPTRE_M6_silencer", _sfrail, _sfopticsShort, ["32Rnd_10mm_Ball", "16Rnd_10mm_AP", "16Rnd_10mm_Ball"], [], ""]
 ]];
 
 _sfLoadoutData set ["lightATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]]];
@@ -264,48 +453,186 @@ _sfLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Tw
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
+_eliteLoadoutData set ["uniforms", ["OPTRE_Ins_BJ_Undersuit","OPTRE_Ins_BJ_Undersuit_Wdl"]];
+_eliteLoadoutData set ["vests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_eliteLoadoutData set ["mgVests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_eliteLoadoutData set ["medVests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_eliteLoadoutData set ["glVests", ["OPTRE_Ins_BJ_Armor","OPTRE_Ins_BJ_Armor_Wdl"]];
+_eliteLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black"]];
+_eliteLoadoutData set ["slBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
+_eliteLoadoutData set ["atBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
+_eliteLoadoutData set ["medBackpacks", ["OPTRE_ILCS_Rucksack_Medical","OPTRE_UNSC_Rucksack_Medic"]];
+_eliteLoadoutData set ["mgBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
+_eliteLoadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515"]];
+_eliteLoadoutData set ["helmets", ["OPTRE_Ins_BJ_Helmet", "OPTRE_Ins_BJ_Helmet_Wdl"]];
+_eliteLoadoutData set ["slHat", ["OPTRE_Ins_BJ_Helmet", "OPTRE_Ins_BJ_Helmet_Wdl"]];
 
-_eliteLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform", "OPTRE_Ins_URF_Combat_Flat_Uniform"]];
-_eliteLoadoutData set ["slUniform", ["OPTRE_Ins_ER_jacket_od_surplus"]];
-_eliteLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
-_eliteLoadoutData set ["mgVests", ["OPTRE_Ins_URF_Armor1_Flat"]];
-_eliteLoadoutData set ["medVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
-_eliteLoadoutData set ["slVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
-_eliteLoadoutData set ["glVests", ["OPTRE_Ins_URF_Armor1"]];
-_eliteLoadoutData set ["engVests", ["OPTRE_Ins_URF_Armor1"]];
-_eliteLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack", "B_AssaultPack_khk", "B_FieldPack_oli"]];
-_eliteLoadoutData set ["slBackpacks", ["B_Kitbag_rgr"]];
-_eliteLoadoutData set ["atBackpacks", ["B_TacticalPack_blk"]];
-_eliteLoadoutData set ["helmets", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet2"]];
-_eliteLoadoutData set ["sniHats", ["OPTRE_Ins_URF_Helmet4_Brown"]];
-
+private _eliteoptics = [
+    "OPTRE_BR_Classic_Scope",
+    "OPTRE_BR_Classic_Scope_Raised",
+    "OPTRE_BR_Classic_Scope_UNSC_Raised",
+    "OPTRE_BR_Classic_Scope_UNSC",
+    "OPTRE_BR_Classic_Scope_SLS",
+    "OPTRE_BR_Classic_Scope_SLS_UNSC",
+    "OPTRE_BR_Classic_Scope_SLS_Raised",
+    "OPTRE_BR_Classic_Scope_SLS_UNSC_Raised",
+    "OPTRE_BR45_Scope",
+    "OPTRE_BR55HB_Scope",
+    "OPTRE_BR55HB_Scope_Grey",
+    "OPTRE_M392_Scope",
+    "OPTRE_M393_Scope",
+    "OPTRE_M393_ACOG",
+    "OPTRE_BMR_Scope",
+    "OPTRE_M6C_Scope",
+    "OPTRE_M739_SAW_Smartlink",
+    "OPTRE_SRM_Sight"
+];
+private _eliteopticsShort = [
+    "Optre_Evo_Sight_Riser",
+    "Optre_Evo_Sight_Riser_Spartan",
+    "Optre_Evo_Sight",
+    "Optre_Evo_Sight_Spartan",
+    "OPTRE_M12_Optic",
+    "OPTRE_M12_Optic_Green",
+    "OPTRE_M12_Optic_Red",
+    "OPTRE_M7_Sight",
+    "OPTRE_MA5_BUIS",
+    "Optre_Recon_Sight",
+    "Optre_Recon_Sight_Green",
+    "Optre_Recon_Sight_Red",
+    "Optre_Recon_Sight_UNSC",
+    "OPTRE_SLS_M_3B",
+    "OPTRE_SLS_M_3B_UNSC",
+    "OPTRE_M393_EOTECH"
+];
+private _eliterail = ["OPTRE_M12_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6C_Laser","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","OPTRE_M7_Laser","OPTRE_BMR_Laser"];
+private _elitemuzzle = ["OPTRE_M247a1_Flashhider","OPTRE_M26_LMG_Comp"];
 _eliteLoadoutData set ["slRifles", [
-    ["OPTRE_BR55", "", "", "optre_br55hb_scope", ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag"], [], ""]
+    ["OPTRE_BR37", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_10RND_338_SP", "OPTRE_10RND_338_SP", "OPTRE_10RND_338_SP", "OPTRE_10RND_338_AP", "OPTRE_10RND_338_VLD"], [], ""],
+    ["OPTRE_BR45_Black", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR55", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55_Grey", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB_Grey", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_CQS48_Bulldog_Automatic_Innie", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic_Innie", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_HMG38", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_HMG38_Rifle", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], [], ""],
+    ["OPTRE_M319", "", _eliterail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _eliterail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_M45TAC", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45E", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45A", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45ATAC", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M90A", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_MA32", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_Commando_Red", _elitemuzzle, _eliterail, _eliteoptics, ["Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag", "Commando_20Rnd_65_ReloadY_Mag", "Commando_20Rnd_65_TracerY_Mag"], [], ""],
+    //GL
+    ["OPTRE_BR45GL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_BR45GL_black", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32GL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37GL", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA5AGL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37BGL", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32BGL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _eliteLoadoutData set ["rifles", [
-    ["OPTRE_MA5C", "", "", "", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_BR45_Black", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR55", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55_Grey", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_BR55HB_Grey", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], ""],
+    ["OPTRE_CQS48_Bulldog_Automatic_Innie", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_CQS48S_Chihuahua_Automatic_Innie", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_12Gauge_Pellets", "OPTRE_12Rnd_12Gauge_Pellets_Tracer", "OPTRE_12Rnd_12Gauge_Smoke", "OPTRE_12Rnd_12Gauge_Smoke_Tracer", "OPTRE_12Rnd_12Gauge_HE", "OPTRE_12Rnd_12Gauge_HE_Tracer"], [], ""],
+    ["OPTRE_HMG38", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_HMG38_Rifle", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], [], ""],
+    ["OPTRE_M319", "", _eliterail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _eliterail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_M45TAC", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45E", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45A", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M45ATAC", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_M90A", _elitemuzzle, _eliterail, _eliteopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_HEDP"], [], ""],
+    ["OPTRE_MA32", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_Commando_Red", _elitemuzzle, _eliterail, _eliteoptics, ["Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag", "Commando_20Rnd_65_ReloadY_Mag", "Commando_20Rnd_65_TracerY_Mag"], [], ""]
 ]];
+private _elitem6Rail = ["OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red"];
 _eliteLoadoutData set ["carbines", [
-    ["OPTRE_MA37B", "", "", "", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_M6D_Carbine_F", "", _elitem6Rail, _eliteoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_F", "", _elitem6Rail, _eliteoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_Black_F", "", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_Jungle_F", "", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Jungle_Tracer", "OPTRE_26Rnd_127x40_Mag_Jungle_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_Jungle_F", "", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Jungle_Tracer", "OPTRE_26Rnd_127x40_Mag_Jungle_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_MA37K", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5K", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW"], [], ""]
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-    ["OPTRE_M319N", "", "", "", ["M319_HE_Grenade_Shell", "M319_Smoke", "OPTRE_signalSmokeB"], [], ""]
+    ["OPTRE_M319", "", _eliterail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _eliterail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_BR45GL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_BR45GL_black", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32GL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37GL", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA5AGL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA37BGL", _elitemuzzle, _eliterail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""],
+    ["OPTRE_MA32BGL", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["3Rnd_HE_Grenade_shell","3Rnd_HE_Grenade_shell","OPTRE_3Rnd_Smoke_Grenade_shell"], ""]
 ]];
 _eliteLoadoutData set ["SMGs", [
-    ["OPTRE_M7", "", "", "", [], [], ""],
-    ["OPTRE_M45", "", "", "", [], [], ""]
+    ["OPTRE_M7", "OPTRE_M7_silencer", _eliterail, _eliteopticsShort, ["OPTRE_60Rnd_5x23mm_Mag", "OPTRE_48Rnd_5x23mm_FMJ_Mag", "OPTRE_48Rnd_5x23mm_JHP_Mag", "OPTRE_60Rnd_5x23mm_Mag_tracer_yellow"], [], ""]
 ]];
 _eliteLoadoutData set ["machineGuns", [
-    ["OPTRE_M247", "", "", "", ["OPTRE_100Rnd_762x51_Box", "OPTRE_100Rnd_762x51_Box", "OPTRE_100Rnd_762x51_Box"], [], "bipod_01_F_blk"]
+    ["OPTRE_HMG38_Rifle", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_100Rnd_30x06_Mag", "OPTRE_100Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer"], [], ""],
+    ["OPTRE_M247A1", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_200Rnd_762x51_M118_M247A1_Box", "OPTRE_200Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M247A1", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_400Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M247A1_Stripped", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_200Rnd_762x51_M118_M247A1_Box", "OPTRE_200Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M247A1_Stripped", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_400Rnd_762x51_M80_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M250", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box"], [], "OPTRE_M250_Bipod"],
+    ["OPTRE_M73", _elitemuzzle, _eliterail, "OPTRE_M73_SmartLink", ["OPTRE_100Rnd_95x40_Box", "OPTRE_100Rnd_95x40_Box_Tracer_Yellow", "OPTRE_100Rnd_95x40_Box_Tracer"], [], ""],
+    ["OPTRE_M73", _elitemuzzle, _eliterail, "OPTRE_M73_SmartLink", ["OPTRE_200Rnd_95x40_Box", "OPTRE_200Rnd_95x40_Box_Tracer_Yellow"], [], ""]
 ]];
 _eliteLoadoutData set ["marksmanRifles", [
-    ["OPTRE_M295_BMR", "", "", "optre_m393_acog", ["OPTRE_25Rnd_762x51_Mag", "OPTRE_25Rnd_762x51_Mag", "OPTRE_25Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_M392_DMR", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_M393_DMR", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_M393S_DMR", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""]
 ]];
 _eliteLoadoutData set ["sniperRifles", [
-    ["OPTRE_SRS99C", "", "", "optre_srs99c_scope", [], [], ""]
+    ["OPTRE_SRM77_S1", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_10Rnd_127x99_noTracer","OPTRE_10Rnd_127x99","OPTRE_5Rnd_127x99_noTracer","OPTRE_5Rnd_127x99"], [], ""],
+    ["OPTRE_SRM77_S1_Green", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_10Rnd_127x99_noTracer","OPTRE_10Rnd_127x99","OPTRE_5Rnd_127x99_noTracer","OPTRE_5Rnd_127x99"], [], ""],
+    ["OPTRE_SRM77_S1_Red", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_10Rnd_127x99_noTracer","OPTRE_10Rnd_127x99","OPTRE_5Rnd_127x99_noTracer","OPTRE_5Rnd_127x99"], [], ""],
+    ["OPTRE_SRM77_S2", "", _eliterail, _eliteoptics, ["OPTRE_10Rnd_127x99_Subsonic_noTracer","OPTRE_10Rnd_127x99_Subsonic","OPTRE_5Rnd_127x99_Subsonic_noTracer","OPTRE_5Rnd_127x99_Subsonic"], [], ""],
+    ["OPTRE_SRM77_S2_Green", "", _eliterail, _eliteoptics, ["OPTRE_10Rnd_127x99_Subsonic_noTracer","OPTRE_10Rnd_127x99_Subsonic","OPTRE_5Rnd_127x99_Subsonic_noTracer","OPTRE_5Rnd_127x99_Subsonic"], [], ""],
+    ["OPTRE_SRM77_S2_Red", "", _eliterail, _eliteoptics, ["OPTRE_10Rnd_127x99_Subsonic_noTracer","OPTRE_10Rnd_127x99_Subsonic","OPTRE_5Rnd_127x99_Subsonic_noTracer","OPTRE_5Rnd_127x99_Subsonic"], [], ""],
+    ["OPTRE_SRS99C", _elitemuzzle, _eliterail, _eliteoptics, ["OPTRE_4Rnd_145x114_APFSDS_Mag","OPTRE_4Rnd_145x114_APFSDS_Mag","OPTRE_4Rnd_145x114_HVAP_Mag","OPTRE_4Rnd_145x114_HEDP_Mag"], [], ""],
+    ["OPTRE_SRS99D", "", _eliterail, _eliteoptics, ["OPTRE_4Rnd_145x114_APFSDS_Mag_D","OPTRE_4Rnd_145x114_APFSDS_Mag_D","OPTRE_4Rnd_145x114_HVAP_Mag_D","OPTRE_4Rnd_145x114_HEDP_Mag_D"], [], ""]
 ]];
+private _elitem6MScope = ["OPTRE_M6D_Scope","OPTRE_M6D_Scope_Black","OPTRE_M6D_Scope_Jungle"];
+private _elitem6MRail = ["OPTRE_M6D_IR_Laser","OPTRE_M6D_IR_Black","OPTRE_M6D_IR_Jungle","OPTRE_M6D_Vis_Red_Laser","OPTRE_M6D_Vis_Red_Black","OPTRE_M6D_Vis_Red_Jungle"];
 _eliteLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "", "optre_m6g_flashlight", "", [], [], ""]
+    ["OPTRE_M319M", "", "", "", ["M319_HE_Grenade_Shell","M319_Buckshot"], [], ""],
+    ["OPTRE_M319s", "", "", "", ["OPTRE_3Rnd_Smoke_Grenade_shell","M319_Smoke","OPTRE_signalSmokeR"], [], ""],
+    ["OPTRE_M6B", "", _eliterail, _elitem6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6C", "", _eliterail, _elitem6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D", "", _elitem6MRail, _elitem6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6G", "", _elitem6MRail, _elitem6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D_Black", "", _elitem6MRail, _elitem6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D_Jungle", "", _elitem6MRail, _elitem6MScope, ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M7_Folded", "", _eliterail, _eliteopticsShort, ["OPTRE_48Rnd_5x23mm_FMJ_Mag", "OPTRE_48Rnd_5x23mm_JHP_Mag", "OPTRE_60Rnd_5x23mm_Mag_tracer_yellow"], [], ""],
+    ["optre_hgun_comet_F", "", _eliterail, _eliteopticsShort, ["4Rnd_454Casull", "4Rnd_454Casull", "4Rnd_454Casull", "4Rnd_454Casull"], [], ""],
+    ["optre_hgun_sas10_F", "", _eliterail, _eliteopticsShort, ["32Rnd_10mm_Ball", "16Rnd_10mm_AP", "16Rnd_10mm_Ball"], [], ""],
+    ["optre_hgun_sas10_jungle_F", "", _eliterail, _eliteopticsShort, ["32Rnd_10mm_Ball", "16Rnd_10mm_AP", "16Rnd_10mm_Ball"], [], ""]
 ]];
 
 _eliteLoadoutData set ["lightATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]]];
@@ -316,50 +643,142 @@ _eliteLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_militaryLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform", "OPTRE_Ins_URF_Combat_Flat_Uniform"]];
-_militaryLoadoutData set ["slUniform", ["OPTRE_Ins_ER_jacket_od_surplus"]];
-_militaryLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
-_militaryLoadoutData set ["mgVests", ["OPTRE_Ins_URF_Armor1_Flat"]];
-_militaryLoadoutData set ["medVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
-_militaryLoadoutData set ["slVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
-_militaryLoadoutData set ["glVests", ["OPTRE_Ins_URF_Armor1"]];
-_militaryLoadoutData set ["engVests", ["OPTRE_Ins_URF_Armor1"]];
-_militaryLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack", "B_AssaultPack_khk", "B_FieldPack_oli"]];
-_militaryLoadoutData set ["slBackpacks", ["B_Kitbag_rgr"]];
-_militaryLoadoutData set ["atBackpacks", ["B_TacticalPack_blk"]];
-_militaryLoadoutData set ["helmets", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet2"]];
-_militaryLoadoutData set ["sniHats", ["OPTRE_Ins_URF_Helmet4_Brown"]];
+_militaryLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform","OPTRE_Ins_URF_Combat_Flat_Uniform","OPTRE_Ins_URF_Combat_Jungle_Uniform","OPTRE_Ins_URF_Combat_Jungle_Flat_Uniform","OPTRE_Ins_URF_Combat_Woodland_Uniform","OPTRE_Ins_URF_Combat_Woodland_Flat_Uniform"]];
+_militaryLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1","OPTRE_Ins_URF_Armor1_Flat","OPTRE_Ins_URF_Jungle_Armor1","OPTRE_Ins_URF_Jungle_Armor1_Flat","OPTRE_Ins_URF_Woodland_Armor1","OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
+_militaryLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
+_militaryLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
+_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
+_militaryLoadoutData set ["mgBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
+_militaryLoadoutData set ["helmets", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet4","OPTRE_Ins_URF_Helmet4_Brown","OPTRE_Ins_URF_Helmet3","OPTRE_Ins_URF_Helmet3_Brown","OPTRE_Ins_URF_Helmet2","OPTRE_Ins_URF_Helmet2_Brown","OPTRE_Ins_URF_Helmet1_Brown"]];
+_militaryLoadoutData set ["sniHats", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet4","OPTRE_Ins_URF_Helmet4_Brown","OPTRE_Ins_URF_Helmet3","OPTRE_Ins_URF_Helmet3_Brown","OPTRE_Ins_URF_Helmet2","OPTRE_Ins_URF_Helmet2_Brown","OPTRE_Ins_URF_Helmet1_Brown"]];
+
+private _militaryoptics = [
+    "OPTRE_BR_Classic_Scope",
+    "OPTRE_BR_Classic_Scope_Raised",
+    "OPTRE_BR_Classic_Scope_UNSC_Raised",
+    "OPTRE_BR_Classic_Scope_UNSC",
+    "OPTRE_BR_Classic_Scope_SLS",
+    "OPTRE_BR_Classic_Scope_SLS_UNSC",
+    "OPTRE_BR_Classic_Scope_SLS_Raised",
+    "OPTRE_BR_Classic_Scope_SLS_UNSC_Raised",
+    "OPTRE_BR45_Scope",
+    "OPTRE_BR55HB_Scope",
+    "OPTRE_BR55HB_Scope_Grey",
+    "OPTRE_M392_Scope",
+    "OPTRE_M393_Scope",
+    "OPTRE_M393_ACOG",
+    "OPTRE_BMR_Scope"
+];
+private _militaryopticsShort = [
+    "Optre_Evo_Sight_Riser",
+    "Optre_Evo_Sight_Riser_Spartan",
+    "Optre_Evo_Sight",
+    "Optre_Evo_Sight_Spartan",
+    "OPTRE_M12_Optic",
+    "OPTRE_M12_Optic_Green",
+    "OPTRE_M12_Optic_Red",
+    "OPTRE_M7_Sight",
+    "OPTRE_MA5_BUIS",
+    "Optre_Recon_Sight",
+    "Optre_Recon_Sight_Green",
+    "Optre_Recon_Sight_Red",
+    "Optre_Recon_Sight_UNSC",
+    "OPTRE_SLS_M_3B",
+    "OPTRE_SLS_M_3B_UNSC",
+    "OPTRE_M393_EOTECH"
+];
+private _militaryrail = ["OPTRE_M45_Flashlight","OPTRE_M6G_Flashlight","OPTRE_M7_Flashlight"];
+private _militarymuzzle = ["OPTRE_M26_LMG_Comp", ""];
 
 _militaryLoadoutData set ["slRifles", [
-    ["OPTRE_BR55", "", "", "optre_br55hb_scope", ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag"], [], ""]
+    ["OPTRE_BR45_Black", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_M319", "", _militaryrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _militaryrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_M45TAC", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_M45", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_M45ATAC", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_M90A", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_MA32", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_Commando_Red", _militarymuzzle, _militaryrail, _militaryoptics, ["Commando_20Rnd_65_Mag", "Commando_20Rnd_65_Mag", "Commando_20Rnd_65_ReloadY_Mag", "Commando_20Rnd_65_TracerY_Mag"], [], ""],
+    //GL
+    ["OPTRE_BR45GL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_BR45GL_black", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA32GL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA37GL", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA5AGL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA37BGL", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA32BGL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""]
 ]];
 _militaryLoadoutData set ["rifles", [
-    ["OPTRE_MA5C", "", "", "", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_BR45_Black", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_M319", _militarymuzzle, _militaryrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", _militarymuzzle, _militaryrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_M45TAC", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_M45", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_M45ATAC", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_M90A", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_MA32", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""]
 ]];
 _militaryLoadoutData set ["carbines", [
-    ["OPTRE_MA37B", "", "", "", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_MA37K", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5K", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW"], [], ""]
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-    ["OPTRE_M319N", "", "", "", ["M319_HE_Grenade_Shell", "M319_Smoke", "OPTRE_signalSmokeB"], [], ""]
+    ["OPTRE_M319", "", _militaryrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""], //gl
+    ["OPTRE_M319N", "", _militaryrail, "", ["M319_HE_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_HEDP_Grenade_Shell","M319_HEDPC_Grenade_Shell","M319_Smoke","M319_Buckshot","OPTRE_1Rnd_MasterKey_Pellets","OPTRE_1Rnd_MasterKey_Slugs"], [], ""],
+    ["OPTRE_BR45GL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_BR45GL_black", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA32GL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA37GL", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA5AGL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA37BGL", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""],
+    ["OPTRE_MA32BGL", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], ["1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","OPTRE_signalSmokeY"], ""]
 ]];
 _militaryLoadoutData set ["SMGs", [
-    ["OPTRE_M7", "", "", "", [], [], ""],
-    ["OPTRE_M45", "", "", "", [], [], ""]
+    ["OPTRE_M7", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_60Rnd_5x23mm_Mag", "OPTRE_48Rnd_5x23mm_JHP_Mag", "OPTRE_60Rnd_5x23mm_Mag_tracer_yellow"], [], ""]
 ]];
 _militaryLoadoutData set ["machineGuns", [
-    ["OPTRE_M247", "", "", "", ["OPTRE_100Rnd_762x51_Box", "OPTRE_100Rnd_762x51_Box", "OPTRE_100Rnd_762x51_Box"], [], "bipod_01_F_blk"]
+    ["OPTRE_M247A1_Stripped", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_200Rnd_762x51_M118_M247A1_Box"], [], "OPTRE_M247A1_Bipod"],
+    ["OPTRE_M250", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box","OPTRE_50Rnd_127x99_M250_Box"], [], "OPTRE_M250_Bipod"],
+    ["OPTRE_M73", _militarymuzzle, _militaryrail, "OPTRE_M73_SmartLink", ["OPTRE_100Rnd_95x40_Box", "OPTRE_100Rnd_95x40_Box_Tracer_Yellow"], [], ""]
 ]];
 _militaryLoadoutData set ["marksmanRifles", [
-    ["OPTRE_M295_BMR", "", "", "optre_m393_acog", ["OPTRE_25Rnd_762x51_Mag", "OPTRE_25Rnd_762x51_Mag", "OPTRE_25Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_M392_DMR", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow"], [], ""],
+    ["OPTRE_M393_DMR", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow"], [], ""],
+    ["OPTRE_M393S_DMR", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_AP_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow"], [], ""]
 ]];
 _militaryLoadoutData set ["sniperRifles", [
-    ["OPTRE_SRS99C", "", "", "optre_srs99c_scope", [], [], ""]
+    ["OPTRE_SRS99C", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_4Rnd_145x114_APFSDS_Mag","OPTRE_4Rnd_145x114_APFSDS_Mag"], [], ""],
+    ["OPTRE_SRS99D", "", _militaryrail, _militaryoptics, ["OPTRE_4Rnd_145x114_APFSDS_Mag_D","OPTRE_4Rnd_145x114_APFSDS_Mag_D"], [], ""]
 ]];
+private _military6MRail = ["OPTRE_M6D_Flashlight","OPTRE_M6D_Flashlight_Black","OPTRE_M6D_Flashlight_Jungle"];
 _militaryLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "", "optre_m6g_flashlight", "", [], [], ""]
+    ["OPTRE_M319M", "", "", "", ["M319_Buckshot"], [], ""],
+    ["OPTRE_M319s", "", "", "", ["M319_Smoke","OPTRE_signalSmokeR"], [], ""],
+    ["OPTRE_M6B", "", _militaryrail, "", ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6C", "", _militaryrail, "", ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D", "", _military6MRail, "", ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6G", "", _military6MRail, "", ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D_Black", "", _military6MRail, "", ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""],
+    ["OPTRE_M6D_Jungle", "", _military6MRail, "", ["OPTRE_8Rnd_127x40_AP_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""]
 ]];
 
-_militaryLoadoutData set ["lightATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]]];
+_militaryLoadoutData set ["lightATLaunchers", [
+    ["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "OPTRE_M44_Lykoi_Laser", "", ["OPTRE_M44_Lykoi_HEAT_mag", "OPTRE_M44_Lykoi_HEAT_mag"], [], ""],
+    ["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_HEAT_mag", "OPTRE_M44_Lykoi_HEAT_mag"], [], ""],
+    ["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "OPTRE_M44_Lykoi_Laser", "", ["OPTRE_M44_Lykoi_HE_mag", "OPTRE_M44_Lykoi_HE_mag"], [], ""],
+    ["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_HE_mag", "OPTRE_M44_Lykoi_HE_mag"], [], ""]
+]];
 _militaryLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]]];
 
 ///////////////////////////////
@@ -370,13 +789,24 @@ private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
 _policeLoadoutData set ["uniforms", ["OPTRE_CPD_Uniform", "OPTRE_CPD_Uniform_Rolled"]];
 _policeLoadoutData set ["vests", ["OPTRE_Vest_CPD_Light", "OPTRE_Vest_CPD_Heavy"]];
-_policeLoadoutData set ["helmets", ["OPTRE_CPD_Cap", "OPTRE_CPD_Beret"]];
+_policeLoadoutData set ["helmets", ["OPTRE_CPD_Cap", 2, "OPTRE_CPD_Beret", 2, "OPTRE_CPD_CH251_DME", 1, "OPTRE_CPD_CH251P", 1]];
 
 _policeLoadoutData set ["SMGs", [
-    ["OPTRE_MA37K", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_Bulldog_Riot_Shield_Urban", "", "", "", [], [], ""], 1,
+    ["OPTRE_Comet_Riot_Shield_Urban", "", "", "", [], [], ""], 1,
+    ["OPTRE_M6B_Riot_Shield_Urban", "", "", "", [], [], ""], 1,
+    ["OPTRE_M6C_Riot_Shield_Urban", "", "", "", [], [], ""], 1,
+    ["OPTRE_M6G_Riot_Shield_Urban", "", "", "", [], [], ""], 1,
+    ["OPTRE_MA5K", "", "", "", [], [], ""], 3,
+    ["OPTRE_M7", "", "", "", [], [], ""], 3
 ]];
 _policeLoadoutData set ["sidearms", [
-    ["OPTRE_M6G", "", "", "", ["OPTRE_8Rnd_127x40_AP_Mag"], [], ""]
+    ["OPTRE_M6B", "", "", "", [], [], ""],
+    ["OPTRE_M6C", "", "", "", [], [], ""],
+    ["OPTRE_M6D", "", "", "", [], [], ""],
+    ["OPTRE_M6G", "", "", "", [], [], ""],
+    ["OPTRE_M6D_Black", "", "", "", [], [], ""],
+    ["OPTRE_M6D_Jungle", "", "", "", [], [], ""]
 ]];
 
 ////////////////////////////////
@@ -384,23 +814,39 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_militiaLoadoutData set ["uniforms", ["OPTRE_Ins_ER_rolled_jean_orca", "OPTRE_Ins_ER_rolled_OD_blknblu", "OPTRE_Ins_ER_rolled_surplus_black", "OPTRE_Ins_ER_rolled_surplus_crimson", "OPTRE_Ins_ER_jacket_surplus_brown", "OPTRE_Ins_ER_jacket_surplus_redshirt"]];
+_militiaLoadoutData set ["uniforms", [
+    "OPTRE_Ins_ER_jacket_brown_surplus", "OPTRE_Ins_ER_uniform_GAgreen", "OPTRE_Ins_ER_uniform_GAtan", "OPTRE_Ins_ER_uniform_GGgrey", "OPTRE_Ins_ER_uniform_GGod", 
+    "OPTRE_Ins_ER_jacket_od_surplus", "OPTRE_Ins_ER_rolled_jean_orca", "OPTRE_Ins_ER_rolled_OD_blknblu", "OPTRE_Ins_ER_rolled_OD_blknred", "OPTRE_Ins_ER_rolled_OD_crimson",
+    "OPTRE_Ins_ER_rolled_surplus_black", "OPTRE_Ins_ER_rolled_surplus_crimson", "OPTRE_Ins_ER_jacket_surplus_brown", "OPTRE_Ins_ER_jacket_surplus_OD", "OPTRE_Ins_ER_jacket_surplus_redshirt"
+]];
+_militiaLoadoutData set ["medUniforms", ["OPTRE_Ins_ER_jacket_surgeon1","OPTRE_Ins_ER_jacket_surgeon2"]];
+_militiaLoadoutData set ["slUniforms", ["OPTRE_Ins_URF_Combat_Uniform","OPTRE_Ins_URF_Combat_Flat_Uniform","OPTRE_Ins_URF_Combat_Jungle_Uniform","OPTRE_Ins_URF_Combat_Jungle_Flat_Uniform","OPTRE_Ins_URF_Combat_Woodland_Uniform","OPTRE_Ins_URF_Combat_Woodland_Flat_Uniform"]];
 _militiaLoadoutData set ["vests", ["V_BandollierB_blk", "V_BandollierB_rgr", "V_Chestrig_blk", "V_Chestrig_rgr"]];
+_militiaLoadoutData set ["slVests", ["OPTRE_Ins_URF_Armor1","OPTRE_Ins_URF_Armor1_Flat","OPTRE_Ins_URF_Jungle_Armor1","OPTRE_Ins_URF_Jungle_Armor1_Flat","OPTRE_Ins_URF_Woodland_Armor1","OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
 _militiaLoadoutData set ["sniVests", ["V_TacVest_oli"]];
 _militiaLoadoutData set ["backpacks", ["B_FieldPack_oli", "B_TacticalPack_blk"]];
 _militiaLoadoutData set ["slBackpacks", ["B_Kitbag_rgr", "B_TacticalPack_rgr"]];
 _militiaLoadoutData set ["atBackpacks", ["B_Carryall_oli"]];
+_militiaLoadoutData set ["slHat", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet4","OPTRE_Ins_URF_Helmet4_Brown","OPTRE_Ins_URF_Helmet3","OPTRE_Ins_URF_Helmet3_Brown","OPTRE_Ins_URF_Helmet2","OPTRE_Ins_URF_Helmet2_Brown","OPTRE_Ins_URF_Helmet1_Brown"]];
 _militiaLoadoutData set ["helmets", ["H_Shemag_olive", "H_Shemag_olive_hs", "H_Bandanna_sgg", "H_Bandanna_camo", "H_Watchcap_khk"]];
+
 _militiaLoadoutData set ["sniHats", ["H_Booniehat_khk_hs", "H_Booniehat_oli", "H_Cap_blk", "H_Cap_oli_hs"]];
 
 _militiaLoadoutData set ["rifles", [
-    ["OPTRE_M45", "", "", "", ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs"], [], ""]
+    ["OPTRE_BR45_Black", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_BR45", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
+    ["OPTRE_M45", _militarymuzzle, _militaryrail, _militaryopticsShort, ["OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs"], [], ""],
+    ["OPTRE_MA32", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA5A", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA37B", _militarymuzzle, _militaryrail, "OPTRE_MA37_Smartlink_Scope", ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""],
+    ["OPTRE_MA32B", _militarymuzzle, _militaryrail, _militaryoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""]
 ]];
 _militiaLoadoutData set ["carbines", [
-    ["OPTRE_M393S_DMR", "", "", "", ["OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_Tracer"], [], ""]
+    ["OPTRE_MA5K", "", "", _militaryopticsShort, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW"], [], ""]
 ]];
 _militiaLoadoutData set ["SMGs", [
-    ["OPTRE_MA37K", "", "", "", ["OPTRE_32Rnd_762x51_Mag"], [], ""]
+    ["OPTRE_M7", "", "", _militaryopticsShort, ["OPTRE_48Rnd_5x23mm_Mag", "OPTRE_48Rnd_5x23mm_Mag", "OPTRE_48Rnd_5x23mm_Mag"], [], ""]
 ]];
 _militiaLoadoutData set ["machineGuns", [
     ["OPTRE_M73", "", "", "", ["OPTRE_100Rnd_95x40_Box", "OPTRE_100Rnd_95x40_Box", "OPTRE_100Rnd_95x40_Box"], [], "bipod_01_F_blk"]
@@ -412,25 +858,44 @@ _militiaLoadoutData set ["sidearms", [
     ["OPTRE_M6G", "", "", "", ["OPTRE_8Rnd_127x40_AP_Mag"], [], ""]
 ]];
 
-_militiaLoadoutData set ["lightATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]]];
-_militiaLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Twin_HEAT"], [], ""]]];
+_militiaLoadoutData set ["lightATLaunchers", [["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_HE_mag"], [], ""]]];
+_militiaLoadoutData set ["ATLaunchers", [["OPTRE_M44_Lykoi_Semi_Disposable_AT", "", "", "", ["OPTRE_M44_Lykoi_HEAT_mag"], [], ""]]];
 
 //////////////////////////
 //    Misc Loadouts     //
 //////////////////////////
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform"]];
+_crewLoadoutData set ["uniforms", ["OPTRE_Ins_BJ_Undersuit","OPTRE_Ins_BJ_Undersuit_Wdl"]];
 _crewLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
-_crewLoadoutData set ["helmets", ["OPTRE_Ins_URF_Helmet2"]];
+_crewLoadoutData set ["helmets", [
+    "OPTRE_CH255_Security_Type_4_Helmet",
+    "OPTRE_CH255_Security_Type_3_Helmet",
+    "OPTRE_CH255_Security_Type_2_Helmet",
+    "OPTRE_CH255_Security_Type_1_Helmet",
+    "OPTRE_CH255_Security_Basic_Type_3_Helmet_Black",
+    "OPTRE_CH255_Security_Basic_Type_3_Helmet",
+    "OPTRE_CH255_Security_Basic_Type_2_Helmet",
+    "OPTRE_CH255_Security_Basic_Type_1_Light_Helmet",
+    "OPTRE_CH255_Security_Basic_Type_1_Helmet"
+]];
 _crewLoadoutData set ["carbines", [
     ["OPTRE_M7", "", "", "optre_m12_optic", ["OPTRE_60Rnd_5x23mm_Mag"], [], ""]
 ]];
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform"]];
+_pilotLoadoutData set ["uniforms", ["OPTRE_Ins_BJ_Undersuit","OPTRE_Ins_BJ_Undersuit_Wdl"]];
 _pilotLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
-_pilotLoadoutData set ["helmets", ["OPTRE_Ins_URF_Helmet2"]];
+_pilotLoadoutData set ["helmets", [
+    "OPTRE_CH255_Security_Advanced_Type_4_Helmet",
+    "OPTRE_CH255_Security_Advanced_Type_3_Helmet",
+    "OPTRE_CH255_Security_Advanced_Type_2_Helmet_Tropic",
+    "OPTRE_CH255_Security_Advanced_Type_2_Helmet_Black",
+    "OPTRE_CH255_Security_Advanced_Type_2_Helmet",
+    "OPTRE_CH255_Security_Advanced_Type_1_Helmet_Tropic",
+    "OPTRE_CH255_Security_Advanced_Type_1_Helmet_Black",
+    "OPTRE_CH255_Security_Advanced_Type_1_Helmet"
+]];
 _pilotLoadoutData set ["carbines", [
     ["OPTRE_M6G", "", "", "", ["OPTRE_8Rnd_127x40_Mag_Tracer"], [], ""]
 ]];
@@ -533,8 +998,8 @@ private _medicTemplate = {
     ["helmets"] call _fnc_setHelmet;
     ["glasses"] call _fnc_setFacewear;
     [["medVests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
+    [["medUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
+    [["medBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
@@ -738,7 +1203,7 @@ private _machineGunnerTemplate = {
     ["glasses"] call _fnc_setFacewear;
     [["mgVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
+    [["mgBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     ["machineGuns"] call _fnc_setPrimary;
     ["primary", 4] call _fnc_addMagazines;
@@ -763,7 +1228,7 @@ private _marksmanTemplate = {
     ["sniHats"] call _fnc_setHelmet;
     ["glasses"] call _fnc_setFacewear;
     [["sniVests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
+    [["sniUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
 
     ["marksmanRifles"] call _fnc_setPrimary;
@@ -790,8 +1255,8 @@ private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
     ["glasses"] call _fnc_setFacewear;
     [["sniVests", "vests"] call _fnc_fallback] call _fnc_setVest;
-    ["uniforms"] call _fnc_setUniform;
-    ["backpacks"] call _fnc_setBackpack;
+    [["sniUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
+    [["sniBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     ["sniperRifles"] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
@@ -973,12 +1438,14 @@ private _patrolSpotterTemplate = {
 //  Things below here can and will break the gamemode if improperly changed.
 ////////////////////////////////////////////////////////////////////////////////////////
 
+private _spartanUnit = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+
 /////////////////////////////
 //  Special Forces Units   //
 /////////////////////////////
 private _prefix = "SF";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [], [_prefix]],
+    ["SquadLeader", _squadLeaderTemplate, [_spartanUnit], [_prefix]],
     ["Radioman", _radiomanTemplate, [], [_prefix]],
     ["Rifleman", _riflemanTemplate, [], [_prefix]],
     ["Medic", _medicTemplate, [["medic", true]], [_prefix]],
@@ -989,8 +1456,8 @@ private _unitTypes = [
     ["AT", _atTemplate, [], [_prefix]],
     ["AA", _aaTemplate, [], [_prefix]],
     ["MachineGunner", _machineGunnerTemplate, [], [_prefix]],
-    ["Marksman", _marksmanTemplate, [], [_prefix]],
-    ["Sniper", _sniperTemplate, [], [_prefix]]
+    ["Marksman", _marksmanTemplate, [_spartanUnit], [_prefix]],
+    ["Sniper", _sniperTemplate, [_spartanUnit], [_prefix]]
 ];
 
 [_prefix, _unitTypes, _sfLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;

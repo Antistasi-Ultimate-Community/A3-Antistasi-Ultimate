@@ -36,27 +36,33 @@ params ["_group", "_type", "_position", ["_markers", []], ["_placement", 0], ["_
 private _unitDefinition = A3A_customUnitTypes getVariable [_type, []];
 
 if !(_unitDefinition isEqualTo []) exitWith {
-	_unitDefinition params ["_loadouts", "_traits",  "_unitProperties", "_unitClass"];
+    _unitDefinition params ["_loadouts", "_traits", "_unitProperties", "_unitClass"];
     private _canSkip = false;
+	private _skipIdentity = false;
+    
 
     {
-        if (_x select 0 isEqualTo "baseClass") then
-		{
-            _unitClass = _x select 1; // grab the classname
-			if (_unitClass isEqualType []) then
-			{
-				if ((_unitClass select 0) isEqualType []) exitWith
-				{
-					private _weights = ((_x select 1) select 1);
-
-					private _units = ((_x select 1) select 0);
-
-					_unitClass = _units selectRandomWeighted _weights; // grab a random classname, weighted
-					
-					// [_units, _weights] call A3U_fnc_weightTest; // Only for debug. Don't forget to comment before updating, it's probably very intensive
-				};
-				_unitClass = selectRandom (_x select 1); // grab a random classname
-			};
+        if (_x select 0 isEqualTo "baseClass") then {
+            private _classData = _x select 1;
+            
+            // Processing class arrays with weights
+            if (_classData isEqualType []) then {
+                if ((count _classData) == 2 && {(_classData#0) isEqualType []} && {(_classData#1) isEqualType []}) then {
+                    // Format: [[classes], [weights]]
+                    private _classes = _classData#0;
+                    private _weights = _classData#1;
+                    _unitClass = _classes selectRandomWeighted _weights;
+                } else {
+                    // Simple array of classes
+                    _unitClass = selectRandom _classData;
+                };
+            } else {
+                // Single class
+                _unitClass = _classData;
+            };
+			if (count _x > 2 && {_x select 3 isEqualTo true}) then {
+        	    _skipIdentity = true;
+        	};
         };
         if (_x select 2 isEqualTo true) then
 		{
@@ -67,29 +73,30 @@ if !(_unitDefinition isEqualTo []) exitWith {
 	private _unit = _group createUnit [_unitClass, _position, _markers, _placement, _special];
     [_unit] joinSilent _group; // normally, this command is literally pointless. But when we're mixing base classes (e.g opfor) but spawning them as blufor (swap enemy sides selection), it'll make them fight each other unless we do this
 
-    if (_canSkip isEqualTo false) then {
-	    _unit setUnitLoadout selectRandom _loadouts;
+    if (!_canSkip) then {
+        _unit setUnitLoadout selectRandom _loadouts;
     };
-	_unit setVariable ["unitType", _type, true];
-
-	private _identity = if (isNil "_identity") then {
-		[Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
+    _unit setVariable ["unitType", _type, true];
+    diag_log "before the skip";
+    if (!_skipIdentity) then {
+		diag_log "Failed the skip";
+	    private _identity = if (isNil "_identity") then {
+	        [Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
+	    } else {
+	        _identity;
+	    };
+	    [_unit, _identity] call A3A_fnc_setIdentity; ///to not randomize idententity antistati way, need to pass some parameter 
 	} else {
-		_identity;
-	};
-	[_unit, _identity] call A3A_fnc_setIdentity;
+        _unit setVariable ["skipIdentity", _skipIdentity, true]; // we should not be doing that, but NATOinit cals set identity, so it's here
+    };
 
 	//it's very fragile and non-extensible (adding second bool or string value into template will break this)
-	{
-		switch (true) do {
-			case (_x isEqualType true): {
-				_unit setVariable ["isRival", _x, true];
-			};
-			case (_x isEqualType ""): {
-				_unit setVariable ["unitPrefix", _x, true];
-			};
-		};	
-	} forEach _unitProperties;
+    {
+        switch (true) do {
+            case (_x isEqualType true): { _unit setVariable ["isRival", _x, true] };
+            case (_x isEqualType ""): { _unit setVariable ["unitPrefix", _x, true] };
+        };
+    } forEach _unitProperties;
 
 	{
         if (_x select 0 isNotEqualTo "baseClass") then {

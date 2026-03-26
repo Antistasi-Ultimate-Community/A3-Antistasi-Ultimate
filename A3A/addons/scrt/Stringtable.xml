@@ -672,6 +672,170 @@
                 <Original>Aegis is a task force composed of US military personnel; their goal is to support the government in the fight against the FIA ​​and to protect the civilian population. The TFA has several light armored vehicles and a small air force, their intervention in the conflict is limited by the Altian government.</Original>
                 <Turkish>Aegis, ABD askeri personelinden oluşan bir görev gücüdür; amaçları FIA'ya karşı mücadelede hükümeti desteklemek ve sivil nüfusu korumaktır. TFA'nın çeşitli hafif zırhlı araçları ve küçük bir hava gücü vardır, ancak çatışmaya müdahaleleri Altis hükümeti tarafından sınırlandırılmıştır.</Turkish>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Cov">
+                <Original>A specialized Covenant strike force composed of Sangheili (Elites) and Kig-Yar (Jackals). Due to the absence of other client species in this theater, the unit relies on the tactical prowess of its Elite commanders and the skirmishing capabilities of Jackal marksmen. This formation is often deployed for rapid assaults and precision operations where brute numbers are less valuable than adaptability and firepower.</Original>
+                <Russian>Специализированное ударное подразделение Ковенанта, состоящее из Сангхейли (элитов) и Киг-яр (шакалов). В связи с отсутствием других видов в этом секторе, отряд полагается на тактическое мастерство командиров-элитов и разведывательно-огневую поддержку снайперов-шакалов. Такое формирование часто используется для стремительных атак и точных операций, где грубая сила уступает место адаптивности и огневой мощи.</Russian>
+                <Chinesesimp>一支由桑赫利（精英）和基格-亚尔（豺狼）组成的星盟精锐突击部队。由于该战区缺少其他同盟种族，这支队伍依靠精英指挥官的战术素养和豺狼狙击手的游猎能力。此类编制常用于快速突袭和精准行动——在这些场合，适应性与火力比单纯的数量优势更为重要。</Chinesesimp>
+                <Korean>상헤일리(엘리트)와 키그-야르(자칼)로 구성된 코버넌트 특수 타격대입니다. 이 전역에 다른 하위 종족이 없기 때문에, 부대는 엘리트 지휘관의 전술적 능력과 자칼 저격수의 기동 전술에 의존합니다. 이러한 편성은 단순한 병력 수보다 적응력과 화력이 중요한 신속한 강습 및 정밀 작전에 자주 투입됩니다.</Korean>
+                <French>Une force de frappe spécialisée du Covenant composée de Sangheilis (Élites) et de Kig-Yars (Chacals). En raison de l'absence d'autres espèces clientes sur ce théâtre, l'unité s'appuie sur la prouesse tactique de ses commandeurs Élites et sur les capacités de harcèlement des tireurs d'élite Chacals. Cette formation est souvent déployée pour des assauts rapides et des opérations de précision où la puissance brute est moins importante que l'adaptabilité et la puissance de feu.</French>
+                <Turkish>Sangheili (Elitler) ve Kig-Yar (Çakallar)‘dan oluşan özel bir Covenant vurucu gücü. Bu harekât alanında diğer bağlı türlerin bulunmaması nedeniyle birlik, Elit komutanların taktik yeteneklerine ve Çakal keskin nişancıların çatışma becerilerine güveniyor. Bu yapılanma, sayısal üstünlükten çok uyum sağlama ve ateş gücünün önemli olduğu hızlı taarruzlar ve hassas operasyonlar için sıklıkla kullanılır.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_UNSC">
+                <Original>Military forces of the United Nations Space Command. After first contact with the Covenant, UNSC ground forces operate with standard-issue ballistic weapons, vehicles such as the Warthog and Scorpion, and a doctrine focused on combined arms. Fleet support is limited in outer colonies, so infantry and armor must hold the line independently.</Original>
+                <Russian>Военные силы Командования Космических сил Объединённый Наций. После первого контакта с Ковенантом наземные подразделения ККОН используют штатное баллистическое оружие, технику типа "Вепрей" и "Скорпионов", а также тактику общевойскового боя. Во Внешних колониях поддержка флота ограничена, поэтому пехота и бронетехника действуют самостоятельно.</Russian>
+                <Chinesesimp>联合国太空司令部的军事力量。与星盟首次接触后，UNSC地面部队使用标准动能武器、疣猪号和天蝎号等载具，并采用联合作战战术。在外层殖民地，舰队支援有限，步兵和装甲部队需独立作战。</Chinesesimp>
+                <Korean>UNSC의 군사력. 코버넌트와의 첫 접촉 이후, UNSC 지상군은 표준 탄도 무기, 워호그와 스콜피온 같은 차량, 그리고 합동 전술 교리를 사용한다. 외부 식민지에서는 함대 지원이 제한적이므로 보병과 기갑 부대가 독자적으로 전선을 유지해야 한다.</Korean>
+                <French>Forces militaires du Commandement spatial des Nations unies. Après le premier contact avec le Covenant, les forces terrestres de l'UNSC utilisent des armes balistiques standard, des véhicules tels que le Warthog et le Scorpion, et une doctrine axée sur les armes combinées. Le soutien de la flotte est limité dans les colonies extérieures, l'infanterie et les blindés doivent donc tenir la ligne de manière autonome.</French>
+                <Turkish>Birleşmiş Milletler Uzay Komutanlığı'nın askeri kuvvetleri. Covenant ile ilk temastan sonra UNSC kara birlikleri standart balistik silahlar, Warthog ve Scorpion gibi araçlar ve ortak harekât doktrini kullanır. Dış Koloniler'de filo desteği sınırlıdır, bu nedenle piyade ve zırhlı birlikler hattı bağımsız olarak tutmak zorundadır.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Ins">
+                <Original>Loose coalition of colonial militias, secessionists, and opportunistic pirates united by their opposition to the UNSC. Lacking standardized equipment or centralized command, they rely on guerrilla tactics, captured military hardware, and civilian vehicles retrofitted for combat. Their motivations range from genuine political grievance to simple survival in the chaos of the Outer Colonies. While fragmented, their familiarity with local terrain and unpredictable methods make them a persistent threat.</Original>
+                <Russian>Рыхлая коалиция колониальных ополчений, сепаратистов и вооружённых бандитов, объединённых общей борьбой против ККОН. Не имея ни стандартного снаряжения, ни централизованного командования, они полагаются на партизанскую тактику, трофейную военную технику и гражданские машины, переделанные под боевые. Мотивы варьируются от искренних политических претензий до простого выживания в хаосе Внешних колоний. Несмотря на разрозненность, знание местности и непредсказуемые методы делают их постоянной угрозой.</Russian>
+                <Chinesesimp>由殖民地民兵、分裂主义者和投机海盗组成的松散联盟，因共同反对UNSC而联合。由于缺乏标准化装备和统一指挥，他们依靠游击战术、缴获的军用装备以及改装为战斗用途的民用载具。其动机从真实的政治诉求到在外层殖民地混乱中求生存，不一而足。尽管组织涣散，他们对地形的熟悉和不可预测的战术使其成为持续的威胁。</Chinesesimp>
+                <Korean>식민지 민병대, 분리주의자, 기회주의적 해적들이 UNSC에 반대한다는 공통점으로 뭉친 느슨한 연합체입니다. 표준화된 장비나 중앙 집중식 지휘 체계가 없어 게릴라 전술, 노획한 군사 장비, 그리고 전투용으로 개조된 민간 차량에 의존합니다. 그들의 동기는 진정한 정치적 불만에서부터 외부 식민지의 혼란 속에서 살아남기 위한 단순한 생존까지 다양합니다. 분열되어 있지만, 지역 지형에 대한 이해와 예측 불가능한 전술은 그들을 지속적인 위협으로 만듭니다.</Korean>
+                <French>Une coalition lâche de milices coloniales, de sécessionnistes et de pirates opportunistes unis par leur opposition à l'UNSC. Faute d'équipement standardisé ou de commandement centralisé, ils recourent à des tactiques de guérilla, du matériel militaire capturé et des véhicules civils reconvertis pour le combat. Leurs motivations vont du ressentiment politique légitime à la simple survie dans le chaos des Colonies extérieures. Bien que fragmentés, leur connaissance du terrain et leurs méthodes imprévisibles en font une menace persistante.</French>
+                <Turkish>Sömürge milisleri, ayrılıkçılar ve fırsatçı korsanlardan oluşan, UNSC‘ye karşı ortak muhalefette birleşmiş gevşek bir koalisyon. Standart teçhizat veya merkezi komutadan yoksun oldukları için gerilla taktiklerine, ele geçirilmiş askeri teçhizata ve savaş için yeniden düzenlenmiş sivil araçlara güvenirler. Motivasyonları, gerçek siyasi şikayetlerden Dış Koloniler’in kaosunda hayatta kalma mücadelesine kadar uzanır. Parçalı yapılarına rağmen, bölgeye hâkimiyetleri ve öngörülemez yöntemleri onları kalıcı bir tehdit haline getirir.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Reb">
+                <Original>Led by Jerald Mulkey Ander, this faction fights to be free from the reign of the UNSC. They are similar to the United Rebel Front, but have no army to back up their cause. Yet.</Original>
+                <Russian>Возглавляемые Джерольдом Малки Андером, эта фракция борется за свободу от власти ККОН. Они похожи на Объединённый фронт повстанцев, но у них пока нет армии для поддержки своего дела.</Russian>
+                <Chinesesimp>由杰拉尔德·马尔基·安德领导，这个派系为摆脱UNSC的统治而战。他们类似于联合反抗阵线，但目前还没有军队来支持他们的事业。</Chinesesimp>
+                <Korean>제럴드 멀키 앤더가 이끄는 이 진영은 UNSC의 지배에서 벗어나기 위해 싸운다. 그들은 연합 반란군 전선과 유사하지만, 아직 대의를 뒷받침할 군대는 없다.</Korean>
+                <French>Menée par Jerald Mulkey Ander, cette faction lutte pour se libérer de la domination de l'UNSC. Ils sont similaires au Front rebelle uni, mais n'ont pas encore d'armée pour soutenir leur cause.</French>
+                <Turkish>Jerald Mulkey Ander liderliğindeki bu hizip, UNSC'nin egemenliğinden kurtulmak için savaşır. Birleşik İsyan Cephesi'ne benzerler, ancak davalarını destekleyecek bir orduları henüz yoktur.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Reb_ODST">
+                <Original>Dropped feet first into hostile territory, you are tasked with covertly liberating the local population.\n\nThis faction is meant to be used in conjunction with the Covenant. Due to that, this faction may be seen as extremely overpowered.</Original>
+                <Russian>Сброшенные ногами вперёд на вражескую территорию, вы получаете задание тайно освободить местное население.\n\nЭта фракция предназначена для использования вместе с Ковенантом. Из-за этого она может казаться чрезвычайно сильной.</Russian>
+                <Chinesesimp>脚先着地空降至敌对领土，你的任务是秘密解放当地民众。\n\n此派系旨在与星盟一同使用，因此可能显得极为强大。</Chinesesimp>
+                <Korean>적 지역에 발부터 떨어지며, 지역 주민을 은밀히 해방시키는 임무를 맡습니다.\n\n이 진영은 코버넌트와 함께 사용하기 위한 것입니다. 그로 인해 이 진영은 지나치게 강력해 보일 수 있습니다.</Korean>
+                <French>Lâché tête la première en territoire hostile, vous avez pour mission de libérer secrètement la population locale.\n\nCette faction est destinée à être utilisée conjointement avec le Covenant. De ce fait, elle peut être considérée comme extrêmement surpuissante.</French>
+                <Turkish>Ayaklarınız önce düşman bölgesine atılıyorsunuz, yerel halkı gizlice kurtarmakla görevlisiniz.\n\nBu hizip, Covenant ile birlikte kullanılmak üzere tasarlanmıştır. Bu nedenle, bu hizip aşırı güçlü olarak görülebilir.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Reb_UNSC">
+                <Original>Sent behind enemy lines to gather intelligence on the Insurrection, you were shocked when the Covenant invaded. The UNSC (United Nations Space Command) fleet has been decimated, there will be no reinforcements...\n\nThis faction is meant to be used in conjunction with the Covenant. Due to that, this faction may be seen as overpowered.</Original>
+                <Russian>Отправленные в тыл врага для сбора разведданных о восстании, вы были шокированы вторжением Ковенанта. Флот ККОН уничтожен, подкреплений не будет...\n\nЭта фракция предназначена для использования вместе с Ковенантом. Из-за этого она может казаться слишком сильной.</Russian>
+                <Chinesesimp>你被派往敌后收集起义军情报，却震惊地遭遇星盟入侵。UNSC舰队已遭重创，不会有增援……\n\n此派系旨在与星盟一同使用，因此可能显得过于强大。</Chinesesimp>
+                <Korean>반란군 정보 수집을 위해 적진에 파견되었을 때, 코버넌트의 침공에 충격을 받았습니다. UNSC 함대는 궤멸되었고, 지원군은 오지 않을 것입니다...\n\n이 진영은 코버넌트와 함께 사용하기 위한 것입니다. 그로 인해 이 진영은 강력해 보일 수 있습니다.</Korean>
+                <French>Envoyé derrière les lignes ennemies pour recueillir des renseignements sur l'Insurrection, vous êtes choqué lorsque le Covenant envahit. La flotte de l'UNSC (Commandement spatial des Nations unies) a été décimée, il n'y aura pas de renforts...\n\nCette faction est destinée à être utilisée conjointement avec le Covenant. De ce fait, elle peut être considérée comme surpuissante.</French>
+                <Turkish>İsyan hakkında istihbarat toplamak için düşman hatlarının gerisine gönderildiniz, Covenant işgal ettiğinde şok oldunuz. UNSC (Birleşmiş Milletler Uzay Komutanlığı) filosu yok edildi, takviye gelmeyecek...\n\nBu hizip, Covenant ile birlikte kullanılmak üzere tasarlanmıştır. Bu nedenle, bu hizip güçlü olarak görülebilir.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Reb_DME">
+                <Original>The DME (Dark Moon Enterprises) is a private security company. The planet you were providing security for eventually made contact with the Covenant, leading to today. The DME hierarchy has collapsed, and you are now alone.\n\nThis faction is meant to be used in conjunction with the Covenant. Due to that, this faction may be seen as overpowered.</Original>
+                <Russian>DME (Dark Moon Enterprises) — частная охранная компания. Планета, которую вы охраняли, вступила в контакт с Ковенантом, что привело к сегодняшним событиям. Иерархия DME рухнула, и вы теперь одни.\n\nЭта фракция предназначена для использования вместе с Ковенантом. Из-за этого она может казаться слишком сильной.</Russian>
+                <Chinesesimp>DME（暗月企业）是一家私人安保公司。你曾提供安保服务的星球最终与星盟接触，导致了今天的情况。DME的管理层已崩溃，你现在孤身一人。\n\n此派系旨在与星盟一同使用，因此可能显得过于强大。</Chinesesimp>
+                <Korean>DME(다크 문 엔터프라이즈)는 민간 보안 회사입니다. 보안을 제공하던 행성이 결국 코버넌트와 접촉하면서 오늘날에 이르렀습니다. DME의 계층 구조는 붕괴되었고, 이제 당신은 혼자입니다.\n\n이 진영은 코버넌트와 함께 사용하기 위한 것입니다. 그로 인해 이 진영은 강력해 보일 수 있습니다.</Korean>
+                <French>DME (Dark Moon Enterprises) est une société de sécurité privée. La planète pour laquelle vous assuriez la sécurité a fini par entrer en contact avec le Covenant, menant à la situation actuelle. La hiérarchie de DME s'est effondrée et vous êtes désormais seul.\n\nCette faction est destinée à être utilisée conjointement avec le Covenant. De ce fait, elle peut être considérée comme surpuissante.</French>
+                <Turkish>DME (Karanlık Ay Girişimleri) özel bir güvenlik şirketidir. Güvenliğini sağladığınız gezegen sonunda Covenant ile temasa geçti ve bugünlere gelindi. DME hiyerarşisi çöktü ve artık yalnızsınız.\n\nBu hizip, Covenant ile birlikte kullanılmak üzere tasarlanmıştır. Bu nedenle, bu hizip güçlü olarak görülebilir.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Riv">
+                <Original>Led by Colonel Watts, this faction originally fought with the insurrectionists. They hate each other due to different ideals, but still use similar equipment.</Original>
+                <Russian>Возглавляемая полковником Уоттсом, эта фракция изначально сражалась вместе с повстанцами. Они ненавидят друг друга из-за разных идеалов, но всё ещё используют схожее снаряжение.</Russian>
+                <Chinesesimp>由瓦茨上校领导，这个派系最初与起义军并肩作战。由于理念不同，他们相互仇恨，但仍使用相似的装备。</Chinesesimp>
+                <Korean>왓츠 대령이 이끄는 이 진영은 원래 반란군과 함께 싸웠습니다. 서로 다른 이념으로 인해 서로를 증오하지만, 여전히 유사한 장비를 사용합니다.</Korean>
+                <French>Menée par le colonel Watts, cette faction combattait à l'origine aux côtés des insurrectionnistes. Ils se détestent en raison d'idéaux différents, mais utilisent encore un équipement similaire.</French>
+                <Turkish>Albay Watts liderliğindeki bu hizip, başlangıçta isyancılarla birlikte savaştı. Farklı idealler nedeniyle birbirlerinden nefret ediyorlar, ancak hâlâ benzer ekipmanlar kullanıyorlar.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Civ">
+                <Original>OPTRE Civilians. Some of them are even forklift certified.</Original>
+                <Russian>Гражданские OPTRE. Некоторые из них даже имеют удостоверение на управление вилочным погрузчиком.</Russian>
+                <Chinesesimp>OPTRE平民。其中一些人甚至持有叉车驾驶证。</Chinesesimp>
+                <Korean>OPTRE 민간인. 그중 일부는 지게차 자격증까지 보유하고 있습니다.</Korean>
+                <French>Civils OPTRE. Certains d'entre eux sont même certifiés pour conduire un chariot élévateur.</French>
+                <Turkish>OPTRE sivilleri. Hatta bazıları forklift kullanma sertifikasına sahip.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Civ_Flood">
+                <Original>Infected combat forms of the Flood, a parasitic extraterrestrial organism. These grotesque entities were once human or alien soldiers, now twisted into relentless bio-weapons. Driven by a singular hive-mind, they seek to consume all organic matter to fuel their propagation. Each form retains enough combat instinct to wield weapons, but their coordination, resilience, and sheer numbers make them a nightmare to face without overwhelming firepower.</Original>
+                <Russian>Заражённые боевые формы Потопа — паразитического внеземного организма. Эти жуткие создания были когда-то солдатами-людьми или инопланетянами, а теперь превращены в безжалостное биологическое оружие. Подчиняясь единому улью, они стремятся поглотить всю органику для своего распространения. Каждая форма сохраняет достаточно боевых рефлексов, чтобы обращаться с оружием, но их координация, живучесть и подавляющая численность делают столкновение с ними кошмаром без массированной огневой поддержки.</Russian>
+                <Chinesesimp>洪魔的感染战斗形态——一种寄生性的外星生物。这些狰狞的实体曾是人类或外星士兵，如今被扭曲为冷酷的生物武器。受单一虫巢意志驱使，它们致力于吞噬所有有机物以助自身扩散。每个形态都保留足够的战斗本能以使用武器，但其协同性、韧性以及压倒性的数量，使得在没有强大火力支援的情况下遭遇它们如同梦魇。</Chinesesimp>
+                <Korean>기생성 외계 생명체인 홍수의 감염 전투형입니다. 이 기괴한 존재들은 한때 인간 또는 외계인 병사였으나, 지금은 냉혹한 생물학적 무기로 변질되었습니다. 단일 군체 의식에 의해 움직이며, 스스로의 번식을 위해 모든 유기물을 소비하려 합니다. 각 형태는 무기를 다룰 수 있을 만큼의 전투 본능을 유지하고 있으며, 그 협동력, 생존력, 그리고 압도적인 수는 압도적인 화력 없이 맞서는 것을 악몽으로 만듭니다.</Korean>
+                <French>Formes de combat infectées par le Flood, un organisme extraterrestre parasitaire. Ces entités grotesques étaient autrefois des soldats humains ou extraterrestres, désormais transformés en impitoyables bio-armes. Animées par une unique conscience collective, elles cherchent à consumer toute matière organique pour alimenter leur propagation. Chaque forme conserve suffisamment d'instinct de combat pour manier des armes, mais leur coordination, leur résistance et leur nombre écrasant en font un cauchemar à affronter sans une puissance de feu massive.</French>
+                <Turkish>Parazitik bir uzaylı organizma olan Sel‘in enfekte savaş formları. Bu korkunç varlıklar bir zamanlar insan veya uzaylı askerlerdi, şimdi amansız biyolojik silahlara dönüştürülmüşlerdir. Tek bir sürü zekâsı tarafından yönlendirilen bu varlıklar, yayılmalarını beslemek için tüm organik maddeleri tüketmeye çalışır. Her form, silah kullanacak kadar savaş içgüdüsünü korur, ancak koordinasyonları, dayanıklılıkları ve ezici sayıları onları, ezici ateş gücü olmadan karşılaşılması bir kabus haline getirir.</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_UNSC_name">
+                <Original>UNSC</Original>
+                <Russian>ККОН</Russian>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_UNSC_desert_name">
+                <Original>UNSC Desert</Original>
+                <Russian>ККОН (Пустыня)</Russian>
+                <Chinesesimp>UNSC沙漠</Chinesesimp>
+                <Korean>UNSC 사막</Korean>
+                <French>UNSC Désert</French>
+                <Turkish>UNSC Çöl</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_UNSC_snow_name">
+                <Original>UNSC Snow</Original>
+                <Russian>ККОН (Снег)</Russian>
+                <Chinesesimp>UNSC雪地</Chinesesimp>
+                <Korean>UNSC 설원</Korean>
+                <French>UNSC Neige</French>
+                <Turkish>UNSC Kar</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_UNSC_tropical_name">
+                <Original>UNSC Tropical</Original>
+                <Russian>ККОН (Тропики)</Russian>
+                <Chinesesimp>UNSC热带</Chinesesimp>
+                <Korean>UNSC 열대</Korean>
+                <French>UNSC Tropical</French>
+                <Turkish>UNSC Tropik</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Cov_name">
+                <Original>Covenant</Original>
+                <Russian>Ковенант</Russian>
+                <Chinesesimp>星盟</Chinesesimp>
+                <Korean>코버넌트</Korean>
+                <French>Covenant</French>
+                <Turkish>Covenant</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Ins_name">
+                <Original>Insurrection</Original>
+                <Russian>Восстание</Russian>
+                <Chinesesimp>起义军</Chinesesimp>
+                <Korean>반란</Korean>
+                <French>Insurrection</French>
+                <Turkish>İsyan</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Reb_name">
+                <Original>Insurrectionists</Original>
+                <Russian>Повстанцы</Russian>
+                <Chinesesimp>起义军</Chinesesimp>
+                <Korean>반란군</Korean>
+                <French>Insurrectionnistes</French>
+                <Turkish>İsyancılar</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Reb_DME_name">
+                <Original>DME</Original>
+                <Russian>DME</Russian>
+                <Chinesesimp>DME</Chinesesimp>
+                <Korean>DME</Korean>
+                <French>DME</French>
+                <Turkish>DME</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Riv_name">
+                <Original>United Rebel Front</Original>
+                <Russian>Объединённый фронт повстанцев</Russian>
+                <Chinesesimp>联合反抗阵线</Chinesesimp>
+                <Korean>연합 반란군 전선</Korean>
+                <French>Front rebelle uni</French>
+                <Turkish>Birleşik İsyan Cephesi</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Civ_name">
+                <Original>Civilians</Original>
+                <Russian>Гражданские</Russian>
+                <Chinesesimp>平民</Chinesesimp>
+                <Korean>민간인</Korean>
+                <French>Civils</French>
+                <Turkish>Siviller</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_OPTRE_Civ_Flood_name">
+                <Original>Flood</Original>
+                <Russian>Потоп</Russian>
+                <Chinesesimp>洪魔</Chinesesimp>
+                <Korean>홍수</Korean>
+                <French>Flood</French>
+                <Turkish>Sel</Turkish>
+            </Key>
         </Container>
         <Container name="magRepack">
             <Key ID="STR_magRepack_init">
@@ -8475,6 +8639,27 @@
                 <Korean>%1 지원 방향</Korean>
                 <French>Couloir de soutien %1</French>
                 <Turkish>%1 Destek Koridoru</Turkish>
+            </Key>
+            <Key ID="STR_supportcorridorCovenant">
+                <Original>Covenant Supercarrier</Original>
+                <Russian>Сверхноситель Ковенанта</Russian>
+                <Chinesesimp>星盟超级航母</Chinesesimp>
+                <Korean>코버넌트 슈퍼캐리어</Korean>
+                <French>Superporteur du Covenant</French>
+            </Key>
+            <Key ID="STR_supportcorridorInsurrection">
+                <Original>Insurrection Frigate</Original>
+                <Russian>Фрегат Мятежников</Russian>
+                <Chinesesimp>起义军护卫舰</Chinesesimp>
+                <Korean>반란군 호위함</Korean>
+                <French>Frégate de l'Insurrection</French>
+            </Key>
+            <Key ID="STR_supportcorridorUNSC">
+                <Original>UNSC Infinity</Original>
+                <Russian>ККОН "Бесконечность"</Russian>
+                <Chinesesimp>无尽号</Chinesesimp>
+                <Korean>UNSC 인피니티</Korean>
+                <French>Infinité de l'UNSC</French>
             </Key>
             <Key ID="STR_fuelstation">
                 <Original>Fuel Station</Original>
