@@ -32,11 +32,11 @@ if !assert(params[
 if !assert(!isNull _entity) exitWith {};
 
 if !(local _entity) exitWith {
-    [_entity] remoteExecCall[FUNCMAIN(preparePostMortem), _entity];
+    [_entity] remoteExecCall[QFUNCMAIN(preparePostMortem), _entity];
 };
 
 if (isNil { _entity getVariable QGVAR(postMortemPrepped) }) then {
-    _entity setVariable [QGVAR(postMortemPrepped), true];
+    _entity setVariable[QGVAR(postMortemPrepped), true];
     _entity addEventHandler["Killed", FUNCMAIN(postmortem)];
 };
 
