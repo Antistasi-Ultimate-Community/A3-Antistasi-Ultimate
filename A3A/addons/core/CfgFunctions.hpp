@@ -284,7 +284,6 @@ class CfgFunctions
             class createZoneAmmoBox {};
             class createZoneFlag {};
             class crewTypeForVehicle {};
-            class cycleSpawn {};
             class FIAinitBases {};
             class findSpawnPosition {};
             class freeSpawnPositions {};
@@ -306,7 +305,6 @@ class CfgFunctions
             class spawnGroup {};
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
-            class spawnVehiclePrecise {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
             class RivalsCreateVehicleCrew {};
