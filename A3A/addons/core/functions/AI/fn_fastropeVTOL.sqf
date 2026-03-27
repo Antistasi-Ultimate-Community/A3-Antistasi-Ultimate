@@ -27,12 +27,10 @@ _wp setWaypointCompletionRadius 3;
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _veh flyInHeight _midHeight;
 
-[_veh, _landpos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
+[_veh, _landpos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
 
 waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
 _veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);         // to slow down vtols even more
-
-waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
 // Landing path setup for vtol
 private _endPos = _landpos;
@@ -178,6 +176,9 @@ _driver enableAI "PATH";
 waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
+
+_veh setVelocity [20, 0, 5]; /// just a little help if it get's stuck hovering
+
 _veh flyInHeight _midHeight;
 
 _veh limitSpeed (2 * getNumber(configOf _veh >> "maxSpeed"));	// remove the limit

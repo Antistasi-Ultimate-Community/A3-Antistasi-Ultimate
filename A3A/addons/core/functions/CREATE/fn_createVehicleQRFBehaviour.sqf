@@ -36,47 +36,50 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
 {
     if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all, "vehiclesDropPod") || _vtol) exitWith
     {
-        //Transport helicopter or VTOL
-
-        _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), _minObjectDistance, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
-        private _posOrigin = getMarkerPos _markerOrigin;
-        _posOrigin set [2, 50];
-
-        {
-            if(_x distance2D _landPos < _minClearance) exitWith { _landPos = [0, 0, 0] };
-        } forEach _landPosBlacklist;
-        
-        if (_vehType in FactionGet(all, "vehiclesDropPod")) exitWith {
-            [_vehicle, _cargoGroup, _posDestination, _posOrigin] spawn A3A_fnc_OrbitalLanding; // , _crewGroup
-        };
-
-        if !(_landPos isEqualTo [0,0,0]) then {
-            _landPos set [2, 0];
-            _landPosBlacklist pushBack _landPos;
-
-            if (_vtol) then {
-                call selectRandomWeighted [
-                    {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 60,
-                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL}, 25,
-                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 15
-                ];
-            } else {
-                call selectRandomWeighted [
-                    {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 90,
-                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 10
-                ];
-            };
+        // Transport helicopter or VTOL
+        if (_vtol && _isAirdrop) then {
+            [_vehicle, _cargoGroup, _posDestination, _markerOrigin, _resPool] spawn SCRT_fnc_common_paradropVehicle;
         } else {
-            if (_vtol) then {
-                call selectRandomWeighted [
-                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL}, 75,
-                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 25
-                ];
+            _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), _minObjectDistance, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+            private _posOrigin = getMarkerPos _markerOrigin;
+            _posOrigin set [2, 50];
+
+            {
+                if(_x distance2D _landPos < _minClearance) exitWith { _landPos = [0, 0, 0] };
+            } forEach _landPosBlacklist;
+
+            if (_vehType in FactionGet(all, "vehiclesDropPod")) exitWith {
+                [_vehicle, _cargoGroup, _posDestination, _posOrigin] spawn A3A_fnc_OrbitalLanding;
+            };
+
+            if !(_landPos isEqualTo [0,0,0]) then {
+                _landPos set [2, 0];
+                _landPosBlacklist pushBack _landPos;
+
+                if (_vtol) then {
+                    call selectRandomWeighted [
+                        {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 60,
+                        {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL}, 25,
+                        {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, false] spawn A3A_fnc_paradrop}, 15
+                    ];
+                } else {
+                    call selectRandomWeighted [
+                        {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 90,
+                        {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 10
+                    ];
+                };
             } else {
-                call selectRandomWeighted [
-                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 75,
-                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 25
-                ];
+                if (_vtol) then {
+                    call selectRandomWeighted [
+                        {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastropeVTOL}, 75,
+                        {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, false] spawn A3A_fnc_paradrop}, 25
+                    ];
+                } else {
+                    call selectRandomWeighted [
+                        {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 75,
+                        {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, false] spawn A3A_fnc_paradrop}, 25
+                    ];
+                };
             };
         };
     };
@@ -99,7 +102,7 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
             } else {
                 call selectRandomWeighted [
                     {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 80,
-                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 20
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, false] spawn A3A_fnc_paradrop}, 20
                 ];
             };
         } else {
@@ -114,7 +117,7 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
     if (_vehType in FactionGet(all,"vehiclesTransportAir")) exitWith
     {
         //Dropship with para units
-        [_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop;
+        [_vehicle, _cargoGroup, _posDestination, _markerOrigin, false] spawn A3A_fnc_paradrop;
     };
 
     Error_1("Obsolete/unidentified vehicle type %1", _vehType);

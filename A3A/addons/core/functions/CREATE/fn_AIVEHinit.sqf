@@ -119,9 +119,10 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 		[_veh, _flagAction] remoteExec ["A3A_fnc_flagAction", [teamPlayer, civilian], _veh];
 		
 		if !(locked _veh < 2) exitWith {};
+		private _isUAV = unitIsUAV _veh; // ! HR Garage force-crews all rebel UAVs, so call unlockStatic to update staticsToFlip and available vehicle actions appropriately
 		private _saved = _veh in staticsToSave;
 		private _flipped = _veh in staticsToFlip;
-		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_saved && {XOR(A3U_enableVehiclesForAI, _flipped)}));
+		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_isUAV || {_saved && {XOR(A3U_enableVehiclesForAI, _flipped)}}));
 
 		// add *all* rebel vehicles to staticsToSave since we don't have an appropriate rebelVehicles var
 		// only vehicles in staticsToSave AND near a rebel marker will actually be saved during the save loop
