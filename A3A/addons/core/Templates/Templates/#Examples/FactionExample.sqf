@@ -969,6 +969,11 @@ private _patrolSpotterTemplate = {
 /////////////////////////////
 //  Special Forces Units   //
 /////////////////////////////
+//old format (still functional)
+private _eliteUnit = ["baseClass", "OPTRE_FC_Elite_Minor", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+//new format
+private _spartanOrHumanUnit = ["baseClass", [[["OPTRE_FC_Spartan_MkVI", false, true], 0.25],[["OPTRE_UNSC_ODST_Soldier_TeamLeader", true, false], 0.75]]];
+
 private _prefix = "SF";
 private _unitTypes = [
 	["SquadLeader", _squadLeaderTemplate, [], [_prefix]],

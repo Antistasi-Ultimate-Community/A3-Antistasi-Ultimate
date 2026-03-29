@@ -1,7 +1,3 @@
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-
 //////////////////////////////
 //   Civilian Information   //
 //////////////////////////////
@@ -13,8 +9,11 @@ private _hasApex = "expansion" in A3A_enabledDLC;
 //////////////////////////
 
 ["vehiclesCivCar", [
+    "OPTRE_M12_CIV2", 0.2,
+    "OPTRE_M12_CIV", 0.5,
     "OPTRE_Genet", 2.0,
-    "OPTRE_M12_CIV2", 0.5
+    "C_Hatchback_01_sport_F", 0.2, //debetable, I think they fit...sort of
+    "C_Hatchback_01_F", 1
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivIndustrial", [
@@ -24,10 +23,11 @@ private _hasApex = "expansion" in A3A_enabledDLC;
 
 ["vehiclesCivBoat", [
     "C_Boat_Civil_01_F", 0.5,
-    "C_Scooter_Transport_01_F", 0.5
+    "C_Scooter_Transport_01_F", 0.5,
+    "optre_catfish_civ_f", 1
 ]] call _fnc_saveToTemplate;
 
-["vehiclesCivRepair", ["OPTRE_M914_RV", 0.3]] call _fnc_saveToTemplate;
+["vehiclesCivRepair", ["C_Truck_02_box_F", 0.3]] call _fnc_saveToTemplate; //OPTRE_M914_RV //hmmmmmmmmmm
 
 ["vehiclesCivMedical", ["OPTRE_M12_FAV_APC_MED", 0.1]] call _fnc_saveToTemplate;
 
@@ -79,6 +79,8 @@ private _workerUniforms = [
 
 private _dlcUniforms = [];
 
+private _workerHelmets = ["OPTRE_ONI_Researcher_Headgear","OPTRE_ONI_Researcher_Headgear_p"];
+
 ["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
 
 private _civhats = [
@@ -96,11 +98,12 @@ private _civhats = [
 private _loadoutData = call _fnc_createLoadoutData;
 
 _loadoutData set ["uniforms", _civUniforms];
-_loadoutData set ["pressUniforms", _pressUniforms];
-_loadoutData set ["workerUniforms", _workerUniforms];
-_loadoutData set ["pressVests", ["OPTRE_FC_M52B_Armor_Vest_SNO"]];
 _loadoutData set ["helmets", _civHats];
-_loadoutData set ["pressHelmets", ["H_PASGT_basic_blue_press_F"]];
+_loadoutData set ["workerUniforms", _workerUniforms];
+_loadoutData set ["workerHelmets", _workerHelmets];
+_loadoutData set ["pressUniforms", _pressUniforms];
+_loadoutData set ["pressVests", ["OPTRE_UNSC_M52A_Armor_SoftD","OPTRE_UNSC_M52A_Armor_SoftDK","OPTRE_UNSC_M52A_Armor_Soft"]];
+_loadoutData set ["pressHelmets", ["H_Cap_press"]];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];

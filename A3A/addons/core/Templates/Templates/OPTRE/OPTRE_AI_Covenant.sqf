@@ -19,15 +19,15 @@
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type ///replace it with OPTRE analog one day
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type ///replace it with OPTRE analog one day
 
-["vehiclesBasic", ["OPTRE_FC_Ghost"]] call _fnc_saveToTemplate; ///need to write some compatability layer to transform regular one into driverless
+["vehiclesBasic", ["OPTRE_FC_Ghost"]] call _fnc_saveToTemplate; ///need to write some compatability layer to transform regular one into driverless. Probably in addvehicle
 ["vehiclesLightUnarmed", ["OPTRE_FC_Spectre_Empty_Ultra","OPTRE_FC_Spectre_Empty_Needler","OPTRE_FC_Spectre_Empty"]] call _fnc_saveToTemplate; //driver + 2 troops 
 ["vehiclesLightArmed", ["OPTRE_FC_Ghost", "OPTRE_FC_Ghost_Armor", "OPTRE_FC_Ghost_Ultra", "OPTRE_FC_Ghost_Zealot", "OPTRE_FC_Ghost_FuelRod", "OPTRE_FC_Ghost_Needler"]] call _fnc_saveToTemplate; 
 ["vehiclesTrucks", ["OPTRE_FC_Spectre_Transport", "OPTRE_FC_Spectre_Transport_Needler", "OPTRE_FC_Spectre_Transport_Ultra"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["OPTRE_FC_Spectre_Transport", "OPTRE_FC_Spectre_Transport_Needler", "OPTRE_FC_Spectre_Transport_Ultra"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["OPTRE_FC_Spectre_Recovery_Needler"]] call _fnc_saveToTemplate; //hmmm, maybe config fix for spectre ?
-["vehiclesRepairTrucks", ["OPTRE_FC_Spectre_Recovery"]] call _fnc_saveToTemplate; //
-["vehiclesFuelTrucks", ["OPTRE_FC_Spectre_Recovery_Ultra"]] call _fnc_saveToTemplate; //
-["vehiclesMedical", ["OPTRE_FC_Spectre_Recovery"]] call _fnc_saveToTemplate; // or ultra as medical, it's white after all
+["vehiclesAmmoTrucks", ["a3a_OPTRE_FC_Spectre_Recovery_Needler_ammo"]] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", ["a3a_OPTRE_FC_Spectre_Recovery_repair"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["a3a_OPTRE_FC_Spectre_Recovery_Ultra_fuel"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["a3a_OPTRE_FC_Spectre_Transport_Ultra_medical"]] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", ["OPTRE_FC_Spectre_AI", "OPTRE_FC_Spectre_AI_Needler", "OPTRE_FC_Spectre_AI_Ultra"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["OPTRE_FC_Ghost", "OPTRE_FC_Ghost_Armor", "OPTRE_FC_Ghost_Ultra", "OPTRE_FC_Ghost_Zealot", "OPTRE_FC_Ghost_FuelRod", "OPTRE_FC_Ghost_Needler"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["OPTRE_FC_Spectre_AT", "OPTRE_FC_Spectre_AT_Needler", "OPTRE_FC_Spectre_AT_Ultra"]] call _fnc_saveToTemplate;
@@ -79,13 +79,13 @@ if (["MEU_Covenant"] call A3U_fnc_hasAddon) then {
 "OPTRE_FC_Pek_Pattern_Plasma_Static_noShield_LMG",
 "OPTRE_FC_Pek_Pattern_Plasma_Static_GMG",
 "OPTRE_FC_Pek_Pattern_Plasma_Static_noShield_GMG"]] call _fnc_saveToTemplate;
-["staticAT", ["OPTRE_FC_T26_AT"]] call _fnc_saveToTemplate;
+["staticAT", ["OPTRE_FC_T26_AT","OPTRE_FC_Locust"]] call _fnc_saveToTemplate;
 ["staticAA", ["OPTRE_FC_T26_AA"]] call _fnc_saveToTemplate;
 ["staticMortars", ["Plasma_Mortar"]] call _fnc_saveToTemplate;
 ["staticHowitzers", []] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "O_Radar_System_02_F"] call _fnc_saveToTemplate;
-["vehicleSam", ["OPTRE_FC_T29N_SAM", "OPTRE_FC_TyrantAA_StandAlone"]] call _fnc_saveToTemplate;
+["vehicleSam", ["OPTRE_FC_T29N_SAM"/* , "OPTRE_FC_TyrantAA_StandAlone" */]] call _fnc_saveToTemplate;
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;
 
@@ -705,7 +705,7 @@ private _grenadierTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["grenadeLaunchers"] call _fnc_setPrimary;
+    [["grenadeLaunchers", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
     ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
 
@@ -1119,24 +1119,28 @@ private _patrolSpotterTemplate = {
 /////////////////////////////
 //  Special Forces Units   //
 /////////////////////////////
-private _eliteUnit = ["baseClass", "OPTRE_FC_Elite_Minor", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _eliteUnitSL = ["baseClass", "OPTRE_FC_Elite_Officer", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _eliteUnitMajor = ["baseClass", "OPTRE_FC_Elite_Major", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _eliteUnitMinor = ["baseClass", "OPTRE_FC_Elite_Minor", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _eliteUnitMinorAT = ["baseClass", "OPTRE_FC_Elite_MinorAT", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _eliteUnitMinorAA = ["baseClass", "OPTRE_FC_Elite_MinorAA", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
 private _jackalUnit = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
 
 private _prefix = "SF";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [_eliteUnit], [_prefix]],
-    ["Radioman", _radiomanTemplate, [_eliteUnit], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_eliteUnit], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _eliteUnit], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnit], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnit], [_prefix]],
-    ["Grenadier", _grenadierTemplate, [_eliteUnit], [_prefix]],
-    ["LAT", _latTemplate, [_eliteUnit], [_prefix]],
-    ["AT", _atTemplate, [_eliteUnit], [_prefix]],
-    ["AA", _aaTemplate, [_eliteUnit], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_eliteUnit], [_prefix]],
-    ["Marksman", _marksmanTemplate, [_eliteUnit], [_prefix]],
-    ["Sniper", _sniperTemplate, [_eliteUnit], [_prefix]]
+    ["SquadLeader", _squadLeaderTemplate, [_eliteUnitSL], [_prefix]],
+    ["Radioman", _radiomanTemplate, [_eliteUnitMinor], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_eliteUnitMinor], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _eliteUnitMinor], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnitMajor], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnitMajor], [_prefix]],
+    ["Grenadier", _grenadierTemplate, [_eliteUnitMajor], [_prefix]],
+    ["LAT", _latTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["AT", _atTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["AA", _aaTemplate, [_eliteUnitMinorAA], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_eliteUnitMajor], [_prefix]],
+    ["Marksman", _marksmanTemplate, [_eliteUnitMajor], [_prefix]],
+    ["Sniper", _sniperTemplate, [_eliteUnitMajor], [_prefix]]
 ];
 
 
@@ -1155,17 +1159,17 @@ private _unitTypes = [
 ///////////////////////
 private _prefix = "military";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [_eliteUnit], [_prefix]],
-    ["Radioman", _radiomanTemplate, [_eliteUnit], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_eliteUnit], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _eliteUnit], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnit], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnit], [_prefix]],
-    ["Grenadier", _grenadierTemplate, [_eliteUnit], [_prefix]],
-    ["LAT", _latTemplate, [_eliteUnit], [_prefix]],
-    ["AT", _atTemplate, [_eliteUnit], [_prefix]],
-    ["AA", _aaTemplate, [_eliteUnit], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_eliteUnit], [_prefix]],
+    ["SquadLeader", _squadLeaderTemplate, [_eliteUnitSL], [_prefix]],
+    ["Radioman", _radiomanTemplate, [_eliteUnitMinor], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_eliteUnitMinor], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _eliteUnitMinor], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnitMajor], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnitMajor], [_prefix]],
+    ["Grenadier", _grenadierTemplate, [_eliteUnitMajor], [_prefix]],
+    ["LAT", _latTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["AT", _atTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["AA", _aaTemplate, [_eliteUnitMinorAA], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_eliteUnitMajor], [_prefix]],
     ["Marksman", _marksmanTemplate, [_jackalUnit], [_prefix]],
     ["Sniper", _sniperTemplate, [_jackalUnit], [_prefix]],
     ["PatrolSniper", _patrolSniperTemplate, [_jackalUnit], [_prefix]],
@@ -1214,21 +1218,21 @@ private _unitTypes = [
 ///////////////////////
 private _prefix = "elite";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [_eliteUnit], [_prefix]],
-    ["Radioman", _radiomanTemplate, [_eliteUnit], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_eliteUnit], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _eliteUnit], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnit], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnit], [_prefix]],
-    ["Grenadier", _grenadierTemplate, [_eliteUnit], [_prefix]],
-    ["LAT", _latTemplate, [_eliteUnit], [_prefix]],
-    ["AT", _atTemplate, [_eliteUnit], [_prefix]],
-    ["AA", _aaTemplate, [_eliteUnit], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_eliteUnit], [_prefix]],
-    ["Marksman", _marksmanTemplate, [_eliteUnit], [_prefix]],
-    ["Sniper", _sniperTemplate, [_eliteUnit], [_prefix]],
-    ["PatrolSniper", _patrolSniperTemplate, [_eliteUnit], [_prefix]],
-    ["PatrolSpotter", _patrolSpotterTemplate, [_eliteUnit], [_prefix]]
+    ["SquadLeader", _squadLeaderTemplate, [_eliteUnitSL], [_prefix]],
+    ["Radioman", _radiomanTemplate, [_eliteUnitMinor], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_eliteUnitMinor], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _eliteUnitMinor], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnitMajor], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnitMajor], [_prefix]],
+    ["Grenadier", _grenadierTemplate, [_eliteUnitMajor], [_prefix]],
+    ["LAT", _latTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["AT", _atTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["AA", _aaTemplate, [_eliteUnitMinorAA], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_eliteUnitMajor], [_prefix]],
+    ["Marksman", _marksmanTemplate, [_eliteUnitMajor], [_prefix]],
+    ["Sniper", _sniperTemplate, [_eliteUnitMajor], [_prefix]]
+    ["PatrolSniper", _patrolSniperTemplate, [_eliteUnitMajor], [_prefix]],
+    ["PatrolSpotter", _patrolSpotterTemplate, [_eliteUnitMajor], [_prefix]]
 ];
 
 [_prefix, _unitTypes, _eliteLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;

@@ -24,10 +24,13 @@ Example:
 params ["_faction", "_unitType"];
 
 private _typePrefix = switch (true) do {
-    case ("militia_" in _unitType): { "mil" };
+    case ("riv_" in _unitType): { "riv" };
     case ("police" in _unitType): { "pol" };
+    case ("militia_" in _unitType): { "mil" };
+    case ("military_" in _unitType): { "military" };
+    case ("elite_" in _unitType): { "elite" };
     case ("SF" in _unitType): { "sf" };
-    default { "" };
+    default { "" }; // should perhaps add other_ to set identity of traitors and unarmed to rebel by default
 };
 
 private _faceKey = _typePrefix + (if (_typePrefix == "") then { "faces" } else { "Faces" });
@@ -42,5 +45,6 @@ _identity set ["speaker", selectRandom _voices];
 
 _identity set ["firstName", selectRandom (_faction getOrDefault ["firstNames", []])];
 _identity set ["lastName", selectRandom (_faction getOrDefault ["lastNames", []])];
-
+//diag_log "called createRandomIdentity";
+//diag_log _identity;
 _identity;

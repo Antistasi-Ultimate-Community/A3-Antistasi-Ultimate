@@ -21,7 +21,7 @@ private _factionDefaultFile = ["EnemyDefaults","EnemyDefaults","RebelDefaults","
 _factionDefaultFile = QPATHTOFOLDER(Templates\Templates\FactionDefaults) + "\" + _factionDefaultFile + ".sqf";
 
 private _faction = [[_factionDefaultFile,_file]] call A3A_fnc_loadFaction;
-private _factionPrefix = ["occ", "inv", "reb", "civ"] #([west, east, independent, civilian] find _side);
+private _factionPrefix = ["occ", "inv", "reb", "civ"] #([west, east, independent, civilian] find _side); ///rivals are done in fn_loadRivals
 missionNamespace setVariable ["A3A_faction_" + _factionPrefix, _faction];
 [_faction, _factionPrefix] call A3A_fnc_compileGroups;
 
@@ -45,7 +45,7 @@ private _allDefinitions = _faction get "loadouts";
 {
     private _loadoutName = _x;
     private _unitClass = _unitClassMap getOrDefault [_loadoutName, _baseUnitClass];
-    [_loadoutsPrefix + _loadoutName, _y + [_unitClass]] call A3A_fnc_registerUnitType;
+    [_loadoutsPrefix + _loadoutName, _y + [_unitClass]] call A3A_fnc_registerUnitType; ///
 } forEach _allDefinitions;
 
 #if __A3_DEBUG__

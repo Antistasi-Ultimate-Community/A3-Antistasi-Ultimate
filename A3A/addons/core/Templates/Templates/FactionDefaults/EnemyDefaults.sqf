@@ -10,7 +10,7 @@
 ["sfInsignia", []] call _fnc_saveToTemplate;
 ["milInsignia", []] call _fnc_saveToTemplate;
 ["polInsignia", []] call _fnc_saveToTemplate;
-["eliteInsignia", []] call _fnc_saveToTemplate;
+["eliteInsignia", []] call _fnc_saveToTemplate; //there should be rivalsDefault flie (and RivalsExample)
 
 // The bellow are optional overrides
 

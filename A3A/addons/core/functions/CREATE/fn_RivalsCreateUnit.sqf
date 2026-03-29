@@ -36,27 +36,43 @@ if !(_unitDefinition isEqualTo []) exitWith {
         if (_x select 0 isEqualTo "baseClass") then {
             private _classData = _x select 1;
             
-            // Processing class arrays with weights
-            if (_classData isEqualType []) then {
-                if ((count _classData) == 2 && {(_classData#0) isEqualType []} && {(_classData#1) isEqualType []}) then {
-                    // Format: [[classes], [weights]]
-                    private _classes = _classData#0;
-                    private _weights = _classData#1;
-                    _unitClass = _classes selectRandomWeighted _weights;
-                } else {
-                    // Simple array of classes
-                    _unitClass = selectRandom _classData;
-                };
+            // --- New format: [ [ [class, canSkip, skipIdentity], weight ], ... ] ---
+            if (_classData isEqualType [] && {count _classData > 0} && {_classData#0 isEqualType []} && {_classData#0#0 isEqualType []}) then {
+                private _variants = [];
+                private _weights = [];
+                {
+                    _x params ["_variantDef", "_weight"];
+                    _variants pushBack _variantDef;
+                    _weights pushBack _weight;
+                } forEach _classData;
+                
+                private _selectedVariant = _variants selectRandomWeighted _weights;
+                _selectedVariant params ["_unitClass", "_variantCanSkip", "_variantSkipIdentity"];
+                diag_log "selected Variant";
+                diag_log _selectedVariant;
+                _canSkip = _variantCanSkip;
+                _skipIdentity = _variantSkipIdentity;
             } else {
-                // Single class
-                _unitClass = _classData;
+                // --- Old format: string, array of strings, or [[classes],[weights]] ---
+                if (_classData isEqualType []) then {
+                    if ((count _classData) == 2 && {(_classData#0) isEqualType []} && {(_classData#1) isEqualType []}) then {
+                        private _classes = _classData#0;
+                        private _weights = _classData#1;
+                        _unitClass = _classes selectRandomWeighted _weights;
+                    } else {
+                        _unitClass = selectRandom _classData;
+                    };
+                } else {
+                    _unitClass = _classData;
+                };
+                
+                if (count _x > 2 && {_x select 2 isEqualTo true}) then {
+                    _canSkip = true;
+                };
+                if (count _x > 3 && {_x select 3 isEqualTo true}) then {
+                    _skipIdentity = true;
+                };
             };
-			if (count _x > 3 && {_x select 3 isEqualTo true}) then {
-        	    _skipIdentity = true;
-        	};
-        };
-        if (_x select 2 isEqualTo true) then {
-            _canSkip = true;
         };
     } forEach _traits; // grab all data from base class trait
 

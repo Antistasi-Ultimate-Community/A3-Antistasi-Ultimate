@@ -31,10 +31,16 @@ private _vehicleAA = ["OPTRE_M12R_AA"];
 
 ["vehiclesPlane", ["OPTRE_YSS_1000_A"]] call _fnc_saveToTemplate;
 
-private _vehiclesCivCar = ["OPTRE_M12_CIV", "OPTRE_Genet"];
-["vehiclesCivTruck", ["C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"]] call _fnc_saveToTemplate;
+private _vehiclesCivCar = [
+    "OPTRE_M12_CIV2",
+    "OPTRE_M12_CIV",
+    "OPTRE_Genet",
+    "C_Hatchback_01_sport_F",
+    "C_Hatchback_01_F"
+];
+["vehiclesCivTruck", ["C_Van_01_transport_F", "C_Truck_02_transport_F", "C_Truck_02_covered_F"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["OPTRE_UNSC_falcon_PD"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["optre_catfish_cma_unarmed_f"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["optre_catfish_civ_f"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["OPTRE_Static_M247H_Tripod"]] call _fnc_saveToTemplate;
 ["staticAT", ["OPTRE_Static_Gauss"]] call _fnc_saveToTemplate;
@@ -53,6 +59,8 @@ private _vehiclesCivCar = ["OPTRE_M12_CIV", "OPTRE_Genet"];
 ["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
 
 ["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
+
+#include "OPTRE_Reb_Vehicle_Attributes.sqf"
 
 ///////////////////////////
 //  Rebel Starting Gear  //
@@ -97,14 +105,31 @@ private _dlcUniforms = [];
 ///  Identities   ///
 /////////////////////
 
-["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"]] call _fnc_saveToTemplate;
-["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
-"GreekHead_A3_05","GreekHead_A3_07","Sturrock","WhiteHead_01","WhiteHead_02",
-"WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07",
-"WhiteHead_08","WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
-"WhiteHead_15","WhiteHead_16","WhiteHead_18","WhiteHead_19","WhiteHead_20",
-"WhiteHead_21"]] call _fnc_saveToTemplate;
-
+["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG","Male01ENGFRE","Male02ENGFRE","Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE"]] call _fnc_saveToTemplate;
+["faces", [
+    "GreekHead_A3_01","PersianHead_A3_01","GreekHead_A3_02","WhiteHead_01",
+    "WhiteHead_02","WhiteHead_18","WhiteHead_05","GreekHead_A3_07",
+    "WhiteHead_03","WhiteHead_04","GreekHead_A3_03","GreekHead_A3_04",
+    "WhiteHead_06","WhiteHead_07","GreekHead_A3_05","GreekHead_A3_06",
+    "WhiteHead_08","AfricanHead_02","PersianHead_A3_02","AsianHead_A3_02",
+    "AfricanHead_03","WhiteHead_09","GreekHead_A3_08","WhiteHead_16",
+    "WhiteHead_11","WhiteHead_10","WhiteHead_19","WhiteHead_17",
+    "WhiteHead_21","WhiteHead_12","PersianHead_A3_03","WhiteHead_13",
+    "GreekHead_A3_09","WhiteHead_14","WhiteHead_15","AsianHead_A3_03",
+    "WhiteHead_20","AfricanHead_01","AsianHead_A3_01","TanoanHead_A3_02",
+    "TanoanHead_A3_03","AsianHead_A3_05","TanoanHead_A3_04","AsianHead_A3_04",
+    "TanoanHead_A3_05","TanoanHead_A3_07","TanoanHead_A3_09","TanoanHead_A3_01",
+    "TanoanHead_A3_06","TanoanHead_A3_08","AsianHead_A3_07","AsianHead_A3_06",
+    "WhiteHead_24","RussianHead_4","LivonianHead_5","WhiteHead_25",
+    "LivonianHead_2","WhiteHead_26","RussianHead_1","LivonianHead_7",
+    "LivonianHead_6","WhiteHead_27","WhiteHead_28","LivonianHead_3",
+    "RussianHead_3","LivonianHead_1","RussianHead_2","LivonianHead_10",
+    "WhiteHead_32","WhiteHead_29","WhiteHead_30","LivonianHead_8",
+    "LivonianHead_4","WhiteHead_31","RussianHead_5","LivonianHead_9",
+    "GreekHead_A3_13","GreekHead_A3_14","GreekHead_A3_11","GreekHead_A3_12",
+    "WhiteHead_23","Barklem","Mavros","Sturrock",
+    "Ioannou"
+]] call _fnc_saveToTemplate;
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
