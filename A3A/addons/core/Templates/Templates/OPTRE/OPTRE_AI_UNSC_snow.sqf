@@ -813,7 +813,7 @@ _militaryLoadoutData set ["sniVests", ["OPTRE_UNSC_M52A_Armor_Marksman_SNO","OPT
 
 _militaryLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militaryLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
+_militaryLoadoutData set ["atBackpacks", ["OPTRE_Turret_Bag_Black"]];
 _militaryLoadoutData set ["medBackpacks", ["OPTRE_UNSC_Rucksack_Medic"]];
 _militaryLoadoutData set ["mgBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
 _militaryLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack"]];
@@ -1012,7 +1012,7 @@ _militiaLoadoutData set ["sniVests", ["OPTRE_FC_M52B_Armor_Marksman_SNO","OPTRE_
 
 _militiaLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militiaLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Backpack"]];
+_militiaLoadoutData set ["atBackpacks", ["OPTRE_Tripod_Bag_Black"]];
 _militiaLoadoutData set ["medBackpacks", ["OPTRE_UNSC_Rucksack_Medic"]];
 _militiaLoadoutData set ["mgBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
 _militiaLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack"]];
@@ -1653,31 +1653,31 @@ private _patrolSpotterTemplate = {
 //  Special Forces Units   //
 /////////////////////////////
 private _spartanUnitSL = ["baseClass", "OPTRE_FC_Spartan_TeamLeader", false , true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true]; //there is no function to this, just so they have different names(classes) in zeus
-private _spartanUnitRifle = ["baseClass", "OPTRE_FC_Spartan_Rifleman_BR", false , true];
-private _spartanUnitMedic = ["baseClass", "OPTRE_FC_Spartan_Corpsman", false , true];
-private _spartanUnitEngi = ["baseClass", "OPTRE_FC_Spartan_Engineer", false , true];
-private _spartanUnitExplosive = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true];
+private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true];     //there is no function to this, just so they have different names(classes) in zeus
 private _spartanUnitGrenadier = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true];
 private _spartanUnitAT = ["baseClass", "OPTRE_FC_Spartan_Rifleman_AT", false , true];
-private _spartanUnitMachine = ["baseClass", "OPTRE_FC_Spartan_Automatic_Rifleman", false , true];
-private _spartanUnitMarksman = ["baseClass", "OPTRE_FC_Spartan_Marksman", false , true];
 private _spartanUnitSniper = ["baseClass", "OPTRE_FC_Spartan_Scout_Sniper", false , true];
+private _spartanOrSpecialODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.3],[["OPTRE_FC_Spartan_Corpsman", false , true], 0.7]]];
+private _spartanOrSpecialODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, true], 0.3],[["OPTRE_FC_Spartan_Engineer", false , true], 0.7]]];
+private _spartanOrSpecialODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, true], 0.3],[["OPTRE_FC_Spartan_MkVI", false , true], 0.7]]];
+private _spartanOrSpecialODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, true], 0.3],[["OPTRE_FC_Spartan_Rifleman_BR", false , true], 0.7]]];
+private _spartanOrSpecialODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, true], 0.3],[["OPTRE_FC_Spartan_Automatic_Rifleman", false , true], 0.7]]];
+private _spartanOrSpecialODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, true], 0.3],[["OPTRE_FC_Spartan_Marksman", false , true], 0.7]]];
 
 private _prefix = "SF";
 private _unitTypes = [
     ["SquadLeader", _squadLeaderTemplate, [_spartanUnitSL], [_prefix]],
     ["Radioman", _radiomanTemplate, [_spartanUnitRad], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_spartanUnitRifle], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _spartanUnitMedic], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _spartanUnitEngi], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _spartanUnitExplosive], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_spartanOrSpecialODSTrifleman], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _spartanOrSpecialODSTmedic], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _spartanOrSpecialODSTengineer], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _spartanOrSpecialODSTexplosives], [_prefix]],
     ["Grenadier", _grenadierTemplate, [_spartanUnitGrenadier], [_prefix]],
     ["LAT", _latTemplate, [_spartanUnitAT], [_prefix]],
     ["AT", _atTemplate, [_spartanUnitAT], [_prefix]],
     ["AA", _aaTemplate, [_spartanUnitAT], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_spartanUnitMachine], [_prefix]],
-    ["Marksman", _marksmanTemplate, [_spartanUnitMarksman], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_spartanOrSpecialODSTmachine], [_prefix]],
+    ["Marksman", _marksmanTemplate, [_spartanOrSpecialODSTmarksman], [_prefix]],
     ["Sniper", _sniperTemplate, [_spartanUnitSniper], [_prefix]]
 ];
 

@@ -668,7 +668,7 @@ _militaryLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform","OPTRE_Ins
 _militaryLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1","OPTRE_Ins_URF_Armor1_Flat","OPTRE_Ins_URF_Jungle_Armor1","OPTRE_Ins_URF_Jungle_Armor1_Flat","OPTRE_Ins_URF_Woodland_Armor1","OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
 _militaryLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militaryLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
+_militaryLoadoutData set ["atBackpacks", ["OPTRE_Turret_Bag_Black","OPTRE_Turret_Bag_Green","OPTRE_Turret_Bag_Woodland1","OPTRE_Turret_Bag_Woodland2"]];
 _militaryLoadoutData set ["mgBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
 _militaryLoadoutData set ["helmets", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet4","OPTRE_Ins_URF_Helmet4_Brown","OPTRE_Ins_URF_Helmet3","OPTRE_Ins_URF_Helmet3_Brown","OPTRE_Ins_URF_Helmet2","OPTRE_Ins_URF_Helmet2_Brown","OPTRE_Ins_URF_Helmet1_Brown"]];
 _militaryLoadoutData set ["sniHats", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet4","OPTRE_Ins_URF_Helmet4_Brown","OPTRE_Ins_URF_Helmet3","OPTRE_Ins_URF_Helmet3_Brown","OPTRE_Ins_URF_Helmet2","OPTRE_Ins_URF_Helmet2_Brown","OPTRE_Ins_URF_Helmet1_Brown"]];
@@ -847,7 +847,7 @@ _militiaLoadoutData set ["slVests", ["OPTRE_Ins_URF_Armor1","OPTRE_Ins_URF_Armor
 _militiaLoadoutData set ["sniVests", ["V_TacVest_oli"]];
 _militiaLoadoutData set ["backpacks", ["B_FieldPack_oli", "B_TacticalPack_blk"]];
 _militiaLoadoutData set ["slBackpacks", ["B_Kitbag_rgr", "B_TacticalPack_rgr"]];
-_militiaLoadoutData set ["atBackpacks", ["B_Carryall_oli"]];
+_militiaLoadoutData set ["atBackpacks", ["OPTRE_Tripod_Bag_Black","OPTRE_Tripod_Bag_Innie_Green","OPTRE_Tripod_Bag_Innie_Wdl1","OPTRE_Tripod_Bag_Innie_Wdl2"]];
 _militiaLoadoutData set ["slHat", ["OPTRE_Ins_URF_Helmet1", "OPTRE_Ins_URF_Helmet4","OPTRE_Ins_URF_Helmet4_Brown","OPTRE_Ins_URF_Helmet3","OPTRE_Ins_URF_Helmet3_Brown","OPTRE_Ins_URF_Helmet2","OPTRE_Ins_URF_Helmet2_Brown","OPTRE_Ins_URF_Helmet1_Brown"]];
 _militiaLoadoutData set ["helmets", ["H_Shemag_olive", "H_Shemag_olive_hs", "H_Bandanna_sgg", "H_Bandanna_camo", "H_Watchcap_khk"]];
 

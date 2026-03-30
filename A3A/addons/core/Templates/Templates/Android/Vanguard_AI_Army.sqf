@@ -316,7 +316,7 @@ _militaryLoadoutData set ["glVests", ["SSV_Vest_Vanguard_SMG"]];
 _militaryLoadoutData set ["engVests", ["SSV_Vest_Vanguard_J13_SL"]];
 _militaryLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black", "OPTRE_UNSC_Rucksack_Heavy"]];
 _militaryLoadoutData set ["slBackpacks", ["OPTRE_ILCS_Rucksack_Heavy"]];
-_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
+_militaryLoadoutData set ["atBackpacks", ["OPTRE_Turret_Bag_Black"]];
 _militaryLoadoutData set ["helmets", ["SSV_Helmet_Vanguard_Soldier", "SSV_Helmet_Vanguard_R2"]];
 _militaryLoadoutData set ["sniHats", ["SSV_Helmet_Vanguard_Stealth"]];
 _militaryLoadoutData set ["binoculars", ["OPTRE_Binoculars"]];

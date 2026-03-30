@@ -333,9 +333,7 @@ _sfLoadoutData set ["slVests", [
     "OPTRE_FC_MJOLNIR_MKV_Armor_Night",0.01,
     "OPTRE_FC_MJOLNIR_MKV_Armor_Grif",0.01,
     "OPTRE_FC_MJOLNIR_MKV_Armor_Sarge",0.01,
-    "OPTRE_FC_MJOLNIR_MKV_Armor_Tucker",0.01,
-    "OPTRE_FC_MJOLNIR_MKV_Armor_Caboose",0.01,
-    "OPTRE_FC_MJOLNIR_MKV_Armor_Caboose",0.01
+    "OPTRE_FC_MJOLNIR_MKV_Armor_Tucker",0.01
 ]];
 _sfLoadoutData set ["sniVests", [
     #include "MJOLNIR_variants\spartan_2.sqf",
@@ -346,9 +344,7 @@ _sfLoadoutData set ["sniVests", [
     "OPTRE_FC_MJOLNIR_MKV_Armor_Night",0.01,
     "OPTRE_FC_MJOLNIR_MKV_Armor_Grif",0.01,
     "OPTRE_FC_MJOLNIR_MKV_Armor_Sarge",0.01,
-    "OPTRE_FC_MJOLNIR_MKV_Armor_Tucker",0.01,
-    "OPTRE_FC_MJOLNIR_MKV_Armor_Caboose",0.01,
-    "OPTRE_FC_MJOLNIR_MKV_Armor_Caboose",0.01
+    "OPTRE_FC_MJOLNIR_MKV_Armor_Tucker",0.01
 ]];
 _sfLoadoutData set ["backpacks", ["OPTRE_ILCS_Rucksack_Black_Spartan"]];
 _sfLoadoutData set ["slBackpacks", ["OPTRE_ANPRC_515_Spartan","OPTRE_ANPRC_521_Black_Spartan","OPTRE_ANPRC_521_Green_Spartan","OPTRE_ANPRC_521_Tan_Spartan"]];
@@ -1121,20 +1117,21 @@ _militaryLoadoutData set ["vests", [
 ]];
 _militaryLoadoutData set ["slVests", ["OPTRE_UNSC_M52A_Armor_TL_DES","OPTRE_UNSC_M52A_Armor_TL_MAR","OPTRE_UNSC_M52A_Armor_TL_OLI"]];
 _militaryLoadoutData set ["mgVests", ["OPTRE_UNSC_M52A_Armor_MG_DES","OPTRE_UNSC_M52A_Armor_MG_MAR","OPTRE_UNSC_M52A_Armor_MG_OLI","OPTRE_UNSC_M52A_Armor_MG_TRO"]];
-_militaryLoadoutData set ["medVests", ["OPTRE_UNSC_M52A_Armor_Medic_DES","OPTRE_UNSC_M52A_Armor_Medic_OLI"]];
+_militaryLoadoutData set ["medVests", ["OPTRE_UNSC_M52A_Armor_Corpsman_MAR","OPTRE_UNSC_M52A_Armor_Medic_DES","OPTRE_UNSC_M52A_Armor_Medic_OLI"]];
 _militaryLoadoutData set ["glVests", ["OPTRE_UNSC_M52A_Armor_Grenadier_DES","OPTRE_UNSC_M52A_Armor_Grenadier_MAR","OPTRE_UNSC_M52A_Armor_Grenadier_OLI"]];
 _militaryLoadoutData set ["engVests", ["OPTRE_UNSC_M52A_Armor_Breacher_DES","OPTRE_UNSC_M52A_Armor_Breacher_MAR","OPTRE_UNSC_M52A_Armor_Breacher_OLI"]];
 _militaryLoadoutData set ["atVests", ["OPTRE_UNSC_M52A_Armor_Grenadier_DES","OPTRE_UNSC_M52A_Armor_Grenadier_MAR","OPTRE_UNSC_M52A_Armor_Grenadier_OLI"]];
-_militaryLoadoutData set ["sniVests", ["OPTRE_UNSC_M52A_Armor_Corpsman_MAR","OPTRE_UNSC_M52A_Armor_Marksman_DES","OPTRE_UNSC_M52A_Armor_Marksman_MAR","OPTRE_UNSC_M52A_Armor_Marksman_OLI","OPTRE_UNSC_M52A_Armor_Sniper_DES","OPTRE_UNSC_M52A_Armor_Sniper_MAR","OPTRE_UNSC_M52A_Armor_Sniper_OLI"]];
+_militaryLoadoutData set ["sniVests", ["OPTRE_UNSC_M52A_Armor_Marksman_DES","OPTRE_UNSC_M52A_Armor_Marksman_MAR","OPTRE_UNSC_M52A_Armor_Marksman_OLI","OPTRE_UNSC_M52A_Armor_Sniper_DES","OPTRE_UNSC_M52A_Armor_Sniper_MAR","OPTRE_UNSC_M52A_Armor_Sniper_OLI"]];
 
 _militaryLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militaryLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
+_militaryLoadoutData set ["atBackpacks", ["OPTRE_Turret_Bag_Black"]];
 _militaryLoadoutData set ["medBackpacks", ["OPTRE_UNSC_Rucksack_Medic"]];
 _militaryLoadoutData set ["mgBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
 _militaryLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack"]];
 
 _militaryLoadoutData set ["helmets", [
+    "OPTRE_UNSC_Watchcap","OPTRE_PatrolCap_Navy","OPTRE_UNSC_PatrolCap_Army","OPTRE_UNSC_PatrolCap_Marines",
     "OPTRE_UNSC_CH252_Helmet2_DES",
     "OPTRE_UNSC_CH252_Helmet2_MAR",
     "OPTRE_UNSC_CH252_Helmet2_OLI",
@@ -1149,6 +1146,7 @@ _militaryLoadoutData set ["helmets", [
     "OPTRE_UNSC_CH252_Helmet_Vacuum_OLI"
 ]];
 _militaryLoadoutData set ["slHat", [
+    "OPTRE_UNSC_Watchcap","OPTRE_PatrolCap_Navy","OPTRE_UNSC_PatrolCap_Army","OPTRE_UNSC_PatrolCap_Marines",
     "OPTRE_UNSC_CH252_Helmet2_DES",
     "OPTRE_UNSC_CH252_Helmet2_MAR",
     "OPTRE_UNSC_CH252_Helmet2_OLI",
@@ -1390,14 +1388,14 @@ _militiaLoadoutData set ["sniVests", ["OPTRE_FC_M52B_Armor_Marksman_DES","OPTRE_
 
 _militiaLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militiaLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Backpack"]];
+_militiaLoadoutData set ["atBackpacks", ["OPTRE_Tripod_Bag_Black"]];
 _militiaLoadoutData set ["medBackpacks", ["OPTRE_UNSC_Rucksack_Medic"]];
 _militiaLoadoutData set ["mgBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
 _militiaLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack"]];
 
-_militiaLoadoutData set ["helmets", ["OPTRE_FC_CH255_Helmet","OPTRE_FC_CH255_Helmet_DES","OPTRE_FC_CH255_Helmet_BRN","OPTRE_FC_CH255_Helmet_Visor","OPTRE_FC_CH255_Helmet_DES_Visor","OPTRE_FC_CH255_Helmet_BRN_Visor","OPTRE_CH255_Security_Basic_Type_1_Helmet","OPTRE_CH255_Security_Basic_Type_1_Light_Helmet","OPTRE_CH255_Security_Basic_Type_2_Helmet"]];
-_militiaLoadoutData set ["slHat", ["OPTRE_FC_CH255_Helmet","OPTRE_FC_CH255_Helmet_DES","OPTRE_FC_CH255_Helmet_BRN","OPTRE_FC_CH255_Helmet_Visor","OPTRE_FC_CH255_Helmet_DES_Visor","OPTRE_FC_CH255_Helmet_BRN_Visor","OPTRE_CH255_Security_Basic_Type_1_Helmet","OPTRE_CH255_Security_Basic_Type_1_Light_Helmet","OPTRE_CH255_Security_Basic_Type_2_Helmet"]];
-_militiaLoadoutData set ["medhelmets", ["OPTRE_FC_CH255_Helmet_DES_Medic","OPTRE_FC_CH255_Helmet_Medic","OPTRE_FC_CH255_Helmet_BRN_Medic","OPTRE_FC_CH255_Helmet_DES_Visor_Medic","OPTRE_FC_CH255_Helmet_Visor_Medic","OPTRE_FC_CH255_Helmet_BRN_Visor_Medic"]];
+_militiaLoadoutData set ["helmets", ["OPTRE_UNSC_Watchcap","OPTRE_PatrolCap_Navy","OPTRE_UNSC_PatrolCap_Army","OPTRE_UNSC_PatrolCap_Marines","OPTRE_FC_CH255_Helmet","OPTRE_FC_CH255_Helmet_DES","OPTRE_FC_CH255_Helmet_BRN","OPTRE_FC_CH255_Helmet_Visor","OPTRE_FC_CH255_Helmet_DES_Visor","OPTRE_FC_CH255_Helmet_BRN_Visor","OPTRE_CH255_Security_Basic_Type_1_Helmet","OPTRE_CH255_Security_Basic_Type_1_Light_Helmet","OPTRE_CH255_Security_Basic_Type_2_Helmet"]];
+_militiaLoadoutData set ["slHat", ["OPTRE_UNSC_Watchcap","OPTRE_PatrolCap_Navy","OPTRE_UNSC_PatrolCap_Army","OPTRE_UNSC_PatrolCap_Marines","OPTRE_FC_CH255_Helmet","OPTRE_FC_CH255_Helmet_DES","OPTRE_FC_CH255_Helmet_BRN","OPTRE_FC_CH255_Helmet_Visor","OPTRE_FC_CH255_Helmet_DES_Visor","OPTRE_FC_CH255_Helmet_BRN_Visor","OPTRE_CH255_Security_Basic_Type_1_Helmet","OPTRE_CH255_Security_Basic_Type_1_Light_Helmet","OPTRE_CH255_Security_Basic_Type_2_Helmet"]];
+_militiaLoadoutData set ["medhelmets", ["OPTRE_UNSC_Watchcap","OPTRE_PatrolCap_Navy","OPTRE_UNSC_PatrolCap_Army","OPTRE_UNSC_PatrolCap_Marines","OPTRE_FC_CH255_Helmet_DES_Medic","OPTRE_FC_CH255_Helmet_Medic","OPTRE_FC_CH255_Helmet_BRN_Medic","OPTRE_FC_CH255_Helmet_DES_Visor_Medic","OPTRE_FC_CH255_Helmet_Visor_Medic","OPTRE_FC_CH255_Helmet_BRN_Visor_Medic"]];
 
 _militiaLoadoutData set ["rifles", [
     ["OPTRE_BR45_Black", "", "", _militaryopticsShort, ["OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer_Yellow", "OPTRE_36Rnd_95x40_Mag_Tracer"], [], "OPTRE_BR45Grip"],
@@ -2062,31 +2060,31 @@ private _patrolSpotterTemplate = {
 //  Special Forces Units   //
 /////////////////////////////
 private _spartanUnitSL = ["baseClass", "OPTRE_FC_Spartan_TeamLeader", false , true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true]; //there is no function to this, just so they have different names(classes) in zeus
-private _spartanUnitRifle = ["baseClass", "OPTRE_FC_Spartan_Rifleman_BR", false , true];
-private _spartanUnitMedic = ["baseClass", "OPTRE_FC_Spartan_Corpsman", false , true];
-private _spartanUnitEngi = ["baseClass", "OPTRE_FC_Spartan_Engineer", false , true];
-private _spartanUnitExplosive = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true];
+private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true];            //there is no function to this, just so they have different names(classes) in zeus
 private _spartanUnitGrenadier = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true];
 private _spartanUnitAT = ["baseClass", "OPTRE_FC_Spartan_Rifleman_AT", false , true];
-private _spartanUnitMachine = ["baseClass", "OPTRE_FC_Spartan_Automatic_Rifleman", false , true];
-private _spartanUnitMarksman = ["baseClass", "OPTRE_FC_Spartan_Marksman", false , true];
 private _spartanUnitSniper = ["baseClass", "OPTRE_FC_Spartan_Scout_Sniper", false , true];
+private _spartanOrSpecialODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.3],[["OPTRE_FC_Spartan_Corpsman", false , true], 0.7]]];
+private _spartanOrSpecialODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, true], 0.3],[["OPTRE_FC_Spartan_Engineer", false , true], 0.7]]];
+private _spartanOrSpecialODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, true], 0.3],[["OPTRE_FC_Spartan_MkVI", false , true], 0.7]]];
+private _spartanOrSpecialODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, true], 0.3],[["OPTRE_FC_Spartan_Rifleman_BR", false , true], 0.7]]];
+private _spartanOrSpecialODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, true], 0.3],[["OPTRE_FC_Spartan_Automatic_Rifleman", false , true], 0.7]]];
+private _spartanOrSpecialODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, true], 0.3],[["OPTRE_FC_Spartan_Marksman", false , true], 0.7]]];
 
 private _prefix = "SF";
 private _unitTypes = [
     ["SquadLeader", _squadLeaderTemplate, [_spartanUnitSL], [_prefix]],
     ["Radioman", _radiomanTemplate, [_spartanUnitRad], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_spartanUnitRifle], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _spartanUnitMedic], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _spartanUnitEngi], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _spartanUnitExplosive], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_spartanOrSpecialODSTrifleman], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _spartanOrSpecialODSTmedic], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _spartanOrSpecialODSTengineer], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _spartanOrSpecialODSTexplosives], [_prefix]],
     ["Grenadier", _grenadierTemplate, [_spartanUnitGrenadier], [_prefix]],
     ["LAT", _latTemplate, [_spartanUnitAT], [_prefix]],
     ["AT", _atTemplate, [_spartanUnitAT], [_prefix]],
     ["AA", _aaTemplate, [_spartanUnitAT], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_spartanUnitMachine], [_prefix]],
-    ["Marksman", _marksmanTemplate, [_spartanUnitMarksman], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_spartanOrSpecialODSTmachine], [_prefix]],
+    ["Marksman", _marksmanTemplate, [_spartanOrSpecialODSTmarksman], [_prefix]],
     ["Sniper", _sniperTemplate, [_spartanUnitSniper], [_prefix]]
 ];
 
@@ -2164,20 +2162,28 @@ private _unitTypes = [
 //  Elite Units   //
 ///////////////////////
 private _spartanOrHumanUnit = ["baseClass", [[["OPTRE_Spartan3_Soldier_TeamLeader", false, true], 0.25],[["OPTRE_UNSC_ODST_Soldier_TeamLeader", true, false], 0.75]]];
+
+private _SpecialOrNormalODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.25],[["OPTRE_UNSC_ODST_Soldier_Paramedic", false, false], 0.75]]];
+private _SpecialOrNormalODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, false], 0.25],[["OPTRE_UNSC_ODST_Soldier_Breacher", false, false], 0.75]]];
+private _SpecialOrNormalODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, false], 0.25],[["OPTRE_UNSC_ODST_Soldier_DemolitionsExpert", false, false], 0.75]]];
+private _SpecialOrNormalODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, false], 0.25],[["OPTRE_UNSC_ODST_Soldier_Scout", false, false], 0.75]]];
+private _SpecialOrNormalODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, false], 0.25],[["OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman", false, false], 0.75]]];
+private _SpecialOrNormalODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, false], 0.25],[["OPTRE_UNSC_ODST_Soldier_Marksman", false, false], 0.75]]];
+
 private _prefix = "elite";
 private _unitTypes = [
     ["SquadLeader", _squadLeaderTemplate, [_spartanOrHumanUnit], [_prefix]],
     ["Radioman", _radiomanTemplate, [], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true]], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true]], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true]], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_SpecialOrNormalODSTrifleman], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _SpecialOrNormalODSTmedic], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _SpecialOrNormalODSTengineer], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _SpecialOrNormalODSTexplosives], [_prefix]],
     ["Grenadier", _grenadierTemplate, [], [_prefix]],
     ["LAT", _latTemplate, [], [_prefix]],
     ["AT", _atTemplate, [], [_prefix]],
     ["AA", _aaTemplate, [], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [], [_prefix]],
-    ["Marksman", _marksmanTemplate, [], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_SpecialOrNormalODSTmachine], [_prefix]],
+    ["Marksman", _marksmanTemplate, [_SpecialOrNormalODSTmarksman], [_prefix]],
     ["Sniper", _sniperTemplate, [], [_prefix]],
     ["PatrolSniper", _patrolSniperTemplate, [], [_prefix]],
     ["PatrolSpotter", _patrolSpotterTemplate, [], [_prefix]]

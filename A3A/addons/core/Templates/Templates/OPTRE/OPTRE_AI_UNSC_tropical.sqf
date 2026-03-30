@@ -810,7 +810,7 @@ _militaryLoadoutData set ["sniVests", ["OPTRE_UNSC_M52A_Armor_Marksman_OLI","OPT
 
 _militaryLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militaryLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militaryLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
+_militaryLoadoutData set ["atBackpacks", ["OPTRE_Turret_Bag_Black"]];
 _militaryLoadoutData set ["medBackpacks", ["OPTRE_UNSC_Rucksack_Medic"]];
 _militaryLoadoutData set ["mgBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
 _militaryLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack"]];
@@ -1011,7 +1011,7 @@ _militiaLoadoutData set ["sniVests", ["OPTRE_FC_M52B_Armor_Marksman","OPTRE_FC_M
 
 _militiaLoadoutData set ["backpacks", ["OPTRE_UNSC_Rucksack"]];
 _militiaLoadoutData set ["slBackpacks", ["OPTRE_UNSC_Rucksack"]];
-_militiaLoadoutData set ["atBackpacks", ["OPTRE_UNSC_Backpack"]];
+_militiaLoadoutData set ["atBackpacks", ["OPTRE_Tripod_Bag_Black"]];
 _militiaLoadoutData set ["medBackpacks", ["OPTRE_UNSC_Rucksack_Medic"]];
 _militiaLoadoutData set ["mgBackpacks", ["OPTRE_UNSC_Rucksack_Heavy"]];
 _militiaLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack"]];

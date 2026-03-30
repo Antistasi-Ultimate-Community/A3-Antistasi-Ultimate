@@ -263,7 +263,9 @@
 "OPTRE_FC_MJOLNIR_Mark_VI_Security_Armor_Security_L_Black",1,
 "OPTRE_FC_MJOLNIR_Mark_VI_Security_Armor_Security_R_Black",1,
 "OPTRE_FC_MJOLNIR_MKV_Armor_Black",1,
-"OPTRE_FC_MJOLNIR_Mark_VI_Armor_EOD_Olive",1,// _Olive (включая _Olive)
+
+// _Olive
+"OPTRE_FC_MJOLNIR_Mark_VI_Armor_EOD_Olive",1,
 "OPTRE_FC_MJOLNIR_Mark_VI_Armor_EOD_B_Olive",1,
 "OPTRE_FC_MJOLNIR_Mark_VI_Armor_EOD_L_Olive",1,
 "OPTRE_FC_MJOLNIR_Mark_VI_Armor_EOD_R_Olive",1,

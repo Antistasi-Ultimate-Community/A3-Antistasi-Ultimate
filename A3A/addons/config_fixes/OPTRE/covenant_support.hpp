@@ -15,7 +15,7 @@ class a3a_OPTRE_FC_Spectre_Recovery_Needler_ammo : OPTRE_FC_Spectre_Recovery_Nee
     supplyRadius = 10;
 	transportAmmo = 30000;
 };
-class a3a_OPTRE_FC_Spectre_Recovery_Ultra_fuel : OPTRE_FC_Spectre_Recovery_Ultra
+class a3a_OPTRE_FC_Spectre_Recovery_Ultra_fuel : OPTRE_FC_Spectre_Recovery_Ultra //fun fact, model for this says it's supposed to be fuel, but I don't think it actually does anything by default
 {
     displayName = "Type-46R Recovery (Fuel)";
     supplyRadius = 10;
