@@ -558,6 +558,7 @@ class planeLoadouts
             missileLauncher[] = {"OPTRE_missiles_Jackknife_Sabre","OPTRE_missiles_Scorpion","OPTRE_missiles_C2GMLS"};
         };
         class OPTRE_YSS_1000_A_Single  : OPTRE_YSS_1000_A {};
+        //Banshee
         class OPTRE_FC_Type26B_Banshee
         {
             loadout[] = {"OPTRE_FC_C2_Battery","OPTRE_FC_C2_Battery","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
@@ -581,6 +582,17 @@ class planeLoadouts
             loadout[] = {"OPTRE_FC_T56G_Battery","OPTRE_FC_T56G_Battery","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
             mainGun = "OPTRE_FC_T56_AAG";
             rocketLauncher[] = {"OPTRE_FC_T33_FuelRod_Cannon_Veh"};
+        };
+        //Wombat
+        class OPTRE_Wombat
+        {
+            loadout[] = {"OPTRE_2000Rnd_30mm_HE","OPTRE_2000Rnd_30mm_HE"};
+            mainGun = "OPTRE_30mm_Cannon";
+        };
+        class OPTRE_Wombat_B
+        {
+            loadout[] = {"OPTRE_4Rnd_Scorpion_missiles","OPTRE_2Rnd_Jackknife_missile"};
+            missileLauncher[] = {"OPTRE_missiles_Scorpion","OPTRE_missiles_Jackknife"};
         };
        /* class B_Plane_CAS_01_dynamicLoadout_F
         {
@@ -1134,6 +1146,7 @@ class planeLoadouts
             missileLauncher[] = {"missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F","OPTRE_STMedusa_AAMissile"};
         };
         class OPTRE_YSS_1000_A_Single  : OPTRE_YSS_1000_A {};
+        //Banshee
         class OPTRE_FC_Type26B_Ultra_Banshee
         {
             loadout[] = {"OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_Ghost_Ultragun_mag","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_VehAA","OPTRE_FC_T33_FuelRod_Pack_VehAA","OPTRE_FC_T33_FuelRod_Pack_VehAA"};
@@ -1150,6 +1163,17 @@ class planeLoadouts
         {
             loadout[] = {"OPTRE_FC_T56G_Battery","OPTRE_FC_T56G_Battery","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh","OPTRE_FC_T33_FuelRod_Pack_Veh"};
             mainGun = "OPTRE_FC_T56_AAG";
+        };
+        //Wombat
+        class OPTRE_Wombat
+        {
+            loadout[] = {"OPTRE_2000Rnd_30mm_HE","OPTRE_2000Rnd_30mm_HE"};
+            mainGun = "OPTRE_30mm_Cannon";
+        };
+        class OPTRE_Wombat_B
+        {
+            loadout[] = {"OPTRE_6Rnd_C2GMLS_missiles","OPTRE_6Rnd_C2GMLS_missiles"};
+            missileLauncher[] = {"OPTRE_missiles_C2GMLS"};
         };
         /// TFC
 

@@ -199,6 +199,7 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1300, 900, 180, 55, 25, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla UAV
+        case "OPTRE_mako_drone_CAS_ins"; //optre ins
         case "I_UAV_02_dynamicLoadout_F";
         case "O_UAV_02_dynamicLoadout_F";
         case "B_UAV_02_dynamicLoadout_F":
@@ -739,6 +740,7 @@ if (_type == "CAS") then
             _plane setVariable ["diveParams", [1000, 600, 180, 55, 20, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         //Vanilla UAV
+        case "OPTRE_mako_drone_CAS_ins"; //optre ins
         case "I_UAV_02_dynamicLoadout_F";
         case "O_UAV_02_dynamicLoadout_F";
         case "B_UAV_02_dynamicLoadout_F":
@@ -1390,6 +1392,7 @@ if (_type == "AA") then
             _plane setVariable ["missileLauncher", ["missiles_ASRAAM","Missile_AA_04_Plane_CAS_01_F"]];
         };
         //Vanilla UAV
+        case "OPTRE_mako_drone_CAS_ins"; //optre ins
         case "I_UAV_02_dynamicLoadout_F";
         case "O_UAV_02_dynamicLoadout_F";
         case "B_UAV_02_dynamicLoadout_F":
