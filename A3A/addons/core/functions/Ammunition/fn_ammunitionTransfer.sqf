@@ -168,7 +168,7 @@ if (count _backpcksFinal > 0) then {
 	};
 };
 
-private _thresholdMass = 1000; //should probably set to 5000
+private _thresholdMass = 5000;
 private _currentMass = _destinationX getVariable ["A3A_arsenal_currentMass", getMass _destinationX];
 if (_currentMass == 0) then { _currentMass = 0.01; };
 private _newMass = _currentMass + _totalAddedMass;
