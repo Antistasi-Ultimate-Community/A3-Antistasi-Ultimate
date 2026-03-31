@@ -1,6 +1,7 @@
+#include "\x\A3A\addons\maps\BuildObjectsList.hpp"
 class bozcaada {
 	population[] = {
-		{"merkez_city",1200}
+		{"merkez_city",2000}
 	};
 	disabledTowns[] = {}; //no towns that need to be disabled
 	antennas[] = {
