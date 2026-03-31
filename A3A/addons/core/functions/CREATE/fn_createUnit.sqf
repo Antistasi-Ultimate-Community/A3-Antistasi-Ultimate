@@ -8,6 +8,18 @@
  *    28/07/2023: For example, adding a webknights elite to a squad of OPTRE elites will cause the OPTRE elites to not fire at all. Some mods don't do this, some do!
  *    28/07/2023: Make sure you test it if you do. Helps avoid issues like "Why does half of the squad suddenly become pacifists?"
  *    This version overwrites the Anti Plus version of the createUnit command! hooray!
+ *
+ *    30/03/2026:
+ *    - The "baseClass" trait now supports a weighted list of variants, each with its own
+ *      flags for loadout skip (_canSkip) and identity skip (_skipIdentity). Format:
+ *      ["baseClass", [ [ [class, canSkip, skipIdentity], weight ], ... ]]
+ *      Example: ["baseClass", [ [["Spartan_MkVI", false, true], 0.7], [["Soldier_TeamLeader", true, false], 0.3] ]]
+ *    - Old formats ([[classes],[weights]]) are still supported.
+ *    - The fourth parameter of the "baseClass" trait can be used to set _skipIdentity for
+ *      the entire unit type.
+ *    - The unit variable "skipIdentity" is set when _skipIdentity is true, preventing any
+ *      subsequent calls to A3A_fnc_setIdentity from applying identity to this unit.
+ *
  * Params:
  *    _group - Group to add the AI: Group
  *    _type - A classname in CfgVehicles, or a unit loadout array: String or Array
@@ -56,24 +68,10 @@ if !(_unitDefinition isEqualTo []) exitWith {
                 } forEach _classData;
                 
                 private _selectedVariant = _variants selectRandomWeighted _weights;
-                diag_log "unitClass";
-                diag_log _unitClass;
                 private _variantData = _selectedVariant;
-                diag_log "variantData";
-                diag_log _variantData;
                 _unitClass = _variantData#0;
                 _canSkip = _variantData#1;
                 _skipIdentity = _variantData#2;
-                diag_log "unitClass";
-                diag_log _unitClass;
-                diag_log "selected Variant";
-                diag_log _selectedVariant;
-                
-                // Override flags from selected variant
-                diag_log "canSkip";
-                diag_log _canSkip;
-                diag_log "skipIdentity";
-                diag_log _skipIdentity;
             } else {
                 // --- Old format: string, array of strings, or [[classes],[weights]] ---
                 if (_classData isEqualType []) then {
@@ -101,21 +99,16 @@ if !(_unitDefinition isEqualTo []) exitWith {
             };
         };
     } forEach _traits; // grab all data from base class trait
-    diag_log "unitClass";
-    diag_log _unitClass;
+
 	private _unit = _group createUnit [_unitClass, _position, _markers, _placement, _special];
     [_unit] joinSilent _group; // normally, this command is literally pointless. But when we're mixing base classes (e.g opfor) but spawning them as blufor (swap enemy sides selection), it'll make them fight each other unless we do this
-    diag_log "canSkip";
-    diag_log _canSkip;
-    diag_log "skipIdentity";
-    diag_log _skipIdentity;
+    
     if (!_canSkip) then {
         _unit setUnitLoadout selectRandom _loadouts;
     };
     _unit setVariable ["unitType", _type, true];
-    //diag_log "before the skip";
+
     if (!_skipIdentity) then {
-		//diag_log "Failed the skip";
 	    private _identity = if (isNil "_identity") then {
 	        [Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
 	    } else {

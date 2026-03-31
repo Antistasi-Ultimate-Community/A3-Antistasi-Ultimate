@@ -8,6 +8,18 @@
  *    28/07/2023: For example, adding a webknights elite to a squad of OPTRE elites will cause the OPTRE elites to not fire at all. Some mods don't do this, some do!
  *    28/07/2023: Make sure you test it if you do. Helps avoid issues like "Why does half of the squad suddenly become pacifists?"
  *    This version overwrites the Anti Plus version of the createUnit command! hooray!
+ *
+ *    30/03/2026:
+ *    - The "baseClass" trait now supports a weighted list of variants, each with its own
+ *      flags for loadout skip (_canSkip) and identity skip (_skipIdentity). Format:
+ *      ["baseClass", [ [ [class, canSkip, skipIdentity], weight ], ... ]]
+ *      Example: ["baseClass", [ [["Spartan_MkVI", false, true], 0.7], [["Soldier_TeamLeader", true, false], 0.3] ]]
+ *    - Old formats ([[classes],[weights]]) are still supported.
+ *    - The fourth parameter of the "baseClass" trait can be used to set _skipIdentity for
+ *      the entire unit type.
+ *    - The unit variable "skipIdentity" is set when _skipIdentity is true, preventing any
+ *      subsequent calls to A3A_fnc_setIdentity from applying identity to this unit.
+ *
  * Params:
  *    _group - Group to add the AI: Group
  *    _type - A classname in CfgVehicles, or a unit loadout array: String or Array
@@ -47,11 +59,10 @@ if !(_unitDefinition isEqualTo []) exitWith {
                 } forEach _classData;
                 
                 private _selectedVariant = _variants selectRandomWeighted _weights;
-                _selectedVariant params ["_unitClass", "_variantCanSkip", "_variantSkipIdentity"];
-                diag_log "selected Variant";
-                diag_log _selectedVariant;
-                _canSkip = _variantCanSkip;
-                _skipIdentity = _variantSkipIdentity;
+                private _variantData = _selectedVariant;
+                _unitClass = _variantData#0;
+                _canSkip = _variantData#1;
+                _skipIdentity = _variantData#2;
             } else {
                 // --- Old format: string, array of strings, or [[classes],[weights]] ---
                 if (_classData isEqualType []) then {
