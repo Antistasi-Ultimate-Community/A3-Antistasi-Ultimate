@@ -1439,22 +1439,56 @@ class OPTRE_FC_Vehicles_Spectre_Spectre_Transport_p3d : TRIPLES(ADDON,Nodes,Base
         class Node1
         {
             offset[] = {0.0261,-0.1363,0.0451};
-            seats[] = {1};
+            seats[] = {1,2};
         };
         class Node2
         {
             offset[] = {0.0269,-1.351,0.0377};
-            seats[] = {2};
+            seats[] = {3,4};
         };
         class Node3
         {
             offset[] = {0.0284,-2.40001,0.0451};
-            seats[] = {3};
+            seats[] = {4,5};
         };
         class Node4
         {
             offset[] = {0.0305,-3.58902,0.1426};
-            seats[] = {4};
+            seats[] = {6,7};
+        };
+    };
+};
+// Type-32 AA Ghost
+class OPTRE_FC_Vehicles_Ghost_ghost_AA_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.0653,-1.35191,0.3908};
+        };
+    };
+};
+// Type-32 Ghost
+class OPTRE_FC_Vehicles_Ghost_ghost_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.069,-1.19151,0.886};
+        };
+    };
+};
+// Type-32 Zealot Ghost
+class OPTRE_FC_Vehicles_Ghost_ghost_zealot_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.081,-1.385,0.701201};
+            seats[] = {};
         };
     };
 };
