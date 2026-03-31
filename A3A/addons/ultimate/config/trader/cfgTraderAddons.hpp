@@ -261,7 +261,7 @@
     {
         addons[] = {"OPTRE_FC_Core"};
         weapons = "weapons_optre_fc";
-        vehicles = "vehicles_optre_fc";
+        vehicles = "vehicles_optrefc";
     };
     class addons_niarms : addons_base
     {
