@@ -2060,7 +2060,7 @@ private _patrolSpotterTemplate = {
 //  Special Forces Units   //
 /////////////////////////////
 private _spartanUnitSL = ["baseClass", "OPTRE_FC_Spartan_TeamLeader", false , true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true];            //there is no function to this, just so they have different names(classes) in zeus
+private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true];     //there is no function to this, just so they have different names(classes) in zeus
 private _spartanUnitGrenadier = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true];
 private _spartanUnitAT = ["baseClass", "OPTRE_FC_Spartan_Rifleman_AT", false , true];
 private _spartanUnitSniper = ["baseClass", "OPTRE_FC_Spartan_Scout_Sniper", false , true];
