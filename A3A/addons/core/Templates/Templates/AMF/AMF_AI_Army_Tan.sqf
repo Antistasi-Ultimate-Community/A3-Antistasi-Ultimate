@@ -334,7 +334,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["amf_uniform_01_RE_DA_HX", "amf_uniform_01_RE_NG_DA_HX"]];
-_militaryLoadoutData set ["slUniform", ["amf_uniform_01_RE_BM_LowaZephyr"]];
+_militaryLoadoutData set ["slUniforms", ["amf_uniform_01_RE_BM_LowaZephyr"]];
 _militaryLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_AUXSAN"]];
 _militaryLoadoutData set ["mgVests", ["amf_SMB_ART"]];
 _militaryLoadoutData set ["medVests", ["amf_SMB_FUS"]];

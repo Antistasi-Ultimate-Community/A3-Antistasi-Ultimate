@@ -273,7 +273,7 @@ _sfLoadoutData set ["ATLaunchers", [["OPTRE_FC_T33_FuelRod_Cannon", "", "", "", 
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["OPTRE_FC_Elite_CombatSkin"]];
-_eliteLoadoutData set ["slUniform", ["SCE_ClearSky_CBRN"]];
+_eliteLoadoutData set ["slUniforms", ["SCE_ClearSky_CBRN"]];
 _eliteLoadoutData set ["vests", ["OPTRE_FC_Elite_Armor_Major"]];
 _eliteLoadoutData set ["mgVests", ["OPTRE_FC_Elite_Armor_Major"]];
 _eliteLoadoutData set ["medVests", ["OPTRE_FC_Elite_Armor_Major"]];
@@ -323,7 +323,7 @@ _eliteLoadoutData set ["ATLaunchers", [["OPTRE_FC_T33_FuelRod_Cannon", "", "", "
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["OPTRE_FC_Elite_CombatSkin"]];
-_militaryLoadoutData set ["slUniform", ["OPTRE_FC_Elite_CombatSkin"]];
+_militaryLoadoutData set ["slUniforms", ["OPTRE_FC_Elite_CombatSkin"]];
 _militaryLoadoutData set ["vests", ["OPTRE_FC_Elite_Armor_Minor"]];
 _militaryLoadoutData set ["mgVests", ["OPTRE_FC_Elite_Armor_Minor"]];
 _militaryLoadoutData set ["medVests", ["OPTRE_FC_Elite_Armor_Minor"]];
