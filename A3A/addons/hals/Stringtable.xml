@@ -608,6 +608,20 @@
                 <Korean>기타 아이템</Korean>
                 <Turkish>Yardımcı Ekipman</Turkish>
             </Key>
+            <Key ID="STR_A3AU_spartanarmor">
+                <Original>Spartan Armor</Original>
+                <Russian>Спартанская Броня</Russian>
+                <Chinesesimp>斯巴达铠甲</Chinesesimp>
+                <Korean>스파르타 갑옷</Korean>
+                <Turkish>Sparta Zırhı</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_spartanhelmets">
+                <Original>Spartan Helmets</Original>
+                <Russian>Спартанские Шлемы</Russian>
+                <Chinesesimp>斯巴达头盔</Chinesesimp>
+                <Korean>스파르타 투구</Korean>
+                <Turkish>Sparta Miğferi</Turkish>
+            </Key>
         </Container>
         <!-- helpers -->
         <Container name="A3AU_hals_store_helpers">
@@ -875,6 +889,13 @@
                 <Korean>OPTRE</Korean>
                 <French>OPTRE</French>
                 <Chinesesimp>OPTRE</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_optreFC">
+                <Original>OPTRE FC</Original>
+                <Russian>OPTRE FC</Russian>
+                <Korean>OPTRE FC</Korean>
+                <French>OPTRE FC</French>
+                <Chinesesimp>OPTRE FC</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_pla">
                 <Original>PLA</Original>

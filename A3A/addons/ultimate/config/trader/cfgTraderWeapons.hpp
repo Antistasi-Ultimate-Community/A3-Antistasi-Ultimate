@@ -162,6 +162,10 @@
         {
             prefix = "optre";
         };
+        class weapons_optre_fc : weapons_base
+        {
+            prefix = "firstcontact";
+        };
         class weapons_niarms : weapons_base
         {
             prefix = "niarms";

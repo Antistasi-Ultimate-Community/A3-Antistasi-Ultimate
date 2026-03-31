@@ -253,10 +253,16 @@
     }; // needs to be split into all 4 RHS mods, but only god knows the day that will happen
     class addons_optre : addons_base
     {
-        addons[] = {"OPTRE_Core", "OPTRE_FC_Core"};
+        addons[] = {"OPTRE_Core"};
         weapons = "weapons_optre";
         vehicles = "vehicles_optre";
-    }; // should probably be split up to optre and optre_fc
+    };
+    class addons_optre_fc : addons_base
+    {
+        addons[] = {"OPTRE_FC_Core"};
+        weapons = "weapons_optre_fc";
+        vehicles = "vehicles_optre_fc";
+    };
     class addons_niarms : addons_base
     {
         addons[] = {"hlcweapons_core"};

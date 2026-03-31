@@ -10,6 +10,7 @@
 #include "vehicles_sfp.hpp"
 #include "vehicles_cw.hpp"
 #include "vehicles_optre.hpp"
+#include "vehicles_optre_fc.hpp"
 #include "vehicles_sog.hpp"
 #include "vehicles_scion.hpp"
 #include "vehicles_tmt.hpp"

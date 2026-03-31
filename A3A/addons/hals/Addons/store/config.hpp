@@ -656,9 +656,40 @@ class cfgHALsStore
 			    "magazineshalo", 
 			    "pointershalo",
 			    "specialweaponshalo",
+				"opticshalo",
+			    "underbarrelhalo",
 			    "mischalo",
-			    "opticshalo",
-			    "underbarrelhalo"
+				"navigationhalo",
+				"backpackshalo",
+				"vestshalo",
+				"uniformshalo",
+				"helmetshalo",
+				"spartanhelmetshalo",
+				"spartanarmorhalo"
+			};
+		};
+
+
+		class firstcontact //optre expansion
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+			    "handgunshaloFC",
+			    "smghaloFC",
+			    "rifleshaloFC",
+			    "sniperrifleshaloFC",
+			    "launchershaloFC",
+			    "launchermagazineshaloFC",
+				"specialweaponshaloFC",
+			    "magazineshaloFC", 
+			    "mischaloFC",
+				"navigationhaloFC",
+				"backpackshaloFC",
+				"vestshaloFC",
+				"uniformshaloFC",
+				"helmetshaloFC",
+				"spartanhelmetshaloFC",
+				"spartanarmorhaloFC"
 			};
 		};
 		
