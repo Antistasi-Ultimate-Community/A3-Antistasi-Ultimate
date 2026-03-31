@@ -589,11 +589,13 @@ class planeLoadouts
             loadout[] = {"OPTRE_2000Rnd_30mm_HE","OPTRE_2000Rnd_30mm_HE"};
             mainGun = "OPTRE_30mm_Cannon";
         };
+        class OPTRE_Wombat_CMA  : OPTRE_Wombat {};
         class OPTRE_Wombat_B
         {
             loadout[] = {"OPTRE_4Rnd_Scorpion_missiles","OPTRE_2Rnd_Jackknife_missile"};
             missileLauncher[] = {"OPTRE_missiles_Scorpion","OPTRE_missiles_Jackknife"};
         };
+        class OPTRE_Wombat_B_CMA  : OPTRE_Wombat_B {};
        /* class B_Plane_CAS_01_dynamicLoadout_F
         {
             loadout[] = {"PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_HE_F"};
@@ -1170,11 +1172,13 @@ class planeLoadouts
             loadout[] = {"OPTRE_2000Rnd_30mm_HE","OPTRE_2000Rnd_30mm_HE"};
             mainGun = "OPTRE_30mm_Cannon";
         };
+        class OPTRE_Wombat_CMA  : OPTRE_Wombat {};
         class OPTRE_Wombat_B
         {
             loadout[] = {"OPTRE_6Rnd_C2GMLS_missiles","OPTRE_6Rnd_C2GMLS_missiles"};
             missileLauncher[] = {"OPTRE_missiles_C2GMLS"};
         };
+        class OPTRE_Wombat_B_CMA  : OPTRE_Wombat_B {};
         /// TFC
 
         class TFC_CP140_dynamicLoadout
