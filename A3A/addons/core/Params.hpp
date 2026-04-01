@@ -1098,7 +1098,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
-        // lockCondition = "!('enoch' in A3A_enabledDLC);"; // ! Doesn't work because that var isn't instantiated yet. Need to see if we actually have a var for this...
+        //lockCondition = "!('enoch' in flatten (['getContent'] call A3A_fnc_setupFactionsTab));"; // TODO: this works, but checking the box in the content tab doesn't force a re-evaluation of the lock condition, so it's not much help.
     };
     class reviveKitsEnabled: RebelBalanceParams
     {
@@ -2859,34 +2859,10 @@ class Params
         default = 1;
         lockInGame = 1;
     };
-    class enableVehicleAutoLockCiv: VehicleLootParams
+    class enableVehicleAutoLockCiv: enableVehicleAutoLock
     {
         title = $STR_params_enableVehicleAutoLockCiv;
         tooltip = $STR_params_enableVehicleAutoLockCiv_desc;
-        values[] = {0,1};
-        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 0;
-                medium = 1;
-                hard = 1;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 1;
-        lockInGame = 1;
-        class dependencies
-        {
-            class vehicleLockpickTime
-            {
-                value = 0;
-                lockedByDependency = 1;
-            };
-        };
     };
     class vehicleLockpickTime: VehicleLootParams
     {

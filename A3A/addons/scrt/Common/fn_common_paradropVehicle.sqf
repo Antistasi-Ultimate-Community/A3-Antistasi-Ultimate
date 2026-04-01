@@ -90,7 +90,7 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, -1];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
-[_plane, _dropPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
+[_plane, _dropPos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
 
 [_plane, _dropPos] spawn {
     params ["_plane", "_dropPos"];
@@ -100,10 +100,8 @@ _wp1 setWaypointSpeed "NORMAL";
     };
 };
 
-if(canMove _plane || alive (driver _plane)) then {
-    [_plane, "open"] spawn A3A_fnc_HeliDoors;
-    sleep 0.25;
-};
+[_plane, "open"] spawn A3A_fnc_HeliDoors;
+sleep 0.25;
 
 waitUntil {sleep 1; (_plane getVariable ["dropPosReached", false]) || {!alive _plane || {!canMove _plane}}};
 if !(alive _plane) exitWith {};

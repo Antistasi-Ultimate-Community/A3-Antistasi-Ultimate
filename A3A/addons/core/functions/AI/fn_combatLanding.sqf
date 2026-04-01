@@ -26,8 +26,11 @@ if (_vehType in vehFastRope) then {
     } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
 };
 if (_forceFastrope) exitWith {
-    Error("A3A_fnc_combatLanding called, but position has tall terrain objects - calling A3A_fnc_fastrope instead.");
-    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn A3A_fnc_fastrope;
+    private _functionName = ["A3A_fnc_fastrope", "A3A_fnc_fastropeVTOL"] select (_vehType in FactionGet(all, "vehiclesPlanesTransport"));
+    private _function = missionNamespace getVariable [_functionName, {}];
+    
+    Warning_1("A3A_fnc_combatLanding called, but position has tall terrain objects - spawning %1 instead.", _functionName);
+    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn _function;
 };
 
 if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
@@ -52,7 +55,7 @@ _vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gu
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
-[_helicopter, _landPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
+[_helicopter, _landPos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 while {_helicopter distance2D _landPos > 675} do {
@@ -151,10 +154,8 @@ sleep 0.1;
 [_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
 
 _helicopter engineOn true; ///keep the engine running
-if(canMove _helicopter || alive _driver) then {
-    [_helicopter, "open"] spawn A3A_fnc_HeliDoors;
-    sleep 0.25;
-};
+[_helicopter, "open"] spawn A3A_fnc_HeliDoors;
+sleep 1.2;
 
 _cargoGroup leaveVehicle _helicopter;
 {
@@ -186,14 +187,28 @@ if (count (units _cargoGroup select {alive _x}) > 0) then {
 
 if(!alive _helicopter || {!canMove _helicopter || {!alive _driver}}) exitWith {};
 if (!isEngineOn _helicopter) then { _helicopter engineOn true;};
-if(canMove _helicopter || alive _driver) then {
-    [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
-};
 _helicopter flyInHeight _midHeight;
 
 _helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// remove the limit
+[_helicopter, _driver] spawn {
+    params ["_helicopter","_driver"];
 
-_helicopter action ["LandGearUp", _helicopter];
+    sleep 8;
+    if(canMove _helicopter || alive _driver) then {
+        [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
+    };
+    _helicopter action ["LandGearUp", _helicopter];
+};
+
+[_helicopter, _landPos] spawn {
+    params ["_helicopter","_landPos"];
+
+    waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
+    for '_i' from 1 to (5 + (round random 2)) do
+    {
+        [_helicopter, 1] call A3A_fnc_fireCMFlare;
+    };
+};
 
 if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
@@ -205,9 +220,3 @@ _vehWP1 setWaypointStatements ["true", "if (local this and alive this) then { de
 _vehWP1 setWaypointBehaviour "CARELESS";
 
 _crewGroup setCurrentWaypoint _vehWP1;
-waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
-for '_i' from 1 to (5 + (round random 2)) do
-{
-    [_helicopter, 1] call A3A_fnc_fireCMFlare;
-};
-_helicopter action ["LandGearUp", _helicopter];
