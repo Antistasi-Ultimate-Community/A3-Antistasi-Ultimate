@@ -106,15 +106,16 @@ private _updateMass = {
             [_box] spawn {
                 params ["_box"];
                 private _velocity = [0,0,2];
+                private _startTime = time;
                 while { true } do {
                     sleep 0.1;
                     _box setVelocity _velocity;
                     if ((getPosATL _box select 2) > 10) then { _velocity = [0,0,5]; };
-                    if ( (getPosATL _box select 2 > 100) || (_box getVariable ["A3A_lootBox_wasHit", false]) ) exitWith { //should also add a time limit
+                    if ( (getPosATL _box select 2 > 100) || (_box getVariable ["A3A_lootBox_wasHit", false]) || (time - _startTime > 30)) exitWith {
                         private _fullMass = _box getVariable ["A3A_lootBox_initialMass", 0.01];
                         _box setVariable ["A3A_lootBox_currentMass", _fullMass];
                         _box setMass _fullMass;
-                        _box say3D ["A3A_Sound_Pop", 200, 1, 0, 0, true];
+                        [_box, ["A3A_Sound_Pop", 200, 1, 0, 0, true]] remoteExec ["say3D", 0];
                         addCamShake [10, 1, 125];
                     };
                 };
@@ -122,7 +123,7 @@ private _updateMass = {
                 _box setVariable ["A3A_lootBox_wasHit", nil];
                 _box removeEventHandler ["Hit", _box getVariable ["A3A_lootBox_hitEH", -1]];
                 sleep 4;
-                _box say3D ["A3A_Sound_Deflate", 50, 1, 0, 0, true];
+                [_box, ["A3A_Sound_Deflate", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
             };
             private _hitEH = _box addEventHandler ["Hit", { params ["_box"]; _box setVariable ["A3A_lootBox_wasHit", true]; }];
             _box setVariable ["A3A_lootBox_hitEH", _hitEH];
@@ -300,7 +301,7 @@ playSound3D ["x\A3A\addons\core\Sounds\Misc\LootSuccess.ogg", _vehicle, false, g
     localize "STR_antistasi_actions_successful_loot_text" remoteExec ["systemChat", _x];
 } forEach ([_radius, _vehicle] call SCRT_fnc_common_getNearPlayers);
 
-_vehicle say3D ["A3A_Sound_Inflate", 50, 1, 0, 0, true];
+[_vehicle, ["A3A_Sound_Inflate", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
 sleep 2.5;
 [_vehicle, _lootMass] call _updateMass;
 

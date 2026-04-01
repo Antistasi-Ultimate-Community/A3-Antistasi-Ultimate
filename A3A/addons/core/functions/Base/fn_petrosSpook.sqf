@@ -2,9 +2,9 @@
 params ["_petros"];
 if (!local _petros) exitWith {};
 
-sleep 5;
+sleep 30;
 
-diag_log "PETROS_SPOOK: started";
+//diag_log "PETROS_SPOOK: started";
 
 private _duration = 0;
 private _currentWatcher = objNull;
@@ -30,7 +30,7 @@ while {alive _petros} do {
                     private _viewDir = eyeDirection _x;
                     private _dot = (_dirToPetros select 0)*(_viewDir select 0) + (_dirToPetros select 1)*(_viewDir select 1) + (_dirToPetros select 2)*(_viewDir select 2);
                     // If looking towards Petros and within 20m radius
-                    if (_dot > 0.8 && _dist <= 20) then {
+                    if (_dot > 0.8 && _dist <= 20) then { //
                         _someoneWatching = true;
                         _watcher = _x;
                     };
@@ -47,16 +47,16 @@ while {alive _petros} do {
             private _originalPos = getPos _petros;
             private _originalDir = getDir _petros;
             _petros setDir (_petros getDir _watcher);
-            _petros switchMove _anim;
+            [_petros, _anim] remoteExec ["switchMove", 0];
             private _message = format ["Petros :)  %1", localize "STR_A3U_Petros_spook_boo"];
             [_message] remoteExec ["systemChat", owner _watcher];
             sleep 2.8;
             _petros setDir _originalDir;
             _petros setPos _originalPos;
-            _petros switchMove "AmovPercMstpSnonWnonDnon";
-            diag_log "Reaction animation finished, restored position/direction";
+            [_petros, "AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove", 0];
+            //diag_log "Reaction animation finished, restored position/direction";
         };
-        _petros setVariable ["A3A_Petros_lastWatchTimeout", time + 23];
+        _petros setVariable ["A3A_Petros_lastWatchTimeout", time + 30];
         // Short pause to avoid spamming reactions (though timeout already set)
     };
     sleep 1;

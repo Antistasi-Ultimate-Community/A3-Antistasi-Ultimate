@@ -188,39 +188,40 @@ private _warning1Messages = [
     "STR_A3U_Petros_arsenal_warning1b",
     "STR_A3U_Petros_arsenal_warning1c"
 ];
-private _warning2Messages = [
-    "STR_A3U_Petros_arsenal_warning2a",
-    "STR_A3U_Petros_arsenal_warning2b",
-    "STR_A3U_Petros_arsenal_warning2c"
-];
+
 
 if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
     _destinationX setVariable ["A3A_arsenal_exploding", true];
 
-    _destinationX say3D ["A3A_Sound_Crackling", 50, 1, 0, 0, true];
+    [_destinationX, ["A3A_Sound_Crackling", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
     sleep 1;
     private _nearPlayers = allPlayers select { (_x distance _destinationX) < 50 && alive _x };
     if (count _nearPlayers > 0) then {
         private _owners = _nearPlayers apply { owner _x };
         private _message = localize (selectRandom _warning1Messages);
-        _message remoteExec ["systemChat", _owners];
+        [_message] remoteExec ["systemChat", _owners];
     };
 
     [_destinationX] spawn {
         params ["_box"];
+        private _warning2Messages = [
+            "STR_A3U_Petros_arsenal_warning2a",
+            "STR_A3U_Petros_arsenal_warning2b",
+            "STR_A3U_Petros_arsenal_warning2c"
+        ];
         sleep 2;
 
         private _nearPlayers = allPlayers select { (_x distance _box) < 50 && alive _x };
         if (count _nearPlayers > 0) then {
             private _owners = _nearPlayers apply { owner _x };
             private _message = localize (selectRandom _warning2Messages);
-            _message remoteExec ["systemChat", _owners];
+            [_message] remoteExec ["systemChat", _owners];
         };
 
         sleep 3;
         [petros, "A3A_Audio_Petros_Scream_long"] remoteExec ["say3D", 0];
 
-        _box say3D ["A3A_Sound_Crackling", 50, 1, 0, 0, true];
+        [_box, ["A3A_Sound_Crackling", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
         sleep 2;
 
         private _pos = getPosATL _box;
@@ -234,7 +235,7 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
             (simulationEnabled _x)
         };
 
-        _box say3D ["A3A_Sound_Thud", 200, 1, 0, 0, true];
+        [_box, ["A3A_Sound_Thud", 200, 1, 0, 0, true]] remoteExec ["say3D", 0];
 
         { _x allowDamage false; } forEach _objects;
 
@@ -271,13 +272,13 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
         _destinationX setVariable ["A3A_arsenal_currentMass", _newMass];
         _destinationX setMass _newMass;
 
-        _destinationX say3D ["A3A_Sound_Crackling", 50, 1, 0, 0, true];
+        [_destinationX, ["A3A_Sound_Crackling", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
         sleep 1;
         private _nearPlayers = allPlayers select { (_x distance _destinationX) < 50 && alive _x };
         if (count _nearPlayers > 0) then {
             private _owners = _nearPlayers apply { owner _x };
             private _message = localize (selectRandom _warning1Messages);
-            _message remoteExec ["systemChat", _owners];
+            [_message] remoteExec ["systemChat", _owners];
         };
     };
 };

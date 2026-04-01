@@ -100,12 +100,14 @@ petros addEventHandler
                 private _reactionType = _selectedReaction select 0;
                 private _reactionName = _selectedReaction select 1;
                 if (_reactionType == "gesture") then {
-                    _unit playGesture _reactionName;
+                    [_unit, _reactionName] remoteExec ["playGesture", 0];
+                    //_unit playGesture _reactionName;
                 } else {
                     private _isAttached = !isNull attachedTo _petros;
                     private _moveEnabled = _petros checkAIFeature "MOVE";
                     if (!_isAttached || !_moveEnabled) then {
-                        _unit switchMove _reactionName;
+                        [_unit, _reactionName] remoteExec ["switchMove", 0];
+                        //_unit switchMove _reactionName;
                     };
                 };
 
@@ -166,7 +168,7 @@ petros addEventHandler ["Attached", {
         private _nearPlayers = allPlayers select { (_x distance _attachedObj) < 50 };
         if (count _nearPlayers > 0) then {
             private _owners = _nearPlayers apply { owner _x };
-            [_message] remoteExec ["systemChat", _owners];
+            [_message] remoteExec ["systemChat", _owners]; //
         };
     };
 }];

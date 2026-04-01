@@ -48,8 +48,10 @@ private _playNextTrack = {
     private _duration = _durations select (_tracks find _newTrack);
     _petros setVariable ["A3A_Petros_trackEndTime", time + _duration];
 
-    // Play sound via say3D and store the returned object
-    private _soundSource = _petros say3D [_newTrack, 300, 1, 0, 0, true];
+    private _soundSource = createVehicle ["Land_Can_V1_F", getPosASL _petros, [], 0, "CAN_COLLIDE"];
+    _soundSource attachTo [_petros, [0, 0, -0.2]];
+
+    [_soundSource, [_newTrack, 300, 1, 0, 0, true]] remoteExec ["say3D", 0];
     _petros setVariable ["A3A_Petros_currentSoundObj", _soundSource];
 };
 
@@ -102,7 +104,8 @@ private _addActions = {
             if (!alive _caller) exitWith {};
             private _danceAnims = ["Acts_Dance_01", "Acts_Dance_02"];
             _caller setVariable ["A3A_Petros_dancing", true];
-            _caller switchMove selectRandom _danceAnims;
+            [_caller, selectRandom _danceAnims] remoteExec ["switchMove", 0];
+            //_caller switchMove selectRandom _danceAnims;
         },
         nil,
         6,
@@ -116,7 +119,8 @@ private _addActions = {
         "<t color='#FF69B4'>Stop dancing</t>",
         {
             params ["_target", "_caller"];
-            _caller switchMove "";
+            [_caller, ""] remoteExec ["switchMove", 0];
+            //_caller switchMove "";
             _caller setVariable ["A3A_Petros_dancing", false];
         },
         nil,
@@ -180,7 +184,8 @@ call _addActions;
 // PETROS DANCE ANIMATIONS 
 private _danceAnims = ["Acts_Dance_01", "Acts_Dance_02"];
 private _danceAnimsLower = _danceAnims apply {toLower _x};
-_petros switchMove selectRandom _danceAnims;
+[_petros, selectRandom _danceAnims] remoteExec ["switchMove", 0];
+//_petros switchMove selectRandom _danceAnims;
 
 // START MUSIC
 call _playNextTrack;
@@ -254,7 +259,8 @@ while {alive _petros} do {
         // Petros dance
         private _currentAnim = toLower animationState _petros;
         if !(_currentAnim in _danceAnimsLower) then {
-            _petros switchMove selectRandom _danceAnims;
+            [_petros, selectRandom _danceAnims] remoteExec ["switchMove", 0]
+            //_petros switchMove selectRandom _danceAnims;
         };
     } else {
         // Party time ended – turn everything off
@@ -263,13 +269,14 @@ while {alive _petros} do {
         // Stop Petros dance
         private _currentAnim = toLower animationState _petros;
         if (_currentAnim in _danceAnimsLower) then {
-            _petros playMoveNow "AmovPercMstpSnonWnonDnon";
+            [_petros, "AmovPercMstpSnonWnonDnon"] remoteExec ["playMoveNow", 0];
         };
 
         // Stop all dancing players
         {
             if (_x getVariable ["A3A_Petros_dancing", false]) then {
-                _x switchMove "";
+                [_x, ""] remoteExec ["switchMove", 0];
+                //_x switchMove "";
                 _x setVariable ["A3A_Petros_dancing", false];
             };
         } forEach (_petros nearEntities ["CAManBase", 30]);
@@ -287,7 +294,8 @@ while {alive _petros} do {
         // Party becomes active again – restore everything
         call _addActions;
         call _playNextTrack;
-        _petros switchMove selectRandom _danceAnims;
+        [_petros, selectRandom _danceAnims] remoteExec ["switchMove", 0];
+        //_petros switchMove selectRandom _danceAnims;
     };
     sleep 0.1;
 };

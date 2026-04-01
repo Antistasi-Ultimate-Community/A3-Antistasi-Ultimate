@@ -47,7 +47,7 @@ if (_unit isEqualTo ObjNull) exitWith {ObjNull};
 
         [_unit, _combo#0, _combo#1, _combo#2] call A3A_fnc_unitAmbientPlay;
  
-		sleep (10 + random 170);
+		sleep (15 + random 165);
 
         if !(alive _unit) exitWith {};
 	}; 
