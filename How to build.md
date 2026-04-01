@@ -30,7 +30,8 @@
         "A3A/addons/maps",
         "A3A/addons/patcom",
         "A3A/addons/scrt",
-        "A3A/addons/ultimate"
+        "A3A/addons/ultimate",
+        "A3A/addons/zeus"
     ],
 	"clientMods": [],
 	"ftpConnection": {},
