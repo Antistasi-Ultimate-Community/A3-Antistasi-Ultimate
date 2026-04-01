@@ -252,7 +252,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_QRF", "SSV_Uniform_Vanguard_Stealth"]];
-_eliteLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
+_eliteLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
 _eliteLoadoutData set ["vests", ["SSV_Vest_Vanguard_QRF"]];
 _eliteLoadoutData set ["mgVests", ["SSV_Vest_Vanguard_SMG"]];
 _eliteLoadoutData set ["medVests", ["JMSJEFF_FarmorS_armor_black"]];
@@ -307,7 +307,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_Soldier", "SSV_Uniform_Vanguard_Worker"]];
-_militaryLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
+_militaryLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
 _militaryLoadoutData set ["vests", ["SSV_Vest_Vanguard_Stealth"]];
 _militaryLoadoutData set ["mgVests", ["JMSJEFF_ChestVestS_armor_black"]];
 _militaryLoadoutData set ["medVests", ["JMSJEFF_ChestVestTroop_armor_black"]];
@@ -380,7 +380,7 @@ _policeLoadoutData set ["sidearms", [
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", ["SSV_Uniform_Vanguard_Soldier", "SSV_Uniform_Vanguard_Worker"]];
-_militiaLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
+_militiaLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_black1_F_CombatUniform"]];
 _militiaLoadoutData set ["vests", ["SSV_Vest_Vanguard_Stealth"]];
 _militiaLoadoutData set ["mgVests", ["JMSJEFF_ChestVestS_armor_black"]];
 _militiaLoadoutData set ["medVests", ["JMSJEFF_ChestVestTroop_armor_black"]];
