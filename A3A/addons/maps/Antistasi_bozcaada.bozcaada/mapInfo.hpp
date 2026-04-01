@@ -1,7 +1,7 @@
 #include "\x\A3A\addons\maps\BuildObjectsList.hpp"
 class bozcaada {
 	population[] = {
-		{"merkez_city",2000}
+		{"merkez_city",2401}
 	};
 	disabledTowns[] = {}; //no towns that need to be disabled
 	antennas[] = {
@@ -14,7 +14,7 @@ class bozcaada {
 		
 	};
 	garrison[] = {
-		{},{"airport_1","resource_5","outpost_19","outpost_18"},{},{"control","control_1"}
+		{},{"airport_1","resource_5","outpost_19","outpost_18","outpost_2","factory_3","outpost_8","factory_5","outpost_9","outpost_20"},{},{"control","control_1"}
 	};
 	fuelStationTypes[] = {
 		"Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F"
