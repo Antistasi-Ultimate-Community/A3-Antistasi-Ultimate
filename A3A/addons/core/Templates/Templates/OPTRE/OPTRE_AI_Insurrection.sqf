@@ -400,8 +400,8 @@ _sfLoadoutData set ["rifles", [
 ]];
 private _sfm6Rail = ["OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red"];
 _sfLoadoutData set ["carbines", [
-    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
-    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer" "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Jungle_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Jungle_Tracer", "OPTRE_26Rnd_127x40_Mag_Jungle_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
@@ -591,8 +591,8 @@ _eliteLoadoutData set ["rifles", [
 ]];
 private _elitem6Rail = ["OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red"];
 _eliteLoadoutData set ["carbines", [
-    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
-    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Jungle_F", "OPTRE_M6D_Carbine_Brake", _elitem6Rail, _eliteoptics, ["OPTRE_40Rnd_127x40_Drum_Jungle_Tracer", "OPTRE_26Rnd_127x40_Mag_Jungle_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
@@ -1466,7 +1466,7 @@ private _spartanUnit = ["baseClass", "OPTRE_FC_Spartan_TeamLeader", false , true
 /////////////////////////////
 private _prefix = "SF";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [_spartanUnitSL], [_prefix]],
+    ["SquadLeader", _squadLeaderTemplate, [_spartanUnit], [_prefix]],
     ["Radioman", _radiomanTemplate, [], [_prefix]],
     ["Rifleman", _riflemanTemplate, [], [_prefix]],
     ["Medic", _medicTemplate, [["medic", true]], [_prefix]],

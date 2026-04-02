@@ -51,6 +51,7 @@ class cfgHALsStore
 		#include "config\italy.hpp"
 		#include "config\niarms.hpp"
 		#include "config\optre.hpp"
+		#include "config\optreFC.hpp"
 		#include "config\pla.hpp"
 		#include "config\rf.hpp"
 		#include "config\rhs.hpp"
@@ -669,8 +670,7 @@ class cfgHALsStore
 			};
 		};
 
-
-		class firstcontact //optre expansion
+		class firstcontact
 		{
 			displayName = $STR_ARMS_DEALER_STORE;
 			categories[] = {
@@ -691,7 +691,7 @@ class cfgHALsStore
 				"spartanhelmetshaloFC",
 				"spartanarmorhaloFC"
 			};
-		};
+		};//optre expansion
 		
 		class ffaastock
 		{

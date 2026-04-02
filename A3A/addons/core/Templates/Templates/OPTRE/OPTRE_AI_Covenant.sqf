@@ -196,7 +196,7 @@ _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["gpses", ["ItemGPS"]];
 _loadoutData set ["NVGs", ["OPTRE_FC_NVG"]];
 _loadoutData set ["binoculars", ["OPTRE_Binoculars"]];
-_loadoutData set ["rangefinders", ["OPTRE_Smartfinder"/* , "OPTRE_Smartfinder_Vector" */]];
+_loadoutData set ["rangefinders", ["OPTRE_Smartfinder"]];
 
 _loadoutData set ["traitorUniforms", ["OPTRE_UNSC_Army_Uniform_T2_BLK_SlimLeg"]]; //should probably just use a base class
 _loadoutData set ["traitorVests", ["OPTRE_UNSC_M52D_Armor_Venom"]];
@@ -285,6 +285,7 @@ _sfLoadoutData set ["glVests", ["OPTRE_FC_Elite_Armor_SpecOps"]];
 _sfLoadoutData set ["backpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan"]];
 _sfLoadoutData set ["slBackpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan"]];
 _sfLoadoutData set ["atBackpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan"]];
+_sfLoadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515_Spartan"]];
 _sfLoadoutData set ["helmets", ["OPTRE_FC_Elite_Helmet_SpecOps"]];
 _sfLoadoutData set ["slHat", ["OPTRE_FC_Elite_Helmet_Ultra"]];
 _sfLoadoutData set ["sniHats", ["OPTRE_FC_Elite_Helmet_SpecOps"]];
@@ -352,6 +353,7 @@ _eliteLoadoutData set ["engVests", ["OPTRE_FC_Elite_Armor_Ultra"]];
 _eliteLoadoutData set ["backpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan_Red"]];
 _eliteLoadoutData set ["slBackpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan_Red"]];
 _eliteLoadoutData set ["atBackpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan_Red"]];
+_eliteLoadoutData set ["longRangeRadios", ["OPTRE_ANPRC_515_Spartan"]];
 _eliteLoadoutData set ["helmets", ["OPTRE_FC_Elite_Helmet_Ultra"]];
 _eliteLoadoutData set ["slHat", ["OPTRE_FC_Elite_Helmet_Officer"]];
 _eliteLoadoutData set ["sniHats", ["OPTRE_FC_Elite_Helmet_Ultra"]];
@@ -419,6 +421,7 @@ _militaryLoadoutData set ["engVests", ["OPTRE_FC_Elite_Armor_Minor"]];
 _militaryLoadoutData set ["backpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan"]];
 _militaryLoadoutData set ["slBackpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan_Orange"]];
 _militaryLoadoutData set ["atBackpacks", ["OPTRE_FC_Gheocin_Combat_Support_Pod_Spartan_Orange"]];
+_militaryLoadoutData  set ["longRangeRadios", ["OPTRE_ANPRC_515_Spartan"]];
 _militaryLoadoutData set ["helmets", ["OPTRE_FC_Elite_Helmet_Minor"]];
 _militaryLoadoutData set ["athelmets", ["OPTRE_FC_Elite_Helmet_Major"]];
 _militaryLoadoutData set ["enghelmets", ["OPTRE_FC_Elite_Helmet_Minor"]];
@@ -1230,7 +1233,7 @@ private _unitTypes = [
     ["AA", _aaTemplate, [_eliteUnitMinorAA], [_prefix]],
     ["MachineGunner", _machineGunnerTemplate, [_eliteUnitMajor], [_prefix]],
     ["Marksman", _marksmanTemplate, [_eliteUnitMajor], [_prefix]],
-    ["Sniper", _sniperTemplate, [_eliteUnitMajor], [_prefix]]
+    ["Sniper", _sniperTemplate, [_eliteUnitMajor], [_prefix]],
     ["PatrolSniper", _patrolSniperTemplate, [_eliteUnitMajor], [_prefix]],
     ["PatrolSpotter", _patrolSpotterTemplate, [_eliteUnitMajor], [_prefix]]
 ];

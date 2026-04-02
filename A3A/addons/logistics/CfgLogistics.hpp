@@ -27,6 +27,7 @@ class DOUBLES(ADDON,Nodes)
     #include "Nodes\UNS.hpp"
     #include "Nodes\Vanilla.hpp"
     #include "Nodes\OPTRE.hpp"
+    #include "Nodes\OPTRE_FC.hpp"
     #include "Nodes\RACS.hpp"
     #include "Nodes\VN.hpp"
     #include "Nodes\Nickelsteel.hpp"
@@ -74,7 +75,8 @@ class DOUBLES(ADDON,Cargo)
     #include "Cargo\SPEX.hpp"
     #include "Cargo\UNS.hpp"
     #include "Cargo\Vanilla.hpp"
-    #include "Cargo\OPTRE.hpp" // has to be here. It uses the class for the vanilla fuel drum
+    #include "Cargo\OPTRE.hpp" // has to be here. It uses the class for the vanilla fuel drum /// why though
+    #include "Cargo\OPTRE_FC.hpp"
     #include "Cargo\VN.hpp"
     #include "Cargo\Nickelsteel.hpp"
     #include "Cargo\WS.hpp"

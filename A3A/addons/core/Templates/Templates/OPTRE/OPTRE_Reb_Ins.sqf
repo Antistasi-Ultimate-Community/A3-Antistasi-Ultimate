@@ -81,10 +81,6 @@ private _staticAA = [
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate; ///should probably use OPTRE one
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate; ///should probably use OPTRE one
 
-["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
-
-["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
-
 if (_hasApex) then {
   #include "..\DLC_content\vehicles\Apex\Vanilla_FIA.sqf"  
 };
@@ -97,7 +93,6 @@ if (_hasLawsOfWar) then {
 ["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
 ["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
-["staticMortars", _staticMortars] call _fnc_saveToTemplate;
 ["staticMGs", _staticMG] call _fnc_saveToTemplate;
 ["staticAT", _staticAT] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;

@@ -33,7 +33,7 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_optreFC", localize "STR_A3AU_sniperRifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(OPTRE_FC_T31_NeedleRifle 1000, RIFLE_STOCK);
+			ITEM(OPTRE_FC_T31_NeedleRifle, 1000, RIFLE_STOCK);
 			ITEM(OPTRE_FC_T50_SRS, 1000, RIFLE_STOCK);
 			ITEM(OPTRE_FC_T51_Carbine, 1100, RIFLE_STOCK);
 			ITEM(OPTRE_FC_T51B_Carbine, 1500, RIFLE_STOCK);
@@ -865,7 +865,6 @@
 			ITEM(OPTRE_FC_MJOLNIR_Mark_VI_Security_Armor_Security_L_Tan, 5000, 10);
 			ITEM(OPTRE_FC_MJOLNIR_Mark_VI_Security_Armor_Security_R_Tan, 5000, 10);
 			//Snow
-			ITEM(OPTRE_FC_MJOLNIR_MKV_Armor_Night, 5000, 10);
 			ITEM(OPTRE_FC_MJOLNIR_Mark_VI_EOD_Armor_EVA_R_White_EOD_L_White, 5000, 10);
 			ITEM(OPTRE_FC_MJOLNIR_Mark_VI_EOD_Armor_EOD_L_White_Scout_R_White, 5000, 10);
 			ITEM(OPTRE_FC_MJOLNIR_Mark_VI_EOD_Armor_EOD_L_White_Security_R_White, 5000, 10);

@@ -450,8 +450,8 @@ _sfLoadoutData set ["rifles", [
 ]];
 private _sfm6Rail = ["OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red"];
 _sfLoadoutData set ["carbines", [
-    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
-    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Desert_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Desert_Tracer", "OPTRE_26Rnd_127x40_Mag_Desert_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
@@ -668,8 +668,8 @@ _eliteLoadoutData set ["rifles", [
     ["OPTRE_MA5C", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_32Rnd_762x51_Mag_Tracer"], [], ""]
 ]];
 _eliteLoadoutData set ["carbines", [
-    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
-    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_M6D_Carbine_F", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Desert_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Desert_Tracer", "OPTRE_26Rnd_127x40_Mag_Desert_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
@@ -1661,12 +1661,12 @@ private _spartanUnitRad = ["baseClass", "OPTRE_FC_Spartan_Scout", false , true];
 private _spartanUnitGrenadier = ["baseClass", "OPTRE_FC_Spartan_MkVI", false , true];
 private _spartanUnitAT = ["baseClass", "OPTRE_FC_Spartan_Rifleman_AT", false , true];
 private _spartanUnitSniper = ["baseClass", "OPTRE_FC_Spartan_Scout_Sniper", false , true];
-private _spartanOrSpecialODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.3],[["OPTRE_FC_Spartan_Corpsman", false , true], 0.7]]];
-private _spartanOrSpecialODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, true], 0.3],[["OPTRE_FC_Spartan_Engineer", false , true], 0.7]]];
-private _spartanOrSpecialODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, true], 0.3],[["OPTRE_FC_Spartan_MkVI", false , true], 0.7]]];
-private _spartanOrSpecialODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, true], 0.3],[["OPTRE_FC_Spartan_Rifleman_BR", false , true], 0.7]]];
-private _spartanOrSpecialODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, true], 0.3],[["OPTRE_FC_Spartan_Automatic_Rifleman", false , true], 0.7]]];
-private _spartanOrSpecialODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, true], 0.3],[["OPTRE_FC_Spartan_Marksman", false , true], 0.7]]];
+private _spartanOrSpecialODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.35],[["OPTRE_FC_Spartan_Corpsman", false , true], 0.65]]];
+private _spartanOrSpecialODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, true], 0.35],[["OPTRE_FC_Spartan_Engineer", false , true], 0.65]]];
+private _spartanOrSpecialODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, true], 0.35],[["OPTRE_FC_Spartan_MkVI", false , true], 0.65]]];
+private _spartanOrSpecialODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, true], 0.35],[["OPTRE_FC_Spartan_Rifleman_BR", false , true], 0.65]]];
+private _spartanOrSpecialODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, true], 0.35],[["OPTRE_FC_Spartan_Automatic_Rifleman", false , true], 0.65]]];
+private _spartanOrSpecialODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, true], 0.35],[["OPTRE_FC_Spartan_Marksman", false , true], 0.65]]];
 
 private _prefix = "SF";
 private _unitTypes = [
@@ -1759,20 +1759,28 @@ private _unitTypes = [
 //  Elite Units   //
 ///////////////////////
 private _spartanOrHumanUnit = ["baseClass", [[["OPTRE_Spartan3_Soldier_TeamLeader", false, true], 0.25],[["OPTRE_UNSC_ODST_Soldier_TeamLeader", true, false], 0.75]]];
+
+private _SpecialOrNormalODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.4],[["OPTRE_UNSC_ODST_Soldier_Paramedic", false, false], 0.6]]];
+private _SpecialOrNormalODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, false], 0.4],[["OPTRE_UNSC_ODST_Soldier_Breacher", false, false], 0.6]]];
+private _SpecialOrNormalODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, false], 0.4],[["OPTRE_UNSC_ODST_Soldier_DemolitionsExpert", false, false], 0.6]]];
+private _SpecialOrNormalODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, false], 0.4],[["OPTRE_UNSC_ODST_Soldier_Scout", false, false], 0.6]]];
+private _SpecialOrNormalODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, false], 0.4],[["OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman", false, false], 0.6]]];
+private _SpecialOrNormalODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, false], 0.4],[["OPTRE_UNSC_ODST_Soldier_Marksman", false, false], 0.6]]];
+
 private _prefix = "elite";
 private _unitTypes = [
     ["SquadLeader", _squadLeaderTemplate, [_spartanOrHumanUnit], [_prefix]],
     ["Radioman", _radiomanTemplate, [], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true]], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true]], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true]], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_SpecialOrNormalODSTrifleman], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _SpecialOrNormalODSTmedic], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _SpecialOrNormalODSTengineer], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _SpecialOrNormalODSTexplosives], [_prefix]],
     ["Grenadier", _grenadierTemplate, [], [_prefix]],
     ["LAT", _latTemplate, [], [_prefix]],
     ["AT", _atTemplate, [], [_prefix]],
     ["AA", _aaTemplate, [], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [], [_prefix]],
-    ["Marksman", _marksmanTemplate, [], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_SpecialOrNormalODSTmachine], [_prefix]],
+    ["Marksman", _marksmanTemplate, [_SpecialOrNormalODSTmarksman], [_prefix]],
     ["Sniper", _sniperTemplate, [], [_prefix]],
     ["PatrolSniper", _patrolSniperTemplate, [], [_prefix]],
     ["PatrolSpotter", _patrolSpotterTemplate, [], [_prefix]]

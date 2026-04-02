@@ -193,7 +193,8 @@
 			//OPTRE_CSW_M247T_Carry_Tripod
 			//OPTRE_CSW_M247H_Weapon
 			//OPTRE_CSW_M247H_Shield_Weapon
-			ITEM(OPTRE_CSW_M247T_Weapon , 15000, 10); 
+			//OPTRE_CSW_M247T_Weapon; 
+			
 			ITEM(OPTRE_M41_SSR, 2000, 25); 
 			ITEM(OPTRE_M44_Lykoi_Semi_Disposable_AT, 1700, 25); 
 			ITEM(OPTRE_M44_Lykoi_Semi_Disposable_AT_Des, 1700, 25); 
@@ -339,9 +340,11 @@
 			ITEM(OPTRE_32Rnd_762x51_Mag, 30, MZ_STOCK);
 			ITEM(OPTRE_32Rnd_762x51_Mag_Tracer_Yellow, 35, MZ_STOCK);
 			ITEM(OPTRE_32Rnd_762x51_Mag_Tracer, 40, MZ_STOCK);
+
 			ITEM(OPTRE_60Rnd_762x51_Mag, 50, MZ_STOCK);
 			ITEM(OPTRE_60Rnd_762x51_Mag_Tracer_Yellow, 60, MZ_STOCK);
-			ITEM(OPTRE_60Rnd_762x51_Mag_Tracer_Yellow, 65, MZ_STOCK);
+			ITEM(OPTRE_60Rnd_762x51_Mag_Tracer, 65, MZ_STOCK);
+
 			ITEM(OPTRE_80Rnd_762x51_Mag, 75, MZ_STOCK);
 			ITEM(OPTRE_80Rnd_762x51_Mag_Tracer_Yellow, 85, MZ_STOCK);
 			ITEM(OPTRE_80Rnd_762x51_Mag_Tracer, 90, MZ_STOCK);
@@ -355,9 +358,9 @@
 
 			ITEM(OPTRE_15Rnd_762x51_Mag, 55, MZ_STOCK);
 			ITEM(OPTRE_15Rnd_762x51_Mag_Tracer_Yellow, 60, MZ_STOCK);
-			ITEM(OPTRE_15Rnd_762x51_Mag, 65, MZ_STOCK);
-			ITEM(OPTRE_15Rnd_762x51_Mag, 75, MZ_STOCK);
-			ITEM(OPTRE_15Rnd_762x51_Mag, 80, MZ_STOCK);
+			ITEM(OPTRE_15Rnd_762x51_Mag_Tracer, 65, MZ_STOCK);
+			ITEM(OPTRE_15Rnd_762x51_AP_Mag, 75, MZ_STOCK);
+			ITEM(OPTRE_15Rnd_762x51_AP_Mag_Tracer, 80, MZ_STOCK);
 
 			ITEM(OPTRE_42Rnd_95x40_Mag, 45, MZ_STOCK);
 			ITEM(OPTRE_42Rnd_95x40_Mag_Tracer, 50, MZ_STOCK);
@@ -420,7 +423,6 @@
 			ITEM(OPTRE_26Rnd_127x40_Mag_Desert_Tracer, 35, MZ_STOCK);
 			ITEM(OPTRE_26Rnd_127x40_Mag_Jungle_Tracer, 35, MZ_STOCK);
 
-			ITEM(OPTRE_26Rnd_127x40_Mag_Jungle_Tracer, 50, MZ_STOCK);
 			ITEM(OPTRE_40Rnd_127x40_Drum_Black_Tracer, 50, MZ_STOCK);
 			ITEM(OPTRE_40Rnd_127x40_Drum_Desert_Tracer, 50, MZ_STOCK);
 			ITEM(OPTRE_40Rnd_127x40_Drum_Jungle_Tracer, 50, MZ_STOCK);
@@ -507,7 +509,6 @@
 			ITEM(OPTRE_BR55HB_Scope_Grey, 150, MAGAZINE_STOCK);
 
 			ITEM(OPTRE_BR_Classic_Scope, 150, MAGAZINE_STOCK);
-			ITEM(OPTRE_BR_Classic_Scope, 150, MAGAZINE_STOCK);
 			ITEM(OPTRE_BR_Classic_Scope_Raised, 150, MAGAZINE_STOCK);
 			ITEM(OPTRE_BR_Classic_Scope_Tan_Raised, 150, MAGAZINE_STOCK);
 			ITEM(OPTRE_BR_Classic_Scope_UNSC_Raised, 150, MAGAZINE_STOCK);
@@ -548,8 +549,6 @@
 
 			ITEM(OPTRE_SRS99C_Scope, 350, MAGAZINE_STOCK);
 			ITEM(OPTRE_SRS99_Scope, 350, MAGAZINE_STOCK);
-
-			ITEM(OPTRE_BR55HB_Scope, 150, MAGAZINE_STOCK);
 			
 			ITEM(Optre_Evo_Sight_Riser, 150, MAGAZINE_STOCK);
 			ITEM(Optre_Evo_Sight_Riser_Innie, 150, MAGAZINE_STOCK);
@@ -655,7 +654,6 @@
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\compass_ca.paa";
 
 			ITEM(OPTRE_Smartfinder, 300, MISC_STOCK);
-			ITEM(OPTRE_Smartfinder_Vector, 300, MISC_STOCK);
 			ITEM(OPTRE_Binoculars, 200, MISC_STOCK);
 
 			ITEM(OPTRE_NVGT_C, 4000, MISC_STOCK);
@@ -1176,8 +1174,7 @@
 			ITEM(OPTRE_ONI_Researcher_Headgear, 200, MISC_STOCK);
 			ITEM(OPTRE_ONI_Researcher_Headgear_p, 250, MISC_STOCK);
 
-			ITEM(OPTRE_ONI_Researcher_Headgear_p, 700, MISC_STOCK);
-
+			ITEM(OPTRE_Ins_BJ_Helmet, 700, MISC_STOCK);
 			ITEM(OPTRE_Ins_BJ_Helmet_Des, 700, MISC_STOCK);
 			ITEM(OPTRE_Ins_BJ_Helmet_Snw, 700, MISC_STOCK);
 			ITEM(OPTRE_Ins_BJ_Helmet_Wdl, 700, MISC_STOCK);
