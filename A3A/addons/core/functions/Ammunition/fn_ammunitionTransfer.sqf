@@ -168,7 +168,7 @@ if (count _backpcksFinal > 0) then {
 	};
 };
 
-private _thresholdMass = 5000;
+private _thresholdMass = 3500;
 private _currentMass = _destinationX getVariable ["A3A_arsenal_currentMass", getMass _destinationX];
 if (_currentMass == 0) then { _currentMass = 0.01; };
 private _newMass = _currentMass + _totalAddedMass;
@@ -198,7 +198,7 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
     private _nearPlayers = allPlayers select { (_x distance _destinationX) < 50 && alive _x };
     if (count _nearPlayers > 0) then {
         private _owners = _nearPlayers apply { owner _x };
-        private _message = localize (selectRandom _warning1Messages);
+        private _message = format ["Petros :)  %1", localize (selectRandom _warning1Messages)];
         [_message] remoteExec ["systemChat", _owners];
     };
 
@@ -214,7 +214,7 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
         private _nearPlayers = allPlayers select { (_x distance _box) < 50 && alive _x };
         if (count _nearPlayers > 0) then {
             private _owners = _nearPlayers apply { owner _x };
-            private _message = localize (selectRandom _warning2Messages);
+            private _message = format ["Petros :)  %1", localize (selectRandom _warning2Messages)];
             [_message] remoteExec ["systemChat", _owners];
         };
 
@@ -237,7 +237,13 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
 
         [_box, ["A3A_Sound_Thud", 200, 1, 0, 0, true]] remoteExec ["say3D", 0];
 
-        { _x allowDamage false; } forEach _objects;
+        {
+            if (local _x) then {
+                _x allowDamage false;
+            } else {
+                [_x, false] remoteExec ["allowDamage", owner _x];
+            };
+        } forEach _objects;
 
         {
             private _objPos = getPosATL _x;
@@ -246,38 +252,47 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
             if (_dist < 0.5) then { _dist = 0.5; };
             
             if (_x isKindOf "Man") then {
+                private _force = (1 / _dist) * 20000;
+                private _forceVec = vectorNormalized _dir vectorMultiply _force;
                 if (local _x) then {
-                    private _force = (1 / _dist) * 20000;
-                    private _forceVec = vectorNormalized _dir vectorMultiply _force;
                     _x addForce [_forceVec, [0,0,0], false];
+                } else {
+                    [_x, _forceVec, [0,0,0], false] remoteExec ["addForce", owner _x];
                 };
             } else {
                 private _force = (1 / _dist) * 300;
                 private _vel = vectorNormalized _dir vectorMultiply _force;
-                _x setVelocity _vel;
+                [_x, _vel] remoteExec ["setVelocity", 0];
             };
         } forEach _objects;
 
         sleep 5;
-        { _x allowDamage true; } forEach _objects;
+        {
+            if (local _x) then {
+                _x allowDamage true;
+            } else {
+                [_x, true] remoteExec ["allowDamage", owner _x];
+            };
+        } forEach _objects;
 
+        private _fullMass = _box getVariable ["A3A_arsenal_initialMass", 0.01];
+        _box setVariable ["A3A_arsenal_currentMass", _fullMass];
+        [_box, _fullMass] remoteExec ["setMass", 0];
         _box setVariable ["A3A_arsenal_exploded", true];
         _box setVariable ["A3A_arsenal_exploding", false];
-        _box setVariable ["A3A_arsenal_currentMass", _box getVariable ["A3A_arsenal_initialMass", 0.01]];
-        _box setMass (_box getVariable ["A3A_arsenal_initialMass", 0.01]);
         _box setVariable ["A3A_arsenal_exploded", false];
     };
 } else {
     if (!_hasExploded && !_isExploding) then {
         _destinationX setVariable ["A3A_arsenal_currentMass", _newMass];
-        _destinationX setMass _newMass;
+        [_destinationX, _newMass] remoteExec ["setMass", 0];
 
         [_destinationX, ["A3A_Sound_Crackling", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
         sleep 1;
         private _nearPlayers = allPlayers select { (_x distance _destinationX) < 50 && alive _x };
         if (count _nearPlayers > 0) then {
             private _owners = _nearPlayers apply { owner _x };
-            private _message = localize (selectRandom _warning1Messages);
+            private _message = format ["Petros :)  %1", localize (selectRandom _warning1Messages)];
             [_message] remoteExec ["systemChat", _owners];
         };
     };

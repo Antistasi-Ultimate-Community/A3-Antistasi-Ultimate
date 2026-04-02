@@ -93,7 +93,7 @@ private _updateMass = {
     _currentMass = _currentMass - _addedMass;
     if (_currentMass <= 0.1) then { _currentMass = 0.01; };
     _box setVariable ["A3A_lootBox_currentMass", _currentMass];
-    _box setMass _currentMass;
+    [_box, _currentMass] remoteExec ["setMass", 0];
     
     if (_currentMass <= 0.02) then {
         private _message = localize (selectRandom _launchMessages);
@@ -109,14 +109,14 @@ private _updateMass = {
                 private _startTime = time;
                 while { true } do {
                     sleep 0.1;
-                    _box setVelocity _velocity;
+                    [_box, _velocity] remoteExec ["setVelocity", 0];
                     if ((getPosATL _box select 2) > 10) then { _velocity = [0,0,5]; };
                     if ( (getPosATL _box select 2 > 100) || (_box getVariable ["A3A_lootBox_wasHit", false]) || (time - _startTime > 30)) exitWith {
                         private _fullMass = _box getVariable ["A3A_lootBox_initialMass", 0.01];
                         _box setVariable ["A3A_lootBox_currentMass", _fullMass];
-                        _box setMass _fullMass;
+                        [_box, _fullMass] remoteExec ["setMass", 0];
                         [_box, ["A3A_Sound_Pop", 200, 1, 0, 0, true]] remoteExec ["say3D", 0];
-                        addCamShake [10, 1, 125];
+                        [[10, 1, 125]] remoteExec ["addCamShake", 0];
                     };
                 };
                 _box setVariable ["A3A_lootBox_monitor", nil];
