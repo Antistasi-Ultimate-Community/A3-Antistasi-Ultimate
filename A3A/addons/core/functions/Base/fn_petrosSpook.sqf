@@ -50,13 +50,13 @@ while {alive _petros} do {
             [_petros, _anim] remoteExec ["switchMove", 0];
             private _message = format ["Petros :)  %1", localize "STR_A3U_Petros_spook_boo"];
             [_message] remoteExec ["systemChat", owner _watcher];
-            sleep 2.8;
+            sleep 2.7;
             _petros setDir _originalDir;
             _petros setPos _originalPos;
             [_petros, "AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove", 0];
             //diag_log "Reaction animation finished, restored position/direction";
         };
-        _petros setVariable ["A3A_Petros_lastWatchTimeout", time + 30];
+        _petros setVariable ["A3A_Petros_lastWatchTimeout", time + 60];
         // Short pause to avoid spamming reactions (though timeout already set)
     };
     sleep 1;

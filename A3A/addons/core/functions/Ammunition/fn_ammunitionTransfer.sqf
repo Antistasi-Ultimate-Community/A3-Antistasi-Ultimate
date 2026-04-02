@@ -257,7 +257,7 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
                 if (local _x) then {
                     _x addForce [_forceVec, [0,0,0], false];
                 } else {
-                    [_x, _forceVec, [0,0,0], false] remoteExec ["addForce", owner _x];
+                    [_x, [_forceVec, [0,0,0], false]] remoteExec ["addForce", owner _x];
                 };
             } else {
                 private _force = (1 / _dist) * 300;

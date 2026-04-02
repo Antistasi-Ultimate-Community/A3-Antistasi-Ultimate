@@ -75,13 +75,13 @@ private _getItemMass = {
 
     if (_mass == 0) then {
         switch (true) do {
-            case (_item isKindOf ["Weapon", configFile >> "CfgWeapons"]): { _mass = 3; };
-            case (_item isKindOf ["Magazine", configFile >> "CfgMagazines"]): { _mass = 0.3; };
-            case (_item isKindOf ["ItemCore", configFile >> "CfgWeapons"]): { _mass = 0.1; };
-            default { _mass = 0.05; };
+            case (_item isKindOf ["Weapon", configFile >> "CfgWeapons"]): { _mass = 5; };
+            case (_item isKindOf ["Magazine", configFile >> "CfgMagazines"]): { _mass = 0.5; };
+            case (_item isKindOf ["ItemCore", configFile >> "CfgWeapons"]): { _mass = 0.2; };
+            default { _mass = 0.1; };
         };
     } else {
-        _mass = _mass / 2;
+        _mass = _mass / 1.5;
         _mass = _mass max 0.1;
     };
     _mass
@@ -121,11 +121,14 @@ private _updateMass = {
                 };
                 _box setVariable ["A3A_lootBox_monitor", nil];
                 _box setVariable ["A3A_lootBox_wasHit", nil];
-                _box removeEventHandler ["Hit", _box getVariable ["A3A_lootBox_hitEH", -1]];
+                _box removeMPEventHandler ["MPHit", _box getVariable ["A3A_lootBox_hitEH", -1]];
                 sleep 4;
                 [_box, ["A3A_Sound_Deflate", 50, 1, 0, 0, true]] remoteExec ["say3D", 0];
             };
-            private _hitEH = _box addEventHandler ["Hit", { params ["_box"]; _box setVariable ["A3A_lootBox_wasHit", true]; }];
+            private _hitEH = _box addMPEventHandler ["MPHit", { 
+                params ["_box"]; 
+                _box setVariable ["A3A_lootBox_wasHit", true, true]; 
+            }];
             _box setVariable ["A3A_lootBox_hitEH", _hitEH];
         };
     };
