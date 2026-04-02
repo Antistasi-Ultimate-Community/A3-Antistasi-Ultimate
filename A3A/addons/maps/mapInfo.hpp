@@ -65,5 +65,4 @@ class mapInfo {
 	#include "Antistasi_drakovac.drakovac\mapInfo.hpp"
 	#include "Antistasi_green_sea_2023.green_sea_2023\mapInfo.hpp"
 	#include "Antistasi_bozcaada.bozcaada\mapInfo.hpp"
-	#include "Antistasi_islapera.islapera\mapInfo.hpp"
 };
