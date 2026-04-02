@@ -176,7 +176,7 @@ if (_isControl) then
         [_veh, _sideX] call A3A_fnc_AIVEHinit;
         _vehiclesX pushBack _veh;
         sleep 1;
-        private _unitType = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "unitPoliceOfficer"} else {_faction get "unitTierGuard";};
+        private _unitType = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "unitPoliceOfficer"} else {_faction get "unitTierGuard"};
         private _typeGroup = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "groupPoliceOfficers"} else {
             [_faction get "groupTierFireteam"] call SCRT_fnc_unit_getTiered;
         };
