@@ -66,7 +66,7 @@ class A3_Static_F_Gamma_GMG_01_GMG_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.2};
     rotation[] = {0,-1,0};
-    size = 4;
+    size = 3;
     recoil = 100;
     isWeapon = 1;
 };
@@ -75,7 +75,7 @@ class A3_Static_F_Gamma_HMG_01_HMG_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.24};
     rotation[] = {0,-1,0};
-    size = 4;
+    size = 3;
     recoil = 100;
     isWeapon = 1;
 };
@@ -94,7 +94,7 @@ class A3_Static_F_HMG_02_HMG_02_high_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0.2,-0.5,1.69};
     rotation[] = {0,1,0};
-    size = 4;
+    size = 3;
     recoil = 100;
     isWeapon = 1;
 };
@@ -103,7 +103,7 @@ class A3_Static_F_HMG_02_HMG_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {-0.2,0,1.24};
     rotation[] = {0,-1,0};
-    size = 4;
+    size = 3;
     recoil = 100;
     isWeapon = 1;
 };

@@ -24,20 +24,42 @@ class OPTRE_Vehicles_Cart_Cart_p3d : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
+// S-2 Cargo Transporter
+class OPTRE_Vehicles_Cart_forklift_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,2.68839,-1.70579};
+        };
+        class Node2
+        {
+            offset[] = {0,1.9802,-1.7055};
+        };
+        class Node3
+        {
+            offset[] = {0,1.40859,-1.70579};
+        };
+    };
+};
+
+// Turret Base
 class OPTRE_Weapons_Turrets_static_StaticTurret_Static_Base_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
     {
         class Node1
         {
-            offset[] = {0.0058,0,0.3};
+            offset[] = {-0.0201,-0.0054,0.3};
         };
         class Node2
         {
-            offset[] = {0,-0.0052,0.811301};
+            offset[] = {-0.0199,-0.0052,0.742401};
         };
     };
 };
+
 // M808B2 Sun Devil
 class OPTRE_Vehicles_Tracked_M808B2_M808B2_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -588,6 +610,30 @@ class OPTRE_Vehicles_Pelican_Pelican_base_p3d : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
+// D77H-TCI/AV SOCOM Pelican
+class OPTRE_Pelican_armed_SOCOM : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-1.0596,6.20658,-1.7638};
+        };
+        class Node2
+        {
+            offset[] = {-1.057,6.22028,-2.4105};
+            canCouple = 0;
+        };
+        class Node3
+        {
+            offset[] = {0.067399,1.8085,-2.90991};
+        };
+        class Node4
+        {
+            offset[] = {0.0739958,0.982601,-2.9088};
+        };
+    };
+};
 // D77H-TCI SOCOM Pelican
 class OPTRE_Vehicles_Air_P_SOCOM_Pelican_SOCOM_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -629,30 +675,6 @@ class OPTRE_Vehicles_Air_P_SOCOM_Pelican_SOCOM_p3d : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
-// D77H-TCI/AV SOCOM Pelican
-/* class OPTRE_Vehicles_Air_P_SOCOM_Pelican_SOCOM_p3d : TRIPLES(ADDON,Nodes,Base)
-{
-    class Nodes
-    {
-        class Node1
-        {
-            offset[] = {-1.0596,6.20658,-1.7638};
-        };
-        class Node2
-        {
-            offset[] = {-1.057,6.22028,-2.4105};
-            canCouple = 0;
-        };
-        class Node3
-        {
-            offset[] = {0.067399,1.8085,-2.90991};
-        };
-        class Node4
-        {
-            offset[] = {0.0739958,0.982601,-2.9088};
-        };
-    };
-}; */ ///redefine by class
 // Medical Falcon
 class OPTRE_Vehicles_Air_Falcon_falcon_medical_p3d : TRIPLES(ADDON,Nodes,Base)
 {
