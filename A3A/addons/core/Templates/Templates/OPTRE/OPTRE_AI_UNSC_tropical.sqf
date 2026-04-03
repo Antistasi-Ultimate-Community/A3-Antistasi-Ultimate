@@ -303,6 +303,8 @@ _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
 _loadoutData set ["glasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses","OPTRE_Glasses_Visor","OPTRE_Glasses_Visor_Blue",""]];
+_loadoutData set ["slglasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses","OPTRE_Glasses_Visor","OPTRE_Glasses_Visor_Blue",""]];
+_loadoutData set ["sniglasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses","OPTRE_Glasses_Visor","OPTRE_Glasses_Visor_Blue",""]];
 _loadoutData set ["goggles", ["OPTRE_Glasses_Cigar","OPTRE_Glasses_Cigarette"]];
 
 //TODO - ACE overrides for misc essentials, medical and engineer gear
@@ -332,6 +334,8 @@ _sfLoadoutData set ["sniNVGs", ["OPTRE_NVG_UA_Spartan","OPTRE_NVG_UAB_Spartan","
 _sfLoadoutData set ["slNVGs", ["OPTRE_NVG_UA_Spartan","OPTRE_NVG_UAB_Spartan","OPTRE_FC_NVG","OPTRE_FC_NVG"]];
 _sfLoadoutData set ["NVGs", ["OPTRE_NVG_UA_Spartan","OPTRE_NVG_UAB_Spartan","OPTRE_FC_NVG","OPTRE_FC_NVG"]];
 _sfLoadoutData set ["glasses", ["OPTRE_CBRN_S2", 1, "", 3]];
+_sfLoadoutData set ["slglasses", ["OPTRE_CBRN_S2", 1, "", 3]];
+_sfLoadoutData set ["sniglasses", ["OPTRE_CBRN_S2", 1, "", 3]];
 _sfLoadoutData set ["goggles", []];
 
 private _sfoptics = [
@@ -595,6 +599,8 @@ _eliteLoadoutData set ["slUniforms", ["OPTRE_MJOLNIR_Undersuit"]]; //noble 6 or 
 _eliteLoadoutData set ["slVests", ["OPTRE_UNSC_M52D_Armor_Spartan", 1,"OPTRE_MJOLNIR_MkVBArmor_Default_Black", 3,"OPTRE_MJOLNIR_MkVBArmor_Black", 3]];
 _eliteLoadoutData set ["slBackpacks", ["OPTRE_ANPRC_515_Spartan","OPTRE_ANPRC_521_Black_Spartan","OPTRE_ILCS_Rucksack_Black_Spartan","OPTRE_S12_SOLA_Jetpack_Spartan",""]];
 _eliteLoadoutData set ["slHat", ["OPTRE_MJOLNIR_MkVBHelmet_Black","OPTRE_MJOLNIR_MkVBHelmet_Black_BlackV","OPTRE_MJOLNIR_MkVBHelmet_Black_BlueV","OPTRE_MJOLNIR_MkVBHelmet_Black_DefaultV","OPTRE_MJOLNIR_MkVBHelmet_Black_SLVV"]];
+_eliteLoadoutData set ["slNVGs", ["OPTRE_NVG_UA_Spartan","OPTRE_NVG_UAB_Spartan","OPTRE_FC_NVG","OPTRE_FC_NVG"]];
+_eliteLoadoutData set ["slglasses", ["OPTRE_CBRN_S", 1, "", 3]];
 
 _eliteLoadoutData set ["slRifles", [
     ["OPTRE_BR37", _sfmuzzle, _sfrail, _sfoptics, ["OPTRE_10RND_338_SP", "OPTRE_10RND_338_SP", "OPTRE_10RND_338_SP", "OPTRE_10RND_338_AP", "OPTRE_10RND_338_VLD"], [], ""],
@@ -1131,7 +1137,7 @@ _pilotLoadoutData set ["carbines", [
 
 private _squadLeaderTemplate = {
     ["slHat"] call _fnc_setHelmet;
-    ["glasses"] call _fnc_setFacewear;
+    [["slglasses", "glasses"] call _fnc_fallback] call _fnc_setFacewear;
     [["slVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["slUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
     [["slBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
@@ -1446,7 +1452,7 @@ private _machineGunnerTemplate = {
 
 private _marksmanTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["glasses"] call _fnc_setFacewear;
+    [["sniglasses", "glasses"] call _fnc_fallback] call _fnc_setFacewear;
     [["sniVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["sniUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
@@ -1473,7 +1479,7 @@ private _marksmanTemplate = {
 
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["glasses"] call _fnc_setFacewear;
+    [["sniglasses", "glasses"] call _fnc_fallback] call _fnc_setFacewear;
     [["sniVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["sniUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
     [["sniBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;

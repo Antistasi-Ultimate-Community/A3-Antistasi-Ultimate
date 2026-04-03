@@ -81,7 +81,7 @@ class CfgVehicles
         threat[] = {0,0,0};
         class TextureSources
         {
-            class InnieWdl2
+            class texCheese
             {
                 author = "Article 2 Studios";
                 Displayname = "Cheese";

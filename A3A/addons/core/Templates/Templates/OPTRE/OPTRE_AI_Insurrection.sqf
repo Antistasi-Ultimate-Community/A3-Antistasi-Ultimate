@@ -269,6 +269,8 @@ _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
 _loadoutData set ["glasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses",""]];
+_loadoutData set ["slglasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses",""]];
+_loadoutData set ["sniglasses", ["OPTRE_EyePiece","OPTRE_HUD_blk_Glasses","OPTRE_HUD_b_Glasses","OPTRE_HUD_g_Glasses","OPTRE_HUD_Glasses","OPTRE_HUD_p_Glasses","OPTRE_HUD_r_Glasses","OPTRE_HUD_w_Glasses",""]];
 _loadoutData set ["goggles", ["OPTRE_Glasses_Cigar","OPTRE_Glasses_Cigarette"]];
 
 //TODO - ACE overrides for misc essentials, medical and engineer gear
@@ -298,6 +300,8 @@ _sfLoadoutData set ["sniUniforms", ["OPTRE_Ins_BJ_Undersuit_Spartan"]];
 _sfLoadoutData set ["sniVests", ["OPTRE_Ins_BJ_Armor_Spartan"]];
 _sfLoadoutData set ["sniHats", ["OPTRE_Ins_BJ_Helmet_Spartan"]];
 _sfLoadoutData set ["sniBackpacks", ["OPTRE_UNSC_Rucksack_Heavy_Spartan"]];
+_sfLoadoutData set ["slglasses", []];
+_sfLoadoutData set ["sniglasses", []];
 
 private _sfoptics = [
     "OPTRE_BR_Classic_Scope",
@@ -400,7 +404,7 @@ _sfLoadoutData set ["rifles", [
 ]];
 private _sfm6Rail = ["OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red"];
 _sfLoadoutData set ["carbines", [
-    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer" "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
+    ["OPTRE_M6D_Carbine_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6DS_Carbine_Foregrip_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
     ["OPTRE_M6DS_Carbine_Foregrip_Black_F", "OPTRE_M6D_Carbine_Suppressor", _sfm6Rail, _sfoptics, ["OPTRE_40Rnd_127x40_Drum_Black_Tracer", "OPTRE_26Rnd_127x40_Mag_Black_Tracer", "OPTRE_16Rnd_127x40_Mag"], [], ""],
@@ -932,7 +936,7 @@ _pilotLoadoutData set ["carbines", [
 
 private _squadLeaderTemplate = {
     ["slHat"] call _fnc_setHelmet;
-    ["glasses"] call _fnc_setFacewear;
+    [["slglasses", "glasses"] call _fnc_fallback] call _fnc_setFacewear;
     [["slVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["slUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
     [["slBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
@@ -1247,7 +1251,7 @@ private _machineGunnerTemplate = {
 
 private _marksmanTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["glasses"] call _fnc_setFacewear;
+    [["sniglasses", "glasses"] call _fnc_fallback] call _fnc_setFacewear;
     [["sniVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["sniUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
@@ -1274,7 +1278,7 @@ private _marksmanTemplate = {
 
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
-    ["glasses"] call _fnc_setFacewear;
+    [["sniglasses", "glasses"] call _fnc_fallback] call _fnc_setFacewear;
     [["sniVests", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["sniUniforms", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
     [["sniBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
