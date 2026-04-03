@@ -232,7 +232,7 @@ if (!_hasExploded && _newMass >= _thresholdMass && !_isExploding) then {
             (_x isKindOf "Air") ||
             (_x isKindOf "Ship") ||
             (_x isKindOf "Man") ||
-            (simulationEnabled _x)
+            (_x isKindOf "ThingX") //better then simulationEnabled because it shoudn't include static types
         };
 
         [_box, ["A3A_Sound_Thud", 200, 1, 0, 0, true]] remoteExec ["say3D", 0];
