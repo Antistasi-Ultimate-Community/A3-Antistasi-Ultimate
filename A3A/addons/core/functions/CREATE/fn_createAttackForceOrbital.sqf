@@ -12,7 +12,6 @@ Arguments:
     <STRING> Resource pool to use
     <INTEGER> Total number of vehicles to create
     <INTEGER> Number of attack/support vehicles to create
-    <NUMBER> Optional, tier modifier to apply to vehicle selection (Default: 0)
     <STRING> Optional, troop type to use (Default: "Normal")
 
 Return array:
@@ -24,9 +23,8 @@ Return array:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_side", "_base", "_target", "_resPool", "_vehCount", "_vehAttackCount", ["_tierMod", 0], ["_troopType", "Specops"], ["_isGuaranteedAirdrop", false]];
+params ["_side", "_base", "_target", "_resPool", "_vehCount", "_vehAttackCount", ["_troopType", "Specops"]];
 private _targpos = if (_target isEqualType []) then { _target } else { markerPos _target };
-private _transportRatio = 1 - _vehAttackCount / _vehCount;
 
 private _resourcesSpent = 0;
 private _vehicles = [];
@@ -35,65 +33,30 @@ private _cargoGroups = [];
 
 private _faction = Faction(_side);
 private _transportPlanes = _faction get "vehiclesDropPod";
-private _lhFactor = 0 max (1 - (tierWar+_tierMod) / 10);            // phase out light helis at higher war tiers
-
-private _transportPool = [];
-
-if (_transportPlanes isNotEqualTo [] && {(_faction get "vehiclesAirborne") isNotEqualTo []}) then {
-    _transportPool append ["VEHAIRDROP", 0.45 / count _transportPlanes];
-};
-
-private _supportPool = [_side, tierWar+_tierMod] call A3A_fnc_getVehiclesAirSupport;
-
-private _numTransports = 0;
-private _isTransport = _vehAttackCount < _vehCount;            // normal case, first vehicle should be a transport
+if (_transportPlanes isEqualTo []) exitWith { [-1, [], [], []] }; /// should we even do that if there is no defined droppods?
 
 for "_i" from 1 to _vehCount do {
-    private _vehType = selectRandomWeighted ([_supportPool, _transportPool] select _isTransport);
-
-    if (isNil "_vehType") then {continue};
-
-    switch (true) do {   
-        case (_isGuaranteedAirdrop || {_vehType == "VEHAIRDROP"}): {
-            //TODO: remove this delicious copypasta
-            private _transportPlaneType = selectRandom _transportPlanes;
-            private _vehData = [_transportPlaneType, _troopType, _resPool, [], _side, _base, _targPos, true] call A3A_fnc_createAttackVehicleOrbital;
-            if !(_vehData isEqualType []) exitWith {};          // couldn't create for some reason. Not sure why for air vehicles.
-
-            _vehicles pushBack (_vehData#0);
-            _crewGroups pushBack (_vehData#1);
-            if !(isNull (_vehData#2)) then { _cargoGroups pushBack (_vehData#2) };
-            _landPosBlacklist = (_vehData#3);
-
-            private _vehCost = A3A_vehicleResourceCosts getOrDefault [_transportPlaneType, 0];
-            private _crewCost = 10 * (count units (_vehData#1) + count units (_vehData#2));
-            _resourcesSpent = _resourcesSpent + _vehCost + _crewCost;
-            sleep 5;
-        };
-        case (_vehType == "CASDIVE");
-        case (_vehType == "CAS"): {
-            // no reveal because it's a sub-support, delay because it's faster than the helis
-            [_vehType, _side, _resPool, 500, false, _targPos, 0, 60] remoteExec ["A3A_fnc_createSupport", 2];
-        };
-
-        default {
-            private _vehData = [_vehType, _troopType, _resPool, [], _side, _base, _targPos] call A3A_fnc_createAttackVehicleOrbital;
-            if !(_vehData isEqualType []) exitWith {};          // couldn't create for some reason. Not sure why for air vehicles.
-
-            _vehicles pushBack (_vehData#0);
-            _crewGroups pushBack (_vehData#1);
-            if !(isNull (_vehData#2)) then { _cargoGroups pushBack (_vehData#2) };
-            _landPosBlacklist = (_vehData#3);
-
-            private _vehCost = A3A_vehicleResourceCosts getOrDefault [_vehType, 0];
-            private _crewCost = 10 * (count units (_vehData#1) + count units (_vehData#2));
-            _resourcesSpent = _resourcesSpent + _vehCost + _crewCost;
-            sleep 5;
-        };
+    private _transportPlaneType = selectRandom _transportPlanes;
+    private _vehData = [_transportPlaneType, _troopType, _resPool, [], _side, _base, _targPos, true] call A3A_fnc_createAttackVehicleOrbital;
+    if (_vehData isEqualType []) then {
+        _vehicles pushBack (_vehData#0);
+        _crewGroups pushBack (_vehData#1);
+        if !(isNull (_vehData#2)) then { _cargoGroups pushBack (_vehData#2) };
+        private _vehCost = A3A_vehicleResourceCosts getOrDefault [_transportPlaneType, 0];
+        private _crewCost = 10 * (count units (_vehData#1) + count units (_vehData#2)); //should probably determine it smarter
+        _resourcesSpent = _resourcesSpent + _vehCost + _crewCost;
+        sleep 2;
     };
+};
 
-    if (_isTransport) then { _numTransports = _numTransports + 1 };
-    _isTransport = ((_vehAttackCount == 0) || (_numTransports / _i) < _transportRatio)
+private _supportPool = [_side, tierWar] call A3A_fnc_getVehiclesAirSupport;
+private _availableCAS = ["CAS", "CASDIVE"] select {_x in _supportPool};
+if (_availableCAS isNotEqualTo []) then {
+    for "_i" from 1 to _vehAttackCount do {
+        private _casType = selectRandom _availableCAS;
+        [_casType, _side, _resPool, 500, false, _targPos, 0, 5] remoteExec ["A3A_fnc_createSupport", 2];
+        sleep 2;
+    };
 };
 
 [_resourcesSpent, _vehicles, _crewGroups, _cargoGroups];

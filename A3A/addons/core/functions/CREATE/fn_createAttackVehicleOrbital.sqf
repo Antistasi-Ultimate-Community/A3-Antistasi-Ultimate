@@ -1,4 +1,4 @@
-/*  Creates a vehicle for a QRF or small attack, including crew and cargo
+/*  Creates a vehicle for orbital QRF, including crew and cargo
 
     Execution on: HC or Server
 
@@ -37,28 +37,32 @@ private _crewGroup = [_side, _vehicle, nil, _isAttackHeli] call A3A_fnc_createVe
 [_vehicle, _side, _resPool] call A3A_fnc_AIVEHinit;
 
 private _cargoGroup = grpNull;
-//private _expectedCargo = ([_vehicleType, true] call BIS_fnc_crewCount) - ([_vehicleType, false] call BIS_fnc_crewCount);
-/* if (_expectedCargo >= 2 and !_isAttackHeli) then
-{ */
-    //Vehicle is able to transport units
-/*     private _groupType = call {
-        if (_troopType == "Normal") exitWith { [_vehicleType, _side] call A3A_fnc_cargoSeats };
-        if (_troopType == "Specops") exitWith { selectRandom (_faction get "groupSpecOpsRandom") };
-        if (_troopType == "Air") exitWith { [_faction get "groupTierAA"] call SCRT_fnc_unit_getTiered };
-        if (_troopType == "Tank") exitWith { [_faction get "groupTierAT"] call SCRT_fnc_unit_getTiered };
-    }; */
-    ///if (_expectedCargo < count _groupType) then { _groupType resize _expectedCargo };           // trim to cargo seat count
-    private _groupType = selectRandom (_faction get "groupSpecOpsRandom");
-    _cargoGroup = [getMarkerPos _markerOrigin, _side, _groupType, true, false] call A3A_fnc_spawnGroup;         // force spawn, should be pre-checked
-    /* if (_cargoGroup == grpNull) then {
-        _cargoGroup = selectRandom (_faction get "groupSpecOpsRandom");
-    }; */
+private _spawnPos = getMarkerPos _markerOrigin;
+
+_troopType issssss something, not sure what now, probably define it by cba parameter that responsible for unit tiers on certian war levels 
+if (_troopType == "Elite") then {
+    private _unitClasses = [
+        unit(elite, "SquadLeader"),
+        selectRandomWeighted [unit(elite, "LAT"), 2, unit(elite, "MachineGunner"), 1],
+        selectRandomWeighted [unit(elite, "Rifleman"), 1.25, unit(elite, "Grenadier"), 1],
+        selectRandomWeighted [unit(elite, "MachineGunner"), 2, unit(elite, "Marksman"), 1],
+        selectRandomWeighted [unit(elite, "LAT"), 1, unit(elite, "AT"), 1.5],
+        selectRandomWeighted [unit(elite, "AA"), 1, unit(elite, "Rifleman"), 2],
+        selectRandomWeighted [unit(elite, "Rifleman"), 1, unit(elite, "Radioman"), 1],
+        unit(elite, "Medic")
+    ];
+    _cargoGroup = createGroup _side;
+    {
+        private _unit = _cargoGroup createUnit [_x, _spawnPos, [], 0, "NONE"];
+        [_unit, nil, nil, _resPool] call A3A_fnc_NATOinit;
+    } forEach _unitClasses;
+} else {
+    private _groupType = _faction get "groupSpecOpsRandom";
+    _cargoGroup = [_spawnPos, _side, _groupType, true, false] call A3A_fnc_spawnGroup;
     {
         [_x, nil, nil, _resPool] call A3A_fnc_NATOinit;
     } forEach units _cargoGroup;
-
-    
-//};
+};
 
 _landPosBlacklist = [_vehicle, _crewGroup, _cargoGroup, _posDestination, _markerOrigin, _landPosBlacklist, _isAirdrop, _resPool] call A3A_fnc_createVehicleQRFBehaviour;
 ServerDebug_5("Spawn Performed: Created vehicle %1 with %2 crew (%3) and %4 cargo (%5)", typeof _vehicle, count units _crewGroup, _crewGroup, count units _cargoGroup, _cargoGroup);
