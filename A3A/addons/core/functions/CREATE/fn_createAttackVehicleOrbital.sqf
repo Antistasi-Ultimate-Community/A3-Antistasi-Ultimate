@@ -28,9 +28,8 @@ private _vehicle = [_markerOrigin, _vehicleType] call A3A_fnc_spawnVehicleAtMark
 
 if(isNull _vehicle) exitWith {objNull};
 
-// Fill cargo turrets with crew for attack helis
-private _isAttackHeli = _vehicleType in FactionGet(all, "vehiclesHelisAttack") + FactionGet(all, "vehiclesHelisLightAttack");
-private _crewGroup = [_side, _vehicle, nil, _isAttackHeli] call A3A_fnc_createVehicleCrew;
+// Fill cargo turrets
+private _crewGroup = [_side, _vehicle, nil, true] call A3A_fnc_createVehicleCrew; //emm, not sure if that's needed
 {
     [_x, nil, nil, _resPool] call A3A_fnc_NATOinit
 } forEach (units _crewGroup);
@@ -39,8 +38,9 @@ private _crewGroup = [_side, _vehicle, nil, _isAttackHeli] call A3A_fnc_createVe
 private _cargoGroup = grpNull;
 private _spawnPos = getMarkerPos _markerOrigin;
 
-_troopType issssss something, not sure what now, probably define it by cba parameter that responsible for unit tiers on certian war levels 
-if (_troopType == "Elite") then {
+private _eliteTier = missionNamespace getVariable ["A3U_setting_tierWarElite", 8];
+
+if (tierWar < _eliteTier) then {
     private _unitClasses = [
         unit(elite, "SquadLeader"),
         selectRandomWeighted [unit(elite, "LAT"), 2, unit(elite, "MachineGunner"), 1],
