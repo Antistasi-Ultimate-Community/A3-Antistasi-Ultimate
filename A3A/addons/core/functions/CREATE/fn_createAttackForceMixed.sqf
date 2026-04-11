@@ -114,7 +114,12 @@ if (_airBase != "") then            // uh, is that a thing
     ServerDebug_3("Attempting to spawn %1 air vehicles including %2 attack from %3", _airCount, _attackCount, _airbase);
     private _roll = round (random 100);
     if (allowFuturisticUnfairSupports && _roll <= 25 && {(Faction(_side) get "vehiclesDropPod") isNotEqualTo []}) then {
-        private _data = [_side, _airBase, _targPos, _resPool, _airCount, _attackCount, _tier, _troops] call A3A_fnc_createAttackForceOrbital;
+        // Ensure we have an actual air base for orbital drop; if current base is land, pick a new air base
+        private _orbitalBase = _airBase;
+        if !(_orbitalBase in airportsX) then {
+            _orbitalBase = [_side, _targPos] call A3A_fnc_availableBasesAir;
+        };
+        private _data = [_side, _orbitalBase, _targPos, _resPool, _airCount, _attackCount, _tier, _troops] call A3A_fnc_createAttackForceOrbital;
         _resourcesSpent = _resourcesSpent + _data#0;
         _vehicles append _data#1;
         _crewGroups append _data#2;

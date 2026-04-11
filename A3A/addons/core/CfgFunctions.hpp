@@ -255,6 +255,7 @@ class CfgFunctions
             class attackHQ {};
             class availableBasesAir {};
             class availableBasesLand {};
+            class availableBasesMixed {};
             class calculateMarkerArea {};
             class cargoSeats {};
             class civVEHinit {};

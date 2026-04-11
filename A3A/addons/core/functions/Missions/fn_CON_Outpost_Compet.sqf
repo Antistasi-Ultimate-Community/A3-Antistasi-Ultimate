@@ -41,7 +41,7 @@ private _taskId = "CON" + str A3A_taskCount;
 [_taskId, "CON", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 private _delay = 30 + (round random 20);
 private _targPos = markerPos _markerX;
-private _airbase = [_oppositeside, markerPos _markerX] call A3A_fnc_availableBasesAir;
+private _base = [_oppositeside, markerPos _markerX] call A3A_fnc_availableBasesMixed;
 
 private _vehCount = if (_difficultX) then {
 	4;
@@ -52,7 +52,7 @@ if (_markerX in (airportsX + milbases)) then {
 	_vehCount = 6;
 };
 
-[_markerX, _airbase, _vehCount] spawn A3A_fnc_wavedAttack;
+[_markerX, _base, _vehCount] spawn A3A_fnc_wavedAttack;
 // Prepare despawn conditions
 private _endTime = time + 2700;
 
