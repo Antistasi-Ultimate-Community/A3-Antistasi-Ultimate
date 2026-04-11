@@ -91,8 +91,6 @@ A3A_supportMarkerTypes = [];     // format [markerName, markerType, hasRadio, de
 
 // Build arrays of markers that have defence bonuses
 { A3A_supportMarkerTypes pushBack [_x, "Airport", false, 1.0] } forEach airportsX;
-{ A3A_supportMarkerTypes pushBack [_x, "Airport", false, 1.0] } forEach airportsX;
-{ A3A_supportMarkerTypes pushBack [_x, "MilitaryBase", false, 0.8] } forEach milbases;
 { A3A_supportMarkerTypes pushBack [_x, "MilitaryBase", false, 0.8] } forEach milbases;
 { A3A_supportMarkerTypes pushBack [_x, "Seaport", false, 0.6] } forEach seaports;
 { A3A_supportMarkerTypes pushBack [_x, "Outpost", false, 0.6] } forEach outposts;
