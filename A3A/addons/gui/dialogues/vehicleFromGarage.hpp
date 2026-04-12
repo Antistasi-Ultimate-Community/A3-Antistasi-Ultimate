@@ -10,7 +10,7 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
         class TabButtons : A3A_ControlsGroupNoScrollbars
         {
             idc = A3A_IDC_MAINDIALOGTABBUTTONS;
-            x = -32 * GRID_W;
+            x = DIALOG_X - 36 * GRID_W;//x = -32 * GRID_W;
             y = DIALOG_Y - 36 * GRID_H;
             w = DIALOG_W * GRID_W;
             h = 5 * GRID_H;
@@ -33,7 +33,7 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
 		class GARAGE_ListCars//HR_GRG_RscListbox
 		{
 			idc = A3A_IDC_GARAGE_CATCAR;
-            x = -62.6 * GRID_W;
+            x = DIALOG_X - 66.6 * GRID_W;//x = -62.6 * GRID_W;
             y = DIALOG_Y - 36 * GRID_H;
             w = 30.6 * GRID_W;
             h = 100 * GRID_H; // Screen height - title and buttons height
@@ -78,7 +78,7 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
 		class GARAGE_StructuredText : A3A_Text
 		{
 		    idc = A3A_IDC_GARAGEStructuredText;
-		    x = -62.6 * GRID_W;
+		    x = DIALOG_X - 66.6 * GRID_W;//x = -62.6 * GRID_W;
             y = DIALOG_Y + 64 * GRID_H;
             w = 213.6 * GRID_W;
             h = 16 * GRID_H; // Screen height - title and buttons height
@@ -99,9 +99,9 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
 	    {
             idc = A3A_IDC_GARAGEinfo;
             type = CT_STRUCTURED_TEXT;
-            x = 110 * GRID_W;
+            x = DIALOG_X + 110 * GRID_W;//x = 110 * GRID_W;
             y = DIALOG_Y - 36 * GRID_H;
-            w = 41 * GRID_W;
+            w = 37 * GRID_W;
             h = 100 * GRID_H; // Screen height - title and buttons height
 	    	text = "";
 	    	id = "detail_info";
@@ -132,7 +132,7 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
         class GARAGE_undercoverIcon : A3A_PictureStroke
         {
 		    idc = A3A_IDC_GARAGEundercoverIcon;
-            x = -32 * GRID_W;
+            x = DIALOG_X - 36 * GRID_W;//x = -32 * GRID_W;
             y = DIALOG_Y + 59 * GRID_H;
             w = 5 * GRID_W;
             h = 5 * GRID_H;
@@ -143,7 +143,7 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
         {
             idc = A3A_IDC_GARAGEselectbutton;
             text = $STR_antistasi_dialogs_vehicle_tab_select;
-            x = -32 * GRID_W;
+            x = DIALOG_X - 36 * GRID_W;//x = -32 * GRID_W;
             y = DIALOG_Y + 59 * GRID_H;
             w = 35 * GRID_W;
             h = 5 * GRID_H;
@@ -155,7 +155,7 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
             idc = -1;
             deletable = 1;
             type = CT_CONTROLS_GROUP;
-            x = 55 * GRID_W;
+            x = DIALOG_X + 55 * GRID_W;//x = 55 * GRID_W;
             y = DIALOG_Y + 57 * GRID_H;
             w = 55 * GRID_W;
             h = 7 * GRID_H;
@@ -231,8 +231,8 @@ class A3A_VehicleFromGarage : A3A_DefaultDialog
         class CloseButton : A3A_CloseButton
         {
             idc = -1;
-            x = 105 * GRID_W;
-            y = DIALOG_Y - 30 * GRID_H;
+            x = DIALOG_X + 105 * GRID_W;//x = 105 * GRID_W;
+            y = DIALOG_Y - 31 * GRID_H;
             tooltip = $STR_antistasi_arsenal_limits_dialog_close;
         };
     };
@@ -253,6 +253,7 @@ class A3A_StaticAAFromGarage : A3A_VehicleFromGarage
 				class VehicleTabButton: VehicleTabButton
                 {
                     text = $STR_antistasi_dialogs_garage_statics;
+                    w = 146 * GRID_W;
                     onButtonClick = "['Static', 'AA'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -280,6 +281,7 @@ class A3A_StaticATFromGarage : A3A_VehicleFromGarage
 				class VehicleTabButton: VehicleTabButton
                 {
                     text = $STR_antistasi_dialogs_garage_statics;
+                    w = 146 * GRID_W;
                     onButtonClick = "['Static', 'AT'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -307,6 +309,7 @@ class A3A_StaticHMGFromGarage : A3A_VehicleFromGarage
 				class VehicleTabButton: VehicleTabButton
                 {
                     text = $STR_antistasi_dialogs_garage_statics;
+                    w = 146 * GRID_W;
                     onButtonClick = "['Static', 'MG'] call A3A_fnc_UI_vehicleFromGarage";
                 };
             };
@@ -335,15 +338,15 @@ class A3A_RoadblockFromGarage : A3A_VehicleFromGarage
 				class VehicleTabButton: VehicleTabButton
                 {
                     onButtonClick = "['light', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
-                    w = 71 * GRID_W;
+                    w = 73 * GRID_W;
                 };
 
                 class rebelsATVehiclesTabButton : VehicleTabButton
                 {
                     text = $STR_antistasi_dialogs_garage_heavy;
                     onButtonClick = "['heavy', 'Roadblock'] call A3A_fnc_UI_vehicleFromGarage";
-                    x = 71 * GRID_W;
-                    w = 71 * GRID_W;
+                    x = 73 * GRID_W;
+                    w = 73 * GRID_W;
                 };
             };
         };

@@ -9,7 +9,7 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
         {
             idc = -1;
             text = $STR_antistasi_dialogs_buy_vehicle_titlebar;
-            x = -36 * GRID_W;
+            x = DIALOG_X - 40 * GRID_W;
             y = DIALOG_Y - 40 * GRID_H;
             w = DIALOG_W * GRID_W;
             h = 5 * GRID_H;
@@ -20,19 +20,19 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
             idc = -1;
             text = $STR_antistasi_dialogs_war_level_tip;
             font = A3A_NOTIFICATION_FONT;
-            x = -36 * GRID_W;
-            y = DIALOG_Y - 31 * GRID_H;
+            x = DIALOG_X - 40 * GRID_W;
+            y = DIALOG_Y - 35 * GRID_H;
             w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            h = 15 * GRID_H;
         };
-    
+//   
         class TabButtons : A3A_ControlsGroupNoScrollbars
         {
             idc = A3A_IDC_MAINDIALOGTABBUTTONS;
-            x = -36 * GRID_W;
+            x = DIALOG_X - 40 * GRID_W;
             y = DIALOG_Y - 35 * GRID_H;
             w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            h = 15 * GRID_H;
 
             class Controls
             {
@@ -48,7 +48,7 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
         };
 
         // Main content
-        class  VehiclesTab : A3A_DefaultControlsGroup
+        class VehiclesTab : A3A_DefaultControlsGroup
         {
             class Controls
             {
@@ -67,8 +67,8 @@ class A3A_VehicleFromStore : A3A_TabbedDialog
         class CloseButton : A3A_CloseButton
         {
             idc = -1;
-            x = DIALOG_X + DIALOG_W * GRID_W - 5 * GRID_W;
-            y = DIALOG_Y - 10 * GRID_H;
+            x = DIALOG_X + DIALOG_W * GRID_W - 45 * GRID_W;
+            y = DIALOG_Y - 40 * GRID_H;
         };
     };
 
