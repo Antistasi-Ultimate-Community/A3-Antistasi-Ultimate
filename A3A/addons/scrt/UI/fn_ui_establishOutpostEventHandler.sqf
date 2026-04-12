@@ -68,18 +68,7 @@ if(_mode == "ADD") then {
 
                         // Перебираем технику в категории
                         {
-                            _y params [
-                                ["_displayName", ""],
-                                ["_class", ""],
-                                ["_lockedUID", ""],
-                                ["_checkedOut", false],
-                                ["", ""],
-                                ["_lockName", ""],
-                                ["_stateData", []],
-                                ["_customisation", []]
-                            ];
-
-                            // Если нашли валидный класс - прерываем проверку
+                            private _class = _y select 1;
                             if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
                                 _hasValidVehicles = true;
                             };
@@ -152,13 +141,23 @@ if(_mode == "ADD") then {
                     ] call BIS_fnc_guiMessage;
 
                     private _hasValidVehicles = false;
-                    {  
-                        _y params ["_displayName", "_class", "_lockedUID", "_checkedOut", "", ["_lockName", ""],"_stateData", "_customisation"];                        // Объявляем все переменные внутри итерации  
-                                                    
-                        if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitwith {  
-                            _hasValidVehicles = true; 
-                        }; 
-                    } forEach HR_GRG_Vehicles#7;
+                    private _categoriesToCheck = [7];
+                    {
+                        private _categoryID = _x;
+                        private _categoryVehicles = HR_GRG_Vehicles param [_categoryID, []];
+
+                        // Перебираем технику в категории
+                        {
+                            private _class = _y select 1;
+                            if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
+                                _hasValidVehicles = true;
+                            };
+                        } forEach _categoryVehicles;
+
+                        // Если уже нашли валидную технику - прерываем проверку категорий
+                        if (_hasValidVehicles) exitWith {};
+
+                    } forEach _categoriesToCheck;
 
                     if (!_hasValidVehicles) then {
                         _result = false;
