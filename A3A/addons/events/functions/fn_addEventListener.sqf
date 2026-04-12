@@ -30,7 +30,7 @@ if !(params [
     , ["_id", "", [""]]
     , ["_callback", {}, ["", {}]]
 ]) exitWith {
-    Error_1("Invalid params passed: %1", _this)
+    Error_1("Invalid params passed: %1", _this);
 };
 
 if (isNil QGVAR(EventRegistry)) then {

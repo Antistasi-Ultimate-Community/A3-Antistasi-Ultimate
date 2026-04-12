@@ -22,9 +22,15 @@ private _taskId = "outpostTask" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[format [localize "STR_hmgempl_deploy_desc", _displayTime],localize "STR_hmgempl_deploy_header",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
-_formatX = A3A_faction_reb get "groupHmgEmpl";
+private _formatX = A3A_faction_reb get "groupHmgEmpl";
+private _groupX = [["Synd_HQ"] call A3A_fnc_findAiSpawnPosition, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _vehType = (A3A_faction_reb get "vehiclesLightUnarmed") select 0;
+private _helperData = ["outpost"] call FUNCMAIN(findSpawnHelperPosition);
+_helperData params["_spawnPos", "_spawnDir"];
 
-_groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _truckX = _vehType createVehicle _spawnPos;
+_truckX setDir _spawnDir;
+
 _groupX setGroupId ["Post"];
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
 private _vehType = selectRandom (A3A_faction_reb get "vehiclesLightUnarmed");

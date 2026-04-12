@@ -13,6 +13,31 @@ FIX_LINE_NUMBERS()
 
 params ["_target"];
 
+private _fnc_scanHorizon = {
+    // Start scanning horizon after five seconds
+    params["_units"];
+    sleep 5;
+
+    _units = _units select { !isNull objectParent _x }; // If assignment still didn't work, don't bother
+    _units apply {
+        private _vehicle = _x getVariable[QGVAR(assignedVehicle), objNull];
+
+        // If we're in a vehicle with both gunner and commander
+        // (i.e. a TANK), don't have both turrets scanning wildly; only
+        // have the commander do it. Don't scan if they're in a building.
+        if (isNull commander _vehicle || { _x isEqualTo commander _vehicle }) then {
+            Debug_2("Scanning horizon for %1 in %2",_x,_vehicle);
+            [_x, nil, false] spawn SCRT_fnc_common_scanHorizon;
+        };
+    };
+};
+
+if (_target isEqualType objNull && {unitIsUAV _target}) exitWith { // UAVs (incl SAM / Radar statics) use virtual crew, so bypass checks for locally garrisoned AI
+    private _assignedUnits = units ([teamPlayer, _target] call A3A_fnc_createVehicleCrew);
+    private _canReport = getNumber(configOf _target >> "reportRemoteTargets") isEqualTo 1; // only radar UAVs need to scan horizon
+    if (GVAR(rebelStaticsScanHorizon) && {_canReport}) then { [_assignedUnits] spawn _fnc_scanHorizon }; 
+};
+
 // If position or object target, identify rebel marker
 private _marker = _target;
 if !(_target isEqualType "") then {
@@ -149,25 +174,7 @@ if (_assignedUnits isNotEqualTo []) then {
         };
     };
 
-    // Start scanning horizon after five seconds
-    if GVAR(rebelStaticsScanHorizon) then {
-        [_assignedUnits] spawn {
-            params["_units"];
-            sleep 5;
-
-            _units = _units select { !isNull objectParent _x }; // If assignment still didn't work, don't bother
-            _units apply {
-                private _vehicle = _x getVariable[QGVAR(assignedVehicle), objNull];
-
-                // If we're in a vehicle with both gunner and commander
-                // (i.e. a TANK), don't have both turrets scanning wildly; only
-                // have the commander do it. Don't scan if they're in a building.
-                if (isNull commander _vehicle || { _x isEqualTo commander _vehicle }) then {
-                    [_x, nil, false] spawn SCRT_fnc_common_scanHorizon;
-                };
-            };
-        };
-    };
+    if GVAR(rebelStaticsScanHorizon) then { [_assignedUnits] spawn _fnc_scanHorizon };
 };
 
 _staticGroup setBehaviour "AWARE";

@@ -96,24 +96,19 @@ switch (_mode) do
         if (_factions isNotEqualTo (_display getVariable "savedFactions")) then {
             _display setVariable ["savedFactions", _factions];
             ["fillFactions"] call A3A_fnc_setupFactionsTab;
-            ["fillContent"] call A3A_fnc_setupContentTab;
+            ["fillContent"] call A3A_fnc_setupFactionsTab;
         };
 
         // If it's not a new game or load params or copy game is checked, load params
         private _params = _saveData get "params";
         if (isNil "_params") then { _params = [] };               // getOrDefault doesn't work because input code may set nils
         if ((_sameMap and !cbChecked _newGameCtrl) or cbChecked _copyGameCtrl or cbChecked _oldParamsCtrl) then {
-            if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then {
-                _display setVariable ["savedParams", _params];
-                ["fillParams"] call A3A_fnc_setupParamsTab;
-            };
+            if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then { _display setVariable ["savedParams", _params] };
         } else {
-            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then {
-                //_display setVariable ["paramsChangedSinceReset", true];
-                _display setVariable ["savedParams", []];
-                ["fillParams"] call A3A_fnc_setupParamsTab;
-            };
+            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then { _display setVariable ["savedParams", []] };
         };
+        ["clearLBSelection", [[_display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM]]] call A3A_fnc_setupParamsTab;
+        ["fillParams"] call A3A_fnc_setupParamsTab;
     };
 
     case ("setSaveData"):
@@ -206,13 +201,14 @@ switch (_mode) do
             };
         };
         if (_saveData get "name" != "") then {
-            _confirmText = _confirmText + format [localize "STR_antistasi_dialogs_setup_confirm_game_name", _saveData get "name"];
+            //extra space because localize trims trailing spaces in these localization keys
+            _confirmText = _confirmText + " " + format [localize "STR_antistasi_dialogs_setup_confirm_game_name", _saveData get "name"];
         };
         _saveData set ["useNewNamespace", cbChecked _newSaveCtrl];
 
         // Factions tab: [factions, addonvics, DLC]
         private _factions = ["getFactions"] call A3A_fnc_setupFactionsTab;
-        private _contentData = ["getContent"] call A3A_fnc_setupContentTab;
+        private _contentData = ["getContent"] call A3A_fnc_setupFactionsTab;
         _saveData set ["factions", _factions];
         _saveData set ["addonVics", _contentData#0];
         _saveData set ["DLC", _contentData#1];

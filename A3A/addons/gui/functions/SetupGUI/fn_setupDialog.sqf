@@ -55,7 +55,7 @@ switch (_mode) do
     {
         if (isNil "A3A_setup_saveData") exitWith { Error("onLoad somehow called without save data") };
         ["fillFactions"] call A3A_fnc_setupFactionsTab;
-        ["fillContent"] call A3A_fnc_setupContentTab; 
+        ["fillContent"] call A3A_fnc_setupFactionsTab; 
 
         ["setSaveData"] call A3A_fnc_setupLoadgameTab;
         ["switchTab", ["loadgame"]] call A3A_fnc_setupDialog;
@@ -99,20 +99,18 @@ switch (_mode) do
             case "loadgame": { A3A_IDC_SETUP_LOADGAMETAB };
             case "factions": { A3A_IDC_SETUP_FACTIONSTAB };
             case "params": { A3A_IDC_SETUP_PARAMSTAB };
-            case "content": { A3A_IDC_SETUP_CONTENTTAB };
         };
 
         {
             private _ctrl = _display displayCtrl _x;
             _ctrl ctrlShow (_x == _selectedTabIDC);
-        } forEach [A3A_IDC_SETUP_LOADGAMETAB, A3A_IDC_SETUP_FACTIONSTAB, A3A_IDC_SETUP_PARAMSTAB, A3A_IDC_SETUP_CONTENTTAB];
+        } forEach [A3A_IDC_SETUP_LOADGAMETAB, A3A_IDC_SETUP_FACTIONSTAB, A3A_IDC_SETUP_PARAMSTAB];
 
         switch (_selectedTab) do
         {
             case ("loadgame"): { ["update"] call A3A_fnc_setupLoadgameTab };
             case ("factions"): { ["update"] call A3A_fnc_setupFactionsTab };
             case ("params"): { ["update"] call A3A_fnc_setupParamsTab };
-            case ("content"): { ["update"] call A3A_fnc_setupContentTab };
         };
     };
 
@@ -124,19 +122,27 @@ switch (_mode) do
         private _prettyMapHM = createHashMapFromArray [
             ["vt7", "Virolahti"]
             ,["sara", "Sahrani"]
-            ,["Cam_Lao_Nam", "Cam Lao Nam"]
+            ,["cam_lao_nam", "Cam Lao Nam"]
             ,["vn_khe_sanh", "Khe Sanh"]
             ,["chernarus_autumn", "Chernarus (A)"]
             ,["chernarus_summer", "Chernarus (S)"]
             ,["chernarus_winter", "Chernarus (W)"]
-            ,["Enoch", "Livonia"]
+            ,["enoch", "Livonia"]
             ,["tem_anizay", "Anizay"]
-            ,["cup_chernarus_A3", "Chernarus 2020"]
+            ,["cup_chernarus_a3", "Chernarus 2020"]
             ,["brf_sumava", "Šumava"]
+            ,["spe_normandy", "Normandy"]
+            ,["spe_mortain", "Mortain"]
+            ,["gm_weferlingen_summer", "Weferlingen (S)"]
+            ,["gm_weferlingen_winter", "Weferlingen (W)"]
+            ,["sefrouramal", "Sefrou Ramal"]
+            ,["blud_vidda", "Vidda"]
+            ,["green_sea", "Green Sea"]
+            ,["tem_kujari", "Kujari"]
         ];
         {
             private _realMap = _x get "map";
-            _x set ["mapStr", _prettyMapHM getOrDefault [_realMap, _realMap]];
+            _x set ["mapStr", _prettyMapHM getOrDefault [toLower _realMap, _realMap]];
             _x set ["fileStr", ["Old", "New"] select ((_x get "serverID") isEqualType false)];
             if (!isNil {_x get "ended"}) then { _x set ["timeStr", "Ended"]; continue };
             if (!isNil {_x get "saveTime"}) then {

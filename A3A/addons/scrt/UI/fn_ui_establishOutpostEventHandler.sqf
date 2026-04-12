@@ -15,6 +15,10 @@ if(_mode == "ADD") then {
             outpostCostmoney = outpostCost select 0; 
             outpostCosthr = outpostCost select 1;
 
+            if ([] call FUNCMAIN(isTeardownEnabled)) exitWith {
+                [localize "STR_notifiers_fail_type", localize "STR_A3A_base_teardownMode_OFF", parseText localize "STR_A3A_Dialogs_teardownActivePleaseDisable_text", 30] spawn SCRT_fnc_ui_showMessage;
+            };
+
             if (outpostType == "WATCHPOST" && {isOnRoad _pos}) exitWith {
                 [
                     localize "STR_notifiers_fail_type",

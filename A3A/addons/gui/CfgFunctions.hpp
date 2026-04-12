@@ -40,7 +40,6 @@ class CfgFunctions {
             class setupFactionsTab {};
             class setupLoadgameTab {};
             class setupParamsTab {};
-            class setupContentTab {};
             class setupConfirmDialog {};
             class setupHQPosDialog {};
         };

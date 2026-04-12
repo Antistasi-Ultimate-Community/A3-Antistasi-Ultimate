@@ -83,7 +83,8 @@ if (isDiscordRichPresenceActive) then {
 	};
 };
 
-if (_text isNotEqualTo "") then {
+private _enableInitMessages = profileNamespace getVariable ["A3U_setting_enableInitMessages", true];
+if (_enableInitMessages && {_text isNotEqualTo ""}) then {
 	[{
 		[localize "STR_role_unit_traits", _this] call A3A_fnc_customHint;
 	}, _text, 5] call CBA_fnc_waitAndExecute;
