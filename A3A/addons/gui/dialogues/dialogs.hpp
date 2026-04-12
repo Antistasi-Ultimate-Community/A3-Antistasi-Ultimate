@@ -13,3 +13,5 @@ Maintainer: DoomMetal
 #include "arsenalLimitsDialog.hpp"
 #include "setupDialog.hpp"
 #include "teamLeaderBuilder.hpp"
+#include "vehicleFromGarage.hpp"
+#include "vehicleFromStore.hpp"

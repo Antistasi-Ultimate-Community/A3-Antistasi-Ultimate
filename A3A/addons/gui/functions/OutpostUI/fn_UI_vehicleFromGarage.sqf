@@ -1,0 +1,254 @@
+/*
+Maintainer: wersal
+*/
+
+
+#include "..\..\dialogues\ids.inc"
+#include "..\..\dialogues\defines.hpp"
+#include "..\..\dialogues\textures.inc"
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+params ["_category", "_outpostType"];
+
+// Общая часть инициализации
+['off'] call SCRT_fnc_ui_toggleMenuBlur;
+private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
+private _vehicleListBox = _display displayCtrl A3A_IDC_GARAGE_CATCAR;
+_vehicleListBox ctrlCommit 0;
+
+private _previewArea = _display displayCtrl A3A_IDC_GARAGEStructuredText;
+_previewArea ctrlCommit 0;
+private _selectButton = _display displayCtrl A3A_IDC_GARAGEselectbutton;
+_selectButton setVariable ["outpostType", _outpostType];
+
+lbClear _vehicleListBox;
+lbClear A3A_IDC_GARAGE_CATCAR;
+_currentPreviewVeh = objNull;
+
+Debug("BuyVehicleTab starting...");    
+
+{
+    deleteVehicle _x;
+} forEach previewVehicles;
+
+vehicleToOutpost = "";
+currentlySelectedVehicleUID = 0;
+currentlySelectedVehicleState = [];
+currentlySelectedVehicleCustomization = [];
+garageCategoryToremoveVehicleFrom = 22;
+
+_selectButton ctrlRemoveAllEventHandlers "ButtonClick";
+/////or instead of all this use _getSaveData (probably)
+
+// also can check vehicle type here fn_common_vehicle_getVehicleType
+
+[_vehicleListBox,_category] call A3A_fnc_processVehicleCategory;
+
+//preview cam
+private _previewCamera = "camera" camCreate [10,0,1000];
+_previewCamera enableSimulation false;
+_previewCamera cameraEffect ["Internal", "Back"];
+showCinemaBorder false;
+enableEnvironment false; //wind sound
+_previewCamera camCommit 0;
+
+A3U_fnc_displaystuff = {
+    _data params ["_control","_selectedIndex","_vehFullData"];
+    //diag_log _data;
+
+    vehicleToOutpost = "";
+    currentlySelectedVehicleUID = 0;
+    currentlySelectedVehicleState = [];
+    currentlySelectedVehicleCustomization = [];
+
+    _vehFullData = _vehFullData;
+    //diag_log _vehFullData;
+    _vehFullData params ["_UID", "_data"];
+    currentlySelectedVehicleUID = _vehFullData select 0;
+    //diag_log _UID;
+    _vehData = _data;
+    //diag_log _vehData;
+    _vehData params ["_displayName", "_class", "_lockedUID", "_checkedOut", "", ["_lockName", ""],"_stateData", "_customisation"];
+    _selectedClassName = _class;
+    {
+        deleteVehicle _x;
+    } forEach previewVehicles;
+    
+    // Получение информации о выбранной технике
+    private _configPath = configFile >> "CfgVehicles" >> _selectedClassName;
+    if (!isClass _configClass) exitWith {};
+
+    private _display = findDisplay A3A_IDD_DISPLAYGARAGEVEHICLES;
+    
+    //to set _canGoUndercover need to check if vehicleclass in undercoverVehicles
+    // Undercover icon
+    if (_selectedClassName in undercoverVehicles) then
+    {
+        private _undercoverIcon = _display displayCtrl A3A_IDC_GARAGEundercoverIcon;
+        //_undercoverIcon ctrlSetPosition [1 * GRID_W, 1 * GRID_H, 4 * GRID_W, 4 * GRID_H];
+        _undercoverIcon ctrlShow true;
+        _undercoverIcon ctrlSetText A3A_Icon_HideVic;
+        _underCoverIcon ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_undercover_tooltip";
+        _undercoverIcon ctrlCommit 0;
+    }; /// probably not needed anymore, unless we want to use civ vehicles in outposts
+
+    // Show item
+    // creating vehicle for the preview
+    _currentPreviewVeh = _selectedClassName createVehicleLocal [0, 0, 10000];
+    _currentPreviewVeh enableSimulation false;
+    vehicleToOutpost = _selectedClassName;
+
+    _currentPreviewVeh setPos [0, 1000, 100000];
+
+    previewVehicles pushBack _currentPreviewVeh;
+
+    private _previewCamera = "camera" camCreate [0, 1000, 100000];
+    _previewCamera enableSimulation false;
+    _previewCamera cameraEffect ["Internal", "Back"]; ///maybe we don't need this one and only need one below
+    showCinemaBorder false;
+    enableEnvironment false;
+    _previewCamera camSetTarget _currentPreviewVeh;
+    _previewCamera camSetRelPos [10, 10, 1];
+    _previewCamera camCommit 0;
+    _previewCamera cameraEffect ["Internal", "Back"];
+
+    //preview cam rotation events
+    /* HR_GRG_RMouseBtnDown = false;
+    _disp displayAddEventHandler ["MouseButtonDown", "if ((_this#1) isEqualTo 1) then {HR_GRG_RMouseBtnDown = true};"];
+    _disp displayAddEventHandler ["MouseButtonUp", "if ((_this#1) isEqualTo 1) then {HR_GRG_RMouseBtnDown = false};"];
+    _disp displayAddEventHandler ["MouseMoving", "if (HR_GRG_RMouseBtnDown) then {_this call HR_GRG_fnc_updateCamPos};"];
+    _disp displayAddEventHandler ["MouseZChanged","if !(HR_GRG_RMouseBtnDown) exitWith {};
+    HR_GRG_camDist = 0.9 max (HR_GRG_camDist - (_this#1)*0.1) min 2; [nil,0,0] call HR_GRG_fnc_updateCamPos;
+    HR_GRG_previewLight setLightBrightness 1.1 * HR_GRG_camDist;"]; */ 
+    ///would been nice to use this but it's too much code under you know what
+
+    currentlySelectedVehicleState = _vehData select 4; // vehicle status
+    Trace_1("Preview vehicle State: %1", _vehState);
+    
+    // setting vehicle state
+    [_currentPreviewVeh, _vehState] call HR_GRG_fnc_setState; ///setting vehicle state
+    _currentPreviewVeh allowDamage false;
+    // vehicle customization
+    currentlySelectedVehicleCustomization = _vehData param [6, [false, false]];
+    ([_currentPreviewVeh] + currentlySelectedVehicleCustomization) call BIS_fnc_initVehicle;
+    
+    _description2 = [_configPath >> "Library" >> "libTextDesc", ""] call HALs_fnc_getConfigValue;
+
+    private _previewArea = _display displayCtrl A3A_IDC_GARAGEStructuredText;
+    _previewArea ctrlSetText _description2;
+    
+    _previewArea ctrlCommit 0;
+
+    private _description = "";
+
+    private _weapons = [_selectedClassName] call A3A_fnc_getVehicleWeapons;
+
+    private _crew = ([_selectedClassName] call A3A_fnc_getVehicleClassCrew);
+    _description = _description + format ["<t size='1.2' color='#D9D98C'>%1</t><br />", localize "STR_antistasi_dialogs_crew"] + ((_crew apply { _x#0 }) joinString "<br />") + "<br />";
+    _description = _description + format ["<t size='1.2' color='#D9D98C'>%1</t><br />", localize "STR_antistasi_dialogs_weapons"];
+
+    {
+		_description = _description + getText(configFile >> "cfgWeapons" >> _x >> "displayName") + "<br/>";
+	} foreach _weapons;
+
+    _description = _description + format ["<t size='1.2' color='#D9D98C'>%1</t><br />", localize "STR_antistasi_dialogs_camo"];
+    _description = _description + ((([_selectedClassName] call A3A_fnc_getVehicleClassSkins) apply { _x#1 }) joinString "<br />") + "<br />";
+
+    _description = _description + format ["<t size='1.2' color='#D9D98C'>%1</t><br />", localize "STR_antistasi_dialogs_animations"];
+    {
+        _configName = configname _x;
+        _displayName = getText (_x >> "displayName");
+        if (_displayName != "") then {
+            _description = _description + _displayName + "<br/>";
+        };
+    } foreach (configProperties [(configfile >> "CfgVehicles" >> _selectedClassName >> "animationSources"),"isclass _x",true]);
+
+    private _descriptionBox = _display displayCtrl A3A_IDC_GARAGEinfo;
+    _descriptionBox ctrlSetStructuredText parseText(_description + "<br /> ");
+    _descriptionBox ctrlCommit 0;
+
+    //update Origins panel
+    private _Origins = _display displayCtrl HR_GRG_IDC_OriginsPanel;
+    private _itemCfg = configfile >> "cfgvehicles" >> _selectedClassName;
+    private _dlc = "";
+    private _addons = configsourceaddonlist _itemCfg;
+    if (count _addons > 0) then {
+    	private _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);
+    	if (count _mods > 0) then {
+    		_dlc = _mods select 0;
+    	};
+    };
+    private _dlcParams = modParams [_dlc,["logo","logoOver"]];
+    private _logo = _dlcParams param [0,""];
+    private _logoOver = _dlcParams param [1,""];
+    private _fieldManualTopicAndHint = getarray (configfile >> "cfgMods" >> _dlc >> "fieldManualTopicAndHint");
+    _Origins ctrlsetfade 0;
+    _Origins ctrlseteventhandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
+    private _OriginsText = composeText [
+        image _logo, " ",[_itemCfg,_Origins] call bis_fnc_overviewauthor
+    ];
+    _Origins ctrlSetStructuredText _OriginsText;
+    _Origins ctrlCommit 0;
+};
+
+// Автоматически выбираем первый элемент если есть
+if (lbSize _vehicleListBox > 0) then {
+    _vehicleListBox lbSetCurSel 0;
+    // Форсируем обновление данных
+    private _vehFullData = parseSimpleArray (_vehicleListBox lbData 0);
+    [_vehicleListBox, 0, _vehFullData] call A3U_fnc_displaystuff;
+} else {
+    vehicleToOutpost = "";
+};
+
+
+// Обработчик события выбора техники из листбокса
+_vehicleListBox ctrlAddEventHandler ["LBSelChanged", {  /// if only one vehicle in list box, should use this onLBDblClick
+    params ["_control", "_lbCurSel", "_lbSelection"];
+    if (_lbCurSel isNotEqualTo -1) then {
+        private _vehFullData = parseSimpleArray (_control lbData _lbCurSel);
+        [_control, _lbCurSel, _vehFullData] call A3U_fnc_displaystuff;
+    };
+}];
+
+// Кнопка для закрытия диалога
+_selectButton ctrlAddEventHandler ["ButtonClick", {
+    params ["_control"];
+    // Проверка выбранной техники
+    if (vehicleToOutpost == "") exitWith {};
+    closeDialog 2;
+    camDestroy _previewCamera;
+    {
+        deleteVehicle _x;
+    } forEach previewVehicles;
+
+    outpostCostmoney = outpostCost select 0;
+    outpostCosthr = outpostCost select 1;
+    
+    [
+        _control getVariable "outpostType",
+        vehicleToOutpost,
+        myGlobalResult,
+        turretDirection,
+        currentlySelectedVehicleCustomization,
+        outpostCostMoney,
+        outpostCostHR,
+        garageCategorytoRemoveVehicleFrom,
+        currentlySelectedVehicleUID
+    ] spawn {
+        params ["_outpostType", "_vehicle", "_pos", "_direction", "_vehCustomization", "_costMoney", "_costHR", "_vehCategory", "_vehUID"];
+
+        private ["_createFnc"];
+        switch (_outpostType) do {
+            case ("AA"): { _createFnc = "SCRT_fnc_outpost_createAA" };
+            case ("AT"): { _createFnc = "SCRT_fnc_outpost_createAT" };
+            case ("MG"): { _createFnc = "SCRT_fnc_outpost_createHMG" };
+            case ("Roadblock"): {
+                _createFnc = "SCRT_fnc_outpost_createRoadblock";
+                _direction = [90, 0] select ([(format["<t>%1</t><br />", localize "STR_antistasi_dialogs_parallel"]), "", localize "STR_antistasi_dialogs_generic_button_yes_text", localize "STR_antistasi_dialogs_generic_button_no_text"] call BIS_fnc_guiMessage);
+            };
+        };
+        [_vehicle, _pos, _direction, _vehCustomization, _costMoney, _costHR, _vehCategory, _vehUID, clientOwner] remoteExec [_createFnc, 2];
+    };
+}];
+Debug("BuyVehicleTab complete.");
