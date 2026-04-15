@@ -10288,6 +10288,46 @@
                 <French>Se reposer</French>
                 <Turkish>Dinlen</Turkish>
             </Key>
+            <Key ID="STR_commander_menu_weather_title">
+                <Original>Weather change every: %1</Original>
+                <Russian>Смена погоды: %1</Russian>
+                <Chinesesimp></Chinesesimp>
+                <Korean></Korean>
+                <French></French>
+                <Turkish></Turkish>
+            </Key>
+            <Key ID="STR_commander_menu_weather_title_tooltip">
+                <Original>%1 until weather change</Original>
+                <Russian>%1 до смены погоды</Russian>
+                <Chinesesimp></Chinesesimp>
+                <Korean></Korean>
+                <French></French>
+                <Turkish></Turkish>
+            </Key>
+            <Key ID="STR_commander_menu_weather_listbox_title">
+                <Original>Weather level</Original>
+                <Russian>Уровень погоды</Russian>
+                <Chinesesimp></Chinesesimp>
+                <Korean></Korean>
+                <French></French>
+                <Turkish></Turkish>
+            </Key>
+            <Key ID="STR_weather_level_low">
+                <Original>Low</Original>
+                <Russian>Низкая</Russian>
+            </Key>
+            <Key ID="STR_weather_level_medium">
+                <Original>Medium</Original>
+                <Russian>Средняя</Russian>
+            </Key>
+            <Key ID="STR_weather_level_high">
+                <Original>High</Original>
+                <Russian>Высокая</Russian>
+            </Key>
+            <Key ID="STR_weather_level_random">
+                <Original>Random</Original>
+                <Russian>Случайная</Russian>
+            </Key>
             <Key ID="STR_commander_menu_clear_forest_button">
                 <Original>CLEAR FOREST NEAR HQ</Original>
                 <Russian>УБРАТЬ РАСТИТЕЛЬНОСТЬ У ШТАБА</Russian>
