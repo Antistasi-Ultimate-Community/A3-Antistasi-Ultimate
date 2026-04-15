@@ -10377,12 +10377,12 @@
                 <Turkish>Düşmanların oyuncudan ne kadar uzaklıkta ortaya çıkacağını etkiler. Bunu dikkatli kullanın. Performansınızın düşük olduğunu hissediyorsanız daha kısa mesafelere ayarlayın.</Turkish>
             </Key>
             <Key ID="STR_commander_menu_about_text">
-                <Original>Antistasi Ultimate - %1, Version: %2, Unlock Weapon Number: %3, Limited Fast Travel: %4, Rivals: %5, Time since GC: %6</Original>
-                <Russian>Antistasi Ultimate - %1, Версия: %2, Порог разблок. предметов: %3, Ограниченное быстрое перемещение: %4, Соперники: %5, Прошло времени с момента сборки мусора: %6</Russian>
-                <Chinesesimp>Antistasi Ultimate - %1, 版本: %2, 解锁武器数量: %3, 是否限制快速旅行: %4, 对手: %5, GC之后经过的时间: %6</Chinesesimp>
-                <French>Antistasi Ultimate - %1, Version: %2, Nombre d'armes à débloquer: %3, Voyage rapide limité : %4, Rivaux: %5, Temps écoulé depuis le nettoyage: %6</French>
-                <Korean>안티스타시 플러스 - %1, 버전: %2, 무기 언락 수: %3, 빠른 이동 제한: %4 라이벌: %5, 쓰레기 청소 이후 지난 시간:%6</Korean>
-                <Turkish>Antistasi Ultimate - %1, Sürüm: %2, Silah Kilit Açma Sayısı: %3, Sınırlı Hızlı Seyahat: %4, Rakipler: %5, GC'den Beri Geçen Süre: %6</Turkish>
+                <Original>Antistasi Ultimate - %1,\nVersion: %2,\nUnlock Weapon Number: %3,\nLimited Fast Travel: %4,\nRivals: %5,\nTime since GC: %6</Original>
+                <Russian>Antistasi Ultimate - %1,\n Версия: %2,\n Порог разблок. предметов: %3,\n Ограниченное быстрое перемещение: %4,\n Соперники: %5,\n Прошло времени с момента сборки мусора: %6</Russian>
+                <Chinesesimp>Antistasi Ultimate - %1,\n 版本: %2,\n 解锁武器数量: %3,\n 是否限制快速旅行: %4,\n 对手: %5,\n GC之后经过的时间: %6</Chinesesimp>
+                <French>Antistasi Ultimate - %1,\n Version: %2,\n Nombre d'armes à débloquer: %3,\n Voyage rapide limité : %4,\n Rivaux: %5,\n Temps écoulé depuis le nettoyage: %6</French>
+                <Korean>안티스타시 플러스 - %1,\n 버전: %2,\n 무기 언락 수: %3,\n 빠른 이동 제한: %4,\n 라이벌: %5,\n 쓰레기 청소 이후 지난 시간: %6</Korean>
+                <Turkish>Antistasi Ultimate - %1,\n Sürüm: %2,\n Silah Kilit Açma Sayısı: %3,\n Sınırlı Hızlı Seyahat: %4,\n Rakipler: %5,\n GC'den Beri Geçen Süre: %6</Turkish>
             </Key>
             <Key ID="STR_commander_menu_skill_level_title">
                 <Original>%1 Skill Level: %2/%3</Original>
