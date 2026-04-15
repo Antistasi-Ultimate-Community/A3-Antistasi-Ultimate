@@ -49,7 +49,7 @@ class CfgFunctions {
 
 		class Effect {
 			file = QPATHTOFOLDER(Effect);
-      class effect_crashingEffects {};
+      		class effect_crashingEffects {};
 			class effect_createBurningDebrisEffect {};
 			class effect_createGasEffect {};
 			class effect_createSmallExplosionEffect {};
@@ -209,6 +209,9 @@ class CfgFunctions {
 			class ui_launchSupport {};
 
 			class ui_showRivalsActivity {};
+
+			class ui_setWeatherLevel {};
+			class ui_weather_changeWeather {};
 		};
 
 		class Encounter  {
