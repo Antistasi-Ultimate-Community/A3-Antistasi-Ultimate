@@ -38,6 +38,20 @@ petros setBehaviour "AWARE";
 petros enableAI "MOVE";
 petros enableAI "AUTOTARGET";
 
+private _hqPhrases = [
+    localize "STR_A3U_Petros_moveHQ_phrase1",
+    localize "STR_A3U_Petros_moveHQ_phrase2",
+    localize "STR_A3U_Petros_moveHQ_phrase3",
+    localize "STR_A3U_Petros_moveHQ_phrase4"
+];
+private _message = format ["Petros :)  %1", selectRandom _hqPhrases];
+
+private _nearPlayers = allPlayers select { (_x distance petros) < 50 };
+if (count _nearPlayers > 0) then {
+    private _owners = _nearPlayers apply { owner _x };
+    [_message] remoteExec ["systemChat", _owners];
+};
+
 [respawnTeamPlayer, 0, teamPlayer] call A3A_fnc_setMarkerAlphaForSide;
 [respawnTeamPlayer, 0, civilian] call A3A_fnc_setMarkerAlphaForSide;
 
