@@ -10,7 +10,7 @@ petros allowDamage false;
 if (face petros != "GreekHead_A3_01") then {
     [petros, createHashMapFromArray [["face", "GreekHead_A3_01"], ["speaker", "Male01GRE"], ["pitch", 1.1], ["firstName", "Petros"], ["lastName", ":)"]]] call A3A_fnc_setIdentity;
 };
-
+//
 removeHeadgear petros;
 removeGoggles petros;
 private _vest = selectRandomWeighted (A3A_rebelGear get "ArmoredVests");
