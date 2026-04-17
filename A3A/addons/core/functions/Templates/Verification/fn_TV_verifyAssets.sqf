@@ -305,11 +305,11 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
         case "voices"; //CfgVoice maybe later
         case "sfVoices";
         case "milVoices";
+        case "eliteVoices";
         case "sfFaces";
         case "milFaces";
         case "polFaces";
         case "eliteFaces";
-        case "eliteVoices";
         case "handGrenadeAmmo";
         case "mortarAmmo";
         case "animations";
