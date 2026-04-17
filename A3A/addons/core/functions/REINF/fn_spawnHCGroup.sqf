@@ -38,7 +38,7 @@ private _costHR = 0;
 } forEach _unitTypes;
 
 //spawn group
-private _pos = [(getMarkerPos respawnTeamPlayer), 30, random 360] call BIS_Fnc_relPos;
+private _pos = ["Synd_HQ"] call A3A_fnc_findAiSpawnPosition;
 private _group = [_pos, teamPlayer, _unitTypes, true] call A3A_fnc_spawnGroup;
 _group setGroupIdGlobal [_idFormat + str ({side (leader _x) == teamPlayer} count allGroups)];
 

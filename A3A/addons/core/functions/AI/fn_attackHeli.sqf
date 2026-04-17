@@ -23,7 +23,6 @@ params ["_vehicle", "_group", "_targPos"];
 // Set script handle so abort routines can remove it later
 _group setVariable ["A3A_AIScriptHandle", _thisScript];
 
-
 while {count waypoints _group > 0} do { deleteWaypoint [_group, 0] };
 _group setBehaviourStrong "COMBAT";
 private _noGunner = isNull gunner _vehicle;
@@ -31,6 +30,13 @@ private _noGunner = isNull gunner _vehicle;
 private _wayPos = _targPos getPos [300 + random 100, random 360];
 private _destroyWP = _group addWaypoint [_wayPos, 0];
 _destroyWP setWaypointType "SAD";
+
+private _midHeight = [60, 80] select (A3A_climate isEqualTo "tropical");
+_vehicle flyInHeight _midHeight; //should probably be done in fn_checkAndSpawnAttack with maybe additional checks for VTOL
+
+if (getNumber (configOf _vehicle >> "vtol") > 0) then {
+    _vehicle limitSpeed ((0.5 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250); // no need for them to zoom around at full speed
+};
 
 private _approach = true;
 private _timeout = time + 60 + (_vehicle distance2d _targPos) / 50;
