@@ -112,7 +112,7 @@ if (_isRival) then {
 };
 
 switch (true) do {
-    case (_isRival): { /* || _unitPrefix isEqualTo "rivals" */
+    case (_isRival): {
         _skill = _skill * 0.9;
         _face = selectRandom (A3A_faction_riv get "faces");
         _voice = selectRandom (A3A_faction_riv get "voices");
@@ -151,7 +151,7 @@ switch (true) do {
         _insignia = selectRandom _regularInsignia;
     };
 };
-[_unit, createHashMapFromArray [["face", _face], ["speaker", _voice], ["pitch", (random [0.9, 1, 1.1])]]] call A3A_fnc_setIdentity; ///note to the future generation, check wtf is going on in A3A_fnc_createRandomIdentity AND fnc_registerUnitType
+[_unit, createHashMapFromArray [["face", _face], ["speaker", _voice], ["pitch", (random [0.9, 1, 1.1])]]] call A3A_fnc_setIdentity;
 _unit setSkill _skill;
 if (!isNil "_insignia" && {_insignia isNotEqualTo ""}) then {
    [_unit, _insignia] call BIS_fnc_setUnitInsignia;
