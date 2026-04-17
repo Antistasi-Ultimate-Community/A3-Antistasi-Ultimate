@@ -30,13 +30,34 @@ class cfgVehicles
 	class Static: All
 	{
 	};
-	class Helicopter;
+	class Air;
+	class Helicopter: Air
+	{
+		class HitPoints;
+		class Turrets;
+	};
 	class Helicopter_Base_F: Helicopter
 	{
-		class Turrets;
-		class HitPoints;
+		class HitPoints: HitPoints
+		{
+			class HitHull;
+			class HitFuel;
+			class HitEngine;
+			class HitAvionics;
+			class HitHRotor;
+			class HitVRotor;
+			class HitTransmission;
+		};
+		class Turrets: Turrets
+		{
+			class MainTurret;
+		};
+		class AnimationSources;
+		class EventHandlers;
 		class ViewPilot;
+		class ViewOptics;
 		class CargoTurret;
+		class Components;
 		class Reflectors
 		{
 			class Right;
@@ -119,7 +140,7 @@ class cfgVehicles
 	    airFrictionCoefs2[] = {0.001,0.0060000001,7.0000002e-005};
 	    airFrictionCoefs1[] = {0.1,0.60000002,0.0066999998};
 	    airFrictionCoefs0[] = {0,0,0};
-	    maxSpeed = 1000;
+	    maxSpeed = 850;
 	    landingSpeed = 0;
 	    altNoForce = 100000;
 	    altFullForce = 2500;
@@ -4215,4 +4236,6 @@ class cfgVehicles
 	#include "VTOL_unarmed.hpp"
 	#include "VTOL_armed.hpp"
 	#include "VTOL_socom.hpp"
+	//OPTRE FC spirit
+	#include "covenant_VTOL.hpp"
 };

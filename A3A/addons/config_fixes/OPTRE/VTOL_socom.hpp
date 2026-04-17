@@ -2,7 +2,7 @@
 // -------------------- SOCOM unarmed VTOL --------------------
 class A3U_OPTRE_Pelican_VTOL_SOCOM_Unarmed: A3U_OPTRE_Pelican_VTOL_Unarmed ///should probably increase radar radius for socom, similar to V-44
 {
-	displayName="D77H-TCI SOCOM Pelican";
+	displayName="D77H-TCI SOCOM Pelican VTOL";
 	author="Article 2 Studios / wersal";
 	scope=2;
 	scopeCurator=2;
