@@ -25,22 +25,22 @@ missionNamespace setVariable ["A3A_faction_" + _factionPrefix, _faction];
 [_faction, _factionPrefix] call A3A_fnc_compileGroups;
 
 private _unitClassMap = [
-	"riv_Cellleader", //why not riv_ ?
-	"riv_Partisan",
-	"riv_Minuteman",
-	"riv_Mercenary",
-	"riv_Enforcer",
-	"riv_Medic",
-	"riv_Saboteur",
-	"riv_Specialistat",
-	"riv_Specialistaa",
-	"riv_Oppressor",
-	"riv_Explosivesexpert",
-	"riv_Sharpshooter",
-	"riv_Commander",
-	"riv_Crew",
-	"riv_Pilot",
-	"riv_Unarmed"
+	"militia_Cellleader",
+	"militia_Partisan",
+	"militia_Minuteman",
+	"militia_Mercenary",
+	"militia_Enforcer",
+	"militia_Medic",
+	"militia_Saboteur",
+	"militia_Specialistat",
+	"militia_Specialistaa",
+	"militia_Oppressor",
+	"militia_Explosivesexpert",
+	"militia_Sharpshooter",
+	"militia_Commander",
+	"militia_Crew",
+	"militia_Pilot",
+	"militia_Unarmed"
 ] createHashMapFromArray [
 	"O_G_Soldier_SL_F",
 	"O_G_Soldier_LAT2_F",
@@ -74,7 +74,7 @@ private _allDefinitions = _faction get "loadouts";
 {
     private _loadoutName = _x;
     private _unitClass = _unitClassMap getOrDefault [_loadoutName, _baseUnitClass];
-    [_loadoutsPrefix + _loadoutName, _y + [_unitClass]] call A3A_fnc_registerUnitType; //
+    [_loadoutsPrefix + _loadoutName, _y + [_unitClass]] call A3A_fnc_registerUnitType;
 } forEach _allDefinitions;
 
 #if __A3_DEBUG__
