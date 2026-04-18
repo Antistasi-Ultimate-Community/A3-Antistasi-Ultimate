@@ -1511,7 +1511,7 @@ _pilotLoadoutData set ["helmets", [
     "OPTRE_UNSC_CH252A_Tropic_Helmet",
     "OPTRE_CH255_Security_Advanced_Type_1_Helmet_Tropic",
     "OPTRE_CH255_Security_Advanced_Type_2_Helmet_Tropic",
-    "OPTRE_FC_VX19_Helmet_Jungle",
+    "OPTRE_FC_VX19_Helmet",
     "OPTRE_UNSC_VX16_Helmet_MaskV_oli",
     "OPTRE_UNSC_VX16_Helmet_Mask_oli",
     "OPTRE_UNSC_VX16_HelmetNV_oli",
