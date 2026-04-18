@@ -1664,6 +1664,21 @@ private _spartanOrSpecialODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldie
 private _spartanOrSpecialODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, true], 0.35],[["OPTRE_FC_Spartan_Automatic_Rifleman", false , true], 0.65]]];
 private _spartanOrSpecialODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, true], 0.35],[["OPTRE_FC_Spartan_Marksman", false , true], 0.65]]];
 
+if (["config_wbk_spartan_groups"] call A3U_fnc_hasAddon) then {
+    _spartanUnitSL = ["baseClass", "WBK_CustomSpartan_3", false , true];
+    _spartanUnitRad = ["baseClass", "WBK_CustomSpartan_1", false , true];
+    _spartanUnitGrenadier = ["baseClass", "WBK_CustomSpartan_7", false , true];
+    _spartanUnitAT = ["baseClass", "WBK_CustomSpartan_6", false , true];
+    _spartanUnitSniper = ["baseClass", "WBK_CustomSpartan_4", false , true];
+
+    _spartanOrSpecialODSTmedic = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Deltagamer", true, true], 0.35],[["WBK_CustomSpartan_1", false , true], 0.65]]];
+    _spartanOrSpecialODSTengineer = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Jedi", true, true], 0.35],[["WBK_CustomSpartan_8", false , true], 0.65]]];
+    _spartanOrSpecialODSTexplosives = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Nightovizard", true, true], 0.35],[["WBK_CustomSpartan_7", false , true], 0.65]]];
+    _spartanOrSpecialODSTrifleman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Lumnuon", true, true], 0.35],[["WBK_CustomSpartan_1", false , true], 0.65]]];
+    _spartanOrSpecialODSTmachine = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scorch", true, true], 0.35],[["WBK_CustomSpartan_5", false , true], 0.65]]];
+    _spartanOrSpecialODSTmarksman = ["baseClass", [[["OPTRE_UNSC_ODST_Soldier_Scouter407", true, true], 0.35],[["WBK_CustomSpartan_2", false , true], 0.65]]];
+};
+
 private _prefix = "SF";
 private _unitTypes = [
     ["SquadLeader", _squadLeaderTemplate, [_spartanUnitSL], [_prefix]],
@@ -1683,14 +1698,6 @@ private _unitTypes = [
 
 
 [_prefix, _unitTypes, _sfLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
-
-/*{
-    params ["_name", "_loadoutTemplate"];
-    private _loadouts = [_sfLoadoutData, _loadoutTemplate] call _fnc_buildLoadouts;
-    private _finalName = _prefix + _name;
-    [_finalName, _loadouts] call _fnc_saveToTemplate;
-} forEach _unitTypes;
-*/
 
 ///////////////////////
 //  Military Units   //

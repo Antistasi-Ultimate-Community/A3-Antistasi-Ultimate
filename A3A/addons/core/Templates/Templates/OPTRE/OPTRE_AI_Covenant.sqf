@@ -1123,11 +1123,162 @@ private _patrolSpotterTemplate = {
 //  Special Forces Units   //
 /////////////////////////////
 private _eliteUnitSL = ["baseClass", "OPTRE_FC_Elite_Officer", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _eliteUnitMajor = ["baseClass", "OPTRE_FC_Elite_Major", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _eliteUnitMinor = ["baseClass", "OPTRE_FC_Elite_Minor", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _eliteUnitMinorAT = ["baseClass", "OPTRE_FC_Elite_MinorAT", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
-private _eliteUnitMinorAA = ["baseClass", "OPTRE_FC_Elite_MinorAA", false, true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _eliteUnitMajor = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+private _eliteUnitMinor = ["baseClass", "OPTRE_FC_Elite_Minor", false, true];
+private _eliteUnitMinorAT = ["baseClass", "OPTRE_FC_Elite_MinorAT", false, true]; 
+private _eliteUnitMinorAA = ["baseClass", "OPTRE_FC_Elite_MinorAA", false, true]; 
+
 private _jackalUnit = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _patrolUnit = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _patrolUnitelite = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+
+private _militaryUnitSL = ["baseClass", "OPTRE_FC_Elite_Officer", false, true];
+private _militaryUnitRad = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+private _militaryUnitGrenadier = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+private _militaryUnitAT = ["baseClass", "OPTRE_FC_Elite_MinorAT", false, true];
+private _militarymedic = ["baseClass", "OPTRE_FC_Elite_Minor", false, true];
+private _militaryengineer = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+private _militaryexplosives = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+private _militaryrifleman = ["baseClass", "OPTRE_FC_Elite_Minor", false, true];
+private _militarymachine = ["baseClass", "OPTRE_FC_Elite_Major", false, true];
+
+private _militiaUnitAT = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _militiamedic = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _militiaengineer = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _militiaexplosives = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _militiarifleman = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+private _militiamachine = ["baseClass", "OPTRE_Jackal_Infantry_F", false, true];
+
+if (["config_wbk_spartan_groups"] call A3U_fnc_hasAddon) then {
+    _patrolUnit = ["baseClass", [
+        [["OPTRE_Jackal_Infantry_F", false, true], 0.75], 
+        [["WBK_HaloHunter_1", true, true], 0.025],
+        [["WBK_HaloHunter_1_IF", true, true], 0.025],
+        [["WBK_HaloHunter_3", true, true], 0.025],
+        [["WBK_HaloHunter_3_IF", true, true], 0.025],
+        [["WBK_HaloHunter_2", true, true], 0.025],
+        [["WBK_HaloHunter_2_IF", true, true], 0.025],
+        [["OPTREW_Hunter_4_IF", true, true], 0.025],
+        [["OPTREW_Hunter_4", true, true], 0.025],
+        [["OPTREW_Hunter_5_IF", true, true], 0.025],
+        [["OPTREW_Hunter_5", true, true], 0.025]
+    ]];
+    _patrolUnitelite = ["baseClass", [
+        [["WBK_EliteMainWeap_3", false, true], 0.75], 
+        [["WBK_HaloHunter_1", true, true], 0.025],
+        [["WBK_HaloHunter_1_IF", true, true], 0.025],
+        [["WBK_HaloHunter_3", true, true], 0.025],
+        [["WBK_HaloHunter_3_IF", true, true], 0.025],
+        [["WBK_HaloHunter_2", true, true], 0.025],
+        [["WBK_HaloHunter_2_IF", true, true], 0.025],
+        [["OPTREW_Hunter_4_IF", true, true], 0.025],
+        [["OPTREW_Hunter_4", true, true], 0.025],
+        [["OPTREW_Hunter_5_IF", true, true], 0.025],
+        [["OPTREW_Hunter_5", true, true], 0.025]
+    ]];
+
+    _eliteUnitSL = [
+        "baseClass",
+        [
+            [["WBK_EliteMainWeap_6", false, true], 0.7],
+            [["IMS_Elite_Melee_2", true, true], 0.3]
+        ]
+    ];
+    _eliteUnitMajor = [
+        "baseClass",
+        [
+            [["WBK_EliteMainWeap_3", false, true], 0.7],
+            [["IMS_Elite_Melee_1", true, true], 0.3] //maybe instead of this bullshit, just define sword as rifle and be done with it
+        ]
+    ];
+    _eliteUnitMinor = ["baseClass", "WBK_EliteMainWeap_2", false, true];
+    _eliteUnitMinorAT = ["baseClass", "WBK_EliteMainWeap_10", false, true];
+
+    _militaryUnitSL = [
+        "baseClass",
+        [
+            [["WBK_EliteMainWeap_6", false, true], 0.7],
+            [["IMS_Elite_Melee_2", true, true], 0.3]
+        ]
+    ];
+    _militaryUnitAT = [
+        "baseClass",
+        [
+            [["WBK_EliteMainWeap_10", false, true], 0.5],
+            [["WBK_Grunt_Heavy", true, true], 0.25],
+            [["WBK_Grunt_3", true, true], 0.25]
+        ]
+    ];
+    
+    _baseInfantryPool = [
+        "baseClass",
+        [
+            [["WBK_EliteMainWeap_3", false, true], 0.35],
+            [["WBK_Grunt_2", true, true], 0.08125],
+            [["WBK_Grunt_5", true, true], 0.08125],
+            [["WBK_Grunt_1", true, true], 0.08125],
+            [["WBK_Grunt_4", true, true], 0.08125],
+            [["WBK_Grunt_Major", true, true], 0.08125],
+            [["WBK_Grunt_Minor", true, true], 0.08125],
+            [["WBK_Grunt_Specops", true, true], 0.08125],
+            [["WBK_Grunt_Ultra", true, true], 0.08125]
+        ]
+    ];
+
+    _militaryrifleman = [
+        "baseClass",
+        [
+            [["WBK_EliteMainWeap_2", false, true], 0.15], //wbk elites look weird while using statics... 
+            [["OPTRE_FC_Elite_Minor", true, true], 0.15],
+            [["IMS_Elite_Melee_1", true, true], 0.05],
+            [["WBK_Grunt_2", true, true], 0.08125],
+            [["WBK_Grunt_5", true, true], 0.08125],
+            [["WBK_Grunt_1", true, true], 0.08125],
+            [["WBK_Grunt_4", true, true], 0.08125],
+            [["WBK_Grunt_Major", true, true], 0.08125],
+            [["WBK_Grunt_Minor", true, true], 0.08125],
+            [["WBK_Grunt_Specops", true, true], 0.08125],
+            [["WBK_Grunt_Ultra", true, true], 0.08125]
+        ]
+    ];
+
+    _militarymedic = _baseInfantryPool;
+    _militaryengineer = _baseInfantryPool;
+    _militaryexplosives = _baseInfantryPool;
+    _militarymachine = _baseInfantryPool;
+
+    _militaryUnitRad = ["baseClass", "WBK_EliteMainWeap_3", false, true];
+    _militaryUnitGrenadier = ["baseClass", "WBK_EliteMainWeap_3", false, true];
+
+    _militiaUnitAT = [
+        "baseClass",
+        [
+            [["OPTRE_Jackal_Infantry_F", false, true], 0.5],
+            [["WBK_Grunt_Heavy", true, true], 0.25],
+            [["WBK_Grunt_3", true, true], 0.25]
+        ]
+    ];
+
+    _militiarifleman = [
+        "baseClass",
+        [
+            [["OPTRE_Jackal_Infantry_F", false, true], 0.5],
+            [["WBK_Grunt_2", true, true], 0.0625],
+            [["WBK_Grunt_5", true, true], 0.0625],
+            [["WBK_Grunt_1", true, true], 0.0625],
+            [["WBK_Grunt_4", true, true], 0.0625],
+            [["WBK_Grunt_Major", true, true], 0.0625],
+            [["WBK_Grunt_Minor", true, true], 0.0625],
+            [["WBK_Grunt_Specops", true, true], 0.0625],
+            [["WBK_Grunt_Ultra", true, true], 0.0625]
+        ]
+    ];
+
+    _militiamedic = _militiarifleman;
+    _militiaengineer = _militiarifleman;
+    _militiaexplosives = _militiarifleman;
+    _militiamachine = _militiarifleman;
+};
 
 private _prefix = "SF";
 private _unitTypes = [
@@ -1146,37 +1297,28 @@ private _unitTypes = [
     ["Sniper", _sniperTemplate, [_eliteUnitMajor], [_prefix]]
 ];
 
-
 [_prefix, _unitTypes, _sfLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
-
-/*{
-    params ["_name", "_loadoutTemplate"];
-    private _loadouts = [_sfLoadoutData, _loadoutTemplate] call _fnc_buildLoadouts;
-    private _finalName = _prefix + _name;
-    [_finalName, _loadouts] call _fnc_saveToTemplate;
-} forEach _unitTypes;
-*/
 
 ///////////////////////
 //  Military Units   //
 ///////////////////////
 private _prefix = "military";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [_eliteUnitSL], [_prefix]],
-    ["Radioman", _radiomanTemplate, [_eliteUnitMinor], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_eliteUnitMinor], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _eliteUnitMinor], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _eliteUnitMajor], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _eliteUnitMajor], [_prefix]],
-    ["Grenadier", _grenadierTemplate, [_eliteUnitMajor], [_prefix]],
-    ["LAT", _latTemplate, [_eliteUnitMinorAT], [_prefix]],
-    ["AT", _atTemplate, [_eliteUnitMinorAT], [_prefix]],
+    ["SquadLeader", _squadLeaderTemplate, [_militaryUnitSL], [_prefix]],
+    ["Radioman", _radiomanTemplate, [_militaryUnitRad], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_militaryrifleman], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _militarymedic], [_prefix]],
+    ["Engineer", _engineerTemplate, [["engineer", true], _militaryengineer], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _militaryexplosives], [_prefix]],
+    ["Grenadier", _grenadierTemplate, [_militaryUnitGrenadier], [_prefix]],
+    ["LAT", _latTemplate, [_militaryUnitAT], [_prefix]],
+    ["AT", _atTemplate, [_militaryUnitAT], [_prefix]],
     ["AA", _aaTemplate, [_eliteUnitMinorAA], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_eliteUnitMajor], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_militarymachine], [_prefix]],
     ["Marksman", _marksmanTemplate, [_jackalUnit], [_prefix]],
     ["Sniper", _sniperTemplate, [_jackalUnit], [_prefix]],
-    ["PatrolSniper", _patrolSniperTemplate, [_jackalUnit], [_prefix]],
-    ["PatrolSpotter", _patrolSpotterTemplate, [_jackalUnit], [_prefix]]
+    ["PatrolSniper", _patrolSniperTemplate, [_patrolUnit], [_prefix]],
+    ["PatrolSpotter", _patrolSpotterTemplate, [_patrolUnit], [_prefix]]
 ];
 
 [_prefix, _unitTypes, _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
@@ -1199,15 +1341,15 @@ private _prefix = "militia";
 private _unitTypes = [
     ["SquadLeader", _squadLeaderTemplate, [_jackalUnit], [_prefix]],
     ["Radioman", _radiomanTemplate, [_jackalUnit], [_prefix]],
-    ["Rifleman", _riflemanTemplate, [_jackalUnit], [_prefix]],
-    ["Medic", _medicTemplate, [["medic", true], _jackalUnit], [_prefix]],
-    ["Engineer", _engineerTemplate, [["engineer", true], _jackalUnit], [_prefix]],
-    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _jackalUnit], [_prefix]],
+    ["Rifleman", _riflemanTemplate, [_militiarifleman], [_prefix]],
+    ["Medic", _medicTemplate, [["medic", true], _militiamedic], [_prefix]], //should probably leave it a jackalUnit
+    ["Engineer", _engineerTemplate, [["engineer", true], _militiaengineer], [_prefix]],
+    ["ExplosivesExpert", _explosivesExpertTemplate, [["explosiveSpecialist", true], _militiaexplosives], [_prefix]],
     ["Grenadier", _grenadierTemplate, [_jackalUnit], [_prefix]],
-    ["LAT", _latTemplate, [_jackalUnit], [_prefix]],
-    ["AT", _atTemplate, [_jackalUnit], [_prefix]],
+    ["LAT", _latTemplate, [_militiaUnitAT], [_prefix]],
+    ["AT", _atTemplate, [_militiaUnitAT], [_prefix]],
     ["AA", _aaTemplate, [_jackalUnit], [_prefix]],
-    ["MachineGunner", _machineGunnerTemplate, [_jackalUnit], [_prefix]],
+    ["MachineGunner", _machineGunnerTemplate, [_militiamachine], [_prefix]],
     ["Marksman", _marksmanTemplate, [_jackalUnit], [_prefix]],
     ["Sniper", _sniperTemplate, [_jackalUnit], [_prefix]],
     ["PatrolSniper", _patrolSniperTemplate, [_jackalUnit], [_prefix]],
@@ -1234,8 +1376,8 @@ private _unitTypes = [
     ["MachineGunner", _machineGunnerTemplate, [_eliteUnitMajor], [_prefix]],
     ["Marksman", _marksmanTemplate, [_eliteUnitMajor], [_prefix]],
     ["Sniper", _sniperTemplate, [_eliteUnitMajor], [_prefix]],
-    ["PatrolSniper", _patrolSniperTemplate, [_eliteUnitMajor], [_prefix]],
-    ["PatrolSpotter", _patrolSpotterTemplate, [_eliteUnitMajor], [_prefix]]
+    ["PatrolSniper", _patrolSniperTemplate, [_patrolUnitelite], [_prefix]],
+    ["PatrolSpotter", _patrolSpotterTemplate, [_patrolUnitelite], [_prefix]]
 ];
 
 [_prefix, _unitTypes, _eliteLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
@@ -1249,7 +1391,7 @@ private _unitTypes = [
 //The following lines are determining the loadout of the pilots
 ["other", [["Pilot", _crewTemplate, [["baseClass", "OPTRE_FC_Elite_Minor", false, true]]]], _pilotLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 //The following lines are determining the loadout for the unit used in the "kill the official" mission
-["other", [["Official", _SquadLeaderTemplate, [["baseClass", "OPTRE_FC_Elite_Minor", false, true]]]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
+["other", [["Official", _SquadLeaderTemplate, [["baseClass", "OPTRE_FC_Elite_FieldMarshal", false, true]]]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 //The following lines are determining the loadout for the AI used in the "kill the traitor" mission
 ["other", [["Traitor", _traitorTemplate]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 //The following lines are determining the loadout for the AI used in the "Invader Punishment" mission

@@ -1463,14 +1463,21 @@ private _patrolSpotterTemplate = {
 //  Things below here can and will break the gamemode if improperly changed.
 ////////////////////////////////////////////////////////////////////////////////////////
 
-private _spartanUnit = ["baseClass", "OPTRE_FC_Spartan_TeamLeader", false , true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _spartanUnitSL = ["baseClass", "OPTRE_FC_Spartan_TeamLeader", false , true]; //true = skip antistasi loadout, second true = skip setIdentity in fnc_createUnit
+private _spartanUnitSniper = ["baseClass", "OPTRE_FC_Spartan_Scout_Sniper", false , true];
+
+
+if (["config_wbk_spartan_groups"] call A3U_fnc_hasAddon) then {
+    _spartanUnitSL = ["baseClass", "WBK_CustomSpartan_3", false , true];
+    _spartanUnitSniper = ["baseClass", "WBK_CustomSpartan_4", false , true];
+};
 
 /////////////////////////////
 //  Special Forces Units   //
 /////////////////////////////
 private _prefix = "SF";
 private _unitTypes = [
-    ["SquadLeader", _squadLeaderTemplate, [_spartanUnit], [_prefix]],
+    ["SquadLeader", _squadLeaderTemplate, [_spartanUnitSL], [_prefix]],
     ["Radioman", _radiomanTemplate, [], [_prefix]],
     ["Rifleman", _riflemanTemplate, [], [_prefix]],
     ["Medic", _medicTemplate, [["medic", true]], [_prefix]],
@@ -1481,8 +1488,8 @@ private _unitTypes = [
     ["AT", _atTemplate, [], [_prefix]],
     ["AA", _aaTemplate, [], [_prefix]],
     ["MachineGunner", _machineGunnerTemplate, [], [_prefix]],
-    ["Marksman", _marksmanTemplate, [_spartanUnit], [_prefix]],
-    ["Sniper", _sniperTemplate, [_spartanUnit], [_prefix]]
+    ["Marksman", _marksmanTemplate, [_spartanUnitSniper], [_prefix]],
+    ["Sniper", _sniperTemplate, [_spartanUnitSniper], [_prefix]]
 ];
 
 [_prefix, _unitTypes, _sfLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
