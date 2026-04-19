@@ -50,6 +50,56 @@ if (_side == teamPlayer) then {
 // Sync the vehicle textures if necessary
 _veh call A3A_fnc_vehicleTextureSync;
 
+if (_veh isKindOf "Air") then { //should be crewed by now
+	_driverX = driver _veh;
+	private _copilotTurrets = allTurrets _veh select {
+        getNumber ([_veh, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0
+    };
+    private _copilots = _copilotTurrets apply { _veh turretUnit _x };
+	private _newPilot = if (count _copilots > 0) then { _copilots select 0 } else { objNull };
+
+	_driverX addEventHandler ["Killed", {
+        params ["_unit", "_killer", "_instigator", "_useEffects"];
+
+        private _veh = vehicle _unit;
+        if (isNull _veh || {!alive _veh}) exitWith {};
+
+		if (!isCopilotEnabled _veh) then
+		{
+			_veh enableCopilot true;
+		};
+
+        private _copilotTurrets = allTurrets _veh select {
+            getNumber ([_veh, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0
+        };
+        private _copilots = _copilotTurrets apply { _veh turretUnit _x };
+        private _aliveCopilots = _copilots select {
+            !isNull _x && {alive _x} && {canMove _x}
+        };
+        if (count _aliveCopilots > 0) then {
+            private _newPilot = _aliveCopilots select 0;
+            //_newPilot action ["TakeVehicleControl", _veh];
+			_unit moveOut _veh;
+			_newPilot assignAsDriver _veh;
+            _newPilot moveInDriver _veh;
+			_veh setEffectiveCommander _newPilot;
+        };
+    }];
+
+	if (!isNull _newPilot) then {
+        _newPilot addEventHandler ["Killed", {
+            params ["_unit", "_killer", "_instigator", "_useEffects"];
+            private _veh = vehicle _unit;
+            if (isNull _veh || {!alive _veh}) exitWith {};
+
+            private _driver = driver _veh;
+            if (!isNull _driver && {alive _driver}) then {
+                _driver action ["ManualFire", _veh];
+            };
+        }];
+    };
+};
+
 private _typeX = typeOf _veh;
 if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 	// isn't this section basically supposed to be all ground vehicles?
