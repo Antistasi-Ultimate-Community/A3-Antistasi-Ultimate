@@ -16,6 +16,7 @@ FIX_LINE_NUMBERS()
 params ["_helicopter", "_crewGroup", "_cargoGroup", "_posDestination", "_originPos", "_landPos"];
 
 private _vehType = typeOf _helicopter;
+private _vtol = _vehType in FactionGet(all, "vehiclesPlanesTransport");
 
 private _forceFastrope = false;
 if (_vehType in vehFastRope) then {
@@ -26,7 +27,7 @@ if (_vehType in vehFastRope) then {
     } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
 };
 if (_forceFastrope) exitWith {
-    private _functionName = ["A3A_fnc_fastrope", "A3A_fnc_fastropeVTOL"] select (_vehType in FactionGet(all, "vehiclesPlanesTransport"));
+    private _functionName = ["A3A_fnc_fastrope", "A3A_fnc_fastropeVTOL"] select _vtol;
     private _function = missionNamespace getVariable [_functionName, {}];
     
     Warning_1("A3A_fnc_combatLanding called, but position has tall terrain objects - spawning %1 instead.", _functionName);
@@ -53,6 +54,7 @@ _vehWP0 setWaypointCompletionRadius 150;
 _vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gunners will engage units more aggressively
 
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
+if (_vtol) then {_midHeight = [70, 90] select (A3A_climate isEqualTo "tropical");};
 _helicopter flyInHeight _midHeight;
 
 [_helicopter, _landPos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;

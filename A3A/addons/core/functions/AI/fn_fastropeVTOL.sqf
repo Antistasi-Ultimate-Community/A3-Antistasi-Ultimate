@@ -24,7 +24,7 @@ _wp setWaypointSpeed "FULL";
 
 _wp setWaypointCompletionRadius 3;
 
-private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
+private _midHeight = [70, 90] select (A3A_climate isEqualTo "tropical");
 _veh flyInHeight _midHeight;
 
 [_veh, _landpos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
