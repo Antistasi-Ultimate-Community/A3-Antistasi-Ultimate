@@ -1,17 +1,6 @@
 
 params ["_medic", "_target", "_dragPos"];
 
-_medic setUnitPos "MIDDLE";
-_medic playAction "grabDrag";
-_timeOut = time + 5;
-waitUntil {sleep 0.3; ((animationState _medic) == "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2") or ((animationState _medic) == "AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_2") or !([_medic] call A3A_fnc_canFight) or (_timeOut < time)};
-if !([_medic] call A3A_fnc_canFight) exitWith {};
-
-[_target,"AinjPpneMrunSnonWnonDb"] remoteExecCall ["switchMove", _target];           // injured dragged pose, no animation
-_medic disableAI "ANIM";
-//_medic playMoveNow "AcinPknlMstpSrasWrflDnon";
-_medic stop false;          // why?
-
 private _dummyGrp = createGroup [civilian, true];
 private _dummy = _dummyGrp createUnit ["C_man_polo_1_F", [0,0,20], [], 0, "FORM"];
 _dummy setUnitPos "MIDDLE";
@@ -26,10 +15,23 @@ _dummy disableAI "SUPPRESSION";
 //_dummy forceSpeed 0.2;
 _dummy setPosATL (getPosATL _medic);
 
-_medic attachTo [_dummy, [0, -0.2, 0]];
+_medic attachTo [_dummy, [0, -0.0, 0]];
 _medic setDir 180;
-_target attachTo [_dummy, [0,-1.1, 0.092]];
+_target attachTo [_dummy, [0,-1.2, 0.092]];
 _target setDir 0;
+
+_medic setUnitPos "MIDDLE";
+_medic playAction "grabDrag";
+//_medic playMoveNow "AcinPknlMstpSrasWrflDnon";
+
+[_target,"AinjPpneMrunSnonWnonDb_grab"] remoteExecCall ["switchMove", _target];           // injured dragged pose
+sleep 1.5;
+
+_timeOut = time + 5;
+waitUntil {sleep 0.3; ((animationState _medic) == "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2") or ((animationState _medic) == "AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_2") or !([_medic] call A3A_fnc_canFight) or (_timeOut < time)};
+if !([_medic] call A3A_fnc_canFight) exitWith {};
+_medic stop false;          // why?
+_medic disableAI "ANIM";
 
 _dummy doMove _dragPos;
 [_medic] spawn {sleep 1; (_this select 0) playMove "AcinPknlMwlkSrasWrflDb"};         // Backwards walking animation, delayed because dummy won't move immediately
@@ -42,6 +44,8 @@ while {true} do
     if (!([_medic] call A3A_fnc_canFight) or (!alive _target) or (unitReady _dummy) or (_timeOut < time) or (_medic != vehicle _medic) or (_medic getVariable ["cancelRevive",false])) exitWith {};
     if (_lastPos distance _dummy < 0.1) exitWith {};        // stuck?
     _lastPos = getPosATL _dummy;
+    [_target,"AinjPpneMrunSnonWnonDb"] remoteExecCall ["switchMove", _target];       // Play dragging animation
+    sleep 0.1;
 /*
     // Is any of this necessary? Why would it be?
     if (_target distance _dummy > 3) then
@@ -61,10 +65,12 @@ while {true} do
 */
 };
 
+_medic playAction "released";           // Revert to normal pose
+[_target,"AinjPpneMrunSnonWnonDb_release"] remoteExecCall ["switchMove", _target];
+sleep 1.5;
 detach _target;
 detach _medic;
 deleteVehicle _dummy;
 _medic enableAI "ANIM";
-_medic playAction "released";           // Revert to normal pose
 // All release animations seem to chain to a face-down unconscious pose, and the paths out of that are all broken, so we hard switch
 [_target, "UnconsciousReviveDefault"] remoteExecCall ["switchMove", _target];     // face-up unconscious endpoint
