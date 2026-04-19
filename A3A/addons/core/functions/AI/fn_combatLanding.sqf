@@ -206,10 +206,7 @@ _helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// r
     params ["_helicopter","_landPos"];
 
     waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
-    for '_i' from 1 to (5 + (round random 2)) do
-    {
-        [_helicopter, 1] call A3A_fnc_fireCMFlare;
-    };
+    [_helicopter, 1, [5,7]] call A3A_fnc_fireCMFlare;
 };
 
 if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
@@ -222,9 +219,3 @@ _vehWP1 setWaypointStatements ["true", "if (local this and alive this) then { de
 _vehWP1 setWaypointBehaviour "CARELESS";
 
 _crewGroup setCurrentWaypoint _vehWP1;
-<<<<<<< patch-105322
-waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
-[_helicopter, 1, [5,7]] call A3A_fnc_fireCMFlare;
-_helicopter action ["LandGearUp", _helicopter];
-=======
->>>>>>> unstable
