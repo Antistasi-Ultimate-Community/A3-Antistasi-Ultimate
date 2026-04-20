@@ -32,10 +32,11 @@ private _destroyWP = _group addWaypoint [_wayPos, 0];
 _destroyWP setWaypointType "SAD";
 
 private _midHeight = [60, 80] select (A3A_climate isEqualTo "tropical");
-_vehicle flyInHeight _midHeight; //should probably be done in fn_checkAndSpawnAttack with maybe additional checks for VTOL
+_vehicle flyInHeight _midHeight; //should probably be done in fn_checkAndSpawnAttack
 
 if (getNumber (configOf _vehicle >> "vtol") > 0) then {
     _vehicle limitSpeed ((0.5 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250); // no need for them to zoom around at full speed
+    _midHeight = [70, 90] select (A3A_climate isEqualTo "tropical");
 };
 
 private _approach = true;
@@ -57,5 +58,4 @@ while {true} do {
 
 ServerInfo("Attack heli aborted due to damage");
 _group setVariable ["A3A_AIScriptHandle", nil];
-[_vehicle] spawn A3A_fnc_VEHDespawner;
 [_group] spawn A3A_fnc_enemyReturnToBase;

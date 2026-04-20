@@ -55,9 +55,6 @@ if (canFire _plane && canMove _plane && side _plane == _side) then {
 
 _suppData set [4, 0];           // Set activesupport radius to zero, enabling cleanup
 
-[_group] spawn A3A_fnc_groupDespawner;
-[_plane] spawn A3A_fnc_vehDespawner;
-
 //Have the plane fly back home
 if (canMove _plane && {driver _plane call A3A_fnc_canFight}) then
 {
@@ -73,3 +70,6 @@ if (canMove _plane && {driver _plane call A3A_fnc_canFight}) then
     { deleteVehicle _x } forEach (units _group);
     deleteVehicle _plane;
 };
+
+[_group] spawn A3A_fnc_groupDespawner;
+[_plane] spawn A3A_fnc_vehDespawner;

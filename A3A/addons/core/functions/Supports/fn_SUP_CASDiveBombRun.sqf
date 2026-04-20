@@ -144,6 +144,8 @@ private _ehID = addMissionEventHandler ["EachFrame", {
 
 waitUntil { sleep 1; !(getEventHandlerInfo ["EachFrame", _ehID] # 0) };
 
+[_plane, 0.3] call A3A_fnc_fireCMFlare;
+
 _plane removeEventHandler ["Fired", _firedEH];
 
 // return true if bombs were dropped

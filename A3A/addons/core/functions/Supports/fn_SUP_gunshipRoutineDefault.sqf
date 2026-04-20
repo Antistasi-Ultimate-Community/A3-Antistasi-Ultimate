@@ -352,11 +352,14 @@ while {_lifeTime > 0} do
     _lifeTime = _lifeTime - 10;
 };
 
+[_gunship, 1.3, 3] call A3A_fnc_fireCMFlare;
+
 _gunship setVariable ["IsActive", false];
 
 //Have the plane fly back home
 if (alive _gunship) then
 {
+    Info_1("%1 support has ended, returns to base now", _supportName);
     private _wpBase = _strikeGroup addWaypoint [(getMarkerPos _airport) vectorAdd [0, 0, 1000], 0];
     _wpBase setWaypointType "MOVE";
     _wpBase setWaypointBehaviour "CARELESS";
@@ -364,10 +367,9 @@ if (alive _gunship) then
     _wpBase setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
     _strikeGroup setCurrentWaypoint _wpBase;
     _gunship flyInHeight 1000;
-
-    waitUntil {!(alive _gunship) || ((getMarkerPos _airport) distance2D _gunship) < 100};
-    if(alive _gunship) then
-    {
-       [_gunship] spawn A3A_fnc_vehDespawner;
-    };
 };
+
+waitUntil {!(alive _gunship) || ((getMarkerPos _airport) distance2D _gunship) < 100};
+
+[_strikeGroup] spawn A3A_fnc_groupDespawner;
+[_gunship] spawn A3A_fnc_vehDespawner;

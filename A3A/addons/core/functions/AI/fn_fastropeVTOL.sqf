@@ -24,7 +24,7 @@ _wp setWaypointSpeed "FULL";
 
 _wp setWaypointCompletionRadius 3;
 
-private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
+private _midHeight = [70, 90] select (A3A_climate isEqualTo "tropical");
 _veh flyInHeight _midHeight;
 
 [_veh, _landpos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
@@ -209,3 +209,6 @@ _wp3 setWaypointSpeed "NORMAL";
 _wp3 setWaypointBehaviour "CARELESS";
 _wp3 setWaypointStatements ["true", "if !(local this) exitWith {}; deleteVehicle (vehicle this); {deleteVehicle _x} forEach thisList"];
 {_x setBehaviour "CARELESS";} forEach units _heli;
+
+[_heli] spawn A3A_fnc_groupDespawner;
+[_veh] spawn A3A_fnc_vehDespawner;
