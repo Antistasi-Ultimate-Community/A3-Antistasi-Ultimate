@@ -36,7 +36,7 @@ private _fnc_magClassToEntry = {
 // - Array of choices and weights (e.g. ["M16", 1, "AKM", 2])
 private _fnc_parseItemArray = {
     params [["_attachment", ""], ["_paramName", "unknown"]];
-    diag_log format ["[DEBUG] Parsing: %1 | Value: %2", _paramName, _attachment];
+    Debug_2("[DEBUG] Parsing: %1 | Value: %2", _paramName, _attachment);
     private _choice = "";
     if ((typeName _attachment) == "ARRAY") then {
         if (count _attachment > 1) then {
