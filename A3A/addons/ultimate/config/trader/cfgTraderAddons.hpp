@@ -409,3 +409,8 @@
         addons[] = {"MPP_PISTOLS"};
         weapons = "weapons_mpp";
     };
+    class addons_ScifiTP : addons_base
+    {
+        addons[] = {"PHEN_TurretPack"};
+        vehicles = "vehicles_scifitp";
+    };
