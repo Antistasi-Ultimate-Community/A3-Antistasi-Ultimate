@@ -18,6 +18,9 @@
     Example(s):
         [parameter] call vn_fnc_myFunction
 */
+#include "..\..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 params ["_template", "_loadoutDataForTemplate"];
 
 private _finalLoadout = [] call A3A_fnc_loadout_createBase;
