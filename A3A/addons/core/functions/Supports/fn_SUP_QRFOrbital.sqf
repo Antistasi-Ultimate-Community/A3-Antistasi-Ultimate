@@ -1,4 +1,4 @@
-/*  Sets up an air QRF support
+/*  Sets up an Orbital QRF support
 
 Environment: Server, scheduled, internal
 
@@ -28,12 +28,14 @@ params ["_suppName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_
 private _airbase = [_side, _targPos] call A3A_fnc_availableBasesAir; ///we would still need to spawn troops somewhere
 if (isNil "_airbase") exitWith { Info("QRF cancelled because no airbases available (how?)"); -1 };
 
-private _vehCount = 3 min ceil (_maxSpend / A3A_balanceVehicleCost);        // will overshoot a bit (no 1.5x factor). This is preferable to sending tiny QRFs
+private _vehCount = 2 min ceil (_maxSpend / A3A_balanceVehicleCost);        // so basically, with how it set up now, if drop pod has one sit, it will send multiple sets of pods
 // TODO: bias a bit for tank/APC/static targets?
 private _attackCount = round random ([0, 0, 0.8, 1.5] select _vehCount);
 
+//private _planeType = selectRandom (Faction(_side) get "vehiclesDropPod");
+
 // 1.5 cost factor for air
-private _estResources = 1.5 * _vehCount * A3A_balanceVehicleCost;
+private _estResources = 1.5 * _vehCount * A3A_balanceVehicleCost; //(A3A_vehicleResourceCosts get _planeType) + 100;
 A3A_supportStrikes pushBack [_side, "TROOPS", _targPos, time + 45*60, 45*60, _estResources];
 
 private _aggro = [aggressionOccupants, aggressionInvaders] select (_side == Invaders);

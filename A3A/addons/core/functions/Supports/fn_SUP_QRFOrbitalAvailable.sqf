@@ -1,4 +1,4 @@
-/*  Get Air QRF support selection weight against target
+/*  Get Orbital QRF support selection weight against target
 
 Arguments:
     <OBJECT> Target object
@@ -14,24 +14,13 @@ FIX_LINE_NUMBERS()
 
 params ["_target", "_side", "_maxSpend", "_availTypes"];
 
-// make air a bit more likely with war tier? or not?
-// air QRFs are typically *less* effective at higher tiers, right?
+// make orbital a bit more likely with war tier? or not?
 
-// specifically don't use it to attack:
-// - Fixed wing aircraft
-// TODO: Rework vehicle type system to handle this shit better
-/* if (_side isEqualTo Invaders) then {
-    if (isNull FactionGet(inv,"vehiclesDropPod")) exitwith { 0 };
-} else {
-    if (isNull FactionGet(occ,"vehiclesDropPod")) exitwith { 0 };
-}; */
-private _allAA = (A3A_faction_all get "vehiclesPlanesAA");
-if (typeOf _target in _allAA) exitWith { 0 };
+if (tierWar < 5) exitWith { 0 };
 
-// Otherwise fine?
-// Could reduce chance for heli or non-infantry targets in general
 // It can technically hit air/tanks, but you wouldn't ram a droppod through a vehicle... wouldn't you?
 
-if (_target isKindOf "Air") exitWith { 0.2 };
+if (_target isKindOf "Air") exitWith { 0.1 };
 if !(_target isKindOf "Man") exitWith { 0.5 };
-1;
+if (_maxSpend < 300) exitWith { 0 };        // don't use unless we're rich
+(tierWar - 3) / 10;       // 20% at tier 5 to 70% at tier 10

@@ -1,4 +1,4 @@
-/*  Creates and maintains UAV support
+/*  Creates and maintains UAVAttack support
 
 Environment: Server, must be spawned
 
@@ -67,7 +67,7 @@ _groupVeh setCurrentWaypoint _wp;
 _uav flyInHeight 350;           // maybe not necessary if we lock the waypoint
 _groupVeh lockWP true;          // prevent exiting the SAD waypoint
 
-private _timeout = time + 900;
+private _timeout = time + 300;
 private _enemySide = [Occupants, Invaders] select (_side == Invaders);
 _uav addEventHandler
 [
@@ -102,28 +102,27 @@ _uav addEventHandler
 
 while {time < _timeout && canMove _uav} do
 {
-    waitUntil { sleep 5; _uav distance2d _suppCenter < 1200 || !alive _uav};
+    waitUntil { sleep 5; _uav distance2d _suppCenter < 1000|| !alive _uav};
     // check if launcher/crew are intact
     if !(canFire _uav and gunner _uav call A3A_fnc_canFight || alive _uav) exitWith {
         Info_1("%1 has been destroyed or disabled, aborting routine", _supportName);
     };
 
-    private _friends = units _side inAreaArray [_suppCenter, 1000, 1000];
-    private _friendGroups = allGroups select {(leader _x in _friends) and {isNull objectParent leader _x} };
+    private _area = [_suppCenter, 1000, 1000, 0, false];         // inArea still needs long defaults in 2.18
+    private _friendGroups = groups _side select {local _x} select {leader _x inArea _area};
 
     // Choose four random enemies to spot
     private _allEnemies = (units teamPlayer + units _enemySide) inAreaArray [_suppCenter, 500, 500];
     private _spottedEnemies = [];
     for "_i" from 0 to 3 do {
         if (count _allEnemies == 0) exitWith {};
-        private _index = floor random (count _allEnemies);
-        _spottedEnemies pushBack (_allEnemies # _index);
-        _allEnemies deleteAt _index;
+        _spottedEnemies pushBack (_allEnemies deleteAt (floor random count _allEnemies));
     };
     {
         private _group = _x;
+        { _group reveal [_x, 2] } forEach _spottedEnemies;
+        // (almost) all attacking units should be server-local anyway, but the non-local versions for reference:
         //or: [[_group, _spottedEnemies], { { _this#0 reveal [_x, 2] } forEach _this#1 }] remoteExec ["call", leader _group];
-        { [_group, [_x, 2]] remoteExec ["reveal", leader _group] } forEach _spottedEnemies;
     } forEach _friendGroups;
 
     // check if we're past the active time/missiles
@@ -153,7 +152,7 @@ while {time < _timeout && canMove _uav} do
             _uav doWatch objNull; /// _gunner
             _uav setVariable ["currentTarget", nil];
             _suppTarget resize 0;
-	    deleteVehicle _laser;
+	        deleteVehicle _laser;
             Debug_1("%1 skips target, as it is already dead", _supportName);
             continue;
         };

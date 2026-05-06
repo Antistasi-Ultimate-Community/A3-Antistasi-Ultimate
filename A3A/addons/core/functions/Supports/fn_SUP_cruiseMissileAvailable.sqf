@@ -8,6 +8,7 @@ private _loadedTemplate = if (_side isEqualTo Occupants) then {A3A_Occ_template}
 if (toLower _loadedTemplate isEqualTo "VN") exitWith {-1}; //dont allow with VN
 if ("lowTech" in A3A_factionEquipFlags) exitWith {-1}; //leave it like this untill we add CM launcher vehicle type, and if WW2 modsets have V-2 rockets or something
 
+if (_maxSpend < 300) exitWith { 0 };        // don't use unless we're rich
 if (_target isKindOf "Air") exitWith { 0 };     // can hit anything except air
 // Should limit to certain templates?
 
