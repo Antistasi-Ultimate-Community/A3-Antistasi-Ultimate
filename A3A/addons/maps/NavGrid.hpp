@@ -64,5 +64,5 @@ class NavGrid {
 	regero = QPATHTOFOLDER(Antistasi_regero.regero\navGrid.sqf);
 	drakovac = QPATHTOFOLDER(Antistasi_drakovac.drakovac\navGrid.sqf);
 	green_sea_2023 = QPATHTOFOLDER(Antistasi_green_sea_2023.green_sea_2023\navGrid.sqf);
-	bozcaada = QPATHTOFOLDER(Antistasi_Laghisola.egl_laghisola\navGrid.sqf);
+	egl_laghisola = QPATHTOFOLDER(Antistasi_Laghisola.egl_laghisola\navGrid.sqf);
 };
