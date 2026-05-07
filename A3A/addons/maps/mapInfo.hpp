@@ -1,67 +1,65 @@
-class mapInfo {
-    #include "Antistasi_Altis.Altis\mapInfo.hpp"
-    #include "Antistasi_Malden.Malden\mapInfo.hpp"
-    #include "Antistasi_SefrouRamal.SefrouRamal\mapInfo.hpp"
-    #include "Antistasi_Stratis.Stratis\mapInfo.hpp"
-	#include "Antistasi_chernarus.chernarus\mapInfo.hpp"
-	#include "Antistasi_chernarus_summer.chernarus_summer\mapInfo.hpp"
-	#include "Antistasi_chernarus_winter.chernarus_winter\mapInfo.hpp"
-    #include "Antistasi_cup_chernarus_A3.cup_chernarus_A3\mapInfo.hpp"
-    #include "Antistasi_Enoch.Enoch\mapInfo.hpp"
-    #include "Antistasi_Esseker.Esseker\mapInfo.hpp"
-    #include "Antistasi_Napf.Napf\mapInfo.hpp"
-	#include "Antistasi_NapfWinter.NapfWinter\mapInfo.hpp"
-    #include "Antistasi_blud_vidda.blud_vidda\mapInfo.hpp"
-    #include "Antistasi_vt7.vt7\mapInfo.hpp"
-    #include "Antistasi_takistan.takistan\mapInfo.hpp"
-    #include "Antistasi_Tanoa.Tanoa\mapInfo.hpp"
-    #include "Antistasi_cam_lao_nam.cam_lao_nam\mapInfo.hpp"
-    #include "Antistasi_vn_khe_sanh.vn_khe_sanh\mapInfo.hpp"
-    #include "Antistasi_Sehreno.Sehreno\mapInfo.hpp"
-	#include "Antistasi_sara.sara\mapInfo.hpp"
-	#include "Antistasi_Kunduz.Kunduz\mapInfo.hpp"
-	#include "Antistasi_Tembelan.Tembelan\mapInfo.hpp"
-	#include "Antistasi_tem_anizay.tem_anizay\mapInfo.hpp"
-	#include "Antistasi_SPE_Normandy.SPE_Normandy\mapInfo.hpp"
-	#include "Antistasi_lingor3.lingor3\mapInfo.hpp"
-	#include "Antistasi_lythium.lythium\mapInfo.hpp"
-	#include "Antistasi_Panthera3.Panthera3\mapInfo.hpp"
-	#include "Antistasi_Winthera3.Winthera3\mapInfo.hpp"
-	#include "Antistasi_abramia.abramia\mapInfo.hpp"
-	#include "Antistasi_OPTRE_Madrigal.OPTRE_Madrigal\mapInfo.hpp"
-	#include "Antistasi_rhspkl.rhspkl\mapInfo.hpp"
-	#include "Antistasi_Kapaulio.Kapaulio\mapInfo.hpp"
-	#include "Antistasi_Staszow.Staszow\mapInfo.hpp"
-	#include "Antistasi_StaszowWinter.StaszowWinter\mapInfo.hpp"
-	#include "Antistasi_iron_excelsior_Tobruk.iron_excelsior_Tobruk\mapInfo.hpp"
-	#include "Antistasi_ruha.ruha\mapInfo.hpp"
-	#include "Antistasi_gm_weferlingen_winter.gm_weferlingen_winter\mapInfo.hpp"
-    #include "Antistasi_gm_weferlingen_summer.gm_weferlingen_summer\mapInfo.hpp"
-    #include "Antistasi_green_sea.green_sea\mapInfo.hpp"
-	#include "Antistasi_brf_sumava.brf_sumava\mapInfo.hpp"
-	#include "Antistasi_spex_utah_beach.spex_utah_beach\mapInfo.hpp"
-	#include "Antistasi_pja310.pja310\mapInfo.hpp"
-	#include "Antistasi_namalsk.namalsk\mapInfo.hpp"
-	#include "Antistasi_WW2_Omaha_Beach.WW2_Omaha_Beach\mapInfo.hpp"
-	#include "Antistasi_UMB_Colombia.UMB_Colombia\mapInfo.hpp"
-	#include "Antistasi_tem_kujari.tem_kujari\mapInfo.hpp"
-	#include "Antistasi_stozec.stozec\mapInfo.hpp"
-	#include "Antistasi_psyfx_pht.psyfx_pht\mapInfo.hpp"
-	#include "Antistasi_yulakia.yulakia\mapInfo.hpp"
-	#include "Antistasi_Gulfcoast.Gulfcoast\mapInfo.hpp"
-	#include "Antistasi_SPE_Mortain.SPE_Mortain\mapInfo.hpp"
-	#include "Antistasi_tem_chernarus.tem_chernarus\mapInfo.hpp"
-	#include "Antistasi_tem_chernarusw.tem_chernarusw\mapInfo.hpp"
-	#include "Antistasi_mehland.mehland\mapInfo.hpp"
-	#include "Antistasi_pulau.pulau\mapInfo.hpp"
-	#include "Antistasi_fapovo.fapovo\mapInfo.hpp"
-	#include "Antistasi_chernarusredux.chernarusredux\mapInfo.hpp"
-	#include "Antistasi_stubbhult.stubbhult\mapInfo.hpp"
-	#include "Antistasi_kunduz_valley.kunduz_valley\mapInfo.hpp"
-	#include "Antistasi_isladuala3.isladuala3\mapInfo.hpp"
-	#include "Antistasi_VTF_Korsac.VTF_Korsac\mapInfo.hpp"
-	#include "Antistasi_VTF_Korsac_Winter.VTF_Korsac_Winter\mapInfo.hpp"
-	#include "Antistasi_regero.regero\mapInfo.hpp"
-	#include "Antistasi_drakovac.drakovac\mapInfo.hpp"
-	#include "Antistasi_green_sea_2023.green_sea_2023\mapInfo.hpp"
+class lostisland {
+	population[] = {
+	{"Svetlograd", 275},
+	{"Stoczek", 82},
+	{"Kozinka", 24},
+	{"Budky", 46},
+	{"Kirov", 156},
+	{"Ivanovka", 33},
+	{"Borkin", 112},
+	{"Eremizino", 126},
+	{"Krasnodar", 133},
+	{"Konkovo", 16},
+	{"Olginka", 6},
+	{"Krasine", 28},
+	{"Dolyna", 43},
+	{"Mova", 71},
+	{"Goritsky", 87},
+	{"Novaya", 117}
+		
+	};
+	disabledTowns[] = {}; //no towns that need to be disabled
+	antennas[] = {
+	{6569.91,5720.82,0.207825},
+	//{7557.3,6182.65,0.00652313},
+	//{7760.76,5546.98,0.16861}, 
+	//{2583.88,6248.69,0.0361176},
+	{2832.95,6665.05,-129.941},
+	//{7777.67,6326.99,0},
+	{5848.3,8945.41,0.529282},
+	//{5076.88,9061.88,0.000728607},
+	{2590.91,8465.88,-0.0549698},
+	//{5457.36,9321.57,0.0757065},
+	//{5368.67,9351.14,1.98193}, 	
+	{7774.88,1748.15,0.50779},
+	//{1036.78,928.949,0.017952},
+	//{981.875,808.125,0.0483627}
+	{2432,1910.125,0},
+	{1940,4042.375,0},
+	{7626.375,6252.5,0}
+
+	};
+	antennasBlacklistIndex[] = {};
+	banks[] = {
+		{2895,6267.25,0},{2685.951,1739.512,38.25}
+		
+	};
+	garrison[] = {
+		{},{airport_1,outpost_16,outpost_14,factory_1,outpost_3,outpost_20},{},{control_2,control_3,control_4,control_5}
+	};
+	fuelStationTypes[] = {
+		"Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F"
+	};
+	milAdministrations[] = {
+		{3453.522,1204.528,18.072},{7731.595,4945.663,18.546},{2730.089,6516.646,66.86}
+		
+	};
+	climate = "Temperate";
+	buildObjects[] = {
+		BUILDABLES_HISTORIC,
+		BUILDABLES_MODERN_GREEN,
+		BUILDABLES_TEMPERATE,
+		BUILDABLES_UNIVERSAL,
+		BUILDABLES_CUP
+	};
 };
