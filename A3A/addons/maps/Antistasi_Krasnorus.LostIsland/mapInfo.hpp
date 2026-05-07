@@ -1,3 +1,4 @@
+#include "\x\A3A\addons\maps\BuildObjectsList.hpp"
 class lostisland {
 	population[] = {
 	{"Svetlograd", 275},
