@@ -21,7 +21,6 @@
 
 			ITEM(C_UavTerminal, 500, MISC_STOCK);
 
-			ITEM(H_Shemag_red, 50, MISC_STOCK);
 			ITEM(H_EarProtectors_black_F, 50, MISC_STOCK);
     		ITEM(H_EarProtectors_orange_F, 50, MISC_STOCK);
     		ITEM(H_EarProtectors_red_F, 50, MISC_STOCK);
