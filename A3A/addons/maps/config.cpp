@@ -89,6 +89,7 @@ class CfgMissions
 	A3A_Mission(VTF_Korsac_Winter, "Antistasi Ultimate - Korsac Winter")
 	A3A_Mission(regero, "Antistasi Ultimate - Kingdom of Regero")
 	A3A_Mission(drakovac, "Antistasi Ultimate - Drakovac")
+	A3a_Mission(egl_laghisola, "Antistasi Ultimate - Laghisola")
 	
 	
 #if __A3_DEBUG__
