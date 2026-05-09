@@ -21,3 +21,10 @@ GVAR(scanHorizonHeight) = 300;
 // When getting marker sizes for zero-size markers (emplacements), pretend
 // they're really this big.
 GVAR(zeroSizeMarkerBlowup) = 50;
+
+// Checks for auto-land
+GVAR(actionSpeedLimit) = 350; // Max speed for action (km/h)
+GVAR(actionHeightLimit) = 150; // Max height for action (meters)
+
+// Detection parameters for auto-land
+GVAR(detectionRange) = 500;

@@ -381,6 +381,14 @@ class Params
         default = 0;
         lockInGame = 1;
     };
+    class enableAutoland: ScriptParams
+    {
+        title = $STR_antistasi_actions_autoland;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        tooltip = $STR_params_autoland_tooltip;
+        default = 1;
+    };
     class TimerParamsSpacer : BasicParams
     {
         type = "Timer";
