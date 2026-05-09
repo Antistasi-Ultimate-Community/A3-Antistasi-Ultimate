@@ -1,43 +1,36 @@
 #include "\x\A3A\addons\maps\BuildObjectsList.hpp"
 class lostisland {
 	population[] = {
-	{"Svetlograd", 275},
-	{"Stoczek", 82},
-	{"Kozinka", 24},
-	{"Budky", 46},
-	{"Kirov", 156},
-	{"Ivanovka", 33},
-	{"Borkin", 112},
-	{"Eremizino", 126},
-	{"Krasnodar", 133},
-	{"Konkovo", 16},
-	{"Olginka", 6},
-	{"Krasine", 28},
-	{"Dolyna", 43},
+	{"Svetlograd", 300},
+	{"Stoczek", 92},
+	{"Kozinka", 44},
+	{"Budky", 56},
+	{"Kirov", 162},
+	{"Ivanovka", 40},
+	{"Borkin", 122},
+	{"Eremizino", 146},
+	{"Krasnodar", 163},
+	{"Konkovo", 21},
+	{"Olginka", 9},
+	{"Krasine", 36},
+	{"Dolyna", 63},
 	{"Mova", 71},
 	{"Goritsky", 87},
-	{"Novaya", 117}
+	{"Novaya", 167}
 		
 	};
 	disabledTowns[] = {}; //no towns that need to be disabled
 	antennas[] = {
 	{6569.91,5720.82,0.207825},
-	//{7557.3,6182.65,0.00652313},
-	//{7760.76,5546.98,0.16861}, 
-	//{2583.88,6248.69,0.0361176},
-	{2832.95,6665.05,-129.941},
-	//{7777.67,6326.99,0},
+	{2832.95,6665.05,0.000595093},
 	{5848.3,8945.41,0.529282},
-	//{5076.88,9061.88,0.000728607},
 	{2590.91,8465.88,-0.0549698},
-	//{5457.36,9321.57,0.0757065},
-	//{5368.67,9351.14,1.98193}, 	
 	{7774.88,1748.15,0.50779},
-	//{1036.78,928.949,0.017952},
-	//{981.875,808.125,0.0483627}
 	{2432,1910.125,0},
 	{1940,4042.375,0},
-	{7626.375,6252.5,0}
+	{7626.375,6252.5,0},
+	{4828.579,3860.218,-0.007},
+	{7379.625,8251,0}
 
 	};
 	antennasBlacklistIndex[] = {};
@@ -52,7 +45,7 @@ class lostisland {
 		"Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F"
 	};
 	milAdministrations[] = {
-		{3453.522,1204.528,18.072},{7731.595,4945.663,18.546},{2730.089,6516.646,66.86}
+		{3453.522,1204.528,18.072},{7731.595,4945.663,18.546},{2730.089,6516.646,66.86},{8534.054,1083.556,0},{2728.625,2164.125,0.25},{1166.375,2022.625,0}
 		
 	};
 	climate = "Temperate";
