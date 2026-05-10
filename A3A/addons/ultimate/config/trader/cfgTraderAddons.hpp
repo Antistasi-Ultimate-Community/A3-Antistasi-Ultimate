@@ -389,6 +389,11 @@
         addons[] = {"vests_f_JCA_IE"};
         weapons = "equipment_jcaie";
     };
+    class addons_jcals : addons_base
+    {
+        addons[] = {"Weapons_F_JCA_LS"};
+        vehicles = "vehicles_jcals";
+    };
     class addons_FlexNorAF : addons_base
     {
         addons[] = {"Flex_CUP_NOR_Faction"};
