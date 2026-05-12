@@ -43,28 +43,23 @@ private _hoverRingControl = _mapDisplay displayCtrl _hoverRingControlId;
 private _rippleControl = _mapDisplay displayCtrl _rippleControlId;
 
 if (isNull _hoverRingControl) then {
-    _hoverRingControl = _mapDisplay ctrlCreate
-        ["RscPictureKeepAspect", _hoverRingControlId];
+    _hoverRingControl = _mapDisplay ctrlCreate ["RscPictureKeepAspect", _hoverRingControlId];
     _hoverRingControl ctrlShow false;
-    _hoverRingControl ctrlSetText
-        "\x\A3A\addons\ultimate\data\A3AU_hover_icon.paa";
+    _hoverRingControl ctrlSetText "\x\A3A\addons\ultimate\data\A3AU_hover_icon.paa";
     _hoverRingControl ctrlSetPosition [0, 0, 0, 0];
     _hoverRingControl ctrlCommit 0;
 };
 
 if (isNull _rippleControl) then {
-    _rippleControl = _mapDisplay ctrlCreate
-        ["RscPictureKeepAspect", _rippleControlId];
+    _rippleControl = _mapDisplay ctrlCreate ["RscPictureKeepAspect", _rippleControlId];
     _rippleControl ctrlShow false;
-    _rippleControl ctrlSetText
-        "\x\A3A\addons\ultimate\data\A3AU_hover_icon.paa";
+    _rippleControl ctrlSetText "\x\A3A\addons\ultimate\data\A3AU_hover_icon.paa";
     _rippleControl ctrlSetPosition [0, 0, 0, 0];
     _rippleControl ctrlCommit 0;
 };
 
 if (isNull _tooltipControl) then {
-    _tooltipControl = _mapDisplay ctrlCreate
-        ["RscStructuredText", _tooltipControlId];
+    _tooltipControl = _mapDisplay ctrlCreate ["RscStructuredText", _tooltipControlId];
     _tooltipControl ctrlShow false;
     _tooltipControl ctrlSetBackgroundColor [0, 0, 0, 0];
 };

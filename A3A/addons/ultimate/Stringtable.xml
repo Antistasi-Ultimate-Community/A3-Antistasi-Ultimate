@@ -434,7 +434,7 @@
             <Polish>Fabryka&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Mnoży jeden zasób przez 1,2 za każdą fabrykę&lt;/t&gt;</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_AIRPORT_CAPTURED">
-            <Original>When captured:&lt;br /&gt;-Allows usage of stored air assets&lt;br /&gt;-Enables the use of air supports</Original>
+            <Original>When captured:&lt;br /&gt;-Allows usage of stored air assets&lt;br /&gt;-Enables the use of air supports&lt;br /&gt;&lt;br /&gt;Can only be captured from War Tier 3+.</Original>
             <French>Une fois capturé :&lt;br /&gt;-Permet l'utilisation des aéronefs stockés&lt;br /&gt;-Active les soutiens aériens</French>
             <German>Nach Einnahme:&lt;br /&gt;-Erlaubt die Nutzung gespeicherter Luftfahrzeuge&lt;br /&gt;-Ermöglicht Luftunterstützung</German>
             <Czech>Po obsazení:&lt;br /&gt;-Umožňuje použití uložených leteckých prostředků&lt;br /&gt;-Povoluje leteckou podporu</Czech>

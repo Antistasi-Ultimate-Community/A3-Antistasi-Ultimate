@@ -9,6 +9,11 @@
         path = "None";
         name = "None";
     };
+    class intro_rebellion
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\rebellion_co.jpg);
+        name = "Rebellion";
+    };
     class intro_a3au
     {
         path = QPATHTOFOLDER(data\backgrounds\images\a3au_co.jpg);

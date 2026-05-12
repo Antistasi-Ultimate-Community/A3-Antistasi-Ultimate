@@ -25,3 +25,8 @@ private _markerText = markerText "Dum"+_marker;
 private _markerTextSplit = toLower ((_markerText splitString "_") select 0);
 "Dum"+_marker setMarkerAlphaLocal 1;
 "Dum"+_marker setMarkerText "Revealed "+_markerTextSplit;
+
+revealedZones pushBackUnique _marker;
+publicVariable "revealedZones";
+
+[_marker] remoteExecCall ["A3A_fnc_mrkUpdate", 0];

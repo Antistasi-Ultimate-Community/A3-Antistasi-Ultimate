@@ -136,4 +136,6 @@ deleteVehicle _smokeEffect;
 deleteVehicle _trigger;
 deleteMarker _traderMarkerVague;
 
+[traderMarker] call A3A_fnc_mrkUpdate;
+
 [_taskId, "TRADER", 5] spawn A3A_fnc_taskDelete;

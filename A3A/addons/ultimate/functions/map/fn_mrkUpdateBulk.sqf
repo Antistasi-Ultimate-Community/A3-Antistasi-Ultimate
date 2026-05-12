@@ -41,3 +41,5 @@ _markerNames apply {
 _uniqueMarkerNames apply {
     [_x] call A3A_fnc_mrkUpdate;
 };
+
+nil;

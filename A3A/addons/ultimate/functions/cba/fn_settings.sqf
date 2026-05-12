@@ -102,7 +102,7 @@ private _blindnessColors = [
 [
     "A3AU_setting_colorBlindness",
     "LIST",
-    "Color Blindness Settings (Requires Restart!)",
+    "Color Blindness Settings",
     ["Antistasi Ultimate", "Accessibility Settings"],
     [_blindnessColors, _namesOfBlindness, 0],
     false,
@@ -116,20 +116,17 @@ private _blindnessColors = [
         colorCivilian = _factionColor select 2;
         colorTeamPlayer = _factionColor select 3;
         colorRivals = _factionColor select 4;
+        // [[ Needs converting to something other than global var
     }
 ] call CBA_fnc_addSetting;
 
 [
     "A3AU_setting_alwaysShowMarkerName",
     "CHECKBOX",
-    "Always show marker names on map (Requires Restart!)",
+    "Always show marker names on map",
     ["Antistasi Ultimate", "Accessibility Settings"],
     false,
-    false,
-    {  
-        params ["_value"];
-		missionNamespace setVariable ["A3AU_setting_alwaysShowMarkerName",_value,true];
-    }
+    false
 ] call CBA_fnc_addSetting;
 
 if (["tts_emission"] call A3U_fnc_hasAddon) then {

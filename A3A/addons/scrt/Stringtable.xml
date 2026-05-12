@@ -8413,11 +8413,11 @@
                 <Turkish>%1 Karakolu</Turkish>
             </Key>
             <Key ID="STR_airbase">
-                <Original>%1 %2 Airbase</Original>
-                <Russian>Авиабаза %1 %2</Russian>
-                <Chinesesimp>%1 %2 空军基地</Chinesesimp>
-                <Korean>%1 %2 공군 기지</Korean>
-                <French>Base aérienne %1 %2</French>
+                <Original>%1 Airbase</Original>
+                <Russian>Авиабаза %1</Russian>
+                <Chinesesimp>%1 空军基地</Chinesesimp>
+                <Korean>%1 공군 기지</Korean>
+                <French>Base aérienne %1</French>
             </Key>
             <Key ID="STR_resources">
                 <Original>%1 Resources</Original>
@@ -8434,14 +8434,14 @@
                 <French>%1 Usine</French>
             </Key>
             <Key ID="STR_port_river">
-                <Original>%1 River Port</Original>
+                <Original>%1 Riverport</Original>
                 <Russian>%1 Речной порт</Russian>
                 <Chinesesimp>%1 河港</Chinesesimp>
                 <Korean>%1 강항</Korean>
                 <French>%1 Port fluvial</French>
             </Key>
             <Key ID="STR_port_sea">
-                <Original>%1 Sea Port</Original>
+                <Original>%1 Seaport</Original>
                 <Russian>%1 Морской порт</Russian>
                 <Chinesesimp>%1 海港</Chinesesimp>
                 <Korean>%1 항구</Korean>

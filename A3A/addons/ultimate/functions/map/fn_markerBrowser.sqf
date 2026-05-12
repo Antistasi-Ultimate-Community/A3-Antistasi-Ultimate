@@ -70,8 +70,7 @@ private _getOriginalMarkerName = {
         (count _originalMarkerName) >= 3
         && {(_originalMarkerName select [0, 3]) == "Dum"}
     } do {
-        _originalMarkerName = _originalMarkerName select
-            [3, (count _originalMarkerName) - 3];
+        _originalMarkerName = _originalMarkerName select [3, (count _originalMarkerName) - 3];
     };
 
     _originalMarkerName
@@ -133,8 +132,7 @@ private _readHoverMetadata = {
         []
     };
 
-    private _hoverMetaMap = missionNamespace getVariable
-        ["A3U_mrkHoverMetaMap", createHashMap];
+    private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 
     private _markerMetadata = _hoverMetaMap getOrDefault [_markerName, []];
     if !(_markerMetadata isEqualTo []) exitWith {
@@ -221,12 +219,9 @@ private _getMarkerSideFromMetadata = {
         sideUnknown
     };
 
-    private _rebelFlagMarkerType =
-        [_rebelFaction, "flagMarkerType", ""] call _getMapValue;
-    private _occupierFlagMarkerType =
-        [_occupierFaction, "flagMarkerType", ""] call _getMapValue;
-    private _invaderFlagMarkerType =
-        [_invaderFaction, "flagMarkerType", ""] call _getMapValue;
+    private _rebelFlagMarkerType = [_rebelFaction, "flagMarkerType", ""] call _getMapValue;
+    private _occupierFlagMarkerType = [_occupierFaction, "flagMarkerType", ""] call _getMapValue;
+    private _invaderFlagMarkerType = [_invaderFaction, "flagMarkerType", ""] call _getMapValue;
 
     if (_flagMarkerType == _rebelFlagMarkerType) exitWith {
         teamPlayer
@@ -316,64 +311,6 @@ private _getMarkerSide = {
     sideUnknown
 };
 
-private _isMarkerHidden = {
-    params ["_markerName"];
-
-    if !(_markerName isEqualType "") exitWith {
-        false
-    };
-
-    private _originalMarkerName = [_markerName] call _getOriginalMarkerName;
-    if (_originalMarkerName == "") exitWith {
-        false
-    };
-
-    private _hideEnemyMarkers = if (isNil "hideEnemyMarkers") then {
-        false
-    } else {
-        hideEnemyMarkers
-    };
-
-    if (!_hideEnemyMarkers) exitWith {
-        false
-    };
-
-    private _revealedZones = if (isNil "revealedZones") then {
-        []
-    } else {
-        revealedZones
-    };
-
-    private _immuneMarkers = if (isNil "markersImmune") then {
-        []
-    } else {
-        markersImmune
-    };
-
-    if (_originalMarkerName in _revealedZones) exitWith {
-        false
-    };
-
-    if (_originalMarkerName in _immuneMarkers) exitWith {
-        false
-    };
-
-    if ("cont" in _originalMarkerName) exitWith {
-        false
-    };
-
-    if (
-        _originalMarkerName in citiesX
-        || {_originalMarkerName in airportsX}
-    ) exitWith {
-        false
-    };
-
-    private _markerSide = [_originalMarkerName] call _getMarkerSide;
-    _markerSide isNotEqualTo sideUnknown
-        && {_markerSide isNotEqualTo resistance}
-};
-
 private _getFactionDisplayNameBySide = {
     params ["_markerSide"];
 
@@ -443,8 +380,7 @@ private _getFactionName = {
 private _getMarkerLabelFromMetadata = {
     params ["_markerName"];
 
-    private _hoverMetaMap = missionNamespace getVariable
-        ["A3U_mrkHoverMetaMap", createHashMap];
+    private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 
     private _markerMetadata = _hoverMetaMap getOrDefault [_markerName, []];
     if (_markerMetadata isEqualTo [] || {count _markerMetadata < 1}) then {
@@ -479,8 +415,7 @@ private _getMarkerLabelFromMetadata = {
 private _getMarkerIconFromMetadata = {
     params ["_markerName"];
 
-    private _hoverMetaMap = missionNamespace getVariable
-        ["A3U_mrkHoverMetaMap", createHashMap];
+    private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
     private _markerMetadata = _hoverMetaMap getOrDefault [_markerName, []];
 
     if (_markerMetadata isEqualTo [] || {count _markerMetadata < 2}) exitWith {
@@ -534,8 +469,7 @@ private _getSearchFilterText = {
 private _applySearchPlaceholder = {
     params ["_editControl", "_searchText"];
 
-    _editControl setVariable
-        ["A3U_markerBrowser_placeholderText", _searchPlaceholderText];
+    _editControl setVariable ["A3U_markerBrowser_placeholderText", _searchPlaceholderText];
 
     if (_searchText == "") exitWith {
         _editControl ctrlSetText _searchPlaceholderText;
@@ -567,22 +501,16 @@ private _markerBuckets = [
     ["Factories", "Factories", factories apply { [_x] call _toDummyMarkerName }],
     ["Outposts", "Outpost", outposts apply { [_x] call _toDummyMarkerName }],
     ["Seaports", "Seaports", seaports apply { [_x] call _toDummyMarkerName }],
-    ["Military Bases", "Military Bases", milbases apply {
-        [_x] call _toDummyMarkerName
-    }],
+    ["Military Bases", "Military Bases", milbases apply {[_x] call _toDummyMarkerName}],
     ["Air Bases", "Air Bases", airportsX apply { [_x] call _toDummyMarkerName }],
     ["Military Administrations", "Military Administrations", +milAdministrationsX]
 ];
 
 private _refreshList = {
-    private _listControl = _mapDisplay getVariable
-        ["A3U_markerBrowser_lnb", controlNull];
-    private _searchEdit = _mapDisplay getVariable
-        ["A3U_markerBrowser_search", controlNull];
-    private _categoryCombo = _mapDisplay getVariable
-        ["A3U_markerBrowser_cbCat", controlNull];
-    private _factionCombo = _mapDisplay getVariable
-        ["A3U_markerBrowser_cbFac", controlNull];
+    private _listControl = _mapDisplay getVariable ["A3U_markerBrowser_lnb", controlNull];
+    private _searchEdit = _mapDisplay getVariable ["A3U_markerBrowser_search", controlNull];
+    private _categoryCombo = _mapDisplay getVariable ["A3U_markerBrowser_cbCat", controlNull];
+    private _factionCombo = _mapDisplay getVariable ["A3U_markerBrowser_cbFac", controlNull];
 
     if (
         isNull _listControl
@@ -599,14 +527,12 @@ private _refreshList = {
 
     _mapDisplay setVariable ["A3U_markerBrowser_selCat", _currentCategoryKey];
     _mapDisplay setVariable ["A3U_markerBrowser_selFac", _currentFactionKey];
-    _mapDisplay setVariable
-        ["A3U_markerBrowser_searchText", [_searchEdit] call _getSearchFilterText];
+    _mapDisplay setVariable ["A3U_markerBrowser_searchText", [_searchEdit] call _getSearchFilterText];
 
     private _addHeaderRow = {
         params ["_headerTitle"];
 
-        private _rowIndex = _listControl lnbAddRow
-            [format ["— %1 —", _headerTitle], ""];
+        private _rowIndex = _listControl lnbAddRow [format ["— %1 —", _headerTitle], ""];
         _listControl lnbSetData [[_rowIndex, 0], ""];
         _listControl lnbSetColor [[_rowIndex, 0], [0.85, 0.85, 0.85, 1]];
         _listControl lnbSetColor [[_rowIndex, 1], [0.85, 0.85, 0.85, 1]];
@@ -643,9 +569,12 @@ private _refreshList = {
     private _addMarkerRow = {
         params ["_markerName"];
 
-        if ([_markerName] call _isMarkerHidden) exitWith {};
+        private _originalMarker = [_markerName] call _getOriginalMarkerName;
 
         if !([_markerName] call _passesFactionFilter) exitWith {};
+        if ([_originalMarker] call A3U_fnc_isMarkerHidden) exitWith { // Maxx this originalMarker is some voodoo bullshit I don't like
+            false
+        };
 
         private _markerLabel = [_markerName] call _getPlainMarkerLabel;
         if !(_markerLabel isEqualType "") then {
@@ -691,10 +620,6 @@ private _refreshList = {
             {
                 private _markerName = _x;
 
-                if ([_markerName] call _isMarkerHidden) then {
-                    continue;
-                };
-
                 if !([_markerName] call _passesFactionFilter) then {
                     continue;
                 };
@@ -708,10 +633,7 @@ private _refreshList = {
                     continue;
                 };
 
-                if (
-                    _searchText != ""
-                    && {(toLowerANSI _markerLabel) find _searchText < 0}
-                ) then {
+                if (_searchText != "" && {(toLowerANSI _markerLabel) find _searchText < 0}) then {
                     continue;
                 };
 
@@ -729,14 +651,12 @@ private _refreshList = {
     };
 };
 
-private _browserButton = _mapDisplay getVariable
-    ["A3U_markerBrowser_btn", controlNull];
+private _browserButton = _mapDisplay getVariable ["A3U_markerBrowser_btn", controlNull];
 
 if (isNull _browserButton) then {
     _browserButton = _mapDisplay ctrlCreate ["RscStructuredText", 88011];
     if (!isNull _browserButton) then {
-        private _iconPath =
-            "\x\A3A\addons\ultimate\data\A3AU_search_icon.paa";
+        private _iconPath = "\x\A3A\addons\ultimate\data\A3AU_search_icon.paa";
         private _buttonText = format [
             "<t size='0.92' valign='middle' leading='0.9'>"
             + "<img image='%1' size='0.95'/>  Location Browser</t>",
@@ -749,12 +669,9 @@ if (isNull _browserButton) then {
 
         private _horizontalPadding = 0.008;
         private _verticalPadding = 4 * pixelH;
-        private _buttonWidth =
-            (ctrlTextWidth _browserButton) + _horizontalPadding;
-        private _buttonHeight =
-            (ctrlTextHeight _browserButton) + _verticalPadding;
-        private _buttonPositionX =
-            safeZoneX + (safeZoneW / 2) - (_buttonWidth / 2);
+        private _buttonWidth = (ctrlTextWidth _browserButton) + _horizontalPadding;
+        private _buttonHeight = (ctrlTextHeight _browserButton) + _verticalPadding;
+        private _buttonPositionX = safeZoneX + (safeZoneW / 2) - (_buttonWidth / 2);
         private _buttonPositionY = safeZoneY + (2 * pixelH);
 
         _browserButton ctrlSetPosition [
@@ -793,18 +710,13 @@ if (isNull _browserButton) then {
             private _display = ctrlParent _control;
             if (isNull _display) exitWith {};
 
-            private _existingBrowserGroup = _display getVariable
-                ["A3U_markerBrowser_grp", controlNull];
+            private _existingBrowserGroup = _display getVariable ["A3U_markerBrowser_grp", controlNull];
 
             private _zoom = _display getVariable ["A3U_markerBrowser_zoom", 0.04];
-            private _animationTime = _display getVariable
-                ["A3U_markerBrowser_anim", 1];
-            private _storedCategoryKey = _display getVariable
-                ["A3U_markerBrowser_selCat", "__ALL__"];
-            private _storedFactionKey = _display getVariable
-                ["A3U_markerBrowser_selFac", "__ALL__"];
-            private _storedSearchText = _display getVariable
-                ["A3U_markerBrowser_searchText", ""];
+            private _animationTime = _display getVariable ["A3U_markerBrowser_anim", 1];
+            private _storedCategoryKey = _display getVariable ["A3U_markerBrowser_selCat", "__ALL__"];
+            private _storedFactionKey = _display getVariable ["A3U_markerBrowser_selFac", "__ALL__"];
+            private _storedSearchText = _display getVariable ["A3U_markerBrowser_searchText", ""];
 
             if (isNull _existingBrowserGroup) then {
                 [
@@ -825,8 +737,7 @@ if (isNull _browserButton) then {
     };
 };
 
-private _existingBrowserGroup = _mapDisplay getVariable
-    ["A3U_markerBrowser_grp", controlNull];
+private _existingBrowserGroup = _mapDisplay getVariable ["A3U_markerBrowser_grp", controlNull];
 
 if (!_toggle) exitWith {
     if (!isNull _existingBrowserGroup) then {
@@ -857,20 +768,17 @@ if (!isNull _existingBrowserGroup) then {
 
 private _groupWidth = 0.36 * safeZoneW;
 private _groupHeight = 0.34 * safeZoneH;
-private _currentBrowserButton = _mapDisplay getVariable
-    ["A3U_markerBrowser_btn", controlNull];
+private _currentBrowserButton = _mapDisplay getVariable ["A3U_markerBrowser_btn", controlNull];
 private _groupPositionY = safeZoneY + (0.02 * safeZoneH);
 
 if (!isNull _currentBrowserButton) then {
     private _buttonPosition = ctrlPosition _currentBrowserButton;
-    _groupPositionY =
-        (_buttonPosition # 1) + (_buttonPosition # 3) + (4 * pixelH);
+    _groupPositionY = (_buttonPosition # 1) + (_buttonPosition # 3) + (4 * pixelH);
 };
 
 private _groupPositionX = safeZoneX + (safeZoneW / 2) - (_groupWidth / 2);
 
-private _browserGroup = _mapDisplay ctrlCreate
-    ["RscControlsGroupNoScrollbars", -1];
+private _browserGroup = _mapDisplay ctrlCreate ["RscControlsGroupNoScrollbars", -1];
 _browserGroup ctrlSetPosition [
     _groupPositionX,
     _groupPositionY,
@@ -880,15 +788,13 @@ _browserGroup ctrlSetPosition [
 _browserGroup ctrlCommit 0;
 _mapDisplay setVariable ["A3U_markerBrowser_grp", _browserGroup];
 
-private _backgroundControl = _mapDisplay ctrlCreate
-    ["RscText", -1, _browserGroup];
+private _backgroundControl = _mapDisplay ctrlCreate ["RscText", -1, _browserGroup];
 _backgroundControl ctrlSetPosition [0, 0, _groupWidth, _groupHeight];
 _backgroundControl ctrlSetBackgroundColor [0, 0, 0, 0.40];
 _backgroundControl ctrlCommit 0;
 
 private _titleHeight = 0.035 * safeZoneH;
-private _titleControl = _mapDisplay ctrlCreate
-    ["RscText", -1, _browserGroup];
+private _titleControl = _mapDisplay ctrlCreate ["RscText", -1, _browserGroup];
 _titleControl ctrlSetPosition [0, 0, _groupWidth, _titleHeight];
 _titleControl ctrlSetText "Location Browser";
 _titleControl ctrlSetBackgroundColor [0.05, 0.05, 0.05, 1];
@@ -898,8 +804,7 @@ private _rowHeight = 0.028 * safeZoneH;
 private _paddingX = 0.010 * safeZoneW;
 private _dropdownPositionY = _titleHeight + 0.008 * safeZoneH;
 
-private _categoryCombo = _mapDisplay ctrlCreate
-    ["RscCombo", -1, _browserGroup];
+private _categoryCombo = _mapDisplay ctrlCreate ["RscCombo", -1, _browserGroup];
 _categoryCombo ctrlSetPosition [
     _paddingX,
     _dropdownPositionY,
@@ -909,8 +814,7 @@ _categoryCombo ctrlSetPosition [
 _categoryCombo ctrlCommit 0;
 _mapDisplay setVariable ["A3U_markerBrowser_cbCat", _categoryCombo];
 
-private _factionCombo = _mapDisplay ctrlCreate
-    ["RscCombo", -1, _browserGroup];
+private _factionCombo = _mapDisplay ctrlCreate ["RscCombo", -1, _browserGroup];
 _factionCombo ctrlSetPosition [
     _paddingX + (0.18 * safeZoneW),
     _dropdownPositionY,
@@ -948,8 +852,7 @@ _searchEdit ctrlAddEventHandler ["KillFocus", {
     params ["_control"];
 
     if ((ctrlText _control) == "") then {
-        private _placeholderText = _control getVariable
-            ["A3U_markerBrowser_placeholderText", "Search locations..."];
+        private _placeholderText = _control getVariable ["A3U_markerBrowser_placeholderText", "Search locations..."];
 
         _control ctrlSetText _placeholderText;
         _control ctrlSetTextColor [0.65, 0.65, 0.65, 1];
@@ -957,8 +860,7 @@ _searchEdit ctrlAddEventHandler ["KillFocus", {
     };
 }];
 
-private _listControl = _mapDisplay ctrlCreate
-    ["RscListNBox", -1, _browserGroup];
+private _listControl = _mapDisplay ctrlCreate ["RscListNBox", -1, _browserGroup];
 _listControl ctrlSetPosition [
     _paddingX,
     _searchPositionY + _searchHeight + (0.008 * safeZoneH),
@@ -1030,10 +932,8 @@ _categoryCombo ctrlAddEventHandler ["LBSelChanged", {
     private _display = findDisplay 12;
     if (isNull _display) exitWith {};
 
-    private _factionCombo = _display getVariable
-        ["A3U_markerBrowser_cbFac", controlNull];
-    private _searchEdit = _display getVariable
-        ["A3U_markerBrowser_search", controlNull];
+    private _factionCombo = _display getVariable ["A3U_markerBrowser_cbFac", controlNull];
+    private _searchEdit = _display getVariable ["A3U_markerBrowser_search", controlNull];
 
     private _categoryKey = _control lbData _selectedIndex;
     private _factionKey = if (isNull _factionCombo) then {
@@ -1052,8 +952,7 @@ _categoryCombo ctrlAddEventHandler ["LBSelChanged", {
     };
 
     private _zoom = _display getVariable ["A3U_markerBrowser_zoom", 0.04];
-    private _animationTime = _display getVariable
-        ["A3U_markerBrowser_anim", 1];
+    private _animationTime = _display getVariable ["A3U_markerBrowser_anim", 1];
 
     [
         true,
@@ -1072,10 +971,8 @@ _factionCombo ctrlAddEventHandler ["LBSelChanged", {
     private _display = findDisplay 12;
     if (isNull _display) exitWith {};
 
-    private _categoryCombo = _display getVariable
-        ["A3U_markerBrowser_cbCat", controlNull];
-    private _searchEdit = _display getVariable
-        ["A3U_markerBrowser_search", controlNull];
+    private _categoryCombo = _display getVariable ["A3U_markerBrowser_cbCat", controlNull];
+    private _searchEdit = _display getVariable ["A3U_markerBrowser_search", controlNull];
 
     private _categoryKey = if (isNull _categoryCombo) then {
         "__ALL__"
@@ -1094,8 +991,7 @@ _factionCombo ctrlAddEventHandler ["LBSelChanged", {
     };
 
     private _zoom = _display getVariable ["A3U_markerBrowser_zoom", 0.04];
-    private _animationTime = _display getVariable
-        ["A3U_markerBrowser_anim", 1];
+    private _animationTime = _display getVariable ["A3U_markerBrowser_anim", 1];
 
     [
         true,
@@ -1114,10 +1010,8 @@ _searchEdit ctrlAddEventHandler ["KeyUp", {
     private _display = findDisplay 12;
     if (isNull _display) exitWith {};
 
-    private _categoryCombo = _display getVariable
-        ["A3U_markerBrowser_cbCat", controlNull];
-    private _factionCombo = _display getVariable
-        ["A3U_markerBrowser_cbFac", controlNull];
+    private _categoryCombo = _display getVariable ["A3U_markerBrowser_cbCat", controlNull];
+    private _factionCombo = _display getVariable ["A3U_markerBrowser_cbFac", controlNull];
 
     private _categoryKey = if (isNull _categoryCombo) then {
         "__ALL__"
@@ -1138,8 +1032,7 @@ _searchEdit ctrlAddEventHandler ["KeyUp", {
     };
 
     private _zoom = _display getVariable ["A3U_markerBrowser_zoom", 0.04];
-    private _animationTime = _display getVariable
-        ["A3U_markerBrowser_anim", 1];
+    private _animationTime = _display getVariable ["A3U_markerBrowser_anim", 1];
 
     [
         true,
@@ -1165,8 +1058,7 @@ _listControl ctrlAddEventHandler ["LBSelChanged", {
     if (isNull _mapControl) exitWith {};
 
     private _zoom = _display getVariable ["A3U_markerBrowser_zoom", 0.04];
-    private _animationTime = _display getVariable
-        ["A3U_markerBrowser_anim", 1];
+    private _animationTime = _display getVariable ["A3U_markerBrowser_anim", 1];
 
     private _targetMarkerName = _markerName;
     if !(_targetMarkerName in allMapMarkers) then {
@@ -1175,8 +1067,7 @@ _listControl ctrlAddEventHandler ["LBSelChanged", {
             (count _originalMarkerName) >= 3
             && {(_originalMarkerName select [0, 3]) == "Dum"}
         } do {
-            _originalMarkerName = _originalMarkerName select
-                [3, (count _originalMarkerName) - 3];
+            _originalMarkerName = _originalMarkerName select [3, (count _originalMarkerName) - 3];
         };
 
         _targetMarkerName = _originalMarkerName;
@@ -1184,7 +1075,6 @@ _listControl ctrlAddEventHandler ["LBSelChanged", {
 
     if !(_targetMarkerName in allMapMarkers) exitWith {};
 
-    _mapControl ctrlMapAnimAdd
-        [_animationTime, _zoom, getMarkerPos _targetMarkerName];
+    _mapControl ctrlMapAnimAdd [_animationTime, _zoom, getMarkerPos _targetMarkerName];
     ctrlMapAnimCommit _mapControl;
 }];

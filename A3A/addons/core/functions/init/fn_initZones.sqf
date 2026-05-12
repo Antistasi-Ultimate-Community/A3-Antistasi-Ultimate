@@ -195,6 +195,7 @@ if (!_hardCodedAntennas) then {
         _mrkFinal setMarkerShapeLocal "ICON";
         _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
         _mrkFinal setMarkerColorLocal "ColorWhite";
+		_mrkFinal setMarkerAlphaLocal 0.3;
         _mrkFinal setMarkerText "";
 		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
@@ -243,6 +244,7 @@ if (count _posAntennas > 0) then {
 				_mrkFinal setMarkerShapeLocal "ICON";
 				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
 				_mrkFinal setMarkerColorLocal "ColorWhite";
+				_mrkFinal setMarkerAlphaLocal 0.5;
 				_mrkFinal setMarkerText "";
 				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
@@ -360,7 +362,7 @@ _milAdminPositions apply {
     _mrkAdm setMarkerTypeLocal "A3AU_miladmin_mrk";
     _mrkAdm setMarkerColorLocal colorOccupants;
     _mrkAdm setMarkerTextLocal "";
-    _mrkAdm setMarkerAlphaLocal 0.75;
+	_mrkAdm setMarkerAlphaLocal 0.75;
     _mrkAdm setMarkerShadow false;
 
     _administration setVariable ["A3A_milAdminMarker", _mrkAdm];
@@ -381,7 +383,7 @@ _milAdminPositions apply {
     }];
 };
 
-if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk;};
+if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk};
 
 // markersX append milAdministrationsX;
 

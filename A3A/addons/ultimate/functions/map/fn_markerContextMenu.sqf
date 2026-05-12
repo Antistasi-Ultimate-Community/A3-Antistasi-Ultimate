@@ -117,10 +117,8 @@ private _originalMarkerName = [_markerName] call _getOriginalMarkerName;
 private _markerSide = sidesX getVariable [_originalMarkerName, sideUnknown];
 private _isPlayerControlled = _markerSide == teamPlayer;
 
-private _isRallyPoint =
-    (toLowerANSI _originalMarkerName) isEqualTo "rallypointmarker";
-private _isMilitaryAdministration =
-    _originalMarkerName in milAdministrationsX;
+private _isRallyPoint = (toLowerANSI _originalMarkerName) isEqualTo "rallypointmarker";
+private _isMilitaryAdministration = _originalMarkerName in milAdministrationsX;
 
 private _destroyedMilitaryAdministrations =
     if (isNil "A3A_destroyedMilAdministrations") then {
@@ -129,52 +127,24 @@ private _destroyedMilitaryAdministrations =
         A3A_destroyedMilAdministrations
     };
 
-private _originalMarkerPosition = getMarkerPos _originalMarkerName;
+    private _originalMarkerPosition = getMarkerPos _originalMarkerName;
 
-private _isMilitaryAdministrationDestroyed = _isMilitaryAdministration && {
-    _destroyedMilitaryAdministrations findIf {
-        !isNull _x && {_originalMarkerPosition distance2D _x < 30}
-    } != -1
-};
-
-private _revealedZones = if (isNil "revealedZones") then {
-    []
-} else {
-    revealedZones
-};
-
-private _immuneMarkers = if (isNil "markersImmune") then {
-    []
-} else {
-    markersImmune
+    private _isMilitaryAdministrationDestroyed = _isMilitaryAdministration && {
+        _destroyedMilitaryAdministrations findIf {
+            !isNull _x && {_originalMarkerPosition distance2D _x < 30}
+        } != -1
 };
 
 private _hiddenCheckSide = sidesX getVariable [_originalMarkerName, sideUnknown];
 
-private _hideEnemyMarkers = missionNamespace getVariable
-    ["hideEnemyMarkers", false];
-
-private _isHiddenMarker = _hideEnemyMarkers
-    && {!(_originalMarkerName in _revealedZones)}
-    && {!(_originalMarkerName in _immuneMarkers)}
-    && {!("cont" in _originalMarkerName)}
-    && {!(_originalMarkerName in citiesX)}
-    && {!(_originalMarkerName in airportsX)}
-    && {_hiddenCheckSide isNotEqualTo sideUnknown}
-    && {_hiddenCheckSide isNotEqualTo resistance};
-
-if (_isHiddenMarker) exitWith {};
-
-private _hoverMetaMap = missionNamespace getVariable
-    ["A3U_mrkHoverMetaMap", createHashMap];
+private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 private _markerMetadata = _hoverMetaMap getOrDefault [
     _markerName,
     (_hoverMetaMap getOrDefault [_originalMarkerName, []])
 ];
 
 private _bodyText = if (
-    _markerMetadata isEqualTo []
-    || {count _markerMetadata < 1}
+    _markerMetadata isEqualTo [] || {count _markerMetadata < 1}
 ) then {
     private _markerLabel = markerText _originalMarkerName;
     if (_markerLabel == "") then {

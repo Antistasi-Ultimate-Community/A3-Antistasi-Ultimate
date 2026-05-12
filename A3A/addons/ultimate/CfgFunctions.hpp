@@ -39,6 +39,8 @@ class CfgFunctions
         class map
         {
             file = QPATHTOFOLDER(functions\map);
+            class handleMrkUpdate {};
+            class isMarkerHidden {};
             class mapHover {};
             class mapTooltip {};
             class tooltipCreate {};

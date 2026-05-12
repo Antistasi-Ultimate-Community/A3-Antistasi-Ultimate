@@ -7,8 +7,7 @@ Description:
     correct icon, color, text, and tooltip information for a location.
 
     Marker commands are kept local on purpose to avoid unnecessary network
-    traffic and JIP queue growth. This function should therefore run on each
-    client that needs the updated marker state.
+    traffic and JIP queue growth, except the last one that broadcasts it globally.
 
 Parameters:
     0: _markerName - Marker name to refresh <STRING>
@@ -23,7 +22,7 @@ Returns:
     Nothing <NONE>
 
 Environment:
-    Client, Unscheduled
+    Client, Unscheduled, last setMarkerText broadcasts changes globally
 
 Author:
     ?
@@ -58,7 +57,7 @@ private _managedMarkers = (
 private _markerNameLower = toLowerANSI _markerName;
 private _specialMarkers = ["synd_hq", "tradermarker", "rallypointmarker"];
 
-private _isManagedMarker = (_markerName in _managedMarkers)|| {_markerNameLower in _specialMarkers};
+private _isManagedMarker = (_markerName in _managedMarkers) || {_markerNameLower in _specialMarkers};
 
 if (!_isManagedMarker) exitWith {
     Warning_1("Marker %1 is not in the allowed list. (Skipping)", _markerName);
@@ -118,28 +117,6 @@ private _getFactionBySide = {
     };
 };
 
-private _isMarkerHidden = {
-    params ["_name"];
-
-    if !(_name isEqualType "") exitWith {false};
-
-    private _originalMarkerName = [_name] call _getOriginalMarkerName;
-    private _revealedZones = RETDEF(revealedZones,[]);
-    private _immuneMarkers = RETDEF(immuneMarkers,[]);
-    private _hideEnemyMarkers = RETDEF(hideEnemyMarkers,false);
-
-    if (_originalMarkerName == "") exitWith {false};
-    if (!_hideEnemyMarkers) exitWith {false};
-    if (_originalMarkerName in _revealedZones) exitWith {false};
-    if (_originalMarkerName in _immuneMarkers) exitWith {false};
-    if ("cont" in _originalMarkerName) exitWith {false};
-    if (_originalMarkerName in citiesX|| {_originalMarkerName in airportsX}) exitWith {false};
-
-    private _markerSide = sidesX getVariable [_originalMarkerName, sideUnknown];
-    _markerSide isNotEqualTo sideUnknown
-        && {_markerSide isNotEqualTo resistance}
-};
-
 private _isSyndicateHeadquarters = _markerNameLower == "synd_hq";
 private _isTraderMarker = _markerNameLower == "tradermarker";
 private _isRallyPointMarker = _markerNameLower == "rallypointmarker";
@@ -148,7 +125,8 @@ private _markerPosition = getMarkerPos _visibleMarkerName;
 
 private _markerSide = sidesX getVariable [
     _markerName,
-    if (_isSyndicateHeadquarters || {_isRallyPointMarker}) then {teamPlayer} else {civilian}];
+    if (_isSyndicateHeadquarters || {_isRallyPointMarker}) then {teamPlayer} else {civilian}
+];
 
 private _markerFaction = [_markerSide] call _getFactionBySide;
 private _factionName = [_markerFaction, "name", ""] call _getHashMapValue;
@@ -220,8 +198,7 @@ private _markerTitle = call {
     };
 
     if (_isMilitaryAdministration) exitWith {
-        private _nearestCityMarkerName =
-            [citiesX, _markerPosition] call _findNearestMarkerName;
+        private _nearestCityMarkerName = [citiesX, _markerPosition] call _findNearestMarkerName;
         format [localize "STR_milAdministration", _nearestCityMarkerName]
     };
 
@@ -238,7 +215,7 @@ private _markerTitle = call {
             ""
         };
 
-        format [localize "STR_airbase", _factionName, _airfieldName]
+        format [localize "STR_airbase", _airfieldName]
     };
 
     if (_markerName in outposts) exitWith {
@@ -331,7 +308,7 @@ private _additionalDescription = call {
     if (_markerName in atpostsFIA) exitWith {localize "STR_A3U_HOVER_ANTITANK_DESC"};
     if (_markerName in hmgpostsFIA) exitWith {localize "STR_A3U_HOVER_HMG_DESC"};
     if (_markerName in outposts) exitWith {
-        if (_markerSide == teamPlayer) then { _markerTitle} else {localize "STR_A3U_HOVER_OUTPOST_DESC"};
+        if (_markerSide == teamPlayer) then {_markerTitle} else {localize "STR_A3U_HOVER_OUTPOST_DESC"};
     };
     if (_markerName in resourcesX) exitWith {format [localize "STR_A3U_HOVER_RESOURCE_SITE",_civilianCurrencySymbol]};
     if (_markerName in factories) exitWith {localize "STR_A3U_HOVER_FACTORY_SITE"};
@@ -383,7 +360,7 @@ private _flagMarkerType = [_markerFaction, "flagMarkerType", ""] call _getHashMa
 private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap",createHashMap];
 private _hoverMarkers = missionNamespace getVariable ["A3U_hoverMarkers", []];
 
-if ([_markerName] call _isMarkerHidden) then {
+if ([_markerName] call A3U_fnc_isMarkerHidden) then {
     _hoverMetaMap deleteAt _dummyMarkerName;
     _hoverMetaMap deleteAt _markerName;
     _hoverMarkers = _hoverMarkers - [_dummyMarkerName, _markerName];
@@ -392,7 +369,7 @@ if ([_markerName] call _isMarkerHidden) then {
     _hoverMetaMap set [_markerName, [_markerTitle, _flagMarkerType]];
     _hoverMarkers pushBackUnique _dummyMarkerName;
     _hoverMarkers pushBackUnique _markerName;
-};
+}; // May be completely overkill?
 
 missionNamespace setVariable ["A3U_mrkHoverMetaMap", _hoverMetaMap];
 
@@ -443,10 +420,10 @@ private _ensureSpecialHoverMetadata = {
     _hoverMetaMap set [_name, [_specialText, _specialFlagMarkerType]];
     _hoverMarkers pushBackUnique _name;
 
-    if (_dummyName in allMapMarkers) then {
-        _hoverMetaMap set [_dummyName, [_specialText, _specialFlagMarkerType]];
-        _hoverMarkers pushBackUnique _dummyName;
-    };
+    // if (_dummyName in allMapMarkers) then {
+    //     _hoverMetaMap set [_dummyName, [_specialText, _specialFlagMarkerType]];
+    //     _hoverMarkers pushBackUnique _dummyName;
+    // };
 };
 
 ["Synd_HQ", teamPlayer] call _ensureSpecialHoverMetadata;
@@ -457,10 +434,12 @@ private _ensureSpecialHoverMetadata = {
 ["rallypointmarker", teamPlayer] call _ensureSpecialHoverMetadata;
 
 missionNamespace setVariable ["A3U_mrkHoverMetaMap", _hoverMetaMap];
-missionNamespace setVariable ["A3U_hoverMarkers", _hoverMarkers];
+// missionNamespace setVariable ["A3U_hoverMarkers", _hoverMarkers];
+[_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; // Network to server, let server set globally
 
 if (A3AU_setting_alwaysShowMarkerName || {_markerName in (airportsX + milbases)}) then {
-    _visibleMarkerName setMarkerTextLocal _markerLabelOnly;
+    _visibleMarkerName setMarkerText _markerLabelOnly;
 } else {
-    _visibleMarkerName setMarkerTextLocal "";
+    _visibleMarkerName setMarkerText "";
 };
+

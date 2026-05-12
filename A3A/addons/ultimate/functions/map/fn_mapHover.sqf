@@ -49,8 +49,7 @@ private _clearContextMenus = {
         _display setVariable ["A3U_mrkMenu_marker", ""];
     };
 
-    private _garrisonGroup = _display getVariable
-        ["A3U_mrkMenu_garrGrp", controlNull];
+    private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
     if (!isNull _garrisonGroup) then {
         ctrlDelete _garrisonGroup;
         _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
@@ -73,13 +72,11 @@ if (isNull _mapControl) exitWith {};
 if (_attachTooltip) then {
     private _existingClickHandler = _mapDisplay getVariable ["A3U_tipClickEH", -1];
     if (_existingClickHandler >= 0) then {
-        _mapControl ctrlRemoveEventHandler
-            ["MouseButtonDown", _existingClickHandler];
+        _mapControl ctrlRemoveEventHandler ["MouseButtonDown", _existingClickHandler];
         _mapDisplay setVariable ["A3U_tipClickEH", -1];
     };
 
-    private _existingPerFrameHandler = _mapDisplay getVariable
-        ["A3U_tipperFrameHandler", -1];
+    private _existingPerFrameHandler = _mapDisplay getVariable ["A3U_tipperFrameHandler", -1];
     if (_existingPerFrameHandler >= 0) then {
         [_existingPerFrameHandler] call CBA_fnc_removePerFrameHandler;
         _mapDisplay setVariable ["A3U_tipperFrameHandler", -1];
@@ -105,10 +102,8 @@ if (_attachTooltip) then {
             private _display = ctrlParent _clickedMapControl;
             if (isNull _display) exitWith {};
 
-            private _menuGroup = _display getVariable
-                ["A3U_mrkMenu_grp", controlNull];
-            private _garrisonGroup = _display getVariable
-                ["A3U_mrkMenu_garrGrp", controlNull];
+            private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
+            private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
 
             if (!isNull _menuGroup || {!isNull _garrisonGroup}) then {
                 private _mousePosition = getMousePosition;
@@ -157,8 +152,7 @@ if (_attachTooltip) then {
             if (_button != 0) exitWith {};
 
             private _hoveredMarker = _display getVariable ["A3U_tipLastMrk", ""];
-            private _hoverScreenPosition = _display getVariable
-                ["A3U_tipHoverScreen", []];
+            private _hoverScreenPosition = _display getVariable ["A3U_tipHoverScreen", []];
             if (_hoveredMarker == "" || {_hoverScreenPosition isEqualTo []}) exitWith {};
 
             private _originalMarker = _hoveredMarker;
@@ -170,40 +164,12 @@ if (_attachTooltip) then {
                     [3, (count _originalMarker) - 3];
             };
 
-            private _revealedZones = if (isNil "revealedZones") then {
-                []
-            } else {
-                revealedZones
-            };
-
-            private _immuneMarkers = if (isNil "markersImmune") then {
-                []
-            } else {
-                markersImmune
-            };
-
-            private _markerSide = sidesX getVariable
-                [_originalMarker, sideUnknown];
-
-            private _hideEnemyMarkers = missionNamespace getVariable
-                ["hideEnemyMarkers", false];
-
-            private _isMarkerHidden = _hideEnemyMarkers
-                && {!(_originalMarker in _revealedZones)}
-                && {!(_originalMarker in _immuneMarkers)}
-                && {!("cont" in _originalMarker)}
-                && {!(_originalMarker in citiesX)}
-                && {!(_originalMarker in airportsX)}
-                && {_markerSide isNotEqualTo sideUnknown}
-                && {_markerSide isNotEqualTo resistance};
-
-            if (_isMarkerHidden) exitWith {
+            if ([_originalMarker] call A3U_fnc_isMarkerHidden) exitWith {
                 _display setVariable ["A3U_tipLastMrk", ""];
                 _display setVariable ["A3U_tipHoverScreen", []];
             };
 
-            [_hoveredMarker, _hoverScreenPosition]
-                call A3U_fnc_markerContextMenu;
+            [_hoveredMarker, _hoverScreenPosition] call A3U_fnc_markerContextMenu;
             _display setVariable ["A3U_tipRippleStart", diag_tickTime];
         }];
 
@@ -217,25 +183,23 @@ if (_attachTooltip) then {
     }, _updateIntervalSeconds, [
         _mapDisplay,
         _mapControl,
-        _hoverThresholdPixels
+        _hoverThresholdPixels,
+        _hoveredMarker
     ]] call CBA_fnc_addPerFrameHandler;
 
     _mapDisplay setVariable ["A3U_tipperFrameHandler", _perFrameHandlerId];
 } else {
-    private _tooltipControl = _mapDisplay getVariable
-        ["A3U_tooltipCtrl", controlNull];
+    private _tooltipControl = _mapDisplay getVariable ["A3U_tooltipCtrl", controlNull];
     if (!isNull _tooltipControl) then {
         _tooltipControl ctrlShow false;
     };
 
-    private _hoverRingControl = _mapDisplay getVariable
-        ["A3U_tooltipRingCtrl", controlNull];
+    private _hoverRingControl = _mapDisplay getVariable ["A3U_tooltipRingCtrl", controlNull];
     if (!isNull _hoverRingControl) then {
         _hoverRingControl ctrlShow false;
     };
 
-    private _rippleControl = _mapDisplay getVariable
-        ["A3U_tooltipRippleCtrl", controlNull];
+    private _rippleControl = _mapDisplay getVariable ["A3U_tooltipRippleCtrl", controlNull];
     if (!isNull _rippleControl) then {
         _rippleControl ctrlShow false;
     };
@@ -248,8 +212,7 @@ if (_attachTooltip) then {
         _mapDisplay setVariable ["A3U_tipClickEH", -1];
     };
 
-    private _perFrameHandlerId = _mapDisplay getVariable
-        ["A3U_tipperFrameHandler", -1];
+    private _perFrameHandlerId = _mapDisplay getVariable ["A3U_tipperFrameHandler", -1];
     if (_perFrameHandlerId >= 0) then {
         [_perFrameHandlerId] call CBA_fnc_removePerFrameHandler;
         _mapDisplay setVariable ["A3U_tipperFrameHandler", -1];
