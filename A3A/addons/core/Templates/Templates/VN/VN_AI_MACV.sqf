@@ -51,7 +51,7 @@ private _gunship = [];
 if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	_gunship pushBack "vnx_b_air_ac119_01_01";
   	_transportplanes append ["vnx_b_air_ac119_02_01","vnx_b_air_ac119_02_02"];
-	_planesCAS pushBack "vnx_b_air_ac119_04_01";
+	["vehiclesPlanesLargeCAS", ["vnx_b_air_ac119_04_01"]] call _fnc_saveToTemplate;
 };
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _transportplanes] call _fnc_saveToTemplate;
