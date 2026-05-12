@@ -176,13 +176,16 @@ if (_isControl) then
         [_veh, _sideX] call A3A_fnc_AIVEHinit;
         _vehiclesX pushBack _veh;
         sleep 1;
-        _typeGroup = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "groupPoliceOfficers"} else {
+        private _unitType = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "unitPoliceOfficer"} else {
+            [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+        };
+        private _typeGroup = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "groupPoliceOfficers"} else {
             [_faction get "groupTierFireteam"] call SCRT_fnc_unit_getTiered;
         };
         _groupX = [_positionX, _sideX, _typeGroup, true] call A3A_fnc_spawnGroup;
         if !(isNull _groupX) then
         {
-            _unit = [_groupX, _faction get "unitMilitiaGrunt", _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
+            _unit = [_groupX, _unitType, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
             _unit moveInGunner _veh;
             {_soldiers pushBack _x; [_x,"", false] call A3A_fnc_NATOinit} forEach units _groupX;
         };

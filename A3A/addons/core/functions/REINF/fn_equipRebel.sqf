@@ -207,7 +207,7 @@ private _fnc_addAssignedItems = {
         _unit call _fnc_addRadio;
         {
             private _item = selectRandom _x;
-            if (!isNil {"_item"}) then { _unit linkItem _item };
+            if (!isNil "_item") then { _unit linkItem _item };
         } forEach [unlockedMaps, unlockedCompasses, unlockedWatches]; // should be populated even with no unlocks; GPS not included due to potential of including UAV terminals
     } else {
         { if (!isNil "_x") then { _unit linkItem _x } } forEach (_overrideClass);
