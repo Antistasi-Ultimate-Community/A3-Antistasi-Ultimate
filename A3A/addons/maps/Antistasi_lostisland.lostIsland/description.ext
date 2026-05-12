@@ -1,9 +1,9 @@
 #include "..\missionDescription\master.hpp"
 
-OnLoadName = $STR_antistasi_mission_info_lostisland_mapname_short_text;
-OnLoadMission = $STR_antistasi_mission_info_lostisland_blurb_text;
-briefingName = $STR_antistasi_mission_info_lostisland_mapname_text;
-overviewText = $STR_antistasi_mission_info_lostisland_description_text;
+OnLoadName = $STR_antistasi_mission_info_lost_island_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_lost_island_blurb_text;
+briefingName = $STR_antistasi_mission_info_lost_island_mapname_text;
+overviewText = $STR_antistasi_mission_info_lost_island_description_text;
 loadScreen = "\x\A3A\addons\maps\images_co.jpg"; // NB, this will resolve from root // NB, this will resolve from root
 overviewPicture = "\x\A3A\addons\maps\images_co.jpg"; // NB, this will resolve from root
 
