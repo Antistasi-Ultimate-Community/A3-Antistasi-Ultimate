@@ -20,14 +20,17 @@ private _vehType = typeOf _helicopter;
 private _forceFastrope = false;
 if (_vehType in vehFastRope) then {
     {
-        // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 2m
+        // * Force convert the combatLanding behavior to fastrope behavior if terrain objects (trees, buildings, etc) in the landing position are taller than 3m
         // * visiblePosition isn't perfect (especially with large boulder / cliff objects), but the best option without a ton of bounding box / vertex math
-        if ((visiblePosition _x) select 2 > 2) exitWith { _forceFastrope = true };
+        if ((visiblePosition _x) select 2 > 3) exitWith { _forceFastrope = true };
     } forEach (nearestTerrainObjects [_landPos, [], (sizeof _vehType)]);
 };
 if (_forceFastrope) exitWith {
-    Error("A3A_fnc_combatLanding called, but position has tall terrain objects - calling A3A_fnc_fastrope instead.");
-    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn A3A_fnc_fastrope;
+    private _functionName = ["A3A_fnc_fastrope", "A3A_fnc_fastropeVTOL"] select (_vehType in FactionGet(all, "vehiclesPlanesTransport"));
+    private _function = missionNamespace getVariable [_functionName, {}];
+    
+    Warning_1("A3A_fnc_combatLanding called, but position has tall terrain objects - spawning %1 instead.", _functionName);
+    [_helicopter, _cargoGroup, _posDestination, _originPos, _crewGroup, _landPos] spawn _function;
 };
 
 if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport")) then {
@@ -47,20 +50,19 @@ private _vehWP0 = _crewGroup addWaypoint [_landPos, 0];
 _vehWP0 setWaypointType "MOVE";
 _vehWP0 setWaypointSpeed "FULL";
 _vehWP0 setWaypointCompletionRadius 150;
-_vehWP0 setWaypointBehaviour "CARELESS";
+_vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gunners will engage units more aggressively
 
-private _midHeight = [100, 150] select (A3A_climate isEqualTo "tropical");
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
-waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
+[_helicopter, _landPos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
 
+waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 while {_helicopter distance2D _landPos > 675} do {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 0.3;
+    [_helicopter, 0.3] call A3A_fnc_fireCMFlare;
 };
 
+_helicopter limitSpeed ((0.4 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 150);         // to slow down vehicle even more x2
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 600};
 
 _helicopter flyInHeight 0;                  // helps to keep it near the ground after landing
@@ -125,9 +127,8 @@ while {_interval < 0.9999} do
     private _lineEnd = _midPos vectorAdd (_midToEndVector vectorMultiply _interval);
 
     _helicopter action ["LandGear", _helicopter]; ///forces vehicle to use landing gear
-    
-    _helicopter setVelocityTransformation
-    [
+
+    _helicopter setVelocityTransformation [
         _lineStart,
         _lineEnd,
         _velocityVector,
@@ -153,10 +154,8 @@ sleep 0.1;
 [_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
 
 _helicopter engineOn true; ///keep the engine running
-if(canMove _helicopter || alive _driver) then {
-    [_helicopter, "open"] spawn A3A_fnc_HeliDoors;
-    sleep 0.25;
-};
+[_helicopter, "open"] spawn A3A_fnc_HeliDoors;
+sleep 1.2;
 
 _cargoGroup leaveVehicle _helicopter;
 {
@@ -188,23 +187,30 @@ if (count (units _cargoGroup select {alive _x}) > 0) then {
 
 if(!alive _helicopter || {!canMove _helicopter || {!alive _driver}}) exitWith {};
 if (!isEngineOn _helicopter) then { _helicopter engineOn true;};
-if(canMove _helicopter || alive _driver) then {
-    [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
-};
 _helicopter flyInHeight _midHeight;
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
+_helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// remove the limit
+[_helicopter, _driver] spawn {
+    params ["_helicopter","_driver"];
 
-if (
-    _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
-    {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
-) exitWith {
+    sleep 8;
+    if(canMove _helicopter || alive _driver) then {
+        [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
+    };
     _helicopter action ["LandGearUp", _helicopter];
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
 };
+
+[_helicopter, _landPos] spawn {
+    params ["_helicopter","_landPos"];
+
+    waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
+    for '_i' from 1 to (5 + (round random 2)) do
+    {
+        [_helicopter, 1] call A3A_fnc_fireCMFlare;
+    };
+};
+
+if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 // Heli RTB
 private _vehWP1 = _crewGroup addWaypoint [_originPos, 0];
@@ -214,12 +220,3 @@ _vehWP1 setWaypointStatements ["true", "if (local this and alive this) then { de
 _vehWP1 setWaypointBehaviour "CARELESS";
 
 _crewGroup setCurrentWaypoint _vehWP1;
-waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
-for '_i' from 1 to (5 + (round random 2)) do
-{
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 1;
-};
-_helicopter action ["LandGearUp", _helicopter];

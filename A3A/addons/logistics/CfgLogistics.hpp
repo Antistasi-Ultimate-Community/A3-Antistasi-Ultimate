@@ -8,6 +8,7 @@ class DOUBLES(ADDON,Nodes)
 
     #include "Nodes\3CBBAF.hpp"
     #include "Nodes\3CBFactions.hpp"
+    #include "Nodes\BWMod.hpp"
     #include "Nodes\CUP.hpp"
     #include "Nodes\CSLA.hpp"
     #include "Nodes\D3S.hpp"
@@ -17,6 +18,7 @@ class DOUBLES(ADDON,Nodes)
     #include "Nodes\EF.hpp"
     #include "Nodes\RHS.hpp"
     #include "Nodes\RNT.hpp"
+	#include "Nodes\SFP.hpp"
     #include "Nodes\SPE.hpp"
     #include "Nodes\SPEX.hpp"
     #include "Nodes\IFA.hpp"
@@ -67,6 +69,7 @@ class DOUBLES(ADDON,Cargo)
     #include "Cargo\RF.hpp"
     #include "Cargo\EF.hpp"
     #include "Cargo\IFA.hpp"
+    #include "Cargo\JCA.hpp"
     #include "Cargo\SPE.hpp"
     #include "Cargo\SPEX.hpp"
     #include "Cargo\UNS.hpp"

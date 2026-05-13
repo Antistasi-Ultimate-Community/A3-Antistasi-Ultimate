@@ -1,6 +1,9 @@
 params [["_markersX", markersX]];
 
-if !(hideEnemyMarkers) exitWith {};
+if !(hideEnemyMarkers) exitWith {
+    markersImmune = [];
+    publicVariable "markersImmune";
+};
 
 markersImmune = markersX select {
     ((sidesX getVariable [_x, sideUnknown]) isEqualTo resistance)
@@ -14,11 +17,12 @@ markersImmune = markersX select {
 
 publicVariable "markersImmune";
 
-private _revealedZones = revealedZones;
-
 if (isNil "revealedZones") then {
     revealedZones = [];
+    publicVariable "revealedZones";
 };
+
+private _revealedZones = revealedZones;
 
 {
     private _markerSide = sidesX getVariable [_x, sideUnknown];
