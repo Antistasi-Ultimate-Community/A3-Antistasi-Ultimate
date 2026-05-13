@@ -20,7 +20,8 @@ private _groups = [];
 _pilots = [];
 _conquered = false;
 _groupX = grpNull;
-_useVehicle = false;
+private _useVehicle = false;
+private _spawnRoadblock = false;
 _leave = false;
 A3A_hasIFA = false;
 
@@ -32,15 +33,22 @@ if (isClass (configfile >> "CfgPatches" >> "LIB_core")) then {
 
 _isControl = if (isOnRoad _positionX) then {true} else {false};
 
+private _aggrRoadblock = [aggressionOccupants, aggressionInvaders] select (_sideX == Invaders);
+
+if (random 100 < _aggrRoadblock) then
+{
+    _spawnRoadblock = true;
+};
+
 if (_isControl) then
 {
+    if (!_spawnRoadblock) exitWith {};
     if (_sideX == Occupants) then
     {
-        if (!([_markerX] call A3A_fnc_isFrontline)) then // (random 10 > (tierWar + difficultyCoef)) and 
-            {
-                _useVehicle = true;
-            }
-        };
+        if (!([_markerX] call A3A_fnc_isFrontline)) then {
+            _useVehicle = true;
+        }
+    };
 
     // Attempt to find nearby road with two connected roads
     _radiusX = 20;
@@ -61,7 +69,7 @@ if (_isControl) then
         private _roadscon = roadsConnectedto (_roads select 0);
         _dirveh = [_roads select 0, _roadscon select 0] call BIS_fnc_DirTo;
     };
-
+    
     if (!_useVehicle) then
     {
         _groupE = grpNull;
@@ -298,7 +306,7 @@ if (spawner getVariable _markerX != 2) then
     _winner = side _closest;
     _loser = Occupants;
     Debug_3("Control %1 captured by %2. Is Roadblock: %3", _markerX, _winner, _isControl);
-    if (_isControl) then
+    if (_isControl && _spawnRoadblock) then
     {
         ["TaskSucceeded", ["", "Roadblock Destroyed"]] remoteExec ["BIS_fnc_showNotification",_winner];
         ["TaskFailed", ["", "Roadblock Lost"]] remoteExec ["BIS_fnc_showNotification",_sideX];
