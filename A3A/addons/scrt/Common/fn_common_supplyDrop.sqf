@@ -33,6 +33,9 @@ if (alive _planeVehicle) then {
     _para setPos getPos _supplyDrop;
     _supplyDrop attachTo [_para, _paraPos];
 
+    
+	private _startTime = time;
+
     [_supplyDrop, _para] spawn {
         params ["_obj","_para"];
 
@@ -45,6 +48,8 @@ if (alive _planeVehicle) then {
             isNull _para 
             || 
             (count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+            || 
+            (time - _startTime) > 30
         };
             
         _para disableCollisionWith _obj;

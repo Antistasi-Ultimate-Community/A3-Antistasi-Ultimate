@@ -22,7 +22,7 @@ Returns:
     Whether the amount of items fit in the container <BOOL>
 
 Author:
-    goreSplatter
+    UnseenKill
 ---------------------------------------------------------------------------- */
 #include "..\script_component.hpp"
 

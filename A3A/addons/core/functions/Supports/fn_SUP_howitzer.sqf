@@ -21,6 +21,10 @@ FIX_LINE_NUMBERS()
 
 params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_reveal", "_delay"];
 
+if (A3U_disablePATCOMMortars) exitWith {
+    Debug("Exiting mortar creation; Param was set to disabled.");
+};
+
 private _faction = Faction(_side);
 private _vehType = selectRandom (_faction get "staticHowitzers");
 private _shellType = _faction get "howitzerMagazineHE";

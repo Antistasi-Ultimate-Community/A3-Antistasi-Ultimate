@@ -34,9 +34,6 @@ private _initData = [
     // effradius: Strike radius, used for detecting friendly fire
     // strikepower: Approx resource value per strike for multi-target supports
     ["AIRSTRIKE",       "AREA", 0.5, 0.1, 150,   0,  "", "vehiclesPlanesCAS"],           // balanced against carpetBombs (50/50 at tier 10), total will be 0.5
-    ["ARTILLERY",       "AREA", 0.5, 0.9, 150,  85,  "", "vehiclesArtillery"],           // balanced against mortars (50/50 at tier 10), total will be 0.5/0.9
-    ["MORTAR",          "AREA", 0.5, 0.9, 100,  50,  "", "staticMortars"],
-    ["HOWITZER",        "AREA", 0.5, 0.9, 125,  65,  "", "staticHowitzers"],
     ["ASF",           "TARGET", 1.0, 0.4,   0, 100,  "", "vehiclesPlanesAA"],            // balanced against SAMs (if available), 66/33 weighting
     ["CAS",           "TARGET", 0.5, 0.3,   0, 100,  "", "vehiclesPlanesCAS"],
     ["TANK",          "TARGET", 0.5, 0.7,   0, 100,  "", ""],                            // balanced against CAS, lowAir based
@@ -44,7 +41,7 @@ private _initData = [
     ["QRFLAND",       "TROOPS", 1.0, 1.4,   0,   0,  "", ""],
     ["QRFAIR",        "TROOPS", 0.5, 0.1,   0,   0,  "", ""],
     ["QRFVEHAIRDROP", "TROOPS", 0.3, 0.1,   0,   0,  "", "vehiclesPlanesTransport"],
-    ["QRFORBITAL",        "TROOPS", 0.5, 0.1,   0,   0,  "fu", "vehiclesDropPod"],     ///needs to be balanced
+    ["QRFORBITAL",        "TROOPS", 0.2, 0.1,   0,   0,  "fu", "vehiclesDropPod"],     ///needs to be balanced
     ["CARPETBOMBS",     "AREA", 0.5, 0.1, 200,   0, "u", ""],                            // balanced against airstrikes
     ["GUNSHIP",         "AREA", 0.2, 0.1, 0, 80, "", "vehiclesPlanesGunship"],                   //u      // uh. Does AREA work for this? Only lasts 5 minutes so maybe...
     ["SAM",           "TARGET", 1.0, 1.0,   0, 100, "u", ""],                            // balanced against ASF
@@ -53,6 +50,14 @@ private _initData = [
     ["UAV",           "TARGET", 0.4, 0.2,   0, 0,  "", "uavsAttack"],
     ["UAVAttack",           "TARGET", 0.3, 0.2,   0, 80,  "u", "uavsAttack"]
 ];
+
+if (!A3U_disablePATCOMMortars) then {
+    _initData append [
+        ["ARTILLERY",       "AREA", 0.5, 0.9, 150,  85,  "", "vehiclesArtillery"],           // balanced against mortars (50/50 at tier 10), total will be 0.5/0.9
+        ["MORTAR",          "AREA", 0.5, 0.9, 100,  50,  "", "staticMortars"],
+        ["HOWITZER",        "AREA", 0.5, 0.9, 125,  65,  "", "staticHowitzers"]
+    ];
+};
 
 // Generate support type hashmap for a faction, suppType -> [baseType, weight, effRadius, strikepower]
 private _fnc_buildSupportHM = 

@@ -131,9 +131,9 @@ if (_prefix in ["occ", "inv"]) exitWith {
     ]];
 
     _faction set ["groupTierFireteam", [
-        [unit(militia, "SquadLeader"), unit(militia, "Rifleman"), unit(militia, "Rifleman"), unit(militia, "Rifleman"), unit(militia, "Rifleman"), unit(militia, "Rifleman")],
-        [unit(military, "SquadLeader"), unit(military, "Rifleman"), unit(military, "Rifleman"), unit(military, "Rifleman"), unit(military, "Rifleman"), unit(military, "LAT")],
-        [unit(elite, "SquadLeader"), unit(elite, "Rifleman"), unit(elite, "Rifleman"), unit(elite, "Rifleman"), unit(elite, "Rifleman"), unit(elite, "AT")]
+        [unit(militia, "SquadLeader"), unit(militia, "MachineGunner"), unit(militia, "Medic"), unit(militia, "Rifleman"), unit(militia, "Rifleman"), unit(militia, "Rifleman")],
+        [unit(military, "SquadLeader"), unit(military, "MachineGunner"), unit(military, "Marksman"), unit(military, "Medic"), unit(military, "Rifleman"), unit(military, "LAT")],
+        [unit(elite, "SquadLeader"), unit(elite, "MachineGunner"), unit(elite, "Sniper"), unit(elite, "Medic"), unit(elite, "Rifleman"), unit(elite, "AT")]
     ]];
 
     private _fireteams = [

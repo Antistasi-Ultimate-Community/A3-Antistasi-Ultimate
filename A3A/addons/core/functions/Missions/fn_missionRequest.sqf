@@ -44,7 +44,7 @@ switch (_type) do {
 			};
 		} forEach _controlsX;
 
-		if (count _possibleMarkers == 0) then {
+		if (_possibleMarkers isEqualTo []) then {
 			if (!_silent) then {
 				[petros,"globalChat", localize "STR_chats_mission_request_no_AS"] remoteExec ["A3A_fnc_commsMP",_requester];
 				[petros,"hint", format [localize "STR_chats_mission_request_no_AS_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
@@ -83,26 +83,27 @@ switch (_type) do {
 	case "CON": {
 		//find apropriate sites
 		_possibleMarkers = [outposts + milAdministrationsX + seaports + factories + resourcesX + (controlsX select {isOnRoad (getMarkerPos _x)}), petros, true] call A3A_fnc_findIfNearAndHostile;
-		private _possibleMarkersForFrontline = [airportsX + milbases + outposts + seaports + factories + resourcesX, petros, true] call A3A_fnc_findIfNearAndHostile;
-		private _possibleFrontlineMarker = selectRandom _possibleMarkersForFrontline;
-		private _frontlineSite = [_possibleFrontlineMarker] call A3A_fnc_isFrontlineNoFIA;
-		if (count _possibleMarkers == 0) then {
+		
+		if (_possibleMarkers isEqualTo []) exitWith {
 			if (!_silent) then {
 				[petros, "globalChat", localize "STR_chats_mission_request_no_CON"] remoteExec ["A3A_fnc_commsMP",_requester];
 				[petros,"hint",format [localize "STR_chats_mission_request_no_CON_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
 			};
+		};
+		
+		private _milAdmins = _possibleMarkers select {_x in milAdministrationsX };
+		if (_milAdmins isNotEqualTo []) exitWith {
+			_site = selectRandom _milAdmins;
+			[[_site],"A3A_fnc_CON_MilAdmin"] remoteExec ["A3A_fnc_scheduler",2];
+		};
+
+		private _possibleFrontlineMarkers = ([airportsX + milbases + outposts + seaports + factories + resourcesX, petros, true] call A3A_fnc_findIfNearAndHostile) select {_x call A3A_fnc_isFrontlineNoFia};
+		if (_possibleFrontlineMarkers isNotEqualTo []) then {
+			_site = selectRandom _possibleFrontlineMarkers;
+			[[_site],"A3A_fnc_CON_Outpost_Compet"] remoteExec ["A3A_fnc_scheduler",2];
 		} else {
-			private _milAdmins = _possibleMarkers select {_x in milAdministrationsX };
-			private _site = if (_milAdmins isNotEqualTo []) then {selectRandom _milAdmins} else {selectRandom _possibleMarkers};
-			if (_site in milAdministrationsX) then {
-				[[_site],"A3A_fnc_CON_MilAdmin"] remoteExec ["A3A_fnc_scheduler",2];
-			} else {
-				if (_frontlineSite) then {
-					[[_possibleFrontlineMarker],"A3A_fnc_CON_Outpost_Compet"] remoteExec ["A3A_fnc_scheduler",2];
-				} else {
-					[[_site],"A3A_fnc_CON_Outpost"] remoteExec ["A3A_fnc_scheduler",2];
-				};
-			};
+			_site = selectRandom _possibleMarkers;
+			[[_site],"A3A_fnc_CON_Outpost"] remoteExec ["A3A_fnc_scheduler",2];
 		};
 	};
 
@@ -133,7 +134,7 @@ switch (_type) do {
 				) then {_possibleMarkers pushBack _x};
 		}forEach antennas;
 
-		if (count _possibleMarkers == 0) then {
+		if (_possibleMarkers isEqualTo []) then {
 			if (!_silent) then {
 				[petros, "globalChat", localize "STR_chats_mission_request_no_DES"] remoteExec ["A3A_fnc_commsMP",_requester];
 				[petros,"hint",format [localize "STR_chats_mission_request_no_DES_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
@@ -177,7 +178,7 @@ switch (_type) do {
 			} forEach banks;
 		};
 
-		if (count _possibleMarkers == 0) then {
+		if (_possibleMarkers isEqualTo []) then {
 			if (!_silent) then {
 				[petros, "globalChat", localize "STR_chats_mission_request_no_LOG"] remoteExec ["A3A_fnc_commsMP",_requester];
 				[petros,"hint", format [localize "STR_chats_mission_request_no_LOG_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
@@ -217,7 +218,7 @@ switch (_type) do {
 			};
 		}forEach (citiesX - destroyedSites);
 
-		if (count _possibleMarkers == 0) then {
+		if (_possibleMarkers isEqualTo []) then {
 			if (!_silent) then {
 				[petros, "globalChat", localize "STR_chats_mission_request_no_SUPP"] remoteExec ["A3A_fnc_commsMP",_requester];
 				[petros,"hint",format [localize "STR_chats_mission_request_no_SUPP_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
@@ -241,7 +242,7 @@ switch (_type) do {
 			if (_spawner != 0) then {_possibleMarkers pushBack _x};
 		} forEach ([airportsX + outposts + milbases, petros, true] call A3A_fnc_findIfNearAndHostile);
 
-		if (count _possibleMarkers == 0) then {
+		if (_possibleMarkers isEqualTo []) then {
 			if (!_silent) then {
 				[petros,"globalChat","I have no rescue missions for you. Move our HQ closer to the enemy."] remoteExec ["A3A_fnc_commsMP",_requester];
 				[petros,"hint","Rescue Missions require Cities or Airports closer than 4Km from your HQ.", "Missions"] remoteExec ["A3A_fnc_commsMP",_requester];
@@ -317,7 +318,7 @@ switch (_type) do {
 			};
 		} forEach _markers;
 
-		if (count _possibleMarkers == 0) then
+		if (_possibleMarkers isEqualTo []) then
 		{
 			if (!_silent) then {
 				[petros, "globalChat", localize "STR_chats_mission_request_no_CONVOY"] remoteExec ["A3A_fnc_commsMP",_requester];
