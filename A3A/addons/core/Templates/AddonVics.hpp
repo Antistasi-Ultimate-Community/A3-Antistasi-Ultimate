@@ -171,4 +171,14 @@ class AddonVics
         description = "A vehicle pack from CUP that extends the civilian vehicle pool";
         loadedMessage = "CUP civilian loaded, civilian vehicle pool expanded";
     };
+
+    class Alessio
+    {
+        path = QPATHTOFOLDER(Templates\AddonVics);
+        requiredAddons[] = {"Alessio190_F"};
+        files[] = { {"Civ", "alessio_Civ.sqf"} };
+        displayName = "Alessio Cars Pack V2";
+        description = "A sports car pack that extends the civilian vehicle pool";
+        loadedMessage = "Alessio Cars loaded, civilian vehicle pool expanded";
+    };
 };
