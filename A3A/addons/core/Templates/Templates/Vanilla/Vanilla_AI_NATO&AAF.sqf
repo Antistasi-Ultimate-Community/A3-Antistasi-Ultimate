@@ -118,79 +118,6 @@ private _SAM = [];
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
-if (_hasJets) then {
-	#include "..\DLC_content\vehicles\Jets\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasHelicopters) then {
-    #include "..\DLC_content\vehicles\Helicopters\Vanilla_NATO.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_NATO&AAF.sqf"
-};
-
-//If Western Sahara DLC
-if (_hasWs) then {
-    #include "..\DLC_content\vehicles\WS\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\Vanilla_NATO&AAF.sqf"
-};
-
-//If GM cdlc + extra AAF mod
-if (_hasGM) then {
-    if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl")) then {
-        #include "..\DLC_content\vehicles\GM\Vanilla_NATO&AAF.sqf"
-    } else {
-        #include "..\DLC_content\vehicles\GM\Vanilla_NATO_Arid.sqf" ///should probably make a proper file
-    };
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\vehicles\SOG\Vanilla_AAF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_AAF.sqf"
-    #include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_AAF.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
-	#include "..\MOD_content\SPEX\vehicles\Vanilla_AAF.sqf"
-};
-
-//If CUP
-if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
-    #include "..\MOD_content\CUP\Vanilla_AAF\Gear_AAF_militia.sqf"
-    #include "..\MOD_content\CUP\Vanilla_AAF\Weapons_AAF_militia.sqf"
-};
-
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
@@ -245,8 +172,7 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\vehicleAnimations\vehicleAnimations_GMX_AAF.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf",
-    #include "..\MOD_content\CUP\Vehicles_Animations.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
@@ -261,8 +187,7 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\vehicleVariants\Vanilla_AAF\RF_AAF.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\SPE_AAF.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\Vanilla_AAF.sqf",
-    #include "..\vehicleVariants\Vanilla_AAF\WS_AAF.sqf",
-    #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_variants.sqf"
+    #include "..\vehicleVariants\Vanilla_AAF\WS_AAF.sqf"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -282,48 +207,7 @@ private _faces = ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
 "LivonianHead_1","RussianHead_2","LivonianHead_10","LivonianHead_8","LivonianHead_4","LivonianHead_7","RussianHead_5","Sturrock",
 "WhiteHead_22_l","WhiteHead_22_sa","WhiteHead_22_a"
 ];
-if (_hasSPE) then {
-    _faces append [
-        #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\SPE_german.sqf",
-        #include "..\DLC_content\voices\SPE_french.sqf"
-    ];
-};
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_livonian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_white.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_african.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_russian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_tanoa.sqf"
-    ];
-};
-if (_hasRF) then {
-    _faces append [
-        #include "..\DLC_content\faces\RF\RF_white.sqf"
-    ];
-};
-if (_hasGM) then {
-    _faces append [
-        #include "..\DLC_content\faces\GM\GM_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\GM_german.sqf"
-    ];
-};
-if (_hasWS) then {
-    _faces append [
-        #include "..\DLC_content\faces\WS\WS_white.sqf"
-    ];
-};
-if (_hasEF) then {
-    _faces append [
-        #include "..\DLC_content\faces\EF\EF_white.sqf", ///probaly need to separate by camos
-        #include "..\DLC_content\faces\EF\EF_african.sqf"
-    ];
-};
+
 private _regularFaces = [
     "GreekHead_A3_02",
     "GreekHead_A3_03",
@@ -343,11 +227,6 @@ private _regularFaces = [
     "GreekHead_A3_10_sa",
     "GreekHead_A3_10_a"
 ];
-if (_hasSOG) then {
-    _regularFaces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_greek.sqf"
-    ];
-};
 private _milVoices = ["Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE"];
 ["milFaces", _regularFaces] call _fnc_saveToTemplate;
 ["milVoices", _milVoices] call _fnc_saveToTemplate;
@@ -440,9 +319,6 @@ _loadoutData set ["officerUniforms", ["U_B_CombatUniform_mcam"]];
 _loadoutData set ["officerVests", ["V_Rangemaster_belt"]];
 _loadoutData set ["officerHats", ["H_MilCap_mcamo", "H_Beret_Colonel", "H_Beret_02"]];
 
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_NATO.sqf"
-};
 _loadoutData set ["cloakUniforms", ["U_B_FullGhillie_ard", "U_B_FullGhillie_sard", "U_B_GhillieSuit"]];
 _loadoutData set ["cloakVests", ["V_Chestrig_khk"]];
 
@@ -1089,72 +965,7 @@ _pilotLoadoutData set ["uniforms", ["U_B_HeliPilotCoveralls","U_B_PilotCoveralls
 _pilotLoadoutData set ["vests", ["V_TacVest_blk"]];
 _pilotLoadoutData set ["helmets", ["H_CrewHelmetHeli_B", "H_PilotHelmetHeli_B"]];
 
-//
-if (_hasMarksman) then {
-    #include "..\DLC_content\gear\Marksman\Vanilla_AAF_militia.sqf"
-    #include "..\DLC_content\weapons\Marksman\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\Apex\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\Contact\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\RF\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\WS\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\gear\CSLA\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\CSLA\Vanilla_AAF_militia.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\GM\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\SOG\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_AAF.sqf"
-    //#include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\EF\Vanilla_NATO&AAF.sqf"
-};
-
-//
-//If CUP
-if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
-    #include "..\MOD_content\CUP\Vanilla_AAF\Gear_AAF_militia.sqf"
-    #include "..\MOD_content\CUP\Vanilla_AAF\Weapons_AAF_militia.sqf"
-};
-
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_NATO&AAF.sqf"
-};
+// (placeholder_content) Benefits from WS, EF, RF, Marksman, Apex, Jets, Helicopters, and Tanks content. Vehicles + equipment.
 
 /////////////////////////////////
 //    Unit Type Definitions    //

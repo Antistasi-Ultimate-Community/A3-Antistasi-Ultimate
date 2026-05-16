@@ -117,58 +117,6 @@ private _SAM = [];
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
-if (_hasHelicopters) then {
-    #include "..\DLC_content\vehicles\Helicopters\Vanilla_NATO.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasJets) then {
-    #include "..\DLC_content\vehicles\Jets\Vanilla_NATO.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_NATO&AAF.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\vehicles\WS\Vanilla_LDF.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\vehicles\GM\Vanilla_NATO&LDF.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO&LDF.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\vehicles\SOG\Vanilla_LDF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\vehicles\SPE\Vanilla_LDF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
-};
-
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
@@ -257,50 +205,10 @@ private _faces = ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
 "LivonianHead_1","RussianHead_2","LivonianHead_10","LivonianHead_8","LivonianHead_4","LivonianHead_7","RussianHead_5","Sturrock",
 "WhiteHead_22_l","WhiteHead_22_sa","WhiteHead_22_a"
 ];
-if (_hasSPE) then {
-    _faces append [
-        #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\SPE_german.sqf",
-        #include "..\DLC_content\voices\SPE_french.sqf"
-    ];
-};
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_white.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_african.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_russian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_tanoa.sqf"
-    ];
-};
-if (_hasRF) then {
-    _faces append [
-        #include "..\DLC_content\faces\RF\RF_white.sqf"
-    ];
-};
-if (_hasGM) then {
-    _faces append [
-        #include "..\DLC_content\faces\GM\GM_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\GM_german.sqf"
-    ];
-};
-if (_hasWS) then {
-    _faces append [
-        #include "..\DLC_content\faces\WS\WS_white.sqf"
-    ];
-};
 
 private _regularFaces = [
     "LivonianHead_1","LivonianHead_10","LivonianHead_2","LivonianHead_3","LivonianHead_4","LivonianHead_6","LivonianHead_9"
 ];
-if (_hasSOG) then {
-    _regularFaces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_livonian.sqf"
-    ];
-};
 private _milVoices = ["Male01pol","Male02pol","Male03pol"];
 ["milFaces", _regularFaces] call _fnc_saveToTemplate;
 ["milVoices", _milVoices] call _fnc_saveToTemplate;
@@ -393,10 +301,6 @@ _loadoutData set ["traitorHats", ["H_Cap_grn", "H_Cap_oli"]];
 _loadoutData set ["officerUniforms", ["U_B_CombatUniform_tshirt_mcam_wdL_f", "U_B_CombatUniform_vest_mcam_wdl_f", "U_B_CombatUniform_mcam_wdl_f"]];
 _loadoutData set ["officerVests", ["V_TacVest_oli"]];
 _loadoutData set ["officerHats", ["H_MilCap_wdl", "H_Beret_Colonel", "H_Beret_02"]];
-
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_NATO.sqf"
-};
 
 _loadoutData set ["cloakUniforms", ["U_B_T_Sniper_F", "U_B_T_FullGhillie_tna_F"]];
 _loadoutData set ["cloakVests", ["V_Chestrig_oli"]];
@@ -975,64 +879,7 @@ _pilotLoadoutData set ["uniforms", ["U_B_HeliPilotCoveralls","U_B_PilotCoveralls
 _pilotLoadoutData set ["vests", ["V_TacVest_blk"]];
 _pilotLoadoutData set ["helmets", ["H_CrewHelmetHeli_B", "H_PilotHelmetHeli_B"]];
 
-//
-if (_hasMarksman) then {
-    #include "..\DLC_content\weapons\Marksman\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_NATO&LDF.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_NATO_Temparate.sqf"
-    #include "..\DLC_content\weapons\Apex\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_NATO_Temparate.sqf"
-    #include "..\DLC_content\weapons\Contact\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_NATO&LDF_Temparate.sqf"
-    #include "..\DLC_content\weapons\RF\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_NATO&LDF_Temparate.sqf"
-    #include "..\DLC_content\weapons\WS\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\gear\CSLA\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\CSLA\Vanilla_LDF.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_NATO&LDF.sqf"
-    #include "..\DLC_content\weapons\GM\Vanilla_NATO&LDF.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_NATO&LDF.sqf"
-    #include "..\DLC_content\weapons\SOG\Vanilla_NATO&LDF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\SPE\Vanilla_LDF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_NATO&LDF_Temparate.sqf"
-    #include "..\DLC_content\weapons\EF\Vanilla_NATO&LDF_Temparate.sqf"
-};
-
-//
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_NATO&LDF.sqf"
-};
+// (placeholder_content) Benefits from WS, EF, RF, Marksman, Apex, Jets, Helicopters, and Tanks content. Vehicles + equipment.
 
 /////////////////////////////////
 //    Unit Type Definitions    //

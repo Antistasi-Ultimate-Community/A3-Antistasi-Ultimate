@@ -108,55 +108,6 @@ private _SAM = [];
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_LDF.sqf"
-};
-
-if (_hasJets) then {
-    #include "..\DLC_content\vehicles\Jets\Vanilla_LDF.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\Vanilla_LDF.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\vehicles\WS\Vanilla_LDF.sqf"
-};
-
-//If Tank DLC
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_LDF.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\vehicles\GM\Vanilla_LDF.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\vehicles\CSLA\Vanilla_LDF.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\vehicles\SOG\Vanilla_LDF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\vehicles\SPE\Vanilla_LDF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
-};
-
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
@@ -224,37 +175,6 @@ if (_hasEF) then {
 /////////////////////
 
 private _faces = ["LivonianHead_1","LivonianHead_10","LivonianHead_2","LivonianHead_3","LivonianHead_4","LivonianHead_6","LivonianHead_9","Sturrock","WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","WhiteHead_11","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_17","WhiteHead_18","WhiteHead_20","WhiteHead_21","WhiteHead_30"];
-if (_hasSPE) then {
-   _faces append [
-        #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-   ];
-};
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_livonian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_white.sqf"
-    ];
-};
-if (_hasRF) then {
-    _faces append [
-        #include "..\DLC_content\faces\RF\RF_white.sqf"
-    ];
-};
-if (_hasGM) then {
-    _faces append [
-        #include "..\DLC_content\faces\GM\GM_white.sqf"
-    ];
-};
-if (_hasWS) then {
-    _faces append [
-        #include "..\DLC_content\faces\WS\WS_white.sqf"
-    ];
-};
-if (_hasEF) then {
-    _faces append [
-        #include "..\DLC_content\faces\EF\EF_white.sqf" ///probaly need to separate by camos
-    ];
-};
 ["faces", _faces] call _fnc_saveToTemplate;
 ["voices", ["Male01pol","Male02pol","Male03pol"]] call _fnc_saveToTemplate;
 
@@ -332,10 +252,6 @@ _loadoutData set ["traitorHats", ["H_Cap_grn","H_Cap_oli"]];
 _loadoutData set ["officerUniforms", ["U_I_OfficerUniform"]];
 _loadoutData set ["officerVests", ["V_Rangemaster_belt"]];
 _loadoutData set ["officerHats", ["H_MilCap_dgtl", "H_Beret_grn"]];
-
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_LDF.sqf"
-};
 
 _loadoutData set ["cloakUniforms", ["U_I_FullGhillie_lsh"]];
 _loadoutData set ["cloakVests", ["V_TacVest_oli"]];
@@ -698,58 +614,7 @@ _pilotLoadoutData set ["uniforms", ["U_I_E_Uniform_01_coveralls_F"]];
 _pilotLoadoutData set ["vests", ["V_CarrierRigKBT_01_EAF_F"]];
 _pilotLoadoutData set ["helmets", ["H_CrewHelmetHeli_I_E", "H_PilotHelmetHeli_I_E"]];
 
-///
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_LDF.sqf"
-};
-
-if (_hasMarksman) then {
-    #include "..\DLC_content\gear\Marksman\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\Marksman\Vanilla_LDF.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\Apex\Vanilla_LDF.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\WS\Vanilla_LDF.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\RF\Vanilla_LDF.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\gear\CSLA\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\CSLA\Vanilla_LDF.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\GM\Vanilla_LDF.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\SOG\Vanilla_LDF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_LDF.sqf"
-    #include "..\DLC_content\weapons\SPE\Vanilla_LDF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_LDF.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_LDF.sqf"
-};
+// (placeholder_content) Benefits from RF, Contact, Marksman, Jets, Helicopters, and Tanks content. Vehicles + equipment.
 
 /////////////////////////////////
 //    Unit Type Definitions    //

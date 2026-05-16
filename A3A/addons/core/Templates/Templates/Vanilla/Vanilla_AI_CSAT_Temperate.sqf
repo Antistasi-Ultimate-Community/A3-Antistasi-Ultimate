@@ -106,42 +106,6 @@ private _SAM = [];
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;
 
-if (_hasHelicopters) then {
-    #include "..\DLC_content\vehicles\Helicopters\Vanilla_CSAT.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasJets) then {
-	#include "..\DLC_content\vehicles\Jets\Vanilla_CSAT.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\vehicles\WS\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
-};
-
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
@@ -186,13 +150,6 @@ if (_hasEF) then {
 
 ["voices", ["Male01CHI","Male02CHI","Male03CHI"]] call _fnc_saveToTemplate;
 private _faces = ["AsianHead_A3_01","AsianHead_A3_02","AsianHead_A3_03","AsianHead_A3_04","AsianHead_A3_05","AsianHead_A3_06","AsianHead_A3_07"];
-
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_asian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_vietnam.sqf"
-    ];
-};
 
 ["faces", _faces] call _fnc_saveToTemplate;
 ["insignia", ["GryffinRegiment", "", ""]] call _fnc_saveToTemplate;
@@ -262,10 +219,6 @@ _loadoutData set ["rangefinders", ["Rangefinder"]];
 _loadoutData set ["officerUniforms", ["U_O_T_Officer_F"]];
 _loadoutData set ["officerVests", ["V_BandollierB_ghex_F"]];
 _loadoutData set ["officerHats", ["H_Beret_blk", "H_Beret_CSAT_01_F", "H_MilCap_ghex_F"]];
-
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_CSAT.sqf"
-};
 
 _loadoutData set ["cloakUniforms", ["U_O_T_FullGhillie_tna_F", "U_O_FullGhillie_lsh", "U_O_T_Sniper_F"]];
 _loadoutData set ["cloakVests", ["V_HarnessO_ghex_F", "V_BandollierB_ghex_F", "V_TacVest_oli"]];
@@ -630,59 +583,8 @@ private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["uniforms", ["U_O_PilotCoveralls","U_O_PilotCoveralls"]];
 _pilotLoadoutData set ["vests", ["V_BandollierB_khk"]];
 _pilotLoadoutData set ["helmets", ["H_CrewHelmetHeli_O", "H_PilotHelmetHeli_O"]];
-//
 
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_CSAT.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_CSAT.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\gear\Tanks\Vanilla_CSAT.sqf"
-};
-
-if (_hasMarksman) then {
-    #include "..\DLC_content\weapons\Marksman\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_CSAT_Temparate.sqf"
-    #include "..\DLC_content\weapons\Contact\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_CSAT_Temparate.sqf"
-    #include "..\DLC_content\weapons\RF\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_CSAT_Temparate.sqf"
-    #include "..\DLC_content\weapons\WS\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\weapons\CSLA\Vanilla_CSAT.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\weapons\GM\Vanilla_CSAT_Temparate.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_CSAT.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\Vanilla_CSAT_Temparate.sqf"
-};
-//
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_CSAT.sqf"
-};
+// (placeholder_content) Benefits from WS, RF, Apex, Marksman, Jets, Helicopters, and Tanks content. Vehicles + equipment.
 
 /////////////////////////////////
 //    Unit Type Definitions    //

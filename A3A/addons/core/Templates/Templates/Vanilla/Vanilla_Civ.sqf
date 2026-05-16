@@ -50,52 +50,6 @@ private _civFuel = [
 
 private _civPlanes = [];
 private _civHelicopter = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F", "a3a_C_Heli_Light_02_blue_F"];
-if (_hasKart) then {
-  #include "..\DLC_content\vehicles\Kart\kart.sqf"  
-};
-if (_hasApex) then {
-  #include "..\DLC_content\vehicles\Apex\Vanilla_CIV.sqf"  
-};
-
-if (_hasContact) then {
-  #include "..\DLC_content\vehicles\Contact\Vanilla_CIV.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-  #include "..\DLC_content\vehicles\LawsOfwar\Vanilla_CIV.sqf"  
-};
-
-if (_hasWs) then {
-  #include "..\DLC_content\vehicles\WS\Vanilla_CIV.sqf"  
-};
-
-if (_hasGM) then {
-  #include "..\DLC_content\vehicles\GM\Vanilla_CIV.sqf"
-};
-
-if (_hasCSLA) then {
-  #include "..\DLC_content\vehicles\CSLA\Vanilla_CIV.sqf"  
-};
-
-if (_hasRF) then {
-  #include "..\DLC_content\vehicles\RF\Vanilla_CIV.sqf" 
-};
-
-if (_hasSOG) then {
-  #include "..\DLC_content\vehicles\SOG\Vanilla_CIV.sqf"
-};
-
-if (_hasSPE) then {
-  #include "..\DLC_content\vehicles\SPE\Vanilla_CIV.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_CIV.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
-	#include "..\MOD_content\SPEX\vehicles\Vanilla_CIV.sqf"
-};
 
 ["vehiclesCivCar", _civCarsWithWeights] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _civHelicopter] call _fnc_saveToTemplate;
@@ -186,32 +140,7 @@ private _faces = [
     "LivonianHead_9",
     "LivonianHead_10"
 ];
-if (_hasSPE) then {
-  _faces append [
-    #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-  ];
-};
-if (_hasSOG) then {
-  _faces append [
-    #include "..\DLC_content\faces\SOG\SOG_faces_nocamo.sqf"
-  ];
-};
-if (_hasRF) then {
-  _faces append [
-    #include "..\DLC_content\faces\RF\RF_white.sqf"
-  ];
-};
-if (_hasGM) then {
-  _faces append [
-    #include "..\DLC_content\faces\GM\GM_white.sqf"
-  ];
-};
-if (_hasWS) then {
-  _faces append [
-    #include "..\DLC_content\faces\WS\WS_white.sqf",
-    #include "..\DLC_content\faces\WS\WS_african.sqf"
-  ];
-};
+
 ["faces", _faces] call _fnc_saveToTemplate;
 
 private _civUniforms = [
@@ -294,47 +223,7 @@ private _dlchats = [];
 
 private _loadoutData = call _fnc_createLoadoutData;
 
-if (_hasCSLA) then {
-  #include "..\DLC_content\gear\CSLA\Vanilla_CIV.sqf"
-};
-
-if (_hasApex) then {
-  #include "..\DLC_content\gear\Apex\Vanilla_CIV.sqf"
-};
-if (_hasArtOfWar) then {
-  #include "..\DLC_content\gear\Artofwar\Vanilla_CIV.sqf"
-};
-if (_hasContact) then {
-  #include "..\DLC_content\gear\Contact\Vanilla_CIV.sqf"
-};
-
-if (_hasLawsOfWar) then {
-  #include "..\DLC_content\gear\Lawsofwar\Vanilla_CIV.sqf"
-};
-
-if (_hasGM) then {
-  #include "..\DLC_content\gear\GM\Vanilla_CIV.sqf"
-};
-
-if (_hasWs) then {
-  #include "..\DLC_content\gear\WS\Vanilla_CIV.sqf"
-};
-
-if (_hasWs && {(toLowerANSI worldName) in ["sefrouramal", "takistan"]}) then {
-  #include "..\DLC_content\gear\WS\Vanilla_CIV_desert.sqf"
-};
-
-if (_hasRF) then {
-  #include "..\DLC_content\gear\RF\Vanilla_CIV.sqf"
-};
-
-if (_hasSOG) then {
-  #include "..\DLC_content\gear\SOG\Vanilla_CIV.sqf"
-};
-
-if (_hasSPE) then {
-  #include "..\DLC_content\gear\SPE\Vanilla_CIV.sqf"
-};
+// (placeholder_content) Benefits from RF(?), Apex content. Vehicles + equipment.
 
 _loadoutData set ["uniforms", _civUniforms + _dlcUniforms];
 _loadoutData set ["pressUniforms", _pressUniforms];

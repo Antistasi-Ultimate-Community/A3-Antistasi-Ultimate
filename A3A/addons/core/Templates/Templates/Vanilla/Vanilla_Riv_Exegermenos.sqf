@@ -51,13 +51,6 @@ private _faces = [
 ]; 
 ["voices", ["Male01GRE","Male02GRE","Male03GRE","Male04GRE","Male05GRE","Male06GRE","Male01ENGFRE","Male02ENGFRE","male01rus","male02rus","male03rus"]] call _fnc_saveToTemplate;
 ["faces", _faces] call _fnc_saveToTemplate;
-
-if (_hasSOG) then {
-  _faces append [
-	#include "..\DLC_content\faces\SOG\SOG_faces_russian.sqf",
-	#include "..\DLC_content\faces\SOG\SOG_faces_greek.sqf"
-  ];
-};
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
@@ -74,42 +67,6 @@ private _trucks = ["O_G_Van_01_transport_F"];
 private _staticLowWeapons = ["O_G_HMG_02_F"];
 private _staticAT = ["O_static_AT_F"];
 private _staticMortars = ["O_Mortar_01_F"];
-
-if (_hasApex) then {
-	#include "..\DLC_content\vehicles\Apex\Vanilla_Rivals.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\vehicles\WS\Vanilla_Rivals.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\vehicles\Lawsofwar\Vanilla_Rivals.sqf" 
-};
-
-if (_hasTanks) then {
-	#include "..\DLC_content\vehicles\Tanks\Vanilla_Rivals.sqf" 
-};
-
-if (_hasGM) then {
-	#include "..\DLC_content\vehicles\GM\Vanilla_Rivals.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\vehicles\RF\Vanilla_Rivals.sqf" 
-};
-
-if (_hasCSLA) then {
-	#include "..\DLC_content\vehicles\CSLA\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSOG) then {
-	#include "..\DLC_content\vehicles\SOG\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSPE) then {
-	#include "..\DLC_content\vehicles\SPE\Vanilla_Rivals.sqf" 
-};
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;
@@ -212,46 +169,6 @@ _loadoutData set ["antiInfantryGrenades", ["HandGrenade", "MiniGrenade"]];
 _loadoutData set ["smokeGrenades", ["SmokeShell"]];
 _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
 
-if (_hasGM) then {
-    #include "..\DLC_content\weapons\GM\Vanilla_Rivals.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\weapons\RF\Vanilla_Rivals.sqf" 
-};
-
-if (_hasContact) then {
-	#include "..\DLC_content\weapons\Contact\Vanilla_Rivals.sqf" 
-};
-
-if (_hasMarksman) then {
-	#include "..\DLC_content\weapons\Marksman\Vanilla_Rivals.sqf" 
-};
-
-if (_hasApex) then {
-	#include "..\DLC_content\weapons\Apex\Vanilla_Rivals.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\weapons\WS\Vanilla_Rivals.sqf" 
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\weapons\CSLA\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
-};
-
 _loadoutData set ["rifles", _rifles];
 _loadoutData set ["tunedRifles", _tunedRifles];
 _loadoutData set ["enforcerRifles", _enforcerRifles];
@@ -333,57 +250,7 @@ _pilotLoadoutData set ["uniforms", ["U_Marshal","U_C_WorkerCoveralls","U_Rangema
 _pilotLoadoutData set ["vests", _vests];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_O", "H_CrewHelmetHeli_O", "H_PilotHelmetHeli_B", "H_CrewHelmetHeli_B"]];
 
-if (_hasApex) then {
-	#include "..\DLC_content\gear\Apex\Vanilla_Rivals.sqf" 
-};
-
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_Rivals.sqf" 
-};
-
-if (_hasContact) then {
-	#include "..\DLC_content\gear\Contact\Vanilla_Rivals.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\gear\WS\Vanilla_Rivals.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\gear\RF\Vanilla_Rivals.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
-};
-
-if (_hasGM) then {
-	#include "..\DLC_content\gear\GM\Vanilla_Rivals.sqf" 
-};
-
-if (_hasCSLA) then {
-	#include "..\DLC_content\gear\CSLA\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSOG) then {
-	#include "..\DLC_content\gear\SOG\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSPE) then {
-	#include "..\DLC_content\gear\SPE\Vanilla_Rivals.sqf" 
-};
-
-if (_hasJets) then {
-	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
-};
-
-if (_hasEF) then {
-	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\gear\Vanilla_Rivals.sqf"
-};
+// (placeholder_content) Benefits from WS, EF, RF content. Vehicles + equipment.
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later.
 _loadoutData set ["vests", _vests];

@@ -30,35 +30,6 @@ private _faces = ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem","
 private _voices = ["Male01ENGFRE","Male02ENGFRE","male01fre","male02fre","male03fre"];
 ["voices", _voices] call _fnc_saveToTemplate;
 ["faces", _faces] call _fnc_saveToTemplate;
-if (_hasSPE) then {
-  _faces append [
-    #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-  ];
-  _voices append [
-    #include "..\DLC_content\voices\SPE_french.sqf"
-  ];
-};
-if (_hasSOG) then {
-  _faces append [
-    #include "..\DLC_content\faces\SOG\SOG_faces_nocamo.sqf"
-  ];
-};
-if (_hasRF) then {
-  _faces append [
-    #include "..\DLC_content\faces\RF\RF_white.sqf"
-  ];
-};
-if (_hasGM) then {
-  _faces append [
-    #include "..\DLC_content\faces\GM\GM_white.sqf"
-  ];
-};
-if (_hasWS) then {
-  _faces append [
-    #include "..\DLC_content\faces\WS\WS_white.sqf",
-    #include "..\DLC_content\faces\WS\WS_african.sqf"
-  ];
-};
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
@@ -359,42 +330,6 @@ private _pistols = ["hgun_Pistol_01_F"];
 
 private _helmets = ["H_Helmet_Skate"];
 
-if (_hasGM) then {
-    #include "..\DLC_content\weapons\GM\Vanilla_Rivals.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\weapons\RF\Vanilla_Rivals.sqf" 
-};
-
-if (_hasContact) then {
-	#include "..\DLC_content\weapons\Contact\Vanilla_Rivals.sqf" 
-};
-
-if (_hasMarksman) then {
-	#include "..\DLC_content\weapons\Marksman\Vanilla_Rivals.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\weapons\WS\Vanilla_Rivals.sqf" 
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\weapons\CSLA\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\weapons\SPE\Vanilla_Rivals.sqf" 
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
-};
-
 _loadoutData set ["rifles", _rifles];
 _loadoutData set ["tunedRifles", _tunedRifles];
 _loadoutData set ["enforcerRifles", _enforcerRifles];
@@ -480,53 +415,7 @@ private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["vests", ["V_TacChestrig_cbr_F"]];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_O"]];
 
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_Rivals.sqf" 
-};
-
-if (_hasContact) then {
-	#include "..\DLC_content\gear\Contact\Vanilla_Rivals.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\gear\WS\Vanilla_Rivals.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\gear\RF\Vanilla_Rivals.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Rivals.sqf" 
-};
-
-if (_hasGM) then {
-	#include "..\DLC_content\gear\GM\Vanilla_Rivals.sqf" 
-};
-
-if (_hasCSLA) then {
-	#include "..\DLC_content\gear\CSLA\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSOG) then {
-	#include "..\DLC_content\gear\SOG\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSPE) then {
-	#include "..\DLC_content\gear\SPE\Vanilla_Rivals.sqf" 
-};
-
-if (_hasJets) then {
-	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
-};
-
-if (_hasEF) then {
-	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\gear\Vanilla_Rivals.sqf"
-};
+// (placeholder_content) Benefits from EF, RF content. Vehicles + equipment.
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies]; //this line defines the basic medical loadout for vanilla
