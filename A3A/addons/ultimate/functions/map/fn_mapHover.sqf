@@ -183,8 +183,7 @@ if (_attachTooltip) then {
     }, _updateIntervalSeconds, [
         _mapDisplay,
         _mapControl,
-        _hoverThresholdPixels,
-        _hoveredMarker
+        _hoverThresholdPixels
     ]] call CBA_fnc_addPerFrameHandler;
 
     _mapDisplay setVariable ["A3U_tipperFrameHandler", _perFrameHandlerId];
