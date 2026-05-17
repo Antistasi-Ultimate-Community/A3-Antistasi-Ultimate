@@ -39,7 +39,7 @@ private _basic = ["I_Quadbike_01_F"];
 private _unarmedVehicles = ["I_MRAP_03_F"];
 private _armedVehicles = ["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F"];
 private _Trucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
-private _cargoTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F","I_UGV_01_F"];
+private _cargoTrucks = ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
 private _ammoTrucks = ["I_Truck_02_ammo_F"];
 private _repairTrucks = ["I_Truck_02_box_F"];
 private _fuelTrucks = ["I_Truck_02_fuel_F"];
@@ -68,6 +68,25 @@ private _helisAttack = [];
 
 private _airPatrol = ["I_Heli_light_03_unarmed_F", "I_Heli_light_03_dynamicLoadout_F"];
 
+if (_hasRF) then {
+    _basic pushBack "I_Pickup_rf";
+    _unarmedVehicles append ["I_Pickup_rf", "I_Pickup_Comms_rf"];
+    _armedVehicles append ["I_Pickup_hmg_rf", "I_Pickup_rcws_rf"];
+    _aa pushBack "I_Pickup_aat_rf";
+    _transportHelicopters pushBack "I_Heli_EC_01A_military_RF";
+    _helisAttack pushBack "I_Heli_EC_02_RF";
+    _airPatrol pushBack "I_Heli_EC_02_RF";
+};
+
+if (_hasEF) then {
+    _transportBoat pushBack "EF_I_CombatBoat_Unarmed_AAF";
+    _gunBoat pushBack "EF_I_CombatBoat_HMG_AAF";
+};
+
+if (_hasWS) then {
+    _cargoTrucks pushBack "I_Truck_02_flatbed_lxWS";
+};
+
 private _artillery = ["I_Truck_02_MRL_F"];
 ["magazines", createHashMapFromArray [
 ["I_Truck_02_MRL_F", ["12Rnd_230mm_rockets", "12Rnd_230mm_rockets_cluster"]],
@@ -89,14 +108,26 @@ private _militiaAPCs = [];
 
 private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
 
+if (_hasRF) then {
+    _policeVehs = ["B_GEN_Pickup_covered_rf"];
+};
+
+if (_hasEF) then {
+    _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+};
+
 private _staticMG = ["I_HMG_02_high_F","I_HMG_01_high_F"];
 private _staticAT = ["I_static_AT_F","I_GMG_01_high_F"];
 private _staticAA = ["I_static_AA_F"];
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers =  [];
 
-private _radar = [];
-private _SAM = [];
+private _radar = ["B_Radar_System_01_F"];
+private _SAM = ["B_SAM_System_03_F"];
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
@@ -104,8 +135,6 @@ private _SAM = [];
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
-
-// (placeholder_content) Benefits from WS, RF, LoW, Apex, Marksman, Jets, Helicopters, Tanks and Contact content. Vehicles + equipment.
 
 // (placeholder_mod_content) Benefits from CUP content. Vehicles + equipment.
 
@@ -618,6 +647,15 @@ _militiaLoadoutData set ["sniperRifles", [
 ]];
 
 _militiaLoadoutData set ["sidearms", ["hgun_ACPC2_F", 10]];
+
+if (_hasWS) then {
+    (_militiaLoadoutData get "slRifles") append [
+        ["arifle_SLR_V_lxWS", "", _militiaAttachments, _militiaSlRifleOptics, ["20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_reload_tracer_green_lxWS"], [], ""], 6,
+    ];
+    (_militiaLoadoutData get "rifles") append [
+        ["arifle_SLR_lxWS", "", _militiaAttachments, _militiaSlRifleOptics, ["20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_reload_tracer_green_lxWS"], [], ""], 6,
+    ];
+};
 
 //////////////////////////
 //    Misc Loadouts     //

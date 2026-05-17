@@ -80,7 +80,7 @@ private _artillery = ["B_T_MBT_01_mlrs_F"];
     ["APC_Wheeled_01_mortar_base_lxWS",["64Rnd_60mm_Mo_guided_lxWS"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F", "EF_QAV80_MJTF_Wdl"]] call _fnc_saveToTemplate;
 private _uavsPortable = ["B_UAV_01_F"];
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
@@ -89,7 +89,17 @@ private _militiaTrucks = ["B_T_Truck_01_transport_F", "B_T_Truck_01_covered_F"];
 private _militiaCars = ["B_G_Offroad_01_F"];
 private _militiaAPCs = [];
 
-private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+private _policeVehs = ["B_GEN_Offroad_01_gen_F", "EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+
+if (_hasRF) then {
+    _policeVehs pushBack "B_GEN_Pickup_covered_rf";
+    _transportHelicopters pushBack "B_Heli_EC_04_military_RF";
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+    _airborneVehicles append ["B_T_APC_Wheeled_01_atgm_lxWS", "B_T_APC_Wheeled_01_command_lxWS"];
+};
 
 private _staticMG = ["B_G_HMG_02_high_F", "B_HMG_01_high_F"];
 private _staticAT = ["B_T_Static_AT_F","B_GMG_01_high_F"];

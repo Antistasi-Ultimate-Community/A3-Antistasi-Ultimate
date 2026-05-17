@@ -55,10 +55,10 @@ private _hasEF = "ef" in A3A_enabledDLC;
 private _lightArmedVehicles = ["I_MRAP_03_gmg_F","I_MRAP_03_hmg_F","I_G_Offroad_01_AT_F", "I_G_Offroad_01_armed_F"];
 private _lightUnarmedVehicles = ["I_MRAP_03_F","I_G_Offroad_01_F"];
 private _apc = ["I_APC_Wheeled_03_cannon_F","I_APC_tracked_03_cannon_F"];
-private _tanks = ["I_UGV_01_rcws_F","I_MBT_03_cannon_F"];
+private _tanks = ["I_MBT_03_cannon_F"];
 private _helis = ["I_Heli_Transport_02_F","I_Heli_light_03_dynamicLoadout_F","I_Heli_light_03_unarmed_F"];
 private _uav = ["I_UAV_01_F"];
-private _trucks = ["I_UGV_01_F","I_Truck_02_covered_F","I_Truck_02_transport_F"];
+private _trucks = ["I_Truck_02_covered_F","I_Truck_02_transport_F"];
 
 private _staticLowWeapons = ["I_G_HMG_02_high_F","I_G_HMG_02_F"];
 private _staticAT = ["B_static_AT_F"];
@@ -251,8 +251,6 @@ private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["uniforms", ["U_I_HeliPilotCoveralls","U_I_pilotCoveralls"]];
 _pilotLoadoutData set ["vests", _vests];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_I", "H_CrewHelmetHeli_I"]];
-
-// (placeholder_content) Benefits from EF, RF content. Vehicles + equipment.
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later 
 _loadoutData set ["vests", _vests];
