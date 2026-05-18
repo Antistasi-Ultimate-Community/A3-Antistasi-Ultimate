@@ -2661,7 +2661,7 @@ class Params
     {
         title = $STR_params_crateExplosiveTypeMax;
         tooltip = $STR_params_crateExplosiveTypeMax_desc;
-        values[] = {0,1,3,5,7,10};[]
+        values[] = {0,1,3,5,7,10};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
         default = 3;
     };
@@ -2691,7 +2691,7 @@ class Params
         tooltip = $STR_params_crateAttachmentTypeMax_desc;
         values[] = {0,1,3,5,7,10,15,20};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10","15","20"};
-        default = 6;
+        default = 7;
     };
     class crateAttachmentNumMax: CrateParams
     {
@@ -2803,7 +2803,7 @@ class Params
         tooltip = $STR_params_crateDeviceTypeMax_desc;
         values[] = {0,1,3,5,7,10};
         texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
-        default = 2;
+        default = 3;
     };
     class crateDeviceNumMax: CrateParams
     {
