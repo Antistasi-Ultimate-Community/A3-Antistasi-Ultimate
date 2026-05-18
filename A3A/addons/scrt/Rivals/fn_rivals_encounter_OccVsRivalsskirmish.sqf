@@ -15,8 +15,8 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
-if (gameMode == 3) exitWith {
-	Info("Reb vs Occ");
+if (gameMode in [2, 3]) exitWith {
+	Info("Reb vs Occ/Reb vs Occ and Inv detected, aborting.");
 	isEventInProgress = false;
 	publicVariableServer "isEventInProgress";
 };
