@@ -52,7 +52,7 @@ private _civPlanes = [];
 private _civHelicopter = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F", "a3a_C_Heli_Light_02_blue_F"];
 
 if (_hasRF) then {
-  _civCarsWithWeights append [["C_Pickup_covered_rf", 5.0], ["C_Pickup_rf", 6.0]];
+  _civCarsWithWeights append ["C_Pickup_covered_rf", 5.0, "C_Pickup_rf", 6.0];
   _civHelicopter append ["C_IDAP_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF", "C_Heli_EC_04_rescue_RF"];
   _civRepair append ["C_Pickup_repair_rf", 0.3];
   _civMedical append ["C_IDAP_Pickup_covered_rf", 0.3];
@@ -68,17 +68,9 @@ if (_hasRF) then {
 ["vehiclesCivPlanes", _civPlanes] call _fnc_saveToTemplate;
 
 ["animations", [
-  #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
-  #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-  #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
-  #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
   #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
   #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
   #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf"
-]] call _fnc_saveToTemplate;
-
-["variants", [
-  #include "..\vehicleVariants\Vanilla_GM_CIV.sqf"
 ]] call _fnc_saveToTemplate;
 
 //////////////////////////

@@ -33,8 +33,6 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["O_SDV_01_F","I_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["Land_Pod_Heli_Transport_04_covered_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_East_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_CSAT_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -52,8 +50,8 @@ private _medicalTrucks = ["O_Truck_02_medical_F", "O_Truck_03_medical_F", "I_Tru
 private _lightAPCs = [];
 private _APCs = ["O_APC_Wheeled_02_rcws_v2_F"];
 private _IFVs = ["O_APC_Tracked_02_cannon_F"];
-private _airborneVehicles = ["O_APC_Wheeled_02_rcws_v2_F","O_UGV_01_rcws_F","I_APC_tracked_03_cannon_F","I_APC_Wheeled_03_cannon_F"];
-private _lightTanks = ["O_UGV_01_rcws_F"];
+private _airborneVehicles = ["O_APC_Wheeled_02_rcws_v2_F","I_APC_tracked_03_cannon_F","I_APC_Wheeled_03_cannon_F"];
+private _lightTanks = [];
 private _tanks = ["O_MBT_02_cannon_F","O_MBT_02_railgun_F","I_MBT_03_cannon_F"];
 private _aa = ["O_APC_Tracked_02_AA_F", "I_LT_01_AA_F"];
 

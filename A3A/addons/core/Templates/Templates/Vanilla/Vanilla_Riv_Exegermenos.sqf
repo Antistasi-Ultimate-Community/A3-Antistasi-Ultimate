@@ -148,10 +148,10 @@ private _rpgs = [
 private _pistols = ["hgun_Rook40_F"];
 
 _loadoutData set ["lightHELaunchers", [
-["launch_RPG32_F", "", "", "", ["RPG32_HE_F", "RPG32_HE_F"], [], ""]
+	["launch_RPG32_F", "", "", "", ["RPG32_HE_F", "RPG32_HE_F"], [], ""]
 ]];
 _loadoutData set ["AALaunchers", [
-["launch_O_Titan_F", "", "acc_pointer_IR", "", ["Titan_AA"], [], ""]
+	["launch_O_Titan_F", "", "acc_pointer_IR", "", ["Titan_AA"], [], ""]
 ]];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];

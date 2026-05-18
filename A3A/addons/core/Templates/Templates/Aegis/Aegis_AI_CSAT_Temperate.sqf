@@ -23,8 +23,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["O_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["Land_Pod_Heli_Transport_04_covered_F"]] call _fnc_saveToTemplate;
-
 ["ammobox", "O_T_supplyCrate_F"] call _fnc_saveToTemplate;     
 ["surrenderCrate", "Box_T_East_Wps_F"] call _fnc_saveToTemplate; 
 ["equipmentBox", "Box_T_CSAT_Equip_F"] call _fnc_saveToTemplate; 
@@ -41,7 +39,7 @@ if (_hasApex) then {
 ["vehiclesLightArmed", _lightArmed] call _fnc_saveToTemplate;
 
 ["vehiclesTrucks", ["Atlas_O_W_Truck_02_transport_F", "Atlas_O_W_Truck_02_F", "Atlas_O_W_Truck_03_transport_ghex_F", "Atlas_O_W_Truck_03_covered_ghex_F"]] call _fnc_saveToTemplate;
-private _cargoTrucks = ["Atlas_O_W_Truck_02_transport_F", "Atlas_O_W_Truck_02_F", "Atlas_O_W_Truck_03_transport_ghex_F", "Atlas_O_W_Truck_03_covered_ghex_F","O_T_UGV_01_ghex_F"];
+private _cargoTrucks = ["Atlas_O_W_Truck_02_transport_F", "Atlas_O_W_Truck_02_F", "Atlas_O_W_Truck_03_transport_ghex_F", "Atlas_O_W_Truck_03_covered_ghex_F"];
 ["vehiclesAmmoTrucks", ["Atlas_O_W_Truck_03_ammo_ghex_F"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["Atlas_O_W_Truck_03_repair_ghex_F", "Atlas_O_W_Truck_02_box_F"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["Atlas_O_W_Truck_02_fuel_F", "Atlas_O_W_Truck_03_fuel_ghex_F"]] call _fnc_saveToTemplate;
@@ -49,8 +47,8 @@ private _cargoTrucks = ["Atlas_O_W_Truck_02_transport_F", "Atlas_O_W_Truck_02_F"
 ["vehiclesLightAPCs", ["Atlas_O_W_APC_Wheeled_02_rcws_v2_ghex_F"]] call _fnc_saveToTemplate;
 private _apcs = ["O_R_APC_Wheeled_04_cannon_ard_F", "O_T_APC_Tracked_02_cannon_ghex_F"];
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["Atlas_O_W_APC_Wheeled_02_rcws_v2_ghex_F","O_T_UGV_01_rcws_ghex_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks", ["O_T_UGV_01_rcws_ghex_F"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["Atlas_O_W_APC_Wheeled_02_rcws_v2_ghex_F"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks", []] call _fnc_saveToTemplate;
 private _tanks = ["Atlas_O_W_MBT_02_cannon_ghex_F"];
 ["vehiclesAA", ["Atlas_O_W_APC_Tracked_02_AA_F"]] call _fnc_saveToTemplate;
 
@@ -130,7 +128,7 @@ if (_hasTanks) then {
 };
 
 if (_hasWs) then {
-    _cargoTrucks = ["O_T_Truck_02_flatbed_lxWS", "O_T_Truck_02_cargo_lxWS","O_T_UGV_01_ghex_F"];
+    _cargoTrucks = ["O_T_Truck_02_flatbed_lxWS", "O_T_Truck_02_cargo_lxWS"];
     _militiaAPCs = ["O_T_APC_Wheeled_02_hmg_lxWS"];
     _apcs pushBack "Atlas_O_W_APC_Tracked_02_30mm_lxWS";
 };

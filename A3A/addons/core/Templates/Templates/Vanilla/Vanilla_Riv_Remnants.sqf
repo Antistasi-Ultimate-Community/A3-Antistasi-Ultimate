@@ -85,17 +85,10 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GMX_AAF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_Riv_Remnants\CSLA_Remnants.sqf",
-	#include "..\vehicleVariants\Vanilla_Riv_Remnants\GM_Remnants.sqf",
 	#include "..\vehicleVariants\Vanilla_Riv_Remnants\RF_Remnants.sqf",
 	#include "..\vehicleVariants\Vanilla_Riv_Remnants\Vanilla_Remnants.sqf"
 ]] call _fnc_saveToTemplate;
@@ -151,10 +144,10 @@ private _rpgs = [
 private _pistols = ["hgun_ACPC2_F"];
 
 _loadoutData set ["lightHELaunchers", [
-["launch_NLAW_F","","","",["NLAW_F"],[],""]
+	["launch_NLAW_F","","","",["NLAW_F"],[],""]
 ]];
 _loadoutData set ["AALaunchers", [
-["launch_I_Titan_F","","","",["Titan_AA"],[],""]
+	["launch_I_Titan_F","","","",["Titan_AA"],[],""]
 ]];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];

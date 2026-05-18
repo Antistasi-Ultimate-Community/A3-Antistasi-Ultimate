@@ -30,8 +30,6 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["EF_B_SDV_01_MJTF_Des"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -48,8 +46,8 @@ private _medicalTrucks = ["B_Truck_01_medical_F"];
 private _lightAPCs = [];
 private _APCs = ["B_APC_Wheeled_01_cannon_F","a3a_APC_Wheeled_03_cannon_blufor_F"];  // CRV has no cargo: "B_APC_Tracked_01_CRV_F"
 private _IFVs = ["EF_B_AAV9_MJTF_Des", "EF_B_AAV9_MJTF_Des", "EF_B_AAV9_50mm_MJTF_Des"];
-private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F","B_UGV_01_rcws_F"];
-private _lightTanks = ["B_UGV_01_rcws_F"];
+private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F"];
+private _lightTanks = [];
 private _tanks = ["B_MBT_01_TUSK_F", "B_MBT_01_cannon_F"];
 private _aa = ["EF_B_MRAP_01_LAAD_MJTF_Des", "B_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F"];
 

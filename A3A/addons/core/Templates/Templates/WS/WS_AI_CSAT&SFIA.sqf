@@ -33,8 +33,6 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["O_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["Land_Pod_Heli_Transport_04_covered_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_East_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_CSAT_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -44,7 +42,7 @@ private _basic = ["O_Quadbike_01_F"];
 private _unarmedVehicles = ["O_MRAP_02_F"];
 private _armedVehicles = ["O_MRAP_02_gmg_F","O_MRAP_02_hmg_F"];
 private _Trucks = ["O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_transport_F","O_Truck_02_covered_F"];
-private _cargoTrucks = ["O_Truck_02_cargo_lxWS","O_Truck_02_flatbed_lxWS","O_UGV_01_F","O_SFIA_Truck_02_cargo_lxWS","O_SFIA_Truck_02_flatbed_lxWS"];
+private _cargoTrucks = ["O_Truck_02_cargo_lxWS","O_Truck_02_flatbed_lxWS","O_SFIA_Truck_02_cargo_lxWS","O_SFIA_Truck_02_flatbed_lxWS"];
 private _ammoTrucks = ["O_Truck_02_Ammo_F","O_Truck_03_ammo_F","O_SFIA_Truck_02_Ammo_lxWS"];
 private _repairTrucks = ["O_Truck_03_repair_F","O_Truck_02_box_F","O_SFIA_Truck_02_box_lxWS"];
 private _fuelTrucks = ["O_Truck_03_fuel_F","O_Truck_02_fuel_F","O_SFIA_Truck_02_fuel_lxWS"];
@@ -53,7 +51,7 @@ private _lightAPCs = ["O_APC_Wheeled_02_hmg_lxWS","O_APC_Wheeled_02_unarmed_lxWS
 private _APCs = ["O_APC_Wheeled_02_rcws_v2_F"];
 private _IFVs = ["O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_30mm_lxWS"];
 private _airborneVehicles = ["O_APC_Wheeled_02_rcws_v2_F","O_APC_Wheeled_02_hmg_lxWS"];
-private _lightTanks = ["O_UGV_01_rcws_F"];
+private _lightTanks = [];
 private _tanks = ["O_MBT_02_cannon_F","O_MBT_02_railgun_F","O_SFIA_MBT_02_cannon_lxWS"];
 private _aa = ["O_APC_Tracked_02_AA_F","O_SFIA_Truck_02_aa_lxWS","O_SFIA_APC_Tracked_02_AA_lxWS","O_G_Offroad_AA_lxWS","O_Tura_Offroad_armor_AA_lxWS"];
 

@@ -47,9 +47,9 @@ private _medicalTrucks = ["I_Truck_02_medical_F"];
 private _lightAPCs = [];
 private _APCs = ["I_APC_Wheeled_03_cannon_F"];
 private _IFVs = ["I_APC_tracked_03_cannon_F"];
-private _airborneVehicles = ["I_APC_Wheeled_03_cannon_F","I_APC_tracked_03_cannon_F","I_UGV_01_rcws_F"];
+private _airborneVehicles = ["I_APC_Wheeled_03_cannon_F","I_APC_tracked_03_cannon_F"];
 private _tanks = ["I_MBT_03_cannon_F"];
-private _lightTanks = ["I_UGV_01_rcws_F"];
+private _lightTanks = [];
 private _aa = ["I_LT_01_AA_F"]; ///"B_APC_Tracked_01_AA_F"
 
 private _transportBoat = ["I_Boat_Transport_01_F"];
@@ -186,19 +186,11 @@ private _SAM = ["B_SAM_System_03_F"];
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GMX_AAF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_AAF\CSLA_AAF.sqf",
-    #include "..\vehicleVariants\GM_police.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\RF_AAF.sqf",
-    #include "..\vehicleVariants\Vanilla_AAF\SPE_AAF.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\Vanilla_AAF.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\WS_AAF.sqf"
 ]] call _fnc_saveToTemplate;
@@ -650,10 +642,10 @@ _militiaLoadoutData set ["sidearms", ["hgun_ACPC2_F", 10]];
 
 if (_hasWS) then {
     (_militiaLoadoutData get "slRifles") append [
-        ["arifle_SLR_V_lxWS", "", _militiaAttachments, _militiaSlRifleOptics, ["20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_reload_tracer_green_lxWS"], [], ""], 6,
+        ["arifle_SLR_V_lxWS", "", _militiaAttachments, _militiaSlRifleOptics, ["20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_reload_tracer_green_lxWS"], [], ""], 6
     ];
     (_militiaLoadoutData get "rifles") append [
-        ["arifle_SLR_lxWS", "", _militiaAttachments, _militiaSlRifleOptics, ["20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_reload_tracer_green_lxWS"], [], ""], 6,
+        ["arifle_SLR_lxWS", "", _militiaAttachments, _militiaSlRifleOptics, ["20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_lxWS", "20Rnd_762x51_slr_reload_tracer_green_lxWS"], [], ""], 6
     ];
 };
 

@@ -33,8 +33,6 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["B_SDV_01_F","I_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_NATO_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -43,7 +41,7 @@ private _basic = ["B_Quadbike_01_F","B_Truck_01_mover_F"];
 private _unarmedVehicles = ["B_MRAP_01_F","a3a_MRAP_03_grey_F"];
 private _armedVehicles = ["B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "a3a_MRAP_03_gmg_grey_F", "a3a_MRAP_03_hmg_grey_F"];
 private _Trucks = ["B_Truck_01_covered_F", "B_Truck_01_transport_F"];
-private _cargoTrucks = ["B_Truck_01_cargo_F", "B_Truck_01_flatbed_F","B_UGV_01_F"];
+private _cargoTrucks = ["B_Truck_01_cargo_F", "B_Truck_01_flatbed_F"];
 private _ammoTrucks = ["B_Truck_01_ammo_F","I_Truck_02_ammo_F"];
 private _repairTrucks = ["B_Truck_01_Repair_F","B_APC_Tracked_01_CRV_F","I_Truck_02_box_F"];
 private _fuelTrucks = ["B_Truck_01_fuel_F","I_Truck_02_fuel_F"];
@@ -52,8 +50,8 @@ private _lightAPCs = [];
 private _APCs = ["B_APC_Wheeled_01_cannon_F","a3a_APC_Wheeled_03_cannon_blufor_F","I_APC_Wheeled_03_cannon_F"];  // CRV has no cargo: "B_APC_Tracked_01_CRV_F"
 private _IFVs = ["B_APC_Tracked_01_rcws_F","I_APC_tracked_03_cannon_F"];
 
-private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F","B_UGV_01_rcws_F","I_APC_Wheeled_03_cannon_F"];
-private _lightTanks = ["B_UGV_01_rcws_F"];
+private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F","I_APC_Wheeled_03_cannon_F"];
+private _lightTanks = [];
 private _tanks = ["B_MBT_01_TUSK_F", "B_MBT_01_cannon_F","I_MBT_03_cannon_F"];
 private _aa = ["B_APC_Tracked_01_AA_F","I_LT_01_AA_F"];
 

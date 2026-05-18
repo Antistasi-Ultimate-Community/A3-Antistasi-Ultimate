@@ -31,8 +31,6 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -49,9 +47,9 @@ private _medicalTrucks = ["I_E_Truck_02_medical_F"];
 private _lightAPCs = [];
 private _APCs = ["B_T_APC_Wheeled_01_cannon_F"];
 private _IFVs = ["I_E_APC_tracked_03_cannon_F","B_T_APC_Tracked_01_rcws_F"];
-private _airborneVehicles = ["I_E_APC_tracked_03_cannon_F","I_E_UGV_01_rcws_F"];
+private _airborneVehicles = ["I_E_APC_tracked_03_cannon_F"];
 private _tanks =  ["B_T_MBT_01_TUSK_F","B_T_MBT_01_cannon_F"];
-private _lightTanks = ["I_E_UGV_01_rcws_F"];
+private _lightTanks = [];
 private _aa = ["B_T_APC_Tracked_01_AA_F"];
 
 private _transportBoat = ["I_Boat_Transport_01_F"];
@@ -107,6 +105,18 @@ private _militiaCars = ["I_E_Offroad_01_F", "I_E_Offroad_01_comms_F", "I_E_Offro
 private _militiaAPCs = ["I_E_APC_tracked_03_cannon_F"];
 
 private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+
+if (_hasRF) then {
+    _policeVehs = ["B_GEN_Pickup_covered_rf"];
+};
+
+if (_hasEF) then {
+    _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+};
 
 private _staticMG = ["I_G_HMG_02_high_F","I_E_HMG_01_high_F"];
 private _staticAT = ["I_E_Static_AT_F","I_E_GMG_01_high_F"];

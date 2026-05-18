@@ -127,14 +127,14 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-  "U_IG_Guerrilla_6_1",
-  "U_BG_Guerilla2_1",
-  "U_IG_Guerilla2_2",
-  "U_IG_Guerilla2_3",
-  "U_I_C_Soldier_Para_5_F",
-  "U_I_C_Soldier_Para_3_F",
-  "U_I_C_Soldier_Para_2_F",
-  "U_I_C_Soldier_Camo_F"
+  "U_I_L_Uniform_01_camo_F",
+  "U_I_L_Uniform_01_deserter_F",
+  "U_C_Uniform_Farmer_01_F",
+  "U_C_E_LooterJacket_01_F",
+  "U_I_L_Uniform_01_tshirt_black_F",
+  "U_I_L_Uniform_01_tshirt_olive_F",
+  "U_I_L_Uniform_01_tshirt_skull_F",
+  "U_I_L_Uniform_01_tshirt_sport_F"
 ];
 
 private _dlcUniforms = [];

@@ -207,8 +207,6 @@ if (_hasRF) then {
   ];
 };
 
-["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
-
 ["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
 /////////////////////
 ///  Identities   ///
