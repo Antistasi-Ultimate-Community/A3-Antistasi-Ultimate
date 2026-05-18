@@ -42,9 +42,10 @@ for "_wave" from 1 to _waves do
 	_sources append _sourcesWave;
 
 	waitUntil {
-		private _aliveZombies = {alive _x || {_x getVariable ["ACE_isUnconscious", false] isEqualTo false}} count units _groupZombies;
+		uiSleep 1;
+		private _aliveZombies = {alive _x || {_x getVariable ["ACE_isUnconscious", false] isEqualTo false}} count units _group;
 		private _aliveZombiesWin = (round (_aliveZombies / 2));
-		(_aliveZombies <= _aliveZombiesWin) || {time >= _timeout}
+		(_aliveZombies <= _aliveZombiesWin) || (time >= _timeout)
 	};
 
 	uiSleep 30;
@@ -52,6 +53,7 @@ for "_wave" from 1 to _waves do
 
 // Wait until they're all dead or timeout has passed, then clean up
 waitUntil {
+	uiSleep 1;
 	private _aliveZombies = {alive _x} count units _group;
 	(_aliveZombies <= 0) || {time >= _timeoutExit}
 };

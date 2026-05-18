@@ -65,7 +65,9 @@ waitUntil {
 	((call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_positionX, 200, 200] isNotEqualTo []) || {dateToNumber date > _dateLimitNum}
 };
 
-if (dateToNumber date > _dateLimitNum) exitWith {};
+if (dateToNumber date > _dateLimitNum) exitWith {
+	[_taskId, "CON", "FAILED", true] call A3A_fnc_taskSetState;
+};
 
 // Handle side change for inv/occ
 private _groupSide = Invaders;
