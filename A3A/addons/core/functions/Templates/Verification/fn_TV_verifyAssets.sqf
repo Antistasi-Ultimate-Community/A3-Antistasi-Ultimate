@@ -300,6 +300,9 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
                 } forEach _x;
             } forEach _y;
         };
+        case "petrosIdentity": {
+            if !(_y isEqualType createHashmap) exitWith {_invalidReasons pushBack ("Entry "+(str _entry)+" is not a hashmap.")};
+        };
         case "diveGear"; //Mixed CFGVehicles and CFGGlasses
         case "flyGear";
         case "voices"; //CfgVoice maybe later
