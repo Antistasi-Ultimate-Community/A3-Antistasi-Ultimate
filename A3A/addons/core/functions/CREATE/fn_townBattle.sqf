@@ -1,16 +1,32 @@
 /*
-Maintainer: Silence
-    Create occupant/invader city battle attack
+    Author:
+        Silence
+    
+    Description:
+        Creates occupant/invader town battle attack
+    
+    Params:
+        _side <SIDE> | Occupants or Invaders
+        _mrkDest <STRING> | Destination marker (town)
+        _mrkOrigin <STRING> | Origin marker (base)
+        _delay <SCALAR> <DEFAULT: Auto> | Optional, delay in seconds before sending attack
 
-Scope: Server, although written to work on HCs
-Environment: Scheduled, should be spawned
-
-Arguments:
-    <SIDE> Side to create battle for (Occupants or Invaders)
-    <STRING> Destination marker (should be town)
-    <STRING> Origin marker (should be airbase)
-    <SCALAR> Optional, delay in seconds before sending vehicles (Default: Auto-calculated)
+    Dependencies:
+        areOccupantsDefeated, areInvadersDefeated, forcedSpawn, bigAttackInProgress
+    
+    Scope:
+        Server, haven't confirmed HC
+    
+    Environment:
+        Scheduled
+    
+    Usage:
+        [_side, _mrkDest, _mrkOrigin, _delay] call A3A_fnc_townBattle;
+    
+    Return:
+        N/A
 */
+
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
@@ -46,12 +62,10 @@ private _taskId = "townBattle" + str A3A_taskCount;
 
 
 if (isNil "_delay") then {
-    // _delay = 300 + 60 * (markerPos "Synd_HQ" distance2d _posDest) / 2000;            // +1 min per 2km
-    _delay = 0; // temporary. Or not. Who knows.
+    _delay = 300 + 60 * (markerPos "Synd_HQ" distance2d _posDest) / 2000;            // +1 min per 2km
 };
 
 // Create the attacking force
-// probably doesn't make much sense to aggro-scale this one as it's not a response
 private _cityData = server getVariable [_mrkDest, [0,0,0,0]];
 _cityData params [["_numCiv",0], ["_numVeh",0], ["_supportGov",0], ["_supportReb",0]];
 
