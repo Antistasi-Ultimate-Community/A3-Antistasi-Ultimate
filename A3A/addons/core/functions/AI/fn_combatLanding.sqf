@@ -151,7 +151,6 @@ while {_interval < 0.9999} do
     if ((getPos _helicopter select 2) < 0.25 ) exitwith{_helicopter setdamage 0; sleep 1; _helicopter setdamage _dam;};
 };
 sleep 0.1;
-[_helicopter] call A3A_fnc_smokeCoverAuto;          // Already done by GetOut handler in AIVehInit?
 
 _helicopter engineOn true; ///keep the engine running
 [_helicopter, "open"] spawn A3A_fnc_HeliDoors;

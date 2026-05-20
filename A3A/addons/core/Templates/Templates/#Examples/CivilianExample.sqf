@@ -34,11 +34,6 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 
 ["vehiclesCivFuel", []] call _fnc_saveToTemplate;            //this line determines civilian fuel vehicles
 
-//Example on how to use dlc content
-/* if (_hasKart) then {
-  #include "..\DLC_content\vehicles\Kart\kart.sqf"  
-}; */
-
 
 ["variants", []] call _fnc_saveToTemplate;                 //this line determines particular paintjob/camo for a vehicle --  Example: ["I_Heli_Transport_02_F", ["Dahoman", 1]] -- Array, can contain multiple assets
 
