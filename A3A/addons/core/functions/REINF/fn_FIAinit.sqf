@@ -80,7 +80,7 @@ if (player == leader _unit) then {
 		};
 	};
 } else {
-	_unit addEventHandler ["killed", {\
+	_unit addEventHandler ["killed", {
 		params ["_victim", "_killer"];
 		[_victim] remoteExec ["A3A_fnc_postmortem",2];
 		if ((isPlayer _killer) and (side _killer == teamPlayer)) then {

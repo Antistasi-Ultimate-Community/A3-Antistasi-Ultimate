@@ -125,6 +125,7 @@ class CfgFunctions
             class canMoveHQ {};
             class chooseAttack {};
             class citiesToCivPatrol {};
+            class cityChangeSide {};
             class citySupportChange {};
             class commsMP {};
             class createBreachChargeText {};
@@ -306,6 +307,7 @@ class CfgFunctions
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
             class spawnVehiclePrecise {};
+            class townBattle {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
             class RivalsCreateVehicleCrew {};

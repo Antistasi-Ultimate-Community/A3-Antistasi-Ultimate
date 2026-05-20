@@ -38,6 +38,10 @@ private _transportPool = [];
 private _faction = Faction(_side);
 _transportPool = _faction get "vehiclesPolice";
 
+private _speed = 0;
+
+_speed = 100;
+
 private _numTransports = 0;
 private _landPosBlacklist = [];
 
@@ -82,7 +86,7 @@ for "_i" from 1 to _vehCount do {
 
     _numTransports = _numTransports + 1;
 
-    // [_vehicle, _route, _vehicles, 120, false, true, [15, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
+    // [_vehicle, _route, _vehicles, _speed, false, true, [20, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
 
     sleep 10;
 };

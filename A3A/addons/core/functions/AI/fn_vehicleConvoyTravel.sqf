@@ -58,8 +58,17 @@ while {true} do
         ServerInfo("Vehicle or driver died during travel, abandoning");
     };
     if (_vehIndex == -1) exitWith {};				// external abort
-    if (_vehicle distance _destination < 100) exitWith {
+    if (_vehicle distance _destination < 50) exitWith {
         ServerDebug("Vehicle arrived at destination");
+        { deleteWaypoint _x } forEachReversed waypoints (group _vehicle);
+        if !(isNull (gunner _vehicle)) then { // If the vehicle has gunner, make them patrol
+            [(group _vehicle), "Patrol_Area", 25, 100, 250, true, _destination, false] call A3A_fnc_patrolLoop;
+        } else { // Otherwise kick out everyone including driver
+            private _crew = crew _vehicle;
+            {
+                unassignVehicle _x;
+            } forEach _crew;
+        };
     };
 
     // Transition to next waypoint if close

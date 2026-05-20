@@ -39,9 +39,18 @@ private _transportPool = [];
 private _supportPool = [];
 
 private _faction = Faction(_side);
-_transportPool = _faction get "vehiclesMilitiaCars";
-_transportPoolTrucks = _faction get "vehiclesMilitiaTrucks";
-_supportPool = _faction get "vehiclesMilitiaLightArmed";
+private _transportPoolCars = _faction get "vehiclesMilitiaCars";
+private _transportPoolTrucks = _faction get "vehiclesMilitiaTrucks";
+private _transportPool = selectRandom [_transportPoolCars, _transportPoolTrucks];
+private _supportPool = _faction get "vehiclesMilitiaLightArmed";
+
+private _speed = 0;
+
+if (_transportPool isEqualTo _transportPoolTrucks) then {
+    _speed = 60;
+} else {
+    _speed = 100;
+};
 
 private _numTransports = 0;
 private _isTransport = _vehAttackCount < _vehCount;            // normal case, first vehicle should be a transport
@@ -89,7 +98,7 @@ for "_i" from 1 to _vehCount do {
     if (_isTransport) then { _numTransports = _numTransports + 1 };
     _isTransport = _vehAttackCount == 0 or (_numTransports / _i) < _transportRatio;
 
-    [_vehicle, _route, _vehicles, 60, false, true, [15, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
+    // [_vehicle, _route, _vehicles, _speed, false, true, [20, 30], _leadVehicle] spawn A3A_fnc_vehicleConvoyTravel;
 
     sleep 10;
 };
