@@ -118,19 +118,6 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["minefieldAT", []] call _fnc_saveToTemplate;                   // anti-tank mines
 ["minefieldAPERS", []] call _fnc_saveToTemplate;                // anti-personal mines
 
-//Example on how to use dlc content
-/* if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\weird_alien_bug.sqf"
-}; */
-
-//Example on how to use mod content
-//If CUP
-/* if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
-    #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_AAF.sqf"
-}; */
-
-//or like this
-
 //Example on how to use mod content
 /* if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	_gunship pushBack "vnx_b_air_ac119_01_01";
