@@ -85,25 +85,26 @@ private _typeVeh = if (_difficultX) then { selectRandom (_faction get "vehiclesG
 private _typeGroup = if _difficultX then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
 private _boatSpawnLocation = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 
-private _typeSDV = _faction getOrDefault ["vehiclesSDV", ""];
-if (_typeSDV != "") then {
+private _typeSDV = _faction getOrDefault ["vehiclesSDV", []];
+
+if (_typeSDV isNotEqualTo []) then {
 	private _diverType = "";
 	private _diversGroup = createGroup _sideX;
 	private _diversGroup2 = createGroup _sideX;
-   _typeSDV = selectRandom (_faction get "vehiclesSDV");
-   if (_typeSDV == "I_SDV_01_F") then {
+   	_typeSDV = selectRandom (_faction get "vehiclesSDV");
+   	if (_typeSDV == "I_SDV_01_F") then {
 		_diverType = "I_diver_F";
-   };
-   if (_typeSDV == "O_SDV_01_F") then {
+	};
+	if (_typeSDV == "O_SDV_01_F") then {
 		_diverType = "O_diver_F";
-   };
-   if (_typeSDV == "B_SDV_01_F") then {
+	};
+	if (_typeSDV == "B_SDV_01_F") then {
 		_diverType = "B_diver_F";
-   };
-   if (_typeSDV == "EF_B_SDV_01_MJTF_Des") then {
+	};
+	if (_typeSDV == "EF_B_SDV_01_MJTF_Des") then {
 		_diverType = "EF_B_Marine_Diver_Des";
-   };
-   for "_i" from 1 to 2 do {
+	};
+	for "_i" from 1 to 2 do {
 		private _SDVmarker = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 		private _vehSDV = createVehicle [_typeSDV, _SDVmarker, [], 30, "NONE"];
 		_vehSDV setPos [getPos _vehSDV select 0, getPos _vehSDV select 1, (getPos _vehSDV select 2) - 7];
@@ -154,31 +155,60 @@ _vehCrewGroup addVehicle _veh;
 
 //Disable simulation if we *really* want to
 Debug("Waiting for salvage mission end");
-waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {(_box distance2D posHQ) < 100}};
-
-private _timeout = false;
-if (dateToNumber date > _dateLimitNum) then {
-	_timeout = true;
-	waitUntil {sleep 1; (_box distance2D posHQ) < 100 || {allPlayers inAreaArray [getPos _box, 50, 50] isEqualTo [] || {isNull _box}}};
+waitUntil {
+    sleep 1;
+    isNull _box || {dateToNumber date > _dateLimitNum || {_box distance2D posHQ < 100}}
 };
+
+private _boxDestroyed = isNull _box;
+private _missionExpired = dateToNumber date > _dateLimitNum;
+private _boxOnRebelHq = !_boxDestroyed && {_box distance2D posHQ < 100};
 
 private _bonus = if (_difficultX) then {2} else {1};
 
-if (_timeout && alive _box) then {
-	[_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
-	[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
-    Info("Mission Failed");
-	deleteVehicle _box;
-} else {
-	[_taskId, "LOG", "SUCCEEDED"] call A3A_fnc_taskSetState;
-	[0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
-	{ 
-		[30,_x] call A3A_fnc_addScorePlayer;
-    	[300 * _bonus,_x] call A3A_fnc_addMoneyPlayer;
-	} forEach (call SCRT_fnc_misc_getRebelPlayers);
-	[10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
-    [100*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
-    Info("Mission Succeeded");
+switch (true) do {
+    case (_boxDestroyed): {
+        Info("Mission Failed, box destroyed.");
+
+        [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
+        [-10 * _bonus, theBoss] call A3A_fnc_addScorePlayer;
+    };
+
+    case (_missionExpired): {
+        Info("Mission Failed, mission expired.");
+
+        [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
+        [-10 * _bonus, theBoss] call A3A_fnc_addScorePlayer;
+
+        if !(isNull _box) then {
+            deleteVehicle _box;
+        };
+    };
+
+    case (_boxOnRebelHq): {
+        Info("Mission Succeeded, box on HQ.");
+
+        [_taskId, "LOG", "SUCCEEDED"] call A3A_fnc_taskSetState;
+        [0, 300 * _bonus] remoteExec ["A3A_fnc_resourcesFIA", 2];
+
+        {
+            [30, _x] call A3A_fnc_addScorePlayer;
+            [300 * _bonus, _x] call A3A_fnc_addMoneyPlayer;
+        } forEach (call SCRT_fnc_misc_getRebelPlayers);
+
+        [10 * _bonus, theBoss] call A3A_fnc_addScorePlayer;
+        [100 * _bonus, theBoss, true] call A3A_fnc_addMoneyPlayer;
+    };
+
+    default {
+        Warning("Unknown condition, aborting mission.");
+
+        [_taskId, "LOG", "CANCELED"] call A3A_fnc_taskSetState;
+
+        if !(isNull _box) then {
+            deleteVehicle _box;
+        };
+    };
 };
 
 [_taskId, "LOG", 1200] spawn A3A_fnc_taskDelete;
