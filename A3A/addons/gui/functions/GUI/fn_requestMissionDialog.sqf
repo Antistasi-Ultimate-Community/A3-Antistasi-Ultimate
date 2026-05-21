@@ -53,6 +53,11 @@ switch (_mode) do
             "RES"
         ];
 
+        if (_missionType isEqualTo "RAN") then
+        {
+            _missionType = selectRandom _missionTypes;
+        };
+
         if !(_missionType in _missionTypes) exitWith
         {
             Error_1("Mission type does not exist: %1", _missionType);
