@@ -42,7 +42,7 @@
         flagTexture = QPATHTOFOLDER(Templates\Templates\OPTRE\images\flag_covenant_ca.paa);
         name = "Covenant (Elites)";
         file = "OPTRE_AI_Covenant";
-        description = "The Covenant (With OPTRE elites)";
+        description = "The Covenant.";
     };
     class OPTRE_Ins : OPTRE_Cov
     {

@@ -30,8 +30,6 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["EF_B_SDV_01_MJTF_Des"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -40,7 +38,7 @@ private _basic = ["B_Quadbike_01_F","B_Truck_01_mover_F"];
 private _unarmedVehicles = ["B_MRAP_01_F","a3a_MRAP_03_grey_F"];
 private _armedVehicles = ["B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "EF_B_MRAP_01_AT_MJTF_Des", "EF_B_MRAP_01_FSV_MJTF_Des", "EF_B_MRAP_01_LAAD_MJTF_Des", "a3a_MRAP_03_gmg_grey_F", "a3a_MRAP_03_hmg_grey_F" ];
 private _Trucks = ["B_Truck_01_covered_F", "B_Truck_01_transport_F"];
-private _cargoTrucks = ["B_Truck_01_cargo_F", "B_Truck_01_flatbed_F", "B_UGV_01_F"];
+private _cargoTrucks = ["B_Truck_01_cargo_F", "B_Truck_01_flatbed_F"];
 private _ammoTrucks = ["B_Truck_01_ammo_F"];
 private _repairTrucks = ["B_Truck_01_Repair_F","B_APC_Tracked_01_CRV_F"];
 private _fuelTrucks = ["B_Truck_01_fuel_F"];
@@ -48,8 +46,8 @@ private _medicalTrucks = ["B_Truck_01_medical_F"];
 private _lightAPCs = [];
 private _APCs = ["B_APC_Wheeled_01_cannon_F","a3a_APC_Wheeled_03_cannon_blufor_F"];  // CRV has no cargo: "B_APC_Tracked_01_CRV_F"
 private _IFVs = ["EF_B_AAV9_MJTF_Des", "EF_B_AAV9_MJTF_Des", "EF_B_AAV9_50mm_MJTF_Des"];
-private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F","B_UGV_01_rcws_F"];
-private _lightTanks = ["B_UGV_01_rcws_F"];
+private _airborneVehicles = ["B_APC_Wheeled_01_cannon_F"];
+private _lightTanks = [];
 private _tanks = ["B_MBT_01_TUSK_F", "B_MBT_01_cannon_F"];
 private _aa = ["EF_B_MRAP_01_LAAD_MJTF_Des", "B_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F"];
 
@@ -80,7 +78,7 @@ private _artillery = ["B_MBT_01_mlrs_F"];
     ["APC_Wheeled_01_mortar_base_lxWS", ["64Rnd_60mm_Mo_guided_lxWS"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "B_UAV_05_F", "B_T_UAV_03_dynamicLoadout_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "B_UAV_05_F", "B_T_UAV_03_dynamicLoadout_F", "EF_QAV80_MJTF_Des"]] call _fnc_saveToTemplate;
 private _uavsPortable = ["B_UAV_01_F"];
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
@@ -89,7 +87,17 @@ private _militiaTrucks = ["B_Truck_01_covered_F", "B_Truck_01_transport_F"];
 private _militiaCars = ["B_G_Offroad_01_F"];
 private _militiaAPCs = [];
 
-private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+private _policeVehs = ["B_GEN_Offroad_01_gen_F", "EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+
+if (_hasRF) then {
+    _policeVehs pushBack "B_GEN_Pickup_covered_rf";
+    _transportHelicopters pushBack "B_Heli_EC_04_military_RF";
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+    _airborneVehicles append ["B_APC_Wheeled_01_atgm_lxWS", "B_APC_Wheeled_01_command_lxWS"];
+};
 
 private _staticMG = ["B_G_HMG_02_high_F", "B_HMG_01_high_F"];
 private _staticAT = ["B_static_AT_F", "B_GMG_01_high_F"];
@@ -108,47 +116,6 @@ private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
-
-if (_hasJets) then {
-	#include "..\DLC_content\vehicles\Jets\Vanilla_NATO.sqf"
-};
-
-if (_hasHelicopters) then {
-    #include "..\DLC_content\vehicles\Helicopters\Vanilla_NATO.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_NATO_Arid.sqf"
-};
-
-//If Western Sahara DLC
-if (_hasWs) then {
-    #include "..\DLC_content\vehicles\WS\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\vehicles\GM\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO_Arid.sqf"
-};
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
@@ -233,42 +200,6 @@ private _faces = ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
 "EF_Black_01","EF_Black_01_lush","EF_Black_01_arid","EF_White_01","EF_White_01_lush","EF_White_01_arid",
 "EF_White_02","EF_White_02_lush","EF_White_02_arid","EF_Black_02","EF_Black_02_lush","EF_Black_02_arid"
 ];
-if (_hasSPE) then {
-    _faces append [
-        #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\SPE_german.sqf",
-        #include "..\DLC_content\voices\SPE_french.sqf"
-    ];
-};
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_livonian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_white.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_african.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_russian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_tanoa.sqf"
-    ];
-};
-if (_hasRF) then {
-    _faces append [
-        #include "..\DLC_content\faces\RF\RF_white.sqf"
-    ];
-};
-if (_hasGM) then {
-    _faces append [
-        #include "..\DLC_content\faces\GM\GM_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\GM_german.sqf"
-    ];
-};
-if (_hasWS) then {
-    _faces append [
-        #include "..\DLC_content\faces\WS\WS_white.sqf"
-    ];
-};
 
 ["voices", _voices] call _fnc_saveToTemplate;
 ["sfVoices", ["Male01ENGB", "Male02ENGB", "Male03ENGB", "Male04ENGB", "Male05ENGB"]] call _fnc_saveToTemplate;
@@ -340,9 +271,6 @@ _loadoutData set ["officerUniforms", ["U_B_CombatUniform_mcam"]];
 _loadoutData set ["officerVests", ["V_Rangemaster_belt"]];
 _loadoutData set ["officerHats", ["H_MilCap_mcamo", "H_Beret_Colonel", "H_Beret_02"]];
 
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_NATO.sqf"
-};
 _loadoutData set ["cloakUniforms", ["U_B_FullGhillie_ard", "U_B_FullGhillie_sard", "U_B_GhillieSuit"]];
 _loadoutData set ["cloakVests", ["V_Chestrig_khk"]];
 
@@ -764,46 +692,8 @@ _officerLoadoutData set ["SMGs", [
 ["ef_arifle_mxc_coy", "", "acc_pointer_IR", "optic_Aco", ["EF_30Rnd_65x39_caseless_coy_mag", "EF_30Rnd_65x39_caseless_coy_mag", "EF_30Rnd_65x39_caseless_coy_mag_Tracer"], [], ""]
 ]];
 
-//
-if (_hasMarksman) then {
-    #include "..\DLC_content\weapons\Marksman\Vanilla_NATO_Arid.sqf"
-};
+// (placeholder_content) Benefits from WS, RF, EF content. Vehicles + equipment.
 
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_NATO.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\Apex\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\Contact\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\RF\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\WS\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\GM\Vanilla_NATO.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_NATO.sqf"
-    #include "..\DLC_content\weapons\SOG\Vanilla_NATO.sqf"
-};
-
-//
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////
