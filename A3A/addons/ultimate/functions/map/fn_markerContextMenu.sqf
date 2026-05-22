@@ -183,7 +183,6 @@ private _titleLabel = if (_firstLineBreakIndex >= 0) then {
 
 if (_titleLabel == "") then {
     _titleLabel = markerText _originalMarkerName;
-
     if (_titleLabel == "") then {
         _titleLabel = _originalMarkerName;
     };

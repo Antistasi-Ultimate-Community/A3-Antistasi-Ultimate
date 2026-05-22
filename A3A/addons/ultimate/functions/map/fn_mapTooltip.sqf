@@ -114,7 +114,8 @@ private _selectionThreshold = (_thresholdPixels / 1000) max 0.01;
     - Use authoritative markersX (already synced and used elsewhere)
     - Add specials only if they exist
 ---------------------------------------------------------------------------- */
-private _candidates = (+markersX - controlsX);
+private _candidates = (+markersX + milAdministrationsX + mrkAntennas - controlsX);
+
 {
     if (_x in allMapMarkers) then { _candidates pushBackUnique _x; };
 } forEach ["Synd_HQ", "synd_hq", "TraderMarker", "tradermarker", "RallyPointMarker", "rallypointmarker"];
@@ -210,21 +211,20 @@ if (
         _iconPath = getText (configFile >> "CfgMarkers" >> _flagMarkerType >> "icon");
     };
 
+    private _isAntenna = _origNearest in mrkAntennas;
+
     if (!A3AU_setting_alwaysShowMarkerName) then {
         private _tooltipStructuredText = if (_iconPath != "") then {
             format ["<img image='%1' size='1.2'/> <t size='0.9' shadow='2'>%2</t>", _iconPath, _hoverTitle]
         } else {
             format ["<t size='0.9' shadow='2'>%1</t>", _hoverTitle]
         };
-
         _tooltipControl ctrlSetStructuredText (parseText _tooltipStructuredText);
 
         private _tooltipWidth = 0.40;
         private _tooltipHeight = (ctrlTextHeight _tooltipControl) + 0.02;
-
         private _tooltipPositionX = (_nearestScreenPosition # 0) + 0.018;
         private _tooltipPositionY = (_nearestScreenPosition # 1) - (_tooltipHeight * 0.5);
-
         _tooltipControl ctrlSetPosition [_tooltipPositionX, _tooltipPositionY, _tooltipWidth, _tooltipHeight];
 
         private _fadeInStartTime = _mapDisplay getVariable ["A3U_tipFadeInStart", diag_tickTime];

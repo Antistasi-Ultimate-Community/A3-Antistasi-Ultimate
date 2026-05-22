@@ -43,6 +43,7 @@ private _managedMarkers = (
     + watchpostsFIA
     + roadblocksFIA
     + hmgpostsFIA
+    + mrkAntennas
     + resourcesX
     + aapostsFIA
     + atpostsFIA
@@ -234,16 +235,28 @@ private _markerTitle = call {
         format [localize "STR_outpost", _outpostName]
     };
 
+if (_markerName in mrkAntennas) exitWith {
+        private _nearestCityMarkerName = [citiesX, _markerPosition] call _findNearestMarkerName;
+        private _cityName = markerText _nearestCityMarkerName;
+        if (_cityName == "") then { _cityName = _nearestCityMarkerName; };
+        
+        format ["%1 Radio tower", _cityName]
+    };
+
     if (_markerName in resourcesX) exitWith {
-        private _nearestCityMarkerName =
-            [citiesX, _markerPosition] call _findNearestMarkerName;
-        format [localize "STR_resources", _nearestCityMarkerName]
+        private _nearestCityMarkerName = [citiesX, _markerPosition] call _findNearestMarkerName;
+        private _cityName = markerText _nearestCityMarkerName;
+        if (_cityName == "") then { _cityName = _nearestCityMarkerName; };
+
+        format [localize "STR_resources", _cityName]
     };
 
     if (_markerName in factories) exitWith {
-        private _nearestCityMarkerName =
-            [citiesX, _markerPosition] call _findNearestMarkerName;
-        format [localize "STR_factory", _nearestCityMarkerName]
+        private _nearestCityMarkerName = [citiesX, _markerPosition] call _findNearestMarkerName;
+        private _cityName = markerText _nearestCityMarkerName;
+        if (_cityName == "") then { _cityName = _nearestCityMarkerName; };
+
+        format [localize "STR_factory", _cityName]
     };
 
     if (_markerName in milbases) exitWith {

@@ -432,6 +432,8 @@ private _getMarkerIconFromMetadata = {
 
 private _getPlainMarkerLabel = {
     params ["_markerName"];
+    
+    private _originalMarkerName = [_markerName] call _getOriginalMarkerName;
 
     private _markerLabel = [_markerName] call _getMarkerLabelFromMetadata;
     if !(_markerLabel isEqualType "") then {
@@ -504,7 +506,7 @@ private _markerBuckets = [
     ["Military Bases", "Military Bases", milbases apply {[_x] call _toDummyMarkerName}],
     ["Air Bases", "Air Bases", airportsX apply { [_x] call _toDummyMarkerName }],
     ["Military Administrations", "Military Administrations", +milAdministrationsX],
-    ["Radio Towers", "Radio Towers", antennas apply { [_x] call _toDummyMarkerName }]
+    ["Radio Towers", "Radio Towers", mrkAntennas apply { [_x] call _toDummyMarkerName }]
 ];
 
 private _refreshList = {
