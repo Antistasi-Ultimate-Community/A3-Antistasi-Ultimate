@@ -8404,39 +8404,34 @@
                 <Chinesesimp>%1 空军基地</Chinesesimp>
                 <Korean>%1 공군 기지</Korean>
                 <French>Base aérienne %1</French>
-                <Turkish>%1 Hava Üssü</Turkish>
             </Key>
             <Key ID="STR_resources">
-                <Original>Resources</Original>
-                <Russian>Ресурсы</Russian>
-                <Chinesesimp>资源</Chinesesimp>
-                <Korean>자원채취소</Korean>
-                <French>Ressources</French>
-                <Turkish>Kaynaklar</Turkish>
+                <Original>%1 Resources</Original>
+                <Russian>%1 Ресурсы</Russian>
+                <Chinesesimp>%1 资源</Chinesesimp>
+                <Korean>%1 자원채취소</Korean>
+                <French>%1 Ressources</French>
             </Key>
             <Key ID="STR_factory">
-                <Original>Factory</Original>
-                <Russian>Фабрика</Russian>
-                <Chinesesimp>工厂</Chinesesimp>
-                <Korean>공장</Korean>
-                <French>Usine</French>
-                <Turkish>Fabrika</Turkish>
+                <Original>%1 Factory</Original>
+                <Russian>%1 Фабрика</Russian>
+                <Chinesesimp>%1 工厂</Chinesesimp>
+                <Korean>%1 공장</Korean>
+                <French>%1 Usine</French>
             </Key>
             <Key ID="STR_port_river">
-                <Original>River Port</Original>
-                <Russian>Речной порт</Russian>
-                <Chinesesimp>河港</Chinesesimp>
-                <Korean>강항</Korean>
-                <French>Port fluvial</French>
-                <Turkish>Nehir Limanı</Turkish>
+                <Original>%1 Riverport</Original>
+                <Russian>%1 Речной порт</Russian>
+                <Chinesesimp>%1 河港</Chinesesimp>
+                <Korean>%1 강항</Korean>
+                <French>%1 Port fluvial</French>
             </Key>
             <Key ID="STR_port_sea">
-                <Original>Sea Port</Original>
-                <Russian>Морской порт</Russian>
-                <Chinesesimp>海港</Chinesesimp>
-                <Korean>항구</Korean>
-                <French>Port maritime</French>
-                <Turkish>Deniz Limanı</Turkish>
+                <Original>%1 Seaport</Original>
+                <Russian>%1 Морской порт</Russian>
+                <Chinesesimp>%1 海港</Chinesesimp>
+                <Korean>%1 항구</Korean>
+                <French>%1 Port maritime</French>
             </Key>
             <Key ID="STR_milbase">
                 <Original>%1 Military Base</Original>
@@ -8471,20 +8466,18 @@
                 <Turkish>Akaryakıt İstasyonu</Turkish>
             </Key>
             <Key ID="STR_milAdministration">
-                <Original>Military Administration</Original>
-                <Russian>Военная администрация</Russian>
-                <Chinesesimp>军事管理机构</Chinesesimp>
-                <Korean>군 행정부</Korean>
-                <French>Administration militaire</French>
-                <Turkish>Askeri İdare</Turkish>
+                <Original>%1 Military Administration</Original>
+                <Russian>%1 Военная администрация</Russian>
+                <Chinesesimp>%1 军事管理机构</Chinesesimp>
+                <Korean>%1 군 행정부</Korean>
+                <French>%1 Administration militaire</French>
             </Key>
             <Key ID="STR_headquarters">
-                <Original>Your Headquarters</Original>
-                <Russian>Штаб</Russian>
-                <Korean>당신의 본부</Korean>
-                <French>Votre QG</French>
-                <Chinesesimp>你的总部</Chinesesimp>
-                <Turkish>Karargahınız</Turkish>
+                <Original>%1 Headquarters</Original>
+                <Russian>%1 Штаб</Russian>
+                <Korean>%1 본부</Korean>
+                <French>%1 Quartier général</French>
+                <Chinesesimp>%1 总部</Chinesesimp>
             </Key>
         </Container>
         <Container name="system_chats">

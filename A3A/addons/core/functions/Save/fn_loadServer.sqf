@@ -99,9 +99,7 @@ if (isServer) then {
 		};
 	} forEach controlsX;
 
-	{
-		[_x] call A3A_fnc_mrkUpdate
-	} forEach (markersX - controlsX);
+	[markersX - controlsX] call A3U_fnc_mrkUpdateBulk;
 
 	if (count watchpostsFIA > 0) then {
 		markersX = markersX + watchpostsFIA;

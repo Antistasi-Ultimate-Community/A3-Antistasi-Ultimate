@@ -117,9 +117,9 @@ traderPosition = _traderPosition;
 publicVariable "traderPosition";
 
 _traderMarker = createMarkerLocal ["TraderMarker", _traderPosition];
-_traderMarker setMarkerTypeLocal "hd_objective";
+_traderMarker setMarkerTypeLocal "A3AU_dealer_mrk";
 _traderMarker setMarkerSizeLocal [1, 1];
-_traderMarker setMarkerTextLocal (localize "STR_marker_arms_dealer");
+_traderMarker setMarkerTextLocal "";
 _traderMarker setMarkerColorLocal "ColorUNKNOWN";
 _traderMarker setMarkerAlpha 1;
 traderMarker = _traderMarker;
@@ -135,5 +135,7 @@ deleteVehicle _barrel;
 deleteVehicle _smokeEffect;
 deleteVehicle _trigger;
 deleteMarker _traderMarkerVague;
+
+[traderMarker] call A3A_fnc_mrkUpdate;
 
 [_taskId, "TRADER", 5] spawn A3A_fnc_taskDelete;
