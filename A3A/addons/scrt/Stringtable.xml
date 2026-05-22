@@ -11016,6 +11016,14 @@
                 <French>Missions de conquête</French>
                 <Turkish>Kuşatma Görevleri</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_random_text">
+                <Original>Random Missions</Original>
+                <Russian>Случайные миссии</Russian>
+                <Chinesesimp>随机任务</Chinesesimp>
+                <Korean>랜덤 임무</Korean>
+                <French>Missions aléatoires</French>
+                <Turkish>Rastgele Görevler</Turkish>
+            </Key>
         </Container>
         <Container name="dialog_headquarters">
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_text">

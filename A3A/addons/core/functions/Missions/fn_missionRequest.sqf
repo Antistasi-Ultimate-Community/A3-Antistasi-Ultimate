@@ -8,11 +8,13 @@ params ["_type", ["_requester", clientOwner], ["_silent", false]];
 waitUntil {isNil "A3A_missionRequestInProgress"};
 A3A_missionRequestInProgress = true;
 
-if(isNil "_type") then {
+private _isRandom = _type isEqualTo "RAN";
+
+if(isNil "_type" || {_isRandom}) then {
 	private _types = ["CON","DES","LOG","SUPP","RES","CONVOY"];
 	_type = selectRandom (_types - A3A_activeTasks);
-	_silent = true;
-};
+	_silent = !(_isRandom);
+}; // tfw you add a "random mission" button just to realize it already checks for isNil anyway
 if (isNil "_type" or leader group petros != petros) exitWith { A3A_missionRequestInProgress = nil };
 if (_type in A3A_activeTasks) exitWith {
 	if (!_silent) then {[petros, "globalChat", localize "STR_chats_mission_request_already_type"] remoteExec ["A3A_fnc_commsMP",_requester]};
