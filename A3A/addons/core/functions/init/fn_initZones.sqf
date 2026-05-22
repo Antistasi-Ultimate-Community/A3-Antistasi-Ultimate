@@ -193,7 +193,7 @@ if (!_hardCodedAntennas) then {
     antennas apply {
         _mrkFinal = createMarker [format ["Ant%1", mapGridPosition _x], position _x];
         _mrkFinal setMarkerShapeLocal "ICON";
-        _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
+        _mrkFinal setMarkerTypeLocal "";
         _mrkFinal setMarkerColorLocal "ColorWhite";
 		_mrkFinal setMarkerAlphaLocal 0.3;
         _mrkFinal setMarkerText "";
@@ -242,7 +242,7 @@ if (count _posAntennas > 0) then {
 				antennas pushBack _antenna;
 				_mrkFinal = createMarker [format ["Ant%1", mapGridPosition _antenna], _posAntennas select _i];
 				_mrkFinal setMarkerShapeLocal "ICON";
-				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
+				_mrkFinal setMarkerTypeLocal "";
 				_mrkFinal setMarkerColorLocal "ColorWhite";
 				_mrkFinal setMarkerAlphaLocal 0.5;
 				_mrkFinal setMarkerText "";

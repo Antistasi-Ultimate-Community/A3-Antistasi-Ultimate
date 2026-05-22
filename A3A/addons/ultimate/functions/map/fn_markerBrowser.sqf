@@ -503,7 +503,8 @@ private _markerBuckets = [
     ["Seaports", "Seaports", seaports apply { [_x] call _toDummyMarkerName }],
     ["Military Bases", "Military Bases", milbases apply {[_x] call _toDummyMarkerName}],
     ["Air Bases", "Air Bases", airportsX apply { [_x] call _toDummyMarkerName }],
-    ["Military Administrations", "Military Administrations", +milAdministrationsX]
+    ["Military Administrations", "Military Administrations", +milAdministrationsX],
+    ["Radio Towers", "Radio Towers", antennas apply { [_x] call _toDummyMarkerName }]
 ];
 
 private _refreshList = {
@@ -881,7 +882,8 @@ lbClear _categoryCombo;
     ["Seaports", "Seaports"],
     ["Military Bases", "Military Bases"],
     ["Air Bases", "Air Bases"],
-    ["Military Administrations", "Military Administrations"]
+    ["Military Administrations", "Military Administrations"],
+    ["Radio Towers", "Radio Towers"]
 ] apply {
     _x params ["_label", "_categoryKey"];
 
