@@ -12606,6 +12606,12 @@
                 <French>%2 attaque des positions critiques à l'intérieur de %1 ! Défendez la ville à tout prix.</French>
                 <Turkish>%2, %1 içerisindeki kritik mevzilere saldırıyor! Şehri ne pahasına olursa olsun savunun.</Turkish>
             </Key>
+            <Key ID="STR_townBattle_task">
+                <Original>%1 Skirmish - %2 Contact</Original>
+            </Key>
+            <Key ID="STR_townBattle_desc">
+                <Original>%2 is fighting local citizens within %1! The citizens have revolted against %2, and now they rely on you. Local rebel cells are prepared to aid your efforts. If you succeed, the city will join your cause. Defend the city and prove your worth!</Original>
+            </Key>
             <Key ID="STR_A3A_Missions_AS_Official_task_header">
                 <Original>Kill %1 Officer</Original>
                 <Russian>Убейте офицера %1</Russian>
