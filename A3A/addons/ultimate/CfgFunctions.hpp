@@ -102,6 +102,7 @@ class CfgFunctions
         {
             file = QPATHTOFOLDER(functions\zombie);
             class attackHeli {};
+            class handleZombieDeath {};
             class spawnZombie {};
             class spawnZombieCrater {};
             class spawnZombieRoar {};
