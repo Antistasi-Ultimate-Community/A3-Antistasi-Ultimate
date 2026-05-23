@@ -8,16 +8,18 @@ Description:
     display and returns them for later updates.
 
 Parameters:
-    0: _mapDisplay - Map display that owns the tooltip controls <DISPLAY>
+    0: _mapDisplay - Map display that owns the tooltip controls
 
 Optional:
     None.
 
 Example:
+(begin example)
     [findDisplay 12] call A3U_fnc_tooltipCreate;
+(end example)
 
 Returns:
-    Tooltip, ring, and ripple controls <ARRAY>
+    Tooltip, ring, and ripple controls
 
 Environment:
     Client, Unscheduled
@@ -26,11 +28,7 @@ Author:
     Maxx
 ---------------------------------------------------------------------------- */
 
-// Existing A3U_fnc_* public function name kept for backwards compatibility.
-
-if !assert(params [
-    ["_mapDisplay", nil, [displayNull]]
-]) exitWith {
+if !assert(params [["_mapDisplay", nil, [displayNull]]]) exitWith {
     [controlNull, controlNull, controlNull]
 };
 

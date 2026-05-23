@@ -8406,92 +8406,171 @@
         <Container name="marker_names">
             <Key ID="STR_outpost">
                 <Original>%1 Outpost</Original>
-                <Russian>Аванпост %1</Russian>
-                <Chinesesimp>%1 哨站</Chinesesimp>
-                <Korean>%1 전초 기지</Korean>
                 <French>%1 Avant-poste</French>
-                <Turkish>%1 Karakolu</Turkish>
+                <German>Außenposten %1</German>
+                <Czech>Předsunutá základna %1</Czech>
+                <ChineseSimplified>%1 哨站</ChineseSimplified>
+                <Korean>%1 전초기지</Korean>
+                <Russian>Аванпост %1</Russian>
+                <Italian>Avamposto %1</Italian>
+                <Spanish>Puesto avanzado %1</Spanish>
+                <Polish>Posterunek %1</Polish>
             </Key>
             <Key ID="STR_airbase">
                 <Original>%1 Airbase</Original>
-                <Russian>Авиабаза %1</Russian>
-                <Chinesesimp>%1 空军基地</Chinesesimp>
-                <Korean>%1 공군 기지</Korean>
                 <French>Base aérienne %1</French>
+                <German>Luftwaffenstützpunkt %1</German>
+                <Czech>Letecká základna %1</Czech>
+                <ChineseSimplified>%1 空军基地</ChineseSimplified>
+                <Korean>%1 공군 기지</Korean>
+                <Russian>Авиабаза %1</Russian>
+                <Italian>Base aerea %1</Italian>
+                <Spanish>Base aérea %1</Spanish>
+                <Polish>Baza lotnicza %1</Polish>
             </Key>
             <Key ID="STR_resources">
                 <Original>%1 Resources</Original>
-                <Russian>%1 Ресурсы</Russian>
-                <Chinesesimp>%1 资源</Chinesesimp>
-                <Korean>%1 자원채취소</Korean>
                 <French>%1 Ressources</French>
+                <German>%1 Rohstoffe</German>
+                <Czech>%1 Zdroje</Czech>
+                <ChineseSimplified>%1 资源</ChineseSimplified>
+                <Korean>%1 자원</Korean>
+                <Russian>%1 Ресурсы</Russian>
+                <Italian>Risorse %1</Italian>
+                <Spanish>%1 Recursos</Spanish>
+                <Polish>%1 Zasoby</Polish>
             </Key>
             <Key ID="STR_factory">
                 <Original>%1 Factory</Original>
-                <Russian>%1 Фабрика</Russian>
-                <Chinesesimp>%1 工厂</Chinesesimp>
-                <Korean>%1 공장</Korean>
                 <French>%1 Usine</French>
+                <German>Fabrik %1</German>
+                <Czech>Továrna %1</Czech>
+                <ChineseSimplified>%1 工厂</ChineseSimplified>
+                <Korean>%1 공장</Korean>
+                <Russian>%1 Фабрика</Russian>
+                <Italian>Fabbrica %1</Italian>
+                <Spanish>Fábrica %1</Spanish>
+                <Polish>Fabryka %1</Polish>
             </Key>
             <Key ID="STR_port_river">
                 <Original>%1 Riverport</Original>
-                <Russian>%1 Речной порт</Russian>
-                <Chinesesimp>%1 河港</Chinesesimp>
-                <Korean>%1 강항</Korean>
                 <French>%1 Port fluvial</French>
+                <German>Flusshafen %1</German>
+                <Czech>Říční přístav %1</Czech>
+                <ChineseSimplified>%1 河港</ChineseSimplified>
+                <Korean>%1 강 항구</Korean>
+                <Russian>%1 Речной порт</Russian>
+                <Italian>Porto fluviale %1</Italian>
+                <Spanish>Puerto fluvial %1</Spanish>
+                <Polish>Port rzeczny %1</Polish>
             </Key>
             <Key ID="STR_port_sea">
                 <Original>%1 Seaport</Original>
-                <Russian>%1 Морской порт</Russian>
-                <Chinesesimp>%1 海港</Chinesesimp>
-                <Korean>%1 항구</Korean>
                 <French>%1 Port maritime</French>
+                <German>Seehafen %1</German>
+                <Czech>Námořní přístav %1</Czech>
+                <ChineseSimplified>%1 海港</ChineseSimplified>
+                <Korean>%1 항구</Korean>
+                <Russian>%1 Морской порт</Russian>
+                <Italian>Porto marittimo %1</Italian>
+                <Spanish>Puerto marítimo %1</Spanish>
+                <Polish>Port morski %1</Polish>
             </Key>
             <Key ID="STR_milbase">
                 <Original>%1 Military Base</Original>
-                <Russian>Военная база %1</Russian>
-                <Chinesesimp>%1 军事基地</Chinesesimp>
-                <Korean>%1 군사 기지</Korean>
                 <French>%1 Base militaire</French>
-                <Turkish>%1 Askeri Üssü</Turkish>
+                <German>Militärbasis %1</German>
+                <Czech>Vojenská základna %1</Czech>
+                <ChineseSimplified>%1 军事基地</ChineseSimplified>
+                <Korean>%1 군사 기지</Korean>
+                <Russian>Военная база %1</Russian>
+                <Italian>Base militare %1</Italian>
+                <Spanish>Base militar %1</Spanish>
+                <Polish>Baza wojskowa %1</Polish>
             </Key>
             <Key ID="STR_radiotower">
-                <Original>Radio Tower</Original>
-                <Russian>Радиовышка</Russian>
-                <Chinesesimp>无线电塔</Chinesesimp>
-                <Korean>통신탑</Korean>
-                <French>Tour radio</French>
-                <Turkish>Radyo Kulesi</Turkish>
+                <Original>%1 Radio Tower</Original>
+                <French>%1 Tour radio</French>
+                <German>Funkturm %1</German>
+                <Czech>Rádiová věž %1</Czech>
+                <ChineseSimplified>%1 无线电塔</ChineseSimplified>
+                <Korean>%1 통신탑</Korean>
+                <Russian>Радиовышка %1</Russian>
+                <Italian>Torre radio %1</Italian>
+                <Spanish>Torre de radio %1</Spanish>
+                <Polish>Wieża radiowa %1</Polish>
             </Key>
             <Key ID="STR_supportcorridor">
                 <Original>%1 Support Corridor</Original>
-                <Russian>Коридор поддержки %1</Russian>
-                <Chinesesimp>%1 支援通道</Chinesesimp>
-                <Korean>%1 지원 방향</Korean>
                 <French>Couloir de soutien %1</French>
-                <Turkish>%1 Destek Koridoru</Turkish>
+                <German>Unterstützungskorridor %1</German>
+                <Czech>Podpůrný koridor %1</Czech>
+                <ChineseSimplified>%1 支援通道</ChineseSimplified>
+                <Korean>%1 지원 회랑</Korean>
+                <Russian>Коридор поддержки %1</Russian>
+                <Italian>Corridoio di supporto %1</Italian>
+                <Spanish>Corredor de apoyo %1</Spanish>
+                <Polish>Korytarz wsparcia %1</Polish>
             </Key>
             <Key ID="STR_fuelstation">
                 <Original>Fuel Station</Original>
-                <Russian>Заправка</Russian>
-                <Chinesesimp>加油站</Chinesesimp>
-                <Korean>주유소</Korean>
                 <French>Ravitaillement en carburant</French>
-                <Turkish>Akaryakıt İstasyonu</Turkish>
+                <German>Tankstelle</German>
+                <Czech>Čerpací stanice</Czech>
+                <ChineseSimplified>加油站</ChineseSimplified>
+                <Korean>주유소</Korean>
+                <Russian>Заправка</Russian>
+                <Italian>Stazione di rifornimento</Italian>
+                <Spanish>Gasolinera</Spanish>
+                <Polish>Stacja paliw</Polish>
             </Key>
             <Key ID="STR_milAdministration">
                 <Original>%1 Military Administration</Original>
-                <Russian>%1 Военная администрация</Russian>
-                <Chinesesimp>%1 军事管理机构</Chinesesimp>
-                <Korean>%1 군 행정부</Korean>
                 <French>%1 Administration militaire</French>
+                <German>Militärverwaltung %1</German>
+                <Czech>Vojenská správa %1</Czech>
+                <ChineseSimplified>%1 军事管理机构</ChineseSimplified>
+                <Korean>%1 군 행정부</Korean>
+                <Russian>%1 Военная администрация</Russian>
+                <Italian>Amministrazione militare %1</Italian>
+                <Spanish>Administración militar %1</Spanish>
+                <Polish>Administracja wojskowa %1</Polish>
             </Key>
             <Key ID="STR_headquarters">
                 <Original>%1 Headquarters</Original>
-                <Russian>%1 Штаб</Russian>
-                <Korean>%1 본부</Korean>
                 <French>%1 Quartier général</French>
-                <Chinesesimp>%1 总部</Chinesesimp>
+                <German>Hauptquartier %1</German>
+                <Czech>Velitelství %1</Czech>
+                <ChineseSimplified>%1 总部</ChineseSimplified>
+                <Korean>%1 본부</Korean>
+                <Russian>%1 Штаб</Russian>
+                <Italian>Quartier generale %1</Italian>
+                <Spanish>Cuartel general %1</Spanish>
+                <Polish>Kwatera główna %1</Polish>
+            </Key>
+            <Key ID="STR_destroyed">
+                <Original>(Destroyed)</Original>
+                <French>(Détruit)</French>
+                <German>(Zerstört)</German>
+                <Czech>(Zničeno)</Czech>
+                <ChineseSimplified>(已摧毁)</ChineseSimplified>
+                <Korean>(파괴됨)</Korean>
+                <Russian>(Уничтожено)</Russian>
+                <Italian>(Distrutto)</Italian>
+                <Spanish>(Destruido)</Spanish>
+                <Polish>(Zniszczone)</Polish>
+            </Key>
+            <Key ID="STR_site_destroyed">
+                <Original>&lt;t color='#b40c0c'&gt;Site has been destroyed&lt;/t&gt;&lt;br/&gt;No bonus or effect will be gained</Original>
+                <French>&lt;t color='#b40c0c'&gt;Le site a été détruit&lt;/t&gt;&lt;br/&gt;Aucun bonus ou effet ne sera accordé</French>
+                <German>&lt;t color='#b40c0c'&gt;Standort wurde zerstört&lt;/t&gt;&lt;br/&gt;Es wird kein Bonus oder Effekt gewährt</German>
+                <Czech>&lt;t color='#b40c0c'&gt;Místo bylo zničeno&lt;/t&gt;&lt;br/&gt;Nebude získán žádný bonus ani efekt</Czech>
+                <ChineseSimplified>&lt;t color='#b40c0c'&gt;地点已被摧毁&lt;/t&gt;&lt;br/&gt;不会获得任何加成或效果</ChineseSimplified>
+                <Korean>&lt;t color='#b40c0c'&gt;거점이 파괴되었습니다&lt;/t&gt;&lt;br/&gt;보너스나 효과를 얻지 못합니다</Korean>
+                <Russian>&lt;t color='#b40c0c'&gt;Объект уничтожен&lt;/t&gt;&lt;br/&gt;Бонус или эффект не будут получены</Russian>
+                <Italian>&lt;t color='#b40c0c'&gt;Il sito è stato distrutto&lt;/t&gt;&lt;br/&gt;Non verrà ottenuto alcun bonus o effetto</Italian>
+                <Spanish>&lt;t color='#b40c0c'&gt;El sitio ha sido destruido&lt;/t&gt;&lt;br/&gt;No se obtendrá ninguna bonificación ni efecto</Spanish>
+                <Polish>&lt;t color='#b40c0c'&gt;Miejsce zostało zniszczone&lt;/t&gt;&lt;br/&gt;Nie zostanie przyznana żadna premia ani efekt</Polish>
             </Key>
         </Container>
         <Container name="system_chats">

@@ -692,6 +692,6 @@ addMissionEventHandler ["Map", {
     };
 }];
 
-[markersX] call A3U_fnc_mrkUpdateBulk;
+[markersX + milAdministrationsX + mrkAntennas] call A3U_fnc_mrkUpdateBulk;
 
 [CBA_EVENT_CLIENT_INIT_DONE, []] call FUNCMAIN(triggerLocalEvent);

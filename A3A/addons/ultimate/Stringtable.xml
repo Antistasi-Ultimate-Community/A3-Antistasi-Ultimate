@@ -630,6 +630,30 @@
             <ChineseSimplified>沿海据点，可能有敌方巡逻艇。&lt;br /&gt;包含一个战利品箱，并使摧毁存放的船只更容易。</ChineseSimplified>
             <Japanese>敵の巡回艇がいる可能性のある沿岸拠点。&lt;br /&gt;戦利品箱があり、保管されている船を破壊しやすくなります。</Japanese>
         </Key>
+        <Key ID="STR_A3U_HOVER_RADIOTOWER_REBAL_DESC">
+            <Original>Intercepts enemy communications to reveal hidden troop movements.&lt;br/&gt;Boosts the strategic defense priority of nearby rebel bases.</Original>
+            <French>Intercepte les communications ennemies pour révéler les mouvements de troupes cachés.&lt;br/&gt;Renforce la priorité stratégique de défense des bases rebelles voisines.</French>
+            <German>Fängt feindliche Kommunikation ab, um versteckte Truppenbewegungen aufzudecken.&lt;br/&gt;Erhöht die strategische Verteidigungspriorität nahegelegener Rebellenbasen.</German>
+            <Czech>Zachycuje nepřátelskou komunikaci a odhaluje skryté pohyby jednotek.&lt;br/&gt;Zvyšuje strategickou prioritu obrany blízkých povstaleckých základen.</Czech>
+            <ChineseSimplified>拦截敌方通信，揭示隐藏的部队调动。&lt;br/&gt;提升附近叛军基地的战略防御优先级。</ChineseSimplified>
+            <Korean>적의 통신을 가로채 숨겨진 병력 이동을 드러냅니다.&lt;br/&gt;인근 반군 기지의 전략적 방어 우선순위를 높입니다.</Korean>
+            <Russian>Перехватывает вражескую связь, раскрывая скрытые перемещения войск.&lt;br/&gt;Повышает стратегический приоритет обороны ближайших баз повстанцев.</Russian>
+            <Italian>Intercetta le comunicazioni nemiche per rivelare i movimenti nascosti delle truppe.&lt;br/&gt;Aumenta la priorità strategica della difesa delle basi ribelli vicine.</Italian>
+            <Spanish>Intercepta las comunicaciones enemigas para revelar movimientos ocultos de tropas.&lt;br/&gt;Aumenta la prioridad estratégica de defensa de las bases rebeldes cercanas.</Spanish>
+            <Polish>Przechwytuje wrogą komunikację, ujawniając ukryte ruchy wojsk.&lt;br/&gt;Zwiększa strategiczny priorytet obrony pobliskich baz rebeliantów.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RADIOTOWER_DESC">
+            <Original>Jams local rebel radio frequencies to disrupt communications.&lt;br/&gt;Boosts the defensive capabilities of nearby enemy bases.&lt;br/&gt;Capture this tower to intercept enemy communications.</Original>
+            <French>Brouille les fréquences radio locales des rebelles pour perturber les communications.&lt;br/&gt;Renforce les capacités défensives des bases ennemies voisines.&lt;br/&gt;Capturez cette tour pour intercepter les communications ennemies.</French>
+            <German>Stört lokale Funkfrequenzen der Rebellen, um deren Kommunikation zu unterbrechen.&lt;br/&gt;Verbessert die Verteidigungsfähigkeiten nahegelegener feindlicher Basen.&lt;br/&gt;Erobere diesen Turm, um feindliche Kommunikation abzufangen.</German>
+            <Czech>Ruší místní rádiové frekvence rebelů a narušuje jejich komunikaci.&lt;br/&gt;Posiluje obranné schopnosti blízkých nepřátelských základen.&lt;br/&gt;Obsazením této věže můžete zachytávat nepřátelskou komunikaci.</Czech>
+            <ChineseSimplified>干扰本地叛军无线电频率以破坏其通信。&lt;br/&gt;提升附近敌军基地的防御能力。&lt;br/&gt;占领这座信号塔以拦截敌方通信。</ChineseSimplified>
+            <Korean>지역 반군의 무전 주파수를 교란하여 통신을 방해합니다.&lt;br/&gt;인근 적 기지의 방어 능력을 강화합니다.&lt;br/&gt;적의 통신을 가로채려면 이 통신탑을 점령하십시오.</Korean>
+            <Russian>Подавляет местные радиочастоты повстанцев, нарушая их связь.&lt;br/&gt;Усиливает оборонительные возможности ближайших вражеских баз.&lt;br/&gt;Захватите эту вышку, чтобы перехватывать вражескую связь.</Russian>
+            <Italian>Disturba le frequenze radio locali dei ribelli per interrompere le comunicazioni.&lt;br/&gt;Potenzia le capacità difensive delle basi nemiche vicine.&lt;br/&gt;Cattura questa torre per intercettare le comunicazioni nemiche.</Italian>
+            <Spanish>Inhibe las frecuencias de radio locales de los rebeldes para interrumpir las comunicaciones.&lt;br/&gt;Mejora las capacidades defensivas de las bases enemigas cercanas.&lt;br/&gt;Captura esta torre para interceptar las comunicaciones enemigas.</Spanish>
+            <Polish>Zakłóca lokalne częstotliwości radiowe rebeliantów, utrudniając komunikację.&lt;br/&gt;Wzmacnia zdolności obronne pobliskich baz wroga.&lt;br/&gt;Przejmij tę wieżę, aby przechwytywać wrogą komunikację.</Polish>
+        </Key>
         <Key ID="STR_A3U_CONTEXT_FASTTRAVEL_PLAYER_ONLY">
             <Original>Only available for player-controlled markers.</Original>
             <French>Disponible uniquement pour les marqueurs contrôlés par le joueur.</French>

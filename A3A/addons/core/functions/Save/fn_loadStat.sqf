@@ -280,7 +280,7 @@ if (_varName in specialVarLoads) then {
                     Error_1("Loading Antennas: Unable to create ruin for %1", typeOf _antenna);
                 };
 
-                deleteMarker _mrk;
+                _mrk setMarkerType "A3AU_radiotower_dead_mrk";
             };
             publicVariable "antennas";
             publicVariable "antennasDead";

@@ -193,9 +193,9 @@ if (!_hardCodedAntennas) then {
     antennas apply {
         _mrkFinal = createMarker [format ["Ant%1", mapGridPosition _x], position _x];
         _mrkFinal setMarkerShapeLocal "ICON";
-        _mrkFinal setMarkerTypeLocal "";
+        _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
         _mrkFinal setMarkerColorLocal "ColorWhite";
-		_mrkFinal setMarkerAlphaLocal 0.3;
+		_mrkFinal setMarkerAlphaLocal 1;
         _mrkFinal setMarkerText "";
 		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
@@ -214,9 +214,10 @@ if (!_hardCodedAntennas) then {
                 _mrk = [mrkAntennas, _antenna] call BIS_fnc_nearestPosition;
                 antennas = antennas - [_antenna];
                 antennasDead pushBack _antenna;
-                deleteMarker _mrk;
+                _mrk setMarkerType "A3AU_radiotower_dead_mrk";
                 publicVariable "antennas";
                 publicVariable "antennasDead";
+                [_mrk] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
                 ["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
                 ["TaskFailed", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", Occupants];
             }
@@ -242,9 +243,9 @@ if (count _posAntennas > 0) then {
 				antennas pushBack _antenna;
 				_mrkFinal = createMarker [format ["Ant%1", mapGridPosition _antenna], _posAntennas select _i];
 				_mrkFinal setMarkerShapeLocal "ICON";
-				_mrkFinal setMarkerTypeLocal "";
+				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
 				_mrkFinal setMarkerColorLocal "ColorWhite";
-				_mrkFinal setMarkerAlphaLocal 0.5;
+				_mrkFinal setMarkerAlphaLocal 1;
 				_mrkFinal setMarkerText "";
 				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
@@ -262,12 +263,13 @@ if (count _posAntennas > 0) then {
 						};
 
 						_mrk = [mrkAntennas, _antenna] call BIS_fnc_nearestPosition;
-						antennas = antennas - [_antenna];
-						antennasDead pushBack  _antenna;
-						deleteMarker _mrk;
-						publicVariable "antennas";
-						publicVariable "antennasDead";
-						["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
+                        antennas = antennas - [_antenna];
+                        antennasDead pushBack  _antenna;
+                        _mrk setMarkerType "A3AU_radiotower_dead_mrk";
+                        publicVariable "antennas";
+                        publicVariable "antennasDead";
+                        [_mrk] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+                        ["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
 						["TaskFailed", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", Occupants];
 					}
 				];
@@ -380,10 +382,18 @@ _milAdminPositions apply {
         private _markerName = _killed getVariable ["A3A_milAdminMarker", ""];
 
         [_killed, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+        
+        if (_markerName != "") then {
+            destroyedSites pushBackUnique _markerName;
+            publicVariable "destroyedSites";
+            
+            [_markerName] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+        };
     }];
 };
 
 if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk};
+if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
 
 // markersX append milAdministrationsX;
 

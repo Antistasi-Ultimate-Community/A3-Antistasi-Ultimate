@@ -8,16 +8,18 @@ Description:
     map marker currently closest to the mouse cursor.
 
 Parameters:
-    0: _arguments - Per-frame handler arguments
-        [display, map control, threshold] <ARRAY>
-    1: _handle - Per-frame handler id supplied by the scheduler <NUMBER>
+    0: _arguments - The function's input arguments <ARRAY>
+    1: _handle - The per-frame handler ID <NUMBER>
 
 Optional:
-    None.
+    2: _thresholdPixels - Pixel distance threshold for marker detection <NUMBER>
+        (default: 32)
 
 Example:
-    [[findDisplay 12, (findDisplay 12) displayCtrl 51, 32], -1]
+    (begin example)
+    [[findDisplay 12, (findDisplay 12) displayCtrl 51, 32], -1] 
         call A3U_fnc_mapTooltip;
+    (end example)
 
 Returns:
     Nothing <NONE>
@@ -29,13 +31,7 @@ Author:
     Maxx
 ---------------------------------------------------------------------------- */
 
-// Existing A3U_fnc_* public function name kept for backwards compatibility.
-
-if !assert(params [
-    ["_arguments", [], [[]]],
-    ["_handle", -1, [0]]
-]) exitWith {};
-
+if !assert(params [["_arguments", [], [[]]], ["_handle", -1, [0]]]) exitWith {};
 if ((count _arguments) < 3) exitWith {};
 
 private _mapDisplay = _arguments param [0, displayNull, [displayNull]];
@@ -44,16 +40,12 @@ private _thresholdPixels = _arguments param [2, 32, [0]];
 
 private _resetHoverUi = {
     params ["_display", "_tooltipControl", "_hoverRingControl"];
-
     if (!isNull _tooltipControl) then {
         _tooltipControl ctrlShow false;
         _tooltipControl ctrlSetFade 1;
         _tooltipControl ctrlCommit 0;
     };
-
-    if (!isNull _hoverRingControl) then {
-        _hoverRingControl ctrlShow false;
-    };
+    if (!isNull _hoverRingControl) then { _hoverRingControl ctrlShow false; };
 
     _display setVariable ["A3U_tipLastMrk", ""];
     _display setVariable ["A3U_tipFadeInStart", -1];
@@ -61,15 +53,9 @@ private _resetHoverUi = {
     _display setVariable ["A3U_tipHoverScreen", []];
 };
 
-if (
-    isNull _mapDisplay
-    || {isNull _mapControl}
-    || {!visibleMap}
-) exitWith {
+if (isNull _mapDisplay || {isNull _mapControl} || {!visibleMap}) exitWith {
     if (!isNull _mapDisplay) then {
-        private _tooltipControl = _mapDisplay getVariable ["A3U_tooltipCtrl", controlNull];
-        private _hoverRingControl = _mapDisplay getVariable ["A3U_tooltipRingCtrl", controlNull];
-        [_mapDisplay, _tooltipControl, _hoverRingControl] call _resetHoverUi;
+        [_mapDisplay, _mapDisplay getVariable ["A3U_tooltipCtrl", controlNull], _mapDisplay getVariable ["A3U_tooltipRingCtrl", controlNull]] call _resetHoverUi;
     };
 };
 
@@ -77,11 +63,7 @@ private _tooltipControl = _mapDisplay getVariable ["A3U_tooltipCtrl", controlNul
 private _hoverRingControl = _mapDisplay getVariable ["A3U_tooltipRingCtrl", controlNull];
 private _rippleControl = _mapDisplay getVariable ["A3U_tooltipRippleCtrl", controlNull];
 
-if (
-    isNull _tooltipControl
-    || {isNull _hoverRingControl}
-    || {isNull _rippleControl}
-) then {
+if (isNull _tooltipControl || {isNull _hoverRingControl} || {isNull _rippleControl}) then {
     private _tooltipControls = [_mapDisplay] call A3U_fnc_tooltipCreate;
     if (_tooltipControls isEqualType []) then {
         _tooltipControls params [
@@ -89,7 +71,6 @@ if (
             ["_newHoverRingControl", controlNull, [controlNull]],
             ["_newRippleControl", controlNull, [controlNull]]
         ];
-
         if (isNull _tooltipControl) then { _tooltipControl = _newTooltipControl; };
         if (isNull _hoverRingControl) then { _hoverRingControl = _newHoverRingControl; };
         if (isNull _rippleControl) then { _rippleControl = _newRippleControl; };
@@ -101,92 +82,66 @@ if (
 };
 
 private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
-
 private _mousePosition = getMousePosition;
+private _mouseX = _mousePosition # 0;
+private _mouseY = _mousePosition # 1;
+
 private _nearestMarker = "";
 private _nearestDistanceSquared = 1e12;
 private _nearestScreenPosition = [];
-
 private _selectionThreshold = (_thresholdPixels / 1000) max 0.01;
+private _thresholdSq = _selectionThreshold * _selectionThreshold;
 
 /* ----------------------------------------------------------------------------
-    Candidate markers:
-    - Use authoritative markersX (already synced and used elsewhere)
-    - Add specials only if they exist
+    FAST Distance Checking
 ---------------------------------------------------------------------------- */
-private _candidates = (+markersX + milAdministrationsX + mrkAntennas - controlsX);
+private _candidates = markersX + milAdministrationsX + mrkAntennas + ["Synd_HQ", "synd_hq", "TraderMarker", "tradermarker", "RallyPointMarker", "rallypointmarker"];
 
 {
-    if (_x in allMapMarkers) then { _candidates pushBackUnique _x; };
-} forEach ["Synd_HQ", "synd_hq", "TraderMarker", "tradermarker", "RallyPointMarker", "rallypointmarker"];
-
-/* ----------------------------------------------------------------------------
-    Find nearest marker under cursor (skip hidden markers)
----------------------------------------------------------------------------- */
-private _origFromDum = {
-    params ["_m"];
-    private _out = _m;
-    while { (count _out) >= 3 && { (_out select [0, 3]) == "Dum" } } do {
-        _out = _out select [3, (count _out) - 3];
-    };
-    _out
-};
-
-{
-    private _m = _x;
-
-    private _orig = [_m] call _origFromDum;
+    if (_x in controlsX) then { continue; };
+    
+    private _orig = _x;
+    if ((_orig find "Dum") == 0) then { _orig = _orig select [3, (count _orig) - 3]; };
     if ([_orig] call A3U_fnc_isMarkerHidden) then { continue; };
 
-    private _screenPosition = _mapControl ctrlMapWorldToScreen (getMarkerPos _m);
+    private _screenPosition = _mapControl ctrlMapWorldToScreen (getMarkerPos _x);
     if (_screenPosition isEqualTo []) then { continue; };
 
-    private _dx = (_screenPosition # 0) - (_mousePosition # 0);
-    private _dy = (_screenPosition # 1) - (_mousePosition # 1);
+    private _dx = (_screenPosition # 0) - _mouseX;
+    private _dy = (_screenPosition # 1) - _mouseY;
     private _dsq = (_dx * _dx) + (_dy * _dy);
 
     if (_dsq < _nearestDistanceSquared) then {
         _nearestDistanceSquared = _dsq;
-        _nearestMarker = _m;
+        _nearestMarker = _x;
         _nearestScreenPosition = _screenPosition;
     };
 } forEach _candidates;
 
-if (
-    _nearestMarker != ""
-    && {_nearestDistanceSquared <= (_selectionThreshold * _selectionThreshold)}
-) then {
 
-    private _origNearest = [_nearestMarker] call _origFromDum;
+if (_nearestMarker != "" && {_nearestDistanceSquared <= _thresholdSq}) then {
 
-    /* --------------------------------------------------------------------
-        On hover change:
-        - update display hover state
-        - refresh meta locally (no global broadcasts required)
-    -------------------------------------------------------------------- */
+    private _origNearest = _nearestMarker;
+    if ((_origNearest find "Dum") == 0) then { _origNearest = _origNearest select [3, (count _origNearest) - 3]; };
+
     private _lastMarker = _mapDisplay getVariable ["A3U_tipLastMrk", ""];
     if (_lastMarker != _nearestMarker) then {
         _mapDisplay setVariable ["A3U_tipLastMrk", _nearestMarker];
         _mapDisplay setVariable ["A3U_tipFadeInStart", diag_tickTime];
         _mapDisplay setVariable ["A3U_tipFadeOutStart", -1];
 
-        // Self-heal tooltip meta on this client
         [_origNearest] call A3U_fnc_mrkUpdate;
         _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
     };
 
     _mapDisplay setVariable ["A3U_tipHoverScreen", _nearestScreenPosition];
     _mapDisplay setVariable ["A3U_tipFadeOutStart", -1];
-
     if ((_mapDisplay getVariable ["A3U_tipFadeInStart", -1]) < 0) then {
         _mapDisplay setVariable ["A3U_tipFadeInStart", diag_tickTime];
     };
 
     /* --------------------------------------------------------------------
-        Tooltip text/icon:
-        - Use meta if present
-        - Fallback to markerText / marker name if not
-        (Ring should NOT depend on meta existing)
+        Tooltip text/icon configuration
     -------------------------------------------------------------------- */
     private _markerMetadata = _hoverMetaMap getOrDefault [_nearestMarker, []];
     if (_markerMetadata isEqualTo []) then { _markerMetadata = _hoverMetaMap getOrDefault [_origNearest, []]; };
@@ -206,12 +161,22 @@ if (
     private _lb = _hoverTextRaw find "<br";
     if (_lb > -1) then { _hoverTitle = _hoverTextRaw select [0, _lb]; };
 
-    private _iconPath = "";
-    if (_flagMarkerType != "") then {
-        _iconPath = getText (configFile >> "CfgMarkers" >> _flagMarkerType >> "icon");
+    private _isDestroyed = false;
+    if (_origNearest in destroyedSites) then { _isDestroyed = true; };
+    if (!_isDestroyed && {_origNearest in mrkAntennas && {markerType _origNearest == "A3AU_radiotower_dead_mrk"}}) then { _isDestroyed = true; };
+    if (!_isDestroyed && {_origNearest in milAdministrationsX}) then {
+        private _destroyedAdmins = missionNamespace getVariable ["A3A_destroyedMilAdministrations", []];
+        if (_destroyedAdmins findIf { !isNull _x && {getMarkerPos _origNearest distance2D _x < 30} } != -1) then { _isDestroyed = true; };
     };
 
-    private _isAntenna = _origNearest in mrkAntennas;
+    private _iconPath = "";
+    if (_isDestroyed) then {
+        _iconPath = getText (configFile >> "CfgMarkers" >> "A3AU_destroyed_mrk" >> "icon");
+    } else {
+        if (_flagMarkerType != "") then {
+            _iconPath = getText (configFile >> "CfgMarkers" >> _flagMarkerType >> "icon");
+        };
+    };
 
     if (!A3AU_setting_alwaysShowMarkerName) then {
         private _tooltipStructuredText = if (_iconPath != "") then {
@@ -225,6 +190,7 @@ if (
         private _tooltipHeight = (ctrlTextHeight _tooltipControl) + 0.02;
         private _tooltipPositionX = (_nearestScreenPosition # 0) + 0.018;
         private _tooltipPositionY = (_nearestScreenPosition # 1) - (_tooltipHeight * 0.5);
+        
         _tooltipControl ctrlSetPosition [_tooltipPositionX, _tooltipPositionY, _tooltipWidth, _tooltipHeight];
 
         private _fadeInStartTime = _mapDisplay getVariable ["A3U_tipFadeInStart", diag_tickTime];
@@ -240,11 +206,10 @@ if (
     };
 
     /* --------------------------------------------------------------------
-        Ring highlight (always show, independent of meta)
+        Ring highlight
     -------------------------------------------------------------------- */
     if (!isNull _hoverRingControl) then {
         private _baseRingSize = 0.07;
-
         private _fadeInStartTime = _mapDisplay getVariable ["A3U_tipFadeInStart", -1];
         if (_fadeInStartTime < 0) then {
             _fadeInStartTime = diag_tickTime;
@@ -252,13 +217,12 @@ if (
         };
 
         private _fadeInAlpha = ((diag_tickTime - _fadeInStartTime) / 0.12) min 1 max 0;
-
         private _pulseDegrees = diag_tickTime * 0.7 * 360;
         private _ringSize = _baseRingSize * (1 + ((sin _pulseDegrees) * 0.08));
-
+        
         private _ringPositionX = (_nearestScreenPosition # 0) - (_ringSize * 0.5);
         private _ringPositionY = (_nearestScreenPosition # 1) - (_ringSize * 0.5);
-
+        
         _hoverRingControl ctrlSetPosition [_ringPositionX, _ringPositionY, _ringSize, _ringSize];
         _hoverRingControl ctrlCommit 0;
         _hoverRingControl ctrlSetAngle [0, 0.5, 0.5];
@@ -267,7 +231,6 @@ if (
     };
 
 } else {
-
     if ((_mapDisplay getVariable ["A3U_tipLastMrk", ""]) != "") then {
         if ((_mapDisplay getVariable ["A3U_tipFadeOutStart", -1]) < 0) then {
             _mapDisplay setVariable ["A3U_tipFadeOutStart", diag_tickTime];
@@ -277,18 +240,18 @@ if (
     private _fadeOutStartTime = _mapDisplay getVariable ["A3U_tipFadeOutStart", -1];
     if (_fadeOutStartTime >= 0) then {
         private _fadeOutAlpha = 1 - (((diag_tickTime - _fadeOutStartTime) / 0.12) min 1 max 0);
-
+        
         if (!isNull _hoverRingControl) then {
             _hoverRingControl ctrlSetTextColor [0.8, 0.8, 0.8, 0.55 * _fadeOutAlpha];
             if (_fadeOutAlpha <= 0) then { _hoverRingControl ctrlShow false; };
         };
-
+        
         if (!isNull _tooltipControl) then {
             _tooltipControl ctrlSetFade (1 - _fadeOutAlpha);
             _tooltipControl ctrlCommit 0;
             if (_fadeOutAlpha <= 0) then { _tooltipControl ctrlShow false; };
         };
-
+        
         if (_fadeOutAlpha <= 0) then {
             _mapDisplay setVariable ["A3U_tipLastMrk", ""];
             _mapDisplay setVariable ["A3U_tipFadeOutStart", -1];
@@ -301,7 +264,7 @@ if (
 };
 
 /* ----------------------------------------------------------------------------
-    Click ripple (unchanged)
+    Click ripple
 ---------------------------------------------------------------------------- */
 if (!isNull _rippleControl) then {
     private _rippleStartTime = _mapDisplay getVariable ["A3U_tipRippleStart", -1];
@@ -324,7 +287,7 @@ if (!isNull _rippleControl) then {
             private _ripplePositionX = (_rippleCenter # 0) - (_rippleSize * 0.5);
             private _ripplePositionY = (_rippleCenter # 1) - (_rippleSize * 0.5);
             private _rippleAlpha = (1 - _progress) * 0.65;
-
+            
             _rippleControl ctrlSetPosition [_ripplePositionX, _ripplePositionY, _rippleSize, _rippleSize];
             _rippleControl ctrlCommit 0;
             _rippleControl ctrlSetAngle [0, 0.5, 0.5];
