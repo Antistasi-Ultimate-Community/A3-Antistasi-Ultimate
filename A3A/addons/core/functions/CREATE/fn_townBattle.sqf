@@ -60,16 +60,18 @@ private _taskId = "townBattle" + str A3A_taskCount;
 [[teamPlayer,civilian,Occupants],_taskId,[format [localize "STR_townBattle_desc",_nameDest,_factionName],format [localize "STR_townBattle_task",_nameDest,_factionName],_mrkDest],_posDest,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
 [_taskId, "townBattle", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
+townSkirmishes pushBack _mrkDest; // Should probably move to A3A_townData in future
+bigAttackInProgress = true; publicVariable "bigAttackInProgress";
 
 if (isNil "_delay") then {
     _delay = 300 + 60 * (markerPos "Synd_HQ" distance2d _posDest) / 2000;            // +1 min per 2km
 };
 
 // Create the attacking force
-private _cityData = server getVariable [_mrkDest, [0,0,0,0]];
+private _cityData = A3A_townData get _mrkDest;
 _cityData params [["_numCiv",0], ["_numVeh",0], ["_supportGov",0], ["_supportReb",0]];
 
-private _vehCount = round (0.7 + random 0.5 + 0.13 * (sqrt _numCiv) + 1.3 * A3A_balancePlayerScale);
+private _vehCount = round (0.7 + random 1 + 0.13 * (sqrt _numCiv) + 1.3 * A3A_balancePlayerScale);
 
 //params ["_side", "_airbase", "_target", "_resPool", "_vehCount", "_delay", "_modifiers", "_attackType", "_reveal"];
 
@@ -90,6 +92,8 @@ if (time > _missionExpireTime) exitWith {
     [_taskId, "townBattle", 0] spawn A3A_fnc_taskDelete;
 
     [10,-10,_mrkDest,false] spawn A3A_fnc_citySupportChange;
+    townSkirmishes = townSkirmishes - [_mrkDest];
+    bigAttackInProgress = false; publicVariable "bigAttackInProgress";
 };
 
 ServerInfo_2("Launching %1 Battle Against %2 from %3", _side, _mrkDest, _mrkOrigin);
@@ -144,8 +148,6 @@ _data params ["_resources", "_vehicles", "_crewGroups", "_cargoGroups"];
 // } else { 
 //     _data = [_side, _mrkOrigin, _mrkDest, "attack", _vehCount] call A3A_fnc_createAttackForcePolice;
 // };
-
-bigAttackInProgress = true; publicVariable "bigAttackInProgress";
 
 // Termination conditions
 private _soldiers = [];
@@ -212,3 +214,5 @@ waitUntil {sleep 5; (spawner getVariable _mrkDest == 2)};
 {deleteVehicle _x} forEach _soldiers;
 {deleteGroup _x} forEach _civGroups;
 {deleteGroup _x} forEach _groupsEnemy;
+
+townSkirmishes = townSkirmishes - [_mrkDest];

@@ -393,6 +393,7 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\init);
             //Main initialisation functions.
             class initServer {};
+            class initCities {};
             class initClient {};
             class setupMonitor {};
             class startGame {};
@@ -402,6 +403,8 @@ class CfgFunctions
             class cityinfo {};
             class clientIdleChecker {};
             class credits {};
+            class getCityData {};
+            class getMapInfo {};
             class initACE {};
             class initACEUnconsciousHandler {};
             class initBases {};

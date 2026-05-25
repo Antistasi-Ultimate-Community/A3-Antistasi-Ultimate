@@ -66,7 +66,7 @@ while {true} do {
 		private _city = _x;
 		private _resAddCity = 0;
 		private _hrAddCity = 0;
-		private _cityData = server getVariable [_city, [0,0,0,0]];
+		private _cityData = A3A_townData get _city;
 		_cityData params [["_numCiv",0], ["_numVeh",0], ["_supportGov",0], ["_supportReb",0]];
 
 		private _citySide = sidesX getVariable [_city,sideUnknown];
@@ -92,11 +92,13 @@ while {true} do {
 		_resAdd = _resAdd + _resAddCity;
 		_hrAdd = _hrAdd + _hrAddCity;
 
-		if (_supportGov < _supportReb && {_citySide isNotEqualTo teamPlayer}) then {
-			if (random 100 > 50) then {
+		private _canFlip = (_supportGov < _supportReb && (_citySide isNotEqualTo teamPlayer));
+		private _canStartSkirmish = (random 100 > 50 && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
+
+		if (_canFlip) then {
+			if (_canStartSkirmish) then {
 				private _possibleOrigins = outposts select {sidesX getVariable [_x, sideUnknown] == _citySide};
 				private _finalOrigin = selectRandom (_possibleOrigins select { (getMarkerPos _x) distance2D (getMarkerPos _city) < 3000 });
-				// private _finalOrigin = [_citySide, _city] call A3A_fnc_availableBasesLand;
 				if (isNil "_finalOrigin") then { _finalOrigin = selectRandom _possibleOrigins };
 				[_citySide, _city, _finalOrigin] spawn A3A_fnc_townBattle;
 			} else {
