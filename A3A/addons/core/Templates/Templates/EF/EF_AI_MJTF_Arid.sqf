@@ -164,14 +164,10 @@ private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_NATO_Arid\CSLA_NATO_Arid.sqf",
-    #include "..\vehicleVariants\Vanilla_NATO_Arid\GM_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\RF_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\Vanilla_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\WS_NATO_Arid.sqf"
@@ -317,26 +313,7 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
-
+_loadoutData set ["glasses", ["G_Aviator"]];
 _loadoutData set ["goggles", ["G_Combat"]];
 
 private _slglammo = ["UGL_FlareWhite_F", "UGL_FlareWhite_F", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell"];

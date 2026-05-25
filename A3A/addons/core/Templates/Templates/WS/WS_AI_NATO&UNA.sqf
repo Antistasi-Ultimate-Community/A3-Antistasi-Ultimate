@@ -164,19 +164,12 @@ private _SAM = [];
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM_desert.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
     #include "..\vehicleVariants\Vanilla_NATO_Arid\Vanilla_NATO_Arid.sqf",
-    #include "..\vehicleVariants\Vanilla_NATO_Arid\CSLA_NATO_Arid.sqf",
-    //#include "..\vehicleVariants\WS_NATO_UNA\RF_NATO_UNA.sqf",
-    #include "..\vehicleVariants\WS_NATO_UNA\GM_NATO_UNA.sqf",
     #include "..\vehicleVariants\WS_NATO_UNA\WS_NATO_UNA.sqf",
-    #include "..\vehicleVariants\GM_police.sqf",
-    #include "..\vehicleVariants\Vanilla_AAF\SPE_AAF.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\EF_NATO_Arid.sqf"
 ]] call _fnc_saveToTemplate;
 
@@ -411,26 +404,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", ["G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
-
-_loadoutData set ["goggles", ["G_Combat","G_Combat_lxWS"]];
+_loadoutData set ["glasses", ["G_Aviator"]];
+_loadoutData set ["goggles", ["G_Combat_lxWS"]];
 
 _sfAccessories = ["acc_pointer_IR", 10];
 _sfTlOptics = ["optic_ACO_grn", 1, "optic_Holosight_blk_F", 2, "optic_Hamr", 4, "optic_MRCO", 3];

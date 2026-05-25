@@ -345,27 +345,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
-
-_loadoutData set ["goggles", ["G_Combat"]];
+_loadoutData set ["glasses", ["G_Aviator"]];
+_loadoutData set ["goggles", []];
 
 //TODO - ACE overrides for misc essentials, medical and engineer gear
 

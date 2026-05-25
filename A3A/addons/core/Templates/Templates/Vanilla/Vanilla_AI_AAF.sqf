@@ -317,27 +317,8 @@ _loadoutData set ["helmets", []];
 _loadoutData set ["slHat", ["H_Beret_blk", "H_MilCap_dgtl"]];
 _loadoutData set ["sniHats", ["H_Booniehat_dgtl"]];
 
-_loadoutData set ["glasses", [
-    "G_Shades_Black", 1.5,
-    "G_Shades_Blue", 0.5,
-    "G_Shades_Green", 0.5,
-    "G_Shades_Red", 0.5,
-    "G_Aviator", 1,
-    "G_Spectacles", 1.25,
-    "G_Spectacles_Tinted", 0.75,
-    "G_Sport_Blackred", 0.34,
-    "G_Sport_BlackWhite", 0.34,
-    "G_Sport_Blackyellow", 0.33,
-    "G_Sport_Greenblack", 0.33,
-    "G_Sport_Checkered", 0.33,
-    "G_Sport_Red", 0.33,
-    "G_Squares", 1.25,
-    "G_Squares_Tinted", 0.75
-]];
-_loadoutData set ["goggles", [
-    "G_Combat", 4, 
-    "G_Lowprofile", 6
-]];
+_loadoutData set ["glasses", ["G_Aviator"]];
+_loadoutData set ["goggles", []];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies]; //this line defines the basic medical loadout for vanilla
