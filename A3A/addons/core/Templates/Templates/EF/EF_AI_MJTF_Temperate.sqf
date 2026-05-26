@@ -350,25 +350,7 @@ _sfLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
 _sfLoadoutData set ["helmets", ["EF_H_HelmetB_light_black_slick", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_FullCamo_Black"]];
 _sfLoadoutData set ["binoculars", ["Laserdesignator"]];
 _sfLoadoutData set ["NVGs", ["EF_LPNVG_Tan", "EF_LPNVG"]];
-_sfLoadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_sfLoadoutData set ["glasses", []];
 _sfLoadoutData set ["goggles", ["G_Combat"]];
 
 _sfLoadoutData set ["slRifles", [
@@ -431,25 +413,7 @@ _eliteLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
 _eliteLoadoutData set ["helmets", ["EF_H_HelmetB_light_black_slick", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_FullCamo_Black"]];
 _eliteLoadoutData set ["binoculars", ["Laserdesignator"]];
 _eliteLoadoutData set ["NVGs", ["EF_LPNVG_Tan", "EF_LPNVG"]];
-_eliteLoadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_eliteLoadoutData set ["glasses", []];
 _eliteLoadoutData set ["goggles", ["G_Combat"]];
 
 _eliteLoadoutData set ["slRifles", [
