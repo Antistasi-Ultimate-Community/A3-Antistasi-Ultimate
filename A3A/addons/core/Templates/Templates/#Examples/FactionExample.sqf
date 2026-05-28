@@ -135,20 +135,10 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
     ["", []]
 ]] call _fnc_saveToTemplate;
 
-/// or do it like this
-/* ["animations", [
-    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf"
-]] call _fnc_saveToTemplate; */
-
 //vehicle skins
 ["variants", [
     ["vehClass", ["paint", 1]]
 ]] call _fnc_saveToTemplate;
-
-/// or do it like this
-/* ["variants", [
-    #include "..\vehicleVariants\Vanilla_NATO_Arid\CSLA_NATO_Arid.sqf"
-]] call _fnc_saveToTemplate; */
 
 /////////////////////
 ///  Identities   ///
