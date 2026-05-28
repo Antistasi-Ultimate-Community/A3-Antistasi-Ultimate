@@ -87,6 +87,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 			[_side, _veh] call A3A_fnc_createVehicleCrew;
 		};
 		case (_typeX in (FactionGet(all,"vehiclesFixedWing") + FactionGet(all,"vehiclesHelis"))): {
+			/*
 			_veh addEventHandler ["GetIn", {
 				if (_this select 1 != "driver") exitWith {};
 				_unit = _this select 2;
@@ -95,6 +96,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 					[localize "STR_A3A_Create_AIVEHINIT_header", localize "STR_A3A_Create_AIVEHINIT_only_humans"] call A3A_fnc_customHint;
 				};
 			}];
+			*/
 
 			if (_veh isKindOf "Helicopter" && {_typeX in FactionGet(all,"vehiclesTransportAir")}) then {
 				_veh setVariable ["within",true];
