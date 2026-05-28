@@ -68,6 +68,8 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;             // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
 ["vehiclesPlanesAA", []] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
+["vehiclesPlanesLargeCAS", []] call _fnc_saveToTemplate; //This
+["vehiclesPlanesLargeAA", []] call _fnc_saveToTemplate;  // and this, are identical to the above, use them in case they don't fit in hangars. They will spawn on the runway instead.
 ["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
 //no need for vehicle variant currently
 ["vehiclesPlanesGunship", []] call _fnc_saveToTemplate;     // planes like V-44X armed, AC-130 or pelican from OPTRE, used in GUNSHIP support
