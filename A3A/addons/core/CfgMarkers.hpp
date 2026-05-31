@@ -218,6 +218,31 @@ class CfgMarkers
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_old_soviet_co.paa);
 	};
 
+	class CUP_LC_LUF: flag_NATO 
+	{
+		name = "Lombakkan Union Front";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
+	};
+	class CUP_LC_NLAF: flag_NATO 
+	{
+		name = "North Lombakkan Armed Forces";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
+	};
+	class CUP_LC_SLDF: flag_NATO 
+	{
+		name = "South Lombakkan Defence Forces";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
+	};
+	class a3u_flag_PLA : flag_NATO 
+	{
+		name = "People's Liberation Army";
+		icon = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+	};
+
 	// This ukraine flag is for the STALKER modset, not current day ukraine
 	// Please don't use it for current day, it desensitises people to the reality that ukraine is in a war
 	class a3u_flag_stalker_ukraine: a3u_flag_optre_unsc 
@@ -280,28 +305,10 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 	};
-	class CUP_LC_LUF: flag_NATO 
+	class a3u_flag_E22_northstar : flag_NATO 
 	{
-		name = "Lombakkan Union Front";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
-	};
-	class CUP_LC_NLAF: flag_NATO 
-	{
-		name = "North Lombakkan Armed Forces";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
-	};
-	class CUP_LC_SLDF: flag_NATO 
-	{
-		name = "South Lombakkan Defence Forces";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
-	};
-	class a3u_flag_PLA : flag_NATO 
-	{
-		name = "People's Liberation Army";
-		icon = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+		name = "Jointcom";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
 	};
 };
