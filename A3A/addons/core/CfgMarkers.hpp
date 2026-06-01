@@ -311,4 +311,10 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
 	};
+	class a3u_flag_E22_raf : flag_NATO 
+	{
+		name = "RAF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
+	};
 };

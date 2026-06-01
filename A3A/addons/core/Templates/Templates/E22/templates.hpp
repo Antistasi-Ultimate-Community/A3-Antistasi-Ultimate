@@ -6,13 +6,12 @@
     };
     class E22_Northstar_Base : E22_Base
     {
-        logo = QPATHTOFOLDER(Templates\Templates\E22\images\flag_e22_northstar_co.paa);
+        logo = QPATHTOFOLDER(Templates\Templates\E22\images\flag_e22_ca.paa);
         flagTexture = QPATHTOFOLDER(Templates\Templates\E22\images\flag_e22_northstar_co.paa);
         requiredAddons[] = {"Vests_F_Levi", "Weapons_F_JCA_IA", "Uniforms_F_JCA_IE", "Data_F_JCA_LS", "Weapons_1_F_lxWS"}; // E22 Northstar, JCA IA, JCA IE, JCA LS, WS
     };
-    class E22_RAF_Base : E22_Base
+    class E22_RAF_Base : E22_Northstar_Base
     {
-        logo = QPATHTOFOLDER(Templates\Templates\E22\images\flag_e22_raf_co.paa);
         flagTexture = QPATHTOFOLDER(Templates\Templates\E22\images\flag_e22_raf_co.paa);
         requiredAddons[] = {"Vests_F_RAF", "Uniforms_F_JCA_IE"}; // E22 Northstar, JCA IE
     };
