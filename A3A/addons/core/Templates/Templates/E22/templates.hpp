@@ -19,7 +19,6 @@
     class E22_Northstar_Jointcom_Temperate : E22_Northstar_Base
     {
         side = "Occ";
-        flagTexture = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
         name = "Jointcom (Temperate)";
         file = "E22_Northstar_Jointcom_Temperate";
         description = "";
@@ -35,7 +34,6 @@
     class E22_RAF_Arid : E22_RAF_Base
     {
         side = "Inv";
-        flagTexture = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
         name = "RAF (Arid)";
         file = "E22_RAF_Arid";
         description = "";
