@@ -92,7 +92,7 @@ while {true} do {
 		_resAdd = _resAdd + _resAddCity;
 		_hrAdd = _hrAdd + _hrAddCity;
 
-		private _canFlip = (_supportGov < _supportReb && (_citySide isNotEqualTo teamPlayer));
+		private _canFlip = (_supportGov < _supportReb && (_citySide isNotEqualTo teamPlayer) && !(_city in destroyedSites));
 		private _canStartSkirmish = (random 100 > 50 && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
 
 		if (_canFlip) then {
