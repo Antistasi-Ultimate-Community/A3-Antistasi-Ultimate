@@ -90,7 +90,7 @@ class CfgMissions
 	A3A_Mission(regero, "Antistasi Ultimate - Kingdom of Regero")
 	A3A_Mission(drakovac, "Antistasi Ultimate - Drakovac")
 	A3A_Mission(green_sea_2023, "Antistasi Ultimate - Green Sea 2023")
-	A3a_Mission(egl_laghisola, "Antistasi Ultimate - Laghisola")
+	A3A_Mission(egl_laghisola, "Antistasi Ultimate - Laghisola")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif
