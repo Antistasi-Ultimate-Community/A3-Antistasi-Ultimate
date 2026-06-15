@@ -137,7 +137,12 @@ class underbarrelJCA
 	ITEM(JCA_bipod_04_olive, 100, 50);
 	ITEM(JCA_bipod_04_sand, 100, 50);
 
-	ITEM(JCA_bipod_AWM_black, 100, 50);
+	ITEM(JCA_bipod_AWM_01_black, 100, 50);
+	ITEM(JCA_bipod_AWM_02_black, 100, 50);
+
+	ITEM(JCA_bipod_M107_black, 100, 50);
+	ITEM(JCA_bipod_M107_olive, 100, 50);
+	ITEM(JCA_bipod_M107_sand, 100, 50);
 };
 
 class pointersJCA 
@@ -166,6 +171,10 @@ class pointersJCA
 	ITEM(JCA_acc_LightMount_Pistol_black, 50, PN_STOCK);
 	ITEM(JCA_acc_LightMount_Pistol_olive, 50, PN_STOCK);
 	ITEM(JCA_acc_LightMount_Pistol_sand, 50, PN_STOCK);
+
+	ITEM(JCA_acc_LaserModule_Mk23_black_Pointer, 50, PN_STOCK);
+	ITEM(JCA_acc_LaserModule_Mk23_olive_Pointer, 50, PN_STOCK);
+	ITEM(JCA_acc_LaserModule_Mk23_sand_Pointer, 50, PN_STOCK);
 };
 
 class muzzlesJCA 
@@ -184,6 +193,18 @@ class muzzlesJCA
 	ITEM(JCA_muzzle_snds_556_advanced_black, 500, MZ_STOCK);
 	ITEM(JCA_muzzle_snds_556_advanced_olive, 500, MZ_STOCK);
 	ITEM(JCA_muzzle_snds_556_advanced_sand, 500, MZ_STOCK);
+
+	ITEM(JCA_muzzle_snds_556_Enhanced_black, 500, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_556_Enhanced_olive, 500, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_556_Enhanced_sand, 500, MZ_STOCK);
+
+	ITEM(JCA_muzzle_snds_M107_black, 1000, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_M107_olive, 1000, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_M107_sand, 1000, MZ_STOCK);
+
+	ITEM(JCA_muzzle_snds_300_Enhanced_black, 700, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_300_Enhanced_olive, 700, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_300_Enhanced_sand, 700, MZ_STOCK);
 
 	ITEM(JCA_muzzle_snds_AWM_black, 700, MZ_STOCK);
 	ITEM(JCA_muzzle_snds_AWM_olive, 700, MZ_STOCK);
@@ -219,22 +240,6 @@ class opticsJCA
 	class JCA_optic_AHO_olive { price = 600; stock = 100; };
 	class JCA_optic_AHO_sand { price = 600; stock = 100; };
 
-	class JCA_optic_MROS_black { price = 600; stock = 100; };
-	class JCA_optic_MROS_olive { price = 600; stock = 100; };
-	class JCA_optic_MROS_sand { price = 600; stock = 100; };
-
-	class JCA_optic_MROS_black_magnifier { price = 800; stock = 100; };
-	class JCA_optic_MROS_olive_magnifier { price = 800; stock = 100; };
-	class JCA_optic_MROS_sand_magnifier { price = 800; stock = 100; };
-
-	class JCA_optic_IHO_black { price = 600; stock = 100; };
-	class JCA_optic_IHO_olive { price = 600; stock = 100; };
-	class JCA_optic_IHO_sand { price = 600; stock = 100; };
-
-	class JCA_optic_IHO_black_magnifier { price = 800; stock = 100; };
-	class JCA_optic_IHO_olive_magnifier { price = 800; stock = 100; };
-	class JCA_optic_IHO_sand_magnifier { price = 800; stock = 100; };
-
 	class JCA_optic_AICO_black { price = 700; stock = 100; };
 	class JCA_optic_AICO_olive { price = 700; stock = 100; };
 	class JCA_optic_AICO_sand { price = 700; stock = 100; };
@@ -243,9 +248,21 @@ class opticsJCA
 	class JCA_optic_ARO_olive { price = 600; stock = 100; };
 	class JCA_optic_ARO_sand { price = 600; stock = 100; };
 
+	class JCA_optic_ARS_black { price = 600; stock = 100; };
+	class JCA_optic_ARS_olive { price = 600; stock = 100; };
+	class JCA_optic_ARS_sand { price = 600; stock = 100; };
+
+	class JCA_optic_CRBS_black { price = 1000; stock = 100; };
+	class JCA_optic_CRBS_olive { price = 1000; stock = 100; };
+	class JCA_optic_CRBS_sand { price = 1000; stock = 100; };
+
 	class JCA_optic_CRO_black { price = 600; stock = 100; };
 	class JCA_optic_CRO_olive { price = 600; stock = 100; };
 	class JCA_optic_CRO_sand { price = 600; stock = 100; };
+
+	class JCA_optic_HPCS_black { price = 1000; stock = 100; };
+	class JCA_optic_HPCS_olive { price = 1000; stock = 100; };
+	class JCA_optic_HPCS_sand { price = 1000; stock = 100; };
 
 	class JCA_optic_HPPO_black { price = 1000; stock = 100; };
 	class JCA_optic_HPPO_RAD_black { price = 1300; stock = 100; };
@@ -258,21 +275,37 @@ class opticsJCA
 	class JCA_optic_ICO_olive { price = 600; stock = 100; };
 	class JCA_optic_ICO_sand { price = 600; stock = 100; };
 
-	class JCA_optic_MRO_black { price = 400; stock = 100; };
+	class JCA_optic_IHO_black { price = 600; stock = 100; };
+	class JCA_optic_IHO_olive { price = 600; stock = 100; };
+	class JCA_optic_IHO_sand { price = 600; stock = 100; };
 
-	class JCA_optic_ROS_black { price = 400; stock = 100; };
+	class JCA_optic_IHO_black_magnifier { price = 800; stock = 100; };
+	class JCA_optic_IHO_olive_magnifier { price = 800; stock = 100; };
+	class JCA_optic_IHO_sand_magnifier { price = 800; stock = 100; };
 
 	class JCA_optic_MPO_black { price = 400; stock = 100; };
 
-	class JCA_optic_PRO_black { price = 400; stock = 100; };
+	class JCA_optic_MRCS_black { price = 700; stock = 100; };
+	class JCA_optic_MRCS_olive { price = 700; stock = 100; };
+	class JCA_optic_MRCS_sand { price = 700; stock = 100; };
+
+	class JCA_optic_MRO_black { price = 400; stock = 100; };
+
+	class JCA_optic_MROS_black { price = 600; stock = 100; };
+	class JCA_optic_MROS_olive { price = 600; stock = 100; };
+	class JCA_optic_MROS_sand { price = 600; stock = 100; };
+
+	class JCA_optic_MROS_black_magnifier { price = 800; stock = 100; };
+	class JCA_optic_MROS_olive_magnifier { price = 800; stock = 100; };
+	class JCA_optic_MROS_sand_magnifier { price = 800; stock = 100; };
 
 	class JCA_optic_MRPS_black { price = 1000; stock = 100; };
 	class JCA_optic_MRPS_olive { price = 1000; stock = 100; };
 	class JCA_optic_MRPS_sand { price = 1000; stock = 100; };
 
-	class JCA_optic_CRBS_black { price = 1000; stock = 100; };
-	class JCA_optic_CRBS_olive { price = 1000; stock = 100; };
-	class JCA_optic_CRBS_sand { price = 1000; stock = 100; };
+	class JCA_optic_PRO_black { price = 400; stock = 100; };
+
+	class JCA_optic_ROS_black { price = 400; stock = 100; };
 };
 
 class magazinesJCA 
