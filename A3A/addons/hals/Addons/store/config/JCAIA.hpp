@@ -18,6 +18,10 @@ class handgunsJCA
 	ITEM(JCA_hgun_M9A1_black_F, 140, PISTOL_STOCK);
 	ITEM(JCA_hgun_M9A1_olive_F, 140, PISTOL_STOCK);
 	ITEM(JCA_hgun_M9A1_sand_F, 140, PISTOL_STOCK);
+
+	ITEM(JCA_hgun_G17_black_F, 150, PISTOL_STOCK);
+	ITEM(JCA_hgun_G17_olive_F, 150, PISTOL_STOCK);
+	ITEM(JCA_hgun_G17_sand_F, 150, PISTOL_STOCK);
 };
 
 class riflesJCA 
@@ -60,6 +64,22 @@ class riflesJCA
 	ITEM(JCA_arifle_M4A4_GL_black_F, 1850, RIFLE_STOCK);
 	ITEM(JCA_arifle_M4A4_GL_olive_F, 1850, RIFLE_STOCK);
 	ITEM(JCA_arifle_M4A4_GL_sand_F, 1850, RIFLE_STOCK);
+	
+	ITEM(JCA_arifle_HK433_black_F, 1450, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK433_olive_F, 1450, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK433_sand_F, 1450, RIFLE_STOCK);
+
+	ITEM(JCA_arifle_HK433_short_black_F, 1350, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK433_short_olive_F, 1350, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK433_short_sand_F, 1350, RIFLE_STOCK);
+
+	ITEM(JCA_arifle_HK437_AFG_black_F, 1650, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK437_AFG_olive_F, 1650, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK437_AFG_sand_F, 1650, RIFLE_STOCK);
+
+	ITEM(JCA_arifle_HK437_VFG_black_F, 1650, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK437_VFG_olive_F, 1650, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK437_VFG_sand_F, 1650, RIFLE_STOCK);
 };
 
 class sniperRiflesJCA 
@@ -82,6 +102,10 @@ class sniperRiflesJCA
 	ITEM(JCA_srifle_AWM_black_F, 1800, 15);
 	ITEM(JCA_srifle_AWM_olive_F, 1800, 15);
 	ITEM(JCA_srifle_AWM_sand_F, 1800, 15);
+
+	ITEM(JCA_srifle_M107_black_F, 2350, 15);
+	ITEM(JCA_srifle_M107_olive_F, 2350, 15);
+	ITEM(JCA_srifle_M107_sand_F, 2350, 15);
 };
 
 class smgJCA 
@@ -118,6 +142,10 @@ class launchersJCA
 {
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_launchers"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
+
+	ITEM(JCA_launch_M72_black_F, 900, LAUNCHER_STOCK);
+	ITEM(JCA_launch_M72_olive_F, 900, LAUNCHER_STOCK);
+	ITEM(JCA_launch_M72_sand_F, 900, LAUNCHER_STOCK);
 
 	ITEM(JCA_launch_Mk153_black_F, 1300, LAUNCHER_STOCK);
 	ITEM(JCA_launch_Mk153_olive_F, 1300, LAUNCHER_STOCK);
@@ -511,6 +539,26 @@ class magazinesJCA
 		price = 100;
 		stock = MAGAZINE_STOCK;
 	};
+	class JCA_30Rnd_300BLK_EMAG {
+		price = 120;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_30Rnd_300BLK_Green_EMAG {
+		price = 120;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_30Rnd_300BLK_IR_EMAG {
+		price = 120;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_30Rnd_300BLK_Red_EMAG {
+		price = 120;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_30Rnd_300BLK_Yellow_EMAG {
+		price = 120;
+		stock = MAGAZINE_STOCK;
+	};
 	///////////////////////////////////////////////////////
 	// DMRs, Sniper Rifles
 	///////////////////////////////////////////////////////
@@ -552,6 +600,47 @@ class magazinesJCA
 	};
 	class JCA_5Rnd_338LM_AWM_Tracer_IR_Mag {
 		price = 200;
+		stock = MAGAZINE_STOCK;
+	};
+
+	class JCA_10Rnd_127x99_M107_Mag {
+		price = 350;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_M107_Tracer_Green_Mag {
+		price = 350;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_M107_Tracer_IR_Mag {
+		price = 350;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_M107_Tracer_Red_Mag {
+		price = 350;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_M107_Tracer_Yellow_Mag {
+		price = 350;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_APDS_M107_Mag {
+		price = 450;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_APDS_M107_Tracer_Green_Mag {
+		price = 450;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_APDS_M107_Tracer_IR_Mag {
+		price = 450;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_APDS_M107_Tracer_Red_Mag {
+		price = 450;
+		stock = MAGAZINE_STOCK;
+	};
+	class JCA_10Rnd_127x99_APDS_M107_Tracer_Yellow_Mag {
+		price = 450;
 		stock = MAGAZINE_STOCK;
 	};
 };
