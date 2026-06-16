@@ -30,8 +30,6 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["EF_B_SDV_01_MJTF_Des"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -49,8 +47,8 @@ private _lightAPCs = [];
 private _APCs = ["B_T_APC_Wheeled_01_cannon_F"];
 private _IFVs = ["EF_B_AAV9_MJTF_Wdl", "EF_B_AAV9_MJTF_Wdl", "EF_B_AAV9_50mm_MJTF_Wdl"];
 
-private _airborneVehicles = ["B_T_APC_Wheeled_01_cannon_F","B_T_UGV_01_olive_F"];
-private _lightTanks = ["B_T_UGV_01_olive_F"];
+private _airborneVehicles = ["B_T_APC_Wheeled_01_cannon_F"];
+private _lightTanks = [];
 private _tanks = ["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F"];
 private _aa = ["EF_B_MRAP_01_LAAD_MJTF_Wdl", "B_T_APC_Tracked_01_AA_F"];
 
@@ -80,7 +78,7 @@ private _artillery = ["B_T_MBT_01_mlrs_F"];
     ["APC_Wheeled_01_mortar_base_lxWS",["64Rnd_60mm_Mo_guided_lxWS"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_T_UAV_03_dynamicLoadout_F", "B_UAV_05_F", "B_UAV_02_dynamicLoadout_F", "EF_QAV80_MJTF_Wdl"]] call _fnc_saveToTemplate;
 private _uavsPortable = ["B_UAV_01_F"];
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
@@ -89,7 +87,17 @@ private _militiaTrucks = ["B_T_Truck_01_transport_F", "B_T_Truck_01_covered_F"];
 private _militiaCars = ["B_G_Offroad_01_F"];
 private _militiaAPCs = [];
 
-private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+private _policeVehs = ["B_GEN_Offroad_01_gen_F", "EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+
+if (_hasRF) then {
+    _policeVehs pushBack "B_GEN_Pickup_covered_rf";
+    _transportHelicopters pushBack "B_Heli_EC_04_military_RF";
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+    _airborneVehicles append ["B_T_APC_Wheeled_01_atgm_lxWS", "B_T_APC_Wheeled_01_command_lxWS"];
+};
 
 private _staticMG = ["B_G_HMG_02_high_F", "B_HMG_01_high_F"];
 private _staticAT = ["B_T_Static_AT_F","B_GMG_01_high_F"];
@@ -108,48 +116,6 @@ private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
-
-
-if (_hasHelicopters) then {
-    #include "..\DLC_content\vehicles\Helicopters\Vanilla_NATO.sqf"
-};
-
-if (_hasJets) then {
-	#include "..\DLC_content\vehicles\Jets\Vanilla_NATO.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_NATO_Temparate.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_NATO_Temparate.sqf"
-};
-
-//If Western Sahara DLC
-if (_hasWs) then {
-    #include "..\DLC_content\vehicles\WS\Vanilla_NATO_Temparate.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\Vanilla_NATO_Temparate.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\vehicles\GM\Vanilla_NATO_Temparate.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO_Temparate.sqf"
-};
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
@@ -195,14 +161,10 @@ if (_hasCSLA) then {
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_NATO_Temparate\CSLA_NATO_Temparate.sqf",
-    #include "..\vehicleVariants\Vanilla_NATO_Temparate\GM_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\RF_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\Vanilla_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\WS_NATO_Temparate.sqf"
@@ -231,42 +193,6 @@ private _faces = ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
 "EF_Black_01","EF_Black_01_lush","EF_White_01","EF_White_01_lush",
 "EF_White_02","EF_White_02_lush","EF_Black_02","EF_Black_02_lush"
 ];
-if (_hasSPE) then {
-    _faces append [
-        #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\SPE_german.sqf",
-        #include "..\DLC_content\voices\SPE_french.sqf"
-    ];
-};
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_livonian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_white.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_african.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_russian.sqf",
-        #include "..\DLC_content\faces\SOG\SOG_faces_tanoa.sqf"
-    ];
-};
-if (_hasRF) then {
-    _faces append [
-        #include "..\DLC_content\faces\RF\RF_white.sqf"
-    ];
-};
-if (_hasGM) then {
-    _faces append [
-        #include "..\DLC_content\faces\GM\GM_white.sqf"
-    ];
-    _voices append [
-        #include "..\DLC_content\voices\GM_german.sqf"
-    ];
-};
-if (_hasWS) then {
-    _faces append [
-        #include "..\DLC_content\faces\WS\WS_white.sqf"
-    ];
-};
 
 ["voices", _voices] call _fnc_saveToTemplate;
 ["sfVoices", ["Male01ENGB", "Male02ENGB", "Male03ENGB", "Male04ENGB", "Male05ENGB"]] call _fnc_saveToTemplate;
@@ -339,10 +265,6 @@ _loadoutData set ["officerUniforms", ["U_B_CombatUniform_tshirt_mcam_wdL_f", "U_
 _loadoutData set ["officerVests", ["V_TacVest_oli"]];
 _loadoutData set ["officerHats", ["H_MilCap_wdl", "H_Beret_Colonel", "H_Beret_02"]];
 
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_NATO.sqf"
-};
-
 _loadoutData set ["cloakUniforms", ["U_B_T_Sniper_F", "U_B_T_FullGhillie_tna_F"]];
 _loadoutData set ["cloakVests", ["V_Chestrig_oli"]];
 
@@ -390,25 +312,7 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_loadoutData set ["glasses", ["G_Aviator"]];
 _loadoutData set ["goggles", ["G_Combat"]];
 
 private _slglammo = ["UGL_FlareWhite_F", "UGL_FlareWhite_F", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell"];
@@ -446,25 +350,7 @@ _sfLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
 _sfLoadoutData set ["helmets", ["EF_H_HelmetB_light_black_slick", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_FullCamo_Black"]];
 _sfLoadoutData set ["binoculars", ["Laserdesignator"]];
 _sfLoadoutData set ["NVGs", ["EF_LPNVG_Tan", "EF_LPNVG"]];
-_sfLoadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_sfLoadoutData set ["glasses", []];
 _sfLoadoutData set ["goggles", ["G_Combat"]];
 
 _sfLoadoutData set ["slRifles", [
@@ -527,25 +413,7 @@ _eliteLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
 _eliteLoadoutData set ["helmets", ["EF_H_HelmetB_light_black_slick", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_FullCamo_Black"]];
 _eliteLoadoutData set ["binoculars", ["Laserdesignator"]];
 _eliteLoadoutData set ["NVGs", ["EF_LPNVG_Tan", "EF_LPNVG"]];
-_eliteLoadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_eliteLoadoutData set ["glasses", []];
 _eliteLoadoutData set ["goggles", ["G_Combat"]];
 
 _eliteLoadoutData set ["slRifles", [
@@ -763,44 +631,7 @@ _officerLoadoutData set ["SMGs", [
 ["arifle_MXC_khk_F", "", "acc_pointer_IR", "optic_Aco", ["30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag_Tracer"], [], ""]
 ]];
 
-//
-if (_hasMarksman) then {
-    #include "..\DLC_content\weapons\Marksman\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_NATO.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\Apex\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\Contact\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\RF\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\WS\Vanilla_NATO_Arid.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_NATO_Arid.sqf"
-    #include "..\DLC_content\weapons\GM\Vanilla_NATO.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_NATO.sqf"
-    #include "..\DLC_content\weapons\SOG\Vanilla_NATO.sqf"
-};
+// (placeholder_content) Benefits from WS, RF, EF content. Vehicles + equipment.
 
 /////////////////////////////////
 //    Unit Type Definitions    //

@@ -38,14 +38,6 @@ private _civPlanes = [];
 
 ["vehiclesCivFuel", ["vn_b_wheeled_m54_fuel_airport", 0.2]] call _fnc_saveToTemplate;
 
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_CIV.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
-	#include "..\MOD_content\SPEX\vehicles\Vanilla_CIV.sqf"
-};
-
 ["vehiclesCivCar", _civCarsWithWeights] call _fnc_saveToTemplate;
 ["vehiclesCivPlanes", _civPlanes] call _fnc_saveToTemplate;
 

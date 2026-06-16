@@ -42,7 +42,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesIFVs", ["CUP_B_LAV25_green", "CUP_B_LAV25M240_green"]] call _fnc_saveToTemplate;
 
 
-private _vehiclesLightTanks = ["CUP_B_M1128_MGS_Woodland", "B_T_UGV_01_rcws_olive_F"];
+private _vehiclesLightTanks = ["CUP_B_M1128_MGS_Woodland"];
 
 if (isClass (configFile >> "CfgPatches" >> "QAV_Ripsaw")) then {
     _vehiclesLightTanks append ["qav_ripsaw_Mk44"];

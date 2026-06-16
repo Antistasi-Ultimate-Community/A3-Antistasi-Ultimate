@@ -33,8 +33,6 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["O_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["Land_Pod_Heli_Transport_04_covered_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_East_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_CSAT_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -44,7 +42,7 @@ private _basic = ["O_Quadbike_01_F"];
 private _unarmedVehicles = ["O_MRAP_02_F"];
 private _armedVehicles = ["O_MRAP_02_gmg_F","O_MRAP_02_hmg_F"];
 private _Trucks = ["O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_02_transport_F","O_Truck_02_covered_F"];
-private _cargoTrucks = ["O_Truck_02_cargo_lxWS","O_Truck_02_flatbed_lxWS","O_UGV_01_F","O_SFIA_Truck_02_cargo_lxWS","O_SFIA_Truck_02_flatbed_lxWS"];
+private _cargoTrucks = ["O_Truck_02_cargo_lxWS","O_Truck_02_flatbed_lxWS","O_SFIA_Truck_02_cargo_lxWS","O_SFIA_Truck_02_flatbed_lxWS"];
 private _ammoTrucks = ["O_Truck_02_Ammo_F","O_Truck_03_ammo_F","O_SFIA_Truck_02_Ammo_lxWS"];
 private _repairTrucks = ["O_Truck_03_repair_F","O_Truck_02_box_F","O_SFIA_Truck_02_box_lxWS"];
 private _fuelTrucks = ["O_Truck_03_fuel_F","O_Truck_02_fuel_F","O_SFIA_Truck_02_fuel_lxWS"];
@@ -53,7 +51,7 @@ private _lightAPCs = ["O_APC_Wheeled_02_hmg_lxWS","O_APC_Wheeled_02_unarmed_lxWS
 private _APCs = ["O_APC_Wheeled_02_rcws_v2_F"];
 private _IFVs = ["O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_30mm_lxWS"];
 private _airborneVehicles = ["O_APC_Wheeled_02_rcws_v2_F","O_APC_Wheeled_02_hmg_lxWS"];
-private _lightTanks = ["O_UGV_01_rcws_F"];
+private _lightTanks = [];
 private _tanks = ["O_MBT_02_cannon_F","O_MBT_02_railgun_F","O_SFIA_MBT_02_cannon_lxWS"];
 private _aa = ["O_APC_Tracked_02_AA_F","O_SFIA_Truck_02_aa_lxWS","O_SFIA_APC_Tracked_02_AA_lxWS","O_G_Offroad_AA_lxWS","O_Tura_Offroad_armor_AA_lxWS"];
 
@@ -111,55 +109,6 @@ private _SAM = [];
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine", "APERSBoundingMine"]] call _fnc_saveToTemplate;
 
-if (_hasJets) then {
-	#include "..\DLC_content\vehicles\Jets\Vanilla_CSAT.sqf"
-};
-
-if (_hasHelicopters) then {
-    #include "..\DLC_content\vehicles\Helicopters\Vanilla_CSAT.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\police_offroad.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\vehicles\Lawsofwar\police_van.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\vehicles\Apex\Vanilla_CSAT_Arid.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\vehicles\RF\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\vehicles\Tanks\Vanilla_CSAT_Arid.sqf"
-};
-
-//If GM cdlc + extra AAF mod
-if (_hasGM) then {
-    #include "..\DLC_content\vehicles\GM\WS_SFIA_militia.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\vehicles\CSLA\WS_SFIA_militia.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\vehicles\SOG\Vanilla_AAF.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\vehicles\SPE\Vanilla_AAF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
-};
-
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
@@ -206,17 +155,12 @@ if (_hasEF) then {
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM_desert.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
     #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.sqf",
     #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.sqf",
-    #include "..\vehicleVariants\GM_police.sqf",
 	#include "..\vehicleVariants\WS_SFIA\GM_SFIA.sqf",
 	#include "..\vehicleVariants\WS_SFIA\CSLA_SFIA.sqf"
 ]] call _fnc_saveToTemplate;
@@ -231,26 +175,13 @@ if (_hasEF) then {
 private _faces = [
     "PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03","PersianHead_A3_04_a","PersianHead_A3_04_l","PersianHead_A3_04_sa"
 ];
-private _sffaces = ["RussianHead_1","RussianHead_2","RussianHead_3","RussianHead_4","RussianHead_5"];
-if (_hasWs) then {
-    _faces append [
-        #include "..\DLC_content\faces\WS\WS_african.sqf"
-    ];
-};
-if (_hasSOG) then {
-    _faces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_persian.sqf"
-    ];
-    _sffaces append [
-        #include "..\DLC_content\faces\SOG\SOG_faces_russian.sqf"
-    ];
-};
+private _sfFaces = ["RussianHead_1","RussianHead_2","RussianHead_3","RussianHead_4","RussianHead_5"];
 
 ["milInsignia", ["Camel_lxWS", "", ""]] call _fnc_saveToTemplate;
 
 ["faces", _faces] call _fnc_saveToTemplate;
 
-["sfFaces", _sffaces] call _fnc_saveToTemplate;
+["sfFaces", _sfFaces] call _fnc_saveToTemplate;
 ["sfInsignia", ["Spetsnaz223rdDetachment", "", ""]] call _fnc_saveToTemplate;
 
 ["insignia", ["GryffinRegiment", "", ""]] call _fnc_saveToTemplate;
@@ -329,9 +260,6 @@ _loadoutData set ["officerUniforms", ["U_O_OfficerUniform_ocamo"]];
 _loadoutData set ["officerVests", ["V_TacVest_khk"]];
 _loadoutData set ["officerHats", ["H_MilCap_ocamo", "H_Beret_CSAT_01_F"]];
 
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_CSAT.sqf"
-};
 _loadoutData set ["cloakUniforms", ["U_O_FullGhillie_ard", "U_O_FullGhillie_sard", "U_O_GhillieSuit"]];
 _loadoutData set ["cloakVests", ["V_HarnessO_brn", "V_TacVest_khk"]];
 
@@ -383,21 +311,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack"
-]];
-
-_loadoutData set ["goggles", ["G_Lowprofile","G_Combat_lxWS"]];
+_loadoutData set ["glasses", ["G_Aviator"]];
+_loadoutData set ["goggles", ["G_Combat_lxWS"]];
 
 _sfAccessories = ["acc_pointer_IR", 10];
 _sfTlOptics = ["optic_ACO_grn", 1, "optic_Holosight_blk_F", 2, "optic_Hamr", 4, "optic_MRCO", 3];
@@ -884,62 +799,7 @@ _pilotLoadoutData set ["uniforms", ["U_O_PilotCoveralls","U_O_PilotCoveralls"]];
 _pilotLoadoutData set ["vests", ["V_BandollierB_khk"]];
 _pilotLoadoutData set ["helmets", ["H_CrewHelmetHeli_O", "H_PilotHelmetHeli_O"]];
 
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasTanks) then {
-    #include "..\DLC_content\gear\Tanks\Vanilla_CSAT.sqf"
-    #include "..\DLC_content\weapons\Tanks\Vanilla_CSAT_Arid.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\WS_CSAT&SFIA.sqf"
-    #include "..\DLC_content\weapons\Contact\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasMarksman) then {
-	#include "..\DLC_content\gear\Marksman\Vanilla_CSAT&AAF.sqf"
-    #include "..\DLC_content\weapons\Marksman\Vanilla_CSAT&AAF.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\WS_CSAT&SFIA.sqf"
-    #include "..\DLC_content\weapons\Apex\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\WS_CSAT&SFIA.sqf"
-    #include "..\DLC_content\weapons\RF\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasCSLA) then {
-	#include "..\DLC_content\gear\CSLA\Vanilla_NATO&AAF.sqf"
-    #include "..\DLC_content\weapons\CSLA\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasGM) then {
-	#include "..\DLC_content\gear\GM\WS_CSAT&SFIA.sqf"
-    #include "..\DLC_content\weapons\GM\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasSOG) then {
-	#include "..\DLC_content\gear\SOG\Vanilla_AAF_militia.sqf"
-    #include "..\DLC_content\weapons\SOG\WS_CSAT&SFIA.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_AAF.sqf"
-    //#include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
-};
-
-if (_hasEF) then {
-    #include "..\DLC_content\gear\EF\WS_CSAT&SFIA.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_CSAT&AAF.sqf"
-};
+// (placeholder_content) Benefits from WS, EF, RF, Apex content. Vehicles + equipment.
 
 /////////////////////////////////
 //    Unit Type Definitions    //

@@ -750,6 +750,258 @@
                 <Original>It's time for King Petros</Original>
                 <Turkish>Kral Petros'un vakti geldi</Turkish>
             </Key>
+            <Key ID="STR_antistasi_mission_info_ruha_mapname_text">
+                <Original>Antistasi Ultimate - Ruha</Original>
+                <Turkish>Antistasi Ultimate - Ruha</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Ruha</Chinesesimp>
+                <Korean>Antistasi Ultimate - Ruha</Korean>
+                <Russian>Antistasi Ultimate - Руха</Russian>
+                <German>Antistasi Ultimate - Ruha</German>
+                <French>Antistasi Ultimate - Ruha</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_ruha_mapname_short_text">
+                <Original>Antistasi Ultimate Ruha</Original>
+                <Turkish>Antistasi Ultimate Ruha</Turkish>
+                <Chinesesimp>Antistasi Ultimate Ruha</Chinesesimp>
+                <Korean>Antistasi Ultimate Ruha</Korean>
+                <Russian>Antistasi Ultimate Ruha</Russian>
+                <German>Antistasi Ultimate Ruha</German>
+                <French>Antistasi Ultimate Ruha</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_ruha_mapname_description_text">
+                <Original>Command a ragtag Resistance force and take on a vastly superior enemy. Strike from the shadows, sabotage their operations, and adapt to an ever-changing battlefield filled with dynamic missions and unpredictable encounters.</Original>
+                <Turkish>Düzensiz bir Direniş gücüne komuta edin ve sayıca oldukça üstün bir düşmana meydan okuyun. Gölgelerden vurun, operasyonlarını sabote edin ve dinamik görevler ile öngörülemeyen karşılaşmalarla dolu, sürekli değişen bir savaş alanına uyum sağlayın.</Turkish>
+                <Chinesesimp>指挥一支纪律松散的抵抗武装，迎击远比自己强大的敌人。从阴影中发起突袭，破坏敌方行动，并在这片充满动态任务和莫测遭遇、瞬息万变战场上见机行事。</Chinesesimp>
+                <Korean>오합지졸인 저항군을 지휘하여 압도적으로 우세한 적과 맞서 싸우십시오. 어둠 속에서 기습을 감행하고, 적의 작전을 방해하며, 역동적인 임무와 예측할 수 없는 조우로 가득한, 끊임없이 변화하는 전장에 적응해야 합니다.</Korean>
+                <Russian>Примите командование над разрозненными силами Сопротивления и бросьте вызов значительно превосходящему сопернику. Наносите удары из тени, саботируйте вражеские операции и адаптируйтесь к постоянно меняющимся условиям боя, полным динамических задач и непредсказуемых столкновений.</Russian>
+                <German>Kommandiere eine bunt zusammengewürfelte Widerstandstruppe und nimm es mit einem weitaus überlegenen Feind auf. Schlage aus dem Verborgenen zu, sabotiere feindliche Operationen und passe dich einem ständig wechselnden Schlachtfeld voller dynamischer Missionen und unvorhersehbarer Begegnungen an.</German>
+                <French>Commandez une force de Résistance hétéroclite et affrontez un ennemi largement supérieur. Frappez depuis les ombres, sabotez leurs opérations et adaptez-vous à un champ de bataille en constante évolution, truffé de missions dynamiques et de rencontres imprévisibles.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_ruha_blurb_text">
+                <Original>Finlands finest, fight for control!</Original>
+                <Turkish>Finlandiya'nın en iyileri, kontrolü ele geçirmek için savaşın!</Turkish>
+                <Chinesesimp>芬兰的精锐之师，为夺取控制权而战！</Chinesesimp>
+                <Korean>핀란드 최정예 세력, 통제권을 쥐기 위해 투쟁하십시오!</Korean>
+                <Russian>Лучшие сыны Финляндии, боритесь за контроль!</Russian>
+                <German>Finnlands Beste, kämpft um die Kontrolle!</German>
+                <French>La fine fleur de la Finlande, battez-vous pour le contrôle !</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_pja310_mapname_text">
+                <Original>Antistasi Ultimate - Al Rayak</Original>
+                <Turkish>Antistasi Ultimate - Al Rayak</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Al Rayak</Chinesesimp>
+                <Korean>Antistasi Ultimate - Al Rayak</Korean>
+                <Russian>Antistasi Ultimate - Аль-Раяк</Russian>
+                <German>Antistasi Ultimate - Al Rayak</German>
+                <French>Antistasi Ultimate - Al Rayak</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_pja310_mapname_short_text">
+                <Original>Antistasi Ultimate Al Rayak</Original>
+                <Turkish>Antistasi Ultimate Al Rayak</Turkish>
+                <Chinesesimp>Antistasi Ultimate Al Rayak</Chinesesimp>
+                <Korean>Antistasi Ultimate Al Rayak</Korean>
+                <Russian>Antistasi Ultimate Al Rayak</Russian>
+                <German>Antistasi Ultimate Al Rayak</German>
+                <French>Antistasi Ultimate Al Rayak</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_pja310_mapname_description_text">
+                <Original>Build and lead a Resistance movement against a powerful occupying force. Use guerrilla tactics, hit-and-run attacks, and strategic planning in a living world featuring dozens of dynamic missions that can occur anywhere, at any time.</Original>
+                <Turkish>Güçlü bir işgalci güce karşı bir Direniş hareketi kurun ve yönetin. Her an, her yerde ortaya çıkabilecek düzinelerce dinamik görevin yer aldığı yaşayan bir dünyada gerilla taktikleri, vur-kaç saldırıları ve stratejik planlama kullanın.</Turkish>
+                <Chinesesimp>组建并领导反抗运动，对抗强大的占领军。在充满数十个随时随地可能触发的动态任务的写实世界中，运用游击战术、游击袭扰和战略规划展开对抗。</Chinesesimp>
+                <Korean>강력한 점령군에 맞서 저항 운동을 조직하고 이끄십시오. 언제 어디서나 발생할 수 있는 수십 개의 역동적인 임무가 살아 숨 쉬는 세계에서 게릴라 전술, 치고 빠지기식 습격, 전략적 계획을 활용해야 합니다.</Korean>
+                <Russian>Создайте и возглавьте движение Сопротивления против могущественных оккупационных сил. Используйте партизанскую тактику, молниеносные налеты и стратегическое планирование в живом мире с десятками динамических миссий, которые могут начаться где угодно и когда угодно.</Russian>
+                <German>Baue eine Widerstandsbewegung gegen eine mächtige Besatzungsmacht auf und führe sie an. Nutze Guerillataktiken, Hit-and-Run-Angriffe und strategische Planung in einer lebendigen Welt mit Dutzenden von dynamischen Missionen, die überall und jederzeit stattfinden können.</German>
+                <French>Bâtissez et dirigez un mouvement de Résistance contre une puissante force d'occupation. Utilisez des tactiques de guérilla, des attaques éclair et une planification stratégique dans un monde vivant proposant des dizaines de missions dynamiques pouvant surgir n'importe où, à tout moment.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_pja310_blurb_text">
+                <Original>Like sand? Well, time to fight in it!</Original>
+                <Turkish>Kumu sever misiniz? Öyleyse içinde savaşma vakti!</Turkish>
+                <Chinesesimp>喜欢吃沙子？很好，是时候在漫天黄沙中奋战了！</Chinesesimp>
+                <Korean>모래를 좋아하시나요? 자, 이제 그 속에서 싸울 시간입니다!</Korean>
+                <Russian>Любите песок? Что ж, пора за него повоевать!</Russian>
+                <German>Du magst Sand? Tja, Zeit, darin zu kämpfen!</German>
+                <French>Vous aimez le sable ? Eh bien, il est temps de vous y battre !</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_stozec_mapname_text">
+                <Original>Antistasi Ultimate - Stozec</Original>
+                <Turkish>Antistasi Ultimate - Stozec</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Stozec</Chinesesimp>
+                <Korean>Antistasi Ultimate - Stozec</Korean>
+                <Russian>Antistasi Ultimate - Стожец</Russian>
+                <German>Antistasi Ultimate - Stozec</German>
+                <French>Antistasi Ultimate - Stozec</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_stozec_mapname_short_text">
+                <Original>Antistasi Ultimate Stozec</Original>
+                <Turkish>Antistasi Ultimate Stozec</Turkish>
+                <Chinesesimp>Antistasi Ultimate Stozec</Chinesesimp>
+                <Korean>Antistasi Ultimate Stozec</Korean>
+                <Russian>Antistasi Ultimate Stozec</Russian>
+                <German>Antistasi Ultimate Stozec</German>
+                <French>Antistasi Ultimate Stozec</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_stozec_mapname_description_text">
+                <Original>Rise from a small band of insurgents to a formidable Resistance movement. Outsmart enemies with superior technology, numbers, and equipment through guerrilla warfare, strategic resource management, and a world driven by dynamic events and missions.</Original>
+                <Turkish>Küçük bir asi grubundan dişli bir Direniş hareketine dönüşün. Gerilla savaşı, stratejik kaynak yönetimi, dinamik etkinlikler ve görevlerle şekillenen bir dünyada; teknoloji, sayı ve teçhizat bakımından üstün olan düşmanları zekanızla alt edin.</Turkish>
+                <Chinesesimp>从一小股起义军一步步成长为令人生畏的反抗运动力量。通过游击战争、战略资源管理，在由动态事件和任务驱使的世界里，用智谋战胜在技术、人数和装备上均占绝对优势的敌人。</Chinesesimp>
+                <Korean>소규모 반군에서 시작해 막강한 저항 운동 세력으로 성장하십시오. 게릴라전, 전략적 자원 관리, 그리고 역동적인 이벤트와 임무로 움직이는 세계를 통해 우수한 기술, 병력, 장비를 지닌 적들을 지략으로 압도해야 합니다.</Korean>
+                <Russian>Пройдите путь от небольшого отряда повстанцев до грозного движения Сопротивления. Перехитрите врага, превосходящего вас числом, технологиями и оснащением, используя методы партизанской войны, грамотное управление ресурсами и возможности мира, движимого динамическими событиями.</Russian>
+                <German>Steige von einer kleinen Gruppe von Aufständischen zu einer gefürchteten Widerstandsbewegung auf. Überliste Feinde mit überlegener Technologie, Anzahl und Ausrüstung durch Guerillakrieg, strategisches Ressourcenmanagement und eine von dynamischen Ereignissen und Missionen angetriebene Welt.</German>
+                <French>Élevez-vous d'une petite bande d'insurgés à un redoutable mouvement de Résistance. Surprenez des ennemis supérieurs en technologie, en nombre et en équipement grâce à la guerre de guérilla, à la gestion stratégique des ressources et à un monde rythmé par des événements et des missions dynamiques.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_stozec_blurb_text">
+                <Original>Fight in the fields of the Czech Republic!</Original>
+                <Turkish>Çek Cumhuriyeti'nin topraklarında savaşın!</Turkish>
+                <Chinesesimp>在捷克共和国的田野上纵横驰骋！</Chinesesimp>
+                <Korean>체코 공화국의 들판에서 전투를 벌이십시오!</Korean>
+                <Russian>Сражайтесь на полях Чешской Республики!</Russian>
+                <German>Kämpfe auf den Feldern der Tschechischen Republik!</German>
+                <French>Battez-vous dans les plaines de la République tchèque !</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_abramia_mapname_text">
+                <Original>Antistasi Ultimate - Isla Abramia</Original>
+                <Turkish>Antistasi Ultimate - Isla Abramia</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Isla Abramia</Chinesesimp>
+                <Korean>Antistasi Ultimate - Isla Abramia</Korean>
+                <Russian>Antistasi Ultimate - Исла-Абрамия</Russian>
+                <German>Antistasi Ultimate - Isla Abramia</German>
+                <French>Antistasi Ultimate - Isla Abramia</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_abramia_mapname_short_text">
+                <Original>Antistasi Ultimate Abramia</Original>
+                <Turkish>Antistasi Ultimate Abramia</Turkish>
+                <Chinesesimp>Antistasi Ultimate Abramia</Chinesesimp>
+                <Korean>Antistasi Ultimate Abramia</Korean>
+                <Russian>Antistasi Ultimate Abramia</Russian>
+                <German>Antistasi Ultimate Abramia</German>
+                <French>Antistasi Ultimate Abramia</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_abramia_mapname_description_text">
+                <Original>Lead the Resistance in a guerrilla war against a technologically superior foe. Fight across a dynamic world where every mission, battle, and opportunity unfolds differently each time you play.</Original>
+                <Turkish>Teknolojik olarak üstün bir düşmana karşı gerilla savaşında Direniş'e liderlik edin. Her oynadığınızda her görevin, savaşın ve fırsatın farklı şekilde geliştiği dinamik bir dünyada mücadele edin.</Turkish>
+                <Chinesesimp>领导抵抗组织，与科技实力占优的劲敌展开一场游击战。在这片动态演变的世界中厮杀，每次游玩的任务、战斗和机遇都将以截然不同的方式铺开。</Chinesesimp>
+                <Korean>기술적으로 우월한 적에 맞서 게릴라전으로 저항군을 이끄십시오. 플레이할 때마다 모든 임무, 전투, 기회가 매번 다르게 전개되는 역동적인 세계에서 싸워나가야 합니다.</Korean>
+                <Russian>Возглавьте Сопротивление в партизанской войне против технологически продвинутого противника. Сражайтесь в динамичном мире, где каждая миссия, битва и возможность развиваются совершенно иначе при каждом новом прохождении.</Russian>
+                <German>Führe den Widerstand in einem Guerillakrieg gegen einen technologisch überlegenen Feind an. Kämpfe in einer dynamischen Welt, in der sich jede Mission, jeder Kampf und jede Gelegenheit bei jedem Spielen anders entfaltet.</German>
+                <French>Menez la Résistance dans une guerre de guérilla contre un ennemi technologiquement supérieur. Battez-vous dans un monde dynamique où chaque mission, combat et opportunité se déroule différemment à chaque partie.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_abramia_blurb_text">
+                <Original>Beautiful hills and snowy mountains</Original>
+                <Turkish>Göz alıcı tepeler ve karlı dağlar</Turkish>
+                <Chinesesimp>绝美的丘陵与皑皑白雪覆盖的山峦</Chinesesimp>
+                <Korean>아름다운 구릉과 눈 덮인 산맥</Korean>
+                <Russian>Живописные холмы и заснеженные горы</Russian>
+                <German>Wunderschöne Hügel und verschneite Berge</German>
+                <French>De magnifiques collines et des montagnes enneigées</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_yulakia_mapname_text">
+                <Original>Antistasi Ultimate - Republic of Yulakia</Original>
+                <Turkish>Antistasi Ultimate - Republic of Yulakia</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Republic of Yulakia</Chinesesimp>
+                <Korean>Antistasi Ultimate - Republic of Yulakia</Korean>
+                <Russian>Antistasi Ultimate - Республика Юлакия</Russian>
+                <German>Antistasi Ultimate - Republic of Yulakia</German>
+                <French>Antistasi Ultimate - Republic of Yulakia</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_yulakia_mapname_short_text">
+                <Original>Antistasi Ultimate Yulakia</Original>
+                <Turkish>Antistasi Ultimate Yulakia</Turkish>
+                <Chinesesimp>Antistasi Ultimate Yulakia</Chinesesimp>
+                <Korean>Antistasi Ultimate Yulakia</Korean>
+                <Russian>Antistasi Ultimate Yulakia</Russian>
+                <German>Antistasi Ultimate Yulakia</German>
+                <French>Antistasi Ultimate Yulakia</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_yulakia_mapname_description_text">
+                <Original>Command a ragtag Resistance force and take on a vastly superior enemy. Strike from the shadows, sabotage their operations, and adapt to an ever-changing battlefield filled with dynamic missions and unpredictable encounters.</Original>
+                <Turkish>Düzensiz bir Direniş gücüne komuta edin ve sayıca oldukça üstün bir düşmana meydan okuyun. Gölgelerden vurun, operasyonlarını sabote edin ve dinamik görevler ile öngörülemeyen karşılaşmalarla dolu, sürekli değişen bir savaş alanına uyum sağlayın.</Turkish>
+                <Chinesesimp>指挥一支纪律松散的抵抗武装，迎击远比自己强大的敌人。从阴影中发起突袭，破坏敌方行动，并在这片充满动态任务和莫测遭遇、瞬息万变战场上见机行事。</Chinesesimp>
+                <Korean>오합지졸인 저항군을 지휘하여 압도적으로 우세한 적과 맞서 싸우십시오. 어둠 속에서 기습을 감행하고, 적의 작전을 방해하며, 역동적인 임무와 예측할 수 없는 조우로 가득한, 끊임없이 변화하는 전장에 적응해야 합니다.</Korean>
+                <Russian>Примите командование над разрозненными силами Сопротивления и бросьте вызов значительно превосходящему сопернику. Наносите удары из тени, саботируйте вражеские операции и адаптируйтесь к постоянно меняющимся условиям боя, полным динамических задач и непредсказуемых столкновений.</Russian>
+                <German>Kommandiere eine bunt zusammengewürfelte Widerstandstruppe und nimm es mit einem weitaus überlegenen Feind auf. Schlage aus dem Verborgenen zu, sabotiere feindliche Operationen und passe dich einem ständig wechselnden Schlachtfeld voller dynamischer Missionen und unvorhersehbarer Begegnungen an.</German>
+                <French>Commandez une force de Résistance hétéroclite et affrontez un ennemi largement supérieur. Frappez depuis les ombres, sabotez leurs opérations et adaptez-vous à un champ de bataille en constante évolution, truffé de missions dynamiques et de rencontres imprévisibles.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_yulakia_blurb_text">
+                <Original>The Baltics has never been so cold...</Original>
+                <Turkish>Baltıklar hiç bu kadar soğuk olmamıştı...</Turkish>
+                <Chinesesimp>波罗的海还从未如此寒冷彻骨……</Chinesesimp>
+                <Korean>발트해 연안이 이토록 추웠던 적은 없었습니다...</Korean>
+                <Russian>Прибалтика еще никогда не была такой холодной...</Russian>
+                <German>Das Baltikum war noch nie so kalt ...</German>
+                <French>Les Pays baltes n'ont jamais été aussi froids...</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_staszow_mapname_text">
+                <Original>Antistasi Ultimate - Staszow</Original>
+                <Turkish>Antistasi Ultimate - Staszow</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Staszow</Chinesesimp>
+                <Korean>Antistasi Ultimate - Staszow</Korean>
+                <Russian>Antistasi Ultimate - Сташув</Russian>
+                <German>Antistasi Ultimate - Staszow</German>
+                <French>Antistasi Ultimate - Staszow</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_staszow_mapname_short_text">
+                <Original>Antistasi Ultimate Staszow</Original>
+                <Turkish>Antistasi Ultimate Staszow</Turkish>
+                <Chinesesimp>Antistasi Ultimate Staszow</Chinesesimp>
+                <Korean>Antistasi Ultimate Staszow</Korean>
+                <Russian>Antistasi Ultimate Staszow</Russian>
+                <German>Antistasi Ultimate Staszow</German>
+                <French>Antistasi Ultimate Staszow</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_staszow_mapname_description_text">
+                <Original>Lead a scrappy Resistance and face overwhelming odds. Launch covert strikes, disrupt enemy operations, and survive a constantly shifting battlefield full of dynamic threats.</Original>
+                <Turkish>Çetin bir Direniş'e liderlik edin ve ezici zorluklara karşı göğüs gerin. Gizli saldırılar düzenleyin, düşman operasyonlarını sekteye uğratın ve dinamik tehditlerle dolu, sürekli değişen bir savaş alanında hayatta kalın.</Turkish>
+                <Chinesesimp>率领百折不挠的抵抗力量突击不可战胜的强敌。发起秘密打击，扰乱敌军部署，并在这个充斥着动态威胁、处于持续动态演变中的战场上生存下来。</Chinesesimp>
+                <Korean>투지 넘치는 저항군을 이끌고 압도적인 역경에 맞서십시오. 은밀한 타격을 개시하고, 적의 작전을 교란하며, 역동적인 위협으로 가득 차 끊임없이 요동치는 전장에서 살아남아야 합니다.</Korean>
+                <Russian>Возглавьте стойкое Сопротивление перед лицом непреодолимых трудностей. Проводите тайные вылазки, срывайте вражеские планы и выживайте на изменчивом поле боя, полном динамических угроз.</Russian>
+                <German>Führe einen entschlossenen Widerstand an und stelle dich überwältigenden Widrigkeiten. Starte verdeckte Angriffe, störe feindliche Operationen und überlebe ein sich ständig veränderndes Schlachtfeld voller dynamischer Bedrohungen.</German>
+                <French>Dirigez une Résistance acharnée et affrontez des forces disproportionnées. Lancez des frappes clandestines, perturbez les opérations ennemies et survivez sur un champ de bataille en perpétuel mouvement, plein de menaces dynamiques.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_staszow_blurb_text">
+                <Original>Boots to ground!</Original>
+                <Turkish>Sahaya inme vakti!</Turkish>
+                <Chinesesimp>靴子落地，即刻开战！</Chinesesimp>
+                <Korean>전장으로 출격하십시오!</Korean>
+                <Russian>Сапоги на землю, к бою!</Russian>
+                <German>Stiefel auf den Boden!</German>
+                <French>Bottes au sol !</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_namalsk_mapname_text">
+                <Original>Antistasi Ultimate - Namalsk</Original>
+                <Turkish>Antistasi Ultimate - Namalsk</Turkish>
+                <Chinesesimp>Antistasi Ultimate - Namalsk</Chinesesimp>
+                <Korean>Antistasi Ultimate - Namalsk</Korean>
+                <Russian>Antistasi Ultimate - Намальск</Russian>
+                <German>Antistasi Ultimate - Namalsk</German>
+                <French>Antistasi Ultimate - Namalsk</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_namalsk_mapname_short_text">
+                <Original>Antistasi Ultimate Namalsk</Original>
+                <Turkish>Antistasi Ultimate Namalsk</Turkish>
+                <Chinesesimp>Antistasi Ultimate Namalsk</Chinesesimp>
+                <Korean>Antistasi Ultimate Namalsk</Korean>
+                <Russian>Antistasi Ultimate Namalsk</Russian>
+                <German>Antistasi Ultimate Namalsk</German>
+                <French>Antistasi Ultimate Namalsk</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_namalsk_mapname_description_text">
+                <Original>Take command of an underdog Resistance force and challenge a superior enemy. Use stealth, sabotage, and adaptability to turn the tide in a living, unpredictable warzone.</Original>
+                <Turkish>Zayıf durumdaki bir Direniş gücünün komutasını ele alın ve üstün bir düşmana meydan okuyun. Yaşayan ve öngörülemeyen bir savaş alanında gidişatı tersine çevirmek için gizlilik, sabotaj ve uyum sağlama yeteneğinizi kullanın.</Turkish>
+                <Chinesesimp>接管一支处于弱势的反抗组织，向强敌发起严峻挑战。借助潜行、破坏以及强大的应变能力，在充满变数且生机勃勃的交战区中扭转乾坤。</Chinesesimp>
+                <Korean>열세에 놓인 저항군의 지휘권을 잡고 우세한 적에게 도전하십시오. 살아 숨 쉬며 예측할 수 없는 전장에서 전세를 뒤집기 위해 은밀함, 파괴 공작, 그리고 뛰어난 적응력을 발휘해야 합니다.</Korean>
+                <Russian>Возьмите под контроль отстающие силы Сопротивления и бросьте вызов превосходящему противнику. Используйте скрытность, саботаж и гибкость тактики, чтобы переломить ход событий в живой, непредсказуемой зоне боевых действий.</Russian>
+                <German>Übernimm das Kommando über eine unterlegene Widerstandstruppe und fordere einen überlegenen Feind heraus. Nutze Tarnung, Sabotage und Anpassungsfähigkeit, um das Blatt in einem lebendigen, unvorhersehbaren Kriegsgebiet zu wenden.</German>
+                <French>Prenez le commandement d'une force de Résistance outsider et défiez un ennemi supérieur. Utilisez la furtivité, le sabotage et l'adaptabilité pour inverser la tendance dans une zone de guerre vivante et imprévisible.</French>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_namalsk_blurb_text">
+                <Original>The bitter cold, blindingly beautiful.</Original>
+                <Turkish>Dondurucu bir soğuk, göz kamaştırıcı bir güzellik.</Turkish>
+                <Chinesesimp>凛冽刺骨，却美得令人窒息。</Chinesesimp>
+                <Korean>눈이 멀 정도로 아름다운 지독한 추위.</Korean>
+                <Russian>Лютый холод, ослепительно прекрасный.</Russian>
+                <German>Die bittere Kälte, blendend schön.</German>
+                <French>Le froid glacial, d'une beauté aveuglante.</French>
+            </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>
                 <Russian>Автоматически загружать последнее сохранение после задержки</Russian>

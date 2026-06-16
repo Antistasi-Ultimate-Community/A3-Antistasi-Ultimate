@@ -1,13 +1,11 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
+params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli", ["_landPos", []], ["_reinf", false]];
 
 private _vehType = typeOf _veh;
 
 _veh setVehicleRadar 1;
-
-private _reinf = if (count _this > 5) then {_this select 5} else {false};
 
 private _xRef = 2;
 private _yRef = 1;
@@ -120,7 +118,7 @@ _driver action ["VectoringUp", _veh];
 _driver action ["VectoringUp", _veh];
 if (alive _veh && canMove _veh) then
 {
-    [_veh] call A3A_fnc_smokeCoverAuto;
+    // [_veh] call A3A_fnc_smokeCoverAuto;
     
     {
         if (!alive _x) then { continue };
