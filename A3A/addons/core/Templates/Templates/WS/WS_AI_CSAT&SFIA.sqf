@@ -160,9 +160,7 @@ private _SAM = [];
 
 ["variants", [
     #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.sqf",
-    #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.sqf",
-	#include "..\vehicleVariants\WS_SFIA\GM_SFIA.sqf",
-	#include "..\vehicleVariants\WS_SFIA\CSLA_SFIA.sqf"
+    #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.sqf"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
