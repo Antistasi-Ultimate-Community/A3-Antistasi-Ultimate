@@ -48,7 +48,7 @@ class UMB_Armavir {
 {"Labinsk", 6},
 {"Zapadnyy_Industrial", 53}
 	};
-	disabledTowns[] = {}; //no towns that need to be disabled
+	disabledTowns[] = {"Pervomaiskii_Industry","Lesnoi_Base","Zapadnyy_Industrial"}; //no towns that need to be disabled
 	antennas[] = {
 	
 	};
