@@ -1,14 +1,17 @@
+//fn_outpost_createHmgDistance
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-params ["_markerX"];
+params ["_markerX", "_vehicleX", "_vehiclecustomazationX"];
 
 if (!isServer and hasInterface) exitWith {};
 
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-private _mgClass = (A3A_faction_reb get "staticMGs") # 0;
+if (_vehicleX isEqualTo objNull) then {
+    _vehicleX = (A3A_faction_reb get "staticMGs") select 0;
+};
 
 private _props = [];
 
@@ -35,16 +38,21 @@ private _staticPositionInfo = staticPositions getVariable [_markerX, []];
 if (!(_staticPositionInfo isEqualTo [])) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
-    _veh = createVehicle [_mgClass, _positionX, [], 0, "CAN_COLLIDE"];
+    _veh = createVehicle [_vehicleX, _positionX, [], 0, "CAN_COLLIDE"];
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
     _veh setPosATL _staticPosition;
-    _veh setDir _staticDirection;
 } else {
-    _veh = _mgClass createVehicle _positionX;
+    _veh = _vehicleX createVehicle _positionX;
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
 };
 
 _veh lock 3;
-
-sleep 1;
+//
+sleep 0.5;
 
 [_veh,"Move_Outpost_Static"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _veh];
 
@@ -52,11 +60,47 @@ private _groupX = [_positionX, teamPlayer, _garrison,true,false] call A3A_fnc_sp
 private _groupXUnits = units _groupX;
 _groupXUnits apply { [_x,_markerX] spawn A3A_fnc_FIAinitBases; };
 
+private _riflemanType = A3A_faction_reb get "unitRifle";
 private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh;
-    [_crewMan] spawn SCRT_fnc_common_scanHorizon;
+    
+    if (isNull gunner _veh) then {
+        _crewMan assignAsGunner _veh;
+        _crewMan moveInGunner _veh;
+        [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
+    };
+    
+    private _commanderIndex = -1;
+    for "_i" from (_crewManIndex + 1) to (count _groupXUnits - 1) do {
+        private _unit = _groupXUnits select _i;
+        if ((_unit getVariable "unitType") == _riflemanType && isNull objectParent _unit) exitWith {
+            _commanderIndex = _i;
+        };
+    };
+    
+    if (_commanderIndex != -1 && (_veh emptyPositions "Commander") > 0) then {
+        private _commander = _groupXUnits select _commanderIndex;
+        _commander assignAsCommander _veh;
+        _commander moveInCommander _veh;
+    };
+
+    // Populate turrets
+    private _turrets = allTurrets _veh;
+    {
+        if (isNull (_veh turretUnit _x)) then {
+            private _turretIndex = _groupXUnits findIf {
+                (_x getVariable "unitType") == _riflemanType && 
+                isNull objectParent _x
+            };
+            if (_turretIndex != -1) then {
+                //private _unit = _groupXUnits select _turretIndex;
+                private _unit = [_groupX, A3A_faction_reb get "unitRifle", _positionX, [], 10] call A3A_fnc_createUnit;
+                _unit assignAsTurret [_veh, _x];
+                _unit moveInTurret [_veh, _x];
+            };
+        };
+    } forEach _turrets;
 };
 
 _groupX setBehaviour "AWARE";
@@ -80,6 +124,12 @@ if ({alive _x} count units _groupX == 0) then {
 	_nul = [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	deleteMarker _markerX;
 	["TaskFailed", ["", (localize "STR_notifiers_emplacement_lost")]] remoteExec ["BIS_fnc_showNotification", 0];
+
+    // Cleanup data
+    if (!isNil "hmgpostsData") then {
+        hmgpostsData = hmgpostsData select { (_x select 0) != _markerX };
+        publicVariable "hmgpostsData";
+    };
 };
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2) or (!(_markerX in hmgpostsFIA))};

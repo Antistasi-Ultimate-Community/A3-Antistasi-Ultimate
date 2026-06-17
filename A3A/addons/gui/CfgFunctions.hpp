@@ -43,6 +43,18 @@ class CfgFunctions {
             class setupConfirmDialog {};
             class setupHQPosDialog {};
         };
+        class OutpostUI {
+			file = QPATHTOFOLDER(functions\OutpostUI);
+            class getVehicleClassComponents {};
+            class getVehicleClassCrew {};
+            class getVehicleClassSkins {};
+            class getVehicleWeapons {};
+            class isUsableWeapon {};
+            class processVehicleCategory {};
+			class UI_buyVehicleTabs {};
+            class UI_vehicleFromGarage {};
+            class UI_vehicleFromStore {};
+		};
     };
     class ADDON {
         class controlsHelpers {

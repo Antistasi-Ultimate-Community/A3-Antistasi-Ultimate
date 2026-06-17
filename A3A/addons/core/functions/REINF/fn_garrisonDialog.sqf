@@ -5,50 +5,6 @@ params ["_typeX", "_site"];
 
 private ["_garrison","_costs","_hr","_size"];
 
-//Not sure if needed
-//Checks that were added but I'm not sure if it could be applied to my way to add something
-// _positionTel = positionTel;
-// positionXGarr = "";
-
-// _nearX = [markersX,_positionTel] call BIS_fnc_nearestPosition;
-// _positionX = getMarkerPos _nearX;
-
-// if (getMarkerPos _nearX distance _positionTel > 40) exitWith {
-// 	["Garrison", "You must click near a marked zone."] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// 	_nul=CreateDialog "build_menu";
-// #endif
-// };
-
-// if (not(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) exitWith {
-// 	["Garrison", format ["That zone does not belong to %1.",FactionGet(reb,"name")]] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// 	_nul=CreateDialog "build_menu";
-// #endif
-// };
-// if ([_positionX] call A3A_fnc_enemyNearCheck) exitWith {
-// 	["Garrison", "You cannot manage this garrison while there are enemies nearby."] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// _nul=CreateDialog "build_menu";
-// #endif
-// };
-
-// if (_nearX in forcedSpawn) exitWith {
-// 	["Garrison", "You cannot manage this garrison when there's a major attack incoming."] call A3A_fnc_customHint;
-// #ifdef UseDoomGUI
-// 	ERROR("Disabled due to UseDoomGUI Switch.")
-// #else
-// _nul=CreateDialog "build_menu";
-// #endif
-// };
-
-
 private _watchpostFIA = _site in watchpostsFIA;
 private _roadblockFIA = _site in roadblocksFIA;
 private _aapostFIA = _site in aapostsFIA;
@@ -60,6 +16,8 @@ _garrison = if (!_watchpostFIA) then {
 } else {
 	A3A_faction_reb get "unitSniper"
 };
+
+private _vehicle = objNull;
 
 if (_typeX == "rem") then {
 	if ((count _garrison == 0) and {!(_watchpostFIA) || !(_roadblockFIA) || !(_aapostFIA) || !(_atpostFIA)}) exitWith {
@@ -81,43 +39,197 @@ if (_typeX == "rem") then {
 				_costs = _costs + (server getVariable [_x,0]);
 				_hr = _hr + 1;
 			} forEach (A3A_faction_reb get "groupSniper");
-			_costs = round (_costs * 0.75);
+			_costs = round (_costs * 0.85);
 		};
 		case (_roadblockFIA): {
-			_costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice; //car with mg
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr + 1;
-			} forEach (A3A_faction_reb get "groupSquad");
-			_costs = round (_costs * 0.75);
+		    // 1. Get vehicle data from roadblocksData
+		    private _vehicleData = [];
+		    {
+		        if ((_x select 0) == _site) exitWith { _vehicleData = _x select 1; };
+		    } forEach (missionNamespace getVariable ["roadblocksData", []]);
+		    _vehicleData params [["_vehicleClass", ""], ["_customization", []], ["_direction", 90]];
+		
+		    // 2. Try to find the actual vehicle object
+		    private _vehicle = objNull;
+		    if (_vehicleClass != "") then {
+		        _vehicle = nearestObject [markerPos _site, _vehicleClass];
+		        if (isNull _vehicle) then { _vehicle = objNull; };
+		    };
+		
+		    // 3. Calculate compensation / return to garage
+		    if (isNull _vehicle) then {
+		        // No vehicle – grant compensation
+		        _costs = [_vehicleClass] call A3A_fnc_vehiclePrice;
+		        if (_costs == 0) then { // if class unknown, use default price
+		            _costs = [(A3A_faction_reb get "vehiclesLightArmed") # 0] call A3A_fnc_vehiclePrice;
+		        };
+		    } else {
+		        if (alive _vehicle) then {
+		            // Vehicle alive – return to garage
+		            _costs = 0;
+		            _vehicle lock 0;
+		            [_vehicle, clientOwner, call HR_GRG_dLock, theBoss, true] remoteExecCall ['HR_GRG_fnc_addVehicle', 2];
+		        } else {
+		            // Vehicle dead – grant compensation
+		            _costs = [_vehicleClass] call A3A_fnc_vehiclePrice;
+		        };
+		    };
+		
+		    // 4. Process garrison (unchanged)
+		    _garrison = garrison getVariable [_site, []];
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+		    { deleteVehicle _x } forEach _aliveUnits;
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
+		
+		    // 5. Delete marker and records
+		    garrison setVariable [_site, nil, true];
+		    roadblocksFIA = roadblocksFIA - [_site]; publicVariable "roadblocksFIA";
+		    markersX = markersX - [_site]; publicVariable "markersX";
+		    deleteMarker _site;
+		    sidesX setVariable [_site, nil, true];
+		
+		    // 6. Remove vehicle data
+		    if (!isNil "roadblocksData") then {
+		        roadblocksData = roadblocksData select { (_x select 0) != _site };
+		        publicVariable "roadblocksData";
+		    };
+			// Cleanup spawner variables (optional but recommended)
+			spawner setVariable [(_site + "_vehicle"), nil];
+			spawner setVariable [(_site + "_vehiclecustomazation"), nil];
+			spawner setVariable [(_site + "_vehicledirection"), nil];
 		};
 		case (_aapostFIA): {
-			_costs = [(A3A_faction_reb get "staticAA") # 0] call A3A_fnc_vehiclePrice; //AA
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr +1;
-			} forEach  (A3A_faction_reb get "groupAaEmpl");
-			_costs = round (_costs * 0.75);
+			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "staticAA") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+			_garrison = garrison getVariable [_site, []];
+
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
+
+			// Cleanup aapostsData
+		    if (!isNil "aapostsData") then {
+		        aapostsData = aapostsData select { (_x select 0) != _site };
+		        publicVariable "aatpostsData";
+		    };
+
+		    // Cleanup spawner variables (if not done earlier)
+		    spawner setVariable [(_site + "_vehicle"), nil];
+		    spawner setVariable [(_site + "_vehiclecustomazation"), nil];
 		};
 		case (_atpostFIA): {
-			_costs = [(A3A_faction_reb get "staticAT") # 0] call A3A_fnc_vehiclePrice; //AT
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr +1;
-			} forEach (A3A_faction_reb get "groupAtEmpl");
-			_costs = round (_costs * 0.75);
+			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "staticAT") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+			_garrison = garrison getVariable [_site, []];
+
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
+
+			// Очистка atpostsData
+		    if (!isNil "atpostsData") then {
+		        atpostsData = atpostsData select { (_x select 0) != _site };
+		        publicVariable "atpostsData";
+		    };
+
+		    // Cleanup spawner variables (if not done earlier)
+		    spawner setVariable [(_site + "_vehicle"), nil];
+		    spawner setVariable [(_site + "_vehiclecustomazation"), nil];
 		};
 		case (_hmgpostFIA): {
-			_costs = [(A3A_faction_reb get "staticMGs") # 0] call A3A_fnc_vehiclePrice; //HMG
-			_hr = 1; //static gunner
-			{
-				_costs = _costs + (server getVariable [_x,0]);
-				_hr = _hr +1;
-			} forEach (A3A_faction_reb get "groupHmgEmpl");
-			_costs = round (_costs * 0.75);
+			private _vehicle = spawner getVariable [(_site + "_vehicle"), objNull];
+
+			if (_vehicle isEqualType "") then {
+			    _vehicle = nearestObject [markerPos _site, _vehicle];
+			};
+
+			if (isNull _vehicle) then {
+				_costs = [(A3A_faction_reb get "staticMGs") # 0] call A3A_fnc_vehiclePrice;
+			} else {
+				if (!isNull _vehicle && alive _vehicle) then {
+					_costs = 0;
+					_vehicle lock 0;
+		        	[_vehicle, clientOwner, call HR_GRG_dLock, theBoss,true] remoteExecCall ['HR_GRG_fnc_addVehicle',2];
+		    	};
+			};
+			_garrison = garrison getVariable [_site, []];
+
+		    private _aliveUnits = allUnits select {
+		        _x getVariable ["markerX", ""] == _site && alive _x
+		    };
+
+		    _hr = count _aliveUnits;
+		    {
+		        _costs = _costs + (server getVariable [_x, 0]);
+		    } forEach _garrison;
+
+		    { deleteVehicle _x } forEach _aliveUnits;
+
+		    _costs = round (_costs * 0.85);
+		    _hr = _hr + 1; // static gunner
+
+			// Очистка hmgpostsData
+		    if (!isNil "hmgpostsData") then {
+		        hmgpostsData = hmgpostsData select { (_x select 0) != _site };
+		        publicVariable "hmgpostsData";
+		    };
+
+		    // Cleanup spawner variables (if not done earlier)
+		    spawner setVariable [(_site + "_vehicle"), nil];
+		    spawner setVariable [(_site + "_vehiclecustomazation"), nil];
 		};
 		default {
 			{
@@ -171,7 +283,7 @@ if (_typeX == "rem") then {
 		};
 	};
 
-	[_site] call A3A_fnc_mrkUpdate;
+	[_site, teamPlayer] call A3A_fnc_mrkUpdate;
 
 	[
 		localize "STR_notifiers_fail_type",

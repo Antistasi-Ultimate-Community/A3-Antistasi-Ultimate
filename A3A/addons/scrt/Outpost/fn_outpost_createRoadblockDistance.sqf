@@ -1,13 +1,29 @@
+///fn_outpost_createRoadblockDistance
+
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-params ["_markerX"];
+params ["_markerX","_vehicleX","_vehiclecustomazationX","_vehicledirectionX"]; ///step 5
 
 if (!isServer and hasInterface) exitWith {};
 
+diag_log "CREATE ROADBLOCK DISTANCE";
+diag_log _markerX;
+diag_log _vehicleX;
+diag_log _vehiclecustomazationX;
+diag_log _vehicledirectionX;
+
 private _positionX = getMarkerPos _markerX;
 private _riflemanType = A3A_faction_reb get "unitRifle";
-private _typeVehX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
+
+diag_log _vehicleX;
+diag_log _vehicleX;
+diag_log _vehicleX;
+diag_log _vehicleX;
+
+if (_vehicleX isEqualTo objNull) then {
+    _vehicleX = (A3A_faction_reb get "vehiclesLightArmed") select 0;
+};
 
 private _radiusX = 1;
 private _garrison = garrison getVariable [_markerX, []];
@@ -38,8 +54,11 @@ _barricade setDir _dirveh;
 _barricade setVectorUp surfaceNormal position _barricade;
 
 if (_riflemanType in _garrison) then {
-    _veh = _typeVehX createVehicle getPos (_road select 0);
-    _veh setDir _dirveh + 90;
+    _veh = _vehicleX createVehicle getPos (_road select 0);
+    if !(_vehiclecustomazationX isEqualTo objNull) then {
+        ([_veh] + _vehiclecustomazationX) call BIS_fnc_initVehicle;
+    };
+    _veh setDir _dirveh + _vehicledirectionX;
     _veh lock 3;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 };
@@ -51,13 +70,58 @@ private _groupXUnits = units _groupX;
     [_x,_markerX] spawn A3A_fnc_FIAinitBases; 
 } forEach _groupXUnits;
 
-private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == (A3A_faction_reb get "unitRifle")};
+private _riflemanType = A3A_faction_reb get "unitRifle";
+
+private _crewManIndex = _groupXUnits findIf {(_x getVariable "unitType") == _riflemanType};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
-    _crewMan moveInGunner _veh;
+    
+    if (isNull gunner _veh) then {
+        _crewMan assignAsGunner _veh;
+        _crewMan moveInGunner _veh;
+    };
+
+    private _commanderIndex = -1;
+    for "_i" from (_crewManIndex + 1) to (count _groupXUnits - 1) do {
+        private _unit = _groupXUnits select _i;
+        if ((_unit getVariable "unitType") == _riflemanType && isNull objectParent _unit) exitWith {
+            _commanderIndex = _i;
+        };
+    };
+    
+    if (_commanderIndex != -1 && (_veh emptyPositions "Commander") > 0) then {
+        private _commander = _groupXUnits select _commanderIndex;
+        _commander assignAsCommander _veh;
+        _commander moveInCommander _veh;
+        [_commander, 30] spawn SCRT_fnc_common_scanHorizon;
+    };
+
+    // Populate turrets
+    private _turrets = allTurrets _veh;
+    {
+        if (isNull (_veh turretUnit _x)) then {
+            private _turretIndex = _groupXUnits findIf {
+                (_x getVariable "unitType") == _riflemanType && 
+                isNull objectParent _x
+            };
+            if (_turretIndex != -1) then {
+                //private _unit = _groupXUnits select _turretIndex;
+                private _unit = [_groupX, A3A_faction_reb get "unitRifle", _positionX, [], 10] call A3A_fnc_createUnit; /// there are only 2 rifleman in the squad so why not
+                _unit assignAsTurret [_veh, _x];
+                _unit moveInTurret [_veh, _x];
+                [_unit, 30] spawn SCRT_fnc_common_scanHorizon;
+            };
+        };
+    } forEach _turrets;
+
     sleep 1;
-    _crewMan lookAt (_crewMan getRelPos [100, _dirveh]);
+    _crewMan lookAt _barricade;
 };
+
+_groupX setBehaviour "AWARE";
+_groupX setCombatMode "YELLOW";
+
+////////somehow add commander as well (or maybe even fill the all non driver or passenger seats)
 
 ["locationSpawned", [_markerX, "RebelRoadblock", true]] call EFUNC(Events,triggerEvent);
 
@@ -74,6 +138,12 @@ if ({alive _x} count units _groupX == 0) then {
 	_nul = [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	deleteMarker _markerX;
 	["TaskFailed", ["", (localize "STR_notifiers_roadblock_lost")]] remoteExec ["BIS_fnc_showNotification", 0];
+
+    // Cleanup data
+    if (!isNil "roadblocksData") then {
+        roadblocksData = roadblocksData select { (_x select 0) != _markerX };
+        publicVariable "roadblocksData";
+    };
 };
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2) or (!(_markerX in roadblocksFIA))};

@@ -3,13 +3,17 @@ FIX_LINE_NUMBERS()
 
 
 params ["_mode"];
-
+myGlobalResult = nil;
 if(_mode == "ADD") then {
     [
         "establishOutpost",
         "onMapSingleClick",
         {
             playSound "readoutClick";
+
+            myGlobalResult = _pos;
+            outpostCostmoney = outpostCost select 0; 
+            outpostCosthr = outpostCost select 1;
 
             if ([] call FUNCMAIN(isTeardownEnabled)) exitWith {
                 [localize "STR_notifiers_fail_type", localize "STR_A3A_base_teardownMode_OFF", parseText localize "STR_A3A_Dialogs_teardownActivePleaseDisable_text", 30] spawn SCRT_fnc_ui_showMessage;
@@ -46,8 +50,47 @@ if(_mode == "ADD") then {
             };
 
             if (outpostType == "ROADBLOCK") exitWith {
-                [_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
+                //[_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2]; /// probably we can open choise diaglog here and after choise we open either additional dialog and in that we select vehicle and send a selected vehicle as parametr
+                ///
+                [myGlobalResult,outpostCostmoney,outpostCosthr] spawn ///step 1
+                { 
+                    myGlobalResult = _this select 0;
+                    outpostCostmoney = _this select 1;
+                    outpostCosthr = _this select 2;
+                	private _result = [(format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"]), "", localize "STR_A3A_Garage", localize "STR_A3A_Store"] call BIS_fnc_guiMessage; ///step 1.5
+                    private _hasValidVehicles = false;
+                    private _categoriesToCheck = [1, 2]; // Category indices to check
 
+                    // Check each category in the list
+                    {
+                        private _categoryID = _x;
+                        private _categoryVehicles = HR_GRG_Vehicles param [_categoryID, []];
+
+                        // Iterate over vehicles in category
+                        {
+                            private _class = _y select 1;
+                            if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
+                                _hasValidVehicles = true;
+                            };
+                        } forEach _categoryVehicles;
+
+                        // If valid vehicle found, stop checking categories
+                        if (_hasValidVehicles) exitWith {};
+
+                    } forEach _categoriesToCheck;
+                    if (_result) then {
+                        if (!_hasValidVehicles) then {
+                            _result = false;
+                            [localize "STR_A3A_GarageEmpty", "", true, true] call BIS_fnc_guiMessage;
+                            createDialog "A3A_RoadblockFromStore";
+                        } else {
+                            createDialog "A3A_RoadblockFromGarage"; ///step 1.7
+                        };
+                    } else {
+                        createDialog "A3A_RoadblockFromStore";
+                    };
+                };
+                ///
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
                 ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
                 [] spawn {
@@ -75,23 +118,61 @@ if(_mode == "ADD") then {
                 outpostDirection setMarkerTypeLocal "hd_dot";
                 outpostDirection setMarkerTextLocal format [localize "STR_marker_outpost_direction", outpostType];
 
-                private _direction = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
+                turretDirection = [(getMarkerPos outpostOrigin), (getMarkerPos outpostDirection)] call BIS_fnc_dirTo;
 
-                switch (outpostType) do {
-                    case "AA": {
-                        [(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAa", 2];
+                [
+                    outpostType,
+                    myGlobalResult,
+                    outpostCostmoney,
+                    outpostCosthr,
+                    turretDirection
+                ] spawn {
+                    private _outpostType = _this select 0;
+                    myGlobalResult = _this select 1;
+                    outpostCostmoney = _this select 2;
+                    outpostCosthr = _this select 3;
+                    turretDirection = _this select 4;
+
+                    private _result = [
+                        format["<t>%1</t><br />", localize "STR_A3A_GarageOrStore"], 
+                        "", 
+                        localize "STR_A3A_Garage", 
+                        localize "STR_A3A_Store"
+                    ] call BIS_fnc_guiMessage;
+
+                    private _hasValidVehicles = false;
+                    private _categoriesToCheck = [7];
+                    {
+                        private _categoryID = _x;
+                        private _categoryVehicles = HR_GRG_Vehicles param [_categoryID, []];
+
+                        // Iterate over vehicles in category
+                        {
+                            private _class = _y select 1;
+                            if (_class != "" && {isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
+                                _hasValidVehicles = true;
+                            };
+                        } forEach _categoryVehicles;
+
+                        // If valid vehicle found, stop checking categories
+                        if (_hasValidVehicles) exitWith {};
+
+                    } forEach _categoriesToCheck;
+
+                    if (_result) then {
+                        if (!_hasValidVehicles) then {
+                            _result = false;
+                            [localize "STR_A3A_GarageEmpty", "", true, true] call BIS_fnc_guiMessage;
+                        };
                     };
-                    case "AT": {
-                        [(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createAt", 2];
-                    };
-                    case "HMG": {
-                        [(getMarkerPos outpostOrigin), _direction, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createHmg", 2];
-                    };
-                    default {
-                        Error("Bad outpost type.");
-                    };
+
+                    private _dialog = format [
+                        ["A3A_Static%1FromStore", "A3A_Static%1FromGarage"] select _result, 
+                        _outpostType
+                    ];
+                    createDialog _dialog;  ///step 1.7
                 };
-
+                
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
                 ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
                 [] spawn {
