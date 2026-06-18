@@ -50,7 +50,7 @@ class UMB_Armavir {
 	};
 	disabledTowns[] = {"Pervomaiskii_Industry","Lesnoi_Base","Zapadnyy_Industrial"}; //no towns that need to be disabled
 	antennas[] = {
-	
+		{20234.713,24058.117,0},{17227.932,14677.137,0},{23991.727,12508.381,2.805},{25197.502,7831.787,0},{12299.186,8173.839,0},{6186.099,5267.791,0},{8875.642,14760.96,0},{3687.330,22204.584,0},{13860.011,26222.9,0},{15535.173,5147.5,0}
 	};
 	antennasBlacklistIndex[] = {};
 	banks[] = {
