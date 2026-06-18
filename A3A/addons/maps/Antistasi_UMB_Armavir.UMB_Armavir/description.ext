@@ -1,8 +1,8 @@
 #include "..\missionDescription\master.hpp"
 
-OnLoadName = $STR_antistasi_mission_info_Altis_mapname_short_text;
-OnLoadMission = $STR_antistasi_mission_info_Altis_blurb_text;
-briefingName = $STR_antistasi_mission_info_Altis_mapname_text;
+OnLoadName = $STR_antistasi_mission_info_Armavir_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_Armavir_blurb_text;
+briefingName = $STR_antistasi_mission_info_Armavir_mapname_text;
 overviewText = $STR_antistasi_mission_info_Altis_description_text;
 loadScreen = LOAD_SCREEN_IMAGE;
 overviewPicture = OVERVIEW_IMAGE;
@@ -13,7 +13,7 @@ class CfgDiscordRichPresence
     defaultDetails="In campaign";
     defaultState="Altis";
     defaultLargeImageKey="altis";
-    defaultLargeImageText="Rebelling in Altis";
+    defaultLargeImageText="Rebelling in Armavir";
     defaultSmallImageKey="au-logo";
     defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
