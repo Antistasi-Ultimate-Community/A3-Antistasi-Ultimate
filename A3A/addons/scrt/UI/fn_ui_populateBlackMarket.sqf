@@ -5,87 +5,47 @@ params [
 	["_category", "", [""]]
 ];
 
-private _buyableVehiclesList = [];
-private _vehicleClasses = [];
-
-private _stock = A3U_blackMarketStock select {
-	private _fnc_isAvailable = _x select 3;
-	
-	call _fnc_isAvailable;
-};
-
 private _fnc_extractMarketClasses = {
-    private _type = _this;
-    private _vehicleRegisters = _stock select {(_x select 2) isEqualTo _type};
-    if (_vehicleRegisters isEqualTo []) exitWith {[]};
+	params ["_type"];
+    private _stock = A3U_blackMarketStock getOrDefault [_type, createHashMap];
+	private _cond = A3U_blackMarketConds getOrDefault [_type, {true}];
 
-    _vehicleRegisters apply {_x select 0};
+	private _isAvailable = call _cond;
+    if (!_isAvailable) exitWith {createHashMap};
+
+	_stock;
 };
 
-switch (_category) do 
+private _buyableVehiclesHM = switch (_category) do 
 {
-    case "artillery": 
-	{
-        _vehicleClasses = ("ARTILLERY" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-    };
-	case "apc": 
-	{
-		_vehicleClasses = ("APC" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+    case "ARTILLERY";
+	case "APC";
+	case "AA";
+	case "UAV";
+	case "TANK";
+	case "HELI";
+	case "PLANE";
+	case "ARMEDCAR";
+	case "UNARMEDCAR";
+	case "BOAT": {
+		[_category] call _fnc_extractMarketClasses;
 	};
-	case "AA": 
+	case "STATICS": 
 	{
-		_vehicleClasses = ("AA" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
+		private _allStock = createHashMap;
+		{ _allStock merge (_x call _fnc_extractMarketClasses) } forEach ["STATICMORTAR", "STATICAA", "STATICAT"];
+		_allStock;
 	};
-	case "uav": 
+	case "ALL": 
 	{
-		_vehicleClasses =  ("UAV" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "tank": 
-	{
-		_vehicleClasses =  ("TANK" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "statics": 
-	{
-		_vehicleClasses =  ("STATICMORTAR" call _fnc_extractMarketClasses) + ("STATICAA" call _fnc_extractMarketClasses) + ("STATICAT" call _fnc_extractMarketClasses) select {
-			_x isNotEqualTo [];
-		};
-	};
-	case "heli": 
-	{
-		_vehicleClasses = ("HELI" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "plane": 
-	{
-		_vehicleClasses = ("PLANE" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "armedcar": 
-	{
-		_vehicleClasses = ("ARMEDCAR" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "unarmedcar": 
-	{
-		_vehicleClasses = ("UNARMEDCAR" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "boat": 
-	{
-		_vehicleClasses = ("BOAT" call _fnc_extractMarketClasses) select {_x isNotEqualTo []};
-	};
-	case "all": 
-	{
-		if (_stock isEqualTo []) exitWith {_buyableVehiclesList};
-
-		_vehicleClasses = _stock apply {_x select 0};
+		private _allStock = createHashMap;
+		{ _allStock merge (_x call _fnc_extractMarketClasses) } forEach (keys A3U_blackMarketStock);
+		_allStock;
 	};
 	default 
 	{
-		Error_1("Invalid vehicle category, given was %1", _category);
+		createHashMap;
 	};
 };
 
-{
-	private _vehiclePrice = [_x] call A3U_fnc_blackMarketVehiclePrice;
-	_buyableVehiclesList pushBack [_x, _vehiclePrice, false];
-} forEach _vehicleClasses;
-
-
-_buyableVehiclesList;
+_buyableVehiclesHM;
