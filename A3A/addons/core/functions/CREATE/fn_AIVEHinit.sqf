@@ -113,7 +113,7 @@ if (_veh isKindOf "Car" or{ _veh isKindOf "Tank"}) then {
 	};
 };
 
-if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
+if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship") && {!(_veh in FactionGet(all, "vehiclesDropPod"))}) then {
 	private _staticVehInit = {
 		waitUntil { sleep 0.1; !isNil "serverInitDone" };
 		params ["_veh", "_flagAction"];
