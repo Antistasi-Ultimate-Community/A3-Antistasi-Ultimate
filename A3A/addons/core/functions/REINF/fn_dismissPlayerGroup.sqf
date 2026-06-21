@@ -28,7 +28,6 @@ waitUntil {sleep 1; time > _timeX or {{(_x distance getMarkerPos respawnTeamPlay
 
 private _hr = 0;
 private _resourcesFIA = 0;
-private _items = [];
 private ["_hr","_unit"];
 
 {
@@ -36,9 +35,7 @@ private ["_hr","_unit"];
 	if ([_unit] call A3A_fnc_canFight) then {
 		_resourcesFIA = _resourcesFIA + (server getVariable (_unit getVariable "unitType"));
 		_hr = _hr +1;
-		private _orgLoadout = flatten (_unit getVariable ["orgLoadout", []]) select {_x isEqualType ""};
-		private _curLoadout = flatten (getUnitLoadout _unit) select {_x isEqualType ""};
-		_items append (_curLoadout - _orgLoadout);
+		([_unit, true] call jn_fnc_arsenal_cargoToArray) call jn_fnc_arsenal_addItem;
 	};
 	deleteVehicle _x;
 } forEach units _newGroup;
@@ -46,5 +43,4 @@ private ["_hr","_unit"];
 [_hr,0] remoteExec ["A3A_fnc_resourcesFIA",2]; 
 [_resourcesFIA] call A3A_fnc_resourcesPlayer;
 
-{ boxX addItemCargoGlobal [_x, 1] } forEach (_items);
 deleteGroup _newGroup;
