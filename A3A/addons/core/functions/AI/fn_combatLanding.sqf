@@ -41,16 +41,36 @@ if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehicles
 _crewGroup setVariable ["A3A_AIScriptHandle", _thisScript];
 _cargoGroup setVariable ["A3A_AIScriptHandle", _thisScript];
 
+_crewGroup setCombatMode "RED";
+
 private _helipadClass = ["Land_HelipadEmpty_F", "Land_HelipadSquare_F"] select (debug);
 private _landPad = createVehicle [_helipadClass, _landPos, [], 0, "NONE"];
 _helicopter setVariable ["LandingPad", _landPad, true];             // cleared up (eventually) by heli deletion handler
 
+private _driver = driver _helicopter;
+private _allPilots = [];
+{
+    if (_x == driver _helicopter || {
+        getNumber ([_helicopter, assignedVehicleRole _x select 1] call BIS_fnc_turretConfig >> "isCopilot") > 0
+    }) then {
+        _allPilots pushBack _x;
+        vehicle _x setEffectiveCommander _x;
+    }; //we can gather copilot this way and add him to pilotgroup so he would be independent from gunners and then he might not engage the enemy like side gunners, but if copilot(s) has a turret this might not be desired, we want shooty-shooty. Right? 
+} forEach (crew _helicopter select {alive _x && group _x == _crewGroup});
+private _side = side _crewGroup;
+private _pilotGroup = createGroup [_side, true];
+//_allPilots joinSilent _pilotGroup;
+[_driver] joinSilent _pilotGroup;
+_pilotGroup setVariable ["A3A_AIScriptHandle", _thisScript];
+
+//don't forget to change driver to currentdriver
+
 //Create the waypoints for the crewGroup
-private _vehWP0 = _crewGroup addWaypoint [_landPos, 0];
+private _vehWP0 = _pilotGroup addWaypoint [_landPos, 0];
 _vehWP0 setWaypointType "MOVE";
 _vehWP0 setWaypointSpeed "FULL";
 _vehWP0 setWaypointCompletionRadius 150;
-_vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gunners will engage units more aggressively
+_vehWP0 setWaypointBehaviour "CARELESS";
 
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
@@ -102,7 +122,6 @@ private _heightDiff = 0;
 
 /* _helicopter action ["LandGear", _helicopter]; */
 
-private _driver = driver _helicopter;
 while {_interval < 0.9999} do
 {
     //Update data
@@ -169,7 +188,7 @@ _cargoGroup leaveVehicle _helicopter;
     unassignVehicle _x;
 } forEach units _cargoGroup;
 
-waitUntil {sleep 1; (!alive _helicopter) || {!canMove _helicopter || {!alive _driver || {/*count assignedCargo _helicopter isEqualTo 0*/ count (crew _helicopter) isEqualTo count (units _crewGroup)}}}};
+waitUntil {sleep 1; (!alive _helicopter) || {!canMove _helicopter || {!alive _driver || {count assignedCargo _helicopter isEqualTo 0 /* count (crew _helicopter) isEqualTo count (units _crewGroup) */}}}};
 
 deleteVehicle _landPad;
 
@@ -208,6 +227,12 @@ _helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// r
         [_helicopter, 1] call A3A_fnc_fireCMFlare;
     };
 };
+
+_driver = driver _helicopter;
+//_allPilots joinSilent _crewGroup;
+[_driver] joinSilent _crewGroup;
+vehicle _driver setEffectiveCommander _driver;
+deleteGroup _pilotGroup;
 
 if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
