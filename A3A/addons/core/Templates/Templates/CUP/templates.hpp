@@ -222,6 +222,14 @@
         file = "CUP_Reb_WM";
         description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
     };
+    class CUP_Reb_AAF : CUP_Reb
+    {
+        name = "AAF Restorationists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_aaf_torn_co.paa);
+        file = "CUP_Reb_AAF";
+        description = "A militarized AAF remnant militia using surplus or outdated NATO and Soviet technology. Loyal to restoring the AAF. Consider this a more forgiving start than most.";
+        maps[] = {"altis"};
+    };
     class CUP_TKC : CUP_Base
     {
         side = "Civ";
