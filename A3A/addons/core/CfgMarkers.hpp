@@ -280,6 +280,20 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 	};
+	
+	// Griffin's Ascent
+	class a3u_flag_asdf: flag_NATO
+	{
+		name = "ASDF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_asdf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_asdf_co.paa);
+	};
+	class a3u_flag_afor: flag_NATO
+	{
+		name = "AFOR";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_afor&asdf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_afor&asdf_co.paa);
+	};
 	class CUP_LC_LUF: flag_NATO 
 	{
 		name = "Lombakkan Union Front";

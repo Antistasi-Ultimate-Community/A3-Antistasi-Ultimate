@@ -714,4 +714,8 @@ class Templates
 
     #include "Templates\KOR\templates.hpp"
 
+    // ***************************** Anthrax PD & GA *****************************
+
+    #include "Templates\ACM\templates.hpp"
+    
 };
