@@ -26,10 +26,10 @@ private _targPos = markerPos _mrkDest;
 
 ServerInfo_1("Starting attack with parameters %1", _this);
 
-private _airbase = [_side, markerPos _mrkDest] call A3A_fnc_availableBasesAir;
+private _base = [_side, markerPos _mrkDest] call A3A_fnc_availableBasesMixed;
 
-//params ["_side", "_airbase", "_target", "_resPool", "_vehCount", "_delay", "_modifiers", "_attackType", "_reveal"];
-private _data = [_side, _airbase, _mrkDest, "defence", _vehCount, 0, [], "CounterAttack", _reveal] call A3A_fnc_createAttackForceMixed;
+//params ["_side", "_base", "_target", "_resPool", "_vehCount", "_delay", "_modifiers", "_attackType", "_reveal"];
+private _data = [_side, _base, _mrkDest, "defence", _vehCount, 0, [], "CounterAttack", _reveal] call A3A_fnc_createAttackForceMixed;
 _data params ["", "_vehicles", "_crewGroups", "_cargoGroups"];
 
 // Prepare despawn conditions

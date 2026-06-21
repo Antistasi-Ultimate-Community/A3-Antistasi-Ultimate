@@ -32,6 +32,10 @@ private _minClearance = 10 max (sizeOf _vehType);
 private _vtol = (getNumber (configOf _vehicle >> "vtol") > 0 && _vehType in FactionGet(all,"vehiclesTransportAir"));
 if (_vtol) then { _vehicle setVehicleRadar 1 };
 
+if (_vehType in FactionGet(all,"vehiclesTransportAir") && !(_markerOrigin in airportsX)) then { // && !_vtol  maybe? techicall they should land/take off anywhere
+    _markerOrigin = [side _crewGroup, _posDestination] call A3A_fnc_availableBasesAir; //should always be available since carrier always exists unless side is defeted
+};
+
 if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) then
 {
     if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all, "vehiclesDropPod") || _vtol) exitWith
