@@ -32,8 +32,15 @@ _unit setVariable ["downedTimeout", time + 1200];
 //If _killer is not set or the same side (collision for example), abort here
 if((isNil "_killer") || {(isNull _killer) || {side (group _killer) == side _group}}) exitWith {};
 
-// Add the unit to recent kills for reaction purposes
-[side _group, getPosATL _unit, 10, _killer] remoteExec ["A3A_fnc_addRecentDamage", 2];
+private _isRival = _unit getVariable ["isRival", false];
+
+// Chance to trigger support/reaction logic: 100% for normal factions, 25% for rivals
+private _supportChance = if (_isRival) then { 25 } else { 100 };
+
+// Add the unit to recent kills for reaction purposes (with probability for rivals)
+if (random 100 < _supportChance) then {
+    [side _group, getPosATL _unit, 10, _killer] remoteExec ["A3A_fnc_addRecentDamage", 2];
+};
 
 private _enemy = objNull;
 private _activeGroupMembers = (units _group) select {_x call A3A_fnc_canFight};
@@ -41,18 +48,20 @@ private _activeGroupMembers = (units _group) select {_x call A3A_fnc_canFight};
 //No group member left in fighting condition, no reaction possible
 if(count _activeGroupMembers == 0) exitWith {};
 
-//Call help if possible
-if(_group getVariable ["A3A_canCallSupportAt", -1] < time) then {
-    if (radiomanSupport isEqualTo false) then { // use radioman
-        [_group, _killer] spawn A3A_fnc_callForSupportInfantry;
-    } else { // use SL
-        [_group, _killer] spawn A3A_fnc_callForSupport;
+//Call help if possible (with probability for rivals)
+if(random 100 < _supportChance) then {
+    if(_group getVariable ["A3A_canCallSupportAt", -1] < time) then {
+        if (radiomanSupport isEqualTo false) then { // use radioman
+            [_group, _killer] spawn A3A_fnc_callForSupportInfantry;
+        } else { // use SL
+            [_group, _killer] spawn A3A_fnc_callForSupport;
+        };
     };
-};
 
-// Call for Local battery support.
-if (PATCOM_ARTILLERY_MANAGER) then {
-    [getPos _killer, (random 150), "HE", (round (1 + tierWar / 2)), _group] call A3A_fnc_artilleryFireMission;
+    // Call for Local battery support.
+    if (PATCOM_ARTILLERY_MANAGER) then {
+        [getPos _killer, (random 150), "HE", (round (1 + tierWar / 2)), _group] call A3A_fnc_artilleryFireMission;
+    };
 };
 
 if (!fleeing leader _group and random 1 < 0.5) then
