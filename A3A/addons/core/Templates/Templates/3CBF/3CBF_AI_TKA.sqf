@@ -19,21 +19,25 @@
 
 ["vehiclesBasic", ["UK3CB_TKA_B_YAVA"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["UK3CB_TKA_B_BRDM2_UM", "UK3CB_TKA_B_M1025", "UK3CB_TKA_B_M998_2DR", "UK3CB_TKA_B_M998_4DR"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["UK3CB_TKA_B_MTLB_ZU23", "UK3CB_TKA_B_Ural_Zu23", "UK3CB_TKA_B_BRDM2_HQ", "UK3CB_TKA_B_BRDM2", "UK3CB_TKA_B_LR_SF_AGS30", "UK3CB_TKA_B_LR_SF_M2", "UK3CB_TKA_B_M1025_MK19", "UK3CB_TKA_B_M1025_M2", "UK3CB_TKA_B_BRDM2_ATGM", "UK3CB_TKA_B_MaxxPro_M2", "UK3CB_TKA_B_MaxxPro_MK19"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", [
+    "UK3CB_TKA_B_MTLB_ZU23", "UK3CB_TKA_B_Ural_Zu23", "UK3CB_TKA_B_BRDM2_HQ", "UK3CB_TKA_B_BRDM2",
+    "UK3CB_TKA_B_LR_SF_WMIK_M2_M240", "UK3CB_TKA_B_LR_SF_WMIK_M240_M240", "UK3CB_TKA_B_LR_SF_WMIK_MILAN_M240", "UK3CB_TKA_B_LR_SF_WMIK_MK19_M240",
+    "UK3CB_TKA_B_M1025_MK19", "UK3CB_TKA_B_M1025_M2", "UK3CB_TKA_B_BRDM2_ATGM", "UK3CB_TKA_B_MaxxPro_M2", "UK3CB_TKA_B_MaxxPro_MK19"
+]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["UK3CB_TKA_B_Kamaz_Closed", "UK3CB_TKA_B_Kamaz_Open"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["UK3CB_TKA_B_Ural_Recovery"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["UK3CB_TKA_B_Ural_Ammo"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["UK3CB_TKA_B_Ural_Ammo", "UK3CB_TKA_B_LATE_BTR40_REAMMO"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["UK3CB_TKA_B_Kamaz_Repair", "UK3CB_TKA_B_Ural_Repair"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["UK3CB_TKA_B_Ural_Fuel", "UK3CB_TKA_B_Kamaz_Fuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["UK3CB_TKA_B_M113_AMB"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["UK3CB_TKA_B_BTR60", "UK3CB_TKA_B_M113_M2", "UK3CB_TKA_B_M113_M240", "UK3CB_TKA_B_M113_MK19", "UK3CB_TKA_B_M1117"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["UK3CB_TKA_B_Ural_Fuel", "UK3CB_TKA_B_Kamaz_Fuel", "UK3CB_TKA_B_LATE_BTR40_REFUEL"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["UK3CB_TKA_B_M113_AMB", "UK3CB_TKA_B_LATE_BTR40_AMBULANCE"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["UK3CB_TKA_B_BTR60", "UK3CB_TKA_B_M113_M2", "UK3CB_TKA_B_M113_M240", "UK3CB_TKA_B_M113_MK19", "UK3CB_TKA_B_M1117", "UK3CB_TKA_O_BTR90", "UK3CB_TKA_O_BTR90_HQ"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["UK3CB_TKA_B_M113_M2", "UK3CB_TKA_B_M113_M240", "UK3CB_TKA_B_M113_MK19"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["UK3CB_TKA_B_BMP1", "UK3CB_TKA_B_BMP2"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;
 
 ["vehiclesLightTanks",  ["UK3CB_TKA_B_T34"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["UK3CB_TKA_B_T55", "UK3CB_TKA_B_T72A", "UK3CB_TKA_B_T72B", "UK3CB_TKA_B_T72BM"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["UK3CB_TKA_B_ZsuTank"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["UK3CB_TKA_B_ZsuTank", "UK3CB_TKA_B_LATE_BTR40_ZU23"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["rhsgref_hidf_assault_boat", "rhsgref_hidf_rhib"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["UK3CB_MDF_B_RHIB_Gunboat"]] call _fnc_saveToTemplate;
@@ -52,14 +56,14 @@
 ["UK3CB_TKA_B_BM21",["rhs_mag_m21of_1"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
-["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "UK3CB_TKA_O_KA137_PKM"]] call _fnc_saveToTemplate;
+["uavsPortable", ["B_UAV_01_F", "UK3CB_TKA_O_KA137"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
 ["vehiclesMilitiaLightArmed", ["UK3CB_TKA_B_Hilux_Dshkm", "UK3CB_TKA_B_Hilux_M2", "UK3CB_TKA_B_Hilux_Spg9"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["UK3CB_TKA_B_Ural_Open", "UK3CB_TKA_B_Ural"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["UK3CB_TKA_B_Hilux_Closed", "UK3CB_TKA_B_Hilux_Open"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["UK3CB_TKA_B_MTLB_PKT", "UK3CB_TKA_B_BTR40_MG"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["UK3CB_TKA_B_Hilux_Closed", "UK3CB_TKA_B_Hilux_Open", "UK3CB_TKA_B_LATE_BTR40"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["UK3CB_TKA_B_MTLB_PKT", "UK3CB_TKA_B_BTR40_MG", "UK3CB_TKA_B_LATE_BTR40_DSHKMS", "UK3CB_TKA_B_LATE_BTR40_GMG", "UK3CB_TKA_B_LATE_BTR40_METIS", "UK3CB_TKA_B_LATE_BTR40_PKM"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["UK3CB_TKP_B_Hilux_Pkm", "UK3CB_TKP_B_Hilux_Open", "UK3CB_TKP_B_Lada_Police", "UK3CB_TKP_B_Datsun_Pickup", "UK3CB_TKP_B_Hilux_Closed"]] call _fnc_saveToTemplate;
 
