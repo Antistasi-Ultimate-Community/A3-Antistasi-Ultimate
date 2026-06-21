@@ -58,7 +58,7 @@ private _fnc_addCrewToTurrets = {
 		[_turretConfig, _turretPath] call _fnc_addCrewToTurrets;
 
 		if (getNumber (_turretConfig >> "hasGunner") == 0 || getNumber (_turretConfig >> "dontCreateAI") != 0) then { continue };
-		if (!_isHeli && {getNumber (_turretConfig >> "showAsCargo") > 0}) then { continue };
+		if (/* !_isHeli && */ {getNumber (_turretConfig >> "showAsCargo") > 0}) then { continue }; //why do we need !_isHeli ? VTOL Spirit will not work with it...
 		if (isNull (_vehicle turretUnit _turretPath)) then {
 			private _gunner = [_group, _unitType, getPos _vehicle, [], 10] call A3A_fnc_RivalsCreateUnit;
 			_gunner assignAsTurret [_vehicle, _turretPath];

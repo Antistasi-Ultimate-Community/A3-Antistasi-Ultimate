@@ -42,9 +42,9 @@
 
 ["vehiclesPlanesCAS", ["OPTRE_FC_Type26B_Banshee","OPTRE_FC_Type26B_Ultra_Banshee","OPTRE_FC_Type26N_Banshee","OPTRE_FC_Type27_Banshee"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["OPTRE_FC_Type26B_Ultra_Banshee","OPTRE_FC_Type26N_Banshee","OPTRE_FC_Type27_Banshee"]] call _fnc_saveToTemplate;
-["vehiclesPlanesTransport", ["OPTRE_FC_Spirit"]] call _fnc_saveToTemplate; // I pray this works
+["vehiclesPlanesTransport", ["A3U_OPTRE_Spirit_VTOL","A3U_OPTRE_Spirit_VTOL_Concussion"]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesGunship", ["OPTRE_FC_Spirit"]] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", ["A3U_OPTRE_Spirit_VTOL","A3U_OPTRE_Spirit_VTOL_Concussion"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["OPTRE_FC_Spirit"]] call _fnc_saveToTemplate;
 
