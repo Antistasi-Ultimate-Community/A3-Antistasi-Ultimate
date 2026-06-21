@@ -2568,16 +2568,16 @@ class Params
     {
         title = $STR_params_crateWepTypeMax;
         tooltip = $STR_params_crateWepTypeMax_desc;
-        values[] = {0,2,4,6,8,12,16};
-        texts[] = {"1","3","5","7","9","13","17"};
-        default = 8;
+        values[] = {0,1,3,5,7,10,15,20};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10","15","20"};
+        default = 7;
     };
     class crateWepNumMax: CrateParams
     {
         title = $STR_params_crateWepNumMax;
         tooltip = $STR_params_crateWepNumMax_desc;
-        values[] = {0,1,3,5,8,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","8","10","15"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
@@ -2590,22 +2590,22 @@ class Params
             class medium : solo {};
             class large : solo {};
         };
-        default = 8;
+        default = 10;
     };
     class crateItemTypeMax: CrateParams
     {
         title = $STR_params_crateItemTypeMax;
         tooltip = $STR_params_crateItemTypeMax_desc;
-        values[] = {0,2,4,9};
-        texts[] = {"1","3","5","10"};
-        default = 4;
+        values[] = {0,1,3,5,7,10,15,20};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10","15","20"};
+        default = 5;
     };
     class crateItemNumMax: CrateParams
     {
         title = $STR_params_crateItemNumMax;
         tooltip = $STR_params_crateItemNumMax_desc;
-        values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
@@ -2624,16 +2624,16 @@ class Params
     {
         title = $STR_params_crateAmmoTypeMax;
         tooltip = $STR_params_crateAmmoTypeMax_desc;
-        values[] = {0,2,4,6,9,14,19};
-        texts[] = {"1","3","5","7","10","15","20"};
-        default = 6;
+        values[] = {0,1,3,5,7,10,15,20};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10","15","20"};
+        default = 5;
     };
     class crateAmmoNumMax: CrateParams
     {
         title = $STR_params_crateAmmoNumMax;
         tooltip = $STR_params_crateAmmoNumMax_desc;
-        values[] = {0,1,3,5,10,15,20,25,30};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","25","30"};
+        values[] = {0,2,5,10,15,20,30,50};
+        texts[] = {$STR_params_civ_traffic_none,"2","5","10","15","20","30","50"};
         class difficulty
         {
             class solo
@@ -2652,16 +2652,16 @@ class Params
     {
         title = $STR_params_crateExplosiveTypeMax;
         tooltip = $STR_params_crateExplosiveTypeMax_desc;
-        values[] = {0,2,4,9};
-        texts[] = {"1","3","5","10"};
-        default = 4;
+        values[] = {0,1,3,5,7,10};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
+        default = 3;
     };
     class crateExplosiveNumMax: CrateParams
     {
         title = $STR_params_crateExplosiveNumMax;
         tooltip = $STR_params_crateExplosiveNumMax_desc;
-        values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        values[] = {0,1,3,5,7,10,15,20};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10","15","20"};
         class difficulty
         {
             class solo
@@ -2680,21 +2680,21 @@ class Params
     {
         title = $STR_params_crateAttachmentTypeMax;
         tooltip = $STR_params_crateAttachmentTypeMax_desc;
-        values[] = {0,2,4,6,9,14,19};
-        texts[] = {"1","3","5","7","10","15","20"};
-        default = 6;
+        values[] = {0,1,3,5,7,10,15,20};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10","15","20"};
+        default = 7;
     };
     class crateAttachmentNumMax: CrateParams
     {
         title = $STR_params_crateAttachmentNumMax;
         tooltip = $STR_params_crateAttachmentNumMax_desc;
-        values[] = {0,1,3,5,10,15,20,25,30};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","25","30"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
             {
-                easy = 25;
+                easy = 30;
                 medium = 15;
                 hard = 5;
             };
@@ -2708,16 +2708,16 @@ class Params
     {
         title = $STR_params_crateBackpackTypeMax;
         tooltip = $STR_params_crateBackpackTypeMax_desc;
-        values[] = {0,2,4,9};
-        texts[] = {"1","3","5","10"};
+        values[] = {0,1,3,5,7,10};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
         default = 0;
     };
     class crateBackpackNumMax: CrateParams
     {
         title = $STR_params_crateBackpackNumMax;
         tooltip = $STR_params_crateBackpackNumMax_desc;
-        values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
@@ -2736,16 +2736,16 @@ class Params
     {
         title = $STR_params_crateVestTypeMax;
         tooltip = $STR_params_crateVestTypeMax_desc;
-        values[] = {0,2,4,9};
-        texts[] = {"1","3","5","10"};
+        values[] = {0,1,3,5,7,10};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
         default = 0;
     };
     class crateVestNumMax: CrateParams
     {
         title = $STR_params_crateVestNumMax;
         tooltip = $STR_params_crateVestNumMax_desc;
-        values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
@@ -2764,16 +2764,16 @@ class Params
     {
         title = $STR_params_crateHelmetTypeMax;
         tooltip = $STR_params_crateHelmetTypeMax_desc;
-        values[] = {0,2,4,9};
-        texts[] = {"1","3","5","10"};
+        values[] = {0,1,3,5,7,10};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
         default = 0;
     };
     class crateHelmetNumMax: CrateParams
     {
         title = $STR_params_crateHelmetNumMax;
         tooltip = $STR_params_crateHelmetNumMax_desc;
-        values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
@@ -2792,16 +2792,16 @@ class Params
     {
         title = $STR_params_crateDeviceTypeMax;
         tooltip = $STR_params_crateDeviceTypeMax_desc;
-        values[] = {0,2,4,9};
-        texts[] = {"1","3","5","10"};
-        default = 2;
+        values[] = {0,1,3,5,7,10};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","7","10"};
+        default = 3;
     };
     class crateDeviceNumMax: CrateParams
     {
         title = $STR_params_crateDeviceNumMax;
         tooltip = $STR_params_crateDeviceNumMax_desc;
-        values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        values[] = {0,1,3,5,10,15,20,30};
+        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","30"};
         class difficulty
         {
             class solo
