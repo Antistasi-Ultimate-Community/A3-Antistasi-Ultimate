@@ -59,7 +59,7 @@ if (_crewManIndex != -1) then {
     _crewMan lookAt (_crewMan getRelPos [100, _dirveh]);
 };
 
-["locationSpawned", [_markerX, "RebelRoadblock", true]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "RebelRoadblock", true]] spawn EFUNC(Events,triggerEvent);
 
 waitUntil {
 	sleep 1; 
@@ -89,4 +89,4 @@ if (!isNull _veh) then {
 } forEach units _groupX;
 deleteGroup _groupX;
 
-["locationSpawned", [_markerX, "RebelRoadblock", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "RebelRoadblock", false]] spawn EFUNC(Events,triggerEvent);

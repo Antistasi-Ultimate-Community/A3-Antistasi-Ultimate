@@ -29,7 +29,7 @@ _props pushBack _tent;
 	_x setVectorUp surfaceNormal position _x;
 } forEach _props;
 
-["locationSpawned", [_markerX, "RebelWatchpost", true]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "RebelWatchpost", true]] spawn EFUNC(Events,triggerEvent);
 
 waitUntil {
 	sleep 1; 
@@ -57,4 +57,4 @@ deleteGroup _groupX;
 	deleteVehicle _x;
 } forEach _props;
 
-["locationSpawned", [_markerX, "RebelWatchpost", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "RebelWatchpost", false]] spawn EFUNC(Events,triggerEvent);

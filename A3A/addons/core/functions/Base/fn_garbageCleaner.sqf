@@ -77,3 +77,5 @@ if (isClass (configFile/"CfgPatches"/"rhsgref_main")) then {//ToDo: these should
 [localize "STR_antistasi_dialogs_open_clean_garbage_title", format [localize "STR_antistasi_dialogs_open_clean_garbage_success", _timeSinceLastGC]] remoteExec ["A3A_fnc_customHint", 0];
 missionNamespace setVariable ["A3A_lastGarbageCleanTime",serverTime,true];
 Info("Garbage clean completed");
+
+["garbageCleanerComplete", []] spawn EFUNC(Events,triggerEvent);

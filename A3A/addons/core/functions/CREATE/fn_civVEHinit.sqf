@@ -25,4 +25,4 @@ if (count _vehCrew == 0) then { //and {("vanilla" in A3A_factionEquipFlags)}
 		if (!simulationEnabled _veh) then {[_veh,true] remoteExec ["enableSimulationGlobal",2]};
 	}];
 };
-["civVehInit", [_veh]] call EFUNC(Events,triggerEvent);
+["civVehInit", [_veh]] spawn EFUNC(Events,triggerEvent);
