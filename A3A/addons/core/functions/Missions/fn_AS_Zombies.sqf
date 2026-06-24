@@ -46,8 +46,8 @@ private _taskId = "AS" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskID,
 	[
-		format [localize "STR_A3A_Missions_AS_Zombies_task_desc", _nameDest, _displayTime],
-		localize "STR_A3A_Missions_AS_Zombies_task_header",
+		[ "STR_A3A_Missions_AS_Zombies_task_desc", _nameDest, _displayTime],
+		[ "STR_A3A_Missions_AS_Zombies_task_header"],
 		_markerX
 	],
 	_positionX,

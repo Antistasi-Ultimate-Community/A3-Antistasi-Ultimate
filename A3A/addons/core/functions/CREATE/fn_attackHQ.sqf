@@ -27,8 +27,8 @@ private _taskId = "DEF_HQ" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        localize "STR_tasks_attackHq_desc",
-        localize "STR_tasks_attackHq_header",
+        ["STR_tasks_attackHq_desc"],
+        ["STR_tasks_attackHq_header"],
         respawnTeamPlayer
     ],
     _targPos,

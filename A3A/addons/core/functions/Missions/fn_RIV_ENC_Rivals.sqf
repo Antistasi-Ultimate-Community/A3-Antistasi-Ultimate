@@ -245,8 +245,8 @@ private _intelLeaderPosition = position _intelLeader;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [(localize "STR_rivals_quest_description"),A3A_faction_occ get "name"],
-        (localize "STR_rivals_quest_header"),
+        [ "STR_rivals_quest_description",A3A_faction_occ get "name"],
+        [ "STR_rivals_quest_header"],
         _marker
     ],
     _intelLeaderPosition,
@@ -323,8 +323,8 @@ sleep 2;
     [teamPlayer,civilian],
     _taskId,
     [
-		format [(localize "STR_rivals_quest_update_description"), _displayTime],
-		format [(localize "STR_rivals_quest_update_header"), A3A_faction_riv get "name"],
+		[ "STR_rivals_quest_update_description", _displayTime],
+		[ "STR_rivals_quest_update_header", A3A_faction_riv get "name"],
         _marker
     ],
     _roadPosition,
