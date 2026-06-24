@@ -19,11 +19,23 @@ _limit params ["_dateLimitNum", "_displayTime"];
 private _markerSide = sidesX getVariable [_marker, sideUnknown];
 
 private _nameDest = [_marker] call A3A_fnc_localizar;
-private _textX = format [localize "STR_CON_MilAdmin_desc", _nameDest, _displayTime];
-private _taskName = localize "STR_CON_MilAdmin_task";
+private _textX = [ "STR_CON_MilAdmin_desc", _nameDest, _displayTime];
+private _taskName = [ "STR_CON_MilAdmin_task"];
 
 private _taskId = "CON" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[_textX,_taskName,_marker],_milAdministrationPos,false,0,true,"attack",true] call BIS_fnc_taskCreate;
+[ [teamPlayer,civilian],
+  _taskId,
+  [ _textX,
+    _taskName,
+    _marker
+  ],
+  _milAdministrationPos,
+  false,
+  0,
+  true,
+  "attack",
+  true
+  ] call BIS_fnc_taskCreate;
 [_taskId, "CON", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 

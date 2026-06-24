@@ -40,8 +40,8 @@ private _taskId = "AS" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskID,
 	[
-		format [localize "STR_A3A_Missions_AS_Smasher_task_desc", FactionGet(occ,"name"), _nameDest, _displayTime],
-		localize "STR_A3A_Missions_AS_Smasher_task_header",
+		[ "STR_A3A_Missions_AS_Smasher_task_desc", FactionGet(occ,"name"), _nameDest, _displayTime],
+		[ "STR_A3A_Missions_AS_Smasher_task_header" ],
 		_markerX
 	],
 	_positionX,
@@ -82,7 +82,7 @@ if (_difficultX) then {
 	} else {
 		selectRandom (_faction getOrDefault ["vehiclesHelisLightAttack", []]);
 	};
-	
+
 	private _heliPos = _posTask getPos [random [1000, 2000, 3000], random 360]; // replace this with an airbase or outpost, etc
 
 	private _heliGroup = createGroup _groupSFSide;
@@ -102,7 +102,7 @@ if (_difficultX) then {
 	for "_i" from 0 to 3 do
 	{
 		private _sfPos = _posTask getPos [random 10, random 360];
-		
+
 		private _typeGroup = selectRandom (_groupSFHash get "groupSpecOpsRandom");
 		private _groupSF = [_sfPos, _groupSFSide, _typeGroup, false, true] call A3A_fnc_spawnGroup;
 

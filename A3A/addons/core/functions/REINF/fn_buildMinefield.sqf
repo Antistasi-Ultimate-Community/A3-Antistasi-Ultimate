@@ -25,7 +25,19 @@ _mrk setMarkerBrushLocal "DiagGrid";
 _mrk setMarkerText (localize "STR_marker_minefield");
 
 private _taskId = "Mines" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_reinf_minefield_task_desc",_quantity],"Minefield Deploy",_mrk],_positionTel,false,0,true,"map",true] call BIS_fnc_taskCreate;
+[ [teamPlayer,civilian],
+  _taskId,
+  [ [ "STR_A3A_reinf_minefield_task_desc",_quantity],
+    [ "STR_A3A_reinf_minefield_task_header"],
+    _mrk
+  ],
+  _positionTel,
+  false,
+  0,
+  true,
+  "map",
+  true
+  ] call BIS_fnc_taskCreate;
 [_taskId, "Mines", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 private _groupX = createGroup teamPlayer;
@@ -68,7 +80,7 @@ if ((_truckX distance _positionTel < 50) and ({alive _x} count units _groupX > 0
 	[petros,"hint",localize "STR_hints_build_minefield_engie_start"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 
 	[_groupX, "Patrol_Area", 25, 50, 100, true, _positionTel, true] call A3A_fnc_patrolLoop;
-	
+
 	sleep 30;
 	if ((alive _truckX) and ({alive _x} count units _groupX > 0)) then
 		{

@@ -90,36 +90,36 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
 {
     case "ammunition": ///shouldn't they all start from the Capital?
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_ammo",_nameOrigin,_displayTime,_nameDest];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_ammo";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_ammo",_nameOrigin,_displayTime,_nameDest];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_ammo"];
         _taskIcon = "rearm";
         _typeVehObj = selectRandom (_milFaction get "vehiclesAmmoTrucks");
     };
     case "fuel":
 	{
-		_textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_fuel",_nameOrigin,_displayTime,_nameDest];
-		_taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_fuel";
+		_textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_fuel",_nameOrigin,_displayTime,_nameDest];
+		_taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_fuel"];
 		_taskIcon = "refuel";
 		_typeVehObj = selectRandom (_milFaction get "vehiclesFuelTrucks");
 	};
     case "repair":
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_repair",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_repair";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_repair",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_repair"];
         _taskIcon = "repair";
         _typeVehObj = selectRandom (_milFaction get "vehiclesRepairTrucks");
     };
     case "armor":
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_armor";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_armor",_nameOrigin,_displayTime,_nameDest];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_armor"];
         _taskIcon = "destroy";
         _typeVehObj = selectRandom (_milFaction get "vehiclesArmor");
     };
     case "prisoners":
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_prisoners",_nameOrigin,_displayTime,_nameDest];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_prisoners";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_prisoners",_nameOrigin,_displayTime,_nameDest];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_prisoners"];
         _taskIcon = "run";
         _typeVehObj = selectRandom ( switch true do {
             case (tierWar < 5): { (_milFaction get "vehiclesMilitiaTrucks") };
@@ -129,8 +129,8 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
     };
     case "reinforcements":
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_reinf",_nameOrigin,_displayTime,_nameDest];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_reinf";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_reinf",_nameOrigin,_displayTime,_nameDest];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_reinf"];
         _taskIcon = "meet";
         _typeVehObj = selectRandom ( switch true do {
             case (tierWar < 5): { (_milFaction get "vehiclesMilitiaTrucks") };
@@ -140,16 +140,16 @@ switch (toLowerANSI _convoyType) do ///why? toLowerANSI
     };
     case "money":
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_money";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_money",_nameOrigin,_displayTime,_nameDest];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_money"];
         _taskIcon = "takeoff"; ///"truck" icon doesn't exist
         _vehiclePool = if (_civDisabled) then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction get "vehiclesCivIndustrial" } select { _x isEqualType "" }; // * convert weighted list to normal array
         _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);
     };
     case "supplies":
     {
-        _textX = format [localize "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
-        _taskTitle = localize "STR_A3A_Missions_AS_Convoy_task_header_supplies";
+        _textX = [ "STR_A3A_Missions_AS_Convoy_task_dest_supplies",_nameOrigin,_displayTime,_nameDest,FactionGet(reb,"name")];
+        _taskTitle = [ "STR_A3A_Missions_AS_Convoy_task_header_supplies"];
         _taskIcon = "box";
         _vehiclePool = if (_civDisabled) then { _milFaction get "vehiclesMilitiaTrucks" } else { _civFaction getOrDefault ["vehiclesCivMedical", _civFaction get "vehiclesCivIndustrial"] } select { _x isEqualType "" }; // * convert weighted list to normal array
         _typeVehObj = selectRandom (_rebFaction getOrDefault ["vehiclesCivSupply", _vehiclePool]);

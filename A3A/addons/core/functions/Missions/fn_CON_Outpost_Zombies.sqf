@@ -24,25 +24,25 @@ if !(_civNonHuman) exitWith {
 private _markerSide = sidesX getVariable [_markerX, sideUnknown];
 
 private _nameDest = [_markerX] call A3A_fnc_localizar;
-private _textX = "";
-private _taskName = "";
+private _textX = [];
+private _taskName = [];
 
 switch (true) do 
 {
 	case (_markerX in resourcesX): 
 	{
-		_textX = format [localize "STR_CON_Outpost_resources_desc", _nameDest, _displayTime];
-		_taskName = localize "STR_CON_Outpost_resources_task";
+		_textX = [ "STR_CON_Outpost_resources_desc", _nameDest, _displayTime];
+		_taskName = [ "STR_CON_Outpost_resources_task"];
 	};
 	case (_markerX in controlsX): 
 	{
-		_textX = format [localize "STR_CON_Outpost_controls_desc", _nameDest, _displayTime];
-		_taskName = localize "STR_CON_Outpost_controls_task";
+		_textX = [ "STR_CON_Outpost_controls_desc", _nameDest, _displayTime];
+		_taskName = [ "STR_CON_Outpost_controls_task"];
 	};
 	default 
 	{
-		_textX = format [localize "STR_CON_Outpost_outposts_desc", _nameDest, _displayTime];
-		_taskName = localize "STR_CON_Outpost_outposts_task";
+		_textX = [ "STR_CON_Outpost_outposts_desc", _nameDest, _displayTime];
+		_taskName = [ "STR_CON_Outpost_outposts_task"];
 	};
 };
 

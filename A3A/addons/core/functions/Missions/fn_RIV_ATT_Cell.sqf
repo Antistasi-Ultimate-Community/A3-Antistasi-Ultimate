@@ -145,8 +145,8 @@ private _taskId = "RIV_ATT" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_RIV_ATT_cell_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
-        format [localize "STR_RIV_ATT_cell_header", A3A_faction_riv get "name"],
+        [ "STR_RIV_ATT_cell_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
+        [ "STR_RIV_ATT_cell_header", A3A_faction_riv get "name"],
         _marker
     ],
     _targetPos,

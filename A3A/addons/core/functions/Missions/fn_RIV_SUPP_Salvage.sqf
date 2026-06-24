@@ -167,8 +167,8 @@ private _taskId = "SUPP" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskId,
 	[
-		format [localize "STR_A3A_Missions_RIV_SUPP_Salvage_task_desc", _nameDest, _faction get "name", _displayTime],
-		localize "STR_A3A_Missions_RIV_SUPP_Salvage_task_header",
+		[ "STR_A3A_Missions_RIV_SUPP_Salvage_task_desc", _nameDest, _faction get "name", _displayTime],
+		[ "STR_A3A_Missions_RIV_SUPP_Salvage_task_header"],
 		_markerX
 	],_startingRoadPosition,false,0,true,"truck",true] call BIS_fnc_taskCreate;
 [_taskId, "SUPP", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];

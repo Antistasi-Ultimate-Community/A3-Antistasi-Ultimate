@@ -29,8 +29,8 @@ private _taskId = "DES" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskId,
 	[
-		format [localize "STR_A3A_Missions_DES_Antenna_task_desc",_nameDest,_displayTime,FactionGet(occ,"name")],
-		localize "STR_A3A_Missions_DES_Antenna_task_header",
+		[ "STR_A3A_Missions_DES_Antenna_task_desc",_nameDest,_displayTime,FactionGet(occ,"name")],
+		[ "STR_A3A_Missions_DES_Antenna_task_header"],
 		_mrkFinal
 	],
 	_positionX,
