@@ -228,6 +228,22 @@ class A3AU_VegetationCleaner_Large_F: A3AU_VegetationCleaner_Base_F
     };
 };
 
+class UserTexture10m_F;
+class OverObject_HelipadCircle_F: UserTexture10m_F {
+    /* hiddenSelections[] = {"camo", "decals"};
+    hiddenSelectionsTextures[] = {
+        "\A3\Structures_F\Mil\Helipads\Data\HelipadCircle_F_CO.paa",
+        "\A3\Structures_F\Mil\Helipads\Data\HelipadDecal_F_CO.paa"
+    }; */
+};
+class OverObject_HelipadSquare_F: UserTexture10m_F {
+    /* hiddenSelections[] = {"camo", "decals"};
+    hiddenSelectionsTextures[] = {
+        "\A3\Structures_F\Mil\Helipads\Data\HelipadSquare_F_CO.paa",
+        "\A3\Structures_F\Mil\Helipads\Data\HelipadDecal_F_CO.paa"
+    }; */
+};
+
 // Base Builders
 class Land_ButaneTorch_F;
 class GVAR(BB_TerrainObjectHider_Base) : Land_ButaneTorch_F 
