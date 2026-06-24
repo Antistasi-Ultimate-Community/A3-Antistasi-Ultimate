@@ -20,7 +20,7 @@
     {
         name = "UNSC Desert";
         file = "OPTRE_AI_UNSC_desert";
-        climate[] = {"arid", "temperate"};
+        climate[] = {"arid"};
     };
     class OPTRE_UNSC_snow : OPTRE_UNSC
     {
@@ -42,14 +42,7 @@
         flagTexture = QPATHTOFOLDER(Templates\Templates\OPTRE\images\flag_covenant_ca.paa);
         name = "Covenant (Elites)";
         file = "OPTRE_AI_Covenant";
-        description = "The Covenant (With OPTRE elites)";
-    };
-    class OPTRE_Cov_Grunts : OPTRE_Cov
-    {
-        requiredAddons[] = {"OPTRE_Core", "OPTRE_FC_Core", "WBK_Halo_Alients"};
-        name = "Covenant (WBK Elites)";
-        file = "OPTRE_AI_Covenant_Grunts";
-        description = "The Covenant (With Webknights elites and grunts)";
+        description = "The Covenant.";
     };
     class OPTRE_Ins : OPTRE_Cov
     {

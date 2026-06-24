@@ -29,7 +29,7 @@ switch (_mode) do
     case ("missionButtonClicked"):
     {
         // Params: 1 : Mission type (AS, DES etc...)
-        Trace("Request mission button clicked");
+        Debug("Request mission button clicked");
 
         // Check for member / commander
         if !(([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) exitWith
@@ -39,7 +39,7 @@ switch (_mode) do
         };
 
         // Check param count
-        if (count _params != 1) exitWith {Error("Invalid parameter count for missionButtonClicked. Got %1, expected 1", count _params)};
+        if (count _params != 1) exitWith {Error_1("Invalid parameter count for missionButtonClicked. Got %1, expected 1", count _params)};
         private _missionType = _params select 0;
 
         // Check if mission type exists

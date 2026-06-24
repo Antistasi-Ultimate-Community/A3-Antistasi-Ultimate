@@ -177,6 +177,8 @@ private _replaceBadAntenna = {
 		_antennaPos set [2, 0];
 		private _antennaClass = if (worldName isEqualTo "chernarus_summer") then { "Land_Telek1" } else { "Land_TTowerBig_2_F" };
 		_antenna = createVehicle [_antennaClass, _antennaPos, [], 0, "NONE"];
+		_antenna setVectorUp [0, 0, 1];
+        _antenna setDir (getDir _antenna);
 	};
 	_antenna;
 };
@@ -303,14 +305,17 @@ if( _fuelStationTypes isEqualTo [] ) then {_fuelStationTypes = ["Land_FuelStatio
 A3A_fuelStationTypes = _fuelStationTypes;
 A3A_fuelStations = nearestObjects [[worldSize/2, worldSize/2], _fuelStationTypes, worldSize];
 A3A_fuelStations apply {
-	_mrkFinalFuel = createMarker [format ["Ant%1", mapGridPosition _x], position _x];
-	_mrkFinalFuel setMarkerShapeLocal "ICON";
-	_mrkFinalFuel setMarkerTypeLocal "loc_Fuelstation";
-	_mrkFinalFuel setMarkerColorLocal "ColorWhite";
-	_mrkFinalFuel setMarkerTextLocal localize "STR_fuelstation";
-	_mrkFinalFuel setMarkerAlpha 0.75;
-	if(A3A_hasACE) then {
-		[_x, 250] call ace_refuel_fnc_setFuel; // only call on fuels that are not blacklisted and first zone init.
+	_mrkFormatted = format ["Ant%1", mapGridPosition _x];
+	if !(_mrkFormatted in allMapMarkers) then {
+		_mrkFinalFuel = createMarker [_mrkFormatted, position _x];
+		_mrkFinalFuel setMarkerShapeLocal "ICON";
+		_mrkFinalFuel setMarkerTypeLocal "loc_Fuelstation";
+		_mrkFinalFuel setMarkerColorLocal "ColorWhite";
+		_mrkFinalFuel setMarkerTextLocal localize "STR_fuelstation";
+		_mrkFinalFuel setMarkerAlpha 0.75;
+		if(A3A_hasACE) then {
+			[_x, 250] call ace_refuel_fnc_setFuel; // only call on fuels that are not blacklisted and first zone init.
+		};
 	};
 };
 

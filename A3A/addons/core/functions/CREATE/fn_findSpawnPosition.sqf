@@ -4,7 +4,7 @@ Environment: Any. Has network timing risks which should be mitigated using addTi
 
 Arguments:
     <STRING> Marker name to search
-    <STRING> Type of spawn place to search, "vehicle", "mortar", "heli" or "plane"
+    <STRING> Type of spawn place to search, "vehicle", "mortar", "heli", "plane", "sam", "flag", "ammo"
 
 Return Value:
     <ARRAY<
@@ -27,7 +27,7 @@ private _varNameUsed = _varName + "_used";
 private _used = spawner getVariable [_varNameUsed, []];
 private _index = _used find false;
 if (_index == -1) exitWith {
-    Info_1("%1 has no remaining spawn positions of type %2", _marker, _type);
+    Info_2("%1 has no remaining spawn positions of type %2", _marker, _type);
     false;
 };
 

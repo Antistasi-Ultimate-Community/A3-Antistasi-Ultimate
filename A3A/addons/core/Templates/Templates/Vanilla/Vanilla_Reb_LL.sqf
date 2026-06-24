@@ -48,6 +48,17 @@ private _civHelicopters = ["C_Heli_Light_01_civil_F", "O_Heli_Light_02_unarmed_F
 
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 
+if (_hasEF) then {
+  _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
+};
+
+if (_hasRF) then {
+  _vehiclesLightUnarmed append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf"];
+  _vehiclesLightArmed pushBack "a3u_black_Pickup_rival_rf";
+  _vehiclesCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
+  _civHelicopters append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF"]
+};
+
 private _staticMG = ["I_G_HMG_02_high_F", "I_G_HMG_02_F"];
 private _staticAT = ["I_static_AT_F"];
 private _staticAA = ["I_static_AA_F"];
@@ -60,53 +71,6 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
-
-if (_hasKart) then {
-  #include "..\DLC_content\vehicles\Kart\Rebel_kart.sqf" 
-};
-if (_hasApex) then {
-  #include "..\DLC_content\vehicles\Apex\Vanilla_FIA.sqf"  
-};
-
-if (_hasContact) then {
-  #include "..\DLC_content\vehicles\Contact\Vanilla_FIA.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-  #include "..\DLC_content\vehicles\LawsOfwar\Vanilla_FIA.sqf"  
-};
-
-if (_hasWs) then {
-  #include "..\DLC_content\vehicles\WS\Vanilla_FIA.sqf"  
-};
-
-if (_hasGM) then {
-  #include "..\DLC_content\vehicles\GM\Vanilla_FIA.sqf"
-};
-
-if (_hasCSLA) then {
-  #include "..\DLC_content\vehicles\CSLA\Vanilla_FIA.sqf"  
-};
-
-if (_hasRF) then {
-  #include "..\DLC_content\vehicles\RF\Vanilla_FIA.sqf" 
-};
-
-if (_hasSOG) then {
-  #include "..\DLC_content\vehicles\SOG\Vanilla_FIA.sqf"
-};
-
-if (_hasSPE) then {
-  #include "..\DLC_content\vehicles\SPE\Vanilla_FIA.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
-	#include "..\MOD_content\SPEX\vehicles\Vanilla_FIA.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_FIA.sqf"
-};
 
 ["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate;
 ["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
@@ -143,16 +107,16 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "hgun_Pistol_heavy_02_F",
-    "hgun_PDW2000_F",
-    "30Rnd_9x21_Mag", "30Rnd_9x21_Red_Mag",
-    "6Rnd_45ACP_Cylinder","MiniGrenade","SmokeShell",
-    ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
-    "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
-    "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt",
-    "Binocular",
-    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","B_FieldPack_blk","B_AssaultPack_blk",
-    ["launch_RPG32_F", 2], ["RPG32_F", 6]
+  "hgun_Pistol_heavy_02_F",
+  "hgun_PDW2000_F",
+  "30Rnd_9x21_Mag", "30Rnd_9x21_Red_Mag",
+  "6Rnd_45ACP_Cylinder","MiniGrenade","SmokeShell",
+  ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
+  "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
+  "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt",
+  "Binocular",
+  "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","B_FieldPack_blk","B_AssaultPack_blk",
+  ["launch_RPG32_F", 2], ["RPG32_F", 6]
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
@@ -163,71 +127,80 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-    "U_IG_Guerrilla_6_1",
-    "U_BG_Guerilla2_1",
-    "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3",
-    "U_I_C_Soldier_Para_5_F",
-    "U_I_C_Soldier_Para_3_F",
-    "U_I_C_Soldier_Para_2_F",
-    "U_I_C_Soldier_Camo_F"
+  "U_I_L_Uniform_01_camo_F",
+  "U_I_L_Uniform_01_deserter_F",
+  "U_C_Uniform_Farmer_01_F",
+  "U_C_E_LooterJacket_01_F",
+  "U_I_L_Uniform_01_tshirt_black_F",
+  "U_I_L_Uniform_01_tshirt_olive_F",
+  "U_I_L_Uniform_01_tshirt_skull_F",
+  "U_I_L_Uniform_01_tshirt_sport_F"
 ];
 
 private _dlcUniforms = [];
 
-["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
-
 "EnochMen" call _fnc_saveNames;
 
 private _headgear = [
-    "H_Booniehat_khk_hs",
-    "H_Booniehat_khk",
-    "H_Booniehat_tan",
-    "H_Booniehat_oli",    
-    "H_Bandanna_gry",
-    "H_Bandanna_blu",
-    "H_Bandanna_cbr",    
-    "H_Bandanna_khk_hs",
-    "H_Bandanna_khk",
-    "H_Bandanna_sgg",
-    "H_Bandanna_sand",
-    "H_Bandanna_surfer",
-    "H_Bandanna_surfer_blk",
-    "H_Bandanna_surfer_grn",
-    "H_Bandanna_camo",
-    "H_Watchcap_blk",
-    "H_Watchcap_cbr",
-    "H_Watchcap_camo",
-    "H_Watchcap_khk",
-    "H_Beret_blk",
-    "H_Booniehat_khk_hs",
-    "H_Booniehat_khk",
-    "H_Booniehat_oli",
-    "H_Booniehat_tan",
-    "H_Cap_oli",
-    "H_Cap_surfer",
-    "H_Cap_tan",
-    "H_Cap_oli_hs",
-    "H_Cap_blk",
-    "H_Cap_headphones",
-    "H_Hat_blue",
-    "H_Hat_brown",
-    "H_Hat_camo",
-    "H_Hat_checker",
-    "H_Hat_grey",
-    "H_Hat_tan",
-    "H_Cap_marshal",
-    "H_MilCap_blue",
-    "H_MilCap_gry",
-    "H_ShemagOpen_tan",
-    "H_ShemagOpen_khk",
-    "H_ShemagOpen_tan",
-    "H_Shemag_olive_hs",
-    "H_StrawHat",
-    "H_StrawHat_dark"
+  "H_Booniehat_khk_hs",
+  "H_Booniehat_khk",
+  "H_Booniehat_tan",
+  "H_Booniehat_oli",    
+  "H_Bandanna_gry",
+  "H_Bandanna_blu",
+  "H_Bandanna_cbr",    
+  "H_Bandanna_khk_hs",
+  "H_Bandanna_khk",
+  "H_Bandanna_sgg",
+  "H_Bandanna_sand",
+  "H_Bandanna_surfer",
+  "H_Bandanna_surfer_blk",
+  "H_Bandanna_surfer_grn",
+  "H_Bandanna_camo",
+  "H_Watchcap_blk",
+  "H_Watchcap_cbr",
+  "H_Watchcap_camo",
+  "H_Watchcap_khk",
+  "H_Beret_blk",
+  "H_Booniehat_khk_hs",
+  "H_Booniehat_khk",
+  "H_Booniehat_oli",
+  "H_Booniehat_tan",
+  "H_Cap_oli",
+  "H_Cap_surfer",
+  "H_Cap_tan",
+  "H_Cap_oli_hs",
+  "H_Cap_blk",
+  "H_Cap_headphones",
+  "H_Hat_blue",
+  "H_Hat_brown",
+  "H_Hat_camo",
+  "H_Hat_checker",
+  "H_Hat_grey",
+  "H_Hat_tan",
+  "H_Cap_marshal",
+  "H_MilCap_blue",
+  "H_MilCap_gry",
+  "H_ShemagOpen_tan",
+  "H_ShemagOpen_khk",
+  "H_ShemagOpen_tan",
+  "H_Shemag_olive_hs",
+  "H_StrawHat",
+  "H_StrawHat_dark"
 ];
 
 private _dlcheadgear = [];
+
+if (_hasRF) then {
+  _dlcUniforms append [
+    "U_C_PilotJacket_black_RF", 
+    "U_C_PilotJacket_open_black_RF", 
+    "U_C_PilotJacket_brown_RF", 
+    "U_C_PilotJacket_open_brown_RF", 
+    "U_C_PilotJacket_lbrown_RF", 
+    "U_C_PilotJacket_open_lbrown_RF"
+  ];
+};
 
 ["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
 
@@ -237,41 +210,15 @@ private _dlcheadgear = [];
 
 ["voices", ["Male01POL", "Male02POL", "Male03POL"]] call _fnc_saveToTemplate;
 private _faces = [
-    "LivonianHead_1", "LivonianHead_2", "LivonianHead_3", "LivonianHead_4",
-    "LivonianHead_5", "LivonianHead_6", "LivonianHead_7", "LivonianHead_8",
-    "LivonianHead_9", "LivonianHead_10",
-    "WhiteHead_01", "WhiteHead_02", "WhiteHead_03", "WhiteHead_04",
-    "WhiteHead_06", "WhiteHead_07", "WhiteHead_08", "WhiteHead_10", "WhiteHead_11",
-    "WhiteHead_13", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17", "WhiteHead_18",
-    "WhiteHead_19", "WhiteHead_20", "WhiteHead_21"
+  "LivonianHead_1", "LivonianHead_2", "LivonianHead_3", "LivonianHead_4",
+  "LivonianHead_5", "LivonianHead_6", "LivonianHead_7", "LivonianHead_8",
+  "LivonianHead_9", "LivonianHead_10",
+  "WhiteHead_01", "WhiteHead_02", "WhiteHead_03", "WhiteHead_04",
+  "WhiteHead_06", "WhiteHead_07", "WhiteHead_08", "WhiteHead_10", "WhiteHead_11",
+  "WhiteHead_13", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17", "WhiteHead_18",
+  "WhiteHead_19", "WhiteHead_20", "WhiteHead_21"
 ];
 ["faces", _faces] call _fnc_saveToTemplate;
-
-if (_hasSPE) then {
-  _faces append [
-    #include "..\DLC_content\faces\SPE\SPE_white.sqf"
-  ];
-};
-if (_hasSOG) then {
-  _faces append [
-    #include "..\DLC_content\faces\SOG\SOG_faces_nocamowhite.sqf"
-  ];
-};
-if (_hasRF) then {
-  _faces append [
-    #include "..\DLC_content\faces\RF\RF_white.sqf"
-  ];
-};
-if (_hasGM) then {
-  _faces append [
-    #include "..\DLC_content\faces\GM\GM_white.sqf"
-  ];
-};
-if (_hasWS) then {
-  _faces append [
-    #include "..\DLC_content\faces\WS\WS_white.sqf"
-  ];
-};
 
 //////////////////////////
 //       Loadouts       //
@@ -284,8 +231,8 @@ _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
 _loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
 
-_loadoutData set ["glasses", ["G_Lady_Blue","G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
-_loadoutData set ["goggles", ["G_Lowprofile"]];
+_loadoutData set ["glasses", ["G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Squares", "G_Squares_Tinted"]];
+_loadoutData set ["goggles", []];
 _loadoutData set ["facemask", ["G_Bandanna_blk", "G_Bandanna_oli", "G_Bandanna_khk", "G_Bandanna_tan", "G_Bandanna_beast", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_aviator"]];
 _loadoutData set ["balaclavas", ["G_Balaclava_blk", "G_Balaclava_BlueStrips", "G_Balaclava_Flecktarn", "G_Balaclava_Halloween_01", "G_Balaclava_lowprofile", "G_Balaclava_oli", "G_Balaclava_Flames1", "G_Balaclava_Scarecrow_01", "G_Balaclava_Skull1", "G_Balaclava_Tropentarn"]];
 _loadoutData set ["argoFacemask", ["G_Bandanna_BlueFlame1", "G_Bandanna_BlueFlame2", "G_Bandanna_CandySkull", "G_Bandanna_OrangeFlame1", "G_Bandanna_RedFlame1", "G_Bandanna_Skull1", "G_Bandanna_Syndikat1", "G_Bandanna_Syndikat2","G_Bandanna_Skull2", "G_Bandanna_Vampire_01"]];
@@ -296,49 +243,6 @@ _loadoutData set ["facewearGM", []];
 _loadoutData set ["facewearCLSA", []];
 _loadoutData set ["facewearSOG", []];
 _loadoutData set ["facewearSPE", []];
-if (_hasWs) then {
-    #include "..\DLC_content\gear\WS\Vanilla_FIA.sqf"
-};
-
-if (_hasRF) then {
-    #include "..\DLC_content\gear\RF\Vanilla_FIA.sqf"
-};
-
-if (_hasContact) then {
-    #include "..\DLC_content\gear\Contact\Vanilla_FIA.sqf"
-};
-
-if (_hasApex) then {
-    #include "..\DLC_content\gear\Apex\Vanilla_FIA.sqf"
-};
-
-if (_hasLawsOfWar) then {
-    #include "..\DLC_content\gear\Lawsofwar\Vanilla_FIA.sqf"
-};
-
-if (_hasGM) then {
-    #include "..\DLC_content\gear\GM\Vanilla_FIA.sqf"
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\gear\CSLA\Vanilla_FIA.sqf"
-};
-
-if (_hasArtOfWar) then {
-    #include "..\DLC_content\gear\Artofwar\Vanilla_FIA.sqf"
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\gear\SOG\Vanilla_FIA.sqf"
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\gear\SPE\Vanilla_FIA.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\gear\Vanilla_FIA.sqf"
-};
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
@@ -350,47 +254,47 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 ///////////////////////.
 
 private _squadLeaderTemplate = {
-    ["uniforms"] call _fnc_setUniform;
-    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2, "facewearSOG", 0.3,"facewearSPE", 0.2]] call _fnc_setFacewear;
+  ["uniforms"] call _fnc_setUniform;
+  [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2, "facewearSOG", 0.3,"facewearSPE", 0.2]] call _fnc_setFacewear;
 
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
+  ["items_medical_standard"] call _fnc_addItemSet;
+  ["items_miscEssentials"] call _fnc_addItemSet;
 
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["binoculars"] call _fnc_addBinoculars;
+  ["maps"] call _fnc_addMap;
+  ["watches"] call _fnc_addWatch;
+  ["compasses"] call _fnc_addCompass;
+  ["binoculars"] call _fnc_addBinoculars;
 };
 
 private _riflemanTemplate = {
-    ["uniforms"] call _fnc_setUniform;
-    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2, "facewearSOG", 0.3,"facewearSPE", 0.2]] call _fnc_setFacewear;
-    
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
+  ["uniforms"] call _fnc_setUniform;
+  [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1, "balaclavas", 1, "argoFacemask", 1 , "facewearWS", 0.75, "facewearContact", 0.3, "facewearLawsOfWar", 0.5, "facewearGM", 0.3, "facewearCLSA", 0.2, "facewearSOG", 0.3,"facewearSPE", 0.2]] call _fnc_setFacewear;
+  
+  ["items_medical_standard"] call _fnc_addItemSet;
+  ["items_miscEssentials"] call _fnc_addItemSet;
 
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
+  ["maps"] call _fnc_addMap;
+  ["watches"] call _fnc_addWatch;
+  ["compasses"] call _fnc_addCompass;
 };
 
 private _prefix = "militia";
 private _unitTypes = [
-    ["Petros", _squadLeaderTemplate],
-    ["SquadLeader", _squadLeaderTemplate],
-    ["Rifleman", _riflemanTemplate],
-    ["staticCrew", _riflemanTemplate],
-    ["Medic", _riflemanTemplate, [["medic", true]]],
-    ["Engineer", _riflemanTemplate, [["engineer", true]]],
-    ["ExplosivesExpert", _riflemanTemplate, [["explosiveSpecialist", true]]],
-    ["Grenadier", _riflemanTemplate],
-    ["LAT", _riflemanTemplate],
-    ["AT", _riflemanTemplate],
-    ["AA", _riflemanTemplate],
-    ["MachineGunner", _riflemanTemplate],
-    ["Marksman", _riflemanTemplate],
-    ["Sniper", _riflemanTemplate],
-    ["Unarmed", _riflemanTemplate]
+  ["Petros", _squadLeaderTemplate],
+  ["SquadLeader", _squadLeaderTemplate],
+  ["Rifleman", _riflemanTemplate],
+  ["staticCrew", _riflemanTemplate],
+  ["Medic", _riflemanTemplate, [["medic", true]]],
+  ["Engineer", _riflemanTemplate, [["engineer", true]]],
+  ["ExplosivesExpert", _riflemanTemplate, [["explosiveSpecialist", true]]],
+  ["Grenadier", _riflemanTemplate],
+  ["LAT", _riflemanTemplate],
+  ["AT", _riflemanTemplate],
+  ["AA", _riflemanTemplate],
+  ["MachineGunner", _riflemanTemplate],
+  ["Marksman", _riflemanTemplate],
+  ["Sniper", _riflemanTemplate],
+  ["Unarmed", _riflemanTemplate]
 ];
 
 [_prefix, _unitTypes, _loadoutData] call _fnc_generateAndSaveUnitsToTemplate;

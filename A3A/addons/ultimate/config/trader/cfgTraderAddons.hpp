@@ -127,13 +127,28 @@
     };
     class addons_aegis : addons_base
     {
-        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02", "A3_Atlas_Armor_F_Atlas_APC_Tracked_02", "A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02"};
         weapons = "weapons_aegis";
         vehicles = "vehicles_aegis";
     };
+    class addons_atlas : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02"};
+        weapons = "weapons_atlas";
+    };
+    class addons_police : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02","A3_Police_Data_F_Police"};
+        weapons = "weapons_police";
+    };
+    class addons_opposingforces : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02","A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        weapons = "weapons_opposingforces";
+    };
     class addons_amf : addons_base
     {
-        addons[] = {"AMF_FAMAS", "r3f_armes"};
+        addons[] = {"AMF_Patches"};
         vehicles = "vehicles_amf";
     };
     class addons_wmempire : addons_base
@@ -194,12 +209,6 @@
         addons[] = {"sfp_soldiers"};
         weapons = "weapons_sfp";
         vehicles = "vehicles_sfp";
-    };
-    class addons_pla : addons_base
-    {
-        addons[] = {"mas_chi_army"};
-        weapons = "weapons_pla";
-        vehicles = "vehicles_pla";
     };
     class addons_racs : addons_base
     {
@@ -262,11 +271,6 @@
         addons[] = {"TMT_Core"};
         vehicles = "vehicles_tmt";
     };
-    class addons_tfc : addons_base
-    {
-        addons[] = {"TFC_Core_Data", "TFC_CA_Characters", "TFC_SF_Characters", "tfc_rcaf_cc130j"};
-        vehicles = "vehicles_tfc";
-    };
     class addons_sma : addons_base
     {
         addons[] = {"SMA_Weapons"};
@@ -277,12 +281,6 @@
         addons[] = {"csa38ii_data"};
         weapons = "weapons_csa38";
         vehicles = "vehicles_csa38";
-    };
-    class addons_scion : addons_base
-    {
-        addons[] = {"sc_weapons"};
-        weapons = "weapons_scion";
-        vehicles = "vehicles_scion";
     };
     class addons_wrs : addons_base
     {
@@ -374,6 +372,11 @@
         addons[] = {"vests_f_JCA_IE"};
         weapons = "equipment_jcaie";
     };
+    class addons_jcals : addons_base
+    {
+        addons[] = {"Weapons_F_JCA_LS"};
+        vehicles = "vehicles_jcals";
+    };
     class addons_FlexNorAF : addons_base
     {
         addons[] = {"Flex_CUP_NOR_Faction"};
@@ -393,4 +396,9 @@
     {
         addons[] = {"MPP_PISTOLS"};
         weapons = "weapons_mpp";
+    };
+    class addons_ScifiTP : addons_base
+    {
+        addons[] = {"PHEN_TurretPack"};
+        vehicles = "vehicles_scifitp";
     };

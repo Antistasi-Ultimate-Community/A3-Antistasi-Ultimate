@@ -223,7 +223,8 @@ if(alive _planeVeh) then {
 
     private _boxType = [
         "CargoNet_01_barrels_F",
-        "Land_FoodSacks_01_cargo_brown_F"
+        "Land_FoodSacks_01_cargo_brown_F",
+        "CargoNet_01_box_F"
     ] select (random 100 < 50);
 
     _planeVeh allowDamage false;
@@ -240,7 +241,7 @@ if(alive _planeVeh) then {
     sleep 1;
 
     private _box2Class = [ 
-        (["CargoNet_01_barrels_F", "Land_FoodSacks_01_cargo_brown_F"] select (random 100 < 50)),
+        (selectRandom ["CargoNet_01_barrels_F", "Land_FoodSacks_01_cargo_brown_F", "CargoNet_01_box_F"]),
         _faction get "ammobox"
     ] select _difficultX;
 
@@ -271,6 +272,16 @@ if(alive _planeVeh) then {
 
     driver _planeVeh setCaptive false;
     _planeVeh allowDamage true;
+};
+
+sleep 10; //probably enough time for them to land
+if ((getPosASL _box1) select 2 < 0) then { //in case box ends up underwater
+    _box1 setVariable ["SalvageCrate", true, true];
+    [_box1] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _box1];
+};
+if ((getPosASL _box2) select 2 < 0) then { //in case box ends up underwater
+    _box2 setVariable ["SalvageCrate", true, true];
+    [_box2] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _box2];
 };
 
 waitUntil {sleep 1;  dateToNumber date > _dateLimitNum || {!(_airDropHappened) || {_boxes findIf {_x distance (getMarkerPos respawnTeamPlayer) < 25} != -1}}};

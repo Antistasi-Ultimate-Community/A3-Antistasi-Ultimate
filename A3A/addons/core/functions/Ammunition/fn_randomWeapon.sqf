@@ -68,8 +68,8 @@ if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
     private _config = configFile >> "CfgWeapons" >> _weapon;
     private _glmuzzle = getArray (_config >> "muzzles") select 1;		// guaranteed by category
     _glmuzzle = configName (_config >> _glmuzzle);                      // bad-case fix. compatibleMagazines is case-sensitive as of 2.12
-    private _glmag = if (_weaponData isEqualType [] && {!isNil {_weaponData select 5}}) then { _weaponData select 5 select 0 } else { (A3A_rebelGear get "Magazines") getOrDefault [_glmuzzle, ""] select 0 };
-    if (_glmag != "") then { _unit addMagazines [_glmag, 5] };
+    private _glmag = if (_weaponData isEqualType [] && {!isNil {_weaponData select 5}}) then { _weaponData select 5 select 0 } else { (A3A_rebelGear get "Magazines") getOrDefault [_glmuzzle, []] select 0 };
+    if (!isNil "_glmag" && {_glmag != "" && {_totalMagWeight isNotEqualTo 0}}) then { _unit addMagazines [_glmag, 5] };
 };
 
 if !(_weapon in (weapons _unit)) then { _unit addWeapon _weapon };
