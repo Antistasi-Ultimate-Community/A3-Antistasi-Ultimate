@@ -801,6 +801,49 @@ class commanderMenu
 					y = "25.5 * pixelGridNoUIScale * pixelH";	
 				};
 
+				class WeatherTitle: TextBase
+				{
+					idc = 4074;
+					text = __EVAL(format [localize "STR_commander_menu_weather_title", localize "STR_antistasi_timeSpan_hours"]);
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "25.5 * pixelGridNoUIScale * pixelH";	
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";
+					colorText[] = {0.75,0.75,0.75,1};
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					font = "PuristaMedium";
+					tooltip = __EVAL(format [localize "STR_commander_menu_weather_title_tooltip", localize "STR_antistasi_timeSpan_hours"]);
+				};
+
+				class WeatherSlider: SliderBase
+				{
+					idc = 4075;
+					sliderPosition = 2;
+					sliderRange[] = {0, 24};
+					sliderStep = 0.25;
+					x = "1.5 * pixelGridNoUIScale * pixelW";
+					y = "28 * pixelGridNoUIScale * pixelH";
+					w = "16 * pixelGridNoUIScale * pixelW";
+					h = "1.5 * pixelGridNoUIScale * pixelH";
+					onSliderPosChanged = "_value = (_this select 1)/24; ((findDisplay 60000) displayCtrl 4074) ctrlSetText format [localize 'STR_commander_menu_weather_title', _value, localize 'STR_antistasi_timeSpan_hours']; A3A_weatherInterval = _value;"; //_this select 1 а не (_this select 1)/24
+				};
+
+				class weatherLevelComboBox: BaseComboBox
+				{
+					idc = 4076;
+					x = "18.5 * pixelGridNoUIScale * pixelW";
+					y = "28 * pixelGridNoUIScale * pixelH";	
+					w = "4.5 * pixelGridNoUIScale * pixelW"; 
+					h = "1.5 * pixelGridNoUIScale * pixelH";
+					onLBSelChanged = "[] call SCRT_fnc_ui_setWeatherLevel;";	
+				};
+
+				class spacer5: brSpacer 
+				{
+					idc = 4077;					
+					y = "30 * pixelGridNoUIScale * pixelH";	
+				};
+
 				class clearForestButton: ButtonBase
 				{			
 					idc = 4213;
@@ -1014,7 +1057,7 @@ class commanderMenu
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
-					h = "6 * pixelGridNoUIScale * pixelH";
+					h = "8 * pixelGridNoUIScale * pixelH";
 					colorText[] = {1,1,1,0.7};
 				};
 
