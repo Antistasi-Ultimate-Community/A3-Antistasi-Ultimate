@@ -81,8 +81,8 @@ private _taskId = "AS" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskID,
 	[
-		format [localize "STR_A3A_Missions_AS_RIV_Traitor_task_desc", A3A_faction_riv get "name", A3A_faction_reb get "name", _nameDest, _displayTime],
-		localize "STR_A3A_Missions_AS_RIV_Traitor_task_header",
+		[ "STR_A3A_Missions_AS_RIV_Traitor_task_desc", A3A_faction_riv get "name", A3A_faction_reb get "name", _nameDest, _displayTime],
+		[ "STR_A3A_Missions_AS_RIV_Traitor_task_header"],
 		_markerX
 	],
 	_posTsk,

@@ -24,7 +24,19 @@ _limit params ["_dateLimitNum", "_displayTime"];
 private _nameDest = [_markerX] call A3A_fnc_localizar;
 
 private _taskId = "RES" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_RIV_RES_Prisoners_task_desc",_faction get "name", _nameDest, _displayTime],localize "STR_A3A_Missions_RIV_RES_Prisoners_task_header",_markerX],_positionX,false,0,true,"run",true] call BIS_fnc_taskCreate;
+[ [teamPlayer,civilian],
+  _taskId,
+  [ [localize "STR_A3A_Missions_RIV_RES_Prisoners_task_desc",_faction get "name", _nameDest, _displayTime],
+    [ "STR_A3A_Missions_RIV_RES_Prisoners_task_header"],
+    _markerX
+  ],
+  _positionX,
+  false,
+  0,
+  true,
+  "run",
+  true
+  ] call BIS_fnc_taskCreate;
 [_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 private _posHouse = [];

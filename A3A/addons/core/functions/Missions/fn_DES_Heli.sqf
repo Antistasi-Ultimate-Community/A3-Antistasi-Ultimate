@@ -108,7 +108,17 @@ private _taskId = "DES" + str A3A_taskCount;
 [
     [teamPlayer,civilian],
     _taskId,
-    [format [localize "STR_A3A_Missions_DES_Heli_task_desc",_faction get "name", _location, _displayTime],localize "STR_A3A_Missions_DES_Heli_task_header",_taskMrk],_posCrashMrk,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
+    [ [ "STR_A3A_Missions_DES_Heli_task_desc",_faction get "name", _location, _displayTime],
+      [ "STR_A3A_Missions_DES_Heli_task_header"],
+      _taskMrk
+    ],
+    _posCrashMrk,
+    false,
+    0,
+    true,
+    "Destroy",
+    true
+    ] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 ////////////////

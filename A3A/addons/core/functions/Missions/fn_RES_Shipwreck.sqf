@@ -116,8 +116,8 @@ private _taskId = "RES" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_A3A_Missions_RES_Shipwreck_task_desc", _nameDest, _displayTime],
-        localize "STR_A3A_Missions_RES_Shipwreck_task_header",
+        [ "STR_A3A_Missions_RES_Shipwreck_task_desc", _nameDest, _displayTime],
+        [ "STR_A3A_Missions_RES_Shipwreck_task_header"],
         _markerX
     ],
     _shorePosition,
