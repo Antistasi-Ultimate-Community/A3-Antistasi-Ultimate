@@ -239,17 +239,20 @@ if (_side != teamPlayer) then
 	}];
 };
 
-if(_veh isKindOf "Air") then
-{
-    //Start airspace control script if rebel player enters
-    _veh addEventHandler ["GetIn", {
-		params ["_veh", "_role", "_unit"];
-		if((side (group _unit) == teamPlayer) && {isPlayer _unit}) then
-		{
-			// TODO: check this isn't spammed
-			[_veh] spawn A3A_fnc_airspaceControl;
-		};
-    }];
+if (_veh isKindOf "Air") then {
+    /// add check for invaders/rivals/occupants
+    if (_side in [Invaders, Occupants, Rivals]) then {
+        [_veh,_side] spawn A3A_fnc_airspaceControlAI;
+    } else {
+        //Start airspace control script if rebel player enters
+        _veh addEventHandler ["GetIn", {
+            params ["_veh", "_role", "_unit"];
+            if((side (group _unit) == teamPlayer) && {isPlayer _unit}) then {
+                // TODO: check this isn't spammed
+                [_veh] spawn A3A_fnc_airspaceControl;
+            };
+        }];
+    };
 };
 
 if(([_veh] call A3A_Logistics_fnc_getVehCapacity) > 1) then {
