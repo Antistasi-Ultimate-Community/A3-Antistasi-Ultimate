@@ -9,35 +9,36 @@ class UtilityItems {
 
     class BuildBox: Base {
         flags[] = {"place", "move", "build"};
+        tooltip = $STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip;
     };
 
     class Land_PlasticCase_01_small_black_F: BuildBox {
         scope = 1;
-        displayName = "Build Box (Extra Small)";
+        displayName = $STR_A3AP_buyvehdialog_BuildBoxExtraSmall;
         price = 250;
     };
 
     class Land_PlasticCase_01_medium_black_F: BuildBox {
         scope = 1;
-        displayName = "Build Box (Small)";
+        displayName = $STR_A3AP_buyvehdialog_BuildBoxSmall;
         price = 500;
     };
 
     class A3AU_Build_Box_Large_1: BuildBox {
         scope = 1;
-        displayName = "Build Box (Medium)";
+        displayName = $STR_A3AP_buyvehdialog_BuildBoxMeduim;
         price = 2500;
     };
 
     class Land_PlasticCase_01_large_black_F: BuildBox {
         scope = 1;
-        displayName = "Build Box (Large)";
+        displayName = $STR_A3AP_buyvehdialog_BuildBoxLarge;
         price = 5000;
     };
 
     class A3AU_Build_Box_Humongous: BuildBox {
         scope = 1;
-        displayName = "Build Box (Humongous)";
+        displayName = $STR_A3AP_buyvehdialog_BuildBoxHumongous;
         price = 15000;
         flags[] = {"place", "build"};
     };
