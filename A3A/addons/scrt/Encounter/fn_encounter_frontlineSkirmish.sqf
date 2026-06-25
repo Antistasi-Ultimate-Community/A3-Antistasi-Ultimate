@@ -96,14 +96,14 @@ private _fnc_spawngroups = {
 		[_vehicle2, Invaders] call A3A_fnc_AIVEHinit;
 		_vehiclegroup2 setBehaviourStrong "AWARE";
 		units _vehiclegroup2 join _InfGroup2;
-		/* if (_difficult2) then {
+		if (_difficult2) then {
 			_UAV2type = selectRandom (_faction2 get "uavsPortable");
 			_uav2 = createVehicle [_UAV2type, _skirmishpositionActuall2, [], 0, "FLY"];
 			[_side2, _uav2] call A3A_fnc_createVehicleCrew;
 			_vehiclesArray2 pushBack _uav2;
 			_groupUAV2 = group (crew _uav2 select 1);
 			{[_x] joinSilent _InfGroup2} forEach units _groupUAV2;
-		}; */ // for some reason, it can't create second uav
+		};
 		[_InfGroup2, "Patrol_Attack", 0, 300, 1000, true, _skirmishposition, true] call A3A_fnc_patrolLoop;
 		[_vehiclegroup2, "Patrol_Area", 0, 300, 1000, true, _skirmishposition, true] call A3A_fnc_patrolLoop;
 		_vehiclesArray2 pushBack _vehicle2;

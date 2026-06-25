@@ -110,6 +110,7 @@ private _SAM = ["O_SAM_System_04_F"];
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
+["uavsPortable", _uavsPortable] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
 ["vehiclesAA", _aa] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", _unarmedVehicles] call _fnc_saveToTemplate;

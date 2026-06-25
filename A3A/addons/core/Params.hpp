@@ -1886,6 +1886,24 @@ class Params
         };
         default = 3000;
     };
+    class aaChance : AIBalanceParams
+    {
+        title = $STR_params_aaTroopsSpawnChance;
+        tooltip = $STR_params_aaTroopsSpawnChance_desc;
+        values[] = {0, 10, 20, 30, 40, 50, 100};
+        texts[] = {"0", "10%", "20%", "30%", "40%", "50%", "100%"};
+        default = 0.2;
+    };
+    class atChance : aaChance
+    {
+        title = $STR_params_atTroopsSpawnChance;
+        tooltip = $STR_params_atTroopsSpawnChance_desc;
+    };
+    class latChance : aaChance
+    {
+        title = $STR_params_latTroopsSpawnChance;
+        tooltip = $STR_params_latTroopsSpawnChance_desc;
+    };
     class A3U_enableVehiclesForAI : AIBalanceParams
     {
         title = $STR_params_enableVehiclesForAI;
