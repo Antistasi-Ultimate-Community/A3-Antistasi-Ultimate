@@ -41,9 +41,9 @@ _unit selectWeapon (primaryWeapon _unit);
 
 if (player == leader _unit) then {
 	_unit setVariable ["owner", player, true];
-	_unit addEventHandler ["killed", {
+	_unit addEventHandler ["Killed", {
 		params ["_victim", "_killer"];
-		[_victim] spawn A3A_fnc_postmortem;
+		_this remoteExecCall[QFUNCMAIN(postmortem), 2];
 		if (side _killer == Occupants) then {
 			_nul = [0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 			[Occupants, -1, 30] remoteExec ["A3A_fnc_addAggression",2];
@@ -80,9 +80,9 @@ if (player == leader _unit) then {
 		};
 	};
 } else {
-	_unit addEventHandler ["killed", {\
+	_unit addEventHandler ["Killed", {
 		params ["_victim", "_killer"];
-		[_victim] remoteExec ["A3A_fnc_postmortem",2];
+		_this remoteExecCall[QFUNCMAIN(postmortem), 2];
 		if ((isPlayer _killer) and (side _killer == teamPlayer)) then {
 		} else {
 			if (side _killer == Occupants) then {

@@ -358,7 +358,7 @@ sleep 30;
 
 deleteVehicle _foodSacks;
 private _emptybox = "Land_Pallet_F" createVehicle (getpos _foodSacks);
-[_emptybox] spawn A3A_fnc_postmortem;
+[_emptybox] call FUNCMAIN(despawnQueueEntity);
 
 [_taskId, "SUPP", 900] spawn A3A_fnc_taskDelete;
 

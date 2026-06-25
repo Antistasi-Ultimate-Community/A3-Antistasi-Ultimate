@@ -20,7 +20,7 @@ if (isServer) then {
 };
 
 removeAllActions _oldUnit;
-[_oldUnit] spawn A3A_fnc_postmortem;
+[_oldUnit] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 
 _oldUnit setVariable ["incapacitated",false,true];
 _newUnit setVariable ["incapacitated",false,true];
@@ -243,12 +243,10 @@ if (side group _newUnit == teamPlayer) then
 			};
 		};
 	}];
-	_newUnit addEventHandler ["WeaponDisassembled",
-	{
-		_bag1 = _this select 1;
-		_bag2 = _this select 2;
-		[_bag1] remoteExec ["A3A_fnc_postmortem", 2];
-		[_bag2] remoteExec ["A3A_fnc_postmortem", 2];
+
+	_newUnit addEventHandler ["WeaponDisassembled", {
+		[_this select 1] remoteExecCall[QFUNCMAIN(postmortem), 2];
+		[_this select 2] remoteExecCall[QFUNCMAIN(postmortem), 2];
 	}];
 
 	if (areRivalsDiscovered) then {

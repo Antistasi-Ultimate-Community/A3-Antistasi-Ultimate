@@ -50,11 +50,7 @@ private _civNotHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", f
 
 if (_civNotHuman) exitWith
 {
-    _unit addEventHandler ["Killed",
-    {
-        params ["_victim", "_killer"];
-        [_victim] spawn A3A_fnc_postmortem;
-    }];
+    _unit addEventHandler ["Killed", FUNCMAIN(postmortem)];
     ["civInit", [_unit]] call EFUNC(Events,triggerEvent);
 };
 
@@ -99,7 +95,7 @@ _unit addEventHandler ["Killed", {
         };
     };
 
-    [_victim] spawn A3A_fnc_postmortem;
+    [_victim, _killer] call FUNCMAIN(postmortem);
 }];
 
 ["civInit", [_unit]] call EFUNC(Events,triggerEvent);

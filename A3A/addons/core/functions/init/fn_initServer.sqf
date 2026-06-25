@@ -301,7 +301,7 @@ addMissionEventHandler ["EntityKilled", {
     if !(isNil {_victim getVariable "ownerSide"}) then {
         // Antistasi-created vehicle
         [_victim, _killerSide, false, _killer] call A3A_fnc_vehKilledOrCaptured;
-        [_victim] spawn A3A_fnc_postmortem;
+        call FUNCMAIN(postmortem);
     };
 }];
 
@@ -320,6 +320,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 [] spawn A3A_fnc_resourcecheck;                     // 10-minute loop
 [] spawn A3A_fnc_aggressionUpdateLoop;              // 1-minute loop
 [] spawn A3A_fnc_garbageCleanerTracker;             // 5-minute loop
+[] spawn A3A_fnc_despawnQueueProcessor;
 [] spawn SCRT_fnc_rivals_activityUpdateLoop;
 [] spawn SCRT_fnc_rivals_eventLoop;
 if (areRandomEventsEnabled) then {

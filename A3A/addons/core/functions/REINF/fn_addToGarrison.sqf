@@ -167,10 +167,10 @@ if (!_noDeletion) then {
     {
         _x setVariable ["markerX",nil,true];
         _x setVariable ["spawner",true,true];
-        _x removeAllEventHandlers "killed";
-        _x addEventHandler ["killed", {
+        _x removeAllEventHandlers "Killed";
+        _x addEventHandler ["Killed", {
             params ["_victim", "_killer"];
-            [_victim] remoteExec ["A3A_fnc_postmortem",2];
+            _this remoteExecCall[QFUNCMAIN(postmortem), 2];
             if ((isPlayer _killer) and (side _killer == teamPlayer)) then {
                 if (!isMultiPlayer) then {
                     _nul = [0,20] remoteExec ["A3A_fnc_resourcesFIA",2];
