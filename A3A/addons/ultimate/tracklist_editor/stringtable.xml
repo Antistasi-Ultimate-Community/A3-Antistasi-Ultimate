@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3A_ultimate_tracklist_editor">
+    <Package name="Music">
+        <Key ID="STR_A3A_ultimate_tracklist_editor_CategoryMusicCombat">
+            <English>Combat music</English>
+            <German>Kampfmusik</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_CategoryMusicDefault">
+            <English>Roaming music</English>
+            <German>Standardmusik</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_CategoryMusicNight">
+            <English>Music at night</English>
+            <German>Musik in der Nacht</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_CategoryMusicStealth">
+            <English>Stealth music</English>
+            <German>Musik während Stealth</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Component">
+            <English>A3USPCM - Music Component</English>
+            <German>A3USPCM - Music Komponente</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_NowPlaying">
+            <English>Now playing</English>
+            <German>Aktuelle Wiedergabe</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnAddSelection">
+            <English>Add selection &gt;&gt;</English>
+            <German>Hinzufügen &gt;&gt;</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnAddSelection_tooltip">
+            <English>Add selected tracks</English>
+            <German>Füge die Tracks der ausgewählten Kategorie hinzu</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnClose">
+            <English>X</English>
+            <German>X</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnDone">
+            <English>Done</English>
+            <German>Fertig</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnExport">
+            <English>Export</English>
+            <German>Exportieren</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnImport">
+            <English>Import</English>
+            <German>Importieren</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnRemove">
+            <English>&lt;&lt; Remove</English>
+            <German>&lt;&lt; Entfernen</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnRemove_tooltip">
+            <English>Remove selected track</English>
+            <German>Entferne ausgewählte Track</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_BtnSavePlaylist">
+            <English>Save Playlist</English>
+            <German>Playlist speichern</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_EditCopyPasteImport">
+            <English>Paste your previously exported playlist config here</English>
+            <German>Füge deine zuvor exportierte Playlist-Konfiguration hier ein</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_ImportError">
+            <English>Playlist import error</English>
+            <German>Fehler beim Importieren der Wiedergabeliste</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_ImportErrorSection">
+            <English>Line %1: expected begin of section</English>
+            <German>Zeile %1: erwartete Anfang eines Abschnitts</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_ImportErrorSectionMissing">
+            <English>Import successful, but section "%1" is missing.</English>
+            <German>Import erfolgreich, aber Abschnitt "%1" fehlt.</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_ImportErrorSectionTracks">
+            <English>Import successful, but section "%1" has less than %2 tracks.</English>
+            <German>Import erfolgreich, aber Abschnitt "%1" hat weniger als %2 Tracks.</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_ImportErrorSectionUnknown">
+            <English>Import successful, but there are unknown sections: %1.</English>
+            <German>Import erfolgreich, aber es gibt unbekannte Abschnitte: %1.</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_ImportErrorVersion">
+            <English>Line %1: version mismatch</English>
+            <German>Zeile %1: Versionskonflikt</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_RscA3USPCMTracklistEditorDialog_StaticTitle">
+            <English>In-game music tracklist editor</English>
+            <German>In-Game Musik Playlist-Editor</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_Category_DisplayName">
+            <English>Music player (customizable)</English>
+            <German>Musik-Player (konfigurierbar)</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_overrideMusic_DisplayName">
+            <English>Use custom music player</English>
+            <German>Benutze eigenen Musik-Player</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_overrideMusic_Tooltip">
+            <English>Use customizable music player instead of the default one.</English>
+            <German>Benutze einen konfigurierbaren Musik-Player anstelle des Standardmäßigen.</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_pause_DisplayName">
+            <English>Pause between tracks</English>
+            <German>Pause zwischen Stücken</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_pause_Tooltip">
+            <English>Delay between tracks. Wait at least half this many seconds up til the configured value.</English>
+            <German>Verzögerung zwischen Titeln. Warte mindestens die Hälfte dieser Sekunden bis zum konfigurierten Wert.</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_showNowPlaying_DisplayName">
+            <English>Show "now playing" hint</English>
+            <German>Zeige "Aktuelle Wiedergabe"-Hinweis</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_volume_DisplayName">
+            <English>Volume</English>
+            <German>Lautstärke</German>
+        </Key>
+        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_volume_Tooltip">
+            <English>WARNING: anything above one (1.0) will make you deaf.</English>
+            <German>WARNUNG: Alles über eins (1.0) macht dich taub.</German>
+        </Key>
+    </Package>
+</Project>

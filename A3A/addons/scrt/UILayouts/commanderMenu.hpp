@@ -898,10 +898,24 @@ class commanderMenu
 					};		
 				};
 
+				class musicTrackEditorButton: ButtonBase
+				{			
+					idc = 5310;
+					text = $STR_commander_menu_tracklist_editor_button;
+					tooltip = $STR_commander_menu_tracklist_editor_button_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "8 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";	
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;
+					action = QUOTE(while {dialog} do {closeDialog 0}; createDialog QQEGVAR(DOUBLES(ultimate,tracklist_editor),dialog));
+				};
+
 				class paradropButton: ScrtRscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5400;
-					y = "8 * pixelGridNoUIScale * pixelH";
+					y = "11.5 * pixelGridNoUIScale * pixelH";
 					class Controls 
 					{
 						class SwitchPic: switchButtonPic
@@ -933,7 +947,7 @@ class commanderMenu
 					text = $STR_commander_menu_victory_check_button;
 					tooltip = $STR_commander_menu_victory_check_button_tooltip;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "11.5 * pixelGridNoUIScale * pixelH";
+					y = "15 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "3 * pixelGridNoUIScale * pixelH";	
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	

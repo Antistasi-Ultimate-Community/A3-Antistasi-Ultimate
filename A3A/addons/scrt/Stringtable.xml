@@ -10506,12 +10506,25 @@
                 <French>Le mode démolition vous permet de détruire les constructions que vous avez placées au QG.</French>
                 <Turkish>Yıkım modu, karargâhta yerleştirdiğiniz yapıları yok etmenizi sağlar.</Turkish>
             </Key>
+            <Key ID="STR_commander_menu_tracklist_editor_button">
+                <Original>TRACKLIST EDITOR</Original>
+                <Russian>РЕДАКТОР ПЛЕЙЛИСТА</Russian>
+                <Chinesesimp>曲目列表编辑器</Chinesesimp>
+                <Korean>트랙리스트 편집기</Korean>
+                <French>ÉDITEUR DE LISTE DE LECTURE</French>
+            </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
                 <Chinesesimp>检查胜利</Chinesesimp>
                 <Korean>승리 확인</Korean>
                 <Turkish>ZAFERİ KONTROL ET</Turkish>
+            </Key>
+            <Key ID="STR_commander_menu_tracklist_editor_button_tooltip">
+                <Original>Change tracklists for day-time, night-time and combat music.</Original>
+                <Russian>Измените плейлисты для дневной, ночной и боевой музыки.</Russian>
+                <Chinesesimp>更改白天、夜晚和战斗音乐的曲目列表。</Chinesesimp>
+                <Korean>주간, 야간 및 전투 음악의 트랙리스트를 변경합니다.</Korean>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button_tooltip">
                 <Original>Use this option to check if you have achieved the victory conditions and ends mission if you have.</Original>
