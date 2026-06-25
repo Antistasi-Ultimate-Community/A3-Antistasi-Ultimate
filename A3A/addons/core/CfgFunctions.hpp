@@ -834,12 +834,14 @@ class CfgFunctions
             class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
+            class makeObjectLocal {};
             class nearestFriendlyMarker {};
             class onClientInitDone {};
             class onServerInitDone {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
+            class vehicleHasCargo {};
             class vehicleTextureSync {};
             class vehicleWillCollideAtPosition {};
             class getRoadDirection {};
