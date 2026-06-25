@@ -21,7 +21,7 @@ private _nameArray = [];
     "LIST", // setting type
     "Main Menu Background", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     ["Antistasi Ultimate", "Main Menu"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
-    [_pathArray, _nameArray, 0], // [default value], [name for default value], index for default value
+    [_pathArray, _nameArray, 1], // [default value], [name for default value], index for default value
     false, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];

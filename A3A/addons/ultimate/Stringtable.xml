@@ -336,6 +336,410 @@
             <French>Ce kit contient un outil de crochetage à usage unique pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
         </Key>
     </Package>
+    <Package name="Map-and-markers">
+        <Key ID="STR_A3AU_outpostNames">
+            <Original>Ironclad|Vanguard|Resolute|Thunder Ridge|Liberty Crest|Sentinel|Granite Watch|Falcon’s Reach|Redstone|Blackwater|Dominion|Silver Spear|Iron Summit|Stormbreaker|Eagle’s Rest|Frosthaven|Shadow Ridge|Ironwood|Highpoint|Warfield|Steadfast|Valor|Coldwater|Bastion|Granite Pass|Torchlight|Iron Vale|Watchtower|Emberfall|Hawk’s Landing|Blackridge|Silver Creek|Northwind|Crimson Bluff|Stonewall|Titan|Red Horizon|Ironwatch|Blue Mesa|Frontier|Iron Peak|Steelhaven|White Ridge|Vanguard Heights|Ironhaven|Stormwatch|Gray Sentinel|Obsidian Point|Iron Frontier|Copperhead|Raven Rock|Thunderhead|Silver Dawn|Iron Bastion|Wolf Creek|Falcon Crest|Granite Shield|Iron Harbor|Red Mesa|Nightfall|High Sentinel|Iron Dominion|Stormhold|Black Summit|Frostpoint|Eagle Crest|Iron Citadel|Shadowfall|Northpoint|Steel Ridge|Iron Horizon|Redwatch|Silent Peak|Granite Dawn|Stormridge|Iron Resolve|Wolf Ridge|Black Harbor|Falcon Watch|Silver Ridge|Ironcliff|Ember Ridge|Cold Harbor|Iron Thunder|Sentinel Peak|Red Valley|Granite Point|Stormfront|Iron Crown|Hawk Ridge|Blackstone|Frost Ridge|Iron Watchpoint|Silver Horizon|Thunderwatch|Iron Bastille|Shadowpoint|Steel Summit</Original>
+            <Russian>Железный Клинок|Авангард|Решимость|Громовой Хребет|Гребень Свободы|Страж|Гранитный Дозор|Соколиный Рубеж|Красный Камень|Чёрные Воды|Господство|Серебряное Копьё|Железная Вершина|Громовержец|Орлиный Приют|Морозная Гавань|Теневой Хребет|Железный Бор|Высота|Поле Боя|Стойкость|Доблесть|Холодные Воды|Бастион|Гранитный Перевал|Факел|Железная Долина|Смотровая Башня|Пепельная Долина|Соколиная Гавань|Чёрный Кряж|Серебряный Ручей|Северный Ветер|Багровый Утёс|Каменный Вал|Титан|Красный Горизонт|Железный Дозор|Синяя Меса|Рубеж|Железный Пик|Стальная Гавань|Белый Хребет|Высоты Авангарда|Железная Гавань|Штормовой Дозор|Серый Страж|Обсидиановый Пункт|Железный Рубеж|Медноголовый|Воронья Скала|Грозовая Туча|Серебряный Рассвет|Железный Бастион|Волчий Ручей|Соколиный Гребень|Гранитный Щит|Железная Бухта|Красная Меса|Сумерки|Верховный Страж|Железное Господство|Штормовая Твердыня|Чёрная Вершина|Морозная Точка|Орлиный Гребень|Железная Цитадель|Тенепад|Северная Точка|Стальной Хребет|Железный Горизонт|Красный Дозор|Тихая Вершина|Гранитный Рассвет|Штормовой Хребет|Железная Решимость|Волчий Хребет|Чёрная Гавань|Соколиный Дозор|Серебряный Хребет|Железный Утёс|Пепельный Хребет|Холодная Гавань|Железный Гром|Вершина Стража|Красная Долина|Гранитная Точка|Штормовой Фронт|Железная Корона|Соколиный Хребет|Чёрный Камень|Морозный Хребет|Железный Наблюдательный Пункт|Серебряный Горизонт|Грозовой Дозор|Железная Бастилия|Теневая Точка|Стальная Вершина</Russian>
+            <French>Forteresse Fer|Avant-Garde|Résolution|Crête du Tonnerre|Cime de Liberté|Sentinelle|Veille de Granit|Portée du Faucon|Pierre Rouge|Eaux Noires|Dominion|Lance d’Argent|Sommet de Fer|Brise-Tempête|Repos de l’Aigle|Havre de Givre|Crête de l’Ombre|Bois de Fer|Haut-Point|Champ de Guerre|Inébranlable|Vaillance|Eaux Froides|Bastion|Passage de Granit|Flambeau|Val de Fer|Tour de Veille|Chute des Braises|Atterrissage du Faucon|Crête Noire|Ruisseau d’Argent|Vent du Nord|Falaise Pourpre|Muraille|Titan|Horizon Rouge|Veille de Fer|Mesa Bleue|Frontière|Pic de Fer|Havre d’Acier|Crête Blanche|Hauteurs de l’Avant-Garde|Havre de Fer|Veille Tempête|Sentinelle Grise|Pointe Obsidienne|Frontière de Fer|Tête-de-Cuivre|Rocher du Corbeau|Tête du Tonnerre|Aube d’Argent|Bastion de Fer|Ruisseau du Loup|Crête du Faucon|Bouclier de Granit|Port de Fer|Mesa Rouge|Crépuscule|Haute Sentinelle|Dominion de Fer|Fort Tempête|Sommet Noir|Pointe de Givre|Crête de l’Aigle|Citadelle de Fer|Chute d’Ombre|Pointe Nord|Crête d’Acier|Horizon de Fer|Veille Rouge|Pic Silencieux|Aube de Granit|Crête Tempête|Résolution de Fer|Crête du Loup|Port Noir|Veille du Faucon|Crête d’Argent|Falaise de Fer|Crête des Braises|Port Froid|Tonnerre de Fer|Pic de la Sentinelle|Vallée Rouge|Pointe de Granit|Front de Tempête|Couronne de Fer|Crête du Faucon|Pierre Noire|Crête de Givre|Point de Veille de Fer|Horizon d’Argent|Veille du Tonnerre|Bastille de Fer|Pointe d’Ombre|Sommet d’Acier</French>
+            <German>Festung Eisen|Vorhut|Entschlossenheit|Donnergrat|Freiheitskamm|Wächter|Granitwacht|Falkenreich|Rotstein|Schwarzwasser|Herrschaft|Silberspeer|Eisengipfel|Sturmspalter|Adlerhorst|Frosthafen|Schattenkamm|Eisenwald|Hochpunkt|Kriegsfeld|Standhaft|Tapferkeit|Kaltwasser|Bastion|Granitpass|Fackellicht|Eisental|Wachturm|Glutfall|Falkenlandung|Schwarzgrat|Silberbach|Nordwind|Purpurklippe|Steinwall|Titan|Rothorizont|Eisenwacht|Blaue Mesa|Grenzposten|Eisenpeak|Stahlhafen|Weißgrat|Vorhuthöhen|Eisenhafen|Sturmwacht|Grauer Wächter|Obsidianpunkt|Eisengrenze|Kupferkopf|Rabenspitze|Donnerkopf|Silberdämmerung|Eisenbastion|Wolfbach|Falkenkamm|Granitschild|Eisenhafen|Rotmesa|Nachtfall|Hoher Wächter|Eisendominion|Sturmfeste|Schwarzgipfel|Frostpunkt|Adlerkamm|Eisenzitadelle|Schattenfall|Nordpunkt|Stahlgrat|Eisenhorizont|Rotwacht|Stillgipfel|Granitaue|Sturmgrat|Eisenentschlossen|Wolfgrat|Schwarzhafen|Falkenwacht|Silbergrat|Eisenkliff|Glutgrat|Kalthafen|Eisendonner|Wächtergipfel|Rotetal|Granitpunkt|Sturmfront|Eisenkrone|Habichtgrat|Schwarzstein|Frostgrat|Eisenbeobachtung|Silberhorizont|Donnerwacht|Eisenbastille|Schattenpunkt|Stahlgipfel</German>
+            <Czech>Železná Pevnost|Předvoj|Odhodlání|Hromový Hřeben|Hřeben Svobody|Stráž|Granitová Hlídka|Sokolí Dosah|Rudý Kámen|Černé Vody|Nadvláda|Stříbrné Kopí|Železný Vrchol|Lamač Bouří|Orlí Útočiště|Mrazavý Přístav|Stínový Hřeben|Železný Les|Vyhlídka|Válečné Pole|Neochvějný|Udatnost|Studené Vody|Bastion|Granitový Průsmyk|Pochodeň|Železné Údolí|Věž Hlídky|Pád Žhavých Uhlíků|Sokolí Přistání|Černý Hřbet|Stříbrný Potok|Severní Vítr|Karmínový Útes|Kamenná Hradba|Titan|Rudý Horizont|Železná Hlídka|Modrá Mesa|Hranice|Železný Štít|Ocelový Přístav|Bílý Hřeben|Výšiny Předvoje|Železný Přístav|Bouřná Hlídka|Šedý Strážce|Obsidiánový Bod|Železná Hranice|Měděná Hlava|Havraní Skála|Hromová Hlava|Stříbrné Svítání|Železný Bastion|Vlčí Potok|Sokolí Hřeben|Granitový Štít|Železný Přístav|Rudá Mesa|Soumrak|Vysoká Hlídka|Železná Nadvláda|Bouřná Pevnost|Černý Vrchol|Mrazivý Bod|Orlí Hřeben|Železná Citadela|Pád Stínu|Severní Bod|Ocelový Hřeben|Železný Horizont|Rudá Hlídka|Tichý Vrchol|Granitové Svítání|Bouřný Hřeben|Železné Odhodlání|Vlčí Hřeben|Černý Přístav|Sokolí Hlídka|Stříbrný Hřeben|Železný Útes|Žhavý Hřeben|Studený Přístav|Železný Hrom|Vrchol Strážce|Rudé Údolí|Granitový Bod|Bouřná Fronta|Železná Koruna|Jestřábí Hřeben|Černý Kámen|Mrazivý Hřeben|Železný Pozorovací Bod|Stříbrný Horizont|Hromová Hlídka|Železná Bastila|Stínový Bod|Ocelový Vrchol</Czech>
+            <Chinesesimp>铁壁|先锋|决意|雷霆岭|自由冠|哨兵|花岗守望|猎隼之境|赤石|黑水|统御|银枪|铁峰|破风暴|鹰栖|霜港|暗影岭|铁木|高点|战域|不屈|勇武|冷水|堡垒|花岗隘口|火炬|铁谷|瞭望塔|余烬坠|鹰隼着陆|黑岭|银溪|北风|绯红崖|石墙|泰坦|赤色天际|铁守|蓝台地|边境|铁巅|钢港|白岭|先锋高地|铁港|风暴守望|灰哨|黑曜点|铁前线|铜头|渡鸦岩|雷顶|银曙|铁堡|狼溪|猎隼冠|花岗盾|铁港湾|红台地|夜幕|高哨|铁统御|风暴堡|黑峰|霜点|鹰冠|铁要塞|影坠|北点|钢岭|铁天际|红守|静峰|花岗曙|风暴岭|铁决意|狼岭|黑港|猎隼守|银岭|铁崖|余烬岭|冷港|铁雷|哨峰|红谷|花岗点|风暴前沿|铁冠|鹰岭|黑石|霜岭|铁观察点|银天际|雷守|铁巴士底|影点|钢峰</Chinesesimp>
+            <Korean>철벽|전위|결의|천둥능선|자유마루|센티널|화강암감시|팔콘리치|레드스톤|블랙워터|도미니언|실버스피어|아이언서밋|스톰브레이커|이글레스트|프로스트헤이븐|섀도리지|아이언우드|하이포인트|워필드|스테드패스트|밸러|콜드워터|바스티온|화강암고개|토치라이트|아이언베일|워치타워|엠버폴|호크랜딩|블랙리지|실버크릭|노스윈드|크림슨블러프|스톤월|타이탄|레드호라이즌|아이언워치|블루메사|프런티어|아이언피크|스틸헤이븐|화이트리지|뱅가드하이츠|아이언헤이븐|스톰워치|그레이센티널|옵시디언포인트|아이언프런티어|코퍼헤드|레이븐록|선더헤드|실버던|아이언바스티온|울프크릭|팔콘크레스트|그래나이트실드|아이언하버|레드메사|나이트폴|하이센티널|아이언도미니언|스톰홀드|블랙서밋|프로스트포인트|이글크레스트|아이언시타델|섀도폴|노스포인트|스틸리지|아이언호라이즌|레드워치|사일런트피크|그래나이트던|스톰리지|아이언리졸브|울프리지|블랙하버|팔콘워치|실버리지|아이언클리프|엠버리지|콜드하버|아이언선더|센티널피크|레드밸리|그래나이트포인트|스톰프런트|아이언크라운|호크리지|블랙스톤|프로스트리지|아이언워치포인트|실버호라이즌|선더워치|아이언바스틸|섀도포인트|스틸서밋</Korean>
+            <Italian>Roccaforte di Ferro|Avanguardia|Risoluto|Cresta del Tuono|Cima della Libertà|Sentinella|Guardia di Granito|Portata del Falco|Pietrarossa|Acque Nere|Dominio|Lancia d’Argento|Vetta di Ferro|Spezza-Tempesta|Riposo dell’Aquila|Rifugio di Ghiaccio|Cresta d’Ombra|Bosco di Ferro|Punto Alto|Campo di Guerra|Incrollabile|Valore|Acque Fredde|Bastione|Passo di Granito|Luce di Torcia|Valle di Ferro|Torre di Guardia|Caduta di Brace|Approdo del Falco|Cresta Nera|Ruscello d’Argento|Vento del Nord|Falesia Cremisi|Muro di Pietra|Titano|Orizzonte Rosso|Guardia di Ferro|Mesa Blu|Frontiera|Picco di Ferro|Rifugio d’Acciaio|Cresta Bianca|Alture Avanguardia|Rifugio di Ferro|Guardia Tempesta|Sentinella Grigia|Punto d’Ossidiana|Frontiera di Ferro|Testa di Rame|Roccia del Corvo|Testa del Tuono|Alba d’Argento|Bastione di Ferro|Ruscello del Lupo|Cresta del Falco|Scudo di Granito|Porto di Ferro|Mesa Rossa|Calare della Notte|Alta Sentinella|Dominio di Ferro|Forte Tempesta|Vetta Nera|Punto di Gelo|Cresta dell’Aquila|Cittadella di Ferro|Caduta d’Ombra|Punta Nord|Cresta d’Acciaio|Orizzonte di Ferro|Guardia Rossa|Picco Silente|Alba di Granito|Cresta Tempesta|Ferro Risoluto|Cresta del Lupo|Porto Nero|Guardia del Falco|Cresta d’Argento|Falesia di Ferro|Cresta di Brace|Porto Freddo|Tuono di Ferro|Picco Sentinella|Valle Rossa|Punto di Granito|Fronte Tempesta|Corona di Ferro|Cresta del Falco|Pietra Nera|Cresta di Gelo|Punto di Vedetta Ferro|Orizzonte d’Argento|Guardia del Tuono|Bastiglia di Ferro|Punto d’Ombra|Vetta d’Acciaio</Italian>
+            <Spanish>Fortaleza de Hierro|Vanguardia|Resuelto|Cresta del Trueno|Cima de la Libertad|Centinela|Vigía de Granito|Alcance del Halcón|Piedra Roja|Aguas Negras|Dominio|Lanza de Plata|Cima de Hierro|Rompe-Tormentas|Descanso del Águila|Refugio Helado|Cresta Sombría|Bosque de Hierro|Punto Alto|Campo de Guerra|Inquebrantable|Valor|Aguas Frías|Bastión|Paso de Granito|Antorcha|Valle de Hierro|Torre Vigía|Caída de Brasas|Aterrizaje del Halcón|Cresta Negra|Arroyo de Plata|Viento del Norte|Risco Carmesí|Muralla de Piedra|Titán|Horizonte Rojo|Vigía de Hierro|Mesa Azul|Frontera|Pico de Hierro|Refugio de Acero|Cresta Blanca|Alturas Vanguardia|Refugio de Hierro|Vigía de Tormenta|Centinela Gris|Punta Obsidiana|Frontera de Hierro|Cabeza de Cobre|Roca del Cuervo|Cabeza del Trueno|Alba de Plata|Bastión de Hierro|Arroyo del Lobo|Cresta del Halcón|Escudo de Granito|Puerto de Hierro|Mesa Roja|Ocaso|Alto Centinela|Dominio de Hierro|Fuerte Tormenta|Cima Negra|Punto Helado|Cresta del Águila|Ciudadela de Hierro|Caída Sombría|Punta Norte|Cresta de Acero|Horizonte de Hierro|Vigía Roja|Pico Silente|Alba de Granito|Cresta Tormenta|Hierro Resuelto|Cresta del Lobo|Puerto Negro|Vigía del Halcón|Cresta de Plata|Acantilado de Hierro|Cresta de Brasas|Puerto Frío|Trueno de Hierro|Pico Centinela|Valle Rojo|Punta de Granito|Frente de Tormenta|Corona de Hierro|Cresta del Halcón|Piedra Negra|Cresta Helada|Punto de Vigía de Hierro|Horizonte de Plata|Vigía del Trueno|Bastilla de Hierro|Punta Sombría|Cima de Acero</Spanish>
+            <Polish>Żelazna Twierdza|Awangarda|Niezłomny|Grzmotny Grzbiet|Grań Wolności|Strażnik|Granitowa Warta|Zasięg Sokoła|Czerwony Kamień|Czarne Wody|Dominion|Srebrna Włócznia|Żelazny Szczyt|Łamacz Burz|Orli Spoczynek|Mroźna Przystań|Cienisty Grzbiet|Żelazny Las|Wysoki Punkt|Pole Bitwy|Niewzruszony|Męstwo|Zimne Wody|Bastion|Granitowa Przełęcz|Pochodnia|Żelazna Dolina|Wieża Straży|Żaropad|Lądowisko Jastrzębia|Czarny Grzbiet|Srebrny Potok|Północny Wiatr|Szkarłatny Urwisko|Kamienny Mur|Tytan|Czerwony Horyzont|Żelazna Warta|Niebieska Mesa|Pogranicze|Żelazny Szczyt|Stalowa Przystań|Biała Grań|Wzgórza Awangardy|Żelazna Przystań|Warta Burzy|Szary Strażnik|Obsydianowy Punkt|Żelazne Pogranicze|Miedziogłowy|Krucza Skała|Gromogłowy|Srebrny Świt|Żelazny Bastion|Wilczy Potok|Sokoli Grzbiet|Granitowa Tarcza|Żelazny Port|Czerwona Mesa|Zmierzch|Wysoki Strażnik|Żelazne Dominion|Twierdza Burzy|Czarny Szczyt|Mroźny Punkt|Orli Grzbiet|Żelazna Cytadela|Cienisty Zmierzch|Północny Punkt|Stalowy Grzbiet|Żelazny Horyzont|Czerwona Warta|Cichy Szczyt|Granitowy Świt|Burzowy Grzbiet|Żelazna Determinacja|Wilczy Grzbiet|Czarny Port|Sokola Warta|Srebrny Grzbiet|Żelazny Klif|Żarzący Grzbiet|Zimny Port|Żelazny Grzmot|Szczyt Strażnika|Czerwona Dolina|Granitowy Punkt|Front Burzy|Żelazna Korona|Jastrzębi Grzbiet|Czarny Kamień|Mroźny Grzbiet|Żelazny Punkt Obserwacyjny|Srebrny Horyzont|Warta Gromu|Żelazna Bastyliа|Cienisty Punkt|Stalowy Szczyt</Polish>        
+        </Key>
+        <Key ID="STR_A3AU_milbaseNames">
+            <Original>Dreadnought|Iron Sentinel|Crimson Bastion|Stormhold|Ravencrest|Steel Horizon|Thunderfall|Blackreach|Stoneguard|Emberwatch|Grimward|Frostguard|Ironcliff|Nightwatch|Redspire|Stormspire|Graywatch|Ironmoor|Wolfguard|Highwatch|Shadowmoor|Coldfire|Bronze Citadel|Ashen Ridge|Iron Vanguard|Falconspire|Blackridge Hold|Stormguard|Steel Bastion|Redwatch Point|Ironhaven Reach|Frostspire|Thunderpoint|Obsidian Ridge|Granitestone|Ironward|Crimson Watch|Northguard|Shadowspire|Iron Summit Reach|Wolfspire|Stormward|Blackstone Hold|Emberguard|Silverwatch|Ironfront|Dusk Ridge|Steelwatch|Redhold|Highspire</Original>
+            <Russian>Дредноут|Железный Страж|Багровый Бастион|Штормовая Твердыня|Вороний Гребень|Стальной Горизонт|Громопад|Чёрный Предел|Каменный Страж|Пепельный Дозор|Мрачный Рубеж|Морозный Страж|Железный Утёс|Ночной Дозор|Красный Шпиль|Штормовой Шпиль|Серый Дозор|Железная Пустошь|Волчий Страж|Высокий Дозор|Теневая Пустошь|Холодное Пламя|Бронзовая Цитадель|Пепельный Хребет|Железный Авангард|Соколиный Шпиль|Чёрный Кряж Твердыня|Штормовой Страж|Стальной Бастион|Красный Дозорный Пункт|Железная Гавань Рубеж|Морозный Шпиль|Громовая Точка|Обсидиановый Хребет|Гранитный Камень|Железный Рубеж|Багровый Дозор|Северный Страж|Теневой Шпиль|Железная Вершина Рубеж|Волчий Шпиль|Штормовой Рубеж|Чёрный Камень Твердыня|Пепельный Страж|Серебряный Дозор|Железный Фронт|Сумеречный Хребет|Стальной Дозор|Красная Твердыня|Высокий Шпиль</Russian>
+            <French>Cuirassé|Sentinelle de Fer|Bastion Pourpre|Fort Tempête|Crête du Corbeau|Horizon d’Acier|Chute du Tonnerre|Portée Noire|Garde de Pierre|Veille des Braises|Garde Sombre|Garde de Givre|Falaise de Fer|Veille de Nuit|Aiguille Rouge|Aiguille de Tempête|Veille Grise|Marais de Fer|Garde du Loup|Haute Veille|Marais d’Ombre|Feu Froid|Citadelle de Bronze|Crête Cendrée|Avant-Garde de Fer|Aiguille du Faucon|Fort Noir-Crête|Garde de Tempête|Bastion d’Acier|Pointe Veille Rouge|Portée de Fer-Havre|Aiguille de Givre|Pointe du Tonnerre|Crête Obsidienne|Pierre de Granit|Garde-Fer|Veille Pourpre|Garde du Nord|Aiguille d’Ombre|Portée Sommet de Fer|Aiguille du Loup|Garde-Bourrasque|Fort Noir-Pierre|Garde des Braises|Veille d’Argent|Front de Fer|Crête du Crépuscule|Veille d’Acier|Fort Rouge|Haute Aiguille</French>
+            <German>Dreadnought|Eisenwächter|Purpurbastion|Sturmfeste|Rabenkranz|Stahlhorizont|Donnerfall|Schwarzrand|Steinwacht|Glutwacht|Düsterwacht|Frostwacht|Eisenkliff|Nachtwacht|Rotspitze|Sturmspitze|Grauwacht|Eisenmoor|Wolfwacht|Hochwacht|Schattenmoor|Kaltfeuer|Bronzezitadelle|Aschengrat|Eisenvorhut|Falkenspitze|Schwarzgrat-Feste|Sturmwacht|Stahlbastion|Rotwachtpunkt|Eisenhafen-Reich|Frostspitze|Donnerpunkt|Obsidiangrat|Granitstein|Eisenwacht|Purpurwacht|Nordwacht|Schattenstachel|Eisengipfel-Reich|Wolfstachel|Sturmwachtung|Schwarzstein-Feste|Glutwacht|Silberwacht|Eisenfront|Dämmergrat|Stahlwacht|Rotfeste|Hochstachel</German>
+            <Czech>Dreadnought|Železný Strážce|Karmínový Bastion|Bouřná Pevnost|Havraní Hřeben|Ocelový Horizont|Hromopád|Černý Dosah|Kamenná Stráž|Žhavá Hlídka|Ponurá Hlídka|Mrazová Stráž|Železný Útes|Noční Hlídka|Rudý Špičák|Bouřný Špičák|Šedá Hlídka|Železné Močály|Vlčí Stráž|Vysoká Hlídka|Stínové Močály|Studený Oheň|Bronzová Citadela|Popelavý Hřeben|Železný Předvoj|Sokolí Špičák|Černý Hřeben Pevnost|Bouřná Stráž|Ocelový Bastion|Bod Rudé Hlídky|Železný Přístav Dosah|Mrazový Špičák|Hromový Bod|Obsidiánový Hřeben|Granitový Kámen|Železná Hlídka|Karmínová Hlídka|Severní Stráž|Stínový Špičák|Dosah Železného Vrcholu|Vlčí Špičák|Bouřná Hlídka|Černý Kámen Pevnost|Žhavá Stráž|Stříbrná Hlídka|Železná Fronta|Soumračný Hřeben|Ocelová Hlídka|Rudá Pevnost|Vysoký Špičák</Czech>
+            <Chinesesimp>无畏|铁哨|绯红堡垒|风暴堡|渡鸦冠|钢天际|雷落|黑域|石卫|余烬守望|冷酷卫|霜卫|铁崖|夜守|赤尖|风暴尖|灰守|铁沼|狼卫|高守|影沼|冷焰|青铜要塞|灰烬岭|铁先锋|猎隼尖|黑岭堡|风暴卫|钢堡|红守点|铁港之境|霜尖|雷点|黑曜岭|花岗石|铁卫|绯红守|北卫|影尖|铁峰之境|狼尖|风暴卫戍|黑石堡|余烬卫|银守|铁前线|暮色岭|钢守|红堡|高尖</Chinesesimp>
+            <Korean>드레드노트|아이언센티널|크림슨바스티온|스톰홀드|레이븐크레스트|스틸호라이즌|선더폴|블랙리치|스톤가드|엠버워치|그림워드|프로스트가드|아이언클리프|나이트워치|레드스파이어|스톰스파이어|그레이워치|아이언무어|울프가드|하이워치|섀도무어|콜드파이어|브론즈시타델|애신리지|아이언뱅가드|팔콘스파이어|블랙리지홀드|스톰가드|스틸바스티온|레드워치포인트|아이언헤이븐리치|프로스트스파이어|선더포인트|옵시디언리지|그래나이트스톤|아이언워드|크림슨워치|노스가드|섀도스파이어|아이언서밋리치|울프스파이어|스톰워드|블랙스톤홀드|엠버가드|실버워치|아이언프런트|더스크리지|스틸워치|레드홀드|하이스파이어</Korean>
+            <Italian>Corazzata|Sentinella di Ferro|Bastione Cremisi|Forte Tempesta|Cresta del Corvo|Orizzonte d’Acciaio|Caduta del Tuono|Confine Nero|Guardia di Pietra|Guardia delle Braci|Presidio Cupo|Guardia del Gelo|Falesia di Ferro|Guardia Notturna|Guglia Rossa|Guglia di Tempesta|Guardia Grigia|Palude di Ferro|Guardia del Lupo|Alta Guardia|Palude d’Ombra|Fuoco Freddo|Citadella di Bronzo|Cresta Cinerea|Avanguardia di Ferro|Guglia del Falco|Forte Nero-Cresta|Guardia di Tempesta|Bastione d’Acciaio|Punto Guardia Rossa|Portata di Ferro-Haven|Guglia del Gelo|Punta del Tuono|Cresta d’Ossidiana|Pietra di Granito|Presidio di Ferro|Guardia Cremisi|Guardia del Nord|Guglia d’Ombra|Portata del Sommet di Ferro|Guglia del Lupo|Presidio di Tempesta|Forte Pietranera|Guardia delle Braci|Guardia d’Argento|Fronte di Ferro|Cresta del Crepuscolo|Guardia d’Acciaio|Forte Rosso|Alta Guglia</Italian>
+            <Spanish>Acorazado|Centinela de Hierro|Bastión Carmesí|Fuerte Tormenta|Cresta del Cuervo|Horizonte de Acero|Caída del Trueno|Alcance Negro|Guardia de Piedra|Vigía de Brasas|Guardián Sombrío|Guardia de Escarcha|Acantilado de Hierro|Vigía Nocturna|Aguja Roja|Aguja de Tormenta|Vigía Gris|Páramo de Hierro|Guardia del Lobo|Alta Vigía|Páramo Sombrío|Fuego Frío|Ciudadela de Bronce|Cresta Ceniza|Vanguardia de Hierro|Aguja del Halcón|Fuerte Cresta Negra|Guardia de Tormenta|Bastión de Acero|Punto Vigía Roja|Alcance de Puerto Hierro|Aguja de Escarcha|Punto del Trueno|Cresta Obsidiana|Piedra de Granito|Guardia de Hierro|Vigía Carmesí|Guardia del Norte|Aguja Sombría|Alcance Cima de Hierro|Aguja del Lobo|Guardia de Tempestad|Fuerte Piedra Negra|Guardia de Brasas|Vigía de Plata|Frente de Hierro|Cresta del Ocaso|Vigía de Acero|Fuerte Rojo|Alta Aguja</Spanish>
+            <Polish>Pancernik|Żelazny Strażnik|Szkarłatny Bastion|Twierdza Burzy|Krucza Grań|Stalowy Horyzont|Gromopad|Czarny Zasięg|Kamienna Straż|Żarowa Warta|Ponury Posterunek|Mroźna Straż|Żelazny Klif|Nocna Warta|Czerwony Kolec|Burzowy Kolec|Szara Warta|Żelazne Mokradła|Wilcza Straż|Wysoka Warta|Cieniste Mokradła|Zimny Ogień|Brązowa Cytadela|Popielaty Grzbiet|Żelazna Awangarda|Sokoli Kolec|Czarny Grzbiet Twierdza|Burzowa Straż|Stalowy Bastion|Punkt Czerwonej Warty|Zasięg Żelaznej Przystani|Mroźny Kolec|Punkt Gromu|Obsydianowy Grzbiet|Granitowy Kamień|Żelazny Posterunek|Szkarłatna Warta|Północna Straż|Cienisty Kolec|Zasięg Żelaznego Szczytu|Wilczy Kolec|Burzowy Posterunek|Czarny Kamień Twierdza|Żarowa Straż|Srebrna Warta|Żelazny Front|Zmierzchowy Grzbiet|Stalowa Warta|Czerwona Twierdza|Wysoki Kolec</Polish>
+        </Key>
+        <Key ID="STR_A3AU_airfieldNames">
+            <Original>Skywatch|Iron Runway|Falcon Field|Storm Airstrip|Eagle Crest Field|Highwind Base|Thunder Run|Cloudbreak Field|Skyguard|Raven Airfield|Steel Wing|Northwind Field|Red Sky Station|Ironhawk|Blue Horizon Field|Stormflight|Silver Wing Field|Skyhold|Crimson Skies|Iron Flightline|Falcon Reach Field|Highpoint Airstrip|Shadow Wing|Frostwind Field|Stratos Watch</Original>
+            <Russian>Небесный Дозор|Железная Взлётная Полоса|Соколиное Поле|Штормовая ВПП|Поле Орлиного Гребня|База Высоких Ветров|Громовой Разбег|Поле Прорыва Облаков|Небесный Страж|Вороний Аэродром|Стальное Крыло|Поле Северного Ветра|Станция Красного Неба|Железный Ястреб|Поле Синего Горизонта|Штормовой Полёт|Поле Серебряного Крыла|Небесная Твердыня|Багровые Небеса|Железная Линия Полёта|Поле Соколиного Рубежа|Высотная ВПП|Теневое Крыло|Поле Морозного Ветра|Стратосферный Дозор</Russian>
+            <French>Veille du Ciel|Piste de Fer|Terrain du Faucon|Bande Tempête|Terrain Crête de l’Aigle|Base Haut-Vent|Course du Tonnerre|Terrain Brise-Nuages|Garde du Ciel|Aérodrome du Corbeau|Aile d’Acier|Terrain Vent du Nord|Station Ciel Rouge|Faucon de Fer|Terrain Horizon Bleu|Vol Tempête|Terrain Aile d’Argent|Fort Céleste|Cieux Pourpres|Ligne de Vol de Fer|Terrain Portée du Faucon|Bande Haut-Point|Aile d’Ombre|Terrain Vent de Givre|Veille Stratos</French>
+            <German>Himmelswacht|Eisenpiste|Falkenfeld|Sturmpiste|Adlerkamm-Feld|Hochwind-Basis|Donnerlauf|Wolkenbruch-Feld|Himmelswache|Rabenflugplatz|Stahlflügel|Nordwind-Feld|Rothimmel-Station|Eisenhabicht|Blauhorizont-Feld|Sturmflug|Silberflügel-Feld|Himmelsfeste|Purpurhimmel|Eisenfluglinie|Falkenreich-Feld|Hochpunkt-Piste|Schattenflügel|Frostwind-Feld|Stratoswacht</German>
+            <Czech>Nebeská Hlídka|Železná Dráha|Sokolí Letiště|Bouřná Dráha|Letiště Orlího Hřebene|Základna Vysokých Větrů|Hromový Rozběh|Letiště Průlom Mraků|Nebeský Strážce|Havraní Letiště|Ocelové Křídlo|Letiště Severního Větru|Stanice Rudé Oblohy|Železný Jestřáb|Letiště Modrého Horizontu|Bouřný Let|Letiště Stříbrného Křídla|Nebeská Pevnost|Karmínová Nebesa|Železná Letová Linie|Letiště Sokolího Dosahu|Dráha Vyhlídky|Stínové Křídlo|Letiště Mrazivého Větru|Stratosférická Hlídka</Czech>
+            <Chinesesimp>天际守望|铁跑道|猎隼机场|风暴简易机场|鹰冠机场|高风基地|雷霆跑道|破云机场|天空卫|渡鸦机场|钢翼|北风机场|红天站|铁鹰|蓝天际机场|风暴航线|银翼机场|天空堡|绯红苍穹|铁航线|猎隼之境机场|高点跑道|影翼|霜风机场|平流层守望</Chinesesimp>
+            <Korean>스카이워치|아이언런웨이|팔콘필드|스톰에어스트립|이글크레스트필드|하이윈드기지|선더런|클라우드브레이크필드|스카이가드|레이븐에어필드|스틸윙|노스윈드필드|레드스카이스테이션|아이언호크|블루호라이즌필드|스톰플라이트|실버윙필드|스카이홀드|크림슨스카이즈|아이언플라이트라인|팔콘리치필드|하이포인트에어스트립|섀도윙|프로스트윈드필드|스트라토스워치</Korean>
+            <Italian>Vedetta del Cielo|Pista di Ferro|Campo del Falco|Pista Tempesta|Campo Cresta dell’Aquila|Base Alto Vento|Corsa del Tuono|Campo Spacca-Nuvole|Guardia del Cielo|Campo del Corvo|Ala d’Acciaio|Campo Vento del Nord|Stazione Cielo Rosso|Falco di Ferro|Campo Orizzonte Blu|Volo Tempesta|Campo Ala d’Argento|Forte del Cielo|Cieli Cremisi|Linea di Volo di Ferro|Campo Portata del Falco|Pista Alto Punto|Ala d’Ombra|Campo Vento di Gelo|Vedetta Stratos</Italian>
+            <Spanish>Vigía del Cielo|Pista de Hierro|Campo del Halcón|Pista Tormenta|Campo Cresta del Águila|Base Alto Viento|Carrera del Trueno|Campo Rompe-Nubes|Guardia del Cielo|Aeródromo del Cuervo|Ala de Acero|Campo Viento del Norte|Estación Cielo Rojo|Halcón de Hierro|Campo Horizonte Azul|Vuelo Tormenta|Campo Ala de Plata|Fuerte del Cielo|Cielos Carmesí|Línea de Vuelo de Hierro|Campo Alcance del Halcón|Pista Alto Punto|Ala Sombría|Campo Viento Helado|Vigía Estratos</Spanish>
+            <Polish>Niebiańska Warta|Żelazny Pas|Sokole Pole|Burzowy Pas|Pole Orlej Grani|Baza Wysokiego Wiatru|Gromowy Rozbieg|Pole Przebicia Chmur|Straż Nieba|Krukowe Lotnisko|Stalowe Skrzydło|Pole Północnego Wiatru|Stacja Czerwonego Nieba|Żelazny Jastrząb|Pole Błękitnego Horyzontu|Burzowy Lot|Pole Srebrnego Skrzydła|Niebiańska Twierdza|Szkarłatne Niebo|Żelazna Linia Lotu|Pole Sokolego Zasięgu|Pas Wysokiego Punktu|Cieniste Skrzydło|Pole Mroźnego Wiatru|Warta Stratosfery</Polish>        
+        </Key>
+        <Key ID="STR_A3AU_seaportNames">
+            <Original>Harborwatch|Iron Harbor|Storm Anchorage|Blackwater Quay|Seaguard|Breakwater Point|Red Tide Port|Deepwater Bastion|Anchorhold|Bluewater Station|Harbormaster|Iron Anchorage|Storm Pier|Seawatch|Northport Reach|Harbor Sentinel|Graywater Dockyard|Crimson Anchorage|Wavecrest Port|Steel Wharf|Outer Harbor|Trident Point|Seagate|Harbor Bastion|Black Reef Port|Stormbreak Harbor|Ironclad Quay|Saltwind Port|Harborfront|Deepwave Anchorage|Redwater Pier|Frost Harbor|Tidewatch|Seabastion|Anchorpoint|Harbor Reach|Westport Sentinel|Blue Harbor|Iron Dockyard|Stormtide Port|Highwater Quay|Sea Shield|Harbor Crown|Northwater Pier|Granite Harbor|Waveguard|Southport Watch|Trident Harbor|Coldwater Anchorage|Iron Breakwater</Original>
+            <Russian>Портовый Дозор|Железная Гавань|Штормовая Якорная Стоянка|Причал Чёрных Вод|Морской Страж|Мыс Волнолома|Порт Красного Прилива|Глубоководный Бастион|Якорная Твердыня|Станция Синих Вод|Начальник Порта|Железная Якорная Стоянка|Штормовой Пирс|Морской Дозор|Северный Порт Рубеж|Страж Гавани|Серые Воды Верфь|Багровая Якорная Стоянка|Порт Гребня Волны|Стальной Причал|Внешняя Гавань|Мыс Трезубца|Морские Ворота|Портовый Бастион|Порт Чёрного Рифа|Гавань Штормового Прорыва|Железный Причал|Порт Солёного Ветра|Портовый Фронт|Глубинная Якорная Стоянка|Пирс Красных Вод|Морозная Гавань|Дозор Прилива|Морской Бастион|Якорная Точка|Рубеж Гавани|Страж Западного Порта|Синяя Гавань|Железная Верфь|Порт Штормового Прилива|Причал Высокой Воды|Морской Щит|Корона Гавани|Северный Пирс|Гранитная Гавань|Страж Волны|Дозор Южного Порта|Гавань Трезубца|Холодная Якорная Стоянка|Железный Волнолом</Russian>
+            <French>Veille du Port|Port de Fer|Mouillage Tempête|Quai Eaux Noires|Garde de Mer|Pointe du Brise-Lames|Port Marée Rouge|Bastion Grand-Large|Fort Ancre|Station Eaux Bleues|Capitainerie|Mouillage de Fer|Jetée Tempête|Veille de Mer|Port Nord Portée|Sentinelle du Port|Chantier Eaux Grises|Mouillage Pourpre|Port Crête des Vagues|Quai d’Acier|Avant-Port|Pointe du Trident|Porte de Mer|Bastion du Port|Port Récif Noir|Port Brise-Tempête|Quai Ironclad|Port Vent Salé|Front de Quai|Mouillage Vague-Profonde|Jetée Eaux Rouges|Port de Givre|Veille des Marées|Bastion Marin|Pointe d’Ancre|Portée du Port|Sentinelle Ouest-Port|Port Bleu|Chantier de Fer|Port Marée-Tempête|Quai Hautes Eaux|Bouclier Marin|Couronne du Port|Jetée Nord-Eaux|Port Granit|Garde des Vagues|Veille Sud-Port|Port Trident|Mouillage Eaux Froides|Brise-Lames de Fer</French>
+            <German>Hafenwacht|Eisenhafen|Sturmankerplatz|Schwarzwasser-Kai|Seewacht|Wellenbrecher-Punkt|Rotflut-Hafen|Tiefwasser-Bastion|Ankerfeste|Blauwasser-Station|Hafenmeister|Eisenankerplatz|Sturmsteg|Seewacht|Nordport-Reich|Hafenwächter|Grauwasser-Werft|Purpurankerplatz|Wellenkamm-Hafen|Stahlpier|Außenhafen|Dreizack-Punkt|Seetor|Hafenbastion|Schwarzes-Riff-Hafen|Sturmbruch-Hafen|Eisenpanzer-Kai|Salzwind-Hafen|Hafenvorfeld|Tiefwellen-Ankerplatz|Rotwasser-Steg|Frosthafen|Gezeitenwacht|Seebastion|Ankerpunkt|Hafenreich|Westport-Wächter|Blauhafen|Eisendock|Sturmflut-Hafen|Hochwasser-Kai|Seeschild|Hafenkrone|Nordwasser-Steg|Granit-Hafen|Wellenwacht|Südport-Wacht|Dreizack-Hafen|Kaltwasser-Ankerplatz|Eisenwellenbrecher</German>
+            <Czech>Přístavní Hlídka|Železný Přístav|Bouřné Kotviště|Molo Černých Vod|Mořská Stráž|Bod Vlnolamu|Přístav Rudého Přílivu|Hlubokovodní Bastion|Kotvící Pevnost|Stanice Modrých Vod|Správce Přístavu|Železné Kotviště|Bouřné Molo|Mořská Hlídka|Dosah Severního Přístavu|Přístavní Strážce|Loděnice Šedých Vod|Karmínové Kotviště|Přístav Hřbetu Vln|Ocelové Molo|Vnější Přístav|Bod Trojzubce|Mořská Brána|Přístavní Bastion|Přístav Černého Útesu|Přístav Bouřného Zlomu|Železný Kaj|Přístav Slaného Větru|Přístavní Fronta|Kotviště Hlubokých Vln|Molo Rudých Vod|Mrazivý Přístav|Hlídka Přílivu|Mořský Bastion|Kotvící Bod|Dosah Přístavu|Stráž Západního Přístavu|Modrý Přístav|Železná Loděnice|Přístav Bouřného Přílivu|Molo Vysokých Vod|Mořský Štít|Koruna Přístavu|Molo Severních Vod|Granitový Přístav|Stráž Vln|Hlídka Jižního Přístavu|Trojzubcový Přístav|Studené Kotviště|Železný Vlnolam</Czech>
+            <Chinesesimp>港口守望|铁港|风暴锚地|黑水码头|海卫|防波点|红潮港|深水堡垒|锚固堡|蓝水站|港务官|铁锚地|风暴栈桥|海望|北港之境|港口哨|灰水船坞|绯红锚地|浪冠港|钢码头|外港|三叉点|海门|港口堡|黑礁港|破风暴港|铁甲码头|盐风港|港前沿|深浪锚地|红水栈桥|霜港|潮汐守望|海堡|锚点|港之境|西港哨|蓝港|铁船坞|风暴潮港|高水码头|海盾|港之冠|北水栈桥|花岗港|浪卫|南港望|三叉港|冷水锚地|铁防波</Chinesesimp>
+            <Korean>하버워치|아이언하버|스톰앵커리지|블랙워터키|시가드|브레이크워터포인트|레드타이드포트|딥워터바스티온|앵커홀드|블루워터스테이션|하버마스터|아이언앵커리지|스톰피어|시워치|노스포트리치|하버센티널|그레이워터도크야드|크림슨앵커리지|웨이브크레스트포트|스틸워프|아우터하버|트라이던트포인트|시게이트|하버바스티온|블랙리프포트|스톰브레이크하버|아이언클래드키|솔트윈드포트|하버프런트|딥웨이브앵커리지|레드워터피어|프로스트하버|타이드워치|시바스티온|앵커포인트|하버리치|웨스트포트센티널|블루하버|아이언도크야드|스톰타이드포트|하이워터키|시실드|하버크라운|노스워터피어|그래나이트하버|웨이브가드|사우스포트워치|트라이던트하버|콜드워터앵커리지|아이언브레이크워터</Korean>
+            <Italian>Vedetta del Porto|Porto di Ferro|Ancoraggio Tempesta|Banchina Acque Nere|Guardia del Mare|Punta Frangiflutti|Porto Marea Rossa|Bastione Profondo|Forte Ancoraggio|Stazione Acque Blu|Capitano del Porto|Ancoraggio di Ferro|Molo Tempesta|Vedetta del Mare|Portata Porto Nord|Sentinella del Porto|Cantiere Acque Grigie|Ancoraggio Cremisi|Porto Cresta d’Onda|Banchina d’Acciaio|Porto Esterno|Punta Tridente|Porta del Mare|Bastione del Porto|Porto Scogliera Nera|Porto Spacca-Tempesta|Banchina Ironclad|Porto Vento Salato|Fronte Porto|Ancoraggio Onda Profonda|Molo Acque Rosse|Porto del Gelo|Vedetta di Marea|Bastione Marino|Punto d’Ancoraggio|Portata del Porto|Sentinella di Porto Ovest|Porto Blu|Cantiere di Ferro|Porto Marea di Tempesta|Banchina Alte Acque|Scudo del Mare|Corona del Porto|Molo Acque del Nord|Porto di Granito|Guardia delle Onde|Vedetta Porto Sud|Porto Tridente|Ancoraggio Acque Fredde|Frangiflutti di Ferro</Italian>
+            <Spanish>Vigía del Puerto|Puerto de Hierro|Fondeadero Tormenta|Muelle Aguas Negras|Guardia del Mar|Punta Rompeolas|Puerto Marea Roja|Bastión de Aguas Profundas|Fuerte Ancla|Estación Aguas Azules|Capitán de Puerto|Fondeadero de Hierro|Muelle Tormenta|Vigía del Mar|Alcance Puerto Norte|Centinela del Puerto|Astillero Aguas Grises|Fondeadero Carmesí|Puerto Cresta de Ola|Muelle de Acero|Puerto Exterior|Punta Tridente|Puerta del Mar|Bastión del Puerto|Puerto Arrecife Negro|Puerto Rompe-Tormentas|Muelle Ironclad|Puerto Viento Salado|Frente del Puerto|Fondeadero Ola Profunda|Muelle Aguas Rojas|Puerto de Escarcha|Vigía de Marea|Bastión Marino|Punto de Ancla|Alcance del Puerto|Centinela Puerto Oeste|Puerto Azul|Astillero de Hierro|Puerto Marea de Tormenta|Muelle Alta Marea|Escudo del Mar|Corona del Puerto|Muelle Aguas del Norte|Puerto de Granito|Guardia de Olas|Vigía Puerto Sur|Puerto Tridente|Fondeadero Aguas Frías|Rompeolas de Hierro</Spanish>
+            <Polish>Warta Portu|Żelazny Port|Kotwicowisko Burzy|Nabrzeże Czarnych Wód|Straż Morza|Punkt Falochronu|Port Czerwonego Przypływu|Bastion Głębin|Kotwiczna Twierdza|Stacja Błękitnych Wód|Bosman Portu|Żelazne Kotwicowisko|Molo Burzy|Morska Warta|Zasięg Portu Północnego|Portowy Strażnik|Stocznia Szarych Wód|Szkarłatne Kotwicowisko|Port Grzbietu Fali|Stalowe Nabrzeże|Zewnętrzny Port|Punkt Trójzębu|Brama Morza|Portowy Bastion|Port Czarnej Rafy|Port Sztormowego Przełomu|Żelazny Kaj|Port Słonego Wiatru|Front Portu|Kotwicowisko Głębokiej Fali|Molo Czerwonych Wód|Mroźny Port|Warta Pływów|Morski Bastion|Punkt Kotwicy|Zasięg Portu|Strażnik Portu Zachodniego|Błękitny Port|Żelazna Stocznia|Port Sztormowego Przypływu|Nabrzeże Wysokiej Wody|Morska Tarcza|Korona Portu|Molo Północnych Wód|Granitowy Port|Straż Fal|Warta Portu Południowego|Port Trójzębu|Kotwicowisko Zimnych Wód|Żelazny Falochron</Polish>        
+        </Key>
+        <Key ID="STR_A3U_HOVER_GARRISON">
+            <Original>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Garrison: %1%2&lt;/t&gt;</Original>
+            <French>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Garnison : %1%2&lt;/t&gt;</French>
+            <German>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Garnison: %1%2&lt;/t&gt;</German>
+            <Czech>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Posádka: %1%2&lt;/t&gt;</Czech>
+            <Chinesesimp>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;驻军：%1%2&lt;/t&gt;</Chinesesimp>
+            <Korean>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;주둔 병력: %1%2&lt;/t&gt;</Korean>
+            <Russian>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Гарнизон: %1%2&lt;/t&gt;</Russian>
+            <Italian>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Guarnigione: %1%2&lt;/t&gt;</Italian>
+            <Spanish>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Guarnición: %1%2&lt;/t&gt;</Spanish>
+            <Polish>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Garnizon: %1%2&lt;/t&gt;</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_OUTPOST_SITE_ENEMY">
+            <Original>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Intelligence unavailable&lt;/t&gt;</Original>
+            <French>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Renseignements indisponibles&lt;/t&gt;</French>
+            <German>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Keine Aufklärungsdaten verfügbar&lt;/t&gt;</German>
+            <Czech>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Zpravodajské informace nejsou dostupné&lt;/t&gt;</Czech>
+            <Chinesesimp>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-情报不可用&lt;/t&gt;</Chinesesimp>
+            <Korean>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-정보 확보 불가&lt;/t&gt;</Korean>
+            <Russian>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Разведданные недоступны&lt;/t&gt;</Russian>
+            <Italian>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Dati di intelligence non disponibili&lt;/t&gt;</Italian>
+            <Spanish>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Inteligencia no disponible&lt;/t&gt;</Spanish>
+            <Polish>%1&lt;br /&gt;&lt;t color='#CFCFCF'&gt;-Dane wywiadowcze niedostępne&lt;/t&gt;</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RESOURCE_SITE">
+            <Original>Resource Site&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Generates 300%1 every resource tick&lt;/t&gt;</Original>
+            <French>Site de ressources&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Génère 300%1 à chaque cycle de ressources&lt;/t&gt;</French>
+            <German>Ressourcenstandort&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Erzeugt 300%1 pro Ressourcenzyklus&lt;/t&gt;</German>
+            <Czech>Zdroj surovin&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Generuje 300%1 při každém cyklu zdrojů&lt;/t&gt;</Czech>
+            <Chinesesimp>资源点&lt;br /&gt;&lt;t color='#CFCFCF'&gt;每个资源周期生成 300%1&lt;/t&gt;</Chinesesimp>
+            <Korean>자원 거점&lt;br /&gt;&lt;t color='#CFCFCF'&gt;자원 주기마다 300%1 생성&lt;/t&gt;</Korean>
+            <Russian>Ресурсная точка&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Производит 300%1 за каждый ресурсный цикл&lt;/t&gt;</Russian>
+            <Italian>Sito Risorse&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Genera 300%1 a ogni ciclo risorse&lt;/t&gt;</Italian>
+            <Spanish>Sitio de Recursos&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Genera 300%1 en cada ciclo de recursos&lt;/t&gt;</Spanish>
+            <Polish>Punkt Surowców&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Generuje 300%1 przy każdym cyklu zasobów&lt;/t&gt;</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_FACTORY_SITE">
+            <Original>Factory&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Multiplies a single resource by 1.2 per factory&lt;/t&gt;</Original>
+            <French>Usine&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Multiplie une ressource par 1,2 par usine&lt;/t&gt;</French>
+            <German>Fabrik&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Multipliziert eine Ressource pro Fabrik mit 1,2&lt;/t&gt;</German>
+            <Czech>Továrna&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Násobí jeden zdroj hodnotou 1,2 za továrnu&lt;/t&gt;</Czech>
+            <Chinesesimp>工厂&lt;br /&gt;&lt;t color='#CFCFCF'&gt;每座工厂将单一资源乘以 1.2&lt;/t&gt;</Chinesesimp>
+            <Korean>공장&lt;br /&gt;&lt;t color='#CFCFCF'&gt;공장당 단일 자원을 1.2배로 증가&lt;/t&gt;</Korean>
+            <Russian>Завод&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Умножает один ресурс на 1.2 за каждый завод&lt;/t&gt;</Russian>
+            <Italian>Fabbrica&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Moltiplica una risorsa per 1,2 per fabbrica&lt;/t&gt;</Italian>
+            <Spanish>Fábrica&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Multiplica un recurso por 1,2 por fábrica&lt;/t&gt;</Spanish>
+            <Polish>Fabryka&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Mnoży jeden zasób przez 1,2 za każdą fabrykę&lt;/t&gt;</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_AIRPORT_CAPTURED">
+            <Original>When captured:&lt;br /&gt;-Allows usage of stored air assets&lt;br /&gt;-Enables the use of air supports&lt;br /&gt;&lt;br /&gt;Can only be captured from War Tier 3+.</Original>
+            <French>Une fois capturé :&lt;br /&gt;-Permet l'utilisation des aéronefs stockés&lt;br /&gt;-Active les soutiens aériens</French>
+            <German>Nach Einnahme:&lt;br /&gt;-Erlaubt die Nutzung gespeicherter Luftfahrzeuge&lt;br /&gt;-Ermöglicht Luftunterstützung</German>
+            <Czech>Po obsazení:&lt;br /&gt;-Umožňuje použití uložených leteckých prostředků&lt;br /&gt;-Povoluje leteckou podporu</Czech>
+            <Chinesesimp>占领后：&lt;br /&gt;-允许使用存储的空中载具&lt;br /&gt;-启用空中支援</Chinesesimp>
+            <Korean>점령 시:&lt;br /&gt;-저장된 항공 자산 사용 가능&lt;br /&gt;-항공 지원 활성화</Korean>
+            <Russian>После захвата:&lt;br /&gt;-Позволяет использовать сохранённую авиацию&lt;br /&gt;-Открывает доступ к авиационной поддержке</Russian>
+            <Italian>Una volta catturato:&lt;br /&gt;-Permette l'uso dei mezzi aerei immagazzinati&lt;br /&gt;-Abilita il supporto aereo</Italian>
+            <Spanish>Al capturarlo:&lt;br /&gt;-Permite usar los activos aéreos almacenados&lt;br /&gt;-Habilita el apoyo aéreo</Spanish>
+            <Polish>Po przejęciu:&lt;br /&gt;-Pozwala używać przechowywanych środków lotniczych&lt;br /&gt;-Odblokowuje wsparcie lotnicze</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_DESTROYED_SITE">
+            <Original>Destroyed site: population eliminated (no support)</Original>
+            <French>Site détruit : population éliminée (aucun soutien)</French>
+            <German>Zerstörter Standort: Bevölkerung ausgelöscht (keine Unterstützung)</German>
+            <Czech>Zničené místo: populace zlikvidována (bez podpory)</Czech>
+            <Chinesesimp>已摧毁地点：人口已消灭（无支持）</Chinesesimp>
+            <Korean>파괴된 지역: 인구 제거됨 (지원 없음)</Korean>
+            <Russian>Уничтоженный объект: население уничтожено (поддержки нет)</Russian>
+            <Italian>Sito distrutto: popolazione eliminata (nessun supporto)</Italian>
+            <Spanish>Sitio destruido: población eliminada (sin apoyo)</Spanish>
+            <Polish>Zniszczone miejsce: populacja wyeliminowana (brak wsparcia)</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_DESTROYED_MILADMIN">
+            <Original>Cannot fast travel to a destroyed military administration.</Original>
+            <English>Cannot fast travel to a destroyed military administration.</English>
+            <German>Zu einer zerstörten Militärverwaltung ist keine Schnellreise möglich.</German>
+            <French>Impossible de voyager rapidement vers une administration militaire détruite.</French>
+            <Spanish>No se puede viajar rápido a una administración militar destruida.</Spanish>
+            <Italian>Impossibile viaggiare rapidamente verso un’amministrazione militare distrutta.</Italian>
+            <Polish>Nie można odbyć szybkiej podróży do zniszczonej administracji wojskowej.</Polish>
+            <Russian>Нельзя быстро переместиться к разрушенной военной администрации.</Russian>
+            <Czech>Nelze rychle cestovat do zničené vojenské správy.</Czech>
+            <Turkish>Yok edilmiş bir askerî idareye hızlı seyahat edilemez.</Turkish>
+            <ChineseSimplified>无法快速前往已被摧毁的军事管理区。</ChineseSimplified>
+            <Japanese>破壊された軍政施設にはファストトラベルできません。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_CITY_SUPPORT">
+            <Original>Population: %1&lt;br /&gt;Support — Rebels: %2%% (%3)&lt;br /&gt;Support — Government: %4%% (%5)&lt;br /&gt;To gain more support capture surrounding zones and/or deliver supplies</Original>
+            <French>Population : %1&lt;br /&gt;Soutien — Rebelles : %2%% (%3)&lt;br /&gt;Soutien — Gouvernement : %4%% (%5)&lt;br /&gt;Pour augmenter le soutien, capturez les zones voisines et/ou livrez des fournitures</French>
+            <German>Bevölkerung: %1&lt;br /&gt;Unterstützung — Rebellen: %2%% (%3)&lt;br /&gt;Unterstützung — Regierung: %4%% (%5)&lt;br /&gt;Für mehr Unterstützung umliegende Zonen erobern und/oder Nachschub liefern</German>
+            <Czech>Populace: %1&lt;br /&gt;Podpora — Povstalci: %2%% (%3)&lt;br /&gt;Podpora — Vláda: %4%% (%5)&lt;br /&gt;Pro zvýšení podpory obsazujte okolní zóny a/nebo doručujte zásoby</Czech>
+            <Chinesesimp>人口：%1&lt;br /&gt;支持度 — 叛军：%2%% (%3)&lt;br /&gt;支持度 — 政府：%4%% (%5)&lt;br /&gt;要获得更多支持，请占领周边区域和/或运送补给</Chinesesimp>
+            <Korean>인구: %1&lt;br /&gt;지지도 — 반군: %2%% (%3)&lt;br /&gt;지지도 — 정부: %4%% (%5)&lt;br /&gt;지지도를 높이려면 주변 지역을 점령하거나 보급품을 전달하세요</Korean>
+            <Russian>Население: %1&lt;br /&gt;Поддержка — Повстанцы: %2%% (%3)&lt;br /&gt;Поддержка — Правительство: %4%% (%5)&lt;br /&gt;Чтобы увеличить поддержку, захватывайте соседние зоны и/или доставляйте припасы</Russian>
+            <Italian>Popolazione: %1&lt;br /&gt;Supporto — Ribelli: %2%% (%3)&lt;br /&gt;Supporto — Governo: %4%% (%5)&lt;br /&gt;Per aumentare il supporto cattura le zone circostanti e/o consegna rifornimenti</Italian>
+            <Spanish>Población: %1&lt;br /&gt;Apoyo — Rebeldes: %2%% (%3)&lt;br /&gt;Apoyo — Gobierno: %4%% (%5)&lt;br /&gt;Para ganar más apoyo captura zonas cercanas y/o entrega suministros</Spanish>
+            <Polish>Populacja: %1&lt;br /&gt;Poparcie — Rebelianci: %2%% (%3)&lt;br /&gt;Poparcie — Rząd: %4%% (%5)&lt;br /&gt;Aby zwiększyć poparcie przejmuj okoliczne strefy i/lub dostarczaj zaopatrzenie</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RESISTANCE_HQ">
+            <Original>%1 Headquarters</Original>
+            <French>Quartier Général %1</French>
+            <German>%1 Hauptquartier</German>
+            <Czech>Velitelství %1</Czech>
+            <Chinesesimp>%1 总部</Chinesesimp>
+            <Korean>%1 본부</Korean>
+            <Russian>Штаб %1</Russian>
+            <Italian>Quartier Generale %1</Italian>
+            <Spanish>Cuartel General %1</Spanish>
+            <Polish>Kwatera Główna %1</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RESISTANCE_HQ_DESC">
+            <Original>Respawn location&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Here you can request missions, access garage and change game settings.</Original>
+            <French>Point de réapparition&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Ici, vous pouvez demander des missions, accéder au garage et modifier les paramètres du jeu.</French>
+            <German>Respawn-Punkt&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Hier können Missionen angefordert, die Garage genutzt und Spieleinstellungen geändert werden.</German>
+            <Czech>Místo znovuzrození&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Zde můžete žádat o mise, vstoupit do garáže a měnit nastavení hry.</Czech>
+            <Chinesesimp>重生点&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- 在这里可以请求任务、进入车库并更改游戏设置。</Chinesesimp>
+            <Korean>리스폰 위치&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- 여기에서 임무를 요청하고, 차고에 접근하며, 게임 설정을 변경할 수 있습니다.</Korean>
+            <Russian>Точка возрождения&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Здесь можно запрашивать задания, пользоваться гаражом и изменять настройки игры.</Russian>
+            <Italian>Punto di respawn&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Qui puoi richiedere missioni, accedere al garage e modificare le impostazioni di gioco.</Italian>
+            <Spanish>Punto de reaparición&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Aquí puedes solicitar misiones, acceder al garaje y cambiar la configuración del juego.</Spanish>
+            <Polish>Punkt odrodzenia&lt;br /&gt;&lt;t color='#CFCFCF'&gt;- Tutaj możesz przyjmować misje, korzystać z garażu i zmieniać ustawienia gry.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_BLACK_MARKET">
+            <Original>Black Market Trader</Original>
+            <French>Marché Noir</French>
+            <German>Schwarzmarkthändler</German>
+            <Czech>Obchodník na černém trhu</Czech>
+            <Chinesesimp>黑市商人</Chinesesimp>
+            <Korean>암시장 상인</Korean>
+            <Russian>Торговец чёрного рынка</Russian>
+            <Italian>Mercante del Mercato Nero</Italian>
+            <Spanish>Comerciante del Mercado Negro</Spanish>
+            <Polish>Handlarz z Czarnego Rynku</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_BLACK_MARKET_DESC">
+            <Original>Buy and sell equipment here&lt;br /&gt;&lt;t color='#CFCFCF'&gt;To unlock more vehicles capture more zones.</Original>
+            <French>Achetez et vendez de l'équipement ici&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Pour débloquer plus de véhicules, capturez davantage de zones.</French>
+            <German>Hier Ausrüstung kaufen und verkaufen&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Um mehr Fahrzeuge freizuschalten, erobern Sie weitere Zonen.</German>
+            <Czech>Zde můžete nakupovat a prodávat vybavení&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Pro odemknutí dalších vozidel obsazujte více zón.</Czech>
+            <Chinesesimp>在此购买和出售装备&lt;br /&gt;&lt;t color='#CFCFCF'&gt;占领更多区域以解锁更多载具。</Chinesesimp>
+            <Korean>여기에서 장비를 사고팔 수 있습니다&lt;br /&gt;&lt;t color='#CFCFCF'&gt;더 많은 차량을 해금하려면 더 많은 구역을 점령하십시오.</Korean>
+            <Russian>Здесь можно покупать и продавать снаряжение&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Чтобы открыть больше техники, захватывайте больше зон.</Russian>
+            <Italian>Compra e vendi equipaggiamento qui&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Per sbloccare più veicoli, conquista più zone.</Italian>
+            <Spanish>Compra y vende equipo aquí&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Para desbloquear más vehículos, captura más zonas.</Spanish>
+            <Polish>Kupuj i sprzedawaj wyposażenie tutaj&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Aby odblokować więcej pojazdów, przejmuj kolejne strefy.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_WATCHPOST_DESC">
+            <Original>A forward lookout position used to monitor enemy movement and report contacts.</Original>
+            <French>Une position d'observation avancée utilisée pour surveiller les mouvements ennemis et signaler les contacts.</French>
+            <German>Ein vorgeschobener Beobachtungsposten zur Überwachung feindlicher Bewegungen und Meldung von Kontakten.</German>
+            <Czech>Předsunuté pozorovací stanoviště sloužící ke sledování pohybu nepřítele a hlášení kontaktů.</Czech>
+            <ChineseSimplified>用于监视敌军动向并报告接触情况的前沿观察哨。</ChineseSimplified>
+            <Korean>적의 움직임을 감시하고 접촉 상황을 보고하기 위한 전방 관측 초소입니다.</Korean>
+            <Russian>Передовой наблюдательный пост для отслеживания передвижений противника и доклада о контактах.</Russian>
+            <Italian>Una postazione avanzata di osservazione usata per monitorare i movimenti nemici e segnalare i contatti.</Italian>
+            <Spanish>Un puesto de observación avanzado usado para vigilar los movimientos enemigos e informar de contactos.</Spanish>
+            <Polish>Wysunięty punkt obserwacyjny służący do śledzenia ruchów wroga i meldowania kontaktów.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_ROADBLOCK_DESC">
+            <Original>A defensive checkpoint built to slow, stop, or inspect passing vehicles and infantry.</Original>
+            <French>Un point de contrôle défensif conçu pour ralentir, arrêter ou inspecter les véhicules et l'infanterie de passage.</French>
+            <German>Ein defensiver Kontrollpunkt, der vorbeifahrende Fahrzeuge und Infanterie verlangsamen, stoppen oder kontrollieren soll.</German>
+            <Czech>Obranné kontrolní stanoviště určené ke zpomalení, zastavení nebo kontrole projíždějících vozidel a pěchoty.</Czech>
+            <ChineseSimplified>用于减缓、拦停或检查过往车辆和步兵的防御检查点。</ChineseSimplified>
+            <Korean>통과하는 차량과 보병을 지연, 정지 또는 검문하기 위해 설치된 방어 검문소입니다.</Korean>
+            <Russian>Оборонительный блокпост, предназначенный для замедления, остановки или досмотра проходящей техники и пехоты.</Russian>
+            <Italian>Un posto di blocco difensivo costruito per rallentare, fermare o ispezionare veicoli e fanteria di passaggio.</Italian>
+            <Spanish>Un puesto de control defensivo construido para ralentizar, detener o inspeccionar vehículos e infantería en tránsito.</Spanish>
+            <Polish>Punkt blokadowy przeznaczony do spowalniania, zatrzymywania lub kontrolowania przejeżdżających pojazdów i piechoty.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_ANTIAIR_DESC">
+            <Original>A fortified weapon position designed to engage hostile aircraft.</Original>
+            <French>Une position d'arme fortifiée conçue pour engager les aéronefs hostiles.</French>
+            <German>Eine befestigte Waffenstellung zur Bekämpfung feindlicher Luftfahrzeuge.</German>
+            <Czech>Opevněné palebné postavení určené k boji proti nepřátelským letadlům.</Czech>
+            <ChineseSimplified>用于打击敌方飞行器的加固武器阵地。</ChineseSimplified>
+            <Korean>적 항공기를 공격하도록 설계된 방어화된 화기 진지입니다.</Korean>
+            <Russian>Укреплённая огневая позиция, предназначенная для поражения вражеской авиации.</Russian>
+            <Italian>Una postazione d'arma fortificata progettata per ingaggiare velivoli ostili.</Italian>
+            <Spanish>Una posición fortificada de armas diseñada para enfrentarse a aeronaves hostiles.</Spanish>
+            <Polish>Ufortyfikowane stanowisko ogniowe przeznaczone do zwalczania wrogich statków powietrznych.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_ANTITANK_DESC">
+            <Original>A defensive position equipped to destroy or deter armored vehicles.</Original>
+            <French>Une position défensive équipée pour détruire ou dissuader les véhicules blindés.</French>
+            <German>Eine Verteidigungsstellung, die zur Zerstörung oder Abschreckung gepanzerter Fahrzeuge ausgerüstet ist.</German>
+            <Czech>Obranné postavení vybavené k ničení nebo odrazování obrněných vozidel.</Czech>
+            <ChineseSimplified>用于摧毁或阻止装甲车辆的防御阵地。</ChineseSimplified>
+            <Korean>장갑차량을 파괴하거나 저지하도록 갖춰진 방어 진지입니다.</Korean>
+            <Russian>Оборонительная позиция, оснащённая для уничтожения или сдерживания бронетехники.</Russian>
+            <Italian>Una posizione difensiva equipaggiata per distruggere o scoraggiare i veicoli corazzati.</Italian>
+            <Spanish>Una posición defensiva equipada para destruir o disuadir vehículos blindados.</Spanish>
+            <Polish>Pozycja obronna wyposażona do niszczenia lub powstrzymywania pojazdów opancerzonych.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_HMG_DESC">
+            <Original>A fixed heavy machine gun position for suppressing infantry, light vehicles, and low-flying targets.</Original>
+            <French>Une position fixe de mitrailleuse lourde destinée à neutraliser l'infanterie, les véhicules légers et les cibles volant à basse altitude.</French>
+            <German>Eine feste Stellung mit schwerem Maschinengewehr zur Bekämpfung von Infanterie, leichten Fahrzeugen und tief fliegenden Zielen.</German>
+            <Czech>Pevné postavení těžkého kulometu určené k potlačování pěchoty, lehkých vozidel a nízko letících cílů.</Czech>
+            <ChineseSimplified>用于压制步兵、轻型载具和低空目标的固定重机枪阵地。</ChineseSimplified>
+            <Korean>보병, 경차량, 저공 비행 목표를 제압하기 위한 고정식 중기관총 진지입니다.</Korean>
+            <Russian>Стационарная позиция крупнокалиберного пулемёта для подавления пехоты, лёгкой техники и низколетящих целей.</Russian>
+            <Italian>Una postazione fissa di mitragliatrice pesante per sopprimere fanteria, veicoli leggeri e bersagli a bassa quota.</Italian>
+            <Spanish>Una posición fija de ametralladora pesada para suprimir infantería, vehículos ligeros y objetivos a baja altura.</Spanish>
+            <Polish>Stałe stanowisko ciężkiego karabinu maszynowego do tłumienia piechoty, lekkich pojazdów i nisko lecących celów.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_MILBASE_DESC">
+            <Original>Enemy stronghold that may include helicopters, armored vehicles, and mortars.&lt;br /&gt;Contains 2 loot crates and can only be captured from War Tier 3+.</Original>
+            <German>Feindliche Festung mit möglichen Helikoptern, gepanzerten Fahrzeugen und Mörsern.&lt;br /&gt;Enthält 2 Beutekisten und kann erst ab Kriegsstufe 3 erobert werden.</German>
+            <French>Place forte ennemie pouvant inclure des hélicoptères, des véhicules blindés et des mortiers.&lt;br /&gt;Contient 2 caisses de butin et ne peut être capturée qu’à partir du niveau de guerre 3+.</French>
+            <Spanish>Fortificación enemiga que puede incluir helicópteros, vehículos blindados y morteros.&lt;br /&gt;Contiene 2 cajas de botín y solo puede capturarse a partir del Nivel de Guerra 3+.</Spanish>
+            <Italian>Roccaforte nemica che può includere elicotteri, veicoli corazzati e mortai.&lt;br /&gt;Contiene 2 casse di bottino e può essere catturata solo dal Livello di Guerra 3+.</Italian>
+            <Polish>Wrogi bastion, w którym mogą znajdować się śmigłowce, pojazdy opancerzone i moździerze.&lt;br /&gt;Zawiera 2 skrzynie z łupem i można go przejąć dopiero od Poziomu Wojny 3+.</Polish>
+            <Russian>Вражеский опорный пункт, где могут быть вертолёты, бронетехника и миномёты.&lt;br /&gt;Содержит 2 ящика с добычей и может быть захвачен только с уровня войны 3+.</Russian>
+            <Czech>Nepřátelská pevnost, která může obsahovat vrtulníky, obrněná vozidla a minomety.&lt;br /&gt;Obsahuje 2 bedny s kořistí a lze ji obsadit až od úrovně války 3+.</Czech>
+            <Turkish>Helikopterler, zırhlı araçlar ve havanlar içerebilen düşman kalesi.&lt;br /&gt;2 ganimet sandığı içerir ve yalnızca Savaş Seviyesi 3+’ten itibaren ele geçirilebilir.</Turkish>
+            <ChineseSimplified>敌方据点，可能有直升机、装甲车辆和迫击炮。&lt;br /&gt;包含2个战利品箱，并且只能在战争等级3及以上夺取。</ChineseSimplified>
+            <Japanese>ヘリコプター、装甲車両、迫撃砲が配置されている可能性のある敵の拠点。&lt;br /&gt;戦利品箱が2つあり、戦争ティア3以上でのみ制圧可能。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_OUTPOST_DESC">
+            <Original>The most common enemy-held location.&lt;br /&gt;Contains a loot crate and may provide extra intel.</Original>
+            <German>Der häufigste feindlich gehaltene Ort.&lt;br /&gt;Enthält eine Beutekiste und kann zusätzliche Informationen liefern.</German>
+            <French>Le lieu le plus couramment tenu par l’ennemi.&lt;br /&gt;Contient une caisse de butin et peut fournir des renseignements supplémentaires.</French>
+            <Spanish>La ubicación enemiga más común.&lt;br /&gt;Contiene una caja de botín y puede proporcionar información adicional.</Spanish>
+            <Italian>La posizione nemica più comune.&lt;br /&gt;Contiene una cassa di bottino e può fornire informazioni aggiuntive.</Italian>
+            <Polish>Najczęściej spotykana lokacja zajęta przez wroga.&lt;br /&gt;Zawiera skrzynię z łupem i może dostarczyć dodatkowych informacji.</Polish>
+            <Russian>Самая распространённая точка, удерживаемая противником.&lt;br /&gt;Содержит ящик с добычей и может дать дополнительные разведданные.</Russian>
+            <Czech>Nejběžnější nepřátelské stanoviště.&lt;br /&gt;Obsahuje bednu s kořistí a může poskytnout další informace.</Czech>
+            <Turkish>Haritada en yaygın düşman mevzisi.&lt;br /&gt;Bir ganimet sandığı içerir ve ek istihbarat sağlayabilir.</Turkish>
+            <ChineseSimplified>地图上最常见的敌方据点。&lt;br /&gt;包含一个战利品箱，并可能提供额外情报。</ChineseSimplified>
+            <Japanese>敵が占拠している最も一般的な拠点。&lt;br /&gt;戦利品箱があり、追加の情報を入手できることがあります。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_SEAPORT_DESC">
+            <Original>Coastal hub that may have a patrolling enemy boat.&lt;br /&gt;Contains a loot crate and makes it easier to destroy stored boats.</Original>
+            <German>Küstenknotenpunkt, der ein patrouillierendes feindliches Boot haben kann.&lt;br /&gt;Enthält eine Beutekiste und erleichtert das Zerstören gelagerter Boote.</German>
+            <French>Point côtier pouvant avoir un bateau ennemi en patrouille.&lt;br /&gt;Contient une caisse de butin et facilite la destruction des bateaux stockés.</French>
+            <Spanish>Centro costero que puede tener un barco enemigo patrullando.&lt;br /&gt;Contiene una caja de botín y facilita destruir barcos almacenados.</Spanish>
+            <Italian>Hub costiero che può avere una barca nemica in pattuglia.&lt;br /&gt;Contiene una cassa di bottino e rende più facile distruggere le barche immagazzinate.</Italian>
+            <Polish>Nadmorski punkt, przy którym może patrolować wroga łódź.&lt;br /&gt;Zawiera skrzynię z łupem i ułatwia niszczenie przechowywanych łodzi.</Polish>
+            <Russian>Прибрежный узел, где может патрулировать вражеский катер.&lt;br /&gt;Содержит ящик с добычей и упрощает уничтожение хранимых лодок.</Russian>
+            <Czech>Pobřežní uzel, kde může hlídkovat nepřátelský člun.&lt;br /&gt;Obsahuje bednu s kořistí a usnadňuje ničení uložených lodí.</Czech>
+            <Turkish>Devriye gezen bir düşman botu bulunabilen kıyı merkezi.&lt;br /&gt;Bir ganimet sandığı içerir ve depolanmış botları imha etmeyi kolaylaştırır.</Turkish>
+            <ChineseSimplified>沿海据点，可能有敌方巡逻艇。&lt;br /&gt;包含一个战利品箱，并使摧毁存放的船只更容易。</ChineseSimplified>
+            <Japanese>敵の巡回艇がいる可能性のある沿岸拠点。&lt;br /&gt;戦利品箱があり、保管されている船を破壊しやすくなります。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RADIOTOWER_REBAL_DESC">
+            <Original>Intercepts enemy communications to reveal hidden troop movements.&lt;br/&gt;Boosts the strategic defense priority of nearby rebel bases.</Original>
+            <French>Intercepte les communications ennemies pour révéler les mouvements de troupes cachés.&lt;br/&gt;Renforce la priorité stratégique de défense des bases rebelles voisines.</French>
+            <German>Fängt feindliche Kommunikation ab, um versteckte Truppenbewegungen aufzudecken.&lt;br/&gt;Erhöht die strategische Verteidigungspriorität nahegelegener Rebellenbasen.</German>
+            <Czech>Zachycuje nepřátelskou komunikaci a odhaluje skryté pohyby jednotek.&lt;br/&gt;Zvyšuje strategickou prioritu obrany blízkých povstaleckých základen.</Czech>
+            <ChineseSimplified>拦截敌方通信，揭示隐藏的部队调动。&lt;br/&gt;提升附近叛军基地的战略防御优先级。</ChineseSimplified>
+            <Korean>적의 통신을 가로채 숨겨진 병력 이동을 드러냅니다.&lt;br/&gt;인근 반군 기지의 전략적 방어 우선순위를 높입니다.</Korean>
+            <Russian>Перехватывает вражескую связь, раскрывая скрытые перемещения войск.&lt;br/&gt;Повышает стратегический приоритет обороны ближайших баз повстанцев.</Russian>
+            <Italian>Intercetta le comunicazioni nemiche per rivelare i movimenti nascosti delle truppe.&lt;br/&gt;Aumenta la priorità strategica della difesa delle basi ribelli vicine.</Italian>
+            <Spanish>Intercepta las comunicaciones enemigas para revelar movimientos ocultos de tropas.&lt;br/&gt;Aumenta la prioridad estratégica de defensa de las bases rebeldes cercanas.</Spanish>
+            <Polish>Przechwytuje wrogą komunikację, ujawniając ukryte ruchy wojsk.&lt;br/&gt;Zwiększa strategiczny priorytet obrony pobliskich baz rebeliantów.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RADIOTOWER_DESC">
+            <Original>Jams local rebel radio frequencies to disrupt communications.&lt;br/&gt;Boosts the defensive capabilities of nearby enemy bases.&lt;br/&gt;Capture this tower to intercept enemy communications.</Original>
+            <French>Brouille les fréquences radio locales des rebelles pour perturber les communications.&lt;br/&gt;Renforce les capacités défensives des bases ennemies voisines.&lt;br/&gt;Capturez cette tour pour intercepter les communications ennemies.</French>
+            <German>Stört lokale Funkfrequenzen der Rebellen, um deren Kommunikation zu unterbrechen.&lt;br/&gt;Verbessert die Verteidigungsfähigkeiten nahegelegener feindlicher Basen.&lt;br/&gt;Erobere diesen Turm, um feindliche Kommunikation abzufangen.</German>
+            <Czech>Ruší místní rádiové frekvence rebelů a narušuje jejich komunikaci.&lt;br/&gt;Posiluje obranné schopnosti blízkých nepřátelských základen.&lt;br/&gt;Obsazením této věže můžete zachytávat nepřátelskou komunikaci.</Czech>
+            <ChineseSimplified>干扰本地叛军无线电频率以破坏其通信。&lt;br/&gt;提升附近敌军基地的防御能力。&lt;br/&gt;占领这座信号塔以拦截敌方通信。</ChineseSimplified>
+            <Korean>지역 반군의 무전 주파수를 교란하여 통신을 방해합니다.&lt;br/&gt;인근 적 기지의 방어 능력을 강화합니다.&lt;br/&gt;적의 통신을 가로채려면 이 통신탑을 점령하십시오.</Korean>
+            <Russian>Подавляет местные радиочастоты повстанцев, нарушая их связь.&lt;br/&gt;Усиливает оборонительные возможности ближайших вражеских баз.&lt;br/&gt;Захватите эту вышку, чтобы перехватывать вражескую связь.</Russian>
+            <Italian>Disturba le frequenze radio locali dei ribelli per interrompere le comunicazioni.&lt;br/&gt;Potenzia le capacità difensive delle basi nemiche vicine.&lt;br/&gt;Cattura questa torre per intercettare le comunicazioni nemiche.</Italian>
+            <Spanish>Inhibe las frecuencias de radio locales de los rebeldes para interrumpir las comunicaciones.&lt;br/&gt;Mejora las capacidades defensivas de las bases enemigas cercanas.&lt;br/&gt;Captura esta torre para interceptar las comunicaciones enemigas.</Spanish>
+            <Polish>Zakłóca lokalne częstotliwości radiowe rebeliantów, utrudniając komunikację.&lt;br/&gt;Wzmacnia zdolności obronne pobliskich baz wroga.&lt;br/&gt;Przejmij tę wieżę, aby przechwytywać wrogą komunikację.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_FASTTRAVEL_PLAYER_ONLY">
+            <Original>Only available for player-controlled markers.</Original>
+            <French>Disponible uniquement pour les marqueurs contrôlés par le joueur.</French>
+            <German>Nur für spielerkontrollierte Marker verfügbar.</German>
+            <Czech>Dostupné pouze pro hráčem ovládané markery.</Czech>
+            <ChineseSimplified>仅适用于玩家控制的标记。</ChineseSimplified>
+            <Korean>플레이어가 통제하는 마커에서만 사용할 수 있습니다.</Korean>
+            <Russian>Доступно только для маркеров, контролируемых игроком.</Russian>
+            <Italian>Disponibile solo per i marcatori controllati dal giocatore.</Italian>
+            <Spanish>Solo disponible para marcadores controlados por el jugador.</Spanish>
+            <Polish>Dostępne tylko dla znaczników kontrolowanych przez gracza.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_GARRISON_TRADER_BLOCKED">
+            <Original>Garrison is not available for the Black Market Trader.</Original>
+            <French>La garnison n'est pas disponible pour le Marchand du marché noir.</French>
+            <German>Garnison ist für den Schwarzmarkthändler nicht verfügbar.</German>
+            <Czech>Posádka není pro obchodníka na černém trhu k dispozici.</Czech>
+            <ChineseSimplified>黑市商人不可使用驻军功能。</ChineseSimplified>
+            <Korean>암시장 상인에게는 주둔지 기능을 사용할 수 없습니다.</Korean>
+            <Russian>Гарнизон недоступен для торговца чёрного рынка.</Russian>
+            <Italian>La guarnigione non è disponibile per il Mercante del Mercato Nero.</Italian>
+            <Spanish>La guarnición no está disponible para el Comerciante del Mercado Negro.</Spanish>
+            <Polish>Garnizon nie jest dostępny dla handlarza z czarnego rynku.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_GARRISON_FIA_BLOCKED">
+            <Original>Garrison is not available for FIA-built emplacements.</Original>
+            <French>La garnison n'est pas disponible pour les fortifications construites par la FIA.</French>
+            <German>Garnison ist für von der FIA errichtete Stellungen nicht verfügbar.</German>
+            <Czech>Posádka není k dispozici pro postavení vybudovaná FIA.</Czech>
+            <ChineseSimplified>FIA建造的阵地不可使用驻军功能。</ChineseSimplified>
+            <Korean>FIA가 건설한 진지에는 주둔지 기능을 사용할 수 없습니다.</Korean>
+            <Russian>Гарнизон недоступен для укреплений, построенных FIA.</Russian>
+            <Italian>La guarnigione non è disponibile per le postazioni costruite dalla FIA.</Italian>
+            <Spanish>La guarnición no está disponible para los emplazamientos construidos por la FIA.</Spanish>
+            <Polish>Garnizon nie jest dostępny dla umocnień zbudowanych przez FIA.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_GARRISON_REQUIREMENTS">
+            <Original>Requires Default Commander and player-controlled marker.</Original>
+            <French>Nécessite le commandant par défaut et un marqueur contrôlé par le joueur.</French>
+            <German>Erfordert den Standardkommandanten und einen spielerkontrollierten Marker.</German>
+            <Czech>Vyžaduje výchozího velitele a hráčem ovládaný marker.</Czech>
+            <ChineseSimplified>需要默认指挥官身份以及玩家控制的标记。</ChineseSimplified>
+            <Korean>기본 지휘관이며 플레이어가 통제하는 마커여야 합니다.</Korean>
+            <Russian>Требуется командир по умолчанию и маркер, контролируемый игроком.</Russian>
+            <Italian>Richiede il Comandante predefinito e un marcatore controllato dal giocatore.</Italian>
+            <Spanish>Requiere el comandante predeterminado y un marcador controlado por el jugador.</Spanish>
+            <Polish>Wymaga domyślnego dowódcy oraz znacznika kontrolowanego przez gracza.</Polish>
+        </Key>
+        <Key ID="STR_A3U_HOVER_RALLY_DESC">
+            <Original>Allows fast travel to a location set by the Commander.</Original>
+            <German>Ermöglicht Schnellreise zu einem vom Kommandanten festgelegten Ort.</German>
+            <French>Permet le voyage rapide vers un lieu défini par le commandant.</French>
+            <Spanish>Permite viajar rápido a una ubicación establecida por el comandante.</Spanish>
+            <Italian>Consente il viaggio rapido verso una posizione impostata dal comandante.</Italian>
+            <Polish>Umożliwia szybką podróż do lokalizacji wyznaczonej przez dowódcę.</Polish>
+            <Russian>Позволяет быстро переместиться к месту, заданному командиром.</Russian>
+            <Czech>Umožňuje rychlé cestování na místo určené velitelem.</Czech>
+            <Turkish>Komutan tarafından belirlenen bir konuma hızlı seyahate izin verir.</Turkish>
+            <ChineseSimplified>允许快速前往由指挥官设定的位置。</ChineseSimplified>
+            <Japanese>指揮官が設定した場所へファストトラベルできます。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_HOVER_MILADMIN_DESC">
+            <Original>Eliminate the commander to destroy the administration.&lt;br /&gt;Inside, you can find a small supply crate to loot and prisoners who can be rescued to join your faction.</Original>
+            <German>Schalte den Kommandanten aus, um die Verwaltung zu zerstören.&lt;br /&gt;Im Inneren findest du eine kleine Versorgungskiste zum Plündern sowie Gefangene, die du retten kannst und die sich deiner Fraktion anschließen.</German>
+            <French>Éliminez le commandant pour détruire l’administration.&lt;br /&gt;À l’intérieur, vous pouvez trouver une petite caisse de ravitaillement à piller et des prisonniers à secourir qui rejoindront votre faction.</French>
+            <Spanish>Elimina al comandante para destruir la administración.&lt;br /&gt;Dentro puedes encontrar una pequeña caja de suministros para saquear y prisioneros que puedes rescatar para que se unan a tu facción.</Spanish>
+            <Italian>Elimina il comandante per distruggere l’amministrazione.&lt;br /&gt;All’interno puoi trovare una piccola cassa di rifornimenti da saccheggiare e prigionieri che puoi salvare e che si uniranno alla tua fazione.</Italian>
+            <Polish>Wyeliminuj dowódcę, aby zniszczyć administrację.&lt;br /&gt;W środku znajdziesz małą skrzynię z zaopatrzeniem do zrabowania oraz więźniów, których możesz uwolnić — dołączą do twojej frakcji.</Polish>
+            <Russian>Устраните командира, чтобы уничтожить администрацию.&lt;br /&gt;Внутри вы найдёте небольшой ящик с припасами для добычи и пленников, которых можно освободить — они присоединятся к вашей фракции.</Russian>
+            <Czech>Zlikviduj velitele a znič administrativu.&lt;br /&gt;Uvnitř najdeš malou bednu se zásobami k vybrání a vězně, které můžeš osvobodit — přidají se k tvé frakci.</Czech>
+            <Turkish>İdareyi yok etmek için komutanı etkisiz hâle getirin.&lt;br /&gt;İçeride yağmalayabileceğiniz küçük bir erzak sandığı ve kurtarılınca fraksiyonunuza katılacak mahkûmlar bulabilirsiniz.</Turkish>
+            <ChineseSimplified>消灭指挥官即可摧毁该管理区。&lt;br /&gt;内部有一只小型补给箱可供搜刮，还有可营救的囚犯，获救后将加入你的阵营。</ChineseSimplified>
+            <Japanese>指揮官を排除すると施設を破壊できます。&lt;br /&gt;中には少量の補給箱があり、救出できる捕虜もいて、救出後はあなたの勢力に加わります。</Japanese>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_GARRISON_RALLYPOINT_BLOCKED">
+            <Original>Cant garrison units on rally point</Original>
+            <French>Impossible de mettre des unités en garnison sur le point de ralliement.</French>
+            <German>Einheiten können am Sammelpunkt nicht in Garnison stationiert werden.</German>
+            <Czech>Na shromaždišti nelze umístit jednotky do posádky.</Czech>
+            <ChineseSimplified>无法在集结点驻扎单位。</ChineseSimplified>
+            <Korean>집결 지점에는 유닛을 주둔시킬 수 없습니다.</Korean>
+            <Russian>Нельзя разместить гарнизон на точке сбора.</Russian>
+            <Italian>Non è possibile assegnare unità alla guarnigione sul punto di raccolta.</Italian>
+            <Spanish>No se pueden guarnecer unidades en el punto de reunión.</Spanish>
+            <Polish>Nie można umieszczać jednostek w garnizonie na punkcie zbornym.</Polish>
+        </Key>
     <Package name="CBA-settings">
         <Key ID="STR_A3U_setting_enableInitMessages">
             <Original>Enable Init Messages</Original>

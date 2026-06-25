@@ -30,7 +30,7 @@ if (gameMode == 3) then
         _updateMarkers pushBackUnique _x;
     } forEach (markersX - ["Synd_HQ"]);
 };
-{ _x call A3A_fnc_mrkUpdate } forEach _updateMarkers;
+[_updateMarkers] call A3U_fnc_mrkUpdateBulk;
 
 
 private _occGroups = ((A3A_faction_occ get "groupsTierSquads") apply {_x select 1}) + ((A3A_faction_occ get "groupsTierMedium") apply {_x select 1});
