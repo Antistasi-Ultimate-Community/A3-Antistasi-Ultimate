@@ -125,8 +125,8 @@ private _staticAA = ["I_static_AA_F"];
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers =  [];
 
-private _radar = ["E22_B_RAF_Radar_System_02_F"];
-private _SAM = ["E22_B_RAF_SAM_System_04_F"];
+private _radar = "E22_B_RAF_Radar_System_02_F";
+private _SAM = "E22_B_RAF_SAM_System_04_F";
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
