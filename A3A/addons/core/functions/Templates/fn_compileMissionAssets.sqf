@@ -127,8 +127,8 @@ setVar("staticMGs", OccAndInv("staticMGs") + Riv("staticLowWeapons") + Reb("stat
 setVar("vehiclesAirborne", OccAndInv("vehiclesAirborne"));
 setVar("vehiclesLightTanks", OccAndInv("vehiclesLightTanks"));
 
-setVar("vehicleRadars", [Occ("vehicleRadar"), Inv("vehicleRadar")]);
-setVar("vehicleSams", [Occ("vehicleSam"), Inv("vehicleSam")]);
+setVar("vehicleRadars", [OccAndInv("vehicleRadar")]); // The following 2 NEED to be an array. Do not remove
+setVar("vehicleSams", [OccAndInv("vehicleSam")]); 
 setVar("staticHowitzers", OccAndInv("staticHowitzers"));
 
 [A3A_faction_inv, "animations"] call _fnc_setHashmap;

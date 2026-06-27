@@ -105,9 +105,6 @@ private _staticAT = ["B_static_AT_F", "B_GMG_01_high_F"];
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
-private _radar = [];
-private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
-
 ["howitzerMagazineHE", "magazine_ShipCannon_120mm_HE_shells_x32", "magazine_ShipCannon_120mm_HE_cluster_shells_x2"] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
@@ -145,8 +142,8 @@ private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
 ["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
-["vehicleRadar", _radar] call _fnc_saveToTemplate;
-["vehicleSam", _SAM] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;
+["vehicleSam", "EF_LPD_Turret_1_MJTF_Wdl"] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
 ["vehiclesArtillery", _artillery] call _fnc_saveToTemplate;

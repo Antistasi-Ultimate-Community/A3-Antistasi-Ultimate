@@ -58,7 +58,7 @@ for "_i" from 1 to 10 do {
     private _testPos = _targetPosition getPos [random 150 + 150, random 360];
     if !(surfaceIsWater _testPos) exitWith { _dropPos = _testPos };
 };
-Debug_1("Paradrop: Target position %1, Drop position %2", _targetPosition, _dropPos);
+Debug_2("Paradrop: Target position %1, Drop position %2", _targetPosition, _dropPos);
 
 private _entryDistance = 350;
 _plane flyInHeight 250;
