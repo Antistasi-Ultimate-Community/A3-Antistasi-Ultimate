@@ -189,7 +189,7 @@ private _headgear = [
   "H_StrawHat_dark"
 ];
 
-private _dlcheadgear = [];
+private _dlcHeadgear = [];
 
 if (_hasRF) then {
   _dlcUniforms append [
@@ -202,7 +202,10 @@ if (_hasRF) then {
   ];
 };
 
-["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
+private _headgearAll = (_headgear + _dlcHeadgear);
+private _uniformsAll = (_rebUniforms + _dlcUniforms);
+["headgear", _headgearAll] call _fnc_saveToTemplate;
+["uniforms", _uniformsAll] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
@@ -229,7 +232,7 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
+_loadoutData set ["uniforms", _rebUniforms + _dlcUniforms];
 
 _loadoutData set ["glasses", ["G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Squares", "G_Squares_Tinted"]];
 _loadoutData set ["goggles", []];
