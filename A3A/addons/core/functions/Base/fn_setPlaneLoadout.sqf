@@ -256,6 +256,7 @@ if (_type == "CASDIVE") then
         case "UK3CB_ADA_I_Su25SM_CAS";
         case "UK3CB_KDF_B_Su25SM_CAS";
         case "UK3CB_ARD_O_Su25SM_CAS";
+        case "AFR_B_NTA_su25_Tan";
         case "UK3CB_CW_SOV_O_LATE_Su25SM_CAS":
         {
             _loadout = ["rhs_mag_ofab250","rhs_mag_fab250","","","","","","","rhs_mag_R60M","rhs_mag_R60M","rhs_ASO2_CMFlare_Chaff_Magazine_x4"];

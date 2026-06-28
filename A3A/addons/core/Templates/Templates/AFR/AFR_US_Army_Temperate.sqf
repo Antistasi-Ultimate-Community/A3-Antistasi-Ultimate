@@ -89,7 +89,7 @@ if (isClass (configFile >> "cfgVehicles" >> "USAF_AC130U")) then {
 ["minefieldAT", ["rhsusf_mine_M19"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["rhsusf_mine_m14"]] call _fnc_saveToTemplate;
 
-#include "RHS_Vehicle_Attributes.sqf"
+#include "..\RHS\RHS_Vehicle_Attributes.sqf"
 
 ["variants", [
     ["rhsusf_stryker_m1126_m2_d", ["Tan",1]],
@@ -413,7 +413,7 @@ _militaryLoadoutData set ["SLvests", ["V_tweed_msv_mk2_45_2", "V_tweed_msv_mk2_c
 _militaryLoadoutData set ["SNIvests", ["V_tweed_msv_mk2_3"]];
 _militaryLoadoutData set ["GLvests", ["V_tweed_msv_mk2_4cm_2", "V_tweed_msv_mk2_cell_4cm_1", "V_tweed_iotv_mk4_4cm_2", "V_tweed_iotv_mk4_cell_4cm_1"]];
 _militaryLoadoutData set ["backpacks", ["B_simc_US_Molle_sturm_OCP_etool", "B_simc_US_Molle_sturm_OCP", "B_simc_US_Molle_sturm_OCP_thermos_OCP", "rhsusf_assault_eagleaiii_ocp"]];
-_militaryLoadoutData set ["helmets", ["H_tweed_Hat_fleece_od3", "H_tweed_Hat_Patrol_ocp", "rhs_Booniehat_ocp", "H_tweed_ech_psq_OCP_b_ESS_2", "H_tweed_ech_psq_OCP_b_ESS", "H_tweed_ech_psq_OCP_b", "H_tweed_ech_psq_OCP_ESS_2"]];
+_militaryLoadoutData set ["helmets", ["H_tweed_ech_psq_OCP_b_ESS_2", "H_tweed_ech_psq_OCP_b_ESS", "H_tweed_ech_psq_OCP_b", "H_tweed_ech_psq_OCP_ESS_2"]];
 
 _militaryLoadoutData set ["lightATLaunchers", ["rhs_weap_M136", "rhs_weap_M136_hp"]];
 _militaryLoadoutData set ["lightHELaunchers", ["rhs_weap_M136_hedp"]];

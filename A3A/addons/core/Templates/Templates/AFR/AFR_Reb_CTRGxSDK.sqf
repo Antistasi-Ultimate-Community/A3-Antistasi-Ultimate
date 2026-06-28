@@ -118,10 +118,6 @@ if (_hasRF) then {
 ["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
 ["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
-["staticAA", _staticAA] call _fnc_saveToTemplate;
-["staticAT", _staticAT] call _fnc_saveToTemplate;
-["staticMGs", _staticMG] call _fnc_saveToTemplate;
-["staticMortars", _staticMortars] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;
 ["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
 ["vehiclesPlane", _vehiclePlane] call _fnc_saveToTemplate;
@@ -142,7 +138,7 @@ private _initialRebelEquipment = [
   "rhsusf_weap_glock17g4",
   "rhs_weap_mk18_bk","rhs_weap_XM2010","rhs_weap_aks74u","rhs_weap_akm",
   "rhs_mag_30Rnd_556x45_M855A1_PMAG","rhsusf_5Rnd_300winmag_xm2010","rhs_30Rnd_545x39_7N6M_AK","rhs_30Rnd_762x39mm_bakelite",
-  "rhsusf_acc_M8541",
+  "rhsusf_acc_M8541","rhsusf_acc_eotech_xps3","rhsusf_acc_compm4",
   "rhsusf_mag_17Rnd_9x19_JHP",
   "rhs_weap_rpg26",
   "rhs_grenade_nbhgr39B_mag", "rhs_grenade_sthgr24_mag",
@@ -153,7 +149,7 @@ private _initialRebelEquipment = [
   "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
   "rhs_weap_rsp30_red", "rhs_mag_rsp30_red",
   "rhs_mag_nspd", "rhs_mag_nspn_yellow", "rhs_mag_nspn_green", "rhs_mag_nspn_red",
-  "V_tweed_msv_mk2_3","V_tweed_msv_mk2_2","V_tweed_msv_mk2_cell_1","V_tweed_msv_mk2_cell_2","V_tweed_msv_mk2_cell_45_1"
+  "V_tweed_msv_mk2_3","V_tweed_msv_mk2_2","V_tweed_msv_mk2_cell_1","V_tweed_msv_mk2_cell_2","V_tweed_msv_mk2_cell_45_1","V_SmershVest_01_F"
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
@@ -167,8 +163,16 @@ private _playerUniforms = [
   "U_tweed_acu_summer_ocp_blench_crye_knee",
   "U_tweed_acu_summer_ocp_blench_crye_knee_jedi",
   "U_tweed_acu_summer_ocp_blench_crye_knee_trop",
-  "U_tweed_acu_summer_ocp_blench_trop",
-  "U_tweed_acu_summer_ocp_unbl"
+  "U_tweed_acu_summer_ocp_blench_trop"
+];
+
+private _playerUnlocks = [ // Janky hack
+  "tsp_gear_fast_mt_MulticamDarkCover_Black_peltor",
+  "tsp_gear_fast_mt_MulticamDarkCover_Black_peltor_manta_tec",
+  "psq42_blk",
+  "psq42_blk_icup",
+  "psq42_od3",
+  "psq42_od3_icup"
 ];
 
 private _rebUniforms = [
@@ -197,7 +201,7 @@ private _headgear = [
   "H_Hat_Safari_olive_F"
 ];
 
-private _dlcheadgear = [];
+private _dlcHeadgear = [];
 
 if (_hasRF) then {
   _dlcUniforms append [
@@ -210,7 +214,10 @@ if (_hasRF) then {
   ];
 };
 
-["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
+private _headgearAll = (_headgear + _dlcHeadgear);
+private _uniformsAll = _playerUniforms;
+["headgear", _headgearAll] call _fnc_saveToTemplate;
+["uniforms", _uniformsAll] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
@@ -229,8 +236,8 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["uniforms", _playerUniforms];
-_loadoutData set ["rebUniforms", _rebUniforms + _dlcUniforms];
+_loadoutData set ["uniforms", _uniformsAll];
+_loadoutData set ["rebUniforms", (_rebUniforms + _dlcUniforms)];
 
 _loadoutData set ["glasses", ["G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Squares", "G_Squares_Tinted"]];
 _loadoutData set ["goggles", ["rhs_scarf", "AFR_LDF_Balaclava_Black", "G_oak_2", "G_oak_2_cut"]];
@@ -289,3 +296,7 @@ private _unitTypes = [
 ];
 
 [_prefix, _unitTypes, _loadoutData] call _fnc_generateAndSaveUnitsToTemplate;
+
+waitUntil {sleep 1; !(isNil "jna_datalist")};
+
+_playerUnlocks apply {[_x, true] call A3A_fnc_unlockEquipment};

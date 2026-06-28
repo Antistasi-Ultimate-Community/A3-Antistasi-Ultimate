@@ -118,10 +118,6 @@ if (_hasRF) then {
 ["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
 ["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
 ["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
-["staticAA", _staticAA] call _fnc_saveToTemplate;
-["staticAT", _staticAT] call _fnc_saveToTemplate;
-["staticMGs", _staticMG] call _fnc_saveToTemplate;
-["staticMortars", _staticMortars] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;
 ["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
 ["vehiclesPlane", _vehiclePlane] call _fnc_saveToTemplate;
@@ -140,13 +136,13 @@ if (_hasRF) then {
 
 private _initialRebelEquipment = [
   "rhs_weap_tt33",
-  "rhs_weap_akms","rhs_weap_m16a4_carryhandle",
+  "rhs_weap_akms","rhs_weap_m16a2",
   "rhs_30Rnd_762x39mm_bakelite","rhs_mag_30Rnd_556x45_M855_Stanag",
   "rhs_mag_762x25_8",
   "rhs_weap_rpg26",
   "rhs_grenade_nbhgr39B_mag", "rhs_grenade_sthgr24_mag",
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
-  "B_simc_ARVN_ruck_1", "B_simc_ARVN_ruck_empty", "B_simc_ARVN_ruck_M43_2", "B_simc_rajio_flak_1", "B_simc_rajio_flak_2",
+  "B_simc_ARVN_ruck_1", "B_simc_ARVN_ruck_empty", "B_simc_ARVN_ruck_M43_2", "B_simc_rajio_1", "B_simc_rajio_2",
   "Binocular",
   "rhs_weap_rsp30_white","rhs_mag_rsp30_white",
   "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
@@ -186,7 +182,7 @@ private _headgear = [
   "H_Hat_Safari_olive_F"
 ];
 
-private _dlcheadgear = [];
+private _dlcHeadgear = [];
 
 if (_hasRF) then {
   _dlcUniforms append [
@@ -199,7 +195,10 @@ if (_hasRF) then {
   ];
 };
 
-["headgear", _headgear + _dlcheadgear] call _fnc_saveToTemplate;
+private _headgearAll = (_headgear + _dlcHeadgear);
+private _uniformsAll = (_rebUniforms + _dlcUniforms);
+["headgear", _headgearAll] call _fnc_saveToTemplate;
+["uniforms", _uniformsAll] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
@@ -218,7 +217,7 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["uniforms", _rebUniforms + _dlcUniforms];
+_loadoutData set ["uniforms", _uniformsAll];
 
 _loadoutData set ["glasses", ["G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Squares", "G_Squares_Tinted"]];
 _loadoutData set ["goggles", ["rhs_scarf", "rhssaf_veil_Green", "rhs_balaclava"]];
