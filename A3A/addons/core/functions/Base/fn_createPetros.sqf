@@ -15,7 +15,16 @@ if (isNil "_location") then {
 	};
 };
 
-private _petrosIdentity = createHashMapFromArray [["face", "GreekHead_A3_01"], ["speaker", "Male01GRE"], ["pitch", 1.1], ["firstName", "Petros"], ["lastName", ":)"]];
+private _petrosIdentity = A3A_faction_reb getOrDefault [
+	"petrosIdentity",
+	createHashMapFromArray [
+		["face", "GreekHead_A3_01"],
+		["speaker", "Male01GRE"],
+		["pitch", 1.1],
+		["firstName", "Petros"],
+		["lastName", ":)"]
+	]
+];
 
 private _oldPetros = petros;
 petros = [_groupPetros, FactionGet(reb,"unitPetros"), _location, [], 10, "NONE", _petrosIdentity] call A3A_fnc_createUnit;
