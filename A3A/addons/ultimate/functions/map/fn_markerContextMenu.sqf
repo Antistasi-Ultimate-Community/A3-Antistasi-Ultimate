@@ -5,7 +5,7 @@ Function: A3U_fnc_markerContextMenu
 
 Description:
     Builds and toggles the contextual action menu for a hovered strategic map
-    marker, including optional marker info and garrison details.
+    marker, including optional marker info and an openable garrison details panel.
 
 Parameters:
     0: _markerName - Marker name or dummy marker name to open the menu for <STRING>
@@ -125,6 +125,41 @@ if (_informationText == "") then {
     _informationText = "<t size='0.9'>No additional info.</t>";
 };
 
+private _measureGarrisonCtx = {
+    params ["_siteX", "_currentText", "_thresholds"];
+    private _garrisonCount = count (garrison getVariable [_siteX, []]);
+    private _str = switch (true) do {
+        case (_garrisonCount >= (_thresholds select 0)): { localize "STR_A3A_cityinfo_garrison_good" };
+        case (_garrisonCount >= (_thresholds select 1)): { localize "STR_A3A_cityinfo_garrison_weakened" };
+        default { localize "STR_A3A_cityinfo_garrison_decimated" };
+    };
+    format [_str, _currentText]
+};
+
+if (!_isPlayerControlled && {!_isDestroyed}) then {
+    private _isMilitary = _originalMarkerName in airportsX || _originalMarkerName in milbases || _originalMarkerName in outposts;
+    
+    if (_isMilitary) then {
+        private _busy = [_originalMarkerName, true] call A3A_fnc_airportCanAttack;
+        _informationText = format [if (_busy) then {localize "STR_A3A_cityinfo_status_idle"} else {localize "STR_A3A_cityinfo_status_busy"}, _informationText];
+    };
+
+    call {
+        if (_originalMarkerName in airportsX || _originalMarkerName in milbases) exitWith {
+            _informationText = [_originalMarkerName, _informationText, [40, 20]] call _measureGarrisonCtx;
+        };
+        if (_originalMarkerName in outposts || _originalMarkerName in factories) exitWith {
+            _informationText = [_originalMarkerName, _informationText, [16, 8]] call _measureGarrisonCtx;
+        };
+        if (_originalMarkerName in resourcesX) exitWith {
+            _informationText = [_originalMarkerName, _informationText, [30, 10]] call _measureGarrisonCtx;
+        };
+        if (_originalMarkerName in seaports) exitWith {
+            _informationText = [_originalMarkerName, _informationText, [20, 8]] call _measureGarrisonCtx;
+        };
+    };
+};
+
 private _existingMenuGroup = _mapDisplay getVariable ["A3U_mrkMenu_grp", controlNull];
 private _openMarkerName = _mapDisplay getVariable ["A3U_mrkMenu_marker", ""];
 
@@ -186,6 +221,18 @@ _titleBarControl ctrlSetPosition [0, 0, _groupWidth, _titleBarHeight];
 _titleBarControl ctrlSetBackgroundColor _profileBackgroundColor;
 _titleBarControl ctrlCommit 0;
 
+private _garrisonCount = count (garrison getVariable [_originalMarkerName, []]);
+private _canShowGarrisonPanel = (!_isRallyPoint && {!_isMilitaryAdministration} && {_isPlayerControlled} && {_garrisonCount > 0});
+
+private _titlePositionX = 0.006 * safeZoneW;
+private _titleWidth = _groupWidth - (0.012 * safeZoneW);
+
+if (_canShowGarrisonPanel) then { 
+    private _toggleBtnSize = _titleBarHeight * 0.8;
+    private _toggleBtnPadding = (_titleBarHeight - _toggleBtnSize) / 2;
+    _titleWidth = _titleWidth - _toggleBtnSize - _toggleBtnPadding; 
+};
+
 private _titleControl = _mapDisplay ctrlCreate ["RscStructuredText", -1, _menuGroup];
 private _titleStructuredText = if (_flagIconPath != "") then {
     format ["<t size='0.95' valign='middle'><img image='%1' size='1.0'/>  %2</t>", _flagIconPath, _titleLabel]
@@ -194,9 +241,6 @@ private _titleStructuredText = if (_flagIconPath != "") then {
 };
 
 _titleControl ctrlSetStructuredText (parseText _titleStructuredText);
-
-private _titlePositionX = 0.006 * safeZoneW;
-private _titleWidth = _groupWidth - (0.012 * safeZoneW);
 _titleControl ctrlSetPosition [_titlePositionX, 0, _titleWidth, _titleBarHeight];
 _titleControl ctrlCommit 0;
 
@@ -207,6 +251,119 @@ private _titlePositionY = (_titleBarHeight - _titleTextHeight) / 2;
 
 _titleControl ctrlSetPosition [_titlePositionX, _titlePositionY, _titleWidth, _titleTextHeight];
 _titleControl ctrlCommit 0;
+
+if (_canShowGarrisonPanel) then {
+    private _toggleBtnSize = _titleBarHeight * 0.8;
+    private _toggleBtnPadding = (_titleBarHeight - _toggleBtnSize) / 2;
+    private _toggleBtnX = _groupWidth - _toggleBtnSize - _toggleBtnPadding;
+    
+    private _garrisonToggleBtn = _mapDisplay ctrlCreate ["RscActivePictureKeepAspect", -1, _menuGroup];
+    _garrisonToggleBtn ctrlSetPosition [_toggleBtnX, _toggleBtnPadding, _toggleBtnSize, _toggleBtnSize];
+    
+    _garrisonToggleBtn ctrlSetText "\x\A3A\addons\ultimate\data\A3AU_Garrison_Info_Icon.paa";
+    
+    _garrisonToggleBtn ctrlSetTooltip localize "STR_contextMenu_garrison_info";
+    _garrisonToggleBtn ctrlCommit 0;
+
+    _garrisonToggleBtn setVariable ["A3U_mrkName", _originalMarkerName];
+    _garrisonToggleBtn setVariable ["A3U_mainGroupPos", [_groupPositionX, _groupPositionY, _groupWidth, _groupHeight]];
+
+    _garrisonToggleBtn ctrlAddEventHandler ["ButtonClick", {
+        params ["_control"];
+        private _display = ctrlParent _control;
+        private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
+
+        if (!isNull _garrisonGroup) exitWith {
+            ctrlDelete _garrisonGroup;
+            _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
+        };
+
+        private _origMarker = _control getVariable ["A3U_mrkName", ""];
+        private _mainPos = _control getVariable ["A3U_mainGroupPos", []];
+        _mainPos params ["_groupPositionX", "_groupPositionY", "_groupWidth", "_groupHeight"];
+
+        private _garrisonInfoRaw = [_origMarker] call A3A_fnc_garrisonInfo;
+        private _garrisonInfoText = _garrisonInfoRaw;
+        private _garrisonStartIndex = _garrisonInfoRaw find "Squad Leaders:";
+        if (_garrisonStartIndex >= 0) then {
+            _garrisonInfoText = _garrisonInfoRaw select [_garrisonStartIndex, (count _garrisonInfoRaw) - _garrisonStartIndex];
+        };
+
+        private _garrisonGap = 0.003 * safeZoneW;
+        private _garrisonGroupWidth = 0.10 * safeZoneW;
+        private _garrisonGroupHeight = 0.31 * safeZoneH;
+        private _titleBarHeight = 0.028 * safeZoneH;
+
+        private _profileBgColor = [
+            profileNamespace getVariable ["GUI_BCG_RGB_R", 0.376],
+            profileNamespace getVariable ["GUI_BCG_RGB_G", 0.125],
+            profileNamespace getVariable ["GUI_BCG_RGB_B", 0.043],
+            1
+        ];
+
+        private _garrisonPositionX = _groupPositionX + _groupWidth + _garrisonGap;
+        if ((_garrisonPositionX + _garrisonGroupWidth) > (safeZoneX + safeZoneW - (2 * pixelW))) then {
+            _garrisonPositionX = _groupPositionX - _garrisonGap - _garrisonGroupWidth;
+        };
+
+        private _garrisonPositionY = _groupPositionY;
+        private _garrisonMaximumX = safeZoneX + safeZoneW - _garrisonGroupWidth - (2 * pixelW);
+        private _garrisonMaximumY = safeZoneY + safeZoneH - _garrisonGroupHeight - (2 * pixelH);
+        
+        _garrisonPositionX = (_garrisonPositionX max (safeZoneX + (2 * pixelW))) min _garrisonMaximumX;
+        _garrisonPositionY = (_garrisonPositionY max (safeZoneY + (2 * pixelH))) min _garrisonMaximumY;
+
+        private _newGarrisonGroup = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
+        _newGarrisonGroup ctrlSetPosition [_garrisonPositionX, _garrisonPositionY, _garrisonGroupWidth, _garrisonGroupHeight];
+        _newGarrisonGroup ctrlCommit 0;
+
+        private _garrisonBackground = _display ctrlCreate ["RscText", -1, _newGarrisonGroup];
+        _garrisonBackground ctrlSetPosition [0, 0, _garrisonGroupWidth, _garrisonGroupHeight];
+        _garrisonBackground ctrlSetBackgroundColor [0, 0, 0, 0.55];
+        _garrisonBackground ctrlCommit 0;
+
+        private _garrisonTitleBar = _display ctrlCreate ["RscText", -1, _newGarrisonGroup];
+        _garrisonTitleBar ctrlSetPosition [0, 0, _garrisonGroupWidth, _titleBarHeight];
+        _garrisonTitleBar ctrlSetBackgroundColor _profileBgColor;
+        _garrisonTitleBar ctrlCommit 0;
+
+        private _garrisonTitleControl = _display ctrlCreate ["RscStructuredText", -1, _newGarrisonGroup];
+        private _garrisonTitleText = format ["<t size='0.95' valign='middle'>%1</t>", localize "STR_A3A_garrison_header"];
+        _garrisonTitleControl ctrlSetStructuredText (parseText _garrisonTitleText);
+
+        private _garrisonTitlePositionX = 0.006 * safeZoneW;
+        private _garrisonTitleWidth = _garrisonGroupWidth - (0.012 * safeZoneW);
+        
+        _garrisonTitleControl ctrlSetPosition [_garrisonTitlePositionX, 0, _garrisonTitleWidth, _titleBarHeight];
+        _garrisonTitleControl ctrlCommit 0;
+
+        private _garrisonTitleTextHeight = ctrlTextHeight _garrisonTitleControl;
+        if (_garrisonTitleTextHeight <= 0) then { _garrisonTitleTextHeight = _titleBarHeight; };
+        _garrisonTitleTextHeight = _garrisonTitleTextHeight min _titleBarHeight;
+        
+        private _garrisonTitlePositionY = (_titleBarHeight - _garrisonTitleTextHeight) / 2;
+        _garrisonTitleControl ctrlSetPosition [_garrisonTitlePositionX, _garrisonTitlePositionY, _garrisonTitleWidth, _garrisonTitleTextHeight];
+        _garrisonTitleControl ctrlCommit 0;
+
+        private _garrisonPaddingX = 0.006 * safeZoneW;
+        private _garrisonPaddingY = 0.006 * safeZoneH;
+
+        private _garrisonInfoControl = _display ctrlCreate ["RscStructuredText", -1, _newGarrisonGroup];
+        _garrisonInfoControl ctrlSetPosition [
+            _garrisonPaddingX,
+            _titleBarHeight + _garrisonPaddingY,
+            _garrisonGroupWidth - (2 * _garrisonPaddingX),
+            _garrisonGroupHeight - _titleBarHeight - (2 * _garrisonPaddingY)
+        ];
+        
+        _garrisonInfoControl ctrlSetStructuredText (parseText _garrisonInfoText);
+        _garrisonInfoControl ctrlCommit 0;
+        
+        _display setVariable ["A3U_mrkMenu_garrGrp", _newGarrisonGroup];
+    }];
+};
+
+[_mapDisplay] call _deleteGarrisonPanel;
 
 private _paddingX = 0.006 * safeZoneW;
 private _paddingY = 0.006 * safeZoneH;
@@ -239,86 +396,6 @@ _informationControl ctrlSetPosition [
 ];
 _informationControl ctrlSetStructuredText (parseText _informationText);
 _informationControl ctrlCommit 0;
-
-[_mapDisplay] call _deleteGarrisonPanel;
-
-private _garrisonCount = count (garrison getVariable [_originalMarkerName, []]);
-if (!_isRallyPoint && {!_isMilitaryAdministration} && {_isPlayerControlled} && {_garrisonCount > 0}) then {
-    private _garrisonInfoRaw = [_originalMarkerName] call A3A_fnc_garrisonInfo;
-    private _garrisonInfoText = _garrisonInfoRaw;
-
-    private _garrisonStartIndex = _garrisonInfoRaw find "Squad Leaders:";
-    if (_garrisonStartIndex >= 0) then {
-        _garrisonInfoText = _garrisonInfoRaw select [_garrisonStartIndex, (count _garrisonInfoRaw) - _garrisonStartIndex];
-    };
-
-    if (_garrisonInfoText != "") then {
-        private _garrisonGap = 0.003 * safeZoneW;
-        private _garrisonGroupWidth = 0.10 * safeZoneW;
-        private _garrisonGroupHeight = 0.31 * safeZoneH;
-        private _garrisonTitleHeight = _titleBarHeight;
-
-        private _garrisonPositionX = _groupPositionX + _groupWidth + _garrisonGap;
-        if ((_garrisonPositionX + _garrisonGroupWidth) > (safeZoneX + safeZoneW - (2 * pixelW))) then {
-            _garrisonPositionX = _groupPositionX - _garrisonGap - _garrisonGroupWidth;
-        };
-
-        private _garrisonPositionY = _groupPositionY;
-        private _garrisonMaximumX = safeZoneX + safeZoneW - _garrisonGroupWidth - (2 * pixelW);
-        private _garrisonMaximumY = safeZoneY + safeZoneH - _garrisonGroupHeight - (2 * pixelH);
-        
-        _garrisonPositionX = (_garrisonPositionX max (safeZoneX + (2 * pixelW))) min _garrisonMaximumX;
-        _garrisonPositionY = (_garrisonPositionY max (safeZoneY + (2 * pixelH))) min _garrisonMaximumY;
-
-        private _garrisonGroup = _mapDisplay ctrlCreate ["RscControlsGroupNoScrollbars", -1];
-        _garrisonGroup ctrlSetPosition [_garrisonPositionX, _garrisonPositionY, _garrisonGroupWidth, _garrisonGroupHeight];
-        _garrisonGroup ctrlCommit 0;
-
-        private _garrisonBackground = _mapDisplay ctrlCreate ["RscText", -1, _garrisonGroup];
-        _garrisonBackground ctrlSetPosition [0, 0, _garrisonGroupWidth, _garrisonGroupHeight];
-        _garrisonBackground ctrlSetBackgroundColor [0, 0, 0, 0.55];
-        _garrisonBackground ctrlCommit 0;
-
-        private _garrisonTitleBar = _mapDisplay ctrlCreate ["RscText", -1, _garrisonGroup];
-        _garrisonTitleBar ctrlSetPosition [0, 0, _garrisonGroupWidth, _garrisonTitleHeight];
-        _garrisonTitleBar ctrlSetBackgroundColor _profileBackgroundColor;
-        _garrisonTitleBar ctrlCommit 0;
-
-        private _garrisonTitleControl = _mapDisplay ctrlCreate ["RscStructuredText", -1, _garrisonGroup];
-        private _garrisonTitleText = format ["<t size='0.95' valign='middle'>%1</t>", localize "STR_A3A_garrison_header"];
-        
-        _garrisonTitleControl ctrlSetStructuredText (parseText _garrisonTitleText);
-
-        private _garrisonTitlePositionX = 0.006 * safeZoneW;
-        private _garrisonTitleWidth = _garrisonGroupWidth - (0.012 * safeZoneW);
-        
-        _garrisonTitleControl ctrlSetPosition [_garrisonTitlePositionX, 0, _garrisonTitleWidth, _garrisonTitleHeight];
-        _garrisonTitleControl ctrlCommit 0;
-
-        private _garrisonTitleTextHeight = ctrlTextHeight _garrisonTitleControl;
-        if (_garrisonTitleTextHeight <= 0) then { _garrisonTitleTextHeight = _garrisonTitleHeight; };
-        _garrisonTitleTextHeight = _garrisonTitleTextHeight min _garrisonTitleHeight;
-        
-        private _garrisonTitlePositionY = (_garrisonTitleHeight - _garrisonTitleTextHeight) / 2;
-        _garrisonTitleControl ctrlSetPosition [_garrisonTitlePositionX, _garrisonTitlePositionY, _garrisonTitleWidth, _garrisonTitleTextHeight];
-        _garrisonTitleControl ctrlCommit 0;
-
-        private _garrisonPaddingX = 0.006 * safeZoneW;
-        private _garrisonPaddingY = 0.006 * safeZoneH;
-
-        private _garrisonInfoControl = _mapDisplay ctrlCreate ["RscStructuredText", -1, _garrisonGroup];
-        _garrisonInfoControl ctrlSetPosition [
-            _garrisonPaddingX,
-            _garrisonTitleHeight + _garrisonPaddingY,
-            _garrisonGroupWidth - (2 * _garrisonPaddingX),
-            _garrisonGroupHeight - _garrisonTitleHeight - (2 * _garrisonPaddingY)
-        ];
-        
-        _garrisonInfoControl ctrlSetStructuredText (parseText _garrisonInfoText);
-        _garrisonInfoControl ctrlCommit 0;
-        _mapDisplay setVariable ["A3U_mrkMenu_garrGrp", _garrisonGroup];
-    };
-};
 
 private _isCommander = player isEqualTo theBoss;
 private _buttonCount = 4;
@@ -363,14 +440,12 @@ _garrisonButton ctrlAddEventHandler ["ButtonClick", {
 }];
 
 private _isBlackMarketTrader = (toLowerANSI _originalMarkerName) isEqualTo "tradermarker";
-private _isFiaBuildZone = _originalMarkerName in (watchpostsFIA + roadblocksFIA + aapostsFIA + atpostsFIA + hmgpostsFIA);
 
-private _garrisonAllowed = _isPlayerControlled && {_isCommander} && {!_isRallyPoint} && {!_isBlackMarketTrader} && {!_isFiaBuildZone} && {!_isMilitaryAdministration};
+private _garrisonAllowed = _isPlayerControlled && {_isCommander} && {!_isRallyPoint} && {!_isBlackMarketTrader} && {!_isMilitaryAdministration};
 
 private _garrisonTooltip = localize (switch true do {
     case _isRallyPoint: { "STR_A3U_CONTEXT_GARRISON_RALLYPOINT_BLOCKED" };
     case _isBlackMarketTrader: { "STR_A3U_CONTEXT_GARRISON_TRADER_BLOCKED" };
-    case _isFiaBuildZone: { "STR_A3U_CONTEXT_GARRISON_FIA_BLOCKED" };
     default { "STR_A3U_CONTEXT_GARRISON_REQUIREMENTS" };
 });
 

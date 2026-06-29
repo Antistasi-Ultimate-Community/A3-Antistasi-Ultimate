@@ -385,6 +385,66 @@
             <Spanish>Acorazado|Vanguardia|Resoluto|Cresta del Trueno|Cresta de la Libertad|Centinela|Guardia de Granito|Alcance del Halcón|Piedra Roja|Agua Negra|Dominio|Lanza de Plata|Cumbre de Hierro|Rompetormentas|Descanso del Águila|Refugio de Escarcha|Cresta de Sombra|Madera de Hierro|Punto Alto|Campo de Guerra|Firme|Valor|Agua Fría|Bastión|Paso de Granito|Luz de Antorcha|Valle de Hierro|Torre de Vigilancia|Caída de Ascuas|Aterrizaje del Halcón|Cresta Negra|Arroyo de Plata|Viento del Norte|Acantilado Carmesí|Muro de Piedra|Titán|Horizonte Rojo|Guardia de Hierro|Mesa Azul|Frontera|Pico de Hierro|Refugio de Acero|Cresta Blanca|Alturas de Vanguardia|Refugio de Hierro|Guardia de Tormenta|Centinela Gris|Punto de Obsidiana|Frontera de Hierro|Cabeza de Cobre|Roca del Cuervo|Cabeza de Trueno|Alba de Plata|Bastión de Hierro|Arroyo del Lobo|Cresta del Halcón|Escudo de Granito|Puerto de Hierro|Mesa Roja|Anochecer|Alto Centinela|Dominio de Hierro|Fortaleza de Tormenta|Cumbre Negra|Punto de Escarcha|Cresta del Águila|Ciudadela de Hierro|Caída de Sombra|Punto Norte|Cresta de Acero|Horizonte de Hierro|Guardia Roja|Pico Silencioso|Alba de Granito|Cresta de Tormenta|Resolución de Hierro|Cresta del Lobo|Puerto Negro|Guardia del Halcón|Cresta de Plata|Acantilado de Hierro|Cresta de Ascuas|Puerto Frío|Trueno de Hierro|Pico del Centinela|Valle Rojo|Punto de Granito|Frente de Tormenta|Corona de Hierro|Cresta del Halcón|Piedra Negra|Cresta de Escarcha|Punto de Guardia de Hierro|Horizonte de Plata|Guardia del Trueno|Bastilla de Hierro|Punto de Sombra|Cumbre de Acero</Spanish>
             <Polish>Pancernik|Awangarda|Niezłomny|Grzmiący Grzbiet|Grzbiet Wolności|Strażnik|Granitowa Warta|Sokoli Zasięg|Czerwony Kamień|Czarna Woda|Dominium|Srebrna Włócznia|Żelazny Szczyt|Łamacz Burz|Orli Spoczynek|Mroźna Przystań|Cienisty Grzbiet|Żelazne Drzewo|Wysoki Punkt|Pole Bitwy|Niezachwiany|Odwaga|Zimna Woda|Bastion|Granitowa Przełęcz|Światło Pochodni|Żelazna Dolina|Wieża Strażnicza|Opad Zgliszcz|Lądowisko Jastrzębia|Czarny Grzbiet|Srebrny Potok|Północny Wiatr|Karmazynowy Klif|Kamienny Mur|Tytan|Czerwony Horyzont|Żelazna Straż|Niebieska Mesa|Rubież|Żelazny Szczyt|Stalowa Przystań|Biały Grzbiet|Wzgórza Awangardy|Żelazna Przystań|Burzowa Straż|Szary Strażnik|Obsydianowy Punkt|Żelazna Rubież|Miedzianogłowy|Krucza Skała|Grzmiąca Głowa|Srebrny Świt|Żelazny Bastion|Wilczy Potok|Sokoli Grzbiet|Granitowa Tarcza|Żelazny Port|Czerwona Mesa|Zmrok|Wysoki Strażnik|Żelazne Dominium|Burzowa Twierdza|Czarny Szczyt|Mroźny Punkt|Orli Grzbiet|Żelazna Cytadela|Cienisty Spadek|Północny Punkt|Stalowy Grzbiet|Żelazny Horyzont|Czerwona Straż|Cichy Szczyt|Granitowy Świt|Burzowy Grzbiet|Żelazna Determinacja|Wilczy Grzbiet|Czarny Port|Sokola Straż|Srebrny Grzbiet|Żelazny Klif|Grzbiet Zgliszcz|Zimny Port|Żelazny Grzmot|Szczyt Strażnika|Czerwona Dolina|Granitowy Punkt|Burzowy Front|Żelazna Korona|Jastrzębi Grzbiet|Czarny Kamień|Mroźny Grzbiet|Żelazny Punkt Strażniczy|Srebrny Horyzont|Grzmiąca Straż|Żelazna Bastylia|Cienisty Punkt|Stalowy Szczyt</Polish>
         </Key>
+        <Key ID="STR_A3AU_North">
+            <Original>North</Original>
+            <French>Nord</French>
+            <German>Nord</German>
+            <Czech>Sever</Czech>
+            <ChineseSimplified>北</ChineseSimplified>
+            <Korean>북쪽</Korean>
+            <Russian>Север</Russian>
+            <Italian>Nord</Italian>
+            <Spanish>Norte</Spanish>
+            <Polish>Północ</Polish>
+        </Key>
+        <Key ID="STR_A3AU_East">
+            <Original>East</Original>
+            <French>Est</French>
+            <German>Ost</German>
+            <Czech>Východ</Czech>
+            <ChineseSimplified>东</ChineseSimplified>
+            <Korean>동쪽</Korean>
+            <Russian>Восток</Russian>
+            <Italian>Est</Italian>
+            <Spanish>Este</Spanish>
+            <Polish>Wschód</Polish>
+        </Key>
+        <Key ID="STR_A3AU_South">
+            <Original>South</Original>
+            <French>Sud</French>
+            <German>Süd</German>
+            <Czech>Jih</Czech>
+            <ChineseSimplified>南</ChineseSimplified>
+            <Korean>남쪽</Korean>
+            <Russian>Юг</Russian>
+            <Italian>Sud</Italian>
+            <Spanish>Sur</Spanish>
+            <Polish>Południe</Polish>
+        </Key>
+        <Key ID="STR_A3AU_West">
+            <Original>West</Original>
+            <French>Ouest</French>
+            <German>West</German>
+            <Czech>Západ</Czech>
+            <ChineseSimplified>西</ChineseSimplified>
+            <Korean>서쪽</Korean>
+            <Russian>Запад</Russian>
+            <Italian>Ovest</Italian>
+            <Spanish>Oeste</Spanish>
+            <Polish>Zachód</Polish>
+        </Key>
+        <Key ID="STR_contextMenu_garrison_info">
+            <Original>Garrison Info</Original>
+            <French>Infos Garnison</French>
+            <German>Garnisonsinfo</German>
+            <Czech>Informace o posádce</Czech>
+            <ChineseSimplified>驻军信息</ChineseSimplified>
+            <Korean>주둔지 정보</Korean>
+            <Russian>Информация о гарнизоне</Russian>
+            <Italian>Info Guarnigione</Italian>
+            <Spanish>Información de Guarnición</Spanish>
+            <Polish>Informacje o garnizonie</Polish>
+        </Key>
         <Key ID="STR_A3U_HOVER_GARRISON">
             <Original>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Garrison: %1%2&lt;/t&gt;</Original>
             <French>&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Garnison : %1%2&lt;/t&gt;</French>
@@ -677,18 +737,6 @@
             <Italian>La guarnigione non è disponibile per il Mercante del Mercato Nero.</Italian>
             <Spanish>La guarnición no está disponible para el Comerciante del Mercado Negro.</Spanish>
             <Polish>Garnizon nie jest dostępny dla handlarza z czarnego rynku.</Polish>
-        </Key>
-        <Key ID="STR_A3U_CONTEXT_GARRISON_FIA_BLOCKED">
-            <Original>Garrison is not available for FIA-built emplacements.</Original>
-            <French>La garnison n'est pas disponible pour les fortifications construites par la FIA.</French>
-            <German>Garnison ist für von der FIA errichtete Stellungen nicht verfügbar.</German>
-            <Czech>Posádka není k dispozici pro postavení vybudovaná FIA.</Czech>
-            <ChineseSimplified>FIA建造的阵地不可使用驻军功能。</ChineseSimplified>
-            <Korean>FIA가 건설한 진지에는 주둔지 기능을 사용할 수 없습니다.</Korean>
-            <Russian>Гарнизон недоступен для укреплений, построенных FIA.</Russian>
-            <Italian>La guarnigione non è disponibile per le postazioni costruite dalla FIA.</Italian>
-            <Spanish>La guarnición no está disponible para los emplazamientos construidos por la FIA.</Spanish>
-            <Polish>Garnizon nie jest dostępny dla umocnień zbudowanych przez FIA.</Polish>
         </Key>
         <Key ID="STR_A3U_CONTEXT_GARRISON_REQUIREMENTS">
             <Original>Requires Default Commander and player-controlled marker.</Original>

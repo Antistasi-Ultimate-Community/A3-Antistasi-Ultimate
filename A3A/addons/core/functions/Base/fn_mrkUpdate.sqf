@@ -93,7 +93,7 @@ private _markerColor = "";
 
 if (_originalName in airportsX) then {
     _markerType = _markerFaction getOrDefault ["flagMarkerType", ""];
-    _markerColor = "Default"; // Only airports get the untinted flag
+    _markerColor = "Default";
 } else {
     if (_isDestroyed) then {
         _markerColor = "ColorBlack";
@@ -125,6 +125,32 @@ if (_isMilAdmin || _originalName in mrkAntennas || _originalName in resourcesX |
     private _nearestCityMarkerName = [citiesX, _markerPosition] call BIS_fnc_nearestPosition;
     _nearestCityName = markerText _nearestCityMarkerName;
     if (_nearestCityName == "") then { _nearestCityName = _nearestCityMarkerName; };
+    
+    private _categoryArray = call {
+        if (_isMilAdmin) exitWith { milAdministrationsX };
+        if (_originalName in mrkAntennas) exitWith { mrkAntennas };
+        if (_originalName in resourcesX) exitWith { resourcesX };
+        if (_originalName in factories) exitWith { factories };
+        []
+    };
+
+    private _sharedCityCount = {
+        ([citiesX, getMarkerPos _x] call BIS_fnc_nearestPosition) == _nearestCityMarkerName
+    } count _categoryArray;
+
+    if (_sharedCityCount > 1) then {
+        private _cityPos = getMarkerPos _nearestCityMarkerName;
+        private _dir = _cityPos getDir _markerPosition;
+        
+        private _dirSuffix = call {
+            if (_dir >= 315 || _dir < 45) exitWith {localize "STR_A3AU_North" + " " };
+            if (_dir >= 45 && _dir < 135) exitWith {localize "STR_A3AU_East" + " " };
+            if (_dir >= 135 && _dir < 225) exitWith {localize "STR_A3AU_South" + " " };
+            localize "STR_A3AU_West" + " "
+        };
+        
+        _nearestCityName = _dirSuffix + _nearestCityName;
+    };
 };
 
 private _getLocName = {

@@ -259,6 +259,7 @@ private _setComboSelectionByData = {
 };
 
 private _markerBuckets = [
+    ["Headquarters", "Headquarters", ["Synd_HQ"] apply { [_x] call _toDummyMarkerName }],
     ["Cities", "Cities", citiesX apply { [_x] call _toDummyMarkerName }],
     ["Resources", "Resources", resourcesX apply { [_x] call _toDummyMarkerName }],
     ["Factories", "Factories", factories apply { [_x] call _toDummyMarkerName }],
@@ -331,26 +332,32 @@ private _refreshList = {
 
             if (_searchText != "" && {(toLowerANSI _markerLabel) find _searchText < 0}) then { continue };
 
+            // Place _markerLabel at index 0 so Arma can sort the nested array alphabetically
             _validMarkers pushBack [
+                _markerLabel,
                 _markerName, 
-                _markerLabel, 
                 [_markerName] call _getFactionName, 
                 [_markerName] call _getMarkerIconFromMetadata
             ];
         } forEach _markerNames;
 
         if !(_validMarkers isEqualTo []) then {
+            
+            // Sort the markers alphabetically by their label
+            _validMarkers sort true; 
+            
             private _headerIndex = _listControl lnbAddRow [format ["— %1 —", _headerTitle], ""];
             _listControl lnbSetData [[_headerIndex, 0], ""];
             _listControl lnbSetColor [[_headerIndex, 0], [0.85, 0.85, 0.85, 1]];
             _listControl lnbSetColor [[_headerIndex, 1], [0.85, 0.85, 0.85, 1]];
 
             {
-                _x params ["_mName", "_mLabel", "_mFaction", "_mIcon"];
+                _x params ["_mLabel", "_mName", "_mFaction", "_mIcon"];
                 private _rowIndex = _listControl lnbAddRow [_mLabel, _mFaction];
                 _listControl lnbSetData [[_rowIndex, 0], _mName];
-                _listControl lnbSetColor [[_rowIndex, 0], [1, 1, 1, 1]];
-                _listControl lnbSetColor [[_rowIndex, 1], [1, 1, 1, 1]];
+                
+                // Hardcoded text color overrides removed here to fix the lost-focus unreadable text bug
+                
                 if (_mIcon != "") then { _listControl lnbSetPicture [[_rowIndex, 0], _mIcon]; };
             } forEach _validMarkers;
         };
@@ -547,7 +554,7 @@ _mapDisplay setVariable ["A3U_markerBrowser_lnb", _listControl];
 
 lbClear _categoryCombo;
 [
-    ["All", "__ALL__"], ["Cities", "Cities"], ["Resources", "Resources"],
+    ["All", "__ALL__"], ["Headquarters", "Headquarters"], ["Cities", "Cities"], ["Resources", "Resources"],
     ["Factories", "Factories"], ["Outposts", "Outpost"], ["Seaports", "Seaports"],
     ["Military Bases", "Military Bases"], ["Air Bases", "Air Bases"],
     ["Military Administrations", "Military Administrations"], ["Radio Towers", "Radio Towers"]
