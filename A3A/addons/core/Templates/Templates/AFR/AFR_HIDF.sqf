@@ -156,7 +156,7 @@ _loadoutData set ["officerUniforms", ["U_Simc_bdu_erla_blench_trop", "U_Simc_bdu
 _loadoutData set ["officerVests", ["V_Simc_vest_rba_mk1_alice_45_2", "V_Simc_vest_rba_mk1_alice_45_1"]];
 _loadoutData set ["officerHats", ["H_Simc_Hat_Patrol_od7", "H_Simc_Hat_Patrol_m81"]];
 
-_loadoutData set ["cloakUniforms", []];
+_loadoutData set ["cloakUniforms", ["U_Simc_regenkot", "U_Simc_regenkot_og107"]];
 _loadoutData set ["cloakVests", []];
 
 _loadoutData set ["uniforms", []];
@@ -206,8 +206,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", ["G_tweed_tacticool_oranje_nomex", "G_tweed_tacticool_weiss_nomex"]];
-_loadoutData set ["goggles", ["G_Nomex_2", "G_Nomex_1_cut"]];
+_loadoutData set ["glasses", []];
+_loadoutData set ["goggles", []];
 
 //TODO - ACE overrides for misc essentials, medical and engineer gear
 

@@ -25,37 +25,51 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["flagTexture", "a3\data_f\flags\flag_fia_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
-private _vehiclesBasic = ["AFR_B_CTRG_rhsusf_mrzr4_d"];
-private _vehiclesLightUnarmed = ["AFR_B_FIA_m1043_FIA_MERDC", "AFR_B_FIA_m1043_FIA_TAN", "AFR_B_FIA_m998_2dr_fulltop_FIA_MERDC", "AFR_B_FIA_m998_2dr_fulltop_FIA_TAN"]; 
-private _vehiclesLightArmed = ["AFR_B_FIA_m1025_m2_FIA_MERDC", "AFR_B_FIA_m1025_m2_FIA_TAN"];
-private _VehTruck = ["AFR_B_FIA_B_G_Van_01_transport_F", "AFR_B_FIA_B_G_Van_02_vehicle_F"];
-private _vehiclesAt = ["AFR_B_FIA_m1045_TOW_FIA_TAN", "AFR_B_FIA_B_G_Offroad_01_AT_F"];
+["petrosIdentity", createHashMapFromArray [
+  ["face", "Miller"],
+  ["speaker", "Male01ENGB"],
+  ["pitch", 1.1],
+  ["firstName", "Miller"],
+  ["lastName", ":)"]
+]] call _fnc_saveToTemplate;
+
+["petrosPrimary", ["rhs_weap_mk18_bk", 3]] call _fnc_saveToTemplate;
+["petrosHandgun", ["rhsusf_weap_glock17g4", 2]] call _fnc_saveToTemplate;
+["petrosHeadgear", "tsp_gear_fast_mt_MulticamDarkCover_Black_peltor"] call _fnc_saveToTemplate;
+["petrosGoggles", ""] call _fnc_saveToTemplate;
+["petrosUniform", "U_tweed_acu_summer_ocp_blench_trop"] call _fnc_saveToTemplate;
+
+private _vehicleBasic = ["AFR_B_CTRG_rhsusf_mrzr4_d"];
+private _vehicleLightUnarmed = ["AFR_B_FIA_m1043_FIA_MERDC", "AFR_B_FIA_m1043_FIA_TAN", "AFR_B_FIA_m998_2dr_fulltop_FIA_MERDC", "AFR_B_FIA_m998_2dr_fulltop_FIA_TAN"]; 
+private _vehicleLightArmed = ["AFR_B_FIA_m1025_m2_FIA_MERDC", "AFR_B_FIA_m1025_m2_FIA_TAN"];
+private _vehicleTruck = ["AFR_B_FIA_B_G_Van_01_transport_F", "AFR_B_FIA_B_G_Van_02_vehicle_F"];
+private _vehicleAT = ["AFR_B_FIA_m1045_TOW_FIA_TAN", "AFR_B_FIA_B_G_Offroad_01_AT_F"];
 private _vehicleAA = ["AFR_B_FIA_btr80a_Tan"];
 
-private _vehiclesBoat = ["AFR_I_Syndi_canoe", "I_SDV_01_F", "AFR_I_Syndi_RHIB"];
+private _vehicleBoat = ["AFR_I_Syndi_canoe", "I_SDV_01_F", "AFR_I_Syndi_RHIB"];
 
 private _vehiclePlane = ["AFR_I_AAF_RHSGREF_A29B_Grey"];
 
-private _vehiclesMedical = [];
+private _vehicleMedical = [];
 
-private _vehiclesSupply = ["C_Van_01_box_F"];
+private _vehicleSupply = ["C_Van_01_box_F"];
 
 private _vehicleCivPlane = ["AFR_B_HIDF_o3a","C_Plane_Civil_01_racing_F"];
 
-private _vehiclesCivCar = ["C_Offroad_02_unarmed_F", "C_Hatchback_01_F", "C_Van_01_transport_F", "C_SUV_01_F"];
-private _CivTruck = ["C_Truck_02_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
-private _civHelicopters = ["RHS_Mi8t_civilian", "AFR_B_ION_UH1H_Unarmed"];
-private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
+private _vehicleCivCar = ["C_Offroad_02_unarmed_F", "C_Hatchback_01_F", "C_Van_01_transport_F", "C_SUV_01_F"];
+private _vehicleCivTruck = ["C_Truck_02_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
+private _vehicleCivHelicopter = ["RHS_Mi8t_civilian", "AFR_B_ION_UH1H_Unarmed"];
+private _vehicleCivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 
 if (_hasEF) then {
-  _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
+  _vehicleBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
 };
 
 if (_hasRF) then {
-  _vehiclesLightUnarmed append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf"];
-  _vehiclesLightArmed pushBack "a3u_black_Pickup_rival_rf";
-  _vehiclesCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
-  _civHelicopters append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF"]
+  _vehicleLightUnarmed append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf"];
+  _vehicleLightArmed pushBack "a3u_black_Pickup_rival_rf";
+  _vehicleCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
+  _vehicleCivHelicopter append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF"];
 };
 
 ["staticMGs", ["rhsgref_nat_DSHKM", "RHS_M2StaticMG_WD"]] call _fnc_saveToTemplate;
@@ -115,20 +129,20 @@ if (_hasRF) then {
 ["breachingExplosivesTank", [["rhs_ec75_mag", 4], ["rhs_ec75_sand_mag", 4], ["rhs_ec200_mag", 2], ["rhs_ec200_sand_mag", 2], ["rhs_ec400_mag", 1], ["rhs_ec400_sand_mag", 1],["DemoCharge_Remote_Mag", 2], ["rhsusf_m112_mag", 2], ["rhsusf_m112x4_mag", 1], ["rhs_charge_M2tet_x2_mag", 1], ["SatchelCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 
 ["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate;
-["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
-["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
-["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
-["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;
-["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehicleSupply] call _fnc_saveToTemplate;
+["vehiclesMedical", _vehicleMedical] call _fnc_saveToTemplate;
+["vehiclesBoat", _vehicleBoat] call _fnc_saveToTemplate;
+["vehiclesCivHeli", _vehicleCivHelicopter] call _fnc_saveToTemplate;
+["vehiclesBasic", _vehicleBasic] call _fnc_saveToTemplate;
 ["vehiclesPlane", _vehiclePlane] call _fnc_saveToTemplate;
-["vehiclesCivTruck", _CivTruck] call _fnc_saveToTemplate;
-["vehiclesTruck", _VehTruck] call _fnc_saveToTemplate;
-["vehiclesCivBoat", _CivBoat] call _fnc_saveToTemplate;
+["vehiclesCivTruck", _vehicleCivTruck] call _fnc_saveToTemplate;
+["vehiclesTruck", _vehicleTruck] call _fnc_saveToTemplate;
+["vehiclesCivBoat", _vehicleCivBoat] call _fnc_saveToTemplate;
 ["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
-["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
-["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
-["vehiclesAT", _vehiclesAt] call _fnc_saveToTemplate;
+["vehiclesCivCar", _vehicleCivCar] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", _vehicleLightUnarmed] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _vehicleLightArmed] call _fnc_saveToTemplate;
+["vehiclesAT", _vehicleAT] call _fnc_saveToTemplate;
 
 ///////////////////////////
 //  Rebel Starting Gear  //
@@ -180,7 +194,6 @@ private _rebUniforms = [
   "U_Simc_trop",
   "U_Simc_tuck",
   "U_Simc_tuck_alt",
-  "U_simc_civ_jean_VTN_trop",
   "U_Simc_TCU_mk1_zwart_roll",
   "U_Simc_TCU_mk2_zwart_roll",
   "U_Simc_TCU_mk3_tuck_zwart",

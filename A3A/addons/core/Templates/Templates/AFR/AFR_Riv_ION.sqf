@@ -112,7 +112,6 @@ _loadoutData set ["uniforms", [
 	"U_simc_civ_jean_blau",
 	"U_simc_civ_jean_weiss_dunkel",
 	"U_simc_civ_jean_weiss_trop",
-	"U_simc_civ_jean_VTN_trop",
 	"U_simc_bdu_civ_trop",
 	"U_Simc_bdu_civ"
 ]];

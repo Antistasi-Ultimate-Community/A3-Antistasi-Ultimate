@@ -206,7 +206,7 @@ _loadoutData set ["officerUniforms", ["AFR_U_aaf_bdu_m81_roll"]];
 _loadoutData set ["officerVests", ["AFR_H_aaf_pasgt_alice"]];
 _loadoutData set ["officerHats", ["H_Beret_blk"]];
 
-_loadoutData set ["cloakUniforms", ["AFR_U_aaf_bdu_m81_jumpr_cute"]];
+_loadoutData set ["cloakUniforms", ["U_Simc_regenkot", "U_Simc_regenkot_og107"]];
 _loadoutData set ["cloakVests", ["AFR_V_aaf_belt_alice_light", "AFR_V_aaf_liz_belt_alice_alt"]];
 
 _loadoutData set ["uniforms", []];

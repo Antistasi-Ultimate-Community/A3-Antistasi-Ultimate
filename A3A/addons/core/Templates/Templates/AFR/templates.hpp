@@ -28,16 +28,16 @@
         climate[] = {"tropical"};
         maps[] = {"tanoa"};
     };
-    /*
     class AFR_NTA : AFR_Base
     {
         side = "Occ";
         name = "Takistan Army (AFR)";
         file = "AFR_NTA";
         flagTexture = "\rhsafrf\addons\rhs_main\data\Flag_trn_CO.paa";
-        description = "";
+        description = "The New Takistan Army is a unique hybrid.\nThey were given an injection of US vehicles, yet their equipment still struggles to evolve away from the Soviet standard.";
         climate[] = {"arid"};
     };
+    /*
     class AFR_LDF : AFR_Base
     {
         side = "Occ";
@@ -52,7 +52,7 @@
     class AFR_US_Army_Arid : AFR_Base
     {
         side = "Inv";
-        name = "US Army (AFR)";
+        name = "US Army, D (AFR)";
         file = "AFR_US_Army_Arid";
         flagTexture = "a3\data_f\flags\flag_us_co.paa";
         description = "";
@@ -61,11 +61,11 @@
     class AFR_US_Army_Temperate : AFR_Base
     {
         side = "Inv";
-        name = "US Army (AFR)";
+        name = "US Army, WD (AFR)";
         file = "AFR_US_Army_Temperate";
         flagTexture = "a3\data_f\flags\flag_us_co.paa";
         description = "";
-        climate[] = {"temperate"};
+        climate[] = {"temperate", "tropical", "arctic"};
     };
     /*
     class AFR_CSAT_Arid : AFR_Base
@@ -87,19 +87,19 @@
     };
     */
 
-    class AFR_Riv_ION : AFR_Base
+    class AFR_Riv_FIA : AFR_Base
     {
         side = "Riv";
-        flagTexture = "\A3\Data_F\Flags\flag_ion_CO.paa";
-        name = "ION (AFR)";
-        file = "AFR_Riv_ION";
-        description = "Led by Reed Thompson, a former CIA agent, this faction excels in modern warfare.\nUses... questionable means to fund their operation.";
+        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+        name = "FIA (AFR)";
+        file = "AFR_Riv_FIA";
+        description = "Led by Stavrou.\nHe is directly opposed to the policies of the Altian Armed Forces, leading both military and political advances.";
     };
     class AFR_Riv_SDK : AFR_Base
     {
         side = "Riv";
         flagTexture = "\A3\Data_F_Exp\Flags\flag_SYND_CO.paa";
-        name = "SDK (AFR)";
+        name = "Syndikat (AFR)";
         file = "AFR_Riv_SDK";
         description = "Led by a man named Santiago.\nHe reformed the Syndikat, shifting expenses from golden toilets to a small paramilitary.\n'If you want Soviet weapons, they'll find a way to get them to you within the week'.";
     };
@@ -110,6 +110,15 @@
         name = "Livonian Separatists (AFR)";
         file = "AFR_Riv_LS";
         description = "Led by a woman named Anna Górska.\nThis faction disagrees with the policies of Natasza Palka, and fights to overthrow the LDF.";
+        // Cry harder if the "leader" spawns as a male lol
+    };
+    class AFR_Riv_ION : AFR_Base
+    {
+        side = "Riv";
+        flagTexture = "\A3\Data_F\Flags\flag_ion_CO.paa";
+        name = "ION (AFR)";
+        file = "AFR_Riv_ION";
+        description = "Led by Reed Thompson, a former CIA agent, this faction excels in modern warfare.\nUses... questionable means to fund their operation.";
     };
 
     class AFR_Reb_FIA : AFR_Base
@@ -154,7 +163,7 @@
         name = "ION (AFR)";
         file = "AFR_Reb_ION";
         flagTexture = "\A3\Data_F\Flags\flag_ion_CO.paa";
-        description = "An ION PMC in enemy territory.\nThis faction is mostly for fun, wildly overpowered.";
+        description = "An ION private military company deep in enemy territory.\nThis faction is mostly for fun, wildly overpowered.";
         climate[] = {"arid", "temperate", "arctic", "tropical"};
     };
     class AFR_Reb_CTRGxFIA : AFR_Reb_FIA

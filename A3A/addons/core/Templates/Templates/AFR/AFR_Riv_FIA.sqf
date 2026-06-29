@@ -2,17 +2,18 @@
 //   Rivals Information   //
 ///////////////////////////
 
-["name", "Syndikat"] call _fnc_saveToTemplate;
-["nameLeader", "Santiago"] call _fnc_saveToTemplate; // Elite knowledge
+["name", "FIA"] call _fnc_saveToTemplate;
+["nameLeader", "Stavrou"] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
 //       	Identities    			//
 //////////////////////////////////////
-private _faces = ["TanoanHead_A3_01","TanoanHead_A3_02","TanoanHead_A3_03","TanoanHead_A3_04","TanoanHead_A3_05","TanoanHead_A3_06","TanoanHead_A3_07","TanoanHead_A3_08"];
-private _voices = ["Male01ENGFRE","Male02ENGFRE","Male03FRE","Male02FRE","Male01FRE"];
-["voices", _voices] call _fnc_saveToTemplate;
+private _faces = ["GreekHead_A3_02","GreekHead_A3_03","GreekHead_A3_04",
+"GreekHead_A3_05","GreekHead_A3_06","GreekHead_A3_07","GreekHead_A3_08",
+"GreekHead_A3_09","GreekHead_A3_10","GreekHead_A3_11","GreekHead_A3_12","GreekHead_A3_13",
+"GreekHead_A3_14","Ioannou","Mavros","Sturrock"];
+["voices", ["Male01GRE", "Male02GRE", "Male03GRE", "Male04GRE", "Male05GRE", "Male06GRE"]] call _fnc_saveToTemplate;
 ["faces", _faces] call _fnc_saveToTemplate;
-"TanoanMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Vehicles       //
@@ -20,12 +21,12 @@ private _voices = ["Male01ENGFRE","Male02ENGFRE","Male03FRE","Male02FRE","Male01
 ["ammobox", "Box_FIA_Support_F"] call _fnc_saveToTemplate; 	//Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "rhs_7ya37_1_single"] call _fnc_saveToTemplate;
 
-["vehiclesRivalsLightArmed", ["AFR_I_Syndi_Offroad_02_LMG_F", "AFR_I_Syndi_rhsgref_tla_offroad_armed", "rhssaf_m1025_olive_m2"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTrucks", ["AFR_I_Syndi_rhsgref_tla_kraz255b1_cargo_open"]] call _fnc_saveToTemplate;
-["vehiclesRivalsCars", ["AFR_I_Syndi_Offroad_02_unarmed_F", "AFR_I_Syndi_HIDF_m998_2d", "rhsgref_nat_uaz_open"]] call _fnc_saveToTemplate;
-["vehiclesRivalsAPCs", ["AFR_I_Syndi_rhsgref_tla_btr60", "rhs_btr80a_msv", "rhs_bmd4_vdv", "rhs_bmd1k"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", ["rhs_sprut_vdv", "rhs_t72ba_tv", "rhs_t72bb_tv", "rhs_t80", "rhs_t80a"]] call _fnc_saveToTemplate;
-["vehiclesRivalsHelis", ["RHS_Mi8T_vdv", "AFR_B_HIDF_uh1h_hidf"]] call _fnc_saveToTemplate;
+["vehiclesRivalsLightArmed", ["AFR_B_FIA_m1025_m2_FIA_MERDC", "AFR_B_FIA_m1025_m2_FIA_TAN", "rhssaf_army_o_m1151_olive_pkm"]] call _fnc_saveToTemplate;
+["vehiclesRivalsTrucks", ["AFR_B_FIA_B_G_Van_01_transport_F", "AFR_B_FIA_B_G_Van_02_vehicle_F"]] call _fnc_saveToTemplate;
+["vehiclesRivalsCars", ["AFR_B_FIA_m1043_FIA_MERDC", "AFR_B_FIA_m1043_FIA_TAN", "AFR_B_FIA_m998_2dr_fulltop_FIA_MERDC", "AFR_B_FIA_m998_2dr_fulltop_FIA_TAN"]] call _fnc_saveToTemplate;
+["vehiclesRivalsAPCs", ["AFR_B_FIA_bmp3mera_msv", "AFR_B_FIA_bmp3mera_msv_TAN", "AFR_B_FIA_btr80_Tan", "AFR_B_FIA_btr80a_Tan"]] call _fnc_saveToTemplate;
+["vehiclesRivalsTanks", ["rhs_t72ba_tv", "rhs_t72bb_tv", "rhs_t80", "rhs_t80a"]] call _fnc_saveToTemplate;
+["vehiclesRivalsHelis", ["RHS_Mi8T_vdv", "SNS_UH1D_B"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsUavs", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
 
 ["staticLowWeapons", [
@@ -62,18 +63,20 @@ _loadoutData set ["smokeGrenades", ["rhs_mag_rdg2_white"]];
 _loadoutData set ["signalsmokeGrenades", ["rhs_mag_nspd"]];
 
 _loadoutData set ["facewear", [
-	"G_tweed_tacticool_oak",
-	"G_tweed_tacticool_nomex",
-	"G_tweed_tacticool_weiss_oak",
-	"G_tweed_tacticool_weiss",
-	"G_tweed_tacticool_oranje"
+	"G_tweed_tacticool_peltor_oak",
+	"G_tweed_tacticool_peltor_nomex",
+	"G_tweed_tacticool_peltor_comba",
+	"G_tweed_tacticool",
+	"G_tweed_tacticool_oak"
 ]];
-_loadoutData set ["fullmask", ["AFR_LDF_Balaclava_Black"]];
+_loadoutData set ["fullmask", ["AFR_LDF_Balaclava2_Black", "AFR_LDF_Balaclava_Black", "rhs_scarf"]];
 
 _loadoutData set ["headgear", [
-	"H_Cap_blk",
-	"H_Cap_Lyfe",
-	"H_Cap_oli"
+    "rhs_beanie_green",
+    "H_Watchcap_camo",
+    "H_Watchcap_khk",
+    "rhs_fieldcap_digi2",
+	"AFR_H_fia_patrol_hat_liz"
 ]];
 
 _loadoutData set ["maps", ["ItemMap"]];
@@ -86,30 +89,46 @@ _loadoutData set ["binoculars", ["rhssaf_zrak_rd7j"]];
 _loadoutData set ["Rangefinder", ["rhs_pdu4"]];
 
 _loadoutData set ["uniforms", [
-	"U_Simc_TCU_mk3_jean",
-	"U_Simc_TCU_mk3_jean_trop",
-	"U_Simc_bdu_erla_blench_trop",
-	"U_Simc_bdu_laat_blench",
-	"U_Simc_bdu_laat_blench_trop",
-	"U_Simc_TCU_tee_erdl_high_long",
-	"U_Simc_bdu_eto_tee",
-	"U_Simc_bdu_erla_tee"
+	"AFR_U_fia_bdu_liz_tee",
+	"AFR_U_fia_bdu_liz_m81",
+	"AFR_U_fia_bdu_liz_tan",
+	"AFR_U_fia_bdu_liz_grun",
+	"U_simc_civ_jean_weiss_trop",
+	"U_simc_civ_jean_weiss_dunkel_trop",
+	"U_simc_civ_jean_grun_trop",
+	"U_simc_civ_jean_blau_dunkel_trop"
 ]];
 
-_loadoutData set ["offuniforms", ["U_Simc_bdu_eto_blench_roll", "U_Simc_bdu_eto_blench_trop", "U_Simc_bdu_eto_blench_low", "U_Simc_bdu_eto_blench"]];
-_loadoutData set ["vests", ["V_Simc_Alice_ligt_45_zusp", "V_Simc_Alice_ligt_45", "V_Simc_Alice_45", "V_Simc_Alice_ligt"]];
-_loadoutData set ["heavyVests", ["V_Simc_Alice_mc_M56", "V_Simc_Alice_mc_60"]];
-_loadoutData set ["atBackpacks", ["B_simc_pack_56", "B_simc_packboard_roket_2"]];
-_loadoutData set ["backpacks", ["B_simc_pack_frem_med3", "B_simc_pack_frem_1_alt", "B_simc_pack_frem_1", "B_simc_pack_frem_2_alt"]];
+_loadoutData set ["offuniforms", ["AFR_U_fia_bdu_gl_grun", "AFR_U_fia_bdu_gl"]];
+_loadoutData set ["vests", [
+	"V_Simc_vest_rba_mk1_alice_1",
+	"V_Simc_vest_rba_mk1_alice_2",
+	"V_Simc_vest_rba_mk1_LBV_belt_2",
+	"V_Simc_vest_rba_mk1_LBV_belt_1",
+	"V_Simc_vest_rba_mk1_LBV",
+	"V_Simc_vest_rba_mk1_alice_45_1",
+	"V_Simc_vest_pasgt_grun_alice_alt",
+	"V_Simc_vest_pasgt_grun_alice",
+	"V_Simc_vest_pasgt_grun_alice_45",
+	"V_Simc_vest_pasgt_grun_alice_45_ligt"
+]];
+_loadoutData set ["heavyVests", ["V_Simc_vest_rba_mk1_alice_249", "V_Simc_vest_rba_mk1_alice_nade", "V_Simc_vest_pasgt_grun_alice_249", "V_Simc_vest_pasgt_grun_alice_60"]];
+_loadoutData set ["atBackpacks", ["rhs_rpg_2"]];
+_loadoutData set ["backpacks", ["B_AssaultPack_wdl_F", "B_CivilianBackpack_01_Everyday_Black_F", "B_simc_US_Bandoleer_556_doppel_2", "B_simc_US_Bandoleer_556_3", "B_tweed_pack_wasser_molle_od7_alt", "B_tweed_pack_camel_thermos_od7"]];
 _loadoutData set ["helmets", [
-    "rhsgref_helmet_pasgt_woodland", 
-    "rhsgref_helmet_pasgt_woodland_rhino"
+	"AFR_H_aaf_pasgt_fia7",
+	"AFR_H_aaf_pasgt_fia6",
+	"AFR_H_aaf_pasgt_fia5",
+	"AFR_H_aaf_pasgt_fia4",
+	"AFR_H_aaf_pasgt_fia3",
+	"AFR_H_aaf_pasgt_fia2",
+	"AFR_H_aaf_pasgt_fia1"
 ]];
 _loadoutData set ["heavyHelmets", [
-    "rhs_6b26_green", 
-    "rhs_6b26_ess_green",
-    "rhs_6b27m_green",
-    "rhs_6b27m_green_ess"
+	"rhs_6b7_1m",
+	"rhs_6b7_1m_ess",
+	"rhs_6b7_1m_olive",
+	"rhs_6b47_bare"
 ]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
@@ -150,16 +169,14 @@ _loadoutData set ["rifles", [
 	["rhs_weap_akms", "rhs_acc_dtkakm", "", "",  ["rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_tracer"], [], ""],
 	["rhs_weap_m70b1", "", "", "", ["rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M78_tracer", "rhssaf_30Rnd_762x39_M82_api"], [], ""],
 	["rhs_weap_m70ab2", "", "", "", ["rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M78_tracer", "rhssaf_30Rnd_762x39_M82_api"], [], ""],
-	["rhs_weap_savz58p", "", "", "", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-	["rhs_weap_savz58p", "", "", "", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-    ["rhs_weap_l1a1", "", "", "", ["rhs_mag_20Rnd_762x51_m80_fnfal", "rhs_mag_20Rnd_762x51_m62_fnfal", "rhs_mag_20Rnd_762x51_m61_fnfal"], [], ""],
-    ["rhs_weap_l1a1", "", "", "rhsgref_acc_l1a1_l2a2", ["rhs_mag_20Rnd_762x51_m80_fnfal", "rhs_mag_20Rnd_762x51_m62_fnfal", "rhs_mag_20Rnd_762x51_m61_fnfal"], [], ""],
+	["rhs_weap_m1garand_sa43", "", "", "", ["rhsgref_8Rnd_762x63_M2B_M1rifle", "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle"], [], ""],
+	["rhs_weap_kar98k", "", "", "", ["rhsgref_5Rnd_792x57_kar98k"], [], ""],
 	["rhs_weap_akmn", "rhs_acc_dtkakm", "", "rhs_acc_ekp8_02", ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_tracer", "rhs_30Rnd_762x39mm_bakelite_89"], [], ""],
 	["rhs_weap_akmn", "rhs_acc_dtkakm", "", "rhs_acc_ekp1", ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_tracer", "rhs_30Rnd_762x39mm_bakelite_89"], [], ""],
 	["rhs_weap_akmn", "rhs_acc_dtkakm", "", "rhs_acc_okp7_dovetail", ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_tracer", "rhs_30Rnd_762x39mm_bakelite_89"], [], ""],
-	["rhs_weap_m70b3n", "", "", "rhs_acc_ekp8_02", ["rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M78_tracer", "rhssaf_30Rnd_762x39_M82_api"], [], ""],
-	["rhs_weap_m70b3n", "", "", "rhs_acc_ekp1", ["rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M78_tracer", "rhssaf_30Rnd_762x39_M82_api"], [], ""],
-	["rhs_weap_m70b3n", "", "", "rhs_acc_okp7_dovetail", ["rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M78_tracer", "rhssaf_30Rnd_762x39_M82_api"], [], ""],
+	["rhs_weap_m16a2", "", "", "", ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""],
+	["rhs_weap_m16a4_carryhandle", "", "", "", ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""],
+	["arifle_Mk20_plain_F", "", "", "", ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""],
 	["rhs_weap_ak103", "rhs_acc_dtk", "", "", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
 	["rhs_weap_ak103", "rhs_acc_dtk", "", "rhs_acc_ekp8_02", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
 	["rhs_weap_ak103", "rhs_acc_dtk", "", "rhs_acc_ekp1", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
@@ -171,13 +188,7 @@ _loadoutData set ["tunedRifles", [
 	["rhs_weap_ak103_zenitco01_b33_grip1", "rhs_acc_dtk2", "rhs_acc_perst3_2dp_h", "rhs_acc_rakursPM", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_89"], [], "rhs_acc_grip_rk6"],
 	["rhs_weap_m21a", "", "rhs_acc_2dpZenit", "rhs_acc_pkas", ["rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21_t"], [], ""],
 	["rhs_weap_m21a", "", "rhs_acc_2dpZenit", "rhs_acc_ekp8_02", ["rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21_t"], [], ""],
-	["rhs_weap_m21a", "", "rhs_acc_2dpZenit", "rhs_acc_ekp1", ["rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21_t"], [], ""],
-	["rhs_weap_savz58p_rail_black", "rhsgref_acc_zendl", "", "rhs_acc_okp7_picatinny", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-	["rhs_weap_savz58p_rail_black", "rhsgref_acc_zendl", "", "rhs_acc_ekp8_18", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-	["rhs_weap_savz58v_rail_black", "rhsgref_acc_zendl", "", "rhs_acc_okp7_picatinny", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-	["rhs_weap_savz58v_rail_black", "rhsgref_acc_zendl", "", "rhs_acc_ekp8_18", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-	["rhs_weap_savz58v_ris", "rhsgref_acc_zendl", "rhs_acc_perst1ik_ris", "rhs_acc_okp7_picatinny", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""],
-	["rhs_weap_savz58v_ris", "rhsgref_acc_zendl", "rhs_acc_perst1ik_ris", "rhs_acc_ekp8_18", ["rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58", "rhs_30Rnd_762x39mm_Savz58_tracer"], [], ""]
+	["rhs_weap_m21a", "", "rhs_acc_2dpZenit", "rhs_acc_ekp1", ["rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21", "rhsgref_30rnd_556x45_m21_t"], [], ""]
 ]];
 _loadoutData set ["enforcerRifles", [
 	["rhs_weap_ak105", "rhs_acc_dtk", "", "rhs_acc_okp7_dovetail", ["rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_AK_Green"], [], ""],
@@ -196,7 +207,8 @@ _loadoutData set ["carbines", [
 	["rhs_weap_m92", "", "", "", ["rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M67", "rhssaf_30Rnd_762x39mm_M78_tracer", "rhssaf_30Rnd_762x39_M82_api"], [], ""],
 	["rhs_weap_ak105", "rhs_acc_dtk", "", "rhs_acc_okp7_dovetail", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_AK_green"], [], ""],
 	["rhs_weap_ak105", "rhs_acc_dtk", "", "rhs_acc_ekp1", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_AK_green"], [], ""],
-	["rhs_weap_ak105", "rhs_acc_dtk", "", "rhs_acc_ekp8_02", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_AK_green"], [], ""]
+	["rhs_weap_ak105", "rhs_acc_dtk", "", "rhs_acc_ekp8_02", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_AK_green"], [], ""],
+	["arifle_Mk20C_plain_F", "", "", "", ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""]
 ]];
 _loadoutData set ["grenadeLaunchers", [
 	["rhs_weap_ak103_gp25", "rhs_acc_dtk", "", "", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_89"], ["rhs_VOG25", "rhs_VOG25", "rhs_VOG25P", "rhs_GRD40_White"], ""],
@@ -253,12 +265,14 @@ _loadoutData set ["sidearms", ["rhs_weap_makarov_pm", "rhs_weap_6p53", "rhs_weap
 //////////////////////////
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["vests", ["V_Simc_vest_rba_mk1_alice_2", "V_Simc_vest_rba_mk1_alice_1"]];
-_crewLoadoutData set ["helmets", ["H_Simc_CVC_G_low", "H_Simc_CVC_G", "H_Simc_CVC"]];
+_crewLoadoutData set ["uniforms", ["AFR_U_fia_bdu_gl", "AFR_U_fia_bdu_gl_grun", "AFR_U_fia_bdu_gl_tan"]];
+_crewLoadoutData set ["vests", ["AFR_V_liz_aaf_belt_alice_light_45_zusp", "AFR_V_aaf_belt_alice_light_45_zusp"]];
+_crewLoadoutData set ["helmets", ["H_Simc_CVC_G", "H_Simc_CVC_G_low"]];
 
 private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["vests", ["V_Simc_Alice_lc2_45_ligt"]];
-_pilotLoadoutData set ["helmets", ["rhsusf_hgu56p_green", "rhsusf_hgu56p_visor_green"]];
+_pilotLoadoutData set ["uniforms", ["AFR_U_fia_bdu_gl", "AFR_U_fia_bdu_gl_grun", "AFR_U_fia_bdu_gl_tan"]];
+_pilotLoadoutData set ["vests", ["V_Simc_vest_RBA_mk1"]];
+_pilotLoadoutData set ["helmets", ["rhsusf_hgu56p", "rhsusf_hgu56p_visor"]];
 
 // ##################### DO NOT TOUCH ANYTHING BELOW THIS LINE #####################
 

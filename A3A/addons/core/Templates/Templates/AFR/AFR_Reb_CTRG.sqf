@@ -25,37 +25,51 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["flagTexture", "\A3\Data_F_Exp\Flags\flag_CTRG_CO.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_CTRG"] call _fnc_saveToTemplate;
 
-private _vehiclesBasic = ["AFR_B_CTRG_rhsusf_mrzr4_d"];
-private _vehiclesLightUnarmed = ["rhsusf_m1043_d", "rhsusf_m998_d_4dr"]; 
-private _vehiclesLightArmed = ["rhsusf_m1043_d_m2", "rhsusf_m1151_m240_v1_usarmy_d", "rhsusf_M1117_D"];
-private _VehTruck = ["rhsusf_M977A4_usarmy_d", "rhsusf_M1078A1P2_B_D_fmtv_usarmy"];
-private _vehiclesAt = ["rhsusf_m1045_d"];
+["petrosIdentity", createHashMapFromArray [
+  ["face", "Miller"],
+  ["speaker", "Male01ENGB"],
+  ["pitch", 1.1],
+  ["firstName", "Miller"],
+  ["lastName", ":)"]
+]] call _fnc_saveToTemplate;
+
+["petrosPrimary", ["rhs_weap_mk18_bk", 3]] call _fnc_saveToTemplate;
+["petrosHandgun", ["rhsusf_weap_glock17g4", 2]] call _fnc_saveToTemplate;
+["petrosHeadgear", "tsp_gear_fast_mt_MulticamDarkCover_Black_peltor"] call _fnc_saveToTemplate;
+["petrosGoggles", ""] call _fnc_saveToTemplate;
+["petrosUniform", "U_tweed_acu_summer_ocp_blench_trop"] call _fnc_saveToTemplate;
+
+private _vehicleBasic = ["AFR_B_CTRG_rhsusf_mrzr4_d"];
+private _vehicleLightUnarmed = ["rhsusf_m1043_d", "rhsusf_m998_d_4dr"]; 
+private _vehicleLightArmed = ["rhsusf_m1043_d_m2", "rhsusf_m1151_m240_v1_usarmy_d", "rhsusf_M1117_D"];
+private _vehicleTruck = ["rhsusf_M977A4_usarmy_d", "rhsusf_M1078A1P2_B_D_fmtv_usarmy"];
+private _vehicleAT = ["rhsusf_m1045_d"];
 private _vehicleAA = ["RHS_M6"];
 
-private _vehiclesBoat = ["rhsusf_mkvsoc", "I_SDV_01_F", "I_C_Boat_Transport_02_F"];
+private _vehicleBoat = ["rhsusf_mkvsoc", "I_SDV_01_F", "I_C_Boat_Transport_02_F"];
 
 private _vehiclePlane = ["rhsusf_f22", "RHS_A10"];
 
-private _vehiclesMedical = [];
+private _vehicleMedical = [];
 
-private _vehiclesSupply = ["C_Van_01_box_F"];
+private _vehicleSupply = ["C_Van_01_box_F"];
 
 private _vehicleCivPlane = ["RHS_C130J"];
 
-private _vehiclesCivCar = ["C_Offroad_02_unarmed_F", "C_Hatchback_01_F", "C_Van_01_transport_F", "C_SUV_01_F"];
-private _CivTruck = ["C_Truck_02_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
-private _civHelicopters = ["AFR_B_ION_UH1H_Unarmed"];
-private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
+private _vehicleCivCar = ["C_Offroad_02_unarmed_F", "C_Hatchback_01_F", "C_Van_01_transport_F", "C_SUV_01_F"];
+private _vehicleCivTruck = ["C_Truck_02_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
+private _vehicleCivHelicopter = ["AFR_B_ION_UH1H_Unarmed"];
+private _vehicleCivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 
 if (_hasEF) then {
-  _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
+  _vehicleBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
 };
 
 if (_hasRF) then {
-  _vehiclesLightUnarmed append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf"];
-  _vehiclesLightArmed pushBack "a3u_black_Pickup_rival_rf";
-  _vehiclesCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
-  _civHelicopters append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF"]
+  _vehicleLightUnarmed append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf"];
+  _vehicleLightArmed pushBack "a3u_black_Pickup_rival_rf";
+  _vehicleCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
+  _vehicleCivHelicopter append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF"];
 };
 
 ["staticMGs", ["RHS_M2StaticMG_WD"]] call _fnc_saveToTemplate;
@@ -115,20 +129,20 @@ if (_hasRF) then {
 ["breachingExplosivesTank", [["rhs_ec75_mag", 4], ["rhs_ec75_sand_mag", 4], ["rhs_ec200_mag", 2], ["rhs_ec200_sand_mag", 2], ["rhs_ec400_mag", 1], ["rhs_ec400_sand_mag", 1],["DemoCharge_Remote_Mag", 2], ["rhsusf_m112_mag", 2], ["rhsusf_m112x4_mag", 1], ["rhs_charge_M2tet_x2_mag", 1], ["SatchelCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 
 ["vehiclesCivPlane", _vehicleCivPlane] call _fnc_saveToTemplate;
-["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
-["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
-["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
-["vehiclesCivHeli", _civHelicopters] call _fnc_saveToTemplate;
-["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehicleSupply] call _fnc_saveToTemplate;
+["vehiclesMedical", _vehicleMedical] call _fnc_saveToTemplate;
+["vehiclesBoat", _vehicleBoat] call _fnc_saveToTemplate;
+["vehiclesCivHeli", _vehicleCivHelicopter] call _fnc_saveToTemplate;
+["vehiclesBasic", _vehicleBasic] call _fnc_saveToTemplate;
 ["vehiclesPlane", _vehiclePlane] call _fnc_saveToTemplate;
-["vehiclesCivTruck", _CivTruck] call _fnc_saveToTemplate;
-["vehiclesTruck", _VehTruck] call _fnc_saveToTemplate;
-["vehiclesCivBoat", _CivBoat] call _fnc_saveToTemplate;
+["vehiclesCivTruck", _vehicleCivTruck] call _fnc_saveToTemplate;
+["vehiclesTruck", _vehicleTruck] call _fnc_saveToTemplate;
+["vehiclesCivBoat", _vehicleCivBoat] call _fnc_saveToTemplate;
 ["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
-["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
-["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
-["vehiclesAT", _vehiclesAt] call _fnc_saveToTemplate;
+["vehiclesCivCar", _vehicleCivCar] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", _vehicleLightUnarmed] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _vehicleLightArmed] call _fnc_saveToTemplate;
+["vehiclesAT", _vehicleAT] call _fnc_saveToTemplate;
 
 ///////////////////////////
 //  Rebel Starting Gear  //
