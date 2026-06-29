@@ -540,6 +540,13 @@ class planeLoadouts
     
     class CAS
     {
+        class AFR_I_AAF_RHSGREF_A29B_Grey
+        {
+            loadout[] = {"rhs_mag_AGM114K_2_plane","rhs_mag_FFAR_7_USAF","rhs_mag_mk82","rhs_mag_FFAR_7_USAF","rhs_mag_AGM114N_2_plane","rhsusf_ANALE40_CMFlare_Chaff_Magazine_x2"};
+            mainGun = "rhs_weap_M3W_A29";
+            rocketLauncher[] = {"rhs_weap_FFARLauncher"};
+            missileLauncher[] = {"rhs_weap_AGM114K_Launcher", "RHS_weap_AGM114N_Launcher"};
+        };
         // OPTRE
         class OPTRE_YSS_1000_A_VTOL
         {
@@ -1118,6 +1125,12 @@ class planeLoadouts
    
     class AA
     {
+        class AFR_I_AAF_Gripen_Fighter_Grey
+        {
+            loadout[] = {"magazine_Fighter04_Gun20mm_AA_x250","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_C_x2","PylonRack_Missile_AMRAAM_C_x2"};
+            mainGun = "weapon_Fighter_Gun20mm_AA";
+            missileLauncher[] = {"weapon_BIM9xLauncher","weapon_AMRAAMLauncher"};
+        };
         // OPTRE
         class OPTRE_YSS_1000_A_VTOL
         {
