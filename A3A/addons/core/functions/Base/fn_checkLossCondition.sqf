@@ -14,7 +14,7 @@ private _popMajority = 0;
 
 {
     private _city = _x;
-    private _cityData = server getVariable _city;
+    private _cityData = A3A_townData get _city;
     _cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 
     _popTotal = _popTotal + _numCiv;

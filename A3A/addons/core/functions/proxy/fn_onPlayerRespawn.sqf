@@ -145,7 +145,7 @@ if (side group _newUnit == teamPlayer) then
 			{
 				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 				_size = [_city] call A3A_fnc_sizeMarker;
-				_dataX = server getVariable _city;
+				_dataX = A3A_townData get _city;
 				if (random 100 < _dataX select 2) then
 				{
 					if (_player distance getMarkerPos _city < _size * 1.5) then
@@ -182,7 +182,7 @@ if (side group _newUnit == teamPlayer) then
 				{
 					_city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
 					_size = [_city] call A3A_fnc_sizeMarker;
-					_dataX = server getVariable _city;
+					_dataX = A3A_townData get _city;
 					if (random 100 < _dataX select 2) then
 					{
 						if (_playerX distance getMarkerPos _city < _size * 1.5) then
@@ -215,7 +215,7 @@ if (side group _newUnit == teamPlayer) then
 			{
 				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 				_size = [_city] call A3A_fnc_sizeMarker;
-				_dataX = server getVariable _city;
+				_dataX = A3A_townData get _city;
 				if (random 100 < _dataX select 2) then
 				{
 					if (_player distance getMarkerPos _city < _size * 1.5) then

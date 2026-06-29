@@ -31,6 +31,11 @@ colorRivals = "ColorBrown";
 respawnTeamPlayer = "respawn_guerrila";
 posHQ = getMarkerPos respawnTeamPlayer;
 
+// Town Data
+
+private _cityData = ([false] call A3A_fnc_getCityData);
+A3A_townData = createHashMapFromArray (_cityData#1);
+
 ////////////////////////////////////////
 //     DECLARING PATCOM VARIABLES    ///
 ////////////////////////////////////////
@@ -339,7 +344,6 @@ A3A_medicalProps = [
 flareSounds = ["A3\Sounds_F\weapons\Flare_Gun\flaregun_1.wss", "A3\Sounds_F\weapons\Flare_Gun\flaregun_2.wss"];
 
 medicAnims = ["AinvPknlMstpSnonWnonDnon_medic_1","AinvPknlMstpSnonWnonDnon_medic0","AinvPknlMstpSnonWnonDnon_medic1","AinvPknlMstpSnonWnonDnon_medic2"];
-
 
 radioSoundsIn = ["a3\dubbing_radio_f\sfx\in2a.ogg", "a3\dubbing_radio_f\sfx\in2b.ogg", "a3\dubbing_radio_f\sfx\in2c.ogg"];
 radioSoundsMid = ["a3\dubbing_radio_f\sfx\radionoise1.ogg", "a3\dubbing_radio_f\sfx\radionoise2.ogg", "a3\dubbing_radio_f\sfx\radionoise3.ogg"];

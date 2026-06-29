@@ -66,22 +66,23 @@ while {true} do {
 		private _city = _x;
 		private _resAddCity = 0;
 		private _hrAddCity = 0;
-		private _cityData = server getVariable [_city, [0,0,0,0]];
+		private _cityData = A3A_townData get _city;
 		_cityData params [["_numCiv",0], ["_numVeh",0], ["_supportGov",0], ["_supportReb",0]];
 
+		private _citySide = sidesX getVariable [_city,sideUnknown];
 		private _radioTowerSide = [_city] call A3A_fnc_getSideRadioTowerInfluence;
-		switch (_radioTowerSide) do
-		{
-			case teamPlayer: {[-1,_suppBoost,_city,false,true] spawn A3A_fnc_citySupportChange};
-			case Occupants: {[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
-			case Invaders: {[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
-		};
+		// switch (_radioTowerSide) do
+		// {
+		// 	case teamPlayer: {[-1,_suppBoost,_city,false,true] spawn A3A_fnc_citySupportChange};
+		// 	case Occupants: {[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
+		// 	case Invaders: {[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
+		// };
 
 		_resAddCity = (_numCiv * (_supportReb / 100)) / 3;
 		if (!finite _resAddCity) then { _resAddCity = 0; };
 		_hrAddCity = _numCiv * (_supportReb / 10000);
 
-		if (sidesX getVariable [_city,sideUnknown] == Occupants) then
+		if (_citySide == Occupants) then
 		{
 			_resAddCity = _resAddCity / 2;
 			_hrAddCity = _hrAddCity / 2;
@@ -91,31 +92,18 @@ while {true} do {
 		_resAdd = _resAdd + _resAddCity;
 		_hrAdd = _hrAdd + _hrAddCity;
 
-		if (_supportGov < _supportReb && {sidesX getVariable [_city,sideUnknown] == Occupants}) then {
-			["TaskSucceeded", ["", format [localize "STR_notifiers_city_joined",_city,FactionGet(reb,"name")]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
-			sidesX setVariable [_city,teamPlayer,true];
-			[Occupants, 10, 60] remoteExec ["A3A_fnc_addAggression",2];
-			garrison setVariable [_city,[],true];
-			[_city] call A3A_fnc_mrkUpdate;
+		private _canFlip = (_supportGov < _supportReb && (_citySide isNotEqualTo teamPlayer) && !(_city in destroyedSites));
+		private _canStartSkirmish = (random 100 > 50 && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
 
-			private _closestAdminMarker = [milAdministrationsX, _city] call BIS_fnc_nearestPosition;
-			if (_closestAdminMarker isEqualType "" && {(getMarkerPos _closestAdminMarker) distance2D (getMarkerPos _city) < 800}) then {
-				private _milAdministration = [A3A_milAdministrations, _closestAdminMarker] call BIS_fnc_nearestPosition;
-				[_milAdministration, "SILENT"] call SCRT_fnc_location_removeMilAdmin;
+		if (_canFlip) then {
+			if (_canStartSkirmish) then {
+				private _possibleOrigins = outposts select {sidesX getVariable [_x, sideUnknown] == _citySide};
+				private _finalOrigin = selectRandom (_possibleOrigins select { (getMarkerPos _x) distance2D (getMarkerPos _city) < 3000 });
+				if (isNil "_finalOrigin") then { _finalOrigin = selectRandom _possibleOrigins };
+				[_citySide, _city, _finalOrigin] spawn A3A_fnc_townBattle;
+			} else {
+				[_city, true] call A3A_fnc_cityChangeSide;
 			};
-
-			sleep 5;
-			{_nul = [_city,_x] spawn A3A_fnc_deleteControls} forEach controlsX;
-			[] call A3A_fnc_tierCheck;
-		};
-		if (_supportGov > _supportReb && {sidesX getVariable [_city,sideUnknown] == teamPlayer}) then {
-			["TaskFailed", ["", format [localize "STR_notifiers_city_joined",_city,FactionGet(occ,"name")]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
-			sidesX setVariable [_city,Occupants,true];
-			[Occupants, -10, 45] remoteExec ["A3A_fnc_addAggression",2];
-			garrison setVariable [_city,[],true];
-			[_city] call A3A_fnc_mrkUpdate;
-			sleep 5;
-			[] call A3A_fnc_tierCheck;
 		};
 	} forEach citiesX;
 

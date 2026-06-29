@@ -21,7 +21,7 @@ _num = round (_num / 100);
 
 ServerInfo_1("Spawning City Patrol in %1", _markerX);
 
-private _dataX = server getVariable _markerX;
+private _dataX = A3A_townData get _markerX;
 private _prestigeOPFOR = _dataX select 2;
 private _prestigeBLUFOR = _dataX select 3;
 

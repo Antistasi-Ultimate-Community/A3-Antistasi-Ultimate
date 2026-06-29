@@ -47,6 +47,7 @@ class CfgFunctions
         class patches
         {
             file = QPATHTOFOLDER(functions\patches);
+            class getTierModifier {};
             class IMS_stealthKill {};
         };
         class STALKER

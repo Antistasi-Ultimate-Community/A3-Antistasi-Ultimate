@@ -226,7 +226,7 @@ switch (_mode) do
         private _deadPopulation = 0;
         {
             private _city = _x;
-            private _cityData = server getVariable _city;
+            private _cityData = A3A_townData get _city;
             _cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 
             _totalPopulation = _totalPopulation + _numCiv;

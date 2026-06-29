@@ -58,7 +58,7 @@ if (_side == civilian) then
 	[0, -1, _pos] remoteExec ["A3A_fnc_citySupportChange", 2];
 
 	private _city = [citiesX, _pos] call BIS_fnc_nearestPosition;
-	private _dataX = server getVariable _city;
+	private _dataX = A3A_townData get _city;
 	private _prestigeOPFOR = _dataX select 2;		// government support?
 	if (random 100 > _prestigeOPFOR) exitWith {};
 
