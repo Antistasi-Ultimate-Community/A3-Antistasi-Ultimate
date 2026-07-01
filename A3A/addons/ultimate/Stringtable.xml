@@ -494,16 +494,16 @@
             <Polish>Fabryka&lt;br /&gt;&lt;t color='#CFCFCF'&gt;Mnoży jeden zasób przez 1,2 za każdą fabrykę&lt;/t&gt;</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_AIRPORT_CAPTURED">
-            <Original>When captured:&lt;br /&gt;-Allows usage of stored air assets&lt;br /&gt;-Enables the use of air supports&lt;br /&gt;&lt;br /&gt;Can only be captured from War Tier 3+.</Original>
-            <French>Une fois capturé :&lt;br /&gt;-Permet l'utilisation des aéronefs stockés&lt;br /&gt;-Active les soutiens aériens</French>
-            <German>Nach Einnahme:&lt;br /&gt;-Erlaubt die Nutzung gespeicherter Luftfahrzeuge&lt;br /&gt;-Ermöglicht Luftunterstützung</German>
-            <Czech>Po obsazení:&lt;br /&gt;-Umožňuje použití uložených leteckých prostředků&lt;br /&gt;-Povoluje leteckou podporu</Czech>
-            <Chinesesimp>占领后：&lt;br /&gt;-允许使用存储的空中载具&lt;br /&gt;-启用空中支援</Chinesesimp>
-            <Korean>점령 시:&lt;br /&gt;-저장된 항공 자산 사용 가능&lt;br /&gt;-항공 지원 활성화</Korean>
-            <Russian>После захвата:&lt;br /&gt;-Позволяет использовать сохранённую авиацию&lt;br /&gt;-Открывает доступ к авиационной поддержке</Russian>
-            <Italian>Una volta catturato:&lt;br /&gt;-Permette l'uso dei mezzi aerei immagazzinati&lt;br /&gt;-Abilita il supporto aereo</Italian>
-            <Spanish>Al capturarlo:&lt;br /&gt;-Permite usar los activos aéreos almacenados&lt;br /&gt;-Habilita el apoyo aéreo</Spanish>
-            <Polish>Po przejęciu:&lt;br /&gt;-Pozwala używać przechowywanych środków lotniczych&lt;br /&gt;-Odblokowuje wsparcie lotnicze</Polish>
+            <Original>When captured:&lt;br /&gt;Enables your faction to purchase, store, and deploy helicopters and fixed-wing aircraft.&lt;br /&gt;Requires War Tier 3+.</Original>
+            <French>Une fois capturé :&lt;br /&gt;permet à votre faction d'acheter, de stocker et de déployer des hélicoptères et des aéronefs à voilure fixe.&lt;br /&gt;Nécessite le niveau de guerre 3+.</French>
+            <German>Nach der Einnahme:&lt;br /&gt;ermöglicht es deiner Fraktion, Hubschrauber und Starrflügelflugzeuge zu kaufen, zu lagern und einzusetzen.&lt;br /&gt;Benötigt Kriegsstufe 3+.</German>
+            <Czech>Po obsazení:&lt;br /&gt;umožní vaší frakci nakupovat, skladovat a nasazovat vrtulníky a letadla s pevnými křídly.&lt;br /&gt;Vyžaduje úroveň války 3+.</Czech>
+            <ChineseSimplified>占领后：&lt;br /&gt;允许你的派系购买、储存和部署直升机和固定翼飞机。&lt;br /&gt;需要战争等级 3+。</ChineseSimplified>
+            <Korean>점령 시:&lt;br /&gt;소속 파벌이 헬리콥터와 고정익 항공기를 구매, 보관 및 배치할 수 있게 해줍니다.&lt;br /&gt;전쟁 티어 3 이상이 필요합니다.</Korean>
+            <Russian>При захвате:&lt;br /&gt;позволяет вашей фракции покупать, хранить и развертывать вертолеты и самолеты с неподвижным крылом.&lt;br /&gt;Требуется уровень войны 3+.</Russian>
+            <Italian>Una volta catturato:&lt;br /&gt;permette alla tua fazione di acquistare, immagazzinare e schierare elicotteri e velivoli ad ala fissa.&lt;br /&gt;Richiede il livello di guerra 3+.</Italian>
+            <Spanish>Al ser capturado:&lt;br /&gt;permite a tu facción comprar, almacenar y desplegar helicópteros y aviones de ala fija.&lt;br /&gt;Requiere el nivel de guerra 3+.</Spanish>
+            <Polish>Po przejęciu:&lt;br /&gt;umożliwia twojej frakcji kupowanie, przechowywanie i rozmieszczanie śmigłowców i samolotów.&lt;br /&gt;Wymaga 3. lub wyższego poziomu wojny.</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_DESTROYED_SITE">
             <Original>Destroyed site: population eliminated (no support)</Original>
@@ -652,43 +652,40 @@
             <Polish>Stałe stanowisko ciężkiego karabinu maszynowego do tłumienia piechoty, lekkich pojazdów i nisko lecących celów.</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_MILBASE_DESC">
-            <Original>Enemy stronghold that may include helicopters, armored vehicles, and mortars.&lt;br /&gt;Contains 2 loot crates and can only be captured from War Tier 3+.</Original>
-            <German>Feindliche Festung mit möglichen Helikoptern, gepanzerten Fahrzeugen und Mörsern.&lt;br /&gt;Enthält 2 Beutekisten und kann erst ab Kriegsstufe 3 erobert werden.</German>
-            <French>Place forte ennemie pouvant inclure des hélicoptères, des véhicules blindés et des mortiers.&lt;br /&gt;Contient 2 caisses de butin et ne peut être capturée qu’à partir du niveau de guerre 3+.</French>
-            <Spanish>Fortificación enemiga que puede incluir helicópteros, vehículos blindados y morteros.&lt;br /&gt;Contiene 2 cajas de botín y solo puede capturarse a partir del Nivel de Guerra 3+.</Spanish>
-            <Italian>Roccaforte nemica che può includere elicotteri, veicoli corazzati e mortai.&lt;br /&gt;Contiene 2 casse di bottino e può essere catturata solo dal Livello di Guerra 3+.</Italian>
-            <Polish>Wrogi bastion, w którym mogą znajdować się śmigłowce, pojazdy opancerzone i moździerze.&lt;br /&gt;Zawiera 2 skrzynie z łupem i można go przejąć dopiero od Poziomu Wojny 3+.</Polish>
-            <Russian>Вражеский опорный пункт, где могут быть вертолёты, бронетехника и миномёты.&lt;br /&gt;Содержит 2 ящика с добычей и может быть захвачен только с уровня войны 3+.</Russian>
-            <Czech>Nepřátelská pevnost, která může obsahovat vrtulníky, obrněná vozidla a minomety.&lt;br /&gt;Obsahuje 2 bedny s kořistí a lze ji obsadit až od úrovně války 3+.</Czech>
-            <Turkish>Helikopterler, zırhlı araçlar ve havanlar içerebilen düşman kalesi.&lt;br /&gt;2 ganimet sandığı içerir ve yalnızca Savaş Seviyesi 3+’ten itibaren ele geçirilebilir.</Turkish>
-            <ChineseSimplified>敌方据点，可能有直升机、装甲车辆和迫击炮。&lt;br /&gt;包含2个战利品箱，并且只能在战争等级3及以上夺取。</ChineseSimplified>
-            <Japanese>ヘリコプター、装甲車両、迫撃砲が配置されている可能性のある敵の拠点。&lt;br /&gt;戦利品箱が2つあり、戦争ティア3以上でのみ制圧可能。</Japanese>
+            <Original>A heavily fortified installation that launches ground assaults and houses heavy enemy armor.&lt;br /&gt;Requires War Tier 3+.</Original>
+            <French>Une installation lourdement fortifiée qui lance des assauts terrestres et abrite les blindés lourds ennemis.&lt;br /&gt;Nécessite le niveau de guerre 3+.</French>
+            <German>Eine schwer befestigte Anlage, die Bodenangriffe startet und schwere feindliche gepanzerte Einheiten beherbergt.&lt;br /&gt;Benötigt Kriegsstufe 3+.</German>
+            <Czech>Silně opevněné zařízení, které zahajuje pozemní útoky a ukrývá těžkou nepřátelskou obrněnou techniku.&lt;br /&gt;Vyžaduje úroveň války 3+.</Czech>
+            <ChineseSimplified>一个防御森严的设施，用于发动地面突击并存放敌方重型装甲。&lt;br /&gt;需要战争等级 3+。</ChineseSimplified>
+            <Korean>지상 강습을 개시하고 적의 중장갑 차량을 수용하는 중무장된 시설입니다.&lt;br /&gt;전쟁 티어 3 이상이 필요합니다.</Korean>
+            <Russian>Тщательно укрепленный объект, который служит базой для наземных атак и укрытием для тяжелой вражеской бронетехники.&lt;br /&gt;Требуется уровень войны 3+.</Russian>
+            <Italian>Un'installazione pesantemente fortificata che lancia assalti terrestri e ospita veicoli corazzati pesanti nemici.&lt;br /&gt;Richiede il livello di guerra 3+.</Italian>
+            <Spanish>Una instalación fuertemente fortificada que lanza asaltos terrestres y alberga blindados pesados enemigos.&lt;br /&gt;Requiere el nivel de guerra 3+.</Spanish>
+            <Polish>Silnie ufortyfikowana instalacja, która przeprowadza ataki naziemne i mieści ciężki pancerz wroga.&lt;br /&gt;Wymaga 3. lub wyższego poziomu wojny.</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_OUTPOST_DESC">
-            <Original>The most common enemy-held location.&lt;br /&gt;Contains a loot crate and may provide extra intel.</Original>
-            <German>Der häufigste feindlich gehaltene Ort.&lt;br /&gt;Enthält eine Beutekiste und kann zusätzliche Informationen liefern.</German>
-            <French>Le lieu le plus couramment tenu par l’ennemi.&lt;br /&gt;Contient une caisse de butin et peut fournir des renseignements supplémentaires.</French>
-            <Spanish>La ubicación enemiga más común.&lt;br /&gt;Contiene una caja de botín y puede proporcionar información adicional.</Spanish>
-            <Italian>La posizione nemica più comune.&lt;br /&gt;Contiene una cassa di bottino e può fornire informazioni aggiuntive.</Italian>
-            <Polish>Najczęściej spotykana lokacja zajęta przez wroga.&lt;br /&gt;Zawiera skrzynię z łupem i może dostarczyć dodatkowych informacji.</Polish>
-            <Russian>Самая распространённая точка, удерживаемая противником.&lt;br /&gt;Содержит ящик с добычей и может дать дополнительные разведданные.</Russian>
-            <Czech>Nejběžnější nepřátelské stanoviště.&lt;br /&gt;Obsahuje bednu s kořistí a může poskytnout další informace.</Czech>
-            <Turkish>Haritada en yaygın düşman mevzisi.&lt;br /&gt;Bir ganimet sandığı içerir ve ek istihbarat sağlayabilir.</Turkish>
-            <ChineseSimplified>地图上最常见的敌方据点。&lt;br /&gt;包含一个战利品箱，并可能提供额外情报。</ChineseSimplified>
-            <Japanese>敵が占拠している最も一般的な拠点。&lt;br /&gt;戦利品箱があり、追加の情報を入手できることがあります。</Japanese>
+            <Original>A fortified forward position used by the enemy to monitor road networks and lock down local territory.</Original>
+            <French>Une position avancée fortifiée utilisée par l'ennemi pour surveiller les réseaux routiers et verrouiller le territoire local.</French>
+            <German>Eine befestigte vorgeschobene Position, die vom Feind genutzt wird, um Straßennetze zu überwachen und das lokale Gebiet abzuriegeln.</German>
+            <Czech>Opevněná předsunutá pozice, kterou nepřítel využívá ke sledování silničních sítí a zablokování místního území.</Czech>
+            <ChineseSimplified>敌方用于监控公路网并封锁局部地区的防御性前哨阵地。</ChineseSimplified>
+            <Korean>적이 도로망을 감시하고 지역 영토를 통제하기 위해 사용하는 요새화된 전진 기지입니다.</Korean>
+            <Russian>Укрепленная передовая позиция, используемая противником для наблюдения за дорожными сетями и блокирования местной территории.</Russian>
+            <Italian>Una posizione avanzata fortificata utilizzata dal nemico per monitorare le reti stradali e bloccare il territorio locale.</Italian>
+            <Spanish>Una posición avanzada fortificada utilizada por el enemigo para monitorear las redes de carreteras y bloquear el territorio local.</Spanish>
+            <Polish>Ufortyfikowana pozycja wysunięta, wykorzystywana przez wroga do monitorowania sieci dróg i blokowania lokalnego terytorium.</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_SEAPORT_DESC">
-            <Original>Coastal hub that may have a patrolling enemy boat.&lt;br /&gt;Contains a loot crate and makes it easier to destroy stored boats.</Original>
-            <German>Küstenknotenpunkt, der ein patrouillierendes feindliches Boot haben kann.&lt;br /&gt;Enthält eine Beutekiste und erleichtert das Zerstören gelagerter Boote.</German>
-            <French>Point côtier pouvant avoir un bateau ennemi en patrouille.&lt;br /&gt;Contient une caisse de butin et facilite la destruction des bateaux stockés.</French>
-            <Spanish>Centro costero que puede tener un barco enemigo patrullando.&lt;br /&gt;Contiene una caja de botín y facilita destruir barcos almacenados.</Spanish>
-            <Italian>Hub costiero che può avere una barca nemica in pattuglia.&lt;br /&gt;Contiene una cassa di bottino e rende più facile distruggere le barche immagazzinate.</Italian>
-            <Polish>Nadmorski punkt, przy którym może patrolować wroga łódź.&lt;br /&gt;Zawiera skrzynię z łupem i ułatwia niszczenie przechowywanych łodzi.</Polish>
-            <Russian>Прибрежный узел, где может патрулировать вражеский катер.&lt;br /&gt;Содержит ящик с добычей и упрощает уничтожение хранимых лодок.</Russian>
-            <Czech>Pobřežní uzel, kde může hlídkovat nepřátelský člun.&lt;br /&gt;Obsahuje bednu s kořistí a usnadňuje ničení uložených lodí.</Czech>
-            <Turkish>Devriye gezen bir düşman botu bulunabilen kıyı merkezi.&lt;br /&gt;Bir ganimet sandığı içerir ve depolanmış botları imha etmeyi kolaylaştırır.</Turkish>
-            <ChineseSimplified>沿海据点，可能有敌方巡逻艇。&lt;br /&gt;包含一个战利品箱，并使摧毁存放的船只更容易。</ChineseSimplified>
-            <Japanese>敵の巡回艇がいる可能性のある沿岸拠点。&lt;br /&gt;戦利品箱があり、保管されている船を破壊しやすくなります。</Japanese>
+            <Original>A coastal hub that enables the enemy to patrol the waters and deploy naval assets.</Original>
+            <French>Un centre côtier qui permet à l'ennemi de patrouiller les eaux et de déployer des forces navales.</French>
+            <German>Ein Küstenknotenpunkt, der es dem Feind ermöglicht, die Gewässer zu patrouillieren und Marineeinheiten einzusetzen.</German>
+            <Czech>Pobřežní uzel, který umožňuje nepříteli hlídkovat ve vodách a nasazovat námořní prostředky.</Czech>
+            <ChineseSimplified>一个沿海枢纽，使敌人能够在其水域巡逻并部署海军资产。</ChineseSimplified>
+            <Korean>적이 해역을 순찰하고 해군 전력을 배치할 수 있게 해주는 해안 허브입니다.</Korean>
+            <Russian>Прибрежный узел, который позволяет противнику патрулировать воды и развертывать военно-морские силы.</Russian>
+            <Italian>Uno snodo costiero che consente al nemico di pattugliare le acque e schierare risorse navali.</Italian>
+            <Spanish>Un centro costero que permite al enemigo patrullar las aguas y desplegar recursos navales.</Spanish>
+            <Polish>Węzeł przybrzeżny, który umożliwia wrogowi patrolowanie wód i rozmieszczanie zasobów morskich.</Polish>
         </Key>
         <Key ID="STR_A3U_HOVER_RADIOTOWER_REBAL_DESC">
             <Original>Intercepts enemy communications to reveal hidden troop movements.&lt;br/&gt;Boosts the strategic defense priority of nearby rebel bases.</Original>
