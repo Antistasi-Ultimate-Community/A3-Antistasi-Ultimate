@@ -414,8 +414,18 @@
     {
         side = "Inv";
         flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
-        name = "CUP PLA";
+        name = "CUP PLA (Temperate)";
         file = "CUP_AI_PLA";
+        climate[] = {"temperate","tropical"};
+    };
+
+    class Flex_PLA_Arid : FlexPLA_Base
+    {
+        side = "Inv";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+        name = "CUP PLA (Arid)";
+        file = "CUP_AI_PLA_Arid";
+        climate[] = {"arid"};
     };
 
     class FlexFDF_Base : CUP_Base
