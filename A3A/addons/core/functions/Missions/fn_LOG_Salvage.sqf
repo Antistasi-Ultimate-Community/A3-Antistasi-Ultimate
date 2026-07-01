@@ -48,8 +48,8 @@ _limit params ["_dateLimitNum", "_displayTime"];
 
 //Name of seaport marker
 private _nameDest = [_markerX] call A3A_fnc_localizar;
-private _title = localize "STR_A3A_Missions_LOG_Salvage_task_header";
-private _text = format [localize "STR_A3A_Missions_LOG_Salvage_task_desc", _nameDest, _displayTime];
+private _title = [ "STR_A3A_Missions_LOG_Salvage_task_header"];
+private _text =  [ "STR_A3A_Missions_LOG_Salvage_task_desc", _nameDest, _displayTime];
 private _taskId = "LOG" + str A3A_taskCount;
 [[teamPlayer, civilian], _taskId, [ _text, _title, [_mrk1, _mrk2, _mrk3]], _positionX, false, 0, true, "rearm", true] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];

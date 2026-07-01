@@ -82,8 +82,8 @@ private _taskId = "TRADER" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
-        localize "STR_trader_quest_header",
+        [ "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
+        [ "STR_trader_quest_header"],
         _traderMarkerVague
     ],
     _markerVaguePosition,

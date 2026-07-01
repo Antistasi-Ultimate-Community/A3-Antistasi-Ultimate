@@ -17,23 +17,23 @@ if (_markerSide == Occupants) then {
 	_oppositeside = Occupants;
 };
 private _nameDest = [_markerX] call A3A_fnc_localizar;
-private _textX = "";
-private _taskName = "";
+private _textX = [];
+private _taskName = [];
 if ((_oppositeside == Occupants && areOccupantsDefeated) || {(_oppositeside == Invaders && areInvadersDefeated)}) exitWith {
 	[[_markerX],"A3A_fnc_CON_Outpost"] remoteExec ["A3A_fnc_scheduler",2];
 };
 switch (true) do {
 	case (_markerX in resourcesX): {
-		_textX = format [localize "STR_CON_Outpost_resources_compet_desc", _nameDest, _displayTime, _oppositeside]; ///add stringtables
-		_taskName = localize "STR_CON_Outpost_resources_compet_task";
+		_textX = [ "STR_CON_Outpost_resources_compet_desc", _nameDest, _displayTime, _oppositeside]; ///add stringtables
+		_taskName = [ "STR_CON_Outpost_resources_compet_task"];
 	};
 	case (_markerX in controlsX): {
-		_textX = format [localize "STR_CON_Outpost_controls_compet_desc", _nameDest, _displayTime, _oppositeside];
-		_taskName = localize "STR_CON_Outpost_controls_compet_task";
+		_textX = [ "STR_CON_Outpost_controls_compet_desc", _nameDest, _displayTime, _oppositeside];
+		_taskName = [ "STR_CON_Outpost_controls_compet_task"];
 	};
 	default {
-		_textX = format [localize "STR_CON_Outpost_outposts_compet_desc", _nameDest, _displayTime, _oppositeside];
-		_taskName = localize "STR_CON_Outpost_outposts_compet_task";
+		_textX = [ "STR_CON_Outpost_outposts_compet_desc", _nameDest, _displayTime, _oppositeside];
+		_taskName = ["STR_CON_Outpost_outposts_compet_task"];
 	};
 };
 private _taskId = "CON" + str A3A_taskCount;

@@ -148,7 +148,10 @@ private _rebelTaskText = format [
 [
     [teamPlayer,civilian],
     _taskId,
-    [format [localize "STR_A3A_Missions_LOG_crashsite_task_desc", _faction get "name", _startTimeDisplay, _displayTime], localize "STR_A3A_Missions_LOG_crashsite_task_header", _markerX],
+    [ [ "STR_A3A_Missions_LOG_crashsite_task_desc", _faction get "name", _startTimeDisplay, _displayTime],
+      [ "STR_A3A_Missions_LOG_crashsite_task_header"],
+      _markerX
+    ],
     _crashPositionMarker,
     false,
     0,
@@ -444,7 +447,10 @@ if (!isNil "traderMarker") then { //checking if trader is spawned
     [
         [teamPlayer,civilian],
         _taskId2,
-        [format [localize "STR_A3A_Missions_LOG_crashsite_task_alt", _faction get "name", _destinationName, _displayTime], localize "STR_A3A_Missions_LOG_crashsite_task_header", _markerX],
+        [ [ "STR_A3A_Missions_LOG_crashsite_task_alt", _faction get "name", _destinationName, _displayTime],
+          [ "STR_A3A_Missions_LOG_crashsite_task_header"],
+          _markerX
+        ],
         traderMarker,
         false,
         0,

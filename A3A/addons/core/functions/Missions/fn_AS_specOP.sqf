@@ -20,15 +20,27 @@ private _limit = if (_difficultX) then {
 _limit params ["_dateLimitNum", "_displayTime"];
 
 private _nameDest = [_markerX] call A3A_fnc_localizar;
-private _taskString = format [
-	localize "STR_A3A_Missions_AS_specOP_task_desc",
+private _taskString = [
+	"STR_A3A_Missions_AS_specOP_task_desc",
 	_faction get "name",
 	_nameDest,
 	_displayTime
 ];
 private _taskId = "AS" + str A3A_taskCount;
 
-[[teamPlayer,civilian],_taskId,[_taskString,localize "STR_A3A_Missions_AS_specOP_task_header",_markerX],_positionX,false,0,true,"Kill",true] call BIS_fnc_taskCreate;
+[ [teamPlayer,civilian],
+  _taskId,
+  [ _taskString,
+    ["STR_A3A_Missions_AS_specOP_task_header"],
+    _markerX
+  ],
+  _positionX,
+  false,
+  0,
+  true,
+  "Kill",
+  true
+  ] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 waitUntil {sleep 1;dateToNumber date > _dateLimitNum or {(spawner getVariable _markerX != 2 and !(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))}};
