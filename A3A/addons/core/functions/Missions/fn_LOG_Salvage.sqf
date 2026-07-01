@@ -53,6 +53,8 @@ private _text =  [ "STR_A3A_Missions_LOG_Salvage_task_desc", _nameDest, _display
 private _taskId = "LOG" + str A3A_taskCount;
 [[teamPlayer, civilian], _taskId, [ _text, _title, [_mrk1, _mrk2, _mrk3]], _positionX, false, 0, true, "rearm", true] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ _text, _title, [_mrk1, _mrk2, _mrk3]]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 //salvageRope action
 [] remoteExec ["A3A_fnc_SalvageRope", 0, true];

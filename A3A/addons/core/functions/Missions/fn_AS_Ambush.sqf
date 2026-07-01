@@ -124,6 +124,10 @@ private _taskId = "AS" + str A3A_taskCount;
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ _rebelTaskText, [ "STR_A3A_Missions_AS_Ambush_task_header", _faction get "name"],
+      _missionOrigin
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 
 //spawning escort

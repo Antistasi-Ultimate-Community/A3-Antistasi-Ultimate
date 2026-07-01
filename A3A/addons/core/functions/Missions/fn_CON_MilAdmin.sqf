@@ -37,6 +37,11 @@ private _taskId = "CON" + str A3A_taskCount;
   true
   ] call BIS_fnc_taskCreate;
 [_taskId, "CON", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ _textX,
+    _taskName,
+    _marker
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 
 private _milAdministrationIndex = A3A_milAdministrations findIf { _milAdministrationPos distance2D _x < 30 };

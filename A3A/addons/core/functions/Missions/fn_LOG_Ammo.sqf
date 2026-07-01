@@ -40,6 +40,11 @@ private _taskId = "LOG" + str A3A_taskCount;
   true
   ] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_LOG_Ammo_task_desc",_nameDest,_displayTime],
+    [ "STR_A3A_Missions_LOG_Ammo_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or {(spawner getVariable _markerX != 2 and !(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))}};
 private _bonus = if (_difficultX) then {2} else {1};

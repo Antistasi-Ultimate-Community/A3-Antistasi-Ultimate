@@ -172,6 +172,11 @@ private _taskId = "SUPP" + str A3A_taskCount;
 		_markerX
 	],_startingRoadPosition,false,0,true,"truck",true] call BIS_fnc_taskCreate;
 [_taskId, "SUPP", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_RIV_SUPP_Salvage_task_desc", _nameDest, _faction get "name", _displayTime],
+    [ "STR_A3A_Missions_RIV_SUPP_Salvage_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 Info("Waiting until players will be near the zone.");
 

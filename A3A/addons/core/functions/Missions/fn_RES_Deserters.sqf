@@ -54,6 +54,11 @@ if (count _potentials > 0) then {
             _markerX
           ],_spawnPos,false,0,true,"run",true] call BIS_fnc_taskCreate;///add stringtables
 	[_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [ _taskId,
+          [ [ "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],
+                    [ "STR_A3A_Missions_RES_Deserters_task_header"],
+                    _markerX
+          ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 } else {
 	[ [teamPlayer,civilian],
           _taskId,
@@ -62,6 +67,11 @@ if (count _potentials > 0) then {
             _markerX
           ],_positionX,false,0,true,"run",true] call BIS_fnc_taskCreate;
 	[_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [ _taskId,
+          [ [ "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],
+                    [ "STR_A3A_Missions_RES_Deserters_task_header"],
+                    _markerX
+          ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 };
 waitUntil {
     sleep 1;

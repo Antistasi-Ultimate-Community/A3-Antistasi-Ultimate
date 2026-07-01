@@ -44,6 +44,11 @@ private _taskId = "AS" + str A3A_taskCount;
   true
   ] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ _taskString,
+    [ "STR_A3A_Missions_AS_Official_task_header", _faction get "name"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _grp = createGroup _sideX;
 private _officialClass = _faction get "unitOfficial";

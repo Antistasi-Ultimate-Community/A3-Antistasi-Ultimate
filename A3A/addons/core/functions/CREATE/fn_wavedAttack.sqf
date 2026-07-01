@@ -47,6 +47,8 @@ if (_targside == teamPlayer) then {
       true
       ] call BIS_fnc_taskCreate;
     [_taskId, "rebelAttack", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+    [ _taskId, [ _taskStr, [ "STR_wavedattack_task",_nameEnemy], _mrkDest ]
+      ] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 } else {
     private _text = format [localize "STR_notifiers_wavedattack", _nameEnemy, Faction(_targside) get "name", _nameDest];
     ["RadioIntercepted", [_text]] remoteExec ["BIS_fnc_showNotification", 0];

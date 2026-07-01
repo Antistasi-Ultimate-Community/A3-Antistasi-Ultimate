@@ -94,6 +94,12 @@ private _taskId = "TRADER" + str A3A_taskCount;
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "TRADER", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [
+        [ "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
+        [ "STR_trader_quest_header"],
+        _traderMarkerVague
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _trigger = createTrigger ["EmptyDetector", _traderPosition];
 _trigger setTriggerArea [30, 30, 0, false];

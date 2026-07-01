@@ -120,6 +120,11 @@ private _taskId = "DES" + str A3A_taskCount;
     true
     ] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_DES_Heli_task_desc",_faction get "name", _location, _displayTime],
+      [ "STR_A3A_Missions_DES_Heli_task_header"],
+      _taskMrk
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 ////////////////
 //convoy spawn//

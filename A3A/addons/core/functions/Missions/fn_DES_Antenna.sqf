@@ -41,6 +41,11 @@ private _taskId = "DES" + str A3A_taskCount;
 	true
 	] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_DES_Antenna_task_desc",_nameDest,_displayTime,FactionGet(occ,"name")],
+    [ "STR_A3A_Missions_DES_Antenna_task_header"],
+    _mrkFinal
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {!alive _antenna or {!(sidesX getVariable [_markerX,sideUnknown] == Occupants)}}};
 
 private _bonus = if (_difficultX) then {2} else {1};

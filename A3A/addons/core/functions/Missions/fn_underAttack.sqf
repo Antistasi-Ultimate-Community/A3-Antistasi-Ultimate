@@ -36,6 +36,11 @@ if (_sideX == teamPlayer) then {_sideX = [teamPlayer,civilian]};
   "Defend",
   true
   ] call BIS_fnc_taskCreate;
+[ _markerX,
+  [ [ "STR_A3A_Missions_underattack_task_desc",_nameDest,_nameENY],
+    [localize "STR_A3A_Missions_underattack_task_header",_nameENY],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 if (_sideX isEqualType []) then {_sideX = teamPlayer};
 

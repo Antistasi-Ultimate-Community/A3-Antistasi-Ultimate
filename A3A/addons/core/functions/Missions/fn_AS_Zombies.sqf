@@ -58,6 +58,11 @@ private _taskId = "AS" + str A3A_taskCount;
 	true
 ] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_AS_Zombies_task_desc", _nameDest, _displayTime],
+    [ "STR_A3A_Missions_AS_Zombies_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 // Wait until players are close enough to the city to trigger mission
 waitUntil {

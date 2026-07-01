@@ -39,6 +39,11 @@ private _taskId = "Mines" + str A3A_taskCount;
   true
   ] call BIS_fnc_taskCreate;
 [_taskId, "Mines", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_reinf_minefield_task_desc",_quantity],
+    [ "STR_A3A_reinf_minefield_task_header"],
+    _mrk
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _groupX = createGroup teamPlayer;
 

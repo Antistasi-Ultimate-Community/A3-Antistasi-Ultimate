@@ -52,6 +52,12 @@ private _taskId = "AS" + str A3A_taskCount;
 	true
 ] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [
+    [ "STR_A3A_Missions_AS_Smasher_task_desc", FactionGet(occ,"name"), _nameDest, _displayTime],
+    [ "STR_A3A_Missions_AS_Smasher_task_header" ],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 // Wait until players are close enough to the city, the idea being that they will see the SF groups fighting the smasher (+ helps perf)
 waitUntil {

@@ -32,6 +32,11 @@ private _taskId = "outpostTask" + str A3A_taskCount;
   true
   ] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_aaempl_deploy_desc", _displayTime],
+    [ "STR_aaempl_deploy_header"],
+    _marker
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _formatX = A3A_faction_reb get "groupAaEmpl";
 private _groupX = [["Synd_HQ"] call A3A_fnc_findAiSpawnPosition, teamPlayer, _formatX] call A3A_fnc_spawnGroup;

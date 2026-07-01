@@ -51,6 +51,11 @@ private _taskId = "invaderPunish" + str A3A_taskCount;
   "Defend",
   true] call BIS_fnc_taskCreate;
 [_taskId, "invaderPunish", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_invaderPunish_desc",_nameDest,FactionGet(inv,"name")],
+    [ "STR_invaderPunish_task",FactionGet(inv,"name")],
+    _mrkDest
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 
 if (isNil "_delay") then {

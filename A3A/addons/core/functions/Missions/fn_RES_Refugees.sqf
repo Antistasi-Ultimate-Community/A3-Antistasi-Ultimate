@@ -48,6 +48,8 @@ if (_sideX == Occupants) then {
 private _taskId = "RES" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[_text,_header,_nameDest],_posTsk,false,0,true,"run",true] call BIS_fnc_taskCreate;
 [_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [_text,_header,_nameDest]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 _groupPOW = createGroup teamPlayer;
 for "_i" from 1 to (((count _posHouse) - 1) min 6) do {

@@ -38,6 +38,11 @@ private _taskId = "RES" + str A3A_taskCount;
   true
   ] call BIS_fnc_taskCreate;
 [_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [localize "STR_A3A_Missions_RIV_RES_Prisoners_task_desc",_faction get "name", _nameDest, _displayTime],
+    [ "STR_A3A_Missions_RIV_RES_Prisoners_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _posHouse = [];
 private _countX = 0;

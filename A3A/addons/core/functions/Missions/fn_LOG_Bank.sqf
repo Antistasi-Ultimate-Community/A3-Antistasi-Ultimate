@@ -51,6 +51,11 @@ private _taskId = "LOG" + str A3A_taskCount;
     _positionX, false, 0, true, "Interact", true
 ] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExec ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_LOG_Bank_task_desc", _nameDest, _displayTime],
+      [ "STR_A3A_Missions_LOG_Bank_task_header"],
+      _mrkFinal
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 // Creating guards
 private _groups = [];
