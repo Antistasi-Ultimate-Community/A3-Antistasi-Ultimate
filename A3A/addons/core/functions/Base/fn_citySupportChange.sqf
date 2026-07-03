@@ -53,4 +53,5 @@ _cityData = [_numCiv, _numVeh, _supportGov, _supportReb];
 
 server setVariable [_city,_cityData,true];
 cityIsSupportChanging = false;
+[_city] call A3A_fnc_mrkUpdate;
 true

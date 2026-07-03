@@ -65,6 +65,7 @@ for "_i" from 1 to _maxResourceCivilians do {
                 private _nameX = [_markerX] call A3A_fnc_localizar;
                 destroyedSites pushBackUnique _markerX;
                 publicVariable "destroyedSites";
+                [_markerX] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
                 ["TaskFailed", ["", format [localize "STR_notifiers_resourcefactory_destoyed", _nameX]]] remoteExec ["BIS_fnc_showNotification",[teamPlayer, civilian]];
             };
         }

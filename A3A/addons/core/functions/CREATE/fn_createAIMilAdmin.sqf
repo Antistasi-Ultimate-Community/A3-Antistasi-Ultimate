@@ -250,14 +250,20 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 waitUntil {sleep 1; spawner getVariable _marker == 2 or {!alive _milAdministration or {!alive _collaborant}}};
 
 switch (true) do {
-	case (!alive _collaborant): {
-		Info_1("Military Administration %1 was captured - collaborant has been killed.", _marker);
-		[_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
-	};
-	case (!alive _milAdministration): {
-		Info_1("Military Administration %1 was destroyed.", _marker);
-		[_milAdministration, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
-	};
+    case (!alive _collaborant): {
+        Info_1("Military Administration %1 was captured - collaborant has been killed.", _marker);
+        [_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
+        sleep 1;
+        [_marker] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+    };
+    case (!alive _milAdministration): {
+        Info_1("Military Administration %1 was destroyed.", _marker);
+        [_milAdministration, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+        destroyedSites pushBackUnique _marker;
+        publicVariable "destroyedSites";
+        sleep 1;
+        [_marker] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+    };
 };
 
 waitUntil {sleep 1; (spawner getVariable _marker == 2)};

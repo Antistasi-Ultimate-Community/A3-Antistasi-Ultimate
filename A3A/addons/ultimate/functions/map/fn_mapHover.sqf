@@ -8,14 +8,13 @@ Description:
     hover update handler, click interaction, and context menu cleanup.
 
 Parameters:
-    None.
-
-Optional:
     0: _attachTooltip - Whether to attach or remove the hover UI system <BOOL>
         (default: true)
 
 Example:
+    (begin example)
     [true] call A3U_fnc_mapHover;
+    (end example)
 
 Returns:
     Nothing <NONE>
@@ -27,19 +26,12 @@ Author:
     Maxx
 ---------------------------------------------------------------------------- */
 
-// Existing A3U_fnc_* public function name kept for backwards compatibility.
-
 private _attachTooltip = param [0, true, [true]];
-
 private _mapDisplay = findDisplay 12;
 if (isNull _mapDisplay) exitWith {};
 
-// Legacy A3U_* display-variable keys are kept for compatibility with the
-// existing hover/menu code that already reads and writes these values.
-
 private _clearContextMenus = {
     params ["_display"];
-
     if (isNull _display) exitWith {};
 
     private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
@@ -58,7 +50,6 @@ private _clearContextMenus = {
 
 private _clearHoverState = {
     params ["_display"];
-
     _display setVariable ["A3U_tipLastMrk", ""];
     _display setVariable ["A3U_tipFadeInStart", -1];
     _display setVariable ["A3U_tipFadeOutStart", -1];
@@ -95,113 +86,76 @@ if (_attachTooltip) then {
 
     [_mapDisplay] call _clearHoverState;
 
-    private _clickHandlerId = _mapControl ctrlAddEventHandler
-        ["MouseButtonDown", {
-            params ["_clickedMapControl", "_button"];
+    private _clickHandlerId = _mapControl ctrlAddEventHandler ["MouseButtonDown", {
+        params ["_clickedMapControl", "_button"];
+        private _display = ctrlParent _clickedMapControl;
+        if (isNull _display) exitWith {};
 
-            private _display = ctrlParent _clickedMapControl;
-            if (isNull _display) exitWith {};
+        private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
+        private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
 
-            private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
-            private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
-
-            if (!isNull _menuGroup || {!isNull _garrisonGroup}) then {
-                private _mousePosition = getMousePosition;
-
-                private _mouseInsideMenu = false;
-                if (!isNull _menuGroup) then {
-                    private _menuPosition = ctrlPosition _menuGroup;
-                    _mouseInsideMenu =
-                        (_mousePosition # 0) >= (_menuPosition # 0)
-                        && {(_mousePosition # 0)
-                            <= ((_menuPosition # 0) + (_menuPosition # 2))}
-                        && {(_mousePosition # 1) >= (_menuPosition # 1)}
-                        && {(_mousePosition # 1)
-                            <= ((_menuPosition # 1) + (_menuPosition # 3))};
-                };
-
-                private _mouseInsideGarrison = false;
-                if (!isNull _garrisonGroup) then {
-                    private _garrisonPosition = ctrlPosition _garrisonGroup;
-                    _mouseInsideGarrison =
-                        (_mousePosition # 0) >= (_garrisonPosition # 0)
-                        && {(_mousePosition # 0)
-                            <= ((_garrisonPosition # 0)
-                            + (_garrisonPosition # 2))}
-                        && {(_mousePosition # 1) >= (_garrisonPosition # 1)}
-                        && {(_mousePosition # 1)
-                            <= ((_garrisonPosition # 1)
-                            + (_garrisonPosition # 3))};
-                };
-
-                if (_mouseInsideMenu || {_mouseInsideGarrison}) exitWith {};
-
-                if (!isNull _menuGroup) then {
-                    ctrlDelete _menuGroup;
-                };
-
-                if (!isNull _garrisonGroup) then {
-                    ctrlDelete _garrisonGroup;
-                };
-
-                _display setVariable ["A3U_mrkMenu_grp", controlNull];
-                _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
-                _display setVariable ["A3U_mrkMenu_marker", ""];
+        if (!isNull _menuGroup || {!isNull _garrisonGroup}) then {
+            private _mousePosition = getMousePosition;
+            private _mouseX = _mousePosition # 0;
+            private _mouseY = _mousePosition # 1;
+            
+            private _mouseInsideMenu = false;
+            if (!isNull _menuGroup) then {
+                private _pos = ctrlPosition _menuGroup;
+                _mouseInsideMenu = (_mouseX >= _pos#0 && _mouseX <= _pos#0 + _pos#2 && _mouseY >= _pos#1 && _mouseY <= _pos#1 + _pos#3);
             };
 
-            if (_button != 0) exitWith {};
-
-            private _hoveredMarker = _display getVariable ["A3U_tipLastMrk", ""];
-            private _hoverScreenPosition = _display getVariable ["A3U_tipHoverScreen", []];
-            if (_hoveredMarker == "" || {_hoverScreenPosition isEqualTo []}) exitWith {};
-
-            private _originalMarker = _hoveredMarker;
-            while {
-                (count _originalMarker) >= 3
-                && {(_originalMarker select [0, 3]) == "Dum"}
-            } do {
-                _originalMarker = _originalMarker select
-                    [3, (count _originalMarker) - 3];
+            private _mouseInsideGarrison = false;
+            if (!isNull _garrisonGroup) then {
+                private _pos = ctrlPosition _garrisonGroup;
+                _mouseInsideGarrison = (_mouseX >= _pos#0 && _mouseX <= _pos#0 + _pos#2 && _mouseY >= _pos#1 && _mouseY <= _pos#1 + _pos#3);
             };
 
-            if ([_originalMarker] call A3U_fnc_isMarkerHidden) exitWith {
-                _display setVariable ["A3U_tipLastMrk", ""];
-                _display setVariable ["A3U_tipHoverScreen", []];
-            };
+            if (_mouseInsideMenu || {_mouseInsideGarrison}) exitWith {};
 
-            [_hoveredMarker, _hoverScreenPosition] call A3U_fnc_markerContextMenu;
-            _display setVariable ["A3U_tipRippleStart", diag_tickTime];
-        }];
+            if (!isNull _menuGroup) then { ctrlDelete _menuGroup; };
+            if (!isNull _garrisonGroup) then { ctrlDelete _garrisonGroup; };
+
+            _display setVariable ["A3U_mrkMenu_grp", controlNull];
+            _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
+            _display setVariable ["A3U_mrkMenu_marker", ""];
+        };
+
+        if (_button != 0) exitWith {};
+
+        private _hoveredMarker = _display getVariable ["A3U_tipLastMrk", ""];
+        private _hoverScreenPosition = _display getVariable ["A3U_tipHoverScreen", []];
+        if (_hoveredMarker == "" || {_hoverScreenPosition isEqualTo []}) exitWith {};
+
+        private _originalMarker = _hoveredMarker;
+        if ((_originalMarker find "Dum") == 0) then { _originalMarker = _originalMarker select [3, (count _originalMarker) - 3]; };
+
+        if ([_originalMarker] call A3U_fnc_isMarkerHidden) exitWith {
+            _display setVariable ["A3U_tipLastMrk", ""];
+            _display setVariable ["A3U_tipHoverScreen", []];
+        };
+
+        [_hoveredMarker, _hoverScreenPosition] call A3U_fnc_markerContextMenu;
+        _display setVariable ["A3U_tipRippleStart", diag_tickTime];
+    }];
 
     _mapDisplay setVariable ["A3U_tipClickEH", _clickHandlerId];
 
-    private _hoverThresholdPixels = 32;
-    private _updateIntervalSeconds = 0.05;
-
     private _perFrameHandlerId = [{
         _this call A3U_fnc_mapTooltip;
-    }, _updateIntervalSeconds, [
-        _mapDisplay,
-        _mapControl,
-        _hoverThresholdPixels
-    ]] call CBA_fnc_addPerFrameHandler;
-
+    }, 0.05, [_mapDisplay, _mapControl, 32]] call CBA_fnc_addPerFrameHandler;
+    
     _mapDisplay setVariable ["A3U_tipperFrameHandler", _perFrameHandlerId];
+
 } else {
     private _tooltipControl = _mapDisplay getVariable ["A3U_tooltipCtrl", controlNull];
-    if (!isNull _tooltipControl) then {
-        _tooltipControl ctrlShow false;
-    };
+    if (!isNull _tooltipControl) then { _tooltipControl ctrlShow false; };
 
     private _hoverRingControl = _mapDisplay getVariable ["A3U_tooltipRingCtrl", controlNull];
-    if (!isNull _hoverRingControl) then {
-        _hoverRingControl ctrlShow false;
-    };
+    if (!isNull _hoverRingControl) then { _hoverRingControl ctrlShow false; };
 
     private _rippleControl = _mapDisplay getVariable ["A3U_tooltipRippleCtrl", controlNull];
-    if (!isNull _rippleControl) then {
-        _rippleControl ctrlShow false;
-    };
+    if (!isNull _rippleControl) then { _rippleControl ctrlShow false; };
 
     [_mapDisplay] call _clearContextMenus;
 
