@@ -54,7 +54,7 @@ class egl_laghisola {
 		{6809.821,2405.739,4.538},{1806.189,5855.292,3.06},{8404.146,5429.703,15.591}
 		
 	};
-	climate = "Temperate";
+	climate = "Tropical";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
 		BUILDABLES_MODERN_GREEN,
