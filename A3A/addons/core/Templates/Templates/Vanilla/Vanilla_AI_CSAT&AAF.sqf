@@ -99,9 +99,6 @@ private _staticAA = ["O_static_AA_F"];
 ["staticMortars", ["O_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
-private _radar = ["O_Radar_System_02_F"];
-private _SAM = ["O_SAM_System_04_F"];
-
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
@@ -130,8 +127,8 @@ private _SAM = ["O_SAM_System_04_F"];
 ["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
-["vehicleRadar", _radar] call _fnc_saveToTemplate;
-["vehicleSam", _SAM] call _fnc_saveToTemplate;
+["vehicleRadar", "O_Radar_System_02_F"] call _fnc_saveToTemplate;
+["vehicleSam", "O_SAM_System_04_F"] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
 ["vehiclesArtillery", _artillery] call _fnc_saveToTemplate;
@@ -329,21 +326,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack"
-]];
-
-_loadoutData set ["goggles", ["G_Lowprofile"]];
+_loadoutData set ["glasses", ["G_Aviator"]];
+_loadoutData set ["goggles", []];
 
 _sfAccessories = ["acc_pointer_IR", 10];
 _sfTlOptics = ["optic_ACO_grn", 1, "optic_Holosight_blk_F", 2, "optic_Hamr", 4, "optic_MRCO", 3];

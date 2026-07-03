@@ -97,9 +97,6 @@ private _staticAA = ["O_static_AA_F","O_SFIA_ZU23_lxWS"];
 ["staticMortars", ["O_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
-private _radar = [];
-private _SAM = [];
-
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
@@ -128,8 +125,8 @@ private _SAM = [];
 ["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
-["vehicleRadar", _radar] call _fnc_saveToTemplate;
-["vehicleSam", _SAM] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;
+["vehicleSam", ""] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
 ["vehiclesArtillery", _artillery] call _fnc_saveToTemplate;
@@ -155,19 +152,12 @@ private _SAM = [];
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM_desert.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
     #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.sqf",
-    #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.sqf",
-    #include "..\vehicleVariants\GM_police.sqf",
-	#include "..\vehicleVariants\WS_SFIA\GM_SFIA.sqf",
-	#include "..\vehicleVariants\WS_SFIA\CSLA_SFIA.sqf"
+    #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.sqf"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -316,21 +306,8 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack"
-]];
-
-_loadoutData set ["goggles", ["G_Lowprofile","G_Combat_lxWS"]];
+_loadoutData set ["glasses", ["G_Aviator"]];
+_loadoutData set ["goggles", ["G_Combat_lxWS"]];
 
 _sfAccessories = ["acc_pointer_IR", 10];
 _sfTlOptics = ["optic_ACO_grn", 1, "optic_Holosight_blk_F", 2, "optic_Hamr", 4, "optic_MRCO", 3];

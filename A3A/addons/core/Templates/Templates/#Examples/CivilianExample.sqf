@@ -37,17 +37,7 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 
 ["variants", []] call _fnc_saveToTemplate;                 //this line determines particular paintjob/camo for a vehicle --  Example: ["I_Heli_Transport_02_F", ["Dahoman", 1]] -- Array, can contain multiple assets
 
-//or do it like this
-/* ["variants", [
-  #include "..\vehicleVariants\Vanilla_GM_CIV.sqf"
-]] call _fnc_saveToTemplate; */
-
 ["animations", []] call _fnc_saveToTemplate;                //     -- Example: ["vehClass", ["animsourcefromgarage1", 0.3, "animsourcefromgarage2", 0.25, "animsourcefromgarage3", 0.3, "animsourcefromgarage4", 0.3]] -- Array, can contain multiple assets
-
-//or do it like this
-/* ["animations", [
-  #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
-]] call _fnc_saveToTemplate; */
 
 /////////////////////////////////
 ///  Identities and currency  ///

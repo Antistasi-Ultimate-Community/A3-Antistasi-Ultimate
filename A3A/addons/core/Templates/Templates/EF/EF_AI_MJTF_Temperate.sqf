@@ -105,9 +105,6 @@ private _staticAT = ["B_T_Static_AT_F","B_GMG_01_high_F"];
 ["staticMortars", ["B_T_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
-private _radar = [];
-private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
-
 ["howitzerMagazineHE", "magazine_ShipCannon_120mm_HE_shells_x32","magazine_ShipCannon_120mm_HE_cluster_shells_x2"] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
@@ -142,8 +139,8 @@ private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
 ["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
-["vehicleRadar", _radar] call _fnc_saveToTemplate;
-["vehicleSam", _SAM] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;
+["vehicleSam", "EF_LPD_Turret_1_MJTF_Wdl"] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
 ["vehiclesArtillery", _artillery] call _fnc_saveToTemplate;
@@ -161,14 +158,10 @@ private _SAM = ["EF_LPD_Turret_1_MJTF_Wdl"];
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_NATO_Temparate\CSLA_NATO_Temparate.sqf",
-    #include "..\vehicleVariants\Vanilla_NATO_Temparate\GM_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\RF_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\Vanilla_NATO_Temparate.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Temparate\WS_NATO_Temparate.sqf"
@@ -316,25 +309,7 @@ _loadoutData set ["items_police_extras", []];
 _loadoutData set ["items_crew_extras", []];
 _loadoutData set ["items_unarmed_extras", []];
 
-_loadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_loadoutData set ["glasses", ["G_Aviator"]];
 _loadoutData set ["goggles", ["G_Combat"]];
 
 private _slglammo = ["UGL_FlareWhite_F", "UGL_FlareWhite_F", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell"];
@@ -372,25 +347,7 @@ _sfLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
 _sfLoadoutData set ["helmets", ["EF_H_HelmetB_light_black_slick", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_FullCamo_Black"]];
 _sfLoadoutData set ["binoculars", ["Laserdesignator"]];
 _sfLoadoutData set ["NVGs", ["EF_LPNVG_Tan", "EF_LPNVG"]];
-_sfLoadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_sfLoadoutData set ["glasses", []];
 _sfLoadoutData set ["goggles", ["G_Combat"]];
 
 _sfLoadoutData set ["slRifles", [
@@ -453,25 +410,7 @@ _eliteLoadoutData set ["backpacks", ["EF_B_RaiderPack_black"]];
 _eliteLoadoutData set ["helmets", ["EF_H_HelmetB_light_black_slick", "EF_H_MCH_BasicNet_Black", "EF_H_MCH_FullCamo_Black"]];
 _eliteLoadoutData set ["binoculars", ["Laserdesignator"]];
 _eliteLoadoutData set ["NVGs", ["EF_LPNVG_Tan", "EF_LPNVG"]];
-_eliteLoadoutData set ["glasses", [
-    "G_Aviator",
-    "G_Shades_Black",
-    "G_Shades_Blue",
-    "G_Shades_Green",
-    "G_Shades_Red",
-    "G_Spectacles",
-    "G_Spectacles_Tinted",
-    "G_Sport_Red",
-    "G_Sport_Blackyellow",
-    "G_Sport_BlackWhite",
-    "G_Sport_Checkered",
-    "G_Sport_Blackred",
-    "G_Sport_Greenblack",
-    "G_Squares_Tinted",
-    "G_Squares",
-    "G_Tactical_Clear",
-    "G_Tactical_Black"
-]];
+_eliteLoadoutData set ["glasses", []];
 _eliteLoadoutData set ["goggles", ["G_Combat"]];
 
 _eliteLoadoutData set ["slRifles", [
