@@ -168,7 +168,15 @@ private _rebUniforms = [
   "U_Simc_TCU_mk3_tuck_zwart",
   "U_Simc_TCU_mk3_zwart",
   "U_Simc_OG107_mk3_gas_trop_blench",
-  "U_Simc_OG107_mk3_gas_blench"
+  "U_Simc_OG107_mk3_gas_blench",
+  "AFR_U_fia_bdu_m81_tee",
+  "AFR_U_fia_bdu_m81_liz",
+  "AFR_U_fia_bdu_m81_grun",
+  "AFR_U_fia_bdu_m81_tan",
+  "AFR_U_fia_bdu_m81",
+  "AFR_U_fia_bdu_liz_tee",
+  "AFR_U_fia_bdu_liz_grun",
+  "AFR_U_fia_bdu_liz_tan"
 ];
 
 private _dlcUniforms = [];
@@ -178,7 +186,9 @@ private _headgear = [
   "tsp_gear_peltor_tan",
   "H_Bandanna_khk",
   "H_Booniehat_oli",
-  "H_Hat_Safari_olive_F"
+  "H_Hat_Safari_olive_F",
+  "AFR_H_aaf_patrol_hat_liz",
+  "AFR_H_aaf_patrol_hat_m81"
 ];
 
 private _dlcHeadgear = [];

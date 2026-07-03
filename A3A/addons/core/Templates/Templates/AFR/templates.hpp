@@ -37,17 +37,15 @@
         description = "The New Takistan Army is a unique hybrid.\nThey were given an injection of US vehicles, yet their equipment still struggles to evolve away from the Soviet standard.";
         climate[] = {"arid"};
     };
-    /*
     class AFR_LDF : AFR_Base
     {
         side = "Occ";
         name = "Livonian Defense Forces (AFR)";
         file = "AFR_LDF";
-        flagTexture = "";
+        flagTexture = "a3\data_f_enoch\flags\flag_enoch_co.paa";
         description = "";
         climate[] = {"temperate", "arctic"};
     };
-    */
 
     class AFR_US_Army_Arid : AFR_Base
     {
