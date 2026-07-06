@@ -87,6 +87,7 @@ class cfgHALsStore
 		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
 		#include "config\mpp.hpp"
+		#include "config\qdi.hpp"
 	};
 
 	class stores 
@@ -1016,6 +1017,18 @@ class cfgHALsStore
 				"muzzlesMPP",
 				"opticsMPP",
 				"magazinesMPP"
+			};
+		};
+		class qdi_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsQDI",
+				"riflesQDI",
+				"mgQDI",
+				"sniperRiflesQDI",
+				"opticsQDI",
+				"magazinesQDI"
 			};
 		};
 	};

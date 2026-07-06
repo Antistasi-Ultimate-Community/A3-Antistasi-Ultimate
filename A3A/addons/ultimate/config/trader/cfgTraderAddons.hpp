@@ -402,3 +402,8 @@
         addons[] = {"PHEN_TurretPack"};
         vehicles = "vehicles_scifitp";
     };
+    class addons_QDI : addons_base
+    {
+        addons[] = {"qdi_core"};
+        weapons = "weapons_QDI";
+    };
