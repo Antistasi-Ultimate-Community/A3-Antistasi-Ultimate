@@ -290,13 +290,13 @@ if (_varName in specialVarLoads) then {
             if (count citiesX != count _varValue) exitWith {};          // it'll be the same in the next one
             for "_i" from 0 to (count citiesX) - 1 do {
                 _city = citiesX select _i;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 _numCiv = _dataX select 0;
                 _numVeh = _dataX select 1;
                 _prestigeOPFOR = _varvalue select _i;
                 _prestigeBLUFOR = _dataX select 3;
                 _dataX = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
-                server setVariable [_city,_dataX,true];
+                A3A_townData set [_city, _dataX];
             };
         };
 
@@ -305,19 +305,19 @@ if (_varName in specialVarLoads) then {
                 Error("City count changed, setting approx support");
                 {
                     if (sidesX getVariable _x != teamPlayer) then { continue };                // sides should be loaded first
-                    private _dataX = (server getVariable _x select [0,2]) + [0,75];             // 75% rebel support
-                    server setVariable [_x, _dataX, true];
+                    private _dataX = (A3A_townData get _x select [0,2]) + [0,75];             // 75% rebel support
+                    A3A_townData set [_x, _dataX];
                 } forEach citiesX;
             };
             for "_i" from 0 to (count citiesX) - 1 do {
                 _city = citiesX select _i;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 _numCiv = _dataX select 0;
                 _numVeh = _dataX select 1;
                 _prestigeOPFOR = _dataX select 2;
                 _prestigeBLUFOR = _varvalue select _i;
                 _dataX = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
-                server setVariable [_city,_dataX,true];
+                A3A_townData set [_city, _dataX];
             };
         };
 
@@ -430,6 +430,7 @@ if (_varName in specialVarLoads) then {
             publicVariable "staticsToSave";
             publicVariable "staticsToFlip";
             publicVariable "A3A_buildingsToSave";
+            publicVariable "A3A_townData";
         };
 
         case 'tasks': {

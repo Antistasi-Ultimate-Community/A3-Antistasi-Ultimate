@@ -7,6 +7,8 @@ if (!isServer) exitWith {Error("Server-only function miscalled")};
 
 if (isNil "_city" || {_city isEqualTo ""}) exitWith {Error("Function was called incorrectly. _city param must be a city marker.")};
 
+if (_city in townSkirmishes) exitWith {nil};
+
 if (_rebel) then {
     ["TaskSucceeded", ["", format [localize "STR_notifiers_city_joined",_city,FactionGet(reb,"name")]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
     sidesX setVariable [_city,teamPlayer,true];

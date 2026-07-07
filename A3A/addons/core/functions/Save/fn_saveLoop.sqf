@@ -272,7 +272,7 @@ _prestigeBLUFOR = [];
 
 {
 	_city = _x;
-	_dataX = server getVariable _city;
+	_dataX = A3A_townData get _city;
 	_prestigeOPFOR = _prestigeOPFOR + [_dataX select 2];
 	_prestigeBLUFOR = _prestigeBLUFOR + [_dataX select 3];
 } forEach citiesX;
