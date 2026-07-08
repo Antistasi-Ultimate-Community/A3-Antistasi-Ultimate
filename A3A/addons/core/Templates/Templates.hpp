@@ -717,4 +717,9 @@ class Templates
     // ***************************** E22 *****************************
 
     #include "Templates\E22\templates.hpp"
+    
+    // ***************************** AFR *****************************
+
+    #include "Templates\AFR\templates.hpp"
+
 };
