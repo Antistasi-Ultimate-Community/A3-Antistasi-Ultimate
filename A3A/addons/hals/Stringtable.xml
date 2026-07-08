@@ -890,13 +890,6 @@
                 <French>RHS</French>
                 <Chinesesimp>RHS</Chinesesimp>
             </Key>
-            <Key ID="STR_A3AU_scion">
-                <Original>Scion</Original>
-                <Russian>Scion</Russian>
-                <Korean>Scion</Korean>
-                <French>Scion</French>
-                <Chinesesimp>Scion</Chinesesimp>
-            </Key>
             <Key ID="STR_A3AU_sfp">
                 <Original>SFP</Original>
                 <Russian>SFP</Russian>

@@ -6725,20 +6725,6 @@
                 <Korean>스펙트럼 장치 지원 아이템의 사용 가능 여부와 게임 내 효과를 전환합니다.</Korean>
                 <French>Active ou désactive la disponibilité du dispositif spectre et ses effets en jeu.</French>
             </Key>
-            <Key ID="STR_params_disableAutoSmokeCover">
-                <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
-                <Russian>Выключить скрипт для автоматической постановки дымовых завес (помогает с производительностью)</Russian>
-                <Chinesesimp>禁用自动烟雾覆盖脚本（有助于提高性能）</Chinesesimp>
-                <Korean>자동 연막 숨기 스크립트 비활성화 (성능 향상에 도움)</Korean>
-                <Turkish>Otomatik Sis Perdesi Devre Dışı Bırak (Performansa yardımcı olur)</Turkish>
-            </Key>
-            <Key ID="STR_params_disableAutoSmokeCover_desc">
-                <Original>Disable the automatic smoke cover script to save CPU; disabling may reduce some tactical automatic behaviour.</Original>
-                <Russian>Отключает автоматический скрипт дымовой завесы для экономии CPU; это может изменить некоторое автоматическое тактическое поведение.</Russian>
-                <Chinesesimp>禁用自动烟雾掩护脚本以节省CPU；禁用后某些战术自动行为可能减少。</Chinesesimp>
-                <Korean>CPU 절약을 위해 자동 연막 엄폐 스크립트를 비활성화합니다. 비활성화하면 일부 전술 자동 동작이 감소할 수 있습니다.</Korean>
-                <French>Désactive le script de brouillard automatique pour économiser le CPU ; cela peut réduire certains comportements tactiques automatiques.</French>
-            </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником несправедливых (несбалансированных) вариантов поддержки</Russian>
@@ -14904,7 +14890,7 @@
                 <Turkish>İletişim sektöründe çalışan birkaç tanıdığım var. Eğer bir bilgi alırlarsa sana haber veririm.</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_success_weapons1">
-                <Original>I drive past a warehouse on my way to the factory and a few days ago I saw the military offloading some disguised trucks. Real sneaky - They don't fool me!</Original>
+                <Original>I drove past a warehouse on my way to the factory and, a few days ago, I saw the military offloading some disguised trucks. Real sneaky - They don't fool me!</Original>
                 <Russian>Я проезжаю мимо склада по пути на фабрику, и несколько дней назад видел, как военные разгружали несколько замаскированных грузовиков. Очень хитро — меня они не обманут!</Russian>
                 <German>Ich fahre an einem Lagerhaus vorbei, wenn ich zur Fabrik fahre, und vor ein paar Tagen habe ich die Militärs gesehen, die einige getarnte Lkw entladen haben. Richtig hinterhältig – mich täuschen sie nicht!</German>
                 <Italian>Passo davanti a un magazzino mentre vado in fabbrica, e qualche giorno fa ho visto i militari scaricare dei camion mascherati. Molto furbi - Non mi fregano!</Italian>

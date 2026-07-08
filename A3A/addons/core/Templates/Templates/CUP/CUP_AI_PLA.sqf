@@ -33,8 +33,6 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 
 ["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_T_East_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -54,7 +52,7 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["vehiclesAirborne", ["Flex_CUP_PLA_Tigr_M_233114_PK", "Flex_CUP_PLA_Tigr_M_233114_KORD", "Flex_CUP_PLA_LSV_02_armed"]] call _fnc_saveToTemplate;              // airborne vehicles, could be with passenger seats or just a crew 
 ["vehiclesIFVs", ["Flex_CUP_PLA_APC_Tracked_02"]] call _fnc_saveToTemplate;                  // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
 ["vehiclesTanks", ["Flex_CUP_PLA_T90MS"]] call _fnc_saveToTemplate;                 // cannon armed, heavely armored, passengers will be ignored
-["vehiclesLightTanks", ["O_UGV_01_rcws_F"]] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
+["vehiclesLightTanks", []] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
 ["vehiclesAA", ["Flex_CUP_PLA_APC_Tracked_02_AA"]] call _fnc_saveToTemplate;                    // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
 
 ["vehiclesTransportBoats", ["Flex_CUP_PLA_RHIB_Unarmed"]] call _fnc_saveToTemplate;	// boat that can carry passengers and cargoboxes

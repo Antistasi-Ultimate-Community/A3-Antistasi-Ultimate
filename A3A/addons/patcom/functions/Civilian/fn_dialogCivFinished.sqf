@@ -39,9 +39,11 @@ if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
     [_unit, _failMessage] remoteExec ["globalChat", _caller];
 };
 
+private _city = [citiesX, _unit] call BIS_fnc_nearestPosition; 
+private _citySide = sidesX getVariable [_city, sideUnknown];
 private _possibleMarkers = [citiesX, _unit, true] call A3A_fnc_findIfNearAndHostile;
 
-private _isDialogSuccessful = (captive _caller && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
+private _isDialogSuccessful = ((captive _caller || _citySide isEqualTo teamPlayer) && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
 
 if (_isDialogSuccessful) exitWith {
     private _roll = random 100;
@@ -169,7 +171,7 @@ private _failMessage = selectRandom [
     "STR_antistasi_actions_talk_with_civ_fail3"
 ];
 
-if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
+if (!(captive _caller) && {_citySide isNotEqualTo teamPlayer}) then {
     _failMessage = selectRandom [
         "STR_antistasi_actions_talk_with_civ_fail_notundercover1",
         "STR_antistasi_actions_talk_with_civ_fail_notundercover2"
