@@ -51,7 +51,7 @@ class RscTitles
 		};
 		class BackgroundNoise: RscPicture
 		{
-			text = QPATHTOFOLDER(data\backgrounds\LoadingScreen\AUC_Credits_Blank_co.jpg);
+			text = QPATHTOFOLDER(data\backgrounds\loading_screen\loading_bg_co.jpg);
 			colorText[]={1,1,1,1};
 			x="safezoneX";
 			y="safezoneY";
@@ -133,7 +133,7 @@ class RscTitles
 		};
 		class Picture: RscPicture
 		{
-			text = QPATHTOFOLDER(data\backgrounds\LoadingScreen\AUC_Credits_co.jpg);
+			text = QPATHTOFOLDER(data\backgrounds\loading_screen\auc_credits_blank_co.jpg); // We could use normal credits here, but it's annoying to update
 			colorText[]={1,1,1,1};
 			x="safezoneX";
 			y="safezoneY";
@@ -167,7 +167,7 @@ class RscTitles
 		};
 		class Picture: RscPicture
 		{
-			text = QPATHTOFOLDER(data\backgrounds\LoadingScreen\AUC_Updates_co.jpg);
+			text = QPATHTOFOLDER(data\backgrounds\loading_screen\auc_updates_co.jpg);
 			colorText[]={1,1,1,1};
 			x="safezoneX";
 			y="safezoneY";
@@ -266,7 +266,7 @@ class RscDisplayMain: RscStandardDisplay //main menu
 		delete SpotlightPrev;
 		class Logo: RscActivePicture
 		{
-			text = QPATHTOFOLDER(data\buttons\AUC_Logo.paa);
+			text = QPATHTOFOLDER(data\buttons\logo_auc_ca.paa);
 			tooltip="Change Background Image";
 			color[]={0.89999998,0.89999998,0.89999998,1};
 			colorActive[]={1,1,1,1};
@@ -281,96 +281,6 @@ class RscDisplayMain: RscStandardDisplay //main menu
 			onKillFocus="(_this select 0) ctrlsettextcolor [0.9,0.9,0.9,1];";
 			onLoad="";
 		};
-		// class base_side_btn
-		// {
-		// 	onLoad = "(_this # 0) ctrlEnable false;";
-		// 	type = 1;
-		// 	idc = -1;
-		// 	style = 48;
-		// 	x = "safeZoneX + safeZoneW - 0.187";
-		// 	y = "safeZoneY + safeZoneH - 0.28";
-		// 	w = 0.18;
-		// 	h = 0.05;
-		// 	text = QPATHTOFOLDER(data\buttons\SteamB.paa); // No text needed for an image button
-		// 	colorBackground[] = {0, 0, 0, 0};
-		// 	colorText[] = {1, 1, 1, 1};
-		// 	font = "RobotoCondensed";
-		// 	sizeEx = 0.04;
-		// 	colorFocused[] = {1, 1, 1, 0.9};
-		// 	colorShadow[] = {0, 0, 0, 0};
-		// 	colorBorder[] = {0, 0, 0, 0};
-		// 	shadow = 0;
-		// 	soundEnter[] = {"", 0.1, 1};
-		// 	soundPush[] = {"", 0.1, 1};
-		// 	soundClick[] = {"", 0.1, 1};
-		// 	soundEscape[] = {"", 0.1, 1};
-		// 	colorDisabled[] = {0, 0, 0, 0};
-		// 	colorBackgroundActive[] = {0, 0, 0, 0};
-		// 	colorBackgroundDisabled[] = {0, 0, 0, 0};
-		// 	offsetX = 0;
-		// 	offsetY = 0;
-		// 	offsetPressedX = 0;
-		// 	offsetPressedY = 0;
-		// 	borderSize = 0;
-		// 	onMouseButtonClick = "-";
-		// };
-		// class SteamButton1: base_side_btn 
-		// {
-		// 	onLoad = "(_this # 0) ctrlEnable true";
-		// 	text = QPATHTOFOLDER(data\buttons\SteamB.paa); // Path to button image
-		// 	tooltip = "Steam workshop Mod";
-		// 	url = "https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032";
-		// 	onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB_Hov.paa""";
-		// 	onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB.paa""";
-		// 	onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB_Hov.paa""";
-		// 	onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\SteamB.paa""";
-		// };
-		// class GitHubButton2: SteamButton1
-		// {
-		// 	y = "safeZoneY + safeZoneH - 0.34";
-		// 	text = QPATHTOFOLDER(data\buttons\GitB.paa); // Path to button image
-		// 	tooltip="GitHub Page";
-		// 	url = "https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate";
-		// 	onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB_Hov.paa""";
-		// 	onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB.paa""";
-		// 	onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB_Hov.paa""";
-		// 	onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\GitB.paa""";
-		// };
-		// class ServerButton3: base_side_btn
-		// {
-		// 	onLoad = "(_this # 0) ctrlEnable true";
-		// 	y = "safeZoneY + safeZoneH - 0.4";
-		// 	text = QPATHTOFOLDER(data\buttons\ServerB.paa); // No text needed for an image button
-		// 	tooltip="Connect to our community server!";
-		// 	onMouseButtonClick = "connectToServer ['138.201.62.114', 2402, '1221']";
-		// 	onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB_Hov.paa""";
-		// 	onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB.paa""";
-		// 	onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB_Hov.paa""";
-		// 	onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ServerB.paa""";
-		// };
-		// class ArmaCreditsButton4: base_side_btn 
-		// {
-		// 	onLoad = "(_this # 0) ctrlEnable true";
-		// 	x = "safeZoneX + 0.007";
-		// 	text = QPATHTOFOLDER(data\buttons\ArmaCredits.paa); // No text needed for an image button
-		// 	tooltip="ArmA 3 Credits";
-		// 	onMouseButtonClick = "if (scriptdone (missionnamespace getvariable ['RscDisplayMain_credits',scriptnull])) then {RscDisplayMain_credits = _this spawn (uinamespace getvariable 'bis_fnc_credits');};";
-		// 	onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits_Hov.paa""";
-		// 	onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits.paa""";
-		// 	onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits_Hov.paa""";
-		// 	onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\ArmaCredits.paa""";
-		// };
-		// class WebsiteButton5: ArmaCreditsButton4
-		// {
-		// 	y = "safeZoneY + safeZoneH - 0.34";
-		// 	text = QPATHTOFOLDER(data\buttons\WebsiteB.paa); // No text needed for an image button
-		// 	tooltip="Official Website";
-		// 	url = "https://antistasiultimate.com";
-		// 	onMouseEnter = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB_Hov.paa""";
-		// 	onMouseExit = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB.paa""";
-		// 	onMouseButtonUp = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB_Hov.paa""";
-		// 	onMouseButtonDown = "(_this select 0) ctrlSetText ""\x\a3a\addons\main_menu\data\buttons\WebsiteB.paa""";
-		// };
 	};
 };
 #endif

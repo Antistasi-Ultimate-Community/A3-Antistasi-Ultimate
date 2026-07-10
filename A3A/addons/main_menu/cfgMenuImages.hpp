@@ -106,7 +106,7 @@
     };
     class intro_sunset
     {
-        path = QPATHTOFOLDER(data\backgrounds\images\sunset_co.jpg);
+        path = QPATHTOFOLDER(data\backgrounds\images\sunset_desert_co.jpg);
         name = "Sunset";
     };
     class intro_sweden
