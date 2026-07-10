@@ -266,20 +266,20 @@ class RscDisplayMain: RscStandardDisplay //main menu
 		delete SpotlightPrev;
 		class Logo: RscActivePicture
 		{
-			text = QPATHTOFOLDER(data\buttons\AU_Logo.paa);
-			tooltip="";
+			text = QPATHTOFOLDER(data\buttons\AUC_Logo.paa);
+			tooltip="Change Background Image";
 			color[]={0.89999998,0.89999998,0.89999998,1};
 			colorActive[]={1,1,1,1};
 			shadow=0;
-			x="0.5 - 	5 * 	(pixelW * pixelGrid * 2)";
-			y="safezoneY + (2.75 - 0.25 * 	5) * 	(pixelH * pixelGrid * 2)"; //safezoneY + (2.75 - 0.25 * 	5) * 	(pixelH * pixelGrid * 2)
-			w="2 * 	5 * 	(pixelW * pixelGrid * 2)";
-			h="0.5 * 	5 * 	(pixelH * pixelGrid * 2)";
+			x = "0.5 - 	5 * 	(pixelW * pixelGrid * 2)";
+			y = "safezoneY + (3 - 0.5 * 	5) * 	(pixelH * pixelGrid * 2)";
+			w = "2 * 	5 * 	(pixelW * pixelGrid * 2)";
+			h = "1 * 	5 * 	(pixelH * pixelGrid * 2)";
 			url = "";
-			onButtonClick="";
+			onButtonClick="[ctrlParent (_this select 0)] call cba_settings_fnc_openSettingsMenu;";
 			onSetFocus="(_this select 0) ctrlsettextcolor [1,1,1,1];";
 			onKillFocus="(_this select 0) ctrlsettextcolor [0.9,0.9,0.9,1];";
-			onLoad="(_this select 0) ctrlshow !(395180 in getDLCs 1)";
+			onLoad="";
 		};
 		// class base_side_btn
 		// {

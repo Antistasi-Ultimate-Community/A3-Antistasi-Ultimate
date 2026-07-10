@@ -9,6 +9,61 @@
         path = "None";
         name = "None";
     };
+    class intro_random
+    {
+        path = "Random";
+        name = "Random";
+    };
+    class intro_merc
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\merc_co.jpg);
+        name = "Mercenary";
+    };
+    class intro_clearsky
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\clearsky_co.jpg);
+        name = "Clear Sky";
+    };
+    class intro_zombies
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\zombies_co.jpg);
+        name = "Zombies";
+    };
+    class intro_vanguard
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\vanguard_co.jpg);
+        name = "Vanguard";
+    };
+    class intro_interaction
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\interaction_co.jpg);
+        name = "Interaction";
+    };
+    class intro_roadblock
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\roadblock_co.jpg);
+        name = "Roadblock";
+    };
+    class intro_garrison
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\garrison_co.jpg);
+        name = "Garrison";
+    };
+    class intro_victory
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\victory_co.jpg);
+        name = "Victory";
+    };
+    class intro_maps
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\maps_co.jpg);
+        name = "Maps";
+    };
+    class intro_chase
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\chase_co.jpg);
+        name = "Heli Chase";
+    };
     class intro_rebellion
     {
         path = QPATHTOFOLDER(data\backgrounds\images\rebellion_co.jpg);
@@ -18,21 +73,6 @@
     {
         path = QPATHTOFOLDER(data\backgrounds\images\a3au_co.jpg);
         name = "Antistasi Ultimate";
-    };
-    class intro_bwa
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\bwa_co.jpg);
-        name = "Bundeswehr";
-    };
-    class intro_androids_vanguard
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\androids_1_co.jpg);
-        name = "Androids (Vanguard)";
-    };
-    class intro_androids_expeditionary
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\androids_4_co.jpg);
-        name = "Androids (Expeditionary)";
     };
     class intro_em
     {
@@ -59,40 +99,10 @@
         path = QPATHTOFOLDER(data\backgrounds\images\snowtrooper_co.jpg);
         name = "Star Wars Empire";
     };
-    class intro_ffaa
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\ffaa_co.jpg);
-        name = "Spain";
-    };
-    class intro_italy
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\italy_co.jpg);
-        name = "Italy";
-    };
-    class intro_maps
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\maps_co.jpg);
-        name = "Maps";
-    };
-    class intro_modsets
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\modsets_co.jpg);
-        name = "Modsets";
-    };
-    class intro_chase
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\chase_co.jpg);
-        name = "Heli Chase";
-    };
     class intro_selfie
     {
         path = QPATHTOFOLDER(data\backgrounds\images\selfie_co.jpg);
         name = "#Selfie!";
-    };
-    class intro_stealth
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\stealth_co.jpg);
-        name = "Stealth";
     };
     class intro_sunset
     {
@@ -128,11 +138,6 @@
     {
         path = QPATHTOFOLDER(data\backgrounds\images\vietnam_co.jpg);
         name = "Vietnam";
-    };
-    class intro_zombies
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\zombies_co.jpg);
-        name = "Zombies";
     };
     class intro_hrLoss
     {
