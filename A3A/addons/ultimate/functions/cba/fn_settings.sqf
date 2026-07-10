@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 
-private _settingHeader = "[Antistasi Ultimate]";
+private _settingHeader = ["[Antistasi Ultimate]", "Gameplay"]; // This ensures the main menu setting is at the top
 
 [
     "A3U_setting_enableAdvancedTowing", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
