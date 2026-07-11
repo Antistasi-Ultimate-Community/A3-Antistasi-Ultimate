@@ -53,3 +53,5 @@
 #include "vehicles_ScifiVP.hpp"
 #include "vehicles_ScifiTP.hpp"
 #include "vehicles_jcals.hpp"
+#include "vehicles_qav.hpp"
+#include "vehicles_qav_vve.hpp"
