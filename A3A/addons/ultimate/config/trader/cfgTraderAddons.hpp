@@ -407,3 +407,13 @@
         addons[] = {"qdi_core"};
         weapons = "weapons_QDI";
     };
+    class addons_QAV : addons_base
+    {
+        addons[] = {"QAV_Core"};
+        vehicles = "vehicles_qav";
+    };
+    class addons_QAV_VVE : addons_base
+    {
+        addons[] = {"vve_core"};
+        vehicles = "vehicles_qav_vve";
+    };
