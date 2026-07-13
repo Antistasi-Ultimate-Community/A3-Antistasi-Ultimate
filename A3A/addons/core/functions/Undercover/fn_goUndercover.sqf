@@ -77,7 +77,7 @@ private _secureBases = (
 
 private _lastBaseInside = "";
 private _reason = "";
-["Undercover", [""]] call EFUNC(Events,triggerEvent);
+["Undercover", [""]] spawn EFUNC(Events,triggerEvent);
 
 while {_reason == ""} do
 {
@@ -332,4 +332,4 @@ switch (_reason) do
         ["Undercover", "STR_A3A_fn_undercover_goUn_Error"] call A3A_fnc_customHint;
     };
 };
-["Undercover", [_reason]] call EFUNC(Events,triggerEvent);
+["Undercover", [_reason]] spawn EFUNC(Events,triggerEvent);

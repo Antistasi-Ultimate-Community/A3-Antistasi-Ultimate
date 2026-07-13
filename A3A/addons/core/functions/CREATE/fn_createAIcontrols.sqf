@@ -284,7 +284,7 @@ while {(spawner getVariable _markerX != 2) and ({[_x,_markerX] call A3A_fnc_canC
     sleep 3;
 };
 
-["locationSpawned", [_markerX, "Control", true]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "Control", true]] spawn EFUNC(Events,triggerEvent);
 
 waitUntil {sleep 1;((spawner getVariable _markerX == 2))  or ({[_x,_markerX] call A3A_fnc_canConquer} count _soldiers == 0)};
 
@@ -383,4 +383,4 @@ if (_conquered) then
             };
     };
 };
-["locationSpawned", [_markerX, "Control", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "Control", false]] spawn EFUNC(Events,triggerEvent);

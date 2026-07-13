@@ -399,7 +399,7 @@ else
 };
 
 markersChanging = markersChanging - [_markerX];
-["markerChange", [_markerX, _winner]] call EFUNC(Events,triggerEvent);
+["markerChange", [_markerX, _winner]] spawn EFUNC(Events,triggerEvent);
 
 if (_winner == teamPlayer) then {
 	[_loser] remoteExecCall ["SCRT_fnc_common_defeatFactionIfPossible", 2];

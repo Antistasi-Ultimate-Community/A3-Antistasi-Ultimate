@@ -19,4 +19,4 @@ petros setBehaviour "SAFE";
 [getPos petros, false] remoteExec ["A3A_fnc_relocateHQObjects", 2];
 
 sleep 5;
-["HQPlaced", [getPos petros]] call EFUNC(Events,triggerEvent);
+["HQPlaced", [getPos petros]] spawn EFUNC(Events,triggerEvent);

@@ -84,7 +84,7 @@ switch (true) do {
 		_garrison = [_riflemanType] + _squadType;
 		garrison setVariable [_marker,_garrison,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		["RebelControlCreated", [_marker, "roadblock"]] call EFUNC(Events,triggerEvent);
+		["RebelControlCreated", [_marker, "roadblock"]] spawn EFUNC(Events,triggerEvent);
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

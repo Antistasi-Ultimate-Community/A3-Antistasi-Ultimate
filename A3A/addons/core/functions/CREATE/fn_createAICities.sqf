@@ -49,11 +49,11 @@ private _roadPositions = (_positionX nearRoads round(_patrolSize / 2));
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
 if (_civNonHuman && {(selectRandom [1,2,3]) isEqualTo 2}) exitWith {
-	["locationSpawned", [_markerX, "City", true]] call EFUNC(Events,triggerEvent);
+	["locationSpawned", [_markerX, "City", true]] spawn EFUNC(Events,triggerEvent);
 
 	waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 
-	["locationSpawned", [_markerX, "City", false]] call EFUNC(Events,triggerEvent);
+	["locationSpawned", [_markerX, "City", false]] spawn EFUNC(Events,triggerEvent);
 };
 
 while {(spawner getVariable _markerX != 2) and (_countX < _num)} do {
@@ -89,7 +89,7 @@ while {(spawner getVariable _markerX != 2) and (_countX < _num)} do {
 	_countX = _countX + 1;
 };
 
-["locationSpawned", [_markerX, "City", true]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "City", true]] spawn EFUNC(Events,triggerEvent);
 
 waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 
@@ -97,4 +97,4 @@ waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 {deleteVehicle _x} forEach _dogs;
 { deleteGroup _x } forEach _groups;
 
-["locationSpawned", [_markerX, "City", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_markerX, "City", false]] spawn EFUNC(Events,triggerEvent);

@@ -292,4 +292,4 @@ if (!isNil "_grpPOW") then {
 	[_grpPOW] spawn A3A_fnc_groupDespawner;
 };
 
-["locationSpawned", [_marker, "MilAdmin", false]] call EFUNC(Events,triggerEvent);
+["locationSpawned", [_marker, "MilAdmin", false]] spawn EFUNC(Events,triggerEvent);

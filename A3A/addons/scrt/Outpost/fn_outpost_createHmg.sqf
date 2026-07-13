@@ -82,7 +82,7 @@ switch (true) do {
 		garrison setVariable [_marker,_garrison,true];
 		staticPositions setVariable [_marker, [_position, _direction], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		["RebelControlCreated", [_marker, "hmgemplacement"]] call EFUNC(Events,triggerEvent);
+		["RebelControlCreated", [_marker, "hmgemplacement"]] spawn EFUNC(Events,triggerEvent);
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

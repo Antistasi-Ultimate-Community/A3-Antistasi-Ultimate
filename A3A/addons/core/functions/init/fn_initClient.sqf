@@ -655,6 +655,7 @@ if (saveZeusBuildings) then {
 
 initClientDone = true;
 Info("initClient completed");
+["initClientComplete", []] spawn EFUNC(Events,triggerEvent);
 
 if (!isMultiplayer) then {
 	["noSingleplayer",false,1,false,false] call BIS_fnc_endMission;
