@@ -118,7 +118,7 @@ _driver action ["VectoringUp", _veh];
 _driver action ["VectoringUp", _veh];
 if (alive _veh && canMove _veh) then
 {
-    [_veh] call A3A_fnc_smokeCoverAuto;
+    // [_veh] call A3A_fnc_smokeCoverAuto;
     
     {
         if (!alive _x) then { continue };

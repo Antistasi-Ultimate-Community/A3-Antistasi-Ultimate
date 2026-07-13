@@ -250,7 +250,6 @@ while {_countX < _vehCount} do {
     if (_spawnParameter isEqualType []) then {
         private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
         private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
-        private _uavsAttack = _faction getOrDefault ["uavsAttack", []];
         private _vehPool = [];
         {
             _vehPool pushBack _x;
@@ -260,10 +259,6 @@ while {_countX < _vehCount} do {
             _vehPool pushBack _x;
             _vehPool pushBack 1;
         } forEach _vehiclesPlanesAA;
-        {
-            _vehPool pushBack _x;
-            _vehPool pushBack A3A_UAVSpawnChance;
-        } forEach _uavsAttack;
         _spawnsUsed pushBack (_spawnParameter select 2);
         private _typeVehX = selectRandomWeighted _vehPool;
         _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
