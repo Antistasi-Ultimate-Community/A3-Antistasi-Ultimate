@@ -144,9 +144,6 @@ private _initialRebelEquipment = [
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "B_AssaultPack_wdl_F", "B_CivilianBackpack_01_Everyday_Black_F", "B_simc_US_Bandoleer_556_doppel_2", "B_simc_US_Bandoleer_556_3", "B_tweed_pack_wasser_molle_od7_alt", "B_tweed_pack_camel_thermos_od7",
   "Binocular",
-  "rhs_weap_rsp30_white","rhs_mag_rsp30_white",
-  "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
-  "rhs_weap_rsp30_red", "rhs_mag_rsp30_red",
   "rhs_mag_nspd", "rhs_mag_nspn_yellow", "rhs_mag_nspn_green", "rhs_mag_nspn_red",
   "rhssaf_vest_md99_woodland_rifleman","rhs_chicom_khk","rhs_lifchik_light","AFR_V_aaf_belt_alice_etool","AFR_V_aaf_belt_alice_alt"
 ];

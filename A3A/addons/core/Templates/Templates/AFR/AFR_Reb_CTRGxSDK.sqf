@@ -159,9 +159,6 @@ private _initialRebelEquipment = [
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "B_simc_US_Molle_sturm_OCP", "B_simc_US_Molle_sturm_OCP_thermos_OCP", "B_simc_US_Molle_sturm_OCP_etool", "B_simc_US_Molle_sturm_OCP_RTO", "B_simc_US_Molle_asspack_OCP_thermos_OCP",
   "Binocular",
-  "rhs_weap_rsp30_white","rhs_mag_rsp30_white",
-  "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
-  "rhs_weap_rsp30_red", "rhs_mag_rsp30_red",
   "rhs_mag_nspd", "rhs_mag_nspn_yellow", "rhs_mag_nspn_green", "rhs_mag_nspn_red",
   "V_tweed_msv_mk2_3","V_tweed_msv_mk2_2","V_tweed_msv_mk2_cell_1","V_tweed_msv_mk2_cell_2","V_tweed_msv_mk2_cell_45_1","V_SmershVest_01_F"
 ];
@@ -228,7 +225,7 @@ if (_hasRF) then {
 };
 
 private _headgearAll = (_headgear + _dlcHeadgear);
-private _uniformsAll = _playerUniforms;
+private _uniformsAll = _playerUniforms + _rebUniforms;
 ["headgear", _headgearAll] call _fnc_saveToTemplate;
 ["uniforms", _uniformsAll] call _fnc_saveToTemplate;
 

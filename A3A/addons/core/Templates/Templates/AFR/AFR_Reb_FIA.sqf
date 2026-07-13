@@ -144,9 +144,6 @@ private _initialRebelEquipment = [
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "B_simc_ARVN_ruck_1", "B_simc_ARVN_ruck_empty", "B_simc_ARVN_ruck_M43_2", "B_simc_rajio_1", "B_simc_rajio_2",
   "Binocular",
-  "rhs_weap_rsp30_white","rhs_mag_rsp30_white",
-  "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
-  "rhs_weap_rsp30_red", "rhs_mag_rsp30_red",
   "rhs_mag_nspd", "rhs_mag_nspn_yellow", "rhs_mag_nspn_green", "rhs_mag_nspn_red",
   "V_Simc_LBV_88_1","V_Simc_LBV_88_2","V_Simc_vest_aws_rig_1","V_Simc_mk56","V_Simc_mk56_alt"
 ];

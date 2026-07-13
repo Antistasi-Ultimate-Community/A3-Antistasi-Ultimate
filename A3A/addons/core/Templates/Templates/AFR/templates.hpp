@@ -65,16 +65,16 @@
         description = "";
         climate[] = {"temperate", "tropical", "arctic"};
     };
-    /*
     class AFR_CSAT_Arid : AFR_Base
     {
         side = "Inv";
-        name = "CSAT, Iran (AFR)";
-        file = "AFR_IAF";
-        flagTexture = "";
+        name = "CSAT, D (AFR)";
+        file = "AFR_CSAT_Arid";
+        flagTexture = "A3\Data_F\Flags\Flag_CSAT_CO.paa";
         description = "";
         climate[] = {"arid"};
     };
+    /*
     class AFR_CSAT_Tropical : AFR_Base
     {
         side = "Inv";
@@ -82,6 +82,7 @@
         file = "AFR_PLA";
         flagTexture = "";
         description = "";
+        climate[] = {"temperate", "tropical", "arctic"};
     };
     */
 

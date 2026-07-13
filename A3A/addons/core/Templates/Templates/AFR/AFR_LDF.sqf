@@ -265,7 +265,7 @@ _loadoutData set ["items_unarmed_extras", []];
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _sfLoadoutData set ["uniforms", ["U_AFR_LDF_ACU_Knee_Jedi_SPLINTER", 4, "U_AFR_LDF_ACU_Knee_SPLINTER", 4, "U_AFR_LDF_ACU_Knee_Trop_SPLINTER", 2]];
 _sfLoadoutData set ["slUniforms", ["U_AFR_LDF_ACU_Knee_Trop_SPLINTER", 10]];
-_sfLoadoutData set ["vests", ["AFR_ION_V_tweed_msv_mk2_1_OLIVE", 3, "AFR_ION_V_tweed_msv_mk2_2_OLIVE", 5, "AFR_ION_V_tweed_msv_mk2_cell_1_OLIVE", 5]];
+_sfLoadoutData set ["vests", ["AFR_ION_V_tweed_msv_mk2_1_OLIVE", 3, "AFR_ION_V_tweed_msv_mk2_2_OLIVE", 5, "AFR_ION_V_tweed_msv_mk2_cell_1_OLIVE", 5, "AFR_LDF_Vest_6b45_Rifleman_Splinter", 5, "AFR_LDF_Vest_6b45_Rifleman_2_Splinter", 5]];
 _sfLoadoutData set ["Hvests", ["AFR_ION_V_tweed_msv_mk2_249_OLIVE", 5, "AFR_ION_V_tweed_msv_mk2_4cm_2_OLIVE", 3]];
 _sfLoadoutData set ["backpacks", ["B_AssaultPack_wdl_F", 6, "AFR_B_Molle_sturm_Olive", 4, "AFR_LDF_Splinter_assault_umbts", 2]];
 _sfLoadoutData set ["helmets", ["rhsusf_mich_bare_norotos_arc", 5, "rhsusf_mich_bare_norotos_arc_alt", 1, "rhsusf_mich_bare_norotos_arc_alt_headset", 3, "rhsusf_mich_bare_norotos_arc_headset", 3]];
@@ -328,7 +328,7 @@ _sfLoadoutData set ["sidearms", ["rhsusf_weap_glock17g4", 10, "rhsusf_weap_m1911
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _eliteLoadoutData set ["uniforms", ["U_AFR_LDF_ACU_Knee_Jedi_SPLINTER", 4, "U_AFR_LDF_ACU_Knee_SPLINTER", 4, "U_AFR_LDF_ACU_Knee_Trop_SPLINTER", 2]];
 _eliteLoadoutData set ["slUniforms", ["U_AFR_LDF_ACU_Knee_Trop_SPLINTER", 10]];
-_eliteLoadoutData set ["vests", ["AFR_ION_V_tweed_msv_mk2_1_OLIVE", 3, "AFR_ION_V_tweed_msv_mk2_2_OLIVE", 5, "AFR_ION_V_tweed_msv_mk2_cell_1_OLIVE", 5]];
+_eliteLoadoutData set ["vests", ["AFR_ION_V_tweed_msv_mk2_1_OLIVE", 3, "AFR_ION_V_tweed_msv_mk2_2_OLIVE", 5, "AFR_ION_V_tweed_msv_mk2_cell_1_OLIVE", 5, "AFR_LDF_Vest_6b45_Rifleman_Splinter", 5, "AFR_LDF_Vest_6b45_Rifleman_2_Splinter", 5]];
 _eliteLoadoutData set ["Hvests", ["AFR_ION_V_tweed_msv_mk2_249_OLIVE", 5, "AFR_ION_V_tweed_msv_mk2_4cm_2_OLIVE", 3]];
 _eliteLoadoutData set ["backpacks", ["B_AssaultPack_wdl_F", 6, "AFR_B_Molle_sturm_Olive", 4, "AFR_LDF_Splinter_assault_umbts", 2]];
 _eliteLoadoutData set ["helmets", ["rhsusf_mich_bare_norotos_arc", 5, "rhsusf_mich_bare_norotos_arc_alt", 1, "rhsusf_mich_bare_norotos_arc_alt_headset", 3, "rhsusf_mich_bare_norotos_arc_headset", 3]];
@@ -391,7 +391,7 @@ _eliteLoadoutData set ["sidearms", ["rhsusf_weap_glock17g4", 10, "rhsusf_weap_m1
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _militaryLoadoutData set ["uniforms", ["U_AFR_LDFSplinter_bdu_raid_blench_flag", 4, "U_AFR_LDFSplinter_bdu_raid_blench_knee", 0.5, "U_AFR_LDFSplinter_bdu_raid_blench_trop", 2, "U_AFR_LDFSplinter_bdu_raid_blench_knee_trop", 3]];
 _militaryLoadoutData set ["slUniforms", ["U_AFR_LDFSplinter_bdu_raid_blench_knee_nomex_trop", 10]];
-_militaryLoadoutData set ["vests", ["V_CarrierRigKBT_01_light_EAF_F", 3, "V_CarrierRigKBT_01_light_Olive_F", 3, "rhssaf_vest_md99_md2camo_rifleman", 5, "rhssaf_vest_md99_md2camo_rifleman_radio", 5, "rhssaf_vest_md99_woodland_rifleman", 5, "rhssaf_vest_md99_woodland_rifleman_radio"]];
+_militaryLoadoutData set ["vests", ["V_CarrierRigKBT_01_light_EAF_F", 3, "V_CarrierRigKBT_01_light_Olive_F", 3, "rhssaf_vest_md99_md2camo_rifleman", 5, "rhssaf_vest_md99_md2camo_rifleman_radio", 5, "rhssaf_vest_md99_woodland_rifleman", 5, "rhssaf_vest_md99_woodland_rifleman_radio", "AFR_LDF_Vest_6b45_Rifleman_Splinter", 5, "AFR_LDF_Vest_6b45_Rifleman_2_Splinter", 5]];
 _militaryLoadoutData set ["Hvests", ["V_CarrierRigKBT_01_light_Olive_F", 5, "V_CarrierRigKBT_01_heavy_EAF_F", 3]];
 _militaryLoadoutData set ["backpacks", ["AFR_aaf_pack_ass", 4, "AFR_B_Molle_sturm_Olive", 2, "AFR_LDF_Splinter_assault_umbts_Flag", 3, "AFR_LDF_Splinter_assault_umbts", 2]];
 _militaryLoadoutData set ["helmets", ["rhs_6b7_1m", 5, "rhs_6b7_1m_ess", 5, "rhs_6b7_1m_olive", 3, "rhs_6b47", 3, "rhs_6b47_bare", 3]];
