@@ -51,9 +51,9 @@
 
 ["vehiclesArtillery", ["rhs_2s1_tv", "rhs_2s3_tv", "RHS_BM21_VV_01"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["rhs_2s1_tv", ["rhs_mag_3of56_10"]],
-["rhs_2s3_tv",["rhs_mag_HE_2a33", "rhs_mag_WP_2a33"]],
-["RHS_BM21_VV_01", ["rhs_mag_m21of_1"]]
+    ["rhs_2s1_tv", ["rhs_mag_3of56_10"]],
+    ["rhs_2s3_tv",["rhs_mag_HE_2a33", "rhs_mag_WP_2a33"]],
+    ["RHS_BM21_VV_01", ["rhs_mag_m21of_1"]]
 ]] call _fnc_saveToTemplate;
 
 ["uavsAttack", ["O_T_UAV_04_CAS_F", "O_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
@@ -607,7 +607,7 @@ _militiaLoadoutData set ["machineGuns", [
 _militiaLoadoutData set ["marksmanRifles", [
     ["rhs_weap_svdp", "", "", "rhs_acc_pso1m2", ["rhs_10Rnd_762x54mmR_7N1"], [], ""]
 ]];
-_militiaLoadoutData set ["sniperRifles", ["rhs_weap_m38"]];
+_militiaLoadoutData set ["sniperRifles", ["rhs_weap_t5000"]];
 _militiaLoadoutData set ["sidearms", ["rhs_weap_makarov_pm"]];
 _militiaLoadoutData set ["antiInfantryGrenades", ["rhs_mag_rgd5", "rhs_mag_f1"]];
 

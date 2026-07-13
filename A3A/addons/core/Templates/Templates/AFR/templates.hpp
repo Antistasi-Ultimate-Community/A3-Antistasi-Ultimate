@@ -74,17 +74,15 @@
         description = "";
         climate[] = {"arid"};
     };
-    /*
-    class AFR_CSAT_Tropical : AFR_Base
+    class AFR_CSAT_Temperate : AFR_Base
     {
         side = "Inv";
-        name = "CSAT, China (AFR)";
-        file = "AFR_PLA";
-        flagTexture = "";
+        name = "CSAT, WD (AFR)";
+        file = "AFR_CSAT_Temperate";
+        flagTexture = "A3\Data_F\Flags\Flag_CSAT_CO.paa";
         description = "";
         climate[] = {"temperate", "tropical", "arctic"};
     };
-    */
 
     class AFR_Riv_FIA : AFR_Base
     {
