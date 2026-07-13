@@ -143,12 +143,14 @@ if (_type == "CASDIVE") then
             _plane setVariable ["bombRacks", ["Mk82BombLauncher"]];
             _plane setVariable ["diveParams", [1000, 600, 180, 60, 20, [0, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
-        //Vanilla NATO JETS CAS
+        //Vanilla and E22 NATO JETS CAS
         case "Atlas_B_G_Plane_Fighter_01_F";
         case "Atlas_B_G_Plane_Fighter_01_ard_F";
         case "B_T_Plane_Fighter_01_F";
         case "B_USMC_Plane_Fighter_01_F";
         case "B_D_Plane_Fighter_01_F";
+        case "E22_B_JTF_Plane_Fighter_01_F";
+        case "E22_B_JTF_D_Plane_Fighter_01_F";
         case "B_Plane_Fighter_01_F":
         {
             _loadout = ["PylonRack_Bomb_SDB_x4","PylonMissile_1Rnd_BombCluster_01_F","PylonMissile_Bomb_GBU12_x1"];
@@ -634,7 +636,10 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["missiles_DAR","Rocket_04_AP_Plane_CAS_01_F","Rocket_04_HE_Plane_CAS_01_F"]];
             _plane setVariable ["missileLauncher", ["missiles_SCALPEL","missiles_DAGR","Missile_AGM_02_Plane_CAS_01_F"]];
         };
-        //Vanilla CSAT CAS 
+        // Vanilla and E22 CAS
+        case "E22_B_RAF_Plane_CAS_02_dynamicLoadout_F";
+        case "E22_B_RAF_D_Plane_CAS_02_dynamicLoadout_F";
+        case "E22_B_RAF_A_Plane_CAS_02_dynamicLoadout_F";
         case "O_Plane_CAS_02_dynamicLoadout_F":
         {
             _loadout = ["PylonMissile_1Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_50mm","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_1Rnd_Missile_AGM_01_F","PylonRack_4Rnd_LG_scalpel","PylonRack_6Rnd_Vikhr_missiles","PylonRack_19Rnd_Rocket_Skyfire","PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_20Rnd_Rocket_80mm","PylonMissile_1Rnd_LG_scalpel"];
@@ -1339,22 +1344,27 @@ if (_type == "AA") then
             _loadout = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_GAA_missiles","PylonWeapon_300Rnd_20mm_shells","PylonRack_1Rnd_GAA_missiles","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
             _plane setVariable ["mainGun", "Twin_Cannon_20mm"];
         };
-        //Vanilla NATO Air superiority fighter
+        //Vanilla and E22 NATO Air superiority fighter
         case "Atlas_B_G_Plane_Fighter_01_Stealth_F";
         case "Atlas_B_G_Plane_Fighter_01_Stealth_ard_F";
         case "B_D_Plane_Fighter_01_Stealth_F";
         case "B_T_Plane_Fighter_01_Stealth_F";
         case "B_W_Plane_Fighter_01_Stealth_F";
+        case "E22_B_JTF_Plane_Fighter_01_stealth_F";
+        case "E22_B_JTF_D_Plane_Fighter_01_stealth_F";
         case "B_Plane_Fighter_01_Stealth_F":
         {
             _loadout = ["PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1","PylonMissile_Missile_AMRAAM_D_INT_x1"];
             _plane setVariable ["mainGun", "weapon_Fighter_Gun20mm_AA"];
             _plane setVariable ["missileLauncher", ["weapon_BIM9xLauncher","weapon_AMRAAMLauncher"]];
         };
-        //Vanilla CSAT Air superiority fighter
+        //Vanilla and E22 CSAT Air superiority fighters
         case "O_T_Plane_Fighter_02_Stealth_ghex_F";
         case "O_R_Plane_Fighter_02_Stealth_F";
         case "O_R_Plane_Fighter_02_Stealth_ard_F";
+        case "E22_B_RAF_Plane_Fighter_02_Stealth_F";
+        case "E22_B_RAF_D_Plane_Fighter_02_Stealth_F";
+        case "E22_B_RAF_A_Plane_Fighter_02_Stealth_F";
         case "O_Plane_Fighter_02_Stealth_F":
         {
             _loadout = ["magazine_Fighter02_Gun30mm_AA_x180","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1"];

@@ -27,7 +27,7 @@ private _varNameUsed = _varName + "_used";
 private _used = spawner getVariable [_varNameUsed, []];
 private _index = _used find false;
 if (_index == -1) exitWith {
-    Info_1("%1 has no remaining spawn positions of type %2", _marker, _type);
+    Info_2("%1 has no remaining spawn positions of type %2", _marker, _type);
     false;
 };
 

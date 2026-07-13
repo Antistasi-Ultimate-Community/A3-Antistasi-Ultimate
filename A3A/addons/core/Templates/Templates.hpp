@@ -625,10 +625,6 @@ class Templates
     // ***************************** Pedagne *****************************
 
     #include "Templates\Pedagne\templates.hpp"
-
-    // ***************************** PLA *****************************
-
-    #include "Templates\PLA\templates.hpp"
 	
     // ***************************** SWE *****************************
 
@@ -662,10 +658,6 @@ class Templates
 
     #include "Templates\GM\templates.hpp"
 
-    // ***************************** Scion *****************************
-
-    #include "Templates\Scion\templates.hpp"
-
     // ***************************** BRAF *****************************
 
     #include "Templates\BRAF\templates.hpp"
@@ -689,10 +681,6 @@ class Templates
     // ***************************** NFtS *****************************
 
     #include "Templates\NFtS\templates.hpp"
-
-    // ***************************** Task Force Canada *****************************
-
-    #include "Templates\TFC\templates.hpp"
 
     // ***************************** TMT - Turkish Forces *****************************
 
@@ -718,12 +706,15 @@ class Templates
 
     #include "Templates\CWR\templates.hpp"
 	
-	  // ***************************** Mixed Era Factions *****************************
+	// ***************************** Mixed Era Factions *****************************
 
     #include "Templates\ERA\templates.hpp"
   
     // ***************************** Korsac *****************************
 
     #include "Templates\KOR\templates.hpp"
+    
+    // ***************************** E22 *****************************
 
+    #include "Templates\E22\templates.hpp"
 };

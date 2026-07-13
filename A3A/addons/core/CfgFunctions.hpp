@@ -469,7 +469,6 @@ class CfgFunctions
             class findIfNearAndHostile {};
             class LOG_Airdrop {};
             class LOG_Crashsite {};
-            class LOG_Crashsite_Satellite{};
             class LOG_Helicrash {};
             class missionRequest {};
             class REP_Antenna {};
@@ -728,12 +727,10 @@ class CfgFunctions
             class SUP_tank {};
             class SUP_tankAvailable {};
             class SUP_tankRoutine {};
-            class SUP_UAV {};
-            class SUP_UAVRoutine {};
-            class SUP_UAVAvailable {};
             class SUP_UAVAttack {};
             class SUP_UAVAttackRoutine {};
             class SUP_UAVAttackAvailable {};
+            class SUP_UAVRoutine {};
             class SUP_QRFVehAirdrop {};
             class SUP_QRFVehAirdropAvailable {};
             class SUP_howitzer {};
