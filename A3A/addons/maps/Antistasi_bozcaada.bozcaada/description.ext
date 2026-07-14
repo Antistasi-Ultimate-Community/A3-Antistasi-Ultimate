@@ -1,0 +1,29 @@
+#include "..\missionDescription\master.hpp"
+
+OnLoadName = $STR_antistasi_mission_info_bozcaada_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_bozcaada_blurb_text;
+briefingName = $STR_antistasi_mission_info_bozcaada_mapname_text;
+overviewText = $STR_antistasi_mission_info_bozcaada_description_text;
+loadScreen = "\x\A3A\addons\maps\images_co.jpg"; // NB, this will resolve from root // NB, this will resolve from root
+overviewPicture = "\x\A3A\addons\maps\images_co.jpg"; // NB, this will resolve from root
+
+class CfgDiscordRichPresence
+{
+    applicationID="819852407265034260";
+    defaultDetails="In campaign";
+    defaultState="Bozcaada";
+    defaultLargeImageKey="bozcaada";
+    defaultLargeImageText="Antistasi Ultimate - bozcaada";
+    defaultSmallImageKey="arma_3_logo";
+    defaultSmallImageText="Antistasi Ultimate";
+    useTimeElapsed=1;
+};
+
+class CfgNotifications
+{
+    #include "..\missionDescription\CfgNotificationsContents.hpp"
+};
+
+class CfgDebriefing {
+    #include "..\missionDescription\CfgDebriefingContents.hpp"
+};
