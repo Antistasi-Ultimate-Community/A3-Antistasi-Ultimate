@@ -103,7 +103,15 @@ private _readHoverMetadata = {
     private _meta = _hoverMetaMap getOrDefault [_original, []];
     if !(_meta isEqualTo []) exitWith { _meta };
     
-    _hoverMetaMap getOrDefault [_dummy, []]
+    _meta = _hoverMetaMap getOrDefault [_dummy, []];
+    if !(_meta isEqualTo []) exitWith { _meta };
+
+    missionNamespace setVariable ["A3U_suppressNetworkForUI", true];
+    [_original] call A3A_fnc_mrkUpdate;
+    missionNamespace setVariable ["A3U_suppressNetworkForUI", false];
+    
+    _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
+    _hoverMetaMap getOrDefault [_original, []]
 };
 
 private _getMarkerSideFromMetadata = {
@@ -259,7 +267,6 @@ private _setComboSelectionByData = {
 };
 
 private _markerBuckets = [
-    ["Headquarters", "Headquarters", ["Synd_HQ"] apply { [_x] call _toDummyMarkerName }],
     ["Cities", "Cities", citiesX apply { [_x] call _toDummyMarkerName }],
     ["Resources", "Resources", resourcesX apply { [_x] call _toDummyMarkerName }],
     ["Factories", "Factories", factories apply { [_x] call _toDummyMarkerName }],
@@ -268,7 +275,7 @@ private _markerBuckets = [
     ["Military Bases", "Military Bases", milbases apply {[_x] call _toDummyMarkerName}],
     ["Air Bases", "Air Bases", airportsX apply { [_x] call _toDummyMarkerName }],
     ["Military Administrations", "Military Administrations", +milAdministrationsX],
-    ["Radio Towers", "Radio Towers", mrkAntennas apply { [_x] call _toDummyMarkerName }]
+    ["Misc", "Misc", (["Synd_HQ"] + mrkAntennas + watchpostsFIA + roadblocksFIA + aapostsFIA + atpostsFIA + hmgpostsFIA) apply { [_x] call _toDummyMarkerName }]
 ];
 
 private _refreshList = {
@@ -332,7 +339,6 @@ private _refreshList = {
 
             if (_searchText != "" && {(toLowerANSI _markerLabel) find _searchText < 0}) then { continue };
 
-            // Place _markerLabel at index 0 so Arma can sort the nested array alphabetically
             _validMarkers pushBack [
                 _markerLabel,
                 _markerName, 
@@ -343,7 +349,6 @@ private _refreshList = {
 
         if !(_validMarkers isEqualTo []) then {
             
-            // Sort the markers alphabetically by their label
             _validMarkers sort true; 
             
             private _headerIndex = _listControl lnbAddRow [format ["— %1 —", _headerTitle], ""];
@@ -355,8 +360,6 @@ private _refreshList = {
                 _x params ["_mLabel", "_mName", "_mFaction", "_mIcon"];
                 private _rowIndex = _listControl lnbAddRow [_mLabel, _mFaction];
                 _listControl lnbSetData [[_rowIndex, 0], _mName];
-                
-                // Hardcoded text color overrides removed here to fix the lost-focus unreadable text bug
                 
                 if (_mIcon != "") then { _listControl lnbSetPicture [[_rowIndex, 0], _mIcon]; };
             } forEach _validMarkers;
@@ -386,10 +389,6 @@ private _onFilterChanged = {
     [true, _zoom, _animationTime, _categoryKey, _factionKey, _searchText, true] call A3U_fnc_markerBrowser;
 };
 
-
-// -----------------------------------------------------------------------------
-// UI INITIALIZATION
-// -----------------------------------------------------------------------------
 private _browserButton = _mapDisplay getVariable ["A3U_markerBrowser_btn", controlNull];
 if (isNull _browserButton) then {
     _browserButton = _mapDisplay ctrlCreate ["RscStructuredText", 88011];
@@ -554,10 +553,10 @@ _mapDisplay setVariable ["A3U_markerBrowser_lnb", _listControl];
 
 lbClear _categoryCombo;
 [
-    ["All", "__ALL__"], ["Headquarters", "Headquarters"], ["Cities", "Cities"], ["Resources", "Resources"],
+    ["All", "__ALL__"], ["Cities", "Cities"], ["Resources", "Resources"],
     ["Factories", "Factories"], ["Outposts", "Outpost"], ["Seaports", "Seaports"],
     ["Military Bases", "Military Bases"], ["Air Bases", "Air Bases"],
-    ["Military Administrations", "Military Administrations"], ["Radio Towers", "Radio Towers"]
+    ["Military Administrations", "Military Administrations"], ["Misc", "Misc"]
 ] apply {
     _x params ["_label", "_categoryKey"];
     private _rowIndex = _categoryCombo lbAdd _label;

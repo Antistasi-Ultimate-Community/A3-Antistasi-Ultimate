@@ -76,6 +76,15 @@ if (!_isDestroyed && {_isMilitaryAdministration}) then {
 private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 private _markerMetadata = _hoverMetaMap getOrDefault [_markerName, (_hoverMetaMap getOrDefault [_originalMarkerName, []])];
 
+if (_markerMetadata isEqualTo []) then {
+    missionNamespace setVariable ["A3U_suppressNetworkForUI", true];
+    [_originalMarkerName] call A3A_fnc_mrkUpdate;
+    missionNamespace setVariable ["A3U_suppressNetworkForUI", false];
+    
+    _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
+    _markerMetadata = _hoverMetaMap getOrDefault [_markerName, (_hoverMetaMap getOrDefault [_originalMarkerName, []])];
+};
+
 private _bodyText = if (_markerMetadata isEqualTo [] || {count _markerMetadata < 1}) then {
     private _markerLabel = markerText _originalMarkerName;
     if (_markerLabel == "") then { _originalMarkerName } else { _markerLabel }

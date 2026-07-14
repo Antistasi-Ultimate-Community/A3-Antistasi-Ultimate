@@ -306,10 +306,15 @@ private _specialDefinitions = [
 } forEach _specialDefinitions;
 
 missionNamespace setVariable ["A3U_mrkHoverMetaMap", _hoverMetaMap];
-[_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
 
-if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)}) then {
-    _visibleMarkerName setMarkerText _markerLabelOnly;
-} else {
-    _visibleMarkerName setMarkerText "";
+private _isUISilentUpdate = missionNamespace getVariable ["A3U_suppressNetworkForUI", false];
+
+if (!_isUISilentUpdate) then {
+    [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
+
+    if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)}) then {
+        _visibleMarkerName setMarkerText _markerLabelOnly;
+    } else {
+        _visibleMarkerName setMarkerText "";
+    };
 };

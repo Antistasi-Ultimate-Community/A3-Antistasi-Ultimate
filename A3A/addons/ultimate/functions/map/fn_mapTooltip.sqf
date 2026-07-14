@@ -130,7 +130,10 @@ if (_nearestMarker != "" && {_nearestDistanceSquared <= _thresholdSq}) then {
         _mapDisplay setVariable ["A3U_tipFadeInStart", diag_tickTime];
         _mapDisplay setVariable ["A3U_tipFadeOutStart", -1];
 
-        [_origNearest] call A3U_fnc_mrkUpdate;
+        missionNamespace setVariable ["A3U_suppressNetworkForUI", true];
+        [_origNearest] call A3A_fnc_mrkUpdate;
+        missionNamespace setVariable ["A3U_suppressNetworkForUI", false];
+
         _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
     };
 
