@@ -120,7 +120,9 @@ _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 _loadoutData set ["lightATLaunchers", []];
 _loadoutData set ["lightHELaunchers", []];
-_loadoutData set ["ATLaunchers", []];
+_loadoutData set ["ATLaunchers", [
+    ["rhs_weap_rpg7", "", "", "", ["rhs_rpg7_PG7V_mag", "rhs_rpg7_PG7VS_mag", "rhs_rpg7_PG7VM_mag"], [], ""]
+]];
 _loadoutData set ["AALaunchers", ["rhs_weap_igla"]];
 _loadoutData set ["sidearms", []];
 

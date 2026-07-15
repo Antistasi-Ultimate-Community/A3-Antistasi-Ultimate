@@ -119,7 +119,9 @@ _loadoutData set ["marksmanRifles", []];
 _loadoutData set ["sniperRifles", []];
 _loadoutData set ["lightATLaunchers", []];
 _loadoutData set ["lightHELaunchers", []];
-_loadoutData set ["ATLaunchers", []];
+_loadoutData set ["ATLaunchers", [
+    ["rhs_weap_rpg7", "", "", "", ["rhs_rpg7_PG7V_mag", "rhs_rpg7_PG7VS_mag", "rhs_rpg7_PG7VM_mag"], [], ""]
+]];
 _loadoutData set ["AALaunchers", ["rhs_weap_igla"]];
 _loadoutData set ["sidearms", []];
 
@@ -267,32 +269,32 @@ _sfLoadoutData set ["slRifles", [
     ["arifle_ARX_blk_F", "", "", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
     ["arifle_ARX_blk_F", "", "", "optic_ERCO_blk_F", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
     ["arifle_ARX_blk_F", "", "", "optic_Arco_blk_F", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "rhs_acc_1p87", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""]
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""]
 ]];
 _sfLoadoutData set ["rifles", [
     ["rhs_weap_vhsd2", "", "", "rhs_acc_1p87", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2", "", "", "optic_Holosight_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2", "", "", "optic_ERCO_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2_ct15x", "", "", "", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "rhs_acc_1p87", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""]
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""]
 ]];
 _sfLoadoutData set ["carbines", [
     ["rhs_weap_vhsk2", "", "rhs_acc_perst3", "rhs_acc_1p87", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsk2", "", "rhs_acc_perst3", "optic_Holosight_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsk2", "", "rhs_acc_perst3", "optic_ERCO_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "rhs_acc_1p87", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
-    ["rhs_weap_ak74mr", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""]
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""],
+    ["rhs_weap_ak74mr", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7U1_AK"], [], ""]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
     ["rhs_weap_vhsd2_bg", "", "", "", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], _glAmmo, ""],
@@ -343,9 +345,9 @@ _eliteLoadoutData set ["slRifles", [
     ["arifle_ARX_blk_F", "", "", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
     ["arifle_ARX_blk_F", "", "", "optic_ERCO_blk_F", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
     ["arifle_ARX_blk_F", "", "", "optic_Arco_blk_F", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
 ]];
 _eliteLoadoutData set ["rifles", [
     ["arifle_CTARS_blk_F", "", "rhs_acc_perst3", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
@@ -355,9 +357,9 @@ _eliteLoadoutData set ["rifles", [
     ["rhs_weap_vhsd2", "", "", "optic_Holosight_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2", "", "", "optic_ERCO_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2_ct15x", "", "", "", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
 ]];
 _eliteLoadoutData set ["carbines", [
     ["arifle_CTAR_blk_F", "", "rhs_acc_perst3", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
@@ -419,9 +421,9 @@ _militaryLoadoutData set ["slRifles", [
     ["arifle_ARX_blk_F", "", "", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
     ["arifle_ARX_blk_F", "", "", "optic_ERCO_blk_F", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
     ["arifle_ARX_blk_F", "", "", "optic_Arco_blk_F", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], ["10Rnd_50BW_Mag_F"], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
 ]];
 _militaryLoadoutData set ["rifles", [
     ["arifle_CTARS_blk_F", "", "rhs_acc_perst3", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],
@@ -431,9 +433,9 @@ _militaryLoadoutData set ["rifles", [
     ["rhs_weap_vhsd2", "", "", "optic_Holosight_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2", "", "", "optic_ERCO_blk_F", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
     ["rhs_weap_vhsd2_ct15x", "", "", "", ["rhsgref_30rnd_556x45_vhs2", "rhsgref_30rnd_556x45_vhs2_t"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
-    ["rhs_weap_ak103_zenitco01_b33", "", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "rhs_acc_1p87", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_Holosight_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""],
+    ["rhs_weap_ak103_zenitco01_b33", "rhs_acc_dtk1", "", "optic_ERCO_blk_F", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_tracer", "rhs_30Rnd_762x39mm_polymer_U"], [], ""]
 ]];
 _militaryLoadoutData set ["carbines", [
     ["arifle_CTAR_blk_F", "", "rhs_acc_perst3", "optic_MRCO", ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], [], ""],

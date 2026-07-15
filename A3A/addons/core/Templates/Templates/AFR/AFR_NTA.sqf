@@ -252,9 +252,9 @@ _sfLoadoutData set ["grenadeLaunchers", [
 
 _sfMGOptics = ["rhs_acc_pkas", 3.5, "", 8.5];
 _sfLoadoutData set ["machineGuns", [
-    ["rhs_weap_rpk74m", "", _sfAttachmentsEast, _sfMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 5,
+    ["rhs_weap_rpk74m", "rhs_acc_dtkrpk", _sfAttachmentsEast, _sfMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 5,
     ["rhs_weap_pkm", "", _sfAttachmentsEast, _sfMGOptics, ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13"], [], ""], 5,
-    ["rhs_weap_m249", "", _sfAttachmentsWest, _sfMGOptics, ["rhsusf_200rnd_556x45_M855_box", "rhsusf_100Rnd_556x45_M200_soft_pouch_coyote"], [], ""], 7
+    ["rhs_weap_m249", "", _sfAttachmentsWest, _sfMGOptics, ["rhsusf_200rnd_556x45_M855_box"], [], ""], 7
 ]];
 
 _sfMarksmanOptics = ["", 10];
@@ -292,29 +292,29 @@ _eliteSlRifleOpticsEast = ["rhs_acc_1p63", 10];
 _eliteAttachmentsEast = ["rhs_acc_2dpZenit", 2, "", 8];
 
 _eliteLoadoutData set ["slRifles", [
-    ["rhs_weap_ak74m_gp25", "", _eliteAttachmentsEast, _eliteSlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 3.5,
-    ["rhs_weap_ak74m_zenitco01", "", _eliteAttachmentsEast, _eliteSlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 3.5,
+    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", _eliteAttachmentsEast, _eliteSlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 3.5,
+    ["rhs_weap_ak74m_zenitco01", "rhs_acc_dtk1", _eliteAttachmentsEast, _eliteSlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 3.5,
     ["rhs_weap_m4_carryhandle", "", _eliteAttachmentsWest, _eliteSlRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5,
     ["rhs_weap_m16a4_imod", "", _eliteAttachmentsWest, _eliteSlRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5
 ]];
 _eliteLoadoutData set ["rifles", [
-    ["rhs_weap_ak74m_zenitco01", "", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
-    ["rhs_weap_ak74mr", "", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
+    ["rhs_weap_ak74m_zenitco01", "rhs_acc_dtk1", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
+    ["rhs_weap_ak74mr", "rhs_acc_dtk", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
     ["rhs_weap_vss", "", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_20rnd_9x39mm_SP5", "rhs_20rnd_9x39mm_SP6"], [], ""], 2.5,
     ["rhs_weap_m4_carryhandle", "", _eliteAttachmentsWest, _eliteRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5,
     ["rhs_weap_m4", "", _eliteAttachmentsWest, _eliteRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 5.5
 ]];
 _eliteLoadoutData set ["grenadeLaunchers", [
-    ["rhs_weap_ak74m_gp25", "", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
-    ["rhs_weap_ak74_gp25", "", _eliteAttachmentsEast, _eliteRifleOpticsEast, [" rhs_30Rnd_545x39_7N6M_AK", " rhs_30Rnd_545x39_7N6_AK"], [" rhs_VOG25", " rhs_VG40OP_green", " rhs_GRD40_Green"], ""], 4,
+    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", _eliteAttachmentsEast, _eliteRifleOpticsEast, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
+    ["rhs_weap_ak74_gp25", "rhs_acc_dtk", _eliteAttachmentsEast, _eliteRifleOpticsEast, [" rhs_30Rnd_545x39_7N6M_AK", " rhs_30Rnd_545x39_7N6_AK"], [" rhs_VOG25", " rhs_VG40OP_green", " rhs_GRD40_Green"], ""], 4,
     ["rhs_weap_m16a4_carryhandle_M203", "", _eliteAttachmentsWest, _eliteRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "1Rnd_SmokeGreen_Grenade_shell"], ""], 3
 ]];
 
 _eliteMGOptics = ["rhs_acc_pkas", 3.5, "", 8.5];
 _eliteLoadoutData set ["machineGuns", [
-    ["rhs_weap_rpk74m", "", _eliteAttachmentsEast, _eliteMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 5,
+    ["rhs_weap_rpk74m", "rhs_acc_dtkrpk", _eliteAttachmentsEast, _eliteMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 5,
     ["rhs_weap_pkm", "", _eliteAttachmentsEast, _eliteMGOptics, ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13"], [], ""], 5,
-    ["rhs_weap_m249", "", _eliteAttachmentsWest, _eliteMGOptics, ["rhsusf_200rnd_556x45_M855_box", "rhsusf_100Rnd_556x45_M200_soft_pouch_coyote"], [], ""], 7
+    ["rhs_weap_m249", "", _eliteAttachmentsWest, _eliteMGOptics, ["rhsusf_200rnd_556x45_M855_box"], [], ""], 7
 ]];
 
 _eliteMarksmanOptics = ["", 10];
@@ -352,15 +352,14 @@ _militarySlRifleOpticsEast = ["rhs_acc_1p63", 10];
 _militaryAttachmentsEast = ["rhs_acc_2dpZenit", 2, "", 8];
 
 _militaryLoadoutData set ["slRifles", [
-    ["rhs_weap_ak74m_gp25", "", _militaryAttachmentsEast, _militarySlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 3.5,
-    ["rhs_weap_ak74m_zenitco01", "", _militaryAttachmentsEast, _militarySlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 3.5,
+    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", _militaryAttachmentsEast, _militarySlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 3.5,
+    ["rhs_weap_ak74m_zenitco01", "rhs_acc_dtk1", _militaryAttachmentsEast, _militarySlRifleOpticsEast, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 3.5,
     ["rhs_weap_m4_carryhandle", "", _militaryAttachmentsWest, _militarySlRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5,
     ["rhs_weap_m16a4_carryhandle", "", _militaryAttachmentsWest, _militarySlRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5
 ]];
 _militaryLoadoutData set ["rifles", [
-    ["rhs_weap_ak74m", "", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
-    ["rhs_weap_ak74m_npz", "", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
-    ["rhs_weap_ak74", "", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], [], ""], 3.5,
+    ["rhs_weap_ak74m", "rhs_acc_dtk", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N22_AK"], [], ""], 5.5,
+    ["rhs_weap_ak74", "rhs_acc_dtk", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], [], ""], 3.5,
     ["rhs_weap_m16a2", "", _militaryAttachmentsWest, _militaryRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5,
     ["rhs_weap_m4", "", _militaryAttachmentsWest, _militaryRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5
 ]];
@@ -368,16 +367,16 @@ _militaryLoadoutData set ["carbines", [
     ["rhs_weap_m4a1_carryhandle", "", _militaryAttachmentsWest, _militaryRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], [], ""], 3.5
 ]];
 _militaryLoadoutData set ["grenadeLaunchers", [
-    ["rhs_weap_ak74m_gp25", "", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
-    ["rhs_weap_ak74_gp25", "", _militaryAttachmentsEast, _militaryRifleOpticsEast, [" rhs_30Rnd_545x39_7N6M_AK", " rhs_30Rnd_545x39_7N6_AK"], [" rhs_VOG25", " rhs_VG40OP_green", " rhs_GRD40_Green"], ""], 4,
+    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", _militaryAttachmentsEast, _militaryRifleOpticsEast, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
+    ["rhs_weap_ak74_gp25", "rhs_acc_dtk", _militaryAttachmentsEast, _militaryRifleOpticsEast, [" rhs_30Rnd_545x39_7N6M_AK", " rhs_30Rnd_545x39_7N6_AK"], [" rhs_VOG25", " rhs_VG40OP_green", " rhs_GRD40_Green"], ""], 4,
     ["rhs_weap_m16a2_m203", "", _militaryAttachmentsWest, _militaryRifleOpticsWest, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855_Stanag"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "1Rnd_SmokeGreen_Grenade_shell"], ""], 3
 ]];
 
 _militaryMGOptics = ["rhs_acc_pkas", 3.5, "", 8.5];
 _militaryLoadoutData set ["machineGuns", [
-    ["rhs_weap_rpk74m", "", _militaryAttachmentsEast, _militaryMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 5,
+    ["rhs_weap_rpk74m", "rhs_acc_dtkrpk", _militaryAttachmentsEast, _militaryMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 5,
     ["rhs_weap_pkm", "", _militaryAttachmentsEast, _militaryMGOptics, ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13"], [], ""], 5,
-    ["rhs_weap_m249", "", _militaryAttachmentsWest, _militaryMGOptics, ["rhsusf_200rnd_556x45_M855_box", "rhsusf_100Rnd_556x45_M200_soft_pouch_coyote"], [], ""], 7
+    ["rhs_weap_m249", "", _militaryAttachmentsWest, _militaryMGOptics, ["rhsusf_200rnd_556x45_M855_box"], [], ""], 7
 ]];
 
 _militaryMarksmanOptics = ["", 10];
@@ -403,7 +402,7 @@ _policeLoadoutData set ["vests", ["V_Simc_mk56_alt", 6, "AFR_Taki_vest_rba", 3]]
 _policeLoadoutData set ["helmets", ["rhssaf_beret_black", 10]];
 
 _policeLoadoutData set ["SMGs", [ // CBA rewriting the stupid template to remove SMGs
-    ["rhs_weap_akms", "", "", "", ["rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_89"], [], ""], 6,
+    ["rhs_weap_akms", "rhs_acc_dtkakm", "", "", ["rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_89"], [], ""], 6,
     ["rhs_weap_M590_5RD", "", "", "", ["rhsusf_5Rnd_00Buck", "rhsusf_5Rnd_Slug"], [], ""], 3
 ]];
 _policeLoadoutData set ["sidearms", ["rhs_weap_pya", 10]];
@@ -424,29 +423,29 @@ _militiaSlRifleOptics = ["rhs_acc_1p63", 4, "", 2];
 _militiaAttachments = ["", 6];
 
 _militiaLoadoutData set ["slRifles", [
-    ["rhs_weap_ak74m", "", _militiaAttachments, _militiaSlRifleOptics, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 6,
-    ["rhs_weap_ak74m_gp25", "", _militiaAttachments, _militiaSlRifleOptics, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
-    ["rhs_weap_ak74", "", _militiaAttachments, _militiaSlRifleOptics, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 6
+    ["rhs_weap_ak74m", "rhs_acc_dtk", _militiaAttachments, _militiaSlRifleOptics, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 6,
+    ["rhs_weap_ak74m_gp25", "rhs_acc_dtk", _militiaAttachments, _militiaSlRifleOptics, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
+    ["rhs_weap_ak74", "rhs_acc_dtk", _militiaAttachments, _militiaSlRifleOptics, ["rhs_30Rnd_545x39_7N22_AK", "rhs_30Rnd_545x39_7N10_AK", "rhs_30Rnd_545x39_7N6M_AK"], [], ""], 6
 ]];
 _militiaLoadoutData set ["rifles", [
-    ["rhs_weap_akm", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_polymer"], [], ""], 5.5,
-    ["rhs_weap_akmn", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_polymer"], [], ""], 5.5,
-    ["rhs_weap_aks74", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], [], ""], 3.5,
-    ["rhs_weap_aks74n", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N10_AK"], [], ""], 3.5
+    ["rhs_weap_akm", "rhs_acc_dtkakm", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_polymer"], [], ""], 5.5,
+    ["rhs_weap_akmn", "rhs_acc_dtkakm", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_polymer"], [], ""], 5.5,
+    ["rhs_weap_aks74", "rhs_acc_dtk1983", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], [], ""], 3.5,
+    ["rhs_weap_aks74n", "rhs_acc_dtk1983", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N10_AK"], [], ""], 3.5
 ]];
 _militiaLoadoutData set ["carbines", [
-    ["rhs_weap_akms", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_89", "rhs_30Rnd_762x39mm_U"], [], ""], 5.5
+    ["rhs_weap_akms", "rhs_acc_dtkakm", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm_89", "rhs_30Rnd_762x39mm_U"], [], ""], 5.5
 ]];
 _militiaLoadoutData set ["grenadeLaunchers", [
-    ["rhs_weap_akm_gp25", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_89"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 8,
-    ["rhs_weap_akmn_gp25", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_89"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 8,
-    ["rhs_weap_aks74_gp25", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4,
-    ["rhs_weap_aks74n_gp25", "", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4
+    ["rhs_weap_akm_gp25", "rhs_acc_dtkakm", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_89"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 8,
+    ["rhs_weap_akmn_gp25", "rhs_acc_dtkakm", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_762x39mm_bakelite", "rhs_30Rnd_762x39mm_bakelite_89"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 8,
+    ["rhs_weap_aks74_gp25", "rhs_acc_dtk1983", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", " rhs_30Rnd_545x39_7N6_AK"], [" rhs_VOG25", " rhs_VG40OP_green", " rhs_GRD40_Green"], ""], 4,
+    ["rhs_weap_aks74n_gp25", "rhs_acc_dtk1983", _militiaAttachments, _militiaRifleOptics, ["rhs_30Rnd_545x39_7N6M_AK", "rhs_30Rnd_545x39_7N6_AK"], ["rhs_VOG25", "rhs_VG40OP_green", "rhs_GRD40_Green"], ""], 4
 ]];
 
 _militiaMGOptics = ["rhs_acc_pkas", 3.5, "", 8.5];
 _militiaLoadoutData set ["machineGuns", [
-    ["rhs_weap_rpk74m", "", _militiaAttachments, _militiaMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 10,
+    ["rhs_weap_rpk74m", "rhs_acc_dtkrpk", _militiaAttachments, _militiaMGOptics, ["rhs_45Rnd_545X39_7N6M_AK", "rhs_45Rnd_545X39_7N6_AK", "rhs_45Rnd_545X39_7N22_AK"], [], ""], 10,
     ["rhs_weap_pkm", "", _militiaAttachments, _militiaMGOptics, ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13"], [], ""], 3
 ]];
 
