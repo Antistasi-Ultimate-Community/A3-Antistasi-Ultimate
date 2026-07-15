@@ -4123,12 +4123,8 @@
                 <Turkish>%1 kimliğiyle oyunu yükle, </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_factions">
-                <Original>%1 rebels, %2 civilians, %3 occupants, %4 invaders, and %5 rivals?</Original>
-                <Russian>где %1 повстанцы, %2 мирные жители, %3 оккупанты, %4 захватчики и %5 соперники?</Russian>
-                <Chinesesimp>%1 叛军、%2 平民、%3 占领者、%4 侵略者和 %5 对手？</Chinesesimp>
-                <Korean>반란군은 %1, 민간인은 %2, 점령군은 %3, 침략군은 %4, 라이벌은 %5입니까?</Korean>
-                <French>%1 rebelles, %2 civils, %3 occupants, %4 envahisseurs et %5 rivaux?</French>
-                <Turkish>%1 isyancılar, %2 siviller, %3 işgalciler, %4 istilacılar ve %5 rakipler mi?</Turkish>
+                <!-- <Original>Rebels: %1\n Civilians: %2\n Occupants: %3\n Invaders: %4\n Rivals: %5</Original> -->
+                <Original>Occupants: %3\n Invaders: %4\n Rebels: %1\n Rivals: %5\n Civilians: %2</Original>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
                 <Original>name "%1", </Original>
