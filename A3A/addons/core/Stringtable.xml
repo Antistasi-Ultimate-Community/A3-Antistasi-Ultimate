@@ -227,6 +227,19 @@
                 <Polish>Siedziba główna jest przenoszona. Nie można przywrócić Petrosa.</Polish>
                 <Turkish>Karargâh taşınıyor. Petros yeniden canlandırılamıyor.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_petros_dead_text">
+                <Original>Petros is dead.</Original>
+                <French>Petros est mort.</French>
+                <Russian>Петрос умер.</Russian>
+                <German>Petros ist tot.</German>
+                <Czech>Petros je mrtvý.</Czech>
+                <Chinesesimp>彼得罗斯死了。</Chinesesimp>
+                <Korean>페트로스가 죽었다.</Korean>
+                <Italian>Petros è morto.</Italian>
+                <Spanish>Petros ha muerto.</Spanish>
+                <Polish>Petros nie żyje.</Polish>
+                <Turkish>Petros öldü.</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
                 <Original>Train Rebel Troops</Original>
                 <Russian>Тренировать повстанцев</Russian>
