@@ -175,6 +175,58 @@
                 <Polish>Odbudowuje fabryki, zasoby, wieże radiowe i budynki wojskowe na wybranym markerze. Koszt 5000.</Polish>
                 <Turkish>Seçili işaretçideki fabrikaları, kaynakları, radyo kulelerini ve askeri binaları yeniden inşa eder. Maliyet: 5000.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_respawn_petros_text">
+                <Original>Respawn Petros</Original>
+                <French>Réapparaître Petros</French>
+                <Russian>Воскрешение Петроса</Russian>
+                <German>Petros zurücksetzen</German>
+                <Czech>Znovuzrození Petros</Czech>
+                <Chinesesimp>Petros 的重生</Chinesesimp>
+                <Korean>레스폰 페트로스</Korean>
+                <Italian>Rientro in gioco Petros</Italian>
+                <Spanish>Reaparecer, Petros</Spanish>
+                <Polish>Ożyw Petros</Polish>
+                <Turkish>Petros'u Yeniden Canlandır</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_respawn_petros_tooltip">
+                <Original>Set Petros' location near HQ in the event he has became stuck or inaccessible.</Original>
+                <French>Placer la position de Petros près du QG s'il est devenu coincé ou inaccessible.</French>
+                <Russian>Укажите местонахождение Петроса рядом со штабом на случай, если он застрял или к нему нет доступа.</Russian>
+                <German>Lege Petros Position nahe des HQ fest, falls er steckengeblieben ist, oder unerreichbar ist.</German>
+                <Czech>Nastavte polohu Petrose v blízkosti velitelství pro případ, že by uvízl nebo byl nedostupný.</Czech>
+                <Chinesesimp>将佩特罗斯的位置设在总部附近，以防他被卡住或无法联系。</Chinesesimp>
+                <Korean>페트로스가 갇히거나 접근할 수 없게 될 경우를 대비해, 본부 근처에 그의 위치를 설정해 두세요.</Korean>
+                <Italian>Imposta la posizione di Petros vicino al quartier generale nel caso in cui fosse rimasto bloccato o fosse irraggiungibile.</Italian>
+                <Spanish>Establece la ubicación de Petros cerca del cuartel general por si se ha quedado atascado o no se puede acceder a él.</Spanish>
+                <Polish>Ustal lokalizację Petrosa w pobliżu kwatery głównej na wypadek, gdyby utknął lub nie można było się z nim skontaktować.</Polish>
+                <Turkish>Petros’un sıkışmış ya da ulaşılamaz hale gelmesi durumunda, onun konumunu karargahın yakınına ayarlayın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_petros_respawned_text">
+                <Original>Petros respawned.</Original>
+                <French>Petros réapparu.</French>
+                <Russian>Петрос возродился.</Russian>
+                <German>Petros wurde zurückgesetzt.</German>
+                <Czech>Petros se znovu objevil.</Czech>
+                <Chinesesimp>佩特罗斯复活了。</Chinesesimp>
+                <Korean>페트로스가 부활했다.</Korean>
+                <Italian>Petros è ricomparso.</Italian>
+                <Spanish>Petros ha reaparecido.</Spanish>
+                <Polish>Petros odrodził się.</Polish>
+                <Turkish>Petros yeniden ortaya çıktı.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_hq_moving_text">
+                <Original>HQ is being moved. Cannot respawn Petros.</Original>
+                <French>QG est en train d'être déplacé. Petros ne peut pas réapparaître.</French>
+                <Russian>Штаб перемещается. Невозможно воскресить Петроса.</Russian>
+                <German>HQ wird verschoben. Petros kann nicht zurückgesetzt werden.</German>
+                <Czech>Hlavní základna se přesouvá. Petros se nemůže znovu objevit.</Czech>
+                <Chinesesimp>总部正在迁移。无法让佩特罗斯复活。</Chinesesimp>
+                <Korean>본부가 이전 중입니다. 페트로스를 리스폰할 수 없습니다.</Korean>
+                <Italian>Il quartier generale è in fase di trasferimento. Impossibile far riapparire Petros.</Italian>
+                <Spanish>Se está trasladando el cuartel general. No se puede reaparecer a Petros.</Spanish>
+                <Polish>Siedziba główna jest przenoszona. Nie można przywrócić Petrosa.</Polish>
+                <Turkish>Karargâh taşınıyor. Petros yeniden canlandırılamıyor.</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
                 <Original>Train Rebel Troops</Original>
                 <Russian>Тренировать повстанцев</Russian>
