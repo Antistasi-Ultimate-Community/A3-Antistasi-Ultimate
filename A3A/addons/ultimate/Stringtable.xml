@@ -747,6 +747,90 @@
             <Spanish>Requiere el comandante predeterminado y un marcador controlado por el jugador.</Spanish>
             <Polish>Wymaga domyślnego dowódcy oraz znacznika kontrolowanego przez gracza.</Polish>
         </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_ASSET">
+            <Original>Rebuild Asset</Original>
+            <French>Reconstruire l'élément</French>
+            <German>Anlage wiederaufbauen</German>
+            <Czech>Obnovit zařízení</Czech>
+            <ChineseSimplified>重建资产</ChineseSimplified>
+            <Korean>자산 재건</Korean>
+            <Russian>Восстановить объект</Russian>
+            <Italian>Ricostruisci struttura</Italian>
+            <Spanish>Reconstruir instalación</Spanish>
+            <Polish>Odbuduj obiekt</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_COMMANDER_ONLY">
+            <Original>Only the commander can rebuild this asset.</Original>
+            <French>Seul le commandant peut reconstruire cet élément.</French>
+            <German>Nur der Kommandant kann diese Anlage wiederaufbauen.</German>
+            <Czech>Pouze velitel může obnovit toto zařízení.</Czech>
+            <ChineseSimplified>只有指挥官才能重建此资产。</ChineseSimplified>
+            <Korean>지휘관만 이 자산을 재건할 수 있습니다.</Korean>
+            <Russian>Только командир может восстановить этот объект.</Russian>
+            <Italian>Solo il comandante può ricostruire questa struttura.</Italian>
+            <Spanish>Solo el comandante puede reconstruir esta instalación.</Spanish>
+            <Polish>Tylko dowódca może odbudować ten obiekt.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_NEAREST_NOT_PLAYER">
+            <Original>Nearest zone is not controlled by the %1.</Original>
+            <French>La zone la plus proche n'est pas contrôlée par %1.</French>
+            <German>Die nächstgelegene Zone wird nicht von %1 kontrolliert.</German>
+            <Czech>Nejbližší zóna není pod kontrolou %1.</Czech>
+            <ChineseSimplified>最近的区域未被 %1 控制。</ChineseSimplified>
+            <Korean>가장 가까운 지역은 %1의 통제하에 있지 않습니다.</Korean>
+            <Russian>Ближайшая зона не контролируется %1.</Russian>
+            <Italian>La zona più vicina non è controllata da %1.</Italian>
+            <Spanish>La zona más cercana no está controlada por %1.</Spanish>
+            <Polish>Najbliższa strefa nie jest kontrolowana przez %1.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_COST">
+            <Original>Rebuilding this asset will cost %1%2.</Original>
+            <French>Reconstruire cet élément coûtera %1%2.</French>
+            <German>Der Wiederaufbau dieser Anlage kostet %1%2.</German>
+            <Czech>Obnova tohoto zařízení bude stát %1%2.</Czech>
+            <ChineseSimplified>重建此资产将花费 %1%2。</ChineseSimplified>
+            <Korean>이 자산을 재건하는 데 %1%2이(가) 필요합니다.</Korean>
+            <Russian>Восстановление этого объекта будет стоить %1%2.</Russian>
+            <Italian>Ricostruire questa struttura costerà %1%2.</Italian>
+            <Spanish>Reconstruir esta instalación costará %1%2.</Spanish>
+            <Polish>Odbudowa tego obiektu będzie kosztować %1%2.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_CONFIRM">
+            <Original>Are you sure you want to rebuild this asset?</Original>
+            <French>Êtes-vous sûr de vouloir reconstruire cet élément ?</French>
+            <German>Bist du sicher, dass du diese Anlage wiederaufbauen möchtest?</German>
+            <Czech>Opravdu chcete obnovit toto zařízení?</Czech>
+            <ChineseSimplified>你确定要重建此资产吗？</ChineseSimplified>
+            <Korean>이 자산을 재건하시겠습니까?</Korean>
+            <Russian>Вы уверены, что хотите восстановить этот объект?</Russian>
+            <Italian>Sei sicuro di voler ricostruire questa struttura?</Italian>
+            <Spanish>¿Estás seguro de que quieres reconstruir esta instalación?</Spanish>
+            <Polish>Czy na pewno chcesz odbudować ten obiekt?</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_NOT_DESTROYED">
+            <Original>This asset is not destroyed.</Original>
+            <French>Cet élément n'est pas détruit.</French>
+            <German>Diese Anlage ist nicht zerstört.</German>
+            <Czech>Toto zařízení není zničeno.</Czech>
+            <ChineseSimplified>此资产未被摧毁。</ChineseSimplified>
+            <Korean>이 자산은 파괴되지 않았습니다.</Korean>
+            <Russian>Этот объект не разрушен.</Russian>
+            <Italian>Questa struttura non è distrutta.</Italian>
+            <Spanish>Esta instalación no está destruida.</Spanish>
+            <Polish>Ten obiekt nie jest zniszczony.</Polish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_REBUILD_PLAYER_ONLY">
+            <Original>You do not control this territory.</Original>
+            <French>Vous ne contrôlez pas ce territoire.</French>
+            <German>Du kontrollierst dieses Gebiet nicht.</German>
+            <Czech>Nekontrolujete toto území.</Czech>
+            <ChineseSimplified>你不控制该领土。</ChineseSimplified>
+            <Korean>이 영토를 통제하고 있지 않습니다.</Korean>
+            <Russian>Вы не контролируете эту территорию.</Russian>
+            <Italian>Non controlli questo territorio.</Italian>
+            <Spanish>No controlas este territorio.</Spanish>
+            <Polish>Nie kontrolujesz tego terytorium.</Polish>
+        </Key>
         <Key ID="STR_A3U_HOVER_RALLY_DESC">
             <Original>Allows fast travel to a location set by the Commander.</Original>
             <German>Ermöglicht Schnellreise zu einem vom Kommandanten festgelegten Ort.</German>

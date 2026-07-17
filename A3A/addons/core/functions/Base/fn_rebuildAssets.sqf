@@ -3,95 +3,276 @@ FIX_LINE_NUMBERS()
 
 params ["_site", "_position"];
 
+// Prevent spamming multiple rebuild missions for the same site using a popup
+if (missionNamespace getVariable [format ["A3U_rebuilding_%1", _site], false]) exitWith {
+    [
+        localize "STR_A3U_rebuild_already_active",
+        localize "STR_notifiers_rebuild_assets_header",
+        localize "STR_antistasi_dialogs_close",
+        false,
+        findDisplay 46
+    ] spawn BIS_fnc_guiMessage;
+};
+
 private _leave = false;
 private _antennaDead = objNull;
-private _economyDead = ""; // Rebuild Factories and Resources Variables Definition
+private _economyDead = "";
+private _cost = 5000; // Default cost for generic locations (cities, milbases, outposts)
 
-if (_site in outposts) then {
-	_antennasDead = antennasDead select {_x inArea _site};
-	if (count _antennasDead > 0) then {
-		_antennaDead = _antennasDead select 0;
-	};
+// Check for Radio Tower
+if (_site in outposts || {_site in mrkAntennas}) then {
+    private _antennasDead = antennasDead select {(_x inArea _site) || {(_x distance2D _position) < 100}};
+    if (count _antennasDead > 0) then {
+        _antennaDead = _antennasDead select 0;
+        _cost = 3500; // Radio tower specific cost
+    };
 };
 
-// Check if the site is a destroyed economy site
+// Check for Economic Site
 if ((_site in factories || _site in resourcesX) && _site in destroyedSites) then {
-	_economyDead = _site;
-	Debug_1("Rebuilding Economic Site %1", _economyDead);
+    _economyDead = _site;
+    _cost = 5000; // Economy specific cost
+    Debug_1("Rebuilding Economic Site %1", _economyDead);
 };
 
-private _name = [_site] call A3A_fnc_localizar;
-
-private _rebuildSuccess = {
-	params ["_message", ["_name", _name]];
-	[
-		localize "STR_notifiers_success_type",
-		localize "STR_notifiers_rebuild_assets_header",
-		parseText format [localize _message, _name],
-		30
-	] spawn SCRT_fnc_ui_showMessage;
-
-	[0,-5000] remoteExec ["A3A_fnc_resourcesFIA",2];
+// Verify Faction Funds and throw a popup if insufficient
+private _factionMoney = server getVariable ["resourcesFIA", 0];
+if (_factionMoney < _cost) exitWith {
+    [
+        localize "STR_A3U_rebuild_insufficient_funds",
+        localize "STR_notifiers_rebuild_assets_header",
+        localize "STR_antistasi_dialogs_close",
+        false,
+        findDisplay 46
+    ] spawn BIS_fnc_guiMessage;
 };
 
-private _rebuildFail = {
-	params ["_message", ["_name", _name]];
-	[
-		localize "STR_notifiers_fail_type",
-		localize "STR_notifiers_rebuild_assets_header",
-		parsetext format [localize _message, _name],
-		30
-	] spawn SCRT_fnc_ui_showMessage;
+// Deduct funds upfront to prevent purchasing other things while the mission is active
+[0, -_cost] remoteExec ["A3A_fnc_resourcesFIA", 2];
+missionNamespace setVariable [format ["A3U_rebuilding_%1", _site], true, true];
+
+private _nameDest = [_site] call A3A_fnc_localizar;
+
+// -----------------------------------------------------------------------------
+// TASK CREATION & LOGISTICS SETUP
+// -----------------------------------------------------------------------------
+private _taskId = "REBUILD_" + _site + str(round(random 10000));
+
+[
+    [teamPlayer, civilian],
+    _taskId,
+    [
+        format [localize "STR_A3U_rebuild_task_desc", _nameDest],
+        localize "STR_A3U_rebuild_task_header",
+        _site
+    ],
+    _position,
+    false,
+    0,
+    true,
+    "Build",
+    true
+] call BIS_fnc_taskCreate;
+
+[_taskId, "REBUILD", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+
+// Spawn the construction materials box at HQ
+private _pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1, 50, "C_IDAP_supplyCrate_F"];
+private _box = "C_IDAP_supplyCrate_F" createVehicle _pos;
+
+// Clear the box inventory and disable its interactive container capability
+clearItemCargoGlobal _box;
+clearMagazineCargoGlobal _box;
+clearWeaponCargoGlobal _box;
+clearBackpackCargoGlobal _box;
+_box enableSimulationGlobal false; // Disables inventory interaction
+
+// Configure logistics properties
+_box enableRopeAttach true;
+_box allowDamage false;
+[_box] call A3A_Logistics_fnc_addLoadAction;
+[_box, teamPlayer] call A3A_fnc_AIVEHinit;
+[_box, localize "STR_marker_supply_box"] spawn A3A_fnc_inmuneConvoy;
+
+// -----------------------------------------------------------------------------
+// QRF TRIGGER LOGIC
+// -----------------------------------------------------------------------------
+// 75% chance to trigger an enemy QRF response to the rebuild
+if (random 100 <= 50) then {
+    // Find nearest enemy territory to determine who responds
+    private _enemyMarkers = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {
+        sidesX getVariable [_x, sideUnknown] in [Occupants, Invaders]
+    };
+    
+    if (count _enemyMarkers > 0) then {
+        private _nearestEnemyMarker = [_enemyMarkers, _position] call BIS_fnc_nearestPosition;
+        private _qrfSide = sidesX getVariable [_nearestEnemyMarker, sideUnknown];
+        
+        private _suppName = format ["REBUILD_QRF_%1_%2", _site, round(time)];
+        private _maxSpend = A3A_balanceVehicleCost * (1 + round (tierWar / 3)); // Scales up slightly with war tier
+        
+        // 75% chance for Land QRF, 25% chance for Air QRF
+        if (random 100 <= 75) then {
+            // Land QRF uses "attack" pool and auto-calculates delay based on war tier[cite: 1]
+            [_suppName, _qrfSide, "attack", _maxSpend, false, _position, 1, -1] spawn A3A_fnc_SUP_QRFLand;
+        } else {
+            // Air QRF uses "attack" pool and scales maximum spend internal logic by 1.5x[cite: 2]
+            [_suppName, _qrfSide, "attack", _maxSpend, false, _position, 1, -1] spawn A3A_fnc_SUP_QRFAir;
+        };
+    };
 };
 
-switch (true) do {
-	case (_site in citiesX): {
-		[0, 10, _position] remoteExec ["A3A_fnc_citySupportChange",2];
-    	[Occupants, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
-    	[Invaders, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
+// -----------------------------------------------------------------------------
+// DELIVERY AND TIMER LOOP
+// -----------------------------------------------------------------------------
+[_box, _position, _taskId, _site, _cost, _antennaDead, _economyDead, _nameDest] spawn {
+    params ["_box", "_position", "_taskId", "_site", "_cost", "_antennaDead", "_economyDead", "_nameDest"];
 
-		private _destroyedSite = destroyedSites find _site;
-		if (_destroyedSite == -1) exitWith {
-			["STR_notifiers_rebuild_assets_nothing_to_rebuild", _name] call _rebuildFail;
-		};
-		destroyedSites deleteAt(_destroyedSite);
-		publicVariable "destroyedSites";
+    // Wait until box reaches the destination or is destroyed
+    waitUntil {
+        sleep 1;
+        (!alive _box) || {(_box distance _position < 50) && (isNull attachedTo _box) && (isNull ropeAttachedTo _box)}
+    };
 
-		["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
-	};
-	// Rebuild Economic Assets and building repair start
-	case (_economyDead != ""): {
-		Debug_1("Calling A3A_fnc_rebuildEconomicAssets for %1", _economyDead);
-		[_economyDead] remoteExec ["A3A_fnc_rebuildEconomicAssets", 2]; // Call the actual function that rebuilds the economic site
+    if (!alive _box) exitWith {
+        [_taskId, "REBUILD", "FAILED"] call A3A_fnc_taskSetState;
+        missionNamespace setVariable [format ["A3U_rebuilding_%1", _site], false, true];
+        [0, _cost] remoteExec ["A3A_fnc_resourcesFIA", 2]; // Refund the player
+        
+        [
+            localize "STR_notifiers_fail_type",
+            localize "STR_notifiers_rebuild_assets_header",
+            parseText localize "STR_A3U_rebuild_box_destroyed",
+            30
+        ] spawn SCRT_fnc_ui_showMessage;
+        
+        [_taskId, "REBUILD", 1200] spawn A3A_fnc_taskDelete;
+    };
 
-		["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
-	};
-	// Rebuild Economic Assets and building repair end
+    // Box is in position, start random rebuild timer (60 to 180 seconds)
+    private _timer = round (60 + random 120);
+    [petros, "hint", localize "STR_A3U_rebuild_timer_started", localize "STR_notifiers_rebuild_assets_header"] remoteExec ["A3A_fnc_commsMP", [teamPlayer, civilian]];
 
-	case (!isNull _antennaDead): {
-		private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500,  true];
+    while {_timer > 0 && alive _box} do {
+        // Pause timer if box is moved away or loaded back into a vehicle
+        if ((_box distance _position >= 50) || (!isNull attachedTo _box) || (!isNull ropeAttachedTo _box)) then {
+            
+            // Hide the on-screen timer while paused
+            titleText ["", "PLAIN DOWN", 0.2, true, true]; 
+            
+            [petros, "hint", localize "STR_A3U_rebuild_moved_away", localize "STR_notifiers_rebuild_assets_header"] remoteExec ["A3A_fnc_commsMP", [teamPlayer, civilian]];
+            waitUntil {
+                sleep 1;
+                (!alive _box) || {(_box distance _position < 50) && (isNull attachedTo _box) && (isNull ropeAttachedTo _box)}
+            };
+            if (alive _box) then {
+                [petros, "hint", localize "STR_A3U_rebuild_timer_started", localize "STR_notifiers_rebuild_assets_header"] remoteExec ["A3A_fnc_commsMP", [teamPlayer, civilian]];
+            };
+        } else {
+            // Update and display the timer at the bottom center of the screen
+            titleText [format ["<t size='1.25' shadow='2' align='center'>%1: %2s</t>", localize "STR_A3U_rebuild_time_remaining", _timer], "PLAIN DOWN", 0.1, true, true];
+            
+            sleep 1;
+            _timer = _timer - 1;
+        };
+    };
 
-		{
-			[_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
-		} forEach _militaryBuildings;
+    // Ensure the timer text is cleared from the screen once the loop ends
+    titleText ["", "PLAIN DOWN", 0.5, true, true];
 
-		[_antennaDead] remoteExec ["A3A_fnc_rebuildRadioTower", 2];
+    if (!alive _box) exitWith {
+        [_taskId, "REBUILD", "FAILED"] call A3A_fnc_taskSetState;
+        missionNamespace setVariable [format ["A3U_rebuilding_%1", _site], false, true];
+        [0, _cost] remoteExec ["A3A_fnc_resourcesFIA", 2]; // Refund
+        
+        [
+            localize "STR_notifiers_fail_type",
+            localize "STR_notifiers_rebuild_assets_header",
+            parseText localize "STR_A3U_rebuild_box_destroyed",
+            30
+        ] spawn SCRT_fnc_ui_showMessage;
+        
+        [_taskId, "REBUILD", 1200] spawn A3A_fnc_taskDelete;
+    };
 
-		["STR_notifiers_rebuild_assets_radiotower_success"] call _rebuildSuccess;
-	};
+    // -----------------------------------------------------------------------------
+    // SUCCESS EXECUTION (Original Rebuild Logic)
+    // -----------------------------------------------------------------------------
+    [_taskId, "REBUILD", "SUCCEEDED"] call A3A_fnc_taskSetState;
+    missionNamespace setVariable [format ["A3U_rebuilding_%1", _site], false, true];
+    
+    // Clean up the delivery crate
+    deleteVehicle _box;
 
-	default {
-		[clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
+    private _rebuildSuccess = {
+        params ["_message", ["_name", _nameDest]];
+        [
+            localize "STR_notifiers_success_type",
+            localize "STR_notifiers_rebuild_assets_header",
+            parseText format [localize _message, _name],
+            30
+        ] spawn SCRT_fnc_ui_showMessage;
+    };
 
-		private _militaryBuildings = (nearestObjects [_position, A3A_buildingWhitelist, 500,  true]) select {_x in destroyedBuildings};
-		if (_militaryBuildings isEqualTo []) exitWith {
-			["STR_notifiers_rebuild_assets_nothing_to_rebuild", _name] call _rebuildFail;
-		};
-		
-		{
-			[_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
-		} forEach _militaryBuildings;
-		["STR_notifiers_rebuild_assets_success", _name] call _rebuildSuccess;
-		[clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
-	};
+    private _rebuildFail = {
+        params ["_message", ["_name", _nameDest]];
+        [
+            localize "STR_notifiers_fail_type",
+            localize "STR_notifiers_rebuild_assets_header",
+            parsetext format [localize _message, _name],
+            30
+        ] spawn SCRT_fnc_ui_showMessage;
+    };
+
+    switch (true) do {
+        case (_site in citiesX): {
+            [0, 10, _position] remoteExec ["A3A_fnc_citySupportChange",2];
+            [Occupants, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
+            [Invaders, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
+
+            private _destroyedSite = destroyedSites find _site;
+            if (_destroyedSite == -1) exitWith {
+                ["STR_notifiers_rebuild_assets_nothing_to_rebuild", _nameDest] call _rebuildFail;
+                [0, _cost] remoteExec ["A3A_fnc_resourcesFIA", 2]; // Refund if nothing to rebuild
+            };
+            destroyedSites deleteAt(_destroyedSite);
+            publicVariable "destroyedSites";
+
+            ["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
+        };
+        
+        case (_economyDead != ""): {
+            [_economyDead] remoteExec ["A3A_fnc_rebuildEconomicAssets", 2];
+            ["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
+        };
+
+        case (!isNull _antennaDead): {
+            private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500, true];
+            {
+                [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
+            } forEach _militaryBuildings;
+
+            [_antennaDead] remoteExec ["A3A_fnc_rebuildRadioTower", 2];
+            ["STR_notifiers_rebuild_assets_radiotower_success"] call _rebuildSuccess;
+        };
+
+        default {
+            [clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
+
+            private _militaryBuildings = (nearestObjects [_position, A3A_buildingWhitelist, 500, true]) select {_x in destroyedBuildings};
+            if (_militaryBuildings isEqualTo []) exitWith {
+                ["STR_notifiers_rebuild_assets_nothing_to_rebuild", _nameDest] call _rebuildFail;
+                [0, _cost] remoteExec ["A3A_fnc_resourcesFIA", 2]; // Refund
+            };
+            
+            {
+                [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
+            } forEach _militaryBuildings;
+            
+            ["STR_notifiers_rebuild_assets_success", _nameDest] call _rebuildSuccess;
+            [clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
+        };
+    };
+
+    [_taskId, "REBUILD", 1200] spawn A3A_fnc_taskDelete;
 };

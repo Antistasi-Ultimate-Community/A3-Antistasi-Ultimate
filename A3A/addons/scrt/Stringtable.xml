@@ -13188,6 +13188,102 @@
                 <French>Les fournitures ont été livrées et distribuées avec succès à la population. Les gens de "%1" vous aiment !</French>
                 <Turkish>İkmal malzemeleri başarıyla teslim edildi ve halka dağıtıldı. %1 halkı size minnettar!</Turkish>
             </Key>
+            <Key ID="STR_A3U_rebuild_insufficient_funds">
+                <Original>Insufficient funds. You cannot afford to rebuild this asset.</Original>
+                <French>Fonds insuffisants. Vous n'avez pas les moyens de reconstruire cet élément.</French>
+                <German>Unzureichende Geldmittel. Du kannst es dir nicht leisten, diese Anlage wiederaufzubauen.</German>
+                <Czech>Nedostatek financí. Nemáte dostatek prostředků na obnovu tohoto zařízení.</Czech>
+                <ChineseSimplified>资金不足。你无法负担重建此资产的费用。</ChineseSimplified>
+                <Korean>자금이 부족합니다. 이 자산을 재건할 자금이 없습니다.</Korean>
+                <Russian>Недостаточно средств. Вы не можете позволить себе восстановить этот объект.</Russian>
+                <Italian>Fondi insufficienti. Non puoi permetterti di ricostruire questa struttura.</Italian>
+                <Spanish>Fondos insuficientes. No puedes permitirte reconstruir esta instalación.</Spanish>
+                <Polish>Niewystarczające środki. Nie stać cię na odbudowę tego obiektu.</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_task_header">
+                <Original>Rebuild Asset</Original>
+                <French>Reconstruire l'élément</French>
+                <German>Anlage wiederaufbauen</German>
+                <Czech>Obnovit zařízení</Czech>
+                <ChineseSimplified>重建资产</ChineseSimplified>
+                <Korean>자산 재건</Korean>
+                <Russian>Восстановить объект</Russian>
+                <Italian>Ricostruisci struttura</Italian>
+                <Spanish>Reconstruir instalación</Spanish>
+                <Polish>Odbuduj obiekt</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_task_desc">
+                <Original>Deliver the construction materials from HQ to %1 to begin rebuilding the destroyed assets. Keep the materials within 50 meters of the center until construction is complete.</Original>
+                <French>Livrez les matériaux de construction du QG à %1 pour commencer à reconstruire les éléments détruits. Gardez les matériaux à moins de 50 mètres du centre jusqu'à ce que la construction soit terminée.</French>
+                <German>Liefere die Baumaterialien vom HQ nach %1, um mit dem Wiederaufbau der zerstörten Anlagen zu beginnen. Halte die Materialien innerhalb von 50 Metern um das Zentrum, bis der Bau abgeschlossen ist.</German>
+                <Czech>Doručte stavební materiál z velitelství do %1 a začněte s obnovou zničených zařízení. Udržujte materiál do 50 metrů od centra, dokud nebude stavba dokončena.</Czech>
+                <ChineseSimplified>将建筑材料从总部运送到 %1，以开始重建被摧毁的资产。在施工完成前，请将材料保持在距离中心 50 米的范围内。</ChineseSimplified>
+                <Korean>파괴된 자산의 재건을 시작하려면 HQ에서 %1(으)로 건설 자재를 배달하십시오. 건설이 완료될 때까지 자재를 중심에서 50미터 이내에 두십시오.</Korean>
+                <Russian>Доставьте строительные материалы из штаба в %1, чтобы начать восстановление разрушенных объектов. Держите материалы в пределах 50 метров от центра до завершения строительства.</Russian>
+                <Italian>Consegna i materiali da costruzione dal QG a %1 per iniziare a ricostruire le strutture distrutte. Mantieni i materiali entro 50 metri dal centro fino al completamento della costruzione.</Italian>
+                <Spanish>Entrega los materiales de construcción desde el CG a %1 para comenzar a reconstruir las instalaciones destruidas. Mantén los materiales a menos de 50 metros del centro hasta que se complete la construcción.</Spanish>
+                <Polish>Dostarcz materiały budowlane z kwatery głównej do %1, aby rozpocząć odbudowę zniszczonych obiektów. Utrzymuj materiały w promieniu 50 metrów od środka, aż budowa zostanie ukończona.</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_box_destroyed">
+                <Original>The construction materials were destroyed. The rebuild mission has failed and your funds have been refunded.</Original>
+                <French>Les matériaux de construction ont été détruits. La mission de reconstruction a échoué et vos fonds ont été remboursés.</French>
+                <German>Die Baumaterialien wurden zerstört. Die Wiederaufbaumission ist fehlgeschlagen und deine Gelder wurden zurückerstattet.</German>
+                <Czech>Stavební materiál byl zničen. Mise obnovy selhala a vaše prostředky byly vráceny.</Czech>
+                <ChineseSimplified>建筑材料被毁。重建任务失败，您的资金已退还。</ChineseSimplified>
+                <Korean>건설 자재가 파괴되었습니다. 재건 임무에 실패했으며 자금이 환불되었습니다.</Korean>
+                <Russian>Строительные материалы были уничтожены. Миссия по восстановлению провалена, а ваши средства возвращены.</Russian>
+                <Italian>I materiali da costruzione sono stati distrutti. La missione di ricostruzione è fallita e i tuoi fondi sono stati rimborsati.</Italian>
+                <Spanish>Los materiales de construcción fueron destruidos. La misión de reconstrucción ha fracasado y tus fondos han sido reembolsados.</Spanish>
+                <Polish>Materiały budowlane zostały zniszczone. Misja odbudowy nie powiodła się, a twoje środki zostały zwrócone.</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_timer_started">
+                <Original>Materials have arrived. Rebuilding process initiated. Keep the materials secure in the area!</Original>
+                <French>Les matériaux sont arrivés. Le processus de reconstruction a commencé. Gardez les matériaux en sécurité dans la zone !</French>
+                <German>Die Materialien sind eingetroffen. Der Wiederaufbauprozess wurde eingeleitet. Halte die Materialien in der Umgebung sicher!</German>
+                <Czech>Materiály dorazily. Proces obnovy zahájen. Udržujte materiály v této oblasti v bezpečí!</Czech>
+                <ChineseSimplified>材料已送达。重建过程已启动。请确保材料在该区域内的安全！</ChineseSimplified>
+                <Korean>자재가 도착했습니다. 재건 프로세스가 시작되었습니다. 해당 지역에서 자재를 안전하게 보관하십시오!</Korean>
+                <Russian>Материалы прибыли. Процесс восстановления начат. Держите материалы в безопасности в этом районе!</Russian>
+                <Italian>I materiali sono arrivati. Processo di ricostruzione avviato. Mantieni i materiali al sicuro nell'area!</Italian>
+                <Spanish>Han llegado los materiales. Proceso de reconstrucción iniciado. ¡Mantén los materiales seguros en la zona!</Spanish>
+                <Polish>Materiały dotarły. Rozpoczęto proces odbudowy. Dbaj o bezpieczeństwo materiałów w tym obszarze!</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_moved_away">
+                <Original>Construction materials have been moved away from the target! Return them to the center to continue the rebuild.</Original>
+                <French>Les matériaux de construction ont été éloignés de la cible ! Retournez-les au centre pour continuer la reconstruction.</French>
+                <German>Die Baumaterialien wurden vom Ziel entfernt! Bringe sie zum Zentrum zurück, um den Wiederaufbau fortzusetzen.</German>
+                <Czech>Stavební materiál byl přesunut pryč od cíle! Vraťte je zpět do centra, aby obnova mohla pokračovat.</Czech>
+                <ChineseSimplified>建筑材料已被移离目标！将其放回中心以继续重建。</ChineseSimplified>
+                <Korean>건설 자재가 목표물에서 벗어났습니다! 재건을 계속하려면 중심에 다시 가져다 두십시오.</Korean>
+                <Russian>Строительные материалы были перемещены от цели! Верните их в центр, чтобы продолжить восстановление.</Russian>
+                <Italian>I materiali da costruzione sono stati allontanati dal bersaglio! Riportali al centro per continuare la ricostruzione.</Italian>
+                <Spanish>¡Los materiales de construcción se han alejado del objetivo! Devuélvelos al centro para continuar la reconstrucción.</Spanish>
+                <Polish>Materiały budowlane zostały odsunięte od celu! Zwróć je na środek, aby kontynuować odbudowę.</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_already_active">
+                <Original>A rebuild operation is already active for this location.</Original>
+                <French>Une opération de reconstruction est déjà active pour cet emplacement.</French>
+                <German>An diesem Standort ist bereits eine Wiederaufbauoperation aktiv.</German>
+                <Czech>Pro toto místo již probíhá operace obnovy.</Czech>
+                <ChineseSimplified>此位置已在进行重建行动。</ChineseSimplified>
+                <Korean>이 위치에서 이미 재건 작업이 활성화되어 있습니다.</Korean>
+                <Russian>Для этого места уже активна операция восстановления.</Russian>
+                <Italian>Un'operazione di ricostruzione è già attiva per questa posizione.</Italian>
+                <Spanish>Una operación de reconstrucción ya está activa para esta ubicación.</Spanish>
+                <Polish>Operacja odbudowy jest już aktywna w tej lokalizacji.</Polish>
+            </Key>
+            <Key ID="STR_A3U_rebuild_time_remaining">
+                <Original>Time Remaining</Original>
+                <French>Temps restant</French>
+                <German>Verbleibende Zeit</German>
+                <Czech>Zbývající čas</Czech>
+                <ChineseSimplified>剩余时间</ChineseSimplified>
+                <Korean>남은 시간</Korean>
+                <Russian>Оставшееся время</Russian>
+                <Italian>Tempo rimanente</Italian>
+                <Spanish>Tiempo restante</Spanish>
+                <Polish>Pozostały czas</Polish>
+            </Key>
             <Key ID="STR_A3A_Missions_REP_Antenna_task_header">
                 <Original>Tower Rebuild Disrupt</Original>
                 <Russian>Помешайте ремонту радиовышки</Russian>

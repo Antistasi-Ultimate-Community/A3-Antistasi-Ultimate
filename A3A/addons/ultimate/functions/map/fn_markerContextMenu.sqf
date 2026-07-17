@@ -193,7 +193,7 @@ if (_resolvedScreenPosition isEqualTo []) then {
 if (_resolvedScreenPosition isEqualTo []) then { _resolvedScreenPosition = getMousePosition; };
 
 private _groupWidth = 0.22 * safeZoneW;
-private _groupHeight = 0.16 * safeZoneH;
+private _groupHeight = 0.19 * safeZoneH;
 private _titleBarHeight = 0.028 * safeZoneH;
 
 private _groupPositionX = (_resolvedScreenPosition # 0) + 0.012;
@@ -409,13 +409,19 @@ _informationControl ctrlCommit 0;
 private _isCommander = player isEqualTo theBoss;
 private _buttonCount = 4;
 private _buttonGap = 0.004 * safeZoneH;
-private _buttonHeight = (_contentHeight - (_buttonGap * (_buttonCount - 1))) / _buttonCount;
+private _topBottomPadding = _paddingY * 0.5;
+
+// Dynamically scale button height to ensure they never overlap, utilizing the exact available space
+private _availableHeight = _contentHeight - (_topBottomPadding * 2);
+private _buttonHeight = (_availableHeight - (_buttonGap * (_buttonCount - 1))) / _buttonCount;
+
 private _buttonWidth = _leftColumnWidth - _paddingX;
 private _buttonPositionX = _leftColumnPositionX + (_paddingX * 0.5);
 
-private _topBottomPadding = _paddingY * 0.5;
 private _buttonPositionY = _contentPositionY + _topBottomPadding;
 
+
+// --- BUTTON 1: FAST TRAVEL ---
 private _fastTravelButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
 _fastTravelButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
 _fastTravelButton ctrlSetText localize "STR_antistasi_dialogs_main_fast_travel";
@@ -433,6 +439,8 @@ private _fastTravelAllowed = _isPlayerControlled && {!_isDestroyed && !_isMilita
 private _fastTravelTooltip = if (_isDestroyed && _isMilitaryAdministration) then { localize "STR_A3U_HOVER_DESTROYED_MILADMIN" } else { localize "STR_A3U_CONTEXT_FASTTRAVEL_PLAYER_ONLY" };
 [_fastTravelButton, _fastTravelAllowed, _fastTravelTooltip] call _setButtonState;
 
+
+// --- BUTTON 2: GARRISON ---
 _buttonPositionY = _buttonPositionY + _buttonHeight + _buttonGap;
 private _garrisonButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
 _garrisonButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
@@ -449,7 +457,6 @@ _garrisonButton ctrlAddEventHandler ["ButtonClick", {
 }];
 
 private _isBlackMarketTrader = (toLowerANSI _originalMarkerName) isEqualTo "tradermarker";
-
 private _garrisonAllowed = _isPlayerControlled && {_isCommander} && {!_isRallyPoint} && {!_isBlackMarketTrader} && {!_isMilitaryAdministration};
 
 private _garrisonTooltip = localize (switch true do {
@@ -460,6 +467,85 @@ private _garrisonTooltip = localize (switch true do {
 
 [_garrisonButton, _garrisonAllowed, _garrisonTooltip] call _setButtonState;
 
+
+// --- BUTTON 3: REBUILD ASSETS ---
+_buttonPositionY = _buttonPositionY + _buttonHeight + _buttonGap;
+private _rebuildButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
+_rebuildButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
+_rebuildButton ctrlSetText localize "STR_antistasi_dialogs_hq_garrisons_rebuild_assets_button";
+_rebuildButton ctrlCommit 0;
+
+
+private _civFaction = missionNamespace getVariable ["A3A_faction_civ", createHashMap];
+private _currencySymbol = _civFaction getOrDefault ["currencySymbol", "$"];
+private _rebFaction = missionNamespace getVariable ["A3A_faction_reb", createHashMap];
+private _rebFactionName = _rebFaction getOrDefault ["name", "Rebels"];
+
+private _isRadioTower = _originalMarkerName in mrkAntennas;
+private _nearestTerritoryIsPlayer = true;
+
+if (_isRadioTower) then {
+    private _mainMarkers = (resourcesX + airportsX + factories + outposts + seaports + milbases) - controlsX;
+    private _nearestTerritory = [_mainMarkers, _originalMarkerPosition] call BIS_fnc_nearestPosition;
+    if (sidesX getVariable [_nearestTerritory, sideUnknown] != teamPlayer) then {
+        _nearestTerritoryIsPlayer = false;
+    };
+};
+
+private _rebuildAllowed = (_isPlayerControlled || (_isRadioTower && _nearestTerritoryIsPlayer)) && {_isDestroyed} && {_isCommander};
+
+private _rebuildTooltip = call {
+    if (_isRadioTower && !_nearestTerritoryIsPlayer) exitWith { format [localize "STR_A3U_CONTEXT_REBUILD_NEAREST_NOT_PLAYER", _rebFactionName] };
+    if (!_isPlayerControlled && !_isRadioTower) exitWith { localize "STR_A3U_CONTEXT_REBUILD_PLAYER_ONLY" };
+    if (!_isDestroyed) exitWith { localize "STR_A3U_CONTEXT_REBUILD_NOT_DESTROYED" };
+    if (!_isCommander) exitWith { localize "STR_A3U_CONTEXT_REBUILD_COMMANDER_ONLY" };
+    "" 
+};
+
+[_rebuildButton, _rebuildAllowed, _rebuildTooltip] call _setButtonState;
+
+_rebuildButton ctrlAddEventHandler ["ButtonClick", {
+    params ["_control"];
+    private _display = ctrlParent _control;
+    private _markerName = _display getVariable ["A3U_mrkMenu_markerOrig", ""];
+    if (_markerName == "") exitWith {};
+    
+    [_markerName, _display] spawn {
+        params ["_markerName", "_display"];
+        
+        private _cost = 5000;
+        if (_markerName in mrkAntennas) then { _cost = 3500; };
+        
+        private _civFaction = missionNamespace getVariable ["A3A_faction_civ", createHashMap];
+        private _currencySymbol = _civFaction getOrDefault ["currencySymbol", "$"];
+        
+        private _messageText = format ["<t align='center'>%1<br/><br/>%2</t>", format [localize "STR_A3U_CONTEXT_REBUILD_COST", _cost, _currencySymbol], localize "STR_A3U_CONTEXT_REBUILD_CONFIRM"];
+
+        private _result = [
+            parseText _messageText, 
+            localize "STR_antistasi_dialogs_hq_garrisons_rebuild_assets_button", 
+            true, 
+            true, 
+            _display
+        ] call BIS_fnc_guiMessage;
+        
+        if (_result) then {
+            private _pos = getMarkerPos _markerName;
+            [_markerName, _pos] call A3A_fnc_rebuildAssets;
+            
+            private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
+            private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
+            if (!isNull _menuGroup) then { ctrlDelete _menuGroup; };
+            if (!isNull _garrisonGroup) then { ctrlDelete _garrisonGroup; };
+            _display setVariable ["A3U_mrkMenu_grp", controlNull];
+            _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
+            _display setVariable ["A3U_mrkMenu_marker", ""];
+        };
+    };
+}];
+
+
+// --- BUTTON 4: CLOSE ---
 private _closeButtonPositionY = _contentPositionY + _contentHeight - _topBottomPadding - _buttonHeight;
 private _closeButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
 _closeButton ctrlSetPosition [_buttonPositionX, _closeButtonPositionY, _buttonWidth, _buttonHeight];
