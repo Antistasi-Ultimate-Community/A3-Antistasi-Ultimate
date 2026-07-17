@@ -98,7 +98,7 @@ _box allowDamage false;
 // QRF TRIGGER LOGIC
 // -----------------------------------------------------------------------------
 // 75% chance to trigger an enemy QRF response to the rebuild
-if (random 100 <= 50) then {
+if (random 100 <= 35) then {
     // Find nearest enemy territory to determine who responds
     private _enemyMarkers = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {
         sidesX getVariable [_x, sideUnknown] in [Occupants, Invaders]
@@ -113,10 +113,8 @@ if (random 100 <= 50) then {
         
         // 75% chance for Land QRF, 25% chance for Air QRF
         if (random 100 <= 75) then {
-            // Land QRF uses "attack" pool and auto-calculates delay based on war tier[cite: 1]
             [_suppName, _qrfSide, "attack", _maxSpend, false, _position, 1, -1] spawn A3A_fnc_SUP_QRFLand;
         } else {
-            // Air QRF uses "attack" pool and scales maximum spend internal logic by 1.5x[cite: 2]
             [_suppName, _qrfSide, "attack", _maxSpend, false, _position, 1, -1] spawn A3A_fnc_SUP_QRFAir;
         };
     };
