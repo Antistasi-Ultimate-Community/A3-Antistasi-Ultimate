@@ -43,8 +43,8 @@
 ["vehiclesGunBoats", ["rhsusf_mkvsoc"]] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["rhs_btr70_msv" ]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["RHS_Su25SM_vvs"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["rhs_mig29sm_vvs"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["RHS_C130J"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["RHS_Mi8AMT_vdv"]] call _fnc_saveToTemplate;
