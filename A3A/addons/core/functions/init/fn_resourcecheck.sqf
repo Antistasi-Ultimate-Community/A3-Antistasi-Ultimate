@@ -92,7 +92,14 @@ while {true} do {
 		_resAdd = _resAdd + _resAddCity;
 		_hrAdd = _hrAdd + _hrAddCity;
 
-		private _canFlip = (_supportGov < _supportReb && (_citySide isNotEqualTo teamPlayer) && !(_city in destroyedSites));
+		private _popReb = round (_numCiv * (_supportReb / 100));
+    	private _popGov = round (_numCiv * (_supportGov / 100));
+		private _isNowEnemy = (_popReb <= (_popGov * 0.667)); // ~40% enemy 
+		private _isNowFriendly = (_popReb >= (_popGov * 1.5)); // ~60% rebel needed
+		private _isNeutral = (!_isNowEnemy && !_isNowFriendly);
+
+		private _canFlip = (!_isNeutral && (_isNowFriendly && (_citySide isNotEqualTo teamPlayer) && !(_city in destroyedSites)));
+		private _canFlipEnemy = (!_isNeutral && (_isNowEnemy && (_citySide isEqualTo teamPlayer) && !(_city in destroyedSites)));
 		private _canStartSkirmish = (random 100 > 50 && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
 
 		if (_canFlip) then {
@@ -104,6 +111,10 @@ while {true} do {
 			} else {
 				[_city, true] call A3A_fnc_cityChangeSide;
 			};
+		};
+
+		if (_canFlipEnemy) then {
+			[_city, false] call A3A_fnc_cityChangeSide;
 		};
 	} forEach citiesX;
 

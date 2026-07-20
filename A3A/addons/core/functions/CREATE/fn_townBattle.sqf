@@ -96,7 +96,7 @@ if (time > _missionExpireTime) exitWith {
     bigAttackInProgress = false; publicVariable "bigAttackInProgress";
 };
 
-ServerInfo_2("Launching %1 Battle Against %2 from %3", _side, _mrkDest, _mrkOrigin);
+ServerInfo_3("Launching %1 Battle Against %2 from %3", _side, _mrkDest, _mrkOrigin);
 
 // Mostly to prevent fast travel
 forcedSpawn pushBack _mrkDest; publicVariable "forcedSpawn";
@@ -172,7 +172,7 @@ private _fnc_adjustNearCities = {
 };
 
 if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time > _missionExpireTime)) then {
-    Info_1("Rebels defeated a town attack against %1, %2", _side, _mrkDest);
+    Info_2("Rebels defeated a town attack against %1, %2", _side, _mrkDest);
     [_taskId, "townBattle", "SUCCEEDED"] call A3A_fnc_taskSetState;
     [_posDest, 10, 3000] call _fnc_adjustNearCities;
     [_mrkDest, true] call A3A_fnc_cityChangeSide;
@@ -186,7 +186,7 @@ if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time 
     [10,theBoss] call A3A_fnc_addScorePlayer;
     [round (100*((tierWar/3) max 1)), theBoss, true] call A3A_fnc_addMoneyPlayer;
 } else {
-    Info_1("Rebels lost a town attack against %1, %2", _side, _mrkDest);
+    Info_2("Rebels lost a town attack against %1, %2", _side, _mrkDest);
     [_taskId, "townBattle", "FAILED"] call A3A_fnc_taskSetState;
     [_posDest, -20, 3000] call _fnc_adjustNearCities;
     [0,-20,_mrkDest,false] spawn A3A_fnc_citySupportChange;
