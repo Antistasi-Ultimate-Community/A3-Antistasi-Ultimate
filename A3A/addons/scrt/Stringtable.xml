@@ -14641,7 +14641,7 @@
                 <Portuguese>Você quer que eu seja preso!? Volte quando não estiver chamando atenção!</Portuguese>
                 <Turkish>Beni tutuklattırmaya mı çalışıyorsun!? Dikkat çekmediğinde geri gel!</Turkish>
             </Key>
-            <Key ID="STR_antistasi_actions_talk_with_civ_fail_in_vehicle">
+            <Key ID="STR_antistasi_actions_talk_with_civ_in_vehicle_fail">
                 <Original>I can't talk to you while you're in there. Get out of the vehicle!</Original>
                 <Russian>Я не могу говорить с тобой, пока ты там. Выходи из машины!</Russian>
                 <German>Ich kann nicht mit dir reden, während du da drin bist. Steig aus dem Fahrzeug!</German>
