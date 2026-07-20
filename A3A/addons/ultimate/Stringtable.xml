@@ -831,6 +831,57 @@
             <Spanish>No controlas este territorio.</Spanish>
             <Polish>Nie kontrolujesz tego terytorium.</Polish>
         </Key>
+        <Key ID="STR_A3U_CONTEXT_DELIVER_SUPPLIES">
+            <Original>Deliver Supplies</Original>
+            <English>Deliver Supplies</English>
+            <Russian>Доставить припасы</Russian>
+            <German>Vorräte liefern</German>
+            <Italian>Consegna rifornimenti</Italian>
+            <Spanish>Entregar suministros</Spanish>
+            <French>Livrer des fournitures</French>
+            <Korean>보급품 전달</Korean>
+            <Japanese>物資の配達</Japanese>
+            <ChineseSimplified>运送补给</ChineseSimplified>
+            <Chinese>運送補給</Chinese>
+            <Polish>Dostarcz zapasy</Polish>
+            <Czech>Doručit zásoby</Czech>
+            <Portuguese>Entregar Suprimentos</Portuguese>
+            <Turkish>Erzak Teslim Et</Turkish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_DELIVER_SUPPLIES_DESC">
+            <Original>Start a logistics mission to deliver supplies to this town.</Original>
+            <English>Start a logistics mission to deliver supplies to this town.</English>
+            <Russian>Начать логистическую миссию по доставке припасов в этот город.</Russian>
+            <German>Starte eine Logistikmission, um Vorräte in diese Stadt zu liefern.</German>
+            <Italian>Inizia una missione logistica per consegnare rifornimenti a questa città.</Italian>
+            <Spanish>Inicia una misión logística para entregar suministros a esta ciudad.</Spanish>
+            <French>Lancer une mission logistique pour livrer des fournitures à cette ville.</French>
+            <Korean>이 마을에 보급품을 전달하는 물류 임무를 시작합니다.</Korean>
+            <Japanese>この町に物資を届ける兵站ミッションを開始します。</Japanese>
+            <ChineseSimplified>开始一项后勤任务，将补给运送到这个城镇。</ChineseSimplified>
+            <Chinese>開始一項後勤任務，將補給運送到這個城鎮。</Chinese>
+            <Polish>Rozpocznij misję logistyczną, aby dostarczyć zapasy do tego miasta.</Polish>
+            <Czech>Zahájit logistickou misi k doručení zásob do tohoto města.</Czech>
+            <Portuguese>Iniciar uma missão de logística para entregar suprimentos a esta cidade.</Portuguese>
+            <Turkish>Bu kasabaya erzak teslim etmek için bir lojistik görevi başlat.</Turkish>
+        </Key>
+        <Key ID="STR_A3U_CONTEXT_COMMANDER_ONLY">
+            <Original>Only the commander can request this action.</Original>
+            <English>Only the commander can request this action.</English>
+            <Russian>Только командир может запросить это действие.</Russian>
+            <German>Nur der Kommandant kann diese Aktion anfordern.</German>
+            <Italian>Solo il comandante può richiedere questa azione.</Italian>
+            <Spanish>Solo el comandante puede solicitar esta acción.</Spanish>
+            <French>Seul le commandant peut demander cette action.</French>
+            <Korean>지휘관만 이 조치를 요청할 수 있습니다.</Korean>
+            <Japanese>指揮官のみがこのアクションを要求できます。</Japanese>
+            <ChineseSimplified>只有指挥官才能请求此操作。</ChineseSimplified>
+            <Chinese>只有指揮官才能請求此操作。</Chinese>
+            <Polish>Tylko dowódca może zażądać tej akcji.</Polish>
+            <Czech>Tuto akci může požadovat pouze velitel.</Czech>
+            <Portuguese>Apenas o comandante pode solicitar esta ação.</Portuguese>
+            <Turkish>Sadece komutan bu eylemi talep edebilir.</Turkish>
+        </Key>
         <Key ID="STR_A3U_HOVER_RALLY_DESC">
             <Original>Allows fast travel to a location set by the Commander.</Original>
             <German>Ermöglicht Schnellreise zu einem vom Kommandanten festgelegten Ort.</German>

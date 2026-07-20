@@ -107,17 +107,39 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 	} forEach ([300,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
 	while {_countX > 0 and {dateToNumber date < _dateLimitNum and {!isNull _truckX}}} do {
 		while {(_countX > 0) and (_truckX distance _positionX < 40) and ({[_x] call A3A_fnc_canFight} count ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits) == count ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits)) and ({(side _x == Occupants) and (_x distance _truckX < 50)} count allUnits == 0) and (dateToNumber date < _dateLimitNum) and (isNull attachedTo _truckX)} do {
-			_formatX = format [localize "STR_A3A_Missions_SUPP_Supplies_enemynear", _countX];
-			{if (isPlayer _x) then {[petros,"hint",_formatX,localize "STR_A3A_Missions_SUPP_Supplies_tip_header"] remoteExec ["A3A_fnc_commsMP",_x]}} forEach ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
+			
+			private _timerText = format ["<t size='1.25' shadow='2' align='center'>%1: %2s</t>", localize "STR_A3U_rebuild_time_remaining", _countX];
+			{
+				if (isPlayer _x) then {
+					[[_timerText, "PLAIN DOWN", 0.1, true, true]] remoteExec ["titleText", _x];
+				};
+			} forEach ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
+			
 			sleep 1;
 			_countX = _countX - 1;
 		};
 		if (_countX > 0) then {
-			if (((_truckX distance _positionX > 40) or (not([80,1,_truckX,teamPlayer] call A3A_fnc_distanceUnits)) or ({(side _x == Occupants) and (_x distance _truckX < 50)} count allUnits != 0)) and (alive _truckX)) then {{[petros,"hint","Stay close to the crate, and clean all BLUFOR presence in the surroundings or count will restart", localize "STR_A3A_Missions_SUPP_Supplies_tip_header"] remoteExec ["A3A_fnc_commsMP",_x]} forEach ([100,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits)};
+			if (((_truckX distance _positionX > 40) or (not([80,1,_truckX,teamPlayer] call A3A_fnc_distanceUnits)) or ({(side _x == Occupants) and (_x distance _truckX < 50)} count allUnits != 0)) and (alive _truckX)) then {
+				
+				{
+					if (isPlayer _x) then {
+						[["", "PLAIN DOWN", 0.2, true, true]] remoteExec ["titleText", _x];
+						[petros,"hint","Stay close to the crate, and clean all BLUFOR presence in the surroundings or count will restart", localize "STR_A3A_Missions_SUPP_Supplies_tip_header"] remoteExec ["A3A_fnc_commsMP",_x];
+					};
+				} forEach ([100,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
+
+			};
 			waitUntil {sleep 1; ((_truckX distance _positionX < 40) and ([80,1,_truckX,teamPlayer] call A3A_fnc_distanceUnits) and ({(side _x == Occupants) and (_x distance _truckX < 50)} count allUnits == 0)) or (dateToNumber date > _dateLimitNum) or (isNull _truckX)};
 		};
 		if (_countX < 1) exitWith {};
 	};
+
+	{
+		if (isPlayer _x) then {
+			[["", "PLAIN DOWN", 0.5, true, true]] remoteExec ["titleText", _x];
+		};
+	} forEach ([100,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
+
 	if ((dateToNumber date < _dateLimitNum) and !(isNull _truckX)) then {
 		[petros,"hint", format [localize "STR_A3A_Missions_SUPP_Supplies_success", _nameDest], localize "STR_A3A_Missions_SUPP_Supplies_tip_header"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 		[_taskId, "SUPP", "SUCCEEDED"] call A3A_fnc_taskSetState;
