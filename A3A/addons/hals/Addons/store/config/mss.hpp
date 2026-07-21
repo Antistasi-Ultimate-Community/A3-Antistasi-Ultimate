@@ -1,23 +1,6 @@
 /*
 	MSS - Modern Sniper Systems AIO
 	https://steamcommunity.com/sharedfiles/filedetails/?id=3564392635
-
-	Pricing methodology (first-pass, needs maintainer review):
-	- Rifles: base price by caliber tier (7.62x51=900 ... .50 BMG=3200),
-	  scaled by a platform-quality multiplier informed by real-world brand tier and
-	  actual fire-mode data (reloadTime on the Single mode: ~1.5s = bolt-action,
-	  ~0.1-0.3s = semi-auto, which gets a 0.70-0.85 discount vs bolt-action's 1.0-1.30).
-	  Cosmetic (color) and barrel-length variants of the same weapon+caliber share one price.
-	- Optics: flat base 1200 for every brand, +300 if it has a laser rangefinder (LRF),
-	  +600 if it has a night-vision (NV/PVS30) variant, +2000 if it has a thermal (TI/T75)
-	  variant. Bonuses stack (e.g. LRF+thermal = 1200+300+2000 = 3500).
-	- Muzzles: caliber tier taken from each device's actual asdg_MuzzleSlot_* compatibility
-	  (7.62/6.5/5.56=220, .338/.300=320, .50 BMG/9.3x64=500), brakes flat at 100-150,
-	  all doubled per maintainer request (440/640/1000, brakes 200-300).
-	- Bipods: 140-260 by brand tier (Harris/Magpul budget, Atlas/MDT/EI premium).
-	- Magazines: rounds x price-per-round for the caliber (7.62x51=8/rnd ... .50 BMG=26/rnd).
-	Reference ranges used for calibration: RHS sniperRiflesRhs 400-3500, muzzlesRhs 15-350,
-	magazinesRhs 10-550 (see A3A/addons/hals/Addons/store/config/rhs.hpp).
 */
 
 		///////////////////////////////////////////////////////
