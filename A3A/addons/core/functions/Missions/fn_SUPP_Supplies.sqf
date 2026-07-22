@@ -32,8 +32,8 @@ _truckX allowDamage false;
 [_truckX] call A3A_Logistics_fnc_addLoadAction;
 _truckX addAction ["Delivery infos",
 	{
-		_text = format [localize "STR_A3A_Missions_SUPP_Supplies_tip",(_this select 0) getVariable "destinationX"]; //This need a rework
-		[localize "STR_A3A_Missions_SUPP_Supplies_tip_header", _text] remoteExecCall ["A3A_fnc_customHint",_this select 2];	//This need a rework
+		_text = format [localize "STR_A3A_Missions_SUPP_Supplies_tip",(_this select 0) getVariable "destinationX"];
+		[localize "STR_A3A_Missions_SUPP_Supplies_tip_header", _text] remoteExecCall ["A3A_fnc_customHint",_this select 2];
 	},
 	nil,
 	0,
@@ -43,17 +43,15 @@ _truckX addAction ["Delivery infos",
 	"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
 ];
 [_truckX, teamPlayer] call A3A_fnc_AIVEHinit;
-//{_x reveal _truckX} forEach (allPlayers - (entities "HeadlessClient_F"));
 _truckX setVariable ["destinationX",_nameDest,true];
 
 [_truckX,localize "STR_marker_supply_box"] spawn A3A_fnc_inmuneConvoy;
 
 waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {spawner getVariable _markerX != 2}};
 
-
 if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,sideUnknown] == teamPlayer)}) then {
 	private _typeGroup = [
-		_faction get "groupPoliceTeam",
+	_faction get "groupPoliceTeam",
 		_faction get "groupPoliceSquad"
 	] select _difficultX;
 
@@ -105,13 +103,30 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 			if ((side _x == civilian) and (_x distance _positionX < 300) and (vehicle _x == _x)) then {_x doMove position _truckX};
 		} forEach allUnits;
 	} forEach ([300,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
+
 	while {_countX > 0 and {dateToNumber date < _dateLimitNum and {!isNull _truckX}}} do {
 		while {(_countX > 0) and (_truckX distance _positionX < 40) and ({[_x] call A3A_fnc_canFight} count ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits) == count ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits)) and ({(side _x == Occupants) and (_x distance _truckX < 50)} count allUnits == 0) and (dateToNumber date < _dateLimitNum) and (isNull attachedTo _truckX)} do {
 			
-			private _timerText = format ["<t size='1.25' shadow='2' align='center'>%1: %2s</t>", localize "STR_A3U_rebuild_time_remaining", _countX];
+			// --- NEW: Custom Hint Loop ---
+			private _timerText = format ["<t size='1.25' align='center'>%1:<br/>%2s</t>", localize "STR_A3U_rebuild_time_remaining", _countX];
 			{
 				if (isPlayer _x) then {
-					[[_timerText, "PLAIN DOWN", 0.1, true, true]] remoteExec ["titleText", _x];
+					[
+						[localize "STR_A3A_Missions_SUPP_Supplies_tip_header", _timerText],
+						{
+							params ["_header", "_text"];
+							if (isNil "A3A_customHint_MSGs") then { A3A_customHint_MSGs = []; };
+							private _topIndex = (count A3A_customHint_MSGs) - 1;
+							
+							// If the top hint is already our timer, just change the text silently. Otherwise push it.
+							if (_topIndex >= 0 && {(A3A_customHint_MSGs select _topIndex) select 0 == _header}) then {
+								(A3A_customHint_MSGs select _topIndex) set [1, parseText _text];
+								A3A_customHint_UpdateTime = serverTime;
+							} else {
+								[_header, _text, true] call A3A_fnc_customHint;
+							};
+						}
+					] remoteExec ["call", _x];
 				};
 			} forEach ([80,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
 			
@@ -121,10 +136,11 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 		if (_countX > 0) then {
 			if (((_truckX distance _positionX > 40) or (not([80,1,_truckX,teamPlayer] call A3A_fnc_distanceUnits)) or ({(side _x == Occupants) and (_x distance _truckX < 50)} count allUnits != 0)) and (alive _truckX)) then {
 				
+				// Clear the timer and push a standard custom hint warning
 				{
 					if (isPlayer _x) then {
-						[["", "PLAIN DOWN", 0.2, true, true]] remoteExec ["titleText", _x];
-						[petros,"hint","Stay close to the crate, and clean all BLUFOR presence in the surroundings or count will restart", localize "STR_A3A_Missions_SUPP_Supplies_tip_header"] remoteExec ["A3A_fnc_commsMP",_x];
+						[true] remoteExec ["A3A_fnc_customHintDismiss", _x];
+						[localize "STR_A3A_Missions_SUPP_Supplies_tip_header", "Stay close to the crate, and clean all BLUFOR presence in the surroundings or count will restart", false] remoteExec ["A3A_fnc_customHint", _x];
 					};
 				} forEach ([100,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
 
@@ -134,14 +150,15 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 		if (_countX < 1) exitWith {};
 	};
 
+	// Clean up the timer from the hint box when completed
 	{
 		if (isPlayer _x) then {
-			[["", "PLAIN DOWN", 0.5, true, true]] remoteExec ["titleText", _x];
+			[true] remoteExec ["A3A_fnc_customHintDismiss", _x];
 		};
 	} forEach ([100,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
 
 	if ((dateToNumber date < _dateLimitNum) and !(isNull _truckX)) then {
-		[petros,"hint", format [localize "STR_A3A_Missions_SUPP_Supplies_success", _nameDest], localize "STR_A3A_Missions_SUPP_Supplies_tip_header"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+		[localize "STR_A3A_Missions_SUPP_Supplies_tip_header", format [localize "STR_A3A_Missions_SUPP_Supplies_success", _nameDest], false] remoteExec ["A3A_fnc_customHint",[teamPlayer,civilian]];
 		[_taskId, "SUPP", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		{ 
 			[15*_bonus,_x] call A3A_fnc_addScorePlayer;
