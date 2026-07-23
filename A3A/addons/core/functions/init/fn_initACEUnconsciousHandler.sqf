@@ -22,7 +22,7 @@ Info("initACEUnconsciousHandler started");
 		_unit setVariable ["incapacitated", true, true];	// for canFight tests
 
         // Pass group lead if unit is the leader
-        if (_unit == leader (group _unit)) then
+        if (_unit == _groupLeader) then
         {
             private _index = (units (group _unit)) findIf {_x call A3A_fnc_canFight};
             if(_index != -1) then {
