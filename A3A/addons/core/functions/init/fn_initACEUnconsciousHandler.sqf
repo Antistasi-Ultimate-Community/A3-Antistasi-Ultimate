@@ -15,11 +15,11 @@ Info("initACEUnconsciousHandler started");
 	if !(local _unit) exitWith {};				// handler runs everywhere, only process where unit is local
 	private _realSide = side group _unit;		// setUnconscious in ACE often breaks this otherwise
 
+	private _groupLeader = leader (group _unit);
+
 	if (_knockout) exitWith
 	{
 		_unit setVariable ["incapacitated", true, true];	// for canFight tests
-
-	_groupLeader = leader (group _unit);
 
         // Pass group lead if unit is the leader
         if (_unit == leader (group _unit)) then
