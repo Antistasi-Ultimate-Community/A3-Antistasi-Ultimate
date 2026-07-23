@@ -12625,7 +12625,7 @@
                 <Original>%1 Skirmish - %2 Contact</Original>
             </Key>
             <Key ID="STR_townBattle_desc">
-                <Original>%2 is fighting local citizens within %1! The citizens have revolted against %2, and now they rely on you. Local rebel cells are prepared to aid your efforts. If you succeed, the city will join your cause. Defend the city and prove your worth!</Original>
+                <Original>%2 is fighting local citizens within %1! The citizens have revolted against %2, and now they rely on you. Local rebel cells are prepared to aid your efforts, but you must find and protect the VIP. If you succeed, the city will join your cause. Defend the city and prove your worth!</Original>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Official_task_header">
                 <Original>Kill %1 Officer</Original>
@@ -14072,6 +14072,13 @@
                 <Korean>죄수 풀어주기</Korean>
                 <French>Détenu libre</French>
                 <Turkish>Esiri serbest bırak</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_protect_vip">
+                <Original>Protect VIP</Original>
+                <Russian>Защищать вип</Russian>
+                <Chinesesimp>保护VIP</Chinesesimp>
+                <Korean>VIP 보호</Korean>
+                <French>VIP protégé</French>
             </Key>
             <Key ID="STR_antistasi_actions_car_bomb_disarm">
                 <Original>Disarm car bomb</Original>

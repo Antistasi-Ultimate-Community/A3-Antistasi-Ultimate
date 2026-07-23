@@ -51,6 +51,7 @@ class CfgFunctions
             class liberaterefugee {};
             class liberatePOW {};
             class liberateFlee {};
+            class liberateVIP {};
             class mineSweep {};
             class mortyAI {};
             class napalm {};

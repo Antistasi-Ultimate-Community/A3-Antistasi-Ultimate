@@ -106,16 +106,29 @@ private _numCiv = (server getVariable _mrkDest) select 0;
 _numCiv = 4 + round sqrt (_numCiv);
 if (_numCiv > 30) then {_numCiv = 30};
 
+private _vip = objNull;
+
 private _civilians = [];
 private _civGroups = [];
+private _groupCivil = createGroup teamPlayer;
 private _civWeapons = unlockedRifles + unlockedSniperRifles + unlockedShotguns + unlockedHandguns + unlockedSMGs;
 while {count _civilians < _numCiv} do
 {
-    private _groupCivil = createGroup teamPlayer;
     _civGroups pushBack _groupCivil;
     private _pos = while {true} do {
         private _pos = _posDest getPos [random _size / 3,random 360];
         if (!surfaceIsWater _pos) exitWith { _pos };
+    };
+    // Spawn "vip"
+    if (_vip isEqualTo ObjNull) then {
+        private _identity = [A3A_faction_civ, FactionGet(occ, "unitTraitor")] call A3A_fnc_createRandomIdentity;
+        _vip = [_groupCivil, FactionGet(occ, "unitTraitor"), _pos, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
+        [_vip, createHashMapFromArray [["face", selectRandom (A3A_faction_civ get "faces")], ["speaker", "NoVoice"]]] call A3A_fnc_setIdentity;
+        [_vip] spawn A3A_fnc_FIAinit;
+        [_vip, "townVIP"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_vip];
+        [_vip, (selectRandom _civWeapons), 5, 0] call BIS_fnc_addWeapon;
+        // _vip forceAddUniform (selectRandom (A3A_faction_civ getOrDefault ["pressUniforms", A3A_faction_civ get "uniforms"]));
+        // _vip addHeadgear (selectRandom (A3A_faction_civ get "headgear"));
     };
     for "_i" from 1 to (4 min (_numCiv - count _civilians)) do
     {
@@ -157,8 +170,9 @@ waitUntil {
     sleep 10;
 //    Debug_4("Soldiers %1 initial, %2 active. Civs %3 initial, %4 active", count _soldiers, {_x call A3A_fnc_canFight} count _soldiers, count _civilians, {alive _x} count _civilians);
     ({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3)
-    or (time > _missionMinTime and ({alive _x} count _civilians < count _civilians / 4))
-    or (time > _missionExpireTime)
+    or ([_vip] call A3A_fnc_canFight || {(_vip distance2D _posDest) > (_size * 1.5)})
+    or (time > _missionMinTime || {time > _missionExpireTime}) 
+    // or ({alive _x} count _civilians < count _civilians / 4) - Removed for now, since adding vip
 };
 
 private _fnc_adjustNearCities = {
@@ -171,7 +185,8 @@ private _fnc_adjustNearCities = {
     } forEach citiesX;
 };
 
-if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time > _missionExpireTime)) then {
+private _canSucceed = ({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time > _missionExpireTime);
+if ([_vip] call A3A_fnc_canFight && {_canSucceed}) then {
     Info_2("Rebels defeated a town attack against %1, %2", _side, _mrkDest);
     [_taskId, "townBattle", "SUCCEEDED"] call A3A_fnc_taskSetState;
     [_posDest, 10, 3000] call _fnc_adjustNearCities;
