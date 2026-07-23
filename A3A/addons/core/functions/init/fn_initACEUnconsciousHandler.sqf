@@ -24,13 +24,29 @@ Info("initACEUnconsciousHandler started");
         // Pass group lead if unit is the leader
         if (_unit == _groupLeader) then
         {
-            private _index = (units (group _unit)) findIf {_x call A3A_fnc_canFight};
-            if(_index != -1) then {
-                group _unit selectLeader ((units group _unit) select _index);
+            private _allUnits = (units (group _unit)) select {_x call A3A_fnc_canFight};
 
-				// Save previous group leader
-				group _unit setVariable ["A3A_previousGroupLeader", _groupLeader, true];
-            };
+			// Ensure there are any units available to select
+			if (!isNil {_allUnits param [0]}) then {
+				private _playerUnits = _allUnits select {isPlayer _x};
+				private _newLeader = _playerUnits param [0];
+
+				// Check if there is an eligible player unit first
+				if (isNil "_newLeader") then {
+					private _aiUnits = _allUnits select {!isPlayer _x};
+
+					// If not select an AI unit
+					_newLeader = _aiUnits param [0];
+				};
+
+				// Should never be nil, but just in case
+				if (!isNil "_newLeader") then {
+					group _unit selectLeader _newLeader;
+
+					// Save previous group leader
+					group _unit setVariable ["A3A_previousGroupLeader", _groupLeader, true];
+				};
+			};
         };
 
 		if (_realSide == Occupants || _realSide == Invaders) then {
