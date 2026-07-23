@@ -15,11 +15,11 @@ Info("initACEUnconsciousHandler started");
 	if !(local _unit) exitWith {};				// handler runs everywhere, only process where unit is local
 	private _realSide = side group _unit;		// setUnconscious in ACE often breaks this otherwise
 
-	private _groupLeader = leader (group _unit);
-
 	if (_knockout) exitWith
 	{
 		_unit setVariable ["incapacitated", true, true];	// for canFight tests
+
+		private _groupLeader = leader (group _unit);
 
         // Pass group lead if unit is the leader
         if (_unit == _groupLeader) then
@@ -27,6 +27,9 @@ Info("initACEUnconsciousHandler started");
             private _index = (units (group _unit)) findIf {_x call A3A_fnc_canFight};
             if(_index != -1) then {
                 group _unit selectLeader ((units group _unit) select _index);
+
+				// Save previous group leader
+				group _unit setVariable ["A3A_previousGroupLeader", _groupLeader, true];
             };
         };
 
@@ -38,12 +41,15 @@ Info("initACEUnconsciousHandler started");
 	// Unit woke up
 	_unit setVariable ["incapacitated", false, true];
 
+	private _previousGroupLeader = group _unit getVariable ["A3A_previousGroupLeader", objNull];
+
 	if !(_unit getVariable ["ACE_captives_isHandcuffed", false]) then {
 		_unit setCaptive false;			// match vanilla behaviour
 	};
 
-	if (_unit == _groupLeader) then {
+	if (_unit == _previousGroupLeader) then {
 		group _unit selectLeader _unit;
+		group _unit setVariable ["A3A_previousGroupLeader", nil, true];
 	};
 	
 	if (isPlayer _unit) exitWith {};					// don't force surrender with players
