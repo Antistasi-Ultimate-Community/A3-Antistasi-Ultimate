@@ -397,6 +397,11 @@
         addons[] = {"MPP_PISTOLS"};
         weapons = "weapons_mpp";
     };
+    class addons_mss : addons_base
+    {
+        addons[] = {"MSS_Core"};
+        weapons = "weapons_mss";
+    };
     class addons_ScifiTP : addons_base
     {
         addons[] = {"PHEN_TurretPack"};
