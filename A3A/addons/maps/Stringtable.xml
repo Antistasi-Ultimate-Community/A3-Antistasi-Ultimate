@@ -1002,6 +1002,15 @@
                 <German>Die bittere Kälte, blendend schön.</German>
                 <French>Le froid glacial, d'une beauté aveuglante.</French>
             </Key>
+			<Key ID="STR_antistasi_mission_info_Armavir_mapname_short_text">
+                <Original>Antistasi Ultimate - Armavir</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Armavir_mapname_text">
+                <Original>Antistasi Ultimate - Armavir</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Armavir_blurb_text">
+                <Original>Whether we wanted it or not, we stepped into a war with occupants and invaders on Armavir.</Original>
+            </Key>
             <Key ID="STR_antistasi_mission_info_journal_autoLoadLastGame_name">
                 <Original>Automatically load last valid save after delay</Original>
                 <Russian>Автоматически загружать последнее сохранение после задержки</Russian>

@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_location"];
+params ["_location", ["_radius", 0]];
 
 private _groupPetros = if (isNull petros or {side group petros != teamPlayer}) then {createGroup teamPlayer} else {group petros};
 
@@ -9,9 +9,15 @@ if (!isNil "_location" && count units _groupPetros > 1) then { _groupPetros = cr
 
 if (isNil "_location") then {
 	if (count units _groupPetros > 1) then {
-		_location = getPosATL petros
+		_location = getPosATL petros;
 	} else {
-		_location = getMarkerPos respawnTeamPlayer
+		// Use Petros' saved position if no location is passed.
+		private _petrosPosition = "petrosPosition" call A3A_fnc_returnSavedStat;
+		if (isNil "_petrosPosition") then {
+			_location = getMarkerPos respawnTeamPlayer;
+		} else {
+			_location = _petrosPosition;
+		};
 	};
 };
 
@@ -27,7 +33,7 @@ private _petrosIdentity = A3A_faction_reb getOrDefault [
 ];
 
 private _oldPetros = petros;
-petros = [_groupPetros, FactionGet(reb,"unitPetros"), _location, [], 10, "NONE", _petrosIdentity] call A3A_fnc_createUnit;
+petros = [_groupPetros, FactionGet(reb,"unitPetros"), _location, [], _radius, "NONE", _petrosIdentity] call A3A_fnc_createUnit;
 publicVariable "petros";
 deleteVehicle _oldPetros;		// Petros should now be leader unless there's a player in the group
 
