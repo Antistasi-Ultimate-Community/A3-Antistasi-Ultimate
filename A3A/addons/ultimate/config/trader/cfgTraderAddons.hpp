@@ -397,8 +397,23 @@
         addons[] = {"MPP_PISTOLS"};
         weapons = "weapons_mpp";
     };
+    class addons_mss : addons_base
+    {
+        addons[] = {"MSS_Core"};
+        weapons = "weapons_mss";
+    };
     class addons_ScifiTP : addons_base
     {
         addons[] = {"PHEN_TurretPack"};
         vehicles = "vehicles_scifitp";
+    };
+    class addons_QAV : addons_base
+    {
+        addons[] = {"QAV_Core"};
+        vehicles = "vehicles_qav";
+    };
+    class addons_QAV_VVE : addons_base
+    {
+        addons[] = {"vve_core"};
+        vehicles = "vehicles_qav_vve";
     };

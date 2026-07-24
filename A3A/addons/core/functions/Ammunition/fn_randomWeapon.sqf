@@ -118,12 +118,14 @@ if (isNil "_compatOptics") then {
 };
 
 // Silencers/Muzzles
+/*
 private _compatSilencers = if (_weaponData isEqualType [] && {!isNil {_weaponData select 1}}) then { [_weaponData select 1] } else { A3A_rebelSilencersCache get _weapon };
 if (isNil "_compatSilencers") then {
     _compatSilencers = _compatItems arrayIntersect (A3A_rebelGear get "MuzzleAttachments");
     // save in cache
     A3A_rebelSilencersCache set [_weapon, _compatSilencers];
 };
+*/
 
 // Bipods
 private _compatBipods = if (_weaponData isEqualType [] && {!isNil {_weaponData select 6}}) then { [_weaponData select 6] } else { A3A_rebelBipodsCache get _weapon };
@@ -136,5 +138,5 @@ if (_isPrimary && {isNil "_compatBipods"}) then {
 //// silencers and bipods
 if (!isNil "_compatPointers" && {_compatPointers isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatPointers] };
 if (!isNil "_compatOptics" && {_compatOptics isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatOptics] };
-if (!isNil "_compatSilencers" && {_compatSilencers isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatSilencers] };
+//if (!isNil "_compatSilencers" && {_compatSilencers isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatSilencers] };
 if (!isNil "_compatBipods" && {_compatBipods isNotEqualTo []}) then { _unit addWeaponItem [_weapon, selectRandom _compatBipods] };
