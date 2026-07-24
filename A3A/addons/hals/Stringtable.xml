@@ -1031,6 +1031,14 @@
                 <Korean>MPP</Korean>
                 <French>MPP</French>
             </Key>
+            <Key ID="STR_A3AU_QDI">
+                <Original>QDI</Original>
+                <German>QDI</German>
+                <Russian>QDI</Russian>
+                <Chinesesimp>QDI</Chinesesimp>
+                <Korean>QDI</Korean>
+                <French>QDI</French>
+            </Key>
             <!-- <Key ID="STR_A3AU_PROJINF">
                 <Original>P.I.</Original>
                 <German>P.I.</German>

@@ -222,6 +222,10 @@
         {
             prefix = "mpp_stock";
         };
+        class weapons_qdi : weapons_base
+        {
+            prefix = "qdi_stock";
+        };
         class weapons_mss : weapons_base
         {
             prefix = "mss";
