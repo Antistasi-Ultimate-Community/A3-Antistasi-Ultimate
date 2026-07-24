@@ -1566,6 +1566,36 @@ class Params
         };
         default = 1;
     };
+    class townSkirmishChance: AIBalanceParams
+    {
+        title = $STR_params_townSkirmishChance;
+        tooltip = $STR_params_townSkirmishChance_desc;
+        values[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 20;
+                medium = 40;
+                hard = 60;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 40;
+                medium = 60;
+                hard = 80;
+            };
+            class large
+            {
+                easy = 60;
+                medium = 80;
+                hard = 100;
+            };
+        };
+        default = 40;
+    };
     class A3A_enemyResponseTime: AIBalanceParams
     {
         attr[] = {"server"};
