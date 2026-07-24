@@ -54,7 +54,6 @@ class cfgHALsStore
 		#include "config\pla.hpp"
 		#include "config\rf.hpp"
 		#include "config\rhs.hpp"
-		#include "config\scion.hpp"
 		#include "config\sfp.hpp"
 		#include "config\sma.hpp"
 		#include "config\spearhead.hpp"
@@ -88,6 +87,7 @@ class cfgHALsStore
 		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
 		#include "config\mpp.hpp"
+		#include "config\mss.hpp"
 	};
 
 	class stores 
@@ -463,8 +463,20 @@ class cfgHALsStore
 				"muzzlesRhs", 
 				"underbarrelRhs", 
 				"pointersRhs", 
-				"navigationRhs", 
+				"navigationRhs",
 				"miscRhs"
+			};
+		};
+
+		class mss
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"sniperRiflesMss",
+				"opticsMss",
+				"muzzlesMss",
+				"bipodsMss",
+				"magazinesMss"
 			};
 		};
 
@@ -843,17 +855,6 @@ class cfgHALsStore
 				"muzzlescsa",
 				"magazinescsa", 
 				"launcherscsa"
-			};
-		};
-		class scion
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"riflesScion", 
-				"magazinesriflesScion",
-				"sniperRiflesScion", 
-				"magazinessniperRiflesScion", 
-				"opticsScion"
 			};
 		};
 		class wrs

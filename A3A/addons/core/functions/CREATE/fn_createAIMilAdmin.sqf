@@ -23,7 +23,7 @@ if (!alive _milAdministration) exitWith {
 private _side = sidesX getVariable [_marker, sideUnknown];
 
 if (_side isEqualTo sideUnknown) exitWith {
-	Error_1("For some reason mil administration %1 side is %2, aborting.", _marker, str _side);
+	Error_2("For some reason mil administration %1 side is %2, aborting.", _marker, str _side);
 };
 
 Info_2("Spawning military administration personel for %1 marker on %2 position.", _marker, str _milAdministrationPos);

@@ -778,7 +778,7 @@
 			ITEM(HandGrenade, 200, MISC_STOCK);
 
 			ITEM(SmokeShellBlue, 50, MISC_STOCK);
-			ITEM(SmokeShellGreen, MISC_STOCK);
+			ITEM(SmokeShellGreen, 50, MISC_STOCK);
 			ITEM(SmokeShellOrange, 50, MISC_STOCK);
 			ITEM(SmokeShellPurple, 50, MISC_STOCK);
 			ITEM(SmokeShellRed, 50, MISC_STOCK);
