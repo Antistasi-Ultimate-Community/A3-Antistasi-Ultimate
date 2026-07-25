@@ -498,6 +498,9 @@ _fuelAmountleftArray = [];
 //Saving the state of the testing timer
 ["testingTimerIsActive", testingTimerIsActive] call A3A_fnc_setStatVariable;
 
+// Save Petros location
+["petrosPosition", (getPosATL petros)] call A3A_fnc_setStatVariable;
+
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 
 savingServer = false;

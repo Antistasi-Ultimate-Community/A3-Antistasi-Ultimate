@@ -87,6 +87,7 @@ class cfgHALsStore
 		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
 		#include "config\mpp.hpp"
+		#include "config\qdi.hpp"
 		#include "config\mss.hpp"
 		#include "config\rearma_us.hpp"
 		#include "config\rearma_ru.hpp"

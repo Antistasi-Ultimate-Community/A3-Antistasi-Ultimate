@@ -14641,6 +14641,22 @@
                 <Portuguese>Você quer que eu seja preso!? Volte quando não estiver chamando atenção!</Portuguese>
                 <Turkish>Beni tutuklattırmaya mı çalışıyorsun!? Dikkat çekmediğinde geri gel!</Turkish>
             </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_in_vehicle_fail">
+                <Original>I can't talk to you while you're in there. Get out of the vehicle!</Original>
+                <Russian>Я не могу говорить с тобой, пока ты там. Выходи из машины!</Russian>
+                <German>Ich kann nicht mit dir reden, während du da drin bist. Steig aus dem Fahrzeug!</German>
+                <Italian>Non posso parlare con te mentre sei lì dentro. Scendi dal veicolo!</Italian>
+                <Spanish>No puedo hablar contigo mientras estés ahí dentro. ¡Sal del vehículo!</Spanish>
+                <French>Je ne peux pas te parler pendant que tu es là-dedans. Sors du véhicule !</French>
+                <Korean>당신이 거기 있는 동안에는 이야기할 수 없습니다. 차에서 내리세요!</Korean>
+                <Japanese>車に乗ったままでは話せません。車から降りてください！</Japanese>
+                <ChineseSimplified>你在车里我没法跟你说话。从车里出来！</ChineseSimplified>
+                <Chinese>你在車裡我沒法跟你說話。從車裡出來！</Chinese>
+                <Polish>Nie mogę z tobą rozmawiać, kiedy tam siedzisz. Wyjdź z pojazdu!</Polish>
+                <Czech>Nemůžu s tebou mluvit, když jsi uvnitř. Vylez z vozidla!</Czech>
+                <Portuguese>Não posso falar com você enquanto estiver aí dentro. Saia do veículo!</Portuguese>
+                <Turkish>Oradayken seninle konuşamam. Araçtan in!</Turkish>
+            </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1">
                 <Original>Hey! One of your rebel friends already talked to me! Leave me alone!</Original>
                 <Russian>Эй! Один из твоих повстанцев уже со мной разговаривал! Оставь меня в покое!</Russian>

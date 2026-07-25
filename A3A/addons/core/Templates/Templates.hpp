@@ -343,6 +343,11 @@ class Templates
         file = "RHS_AI_AFRF";
         description = $STR_A3AP_setupFactionsTab_aegis_afrf;
     };
+    class RHS_VDV : RHS_AFRF
+    {
+        name = "RHS VDV";
+        file = "RHS_AI_VDV";
+    };
 
     class RHS_US_Army_Arid : RHS_Base
     {
@@ -717,4 +722,8 @@ class Templates
     // ***************************** E22 *****************************
 
     #include "Templates\E22\templates.hpp"
+
+    // ***************************** AFR *****************************
+
+    #include "Templates\AFR\templates.hpp"
 };
