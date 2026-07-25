@@ -63,7 +63,12 @@ private _civUniforms = ["FIA_uniCitizen", "FIA_uniCitizen2", "FIA_uniCitizen3", 
 private _pressUniforms = ["FIA_uniFunctionary", "FIA_uniFunctionary2"];
 private _workerUniforms = ["FIA_uniWorker", "FIA_uniWorker2", "FIA_uniWorker3", "FIA_uniWorker4"];
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+    "FIA_uniFunctionary",
+    "FIA_uniFunctionary2"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 _civhats = ["FIA_Hairs_Brown", "FIA_Hairs_Silver", "FIA_Budajka", "CSLA_BudajkaGy", "CSLA_BudajkaBk", "FIA_Radiovka", "CSLA_RadiovkaGy", "CSLA_RadiovkaBk", "FIA_Usanka"];
 
@@ -81,6 +86,8 @@ _loadoutData set ["pressHelmets", ["H_Cap_press"]];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["CSLA_Pi82", "CSLA_Pi75lr", "US85_1911"]];
 
 
 private _manTemplate = {
@@ -114,8 +121,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

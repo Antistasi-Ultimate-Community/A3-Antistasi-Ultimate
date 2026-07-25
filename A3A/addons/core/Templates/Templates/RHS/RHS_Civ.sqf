@@ -114,7 +114,14 @@ if (_hasLawsOfWar) then {
     _dlcUniforms append ["U_C_Paramedic_01_F", "U_C_Mechanic_01_F"];
 };
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+  "U_C_FormalSuit_01_khaki_F",
+  "U_C_FormalSuit_01_gray_F",
+  "U_C_FormalSuit_01_blue_F",
+  "U_C_FormalSuit_01_black_F"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms + _vipUniforms] call _fnc_saveToTemplate;
 "RussianMen" call _fnc_saveNames;
 
 private _civhats = [
@@ -159,6 +166,8 @@ _loadoutData set ["pressHelmets", _pressHelmets];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["rhs_weap_cz99", "rhs_weap_makarov_pm", "rhs_weap_pya","rhsusf_weap_m1911a1"]];
 
 
 private _manTemplate = {
@@ -192,8 +201,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

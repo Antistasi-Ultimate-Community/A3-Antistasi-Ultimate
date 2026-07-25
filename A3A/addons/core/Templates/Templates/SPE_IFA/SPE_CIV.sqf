@@ -101,7 +101,15 @@ private _workerUniforms = [
 	"U_SPE_CIV_Worker_4_tie"
     ];           //Uniforms given to Workers at Factories/Resources
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
+private _vipUniforms = [
+    "U_SPE_CIV_pak2_zwart",
+    "uU_SPE_CIV_pak2_zwart_tie",
+    "U_SPE_CIV_pak2_zwart_tie_alt",
+    "U_SPE_CIV_pak2_bruin_tie",
+    "U_SPE_CIV_pak2_grijs_tie"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms+ _vipUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
 
 _civHats = [
     "H_SPE_CIV_Fedora_Cap_1",
@@ -130,6 +138,8 @@ _loadoutData set ["workerHelmets", ["H_SPE_CIV_Worker_Cap_1","H_SPE_CIV_Worker_C
 _loadoutData set ["facewear", ["G_SPE_Ful_Vue_Reinforced","G_SPE_Pipe_Sir_Winston","G_SPE_Ful_Vue","G_SPE_Dienst_Brille","G_SPE_Cigarette_Strike_Outs"]];
 
 _loadoutData set ["maps", ["ItemMap"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["SPEX_Enfield_No2", "SPE_P08", "SPE_M1911"]];
 
 private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
@@ -160,8 +170,21 @@ private _pressTemplate = {
 
     ["maps"] call _fnc_addMap;
 };
+private _vipTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

@@ -136,7 +136,13 @@ _workerUniforms append [
 "U_C_ConstructionCoverall_Vrana_F"
 ];
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+    "U_lxWS_C_Djella_03",
+    "U_lxWS_ION_Casual3",
+    "U_B_CTRG_3_lxWS"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 private _civhats = [
 	"H_Bandanna_blu",
@@ -213,6 +219,8 @@ _loadoutData set ["pressHelmets", ["H_Cap_press", "H_PASGT_basic_blue_press_F","
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["hgun_Pistol_heavy_02_F", "hgun_ACPC2_F", "hgun_P07_F"]];
 
 
 private _manTemplate = {
@@ -246,8 +254,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

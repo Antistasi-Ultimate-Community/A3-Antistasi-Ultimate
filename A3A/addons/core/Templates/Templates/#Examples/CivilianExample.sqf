@@ -55,6 +55,8 @@ private _civUniforms = [];          //Uniforms given to Normal Civs
 
 private _pressUniforms = [];            //Uniforms given to Press/Journalists
 
+private _vipUniforms = [];            //Uniforms given to VIP
+
 private _workerUniforms = [];           //Uniforms given to Workers at Factories/Resources
 
 private _dlcUniforms = [];          //Uniforms given if DLCs are enabled, only given to the Arsenal not Civilians
@@ -87,6 +89,8 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", []];
 
 private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
@@ -119,8 +123,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

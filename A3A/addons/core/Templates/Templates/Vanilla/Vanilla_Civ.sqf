@@ -224,7 +224,14 @@ if (_hasRF) then {
   _workerHelmets = ["H_Helmet_HardHat_Black_RF", "H_Helmet_HardHat_Yellow_RF", "H_Helmet_HardHat_White_RF"];
 };
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+  "U_C_FormalSuit_01_khaki_F",
+  "U_C_FormalSuit_01_gray_F",
+  "U_C_FormalSuit_01_blue_F",
+  "U_C_FormalSuit_01_black_F"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 ["headgear", _civHats + _dlcHats] call _fnc_saveToTemplate;
 
@@ -240,6 +247,8 @@ _loadoutData set ["pressHelmets", ["H_Cap_press"]];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["hgun_Pistol_heavy_02_F", "hgun_ACPC2_F", "hgun_P07_F"]];
 
 private _manTemplate = {
   ["helmets"] call _fnc_setHelmet;
@@ -272,8 +281,21 @@ private _pressTemplate = {
   ["watches"] call _fnc_addWatch;
   ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+  ["uniforms"] call _fnc_setUniform;
+
+  ["items_medical_standard"] call _fnc_addItemSet;
+
+  ["maps"] call _fnc_addMap;
+  ["watches"] call _fnc_addWatch;
+  ["compasses"] call _fnc_addCompass;
+
+  ["sidearms"] call _fnc_setHandgun;
+  ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+  ["VIP", _vipTemplate],
   ["Press", _pressTemplate],
   ["Worker", _workerTemplate],
   ["Man", _manTemplate]

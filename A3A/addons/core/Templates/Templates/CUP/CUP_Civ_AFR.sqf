@@ -149,7 +149,16 @@ private _pressUniforms = ["U_C_Journalist", "U_Marshal"];            //Uniforms 
 
 private _workerUniforms = ["CUP_U_B_BDUv2_dirty_OD", "CUP_U_B_BDUv2_gloves_dirty_OD", "CUP_U_B_BDUv2_roll2_dirty_OD", "CUP_U_B_BDUv2_roll2_gloves_dirty_OD", "CUP_U_B_BDUv2_roll_dirty_OD", "CUP_U_B_BDUv2_roll_gloves_dirty_OD", "CUP_U_B_BDUv2_dirty_Winter", "CUP_U_B_BDUv2_gloves_dirty_Winter"];           //Uniforms given to Workers at Factories/Resources
 
-["uniforms", _civUniforms + _civUniformsAI + _pressUniforms + _workerUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
+private _vipUniforms = [
+    "CUP_U_C_Suit_01",
+    "CUP_U_C_Suit_02",
+    "CUP_U_C_Suit_03",
+    "CUP_U_C_Functionary_jacket_02",
+    "CUP_U_C_Functionary_jacket_01",
+    "CUP_U_C_Functionary_jacket_03"
+];
+
+["uniforms", _civUniforms + _civUniformsAI + _pressUniforms + _workerUniforms + _vipUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
 
 _civHats = [
     "H_Bandanna_gry",
@@ -209,6 +218,9 @@ _loadoutData set ["facewear", ["CUP_Beard_Black", "None", "CUP_Beard_Brown", "CU
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["CUP_hgun_SWM327MP", "CUP_hgun_CZ75", "CUP_hgun_M9","CUP_hgun_TT"]];
+
 
 
 private _manTemplate = {
@@ -245,8 +257,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]
