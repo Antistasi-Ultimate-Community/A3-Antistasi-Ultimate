@@ -1,9 +1,10 @@
+//fn_outpost_createAa
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-params ["_position", "_direction", "_moneyCost", "_hrCost", "_commanderNetworkId"];
-
 if (!isServer) exitWith {};
+
+params ["_vehicle", "_position", "_turretDirection", "_curentlySelectedVehicleCustomization", "_moneyCost", "_hrCost", "_garageCategoryToremoveVehicleFrom", "_curentlySelectedVehicleUID", "_commanderNetworkId"];
 
 [-_hrCost,-_moneyCost] remoteExec ["A3A_fnc_resourcesFIA",2];
 
@@ -31,6 +32,10 @@ private _truckX = _vehType createVehicle _spawnPos;
 _truckX setDir _spawnDir;
 
 _groupX setGroupId ["Post"];
+_road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
+private _vehType = selectRandom (A3A_faction_reb get "vehiclesLightUnarmed");
+_pos = position _road findEmptyPosition [1,30, _vehType];
+_truckX = _vehType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
     [_x] call A3A_fnc_FIAinit
@@ -41,7 +46,7 @@ theBoss hcSetGroup [_groupX];
 
 private _units = units _groupX;
 
-waitUntil {
+waitUntil {//
 	sleep 1;
 	(!isNil "cancelEstabTask" && {cancelEstabTask}) || 
 	{_units findIf {[_x] call A3A_fnc_canFight} == -1 || 
@@ -73,16 +78,83 @@ switch (true) do {
 		sidesX setVariable [_marker,teamPlayer,true];
 		markersX pushBack _marker;
 		publicVariable "markersX";
-		spawner setVariable [_marker,2,true];
+		spawner setVariable [_marker,2,true]; ///we need to sent selected vehicle with marker to save it and when marker/roadblock spawns it will spawn with selected vehicle(always)
+		spawner setVariable [format[_marker + "_vehicle"], _vehicle];
+		_vehiclecustomazation = _curentlySelectedVehicleCustomization;
+		spawner setVariable [format[_marker + "_vehiclecustomazation"], _vehiclecustomazation];
+		if (isNil "aapostsData") then { aapostsData = []; };
+		aapostsData pushBack [_marker, [_vehicle, _curentlySelectedVehicleCustomization]];
+		publicVariable "aapostsData";
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "n_antiair";
 		_marker setMarkerColor colorTeamPlayer;
 		_marker setMarkerText _textX;
 		_garrison = A3A_faction_reb get "groupAaEmpl";
 		garrison setVariable [_marker,_garrison,true];
-		staticPositions setVariable [_marker, [_position, _direction], true];
+		staticPositions setVariable [_marker, [_position, _turretDirection], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "aaemplacement"]] call EFUNC(Events,triggerEvent);
+		
+		//find vehicles to remove
+		curentlySelectedVehicleUID = _curentlySelectedVehicleUID;
+		garageCategoryToremoveVehicleFrom = _garageCategoryToremoveVehicleFrom;
+		// On server (HR_GRG_fnc_removeVehicleServer function):
+		HR_GRG_fnc_removeVehicleServer = {
+		    params ["_vehicleUID","_CategoryToremoveVehicleFrom"];
+
+		    // Find vehicles to remove
+		    private _toRemove = [];
+
+			// Iterate over all category elements
+			{
+			    // Extract UID
+			    private _vehicleUID2 = _x;
+
+			    // Compare UID
+			    if (_vehicleUID2 isEqualTo _vehicleUID) then {
+			        _toRemove pushBack [_CategoryToremoveVehicleFrom, _x];
+			    };
+			} forEach HR_GRG_Vehicles#_CategoryToremoveVehicleFrom;
+
+			// Remove elements (from end to preserve indices)
+			if (count _toRemove > 0) then {
+			    reverse _toRemove; // To save indexes
+			    {
+			        _x params ["_catIndex", "_vehIndex"];
+			        private _category = HR_GRG_Vehicles select _catIndex;
+			        _category deleteAt _vehIndex;
+					//remove from source registre
+    				{
+    				    private _index = _x find _vehIndex;
+    				    if (_index != -1) exitWith {
+    				        (HR_GRG_Sources#_forEachIndex) deleteAt _index;
+    				        [_forEachIndex] call HR_GRG_fnc_declairSources;
+    				    };
+    				}forEach HR_GRG_Sources;
+			    } forEach _toRemove;
+
+			    // Synchronize data
+			    //HR_GRG_Vehicles set [_categoryIndex, HR_GRG_Vehicles#0];
+			    publicVariable "HR_GRG_Vehicles";
+			} else {
+			    systemChat "Vehicle with UID not found";
+			    diag_log "No matches found";
+			};
+
+		    // Update interface for all players
+		    remoteExecCall ["HR_GRG_fnc_updateVehicleCount", -2];
+		};
+		// On client (player initiates removal):
+		if !(_garageCategoryToremoveVehicleFrom isEqualTo objNull) then {
+    		[curentlySelectedVehicleUID,garageCategoryToremoveVehicleFrom] remoteExecCall ["HR_GRG_fnc_removeVehicleServer", 2];
+		};
+
+		///reset stuff used for remove
+		vehicleToOutpost = "";
+		curentlySelectedVehicleUID = 0;
+		garageCategoryToremoveVehicleFrom = [];
+		curentlySelectedVehicleState = [];
+		curentlySelectedVehicleCustomization = [];
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

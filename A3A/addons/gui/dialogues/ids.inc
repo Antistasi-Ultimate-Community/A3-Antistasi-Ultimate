@@ -343,6 +343,21 @@ Maintainer: DoomMetal
 #define	A3A_IDC_BLACKMARKETVEHICLESGROUPUNARMED 	10335
 #define	A3A_IDC_BLACKMARKETVEHICLESGROUPBOAT 	    10336
 
+// outpost ui
+#define A3A_IDD_BUYVEHICLEOUTPOSTDIALOG             11001
+#define A3A_IDC_BUYSTATICMAIN                       11002
+#define	A3A_IDC_BUYLAVEHICLEMAIN 	                11003
+#define	A3A_IDC_BUYATVEHICLEMAIN	                11004
+#define	A3A_IDC_BUYAAVEHICLEMAIN 	                11005
+
+#define	A3A_IDD_DISPLAYGARAGEVEHICLES               11006
+#define A3A_IDC_GARAGE_CATCAR                       11007
+#define A3A_IDC_GARAGEStructuredText                11008
+#define A3A_IDC_GARAGEselectbutton                  11009
+#define A3A_IDC_GARAGEundercoverIcon                11010
+#define A3A_IDC_GARAGEinfo                          11011
+#define HR_GRG_IDC_OriginsPanel                     11012
+
 //civ 
 #define	A3A_IDC_BUYCIVVEHICLECARS 	                10337
 #define	A3A_IDC_CIVVEHICLESGROUPCARS 	            10338

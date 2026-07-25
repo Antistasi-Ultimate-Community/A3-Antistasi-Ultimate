@@ -337,51 +337,58 @@ private _arrayWatchpostsFIA = [];
 ["watchpostsFIA", _arrayWatchpostsFIA] call A3A_fnc_setStatVariable;
 
 private _arrayRoadblocksFIA = [];
-
 {
-	_positionOutpost = getMarkerPos _x;
-	_arrayRoadblocksFIA pushBack [_positionOutpost,garrison getVariable [_x,[]]];
+    _marker = _x;
+    _position = getMarkerPos _marker;
+    _garrison = garrison getVariable [_marker, []];
+    _vehicleData = [];
+    {
+        if ((_x select 0) == _marker) exitWith { _vehicleData = _x select 1; };
+    } forEach (missionNamespace getVariable ["roadblocksData", []]);
+    _arrayRoadblocksFIA pushBack [_position, _garrison, _vehicleData];
 } forEach roadblocksFIA;
-
-["roadblocksFIA", _arrayRoadblocksFIA] call A3A_fnc_setStatVariable;
+["roadblocksFIA", _arrayRoadblocksFIA] call A3A_fnc_setStatVariable;// maybe try modifing roadblocks variable
 
 private _arrayAAPostsFIA = [];
-
 {
-	_positionOutpost = getMarkerPos _x;
-	_arrayAAPostsFIA pushBack [
-		_positionOutpost,
-		garrison getVariable [_x,[]],
-		staticPositions getVariable [_x,[]]
-	];
+    _marker = _x;
+    _position = getMarkerPos _marker;
+    _garrison = garrison getVariable [_marker, []];
+    _staticPos = staticPositions getVariable [_marker, []];
+    _vehicleData = [];
+    {
+        if ((_x select 0) == _marker) exitWith { _vehicleData = _x select 1; };
+    } forEach (missionNamespace getVariable ["aapostsData", []]);
+    _arrayAAPostsFIA pushBack [_position, _garrison, _staticPos, _vehicleData];
 } forEach aapostsFIA;
-
 ["aapostsFIA", _arrayAAPostsFIA] call A3A_fnc_setStatVariable;
 
 private _arrayATPostsFIA = [];
-
 {
-	_positionOutpost = getMarkerPos _x;
-	_arrayATPostsFIA pushBack [
-		_positionOutpost,
-		garrison getVariable [_x,[]],
-		staticPositions getVariable [_x,[]]
-	];
+    _marker = _x;
+    _position = getMarkerPos _marker;
+    _garrison = garrison getVariable [_marker, []];
+    _staticPos = staticPositions getVariable [_marker, []];
+    _vehicleData = [];
+    {
+        if ((_x select 0) == _marker) exitWith { _vehicleData = _x select 1; };
+    } forEach (missionNamespace getVariable ["atpostsData", []]);
+    _arrayATPostsFIA pushBack [_position, _garrison, _staticPos, _vehicleData];
 } forEach atpostsFIA;
-
 ["atpostsFIA", _arrayATPostsFIA] call A3A_fnc_setStatVariable;
 
 private _arrayHMGPostsFIA = [];
-
 {
-	_positionOutpost = getMarkerPos _x;
-	_arrayHMGPostsFIA pushBack [
-		_positionOutpost,
-		garrison getVariable [_x,[]],
-		staticPositions getVariable [_x,[]]
-	];
+    _marker = _x;
+    _position = getMarkerPos _marker;
+    _garrison = garrison getVariable [_marker, []];
+    _staticPos = staticPositions getVariable [_marker, []];
+    _vehicleData = [];
+    {
+        if ((_x select 0) == _marker) exitWith { _vehicleData = _x select 1; };
+    } forEach (missionNamespace getVariable ["hmgpostsData", []]);
+    _arrayHMGPostsFIA pushBack [_position, _garrison, _staticPos, _vehicleData];
 } forEach hmgpostsFIA;
-
 ["hmgpostsFIA", _arrayHMGPostsFIA] call A3A_fnc_setStatVariable;
 
 if (!isDedicated) then {
