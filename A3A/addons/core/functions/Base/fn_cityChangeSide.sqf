@@ -7,8 +7,6 @@ if (!isServer) exitWith {Error("Server-only function miscalled")};
 
 if (isNil "_city" || {_city isEqualTo ""}) exitWith {Error("Function was called incorrectly. _city param must be a city marker.")};
 
-if (_city in townSkirmishes) exitWith {nil};
-
 if (_rebel) then {
     ["TaskSucceeded", ["", format [localize "STR_notifiers_city_joined",_city,FactionGet(reb,"name")]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
     sidesX setVariable [_city,teamPlayer,true];
@@ -20,7 +18,7 @@ if (_rebel) then {
     private _closestAdminMarker = [milAdministrationsX, _city] call BIS_fnc_nearestPosition;
     if (_closestAdminMarker isEqualType "" && {(getMarkerPos _closestAdminMarker) distance2D (getMarkerPos _city) < 800}) then {
         private _milAdministration = [A3A_milAdministrations, _closestAdminMarker] call BIS_fnc_nearestPosition;
-        [_milAdministration, "SILENT"] call SCRT_fnc_location_removeMilAdmin;
+        [_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
     };
 
     sleep 5;

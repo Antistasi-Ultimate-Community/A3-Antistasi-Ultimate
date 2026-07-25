@@ -13,6 +13,9 @@ if (_milAdministrationIndex isEqualTo -1) exitWith {
 
 private _milAdministration = A3A_milAdministrations select _milAdministrationIndex;
 
+if (_marker in townSkirmishes) exitWith {
+	Info("Aborting mil admin spawn; is in town skirmish");
+};
 if (_milAdministration isEqualTo objNull) exitWith {
 	Error_1("For some reason mil administration %1 object is null, aborting.", _marker);
 };

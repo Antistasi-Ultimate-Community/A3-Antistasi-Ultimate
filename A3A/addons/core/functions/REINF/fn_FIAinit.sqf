@@ -33,11 +33,11 @@ if (!_preserveIdentity) then {
 };
 
 // FIAinit is called for liberated refugees/hostages. Don't equip them.
-if !(_typeX isEqualTo FactionGet(reb,"unitUnarmed")) then {
+// 23/07/26: Don't equip occ official; they are town VIP and shouldn't have loadout hijacked
+if !(_typeX isEqualTo FactionGet(reb,"unitUnarmed") || _typeX isEqualTo FactionGet(occ,"unitOfficial")) then {
 	[_unit, [0,1] select (leader _unit != player)] call A3A_fnc_equipRebel;
 };
 _unit selectWeapon (primaryWeapon _unit);
-
 
 if (player == leader _unit) then {
 	_unit setVariable ["owner", player, true];

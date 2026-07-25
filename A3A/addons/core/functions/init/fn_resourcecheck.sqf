@@ -100,7 +100,7 @@ while {true} do {
 
 		private _canFlip = (!_isNeutral && (_isNowFriendly && (_citySide isNotEqualTo teamPlayer) && !(_city in destroyedSites)));
 		private _canFlipEnemy = (!_isNeutral && (_isNowEnemy && (_citySide isEqualTo teamPlayer) && !(_city in destroyedSites)));
-		private _canStartSkirmish = (random 100 > 50 && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
+		private _canStartSkirmish = ((random 100 <= townSkirmishChance) && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
 
 		if (_canFlip) then {
 			if (_canStartSkirmish) then {
@@ -113,7 +113,7 @@ while {true} do {
 			};
 		};
 
-		if (_canFlipEnemy) then {
+		if (_canFlipEnemy && !(_city in townSkirmishes)) then {
 			[_city, false] call A3A_fnc_cityChangeSide;
 		};
 	} forEach citiesX;

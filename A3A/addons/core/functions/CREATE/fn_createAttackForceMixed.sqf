@@ -31,6 +31,7 @@ private _targPos = if (_target isEqualType []) then { _target } else { markerPos
 
 private _lowAir = Faction(_side) getOrDefault ["attributeLowAir", false] || ("lowair" in _modifiers);
 private _tier = [tierWar, tierWar+2] select ("tierboost" in _modifiers);
+private _isPolice = "police" in _modifiers;
 
 private _resourcesSpent = 0;
 private _vehicles = [];
@@ -78,7 +79,7 @@ if (_landCount > 0) then
             _data = [_side, _landBase, _targPos, _resPool, _landCount, _attackCount, _tier] call A3A_fnc_createAttackForceLandMilitia;
         };
 
-        if ("police" in _modifiers  && {!_hasChosenForce}) then {
+        if (_isPolice && {!_hasChosenForce}) then {
             _hasChosenForce = true;
             _data = [_side, _landBase, _targPos, _resPool, (_landCount + _attackCount), _tier] call A3A_fnc_createAttackForcePolice;
         };
@@ -109,13 +110,13 @@ if (!isNil "_attackType") then {
 };
 
 // Now we delay to synchronize with ground vehicle arrival
-if (_delay > 0) then {
+if (_delay > 0 && !(_isPolice)) then {
     private _airTime = (markerPos _airbase distance2d _targPos) / 70;
     ServerDebug_2("Remaining delay %1 and air travel time %2", _delay, _airTime);
     sleep (0 max (_delay - _airTime));
 };
 
-if (_airBase != "" && !("police" in _modifiers)) then            // uh, is that a thing
+if (_airBase != "" && !(_isPolice)) then
 {
     private _airCount = _vehCount - count (_vehicles);
     if (_airCount <= 0) exitWith {};
