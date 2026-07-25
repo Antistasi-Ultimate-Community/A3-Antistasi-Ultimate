@@ -1065,5 +1065,17 @@ class cfgHALsStore
 				"launcherMagazinesReArma_RU"
 			};
 		};
+		class qdi_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"handgunsQDI",
+				"riflesQDI",
+				"mgQDI",
+				"sniperRiflesQDI",
+				"opticsQDI",
+				"magazinesQDI"
+			};
+		};
 	};
 };
