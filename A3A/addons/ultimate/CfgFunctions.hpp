@@ -39,6 +39,7 @@ class CfgFunctions
         class map
         {
             file = QPATHTOFOLDER(functions\map);
+            class mapHoverEH {};
             class handleMrkUpdate {};
             class isMarkerHidden {};
             class mapHover {};
