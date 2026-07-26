@@ -82,7 +82,22 @@ while {true} do {
 		if (!finite _resAddCity) then { _resAddCity = 0; };
 		_hrAddCity = _numCiv * (_supportReb / 10000);
 
-		if (_citySide == Occupants) then
+		private _hrMultiplier = overallHRGain / 100;
+
+		if (_numCiv > 0) then {
+			private _baseDivider = 10000;
+			private _refPopulation = 2000;
+			private _minDivider = 5000 / _hrMultiplier;
+			private _maxDivider = 10000 / _hrMultiplier;
+			
+			private _divider = _baseDivider * sqrt(_numCiv / _refPopulation);
+			_divider = (_divider max _minDivider) min _maxDivider;
+			_hrAddCity = _numCiv * _supportReb / _divider;
+		} else {
+			_hrAddCity = 0;
+		};
+
+		if (_citySide != teamPlayer) then
 		{
 			_resAddCity = _resAddCity / 2;
 			_hrAddCity = _hrAddCity / 2;

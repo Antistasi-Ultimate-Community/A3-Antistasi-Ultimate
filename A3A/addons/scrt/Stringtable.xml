@@ -6329,6 +6329,12 @@
                 <Korean>반란군 인력의 상한을 활성화하여 급속한 성장을 제한하고 밸런스를 유지합니다.</Korean>
                 <French>Activer un plafond sur la main-d'œuvre rebelle pour limiter la croissance exponentielle et préserver l'équilibre.</French>
             </Key>
+            <Key ID="STR_params_overall_HR_gain">
+                <Original>Overall HR gain</Original>
+            </Key>
+            <Key ID="STR_params_overall_HR_gain_desc">
+                <Original>An overall HR gain multiplier. At 10% you get 10% of the normal gains from passive income, but increased gains from active income (Rescues, etc).</Original>
+            </Key>
             <Key ID="STR_params_newCarTowing">
                 <Original>Improved towing of wheeled vehicles</Original>
                 <Russian>Улучшенная буксировка колёсного транспорта</Russian>

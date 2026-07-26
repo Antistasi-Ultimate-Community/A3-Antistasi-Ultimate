@@ -147,8 +147,12 @@ if (_sideX == Occupants) then {
 	if ({(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0) then {
 		sleep 5;
 		[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
+
+	private _hrMultiplier = overallHRGain / 100;
+	private _invertedMultiplier = 2 - _hrMultiplier; 
+
 		_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
-		_hr = _countX;
+		_hr = _countX * _invertedMultiplier;
 		_resourcesFIA = 100 * _countX;
 		[_hr,_resourcesFIA*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 		[Occupants, -10, 60] remoteExec ["A3A_fnc_addAggression",2];

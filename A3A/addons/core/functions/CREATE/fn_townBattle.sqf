@@ -125,18 +125,19 @@ private _vip = [_groupVIP, _unitType, _nearestRoad, [], 0, "NONE", _identity] ca
 [_vip, false, false] call A3A_fnc_FIAinit;
 _vip setVariable ["spawner",false,true];
 _vip setUnitPos "UP";
+_vip setDir (random 360);
 removeAllWeapons _vip;
 
 // private _posVIP = [_groupVIP, _posDest, 30] call A3A_fnc_patrolGroupGarrison;
 
 // Spawn in the "civilians" (rebel defenders)
-private _numCiv = 9 min (3 + round sqrt (_numCiv));
+private _numCivSpawn = 9 min (3 + round sqrt (_numCiv));
 
 private _civilians = [];
 private _civGroups = [];
 private _groupCivil = createGroup [teamPlayer, true];
 _civGroups pushBack _groupCivil;
-while {count _civilians <= _numCiv} do
+while {count _civilians <= _numCivSpawn} do
 {
     private _pos = [_nearestRoad, 1, _sizeSpawn, 3, 0, 20, 0, [], [_posDest, _posDest]] call BIS_fnc_findSafePos;
     for "_i" from 1 to 3 do
@@ -181,9 +182,11 @@ if ((_vip distance2D _posDest > _sizeFail) || !([_vip] call A3A_fnc_canFight)) e
     [_vipVehicle] spawn A3A_fnc_VEHDespawner;
 };
 
+[1, _side, "QRFLAND", getPosATL player, 5] call A3A_fnc_showInterceptedSetupCall;
+
 ServerInfo_3("Launching %1 Battle Against %2 from %3", _side, _mrkDest, _mrkOrigin);
 
-[1, _side, "QRFLAND", getPosATL player, 1] call A3A_fnc_showInterceptedSetupCall;
+uiSleep 180; // 3 minutes to prepare
 
 bigAttackInProgress = true; publicVariable "bigAttackInProgress";
 
@@ -237,6 +240,13 @@ if (_canSucceed) then {
 
     [10,theBoss] call A3A_fnc_addScorePlayer;
     [round (100*((tierWar/3) max 1)), theBoss, true] call A3A_fnc_addMoneyPlayer;
+
+    private _hrMultiplier = overallHRGain / 100;
+    private _invertedMultiplier = 2 - _hrMultiplier;
+    private _baseBattleReward = (_numCiv / 100) * _invertedMultiplier;
+    private _hrAdd = _baseBattleReward;
+    private _resourcesFIA = 100 * _baseBattleReward;
+    [_hrAdd,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 } else {
     Info_2("Rebels lost a town attack against %1, %2", _side, _mrkDest);
     [_taskId, "townBattle", "FAILED"] call A3A_fnc_taskSetState;

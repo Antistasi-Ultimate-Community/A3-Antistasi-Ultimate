@@ -979,6 +979,41 @@ class Params
         };
         default = 0;
     };
+    class overallHRGain: RebelBalanceParams
+    {
+        title = $STR_params_overall_HR_gain;
+        tooltip = $STR_params_overall_HR_gain_desc;
+        values[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 100;
+                medium = 90;
+                hard = 80;
+            };
+            class small
+            {
+                easy = 80;
+                medium = 70;
+                hard = 60;
+            };
+            class medium
+            {
+                easy = 60;
+                medium = 50;
+                hard = 40;
+            };
+            class large
+            {
+                easy = 40;
+                medium = 30;
+                hard = 20;
+            };
+        };
+        default = 80;
+    };
     class loseHROnDeath: RebelBalanceParams
     {
         title = $STR_A3AU_hr_loss;
