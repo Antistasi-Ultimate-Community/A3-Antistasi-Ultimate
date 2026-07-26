@@ -147,6 +147,6 @@ petros addMPEventHandler ["mpkilled",
 [petros] call A3A_fnc_unitAmbient; // adds ambient sounds and animations to petros
 
 private _marker = "respawn_guerrila";
-_marker setMarkerType "A3AU_RebalHQ_mrk";
+_marker setMarkerType "A3AU_RebelHQ_mrk";
 
 Info("initPetros completed");
