@@ -126,7 +126,7 @@ private _pressTemplate = {
     ["compasses"] call _fnc_addCompass;
 };
 private _vipTemplate = {
-    ["uniforms"] call _fnc_setUniform;
+    ["vipUniforms"] call _fnc_setUniform;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 

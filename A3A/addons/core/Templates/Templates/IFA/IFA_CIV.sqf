@@ -136,7 +136,7 @@ private _pressTemplate = {
     ["maps"] call _fnc_addMap;
 };
 private _vipTemplate = {
-    ["uniforms"] call _fnc_setUniform;
+    ["vipUniforms"] call _fnc_setUniform;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 

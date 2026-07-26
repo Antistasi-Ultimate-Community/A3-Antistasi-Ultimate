@@ -115,11 +115,14 @@ private _vipVehicle = _vipVehicleData select 0;
 {deleteVehicle _x} forEach (crew _vipVehicle);
 
 // Spawn "vip", currently hardcoded to Occ officer
-private _identity = [A3A_faction_civ, FactionGet(occ, "unitOfficial")] call A3A_fnc_createRandomIdentity;
-private _vip = [_groupVIP, FactionGet(occ, "unitOfficial"), _nearestRoad, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
+private _unitTypeCiv = A3A_faction_civ getOrDefault ["unitVIP", ""];
+private _unitTypeOcc = A3A_faction_occ getOrDefault ["unitOfficial", ""];
+private _unitType = if (_unitTypeCiv != "") then {_unitTypeCiv} else {_unitTypeOcc};
+private _identity = [A3A_faction_civ, _unitType] call A3A_fnc_createRandomIdentity;
+private _vip = [_groupVIP, _unitType, _nearestRoad, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
 [_vip, createHashMapFromArray [["face", selectRandom (A3A_faction_civ get "faces")], ["speaker", "NoVoice"]]] call A3A_fnc_setIdentity;
 [_vip, "townVIP"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_vip];
-[_vip] call A3A_fnc_FIAinit;
+[_vip, false, false] call A3A_fnc_FIAinit;
 _vip setVariable ["spawner",false,true];
 _vip setUnitPos "UP";
 removeAllWeapons _vip;
