@@ -56,7 +56,7 @@ class A3AU_seaport_mrk : A3AU_Factory_mrk
 	markerClass = "A3AU_MRK";
 };
 
-class A3AU_RebalHQ_mrk : A3AU_Factory_mrk
+class A3AU_RebelHQ_mrk : A3AU_Factory_mrk
 {
 	name = "Rebal HQ";
 	icon = QPATHTOFOLDER(data\A3AU_RebalHQ_mrk);
