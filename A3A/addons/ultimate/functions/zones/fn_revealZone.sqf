@@ -29,4 +29,4 @@ private _markerTextSplit = toLower ((_markerText splitString "_") select 0);
 revealedZones pushBackUnique _marker;
 publicVariable "revealedZones";
 
-[_marker] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+[_marker] call A3A_fnc_mrkUpdate;

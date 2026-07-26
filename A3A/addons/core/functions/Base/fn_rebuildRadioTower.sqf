@@ -27,7 +27,7 @@ private _mrk = [mrkAntennas, _antenna] call BIS_fnc_nearestPosition;
 _mrk setMarkerType "A3AU_radiotower_mrk";
 _mrk setMarkerColor "ColorWhite";
 
-[_mrk] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+[_mrk] call A3A_fnc_mrkUpdate;
 
 _antenna addEventHandler ["Killed", {
     params ["_antenna"];
@@ -44,7 +44,7 @@ _antenna addEventHandler ["Killed", {
     publicVariable "antennasDead"; 
     
     // Force UI update to show the "(Destroyed)" suffix again
-    [_mrk] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+    [_mrk] call A3A_fnc_mrkUpdate;
     
     ["TaskSucceeded",["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
     ["TaskFailed",["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification",Occupants];

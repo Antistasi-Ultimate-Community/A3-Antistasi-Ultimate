@@ -217,7 +217,7 @@ if (!_hardCodedAntennas) then {
                 _mrk setMarkerType "A3AU_radiotower_dead_mrk";
                 publicVariable "antennas";
                 publicVariable "antennasDead";
-                [_mrk] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+                [_mrk] call A3A_fnc_mrkUpdate;
                 ["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
                 ["TaskFailed", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", Occupants];
             }
@@ -268,7 +268,7 @@ if (count _posAntennas > 0) then {
                         _mrk setMarkerType "A3AU_radiotower_dead_mrk";
                         publicVariable "antennas";
                         publicVariable "antennasDead";
-                        [_mrk] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+                        [_mrk] call A3A_fnc_mrkUpdate;
                         ["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
 						["TaskFailed", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", Occupants];
 					}
@@ -390,7 +390,7 @@ _milAdminPositions apply {
             destroyedSites pushBackUnique _markerName;
             publicVariable "destroyedSites";
             
-            [_markerName] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+            [_markerName] call A3A_fnc_mrkUpdate;
         };
     }];
 };

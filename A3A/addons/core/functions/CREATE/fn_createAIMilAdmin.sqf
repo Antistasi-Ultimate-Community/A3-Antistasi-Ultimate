@@ -254,7 +254,7 @@ switch (true) do {
         Info_1("Military Administration %1 was captured - collaborant has been killed.", _marker);
         [_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
         sleep 1;
-        [_marker] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+        [_marker] call A3A_fnc_mrkUpdate;
     };
     case (!alive _milAdministration): {
         Info_1("Military Administration %1 was destroyed.", _marker);
@@ -262,7 +262,7 @@ switch (true) do {
         destroyedSites pushBackUnique _marker;
         publicVariable "destroyedSites";
         sleep 1;
-        [_marker] remoteExecCall ["A3A_fnc_mrkUpdate", 0];
+        [_marker] call A3A_fnc_mrkUpdate;
     };
 };
 
