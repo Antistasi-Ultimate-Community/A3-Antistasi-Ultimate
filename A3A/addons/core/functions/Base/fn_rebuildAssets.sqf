@@ -85,7 +85,7 @@ clearItemCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
-_box enableSimulationGlobal false; // Disables inventory interaction
+
 
 // Configure logistics properties
 _box enableRopeAttach true;
