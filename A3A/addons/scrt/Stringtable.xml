@@ -13266,6 +13266,22 @@
                 <Spanish>Una operación de reconstrucción ya está activa para esta ubicación.</Spanish>
                 <Polish>Operacja odbudowy jest już aktywna w tej lokalizacji.</Polish>
             </Key>
+            <Key ID="STR_A3U_supplies_already_active">
+                <Original>A supply mission is already active for this location.</Original>
+                <Russian>Миссия по доставке припасов для этого места уже активна.</Russian>
+                <German>Für diesen Standort ist bereits eine Nachschubmission aktiv.</German>
+                <Italian>Una missione di rifornimento è già attiva per questa posizione.</Italian>
+                <Spanish>Una misión de suministros ya está activa para esta ubicación.</Spanish>
+                <French>Une mission de ravitaillement est déjà active pour cet emplacement.</French>
+                <Korean>이 위치에 대한 보급 임무가 이미 활성화되어 있습니다.</Korean>
+                <Japanese>この場所での補給ミッションはすでに有効です。</Japanese>
+                <ChineseSimplified>此位置已有一项补给任务正在进行中。</ChineseSimplified>
+                <Chinese>此位置已有一項補給任務正在進行中。</Chinese>
+                <Polish>Misja zaopatrzeniowa jest już aktywna w tej lokalizacji.</Polish>
+                <Czech>Pro tuto lokaci je již aktivní zásobovací mise.</Czech>
+                <Portuguese>Uma missão de suprimentos já está ativa para esta localização.</Portuguese>
+                <Turkish>Bu konum için halihazırda aktif bir ikmal görevi var.</Turkish>
+            </Key>
             <Key ID="STR_A3U_rebuild_time_remaining">
                 <Original>Time Remaining</Original>
                 <French>Temps restant</French>

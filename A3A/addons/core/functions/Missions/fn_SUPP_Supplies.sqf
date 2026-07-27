@@ -6,6 +6,12 @@ params ["_markerX"];
 //Mission: Logistic supplies
 if (!isServer and hasInterface) exitWith{};
 
+// Prevent spamming multiple supply missions
+if (missionNamespace getVariable ["A3A_supplyMissionActive", false]) exitWith {
+	[localize "STR_A3A_Missions_SUPP_Supplies_tip_header", localize "STR_A3U_supplies_already_active", true] remoteExec ["A3A_fnc_customHint", theBoss];
+};
+missionNamespace setVariable ["A3A_supplyMissionActive", true, true];
+
 private _groups = [];
 private _difficultX = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
@@ -175,6 +181,9 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 		[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
 	};
 };
+
+// Release the lockout flag before deleting the vehicle
+missionNamespace setVariable ["A3A_supplyMissionActive", false, true];
 
 deleteVehicle _truckX;
 private _emptybox = "Land_Pallet_F" createVehicle (getpos _truckX);
