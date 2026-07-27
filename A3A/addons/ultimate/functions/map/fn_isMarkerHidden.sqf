@@ -39,7 +39,7 @@ if (_marker in revealedZones) exitWith {false};
 if (_marker in markersImmune) exitWith {false};
 
 // Replaced flatten[] operation
-if (_marker in citiesX || {_marker in airportsX} || {_marker in milAdministrationsX} || {_marker in antennas}) exitWith {false};
+if (_marker in citiesX || {_marker in airportsX} || {_marker in milAdministrationsX}) exitWith {false};
 
 if (!isNil "traderMarker" && {_marker == traderMarker}) exitWith {false};
 if (_markerSide isNotEqualTo sideUnknown && {_markerSide isNotEqualTo resistance}) exitWith {true};
