@@ -339,11 +339,10 @@ player addEventHandler ["GetInMan", {
 
 private _blackMarketStock = call A3U_fnc_grabBlackMarketVehicles;
 
-if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualTo []) then {
+if ((_blackMarketStock get "ARTILLERY") isNotEqualTo createHashMap) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle"];
-		private _vehType = typeOf _vehicle;
-		private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+		private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery false;
@@ -352,7 +351,7 @@ if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualT
 
 	player addEventHandler ["GetOutMan", {
 		params ["_unit", "_role", "_vehicle"];
-        private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+        private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery true;
