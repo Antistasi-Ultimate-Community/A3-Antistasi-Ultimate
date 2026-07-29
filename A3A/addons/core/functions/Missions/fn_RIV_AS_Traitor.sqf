@@ -81,8 +81,8 @@ private _taskId = "AS" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskID,
 	[
-		format [localize "STR_A3A_Missions_AS_RIV_Traitor_task_desc", A3A_faction_riv get "name", A3A_faction_reb get "name", _nameDest, _displayTime],
-		localize "STR_A3A_Missions_AS_RIV_Traitor_task_header",
+		[ "STR_A3A_Missions_AS_RIV_Traitor_task_desc", A3A_faction_riv get "name", A3A_faction_reb get "name", _nameDest, _displayTime],
+		[ "STR_A3A_Missions_AS_RIV_Traitor_task_header"],
 		_markerX
 	],
 	_posTsk,
@@ -93,6 +93,11 @@ private _taskId = "AS" + str A3A_taskCount;
 	true
 ] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_AS_RIV_Traitor_task_desc", A3A_faction_riv get "name", A3A_faction_reb get "name", _nameDest, _displayTime],
+    [ "STR_A3A_Missions_AS_RIV_Traitor_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 sleep 15;
 _traitor allowDamage true;

@@ -137,8 +137,8 @@ private _taskId = "DES" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_A3A_Missions_DES_Artillery_task_desc", _nameDest, _displayTime],
-        localize "STR_A3A_Missions_DES_Artillery_task_header",
+        [ "STR_A3A_Missions_DES_Artillery_task_desc", _nameDest, _displayTime],
+        [ "STR_A3A_Missions_DES_Artillery_task_header"],
         _markerX
     ],
     _artilleryPosition,
@@ -149,6 +149,12 @@ private _taskId = "DES" + str A3A_taskCount;
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [
+        [ "STR_A3A_Missions_DES_Artillery_task_desc", _nameDest, _displayTime],
+        [ "STR_A3A_Missions_DES_Artillery_task_header"],
+        _markerX
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 _artilleryVeh allowDamage true;
 

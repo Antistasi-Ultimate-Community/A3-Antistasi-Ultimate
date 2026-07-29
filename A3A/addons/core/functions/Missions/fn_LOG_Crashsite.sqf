@@ -148,7 +148,10 @@ private _rebelTaskText = format [
 [
     [teamPlayer,civilian],
     _taskId,
-    [format [localize "STR_A3A_Missions_LOG_crashsite_task_desc", _faction get "name", _startTimeDisplay, _displayTime], localize "STR_A3A_Missions_LOG_crashsite_task_header", _markerX],
+    [ [ "STR_A3A_Missions_LOG_crashsite_task_desc", _faction get "name", _startTimeDisplay, _displayTime],
+      [ "STR_A3A_Missions_LOG_crashsite_task_header"],
+      _markerX
+    ],
     _crashPositionMarker,
     false,
     0,
@@ -157,6 +160,11 @@ private _rebelTaskText = format [
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_LOG_crashsite_task_desc", _faction get "name", _startTimeDisplay, _displayTime],
+      [ "STR_A3A_Missions_LOG_crashsite_task_header"],
+      _markerX
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 ///checking if players reached minimum distance to start vfx or if time limit has passed
 private _missionStart = serverTime;
@@ -444,7 +452,10 @@ if (!isNil "traderMarker") then { //checking if trader is spawned
     [
         [teamPlayer,civilian],
         _taskId2,
-        [format [localize "STR_A3A_Missions_LOG_crashsite_task_alt", _faction get "name", _destinationName, _displayTime], localize "STR_A3A_Missions_LOG_crashsite_task_header", _markerX],
+        [ [ "STR_A3A_Missions_LOG_crashsite_task_alt", _faction get "name", _destinationName, _displayTime],
+          [ "STR_A3A_Missions_LOG_crashsite_task_header"],
+          _markerX
+        ],
         traderMarker,
         false,
         0,
@@ -453,6 +464,11 @@ if (!isNil "traderMarker") then { //checking if trader is spawned
         true
     ] call BIS_fnc_taskCreate;
     [_taskId2, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+    [ _taskId2,
+      [ [ "STR_A3A_Missions_LOG_crashsite_task_alt", _faction get "name", _destinationName, _displayTime],
+              [ "STR_A3A_Missions_LOG_crashsite_task_header"],
+              _markerX
+            ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 };
 
 if (!isNil "traderMarker") then { // check if trader is present

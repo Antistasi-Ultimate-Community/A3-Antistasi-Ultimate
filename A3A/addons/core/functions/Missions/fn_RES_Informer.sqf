@@ -160,8 +160,8 @@ private _taskId = "RES" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_A3A_Missions_RES_Informer_task_desc", _faction get "name", _destinationName, _displayTime],
-        localize "STR_A3A_Missions_RES_Informer_task_header",
+        [ "STR_A3A_Missions_RES_Informer_task_desc", _faction get "name", _destinationName, _displayTime],
+        [ "STR_A3A_Missions_RES_Informer_task_header"],
         _markerX
     ],
     _positionX,
@@ -172,6 +172,12 @@ private _taskId = "RES" + str A3A_taskCount;
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [
+        [ "STR_A3A_Missions_RES_Informer_task_desc", _faction get "name", _destinationName, _displayTime],
+        [ "STR_A3A_Missions_RES_Informer_task_header"],
+        _markerX
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 Info("Informer has spawned, waiting until players will be close to the city");
 

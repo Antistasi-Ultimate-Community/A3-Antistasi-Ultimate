@@ -36,18 +36,20 @@ private _header = nil;
 private _posTsk = nil;
 
 if (_sideX == Occupants) then {
-	_text = format [localize "STR_A3A_Missions_RES_Refugees_task_desc_1",FactionGet(reb, "name"), _nameDest,_displayTime];
-	_header = format [localize "STR_A3A_Missions_RES_Refugees_task_header_1",FactionGet(reb, "name")];
+	_text = [ "STR_A3A_Missions_RES_Refugees_task_desc_1",FactionGet(reb, "name"), _nameDest,_displayTime];
+	_header = [ "STR_A3A_Missions_RES_Refugees_task_header_1",FactionGet(reb, "name")];
 	_posTsk = (position _houseX) getPos [random 100, random 360];
 } else {
-	_text = format [localize "STR_A3A_Missions_RES_Refugees_task_desc_2",_nameDest, _faction get "name",_displayTime];
-	_header = localize "STR_A3A_Missions_RES_Refugees_task_header_2";
+	_text = [ "STR_A3A_Missions_RES_Refugees_task_desc_2",_nameDest, _faction get "name",_displayTime];
+	_header = [ "STR_A3A_Missions_RES_Refugees_task_header_2"];
 	_posTsk = position _houseX;
 };
 
 private _taskId = "RES" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[_text,_header,_nameDest],_posTsk,false,0,true,"run",true] call BIS_fnc_taskCreate;
 [_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [_text,_header,_nameDest]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 _groupPOW = createGroup teamPlayer;
 for "_i" from 1 to (((count _posHouse) - 1) min 6) do {
@@ -135,7 +137,7 @@ if (_sideX == Invaders) then {
 		};
 
 	[_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
-	
+
 	{[_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
 	_groupX1 = [_houseX buildingExit 0, Occupants, _faction get "groupPolice"] call A3A_fnc_spawnGroup;
 };

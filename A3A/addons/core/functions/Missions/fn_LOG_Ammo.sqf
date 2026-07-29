@@ -26,8 +26,25 @@ _pos = _pos findEmptyPosition [1,60,_typeVehX];
 if (count _pos == 0) then {_pos = position _road};
 
 private _taskId = "LOG" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_LOG_Ammo_task_desc",_nameDest,_displayTime],localize "STR_A3A_Missions_LOG_Ammo_task_header",_markerX],_pos,false,0,true,"rearm",true] call BIS_fnc_taskCreate;
+[ [teamPlayer,civilian],
+  _taskId,
+  [ [ "STR_A3A_Missions_LOG_Ammo_task_desc",_nameDest,_displayTime],
+    [ "STR_A3A_Missions_LOG_Ammo_task_header"],
+    _markerX
+  ],
+  _pos,
+  false,
+  0,
+  true,
+  "rearm",
+  true
+  ] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_LOG_Ammo_task_desc",_nameDest,_displayTime],
+    [ "STR_A3A_Missions_LOG_Ammo_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or {(spawner getVariable _markerX != 2 and !(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))}};
 private _bonus = if (_difficultX) then {2} else {1};

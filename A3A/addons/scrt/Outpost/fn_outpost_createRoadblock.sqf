@@ -18,8 +18,25 @@ _marker setMarkerShape "ICON";
 (45 call SCRT_fnc_misc_getTimeLimit) params ["_dateLimitNum", "_displayTime"];
 
 private _taskId = "outpostTask" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[format [localize "STR_roadblock_deploy_desc", _displayTime],localize "STR_roadblock_deploy_header",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
+[ [teamPlayer,civilian],
+  _taskId,
+  [ [ "STR_roadblock_deploy_desc", _displayTime],
+    [ "STR_roadblock_deploy_header"],
+    _marker
+  ],
+  _position,
+  false,
+  0,
+  true,
+  "Move",
+  true
+  ] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_roadblock_deploy_desc", _displayTime],
+    [ "STR_roadblock_deploy_header"],
+    _marker
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _riflemanType = A3A_faction_reb get "unitRifle";
 private _squadType = A3A_faction_reb get "groupSquad";

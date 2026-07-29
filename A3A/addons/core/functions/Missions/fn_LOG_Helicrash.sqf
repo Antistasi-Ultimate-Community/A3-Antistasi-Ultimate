@@ -179,7 +179,10 @@ private _rebelTaskText = format [
 [
     [teamPlayer,civilian],
     _taskId,
-    [format [localize "STR_A3A_Missions_LOG_Helicrash_task_desc", _faction get "name", _destinationName, _displayTime], localize "STR_A3A_Missions_LOG_Helicrash_task_header", _markerX],
+    [ [ "STR_A3A_Missions_LOG_Helicrash_task_desc", _faction get "name", _destinationName, _displayTime],
+      [ "STR_A3A_Missions_LOG_Helicrash_task_header"],
+      _markerX
+    ],
     _crashPositionMarker,
     false,
     0,
@@ -188,6 +191,11 @@ private _rebelTaskText = format [
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_LOG_Helicrash_task_desc", _faction get "name", _destinationName, _displayTime],
+      [ "STR_A3A_Missions_LOG_Helicrash_task_header"],
+      _markerX
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 //loiter helicopter
 _searchHeliData = [[(_crashPosition select 0) + random 100, (_crashPosition select 1) + random 100, 300 + random 500], 0, _searchHeliClass, _sideX] call A3A_fnc_spawnVehicle;

@@ -245,8 +245,8 @@ private _intelLeaderPosition = position _intelLeader;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [(localize "STR_rivals_quest_description"),A3A_faction_occ get "name"],
-        (localize "STR_rivals_quest_header"),
+        [ "STR_rivals_quest_description",A3A_faction_occ get "name"],
+        [ "STR_rivals_quest_header"],
         _marker
     ],
     _intelLeaderPosition,
@@ -257,6 +257,12 @@ private _intelLeaderPosition = position _intelLeader;
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "RIV_ENC", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [
+        [ "STR_rivals_quest_description",A3A_faction_occ get "name"],
+        [ "STR_rivals_quest_header"],
+        _marker
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 waitUntil {
     sleep 2;
@@ -323,8 +329,8 @@ sleep 2;
     [teamPlayer,civilian],
     _taskId,
     [
-		format [(localize "STR_rivals_quest_update_description"), _displayTime],
-		format [(localize "STR_rivals_quest_update_header"), A3A_faction_riv get "name"],
+		[ "STR_rivals_quest_update_description", _displayTime],
+		[ "STR_rivals_quest_update_header", A3A_faction_riv get "name"],
         _marker
     ],
     _roadPosition,
@@ -336,6 +342,12 @@ sleep 2;
 ] call BIS_fnc_taskCreate;
 [_taskId, "RIV_ENC", "ASSIGNED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 _taskId call BIS_fnc_taskSetCurrent;
+[ _taskId,
+  [
+    [ "STR_rivals_quest_update_description", _displayTime],
+    [ "STR_rivals_quest_update_header", A3A_faction_riv get "name"],
+    _marker
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 private _group1Position = [
 		_roadPosition, //center

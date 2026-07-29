@@ -110,8 +110,8 @@ private _taskId = "RIV_ATT" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_RIV_ATT_transfer_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
-        format [localize "STR_RIV_ATT_transfer_header", A3A_faction_riv get "name"],
+        [ "STR_RIV_ATT_transfer_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
+        [ "STR_RIV_ATT_transfer_header", A3A_faction_riv get "name"],
         _marker
     ],
     _hideoutPosition,
@@ -122,6 +122,12 @@ private _taskId = "RIV_ATT" + str A3A_taskCount;
     true
 ] call BIS_fnc_taskCreate;
 [_taskId, "RIV_ATT", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [
+        [ "STR_RIV_ATT_transfer_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
+        [ "STR_RIV_ATT_transfer_header", A3A_faction_riv get "name"],
+        _marker
+    ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 waitUntil {
     sleep 1;

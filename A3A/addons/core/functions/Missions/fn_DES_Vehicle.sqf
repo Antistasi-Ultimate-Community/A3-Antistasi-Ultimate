@@ -23,13 +23,18 @@ private _taskId = "DES" + str A3A_taskCount;
 	[teamPlayer,civilian],
 	_taskId,
 	[
-		format [localize "STR_A3A_Missions_DES_Vehicle_task_desc",_nameDest,_displayTime,getText (configFile >> "CfgVehicles" >> (_typeVehX) >> "displayName")],
-		localize "STR_A3A_Missions_DES_Vehicle_task_header",
+		[ "STR_A3A_Missions_DES_Vehicle_task_desc",_nameDest,_displayTime,getText (configFile >> "CfgVehicles" >> (_typeVehX) >> "displayName")],
+		[ "STR_A3A_Missions_DES_Vehicle_task_header"],
 		_markerX
 	],
 	_positionX,false,0,true,"Destroy",true
 ] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[ _taskId,
+  [ [ "STR_A3A_Missions_DES_Vehicle_task_desc",_nameDest,_displayTime,getText (configFile >> "CfgVehicles" >> (_typeVehX) >> "displayName")],
+    [ "STR_A3A_Missions_DES_Vehicle_task_header"],
+    _markerX
+  ]] remoteExec [ "A3A_fnc_localize_format_taskSetDescription", 0];
 
 _truckCreated = false;
 waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or (spawner getVariable _markerX == 0)};
