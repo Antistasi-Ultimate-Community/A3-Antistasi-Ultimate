@@ -46,8 +46,9 @@ _strikePlane setVariable ["supportName", _supportName, true];
 
 //Setting up the EH for support destruction
 _strikePlane addEventHandler ["Killed", {
-    call FUNCMAIN(postmortem);
+    params ["_strikePlane"];
     ["TaskSucceeded", ["", localize "STR_notifiers_gunship_killed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
+    [_strikePlane] spawn A3A_fnc_postMortem;
 }];
 
 _strikePlane addEventHandler ["IncomingMissile", {

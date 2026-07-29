@@ -1,42 +1,48 @@
+/*  Handles the despawn and cleanup of dead units
+*   Params:
+*       _victim : OBJECT : The dead unit
+*
+*   Returns:
+*       Nothing
+*/
+
+params ["_victim"];
 #include "..\..\script_component.hpp"
-/* ----------------------------------------------------------------------------
-Function: A3A_fnc_postmortem
+FIX_LINE_NUMBERS()
+private _group = group _victim;
 
-Description:
-    Handles the despawn and cleanup of dead units
+Debug("PostMortem Called");
+if (isnull _victim)exitwith{Error("Function failed called with null param.")};
 
-Parameters:
-    0: _victim - The dead unit <OBJECT>
+if (isNull _group) then
+{
+    Debug_1("Group for victim :: %1, no group found! Removing from Statics list.",_victim);
 
-Optional:
-    1: _killer - The unit responsible for the death <OBJECT>
-
-Returns:
-    Nothing
-
-Environment:
-    Server, Unscheduled
-
-Author:
-    UnseenKill/gor3Splatter
----------------------------------------------------------------------------- */
-Trace_1(QFUNCMAIN(postmortem),_this);
-
-if !assert(isServer) exitWith {
-    Warning("Function can only be called on the server.");
-    _this remoteExecCall[QFUNCMAIN(postmortem), 2];
+	if (_victim in staticsToSave) then
+    {
+        staticsToSave = staticsToSave - [_victim];
+        publicVariable "staticsToSave";
+    };
 };
 
-if !assert(params[
-    ["_victim", nil, [objNull]]
-]) exitWith {};
-if (isNull _victim) exitWith {};
+Debug_3("Pausing for %1 minutes before cleaning victim: %2 and group: %3", round cleantime/60, _victim, _group);
+sleep cleantime;
 
-if (isNil { _victim getVariable QGVAR(postMortemEventSent) }) then {
-    _victim setVariable[QGVAR(postMortemEventSent), true];
-    [CBA_EVENT_SERVER_ENTITY_POSTMORTEM, _this] call FUNCMAIN(triggerLocalEvent);
+if (_victim getVariable ["stopPostmortem", false]) exitWith {};
+
+if !(isnull _victim) then
+{
+    Debug_1("Cleanup complete for %1 victim.", _victim);
+    if (_victim isKindOf "CAManBase" and !(isNull (objectParent _victim))) then {
+        // Otherwise vehicle seats may remain blocked
+        [objectParent _victim, _victim] remoteExec ["deleteVehicleCrew", _victim];
+    } else {
+        deleteVehicle _victim;
+    };
 };
 
-[_victim] call FUNCMAIN(despawnQueueEntity);
-
-nil;
+if !(isnull _group) then
+{
+    Debug_1("Cleanup complete for %1 group.", _group);
+    deleteGroup _group;
+};

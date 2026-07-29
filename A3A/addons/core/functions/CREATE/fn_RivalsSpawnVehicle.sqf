@@ -55,21 +55,23 @@ private _side = if (_group isEqualType sideUnknown) then { _group } else { Rival
 private _sim = getText(configFile >> "CfgVehicles" >> _type >> "simulation");
 
 private _velocity = 0;
-private _veh = switch (toLowerANSI _sim) do {
+private _veh = objNull;
+switch (toLowerANSI _sim) do {
     case "airplane";
     case "airplanex";
     case "helicopterrtd";
     case "helicopterx": {
         _velocity = getNumber(configFile >> "CfgVehicles" >> _type >> "stallSpeed") / 3.6 * 1.1;  // kilometres per hour to metres per second * 110% of stall speed.
-        _precise = true; // Force precise to true for aircraft, as they need to be at the correct height for "FLY".
-        createVehicle [_type, _pos, [], 0, "FLY"];
+        _veh = createVehicle [_type, _pos, [], 0, "FLY"];
+        //Make sure aircraft will start at higher altitude if provided.
+        if (count _pos == 3 && (_pos#2) > 100) then {
+            _veh setPos _pos; // It will be set twice if _precise if true, but that will not have any affect on outcome.
+        };
     };
     default {
-        createVehicle [_type, _pos, [], 0, "NONE"];
+        _veh = createVehicle [_type, _pos, [], 0, "NONE"];
     };
 };
-
-[_veh] call FUNCMAIN(preparePostMortem);
 
 //Set the correct direction.
 _veh setDir _azi;

@@ -12,9 +12,6 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 
-// Despawn processor self-relaunch delay
-GVAR(despawnQueueProcessorDelay) = 60;
-
 // Whether statics crewed in outposts should scan their horizon
 GVAR(rebelStaticsScanHorizon) = true;
 
