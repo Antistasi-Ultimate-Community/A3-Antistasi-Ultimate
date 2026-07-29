@@ -890,6 +890,13 @@
                 <French>RHS</French>
                 <Chinesesimp>RHS</Chinesesimp>
             </Key>
+            <Key ID="STR_A3AU_mss">
+                <Original>MSS</Original>
+                <Russian>MSS</Russian>
+                <Korean>MSS</Korean>
+                <French>MSS</French>
+                <Chinesesimp>MSS</Chinesesimp>
+            </Key>
             <Key ID="STR_A3AU_sfp">
                 <Original>SFP</Original>
                 <Russian>SFP</Russian>
@@ -1023,6 +1030,30 @@
                 <Chinesesimp>MPP</Chinesesimp>
                 <Korean>MPP</Korean>
                 <French>MPP</French>
+            </Key>
+            <Key ID="STR_A3AU_ReArma_US">
+                <Original>ReArma US</Original>
+                <German>ReArma US</German>
+                <Russian>ReArma US</Russian>
+                <Chinesesimp>ReArma US</Chinesesimp>
+                <Korean>ReArma US</Korean>
+                <French>ReAReArma USrma</French>
+            </Key>
+            <Key ID="STR_A3AU_ReArma_RU">
+                <Original>ReArma RU</Original>
+                <German>ReArma RU</German>
+                <Russian>ReArma RU</Russian>
+                <Chinesesimp>ReArma RU</Chinesesimp>
+                <Korean>ReArma RU</Korean>
+                <French>ReArma RU</French>
+            </Key>
+            <Key ID="STR_A3AU_QDI">
+                <Original>QDI</Original>
+                <German>QDI</German>
+                <Russian>QDI</Russian>
+                <Chinesesimp>QDI</Chinesesimp>
+                <Korean>QDI</Korean>
+                <French>QDI</French>
             </Key>
             <!-- <Key ID="STR_A3AU_PROJINF">
                 <Original>P.I.</Original>

@@ -397,10 +397,20 @@
         addons[] = {"MPP_PISTOLS"};
         weapons = "weapons_mpp";
     };
+    class addons_mss : addons_base
+    {
+        addons[] = {"MSS_Core"};
+        weapons = "weapons_mss";
+    };
     class addons_ScifiTP : addons_base
     {
         addons[] = {"PHEN_TurretPack"};
         vehicles = "vehicles_scifitp";
+    };
+    class addons_QDI : addons_base
+    {
+        addons[] = {"qdi_core"};
+        weapons = "weapons_QDI";
     };
     class addons_QAV : addons_base
     {
@@ -411,4 +421,14 @@
     {
         addons[] = {"vve_core"};
         vehicles = "vehicles_qav_vve";
+    };
+    class addons_rearma_us : addons_base
+    {
+        addons[] = {"us_weapon_rifles"};
+        weapons = "weapons_rearma_us";
+    };
+    class addons_rearma_ru : addons_base
+    {
+        addons[] = {"rus_weapon_rifles"};
+        weapons = "weapons_rearma_ru";
     };

@@ -222,3 +222,19 @@
         {
             prefix = "mpp_stock";
         };
+        class weapons_qdi : weapons_base
+        {
+            prefix = "qdi_stock";
+        };
+        class weapons_mss : weapons_base
+        {
+            prefix = "mss";
+        };
+        class weapons_rearma_us : weapons_base
+        {
+            prefix = "rearma_us_stock";
+        };
+        class weapons_rearma_ru : weapons_base
+        {
+            prefix = "rearma_ru_stock";
+        };
