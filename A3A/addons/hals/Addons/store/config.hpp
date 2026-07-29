@@ -89,6 +89,8 @@ class cfgHALsStore
 		#include "config\mpp.hpp"
 		#include "config\qdi.hpp"
 		#include "config\mss.hpp"
+		#include "config\rearma_us.hpp"
+		#include "config\rearma_ru.hpp"
 	};
 
 	class stores 
@@ -1030,6 +1032,38 @@ class cfgHALsStore
 				"muzzlesMPP",
 				"opticsMPP",
 				"magazinesMPP"
+			};
+		};
+		class rearma_us_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"riflesReArma_US",
+				"mgsReArma_US",
+				"sniperRiflesReArma_US",
+				"handgunsReArma_US",
+				"launcherReArma_US",
+				"specialReArma_US",
+				"opticsReArma_US",
+				"pointersReArma_US",
+				"muzzlesReArma_US",
+				"magazinesReArma_US"
+			};
+		};
+		class rearma_ru_stock
+		{
+			displayName = $STR_ARMS_DEALER_STORE;
+			categories[] = {
+				"riflesReArma_RU",
+				"mgsReArma_RU",
+				"sniperRiflesReArma_RU",
+				"handgunsReArma_RU",
+				"launcherReArma_RU",
+				"opticsReArma_RU",
+				"pointersReArma_RU",
+				"muzzlesReArma_RU",
+				"magazinesReArma_RU",
+				"launcherMagazinesReArma_RU"
 			};
 		};
 		class qdi_stock

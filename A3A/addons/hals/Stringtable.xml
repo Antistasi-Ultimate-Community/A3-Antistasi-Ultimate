@@ -1031,6 +1031,22 @@
                 <Korean>MPP</Korean>
                 <French>MPP</French>
             </Key>
+            <Key ID="STR_A3AU_ReArma_US">
+                <Original>ReArma US</Original>
+                <German>ReArma US</German>
+                <Russian>ReArma US</Russian>
+                <Chinesesimp>ReArma US</Chinesesimp>
+                <Korean>ReArma US</Korean>
+                <French>ReAReArma USrma</French>
+            </Key>
+            <Key ID="STR_A3AU_ReArma_RU">
+                <Original>ReArma RU</Original>
+                <German>ReArma RU</German>
+                <Russian>ReArma RU</Russian>
+                <Chinesesimp>ReArma RU</Chinesesimp>
+                <Korean>ReArma RU</Korean>
+                <French>ReArma RU</French>
+            </Key>
             <Key ID="STR_A3AU_QDI">
                 <Original>QDI</Original>
                 <German>QDI</German>

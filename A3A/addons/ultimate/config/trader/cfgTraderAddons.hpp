@@ -422,3 +422,13 @@
         addons[] = {"vve_core"};
         vehicles = "vehicles_qav_vve";
     };
+    class addons_rearma_us : addons_base
+    {
+        addons[] = {"us_weapon_rifles"};
+        weapons = "weapons_rearma_us";
+    };
+    class addons_rearma_ru : addons_base
+    {
+        addons[] = {"rus_weapon_rifles"};
+        weapons = "weapons_rearma_ru";
+    };
