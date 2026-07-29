@@ -97,9 +97,6 @@ private _staticAT = ["B_static_AT_F", "B_GMG_01_high_F"];
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
-private _radar = ["B_Radar_System_01_F"];
-private _SAM = ["B_SAM_System_03_F"];
-
 if (_hasRF) then {
     _basic pushBack "B_Pickup_rf";
     _unarmedVehicles append ["B_Pickup_rf", "B_Pickup_Comms_rf"];
@@ -161,8 +158,8 @@ if (_hasWS) then {
 ["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
-["vehicleRadar", _radar] call _fnc_saveToTemplate;
-["vehicleSam", _SAM] call _fnc_saveToTemplate;
+["vehicleRadar", "B_Radar_System_01_F"] call _fnc_saveToTemplate;
+["vehicleSam", "B_SAM_System_03_F"] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _planesCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _planesAA] call _fnc_saveToTemplate;
 ["vehiclesArtillery", _artillery] call _fnc_saveToTemplate;
