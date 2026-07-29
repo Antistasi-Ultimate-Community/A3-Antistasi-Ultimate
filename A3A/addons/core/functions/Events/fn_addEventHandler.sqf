@@ -28,7 +28,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-Trace_1(QFUNCMAIN(addEventHandler),_this);
+Trace_1(QFUNCMAIN(addEventHandler),_this#0);
 
 if !assert(params[
     ["_eventName", nil, [""]],

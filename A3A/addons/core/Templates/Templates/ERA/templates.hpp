@@ -53,3 +53,13 @@
         name = "MultiEra UK";
         file = "ERA_AI_UK";
     };
+	
+	class ERA_UK_DLC : ERA_Base
+    {
+		requiredAddons[] = {"cwr3_weapons", "cwr3_expansion_uk", "ww2_spe_assets_c_characters_germans_c","WW2_SPEX_Core_t", "CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core"};
+        side = "Occ";
+        flagTexture = "\A3\Data_F\Flags\flag_uk_co.paa";
+		logo = "\A3\Data_F\Flags\flag_uk_co.paa";
+        name = "MultiEra UK (CDLC)";
+        file = "ERA_AI_UK";
+    };

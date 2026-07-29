@@ -79,7 +79,19 @@ while {true} do {
 
 		_resAddCity = (_numCiv * (_supportReb / 100)) / 3;
 		if (!finite _resAddCity) then { _resAddCity = 0; };
-		_hrAddCity = _numCiv * (_supportReb / 10000);
+
+		if (_numCiv > 0) then {
+			private _baseDivider = 10000;
+			private _refPopulation = 2000;
+			private _minDivider = 5000;
+			private _maxDivider = 10000;
+			
+			private _divider = _baseDivider * sqrt(_numCiv / _refPopulation);
+			_divider = (_divider max _minDivider) min _maxDivider;
+			_hrAddCity = _numCiv * _supportReb / _divider;
+		} else {
+			_hrAddCity = 0;
+		};
 
 		if (sidesX getVariable [_city,sideUnknown] == Occupants) then
 		{

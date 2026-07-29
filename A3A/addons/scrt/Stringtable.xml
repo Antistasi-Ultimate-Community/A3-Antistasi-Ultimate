@@ -6725,20 +6725,6 @@
                 <Korean>스펙트럼 장치 지원 아이템의 사용 가능 여부와 게임 내 효과를 전환합니다.</Korean>
                 <French>Active ou désactive la disponibilité du dispositif spectre et ses effets en jeu.</French>
             </Key>
-            <Key ID="STR_params_disableAutoSmokeCover">
-                <Original>Disable Auto Smoke Cover Script (Helps with performance)</Original>
-                <Russian>Выключить скрипт для автоматической постановки дымовых завес (помогает с производительностью)</Russian>
-                <Chinesesimp>禁用自动烟雾覆盖脚本（有助于提高性能）</Chinesesimp>
-                <Korean>자동 연막 숨기 스크립트 비활성화 (성능 향상에 도움)</Korean>
-                <Turkish>Otomatik Sis Perdesi Devre Dışı Bırak (Performansa yardımcı olur)</Turkish>
-            </Key>
-            <Key ID="STR_params_disableAutoSmokeCover_desc">
-                <Original>Disable the automatic smoke cover script to save CPU; disabling may reduce some tactical automatic behaviour.</Original>
-                <Russian>Отключает автоматический скрипт дымовой завесы для экономии CPU; это может изменить некоторое автоматическое тактическое поведение.</Russian>
-                <Chinesesimp>禁用自动烟雾掩护脚本以节省CPU；禁用后某些战术自动行为可能减少。</Chinesesimp>
-                <Korean>CPU 절약을 위해 자동 연막 엄폐 스크립트를 비활성화합니다. 비활성화하면 일부 전술 자동 동작이 감소할 수 있습니다.</Korean>
-                <French>Désactive le script de brouillard automatique pour économiser le CPU ; cela peut réduire certains comportements tactiques automatiques.</French>
-            </Key>
             <Key ID="STR_params_allowUnfairSupports">
                 <Original>Allow unfair (unbalanced) supports to be used by the enemy</Original>
                 <Russian>Разрешить использование противником несправедливых (несбалансированных) вариантов поддержки</Russian>
@@ -11037,6 +11023,14 @@
                 <French>Missions de conquête</French>
                 <Turkish>Kuşatma Görevleri</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_random_text">
+                <Original>Random Missions</Original>
+                <Russian>Случайные миссии</Russian>
+                <Chinesesimp>随机任务</Chinesesimp>
+                <Korean>랜덤 임무</Korean>
+                <French>Missions aléatoires</French>
+                <Turkish>Rastgele Görevler</Turkish>
+            </Key>
         </Container>
         <Container name="dialog_headquarters">
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_loadouts_text">
@@ -14647,6 +14641,22 @@
                 <Portuguese>Você quer que eu seja preso!? Volte quando não estiver chamando atenção!</Portuguese>
                 <Turkish>Beni tutuklattırmaya mı çalışıyorsun!? Dikkat çekmediğinde geri gel!</Turkish>
             </Key>
+            <Key ID="STR_antistasi_actions_talk_with_civ_in_vehicle_fail">
+                <Original>I can't talk to you while you're in there. Get out of the vehicle!</Original>
+                <Russian>Я не могу говорить с тобой, пока ты там. Выходи из машины!</Russian>
+                <German>Ich kann nicht mit dir reden, während du da drin bist. Steig aus dem Fahrzeug!</German>
+                <Italian>Non posso parlare con te mentre sei lì dentro. Scendi dal veicolo!</Italian>
+                <Spanish>No puedo hablar contigo mientras estés ahí dentro. ¡Sal del vehículo!</Spanish>
+                <French>Je ne peux pas te parler pendant que tu es là-dedans. Sors du véhicule !</French>
+                <Korean>당신이 거기 있는 동안에는 이야기할 수 없습니다. 차에서 내리세요!</Korean>
+                <Japanese>車に乗ったままでは話せません。車から降りてください！</Japanese>
+                <ChineseSimplified>你在车里我没法跟你说话。从车里出来！</ChineseSimplified>
+                <Chinese>你在車裡我沒法跟你說話。從車裡出來！</Chinese>
+                <Polish>Nie mogę z tobą rozmawiać, kiedy tam siedzisz. Wyjdź z pojazdu!</Polish>
+                <Czech>Nemůžu s tebou mluvit, když jsi uvnitř. Vylez z vozidla!</Czech>
+                <Portuguese>Não posso falar com você enquanto estiver aí dentro. Saia do veículo!</Portuguese>
+                <Turkish>Oradayken seninle konuşamam. Araçtan in!</Turkish>
+            </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1">
                 <Original>Hey! One of your rebel friends already talked to me! Leave me alone!</Original>
                 <Russian>Эй! Один из твоих повстанцев уже со мной разговаривал! Оставь меня в покое!</Russian>
@@ -14904,7 +14914,7 @@
                 <Turkish>İletişim sektöründe çalışan birkaç tanıdığım var. Eğer bir bilgi alırlarsa sana haber veririm.</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ_success_weapons1">
-                <Original>I drive past a warehouse on my way to the factory and a few days ago I saw the military offloading some disguised trucks. Real sneaky - They don't fool me!</Original>
+                <Original>I drove past a warehouse on my way to the factory and, a few days ago, I saw the military offloading some disguised trucks. Real sneaky - They don't fool me!</Original>
                 <Russian>Я проезжаю мимо склада по пути на фабрику, и несколько дней назад видел, как военные разгружали несколько замаскированных грузовиков. Очень хитро — меня они не обманут!</Russian>
                 <German>Ich fahre an einem Lagerhaus vorbei, wenn ich zur Fabrik fahre, und vor ein paar Tagen habe ich die Militärs gesehen, die einige getarnte Lkw entladen haben. Richtig hinterhältig – mich täuschen sie nicht!</German>
                 <Italian>Passo davanti a un magazzino mentre vado in fabbrica, e qualche giorno fa ho visto i militari scaricare dei camion mascherati. Molto furbi - Non mi fregano!</Italian>

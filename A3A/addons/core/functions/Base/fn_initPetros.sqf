@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+
 FIX_LINE_NUMBERS()
 Info("initPetros started");
 scriptName "fn_initPetros";
@@ -7,19 +8,64 @@ petros setSkill 1;
 petros setVariable ["respawning",false];
 petros allowDamage false;
 
-if (face petros != "GreekHead_A3_01") then {
-    [petros, createHashMapFromArray [["face", "GreekHead_A3_01"], ["speaker", "Male01GRE"], ["pitch", 1.1], ["firstName", "Petros"], ["lastName", ":)"]]] call A3A_fnc_setIdentity;
+// Apparel
+// Vest
+private _vest = A3A_faction_reb getOrDefault ["petrosVest", ""];
+if (_vest isEqualTo "") then {
+    _vest = selectRandomWeighted (A3A_rebelGear get "ArmoredVests");
+    
+    if (_vest isEqualTo "") then {
+        _vest = selectRandomWeighted (A3A_rebelGear get "CivilianVests");
+    };
+};
+petros addVest _vest;
+
+// Headgear
+removeHeadgear petros;
+private _headgear = A3A_faction_reb getOrDefault ["petrosHeadgear", ""];
+if !(_headgear isEqualTo "") then {
+    petros addHeadgear _headgear;
 };
 
-removeHeadgear petros;
+// Goggles
 removeGoggles petros;
-private _vest = selectRandomWeighted (A3A_rebelGear get "ArmoredVests");
-if (_vest == "") then { _vest = selectRandomWeighted (A3A_rebelGear get "CivilianVests") };
-petros addVest _vest;
-[petros, "Rifles"] call A3A_fnc_randomWeapon;
-[petros, "Handguns", 10] call A3A_fnc_randomWeapon;
+private _goggles = A3A_faction_reb getOrDefault ["petrosGoggles", ""];
+if !(_goggles isEqualTo "") then {
+    petros addGoggles _goggles;
+};
+
+// Uniform
+private _uniform = A3A_faction_reb getOrDefault ["petrosUniform", ""];
+if !(_uniform isEqualTo "") then {
+    private _uniformItems = uniformItems petros;
+    petros forceAddUniform _uniform;
+
+    {
+        petros addItemToUniform _x;
+    } forEach _uniformItems;
+};
+
+// Weapons
+// Primary
+private _primary = A3A_faction_reb getOrDefault ["petrosPrimary", []];
+if (_primary isEqualTo []) then {
+    [petros, "Rifles"] call A3A_fnc_randomWeapon;
+} else {
+    _primary params ["_primaryClassName", "_magCount"];
+    [petros, _primaryClassName, _magCount] call BIS_fnc_addWeapon;
+};
+
+// Hand Gun
+private _handgun = A3A_faction_reb getOrDefault ["petrosHandgun", []];
+if (_handgun isEqualTo []) then {
+    [petros, "Handguns", 10] call A3A_fnc_randomWeapon;
+} else {
+    _handgun params ["_handgunClassName", "_magCount"];
+    [petros, _handgunClassName, _magCount] call BIS_fnc_addWeapon;
+};
 
 petros selectWeapon (primaryWeapon petros);
+//
 
 if (petros == leader group petros) then {
 	group petros setGroupIdGlobal ["Petros","GroupColor4"];
