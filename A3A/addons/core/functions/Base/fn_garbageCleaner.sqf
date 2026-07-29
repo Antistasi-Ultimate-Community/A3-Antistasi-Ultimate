@@ -41,6 +41,11 @@ sleep 0.5;
 { deleteVehicle _x } forEach (allMissionObjects "Ejection_Seat_Base_F");		// All vanilla ejection seats
 { deleteVehicle _x } forEach (allMissionObjects "Land_Pallet_F");		// Pallets from Supplies mission
 
+{ deleteVehicle _x } forEach (allMissionObjects "BloodPool_01_Large_New_F");
+{ deleteVehicle _x } forEach (allMissionObjects "BloodSplatter_01_Large_New_F");
+{ deleteVehicle _x } forEach (allMissionObjects "BloodSplatter_01_Medium_New_F");
+{ deleteVehicle _x } forEach (allMissionObjects "BloodPool_01_Medium_New_F");
+
 private _lootCrateType = FactionGet(reb, "lootCrate");
 // Cleanup rebel vehicles
 {
@@ -70,7 +75,6 @@ if (isClass (configFile/"CfgPatches"/"rhsgref_main")) then {//ToDo: these should
 	{ deleteVehicle _x } forEach (allMissionObjects "rhs_mi28_door_gunner");		// another garbage piece not being cleaned
 	{ deleteVehicle _x } forEach (allMissionObjects "rhs_mi28_wing_left");			// another garbage piece not being cleaned
 	{ deleteVehicle _x } forEach (allMissionObjects "rhs_mi28_wing_right");			// another garbage piece not being cleaned
-
 };
 
 // Do not localise timeSpan, it is broadcast to all connected clients.

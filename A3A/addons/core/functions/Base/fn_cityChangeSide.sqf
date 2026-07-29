@@ -13,7 +13,7 @@ if (_rebel) then {
     [Occupants, 10, 60] remoteExec ["A3A_fnc_addAggression",2];
     garrison setVariable [_city,[],true];
     [_city] call A3A_fnc_mrkUpdate;
-    [0,100,_city,false] spawn A3A_fnc_citySupportChange;
+    [-10,10,_city,false] spawn A3A_fnc_citySupportChange;
 
     private _closestAdminMarker = [milAdministrationsX, _city] call BIS_fnc_nearestPosition;
     if (_closestAdminMarker isEqualType "" && {(getMarkerPos _closestAdminMarker) distance2D (getMarkerPos _city) < 800}) then {

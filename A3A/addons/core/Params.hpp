@@ -1012,7 +1012,7 @@ class Params
                 hard = 20;
             };
         };
-        default = 80;
+        default = 50;
     };
     class loseHROnDeath: RebelBalanceParams
     {

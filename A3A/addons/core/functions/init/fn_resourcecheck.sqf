@@ -5,8 +5,6 @@ if (!isServer) exitWith {
 };
 
 //declaring variables outside of the loop increases performance
-private _resAdd = nil;
-private _hrAdd = nil;
 private _suppBoost = nil;
 private _resBoost = nil;
 
@@ -48,19 +46,19 @@ private _conditions = [
 ];
 
 while {true} do {
-	nextTick = time + 600;
-	waitUntil {sleep 15; time >= nextTick};
+	private _nextTick = time + 600;
+	waitUntil {sleep 15; time >= _nextTick};
     waitUntil {sleep 10; A3A_activePlayerCount > 0};
 
 	if (isNil "factories") then { factories = []; };
 	if (isNil "seaports") then { seaports = []; };
 	if (isNil "destroyedSites") then { destroyedSites = []; };
 
-	_resAdd = 25;
-	_hrAdd = 0;
+	private _suppBoost = 0.5 * (1+ ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count seaports));
+	private _resBoost = 1 + (0.25*({(sidesX getVariable [_x,sideUnknown] == teamPlayer) and !(_x in destroyedSites)} count factories));
 
-	_suppBoost = 0.5 * (1+ ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count seaports));
-	_resBoost = 1 + (0.25*({(sidesX getVariable [_x,sideUnknown] == teamPlayer) and !(_x in destroyedSites)} count factories));
+	private _resAdd = 25;
+	private _hrAdd = 0;
 
 	{
 		private _city = _x;
@@ -80,19 +78,19 @@ while {true} do {
 
 		_resAddCity = (_numCiv * (_supportReb / 100)) / 3;
 		if (!finite _resAddCity) then { _resAddCity = 0; };
-		_hrAddCity = _numCiv * (_supportReb / 10000);
 
-		private _hrMultiplier = overallHRGain / 100;
+		private _hrMultiplier = overallHRGain / 100; // 80 / 100 = 0.8
 
 		if (_numCiv > 0) then {
 			private _baseDivider = 10000;
 			private _refPopulation = 2000;
 			private _minDivider = 5000 / _hrMultiplier;
 			private _maxDivider = 10000 / _hrMultiplier;
+			private _supportRebCapped = if (_citySide isNotEqualTo teamPlayer) then {_supportReb min 15} else {_supportReb}; // Support heavily capped without owning
 			
 			private _divider = _baseDivider * sqrt(_numCiv / _refPopulation);
 			_divider = (_divider max _minDivider) min _maxDivider;
-			_hrAddCity = _numCiv * _supportReb / _divider;
+			_hrAddCity = _numCiv * (_supportRebCapped / _divider);
 		} else {
 			_hrAddCity = 0;
 		};
@@ -100,7 +98,6 @@ while {true} do {
 		if (_citySide != teamPlayer) then
 		{
 			_resAddCity = _resAddCity / 2;
-			_hrAddCity = _hrAddCity / 2;
 		};
 		if (_radioTowerSide != teamPlayer) then { _resAddCity = _resAddCity / 2 };
 
@@ -109,13 +106,17 @@ while {true} do {
 
 		private _popReb = round (_numCiv * (_supportReb / 100));
     	private _popGov = round (_numCiv * (_supportGov / 100));
+		private _popAboveMin = round (_numCiv) >= 20;
 		private _isNowEnemy = (_popReb <= (_popGov * 0.667)); // ~40% enemy 
 		private _isNowFriendly = (_popReb >= (_popGov * 1.5)); // ~60% rebel needed
 		private _isNeutral = (!_isNowEnemy && !_isNowFriendly);
+		private _isSkirmish = _city in townSkirmishes;
+		private _isDestroyed = _city in destroyedSites;
 
-		private _canFlip = (!_isNeutral && (_isNowFriendly && (_citySide isNotEqualTo teamPlayer) && !(_city in destroyedSites)));
-		private _canFlipEnemy = (!_isNeutral && (_isNowEnemy && (_citySide isEqualTo teamPlayer) && !(_city in destroyedSites)));
-		private _canStartSkirmish = ((random 100 <= townSkirmishChance) && !(_city in townSkirmishes) && !(bigAttackInProgress)); // Perhaps remove bigAttackInProgress?
+		private _canFlipBase = (!(_isNeutral) && !(_isDestroyed) && !(_isSkirmish));
+		private _canFlip = (_canFlipBase && (_isNowFriendly && _citySide isNotEqualTo teamPlayer)); 
+		private _canFlipEnemy = (_canFlipBase && (_isNowEnemy && _citySide isEqualTo teamPlayer));
+		private _canStartSkirmish = (_popAboveMin && (random 100 <= townSkirmishChance) && !(_isSkirmish)); // !(bigAttackInProgress) - Will keep, interesting experiment for now
 
 		if (_canFlip) then {
 			if (_canStartSkirmish) then {
@@ -123,12 +124,13 @@ while {true} do {
 				private _finalOrigin = selectRandom (_possibleOrigins select { (getMarkerPos _x) distance2D (getMarkerPos _city) < 3000 });
 				if (isNil "_finalOrigin") then { _finalOrigin = selectRandom _possibleOrigins };
 				[_citySide, _city, _finalOrigin] spawn A3A_fnc_townBattle;
+				uiSleep 1;
 			} else {
 				[_city, true] call A3A_fnc_cityChangeSide;
 			};
 		};
 
-		if (_canFlipEnemy && !(_city in townSkirmishes)) then {
+		if (_canFlipEnemy) then {
 			[_city, false] call A3A_fnc_cityChangeSide;
 		};
 	} forEach citiesX;
@@ -176,16 +178,16 @@ while {true} do {
 
 	publicVariable "supportPoints";
 
-	// Regular income of finite starting weapons
-	private _equipMul = A3A_balancePlayerScale / 30;		// difficulty scaled. Hmm.
-	{
-		if (_x isEqualType "") then { continue };
-		_x params ["_class", "_initCount"];
-		private _count = _initCount * _equipMul;
-		_count = if (_count % 1 > random 1) then { ceil _count } else { floor _count };
-		private _arsenalTab = _class call jn_fnc_arsenal_itemType;
-		[_arsenalTab, _class, _count] call jn_fnc_arsenal_addItem;
-	} forEach (A3A_faction_reb get "initialRebelEquipment");
+	// // Regular income of finite starting weapons
+	// private _equipMul = A3A_balancePlayerScale / 30;		// difficulty scaled. Hmm.
+	// {
+	// 	if (_x isEqualType "") then { continue };
+	// 	_x params ["_class", "_initCount"];
+	// 	private _count = _initCount * _equipMul;
+	// 	_count = if (_count % 1 > random 1) then { ceil _count } else { floor _count };
+	// 	private _arsenalTab = _class call jn_fnc_arsenal_itemType;
+	// 	[_arsenalTab, _class, _count] call jn_fnc_arsenal_addItem;
+	// } forEach (A3A_faction_reb get "initialRebelEquipment");
 
 	private _textX = format [localize "STR_comms_mp_taxes_income", _hrAdd, _resAdd, A3A_faction_civ get "currencySymbol"];
 	private _textArsenal = [] call A3A_fnc_arsenalManage;
@@ -193,7 +195,6 @@ while {true} do {
 	[petros, "taxRep", _textX] remoteExec ["A3A_fnc_commsMP", [teamPlayer, civilian]];
 
 	[] call A3A_fnc_generateRebelGear;
-
 	[] call A3A_fnc_FIAradio;
     [] call A3A_fnc_cleanConvoyMarker;
 

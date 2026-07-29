@@ -113,7 +113,7 @@ if ({alive _x} count _POWs == 0) then {
 	private _invertedMultiplier = 2 - _hrMultiplier; 
 
 	_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
-	_hr = ((2 * _countX) * _invertedMultiplier);
+	_hr = ceil((2 * _countX) * _invertedMultiplier);
 	_resourcesFIA = 100 * _countX*_bonus;
 	[_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[0,10*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
