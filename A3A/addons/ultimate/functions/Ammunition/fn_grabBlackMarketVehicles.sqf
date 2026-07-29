@@ -61,7 +61,7 @@ private _fnc_addVehicleToStock = {
         _blackMarketConds set [_type, compile getText (_vehCfg >> "condition")];
     };
     _bmStock set [_vehicle, _price];
-    Verbose_4("Adding %1 with price: %2, type: %3", _vehicle, _price, _type);
+    Verbose_3("Adding %1 with price: %2, type: %3", _vehicle, _price, _type);
     _blackMarketStock set [_type, _bmStock];
 };
 
