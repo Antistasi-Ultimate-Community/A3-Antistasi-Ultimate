@@ -12,9 +12,7 @@ FIX_LINE_NUMBERS()
 Info("initZones started");
 
 forcedSpawn = [];
-citiesX = [];
-private _mapInfo = missionConfigFile/"A3A"/"mapInfo"/toLower worldName;
-if (!isClass _mapInfo) then {_mapInfo = configFile/"A3A"/"mapInfo"/toLower worldName};
+private _mapInfo = call A3A_fnc_getMapInfo;
 
 [] call A3A_fnc_prepareMarkerArrays;
 
@@ -66,80 +64,17 @@ markersX = airportsX + milbases + resourcesX + factories + outposts + seaports +
 // Set up dummy markers + autogen roadblocks
 call A3A_fnc_initBases;
 
-
 Info("Setting up towns");
 
 //Disables Towns/Villages, Names can be found in configFile >> "CfgWorlds" >> "WORLDNAME" >> "Names"
 private ["_nameX", "_roads", "_numCiv", "_roadsProv", "_roadcon", "_dmrk", "_info"];
 
-private _townPopulations = getArray (_mapInfo/"population");
-private _disabledTowns = getArray (_mapInfo/"disabledTowns");
-{server setVariable [_x select 0,_x select 1]} forEach _townPopulations;
-private _hardCodedPopulation = _townPopulations isNotEqualTo [];
-
-private _cityConfigs = "(toLower getText (_x >> ""type"") in [""namecitycapital"",""namecity"",""namevillage"",""citycenter""]) &&
-!(getText (_x >> ""Name"") isEqualTo """") && !((configName _x) in _disabledTowns)"
-configClasses (configfile >> "CfgWorlds" >> worldName >> "Names");
-if (toLowerANSI worldName isEqualTo "blud_vidda") then {
-	private _rv133 = ("configName _x == 'DefaultKeyPoint32'" configClasses (configfile >> "CfgWorlds" >> worldName >> "Names")) select 0;
-	_cityConfigs pushBack _rv133; //RV-133, big city without city marker
-};
-
-_cityConfigs apply {
-	_nameX = getText (_x >> "Name");
-	_sizeX = getNumber (_x >> "radiusA");
-	_sizeY = getNumber (_x >> "radiusB");
-	_size = [_sizeY, _sizeX] select (_sizeX > _sizeY);
-	_pos = getArray (_x >> "position");
-	_size = [_size, 400] select (_size < 400);
-	_numCiv = 0;
-
-	if (_hardCodedPopulation) then
-	{
-		_numCiv = server getVariable [_nameX, server getVariable (configName _x)]; //backwards compat to config name based pop defines
-		if (isNil "_numCiv" || {!(_numCiv isEqualType 0)}) then
-		{
-            Error_1("Bad population count data for %1", _nameX);
-			_numCiv = (count (nearestObjects [_pos, ["house"], _size]));
-		};
-	}
-	else {
-		_numCiv = (count (nearestObjects [_pos, ["house"], _size]));
-	};
-
-	_roads = nearestTerrainObjects [_pos, ["MAIN ROAD", "ROAD", "TRACK"], _size, true, true];
-	if (count _roads > 0) then {
-		// Move marker position to the nearest road, if any
-		_pos = _roads select 0;
-	};
-	_numVeh = (count _roads) min (_numCiv / 3);
-
-	_mrk = createmarkerLocal [format ["%1", _nameX], _pos];
-	_mrk setMarkerSizeLocal [_size, _size];
-	_mrk setMarkerShapeLocal "RECTANGLE";
-	_mrk setMarkerBrushLocal "SOLID";
-	_mrk setMarkerColorLocal colorOccupants;
-	_mrk setMarkerTextLocal _nameX;
-	_mrk setMarkerAlpha 0;
-	citiesX pushBack _nameX;
-	spawner setVariable [_nameX, 2, true];
-
-	_dmrk = createMarkerLocal [format ["Dum%1", _nameX], _pos];
-	_dmrk setMarkerShapeLocal "ICON";
-	_dmrk setMarkerTypeLocal "loc_Ruin";
-	_dmrk setMarkerColor colorOccupants;
-
-	sidesX setVariable [_mrk, Occupants, true];
-	_info = [_numCiv, _numVeh, 75, 0];				// initial 75% gov, 0% rebel support
-	server setVariable [_nameX, _info, true];
-};	//find in congigs faster then find location in 25000 radius
-
+citiesX = ([true] call A3A_fnc_getCityData)#0;
 
 markersX append citiesX;
 sidesX setVariable ["Synd_HQ", teamPlayer, true];
 sidesX setVariable ["NATO_carrier", Occupants, true];
 sidesX setVariable ["CSAT_carrier", Invaders, true];
-
 
 Info("Setting up zone-dependent objects - antennas and banks");
 

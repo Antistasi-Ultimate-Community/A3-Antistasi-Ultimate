@@ -3564,6 +3564,14 @@
                 <French>Vous êtes libre !</French>
                 <Turkish>Özgürsün!</Turkish>
             </Key>
+            <Key ID="STR_chats_town_vip_join">
+                <Original>Please help me! We have limited time to fortify our position before the enemy arrives. We must stay close and protect the people!</Original>
+                <Russian>Помогите мне! У нас мало времени, чтобы укрепить нашу позицию до прибытия врага. Мы должны оставаться рядом и защищать людей!</Russian>
+                <Chinesesimp>请帮帮我！ 在敌人到来之前，我们有有限的时间来巩固我们的阵地。 我们必须保持接近并保护人民！</Chinesesimp>
+                <Korean>도와주세요! 적이 도착하기 전에 우리의 위치를 강화할 시간이 제한되어 있습니다. 우리는 가까이 있어야 하고 사람들을 보호해야 합니다!</Korean>
+                <French>Aidez-moi ! Nous avons peu de temps pour fortifier notre position avant l'arrivée de l'ennemi. Nous devons rester proches et protéger les gens !</French>
+                <Turkish>Lütfen bana yardım et! Düşman gelmeden önce pozisyonumuzu güçlendirmek için sınırlı zamanımız var. Yakın durmalı ve insanları korumalıyız!</Turkish>
+            </Key>
             <Key ID="STR_chats_loot_run">
                 <Original>Starting loot helicopter run. ETA 30 seconds.</Original>
                 <Russian>Начинается пролёт вертолёта-сборщика добычи. Ожидайте 30 секунд.</Russian>
@@ -6321,6 +6329,12 @@
                 <Korean>반란군 인력의 상한을 활성화하여 급속한 성장을 제한하고 밸런스를 유지합니다.</Korean>
                 <French>Activer un plafond sur la main-d'œuvre rebelle pour limiter la croissance exponentielle et préserver l'équilibre.</French>
             </Key>
+            <Key ID="STR_params_overall_HR_gain">
+                <Original>Overall HR gain</Original>
+            </Key>
+            <Key ID="STR_params_overall_HR_gain_desc">
+                <Original>An overall HR gain multiplier. At 10% you get 10% of the normal gains from passive income, but increased gains from active income (Rescues, etc).</Original>
+            </Key>
             <Key ID="STR_params_newCarTowing">
                 <Original>Improved towing of wheeled vehicles</Original>
                 <Russian>Улучшенная буксировка колёсного транспорта</Russian>
@@ -6462,6 +6476,22 @@
                 <Chinesesimp>启用或禁用入侵者阵营发起攻击，以永久摧毁反抗军控制的平民城镇。</Chinesesimp>
                 <Korean>침략자 진영이 공격을 보내 반군이 통제하는 민간 도시를 영구적으로 파괴하는 기능을 활성화 또는 비활성화합니다.</Korean>
                 <French>Activer ou désactiver les attaques envoyées par la faction envahisseurs pour détruire définitivement les villes civiles contrôlées par les rebelles.</French>
+            </Key>
+            <Key ID="STR_params_townSkirmishChance">
+                <Original>Town Skirmish Chance</Original>
+                <Russian>Шанс сражения за город</Russian>
+                <Chinesesimp>城镇冲突概率</Chinesesimp>
+                <Korean>도시 소규모 전투 확률</Korean>
+                <French>Probabilité de bataille de ville</French>
+                <Turkish>Şehir Çatışması Olasılığı</Turkish>
+            </Key>
+            <Key ID="STR_params_townSkirmishChance_desc">
+                <Original>Percentage chance that skirmishes will occur in order for civilian towns to flip friendly.</Original>
+                <Russian>Процентная вероятность того, что сражения будут происходить, чтобы гражданские города стали дружественными.</Russian>
+                <Chinesesimp>发生冲突的百分比机会，以便平民城镇翻转为友好。</Chinesesimp>
+                <Korean>민간 도시가 우호적으로 전환되기 위해 소규모 전투가 발생할 확률(백분율)입니다.</Korean>
+                <French>Pourcentage de chances que des escarmouches se produisent afin que les villes civiles deviennent amicales.</French>
+                <Turkish>Şehirlerin dostane hale gelmesi için çatışmaların meydana gelme olasılığı yüzdesi.</Turkish>
             </Key>
             <Key ID="STR_params_deathPenalty">
                 <Original>Player penalty on death (How much money will be lost on death)</Original>
@@ -12621,6 +12651,12 @@
                 <French>%2 attaque des positions critiques à l'intérieur de %1 ! Défendez la ville à tout prix.</French>
                 <Turkish>%2, %1 içerisindeki kritik mevzilere saldırıyor! Şehri ne pahasına olursa olsun savunun.</Turkish>
             </Key>
+            <Key ID="STR_townBattle_task">
+                <Original>%1 Skirmish - %2 Contact</Original>
+            </Key>
+            <Key ID="STR_townBattle_desc">
+                <Original>%2 is fighting local citizens within %1! The citizens have revolted against %2, and now they rely on you. Local rebel cells are prepared to aid your efforts, but you must find and protect the VIP. If you succeed, the city will join your cause. Defend the city and prove your worth!</Original>
+            </Key>
             <Key ID="STR_A3A_Missions_AS_Official_task_header">
                 <Original>Kill %1 Officer</Original>
                 <Russian>Убейте офицера %1</Russian>
@@ -14066,6 +14102,13 @@
                 <Korean>죄수 풀어주기</Korean>
                 <French>Détenu libre</French>
                 <Turkish>Esiri serbest bırak</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_actions_protect_vip">
+                <Original>Start Skirmish</Original>
+                <Russian>Защищать вип</Russian>
+                <Chinesesimp>保护VIP</Chinesesimp>
+                <Korean>VIP 보호</Korean>
+                <French>VIP protégé</French>
             </Key>
             <Key ID="STR_antistasi_actions_car_bomb_disarm">
                 <Original>Disarm car bomb</Original>
