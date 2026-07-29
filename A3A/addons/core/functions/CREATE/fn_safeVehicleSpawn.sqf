@@ -7,6 +7,9 @@
 
 params ["_vehicleType", "_pos", ["_radius", 0], ["_attempts", 3], ["_force", false]];
 
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 private _spawnPosition = [];
 private _willCollide = true;
 
@@ -47,7 +50,6 @@ if (_willCollide && _force) then {
 	_spawnPosition = [_spawnPosition, _pos] select (_spawnPosition isEqualTo []);
 	_willCollide = false;
 };
-
 
 if !(_willCollide) exitWith {
 	[_vehicle] call FUNCMAIN(preparePostMortem);
