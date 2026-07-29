@@ -23,8 +23,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 
 ["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "IG_supplyCrate_F"] call _fnc_saveToTemplate;     
 ["surrenderCrate", "Box_NATO_Wps_F"] call _fnc_saveToTemplate; 
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; 
@@ -43,7 +41,7 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesIFVs", ["I_CDF_APC_Tracked_02_F"]] call _fnc_saveToTemplate;
 
 ["vehiclesAirborne", ["I_CDF_MRAP_01_hmg_F", "I_CDF_LSV_01_armed_F", "I_CDF_APC_Wheeled_04_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks",  ["O_R_APC_Wheeled_04_cannon_v2_F", "B_W_UGV_01_rcws_F"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["O_R_APC_Wheeled_04_cannon_v2_F"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["I_CDF_MBT_02_F"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["I_CDF_Truck_02_aa_F", "I_CDF_APC_Tracked_02_AA_F"]] call _fnc_saveToTemplate;
 

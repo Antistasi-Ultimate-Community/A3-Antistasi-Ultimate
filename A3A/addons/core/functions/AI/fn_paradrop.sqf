@@ -83,7 +83,7 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, 0];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
-[_vehicle, _dropPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
+[_vehicle, _dropPos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
 
 [_vehicle, _dropPos] spawn {
     params ["_vehicle", "_dropPos"];
@@ -93,10 +93,8 @@ _wp1 setWaypointSpeed "NORMAL";
     };
 };
 
-if(canMove _vehicle || alive (driver _vehicle)) then {
-    [_vehicle, "open"] spawn A3A_fnc_HeliDoors;
-    sleep 0.25;
-};
+[_vehicle, "open"] spawn A3A_fnc_HeliDoors;
+sleep 0.25;
 
 waitUntil {sleep 1; (currentWaypoint _groupPilot > 0) || (!alive _vehicle) || (!canMove _vehicle)};
 if !(alive _vehicle) exitWith {};
@@ -126,24 +124,11 @@ if(currentWaypoint _groupPilot > 0) then
             waitUntil {sleep 0.25; getPosATL _unit # 2 < 120};
 
             _unit addBackpack "B_Parachute";
-            if !("lowTech" in A3A_factionEquipFlags) then {
-                if !(disableAutoSmokeCover) then {
-                    private _smokeGrenade = selectRandom allSmokeGrenades;
-                    private _smoke = _smokeGrenade createVehicle (getPosATL _unit);
-                    _smoke attachTo [_unit, [0,0,0]];
-                    _unit setVariable ["jumpSave_Smoke", _smoke];
-                };
-            };
 
             private _startLand = time;
             waitUntil {
                 sleep 0.5;
                 isTouchingGround _unit || (time - _startLand > 30)
-            };
-
-            private _smoke = _unit getVariable "jumpSave_Smoke";
-            if (!isNil "_smoke") then {
-                detach _smoke;
             };
 
             removeBackpack _unit;
@@ -179,7 +164,23 @@ while {count waypoints _groupJumper > 0} do { deleteWaypoint [_groupJumper, 0] }
 
 _vehicle limitSpeed (2 * getNumber(configOf _vehicle >> "maxSpeed"));	// remove the limit
 
-if ([_vehicle, group driver _vehicle, _targetPosition] call A3A_fnc_checkAndSpawnAttack) exitWith {};
+if !(_isReinforcement) then {
+    if ([_vehicle, group driver _vehicle, _targetPosition] call A3A_fnc_checkAndSpawnAttack) exitWith {
+        // Waiting here because Arma likes to randomly delete paratrooper waypoints on landing
+        waitUntil { sleep 1; isTouchingGround leader _groupJumper };
+
+        sleep 10;       // wait until everyone else has landed
+
+        _wpMove = _groupJumper addWaypoint [_targetPosition, 0];
+        _wpMove setWaypointType "MOVE";
+        _wpMove setWaypointBehaviour "AWARE";
+        _groupJumper setCurrentWaypoint _wpMove;
+
+        _wpClear = _groupJumper addWaypoint [_targetPosition, 0];
+        _wpClear setWaypointType "SAD";
+        _groupJumper spawn A3A_fnc_attackDrillAI;
+    };
+};
 
 private _wp2 = _groupPilot addWaypoint [_originPosition, 0];
 _wp2 setWaypointType "MOVE";

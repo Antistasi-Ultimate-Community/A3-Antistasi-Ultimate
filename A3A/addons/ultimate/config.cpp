@@ -39,6 +39,22 @@ class CfgSounds
     #include "CfgSounds.hpp"
 };
 
+class CfgEditorCategories
+{
+	class A3U_EditorCategory
+	{
+		displayName = "Antistasi Ultimate";
+	};
+};
+
+class CfgEditorSubcategories
+{
+	class A3U_EditorSubcategoryStatics
+	{
+		displayName = "Static Holders";
+	};
+};
+
 class CfgVehicles
 {
     #include "CfgVehicles.hpp"
