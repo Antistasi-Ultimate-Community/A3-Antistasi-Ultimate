@@ -50,6 +50,8 @@ if (_willCollide && _force) then {
 
 
 if !(_willCollide) exitWith {
+	[_vehicle] call FUNCMAIN(preparePostMortem);
+
 	_vehicle setPos _spawnPosition;
 	_vehicle enableSimulation true;
 	_vehicle;
