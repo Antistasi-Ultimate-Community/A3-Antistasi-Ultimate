@@ -41,7 +41,7 @@ Info("initACEUnconsciousHandler started");
 
 				// Should never be nil, but just in case
 				if (!isNil "_newLeader") then {
-					group _unit selectLeader _newLeader;
+					[group _unit, _newLeader] remoteExec ["selectLeader", groupOwner group _unit];
 
 					// Save previous group leader
 					group _unit setVariable ["A3A_previousGroupLeader", _groupLeader, true];
