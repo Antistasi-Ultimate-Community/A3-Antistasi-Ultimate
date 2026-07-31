@@ -34,6 +34,12 @@ if (isNil "markersImmune") exitWith {false};
 
 private _markerSide = sidesX getVariable [_marker, sideUnknown];
 
+if (_markerSide isEqualTo sideUnknown && {_marker in mrkAntennas}) then {
+    private _mainMarkers = (resourcesX + airportsX + factories + outposts + seaports + milbases) - controlsX;
+    private _nearestTerritory = [_mainMarkers, getMarkerPos _marker] call BIS_fnc_nearestPosition;
+    _markerSide = sidesX getVariable [_nearestTerritory, sideUnknown];
+};
+
 if (!hideEnemyMarkers) exitWith {false};
 if (_marker in revealedZones) exitWith {false};
 if (_marker in markersImmune) exitWith {false};
@@ -42,8 +48,8 @@ if (_marker in markersImmune) exitWith {false};
 if (_marker in citiesX || {_marker in airportsX} || {_marker in milAdministrationsX}) exitWith {false};
 
 if (!isNil "traderMarker" && {_marker == traderMarker}) exitWith {false};
-if (_markerSide isNotEqualTo sideUnknown && {_markerSide isNotEqualTo resistance}) exitWith {true};
 
-// if ("cont" in _marker) exitWith {false};
+// Hide it if it is strictly owned by the Occupants or Invaders
+if (_markerSide isNotEqualTo sideUnknown && {_markerSide isNotEqualTo resistance} && {_markerSide isNotEqualTo teamPlayer}) exitWith {true};
 
-true;
+false;

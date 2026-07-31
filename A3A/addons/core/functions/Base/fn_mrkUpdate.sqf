@@ -225,7 +225,7 @@ private _additionalDescription = call {
     if (_originalName in airportsX) exitWith { localize "STR_A3U_HOVER_AIRPORT_CAPTURED" };
     
     if (_originalName in citiesX) exitWith {
-        private _cityData = server getVariable [_originalName, [0, 0, 0, 0]];
+        private _cityData =  A3A_townData get _originalName;
         _cityData params ["_numberOfCivilians", "", "_governmentSupport", "_rebelSupport"];
         
         _governmentSupport = _governmentSupport max 0 min 100;
@@ -263,11 +263,15 @@ if ([_originalName] call A3U_fnc_isMarkerHidden) then {
     _hoverMetaMap deleteAt _dummyName;
     _hoverMetaMap deleteAt _originalName;
     _hoverMarkers = _hoverMarkers - [_dummyName, _originalName];
+    
+    _visibleMarkerName setMarkerAlphaLocal 0;
 } else {
     _hoverMetaMap set [_dummyName, [_markerTitle, _flagMarkerType]];
     _hoverMetaMap set [_originalName, [_markerTitle, _flagMarkerType]];
     _hoverMarkers pushBackUnique _dummyName;
     _hoverMarkers pushBackUnique _originalName;
+    
+    _visibleMarkerName setMarkerAlphaLocal (if (_isMilAdmin) then {0.75} else {1});
 };
 
 private _specialDefinitions = [

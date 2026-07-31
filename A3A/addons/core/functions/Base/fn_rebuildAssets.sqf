@@ -3,6 +3,8 @@ FIX_LINE_NUMBERS()
 
 params ["_site", "_position"];
 
+private _nameDest = [_site] call A3A_fnc_localizar;
+
 // Prevent spamming multiple rebuild missions for the same site using a popup
 if (missionNamespace getVariable [format ["A3U_rebuilding_%1", _site], false]) exitWith {
     [
@@ -35,6 +37,35 @@ if ((_site in factories || _site in resourcesX) && _site in destroyedSites) then
     Debug_1("Rebuilding Economic Site %1", _economyDead);
 };
 
+// -----------------------------------------------------------------------------
+// EARLY VALIDATION CHECK
+// Prevent mission start if there are no destroyed assets at this location
+// -----------------------------------------------------------------------------
+private _nothingToRebuild = false;
+
+switch (true) do {
+    case (_site in citiesX): {
+        if !(_site in destroyedSites) then { _nothingToRebuild = true; };
+    };
+    case (_economyDead != ""): {}; 
+    case (!isNull _antennaDead): {}; 
+    default {
+        // Generic locations (milbases, outposts, etc.)
+        private _militaryBuildings = (nearestObjects [_position, A3A_buildingWhitelist, 500, true]) select {_x in destroyedBuildings};
+        if (_militaryBuildings isEqualTo []) then { _nothingToRebuild = true; };
+    };
+};
+
+if (_nothingToRebuild) exitWith {
+    [
+        format [localize "STR_notifiers_rebuild_assets_nothing_to_rebuild", _nameDest],
+        localize "STR_notifiers_rebuild_assets_header",
+        localize "STR_antistasi_dialogs_close",
+        false,
+        findDisplay 46
+    ] spawn BIS_fnc_guiMessage;
+};
+
 // Verify Faction Funds and throw a popup if insufficient
 private _factionMoney = server getVariable ["resourcesFIA", 0];
 if (_factionMoney < _cost) exitWith {
@@ -51,7 +82,6 @@ if (_factionMoney < _cost) exitWith {
 [0, -_cost] remoteExec ["A3A_fnc_resourcesFIA", 2];
 missionNamespace setVariable [format ["A3U_rebuilding_%1", _site], true, true];
 
-private _nameDest = [_site] call A3A_fnc_localizar;
 
 // -----------------------------------------------------------------------------
 // TASK CREATION & LOGISTICS SETUP
@@ -85,7 +115,6 @@ clearItemCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
-
 
 // Configure logistics properties
 _box enableRopeAttach true;
