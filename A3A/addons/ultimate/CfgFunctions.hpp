@@ -21,6 +21,16 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\cba);
             class settings {};
         };
+        class effects
+        {
+            file = QPATHTOFOLDER(functions\effects);
+            class createCrashedVehicle {};
+            class createDeadSoldier {};
+            class createDeadSoldiers {};
+            class createFire {};
+            class createFires {};
+            class damageBuilding {};
+        };
         class init
         {
             file = QPATHTOFOLDER(functions\init);
@@ -60,6 +70,7 @@ class CfgFunctions
         class patches
         {
             file = QPATHTOFOLDER(functions\patches);
+            class getTierModifier {};
             class IMS_stealthKill {};
         };
         class STALKER

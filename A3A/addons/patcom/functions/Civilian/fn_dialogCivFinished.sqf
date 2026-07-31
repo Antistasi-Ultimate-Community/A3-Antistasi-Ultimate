@@ -30,6 +30,12 @@ params [["_unit", ObjNull], ["_caller", ObjNull]];
 
 if (_unit isEqualTo ObjNull || _caller isEqualTo ObjNull) exitWith {nil};
 
+// Check if the caller is inside a vehicle
+if !(isNull objectParent _caller) exitWith {
+    [_unit, localize "STR_antistasi_actions_talk_with_civ_in_vehicle_fail"] remoteExec ["globalChat", _caller];
+    false
+};
+
 if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
     private _failMessage = selectRandom [
         localize "STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1", 

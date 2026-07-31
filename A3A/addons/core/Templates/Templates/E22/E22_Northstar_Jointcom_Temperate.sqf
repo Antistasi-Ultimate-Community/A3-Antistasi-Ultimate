@@ -361,8 +361,8 @@ _sfLoadoutData set ["grenadeLaunchers", [
 
 _sfSMGOptics = ["JCA_optic_AHO_olive", 8, "JCA_optic_ROS_black", 4, "JCA_optic_MROS_olive", 6];
 _sfLoadoutData set ["SMGs", [
-    ["JCA_smg_MP5_VFG_black_F", "JCA_muzzle_snds_9MM_enhanced_olive", _sfAttachments, _sfSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 6,
-    ["JCA_smg_MP5_VFG_olive_F", "JCA_muzzle_snds_9MM_enhanced_olive", _sfAttachments, _sfSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 4,
+    ["JCA_smg_MP5_VFG_black_F", "JCA_muzzle_snds_9MM_enhanced_olive", _sfAttachments, _sfSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 6,
+    ["JCA_smg_MP5_VFG_olive_F", "JCA_muzzle_snds_9MM_enhanced_olive", _sfAttachments, _sfSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 4,
     ["JCA_smg_UMP_VFG_black_F", "JCA_muzzle_snds_45_tactical_olive", _sfAttachments, _sfSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 6,
     ["JCA_smg_UMP_VFG_olive_F", "JCA_muzzle_snds_45_tactical_olive", _sfAttachments, _sfSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 4
 ]];
@@ -436,12 +436,12 @@ _eliteLoadoutData set ["grenadeLaunchers", [
 
 _eliteSMGOptics = ["JCA_optic_AHO_olive", 4, "JCA_optic_IHO_olive", 4, "JCA_optic_ARO_olive", 6];
 _eliteLoadoutData set ["SMGs", [
-    ["JCA_smg_MP5_FL_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1.5,
-    ["JCA_smg_MP5_FL_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1.5,
-    ["JCA_smg_MP5_AFG_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1.5,
-    ["JCA_smg_MP5_AFG_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1.5,
-    ["JCA_smg_MP5_VFG_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 6,
-    ["JCA_smg_MP5_VFG_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 4,
+    ["JCA_smg_MP5_FL_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1.5,
+    ["JCA_smg_MP5_FL_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1.5,
+    ["JCA_smg_MP5_AFG_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1.5,
+    ["JCA_smg_MP5_AFG_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1.5,
+    ["JCA_smg_MP5_VFG_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 6,
+    ["JCA_smg_MP5_VFG_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 4,
     ["JCA_smg_UMP_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 1.5,
     ["JCA_smg_UMP_olive_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 1.5,
     ["JCA_smg_UMP_AFG_black_F", "", _eliteAttachments, _eliteSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 1.5,
@@ -523,12 +523,12 @@ _militaryLoadoutData set ["grenadeLaunchers", [
 
 _militarySMGOptics = ["JCA_optic_AHO_olive", 4, "JCA_optic_IHO_olive", 4, "JCA_optic_ARO_olive", 6];
 _militaryLoadoutData set ["SMGs", [
-    ["JCA_smg_MP5_FL_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 3,
-    ["JCA_smg_MP5_FL_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1.5,
-    ["JCA_smg_MP5_AFG_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 6,
-    ["JCA_smg_MP5_AFG_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 3,
-    ["JCA_smg_MP5_VFG_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 3,
-    ["JCA_smg_MP5_VFG_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1.5,
+    ["JCA_smg_MP5_FL_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 3,
+    ["JCA_smg_MP5_FL_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1.5,
+    ["JCA_smg_MP5_AFG_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 6,
+    ["JCA_smg_MP5_AFG_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 3,
+    ["JCA_smg_MP5_VFG_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 3,
+    ["JCA_smg_MP5_VFG_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1.5,
     ["JCA_smg_UMP_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 3,
     ["JCA_smg_UMP_olive_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 1.5,
     ["JCA_smg_UMP_AFG_black_F", "", _militaryAttachments, _militarySMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 6,
@@ -572,9 +572,9 @@ _policeLoadoutData set ["helmets", ["E22_H_Beret_01_JTF_blue_F", 10, "E22_H_Cap_
 _policeSMGOptics = ["JCA_optic_ARO_black", 3, "", 4];
 _policeAttachments = ["JCA_acc_flashlight_MP5_black", 6, "", 4];
 _policeLoadoutData set ["SMGs", [
-    ["JCA_smg_MP5_FL_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 3,
-    ["JCA_smg_MP5_AFG_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 2,
-    ["JCA_smg_MP5_VFG_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1,
+    ["JCA_smg_MP5_FL_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 3,
+    ["JCA_smg_MP5_AFG_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 2,
+    ["JCA_smg_MP5_VFG_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1,
     ["JCA_smg_UMP_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 3,
     ["JCA_smg_UMP_AFG_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 2,
     ["JCA_smg_UMP_VFG_black_F", "", _policeAttachments, _policeSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 1
@@ -623,12 +623,12 @@ _militiaLoadoutData set ["grenadeLaunchers", [
 
 _militiaSMGOptics = ["JCA_optic_ARO_olive", 3, "JCA_optic_CRO_olive", 3, "", 7];
 _militiaLoadoutData set ["SMGs", [
-    ["JCA_smg_MP5_FL_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 3,
-    ["JCA_smg_MP5_FL_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1,
-    ["JCA_smg_MP5_AFG_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 2,
-    ["JCA_smg_MP5_AFG_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1,
-    ["JCA_smg_MP5_VFG_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 1,
-    ["JCA_smg_MP5_VFG_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag", "JCA_30Rnd_9x21_MP5_Mag"], [], ""], 0.5,
+    ["JCA_smg_MP5_FL_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 3,
+    ["JCA_smg_MP5_FL_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1,
+    ["JCA_smg_MP5_AFG_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 2,
+    ["JCA_smg_MP5_AFG_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1,
+    ["JCA_smg_MP5_VFG_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 1,
+    ["JCA_smg_MP5_VFG_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag", "JCA_30Rnd_9x19_MP5_Mag"], [], ""], 0.5,
     ["JCA_smg_UMP_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 3,
     ["JCA_smg_UMP_olive_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 1,
     ["JCA_smg_UMP_AFG_black_F", "", _militiaAttachments, _militiaSMGOptics, ["JCA_25Rnd_45ACP_UMP_Mag"], [], ""], 2,

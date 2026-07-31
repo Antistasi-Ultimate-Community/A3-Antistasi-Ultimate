@@ -979,6 +979,41 @@ class Params
         };
         default = 0;
     };
+    class overallHRGain: RebelBalanceParams
+    {
+        title = $STR_params_overall_HR_gain;
+        tooltip = $STR_params_overall_HR_gain_desc;
+        values[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 100;
+                medium = 90;
+                hard = 80;
+            };
+            class small
+            {
+                easy = 80;
+                medium = 70;
+                hard = 60;
+            };
+            class medium
+            {
+                easy = 60;
+                medium = 50;
+                hard = 40;
+            };
+            class large
+            {
+                easy = 40;
+                medium = 30;
+                hard = 20;
+            };
+        };
+        default = 50;
+    };
     class loseHROnDeath: RebelBalanceParams
     {
         title = $STR_A3AU_hr_loss;
@@ -1565,6 +1600,36 @@ class Params
             class large : solo {};
         };
         default = 1;
+    };
+    class townSkirmishChance: AIBalanceParams
+    {
+        title = $STR_params_townSkirmishChance;
+        tooltip = $STR_params_townSkirmishChance_desc;
+        values[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 20;
+                medium = 40;
+                hard = 60;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 40;
+                medium = 60;
+                hard = 80;
+            };
+            class large
+            {
+                easy = 60;
+                medium = 80;
+                hard = 100;
+            };
+        };
+        default = 40;
     };
     class A3A_enemyResponseTime: AIBalanceParams
     {

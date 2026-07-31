@@ -61,6 +61,12 @@ switch (_cause) do {
 			private _position = getPos _milAdministration;
 			private _reveal = [_position, Occupants] call A3A_fnc_calculateSupportCallReveal;
 			[Occupants, (selectRandom _players), _position, 4, _reveal] remoteExec ["A3A_fnc_requestSupport", 2];
+
+			private _base = [Occupants, _position] call A3A_fnc_availableBasesLand; 
+			if (isNil "_base") exitWith { Info("QRF cancelled because no land bases available"); -1 }; 
+
+			[_base, 1] call A3A_fnc_addTimeForIdle;
+			[Occupants, _base, _milAdministration, "defence", 2] spawn A3A_fnc_createAttackForcePolice;
 		};
 	};
 	case "SILENT";
