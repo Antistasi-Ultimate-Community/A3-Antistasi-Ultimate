@@ -225,7 +225,7 @@ private _additionalDescription = call {
     if (_originalName in airportsX) exitWith { localize "STR_A3U_HOVER_AIRPORT_CAPTURED" };
     
     if (_originalName in citiesX) exitWith {
-        private _cityData =  A3A_townData get _originalName;
+        private _cityData = A3A_townData get _originalName;
         _cityData params ["_numberOfCivilians", "", "_governmentSupport", "_rebelSupport"];
         
         _governmentSupport = _governmentSupport max 0 min 100;
