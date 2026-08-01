@@ -13,7 +13,7 @@
 //       Attributes     //
 //////////////////////////
 
-["noSandbag", true] call _fnc_saveToTemplate;                   // Faction will not use AT sandbags on frontiline roadblocks
+
 
 //////////////////////////
 //       Vehicles       //

@@ -2,12 +2,14 @@
 //   Side Information   //
 //////////////////////////
 
+#include "..\..\..\script_component.hpp"
+
 ["name", "FSSR"] call _fnc_saveToTemplate;
 ["spawnMarkerName", "FSSR Support Corridor"] call _fnc_saveToTemplate;
 
 ["flag", "vn_flag_pavn"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\NFtSCW\flag_FSSR.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "vn_flag_pavn"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3u_flag_NFtSCW_fssr"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Attributes     //
@@ -71,10 +73,10 @@
 ["vehiclesPolice", ["vn_b_wheeled_m151_01_mp", "vn_b_wheeled_m151_02_mp"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["vn_o_nva_static_pk_high", "vn_o_nva_static_rpd_high", "vn_o_nva_static_dshkm_high_01", "vn_o_nva_65_static_m1910_high_01"]] call _fnc_saveToTemplate;
-["staticAT", ["vn_o_nva_65_static_type56rr"]] call _fnc_saveToTemplate;
-["staticAA", ["vn_o_nva_static_sgm_high_01", "vn_o_nva_static_dshkm_high_02", "vn_o_nva_static_zpu4", "vn_o_nva_65_static_zgu1_01"]] call _fnc_saveToTemplate;
-["staticMortars", ["vn_o_vc_static_mortar_type53"]] call _fnc_saveToTemplate;
-["staticHowitzers", ["vn_o_nva_static_d44_01"]] call _fnc_saveToTemplate;
+["staticAT", ["I_NFCW_FIN_80_95_S_58_61","NORTH_FIN_76k36","I_NFCW_FIN_80_45_JVK_37","I_NFCW_FIN_80_37_JVK_36"]] call _fnc_saveToTemplate;
+["staticAA", ["NORTH_FIN_Maxim_Quad", "vn_b_navy_static_l60mk3", "NORTH_FIN_Lahti_L39AA"]] call _fnc_saveToTemplate;
+["staticMortars", ["NORTH_FIN_81krh32"]] call _fnc_saveToTemplate;
+["staticHowitzers", ["NORTH_FIN_76k02art"]] call _fnc_saveToTemplate;
 
 ["vehicleRadar", "vn_o_static_rsna75"] call _fnc_saveToTemplate;
 ["vehicleSam", "vn_sa2"] call _fnc_saveToTemplate;
