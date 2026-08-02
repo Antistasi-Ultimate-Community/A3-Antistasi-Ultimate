@@ -260,7 +260,7 @@ _sfLoadoutData set ["rifles", [
     ["rhs_weap_m4a1_blockII_bk", "rhsusf_acc_nt4_black", "rhsusf_acc_anpeq15_bk", "rhsusf_acc_eotech_552", ["rhs_mag_30Rnd_556x45_Mk318_PMAG"], [], ""],
     ["rhs_weap_m4a1_blockII_bk", "rhsusf_acc_nt4_black", "rhsusf_acc_anpeq15_bk", "rhsusf_acc_ACOG_RMR", ["rhs_mag_30Rnd_556x45_Mk318_PMAG"], [], ""],
     ["rhs_weap_m4a1_blockII_KAC_bk", "rhsusf_acc_nt4_black", "rhsusf_acc_anpeq15_bk", "rhsusf_acc_su230a", ["rhs_mag_30Rnd_556x45_Mk318_PMAG"], [], ""],
-    [" rhs_weap_m4a1_blockII_KAC_bk", " rhsusf_acc_nt4_black", " rhsusf_acc_anpeq15_bk", " rhsusf_acc_su230a_mrds", [" rhs_mag_30Rnd_556x45_Mk318_PMAG"], [], ""]
+    ["rhs_weap_m4a1_blockII_KAC_bk", "rhsusf_acc_nt4_black", "rhsusf_acc_anpeq15_bk", "rhsusf_acc_su230a_mrds", ["rhs_mag_30Rnd_556x45_Mk318_PMAG"], [], ""]
 ]];
 _sfLoadoutData set ["carbines", [
     ["rhs_weap_hk416d10", "rhsusf_acc_nt4_black", "rhsusf_acc_anpeq15_bk", "rhsusf_acc_eotech_552", ["rhs_mag_30Rnd_556x45_Mk318_PMAG"], [], ""],
@@ -287,8 +287,8 @@ _sfLoadoutData set ["machineGuns", [
     ["rhs_weap_m249_light_S", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_su230_mrds", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"],
     ["rhs_weap_m249_light_S", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_ACOG_RMR", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"],
     ["rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_eotech_552", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"],
-    [" rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", " rhsusf_acc_anpeq15side_bk", " rhsusf_acc_compm4", [" rhsusf_100Rnd_556x45_M995_soft_pouch"], [], " rhsusf_acc_kac_grip_saw_bipod"],
-    [" rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", " rhsusf_acc_anpeq15side_bk", " rhsusf_acc_su230", [" rhsusf_100Rnd_556x45_M995_soft_pouch"], [], " rhsusf_acc_kac_grip_saw_bipod"],
+    ["rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_compm4", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"],
+    ["rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_su230", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"],
     ["rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_su230_mrds", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"],
     ["rhs_weap_m249_light_L", "rhsusf_acc_rotex5_grey", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_ACOG_RMR", ["rhsusf_100Rnd_556x45_M995_soft_pouch"], [], "rhsusf_acc_kac_grip_saw_bipod"]
 ]];
