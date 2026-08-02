@@ -15,7 +15,8 @@
 //       Attributes     //
 //////////////////////////
 
-["attributeLowAir", true] call _fnc_saveToTemplate;             // Use fewer air units in general
+["attributeMoreTrucks", true] call _fnc_saveToTemplate; 
+["attributeLowAir", true] call _fnc_saveToTemplate;            
 
 //////////////////////////
 //       Vehicles       //
@@ -26,38 +27,37 @@
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
 ["vehiclesBasic", ["vn_o_bicycle_01"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["vn_o_wheeled_btr40_01"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["vn_o_wheeled_btr40_mg_02", "vn_o_wheeled_btr40_mg_01", "vn_o_wheeled_btr40_mg_04_nva65", "vn_o_wheeled_btr40_mg_03", "vn_o_wheeled_z157_mg_02", "vn_o_wheeled_z157_mg_01"]] call _fnc_saveToTemplate;
-["vehiclesTrucks", ["vn_o_wheeled_z157_01", "vn_o_wheeled_z157_02"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["vn_i_wheeled_m151_02_fank_71"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["vn_i_wheeled_btr40_mg_02_fank_70", "vn_i_wheeled_btr40_mg_01_fank_70", "vn_i_wheeled_btr40_mg_04_fank_70", "vn_i_wheeled_z157_mg_01_fank_70"]] call _fnc_saveToTemplate;
+["vehiclesTrucks", ["NORTH_FIN_FordV8"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", []] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["vn_o_wheeled_z157_ammo"]] call _fnc_saveToTemplate;
-["vehiclesRepairTrucks", ["vn_o_wheeled_z157_repair"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["vn_o_wheeled_z157_fuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["vn_o_wheeled_btr40_02", "vn_o_armor_btr50pk_03_nva65"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["vn_o_wheeled_z157_01", "vn_o_wheeled_z157_02", "vn_o_armor_m113_01"]] call _fnc_saveToTemplate;
-["vehiclesAirborne", ["vn_o_armor_m113_acav_03"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["vn_o_wheeled_z157_01", "vn_o_wheeled_z157_02", "vn_o_armor_m113_acav_01","vn_o_armor_m113_acav_03", "vn_o_armor_btr50pk_01_nva65", "vn_o_armor_btr50pk_02_nva65", "vn_o_armor_btr50pk_01_nva65", "vn_o_armor_btr50pk_02_nva65"]] call _fnc_saveToTemplate;
-["vehiclesIFVs", ["vn_o_armor_pt76a_01","vn_o_armor_pt76b_01","vn_o_armor_type63_01"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["NORTH_FIN_FordV8_Ammo"]] call _fnc_saveToTemplate;
+["vehiclesRepairTrucks", ["NORTH_FIN_FordV8_Repair"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["NORTH_FIN_FordV8_Fuel"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["NORTH_FIN_FordV8_Medical"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["vn_i_wheeled_z157_01_fank_70", "vn_i_wheeled_z157_02_fank_70", "vn_o_armor_m113_01"]] call _fnc_saveToTemplate;
+["vehiclesAirborne", ["vn_o_armor_btr50pk_01_nva65"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["vn_o_armor_btr50pk_01_nva65"]] call _fnc_saveToTemplate;
+["vehiclesIFVs", ["vn_o_armor_pt76a_01","vn_o_armor_pt76b_01","NORTH_FIN_T26_M38"]] call _fnc_saveToTemplate;
 
-["vehiclesLightTanks",  ["vn_o_armor_pt76a_01", "vn_o_armor_pt76b_01", "vn_o_armor_type63_01"]] call _fnc_saveToTemplate;
-["vehiclesTanks", ["vn_o_armor_m41_01", "vn_o_armor_ot54_01", "vn_o_armor_t54b_01"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["vn_o_wheeled_btr40_mg_03", "vn_o_wheeled_z157_mg_02"]] call _fnc_saveToTemplate;
+["vehiclesLightTanks",  ["vn_o_armor_pt76a_01", "vn_o_armor_pt76b_01", "NORTH_FIN_S_BA10"]] call _fnc_saveToTemplate;
+["vehiclesTanks", ["NORTH_FIN_T34_85", "NORTH_FIN_T34_76_1943", "NORTH_FIN_T34_85", "NORTH_FIN_STU40G", "vn_o_armor_t54b_nva65"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["NORTH_FIN_FordV8_Maxim_Quad"]] call _fnc_saveToTemplate;
 
-["vehiclesTransportBoats", ["vn_o_boat_01_mg_03"]] call _fnc_saveToTemplate;
-["vehiclesGunBoats", ["vn_o_boat_04_02"]] call _fnc_saveToTemplate;
+["vehiclesTransportBoats", ["NORTH_FIN_S_Syoksyvene"]] call _fnc_saveToTemplate;
+["vehiclesGunBoats", ["vn_o_boat_01_mg_03"]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["vn_o_air_mig19_at", "vn_o_air_mig21_cas"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["vn_o_air_mig19_cap", "vn_o_air_mig21_cap"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["vn_o_air_mig21_cas"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["vn_o_air_mig21_cap"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["vn_o_air_mi2_01_03"]] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", ["vn_o_air_mi2_01_03"]] call _fnc_saveToTemplate;
-["vehiclesHelisLightAttack", ["vn_o_air_mi2_04_02", "vn_o_air_mi2_04_03", "vn_o_air_mi2_05_04"]] call _fnc_saveToTemplate;      // Don't actually work atm
+["vehiclesHelisLightAttack", ["vn_o_air_mi2_04_02", "vn_o_air_mi2_04_03", "vn_o_air_mi2_05_04"]] call _fnc_saveToTemplate; 
 ["vehiclesHelisAttack", []] call _fnc_saveToTemplate;
 
-["vehiclesArtillery", ["vn_o_nva_static_h12", "vn_o_nva_static_d44_01"]] call _fnc_saveToTemplate;
+["vehiclesArtillery", ["vn_o_nva_static_d44_01"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
-["vn_o_nva_static_h12", ["vn_h12_v_12_he_mag"]],
 ["vn_o_nva_static_d44_01", ["vn_cannon_d44_mag_he_x12"]]
 ]] call _fnc_saveToTemplate;
 
@@ -65,12 +65,12 @@
 ["uavsPortable", []] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["vn_b_wheeled_m151_mg_02", "vn_b_wheeled_m151_mg_04"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaTrucks", ["vn_b_wheeled_m54_01_sog"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["vn_b_wheeled_m151_01", "vn_b_wheeled_m151_02"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["vn_b_armor_m113_01"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", ["vn_i_wheeled_m151_mg_01_fank_71"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaTrucks", ["vn_i_wheeled_z157_01_fank_70"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["NORTH_FIN_Tempo"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["vn_i_wheeled_btr40_mg_01_fank_70"]] call _fnc_saveToTemplate;
 
-["vehiclesPolice", ["vn_b_wheeled_m151_01_mp", "vn_b_wheeled_m151_02_mp"]] call _fnc_saveToTemplate;
+["vehiclesPolice", ["vn_i_wheeled_m151_02_fank_71"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["vn_o_nva_static_pk_high", "vn_o_nva_static_rpd_high", "vn_o_nva_static_dshkm_high_01", "vn_o_nva_65_static_m1910_high_01"]] call _fnc_saveToTemplate;
 ["staticAT", ["I_NFCW_FIN_80_95_S_58_61","NORTH_FIN_76k36","I_NFCW_FIN_80_45_JVK_37","I_NFCW_FIN_80_37_JVK_36"]] call _fnc_saveToTemplate;
@@ -99,9 +99,8 @@
 ///  Identities   ///
 /////////////////////
 
-["faces", ["AsianHead_A3_01", "AsianHead_A3_02", "AsianHead_A3_03", "AsianHead_A3_04", "AsianHead_A3_05", "AsianHead_A3_06", "AsianHead_A3_07"]] call _fnc_saveToTemplate;
-["voices", ["Male01CHI", "Male02CHI", "Male03CHI"]] call _fnc_saveToTemplate;
-"VietnameseMen" call _fnc_saveNames;
+["faces", ["NORTH_WhiteHead_24", "NORTH_WhiteHead_01", "NORTH_WhiteHead_02", "NORTH_WhiteHead_18", "NORTH_WhiteHead_05", "NORTH_WhiteHead_03", "NORTH_WhiteHead_04", "NORTH_WhiteHead_06", "NORTH_WhiteHead_25"]] call _fnc_saveToTemplate;
+["voices", ["Male01_FIN", "Male02_FIN", "Male03_FIN", "Male04_FIN"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
