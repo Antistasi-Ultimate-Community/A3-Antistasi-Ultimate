@@ -3,7 +3,7 @@
 OnLoadName = $STR_antistasi_mission_info_Armavir_mapname_short_text;
 OnLoadMission = $STR_antistasi_mission_info_Armavir_blurb_text;
 briefingName = $STR_antistasi_mission_info_Armavir_mapname_text;
-overviewText = $STR_antistasi_mission_info_Altis_description_text;
+overviewText = $STR_antistasi_mission_info_Armavir_description_text;
 loadScreen = LOAD_SCREEN_IMAGE;
 overviewPicture = OVERVIEW_IMAGE;
 
