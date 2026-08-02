@@ -35,6 +35,7 @@ _milAdministration removeAllEventHandlers "Killed";
 A3A_destroyedMilAdministrations pushBack _milAdministration;
 private _mrk = [milAdministrationsX, _milAdministration] call BIS_fnc_nearestPosition;
 _mrk setMarkerColor "ColorBlack";
+_mrk setMarkerType "A3AU_miladmin_dead_mrk";
 sidesX setVariable [_mrk, teamPlayer, true];
 
 //otherwise it will be looped
