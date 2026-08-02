@@ -92,7 +92,7 @@ private _blindnessColors = [
     "A3AU_setting_colorBlindness",
     "LIST",
     "Color Blindness Settings",
-    ["Antistasi Ultimate", "Accessibility Settings"],
+    ["[Antistasi Ultimate]", "Accessibility Settings"],
     [_blindnessColors, _namesOfBlindness, 0],
     false,
     {  
@@ -113,7 +113,7 @@ private _blindnessColors = [
     "A3AU_setting_alwaysShowMarkerName",
     "CHECKBOX",
     "Always show marker names on map",
-    ["Antistasi Ultimate", "Accessibility Settings"],
+    ["[Antistasi Ultimate]", "Accessibility Settings"],
     false,
     false
 ] call CBA_fnc_addSetting;
