@@ -37,6 +37,12 @@ if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) th
 };
 */
 
+//weather stuff
+A3A_weatherLevel = profileNamespace getVariable ["A3A_weatherLevel", "LOW"];
+A3A_weatherInterval = profileNamespace getVariable ["A3A_weatherInterval", 2];
+publicVariable "A3A_weatherLevel";
+publicVariable "A3A_weatherInterval";
+
 // Shouldn't be anything with dependencies in here
 call A3A_fnc_initVarCommon;
 call A3A_fnc_initZones;					// needed here because new-game setup needs to know where the markers are
@@ -409,5 +415,8 @@ if (enableSpectrumDevice) then {
     [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);
     [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\sa_ewar.sqf);
 };
+
+// Launching weather randomization cycle (works in the background)
+[] call SCRT_fnc_ui_weather_changeWeather; //maybe use spawn?
 
 Info("initServer completed");

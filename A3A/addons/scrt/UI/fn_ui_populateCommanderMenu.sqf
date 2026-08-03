@@ -199,11 +199,41 @@ sliderSetPosition [4041, 50];
 (_display displayCtrl 4041) ctrlSetText format [localize "STR_commander_menu_fog_title", 50];
 fogValue = nil;
 
-// weather
+// overcast
 sliderSetRange [4061, 0, 100];
 sliderSetPosition [4061, 50];
 (_display displayCtrl 4061) ctrlSetText format [localize "STR_commander_menu_overcast_title", 50];
 overcastValue = nil;
+
+// weather
+private _savedInterval = profileNamespace getVariable ["A3A_weatherInterval", 2];
+sliderSetPosition [4075, _savedInterval];
+(_display displayCtrl 4075) ctrlSetText format [localize "STR_commander_menu_weather_title", _savedInterval, localize "STR_antistasi_timeSpan_hours"];
+
+A3A_weatherInterval = _savedInterval;
+
+// weather Combobox
+lbClear 4076;
+
+private _weatherLevels = [
+    ["STR_weather_level_low", "LOW"],
+    ["STR_weather_level_medium", "MEDIUM"],
+    ["STR_weather_level_high", "HIGH"],
+    ["STR_weather_level_random", "RANDOM"]
+];
+
+{
+    private _index = lbAdd [4076, localize (_x select 0)];
+    lbSetData [4076, _index, _x select 1];
+} forEach _weatherLevels;
+
+// loading saved level
+private _savedLevel = profileNamespace getVariable ["A3A_weatherLevel", "LOW"];
+private _curIndex = 0;
+for "_i" from 0 to (lbSize 4076 - 1) do {
+    if ((lbData [4076, _i]) == _savedLevel) exitWith { _curIndex = _i };
+};
+lbSetCurSel [4076, _curIndex];
 
 private _gameInfoText = format [
     localize "STR_commander_menu_about_text", 
@@ -226,6 +256,7 @@ if (!isTraderQuestCompleted) then {
 	(_display displayCtrl 6014) ctrlShow false;
 };
 
+//might aswell add serverinfo while we are at it
 
 if (isServer || {(call BIS_fnc_admin) isEqualTo 2}) then {
 	ctrlShow [5200, true];
