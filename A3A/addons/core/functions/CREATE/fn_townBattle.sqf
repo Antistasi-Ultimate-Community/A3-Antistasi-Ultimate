@@ -115,10 +115,10 @@ private _vipVehicleData = [_nearestRoad, (random 360), _vipVehicleClass, _groupV
 private _vipVehicle = _vipVehicleData select 0;
 {deleteVehicle _x} forEach (crew _vipVehicle);
 
-// Spawn "vip", currently hardcoded to Occ officer
+// Spawn "vip"
 private _unitTypeCiv = A3A_faction_civ getOrDefault ["unitVIP", ""];
 private _unitTypeOcc = _faction getOrDefault ["unitOfficial", ""];
-private _unitType = if (_unitTypeCiv != "") then {_unitTypeCiv} else {_unitTypeOcc};
+private _unitType = if (A3A_customUnitTypes getVariable [_unitTypeCiv, []] isNotEqualTo []) then {_unitTypeCiv} else {_unitTypeOcc};
 private _identity = [A3A_faction_civ, _unitType] call A3A_fnc_createRandomIdentity;
 private _vip = [_groupVIP, _unitType, _nearestRoad, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
 [_vip, createHashMapFromArray [["face", selectRandom (A3A_faction_civ get "faces")], ["speaker", "NoVoice"]]] call A3A_fnc_setIdentity;
