@@ -98,7 +98,7 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ["minefieldAT", ["vn_mine_m15"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["vn_mine_m14"]] call _fnc_saveToTemplate;
 
-#include "VN_Vehicle_Attributes.sqf"
+#include "NFtSCW_Vehicle_Attributes.sqf"
 
 ["flares", ["vn_40mm_m583_flare_w_ammo", "vn_40mm_m661_flare_g_ammo", "vn_40mm_m662_flare_r_ammo", "vn_40mm_m695_flare_y_ammo"]] call _fnc_saveToTemplate;
 
