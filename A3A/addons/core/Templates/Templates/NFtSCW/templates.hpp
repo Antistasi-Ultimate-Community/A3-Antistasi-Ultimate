@@ -7,7 +7,7 @@
         equipFlags[] = {"lowTech"};
     };	
 
-    class NFTS_SOV_Arctic : NFTSCW_Base
+    class NFTSCW_FSSR : NFTSCW_Base
     {
         side = "Occ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\NFtSCW\flag_FSSR.paa);
@@ -23,7 +23,7 @@
         file = "NFtSCW_AI_USA_Tropical";
     };
 
-    class NFTSCW_FIN_Temperate : NFTSCW_Base
+    class NFTSCW_REB_FIN : NFTSCW_Base
     {
         side = "Reb";
         flagTexture = QPATHTOFOLDER(Templates\Templates\NFtS\flag_finland.paa);
