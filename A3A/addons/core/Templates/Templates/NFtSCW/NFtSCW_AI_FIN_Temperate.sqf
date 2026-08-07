@@ -81,17 +81,15 @@
 ["vehicleRadar", "vn_o_static_rsna75"] call _fnc_saveToTemplate;
 ["vehicleSam", "vn_sa2"] call _fnc_saveToTemplate;
 
-["howitzerMagazineHE", "vn_cannon_d44_mag_he_x12"] call _fnc_saveToTemplate;
+["howitzerMagazineHE", "NORTH_10Shell_76mmHE_76k02art"] call _fnc_saveToTemplate;
 
-["mortarMagazineHE", "vn_mortar_type53_mag_he_x8"] call _fnc_saveToTemplate;
-["mortarMagazineSmoke", "vn_mortar_type53_mag_wp_x8"] call _fnc_saveToTemplate;
-["mortarMagazineFlare", "vn_mortar_type53_mag_lume_x8"] call _fnc_saveToTemplate;
-
+["mortarMagazineHE", "NORTH_10Shell_81mm_MortarHEshell_81krh32"] call _fnc_saveToTemplate;
+["mortarMagazineSmoke", "NORTH_10Shell_81mm_MortarSmokeShell_81krh32"] call _fnc_saveToTemplate;
 
 ["minefieldAT", ["vn_mine_tripwire_arty"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["vn_mine_punji_02"]] call _fnc_saveToTemplate;
 
-#include "VN_Vehicle_Attributes.sqf"
+#include "NFtSCW_Vehicle_Attributes.sqf"
 
 ["flares", ["vn_40mm_m583_flare_w_ammo", "vn_40mm_m661_flare_g_ammo", "vn_40mm_m662_flare_r_ammo", "vn_40mm_m695_flare_y_ammo"]] call _fnc_saveToTemplate;
 
@@ -144,9 +142,9 @@ _loadoutData set ["officerUniforms", ["U_NFCW_FIN_M65_Uniform_Dress_maj"]];
 _loadoutData set ["officerVests", ["V_NORTH_FIN_Generic_1"]];
 _loadoutData set ["officerHats", ["H_NFCW_FIN_M36_65_Fieldcap_Officer"]];
 
-_loadoutData set ["cloakUniforms", ["vn_o_uniform_nva_dc_13_07", "vn_o_uniform_nva_dc_13_08", "vn_o_uniform_nva_dc_13_04", "vn_o_uniform_nva_dc_13_02", "vn_o_uniform_nva_dc_14_01", "vn_o_uniform_nva_dc_14_04"]];
-_loadoutData set ["cloakVests", ["vn_o_vest_02", "vn_o_vest_03"]];
-_loadoutData set ["cloakGlasses", ["vn_o_poncho_01_01"]];
+_loadoutData set ["cloakUniforms", ["U_NFCW_FIN_M62_Uniform"]];
+_loadoutData set ["cloakVests", ["V_NFCW_M60_Webbing"]];
+_loadoutData set ["cloakGlasses", ["G_NFCW_Underhood_2"]];
 
 _loadoutData set ["uniforms", []];
 _loadoutData set ["vests", []];
