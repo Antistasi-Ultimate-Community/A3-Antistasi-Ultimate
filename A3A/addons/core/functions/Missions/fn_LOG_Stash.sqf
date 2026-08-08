@@ -14,8 +14,6 @@ if (_stashType == "random") then {
 };
 
 private _difficultX = random 10 < tierWar;
-private _faction = Faction(Occupants);
-private _side = Occupants;
 
 // -----------------------------------------------------------------------------
 // LOCATION FINDER
@@ -56,7 +54,6 @@ if (_stashPos isEqualTo []) exitWith {
 
 private _searchCenter = _stashPos getPos [random 400, random 360];
 
-// Get a local name just for flavor text in the task
 private _nearestLocations = nearestLocations [_stashPos, ["NameCity", "NameCityCapital", "NameVillage", "NameLocal"], 4000];
 private _nameDest = if (count _nearestLocations > 0) then { text (_nearestLocations select 0) } else { localize "STR_A3A_Missions_LOG_Stash_Wilderness" };
 
@@ -121,79 +118,61 @@ if (isNull _stash) exitWith {
 _stash setPosATL [_stashPos select 0, _stashPos select 1, 0];
 _stash allowDamage false;
 
-private _faction = Faction(Occupants);
-
 switch (_stashType) do {
     case "weapons": {
-        private _wepNum = 15 + round(random 20);
+        private _wepNum = 15 + round(random 25);
         [_stash, 5, _wepNum, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] call A3A_fnc_fillLootCrate;
     };
     case "gear": {
-        private _itemNum = 3 + round(random 3);
-        private _backNum = 2 + round(random 3);
-        private _helmNum = 10 + round(random 10);
-        private _vestNum = 10 + round(random 10);
-        [_stash, 0, 0, 3, _itemNum, 0, 0, 0, 0, 0, 0, 3, _backNum, 5, _helmNum, 5, _vestNum, 0, 0] call A3A_fnc_fillLootCrate;
+        private _itemNum = 10 + round(random 10);
+        [_stash, 0, 0, 3, _itemNum, 0, 0, 0, 0, 0, 0, 3, _itemNum, 5, _itemNum, 5, _itemNum, 0, 0] call A3A_fnc_fillLootCrate;
     };
     case "explosives": {
-        private _expNum = 10 + round(random 15);
+        private _expNum = 20 + round(random 15);
         [_stash, 0, 0, 0, 0, 0, 0, 5, _expNum, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] call A3A_fnc_fillLootCrate;
     };
     case "money": {
-        private _bunchCount = round (random 5);
+        private _bunchCount = 30 + round (random 20);
         if (_bunchCount > 0) then { _stash addMagazineCargoGlobal ["Money_bunch", _bunchCount]; };
-        
-        private _rollCount = round (random 3);
-        if (_rollCount > 0) then { _stash addMagazineCargoGlobal ["Money_roll", _rollCount]; };
-        
-        private _stackCount = 1 + round (random 2);
-        _stash addMagazineCargoGlobal ["Money_stack", _stackCount];
-        
-        private _moneyCount = 1 + round (random 1);
-        _stash addMagazineCargoGlobal ["Money", _moneyCount];
     };
 };
 
 // -----------------------------------------------------------------------------
-// CLIENT-SIDE BEEPING AUDIO MECHANIC
+// SERVER-SIDE BEEPING AUDIO MECHANIC
 // -----------------------------------------------------------------------------
 _stash setVariable ["A3A_isBeepingStash", true, true];
 
-[
-    [_stash],
-    {
-        params ["_stash"];
-        if (!hasInterface) exitWith {};
-        
-        [_stash] spawn {
-            params ["_stash"];
-            while {alive _stash && {(_stash getVariable ["A3A_isBeepingStash", false])}} do {
-                if (alive player && {player distance _stash <= 75} && {"MineDetector" in (items player + assignedItems player)}) then {
-                    playSound3D ["A3\Sounds_F\weapons\Mines\electron_trigger_1.wss", _stash, false, getPosASL _stash, 2.5, 1, 75];
-                };
-                
-                sleep 1.5;
-            };
-        };
-    }
-] remoteExec ["call", 0, _taskId];
+[_stash] spawn {
+    params ["_stash"];
+    while {alive _stash && {(_stash getVariable ["A3A_isBeepingStash", false])}} do {
+        // Parameters: [Sound Path, Source Object, isInside, Absolute Position, Volume, Pitch, Max Distance]
+        playSound3D ["A3\Sounds_F\weapons\Mines\electron_trigger_1.wss", _stash, false, getPosASL _stash, 2.5, 1, 75];
+        sleep 1.5;
+    };
+};
 
 
 // -----------------------------------------------------------------------------
-// RIVAL GUARD GROUPS & PATROL VEHICLE
+// RIVAL GUARD GROUPS
 // -----------------------------------------------------------------------------
 private _groups = [];
-private _vehicles = [];
-private _numGroups = 3 + floor(random 3);
 
-for "_i" from 1 to _numGroups do {
+// The specific setups for the 3 teams
+private _teamCompositions = [
+    ["loadouts_riv_militia_Enforcer", "loadouts_riv_militia_Sharpshooter"],
+    ["loadouts_riv_militia_Enforcer", "loadouts_riv_militia_SpecialistAT"],
+    ["loadouts_riv_militia_Enforcer", "loadouts_riv_militia_SpecialistAA"]
+];
+
+{
     private _spawnPos = _searchCenter getPos [random 400, random 360];
     _spawnPos = [_spawnPos, 0, 100, 2, 0, 0.3, 0, [], [_spawnPos, _spawnPos]] call BIS_fnc_findSafePos;
+    
     private _groupX = createGroup Invaders; 
-
-    [_groupX, "loadouts_riv_militia_Mercenary", _spawnPos, [], 5, "NONE"] call A3A_fnc_RivalsCreateUnit;
-    [_groupX, "loadouts_riv_militia_Sharpshooter", _spawnPos, [], 5, "NONE"] call A3A_fnc_RivalsCreateUnit;
-    [_groupX, "loadouts_riv_militia_Oppressor", _spawnPos, [], 5, "NONE"] call A3A_fnc_RivalsCreateUnit;
+    
+    {
+        [_groupX, _x, _spawnPos, [], 5, "NONE"] call A3A_fnc_RivalsCreateUnit;
+    } forEach _x;
 
     {
         [_x] call A3A_fnc_NATOinit;
@@ -202,22 +181,8 @@ for "_i" from 1 to _numGroups do {
     [_groupX, "Patrol_Area", 25, 100, 500, true, _searchCenter, false] call A3A_fnc_patrolLoop;
     
     _groups pushBack _groupX;
-};
-
-private _vehPos = [_searchCenter, 10, 400, 5, 0, 0.3, 0, [], [_searchCenter, _searchCenter]] call BIS_fnc_findSafePos;
-private _rivFaction = missionNamespace getVariable ["A3A_faction_riv", createHashMap];
-private _vehPool = _rivFaction getOrDefault ["vehiclesLightArmed", ["I_G_Offroad_01_armed_F"]];
-private _vehType = selectRandom _vehPool;
-
-private _vehGroup = createGroup Invaders;
-[_vehPos, random 360, _vehType, _vehGroup] call A3A_fnc_RivalsSpawnVehicle params ["_patrolVeh", "_patrolCrew", "_spawnedGroup"];
-
-{ [_x] call A3A_fnc_NATOinit; } forEach units _spawnedGroup;
-[_patrolVeh, Invaders] call A3A_fnc_AIVEHinit;
-[_spawnedGroup, "Patrol_Area", 25, 150, 500, true, _searchCenter, false] call A3A_fnc_patrolLoop;
-
-_groups pushBack _spawnedGroup;
-_vehicles pushBack _patrolVeh;
+    
+} forEach _teamCompositions;
 
 
 // -----------------------------------------------------------------------------
@@ -302,15 +267,11 @@ if (_missionSuccess) then {
 // -----------------------------------------------------------------------------
 // CLEANUP
 // -----------------------------------------------------------------------------
-remoteExec ["", _taskId]; 
-
 if (!isNull _stash) then { [_stash] spawn A3A_fnc_postmortem; };
 
 {
     private _grp = _x;
     { [_x] spawn A3A_fnc_postmortem } forEach units _grp;
 } forEach _groups;
-
-{ [_x] spawn A3A_fnc_postmortem } forEach _vehicles;
 
 [_taskId, "LOG", 1200] spawn A3A_fnc_taskDelete;
