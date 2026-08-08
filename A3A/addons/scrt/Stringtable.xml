@@ -13170,6 +13170,198 @@
                 <Korean>충돌 현장 데이터를 암거래상에게 전달하십시오. 그는 후하게 대가를 쳐줄 겁니다! 페트로스는 별로 화내지 않을 것입니다.</Korean>
                 <Turkish>Enkaz alanı verilerini silah tüccarına teslim edin. Dolgun bir ödeme yapacaktır! Petros bu duruma pek bozulmayacaktır.</Turkish>
             </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Wilderness">
+                <Original>the Wilderness</Original>
+                <Russian>Дикая местность</Russian>
+                <German>die Wildnis</German>
+                <Italian>le Terre Selvagge</Italian>
+                <Spanish>las Tierras Salvajes</Spanish>
+                <French>les Terres Sauvages</French>
+                <Korean>황야</Korean>
+                <Japanese>荒野</Japanese>
+                <ChineseSimplified>荒野</ChineseSimplified>
+                <Chinese>荒野</Chinese>
+                <Polish>Dzicz</Polish>
+                <Czech>Divočina</Czech>
+                <Portuguese>os Ermos</Portuguese>
+                <Turkish>Vahşi Doğa</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Type_Money">
+                <Original>Barried Funds</Original>
+                <Russian>Зарытые деньги</Russian>
+                <German>Vergrabene Gelder</German>
+                <Italian>Fondi Sepolti</Italian>
+                <Spanish>Fondos Enterrados</Spanish>
+                <French>Fonds Enterrés</French>
+                <Korean>묻힌 자금</Korean>
+                <Japanese>埋蔵資金</Japanese>
+                <ChineseSimplified>埋藏的资金</ChineseSimplified>
+                <Chinese>埋藏的資金</Chinese>
+                <Polish>Zakopane Fundusze</Polish>
+                <Czech>Zakopané peníze</Czech>
+                <Portuguese>Fundos Enterrados</Portuguese>
+                <Turkish>Gömülü Fonlar</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Type_Weapons">
+                <Original>Weapons</Original>
+                <Russian>Оружие</Russian>
+                <German>Waffen</German>
+                <Italian>Armi</Italian>
+                <Spanish>Armas</Spanish>
+                <French>Armes</French>
+                <Korean>무기</Korean>
+                <Japanese>武器</Japanese>
+                <ChineseSimplified>武器</ChineseSimplified>
+                <Chinese>武器</Chinese>
+                <Polish>Broń</Polish>
+                <Czech>Zbraně</Czech>
+                <Portuguese>Armas</Portuguese>
+                <Turkish>Silahlar</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Type_Gear">
+                <Original>Equipment</Original>
+                <Russian>Снаряжение</Russian>
+                <German>Ausrüstung</German>
+                <Italian>Equipaggiamento</Italian>
+                <Spanish>Equipamiento</Spanish>
+                <French>Équipement</French>
+                <Korean>장비</Korean>
+                <Japanese>装備</Japanese>
+                <ChineseSimplified>装备</ChineseSimplified>
+                <Chinese>裝備</Chinese>
+                <Polish>Sprzęt</Polish>
+                <Czech>Vybavení</Czech>
+                <Portuguese>Equipamento</Portuguese>
+                <Turkish>Ekipman</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Type_Explosives">
+                <Original>Explosives</Original>
+                <Russian>Взрывчатка</Russian>
+                <German>Sprengstoffe</German>
+                <Italian>Esplosivi</Italian>
+                <Spanish>Explosivos</Spanish>
+                <French>Explosifs</French>
+                <Korean>폭발물</Korean>
+                <Japanese>爆発物</Japanese>
+                <ChineseSimplified>爆炸物</ChineseSimplified>
+                <Chinese>爆炸物</Chinese>
+                <Polish>Materiały wybuchowe</Polish>
+                <Czech>Výbušniny</Czech>
+                <Portuguese>Explosivos</Portuguese>
+                <Turkish>Patlayıcılar</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Type_Supplies">
+                <Original>Supplies</Original>
+                <Russian>Припасы</Russian>
+                <German>Vorräte</German>
+                <Italian>Rifornimenti</Italian>
+                <Spanish>Suministros</Spanish>
+                <French>Fournitures</French>
+                <Korean>보급품</Korean>
+                <Japanese>物資</Japanese>
+                <ChineseSimplified>补给</ChineseSimplified>
+                <Chinese>補給</Chinese>
+                <Polish>Zapasy</Polish>
+                <Czech>Zásoby</Czech>
+                <Portuguese>Suprimentos</Portuguese>
+                <Turkish>Erzak</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Task_Desc">
+                <Original>We received intel about a Rival %1 stash hidden somewhere in %2. Grab a Mine Detector to pick up its beacon signal, find it, and secure the contents before they move it. Time limit: %3.</Original>
+                <Russian>Мы получили разведданные о тайнике конкурентов (%1), спрятанном где-то в %2. Возьмите миноискатель, чтобы уловить сигнал радиомаяка, найдите его и заберите содержимое, пока его не перепрятали. Лимит времени: %3.</Russian>
+                <German>Wir haben Informationen über ein verstecktes Versteck der Rivalen mit %1 irgendwo in %2 erhalten. Schnapp dir einen Minendetektor, um das Bakensignal zu empfangen, finde es und sichere den Inhalt, bevor sie es wegschaffen. Zeitlimit: %3.</German>
+                <Italian>Abbiamo ricevuto informazioni su un nascondiglio di %1 dei Rivali nascosto da qualche parte in %2. Prendi un rilevatore di mine per captare il segnale del radiofaro, trovalo e metti al sicuro il contenuto prima che lo spostino. Tempo limite: %3.</Italian>
+                <Spanish>Hemos recibido información sobre un alijo rival de %1 escondido en algún lugar de %2. Coge un detector de minas para captar la señal de su baliza, encuéntralo y asegura su contenido antes de que lo muevan. Límite de tiempo: %3.</Spanish>
+                <French>Nous avons reçu des informations concernant une cache rivale contenant %1 dissimulée quelque part dans %2. Prenez un détecteur de mines pour capter le signal de sa balise, trouvez-la et sécurisez son contenu avant qu'ils ne la déplacent. Temps limite : %3.</French>
+                <Korean>라이벌의 %1 은닉처가 %2 어딘가에 숨겨져 있다는 정보를 입수했습니다. 지뢰 탐지기를 챙겨서 비콘 신호를 포착하고, 적들이 물건을 옮기기 전에 찾아내서 내용물을 확보하십시오. 제한 시간: %3.</Korean>
+                <Japanese>ライバルの%1の隠し場所が%2のどこかにあるという情報を入手した。地雷探知機を持っていき、ビーコンの信号を拾って見つけ出し、彼らに移される前に中身を確保しろ。制限時間: %3。</Japanese>
+                <ChineseSimplified>我们收到情报，在%2某处隐藏着一个敌对派系的%1储藏点。带上地雷探测器来接收其信标信号，找到它，并在他们转移物资之前确保里面物品的安全。时间限制：%3。</ChineseSimplified>
+                <Chinese>我們收到情報，在%2某處隱藏著一個敵對派系的%1儲藏點。帶上地雷探測器來接收其信標信號，找到它，並在他們轉移物資之前確保裡面物品的安全。時間限制：%3。</Chinese>
+                <Polish>Otrzymaliśmy informacje o wrogiej skrytce (zawartość: %1), ukrytej gdzieś na obszarze %2. Weź wykrywacz min, aby przechwycić sygnał lokalizatora, znajdź ją i zabezpiecz zawartość, zanim zostanie przeniesiona. Limit czasu: %3.</Polish>
+                <Czech>Získali jsme informace o konkurenční skrýši (%1), schované někde v %2. Vezměte si minohledačku, abyste zachytili signál z majáku, najděte ji a zajistěte obsah dřív, než jej přesunou. Časový limit: %3.</Czech>
+                <Portuguese>Recebemos informações sobre um esconderijo rival de %1 escondido em algum lugar em %2. Pegue um Detector de Minas para captar o sinal do seu farol, encontre-o e garanta o conteúdo antes que eles o movam. Limite de tempo: %3.</Portuguese>
+                <Turkish>%2 içinde bir yerde gizlenmiş bir Rakip %1 zulası hakkında istihbarat aldık. Sinyalini yakalamak için bir Mayın Dedektörü al, onu bul ve onlar taşımadan önce içindekileri güvenceye al. Zaman sınırı: %3.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Task_Title">
+                <Original>Find %1 Stash</Original>
+                <Russian>Найти тайник (%1)</Russian>
+                <German>Finde das %1-Versteck</German>
+                <Italian>Trova nascondiglio di %1</Italian>
+                <Spanish>Encontrar alijo de %1</Spanish>
+                <French>Trouver la cache de %1</French>
+                <Korean>%1 은닉처 찾기</Korean>
+                <Japanese>%1の隠し場所を見つける</Japanese>
+                <ChineseSimplified>寻找%1储藏点</ChineseSimplified>
+                <Chinese>尋找%1儲藏點</Chinese>
+                <Polish>Znajdź skrytkę: %1</Polish>
+                <Czech>Najít skrýš (%1)</Czech>
+                <Portuguese>Encontrar Esconderijo de %1</Portuguese>
+                <Turkish>%1 Zulasını Bul</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Task_Desc_Success">
+                <Original>You found the %1 stash! Secure its contents.</Original>
+                <Russian>Вы нашли тайник (%1)! Заберите его содержимое.</Russian>
+                <German>Du hast das %1-Versteck gefunden! Sichere seinen Inhalt.</German>
+                <Italian>Hai trovato il nascondiglio di %1! Metti al sicuro il suo contenuto.</Italian>
+                <Spanish>¡Has encontrado el alijo de %1! Asegura su contenido.</Spanish>
+                <French>Vous avez trouvé la cache de %1 ! Sécurisez son contenu.</French>
+                <Korean>%1 은닉처를 찾았습니다! 내용물을 확보하십시오.</Korean>
+                <Japanese>%1の隠し場所を見つけた！中身を確保しろ。</Japanese>
+                <ChineseSimplified>你找到了%1储藏点！确保里面的物品安全。</ChineseSimplified>
+                <Chinese>你找到了%1儲藏點！確保裡面的物品安全。</Chinese>
+                <Polish>Znalazłeś skrytkę: %1! Zabezpiecz jej zawartość.</Polish>
+                <Czech>Našli jste skrýš (%1)! Zajistěte její obsah.</Czech>
+                <Portuguese>Você encontrou o esconderijo de %1! Garanta seu conteúdo.</Portuguese>
+                <Turkish>%1 zulasını buldun! İçindekileri güvenceye al.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Success">
+                <Original>Stash Found</Original>
+                <Russian>Тайник найден</Russian>
+                <German>Versteck gefunden</German>
+                <Italian>Nascondiglio Trovato</Italian>
+                <Spanish>Alijo encontrado</Spanish>
+                <French>Cache trouvée</French>
+                <Korean>은닉처 발견</Korean>
+                <Japanese>隠し場所を発見</Japanese>
+                <ChineseSimplified>找到储藏点</ChineseSimplified>
+                <Chinese>找到儲藏點</Chinese>
+                <Polish>Znaleziono skrytkę</Polish>
+                <Czech>Skrýš nalezena</Czech>
+                <Portuguese>Esconderijo Encontrado</Portuguese>
+                <Turkish>Zula Bulundu</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Hint_Body">
+                <Original>You have discovered the stash location!</Original>
+                <Russian>Вы обнаружили местонахождение тайника!</Russian>
+                <German>Du hast den Standort des Verstecks entdeckt!</German>
+                <Italian>Hai scoperto la posizione del nascondiglio!</Italian>
+                <Spanish>¡Has descubierto la ubicación del alijo!</Spanish>
+                <French>Vous avez découvert l'emplacement de la cache !</French>
+                <Korean>은닉처 위치를 발견했습니다!</Korean>
+                <Japanese>隠し場所のロケーションを発見した！</Japanese>
+                <ChineseSimplified>你已经发现了储藏点的位置！</ChineseSimplified>
+                <Chinese>你已經發現了儲藏點的位置！</Chinese>
+                <Polish>Odkryłeś lokalizację skrytki!</Polish>
+                <Czech>Objevili jste lokaci skrýše!</Czech>
+                <Portuguese>Você descobriu a localização do esconderijo!</Portuguese>
+                <Turkish>Zula konumunu keşfettin!</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Stash_Marker">
+                <Original>Stash</Original>
+                <Russian>Тайник</Russian>
+                <German>Versteck</German>
+                <Italian>Nascondiglio</Italian>
+                <Spanish>Alijo</Spanish>
+                <French>Cache</French>
+                <Korean>은닉처</Korean>
+                <Japanese>隠し場所</Japanese>
+                <ChineseSimplified>储藏点</ChineseSimplified>
+                <Chinese>儲藏點</Chinese>
+                <Polish>Skrytka</Polish>
+                <Czech>Skrýš</Czech>
+                <Portuguese>Esconderijo</Portuguese>
+                <Turkish>Zula</Turkish>
+            </Key>
             <Key ID="STR_A3A_Missions_SUPP_Supplies_task_header">
                 <Original>Deliver Supplies to %1</Original>
                 <Russian>Доставьте припасы в %1</Russian>
