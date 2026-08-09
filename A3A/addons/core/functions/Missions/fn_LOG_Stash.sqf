@@ -1,6 +1,33 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
+/* ----------------------------------------------------------------------------
+Function: A3A_fnc_LOG_Stash
+
+Description:
+    Generates and handles a logistics task requiring rebel players to locate and 
+    secure a hidden supply cache within a 7.5km radius of their headquarters. 
+    Manages the creation of the search area, custom audio-visual beacons, enemy 
+    patrol defenses, and the mission success/failure proximity evaluation.
+
+Parameters:
+Optional:
+    0: _stashType - The category of loot to spawn. Valid inputs are "money", 
+        "weapons", "gear", "explosives", or "random". <STRING> (default: "random")
+
+Example:
+    ["weapons"] spawn A3A_fnc_LOG_Stash;
+
+Returns:
+    None <ANY>
+
+Environment:
+    Server, Scheduled
+
+Author:
+    Maxx
+---------------------------------------------------------------------------- */
+
 if (!canSuspend) exitWith { _this spawn A3A_fnc_LOG_Stash; };
 
 params [["_stashType", "random"]];
@@ -20,12 +47,16 @@ private _difficultX = random 10 < tierWar;
 // -----------------------------------------------------------------------------
 private _stashPos = [];
 private _attempts = 0;
+private _hqPos = getMarkerPos respawnTeamPlayer;
 
 while {_attempts < 10000} do {
     _attempts = _attempts + 1;
     
-    // Pick a random spot somewhere on the map
-    private _testPos = [worldSize/2, worldSize/2, 0] getPos [random (worldSize * 0.45), random 360];
+    // Pick a random spot within a 5000m (5km) radius of the HQ
+    private _testPos = _hqPos getPos [random 5000, random 360];
+    
+    // Rule 0: Must be within map boundaries (prevents edge-of-map bugs if HQ is near the border)
+    if (_testPos select 0 < 0 || _testPos select 0 > worldSize || _testPos select 1 < 0 || _testPos select 1 > worldSize) then { continue; };
     
     // Rule 1: Must be on land
     if (surfaceIsWater _testPos) then { continue; };
@@ -49,7 +80,7 @@ while {_attempts < 10000} do {
 };
 
 if (_stashPos isEqualTo []) exitWith {
-    Error("Could not find a valid wilderness location for the Stash mission.");
+    Error("Could not find a valid wilderness location for the Stash mission within 7.5km.");
 };
 
 private _searchCenter = _stashPos getPos [random 400, random 360];
@@ -75,6 +106,8 @@ private _prefix = format ["loadouts_%1%2_", ["inv", "occ"] select _isOcc, _unitT
 private _limit = if (_difficultX) then { 45 call SCRT_fnc_misc_getTimeLimit } else { 60 call SCRT_fnc_misc_getTimeLimit };
 _limit params ["_dateLimitNum", "_displayTime"];
 
+A3A_taskCount = A3A_taskCount + 1;
+publicVariable "A3A_taskCount";
 private _taskId = "LOG" + str A3A_taskCount;
 
 private _searchMrkName = format ["StashSearchArea_%1", str(round(random 100000))];
@@ -154,7 +187,6 @@ switch (_stashType) do {
 // -----------------------------------------------------------------------------
 // LIGHT SOURCE
 // -----------------------------------------------------------------------------
-
 private _nLight = "#lightpoint" createVehicle (getPosATL _stash);
 _nLight lightAttachObject [_stash, [0, 0, 0]];
 
@@ -166,7 +198,7 @@ _nLight setLightAttenuation [0, 0, 0, 4, 5, 5.5];
 
 
 // -----------------------------------------------------------------------------
-// SERVER-SIDE BEEPING AUDIO MECHANIC
+// SERVER/HC BEEPING AUDIO MECHANIC
 // -----------------------------------------------------------------------------
 _stash setVariable ["A3A_isBeepingStash", true, true];
 
@@ -296,7 +328,14 @@ if (_missionSuccess) then {
 // -----------------------------------------------------------------------------
 // CLEANUP
 // -----------------------------------------------------------------------------
-if (!isNull _nLight) then { [_nLight] spawn A3A_fnc_postmortem; };
+
+if (!isNull _nLight) then { 
+    [_nLight] spawn {
+        params ["_light"];
+        sleep 600;
+        if (!isNull _light) then { deleteVehicle _light; };
+    }; 
+}; 
 if (!isNull _stash) then { [_stash] spawn A3A_fnc_postmortem; };
 
 {
