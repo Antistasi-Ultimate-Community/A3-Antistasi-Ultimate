@@ -344,43 +344,43 @@ class magazinesJCA
 	///////////////////////////////////////////////////////
 	// Pistols, SMGs
 	///////////////////////////////////////////////////////
-	class JCA_30Rnd_9x21_MP5_Mag {
+	class JCA_30Rnd_9x19_MP5_Mag {
 		price = 50;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_30Rnd_9x21_MP5_Tracer_Green_Mag {
+	class JCA_30Rnd_9x19_MP5_Tracer_Green_Mag {
 		price = 50;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_30Rnd_9x21_MP5_Tracer_Red_Mag {
+	class JCA_30Rnd_9x19_MP5_Tracer_Red_Mag {
 		price = 50;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_30Rnd_9x21_MP5_Tracer_Yellow_Mag {
+	class JCA_30Rnd_9x19_MP5_Tracer_Yellow_Mag {
 		price = 50;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_30Rnd_9x21_MP5_Tracer_IR_Mag {
+	class JCA_30Rnd_9x19_MP5_Tracer_IR_Mag {
 		price = 50;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_P226_Mag {
+	class JCA_15Rnd_9x19_P226_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_P226_Green_Mag {
+	class JCA_15Rnd_9x19_P226_Green_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_P226_Red_Mag {
+	class JCA_15Rnd_9x19_P226_Red_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_P226_Yellow_Mag {
+	class JCA_15Rnd_9x19_P226_Yellow_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_P226_IR_Mag {
+	class JCA_15Rnd_9x19_P226_IR_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
@@ -476,43 +476,43 @@ class magazinesJCA
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_17Rnd_9x21_P320_Mag {
+	class JCA_17Rnd_9x19_P320_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_17Rnd_9x21_P320_Green_Mag {
+	class JCA_17Rnd_9x19_P320_Green_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_17Rnd_9x21_P320_IR_Mag {
+	class JCA_17Rnd_9x19_P320_IR_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_17Rnd_9x21_P320_Red_Mag {
+	class JCA_17Rnd_9x19_P320_Red_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_17Rnd_9x21_P320_Yellow_Mag {
+	class JCA_17Rnd_9x19_P320_Yellow_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_M9A1_Mag {
+	class JCA_15Rnd_9x19_M9A1_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_M9A1_Green_Mag {
+	class JCA_15Rnd_9x19_M9A1_Green_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_M9A1_IR_Mag {
+	class JCA_15Rnd_9x19_M9A1_IR_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_M9A1_Red_Mag {
+	class JCA_15Rnd_9x19_M9A1_Red_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};
-	class JCA_15Rnd_9x21_M9A1_Yellow_Mag {
+	class JCA_15Rnd_9x19_M9A1_Yellow_Mag {
 		price = 30;
 		stock = MAGAZINE_STOCK;
 	};

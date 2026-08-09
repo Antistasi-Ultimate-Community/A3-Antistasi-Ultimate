@@ -53,4 +53,5 @@ private _cityData = [_numCiv, _numVeh, _supportGov, _supportReb];
 
 A3A_townData set [_city, _cityData]; publicVariable "A3A_townData";
 cityIsSupportChanging = false;
+[_city] call A3A_fnc_mrkUpdate;
 true
