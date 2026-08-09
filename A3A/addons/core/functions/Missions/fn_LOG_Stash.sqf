@@ -53,9 +53,21 @@ if (_stashPos isEqualTo []) exitWith {
 };
 
 private _searchCenter = _stashPos getPos [random 400, random 360];
-
 private _nearestLocations = nearestLocations [_stashPos, ["NameCity", "NameCityCapital", "NameVillage", "NameLocal"], 4000];
 private _nameDest = if (count _nearestLocations > 0) then { text (_nearestLocations select 0) } else { localize "STR_A3A_Missions_LOG_Stash_Wilderness" };
+
+
+// -----------------------------------------------------------------------------
+// DYNAMIC FACTION & LOADOUT SELECTION
+// -----------------------------------------------------------------------------
+private _guardSide = sidesX getVariable [[markersX select {sidesX getVariable [_x, sideUnknown] in [Occupants, Invaders]}, _stashPos] call BIS_fnc_nearestPosition, Occupants];
+([["_militia",2], ["_militia",3], ["_militia",3], ["_military",4], ["_military",5], ["_military",6], ["_elite",5], ["_elite",5], ["_sf",5], ["_sf",6]] select ((tierWar-1) max 0 min 9)) params ["_unitType", "_unitAmount"];
+
+private _isOcc = (_guardSide == Occupants);
+private _factionName = [FactionGet(inv,"name"), FactionGet(occ,"name")] select _isOcc;
+private _prefix = format ["loadouts_%1%2_", ["inv", "occ"] select _isOcc, _unitType];
+(["Squadleader","AT","AA","LAT","Marksman","Sniper","MachineGunner","Medic","Engineer","ExplosivesExpert","Grenadier","Rifleman"] apply {_prefix + _x}) params ["_slClass", "_atClass", "_aaClass", "_latClass", "_mrkClass", "_snpClass", "_mgClass", "_medicClass", "_engClass", "_expClass", "_grnClass", "_riflemanClass"];
+
 
 // -----------------------------------------------------------------------------
 // TIMER & TASK SETUP
@@ -81,7 +93,7 @@ private _typeString = switch (_stashType) do {
     default { localize "STR_A3A_Missions_LOG_Stash_Type_Supplies" };
 };
 
-private _taskDesc = format [localize "STR_A3A_Missions_LOG_Stash_Task_Desc", _typeString, _nameDest, _displayTime];
+private _taskDesc = format [localize "STR_A3A_Missions_LOG_Stash_Task_Desc", _typeString, _nameDest, _displayTime, _factionName];
 private _taskTitle = format [localize "STR_A3A_Missions_LOG_Stash_Task_Title", _typeString];
 
 [
@@ -101,6 +113,7 @@ private _taskTitle = format [localize "STR_A3A_Missions_LOG_Stash_Task_Title", _
 ] call BIS_fnc_taskCreate;
 
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+
 
 // -----------------------------------------------------------------------------
 // STASH SPAWNING & LOOT
@@ -137,6 +150,21 @@ switch (_stashType) do {
     };
 };
 
+
+// -----------------------------------------------------------------------------
+// LIGHT SOURCE
+// -----------------------------------------------------------------------------
+
+private _nLight = "#lightpoint" createVehicle (getPosATL _stash);
+_nLight lightAttachObject [_stash, [0, 0, 0]];
+
+_nLight setLightColor [0, 2, 0];
+_nLight setLightAmbient [0, 0.01, 0];
+_nLight setLightDayLight false;
+_nLight setLightBrightness 0.225;
+_nLight setLightAttenuation [0, 0, 0, 4, 5, 5.5];
+
+
 // -----------------------------------------------------------------------------
 // SERVER-SIDE BEEPING AUDIO MECHANIC
 // -----------------------------------------------------------------------------
@@ -145,7 +173,6 @@ _stash setVariable ["A3A_isBeepingStash", true, true];
 [_stash] spawn {
     params ["_stash"];
     while {alive _stash && {(_stash getVariable ["A3A_isBeepingStash", false])}} do {
-        // Parameters: [Sound Path, Source Object, isInside, Absolute Position, Volume, Pitch, Max Distance]
         playSound3D ["A3\Sounds_F\weapons\Mines\electron_trigger_1.wss", _stash, false, getPosASL _stash, 2.5, 1, 75];
         sleep 1.5;
     };
@@ -153,36 +180,40 @@ _stash setVariable ["A3A_isBeepingStash", true, true];
 
 
 // -----------------------------------------------------------------------------
-// RIVAL GUARD GROUPS
+// GUARD GROUPS
 // -----------------------------------------------------------------------------
 private _groups = [];
 
-// The specific setups for the 3 teams
-private _teamCompositions = [
-    ["loadouts_riv_militia_Enforcer", "loadouts_riv_militia_Sharpshooter"],
-    ["loadouts_riv_militia_Enforcer", "loadouts_riv_militia_SpecialistAT"],
-    ["loadouts_riv_militia_Enforcer", "loadouts_riv_militia_SpecialistAA"]
-];
+for "_i" from 1 to 4 do {
+    // Parameters: [Center, MinDist, MaxDist, ObjectProximity, WaterMode, MaxGradient, ShoreMode]
+    private _spawnPos = [_searchCenter, 200, 400, 2, 0, 0.3, 0] call A3A_fnc_getSafePos;
+    
+    // 1. Build the unit composition array dynamically
+    private _groupTypes = [_slClass]; // SL is always first
+    private _specialists = [
+        selectRandom [_atClass, _aaClass, _latClass],
+        selectRandom [_medicClass, _engClass],
+        selectRandom [_mrkClass, _mgClass, _snpClass],
+        selectRandom [_expClass, _grnClass]
+    ] call BIS_fnc_arrayShuffle;
 
-{
-    private _spawnPos = _searchCenter getPos [random 400, random 360];
-    _spawnPos = [_spawnPos, 0, 100, 2, 0, 0.3, 0, [], [_spawnPos, _spawnPos]] call BIS_fnc_findSafePos;
+    for "_j" from 2 to _unitAmount do {
+        private _unitToSpawn = if (_j - 2 < count _specialists) then { _specialists select (_j - 2) } else { _riflemanClass };
+        _groupTypes pushBack _unitToSpawn;
+    };
     
-    private _groupX = createGroup Invaders; 
-    
-    {
-        [_groupX, _x, _spawnPos, [], 5, "NONE"] call A3A_fnc_RivalsCreateUnit;
-    } forEach _x;
+    // 2. Spawn the entire group automatically using Antistasi's function
+    private _groupX = [_spawnPos, _guardSide, _groupTypes] call A3A_fnc_spawnGroup;
 
     {
         [_x] call A3A_fnc_NATOinit;
     } forEach units _groupX;
     
-    [_groupX, "Patrol_Area", 25, 100, 500, true, _searchCenter, false] call A3A_fnc_patrolLoop;
+    // 3. Hand the group over to PATCOM (Patrol Commander)
+    [_groupX, "Patrol_Area", 50, 500, 600, true, _searchCenter, true] call A3A_fnc_patrolLoop;
     
     _groups pushBack _groupX;
-    
-} forEach _teamCompositions;
+};
 
 
 // -----------------------------------------------------------------------------
@@ -200,7 +231,7 @@ while {dateToNumber date <= _dateLimitNum} do {
     private _rebelPlayers = call SCRT_fnc_misc_getRebelPlayers;
     
     {
-        if (_x distance _stash <= 12 && {alive _x} && {!(_x getVariable ["incapacitated", false])}) exitWith {
+        if (_x distance _stash <= 5 && {alive _x} && {!(_x getVariable ["incapacitated", false])}) exitWith {
             _playerNear = true;
         };
     } forEach _rebelPlayers;
@@ -243,7 +274,6 @@ if (_missionSuccess) then {
     [5 * _bonus, theBoss] call A3A_fnc_addScorePlayer;
     [150 * _bonus, theBoss, true] call A3A_fnc_addMoneyPlayer;
 
-    // --- SPAWN THE 10-MINUTE 'X' MARKER ---
     [_stashPos] spawn {
         params ["_pos"];
         private _markerXName = format ["StashFoundX_%1", str(round(random 100000))];
@@ -256,7 +286,6 @@ if (_missionSuccess) then {
         sleep 600;
         deleteMarker _markerXName;
     };
-    // -------------------------------------------
     
 } else {
     [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
@@ -267,6 +296,7 @@ if (_missionSuccess) then {
 // -----------------------------------------------------------------------------
 // CLEANUP
 // -----------------------------------------------------------------------------
+if (!isNull _nLight) then { [_nLight] spawn A3A_fnc_postmortem; };
 if (!isNull _stash) then { [_stash] spawn A3A_fnc_postmortem; };
 
 {
