@@ -19,7 +19,7 @@
 
 ["vehiclesBoat", []] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["vn_b_air_f4c_cas"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["vn_o_air_mig21_cas"]] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["vn_c_car_01_01","vn_c_car_03_01"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["NORTH_CIV_FordV8"]] call _fnc_saveToTemplate;
