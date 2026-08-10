@@ -95,7 +95,8 @@ private _thresholdSq = _selectionThreshold * _selectionThreshold;
 /* ----------------------------------------------------------------------------
     FAST Distance Checking
 ---------------------------------------------------------------------------- */
-private _candidates = markersX + milAdministrationsX + mrkAntennas + ["Synd_HQ", "synd_hq", "TraderMarker", "tradermarker", "RallyPointMarker", "rallypointmarker"];
+private _playerMarkers = allMapMarkers select { _x find "A3A_playerMrk_" == 0 };
+private _candidates = markersX + milAdministrationsX + mrkAntennas + ["Synd_HQ", "synd_hq", "TraderMarker", "tradermarker", "RallyPointMarker", "rallypointmarker"] + _playerMarkers;
 
 {
     if (_x in controlsX) then { continue; };
@@ -130,9 +131,11 @@ if (_nearestMarker != "" && {_nearestDistanceSquared <= _thresholdSq}) then {
         _mapDisplay setVariable ["A3U_tipFadeInStart", diag_tickTime];
         _mapDisplay setVariable ["A3U_tipFadeOutStart", -1];
 
-        missionNamespace setVariable ["A3U_suppressNetworkForUI", true];
-        [_origNearest] call A3A_fnc_mrkUpdate;
-        missionNamespace setVariable ["A3U_suppressNetworkForUI", false];
+        if (_origNearest find "A3A_playerMrk_" != 0) then {
+            missionNamespace setVariable ["A3U_suppressNetworkForUI", true];
+            [_origNearest] call A3A_fnc_mrkUpdate;
+            missionNamespace setVariable ["A3U_suppressNetworkForUI", false];
+        };
 
         _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
     };
@@ -151,13 +154,34 @@ if (_nearestMarker != "" && {_nearestDistanceSquared <= _thresholdSq}) then {
 
     private _hoverTextRaw = "";
     private _flagMarkerType = "";
+    private _isPlayerMrk = _origNearest find "A3A_playerMrk_" == 0;
 
-    if !(_markerMetadata isEqualTo [] || {count _markerMetadata < 1}) then {
-        _hoverTextRaw = _markerMetadata param [0, "", [""]];
-        _flagMarkerType = _markerMetadata param [1, "", [""]];
+    if (_isPlayerMrk) then {
+        private _unit = missionNamespace getVariable [(_origNearest + "_unit"), objNull];
+        if (!isNull _unit) then {
+            private _rankText = [_unit, "displayName"] call BIS_fnc_rankParams;
+            _hoverTextRaw = format ["%1 %2", _rankText, name _unit];
+            
+            private _side = side group _unit;
+            private _markerFaction = switch (_side) do {
+                case Occupants: { missionNamespace getVariable ["A3A_faction_occ", createHashMap] };
+                case Invaders: { missionNamespace getVariable ["A3A_faction_inv", createHashMap] };
+                case teamPlayer; case resistance: { missionNamespace getVariable ["A3A_faction_reb", createHashMap] };
+                case civilian: { missionNamespace getVariable ["A3A_faction_civ", createHashMap] };
+                default { createHashMap };
+            };
+            _flagMarkerType = _markerFaction getOrDefault ["flagMarkerType", ""];
+        } else {
+            _hoverTextRaw = markerText _origNearest;
+        };
     } else {
-        _hoverTextRaw = markerText _origNearest;
-        if (_hoverTextRaw isEqualTo "") then { _hoverTextRaw = _origNearest; };
+        if !(_markerMetadata isEqualTo [] || {count _markerMetadata < 1}) then {
+            _hoverTextRaw = _markerMetadata param [0, "", [""]];
+            _flagMarkerType = _markerMetadata param [1, "", [""]];
+        } else {
+            _hoverTextRaw = markerText _origNearest;
+            if (_hoverTextRaw isEqualTo "") then { _hoverTextRaw = _origNearest; };
+        };
     };
 
     private _hoverTitle = _hoverTextRaw;
@@ -181,7 +205,7 @@ if (_nearestMarker != "" && {_nearestDistanceSquared <= _thresholdSq}) then {
         };
     };
 
-    if (!A3AU_setting_alwaysShowMarkerName) then {
+    if (!A3AU_setting_alwaysShowMarkerName || _isPlayerMrk) then {
         private _tooltipStructuredText = if (_iconPath != "") then {
             format ["<img image='%1' size='1.2'/> <t size='0.9' shadow='2'>%2</t>", _iconPath, _hoverTitle]
         } else {

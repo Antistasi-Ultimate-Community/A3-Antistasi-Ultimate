@@ -58,6 +58,7 @@ class CfgFunctions
             class markerBrowser {};
             class markerContextMenu {};
             class mrkUpdateBulk {};
+            class playerContextMenu {};
         };
         class REINF
         {

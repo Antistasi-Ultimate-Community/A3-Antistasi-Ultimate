@@ -46,6 +46,12 @@ private _clearContextMenus = {
         ctrlDelete _garrisonGroup;
         _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
     };
+    
+    private _playerMenuGroup = _display getVariable ["A3U_playerMenu_grp", controlNull];
+    if (!isNull _playerMenuGroup) then {
+        ctrlDelete _playerMenuGroup;
+        _display setVariable ["A3U_playerMenu_grp", controlNull];
+    };
 };
 
 private _clearHoverState = {
@@ -93,8 +99,9 @@ if (_attachTooltip) then {
 
         private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
         private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
+        private _playerMenuGroup = _display getVariable ["A3U_playerMenu_grp", controlNull];
 
-        if (!isNull _menuGroup || {!isNull _garrisonGroup}) then {
+        if (!isNull _menuGroup || {!isNull _garrisonGroup} || {!isNull _playerMenuGroup}) then {
             private _mousePosition = getMousePosition;
             private _mouseX = _mousePosition # 0;
             private _mouseY = _mousePosition # 1;
@@ -110,14 +117,22 @@ if (_attachTooltip) then {
                 private _pos = ctrlPosition _garrisonGroup;
                 _mouseInsideGarrison = (_mouseX >= _pos#0 && _mouseX <= _pos#0 + _pos#2 && _mouseY >= _pos#1 && _mouseY <= _pos#1 + _pos#3);
             };
+            
+            private _mouseInsidePlayerMenu = false;
+            if (!isNull _playerMenuGroup) then {
+                private _pos = ctrlPosition _playerMenuGroup;
+                _mouseInsidePlayerMenu = (_mouseX >= _pos#0 && _mouseX <= _pos#0 + _pos#2 && _mouseY >= _pos#1 && _mouseY <= _pos#1 + _pos#3);
+            };
 
-            if (_mouseInsideMenu || {_mouseInsideGarrison}) exitWith {};
+            if (_mouseInsideMenu || {_mouseInsideGarrison} || {_mouseInsidePlayerMenu}) exitWith {};
 
             if (!isNull _menuGroup) then { ctrlDelete _menuGroup; };
             if (!isNull _garrisonGroup) then { ctrlDelete _garrisonGroup; };
+            if (!isNull _playerMenuGroup) then { ctrlDelete _playerMenuGroup; };
 
             _display setVariable ["A3U_mrkMenu_grp", controlNull];
             _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
+            _display setVariable ["A3U_playerMenu_grp", controlNull];
             _display setVariable ["A3U_mrkMenu_marker", ""];
         };
 
@@ -135,7 +150,15 @@ if (_attachTooltip) then {
             _display setVariable ["A3U_tipHoverScreen", []];
         };
 
-        [_hoveredMarker, _hoverScreenPosition] call A3U_fnc_markerContextMenu;
+        if (_originalMarker find "A3A_playerMrk_" == 0) then {
+            private _unit = missionNamespace getVariable [(_originalMarker + "_unit"), objNull];
+            if (!isNull _unit) then {
+                [_unit, _hoverScreenPosition] call A3U_fnc_playerContextMenu;
+            };
+        } else {
+            [_hoveredMarker, _hoverScreenPosition] call A3U_fnc_markerContextMenu;
+        };
+
         _display setVariable ["A3U_tipRippleStart", diag_tickTime];
     }];
 
