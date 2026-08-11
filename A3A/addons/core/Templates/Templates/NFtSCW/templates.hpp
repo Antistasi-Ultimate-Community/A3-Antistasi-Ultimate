@@ -3,7 +3,7 @@
         requiredAddons[] = {"NORTH_Main", "weapons_f_vietnam", "NFCW_fn"};
         basepath = QPATHTOFOLDER(Templates\Templates\NFtSCW);
         logo = QPATHTOFOLDER(Templates\Templates\NFtS\NFtS_logo.paa);
-        priority = 18;
+        priority = 28;
         equipFlags[] = {"lowTech"};
     };	
 
