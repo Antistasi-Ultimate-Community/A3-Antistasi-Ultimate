@@ -30,3 +30,11 @@
         name = "NFtSCW FIN";
         file = "NFtSCW_Reb_FIN_Temperate";
     };
+	
+	class NFTSCW_CIV_FIN : NFTSCW_Base
+    {
+        side = "Civ";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\NFtS\flag_finland.paa);
+        name = "NFtSCW Civilians";
+        file = "NFtSCW_CIV";
+    };
