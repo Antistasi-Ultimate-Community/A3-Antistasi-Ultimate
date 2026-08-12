@@ -13061,13 +13061,29 @@
                 <French>Attraper le largage</French>
                 <Turkish>İkmal Paketini Yakala</Turkish>
             </Key>
-            <Key ID="STR_A3A_Missions_DES_Airdrop_task_desc">
+            <Key ID="STR_A3A_Missions_LOG_Airdrop_task_desc">
                 <Original>A plane will drop some cargo at %1. Go there and throw any smoke grenade on ground, the pilot will notice the signal and drop the cargo. Bring the cargo back to HQ. Do this before %2.</Original>
                 <Russian>Наш самолёт сбросит полезный груз на %1. Идите туда и укажите точную позицию сброса любой дымовой гранатой, пилот заметит сигнал и сбросит груз. Привезите груз в штаб. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们的飞机将在 %1 空投一些货物。 去那里并在地面上扔任何烟雾弹，飞行员会注意到信号并放下货物。 把货物运到总部。 在 %2 之前执行此任务。</Chinesesimp>
                 <Korean>우리 비행기가 %1에서 어떤 화물을 떨어뜨릴 것입니다. 가서 아무 연막탄을 땅에 던지면 조종사가 신호를 알아보고 화물을 떨굴 것입니다. 화물을 본부로 가져오십시오. %2 이전에 완료하십시오.</Korean>
                 <French>Notre avion va déposer une cargaison à %1. Allez-y et lancez une grenade fumigène sur le sol, le pilote remarquera le signal et larguera la cargaison. Apportez la cargaison au QG. Faites-le avant %2.</French>
                 <Turkish>Bir uçak %1 mevkisine kargo bırakacak. Oraya gidin ve yere bir sis bombası atın; pilot sinyali fark edecek ve kargoyu bırakacaktır. Kargoyu karargaha geri getirin. Bunu %2 vaktinden önce yapın.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Delivery_task_header">
+                <Original>Deliver Cargo</Original>
+                <Russian>Доставьте груз</Russian>
+                <Chinesesimp>运送货物</Chinesesimp>
+                <Korean>화물 운송</Korean>
+                <French>Livrer la cargaison</French>
+                <Turkish>Kargoyu Teslim Et</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Delivery_task_desc">
+                <Original>You have been hired to deliver cargo to %1. The cargo has been prepared at %2.</Original>
+                <Russian>Вас наняли для доставки груза в %1. Груз был подготовлен в %2.</Russian>
+                <Chinesesimp>您已被雇佣将货物运送到 %1。 货物已在 %2 准备好。</Chinesesimp>
+                <Korean>%1으로 화물을 운송하도록 고용되었습니다. 화물은 %2에서 준비되었습니다.</Korean>
+                <French>Vous avez été engagé pour livrer une cargaison à %1. La cargaison a été préparée à %2.</French>
+                <Turkish>%1 mevkisine kargo teslim etmek için işe alındınız. Kargo %2 mevkisinde hazırlanmıştır.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Ammo_task_header">
                 <Original>Steal or Destroy Ammo Truck</Original>
@@ -14293,6 +14309,13 @@
                 <Chinesesimp>保护VIP</Chinesesimp>
                 <Korean>VIP 보호</Korean>
                 <French>VIP protégé</French>
+            </Key>
+            <Key ID="STR_antistasi_actions_acknowledge_cargo">
+                <Original>Acknowledge Cargo</Original>
+                <Russian>Подтвердить получение груза</Russian>
+                <Chinesesimp>确认货物</Chinesesimp>
+                <Korean>화물 확인</Korean>
+                <French>Confirmer la cargaison</French>
             </Key>
             <Key ID="STR_antistasi_actions_car_bomb_disarm">
                 <Original>Disarm car bomb</Original>

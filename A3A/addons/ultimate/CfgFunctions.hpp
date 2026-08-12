@@ -59,6 +59,14 @@ class CfgFunctions
             class markerContextMenu {};
             class mrkUpdateBulk {};
         };
+        class missions
+        {
+            file = QPATHTOFOLDER(functions\missions);
+            class LOG_delivery_createCargo {};
+            class LOG_delivery_getCargo {};
+            class LOG_delivery_getCargoExplosive {};
+            class LOG_delivery_getCargoValue {};
+        };
         class REINF
         {
             file = QPATHTOFOLDER(functions\REINF);

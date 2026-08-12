@@ -5,6 +5,7 @@ class CfgFunctions
     {
         class AI {
             file = QPATHTOFOLDER(functions\AI);
+            class acknowledgeCargo {};
             class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
@@ -470,6 +471,7 @@ class CfgFunctions
             class findIfNearAndHostile {};
             class LOG_Airdrop {};
             class LOG_Crashsite {};
+            class LOG_Delivery {};
             class LOG_Helicrash {};
             class missionRequest {};
             class REP_Antenna {};

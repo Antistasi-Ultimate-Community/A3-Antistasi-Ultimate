@@ -201,6 +201,13 @@ switch _typeX do
             localize "STR_antistasi_actions_protect_vip"
         ], A3A_fnc_liberateVIP,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
     };
+    case "cargo":
+    {
+        _flag addAction [format [
+            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_bind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", // Change this
+            localize "STR_antistasi_actions_acknowledge_cargo"
+        ], A3A_fnc_acknowledgeCargo,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target && {_target getVariable ['A3A_cargo_acknowledged', false] isEqualTo false}",4];
+    };
     case "captureX":
     {
         // Uses the optional param to determine whether the call of captureX is a release or a recruit
