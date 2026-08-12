@@ -721,10 +721,10 @@ private _mgs = if (_hasWs) then {
     ];
 } else {
     [
-        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
-        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "optic_ACO_grn", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
-        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "optic_MRCO", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
-        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "optic_Arco_blk_F", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""]
+        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "optic_ACO_grn", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "optic_MRCO", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+        ["Atlas_LMG_Negev_black_F", "", "acc_flashlight", "optic_Arco_blk_F", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""]
     ];
 };
 
