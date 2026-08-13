@@ -236,7 +236,6 @@ if (!_busy) then {
 		if(_spawnParameter isEqualType []) then {
 			private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
 			private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
-			private _uavsAttack = _faction getOrDefault ["uavsAttack", []];
 
 			private _vehPool = [];
 			{
@@ -249,10 +248,6 @@ if (!_busy) then {
 			    _vehPool pushBack 1;
 			} forEach _vehiclesPlanesAA;
 
-			{
-			    _vehPool pushBack _x;
-			    _vehPool pushBack A3A_UAVSpawnChance;
-			} forEach _uavsAttack;
 			_spawnsUsed pushBack _spawnParameter#2;
 			_typeVehX = selectRandomWeighted _vehPool;
 			_veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
@@ -280,8 +275,8 @@ if (!_busy) then {
 				private _vehiclesPlanesLargeAA = _faction get "vehiclesPlanesLargeAA";
 				private _vehiclesPlanesTransport = _faction get "vehiclesPlanesTransport";
 				private _vehiclesPlanesGunship = _faction getOrDefault ["vehiclesPlanesGunship", []];
-				private _uavsAttack = _faction getOrDefault ["uavsAttack", []];
 				private _vehPool = [];
+
 				{
 				    _vehPool pushBack _x;
 				    _vehPool pushBack 0.7;
@@ -290,26 +285,27 @@ if (!_busy) then {
 				    _vehPool pushBack _x;
 				    _vehPool pushBack 0.7;
 				} forEach _vehiclesPlanesAA;
+
 				{
 				    _vehPool pushBack _x;
 				    _vehPool pushBack 1;
 				} forEach _vehiclesPlanesLargeCAS;
+
 				{
 				    _vehPool pushBack _x;
 				    _vehPool pushBack 1;
 				} forEach _vehiclesPlanesLargeAA;
+
 				{
 				    _vehPool pushBack _x;
 				    _vehPool pushBack 1;
 				} forEach _vehiclesPlanesTransport;
+
 				{
 				    _vehPool pushBack _x;
 				    _vehPool pushBack 0.5;
 				} forEach _vehiclesPlanesGunship;
-				{
-				    _vehPool pushBack _x;
-				    _vehPool pushBack ((A3A_UAVSpawnChance - 10) max 0);
-				} forEach _uavsAttack;
+
 				_typeVehX = selectRandomWeighted _vehPool;
 				if (!isNil "_typeVehX") then {
 					_veh = createVehicle [_typeVehX, _pos, [],50, "NONE"];

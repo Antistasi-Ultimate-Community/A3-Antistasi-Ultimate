@@ -1,4 +1,46 @@
-// Please for the love of god, use Allman indentation in massive config files like this. It's damn near impossible to decipher classes in K&R
+// Please for the love of god, use Allman indentation in massive config files like this. It's damn near impossible to decipher classes in K&R with 1000 lines
+
+
+class HouseBase;
+class A3U_StaticHolderBase: HouseBase
+{
+    destrType = "DestructNo";
+    scope = 0;
+    scopeCurator = 0;
+    editorCategory = "A3U_EditorCategory";
+    editorSubcategory = "A3U_EditorSubcategoryStatics";
+};
+
+class A3U_StaticHolderSmall: A3U_StaticHolderBase
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_small);
+    displayName = "Static Holder (Small)";
+    scope = 2;
+};
+
+class A3U_StaticHolderMediumAT: A3U_StaticHolderSmall
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_medium);
+    displayName = "Static Holder (Medium, AT)";
+};
+
+class A3U_StaticHolderMediumAA: A3U_StaticHolderSmall
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_medium);
+    displayName = "Static Holder (Medium, AA)";
+};
+
+class A3U_StaticHolderLargeAT: A3U_StaticHolderMediumAT
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_large);
+    displayName = "Static Holder (Large, AT)";
+};
+
+class A3U_StaticHolderLargeAA: A3U_StaticHolderMediumAA
+{
+    model = QPATHTOFOLDER(data\staticHolders\static_large);
+    displayName = "Static Holder (Large, AA)";
+};
 
 // Helipads
 class Helipad_base_F;
@@ -287,4 +329,25 @@ class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F
     {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
     };
+};
+
+class Land_VR_Shape_01_cube_1m_F;
+class GVAR(BaseSpawnHelper): Land_VR_Shape_01_cube_1m_F {
+    scope = 0;
+
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+
+    GVAR(spawnTypes)[] = {};
+    EGVAR(core,buildingPlacerCanPlace) = QUOTE(EGVAR(core,builderBubbleCenter) inArea QQUOTE(Synd_HQ));
+
+    class EventHandlers {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+    };
+};
+
+class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
+    scope = 2;
+    displayName = "Vehicle Spawn Helper";
+    GVAR(spawnTypes)[] = {"hc","mineSweep","outpost"};
 };

@@ -31,6 +31,11 @@ colorRivals = "ColorBrown";
 respawnTeamPlayer = "respawn_guerrila";
 posHQ = getMarkerPos respawnTeamPlayer;
 
+// Town Data
+
+private _cityData = ([false] call A3A_fnc_getCityData);
+A3A_townData = createHashMapFromArray (_cityData#1);
+
 ////////////////////////////////////////
 //     DECLARING PATCOM VARIABLES    ///
 ////////////////////////////////////////
@@ -205,7 +210,12 @@ A3A_milBuildingWhitelist = A3A_buildingWhitelist + [
 	"LAND_CSJ_gunpit",
 	"LAND_uns_weapon_pit",
 	"csj_VCbunk01",
-	"Land_Vil_Tower"
+	"Land_Vil_Tower",
+	"A3U_StaticHolderSmall",
+	"A3U_StaticHolderMediumAT",
+	"A3U_StaticHolderMediumAA",
+	"A3U_StaticHolderLargeAT",
+	"A3U_StaticHolderLargeAA"
 ];
 A3A_buildingBlacklist = [
 	"Bridge_PathLod_base_F","Land_Slum_House03_F","Land_Bridge_01_PathLod_F","Land_Bridge_Asphalt_PathLod_F","Land_Bridge_Concrete_PathLod_F","Land_Bridge_HighWay_PathLod_F","Land_Bridge_01_F","Land_Bridge_Asphalt_F","Land_Bridge_Concrete_F","Land_Bridge_HighWay_F","Land_Canal_Wall_Stairs_F","warehouse_02_f",
@@ -334,7 +344,6 @@ A3A_medicalProps = [
 flareSounds = ["A3\Sounds_F\weapons\Flare_Gun\flaregun_1.wss", "A3\Sounds_F\weapons\Flare_Gun\flaregun_2.wss"];
 
 medicAnims = ["AinvPknlMstpSnonWnonDnon_medic_1","AinvPknlMstpSnonWnonDnon_medic0","AinvPknlMstpSnonWnonDnon_medic1","AinvPknlMstpSnonWnonDnon_medic2"];
-
 
 radioSoundsIn = ["a3\dubbing_radio_f\sfx\in2a.ogg", "a3\dubbing_radio_f\sfx\in2b.ogg", "a3\dubbing_radio_f\sfx\in2c.ogg"];
 radioSoundsMid = ["a3\dubbing_radio_f\sfx\radionoise1.ogg", "a3\dubbing_radio_f\sfx\radionoise2.ogg", "a3\dubbing_radio_f\sfx\radionoise3.ogg"];

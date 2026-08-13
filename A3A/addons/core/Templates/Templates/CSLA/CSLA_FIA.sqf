@@ -4,7 +4,7 @@
 
 ["name", "FIA"] call _fnc_saveToTemplate;
 
-["flag", "FIA_Flag"] call _fnc_saveToTemplate;
+["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", "\csla_misc\signs\flags\fia_flag.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 

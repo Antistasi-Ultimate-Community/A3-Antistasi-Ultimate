@@ -258,7 +258,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["PRACS_SLA_M88_Paratrooper_uniform"]];
-_eliteLoadoutData set ["slUniform", ["PRACS_SLA_M88_SL_uniform"]];
+_eliteLoadoutData set ["slUniforms", ["PRACS_SLA_M88_SL_uniform"]];
 _eliteLoadoutData set ["vests", ["PRACS_SLA_6B23_6sh92_L_Radio"]];
 _eliteLoadoutData set ["mgVests", ["PRACS_O_CIRAS_MG_SF"]];
 _eliteLoadoutData set ["medVests", ["PRACS_SLA_6sh92_R_SF"]];
@@ -310,7 +310,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["PRACS_SLA_M88_Guards_uniform"]];
-_militaryLoadoutData set ["slUniform", ["PRACS_SLA_M88_Guards_SL_uniform"]];
+_militaryLoadoutData set ["slUniforms", ["PRACS_SLA_M88_Guards_SL_uniform"]];
 _militaryLoadoutData set ["vests", ["PRACS_SLA_6b2_chicom"]];
 _militaryLoadoutData set ["mgVests", ["PRACS_SLA_6B23_6sh92"]];
 _militaryLoadoutData set ["medVests", ["PRACS_SLA_6B23_6sh92_L_Headset"]];

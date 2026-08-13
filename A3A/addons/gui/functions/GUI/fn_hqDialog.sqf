@@ -133,7 +133,7 @@ switch (_mode) do
 
         // Log attempt at accessing tab without permission
         if (_selectedTabIDC == -1) exitWith {
-            Error("Attempted to access non-existant tab: %1", _selectedTab);
+            Error_1("Attempted to access non-existant tab: %1", _selectedTab);
         };
 
         // Array of IDCs for all the tabs, including subtabs (like AI & player management)
@@ -226,7 +226,7 @@ switch (_mode) do
         private _deadPopulation = 0;
         {
             private _city = _x;
-            private _cityData = server getVariable _city;
+            private _cityData = A3A_townData get _city;
             _cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 
             _totalPopulation = _totalPopulation + _numCiv;
