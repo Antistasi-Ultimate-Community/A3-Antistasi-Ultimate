@@ -59,7 +59,9 @@ waitUntil {
 	((call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_positionX, 600, 600] isNotEqualTo []) || {dateToNumber date > _dateLimitNum}
 };
 
-if (dateToNumber date > _dateLimitNum) exitWith {};
+if (dateToNumber date > _dateLimitNum) exitWith {
+	[_taskId, "AS", "FAILED", true] call A3A_fnc_taskSetState;
+};
 
 private _mutant = ObjNull;
 private _groupSmasher = createGroup Invaders;

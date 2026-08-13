@@ -1,5 +1,47 @@
 # 11
 
+## 11.9.8
+
+### New Factions:
+N/A
+
+### Faction Updates:
+N/A
+
+### Localization:
+N/A
+
+### New Maps:
+N/A
+
+### Map Updates:
+N/A
+
+### New Features:
+N/A
+
+### Fixed:
+- Prevent RPT whitespace mayhem (#864)
+
+- Fix carry detach (#866)
+> Fixes releasing carried uncon body
+
+- Fix UAV side check on DS (#867)
+> This fixes the ability to garage manned UAVs when on a dedicated server
+
+- Fix bad copy-paste / var name in fn_initObject (#868)
+- Fix saving of utility items [fuel depot / drum, repair station, etc] (#869)
+- Fix all "slUniform" to "slUniforms" (#871)
+
+### Arms Dealer:
+N/A
+
+### Changes:
+N/A
+
+### Parameters:
+N/A
+
 ## 11.9.7
 
 ### New Factions:

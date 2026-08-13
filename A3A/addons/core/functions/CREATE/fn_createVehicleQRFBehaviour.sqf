@@ -226,7 +226,7 @@ else            // ground vehicle
         private _vehWP0 = [_crewGroup, count waypoints _crewGroup - 1];
         _vehWP0 setWaypointType "TR UNLOAD";
         _vehWP0 setWaypointBehaviour "AWARE";
-        _vehWP0 setWaypointStatements ["true", "if !(local this) exitWith {}; [vehicle this] call A3A_fnc_smokeCoverAuto"];
+        // _vehWP0 setWaypointStatements ["true", "if !(local this) exitWith {}; [vehicle this] call A3A_fnc_smokeCoverAuto"];
         private _vehWP1 = _crewGroup addWaypoint [_posDestination, 0];
         _vehWP1 setWaypointType "SAD";
         _vehWP1 setWaypointBehaviour "COMBAT";

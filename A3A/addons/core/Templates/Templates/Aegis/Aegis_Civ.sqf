@@ -158,8 +158,13 @@ if (_hasWs && {(toLowerANSI worldName) in ["sefrouramal", "takistan"]}) then {
     "U_lxWS_Tak_03_C"
   ];
 };
+private _vipUniforms = [
+    "U_C_Uniform_Formal_01_blue_F",
+    "U_C_Uniform_Formal_01_striped_F",
+    "U_C_Uniform_Formal_01_white_F"
+];
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 private _civhats = [
     "H_Bandanna_blu",
@@ -203,6 +208,8 @@ _loadoutData set ["pressHelmets", _pressHelmets];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["hgun_Mk26_F", "Aegis_hgun_P320_black_F", "hgun_G17_black_F","Aegis_hgun_Pistol_R57_F"]];
 
 
 private _manTemplate = {
@@ -236,8 +243,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]
