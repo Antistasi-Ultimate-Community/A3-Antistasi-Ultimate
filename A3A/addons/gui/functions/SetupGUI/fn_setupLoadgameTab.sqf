@@ -103,12 +103,18 @@ switch (_mode) do
         private _params = _saveData get "params";
         if (isNil "_params") then { _params = [] };               // getOrDefault doesn't work because input code may set nils
         if ((_sameMap and !cbChecked _newGameCtrl) or cbChecked _copyGameCtrl or cbChecked _oldParamsCtrl) then {
-            if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then { _display setVariable ["savedParams", _params] };
+            if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then { 
+                _display setVariable ["savedParams", _params];
+                ["fillParams"] call A3A_fnc_setupParamsTab;
+            };
         } else {
-            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then { _display setVariable ["savedParams", []] };
+            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then { 
+                _display setVariable ["savedParams", []];
+                ["fillParams"] call A3A_fnc_setupParamsTab;
+            };
         };
-        ["clearLBSelection", [[_display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM]]] call A3A_fnc_setupParamsTab;
-        ["fillParams"] call A3A_fnc_setupParamsTab;
+        // ["clearLBSelection", [[_display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM]]] call A3A_fnc_setupParamsTab;
+        // ["fillParams"] call A3A_fnc_setupParamsTab;
     };
 
     case ("setSaveData"):

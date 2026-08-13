@@ -222,6 +222,14 @@
         file = "CUP_Reb_WM";
         description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
     };
+    class CUP_Reb_AAF : CUP_Reb
+    {
+        name = "AAF Restorationists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_aaf_torn_co.paa);
+        file = "CUP_Reb_AAF";
+        description = "A militarized AAF remnant militia using surplus or outdated NATO and Soviet technology. Loyal to restoring the AAF. Consider this a more forgiving start than most.";
+        maps[] = {"altis"};
+    };
     class CUP_TKC : CUP_Base
     {
         side = "Civ";
@@ -355,7 +363,7 @@
         requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_LOM_Equipment", "Flex_CUP_NLAF_Faction"};
         side = "Occ";
         flagTexture = "Flex_CUP_NLAF_Faction\Data\Flag\NLOM_Flag_co.paa";
-        name = "CUP LC NLAF & UN Peacekeepers";
+        name = "CUP LC NLAF & UN";
         description = "After the successful independence from the south and the colonies, the north can count on neighboring allies and UN Peacekeepers. After the civil war, a mainly conscript but well-trained army was formed, even if the government's economic resources are not the best, the army can count on a good choice of vehicles and equipment. The army is composed mainly of motorized and mechanized units with good air support accompanied by a small support militia.";
         file = "CUP_AI_LC_NLAF";
     };
@@ -414,8 +422,18 @@
     {
         side = "Inv";
         flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
-        name = "CUP PLA";
+        name = "CUP PLA (Temperate)";
         file = "CUP_AI_PLA";
+        climate[] = {"temperate","tropical"};
+    };
+
+    class Flex_PLA_Arid : FlexPLA_Base
+    {
+        side = "Inv";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+        name = "CUP PLA (Arid)";
+        file = "CUP_AI_PLA_Arid";
+        climate[] = {"arid"};
     };
 
     class FlexFDF_Base : CUP_Base

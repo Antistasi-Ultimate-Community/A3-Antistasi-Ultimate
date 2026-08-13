@@ -303,6 +303,15 @@ class missionMenu: SimpleMenuBig
 			y = 0.584 * safezoneH + safezoneY;
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""SUPP"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
+
+		class randomButton: SimpleButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_random_text;
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.584 * safezoneH + safezoneY;
+			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""RAN"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
+		};
 	};
 };
 
@@ -355,7 +364,7 @@ class radioComm: SimpleMenuBigger
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_put_garage_tooltip;
-			action = "closeDialog 0; _target = cursorObject; if (isNull _target) then { _target = cursorTarget; }; [_target, clientOwner, call HR_GRG_dLock, player] remoteExec ['HR_GRG_fnc_addVehicleUAVCompat', 2];";
+			action = "closeDialog 0; _target = cursorObject; if (isNull _target) then { _target = cursorTarget; }; [_target, clientOwner, call HR_GRG_dLock, player] remoteExec ['HR_GRG_fnc_addVehicle', 2];";
 		};
 
 		class l4Button: SimpleButton

@@ -175,6 +175,71 @@
                 <Polish>Odbudowuje fabryki, zasoby, wieże radiowe i budynki wojskowe na wybranym markerze. Koszt 5000.</Polish>
                 <Turkish>Seçili işaretçideki fabrikaları, kaynakları, radyo kulelerini ve askeri binaları yeniden inşa eder. Maliyet: 5000.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_respawn_petros_text">
+                <Original>Respawn Petros</Original>
+                <French>Réapparaître Petros</French>
+                <Russian>Воскрешение Петроса</Russian>
+                <German>Petros zurücksetzen</German>
+                <Czech>Znovuzrození Petros</Czech>
+                <Chinesesimp>Petros 的重生</Chinesesimp>
+                <Korean>레스폰 페트로스</Korean>
+                <Italian>Rientro in gioco Petros</Italian>
+                <Spanish>Reaparecer, Petros</Spanish>
+                <Polish>Ożyw Petros</Polish>
+                <Turkish>Petros'u Yeniden Canlandır</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_respawn_petros_tooltip">
+                <Original>Set Petros' location near HQ in the event he has became stuck or inaccessible.</Original>
+                <French>Placer la position de Petros près du QG s'il est devenu coincé ou inaccessible.</French>
+                <Russian>Укажите местонахождение Петроса рядом со штабом на случай, если он застрял или к нему нет доступа.</Russian>
+                <German>Lege Petros Position nahe des HQ fest, falls er steckengeblieben ist, oder unerreichbar ist.</German>
+                <Czech>Nastavte polohu Petrose v blízkosti velitelství pro případ, že by uvízl nebo byl nedostupný.</Czech>
+                <Chinesesimp>将佩特罗斯的位置设在总部附近，以防他被卡住或无法联系。</Chinesesimp>
+                <Korean>페트로스가 갇히거나 접근할 수 없게 될 경우를 대비해, 본부 근처에 그의 위치를 설정해 두세요.</Korean>
+                <Italian>Imposta la posizione di Petros vicino al quartier generale nel caso in cui fosse rimasto bloccato o fosse irraggiungibile.</Italian>
+                <Spanish>Establece la ubicación de Petros cerca del cuartel general por si se ha quedado atascado o no se puede acceder a él.</Spanish>
+                <Polish>Ustal lokalizację Petrosa w pobliżu kwatery głównej na wypadek, gdyby utknął lub nie można było się z nim skontaktować.</Polish>
+                <Turkish>Petros’un sıkışmış ya da ulaşılamaz hale gelmesi durumunda, onun konumunu karargahın yakınına ayarlayın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_petros_respawned_text">
+                <Original>Petros respawned.</Original>
+                <French>Petros réapparu.</French>
+                <Russian>Петрос возродился.</Russian>
+                <German>Petros wurde zurückgesetzt.</German>
+                <Czech>Petros se znovu objevil.</Czech>
+                <Chinesesimp>佩特罗斯复活了。</Chinesesimp>
+                <Korean>페트로스가 부활했다.</Korean>
+                <Italian>Petros è ricomparso.</Italian>
+                <Spanish>Petros ha reaparecido.</Spanish>
+                <Polish>Petros odrodził się.</Polish>
+                <Turkish>Petros yeniden ortaya çıktı.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_hq_moving_text">
+                <Original>HQ is being moved. Cannot respawn Petros.</Original>
+                <French>QG est en train d'être déplacé. Petros ne peut pas réapparaître.</French>
+                <Russian>Штаб перемещается. Невозможно воскресить Петроса.</Russian>
+                <German>HQ wird verschoben. Petros kann nicht zurückgesetzt werden.</German>
+                <Czech>Hlavní základna se přesouvá. Petros se nemůže znovu objevit.</Czech>
+                <Chinesesimp>总部正在迁移。无法让佩特罗斯复活。</Chinesesimp>
+                <Korean>본부가 이전 중입니다. 페트로스를 리스폰할 수 없습니다.</Korean>
+                <Italian>Il quartier generale è in fase di trasferimento. Impossibile far riapparire Petros.</Italian>
+                <Spanish>Se está trasladando el cuartel general. No se puede reaparecer a Petros.</Spanish>
+                <Polish>Siedziba główna jest przenoszona. Nie można przywrócić Petrosa.</Polish>
+                <Turkish>Karargâh taşınıyor. Petros yeniden canlandırılamıyor.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_hq_button_petros_dead_text">
+                <Original>Petros is dead.</Original>
+                <French>Petros est mort.</French>
+                <Russian>Петрос умер.</Russian>
+                <German>Petros ist tot.</German>
+                <Czech>Petros je mrtvý.</Czech>
+                <Chinesesimp>彼得罗斯死了。</Chinesesimp>
+                <Korean>페트로스가 죽었다.</Korean>
+                <Italian>Petros è morto.</Italian>
+                <Spanish>Petros ha muerto.</Spanish>
+                <Polish>Petros nie żyje.</Polish>
+                <Turkish>Petros öldü.</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
                 <Original>Train Rebel Troops</Original>
                 <Russian>Тренировать повстанцев</Russian>
@@ -782,7 +847,6 @@
             </Key>
             <Key ID="STR_A3AU_downed_help">
                 <Original>I am injured comrades! Help!</Original>
-                <English>I am injured comrades! Help!</English>
                 <Russian>Я ранен, товарищи! Помогите!</Russian>
                 <Korean>나는 부상당했다, 동지들! 도움말!</Korean>
                 <Chinesesimp>我受伤了! 救命!</Chinesesimp>
@@ -3114,7 +3178,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_commander_options_name">
                 <Original>Commander Options</Original>
-                <English>Commander Options</English>
                 <Russian>Функции Командира</Russian>
                 <Korean>지휘관 옵션</Korean>
                 <French>Options du commandant</French>
@@ -6446,7 +6509,7 @@
                 <Chinesesimp>启用自我复苏</Chinesesimp>
                 <Turkish>Kendi kendini canlandırma yöntemleri etkinleştirildi</Turkish>
             </Key>
-            <Key ID="STR_A3A_Params_selfReviveMethods_title">
+            <Key ID="STR_A3A_Params_selfReviveMethods_desc">
                 <Original>No: Players cannot self-revive. Withstand: Players can self-revive if they have a first aid kit.</Original>
                 <Russian>Нет: Игроки не могут возрождаться самостоятельно. Выдержка: Игроки могут возрождаться самостоятельно, если у них есть аптечка.</Russian>
                 <Italian>Non: I giocatori non possono auto-rinascere. Resistere: I giocatori possono auto-rinascere se hanno un kit di pronto soccorso.</Italian>
@@ -6645,7 +6708,6 @@
             </Key>
             <Key ID="STR_A3AU_uncap_zombie_spawn">
                 <Original>Enable Uncapped Zombie Spawning</Original>
-                <English>Enable Uncapped Zombie Spawning</English>
                 <Russian>Включить неограниченное появление зомби</Russian>
                 <Korean>무제한 좀비 스폰 활성화</Korean>
                 <French>Activer la création de zombies non plafonnés</French>
@@ -6661,7 +6723,6 @@
             </Key>
             <Key ID="STR_A3AU_old_garrison_spawn">
                 <Original>Use Old Plus Garrison Spawning</Original>
-                <English>Use Old Plus Garrison Spawning</English>
                 <Russian>Использовать старую логику появления гарнизонов из Plus</Russian>
                 <Korean>기존 안티스타시 플러스 주둔지 스폰 사용</Korean>
                 <French>Utiliser la garnison Old Plus</French>
@@ -6692,7 +6753,6 @@
             </Key>
             <Key ID="STR_A3AU_radioman_support">
                 <Original>Support Caller</Original>
-                <English>Support Caller</English>
                 <Russian>Кто вызывает поддержку</Russian>
                 <Korean>지원 요청자</Korean>
                 <French>Appel de soutien</French>
@@ -6723,7 +6783,6 @@
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers_recon_plane_distance">
                 <Original>Recon Plane Zone Reveal Distance</Original>
-                <English>Recon Plane Zone Reveal Distance</English>
                 <Russian>Дистанция открытия маркеров самолётом разведки</Russian>
                 <French>Zone révélée par les avions de reconnaissance.</French>
                 <Korean>정찰기의 정찰 거리</Korean>
@@ -6752,7 +6811,6 @@
             </Key>
             <Key ID="STR_A3AU_total_victory_deprecated">
                 <Original>Total Victory (deprecated)</Original>
-                <English>Total Victory (deprecated)</English>
                 <Russian>Полная победа (устарел)</Russian>
                 <Chinesesimp>全面胜利(已弃用)</Chinesesimp>
                 <Korean>전체적 승리 (비사용)</Korean>
@@ -6760,7 +6818,6 @@
             </Key>
             <Key ID="STR_A3AU_total_victory">
                 <Original>Total Victory</Original>
-                <English>Total Victory</English>
                 <Russian>Полная победа</Russian>
                 <Chinesesimp>全面胜利</Chinesesimp>
                 <Korean>전체적 승리</Korean>
@@ -6775,7 +6832,6 @@
             </Key>
             <Key ID="STR_A3AU_political_victory">
                 <Original>Political Victory</Original>
-                <English>Political Victory</English>
                 <Russian>Политическая победа</Russian>
                 <Chinesesimp>政治胜利</Chinesesimp>
                 <Korean>정치적 승리</Korean>
@@ -6872,7 +6928,6 @@
             </Key>
             <Key ID="STR_A3AU_blackmarket_ignore_requirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
-                <English>Ignore Black Market Vehicle Requirements</English>
                 <Russian>Игнорировать условия разблокировки транспорта на чёрном рынке</Russian>
                 <Chinesesimp>取消黑市车辆解锁条件</Chinesesimp>
                 <Korean>암시장 차량 요구사항 무시</Korean>
@@ -6880,7 +6935,6 @@
             </Key>
             <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
-                <English>Notify Players When Downed</English>
                 <Russian>Уведомлять игроков при тяжёлом ранении</Russian>
                 <Chinesesimp>玩家倒地时提示</Chinesesimp>
                 <Korean>쓰러질 시 플레이어에게 알림</Korean>
@@ -6894,7 +6948,6 @@
             </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
-                <English>Disable Arms Dealer</English>
                 <Russian>Отключить торговца оружием</Russian>
                 <Chinesesimp>取消军火商</Chinesesimp>
                 <Korean>암거래상 비활성화</Korean>
@@ -6932,7 +6985,6 @@
             </Key>
             <Key ID="STR_A3AU_sway_enabled">
                 <Original>Weapon Sway % (Vanilla)</Original>
-                <English>Weapon Sway % (Vanilla)</English>
                 <Russian>Раскачивание оружия % (Vanilla)</Russian>
                 <Korean>무기 흔들림 % (바닐라)</Korean>
                 <French>% de balancement de l'arme (Vanilla)</French>
