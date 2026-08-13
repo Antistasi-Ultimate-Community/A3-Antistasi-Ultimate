@@ -12,6 +12,7 @@
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
+["attributeLowAir", true] call _fnc_saveToTemplate;
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type

@@ -20,7 +20,7 @@ FIX_LINE_NUMBERS()
     _x params ["_varName", "_index"];
     private _used = spawner getVariable [_varName, []];
     if (count _used <= _index) then {
-        Error_3("Invalid index %3 provided for varname %1", _varName, _index);
+        Error_2("Invalid index %1 provided for varname %2", _index, _varName);
         continue;
     };
     _used set [_index, false];

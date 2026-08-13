@@ -215,7 +215,7 @@ player addEventHandler ["FiredMan", {
         else {
             _city = [citiesX,_player] call BIS_fnc_nearestPosition;
             _size = [_city] call A3A_fnc_sizeMarker;
-            _dataX = server getVariable _city;
+            _dataX = A3A_townData get _city;
             if (random 100 < _dataX select 2) then {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
@@ -244,7 +244,7 @@ player addEventHandler ["InventoryOpened", {
             else {
                 _city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
                 _size = [_city] call A3A_fnc_sizeMarker;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 if (random 100 < _dataX select 2) then {
                     if (_playerX distance getMarkerPos _city < _size * 1.5) then {
                         [_playerX,false] remoteExec ["setCaptive",0,_playerX];
@@ -267,7 +267,7 @@ player addEventHandler ["HandleHeal", {
         else {
             _city = [citiesX,_player] call BIS_fnc_nearestPosition;
             _size = [_city] call A3A_fnc_sizeMarker;
-            _dataX = server getVariable _city;
+            _dataX = A3A_townData get _city;
             if (random 100 < _dataX select 2) then {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
@@ -339,11 +339,10 @@ player addEventHandler ["GetInMan", {
 
 private _blackMarketStock = call A3U_fnc_grabBlackMarketVehicles;
 
-if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualTo []) then {
+if ((_blackMarketStock get "ARTILLERY") isNotEqualTo createHashMap) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle"];
-		private _vehType = typeOf _vehicle;
-		private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+		private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery false;
@@ -352,7 +351,7 @@ if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualT
 
 	player addEventHandler ["GetOutMan", {
 		params ["_unit", "_role", "_vehicle"];
-        private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+        private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery true;
@@ -678,6 +677,10 @@ if (staminaEnabled isEqualTo false) then {
 
 private _newWeaponSway = swayEnabled / 100;
 player setCustomAimCoef _newWeaponSway;
+
+addMissionEventHandler ["Map", A3U_fnc_mapHoverEH];
+
+[markersX + milAdministrationsX + mrkAntennas] call A3U_fnc_mrkUpdateBulk;
 
 // Server requests player to provide their additional save data.
 // We only get a UUID which the server expects to be written to its mission

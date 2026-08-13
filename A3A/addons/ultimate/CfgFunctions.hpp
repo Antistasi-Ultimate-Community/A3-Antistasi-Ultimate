@@ -21,6 +21,16 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\cba);
             class settings {};
         };
+        class effects
+        {
+            file = QPATHTOFOLDER(functions\effects);
+            class createCrashedVehicle {};
+            class createDeadSoldier {};
+            class createDeadSoldiers {};
+            class createFire {};
+            class createFires {};
+            class damageBuilding {};
+        };
         class init
         {
             file = QPATHTOFOLDER(functions\init);
@@ -36,6 +46,19 @@ class CfgFunctions
             class isInMenu {};
             class menuImage {};
         };
+        class map
+        {
+            file = QPATHTOFOLDER(functions\map);
+            class mapHoverEH {};
+            class handleMrkUpdate {};
+            class isMarkerHidden {};
+            class mapHover {};
+            class mapTooltip {};
+            class tooltipCreate {};
+            class markerBrowser {};
+            class markerContextMenu {};
+            class mrkUpdateBulk {};
+        };
         class REINF
         {
             file = QPATHTOFOLDER(functions\REINF);
@@ -47,6 +70,7 @@ class CfgFunctions
         class patches
         {
             file = QPATHTOFOLDER(functions\patches);
+            class getTierModifier {};
             class IMS_stealthKill {};
         };
         class STALKER
@@ -90,6 +114,7 @@ class CfgFunctions
         {
             file = QPATHTOFOLDER(functions\zombie);
             class attackHeli {};
+            class handleZombieDeath {};
             class spawnZombie {};
             class spawnZombieCrater {};
             class spawnZombieRoar {};

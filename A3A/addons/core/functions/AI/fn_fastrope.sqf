@@ -40,7 +40,7 @@ if (canMove _veh) then {
 };
 if (alive _veh && canMove _veh) then
 {   
-	[_veh] call A3A_fnc_smokeCoverAuto;
+	// [_veh] call A3A_fnc_smokeCoverAuto;
 	{
 		if (!alive _x) then { continue };
 
