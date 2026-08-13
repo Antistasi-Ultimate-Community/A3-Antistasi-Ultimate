@@ -278,7 +278,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["SCE_Freedom_3"]];
-_eliteLoadoutData set ["slUniform", ["SCE_Freedom_2"]];
+_eliteLoadoutData set ["slUniforms", ["SCE_Freedom_2"]];
 _eliteLoadoutData set ["vests", ["CUP_V_B_GER_Carrier_Vest_3"]];
 _eliteLoadoutData set ["mgVests", ["CUP_V_B_GER_PVest_Fleck_MG"]];
 _eliteLoadoutData set ["medVests", ["CUP_V_B_GER_PVest_Fleck_Med"]];
@@ -346,7 +346,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["SCE_Freedom_3"]];
-_militaryLoadoutData set ["slUniform", ["SCE_Freedom_2"]];
+_militaryLoadoutData set ["slUniforms", ["SCE_Freedom_2"]];
 _militaryLoadoutData set ["vests", ["CUP_V_B_GER_Carrier_Vest_3"]];
 _militaryLoadoutData set ["mgVests", ["CUP_V_B_GER_PVest_Fleck_MG"]];
 _militaryLoadoutData set ["medVests", ["CUP_V_B_GER_PVest_Fleck_Med"]];

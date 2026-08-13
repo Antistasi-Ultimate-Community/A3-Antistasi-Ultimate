@@ -45,13 +45,15 @@ _ammobox setDir 115;
 [rallyPointRoot, [0, 0, -0.5], 0.2] remoteExec ["SCRT_fnc_common_attachLightSource", 0, rallyPointRoot];
 
 rallyPointMarker = createMarker ["RallyPointMarker", _rootPos];
-rallyPointMarker setMarkerType "hd_join";
+rallyPointMarker setMarkerType "A3AU_fasttravel_mrk";
 rallyPointMarker setMarkerSize [1, 1];
-rallyPointMarker setMarkerText (format [localize "STR_marker_RP", str rallyPointSpawnCount]);
+rallyPointMarker setMarkerText "";
 rallyPointMarker setMarkerColor "colorIndependent";
 rallyPointMarker setMarkerAlpha 1;
 sidesX setVariable [rallyPointMarker,teamPlayer,true];
 publicVariable "rallyPointMarker";
+
+[rallyPointMarker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 
 rallyProps append [_backpack1, _backpack2, _bag, _ammobox];
 publicVariable "rallyProps";

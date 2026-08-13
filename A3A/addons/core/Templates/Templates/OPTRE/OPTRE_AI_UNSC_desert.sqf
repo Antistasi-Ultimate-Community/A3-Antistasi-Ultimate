@@ -273,7 +273,7 @@ _sfLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Tw
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 if (["MA_Armor"] call A3U_fnc_hasAddon) then {
     _eliteLoadoutData set ["uniforms", ["MA_M56S_BDU"]];
-    _eliteLoadoutData set ["slUniform", ["MA_M56S_BDU"]];
+    _eliteLoadoutData set ["slUniforms", ["MA_M56S_BDU"]];
     _eliteLoadoutData set ["vests", ["MA_M56R_Vest"]];
     _eliteLoadoutData set ["mgVests", ["MA_M56R_CQB_Vest"]];
     _eliteLoadoutData set ["medVests", ["MA_M56S_Medic_Vest"]];
@@ -287,7 +287,7 @@ if (["MA_Armor"] call A3U_fnc_hasAddon) then {
     _eliteLoadoutData set ["sniHats", ["MA_M56A_Helmet_Red_Visor"]];
 } else {
     _eliteLoadoutData set ["uniforms", ["OPTRE_UNSC_ODST_Uniform"]];
-    _eliteLoadoutData set ["slUniform", ["OPTRE_UNSC_ODST_Uniform"]];
+    _eliteLoadoutData set ["slUniforms", ["OPTRE_UNSC_ODST_Uniform"]];
     _eliteLoadoutData set ["vests", ["OPTRE_UNSC_M52D_Armor"]];
     _eliteLoadoutData set ["mgVests", ["OPTRE_UNSC_M52D_Armor_Rifleman"]];
     _eliteLoadoutData set ["medVests", ["OPTRE_UNSC_M52D_Armor_Medic"]];
@@ -339,7 +339,7 @@ _eliteLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["OPTRE_UNSC_Army_Uniform_DES"]];
-_militaryLoadoutData set ["slUniform", ["OPTRE_UNSC_Army_Uniform_DES"]];
+_militaryLoadoutData set ["slUniforms", ["OPTRE_UNSC_Army_Uniform_DES"]];
 _militaryLoadoutData set ["vests", ["OPTRE_UNSC_M52A_Armor_Rifleman_DES"]];
 _militaryLoadoutData set ["mgVests", ["OPTRE_UNSC_M52A_Armor_MG_DES"]];
 _militaryLoadoutData set ["medVests", ["OPTRE_UNSC_M52A_Armor_Corpsman_MAR"]];
