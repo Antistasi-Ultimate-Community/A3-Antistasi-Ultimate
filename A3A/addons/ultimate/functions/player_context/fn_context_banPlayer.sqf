@@ -39,7 +39,7 @@ _bg ctrlSetPosition [0, 0, _w, _h]; _bg ctrlSetBackgroundColor [0.12, 0.12, 0.12
 
 private _title = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _title ctrlSetPosition [0, 0, _w, 0.026 * safeZoneH]; _title ctrlSetBackgroundColor [0.6, 0.1, 0.1, 1];
-_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>Reason for %1</t>", _actionType]; _title ctrlCommit 0;
+_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", format [localize "STR_A3AU_player_context_reason_for", _actionType]]; _title ctrlCommit 0;
 
 private _edit = _display ctrlCreate ["RscEdit", -1, _grp];
 _edit ctrlSetPosition [0.005 * safeZoneW, 0.032 * safeZoneH, _w - (0.01 * safeZoneW), 0.02 * safeZoneH];
@@ -47,7 +47,7 @@ _edit ctrlSetBackgroundColor [0, 0, 0, 0.5]; _edit ctrlCommit 0;
 
 private _confirm = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _confirm ctrlSetPosition [0.005 * safeZoneW, 0.055 * safeZoneH, _w - (0.01 * safeZoneW), 0.02 * safeZoneH];
-_confirm ctrlSetStructuredText parseText format ["<t align='center' size='0.85'>CONFIRM %1</t>", _actionType];
+_confirm ctrlSetStructuredText parseText format ["<t align='center' size='0.85'>%1</t>", format [localize "STR_A3AU_player_context_confirm_action", _actionType]];
 _confirm ctrlSetBackgroundColor [0, 0, 0, 0.4]; _confirm ctrlCommit 0;
 
 _confirm setVariable ["A3U_InputCtrl", _edit]; _confirm setVariable ["A3U_Target", _target]; _confirm setVariable ["A3U_Grp", _grp]; _confirm setVariable ["A3U_Type", _actionType];
@@ -59,10 +59,10 @@ _confirm ctrlAddEventHandler ["MouseButtonDown", {
     private _t = _ctrl getVariable "A3U_Target"; private _edit = _ctrl getVariable "A3U_InputCtrl"; private _type = _ctrl getVariable "A3U_Type";
     
     private _reason = ctrlText _edit;
-    if (_reason == "") then { _reason = "No reason specified."; };
+    if (_reason == "") then { _reason = localize "STR_A3AU_player_context_no_reason"; };
     
     if (_type == "BAN") then {
-        systemChat format ["Banning %1: %2", name _t, _reason];
+        [format [localize "STR_A3AU_player_context_banning_log", name _t, _reason], "WARNING"] spawn A3U_fnc_context_popup;
         serverCommand format ["#exec ban %1", name _t];
     };
     

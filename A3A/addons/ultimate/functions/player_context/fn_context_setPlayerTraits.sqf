@@ -37,7 +37,6 @@ private _tGrp = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
 _tGrp ctrlSetPosition [_tX, _tY, _tW, _tH];
 _tGrp ctrlCommit 0;
 
-// Register this popup to the Unified Auto-Close listener
 _display setVariable ["A3U_OpenContextPanels", (_display getVariable ["A3U_OpenContextPanels", []]) + [_tGrp]];
 _display setVariable ["A3U_ContextMenu_SpawnTime", diag_tickTime];
 
@@ -49,7 +48,7 @@ _bg ctrlCommit 0;
 private _title = _display ctrlCreate ["RscStructuredText", -1, _tGrp];
 _title ctrlSetPosition [0, 0, _tW, 0.026 * safeZoneH];
 _title ctrlSetBackgroundColor [0.18, 0.50, 0.20, 1];
-_title ctrlSetStructuredText parseText "<t align='center' size='0.9' valign='middle'>Manage Traits</t>";
+_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", localize "STR_A3AU_player_context_manage_traits"];
 _title ctrlCommit 0;
 
 private _closeBtn = _display ctrlCreate ["RscStructuredText", -1, _tGrp];
@@ -61,10 +60,10 @@ _closeBtn setVariable ["A3U_Grp", _tGrp];
 _closeBtn ctrlAddEventHandler ["MouseButtonDown", { ctrlDelete ((_this#0) getVariable "A3U_Grp"); }];
 
 private _traits = [
-    ["Medic", "medic"],
-    ["Explosives Spec.", "explosiveSpecialist"],
-    ["UAV Hacker", "UAVHacker"],
-    ["Engineer", "engineer"]
+    [localize "STR_A3AU_player_context_trait_medic", "medic"],
+    [localize "STR_A3AU_player_context_trait_explosives", "explosiveSpecialist"],
+    [localize "STR_A3AU_player_context_trait_uav", "UAVHacker"],
+    [localize "STR_A3AU_player_context_trait_engineer", "engineer"]
 ];
 
 private _cY = 0.03 * safeZoneH;
@@ -105,7 +104,9 @@ private _cY = 0.03 * safeZoneH;
         
         _ctrl setVariable ["A3U_HasTrait", _newStatus];
         _ctrl ctrlSetBackgroundColor (if (_newStatus) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] });
-        systemChat format ["%1 trait '%2' set to %3", name _t, _key, _newStatus];
+        
+        private _theme = if (_newStatus) then { "SUCCESS" } else { "ERROR" };
+        [format [localize "STR_A3AU_player_context_trait_set_log", name _t, _key, _newStatus], _theme] spawn A3U_fnc_context_popup;
     }];
     _cY = _cY + 0.025 * safeZoneH;
 } forEach _traits;

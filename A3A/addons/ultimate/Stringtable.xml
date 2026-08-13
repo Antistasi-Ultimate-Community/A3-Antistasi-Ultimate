@@ -920,6 +920,296 @@
             <Spanish>No se pueden guarnecer unidades en el punto de reunión.</Spanish>
             <Polish>Nie można umieszczać jednostek w garnizonie na punkcie zbornym.</Polish>
         </Key>
+    </Package>
+    <Package name="Player-Context-Menu">
+        <!-- ============================================== -->
+        <!-- SHARED POPUP UI (Kick, Ban, Force Lobby)       -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_reason_for">
+            <Original>Reason for %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_action">
+            <Original>CONFIRM %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_no_reason">
+            <Original>No reason specified.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_banning_log">
+            <Original>Banning %1: %2</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_kicking_log">
+            <Original>Kicking %1: %2</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_reason_lobby">
+            <Original>Reason for Lobby Drop</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_return">
+            <Original>CONFIRM RETURN</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_forced_lobby">
+            <Original>Forced back to lobby by Admin.</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- TRANSFER FUNDS PANEL                           -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_amount_transfer">
+            <Original>Amount to Transfer</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_button">
+            <Original>Confirm</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transferred_funds">
+            <Original>Transferred $%1 to %2.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_error_funds">
+            <Original>Error: Faction does not have enough funds.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_error_positive">
+            <Original>Error: Amount must be a positive number.</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- PUNISHMENT PANEL                               -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_punish_player">
+            <Original>Punish Player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_time_sec">
+            <Original>Time (s):</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_offence_pct">
+            <Original>Offence %:</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_reason_label">
+            <Original>Reason:</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_admin_action">
+            <Original>Admin Action</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_punishment">
+            <Original>CONFIRM PUNISHMENT</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_punished_log">
+            <Original>Punished %1 for %2s (%3%% offence). Reason: %4</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- QRF DISPATCH PANEL                             -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_dispatch_qrf">
+            <Original>Dispatch QRF on %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_faction_label">
+            <Original>Faction:</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_occupants">
+            <Original>Occupants</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_invaders">
+            <Original>Invaders</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_type_label">
+            <Original>Type:</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_ground_transport">
+            <Original>Ground Transport</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_air_transport">
+            <Original>Air Transport</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_attack_cas">
+            <Original>Attack CAS</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_launch_qrf">
+            <Original>LAUNCH QRF</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_dispatched_qrf">
+            <Original>Dispatched %1 %2 QRF to hunt %3.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_no_bases">
+            <Original>QRF Cancelled: No available bases found for this faction/type.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_no_assets">
+            <Original>QRF Cancelled: Faction failed to generate assets. They might lack the required vehicles.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_no_vehicles">
+            <Original>QRF Cancelled: 0 vehicles spawned.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_success">
+            <Original>QRF Successfully Dispatched &amp; En Route!</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- MANAGE TRAITS PANEL                            -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_manage_traits">
+            <Original>Manage Traits</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_medic">
+            <Original>Medic</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_explosives">
+            <Original>Explosives Spec.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_uav">
+            <Original>UAV Hacker</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_engineer">
+            <Original>Engineer</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_set_log">
+            <Original>%1 trait '%2' set to %3</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- MAIN CONTEXT MENU: PLAYER INFO                 -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_player_info">
+            <Original>Player Info</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_name">
+            <Original>Name: %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_uid">
+            <Original>UID: %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_funds">
+            <Original>Funds: %1%2</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_role">
+            <Original>Role: %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_rank">
+            <Original>Rank: %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_copy_clipboard">
+            <Original>Copy to clipboard</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_copied_clipboard">
+            <Original>Copied to clipboard</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- MAIN CONTEXT MENU: PLAYER OPTIONS              -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_player_options">
+            <Original>Player Options</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transfer_funds">
+            <Original>Transfer Funds</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transfer_commander">
+            <Original>Transfer Commander</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_commander_transferred">
+            <Original>Commander transferred to %1.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transfer_faction_funds">
+            <Original>Transfer faction funds to player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_demote_tooltip">
+            <Original>Demote Player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_promote_tooltip">
+            <Original>Promote Player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_promoted_log">
+            <Original>%1 promoted to %2.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_demoted_log">
+            <Original>%1 demoted to %2.</Original>
+        </Key>
+
+        <!-- ============================================== -->
+        <!-- MAIN CONTEXT MENU: ADMIN SETTINGS              -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_admin_settings">
+            <Original>Admin Settings</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_toggle_membership">
+            <Original>Toggle server membership</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_force_undercover">
+            <Original>Force Toggle Undercover</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_undercover_on_log">
+            <Original>Forced Undercover ON for %1.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_undercover_on_player">
+            <Original>An Admin has forced your Undercover status ON.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_undercover_off_log">
+            <Original>Forced Undercover OFF for %1.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_undercover_off_player">
+            <Original>An Admin has forced your Undercover status OFF.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_request_qrf">
+            <Original>Request QRF to chase player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_give_traits">
+            <Original>Give or remove traits</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_punish_btn">
+            <Original>Punish player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_kick">
+            <Original>Kick</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_ban">
+            <Original>Ban</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_force_lobby">
+            <Original>Force player to lobby</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_promote_zeus">
+            <Original>Promote to zeus</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_zeus_granted">
+            <Original>You have been granted Zeus powers. Press 'Y'.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_zeus_log">
+            <Original>Promoted %1 to Zeus.</Original>
+        </Key>
+        
+        <!-- ============================================== -->
+        <!-- MESSAGE PLAYER PANEL                           -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_message_player">
+            <Original>Message player</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_message_title">
+            <Original>Message %1</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_message_label">
+            <Original>Message:</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_theme_label">
+            <Original>Theme:</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_theme_default">
+            <Original>Default (Yellow)</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_theme_success">
+            <Original>Success (Green)</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_theme_warning">
+            <Original>Warning (Orange)</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_theme_error">
+            <Original>Error (Red)</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_send_message">
+            <Original>SEND MESSAGE</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_message_empty">
+            <Original>Cannot send an empty message.</Original>
+        </Key>
+        <Key ID="STR_A3AU_player_context_message_sent">
+            <Original>Message sent to %1.</Original>
+        </Key>
+    </Package>
     <Package name="CBA-settings">
         <Key ID="STR_A3U_setting_enableInitMessages">
             <Original>Enable Init Messages</Original>

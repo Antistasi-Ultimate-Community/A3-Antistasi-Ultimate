@@ -38,7 +38,6 @@ private _inputGrp = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
 _inputGrp ctrlSetPosition [_inputX, _inputY, _inputW, _inputH];
 _inputGrp ctrlCommit 0;
 
-// NOTE: Fixed a minor bug here where it was trying to push `_grp` instead of `_inputGrp`!
 _display setVariable ["A3U_OpenContextPanels", (_display getVariable ["A3U_OpenContextPanels", []]) + [_inputGrp]];
 _display setVariable ["A3U_ContextMenu_SpawnTime", diag_tickTime];
 
@@ -50,7 +49,7 @@ _bg ctrlCommit 0;
 private _title = _display ctrlCreate ["RscStructuredText", -1, _inputGrp];
 _title ctrlSetPosition [0, 0, _inputW, 0.026 * safeZoneH];
 _title ctrlSetBackgroundColor [0.18, 0.50, 0.20, 1];
-_title ctrlSetStructuredText parseText "<t align='center' size='0.9' valign='middle'>Amount to Transfer</t>";
+_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", localize "STR_A3AU_player_context_amount_transfer"];
 _title ctrlCommit 0;
 
 private _edit = _display ctrlCreate ["RscEdit", -1, _inputGrp];
@@ -61,7 +60,7 @@ _edit ctrlCommit 0;
 
 private _confirm = _display ctrlCreate ["RscStructuredText", -1, _inputGrp];
 _confirm ctrlSetPosition [0.005 * safeZoneW, 0.055 * safeZoneH, _inputW - (0.01 * safeZoneW), 0.02 * safeZoneH];
-_confirm ctrlSetStructuredText parseText "<t align='center' size='0.85'>Confirm</t>";
+_confirm ctrlSetStructuredText parseText format ["<t align='center' size='0.85'>%1</t>", localize "STR_A3AU_player_context_confirm_button"];
 _confirm ctrlSetBackgroundColor [0, 0, 0, 0.4];
 _confirm ctrlCommit 0;
 
@@ -89,12 +88,12 @@ _confirm ctrlAddEventHandler ["MouseButtonDown", {
         if (_amount <= _factionFunds) then {
             [0, -_amount] remoteExec ["A3A_fnc_resourcesFIA", 2];
             [_amount, _target, true] call A3A_fnc_addMoneyPlayer;
-            systemChat format ["Transferred $%1 to %2.", _amount, name _target];
+            [format [localize "STR_A3AU_player_context_transferred_funds", _amount, name _target], "SUCCESS"] spawn A3U_fnc_context_popup;
         } else {
-            systemChat "Error: Faction does not have enough funds.";
+            [localize "STR_A3AU_player_context_error_funds", "ERROR"] spawn A3U_fnc_context_popup;
         };
     } else {
-        systemChat "Error: Amount must be a positive number.";
+        [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_popup;
     };
     
     ctrlDelete _grp;

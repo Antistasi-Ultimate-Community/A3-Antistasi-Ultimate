@@ -50,7 +50,7 @@ _bg ctrlCommit 0;
 private _title = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _title ctrlSetPosition [0, 0, _w, 0.026 * safeZoneH];
 _title ctrlSetBackgroundColor [0.6, 0.1, 0.1, 1];
-_title ctrlSetStructuredText parseText format ["<t align='center' size='0.85' valign='middle'>Dispatch QRF on %1</t>", name _target];
+_title ctrlSetStructuredText parseText format ["<t align='center' size='0.85' valign='middle'>%1</t>", format [localize "STR_A3AU_player_context_dispatch_qrf", name _target]];
 _title ctrlCommit 0;
 
 // Close Button
@@ -67,14 +67,14 @@ private _padY = 0.032 * safeZoneH;
 // Faction Dropdown
 private _facLbl = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _facLbl ctrlSetPosition [0.005 * safeZoneW, _padY, 0.05 * safeZoneW, 0.02 * safeZoneH];
-_facLbl ctrlSetStructuredText parseText "<t size='0.8' valign='middle'>Faction:</t>";
+_facLbl ctrlSetStructuredText parseText format ["<t size='0.8' valign='middle'>%1</t>", localize "STR_A3AU_player_context_faction_label"];
 _facLbl ctrlCommit 0;
 
 private _facCombo = _display ctrlCreate ["RscCombo", -1, _grp];
 _facCombo ctrlSetPosition [0.06 * safeZoneW, _padY, _w - (0.065 * safeZoneW), 0.02 * safeZoneH];
 _facCombo ctrlCommit 0;
-private _idxOcc = _facCombo lbAdd "Occupants"; _facCombo lbSetData [_idxOcc, "Occupants"];
-private _idxInv = _facCombo lbAdd "Invaders";  _facCombo lbSetData [_idxInv, "Invaders"];
+private _idxOcc = _facCombo lbAdd (localize "STR_A3AU_player_context_occupants"); _facCombo lbSetData [_idxOcc, "Occupants"];
+private _idxInv = _facCombo lbAdd (localize "STR_A3AU_player_context_invaders");  _facCombo lbSetData [_idxInv, "Invaders"];
 _facCombo lbSetCurSel 0;
 
 _padY = _padY + 0.028 * safeZoneH;
@@ -82,15 +82,15 @@ _padY = _padY + 0.028 * safeZoneH;
 // QRF Type Dropdown
 private _typeLbl = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _typeLbl ctrlSetPosition [0.005 * safeZoneW, _padY, 0.05 * safeZoneW, 0.02 * safeZoneH];
-_typeLbl ctrlSetStructuredText parseText "<t size='0.8' valign='middle'>Type:</t>";
+_typeLbl ctrlSetStructuredText parseText format ["<t size='0.8' valign='middle'>%1</t>", localize "STR_A3AU_player_context_type_label"];
 _typeLbl ctrlCommit 0;
 
 private _typeCombo = _display ctrlCreate ["RscCombo", -1, _grp];
 _typeCombo ctrlSetPosition [0.06 * safeZoneW, _padY, _w - (0.065 * safeZoneW), 0.02 * safeZoneH];
 _typeCombo ctrlCommit 0;
-private _idxVeh = _typeCombo lbAdd "Ground Transport"; _typeCombo lbSetData [_idxVeh, "LAND"];
-private _idxHeli = _typeCombo lbAdd "Air Transport";    _typeCombo lbSetData [_idxHeli, "AIR"];
-private _idxCAS = _typeCombo lbAdd "Attack CAS";        _typeCombo lbSetData [_idxCAS, "CAS"];
+private _idxVeh = _typeCombo lbAdd (localize "STR_A3AU_player_context_ground_transport"); _typeCombo lbSetData [_idxVeh, "LAND"];
+private _idxHeli = _typeCombo lbAdd (localize "STR_A3AU_player_context_air_transport");    _typeCombo lbSetData [_idxHeli, "AIR"];
+private _idxCAS = _typeCombo lbAdd (localize "STR_A3AU_player_context_attack_cas");        _typeCombo lbSetData [_idxCAS, "CAS"];
 _typeCombo lbSetCurSel 0;
 
 _padY = _padY + 0.035 * safeZoneH;
@@ -98,7 +98,7 @@ _padY = _padY + 0.035 * safeZoneH;
 // Confirm Button
 private _confirm = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _confirm ctrlSetPosition [0.005 * safeZoneW, _padY, _w - (0.01 * safeZoneW), 0.02 * safeZoneH];
-_confirm ctrlSetStructuredText parseText "<t align='center' size='0.85'>LAUNCH QRF</t>";
+_confirm ctrlSetStructuredText parseText format ["<t align='center' size='0.85'>%1</t>", localize "STR_A3AU_player_context_launch_qrf"];
 _confirm ctrlSetBackgroundColor [0, 0, 0, 0.4];
 _confirm ctrlCommit 0;
 
@@ -122,7 +122,7 @@ _confirm ctrlAddEventHandler ["MouseButtonDown", {
     
     [[_t, _faction, _type, clientOwner], "A3U_fnc_QRF_chasePlayer"] remoteExec ["A3A_fnc_scheduler", 2];
     
-    systemChat format ["Dispatched %1 %2 QRF to hunt %3.", _faction, _type, name _t];
+    [format [localize "STR_A3AU_player_context_dispatched_qrf", _faction, _type, name _t], "WARNING"] spawn A3U_fnc_context_popup;
     
     ctrlDelete (_ctrl getVariable "A3U_Grp");
 }];

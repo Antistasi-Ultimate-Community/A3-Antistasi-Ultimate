@@ -7,7 +7,7 @@ Description:
     Generates a dynamic, multi-column interactive UI on the map display. 
     Populates specific action buttons based on the user's current permissions 
     (Admin or Commander) and implements a unified auto-close listener to 
-    manage cleanup of child panels.
+    manage cleanup of child panels. Features inline rank management overlays.
 
 Parameters:
     0: _target - The player entity selected on the map <OBJECT>
@@ -64,53 +64,29 @@ private _optionsData = [];
 private _adminData = [];
 
 // --- PANEL 2: PLAYER OPTIONS ---
-_optionsData pushBack ["SINGLE", "Transfer Funds", {
+_optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_funds", {
     params ["_target"];
     ["moneyX", _target] call A3A_fnc_donateMoney;
 }];
 
 if (_isAdmin || _isCommander) then {
-    _optionsData pushBack ["SINGLE", "Transfer Commander", {
-        params ["_target"];
+    _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_commander", {
+        params ["_target", "_btnControl"];
+        private _display = ctrlParent _btnControl;
         [_target] call A3A_fnc_theBossTransfer;
-        systemChat format ["Commander transferred to %1.", name _target];
+        [format [localize "STR_A3AU_player_context_commander_transferred", name _target], "SUCCESS"] spawn A3U_fnc_context_popup;
     }];
     
-    _optionsData pushBack ["SINGLE", "Transfer faction funds to player", {
+    _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_faction_funds", {
         params ["_target", "_btnControl"];
         private _display = ctrlParent _btnControl;
         [_display, _target] spawn A3U_fnc_context_fundsToPlayer;
     }];
-    
-    _optionsData pushBack ["DOUBLE", ["Promote", "Demote"], [
-        {
-            params ["_target"];
-            private _ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
-            private _idx = _ranks find (rank _target);
-            if (_idx < ((count _ranks) - 1)) then {
-                private _newRank = _ranks select (_idx + 1);
-                _target setRank _newRank;
-                _target setVariable ["rankX", _newRank, true];
-                systemChat format ["%1 promoted to %2.", name _target, _newRank];
-            };
-        },
-        {
-            params ["_target"];
-            private _ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
-            private _idx = _ranks find (rank _target);
-            if (_idx > 0) then {
-                private _newRank = _ranks select (_idx - 1);
-                _target setRank _newRank;
-                _target setVariable ["rankX", _newRank, true];
-                systemChat format ["%1 demoted to %2.", name _target, _newRank];
-            };
-        }
-    ]];
 };
 
 // --- PANEL 3: ADMIN SETTINGS ---
 if (_isAdmin) then {
-    _adminData pushBack ["SINGLE", "Toggle server membership", { 
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_toggle_membership", { 
         params ["_target"];
         if ([_target] call A3A_fnc_isMember) then {
             ["remove", _target] call A3A_fnc_memberAdd;
@@ -122,8 +98,9 @@ if (_isAdmin) then {
     private _isUndercover = _target getVariable ["undercover", false];
     private _ucColor = if (_isUndercover) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
     
-    _adminData pushBack ["TOGGLE", "Force Toggle Undercover", { 
+    _adminData pushBack ["TOGGLE", localize "STR_A3AU_player_context_force_undercover", { 
         params ["_target", "_btnControl"];
+        private _display = ctrlParent _btnControl;
         
         private _isUndercover = _target getVariable ["undercover", false];
         private _newState = !_isUndercover;
@@ -139,33 +116,37 @@ if (_isAdmin) then {
         _btnControl ctrlSetBackgroundColor _newHover; 
         
         if (_newState) then {
-            systemChat format ["Forced Undercover ON for %1.", name _target];
-            "An Admin has forced your Undercover status ON." remoteExec ["systemChat", _target];
+            [format [localize "STR_A3AU_player_context_undercover_on_log", name _target], "WARNING"] spawn A3U_fnc_context_popup;
         } else {
-            systemChat format ["Forced Undercover OFF for %1.", name _target];
-            "An Admin has forced your Undercover status OFF." remoteExec ["systemChat", _target];
+            [format [localize "STR_A3AU_player_context_undercover_off_log", name _target], "WARNING"] spawn A3U_fnc_context_popup;
         };
     }, _ucColor];
     
-    _adminData pushBack ["SINGLE", "Request QRF to chase player", { 
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_message_player", {
+        params ["_target", "_btnControl"];
+        private _display = ctrlParent _btnControl;
+        [_display, _target] spawn A3U_fnc_context_messagePlayer;
+    }];
+
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_request_qrf", { 
         params ["_target", "_btnControl"];
         private _display = ctrlParent _btnControl;
         [_display, _target] spawn A3U_fnc_context_requestQRF;
     }];
     
-    _adminData pushBack ["SINGLE", "Give or remove traits", {
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_give_traits", {
         params ["_target", "_btnControl"];
         private _display = ctrlParent _btnControl;
         [_display, _target] spawn A3U_fnc_context_setPlayerTraits;
     }];
     
-    _adminData pushBack ["SINGLE", "Punish player", { 
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_punish_btn", { 
         params ["_target", "_btnControl"];
         private _display = ctrlParent _btnControl;
         [_display, _target] spawn A3U_fnc_context_punishPanel;
     }];
     
-    _adminData pushBack ["DOUBLE", ["Kick", "Ban"], [
+    _adminData pushBack ["DOUBLE", [localize "STR_A3AU_player_context_kick", localize "STR_A3AU_player_context_ban"], [
         {
             params ["_target", "_btnControl"];
             private _display = ctrlParent _btnControl;
@@ -178,14 +159,15 @@ if (_isAdmin) then {
         }
     ]];
     
-    _adminData pushBack ["SINGLE", "Force player to lobby", {
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_force_lobby", {
         params ["_target", "_btnControl"];
         private _display = ctrlParent _btnControl;
         [_display, _target] spawn A3U_fnc_context_forceToLobby;
     }];
     
-    _adminData pushBack ["SINGLE", "Promote to zeus", {
-        params ["_target"];
+    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_promote_zeus", {
+        params ["_target", "_btnControl"];
+        private _display = ctrlParent _btnControl;
         [[_target], {
             params ["_t"];
             private _logicGroup = createGroup sideLogic;
@@ -193,9 +175,10 @@ if (_isAdmin) then {
             _t assignCurator _zeusModule;
             _zeusModule addCuratorAddons activatedAddons;
             _zeusModule addCuratorEditableObjects [allUnits + vehicles, true];
-            "You have been granted Zeus powers. Press 'Y'." remoteExec ["systemChat", _t];
+            [localize "STR_A3AU_player_context_zeus_granted", "SUCCESS"] spawn A3U_fnc_context_popup;
         }] remoteExec ["bis_fnc_call", 2];
-        systemChat format ["Promoted %1 to Zeus.", name _target];
+        
+        [format [localize "STR_A3AU_player_context_zeus_log", name _target], "SUCCESS"] spawn A3U_fnc_context_popup;
     }];
 };
 
@@ -367,7 +350,7 @@ _titleBg1 ctrlCommit 0;
 
 private _title1 = _mapDisplay ctrlCreate ["RscStructuredText", -1, _menuGroup1];
 _title1 ctrlSetPosition [0, 0, _groupWidth, _titleHeight];
-_title1 ctrlSetStructuredText parseText "<t size='1' align='center' valign='middle'>Player Info</t>";
+_title1 ctrlSetStructuredText parseText format ["<t size='1' align='center' valign='middle'>%1</t>", localize "STR_A3AU_player_context_player_info"];
 _title1 ctrlCommit 0;
 
 private _name = name _target;
@@ -382,11 +365,11 @@ if (_role find "@" > -1) then { _role = (_role splitString "@") select 0; };
 private _displayRole = if (isLocalized _role) then { localize _role } else { _role };
 
 private _infoData = [
-    [format ["Name: %1", _name], _name],
-    [format ["UID: %1", _uid], _uid],
-    [format ["Funds: %1%2", _currencySymbol, _funds], _funds],
-    [format ["Role: %1", _displayRole], _role],
-    [format ["Rank: %1", _rank], _rank]
+    [format [localize "STR_A3AU_player_context_name", _name], _name],
+    [format [localize "STR_A3AU_player_context_uid", _uid], _uid],
+    [format [localize "STR_A3AU_player_context_funds", _currencySymbol, _funds], _funds],
+    [format [localize "STR_A3AU_player_context_role", _displayRole], _role],
+    [format [localize "STR_A3AU_player_context_rank", _rank], _rank]
 ];
 
 private _currentY1 = _titleHeight + _padding;
@@ -398,7 +381,7 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
     private _btn = _mapDisplay ctrlCreate ["RscStructuredText", -1, _menuGroup1];
     _btn ctrlSetPosition [_padding, _currentY1, _btnWidthFull, _btnHeight];
     _btn ctrlSetStructuredText parseText format ["<t align='center' valign='middle' size='0.85'>%1</t>", _displayStr];
-    _btn ctrlSetTooltip "Copy to clipboard";
+    _btn ctrlSetTooltip (localize "STR_A3AU_player_context_copy_clipboard");
     _btn ctrlSetBackgroundColor [0, 0, 0, 0.4];
     _btn ctrlCommit 0;
     
@@ -415,40 +398,92 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
         copyToClipboard (_btnControl getVariable ["A3U_CopyData", ""]);
         
         private _display = ctrlParent _btnControl;
-        [_display] spawn {
-            params ["_display"];
-            private _toastGrp = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
-            _toastGrp ctrlSetPosition [safeZoneX + (safeZoneW / 2) - (0.075 * safeZoneW), safeZoneY + safeZoneH - 0.12 * safeZoneH, 0.15 * safeZoneW, 0.03 * safeZoneH];
-            _toastGrp ctrlCommit 0;
-            
-            private _bg = _display ctrlCreate ["RscText", -1, _toastGrp];
-            _bg ctrlSetPosition [0, 0, 0.15 * safeZoneW, 0.03 * safeZoneH];
-            _bg ctrlSetBackgroundColor [0.12, 0.12, 0.12, 0.95];
-            _bg ctrlCommit 0;
-            
-            private _line = _display ctrlCreate ["RscText", -1, _toastGrp];
-            _line ctrlSetPosition [0, 0, 0.15 * safeZoneW, 0.002 * safeZoneH];
-            _line ctrlSetBackgroundColor [0.18, 0.50, 0.20, 1];
-            _line ctrlCommit 0;
-            
-            private _txt = _display ctrlCreate ["RscStructuredText", -1, _toastGrp];
-            _txt ctrlSetPosition [0, 0.002 * safeZoneH, 0.15 * safeZoneW, 0.028 * safeZoneH];
-            _txt ctrlSetStructuredText parseText "<t align='center' valign='middle' size='0.9'>Copied to clipboard</t>";
-            _txt ctrlCommit 0;
-            
-            sleep 1.5;
-            if (isNull _toastGrp) exitWith {};
-            _toastGrp ctrlSetFade 1; _toastGrp ctrlCommit 0.5;
-            sleep 0.5;
-            if (!isNull _toastGrp) then { ctrlDelete _toastGrp; };
-        };
+        [localize "STR_A3AU_player_context_copied_clipboard", "SUCCESS"] spawn A3U_fnc_context_popup;
     }];
+    
+    // --- RANK MANAGEMENT INLINE OVERLAYS ---
+    if ((_forEachIndex == 4) && (_isAdmin || _isCommander)) then {
+        private _sqBtnW = 0.012 * safeZoneW;
+        
+        // Demote (-)
+        private _btnDemote = _mapDisplay ctrlCreate ["RscStructuredText", -1, _menuGroup1];
+        _btnDemote ctrlSetPosition [_padding, _currentY1, _sqBtnW, _btnHeight];
+        _btnDemote ctrlSetStructuredText parseText "<t align='center' valign='middle' size='0.85'>-</t>";
+        _btnDemote ctrlSetBackgroundColor [0.12, 0.12, 0.12, 1];
+        _btnDemote ctrlSetTooltip (localize "STR_A3AU_player_context_demote_tooltip");
+        _btnDemote ctrlCommit 0;
+        
+        _btnDemote setVariable ["A3U_btn_colNormal", [0.12, 0.12, 0.12, 1]];
+        _btnDemote setVariable ["A3U_btn_colHover", [0.8, 0.1, 0.1, 0.8]];
+        _btnDemote setVariable ["A3U_Target", _target];
+        
+        _btnDemote ctrlAddEventHandler ["MouseEnter", { (_this#0) ctrlSetBackgroundColor ((_this#0) getVariable ["A3U_btn_colHover", [0,0,0,1]]); }];
+        _btnDemote ctrlAddEventHandler ["MouseExit", { (_this#0) ctrlSetBackgroundColor ((_this#0) getVariable ["A3U_btn_colNormal", [0,0,0,1]]); }];
+        _btnDemote ctrlAddEventHandler ["MouseButtonDown", {
+            params ["_ctrl", "_button"];
+            if (_button != 0) exitWith {};
+            private _t = _ctrl getVariable "A3U_Target";
+            private _ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
+            private _idx = _ranks find (rank _t);
+            if (_idx > 0) then {
+                private _newRank = _ranks select (_idx - 1);
+                _t setRank _newRank;
+                _t setVariable ["rankX", _newRank, true];
+                
+                private _display = ctrlParent _ctrl;
+                [format [localize "STR_A3AU_player_context_demoted_log", name _t, _newRank], "WARNING"] spawn A3U_fnc_context_popup;
+                
+                private _panels = _display getVariable ["A3U_OpenContextPanels", []];
+                { ctrlDelete _x } forEach _panels;
+                _display setVariable ["A3U_OpenContextPanels", []];
+                private _ehID = _display getVariable ["A3U_ContextMenu_EH", -1];
+                if (_ehID != -1) then { (_display displayCtrl 51) ctrlRemoveEventHandler ["MouseButtonDown", _ehID]; };
+            };
+        }];
+        
+        // Promote (+)
+        private _btnPromote = _mapDisplay ctrlCreate ["RscStructuredText", -1, _menuGroup1];
+        _btnPromote ctrlSetPosition [_padding + _btnWidthFull - _sqBtnW, _currentY1, _sqBtnW, _btnHeight];
+        _btnPromote ctrlSetStructuredText parseText "<t align='center' valign='middle' size='0.85'>+</t>";
+        _btnPromote ctrlSetBackgroundColor [0.12, 0.12, 0.12, 1];
+        _btnPromote ctrlSetTooltip (localize "STR_A3AU_player_context_promote_tooltip");
+        _btnPromote ctrlCommit 0;
+        
+        _btnPromote setVariable ["A3U_btn_colNormal", [0.12, 0.12, 0.12, 1]];
+        _btnPromote setVariable ["A3U_btn_colHover", [0.18, 0.50, 0.20, 0.8]];
+        _btnPromote setVariable ["A3U_Target", _target];
+        
+        _btnPromote ctrlAddEventHandler ["MouseEnter", { (_this#0) ctrlSetBackgroundColor ((_this#0) getVariable ["A3U_btn_colHover", [0,0,0,1]]); }];
+        _btnPromote ctrlAddEventHandler ["MouseExit", { (_this#0) ctrlSetBackgroundColor ((_this#0) getVariable ["A3U_btn_colNormal", [0,0,0,1]]); }];
+        _btnPromote ctrlAddEventHandler ["MouseButtonDown", {
+            params ["_ctrl", "_button"];
+            if (_button != 0) exitWith {};
+            private _t = _ctrl getVariable "A3U_Target";
+            private _ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
+            private _idx = _ranks find (rank _t);
+            if (_idx < ((count _ranks) - 1)) then {
+                private _newRank = _ranks select (_idx + 1);
+                _t setRank _newRank;
+                _t setVariable ["rankX", _newRank, true];
+                
+                private _display = ctrlParent _ctrl;
+                [format [localize "STR_A3AU_player_context_promoted_log", name _t, _newRank], "SUCCESS"] spawn A3U_fnc_context_popup;
+                
+                private _panels = _display getVariable ["A3U_OpenContextPanels", []];
+                { ctrlDelete _x } forEach _panels;
+                _display setVariable ["A3U_OpenContextPanels", []];
+                private _ehID = _display getVariable ["A3U_ContextMenu_EH", -1];
+                if (_ehID != -1) then { (_display displayCtrl 51) ctrlRemoveEventHandler ["MouseButtonDown", _ehID]; };
+            };
+        }];
+    };
+    
     _currentY1 = _currentY1 + _btnHeight + _padding;
 } forEach _infoData;
 
 if (_p2Height > 0) then {
     private _p2PosY = _groupPositionY + _p1Height + _padding;
-    [_optionsData, _groupPositionX, _p2PosY, _p2Height, "Player Options", "A3U_playerMenu_grp2", _profileBackgroundColor] call _fnc_renderPanel;
+    [_optionsData, _groupPositionX, _p2PosY, _p2Height, localize "STR_A3AU_player_context_player_options", "A3U_playerMenu_grp2", _profileBackgroundColor] call _fnc_renderPanel;
 };
 
 // -----------------------------------------------------------------------------
@@ -456,7 +491,7 @@ if (_p2Height > 0) then {
 // -----------------------------------------------------------------------------
 if (_p3Height > 0) then {
     private _col2PosX = _groupPositionX + _groupWidth + _padding;
-    [_adminData, _col2PosX, _groupPositionY, _p3Height, "Admin Settings", "A3U_playerMenu_grp3", [0.4, 0.1, 0.1, 1]] call _fnc_renderPanel;
+    [_adminData, _col2PosX, _groupPositionY, _p3Height, localize "STR_A3AU_player_context_admin_settings", "A3U_playerMenu_grp3", [0.4, 0.1, 0.1, 1]] call _fnc_renderPanel;
 };
 
 // -----------------------------------------------------------------------------

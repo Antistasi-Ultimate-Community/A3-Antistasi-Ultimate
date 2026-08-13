@@ -50,7 +50,7 @@ params ["_targetPlayer", "_factionStr", "_qrfType", ["_adminOwner", 2]];
     };
 
     if (isNil "_base" || {_base == ""}) exitWith {
-        "QRF Cancelled: No available bases found for this faction/type." remoteExec ["systemChat", _adminOwner];
+        [localize "STR_A3AU_player_context_qrf_no_bases"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
     };
 
     // -----------------------------------------------------------------------------
@@ -68,16 +68,16 @@ params ["_targetPlayer", "_factionStr", "_qrfType", ["_adminOwner", 2]];
     };
 
     if (isNil "_data" || {count _data < 4}) exitWith {
-        "QRF Cancelled: Faction failed to generate assets. They might lack the required vehicles." remoteExec ["systemChat", _adminOwner];
+        [localize "STR_A3AU_player_context_qrf_no_assets"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
     };
 
     _data params ["_resources", "_vehicles", "_crewGroups", "_cargoGroups"];
 
     if (count _vehicles == 0) exitWith {
-        "QRF Cancelled: 0 vehicles spawned." remoteExec ["systemChat", _adminOwner];
+        [localize "STR_A3AU_player_context_qrf_no_vehicles"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
     };
 
-    "QRF Successfully Dispatched & En Route!" remoteExec ["systemChat", _adminOwner];
+    [localize "STR_A3AU_player_context_qrf_success"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
 
     // -----------------------------------------------------------------------------
     // THE ACTIVE TRACKING LOOP
@@ -140,4 +140,4 @@ params ["_targetPlayer", "_factionStr", "_qrfType", ["_adminOwner", 2]];
         private _nearMrk = [outposts + airportsX + resourcesX + factories + seaports + milbases, getPosATL (leader _x)] call BIS_fnc_nearestPosition;
         [_x, _nearMrk] spawn A3A_fnc_enemyReturnToBase;
     } forEach _cargoGroups;
-};
+};s

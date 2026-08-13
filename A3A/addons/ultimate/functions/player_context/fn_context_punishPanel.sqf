@@ -48,7 +48,7 @@ _bg ctrlCommit 0;
 private _title = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _title ctrlSetPosition [0, 0, _w, 0.026 * safeZoneH];
 _title ctrlSetBackgroundColor [0.6, 0.1, 0.1, 1];
-_title ctrlSetStructuredText parseText "<t align='center' size='0.9' valign='middle'>Punish Player</t>";
+_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", localize "STR_A3AU_player_context_punish_player"];
 _title ctrlCommit 0;
 
 // Close Button
@@ -66,7 +66,7 @@ private _stepY = 0.024 * safeZoneH;
 // Time Input (s)
 private _timeLbl = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _timeLbl ctrlSetPosition [0.005 * safeZoneW, _padY, 0.06 * safeZoneW, 0.02 * safeZoneH];
-_timeLbl ctrlSetStructuredText parseText "<t size='0.8' valign='middle'>Time (s):</t>";
+_timeLbl ctrlSetStructuredText parseText format ["<t size='0.8' valign='middle'>%1</t>", localize "STR_A3AU_player_context_time_sec"];
 _timeLbl ctrlCommit 0;
 
 private _timeEdit = _display ctrlCreate ["RscEdit", -1, _grp];
@@ -80,7 +80,7 @@ _padY = _padY + _stepY;
 // Offence Input (%)
 private _offLbl = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _offLbl ctrlSetPosition [0.005 * safeZoneW, _padY, 0.06 * safeZoneW, 0.02 * safeZoneH];
-_offLbl ctrlSetStructuredText parseText "<t size='0.8' valign='middle'>Offence %:</t>";
+_offLbl ctrlSetStructuredText parseText format ["<t size='0.8' valign='middle'>%1</t>", localize "STR_A3AU_player_context_offence_pct"];
 _offLbl ctrlCommit 0;
 
 private _offEdit = _display ctrlCreate ["RscEdit", -1, _grp];
@@ -94,12 +94,12 @@ _padY = _padY + _stepY;
 // Reason Input
 private _rsnLbl = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _rsnLbl ctrlSetPosition [0.005 * safeZoneW, _padY, 0.06 * safeZoneW, 0.02 * safeZoneH];
-_rsnLbl ctrlSetStructuredText parseText "<t size='0.8' valign='middle'>Reason:</t>";
+_rsnLbl ctrlSetStructuredText parseText format ["<t size='0.8' valign='middle'>%1</t>", localize "STR_A3AU_player_context_reason_label"];
 _rsnLbl ctrlCommit 0;
 
 private _rsnEdit = _display ctrlCreate ["RscEdit", -1, _grp];
 _rsnEdit ctrlSetPosition [0.065 * safeZoneW, _padY, _w - (0.07 * safeZoneW), 0.02 * safeZoneH];
-_rsnEdit ctrlSetText "Admin Action";
+_rsnEdit ctrlSetText (localize "STR_A3AU_player_context_admin_action");
 _rsnEdit ctrlSetBackgroundColor [0, 0, 0, 0.5];
 _rsnEdit ctrlCommit 0;
 
@@ -108,7 +108,7 @@ _padY = _padY + _stepY + 0.005 * safeZoneH;
 // Confirm Button
 private _confirm = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _confirm ctrlSetPosition [0.005 * safeZoneW, _padY, _w - (0.01 * safeZoneW), 0.02 * safeZoneH];
-_confirm ctrlSetStructuredText parseText "<t align='center' size='0.85'>CONFIRM PUNISHMENT</t>";
+_confirm ctrlSetStructuredText parseText format ["<t align='center' size='0.85'>%1</t>", localize "STR_A3AU_player_context_confirm_punishment"];
 _confirm ctrlSetBackgroundColor [0, 0, 0, 0.4];
 _confirm ctrlCommit 0;
 
@@ -136,12 +136,12 @@ _confirm ctrlAddEventHandler ["MouseButtonDown", {
     
     if (_time < 0) then { _time = 0; };
     if (_off < 0) then { _off = 0; };
-    if (_rsn == "") then { _rsn = "Admin Action"; };
+    if (_rsn == "") then { _rsn = localize "STR_A3AU_player_context_admin_action"; };
     
     // Execute server-side punishment
     [_t, _time, _off, objNull, _rsn] remoteExecCall ["A3A_fnc_punishment", 2, false];
     
-    systemChat format ["Punished %1 for %2s (%3%% offence). Reason: %4", name _t, _time, _offRaw, _rsn];
+    [format [localize "STR_A3AU_player_context_punished_log", name _t, _time, _offRaw, _rsn], "WARNING"] spawn A3U_fnc_context_popup;
     
     ctrlDelete (_ctrl getVariable "A3U_Grp");
 }];

@@ -38,7 +38,7 @@ _bg ctrlSetPosition [0, 0, _w, _h]; _bg ctrlSetBackgroundColor [0.12, 0.12, 0.12
 
 private _title = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _title ctrlSetPosition [0, 0, _w, 0.026 * safeZoneH]; _title ctrlSetBackgroundColor [0.6, 0.4, 0.1, 1];
-_title ctrlSetStructuredText parseText "<t align='center' size='0.9' valign='middle'>Reason for Lobby Drop</t>"; _title ctrlCommit 0;
+_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", localize "STR_A3AU_player_context_reason_lobby"]; _title ctrlCommit 0;
 
 private _edit = _display ctrlCreate ["RscEdit", -1, _grp];
 _edit ctrlSetPosition [0.005 * safeZoneW, 0.032 * safeZoneH, _w - (0.01 * safeZoneW), 0.02 * safeZoneH];
@@ -46,7 +46,7 @@ _edit ctrlSetBackgroundColor [0, 0, 0, 0.5]; _edit ctrlCommit 0;
 
 private _confirm = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _confirm ctrlSetPosition [0.005 * safeZoneW, 0.055 * safeZoneH, _w - (0.01 * safeZoneW), 0.02 * safeZoneH];
-_confirm ctrlSetStructuredText parseText "<t align='center' size='0.85'>CONFIRM RETURN</t>";
+_confirm ctrlSetStructuredText parseText format ["<t align='center' size='0.85'>%1</t>", localize "STR_A3AU_player_context_confirm_return"];
 _confirm ctrlSetBackgroundColor [0, 0, 0, 0.4]; _confirm ctrlCommit 0;
 
 _confirm setVariable ["A3U_InputCtrl", _edit]; _confirm setVariable ["A3U_Target", _target]; _confirm setVariable ["A3U_Grp", _grp];
@@ -58,10 +58,15 @@ _confirm ctrlAddEventHandler ["MouseButtonDown", {
     private _t = _ctrl getVariable "A3U_Target"; private _edit = _ctrl getVariable "A3U_InputCtrl";
     
     private _reason = ctrlText _edit;
-    if (_reason == "") then { _reason = "Forced back to lobby by Admin."; };
+    if (_reason == "") then { _reason = localize "STR_A3AU_player_context_forced_lobby"; };
     
-    _reason remoteExec ["systemChat", _t];
-    ["LOSER", false, true] remoteExec ["BIS_fnc_endMission", _t];
+    [_reason, "ERROR", _t] spawn A3U_fnc_context_popup;
+    
+    // Slight delay so the player can actually see the UI popup before the screen goes black
+    [_t] spawn {
+        sleep 2;
+        ["LOSER", false, true] remoteExec ["BIS_fnc_endMission", (_this#0)];
+    };
     
     ctrlDelete (_ctrl getVariable "A3U_Grp");
 }];
