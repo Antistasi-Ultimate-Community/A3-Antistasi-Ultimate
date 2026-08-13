@@ -58,7 +58,19 @@ class CfgFunctions
             class markerBrowser {};
             class markerContextMenu {};
             class mrkUpdateBulk {};
+        };
+        class player_context 
+        {
+            file = QPATHTOFOLDER(functions\player_context);
             class playerContextMenu {};
+            class context_punishPanel {};
+            class context_setPlayerTraits {};
+            class context_KickPlayer {};
+            class context_BanPlayer {};
+            class context_forceToLobby {};
+            class context_fundsToPlayer {};
+            class context_requestQRF {};
+            class QRF_chasePlayer {};
         };
         class REINF
         {
