@@ -75,6 +75,7 @@ cutText [localize "STR_cut_RP_FT_success", "BLACK IN", 1];
 private _remainingTravels = _remainingTravels - 1;
 rallyPointRoot setVariable ["remainingTravels", _remainingTravels, true];
 rallyPointMarker setMarkerText (format [localize "STR_marker_RP", str _remainingTravels]);
+[rallyPointMarker] call A3A_fnc_mrkUpdate;
 
 if (_remainingTravels < 1) then {
     remoteExecCall ["SCRT_fnc_rally_deleteRallyPoint",2];

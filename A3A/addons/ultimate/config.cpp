@@ -39,7 +39,41 @@ class CfgSounds
     #include "CfgSounds.hpp"
 };
 
+class CfgEditorCategories
+{
+	class A3U_EditorCategory
+	{
+		displayName = "Antistasi Ultimate";
+	};
+};
+
+class CfgEditorSubcategories
+{
+	class A3U_EditorSubcategoryStatics
+	{
+		displayName = "Static Holders";
+	};
+};
+
 class CfgVehicles
 {
     #include "CfgVehicles.hpp"
+};
+
+class CfgMarkerClasses
+{
+    class A3AU_MRK
+    {
+        displayName="Antistasi Ultimate Markers";
+    };
+};
+
+class CfgMarkers
+{
+    #include "CfgMarkers.hpp"
+};
+
+class CfgMarkerColors
+{
+    #include "CfgMarkerColors.hpp"
 };

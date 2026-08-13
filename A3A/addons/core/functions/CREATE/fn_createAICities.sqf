@@ -21,7 +21,7 @@ _num = round (_num / 100);
 
 ServerInfo_1("Spawning City Patrol in %1", _markerX);
 
-private _dataX = server getVariable _markerX;
+private _dataX = A3A_townData get _markerX;
 private _prestigeOPFOR = _dataX select 2;
 private _prestigeBLUFOR = _dataX select 3;
 
@@ -48,12 +48,22 @@ private _roadPositions = (_positionX nearRoads round(_patrolSize / 2));
 
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
-if (_civNonHuman && {(selectRandom [1,2,3]) isEqualTo 2}) exitWith {
+private _fnc_exit = {
 	["locationSpawned", [_markerX, "City", true]] call EFUNC(Events,triggerEvent);
 
 	waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 
 	["locationSpawned", [_markerX, "City", false]] call EFUNC(Events,triggerEvent);
+};
+
+if (_markerX in townSkirmishes) exitWith {
+	Info("Aborting city patrol spawn; is in town skirmish");
+
+	call _fnc_exit;
+};
+
+if (_civNonHuman && {(selectRandom [1,2,3]) isEqualTo 2}) exitWith {
+	call _fnc_exit;
 };
 
 while {(spawner getVariable _markerX != 2) and (_countX < _num)} do {

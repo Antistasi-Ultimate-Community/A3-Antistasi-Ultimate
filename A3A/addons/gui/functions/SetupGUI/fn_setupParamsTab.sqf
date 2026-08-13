@@ -10,7 +10,7 @@ FIX_LINE_NUMBERS()
 
 params["_mode", "_params"];
 
-Debug("Params dialog called with mode %1", _mode);
+Debug_1("Params dialog called with mode %1", _mode);
 
 // Get display
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
@@ -182,7 +182,6 @@ switch (_mode) do
     {
         private _newGameCtrl = _display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX;
         private _copyGameCtrl = _display displayCtrl A3A_IDC_SETUP_COPYGAMECHECKBOX;
-
         
         private _selectedPreset = switch (true) do {
             case (lbCurSel _presetDiffCtrl isNotEqualTo -1): { [lbCurSel _presetSizeCtrl, lbCurSel _presetDiffCtrl] };
