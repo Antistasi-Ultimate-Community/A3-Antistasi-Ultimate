@@ -58,7 +58,7 @@ for "_i" from 1 to 10 do {
     private _testPos = _targetPosition getPos [random 150 + 150, random 360];
     if !(surfaceIsWater _testPos) exitWith { _dropPos = _testPos };
 };
-Debug_1("Paradrop: Target position %1, Drop position %2", _targetPosition, _dropPos);
+Debug_2("Paradrop: Target position %1, Drop position %2", _targetPosition, _dropPos);
 
 private _entryDistance = 350;
 _plane flyInHeight 250;
@@ -90,7 +90,7 @@ private _wp1 = _groupPilot addWaypoint [_exitPos, -1];
 _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
-[_plane, _dropPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
+[_plane, _dropPos, _vehType in FactionGet(all,"vehiclesPlanesTransport")] call A3A_fnc_approachSpeedControl;
 
 [_plane, _dropPos] spawn {
     params ["_plane", "_dropPos"];
@@ -100,10 +100,8 @@ _wp1 setWaypointSpeed "NORMAL";
     };
 };
 
-if(canMove _plane || alive (driver _plane)) then {
-    [_plane, "open"] spawn A3A_fnc_HeliDoors;
-    sleep 0.25;
-};
+[_plane, "open"] spawn A3A_fnc_HeliDoors;
+sleep 0.25;
 
 waitUntil {sleep 1; (_plane getVariable ["dropPosReached", false]) || {!alive _plane || {!canMove _plane}}};
 if !(alive _plane) exitWith {};
@@ -180,7 +178,7 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
             _x enableAI "AUTOTARGET";
         } forEach _apcCrew;
 
-        [_apc] call A3A_fnc_smokeCoverAuto;
+        // [_apc] call A3A_fnc_smokeCoverAuto;
         
         {
             unassignVehicle _x;
@@ -225,24 +223,11 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
             waitUntil {sleep 0.25; getPosATL _unit # 2 < 120};
 
             _unit addBackpack "B_Parachute";
-            if !("lowTech" in A3A_factionEquipFlags) then {
-                if !(disableAutoSmokeCover) then {
-                    private _smokeGrenade = selectRandom allSmokeGrenades;
-                    private _smoke = _smokeGrenade createVehicle (getPosATL _unit);
-                    _smoke attachTo [_unit, [0,0,0]];
-                    _unit setVariable ["jumpSave_Smoke", _smoke];
-                };
-            };
 
             private _startLand = time;
             waitUntil {
                 sleep 0.5;
                 isTouchingGround _unit || (time - _startLand > 30)
-            };
-
-            private _smoke = _unit getVariable "jumpSave_Smoke";
-            if (!isNil "_smoke") then {
-                detach _smoke;
             };
 
             removeBackpack _unit;

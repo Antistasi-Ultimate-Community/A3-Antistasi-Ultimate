@@ -252,7 +252,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["JMSJEFF_uniformJ13_black_F_CombatUniform", "JMSJEFF_LDF_black_Shortsleeve"]];
-_eliteLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
+_eliteLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
 _eliteLoadoutData set ["vests", ["JMSJEFF_ChestVestTroop_armor_black", "WX_PlateCarrier_Assault"]];
 _eliteLoadoutData set ["mgVests", ["WX_PlateCarrier_Machinegunner"]];
 _eliteLoadoutData set ["medVests", ["SSV_Vest_Android_Military"]];
@@ -312,7 +312,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["JMSJEFF_uniformJ13_black_F_CombatUniform", "SSV_Uniform_Android_Military"]];
-_militaryLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
+_militaryLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
 _militaryLoadoutData set ["vests", ["JMSJEFF_ChestVestTroop_armor_black", "WX_PlateCarrier_Assault"]];
 _militaryLoadoutData set ["mgVests", ["WX_PlateCarrier_Machinegunner"]];
 _militaryLoadoutData set ["medVests", ["SSV_Vest_Android_Military"]];

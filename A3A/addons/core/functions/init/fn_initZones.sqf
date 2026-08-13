@@ -12,9 +12,7 @@ FIX_LINE_NUMBERS()
 Info("initZones started");
 
 forcedSpawn = [];
-citiesX = [];
-private _mapInfo = missionConfigFile/"A3A"/"mapInfo"/toLower worldName;
-if (!isClass _mapInfo) then {_mapInfo = configFile/"A3A"/"mapInfo"/toLower worldName};
+private _mapInfo = call A3A_fnc_getMapInfo;
 
 [] call A3A_fnc_prepareMarkerArrays;
 
@@ -66,80 +64,17 @@ markersX = airportsX + milbases + resourcesX + factories + outposts + seaports +
 // Set up dummy markers + autogen roadblocks
 call A3A_fnc_initBases;
 
-
 Info("Setting up towns");
 
 //Disables Towns/Villages, Names can be found in configFile >> "CfgWorlds" >> "WORLDNAME" >> "Names"
 private ["_nameX", "_roads", "_numCiv", "_roadsProv", "_roadcon", "_dmrk", "_info"];
 
-private _townPopulations = getArray (_mapInfo/"population");
-private _disabledTowns = getArray (_mapInfo/"disabledTowns");
-{server setVariable [_x select 0,_x select 1]} forEach _townPopulations;
-private _hardCodedPopulation = _townPopulations isNotEqualTo [];
-
-private _cityConfigs = "(toLower getText (_x >> ""type"") in [""namecitycapital"",""namecity"",""namevillage"",""citycenter""]) &&
-!(getText (_x >> ""Name"") isEqualTo """") && !((configName _x) in _disabledTowns)"
-configClasses (configfile >> "CfgWorlds" >> worldName >> "Names");
-if (toLowerANSI worldName isEqualTo "blud_vidda") then {
-	private _rv133 = ("configName _x == 'DefaultKeyPoint32'" configClasses (configfile >> "CfgWorlds" >> worldName >> "Names")) select 0;
-	_cityConfigs pushBack _rv133; //RV-133, big city without city marker
-};
-
-_cityConfigs apply {
-	_nameX = getText (_x >> "Name");
-	_sizeX = getNumber (_x >> "radiusA");
-	_sizeY = getNumber (_x >> "radiusB");
-	_size = [_sizeY, _sizeX] select (_sizeX > _sizeY);
-	_pos = getArray (_x >> "position");
-	_size = [_size, 400] select (_size < 400);
-	_numCiv = 0;
-
-	if (_hardCodedPopulation) then
-	{
-		_numCiv = server getVariable [_nameX, server getVariable (configName _x)]; //backwards compat to config name based pop defines
-		if (isNil "_numCiv" || {!(_numCiv isEqualType 0)}) then
-		{
-            Error_1("Bad population count data for %1", _nameX);
-			_numCiv = (count (nearestObjects [_pos, ["house"], _size]));
-		};
-	}
-	else {
-		_numCiv = (count (nearestObjects [_pos, ["house"], _size]));
-	};
-
-	_roads = nearestTerrainObjects [_pos, ["MAIN ROAD", "ROAD", "TRACK"], _size, true, true];
-	if (count _roads > 0) then {
-		// Move marker position to the nearest road, if any
-		_pos = _roads select 0;
-	};
-	_numVeh = (count _roads) min (_numCiv / 3);
-
-	_mrk = createmarkerLocal [format ["%1", _nameX], _pos];
-	_mrk setMarkerSizeLocal [_size, _size];
-	_mrk setMarkerShapeLocal "RECTANGLE";
-	_mrk setMarkerBrushLocal "SOLID";
-	_mrk setMarkerColorLocal colorOccupants;
-	_mrk setMarkerTextLocal _nameX;
-	_mrk setMarkerAlpha 0;
-	citiesX pushBack _nameX;
-	spawner setVariable [_nameX, 2, true];
-
-	_dmrk = createMarkerLocal [format ["Dum%1", _nameX], _pos];
-	_dmrk setMarkerShapeLocal "ICON";
-	_dmrk setMarkerTypeLocal "loc_Ruin";
-	_dmrk setMarkerColor colorOccupants;
-
-	sidesX setVariable [_mrk, Occupants, true];
-	_info = [_numCiv, _numVeh, 75, 0];				// initial 75% gov, 0% rebel support
-	server setVariable [_nameX, _info, true];
-};	//find in congigs faster then find location in 25000 radius
-
+citiesX = ([true] call A3A_fnc_getCityData)#0;
 
 markersX append citiesX;
 sidesX setVariable ["Synd_HQ", teamPlayer, true];
 sidesX setVariable ["NATO_carrier", Occupants, true];
 sidesX setVariable ["CSAT_carrier", Invaders, true];
-
 
 Info("Setting up zone-dependent objects - antennas and banks");
 
@@ -193,9 +128,11 @@ if (!_hardCodedAntennas) then {
     antennas apply {
         _mrkFinal = createMarker [format ["Ant%1", mapGridPosition _x], position _x];
         _mrkFinal setMarkerShapeLocal "ICON";
-        _mrkFinal setMarkerTypeLocal "loc_Transmitter";
-        _mrkFinal setMarkerColorLocal "ColorBlack";
-        _mrkFinal setMarkerText localize "STR_radiotower";
+        _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
+        _mrkFinal setMarkerColorLocal "ColorWhite";
+		_mrkFinal setMarkerAlphaLocal 1;
+        _mrkFinal setMarkerText "";
+		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
         _x addEventHandler [
             "Killed",
@@ -212,9 +149,10 @@ if (!_hardCodedAntennas) then {
                 _mrk = [mrkAntennas, _antenna] call BIS_fnc_nearestPosition;
                 antennas = antennas - [_antenna];
                 antennasDead pushBack _antenna;
-                deleteMarker _mrk;
+                _mrk setMarkerType "A3AU_radiotower_dead_mrk";
                 publicVariable "antennas";
                 publicVariable "antennasDead";
+                [_mrk] call A3A_fnc_mrkUpdate;
                 ["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
                 ["TaskFailed", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", Occupants];
             }
@@ -240,9 +178,11 @@ if (count _posAntennas > 0) then {
 				antennas pushBack _antenna;
 				_mrkFinal = createMarker [format ["Ant%1", mapGridPosition _antenna], _posAntennas select _i];
 				_mrkFinal setMarkerShapeLocal "ICON";
-				_mrkFinal setMarkerTypeLocal "loc_Transmitter";
-				_mrkFinal setMarkerColorLocal "ColorBlack";
-				_mrkFinal setMarkerText localize "STR_radiotower";
+				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
+				_mrkFinal setMarkerColorLocal "ColorWhite";
+				_mrkFinal setMarkerAlphaLocal 1;
+				_mrkFinal setMarkerText "";
+				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
 
 				_antenna addEventHandler [
@@ -258,12 +198,13 @@ if (count _posAntennas > 0) then {
 						};
 
 						_mrk = [mrkAntennas, _antenna] call BIS_fnc_nearestPosition;
-						antennas = antennas - [_antenna];
-						antennasDead pushBack  _antenna;
-						deleteMarker _mrk;
-						publicVariable "antennas";
-						publicVariable "antennasDead";
-						["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
+                        antennas = antennas - [_antenna];
+                        antennasDead pushBack  _antenna;
+                        _mrk setMarkerType "A3AU_radiotower_dead_mrk";
+                        publicVariable "antennas";
+                        publicVariable "antennasDead";
+                        [_mrk] call A3A_fnc_mrkUpdate;
+                        ["TaskSucceeded", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
 						["TaskFailed", ["", localize "STR_notifiers_radiotower_destroyed"]] remoteExec ["BIS_fnc_showNotification", Occupants];
 					}
 				];
@@ -305,14 +246,17 @@ if( _fuelStationTypes isEqualTo [] ) then {_fuelStationTypes = ["Land_FuelStatio
 A3A_fuelStationTypes = _fuelStationTypes;
 A3A_fuelStations = nearestObjects [[worldSize/2, worldSize/2], _fuelStationTypes, worldSize];
 A3A_fuelStations apply {
-	_mrkFinalFuel = createMarker [format ["Ant%1", mapGridPosition _x], position _x];
-	_mrkFinalFuel setMarkerShapeLocal "ICON";
-	_mrkFinalFuel setMarkerTypeLocal "loc_Fuelstation";
-	_mrkFinalFuel setMarkerColorLocal "ColorWhite";
-	_mrkFinalFuel setMarkerTextLocal localize "STR_fuelstation";
-	_mrkFinalFuel setMarkerAlpha 0.75;
-	if(A3A_hasACE) then {
-		[_x, 250] call ace_refuel_fnc_setFuel; // only call on fuels that are not blacklisted and first zone init.
+	_mrkFormatted = format ["Ant%1", mapGridPosition _x];
+	if !(_mrkFormatted in allMapMarkers) then {
+		_mrkFinalFuel = createMarker [_mrkFormatted, position _x];
+		_mrkFinalFuel setMarkerShapeLocal "ICON";
+		_mrkFinalFuel setMarkerTypeLocal "loc_Fuelstation";
+		_mrkFinalFuel setMarkerColorLocal "ColorWhite";
+		_mrkFinalFuel setMarkerTextLocal localize "STR_fuelstation";
+		_mrkFinalFuel setMarkerAlpha 0.75;
+		if(A3A_hasACE) then {
+			[_x, 250] call ace_refuel_fnc_setFuel; // only call on fuels that are not blacklisted and first zone init.
+		};
 	};
 };
 
@@ -323,50 +267,71 @@ A3A_milAdministrations = [];
 A3A_destroyedMilAdministrations = [];
 
 private _milAdministrationTypes = [
-	"Land_zachytka_nov",
-	"Land_zachytka",
-	"Land_PoliceStation_01_F",
-	"Land_i_Barracks_V1_F", 
-	"Land_Barracks_01_dilapidated_F", 
-	"Land_Barracks_01_grey_F", 
-	"Land_Barracks_01_camo_F", 
-	"Land_i_Barracks_V2_F", 
-	"Land_u_Barracks_V2_F",
-	"Land_vn_i_barracks_v1_f", 
-	"Land_vn_barracks_01_dilapidated_f", 
-	"Land_vn_barracks_01_grey_f", 
-	"Land_vn_barracks_01_camo_f", 
-	"Land_vn_i_barracks_v2_f",
-	"land_gm_euro_office_02"
+    "Land_zachytka_nov",
+    "Land_zachytka",
+    "Land_PoliceStation_01_F",
+    "Land_i_Barracks_V1_F",
+    "Land_Barracks_01_dilapidated_F",
+    "Land_Barracks_01_grey_F",
+    "Land_Barracks_01_camo_F",
+    "Land_i_Barracks_V2_F",
+    "Land_u_Barracks_V2_F",
+    "Land_vn_i_barracks_v1_f",
+    "Land_vn_barracks_01_dilapidated_f",
+    "Land_vn_barracks_01_grey_f",
+    "Land_vn_barracks_01_camo_f",
+    "Land_vn_i_barracks_v2_f",
+    "land_gm_euro_office_02"
 ];
 private _milAdminPositions = getArray (_mapInfo/"milAdministrations");
+private _milAdminMarkersToUpdate = [];
 
-{
-	private _milAdmins = (nearestObjects [_x, _milAdministrationTypes, 30]) select {!isObjectHidden _x && {alive _x}};
-	if (_milAdmins isEqualTo []) then {
-		continue;
-	};
+_milAdminPositions apply {
+    private _milAdmins = (nearestObjects [_x, _milAdministrationTypes, 30]) select {
+        !isObjectHidden _x && {alive _x}
+    };
+    if (_milAdmins isEqualTo []) then {
+        continue;
+    };
 
-	private _administration = _milAdmins select 0;
-	A3A_milAdministrations pushBack _administration;
+    private _administration = _milAdmins select 0;
+    A3A_milAdministrations pushBack _administration;
 
-	private _mrkAdm = createMarker [format ["MilAdm%1", mapGridPosition _administration], position _administration];
-	_mrkAdm setMarkerShapeLocal "ICON";
-	_mrkAdm setMarkerTypeLocal "loc_MilAdministration";
-	_mrkAdm setMarkerColorLocal colorOccupants;
-	_mrkAdm setMarkerTextLocal localize "STR_milAdministration";
-	_mrkAdm setMarkerAlpha 0.75;
+    private _mrkAdm = createMarker [format ["MilAdm%1", mapGridPosition _administration], position _administration];
+    _mrkAdm setMarkerShapeLocal "ICON";
+    _mrkAdm setMarkerTypeLocal "A3AU_miladmin_mrk";
+    _mrkAdm setMarkerColorLocal colorOccupants;
+    _mrkAdm setMarkerTextLocal "";
+	_mrkAdm setMarkerAlphaLocal 0.75;
+    _mrkAdm setMarkerShadow false;
 
-	sidesX setVariable [_mrkAdm, Occupants, true];
+    _administration setVariable ["A3A_milAdminMarker", _mrkAdm];
 
-	spawner setVariable [_mrkAdm, 2, true];
+    sidesX setVariable [_mrkAdm, Occupants, true];
 
-	milAdministrationsX pushBack _mrkAdm;
+    milAdministrationsX pushBack _mrkAdm;
+    _milAdminMarkersToUpdate pushBack _mrkAdm;
 
-	_administration addEventHandler ["Killed", {
-		[(this select 0), "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
-	}];
-} forEach _milAdminPositions;
+    spawner setVariable [_mrkAdm, 2, true];
+
+    _administration addEventHandler ["Killed", {
+        params ["_killed"];
+
+        private _markerName = _killed getVariable ["A3A_milAdminMarker", ""];
+
+        [_killed, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+        
+        if (_markerName != "") then {
+            destroyedSites pushBackUnique _markerName;
+            publicVariable "destroyedSites";
+            
+            [_markerName] call A3A_fnc_mrkUpdate;
+        };
+    }];
+};
+
+if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk};
+if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
 
 // markersX append milAdministrationsX;
 
