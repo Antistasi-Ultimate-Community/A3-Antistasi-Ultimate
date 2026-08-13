@@ -269,7 +269,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["amf_uniform_01_RE_DA_HX", "amf_uniform_01_RE_DA_MD", "amf_uniform_01_RE_DA_LowaZephyr"]];
-_eliteLoadoutData set ["slUniform", ["amf_uniform_04_TAN"]];
+_eliteLoadoutData set ["slUniforms", ["amf_uniform_04_TAN"]];
 _eliteLoadoutData set ["vests", ["AMF_WA_DCS_V4_MG_TAN", "AMF_WA_DCS_V3_TAN", "AMF_WA_DCS_V5_TAN"]];
 _eliteLoadoutData set ["mgVests", ["amf_SMB_ART"]];
 _eliteLoadoutData set ["medVests", ["amf_SMB_AUXSAN", "AMF_WA_DCS_V5_TAN"]];
@@ -334,7 +334,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["amf_uniform_01_RE_DA_HX", "amf_uniform_01_RE_NG_DA_HX"]];
-_militaryLoadoutData set ["slUniform", ["amf_uniform_01_RE_BM_LowaZephyr"]];
+_militaryLoadoutData set ["slUniforms", ["amf_uniform_01_RE_BM_LowaZephyr"]];
 _militaryLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_AUXSAN"]];
 _militaryLoadoutData set ["mgVests", ["amf_SMB_ART"]];
 _militaryLoadoutData set ["medVests", ["amf_SMB_FUS"]];

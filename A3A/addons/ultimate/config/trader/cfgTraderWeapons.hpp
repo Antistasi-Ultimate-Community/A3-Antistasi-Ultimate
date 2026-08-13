@@ -134,10 +134,6 @@
         {
             prefix = "sfpstock";
         };
-        class weapons_pla : weapons_base
-        {
-            prefix = "plastock";
-        };
         class weapons_bwa3 : weapons_base
         {
             prefix = "bwastock";
@@ -182,10 +178,6 @@
         {
             prefix = "csa38";
         };
-        class weapons_scion : weapons_base
-        {
-            prefix = "scion";
-        };
         class weapons_wrs : weapons_base
         {
             prefix = "wrs";
@@ -229,4 +221,20 @@
         class weapons_mpp : weapons_base
         {
             prefix = "mpp_stock";
+        };
+        class weapons_qdi : weapons_base
+        {
+            prefix = "qdi_stock";
+        };
+        class weapons_mss : weapons_base
+        {
+            prefix = "mss";
+        };
+        class weapons_rearma_us : weapons_base
+        {
+            prefix = "rearma_us_stock";
+        };
+        class weapons_rearma_ru : weapons_base
+        {
+            prefix = "rearma_ru_stock";
         };

@@ -130,7 +130,7 @@ if !(_markerX in airportsX) then
 	};
 };
 
-_nul = [_markerX] call A3A_fnc_mrkUpdate;
+[_markerX] call A3A_fnc_mrkUpdate;
 _sides = _sides - [_winner,_loser];
 _other = _sides select 0;
 

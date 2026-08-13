@@ -24,7 +24,7 @@ FIX_LINE_NUMBERS()
 params [["_mode", ""]];
 
 if (!(_mode in ["KNOWN", "UNKNOWN", ""])) exitWith {
-	Error("Wrong value: %1", _mode);
+	Error_1("Wrong value: %1", _mode);
 };
 
 if (areRivalsDefeated || !areRivalsDiscovered || !areRivalsEnabled) exitWith {
@@ -55,6 +55,6 @@ if (isNil "_locations") then {
 	_locations = [];
 };
 
-Debug_2("Returning locations %1 with %2 filter",str _locations, _mode);
+Debug_2("Returning locations %1 with %2 filter", str _locations, _mode);
 
 _locations

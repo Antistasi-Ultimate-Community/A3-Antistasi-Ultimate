@@ -132,6 +132,8 @@ DECLARE_SERVER_VAR(areInvadersDefeated, false);
 DECLARE_SERVER_VAR(areRivalsDefeated, false);
 DECLARE_SERVER_VAR(isRivalsDiscoveryQuestAssigned, false);
 
+DECLARE_SERVER_VAR(townSkirmishes, []);
+
 ////////////////////////////////////
 //     SERVER ONLY VARIABLES     ///
 ////////////////////////////////////

@@ -142,6 +142,16 @@ switch (_mode) do
             }];
         };
 
+        _buildableObjects = _buildableObjects select {
+            private _callback = configFile >> "CfgVehicles" >> (_x select 0) >> QEGVAR(core,buildingPlacerCanPlace);
+            // sub-menu definition
+            (count _x isNotEqualTo 2) ||
+            // no callback available -> always show
+            { !isText(_callback) } ||
+            // let's see what the callback has to say
+            { [_x] call compile getText(_callback) isEqualTo true }
+        };
+
         _buildableObjects apply {
             _itemIndex = _itemIndex + 1;
 
