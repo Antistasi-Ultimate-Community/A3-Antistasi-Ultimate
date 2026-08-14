@@ -12,7 +12,7 @@ Info("initACEUnconsciousHandler started");
 
 ["ace_unconscious", {
 	params["_unit", "_knockout"];
-	private _group = _group;
+	private _group = group _unit;
 	private _unitIsLocal = local _unit;
 	private _groupIsLocal = local _group;
 	private _realSide = side _group;		// setUnconscious in ACE often breaks this otherwise
