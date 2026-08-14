@@ -32,7 +32,7 @@ Info("initACEUnconsciousHandler started");
 				private _allUnits = (units _group) select {_x call A3A_fnc_canFight};
 
 				// Ensure there are any units available to select
-				if (!isNil {_allUnits param [0]}) then {
+				if (_allUnits isNotEqualTo []) then {
 					private _playerUnits = _allUnits select {isPlayer _x};
 					private _newLeader = _playerUnits param [0];
 
