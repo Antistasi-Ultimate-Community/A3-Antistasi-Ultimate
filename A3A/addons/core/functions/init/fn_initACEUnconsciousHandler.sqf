@@ -55,7 +55,7 @@ Info("initACEUnconsciousHandler started");
 			};
 		};
 
-		if (_unitIsLocal && (_realSide == Occupants || _realSide == Invaders)) then {
+		if (_unitIsLocal && { _realSide in [Occupants, Invaders] }) then {
 			[_unit, _group, _unit getVariable ["ace_medical_lastDamageSource", objNull]] spawn A3A_fnc_AIReactOnKill;
 		};
 	};
