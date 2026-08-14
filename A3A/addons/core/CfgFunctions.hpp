@@ -51,6 +51,7 @@ class CfgFunctions
             class liberaterefugee {};
             class liberatePOW {};
             class liberateFlee {};
+            class liberateVIP {};
             class mineSweep {};
             class mortyAI {};
             class napalm {};
@@ -125,6 +126,7 @@ class CfgFunctions
             class canMoveHQ {};
             class chooseAttack {};
             class citiesToCivPatrol {};
+            class cityChangeSide {};
             class citySupportChange {};
             class commsMP {};
             class createBreachChargeText {};
@@ -269,8 +271,10 @@ class CfgFunctions
             class createAIMilAdmin {};
             class createAttackForceAir {};
             class createAttackForceLand {};
+            class createAttackForceLandMilitia {};
             class createAttackForceMixed {};
             class createAttackForceOrbital {};
+            class createAttackForcePolice {};
             class createAttackVehicle {};
             class createAttackVehicleOrbital {};
             class createSDKGarrisons {};
@@ -304,6 +308,7 @@ class CfgFunctions
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
             class spawnVehiclePrecise {};
+            class townBattle {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
             class RivalsCreateVehicleCrew {};
@@ -389,6 +394,7 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\init);
             //Main initialisation functions.
             class initServer {};
+            class initCities {};
             class initClient {};
             class setupMonitor {};
             class startGame {};
@@ -398,6 +404,8 @@ class CfgFunctions
             class cityinfo {};
             class clientIdleChecker {};
             class credits {};
+            class getCityData {};
+            class getMapInfo {};
             class initACE {};
             class initACEUnconsciousHandler {};
             class initBases {};
@@ -462,7 +470,6 @@ class CfgFunctions
             class findIfNearAndHostile {};
             class LOG_Airdrop {};
             class LOG_Crashsite {};
-            class LOG_Crashsite_Satellite{};
             class LOG_Helicrash {};
             class missionRequest {};
             class REP_Antenna {};
@@ -721,12 +728,10 @@ class CfgFunctions
             class SUP_tank {};
             class SUP_tankAvailable {};
             class SUP_tankRoutine {};
-            class SUP_UAV {};
-            class SUP_UAVRoutine {};
-            class SUP_UAVAvailable {};
             class SUP_UAVAttack {};
             class SUP_UAVAttackRoutine {};
             class SUP_UAVAttackAvailable {};
+            class SUP_UAVRoutine {};
             class SUP_QRFVehAirdrop {};
             class SUP_QRFVehAirdropAvailable {};
             class SUP_howitzer {};

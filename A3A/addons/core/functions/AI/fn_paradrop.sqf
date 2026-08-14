@@ -124,24 +124,11 @@ if(currentWaypoint _groupPilot > 0) then
             waitUntil {sleep 0.25; getPosATL _unit # 2 < 120};
 
             _unit addBackpack "B_Parachute";
-            if !("lowTech" in A3A_factionEquipFlags) then {
-                if !(disableAutoSmokeCover) then {
-                    private _smokeGrenade = selectRandom allSmokeGrenades;
-                    private _smoke = _smokeGrenade createVehicle (getPosATL _unit);
-                    _smoke attachTo [_unit, [0,0,0]];
-                    _unit setVariable ["jumpSave_Smoke", _smoke];
-                };
-            };
 
             private _startLand = time;
             waitUntil {
                 sleep 0.5;
                 isTouchingGround _unit || (time - _startLand > 30)
-            };
-
-            private _smoke = _unit getVariable "jumpSave_Smoke";
-            if (!isNil "_smoke") then {
-                detach _smoke;
             };
 
             removeBackpack _unit;

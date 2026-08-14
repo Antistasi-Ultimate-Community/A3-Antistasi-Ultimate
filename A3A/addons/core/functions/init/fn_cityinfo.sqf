@@ -14,7 +14,7 @@ private _prestigeOPFOR = nil;
 private _prestigeBLUFOR = nil;
 
 {
-	_dataX = server getVariable _x;
+	_dataX = A3A_townData get _x;
 	_numCiv = _dataX select 0;
 	_prestigeOPFOR = _dataX select 2;
 	_prestigeBLUFOR = _dataX select 3;
@@ -71,7 +71,7 @@ while {visibleMap} do {
 			_textX = format ["%2 HQ%1",[_siteX] call A3A_fnc_garrisonInfo,FactionGet(reb,"name")];
 		};
 		if (_siteX in citiesX) then {
-			_dataX = server getVariable _siteX;
+			_dataX = A3A_townData get _siteX;
 
 			_numCiv = _dataX select 0;
 			_prestigeOPFOR = round (_dataX select 2);

@@ -316,8 +316,8 @@ if (_prefix isEqualTo "riv") exitWith {
     _faction set ["unitPartisan", unit(militia, "Partisan")];
     _faction set ["unitEnforcer", unit(militia, "Enforcer")];
     _faction set ["unitMercenary", unit(militia, "Mercenary")];
-    _faction set ["unitSaboteur", unit(militia, "Oppressor")];
-    _faction set ["unitOppressor", unit(militia, "Saboteur")];
+    _faction set ["unitSaboteur", unit(militia, "Saboteur")];
+    _faction set ["unitOppressor", unit(militia, "Oppressor")];
 
     _faction set ["unitCommander", unit(militia, "Commander")];
     _faction set ["unitCrew", unit(militia, "Crew")];
@@ -473,3 +473,4 @@ _faction set ["unitMan", unit(militia, "Man")];
 _faction set ["unitPress", unit(militia, "Press")];
 _faction set ["unitWorker", unit(militia, "Worker")];
 _faction set ["unitSpecial", unit(militia, "Special")];
+_faction set ["unitVIP", unit(militia, "VIP")];

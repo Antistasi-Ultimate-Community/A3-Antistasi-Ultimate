@@ -91,19 +91,20 @@ if (isServer) then {
 
 	// Set enemy roadblock allegiance to match nearest main marker
 	private _mainMarkers = markersX - controlsX -  watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;
-	{
-		if (sidesX getVariable [_x,sideUnknown] != teamPlayer) then {
-			private _nearX = [_mainMarkers, markerPos _x] call BIS_fnc_nearestPosition;
-			private _sideX = sidesX getVariable [_nearX,sideUnknown];
-			sidesX setVariable [_x,_sideX,true];
-		};
-	} forEach controlsX;
+    {
+        if (sidesX getVariable [_x,sideUnknown] != teamPlayer) then {
+            private _nearX = [_mainMarkers, markerPos _x] call BIS_fnc_nearestPosition;
+            private _sideX = sidesX getVariable [_nearX,sideUnknown];
+            sidesX setVariable [_x,_sideX,true];
+        };
+    } forEach controlsX;
 
-	{
-		[_x] call A3A_fnc_mrkUpdate
-	} forEach (markersX - controlsX);
+    [markersX - controlsX] call A3U_fnc_mrkUpdateBulk;
+    if !(milAdministrationsX isEqualTo []) then {[milAdministrationsX] call A3U_fnc_mrkUpdateBulk};
+    if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
+    // ---------------------------
 
-	if (count watchpostsFIA > 0) then {
+    if (count watchpostsFIA > 0) then {
 		markersX = markersX + watchpostsFIA;
 		publicVariable "markersX";
 	};
