@@ -140,4 +140,4 @@ params ["_targetPlayer", "_factionStr", "_qrfType", ["_adminOwner", 2]];
         private _nearMrk = [outposts + airportsX + resourcesX + factories + seaports + milbases, getPosATL (leader _x)] call BIS_fnc_nearestPosition;
         [_x, _nearMrk] spawn A3A_fnc_enemyReturnToBase;
     } forEach _cargoGroups;
-};s
+};

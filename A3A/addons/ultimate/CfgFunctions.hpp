@@ -64,14 +64,8 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\player_context);
             class playerContextMenu {};
             class QRF_chasePlayer {};
-            class context_punishPanel {};
-            class context_setPlayerTraits {};
-            class context_KickPlayer {};
-            class context_BanPlayer {};
-            class context_forceToLobby {};
-            class context_fundsToPlayer {};
-            class context_requestQRF {};
-            class context_messagePlayer {};
+            class context_buildPanel {};
+            class context_panelActions {};
             class context_popup {};
         };
         class REINF

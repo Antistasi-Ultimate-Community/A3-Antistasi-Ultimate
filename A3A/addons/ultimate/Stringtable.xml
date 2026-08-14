@@ -951,6 +951,37 @@
         </Key>
 
         <!-- ============================================== -->
+        <!-- WARN / PUNISH PLAYER                           -->
+        <!-- ============================================== -->
+        <Key ID="STR_A3AU_player_context_warn_btn">
+            <English>Warn player</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_warn_title">
+            <English>Warn Player</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_severity_label">
+            <English>Severity:</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_light">
+            <English>Light (10%)</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_medium">
+            <English>Medium (25%)</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_severe">
+            <English>Severe (50%)</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_extreme">
+            <English>Extreme (75%)</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_warning">
+            <English>CONFIRM WARNING</English>
+        </Key>
+        <Key ID="STR_A3AU_player_context_warned_log">
+            <English>Warned %1 (%2%% offence). Reason: %3</English>
+        </Key>
+
+        <!-- ============================================== -->
         <!-- TRANSFER FUNDS PANEL                           -->
         <!-- ============================================== -->
         <Key ID="STR_A3AU_player_context_amount_transfer">
