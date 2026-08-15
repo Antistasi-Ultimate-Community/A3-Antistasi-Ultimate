@@ -55,7 +55,7 @@ switch (toUpper _actionType) do {
                         [_t, _amount] call A3A_fnc_donateMoney;
                         ctrlDelete _grp;
                     } else {
-                        [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_popup;
+                        [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_notification;
                     };
                 }]
             ]
@@ -85,13 +85,13 @@ switch (toUpper _actionType) do {
                         if (_amount <= _factionFunds) then {
                             [0, -_amount] remoteExec ["A3A_fnc_resourcesFIA", 2];
                             [_amount, _t, true] call A3A_fnc_addMoneyPlayer;
-                            [format [localize "STR_A3AU_player_context_transferred_funds", _amount, name _t], "SUCCESS"] spawn A3U_fnc_context_popup;
+                            [format [localize "STR_A3AU_player_context_transferred_funds", _amount, name _t], "SUCCESS"] spawn A3U_fnc_context_notification;
                             ctrlDelete _grp;
                         } else {
-                            [localize "STR_A3AU_player_context_error_funds", "ERROR"] spawn A3U_fnc_context_popup;
+                            [localize "STR_A3AU_player_context_error_funds", "ERROR"] spawn A3U_fnc_context_notification;
                         };
                     } else {
-                        [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_popup;
+                        [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_notification;
                     };
                 }]
             ]
@@ -132,11 +132,11 @@ switch (toUpper _actionType) do {
                     private _theme = _themeCombo lbData (lbCurSel _themeCombo);
                     
                     if (_msg == "") exitWith {
-                        [localize "STR_A3AU_player_context_message_empty", "ERROR", player] spawn A3U_fnc_context_popup;
+                        [localize "STR_A3AU_player_context_message_empty", "ERROR", player] spawn A3U_fnc_context_notification;
                     };
                     
-                    [_msg, _theme, _t] spawn A3U_fnc_context_popup;
-                    [format [localize "STR_A3AU_player_context_message_sent", name _t], "SUCCESS", player] spawn A3U_fnc_context_popup;
+                    [_msg, _theme, _t] spawn A3U_fnc_context_notification;
+                    [format [localize "STR_A3AU_player_context_message_sent", name _t], "SUCCESS", player] spawn A3U_fnc_context_notification;
                     ctrlDelete _grp;
                 }]
             ]
@@ -172,7 +172,7 @@ switch (toUpper _actionType) do {
                     private _type = _typeCombo lbData (lbCurSel _typeCombo);
                     
                     [[_t, _faction, _type, clientOwner], "A3U_fnc_QRF_chasePlayer"] remoteExec ["A3A_fnc_scheduler", 2];
-                    [format [localize "STR_A3AU_player_context_dispatched_qrf", _faction, _type, name _t], "WARNING"] spawn A3U_fnc_context_popup;
+                    [format [localize "STR_A3AU_player_context_dispatched_qrf", _faction, _type, name _t], "WARNING"] spawn A3U_fnc_context_notification;
                     
                     ctrlDelete _grp;
                 }]
@@ -209,7 +209,7 @@ switch (toUpper _actionType) do {
                     _t setUnitTrait [_key, _newState, true];
                 };
                 private _theme = if (_newState) then { "SUCCESS" } else { "WARNING" };
-                [format [localize "STR_A3AU_player_context_trait_set_log", name _t, _key, _newState], _theme] spawn A3U_fnc_context_popup;
+                [format [localize "STR_A3AU_player_context_trait_set_log", name _t, _key, _newState], _theme] spawn A3U_fnc_context_notification;
             }, _traitKey];
         } forEach _traits;
 
@@ -239,7 +239,7 @@ switch (toUpper _actionType) do {
                     if (_rsn == "") then { _rsn = localize "STR_A3AU_player_context_admin_action"; };
                     
                     [_t, _time, 1.0, objNull, _rsn, true] remoteExecCall ["A3A_fnc_punishment", 2, false];
-                    [format [localize "STR_A3AU_player_context_punished_log", name _t, _time, 100, _rsn], "WARNING"] spawn A3U_fnc_context_popup;
+                    [format [localize "STR_A3AU_player_context_punished_log", name _t, _time, 100, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                     
                     ctrlDelete _grp;
                 }]
@@ -276,8 +276,8 @@ switch (toUpper _actionType) do {
                     
                     [_t, 0, (_offRaw / 100), objNull, _rsn, true] remoteExecCall ["A3A_fnc_punishment", 2, false];
                     
-                    [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING", _t] spawn A3U_fnc_context_popup;
-                    [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING"] spawn A3U_fnc_context_popup;
+                    [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING", _t] spawn A3U_fnc_context_notification;
+                    [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                     
                     ctrlDelete _grp;
                 }]
@@ -305,10 +305,10 @@ switch (toUpper _actionType) do {
                     if (_rsn == "") then { _rsn = localize "STR_A3AU_player_context_no_reason"; };
                     
                     if (_type == "KICK") then {
-                        [format [localize "STR_A3AU_player_context_kicking_log", name _t, _rsn], "WARNING"] spawn A3U_fnc_context_popup;
+                        [format [localize "STR_A3AU_player_context_kicking_log", name _t, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                         serverCommand format ["#kick %1", name _t];
                     } else {
-                        [format [localize "STR_A3AU_player_context_banning_log", name _t, _rsn], "WARNING"] spawn A3U_fnc_context_popup;
+                        [format [localize "STR_A3AU_player_context_banning_log", name _t, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                         serverCommand format ["#exec ban %1", name _t];
                     };
                     
@@ -336,7 +336,7 @@ switch (toUpper _actionType) do {
                     private _rsn = ctrlText (_grp getVariable "A3U_InputRsn");
                     if (_rsn == "") then { _rsn = localize "STR_A3AU_player_context_forced_lobby"; };
                     
-                    [_rsn, "ERROR", _t] spawn A3U_fnc_context_popup;
+                    [_rsn, "ERROR", _t] spawn A3U_fnc_context_notification;
                     
                     [_t] spawn {
                         sleep 2;

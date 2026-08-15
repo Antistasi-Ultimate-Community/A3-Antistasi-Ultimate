@@ -50,7 +50,7 @@ params ["_targetPlayer", "_factionStr", "_qrfType", ["_adminOwner", 2]];
     };
 
     if (isNil "_base" || {_base == ""}) exitWith {
-        [localize "STR_A3AU_player_context_qrf_no_bases"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
+        [localize "STR_A3AU_player_context_qrf_no_bases"] remoteExec ["A3U_fnc_context_notification", _adminOwner];
     };
 
     // -----------------------------------------------------------------------------
@@ -68,16 +68,16 @@ params ["_targetPlayer", "_factionStr", "_qrfType", ["_adminOwner", 2]];
     };
 
     if (isNil "_data" || {count _data < 4}) exitWith {
-        [localize "STR_A3AU_player_context_qrf_no_assets"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
+        [localize "STR_A3AU_player_context_qrf_no_assets"] remoteExec ["A3U_fnc_context_notification", _adminOwner];
     };
 
     _data params ["_resources", "_vehicles", "_crewGroups", "_cargoGroups"];
 
     if (count _vehicles == 0) exitWith {
-        [localize "STR_A3AU_player_context_qrf_no_vehicles"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
+        [localize "STR_A3AU_player_context_qrf_no_vehicles"] remoteExec ["A3U_fnc_context_notification", _adminOwner];
     };
 
-    [localize "STR_A3AU_player_context_qrf_success"] remoteExec ["A3U_fnc_context_popup", _adminOwner];
+    [localize "STR_A3AU_player_context_qrf_success"] remoteExec ["A3U_fnc_context_notification", _adminOwner];
 
     // -----------------------------------------------------------------------------
     // THE ACTIVE TRACKING LOOP

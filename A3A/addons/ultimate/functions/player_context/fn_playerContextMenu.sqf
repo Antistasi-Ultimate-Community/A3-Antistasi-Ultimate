@@ -68,7 +68,7 @@ if (_isAdmin || _isCommander) then {
     _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_commander", {
         params ["_target", "_btnControl"];
         [_target] call A3A_fnc_theBossTransfer;
-        [format [localize "STR_A3AU_player_context_commander_transferred", name _target], "SUCCESS"] spawn A3U_fnc_context_popup;
+        [format [localize "STR_A3AU_player_context_commander_transferred", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
     }];
     
     _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_faction_funds", {
@@ -124,9 +124,9 @@ if (_isAdmin) then {
         _btnControl ctrlSetBackgroundColor _newHover; 
         
         if (_newState) then {
-            [format [localize "STR_A3AU_player_context_undercover_on_log", name _target], "WARNING"] spawn A3U_fnc_context_popup;
+            [format [localize "STR_A3AU_player_context_undercover_on_log", name _target], "WARNING"] spawn A3U_fnc_context_notification;
         } else {
-            [format [localize "STR_A3AU_player_context_undercover_off_log", name _target], "WARNING"] spawn A3U_fnc_context_popup;
+            [format [localize "STR_A3AU_player_context_undercover_off_log", name _target], "WARNING"] spawn A3U_fnc_context_notification;
         };
     }, _ucColor];
     
@@ -188,10 +188,10 @@ if (_isAdmin) then {
             _t assignCurator _zeusModule;
             _zeusModule addCuratorAddons activatedAddons;
             _zeusModule addCuratorEditableObjects [allUnits + vehicles, true];
-            [localize "STR_A3AU_player_context_zeus_granted", "SUCCESS"] spawn A3U_fnc_context_popup;
+            [localize "STR_A3AU_player_context_zeus_granted", "SUCCESS"] spawn A3U_fnc_context_notification;
         }] remoteExec ["bis_fnc_call", 2];
         
-        [format [localize "STR_A3AU_player_context_zeus_log", name _target], "SUCCESS"] spawn A3U_fnc_context_popup;
+        [format [localize "STR_A3AU_player_context_zeus_log", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
     }];
 };
 
@@ -427,7 +427,7 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
         params ["_btnControl", "_button"];
         if (_button != 0) exitWith {}; 
         copyToClipboard (_btnControl getVariable ["A3U_CopyData", ""]);
-        [localize "STR_A3AU_player_context_copied_clipboard", "SUCCESS"] spawn A3U_fnc_context_popup;
+        [localize "STR_A3AU_player_context_copied_clipboard", "SUCCESS"] spawn A3U_fnc_context_notification;
     }];
     
     // Rank Management Overlay (Inline within Content 1)
@@ -458,7 +458,7 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
                 private _newRank = _ranks select (_idx - 1);
                 _t setRank _newRank;
                 _t setVariable ["rankX", _newRank, true];
-                [format [localize "STR_A3AU_player_context_demoted_log", name _t, _newRank], "WARNING"] spawn A3U_fnc_context_popup;
+                [format [localize "STR_A3AU_player_context_demoted_log", name _t, _newRank], "WARNING"] spawn A3U_fnc_context_notification;
                 
                 // Trigger auto-close
                 private _display = ctrlParent _ctrl;
@@ -492,7 +492,7 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
                 private _newRank = _ranks select (_idx + 1);
                 _t setRank _newRank;
                 _t setVariable ["rankX", _newRank, true];
-                [format [localize "STR_A3AU_player_context_promoted_log", name _t, _newRank], "SUCCESS"] spawn A3U_fnc_context_popup;
+                [format [localize "STR_A3AU_player_context_promoted_log", name _t, _newRank], "SUCCESS"] spawn A3U_fnc_context_notification;
                 
                 // Trigger auto-close
                 private _display = ctrlParent _ctrl;

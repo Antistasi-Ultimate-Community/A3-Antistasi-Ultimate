@@ -66,7 +66,7 @@ class CfgFunctions
             class QRF_chasePlayer {};
             class context_buildPanel {};
             class context_panelActions {};
-            class context_popup {};
+            class context_notification {};
         };
         class REINF
         {
