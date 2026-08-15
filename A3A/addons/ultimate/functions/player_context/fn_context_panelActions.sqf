@@ -34,9 +34,36 @@ params ["_display", "_target", "_actionType"];
 if (isNull _display || isNull _target) exitWith {};
 
 switch (toUpper _actionType) do {
-    
     // =========================================================================
-    // TRANSFER FUNDS
+    // TRANSFER PERSONAL FUNDS TO PLAYER
+    // =========================================================================
+    case "FUNDS_PLAYER": {
+        [
+            _display, _target, 
+            localize "STR_A3AU_player_context_transfer_funds", 
+            [0.18, 0.50, 0.20, 1], // Green
+            [
+                ["EDIT", "Amount:", "0", "A3U_InputAmt"],
+                ["BUTTON", localize "STR_A3AU_player_context_confirm_button", [0, 0, 0, 0.4], {
+                    params ["_btnCtrl"];
+                    private _t = _btnCtrl getVariable "A3U_Target";
+                    private _grp = _btnCtrl getVariable "A3U_Grp";
+                    
+                    private _amount = floor (parseNumber (ctrlText (_grp getVariable "A3U_InputAmt")));
+                    
+                    if (_amount > 0) then {
+                        [_t, _amount] call A3A_fnc_donateMoney;
+                        ctrlDelete _grp;
+                    } else {
+                        [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_popup;
+                    };
+                }]
+            ]
+        ] spawn A3U_fnc_context_buildPanel;
+    };
+
+    // =========================================================================
+    // TRANSFER FACTION FUNDS TO PLAYER
     // =========================================================================
     case "FUNDS": {
         [
@@ -211,7 +238,7 @@ switch (toUpper _actionType) do {
                     if (_time < 0) then { _time = 0; };
                     if (_rsn == "") then { _rsn = localize "STR_A3AU_player_context_admin_action"; };
                     
-                    [_t, _time, 1.0, objNull, _rsn] remoteExecCall ["A3A_fnc_punishment", 2, false];
+                    [_t, _time, 1.0, objNull, _rsn, true] remoteExecCall ["A3A_fnc_punishment", 2, false];
                     [format [localize "STR_A3AU_player_context_punished_log", name _t, _time, 100, _rsn], "WARNING"] spawn A3U_fnc_context_popup;
                     
                     ctrlDelete _grp;
@@ -247,7 +274,7 @@ switch (toUpper _actionType) do {
                     private _rsn = ctrlText (_grp getVariable "A3U_InputRsn");
                     if (_rsn == "") then { _rsn = localize "STR_A3AU_player_context_admin_action"; };
                     
-                    [_t, 0, (_offRaw / 100), objNull, _rsn] remoteExecCall ["A3A_fnc_punishment", 2, false];
+                    [_t, 0, (_offRaw / 100), objNull, _rsn, true] remoteExecCall ["A3A_fnc_punishment", 2, false];
                     
                     [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING", _t] spawn A3U_fnc_context_popup;
                     [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING"] spawn A3U_fnc_context_popup;

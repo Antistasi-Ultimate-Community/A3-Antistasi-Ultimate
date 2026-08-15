@@ -59,8 +59,9 @@ private _adminData = [];
 
 // --- PANEL 2: PLAYER OPTIONS ---
 _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_funds", {
-    params ["_target"];
-    ["moneyX", _target] call A3A_fnc_donateMoney;
+    params ["_target", "_btnControl"];
+    private _display = ctrlParent _btnControl;
+    [_display, _target, "FUNDS_PLAYER"] spawn A3U_fnc_context_panelActions;
 }];
 
 if (_isAdmin || _isCommander) then {
