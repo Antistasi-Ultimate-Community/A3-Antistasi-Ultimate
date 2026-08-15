@@ -195,19 +195,25 @@ switch (toUpper _actionType) do {
         {
             _x params ["_label", "_traitKey"];
             private _hasTrait = false;
+            
             if (_traitKey == "engineer" && {missionNamespace getVariable ["ace_repair_enabled", false]}) then {
-                _hasTrait = _target getVariable ["ace_isEngineer", false];
+                private _aceEng = _target getVariable ["ace_isEngineer", 0];
+                if (_aceEng isEqualType true) then { _hasTrait = _aceEng; } else { _hasTrait = _aceEng > 0; };
             } else {
                 _hasTrait = _target getUnitTrait _traitKey;
             };
             
             _elements pushBack ["TOGGLE", _label, _hasTrait, {
                 params ["_t", "_newState", "_ctrl", "_key"];
+                
                 if (_key == "engineer" && {missionNamespace getVariable ["ace_repair_enabled", false]}) then {
-                    _t setVariable ["ace_isEngineer", _newState, true];
+                    // ACE expects a number (1 = engineer, 0 = not engineer)
+                    private _aceVal = if (_newState) then { 1 } else { 0 };
+                    _t setVariable ["ace_isEngineer", _aceVal, true];
                 } else {
-                    _t setUnitTrait [_key, _newState, true];
+                    [_t, [_key, _newState, true]] remoteExecCall ["setUnitTrait", _t];
                 };
+                
                 private _theme = if (_newState) then { "SUCCESS" } else { "WARNING" };
                 [format [localize "STR_A3AU_player_context_trait_set_log", name _t, _key, _newState], _theme] spawn A3U_fnc_context_notification;
             }, _traitKey];

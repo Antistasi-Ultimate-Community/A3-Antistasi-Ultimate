@@ -68,6 +68,8 @@ if (_isAdmin || _isCommander) then {
     _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_commander", {
         params ["_target", "_btnControl"];
         [_target] call A3A_fnc_theBossTransfer;
+        [_target] call A3A_fnc_makePlayerBossIfEligible
+        [player, _target] remoteExec ['A3A_fnc_theBossToggleEligibility', 2];
         [format [localize "STR_A3AU_player_context_commander_transferred", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
     }];
     
@@ -188,7 +190,7 @@ if (_isAdmin) then {
             _t assignCurator _zeusModule;
             _zeusModule addCuratorAddons activatedAddons;
             _zeusModule addCuratorEditableObjects [allUnits + vehicles, true];
-            [localize "STR_A3AU_player_context_zeus_granted", "SUCCESS"] spawn A3U_fnc_context_notification;
+            [localize "STR_A3AU_player_context_zeus_granted", "SUCCESS", _target] spawn A3U_fnc_context_notification;
         }] remoteExec ["bis_fnc_call", 2];
         
         [format [localize "STR_A3AU_player_context_zeus_log", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
