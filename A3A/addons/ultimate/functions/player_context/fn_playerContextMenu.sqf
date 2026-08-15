@@ -68,8 +68,8 @@ if (_isAdmin || _isCommander) then {
     _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_commander", {
         params ["_target", "_btnControl"];
         [_target] call A3A_fnc_theBossTransfer;
-        [_target] call A3A_fnc_makePlayerBossIfEligible
-        [player, _target] remoteExec ['A3A_fnc_theBossToggleEligibility', 2];
+        [_target] call A3A_fnc_makePlayerBossIfEligible;
+        [player, _target] remoteExec ["A3A_fnc_theBossToggleEligibility", 2];
         [format [localize "STR_A3AU_player_context_commander_transferred", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
     }];
     
