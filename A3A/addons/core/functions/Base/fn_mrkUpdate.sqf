@@ -166,7 +166,8 @@ private _markerTitle = call {
     if (_isTraderMarker) exitWith { localize "STR_A3U_HOVER_BLACK_MARKET" };
     if (_originalName in citiesX) exitWith { markerText _originalName };
     
-    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str RETDEF(rallyPointSpawnCount,0)] };
+    // FETCH LIVE SPAWN COUNT FROM NAMESPACE
+    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (missionNamespace getVariable ["rallyPointSpawnCount", 0])] };
     
     if (_isMilAdmin) exitWith { format [localize "STR_milAdministration", _nearestCityName] };
     if (_originalName in mrkAntennas) exitWith { format [localize "STR_radiotower", _nearestCityName] };
@@ -296,8 +297,10 @@ private _specialDefinitions = [
     };
     
     private _specFlag = if (_specFlagOverride != "") then {_specFlagOverride} else {_specFaction getOrDefault ["flagMarkerType", ""]};
+    
+    // FETCH LIVE SPAWN COUNT FROM NAMESPACE FOR SPECIAL DEFS
     private _specTitle = if (_specTitleLoc == "STR_marker_RP") then {
-        format [localize _specTitleLoc, if (isNil "rallyPointSpawnCount") then {"0"} else {str rallyPointSpawnCount}]
+        format [localize _specTitleLoc, str (missionNamespace getVariable ["rallyPointSpawnCount", 0])]
     } else {
         format [localize _specTitleLoc, _specFaction getOrDefault ["name", ""]]
     };
@@ -316,7 +319,8 @@ private _isUISilentUpdate = missionNamespace getVariable ["A3U_suppressNetworkFo
 if (!_isUISilentUpdate) then {
     [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
 
-    if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)}) then {
+    // ENFORCE VISIBILITY RULE: HQ, Trader, and Rally Points always show text labels
+    if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)} || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
         _visibleMarkerName setMarkerText _markerLabelOnly;
     } else {
         _visibleMarkerName setMarkerText "";
