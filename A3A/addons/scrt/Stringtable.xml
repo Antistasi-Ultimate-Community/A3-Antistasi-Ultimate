@@ -17296,6 +17296,14 @@
                 <French>Notification de tir ami</French>
                 <Turkish>Dost Ateşi Bildirimi</Turkish>
             </Key>
+            <Key ID="STR_A3A_punishment_wn_notification">
+                <Original>Warning Notification</Original>
+                <Russian>Предупредительное уведомление</Russian>
+                <French>Notification d'avertissement</French>
+                <Korean>경고 알림</Korean>
+                <ChineseSimplified>警告通知</ChineseSimplified>
+                <Turkish>Uyarı Bildirimi</Turkish>
+            </Key>
             <Key ID="STR_A3A_punishment_ff_notification_desc">
                 <Original>%1 hurt you!</Original>
                 <Russian>%1 нанес вам урон!</Russian>
@@ -17319,6 +17327,14 @@
                 <Korean>  이(가) 당신을 다치게 했습니다!</Korean>
                 <French> a fait des dégâts!</French>
                 <Turkish>  size hasar verdi!</Turkish>
+            </Key>
+            <Key ID="STR_A3A_punishment_admin_warning">
+                <Original>Warned by admin!</Original>
+                <Russian>Предупрежден администратором!</Russian>
+                <French>Averti par l'administrateur!</French>
+                <Korean>관리자에게 경고받음!</Korean>
+                <Chinesesimp>被管理员警告!</Chinesesimp>
+                <Turkish>Yönetici tarafından uyarıldı!</Turkish>
             </Key>
             <Key ID="STR_A3A_punishment_watch_your_fire">
                 <Original>Watch your fire!</Original>
