@@ -53,7 +53,7 @@ rallyPointMarker setMarkerAlpha 1;
 sidesX setVariable [rallyPointMarker,teamPlayer,true];
 publicVariable "rallyPointMarker";
 
-[rallyPointMarker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
+[rallyPointMarker] call A3A_fnc_mrkUpdate;
 
 rallyProps append [_backpack1, _backpack2, _bag, _ammobox];
 publicVariable "rallyProps";
