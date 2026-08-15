@@ -208,9 +208,15 @@ private _cY = _titleH + _padY;
             _combo ctrlCommit 0;
 
             {
-                _x params ["_dispStr", "_dataStr"];
+                // Accept optional 3rd param for coloring the dropdown text
+                _x params ["_dispStr", "_dataStr", ["_itemColor", []]];
                 private _idx = _combo lbAdd _dispStr;
                 _combo lbSetData [_idx, _dataStr];
+                
+                // If a color was passed, tint the text of this specific row
+                if !(_itemColor isEqualTo []) then {
+                    _combo lbSetColor [_idx, _itemColor];
+                };
             } forEach _arg2;
             _combo lbSetCurSel 0;
 

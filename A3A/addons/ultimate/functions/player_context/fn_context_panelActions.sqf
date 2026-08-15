@@ -109,18 +109,18 @@ switch (toUpper _actionType) do {
             [
                 ["EDIT", localize "STR_A3AU_player_context_message_label", "", "A3U_InputMsg"],
                 ["COMBO", localize "STR_A3AU_player_context_theme_label", [
-                    ["Grey", "GREY"],
-                    ["Green", "GREEN"],
-                    ["Red", "RED"],
-                    ["Orange", "ORANGE"],
-                    ["Blue", "BLUE"],
-                    ["Yellow", "YELLOW"],
-                    ["Purple", "PURPLE"],
-                    ["Cyan", "CYAN"],
-                    ["Pink", "PINK"],
-                    ["Brown", "BROWN"],
-                    ["White", "WHITE"],
-                    ["Black", "BLACK"]
+                    ["Grey", "GREY", [0.5, 0.5, 0.5, 1]],
+                    ["Green", "GREEN", [0.18, 0.50, 0.20, 1]],
+                    ["Red", "RED", [0.8, 0.1, 0.1, 1]],
+                    ["Orange", "ORANGE", [0.8, 0.5, 0.1, 1]],
+                    ["Blue", "BLUE", [0.1, 0.4, 0.6, 1]],
+                    ["Yellow", "YELLOW", [1, 1, 0, 1]],
+                    ["Purple", "PURPLE", [0.5, 0.1, 0.6, 1]],
+                    ["Cyan", "CYAN", [0.1, 0.7, 0.7, 1]],
+                    ["Pink", "PINK", [0.9, 0.4, 0.6, 1]],
+                    ["Brown", "BROWN", [0.5, 0.3, 0.1, 1]],
+                    ["White", "WHITE", [0.9, 0.9, 0.9, 1]],
+                    ["Black", "BLACK", [0.3, 0.3, 0.3, 1]] 
                 ], "A3U_InputTheme"],
                 ["BUTTON", localize "STR_A3AU_player_context_send_message", [0, 0, 0, 0.4], {
                     params ["_btnCtrl"];
