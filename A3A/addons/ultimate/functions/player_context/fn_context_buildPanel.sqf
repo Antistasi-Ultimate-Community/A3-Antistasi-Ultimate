@@ -5,7 +5,9 @@ Function: A3U_fnc_context_buildPanel
 
 Description:
     Master UI Engine. Generates a standardized, dynamically scaling context 
-    popup panel based on an array of requested UI elements. 
+    popup panel based on an array of requested UI elements. Includes drag-and-drop 
+    functionality on the title bar with persistent position memory via profileNamespace,
+    and automatic cleanup of previous popups.
 
 Parameters:
     0: _display - The parent map display <DISPLAY>
@@ -33,14 +35,41 @@ private _totalH = _titleH + _padY;
 { _totalH = _totalH + _rowH + _padY; } forEach _elements;
 _totalH = _totalH + _padY;
 
+// -----------------------------------------------------------------------------
+// LOAD SAVED POSITION OR DEFAULT TO CENTER
+// -----------------------------------------------------------------------------
+private _savedPos = profileNamespace getVariable ["A3U_ContextPopup_Pos", []];
 private _xPos = safeZoneX + (safeZoneW / 2) - (_w / 2);
 private _yPos = safeZoneY + (safeZoneH / 2) - (_totalH / 2);
+
+if !(_savedPos isEqualTo []) then {
+    _xPos = _savedPos # 0;
+    _yPos = _savedPos # 1;
+    
+    // Clamp to screen bounds in case they changed resolution
+    _xPos = (_xPos max safeZoneX) min (safeZoneX + safeZoneW - _w);
+    _yPos = (_yPos max safeZoneY) min (safeZoneY + safeZoneH - _totalH);
+};
+
+// -----------------------------------------------------------------------------
+// CLEANUP & BUILD BASE PANEL
+// -----------------------------------------------------------------------------
+// Auto-close any previously opened popup from this engine
+private _existingPopup = _display getVariable ["A3U_ActiveContextPopup", controlNull];
+if (!isNull _existingPopup) then { ctrlDelete _existingPopup; };
 
 private _grp = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
 _grp ctrlSetPosition [_xPos, _yPos, _w, _totalH];
 _grp ctrlCommit 0;
 
-_display setVariable ["A3U_OpenContextPanels", (_display getVariable ["A3U_OpenContextPanels", []]) + [_grp]];
+// Register this as the currently active popup
+_display setVariable ["A3U_ActiveContextPopup", _grp];
+
+// Append to the global tracker for the map-click auto-close listener
+private _panels = _display getVariable ["A3U_OpenContextPanels", []];
+_panels = _panels select { !isNull _x }; // Clean dead references
+_panels pushBack _grp;
+_display setVariable ["A3U_OpenContextPanels", _panels];
 _display setVariable ["A3U_ContextMenu_SpawnTime", diag_tickTime];
 
 private _bg = _display ctrlCreate ["RscText", -1, _grp];
@@ -48,10 +77,14 @@ _bg ctrlSetPosition [0, 0, _w, _totalH];
 _bg ctrlSetBackgroundColor [0.12, 0.12, 0.12, 0.95];
 _bg ctrlCommit 0;
 
+// -----------------------------------------------------------------------------
+// TITLE BAR (DRAGGABLE) & CLOSE BUTTON
+// -----------------------------------------------------------------------------
 private _title = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _title ctrlSetPosition [0, 0, _w, _titleH];
 _title ctrlSetBackgroundColor _titleColor;
 _title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", _titleStr];
+_title ctrlSetTooltip "Drag to move";
 _title ctrlCommit 0;
 
 private _closeBtn = _display ctrlCreate ["RscStructuredText", -1, _grp];
@@ -59,9 +92,82 @@ _closeBtn ctrlSetPosition [_w - (0.015 * safeZoneW), 0.003 * safeZoneH, 0.012 * 
 _closeBtn ctrlSetStructuredText parseText "<t align='center' size='0.8'>X</t>";
 _closeBtn ctrlSetBackgroundColor [0.8, 0.1, 0.1, 1];
 _closeBtn ctrlCommit 0;
+
 _closeBtn setVariable ["A3U_Grp", _grp];
 _closeBtn ctrlAddEventHandler ["MouseButtonDown", { ctrlDelete ((_this#0) getVariable "A3U_Grp"); }];
 
+_title setVariable ["A3U_Grp", _grp];
+_title setVariable ["A3U_CloseBtn", _closeBtn];
+
+_title ctrlAddEventHandler ["MouseButtonDown", {
+    params ["_ctrl", "_button"];
+    if (_button != 0) exitWith {}; // Only left clicks drag
+    
+    // FIX Z-ORDER ISSUE: Instantly push the close button back to the absolute front!
+    private _closeBtn = _ctrl getVariable "A3U_CloseBtn";
+    _closeBtn ctrlCommit 0;
+    
+    private _grp = _ctrl getVariable "A3U_Grp";
+    private _grpPos = ctrlPosition _grp;
+    
+    // Use absolute screen coordinates for the initial offset calculation
+    private _startMouse = getMousePosition;
+    private _offsetX = (_startMouse # 0) - (_grpPos # 0);
+    private _offsetY = (_startMouse # 1) - (_grpPos # 1);
+    
+    uiNamespace setVariable ["A3U_ContextPopup_Dragging", true];
+    
+    [_grp, _offsetX, _offsetY] spawn {
+        params ["_grp", "_offsetX", "_offsetY"];
+        disableSerialization;
+        
+        while {uiNamespace getVariable ["A3U_ContextPopup_Dragging", false] && !isNull _grp} do {
+            private _mousePos = getMousePosition;
+            private _newX = (_mousePos # 0) - _offsetX;
+            private _newY = (_mousePos # 1) - _offsetY;
+            
+            private _w = (ctrlPosition _grp) # 2;
+            private _h = (ctrlPosition _grp) # 3;
+            
+            // Constrain to screen so they can't throw it off the monitor
+            _newX = (_newX max safeZoneX) min (safeZoneX + safeZoneW - _w);
+            _newY = (_newY max safeZoneY) min (safeZoneY + safeZoneH - _h);
+            
+            _grp ctrlSetPosition [_newX, _newY, _w, _h];
+            _grp ctrlCommit 0;
+            sleep 0.01; // Smooth UI framerate
+        };
+        
+        // When dragging stops, save the position
+        if (!isNull _grp) then {
+            private _finalPos = ctrlPosition _grp;
+            profileNamespace setVariable ["A3U_ContextPopup_Pos", [_finalPos # 0, _finalPos # 1]];
+            saveProfileNamespace;
+        };
+    };
+}];
+
+_title ctrlAddEventHandler ["MouseButtonUp", {
+    params ["_ctrl", "_button"];
+    if (_button == 0) then {
+        uiNamespace setVariable ["A3U_ContextPopup_Dragging", false];
+    };
+}];
+
+// Fallback: Global map listener in case they whip their mouse off the panel too fast
+if (_display getVariable ["A3U_DragEH_Added", -1] == -1) then {
+    private _eh = _display displayAddEventHandler ["MouseButtonUp", {
+        params ["_display", "_button"];
+        if (_button == 0) then {
+            uiNamespace setVariable ["A3U_ContextPopup_Dragging", false];
+        };
+    }];
+    _display setVariable ["A3U_DragEH_Added", _eh];
+};
+
+// -----------------------------------------------------------------------------
+// POPULATE ROWS
+// -----------------------------------------------------------------------------
 private _cY = _titleH + _padY;
 
 {
@@ -69,7 +175,6 @@ private _cY = _titleH + _padY;
     
     switch (_type) do {
         case "EDIT": {
-            // If label is empty, make input full width
             if (_arg1 != "") then {
                 private _lbl = _display ctrlCreate ["RscStructuredText", -1, _grp];
                 _lbl ctrlSetPosition [0.005 * safeZoneW, _cY, 0.06 * safeZoneW, _rowH];

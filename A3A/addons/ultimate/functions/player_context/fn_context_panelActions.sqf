@@ -82,10 +82,18 @@ switch (toUpper _actionType) do {
             [
                 ["EDIT", localize "STR_A3AU_player_context_message_label", "", "A3U_InputMsg"],
                 ["COMBO", localize "STR_A3AU_player_context_theme_label", [
-                    [localize "STR_A3AU_player_context_theme_default", "DEFAULT"],
-                    [localize "STR_A3AU_player_context_theme_success", "SUCCESS"],
-                    [localize "STR_A3AU_player_context_theme_warning", "WARNING"],
-                    [localize "STR_A3AU_player_context_theme_error", "ERROR"]
+                    ["Grey", "GREY"],
+                    ["Green", "GREEN"],
+                    ["Red", "RED"],
+                    ["Orange", "ORANGE"],
+                    ["Blue", "BLUE"],
+                    ["Yellow", "YELLOW"],
+                    ["Purple", "PURPLE"],
+                    ["Cyan", "CYAN"],
+                    ["Pink", "PINK"],
+                    ["Brown", "BROWN"],
+                    ["White", "WHITE"],
+                    ["Black", "BLACK"]
                 ], "A3U_InputTheme"],
                 ["BUTTON", localize "STR_A3AU_player_context_send_message", [0, 0, 0, 0.4], {
                     params ["_btnCtrl"];

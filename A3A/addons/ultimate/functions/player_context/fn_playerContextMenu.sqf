@@ -79,14 +79,29 @@ if (_isAdmin || _isCommander) then {
 
 // --- PANEL 3: ADMIN SETTINGS ---
 if (_isAdmin) then {
-    _adminData pushBack ["SINGLE", localize "STR_A3AU_player_context_toggle_membership", { 
-        params ["_target"];
-        if ([_target] call A3A_fnc_isMember) then {
+    
+    private _isMember = [_target] call A3A_fnc_isMember;
+    private _memColor = if (_isMember) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
+    
+    _adminData pushBack ["TOGGLE", localize "STR_A3AU_player_context_toggle_membership", { 
+        params ["_target", "_btnControl"];
+        
+        private _currentlyMember = [_target] call A3A_fnc_isMember;
+        private _newState = !_currentlyMember;
+        
+        if (_currentlyMember) then {
             ["remove", _target] call A3A_fnc_memberAdd;
         } else {
             ["add", _target] call A3A_fnc_memberAdd;
         };
-    }];
+        
+        private _newColor = if (_newState) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
+        private _newHover = [(_newColor#0) + 0.15, (_newColor#1) + 0.15, (_newColor#2) + 0.15, 1];
+        
+        _btnControl setVariable ["A3U_btn_colNormal", _newColor];
+        _btnControl setVariable ["A3U_btn_colHover", _newHover];
+        _btnControl ctrlSetBackgroundColor _newHover; 
+    }, _memColor];
     
     private _isUndercover = _target getVariable ["undercover", false];
     private _ucColor = if (_isUndercover) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
@@ -575,8 +590,12 @@ _ehID = _mapControl ctrlAddEventHandler ["MouseButtonDown", {
     
     if (diag_tickTime - (_display getVariable ["A3U_ContextMenu_SpawnTime", 0]) < 0.1) exitWith {};
 
-    private _master = _display getVariable ["A3U_playerMenu_masterGrp", controlNull];
-    if (isNull _master) exitWith {
+    // Get all open panels (could be the accordion, or could be a standalone popup)
+    private _childPanels = _display getVariable ["A3U_OpenContextPanels", []];
+    _childPanels = _childPanels select { !isNull _x }; 
+
+    // If there is literally nothing open, destroy this event handler
+    if (count _childPanels == 0) exitWith {
         _mapCtrl ctrlRemoveEventHandler ["MouseButtonDown", _thisEventHandler];
         _display setVariable ["A3U_ContextMenu_EH", -1];
     };
@@ -584,21 +603,17 @@ _ehID = _mapControl ctrlAddEventHandler ["MouseButtonDown", {
     private _mousePos = getMousePosition;
     private _mouseX = _mousePos # 0;
     private _mouseY = _mousePos # 1;
-    
-    private _pos = ctrlPosition _master;
-    private _inside = (_mouseX >= _pos#0 && _mouseX <= (_pos#0 + _pos#2) && _mouseY >= _pos#1 && _mouseY <= (_pos#1 + _pos#3));
+    private _inside = false;
 
-    // Also check if any secondary context popups are open (like QRF or Ban prompts)
-    private _childPanels = _display getVariable ["A3U_OpenContextPanels", []];
+    // Check if the user's mouse click fell inside ANY of the currently open menus/popups
     {
-        if (!isNull _x && _x != _master) then {
-            private _cPos = ctrlPosition _x;
-            if (_mouseX >= _cPos#0 && _mouseX <= (_cPos#0 + _cPos#2) && _mouseY >= _cPos#1 && _mouseY <= (_cPos#1 + _cPos#3)) then { 
-                _inside = true; 
-            };
+        private _cPos = ctrlPosition _x;
+        if (_mouseX >= _cPos#0 && _mouseX <= (_cPos#0 + _cPos#2) && _mouseY >= _cPos#1 && _mouseY <= (_cPos#1 + _cPos#3)) then { 
+            _inside = true; 
         };
     } forEach _childPanels;
 
+    // If they clicked the bare map, delete all panels and remove the event handler
     if (!_inside) then {
         { ctrlDelete _x } forEach _childPanels;
         _display setVariable ["A3U_OpenContextPanels", []];
