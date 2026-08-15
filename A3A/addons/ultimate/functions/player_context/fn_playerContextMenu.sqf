@@ -49,10 +49,20 @@ private _existingMaster = _mapDisplay getVariable ["A3U_playerMenu_masterGrp", c
 if (!isNull _existingMaster) then { ctrlDelete _existingMaster; };
 
 // -----------------------------------------------------------------------------
-// PERMISSION CHECKS & DATA ARRAYS
+// PERMISSION CHECKS & LOGGING HELPER
 // -----------------------------------------------------------------------------
 private _isCommander = (player isEqualTo theBoss);
 private _isAdmin = serverCommandAvailable "#kick";
+
+private _userRole = if (_isAdmin) then { "Admin" } else { if (_isCommander) then { "Commander" } else { "Player" } };
+_mapDisplay setVariable ["A3U_ContextUserRole", _userRole];
+
+private _fnc_logAction = {
+    params ["_role", "_actionMsg"];
+    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _role, name player, _actionMsg];
+    diag_log _msg;
+    [_msg] remoteExecCall ["diag_log", 2];
+};
 
 private _optionsData = [];
 private _adminData = [];
@@ -67,10 +77,19 @@ _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_fund
 if (_isAdmin || _isCommander) then {
     _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_commander", {
         params ["_target", "_btnControl"];
+        private _role = (ctrlParent _btnControl) getVariable ["A3U_ContextUserRole", "Player"];
+        
         [_target] call A3A_fnc_theBossTransfer;
         [_target] call A3A_fnc_makePlayerBossIfEligible;
         [player, _target] remoteExec ["A3A_fnc_theBossToggleEligibility", 2];
         [format [localize "STR_A3AU_player_context_commander_transferred", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
+        
+        [_role, format ["Transferred Commander role to '%1'", name _target]] call {
+            params ["_r", "_act"];
+            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            diag_log _msg;
+            [_msg] remoteExecCall ["diag_log", 2];
+        };
     }];
     
     _optionsData pushBack ["SINGLE", localize "STR_A3AU_player_context_transfer_faction_funds", {
@@ -104,6 +123,13 @@ if (_isAdmin) then {
         _btnControl setVariable ["A3U_btn_colNormal", _newColor];
         _btnControl setVariable ["A3U_btn_colHover", _newHover];
         _btnControl ctrlSetBackgroundColor _newHover; 
+        
+        ["Admin", format ["Toggled server membership for '%1' -> %2", name _target, if (_newState) then {"Added"} else {"Removed"}]] call {
+            params ["_r", "_act"];
+            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            diag_log _msg;
+            [_msg] remoteExecCall ["diag_log", 2];
+        };
     }, _memColor];
     
     private _isUndercover = _target getVariable ["undercover", false];
@@ -129,6 +155,13 @@ if (_isAdmin) then {
             [format [localize "STR_A3AU_player_context_undercover_on_log", name _target], "WARNING"] spawn A3U_fnc_context_notification;
         } else {
             [format [localize "STR_A3AU_player_context_undercover_off_log", name _target], "WARNING"] spawn A3U_fnc_context_notification;
+        };
+        
+        ["Admin", format ["Forced undercover state on '%1' -> %2", name _target, _newState]] call {
+            params ["_r", "_act"];
+            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            diag_log _msg;
+            [_msg] remoteExecCall ["diag_log", 2];
         };
     }, _ucColor];
     
@@ -194,6 +227,13 @@ if (_isAdmin) then {
         }] remoteExec ["bis_fnc_call", 2];
         
         [format [localize "STR_A3AU_player_context_zeus_log", name _target], "SUCCESS"] spawn A3U_fnc_context_notification;
+        
+        ["Admin", format ["Promoted '%1' to temporary Zeus", name _target]] call {
+            params ["_r", "_act"];
+            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            diag_log _msg;
+            [_msg] remoteExecCall ["diag_log", 2];
+        };
     }];
 };
 
@@ -373,7 +413,6 @@ private _fnc_populateContent = {
     } forEach _dataArray;
 };
 
-
 // -----------------------------------------------------------------------------
 // SECTION 1: PLAYER INFO
 // -----------------------------------------------------------------------------
@@ -462,6 +501,14 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
                 _t setVariable ["rankX", _newRank, true];
                 [format [localize "STR_A3AU_player_context_demoted_log", name _t, _newRank], "WARNING"] spawn A3U_fnc_context_notification;
                 
+                private _role = (ctrlParent _ctrl) getVariable ["A3U_ContextUserRole", "Player"];
+                [_role, format ["Demoted player '%1' to rank %2", name _t, _newRank]] call {
+                    params ["_r", "_act"];
+                    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+                    diag_log _msg;
+                    [_msg] remoteExecCall ["diag_log", 2];
+                };
+
                 // Trigger auto-close
                 private _display = ctrlParent _ctrl;
                 private _panels = _display getVariable ["A3U_OpenContextPanels", []];
@@ -496,6 +543,14 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
                 _t setVariable ["rankX", _newRank, true];
                 [format [localize "STR_A3AU_player_context_promoted_log", name _t, _newRank], "SUCCESS"] spawn A3U_fnc_context_notification;
                 
+                private _role = (ctrlParent _ctrl) getVariable ["A3U_ContextUserRole", "Player"];
+                [_role, format ["Promoted player '%1' to rank %2", name _t, _newRank]] call {
+                    params ["_r", "_act"];
+                    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+                    diag_log _msg;
+                    [_msg] remoteExecCall ["diag_log", 2];
+                };
+
                 // Trigger auto-close
                 private _display = ctrlParent _ctrl;
                 private _panels = _display getVariable ["A3U_OpenContextPanels", []];
