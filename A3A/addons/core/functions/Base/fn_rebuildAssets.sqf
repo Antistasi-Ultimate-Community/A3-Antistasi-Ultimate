@@ -42,17 +42,18 @@ if ((_site in factories || _site in resourcesX) && _site in destroyedSites) then
 // Prevent mission start if there are no destroyed assets at this location
 // -----------------------------------------------------------------------------
 private _nothingToRebuild = false;
+private _destroyedLocalBuildings = (nearestObjects [_position, ["House", "Building"], 500, true]) select {_x in destroyedBuildings};
 
 switch (true) do {
     case (_site in citiesX): {
-        if !(_site in destroyedSites) then { _nothingToRebuild = true; };
+        // Allows rebuilding if the city is officially destroyed OR if local houses are destroyed
+        if (!(_site in destroyedSites) && {_destroyedLocalBuildings isEqualTo []}) then { _nothingToRebuild = true; };
     };
     case (_economyDead != ""): {}; 
     case (!isNull _antennaDead): {}; 
     default {
-        // Generic locations (milbases, outposts, etc.)
-        private _militaryBuildings = (nearestObjects [_position, A3A_buildingWhitelist, 500, true]) select {_x in destroyedBuildings};
-        if (_militaryBuildings isEqualTo []) then { _nothingToRebuild = true; };
+        // Generic locations (milbases, outposts, etc.) and civilian towns/buildings
+        if (_destroyedLocalBuildings isEqualTo []) then { _nothingToRebuild = true; };
     };
 };
 
@@ -258,6 +259,14 @@ if (random 100 <= 75) then {
         ] spawn SCRT_fnc_ui_showMessage;
     };
 
+    // Before the switch, grab and repair any destroyed normal buildings in the area so they ALWAYS get fixed
+    [clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
+    private _destroyedLocalBuildings = (nearestObjects [_position, ["House", "Building"], 500, true]) select {_x in destroyedBuildings};
+    
+    {
+        [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
+    } forEach _destroyedLocalBuildings;
+
     switch (true) do {
         case (_site in citiesX): {
             [0, 10, _position] remoteExec ["A3A_fnc_citySupportChange",2];
@@ -265,12 +274,16 @@ if (random 100 <= 75) then {
             [Invaders, 10, 30] remoteExec ["A3A_fnc_addAggression",2];
 
             private _destroyedSite = destroyedSites find _site;
-            if (_destroyedSite == -1) exitWith {
+            if (_destroyedSite != -1) then {
+                destroyedSites deleteAt(_destroyedSite);
+                publicVariable "destroyedSites";
+            };
+            
+            // If the city wasn't destroyed and there were no buildings to repair, refund failsafe
+            if (_destroyedSite == -1 && _destroyedLocalBuildings isEqualTo []) exitWith {
                 ["STR_notifiers_rebuild_assets_nothing_to_rebuild", _nameDest] call _rebuildFail;
                 [0, _cost] remoteExec ["A3A_fnc_resourcesFIA", 2];
             };
-            destroyedSites deleteAt(_destroyedSite);
-            publicVariable "destroyedSites";
 
             ["STR_notifiers_rebuild_assets_success"] call _rebuildSuccess;
         };
@@ -281,27 +294,16 @@ if (random 100 <= 75) then {
         };
 
         case (!isNull _antennaDead): {
-            private _militaryBuildings = nearestObjects [_position, A3A_buildingWhitelist, 500, true];
-            {
-                [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
-            } forEach _militaryBuildings;
-
             [_antennaDead] remoteExec ["A3A_fnc_rebuildRadioTower", 2];
             ["STR_notifiers_rebuild_assets_radiotower_success"] call _rebuildSuccess;
         };
 
         default {
-            [clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
-
-            private _militaryBuildings = (nearestObjects [_position, A3A_buildingWhitelist, 500, true]) select {_x in destroyedBuildings};
-            if (_militaryBuildings isEqualTo []) exitWith {
+            // Kept as a failsafe just in case a server admin manually repairs the buildings while the truck is driving
+            if (_destroyedLocalBuildings isEqualTo []) exitWith {
                 ["STR_notifiers_rebuild_assets_nothing_to_rebuild", _nameDest] call _rebuildFail;
                 [0, _cost] remoteExec ["A3A_fnc_resourcesFIA", 2];
             };
-            
-            {
-                [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2];
-            } forEach _militaryBuildings;
             
             ["STR_notifiers_rebuild_assets_success", _nameDest] call _rebuildSuccess;
             [clientOwner, "destroyedBuildings"] remoteExecCall ["publicVariableClient", 2];
