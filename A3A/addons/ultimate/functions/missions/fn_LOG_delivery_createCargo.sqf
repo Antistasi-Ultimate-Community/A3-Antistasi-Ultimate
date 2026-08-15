@@ -14,7 +14,8 @@ _cargo setVariable ["A3A_cargo_acknowledged", false, true];
 
 [_cargo, "cargo"] remoteExec ["A3A_fnc_flagaction", [teamPlayer, civilian], _cargo];
 
-if ([_cargo] call A3U_fnc_LOG_delivery_isCargoExplosive) then {
+private _isExplosive = [_cargo] call A3U_fnc_LOG_delivery_getCargoExplosive;
+if (_isExplosive isEqualTo 1) then {
     // Add EH to BLOW that shit up if shot
 };
 

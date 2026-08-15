@@ -204,7 +204,7 @@ switch _typeX do
     case "cargo":
     {
         _flag addAction [format [
-            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_bind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", // Change this
+            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", // Change this
             localize "STR_antistasi_actions_acknowledge_cargo"
         ], A3A_fnc_acknowledgeCargo,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target && {_target getVariable ['A3A_cargo_acknowledged', false] isEqualTo false}",4];
     };

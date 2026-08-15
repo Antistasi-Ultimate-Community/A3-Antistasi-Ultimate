@@ -13070,12 +13070,12 @@
                 <Turkish>Bir uçak %1 mevkisine kargo bırakacak. Oraya gidin ve yere bir sis bombası atın; pilot sinyali fark edecek ve kargoyu bırakacaktır. Kargoyu karargaha geri getirin. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Delivery_task_header">
-                <Original>Deliver Cargo</Original>
-                <Russian>Доставьте груз</Russian>
-                <Chinesesimp>运送货物</Chinesesimp>
-                <Korean>화물 운송</Korean>
-                <French>Livrer la cargaison</French>
-                <Turkish>Kargoyu Teslim Et</Turkish>
+                <Original>Pickup Cargo</Original>
+                <Russian>Заберите груз</Russian>
+                <Chinesesimp>取货</Chinesesimp>
+                <Korean>화물 픽업</Korean>
+                <French>Ramasser la cargaison</French>
+                <Turkish>Kargoyu Al</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Delivery_task_desc">
                 <Original>You have been hired to deliver cargo to %1. The cargo has been prepared at %2.</Original>
@@ -13084,6 +13084,14 @@
                 <Korean>%1으로 화물을 운송하도록 고용되었습니다. 화물은 %2에서 준비되었습니다.</Korean>
                 <French>Vous avez été engagé pour livrer une cargaison à %1. La cargaison a été préparée à %2.</French>
                 <Turkish>%1 mevkisine kargo teslim etmek için işe alındınız. Kargo %2 mevkisinde hazırlanmıştır.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_Missions_LOG_Delivery_task_stage_header">
+                <Original>Deliver Cargo</Original>
+                <Russian>Доставьте груз</Russian>
+                <Chinesesimp>运送货物</Chinesesimp>
+                <Korean>화물 운송</Korean>
+                <French>Livrer la cargaison</French>
+                <Turkish>Kargoyu Teslim Et</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Ammo_task_header">
                 <Original>Steal or Destroy Ammo Truck</Original>

@@ -33,10 +33,10 @@
 FIX_LINE_NUMBERS()
 
 private _fnc_cleanup = {
-    params ["_taskId", "_cargoObjects"];
+    params ["_taskId", "_cargoObjects", ["_state", "SUCCEEDED"]];
 
     Info("Delivery mission cleanup.");
-    [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
+    [_taskId, "LOG", _state] call A3A_fnc_taskSetState;
 
     sleep 60;
     [_taskId, "LOG", 0] spawn A3A_fnc_taskDelete;
@@ -111,37 +111,47 @@ private _fnc_isCargoAlive = {
 };
 
 private _fnc_isCargoDelivered = {
-    params ["_cargoObjects", "_destination"];
-    ({(_x distance2D _destination) < 10} count _cargoObjects) isEqualTo (count _cargoObjects);
+    params ["_cargoObjects", "_destinationPos", "_range"];
+    ({(_x distance2D _destinationPos) < _range} count _cargoObjects) isEqualTo (count _cargoObjects);
+};
+
+private _functions = [_fnc_cleanup, _fnc_isCargoAlive];
+private _fnc_failureCheck = {
+    params ["_taskId", "_cargoObjects", "_expireTime", "_functions"];
+    _functions params ["_fnc_cleanup", "_fnc_isCargoAlive"];
+    if ((time > _expireTime) || {!([_cargoObjects] call _fnc_isCargoAlive)}) exitWith {
+        [_taskId, _cargoObjects, "FAILED"] call _fnc_cleanup;
+    };
 };
 
 // Check to start the next phase
 waitUntil {
     sleep 5;
-    {time > _missionExpireTime} ||
-    {([_cargoObjects] call _fnc_isCargoAcknowledged)} || 
+    time > _missionExpireTime ||
+    {[_cargoObjects] call _fnc_isCargoAcknowledged} || 
     {!([_cargoObjects] call _fnc_isCargoAlive)}
 };
 
 // Expiry/failure sanity check
-if ((time > missionExpireTime) || {!([_cargoObjects] call _fnc_isCargoAlive)}) exitWith {
-    [_taskId, _cargoObjects] call _fnc_cleanup;
-};
+[_taskId, _cargoObjects, _missionExpireTime, _functions] call _fnc_failureCheck;
 
 private _missionCompletionTime = time + 1800; // 30 minutes to complete the delivery
 [_taskId, _destination] call BIS_fnc_taskSetDestination;
+[_taskId, [
+    format [localize "STR_A3A_Missions_LOG_Delivery_task_desc", _originName, _destinationName],
+    localize "STR_A3A_Missions_LOG_Delivery_task_stage_header", 
+    _destination
+]] call BIS_fnc_taskSetDescription;
 
 waitUntil {
     sleep 5;
-    {time > _missionCompletionTime} ||
-    {([_cargoObjects, _destination] call _fnc_isCargoDelivered)} || 
+    time > _missionCompletionTime ||
+    {[_cargoObjects, _destinationPos, 15] call _fnc_isCargoDelivered} || 
     {!([_cargoObjects] call _fnc_isCargoAlive)}
 };
 
 // Expiry/failure sanity check
-if ((time > _missionCompletionTime) || {!([_cargoObjects] call _fnc_isCargoAlive)}) exitWith {
-    [_taskId, _cargoObjects] call _fnc_cleanup;
-};
+[_taskId, _cargoObjects, _missionCompletionTime, _functions] call _fnc_failureCheck;
 
 // Calculate payment | We ideally want to give bonuses for both distance travelled and cargo type
 private _payment = 0;
@@ -154,10 +164,12 @@ private _payment = 0;
 {deleteVehicle _x} forEach _cargoObjects;
 
 // Get players "involved" (ish) and pay them
-private _playersInvolved = (call SCRT_fnc_misc_getRebelPlayers) inAreaArray ([_destination, 100, 100]);
+private _playersInvolved = (call SCRT_fnc_misc_getRebelPlayers) inAreaArray ([_destination, _sizeSpawn, _sizeSpawn]);
 private _playersDivider = count _playersInvolved;
 
 {
     [round (7*tierWar), _x] call A3A_fnc_addScorePlayer;
     [(_payment / _playersDivider), _x] call A3A_fnc_addMoneyPlayer;
 } forEach _playersInvolved;
+
+[_taskId, _cargoObjects] call _fnc_cleanup;
