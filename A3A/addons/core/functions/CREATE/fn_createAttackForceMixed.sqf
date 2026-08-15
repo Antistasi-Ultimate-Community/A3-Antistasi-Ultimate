@@ -116,6 +116,11 @@ if (_delay > 0 && !(_isPolice)) then {
     sleep (0 max (_delay - _airTime));
 };
 
+if !(_airbase in airportsX) then {
+    private _airportsSide = airportsX select {sidesX getVariable [_x, sideUnkown] isEqualTo _side};
+    _airbase = if (_airportsSide isNotEqualTo []) then {selectRandom _airports} else {""};
+};
+
 if (_airBase != "" && !(_isPolice)) then
 {
     private _airCount = _vehCount - count (_vehicles);
