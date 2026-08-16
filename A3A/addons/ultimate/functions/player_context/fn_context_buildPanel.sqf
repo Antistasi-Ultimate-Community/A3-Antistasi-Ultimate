@@ -30,7 +30,6 @@ private _titleH = 0.026 * safeZoneH;
 private _rowH = 0.022 * safeZoneH; 
 private _padY = 0.005 * safeZoneH;
 
-// Dynamically calculate total height needed based on the number of elements
 private _totalH = _titleH + _padY;
 { _totalH = _totalH + _rowH + _padY; } forEach _elements;
 _totalH = _totalH + _padY;
@@ -45,8 +44,6 @@ private _yPos = safeZoneY + (safeZoneH / 2) - (_totalH / 2);
 if !(_savedPos isEqualTo []) then {
     _xPos = _savedPos # 0;
     _yPos = _savedPos # 1;
-    
-    // Clamp to screen bounds in case they changed resolution
     _xPos = (_xPos max safeZoneX) min (safeZoneX + safeZoneW - _w);
     _yPos = (_yPos max safeZoneY) min (safeZoneY + safeZoneH - _totalH);
 };
@@ -54,7 +51,6 @@ if !(_savedPos isEqualTo []) then {
 // -----------------------------------------------------------------------------
 // CLEANUP & BUILD BASE PANEL
 // -----------------------------------------------------------------------------
-// Auto-close any previously opened popup from this engine
 private _existingPopup = _display getVariable ["A3U_ActiveContextPopup", controlNull];
 if (!isNull _existingPopup) then { ctrlDelete _existingPopup; };
 
@@ -62,15 +58,18 @@ private _grp = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
 _grp ctrlSetPosition [_xPos, _yPos, _w, _totalH];
 _grp ctrlCommit 0;
 
-// Register this as the currently active popup
 _display setVariable ["A3U_ActiveContextPopup", _grp];
 
-// Append to the global tracker for the map-click auto-close listener
 private _panels = _display getVariable ["A3U_OpenContextPanels", []];
-_panels = _panels select { !isNull _x }; // Clean dead references
+_panels = _panels select { !isNull _x };
 _panels pushBack _grp;
 _display setVariable ["A3U_OpenContextPanels", _panels];
 _display setVariable ["A3U_ContextMenu_SpawnTime", diag_tickTime];
+
+private _focusDummy = _display ctrlCreate ["RscEdit", -1, _grp];
+_focusDummy ctrlSetPosition [-1, -1, 0.01, 0.01];
+_focusDummy ctrlCommit 0;
+ctrlSetFocus _focusDummy;
 
 private _bg = _display ctrlCreate ["RscText", -1, _grp];
 _bg ctrlSetPosition [0, 0, _w, _totalH];
@@ -78,39 +77,45 @@ _bg ctrlSetBackgroundColor [0.12, 0.12, 0.12, 0.95];
 _bg ctrlCommit 0;
 
 // -----------------------------------------------------------------------------
-// TITLE BAR (DRAGGABLE) & CLOSE BUTTON
+// TITLE BAR & DRAG ZONE & CLOSE BUTTON
 // -----------------------------------------------------------------------------
-private _title = _display ctrlCreate ["RscStructuredText", -1, _grp];
-_title ctrlSetPosition [0, 0, _w, _titleH];
-_title ctrlSetBackgroundColor _titleColor;
-_title ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", _titleStr];
-_title ctrlSetTooltip "Drag to move";
-_title ctrlCommit 0;
+private _titleBg = _display ctrlCreate ["RscText", -1, _grp];
+_titleBg ctrlSetPosition [0, 0, _w, _titleH];
+_titleBg ctrlSetBackgroundColor _titleColor;
+_titleBg ctrlCommit 0;
+
+private _titleText = _display ctrlCreate ["RscStructuredText", -1, _grp];
+_titleText ctrlSetPosition [0, 0, _w, _titleH];
+_titleText ctrlSetBackgroundColor [0, 0, 0, 0];
+_titleText ctrlSetStructuredText parseText format ["<t align='center' size='0.9' valign='middle'>%1</t>", _titleStr];
+_titleText ctrlCommit 0;
+
+private _titleDrag = _display ctrlCreate ["RscStructuredText", -1, _grp];
+_titleDrag ctrlSetPosition [0, 0, _w - (0.02 * safeZoneW), _titleH];
+_titleDrag ctrlSetBackgroundColor [0, 0, 0, 0];
+_titleDrag ctrlSetStructuredText parseText "<t size='0.9'> </t>";
+_titleDrag ctrlSetTooltip "Drag to move";
+_titleDrag ctrlCommit 0;
 
 private _closeBtn = _display ctrlCreate ["RscStructuredText", -1, _grp];
 _closeBtn ctrlSetPosition [_w - (0.015 * safeZoneW), 0.003 * safeZoneH, 0.012 * safeZoneW, 0.02 * safeZoneH];
 _closeBtn ctrlSetStructuredText parseText "<t align='center' size='0.8'>X</t>";
-_closeBtn ctrlSetBackgroundColor [0.8, 0.1, 0.1, 1];
+_closeBtn ctrlSetBackgroundColor [0, 0, 0, 0];
 _closeBtn ctrlCommit 0;
 
 _closeBtn setVariable ["A3U_Grp", _grp];
+_closeBtn ctrlAddEventHandler ["MouseEnter", { (_this#0) ctrlSetBackgroundColor [0.8, 0.1, 0.1, 1]; }];
+_closeBtn ctrlAddEventHandler ["MouseExit", { (_this#0) ctrlSetBackgroundColor [0, 0, 0, 0]; }];
 _closeBtn ctrlAddEventHandler ["MouseButtonDown", { ctrlDelete ((_this#0) getVariable "A3U_Grp"); }];
 
-_title setVariable ["A3U_Grp", _grp];
-_title setVariable ["A3U_CloseBtn", _closeBtn];
-
-_title ctrlAddEventHandler ["MouseButtonDown", {
+_titleDrag setVariable ["A3U_Grp", _grp];
+_titleDrag ctrlAddEventHandler ["MouseButtonDown", {
     params ["_ctrl", "_button"];
-    if (_button != 0) exitWith {}; // Only left clicks drag
-    
-    // FIX Z-ORDER ISSUE: Instantly push the close button back to the absolute front!
-    private _closeBtn = _ctrl getVariable "A3U_CloseBtn";
-    _closeBtn ctrlCommit 0;
+    if (_button != 0) exitWith {};
     
     private _grp = _ctrl getVariable "A3U_Grp";
     private _grpPos = ctrlPosition _grp;
     
-    // Use absolute screen coordinates for the initial offset calculation
     private _startMouse = getMousePosition;
     private _offsetX = (_startMouse # 0) - (_grpPos # 0);
     private _offsetY = (_startMouse # 1) - (_grpPos # 1);
@@ -129,16 +134,14 @@ _title ctrlAddEventHandler ["MouseButtonDown", {
             private _w = (ctrlPosition _grp) # 2;
             private _h = (ctrlPosition _grp) # 3;
             
-            // Constrain to screen so they can't throw it off the monitor
             _newX = (_newX max safeZoneX) min (safeZoneX + safeZoneW - _w);
             _newY = (_newY max safeZoneY) min (safeZoneY + safeZoneH - _h);
             
             _grp ctrlSetPosition [_newX, _newY, _w, _h];
             _grp ctrlCommit 0;
-            sleep 0.01; // Smooth UI framerate
+            sleep 0.01;
         };
         
-        // When dragging stops, save the position
         if (!isNull _grp) then {
             private _finalPos = ctrlPosition _grp;
             profileNamespace setVariable ["A3U_ContextPopup_Pos", [_finalPos # 0, _finalPos # 1]];
@@ -147,14 +150,13 @@ _title ctrlAddEventHandler ["MouseButtonDown", {
     };
 }];
 
-_title ctrlAddEventHandler ["MouseButtonUp", {
+_titleDrag ctrlAddEventHandler ["MouseButtonUp", {
     params ["_ctrl", "_button"];
     if (_button == 0) then {
         uiNamespace setVariable ["A3U_ContextPopup_Dragging", false];
     };
 }];
 
-// Fallback: Global map listener in case they whip their mouse off the panel too fast
 if (_display getVariable ["A3U_DragEH_Added", -1] == -1) then {
     private _eh = _display displayAddEventHandler ["MouseButtonUp", {
         params ["_display", "_button"];
@@ -208,12 +210,10 @@ private _cY = _titleH + _padY;
             _combo ctrlCommit 0;
 
             {
-                // Accept optional 3rd param for coloring the dropdown text
                 _x params ["_dispStr", "_dataStr", ["_itemColor", []]];
                 private _idx = _combo lbAdd _dispStr;
                 _combo lbSetData [_idx, _dataStr];
                 
-                // If a color was passed, tint the text of this specific row
                 if !(_itemColor isEqualTo []) then {
                     _combo lbSetColor [_idx, _itemColor];
                 };
