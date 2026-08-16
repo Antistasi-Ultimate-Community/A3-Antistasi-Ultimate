@@ -45,8 +45,8 @@ private _lightTanks = ["B_T_AFV_Wheeled_01_cannon_F", "B_T_AFV_Wheeled_01_up_can
 ["vehiclesTanks", ["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["B_T_APC_Tracked_01_AA_F"]] call _fnc_saveToTemplate;
 
-["vehiclesTransportBoats", ["B_T_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
-["vehiclesGunBoats", ["B_T_Boat_Armed_01_minigun_F"]] call _fnc_saveToTemplate;
+["vehiclesTransportBoats", ["rksla3_lcvpmk5_1_generic_grey", "rksla3_lcvpmk5_viv_generic_grey"]] call _fnc_saveToTemplate;
+["vehiclesGunBoats", ["B_T_Boat_Armed_01_minigun_F", "EF_B_CombatBoat_HMG_NATO_T"]] call _fnc_saveToTemplate;
 
 ["vehiclesPlanesCAS", ["B_T_Plane_CAS_01_dynamicLoadout_F","B_T_Plane_Fighter_01_F", "B_T_Plane_Fighter_05_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", ["B_T_Plane_Fighter_01_Stealth_F", "B_T_Plane_Fighter_05_Stealth_F"]] call _fnc_saveToTemplate;
