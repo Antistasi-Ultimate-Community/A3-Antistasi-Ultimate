@@ -117,6 +117,15 @@
         climate[] = {"tropical"};
         description = $STR_A3AP_setupFactionsTab_sdk;
     };
+	
+    class Aegis_TST : Aegis_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_science_co.paa);
+        name = "Aegis TST";
+        file = "Aegis_Reb_TST";
+        climate[] = {"tropical"};
+    };
 
     class Aegis_LM : Aegis_Base
     {
