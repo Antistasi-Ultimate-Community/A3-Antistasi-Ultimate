@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
 Function: A3A_fnc_canAIMountVehicle
 
@@ -32,7 +33,7 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 if !assert(params[
-    ["_vehicle", nil, objNull]
+    ["_vehicle", nil, [objNull]]
 ]) exitWith { false };
 
 private _requireAIFlagSet = param[1, false, [true]];
