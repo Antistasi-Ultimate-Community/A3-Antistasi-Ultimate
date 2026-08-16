@@ -35,7 +35,7 @@ call compile preprocessFileLineNumbers _path;
 //add the addon data to the faction data
 private _faction = missionNamespace getVariable ["A3A_faction_"+_side, createHashMap];
 {
-    _faction set [_x, (_faction get _x) + _y];
+    _faction set [_x, (_faction getOrDefault[_x, []]) + _y];
 } forEach _addon;
 
 //update the faction data globaly

@@ -42,6 +42,11 @@ class CfgUserActions {
         tooltip = $STR_A3A_keyActions_buildingPlacerAbort_desc;
     };
 
+    class GVAR(buildingPlacerAlign) {
+        displayName = $STR_A3A_keyActions_buildingPlacerAlign_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerAlign_desc;
+    };
+
     class GVAR(buildingPlacerDelete) {
         displayName = $STR_A3A_keyActions_buildingPlacerDelete_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerDelete_desc;
@@ -67,6 +72,16 @@ class CfgUserActions {
         tooltip = $STR_A3A_keyActions_buildingPlacerRotateCW_desc;
     };
 
+    class GVAR(buildingPlacerRotateStepDecrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateStepDecrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateStepDecrease_desc;
+    };
+
+    class GVAR(buildingPlacerRotateStepIncrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerRotateStepIncrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerRotateStepIncrease_desc;
+    };
+
     class GVAR(buildingPlacerSnapToSurface) {
         displayName = $STR_A3A_keyActions_buildingPlacerSnapToSurface_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerSnapToSurface_desc;
@@ -75,6 +90,26 @@ class CfgUserActions {
     class GVAR(buildingPlacerUnsafeMode) {
         displayName = $STR_A3A_keyActions_buildingPlacerUnsafeMode_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerUnsafeMode_desc;
+    };
+
+    class GVAR(buildingPlacerZOffsetDecrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZOffsetDecrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZOffsetDecrease_desc;
+    };
+
+    class GVAR(buildingPlacerZOffsetIncrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZOffsetIncrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZOffsetIncrease_desc;
+    };
+
+    class GVAR(buildingPlacerZStepDecrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZStepDecrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZStepDecrease_desc;
+    };
+
+    class GVAR(buildingPlacerZStepIncrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZStepIncrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZStepIncrease_desc;
     };
 };
 #undef ACTION

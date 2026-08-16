@@ -40,8 +40,8 @@
 ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["OPTRE_FC_Ghost_Driverless"]] call _fnc_saveToTemplate; // ghost is basically the only vehicle that actually moves on water
 
-["vehiclesPlanesCAS", ["OPTRE_FC_Type26B_Banshee"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["OPTRE_FC_Type26N_Banshee"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["OPTRE_FC_Type26B_Banshee","OPTRE_FC_Type26B_Ultra_Banshee","OPTRE_FC_Type26N_Banshee","OPTRE_FC_Type27_Banshee"]] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", ["OPTRE_FC_Type26B_Ultra_Banshee","OPTRE_FC_Type26N_Banshee","OPTRE_FC_Type27_Banshee"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["OPTRE_FC_Spirit"]] call _fnc_saveToTemplate; // I pray this works
 
 ["vehiclesPlanesGunship", ["OPTRE_FC_Spirit"]] call _fnc_saveToTemplate;
@@ -56,7 +56,9 @@ if (["MEU_Covenant"] call A3U_fnc_hasAddon) then {
     ["vehiclesHelisAttack", ["OPTRE_FC_Spirit_Concussion"]] call _fnc_saveToTemplate;
 };
 
-["vehiclesHelisLightAttack", ["OPTRE_FC_Spirit_Concussion"]] call _fnc_saveToTemplate;
+["vehiclesHelisLightAttack", ["OPTRE_FC_Type26B_BansheeH","OPTRE_FC_Type26B_Ultra_BansheeH","OPTRE_FC_Type26N_BansheeH","OPTRE_FC_Type27_BansheeH"]] call _fnc_saveToTemplate;
+
+["vehiclesAirPatrol", ["OPTRE_FC_Type26B_BansheeH","OPTRE_FC_Type26B_Ultra_BansheeH","OPTRE_FC_Type26N_BansheeH","OPTRE_FC_Type27_BansheeH"]] call _fnc_saveToTemplate;
 
 ["vehiclesArtillery", ["OPTRE_m1015_mule_mlr_ins_IND"]] call _fnc_saveToTemplate;
 ["magazines", createHashMapFromArray [
@@ -271,7 +273,7 @@ _sfLoadoutData set ["ATLaunchers", [["OPTRE_FC_T33_FuelRod_Cannon", "", "", "", 
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["OPTRE_FC_Elite_CombatSkin"]];
-_eliteLoadoutData set ["slUniform", ["SCE_ClearSky_CBRN"]];
+_eliteLoadoutData set ["slUniforms", ["SCE_ClearSky_CBRN"]];
 _eliteLoadoutData set ["vests", ["OPTRE_FC_Elite_Armor_Major"]];
 _eliteLoadoutData set ["mgVests", ["OPTRE_FC_Elite_Armor_Major"]];
 _eliteLoadoutData set ["medVests", ["OPTRE_FC_Elite_Armor_Major"]];
@@ -321,7 +323,7 @@ _eliteLoadoutData set ["ATLaunchers", [["OPTRE_FC_T33_FuelRod_Cannon", "", "", "
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["OPTRE_FC_Elite_CombatSkin"]];
-_militaryLoadoutData set ["slUniform", ["OPTRE_FC_Elite_CombatSkin"]];
+_militaryLoadoutData set ["slUniforms", ["OPTRE_FC_Elite_CombatSkin"]];
 _militaryLoadoutData set ["vests", ["OPTRE_FC_Elite_Armor_Minor"]];
 _militaryLoadoutData set ["mgVests", ["OPTRE_FC_Elite_Armor_Minor"]];
 _militaryLoadoutData set ["medVests", ["OPTRE_FC_Elite_Armor_Minor"]];
@@ -546,7 +548,7 @@ private _medicTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -633,7 +635,7 @@ private _engineerTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -661,7 +663,7 @@ private _latTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["lightATLaunchers"] call _fnc_setLauncher;
@@ -691,7 +693,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     [selectRandom ["missileATLaunchers", "ATLaunchers"]] call _fnc_setLauncher;
@@ -721,7 +723,7 @@ private _aaTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;

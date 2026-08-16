@@ -104,7 +104,7 @@
 ["C_IDAP_Truck_02_flatbed_lxWS",["hideSpareWheel",0.3,"hideRoofRack",0.3,"hideBeacon_1",0.3,"hideBumper",0.3,"hideWindowProtector",0.3]],
 ["C_IDAP_Truck_02_racing_lxWS",["hideSpareWheel",0.3,"hideRoofRack",0.3,"hideBeacon_1",0.3,"hideBumper",0.3,"hideWindowProtector",0.3]],
 //AU
-["a3a_I_E_Truck_02_zu23_F", ["shield_hide",0.3,"hideCrates",0.3,"hideSpareWheel",0.3,"hideRoofRack",1,"hideBeacon_1",1,"hideBumper",0.3,"hideWindowProtector",0.3]],
+["a3a_ldf_Truck_02_aa", ["shield_hide",0.3,"hideCrates",0.3,"hideSpareWheel",0.3,"hideRoofRack",1,"hideBeacon_1",1,"hideBumper",0.3,"hideWindowProtector",0.3]],
 
 ["APC_Wheeled_01_command_base_lxWS", ["showCamonetHull",0.3,"showCamonetTurret",0.3,"showSLATHull",0.3,"showSLATTurret",0.3]],
 ["APC_Wheeled_01_atgm_base_lxWS", ["showCamonetHull",0.3,"showCamonetTurret",0.3,"showSLATHull",0.3,"showSLATTurret",0.3]],

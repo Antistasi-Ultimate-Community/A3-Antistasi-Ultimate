@@ -5,6 +5,7 @@ if (count hcSelected player == 0) exitWith {[localize "STR_A3A_ai_artySupport_he
 private ["_groups","_artyArray","_artyRoundsArr","_hasAmmunition","_areReady","_hasArtillery","_areAlive","_soldierX","_veh","_typeAmmunition","_typeArty","_positionTel","_artyArrayDef1","_artyRoundsArr1","_piece","_isInRange","_positionTel2","_rounds","_roundsMax","_markerX","_size","_forcedX","_textX","_mrkFinal","_mrkFinal2","_timeX","_eta","_countX","_pos","_ang"];
 
 _groups = hcSelected player;
+_fdc = leader (_groups select 0);
 _unitsX = [];
 {_groupX = _x;
 {_unitsX pushBack _x} forEach units _groupX;
@@ -19,39 +20,41 @@ _hasArtillery = false;
 _areAlive = false;
 
 {
-_soldierX = _x;
-_veh = vehicle _soldierX;
-if ((_veh != _soldierX) and (not(_veh in _artyArray))) then
+	_soldierX = _x;
+	_veh = vehicle _soldierX;
+	if ((_veh != _soldierX) and (not(_veh in _artyArray))) then
 	{
-	if (( "Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _veh >> "availableForSupportTypes")))) then
+		if (( "Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _veh >> "availableForSupportTypes")))) then
 		{
-		_hasArtillery = true;
-		if ((canFire _veh) and (alive _veh) and (isNil "typeAmmunition")) then
+			_hasArtillery = true;
+			if ((canFire _veh) and (alive _veh) and (isNil "typeAmmunition")) then
 			{
-			_areAlive = true;
-#ifdef UseDoomGUI
-	ERROR("Disabled due to UseDoomGUI Switch.")
-#else
-			createDialog "mortarType";
-#endif
-			waitUntil {!dialog or !(isNil "typeAmmunition")};
-			if !(isNil "typeAmmunition") then
+				_areAlive = true;
+				
+				#ifdef UseDoomGUI
+					ERROR("Disabled due to UseDoomGUI Switch.")
+				#else
+					createDialog "mortarType";
+				#endif
+				
+				waitUntil {!dialog or !(isNil "typeAmmunition")};
+				if !(isNil "typeAmmunition") then
 				{
-				_typeAmmunition = typeAmmunition;
-				{
-				if (_x select 0 == _typeAmmunition) then
+					_typeAmmunition = typeAmmunition;
 					{
-					_hasAmmunition = _hasAmmunition + 1;
-					};
-				} forEach magazinesAmmo _veh;
+						if (_x select 0 == _typeAmmunition) then
+						{
+							_hasAmmunition = _hasAmmunition + 1;
+						};
+					} forEach magazinesAmmo _veh;
 				};
-			if (_hasAmmunition > 0) then
+				if (_hasAmmunition > 0) then
 				{
-				if (unitReady _veh) then
+					if (unitReady _veh) then
 					{
-					_areReady = true;
-					_artyArray pushBack _veh;
-					_artyRoundsArr pushBack (((magazinesAmmo _veh) select 0)select 1);
+						_areReady = true;
+						_artyArray pushBack _veh;
+						_artyRoundsArr pushBack (((magazinesAmmo _veh) select 0)select 1);
 					};
 				};
 			};
@@ -203,14 +206,28 @@ if (_typeArty == "BARRAGE") then
 	_eta = (_artyArrayDef1 select 0) getArtilleryETA [_positionTel, ((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0)];
 	_timeX = time + _eta;
 	_textX = format [localize "STR_chats_mortar_barrage_confirm",round _eta];
-	[petros,"sideChat",_textX]remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
-	[_timeX] spawn
+	[_fdc,"sideChat",_textX]remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+	[_timeX, _fdc] spawn
 		{
-		private ["_timeX"];
-		_timeX = _this select 0;
-		waitUntil {sleep 1; time > _timeX};
-		[petros,"sideChat",localize "STR_chats_splash_out"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+		params ["_timeX", "_fdc"];
+		[_fdc,"sideChat",localize "STR_chats_rounds_complete"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+		waitUntil {sleep 1; time > (_timeX - 5)}; // splash over (warning) 5s before ETA
+		[_fdc,"sideChat",localize "STR_chats_splash_over"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+		waitUntil {sleep 1; time > (_timeX + 5)}; // getArtilleryETA usually seems to underestimate impact time
+		[player,"sideChat",localize "STR_chats_splash_out"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 		};
+	}
+else
+	{
+	sleep 5;
+	_eta = (_artyArrayDef1 select 0) getArtilleryETA [_positionTel, ((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0)];
+	_timeX = time + _eta - 5;
+	if (isNil "_timeX") exitWith {
+        #define ARTILLERY_ERROR_INFORMATION [_positionTel, ((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0)]
+        Error_4("Params: %1,%2,%3,%4,%5",_artyArrayDef1 select 0,_positionTel,((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0),(_artyArrayDef1 select 0) getArtilleryETA ARTILLERY_ERROR_INFORMATION);
+    };
+	_textX = format [localize "STR_chats_mortar_barrage_confirm",round _eta,_roundsMax - _rounds];
+	[_fdc,"sideChat",_textX] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 	};
 
 _pos = [_positionTel,random 10,random 360] call BIS_fnc_relPos;
@@ -221,6 +238,10 @@ for "_i" from 0 to (count _artyArrayDef1) - 1 do
 		{
 		_piece = _artyArrayDef1 select _i;
 		_countX = _artyRoundsArr1 select _i;
+		
+		[_fdc,"sideChat",localize "STR_chats_shot_over"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+		[] spawn { sleep 1; [player,"sideChat",localize "STR_chats_shot_out"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]] };
+
 		if (_countX >= _rounds) then
 			{
 			if (_typeArty != "BARRAGE") then
@@ -252,6 +273,7 @@ for "_i" from 0 to (count _artyArrayDef1) - 1 do
 					sleep 2;
 					_pos = [_pos,10,_ang + 5 - (random 10)] call BIS_fnc_relPos;
 					};
+					
 				};
 			_rounds = _rounds - _countX;
 			};
@@ -260,21 +282,11 @@ for "_i" from 0 to (count _artyArrayDef1) - 1 do
 
 if (_typeArty != "BARRAGE") then
 	{
-	sleep 5;
-	_eta = (_artyArrayDef1 select 0) getArtilleryETA [_positionTel, ((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0)];
-	_timeX = time + _eta - 5;
-	if (isNil "_timeX") exitWith {
-        #define ARTILLERY_ERROR_INFORMATION [_positionTel, ((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0)]
-        Error_4("Params: %1,%2,%3,%4,%5",_artyArrayDef1 select 0,_positionTel,((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0),(_artyArrayDef1 select 0) getArtilleryETA ARTILLERY_ERROR_INFORMATION);
-    };
-	_textX = format [localize "STR_chats_mortar_barrage_confirm",round _eta,_roundsMax - _rounds];
-	[petros,"sideChat",_textX] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
-	};
-
-if (_typeArty != "BARRAGE") then
-	{
-	waitUntil {sleep 1; time > _timeX};
-	[petros,"sideChat",localize "STR_chats_splash_out"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+	[_fdc,"sideChat",localize "STR_chats_rounds_complete"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+	waitUntil {sleep 1; time > (_timeX - 5)}; // splash over (warning) 5s before ETA
+	[_fdc,"sideChat",localize "STR_chats_splash_over"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+	waitUntil {sleep 1; time > (_timeX + 5)}; // getArtilleryETA usually seems to underestimate impact time
+	[player,"sideChat",localize "STR_chats_splash_out"] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 	};
 sleep 10;
 deleteMarkerLocal _mrkFinal;

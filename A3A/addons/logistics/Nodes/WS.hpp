@@ -157,6 +157,31 @@ class lxws_vehicles_f_lxws_Offroad_01_Offroad_01_armor_hmg_lxWS_p3d : TRIPLES(AD
     };
 };
 
+///////////Offroad armored ZU-23
+class lxws_vehicles_f_lxws_Offroad_01_Offroad_01_armor_aa_lxWS_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.05,-1.2,-1.73};
+        };
+    };
+};
+
+///////////Offroad ZU-23
+class lxws_vehicles_f_lxws_Offroad_01_Offroad_01_aa_lxWS_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {-0.04,-1.2,-1.73};
+        };
+    };
+};
+
+
 ///////////Offroad unarmed armored
 class lxws_vehicles_f_lxws_offroad_01_offroad_01_armor_unarmed_lxws_p3d : TRIPLES(ADDON,Nodes,Base)
 {

@@ -281,10 +281,10 @@ private _heavyGunnerList = [];
             if(count _targetList > 0) then
             {
                 Debug("Gunship | Using priority list");
-                diag_log _targetList;
-                diag_log _targetList;
-                diag_log _targetList;
-                diag_log _targetList;
+                Debug(_targetList);
+                Debug(_targetList);
+                Debug(_targetList);
+                Debug(_targetList);
                 //Priority target, execute first
                 private _target = _targetList#0#0#0;
                 private _supportMarker = format ["%1_coverage", _supportName];

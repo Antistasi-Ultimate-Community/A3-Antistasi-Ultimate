@@ -101,7 +101,7 @@ else
 	{
 		if (_vehicleType in vehFastRope) then
 		{
-			[_vehicle, _cargoGroup, _posDest, _posOrigin, _crewGroup, true] spawn A3A_fnc_fastrope;
+			[_vehicle, _cargoGroup, _posDest, _posOrigin, _crewGroup, [], true] spawn A3A_fnc_fastrope;
 		}
 		else
 		{

@@ -175,6 +175,22 @@
 				stock = 100;
 			};
 
+			class optic_ico_01_f {
+				price = 350;
+				stock = 100;
+			};
+			class optic_ico_01_black_f {
+				price = 350;
+				stock = 100;
+			};
+			class optic_ico_01_camo_f {
+				price = 350;
+				stock = 100;
+			};
+			class optic_ico_01_sand_f {
+				price = 350;
+				stock = 100;
+			};
 		};
 
 		class magazinesContact 
@@ -333,7 +349,7 @@
 
 			ITEM(B_Carryall_eaf_F, 400, MISC_STOCK);
 			ITEM(B_Carryall_green_F, 400, MISC_STOCK);
-			ITEM(B_Carryall_taiga_F, 400, MISC_STOCK);;
+			ITEM(B_Carryall_taiga_F, 400, MISC_STOCK);
 			ITEM(B_Carryall_wdl_F, 400, MISC_STOCK);
 
 			ITEM(B_CombinationUnitRespirator_01_F, 500, MISC_STOCK);

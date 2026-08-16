@@ -2,6 +2,78 @@
         {
             prefix = "";
         };
+        ////DLC
+        class weapons_jets : weapons_base
+        {
+            prefix = "jets";
+        };
+        class weapons_tanks : weapons_base
+        {
+            prefix = "tanks";
+        };
+        class weapons_kart : weapons_base
+        {
+            prefix = "kart";
+        };
+        class weapons_marksmen : weapons_base
+        {
+            prefix = "marksmen";
+        };
+        class weapons_lawsofwar : weapons_base
+        {
+            prefix = "lawsofwar";
+        };
+        class weapons_artofwar : weapons_base
+        {
+            prefix = "artofwar";
+        };
+        class weapons_apex : weapons_base
+        {
+            prefix = "apex";
+        };
+        class weapons_contact : weapons_base
+        {
+            prefix = "contact";
+        };
+        ////
+        ////CDLC
+        class weapons_sogpf : weapons_base
+        {
+            prefix = "vn";
+        };
+        class weapons_nickelsteel : weapons_base
+        {
+            prefix = "nickelsteel";
+        };
+        class weapons_spe : weapons_base
+        {
+            prefix = "ww2cdlc";
+        };
+        class weapons_spex : weapons_base
+        {
+            prefix = "spex";
+        };
+        class weapons_ws : weapons_base
+        {
+            prefix = "ws";
+        };
+        class weapons_rf : weapons_base
+        {
+            prefix = "rf";
+        };
+        class weapons_gm : weapons_base
+        {
+            prefix = "globmob";
+        };
+        class weapons_csla : weapons_base
+        {
+            prefix = "csla";
+        };
+        class weapons_ef : weapons_base
+        {
+            prefix = "ef";
+        };
+        ////
         class weapons_kkiv2035 : weapons_base
         {
             prefix = "kkiv2035";
@@ -9,6 +81,18 @@
         class weapons_aegis : weapons_base
         {
             prefix = "aegis";
+        };
+        class weapons_atlas : weapons_base
+        {
+            prefix = "atlas";
+        };
+        class weapons_police : weapons_base
+        {
+            prefix = "police";
+        };
+        class weapons_opposingforces : weapons_base
+        {
+            prefix = "opposingforces";
         };
         class weapons_wmempire : weapons_base
         {
@@ -30,14 +114,6 @@
         {
             prefix = "unsstore";
         };
-        class weapons_sogpf : weapons_base
-        {
-            prefix = "vn";
-        };
-        class weapons_nickelsteel : weapons_base
-        {
-            prefix = "nickelsteel";
-        };
         class weapons_3cbf : weapons_base
         {
             prefix = "3cbf";
@@ -45,14 +121,6 @@
         class weapons_ifa3 : weapons_base
         {
             prefix = "ww2mod";
-        };
-        class weapons_spe : weapons_base
-        {
-            prefix = "ww2cdlc";
-        };
-        class weapons_spex : weapons_base
-        {
-            prefix = "spex";
         };
         class weapons_ffaa : weapons_base
         {
@@ -66,18 +134,6 @@
         {
             prefix = "sfpstock";
         };
-        class weapons_pla : weapons_base
-        {
-            prefix = "plastock";
-        };
-        class weapons_ws : weapons_base
-        {
-            prefix = "ws";
-        };
-        class weapons_rf : weapons_base
-        {
-            prefix = "rf";
-        };
         class weapons_bwa3 : weapons_base
         {
             prefix = "bwastock";
@@ -90,10 +146,6 @@
         {
             prefix = "cup";
         };
-        class weapons_csla : weapons_base
-        {
-            prefix = "csla";
-        };
         class weapons_3cbbaf : weapons_base
         {
             prefix = "3cbbafstock";
@@ -105,10 +157,6 @@
         class weapons_optre : weapons_base
         {
             prefix = "optre";
-        };
-        class weapons_gm : weapons_base
-        {
-            prefix = "globmob";
         };
         class weapons_niarms : weapons_base
         {
@@ -129,10 +177,6 @@
         class weapons_csa38 : weapons_base
         {
             prefix = "csa38";
-        };
-        class weapons_scion : weapons_base
-        {
-            prefix = "scion";
         };
         class weapons_wrs : weapons_base
         {
@@ -174,7 +218,23 @@
         {
             prefix = "jcaie_stock";
         };
-        class weapons_ef : weapons_base
+        class weapons_mpp : weapons_base
         {
-            prefix = "ef";
+            prefix = "mpp_stock";
+        };
+        class weapons_qdi : weapons_base
+        {
+            prefix = "qdi_stock";
+        };
+        class weapons_mss : weapons_base
+        {
+            prefix = "mss";
+        };
+        class weapons_rearma_us : weapons_base
+        {
+            prefix = "rearma_us_stock";
+        };
+        class weapons_rearma_ru : weapons_base
+        {
+            prefix = "rearma_ru_stock";
         };

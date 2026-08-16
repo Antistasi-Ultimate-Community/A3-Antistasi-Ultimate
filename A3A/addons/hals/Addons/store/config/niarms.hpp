@@ -18,7 +18,7 @@
 			ITEM(hlc_rifle_M14, 550, RIFLE_STOCK); // hlc_20Rnd_762x51_B_M14
 			ITEM(hlc_rifle_M14dmr_Rail, 750, RIFLE_STOCK);
 
-			ITEM(hlc_wp_xm4, 800, RIFLE_STOCK); // hlc_30rnd_556x45_EPR
+			ITEM(hlc_wp_XM16E1, 800, RIFLE_STOCK); // hlc_30rnd_556x45_EPR
 			ITEM(hlc_wp_XM177E2, 900, RIFLE_STOCK);
 			ITEM(hlc_rifle_mk18mod0, 900, RIFLE_STOCK); // hlc_30rnd_556x45_TDim_L5
 			ITEM(hlc_wp_MK17IUR_556, 950, RIFLE_STOCK); // hlc_30rnd_556x45_EPR_PMAG
@@ -44,13 +44,13 @@
 			ITEM(HLC_Rifle_XM8_Proto_Carbine, 1200, RIFLE_STOCK);
 			ITEM(HLC_rifle_XM8_Carbine_GL, 1400, RIFLE_STOCK);
 
-			ITEM(hlc_rifle_honeybadger, 1250, RIFLE_STOCK); // hlc_50rnd_300BLK_STANAG_EPR
+			ITEM(hlc_rifle_honeybase, 1250, RIFLE_STOCK); // hlc_50rnd_300BLK_STANAG_EPR
 			ITEM(hlc_rifle_RU5562, 1200, RIFLE_STOCK);
 			ITEM(hlc_rifle_bcmblackjack, 1400, RIFLE_STOCK);
 
 			ITEM(hlc_rifle_M4a1carryhandle, 1250, RIFLE_STOCK);
 			ITEM(hlc_rifle_CQBR, 1200, RIFLE_STOCK);
-			ITEM(hlc_rifle_Colt727, 1400, RIFLE_STOCK);
+			ITEM(hlc_wp_mod723, 1400, RIFLE_STOCK);
 
 			ITEM(hlc_rifle_G36C, 2150, RIFLE_STOCK); // hlc_30rnd_556x45_EPR_G36
 			ITEM(hlc_rifle_G36CV, 2250, RIFLE_STOCK);

@@ -310,18 +310,8 @@ _loadoutData set ["Rangefinder", ["Rangefinder"]];
 
 private _facewear = [
 	"G_Aviator",
-	"G_Shades_Black",
-	"G_Shades_Blue",
-	"G_Shades_Green",
-	"G_Shades_Red",
 	"G_Spectacles",
 	"G_Spectacles_Tinted",
-	"G_Sport_Red",
-	"G_Sport_Blackyellow",
-	"G_Sport_BlackWhite",
-	"G_Sport_Checkered",
-	"G_Sport_Blackred",
-	"G_Sport_Greenblack",
 	"G_Bandanna_aviator",
 	"G_Bandanna_beast",
 	"G_Bandanna_blk",
@@ -798,7 +788,7 @@ private _aaTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-	[selectRandom ["carbines", "smgs"]] call _fnc_setPrimary;
+	[selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["AALaunchers"] call _fnc_setLauncher;

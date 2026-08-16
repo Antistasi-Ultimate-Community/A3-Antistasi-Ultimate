@@ -237,6 +237,13 @@
         name = "The Science Team";
         file = "CUP_Reb_TSTa";
 		climate[] = {"arid"};
+    class CUP_Reb_AAF : CUP_Reb
+    {
+        name = "AAF Restorationists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_aaf_torn_co.paa);
+        file = "CUP_Reb_AAF";
+        description = "A militarized AAF remnant militia using surplus or outdated NATO and Soviet technology. Loyal to restoring the AAF. Consider this a more forgiving start than most.";
+        maps[] = {"altis"};
     };
     class CUP_TKC : CUP_Base
     {
@@ -371,7 +378,7 @@
         requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_LOM_Equipment", "Flex_CUP_NLAF_Faction"};
         side = "Occ";
         flagTexture = "Flex_CUP_NLAF_Faction\Data\Flag\NLOM_Flag_co.paa";
-        name = "CUP LC NLAF & UN Peacekeepers";
+        name = "CUP LC NLAF & UN";
         description = "After the successful independence from the south and the colonies, the north can count on neighboring allies and UN Peacekeepers. After the civil war, a mainly conscript but well-trained army was formed, even if the government's economic resources are not the best, the army can count on a good choice of vehicles and equipment. The army is composed mainly of motorized and mechanized units with good air support accompanied by a small support militia.";
         file = "CUP_AI_LC_NLAF";
     };
@@ -430,8 +437,18 @@
     {
         side = "Inv";
         flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
-        name = "CUP PLA";
+        name = "CUP PLA (Temperate)";
         file = "CUP_AI_PLA";
+        climate[] = {"temperate","tropical"};
+    };
+
+    class Flex_PLA_Arid : FlexPLA_Base
+    {
+        side = "Inv";
+        flagTexture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+        name = "CUP PLA (Arid)";
+        file = "CUP_AI_PLA_Arid";
+        climate[] = {"arid"};
     };
 
     class FlexFDF_Base : CUP_Base
@@ -460,4 +477,64 @@
         flagTexture = "\A3\ui_f\data\map\markers\flags\Spain_ca.paa";
         name = "CUP Spain";
         file = "CUP_AI_SPA";
+    };
+
+
+    // ***************************** Altian Civil War *****************************
+    
+    class ACW_Base : CUP_Base
+    {
+        requiredAddons[] = {"CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core", "Flex_CUP_ACW_Equipment"};
+        basepath = QPATHTOFOLDER(Templates\Templates\CUP);
+        logo = QPATHTOFOLDER(Templates\Templates\CUP\images\acw_logo_mod.paa);
+    };
+
+    class CUP_ACW_AAFxTFAegis : ACW_Base
+    {
+        requiredAddons[] += {"Flex_CUP_AAF_Faction", "Flex_CUP_USA_Faction"};
+        side = "Occ";
+        flagTexture = "a3\data_f\flags\flag_aaf_co.paa";
+        name = "CUP ACW AAF & TF Aegis";
+        description = $STR_A3AP_setupFactionsTab_CUP_ACW_AAF;
+        file = "CUP_AI_ACW_AAF&TFAegis";
+    };
+
+    class CUP_ACW_FIA : ACW_Base
+    {
+        requiredAddons[] += {"Flex_CUP_FIA_I_Faction"};
+        side = "Reb";
+        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+        name = "CUP ACW FIA";
+        description = $STR_A3AP_setupFactionsTab_CUP_ACW_FIA;
+        file = "CUP_Reb_ACW_FIA";
+    };
+
+    class CUP_ACW_FIA_Riv : ACW_Base
+    {
+        requiredAddons[] += {"Flex_CUP_FIA_I_Faction"};
+        side = "Riv";
+        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+        name = "CUP ACW FIA";
+        description = $STR_A3AP_setupFactionsTab_CUP_ACW_FIA;
+        file = "CUP_Riv_ACW_FIA";
+    };
+
+    class CUP_ACW_RAV : ACW_Base
+    {
+        requiredAddons[] += {"Flex_CUP_RAV_O_Faction"};
+        side = "Riv";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_rus_co.paa";
+        name = "CUP ACW Raven PMC";
+        description = $STR_A3AP_setupFactionsTab_CUP_ACW_RAV;
+        file = "CUP_Riv_ACW_Raven_PMC";
+    };
+
+    class CUP_ACW_RAV_Reb : ACW_Base
+    {
+        requiredAddons[] += {"Flex_CUP_RAV_O_Faction"};
+        side = "Reb";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_rus_co.paa";
+        name = "CUP ACW Raven PMC";
+        description = $STR_A3AP_setupFactionsTab_CUP_ACW_RAV;
+        file = "CUP_Reb_ACW_Raven_PMC";
     };

@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
+params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli", ["_landPos", []], ["_reinf", false]];
 
 private _vehType = typeOf _veh;
 
@@ -9,24 +9,15 @@ if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehicles
     _veh setVehicleRadar 1;
 };
 
-private _reinf = if (count _this > 5) then {_this select 5} else {false};
-
 private _xRef = 2;
 private _yRef = 1;
-private _landpos = [];
 private _dist = if (_reinf) then {30} else {100 + random 100};
 
-/* if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) then {}else{
-	{_x disableAI "TARGET"; _x disableAI "AUTOTARGET"} foreach units _heli;
-}; */
+if (_landPos isEqualTo []) then {
+    _landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
+    _landpos set [2,0]
+};
 
-/* while {true} do
-	{
- 	_landpos = _positionX getPos [_dist,random 360];
- 	if (!surfaceIsWater _landpos) exitWith {};
-	}; */
-_landpos = [_positionX, _dist, _dist, 2, 0, 5, 0] call BIS_fnc_findSafePos;
-_landpos set [2,0];
 {_x setBehaviour "CARELESS";} forEach units _heli;
 private _wp = _heli addWaypoint [_landpos, 0];
 _wp setWaypointType "MOVE";
@@ -35,9 +26,11 @@ _wp setWaypointSpeed "FULL";
 
 _wp setWaypointCompletionRadius 3;
 
-waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 550) or !(canMove _veh)};
+private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
+_veh flyInHeight _midHeight;
 
-_veh flyInHeight 12;
+waitUntil {sleep 1; (not alive _veh) or (_veh distance _landpos < 750) or !(canMove _veh)};
+_veh limitSpeed ((0.4 * (getNumber(configOf _veh >> "maxSpeed"))) min 150);
 
 waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 2) and (speed _veh > -1)) or !(canMove _veh)};
 
@@ -47,41 +40,43 @@ if (canMove _veh) then {
 };
 if (alive _veh && canMove _veh) then
 {   
-	[_veh] call A3A_fnc_smokeCoverAuto;
+	// [_veh] call A3A_fnc_smokeCoverAuto;
 	{
-	[_veh,_x,_xRef,_yRef] spawn
-		{
-		private ["_veh","_unit","_d","_xRef","_yRef"];
-		_veh = _this select 0;
-		_unit = _this select 1;
-		_xRef = _this select 2;
-		_yRef = _this select 3;
-		waitUntil {((speed _veh < 1) and (speed _veh > -1))};
-		_d = -1;
-		unassignVehicle _unit;
-		moveOut _unit;
-		if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};			// Avoid placing dead units underground after vehicle crashes
-		_veh setVectorUp [0,0,1];
-		[_unit,"gunner_standup01"] remoteExec ["switchmove"];
-		_unit attachTo [_veh, [_xRef,_yRef,_d]];
-		while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do
-			{
-			_unit attachTo [_veh, [2,1,_d]];
-			_d = _d - 0.35;
-			sleep 0.005;
+		if (!alive _x) then { continue };
+
+		[_veh,_x,_xRef,_yRef] spawn {
+			private ["_veh","_unit","_d","_xRef","_yRef"];
+			_veh = _this select 0;
+			_unit = _this select 1;
+			_xRef = _this select 2;
+			_yRef = _this select 3;
+			waitUntil {((speed _veh < 1) and (speed _veh > -1))};
+			_d = -1;
+			unassignVehicle _unit;
+			moveOut _unit;
+			if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};			// Avoid placing dead units underground after vehicle crashes
+			_veh setVectorUp [0,0,1];
+			[_unit,"gunner_standup01"] remoteExec ["switchmove"];
+			_unit attachTo [_veh, [_xRef,_yRef,_d]];
+			while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do {
+				_unit attachTo [_veh, [2,1,_d]];
+				_d = _d - 0.35;
+				sleep 0.005;
 			};
-		detach _unit;
-		[_unit,""] remoteExec ["switchMove"];
-		sleep 0.5;
+			detach _unit;
+			[_unit,""] remoteExec ["switchMove"];
+			sleep 0.5;
 		};
-	sleep (2 + random 2);
+		sleep (2 + random 2);
 	} forEach units _groupX;
 };
 
 waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
-_veh flyInHeight 175;
+_veh flyInHeight _midHeight;
+
+_veh limitSpeed (2 * getNumber(configOf _veh >> "maxSpeed"));	// remove the limit
 
 if (canMove _veh) then {
     [_veh, "close"] spawn A3A_fnc_HeliDoors;
@@ -104,14 +99,7 @@ else
 	_wp2 setWaypointType "MOVE";
 };
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
-
-if (_veh in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith {
-    [_veh, _heli, _positionX] spawn A3A_fnc_attackHeli;
-};
+if ([_veh, _heli, _positionX] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 private _wp3 = _heli addWaypoint [_posOrigin, 1];
 _wp3 setWaypointType "MOVE";

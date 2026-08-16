@@ -64,6 +64,10 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
         [localize "STR_dialogs_RP_header", localize "STR_dialogs_RP_comm_only_fail"] call SCRT_fnc_misc_deniedHint;
     };
 
+    if (!isNull objectParent player) exitWith {
+        [localize "STR_dialogs_RP_header", localize "STR_dialogs_RP_inVehicle_fail"] call SCRT_fnc_misc_deniedHint;
+    };
+
     _cost = _finalCost;
 
     private _extraMessage = format  [localize "STR_dialogs_RP_select_pos", _cost, A3A_faction_civ get "currencySymbol"];

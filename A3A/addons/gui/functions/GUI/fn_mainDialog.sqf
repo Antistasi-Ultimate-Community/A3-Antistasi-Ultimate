@@ -121,7 +121,7 @@ switch (_mode) do
                 _display = findDisplay 7000;
                 _commanderMap = _display displayCtrl 7201;
                 _mapScale = ctrlMapScale _commanderMap;
-                diag_log(format ["MAP SCALE: %1", _mapScale]);
+                Verbose_1("MAP SCALE: %1", _mapScale);
                 sleep 1;
             };
         };
@@ -208,7 +208,7 @@ switch (_mode) do
 
         // Log attempt at accessing tab without permission
         if (_selectedTabIDC == -1) exitWith {
-            Error("Attempted to access tab without permission : %1", _selectedTab);
+            Error_1("Attempted to access tab without permission : %1", _selectedTab);
         };
 
         // Array of IDCs for all the tabs, including subtabs (like AI & player management)

@@ -40,7 +40,7 @@ if (_costs isEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
 };
 
 if (_costs <= 0) then { // if the cost is less than 0
-	[format ["%1 was an invalid price. Defaulting to %2", _costs, _defaultPrice], _fnc_scriptName] call A3U_fnc_log;
+	Error_2("%1 was an invalid price. Defaulting to %2", _costs, _defaultPrice);
 	_costs = _defaultPrice; // reset the cost to the default price
 };
 

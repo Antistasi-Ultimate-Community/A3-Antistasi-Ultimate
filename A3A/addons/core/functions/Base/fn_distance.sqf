@@ -427,6 +427,7 @@ private _teamplayer = [];
 private _occupants = [];
 private _invaders = [];
 private _players = [];
+private _playerVehicles = [];
 
 private ["_markers", "_marker", "_position"];
 
@@ -456,10 +457,12 @@ do
         // Players array is used to spawn civilians in cities and rebel garrisons, so ignore remote controlled and airborne units
         // Players array is used to spawn civilians in cities and rebel garrisons, so ignore airborne units and translate remote-control
         _players = [];
+        _playerVehicles = [];
         {
             private _rp = _x getVariable ["owner", _x];         // real player unit in remote-control case
             private _veh = vehicle _rp;
-            if (_rp != effectiveCommander _veh) then { continue };
+            if (_veh in _playerVehicles) then { continue };
+            if (_veh isNotEqualTo _rp) then { _playerVehicles pushBackUnique _veh};
             if (_veh == _rp or {!(_veh isKindOf "Air" and speed _veh > 50)}) then { _players pushBack _rp };
         } forEach (allPlayers - entities "HeadlessClient_F");
     };

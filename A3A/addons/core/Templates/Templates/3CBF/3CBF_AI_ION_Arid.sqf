@@ -216,9 +216,9 @@ _loadoutData set ["goggles", ["rhs_ess_black"]];
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _sfLoadoutData set ["uniforms", ["UK3CB_ION_B_U_SF_Uniform_Short_Shirt_01_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_02_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_03_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_04_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_05_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_06_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_07_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_08_WDL"]];
-_sfLoadoutData set ["vests", ["UK3CB_ION_B_V_MBAV_MEDIC_DES_02"]];
-_sfLoadoutData set ["mgVests", ["UK3CB_ION_B_V_MBAV_MG_DES_02"]];
-_sfLoadoutData set ["medVests", ["UK3CB_ION_B_V_MBAV_MEDIC_DES_02"]];
+_sfLoadoutData set ["vests", ["UK3CB_ION_B_V_MBAV_MEDIC_BRN_02"]];
+_sfLoadoutData set ["mgVests", ["UK3CB_ION_B_V_MBAV_MG_BRN_02"]];
+_sfLoadoutData set ["medVests", ["UK3CB_ION_B_V_MBAV_MEDIC_BRN_02"]];
 _sfLoadoutData set ["glVests", ["UK3CB_V_MBAV_GRENADIER_DES"]];
 _sfLoadoutData set ["helmets", ["UK3CB_H_Radio_Cap_ION_DES_ALT", "UK3CB_H_Cap_Headset_ION_DES", "UK3CB_H_Radio_Cap_ION_DES", "UK3CB_H_Cap_Back_ION_DES","UK3CB_H_Radio_Cap_Back_ION_DES", "UK3CB_H_Radio_Cap_Back_ION_DES_ALT", "rhsusf_opscore_fg", "rhsusf_opscore_fg_pelt", "rhsusf_opscore_fg_pelt_cam", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_opscore_fg", "rhsusf_opscore_fg_pelt", "rhsusf_opscore_fg_pelt_cam", "rhsusf_opscore_fg_pelt_nsw"]];
 _sfLoadoutData set ["NVGs", ["rhsusf_ANPVS_15"]];

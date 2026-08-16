@@ -35,8 +35,8 @@ class vn_khe_sanh {
 	climate = "tropical";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_TROPIC,
-		BUILDABLES_SOGPF,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_SOGPF
 	};
 };

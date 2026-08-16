@@ -37,7 +37,7 @@ switch (_mode) do
 {
     case ("update"):
     {
-        Trace("Updating admin tab");
+        Debug("Updating admin tab");
         private _display = findDisplay A3A_IDD_MAINDIALOG;
 
         _spawnDistanceSlider = _display displayCtrl A3A_IDC_SPAWNDISTANCESLIDER;
@@ -122,13 +122,13 @@ switch (_mode) do
 
     case ("confirmAILimit"):
     {
-        Trace("Showing AI Settings confirm button");
+        Debug("Showing AI Settings confirm button");
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _commitAiButton = _display displayCtrl A3A_IDC_COMMITAIBUTTON;
         _commitAiButton ctrlRemoveAllEventHandlers "ButtonClick";
         _commitAiButton ctrlSetText localize "STR_antistasi_dialogs_main_admin_ai_confirm_button";
         _commitAiButton ctrlAddEventHandler ["ButtonClick", {
-            Trace("Confirmed AI Settings");
+            Debug("Confirmed AI Settings");
             hint "Oh no you broke the server :(";
 
             private _display = findDisplay A3A_IDD_MAINDIALOG;

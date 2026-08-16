@@ -266,7 +266,7 @@ _sfLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Tw
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
 _eliteLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform", "OPTRE_Ins_URF_Combat_Flat_Uniform"]];
-_eliteLoadoutData set ["slUniform", ["OPTRE_Ins_ER_jacket_od_surplus"]];
+_eliteLoadoutData set ["slUniforms", ["OPTRE_Ins_ER_jacket_od_surplus"]];
 _eliteLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
 _eliteLoadoutData set ["mgVests", ["OPTRE_Ins_URF_Armor1_Flat"]];
 _eliteLoadoutData set ["medVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
@@ -317,7 +317,7 @@ _eliteLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform", "OPTRE_Ins_URF_Combat_Flat_Uniform"]];
-_militaryLoadoutData set ["slUniform", ["OPTRE_Ins_ER_jacket_od_surplus"]];
+_militaryLoadoutData set ["slUniforms", ["OPTRE_Ins_ER_jacket_od_surplus"]];
 _militaryLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
 _militaryLoadoutData set ["mgVests", ["OPTRE_Ins_URF_Armor1_Flat"]];
 _militaryLoadoutData set ["medVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
@@ -536,7 +536,7 @@ private _medicTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -623,7 +623,7 @@ private _engineerTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -651,7 +651,7 @@ private _latTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["lightATLaunchers"] call _fnc_setLauncher;
@@ -681,7 +681,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     [selectRandom ["missileATLaunchers", "ATLaunchers"]] call _fnc_setLauncher;
@@ -711,7 +711,7 @@ private _aaTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;

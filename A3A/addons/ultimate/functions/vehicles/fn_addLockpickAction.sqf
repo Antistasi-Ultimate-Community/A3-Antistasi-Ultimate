@@ -23,11 +23,12 @@
     Return:
         N/A
 */
+#include "..\..\script_component.hpp"
 
 params ["_vehicle"];
 
 if (!isServer && hasInterface) exitWith {
-    ["Server-side function was not called on the server? Aborting", _fnc_scriptName] call A3U_fnc_log;
+    Error("Server-side function was not called on the server? Aborting");
 };
 
 [_vehicle] remoteExecCall ["A3U_fnc_lockpick", 0, _vehicle];

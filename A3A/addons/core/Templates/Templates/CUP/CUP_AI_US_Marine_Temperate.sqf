@@ -13,8 +13,6 @@
 //       Vehicles       //
 //////////////////////////
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate;
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate;
@@ -485,7 +483,7 @@ _policeLoadoutData set ["SMGs", [
 ]];
 _policeLoadoutData set ["sidearms", [
     ["CUP_hgun_Colt1911", "", "", "", ["CUP_7Rnd_45ACP_1911",7], [], ""]
-]];;
+]];
 
 ////////////////////////////////
 //    Militia Loadout Data    //

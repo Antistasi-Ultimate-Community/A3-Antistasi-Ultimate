@@ -112,7 +112,14 @@
 				price = 350;
 				stock = 50;
 			};
-
+			class rhs_mag_9k38_rocket {
+				price = 800;
+				stock = 50;
+			};			
+			class rhs_fim92_mag {
+				price = 1000;
+				stock = 50;
+			};
 			class rhs_fgm148_magazine_AT {
 				price = 1000;
 				stock = 50;
@@ -179,6 +186,17 @@
 			ITEM(rhs_weap_ak74_2, 525, RIFLE_STOCK);
 			ITEM(rhs_weap_ak74_3, 550, RIFLE_STOCK);
 			ITEM(rhs_weap_ak74_gp25, 650, RIFLE_STOCK);
+			
+			ITEM(rhs_weap_ak74m, 550, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74mr, 700, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74m_camo, 550, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74m_gp25, 800, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74mr_gp25, 850, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74m_fullplum_gp25_npz, 850, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74m_zenitco01_b33, 650, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74m_camo_npz, 650, RIFLE_STOCK);
+			ITEM(rhs_weap_ak74m_npz, 650, RIFLE_STOCK);
+
 
 			ITEM(rhs_weap_ak105, 700, RIFLE_STOCK);
 			ITEM(rhs_weap_ak105_zenitco01, 750, RIFLE_STOCK);
@@ -1298,7 +1316,18 @@
 				price = 350;
 				stock = MAGAZINE_STOCK;
 			};
-
+			class rhs_30Rnd_545x39_7N6M_AK {
+				price = 40;
+				stock = MAGAZINE_STOCK;	
+			};
+			class rhs_30Rnd_545x39_7N6M_plum_AK {
+				price = 40;
+				stock = MAGAZINE_STOCK;	
+			};
+			class rhs_45Rnd_545X39_7N6M_AK {
+				price = 70;
+				stock = MAGAZINE_STOCK;
+			};
 			class rhs_30Rnd_545x39_7N10_AK {
 				price = 50;
 				stock = MAGAZINE_STOCK;

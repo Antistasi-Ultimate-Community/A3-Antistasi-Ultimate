@@ -252,7 +252,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["JMSJEFF_uniformJ13_black_F_CombatUniform", "JMSJEFF_LDF_black_Shortsleeve"]];
-_eliteLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
+_eliteLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
 _eliteLoadoutData set ["vests", ["JMSJEFF_ChestVestTroop_armor_black", "WX_PlateCarrier_Assault"]];
 _eliteLoadoutData set ["mgVests", ["WX_PlateCarrier_Machinegunner"]];
 _eliteLoadoutData set ["medVests", ["SSV_Vest_Android_Military"]];
@@ -312,7 +312,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["JMSJEFF_uniformJ13_black_F_CombatUniform", "SSV_Uniform_Android_Military"]];
-_militaryLoadoutData set ["slUniform", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
+_militaryLoadoutData set ["slUniforms", ["JMSJEFF_uniformJ3_S_black1_F_CombatUniform"]];
 _militaryLoadoutData set ["vests", ["JMSJEFF_ChestVestTroop_armor_black", "WX_PlateCarrier_Assault"]];
 _militaryLoadoutData set ["mgVests", ["WX_PlateCarrier_Machinegunner"]];
 _militaryLoadoutData set ["medVests", ["SSV_Vest_Android_Military"]];
@@ -550,7 +550,7 @@ private _medicTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -637,7 +637,7 @@ private _engineerTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    ["carbines"] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -665,7 +665,7 @@ private _latTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["lightATLaunchers"] call _fnc_setLauncher;
@@ -695,7 +695,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     [selectRandom ["missileATLaunchers", "ATLaunchers"]] call _fnc_setLauncher;
@@ -725,7 +725,7 @@ private _aaTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    ["rifles"] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;

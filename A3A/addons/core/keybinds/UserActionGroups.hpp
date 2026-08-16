@@ -10,12 +10,19 @@ class UserActionGroups {
             QGVAR(customHintDismiss),
             QGVAR(commanderRebelMenu),
             QGVAR(buildingPlacerAbort),
+            QGVAR(buildingPlacerAlign),
             QGVAR(buildingPlacerDelete),
             QGVAR(buildingPlacerPlace),
             QGVAR(buildingPlacerRotateCCW),
             QGVAR(buildingPlacerRotateCW),
+            QGVAR(buildingPlacerRotateStepDecrease),
+            QGVAR(buildingPlacerRotateStepIncrease),
             QGVAR(buildingPlacerSnapToSurface),
-            QGVAR(buildingPlacerUnsafeMode)
+            QGVAR(buildingPlacerUnsafeMode),
+            QGVAR(buildingPlacerZOffsetDecrease),
+            QGVAR(buildingPlacerZOffsetIncrease),
+            QGVAR(buildingPlacerZStepDecrease),
+            QGVAR(buildingPlacerZStepIncrease)
         };
     };
 };

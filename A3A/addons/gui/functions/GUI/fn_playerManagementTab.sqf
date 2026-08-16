@@ -31,7 +31,7 @@ switch (_mode) do
 {
     case ("update"):
     {
-        Trace("Updating Player Management tab");
+        Debug("Updating Player Management tab");
         // Show back button
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _backButton = _display displayCtrl A3A_IDC_MAINDIALOGBACKBUTTON;

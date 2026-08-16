@@ -77,8 +77,7 @@
 #define TYPE_UNIFORM 801
 #define TYPE_BACKPACK 901
 
-#include "\A3\ui_f\hpp\defineDIKCodes.inc"
-#include "\A3\Ui_f\hpp\defineResinclDesign.inc"
+#include "..\defineCommon.inc"
 
 private ["_item","_return","_data"];
 params ["_item"];
@@ -140,7 +139,7 @@ private _itemCategory = switch true do {
 				"MiscItem";
 			};
 			default {
-				diag_log format ["[Arsenal] Unknown item in item type script: %1", _item];
+				ERROR_JN_2("Unknown item in item type script: ", _item);
 				"MiscItem";
 			};
 		};

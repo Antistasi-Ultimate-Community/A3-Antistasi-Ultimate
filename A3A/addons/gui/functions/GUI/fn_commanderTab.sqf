@@ -44,7 +44,7 @@ switch (_mode) do
 {
     case ("update"):
     {
-        Trace("Updating Commander tab");
+        Debug("Updating Commander tab");
 
         // Show map if not already visible
         if (!ctrlShown _commanderMap) then {_commanderMap ctrlShow true;};
@@ -433,7 +433,7 @@ switch (_mode) do
 
     case ("updateFireMissionView"):
     {
-        Trace("Updating Fire Mission View");
+        Debug("Updating Fire Mission View");
         private _display = findDisplay A3A_IDD_MAINDIALOG;
 
         // Hide group views
@@ -597,7 +597,7 @@ switch (_mode) do
         _roundsEditBox ctrlSetText str _roundsCount;
 
         // Update position editBoxes
-        Trace("Updating fire mission position edit box...");
+        Debug("Updating fire mission position edit box...");
         private _commanderMap = _display displayCtrl A3A_IDC_COMMANDERMAP;
         _selectFireMissionPos = _commanderMap getVariable ["selectFireMissionPos", false];
         _selectFireMissionEndPos = _commanderMap getVariable ["selectFireMissionEndPos", false];
@@ -671,7 +671,7 @@ switch (_mode) do
 
     case ("commanderMapClicked"):
     {
-        Trace("Commander map clicked");
+        Debug("Commander map clicked");
         // Get display and map control
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _commanderMap = _display displayCtrl A3A_IDC_COMMANDERMAP;
@@ -682,23 +682,23 @@ switch (_mode) do
         private _selectFireMissionPos = _commanderMap getVariable ["selectFireMissionPos", false];
         if (_selectFireMissionPos) exitWith
         {
-            Trace("Selecting fire mission position");
+            Debug("Selecting fire mission position");
             private _fireMissionControlsGroup = _display displayCtrl A3A_IDC_FIREMISSONCONTROLSGROUP;
             _fireMissionControlsGroup setVariable ["startPos", _clickedWorldPosition];
             _commanderMap setVariable ["selectFireMissionPos", false];
             ["updateFireMissionView"] call A3A_fnc_commanderTab;
-            Trace_1("Set fire mission startPos: %1", _clickedWorldPosition);
+            Debug_1("Set fire mission startPos: %1", _clickedWorldPosition);
         };
 
         private _selectFireMissionEndPos = _commanderMap getVariable ["selectFireMissionEndPos", false];
         if (_selectFireMissionEndPos) exitWith
         {
-            Trace("Selecting fire mission end position");
+            Debug("Selecting fire mission end position");
             private _fireMissionControlsGroup = _display displayCtrl A3A_IDC_FIREMISSONCONTROLSGROUP;
             _fireMissionControlsGroup setVariable ["endPos", _clickedWorldPosition];
             _commanderMap setVariable ["selectFireMissionEndPos", false];
             ["updateFireMissionView"] call A3A_fnc_commanderTab;
-            Trace_1("Set fire mission endPos: %1", _clickedWorldPosition);
+            Debug_1("Set fire mission endPos: %1", _clickedWorldPosition);
         };
 
         if (count hcAllGroups player < 1) exitWith {
@@ -707,13 +707,13 @@ switch (_mode) do
         };
 
         // Find closest HC squad to the clicked position
-        Trace("Selecting HC group");
+        Debug("Selecting HC group");
         private _selectedGroup = [hcAllGroups player, _clickedWorldPosition] call BIS_fnc_nearestPosition;
-        Trace_1("_selectedGroup: %1", groupId _selectedGroup);
+        Debug_1("_selectedGroup: %1", groupId _selectedGroup);
         private _selectedGroupMapPos = _commanderMap ctrlMapWorldToScreen getPos leader _selectedGroup;
         private _maxDistance = 6 * GRID_W; // TODO UI-update: Move somewhere else?
         private _distance = _selectedGroupMapPos distance _clickedPosition;
-        Trace_4("_selectedGroupMapPos %1, _clickedPosition %2, _maxDistance %3, _distance %4", _selectedGroupMapPos, _clickedPosition, _maxDistance, _distance);
+        Debug_4("_selectedGroupMapPos %1, _clickedPosition %2, _maxDistance %3, _distance %4", _selectedGroupMapPos, _clickedPosition, _maxDistance, _distance);
 
         // If clicked position is nowhere near any hc groups, deselect all units
         // and show list view
@@ -773,7 +773,7 @@ switch (_mode) do
     case ("fireMissionSelectionChanged"):
     {
         private _selection = _params select 0;
-        Trace_1("Fire Mission selection changed: %1", _selection);
+        Debug_1("Fire Mission selection changed: %1", _selection);
 
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _fireMissionControlsGroup = _display displayCtrl A3A_IDC_FIREMISSONCONTROLSGROUP;
@@ -829,7 +829,7 @@ switch (_mode) do
                     _availableAmmo = _fireMissionControlsGroup getVariable ["availableSmokeRounds", 0];
                 };
 
-                Trace_1("Available ammo: %1", _availableAmmo);
+                Debug_1("Available ammo: %1", _availableAmmo);
 
                 // Add 1
                 private _previousNumber = _fireMissionControlsGroup getVariable ["roundsNumber", 1];
@@ -841,7 +841,7 @@ switch (_mode) do
                 // Set new rounds count
                 _fireMissionControlsGroup setVariable ["roundsNumber", _newNumber];
 
-                Trace_1("Rounds count now at %1", _newNumber);
+                Debug_1("Rounds count now at %1", _newNumber);
             };
 
             case ("subround"):
@@ -857,7 +857,7 @@ switch (_mode) do
                 // Set new rounds count
                 _fireMissionControlsGroup setVariable ["roundsNumber", _newNumber];
 
-                Trace_1("Rounds count now at %1", _newNumber);
+                Debug_1("Rounds count now at %1", _newNumber);
             };
 
             case ("setstart"):
@@ -924,7 +924,7 @@ switch (_mode) do
 
     case ("showGarbageCleanOptions"):
     {
-        Trace("Showing garbage clean options");
+        Debug("Showing garbage clean options");
         private _display = findDisplay A3A_IDD_MAINDIALOG;
 
         // Hide overlapping buttons

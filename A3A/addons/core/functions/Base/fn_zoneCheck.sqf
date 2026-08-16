@@ -9,63 +9,55 @@ if (!isServer) exitWith {};
     Returns:
         Nothing
 */
-params ["_marker", "_side"];
+#define CHECK_DELAY 0.25
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-if ((isNil "_marker") or (isNil "_side")) exitWith {};
+if !assert(params[
+    ["_marker", nil, [""]],
+    ["_side", nil, [sideUnknown]]
+]) exitWith {};
 
-//Await lock
-waitUntil {!zoneCheckInProgress};
-zoneCheckInProgress = true;
+// Just in case this function is invoked via `remoteExecCall`
+if (!canSuspend) exitWith { _this spawn A3A_fnc_zoneCheck };
 
-//If marker is a different side than the unit which died on it, we don't care
-if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith
-{
-    zoneCheckInProgress = false
+// If marker is a different side than the unit which died on it, we don't care
+if(_side != sidesX getVariable [_marker, sideUnknown]) exitWith {};
+
+private _key = format["zoneCheck_%1_%2", _marker, _side];
+private _isWaiting = _key in zoneChecksMutex;
+
+zoneChecksMutex set[_key, diag_tickTime + CHECK_DELAY];
+
+if (_isWaiting) exitWith {
+    Debug_2("ZoneCheck at %1 for side %2 is already queued; deferring only", _marker, _side);
 };
 
-private _enemy1 = sideUnknown;
-private _enemy2 = sideUnknown;
+Debug_2("ZoneCheck at %1 for side %2 now waiting", _marker, _side);
 
-switch (_side) do
-{
-    case (teamPlayer):
-    {
-        _enemy1 = Invaders;
-    	_enemy2 = Occupants;
-    };
-    case (Occupants):
-    {
-        _enemy1 = Invaders;
-		_enemy2 = teamPlayer;
-    };
-    case (Invaders):
-    {
-        _enemy1 = Occupants;
-        _enemy2 = teamPlayer;
-    };
+// Await mutex expiration
+waitUntil { (diag_tickTime >= (zoneChecksMutex get _key)) };
+zoneChecksMutex deleteAt _key;
+
+Debug_2("ZoneCheck at %1 for side %2 executing", _marker, _side);
+
+private _counts = [_marker, A3A_diameterExtendedCaptureArea] call A3A_fnc_zoneCountUnits;
+private _defenderUnitCount = _counts deleteAt _side;
+_counts deleteAt civilian; // Remove civilian count, we don't care about them
+
+// There should be exactly two sides left now: `allSides - _side - civilian`
+private _keys = keys _counts;
+
+#if __A3_DEBUG__
+if !assert(count _keys == 2) exitWith {
+    Error_3("ZoneCheck at %1 found %2 sides (%3), expected 2",_marker,count _keys,_keys);
 };
+#endif
 
-[0,0,0] params ["_defenderUnitCount", "_enemy1UnitCount", "_enemy2UnitCount"];
-
-// Use average marker size to force reasonable behaviour with highly rectangular targets
-private _capRadius = ((markerSize _marker select 0) + (markerSize _marker select 1)) / 2;
-_capRadius = _capRadius max 50;
-
-private _markerPos = getMarkerPos _marker;
-private _units = allUnits inAreaArray [_markerPos, _capRadius, _capRadius];
-{
-    if !(_x call A3A_fnc_canFight) then { continue };
-    if (vehicle _x isKindOf "Air") then { continue };
-    private _value = linearConversion [_capRadius/2, _capRadius, _markerPos distance2d _x, 1, 0, true];
-    switch (side _x) do				// Not side group because we don't count undercover
-    {
-        case (_side): {_defenderUnitCount = _defenderUnitCount + _value};
-        case (_enemy1): {_enemy1UnitCount = _enemy1UnitCount + _value};
-        case (_enemy2): {_enemy2UnitCount = _enemy2UnitCount + _value};
-    };
-} forEach _units;
+private _enemy1 = _keys deleteAt 0;
+private _enemy2 = _keys deleteAt 0;
+private _enemy1UnitCount = _counts get _enemy1;
+private _enemy2UnitCount = _counts get _enemy2;
 
 Debug_7("ZoneCheck at %1 found %2 friendly %5 units, %3 enemy %6 units and %4 enemy %7 units", _marker, _defenderUnitCount, _enemy1UnitCount, _enemy2UnitCount, _side, _enemy1, _enemy2);
 
@@ -75,4 +67,3 @@ if (_enemy1UnitCount > 3 * _defenderUnitCount || {_enemy2UnitCount > 3 * _defend
     if (_winner isEqualTo teamPlayer) exitWith {Debug_2("Rebel auto capture of %1 was blocked, %1 remains side %2", _marker, _side)};
     [_winner,_marker] remoteExec ["A3A_fnc_markerChange",2];
 };
-zoneCheckInProgress = false;

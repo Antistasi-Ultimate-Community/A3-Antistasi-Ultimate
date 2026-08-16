@@ -42,7 +42,8 @@ if (isNil "specialVarLoads") then {
         "destroyedMilAdmins",
         "rebelLoadouts", "randomizeRebelLoadoutUniforms",
         "areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
-        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones"
+        "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned", "revealedZones",
+        "occupantsRadioKeys", "invaderRadioKeys"
     ] createHashMapFromArray [];
 };
 
@@ -265,7 +266,7 @@ if (_varName in specialVarLoads) then {
                 _posAnt = _varvalue select _i;
                 _mrk = [mrkAntennas, _posAnt] call BIS_fnc_nearestPosition;
                 _antenna = [antennas,_mrk] call BIS_fnc_nearestPosition;
-                {if ([antennas,_x] call BIS_fnc_nearestPosition == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
+                {if (([antennas,_x] call BIS_fnc_nearestPosition) == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
                 antennas = antennas - [_antenna];
                 antennasDead pushBack _antenna;
                 _antenna removeAllEventHandlers "Killed";
@@ -279,7 +280,7 @@ if (_varName in specialVarLoads) then {
                     Error_1("Loading Antennas: Unable to create ruin for %1", typeOf _antenna);
                 };
 
-                deleteMarker _mrk;
+                _mrk setMarkerType "A3AU_radiotower_dead_mrk";
             };
             publicVariable "antennas";
             publicVariable "antennasDead";
@@ -289,13 +290,13 @@ if (_varName in specialVarLoads) then {
             if (count citiesX != count _varValue) exitWith {};          // it'll be the same in the next one
             for "_i" from 0 to (count citiesX) - 1 do {
                 _city = citiesX select _i;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 _numCiv = _dataX select 0;
                 _numVeh = _dataX select 1;
                 _prestigeOPFOR = _varvalue select _i;
                 _prestigeBLUFOR = _dataX select 3;
                 _dataX = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
-                server setVariable [_city,_dataX,true];
+                A3A_townData set [_city, _dataX];
             };
         };
 
@@ -304,19 +305,19 @@ if (_varName in specialVarLoads) then {
                 Error("City count changed, setting approx support");
                 {
                     if (sidesX getVariable _x != teamPlayer) then { continue };                // sides should be loaded first
-                    private _dataX = (server getVariable _x select [0,2]) + [0,75];             // 75% rebel support
-                    server setVariable [_x, _dataX, true];
+                    private _dataX = (A3A_townData get _x select [0,2]) + [0,75];             // 75% rebel support
+                    A3A_townData set [_x, _dataX];
                 } forEach citiesX;
             };
             for "_i" from 0 to (count citiesX) - 1 do {
                 _city = citiesX select _i;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 _numCiv = _dataX select 0;
                 _numVeh = _dataX select 1;
                 _prestigeOPFOR = _dataX select 2;
                 _prestigeBLUFOR = _varvalue select _i;
                 _dataX = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
-                server setVariable [_city,_dataX,true];
+                A3A_townData set [_city, _dataX];
             };
         };
 
@@ -367,9 +368,24 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'staticsX': {
-            for "_i" from 0 to (count _varvalue) - 1 do {
-                (_varValue#_i) params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
+            private _list = +_varValue;
+            private _index = count _list;
+
+            // Sort by restore priority and z-index (bottom to top), so objects
+            // on top of others aren't created first
+            _list = _list apply {
+                _x params["_class","_position"];
+                _index = _index - 1;
+                [getNumber(configFile >> "CfgVehicles" >> _class >> QGVAR(restorePriority)), -(_position select 2), _index, _x];
+            };
+
+            // Sort descending
+            _list sort false;
+            _list apply {
+                _x params["","","","_data"];
+                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped"];
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
+                Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
                 if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
                     _veh setDir _xVectorUp; //is direction due to old save
@@ -382,20 +398,39 @@ if (_varName in specialVarLoads) then {
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
-                    if (_veh isKindOf "StaticWeapon") exitWith { staticsToSave pushBack _veh };
-                    if (_veh isKindOf "Building") exitWith {
-                        _veh setVariable ["A3A_building", true, true];
-                        if (typeOf _veh in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]) then {
-                            [_veh] call A3A_fnc_terrainCleaner;
+                    switch true do {
+                        case (_veh isKindOf "StaticWeapon");
+                        case (_veh isKindOf "LandVehicle");
+                        case (_veh isKindOf "Ship"): {
+                            staticsToSave pushBack _veh;
                         };
-                        A3A_buildingsToSave pushBack _veh;
+
+                        case (getNumber(configOf _veh >> QGVAR(isBuilding)) == 1);
+                        case (_veh isKindOf "Building"): {
+                            _veh setVariable ["A3A_building", true, true];
+                            A3A_buildingsToSave pushBack _veh;
+                        };
+                    };
+
+                    if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
+                        Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
+                        [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
                     };
                 };
                 if (!isNil "_state") then {
                     [_veh, _state] call HR_GRG_fnc_setState;
                 };
+                if (!isNil "_customization") then {
+                    ([_veh] + _customization) call BIS_fnc_initVehicle;
+                };
+                if (!isNil "_flipped" && {_flipped}) then {
+                    staticsToFlip pushBack _veh;
+                };
             };
             publicVariable "staticsToSave";
+            publicVariable "staticsToFlip";
+            publicVariable "A3A_buildingsToSave";
+            publicVariable "A3A_townData";
         };
 
         case 'tasks': {
@@ -544,94 +579,104 @@ if (_varName in specialVarLoads) then {
 
         case 'watchpostsFIA': {
 			if (count (_varValue select 0) == 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_mrk = createMarker [format ["FIAWatchpost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_recon";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_watchpost",FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					watchpostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _mrk = createMarker [format ["FIAWatchpost%1", random 1000], _positionX];
+                    _mrk setMarkerShapeLocal "ICON";
+                    _mrk setMarkerTypeLocal "A3AU_watchpost_mrk";
+                    _mrk setMarkerColorLocal colorTeamPlayer;
+                    _mrk setMarkerText "";
+                    spawner setVariable [_mrk,2,true];
+                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    sidesX setVariable [_mrk,teamPlayer,true];
+                    watchpostsFIA pushBack _mrk;
+                } forEach _varvalue;
+
+                if !(watchpostsFIA isEqualTo []) then {[watchpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};
 		};
 		case 'roadblocksFIA': {
 			if (count (_varValue select 0) == 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_mrk = createMarker [format ["FIARoadblock%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_support";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_roadblock",FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					roadblocksFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
-			};			
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _mrk = createMarker [format ["FIARoadblock%1", random 1000], _positionX];
+                    _mrk setMarkerShapeLocal "ICON";
+                    _mrk setMarkerTypeLocal "A3AU_roadblock_mrk";
+                    _mrk setMarkerColorLocal colorTeamPlayer;
+                    _mrk setMarkerText "";
+                    spawner setVariable [_mrk,2,true];
+                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    sidesX setVariable [_mrk,teamPlayer,true];
+                    roadblocksFIA pushBack _mrk;
+                } forEach _varvalue;
+
+                if !(roadblocksFIA isEqualTo []) then {[roadblocksFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+			};
 		};
 		case 'aapostsFIA': {
 			if (count (_varValue select 0) >= 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_staticPositions = _x select 2;
-					_mrk = createMarker [format ["FIAAApost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_antiair";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_aa_empl",FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
-					aapostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _staticPositions = _x select 2;
+                    _mrk = createMarker [format ["FIAAApost%1", random 1000], _positionX];
+                    _mrk setMarkerShapeLocal "ICON";
+                    _mrk setMarkerTypeLocal "A3AU_antiair_mrk";
+                    _mrk setMarkerColorLocal colorTeamPlayer;
+                    _mrk setMarkerText "";
+                    spawner setVariable [_mrk,2,true];
+                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+                    sidesX setVariable [_mrk,teamPlayer,true];
+                    aapostsFIA pushBack _mrk;
+                } forEach _varvalue;
+
+                if !(aapostsFIA isEqualTo []) then {[aapostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};	
 		};
 		case 'atpostsFIA': {
 			if (count (_varValue select 0) >= 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_staticPositions = _x select 2;
-					_mrk = createMarker [format ["FIAATpost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_armor";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_at_empl", FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
-					atpostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _staticPositions = _x select 2;
+                    _mrk = createMarker [format ["FIAATpost%1", random 1000], _positionX];
+                    _mrk setMarkerShapeLocal "ICON";
+                    _mrk setMarkerTypeLocal "A3AU_antitank_mrk";
+                    _mrk setMarkerColorLocal colorTeamPlayer;
+                    _mrk setMarkerText "";
+                    spawner setVariable [_mrk,2,true];
+                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+                    sidesX setVariable [_mrk,teamPlayer,true];
+                    atpostsFIA pushBack _mrk;
+                } forEach _varvalue;
+
+                if !(atpostsFIA isEqualTo []) then {[atpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};		
 		};
 		case 'hmgpostsFIA': {
 			if (count (_varValue select 0) >= 2) then {
-			{
-					_positionX = _x select 0;
-					_garrison = _x select 1;
-					_staticPositions = _x select 2;
-					_mrk = createMarker [format ["FIAHmgpost%1", random 1000], _positionX];
-					_mrk setMarkerShape "ICON";
-					_mrk setMarkerType "n_unknown";
-					_mrk setMarkerColor colorTeamPlayer;
-					_mrk setMarkerText format [localize "STR_marker_hmg_empl", FactionGet(reb,"name")];
-					spawner setVariable [_mrk,2,true];
-					if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-					if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
-					hmgpostsFIA pushBack _mrk;
-					sidesX setVariable [_mrk,teamPlayer,true];
-				} forEach _varvalue;
-			}	
+                {
+                    _positionX = _x select 0;
+                    _garrison = _x select 1;
+                    _staticPositions = _x select 2;
+                    _mrk = createMarker [format ["FIAHmgpost%1", random 1000], _positionX];
+                    _mrk setMarkerShapeLocal "ICON";
+                    _mrk setMarkerTypeLocal "A3AU_hmg_mrk";
+                    _mrk setMarkerColorLocal colorTeamPlayer;
+                    _mrk setMarkerText "";
+                    spawner setVariable [_mrk,2,true];
+                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+                    sidesX setVariable [_mrk,teamPlayer,true];
+                    hmgpostsFIA pushBack _mrk;
+                } forEach _varvalue;
+
+                if !(hmgpostsFIA isEqualTo []) then {[hmgpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+			};
 		};
 
         case 'rebelLoadouts': {
@@ -688,6 +733,16 @@ if (_varName in specialVarLoads) then {
             };
 
             publicVariable "unlockedVehicleTypes";
+        };
+
+        case 'occupantsRadioKeys': {
+            occupantsRadioKeys = _varValue;
+            publicVariable "occupantsRadioKeys";
+        };
+		
+        case 'invaderRadioKeys': {
+            invaderRadioKeys = _varValue;
+            publicVariable "invaderRadioKeys";
         };
     };
 } else {

@@ -3,13 +3,20 @@ FIX_LINE_NUMBERS()
 
 #include "Constants.inc"
 
-
 params [
     ["_overridePosition", []],
     ["_isInstant", false]
 ];
 
-Info("Roving  Mortar random event init.");
+Info("Roving Mortar random event init.");
+
+if (A3U_disableMortars) exitWith {
+    Debug("Exiting roving mortar creation; Param was set to disabled.");
+    isRivalEventInProgress = false;
+    publicVariableServer "isRivalEventInProgress";
+    rivalEventCooldown = 300;
+    publicVariableServer "rivalEventCooldown";
+};
 
 private _vehicles = [];
 private _groups = [];
@@ -178,6 +185,7 @@ private _minSleepTime = (1 - ((5 - inactivityLevelRivals) + 1) * 0.1) * _setupTi
 private _sleepTime = _minSleepTime + random (_setupTime - _minSleepTime);
 
 _mortarGroup deleteGroupWhenEmpty true;
+sleep 10;
 [_mortar, _mortarGroup, _supportName, _sleepTime] spawn SCRT_fnc_rivals_mortarRoutine;
 
 private _timeOut = time + 1800;

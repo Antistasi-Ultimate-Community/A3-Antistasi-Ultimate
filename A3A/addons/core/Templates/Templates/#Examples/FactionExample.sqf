@@ -68,6 +68,8 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;             // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
 ["vehiclesPlanesAA", []] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
+["vehiclesPlanesLargeCAS", []] call _fnc_saveToTemplate; //This
+["vehiclesPlanesLargeAA", []] call _fnc_saveToTemplate;  // and this, are identical to the above, use them in case they don't fit in hangars. They will spawn on the runway instead.
 ["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
 //no need for vehicle variant currently
 ["vehiclesPlanesGunship", []] call _fnc_saveToTemplate;     // planes like V-44X armed, AC-130 or pelican from OPTRE, used in GUNSHIP support
@@ -118,19 +120,6 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["minefieldAT", []] call _fnc_saveToTemplate;                   // anti-tank mines
 ["minefieldAPERS", []] call _fnc_saveToTemplate;                // anti-personal mines
 
-//Example on how to use dlc content
-/* if (_hasContact) then {
-    #include "..\DLC_content\vehicles\Contact\weird_alien_bug.sqf"
-}; */
-
-//Example on how to use mod content
-//If CUP
-/* if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
-    #include "..\MOD_content\CUP\Vanilla_AAF\Vehicles_AAF.sqf"
-}; */
-
-//or like this
-
 //Example on how to use mod content
 /* if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 	_gunship pushBack "vnx_b_air_ac119_01_01";
@@ -146,20 +135,10 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
     ["", []]
 ]] call _fnc_saveToTemplate;
 
-/// or do it like this
-/* ["animations", [
-    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf"
-]] call _fnc_saveToTemplate; */
-
 //vehicle skins
 ["variants", [
     ["vehClass", ["paint", 1]]
 ]] call _fnc_saveToTemplate;
-
-/// or do it like this
-/* ["variants", [
-    #include "..\vehicleVariants\Vanilla_NATO_Arid\CSLA_NATO_Arid.sqf"
-]] call _fnc_saveToTemplate; */
 
 /////////////////////
 ///  Identities   ///
@@ -649,7 +628,7 @@ private _latTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     [["lightATLaunchers", "ATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
@@ -679,7 +658,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
@@ -709,7 +688,7 @@ private _aaTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
+    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;
@@ -838,7 +817,7 @@ private _crewTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
+    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

@@ -72,9 +72,12 @@ while {_timePassed < _distanceX} do {
 disableUserInput false;
 cutText [localize "STR_cut_RP_FT_success", "BLACK IN", 1];
 
-private _remainingTravels = _remainingTravels - 1;
+// Update both variables and trigger the universal map UI refresh
+_remainingTravels = _remainingTravels - 1;
 rallyPointRoot setVariable ["remainingTravels", _remainingTravels, true];
-rallyPointMarker setMarkerText (format [localize "STR_marker_RP", str _remainingTravels]);
+missionNamespace setVariable ["rallyPointSpawnCount", _remainingTravels, true];
+
+[rallyPointMarker] call A3A_fnc_mrkUpdate;
 
 if (_remainingTravels < 1) then {
     remoteExecCall ["SCRT_fnc_rally_deleteRallyPoint",2];

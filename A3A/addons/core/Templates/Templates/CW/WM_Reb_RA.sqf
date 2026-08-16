@@ -11,7 +11,7 @@
 ["flagMarkerType", "rebel_marker_white"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CW_Quadbike"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["lsd_civ_lancerBike"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["ls_vehicle_105kLancer"]] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", ["WM_V25_Speeder"]] call _fnc_saveToTemplate;
 ["vehiclesTruck", ["CW_rebel_argon_covered"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["WM_AAC_Speeder_Rocket"]] call _fnc_saveToTemplate;
@@ -19,7 +19,7 @@
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["442_a10_plane_cas", "3AS_Civilian_Transport_01"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["3AS_SnowSpeeder", "3AS_Civilian_Transport_01"]] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["C_Offroad_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["C_Van_01_transport_F"]] call _fnc_saveToTemplate;
@@ -29,15 +29,15 @@
 ["staticMGs", ["3AS_HeavyRepeater_Unarmoured"]] call _fnc_saveToTemplate;
 ["staticAT", ["3as_ParticleCannon"]] call _fnc_saveToTemplate;
 ["staticAA", ["AA_Turret"]] call _fnc_saveToTemplate;
-["staticMortars", ["ls_merc_mortar"]] call _fnc_saveToTemplate;
+["staticMortars", ["ls_vehicle_mortar_mercenary"]] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 
 ["mineAT", "ATMine_Range_Mag"] call _fnc_saveToTemplate;
 ["mineAPERS", "APERSBoundingMine_Range_Mag"] call _fnc_saveToTemplate;
 
-["breachingExplosivesAPC", [["SWLW_clones_spec_demo_mag", 1], ["SWLW_clones_spec_breach_mag", 1]]] call _fnc_saveToTemplate;
-["breachingExplosivesTank", [["SWLW_clones_spec_demo_mag", 1], ["SWLW_clones_spec_breach_mag", 2]]] call _fnc_saveToTemplate;
+["breachingExplosivesAPC", [["ls_explosive_demoCharge_magazine", 1], ["ls_explosive_breachCharge_magazine", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["ls_explosive_demoCharge_magazine", 1], ["ls_explosive_breachCharge_magazine", 2]]] call _fnc_saveToTemplate;
 
 #include "WM_Reb_Vehicle_Attributes.sqf"
 
@@ -47,9 +47,9 @@
 
 private _initialRebelEquipment = [
     "WM_DH17", "WM_DH17_Mag",
-    "ls_weapon_dc17sidearm","ls_mag_dc17sidearm",
-    ["ls_weapon_rps6_disposable", 5],
-    ["SWLW_clones_spec_breach_mag", 10], ["SWLW_clones_spec_demo_mag", 3],
+    "ls_weapon_dc17s","ls_magazine_dc17s",
+    ["ls_weapon_rps6_loaded", 5],
+    ["ls_explosive_breachCharge_magazine", 10], ["ls_explosive_demoCharge_magazine", 3],
     "3AS_ThermalDetonator","SmokeShell",
     "V_HarnessO_brn","V_HarnessO_gry",
     "WM_ParaMilitary_Helmet","WM_ParaMilitary_Helmet_Urban","WM_ParaMilitary_Helmet_Winter","WM_ParaMilitary_Helmet_Wood",
@@ -57,9 +57,9 @@ private _initialRebelEquipment = [
     "JLTS_CloneBinocular_black"
 ];
 
-if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","SWLB_comlink_hush98","tf_anprc154"]};
+if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","ls_radios_hush98","tf_anprc154"]};
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["Endor_Rebel_Radio","Black_WM_Rebel_Radio"]};
-if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","JLTS_clone_comlink","TFAR_anprc154"]};
+if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","ls_radios_hush98","TFAR_anprc154"]};
 if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["Endor_Rebel_Radio","Black_WM_Rebel_Radio"]};
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
@@ -106,9 +106,9 @@ _loadoutData set ["binoculars", ["JLTS_CloneBinocular_black"]];
 
 _loadoutData set ["uniforms", _rebUniforms];
 
-_loadoutData set ["glasses", ["ls_jn_goggles_facewear"]];
-_loadoutData set ["goggles", ["lsd_gar_p1Interior_hud", "lsd_gar_p2Interior_hud", "SWLB_clone_p1_HUD", "SWLB_clone_p2_HUD"]];
-_loadoutData set ["facemask", ["ls_misc_poncho_facewear", "ls_misc_poncho_partnerBlack_facewear", "ls_misc_poncho_partnerWhite_facewear", "ls_misc_poncho_sideStripeBlue_facewear", "ls_misc_poncho_sideStripeRed_facewear", "ls_misc_poncho_sideStripeWhite_facewear", "ls_misc_poncho_sideStripeBrown_facewear"]];
+_loadoutData set ["glasses", []];
+_loadoutData set ["goggles", ["ls_clone_phase1_hud", "ls_clone_phase2_hud"]];
+_loadoutData set ["facemask", []];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];

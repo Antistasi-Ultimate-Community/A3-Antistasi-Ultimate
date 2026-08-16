@@ -5,7 +5,7 @@
 ["name", "Rex's Clone Uprising"] call _fnc_saveToTemplate;
 
 ["flag", "ls_flag_republic"] call _fnc_saveToTemplate;
-["flagTexture", "\LS_statics_props\flags\data\flag_republic.paa"] call _fnc_saveToTemplate;
+["flagTexture", "ls\core\addons\data\flags\flag_republic_ca.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "JLTS_flag_Rep"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["3AS_Barc"]] call _fnc_saveToTemplate;
@@ -34,8 +34,8 @@
 ["mineAT", "ATMine_Range_Mag"] call _fnc_saveToTemplate;
 ["mineAPERS", "APERSBoundingMine_Range_Mag"] call _fnc_saveToTemplate;
 
-["breachingExplosivesAPC", [["SWLW_clones_spec_demo_mag", 1], ["SWLW_clones_spec_breach_mag", 1]]] call _fnc_saveToTemplate;
-["breachingExplosivesTank", [["SWLW_clones_spec_demo_mag", 1], ["SWLW_clones_spec_breach_mag", 2]]] call _fnc_saveToTemplate;
+["breachingExplosivesAPC", [["ls_explosive_demoCharge_magazine", 1], ["ls_explosive_breachCharge_magazine", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["ls_explosive_demoCharge_magazine", 1], ["ls_explosive_breachCharge_magazine", 2]]] call _fnc_saveToTemplate;
 
 #include "WM_Reb_Vehicle_Attributes.sqf"
 
@@ -44,50 +44,50 @@
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "SWLW_DC15s", "SWLW_DC15s_Mag",
+    "ls_weapon_dc15s", "ls_magazine_dc15s",
     "ls_weapon_dc17sidearm","ls_mag_dc17sidearm",
     ["ls_weapon_rps6_disposable", 5],
-    ["SWLW_clones_spec_breach_mag", 10], ["SWLW_clones_spec_demo_mag", 3],
+    ["ls_explosive_breachCharge_magazine", 10], ["ls_explosive_demoCharge_magazine", 3],
     "3AS_ThermalDetonator","SmokeShell",
-    "SWLB_clone_basic_armor","SWLB_clone_recon_armor","SWLB_clone_recon_nco_armor","SWLB_clone_assault_armor",
-    "SWLB_clone_P2_helmet","SWLB_clone_501stTrooper_helmet","SWLB_clone_5thTrooper_helmet","SWLB_clone_74thTrooper_helmet","SWLB_clone_104thTrooper_helmet","SWLB_clone_187thTrooper_helmet","SWLB_clone_212thTrooper_helmet","SWLB_clone_21stTrooper_helmet","SWLB_clone_327thTrooper_helmet","SWLB_clone_332ndTrooper_helmet","SWLB_clone_41stTrooper_helmet","SWLB_clone_442ndTrooper_helmet","SWLB_clone_91stTrooper_helmet",
-    "SWLB_clone_bag", "SWLB_clone_bag_belt","SWLB_clone_bag_leg",
-    "SWLB_clone_binocular"
+    "ls_gar_clone_vest","ls_gar_reconOfficer_vest","ls_gar_recon_vest","ls_gar_reconNCO_vest","ls_gar_reconSurvival_vest","ls_gar_holster_vest",
+    "ls_gar_phase1_helmet", "ls_gar_phase2_helmet","ls_cloneHelmet_phase2_13th_trooper","ls_cloneHelmet_phase2_187th_trooper","ls_cloneHelmet_phase2_104th_trooper","ls_cloneHelmet_phase2_327th_trooper","ls_cloneHelmet_phase2_612th_trooper","ls_cloneHelmet_phase2_21st_trooper","ls_cloneHelmet_phase2_332nd_trooper","ls_cloneHelmet_phase2_501st_trooper","ls_cloneHelmet_phase2_5th_trooper","ls_cloneHelmet_phase2_74th_trooper","ls_cloneHelmet_phase2_91st_trooper","ls_cloneHelmet_phase2_212th_trooper",
+    "ls_gar_beltBag", "ls_gar_beltBag_belt","ls_gar_beltBag_leg",
+    "ls_clone_electrobinoculars"
 ];
 
-if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","SWLB_comlink","tf_anprc154"]};
-if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["SWLB_clone_RTO_mini_backpack"]};
-if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","SWLB_comlink","TFAR_anprc154"]};
-if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["SWLB_clone_RTO_mini_backpack"]};
+if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","ls_radios_cwp8","tf_anprc154"]};
+if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["ls_gar_rto_mini_backpack"]};
+if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","ls_radios_cwp8","TFAR_anprc154"]};
+if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["ls_gar_rto_mini_backpack"]};
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-    "SWLB_clone_uniform",
-	"SWLB_clone_501stTrooper_Uniform",
-	"SWLB_clone_5thTrooper_Uniform",
-	"SWLB_clone_74thTrooper_Uniform",
-	"SWLB_clone_104thTrooper_Uniform",
-	"SWLB_clone_187thTrooper_Uniform",
-	"SWLB_clone_212thTrooper_Uniform",
-	"SWLB_clone_21stTrooper_Uniform",
-	"SWLB_clone_327thTrooper_Uniform",
-	"SWLB_clone_332ndTrooper_Uniform",
-	"SWLB_clone_41stTrooper_Uniform",
-	"SWLB_clone_442ndTrooper_Uniform",
-	"SWLB_clone_91stTrooper_Uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform",
-	"SWLB_clone_uniform"
+    "ls_gar_phase2_uniform",
+	"ls_cloneUniform_13th_trooper",
+	"ls_cloneUniform_187th_trooper",
+	"ls_cloneUniform_104th_trooper",
+	"ls_cloneUniform_327th_trooper",
+	"ls_cloneUniform_612th_trooper",
+	"ls_cloneUniform_21st_trooper",
+	"ls_cloneUniform_332nd_trooper",
+	"ls_cloneUniform_501st_trooper",
+	"ls_cloneUniform_5th_trooper",
+	"ls_cloneUniform_74th_trooper",
+	"ls_cloneUniform_91st_trooper",
+	"ls_cloneUniform_212th_trooper",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform",
+	"ls_gar_phase2_uniform"
 ];
 
 private _dlcUniforms = [];
@@ -95,32 +95,32 @@ private _dlcUniforms = [];
 ["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
 
 ["headgear", [
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_501stTrooper_helmet",
-	"SWLB_clone_5thTrooper_helmet",
-	"SWLB_clone_74thTrooper_helmet",
-	"SWLB_clone_104thTrooper_helmet",
-	"SWLB_clone_187thTrooper_helmet",
-	"SWLB_clone_212thTrooper_helmet",
-	"SWLB_clone_21stTrooper_helmet",
-	"SWLB_clone_327thTrooper_helmet",
-	"SWLB_clone_332ndTrooper_helmet",
-	"SWLB_clone_41stTrooper_helmet",
-	"SWLB_clone_442ndTrooper_helmet",
-	"SWLB_clone_91stTrooper_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet",
-	"SWLB_clone_P2_helmet"
+	"ls_gar_phase1_helmet",
+	"ls_cloneHelmet_phase2_13th_trooper",
+	"ls_cloneHelmet_phase2_187th_trooper",
+	"ls_cloneHelmet_phase2_104th_trooper",
+	"ls_cloneHelmet_phase2_327th_trooper",
+	"ls_cloneHelmet_phase2_612th_trooper",
+	"ls_cloneHelmet_phase2_21st_trooper",
+	"ls_cloneHelmet_phase2_332nd_trooper",
+	"ls_cloneHelmet_phase2_501st_trooper",
+	"ls_cloneHelmet_phase2_5th_trooper",
+	"ls_cloneHelmet_phase2_74th_trooper",
+	"ls_cloneHelmet_phase2_91st_trooper",
+	"ls_cloneHelmet_phase2_212th_trooper",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet",
+	"ls_gar_phase2_helmet"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -142,13 +142,13 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
-_loadoutData set ["binoculars", ["SWLB_clone_binocular"]];
+_loadoutData set ["binoculars", ["ls_clone_electrobinoculars"]];
 
 _loadoutData set ["uniforms", _rebUniforms];
 
-_loadoutData set ["glasses", ["ls_jn_goggles_facewear"]];
-_loadoutData set ["goggles", ["lsd_gar_p1Interior_hud", "lsd_gar_p2Interior_hud", "SWLB_clone_p1_HUD", "SWLB_clone_p2_HUD"]];
-_loadoutData set ["facemask", ["ls_misc_poncho_facewear", "ls_misc_poncho_partnerBlack_facewear", "ls_misc_poncho_partnerWhite_facewear", "ls_misc_poncho_sideStripeBlue_facewear", "ls_misc_poncho_sideStripeRed_facewear", "ls_misc_poncho_sideStripeWhite_facewear", "ls_misc_poncho_sideStripeBrown_facewear"]];
+_loadoutData set ["glasses", []];
+_loadoutData set ["goggles", ["ls_clone_phase1_hud", "ls_clone_phase2_hud"]];
+_loadoutData set ["facemask", []];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];

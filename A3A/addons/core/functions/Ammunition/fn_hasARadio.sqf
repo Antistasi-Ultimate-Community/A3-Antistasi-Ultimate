@@ -20,5 +20,4 @@ Example: _unit call A3A_fnc_hasRadio;
 
 License: MIT License
 */
-assignedItems _this findIf { _x == "ItemRadio" || {"tf_" in _x} || {"TFAR" in _x} || {"item_radio" in _x} } > -1
-|| { backpack _this in allBackpacksRadio }
+(_this getSlotItemName 611 isNotEqualTo "") || { backpack _this in allBackpacksRadio };

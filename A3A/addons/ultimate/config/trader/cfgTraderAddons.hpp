@@ -10,6 +10,116 @@
         If you load AMF and Aegis, you'll get things from both.
     */
     
+    ////DLC
+    class addons_jets : addons_base
+    {
+        addons[] = {"air_f_jets"};
+        weapons = "weapons_jets";
+        vehicles = "vehicles_jets";
+    };
+    class addons_kart : addons_base
+    {
+        addons[] = {"soft_f_kart"};
+        weapons = "weapons_kart";
+        vehicles = "vehicles_kart";
+    };
+    class addons_marksmen : addons_base
+    {
+        addons[] = {"data_f_mark"};
+        weapons = "weapons_marksmen";
+        vehicles = "vehicles_marksmen";
+    };
+    class addons_tanks : addons_base
+    {
+        addons[] = {"armor_f_tank"};
+        weapons = "weapons_tanks";
+        vehicles = "vehicles_tanks";
+    };
+    class addons_lawsofwar : addons_base
+    {
+        addons[] = {"soft_f_orange"};
+        weapons = "weapons_lawsofwar";
+        vehicles = "vehicles_lawsofwar";
+    };
+    class addons_artofwar : addons_base
+    {
+        addons[] = {"data_f_aow"};
+        weapons = "weapons_artofwar";
+    };
+    class addons_apex : addons_base
+    {
+        addons[] = {"supplies_f_exp"};
+        weapons = "weapons_apex";
+        vehicles = "vehicles_apex";
+    };
+    class addons_contact : addons_base
+    {
+        addons[] = {"soft_f_contact"};
+        weapons = "weapons_contact";
+        vehicles = "vehicles_contact";
+    };
+    class addons_helicopters : addons_base
+    {
+        addons[] = {"air_f_heli"};
+        vehicles = "vehicles_helicopters";
+    };
+    ////
+    ////CDLC
+    class addons_ws : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS"};
+        weapons = "weapons_ws";
+        vehicles = "vehicles_ws";
+    };
+    class addons_rf : addons_base
+    {
+        addons[] = {"RF_Weapons"};
+        weapons = "weapons_rf";
+        vehicles = "vehicles_rf";
+    };
+    class addons_ef : addons_base
+    {
+        addons[] = {"EF_Marines"};
+        weapons = "weapons_ef";
+        vehicles = "vehicles_ef";
+    };
+    class addons_csla : addons_base
+    {
+        addons[] = {"CSLA"};
+        weapons = "weapons_csla";
+        vehicles = "vehicles_csla";
+    };
+    class addons_gm : addons_base
+    {
+        addons[] = {"gm_core"};
+        weapons = "weapons_gm";
+        vehicles = "vehicles_gm";
+    };
+    class addons_sogpf : addons_base
+    {
+        addons[] = {"vn_weapons"};
+        weapons = "weapons_sogpf";
+        vehicles = "vehicles_sog";
+    };
+    class addons_nickelsteel : addons_base
+    {
+        addons[] = {"air_f_vietnam_04"};
+        weapons = "weapons_nickelsteel";
+        vehicles = "vehicles_nickelsteel";
+    };
+    class addons_spe : addons_base
+    {
+        addons[] = {"ww2_spe_assets_c_characters_germans_c"};
+        weapons = "weapons_spe";
+        vehicles = "vehicles_spe";
+    };
+    class addons_spex : addons_base
+    {
+        addons[] = {"ww2_spex_assets_c_characters_americans_c"};
+        weapons = "weapons_spex";
+        vehicles = "vehicles_spex";
+    };
+    ////
     class addons_kkiv2035 : addons_base
     {
         addons[] = {"Kio_Kkiv_2035"};
@@ -17,13 +127,28 @@
     };
     class addons_aegis : addons_base
     {
-        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02", "A3_Atlas_Armor_F_Atlas_APC_Tracked_02", "A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02"};
         weapons = "weapons_aegis";
         vehicles = "vehicles_aegis";
     };
+    class addons_atlas : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02"};
+        weapons = "weapons_atlas";
+    };
+    class addons_police : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02","A3_Police_Data_F_Police"};
+        weapons = "weapons_police";
+    };
+    class addons_opposingforces : addons_base
+    {
+        addons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02","A3_Atlas_Armor_F_Atlas_APC_Tracked_02","A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        weapons = "weapons_opposingforces";
+    };
     class addons_amf : addons_base
     {
-        addons[] = {"AMF_FAMAS", "r3f_armes"};
+        addons[] = {"AMF_Patches"};
         vehicles = "vehicles_amf";
     };
     class addons_wmempire : addons_base
@@ -55,18 +180,6 @@
         weapons = "weapons_unsung";
         vehicles = "vehicles_unsung";
     };
-    class addons_sogpf : addons_base
-    {
-        addons[] = {"vn_weapons"};
-        weapons = "weapons_sogpf";
-        vehicles = "vehicles_sog";
-    };
-    class addons_nickelsteel : addons_base
-    {
-        addons[] = {"air_f_vietnam_04"};
-        weapons = "weapons_nickelsteel";
-        vehicles = "vehicles_nickelsteel";
-    };
     class addons_3cbf : addons_base
     {
         addons[] = {"UK3CB_Factions_Vehicles_SUV"};
@@ -78,18 +191,6 @@
         addons[] = {"IFA3_Core"};
         weapons = "weapons_ifa3";
         vehicles = "vehicles_ifa3";
-    };
-    class addons_spe : addons_base
-    {
-        addons[] = {"ww2_spe_assets_c_characters_germans_c"};
-        weapons = "weapons_spe";
-        vehicles = "vehicles_spe";
-    };
-    class addons_spex : addons_base
-    {
-        addons[] = {"ww2_spex_assets_c_characters_americans_c"};
-        weapons = "weapons_spex";
-        vehicles = "vehicles_spex";
     };
     class addons_ffaa : addons_base
     {
@@ -108,24 +209,6 @@
         addons[] = {"sfp_soldiers"};
         weapons = "weapons_sfp";
         vehicles = "vehicles_sfp";
-    };
-    class addons_pla : addons_base
-    {
-        addons[] = {"mas_chi_army"};
-        weapons = "weapons_pla";
-        vehicles = "vehicles_pla";
-    };
-    class addons_ws : addons_base
-    {
-        addons[] = {"Weapons_1_F_lxWS"};
-        weapons = "weapons_ws";
-        vehicles = "vehicles_ws";
-    };
-    class addons_rf : addons_base
-    {
-        addons[] = {"RF_Weapons"};
-        weapons = "weapons_rf";
-        vehicles = "vehicles_rf";
     };
     class addons_racs : addons_base
     {
@@ -150,12 +233,6 @@
         weapons = "weapons_cup";
         vehicles = "vehicles_cup";
     };
-    class addons_csla : addons_base
-    {
-        addons[] = {"CSLA"};
-        weapons = "weapons_csla";
-        vehicles = "vehicles_csla";
-    };
     class addons_3cbbaf : addons_base
     {
         addons[] = {"UK3CB_BAF_Weapons", "UK3CB_BAF_Vehicles", "UK3CB_BAF_Units_Common", "UK3CB_BAF_Equipment"};
@@ -174,12 +251,6 @@
         weapons = "weapons_optre";
         vehicles = "vehicles_optre";
     }; // should probably be split up to optre and optre_fc
-    class addons_gm : addons_base
-    {
-        addons[] = {"gm_core"};
-        weapons = "weapons_gm";
-        vehicles = "vehicles_gm";
-    };
     class addons_niarms : addons_base
     {
         addons[] = {"hlcweapons_core"};
@@ -200,11 +271,6 @@
         addons[] = {"TMT_Core"};
         vehicles = "vehicles_tmt";
     };
-    class addons_tfc : addons_base
-    {
-        addons[] = {"TFC_Core_Data", "TFC_CA_Characters", "TFC_SF_Characters", "tfc_rcaf_cc130j"};
-        vehicles = "vehicles_tfc";
-    };
     class addons_sma : addons_base
     {
         addons[] = {"SMA_Weapons"};
@@ -215,12 +281,6 @@
         addons[] = {"csa38ii_data"};
         weapons = "weapons_csa38";
         vehicles = "vehicles_csa38";
-    };
-    class addons_scion : addons_base
-    {
-        addons[] = {"sc_weapons"};
-        weapons = "weapons_scion";
-        vehicles = "vehicles_scion";
     };
     class addons_wrs : addons_base
     {
@@ -312,6 +372,11 @@
         addons[] = {"vests_f_JCA_IE"};
         weapons = "equipment_jcaie";
     };
+    class addons_jcals : addons_base
+    {
+        addons[] = {"Weapons_F_JCA_LS"};
+        vehicles = "vehicles_jcals";
+    };
     class addons_FlexNorAF : addons_base
     {
         addons[] = {"Flex_CUP_NOR_Faction"};
@@ -322,9 +387,48 @@
         addons[] = {"F16_Norwegian_Reskin"};
         vehicles = "CUP_NorAF_F16";
     };
-    class addons_ef : addons_base
+    class addons_ScifiVP : addons_base
     {
-        addons[] = {"EF_Marines"};
-        weapons = "weapons_ef";
-        vehicles = "vehicles_ef";
+        addons[] = {"TKE_Ext_Core_V"};
+        vehicles = "vehicles_ScifiVP";
+    };
+    class addons_mpp : addons_base
+    {
+        addons[] = {"MPP_PISTOLS"};
+        weapons = "weapons_mpp";
+    };
+    class addons_mss : addons_base
+    {
+        addons[] = {"MSS_Core"};
+        weapons = "weapons_mss";
+    };
+    class addons_ScifiTP : addons_base
+    {
+        addons[] = {"PHEN_TurretPack"};
+        vehicles = "vehicles_scifitp";
+    };
+    class addons_QDI : addons_base
+    {
+        addons[] = {"qdi_core"};
+        weapons = "weapons_QDI";
+    };
+    class addons_QAV : addons_base
+    {
+        addons[] = {"QAV_Core"};
+        vehicles = "vehicles_qav";
+    };
+    class addons_QAV_VVE : addons_base
+    {
+        addons[] = {"vve_core"};
+        vehicles = "vehicles_qav_vve";
+    };
+    class addons_rearma_us : addons_base
+    {
+        addons[] = {"us_weapon_rifles"};
+        weapons = "weapons_rearma_us";
+    };
+    class addons_rearma_ru : addons_base
+    {
+        addons[] = {"rus_weapon_rifles"};
+        weapons = "weapons_rearma_ru";
     };

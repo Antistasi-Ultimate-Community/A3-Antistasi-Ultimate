@@ -448,10 +448,24 @@ class commanderMenu
 					action = "[] call SCRT_fnc_ui_setRebuildAssetMode;";		
 				};
 
+				class respawnPetros: ButtonBase
+				{			
+					idc = 3121;
+					text = $STR_antistasi_dialogs_hq_button_respawn_petros_text;
+					tooltip = $STR_antistasi_dialogs_hq_button_respawn_petros_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "8 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";	
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;	
+					action = "[] call SCRT_fnc_ui_respawnPetros;";		
+				};
+
 				class hqSpacer1: brSpacer 
 				{
 					idc = 3101;					
-					y = "8 * pixelGridNoUIScale * pixelH";	
+					y = "12 * pixelGridNoUIScale * pixelH";	
 				};
 
 				class rebelSkillTitle: TextBase
@@ -459,7 +473,7 @@ class commanderMenu
 					idc = 3102;
 					text = $STR_commander_menu_skill_level_title;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "8.5 * pixelGridNoUIScale * pixelH";	
+					y = "12.5 * pixelGridNoUIScale * pixelH";	
 					w = "22.5 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 				};
@@ -470,7 +484,7 @@ class commanderMenu
 					text = $STR_antistasi_dialogs_hq_button_train_ai_text;
 					tooltip = $STR_antistasi_dialogs_hq_button_train_ai_tooltip;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "10 * pixelGridNoUIScale * pixelH";
+					y = "14 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "3 * pixelGridNoUIScale * pixelH";	
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
@@ -484,7 +498,7 @@ class commanderMenu
 					text = $STR_antistasi_dialogs_hq_button_rebel_loadouts_text;
 					tooltip = $STR_antistasi_dialogs_hq_button_rebel_loadouts_tooltip;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "14 * pixelGridNoUIScale * pixelH";
+					y = "18 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "3 * pixelGridNoUIScale * pixelH";	
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
@@ -492,6 +506,9 @@ class commanderMenu
 					action = "[] call SCRT_fnc_ui_createRebelLoadoutMenu;";
 				};
 
+				/*
+				// ! This no longer does anything since new partial AI loadout system was introduced
+				// ! Leaving it commented out instead of removing it in case we want to use this button for something else later
 				class uniformRandomizeButton: ScrtRscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5500;
@@ -520,6 +537,7 @@ class commanderMenu
 						};
 					};		
 				};
+				*/
 
 				class hqSpacer2: brSpacer 
 				{
@@ -935,6 +953,34 @@ class commanderMenu
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
 					action = "closeDialog 0; closeDialog 0; [] spawn A3A_fnc_checkWinCondition;";		
+				};
+
+				class TeardownModeButton: ButtonBase
+				{			
+					idc = 5190;
+					text = "$STR_commander_menu_toggle_teardown_mode_button";
+					tooltip = "$STR_commander_menu_toggle_teardown_mode_button_tooltip";
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "26 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;			
+					action = QUOTE(while {dialog} do {closeDialog 0}; [] call FUNCMAIN(toggleTeardownMode));
+				};
+
+				class EditParamsButton: ButtonBase
+				{			
+					idc = 5200;
+					text = $STR_commander_menu_edit_params_button;
+					tooltip= $STR_commander_menu_edit_params_button_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "30 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;			
+					action = "['onLoad'] spawn SCRT_fnc_ui_editParamsMenu;";
 				};
 
 				class saveGameButton: ButtonBase

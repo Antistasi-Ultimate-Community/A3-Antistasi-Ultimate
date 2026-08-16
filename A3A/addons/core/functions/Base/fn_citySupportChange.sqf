@@ -7,14 +7,14 @@ cityIsSupportChanging = true;
 
 params [["_changeGov", ""], ["_changeReb", ""], ["_pos","",["",[]]], ["_scaled", true], ["_isRadio", false]];
 
-if !(_changeGov isEqualType 0) exitWith {["Function was called incorrectly. First param must be a number.", _fnc_scriptName] call A3U_fnc_log};
-if !(_changeReb isEqualType 0) exitWith {["Function was called incorrectly. Second param must be a number.", _fnc_scriptName] call A3U_fnc_log};
+if !(_changeGov isEqualType 0) exitWith {Error("Function was called incorrectly. First param must be a number.")};
+if !(_changeReb isEqualType 0) exitWith {Error("Function was called incorrectly. Second param must be a number.")};
 if (_pos isEqualTo "" || {_pos isEqualTo []}) exitWith {
-	["Function was called incorrectly. Third param must be a city varname (STR) or coordinates (ARR).", _fnc_scriptName] call A3U_fnc_log
+	Error("Function was called incorrectly. Third param must be a city varname (STR) or coordinates (ARR).")
 };
 
 private _city = if (_pos isEqualType "") then {_pos} else {[citiesX, _pos] call BIS_fnc_nearestPosition};
-private _cityData = server getVariable _city;
+private _cityData = A3A_townData get _city;
 if (isNil "_cityData" || {!(_cityData isEqualType [])}) exitWith
 {
 	cityIsSupportChanging = false;
@@ -40,8 +40,8 @@ else {
 };
 
 // Cap total to 100 and minimums to 0
-_supportGov = 0 max (_supportGov + _changeGov);
-_supportReb = 0 max (_supportReb + _changeReb);
+private _supportGov = 0 max (_supportGov + _changeGov);
+private _supportReb = 0 max (_supportReb + _changeReb);
 
 private _supportTotal = _supportGov + _supportReb;
 if (_supportTotal > 100) then {
@@ -49,8 +49,9 @@ if (_supportTotal > 100) then {
 	_supportReb = _supportReb * (100 / _supportTotal);
 };
 
-_cityData = [_numCiv, _numVeh, _supportGov, _supportReb];
+private _cityData = [_numCiv, _numVeh, _supportGov, _supportReb];
 
-server setVariable [_city,_cityData,true];
+A3A_townData set [_city, _cityData]; publicVariable "A3A_townData";
 cityIsSupportChanging = false;
+[_city] call A3A_fnc_mrkUpdate;
 true

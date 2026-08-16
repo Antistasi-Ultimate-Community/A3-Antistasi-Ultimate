@@ -1,0 +1,55 @@
+#include "..\..\script_component.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3U_fnc_canLockpick
+
+Description:
+    Checks if a vehicle can be unlocked
+
+Parameters:
+    0: _unit - the player attempting to unlock <OBJECT>
+    1: _target - the vehicle to check <OBJECT>
+
+Optional:
+    2: _forDisplayOnly - whether the check is for displaying the hold-action (true) or executing it (false, default) <BOOL>
+
+Example:
+    (begin example)
+    [player, cursorTarget] call A3A_fnc_canLockpick;
+    (end example)
+
+Returns:
+    Whether the vehicle can be unlocked <BOOL>
+
+Author:
+    UnseenKill
+---------------------------------------------------------------------------- */
+if !assert(params[
+    ["_unit", nil, [objNull]],
+    ["_target", nil, [objNull]]
+]) exitWith { false };
+
+if !assert(!isNull _unit) exitWith { false };
+if !assert(!isNull _target) exitWith { false };
+
+private _forDisplayOnly = param[2, false, [true]];
+
+// Vehicle is missing required variable
+if (_target getVariable[QGVAR(lockpickAction), false] isEqualTo false) exitWith { false };
+
+// Generic interaction checks
+if !([_unit, _target] call A3U_fnc_canInteract) exitWith { false };
+
+// Vehicle is unlocked
+if !([_target] call A3U_fnc_isLocked) exitWith { false };
+
+// Display-only checks (whether hold-action is to be shown)
+if (_forDisplayOnly) exitWith { true };
+
+// Allow engineers
+if ([_unit] call A3A_fnc_isEngineer) exitWith { true };
+
+GVAR(allowLockpickKits) && {
+    magazines _unit findIf {
+        _x isKindOf[QGVAR(LockpickKitBase), configFile >> "CfgMagazines"]
+    } != -1
+};

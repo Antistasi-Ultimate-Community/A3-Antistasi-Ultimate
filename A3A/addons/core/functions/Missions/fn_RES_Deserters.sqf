@@ -45,7 +45,6 @@ if (count _potentials > 0) then {
 		_posHouse pushBack _postmp;
 	};
 };
-diag_log _countX;
 private _taskId = "RES" + str A3A_taskCount;
 if (count _potentials > 0) then {
 	[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],localize "STR_A3A_Missions_RES_Deserters_task_header",_markerX],_spawnPos,false,0,true,"run",true] call BIS_fnc_taskCreate;///add stringtables
@@ -181,8 +180,12 @@ if ({alive _x} count _Deserters == 0) then {
 } else {
 	sleep 5;
 	[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
+
+	private _hrMultiplier = overallHRGain / 100;
+	private _invertedMultiplier = 2 - _hrMultiplier; 
+
 	_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _Deserters;
-	_hr = 2 * (_countX);
+	_hr = ceil((2 * _countX) * _invertedMultiplier);
 	_resourcesFIA = 100 * _countX*_bonus;
 	[_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[0,10*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];

@@ -19,8 +19,8 @@ class malden {
 	climate = "arid";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_SAND,
-		BUILDABLES_ARID,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_ARID
 	};
 };
