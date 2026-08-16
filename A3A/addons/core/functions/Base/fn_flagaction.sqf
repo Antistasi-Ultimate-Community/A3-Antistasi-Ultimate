@@ -309,7 +309,7 @@ switch _typeX do
         _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(false), 4];
         _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "", QUOTE(
             (isPlayer _this) && {isNull objectParent _this} && {_this call A3A_fnc_isMember} &&
-            {_target getVariable ['ownerSide', teamPlayer] == teamPlayer} && {locked _target < 2} && {isNull attachedTo _target} &&
+            {_target getVariable[ARR_2(QQUOTE(ownerSide),teamPlayer)] == teamPlayer} && {locked _target < 2} && {isNull attachedTo _target} &&
             {crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}
         ), 4];
     };
