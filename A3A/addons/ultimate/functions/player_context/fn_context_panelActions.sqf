@@ -41,7 +41,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             localize "STR_A3AU_player_context_transfer_funds", 
-            [0.18, 0.50, 0.20, 1], // Green
+            [0.18, 0.50, 0.20, 1],
             [
                 ["EDIT", "Amount:", "0", "A3U_InputAmt"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_button", [0, 0, 0, 0.4], {
@@ -69,7 +69,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             localize "STR_A3AU_player_context_amount_transfer", 
-            [0.18, 0.50, 0.20, 1], // Green
+            [0.18, 0.50, 0.20, 1],
             [
                 ["EDIT", "Amount:", "0", "A3U_InputAmt"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_button", [0, 0, 0, 0.4], {
@@ -105,7 +105,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             format [localize "STR_A3AU_player_context_message_title", name _target], 
-            [0.1, 0.4, 0.6, 1], // Blue
+            [0.1, 0.4, 0.6, 1],
             [
                 ["EDIT", localize "STR_A3AU_player_context_message_label", "", "A3U_InputMsg"],
                 ["COMBO", localize "STR_A3AU_player_context_theme_label", [
@@ -150,7 +150,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             format [localize "STR_A3AU_player_context_dispatch_qrf", name _target], 
-            [0.6, 0.1, 0.1, 1], // Red
+            [0.6, 0.1, 0.1, 1],
             [
                 ["COMBO", localize "STR_A3AU_player_context_faction_label", [
                     [localize "STR_A3AU_player_context_occupants", "Occupants"],
@@ -207,7 +207,6 @@ switch (toUpper _actionType) do {
                 params ["_t", "_newState", "_ctrl", "_key"];
                 
                 if (_key == "engineer" && {missionNamespace getVariable ["ace_repair_enabled", false]}) then {
-                    // ACE expects a number (1 = engineer, 0 = not engineer)
                     private _aceVal = if (_newState) then { 1 } else { 0 };
                     _t setVariable ["ace_isEngineer", _aceVal, true];
                 } else {
@@ -229,7 +228,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             localize "STR_A3AU_player_context_punish_player", 
-            [0.6, 0.1, 0.1, 1], // Red
+            [0.6, 0.1, 0.1, 1],
             [
                 ["EDIT", localize "STR_A3AU_player_context_time_sec", "120", "A3U_InputTime"],
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", localize "STR_A3AU_player_context_admin_action", "A3U_InputRsn"],
@@ -260,7 +259,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             localize "STR_A3AU_player_context_warn_title", 
-            [0.8, 0.5, 0.1, 1], // Orange
+            [0.8, 0.5, 0.1, 1],
             [
                 ["COMBO", localize "STR_A3AU_player_context_severity_label", [
                     [localize "STR_A3AU_player_context_sev_light", "10"],
@@ -299,7 +298,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             format [localize "STR_A3AU_player_context_reason_for", _actionType], 
-            [0.6, 0.1, 0.1, 1], // Red
+            [0.6, 0.1, 0.1, 1],
             [
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", "", "A3U_InputRsn"],
                 ["BUTTON", format [localize "STR_A3AU_player_context_confirm_action", _actionType], [0, 0, 0, 0.4], {
@@ -331,7 +330,7 @@ switch (toUpper _actionType) do {
         [
             _display, _target, 
             localize "STR_A3AU_player_context_reason_lobby", 
-            [0.6, 0.4, 0.1, 1], // Orange/Brown
+            [0.6, 0.4, 0.1, 1],
             [
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", localize "STR_A3AU_player_context_forced_lobby", "A3U_InputRsn"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_return", [0, 0, 0, 0.4], {

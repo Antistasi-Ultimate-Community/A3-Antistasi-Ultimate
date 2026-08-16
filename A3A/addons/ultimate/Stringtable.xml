@@ -922,323 +922,1381 @@
         </Key>
     </Package>
     <Package name="Player-Context-Menu">
-        <!-- ============================================== -->
-        <!-- SHARED POPUP UI (Kick, Ban, Force Lobby)       -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_reason_for">
-            <Original>Reason for %1</Original>
+        <Key ID="STR_A3AU_player_context_player_info">
+            <Original>Player Info</Original>
+            <Russian>Информация об игроке</Russian>
+            <German>Spielerinfo</German>
+            <Italian>Info giocatore</Italian>
+            <Spanish>Información del jugador</Spanish>
+            <French>Infos du joueur</French>
+            <Korean>플레이어 정보</Korean>
+            <Japanese>プレイヤー情報</Japanese>
+            <ChineseSimplified>玩家信息</ChineseSimplified>
+            <Chinese>玩家資訊</Chinese>
+            <Polish>Informacje o graczu</Polish>
+            <Czech>Informace o hráči</Czech>
+            <Portuguese>Informações do Jogador</Portuguese>
+            <Turkish>Oyuncu Bilgisi</Turkish>
         </Key>
-        <Key ID="STR_A3AU_player_context_confirm_action">
-            <Original>CONFIRM %1</Original>
+        <Key ID="STR_A3AU_player_context_player_options">
+            <Original>Player Options</Original>
+            <Russian>Настройки игрока</Russian>
+            <German>Spieleroptionen</German>
+            <Italian>Opzioni giocatore</Italian>
+            <Spanish>Opciones del jugador</Spanish>
+            <French>Options du joueur</French>
+            <Korean>플레이어 옵션</Korean>
+            <Japanese>プレイヤーオプション</Japanese>
+            <ChineseSimplified>玩家选项</ChineseSimplified>
+            <Chinese>玩家選項</Chinese>
+            <Polish>Opcje gracza</Polish>
+            <Czech>Možnosti hráče</Czech>
+            <Portuguese>Opções do Jogador</Portuguese>
+            <Turkish>Oyuncu Seçenekleri</Turkish>
         </Key>
-        <Key ID="STR_A3AU_player_context_no_reason">
-            <Original>No reason specified.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_banning_log">
-            <Original>Banning %1: %2</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_kicking_log">
-            <Original>Kicking %1: %2</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_reason_lobby">
-            <Original>Reason for Lobby Drop</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_confirm_return">
-            <Original>CONFIRM RETURN</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_forced_lobby">
-            <Original>Forced back to lobby by Admin.</Original>
-        </Key>
-
-        <!-- ============================================== -->
-        <!-- WARN / PUNISH PLAYER                           -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_warn_btn">
-            <English>Warn player</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_warn_title">
-            <English>Warn Player</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_severity_label">
-            <English>Severity:</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_sev_light">
-            <English>Light (10%)</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_sev_medium">
-            <English>Medium (25%)</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_sev_severe">
-            <English>Severe (50%)</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_sev_extreme">
-            <English>Extreme (75%)</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_confirm_warning">
-            <English>CONFIRM WARNING</English>
-        </Key>
-        <Key ID="STR_A3AU_player_context_warned_log">
-            <English>Warned %1 (%2%% offence). Reason: %3</English>
-        </Key>
-
-        <!-- ============================================== -->
-        <!-- TRANSFER FUNDS PANEL                           -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_amount_transfer">
-            <Original>Amount to Transfer</Original>
+        <Key ID="STR_A3AU_player_context_admin_settings">
+            <Original>Admin Settings</Original>
+            <Russian>Настройки администратора</Russian>
+            <German>Admin-Einstellungen</German>
+            <Italian>Impostazioni amministratore</Italian>
+            <Spanish>Ajustes de administrador</Spanish>
+            <French>Paramètres d'administration</French>
+            <Korean>관리자 설정</Korean>
+            <Japanese>管理者設定</Japanese>
+            <ChineseSimplified>管理员设置</ChineseSimplified>
+            <Chinese>管理員設定</Chinese>
+            <Polish>Ustawienia administratora</Polish>
+            <Czech>Nastavení administrátora</Czech>
+            <Portuguese>Configurações de Administrador</Portuguese>
+            <Turkish>Yönetici Ayarları</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_confirm_button">
             <Original>Confirm</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_transferred_funds">
-            <Original>Transferred $%1 to %2.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_error_funds">
-            <Original>Error: Faction does not have enough funds.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_error_positive">
-            <Original>Error: Amount must be a positive number.</Original>
-        </Key>
-
-        <!-- ============================================== -->
-        <!-- PUNISHMENT PANEL                               -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_punish_player">
-            <Original>Punish Player</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_time_sec">
-            <Original>Time (s):</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_offence_pct">
-            <Original>Offence %:</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_reason_label">
-            <Original>Reason:</Original>
+            <Russian>Подтвердить</Russian>
+            <German>Bestätigen</German>
+            <Italian>Conferma</Italian>
+            <Spanish>Confirmar</Spanish>
+            <French>Confirmer</French>
+            <Korean>확인</Korean>
+            <Japanese>確認</Japanese>
+            <ChineseSimplified>确认</ChineseSimplified>
+            <Chinese>確認</Chinese>
+            <Polish>Potwierdź</Polish>
+            <Czech>Potvrdit</Czech>
+            <Portuguese>Confirmar</Portuguese>
+            <Turkish>Onayla</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_admin_action">
             <Original>Admin Action</Original>
+            <Russian>Действие администратора</Russian>
+            <German>Admin-Aktion</German>
+            <Italian>Azione amministratore</Italian>
+            <Spanish>Acción de administrador</Spanish>
+            <French>Action d'administration</French>
+            <Korean>관리자 작업</Korean>
+            <Japanese>管理者アクション</Japanese>
+            <ChineseSimplified>管理员操作</ChineseSimplified>
+            <Chinese>管理員操作</Chinese>
+            <Polish>Akcja administratora</Polish>
+            <Czech>Akce administrátora</Czech>
+            <Portuguese>Ação do Administrador</Portuguese>
+            <Turkish>Yönetici Eylemi</Turkish>
         </Key>
-        <Key ID="STR_A3AU_player_context_confirm_punishment">
-            <Original>CONFIRM PUNISHMENT</Original>
+        <Key ID="STR_A3AU_player_context_confirm_action">
+            <Original>Confirm %1</Original>
+            <Russian>Подтвердить: %1</Russian>
+            <German>%1 bestätigen</German>
+            <Italian>Conferma %1</Italian>
+            <Spanish>Confirmar %1</Spanish>
+            <French>Confirmer %1</French>
+            <Korean>%1 확인</Korean>
+            <Japanese>%1 を確認</Japanese>
+            <ChineseSimplified>确认 %1</ChineseSimplified>
+            <Chinese>確認 %1</Chinese>
+            <Polish>Potwierdź: %1</Polish>
+            <Czech>Potvrdit: %1</Czech>
+            <Portuguese>Confirmar %1</Portuguese>
+            <Turkish>Onayla: %1</Turkish>
         </Key>
-        <Key ID="STR_A3AU_player_context_punished_log">
-            <Original>Punished %1 for %2s (%3%% offence). Reason: %4</Original>
+        <Key ID="STR_A3AU_player_context_reason_label">
+            <Original>Reason:</Original>
+            <Russian>Причина:</Russian>
+            <German>Grund:</German>
+            <Italian>Motivo:</Italian>
+            <Spanish>Motivo:</Spanish>
+            <French>Motif :</French>
+            <Korean>사유:</Korean>
+            <Japanese>理由:</Japanese>
+            <ChineseSimplified>原因：</ChineseSimplified>
+            <Chinese>原因：</Chinese>
+            <Polish>Powód:</Polish>
+            <Czech>Důvod:</Czech>
+            <Portuguese>Motivo:</Portuguese>
+            <Turkish>Neden:</Turkish>
         </Key>
-
-        <!-- ============================================== -->
-        <!-- QRF DISPATCH PANEL                             -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_dispatch_qrf">
-            <Original>Dispatch QRF on %1</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_faction_label">
-            <Original>Faction:</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_occupants">
-            <Original>Occupants</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_invaders">
-            <Original>Invaders</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_type_label">
-            <Original>Type:</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_ground_transport">
-            <Original>Ground Transport</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_air_transport">
-            <Original>Air Transport</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_attack_cas">
-            <Original>Attack CAS</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_launch_qrf">
-            <Original>LAUNCH QRF</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_dispatched_qrf">
-            <Original>Dispatched %1 %2 QRF to hunt %3.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_qrf_no_bases">
-            <Original>QRF Cancelled: No available bases found for this faction/type.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_qrf_no_assets">
-            <Original>QRF Cancelled: Faction failed to generate assets. They might lack the required vehicles.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_qrf_no_vehicles">
-            <Original>QRF Cancelled: 0 vehicles spawned.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_qrf_success">
-            <Original>QRF Successfully Dispatched &amp; En Route!</Original>
-        </Key>
-
-        <!-- ============================================== -->
-        <!-- MANAGE TRAITS PANEL                            -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_manage_traits">
-            <Original>Manage Traits</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_trait_medic">
-            <Original>Medic</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_trait_explosives">
-            <Original>Explosives Spec.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_trait_uav">
-            <Original>UAV Hacker</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_trait_engineer">
-            <Original>Engineer</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_trait_set_log">
-            <Original>%1 trait '%2' set to %3</Original>
-        </Key>
-
-        <!-- ============================================== -->
-        <!-- MAIN CONTEXT MENU: PLAYER INFO                 -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_player_info">
-            <Original>Player Info</Original>
+        <Key ID="STR_A3AU_player_context_no_reason">
+            <Original>No reason provided</Original>
+            <Russian>Причина не указана</Russian>
+            <German>Kein Grund angegeben</German>
+            <Italian>Nessun motivo fornito</Italian>
+            <Spanish>Ningún motivo proporcionado</Spanish>
+            <French>Aucun motif fourni</French>
+            <Korean>제공된 사유 없음</Korean>
+            <Japanese>理由の提示なし</Japanese>
+            <ChineseSimplified>未提供原因</ChineseSimplified>
+            <Chinese>未提供原因</Chinese>
+            <Polish>Nie podano powodu</Polish>
+            <Czech>Nebyl uveden žádný důvod</Czech>
+            <Portuguese>Nenhum motivo fornecido</Portuguese>
+            <Turkish>Neden belirtilmedi</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_name">
             <Original>Name: %1</Original>
+            <Russian>Имя: %1</Russian>
+            <German>Name: %1</German>
+            <Italian>Nome: %1</Italian>
+            <Spanish>Nombre: %1</Spanish>
+            <French>Nom : %1</French>
+            <Korean>이름: %1</Korean>
+            <Japanese>名前: %1</Japanese>
+            <ChineseSimplified>姓名：%1</ChineseSimplified>
+            <Chinese>姓名：%1</Chinese>
+            <Polish>Nazwa: %1</Polish>
+            <Czech>Jméno: %1</Czech>
+            <Portuguese>Nome: %1</Portuguese>
+            <Turkish>İsim: %1</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_uid">
             <Original>UID: %1</Original>
+            <Russian>UID: %1</Russian>
+            <German>UID: %1</German>
+            <Italian>UID: %1</Italian>
+            <Spanish>UID: %1</Spanish>
+            <French>UID : %1</French>
+            <Korean>UID: %1</Korean>
+            <Japanese>UID: %1</Japanese>
+            <ChineseSimplified>UID：%1</ChineseSimplified>
+            <Chinese>UID：%1</Chinese>
+            <Polish>UID: %1</Polish>
+            <Czech>UID: %1</Czech>
+            <Portuguese>UID: %1</Portuguese>
+            <Turkish>UID: %1</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_funds">
             <Original>Funds: %1%2</Original>
+            <Russian>Средства: %1%2</Russian>
+            <German>Gelder: %1%2</German>
+            <Italian>Fondi: %1%2</Italian>
+            <Spanish>Fondos: %1%2</Spanish>
+            <French>Fonds : %1%2</French>
+            <Korean>자금: %1%2</Korean>
+            <Japanese>資金: %1%2</Japanese>
+            <ChineseSimplified>资金：%1%2</ChineseSimplified>
+            <Chinese>資金：%1%2</Chinese>
+            <Polish>Środki: %1%2</Polish>
+            <Czech>Finance: %1%2</Czech>
+            <Portuguese>Fundos: %1%2</Portuguese>
+            <Turkish>Bakiye: %1%2</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_role">
             <Original>Role: %1</Original>
+            <Russian>Роль: %1</Russian>
+            <German>Rolle: %1</German>
+            <Italian>Ruolo: %1</Italian>
+            <Spanish>Rol: %1</Spanish>
+            <French>Rôle : %1</French>
+            <Korean>역할: %1</Korean>
+            <Japanese>役割: %1</Japanese>
+            <ChineseSimplified>角色：%1</ChineseSimplified>
+            <Chinese>角色：%1</Chinese>
+            <Polish>Rola: %1</Polish>
+            <Czech>Role: %1</Czech>
+            <Portuguese>Função: %1</Portuguese>
+            <Turkish>Rol: %1</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_rank">
             <Original>Rank: %1</Original>
+            <Russian>Звание: %1</Russian>
+            <German>Rang: %1</German>
+            <Italian>Grado: %1</Italian>
+            <Spanish>Rango: %1</Spanish>
+            <French>Grade : %1</French>
+            <Korean>계급: %1</Korean>
+            <Japanese>階級: %1</Japanese>
+            <ChineseSimplified>军衔：%1</ChineseSimplified>
+            <Chinese>軍階：%1</Chinese>
+            <Polish>Stopień: %1</Polish>
+            <Czech>Hodnost: %1</Czech>
+            <Portuguese>Patente: %1</Portuguese>
+            <Turkish>Rütbe: %1</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_copy_clipboard">
             <Original>Copy to clipboard</Original>
+            <Russian>Скопировать в буфер обмена</Russian>
+            <German>In die Zwischenablage kopieren</German>
+            <Italian>Copia negli appunti</Italian>
+            <Spanish>Copiar al portapapeles</Spanish>
+            <French>Copier dans le presse-papiers</French>
+            <Korean>클립보드에 복사</Korean>
+            <Japanese>クリップボードにコピー</Japanese>
+            <ChineseSimplified>复制到剪贴板</ChineseSimplified>
+            <Chinese>複製到剪貼簿</Chinese>
+            <Polish>Skopiuj do schowka</Polish>
+            <Czech>Kopírovat do schránky</Czech>
+            <Portuguese>Copiar para a área de transferência</Portuguese>
+            <Turkish>Pano'ya kopyala</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_copied_clipboard">
-            <Original>Copied to clipboard</Original>
-        </Key>
-
-        <!-- ============================================== -->
-        <!-- MAIN CONTEXT MENU: PLAYER OPTIONS              -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_player_options">
-            <Original>Player Options</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_transfer_funds">
-            <Original>Transfer Funds</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_transfer_commander">
-            <Original>Transfer Commander</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_commander_transferred">
-            <Original>Commander transferred to %1.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_transfer_faction_funds">
-            <Original>Transfer faction funds to player</Original>
+            <Original>Copied to clipboard!</Original>
+            <Russian>Скопировано в буфер обмена!</Russian>
+            <German>In die Zwischenablage kopiert!</German>
+            <Italian>Copiato negli appunti!</Italian>
+            <Spanish>¡Copiado al portapapeles!</Spanish>
+            <French>Copié dans le presse-papiers !</French>
+            <Korean>클립보드에 복사되었습니다!</Korean>
+            <Japanese>クリップボードにコピーしました！</Japanese>
+            <ChineseSimplified>已复制到剪贴板！</ChineseSimplified>
+            <Chinese>已複製到剪貼簿！</Chinese>
+            <Polish>Skopiowano do schowka!</Polish>
+            <Czech>Zkopírováno do schránky!</Czech>
+            <Portuguese>Copiado para a área de transferência!</Portuguese>
+            <Turkish>Pano'ya kopyalandı!</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_demote_tooltip">
             <Original>Demote Player</Original>
+            <Russian>Понизить игрока</Russian>
+            <German>Spieler degradieren</German>
+            <Italian>Degrada giocatore</Italian>
+            <Spanish>Degradar jugador</Spanish>
+            <French>Rétrograder le joueur</French>
+            <Korean>플레이어 강등</Korean>
+            <Japanese>プレイヤーを降格</Japanese>
+            <ChineseSimplified>降级玩家</ChineseSimplified>
+            <Chinese>降級玩家</Chinese>
+            <Polish>Zdegraduj gracza</Polish>
+            <Czech>Degradovat hráče</Czech>
+            <Portuguese>Rebaixar Jogador</Portuguese>
+            <Turkish>Oyuncunun Rütbesini Düşür</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_promote_tooltip">
             <Original>Promote Player</Original>
+            <Russian>Повысить игрока</Russian>
+            <German>Spieler befördern</German>
+            <Italian>Promuovi giocatore</Italian>
+            <Spanish>Ascender jugador</Spanish>
+            <French>Promouvoir le joueur</French>
+            <Korean>플레이어 진급</Korean>
+            <Japanese>プレイヤーを昇進</Japanese>
+            <ChineseSimplified>晋升玩家</ChineseSimplified>
+            <Chinese>晉升玩家</Chinese>
+            <Polish>Awansuj gracza</Polish>
+            <Czech>Povýšit hráče</Czech>
+            <Portuguese>Promover Jogador</Portuguese>
+            <Turkish>Oyuncuyu Terfi Ettir</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_promoted_log">
-            <Original>%1 promoted to %2.</Original>
+            <Original>%1 was promoted to %2</Original>
+            <Russian>%1 повышен до %2</Russian>
+            <German>%1 wurde zu %2 befördert</German>
+            <Italian>%1 è stato promosso a %2</Italian>
+            <Spanish>%1 fue ascendido a %2</Spanish>
+            <French>%1 a été promu %2</French>
+            <Korean>%1이(가) %2(으)로 진급했습니다</Korean>
+            <Japanese>%1は%2に昇進しました</Japanese>
+            <ChineseSimplified>%1 已被晋升为 %2</ChineseSimplified>
+            <Chinese>%1 已被晉升為 %2</Chinese>
+            <Polish>%1 awansował na %2</Polish>
+            <Czech>%1 byl povýšen na %2</Czech>
+            <Portuguese>%1 foi promovido a %2</Portuguese>
+            <Turkish>%1, %2 rütbesine terfi etti</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_demoted_log">
-            <Original>%1 demoted to %2.</Original>
+            <Original>%1 was demoted to %2</Original>
+            <Russian>%1 понижен до %2</Russian>
+            <German>%1 wurde zu %2 degradiert</German>
+            <Italian>%1 è stato degradato a %2</Italian>
+            <Spanish>%1 fue degradado a %2</Spanish>
+            <French>%1 a été rétrogradé %2</French>
+            <Korean>%1이(가) %2(으)로 강등되었습니다</Korean>
+            <Japanese>%1は%2に降格しました</Japanese>
+            <ChineseSimplified>%1 已被降级为 %2</ChineseSimplified>
+            <Chinese>%1 已被降級為 %2</Chinese>
+            <Polish>%1 został zdegradowany na %2</Polish>
+            <Czech>%1 byl degradován na %2</Czech>
+            <Portuguese>%1 foi rebaixado a %2</Portuguese>
+            <Turkish>%1, %2 rütbesine düşürüldü</Turkish>
         </Key>
-
-        <!-- ============================================== -->
-        <!-- MAIN CONTEXT MENU: ADMIN SETTINGS              -->
-        <!-- ============================================== -->
-        <Key ID="STR_A3AU_player_context_admin_settings">
-            <Original>Admin Settings</Original>
+        <Key ID="STR_A3AU_player_context_transfer_funds">
+            <Original>Transfer Personal Funds</Original>
+            <Russian>Перевести личные средства</Russian>
+            <German>Persönliche Gelder überweisen</German>
+            <Italian>Trasferisci fondi personali</Italian>
+            <Spanish>Transferir fondos personales</Spanish>
+            <French>Transférer des fonds personnels</French>
+            <Korean>개인 자금 이체</Korean>
+            <Japanese>個人資金を送金</Japanese>
+            <ChineseSimplified>转移个人资金</ChineseSimplified>
+            <Chinese>轉移個人資金</Chinese>
+            <Polish>Przekaż środki osobiste</Polish>
+            <Czech>Převést osobní finance</Czech>
+            <Portuguese>Transferir Fundos Pessoais</Portuguese>
+            <Turkish>Kişisel Bakiyeyi Aktar</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_amount_transfer">
+            <Original>Transfer Faction Funds</Original>
+            <Russian>Перевести средства фракции</Russian>
+            <German>Fraktionsgelder überweisen</German>
+            <Italian>Trasferisci fondi fazione</Italian>
+            <Spanish>Transferir fondos de facción</Spanish>
+            <French>Transférer des fonds de faction</French>
+            <Korean>파벌 자금 이체</Korean>
+            <Japanese>派閥資金を送金</Japanese>
+            <ChineseSimplified>转移派系资金</ChineseSimplified>
+            <Chinese>轉移派系資金</Chinese>
+            <Polish>Przekaż środki frakcji</Polish>
+            <Czech>Převést finance frakce</Czech>
+            <Portuguese>Transferir Fundos da Facção</Portuguese>
+            <Turkish>Grup Bakiyesini Aktar</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transfer_faction_funds">
+            <Original>Transfer Faction Funds</Original>
+            <Russian>Перевести средства фракции</Russian>
+            <German>Fraktionsgelder überweisen</German>
+            <Italian>Trasferisci fondi fazione</Italian>
+            <Spanish>Transferir fondos de facción</Spanish>
+            <French>Transférer des fonds de faction</French>
+            <Korean>파벌 자금 이체</Korean>
+            <Japanese>派閥資金を送金</Japanese>
+            <ChineseSimplified>转移派系资金</ChineseSimplified>
+            <Chinese>轉移派系資金</Chinese>
+            <Polish>Przekaż środki frakcji</Polish>
+            <Czech>Převést finance frakce</Czech>
+            <Portuguese>Transferir Fundos da Facção</Portuguese>
+            <Turkish>Grup Bakiyesini Aktar</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transferred_funds">
+            <Original>Transferred %1 to %2</Original>
+            <Russian>Переведено %1 для %2</Russian>
+            <German>%1 an %2 überwiesen</German>
+            <Italian>Trasferito %1 a %2</Italian>
+            <Spanish>Transferido %1 a %2</Spanish>
+            <French>%1 transféré à %2</French>
+            <Korean>%1을(를) %2(으)로 이체함</Korean>
+            <Japanese>%1を%2に送金しました</Japanese>
+            <ChineseSimplified>已将 %1 转移给 %2</ChineseSimplified>
+            <Chinese>已將 %1 轉移給 %2</Chinese>
+            <Polish>Przekazano %1 dla %2</Polish>
+            <Czech>Převedeno %1 na %2</Czech>
+            <Portuguese>Transferido %1 para %2</Portuguese>
+            <Turkish>%1, %2'e aktarıldı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_error_funds">
+            <Original>Insufficient faction funds!</Original>
+            <Russian>Недостаточно средств фракции!</Russian>
+            <German>Unzureichende Fraktionsgelder!</German>
+            <Italian>Fondi fazione insufficienti!</Italian>
+            <Spanish>¡Fondos de facción insuficientes!</Spanish>
+            <French>Fonds de faction insuffisants !</French>
+            <Korean>파벌 자금이 부족합니다!</Korean>
+            <Japanese>派閥資金が不足しています！</Japanese>
+            <ChineseSimplified>派系资金不足！</ChineseSimplified>
+            <Chinese>派系資金不足！</Chinese>
+            <Polish>Niewystarczające środki frakcji!</Polish>
+            <Czech>Nedostatek financí frakce!</Czech>
+            <Portuguese>Fundos da facção insuficientes!</Portuguese>
+            <Turkish>Grup bakiyesi yetersiz!</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_error_positive">
+            <Original>Amount must be greater than zero!</Original>
+            <Russian>Сумма должна быть больше нуля!</Russian>
+            <German>Der Betrag muss größer als null sein!</German>
+            <Italian>L'importo deve essere maggiore di zero!</Italian>
+            <Spanish>¡La cantidad debe ser mayor que cero!</Spanish>
+            <French>Le montant doit être supérieur à zéro !</French>
+            <Korean>금액은 0보다 커야 합니다!</Korean>
+            <Japanese>金額は0より大きくなければなりません！</Japanese>
+            <ChineseSimplified>金额必须大于零！</ChineseSimplified>
+            <Chinese>金額必須大於零！</Chinese>
+            <Polish>Kwota musi być większa niż zero!</Polish>
+            <Czech>Částka musí být větší než nula!</Czech>
+            <Portuguese>A quantia deve ser maior que zero!</Portuguese>
+            <Turkish>Miktar sıfırdan büyük olmalıdır!</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_transfer_commander">
+            <Original>Transfer Commander</Original>
+            <Russian>Передать пост командира</Russian>
+            <German>Kommandant übertragen</German>
+            <Italian>Trasferisci comandante</Italian>
+            <Spanish>Transferir comandante</Spanish>
+            <French>Transférer le commandant</French>
+            <Korean>지휘관 위임</Korean>
+            <Japanese>指揮官を移譲</Japanese>
+            <ChineseSimplified>移交指挥官</ChineseSimplified>
+            <Chinese>移交指揮官</Chinese>
+            <Polish>Przekaż dowództwo</Polish>
+            <Czech>Předat velení</Czech>
+            <Portuguese>Transferir Comandante</Portuguese>
+            <Turkish>Komutanlığı Devret</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_commander_transferred">
+            <Original>Commander transferred to %1</Original>
+            <Russian>Пост командира передан %1</Russian>
+            <German>Kommandant an %1 übertragen</German>
+            <Italian>Comandante trasferito a %1</Italian>
+            <Spanish>Comandante transferido a %1</Spanish>
+            <French>Commandant transféré à %1</French>
+            <Korean>지휘관이 %1(으)로 위임되었습니다</Korean>
+            <Japanese>指揮官が%1に移譲されました</Japanese>
+            <ChineseSimplified>指挥官已移交给 %1</ChineseSimplified>
+            <Chinese>指揮官已移交給 %1</Chinese>
+            <Polish>Dowództwo przekazane: %1</Polish>
+            <Czech>Velení předáno: %1</Czech>
+            <Portuguese>Comandante transferido para %1</Portuguese>
+            <Turkish>Komutanlık %1'e devredildi</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_toggle_membership">
-            <Original>Toggle server membership</Original>
+            <Original>Toggle Server Membership</Original>
+            <Russian>Переключить членство на сервере</Russian>
+            <German>Server-Mitgliedschaft umschalten</German>
+            <Italian>Attiva/Disattiva appartenenza al server</Italian>
+            <Spanish>Alternar membresía del servidor</Spanish>
+            <French>Basculer l'adhésion au serveur</French>
+            <Korean>서버 멤버십 전환</Korean>
+            <Japanese>サーバーメンバーシップの切り替え</Japanese>
+            <ChineseSimplified>切换服务器会员资格</ChineseSimplified>
+            <Chinese>切換伺服器會員資格</Chinese>
+            <Polish>Przełącz członkostwo na serwerze</Polish>
+            <Czech>Přepnout členství na serveru</Czech>
+            <Portuguese>Alternar Associação ao Servidor</Portuguese>
+            <Turkish>Sunucu Üyeliğini Değiştir</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_force_undercover">
-            <Original>Force Toggle Undercover</Original>
+            <Original>Force Undercover</Original>
+            <Russian>Принудительная маскировка</Russian>
+            <German>Inkognito erzwingen</German>
+            <Italian>Forza copertura</Italian>
+            <Spanish>Forzar infiltración</Spanish>
+            <French>Forcer l'infiltration</French>
+            <Korean>강제 잠입</Korean>
+            <Japanese>強制アンダーカバー</Japanese>
+            <ChineseSimplified>强制卧底</ChineseSimplified>
+            <Chinese>強制臥底</Chinese>
+            <Polish>Wymuś tajniak</Polish>
+            <Czech>Vynutit utajení</Czech>
+            <Portuguese>Forçar Disfarce</Portuguese>
+            <Turkish>Zorla Gizlilik</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_undercover_on_log">
-            <Original>Forced Undercover ON for %1.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_undercover_on_player">
-            <Original>An Admin has forced your Undercover status ON.</Original>
+            <Original>Forced Undercover ON for %1</Original>
+            <Russian>Принудительная маскировка ВКЛ для %1</Russian>
+            <German>Inkognito erzwingen EIN für %1</German>
+            <Italian>Copertura forzata ON per %1</Italian>
+            <Spanish>Infiltración forzada ACT para %1</Spanish>
+            <French>Infiltration forcée ACTIVÉE pour %1</French>
+            <Korean>%1에 대해 강제 잠입 켜짐</Korean>
+            <Japanese>%1の強制アンダーカバーをオン</Japanese>
+            <ChineseSimplified>为 %1 开启强制卧底</ChineseSimplified>
+            <Chinese>為 %1 開啟強制臥底</Chinese>
+            <Polish>Wymuszono tajniaka WŁ dla %1</Polish>
+            <Czech>Vynucené utajení ZAP pro %1</Czech>
+            <Portuguese>Disfarce Forçado LIGADO para %1</Portuguese>
+            <Turkish>%1 için Zorla Gizlilik AÇIK</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_undercover_off_log">
-            <Original>Forced Undercover OFF for %1.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_undercover_off_player">
-            <Original>An Admin has forced your Undercover status OFF.</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_request_qrf">
-            <Original>Request QRF to chase player</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_give_traits">
-            <Original>Give or remove traits</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_punish_btn">
-            <Original>Punish player</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_kick">
-            <Original>Kick</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_ban">
-            <Original>Ban</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_force_lobby">
-            <Original>Force player to lobby</Original>
+            <Original>Forced Undercover OFF for %1</Original>
+            <Russian>Принудительная маскировка ВЫКЛ для %1</Russian>
+            <German>Inkognito erzwingen AUS für %1</German>
+            <Italian>Copertura forzata OFF per %1</Italian>
+            <Spanish>Infiltración forzada DES para %1</Spanish>
+            <French>Infiltration forcée DÉSACTIVÉE pour %1</French>
+            <Korean>%1에 대해 강제 잠입 꺼짐</Korean>
+            <Japanese>%1の強制アンダーカバーをオフ</Japanese>
+            <ChineseSimplified>为 %1 关闭强制卧底</ChineseSimplified>
+            <Chinese>為 %1 關閉強制臥底</Chinese>
+            <Polish>Wymuszono tajniaka WYŁ dla %1</Polish>
+            <Czech>Vynucené utajení VYP pro %1</Czech>
+            <Portuguese>Disfarce Forçado DESLIGADO para %1</Portuguese>
+            <Turkish>%1 için Zorla Gizlilik KAPALI</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_promote_zeus">
-            <Original>Promote to zeus</Original>
+            <Original>Grant Zeus</Original>
+            <Russian>Дать права Зевса</Russian>
+            <German>Zeus gewähren</German>
+            <Italian>Concedi Zeus</Italian>
+            <Spanish>Otorgar Zeus</Spanish>
+            <French>Accorder Zeus</French>
+            <Korean>제우스 권한 부여</Korean>
+            <Japanese>Zeus権限を付与</Japanese>
+            <ChineseSimplified>授予 Zeus</ChineseSimplified>
+            <Chinese>授予 Zeus</Chinese>
+            <Polish>Przyznaj Zeusa</Polish>
+            <Czech>Udělit Zeuse</Czech>
+            <Portuguese>Conceder Zeus</Portuguese>
+            <Turkish>Zeus Ver</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_zeus_granted">
-            <Original>You have been granted Zeus powers. Press 'Y'.</Original>
+            <Original>Zeus permissions granted!</Original>
+            <Russian>Права Зевса предоставлены!</Russian>
+            <German>Zeus-Berechtigungen gewährt!</German>
+            <Italian>Permessi Zeus concessi!</Italian>
+            <Spanish>¡Permisos de Zeus otorgados!</Spanish>
+            <French>Autorisations Zeus accordées !</French>
+            <Korean>제우스 권한이 부여되었습니다!</Korean>
+            <Japanese>Zeus権限が付与されました！</Japanese>
+            <ChineseSimplified>已授予 Zeus 权限！</ChineseSimplified>
+            <Chinese>已授予 Zeus 權限！</Chinese>
+            <Polish>Uprawnienia Zeusa przyznane!</Polish>
+            <Czech>Oprávnění Zeus udělena!</Czech>
+            <Portuguese>Permissões de Zeus concedidas!</Portuguese>
+            <Turkish>Zeus izinleri verildi!</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_zeus_log">
-            <Original>Promoted %1 to Zeus.</Original>
+            <Original>Granted Zeus to %1</Original>
+            <Russian>Зевс выдан %1</Russian>
+            <German>Zeus an %1 gewährt</German>
+            <Italian>Zeus concesso a %1</Italian>
+            <Spanish>Zeus otorgado a %1</Spanish>
+            <French>Zeus accordé à %1</French>
+            <Korean>%1에게 제우스 권한 부여됨</Korean>
+            <Japanese>%1にZeusを付与しました</Japanese>
+            <ChineseSimplified>已将 Zeus 授予 %1</ChineseSimplified>
+            <Chinese>已將 Zeus 授予 %1</Chinese>
+            <Polish>Przyznano Zeusa dla %1</Polish>
+            <Czech>Zeus udělen %1</Czech>
+            <Portuguese>Zeus concedido a %1</Portuguese>
+            <Turkish>Zeus %1'e verildi</Turkish>
         </Key>
-        
-        <!-- ============================================== -->
-        <!-- MESSAGE PLAYER PANEL                           -->
-        <!-- ============================================== -->
         <Key ID="STR_A3AU_player_context_message_player">
-            <Original>Message player</Original>
+            <Original>Message Player</Original>
+            <Russian>Написать игроку</Russian>
+            <German>Spieler benachrichtigen</German>
+            <Italian>Invia messaggio al giocatore</Italian>
+            <Spanish>Mensajear al jugador</Spanish>
+            <French>Envoyer un message au joueur</French>
+            <Korean>플레이어에게 메시지 보내기</Korean>
+            <Japanese>プレイヤーにメッセージを送信</Japanese>
+            <ChineseSimplified>给玩家发信息</ChineseSimplified>
+            <Chinese>發送訊息給玩家</Chinese>
+            <Polish>Wyślij wiadomość do gracza</Polish>
+            <Czech>Zpráva hráči</Czech>
+            <Portuguese>Mensagem ao Jogador</Portuguese>
+            <Turkish>Oyuncuya Mesaj At</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_message_title">
             <Original>Message %1</Original>
+            <Russian>Сообщение %1</Russian>
+            <German>Nachricht an %1</German>
+            <Italian>Messaggio per %1</Italian>
+            <Spanish>Mensaje a %1</Spanish>
+            <French>Message à %1</French>
+            <Korean>%1에게 보내는 메시지</Korean>
+            <Japanese>%1へのメッセージ</Japanese>
+            <ChineseSimplified>给 %1 的信息</ChineseSimplified>
+            <Chinese>給 %1 的訊息</Chinese>
+            <Polish>Wiadomość %1</Polish>
+            <Czech>Zpráva %1</Czech>
+            <Portuguese>Mensagem para %1</Portuguese>
+            <Turkish>Mesaj %1</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_message_label">
             <Original>Message:</Original>
+            <Russian>Сообщение:</Russian>
+            <German>Nachricht:</German>
+            <Italian>Messaggio:</Italian>
+            <Spanish>Mensaje:</Spanish>
+            <French>Message :</French>
+            <Korean>메시지:</Korean>
+            <Japanese>メッセージ:</Japanese>
+            <ChineseSimplified>消息：</ChineseSimplified>
+            <Chinese>訊息：</Chinese>
+            <Polish>Wiadomość:</Polish>
+            <Czech>Zpráva:</Czech>
+            <Portuguese>Mensagem:</Portuguese>
+            <Turkish>Mesaj:</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_theme_label">
             <Original>Theme:</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_theme_default">
-            <Original>Default (Yellow)</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_theme_success">
-            <Original>Success (Green)</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_theme_warning">
-            <Original>Warning (Orange)</Original>
-        </Key>
-        <Key ID="STR_A3AU_player_context_theme_error">
-            <Original>Error (Red)</Original>
+            <Russian>Тема:</Russian>
+            <German>Thema:</German>
+            <Italian>Tema:</Italian>
+            <Spanish>Tema:</Spanish>
+            <French>Thème :</French>
+            <Korean>테마:</Korean>
+            <Japanese>テーマ:</Japanese>
+            <ChineseSimplified>主题：</ChineseSimplified>
+            <Chinese>主題：</Chinese>
+            <Polish>Motyw:</Polish>
+            <Czech>Motiv:</Czech>
+            <Portuguese>Tema:</Portuguese>
+            <Turkish>Tema:</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_send_message">
-            <Original>SEND MESSAGE</Original>
+            <Original>Send Message</Original>
+            <Russian>Отправить сообщение</Russian>
+            <German>Nachricht senden</German>
+            <Italian>Invia messaggio</Italian>
+            <Spanish>Enviar mensaje</Spanish>
+            <French>Envoyer le message</French>
+            <Korean>메시지 보내기</Korean>
+            <Japanese>メッセージを送信</Japanese>
+            <ChineseSimplified>发送消息</ChineseSimplified>
+            <Chinese>發送訊息</Chinese>
+            <Polish>Wyślij wiadomość</Polish>
+            <Czech>Odeslat zprávu</Czech>
+            <Portuguese>Enviar Mensagem</Portuguese>
+            <Turkish>Mesaj Gönder</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_message_empty">
-            <Original>Cannot send an empty message.</Original>
+            <Original>Message cannot be empty!</Original>
+            <Russian>Сообщение не может быть пустым!</Russian>
+            <German>Nachricht darf nicht leer sein!</German>
+            <Italian>Il messaggio non può essere vuoto!</Italian>
+            <Spanish>¡El mensaje no puede estar vacío!</Spanish>
+            <French>Le message ne peut pas être vide !</French>
+            <Korean>메시지는 비워 둘 수 없습니다!</Korean>
+            <Japanese>メッセージは空にできません！</Japanese>
+            <ChineseSimplified>消息不能为空！</ChineseSimplified>
+            <Chinese>訊息不能為空！</Chinese>
+            <Polish>Wiadomość nie może być pusta!</Polish>
+            <Czech>Zpráva nesmí být prázdná!</Czech>
+            <Portuguese>A mensagem não pode estar vazia!</Portuguese>
+            <Turkish>Mesaj boş olamaz!</Turkish>
         </Key>
         <Key ID="STR_A3AU_player_context_message_sent">
-            <Original>Message sent to %1.</Original>
+            <Original>Message sent to %1</Original>
+            <Russian>Сообщение отправлено %1</Russian>
+            <German>Nachricht an %1 gesendet</German>
+            <Italian>Messaggio inviato a %1</Italian>
+            <Spanish>Mensaje enviado a %1</Spanish>
+            <French>Message envoyé à %1</French>
+            <Korean>%1에게 메시지가 전송되었습니다</Korean>
+            <Japanese>%1にメッセージを送信しました</Japanese>
+            <ChineseSimplified>消息已发送至 %1</ChineseSimplified>
+            <Chinese>訊息已發送至 %1</Chinese>
+            <Polish>Wiadomość wysłana do %1</Polish>
+            <Czech>Zpráva odeslána na %1</Czech>
+            <Portuguese>Mensagem enviada para %1</Portuguese>
+            <Turkish>Mesaj %1'e gönderildi</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_request_qrf">
+            <Original>Dispatch QRF</Original>
+            <Russian>Отправить СБР</Russian>
+            <German>QRF entsenden</German>
+            <Italian>Invia QRF</Italian>
+            <Spanish>Desplegar QRF</Spanish>
+            <French>Déployer la QRF</French>
+            <Korean>QRF 파견</Korean>
+            <Japanese>QRFを派遣</Japanese>
+            <ChineseSimplified>派遣 QRF</ChineseSimplified>
+            <Chinese>派遣 QRF (快速反應部隊)</Chinese>
+            <Polish>Wyślij QRF</Polish>
+            <Czech>Vyslat QRF</Czech>
+            <Portuguese>Despachar QRF</Portuguese>
+            <Turkish>QRF Sevk Et</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_dispatch_qrf">
+            <Original>Dispatch QRF on %1</Original>
+            <Russian>Отправить СБР на %1</Russian>
+            <German>QRF auf %1 entsenden</German>
+            <Italian>Invia QRF su %1</Italian>
+            <Spanish>Desplegar QRF en %1</Spanish>
+            <French>Déployer la QRF sur %1</French>
+            <Korean>%1에 QRF 파견</Korean>
+            <Japanese>%1にQRFを派遣</Japanese>
+            <ChineseSimplified>在 %1 派遣 QRF</ChineseSimplified>
+            <Chinese>在 %1 派遣 QRF</Chinese>
+            <Polish>Wyślij QRF na %1</Polish>
+            <Czech>Vyslat QRF na %1</Czech>
+            <Portuguese>Despachar QRF em %1</Portuguese>
+            <Turkish>%1 üzerine QRF Sevk Et</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_faction_label">
+            <Original>Faction:</Original>
+            <Russian>Фракция:</Russian>
+            <German>Fraktion:</German>
+            <Italian>Fazione:</Italian>
+            <Spanish>Facción:</Spanish>
+            <French>Faction :</French>
+            <Korean>파벌:</Korean>
+            <Japanese>派閥:</Japanese>
+            <ChineseSimplified>派系：</ChineseSimplified>
+            <Chinese>派系：</Chinese>
+            <Polish>Frakcja:</Polish>
+            <Czech>Frakce:</Czech>
+            <Portuguese>Facção:</Portuguese>
+            <Turkish>Grup:</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_occupants">
+            <Original>Occupants</Original>
+            <Russian>Оккупанты</Russian>
+            <German>Besatzer</German>
+            <Italian>Occupanti</Italian>
+            <Spanish>Ocupantes</Spanish>
+            <French>Occupants</French>
+            <Korean>점령군</Korean>
+            <Japanese>占領軍</Japanese>
+            <ChineseSimplified>占领军</ChineseSimplified>
+            <Chinese>佔領軍</Chinese>
+            <Polish>Okupanci</Polish>
+            <Czech>Okupanti</Czech>
+            <Portuguese>Ocupantes</Portuguese>
+            <Turkish>İşgalciler</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_invaders">
+            <Original>Invaders</Original>
+            <Russian>Захватчики</Russian>
+            <German>Invasoren</German>
+            <Italian>Invasori</Italian>
+            <Spanish>Invasores</Spanish>
+            <French>Envahisseurs</French>
+            <Korean>침략자</Korean>
+            <Japanese>侵略軍</Japanese>
+            <ChineseSimplified>入侵者</ChineseSimplified>
+            <Chinese>入侵者</Chinese>
+            <Polish>Najeźdźcy</Polish>
+            <Czech>Útočníci</Czech>
+            <Portuguese>Invasores</Portuguese>
+            <Turkish>İstilacılar</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_type_label">
+            <Original>Type:</Original>
+            <Russian>Тип:</Russian>
+            <German>Typ:</German>
+            <Italian>Tipo:</Italian>
+            <Spanish>Tipo:</Spanish>
+            <French>Type :</French>
+            <Korean>유형:</Korean>
+            <Japanese>タイプ:</Japanese>
+            <ChineseSimplified>类型：</ChineseSimplified>
+            <Chinese>類型：</Chinese>
+            <Polish>Typ:</Polish>
+            <Czech>Typ:</Czech>
+            <Portuguese>Tipo:</Portuguese>
+            <Turkish>Tür:</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_ground_transport">
+            <Original>Ground</Original>
+            <Russian>Наземный</Russian>
+            <German>Boden</German>
+            <Italian>Terra</Italian>
+            <Spanish>Tierra</Spanish>
+            <French>Terre</French>
+            <Korean>지상</Korean>
+            <Japanese>地上</Japanese>
+            <ChineseSimplified>地面</ChineseSimplified>
+            <Chinese>地面</Chinese>
+            <Polish>Naziemny</Polish>
+            <Czech>Pozemní</Czech>
+            <Portuguese>Terrestre</Portuguese>
+            <Turkish>Kara</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_air_transport">
+            <Original>Air</Original>
+            <Russian>Воздушный</Russian>
+            <German>Luft</German>
+            <Italian>Aria</Italian>
+            <Spanish>Aire</Spanish>
+            <French>Air</French>
+            <Korean>공중</Korean>
+            <Japanese>航空</Japanese>
+            <ChineseSimplified>空中</ChineseSimplified>
+            <Chinese>空中</Chinese>
+            <Polish>Powietrzny</Polish>
+            <Czech>Vzdušný</Czech>
+            <Portuguese>Aéreo</Portuguese>
+            <Turkish>Hava</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_attack_cas">
+            <Original>CAS</Original>
+            <Russian>Штурмовка</Russian>
+            <German>CAS</German>
+            <Italian>CAS</Italian>
+            <Spanish>CAS</Spanish>
+            <French>APP</French>
+            <Korean>CAS</Korean>
+            <Japanese>CAS</Japanese>
+            <ChineseSimplified>CAS(密接空中支援)</ChineseSimplified>
+            <Chinese>CAS(密接空中支援)</Chinese>
+            <Polish>CAS</Polish>
+            <Czech>CAS</Czech>
+            <Portuguese>CAS</Portuguese>
+            <Turkish>YHD</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_launch_qrf">
+            <Original>Launch QRF</Original>
+            <Russian>Запустить СБР</Russian>
+            <German>QRF starten</German>
+            <Italian>Lancia QRF</Italian>
+            <Spanish>Lanzar QRF</Spanish>
+            <French>Lancer la QRF</French>
+            <Korean>QRF 출동</Korean>
+            <Japanese>QRFを発進</Japanese>
+            <ChineseSimplified>发动 QRF</ChineseSimplified>
+            <Chinese>發動 QRF</Chinese>
+            <Polish>Rozpocznij QRF</Polish>
+            <Czech>Spustit QRF</Czech>
+            <Portuguese>Lançar QRF</Portuguese>
+            <Turkish>QRF Başlat</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_dispatched_qrf">
+            <Original>Dispatched %1 %2 QRF on %3</Original>
+            <Russian>Отправлена %2 СБР фракции %1 на %3</Russian>
+            <German>%1 %2 QRF auf %3 entsandt</German>
+            <Italian>QRF %2 %1 inviata su %3</Italian>
+            <Spanish>QRF %2 de %1 desplegada en %3</Spanish>
+            <French>QRF %2 %1 déployée sur %3</French>
+            <Korean>%3에 %1 %2 QRF 파견됨</Korean>
+            <Japanese>%3に%1 %2 QRFを派遣しました</Japanese>
+            <ChineseSimplified>已在 %3 派遣 %1 %2 QRF</ChineseSimplified>
+            <Chinese>已在 %3 派遣 %1 %2 QRF</Chinese>
+            <Polish>Wysłano %2 QRF frakcji %1 na %3</Polish>
+            <Czech>Vyslána %2 QRF frakce %1 na %3</Czech>
+            <Portuguese>QRF %2 de %1 despachada em %3</Portuguese>
+            <Turkish>%3 üzerine %1 %2 QRF sevk edildi</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_no_bases">
+            <Original>No suitable bases available for QRF deployment.</Original>
+            <Russian>Нет подходящих баз для развертывания СБР.</Russian>
+            <German>Keine geeigneten Basen für QRF-Einsatz verfügbar.</German>
+            <Italian>Nessuna base adatta disponibile per lo schieramento della QRF.</Italian>
+            <Spanish>No hay bases adecuadas disponibles para el despliegue de QRF.</Spanish>
+            <French>Aucune base appropriée disponible pour le déploiement de la QRF.</French>
+            <Korean>QRF를 배치할 적합한 기지가 없습니다.</Korean>
+            <Japanese>QRFを展開するための適切な基地がありません。</Japanese>
+            <ChineseSimplified>没有合适的基地用于部署 QRF。</ChineseSimplified>
+            <Chinese>沒有合適的基地可用於部署 QRF。</Chinese>
+            <Polish>Brak odpowiednich baz do rozmieszczenia QRF.</Polish>
+            <Czech>Nejsou k dispozici žádné vhodné základny pro nasazení QRF.</Czech>
+            <Portuguese>Nenhuma base adequada disponível para implantação de QRF.</Portuguese>
+            <Turkish>QRF dağıtımı için uygun üs bulunmamaktadır.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_no_assets">
+            <Original>Failed to generate QRF assets.</Original>
+            <Russian>Не удалось сгенерировать силы СБР.</Russian>
+            <German>Fehler beim Generieren von QRF-Ressourcen.</German>
+            <Italian>Impossibile generare risorse QRF.</Italian>
+            <Spanish>Error al generar los activos de QRF.</Spanish>
+            <French>Échec de la génération des ressources de la QRF.</French>
+            <Korean>QRF 자산 생성에 실패했습니다.</Korean>
+            <Japanese>QRFアセットの生成に失敗しました。</Japanese>
+            <ChineseSimplified>生成 QRF 资产失败。</ChineseSimplified>
+            <Chinese>生成 QRF 資產失敗。</Chinese>
+            <Polish>Nie udało się wygenerować zasobów QRF.</Polish>
+            <Czech>Nepodařilo se vygenerovat prostředky QRF.</Czech>
+            <Portuguese>Falha ao gerar ativos de QRF.</Portuguese>
+            <Turkish>QRF varlıkları oluşturulamadı.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_no_vehicles">
+            <Original>Failed to allocate vehicles for QRF.</Original>
+            <Russian>Не удалось выделить технику для СБР.</Russian>
+            <German>Fehler beim Zuweisen von Fahrzeugen für QRF.</German>
+            <Italian>Impossibile assegnare veicoli per la QRF.</Italian>
+            <Spanish>Error al asignar vehículos para la QRF.</Spanish>
+            <French>Échec de l'allocation des véhicules pour la QRF.</French>
+            <Korean>QRF용 차량 할당에 실패했습니다.</Korean>
+            <Japanese>QRF用の車両の割り当てに失敗しました。</Japanese>
+            <ChineseSimplified>为 QRF 分配车辆失败。</ChineseSimplified>
+            <Chinese>為 QRF 分配載具失敗。</Chinese>
+            <Polish>Nie udało się przydzielić pojazdów dla QRF.</Polish>
+            <Czech>Nepodařilo se přidělit vozidla pro QRF.</Czech>
+            <Portuguese>Falha ao alocar veículos para QRF.</Portuguese>
+            <Turkish>QRF için araç tahsis edilemedi.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_qrf_success">
+            <Original>QRF successfully deployed and tracking target.</Original>
+            <Russian>СБР успешно развернута и отслеживает цель.</Russian>
+            <German>QRF erfolgreich eingesetzt und verfolgt das Ziel.</German>
+            <Italian>QRF schierata con successo e in tracciamento bersaglio.</Italian>
+            <Spanish>QRF desplegada con éxito y rastreando el objetivo.</Spanish>
+            <French>QRF déployée avec succès et cible suivie.</French>
+            <Korean>QRF가 성공적으로 배치되어 대상을 추적 중입니다.</Korean>
+            <Japanese>QRFの展開に成功し、ターゲットを追跡中です。</Japanese>
+            <ChineseSimplified>QRF 成功部署正在追踪目标。</ChineseSimplified>
+            <Chinese>QRF 成功部署正在追蹤目標。</Chinese>
+            <Polish>QRF pomyślnie rozmieszczone i śledzi cel.</Polish>
+            <Czech>QRF úspěšně nasazena a sleduje cíl.</Czech>
+            <Portuguese>QRF implantada com sucesso e rastreando o alvo.</Portuguese>
+            <Turkish>QRF başarıyla konuşlandırıldı ve hedefi takip ediyor.</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_give_traits">
+            <Original>Manage Traits</Original>
+            <Russian>Управление навыками</Russian>
+            <German>Eigenschaften verwalten</German>
+            <Italian>Gestisci tratti</Italian>
+            <Spanish>Gestionar rasgos</Spanish>
+            <French>Gérer les traits</French>
+            <Korean>특성 관리</Korean>
+            <Japanese>トレイトの管理</Japanese>
+            <ChineseSimplified>管理特长</ChineseSimplified>
+            <Chinese>管理特長</Chinese>
+            <Polish>Zarządzaj cechami</Polish>
+            <Czech>Spravovat vlastnosti</Czech>
+            <Portuguese>Gerenciar Traços</Portuguese>
+            <Turkish>Özellikleri Yönet</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_manage_traits">
+            <Original>Manage Player Traits</Original>
+            <Russian>Управление навыками игрока</Russian>
+            <German>Spielereigenschaften verwalten</German>
+            <Italian>Gestisci tratti giocatore</Italian>
+            <Spanish>Gestionar rasgos del jugador</Spanish>
+            <French>Gérer les traits du joueur</French>
+            <Korean>플레이어 특성 관리</Korean>
+            <Japanese>プレイヤートレイトの管理</Japanese>
+            <ChineseSimplified>管理玩家特长</ChineseSimplified>
+            <Chinese>管理玩家特長</Chinese>
+            <Polish>Zarządzaj cechami gracza</Polish>
+            <Czech>Spravovat vlastnosti hráče</Czech>
+            <Portuguese>Gerenciar Traços do Jogador</Portuguese>
+            <Turkish>Oyuncu Özelliklerini Yönet</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_medic">
+            <Original>Medic</Original>
+            <Russian>Медик</Russian>
+            <German>Sanitäter</German>
+            <Italian>Medico</Italian>
+            <Spanish>Médico</Spanish>
+            <French>Médecin</French>
+            <Korean>의무병</Korean>
+            <Japanese>衛生兵</Japanese>
+            <ChineseSimplified>医疗兵</ChineseSimplified>
+            <Chinese>醫護兵</Chinese>
+            <Polish>Medyk</Polish>
+            <Czech>Zdravotník</Czech>
+            <Portuguese>Médico</Portuguese>
+            <Turkish>Sıhhiye</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_explosives">
+            <Original>Explosive Specialist</Original>
+            <Russian>Специалист по взрывчатке</Russian>
+            <German>Sprengstoffspezialist</German>
+            <Italian>Specialista esplosivi</Italian>
+            <Spanish>Especialista en explosivos</Spanish>
+            <French>Spécialiste en explosifs</French>
+            <Korean>폭발물 전문가</Korean>
+            <Japanese>爆発物専門家</Japanese>
+            <ChineseSimplified>爆破专家</ChineseSimplified>
+            <Chinese>爆破專家</Chinese>
+            <Polish>Specjalista od ładunków wybuchowych</Polish>
+            <Czech>Specialista na výbušniny</Czech>
+            <Portuguese>Especialista em Explosivos</Portuguese>
+            <Turkish>Patlayıcı Uzmanı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_uav">
+            <Original>UAV Hacker</Original>
+            <Russian>Хакер БПЛА</Russian>
+            <German>UAV-Hacker</German>
+            <Italian>Hacker UAV</Italian>
+            <Spanish>Hacker de UAV</Spanish>
+            <French>Pirate de drones (UAV)</French>
+            <Korean>UAV 해커</Korean>
+            <Japanese>UAVハッカー</Japanese>
+            <ChineseSimplified>无人机黑客</ChineseSimplified>
+            <Chinese>無人機駭客</Chinese>
+            <Polish>Haker UAV</Polish>
+            <Czech>Hacker UAV</Czech>
+            <Portuguese>Hacker de VANT</Portuguese>
+            <Turkish>İHA Bilgisayar Korsanı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_engineer">
+            <Original>Engineer</Original>
+            <Russian>Инженер</Russian>
+            <German>Pionier</German>
+            <Italian>Ingegnere</Italian>
+            <Spanish>Ingeniero</Spanish>
+            <French>Ingénieur</French>
+            <Korean>공병</Korean>
+            <Japanese>工兵</Japanese>
+            <ChineseSimplified>工程师</ChineseSimplified>
+            <Chinese>工程師</Chinese>
+            <Polish>Inżynier</Polish>
+            <Czech>Ženista</Czech>
+            <Portuguese>Engenheiro</Portuguese>
+            <Turkish>Mühendis</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_trait_set_log">
+            <Original>Set trait %2 on %1 to %3</Original>
+            <Russian>Навык %2 у %1 изменен на %3</Russian>
+            <German>Eigenschaft %2 bei %1 auf %3 gesetzt</German>
+            <Italian>Impostato tratto %2 su %1 a %3</Italian>
+            <Spanish>Rasgo %2 de %1 establecido en %3</Spanish>
+            <French>Trait %2 de %1 défini sur %3</French>
+            <Korean>%1의 %2 특성을 %3(으)로 설정</Korean>
+            <Japanese>%1のトレイト%2を%3に設定しました</Japanese>
+            <ChineseSimplified>将 %1 的特长 %2 设为 %3</ChineseSimplified>
+            <Chinese>將 %1 的特長 %2 設為 %3</Chinese>
+            <Polish>Ustawiono cechę %2 dla %1 na %3</Polish>
+            <Czech>Vlastnost %2 u %1 nastavena na %3</Czech>
+            <Portuguese>Traço %2 em %1 definido para %3</Portuguese>
+            <Turkish>%1 üzerindeki %2 özelliği %3 olarak ayarlandı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_punish_btn">
+            <Original>Punish Player</Original>
+            <Russian>Наказать игрока</Russian>
+            <German>Spieler bestrafen</German>
+            <Italian>Puisci giocatore</Italian>
+            <Spanish>Castigar jugador</Spanish>
+            <French>Punir le joueur</French>
+            <Korean>플레이어 처벌</Korean>
+            <Japanese>プレイヤーを処罰</Japanese>
+            <ChineseSimplified>惩罚玩家</ChineseSimplified>
+            <Chinese>懲罰玩家</Chinese>
+            <Polish>Ukarz gracza</Polish>
+            <Czech>Potrestat hráče</Czech>
+            <Portuguese>Punir Jogador</Portuguese>
+            <Turkish>Oyuncuyu Cezalandır</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_punish_player">
+            <Original>Punish Player</Original>
+            <Russian>Наказать игрока</Russian>
+            <German>Spieler bestrafen</German>
+            <Italian>Puisci giocatore</Italian>
+            <Spanish>Castigar jugador</Spanish>
+            <French>Punir le joueur</French>
+            <Korean>플레이어 처벌</Korean>
+            <Japanese>プレイヤーを処罰</Japanese>
+            <ChineseSimplified>惩罚玩家</ChineseSimplified>
+            <Chinese>懲罰玩家</Chinese>
+            <Polish>Ukarz gracza</Polish>
+            <Czech>Potrestat hráče</Czech>
+            <Portuguese>Punir Jogador</Portuguese>
+            <Turkish>Oyuncuyu Cezalandır</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_time_sec">
+            <Original>Time (Seconds):</Original>
+            <Russian>Время (Секунды):</Russian>
+            <German>Zeit (Sekunden):</German>
+            <Italian>Tempo (Secondi):</Italian>
+            <Spanish>Tiempo (Segundos):</Spanish>
+            <French>Temps (Secondes) :</French>
+            <Korean>시간 (초):</Korean>
+            <Japanese>時間 (秒):</Japanese>
+            <ChineseSimplified>时间（秒）：</ChineseSimplified>
+            <Chinese>時間（秒）：</Chinese>
+            <Polish>Czas (Sekundy):</Polish>
+            <Czech>Čas (Vteřiny):</Czech>
+            <Portuguese>Tempo (Segundos):</Portuguese>
+            <Turkish>Süre (Saniye):</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_punishment">
+            <Original>Confirm Punishment</Original>
+            <Russian>Подтвердить наказание</Russian>
+            <German>Bestrafung bestätigen</German>
+            <Italian>Conferma punizione</Italian>
+            <Spanish>Confirmar castigo</Spanish>
+            <French>Confirmer la punition</French>
+            <Korean>처벌 확인</Korean>
+            <Japanese>処罰を確認</Japanese>
+            <ChineseSimplified>确认惩罚</ChineseSimplified>
+            <Chinese>確認懲罰</Chinese>
+            <Polish>Potwierdź karę</Polish>
+            <Czech>Potvrdit trest</Czech>
+            <Portuguese>Confirmar Punição</Portuguese>
+            <Turkish>Cezayı Onayla</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_punished_log">
+            <Original>%1 punished for %2 seconds (%3%% offence). Reason: %4</Original>
+            <Russian>Игрок %1 наказан на %2 секунд (%3%% нарушение). Причина: %4</Russian>
+            <German>%1 für %2 Sekunden bestraft (%3%% Vergehen). Grund: %4</German>
+            <Italian>%1 punito per %2 secondi (%3%% infrazione). Motivo: %4</Italian>
+            <Spanish>%1 castigado por %2 segundos (%3%% infracción). Motivo: %4</Spanish>
+            <French>%1 puni pour %2 secondes (%3%% infraction). Motif : %4</French>
+            <Korean>%1이(가) %2초 동안 처벌되었습니다 (위반 %3%%). 사유: %4</Korean>
+            <Japanese>%1が%2秒間処罰されました（違反%3%%）。理由: %4</Japanese>
+            <ChineseSimplified>%1 被惩罚 %2 秒（%3%% 违规）。原因：%4</ChineseSimplified>
+            <Chinese>%1 被懲罰 %2 秒（%3%% 違規）。原因：%4</Chinese>
+            <Polish>%1 ukarany na %2 sekund (wykroczenie %3%%). Powód: %4</Polish>
+            <Czech>Hráč %1 byl potrestán na %2 sekund (%3%% prohřešek). Důvod: %4</Czech>
+            <Portuguese>%1 punido por %2 segundos (%3%% de infração). Motivo: %4</Portuguese>
+            <Turkish>%1, %2 saniye cezalandırıldı (%%%3 suç). Neden: %4</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_warn_btn">
+            <Original>Warn Player</Original>
+            <Russian>Предупредить игрока</Russian>
+            <German>Spieler verwarnen</German>
+            <Italian>Avverti giocatore</Italian>
+            <Spanish>Advertir jugador</Spanish>
+            <French>Avertir le joueur</French>
+            <Korean>플레이어 경고</Korean>
+            <Japanese>プレイヤーを警告</Japanese>
+            <ChineseSimplified>警告玩家</ChineseSimplified>
+            <Chinese>警告玩家</Chinese>
+            <Polish>Ostrzeż gracza</Polish>
+            <Czech>Varovat hráče</Czech>
+            <Portuguese>Advertir Jogador</Portuguese>
+            <Turkish>Oyuncuyu Uyar</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_warn_title">
+            <Original>Warn Player</Original>
+            <Russian>Предупредить игрока</Russian>
+            <German>Spieler verwarnen</German>
+            <Italian>Avverti giocatore</Italian>
+            <Spanish>Advertir jugador</Spanish>
+            <French>Avertir le joueur</French>
+            <Korean>플레이어 경고</Korean>
+            <Japanese>プレイヤーを警告</Japanese>
+            <ChineseSimplified>警告玩家</ChineseSimplified>
+            <Chinese>警告玩家</Chinese>
+            <Polish>Ostrzeż gracza</Polish>
+            <Czech>Varovat hráče</Czech>
+            <Portuguese>Advertir Jogador</Portuguese>
+            <Turkish>Oyuncuyu Uyar</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_severity_label">
+            <Original>Severity:</Original>
+            <Russian>Строгость:</Russian>
+            <German>Schweregrad:</German>
+            <Italian>Gravità:</Italian>
+            <Spanish>Gravedad:</Spanish>
+            <French>Sévérité :</French>
+            <Korean>심각도:</Korean>
+            <Japanese>深刻度:</Japanese>
+            <ChineseSimplified>严重程度：</ChineseSimplified>
+            <Chinese>嚴重程度：</Chinese>
+            <Polish>Surowość:</Polish>
+            <Czech>Závažnost:</Czech>
+            <Portuguese>Gravidade:</Portuguese>
+            <Turkish>Şiddet:</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_light">
+            <Original>Light (10%)</Original>
+            <Russian>Легкая (10%)</Russian>
+            <German>Leicht (10%)</German>
+            <Italian>Lieve (10%)</Italian>
+            <Spanish>Leve (10%)</Spanish>
+            <French>Légère (10%)</French>
+            <Korean>가벼움 (10%)</Korean>
+            <Japanese>軽度 (10%)</Japanese>
+            <ChineseSimplified>轻微 (10%)</ChineseSimplified>
+            <Chinese>輕微 (10%)</Chinese>
+            <Polish>Lekka (10%)</Polish>
+            <Czech>Lehká (10%)</Czech>
+            <Portuguese>Leve (10%)</Portuguese>
+            <Turkish>Hafif (%10)</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_medium">
+            <Original>Medium (25%)</Original>
+            <Russian>Средняя (25%)</Russian>
+            <German>Mittel (25%)</German>
+            <Italian>Media (25%)</Italian>
+            <Spanish>Media (25%)</Spanish>
+            <French>Moyenne (25%)</French>
+            <Korean>보통 (25%)</Korean>
+            <Japanese>中等度 (25%)</Japanese>
+            <ChineseSimplified>中等 (25%)</ChineseSimplified>
+            <Chinese>中等 (25%)</Chinese>
+            <Polish>Średnia (25%)</Polish>
+            <Czech>Střední (25%)</Czech>
+            <Portuguese>Média (25%)</Portuguese>
+            <Turkish>Orta (%25)</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_severe">
+            <Original>Severe (50%)</Original>
+            <Russian>Строгая (50%)</Russian>
+            <German>Schwer (50%)</German>
+            <Italian>Grave (50%)</Italian>
+            <Spanish>Grave (50%)</Spanish>
+            <French>Sévère (50%)</French>
+            <Korean>심각 (50%)</Korean>
+            <Japanese>重度 (50%)</Japanese>
+            <ChineseSimplified>严重 (50%)</ChineseSimplified>
+            <Chinese>嚴重 (50%)</Chinese>
+            <Polish>Poważna (50%)</Polish>
+            <Czech>Vážná (50%)</Czech>
+            <Portuguese>Grave (50%)</Portuguese>
+            <Turkish>Şiddetli (%50)</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_sev_extreme">
+            <Original>Extreme (75%)</Original>
+            <Russian>Экстремальная (75%)</Russian>
+            <German>Extrem (75%)</German>
+            <Italian>Estrema (75%)</Italian>
+            <Spanish>Extrema (75%)</Spanish>
+            <French>Extrême (75%)</French>
+            <Korean>극심 (75%)</Korean>
+            <Japanese>極度 (75%)</Japanese>
+            <ChineseSimplified>极端 (75%)</ChineseSimplified>
+            <Chinese>極端 (75%)</Chinese>
+            <Polish>Ekstremalna (75%)</Polish>
+            <Czech>Extrémní (75%)</Czech>
+            <Portuguese>Extrema (75%)</Portuguese>
+            <Turkish>Aşırı (%75)</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_warning">
+            <Original>Confirm Warning</Original>
+            <Russian>Подтвердить предупреждение</Russian>
+            <German>Verwarnung bestätigen</German>
+            <Italian>Conferma avviso</Italian>
+            <Spanish>Confirmar advertencia</Spanish>
+            <French>Confirmer l'avertissement</French>
+            <Korean>경고 확인</Korean>
+            <Japanese>警告を確認</Japanese>
+            <ChineseSimplified>确认警告</ChineseSimplified>
+            <Chinese>確認警告</Chinese>
+            <Polish>Potwierdź ostrzeżenie</Polish>
+            <Czech>Potvrdit varování</Czech>
+            <Portuguese>Confirmar Advertência</Portuguese>
+            <Turkish>Uyarıyı Onayla</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_warned_log">
+            <Original>%1 warned (+%2%% offence). Reason: %3</Original>
+            <Russian>%1 предупрежден (+%2%% нарушение). Причина: %3</Russian>
+            <German>%1 verwarnt (+%2%% Vergehen). Grund: %3</German>
+            <Italian>%1 avvertito (+%2%% infrazione). Motivo: %3</Italian>
+            <Spanish>%1 advertido (+%2%% infracción). Motivo: %3</Spanish>
+            <French>%1 averti (+%2%% infraction). Motif : %3</French>
+            <Korean>%1에게 경고가 주어졌습니다 (+%2%% 위반). 사유: %3</Korean>
+            <Japanese>%1に警告しました（+%2%%の違反）。理由: %3</Japanese>
+            <ChineseSimplified>%1 被警告（+%2%% 违规）。原因：%3</ChineseSimplified>
+            <Chinese>%1 被警告（+%2%% 違規）。原因：%3</Chinese>
+            <Polish>Ostrzeżono %1 (+%2%% wykroczenia). Powód: %3</Polish>
+            <Czech>Hráč %1 byl varován (+%2%% prohřešek). Důvod: %3</Czech>
+            <Portuguese>%1 advertido (+%2%% de infração). Motivo: %3</Portuguese>
+            <Turkish>%1 uyarıldı (+%%%2 suç). Neden: %3</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_kick">
+            <Original>Kick</Original>
+            <Russian>Кикнуть</Russian>
+            <German>Kicken</German>
+            <Italian>Caccia</Italian>
+            <Spanish>Expulsar</Spanish>
+            <French>Expulser</French>
+            <Korean>추방</Korean>
+            <Japanese>キック</Japanese>
+            <ChineseSimplified>踢出</ChineseSimplified>
+            <Chinese>踢出</Chinese>
+            <Polish>Wyrzuć</Polish>
+            <Czech>Vyhodit</Czech>
+            <Portuguese>Expulsar</Portuguese>
+            <Turkish>At</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_ban">
+            <Original>Ban</Original>
+            <Russian>Забанить</Russian>
+            <German>Bannen</German>
+            <Italian>Banna</Italian>
+            <Spanish>Banear</Spanish>
+            <French>Bannir</French>
+            <Korean>밴</Korean>
+            <Japanese>バン</Japanese>
+            <ChineseSimplified>封禁</ChineseSimplified>
+            <Chinese>封禁</Chinese>
+            <Polish>Zbanuj</Polish>
+            <Czech>Zabanovat</Czech>
+            <Portuguese>Banir</Portuguese>
+            <Turkish>Yasakla</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_reason_for">
+            <Original>Reason for %1</Original>
+            <Russian>Причина для: %1</Russian>
+            <German>Grund für %1</German>
+            <Italian>Motivo per %1</Italian>
+            <Spanish>Motivo para %1</Spanish>
+            <French>Motif de %1</French>
+            <Korean>%1 사유</Korean>
+            <Japanese>%1の理由</Japanese>
+            <ChineseSimplified>%1 的原因</ChineseSimplified>
+            <Chinese>%1 的原因</Chinese>
+            <Polish>Powód dla %1</Polish>
+            <Czech>Důvod pro %1</Czech>
+            <Portuguese>Motivo para %1</Portuguese>
+            <Turkish>%1 Nedeni</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_kicking_log">
+            <Original>Kicked %1. Reason: %2</Original>
+            <Russian>Игрок %1 кикнут. Причина: %2</Russian>
+            <German>%1 gekickt. Grund: %2</German>
+            <Italian>%1 cacciato. Motivo: %2</Italian>
+            <Spanish>%1 expulsado. Motivo: %2</Spanish>
+            <French>%1 expulsé. Motif : %2</French>
+            <Korean>%1이(가) 추방되었습니다. 사유: %2</Korean>
+            <Japanese>%1をキックしました。理由: %2</Japanese>
+            <ChineseSimplified>已踢出 %1。原因：%2</ChineseSimplified>
+            <Chinese>已踢出 %1。原因：%2</Chinese>
+            <Polish>Wyrzucono %1. Powód: %2</Polish>
+            <Czech>Hráč %1 byl vyhozen. Důvod: %2</Czech>
+            <Portuguese>%1 expulso. Motivo: %2</Portuguese>
+            <Turkish>%1 atıldı. Neden: %2</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_banning_log">
+            <Original>Banned %1. Reason: %2</Original>
+            <Russian>Игрок %1 забанен. Причина: %2</Russian>
+            <German>%1 gebannt. Grund: %2</German>
+            <Italian>%1 bannato. Motivo: %2</Italian>
+            <Spanish>%1 baneado. Motivo: %2</Spanish>
+            <French>%1 banni. Motif : %2</French>
+            <Korean>%1이(가) 밴 처리되었습니다. 사유: %2</Korean>
+            <Japanese>%1をバンしました。理由: %2</Japanese>
+            <ChineseSimplified>已封禁 %1。原因：%2</ChineseSimplified>
+            <Chinese>已封禁 %1。原因：%2</Chinese>
+            <Polish>Zbanowano %1. Powód: %2</Polish>
+            <Czech>Hráč %1 byl zabanován. Důvod: %2</Czech>
+            <Portuguese>%1 banido. Motivo: %2</Portuguese>
+            <Turkish>%1 yasaklandı. Neden: %2</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_force_lobby">
+            <Original>Force to Lobby</Original>
+            <Russian>Принудительно в лобби</Russian>
+            <German>In die Lobby zwingen</German>
+            <Italian>Forza in lobby</Italian>
+            <Spanish>Forzar al lobby</Spanish>
+            <French>Forcer au salon</French>
+            <Korean>로비로 강제 이동</Korean>
+            <Japanese>ロビーに強制送還</Japanese>
+            <ChineseSimplified>强制返回大厅</ChineseSimplified>
+            <Chinese>強制返回大廳</Chinese>
+            <Polish>Wymuś do lobby</Polish>
+            <Czech>Vynutit do lobby</Czech>
+            <Portuguese>Forçar para o Lobby</Portuguese>
+            <Turkish>Lobiye Zorla</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_reason_lobby">
+            <Original>Reason for forced lobby</Original>
+            <Russian>Причина отправки в лобби</Russian>
+            <German>Grund für den Lobby-Zwang</German>
+            <Italian>Motivo per lobby forzata</Italian>
+            <Spanish>Motivo para forzar al lobby</Spanish>
+            <French>Motif de l'envoi au salon</French>
+            <Korean>로비 강제 이동 사유</Korean>
+            <Japanese>強制ロビー送還の理由</Japanese>
+            <ChineseSimplified>强制返回大厅的原因</ChineseSimplified>
+            <Chinese>強制返回大廳的原因</Chinese>
+            <Polish>Powód wymuszenia powrotu do lobby</Polish>
+            <Czech>Důvod pro návrat do lobby</Czech>
+            <Portuguese>Motivo para forçar ao lobby</Portuguese>
+            <Turkish>Lobiye zorlama nedeni</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_forced_lobby">
+            <Original>Forced to Lobby</Original>
+            <Russian>Принудительно отправлен в лобби</Russian>
+            <German>In die Lobby gezwungen</German>
+            <Italian>Forzato in lobby</Italian>
+            <Spanish>Forzado al lobby</Spanish>
+            <French>Forcé au salon</French>
+            <Korean>로비로 강제 이동됨</Korean>
+            <Japanese>ロビーに強制送還されました</Japanese>
+            <ChineseSimplified>已强制返回大厅</ChineseSimplified>
+            <Chinese>已強制返回大廳</Chinese>
+            <Polish>Wymuszono powrót do lobby</Polish>
+            <Czech>Vynucený návrat do lobby</Czech>
+            <Portuguese>Forçado para o Lobby</Portuguese>
+            <Turkish>Lobiye Zorlandı</Turkish>
+        </Key>
+        <Key ID="STR_A3AU_player_context_confirm_return">
+            <Original>Confirm Return</Original>
+            <Russian>Подтвердить возврат</Russian>
+            <German>Rückkehr bestätigen</German>
+            <Italian>Conferma ritorno</Italian>
+            <Spanish>Confirmar regreso</Spanish>
+            <French>Confirmer le retour</French>
+            <Korean>복귀 확인</Korean>
+            <Japanese>戻るを確認</Japanese>
+            <ChineseSimplified>确认返回</ChineseSimplified>
+            <Chinese>確認返回</Chinese>
+            <Polish>Potwierdź powrót</Polish>
+            <Czech>Potvrdit návrat</Czech>
+            <Portuguese>Confirmar Retorno</Portuguese>
+            <Turkish>Dönüşü Onayla</Turkish>
         </Key>
     </Package>
     <Package name="CBA-settings">

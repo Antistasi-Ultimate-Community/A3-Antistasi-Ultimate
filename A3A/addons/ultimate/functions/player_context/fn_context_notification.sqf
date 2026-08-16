@@ -54,14 +54,13 @@ if (_unit != player) exitWith {
 
 disableSerialization;
 private _display = findDisplay 46;
-// Fallback to map display if main HUD is missing (e.g., map is open)
 if (isNull _display) then { _display = findDisplay 12; };
 if (isNull _display) exitWith {};
 
 // -----------------------------------------------------------------------------
 // THEME & COLOR CONFIGURATION
 // -----------------------------------------------------------------------------
-private _lineColor = [1, 1, 0, 1]; // Yellow default
+private _lineColor = [1, 1, 0, 1];
 
 switch (toUpper _theme) do {
     case "SUCCESS";
@@ -95,7 +94,6 @@ private _offsetY = 0.035 * safeZoneH;
 private _activeToasts = uiNamespace getVariable ["A3U_ActiveToasts", []];
 _activeToasts = _activeToasts select { !isNull _x }; 
 
-// Enforce max stack of 5. If we have 5 or more, aggressively fade out the oldest ones.
 while {count _activeToasts >= 5} do {
     private _oldest = _activeToasts deleteAt 0;
     if (!isNull _oldest) then {
@@ -106,7 +104,6 @@ while {count _activeToasts >= 5} do {
     };
 };
 
-// Smoothly slide all surviving toasts down to fill the empty space
 {
     private _targetY = _baseY - (_forEachIndex * _offsetY);
     private _pos = ctrlPosition _x;
@@ -117,7 +114,6 @@ while {count _activeToasts >= 5} do {
     };
 } forEach _activeToasts;
 
-// Now that older toasts have moved down, calculate our spawn position at the top
 private _yPos = _baseY - (count _activeToasts * _offsetY);
 
 // -----------------------------------------------------------------------------
@@ -126,7 +122,6 @@ private _yPos = _baseY - (count _activeToasts * _offsetY);
 private _toastGrp = _display ctrlCreate ["RscControlsGroupNoScrollbars", -1];
 if (isNull _toastGrp) exitWith {}; 
 
-// Initialize invisible for the fade-in effect
 _toastGrp ctrlSetPosition [_xPos, _yPos, _w, _h];
 _toastGrp ctrlSetFade 1; 
 _toastGrp ctrlCommit 0;
@@ -149,16 +144,14 @@ _txt ctrlSetPosition [0, 0.002 * safeZoneH, _w, 0.028 * safeZoneH];
 _txt ctrlSetStructuredText parseText format ["<t align='center' valign='middle' size='0.9'>%1</t>", _text];
 _txt ctrlCommit 0;
 
-// Execute Audio Cue & Fade-In Animation
 playSound "HintExpand"; 
 _toastGrp ctrlSetFade 0;
 _toastGrp ctrlCommit 0.3;
 
-sleep 2.5; // Wait for the user to read it
+sleep 2.5;
 
 if (isNull _toastGrp) exitWith {};
 
-// Execute Fade-Out Animation
 _toastGrp ctrlSetFade 1; 
 _toastGrp ctrlCommit 0.5;
 sleep 0.5;
