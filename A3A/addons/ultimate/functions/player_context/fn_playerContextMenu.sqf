@@ -59,9 +59,8 @@ _mapDisplay setVariable ["A3U_ContextUserRole", _userRole];
 
 private _fnc_logAction = {
     params ["_role", "_actionMsg"];
-    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _role, name player, _actionMsg];
+    private _msg = format ["[AU-PCM] [%1] [%2] %3", _role, name player, _actionMsg];
     diag_log _msg;
-    [_msg] remoteExecCall ["diag_log", 2];
 };
 
 private _optionsData = [];
@@ -86,9 +85,8 @@ if (_isAdmin || _isCommander) then {
         
         [_role, format ["Transferred Commander role to '%1'", name _target]] call {
             params ["_r", "_act"];
-            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            private _msg = format ["[AU-PCM] [%1] [%2] %3", _r, name player, _act];
             diag_log _msg;
-            [_msg] remoteExecCall ["diag_log", 2];
         };
     }];
     
@@ -104,33 +102,33 @@ if (_isAdmin) then {
     
     private _isMember = [_target] call A3A_fnc_isMember;
     private _memColor = if (_isMember) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
-    
-    _adminData pushBack ["TOGGLE", localize "STR_A3AU_player_context_toggle_membership", { 
-        params ["_target", "_btnControl"];
-        
-        private _currentlyMember = [_target] call A3A_fnc_isMember;
-        private _newState = !_currentlyMember;
-        
-        if (_currentlyMember) then {
-            ["remove", _target] call A3A_fnc_memberAdd;
-        } else {
-            ["add", _target] call A3A_fnc_memberAdd;
-        };
-        
-        private _newColor = if (_newState) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
-        private _newHover = [(_newColor#0) + 0.15, (_newColor#1) + 0.15, (_newColor#2) + 0.15, 1];
-        
-        _btnControl setVariable ["A3U_btn_colNormal", _newColor];
-        _btnControl setVariable ["A3U_btn_colHover", _newHover];
-        _btnControl ctrlSetBackgroundColor _newHover; 
-        
-        ["Admin", format ["Toggled server membership for '%1' -> %2", name _target, if (_newState) then {"Added"} else {"Removed"}]] call {
-            params ["_r", "_act"];
-            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-            diag_log _msg;
-            [_msg] remoteExecCall ["diag_log", 2];
-        };
-    }, _memColor];
+    if (membershipEnabled) then {
+        _adminData pushBack ["TOGGLE", localize "STR_A3AU_player_context_toggle_membership", { 
+            params ["_target", "_btnControl"];
+            
+            private _currentlyMember = [_target] call A3A_fnc_isMember;
+            private _newState = !_currentlyMember;
+            
+            if (_currentlyMember) then {
+                ["remove", _target] call A3A_fnc_memberAdd;
+            } else {
+                ["add", _target] call A3A_fnc_memberAdd;
+            };
+            
+            private _newColor = if (_newState) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
+            private _newHover = [(_newColor#0) + 0.15, (_newColor#1) + 0.15, (_newColor#2) + 0.15, 1];
+            
+            _btnControl setVariable ["A3U_btn_colNormal", _newColor];
+            _btnControl setVariable ["A3U_btn_colHover", _newHover];
+            _btnControl ctrlSetBackgroundColor _newHover; 
+            
+            ["Admin", format ["Toggled server membership for '%1' -> %2", name _target, if (_newState) then {"Added"} else {"Removed"}]] call {
+                params ["_r", "_act"];
+                private _msg = format ["[AU-PCM] [%1] [%2] %3", _r, name player, _act];
+                diag_log _msg;
+            };
+        }, _memColor];
+    };
     
     private _isUndercover = _target getVariable ["undercover", false];
     private _ucColor = if (_isUndercover) then { [0.18, 0.50, 0.20, 1] } else { [0.6, 0.1, 0.1, 1] };
@@ -159,9 +157,8 @@ if (_isAdmin) then {
         
         ["Admin", format ["Forced undercover state on '%1' -> %2", name _target, _newState]] call {
             params ["_r", "_act"];
-            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            private _msg = format ["[AU-PCM] [%1] [%2] %3", _r, name player, _act];
             diag_log _msg;
-            [_msg] remoteExecCall ["diag_log", 2];
         };
     }, _ucColor];
     
@@ -230,9 +227,8 @@ if (_isAdmin) then {
         
         ["Admin", format ["Promoted '%1' to temporary Zeus", name _target]] call {
             params ["_r", "_act"];
-            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+            private _msg = format ["[AU-PCM] [%1] [%2] %3", _r, name player, _act];
             diag_log _msg;
-            [_msg] remoteExecCall ["diag_log", 2];
         };
     }];
 };
@@ -504,9 +500,8 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
                 private _role = (ctrlParent _ctrl) getVariable ["A3U_ContextUserRole", "Player"];
                 [_role, format ["Demoted player '%1' to rank %2", name _t, _newRank]] call {
                     params ["_r", "_act"];
-                    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+                    private _msg = format ["[AU-PCM] [%1] [%2] %3", _r, name player, _act];
                     diag_log _msg;
-                    [_msg] remoteExecCall ["diag_log", 2];
                 };
 
                 // Trigger auto-close
@@ -546,9 +541,8 @@ private _btnWidthFull = _groupWidth - (_padding * 2);
                 private _role = (ctrlParent _ctrl) getVariable ["A3U_ContextUserRole", "Player"];
                 [_role, format ["Promoted player '%1' to rank %2", name _t, _newRank]] call {
                     params ["_r", "_act"];
-                    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
+                    private _msg = format ["[AU-PCM] [%1] [%2] %3", _r, name player, _act];
                     diag_log _msg;
-                    [_msg] remoteExecCall ["diag_log", 2];
                 };
 
                 // Trigger auto-close

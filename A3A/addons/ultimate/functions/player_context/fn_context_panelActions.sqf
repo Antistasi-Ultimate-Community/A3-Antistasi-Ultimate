@@ -33,18 +33,6 @@ params ["_display", "_target", "_actionType"];
 
 if (isNull _display || isNull _target) exitWith {};
 
-// Determine executor permission context
-private _isAdmin = serverCommandAvailable "#kick";
-private _isCommander = (player isEqualTo theBoss);
-private _userRole = if (_isAdmin) then { "Admin" } else { if (_isCommander) then { "Commander" } else { "Player" } };
-
-private _fnc_log = {
-    params ["_role", "_actionMsg"];
-    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _role, name player, _actionMsg];
-    diag_log _msg;
-    [_msg] remoteExecCall ["diag_log", 2];
-};
-
 switch (toUpper _actionType) do {
     // =========================================================================
     // TRANSFER PERSONAL FUNDS TO PLAYER
@@ -57,7 +45,7 @@ switch (toUpper _actionType) do {
             [
                 ["EDIT", "Amount:", "0", "A3U_InputAmt"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_button", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -65,17 +53,11 @@ switch (toUpper _actionType) do {
                     
                     if (_amount > 0) then {
                         [_t, _amount] call A3A_fnc_donateMoney;
-                        [_role, format ["Transferred personal funds (%1) to '%2'", _amount, name _t]] call {
-                            params ["_r", "_act"];
-                            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                            diag_log _msg;
-                            [_msg] remoteExecCall ["diag_log", 2];
-                        };
                         ctrlDelete _grp;
                     } else {
                         [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_notification;
                     };
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -91,7 +73,7 @@ switch (toUpper _actionType) do {
             [
                 ["EDIT", "Amount:", "0", "A3U_InputAmt"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_button", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     private _amount = floor (parseNumber (ctrlText (_grp getVariable "A3U_InputAmt")));
@@ -104,14 +86,6 @@ switch (toUpper _actionType) do {
                             [0, -_amount] remoteExec ["A3A_fnc_resourcesFIA", 2];
                             [_amount, _t, true] call A3A_fnc_addMoneyPlayer;
                             [format [localize "STR_A3AU_player_context_transferred_funds", _amount, name _t], "SUCCESS"] spawn A3U_fnc_context_notification;
-                            
-                            [_role, format ["Transferred faction funds (%1) to '%2'", _amount, name _t]] call {
-                                params ["_r", "_act"];
-                                private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                                diag_log _msg;
-                                [_msg] remoteExecCall ["diag_log", 2];
-                            };
-                            
                             ctrlDelete _grp;
                         } else {
                             [localize "STR_A3AU_player_context_error_funds", "ERROR"] spawn A3U_fnc_context_notification;
@@ -119,7 +93,7 @@ switch (toUpper _actionType) do {
                     } else {
                         [localize "STR_A3AU_player_context_error_positive", "ERROR"] spawn A3U_fnc_context_notification;
                     };
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -149,7 +123,7 @@ switch (toUpper _actionType) do {
                     ["Black", "BLACK", [0.3, 0.3, 0.3, 1]] 
                 ], "A3U_InputTheme"],
                 ["BUTTON", localize "STR_A3AU_player_context_send_message", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -163,16 +137,8 @@ switch (toUpper _actionType) do {
                     
                     [_msg, _theme, _t] spawn A3U_fnc_context_notification;
                     [format [localize "STR_A3AU_player_context_message_sent", name _t], "SUCCESS", player] spawn A3U_fnc_context_notification;
-                    
-                    [_role, format ["Sent notification to '%1' (Theme: %2): ""%3""", name _t, _theme, _msg]] call {
-                        params ["_r", "_act"];
-                        private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                        diag_log _msg;
-                        [_msg] remoteExecCall ["diag_log", 2];
-                    };
-                    
                     ctrlDelete _grp;
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -196,7 +162,7 @@ switch (toUpper _actionType) do {
                     [localize "STR_A3AU_player_context_attack_cas", "CAS"]
                 ], "A3U_InputType"],
                 ["BUTTON", localize "STR_A3AU_player_context_launch_qrf", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -208,15 +174,8 @@ switch (toUpper _actionType) do {
                     [[_t, _faction, _type, clientOwner], "A3U_fnc_QRF_chasePlayer"] remoteExec ["A3A_fnc_scheduler", 2];
                     [format [localize "STR_A3AU_player_context_dispatched_qrf", _faction, _type, name _t], "WARNING"] spawn A3U_fnc_context_notification;
                     
-                    [_role, format ["Dispatched QRF targeting '%1' (Faction: %2, Type: %3)", name _t, _faction, _type]] call {
-                        params ["_r", "_act"];
-                        private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                        diag_log _msg;
-                        [_msg] remoteExecCall ["diag_log", 2];
-                    };
-                    
                     ctrlDelete _grp;
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -248,6 +207,7 @@ switch (toUpper _actionType) do {
                 params ["_t", "_newState", "_ctrl", "_key"];
                 
                 if (_key == "engineer" && {missionNamespace getVariable ["ace_repair_enabled", false]}) then {
+                    // ACE expects a number (1 = engineer, 0 = not engineer)
                     private _aceVal = if (_newState) then { 1 } else { 0 };
                     _t setVariable ["ace_isEngineer", _aceVal, true];
                 } else {
@@ -256,13 +216,6 @@ switch (toUpper _actionType) do {
                 
                 private _theme = if (_newState) then { "SUCCESS" } else { "WARNING" };
                 [format [localize "STR_A3AU_player_context_trait_set_log", name _t, _key, _newState], _theme] spawn A3U_fnc_context_notification;
-                
-                ["Admin", format ["Set trait '%1' on player '%2' -> %3", _key, name _t, _newState]] call {
-                    params ["_r", "_act"];
-                    private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                    diag_log _msg;
-                    [_msg] remoteExecCall ["diag_log", 2];
-                };
             }, _traitKey];
         } forEach _traits;
 
@@ -281,7 +234,7 @@ switch (toUpper _actionType) do {
                 ["EDIT", localize "STR_A3AU_player_context_time_sec", "120", "A3U_InputTime"],
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", localize "STR_A3AU_player_context_admin_action", "A3U_InputRsn"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_punishment", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -294,15 +247,8 @@ switch (toUpper _actionType) do {
                     [_t, _time, 1.0, objNull, _rsn, true] remoteExecCall ["A3A_fnc_punishment", 2, false];
                     [format [localize "STR_A3AU_player_context_punished_log", name _t, _time, 100, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                     
-                    [_role, format ["Punished player '%1' (Time: %2s, Offence: 100%%, Reason: ""%3"")", name _t, _time, _rsn]] call {
-                        params ["_r", "_act"];
-                        private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                        diag_log _msg;
-                        [_msg] remoteExecCall ["diag_log", 2];
-                    };
-                    
                     ctrlDelete _grp;
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -324,7 +270,7 @@ switch (toUpper _actionType) do {
                 ], "A3U_InputSev"],
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", localize "STR_A3AU_player_context_admin_action", "A3U_InputRsn"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_warning", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -339,15 +285,8 @@ switch (toUpper _actionType) do {
                     [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING", _t] spawn A3U_fnc_context_notification;
                     [format [localize "STR_A3AU_player_context_warned_log", name _t, _offRaw, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                     
-                    [_role, format ["Warned player '%1' (Offence: +%2%%, Reason: ""%3"")", name _t, _offRaw, _rsn]] call {
-                        params ["_r", "_act"];
-                        private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                        diag_log _msg;
-                        [_msg] remoteExecCall ["diag_log", 2];
-                    };
-                    
                     ctrlDelete _grp;
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -364,8 +303,7 @@ switch (toUpper _actionType) do {
             [
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", "", "A3U_InputRsn"],
                 ["BUTTON", format [localize "STR_A3AU_player_context_confirm_action", _actionType], [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_extra"];
-                    _extra params ["_type", "_role"];
+                    params ["_btnCtrl", "_type"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -375,25 +313,13 @@ switch (toUpper _actionType) do {
                     if (_type == "KICK") then {
                         [format [localize "STR_A3AU_player_context_kicking_log", name _t, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                         serverCommand format ["#kick %1", name _t];
-                        [_role, format ["Kicked player '%1' (Reason: ""%2"")", name _t, _rsn]] call {
-                            params ["_r", "_act"];
-                            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                            diag_log _msg;
-                            [_msg] remoteExecCall ["diag_log", 2];
-                        };
                     } else {
                         [format [localize "STR_A3AU_player_context_banning_log", name _t, _rsn], "WARNING"] spawn A3U_fnc_context_notification;
                         serverCommand format ["#exec ban %1", name _t];
-                        [_role, format ["Banned player '%1' (Reason: ""%2"")", name _t, _rsn]] call {
-                            params ["_r", "_act"];
-                            private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                            diag_log _msg;
-                            [_msg] remoteExecCall ["diag_log", 2];
-                        };
                     };
                     
                     ctrlDelete _grp;
-                }, [_actionType, _userRole]]
+                }, _actionType]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
@@ -409,7 +335,7 @@ switch (toUpper _actionType) do {
             [
                 ["EDIT", localize "STR_A3AU_player_context_reason_label", localize "STR_A3AU_player_context_forced_lobby", "A3U_InputRsn"],
                 ["BUTTON", localize "STR_A3AU_player_context_confirm_return", [0, 0, 0, 0.4], {
-                    params ["_btnCtrl", "_role"];
+                    params ["_btnCtrl"];
                     private _t = _btnCtrl getVariable "A3U_Target";
                     private _grp = _btnCtrl getVariable "A3U_Grp";
                     
@@ -418,20 +344,13 @@ switch (toUpper _actionType) do {
                     
                     [_rsn, "ERROR", _t] spawn A3U_fnc_context_notification;
                     
-                    [_role, format ["Forced player '%1' to lobby (Reason: ""%2"")", name _t, _rsn]] call {
-                        params ["_r", "_act"];
-                        private _msg = format ["[A3AU_P.C.M] [""%1""] [""%2""] %3", _r, name player, _act];
-                        diag_log _msg;
-                        [_msg] remoteExecCall ["diag_log", 2];
-                    };
-                    
                     [_t] spawn {
                         sleep 2;
                         ["LOSER", false, true] remoteExec ["BIS_fnc_endMission", (_this#0)];
                     };
                     
                     ctrlDelete _grp;
-                }, _userRole]
+                }]
             ]
         ] spawn A3U_fnc_context_buildPanel;
     };
