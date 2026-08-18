@@ -175,9 +175,8 @@ for "_i" from 0 to round(random [4,5,6]) do {
     private _vehicle = [_randomVehicle, _posVehicle, _side] call A3U_fnc_createCrashedVehicle;
     private _units = [_deadSoldierClasses, _posUnit, round(random [2, 3, 5])] call A3U_fnc_createDeadSoldiers;
 
-    if (round(random 100) < 5) then {
-        _vehicle setVectorUp [1, (selectRandom [0, 1]), 0];
-    };
+    if (round(random 100) < 5) then {_vehicle setVectorUp [1, (selectRandom [0, 1]), 0]};
+    if (round(random 100) < 30) then {[_vehicle, true] call A3U_fnc_setLock};
 
     _effectsFire append _fire;
     _effectsVehicle pushBack _vehicle;
