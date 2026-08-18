@@ -12,7 +12,7 @@ class Header
 {
 	gameType = ANTI;
 	minplayers = 1;
-	maxplayers = 60;
+	maxplayers = 63;
 };
 
 class CfgTaskEnhancements
