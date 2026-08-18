@@ -316,7 +316,8 @@ private _isUISilentUpdate = missionNamespace getVariable ["A3U_suppressNetworkFo
 if (!_isUISilentUpdate) then {
     [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
 
-    if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)}) then {
+    // ENFORCE VISIBILITY RULE: HQ, Trader, and Rally Points always show text labels
+    if (_originalName in (airportsX + milbases) || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
         _visibleMarkerName setMarkerText _markerLabelOnly;
     } else {
         _visibleMarkerName setMarkerText "";
