@@ -13735,6 +13735,9 @@
                 <French>Accès au marché des véhicules</French>
                 <Turkish>Araç Marketine Eriş</Turkish>
             </Key>
+            <Key ID="STR_antistasi_actions_common_request_mission_text">
+                <Original>Request Delivery Mission</Original>
+            </Key>
             <Key ID="STR_antistasi_actions_drop_here">
                 <Original>Drop here</Original>
                 <Russian>Бросить здесь</Russian>

@@ -9,9 +9,12 @@ private _friendlyAreas = (_friendlyAreasAI + _friendlyAreasOwned);
 
 if (!isNil "traderMarker") then {_friendlyAreas pushBack traderMarker};
 
-private _destinationAreas = _friendlyAreas select {(_x distance2D _originPos) <= distanceMission};
+_friendlyAreas deleteAt (_friendlyAreas find _origin); // Just incase to prevent stupidity
+
+private _destinationAreas = _friendlyAreas select {((getMarkerPos _x) distance2D _originPos) <= distanceMission};
 if (_destinationAreas isEqualTo []) then {_destinationAreas = _friendlyAreas};
 
+if (_destinationAreas isEqualTo []) exitWith {}; // Text in chat explaining you're an idiot if there is SOMEHOW still no options
 private _destination = selectRandom _destinationAreas;
 
 [[_origin, _destination], "A3A_fnc_LOG_Delivery"] remoteExec ["A3A_fnc_scheduler", 2];

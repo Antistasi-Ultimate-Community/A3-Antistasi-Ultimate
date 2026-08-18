@@ -52,27 +52,27 @@ if (_origin isEqualTo "") exitWith {Error("Delivery mission failed: Invalid orig
 if (_destination isEqualTo "") exitWith {Error("Delivery mission failed: Invalid destination.")};
 
 private _size = [_origin] call A3A_fnc_sizeMarker;
-private _sizeSpawn = 50 min _size;
-private _sizeFail = 50 max _size; // Minimum size of 50m
+private _sizeMin = 25 max _size; // Minimum size of 50m
+private _sizeComplete = 50 max _size; // Minimum size of 50m
 
 private _originPos = getMarkerPos _origin;
 private _destinationPos = getMarkerPos _destination;
-private _originName = [_origin] call A3A_fnc_localizar;
-private _destinationName = [_destination] call A3A_fnc_localizar;
+private _originName = if (!isNil "traderMarker" && {_origin isEqualTo traderMarker}) then {"the Black Market"} else {[_origin] call A3A_fnc_localizar};
+private _destinationName = if (!isNil "traderMarker" && {_destination isEqualTo traderMarker}) then {"the Black Market"} else {[_destination] call A3A_fnc_localizar};
 
 private _taskId = "LOG" + str A3A_taskCount;
 
 Info("Delivery mission init.");
 
-private _missionExpireTime = time + 3600; // 1 hour to accept the mission
+private _missionExpireTime = time + 1800; // 30 minutes to accept the mission
 
-private _posMission = [_originPos, 1, _sizeSpawn, 0, 0, 20, 0, [], [_originPos, _originPos]] call BIS_fnc_findSafePos;
+private _posMission = [_originPos, 0, _sizeMin, 0, 0, 20, 0, [], [_originPos, _originPos]] call BIS_fnc_findSafePos;
 
 [
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_A3A_Missions_LOG_Delivery_task_desc", _originName, _destinationName],
+        format [localize "STR_A3A_Missions_LOG_Delivery_task_desc", _destinationName, _originName],
         localize "STR_A3A_Missions_LOG_Delivery_task_header",
         _origin
     ],
@@ -86,7 +86,6 @@ private _posMission = [_originPos, 1, _sizeSpawn, 0, 0, 20, 0, [], [_originPos, 
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 // Create objects to deliver
-
 private _cargoTypes = if (_cargo isEqualTo []) then {call A3U_fnc_LOG_delivery_getCargo} else {["DEFAULT", _cargo]};
 private _cargoType = _cargoTypes#0;
 private _cargo = _cargoTypes#1;
@@ -94,7 +93,7 @@ private _cargo = _cargoTypes#1;
 private _cargoObjects = [];
 
 {
-    private _pos = [_posMission, 1, 10, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
+    private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
     private _cargoObject = [_x, _cargoType, _pos] call A3U_fnc_LOG_delivery_createCargo;
     _cargoObjects pushBack _cargoObject;
 } forEach _cargo;
@@ -135,13 +134,16 @@ waitUntil {
 // Expiry/failure sanity check
 [_taskId, _cargoObjects, _missionExpireTime, _functions] call _fnc_failureCheck;
 
-private _missionCompletionTime = time + 1800; // 30 minutes to complete the delivery
+// Update task description
+// private _betterDestination = [_destinationPos#0, ((_destinationPos#1) + 5), _destinationPos#2]; // Clears it off the actual zone marker, pure visual change
 [_taskId, _destination] call BIS_fnc_taskSetDestination;
 [_taskId, [
-    format [localize "STR_A3A_Missions_LOG_Delivery_task_desc", _originName, _destinationName],
+    format [localize "STR_A3A_Missions_LOG_Delivery_task_desc", _destinationName, _originName],
     localize "STR_A3A_Missions_LOG_Delivery_task_stage_header", 
     _destination
 ]] call BIS_fnc_taskSetDescription;
+
+private _missionCompletionTime = time + 3600; // 1 hour to complete the delivery
 
 waitUntil {
     sleep 5;
@@ -153,6 +155,10 @@ waitUntil {
 // Expiry/failure sanity check
 [_taskId, _cargoObjects, _missionCompletionTime, _functions] call _fnc_failureCheck;
 
+// Add variable for _destination to confirm delivery, not used internally but for external checks (e.g framework)
+private _destinationData = [true, _cargo]; // <bool>, <array<string>>
+[_destination, _destinationData] call A3U_fnc_LOG_delivery_setData;
+
 // Calculate payment | We ideally want to give bonuses for both distance travelled and cargo type
 private _payment = 0;
 {
@@ -160,16 +166,18 @@ private _payment = 0;
     if (alive _x) then {_payment = _payment + _cargoValue};
 } forEach _cargoObjects;
 
-// Clean up
-{deleteVehicle _x} forEach _cargoObjects;
-
 // Get players "involved" (ish) and pay them
-private _playersInvolved = (call SCRT_fnc_misc_getRebelPlayers) inAreaArray ([_destination, _sizeSpawn, _sizeSpawn]);
+private _playersInvolved = (call SCRT_fnc_misc_getRebelPlayers) inAreaArray ([_destination, _sizeComplete, _sizeComplete]);
 private _playersDivider = count _playersInvolved;
+
+Info_2("Delivery mission succeeded. Payment: %1 | Players Involved: %2", _payment, _playersInvolved);
 
 {
     [round (7*tierWar), _x] call A3A_fnc_addScorePlayer;
     [(_payment / _playersDivider), _x] call A3A_fnc_addMoneyPlayer;
 } forEach _playersInvolved;
+
+// Clean up
+{deleteVehicle _x} forEach _cargoObjects;
 
 [_taskId, _cargoObjects] call _fnc_cleanup;
