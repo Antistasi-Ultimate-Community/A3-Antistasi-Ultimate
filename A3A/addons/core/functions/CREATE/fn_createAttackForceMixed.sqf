@@ -118,7 +118,7 @@ if (_delay > 0 && !(_isPolice)) then {
 
 if !(_airbase in airportsX) then {
     private _airportsSide = airportsX select {sidesX getVariable [_x, sideUnkown] isEqualTo _side};
-    _airbase = if (_airportsSide isNotEqualTo []) then {selectRandom _airports} else {""};
+    _airbase = if (_airportsSide isNotEqualTo []) then {selectRandom _airportsSide} else {""};
 };
 
 if (_airBase != "" && !(_isPolice)) then
