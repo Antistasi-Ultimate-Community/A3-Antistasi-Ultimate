@@ -81,7 +81,6 @@ private _antennasDeadPositions = [];
 ["destroyedSites", destroyedSites] call A3A_fnc_setStatVariable;
 ["distanceSPWN", distanceSPWN] call A3A_fnc_setStatVariable;		// backwards compatibility
 ["chopForest", chopForest] call A3A_fnc_setStatVariable;
-["nextTick", nextTick - time] call A3A_fnc_setStatVariable;
 ["weather",[fogParams,overcast,gusts,humidity,lightnings,rain,rainParams,rainbow,waves,wind,windDir,windStr]] call A3A_fnc_setStatVariable; //rrobably should be rain
 private _destroyedPositions = destroyedBuildings apply { getPosATL _x };
 ["destroyedBuildings",_destroyedPositions] call A3A_fnc_setStatVariable;
