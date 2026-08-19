@@ -13069,30 +13069,6 @@
                 <French>Notre avion va déposer une cargaison à %1. Allez-y et lancez une grenade fumigène sur le sol, le pilote remarquera le signal et larguera la cargaison. Apportez la cargaison au QG. Faites-le avant %2.</French>
                 <Turkish>Bir uçak %1 mevkisine kargo bırakacak. Oraya gidin ve yere bir sis bombası atın; pilot sinyali fark edecek ve kargoyu bırakacaktır. Kargoyu karargaha geri getirin. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
-            <Key ID="STR_A3A_Missions_LOG_Delivery_task_header">
-                <Original>Pickup Cargo</Original>
-                <Russian>Заберите груз</Russian>
-                <Chinesesimp>取货</Chinesesimp>
-                <Korean>화물 픽업</Korean>
-                <French>Ramasser la cargaison</French>
-                <Turkish>Kargoyu Al</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Missions_LOG_Delivery_task_desc">
-                <Original>You have been hired to deliver cargo to %1. The cargo has been prepared at %2.</Original>
-                <Russian>Вас наняли для доставки груза в %1. Груз был подготовлен в %2.</Russian>
-                <Chinesesimp>您已被雇佣将货物运送到 %1。 货物已在 %2 准备好。</Chinesesimp>
-                <Korean>%1으로 화물을 운송하도록 고용되었습니다. 화물은 %2에서 준비되었습니다.</Korean>
-                <French>Vous avez été engagé pour livrer une cargaison à %1. La cargaison a été préparée à %2.</French>
-                <Turkish>%1 mevkisine kargo teslim etmek için işe alındınız. Kargo %2 mevkisinde hazırlanmıştır.</Turkish>
-            </Key>
-            <Key ID="STR_A3A_Missions_LOG_Delivery_task_stage_header">
-                <Original>Deliver Cargo</Original>
-                <Russian>Доставьте груз</Russian>
-                <Chinesesimp>运送货物</Chinesesimp>
-                <Korean>화물 운송</Korean>
-                <French>Livrer la cargaison</French>
-                <Turkish>Kargoyu Teslim Et</Turkish>
-            </Key>
             <Key ID="STR_A3A_Missions_LOG_Ammo_task_header">
                 <Original>Steal or Destroy Ammo Truck</Original>
                 <Russian>Угоните или уничтожьте грузовик с боеприпасами</Russian>
@@ -13735,9 +13711,6 @@
                 <French>Accès au marché des véhicules</French>
                 <Turkish>Araç Marketine Eriş</Turkish>
             </Key>
-            <Key ID="STR_antistasi_actions_common_request_mission_text">
-                <Original>Request Delivery Mission</Original>
-            </Key>
             <Key ID="STR_antistasi_actions_drop_here">
                 <Original>Drop here</Original>
                 <Russian>Бросить здесь</Russian>
@@ -14320,13 +14293,6 @@
                 <Chinesesimp>保护VIP</Chinesesimp>
                 <Korean>VIP 보호</Korean>
                 <French>VIP protégé</French>
-            </Key>
-            <Key ID="STR_antistasi_actions_acknowledge_cargo">
-                <Original>Acknowledge Cargo</Original>
-                <Russian>Подтвердить получение груза</Russian>
-                <Chinesesimp>确认货物</Chinesesimp>
-                <Korean>화물 확인</Korean>
-                <French>Confirmer la cargaison</French>
             </Key>
             <Key ID="STR_antistasi_actions_car_bomb_disarm">
                 <Original>Disarm car bomb</Original>

@@ -62,12 +62,15 @@ class CfgFunctions
         class missions
         {
             file = QPATHTOFOLDER(functions\missions);
+            class LOG_delivery_addEHExplosive {};
             class LOG_delivery_createCargo {};
+            class LOG_delivery_ehExplosive {};
             class LOG_delivery_format {};
             class LOG_delivery_getCargo {};
             class LOG_delivery_getCargoExplosive {};
             class LOG_delivery_getCargoValue {};
             class LOG_delivery_getData {};
+            class LOG_delivery_requestCooldown {};
             class LOG_delivery_requestMission {};
             class LOG_delivery_setData {};
         };

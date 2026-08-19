@@ -1,4 +1,38 @@
+/*
+    Author:
+        Silence
+    
+    Description:
+        Gets relevant zones to hopefully request a delivery mission starting from _origin
+        Currently attached to the black market/arms dealer. Works anywhere, really, as the BM controls all trade anyway
+    
+    Params:
+        _origin <STRING>
+    
+    Dependencies:
+        outposts | seaports | milbases | airportsX | factories | resourcesX
+        watchpostsFIA | roadblocksFIA | hmgPostsFIA | aaPostsFIA | atPostsFIA
+        traderMarker
+    
+    Scope:
+        Server
+    
+    Environment:
+        Unscheduled
+    
+    Usage:
+        [traderMarker] call A3U_fnc_LOG_delivery_requestMission;
+    
+    Return:
+        N/A
+*/
+
+#define HINT_HEADER_BM localize "STR_A3U_HOVER_BLACK_MARKET"
+
 params ["_origin"];
+
+private _hasBeenRequested = missionNamespace getVariable ["A3A_cargo_hasBeenRequested", false];
+if (_hasBeenRequested) exitWith {[HINT_HEADER_BM, localize "STR_chats_mission_request_already_type"] remoteExec ["A3A_fnc_customHint", 0, false]};
 
 private _originPos = getMarkerPos _origin;
 
@@ -11,12 +45,17 @@ if (!isNil "traderMarker") then {_friendlyAreas pushBack traderMarker};
 
 _friendlyAreas deleteAt (_friendlyAreas find _origin); // Just incase to prevent stupidity
 
-private _destinationAreas = _friendlyAreas select {((getMarkerPos _x) distance2D _originPos) <= distanceMission};
+private _destinationAreas = _friendlyAreas select {((getMarkerPos _x) distance2D _originPos) >= distanceMission}; // We want to find FAR targets first, ideally
 if (_destinationAreas isEqualTo []) then {_destinationAreas = _friendlyAreas};
+if (_destinationAreas isEqualTo []) exitWith { // If we're STILL empty then RIP
+    [
+        HINT_HEADER_BM,
+        localize "STR_A3A_Missions_LOG_Delivery_request_fail_viability_text"
+    ] remoteExec ["A3A_fnc_customHint", 0, false]
+};
 
-if (_destinationAreas isEqualTo []) exitWith {}; // Text in chat explaining you're an idiot if there is SOMEHOW still no options
 private _destination = selectRandom _destinationAreas;
 
 [[_origin, _destination], "A3A_fnc_LOG_Delivery"] remoteExec ["A3A_fnc_scheduler", 2];
 
-// private _markerSide = sidesX getVariable [_marker, sideUnknown];
+[1800] spawn A3U_fnc_LOG_delivery_requestCooldown; // 1800 usual

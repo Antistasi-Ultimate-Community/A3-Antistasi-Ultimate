@@ -8,22 +8,24 @@
         You can transport the cargo there, LITERALLY drive the cargo there (e.g if the car is cargo), fly it, who cares
     
     Params:
-        TBD
+        _origin <STRING> <Default: "">
+        _destination <STRING> <Default: "">
+        _cargo <ARRAY<STRING>> <Default: []>
     
     Dependencies:
-        N/A
+        traderMarker
     
     Scope:
-        N/A
+        Server
     
     Environment:
-        N/A
+        Scheduled
     
     Usage:
-        [TBD] call A3A_fnc_LOG_Delivery;
+        [traderMarker, selectRandom citiesX] spawn A3A_fnc_LOG_Delivery;
     
     Return:
-        TBD
+        N/A
 */
 
 // IDEA: You talk to a guy. He lets you choose how many items from the categories and gives you an estimated payout.
@@ -94,31 +96,33 @@ private _cargoObjects = [];
 
 {
     private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
-    private _cargoObject = [_x, _cargoType, _pos] call A3U_fnc_LOG_delivery_createCargo;
+    private _cargoObject = [_x, _pos] call A3U_fnc_LOG_delivery_createCargo;
     _cargoObjects pushBack _cargoObject;
 } forEach _cargo;
 
 // Cargo check functions
 private _fnc_isCargoAcknowledged = {
     params ["_cargoObjects"];
-    ({_x getVariable ["A3A_cargo_acknowledged", false] isEqualTo true} count _cargoObjects) isEqualTo (count _cargoObjects);
+    ({_x getVariable ["A3A_cargo_acknowledged", false] isEqualTo true || {!alive _x}} count _cargoObjects) isEqualTo (count _cargoObjects);
 };
 
-private _fnc_isCargoAlive = {
+private _fnc_isCargoDead = {
     params ["_cargoObjects"];
-    ({alive _x} count _cargoObjects) isEqualTo (count _cargoObjects);
+    ({!alive _x} count _cargoObjects) isEqualTo (count _cargoObjects);
 };
 
 private _fnc_isCargoDelivered = {
     params ["_cargoObjects", "_destinationPos", "_range"];
-    ({(_x distance2D _destinationPos) < _range} count _cargoObjects) isEqualTo (count _cargoObjects);
+    ({(_x distance2D _destinationPos) < _range || {!alive _x}} count _cargoObjects) isEqualTo (count _cargoObjects) &&
+    ({_x getVariable ["A3A_cargo_isLoaded", false] isEqualTo false} count _cargoObjects) isEqualTo (count _cargoObjects) && 
+    ({isNull ropeAttachedTo _x} count _cargoObjects) isEqualTo (count _cargoObjects);
 };
 
-private _functions = [_fnc_cleanup, _fnc_isCargoAlive];
+private _functions = [_fnc_cleanup, _fnc_isCargoDead];
 private _fnc_failureCheck = {
     params ["_taskId", "_cargoObjects", "_expireTime", "_functions"];
-    _functions params ["_fnc_cleanup", "_fnc_isCargoAlive"];
-    if ((time > _expireTime) || {!([_cargoObjects] call _fnc_isCargoAlive)}) exitWith {
+    _functions params ["_fnc_cleanup", "_fnc_isCargoDead"];
+    if ((time > _expireTime) || {([_cargoObjects] call _fnc_isCargoDead)}) exitWith {
         [_taskId, _cargoObjects, "FAILED"] call _fnc_cleanup;
     };
 };
@@ -128,7 +132,7 @@ waitUntil {
     sleep 5;
     time > _missionExpireTime ||
     {[_cargoObjects] call _fnc_isCargoAcknowledged} || 
-    {!([_cargoObjects] call _fnc_isCargoAlive)}
+    {([_cargoObjects] call _fnc_isCargoDead)}
 };
 
 // Expiry/failure sanity check
@@ -148,9 +152,9 @@ private _missionCompletionTime = time + 3600; // 1 hour to complete the delivery
 waitUntil {
     sleep 5;
     time > _missionCompletionTime ||
-    {[_cargoObjects, _destinationPos, 15] call _fnc_isCargoDelivered} || 
-    {!([_cargoObjects] call _fnc_isCargoAlive)}
-};
+    {[_cargoObjects, _destinationPos, 15] call _fnc_isCargoDelivered} ||
+    {([_cargoObjects] call _fnc_isCargoDead)}
+}; // We could in theory also run a new thread on each cargo object to check if it's delivered, that way you can deliver one at a time
 
 // Expiry/failure sanity check
 [_taskId, _cargoObjects, _missionCompletionTime, _functions] call _fnc_failureCheck;
@@ -161,10 +165,19 @@ private _destinationData = [true, _cargo]; // <bool>, <array<string>>
 
 // Calculate payment | We ideally want to give bonuses for both distance travelled and cargo type
 private _payment = 0;
+private _distanceTravelled = (_originPos distance2D _destinationPos) / 500;
+
 {
+    if !(alive _x) then {continue};
+
     private _cargoValue = [(typeOf _x)] call A3U_fnc_LOG_delivery_getCargoValue;
-    if (alive _x) then {_payment = _payment + _cargoValue};
+    
+    _payment = _payment + _cargoValue;
+    if ([_x] call A3U_fnc_LOG_delivery_getCargoExplosive isEqualTo 1) then {_payment = _payment + 1000};
 } forEach _cargoObjects;
+
+private _bonus = round (_distanceTravelled * 250); // +250 per 500m?
+_payment = _payment + _bonus;
 
 // Get players "involved" (ish) and pay them
 private _playersInvolved = (call SCRT_fnc_misc_getRebelPlayers) inAreaArray ([_destination, _sizeComplete, _sizeComplete]);

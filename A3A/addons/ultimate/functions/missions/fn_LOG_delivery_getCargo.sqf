@@ -1,8 +1,34 @@
+/*
+    Author:
+        Silence
+    
+    Description:
+        Gets a cargo type from list _cargoTypes
+    
+    Params:
+        N/A
+    
+    Dependencies:
+        N/A
+    
+    Scope:
+        Server, Client
+    
+    Environment:
+        Unscheduled
+    
+    Usage:
+        call A3U_fnc_LOG_delivery_getCargo;
+    
+    Return:
+        [_cargoType, _cargo] <STRING> | <ARRAY<STRING>>
+*/
+
 #include "..\..\script_component.hpp"
 
 private _cargoTypes = [
     "CIVIL", 1,
-    "CIVILFUEL", 0.8, // Explosive, active fuel
+    "CIVILFUEL", 0.8, // Technically flammable but not explosive perse
     "CIVILFOOD", 1,
     "CIVILWATER", 1,
     "CIVILMEDICINE", 0.8,
@@ -22,20 +48,20 @@ private _cargo = nil;
 
 switch (_cargoType) do {
     case "CIVIL": {
-        _cargo = ["Land_PaperBox_01_small_stacked_F", "Land_PaperBox_01_small_stacked_F"];
+        _cargo = ["Land_PaperBox_01_small_stacked_F", "Land_PaperBox_01_small_stacked_F", "Land_PaperBox_01_small_stacked_F"];
     };
     case "CIVILFUEL": {
-        _cargo = ["CargoNet_01_barrels_F", "CargoNet_01_barrels_F"];
+        _cargo = ["CargoNet_01_barrels_F", "CargoNet_01_barrels_F", "CargoNet_01_barrels_F"];
     };
     case "CIVILFOOD": {
-        _cargo = ["Land_FoodSacks_01_cargo_white_idap_F", "Land_FoodSacks_01_cargo_white_idap_F"];
+        _cargo = ["Land_FoodSacks_01_cargo_white_idap_F", "Land_FoodSacks_01_cargo_white_idap_F", "Land_FoodSacks_01_cargo_white_idap_F"];
     };
     case "CIVILWATER": {
-        _cargo = ["Land_WaterBottle_01_stack_F", "Land_WaterBottle_01_stack_F"];
+        _cargo = ["Land_WaterBottle_01_stack_F", "Land_WaterBottle_01_stack_F", "Land_WaterBottle_01_stack_F"];
     };
     case "CIVILMEDICINE": {
         _cargo = selectRandom [
-            ["C_IDAP_supplyCrate_F", "C_IDAP_supplyCrate_F"], ["C_IDAP_CargoNet_01_supplies_F", "C_IDAP_CargoNet_01_supplies_F"]
+            ["C_IDAP_supplyCrate_F", "C_IDAP_supplyCrate_F", "C_IDAP_supplyCrate_F"], ["C_IDAP_CargoNet_01_supplies_F", "C_IDAP_CargoNet_01_supplies_F", "C_IDAP_CargoNet_01_supplies_F"]
         ];
     };
     case "CONSTRUCTIONWOOD": {

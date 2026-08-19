@@ -205,7 +205,7 @@ switch _typeX do
     {
         _flag addAction [format [
             "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", // Change this
-            localize "STR_antistasi_actions_acknowledge_cargo"
+            localize "STR_A3A_Missions_LOG_Delivery_acknowledge_action"
         ], A3A_fnc_acknowledgeCargo,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target && {_target getVariable ['A3A_cargo_acknowledged', false] isEqualTo false}",4];
     };
     case "captureX":
