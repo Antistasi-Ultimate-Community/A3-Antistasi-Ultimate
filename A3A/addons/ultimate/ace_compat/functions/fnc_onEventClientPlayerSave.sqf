@@ -38,7 +38,7 @@ if !([player] call ace_medical_status_fnc_hasStableVitals) then {
 _toSave set["acex_field_rations_hunger", player getVariable["acex_field_rations_hunger", 0]];
 _toSave set["acex_field_rations_thirst", player getVariable["acex_field_rations_thirst", 0]];
 
-INFO("Storing ACE variables into pluginsData: %1",_toSave);
+Info_1("Storing ACE variables into pluginsData: %1",_toSave);
 
 _pluginsData set[QSUBADDON, _toSave];
 
