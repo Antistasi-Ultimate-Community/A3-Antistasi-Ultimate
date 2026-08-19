@@ -320,7 +320,7 @@ if (!_isUISilentUpdate) then {
     [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
 
     // ENFORCE VISIBILITY RULE: HQ, Trader, and Rally Points always show text labels
-    if (_originalName in (airportsX + milbases) || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
+    if (RETDEF(A3AU_setting_alwaysShowMarkerName,false) || {_originalName in (airportsX + milbases)} || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
         _visibleMarkerName setMarkerText _markerLabelOnly;
     } else {
         _visibleMarkerName setMarkerText "";
