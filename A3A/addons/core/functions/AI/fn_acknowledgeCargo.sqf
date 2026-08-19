@@ -8,4 +8,4 @@ uiSleep 1;
 
 [_target] call A3A_Logistics_fnc_addLoadAction;
 
-// [_cargo] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _cargo]; // Doesn't work, we need a new fnc
+[_target, "carry"] remoteExec ["A3A_fnc_flagaction", [teamPlayer,civilian], _target];

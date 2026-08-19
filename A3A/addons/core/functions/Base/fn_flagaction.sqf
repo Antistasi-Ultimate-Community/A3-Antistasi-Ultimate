@@ -9,6 +9,11 @@ private _actionX = -1;
 
 switch _typeX do
 {
+    case "carry":
+    {
+        private _cond = "isNull attachedTo _target && {crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}";
+        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "", _cond, 4];
+    };
     case "take":
     {
         removeAllActions _flag;
@@ -313,7 +318,7 @@ switch _typeX do
         _flag addAction [localize "STR_antistasi_actions_move_static_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", _cond+"{!isNil {_target getVariable 'lockedForAI'}}", 4];
         _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", _cond+"{isNil {_target getVariable 'lockedForAI'}}", 4];
     //    _flag addAction [localize "STR_antistasi_actions_move_static_kick_ai", A3A_fnc_lockStatic, nil, 1, true, false, "", _cond+"isNil {_target getVariable 'lockedForAI'} and !(isNull gunner _target) and !(isPlayer gunner _target)}", 4];
-        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "",  _cond+"{crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}", 4];
+        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "", _cond+"{crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}", 4];
     };
     case "vehiclestatic":
     {
