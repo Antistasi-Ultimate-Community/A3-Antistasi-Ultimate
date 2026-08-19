@@ -34,7 +34,7 @@ if (isNil "_aceData") exitWith {
     nil;
 };
 
-INFO("Loading ACE variables from pluginsData: %1",_aceData);
+Info_1("Loading ACE variables from pluginsData: %1",_aceData);
 
 if ("medical_state" in _aceData) then {
     [player, _aceData get "medical_state"] call ace_medical_fnc_deserializeState;
