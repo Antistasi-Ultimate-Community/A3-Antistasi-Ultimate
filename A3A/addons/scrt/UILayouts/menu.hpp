@@ -1370,6 +1370,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitRifle";
+			loadoutArsenalButtonIDC = 1200101;
+			loadoutResetButtonIDC = 1200201;
 		};
 
 		class l2Text: SimpleText
@@ -1380,6 +1383,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitMG";
+			loadoutArsenalButtonIDC = 1200102;
+			loadoutResetButtonIDC = 1200202;
 		};
 
 		class l3Text: SimpleText
@@ -1390,6 +1396,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.324 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitMedic";
+			loadoutArsenalButtonIDC = 1200103;
+			loadoutResetButtonIDC = 1200203;
 		};
 
 		class l4Text: SimpleText
@@ -1400,6 +1409,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitEng";
+			loadoutArsenalButtonIDC = 1200104;
+			loadoutResetButtonIDC = 1200204;
 		};
 
 		class l5Text: SimpleText
@@ -1410,6 +1422,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitGL";
+			loadoutArsenalButtonIDC = 1200105;
+			loadoutResetButtonIDC = 1200205;
 		};
 
 		class l6Text: SimpleText
@@ -1420,6 +1435,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitSniper";
+			loadoutArsenalButtonIDC = 1200106;
+			loadoutResetButtonIDC = 1200206;
 		};
 
 		class l7Text: SimpleText
@@ -1430,6 +1448,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.456 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitLAT";
+			loadoutArsenalButtonIDC = 1200107;
+			loadoutResetButtonIDC = 1200207;
 		};
 
 		class l8Text: SimpleText
@@ -1440,6 +1461,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.489 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitCrew";
+			loadoutArsenalButtonIDC = 1200108;
+			loadoutResetButtonIDC = 1200208;
 		};
 
 		class l9Text: SimpleText
@@ -1450,6 +1474,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitSL";
+			loadoutArsenalButtonIDC = 1200109;
+			loadoutResetButtonIDC = 1200209;
 		};
 
 		class l10Text: SimpleText
@@ -1460,6 +1487,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.555 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitExp";
+			loadoutArsenalButtonIDC = 1200110;
+			loadoutResetButtonIDC = 1200210;
 		};
 
 		class l11Text: SimpleText
@@ -1470,6 +1500,9 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.588 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitAT";
+			loadoutArsenalButtonIDC = 1200111;
+			loadoutResetButtonIDC = 1200211;
 		};
 
 		class l12Text: SimpleText
@@ -1480,246 +1513,225 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			y = 0.621 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
+			loadoutMoniker = "unitAA";
+			loadoutArsenalButtonIDC = 1200112;
+			loadoutResetButtonIDC = 1200212;
 		};
 
 		class l1ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200101;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitRifle'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l1ResetButton: ResetButton
+		class l1ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200201;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitRifle') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l2ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200102;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitMG'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l2ResetButton: ResetButton
+		class l2ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200202;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitMG') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l3ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200103;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.324 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitMedic'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l3ResetButton: ResetButton
+		class l3ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200203;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.324 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitMedic') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l4ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200104;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitEng'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l4ResetButton: ResetButton
+		class l4ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200204;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitEng') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 		
 		class l5ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200105;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitGL'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l5ResetButton: ResetButton
+		class l5ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200205;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitGL') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l6ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200106;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitSniper'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l6ResetButton: ResetButton
+		class l6ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200206;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitSniper') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l7ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200107;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.456 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitLAT'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l7ResetButton: ResetButton
+		class l7ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200207;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.456 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitLAT') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l8ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200108;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitCrew'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l8ResetButton: ResetButton
+		class l8ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200208;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitCrew') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l9ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200109;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitSL'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l9ResetButton: ResetButton
+		class l9ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200209;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitSL') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l10ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200110;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.555 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitExp'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l10ResetButton: ResetButton
+		class l10ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200210;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.555 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitExp') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l11ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200111;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.588 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitAT'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l11ResetButton: ResetButton
+		class l11ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200211;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.588 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitAT') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 
 		class l12ArsenalButton: ArsenalButton
 		{
-			idc = -1;
+			idc = 1200112;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.621 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "currentRebelLoadout = A3A_faction_reb get 'unitAA'; [] call JN_fnc_arsenal_handleAction;";
 		};
 
-		class l12ResetButton: ResetButton
+		class l12ResetButton: CopyPasteResetButton
 		{
-			idc = -1;
+			idc = 1200212;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.621 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
-			action = "(A3A_faction_reb get 'unitAA') call SCRT_fnc_arsenal_clearLoadout;";
 		};
 	};
 };
