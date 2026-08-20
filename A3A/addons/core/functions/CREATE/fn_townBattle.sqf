@@ -83,7 +83,7 @@ private _factionReb = A3A_faction_reb;
 private _factionName = _faction get "name";
 
 private _nameDest = [_mrkDest] call A3A_fnc_localizar;
-private _taskId = format ["townBattle_%1_%2", _city, A3A_taskCount];
+private _taskId = format ["townBattle_%1_%2", _mrkDest, A3A_taskCount];
 [[teamPlayer,civilian,Occupants],_taskId,[format [localize "STR_townBattle_desc",_nameDest,_factionName],format [localize "STR_townBattle_task",_nameDest,_factionName],_mrkDest],_posDest,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
 [_taskId, "townBattle", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
@@ -175,9 +175,8 @@ for "_i" from 0 to round(random [4,5,6]) do {
     private _vehicle = [_randomVehicle, _posVehicle, _side] call A3U_fnc_createCrashedVehicle;
     private _units = [_deadSoldierClasses, _posUnit, round(random [2, 3, 5])] call A3U_fnc_createDeadSoldiers;
 
-    if (round(random 100) < 5) then {
-        _vehicle setVectorUp [1, (selectRandom [0, 1]), 0];
-    };
+    if (round(random 100) < 5) then {_vehicle setVectorUp [1, (selectRandom [0, 1]), 0]};
+    if (round(random 100) < 30) then {[_vehicle, true] call A3U_fnc_setLock};
 
     _effectsFire append _fire;
     _effectsVehicle pushBack _vehicle;
