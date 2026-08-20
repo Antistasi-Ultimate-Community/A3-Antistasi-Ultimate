@@ -15,3 +15,5 @@
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
 // Server-only event; on game save; params=[]
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
+// Server-to-client-only event; sent to each client on global save; params=[String uuid]
+#define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX,event,serverPlayerSave))
