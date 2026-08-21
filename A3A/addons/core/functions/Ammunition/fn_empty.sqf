@@ -1,15 +1,14 @@
-private _truckX = objNull;
+params[["_truckX", nil, [objNull]]];
 
-if (count _this > 0) then {
-	_truckX = _this select 0;
+if !(isNil "_truckX") then {
 	if (_truckX isKindOf "StaticWeapon") then {_truckX = objNull};
 } else {
 	private _trucksX = nearestObjects [boxX, ["Helicopter","Plane","LandVehicle","ReammoBox_F"], 20];
-	_trucksX = _trucksX select {not (_x isKindOf "StaticWeapon")};
+	_trucksX = _trucksX select { !(isObjectHidden _x) && { isNull attachedTo _x } && { !(_x isKindOf "StaticWeapon") } };
 	// Prevent trolling by hiding small UAVs near the arsenal
-	_trucksX = _trucksX select {getNumber (configFile >> "CfgVehicles" >> (typeof _x) >> "isUAV") == 0};
-	_trucksX = _trucksX - [boxX,vehicleBox];
-	if (count _trucksX < 1) then {_truckX = vehicleBox} else {_truckX = _trucksX select 0};
+	_trucksX = _trucksX select { getNumber(configOf _x >> "isUAV") == 0 };
+	_trucksX = _trucksX - [boxX, vehicleBox];
+	_truckX = _trucksX param[0, objNull, [[]]];
 };
 
 if (isNull _truckX) exitWith {};
