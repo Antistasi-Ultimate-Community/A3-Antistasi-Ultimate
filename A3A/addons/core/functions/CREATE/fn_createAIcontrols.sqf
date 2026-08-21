@@ -34,6 +34,7 @@ if (isClass (configfile >> "CfgPatches" >> "LIB_core")) then {
 _isControl = if (isOnRoad _positionX) then {true} else {false};
 
 private _aggrRoadblock = [aggressionOccupants, aggressionInvaders] select (_sideX == Invaders);
+_aggrRoadblock = _aggrRoadblock max A3A_roadBlocksBaseChance;
 
 if (random 100 < _aggrRoadblock) then
 {
