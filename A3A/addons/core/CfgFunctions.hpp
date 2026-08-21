@@ -124,6 +124,7 @@ class CfgFunctions
             class blackout {};
             class buildHQ {};
             class calculateAggression {};
+            class canAIMountVehicle {};
             class canMoveHQ {};
             class chooseAttack {};
             class citiesToCivPatrol {};
