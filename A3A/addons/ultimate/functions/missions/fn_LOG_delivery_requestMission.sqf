@@ -29,12 +29,10 @@
 
 #define HINT_HEADER_BM localize "STR_A3U_HOVER_BLACK_MARKET"
 
-params ["_origin"];
+params [["_origin", ""]];
 
 private _hasBeenRequested = missionNamespace getVariable ["A3A_cargo_hasBeenRequested", false];
 if (_hasBeenRequested) exitWith {[HINT_HEADER_BM, localize "STR_chats_mission_request_already_type"] remoteExec ["A3A_fnc_customHint", 0, false]};
-
-private _originPos = getMarkerPos _origin;
 
 private _areas = (outposts + seaports + milbases + airportsX + factories + resourcesX); // + citiesX?
 private _friendlyAreasAI = (watchpostsFIA + roadblocksFIA + hmgPostsFIA + aaPostsFIA + atPostsFIA);
@@ -43,8 +41,13 @@ private _friendlyAreas = (_friendlyAreasAI + _friendlyAreasOwned);
 
 if (!isNil "traderMarker") then {_friendlyAreas pushBack traderMarker};
 
-_friendlyAreas deleteAt (_friendlyAreas find _origin); // Just incase to prevent stupidity
+if (_origin isEqualTo "") then {
+    _origin = selectRandom (_friendlyAreas + "Synd_HQ");
+};
 
+private _originPos = getMarkerPos _origin;
+
+_friendlyAreas deleteAt (_friendlyAreas find _origin); // Just incase to prevent stupidity
 private _destinationAreas = _friendlyAreas select {((getMarkerPos _x) distance2D _originPos) >= distanceMission}; // We want to find FAR targets first, ideally
 if (_destinationAreas isEqualTo []) then {_destinationAreas = _friendlyAreas};
 if (_destinationAreas isEqualTo []) exitWith { // If we're STILL empty then RIP
