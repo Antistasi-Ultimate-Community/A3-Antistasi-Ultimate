@@ -8,7 +8,7 @@ if !(isNil "_truckX") then {
 	// Prevent trolling by hiding small UAVs near the arsenal
 	_trucksX = _trucksX select { getNumber(configOf _x >> "isUAV") == 0 };
 	_trucksX = _trucksX - [boxX, vehicleBox];
-	_truckX = _trucksX param[0, objNull, [[]]];
+	_truckX = _trucksX param[0, objNull, [objNull]];
 };
 
 if (isNull _truckX) exitWith {};
