@@ -101,6 +101,7 @@ if (_originalName in airportsX) then {
         else { if (_originalName in citiesX) then { _markerType = "A3AU_city_mrk"; }; };
     } else {
         _markerColor = if (_markerSide == teamPlayer) then {colorTeamPlayer} else {[colorOccupants, colorInvaders] select (_markerSide == Invaders)};
+        if (_isTraderMarker) then {_markerColor = "ColorUNKNOWN"};
         
         call {
             if (_isMilAdmin) exitWith { _markerType = "A3AU_miladmin_mrk"; };
@@ -117,8 +118,8 @@ if (_originalName in airportsX) then {
     };
 };
 
-if (_markerType != "") then {_visibleMarkerName setMarkerTypeLocal _markerType;};
-if (_markerColor != "") then {_visibleMarkerName setMarkerColorLocal _markerColor;};
+if (_markerType != "") then {_visibleMarkerName setMarkerTypeLocal _markerType};
+if (_markerColor != "") then {_visibleMarkerName setMarkerColorLocal _markerColor};
 
 private _nearestCityName = "";
 if (_isMilAdmin || _originalName in mrkAntennas || _originalName in resourcesX || _originalName in factories) then {
@@ -260,7 +261,7 @@ private _flagMarkerType = _markerFaction getOrDefault ["flagMarkerType", ""];
 private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 private _hoverMarkers = missionNamespace getVariable ["A3U_hoverMarkers", []];
 
-if ([_originalName] call A3U_fnc_isMarkerHidden) then {
+if ([_originalName] call A3U_fnc_isMarkerHidden || {_isSyndicateHeadquarters}) then {
     _hoverMetaMap deleteAt _dummyName;
     _hoverMetaMap deleteAt _originalName;
     _hoverMarkers = _hoverMarkers - [_dummyName, _originalName];
@@ -320,7 +321,7 @@ if (!_isUISilentUpdate) then {
     [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
 
     // ENFORCE VISIBILITY RULE: HQ, Trader, and Rally Points always show text labels
-    if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)} || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
+    if (RETDEF(A3AU_setting_alwaysShowMarkerName,false) || {_originalName in (airportsX + milbases)} || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
         _visibleMarkerName setMarkerText _markerLabelOnly;
     } else {
         _visibleMarkerName setMarkerText "";
