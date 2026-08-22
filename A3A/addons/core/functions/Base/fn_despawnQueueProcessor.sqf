@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
 Function: A3A_fnc_despawnQueueProcessor
 
@@ -33,13 +34,13 @@ GVAR(despawnerRunning) = true;
 // Process queue
 GVAR(despawnQueue) = GVAR(despawnQueue) select {
     // Already deleted by somebody else or invalid
-    if (isNull _x || { isNil(_x getVariable QGVAR(despawnTTL)) }) then { continueWith false };
+    if (isNull _x || {isNil { _x getVariable QGVAR(despawnTTL) }}) then { continueWith false };
 
     // Still alive, retain queue entry
     if (alive _x) then { continueWith true };
 
     // First seen dead; mark time of death
-    if (isNil(_x getVariable QGVAR(despawnTime))) then {
+    if (isNil { _x getVariable QGVAR(despawnTime) }) then {
         private _ttl = _x getVariable QGVAR(despawnTTL);
         _x setVariable[QGVAR(despawnTime), diag_tickTime + _ttl];
     };
