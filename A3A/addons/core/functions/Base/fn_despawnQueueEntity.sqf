@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /* ----------------------------------------------------------------------------
 Function: A3A_fnc_despawnQueueEntity
 
@@ -45,7 +46,7 @@ _this spawn {
 
     waitUntil { isNil QGVAR(despawnerRunning) };
 
-    private _ttl = params[1, cleantime, [0]];
+    private _ttl = param[1, cleantime, [0]];
 
     _entity setVariable[QGVAR(despawnTTL), _ttl];
     GVAR(despawnQueue) pushBackUnique _entity;
