@@ -227,7 +227,7 @@ switch (true) do {
 			};
 		};
 
-		if (toLowerANSI worldName in ["enoch", "vn_khe_sanh", "esseker", "sefrouramal"]) then {
+		if ([] call A3A_fnc_isRiverportMap) then {
 			["TaskSucceeded", ["", localize "STR_notifiers_riverport_taken"]] remoteExec ["BIS_fnc_showNotification",_winner];
 			["TaskFailed", ["", localize "STR_notifiers_riverport_lost"]] remoteExec ["BIS_fnc_showNotification",_loser];
 			["TaskUpdated",["",format [localize "STR_notifiers_riverport_lost_other",_textX]]] remoteExec ["BIS_fnc_showNotification",_other];

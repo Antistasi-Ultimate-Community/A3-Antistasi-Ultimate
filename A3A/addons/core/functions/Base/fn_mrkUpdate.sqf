@@ -181,7 +181,7 @@ private _markerTitle = call {
     
     if (_originalName in seaports) exitWith {
         private _portName = [seaports, "STR_A3AU_seaportNames"] call _getLocName;
-        format [localize (if (toLowerANSI worldName in ["enoch", "vn_khe_sanh", "esseker"]) then {"STR_port_river"} else {"STR_port_sea"}), _portName]
+        format [["STR_port_sea", "STR_port_river"] select ([] call A3A_fnc_isRiverportMap), _portName];
     };
 
     if (_originalName in watchpostsFIA) exitWith { format [localize "STR_marker_watchpost", _factionName] };

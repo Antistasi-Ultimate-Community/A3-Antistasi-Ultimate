@@ -155,6 +155,8 @@ class CfgFunctions
             class initPetros {};
             class isFrontline {};
             class isFrontlineNoFIA {};
+            class isRiverportMap {};
+            class isSeaportMap {};
             class arePositionsConnected {};
             class joinMultipleGroups {};
             class localizar {};
