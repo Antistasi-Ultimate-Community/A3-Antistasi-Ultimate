@@ -28,4 +28,5 @@ Author:
 ---------------------------------------------------------------------------- */
 private _map = param[0, worldName, [""]];
 
-toLowerANSI _map in ["enoch", "vn_khe_sanh", "esseker", "sefrouramal"];
+getNumber(configFile >> "A3A" >> "mapInfo" >> _map >> "hasRiverPorts") != 0;
+
