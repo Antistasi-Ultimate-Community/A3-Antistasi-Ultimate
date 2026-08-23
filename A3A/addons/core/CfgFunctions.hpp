@@ -146,6 +146,7 @@ class CfgFunctions
             class garbageCleanerTracker {};
             class garrisonInfo {};
             class getAggroLevelString {};
+            class getLocationName {};
             class getRecentDamage {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
