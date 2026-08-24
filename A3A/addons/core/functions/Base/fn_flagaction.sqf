@@ -56,7 +56,7 @@ switch _typeX do
             },
             nil,0,false,true,"","([_this] call A3A_fnc_isMember or _this == theBoss) and (petros == leader group petros)",4
         ];
-        petros addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss) and (petros == leader group petros)"];
+        petros addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem,nil,0,false,true,"","(_this == theBoss) and (petros == leader group petros) and (isNull objectParent _this) and !(call A3A_fnc_isCarrying)"];
         petros addAction [format ["<img image='a3\ui_f\data\igui\cfg\actions\takeflag_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_build_hq"], A3A_fnc_buildHQ,nil,0,false,true,"","(_this == theBoss) and (petros != leader group petros)",4];
     };
     case "truckX":
@@ -76,7 +76,8 @@ switch _typeX do
                 format [
                     (format ["<img size='1.8' <img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa' /> <t>%1</t>", localize "STR_antistasi_actions_revive"]), 
                     name _flag
-                ], A3A_fnc_actionRevive,nil,6,true,true,"","!(_this getVariable [""helping"",false]) and (isNull attachedTo _target)",4];
+                ], A3A_fnc_actionRevive,nil,6,true,true,"","!(_this getVariable [""helping"",false]) and (isNull attachedTo _target)",4
+            ];
             _flag setUserActionText [_actionX,format [(localize "STR_antistasi_actions_revive"), name _flag],"<t size='2'><img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa'/></t>"];
 
             if (reviveKitsEnabled) then {
@@ -106,14 +107,15 @@ switch _typeX do
                 format [(format ["<img size='1.8' <img image='\a3\ui_f\data\igui\cfg\simpletasks\types\help_ca.paa' /> <t>%1</t>", localize "STR_antistasi_actions_revive"]), name _flag], 
                 A3A_fnc_actionRevive,
                 nil,
-                6,true,false,"","!(_this getVariable [""helping"",false]) and (isNull attachedTo _target)",4];
+                6,true,false,"","!(_this getVariable [""helping"",false]) and (isNull attachedTo _target)",4
+            ];
             _flag setUserActionText [_actionX,format [(localize "STR_antistasi_actions_revive"),name _flag],"<t size='2'><img image='\a3\ui_f\data\igui\cfg\simpletasks\types\help_ca.paa'/></t>"];
 
             _actionX = _flag addAction [
-                format [
-                    (format ["<img size='1.8' <img image='\a3\ui_f\data\igui\cfg\actions\take_ca.paa' /> <t>%1</t>", localize "STR_antistasi_actions_carry"]), 
-                    name _flag
-                ], A3A_fnc_carry,nil,5,true,false,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (isNull attachedTo _target) and !(_this getVariable [""helping"",false]);",4];
+                format [(format ["<img size='1.8' <img image='\a3\ui_f\data\igui\cfg\actions\take_ca.paa' /> <t>%1</t>", localize "STR_antistasi_actions_carry"]),name _flag], 
+                A3A_fnc_carry,nil,5,true,false,"",
+                "(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (isNull attachedTo _target) and !(_this getVariable [""helping"",false]) and !(call A3A_fnc_isCarrying);",4
+            ];
             _flag setUserActionText [_actionX,format [localize "STR_antistasi_actions_carry", name _flag],"<t size='2'><img image='\a3\ui_f\data\igui\cfg\actions\take_ca.paa'/></t>"];
             if (reviveKitsEnabled) then {
                 [
@@ -153,7 +155,6 @@ switch _typeX do
             {
                 removeAllActions _flag;
                 if (player == player getVariable ["owner",player]) then {[] call SA_Add_Player_Tow_Actions};
-                call A3A_fnc_dropObject;
             }
             else
             {
@@ -170,7 +171,7 @@ switch _typeX do
         _flag addAction [format [
             "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", 
             localize "STR_antistasi_actions_free_prisoner"
-        ], A3A_fnc_liberaterefugee,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
+        ], A3A_fnc_liberateRefugee,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
     };
     case "deserter":
     {
@@ -192,6 +193,13 @@ switch _typeX do
             "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", 
             localize "STR_antistasi_actions_free_prisoner"
         ], A3A_fnc_liberateFlee,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
+    };
+    case "townVIP":
+    {
+        _flag addAction [format [
+            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", 
+            localize "STR_antistasi_actions_protect_vip"
+        ], A3A_fnc_liberateVIP,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target",4];
     };
     case "captureX":
     {
@@ -292,14 +300,26 @@ switch _typeX do
     {
         _flag addAction [localize "STR_antistasi_actions_move_static_weapon_emplacement", SCRT_fnc_common_moveOutpostStatic, nil, 4, true, false, "", "isPlayer _this", 4];
     };
+
+    #define VEHICLE_STATIC_COND(aiFlagVar1) \
+        QUOTE((isPlayer _this) && {isNull objectParent _this} && {_this call A3A_fnc_isMember} && {[ARR_2(_target,aiFlagVar1)] call A3A_fnc_canAIMountVehicle})
     case "static":
     {
-        private _cond = "(_target getVariable ['ownerSide', teamPlayer] == teamPlayer) and (isNull attachedTo _target) and (_this call A3A_fnc_isMember) and ";
-        _flag addAction [localize "STR_antistasi_actions_move_static_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", _cond+"!isNil {_target getVariable 'lockedForAI'}", 4];
-        _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", _cond+"isNil {_target getVariable 'lockedForAI'}", 4];
-    //    _flag addAction [localize "STR_antistasi_actions_move_static_kick_ai", A3A_fnc_lockStatic, nil, 1, true, false, "", _cond+"isNil {_target getVariable 'lockedForAI'} and !(isNull gunner _target) and !(isPlayer gunner _target)}", 4];
-        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject, nil, 1.5, false, true, "",  _cond+"(count crew _target == 0)", 4];
+        _flag addAction [localize "STR_antistasi_actions_move_static_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(true), 4];
+        _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(false), 4];
+        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "", QUOTE(
+            (isPlayer _this) && {isNull objectParent _this} && {_this call A3A_fnc_isMember} &&
+            {_target getVariable[ARR_2(QQUOTE(ownerSide),teamPlayer)] == teamPlayer} && {locked _target < 2} && {isNull attachedTo _target} &&
+            {crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}
+        ), 4];
     };
+    case "vehiclestatic":
+    {
+        _flag addAction [localize "STR_antistasi_actions_move_vehicle_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(true), 4];
+        _flag addAction [localize "STR_antistasi_actions_move_vehicle_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(false), 4];
+    };
+    #undef VEHICLE_STATIC_COND
+
     case "rivals_quest":
     {
         _flag addAction [

@@ -74,6 +74,7 @@ Info_1("City size: %1.", str _size);
 private _damagedBuildings = (nearestObjects [_positionX, ["house"], _size]) select {(count ([_x] call BIS_fnc_buildingPositions)) > 0};
 private _damagedBuildingsCount = round (random [1,2,3]);
 
+private _blacklistPos = [];
 if (count _damagedBuildings > 0) then {
     for "_i" from 0 to _damagedBuildingsCount do {
         private _damagedBuilding = selectRandom _damagedBuildings;
@@ -82,6 +83,7 @@ if (count _damagedBuildings > 0) then {
         private _damagedBuildingCollision = 2 boundingBoxReal _damagedBuilding;
         private _p1 = _damagedBuildingCollision select 0;
         private _p2 = _damagedBuildingCollision select 1;
+        _blacklistPos pushback [_p1, _p2];
         private _maxHeight = abs ((_p2 select 2) - (_p1 select 2));
 
         private _bAtlPos = (getPosATL _damagedBuilding);
@@ -111,24 +113,28 @@ if ((random 100) < 30) then {
 //////////////////////////////////////////////
 //  Leader position and bodyguards	        //
 //////////////////////////////////////////////
-private _buildings = _positionX nearobjects ["house",_size];
+private ["_buildings", "_capableBuildings", "_targetBuilding", "_targetPos"];
 
-if (isNil "_buildings" || {count _buildings < 0}) exitWith {
-    Error("Problems with city buildings, cell leader will be spawned outside of building.");
+_buildings = nearestTerrainObjects [_positionX, ["BUILDING", "BUNKER", "FUELSTATION", "HOSPITAL", "HOUSE", "LIGHTHOUSE", "RUIN"], _size, false, true];
+Debug_1("Buildings found: %1", _buildings);
+
+if (!isNil "_buildings" && {_buildings isNotEqualTo []}) then {
+    _capableBuildings = _buildings select { !(isObjectHidden _x) && { _x buildingPos -1 isNotEqualTo []}};
+    Debug_1("Capable buildings found: %1", _capableBuildings);
+
+    if (!isNil "_capableBuildings" && {_capableBuildings isNotEqualTo []}) then {
+        _targetBuilding = selectRandom _capableBuildings;
+        _targetPos = position _targetBuilding;
+    };
 };
 
-private _capableBuildings = _buildings select {count ([_x] call BIS_fnc_buildingPositions) > 1 && {!(isObjectHidden _x)}};
-
-if (isNil "_capableBuildings" || {count _capableBuildings < 0}) exitWith {
+if (isNil "_targetPos") then {
     Error("Problems with city buildings, cell leader will be spawned outside of building.");
-	_isTargetOutside = true;
+    _targetPos = [_positionX, 0, _size, 2, 0, 0, 0, _blacklistPos, [_positionX, _positionX]] call BIS_fnc_findSafePos;
 };
 
 private _targetGroup = createGroup Rivals;
 _groups pushBack _targetGroup;
-
-private _targetBuilding = selectRandom _capableBuildings;
-private _targetPos = position _targetBuilding;
 
 //////////////////////////////////////////////
 //  Task        	                        //
@@ -154,34 +160,35 @@ private _taskId = "RIV_ATT" + str A3A_taskCount;
 
 waitUntil {sleep 1; (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_targetPos, distanceSPWN1, distanceSPWN1] isNotEqualTo [] || {dateToNumber date > _dateLimitNum}};
 
-private _buildingPositions = [_targetBuilding] call BIS_fnc_buildingPositions;
-private _targetBuildingPositionIndex = random (round ((count _buildingPositions) - 1));
-private _targetBuildingPosition = _buildingPositions select _targetBuildingPositionIndex;
+private ["_target"];
+if (isNil "_targetBuilding") then {
+    _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetPos, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
+} else {
+    private _buildingPositions = _targetBuilding buildingPos -1;
+    private _targetBuildingPosition = selectRandom _buildingPositions;
 
-private _occupiedIndexes = [_targetBuildingPosition];
-private _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetBuildingPosition, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
+    private _occupiedIndexes = [_targetBuildingPosition];
+    _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetBuildingPosition, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 
-if (_isDifficult) then {
-    for "_i" from 1 to (round (random [1,2,4])) do {
-        private _nonOccupiedIndex = -1;
-
-        {
-            if (!(_forEachIndex in _occupiedIndexes)) exitWith {
-                _occupiedIndexes pushBack _forEachIndex;
-                _nonOccupiedIndex = _forEachIndex;
+    if (_isDifficult) then {
+        for "_i" from 1 to (round (random [1,2,4])) do {
+            private _nonOccupiedIndex = -1;
+            private _nonOccupiedIndex = _buildingPositions findIf {
+                !(_x in _occupiedIndexes);
             };
-        } forEach _buildingPositions;
 
-        if (_nonOccupiedIndex != -1) then {
-            private _guardClassName = selectRandom [
-                "loadouts_riv_militia_Mercenary",
-                "loadouts_riv_militia_Partisan",
-                "loadouts_riv_militia_Oppressor",
-                "loadouts_riv_militia_Saboteur",
-                "loadouts_riv_militia_Enforcer"
-            ];
-            private _guardBuildingPos = _buildingPositions select _nonOccupiedIndex;
-            private _guard = [_targetGroup, _guardClassName, _guardBuildingPos, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
+            if (_nonOccupiedIndex != -1) then {
+                _occupiedIndexes pushBack _nonOccupiedIndex;
+                private _guardClassName = selectRandom [                    
+                    "loadouts_riv_militia_Mercenary",
+                    "loadouts_riv_militia_Partisan",
+                    "loadouts_riv_militia_Oppressor",
+                    "loadouts_riv_militia_Saboteur",
+                    "loadouts_riv_militia_Enforcer"
+                ];
+                private _guardBuildingPos = _buildingPositions select _nonOccupiedIndex;
+                private _guard = [_targetGroup, _guardClassName, _guardBuildingPos, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
+            };
         };
     };
 };

@@ -91,5 +91,25 @@ class CfgUserActions {
         displayName = $STR_A3A_keyActions_buildingPlacerUnsafeMode_title;
         tooltip = $STR_A3A_keyActions_buildingPlacerUnsafeMode_desc;
     };
+
+    class GVAR(buildingPlacerZOffsetDecrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZOffsetDecrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZOffsetDecrease_desc;
+    };
+
+    class GVAR(buildingPlacerZOffsetIncrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZOffsetIncrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZOffsetIncrease_desc;
+    };
+
+    class GVAR(buildingPlacerZStepDecrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZStepDecrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZStepDecrease_desc;
+    };
+
+    class GVAR(buildingPlacerZStepIncrease) {
+        displayName = $STR_A3A_keyActions_buildingPlacerZStepIncrease_title;
+        tooltip = $STR_A3A_keyActions_buildingPlacerZStepIncrease_desc;
+    };
 };
 #undef ACTION

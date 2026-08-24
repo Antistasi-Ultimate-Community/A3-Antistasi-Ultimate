@@ -85,7 +85,7 @@ class A3A_BuyVehicleDialog : A3A_TabbedDialog
                     idc = A3A_IDC_SETUP_CVTABLE;
                     fade = 0;
                     access = 1;
-                    onLBSelChanged = "private _controller = (_this select 0); private _selectedIndex = lbCurSel _controller; private _selectedString = _controller lbText _selectedIndex; diag_log _selectedString; [""selectCategory"", [_selectedString]] call A3A_fnc_buyVehicleDialog;";
+                    onLBSelChanged = "private _controller = (_this select 0); private _selectedIndex = lbCurSel _controller; private _selectedString = _controller lbText _selectedIndex; [""selectCategory"", [_selectedString]] call A3A_fnc_buyVehicleDialog;";
                     x = 0 * GRID_W;
                     y = 5.1 * GRID_H;
                     w = 160 * GRID_W;

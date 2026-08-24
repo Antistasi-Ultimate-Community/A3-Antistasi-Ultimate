@@ -1,3 +1,4 @@
+#include "Constants.inc"
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 

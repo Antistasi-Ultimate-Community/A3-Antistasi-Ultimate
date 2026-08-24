@@ -21,6 +21,16 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\cba);
             class settings {};
         };
+        class effects
+        {
+            file = QPATHTOFOLDER(functions\effects);
+            class createCrashedVehicle {};
+            class createDeadSoldier {};
+            class createDeadSoldiers {};
+            class createFire {};
+            class createFires {};
+            class damageBuilding {};
+        };
         class init
         {
             file = QPATHTOFOLDER(functions\init);
@@ -28,12 +38,26 @@ class CfgFunctions
             class init {};
             class initZones {};
             class popup {};
+            class postInit {};
         };
         class main_menu
         {
             file = QPATHTOFOLDER(functions\main_menu);
             class isInMenu {};
             class menuImage {};
+        };
+        class map
+        {
+            file = QPATHTOFOLDER(functions\map);
+            class mapHoverEH {};
+            class handleMrkUpdate {};
+            class isMarkerHidden {};
+            class mapHover {};
+            class mapTooltip {};
+            class tooltipCreate {};
+            class markerBrowser {};
+            class markerContextMenu {};
+            class mrkUpdateBulk {};
         };
         class REINF
         {
@@ -46,6 +70,7 @@ class CfgFunctions
         class patches
         {
             file = QPATHTOFOLDER(functions\patches);
+            class getTierModifier {};
             class IMS_stealthKill {};
         };
         class STALKER
@@ -58,22 +83,29 @@ class CfgFunctions
         class Utility
         {
             file = QPATHTOFOLDER(functions\Utility);
+            class addInteractionCondition {};
+            class canInteract {};
             class exportCrate {};
             class exportPylons {};
             class exportTowns {};
             class hasAddon {};
             class log {};
             class logisticsGrabSeats {};
+            class useMagazineItem {};
             class weightTest {};
         };
         class vehicles
         {
             file = QPATHTOFOLDER(functions\vehicles);
             class addLockpickAction {};
+            class canLockpick {};
             class isLocked {};
             class lockpick {};
+            class lockpickCleanup {};
+            class lockpickGetPlayerItem {};
             class lockpickOnFail {};
             class lockpickOnProgress {};
+            class lockpickOnStart {};
             class lockpickOnSuccess {};
             class lockpickZones {};
             class setLock {};
@@ -82,6 +114,7 @@ class CfgFunctions
         {
             file = QPATHTOFOLDER(functions\zombie);
             class attackHeli {};
+            class handleZombieDeath {};
             class spawnZombie {};
             class spawnZombieCrater {};
             class spawnZombieRoar {};

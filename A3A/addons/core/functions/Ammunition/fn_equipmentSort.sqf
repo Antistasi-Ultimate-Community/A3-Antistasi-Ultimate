@@ -148,7 +148,7 @@ if ("specialVN" in A3A_factionEquipFlags) then {
 	];
 };
 
-if ((missionNamespace getVariable ["A3U_setting_enableCosmetics", false] isEqualTo false) || {cosmeticsEnabled isEqualTo false}) then {
+if (cosmeticsEnabled isEqualTo false) then {
 	allCosmeticGlasses = [];
 	allCosmeticHeadgear = [];
 }; // It's annoying in some modsets (like halo or clone wars) to have a ton of modern cosmetic gear.
@@ -187,7 +187,11 @@ allMagBullet = allMagBullet select { getText (configFile >> "CfgMagazines" >> _x
 allMagBullet = allMagBullet select { !(_x in A3U_forbiddenItems) };
 
 //Remove False NVGs
-allNVGs = allNVGs select { getarray (configFile >> "CfgWeapons" >> _x >> "visionMode") isnotequalto ["Normal","Normal"]};
+dummyNVGs = allNVGs select { (getArray (configFile >> "CfgWeapons" >> _x >> "visionMode")) findIf {_x in ["NVG","TI"]} == -1  };
+
+if (dummyNVGs isNotEqualTo []) then {
+    allNVGs = allNVGs - dummyNVGs;
+};
 
 private _removableDefaultItems = [
 	[allFirstAidKits,"FirstAidKit","firstAidKits"],

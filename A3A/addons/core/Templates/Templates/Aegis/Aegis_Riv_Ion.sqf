@@ -36,7 +36,7 @@ private _hasMarksman = "mark" in A3A_enabledDLC;
 ["vehiclesRivalsCars", ["B_ION_Offroad_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", ["B_ION_Truck_02_covered_lxWS"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsAPCs", ["B_ION_APC_Wheeled_01_command_lxWS", "B_ION_APC_Wheeled_02_hmg_lxWS"]] call _fnc_saveToTemplate;
-["vehiclesRivalsTanks", ["Aegis_B_ION_UGV_01_rcws_F"]] call _fnc_saveToTemplate;
+["vehiclesRivalsTanks", []] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["a3a_ION_Heli_Light_02_dynamicLoadout_lxWS"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["ION_UAV_01_lxWS"]] call _fnc_saveToTemplate;			
 
@@ -147,10 +147,10 @@ _loadoutData set ["grenadeLaunchers", [
 ["arifle_MX_GL_Black_F", "", "acc_flashlight", "optic_Aco", ["30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag_Tracer"], ["1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_Pellet_Grenade_shell_lxWS", "1Rnd_HE_Grenade_shell"], ""]
 ]];
 _loadoutData set ["machineGuns", [
-["Atlas_LMG_Negev_black_F", "", "", "", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
-["Atlas_LMG_Negev_black_F", "", "saber_light_lxWS", "optic_Holosight_blk_F", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
-["Atlas_LMG_Negev_black_F", "", "saber_light_lxWS", "optic_LRCO_blk_F", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
-["Atlas_LMG_Negev_black_F", "", "saber_light_lxWS", "optic_Hamr", ["150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Yellow", "150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+["Atlas_LMG_Negev_black_F", "", "", "", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+["Atlas_LMG_Negev_black_F", "", "saber_light_lxWS", "optic_Holosight_blk_F", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+["Atlas_LMG_Negev_black_F", "", "saber_light_lxWS", "optic_LRCO_blk_F", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
+["Atlas_LMG_Negev_black_F", "", "saber_light_lxWS", "optic_Hamr", ["Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Yellow", "Atlas_150Rnd_762x51_Box_Tracer_Yellow"], [], ""],
 ["LMG_03_F", "", "saber_light_lxWS", "", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],
 ["LMG_03_F", "", "saber_light_lxWS", "optic_Holosight_blk_F", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],
 ["LMG_03_F", "", "saber_light_lxWS", "optic_LRCO_blk_F", ["200Rnd_556x45_Box_F", "200Rnd_556x45_Box_F", "200Rnd_556x45_Box_Tracer_F"], [], ""],

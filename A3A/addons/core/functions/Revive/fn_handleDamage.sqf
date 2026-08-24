@@ -51,7 +51,7 @@ if (_part == "" && _damage > 0.1) then
 if (A3A_hasACEMedical) exitWith {};
 
 // Don't bother with the unconscious nonsense, based on param values
-if (unconChanceReb > random 10) exitWith {};
+if (unconChanceReb < random 10) exitWith {};
 
 
 private _makeUnconscious =

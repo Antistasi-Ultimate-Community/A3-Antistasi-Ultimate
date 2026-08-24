@@ -31,7 +31,7 @@ switch (_mode) do
 {
     case ("update"):
     {
-        Trace("Updating Air Support tab");
+        Debug("Updating Air Support tab");
         // Show back button
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _backButton = _display displayCtrl A3A_IDC_MAINDIALOGBACKBUTTON;
@@ -62,7 +62,7 @@ switch (_mode) do
         // Check if there are enough air support points
         if (_airSupportPoints < 1) then
         {
-            Trace("No air support points, disabling buttons");
+            Debug("No air support points, disabling buttons");
             _heIcon ctrlSetTextColor ([A3A_COLOR_BUTTON_BACKGROUND_DISABLED] call A3A_fnc_configColorToArray);
             _heIcon ctrlSetTooltip localize "STR_antistasi_dialogs_main_air_support_no_points_tooltip";
             _heButton ctrlEnable false;

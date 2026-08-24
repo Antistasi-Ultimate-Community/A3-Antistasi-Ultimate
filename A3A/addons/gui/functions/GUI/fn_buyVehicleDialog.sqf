@@ -151,7 +151,7 @@ switch (_mode) do
         };
 
         if (_selectedTabIDC == -1) exitWith {
-            Error("Attempted to access tab without permission : %1", _selectedTab);
+            Error_1("Attempted to access tab without permission : %1", _selectedTab);
         };
 
         private _allTabs = [
@@ -197,7 +197,6 @@ switch (_mode) do
     {
         private _display = findDisplay A3A_IDD_BUYVEHICLEDIALOG;
         private _selectedCategory = _params select 0;
-        diag_log _selectedCategory;
 
         private _selectedTabIDC = -1;
         switch (_selectedCategory) do

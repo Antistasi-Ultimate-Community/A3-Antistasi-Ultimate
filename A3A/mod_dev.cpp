@@ -9,7 +9,7 @@ tooltip = "Antistasi Ultimate";
 tooltipOwned = "Antistasi Ultimate";
 overview = "<br/><t align='center' size='0.75'> An Arma 3 persistent multiplayer scenario about guerilla warfare tactics. Fork of Antistasi Plus Version focused on expanding templates, maps and features. </t><br/><br/>";
 actionName = "GitHub";
-action = "https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate";
+action = "https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate";
 hideName = 0;
 hidePicture = 0;
 dlcColor[] = {0.1765, 0.6392, 0.6235, 1};

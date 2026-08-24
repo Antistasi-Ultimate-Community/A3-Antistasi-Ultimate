@@ -79,7 +79,14 @@ private _workerUniforms = [
 
 private _dlcUniforms = [];
 
-["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+    "OPTRE_UNSC_Dress_Uniform_gray",
+    "OPTRE_UNSC_Dress_Uniform_green",
+    "OPTRE_UNSC_Dress_Uniform_NBlue",
+    "OPTRE_UNSC_Dress_Uniform_white"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _dlcUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 private _civhats = [
     "H_EarProtectors_white_F",
@@ -105,6 +112,8 @@ _loadoutData set ["pressHelmets", ["H_PASGT_basic_blue_press_F"]];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["optre_hgun_sas10_F", "optre_hgun_comet_F", "OPTRE_M6B"]];
 
 private _manTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -136,6 +145,18 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 
 private _specialUnits = [
     "dev_flood_combat_o",
@@ -157,6 +178,7 @@ private _specialUnitsWeights = [
 
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate], // to-do: allow press to spawn but make them special infected
     ["Worker", _workerTemplate], // needed to be normal for resources, factories, etc
     ["Man", _manTemplate],

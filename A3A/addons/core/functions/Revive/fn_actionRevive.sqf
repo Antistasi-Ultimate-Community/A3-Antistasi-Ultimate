@@ -45,8 +45,6 @@ if (!_hasMedkit && {count _medicFAKs == 0 && count _curedFAKs == 0}) exitWith
 private _timer = if (_isMedic) then { time + (A3A_reviveTime / 2) } else { time + A3A_reviveTime }; // socrates my friend, you forgot time + A3A_reviveTime in the first statement
 // if (_isMedic) then { _timer = A3A_reviveTime / 2 } else { _timer = time + A3A_reviveTime };
 
-// [str _timer, _fnc_scriptName] call A3U_fnc_log;
-
 _medic setVariable ["helping", true];
 _medic playMoveNow selectRandom medicAnims;
 _medic setVariable ["cancelRevive", false];

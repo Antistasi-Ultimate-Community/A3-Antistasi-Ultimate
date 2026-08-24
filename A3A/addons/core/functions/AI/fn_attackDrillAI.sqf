@@ -213,7 +213,7 @@ while {true} do
 
 							if (sunOrMoon < 1) then
 								{
-									private _noNvgIndex = (units _groupX) findIf {hmd _x == "" || {getArray (configFile >> "CfgWeapons" >> (hmd _x) >> "visionMode") isEqualTo ["Normal","Normal"]}};	
+									private _noNvgIndex = (units _groupX) findIf { private _currentHMD = hmd _x; _currentHMD == "" || {_currentHMD in dummyNVGs}};	
 									if (_noNvgIndex != -1) then {
 										if (([_LeaderX] call A3A_fnc_canFight) and (primaryWeapon _LeaderX in allGrenadeLaunchers)) then {
 											[_LeaderX, _sideX, _nearX] call A3A_fnc_useFlares

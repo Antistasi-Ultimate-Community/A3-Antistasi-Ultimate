@@ -65,6 +65,8 @@ if (isServer) then {
 	//Antistasi Ultimate variables
 	["revealedZones"] call A3A_fnc_getStatVariable; publicVariable "revealedZones";
 	["unlockedVehicleTypes"] call A3A_fnc_getStatVariable; publicVariable "unlockedVehicleTypes";
+	["occupantsRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "occupantsRadioKeys";
+	["invaderRadioKeys"] call A3A_fnc_getStatVariable; publicVariable "invaderRadioKeys";
 
 	//===========================================================================
 
@@ -89,19 +91,20 @@ if (isServer) then {
 
 	// Set enemy roadblock allegiance to match nearest main marker
 	private _mainMarkers = markersX - controlsX -  watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;
-	{
-		if (sidesX getVariable [_x,sideUnknown] != teamPlayer) then {
-			private _nearX = [_mainMarkers, markerPos _x] call BIS_fnc_nearestPosition;
-			private _sideX = sidesX getVariable [_nearX,sideUnknown];
-			sidesX setVariable [_x,_sideX,true];
-		};
-	} forEach controlsX;
+    {
+        if (sidesX getVariable [_x,sideUnknown] != teamPlayer) then {
+            private _nearX = [_mainMarkers, markerPos _x] call BIS_fnc_nearestPosition;
+            private _sideX = sidesX getVariable [_nearX,sideUnknown];
+            sidesX setVariable [_x,_sideX,true];
+        };
+    } forEach controlsX;
 
-	{
-		[_x] call A3A_fnc_mrkUpdate
-	} forEach (markersX - controlsX);
+    [markersX - controlsX] call A3U_fnc_mrkUpdateBulk;
+    if !(milAdministrationsX isEqualTo []) then {[milAdministrationsX] call A3U_fnc_mrkUpdateBulk};
+    if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
+    // ---------------------------
 
-	if (count watchpostsFIA > 0) then {
+    if (count watchpostsFIA > 0) then {
 		markersX = markersX + watchpostsFIA;
 		publicVariable "markersX";
 	};
@@ -144,7 +147,6 @@ if (isServer) then {
 	["chopForest"] call A3A_fnc_getStatVariable;
 
 	["posHQ"] call A3A_fnc_getStatVariable;
-	["nextTick"] call A3A_fnc_getStatVariable;
 	["staticsX"] call A3A_fnc_getStatVariable;
 
 	{_x setPos getMarkerPos respawnTeamPlayer} forEach ((call A3A_fnc_playableUnits) select {side _x == teamPlayer});
@@ -186,13 +188,15 @@ if (isServer) then {
 		private _playerData = createHashMap;
 		{
 			_playerData set [_x, [_uid, _x] call A3A_fnc_retrievePlayerStat];
-		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage"];
+		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "pluginsData"];
 
 		if (isNil {_playerData get "moneyX"}) then { Error_1("Saved player %1 has no money var", _uid); continue };
 		A3A_playerSaveData set [_uid, _playerData];
 	} forEach _savedPlayers;
 
     Info("Persistent Load Completed.");
+
+	["locationSpawned", QGVAR(crewLocationStatics), { call A3A_fnc_crewLocationStatics }] call EFUNC(Events,addEventListener);
 
 	// uh, why here?
 	["tasks"] call A3A_fnc_getStatVariable;

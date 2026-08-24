@@ -87,6 +87,9 @@ private _currencySymbol = switch (true) do {
     case ((toLowerANSI worldName) isEqualTo "taviana"): {
         "₽"
     };
+	case ((toLowerANSI worldName) in ["gm_weferlingen_summer", "gm_weferlingen_winter"]): {
+		"DM"
+	};
 	default {
         "€"
 	};

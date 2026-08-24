@@ -10,6 +10,7 @@
 	Returns:
 	NOTHING, well it sends a command which contains the JNA_datalist
 */
+#include "..\script_component.hpp"
 
 if(!isServer)exitWith{};
 params ["_clientOwner"];
@@ -18,6 +19,6 @@ _temp = server getVariable ["jna_playersInArsenal",[]];
 _temp pushBackUnique _clientOwner;
 server setVariable ["jna_playersInArsenal",_temp,true];
 
-diag_log ["_open arsenal for: clientOwner ",_clientOwner];
+Info_1("_open arsenal for: clientOwner ",_clientOwner);
 ["Open",[jna_dataList]] remoteExecCall ["jn_fnc_arsenal", _clientOwner];
 

@@ -15,6 +15,8 @@
 	Example:
 	[obj2, "Navigation"] call HALs_store_fnc_addTrader;
 __________________________________________________________________*/
+#include "..\..\..\..\script_component.hpp"
+
 params [
 	["_trader", objNull, [objNull]],
 	["_traderType", [], [[]]],
@@ -33,7 +35,7 @@ try {
 	{
 		if (!isClass (configFile >> "cfgHALsAddons" >> "cfgHALsStore" >> "stores" >> _x)) then {
 			throw ["Invalid Trader type", __LINE__];
-			diag_log format ["Broken Entry: %1. Full Entry: %2", _x, _traderType];
+			Error_2("Broken Entry: %1. Full Entry: %2", _x, _traderType);
 		};
 	} forEach _traderType;
 
@@ -52,7 +54,7 @@ try {
 		_categories = _categories + _categoryAdd;
 	} forEach _traderType;
 
-	diag_log _categories;
+	Verbose_1("_categories:\n%1", _categories);
 
 	private _classes = [];
 	private _stocks = [];

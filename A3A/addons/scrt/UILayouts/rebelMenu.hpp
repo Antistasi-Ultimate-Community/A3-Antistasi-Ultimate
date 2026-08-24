@@ -276,6 +276,20 @@ class rebelMenu
 					colorText[] = {1,1,1,0.7};
 				};
 
+				class TeardownModeButton: ButtonBase
+				{			
+					idc = 5190;
+					text = "$STR_commander_menu_toggle_teardown_mode_button";
+					tooltip = "$STR_commander_menu_toggle_teardown_mode_button_tooltip";
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "26 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;			
+					action = QUOTE(while {dialog} do {closeDialog 0}; [] call FUNCMAIN(toggleTeardownMode));
+				};
+
 				class EditParamsButton: ButtonBase
 				{			
 					idc = 5200;

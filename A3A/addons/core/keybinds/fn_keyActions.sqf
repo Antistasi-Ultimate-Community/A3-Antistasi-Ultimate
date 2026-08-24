@@ -16,6 +16,8 @@ switch (_key) do {
     case QGVAR(battleMenu): {
         if (player getVariable ["incapacitated",false]) exitWith {};
         if (player getVariable ["owner",player] != player) exitWith {};
+        if (clientOwner in (server getVariable ["jna_playersInArsenal",[]])) exitWith {};
+        if (!isNull curatorCamera) exitWith {};
         GVAR(keys_battleMenu) = true; //used to block certain actions when menu is open
     #ifdef UseDoomGUI
         ERROR("Disabled due to UseDoomGUI Switch.")
@@ -80,12 +82,14 @@ switch (_key) do {
                 closeDialog 0;closeDialog 0;
             };
         };
+        if (clientOwner in (server getVariable ["jna_playersInArsenal",[]])) exitWith {};
+        if (!isNull curatorCamera) exitWith {};
 
         [] call SCRT_fnc_ui_toggleCommanderMenu;
     };
 
     default {
-        Error_1("Key action not registered: %1", _key)
+        Error_1("Key action not registered: %1", _key);
     };
 };
 

@@ -177,11 +177,11 @@ _loadoutData set ["NVGs", ["CUP_NVG_1PN138", "CUP_NVG_PVS15_black", "CUP_NVG_PVS
 _loadoutData set ["binoculars", ["Binocular"]];		//this line determines the binoculars
 _loadoutData set ["rangefinders", ["CUP_LRTV", "CUP_Vector21Nite"]];
 
-_loadoutData set ["traitorUniforms", ["NOR_Gorka_Uniform", "NOR_Gorka_Uniform_Pads", "NOR_Combat_Uniform", "NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform_Gloves_Rolled", "NOR_Combat_Uniform_Rolled"]];		//this line determines traitor uniforms for traitor mission
+_loadoutData set ["traitorUniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform"]];		//this line determines traitor uniforms for traitor mission
 _loadoutData set ["traitorVests", ["V_TacVest_oli", "V_TacVest_brn", "V_TacVest_khk", "V_Chestrig_rgr", "V_Chestrig_khk", "V_Chestrig_oli"]];			//this line determines traitor vesets for traitor mission
 _loadoutData set ["traitorHats", ["CUP_H_US_patrol_cap_OD", "H_Cap_oli", "H_Cap_headphones"]];			//this line determines traitor headgear for traitor missions
 
-_loadoutData set ["officerUniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform_Gloves_Rolled"]];		//this line determines officer uniforms for assassination mission
+_loadoutData set ["officerUniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform"]];		//this line determines officer uniforms for assassination mission
 _loadoutData set ["officerVests", ["V_Rangemaster_belt", "V_TacVest_khk", "V_TacVest_oli"]];			//this line determines officer vesets for assassination mission
 _loadoutData set ["officerHats", ["CUP_H_SLA_BeretRed"]];	//this line determines officer headgear for assassination missions
 
@@ -240,11 +240,11 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_sfLoadoutData set ["uniforms", ["NOR_Combat_Uniform_Gloves_Rolled", "NOR_Combat_Uniform_Gloves"]];
+_sfLoadoutData set ["uniforms", ["NOR_Combat_Uniform_SOF_Gloves", "NOR_Combat_Uniform_MC_Gloves", "NOR_Combat_Uniform_MC", "NOR_Combat_Uniform_SOF"]];
 _sfLoadoutData set ["vests", ["CUP_V_B_Armatus_Coyote", "CUP_V_B_Armatus_BB_Coyote", "CUP_V_B_Armatus_OD", "CUP_V_B_Armatus_BB_OD"]];
 _sfLoadoutData set ["Hvests", ["CUP_V_B_Armatus_Coyote", "CUP_V_B_Armatus_BB_Coyote", "CUP_V_B_Armatus_OD", "CUP_V_B_Armatus_BB_OD"]];
 _sfLoadoutData set ["backpacks", ["NOR_Predator_Backpack", "B_Kitbag_cbr", "B_Kitbag_rgr", "B_Carryall_cbr", "B_Carryall_oli", "B_Carryall_khk"]];
-_sfLoadoutData set ["helmets", ["NOR_Opscore_No_Headset", "NOR_Opscore", "NOR_Opscore_SF", "NOR_Opscore_Tan_No_Headset", "NOR_Opscore_Tan", "NOR_Opscore_Tan_SF"]];
+_sfLoadoutData set ["helmets", ["NOR_H_Opscore_Tan_NoHS", "NOR_H_Opscore_Cover_NoHS", "NOR_H_Opscore_CoverCamo", "NOR_H_Opscore_Cover", "NOR_H_Opscore_CoverSpec", "NOR_H_Opscore_Tan", "NOR_H_Opscore_CoverCamo_MC", "NOR_H_Opscore_Cover_MC", "NOR_H_Opscore_CoverSpec_MC"]];
 _sfLoadoutData set ["binoculars", ["CUP_SOFLAM"]];
 
 _sfLoadoutData set ["lightATLaunchers", [
@@ -376,12 +376,12 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_eliteLoadoutData set ["uniforms", ["NOR_Combat_Uniform", "NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform_Gloves_Rolled", "NOR_Combat_Uniform_Rolled"]];
-_eliteLoadoutData set ["slUniforms", ["NOR_Combat_Uniform", "NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform_Gloves_Rolled", "NOR_Combat_Uniform_Rolled"]];
+_eliteLoadoutData set ["uniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform", "NOR_Combat_Uniform_SOF_Gloves", "NOR_Combat_Uniform_MC_Gloves", "NOR_Combat_Uniform_MC", "NOR_Combat_Uniform_SOF"]];
+_eliteLoadoutData set ["slUniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform", "NOR_Combat_Uniform_SOF_Gloves", "NOR_Combat_Uniform_MC_Gloves", "NOR_Combat_Uniform_MC", "NOR_Combat_Uniform_SOF"]];
 _eliteLoadoutData set ["vests", ["CUP_V_B_Ciras_Coyote", "CUP_V_B_Ciras_Coyote2", "CUP_V_B_Ciras_Coyote3", "CUP_V_B_Ciras_Coyote4", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_Khaki2", "CUP_V_B_Ciras_Khaki3", "CUP_V_B_Ciras_Khaki4", "CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Olive2", "CUP_V_B_Ciras_Olive3", "CUP_V_B_Ciras_Olive4"]];
 _eliteLoadoutData set ["Hvests", ["CUP_V_B_Ciras_Coyote", "CUP_V_B_Ciras_Coyote2", "CUP_V_B_Ciras_Coyote3", "CUP_V_B_Ciras_Coyote4", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_Khaki2", "CUP_V_B_Ciras_Khaki3", "CUP_V_B_Ciras_Khaki4", "CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Olive2", "CUP_V_B_Ciras_Olive3", "CUP_V_B_Ciras_Olive4"]];
 _eliteLoadoutData set ["backpacks", ["NOR_Predator_Backpack", "B_Kitbag_rgr", "B_Kitbag_cbr", "B_Carryall_khk", "B_Carryall_oli"]];
-_eliteLoadoutData set ["helmets", ["NOR_Opscore_No_Headset", "NOR_Opscore", "NOR_Opscore_Tan_No_Headset", "NOR_Opscore_Tan"]];
+_eliteLoadoutData set ["helmets", ["NOR_H_Opscore_Tan_NoHS", "NOR_H_Opscore_Cover_NoHS", "NOR_H_Opscore_CoverCamo", "NOR_H_Opscore_Cover", "NOR_H_Opscore_Tan", "NOR_H_Opscore_CoverCamo_MC", "NOR_H_Opscore_Cover_MC"]];
 _eliteLoadoutData set ["binoculars", ["CUP_LRTV", "CUP_Vector21Nite"]];
 
 _eliteLoadoutData set ["lightATLaunchers", [
@@ -505,8 +505,8 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militaryLoadoutData set ["uniforms", ["NOR_Combat_Uniform", "NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform_Gloves_Rolled", "NOR_Combat_Uniform_Rolled", "NOR_Gorka_Uniform", "NOR_Gorka_Uniform_Pads"]];
-_militaryLoadoutData set ["slUniforms", ["NOR_Combat_Uniform", "NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform_Gloves_Rolled", "NOR_Combat_Uniform_Rolled"]];
+_militaryLoadoutData set ["uniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform"]];
+_militaryLoadoutData set ["slUniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform"]];
 _militaryLoadoutData set ["vests", ["CUP_V_PMC_CIRAS_Coyote_Empty", "CUP_V_PMC_CIRAS_Khaki_Empty", "CUP_V_PMC_CIRAS_OD_Empty", "CUP_V_PMC_CIRAS_Coyote_Patrol", "CUP_V_PMC_CIRAS_Coyote_TL", "CUP_V_PMC_CIRAS_Khaki_TL", "CUP_V_PMC_CIRAS_OD_TL"]];
 _militaryLoadoutData set ["Hvests", ["CUP_V_PMC_CIRAS_Coyote_Grenadier", "CUP_V_PMC_CIRAS_Khaki_Grenadier", "CUP_V_PMC_CIRAS_OD_Grenadier"]];
 _militaryLoadoutData set ["backpacks", ["NOR_Predator_Backpack", "B_Kitbag_cbr", "B_Kitbag_rgr", "B_FieldPack_oli", "B_FieldPack_khk", "B_AssaultPack_cbr", "B_AssaultPack_rgr", "B_AssaultPack_khk"]];
@@ -662,7 +662,7 @@ _policeLoadoutData set ["sidearms", [
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militiaLoadoutData set ["uniforms", ["NOR_Combat_Uniform", "NOR_Combat_Uniform_Rolled"]];
+_militiaLoadoutData set ["uniforms", ["NOR_Combat_Uniform_Gloves", "NOR_Combat_Uniform"]];
 _militiaLoadoutData set ["vests", ["V_TacVest_brn", "V_TacVest_khk", "V_TacVest_oli"]];
 _militiaLoadoutData set ["Hvests", ["V_TacVest_brn", "V_TacVest_khk", "V_TacVest_oli"]];
 _militiaLoadoutData set ["backpacks", ["B_AssaultPack_cbr", "B_AssaultPack_rgr", "B_AssaultPack_khk", "B_FieldPack_cbr", "B_FieldPack_oli", "B_FieldPack_khk", "B_TacticalPack_oli"]];
@@ -841,8 +841,7 @@ private _medicTemplate = {
     [["Hvests", "vests"] call _fnc_fallback] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
-    
-    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -933,7 +932,7 @@ private _engineerTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["backpacks"] call _fnc_setBackpack;
 
-    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "rifles"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;
@@ -962,7 +961,7 @@ private _latTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
     [["lightATLaunchers", "ATLaunchers"] call _fnc_fallback] call _fnc_setLauncher;
@@ -992,7 +991,7 @@ private _atTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
@@ -1019,7 +1018,7 @@ private _aaTemplate = {
     ["uniforms"] call _fnc_setUniform;
     [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
-    [selectRandomWeighted ["rifles", 0.2, "carbines", 0.5, "SMGs", 0.3]] call _fnc_setPrimary;
+    [selectRandom ["rifles", "carbines"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
 
     ["AALaunchers"] call _fnc_setLauncher;
@@ -1148,7 +1147,7 @@ private _crewTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

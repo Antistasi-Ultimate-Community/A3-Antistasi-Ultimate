@@ -866,7 +866,6 @@ switch _mode do {
         jnva_loadout remoteExecCall ["jn_fnc_arsenal_addItem",2];
 
        	jnva_loadout = (_objectSelected call jn_fnc_arsenal_cargoToArray);
-       	diag_log jnva_loadout;
 
        	_list = missionnamespace getVariable ["jnca_tab_selected",-1];
        	if(_list != -1)then{

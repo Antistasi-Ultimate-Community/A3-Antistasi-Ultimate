@@ -84,7 +84,7 @@ if (!(surfaceIsWater _shipPosition) || {_outOfBounds}) then {
 };
 
 if (_shipPosition isEqualTo [0,0,0]) exitWith {
-    Error("Problems with ship position, rerequesting new rescue mission.")
+    Error("Problems with ship position, rerequesting new rescue mission.");
     deleteVehicle _ship;
     ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 };

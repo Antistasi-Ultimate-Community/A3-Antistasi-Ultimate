@@ -15,7 +15,7 @@ Dependencies:
     None
 Example:
 */
-#define GC_THRESHOLD_DISABLE 9999999
+#define GC_THRESHOLD_DISABLE -1
 
 if(!isServer) exitWith {};
 if(A3A_GCThreshold isEqualTo GC_THRESHOLD_DISABLE) exitWith {};

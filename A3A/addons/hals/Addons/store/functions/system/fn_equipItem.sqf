@@ -14,19 +14,21 @@
 	[player, "acc_flashlight"] call HALs_store_fnc_equipItem;
 	// todo fix grenades being added
 __________________________________________________________________*/
+#include "..\..\..\..\script_component.hpp"
+
 params [
 	["_unit", objNull, [objNull]],
 	["_classname", "", [""]]
 ];
 
-diag_log format ["%1: [Antistasi] | ERROR | store_fnc_equipItem.sqf | Equip function call.", servertime];
+Error("Equip function call.");
 
 if (isNull _unit) exitWith {
-	diag_log format ["%1: [Antistasi] | ERROR | store_fnc_equipItem.sqf | Unit is null.", servertime];
+	Error("Unit is null.");
 	false
 	};
 if (_classname isEqualTo '') exitWith {
-	diag_log format ["%1: [Antistasi] | ERROR | store_fnc_equipItem.sqf | Classname is empty.", servertime];
+	Error("Classname is empty.");
 	false
 };
 

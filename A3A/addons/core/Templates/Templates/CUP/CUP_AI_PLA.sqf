@@ -33,8 +33,6 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 
 ["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
 
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
-
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_T_East_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -54,7 +52,7 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["vehiclesAirborne", ["Flex_CUP_PLA_Tigr_M_233114_PK", "Flex_CUP_PLA_Tigr_M_233114_KORD", "Flex_CUP_PLA_LSV_02_armed"]] call _fnc_saveToTemplate;              // airborne vehicles, could be with passenger seats or just a crew 
 ["vehiclesIFVs", ["Flex_CUP_PLA_APC_Tracked_02"]] call _fnc_saveToTemplate;                  // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
 ["vehiclesTanks", ["Flex_CUP_PLA_T90MS"]] call _fnc_saveToTemplate;                 // cannon armed, heavely armored, passengers will be ignored
-["vehiclesLightTanks", ["O_UGV_01_rcws_F"]] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
+["vehiclesLightTanks", []] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
 ["vehiclesAA", ["Flex_CUP_PLA_APC_Tracked_02_AA"]] call _fnc_saveToTemplate;                    // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
 
 ["vehiclesTransportBoats", ["Flex_CUP_PLA_RHIB_Unarmed"]] call _fnc_saveToTemplate;	// boat that can carry passengers and cargoboxes
@@ -77,7 +75,7 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["vehiclesHelisLightAttack", ["Flex_CUP_PLA_Heli_Light_02"]] call _fnc_saveToTemplate;      // Utility helis with fixed or door guns + rocket pods
 ["vehiclesHelisAttack", ["Flex_CUP_PLA_Heli_Attack_02"]] call _fnc_saveToTemplate;           // Proper attack helis: Apache, Hind etc
 
-["vehiclesAirPatrol", ["Flex_CUP_PLA_Heli_Attack_02"]] call _fnc_saveToTemplate;             // preferably light helicopters(armed or unarmed), used in base patrol near bases
+["vehiclesAirPatrol", ["Flex_CUP_PLA_Heli_Attack_02", "Flex_CUP_PLA_Heli_Light_02"]] call _fnc_saveToTemplate;             // preferably light helicopters(armed or unarmed), used in base patrol near bases
 
 ["vehiclesArtillery", ["Flex_CUP_PLA_MBT_02_arty"]] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
 ["magazines", createHashMapFromArray [
@@ -188,7 +186,7 @@ _loadoutData set ["helmets", []];
 _loadoutData set ["slHat", ["PLA_H_Helmet02"]];
 _loadoutData set ["sniHats", ["PLA_Patrol_cap"]];
 
-_loadoutData set ["facewear", []];
+_loadoutData set ["facewear", ["", "PLA_Balaclava_Alt_Olive", "PLA_Balaclava_Alt_1_Olive", "PLA_Balaclava_Alt_Black", "PLA_Balaclava_Alt_1_Black"]];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
@@ -691,7 +689,7 @@ _policeLoadoutData set ["sidearms", [
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", ["PLA_Combat_Uniform", "PLA_Combat_Uniform_Rolled"]];
 _militiaLoadoutData set ["vests", ["CUP_V_B_PASGT_OD", "CUP_V_B_PASGT_no_bags_OD", "CUP_V_B_ALICE", "V_Chestrig_rgr", "V_Chestrig_oli"]];
-_militiaLoadoutData set ["backpacks", ["B_FieldPack_oli", "Flex_CUP_POL_AssaultPack", "B_TacticalPack_blk"]];
+_militiaLoadoutData set ["backpacks", ["B_FieldPack_oli", "PLA_Backpack_Compact", "B_TacticalPack_blk"]];
 _militiaLoadoutData set ["helmets", ["CUP_H_SLA_Helmet", "CUP_H_SLA_Helmet_OD_worn", "CUP_H_RUS_SSH68_green", "CUP_H_RUS_SSH68_olive"]];
 
 _militiaLoadoutData set ["ATLaunchers", [
@@ -765,9 +763,9 @@ _crewLoadoutData set ["vests", ["V_TacVest_oli"]];
 _crewLoadoutData set ["helmets", ["H_HelmetCrew_I"]];
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["PLA_Pilot_Uniform"]];
+_pilotLoadoutData set ["uniforms", ["PLA_Combat_Uniform_Rolled"]];
 _pilotLoadoutData set ["vests", []];
-_pilotLoadoutData set ["helmets", ["H_CrewHelmetHeli_O", "H_PilotHelmetHeli_O"]];
+_pilotLoadoutData set ["helmets", ["CUP_H_SPH4_green", "CUP_H_SPH4_green_visor"]];
 
 
 /////////////////////////////////
@@ -1176,7 +1174,7 @@ private _crewTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-    [selectRandomWeighted ["carbines", 0.4, "SMGs", 0.6]] call _fnc_setPrimary;
+    [selectRandom ["carbines", "SMGs"]] call _fnc_setPrimary;
     ["primary", 3] call _fnc_addMagazines;
 
     ["sidearms"] call _fnc_setHandgun;

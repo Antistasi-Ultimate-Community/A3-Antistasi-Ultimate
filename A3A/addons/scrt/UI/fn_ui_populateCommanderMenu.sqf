@@ -211,7 +211,6 @@ private _gameInfoText = format [
     QUOTE(VERSION_FULL),
     minWeaps,
     (getArray (configFile >> "A3A" >> "Params" >> "limitedFT" >> "texts")) select limitedFT,
-    [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select areRivalsEnabled,
 	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];
 
@@ -227,7 +226,7 @@ if (!isTraderQuestCompleted) then {
 };
 
 
-if ((call BIS_fnc_admin) isEqualTo 2) then {
+if (isServer || {(call BIS_fnc_admin) isEqualTo 2}) then {
 	ctrlShow [5200, true];
 	ctrlEnable [5200, true];
 	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");

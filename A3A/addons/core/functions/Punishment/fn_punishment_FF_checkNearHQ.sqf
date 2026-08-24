@@ -42,6 +42,7 @@ private _fileName = "fn_punishment_FF_checkNearHQ";
 if !(_weapon in ["Put","Throw"]) exitWith {false};
 private _distancePetros = _unit distance petros;
 if !(_distancePetros <= 75) exitWith {false};
+if (HQAttackInProgress) exitWith {false}; // Don't punish during HQ attack
 
 deleteVehicle _projectile;
 [_unit, 60, 0.4, objNull, localize "STR_A3A_punishment_no_grenades"] remoteExec ["A3A_fnc_punishment_evaluateEvent",2,false];

@@ -11,8 +11,8 @@
 	"title": "Antistasi Ultimate",
 	"name": "A3U",
 	"author": "Antistasi Ultimate Dev Team",
-	"website": "https://antistasi.de/",
-	"version": "2.5.4",
+	"website": "https://antistasiultimate.com/",
+	"version": "11.0.0",
 	"buildPath": "build",
 	"privateKey": "", //add the path to a private bikey for signing when building
 	"serverDirs": [],

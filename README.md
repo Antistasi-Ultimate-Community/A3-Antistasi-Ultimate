@@ -1,40 +1,30 @@
+<hr>
 <div align="center">
-  <img alt="Antistasi Ultimate" width="200" height="200" src="https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate/assets/78276788/10d6e9f2-66bc-47a7-9ff5-2054b65b0e26">
+  <a href="https://antistasiultimate.com">
+    <img alt="Antistasi Ultimate" width="150" height="150" src="https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/assets/78276788/10d6e9f2-66bc-47a7-9ff5-2054b65b0e26">
+  </a>
   <h1>Antistasi Ultimate</h1>
   <p>
-    <i>An Arma 3 persistent multiplayer scenario about guerilla warfare tactics.</i>
+    <i><b>An Arma 3 persistent multiplayer scenario about guerilla warfare tactics.</b></i>
     <br/>
-    <i>Fork of Antistasi Plus Version focused on expanding templates, maps and features.</i>
+    <i>Fork of Antistasi Plus - focused on expanding templates, maps and features.</i>
   </p>
-  <!-- <p>
-    <a href="https://github.com/igorkis-scrts/A3-Antistasi-Plus/releases/latest">
-        <img src="https://img.shields.io/badge/Current_Stable_Version-2.3.2-red" alt="Antistasi Plus Version">
-    </a>
-  </p> -->
-</div>
+  <hr>
 
-## Latest Stable Release
-**[Steam Workshop: Antistasi Ultimate](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032)**
+[![FAQ](https://antistasiultimate.com/images/banners/images_banner_faq.png)](https://antistasiultimate.com/FAQ)
+[![Features](https://antistasiultimate.com/images/banners/images_banner_features.png)](https://antistasiultimate.com/#features)
+[![Mods](https://antistasiultimate.com/images/banners/images_banner_mods.png)](https://antistasiultimate.com/#mods-section)
+[![Maps](https://antistasiultimate.com/images/banners/images_banner_maps.png)](https://antistasiultimate.com/#maps-section)
 
-### _Interested in Extender modding?_
+<hr>
 
-**[Extender Example (Ultimate)](https://github.com/Westalgie/A3UExtender)**
+  [Wiki](https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki)
 
-## [Features](https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate/wiki/Features)
+  [Credits](https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Developers)
 
-## Credits
-- Original Mission by barbolani
-- Antistasi Community Edition by Official Antistasi Community
-- Magrepack by Outlawled, R3vo and OOster
-- HALs_Store by HallyG, R3vo and barman75
-- DRO by mbrdmn
-- Discord Rich Presence by ConnorAU
-- Antistasi Plus (fork of Community) by Socrates
-- Antistasi Ultimate (fork of Plus) by the [Antistasi Ultimate Dev Team](https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate/wiki/Developers)
+  [GitHub Release](https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/releases/latest)
 
-## Additional Icons Credits
-<div>
-<a target="_blank" href="https://icons8.com/icon/12212/hdd">HDD</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-<br/>
-<a target="_blank" href="https://icons8.com/icon/17932/walkie-talkie">Walkie Talkie</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-</div>
+  [Workshop Release](https://play.antistasiultimate.com)
+
+  [Extender Modding](https://github.com/Westalgie/A3UExtender)
+<hr>
