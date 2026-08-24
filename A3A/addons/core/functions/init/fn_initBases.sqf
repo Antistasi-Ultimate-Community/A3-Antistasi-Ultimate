@@ -77,6 +77,6 @@ private _roadblockPositions = controlsX apply { markerPos _x };
 [_mrkCSAT, factories, "A3AU_factory_mrk", localize "STR_factory"] call _fnc_initMarkerList;
 [_mrkCSAT, outposts, "A3AU_outpost_mrk", localize "STR_outpost", true] call _fnc_initMarkerList;
 [_mrkCSAT, milbases, "A3AU_milbase_mrk", localize "STR_milbase", true] call _fnc_initMarkerList;
-[_mrkCSAT, seaports, "b_naval", ["STR_port_sea", "STR_port_river"] select ([] call A3A_fnc_isRiverportMap)] call _fnc_initMarkerList;
+[_mrkCSAT, seaports, "b_naval", localize(["STR_port_sea", "STR_port_river"] select ([] call A3A_fnc_isRiverportMap))] call _fnc_initMarkerList;
 
 Info("InitBases completed");
