@@ -10,6 +10,7 @@ class UtilityItems {
     class BuildBox: Base {
         flags[] = {"place", "move", "build"};
         tooltip = $STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip;
+        iconType = "build";
     };
 
     class Land_PlasticCase_01_small_black_F: BuildBox {
