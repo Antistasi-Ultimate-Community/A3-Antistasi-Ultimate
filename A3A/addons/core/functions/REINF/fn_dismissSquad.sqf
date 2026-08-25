@@ -67,7 +67,7 @@ private _assignedVehicles =	[];
 	[_veh, clientOwner, call HR_GRG_dLock, player] remoteExecCall ["HR_GRG_fnc_addVehicle",2];
 	{
 		if !(typeOf _x in FactionGet(all,"vehiclesReb")) then { continue };
-		_resourcesFIA = _resourcesFIA + ([typeOf _x] call A3A_fnc_vehiclePrice); // We'll be lenient with carried vehicles
+		_resourcesFIA = _resourcesFIA + (([typeOf _x] call A3A_fnc_vehiclePrice) / 2);
 		deleteVehicle _x;
 	} forEach attachedObjects _veh;
 
