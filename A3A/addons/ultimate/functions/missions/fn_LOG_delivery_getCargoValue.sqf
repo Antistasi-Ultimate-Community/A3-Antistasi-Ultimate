@@ -6,6 +6,6 @@ params ["_cargo"];
 private _config = [_cargo] call A3A_logistics_fnc_getCargoConfig;
 
 private _cargoValue = getNumber (_config >> "cargoValue");
-if (_cargoValue isEqualTo 0) exitWith {1000}; // Default value
+if (_cargoValue isEqualTo 0) exitWith {500};
  
 _cargoValue;

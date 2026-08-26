@@ -28,8 +28,7 @@
         N/A
 */
 
-// IDEA: You talk to a guy. He lets you choose how many items from the categories and gives you an estimated payout.
-// IDEA: Only spawns in whitelisted "warehouse" buildings
+// IDEA: Allow the user to select how many cargo pieces they want
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
@@ -88,17 +87,26 @@ private _posMission = [_originPos, 0, _sizeMin, 0, 0, 20, 0, [], [_originPos, _o
 [_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 // Create objects to deliver
-private _cargoTypes = if (_cargo isEqualTo []) then {call A3U_fnc_LOG_delivery_getCargo} else {["DEFAULT", _cargo]};
-private _cargoType = _cargoTypes#0;
-private _cargo = _cargoTypes#1;
+private _cargoFull = if (_cargo isEqualTo []) then {[] call A3U_fnc_LOG_delivery_getCargo} else {_cargo};
+private _cargoNum = _cargoFull#1;
+private _cargo = _cargoFull#0;
 
 private _cargoObjects = [];
 
-{
-    private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
-    private _cargoObject = [_x, _pos] call A3U_fnc_LOG_delivery_createCargo;
-    _cargoObjects pushBack _cargoObject;
-} forEach _cargo;
+if (_cargoNum isNotEqualTo -1 && {!(_cargoNum isEqualType "")}) then { // Support for ["classname", "amount"]
+    for "_i" from 1 to _cargoNum do
+    {
+        private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
+        private _cargoObject = [_cargo, _pos] call A3U_fnc_LOG_delivery_createCargo;
+        _cargoObjects pushBack _cargoObject;
+    };
+} else { // Support for ["classname", "classname"]
+    { // Can't we just check if _cargo is an array?
+        private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
+        private _cargoObject = [_x, _pos] call A3U_fnc_LOG_delivery_createCargo;
+        _cargoObjects pushBack _cargoObject;
+    } forEach _cargo;
+};
 
 // Cargo check functions
 private _fnc_isCargoAcknowledged = {
