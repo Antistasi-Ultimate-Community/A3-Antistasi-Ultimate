@@ -97,14 +97,6 @@
             <English>Music player (customizable)</English>
             <German>Musik-Player (konfigurierbar)</German>
         </Key>
-        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_overrideMusic_DisplayName">
-            <English>Use custom music player</English>
-            <German>Benutze eigenen Musik-Player</German>
-        </Key>
-        <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_overrideMusic_Tooltip">
-            <English>Use customizable music player instead of the default one.</English>
-            <German>Benutze einen konfigurierbaren Musik-Player anstelle des Standardmäßigen.</German>
-        </Key>
         <Key ID="STR_A3A_ultimate_tracklist_editor_Settings_pause_DisplayName">
             <English>Pause between tracks</English>
             <German>Pause zwischen Stücken</German>
