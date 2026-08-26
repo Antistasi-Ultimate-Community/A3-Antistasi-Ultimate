@@ -54,9 +54,9 @@ switch (_action) do {
             true,
             "",
             QUOTE(
-                (alive _target) && 
-                {(isNull objectParent _this) && (isNull attachedTo _target)} && 
-                {count nearestObjects[ARR_3(_target,[ARR_2('Car','Ship')],10)] > 1}
+                (alive _target) &&
+                {(isNull objectParent _this) && (isNull attachedTo _target)} &&
+                {count nearestObjects[ARR_3(_target,[ARR_4('Car','Ship','Tank','Helicopter')],10)] > ([ARR_2(1,0)] select(_target isKindOf 'ReammoBox_F'))}
             ),
             5
         ];
