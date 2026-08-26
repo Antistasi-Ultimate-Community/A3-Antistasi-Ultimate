@@ -61,4 +61,4 @@ private _destination = selectRandom _destinationAreas;
 
 [[_origin, _destination], "A3A_fnc_LOG_Delivery"] remoteExec ["A3A_fnc_scheduler", 2];
 
-[1800] spawn A3U_fnc_LOG_delivery_requestCooldown; // 1800 usual
+[600] spawn A3U_fnc_LOG_delivery_requestCooldown; // 600 usual (10 minutes), prob best to make it a param
