@@ -13,5 +13,6 @@ GVAR(volume) = 0.5;
 // </TODO>
 
 [] call FUNC(initEvents);
+[] call FUNC(loadTracks);
 
 nil;

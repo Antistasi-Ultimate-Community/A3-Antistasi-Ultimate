@@ -40,5 +40,7 @@ private _count = _tree tvCount[];
 
 Trace_1("save playlist",GVAR(tracks));
 
+profileNamespace setVariable[QGVAR(tracks), +GVAR(tracks)];
+
 closeDialog 0;
 nil;

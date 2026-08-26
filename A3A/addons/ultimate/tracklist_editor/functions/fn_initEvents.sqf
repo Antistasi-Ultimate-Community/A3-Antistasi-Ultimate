@@ -22,9 +22,6 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNC(initEvents),_this);
 
-[CBA_EVENT_CLIENT_PLAYER_LOAD, { call FUNC(onPlayerLoadData) }] call CBA_fnc_addEventHandler;
-[CBA_EVENT_CLIENT_PLAYER_SAVE, { call FUNC(onPlayerSaveData) }] call CBA_fnc_addEventHandler;
-
 addMusicEventHandler["MusicStop", {
     Trace_2(QFUNC(MusicStop),_this,musicON);
     if !musicON exitWith {

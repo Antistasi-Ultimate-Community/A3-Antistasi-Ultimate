@@ -1,14 +1,15 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3A_ultimate_tracklist_editor_fnc_onPlayerLoadData
+Function: A3A_ultimate_tracklist_editor_fnc_loadTracks
 
 Description:
-    CBA event callback when loaded player data is available.
+    Load save tracklist from profile namespace
 
 Parameters:
-    0: _loadData - Loaded save game data <HASHMAP>
 
 Optional:
+
+Example:
 
 Returns:
     Nothing
@@ -19,13 +20,9 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-Trace_1(QFUNC(onPlayerLoadData),_this);
+Trace_1(QFUNC(loadTracks),_this);
 
-if !assert(params[
-    ["_loadData", nil, [createHashMap]]
-]) exitWith {};
-
-GVAR(tracks) = _loadData get QGVAR(tracks);
+GVAR(tracks) = profileNamespace getVariable QGVAR(tracks);
 
 if (isNil QGVAR(tracks)) then {
     Info("No saved tracks found, using tracks from config");
