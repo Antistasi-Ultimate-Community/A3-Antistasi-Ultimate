@@ -15,6 +15,9 @@ Info_1("Server version: %1", QUOTE(VERSION_FULL));
 if (isClass (missionConfigFile/"CfgFunctions"/"A3A")) exitWith {};          // Pre-mod mission will break. Messaging handled in initPreJIP
 if (call A3A_fnc_modBlacklist) exitWith {};
 
+// Init despawn queue very early
+GVAR(despawnQueue) = [];
+
 // hide all the HQ objects
 {
     _x enableRopeAttach false;

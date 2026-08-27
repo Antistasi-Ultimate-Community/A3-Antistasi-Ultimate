@@ -22,10 +22,6 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNCMAIN(despawnQueueProcessor),_this);
 
-if (isNil QGVAR(despawnQueue)) then {
-    GVAR(despawnQueue) = [];
-};
-
 Info_1("Processing despawn queue with %1 entities.",count GVAR(despawnQueue));
 
 // Block queue
