@@ -30,7 +30,7 @@ if (isNil "specialVarLoads") then {
         "posHQ","hr","dateX","prestigeOPFOR",
         "prestigeBLUFOR","resourcesFIA","skillFIA","destroyedSites",
         "garrison","tasks","membersX","destroyedBuildings",
-        "chopForest","weather","killZones","jna_dataList","controlsSDK","mrkCSAT","nextTick",
+        "chopForest","weather","killZones","jna_dataList","controlsSDK","mrkCSAT",
         "bombRuns","wurzelGarrison","aggressionOccupants", "aggressionInvaders", "enemyResources", "HQKnowledge",
         "testingTimerIsActive", "version", "HR_Garage", "A3A_fuelAmountleftArray",
         
@@ -63,10 +63,6 @@ if (_varName in specialVarLoads) then {
         case 'bombRuns': {
             bombRuns = _varValue; 
             publicVariable "bombRuns";
-        };
-        
-        case 'nextTick': {
-            nextTick = time + _varValue;
         };
 
         case 'membersX': {

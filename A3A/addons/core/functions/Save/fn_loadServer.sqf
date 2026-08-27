@@ -147,7 +147,6 @@ if (isServer) then {
 	["chopForest"] call A3A_fnc_getStatVariable;
 
 	["posHQ"] call A3A_fnc_getStatVariable;
-	["nextTick"] call A3A_fnc_getStatVariable;
 	["staticsX"] call A3A_fnc_getStatVariable;
 
 	{_x setPos getMarkerPos respawnTeamPlayer} forEach ((call A3A_fnc_playableUnits) select {side _x == teamPlayer});
