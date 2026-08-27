@@ -136,7 +136,7 @@ if ((primaryWeapon _vip) isEqualTo "") then {
     _vip addWeaponGlobal _weapon;
 };
 
-[_vip, "STAND", "FULL", { (group _this) != _groupVIP }] remoteExecCall ["BIS_fnc_ambientAnimCombat", 0];
+[_vip, "STAND", "FULL", { (side _this) != civilian }] remoteExecCall ["BIS_fnc_ambientAnimCombat", 0];
 
 // Effects
 
