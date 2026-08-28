@@ -351,3 +351,53 @@ class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
     displayName = "Vehicle Spawn Helper";
     GVAR(spawnTypes)[] = {"hc","mineSweep","outpost"};
 };
+
+class NonStrategic;
+class A3U_Pallet: NonStrategic {
+    scope = 2;
+    scopeCurator = 2;
+    displayName = "Pallet";
+    editorCategory = "A3U_EditorCategory";
+    editorSubcategory = "A3U_EditorSubcategoryLogistics";
+    placement = "slope";
+    model = QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet.p3d);
+
+    hiddenSelections[] = {"camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_co.paa)
+    };
+};
+class A3U_Pallet_Boxes: A3U_Pallet {
+    displayName = "Pallet (Boxes)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Boxes.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Boxes_co.paa)
+    };
+};
+
+class A3U_Pallet_Pipes: A3U_Pallet {
+    displayName = "Pallet (Pipes)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Pipes.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Pipes_co.paa)
+    };
+};
+/*
+class A3U_Pallet_Planks: A3U_Pallet {
+    displayName = "Planks Pallet";
+
+    model = QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Plank.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Plank_co.paa)
+    };
+};
+
+*/
