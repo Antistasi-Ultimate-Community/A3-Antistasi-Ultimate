@@ -388,16 +388,14 @@ class A3U_Pallet_Pipes: A3U_Pallet {
         QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Pipes_co.paa)
     };
 };
-/*
-class A3U_Pallet_Planks: A3U_Pallet {
-    displayName = "Planks Pallet";
 
-    model = QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Plank.p3d);
+class A3U_Pallet_Planks: A3U_Pallet {
+    displayName = "Pallet (Planks)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Planks.p3d);
     hiddenSelections[] = {"camo1","camo2"};
     hiddenSelectionsTextures[] = {
         QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_co.paa),
-        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Plank_co.paa)
+        QPATHTOFOLDER(data\models\A3U_Pallet\A3U_Pallet_Planks_co.paa)
     };
 };
-
-*/
