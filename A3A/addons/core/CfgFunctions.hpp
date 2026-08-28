@@ -25,6 +25,7 @@ class CfgFunctions
             class captureX {};
             class chargeWithSmoke {};
             class checkAndSpawnAttack {};
+            class checkCargo {};
             class combatLanding {};
             class coverage {};
             class destroyBuilding {};

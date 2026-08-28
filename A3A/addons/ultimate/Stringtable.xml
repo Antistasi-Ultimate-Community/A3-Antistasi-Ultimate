@@ -1008,5 +1008,14 @@
             <Korean>화물 확인</Korean>
             <French>Confirmer la cargaison</French>
         </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_search_action">
+            <Original>Check Cargo Destination</Original>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_search_text">
+            <Original>This cargo is meant to be delivered to %1.</Original>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_search_fail_text">
+            <Original>This cargo has no delivery manifest.</Original>
+        </Key>
     </Package>
 </Project>

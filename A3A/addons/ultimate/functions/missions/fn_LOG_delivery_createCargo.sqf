@@ -8,6 +8,7 @@
     Params:
         _cargoClass <STRING>
         _pos <ARRAY<INT>>
+        _destination <STRING> <Default: "">
     
     Dependencies:
         N/A
@@ -25,7 +26,7 @@
         _cargo <OBJECT>
 */
 
-params ["_cargoClass", "_pos"];
+params ["_cargoClass", "_pos", ["_destination", ""]];
 
 private _cargo = _cargoClass createVehicle [0,0,0];
 _cargo setPos _pos;
@@ -45,5 +46,8 @@ private _isExplosive = [_cargo] call A3U_fnc_LOG_delivery_getCargoExplosive;
 if (_isExplosive isEqualTo 1) then {
     [_cargo] call A3U_fnc_LOG_delivery_addEHExplosive;
 };
+
+if (_destination isNotEqualTo "") then {_cargo setVariable ["A3A_cargo_deliveryDestination", _destination, true]};
+if (getMass _cargo >= 20000) then {_cargo setMass 2000}; // Looking at you, CZECH HEDGEHOG. 250000 MASS! A TANK ENGINE IS 15000.
 
 _cargo;

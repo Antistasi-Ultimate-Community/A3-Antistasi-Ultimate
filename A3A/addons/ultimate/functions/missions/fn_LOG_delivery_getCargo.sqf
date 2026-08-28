@@ -30,16 +30,15 @@ params [["_cargoType", ""]];
 
 private _cfg = (configFile >> "A3U" >> "CfgCargo");
 private _cfgCondition = "!('base' in configName _x)";
+private _cfgConditionEra = ["modern", "lowTech"] select ("lowTech" in A3A_factionEquipFlags);
 
-if ("lowTech" in A3A_factionEquipFlags) then {
-    _cfgCondition = _cfgCondition + " " + "&& getTextRaw ((_x >> 'flag') isEqualTo 'lowTech')"
-};
+_cfgCondition = _cfgCondition + " " + (format ["&& {'%1' in (getArray (_x >> 'flag'))}", _cfgConditionEra]);
 
 if (_cargoType isEqualTo "") then {
     private _types = createHashMap;
     private _typesWeighted = [];
 
-    private _cfgTypes = "!('base' in configName _x)" configClasses (_cfg);
+    private _cfgTypes = _cfgCondition configClasses (_cfg);
 
     _cfgTypes apply {
         private _name = configName _x;

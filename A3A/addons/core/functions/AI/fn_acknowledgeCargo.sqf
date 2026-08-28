@@ -8,4 +8,5 @@ uiSleep 1;
 
 [_target] call A3A_Logistics_fnc_addLoadAction;
 
+[_target, "cargo"] remoteExec ["A3A_fnc_flagaction", [teamPlayer,civilian], _target]; // We have checks in flagaction to handle the action swap. Still spaghetti
 [_target, "carry"] remoteExec ["A3A_fnc_flagaction", [teamPlayer,civilian], _target];

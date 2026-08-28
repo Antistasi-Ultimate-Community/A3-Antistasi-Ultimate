@@ -208,10 +208,18 @@ switch _typeX do
     };
     case "cargo":
     {
-        _flag addAction [format [
-            "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", // Change this
-            localize "STR_A3A_Missions_LOG_Delivery_acknowledge_action"
-        ], A3A_fnc_acknowledgeCargo,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target && {_target getVariable ['A3A_cargo_acknowledged', false] isEqualTo false}",4];
+        private _isAcknowledged = _flag getVariable ['A3A_cargo_acknowledged', false];
+        if (_isAcknowledged) then { 
+            _flag addAction [format [
+                "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdaction_search_ca.paa' size='1.6' shadow=2 /> <t>%1</t>",
+                localize "STR_A3A_Missions_LOG_Delivery_search_action"
+            ], A3A_fnc_checkCargo,nil,0,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target && {_target getVariable ['A3A_cargo_acknowledged', false] isEqualTo true}",4];
+        } else {
+            _flag addAction [format [
+                "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdaction_requestleadership_ca.paa' size='1.6' shadow=2 /> <t>%1</t>",
+                localize "STR_A3A_Missions_LOG_Delivery_acknowledge_action"
+            ], A3A_fnc_acknowledgeCargo,nil,6,true,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && alive _target && {_target getVariable ['A3A_cargo_acknowledged', false] isEqualTo false}",4];
+        };
     };
     case "captureX":
     {

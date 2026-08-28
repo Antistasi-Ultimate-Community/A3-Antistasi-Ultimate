@@ -91,3 +91,83 @@ class A3_Structures_F_Heli_Ind_Machines_JetEngineStarter_01_F_p3d : TRIPLES(ADDO
     cargoValue = 5000; // Quite literally dies to a fly, very volatile
     isExplosive = 1;
 }; // Jet starter engine
+
+class A3_Structures_F_Civ_Constructions_Bricks_V4_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0};
+    rotation[] = {0,0,0};
+    size = 2;
+    cargoValue = 1000;
+}; // Pallet bricks (partially used)
+
+class A3_Structures_F_Civ_Constructions_Bricks_V1_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0};
+    rotation[] = {0,0,0};
+    size = 2;
+    cargoValue = 1000;
+}; // Pallet bricks (full)
+
+class A3_Structures_F_Argo_Military_Fortifications_CzechHedgehog_01_old_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.7};
+    rotation[] = {0,0,0};
+    size = 2;
+    cargoValue = 1000;
+}; // Czech hedgehod (old)
+
+// class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_large_F_p3d : TRIPLES(ADDON,Cargo,Base)
+// {
+//     offset[] = {0,0,0.47};
+//     rotation[] = {0,0,0};
+//     size = 2;
+//     cargoValue = 1000;
+// }; // Food sacks (non cargo net, brown)
+
+class A3_Structures_F_Civ_Market_Sacks_goods_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.47};
+    rotation[] = {0,0,0};
+    size = 2;
+    cargoValue = 1000;
+}; // Food sacks (old, baskets)
+
+class A3_Props_F_Exp_Commercial_Market_WoodenCrate_01_stack_x3_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.7};
+    rotation[] = {0,0,0};
+    size = 2;
+    cargoValue = 1000;
+}; // Wooden cargo crates (Tanoa, 3)
+
+class A3_Props_F_Exp_Commercial_Market_WoodenCrate_01_stack_x5_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.95};
+    rotation[] = {0,0,0};
+    size = 2;
+    cargoValue = 1000;
+}; // Wooden cargo crates (Tanoa, 5)
+
+class A3_Props_F_Exp_Commercial_Market_WoodenCrate_01_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0.3};
+    rotation[] = {1,0,0};
+    size = 1;
+    cargoValue = 500;
+}; // Wooden cargo crate (Tanoa, 1)
+
+class A3_Structures_F_Civ_Constructions_Pipes_large_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,-0.03};
+    rotation[] = {1,0,0};
+    size = 6;
+    cargoValue = 4000;
+}; // Iron pipes from altis
+
+class A3_Structures_F_Civ_Constructions_WoodenBox_F_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,0};
+    rotation[] = {0,0,0};
+    size = 1;
+    cargoValue = 500;
+}; // Old looking wooden rectangle box

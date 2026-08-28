@@ -9,7 +9,7 @@ class cargo_construction : cargo_base
         };
         class iron {
             weight = 0.4;
-            cargo[] = {{"Land_IronPipes_F", 1}};
+            cargo[] = {{"Land_Pipes_large_F", 1}};
         };
     };
 };

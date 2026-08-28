@@ -53,7 +53,7 @@ if (_origin isEqualTo "") exitWith {Error("Delivery mission failed: Invalid orig
 if (_destination isEqualTo "") exitWith {Error("Delivery mission failed: Invalid destination.")};
 
 private _size = [_origin] call A3A_fnc_sizeMarker;
-private _sizeMin = 25 max _size; // Minimum size of 50m
+private _sizeMin = 25 max _size; // Minimum size of 25m
 private _sizeComplete = 50 max _size; // Minimum size of 50m
 
 private _originPos = getMarkerPos _origin;
@@ -93,17 +93,17 @@ private _cargo = _cargoFull#0;
 
 private _cargoObjects = [];
 
-if (_cargoNum isNotEqualTo -1 && {!(_cargoNum isEqualType "")}) then { // Support for ["classname", "amount"]
+if (_cargoNum isNotEqualTo -1 && {!(_cargoNum isEqualType "")}) then { // Support for ["classname", amount]
     for "_i" from 1 to _cargoNum do
     {
         private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
-        private _cargoObject = [_cargo, _pos] call A3U_fnc_LOG_delivery_createCargo;
+        private _cargoObject = [_cargo, _pos, _destination] call A3U_fnc_LOG_delivery_createCargo;
         _cargoObjects pushBack _cargoObject;
     };
 } else { // Support for ["classname", "classname"]
-    { // Can't we just check if _cargo is an array?
+    {
         private _pos = [_posMission, 0, 5, 0, 0, 20, 0, [], [_posMission, _posMission]] call BIS_fnc_findSafePos;
-        private _cargoObject = [_x, _pos] call A3U_fnc_LOG_delivery_createCargo;
+        private _cargoObject = [_x, _pos, _destination] call A3U_fnc_LOG_delivery_createCargo;
         _cargoObjects pushBack _cargoObject;
     } forEach _cargo;
 };
@@ -122,8 +122,9 @@ private _fnc_isCargoDead = {
 private _fnc_isCargoDelivered = {
     params ["_cargoObjects", "_destinationPos", "_range"];
     ({(_x distance2D _destinationPos) < _range || {!alive _x}} count _cargoObjects) isEqualTo (count _cargoObjects) &&
-    ({_x getVariable ["A3A_cargo_isLoaded", false] isEqualTo false} count _cargoObjects) isEqualTo (count _cargoObjects) && 
-    ({isNull ropeAttachedTo _x} count _cargoObjects) isEqualTo (count _cargoObjects);
+    {({_x getVariable ["A3A_cargo_isLoaded", false] isEqualTo false} count _cargoObjects) isEqualTo (count _cargoObjects)} && 
+    {({isNull attachedTo _x} count _cargoObjects) isEqualTo (count _cargoObjects)} && 
+    {({isNull ropeAttachedTo _x} count _cargoObjects) isEqualTo (count _cargoObjects)};
 };
 
 private _functions = [_fnc_cleanup, _fnc_isCargoDead];
@@ -147,7 +148,6 @@ waitUntil {
 [_taskId, _cargoObjects, _missionExpireTime, _functions] call _fnc_failureCheck;
 
 // Update task description
-// private _betterDestination = [_destinationPos#0, ((_destinationPos#1) + 5), _destinationPos#2]; // Clears it off the actual zone marker, pure visual change
 [_taskId, _destination] call BIS_fnc_taskSetDestination;
 [_taskId, [
     format [localize "STR_A3A_Missions_LOG_Delivery_task_desc", _destinationName, _originName],
@@ -158,7 +158,7 @@ waitUntil {
 private _missionCompletionTime = time + 3600; // 1 hour to complete the delivery
 
 waitUntil {
-    sleep 5;
+    sleep 10;
     time > _missionCompletionTime ||
     {[_cargoObjects, _destinationPos, 15] call _fnc_isCargoDelivered} ||
     {([_cargoObjects] call _fnc_isCargoDead)}
@@ -167,7 +167,7 @@ waitUntil {
 // Expiry/failure sanity check
 [_taskId, _cargoObjects, _missionCompletionTime, _functions] call _fnc_failureCheck;
 
-// Add variable for _destination to confirm delivery, not used internally but for external checks (e.g framework)
+// Add variable for _destination to confirm delivery, not used internally but for external checks (e.g framework). We could use the events system...
 private _destinationData = [true, _cargo]; // <bool>, <array<string>>
 [_destination, _destinationData] call A3U_fnc_LOG_delivery_setData;
 
@@ -184,7 +184,7 @@ private _distanceTravelled = (_originPos distance2D _destinationPos) / 500;
     if ([_x] call A3U_fnc_LOG_delivery_getCargoExplosive isEqualTo 1) then {_payment = _payment + 1000};
 } forEach _cargoObjects;
 
-private _bonus = round (_distanceTravelled * 250); // +250 per 500m?
+private _bonus = round (_distanceTravelled * 250);
 _payment = _payment + _bonus;
 
 // Get players "involved" (ish) and pay them
