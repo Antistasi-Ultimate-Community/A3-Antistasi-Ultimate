@@ -54,10 +54,6 @@ class CfgEditorSubcategories
 	{
 		displayName = "Static Holders";
 	};
-	class A3U_EditorSubcategoryLogistics
-	{
-		displayName = "Logistics";
-	};
 };
 
 class CfgVehicles
