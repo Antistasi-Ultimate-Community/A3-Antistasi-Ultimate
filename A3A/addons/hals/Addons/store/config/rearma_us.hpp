@@ -71,6 +71,16 @@ class mgsReArma_US
 	ITEM(M249_Tan_F, 1750, RIFLE_STOCK);
 };
 
+class smgsReArma_US
+{
+	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_ReArma_US", localize "STR_A3AU_smgs"]);
+	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
+
+	ITEM(MP7A2_blk_F, 1000, RIFLE_STOCK);
+	ITEM(MP7A2_khk_F, 1000, RIFLE_STOCK);
+	ITEM(MP7A2_tan_F, 1000, RIFLE_STOCK);
+};
+
 class sniperRiflesReArma_US
 {
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_ReArma_US", localize "STR_A3AU_sniperRifles"]);
@@ -143,6 +153,9 @@ class opticsReArma_US
 
 	ITEM(NGSS_BLK, 1300, 100);
 	ITEM(NGSS_TAN, 1300, 100);
+
+	ITEM(NGMS_FC, 1550, 100);
+	ITEM(NGMS_FC_TAN, 1550, 100);
 };
 
 class pointersReArma_US
@@ -173,6 +186,8 @@ class muzzlesReArma_US
 
 	ITEM(HUXWRX, 200, MZ_STOCK);
 	ITEM(HUXWRXPDW, 200, MZ_STOCK);
+
+	ITEM(MP7SND, 200, MZ_STOCK);
 };
 
 class magazinesReArma_US
@@ -221,4 +236,9 @@ class magazinesReArma_US
 
 	ITEM(18Rnd_9x19_Mag, 35, MZ_STOCK);
 	ITEM(18Rnd_9x19_Tracer_Mag, 35, MZ_STOCK);
+	
+	ITEM(20Rnd_46x30_AP_Mag_F, 45, MZ_STOCK);
+	ITEM(20Rnd_46x30_AP_Mag_Tracer_F, 45, MZ_STOCK);
+	ITEM(40Rnd_46x30_AP_Mag_F, 75, MZ_STOCK);
+	ITEM(40Rnd_46x30_AP_Mag_Tracer_F, 75, MZ_STOCK);
 };
