@@ -8,7 +8,7 @@ class UtilityItems {
     };
 
     class BuildBox: Base {
-        flags[] = {"place", "move", "build"};
+        flags[] = {"place", "move", "build", "save"};
     };
 
     class A3AU_Build_Box_ExtraSmall: BuildBox {
