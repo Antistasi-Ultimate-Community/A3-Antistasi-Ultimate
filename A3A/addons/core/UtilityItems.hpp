@@ -11,13 +11,13 @@ class UtilityItems {
         flags[] = {"place", "move", "build"};
     };
 
-    class Land_PlasticCase_01_small_black_F: BuildBox {
+    class A3AU_Build_Box_ExtraSmall: BuildBox {
         scope = 1;
         displayName = "Build Box (Extra Small)";
         price = 250;
     };
 
-    class Land_PlasticCase_01_medium_black_F: BuildBox {
+    class A3AU_Build_Box_Small: BuildBox {
         scope = 1;
         displayName = "Build Box (Small)";
         price = 500;
@@ -29,7 +29,7 @@ class UtilityItems {
         price = 2500;
     };
 
-    class Land_PlasticCase_01_large_black_F: BuildBox {
+    class A3AU_Build_Box_Large_2: BuildBox {
         scope = 1;
         displayName = "Build Box (Large)";
         price = 5000;
