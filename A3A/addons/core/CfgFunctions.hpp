@@ -860,10 +860,12 @@ class CfgFunctions
 
         class UtilityItems {
             file = QPATHTOFOLDER(functions\UtilityItems);
+            class applyObjectSaveData_BuildBox {};
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
             class dropItem {};
+            class getObjectSaveData_BuildBox {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
