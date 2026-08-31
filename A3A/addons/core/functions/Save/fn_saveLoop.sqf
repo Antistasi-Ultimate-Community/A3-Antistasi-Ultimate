@@ -238,12 +238,6 @@ _arrayEst = _arrayEst apply {
 };
 
 reverse _arrayEst;
-
-diag_log text "[VEHICLES/STATICS] ---------------------------------------------------------";
-{
-	diag_log text format["#%1: %2", _foreachIndex, _x];
-} forEach _arrayEst;
-
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 
 private _excessiveConstructions = maxConstructions - (count constructionsToSave);
