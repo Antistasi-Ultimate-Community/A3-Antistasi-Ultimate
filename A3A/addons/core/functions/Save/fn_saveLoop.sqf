@@ -234,6 +234,12 @@ _arrayEst = _arrayEst apply {
 		];
 	};
 
+	private _saveData = [_x] call A3A_fnc_getObjectSaveData;
+
+	if !(isNil "_saveData") then {
+		_properties pushBack _saveData;
+	};
+
 	_properties;
 };
 

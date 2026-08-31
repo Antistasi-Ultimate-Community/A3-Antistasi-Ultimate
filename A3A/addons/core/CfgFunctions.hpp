@@ -628,12 +628,14 @@ class CfgFunctions
         class Save {
             file = QPATHTOFOLDER(functions\Save);
             class addToStaticsToSave {};
+            class applyObjectSaveData {};
             class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};
             class resetPlayer {};

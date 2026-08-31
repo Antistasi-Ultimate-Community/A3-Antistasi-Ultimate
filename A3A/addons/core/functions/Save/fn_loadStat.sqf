@@ -379,7 +379,13 @@ if (_varName in specialVarLoads) then {
             _list sort false;
             _list apply {
                 _x params["","","","_data"];
-                _data params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped"];
+
+                // This isn't pretty; we need versioning...
+                if (count _data <= 5) then {
+                    _data params["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_objectSaveData"];
+                } else {
+                    _data params["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped", "_objectSaveData"];
+                };
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
                 Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
@@ -392,6 +398,11 @@ if (_varName in specialVarLoads) then {
                     _veh setVectorDirAndUp [_xVectorDir,_xVectorUp];
                 };
                 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;                  // Calls initObject instead if it's a buyable item
+
+                if !(isNil "_objectSaveData") then {
+                    [_veh, _objectSaveData] call A3A_fnc_applyObjectSaveData;
+                };
+
                 // TODO: Check whether various buyable items turn up as "Building"
                 if (isNil {_veh getVariable "A3A_canGarage"}) then {        // Buyable items should set this
                     switch true do {
