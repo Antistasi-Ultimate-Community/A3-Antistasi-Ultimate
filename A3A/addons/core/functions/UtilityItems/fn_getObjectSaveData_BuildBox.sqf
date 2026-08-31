@@ -29,4 +29,4 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _object) exitWith {};
 
-[_object getVariable["A3A_build_money", 0]];
+[_object getVariable["A3A_itemPrice", 0]];

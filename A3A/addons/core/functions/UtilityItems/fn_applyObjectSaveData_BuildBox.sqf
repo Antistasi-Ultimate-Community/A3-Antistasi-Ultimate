@@ -35,6 +35,7 @@ if !assert(_saveData params[
     ["_remainingBudget", nil, [0]]
 ]) exitWith {};
 
-_object setVariable["A3A_build_money", _remainingBudget, true];
+_object setVariable["A3A_itemPrice", _remainingBudget, true];
+_object setVariable["A3A_build_money", (A3A_utilityItemHM get typeOf _object) select 1, true];
 
 nil;
