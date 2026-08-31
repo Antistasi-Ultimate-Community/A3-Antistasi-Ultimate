@@ -40,7 +40,7 @@ private _categories = [
     "police", _weightPolice, 
     "militia", _weightMilitia,
     "normal", _weightNormal,
-    "SF", _weightSF
+    "specops", _weightSF
 ];
 
 private _modifier = selectRandomWeighted _categories;
