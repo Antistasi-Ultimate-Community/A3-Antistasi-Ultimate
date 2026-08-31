@@ -381,11 +381,12 @@ if (_varName in specialVarLoads) then {
                 _x params["","","","_data"];
 
                 // This isn't pretty; we need versioning...
-                if (count _data <= 5) then {
-                    _data params["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_objectSaveData"];
+                private _params = if (count _data <= 5) then {
+                    ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_objectSaveData"];
                 } else {
-                    _data params["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped", "_objectSaveData"];
+                    ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state", "_customization", "_flipped", "_objectSaveData"];
                 };
+                _data params _params;
                 private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
                 Debug_2("staticsX: created %1 -> %2",_typeVehX,_veh);
                 // This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
