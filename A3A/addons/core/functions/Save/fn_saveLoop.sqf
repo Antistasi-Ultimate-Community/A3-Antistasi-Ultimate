@@ -196,8 +196,7 @@ vehicles select {
 		!(typeOf _x in A3A_utilityItemHM) &&
 		{ fullCrew[_x, "", true] isNotEqualTo [] } && // no crew seats, not in utilityItems, not saved
 		{ crew _x findIf { (alive _x) && (!isPlayer _x) } == -1 } // no AI-crewed vehicles, those are refunded
-	} ||
-	{ "save" in ((A3A_utilityItemHM get typeOf _x) select 4) } 
+	}
 } apply {
     _arrayEst pushBackUnique _x;
 };
@@ -239,6 +238,12 @@ _arrayEst = _arrayEst apply {
 };
 
 reverse _arrayEst;
+
+diag_log text "[VEHICLES/STATICS] ---------------------------------------------------------";
+{
+	diag_log text format["#%1: %2", _foreachIndex, _x];
+} forEach _arrayEst;
+
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 
 private _excessiveConstructions = maxConstructions - (count constructionsToSave);

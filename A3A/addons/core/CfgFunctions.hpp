@@ -627,6 +627,7 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class addToStaticsToSave {};
             class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
