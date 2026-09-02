@@ -1038,6 +1038,14 @@
                 <French>Cet objet contient un certain nombre de kits de récupération de l'état de préparation au combat.</French>
                 <Turkish>Bu öğe belirli sayıda Savaş Hazırlığı Yenileme kiti içerir</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_buildbox_tooltip">
+                <Original>This item is used to build stuff.</Original>
+                <Russian>Этот предмет используется для строительства объектов.</Russian>
+                <Chinesesimp>此物品用于建造设施。</Chinesesimp>
+                <Korean>이 아이템은 건설용으로 사용됩니다.</Korean>
+                <French>Cet objet est utilisé pour la construction.</French>
+                <Turkish>Bu eşya inşaat yapımında kullanılır.</Turkish>
+            </Key>
         </Container>
         <Container name="dialog_main_player">
             <Key ID="STR_antistasi_dialogs_main_fast_travel">
