@@ -59,6 +59,15 @@ class CfgFunctions
             class markerContextMenu {};
             class mrkUpdateBulk {};
         };
+        class player_context 
+        {
+            file = QPATHTOFOLDER(functions\player_context);
+            class playerContextMenu {};
+            class QRF_chasePlayer {};
+            class context_buildPanel {};
+            class context_panelActions {};
+            class context_notification {};
+        };
         class REINF
         {
             file = QPATHTOFOLDER(functions\REINF);
