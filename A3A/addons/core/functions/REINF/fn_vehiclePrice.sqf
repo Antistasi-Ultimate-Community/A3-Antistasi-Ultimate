@@ -29,12 +29,20 @@ private _costsBM = [_typeX] call A3U_fnc_blackMarketVehiclePrice;
 
 if (isNil "_costsBM") then {_costsBM = 0};
 
-if (_costs isNotEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
-	_costs = _costs min _costsBM;
-};
+if (_typeX in A3A_rebelVehicles) then {
+	if (_costs isNotEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
+		_costs = _costs min _costsBM;
+	};
 
-if (_costs isEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
-	_costs = _costsBM;
+	if (_costs isEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
+		_costs = _costsBM;
+	};
+} else {
+	// For non-rebel vehicles, use whichever is greater as there is no infinite money hack possible
+	// as these vehicles can only be bought with the BM cost.
+	if (_costsBM > _costs) then {
+		_costs = _costsBM;
+	};
 };
 
 if (_costs <= 0) then { // if the cost is less than 0

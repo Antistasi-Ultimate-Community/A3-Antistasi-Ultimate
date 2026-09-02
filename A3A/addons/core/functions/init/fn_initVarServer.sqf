@@ -684,6 +684,8 @@ server setVariable [FactionGet(reb,"rallyPoint"), 100, true];
 	server setVariable [_x, _y, true];
 } forEach A3A_rebelVehicleCosts;
 
+DECLARE_SERVER_VAR(A3A_rebelVehicles, keys A3A_rebelVehicleCosts);
+
 ///////////////////////
 //     GARRISONS    ///
 ///////////////////////
