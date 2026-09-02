@@ -56,31 +56,53 @@ class A3AU_RebHelipad_base_F: Helipad_base_F
 
     class EGVAR(core,Properties) 
     {
-        actions[] = {"terrainCleaner", "terrainSmootherExperimental"};
+        actions[] = {"terrainSmootherExperimental"};
         cleanRadius = 30;
         cleanTerrainTypes[] = {};
         smoothRadius[] = {40, 70}; // <main zone>,<smoothing zone>
     };
 };
-class A3AU_RebHelipad_Circle_F: A3AU_RebHelipad_base_F 
+
+class A3AU_RebHelipad_CircleNC_F: A3AU_RebHelipad_base_F 
 {
     scope = 2;
     scopeCurator = 2;
 
-    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0;
+    displayName = __EVAL(formatText["%1 [no cleaning]", localize "$STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0"]);
     editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadCircle_F.jpg";
     model = "\A3\Structures_F\Mil\Helipads\HelipadCircle_F.p3d";
 };
-class A3AU_RebHelipad_Square_F: A3AU_RebHelipad_base_F 
+
+class A3AU_RebHelipad_Circle_F: A3AU_RebHelipad_CircleNC_F
+{
+    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0;
+
+    class EGVAR(core,Properties): EGVAR(core,Properties)
+    {
+        actions[] += {"terrainCleaner"};
+    };
+};
+    
+class A3AU_RebHelipad_SquareNC_F: A3AU_RebHelipad_base_F 
 {
     scope = 2;
     scopeCurator = 2;
 
-    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0;
+    displayName = __EVAL(formatText["%1 [no cleaning]", localize "$STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0"]);
     editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadSquare_F.jpg";
     mapSize = 11.92;
     model = "\A3\Structures_F\Mil\Helipads\HelipadSquare_F.p3d";
     icon = "iconObject_1x1";
+};
+
+class A3AU_RebHelipad_Square_F: A3AU_RebHelipad_SquareNC_F 
+{
+    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0;
+
+    class EGVAR(core,Properties): EGVAR(core,Properties)
+    {
+        actions[] += {"terrainCleaner"};
+    };
 };
 
 // Terrain Smoothers
