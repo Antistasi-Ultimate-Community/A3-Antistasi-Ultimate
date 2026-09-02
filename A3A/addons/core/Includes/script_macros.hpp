@@ -113,6 +113,25 @@ Author:
 #define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
 
 /* -------------------------------------------
+Macro: SNOOZE
+    A "sleep" command that isn't arbitrarily either 0.1 or 0.2 seconds,
+    but a consistent value to maybe be used across the codebase. Will
+    roughly equate to "one frame".
+
+Parameters:
+    None
+
+Example:
+    (begin example)
+        waitUntil { SNOOZE(); someCondition };
+    (end)
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
+#define SNOOZE() sleep 0.001
+
+/* -------------------------------------------
 Macro: XOR
     Evaluates to true if exactly one of both values is true
 
