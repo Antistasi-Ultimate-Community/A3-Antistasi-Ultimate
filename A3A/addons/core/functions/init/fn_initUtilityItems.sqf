@@ -37,7 +37,7 @@ _items append [
     [_medTent#0, _medTent#1, localize "STR_A3AP_buyvehdialog_medical_tent", "heal", ["place", "move", "rotate", "pack"]],
     [_ammoStation#0, _ammoStation#1, localize "STR_A3AP_buyvehdialog_ammo_station", "rearm", ["cmmdr", "ammo", "place", "move", "rotate", "save"]],
     [_repairStation#0, _repairStation#1, localize "STR_A3AP_buyvehdialog_repair_station", "repair", ["cmmdr", "place", "move", "rotate", "pack", "save"]],
-    [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "", ["move"]]
+    [_lightSource#0, _lightSource#1, localize "STR_A3AP_buyvehdialog_light", "light", ["move"]]
     // TODO: get larger box from somewhere
 ];
 
