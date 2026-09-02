@@ -30,6 +30,8 @@ private _declareServerVariable = {
 #define ONLY_DECLARE_SERVER_VAR_FROM_VARIABLE(name) [name] call _declareServerVariable
 #define DECLARE_SERVER_VAR_FROM_VARIABLE(name, value) [name, value] call _declareServerVariable
 
+#define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
+
 ////////////////////////////////////////
 //     GENERAL SERVER VARIABLES      ///
 ////////////////////////////////////////
@@ -648,6 +650,38 @@ server setVariable [FactionGet(reb,"rallyPoint"), 100, true];
 {
 	server setVariable [_x, _y, true];
 } forEach A3A_rebelVehicleCosts;
+
+{
+	server setVariable [_x, 750, true];
+} forEach (FactionGet(all,"vehiclesLight") + OccAndInv("vehiclesTrucks") + OccAndInv("vehiclesCargoTrucks") + OccAndInv("vehiclesMilitiaTrucks") + FactionGet(reb,"vehiclesTruck"));
+
+{
+	server setVariable [_x, 1500, true];
+} forEach (FactionGet(all,"vehiclesBoats") + FactionGet(all,"vehiclesLightAPCs") + OccAndInv("vehiclesAmmoTrucks") + OccAndInv("vehiclesRepairTrucks") + OccAndInv("vehiclesFuelTrucks") + OccAndInv("vehiclesMedical"));
+
+{
+	server setVariable [_x, 2500, true];
+} forEach (FactionGet(all,"vehiclesAPCs") + FactionGet(all,"vehiclesIFVs") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesTransportAir") + FactionGet(all,"vehiclesUAVs"));
+
+{
+	server setVariable [_x, 3000, true];
+} forEach FactionGet(all,"vehiclesHelisLight");
+
+{
+	server setVariable [_x, 3500, true];
+} forEach FactionGet(all,"vehiclesLightTanks");
+
+{
+	server setVariable [_x, 6500, true];
+} forEach (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesTanks") + FactionGet(all,"vehiclesAA") + FactionGet(all,"vehiclesArtillery"));
+
+{
+	server setVariable [_x, 7500, true];
+} forEach (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA") + FactionGet(all,"vehiclesPlanesLargeAA") + FactionGet(all,"vehiclesPlanesLargeCAS"));
+
+{
+	server setVariable [_x, 10000, true];
+} forEach FactionGet(all,"vehiclesPlanesGunship");
 
 ///////////////////////
 //     GARRISONS    ///
