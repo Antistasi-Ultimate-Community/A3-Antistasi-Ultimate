@@ -652,35 +652,35 @@ server setVariable [FactionGet(reb,"rallyPoint"), 100, true];
 } forEach A3A_rebelVehicleCosts;
 
 {
-	server setVariable [_x, 750, true];
+	server setVariable [_x, 1500, true];
 } forEach (FactionGet(all,"vehiclesLight") + OccAndInv("vehiclesTrucks") + OccAndInv("vehiclesCargoTrucks") + OccAndInv("vehiclesMilitiaTrucks") + FactionGet(reb,"vehiclesTruck"));
 
 {
-	server setVariable [_x, 1500, true];
+	server setVariable [_x, 3000, true];
 } forEach (FactionGet(all,"vehiclesBoats") + FactionGet(all,"vehiclesLightAPCs") + OccAndInv("vehiclesAmmoTrucks") + OccAndInv("vehiclesRepairTrucks") + OccAndInv("vehiclesFuelTrucks") + OccAndInv("vehiclesMedical"));
 
 {
-	server setVariable [_x, 2500, true];
+	server setVariable [_x, 5000, true];
 } forEach (FactionGet(all,"vehiclesAPCs") + FactionGet(all,"vehiclesIFVs") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesTransportAir") + FactionGet(all,"vehiclesUAVs"));
 
 {
-	server setVariable [_x, 3000, true];
+	server setVariable [_x, 6000, true];
 } forEach FactionGet(all,"vehiclesHelisLight");
 
 {
-	server setVariable [_x, 3500, true];
+	server setVariable [_x, 7000, true];
 } forEach FactionGet(all,"vehiclesLightTanks");
 
 {
-	server setVariable [_x, 6500, true];
+	server setVariable [_x, 13000, true];
 } forEach (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesTanks") + FactionGet(all,"vehiclesAA") + FactionGet(all,"vehiclesArtillery"));
 
 {
-	server setVariable [_x, 7500, true];
+	server setVariable [_x, 15000, true];
 } forEach (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA") + FactionGet(all,"vehiclesPlanesLargeAA") + FactionGet(all,"vehiclesPlanesLargeCAS"));
 
 {
-	server setVariable [_x, 10000, true];
+	server setVariable [_x, 20000, true];
 } forEach FactionGet(all,"vehiclesPlanesGunship");
 
 ///////////////////////
