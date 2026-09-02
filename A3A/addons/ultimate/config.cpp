@@ -24,6 +24,7 @@ class CBA_Extended_EventHandlers_base; // Needed for CfgVehicles.hpp
 
 class A3U
 {
+    #include "config\cargo\CfgCargo.hpp"
     #include "config\plane\cfgPlaneLoadouts.hpp"
     #include "config\cfgForbiddenItems.hpp"
     #include "config\trader\cfgTraderMods.hpp"

@@ -70,6 +70,7 @@ class CfgFunctions {
 			class trader_createTrader {};
 			class trader_setStockType {};
 			class trader_addVehicleMarketAction {};
+			class trader_addRequestMissionAction {};
 			class trader_removeUnlockedItemsFromStock {};
 			class trader_rerollTrader {};
 			class trader_setTraderDiscount {};

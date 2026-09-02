@@ -13141,7 +13141,7 @@
                 <French>Attraper le largage</French>
                 <Turkish>İkmal Paketini Yakala</Turkish>
             </Key>
-            <Key ID="STR_A3A_Missions_DES_Airdrop_task_desc">
+            <Key ID="STR_A3A_Missions_LOG_Airdrop_task_desc">
                 <Original>A plane will drop some cargo at %1. Go there and throw any smoke grenade on ground, the pilot will notice the signal and drop the cargo. Bring the cargo back to HQ. Do this before %2.</Original>
                 <Russian>Наш самолёт сбросит полезный груз на %1. Идите туда и укажите точную позицию сброса любой дымовой гранатой, пилот заметит сигнал и сбросит груз. Привезите груз в штаб. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们的飞机将在 %1 空投一些货物。 去那里并在地面上扔任何烟雾弹，飞行员会注意到信号并放下货物。 把货物运到总部。 在 %2 之前执行此任务。</Chinesesimp>
