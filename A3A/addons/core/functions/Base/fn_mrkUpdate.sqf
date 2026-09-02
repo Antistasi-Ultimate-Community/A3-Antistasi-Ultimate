@@ -160,7 +160,7 @@ private _markerTitle = call {
     if (_originalName in citiesX) exitWith { markerText _originalName };
     
     // FETCH LIVE SPAWN COUNT FROM NAMESPACE
-    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (missionNamespace getVariable ["rallyPointSpawnCount", 0])] };
+    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (rallyPointRoot getVariable ["remainingTravels", 0])] };
 
     if (_originalName in watchpostsFIA) exitWith { format [localize "STR_marker_watchpost", _factionName] };
     if (_originalName in roadblocksFIA) exitWith { format [localize "STR_marker_roadblock", _factionName] };
@@ -280,7 +280,7 @@ private _specialDefinitions = [
     
     // FETCH LIVE SPAWN COUNT FROM NAMESPACE FOR SPECIAL DEFS
     private _specTitle = if (_specTitleLoc == "STR_marker_RP") then {
-        format [localize _specTitleLoc, str (missionNamespace getVariable ["rallyPointSpawnCount", 0])]
+        format [localize _specTitleLoc, str (rallyPointRoot getVariable ["remainingTravels", 0])]
     } else {
         format [localize _specTitleLoc, _specFaction getOrDefault ["name", ""]]
     };
