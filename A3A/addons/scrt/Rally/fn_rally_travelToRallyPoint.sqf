@@ -75,7 +75,6 @@ cutText [localize "STR_cut_RP_FT_success", "BLACK IN", 1];
 // Update both variables and trigger the universal map UI refresh
 _remainingTravels = _remainingTravels - 1;
 rallyPointRoot setVariable ["remainingTravels", _remainingTravels, true];
-missionNamespace setVariable ["rallyPointSpawnCount", _remainingTravels, true];
 
 [rallyPointMarker] call A3A_fnc_mrkUpdate;
 
