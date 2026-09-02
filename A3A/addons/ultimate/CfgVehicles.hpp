@@ -351,3 +351,101 @@ class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
     displayName = "Vehicle Spawn Helper";
     GVAR(spawnTypes)[] = {"hc","mineSweep","outpost"};
 };
+
+class ThingX;
+class A3U_Pallet: ThingX {
+    scope = 2;
+    scopeCurator = 2;
+    displayName = "Pallet";
+    editorCategory = "A3U_EditorCategory";
+    editorSubcategory = "A3U_EditorSubcategoryLogistics";
+    placement = "slope";
+    model = QPATHTOFOLDER(data\models\A3U_Large_Pallet\A3U_Pallet.p3d);
+    simulation = "thingx";
+    armor = 150;
+
+    hiddenSelections[] = {"camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa)
+    };
+    slingLoadCargoMemoryPoints[] = {"sling_1", "sling_2", "sling_3", "sling_4"};
+    
+    class A3A_Logistics_Cargo {
+        offset[] = {0,0,0};
+        rotation[] = {1,0,0};
+        size = 5;
+        recoil = 0;
+    };
+};
+
+class A3U_Pallet_Boxes: A3U_Pallet {
+    displayName = "Pallet (Boxes)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Large_Pallet\A3U_Pallet_Boxes.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_Boxes_co.paa)
+    };
+};
+
+class A3U_Pallet_Pipes: A3U_Pallet {
+    displayName = "Pallet (Pipes)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Large_Pallet\A3U_Pallet_Pipes.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_Pipes_co.paa)
+    };
+};
+
+class A3U_Pallet_Planks: A3U_Pallet {
+    displayName = "Pallet (Planks)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Large_Pallet\A3U_Pallet_Planks.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_Planks_co.paa)
+    };
+};
+
+class A3U_Small_Pallet: A3U_Pallet {
+    displayName = "Small Pallet";
+
+    model = QPATHTOFOLDER(data\models\A3U_Small_Pallet\A3U_Small_Pallet.p3d);
+    hiddenSelections[] = {"camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa)
+    };
+    
+    class A3A_Logistics_Cargo {
+        offset[] = {0,0,0};
+        rotation[] = {0,1,0};
+        size = 3;
+        recoil = 0;
+    };
+};
+
+class A3U_Small_Pallet_Boxes: A3U_Small_Pallet {
+    displayName = "Small Pallet (Boxes)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Small_Pallet\A3U_Small_Pallet_Boxes.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_Boxes_co.paa)
+    };
+};
+
+class A3U_Small_Pallet_Barrels: A3U_Small_Pallet {
+    displayName = "Small Pallet (Barrels)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Small_Pallet\A3U_Small_Pallet_Barrels.p3d);
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa),
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_Barrels_co.paa)
+    };
+};
