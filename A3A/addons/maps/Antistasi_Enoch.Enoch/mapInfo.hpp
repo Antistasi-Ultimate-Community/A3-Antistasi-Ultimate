@@ -19,6 +19,7 @@ class enoch {
 		{1470.69,7390.76,0},{10549.7,11113.2,0},{5955.1,4134.83,0},{3293.84,2045.38,0},{11065.1,4330.7,-1.52588e-005}
 	};
 	climate = "temperate";
+	hasRiverPorts = 1;
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
 		BUILDABLES_UNIVERSAL,

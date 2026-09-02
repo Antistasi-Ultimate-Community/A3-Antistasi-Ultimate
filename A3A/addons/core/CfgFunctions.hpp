@@ -145,6 +145,7 @@ class CfgFunctions
             class garbageCleanerTracker {};
             class garrisonInfo {};
             class getAggroLevelString {};
+            class getLocationName {};
             class getRecentDamage {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
@@ -154,6 +155,8 @@ class CfgFunctions
             class initPetros {};
             class isFrontline {};
             class isFrontlineNoFIA {};
+            class isRiverportMap {};
+            class isSeaportMap {};
             class arePositionsConnected {};
             class joinMultipleGroups {};
             class localizar {};
