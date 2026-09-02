@@ -1,11 +1,9 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_typeX"];
+params ["_typeX", ["_defaultPrice", 1000]];
 
 private _costs = server getVariable _typeX;
-
-private _defaultPrice = 1000;
 
 _costs = if (isNil "_costs") then {
 	Error_1("Invalid vehicle price :%1.", _typeX);
