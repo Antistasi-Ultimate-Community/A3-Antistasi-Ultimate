@@ -492,6 +492,10 @@ Info("Sorting grouped class categories");
 Info("Building loot lists");
 [] call A3A_fnc_loot;
 
+// Used in headless clients (NATOinit).
+// Defined in equipmentSort
+ONLY_DECLARE_SERVER_VAR(dummyNVGs);
+
 if (["tts_emission"] call A3U_fnc_hasAddon) then {call A3U_fnc_emission};
 
 if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {call A3U_fnc_fillMapAnomalies};
