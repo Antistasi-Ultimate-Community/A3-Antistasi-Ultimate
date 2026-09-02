@@ -154,14 +154,6 @@ if (_isMilAdmin || _originalName in mrkAntennas || _originalName in resourcesX |
     };
 };
 
-private _getLocName = {
-    params ["_array", "_locKey"];
-    private _idx = _array find _originalName;
-    if (_idx < 0) exitWith {""};
-    private _names = (localize _locKey) splitString "|";
-    if (_idx < count _names) then { _names select _idx } else { "" };
-};
-
 private _markerTitle = call {
     if (_isSyndicateHeadquarters) exitWith { format [localize "STR_A3U_HOVER_RESISTANCE_HQ", _factionName] };
     if (_isTraderMarker) exitWith { localize "STR_A3U_HOVER_BLACK_MARKET" };
@@ -169,20 +161,6 @@ private _markerTitle = call {
     
     // FETCH LIVE SPAWN COUNT FROM NAMESPACE
     if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (missionNamespace getVariable ["rallyPointSpawnCount", 0])] };
-    
-    if (_isMilAdmin) exitWith { format [localize "STR_milAdministration", _nearestCityName] };
-    if (_originalName in mrkAntennas) exitWith { format [localize "STR_radiotower", _nearestCityName] };
-    if (_originalName in resourcesX) exitWith { format [localize "STR_resources", _nearestCityName] };
-    if (_originalName in factories) exitWith { format [localize "STR_factory", _nearestCityName] };
-
-    if (_originalName in airportsX) exitWith { format [localize "STR_airbase", [airportsX, "STR_A3AU_airfieldNames"] call _getLocName] };
-    if (_originalName in outposts) exitWith { format [localize "STR_outpost", [outposts, "STR_A3AU_outpostNames"] call _getLocName] };
-    if (_originalName in milbases) exitWith { format [localize "STR_milbase", [milbases, "STR_A3AU_milbaseNames"] call _getLocName] };
-    
-    if (_originalName in seaports) exitWith {
-        private _portName = [seaports, "STR_A3AU_seaportNames"] call _getLocName;
-        format [localize (if (toLowerANSI worldName in ["enoch", "vn_khe_sanh", "esseker"]) then {"STR_port_river"} else {"STR_port_sea"}), _portName]
-    };
 
     if (_originalName in watchpostsFIA) exitWith { format [localize "STR_marker_watchpost", _factionName] };
     if (_originalName in roadblocksFIA) exitWith { format [localize "STR_marker_roadblock", _factionName] };
@@ -190,7 +168,8 @@ private _markerTitle = call {
     if (_originalName in atpostsFIA) exitWith { format [localize "STR_marker_at_empl", _factionName] };
     if (_originalName in hmgpostsFIA) exitWith { format [localize "STR_marker_hmg_empl", _factionName] };
 
-    ""
+    private _title = [_originalName, true] call A3A_fnc_getLocationName;
+    RETDEF(_title,"");
 };
 
 if (_isDestroyed) then { _markerTitle = format ["%1 %2", _markerTitle, localize "STR_destroyed"]; };
@@ -301,7 +280,7 @@ private _specialDefinitions = [
     
     // FETCH LIVE SPAWN COUNT FROM NAMESPACE FOR SPECIAL DEFS
     private _specTitle = if (_specTitleLoc == "STR_marker_RP") then {
-        format [localize _specTitleLoc, str (missionNamespace getVariable ["rallyPointSpawnCount", 0])]
+        format [localize _specTitleLoc, str (rallyPointRoot getVariable ["remainingTravels", 0])]
     } else {
         format [localize _specTitleLoc, _specFaction getOrDefault ["name", ""]]
     };

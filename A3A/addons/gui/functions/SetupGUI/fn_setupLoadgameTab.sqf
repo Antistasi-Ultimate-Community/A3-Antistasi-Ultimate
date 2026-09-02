@@ -36,7 +36,7 @@ private _saveInfoCtrl = _display displayCtrl A3A_IDC_SETUP_SAVEINFOTEXT;
 
 private _saveBoxColumns = [
     ["gameID", "ID", 0, 9],
-    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25],
+    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25, "mapStrShort"],
     ["name", localize "STR_antistasi_setup_dialog_table_name", 25, 45],
     ["verStr", localize "STR_antistasi_setup_dialog_table_version", 70, 12],
     ["timeStr", localize "STR_antistasi_setup_dialog_table_time", 82, 15],
@@ -121,13 +121,14 @@ switch (_mode) do
     {
         { ctrlDelete _x } forEach allControls _listboxCtrl;             // doesn't touch config controls
         {
-            _x params ["_varname", "", "_xpos", "_width"];
+            _x params ["_varname", "", "_xpos", "_width", ["_toolTip", nil, [""]]];
             private _ctrls = [];
             {
                 private _ctrl = _display ctrlCreate ["A3A_Text_Small", -1, _listboxCtrl];
                 _ctrl ctrlSetPosition [GRID_W*_xpos, GRID_H*_forEachIndex*4, GRID_W*_width, GRID_H*4];
                 _ctrl ctrlCommit 0;
                 _ctrl ctrlSetText (_x getOrDefault [_varname, ""]);
+                if (!isNil "_toolTip") then { _ctrl ctrlSetTooltip(_x getOrDefault[_toolTip, "N/A"]) };
                 if (_x get "map" != worldName) then { _ctrl ctrlSetTextColor [0.6,0.6,0.6,1] };
                 _ctrls pushBack _ctrl;
             } forEach A3A_setup_saveData;

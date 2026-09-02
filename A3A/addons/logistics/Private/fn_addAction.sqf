@@ -53,11 +53,11 @@ switch (_action) do {
             true,
             true,
             "",
-            "(
-                ((attachedTo _target) isEqualTo objNull)
-                and ((vehicle _this) isEqualTo _this)
-                and (alive _target)
-            )",
+            QUOTE(
+                (alive _target) &&
+                {(isNull objectParent _this) && (isNull attachedTo _target)} &&
+                {count nearestObjects[ARR_3(_target,[ARR_4('Car','Ship','Tank','Helicopter')],10)] > ([ARR_2(1,0)] select(_target isKindOf 'ReammoBox_F'))}
+            ),
             5
         ];
         _object setUserActionText [

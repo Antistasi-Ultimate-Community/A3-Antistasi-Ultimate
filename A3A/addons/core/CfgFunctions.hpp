@@ -5,13 +5,13 @@ class CfgFunctions
     {
         class AI {
             file = QPATHTOFOLDER(functions\AI);
+            class acknowledgeCargo {};
             class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
             class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
-            class askAnyoneHelp {};
             class assaultBuilding {};
             class attackDrillAI {};
             class attackHeli {};
@@ -24,6 +24,7 @@ class CfgFunctions
             class captureX {};
             class chargeWithSmoke {};
             class checkAndSpawnAttack {};
+            class checkCargo {};
             class combatLanding {};
             class coverage {};
             class destroyBuilding {};
@@ -133,6 +134,8 @@ class CfgFunctions
             class createBreachChargeText {};
             class createPetros {};
             class deleteControls {};
+            class despawnQueueEntity {};
+            class despawnQueueProcessor {};
             class destroyCity {};
             class distance {};
             class distanceUnits {};
@@ -146,7 +149,9 @@ class CfgFunctions
             class garbageCleanerTracker {};
             class garrisonInfo {};
             class getAggroLevelString {};
+            class getLocationName {};
             class getRecentDamage {};
+            class getSideRadioTowerInfluence {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
@@ -155,6 +160,8 @@ class CfgFunctions
             class initPetros {};
             class isFrontline {};
             class isFrontlineNoFIA {};
+            class isRiverportMap {};
+            class isSeaportMap {};
             class arePositionsConnected {};
             class joinMultipleGroups {};
             class localizar {};
@@ -173,7 +180,7 @@ class CfgFunctions
             class petrosDeathMonitor {};
             class placementSelection {};
             class playableUnits {};
-            class getSideRadioTowerInfluence {};
+            class preparePostMortem {};
             class rebuildAssets {};
             class rebuildEconomicAssets {};
             class rebuildRadioTower {};
@@ -286,7 +293,6 @@ class CfgFunctions
             class createZoneAmmoBox {};
             class createZoneFlag {};
             class crewTypeForVehicle {};
-            class cycleSpawn {};
             class FIAinitBases {};
             class findSpawnPosition {};
             class freeSpawnPositions {};
@@ -308,7 +314,6 @@ class CfgFunctions
             class spawnGroup {};
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
-            class spawnVehiclePrecise {};
             class townBattle {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
@@ -471,6 +476,7 @@ class CfgFunctions
             class findIfNearAndHostile {};
             class LOG_Airdrop {};
             class LOG_Crashsite {};
+            class LOG_Delivery {};
             class LOG_Helicrash {};
             class missionRequest {};
             class REP_Antenna {};

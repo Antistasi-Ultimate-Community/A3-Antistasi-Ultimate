@@ -682,4 +682,21 @@ addMissionEventHandler ["Map", A3U_fnc_mapHoverEH];
 
 [markersX + milAdministrationsX + mrkAntennas] call A3U_fnc_mrkUpdateBulk;
 
+// Server requests player to provide their additional save data.
+// We only get a UUID which the server expects to be written to its mission
+// namespace with the relevant data as a notification mechanism.
+[CBA_EVENT_SERVER_PLAYER_SAVE, {
+    if !assert(params[
+        ["_uuid", nil, [""]]
+    ]) exitWith {};
+
+    private _pluginsData = createHashMap;
+
+    [CBA_EVENT_CLIENT_PLAYER_SAVE, [_pluginsData]] call FUNCMAIN(triggerLocalEvent);
+
+    missionNamespace setVariable[_uuid, _pluginsData, 2];
+}] call FUNCMAIN(addEventHandler);
+
+// Notify plugins that client init is done, so they can do any post-init setup
+// that needs to be done after A3U considers itself fully spun up.
 [CBA_EVENT_CLIENT_INIT_DONE, []] call FUNCMAIN(triggerLocalEvent);
