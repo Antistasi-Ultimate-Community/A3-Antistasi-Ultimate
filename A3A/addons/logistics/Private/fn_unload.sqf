@@ -161,4 +161,7 @@ _vehicle setVariable ["Cargo", _loaded, true];
 _vehicle setVariable ["LoadingCargo",nil,true];
 _vehicle animateDoor ["Door_rear", 0];
 if (_keepUnloading and !_lastLoaded) then {[_vehicle] spawn A3A_Logistics_fnc_unload};//if you tried to unload a null obj unload next on list
+
+_cargo setVariable ["A3A_cargo_isLoaded", false, true];
+
 nil

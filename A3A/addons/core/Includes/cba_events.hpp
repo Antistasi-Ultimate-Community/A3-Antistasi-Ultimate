@@ -11,7 +11,11 @@
 // Client-only event; on teardown mode changed; params=[Object player, Boolean isInTeardownMode]
 #define CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED QUOTE(TRIPLES(PREFIX,event,clientTeardownModeChanged))
 
+// Server-only event; on entity death; params=[Object entity[, Object killer]]
+#define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX,event,serverEntityPostMortem))
 // Server-only event; after server initialization; params=[]
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
 // Server-only event; on game save; params=[]
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
+// Server-to-client-only event; sent to each client on global save; params=[String uuid]
+#define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX,event,serverPlayerSave))

@@ -74,6 +74,46 @@
                 <Chinesesimp>医疗箱</Chinesesimp>
                 <Turkish>Tıbbi Malzeme Kutusu</Turkish>
             </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxExtraSmall">
+                <Original>Build Box (Extra Small)</Original>
+                <Russian>Строительный ящик (Очень малый)</Russian>
+                <Korean>빌드 박스 (특소형)</Korean>
+                <French>Caisse de construction (Très petite)</French>
+                <Chinesesimp>建造箱 (超小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Çok Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxSmall">
+                <Original>Build Box (Small)</Original>
+                <Russian>Строительный ящик (Малый)</Russian>
+                <Korean>빌드 박스 (소형)</Korean>
+                <French>Caisse de construction (Petite)</French>
+                <Chinesesimp>建造箱 (小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxMeduim">
+                <Original>Build Box (Medium)</Original>
+                <Russian>Строительный ящик (Средний)</Russian>
+                <Korean>빌드 박스 (중형)</Korean>
+                <French>Caisse de construction (Moyenne)</French>
+                <Chinesesimp>建造箱 (中型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Orta)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxLarge">
+                <Original>Build Box (Large)</Original>
+                <Russian>Строительный ящик (Большой)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Büyük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxHumongous">
+                <Original>Build Box (Humongous)</Original>
+                <Russian>Строительный ящик (Огромный)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Dev)</Turkish>
+            </Key>
         </Container>
         <Container name="arsenal">
             <Key ID="STR_A3AP_vehArsenal_desc">
@@ -13101,7 +13141,7 @@
                 <French>Attraper le largage</French>
                 <Turkish>İkmal Paketini Yakala</Turkish>
             </Key>
-            <Key ID="STR_A3A_Missions_DES_Airdrop_task_desc">
+            <Key ID="STR_A3A_Missions_LOG_Airdrop_task_desc">
                 <Original>A plane will drop some cargo at %1. Go there and throw any smoke grenade on ground, the pilot will notice the signal and drop the cargo. Bring the cargo back to HQ. Do this before %2.</Original>
                 <Russian>Наш самолёт сбросит полезный груз на %1. Идите туда и укажите точную позицию сброса любой дымовой гранатой, пилот заметит сигнал и сбросит груз. Привезите груз в штаб. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们的飞机将在 %1 空投一些货物。 去那里并在地面上扔任何烟雾弹，飞行员会注意到信号并放下货物。 把货物运到总部。 在 %2 之前执行此任务。</Chinesesimp>

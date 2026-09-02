@@ -84,5 +84,5 @@ private _markerX = _unit getVariable "markerX";
 if (!isNil "_markerX") then { [_markerX, _unitSide] remoteExec ["A3A_fnc_zoneCheck",2] };
 
 // // timed cleanup functions
-[_unit] spawn A3A_fnc_postmortem;
+[_unit] call FUNCMAIN(despawnQueueEntity);
 [_unit, _unitSide, false, true, true] spawn A3A_fnc_fleeToSide;
