@@ -27,7 +27,7 @@
 ["vehiclesRepairTrucks", ["UK3CB_ION_B_Winter_T810_Repair"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["UK3CB_ION_B_Winter_T810_Refuel"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["UK3CB_ION_B_Winter_Hilux_Ambulance", "UK3CB_ION_B_Winter_Transit_Medevac"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["UK3CB_ION_B_Winter_M113_M2_90", "UK3CB_ION_B_Winter_M113_M240", "UK3CB_B_LAV25_HQ_US_WDL", "UK3CB_B_LAV25_US_WDL"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["UK3CB_ION_B_Winter_M113_M2_90", "UK3CB_ION_B_Winter_M113_M240", "UK3CB_B_LAV25_HQ_US_WDL", "UK3CB_B_LAV25_US_WDL", "UK3CB_ION_B_Winter_Dingo_GMG", "UK3CB_ION_B_Winter_Dingo_HMG", "UK3CB_ION_B_Winter_Dingo_MG3", "UK3CB_ION_B_Winter_Dingo"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["UK3CB_ARD_B_BTR80a", "UK3CB_ARD_B_MTLB_Cannon", "RHS_M6_wd", "rhsusf_stryker_m1127_m2_wd"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["UK3CB_ARD_B_BTR80a", "rhsusf_stryker_m1134_wd", "rhsusf_stryker_m1132_m2_np_wd", "rhsusf_stryker_m1127_m2_wd"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["UK3CB_B_AAV_US_WDL", "RHS_M2A3_BUSKIII_wd", "UK3CB_ARD_B_BMP2K", "UK3CB_ARD_B_BRM1K"]] call _fnc_saveToTemplate;
@@ -59,7 +59,10 @@ private _vehiclesArtillery = ["a3u_winter_mlrs"];
 ["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["UK3CB_ION_B_Winter_LR_M2", "UK3CB_ION_B_Winter_MB4WD_LMG"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", [
+    "UK3CB_ION_B_Winter_LR_WMIK_M2", "UK3CB_ION_B_Winter_LR_WMIK_M240", "UK3CB_ION_B_Winter_LR_WMIK_MG3", "UK3CB_ION_B_Winter_LR_WMIK_MK19",
+    "UK3CB_ION_B_Winter_MB4WD_LMG"
+]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["UK3CB_ION_B_Winter_Transit_Transport"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["UK3CB_ION_B_Winter_LR_Open", "UK3CB_ION_B_Winter_MB4WD_Unarmed"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", ["UK3CB_ION_B_Winter_M113_M240", "UK3CB_ION_B_Winter_MaxxPro_M2"]] call _fnc_saveToTemplate;

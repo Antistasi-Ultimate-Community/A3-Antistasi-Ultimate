@@ -11,8 +11,8 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["flagMarkerType", "UK3CB_MARKER_B_TKM"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["UK3CB_TKM_I_YAVA"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["UK3CB_TKM_I_LR_Closed"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["UK3CB_TKM_I_Hilux_Dshkm"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["UK3CB_TKM_O_LandRover_Transport_Closed", "UK3CB_TKM_O_LandRover_Transport_Open"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["UK3CB_TKM_I_Hilux_Dshkm", "UK3CB_TKM_O_LandRover_Opentop_DSHKM"]] call _fnc_saveToTemplate;
 ["vehiclesTruck", ["UK3CB_TKM_I_V3S_Open"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["UK3CB_TKM_I_Hilux_Spg9"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["UK3CB_TKM_I_V3S_Zu23"]] call _fnc_saveToTemplate;
