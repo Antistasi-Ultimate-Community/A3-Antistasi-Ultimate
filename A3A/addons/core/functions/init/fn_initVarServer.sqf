@@ -30,6 +30,8 @@ private _declareServerVariable = {
 #define ONLY_DECLARE_SERVER_VAR_FROM_VARIABLE(name) [name] call _declareServerVariable
 #define DECLARE_SERVER_VAR_FROM_VARIABLE(name, value) [name, value] call _declareServerVariable
 
+#define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
+
 ////////////////////////////////////////
 //     GENERAL SERVER VARIABLES      ///
 ////////////////////////////////////////
@@ -569,46 +571,22 @@ private _groundVehicleThreat = createHashMap;
 // Rebel vehicle cost
 private _rebelVehicleCosts = createHashMap;
 
-_fnc_setPriceIfValid =
-{
-	_this params ["_hashMap", "_className", "_price"];
-	private _configClass = configFile >> "CfgVehicles" >> _className;
-    if (isClass _configClass) then {
-		_hashMap set [_className, _price];
-	};
-};
-
-{ [_rebelVehicleCosts, _x, 100] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesBasic");
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivCar") + FactionGet(reb, "vehiclesCivBoat");
-{ [_rebelVehicleCosts, _x, 600] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivTruck") + FactionGet(reb, "vehiclesMedical");
-{ [_rebelVehicleCosts, _x, 300] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesTruck");
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesLightUnarmed");
-{ [_rebelVehicleCosts, _x, 800] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesLightArmed");
-{ [_rebelVehicleCosts, _x, 500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticMGs") + FactionGet(reb, "vehiclesBoat");
-{ [_rebelVehicleCosts, _x, 1000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticAT");
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticAA");
-{ [_rebelVehicleCosts, _x, 2500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticMortars");
-{ [_rebelVehicleCosts, _x, 1500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesAA");
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesAT");
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivHeli");
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesPlane") + FactionGet(reb, "vehiclesCivPlane");
-
-
 // Template overrides
 private _overrides = FactionGet(Reb, "attributesVehicles") + FactionGet(Occ, "attributesVehicles") + FactionGet(Inv, "attributesVehicles");
-{
-	private _vehType = _x select 0;
-	if !(_vehType in ((keys _vehicleResourceCosts) + (keys _rebelVehicleCosts))) then { continue };
-	{
-		if !(_x isEqualType []) then { continue };		// first entry is classname
-		_x params ["_attr", "_val"];
-		call {
-			if (_attr == "threat") exitWith { _groundVehicleThreat set [_vehType, _val] };
-			if (_attr == "cost") exitWith { _vehicleResourceCosts set [_vehType, _val] };
-			if (_attr == "rebCost") exitWith { _rebelVehicleCosts set [_vehType, _val] };
+_overrides apply {
+	private _override = _x;
+	_override params["_vehicleType"];
+
+	if (!(_vehicleType in _vehicleResourceCosts) && !(_vehicleType in _rebelVehicleCosts)) then { continue };
+	(_override select [1]) apply {
+		_x params["_key", "_value"];
+		switch _key do {
+			case "threat": { _groundVehicleThreat set[_vehicleType, _value] };
+			case "cost": { _vehicleResourceCosts set[_vehicleType, _value] };
+			case "rebCost": { _rebelVehicleCosts set[_vehicleType, _value] };
 		};
-	} forEach _x;
-} forEach _overrides;
+	};
+};
 
 DECLARE_SERVER_VAR(A3A_vehicleResourceCosts, _vehicleResourceCosts);
 DECLARE_SERVER_VAR(A3A_groundVehicleThreat, _groundVehicleThreat);
@@ -634,20 +612,26 @@ if (A3A_hasACRE && startWithLongRangeRadio) then {FactionGet(reb,"initialRebelEq
 ////////////////////////////////////
 Info("Creating pricelist");
 
-{server setVariable [_x,50,true]} forEach [FactionGet(reb,"unitRifle"), FactionGet(reb,"unitCrew")];
-{server setVariable [_x,75,true]} forEach [FactionGet(reb,"unitMG"), FactionGet(reb,"unitGL"), FactionGet(reb,"unitLAT")];
-{server setVariable [_x,100,true]} forEach [FactionGet(reb,"unitMedic"), FactionGet(reb,"unitExp"), FactionGet(reb,"unitEng")];
-{server setVariable [_x,150,true]} forEach [FactionGet(reb,"unitSL"), FactionGet(reb,"unitSniper")];
-{server setVariable [_x,500,true]} forEach [FactionGet(reb,"unitAT"), FactionGet(reb,"unitAA")];
+private _prices = [] call A3A_fnc_initPricingLists;
 
 //black market costs
-{server setVariable [_x select 0, _x select 1, true]} forEach (FactionGet(reb,"blackMarketStock"));
+FactionGet(reb,"blackMarketStock") apply {
+	_x params["_item", "_price"];
+	_prices set[_item, _price];
+};
 
-server setVariable [FactionGet(reb,"rallyPoint"), 100, true];
+// Ensure this is last to prevent infinite money hacks
+A3A_rebelVehicleCosts apply {
+	_prices set[_x, _y];
+};
 
-{
-	server setVariable [_x, _y, true];
-} forEach A3A_rebelVehicleCosts;
+// Update server global variable
+_prices apply {
+	server setVariable[_x, _y];
+};
+
+// Network traffic once instead of for each and every `server setVariable` call
+publicVariable "server";
 
 ///////////////////////
 //     GARRISONS    ///
