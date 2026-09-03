@@ -29,7 +29,7 @@ private _costsBM = [_typeX] call A3U_fnc_blackMarketVehiclePrice;
 
 if (isNil "_costsBM") then {_costsBM = 0};
 
-if (_typeX in A3A_rebelVehicles) then {
+if (_typeX in A3A_rebelVehicleCosts) then {
 	if (_costs isNotEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
 		_costs = _costs min _costsBM;
 	};
