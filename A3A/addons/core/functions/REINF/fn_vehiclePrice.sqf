@@ -46,7 +46,7 @@ if (_typeX in A3A_rebelVehicles) then {
 };
 
 if (_costs <= 0) then { // if the cost is less than 0
-	Error_3("Invalid vehicle price for %1. Got: %2. Defaulting to %2", _typeX, _costs, _defaultPrice);
+	Error_3("Invalid vehicle price for %1. Got: %2. Defaulting to %3", _typeX, _costs, _defaultPrice);
 	_costs = _defaultPrice; // reset the cost to the default price
 };
 
