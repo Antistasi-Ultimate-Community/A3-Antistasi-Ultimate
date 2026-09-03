@@ -571,7 +571,7 @@ private _groundVehicleThreat = createHashMap;
 // Rebel vehicle cost
 private _rebelVehicleCosts = createHashMap;
 
-_fnc_setPriceIfValid =
+private _fnc_setPriceIfValid =
 {
 	_this params ["_hashMap", "_className", "_price"];
 	private _configClass = configFile >> "CfgVehicles" >> _className;
@@ -598,19 +598,20 @@ _fnc_setPriceIfValid =
 
 // Template overrides
 private _overrides = FactionGet(Reb, "attributesVehicles") + FactionGet(Occ, "attributesVehicles") + FactionGet(Inv, "attributesVehicles");
-{
-	private _vehType = _x select 0;
-	if !(_vehType in ((keys _vehicleResourceCosts) + (keys _rebelVehicleCosts))) then { continue };
-	{
-		if !(_x isEqualType []) then { continue };		// first entry is classname
-		_x params ["_attr", "_val"];
-		call {
-			if (_attr == "threat") exitWith { _groundVehicleThreat set [_vehType, _val] };
-			if (_attr == "cost") exitWith { _vehicleResourceCosts set [_vehType, _val] };
-			if (_attr == "rebCost") exitWith { _rebelVehicleCosts set [_vehType, _val] };
+_overrides apply {
+	private _override = _x;
+	_override params["_vehicleType"];
+
+	if (!(_vehicleType in _vehicleResourceCosts) && !(_vehicleType in _rebelVehicleCosts)) then { continue };
+	(_override select [1]) apply {
+		_x params["_key", "_value"];
+		switch _key do {
+			case "threat": { _groundVehicleThreat set[_vehicleType, _value] };
+			case "cost": { _vehicleResourceCosts set[_vehicleType, _value] };
+			case "rebCost": { _rebelVehicleCosts set[_vehicleType, _value] };
 		};
-	} forEach _x;
-} forEach _overrides;
+	};
+};
 
 DECLARE_SERVER_VAR(A3A_vehicleResourceCosts, _vehicleResourceCosts);
 DECLARE_SERVER_VAR(A3A_groundVehicleThreat, _groundVehicleThreat);
