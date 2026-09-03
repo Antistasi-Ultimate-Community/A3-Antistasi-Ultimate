@@ -614,15 +614,17 @@ Info("Creating pricelist");
 
 private _prices = [] call A3A_fnc_initPricingLists;
 
-//black market costs
-FactionGet(reb,"blackMarketStock") apply {
-	_x params["_item", "_price"];
-	_prices set[_item, _price];
-};
-
-// Ensure this is last to prevent infinite money hacks
+// Apply overrides from faction templates
 A3A_rebelVehicleCosts apply {
 	_prices set[_x, _y];
+};
+
+// Apply black market costs last; they override everything from prior configs
+A3U_blackMarketStock apply {
+	private _vehicles = _y;
+	_vehicles apply {
+		_prices set[_x, _y];
+	};
 };
 
 // Update server global variable
