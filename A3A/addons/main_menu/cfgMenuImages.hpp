@@ -144,11 +144,6 @@
         path = QPATHTOFOLDER(data\backgrounds\images\hr_loss_co.jpg);
         name = "Rebellion Failed";
     };
-    class intro_economicLoss
-    {
-        path = QPATHTOFOLDER(data\backgrounds\images\economic_loss_co.jpg);
-        name = "Economic Ruin";
-    };
     class intro_popLoss
     {
         path = QPATHTOFOLDER(data\backgrounds\images\pop_loss_co.jpg);
