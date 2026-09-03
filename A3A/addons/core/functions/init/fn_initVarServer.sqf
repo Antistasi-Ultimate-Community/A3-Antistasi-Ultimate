@@ -637,53 +637,26 @@ if (A3A_hasACRE && startWithLongRangeRadio) then {FactionGet(reb,"initialRebelEq
 ////////////////////////////////////
 Info("Creating pricelist");
 
-{server setVariable [_x,50,true]} forEach [FactionGet(reb,"unitRifle"), FactionGet(reb,"unitCrew")];
-{server setVariable [_x,75,true]} forEach [FactionGet(reb,"unitMG"), FactionGet(reb,"unitGL"), FactionGet(reb,"unitLAT")];
-{server setVariable [_x,100,true]} forEach [FactionGet(reb,"unitMedic"), FactionGet(reb,"unitExp"), FactionGet(reb,"unitEng")];
-{server setVariable [_x,150,true]} forEach [FactionGet(reb,"unitSL"), FactionGet(reb,"unitSniper")];
-{server setVariable [_x,500,true]} forEach [FactionGet(reb,"unitAT"), FactionGet(reb,"unitAA")];
+private _prices = [] call A3A_fnc_initPricingLists;
 
 //black market costs
-{server setVariable [_x select 0, _x select 1, true]} forEach (FactionGet(reb,"blackMarketStock"));
-
-server setVariable [FactionGet(reb,"rallyPoint"), 100, true];
-
-{
-	server setVariable [_x, 1500, true];
-} forEach (FactionGet(all,"vehiclesLight") + OccAndInv("vehiclesTrucks") + OccAndInv("vehiclesCargoTrucks") + OccAndInv("vehiclesMilitiaTrucks") + FactionGet(reb,"vehiclesTruck"));
-
-{
-	server setVariable [_x, 3000, true];
-} forEach (FactionGet(all,"vehiclesBoats") + FactionGet(all,"vehiclesLightAPCs") + OccAndInv("vehiclesAmmoTrucks") + OccAndInv("vehiclesRepairTrucks") + OccAndInv("vehiclesFuelTrucks") + OccAndInv("vehiclesMedical"));
-
-{
-	server setVariable [_x, 5000, true];
-} forEach (FactionGet(all,"vehiclesAPCs") + FactionGet(all,"vehiclesIFVs") + FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesTransportAir") + FactionGet(all,"vehiclesUAVs"));
-
-{
-	server setVariable [_x, 6000, true];
-} forEach FactionGet(all,"vehiclesHelisLight");
-
-{
-	server setVariable [_x, 7000, true];
-} forEach FactionGet(all,"vehiclesLightTanks");
-
-{
-	server setVariable [_x, 13000, true];
-} forEach (FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesTanks") + FactionGet(all,"vehiclesAA") + FactionGet(all,"vehiclesArtillery"));
-
-{
-	server setVariable [_x, 15000, true];
-} forEach (FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA") + FactionGet(all,"vehiclesPlanesLargeAA") + FactionGet(all,"vehiclesPlanesLargeCAS"));
-
-{
-	server setVariable [_x, 20000, true];
-} forEach FactionGet(all,"vehiclesPlanesGunship");
+FactionGet(reb,"blackMarketStock") apply {
+	_x params["_item", "_price"];
+	_prices set[_item, _price];
+};
 
 // Ensure this is last to prevent infinite money hacks
-{
-	server setVariable [_x, _y, true];
-} forEach A3A_rebelVehicleCosts;
+A3A_rebelVehicleCosts apply {
+	_prices set[_x, _y];
+};
+
+// Update server global variable
+_prices apply {
+	server setVariable[_x, _y];
+};
+
+// Network traffic once instead of for each and every `server setVariable` call
+publicVariable "server";
 
 ///////////////////////
 //     GARRISONS    ///
