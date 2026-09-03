@@ -81,7 +81,7 @@ if (_veh getVariable ["A3A_sellVehicle_inProgress",false]) exitWith {[localize "
 _veh setVariable ["A3A_sellVehicle_inProgress",true,false];  // Only processed on the server. It is absolutely pointless trying to network this due to race conditions.
 
 private _typeX = typeOf _veh;
-private _costs = [_typeX, 0] call A3A_fnc_getVehicleSellPrice;
+private _costs = [_typeX] call A3A_fnc_getVehicleSellPrice;
 
 if (_costs == 0) exitWith {
     _veh setVariable ["A3A_sellVehicle_inProgress",false,false];
