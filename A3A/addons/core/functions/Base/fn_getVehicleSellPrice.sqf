@@ -1,16 +1,37 @@
-/*
-    really dumb way to do it
-*/
-
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+/* ----------------------------------------------------------------------------
+Function: A3A_fnc_getVehicleSellPrice
 
-#define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
+Description:
+    Wrapper for A3A_fnc_getVehiclePrice to get the selling price of a vehicle.
 
-params ["_veh", ["_defaultPrice", 1000]];
+    Needed, cause it's used in garage code. Blech.
 
-private _typeX = if (_veh isEqualType objNull) then {typeOf _veh} else {_veh};
+Parameters:
+    0: _vehicle - the vehicle object or class name <OBJECT/STRING>
 
-private _price = ([_typeX, _defaultPrice] call A3A_fnc_vehiclePrice) / 2;
+Optional:
 
-_price;
+Example:
+
+Returns:
+    <NUMBER>
+
+Environment:
+    Client/Server, Unscheduled
+
+Author:
+    UnseenKill/gor3Splatter
+---------------------------------------------------------------------------- */
+if !assert(params[
+    ["_vehicle", nil, ["", objNull]]
+]) exitWith { 0 };
+
+private _price = [_vehicle, true, true] call A3A_fnc_getVehiclePrice;
+
+if (isNil "_price") then {
+    Warning_1("Failed to retrieve selling price for %1",_vehicle);
+};
+
+RETDEF(_price,GVAR(vehicleSellingDefaultPrice));
