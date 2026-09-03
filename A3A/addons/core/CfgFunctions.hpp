@@ -147,6 +147,7 @@ class CfgFunctions
             class garrisonInfo {};
             class getAggroLevelString {};
             class getRecentDamage {};
+            class getVehiclePrice {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
@@ -653,10 +654,10 @@ class CfgFunctions
         };
 
         class ShortID {
-        file = QPATHTOFOLDER(functions\Utility\ShortID);
-        class shortID_create {};
-        class shortID_format {};
-        class shortID_init {};
+            file = QPATHTOFOLDER(functions\Utility\ShortID);
+            class shortID_create {};
+            class shortID_format {};
+            class shortID_init {};
         };
 
         class Supports {

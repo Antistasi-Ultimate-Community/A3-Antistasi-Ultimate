@@ -571,31 +571,6 @@ private _groundVehicleThreat = createHashMap;
 // Rebel vehicle cost
 private _rebelVehicleCosts = createHashMap;
 
-private _fnc_setPriceIfValid =
-{
-	_this params ["_hashMap", "_className", "_price"];
-	private _configClass = configFile >> "CfgVehicles" >> _className;
-    if (isClass _configClass) then {
-		_hashMap set [_className, _price];
-	};
-};
-
-{ [_rebelVehicleCosts, _x, 100] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesBasic");
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivCar") + FactionGet(reb, "vehiclesCivBoat");
-{ [_rebelVehicleCosts, _x, 600] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivTruck") + FactionGet(reb, "vehiclesMedical");
-{ [_rebelVehicleCosts, _x, 300] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesTruck");
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesLightUnarmed");
-{ [_rebelVehicleCosts, _x, 800] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesLightArmed");
-{ [_rebelVehicleCosts, _x, 500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticMGs") + FactionGet(reb, "vehiclesBoat");
-{ [_rebelVehicleCosts, _x, 1000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticAT");
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticAA");
-{ [_rebelVehicleCosts, _x, 2500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticMortars");
-{ [_rebelVehicleCosts, _x, 1500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesAA");
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesAT");
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivHeli");
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesPlane") + FactionGet(reb, "vehiclesCivPlane");
-
-
 // Template overrides
 private _overrides = FactionGet(Reb, "attributesVehicles") + FactionGet(Occ, "attributesVehicles") + FactionGet(Inv, "attributesVehicles");
 _overrides apply {
@@ -639,15 +614,17 @@ Info("Creating pricelist");
 
 private _prices = [] call A3A_fnc_initPricingLists;
 
-//black market costs
-FactionGet(reb,"blackMarketStock") apply {
-	_x params["_item", "_price"];
-	_prices set[_item, _price];
-};
-
-// Ensure this is last to prevent infinite money hacks
+// Apply overrides from faction templates
 A3A_rebelVehicleCosts apply {
 	_prices set[_x, _y];
+};
+
+// Apply black market costs last; they override everything from prior configs
+A3U_blackMarketStock apply {
+	private _vehicles = _y;
+	_vehicles apply {
+		_prices set[_x, _y];
+	};
 };
 
 // Update server global variable
