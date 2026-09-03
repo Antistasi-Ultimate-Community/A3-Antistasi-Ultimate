@@ -25,8 +25,8 @@ params ["_suppName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_
 // not 100% smart but we don't want it to be
 // Also no killzones, QRFs have resource spend limitations instead
 
-private _airbase = [_side, _targPos] call A3A_fnc_availableBasesAir;
-if (isNil "_airbase") exitWith { Info("QRF cancelled because no airbases available (how?)"); -1 };
+private _base = [_side, _targPos] call A3A_fnc_availableBasesMixed;
+if (isNil "_base") exitWith { Info("QRF cancelled because no airbases available (how?)"); -1 };
 
 private _vehCount = 3 min ceil (_maxSpend / A3A_balanceVehicleCost);        // will overshoot a bit (no 1.5x factor). This is preferable to sending tiny QRFs
 // TODO: bias a bit for tank/APC/static targets?
@@ -40,12 +40,12 @@ private _aggro = [aggressionOccupants, aggressionInvaders] select (_side == Inva
 if (_delay < 0) then { _delay = (0.5 + random 1) * (300 - 15*tierWar - 1*_aggro) };
 
 //Set idle times for marker, just so that stuff doesn't spawn on top? Carrier will ignore anyway
-//[_airbase, 5+_delay/60] call A3A_fnc_addTimeForIdle;
+//[_base, 5+_delay/60] call A3A_fnc_addTimeForIdle;
 
 // kinda epic but whatever
-[[_suppName, _side, _resPool, _delay, _targPos, _airbase, "AIR", _vehCount, _attackCount, _estResources], "A3A_fnc_SUP_QRFRoutine"] call A3A_fnc_scheduler;
+[[_suppName, _side, _resPool, _delay, _targPos, _base, "AIR", _vehCount, _attackCount, _estResources], "A3A_fnc_SUP_QRFRoutine"] call A3A_fnc_scheduler;
 
-private _approxTime = _delay + (markerPos _airbase distance2D _targPos) / (200 / 3.6);      // estimated travel time
+private _approxTime = _delay + (markerPos _base distance2D _targPos) / (200 / 3.6);      // estimated travel time
 [_reveal, _side, "QRFAIR", _targPos, _approxTime] spawn A3A_fnc_showInterceptedSetupCall;
 
 _estResources;            // *estimated* resource cost of QRF
