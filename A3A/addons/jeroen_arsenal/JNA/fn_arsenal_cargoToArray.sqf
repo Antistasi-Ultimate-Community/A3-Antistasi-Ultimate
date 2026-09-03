@@ -17,7 +17,7 @@
 
 
 private["_array","_addToArray","_unloadContainer"];
-params ["_container", ["_isPlayer", false]];
+params ["_container", ["_isUnit", false]];
 _array = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 
 
@@ -38,7 +38,7 @@ _unloadContainer = {
 	_container_sub = _this;
 
 	//magazines(exl. loaded ones)
-	_mags = [magazinesAmmoCargo _container_sub, magazinesAmmo _container_sub] select (_isPlayer);
+	_mags = [magazinesAmmoCargo _container_sub, magazinesAmmo _container_sub] select (_isUnit);
 	{
 		_item = _x select 0;
 		_amount = _x select 1;
@@ -47,7 +47,7 @@ _unloadContainer = {
 	} forEach _mags;
 
 	//items
-	_items = [itemCargo _container_sub, (items _container_sub) + (assignedItems player)] select (_isPlayer);
+	_items = [itemCargo _container_sub, (items _container_sub) + (assignedItems player)] select (_isUnit);
 	{
 		_item = _x;
 		_index = _item call jn_fnc_arsenal_itemType;
@@ -55,7 +55,7 @@ _unloadContainer = {
 	} forEach _items;
 
 	//backpacks
-	_backpacks = [backpackCargo _container_sub, [backpack _container_sub]] select (_isPlayer);
+	_backpacks = [backpackCargo _container_sub, [backpack _container_sub]] select (_isUnit);
 	{
 		_item = _x call A3A_fnc_basicBackpack;
 		_index = IDC_RSCDISPLAYARSENAL_TAB_BACKPACK;
@@ -63,7 +63,7 @@ _unloadContainer = {
 	} forEach _backpacks;
 
 	//weapons and attachmetns
-	_attItems = [weaponsItemsCargo _container_sub, weaponsItems _container_sub] select (_isPlayer);
+	_attItems = [weaponsItemsCargo _container_sub, weaponsItems _container_sub] select (_isUnit);
 	// [["arifle_TRG21_GL_F","","","optic_dms",["ammo"],""]]
 	{
 		{
@@ -97,7 +97,7 @@ _unloadContainer = {
 
 
 	//sub containers;
-	if (_isPlayer) then {
+	if (_isUnit) then {
 		{
 			_item = _x;
 			if (_x isNotEqualTo "") then {
