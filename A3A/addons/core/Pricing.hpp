@@ -1,3 +1,4 @@
+// Prices are fall-back prices for vehicles that aren't in the black market list
 class Pricing {
     class Vehicle {
         class Base {
@@ -30,6 +31,11 @@ class Pricing {
             class Groups: Groups {
                 rallyPoint = 100;
 
+                staticAA = 1200;
+                staticAT = 1000;
+                staticMGs = 500;
+                staticMortars = 2500;
+
                 unitAA = 500;
                 unitAT = 500;
                 unitEng = 100;
@@ -43,14 +49,26 @@ class Pricing {
                 unitSL = 150;
                 unitSniper = 150;
 
-                vehiclesAA = 13000;
+                vehiclesAA = 1500;
                 vehiclesAPCs = 5000;
                 vehiclesArtillery = 13000;
+                vehiclesAT = 1000;
+                vehiclesBasic = 100;
+                vehiclesBoat = 500;
+                vehiclesCivBoat = 200;
+                vehiclesCivCar = 200;
+                vehiclesCivHeli = 5000;
+                vehiclesCivPlane = 5000;
+                vehiclesCivTruck = 600;
                 vehiclesHelisAttack = 13000;
                 vehiclesHelisLightAttack = 5000;
                 vehiclesHelisLight = 6000;
                 vehiclesIFVs = 5000;
+                vehiclesLightArmed = 800;
                 vehiclesLightTanks = 7000;
+                vehiclesLightUnarmed = 200;
+                vehiclesMedical = 600;
+                vehiclesPlane = 5000;
                 vehiclesPlanesAA = 15000;
                 vehiclesPlanesCAS = 15000;
                 vehiclesPlanesGunship = 20000;
@@ -58,7 +76,7 @@ class Pricing {
                 vehiclesPlanesLargeCAS = 15000;
                 vehiclesTanks = 13000;
                 vehiclesTransportAir = 5000;
-                vehiclesTruck = 1500;
+                vehiclesTruck = 300;
                 vehiclesUAVs = 5000;
             };
         };
