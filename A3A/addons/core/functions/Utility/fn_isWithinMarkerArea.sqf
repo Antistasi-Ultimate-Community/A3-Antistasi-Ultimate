@@ -38,7 +38,7 @@ if !assert(params[
 ]) exitWith { false };
 if (_position isEqualType objNull && { !assert(!isNull _position) }) exitWith { false };
 
-if (markerType _markerName isEqualTo "") exitWith {
+if (markerShape _markerName isEqualTo "") exitWith {
     Warning_1("No such marker: %1",str _markerName);
     false;
 };
