@@ -1,62 +1,62 @@
 #include "..\BuildObjectsList.hpp"
 class d41_ruegen {
 	population[] = {
-{"DefaultKeyPoint1", 514},
-{"DefaultKeyPoint2", 467},
-{"DefaultKeyPoint3", 230},
-{"DefaultKeyPoint4", 236},
-{"DefaultKeyPoint5", 211},
-{"DefaultKeyPoint6", 122},
-{"DefaultKeyPoint7", 78},
-{"DefaultKeyPoint8", 60},
-{"DefaultKeyPoint9", 27},
-{"DefaultKeyPoint12", 264},
-{"DefaultKeyPoint13", 199},
-{"DefaultKeyPoint15", 158},
-{"DefaultKeyPoint16", 68},
-{"DefaultKeyPoint17", 75},
-{"DefaultKeyPoint19", 129},
-{"DefaultKeyPoint21", 122},
-{"DefaultKeyPoint23", 88},
-{"DefaultKeyPoint24", 165},
-{"DefaultKeyPoint25", 58},
-{"DefaultKeyPoint27", 170},
-{"DefaultKeyPoint28", 28},
-{"DefaultKeyPoint29", 124},
-{"DefaultKeyPoint31", 74},
-{"DefaultKeyPoint32", 35},
-{"DefaultKeyPoint33", 67},
-{"DefaultKeyPoint35", 38},
-{"DefaultKeyPoint36", 121},
-{"DefaultKeyPoint38", 39},
-{"DefaultKeyPoint39", 94},
-{"DefaultKeyPoint41", 77},
-{"DefaultKeyPoint42", 192},
-{"DefaultKeyPoint46", 271},
-{"DefaultKeyPoint47", 127},
-{"DefaultKeyPoint49", 21},
-{"DefaultKeyPoint50", 36},
-{"DefaultKeyPoint51", 31},
-{"DefaultKeyPoint52", 24},
-{"DefaultKeyPoint53", 70},
-{"DefaultKeyPoint54", 151},
-{"DefaultKeyPoint58", 104},
-{"DefaultKeyPoint59", 37},
-{"DefaultKeyPoint60", 62},
-{"DefaultKeyPoint61", 118},
-{"DefaultKeyPoint65", 115},
-{"DefaultKeyPoint66", 8},
-{"DefaultKeyPoint67", 109},
-{"DefaultKeyPoint68", 89},
-{"DefaultKeyPoint69", 84},
-{"DefaultKeyPoint71", 66},
-{"DefaultKeyPoint72", 212},
-{"DefaultKeyPoint73", 57},
-{"DefaultKeyPoint84", 48},
-{"DefaultKeyPoint92", 35},
-{"DefaultKeyPoint93", 44}
+{"DefaultKeyPoint1", 514}, //Stralsund
+{"DefaultKeyPoint2", 467}, //Bergen
+{"DefaultKeyPoint3", 230}, //Putbus
+{"DefaultKeyPoint4", 236}, //Ostseebad Binz
+{"DefaultKeyPoint5", 211}, //Ostseebad Sellin
+{"DefaultKeyPoint6", 122}, //Oseseebad Goehren
+{"DefaultKeyPoint7", 78}, //Montegut
+{"DefaultKeyPoint8", 60}, //Thiessow
+{"DefaultKeyPoint9", 27}, //Lankan-Granitz
+{"DefaultKeyPoint12", 264}, //Sassnitz
+{"DefaultKeyPoint13", 199}, //Sagard
+{"DefaultKeyPoint15", 158}, //Gingst
+{"DefaultKeyPoint16", 68}, //Ummanz
+{"DefaultKeyPoint17", 75}, //Dreschwitz
+{"DefaultKeyPoint19", 129}, //Samtens
+{"DefaultKeyPoint21", 122}, //Rambin
+{"DefaultKeyPoint23", 88}, //Altefaehr
+{"DefaultKeyPoint24", 165}, //Poseritz
+{"DefaultKeyPoint25", 58}, //Gustow
+{"DefaultKeyPoint27", 170}, //Gartz
+{"DefaultKeyPoint28", 28}, //Sehlen
+{"DefaultKeyPoint29", 124}, //Lauterbach
+{"DefaultKeyPoint31", 74}, //Zirkow
+{"DefaultKeyPoint32", 35}, //Zeiten
+{"DefaultKeyPoint33", 67}, //Losentitz
+{"DefaultKeyPoint35", 38}, //Reinberg
+{"DefaultKeyPoint36", 121}, //Brandshagen
+{"DefaultKeyPoint38", 39}, //Elmenhorst
+{"DefaultKeyPoint39", 94}, //Negast
+{"DefaultKeyPoint41", 77}, //Andershof
+{"DefaultKeyPoint42", 192}, //Frankensiedlung
+{"DefaultKeyPoint46", 271}, //Knipervorstadt
+{"DefaultKeyPoint47", 127}, //Parow
+{"DefaultKeyPoint49", 21}, //Schmiedshagen
+{"DefaultKeyPoint50", 36}, //Prohn
+{"DefaultKeyPoint51", 31}, //Klausdorf
+{"DefaultKeyPoint52", 24}, //Barhoeft
+{"DefaultKeyPoint53", 70}, //Gross Kubitz
+{"DefaultKeyPoint54", 151}, //Gefaengnisinsel Liebitz
+{"DefaultKeyPoint58", 104}, //Neuenkirchen
+{"DefaultKeyPoint59", 37}, //Gross Banzelvitz
+{"DefaultKeyPoint60", 62}, //Kluis
+{"DefaultKeyPoint61", 118}, //Trent
+{"DefaultKeyPoint65", 115}, //Glowe
+{"DefaultKeyPoint66", 8}, //Breege
+{"DefaultKeyPoint67", 109}, //Altenkirchen
+{"DefaultKeyPoint68", 89}, //Wiek
+{"DefaultKeyPoint69", 84}, //Dranske
+{"DefaultKeyPoint71", 66}, //Putarten
+{"DefaultKeyPoint72", 212}, //Kloster
+{"DefaultKeyPoint73", 57}, //Vitte
+{"DefaultKeyPoint84", 48}, //Hagen
+{"DefaultKeyPoint92", 35}, //Patzig
+{"DefaultKeyPoint93", 44} //Karnitz
 	};
-	disabledTowns[] = {};
+	disabledTowns[] = {"DefaultKeyPoint32"};
 	antennas[] = {
 		{572.267,4036.186,0},{2445.549,511.952,0.051},{4333.108,2344.826,0},{7318.033,6047.958,0},{5594.463,5656.618,0.001},{12359.025,5178.446,0.004},{9939.512,8923.543,0},{11460.685,11355.78,0},{6701.408,14445.144,0.003},{1201.445,8269.235,0},{3965.688,10055.528,0}
 	};
