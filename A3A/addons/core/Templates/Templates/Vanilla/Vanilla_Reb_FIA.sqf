@@ -48,6 +48,17 @@ private _civHelicopters = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F
 
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 
+if (_hasApex) then {
+  _vehiclesCivCar pushBack "C_Offroad_02_unarmed_F";
+  _vehiclesLightArmed pushBack "I_C_Offroad_02_LMG_F";
+  _vehiclesAt pushBack "I_C_Offroad_02_AT_F";
+};
+
+if (_hasLawsOfWar) then {
+  _vehiclesCivCar append ["C_Van_02_vehicle_F", "C_Van_02_transport_F"];
+  _VehTruck pushBack "B_G_Van_02_transport_F";
+};
+
 if (_hasEF) then {
   _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
 };

@@ -43,9 +43,14 @@ private _vehiclesSupply = ["C_Van_01_box_F"];
 private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
 
 private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_02_unarmed_F", "C_SUV_01_F"];
-private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
+private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F"];
 private _civHelicopters = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F"];
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
+
+if (_hasLawsOfWar) then {
+  _vehiclesCivCar append ["C_Van_02_vehicle_F", "C_Van_02_transport_F"];
+  _VehTruck pushBack "B_G_Van_02_transport_F";
+};
 
 if (_hasEF) then {
   _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
