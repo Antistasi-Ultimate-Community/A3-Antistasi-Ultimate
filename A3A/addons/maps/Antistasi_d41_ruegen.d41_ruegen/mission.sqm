@@ -8,7 +8,7 @@ class EditorData
 	toggles=1037;
 	class ItemIDProvider
 	{
-		nextID=2108;
+		nextID=2111;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1165.0673,517.25104,4124.3726};
+		pos[]={889.13733,268.89447,3513.1152};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
 		aside[]={0.99999994,0,-0};
@@ -19992,7 +19992,7 @@ class Mission
 									name="Stralsund";
 									class Entities
 									{
-										items=33;
+										items=34;
 										class Item0
 										{
 											dataType="Marker";
@@ -20486,9 +20486,18 @@ class Mission
 											type="Land_TTowerBig_1_F";
 											atlOffset=1.9073486e-06;
 										};
+										class Item33
+										{
+											dataType="Marker";
+											position[]={823.61572,9.8282948,3744.6821};
+											name="spawnPoint_6";
+											type="mil_start";
+											angle=123.21091;
+											id=2110;
+										};
 									};
 									id=1761;
-									atlOffset=-0.066509247;
+									atlOffset=5.1108928;
 								};
 								class Item1
 								{
@@ -20496,7 +20505,7 @@ class Mission
 									name="Putgarten";
 									class Entities
 									{
-										items=23;
+										items=24;
 										class Item0
 										{
 											dataType="Marker";
@@ -20833,9 +20842,19 @@ class Mission
 											type="Land_TTowerBig_1_F";
 											atlOffset=0.0030002594;
 										};
+										class Item23
+										{
+											dataType="Marker";
+											position[]={6364.4507,30.089642,14103.14};
+											name="spawnPoint_4";
+											type="mil_start";
+											angle=260.58432;
+											id=2108;
+											atlOffset=3.8146973e-06;
+										};
 									};
 									id=1778;
-									atlOffset=3.2395458;
+									atlOffset=-1.7054443;
 								};
 								class Item2
 								{
@@ -20843,7 +20862,7 @@ class Mission
 									name="Rügen";
 									class Entities
 									{
-										items=17;
+										items=18;
 										class Item0
 										{
 											dataType="Marker";
@@ -21124,13 +21143,22 @@ class Mission
 											type="Land_TTowerBig_2_F";
 											atlOffset=0.00099945068;
 										};
+										class Item17
+										{
+											dataType="Marker";
+											position[]={5618,20.559999,5702};
+											name="spawnPoint_5";
+											type="mil_start";
+											angle=265.60492;
+											id=2109;
+										};
 									};
 									id=1814;
-									atlOffset=-0.47751427;
+									atlOffset=-0.5945282;
 								};
 							};
 							id=1754;
-							atlOffset=5.789217;
+							atlOffset=6.8920994;
 						};
 						class Item5
 						{
@@ -21600,7 +21628,7 @@ class Mission
 						};
 					};
 					id=1818;
-					atlOffset=-0.38336563;
+					atlOffset=2.1929035;
 				};
 				class Item1
 				{
