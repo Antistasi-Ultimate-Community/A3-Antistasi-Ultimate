@@ -59,7 +59,7 @@ private _planesCAS = ["I_Plane_Fighter_03_dynamicLoadout_F"];
 private _planesAA = ["I_Plane_Fighter_03_dynamicLoadout_F"];
 
 private _planesTransport = [];
-private _gunship = [];
+private _planesGunship = [];
 
 private _helisLight = ["I_Heli_light_03_unarmed_F"];
 private _transportHelicopters = ["I_Heli_Transport_02_F"];
@@ -67,25 +67,6 @@ private _helisLightAttack =  ["I_Heli_light_03_dynamicLoadout_F"];
 private _helisAttack = [];
 
 private _airPatrol = ["I_Heli_light_03_unarmed_F", "I_Heli_light_03_dynamicLoadout_F"];
-
-if (_hasRF) then {
-    _basic pushBack "I_Pickup_rf";
-    _unarmedVehicles append ["I_Pickup_rf", "I_Pickup_Comms_rf"];
-    _armedVehicles append ["I_Pickup_hmg_rf", "I_Pickup_rcws_rf"];
-    _aa pushBack "I_Pickup_aat_rf";
-    _transportHelicopters pushBack "I_Heli_EC_01A_military_RF";
-    _helisAttack pushBack "I_Heli_EC_02_RF";
-    _airPatrol pushBack "I_Heli_EC_02_RF";
-};
-
-if (_hasEF) then {
-    _transportBoat pushBack "EF_I_CombatBoat_Unarmed_AAF";
-    _gunBoat pushBack "EF_I_CombatBoat_HMG_AAF";
-};
-
-if (_hasWS) then {
-    _cargoTrucks pushBack "I_Truck_02_flatbed_lxWS";
-};
 
 private _artillery = ["I_Truck_02_MRL_F"];
 ["magazines", createHashMapFromArray [
@@ -108,23 +89,41 @@ private _militiaAPCs = [];
 
 private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
 
-if (_hasRF) then {
-    _policeVehs = ["B_GEN_Pickup_covered_rf"];
-};
-
-if (_hasEF) then {
-    _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
-};
-
-if (_hasWS) then {
-    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
-};
-
 private _staticMG = ["I_HMG_02_high_F","I_HMG_01_high_F"];
 private _staticAT = ["I_static_AT_F","I_GMG_01_high_F"];
 private _staticAA = ["I_static_AA_F"];
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers =  [];
+
+if (_hasJets) then {
+    _planesAA append ["I_Plane_Fighter_04_F", "a3a_Plane_Fighter_04_grey_F"];
+};
+
+if (_hasTanks) then {
+    _lightTanks append ["I_LT_01_AT_F", "I_LT_01_cannon_F"];
+};
+
+if (_hasRF) then {
+    _basic pushBack "I_Pickup_rf";
+    _unarmedVehicles append ["I_Pickup_rf", "I_Pickup_Comms_rf"];
+    _armedVehicles append ["I_Pickup_hmg_rf", "I_Pickup_rcws_rf"];
+    _aa pushBack "I_Pickup_aat_rf";
+    _transportHelicopters pushBack "I_Heli_EC_01A_military_RF";
+    _helisAttack pushBack "I_Heli_EC_02_RF";
+    _airPatrol pushBack "I_Heli_EC_02_RF";
+    _policeVehs = ["B_GEN_Pickup_covered_rf"];
+};
+
+if (_hasEF) then {
+    _transportBoat pushBack "EF_I_CombatBoat_Unarmed_AAF";
+    _gunBoat pushBack "EF_I_CombatBoat_HMG_AAF";
+    _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+};
+
+if (_hasWS) then {
+    _cargoTrucks pushBack "I_Truck_02_flatbed_lxWS";
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+};
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
@@ -136,7 +135,7 @@ private _howitzers =  [];
 // (placeholder_mod_content) Benefits from CUP content. Vehicles + equipment.
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
-["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", _planesGunship] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["staticAA", _staticAA] call _fnc_saveToTemplate;
