@@ -111,10 +111,10 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 ///////////////////////////
 
 private _initialRebelEquipment = [
-  "hgun_Pistol_heavy_02_F",
-  "hgun_PDW2000_F",
-  "30Rnd_9x21_Mag", "30Rnd_9x21_Red_Mag",
-  "6Rnd_45ACP_Cylinder","MiniGrenade","SmokeShell",
+  "hgun_Pistol_01_F", // Makarov
+  "SMG_05_F", // MP5K
+  "30Rnd_9x21_Mag_SMG_02", "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
+  "10Rnd_9x21_Mag","MiniGrenade","SmokeShell",
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
   "V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F",
