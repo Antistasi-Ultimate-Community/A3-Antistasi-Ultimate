@@ -1,19 +1,24 @@
+#ifndef __HAVE_CBA_EVENTS_HPP__
+#define __HAVE_CBA_EVENTS_HPP__
+
 // Client-only event; after builder mode finished/aborted; params=[]
-#define CBA_EVENT_CLIENT_BUILDER_ABORT QUOTE(TRIPLES(PREFIX,event,clientBuilderAbort))
+#define CBA_EVENT_CLIENT_BUILDER_ABORT QUOTE(TRIPLES(PREFIX_CONST,event,clientBuilderAbort))
 // Client-only event; after builder mode started; params=[PositionATL builderPos, Number builderRadius]
-#define CBA_EVENT_CLIENT_BUILDER_START QUOTE(TRIPLES(PREFIX,event,clientBuilderStart))
+#define CBA_EVENT_CLIENT_BUILDER_START QUOTE(TRIPLES(PREFIX_CONST,event,clientBuilderStart))
 // Client-only event; after client initialization; params=[]
-#define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
+#define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,clientInitDone))
 // Client-only event; on personal save loaded; params=[Hashmap saveData]
-#define CBA_EVENT_CLIENT_PLAYER_LOAD QUOTE(TRIPLES(PREFIX,event,clientPlayerLoad))
+#define CBA_EVENT_CLIENT_PLAYER_LOAD QUOTE(TRIPLES(PREFIX_CONST,event,clientPlayerLoad))
 // Client-only event; on personal save; params=[Hashmap saveData]
-#define CBA_EVENT_CLIENT_PLAYER_SAVE QUOTE(TRIPLES(PREFIX,event,clientPlayerSave))
+#define CBA_EVENT_CLIENT_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,clientPlayerSave))
 // Client-only event; on teardown mode changed; params=[Object player, Boolean isInTeardownMode]
-#define CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED QUOTE(TRIPLES(PREFIX,event,clientTeardownModeChanged))
+#define CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED QUOTE(TRIPLES(PREFIX_CONST,event,clientTeardownModeChanged))
 
 // Server-only event; after server initialization; params=[]
-#define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
+#define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitDone))
 // Server-only event; on game save; params=[]
-#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
+#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
 // Server-to-client-only event; sent to each client on global save; params=[String uuid]
-#define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX,event,serverPlayerSave))
+#define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverPlayerSave))
+
+#endif // __HAVE_CBA_EVENTS_HPP__

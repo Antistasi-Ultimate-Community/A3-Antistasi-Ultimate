@@ -1,5 +1,5 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
-//#include "script_macros_undef.hpp"
+#include "script_macros_defines.hpp"
 #include "cba_events.hpp"
 
 // Define CfgPatches class name for, well, patches.
