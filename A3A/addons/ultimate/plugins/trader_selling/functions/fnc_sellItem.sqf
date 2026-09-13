@@ -13,6 +13,9 @@ Parameters:
     4: _items - items <ARRAY>
     5: _container - container <OBJECT>
 
+Optional:
+    6: _isLast - whether this is the last item in the list when multi-selling <BOOL> (default: true)
+
 Returns:
     Whether item was sold completely <BOOL>
 
@@ -29,6 +32,7 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _container) exitWith {};
 
+private _isLast = param[6, true, [true]];
 private _item = _items select _itemIndex;
 private _class = _item get "class";
 private _type = _item get "type";
@@ -46,7 +50,7 @@ switch _type do {
 };
 
 if (_payout isNotEqualTo false) then {
-    if GVAR(playKaching) then {
+    if (_isLast && GVAR(playKaching)) then {
         traderX say3D QGVAR(Sell);
     };
 

@@ -116,7 +116,7 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
                 continue;
             };
 
-            if !([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
+            if !([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject), _index isEqualTo ((lnbSize _list select 0) - 1)] call FUNC(sellItem)) then {
                 Warning("something went wrong; aborting loop");
                 break;
             } else {
