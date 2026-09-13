@@ -125,7 +125,7 @@ if(!(_targetPosition inRangeOfArtillery [[_artilleryVeh], _artilleryShellClass])
     };
 };
 
-Info("Artillery Position: %1", str _artilleryPosition);
+Info_1("Artillery Position: %1", str _artilleryPosition);
 
 //////////////////////
 //Task

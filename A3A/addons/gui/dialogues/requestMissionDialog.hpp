@@ -188,6 +188,30 @@ class A3A_RequestMissionDialog : A3A_DefaultDialog
           h = 12 * GRID_H;
         };
 
+        // Random
+        class RandomIcon : A3A_Picture
+        {
+          idc = -1;
+          colorBackground[] = A3A_COLOR_TRANSPARENT;
+          text = A3A_Icon_Random;
+          x = 148 * GRID_W;
+          y = 56 * GRID_H;
+          w = 16 * GRID_W;
+          h = 16 * GRID_H;
+        };
+
+        class RandomButton : A3A_Button
+        {
+          idc = -1;
+          text = $STR_antistasi_dialogs_mission_request_random;
+          onButtonClick = "closeDialog 0; [""missionButtonClicked"", [""RAN""]] call A3A_fnc_requestMissionDialog;";
+          sizeEx = GUI_TEXT_SIZE_LARGE;
+          x = 140 * GRID_W;
+          y = 76 * GRID_H;
+          w = 32 * GRID_W;
+          h = 12 * GRID_H;
+        };
+
       };
     };
 

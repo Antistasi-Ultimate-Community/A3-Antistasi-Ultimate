@@ -39,7 +39,7 @@ waitUntil {sleep 0.5;
 [] call SCRT_fnc_misc_updateRichPresence;
 
 _carrier removeAction _action;
-if (_carry in attachedObjects _carrier) then {detach _carryX};
+if (_carry in attachedObjects _carrier) then {detach _carry};
 _carrier setVariable ["A3A_cancelCarry", nil];
 _carrier setVariable ["A3A_carryingObject", nil];
 _carrier playMove "amovpknlmstpsraswrfldnon";

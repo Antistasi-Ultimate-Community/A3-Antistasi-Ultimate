@@ -32,11 +32,10 @@ A3A_faction_all = createHashMap;
 
 
 private _fnc_extractMarketClasses = {
-    private _type = _this;
-    private _vehicleRegisters = A3U_blackMarketStock select {(_x select 2) isEqualTo _type};
-    if (_vehicleRegisters isEqualTo []) exitWith {[]};
+    params ["_type"];
+    private _stock = A3U_blackMarketStock getOrDefault [_type, createHashMap];
 
-    _vehicleRegisters apply {_x select 0}
+    keys _stock;
 };
 
 private _fnc_setHashmap = {
@@ -127,8 +126,8 @@ setVar("staticMGs", OccAndInv("staticMGs") + Riv("staticLowWeapons") + Reb("stat
 setVar("vehiclesAirborne", OccAndInv("vehiclesAirborne"));
 setVar("vehiclesLightTanks", OccAndInv("vehiclesLightTanks"));
 
-setVar("vehicleRadars", [Occ("vehicleRadar"), Inv("vehicleRadar")]);
-setVar("vehicleSams", [Occ("vehicleSam"), Inv("vehicleSam")]);
+setVar("vehicleRadars", [OccAndInv("vehicleRadar")]); // The following 2 NEED to be an array. Do not remove
+setVar("vehicleSams", [OccAndInv("vehicleSam")]); 
 setVar("staticHowitzers", OccAndInv("staticHowitzers"));
 
 [A3A_faction_inv, "animations"] call _fnc_setHashmap;
@@ -227,13 +226,17 @@ setVar("vehiclesLight", _carsArmed + _carsUnarmed);
 private _vehArmor = OccAndInv("vehiclesArmor");
 setVar("vehiclesArmor", _vehArmor);
 
+// black market vehicles
+private _bMStock = [];
+{ _bMStock append (keys _x) } forEach (values A3U_blackMarketStock);
+
 //rebel vehicles
 private _vehReb = 
     Reb("vehiclesBasic") + Reb("vehiclesTruck") + Reb("vehiclesBoat")
     + Reb("vehiclesAT") + Reb("vehiclesLightArmed") + Reb("vehiclesLightUnarmed")
     + Reb("staticMGs") + Reb("staticAT") + Reb("staticAA") + Reb("staticMortars")
     + Reb("vehiclesHelis") + Reb("vehiclesPlane") + Reb("vehiclesMedical") + Reb("vehiclesAA")
-    + (A3U_blackMarketStock apply {_x select 0});
+    + _bMStock;
 setVar("vehiclesReb", _vehReb);
 
 //trucks that can cary logistics cargo

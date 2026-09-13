@@ -33,7 +33,6 @@ private _gameInfoText = format [
     QUOTE(VERSION_FULL), 
     minWeaps,
     [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select limitedFT,
-    [localize "STR_antistasi_dialogs_generic_button_no_text", localize "STR_antistasi_dialogs_generic_button_yes_text"] select areRivalsEnabled,
 	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];
 
@@ -47,6 +46,12 @@ private _fiaTrainingText = format [localize "STR_commander_menu_skill_level_titl
 //hiding reroll button if conditions are not met
 if (!isTraderQuestCompleted) then {
 	(_display displayCtrl 6014) ctrlShow false;
+};
+
+// Hide "toggle teardown mode" button
+if !([player] call FUNCMAIN(isEngineer)) then {
+    ctrlShow[5190, false];
+    ctrlEnable[5190, false];
 };
 
 //Support menu is always first tab, the only workaround at the moment

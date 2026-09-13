@@ -68,7 +68,7 @@ if (_podseats != 1) then {
 	sleep 0.45;
 	[_pod, "open"] spawn A3A_fnc_PodsDoors;
 
-	[_pod] call A3A_fnc_smokeCoverAuto;
+	// [_pod] call A3A_fnc_smokeCoverAuto;
 };
 
 

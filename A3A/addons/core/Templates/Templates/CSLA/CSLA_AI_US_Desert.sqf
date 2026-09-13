@@ -55,8 +55,8 @@
 ["uavsAttack", []] call _fnc_saveToTemplate;
 ["uavsPortable", []] call _fnc_saveToTemplate;
 
-["vehicleRadar", []] call _fnc_saveToTemplate;                  
-["vehicleSam", []] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;                  
+["vehicleSam", ""] call _fnc_saveToTemplate;
 
 //Config special vehicles
 ["vehiclesMilitiaLightArmed", ["US85_M998SFGT_DES"]] call _fnc_saveToTemplate;

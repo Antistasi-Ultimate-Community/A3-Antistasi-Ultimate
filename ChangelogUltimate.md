@@ -1,5 +1,524 @@
 # 11
 
+## 11.9.8
+
+### New Factions:
+N/A
+
+### Faction Updates:
+N/A
+
+### Localization:
+N/A
+
+### New Maps:
+N/A
+
+### Map Updates:
+N/A
+
+### New Features:
+N/A
+
+### Fixed:
+- Prevent RPT whitespace mayhem (#864)
+
+- Fix carry detach (#866)
+> Fixes releasing carried uncon body
+
+- Fix UAV side check on DS (#867)
+> This fixes the ability to garage manned UAVs when on a dedicated server
+
+- Fix bad copy-paste / var name in fn_initObject (#868)
+- Fix saving of utility items [fuel depot / drum, repair station, etc] (#869)
+- Fix all "slUniform" to "slUniforms" (#871)
+
+### Arms Dealer:
+N/A
+
+### Changes:
+N/A
+
+### Parameters:
+N/A
+
+## 11.9.7
+
+### New Factions:
+> - 3CBF Vanilla Civilian Template (#691)
+>    - This adds a template for vanilla civilians with 3CBF vehicles.
+> - Aegis Chernarus Defense Force 2035 (#769)
+>    - https://steamcommunity.com/sharedfiles/filedetails/?id=2737653177
+
+### Faction Updates:
+> - Added more cargo nodes for CUP and fixed some missing vehicles. Added SFP cargo nodes. (#694)
+>    - Added cargo nodes for many APCs, MRAPs, Armored vehicles and helicopters for CUP. Added SFP (Swedish Forces Pack) vehicles cargo nodes.
+> - German names and currency (#756)
+>    - Added list of German names and surnames, and this list is given to factions with German origin (all GM, CUP BW, BWA3). Also custom currency for Weferlingen maps set to Deutsche Mark.
+> - AMF Update and Rework (#760)
+>    - Updates AMF French Army factions for compatibility with latest AMF mod update. General rework of the factions to use new and / or renamed assets and swapped R3F dependency with NIArms.
+>    - R3F is no longer a dependency. NIArms is added as a dependency.
+> - Project RACS Template Updates (#765)
+>    - General rework of PRACS RACS and SLA templates to fix missing classes, add new weapons and vehicles, and fix the flag textured.
+> - WS update (#775)
+>    - Many factions will now use additional vehicles from Western Sahara when loaded
+> - NorAF Temperate Update (#785)
+>    - Minor updates to Flex7103 Norwegian Armed Forces faction due to recent update
+> - Logistics: BWMod (#787)
+>    - Adds logistics cargo nodes for BWMod vehicles
+> - Logistics: RHUSF MH-9M and its submodels (#789)
+>    - Adds logistics cargo node for RHS MH-6M
+> - Missing logistics for RF vehicles (#772)
+>    - Adds cargo loading nodes for the missing Reaction Forces vehicles
+> - Logistics: UK3CB SUV 4x4 (#786)
+>    - Fixes for cargo nodes for all variants of 4x4 SUV in 3CBF
+> - Give SMGs to every tier of Aegis NATO troops (#802)
+>   - Adds SMGs to Aegis factions, should prevent issues with some units spawning without primary weapon
+> - Logistics: RHSUSF Stryker vehicle (#805)
+>   - Cargo nodes added to RHS Strykers to allow cargo loading
+> - Misc OPTRE template updates and fixes (#815, #831, #846)
+> - Misc bugfixes for lombakkan crisis (#847)
+> - Add static AA weapon to CUP ACW Raven PMC rebel faction (#841)
+
+### Localization:
+> - Localization added for #729 (Parameters to disable virtual and physical artillery)
+> - Localization for addActions for buyable items (#776)
+>    - localization for carry, rotate, pack, unpack object and building placer and open doors actions.
+> - Turkish translations (#807)
+>   - Turkish translation added and/or updated for most of the mod
+> - Russian localization fixes (#771)
+
+### New Maps:
+> - Drakovac Map (#746)
+> - Green Sea 2023 Map (#818)
+
+### Map Updates:
+> - Add support for flag and ammo crate manual placement markers (#735)
+>   - Mainly for map creators / porters to manually control flag and ammo / loot crate placement
+>   - Fixes flag placement on Lingor (changes flag position for Airports 1, 2, 5, and 6) so they're not in the middle of the runway or otherwise inopportune locations
+
+### New Features:
+> - No flag yoinking (#649)
+>    - Introduces a new (experimental) way to include more attackers/defenders into above outnumbering calculation by using a configurable radius around the flag to search for instead of or in addition to using the marker size.
+> - Lockpicking for small groups (#737)
+>    - Added lockpick items (single- or multi-use) usable by non-engineer players. Lockpick kits can be bought from arms dealer or spawned in Zeus.
+> - Antistasi Zeus Units (#681)
+>   - Adds Antistasi units, vehicles, groups, and support modules to Zeus
+>   - Shows up in Zeus as `[A3U] Occupants`, `[A3U] Invaders`, `[A3U] Rebels`, `[A3U] Rivals`, `[A3U] Civilians`
+> - Builder improvements continued (#767)
+>    - Objects can be placed on top of another
+>    - Adds decorations (misc small decor items) and chemlights boxes as builder boxes
+>    - Prevents buildable objects from having weird collision interactions with other objects while placing them in build mode
+>    - Reworks menus to organize buildable items in sub-menus
+> - Teardown mode (#768)
+>    - This PR introduces "teardown mode" which needs to be activated when on base to suppress the hold-action prompts you get all around the base when glancing at a built object. The "Destroy" hold-action will only show if teardown mode is on.
+>    - Teardown mode is only available to engineers and can only be toggled if within HQ marker area.
+> - Logistics: Cargo can block turrets (turn out seats) (#804)
+>   - Added functionality for cargo loaded in vehicles to block vehicle turrets in addition to cargo seats. Only implemented (in this PR) for turn-out seats in some CUP APCs.
+> - CBA settings to skip intro stuff (#808)
+>   - Adds CBA settings to enable (or not) client init messages (e.g. "You have selected the commander role..." or "ACE items added to arsenal...") and to enable (or not) the intro orbiting UAV animation thing.
+>   - Settings are stored in profileNamespace instead of missionNamespace so players can individually make their own decisions. Default settings (both enabled) do not change anything from how it currently is.
+> - Added HUMONGOUS builder box (#809)
+>   - Adds new large builder box with a $15k budget that can only be transportable via logistics system (cannot be carried / dragged by players)
+> - Receive help from any nearby friendly units (#561)
+>   - Downed AI (rebel and enemy) can now request help from any friendly AI near them, even if not in their own squad. Max distance configurable in parameters.
+> - HQ vehicle spawn helper (#828)
+>   - Adds entity to build box to control where vehicles spawn within a rebel garrison, similar to the AI assembly area sign. Vehicles spawned when creating high command or emplacement squads will now spawn near this entity if it exists, or fallback to legacy spawning logic.
+
+### Fixed:
+> - Better NVG dud(!?) detection (#575)
+>    - Should improve the detection of cosmetic-only items in the NVG slot
+> - UK3CB requirement in RHS US Army Arid (#762)
+>    - Removed weapons in RHS US Army Arid template that required 3CBF
+> - Underwater action for boxes in Airdrop mission (#774)
+>    - Boxes dropped from planes (e.g. catch airdrop mission) should now get the action to salvage them if dropped in water
+> - don't break resourceCheck with no miladmins (#777)
+>    - resource check loop should no longer break when a map has no good military administration buildings. Should prevent issues where players do not gain rank, money, HR, campaign does not update, and everything else that happens every 10min doesn't happen.
+> - "Buildings" inherited from ThingX loaded, but never saved again (#780)
+>    - Should fix issue where some types of items built with the base builder didn't persist after multiple saves / loads (e.g. terrain manipulator objects)
+> - Small config fix for plane loadouts (#783)
+>    - fixes minor issues in code formatting for plane loadouts
+> - Better radio detection (#793)
+>   - Changed detection code to determine whether units have a radio to work in more cases.
+> - GM config fixes size reduction (#795)
+>   - Internal config rework to minimize file size, misc config fixes for GM vehicles, and allows AAF faction to use GM vehicles without needing to load GME mod
+> - fnc_addVehicle double check (#796)
+>   - should make garaging vehicles even more reliable
+> - Fix rectangular marker corner detection (#797)
+>   - Should fix issues with spawning logic for objects in corners of rectangular-shaped zones
+> - Fix tower's turret and civ traffic placements (#798)
+>   - Should fix issues with turrets too close to edge of towers and civ vehicles occasionally blowing up due to collisions on spawn
+> - Fix antenna's posture (#799)
+>   - Ensure radio towers are oriented vertically instead of angled on sloped terrain
+> - Removed weird gray border in "unloadvehicle.paa" image (open arsenal for vehicle) (#801)
+> - More resilient rival building finding (#803)
+>   - Reworked building selection logic for rival cell leader placement. Should allow rival missions in more towns including completely ruined towns, and prevent mission from not fully executing / spawning when suitable building can't be found.
+> - Prevent addVehicle from adding garage box itself (#810)
+>   - The garage box can no longer be garaged
+> - Fixes issue reported in [Bug]: Garbage Clean deletes the vehicles added to friendly sites (#825)
+> - Look in staticsToSave, too, before cleaning vehicles (#827)
+> - Avoid game startup RPT spam about undefined variable _revealedZones_ (#814)
+> - Always store param presets in profileNamespace (#840)
+>   - Fixes parameter presets not saving / loading correctly on DS
+> - Unused variable cleanup and fallbacks in fn_resourcecheck (#819)
+>   - Internal mod cleanup and variable initialization / checking to prevent weird situations from breaking resource check loop
+> - Terrain smoother adjustments (#813)
+>   - Should prevent weird terrain artifacts (holes / trenches) from being created when using terrain smoother items from builder box
+> - Fix stringtables again (#844)
+>   - Remove <English> tags in stringtables to prevent RPT spam and fix tooltip for self-revive methods parameter
+> - Check for player having any toolkit for lockpick speed increase (#842)
+>   - lockpicking speed increase will now apply when player has any of the toolkits defined in templates / supported by AU, not just the Vanilla toolkit
+> - Incorrect instantiation of _travTime in CASApproach (#848)
+> - Fix wrong classname used for some rebel template flags (#854)
+>   - Fixes issues with rebel flags not being created at captured zones due to bug in faction templates
+> - Various fixes after #549 and #751 (#849)
+>   - Fixes misc lingering bugs in enemy air QRF routines
+
+### Arms Dealer:
+> - Update weapons dealer RHS config (#758)
+>   - Some additional items added to RHS trader config (AK74m variants, 545x39 7N6M magazines, 9K38 and FIM92 magazines)
+> - General Arms Dealer update (#761)
+>    - Updated configs to balance some pricing errors and removed some missing NIArms classes.
+> - FWA trader additions + price balance (#764)
+>    - Balances FWA weapons against SOGPF & CUP and adds new weapons
+>    - Adds handgun, launcher, and rifle grenade categories for FWA
+> - WS update (#775)
+>    - Additional vehicles from Western Sahara added to dealer
+
+### Changes:
+- Don't punish throwing grenades at HQ if under attack (#730)
+> Players will not be punished for throwing grenades within 75m of rebel HQ, nor will the grenades be auto-deleted, if the HQ is under attack by an enemy faction.
+- Radio keys save and load (#732)
+> This adds enemy Radio Keys to the save and load routines (gained keys are saved between game sessions).
+- Fix carrying/attached objects logic (Community #3210, Ultimate #733)
+>  - Changed how the gamemode handles "is carrying" logic, to account for mods like HATG that have objects attached.
+>  - Should fix various issues that all give the message "you have other things attached" when attempting to carry /  move Antistasi items (loot crate, etc).
+- Don't force-add mags, med items, or misc essentials to AI loadouts unless they don't have *any* of the item type (#753)
+>  - Previously they were auto-added in all cases, regardless of whether the loadout already included them (except for the toolkits and mine detectors). Now, these are only added if a loadout doesn't have any.
+>  - E.g. if a medic loadout has 2 medkits saved, this will be respected and no more will be added; however, if a medic loadout has no medkits/ifaks/etc saved (or the various ACE gubbins when playing with ACE), they will be auto-added as before. Similar for the other item types.
+> - Granular unit, vehicle (roadblock) creation (#763)
+>    - Added granular unit tier spawning to many functions to allow some overlap between the succession of police/militia/military/elite units and vehicles.
+>    - Changed the roadblock spawning logic. It now uses aggression to calculate the vehicle used, and war level to determine the garrison. The idea with "frontlines" is that they should have actual bunker checkpoints, and anything "inland" should be a mobile vehicular one.
+> - Emplacements in roadblocks (#779)
+>    - Statics and vehicles will now also save when left near any rebel emplacement, *except* for watchposts. The statics and vehicles can have AI allowed or disallowed to use them, just like in any other zone.
+> - Introduce "canCouple" node flag to allow for multiple cargo planes (#790)
+>    - adds additional functionality for developers to more precisely control logistics cargo nodes for vehicles
+> - Code changes for feature donations/extenders (#770)
+>   - Internal code rework to standardize macros and make porting CBA-standardized code easier, changes to some logging calls, and new events system for extenders to hook into.
+> - Additional Parameters Functionality and Misc SetupGUI Updates (#666, #861)
+>   - Adds parameter preset functionality, allowing players to save and load custom presets for all game setup parameters, or select a combination of player group size and desired difficulty for recommended parameter settings
+>   - Adds parameter search bar
+>   - Fixes misc bugs with setup UI
+>   - Moves additional content checkboxes to factions tab and moves start game button to top tab bar
+> - Allow hangar population if inside the outpost (#800)
+>   - Added functionality to populate hangars with planes if they are inside the outposts marker.
+> - Moved teardown mode toggle from scroll-menu to rebel+commander menu #829
+> - Paradrop adjustments (#751)
+>   - Changed drop sequence, water checks, physics
+> - Make builder boxes make sense (#812)
+>   - Cosmetic changes to build proxy boxes; relation between build price and proxy size fixed
+> - Combat landing script adjustments (#549)
+>   - fine tuning to air vehicle approaches and reduced amount of fastroping
+> - Hakon's Garage parity update AU 11.9 / Community 3.11 (#852)
+>   - Ports the following changes from Official Antistasi Community version of Garage for APL-ND compliance
+>   - #3815: Fix garage static mounting not working on DS
+>   - #3800: Ammo Rework (only the garage parts)
+>   - #3818: Make HR Garage work in SP (only the garage parts)
+>   - #3824: Reduce vehicle state and make it work for any parked rebel vehicle (only the garage parts)
+>   - #3823: Make UAVs garageable (replaces previous AU hack)
+>   - #3838: Various pylon fixes involving use of getAllPylonsInfo (only the garage parts)
+>   - #3873: 3.11.0 Testing Fixes 3 (only the garage parts)
+>   - **Note:** In Antistasi Ultimate, *all* UAV type vehicles will be automatically crewed by AI when placing from the garage or arms dealer. If they are a type of land vehicle / static weapon, they will get the option to allow or prevent AI manning them. If a radar, when manned by AI they will automatically scan the horizon looking for threats.
+> - Updated images (#845)
+>   - Updated AU loading screen images
+
+### Parameters:
+- No flag yoinking (#649)
+>  - Name: Location defense/capture area | Location: Experimental Parameters | Description: When capturing/defending locations, use an additional circular area diameter around the flag AND the full zone size to consider unit presences.
+>  - Should allow rebel units dispersed around a location to count as defenders so flags surrounded by defensive units can't be captured as easily; HOWEVER, also applies to enemy-held locations, forcing players to clear them out more thoroughly.
+- Parameters to disable virtual and physical artillery (#729)
+>  - Name: Disable PATCOM/Virtual Artillery | Location: Experimental Parameters | Description: Disables virtual and PATCOM artillery. Virtual artillery is artillery that technically exists in the world, but can't reasonably be countered. PATCOM artillery is the AI handler for physical artillery, resulting in unfair accuracy and reaction.
+>  - Name: Disable Physical Artillery | Location: Experimental Parameters | Description: Disables physical artillery from being utilised by enemies. Does not disable artillery missions.
+>  - Added params to disable physical and virtual artillery, for those who don't like being bombed ruthlessly by an omnipotent force without a counter in sight.
+- Lockpicking param for civilian vehicles (#731)
+>  - Name: Enable Civilian Vehicle Locks | Location: Loot Parameters | Description: Should unoccupied civilian vehicles be locked automatically, requiring lockpicking by an engineer rebel?
+>  - Adds a new parameter to control whether civilian vehicles should be locked and require lockpicking to steal, similar to the same functionality for enemy vehicles.
+- Lockpicking for small groups (#737)
+>  - Name: Allow Lockpick Kits | Location: Experimental Parameters | Description: Allow non-engineer players to use lockpick kits to unlock vehicles
+>  - Name: Lockpick Kit Break Chance | Location: Experimental Parameters | Description: Chance that a lockpick kit will break upon use
+> - Receive help from any nearby friendly units (#561)
+>   - Name: Allow AI to revive friendly unconscious units outside their squad within a set distance | Location: Experimental Parameters | Description: When enabled, if downed AI cannot be revived by any unit within their own squad, other friendly units within this many meters will attempt to revive them. AI will not revive units of another side.
+
+## 11.8.8
+
+### New Factions:
+N/A
+
+### Faction Updates:
+N/A
+
+### Localization:
+N/A
+
+### New Maps:
+N/A
+
+### Map Updates:
+N/A
+
+### New Features:
+N/A
+
+### Fixed:
+> - Should *actually* fix `fn_missionRequest` breaking when selecting conquest mission, causing Petros to stop giving missions automatically or when prompted.
+> - A few misc fixes for AI grenadier loadouts causing some players to be unable to create or edit loadouts for grenadiers, and potentially causing some grenadiers to not get a loaded magazine for their primary weapon.
+
+### Arms Dealer:
+N/A
+
+### Changes:
+> - Remove "Randomize Uniforms" button from commander menu since it doesn't actually do anything anymore
+
+### Parameters:
+N/A
+
+## 11.8.7
+
+### New Factions:
+N/A
+
+### Faction Updates:
+N/A
+
+### Localization:
+- misc 11.8.7 fixes (#734 / #747)
+> Add localization for all stringtable entries that used to be just "Placeholder"
+
+
+### New Maps:
+N/A
+
+### Map Updates:
+N/A
+
+### New Features:
+N/A
+
+### Fixed:
+- cba_optics_fnc_restartCamera undefined in bare minimum runs (#739)
+> Fixes non-critical errors after closing commander / rebel menu when running without CBA optics
+- misc 11.8.7 fixes (#734)
+>  - Fixes rebel marker despawn when entering a vehicle that AI are manning
+>  - Fixes CUP TKM and RHS NAPA flag textures
+- Fix mission request break when no near markers for conquest (#741)
+> Ability to request mission from Petros should not break after requesting a conquest mission when not in range of a suitable enemy location to conquer.
+- Don't open commander or battle menu while in zeus or arsenal (#742)
+> Pressing the keys to open commander/rebel menu or battle menu (y-menu) should no longer open these menus when player is in the arsenal or using Zeus
+- Fix preventing AI from manning weapons at emplacements (#743)
+> AI at HMG/AA/AT emplacements should now man their weapons again (Whoops!)
+- Save vehicle customization for "parked" vehicles and statics (#738)
+> Persistence for changes to a vehicle's paint scheme and customization made in the garage
+- Prevent automatic rearm after surrender (#745)
+> When playing with ACE medical, enemy units that dropped their weapon before being downed or surrendering should not pick their weapon back up after being revived
+- More vehicle to emplacement changes and fixes (#744)
+>  - Fixes persistence for rebel vehicles regardless of whether AI are allowed to man them.
+>  - Fixes persistence for rebel vehicles at *all* rebel-held markers, not just HQ
+>  - Adds persistence for manual changes to manning state. E.g. with AI allowed to man vehicles by default, a change to not allow a specific vehicle to be manned will persist on marker load/unload and server reload.
+>  - Adds AI ability to man static mortars (in addition to all the other static weapon types)
+- Fix min items calculation in AI arsenal (#752)
+> Check for unlocked magazines when selecting primary and secondary muzzle loaded magazine in the AI arsenal should no longer error out.
+
+### Arms Dealer:
+N/A
+
+### Changes:
+N/A
+
+### Parameters:
+N/A
+
+## 11.8.6
+
+### New Factions:
+- N/A
+
+### Faction Updates:
+- N/A
+
+### Localization:
+- N/A
+
+### New Maps:
+- N/A
+
+### Map Updates:
+- N/A
+
+### New Features:
+- N/A
+
+### Fixed:
+- 11.8.6 Hotfix (#723)
+> - ability to pull air vehicles from garage on dedicated server or when not the host
+> - bad vest classnames in 3CBF ION Arid template
+> - when using rebuild assets function, show "Nothing to rebuild" message when appropriate and don't charge faction money
+> - revert erroneous change to Chernarus Autumn mission.sqm breaking the mission on that terrain
+> - allow AI units to equip any primary weapon from initialRebelEquipment if they have no class-specific primaries available. [e.g. let medics have a bolt action rifle (usually categorized as a sniper rifle) if they have no SMGs / carbines available)]. Should fix issues with new games with very limited starting equipment. Only applies to primary weapons.
+> - move extender params back to their own section in the params dropdown so they go in the right place instead of being appended under the development params
+> - re-enable flag actions for static weapons (enable/disable AI, move static). The option to move statics was accidentally dropped in 376/718, this re-adds it by using the "static" case in fn_flagaction again.
+
+
+### Arms Dealer:
+- N/A
+
+### Changes:
+- AI Custom Loadouts Overhaul Changes:
+> - change default for limiting weapons by AI class to off / no
+> - Add new param to default custom loadouts to legacy behavior; that is, all tabs / items start as overridden / saved, and you can choose to not save (randomize) specific tabs / items. Default for the param is yes / on: legacy behavior
+
+### Parameters:
+- Extender params moved to their own section in the parameters dropdown (see above)
+- New param for custom AI loadouts to save everything by default (see ab)
+
+## 11.8.5
+
+### New Factions:
+- Flex7103 CUP Expansion Pack #589
+> PLA, Finland, Spain and Poland
+- Add Lombakkan Crisis #586
+> North Lombakkan Armed Forces, South Lombakkan Defence Forces, Lombakkan Union Front, Bocano Armed Forces
+- SPEX Update #624
+> Commonwealth
+- Multi Era Templates (#560)
+> This adds 5 factions, combing WW2, Cold War and Modern equipment and vehicles to provide a unique experience. Varying dependencies depending on the template.
+- [CUP] Altian Civil War (#587)
+> CUP + https://steamcommunity.com/sharedfiles/filedetails/?id=3390585168 and dependencies
+
+### Faction Updates:
+- Estraria Update #625
+> Updated Estraria Faction to work with the updated Estraria mod
+- SPEX Update #624
+> Updated SPEX Factions with Flying Legends/Secret Weapons Reloaded and Spearhead Expansion Vehicles optionals
+- SMGs added to many templates (#419, #695)
+- Global Mobilization 1.6 update new additions (#606)
+- Legion Update 2.0 new classnames fixed (#615)
+- FCE PLA more accurate equipment (#652)
+- Swap static AA/AT classes (#715)
+> fixes swapped class names for CUP Flex7103 Norwegian AF static AT and static AA launchers
+
+### Localization:
+- Translation for "#569" (#612)
+- RU localization for #645 (#721)
+
+### New Maps:
+- Korsac Map Port #619
+> Korsac & Korsac Winter
+- Kingdom of Regero (Community #2195 > #2519 > #2788 > #2792 > #3489 > #3549 > Ultimate #616)
+> Kingdom of Regero
+
+### Map Updates:
+- Update Yulakia (#692)
+> Removed outpost 27, replaced by milbase 5 nearby. Add new resources, factories and outposts
+
+### New Features:
+- Vehicle to emplacement (#376, #718)
+> Persist vehicles left near rebel held markers.
+> Enable rebel AI to man vehicles (commander / gunner seat) left near friendly markers by default. Note that players can still enable or disable AI use of specific vehicles by interacting with the vehicle.
+- Even more random events (#551)
+> Adds new and / or slightly changes behavior of skirmish, ambush, post-battle, repair, medevac, and airdrop events
+- Base builder / object placer rotation & alignment keybinds (#626)
+> Adds keybinds to align object with another object and to snap rotate objects between configurable angles
+- Base builder terrain object hiders (#627)
+> Introduces rectangular and circular map object hiders for the base builder.
+Once placed and built, they remove any terrain objects in their area.
+- Add factory and resource rebuilding functionality to Rebuild Assets button (#654)
+> Added rebel factory and resource rebuilding functionality to the Commander Menu > Rebuild Assets button to allow rebels to regain income from destroyed economy markers without having to first give those markers to the enemy for repairs.
+- Show load information in AI loadout arsenal (#643)
+> This PR shows load information in the arsenal to help avoid over-encumbering AI with custom loadouts.
+- More artillery commands / messaging (#656)
+> Adds more sidechat messages for artillery (shot over / out. splash over / out, rounds complete). Changes the responding unit to the actual HC firing unit instead of Petros.
+
+### Fixed:
+- Missing garage CBA settings strings #621
+- Added missing staticMortars template value for Vanilla SDK rebels #648
+- Fix AI Equipment Duplication Exploit #591
+- Bank mission: vehicle not spawning with some templates (#622)
+- Armored convoys: armored vehicle not spawning, completing the mission instantly (#653)
+- Ensure garbage collections runs when called from commander menu (#646)
+- Less RPT spam (#650)
+- Don't allow rally point establishment while moving in a vehicle (#678)
+- Don't cull buildingsToSave in garbage cleaner, unless limit lowered (#680)
+> constructions from building box, zeus, or ace / grad trenches should no longer be deleted by the garbage cleaner, unless you set the max constructions parameter lower than previous value. Set the param to 0 to delete all constructions.
+- Remove erroneous member param dropdown (#684)
+- Fix params edit box check when client hosting (#671 / #686)
+> Button to edit parameters while in game should now be available only to host on local client servers, or any admin on dedicated servers
+- Fix bug with returning weapon(s) to crate when selling loaded mags (#673)
+> Selling magazines to arms dealer should no longer eat your weapons
+- Add player items to arsenal when quick-equipping (#6744)
+> Non-unlocked items in player inventory should be automatically moved to the rebel arsenal when using 'quick equip loadout' feature
+- Ensure AI loadouts (or quick-equip loadouts) get map/compass/watch (#699)
+- Fix launcher magazine detection in arsenal / rebelGear generation (#703)
+> Should fix issues with unlocked launchers with ammo in arsenal not being equipped by AI
+- Don't show lockpick prompt when in a vehicle (#713)
+- Restart CBA optics camera after using commander menu (#709)
+> should fix 3D optics being broken after using commander menu
+- [BUG] Fix nil template values (#706)
+- Don't show builder prompts when in a vehicle (#701)
+- Weird doubled ";;" (#690)
+- Ensure hummingbird helis get backseats to avoid issues with not enough seats for AI groups (#719)
+
+
+### Arms Dealer:
+- Movable gear/weapon store dialog #604
+- DLC/MOD icons to the vehicle store #605
+- GM gear store update #610
+- Added support for Modern Pistol Pack (#628)
+> https://steamcommunity.com/sharedfiles/filedetails/?id=3157163173
+- Added support for Scifi Vehicles Pack (#642)
+> https://steamcommunity.com/sharedfiles/filedetails/?id=3539476763
+
+### Changes:
+- AI Custom Loadouts Overhaul (#590)
+> Various changes around limiting equipping AI custom loadouts with non-unlocked items, limiting which classes can be equipped with weapon types. Allows AI custom loadouts to support 'partial' custom loadouts with some equipment manually set and others still randomized.
+- Show arsenal update message until acknowledged (#714)
+> Shows message to players informing them of changes to AI custom loadout arsenal functionality
+- Increase distance threshold when validating fast-travel map-clicks (#651)
+> Should make the fast-travel location selection less finicky / easier to click without having to zoom in the map as much.
+- There is _always_ intel to be found (#645)
+> Adds numerous detailed strings for items found when nothing of significance is found searching civilians for intel. Stops civilians from giving trader intel when trader is disabled.
+- Use cursorTarget instead of cursorObject for garaging vehicles (#667)
+> Should make garaging vehicles / statics more reliable
+- Edited GitHub mod README and changelogs, internal addon re-organization, internal logging cleanup and additional logging for chooseAttack function (#683)
+> Hopefully will provide some insight into invader "steam-rolling" occupants in mid-game
+- Speculative invader spam fix (#585)
+> ICW #683, also re-enables occupant and invader factions sending convoys to cities when a more suitable target marker is not found or punishments are not yet allowed. Hoping it will alleviate invader spam / "steam-rolling" issues
+- Garage parity update (#707, Official Antistasi Community #3626, #3663, #3688, #3704, #3721)
+> Brings Hakon's garage in Antistasi Ultimate to parity with the version in Antistasi Community (APL-ND compliance)
+> Track ammo cargo for garage vehicles and for sold ammo crates
+> Helipad compatibility with community garage changes
+> Fixed some bugs: Utility items in ACE cargo would be lost (well, underground) on garaging. Garaging a vehicle with a quadbike on it could ignore garage caps and lose the quadbike's items. It was possible to garage an object while loaded into a vehicle, causing desync of cargo slots.
+> Compatibility with community flag access after capture changes
+> [ENHANCEMENT] The placement radius when pulling stuff out of the garage varies depending on the type. The normal range is increased to 50 meters and the range for planes, helis, and boats is increased to 200
+- Cleanup logging (#712)
+> Misc changes to how and when logging messages are added to the RPT file depending on log level
+- Air QRF (combat landing, fastrope) bug fixes (#704)
+> Minor cleanup and refactor of QRFBehavior. Don't fastrope dead units. Refactor and reorder of combatLanding. Should (hopefully) prevent the most egregious bugs, e.g. failing to unload units altogether, taking off before finishing unload, and / or getting SAD waypoint before unloading units. More robust safe position finding and landing position blacklisting. All heli QRFs will attempt combat landing; if landing unsafe, fallback to fastrope. This does not prevent all heli crashes in heavily built-up or vegetated / forested areas, but it's generally a lot better imo.
+- Lower amount of weapons from civ intel (#700)
+> Getting weapons from talking to civilians is now much less likely, and if you *do* get them, the amount will generally be lower
+
+### Parameters:
+- Add Extender Params Section #598
+- Added option for no death penalty (0% money loss) #629
+- Garrison group size parameter #555
+- Unlocked ENVGs option (#599)
+> Allows / disallows unlocking of enhanced / thermal NVG items in the arsenal
+- Add ability to view / change / save (some) params while in game (#597
+> Button added to commander menu to load the params tab while in game. Not all params are able to be changed in game.
+- Re-organize params menus (#655)
+> Params are now organized into more appropriate categories
+- Param to limit how often incap / uncon is triggered (#663)
+> Two params added to modify the chance for rebel and enemy ai to become unconscious / incapacitated instead of killed when taking sufficient damage.
+
 ## 11.7.0
 
 ### New Factions:

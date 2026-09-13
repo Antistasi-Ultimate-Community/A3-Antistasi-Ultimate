@@ -89,7 +89,7 @@ switch (_key) do {
     };
 
     default {
-        Error_1("Key action not registered: %1", _key)
+        Error_1("Key action not registered: %1", _key);
     };
 };
 

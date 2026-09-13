@@ -25,7 +25,11 @@
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_targetPos", "_area", "_roundType", "_rounds", "_callerGroup"];	
+params ["_targetPos", "_area", "_roundType", "_rounds", "_callerGroup"];
+
+if (A3U_disablePATCOMMortars) exitWith {
+    Debug("Exiting PATCOM artilleryFireMission; Param was set to disabled.");
+};
 
 private _batteryArray = [];
 private _side = side _callerGroup;

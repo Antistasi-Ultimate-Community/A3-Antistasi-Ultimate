@@ -1,1 +1,0 @@
-_vehiclesCivCar pushBack "C_Kart_01_F";

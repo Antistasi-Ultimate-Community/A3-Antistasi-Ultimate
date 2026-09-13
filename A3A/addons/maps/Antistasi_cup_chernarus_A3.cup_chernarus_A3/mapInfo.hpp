@@ -41,9 +41,9 @@ class cup_chernarus_a3 {
 	climate = "temperate";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_GREEN,
 		BUILDABLES_TEMPERATE,
-		BUILDABLES_CUP,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_CUP
 	};
 };

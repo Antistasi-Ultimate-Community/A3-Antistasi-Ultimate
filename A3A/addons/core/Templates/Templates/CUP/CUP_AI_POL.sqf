@@ -30,10 +30,7 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 //////////////////////////
 
 //["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate; //used only in salvage mission and only if template has "vanilla" flag 
-/// can be "B_SDV_01_F", "O_SDV_01_F" or "I_SDV_01_F"
-
-//["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; //used in QRF orbital and crashsite mission
-/// can be a vehicle or prop like in example above(but it must have physix)
+/// can be "B_SDV_01_F", "O_SDV_01_F" or "I_SDV_01_F
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -54,7 +51,7 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["vehiclesAirborne", ["Flex_CUP_POL_APC_BRDM2_HQ", "Flex_CUP_POL_RG31E_M2", "Flex_CUP_POL_RG31_Mk19", "Flex_CUP_POL_RG31_M2"]] call _fnc_saveToTemplate;              // airborne vehicles, could be with passenger seats or just a crew 
 ["vehiclesIFVs", ["Flex_CUP_POL_BWP1", "Flex_CUP_POL_APC_Wheeled_01"]] call _fnc_saveToTemplate;                  // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
 ["vehiclesTanks", ["Flex_CUP_POL_Leopard2A6", "Flex_CUP_POL_PT91", "Flex_CUP_POL_MBT_M1A2C", "Flex_CUP_POL_MBT_M1A2C_TUSK", "Flex_CUP_POL_MBT_M1A2C_TUSK_II"]] call _fnc_saveToTemplate;                 // cannon armed, heavely armored, passengers will be ignored
-["vehiclesLightTanks", ["B_UGV_01_rcws_F"]] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
+["vehiclesLightTanks", []] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
 ["vehiclesAA", ["Flex_CUP_POL_ZSU23"]] call _fnc_saveToTemplate;                    // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
 
 ["vehiclesTransportBoats", ["Flex_CUP_POL_Boat_Transport"]] call _fnc_saveToTemplate;	// boat that can carry passengers and cargoboxes

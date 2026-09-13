@@ -16,7 +16,15 @@ private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", f
 
 if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///maaaaaaybe we should save vehicles near ANY friendly marker?
 	if (!(_markerX in citiesX)) then {
-		private _veh = createVehicle [FactionGet(reb,"flag"), _positionX, [],0, "NONE"];
+		private _veh = nil;
+		_spawnParameter = [_markerX, "flag"] call A3A_fnc_findSpawnPosition;
+		if (_spawnParameter isEqualType []) then {
+			_veh = createVehicle [FactionGet(reb,"flag"), (_spawnParameter select 0), [], 0, "NONE"];
+			_veh setDir (_spawnParameter select 1); // this probably doesn't matter, but eh why not?
+		} else {
+			Warning_1("Could not find flag placement marker for garrison %1; falling back to marker center.", _markerX);
+			_veh = createVehicle [FactionGet(reb,"flag"), _positionX, [],0, "NONE"];
+		};
 		_veh setFlagTexture FactionGet(reb,"flagTexture");
 		_veh allowDamage false;
 		_vehiclesX pushBack _veh;
@@ -38,6 +46,8 @@ if (_markerX != "Synd_HQ" && {!(_markerX in milAdministrationsX)}) then {  ///ma
 
 private _size = [_markerX] call A3A_fnc_sizeMarker;
 private _staticsX = staticsToSave select {_x distance2D _positionX < _size};
+
+_positionX = [_markerX] call A3A_fnc_findAiSpawnPosition;
 
 private _garrison = [];
 _garrison = _garrison + (garrison getVariable [_markerX,[]]);
@@ -164,7 +174,7 @@ for "_i" from 0 to (count _groups) - 1 do {
 			_groups append _garrisonGroup;
 		};
 	} else {
-		[_groupX, "Patrol_Defend", 0, 150, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
+		[_groupX, "Patrol_Defend", 0, 150, -1, true, getMarkerPos _markerX, false] call A3A_fnc_patrolLoop;
 	};
 };
 

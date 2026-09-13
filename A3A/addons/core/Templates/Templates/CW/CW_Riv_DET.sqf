@@ -102,7 +102,7 @@ _loadoutData set ["uniforms", [
 
 _loadoutData set ["offuniforms", ["ls_mandalorianUniform"]];
 _loadoutData set ["vests", ["ls_mandalorianVest_deathwatchGrunt", "ls_mandalorianVest_deathwatchSergeant"]];
-_loadoutData set ["heavyVests", ["ls_mandalorianVest_deathwatchCaptain", "ls_mandalorianVest_deathwatchSergeant", "ls_mandalorian_deathwatchCaptain_vest"]];
+_loadoutData set ["heavyVests", ["ls_mandalorianVest_deathwatchCaptain", "ls_mandalorianVest_deathwatchSergeant", "ls_mandalorianVest_deathwatchCaptain"]];
 _loadoutData set ["atBackpacks", ["ls_mandalorianBackpack_demo", "ls_mandalorianBackpack_heavy"]];
 _loadoutData set ["backpacks", ["ls_mandalorianBackpack", "ls_mandalorianBackpack_light"]];
 _loadoutData set ["helmets", ["ls_mandalorianHelmet_deathwatchGrunt", "ls_mandalorianHelmet_deathwatchGrunt", "ls_mandalorianHelmet_deathwatchSergeant"]];

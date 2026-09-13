@@ -62,4 +62,9 @@ class NavGrid {
 	VTF_Korsac = QPATHTOFOLDER(Antistasi_VTF_Korsac.VTF_Korsac\navGrid.sqf);
 	VTF_Korsac_Winter = QPATHTOFOLDER(Antistasi_VTF_Korsac_Winter.VTF_Korsac_Winter\navGrid.sqf);
 	regero = QPATHTOFOLDER(Antistasi_regero.regero\navGrid.sqf);
+	drakovac = QPATHTOFOLDER(Antistasi_drakovac.drakovac\navGrid.sqf);
+	green_sea_2023 = QPATHTOFOLDER(Antistasi_green_sea_2023.green_sea_2023\navGrid.sqf);
+	bornholm = QPATHTOFOLDER(Antistasi_bornholm.bornholm\navGrid.sqf);
+	egl_laghisola = QPATHTOFOLDER(Antistasi_egl_laghisola.egl_laghisola\navGrid.sqf);
+	UMB_Armavir = QPATHTOFOLDER(Antistasi_UMB_Armavir.UMB_Armavir\navGrid.sqf);
 };

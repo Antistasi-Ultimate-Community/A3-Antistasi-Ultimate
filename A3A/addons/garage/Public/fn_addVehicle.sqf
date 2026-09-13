@@ -43,7 +43,7 @@ if (!isNil "traderMarker") then {
 	_friendlyMarkers pushBack traderMarker;
 };
 private _inArea = _friendlyMarkers findIf { count ([_player, _vehicle] inAreaArray _x) > 1 || {count ([_player, _vehicle] inAreaArray [(getMarkerPos _x), 50, 50]) > 1} };
-private _nearHelipads = nearestObjects [_vehicle, ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"], 30, true];
+private _nearHelipads = nearestObjects [_vehicle, ["A3AU_RebHelipad_base_F"], 30, true];
 private _isNearHelipad = (count _nearHelipads > 0) && (_vehicle isKindOf "Helicopter");
 if (_inArea == -1 && {!_isNearHelipad}) exitWith {["STR_HR_GRG_Feedback_addVehicle_badLocation",[FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
@@ -100,12 +100,15 @@ if (_vehicle getVariable ['A3A_canGarage', false]) exitwith { [_vehicle] call _u
 if !((_vehicle getVariable ["SA_Tow_Ropes",objNull]) isEqualTo objNull) exitWith {["STR_HR_GRG_Feedback_addVehicle_SATow"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     //crewed
+private _isUAV = unitIsUAV _vehicle;
 private _exit = false;
 if ( ( {alive _x} count (crew _vehicle) ) > 0) then { _exit = true };
 { if ( ( {alive _x} count (crew _x) ) > 0) exitWith {_exit = true} } forEach attachedObjects _vehicle;
-if (_exit) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Crewed"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+if (_exit && (!_isUAV)) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Crewed"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+if (_isUAV && (crew _vehicle isNotEqualTo [] && {side _vehicle isNotEqualTo side _player})) exitWith {  ["STR_HR_GRG_Feedback_addVehicle_HostileUAV"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     // valid vehicle for garage
+if (_vehicle == vehicleBox) exitWith { ["STR_HR_GRG_Feedback_addVehicle_GenericFail"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 private _cat = [_class] call HR_GRG_fnc_getCatIndex;
 if (_cat < 0) exitWith { ["STR_HR_GRG_Feedback_addVehicle_GenericFail"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
@@ -198,6 +201,8 @@ private _catsRequiringUpdate = [];
     if (typeOf _x in ["ACE_Wheel", "ACE_Track"]) then { continue };
     [_x, _vehicle] call ace_cargo_fnc_unloadItem;
 } forEach (_vehicle getVariable ["ace_cargo_loaded", []]);
+
+if (_isUAV) then {{deleteVehicle _x} forEach (crew _vehicle)};
 
 // Can only deal correctly with static weapons here. Drop everything else where it is.
 {

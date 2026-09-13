@@ -6,7 +6,7 @@
 
 ["name", "KAL"] call _fnc_saveToTemplate;
 
-["flag", "FIA_Flag"] call _fnc_saveToTemplate;
+["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\KOR\images\flag_kal_co.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 

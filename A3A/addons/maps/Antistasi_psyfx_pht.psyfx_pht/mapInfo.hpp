@@ -23,7 +23,7 @@ class psyfx_pht {
 	climate = "tropical";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
-		BUILDABLES_TROPIC,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_UNIVERSAL,
+		BUILDABLES_TROPIC
 	};
 };

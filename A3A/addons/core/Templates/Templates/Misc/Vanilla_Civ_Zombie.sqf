@@ -104,7 +104,14 @@ private _civUniforms = [
     "U_C_Uniform_Scientist_01_F"
 ];
 
-["uniforms", _civUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+  "U_C_FormalSuit_01_khaki_F",
+  "U_C_FormalSuit_01_gray_F",
+  "U_C_FormalSuit_01_blue_F",
+  "U_C_FormalSuit_01_black_F"
+];
+
+["uniforms", _civUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 ["headgear", []] call _fnc_saveToTemplate;
 
@@ -120,6 +127,8 @@ _loadoutData set ["pressHelmets", []];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["hgun_Pistol_heavy_02_F", "hgun_ACPC2_F", "hgun_P07_F"]];
 
 private _manTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -151,6 +160,18 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 
 private _specialUnits = [
     "Zombie_O_Walker_Civ",
@@ -170,6 +191,7 @@ private _specialUnitsWeights = [
 
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate], // to-do: allow press to spawn but make them special infected
     ["Worker", _workerTemplate], // needed to be normal for resources, factories, etc
     ["Man", _manTemplate],

@@ -56,6 +56,7 @@ private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
     _crewMan moveInGunner _veh;
+    [_crewMan] spawn SCRT_fnc_common_scanHorizon;
 };
 
 _groupX setBehaviour "AWARE";

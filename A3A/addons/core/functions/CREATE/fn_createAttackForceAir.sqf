@@ -45,7 +45,9 @@ if (_transportPlanes isNotEqualTo [] && {(_faction get "vehiclesAirborne") isNot
 };
 { _transportPool append [_x, 2 / count _transportHelis] } forEach _transportHelis;
 { _transportPool append [_x, 2 * _lhFactor / count _lightHelis] } forEach _lightHelis;
-{ _transportPool append [_x, 0.75 / count _transportPlanes] } forEach _transportPlanes;
+if (_transportPlanes isNotEqualTo []) then {
+    { _transportPool append [_x, 0.75 / count _transportPlanes] } forEach _transportPlanes;
+}; // Fix for factions without planes? *cough* pip *cough*
 
 private _supportPool = [_side, tierWar+_tierMod] call A3A_fnc_getVehiclesAirSupport;
 

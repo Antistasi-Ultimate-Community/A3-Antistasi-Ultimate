@@ -118,6 +118,8 @@
     "gm_WhiteHead_19_camo_01","gm_WhiteHead_20_camo_01","gm_WhiteHead_21_camo_01"
 ]] call _fnc_saveToTemplate;
 
+"GermanMen" call _fnc_saveNames;
+
 //////////////////////////
 //       Loadouts       //
 //////////////////////////

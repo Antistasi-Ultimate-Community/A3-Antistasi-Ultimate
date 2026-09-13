@@ -18,6 +18,8 @@ FIX_LINE_NUMBERS()
 params [["_excludeId", 0]];
 
 Info("Event condition has procced, selecting event...");
+
+if (gameMode == 3) exitWith {nil};
  
 isRivalEventInProgress = true;
 

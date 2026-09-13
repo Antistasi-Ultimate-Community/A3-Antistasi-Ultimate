@@ -11,7 +11,7 @@ class CfgPatches
         units[] = {};
         weapons[] = {"TFAR_SCR536"};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_Ultimate"};
+        requiredAddons[] = {"A3A_ultimate"};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";

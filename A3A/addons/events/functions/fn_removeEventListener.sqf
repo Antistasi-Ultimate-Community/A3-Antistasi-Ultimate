@@ -34,5 +34,5 @@ if (
 ) then {
     (GVAR(EventRegistry) get _event) deleteAt _id;
 } else {
-    Warning_2("No listener for event %1 with ID %2 exists", _event, _id)
+    Warning_2("No listener for event %1 with ID %2 exists", _event, _id);
 };

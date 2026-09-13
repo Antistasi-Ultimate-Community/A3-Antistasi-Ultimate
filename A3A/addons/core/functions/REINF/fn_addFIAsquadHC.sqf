@@ -11,6 +11,11 @@ if (count hcAllGroups player >= ([6,10] select (player call A3A_fnc_isMember))) 
     [localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_reinf_addFIASquadHC_error_too_many_hc"] call A3A_fnc_customHint;
 };
 
+if ([] call FUNCMAIN(isTeardownEnabled)) exitWith {
+    playSound "A3AP_UiFailure";
+    [localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_Dialogs_teardownActivePleaseDisable_text"] call A3A_fnc_customHint;
+};
+
 private _exit = false;
 if (_typeGroup isEqualType "" && {_typeGroup isEqualTo ""}) then {
 	_exit = true; 
@@ -114,12 +119,20 @@ private _fnc_placed = {
     [_formatX, _idFormat, _special, _vehicle] spawn A3A_fnc_spawnHCGroup;
 };
 
-private _vehiclePlacementMethod = if (getMarkerPos respawnTeamPlayer distance player > 50) then {
+private _vehiclePlacementMethod = if (getMarkerPos respawnTeamPlayer distance player < 50) then {
+    HR_GRG_fnc_confirmPlacement;
+} else {
     {
-        private _searchCenter = getMarkerPos respawnTeamPlayer getPos [20 + random 30, random 360];
-        private _spawnPos = _searchCenter findEmptyPosition [0, 30, _vehType];
-        if (_spawnPos isEqualTo []) then {_spawnPos = _searchCenter};
+        private _helperData = ["hc", {
+            private _searchCenter = getMarkerPos respawnTeamPlayer getPos [20 + random 30, random 360];
+            private _pos = _searchCenter findEmptyPosition [0, 30, _vehType];
+            if (_pos isNotEqualTo []) exitWith { _pos };
+            _searchCenter;
+        }] call FUNCMAIN(findSpawnHelperPosition);
+        _helperData params["_spawnPos", "_spawnDir"];
+
         private _vehicle = _vehType createVehicle _spawnPos;
+        _vehicle setDir _spawnDir;
 
         if (_mounts isNotEqualTo []) then {
             private _static = (FactionGet(reb,"staticAA")) # 0 createVehicle _spawnPos;
@@ -131,7 +144,7 @@ private _vehiclePlacementMethod = if (getMarkerPos respawnTeamPlayer distance pl
 
         [_formatX, _idFormat, _special, _vehicle] spawn A3A_fnc_spawnHCGroup;
     }
-} else { HR_GRG_fnc_confirmPlacement };
+};
 
 if (!_isInfantry) exitWith { [_vehType, _fnc_placed, _fnc_placeCheck, [_formatX, _idFormat, _special], _mounts] call _vehiclePlacementMethod };
 
@@ -151,7 +164,7 @@ sleep 1;
 disableSerialization;
 private _display = findDisplay 100;
 
-if (str (_display) != "no display") then {
+if !(isNull _display) then {
 	private _ChildControl = _display displayCtrl 104;
 	_ChildControl  ctrlSetTooltip format [localize "STR_dialog_fia_squad_hc_buy_veh", _vehCost, A3A_faction_civ get "currencySymbol"];
 	_ChildControl = _display displayCtrl 105;

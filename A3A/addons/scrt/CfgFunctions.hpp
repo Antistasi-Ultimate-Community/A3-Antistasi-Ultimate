@@ -177,6 +177,8 @@ class CfgFunctions {
 			class ui_setEstablishOutpostMode {};
 			class ui_setAssignRivalsAttackLocationMode {};
 
+			class ui_respawnPetros {};
+
 			class ui_setOutpostCost {};
 			class ui_setMinefieldCost {};
 			class ui_setSupportCostText {};

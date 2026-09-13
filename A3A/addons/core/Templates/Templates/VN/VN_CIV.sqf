@@ -38,14 +38,6 @@ private _civPlanes = [];
 
 ["vehiclesCivFuel", ["vn_b_wheeled_m54_fuel_airport", 0.2]] call _fnc_saveToTemplate;
 
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\vehicles\Vanilla_CIV.sqf"
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "SPEX_M2_60")) then {
-	#include "..\MOD_content\SPEX\vehicles\Vanilla_CIV.sqf"
-};
-
 ["vehiclesCivCar", _civCarsWithWeights] call _fnc_saveToTemplate;
 ["vehiclesCivPlanes", _civPlanes] call _fnc_saveToTemplate;
 
@@ -97,7 +89,14 @@ private _pressUniforms = [
     "U_Marshal"
     ];
 
-["uniforms", _civUniforms + _pressUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+    "vn_o_uniform_vc_mf_01_07",
+    "vn_o_uniform_pl_army_01_11",
+    "vn_o_uniform_nva_army_01_03",
+    "vn_o_uniform_nva_army_01_01"
+];
+
+["uniforms", _civUniforms + _pressUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 private _civhats = [
     "vn_c_headband_04",
@@ -118,6 +117,8 @@ _loadoutData set ["helmets", _civHats];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["vn_m1895", "vn_m10", "vn_ppk"]];
 
 
 private _manTemplate = {
@@ -149,8 +150,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

@@ -43,8 +43,8 @@
 ["vehiclesGunBoats", ["rhsusf_mkvsoc"]] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["rhs_btr80_msv" ]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", ["RHS_Su25SM_vvs"]] call _fnc_saveToTemplate;
-["vehiclesPlanesAA", ["rhs_mig29sm_vvs"]] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;
+["vehiclesPlanesAA", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["RHS_C130J"]] call _fnc_saveToTemplate;
 
 ["vehiclesHelisLight", ["RHS_Mi8AMT_vdv"]] call _fnc_saveToTemplate;
@@ -275,7 +275,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["SCE_Freedom_CBRN"]];
-_eliteLoadoutData set ["slUniform", ["SCE_Freedom_CBRN"]];
+_eliteLoadoutData set ["slUniforms", ["SCE_Freedom_CBRN"]];
 _eliteLoadoutData set ["vests", ["SCE_V_SEVA_Freedom_2"]];
 _eliteLoadoutData set ["mgVests", ["SCE_V_SEVA_Freedom_2"]];
 _eliteLoadoutData set ["medVests", ["SCE_V_SEVA_Freedom_2"]];
@@ -339,7 +339,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["SCE_Freedom_3"]];
-_militaryLoadoutData set ["slUniform", ["SCE_Freedom_2"]];
+_militaryLoadoutData set ["slUniforms", ["SCE_Freedom_2"]];
 _militaryLoadoutData set ["vests", ["SCE_Sunrise_Freedom_1"]];
 _militaryLoadoutData set ["mgVests", ["SCE_V_SEVA_Freedom_2"]];
 _militaryLoadoutData set ["medVests", ["SCE_Sunrise_Freedom_2"]];

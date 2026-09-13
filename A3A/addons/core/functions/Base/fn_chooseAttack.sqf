@@ -120,7 +120,7 @@ if (_targetMrk in citiesX) exitWith {
 };
 
 if (_targetMrk == "Synd_HQ") exitWith {
-    Info_2("Starting HQ attack from %1", _originMrk);
+    Info_1("Starting HQ attack from %1", _originMrk);
     [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
     bigAttackInProgress = true; publicVariable "bigAttackInProgress";
     HQAttackInProgress = true; publicVariable "HQAttackInProgress";

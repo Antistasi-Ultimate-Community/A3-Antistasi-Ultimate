@@ -62,4 +62,9 @@ class mapInfo {
 	#include "Antistasi_VTF_Korsac.VTF_Korsac\mapInfo.hpp"
 	#include "Antistasi_VTF_Korsac_Winter.VTF_Korsac_Winter\mapInfo.hpp"
 	#include "Antistasi_regero.regero\mapInfo.hpp"
+	#include "Antistasi_drakovac.drakovac\mapInfo.hpp"
+	#include "Antistasi_green_sea_2023.green_sea_2023\mapInfo.hpp"
+	#include "Antistasi_bornholm.bornholm\mapInfo.hpp"
+	#include "Antistasi_egl_laghisola.egl_laghisola\mapInfo.hpp"
+	#include "Antistasi_UMB_Armavir.UMB_Armavir\mapInfo.hpp"
 };

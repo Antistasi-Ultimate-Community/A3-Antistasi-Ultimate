@@ -12,7 +12,6 @@
     class hlc_rifle_slr107u_MTK : NIA_unlimited_base {};
     class hlc_rifle_slr107u : NIA_unlimited_base {};
     class hlc_rifle_awMagnum_FDE_ghillie : NIA_unlimited_base {};
-    class hlc_rifle_Colt727_GL : NIA_unlimited_base {};
     class hlc_rifle_m4m203 : NIA_unlimited_base {};
     class hlc_rifle_falosw : NIA_unlimited_base {};
     class hlc_rifle_osw_GL : NIA_unlimited_base {};

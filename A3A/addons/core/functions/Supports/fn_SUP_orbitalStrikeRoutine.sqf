@@ -119,6 +119,8 @@ sleep 8;
 deleteVehicle _beamLight;
 deleteVehicle _strikeObject;
 
+private _bulkMarkerUpdate = [];
+
 private _citiesInRange = (citiesX - destroyedSites) select {((getMarkerPos _x) distance2D _impactPosition) < 200};
 {
     ["TaskFailed", ["", format [localize "STR_notifiers_orbitalStrike_destruct", [_x] call A3A_fnc_localizar]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
@@ -126,7 +128,8 @@ private _citiesInRange = (citiesX - destroyedSites) select {((getMarkerPos _x) d
 	publicVariable "destroyedSites";
     sidesX setVariable [_x, Invaders, true];
     garrison setVariable [_x, [], true];
-    [_x] call A3A_fnc_mrkUpdate;
+    _bulkMarkerUpdate pushBack _x;
     sleep 10;
 } forEach _citiesInRange;
 
+[_bulkMarkerUpdate] call A3U_fnc_mrkUpdateBulk;

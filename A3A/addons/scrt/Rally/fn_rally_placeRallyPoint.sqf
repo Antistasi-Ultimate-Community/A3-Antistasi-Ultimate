@@ -7,7 +7,6 @@ if (rallyPointSpawnCount isEqualTo 0) exitWith
 { 
 	private _warningText = "<t font ='PuristaSemibold' align = 'center' shadow='1' shadowColor='#000000' size='0.8' color='#ebebeb'>" + localize "STR_params_rallyPointSpawnCountDisabled" +"</t>"; 
 	[_warningText,0,safezoneY+0.5] spawn BIS_fnc_dynamicText; 
-    
 };
 
 private _rallyPointClass = FactionGet(reb,"rallyPoint");
@@ -45,9 +44,9 @@ _ammobox setDir 115;
 [rallyPointRoot, [0, 0, -0.5], 0.2] remoteExec ["SCRT_fnc_common_attachLightSource", 0, rallyPointRoot];
 
 rallyPointMarker = createMarker ["RallyPointMarker", _rootPos];
-rallyPointMarker setMarkerType "hd_join";
+rallyPointMarker setMarkerType "A3AU_fasttravel_mrk";
 rallyPointMarker setMarkerSize [1, 1];
-rallyPointMarker setMarkerText (format [localize "STR_marker_RP", str rallyPointSpawnCount]);
+rallyPointMarker setMarkerText "";
 rallyPointMarker setMarkerColor "colorIndependent";
 rallyPointMarker setMarkerAlpha 1;
 sidesX setVariable [rallyPointMarker,teamPlayer,true];
@@ -56,5 +55,7 @@ publicVariable "rallyPointMarker";
 rallyProps append [_backpack1, _backpack2, _bag, _ammobox];
 publicVariable "rallyProps";
 
-rallyPointRoot setVariable ["remainingTravels", rallyPointSpawnCount, true];
+rallyPointRoot setVariable ["remainingTravels", rallyPointSpawnCount, true]; // rallyPointSpawnCount is used to disable the rally points AND set the amount of uses PER rp
 publicVariable "rallyPointRoot";
+
+[rallyPointMarker] call A3A_fnc_mrkUpdate; // If we do this before remainingTravels is set then it doesn't work properly

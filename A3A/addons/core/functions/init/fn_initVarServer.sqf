@@ -80,7 +80,6 @@ DECLARE_SERVER_VAR(A3A_taskCount, 0);
 //List of statics (MGs, AA, etc) that will be saved and loaded.
 DECLARE_SERVER_VAR(staticsToSave, []);
 DECLARE_SERVER_VAR(staticsToFlip, []);
-DECLARE_SERVER_VAR(ungaragedVehicles, []);
 //Whether the players have access to radios.
 DECLARE_SERVER_VAR(haveRadio, false);
 //Initial HR
@@ -133,6 +132,8 @@ DECLARE_SERVER_VAR(areInvadersDefeated, false);
 DECLARE_SERVER_VAR(areRivalsDefeated, false);
 DECLARE_SERVER_VAR(isRivalsDiscoveryQuestAssigned, false);
 
+DECLARE_SERVER_VAR(townSkirmishes, []);
+
 ////////////////////////////////////
 //     SERVER ONLY VARIABLES     ///
 ////////////////////////////////////
@@ -176,7 +177,7 @@ savingServer = true;					// lock out saves until this is changed
 
 prestigeIsChanging = false;
 
-zoneCheckInProgress = false;
+zoneChecksMutex = createHashMap;
 garrisonIsChanging = false;
 movingMarker = false;
 markersChanging = [];
@@ -490,6 +491,10 @@ Info("Sorting grouped class categories");
 [] call A3A_fnc_itemSort;
 Info("Building loot lists");
 [] call A3A_fnc_loot;
+
+// Used in headless clients (NATOinit).
+// Defined in equipmentSort
+ONLY_DECLARE_SERVER_VAR(dummyNVGs);
 
 if (["tts_emission"] call A3U_fnc_hasAddon) then {call A3U_fnc_emission};
 

@@ -270,7 +270,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["cwr3_tdf_uniform", "cwr3_tdf_uniform_rolled"]];
-_eliteLoadoutData set ["slUniform", ["cwr3_tdf_uniform", "cwr3_tdf_uniform_rolled"]];
+_eliteLoadoutData set ["slUniforms", ["cwr3_tdf_uniform", "cwr3_tdf_uniform_rolled"]];
 _eliteLoadoutData set ["vests", ["cwr3_b_vest_pasgt_alice_black"]];
 _eliteLoadoutData set ["mgVests", ["cwr3_b_vest_pasgt_alice_black"]];
 _eliteLoadoutData set ["medVests", ["cwr3_b_vest_pasgt_alice_black"]];
@@ -325,7 +325,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["cwr3_tdf_uniform", "cwr3_tdf_uniform_rolled"]];
-_militaryLoadoutData set ["slUniform", ["cwr3_tdf_uniform", "cwr3_tdf_uniform_rolled"]];
+_militaryLoadoutData set ["slUniforms", ["cwr3_tdf_uniform", "cwr3_tdf_uniform_rolled"]];
 _militaryLoadoutData set ["vests", ["cwr3_i_vest_lbv_olive", "cwr3_i_vest_lbv"]];
 _militaryLoadoutData set ["mgVests", ["cwr3_i_vest_lbv_mg_olive","cwr3_i_vest_lbv_mg"]];
 _militaryLoadoutData set ["medVests", ["cwr3_o_vest_6b2_medic"]];

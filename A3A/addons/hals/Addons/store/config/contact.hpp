@@ -175,6 +175,22 @@
 				stock = 100;
 			};
 
+			class optic_ico_01_f {
+				price = 350;
+				stock = 100;
+			};
+			class optic_ico_01_black_f {
+				price = 350;
+				stock = 100;
+			};
+			class optic_ico_01_camo_f {
+				price = 350;
+				stock = 100;
+			};
+			class optic_ico_01_sand_f {
+				price = 350;
+				stock = 100;
+			};
 		};
 
 		class magazinesContact 

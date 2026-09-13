@@ -29,7 +29,7 @@
 
 ["staticMGs", ["Flex_CUP_RAV_DSHKM", "Flex_CUP_RAV_KORD_high"]] call _fnc_saveToTemplate;
 ["staticAT", ["Flex_CUP_RAV_Kornet", "Flex_CUP_RAV_Metis", "Flex_CUP_RAV_SPG9"]] call _fnc_saveToTemplate;
-["staticAA", []] call _fnc_saveToTemplate;
+["staticAA", ["Flex_CUP_FIA_ZU23"]] call _fnc_saveToTemplate;
 
 ["staticMortars", ["Flex_CUP_RAV_2b14_82mm"]] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;

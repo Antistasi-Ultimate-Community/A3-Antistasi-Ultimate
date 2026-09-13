@@ -21,14 +21,16 @@ private _taskId = "outpostTask" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[format [localize "STR_atempl_deploy_desc", _displayTime],localize "STR_atempl_deploy_header",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
-_formatX = A3A_faction_reb get "groupAtEmpl";
+private _formatX = A3A_faction_reb get "groupAtEmpl";
+private _groupX = [["Synd_HQ"] call A3A_fnc_findAiSpawnPosition, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _vehType = (A3A_faction_reb get "vehiclesLightUnarmed") select 0;
+private _helperData = ["outpost"] call FUNCMAIN(findSpawnHelperPosition);
+_helperData params["_spawnPos", "_spawnDir"];
 
-_groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _truckX = _vehType createVehicle _spawnPos;
+_truckX setDir _spawnDir;
+
 _groupX setGroupId ["Post"];
-_road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
-_vehType = (A3A_faction_reb get "vehiclesLightUnarmed") select 0;
-_truckX = _vehType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
     [_x] call A3A_fnc_FIAinit
@@ -74,14 +76,15 @@ switch (true) do {
 		spawner setVariable [_marker,2,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
-		_marker setMarkerType "n_armor";
+		_marker setMarkerType "A3AU_antitank_mrk";
 		_marker setMarkerColor colorTeamPlayer;
-		_marker setMarkerText _textX;
+		_marker setMarkerText "";
 		_garrison = A3A_faction_reb get "groupAtEmpl";
 		garrison setVariable [_marker,_garrison,true];
 		staticPositions setVariable [_marker, [_position, _direction], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "atemplacement"]] call EFUNC(Events,triggerEvent);
+		[_marker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

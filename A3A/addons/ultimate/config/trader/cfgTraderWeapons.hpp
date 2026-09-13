@@ -82,6 +82,18 @@
         {
             prefix = "aegis";
         };
+        class weapons_atlas : weapons_base
+        {
+            prefix = "atlas";
+        };
+        class weapons_police : weapons_base
+        {
+            prefix = "police";
+        };
+        class weapons_opposingforces : weapons_base
+        {
+            prefix = "opposingforces";
+        };
         class weapons_wmempire : weapons_base
         {
             prefix = "wmemp";
@@ -121,10 +133,6 @@
         class weapons_sfp : weapons_base
         {
             prefix = "sfpstock";
-        };
-        class weapons_pla : weapons_base
-        {
-            prefix = "plastock";
         };
         class weapons_bwa3 : weapons_base
         {
@@ -170,10 +178,6 @@
         {
             prefix = "csa38";
         };
-        class weapons_scion : weapons_base
-        {
-            prefix = "scion";
-        };
         class weapons_wrs : weapons_base
         {
             prefix = "wrs";
@@ -217,4 +221,20 @@
         class weapons_mpp : weapons_base
         {
             prefix = "mpp_stock";
+        };
+        class weapons_qdi : weapons_base
+        {
+            prefix = "qdi_stock";
+        };
+        class weapons_mss : weapons_base
+        {
+            prefix = "mss";
+        };
+        class weapons_rearma_us : weapons_base
+        {
+            prefix = "rearma_us_stock";
+        };
+        class weapons_rearma_ru : weapons_base
+        {
+            prefix = "rearma_ru_stock";
         };

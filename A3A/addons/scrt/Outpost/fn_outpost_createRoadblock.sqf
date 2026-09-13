@@ -25,13 +25,15 @@ private _riflemanType = A3A_faction_reb get "unitRifle";
 private _squadType = A3A_faction_reb get "groupSquad";
 private _truckType = selectRandom (A3A_faction_reb get "vehiclesTruck");
 
-_formatX = [_riflemanType] + _squadType;
+private _formatX = [_riflemanType] + _squadType;
+private _groupX = [["Synd_HQ"] call A3A_fnc_findAiSpawnPosition, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _helperData = ["outpost"] call FUNCMAIN(findSpawnHelperPosition);
+_helperData params["_spawnPos", "_spawnDir"];
 
-_groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _truckX = _truckType createVehicle _spawnPos;
+_truckX setDir _spawnDir;
+
 _groupX setGroupId ["Road"];
-_road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
-_truckX = _truckType createVehicle _pos;
 _groupX addVehicle _truckX;
 {
     [_x] call A3A_fnc_FIAinit
@@ -76,13 +78,14 @@ switch (true) do {
 		publicVariable "markersX";
 		spawner setVariable [_marker,2,true];
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
-		_marker setMarkerType "n_support";
+		_marker setMarkerType "A3AU_roadblock_mrk";
 		_marker setMarkerColor colorTeamPlayer;
-		_marker setMarkerText _textX;
+		_marker setMarkerText "";
 		_garrison = [_riflemanType] + _squadType;
 		garrison setVariable [_marker,_garrison,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		["RebelControlCreated", [_marker, "roadblock"]] call EFUNC(Events,triggerEvent);
+		[_marker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	};
 	default {
 		[_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;
