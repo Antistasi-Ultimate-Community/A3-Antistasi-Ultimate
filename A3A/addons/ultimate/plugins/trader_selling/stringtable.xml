@@ -41,6 +41,14 @@
             <English>A3USPCM - Store Component</English>
             <German>A3USPCM - Store Komponente</German>
         </Key>
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Params_SellPriceMultiplier_Text">
+            <English>Sell price modifier</English>
+            <German>Verkaufspreis-Modifikator</German>
+        </Key>
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_Params_SellPriceMultiplier_Tooltip">
+            <English>Percentage of their buy price items are sold to the trader.</English>
+            <German>Prozentsatz des Einkaufspreises, zu dem Gegenstände beim Händler verkauft werden.</German>
+        </Key>
         <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnAgain">
             <English>Again</English>
             <German>Nochmal</German>
