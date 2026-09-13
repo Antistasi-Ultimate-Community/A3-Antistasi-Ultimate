@@ -29,14 +29,14 @@ if !assert(params[
     ["_class", nil, [""]],
     ["_config", nil, [configNull]],
     ["_type", nil, [""]]
-]) exitWith { [false, LSTRING(AdvSell_Reason_InvalidParameters)] };
-if !assert(!isNull _config) exitWith { [false, LSTRING(AdvSell_Reason_InvalidParameters)] };
+]) exitWith { [false, [REASON_INVALID, LSTRING(AdvSell_Reason_InvalidParameters)]] };
+if !assert(!isNull _config) exitWith { [false, [REASON_INVALID, LSTRING(AdvSell_Reason_InvalidParameters)]] };
 
 try {
     if (!GVAR(sellForbidden) && { _class in A3U_forbiddenItems }) then {
         private _flag = [configFile >> "A3U" >> "forbiddenItems" >> _class >> "unlimited", "NUMBER", 0] call CBA_fnc_getConfigEntry;
         if (_flag isNotEqualTo 0) then {
-            throw LSTRING(AdvSell_Reason_ItemForbidden);
+            throw [REASON_FORBIDDEN, LSTRING(AdvSell_Reason_ItemForbidden)];
         };
     };
 
@@ -49,17 +49,19 @@ try {
     };
 
     if (_count < 0) then {
-        throw LSTRING(AdvSell_Reason_ItemUnlocked);
+        throw [REASON_UNLOCKED, LSTRING(AdvSell_Reason_ItemUnlocked)];
     };
 
     private _price = [CBA_EVENT_CLIENT_TRADER_SELLING_GETITEMPRICE, [_class, _config, _type]] call FUNCMAIN(triggerResultEvent);
     Trace_3(QFUNC(getItemPrice),_class,_type,_price);
 
     if (isNil "_price") then {
-        throw LSTRING(AdvSell_Reason_ItemUnconfigured);
+        throw [REASON_UNCONFIGURED, LSTRING(AdvSell_Reason_ItemUnconfigured)];
     };
 
+    Trace_2(QFUNC(getItemPrice),_class,_price);
     [true, round(GVAR(sellPriceMultiplier) * _price)];
 } catch {
+    Trace_2(QFUNC(getItemPrice),_class,_exception);
     [false, _exception];
 };

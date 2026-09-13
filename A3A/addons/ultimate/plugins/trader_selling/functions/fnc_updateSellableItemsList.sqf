@@ -83,6 +83,14 @@ if (_items isEqualTo []) exitWith {
         _list lnbSetData[[_index, DATA_IDX_SELLABLE], "false"];
         _list lnbSetColor[[_index, 1], [0.4, 0.4, 0.4, 1]];
         _list lnbSetColor[[_index, 2], [0.4, 0.4, 0.4, 1]];
+
+        if (_list lnbPicture[_index, COLUMN_PROTECT_ICON] isEqualTo "") then {
+            _list lnbSetPictureColor[[_index, COLUMN_PROTECT_ICON], [0.4, 0.4, 0.4, 1]];
+
+            if (REASON_UNLOCKED isEqualTo (_x get "reasonCode")) then {
+                _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], QPATHTOF(ui\unlock-icon.paa)];
+            };
+        };
     };
 } forEach _items;
 

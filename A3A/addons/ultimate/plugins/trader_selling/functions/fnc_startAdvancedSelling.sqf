@@ -64,8 +64,10 @@ if !([GVAR(sellContainer)] call FUNCMAIN(makeObjectLocal)) exitWith {};
         if _isSellable then {
             _y set["price", _priceOrReason];
         } else {
+            _priceOrReason params["_code", "_message"];
             _y set["price", false];
-            _y set["reason", _priceOrReason];
+            _y set["reason", _message];
+            _y set["reasonCode", _code];
         };
     } forEach _items;
 
