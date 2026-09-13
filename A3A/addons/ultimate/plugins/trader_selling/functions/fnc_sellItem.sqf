@@ -47,7 +47,7 @@ switch _type do {
 
 if (_payout isNotEqualTo false) then {
     if GVAR(playKaching) then {
-        traderX say3D QEGVAR(assets,Sell);
+        traderX say3D QGVAR(Sell);
     };
 
     if !is3DENPreview then {
