@@ -20,16 +20,14 @@ if !assert(params[
     ["_items", nil, [createHashMap]]
 ]) exitWith {[]};
 
-private _sorted = [];
-
-{
+private _sorted = _items apply {
     private _price = if (_y get "sellable") then [{ _y get "price" }, { 0 }];
-    _sorted pushBack[
-        (20000 - _price),
+    [
+        -_price,
         getText((_y get "config") >> _x >> "displayName"),
         _y
     ]
-} forEach _items;
+};
 
 _sorted sort true;
 _sorted apply { _x select -1 };
