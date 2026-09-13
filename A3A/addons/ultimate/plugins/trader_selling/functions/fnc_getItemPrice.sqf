@@ -60,7 +60,7 @@ try {
     };
 
     Trace_2(QFUNC(getItemPrice),_class,_price);
-    [true, round(GVAR(sellPriceMultiplier) * _price)];
+    [true, round(GVAR(sellPriceMultiplier) * _price / 100)];
 } catch {
     Trace_2(QFUNC(getItemPrice),_class,_exception);
     [false, _exception];
