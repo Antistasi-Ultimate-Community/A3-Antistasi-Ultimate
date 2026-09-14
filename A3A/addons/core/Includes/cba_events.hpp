@@ -184,8 +184,26 @@
 ///  SERVER CBA EVENTS /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-// Server-only event; on entity death; params=[Object entity[, Object killer]]
-#define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX,event,serverEntityPostMortem))
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_ENTITY_POSTMORTEM
+        Triggered when an entity dies.
+
+    Parameters:
+        0: entity - the entity that died <OBJECT>
+    
+    Optional:
+        1: killer - the entity that killed the entity (if any) <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX_CONST,event,serverEntityPostMortem))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_DONE
