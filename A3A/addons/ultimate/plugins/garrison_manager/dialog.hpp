@@ -4,6 +4,38 @@
 
 FORWARD(A3A_MapControl);
 
+class GVAR(headerBase): headerBase {
+	fade = 0;
+	colorBackground[] = {0,0,0,0.8};
+};
+
+class GVAR(RscButton): ButtonBase {
+	fade = 0;
+};
+
+class GVAR(RscFrame): RscFrame {
+	UI_FONT_DEFAULT;
+};
+
+class GVAR(RscListbox): RscListbox {
+	UI_FONT_DEFAULT;
+};
+
+class GVAR(RscEdit): RscEdit {
+	UI_FONT_DEFAULT;
+};
+
+class GVAR(RscStructuredText): RscStructuredText {
+	class Attributes {
+		color = "#ffffff";
+		UI_FONT_DEFAULT;
+	};
+};
+
+class GVAR(RscText): RscText {
+	UI_FONT_DEFAULT;
+};
+
 // Replace attributes:
 //  Search: (^\s*(?:sizeEx|[xywh])) = ([^;]+)
 //  Replace: $1 = QUOTE($2)
@@ -55,7 +87,7 @@ class GVAR(dialog) {
 		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Hyvygo)
 		////////////////////////////////////////////////////////
 
-		class StaticBackground: RscText
+		class StaticBackground: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICBACKGROUND;
 			x = QUOTE(0.15 * safezoneW + safezoneX);
@@ -64,7 +96,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.72 * safezoneH);
 			colorBackground[] = {0,0,0,0.8};
 		};
-		class StaticTitle: RscText
+		class StaticTitle: GVAR(headerBase)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICTITLE;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticTitle);
@@ -72,7 +104,6 @@ class GVAR(dialog) {
 			y = QUOTE(0.116 * safezoneH + safezoneY);
 			w = QUOTE(0.7 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
-			colorBackground[] = {0,0.8,0,1};
 			moving = 1;
 		};
 		class BtnClose: RscButton
@@ -93,7 +124,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowBLUFOR_tooltip);
 		};
-		class StaticLabelBLUFOR: RscText
+		class StaticLabelBLUFOR: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELBLUFOR;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelBLUFOR);
@@ -111,7 +142,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowOPFOR_tooltip);
 		};
-		class StaticLabelOPFOR: RscText
+		class StaticLabelOPFOR: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELOPFOR;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelOPFOR);
@@ -129,7 +160,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowINDEP_tooltip);
 		};
-		class StaticLabelINDEP: RscText
+		class StaticLabelINDEP: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELINDEP;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelINDEP);
@@ -147,7 +178,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowBases_tooltip);
 		};
-		class StaticLabelBases: RscText
+		class StaticLabelBases: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELBASES;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelBases);
@@ -165,7 +196,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowOutposts_tooltip);
 		};
-		class StaticLabelOutposts: RscText
+		class StaticLabelOutposts: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELOUTPOSTS;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelOutposts);
@@ -183,7 +214,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowResources_tooltip);
 		};
-		class StaticLabelResources: RscText
+		class StaticLabelResources: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELRESOURCES;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelResources);
@@ -201,7 +232,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowTowns_tooltip);
 		};
-		class StaticLabelTowns: RscText
+		class StaticLabelTowns: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELTOWNS;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelTowns);
@@ -210,7 +241,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
-		class ListOverview: RscListbox
+		class ListOverview: GVAR(RscListbox)
 		{
 			type = CT_LISTNBOX;
 			drawSideArrows = 0;
@@ -224,7 +255,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.675 * safezoneW);
 			h = QUOTE(0.3 * safezoneH);
 		};
-		class BtnRecruit: RscButton
+		class BtnRecruit: GVAR(RscButton)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_BTNRECRUIT;
 			text = CSTRING(RscA3UGarrisonManagerDialog_BtnRecruit);
@@ -232,9 +263,8 @@ class GVAR(dialog) {
 			y = QUOTE(0.728 * safezoneH + safezoneY);
 			w = QUOTE(0.075 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
-			colorBackground[] = {0,0.6,0,1};
 		};
-		class StaticRecruitFrame: RscFrame
+		class StaticRecruitFrame: GVAR(RscFrame)
 		{
 			sizeEx = QUOTE(0.03);
 
@@ -245,7 +275,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.2625 * safezoneW);
 			h = QUOTE(0.28 * safezoneH);
 		};
-		class StaticMapFrame: RscFrame
+		class StaticMapFrame: GVAR(RscFrame)
 		{
 			sizeEx = QUOTE(0.03);
 
@@ -256,7 +286,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.4 * safezoneW);
 			h = QUOTE(0.28 * safezoneH);
 		};
-		class ListRecruitTypes: RscListbox
+		class ListRecruitTypes: GVAR(RscListbox)
 		{
 			type = CT_LISTNBOX;
 			drawSideArrows = 0;
@@ -286,7 +316,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckHideFull_tooltip);
 		};
-		class StaticLabelFull: RscText
+		class StaticLabelFull: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELFULL;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelFull);
@@ -304,7 +334,7 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3UGarrisonManagerDialog_CheckShowPosts_tooltip);
 		};
-		class StaticLabelPosts: RscText
+		class StaticLabelPosts: GVAR(RscText)
 		{
 			idc = IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELPOSTS;
 			text = CSTRING(RscA3UGarrisonManagerDialog_StaticLabelPosts);
