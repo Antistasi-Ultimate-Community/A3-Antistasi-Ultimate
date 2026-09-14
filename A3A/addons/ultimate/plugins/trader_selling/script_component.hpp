@@ -5,6 +5,7 @@
 #define DATA_IDX_SELLABLE 1
 
 #define CBA_EVENT_CLIENT_TRADER_SELLING_GETITEMPRICE QUOTE(TRIPLES(SUBADDON,Events,clientTraderSellingGetItemPrice))
+#define CBA_EVENT_SERVER_TRADER_RETURN_ARSENAL QUOTE(TRIPLES(SUBADDON,Events,serverTraderReturnArsenal))
 
 // Reason codes for why items are considered unsellable
 

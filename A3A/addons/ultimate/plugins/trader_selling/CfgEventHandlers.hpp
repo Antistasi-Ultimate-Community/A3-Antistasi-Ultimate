@@ -1,6 +1,7 @@
 class Extended_PostInit_EventHandlers {
     class SUBADDON {
         clientInit = QUOTE(call COMPILE_SCRIPT(XEH_postInitClient));
+        serverInit = QUOTE(call COMPILE_SCRIPT(XEH_postInitServer));
     };
 };
 

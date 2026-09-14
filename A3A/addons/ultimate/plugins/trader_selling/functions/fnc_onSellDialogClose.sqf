@@ -26,4 +26,6 @@ if !(isNil QGVAR(sellContainer)) then {
     [GVAR(sellContainer), false] remoteExecCall["lockInventory", -2, GVAR(sellContainer)];
 };
 
+missionNamespace setVariable[QGVAR(arsenalData), nil];
+
 nil;

@@ -142,6 +142,29 @@ _display setVariable[QGVAR(storeItems), _storeItems];
     // Early bail-out
     if (isNull _display) exitWith {};
 
+    private _uuid = [] call CBA_fnc_createUUID;
+    [{
+        // Ask the server to send us the arsenal data. We expect it back as
+        // the _uuid in our missionNamespace.
+        [CBA_EVENT_SERVER_TRADER_RETURN_ARSENAL, _this] call FUNCMAIN(triggerServerEvent);
+    }, [_uuid]] call CBA_fnc_execNextFrame;
+
+    private _result = waitUntil[{
+        !isNil { missionNamespace getVariable _uuid };
+    }, 10]; // Wait for this up to 10 seconds
+
+    if (isNil "_result") exitWith {
+        [{
+            playSound "A3AP_UiFailure";
+            [localize "STR_notifiers_fail_type", LLSTRING(RetrieveArsenalDataTimeout)] call A3A_fnc_customHint;
+        }] call CBA_fnc_execNextFrame;
+
+        while { dialog } do { closeDialog 0 };
+    };
+
+    GVAR(arsenalData) = missionNamespace getVariable _uuid;
+    missionNamespace setVariable[_uuid, nil];
+
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
 

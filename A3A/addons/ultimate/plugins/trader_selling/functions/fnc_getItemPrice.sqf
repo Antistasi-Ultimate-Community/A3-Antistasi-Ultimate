@@ -44,7 +44,7 @@ try {
         0;
     } else {
         private _index = _class call jn_fnc_arsenal_itemType;
-        private _arsenal = jna_datalist select _index;
+        private _arsenal = GVAR(arsenalData) select _index;
         [_arsenal, _class] call jn_fnc_arsenal_itemCount;
     };
 

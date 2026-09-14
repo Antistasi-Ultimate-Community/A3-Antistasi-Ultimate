@@ -33,6 +33,10 @@
             <English>Item has no price in A3U</English>
             <German>Gegenstand hat keinen Preis in A3U</German>
         </Key>
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_RetrieveArsenalDataTimeout">
+            <English>Server failed to send arsenal data. Request timed out.</English>
+            <German>Server konnte Arsenal-Daten nicht senden. Anfragezeitüberschreitung.</German>
+        </Key>
         <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_Reason_ItemUnlocked">
             <English>Item is unlocked in Arsenal</English>
             <German>Gegenstand ist im Arsenal freigeschaltet</German>
