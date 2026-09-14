@@ -42,14 +42,10 @@ if (_exitCode isEqualTo MB_BUTTON_CANCEL) exitWith {
 
 // Dialog terminated w/ checkbox acknowledged. Run setup dialog.
 [{
-    private _params = missionNamespace getVariable QGVAR(setupDialogParams);
-
-    if !assert(!isNil "_params") exitWith {
-        Error("Something went horribly wrong; we forgot the setup dialog parameters");
-    };
-
-    missionNamespace setVariable[QGVAR(setupDialogParams), nil];
-    ["sendData", _params] call A3A_fnc_setupDialog;
+    // Tell the server we've seen the warnings
+    missionNamespace setVariable[QEGVAR(core,showExtendersWarningDialog), nil, 2];
+    // Tell the server this player does not need to see the extender warnings anymore
+    player setVariable[QEGVAR(core,seenExtenderWarnings), true, 2];
 }] call CBA_fnc_execNextFrame;
 
 nil;
