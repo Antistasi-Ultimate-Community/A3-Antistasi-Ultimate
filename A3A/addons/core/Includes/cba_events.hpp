@@ -69,6 +69,28 @@
 #define CBA_EVENT_CLIENT_BUILDER_START QUOTE(TRIPLES(PREFIX_CONST,event,clientBuilderStart))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_HQ_PLACED
+        Triggered when moving HQ is complete.
+
+    Parameters:
+        0: position - the new HQ position <ARRAY>
+        1: player - the player who placed the HQ <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client
+    
+    Recipients:
+        All machines including sender
+    
+    Replaces:
+        "HQPlaced" event
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_HQ_PLACED QUOTE(TRIPLES(PREFIX_CONST,event,clientHqPlaced))
+
+/* -------------------------------------------
     Event: CBA_EVENT_CLIENT_INIT_DONE
         Triggered after `A3A_fnc_clientInit` finished and client is fully set up.
 
@@ -86,7 +108,6 @@
 ------------------------------------------- */
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,clientInitDone))
 
-// Client-only event; on personal save loaded; params=[Hashmap saveData]
 /* -------------------------------------------
     Event: CBA_EVENT_CLIENT_PLAYER_LOAD
         Triggered when the server loads players' personal save data.
@@ -110,7 +131,7 @@
 
             player setVariable["MyCustomVar1", _saveData get "MyCustomVar1"];
             player setVariable["MyCustomVar2", _saveData get "MyCustomVar2"];
-        }] call FUNCMAIN(addEventHandler);
+        }] call A3A_fnc_addEventHandler;
         (end example)
 
     Broadcast:
@@ -147,7 +168,7 @@
 
             _saveData set["MyCustomVar1", player getVariable "MyCustomVar1"];
             _saveData set["MyCustomVar2", player getVariable "MyCustomVar2"];
-        }] call FUNCMAIN(addEventHandler);
+        }] call A3A_fnc_addEventHandler;
         (end example)
 
     Broadcast:
@@ -180,9 +201,77 @@
 ------------------------------------------- */
 #define CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED QUOTE(TRIPLES(PREFIX_CONST,event,clientTeardownModeChanged))
 
+/* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_UNDERCOVER_CHANGED
+        Triggered when the player changes undercover status.
+
+    Parameters:
+        0: undercoverStatus - the player's undercover status <BOOL>
+        1: undercoverBrokenReason - the reason why the player's undercover
+            status was broken <STRING> (optional)
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client
+    
+    Recipients:
+        Client
+
+    Replaces:
+        "Undercover" event
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_UNDERCOVER_CHANGED QUOTE(TRIPLES(PREFIX_CONST,event,clientUndercoverChanged))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_VEHICLE_BOX_RESTORE
+        Triggered when a client triggers "restore nearby vehicles" at the
+        vehicle box.
+
+    Parameters:
+        0: position - the position of the vehicle box <ARRAY>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client
+    
+    Recipients:
+        Client
+    
+    Replaces:
+        "vehicleBoxRestore" event
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_VEHICLE_BOX_RESTORE QUOTE(TRIPLES(PREFIX_CONST,event,clientVehicleBoxRestore))
+
 ////////////////////////////////////////////////////////////////////////////////
 ///  SERVER CBA EVENTS /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_CREATE_REBEL_CONTROL
+        Triggered when a rebel control (watchpost, emplacements, etc.) is
+        established (i.e.: HC moved to task point and control is built).
+
+    Parameters:
+        0: marker - the marker of the rebel control <STRING>
+        1: controlType - the type of control <STRING>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "RebelControlCreated" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_CREATE_REBEL_CONTROL QUOTE(TRIPLES(PREFIX_CONST,event,serverCreateRebelControl))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_ENTITY_POSTMORTEM
@@ -204,6 +293,94 @@
         Server
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX_CONST,event,serverEntityPostMortem))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_AI_UNIT
+        Triggered when an AI unit is initialized on the server.
+
+    Parameters:
+        0: unit - the AI unit object <OBJECT>
+        1: side - the side the unit belongs to <SIDE>
+        2: marker - the marker associated with the AI unit <STRING>
+        3: isSpawner - if the unit is a spawner <BOOL>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "AIInit" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_AI_UNIT QUOTE(TRIPLES(PREFIX_CONST,event,serverInitAiUnit))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_AI_VEHICLE
+        Triggered when an AI vehicle is initialized on the server.
+
+    Parameters:
+        0: vehicle - the AI vehicle object <OBJECT>
+        1: side - the side the vehicle belongs to <SIDE>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "AIVehInit" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_AI_VEHICLE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitAiVehicle))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_CIVILIAN_UNIT
+        Triggered when a civilian unit is initialized on the server.
+
+    Parameters:
+        0: unit - the civilian unit object <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "civInit" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_CIVILIAN_UNIT QUOTE(TRIPLES(PREFIX_CONST,event,serverInitCivilianUnit))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_CIVILIAN_VEHICLE
+        Triggered when a civilian vehicle is initialized on the server.
+
+    Parameters:
+        0: vehicle - the civilian vehicle object <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "civVehInit" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_CIVILIAN_VEHICLE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitCivilianVehicle))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_DONE
@@ -228,7 +405,54 @@
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitDone))
 
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_MARKER_CHANGE
+        Triggered when marker ownership changes on the server.
+
+    Parameters:
+        0: marker - the marker that changed <STRING>
+        1: winner - side of new owner <SIDE>
+        2: loser - side of previous owner <SIDE>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "markerChange" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_MARKER_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,serverMarkerChange))
+
 // UNUSED
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_SPAWN_LOCATION
+        Triggered when a location is spawned on the server.
+
+    Parameters:
+        0: location - the spawn location marker <STRING>
+        1: locationType - the type of location being spawned <STRING>
+        2: isSpawning - whether the location is currently being spawned (true)
+            or despawned (false) <BOOL>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+    
+    Replaces:
+        "locationSpawned" event
+------------------------------------------- */
+#define CBA_EVENT_SERVER_SPAWN_LOCATION QUOTE(TRIPLES(PREFIX_CONST,event,serverSpawnLocation))
 
 #endif // __HAVE_CBA_EVENTS_HPP__

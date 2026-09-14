@@ -6,7 +6,6 @@ class CfgFunctions {
 			class removeAllEventListeners {};
 			class removeEventListener {};
 			class triggerEvent {};
-			class validateEventArguments {};
 		};
 	};
 };
