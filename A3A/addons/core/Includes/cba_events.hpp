@@ -209,7 +209,23 @@
 
 // UNUSED
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
-// Server-to-client-only event; sent to each client on global save; params=[String uuid]
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_PLAYER_SAVE
+        Triggered when the server saves a player's data.
+
+    Parameters:
+        0: uuid - the unique identifier of the player <STRING>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Client
+------------------------------------------- */
 #define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverPlayerSave))
 
 #endif // __HAVE_CBA_EVENTS_HPP__
