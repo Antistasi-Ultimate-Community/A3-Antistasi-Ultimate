@@ -11,3 +11,4 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "dialog.hpp"
+#include "Params.hpp"

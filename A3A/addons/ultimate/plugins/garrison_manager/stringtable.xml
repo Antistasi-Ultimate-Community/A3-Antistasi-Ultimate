@@ -5,6 +5,14 @@
             <English>A3U - Garrison Management Component</English>
             <German>A3U - Garrison Management Komponente</German>
         </Key>
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Params_useAdvancedGarrisonManager">
+            <Original>Use Advanced Garrison Manager</Original>
+            <German>Erweiterte Garnisonsverwaltung verwenden</German>
+        </Key>
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Params_useAdvancedGarrisonManager_Tooltip">
+            <Original>Enable the advanced garrison management features with overhauled UI</Original>
+            <German>Aktiviere die erweiterten Funktionen der Garnisonsverwaltung mit überarbeitetem UI</German>
+        </Key>
         <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3UGarrisonManagerDialog_BtnClose">
             <English>X</English>
             <German>X</German>
