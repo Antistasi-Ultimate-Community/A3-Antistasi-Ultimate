@@ -19,7 +19,7 @@ Author:
 ---------------------------------------------------------------------------- */
 waitUntil { !isNull(missionNamespace getVariable["mapX", objNull]) };
 
-if GVAR(addActionToMapObject) then {
+if (EGVAR(ultimate,useAdvancedGarrisonManager)) then {
     missionNamespace getVariable "mapX" addAction[
         LLSTRING(RscA3UGarrisonManagerDialog_StaticTitle),
         {
