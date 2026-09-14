@@ -136,22 +136,19 @@ _display setVariable[QGVAR(storeItems), _storeItems];
         ["_display", nil, [displayNull]]
     ]) exitWith {};
 
-    waitUntil { isNull _display || { GVAR(sellContainerReady) } };
-    Trace_1("sellContainerReady",RETNIL(GVAR(sellContainerReady)));
-
-    // Early bail-out
-    if (isNull _display) exitWith {};
-
     private _uuid = [] call CBA_fnc_createUUID;
     [{
         // Ask the server to send us the arsenal data. We expect it back as
         // the _uuid in our missionNamespace.
         [CBA_EVENT_SERVER_TRADER_RETURN_ARSENAL, _this] call FUNCMAIN(triggerServerEvent);
-    }, [_uuid]] call CBA_fnc_execNextFrame;
+    }, [_uuid, clientOwner]] call CBA_fnc_execNextFrame;
 
     private _result = waitUntil[{
-        !isNil { missionNamespace getVariable _uuid };
+        isNull _display || !isNil { missionNamespace getVariable _uuid };
     }, 10]; // Wait for this up to 10 seconds
+
+    // Early bail-out
+    if (isNull _display) exitWith {};
 
     if (isNil "_result") exitWith {
         [{
@@ -164,6 +161,12 @@ _display setVariable[QGVAR(storeItems), _storeItems];
 
     GVAR(arsenalData) = missionNamespace getVariable _uuid;
     missionNamespace setVariable[_uuid, nil];
+
+    waitUntil { isNull _display || { GVAR(sellContainerReady) } };
+    Trace_1("sellContainerReady",RETNIL(GVAR(sellContainerReady)));
+
+    // Early bail-out
+    if (isNull _display) exitWith {};
 
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];

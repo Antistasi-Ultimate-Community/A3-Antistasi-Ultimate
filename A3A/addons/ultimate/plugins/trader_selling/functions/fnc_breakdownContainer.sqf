@@ -26,6 +26,9 @@ if !assert(params[
 
 if !assert(!isNull _container) exitWith {};
 
+private _result = waitUntil[{ !isNil QGVAR(arsenalData) }, 15];
+if (isNil "_result") exitWith {};
+
 private _items = [_container] call FUNC(utilContainerContentFlattened);
 
 clearBackpackCargoGlobal _container;

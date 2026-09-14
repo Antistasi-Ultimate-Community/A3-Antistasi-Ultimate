@@ -33,10 +33,6 @@
             <English>Item has no price in A3U</English>
             <German>Gegenstand hat keinen Preis in A3U</German>
         </Key>
-        <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_RetrieveArsenalDataTimeout">
-            <English>Server failed to send arsenal data. Request timed out.</English>
-            <German>Server konnte Arsenal-Daten nicht senden. Anfragezeitüberschreitung.</German>
-        </Key>
         <Key ID="STR_A3A_Ultimate_Trader_Selling_AdvSell_Reason_ItemUnlocked">
             <English>Item is unlocked in Arsenal</English>
             <German>Gegenstand ist im Arsenal freigeschaltet</German>
@@ -52,6 +48,10 @@
         <Key ID="STR_A3A_Ultimate_Trader_Selling_Params_SellPriceMultiplier_Tooltip">
             <English>Percentage of their buy price items are sold to the trader.</English>
             <German>Prozentsatz des Einkaufspreises, zu dem Gegenstände beim Händler verkauft werden.</German>
+        </Key>
+        <Key ID="STR_A3A_Ultimate_Trader_Selling_RetrieveArsenalDataTimeout">
+            <English>Server failed to send arsenal data. Request timed out.</English>
+            <German>Server konnte Arsenal-Daten nicht senden. Anfragezeitüberschreitung.</German>
         </Key>
         <Key ID="STR_A3A_Ultimate_Trader_Selling_RscA3USPCMStoreSellDialog_BtnAgain">
             <English>Again</English>
