@@ -188,7 +188,7 @@ for "_i" from 0 to (count _array - 1) do {
 	};
 };
 
-["locationSpawned", [_markerX, "Resource", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Resource", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
@@ -208,4 +208,7 @@ deleteMarker _mrk;
 		else { if !(_x isKindOf "StaticWeapon") then { [_x] spawn A3A_fnc_VEHdespawner } };
 	};
 } forEach _vehiclesX;
-["locationSpawned", [_markerX, "Resource", false]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Resource", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;
