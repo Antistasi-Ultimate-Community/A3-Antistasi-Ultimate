@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_updateRecruitList
+Function: A3A_ultimate_garrison_manager_fnc_updateRecruitList
 
 Description:
     Update unit counts in recruitment list

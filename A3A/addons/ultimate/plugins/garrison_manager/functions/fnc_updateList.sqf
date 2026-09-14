@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_updateList
+Function: A3A_ultimate_garrison_manager_fnc_updateList
 
 Description:
     Update garrison list

@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_onMapButtonUp
+Function: A3A_ultimate_garrison_manager_fnc_onMapButtonUp
 
 Description:
     Callback for mouse-click events on embedded map

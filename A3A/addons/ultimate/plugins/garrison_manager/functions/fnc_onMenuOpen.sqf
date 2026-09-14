@@ -2,7 +2,7 @@
 #include "..\RscDefine.hpp"
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_onMenuOpen
+Function: A3A_ultimate_garrison_manager_fnc_onMenuOpen
 
 Description:
     Open garrison editor

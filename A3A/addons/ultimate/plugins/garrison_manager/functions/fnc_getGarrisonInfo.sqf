@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_getGarrisonInfo
+Function: A3A_ultimate_garrison_manager_fnc_getGarrisonInfo
 
 Description:
     Return units in garrison

@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_changeLocationOwner
+Function: A3A_ultimate_garrison_manager_fnc_changeLocationOwner
 
 Description:
     Changes the owner of a location
@@ -12,7 +12,7 @@ Optional:
 
 Example:
     (begin example)
-    ["outpost"] call A3USPCM_garrison_fnc_changeLocationOwner;
+    ["outpost"] call A3A_ultimate_garrison_manager_fnc_changeLocationOwner;
     (end example)
 
 Returns:

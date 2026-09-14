@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_fnc_updateGarrison
+Function: A3A_ultimate_garrison_manager_fnc_updateGarrison
 
 Description:
     Update selected location's garrison information
