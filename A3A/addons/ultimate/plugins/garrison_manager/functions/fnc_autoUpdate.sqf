@@ -21,7 +21,7 @@ Author:
 private _display = uiNamespace getVariable [QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
 
-private _listbox = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
+private _listbox = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTOVERVIEW;
 private _index = lnbCurSelRow _listbox;
 
 TRACE_1(QFUNC(autoUpdate),_index);

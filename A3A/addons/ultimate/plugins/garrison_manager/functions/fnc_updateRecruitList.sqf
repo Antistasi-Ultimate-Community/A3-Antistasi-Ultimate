@@ -30,7 +30,7 @@ params[
 private _display = uiNamespace getVariable [QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
 
-private _listbox = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
+private _listbox = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
 private _counts = [];
 
 if (_entry isEqualType false) then {

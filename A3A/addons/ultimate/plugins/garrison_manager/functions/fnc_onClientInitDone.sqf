@@ -21,7 +21,7 @@ waitUntil { !isNull(missionNamespace getVariable["mapX", objNull]) };
 
 if GVAR(addActionToMapObject) then {
     missionNamespace getVariable "mapX" addAction[
-        LLSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle),
+        LLSTRING(RscA3UGarrisonManagerDialog_StaticTitle),
         {
             createDialog QGVAR(dialog);
         },

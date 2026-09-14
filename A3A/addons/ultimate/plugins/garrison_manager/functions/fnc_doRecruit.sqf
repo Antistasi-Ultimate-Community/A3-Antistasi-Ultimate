@@ -23,14 +23,14 @@ params[["_control",controlNull,[controlNull]]];
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
 
-private _unitList = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
+private _unitList = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
 private _index = lnbCurSelRow _unitList;
 
 if (_index < 0) exitWith {};
 
 private _unitType = _unitList lnbData[_index, 0];
 
-private _locationList = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
+private _locationList = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTOVERVIEW;
 private _locationIndex = lnbCurSelRow _locationList;
 private _marker = _locationList lnbData[_locationIndex, 0];
 

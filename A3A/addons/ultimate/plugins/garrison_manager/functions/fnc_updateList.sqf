@@ -22,20 +22,20 @@ private _display = uiNamespace getVariable [QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
 
 private _states = missionNamespace getVariable QGVAR(dialogCheckBoxes);
-private _listbox = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
+private _listbox = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTOVERVIEW;
 lnbClear _listbox;
 _listbox lnbSetCurSelRow 0;
 
-private _showBLUFOR = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR;
-private _showINDEP = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWINDEP;
-private _showOPFOR = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOPFOR;
+private _showBLUFOR = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR;
+private _showINDEP = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWINDEP;
+private _showOPFOR = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWOPFOR;
 
-private _showBases = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES;
-private _showOutposts = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
-private _showPosts = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWPOSTS;
-private _showResources = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
-private _showTowns = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
-private _hideFull = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL;
+private _showBases = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWBASES;
+private _showOutposts = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
+private _showPosts = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWPOSTS;
+private _showResources = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
+private _showTowns = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
+private _hideFull = _states get IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKHIDEFULL;
 
 private _closeLocation = {
     params[["_format","",[""]], ["_entry",nil,[createHashMap]]];
@@ -81,7 +81,7 @@ private _entries = markersX select {
     private _label = switch true do {
         case(_x isEqualTo "Synd_HQ"): {
             _entry set["picture", "\A3\ui_f\data\map\markers\handdrawn\flag_CA.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SyndicateHQLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_SyndicateHQLabel), _entry] call _closeLocation;
         };
         case(_x in citiesX): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Ruin_CA.paa"];
@@ -89,47 +89,47 @@ private _entries = markersX select {
         };
         case(_x in resourcesX): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Rock_CA.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ResourceLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_ResourceLabel), _entry] call _closeLocation;
         };
         case(_x in outposts): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\bunker_CA.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_OutpostLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_OutpostLabel), _entry] call _closeLocation;
         };
         case(_x in factories): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\u_installation.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel), _entry] call _closeLocation;
         };
         case(_x in milbases): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Tourism_CA.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel), _entry] call _closeLocation;
         };
         case(_x in airportsX): {
             _entry set["picture", "\a3\ui_f\data\igui\cfg\simpletasks\types\Plane_ca.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel), _entry] call _closeLocation;
         };
         case(_x in seaports): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\n_naval.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel), _entry] call _closeLocation;
         };
         case(_x in aapostsFIA): {
             _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AApostLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_AApostLabel), _entry] call _closeLocation;
         };
         case(_x in atpostsFIA): {
             _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ATpostLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_ATpostLabel), _entry] call _closeLocation;
         };
         case(_x in hmgpostsFIA): {
             _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_HMGpostLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_HMGpostLabel), _entry] call _closeLocation;
         };
         case (_x in roadblocksFIA): {
             _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_RoadblockLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_RoadblockLabel), _entry] call _closeLocation;
         };
         case (_x in watchpostsFIA): {
             _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
-            [LLSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_WatchpostLabel), _entry] call _closeLocation;
+            [LLSTRING(RscA3UGarrisonManagerDialog_ListOverview_Column_Name_WatchpostLabel), _entry] call _closeLocation;
         };
         default { format["UNK(%1)", _x] };
     };

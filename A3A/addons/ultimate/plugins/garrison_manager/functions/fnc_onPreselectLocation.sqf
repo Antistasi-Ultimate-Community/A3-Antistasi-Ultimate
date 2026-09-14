@@ -29,11 +29,11 @@ if !assert(params[
 ]) exitWith {};
 
 private _mapLocationToFilter = [
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES, { _this in(milbases + airportsX + seaports + ["Synd_HQ"]) }],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS, { _this in outposts }],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWPOSTS, { _this in(aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA) }],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES, { _this in(resourcesX + factories) }],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS, { _this in citiesX }]
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWBASES, { _this in(milbases + airportsX + seaports + ["Synd_HQ"]) }],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS, { _this in outposts }],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWPOSTS, { _this in(aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA) }],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES, { _this in(resourcesX + factories) }],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWTOWNS, { _this in citiesX }]
 ];
 
 private _index = _mapLocationToFilter findIf {
@@ -48,14 +48,14 @@ if (_index isEqualTo -1) exitWith {
 _mapLocationToFilter select _index params["_idc"];
 TRACE_1(QFUNC(onPreselectLocation),_idc);
 
-[[_idc, true], [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL, false]] apply {
+[[_idc, true], [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKHIDEFULL, false]] apply {
     _x params["_checkIdc","_checkChecked"];
 
     uiNamespace getVariable QGVAR(menuDisplay) displayCtrl _checkIdc cbSetChecked _checkChecked;
     GVAR(dialogCheckBoxes) set[_checkIdc, _checkChecked];
 };
 
-uiNamespace getVariable QGVAR(menuDisplay) displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW setVariable[QGVAR(preselectedLocation), _location];
+uiNamespace getVariable QGVAR(menuDisplay) displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTOVERVIEW setVariable[QGVAR(preselectedLocation), _location];
 
 [] call FUNC(updateList);
 

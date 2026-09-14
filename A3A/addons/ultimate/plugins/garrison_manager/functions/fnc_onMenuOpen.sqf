@@ -36,21 +36,21 @@ _display getVariable QGVAR(eventHandlers) set[CBA_EVENT_PRESELECT_LOCATION, [CBA
 private["_control"];
 
 // Labels
-_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELBLUFOR ctrlSetText(A3A_faction_occ get "name");
-_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELINDEP ctrlSetText(A3A_faction_reb get "name");
-_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELOPFOR ctrlSetText(A3A_faction_inv get "name");
+_display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELBLUFOR ctrlSetText(A3A_faction_occ get "name");
+_display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELINDEP ctrlSetText(A3A_faction_reb get "name");
+_display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_STATICLABELOPFOR ctrlSetText(A3A_faction_inv get "name");
 
 // Filters
 private _checkStates = missionNamespace getVariable[QGVAR(dialogCheckBoxes), createHashMapFromArray [
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOPFOR, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWINDEP, true],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWPOSTS, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS, true],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL, false]
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR, false],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWOPFOR, false],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWINDEP, true],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWBASES, false],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS, false],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWPOSTS, false],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES, false],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKSHOWTOWNS, true],
+    [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKHIDEFULL, false]
 ]];
 
 missionNamespace setVariable[QGVAR(dialogCheckBoxes), _checkStates];
@@ -68,7 +68,7 @@ _checkStates apply {
 };
 
 // Close button top-right
-_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNCLOSE ctrlAddEventHandler["ButtonClick", {
+_display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_BTNCLOSE ctrlAddEventHandler["ButtonClick", {
     closeDialog 0;
 }];
 
@@ -76,7 +76,7 @@ _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNCLOSE ctrlAddEventHa
 private _rightMargin = 0.35;
 private _width = (1 - _rightMargin) / (count GVAR(lbColumns) - 1);
 
-_control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
+_control = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTOVERVIEW;
 _control lnbAddColumn 0.025;
 _control lnbAddColumn _rightMargin;
 
@@ -95,7 +95,7 @@ _control ctrlAddEventHandler["LBDblClick", {
     private _display = uiNamespace getVariable [QGVAR(menuDisplay), displayNull];
     if !assert(!isNull _display) exitWith {};
     
-    private _map = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
+    private _map = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_MAPCONTROL;
     _map ctrlMapAnimAdd[0.25, ctrlMapScale _map, markerPos _data];
     ctrlMapAnimCommit _map;
 }];
@@ -117,8 +117,8 @@ _display getVariable QGVAR(eventHandlers) set[CBA_EVENT_LOCATION_SELECTED, [CBA_
         _validSelection = sidesX getVariable[_data, sideUnknown] isEqualTo teamPlayer;
     };
 
-    _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNRECRUIT ctrlEnable _validSelection;
-    _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES ctrlEnable _validSelection;
+    _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_BTNRECRUIT ctrlEnable _validSelection;
+    _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTRECRUITTYPES ctrlEnable _validSelection;
 
     if !_validSelection then {
         [false] call FUNC(updateRecruitList);
@@ -132,13 +132,13 @@ _display getVariable QGVAR(eventHandlers) set[CBA_EVENT_LOCATION_SELECTED, [CBA_
 }] call CBA_fnc_addEventHandler];
 
 // Map
-_control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
+_control = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_MAPCONTROL;
 _control ctrlAddEventHandler["MouseButtonUp", {
     call FUNC(onMapButtonUp);
 }];
 
 // Recruit list
-_control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
+_control = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
 _control lnbAddColumn 0.1;
 _control ctrlEnable false;
 _control ctrlSetFontHeight 0.03;
@@ -159,7 +159,7 @@ GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
 };
 
 // Recruit button
-_control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNRECRUIT;
+_control = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_BTNRECRUIT;
 _control ctrlEnable false;
 _control ctrlAddEventHandler["ButtonClick", {
     call FUNC(doRecruit);

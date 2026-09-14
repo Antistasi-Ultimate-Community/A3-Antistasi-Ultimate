@@ -25,7 +25,7 @@ GVAR(markerColors) = createHashMapFromArray(
     }
 );
 
-#define LB_ITEM(NAME,TYPE) [LLSTRING(TRIPLES(RscA3USPCMGarrisonManagerDialog_ListOverview_Column,NAME,Caption)), LLSTRING(TRIPLES(RscA3USPCMGarrisonManagerDialog_ListOverview_Column,NAME,Tooltip)), TYPE]
+#define LB_ITEM(NAME,TYPE) [LLSTRING(TRIPLES(RscA3UGarrisonManagerDialog_ListOverview_Column,NAME,Caption)), LLSTRING(TRIPLES(RscA3UGarrisonManagerDialog_ListOverview_Column,NAME,Tooltip)), TYPE]
 GVAR(lbColumns) = [
     LB_ITEM(Name,""),
     LB_ITEM(Current,""),

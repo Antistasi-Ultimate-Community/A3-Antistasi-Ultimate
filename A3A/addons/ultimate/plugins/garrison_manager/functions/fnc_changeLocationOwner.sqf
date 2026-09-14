@@ -27,8 +27,8 @@ params[
 
 private _owner = sidesX getVariable[_marker, sideUnknown];
 private _newOwner = [teamPlayer,west] select(_owner isEqualTo teamPlayer);
-private _guiCaption = format[LLSTRING(RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Caption), _marker];
-private _guiText = format[LLSTRING(RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Confirm), _owner, _newOwner];
+private _guiCaption = format[LLSTRING(RscA3UGarrisonManagerDialog_ChangeOwnership_Caption), _marker];
+private _guiText = format[LLSTRING(RscA3UGarrisonManagerDialog_ChangeOwnership_Confirm), _owner, _newOwner];
 
 if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 TRACE_3(QFUNC(onMapButtonUp),_marker,_owner,_newOwner);
