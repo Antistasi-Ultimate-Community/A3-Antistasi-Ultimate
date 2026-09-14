@@ -24,7 +24,7 @@ if !assert(!isNull _display) exitWith {};
 private _listbox = _display displayCtrl IDC_RSCA3UGARRISONMANAGERDIALOG_LISTOVERVIEW;
 private _index = lnbCurSelRow _listbox;
 
-TRACE_1(QFUNC(autoUpdate),_index);
+Trace_1(QFUNC(autoUpdate),_index);
 
 if (_index >= 0) then {
     [_listbox, _index] call FUNC(updateGarrison);

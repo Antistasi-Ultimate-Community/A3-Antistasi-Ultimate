@@ -39,11 +39,11 @@ if (_button != 0) exitWith {}; // discard right-clicks
 if (!_ctrl || _shift) exitWith {};
 
 private _position = _control ctrlMapScreenToWorld[_posX, _posY];
-TRACE_1(QFUNC(onMapButtonUp),_position);
+Trace_1(QFUNC(onMapButtonUp),_position);
 
 private _marker = [allMapMarkers, _position] call BIS_fnc_nearestPosition;
 private _distance = _position distance2D markerPos _marker;
-TRACE_2(QFUNC(onMapButtonUp),_marker,_distance);
+Trace_2(QFUNC(onMapButtonUp),_marker,_distance);
 
 if (_distance > 250) exitWith {};
 if !((_alt && GVAR(allowTakeOverAnything)) || (_marker in citiesX)) exitWith {};

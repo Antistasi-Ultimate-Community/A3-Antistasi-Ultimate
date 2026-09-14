@@ -22,7 +22,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onMenuClose),_this);
+Trace_1(QFUNC(onMenuClose),_this);
 
 if !assert(params[
     ["_display", nil, [displayNull]],

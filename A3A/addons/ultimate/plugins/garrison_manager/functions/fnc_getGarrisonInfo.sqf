@@ -24,7 +24,7 @@ private _marker = _entry get "marker";
 if (sidesX getVariable[_marker, sideUnknown] isNotEqualTo teamPlayer) exitWith {[]};
 
 private _garrison = garrison getVariable[_marker, []];
-TRACE_2(QFUNC(getGarrisonInfo),_marker,_garrison);
+Trace_2(QFUNC(getGarrisonInfo),_marker,_garrison);
 
 [
     createHashMapFromArray[["count", count _garrison]],

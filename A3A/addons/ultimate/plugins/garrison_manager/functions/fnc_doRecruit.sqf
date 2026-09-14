@@ -36,7 +36,7 @@ private _marker = _locationList lnbData[_locationIndex, 0];
 
 _unitType = A3A_faction_reb get _unitType;
 
-TRACE_4(QFUNC(doRecruit),_index,_unitType,_locationIndex,_marker);
+Trace_4(QFUNC(doRecruit),_index,_unitType,_locationIndex,_marker);
 
 positionXGarr = _marker;
 

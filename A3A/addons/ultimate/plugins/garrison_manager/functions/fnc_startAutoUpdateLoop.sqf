@@ -17,7 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(startAutoUpdateLoop),_this);
+Trace_1(QFUNC(startAutoUpdateLoop),_this);
 
 while { !isNull(uiNamespace getVariable[QGVAR(menuDisplay), displayNull]) } do {
     uiSleep 0.1;
@@ -26,5 +26,5 @@ while { !isNull(uiNamespace getVariable[QGVAR(menuDisplay), displayNull]) } do {
     [] spawn FUNC(autoUpdate);
 };
 
-TRACE_1(QFUNC(startAutoUpdateLoop),_this);
+Trace_1(QFUNC(startAutoUpdateLoop),_this);
 nil;

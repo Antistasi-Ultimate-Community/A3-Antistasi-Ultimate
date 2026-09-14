@@ -21,7 +21,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(updateRecruitList),_this);
+Trace_1(QFUNC(updateRecruitList),_this);
 
 params[
     ["_entry", false, [false, createHashMap]]

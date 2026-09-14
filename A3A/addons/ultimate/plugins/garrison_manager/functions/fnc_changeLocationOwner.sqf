@@ -31,7 +31,7 @@ private _guiCaption = format[LLSTRING(RscA3UGarrisonManagerDialog_ChangeOwnershi
 private _guiText = format[LLSTRING(RscA3UGarrisonManagerDialog_ChangeOwnership_Confirm), _owner, _newOwner];
 
 if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
-TRACE_3(QFUNC(onMapButtonUp),_marker,_owner,_newOwner);
+Trace_3(QFUNC(onMapButtonUp),_marker,_owner,_newOwner);
 
 [_newOwner, _marker] remoteExec ["A3A_fnc_markerChange", 2];
 [] spawn {

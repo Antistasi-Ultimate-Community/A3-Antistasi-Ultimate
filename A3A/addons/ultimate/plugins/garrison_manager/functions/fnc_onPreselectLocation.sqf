@@ -22,7 +22,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onPreselectLocation),_this);
+Trace_1(QFUNC(onPreselectLocation),_this);
 
 if !assert(params[
     ["_location", nil, [""]]
@@ -42,11 +42,11 @@ private _index = _mapLocationToFilter findIf {
 };
 
 if (_index isEqualTo -1) exitWith {
-    ERROR_1("failed to find control mapping for location ""%1""",_location);
+    Error_1("failed to find control mapping for location ""%1""",_location);
 };
 
 _mapLocationToFilter select _index params["_idc"];
-TRACE_1(QFUNC(onPreselectLocation),_idc);
+Trace_1(QFUNC(onPreselectLocation),_idc);
 
 [[_idc, true], [IDC_RSCA3UGARRISONMANAGERDIALOG_CHECKHIDEFULL, false]] apply {
     _x params["_checkIdc","_checkChecked"];
