@@ -187,6 +187,6 @@ missionNamespace setVariable ["A3A_supplyMissionActive", nil, true];
 
 deleteVehicle _truckX;
 private _emptybox = "Land_Pallet_F" createVehicle (getpos _truckX);
-[_emptybox] spawn A3A_fnc_postmortem;
+[_emptybox, true] remoteExec[QFUNCMAIN(despawnQueueEntity), 2];
 
 [_taskId, "SUPP", 900] spawn A3A_fnc_taskDelete;
