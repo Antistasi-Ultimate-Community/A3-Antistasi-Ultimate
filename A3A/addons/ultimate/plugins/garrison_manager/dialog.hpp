@@ -3,11 +3,6 @@
 #include "RscDefine.hpp"
 
 FORWARD(A3A_MapControl);
-FORWARD(RscButton);
-FORWARD(RscCheckbox);
-FORWARD(RscFrame);
-FORWARD(RscListbox);
-FORWARD(RscText);
 
 // Replace attributes:
 //  Search: (^\s*(?:sizeEx|[xywh])) = ([^;]+)
