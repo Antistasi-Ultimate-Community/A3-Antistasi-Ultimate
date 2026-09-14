@@ -23,8 +23,16 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNCMAIN(setupCheckExtenders),_this);
 
-// Should not happen but we can't abort game setup
-if (!assert(!isNil QEGVAR(core,extendersLoaded)) || { !assert(!isNil QEGVAR(core,extendersLoadedInvalid)) }) exitWith {
+// The command to execute this function _may_ come earlier than network traffic
+// synchronizing the GVARs. Wait a bit until they appear.
+#define WAIT_FOR_GVARS_TIMEOUT 5
+
+private _hasGVARS = waitUntil[{
+    (!isNil QEGVAR(core,extendersLoaded)) && (!isNil QEGVAR(core,extendersLoadedInvalid))
+}, WAIT_FOR_GVARS_TIMEOUT]; // time out after five seconds
+
+if !assert(!isNil "_hasGVARS") exitWith {
+    Error_1("extender GVARs failed to present after %1 seconds; continuing w/ game setup.",WAIT_FOR_GVARS_TIMEOUT);
     player setVariable[QEGVAR(core,seenExtenderWarnings), true, 2];
 };
 
