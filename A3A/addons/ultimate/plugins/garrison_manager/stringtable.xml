@@ -1,291 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="A3USPCM">
-    <Package name="Garrison">
-        <Key ID="STR_A3USPCM_Garrison_Component">
-            <English>A3USPCM - Garrison Management Component</English>
-            <German>A3USPCM - Garrison Management Komponente</German>
+<Project name="A3U">
+    <Package name="Ultimate_Garrison_Manager">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Component">
+            <English>A3U - Garrison Management Component</English>
+            <German>A3U - Garrison Management Komponente</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_BtnClose">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_BtnClose">
             <English>X</English>
             <German>X</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_BtnRecruit">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_BtnRecruit">
             <English>Recruit</English>
             <German>Rekruitiere</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckHideFull_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckHideFull_tooltip">
             <English>Hide locations at full garrison capacity</English>
             <German>Verstecke Standorte mit voller Garnisonskapazität</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowBLUFOR_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowBLUFOR_tooltip">
             <English>Show locations of BLUFOR faction (usually NATO)</English>
             <German>Zeige Standorte der BLUFOR-Fraktion (normalerweise NATO)</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowBases_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowBases_tooltip">
             <English>Show military bases/airports</English>
             <German>Zeige Militärbasen/Flughäfen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowINDEP_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowINDEP_tooltip">
             <English>Show locations of INDEP faction (usually: you)</English>
             <German>Zeige Standorte der INDEP-Fraktion (normalerweise: du)</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowOPFOR_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowOPFOR_tooltip">
             <English>Show locations of OPFOR faction (usually CSAT)</English>
             <German>Zeige Standorte der OPFOR-Fraktion (normalerweise CSAT)</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowOutposts_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowOutposts_tooltip">
             <English>Show outposts</English>
             <German>Zeige Aussenposten</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowPosts_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowPosts_tooltip">
             <English>Show A/A, A/T, HMG, Roadblocks, Watchposts</English>
             <German>Zeige Fla, PzAbw, sMG, Straßensperren, Wachposten</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowResources_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowResources_tooltip">
             <English>Show resources</English>
             <German>Zeige Rohstoffe</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowTowns_tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_CheckShowTowns_tooltip">
             <English>Show towns/villages</English>
             <German>Zeige Städte/Dörfer</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelBLUFOR">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelBLUFOR">
             <English>BLUFOR</English>
             <German>BLUFOR</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelBases">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelBases">
             <English>Bases</English>
             <German>Basen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelFull">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelFull">
             <English>Hide full</English>
             <German>Verstecke volle</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelINDEP">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelINDEP">
             <English>INDEP</English>
             <German>INDEP</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelOPFOR">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelOPFOR">
             <English>OPFOR</English>
             <German>OPFOR</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelOutposts">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelOutposts">
             <English>Outposts</English>
             <German>Aussenposten</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelPosts">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelPosts">
             <English>Posts</English>
             <German>Posten</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelResources">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelResources">
             <English>Resources</English>
             <German>Rohstoffe</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelTowns">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticLabelTowns">
             <English>Towns/villages</English>
             <German>Städte/Dörfer</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticMapFrame">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticMapFrame">
             <English>Map overview</English>
             <German>Kartenübersicht</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticRecruitFrame">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticRecruitFrame">
             <English>Recruit reinforcements</English>
             <German>Verstärkung Rekrutieren</German>
         </Key>
-        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticTitle">
-            <English>A3USPCM Advanced Garrison Management</English>
-            <German>A3USPCM Erweiterte Garnisonsverwaltung</German>
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_StaticTitle">
+            <English>A3U Advanced Garrison Management</English>
+            <German>A3U Erweiterte Garnisonsverwaltung</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Caption">
             <English>Change ownership of "%1"</English>
             <German>Besitz von "%1" ändern</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Confirm">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Confirm">
             <English>Location is currently owned by "%1". Change ownership to "%2"?</English>
             <German>Der Standort gehört derzeit "%1". Besitz zu "%2" ändern?</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Caption">
             <English>AA/S</English>
             <German>Fla/S</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Tooltip">
             <English>A/A Specialists</English>
             <German>Fla-Spezialisten</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_ATSpecialist_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_ATSpecialist_Caption">
             <English>AT/S</English>
             <German>PzAbw</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_ATSpecialist_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_ATSpecialist_Tooltip">
             <English>AT Specialists</English>
             <German>Panzerabwehr-Spezialisten</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AT_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AT_Caption">
             <English>AT</English>
             <German>AT</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AT_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AT_Tooltip">
             <English>Light AT</English>
             <German>Leichte AT</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Autorifleman_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Autorifleman_Caption">
             <English>MG</English>
             <German>MG</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Autorifleman_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Autorifleman_Tooltip">
             <English>Autoriflemen</English>
             <German>MG-Schützen</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Capacity_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Capacity_Caption">
             <English>Max</English>
             <German>Max</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Capacity_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Capacity_Tooltip">
             <English>Unit capacity</English>
             <German>Maximale Belegung</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Crew_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Crew_Caption">
             <English>Crew</English>
             <German>Bes</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Crew_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Crew_Tooltip">
             <English>Static crew</English>
             <German>Besatzung</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Current_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Current_Caption">
             <English>Cur</English>
             <German>Anz</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Current_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Current_Tooltip">
             <English>Current sum of units assigned</English>
             <German>Gesamtsumme Einheiten</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Engineer_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Engineer_Caption">
             <English>Eng</English>
             <German>Ing</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Engineer_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Engineer_Tooltip">
             <English>Engineers</English>
             <German>Ingenieure</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Grenadier_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Grenadier_Caption">
             <English>Grn</English>
             <German>Grn</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Grenadier_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Grenadier_Tooltip">
             <English>Grenadiers</English>
             <German>Grenadiere</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Marksman_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Marksman_Caption">
             <English>MM</English>
             <German>SSchtz</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Marksman_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Marksman_Tooltip">
             <English>Marksmen</English>
             <German>Scharfschützen</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Medic_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Medic_Caption">
             <English>Med</English>
             <German>San</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Medic_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Medic_Tooltip">
             <English>Medic</English>
             <German>Sanitäter</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AApostLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AApostLabel">
             <English>A/A post near %1</English>
             <German>Fla-Posten nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ATpostLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ATpostLabel">
             <English>A/T post near %1</English>
             <German>PzAbw-Posten nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel">
             <English>Airport near %1</English>
             <German>Flughafen nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Caption">
             <English>Name</English>
             <German>Name</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel">
             <English>Factory near %1</English>
             <German>Fabrik nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_HMGpostLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_HMGpostLabel">
             <English>HMG post near %1</English>
             <German>sMG-Posten nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel">
             <English>Military base near %1</English>
             <German>Militärbasis nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_OutpostLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_OutpostLabel">
             <English>Outpost near %1</English>
             <German>Außenposten nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ResourceLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ResourceLabel">
             <English>Resource near %1</English>
             <German>Rohstoff nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_RoadblockLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_RoadblockLabel">
             <English>Road block near %1</English>
             <German>Straßensperre nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel">
             <English>Seaport near %1</English>
             <German>Hafen nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SyndicateHQLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SyndicateHQLabel">
             <English>HQ near %1</English>
             <German>HQ nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Tooltip">
             <English>Name of Location (double-click to locate on map)</English>
             <German>Name des Standorts (Doppelklicken, um auf Karte anzuzeigen)</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_WatchpostLabel">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_WatchpostLabel">
             <English>Watchpost near %1</English>
             <German>Wachposten nahe %1</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Caption">
             <English>Rfl</English>
             <German>Schtz</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Tooltip">
             <English>Riflemen</English>
             <German>Schützen</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Sapper_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Sapper_Caption">
             <English>EXP</English>
             <German>Pio</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Sapper_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Sapper_Tooltip">
             <English>Sappers</English>
             <German>Pioniere</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_SquadLdr_Caption">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_SquadLdr_Caption">
             <English>SqLdr</English>
             <German>GruFhr</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_SquadLdr_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_SquadLdr_Tooltip">
             <English>Squad Leaders</English>
             <German>Gruppenführer</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_Settings_addActionToMapObject_DisplayName">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Settings_addActionToMapObject_DisplayName">
             <English>Add advanced garrison management action to flag</English>
             <German>Füge erweiterte Garnisonsverwaltungsaktion zur Flagge hinzu</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_Settings_addActionToMapObject_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Settings_addActionToMapObject_Tooltip">
             <English>Adds the action to launch advanced garrison management to the base's flag object</English>
             <German>Fügt die Aktion zum Starten der erweiterten Garnisonsverwaltung zum Flaggenobjekt der Basis hinzu</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_Settings_allowTakeOverAnything_DisplayName">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Settings_allowTakeOverAnything_DisplayName">
             <English>Allow ownership change of any location</English>
             <German>Erlaube Besitzwechsel für jede Art von Ort</German>
         </Key>
-        <Key ID="STR_A3USPCM_garrison_Settings_allowTakeOverAnything_Tooltip">
+        <Key ID="STR_A3A_Ultimate_Garrison_Manager_Settings_allowTakeOverAnything_Tooltip">
             <English>Allows the player to change ownership of any location on AGM map; hold Ctrl and click for normal ownership change, Ctrl+Alt for all.</English>
             <German>Erlaube dem Spieler, den Besitz jedes Ortes auf der AGM-Karte zu ändern; Halte Strg gedrückt und klicke für normalen Besitzwechsel, Strg+Alt für alle.</German>
         </Key>
