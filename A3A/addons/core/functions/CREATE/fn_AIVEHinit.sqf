@@ -15,6 +15,8 @@ params ["_veh", "_side", "_resPool", ["_excludeTrails", false]];
 
 if (isNil "_veh") exitWith {};
 
+[_veh] call FUNCMAIN(preparePostMortem);
+
 // Not a crewed vehicle, nothing to do here
 if (fullCrew [_veh, "", true] isEqualTo []) exitWith {
 	// buyable item, use initObject. Happens on game loading at the moment
