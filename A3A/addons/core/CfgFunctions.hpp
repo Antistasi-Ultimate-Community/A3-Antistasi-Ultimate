@@ -11,7 +11,6 @@ class CfgFunctions
             class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
-            class askAnyoneHelp {};
             class assaultBuilding {};
             class attackDrillAI {};
             class attackHeli {};
