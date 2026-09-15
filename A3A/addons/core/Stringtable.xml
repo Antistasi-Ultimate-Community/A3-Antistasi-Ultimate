@@ -6475,6 +6475,26 @@
                 <Turkish>Yol Barikatı veya Gözlem Noktası garnizonlarına havan topu ekleyemezsiniz.</Turkish>
             </Key>
         </Container>
+        <Container name="A3A_init">
+            <Key ID="STR_A3A_core_InitFailed_BadInit_Subtitle">
+                <Original>Game setup failed due to bad initialization.</Original>
+                <Russian>Настройка игры не удалась из-за неправильной инициализации.</Russian>
+                <Korean>잘못된 초기화로 인해 게임 설정에 실패했습니다.</Korean>
+                <Spanish>La configuración del juego falló debido a una inicialización incorrecta.</Spanish>
+                <French>La configuration du jeu a échoué en raison d'une mauvaise initialisation.</French>
+                <Chinesesimp>由于初始化错误，游戏设置失败。</Chinesesimp>
+                <Turkish>Oyun kurulumu hatalı başlatma nedeniyle başarısız oldu.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_core_InitFailed_BadInit_Description">
+                <Original>The mission failed to initialize properly. Please refer to the server RPT and fix the issues you find in it. They're all prefixed with "A3A-BAD-INIT".</Original>
+                <Russian>Миссия не смогла правильно инициализироваться. Пожалуйста, обратитесь к серверному RPT и исправьте найденные в нём проблемы. Все они имеют префикс "A3A-BAD-INIT".</Russian>
+                <Korean>미션이 제대로 초기화되지 않았습니다. 서버 RPT를 참조하고 그 안에서 발견한 문제를 수정하십시오. 모든 문제는 "A3A-BAD-INIT"로 시작합니다.</Korean>
+                <Spanish>La misión no se inicializó correctamente. Por favor, consulte el RPT del servidor y corrija los problemas que encuentre en él. Todos tienen el prefijo "A3A-BAD-INIT".</Spanish>
+                <French>La mission n'a pas pu s'initialiser correctement. Veuillez vous référer au RPT du serveur et corriger les problèmes que vous y trouvez. Ils sont tous préfixés par "A3A-BAD-INIT".</French>
+                <Chinesesimp>任务未能正确初始化。请参考服务器 RPT 并修复其中发现的问题。它们都以 "A3A-BAD-INIT" 为前缀。</Chinesesimp>
+                <Turkish>Görev düzgün bir şekilde başlatılamadı. Lütfen sunucu RPT'sine bakın ve orada bulduğunuz sorunları düzeltin. Hepsi "A3A-BAD-INIT" ile başlar.</Turkish>
+            </Key>
+        </Container>
         <Container name="A3AP_items">
             <Key ID="STR_A3AP_items_crrk_name">
                 <Original>Combat Readiness Recovery Kit</Original>

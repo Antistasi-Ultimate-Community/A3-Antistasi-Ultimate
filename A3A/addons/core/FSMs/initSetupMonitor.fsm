@@ -1,0 +1,683 @@
+/*%FSM<COMPILE "G:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, a3ue-init-setup-monitor">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Game_Setup_Monit",0,250,73.305893,-394.742371,163.305908,-344.742340,0.000000,"Game" \n "Setup" \n "Monitor"};
+item1[] = {"Done",1,250,-211.734009,413.544769,-121.734009,463.544769,0.000000,"Done"};
+item2[] = {"_",4,218,19.650330,-380.581116,44.604523,-357.890442,1.000000,""};
+item3[] = {"bad_init",2,250,-114.910103,-394.484039,-24.910065,-344.484039,0.000000,"bad init"};
+item4[] = {"_",8,218,-82.635376,-326.955475,-58.674194,-303.768341,0.000000,""};
+item5[] = {"End_mission",1,250,-120.371948,-288.226044,-30.371948,-238.226044,0.000000,"End mission"};
+item6[] = {"__1",8,218,106.047127,-323.479889,130.008301,-300.292664,0.000000,""};
+item7[] = {"read_extenders",2,250,74.268959,-186.933304,164.268982,-136.933289,0.000000,"read" \n "extenders"};
+item8[] = {"__2",8,218,160.665802,-123.873703,184.626984,-100.686478,0.000000,""};
+item9[] = {"_",4,218,19.650360,-331.424286,44.604553,-308.733704,2.000000,""};
+item10[] = {"__1",4,218,47.952637,-118.411758,72.906830,-95.721100,1.000000,""};
+item11[] = {"allow_auto_start",2,250,239.113586,-39.960510,329.113586,10.039490,0.000000,"allow" \n "auto start," \n "get save game"};
+item12[] = {"main_game_setup",2,250,79.817932,149.884918,169.817947,199.884918,0.000000,"main" \n "game" \n "setup loop"};
+item13[] = {"deny_auto_start",2,250,15.177124,-66.773254,105.177139,-16.773254,0.000000,"deny" \n "auto start"};
+item14[] = {"__1",8,218,111.508919,10.686783,135.470093,33.873993,0.000000,""};
+item15[] = {"find_admin_for_s",4,4314,-66.750916,180.670105,23.249084,230.670105,95.000000,"find admin" \n "for setup"};
+item16[] = {"is_it_auto_start",4,218,125.553467,239.457916,215.553467,289.457916,2.000000,"is it" \n "auto start" \n "time?"};
+item17[] = {"show_setup_dialo",4,218,-67.742615,301.715027,22.257385,351.715027,85.000000,"show" \n "setup" \n "dialog"};
+item18[] = {"save_game_data_l",4,218,-67.246582,122.315308,22.753418,172.315308,100.000000,"save game" \n "data loaded"};
+item19[] = {"delay__then_reenter",2,250,242.325500,91.824921,332.325500,141.824921,0.000000,"delay, then" \n "reenter" \n "setup loop"};
+item20[] = {"_",8,218,275.642181,163.315079,299.603363,186.502289,0.000000,""};
+item21[] = {"start_game",2,250,-206.272583,125.555107,-116.272568,175.555115,0.000000,"start" \n "game"};
+item22[] = {"delay",4,218,350.568542,90.546387,440.568542,140.546387,1.000000,"delay"};
+item23[] = {"_",8,218,-176.976685,360.415741,-153.015503,383.602966,0.000000,""};
+item24[] = {"prepare_auto_sta",2,250,242.087646,238.975159,332.087646,288.975159,0.000000,"prepare" \n "auto start"};
+item25[] = {"get_auto_start_s",2,250,241.103577,-135.294556,331.103577,-85.294556,0.000000,"get" \n "auto start" \n "setting"};
+item26[] = {"_",4,218,272.385498,-74.716873,297.339691,-52.026215,1.000000,""};
+item27[] = {"load_dlc_informa",2,250,76.254639,-291.205872,166.254639,-241.205872,0.000000,"load dlc" \n "information"};
+item28[] = {"_",8,218,106.543648,-229.138748,130.504822,-205.951401,0.000000,""};
+item29[] = {"",7,210,29.056215,-211.291809,37.056213,-203.291809,0.000000,""};
+item30[] = {"show_extender_wa",4,218,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
+item31[] = {"_",8,218,113.586563,105.220749,137.547729,128.407959,0.000000,""};
+item32[] = {"enter_setup_loop",2,250,79.952087,45.708740,169.952103,95.708740,0.000000,"enter" \n "setup" \n "loop"};
+link0[] = {0,2};
+link1[] = {0,6};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {6,27};
+link6[] = {7,8};
+link7[] = {7,10};
+link8[] = {7,29};
+link9[] = {8,25};
+link10[] = {9,3};
+link11[] = {10,13};
+link12[] = {11,14};
+link13[] = {12,15};
+link14[] = {12,16};
+link15[] = {12,17};
+link16[] = {12,18};
+link17[] = {12,20};
+link18[] = {12,30};
+link19[] = {13,14};
+link20[] = {14,32};
+link21[] = {15,12};
+link22[] = {16,24};
+link23[] = {17,12};
+link24[] = {18,21};
+link25[] = {19,22};
+link26[] = {19,31};
+link27[] = {20,19};
+link28[] = {21,23};
+link29[] = {22,19};
+link30[] = {23,1};
+link31[] = {24,20};
+link32[] = {25,14};
+link33[] = {25,26};
+link34[] = {26,11};
+link35[] = {27,28};
+link36[] = {28,7};
+link37[] = {29,9};
+link38[] = {30,12};
+link39[] = {31,12};
+link40[] = {32,31};
+globals[] = {0.000000,0,0,0,0,640,480,1,101,6316128,1,-684.630493,490.291870,654.985413,-317.364075,2262,1872,1};
+window[] = {2,-1,-1,-1,-1,2000,228,3292,228,3,2289};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "a3ue-init-setup-monitor";
+        class States
+        {
+                /*%FSM<STATE "Game_Setup_Monit">*/
+                class Game_Setup_Monit
+                {
+                        name = "Game_Setup_Monit";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private[""_addonVics"",""_adminLoopPriority"",""_autoLoadTime"",""_factions"",""_loadedDLC"",""_loadedPatches"",""_loopDelay"",""_waitState""];" \n
+                         "private _gsmSetupOkay = false;" \n
+                         "private _defineFunc = {" \n
+                         "    if !assert(params[" \n
+                         "        [""_name"", nil, [""""]]," \n
+                         "        [""_code"", nil, [{}, """"]]" \n
+                         "    ]) throw ""invalid parameters"";" \n
+                         "" \n
+                         "    if (!isNil { missionNamespace getVariable _name }) throw format[""function %1 is not supposed to exist."", _name];" \n
+                         "    if (_code isEqualType {}) exitWith {" \n
+                         "        missionNamespace setVariable[_name, _code];" \n
+                         "    };" \n
+                         "" \n
+                         "    private _pcode = preprocessFileLineNumbers _code;" \n
+                         "    if (_pcode isEqualTo """") throw format[""failed to load """"%1"""""", _code];" \n
+                         "    missionNamespace setVariable[_name, compileFinal _pcode];" \n
+                         "};" \n
+                         "private _log = {" \n
+                         "    private _p = [[_this], _this] select(_this isEqualType []);" \n
+                         "    diag_log text format[""[a3a-game-setup-monitor] %1"", format _p];" \n
+                         "    nil;" \n
+                         "};" \n
+                         "private _badlog = {" \n
+                         "    private _p = [[_this], _this] select(_this isEqualType []);" \n
+                         "    _p set[0, format[""A3A-BAD-INIT: %1"", _p select 0]];" \n
+                         "    _p call _log;" \n
+                         "};" \n
+                         "" \n
+                         "A3A_setupPlayer = objNull;" \n
+                         """FSM start"" call _log;" \n
+                         "" \n
+                         "try {" \n
+                         "    [""A3A_core_fnc_isValidAdmin"", {" \n
+                         "        (admin owner _this == 2) ||                // non-voted admin on DS" \n
+                         "        {hasInterface && {_this isEqualTo player}} // localhost. returns admin owner _this = 0 for some reason" \n
+                         "    }] call _defineFunc;" \n
+                         "    [""A3A_core_fnc_loadExtenders"", ""\x\a3a\addons\core\functions\init\fn_initExtenderDetection.sqf""] call _defineFunc;" \n
+                         "    [""A3A_core_fnc_validateExtenderCompat"", ""\x\a3a\addons\core\functions\init\fn_validateExtenderCompat.sqf""] call _defineFunc;" \n
+                         "" \n
+                         "	_gsmSetupOkay = true;" \n
+                         "} catch {" \n
+                         "    [""game setup monitor caught exception: %1"", _exception] call _badlog;" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 2;
+                                        priority = 1.000000;
+                                        to="bad_init";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNil ""_gsmSetupOkay"" || {!_gsmSetupOkay}" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__1">*/
+                                class __1
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="load_dlc_informa";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Done">*/
+                class Done
+                {
+                        name = "Done";
+                        itemno = 1;
+                        init = /*%FSM<STATEINIT""">*/"""exiting game setup monitor normally."" call _log;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "bad_init">*/
+                class bad_init
+                {
+                        name = "bad_init";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/"""Bad init state reached."" call _log;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="End_mission";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "End_mission">*/
+                class End_mission
+                {
+                        name = "End_mission";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"""Ending missing prematurely"" call _log;" \n
+                         "" \n
+                         "[""A3A_core_endMissionBadInit"", false, 2] remoteExec[""BIS_fnc_endMission""];" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "read_extenders">*/
+                class read_extenders
+                {
+                        name = "read_extenders";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"""Looking for extenders..."" call _log;" \n
+                         "" \n
+                         "[] call A3A_core_fnc_loadExtenders;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 9;
+                                        priority = 2.000000;
+                                        to="bad_init";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((isNil ""A3A_core_extendersLoaded"") || {isNil ""A3A_core_extendersLoadedInvalid""}) &&" \n
+                                         "{" \n
+                                         "    ""failed to find gvars"" call _badlog;" \n
+                                         "    true;" \n
+                                         "};" \n
+                                         "" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__1">*/
+                                class __1
+                                {
+                                        itemno = 10;
+                                        priority = 1.000000;
+                                        to="deny_auto_start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"A3A_core_extendersLoadedInvalid isNotEqualTo []" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__2">*/
+                                class __2
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="get_auto_start_s";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "allow_auto_start">*/
+                class allow_auto_start
+                {
+                        name = "allow_auto_start";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/"""Searching for suitable saves for automatic loading"" call _log;" \n
+                         "" \n
+                         "private _validFactions = _factions select { getArray(_x >> ""requiredAddons"") findIf { !(_x in _loadedPatches) } == -1 } apply { configName _x };" \n
+                         "private _validAddons = _addonVics select { getArray(_x >> ""requiredAddons"") findIf { !(_x in _loadedPatches) } == -1 } apply { configName _x };" \n
+                         "private _validDLC = _loadedDLC apply {_x#1};" \n
+                         "" \n
+                         "private _fnc_isValidSave = {" \n
+                         "    if (_this get ""map"" != worldName) exitWith {false};" \n
+                         "    if (!isNil {_this get ""ended""}) exitWith {false};" \n
+                         "    if (isNil {_this get ""factions""}) exitWith {false};" \n
+                         "    if (_this get ""factions"" findIf { !(_x in _validFactions) } != -1) exitWith {false};" \n
+                         "    if (_this get ""addonVics"" findIf { !(_x in _validAddons) } != -1) exitWith {false};" \n
+                         "    if (_this get ""DLC"" findIf { !(_x in _validDLC) } != -1) exitWith {false};" \n
+                         "    true;" \n
+                         "};" \n
+                         "" \n
+                         "private _saveData = call A3A_fnc_collectSaveData;" \n
+                         "private _index = _saveData findIf { _x call _fnc_isValidSave };" \n
+                         "" \n
+                         "if (_index == -1) then {" \n
+                         "    ""No usable saves found for automatic loading"" call _log;" \n
+                         "    _autoLoadTime = -1;" \n
+                         "} else {" \n
+                         "    _autoLoadData = _saveData select _index;" \n
+                         "    _autoLoadData set [""startType"", ""load""];" \n
+                         "    [""save ID %1 selected for automatic loading"", _autoLoadData get ""gameID""] call _log;" \n
+                         "    _autoLoadTime = diag_tickTime + _autoLoadTime;" \n
+                         "" \n
+                         "    _waitState = ""autostartwait"";" \n
+                         "};" \n
+                         "" \n
+                         "[""autoLoadTime is %1"", _autoLoadTime] call _log;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="enter_setup_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "main_game_setup">*/
+                class main_game_setup
+                {
+                        name = "main_game_setup";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "save_game_data_l">*/
+                                class save_game_data_l
+                                {
+                                        itemno = 18;
+                                        priority = 100.000000;
+                                        to="start_game";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isNil ""A3A_saveData"");" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "find_admin_for_s">*/
+                                class find_admin_for_s
+                                {
+                                        itemno = 15;
+                                        priority = 95.000000;
+                                        to="main_game_setup";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"call {" \n
+                                         "    if (isNull A3A_setupPlayer) exitWith {" \n
+                                         "        private _players = allPlayers - entities ""HeadlessClient_F"";" \n
+                                         "        private _adminIndex = _players findIf { _x call A3A_core_fnc_isValidAdmin };" \n
+                                         "" \n
+                                         "        if (_adminIndex >= 0) then {" \n
+                                         "            A3A_setupPlayer = _players select _adminIndex;" \n
+                                         "            [""Player %1 is now admin, sending them the save data"", name A3A_setupPlayer] call _log;" \n
+                                         "            A3A_startupState = ""adminsetup""; publicVariable ""A3A_startupState"";" \n
+                                         "        };" \n
+                                         "" \n
+                                         "        false;" \n
+                                         "    };" \n
+                                         "" \n
+                                         "    if (A3A_setupPlayer call A3A_core_fnc_isValidAdmin) exitWith { false };" \n
+                                         "" \n
+                                         "    [""Player %1 is no longer admin, disabling their setup dialog"", name A3A_setupPlayer] call _log;" \n
+                                         "    A3A_startupState = _waitState; publicVariable ""A3A_startupState"";" \n
+                                         "" \n
+                                         "    [""serverClose""] remoteExec[""A3A_fnc_setupDialog"", A3A_setupPlayer];" \n
+                                         "    A3A_setupPlayer = objNull;" \n
+                                         "" \n
+                                         "    true;" \n
+                                         "};" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""[act] find-admin"" call _log;" \n
+                                         "_adminLoopPriority = 95;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "show_extender_wa">*/
+                                class show_extender_wa
+                                {
+                                        itemno = 30;
+                                        priority = 90.000000;
+                                        to="main_game_setup";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"call {" \n
+                                         "    ""[cond] show-extender"" call _log;" \n
+                                         "" \n
+                                         "    if (_adminLoopPriority <= 90) exitWith { false };" \n
+                                         "    if (isNull A3A_setupPlayer) exitWith { false };" \n
+                                         "" \n
+                                         "    false;" \n
+                                         "};" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""[act] show-extender"" call _log;" \n
+                                         "_adminLoopPriority = 90;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "show_setup_dialo">*/
+                                class show_setup_dialo
+                                {
+                                        itemno = 17;
+                                        priority = 85.000000;
+                                        to="main_game_setup";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"call {" \n
+                                         "    ""[cond] show-setup-dlg"" call _log;" \n
+                                         "" \n
+                                         "    if (_adminLoopPriority <= 85) exitWith { false };" \n
+                                         "    if (isNull A3A_setupPlayer) exitWith { false };" \n
+                                         "" \n
+                                         "    false;" \n
+                                         "};" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""[act] show-setup-dlg"" call _log;" \n
+                                         "_adminLoopPriority = 85;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "is_it_auto_start">*/
+                                class is_it_auto_start
+                                {
+                                        itemno = 16;
+                                        priority = 2.000000;
+                                        to="prepare_auto_sta";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_autoLoadTime > 0) && (diag_tickTime > _autoLoadTime);" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 20;
+                                        priority = 0.000000;
+                                        to="delay__then_reenter";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_loopDelay = diag_tickTime + 1;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "deny_auto_start">*/
+                class deny_auto_start
+                {
+                        name = "deny_auto_start";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/"""auto start disabled; we found extenders we need to warn about."" call _log;" \n
+                         "" \n
+                         "_autoLoadTime = -1;" \n
+                         "" \n
+                         "_waitState = ""adminwait"";" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="enter_setup_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "delay__then_reenter">*/
+                class delay__then_reenter
+                {
+                        name = "delay__then_reenter";
+                        itemno = 19;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "delay">*/
+                                class delay
+                                {
+                                        itemno = 22;
+                                        priority = 1.000000;
+                                        to="delay__then_reenter";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_tickTime < _loopDelay;" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="main_game_setup";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_adminLoopPriority = 100;" \n
+                                         "" \n
+                                         """looping"" call _log;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "start_game">*/
+                class start_game
+                {
+                        name = "start_game";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 23;
+                                        priority = 0.000000;
+                                        to="Done";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "prepare_auto_sta">*/
+                class prepare_auto_sta
+                {
+                        name = "prepare_auto_sta";
+                        itemno = 24;
+                        init = /*%FSM<STATEINIT""">*/"""auto start timer expired; loading selected save"" call _log;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 20;
+                                        priority = 0.000000;
+                                        to="delay__then_reenter";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_loopDelay = diag_tickTime + 1;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "get_auto_start_s">*/
+                class get_auto_start_s
+                {
+                        name = "get_auto_start_s";
+                        itemno = 25;
+                        init = /*%FSM<STATEINIT""">*/"_autoLoadTime = ""autoLoadLastGame"" call BIS_fnc_getParamValue;" \n
+                         "" \n
+                         "_waitState = ""adminwait"";" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 26;
+                                        priority = 1.000000;
+                                        to="allow_auto_start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_autoLoadTime > 0;" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__1">*/
+                                class __1
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="enter_setup_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "load_dlc_informa">*/
+                class load_dlc_informa
+                {
+                        name = "load_dlc_informa";
+                        itemno = 27;
+                        init = /*%FSM<STATEINIT""">*/"// Collect all CfgPatches dependencies so that client knows what's available on server" \n
+                         "private _loadedPatches = [];" \n
+                         "private _factions = ""true"" configClasses (configFile >> ""A3A"" >> ""Templates"");" \n
+                         "private _addonVics = ""true"" configClasses (configFile >> ""A3A"" >> ""AddonVics"");" \n
+                         "{" \n
+                         "    {" \n
+                         "        if (isClass (configFile >> ""CfgPatches"" >> _x)) then { _loadedPatches pushBackUnique _x };" \n
+                         "    } forEach getArray(_x >> ""requiredAddons"");" \n
+                         "} forEach (_factions + _addonVics);" \n
+                         "" \n
+                         "// Ignore DLC without equipment and vehicles" \n
+                         "// Need the true names from here, so pass it all in" \n
+                         "// Arma bug: Need to hardcode CDLC because arma3.cfg mod loading method doesn't register CDLC as ""official""" \n
+                         "private _loadedDLC = getLoadedModsInfo select { (_x#2) and !(_x#1 in [""A3"",""curator"",""argo"",""tacops""]) };" \n
+                         "_loadedDLC append (getLoadedModsInfo select { tolower (_x#1) in [""ef"", ""gm"", ""rf"", ""spe"", ""vn"", ""ws"", ""csla""] });" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 28;
+                                        priority = 0.000000;
+                                        to="read_extenders";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "enter_setup_loop">*/
+                class enter_setup_loop
+                {
+                        name = "enter_setup_loop";
+                        itemno = 32;
+                        init = /*%FSM<STATEINIT""">*/"A3A_startupState = _waitState;" \n
+                         "publicVariable ""A3A_startupState"";" \n
+                         "" \n
+                         "[""A3A_startupState is """"%1"""""", A3A_startupState] call _log;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="main_game_setup";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_adminLoopPriority = 100;" \n
+                                         "" \n
+                                         """looping"" call _log;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Game_Setup_Monit";
+        finalStates[] =
+        {
+                "Done",
+                "End_mission",
+        };
+};
+/*%FSM</COMPILE>*/

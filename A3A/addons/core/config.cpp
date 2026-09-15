@@ -34,6 +34,7 @@ class CfgPatches {
     };
 };
 
+#include "CfgDebriefing.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgSounds.hpp" 
 // Base AI unit definitions
