@@ -56,7 +56,7 @@ private _fnc_validateArgsAndRun = {
 			private _args = createHashMapFromArray [["type", ""], ["side", ""], ["caller", "attack"], ["maxSpend", 500], ["target", false], ["position", getPosATL _module], ["reveal", 1], ["delay", 0]];
 			{
 				_x params ["_k", "_v"];
-				if !(_k in keys _args) then { continue };
+				if !(_k in _args) then { continue };
 				if (_v isEqualType "") then {
 					private _result = call compile _v;
 					if !(isNil "_result") then { _v = _result };
@@ -64,7 +64,7 @@ private _fnc_validateArgsAndRun = {
 				_args set [_k, _v];
 			} forEach (configProperties [_cfg >> "arguments"] apply {[configName _x, _x call BIS_fnc_getCfgData]});
 
-			private _supportTypes = keys ([A3A_supportTypesOcc, A3A_supportTypesInv] select ((_args get "side") isEqualTo Invaders));
+			private _supportTypes = [A3A_supportTypesOcc, A3A_supportTypesInv] select ((_args get "side") isEqualTo Invaders);
 			if (!((_args get "type") in _supportTypes)) exitWith {
 				private _message = format [localize "STR_A3U_Zeus_Misc_Dialog_NoSupportOfType", (_args get "type")];
 				[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;

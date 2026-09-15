@@ -36,7 +36,7 @@ if !assert(params[
     ["_position", nil, [objNull, []]],
     ["_markerName", nil, [""]]
 ]) exitWith { false };
-if (_position isEqualType objNull && { !assert(!isNull _position) }) exitWith { false };
+if (_position isEqualType objNull && { isNull _position }) exitWith { false };
 
 if !(MARKER_EXISTS(_markerName)) exitWith {
     Warning_1("No such marker: %1",str _markerName);
