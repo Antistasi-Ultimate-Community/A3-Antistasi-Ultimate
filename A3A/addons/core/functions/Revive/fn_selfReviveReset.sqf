@@ -36,4 +36,11 @@ if (!_instant && !isNil { player getVariable "A3A_selfReviveTimeout" }) then {
 };
 player setVariable ["A3A_selfReviveTimeout", nil];
 
+if !(isNil { player getVariable QGVAR(restoreAimCoef) }) exitWith {
+    private _coef = player getVariable QGVAR(restoreAimCoef);
+    player setVariable[QGVAR(restoreAimCoef), nil];
+    Debug_1("Restoring previous aim coefficient: %1",_coef);
+    player setCustomAimCoef _coef;
+};
+
 if (getCustomAimCoef player > 1) then { player setCustomAimCoef 1 };
