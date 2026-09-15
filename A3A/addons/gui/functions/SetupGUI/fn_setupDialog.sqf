@@ -45,7 +45,6 @@ private _fnc_getTimeDiffString = {
     format ["%1%2 %3%4", _diffTime#_nzi, _text#_nzi, _diffTime#(_nzi+1), _text#(_nzi+1)];
 };
 
-
 // Get display
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
 
@@ -175,7 +174,8 @@ switch (_mode) do
     {
         Debug("Server requested dialog close");
         A3A_setup_saveData = nil;
-        if (!isNull _display) then { closeDialog 0 };
+        // Close ALL dialogs, not just ours
+        while { dialog } do { closeDialog 0 };
     };
 
     default {

@@ -183,7 +183,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 };
 
 // Release the lockout flag before deleting the vehicle
-missionNamespace setVariable ["A3A_supplyMissionActive", false, true];
+missionNamespace setVariable ["A3A_supplyMissionActive", nil, true];
 
 deleteVehicle _truckX;
 private _emptybox = "Land_Pallet_F" createVehicle (getpos _truckX);
