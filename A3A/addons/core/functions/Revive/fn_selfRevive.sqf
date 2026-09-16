@@ -9,6 +9,9 @@
     Environment: Player-local
 */
 
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 if !(player getVariable ["incapacitated", false]) exitWith {};
 
 private _firstAidKits = ["FirstAidKit"] + (A3A_faction_reb get "firstAidKits");
