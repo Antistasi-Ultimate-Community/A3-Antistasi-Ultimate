@@ -16,7 +16,7 @@ Returns:
     Nothing
 
 Environment:
-    Client, Unscheduled
+    Client, Scheduled
 
 Author:
     UnseenKill/gor3Splatter
@@ -42,6 +42,8 @@ if (EGVAR(core,extendersLoadedInvalid) isEqualTo []) exitWith {
 };
 
 Info("There are invalid extenders loaded. Showing extenders warning dialog.");
+
+waitUntil { !isNull findDisplay 46 };
 
 [{ createDialog QGVAR(ExtendersWarningDialog) }] call CBA_fnc_execNextFrame;
 
