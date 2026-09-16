@@ -16,7 +16,7 @@ item11[] = {"allow_auto_start",2,250,233.424194,-2.978821,323.424194,47.021179,0
 item12[] = {"main_game_setup",2,250,79.817932,149.884918,169.817947,199.884918,0.000000,"main" \n "game" \n "setup loop"};
 item13[] = {"deny_auto_start",2,250,15.177124,-66.773254,105.177139,-16.773254,0.000000,"deny" \n "auto start"};
 item14[] = {"__1",8,218,111.508919,10.686783,135.470093,33.873993,0.000000,""};
-item15[] = {"find_admin_for_s",4,218,-66.750916,180.670105,23.249084,230.670105,95.000000,"find admin" \n "for setup"};
+item15[] = {"find_admin_for_s",4,4314,-66.750916,180.670105,23.249084,230.670105,95.000000,"find admin" \n "for setup"};
 item16[] = {"is_it_auto_start",4,218,125.553467,239.457916,215.553467,289.457916,2.000000,"is it" \n "auto start" \n "time?"};
 item17[] = {"show_setup_dialo",4,218,-67.742615,301.715027,22.257385,351.715027,85.000000,"show" \n "setup" \n "dialog"};
 item18[] = {"save_game_data_l",4,218,-67.246582,122.315308,22.753418,172.315308,100.000000,"save game" \n "data loaded"};
@@ -30,7 +30,7 @@ item25[] = {"get_auto_start_s",2,250,128.024780,-67.731781,218.024780,-17.731781
 item26[] = {"_",4,218,265.273621,-54.092453,290.227814,-31.401794,1.000000,""};
 item27[] = {"load_dlc_informa",2,250,76.254639,-291.205872,166.254639,-241.205872,0.000000,"load dlc" \n "information"};
 item28[] = {"_",8,218,106.543648,-229.138748,130.504822,-205.951401,0.000000,""};
-item29[] = {"show_extender_wa",4,4314,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
+item29[] = {"show_extender_wa",4,218,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
 item30[] = {"_",8,218,113.586563,105.220749,137.547729,128.407959,0.000000,""};
 item31[] = {"enter_setup_loop",2,250,79.952087,45.708740,169.952103,95.708740,0.000000,"enter" \n "setup" \n "loop"};
 item32[] = {"wait_for_background",4,218,-341.446411,123.182503,-251.446411,173.182495,0.000000,"wait for" \n "background" \n "init"};
@@ -82,7 +82,7 @@ link42[] = {32,21};
 link43[] = {33,20};
 link44[] = {34,33};
 globals[] = {0.000000,0,0,0,0,640,480,1,104,6316128,1,-616.729187,656.132202,701.405090,-502.635742,1979,1872,1};
-window[] = {2,-1,-1,-1,-1,2076,304,3368,304,3,2006};
+window[] = {2,-1,-1,-32000,-32000,2076,304,3368,304,3,2006};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -362,6 +362,8 @@ class FSM
                                          "            A3A_setupPlayer = _players select _adminIndex;" \n
                                          "            [""Player %1 is now admin, sending them the save data"", name A3A_setupPlayer] call _log;" \n
                                          "            A3A_startupState = ""adminsetup""; publicVariable ""A3A_startupState"";" \n
+                                         "" \n
+                                         "            A3A_setupPlayer setVariable[""A3A_core_confirmedExtenderWarnings"", nil, [2, owner A3A_setupPlayer]];" \n
                                          "        };" \n
                                          "" \n
                                          "        false;" \n
