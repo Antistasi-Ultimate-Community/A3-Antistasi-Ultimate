@@ -33,12 +33,12 @@ private _hasGVARS = waitUntil[{
 
 if !assert(!isNil "_hasGVARS") exitWith {
     Error_1("extender GVARs failed to present after %1 seconds; continuing w/ game setup.",WAIT_FOR_GVARS_TIMEOUT);
-    player setVariable[QEGVAR(core,seenExtenderWarnings), true, 2];
+    player setVariable[QEGVAR(core,confirmedExtenderWarnings), true, 2];
 };
 
 // Nothing to nag about
 if (EGVAR(core,extendersLoadedInvalid) isEqualTo []) exitWith {
-    player setVariable[QEGVAR(core,seenExtenderWarnings), true, 2];
+    player setVariable[QEGVAR(core,confirmedExtenderWarnings), true, 2];
 };
 
 Info("There are invalid extenders loaded. Showing extenders warning dialog.");
