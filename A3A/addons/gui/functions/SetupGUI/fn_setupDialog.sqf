@@ -66,11 +66,11 @@ switch (_mode) do
     {
         // Restart if it wasn't server-closed
         if (isNil "A3A_setup_saveData") exitWith {};
-        0 spawn {
+        [] spawn {
             sleep 4;
             Debug("Waiting until escape menu is closed");
-            waitUntil { sleep 1; isNull findDisplay 49 and !dialog };       // escape menu or user dialog
-            if (isNil "A3A_setup_saveData") exitWith {};                        // might have been server-closed during the sleep
+            waitUntil { !dialog && { isNull findDisplay 49 } };       // escape menu or user dialog
+            if (isNil "A3A_setup_saveData") exitWith {};              // might have been server-closed during the sleep
             Debug("Restarting setup dialog");
             createDialog "A3A_setupDialog";
         };
