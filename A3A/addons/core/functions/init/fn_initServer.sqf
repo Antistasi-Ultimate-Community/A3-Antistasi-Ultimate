@@ -46,7 +46,7 @@ if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) th
 [] call A3A_fnc_initExtenderDetection;
 
 // Start up the monitor to handle the setup UI
-[] spawn A3A_fnc_setupMonitor;
+execFSM QPATHTOF(FSMs\initSetupMonitor.fsm);
 
 // ************************ Background init ***********************************************
 

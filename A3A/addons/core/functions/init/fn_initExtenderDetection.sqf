@@ -45,7 +45,7 @@ private _extenders = QUOTE(
     private _addon = toLowerANSI configName _x;
     _ignore findIf { _addon find _x isEqualTo 0 } isEqualTo -1;
 } apply {
-    [_x] call A3A_fnc_validateExtenderCompat;
+    [_x] call FUNC(validateExtenderCompat);
 };
 
 GVAR(extendersLoaded) = _extenders apply {
