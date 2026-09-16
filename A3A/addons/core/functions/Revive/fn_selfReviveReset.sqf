@@ -10,6 +10,9 @@
     Environment: Player-local
 */
 
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 params [["_instant", true]];
 
 if (!A3A_selfReviveMethods) exitWith {};
