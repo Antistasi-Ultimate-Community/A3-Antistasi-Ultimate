@@ -398,7 +398,6 @@ class CfgFunctions
             class initServer {};
             class initCities {};
             class initClient {};
-            class setupMonitor {};
             class startGame {};
 
             //Other initialisation functions (generally called by the above)

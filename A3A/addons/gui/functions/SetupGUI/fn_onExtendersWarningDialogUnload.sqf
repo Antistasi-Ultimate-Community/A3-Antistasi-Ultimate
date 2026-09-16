@@ -42,10 +42,8 @@ if (_exitCode isEqualTo MB_BUTTON_CANCEL) exitWith {
 
 // Dialog terminated w/ checkbox acknowledged. Run setup dialog.
 [{
-    // Tell the server we've seen the warnings
-    missionNamespace setVariable[QEGVAR(core,showExtendersWarningDialog), nil, 2];
     // Tell the server this player does not need to see the extender warnings anymore
-    player setVariable[QEGVAR(core,seenExtenderWarnings), true, 2];
+    player setVariable[QEGVAR(core,confirmedExtenderWarnings), true, 2];
 }] call CBA_fnc_execNextFrame;
 
 nil;
