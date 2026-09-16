@@ -2,7 +2,7 @@
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Game_Setup_Monit",0,250,73.305893,-394.742371,163.305908,-344.742340,0.000000,"Game" \n "Setup" \n "Monitor"};
-item1[] = {"Done",1,250,-211.734009,413.544769,-121.734009,463.544769,0.000000,"Done"};
+item1[] = {"Done",1,250,-202.729431,356.944550,-112.729431,406.944550,0.000000,"Done"};
 item2[] = {"_",4,218,19.650330,-380.581116,44.604523,-357.890442,1.000000,""};
 item3[] = {"bad_init",2,250,-114.910103,-394.484039,-24.910065,-344.484039,0.000000,"bad init"};
 item4[] = {"_",8,218,-82.635376,-326.955475,-58.674194,-303.768341,0.000000,""};
@@ -12,28 +12,31 @@ item7[] = {"read_extenders",2,250,74.268959,-186.933304,164.268982,-136.933289,0
 item8[] = {"__2",8,218,160.665802,-123.873703,184.626984,-100.686478,0.000000,""};
 item9[] = {"_",4,218,19.650360,-331.424286,44.604553,-308.733704,2.000000,""};
 item10[] = {"__1",4,218,47.952637,-118.411758,72.906830,-95.721100,1.000000,""};
-item11[] = {"allow_auto_start",2,250,239.113586,-39.960510,329.113586,10.039490,0.000000,"allow" \n "auto start," \n "get save game"};
+item11[] = {"allow_auto_start",2,250,233.424194,-2.978821,323.424194,47.021179,0.000000,"allow" \n "auto start," \n "get save game"};
 item12[] = {"main_game_setup",2,250,79.817932,149.884918,169.817947,199.884918,0.000000,"main" \n "game" \n "setup loop"};
 item13[] = {"deny_auto_start",2,250,15.177124,-66.773254,105.177139,-16.773254,0.000000,"deny" \n "auto start"};
 item14[] = {"__1",8,218,111.508919,10.686783,135.470093,33.873993,0.000000,""};
-item15[] = {"find_admin_for_s",4,4314,-66.750916,180.670105,23.249084,230.670105,95.000000,"find admin" \n "for setup"};
+item15[] = {"find_admin_for_s",4,218,-66.750916,180.670105,23.249084,230.670105,95.000000,"find admin" \n "for setup"};
 item16[] = {"is_it_auto_start",4,218,125.553467,239.457916,215.553467,289.457916,2.000000,"is it" \n "auto start" \n "time?"};
 item17[] = {"show_setup_dialo",4,218,-67.742615,301.715027,22.257385,351.715027,85.000000,"show" \n "setup" \n "dialog"};
 item18[] = {"save_game_data_l",4,218,-67.246582,122.315308,22.753418,172.315308,100.000000,"save game" \n "data loaded"};
 item19[] = {"delay__then_reenter",2,250,242.325500,91.824921,332.325500,141.824921,0.000000,"delay, then" \n "reenter" \n "setup loop"};
 item20[] = {"_",8,218,275.642181,163.315079,299.603363,186.502289,0.000000,""};
-item21[] = {"start_game",2,250,-206.272583,125.555107,-116.272568,175.555115,0.000000,"start" \n "game"};
+item21[] = {"start_game",2,250,-203.056641,123.625542,-113.056633,173.625549,0.000000,"start" \n "game"};
 item22[] = {"delay",4,218,350.568542,90.546387,440.568542,140.546387,1.000000,"delay"};
-item23[] = {"_",8,218,-176.976685,360.415741,-153.015503,383.602966,0.000000,""};
+item23[] = {"_",8,218,-169.901642,262.651703,-145.940460,285.838928,0.000000,""};
 item24[] = {"prepare_auto_sta",2,250,242.087646,238.975159,332.087646,288.975159,0.000000,"prepare" \n "auto start"};
-item25[] = {"get_auto_start_s",2,250,241.103577,-135.294556,331.103577,-85.294556,0.000000,"get" \n "auto start" \n "setting"};
-item26[] = {"_",4,218,272.385498,-74.716873,297.339691,-52.026215,1.000000,""};
+item25[] = {"get_auto_start_s",2,250,128.024780,-67.731781,218.024780,-17.731781,0.000000,"get" \n "auto start" \n "setting"};
+item26[] = {"_",4,218,265.273621,-54.092453,290.227814,-31.401794,1.000000,""};
 item27[] = {"load_dlc_informa",2,250,76.254639,-291.205872,166.254639,-241.205872,0.000000,"load dlc" \n "information"};
 item28[] = {"_",8,218,106.543648,-229.138748,130.504822,-205.951401,0.000000,""};
 item29[] = {"",7,210,29.056215,-211.291809,37.056213,-203.291809,0.000000,""};
 item30[] = {"show_extender_wa",4,218,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
 item31[] = {"_",8,218,113.586563,105.220749,137.547729,128.407959,0.000000,""};
 item32[] = {"enter_setup_loop",2,250,79.952087,45.708740,169.952103,95.708740,0.000000,"enter" \n "setup" \n "loop"};
+item33[] = {"wait_for_background",4,218,-341.446411,123.182503,-251.446411,173.182495,0.000000,"wait for" \n "background" \n "init"};
+item34[] = {"close_setup_dial",2,250,349.499451,149.572571,439.499451,199.572571,0.000000,"close" \n "setup" \n "dialog"};
+item35[] = {"_",4,218,382.333191,253.349548,407.287384,276.040222,1.000000,""};
 link0[] = {0,2};
 link1[] = {0,6};
 link2[] = {2,3};
@@ -63,20 +66,25 @@ link25[] = {19,22};
 link26[] = {19,31};
 link27[] = {20,19};
 link28[] = {21,23};
-link29[] = {22,19};
-link30[] = {23,1};
-link31[] = {24,20};
-link32[] = {25,14};
-link33[] = {25,26};
-link34[] = {26,11};
-link35[] = {27,28};
-link36[] = {28,7};
-link37[] = {29,9};
-link38[] = {30,12};
-link39[] = {31,12};
-link40[] = {32,31};
-globals[] = {0.000000,0,0,0,0,640,480,1,101,6316128,1,-684.630493,490.291870,654.985413,-317.364075,2262,1872,1};
-window[] = {2,-1,-1,-1,-1,2000,228,3292,228,3,2289};
+link29[] = {21,33};
+link30[] = {22,19};
+link31[] = {23,1};
+link32[] = {24,20};
+link33[] = {24,35};
+link34[] = {25,14};
+link35[] = {25,26};
+link36[] = {26,11};
+link37[] = {27,28};
+link38[] = {28,7};
+link39[] = {29,9};
+link40[] = {30,12};
+link41[] = {31,12};
+link42[] = {32,31};
+link43[] = {33,21};
+link44[] = {34,20};
+link45[] = {35,34};
+globals[] = {0.000000,0,0,0,0,640,480,1,104,6316128,1,-616.729187,656.132202,701.405090,-502.635742,1979,1872,1};
+window[] = {2,-1,-1,-1,-1,2076,304,3368,304,3,2006};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -88,7 +96,7 @@ class FSM
                 {
                         name = "Game_Setup_Monit";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"private[""_addonVics"",""_adminLoopPriority"",""_autoLoadTime"",""_factions"",""_loadedDLC"",""_loadedPatches"",""_loopDelay"",""_waitState""];" \n
+                        init = /*%FSM<STATEINIT""">*/"private[""_addonVics"",""_adminLoopPriority"",""_autoLoadData"",""_autoLoadTime"",""_factions"",""_loadedDLC"",""_loadedPatches"",""_loopDelay"",""_platform"",""_waitState""];" \n
                          "private _gsmSetupOkay = false;" \n
                          "private _defineFunc = {" \n
                          "    if !assert(params[" \n
@@ -370,6 +378,7 @@ class FSM
                                          "" \n
                                          "    [""Player %1 is no longer admin, disabling their setup dialog"", name A3A_setupPlayer] call _log;" \n
                                          "    A3A_startupState = _waitState; publicVariable ""A3A_startupState"";" \n
+                                         "    A3A_setupPlayer setVariable[""A3A_core_hasSetupDialog"", nil];" \n
                                          "" \n
                                          "    [""serverClose""] remoteExec[""A3A_fnc_setupDialog"", A3A_setupPlayer];" \n
                                          "    A3A_setupPlayer = objNull;" \n
@@ -377,8 +386,7 @@ class FSM
                                          "    true;" \n
                                          "};" \n
                                          ""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"""[act] find-admin"" call _log;" \n
-                                         "_adminLoopPriority = 95;" \n
+                                        action=/*%FSM<ACTION""">*/"_adminLoopPriority = 95;" \n
                                          ""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -390,16 +398,30 @@ class FSM
                                         to="main_game_setup";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"call {" \n
-                                         "    ""[cond] show-extender"" call _log;" \n
-                                         "" \n
                                          "    if (_adminLoopPriority <= 90) exitWith { false };" \n
                                          "    if (isNull A3A_setupPlayer) exitWith { false };" \n
+                                         "    if (A3A_core_extendersLoadedInvalid isEqualTo []) exitWith { false };" \n
                                          "" \n
-                                         "    false;" \n
+                                         "    // GVAR not set on player; set it and send GVARs + dialog exec request" \n
+                                         "    if (isNil {A3A_setupPlayer getVariable ""A3A_core_confirmedExtenderWarnings""}) exitWith {" \n
+                                         "        [""Opening extender warning dialog for """"%1"""""", name A3A_setupPlayer] call _log;" \n
+                                         "" \n
+                                         "        A3A_setupPlayer setVariable[""A3A_core_confirmedExtenderWarnings"", false, [2, owner A3A_setupPlayer]];" \n
+                                         "        missionNamespace setVariable[""A3A_core_extendersLoaded"", A3A_core_extendersLoaded, owner A3A_setupPlayer];" \n
+                                         "        missionNamespace setVariable[""A3A_core_extendersLoadedInvalid"", A3A_core_extendersLoadedInvalid, owner A3A_setupPlayer];" \n
+                                         "" \n
+                                         "        [{ [] remoteExec[A3A_fnc_setupCheckExtenders, owner A3A_setupPlayer] }] call CBA_fnc_execNextFrame;" \n
+                                         "" \n
+                                         "        false;" \n
+                                         "    };" \n
+                                         "" \n
+                                         "    if (A3A_setupPlayer getVariable ""A3A_core_confirmedExtenderWarnings"") exitWith { false };" \n
+                                         "" \n
+                                         "    true;" \n
                                          "};" \n
                                          ""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"""[act] show-extender"" call _log;" \n
-                                         "_adminLoopPriority = 90;" \n
+                                        action=/*%FSM<ACTION""">*/"// SIC! Need to skip prio 85 here if condition returns true" \n
+                                         "_adminLoopPriority = 80;" \n
                                          ""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -411,16 +433,22 @@ class FSM
                                         to="main_game_setup";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"call {" \n
-                                         "    ""[cond] show-setup-dlg"" call _log;" \n
-                                         "" \n
                                          "    if (_adminLoopPriority <= 85) exitWith { false };" \n
                                          "    if (isNull A3A_setupPlayer) exitWith { false };" \n
+                                         " " \n
+                                         "    if (isNil { A3A_setupPlayer getVariable ""A3A_core_hasSetupDialog"" }) exitWith { true };" \n
                                          "" \n
                                          "    false;" \n
                                          "};" \n
                                          ""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/"""[act] show-setup-dlg"" call _log;" \n
                                          "_adminLoopPriority = 85;" \n
+                                         "" \n
+                                         "A3A_setupPlayer setVariable[""A3A_core_hasSetupDialog"", true];" \n
+                                         "" \n
+                                         "private _saveData = call A3A_fnc_collectSaveData;" \n
+                                         "" \n
+                                         "[""sendData"", [_saveData, _loadedPatches, _loadedDLC, _platform]] remoteExec[""A3A_fnc_setupDialog"", owner A3A_setupPlayer];" \n
                                          ""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -526,6 +554,18 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "wait_for_background">*/
+                                class wait_for_background
+                                {
+                                        itemno = 33;
+                                        priority = 0.000000;
+                                        to="start_game";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNil ""A3A_backgroundInitDone"";" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "_">*/
                                 class _
                                 {
@@ -546,12 +586,27 @@ class FSM
                         name = "prepare_auto_sta";
                         itemno = 24;
                         init = /*%FSM<STATEINIT""">*/"""auto start timer expired; loading selected save"" call _log;" \n
+                         "" \n
+                         "[_autoLoadData] call A3A_fnc_startGame;" \n
+                         "_autoLoadTime = -1;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
                                 /*%FSM<LINK "_">*/
                                 class _
+                                {
+                                        itemno = 35;
+                                        priority = 1.000000;
+                                        to="close_setup_dial";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isNull A3A_setupPlayer)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__1">*/
+                                class __1
                                 {
                                         itemno = 20;
                                         priority = 0.000000;
@@ -624,6 +679,8 @@ class FSM
                          "// Arma bug: Need to hardcode CDLC because arma3.cfg mod loading method doesn't register CDLC as ""official""" \n
                          "private _loadedDLC = getLoadedModsInfo select { (_x#2) and !(_x#1 in [""A3"",""curator"",""argo"",""tacops""]) };" \n
                          "_loadedDLC append (getLoadedModsInfo select { tolower (_x#1) in [""ef"", ""gm"", ""rf"", ""spe"", ""vn"", ""ws"", ""csla""] });" \n
+                         "" \n
+                         "_platform = productVersion select 6;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -666,6 +723,34 @@ class FSM
                                         action=/*%FSM<ACTION""">*/"_adminLoopPriority = 100;" \n
                                          "" \n
                                          """looping"" call _log;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "close_setup_dial">*/
+                class close_setup_dial
+                {
+                        name = "close_setup_dial";
+                        itemno = 34;
+                        init = /*%FSM<STATEINIT""">*/"[""closing setup dialog for player """"%1"""""", name A3A_setupPlayer] call _log;" \n
+                         "" \n
+                         "missionNamespace setVariable[""A3A_setup_saveData"", nil, owner A3A_setupPlayer];" \n
+                         "[{ [""serverClose""] remoteExec [""A3A_fnc_setupDialog"", A3A_setupPlayer] }] call CBA_fnc_execNextFrame;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 20;
+                                        priority = 0.000000;
+                                        to="delay__then_reenter";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_loopDelay = diag_tickTime + 1;" \n
                                          ""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
