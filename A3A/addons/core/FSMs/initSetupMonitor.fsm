@@ -10,7 +10,7 @@ item5[] = {"End_mission",1,250,-120.371948,-288.226044,-30.371948,-238.226044,0.
 item6[] = {"__1",8,218,106.047127,-323.479889,130.008301,-300.292664,0.000000,""};
 item7[] = {"read_extenders",2,250,74.268959,-186.933304,164.268982,-136.933289,0.000000,"read" \n "extenders"};
 item8[] = {"__2",8,218,160.665802,-123.873703,184.626984,-100.686478,0.000000,""};
-item9[] = {"_",4,218,19.650360,-331.424286,44.604553,-308.733704,2.000000,""};
+item9[] = {"_",4,4314,19.650360,-262.603577,44.604553,-239.913025,2.000000,""};
 item10[] = {"__1",4,218,47.952637,-118.411758,72.906830,-95.721100,1.000000,""};
 item11[] = {"allow_auto_start",2,250,233.424194,-2.978821,323.424194,47.021179,0.000000,"allow" \n "auto start," \n "get save game"};
 item12[] = {"main_game_setup",2,250,79.817932,149.884918,169.817947,199.884918,0.000000,"main" \n "game" \n "setup loop"};
@@ -30,13 +30,12 @@ item25[] = {"get_auto_start_s",2,250,128.024780,-67.731781,218.024780,-17.731781
 item26[] = {"_",4,218,265.273621,-54.092453,290.227814,-31.401794,1.000000,""};
 item27[] = {"load_dlc_informa",2,250,76.254639,-291.205872,166.254639,-241.205872,0.000000,"load dlc" \n "information"};
 item28[] = {"_",8,218,106.543648,-229.138748,130.504822,-205.951401,0.000000,""};
-item29[] = {"",7,210,29.056215,-211.291809,37.056213,-203.291809,0.000000,""};
-item30[] = {"show_extender_wa",4,218,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
-item31[] = {"_",8,218,113.586563,105.220749,137.547729,128.407959,0.000000,""};
-item32[] = {"enter_setup_loop",2,250,79.952087,45.708740,169.952103,95.708740,0.000000,"enter" \n "setup" \n "loop"};
-item33[] = {"wait_for_background",4,218,-341.446411,123.182503,-251.446411,173.182495,0.000000,"wait for" \n "background" \n "init"};
-item34[] = {"close_setup_dial",2,250,349.499451,149.572571,439.499451,199.572571,0.000000,"close" \n "setup" \n "dialog"};
-item35[] = {"_",4,218,382.333191,253.349548,407.287384,276.040222,1.000000,""};
+item29[] = {"show_extender_wa",4,218,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
+item30[] = {"_",8,218,113.586563,105.220749,137.547729,128.407959,0.000000,""};
+item31[] = {"enter_setup_loop",2,250,79.952087,45.708740,169.952103,95.708740,0.000000,"enter" \n "setup" \n "loop"};
+item32[] = {"wait_for_background",4,218,-341.446411,123.182503,-251.446411,173.182495,0.000000,"wait for" \n "background" \n "init"};
+item33[] = {"close_setup_dial",2,250,349.499451,149.572571,439.499451,199.572571,0.000000,"close" \n "setup" \n "dialog"};
+item34[] = {"_",4,218,382.333191,253.349548,407.287384,276.040222,1.000000,""};
 link0[] = {0,2};
 link1[] = {0,6};
 link2[] = {2,3};
@@ -44,8 +43,8 @@ link3[] = {3,4};
 link4[] = {4,5};
 link5[] = {6,27};
 link6[] = {7,8};
-link7[] = {7,10};
-link8[] = {7,29};
+link7[] = {7,9};
+link8[] = {7,10};
 link9[] = {8,25};
 link10[] = {9,3};
 link11[] = {10,13};
@@ -55,34 +54,33 @@ link14[] = {12,16};
 link15[] = {12,17};
 link16[] = {12,18};
 link17[] = {12,20};
-link18[] = {12,30};
+link18[] = {12,29};
 link19[] = {13,14};
-link20[] = {14,32};
+link20[] = {14,31};
 link21[] = {15,12};
 link22[] = {16,24};
 link23[] = {17,12};
 link24[] = {18,21};
 link25[] = {19,22};
-link26[] = {19,31};
+link26[] = {19,30};
 link27[] = {20,19};
 link28[] = {21,23};
-link29[] = {21,33};
+link29[] = {21,32};
 link30[] = {22,19};
 link31[] = {23,1};
 link32[] = {24,20};
-link33[] = {24,35};
+link33[] = {24,34};
 link34[] = {25,14};
 link35[] = {25,26};
 link36[] = {26,11};
 link37[] = {27,28};
 link38[] = {28,7};
-link39[] = {29,9};
+link39[] = {29,12};
 link40[] = {30,12};
-link41[] = {31,12};
-link42[] = {32,31};
-link43[] = {33,21};
-link44[] = {34,20};
-link45[] = {35,34};
+link41[] = {31,30};
+link42[] = {32,21};
+link43[] = {33,20};
+link44[] = {34,33};
 globals[] = {0.000000,0,0,0,0,640,480,1,104,6316128,1,-616.729187,656.132202,701.405090,-502.635742,1979,1872,1};
 window[] = {2,-1,-1,-1,-1,2076,304,3368,304,3,2006};
 *//*%FSM</HEAD>*/
@@ -240,14 +238,10 @@ class FSM
                                         priority = 2.000000;
                                         to="bad_init";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((isNil ""A3A_core_extendersLoaded"") || {isNil ""A3A_core_extendersLoadedInvalid""}) &&" \n
-                                         "{" \n
-                                         "    ""failed to find gvars"" call _badlog;" \n
-                                         "    true;" \n
-                                         "};" \n
-                                         "" \n
+                                        condition=/*%FSM<CONDITION""">*/"(isNil ""A3A_core_extendersLoaded"") || {isNil ""A3A_core_extendersLoadedInvalid""};" \n
                                          ""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
+                                         ""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                                 /*%FSM<LINK "__1">*/
@@ -259,8 +253,7 @@ class FSM
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"A3A_core_extendersLoadedInvalid isNotEqualTo []" \n
                                          ""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
-                                         ""/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                                 /*%FSM<LINK "__2">*/
@@ -393,7 +386,7 @@ class FSM
                                 /*%FSM<LINK "show_extender_wa">*/
                                 class show_extender_wa
                                 {
-                                        itemno = 30;
+                                        itemno = 29;
                                         priority = 90.000000;
                                         to="main_game_setup";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -531,7 +524,7 @@ class FSM
                                 /*%FSM<LINK "_">*/
                                 class _
                                 {
-                                        itemno = 31;
+                                        itemno = 30;
                                         priority = 0.000000;
                                         to="main_game_setup";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -557,7 +550,7 @@ class FSM
                                 /*%FSM<LINK "wait_for_background">*/
                                 class wait_for_background
                                 {
-                                        itemno = 33;
+                                        itemno = 32;
                                         priority = 0.000000;
                                         to="start_game";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -596,13 +589,12 @@ class FSM
                                 /*%FSM<LINK "_">*/
                                 class _
                                 {
-                                        itemno = 35;
+                                        itemno = 34;
                                         priority = 1.000000;
                                         to="close_setup_dial";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"!(isNull A3A_setupPlayer)"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
-                                         ""/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                                 /*%FSM<LINK "__1">*/
@@ -641,8 +633,7 @@ class FSM
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_autoLoadTime > 0;" \n
                                          ""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"""failed to find gvars"" call _badlog;" \n
-                                         ""/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                                 /*%FSM<LINK "__1">*/
@@ -703,7 +694,7 @@ class FSM
                 class enter_setup_loop
                 {
                         name = "enter_setup_loop";
-                        itemno = 32;
+                        itemno = 31;
                         init = /*%FSM<STATEINIT""">*/"A3A_startupState = _waitState;" \n
                          "publicVariable ""A3A_startupState"";" \n
                          "" \n
@@ -715,7 +706,7 @@ class FSM
                                 /*%FSM<LINK "_">*/
                                 class _
                                 {
-                                        itemno = 31;
+                                        itemno = 30;
                                         priority = 0.000000;
                                         to="main_game_setup";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -733,7 +724,7 @@ class FSM
                 class close_setup_dial
                 {
                         name = "close_setup_dial";
-                        itemno = 34;
+                        itemno = 33;
                         init = /*%FSM<STATEINIT""">*/"[""closing setup dialog for player """"%1"""""", name A3A_setupPlayer] call _log;" \n
                          "" \n
                          "missionNamespace setVariable[""A3A_setup_saveData"", nil, owner A3A_setupPlayer];" \n
