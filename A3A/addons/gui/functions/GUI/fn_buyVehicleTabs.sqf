@@ -334,7 +334,8 @@ if  (_tab in ["other"]) then
             ["_price", 0],
             ["_buttonText", ""],
             ["_iconType", ""],
-            ["_flags", []]
+            ["_flags", []],
+            ["_tooltip", ""]
         ];
         private _configClass = configFile >> "CfgVehicles" >> _className;
         if (!isClass _configClass) then { continue };
@@ -367,8 +368,6 @@ if  (_tab in ["other"]) then
         _previewPicture ctrlSetPosition [0, 0, 44 * GRID_W, 25 * GRID_H];
         _previewPicture ctrlSetText _editorPreview;
         _previewPicture ctrlCommit 0;
-
-
 
         private _button = _display ctrlCreate ["A3A_ShortcutButton", -1, _itemControlsGroup];
         _button ctrlSetPosition [0, 25 * GRID_H, 44 * GRID_W, 12 * GRID_H];
@@ -463,31 +462,44 @@ if  (_tab in ["other"]) then
             case "refuel": { A3A_Icon_Refuel }; 
             case "repair": { A3A_Icon_Repair };
             case "rearm": { A3A_Icon_Rearm };
+            case "build": { A3A_Icon_Build };
             default { "" };
         };
         _itemPic ctrlSetText _iconPath;
 
+        if (_tooltip != "") then {
+            _itemPic ctrlSetTooltip _tooltip;
+        }; //doesn't seem to work
+
+        private _itemPicTooltip = "";
         if (_className in [(A3A_faction_reb get 'vehicleFuelTank')#0, (A3A_faction_reb get 'vehicleFuelDrum')#0]) then {
             private _refuelCount = if (A3A_hasACE) then {getNumber (_configClass >> "ace_refuel_fuelCargo")} else {getNumber (_configClass >> "transportFuel")};
-            _itemPic ctrlSetTooltip format [localize "STR_antistasi_dialogs_buy_vehicle_refuel_tooltip", _displayName, _refuelCount];
+            _itemPicTooltip = format [localize "STR_antistasi_dialogs_buy_vehicle_refuel_tooltip", _displayName, _refuelCount];
         };
         if (_className in [(A3A_faction_reb get 'vehicleMedicalBox')#0, (A3A_faction_reb get 'vehicleHealthStation')#0]) then {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_med_tooltip";
+            _itemPicTooltip = localize "STR_antistasi_dialogs_buy_vehicle_med_tooltip";
         };
         if (_className isEqualTo (FactionGet(reb,"vehicleAmmoStation")#0)) then {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_ammo_tooltip";
+            _itemPicTooltip = localize "STR_antistasi_dialogs_buy_vehicle_ammo_tooltip";
         };
         if (_className isEqualTo (FactionGet(reb,"vehicleRepairStation")#0)) then {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_repair_tooltip";
+            _itemPicTooltip = localize "STR_antistasi_dialogs_buy_vehicle_repair_tooltip";
         };
         if (_className isEqualTo (A3A_faction_reb get 'lootCrate')) then
         {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_loot_tooltip";
+            _itemPicTooltip = localize "STR_antistasi_dialogs_buy_vehicle_loot_tooltip";
         };
         if (_className isEqualTo (A3A_faction_reb get 'vehicleLightSource')) then
         {
-            _itemPic ctrlSetTooltip localize "STR_antistasi_dialogs_buy_vehicle_light_tooltip";
+            _itemPicTooltip = localize "STR_antistasi_dialogs_buy_vehicle_light_tooltip";
         };
+        if (_className isEqualTo "Box_NATO_Support_F") then
+        {
+            _itemPicTooltip = localize "STR_antistasi_dialogs_buy_vehicle_revivekitbox_tooltip";
+        };
+
+        _itemPicTooltip = if (_itemPicTooltip isEqualTo "") then {[(configFile >> QUOTE(PREFIX) >> "UtilityItems" >> _classname), "tooltip", "N/A"] call BIS_fnc_returnConfigEntry} else {_itemPicTooltip};
+        _itemPic ctrlSetTooltip _itemPicTooltip;
         _itemPic ctrlCommit 0;
 
         // Show item
