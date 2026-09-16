@@ -10,7 +10,7 @@ item5[] = {"End_mission",1,250,-120.371948,-288.226044,-30.371948,-238.226044,0.
 item6[] = {"__1",8,218,106.047127,-323.479889,130.008301,-300.292664,0.000000,""};
 item7[] = {"read_extenders",2,250,74.268959,-186.933304,164.268982,-136.933289,0.000000,"read" \n "extenders"};
 item8[] = {"__2",8,218,160.665802,-123.873703,184.626984,-100.686478,0.000000,""};
-item9[] = {"_",4,4314,19.650360,-262.603577,44.604553,-239.913025,2.000000,""};
+item9[] = {"_",4,218,19.650360,-262.603577,44.604553,-239.913025,2.000000,""};
 item10[] = {"__1",4,218,47.952637,-118.411758,72.906830,-95.721100,1.000000,""};
 item11[] = {"allow_auto_start",2,250,233.424194,-2.978821,323.424194,47.021179,0.000000,"allow" \n "auto start," \n "get save game"};
 item12[] = {"main_game_setup",2,250,79.817932,149.884918,169.817947,199.884918,0.000000,"main" \n "game" \n "setup loop"};
@@ -30,7 +30,7 @@ item25[] = {"get_auto_start_s",2,250,128.024780,-67.731781,218.024780,-17.731781
 item26[] = {"_",4,218,265.273621,-54.092453,290.227814,-31.401794,1.000000,""};
 item27[] = {"load_dlc_informa",2,250,76.254639,-291.205872,166.254639,-241.205872,0.000000,"load dlc" \n "information"};
 item28[] = {"_",8,218,106.543648,-229.138748,130.504822,-205.951401,0.000000,""};
-item29[] = {"show_extender_wa",4,218,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
+item29[] = {"show_extender_wa",4,4314,-67.742554,241.982056,22.257446,291.982056,90.000000,"show" \n "extender" \n "warning"};
 item30[] = {"_",8,218,113.586563,105.220749,137.547729,128.407959,0.000000,""};
 item31[] = {"enter_setup_loop",2,250,79.952087,45.708740,169.952103,95.708740,0.000000,"enter" \n "setup" \n "loop"};
 item32[] = {"wait_for_background",4,218,-341.446411,123.182503,-251.446411,173.182495,0.000000,"wait for" \n "background" \n "init"};
@@ -403,9 +403,9 @@ class FSM
                                          "        missionNamespace setVariable[""A3A_core_extendersLoaded"", A3A_core_extendersLoaded, owner A3A_setupPlayer];" \n
                                          "        missionNamespace setVariable[""A3A_core_extendersLoadedInvalid"", A3A_core_extendersLoadedInvalid, owner A3A_setupPlayer];" \n
                                          "" \n
-                                         "        [{ [] remoteExec[A3A_fnc_setupCheckExtenders, owner A3A_setupPlayer] }] call CBA_fnc_execNextFrame;" \n
+                                         "        [{ [] remoteExec[""A3A_fnc_setupCheckExtenders"", owner A3A_setupPlayer] }] call CBA_fnc_execNextFrame;" \n
                                          "" \n
-                                         "        false;" \n
+                                         "        true;" \n
                                          "    };" \n
                                          "" \n
                                          "    if (A3A_setupPlayer getVariable ""A3A_core_confirmedExtenderWarnings"") exitWith { false };" \n
