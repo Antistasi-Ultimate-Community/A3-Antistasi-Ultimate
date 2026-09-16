@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /*
     A3A_fnc_selfReviveReset
     Remove any self-revive after-effects and clear the timeout
