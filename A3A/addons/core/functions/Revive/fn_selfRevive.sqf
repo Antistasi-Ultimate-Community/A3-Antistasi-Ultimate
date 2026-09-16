@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /*
     A3A_fnc_selfRevive
     Attempt to self-revive the local player (needs FAK, 5min timeout) 
