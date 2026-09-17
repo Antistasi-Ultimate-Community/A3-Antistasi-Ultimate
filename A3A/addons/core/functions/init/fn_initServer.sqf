@@ -40,7 +40,6 @@ if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) th
 // Shouldn't be anything with dependencies in here
 [] call A3A_fnc_initVarCommon;
 [] call A3A_fnc_initZones;					// needed here because new-game setup needs to know where the markers are
-[] call A3A_fnc_initExtenderDetection;
 
 // Start up the monitor to handle the setup UI
 execFSM QPATHTOF(FSMs\initSetupMonitor.fsm);
