@@ -133,6 +133,8 @@ class CfgFunctions
             class createBreachChargeText {};
             class createPetros {};
             class deleteControls {};
+            class despawnQueueEntity {};
+            class despawnQueueProcessor {};
             class destroyCity {};
             class distance {};
             class distanceUnits {};
@@ -147,6 +149,7 @@ class CfgFunctions
             class garrisonInfo {};
             class getAggroLevelString {};
             class getRecentDamage {};
+            class getSideRadioTowerInfluence {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
@@ -173,7 +176,7 @@ class CfgFunctions
             class petrosDeathMonitor {};
             class placementSelection {};
             class playableUnits {};
-            class getSideRadioTowerInfluence {};
+            class preparePostMortem {};
             class rebuildAssets {};
             class rebuildEconomicAssets {};
             class rebuildRadioTower {};
@@ -286,7 +289,6 @@ class CfgFunctions
             class createZoneAmmoBox {};
             class createZoneFlag {};
             class crewTypeForVehicle {};
-            class cycleSpawn {};
             class FIAinitBases {};
             class findSpawnPosition {};
             class freeSpawnPositions {};
@@ -308,7 +310,6 @@ class CfgFunctions
             class spawnGroup {};
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
-            class spawnVehiclePrecise {};
             class townBattle {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
@@ -397,7 +398,6 @@ class CfgFunctions
             class initServer {};
             class initCities {};
             class initClient {};
-            class setupMonitor {};
             class startGame {};
 
             //Other initialisation functions (generally called by the above)
@@ -410,6 +410,7 @@ class CfgFunctions
             class initACE {};
             class initACEUnconsciousHandler {};
             class initBases {};
+            class initExtenderDetection {};
             class initUtilityItems {};
             class initGarrisons {};
             class initPreJIP { preInit = 1; };
@@ -428,6 +429,7 @@ class CfgFunctions
             class prepareMarkerArrays {};
             class resourcecheck {};
             class tags {};
+            class validateExtenderCompat {};
         };
 
         class Intel {
@@ -838,6 +840,7 @@ class CfgFunctions
             class getAdmin {};
             class isEmplacementMarker {};
             class isEngineer {};
+            class isSiteDestroyed {};
             class isTeardownEnabled {};
             class isWithinMarkerArea {};
             class isWithinNearestFriendlyMarker {};

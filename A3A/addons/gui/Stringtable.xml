@@ -4374,6 +4374,80 @@
                 <Turkish>Dosya</Turkish>
             </Key>
         </Container>
+        <Container name="extenders_warning_dialog">
+            <Key ID="STR_antistasi_extenders_warning_dialog_StaticTitle">
+                <Original>ANTISTASI ULTIMATE SETUP - EXTENDERS COMPATIBILITY NOTICE</Original>
+                <German>ANTISTASI ULTIMATE SETUP - KOMPATIBILITÄTSHINWEIS ZU ERWEITERUNGEN</German>
+                <Russian>ANTISTASI ULTIMATE SETUP - УВЕДОМЛЕНИЕ О СОВМЕСТИМОСТИ РАСШИРЕНИЙ</Russian>
+                <Chinesesimp>ANTISTASI ULTIMATE SETUP - 扩展兼容性通知</Chinesesimp>
+                <Korean>ANTISTASI ULTIMATE SETUP - 확장 호환성 알림</Korean>
+                <French>ANTISTASI ULTIMATE SETUP - AVIS DE COMPATIBILITÉ DES EXTENSIONS</French>
+                <Turkish>ANTISTASI ULTIMATE SETUP - GENİŞLETME UYUMLULUK BİLDİRİMİ</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_StaticTextWarning">
+                <Original>WARNING: You have loaded extenders. Some of them failed the compatibility check to this version of Antistasi Ultimate. This usually happens after an update of Antistasi Ultimate and extenders not being updated, yet. If you notice weird behavior, or things not working, please disable those extenders and try playing the game again. If odd behavior persists, only then consider blowing up our Discord.</Original>
+                <German>WARNUNG: Du hast Erweiterungen geladen. Einige von ihnen haben den Kompatibilitätscheck für diese Version von Antistasi Ultimate nicht bestanden. Dies passiert normalerweise nach einem Update von Antistasi Ultimate und Erweiterungen, die noch nicht aktualisiert wurden. Wenn du seltsames Verhalten bemerkst oder Dinge nicht funktionieren, deaktiviere bitte diese Erweiterungen und versuche erneut, das Spiel zu spielen. Wenn das seltsame Verhalten weiterhin besteht, ziehe erst dann in Betracht, unseren Discord zu kontaktieren.</German>
+                <Russian>ВНИМАНИЕ: Вы загрузили расширения. Некоторые из них не прошли проверку совместимости с этой версией Antistasi Ultimate. Обычно это происходит после обновления Antistasi Ultimate, а расширения еще не обновлены. Если вы заметите странное поведение или что-то не работает, пожалуйста, отключите эти расширения и попробуйте снова играть в игру. Если странное поведение сохраняется, только тогда рассмотрите возможность обращения к нашему Discord.</Russian>
+                <Chinesesimp>警告：您已加载扩展。一些扩展未通过与此版本 Antistasi Ultimate 的兼容性检查。这通常发生在 Antistasi Ultimate 更新后，而扩展尚未更新。如果您注意到异常行为或功能异常，请禁用这些扩展并再次尝试游戏。如果异常行为仍然存在，只有在那时才考虑联系我们的 Discord。</Chinesesimp>
+                <Korean>경고: 확장 기능을 로드했습니다. 일부는 이 버전의 Antistasi Ultimate와의 호환성 검사를 통과하지 못했습니다. 이는 일반적으로 Antistasi Ultimate가 업데이트된 후 확장 기능이 아직 업데이트되지 않은 경우에 발생합니다. 이상한 동작이나 기능이 작동하지 않는 경우 해당 확장 기능을 비활성화하고 게임을 다시 시도하십시오. 이상한 동작이 계속되면 그때 Discord에 문의하는 것을 고려하십시오.</Korean>
+                <French>AVERTISSEMENT : Vous avez chargé des extensions. Certaines d'entre elles n'ont pas passé le contrôle de compatibilité avec cette version d'Antistasi Ultimate. Cela se produit généralement après une mise à jour d'Antistasi Ultimate et que les extensions n'ont pas encore été mises à jour. Si vous remarquez un comportement étrange ou que certaines fonctionnalités ne fonctionnent pas, veuillez désactiver ces extensions et essayer de rejouer au jeu. Si le comportement étrange persiste, ce n'est qu'alors que vous devriez envisager de contacter notre Discord.</French>
+                <Turkish>UYARI: Genişletmeleri yüklediniz. Bazıları Antistasi Ultimate'ın bu sürümüyle uyumluluk kontrolünden geçemedi. Bu genellikle Antistasi Ultimate güncellendikten sonra ve genişletmeler henüz güncellenmediğinde olur. Garip bir davranış fark ederseniz veya bazı şeyler çalışmıyorsa, lütfen bu genişletmeleri devre dışı bırakın ve oyunu tekrar oynamayı deneyin. Garip davranış devam ederse, ancak o zaman Discord'umuza başvurmayı düşünebilirsiniz.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_LabelConfirm">
+                <Original>I understand and I know what I'm doing; let me continue setting up the game.</Original>
+                <German>Ich verstehe und weiß, was ich tue; lass mich das Spiel weiter einrichten.</German>
+                <Russian>Я понимаю и знаю, что делаю; позвольте мне продолжить настройку игры.</Russian>
+                <Chinesesimp>我明白并且知道自己在做什么；让我继续设置游戏。</Chinesesimp>
+                <Korean>나는 이해하고 내가 무엇을 하고 있는지 알고 있습니다. 게임 설정을 계속하게 해주세요.</Korean>
+                <French>Je comprends et je sais ce que je fais ; laissez-moi continuer à configurer le jeu.</French>
+                <Turkish>Anlıyorum ve ne yaptığımı biliyorum; oyunu kurmaya devam etmeme izin verin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_BtnContinue">
+                <Original>Continue</Original>
+                <German>Weiter</German>
+                <Russian>Продолжить</Russian>
+                <Chinesesimp>继续</Chinesesimp>
+                <Korean>계속</Korean>
+                <French>Continuer</French>
+                <Turkish>Devam Et</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_ListExtenders_ColumnTitle">
+                <Original>Title</Original>
+                <German>Titel</German>
+                <Russian>Заголовок</Russian>
+                <Chinesesimp>标题</Chinesesimp>
+                <Korean>제목</Korean>
+                <French>Titre</French>
+                <Turkish>Başlık</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_ListExtenders_ColumnAuthor">
+                <Original>Author</Original>
+                <German>Autor</German>
+                <Russian>Автор</Russian>
+                <Chinesesimp>作者</Chinesesimp>
+                <Korean>작성자</Korean>
+                <French>Auteur</French>
+                <Turkish>Yazar</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_ListExtenders_ColumnVersion">
+                <Original>Version</Original>
+                <German>Version</German>
+                <Russian>Версия</Russian>
+                <Chinesesimp>版本</Chinesesimp>
+                <Korean>버전</Korean>
+                <French>Version</French>
+                <Turkish>Sürüm</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_extenders_warning_dialog_ListExtenders_ColumnCompatibility">
+                <Original>Compatibility</Original>
+                <German>Kompatibilität</German>
+                <Russian>Совместимость</Russian>
+                <Chinesesimp>兼容性</Chinesesimp>
+                <Korean>호환성</Korean>
+                <French>Compatibilité</French>
+                <Turkish>Uyumluluk</Turkish>
+            </Key>
+        </Container>
         <Container name="hqpos_dialog">
             <Key ID="STR_antistasi_dialogs_hqpos_close">
                 <Original>Close</Original>

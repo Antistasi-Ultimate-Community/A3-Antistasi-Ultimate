@@ -15,6 +15,8 @@ params ["_veh", "_side", "_resPool", ["_excludeTrails", false]];
 
 if (isNil "_veh") exitWith {};
 
+[_veh] call FUNCMAIN(preparePostMortem);
+
 // Not a crewed vehicle, nothing to do here
 if (fullCrew [_veh, "", true] isEqualTo []) exitWith {
 	// buyable item, use initObject. Happens on game loading at the moment
@@ -290,5 +292,5 @@ if (_side != teamPlayer) then {///might need to change that, tho I'm not sure
 };
 
 if (!isNull _veh) then {
-    ["AIVehInit", [_veh, _side]] call EFUNC(Events,triggerEvent);
+    [CBA_EVENT_SERVER_INIT_AI_VEHICLE, [_veh, _side]] call FUNCMAIN(triggerServerEvent);
 };
