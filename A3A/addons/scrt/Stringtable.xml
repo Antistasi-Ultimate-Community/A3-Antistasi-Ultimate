@@ -13432,6 +13432,7 @@
                 <Russian>Джекпот! Благодаря этой новой информации мы теперь знаем, где именно находится убежище %1, и можем совершить набег на него в любое время.</Russian>
                 <Chinesesimp>卧槽！ 有了这个新情报，我们现在知道另一个 %1 藏身处的确切位置，并且可以随时对其进行突袭。</Chinesesimp>
                 <Korean>대박입니다! 이 새 정보를 통해 이제 또 다른 %1의 은신처가 정확히 어디에 있는지 알 수 있으며 언제든지 습격할 수 있습니다.</Korean>
+                <Spanish>¡Premio! Con esta nueva información sabemos exactamente dónde está otro escondite de %1 y podemos asaltarlo cuando queramos.</Spanish>
                 <French>Jackpot ! Grâce à ces nouvelles informations, nous savons désormais où se trouve exactement une autre cachette %1 et nous pourrons y effectuer un raid à tout moment.</French>
                 <Turkish>Büyük ikramiye! Bu yeni bilgilerle birlikte, başka bir %1 Sığınağının tam olarak nerede olduğunu biliyoruz ve her an oraya bir baskın düzenleyebiliriz.</Turkish>
             </Key>
@@ -13440,6 +13441,7 @@
                 <Russian>Мы нашли информацию о распределённой сети депозитов в местных банках, которые используются для финансирования различных операций на %1. Наши хакеры обчистили эти счета и разделили всё добытое между нашими соратниками.</Russian>
                 <Chinesesimp>我们发现了有关本地银行分布式存款网络的信息，这些存款用于为 %1 上的各种操作提供资金。 我们的黑客清除了这些帐户并将所有内容分配给我们的同志。</Chinesesimp>
                 <Korean>우린 %1에서 다양한 예산을 조달하는 데 사용되는 지역 은행의 분산된 예금 네트워크에 대한 정보를 발견했습니다. 우리 해커들이 이 계정들을 제거했고 우리 동료들끼리 모든 것을 나누었습니다.</Korean>
+                <Spanish>Hemos encontrado información sobre una red de depósitos repartidos por bancos locales que se usa para financiar operaciones en %1. Nuestros hackers han vaciado esas cuentas y lo han repartido todo entre nuestros socios.</Spanish>
                 <French>Nous avons trouvé des informations sur un réseau distribué de dépôts dans des banques locales, qui servent à financer diverses opérations sur le %1. Nos pirates ont nettoyé ces comptes et ont tout réparti entre nos associés.</French>
                 <Turkish>Yerel bankalarda, %1 üzerindeki çeşitli operasyonları finanse etmek için kullanılan dağıtılmış bir mevduat ağı hakkında bilgi bulduk. Hackerlarımız bu hesapları boşalttı ve her şeyi ortaklarımız arasında paylaştırdı.</Turkish>
             </Key>
@@ -13448,6 +13450,7 @@
                 <Russian>Атака %1 неминуема!</Russian>
                 <Chinesesimp>%1 攻击迫在眉睫！</Chinesesimp>
                 <Korean>%1의 공격이 임박했습니다!</Korean>
+                <Spanish>¡El ataque de %1 es inminente!</Spanish>
                 <French>L'attaque %1 est imminente !</French>
                 <Turkish>%1 saldırısı an meselesi!</Turkish>
             </Key>
@@ -13457,6 +13460,7 @@
                 <Russian>%1-Атака ожидается в течении %2 минут</Russian>
                 <Chinesesimp>预计 %1 在 %2 分钟内发动攻击</Chinesesimp>
                 <Korean>%2분 후에 %1 공격이 예상됩니다</Korean>
+                <Spanish>Ataque de %1 previsto en %2 minutos</Spanish>
                 <French>Attaque %1 attendue dans %2 minutes</French>
                 <Turkish>%1 saldırısı %2 dakika içinde bekleniyor</Turkish>
             </Key>
@@ -13465,6 +13469,7 @@
                 <Russian>Вы нашли ключ расшифровки %1!&lt;br/&gt; Он позволит вашей фракции полностью расшифровать следующий вызов поддержки врагом и принять соответствующие меры.</Russian>
                 <Chinesesimp>您找到了一个 %1 解密密钥！&lt;br/&gt;这将使您的派系能够完全破译下一波敌人的支援通信并采取适当的行动。</Chinesesimp>
                 <Korean>%1의 암호 해독 키를 발견했습니다!&lt;br/&gt;다음 지원 요청을 완전히 해독할 수 있었습니다.</Korean>
+                <Spanish>¡Has encontrado una clave de descifrado de %1!&lt;br/&gt;Permite a tu facción descifrar por completo la próxima petición de soporte.</Spanish>
                 <French>Vous avez trouvé une clé de décryptage %1!&lt;br/&gt;Elle permet à votre faction de décrypter entièrement le prochain appel de soutien.</French>
                 <Turkish>Bir %1 şifre çözme anahtarı buldunuz!&lt;br/&gt;Bu, grubunuzun bir sonraki destek çağrısının şifresini tamamen çözmesini sağlar.</Turkish>
             </Key>
@@ -13473,6 +13478,7 @@
                 <Russian>Мы нашли данные отслеживания конвоя %1.&lt;br/&gt;Позиция конвоя отмечена на карте!</Russian>
                 <Chinesesimp>我们找到了一个 %1 车队的路线数据。&lt;br/&gt;车队已标记在地图上</Chinesesimp>
                 <Korean>%1의 호송 차량에 대한 추적 데이터를 찾았습니다.&lt;br/&gt;호송 차량 위치가 지도에 표시되었습니다!</Korean>
+                <Spanish>Hemos encontrado los datos de seguimiento de un convoy de %1.&lt;br/&gt;¡Posición del convoy marcada en el mapa!</Spanish>
                 <French>Nous avons trouvé les données de suivi d'un convoi %1.&lt;br/&gt;Position du convoi indiquée sur la carte!</French>
                 <Turkish>Bir %1 konvoyuna ait takip verilerini bulduk.&lt;br/&gt;Konvoyun konumu haritada işaretlendi!</Turkish>
             </Key>
@@ -13481,6 +13487,7 @@
                 <Russian>На текущий момент никаких конвоев %1 не обнаружено.</Russian>
                 <Chinesesimp>目前没有 %1 的车队在附近行驶。</Chinesesimp>
                 <Korean>현재 운행 중인 %1의 호송 차량이 없습니다.</Korean>
+                <Spanish>Ahora mismo no hay convoyes de %1 circulando.</Spanish>
                 <French>Il n'y a actuellement aucun convoi %1 en circulation.</French>
                 <Turkish>Şu anda etrafta dolaşan herhangi bir %1 konvoyu yok.</Turkish>
             </Key>
@@ -13489,6 +13496,7 @@
                 <Russian>%1 интересны не только нам - %2 также имеют ценную информацию об их тайной сети укрытий и ячеек.</Russian>
                 <Chinesesimp>%1 不仅对我们有调查 - 对于 %2 也有一些关于他们隐蔽的藏身处和密室网络的有价值的信息</Chinesesimp>
                 <Korean>%1은(는) 우리에게만 흥미로운 것이 아닙니다. %2은(는) 은신처와 셀에 위장 연락망에 대한 귀중한 정보를 가지고 있습니다.</Korean>
+                <Spanish>%1 no nos interesa solo a nosotros: %2 también tiene información valiosa sobre su red encubierta de escondites y células.</Spanish>
                 <French>Les %1 ne sont pas seulement intéressants pour nous - les %2 disposent également d'informations précieuses sur leur réseau souterrain de cachettes et de cellules.</French>
                 <Turkish>%1 sadece bizim için ilginç değil; %2 grubunun da onların gizli sığınak ve hücre ağları hakkında değerli bilgileri var.</Turkish>
             </Key>
@@ -13497,6 +13505,7 @@
                 <Russian>Мы нашли ценные разведданные о подпольной сети контрабандистов, их маршрутах. Мы отдали эти данные Оружейному Торговцу. Взамен он заплатил нам за информацию и увеличил перманентную скидку на %1 процент(ов) на всё оружие в его ассортименте.</Russian>
                 <Chinesesimp>我们找到了一些关于未被发现的走私者隐藏路线的情报，并将其提供给了军火商。 作为回报，他向我们支付情报费用，并为他的军火商商店中的任何商品增加 %1% 的折扣。</Chinesesimp>
                 <Korean>우린 발견되지 않은 숨겨진 밀수 경로에 대한 정보를 발견했고 그것들을 암거래상에게 주었습니다. 그 대가로, 그는 우리에게 정보에 대한 대가를 지불했고 암거래 시장에 있는 모든 아이템에 대해 %1퍼센트의 할인을 받았습니다.</Korean>
+                <Spanish>Hemos encontrado información sobre rutas de contrabando ocultas sin descubrir y se la hemos dado al traficante de armas. A cambio, nos ha pagado por ella y ha aumentado el descuento un %1 por ciento en cualquier artículo de su tienda.</Spanish>
                 <French>Nous avons trouvé des informations sur des routes de contrebande cachées et nous les avons données au marchand d'armes. En retour, il nous a payé pour les informations et a augmenté la remise de %1 pour cent pour n'importe quel article dans son magasin de vente d'armes.</French>
                 <Turkish>Keşfedilmemiş gizli kaçakçı rotaları hakkında bazı bilgiler bulduk ve bunları Silah Tüccarı'na verdik. Karşılığında bize bilgi için ödeme yaptı ve dükkanındaki tüm ürünlerde geçerli indirimi %%%1 oranında artırdı.</Turkish>
             </Key>
@@ -13505,6 +13514,7 @@
                 <Russian>%1 на данный момент имеют доступ к&lt;br/&gt;%2</Russian>
                 <Chinesesimp>%1 当前可以访问</Chinesesimp>
                 <Korean>%1이(가) 현재 다음에 액세스 중입니다:&lt;br/&gt;%2</Korean>
+                <Spanish>%1 tiene acceso actualmente a&lt;br/&gt;%2</Spanish>
                 <French>%1 a actuellement accès à&lt;br/&gt;%2</French>
                 <Turkish>%1 şu anda şunlara erişebiliyor:&lt;br/&gt;%2</Turkish>
             </Key>
@@ -13513,6 +13523,7 @@
                 <Russian>Мы расшифровали ключ %1 фракции %2!&lt;br/&gt;%3 конвоев теперь отмечены на карте!</Russian>
                 <Chinesesimp>我们已经解密了派系 %2 的密钥 %1！&lt;br/&gt; %3 车队现在被标记在地图上了！</Chinesesimp>
                 <Korean>%2 호송대에 대한 %1의 암호 해독 키를 찾았습니다!&lt;br/&gt;%3의 호송 차량이 지도에 표시되었습니다!</Korean>
+                <Spanish>¡Hemos encontrado la clave de descifrado %1 del convoy de %2!&lt;br/&gt;¡Hay %3 convoyes marcados en el mapa!</Spanish>
                 <French>Nous avons trouvé la clé de décryptage du convoi %2 %1!&lt;br/&gt;%3 convois sont marqués sur la carte!</French>
                 <Turkish>%2 konvoyunun %1 şifre çözme anahtarını bulduk!&lt;br/&gt;%3 konvoyları haritada işaretlendi!</Turkish>
             </Key>
@@ -13521,6 +13532,7 @@
                 <Russian>У нас есть информация о возможном маршруте конвоя из %1 в %2. Мы можем подготовить засаду на него. Маршрут отмечен на карте.</Russian>
                 <Chinesesimp>我们找到了可能会有从 %1 到 %2 的护航车队路线图。 我们可以准备埋伏。 路线在地图上有标注。</Chinesesimp>
                 <Korean>%1에서 %2까지의 가능한 호송 경로에 대한 정보를 찾았습니다. 경로가 지도에 표시되었습니다. 그 곳에 매복을 준비할 수 있습니다.</Korean>
+                <Spanish>Hemos encontrado información sobre una posible ruta de convoy desde %1 hasta %2. La ruta está marcada en el mapa. Podemos prepararle una emboscada.</Spanish>
                 <French>Nous avons trouvé des informations sur l'itinéraire possible d'un convoi de %1 à %2. L'itinéraire a été marqué sur la carte. Nous pouvons préparer une embuscade.</French>
                 <Turkish>%1 noktasından %2 noktasına giden olası bir konvoy rotası hakkında bazı bilgiler bulduk. Rota haritada işaretlendi. Ona bir pusu hazırlayabiliriz.</Turkish>
             </Key>
@@ -13529,6 +13541,7 @@
                 <Russian>Мы нашли информацию информацию о возможном маршруте конвоя на %1, но, к сожалению, она устарела. Мы продали информацию на чёрном рынке за бесценок.</Russian>
                 <Chinesesimp>我们发现了一些关于 %1 上可能的车队路线过时信息。 我们在黑市上以微薄的价格出售了它。</Chinesesimp>
                 <Korean>%1에서 가능한 호송 경로에 대한 오래된 정보를 발견했습니다. 우린 그것을 암시장에 헐값에 팔았습니다.</Korean>
+                <Spanish>Hemos encontrado información desfasada sobre posibles rutas de convoy en %1. La hemos vendido en el mercado negro por algo de dinero.</Spanish>
                 <French>Nous avons trouvé des informations obsolètes sur les itinéraires possibles des convois sur %1. Nous les avons vendues au marché noir pour une somme minuscule.</French>
                 <Turkish>%1 hakkında olası konvoy rotalarına dair güncelliğini yitirmiş bazı bilgiler bulduk. Bunları karaborsada küçük bir miktar nakit karşılığında sattık.</Turkish>
             </Key>
@@ -13537,6 +13550,7 @@
                 <Russian>Мы нашли данные о поставках&lt;br/&gt;%1&lt;br/&gt; Это оружие разблокировано!</Russian>
                 <Chinesesimp>您找到了&lt;br/&gt;%1&lt;br/&gt;的供应数据，您现在解锁了这件武器！</Chinesesimp>
                 <Korean>다음 보급 데이터를 찾았습니다:&lt;br/&gt;%1&lt;br/&gt;해당 무기를 언락했습니다!</Korean>
+                <Spanish>Has encontrado los datos de suministro de&lt;br/&gt;%1&lt;br/&gt;¡Has desbloqueado esta arma!</Spanish>
                 <French>Vous avez trouvé les données d'approvisionnement pour le&lt;br/&gt;%1&lt;br/&gt;Vous avez débloqué cette arme !</French>
                 <Turkish>Şu silah için ikmal verilerini buldunuz:&lt;br/&gt;%1&lt;br/&gt;Bu silahın kilidini açtınız!</Turkish>
             </Key>
@@ -13545,6 +13559,7 @@
                 <Russian>Вы нашли очень ценные конфиденциальные данные и продали их за %1%2 на чёрном рынке!</Russian>
                 <Chinesesimp>您发现了非常有价值的敏感数据并在黑市上以 %1%2 的价格出售！</Chinesesimp>
                 <Korean>당신을 기밀 데이터를 발견했고 그것을 암시장에 %1%2에 팔았습니다!</Korean>
+                <Spanish>¡Has encontrado datos confidenciales y los has vendido por %1%2 en el mercado negro!</Spanish>
                 <French>Vous avez trouvé des données confidentielles, vous les avez vendues pour %1%2 sur le marché noir!</French>
                 <Turkish>Bazı gizli veriler buldunuz ve bunları karaborsada %1%2 karşılığında sattınız!</Turkish>
             </Key>
@@ -13553,6 +13568,7 @@
                 <Russian>У %1 достаточное количество защитных резервов</Russian>
                 <Chinesesimp>%1 有足够的防御储备可用</Chinesesimp>
                 <Korean>%1은 가용한 많은 방어 예비 병력을 보유하고 있습니다</Korean>
+                <Spanish>%1 dispone de muchas reservas de defensa</Spanish>
                 <French>%1 dispose de nombreuses réserves de défense</French>
                 <Turkish>%1 grubunun elinde bol miktarda savunma rezervi var</Turkish>
             </Key>
@@ -13561,6 +13577,7 @@
                 <Russian>У %1 умеренное количество защитных резервов</Russian>
                 <Chinesesimp>%1 拥有中等防御储备可用</Chinesesimp>
                 <Korean>%1은 가용한 평균적인 방어 예비 병력을 보유하고 있습니다</Korean>
+                <Spanish>%1 dispone de reservas de defensa moderadas</Spanish>
                 <French>%1 dispose de réserves de défense modérées</French>
                 <Turkish>%1 grubunun elinde makul miktarda savunma rezervi var</Turkish>
             </Key>
@@ -13569,6 +13586,7 @@
                 <Russian>У %1 наблюдается некоторый недостаток защитных резервов</Russian>
                 <Chinesesimp>%1 防御储备短缺</Chinesesimp>
                 <Korean>%1은 방어 예비 병력이 부족합니다</Korean>
+                <Spanish>%1 anda escaso de reservas de defensa</Spanish>
                 <French>%1 manque de réserves de défense</French>
                 <Turkish>%1 grubunun savunma rezervleri azalıyor</Turkish>
             </Key>
@@ -13577,6 +13595,7 @@
                 <Russian>У %1 практически не осталось защитных резервов</Russian>
                 <Chinesesimp>%1 几乎没有防御储备</Chinesesimp>
                 <Korean>%1은 방어 예비 병력이 거의 남지 않았습니다</Korean>
+                <Spanish>A %1 casi no le quedan reservas de defensa</Spanish>
                 <French>%1 n'a presque plus de réserves de défense</French>
                 <Turkish>%1 grubunun savunma rezervleri azalıyor</Turkish>
             </Key>
@@ -13585,6 +13604,7 @@
                 <Russian>У %1 не осталось никаких защитных резервов!</Russian>
                 <Chinesesimp>%1 完全没有防御储备！</Chinesesimp>
                 <Korean>%1은 방어 예비 병력이 하나도 없습니다!</Korean>
+                <Spanish>¡%1 se ha quedado completamente sin reservas de defensa!</Spanish>
                 <French>%1 n'a plus de réserves de défense !</French>
                 <Turkish>%1 grubunun savunma rezervleri tamamen bitti!</Turkish>
             </Key>
@@ -13593,6 +13613,7 @@
                 <Russian>Вы нашли упаковку с %1 ключами расшифровки!&lt;br/&gt;Это позволит вашей фракции расшифровывать вражеские вызовы поддержки.</Russian>
                 <Chinesesimp>您找到了 %1 个解密密钥包！&lt;br/&gt;这将允许你的派系破译敌人的支援通信。</Chinesesimp>
                 <Korean>%1의 암호 해독 키 패키지를 찾았습니다!&lt;br/&gt;그것들은 당신의 팩션이 지원 요청을 해독할 수 있게 해줍니다.</Korean>
+                <Spanish>¡Has encontrado un paquete de claves de descifrado de %1!&lt;br/&gt;Permitirá a tu facción descifrar peticiones de soporte.</Spanish>
                 <French>Vous avez trouvé un paquet de %1 clés de décryptage!&lt;br/&gt;Cela permettra à votre faction de décrypter les appels de soutien.</French>
                 <Turkish>Bir paket %1 şifre çözme anahtarı buldunuz!&lt;br/&gt;Bu, grubunuzun destek çağrılarının şifresini çözmesini sağlayacaktır.</Turkish>
             </Key>
@@ -13613,371 +13634,445 @@
             <Key ID="STR_antistasi_intel_translated">
                 <Original>Yes</Original>
                 <Russian>Да</Russian>
+                <Spanish>Sí</Spanish>
                 <Turkish>Evet</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_000">
                 <Original>a wet noodle in the officers breast pocket.</Original>
                 <Russian>мокрую лапшу из нагрудного кармана офицера.</Russian>
+                <Spanish>un fideo blando en el bolsillo del pecho del oficial.</Spanish>
                 <Turkish>subayın göğüs cebinde ıslak bir erişte.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_001">
                 <Original>a candy wrapper meticulously folded and stowed in the soldier's billfold.</Original>
                 <Russian>тщательно сложенный фантик от конфеты в солдатском бумажнике.</Russian>
+                <Spanish>un envoltorio de caramelo meticulosamente doblado y guardado en la cartera del soldado.</Spanish>
                 <Turkish>askerin cüzdanına titizlikle katlanıp yerleştirilmiş bir şeker kağıdı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_002">
                 <Original>a damp snotrag. You wish you hadn't checked that leg pocket.</Original>
                 <Russian>мокрый носовой платок. Вы жалеете, что заглянули в тот набедренный карман.</Russian>
+                <Spanish>un pañuelo húmedo de mocos. Ojalá no hubieras mirado ese bolsillo de la pernera.</Spanish>
                 <Turkish>nemli bir sümük mendili. Keşke o bacak cebine hiç bakmasaydınız.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_003">
                 <Original>the top-half of a DND character sheet for 'Dirk Man-Thrust'.</Original>
                 <Russian>верхнюю половину листа персонажа для НРИ какого-то 'Дирка Мощнотолкача'.</Russian>
+                <Spanish>la mitad superior de una hoja de personaje de rol de 'Dirk Man-Thrust'.</Spanish>
                 <Turkish>'Dirk Man-Thrust' adlı bir DND karakter kağıdının üst yarısı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_004">
                 <Original>the exact coordinates for a big cache of weapons that was cleared out yesterday.</Original>
                 <Russian>точные координаты огромной заначки с оружием, которую... расчистили ещё вчера.</Russian>
+                <Spanish>las coordenadas exactas de un gran alijo de armas que vaciaron ayer.</Spanish>
                 <Turkish>dün boşaltılmış olan büyük bir silah zulasının tam koordinatları.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_005">
                 <Original>a hand-drawn picture of a tank with the words 'My Other Car' scrawled underneath.</Original>
                 <Russian>рисунок танка от руки, под которым каракулями выведено: 'Моя вторая тачка'.</Russian>
+                <Spanish>un dibujo a mano de un tanque con las palabras 'Mi otro coche' garabateadas debajo.</Spanish>
                 <Turkish>altında 'Diğer Arabam' yazan el çizimi bir tank resmi.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_006">
                 <Original>a receipt for 47 tacos, all with 'extra onions.'</Original>
                 <Russian>чек за 47 тако, все с 'дополнительным майонезом'.</Russian>
+                <Spanish>un recibo de 47 tacos, todos con 'cebolla extra'.</Spanish>
                 <Turkish>tamamı 'ekstra soğanlı' olan 47 tacoluk bir fiş.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_007">
                 <Original>a doodle of a dragon fighting what looks suspiciously like a refrigerator.</Original>
                 <Russian>каракули, на которых дракон сражается с чем-то, что до боли похоже на холодильник.</Russian>
+                <Spanish>un garabato de un dragón peleando con algo que se parece sospechosamente a una nevera.</Spanish>
                 <Turkish>bir ejderhanın, şüpheli bir şekilde buzdolabına benzeyen bir şeyle savaştığına dair bir karalama.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_008">
                 <Original>the lyrics to 'Never Gonna Give You Up,' handwritten line by line on a cocktail napkin.</Original>
                 <Russian>текст песни 'Never Gonna Give You Up', аккуратно построчно переписанный на бумажной салфетке.</Russian>
+                <Spanish>la letra de 'Never Gonna Give You Up', escrita a mano verso a verso en una servilleta de cóctel.</Spanish>
                 <Turkish>bir kokteyl peçetesine satır satır el yazısıyla yazılmış 'Never Gonna Give You Up' şarkı sözleri.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_009">
                 <Original>a broken yo-yo with 'Top Secret' carved into the side.</Original>
                 <Russian>сломанный йо-йо с выцарапанной на боку надписью 'Совершенно Секретно'.</Russian>
+                <Spanish>un yoyó roto con 'Alto Secreto' tallado en un lado.</Spanish>
                 <Turkish>yan tarafına 'Çok Gizli' kazınmış kırık bir yo-yo.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_010">
                 <Original>someone's grocery list: 'bread, milk, tactical nuke, eggs.'</Original>
                 <Russian>чей-то список покупок: 'хлеб, молоко, тактическая боеголовка, яйца'.</Russian>
+                <Spanish>la lista de la compra de alguien: 'pan, leche, bomba nuclear táctica, huevos'.</Spanish>
                 <Turkish>birinin alışveriş listesi: 'ekmek, süt, taktik nükleer silah, yumurta.'</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_011">
                 <Original>a dog-eared romance novel, bookmarked at a very dramatic kiss.</Original>
                 <Russian>зачитанный до дыр любовный роман, с закладкой на месте очень драматичного поцелуя.</Russian>
+                <Spanish>una novela romántica con las esquinas dobladas, marcada en un beso muy dramático.</Spanish>
                 <Turkish>köşesi kıvrılmış, çok dramatik bir öpücük sahnesinde ayraç bırakılmış bir aşk romanı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_012">
                 <Original>a shoebox lid labeled 'evidence,' containing only lint.</Original>
                 <Russian>крышку от обувной коробки с надписью 'улики', внутри только пыль.</Russian>
+                <Spanish>la tapa de una caja de zapatos con la etiqueta 'pruebas', que solo contiene pelusa.</Spanish>
                 <Turkish>üzerinde 'kanıt' yazan ve içinde sadece toz yumağı olan bir ayakkabı kutusu kapağı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_013">
                 <Original>a fake passport with the photo of a cat.</Original>
                 <Russian>фальшивый паспорт с фотографией кота.</Russian>
+                <Spanish>un pasaporte falso con la foto de un gato.</Spanish>
                 <Turkish>üzerinde kedi fotoğrafı olan sahte bir pasaport.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_014">
                 <Original>a sock. It is crunchy. Best not to ask.</Original>
                 <Russian>носок. засохший... Лучше не спрашивать.</Russian>
+                <Spanish>un calcetín. Está tieso. Mejor no preguntar.</Spanish>
                 <Turkish>bir çorap. Kaskatı kesilmiş. En iyisi nedenini sorma.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_015">
                 <Original>a handwritten flowchart labeled 'Plan B: Panic.'</Original>
                 <Russian>нарисованную от руки блок-схему с заголовком 'План Б: Паника'.</Russian>
+                <Spanish>un diagrama de flujo escrito a mano titulado 'Plan B: entrar en pánico'.</Spanish>
                 <Turkish>üzerinde 'B Planı: Panik' yazan el yazısı bir akış şeması.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_016">
                 <Original>a rock with googly eyes glued on.</Original>
                 <Russian>камень с приклеенными выпуклыми глазами.</Russian>
+                <Spanish>una piedra con ojos de plástico pegados.</Spanish>
                 <Turkish>üzerine oynak gözler yapıştırılmış bir taş.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_017">
                 <Original>a sketch of a tank wearing a cowboy hat.</Original>
                 <Russian>набросок танка в ушанке.</Russian>
+                <Spanish>un boceto de un tanque con sombrero de vaquero.</Spanish>
                 <Turkish>kovboy şapkası takmış bir tank çizimi.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_018">
                 <Original>a fortune cookie slip that reads: 'You will fail this mission.'</Original>
                 <Russian>бумажку из предсказательного печенья: 'В этой миссии вас ждёт провал'.</Russian>
+                <Spanish>un papelito de galleta de la fortuna que dice: 'Fracasarás en esta misión'.</Spanish>
                 <Turkish>üzerinde 'Bu görevde başarısız olacaksın' yazan bir fal kurabiyesi kağıdı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_019">
                 <Original>a jar of pickles with one pickle missing.</Original>
                 <Russian>банку с солёными огурцами, в которой не хватает одного огурца.</Russian>
+                <Spanish>un tarro de pepinillos al que le falta un pepinillo.</Spanish>
                 <Turkish>içinden bir turşusu eksilmiş bir turşu kavanozu.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_020">
                 <Original>a crumpled napkin that says 'BRING MORE NAPKINS.'</Original>
                 <Russian>смятый носовой платок, на котором написано: 'ПРИНЕСИ БОЛЬШЕ НОСОВЫХ ПЛАТКОВ'.</Russian>
+                <Spanish>una servilleta arrugada que dice 'TRAED MÁS SERVILLETAS'.</Spanish>
                 <Turkish>üzerinde 'DAHA FAZLA PEÇETE GETİR' yazan buruşturulmuş bir peçete.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_021">
                 <Original>a bingo card with every square marked 'Free Space.'</Original>
                 <Russian>карточку для игры в лото, где на всех полях отмечено 'Свободная клетка'.</Russian>
+                <Spanish>un cartón de bingo con todas las casillas marcadas como 'Casilla libre'.</Spanish>
                 <Turkish>her karesinde 'Boş Alan' yazan bir tombala kartı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_022">
                 <Original>a tiny notebook filled entirely with the word 'butt.'</Original>
                 <Russian>крошечный блокнотик, целиком заполненный словом 'жопа'.</Russian>
+                <Spanish>una libretita llena entera con la palabra 'culo'.</Spanish>
                 <Turkish>tamamı 'popo' kelimesiyle doldurulmuş küçücük bir not defteri.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_023">
                 <Original>a rubber chicken dressed in camouflage paint.</Original>
                 <Russian>резиновую курицу, раскрашенную под камуфляж.</Russian>
+                <Spanish>un pollo de goma pintado de camuflaje.</Spanish>
                 <Turkish>kamuflaj boyası sürülmüş bir plastik tavuk.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_024">
                 <Original>a doodle of stick figures labeled 'enemy forces.'</Original>
                 <Russian>каракули в виде человечков из палочек с подписью 'силы противника'.</Russian>
+                <Spanish>un garabato de monigotes etiquetados como 'fuerzas enemigas'.</Spanish>
                 <Turkish>üzerinde 'düşman kuvvetleri' yazan çöp adam karalamaları.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_025">
                 <Original>a pile of receipts showing bulk orders of glitter.</Original>
                 <Russian>пачку чеков на оптовые закупки блёсток.</Russian>
+                <Spanish>un montón de recibos de pedidos al por mayor de purpurina.</Spanish>
                 <Turkish>toptan sim siparişlerini gösteren bir yığın fiş.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_026">
                 <Original>a comic strip titled 'Sergeant Fartbeard' with only one panel.</Original>
                 <Russian>комикс под названием 'Сержант Пердобород' всего с одной картинкой.</Russian>
+                <Spanish>una tira cómica titulada 'Sargento Barbapedo' con una sola viñeta.</Spanish>
                 <Turkish>'Çavuş Osuruksakal' başlıklı tek karelik bir çizgi roman.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_027">
                 <Original>a single shoelace tied in 37 knots.</Original>
                 <Russian>один шнурок, завязанный в 37 узлов.</Russian>
+                <Spanish>un solo cordón de zapato atado con 37 nudos.</Spanish>
                 <Turkish>üzerine 37 düğüm atılmış tek bir ayakkabı bağcığı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_028">
                 <Original>a Sudoku filled entirely with the number 7.</Original>
                 <Russian>судоку, полностью заполненную цифрой 7.</Russian>
+                <Spanish>un sudoku relleno entero con el número 7.</Spanish>
                 <Turkish>tamamı 7 rakamıyla doldurulmuş bir Sudoku.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_029">
                 <Original>a love letter addressed to 'My Dearest Microwave.'</Original>
                 <Russian>любовное письмо, адресованное 'Моей драгоценной... Микроволновке'.</Russian>
+                <Spanish>una carta de amor dirigida a 'Mi queridísimo microondas'.</Spanish>
                 <Turkish>'Sevgili Mikrodalgam'a hitaben yazılmış bir aşk mektubu.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_030">
                 <Original>a crayon drawing of a stickman holding a bazooka.</Original>
                 <Russian>рисунок мелком: человечек из палочек с базукой.</Russian>
+                <Spanish>un dibujo a lápiz de cera de un monigote con un bazuca.</Spanish>
                 <Turkish>bazuka tutan bir çöp adamın pastel boya çizimi.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_031">
                 <Original>a half-eaten granola bar in a classified envelope.</Original>
                 <Russian>половину съеденного злакового батончика в конверте со штампом 'совершенно секретно'.</Russian>
+                <Spanish>media barrita de cereales dentro de un sobre clasificado.</Spanish>
                 <Turkish>gizli ibareli bir zarfın içinde yarıya kadar yenmiş bir granola bar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_032">
                 <Original>a cassette tape labeled 'Sounds of War' that is just whale songs.</Original>
                 <Russian>кассету с надписью 'Звуки Войны', на которой записано только пение китов.</Russian>
+                <Spanish>una cinta de casete titulada 'Sonidos de guerra' que solo son cantos de ballena.</Spanish>
                 <Turkish>üzerinde 'Savaş Sesleri' yazan ama içinde sadece balina şarkıları olan bir kaset.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_033">
                 <Original>a box of cereal with every toy prize missing.</Original>
                 <Russian>коробку от хлопьев, из которой пропали все игрушки-сюрпризы.</Russian>
+                <Spanish>una caja de cereales a la que le han quitado todos los juguetes de regalo.</Spanish>
                 <Turkish>içindeki tüm oyuncak hediyelerin alındığı bir mısır gevreği kutusu.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_034">
                 <Original>a crumpled napkin with 'Don't trust Yussuf' in three different handwritings.</Original>
                 <Russian>смятый носовой платок, на котором тремя разными почерками написано: 'Не доверяй Юсуфу'.</Russian>
+                <Spanish>una servilleta arrugada con 'No te fíes de Yussuf' en tres caligrafías distintas.</Spanish>
                 <Turkish>üzerinde üç farklı el yazısıyla 'Yussuf'a güvenme' yazan buruşturulmuş bir peçete.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_035">
                 <Original>a Polaroid of an empty room with the word 'soon' scrawled on it.</Original>
                 <Russian>полароидный снимок пустой комнаты с каракулями 'скоро'.</Russian>
+                <Spanish>una Polaroid de una habitación vacía con la palabra 'pronto' garabateada encima.</Spanish>
                 <Turkish>üzerinde 'yakında' yazılmış, boş bir odanın Polaroid fotoğrafı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_036">
                 <Original>a to-do list: 1. Wake up. 2. Betray everyone. 3. Lunch.</Original>
                 <Russian>список дел: 1. Проснуться. 2. Предать всех. 3. Обед.</Russian>
+                <Spanish>una lista de tareas: 1. Levantarme. 2. Traicionar a todos. 3. Comer.</Spanish>
                 <Turkish>bir yapılacaklar listesi: 1. Uyan. 2. Herkese ihanet et. 3. Öğle yemeği.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_037">
                 <Original>a magazine clipping of a man flexing with the caption 'Inspiration.'</Original>
                 <Russian>вырезку из журнала с качком, напрягающим бицепс, и подписью 'Вдохновение'.</Russian>
+                <Spanish>un recorte de revista de un hombre marcando bíceps con el pie de foto 'Inspiración'.</Spanish>
                 <Turkish>altında 'İlham Kaynağı' yazan, kaslarını sergileyen bir adamın dergi kupürü.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_038">
                 <Original>a single glove filled with jelly.</Original>
                 <Russian>одну перчатку, набитую желе.</Russian>
+                <Spanish>un guante suelto relleno de gelatina.</Spanish>
                 <Turkish>jöleyle doldurulmuş tek bir eldiven.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_039">
                 <Original>a flash drive with the private key to the Antistasi Ultimate Github repo.</Original>
                 <Russian>флешку с приватным ключом к репозиторию Antistasi Ultimate на Github.</Russian>
+                <Spanish>un pendrive con la clave privada del repositorio de GitHub de Antistasi Ultimate.</Spanish>
                 <Turkish>Antistasi Ultimate Github deposunun özel anahtarını içeren bir flash bellek.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_040">
                 <Original>a flash drive containing only a 3-second recording of somebody coughing.</Original>
                 <Russian>флешку, на которой нет ничего, кроме 3-секундной записи чьего-то кашля.</Russian>
+                <Spanish>un pendrive que solo contiene una grabación de 3 segundos de alguien tosiendo.</Spanish>
                 <Turkish>içinde sadece birinin öksürdüğü 3 saniyelik bir kayıt olan bir flash bellek.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_041">
                 <Original>a pamphlet titled 'How to Hide Evidence' with sections highlighted.</Original>
                 <Russian>брошюрку под названием 'Как прятать улики' с выделенными маркером разделами.</Russian>
+                <Spanish>un folleto titulado 'Cómo ocultar pruebas' con algunas secciones subrayadas.</Spanish>
                 <Turkish>bazı kısımları vurgulanmış 'Deliller Nasıl Gizlenir' başlıklı bir broşür.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_042">
                 <Original>a coupon for 20% off a store that closed in 1998.</Original>
                 <Russian>купон на скидку 20% в магазин, который закрылся в 1998-м.</Russian>
+                <Spanish>un cupón de 20 % de descuento para una tienda que cerró en 1998.</Spanish>
                 <Turkish>bazı kısımları vurgulanmış 'Deliller Nasıl Gizlenir' başlıklı bir broşür.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_043">
                 <Original>a paper airplane with 'TOP SECRET' stamped on the wing.</Original>
                 <Russian>бумажный самолётик с печатью 'СОВЕРШЕННО СЕКРЕТНО' на крыле.</Russian>
+                <Spanish>un avión de papel con 'ALTO SECRETO' estampado en el ala.</Spanish>
                 <Turkish>kanadında 'ÇOK GİZLİ' damgası olan bir kağıt uçak.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_044">
                 <Original>a children's menu colored entirely in red crayon.</Original>
                 <Russian>детское меню из кафе, полностью раскрашенное красным мелком.</Russian>
+                <Spanish>un menú infantil coloreado entero con cera roja.</Spanish>
                 <Turkish>tamamı kırmızı pastel boyayla boyanmış bir çocuk menüsü.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_045">
                 <Original>a friendship bracelet made from shoelaces.</Original>
                 <Russian>браслет дружбы, сплетённый из шнурков.</Russian>
+                <Spanish>una pulsera de la amistad hecha con cordones de zapato.</Spanish>
                 <Turkish>ayakkabı bağcıklarından yapılmış bir dostluk bilekliği.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_046">
                 <Original>a detailed report on sandwich stores in the local area.</Original>
                 <Russian>детальный отчёт о точках общепита с шаурмой в окрестностях.</Russian>
+                <Spanish>un informe detallado sobre las bocaterías de la zona.</Spanish>
                 <Turkish>yerel bölgedeki sandviç dükkanları üzerine detaylı bir rapor.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_047">
                 <Original>a single fortune cookie with no fortune inside.</Original>
                 <Russian>одно предсказательное печенье без бумажки внутри.</Russian>
+                <Spanish>una galleta de la fortuna sin fortuna dentro.</Spanish>
                 <Turkish>içinden fal çıkmayan tek bir fal kurabiyesi.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_048">
                 <Original>a hairbrush missing every single bristle.</Original>
                 <Russian>расчёску, на которой не осталось ни одной щетинки.</Russian>
+                <Spanish>un cepillo del pelo al que le faltan absolutamente todas las cerdas.</Spanish>
                 <Turkish>tek bir kılı bile kalmamış bir saç fırçası.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_049">
                 <Original>a scrap of paper: 'Remember to delete this note.'</Original>
                 <Russian>клочок бумаги: 'Не забудь стереть эту записку'.</Russian>
+                <Spanish>un trozo de papel: 'Acuérdate de destruir esta nota'.</Spanish>
                 <Turkish>bir kağıt parçası: 'Bu notu silmeyi unutma.'</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_050">
                 <Original>a harmonica with teeth marks in it.</Original>
                 <Russian>гармошку со следами зубов.</Russian>
+                <Spanish>una armónica con marcas de dientes.</Spanish>
                 <Turkish>üzerinde diş izleri olan bir mızıka.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_051">
                 <Original>a drawing of a cat wearing night-vision goggles.</Original>
                 <Russian>рисунок кота в очках ночного видения.</Russian>
+                <Spanish>un dibujo de un gato con gafas de visión nocturna.</Spanish>
                 <Turkish>üzerinde diş izleri olan bir mızıka.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_052">
                 <Original>a stick of gum, already chewed.</Original>
                 <Russian>жвачку, уже пожеванную.</Russian>
+                <Spanish>un chicle, ya masticado.</Spanish>
                 <Turkish>zaten çiğnenmiş bir sakız.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_053">
                 <Original>a recipe for 'explosive chili' with doodles in the margins.</Original>
                 <Russian>рецепт 'взрывного чили' с каракулями на полях.</Russian>
+                <Spanish>una receta de 'chili explosivo' con garabatos en los márgenes.</Spanish>
                 <Turkish>kenarlarında karalamalar olan bir 'patlayıcı acılı sos' tarifi.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_054">
                 <Original>a rusty spoon wrapped in velvet.</Original>
                 <Russian>ржавую ложку, завёрнутую в бархат.</Russian>
+                <Spanish>una cuchara oxidada envuelta en terciopelo.</Spanish>
                 <Turkish>kadifeye sarılmış paslı bir kaşık.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_055">
                 <Original>a Pokémon card bent into origami.</Original>
                 <Russian>карточку 'Покемон', согнутую в оригами.</Russian>
+                <Spanish>una carta de Pokémon doblada en origami.</Spanish>
                 <Turkish>origami şeklinde katlanmış bir Pokémon kartı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_056">
                 <Original>a tiny vial labeled 'Tears of A3U devs.'</Original>
                 <Russian>крохотный пузырёк с надписью 'Слёзы разработчиков A3U'.</Russian>
+                <Spanish>un frasquito etiquetado como 'Lágrimas de los desarrolladores de A3U'.</Spanish>
                 <Turkish>üzerinde 'A3U geliştiricilerinin gözyaşları' yazan küçücük bir tüp.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_057">
                 <Original>a business card: 'Todd, Assassin. Have gun, will travel.'</Original>
                 <Russian>визитку: 'Тодд, киллер. Есть пушка, готов к командировкам'.</Russian>
+                <Spanish>una tarjeta de visita: 'Todd, asesino a sueldo. Tengo pistola y viajo'.</Spanish>
                 <Turkish>bir kartvizit: 'Todd, Suikastçı. Silahım var, seyahat edebilirim.'</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_058">
                 <Original>a stapled stack of papers: every page is blank.</Original>
                 <Russian>скреплённые скрепкой листы бумаги: все страницы пустые.</Russian>
+                <Spanish>un fajo de hojas grapadas: todas las páginas están en blanco.</Spanish>
                 <Turkish>zımbalanmış bir kağıt destesi: her sayfası boş.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_059">
                 <Original>a fortune cookie slip: 'You should have stayed home today.'</Original>
                 <Russian>бумажку из печенья: 'Тебе сегодня стоило остаться дома'.</Russian>
+                <Spanish>un papelito de galleta de la fortuna: 'Hoy deberías haberte quedado en casa'.</Spanish>
                 <Turkish>bir fal kurabiyesi kağıdı: 'Bugün evde kalmalıydın.'</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_060">
                 <Original>a peanut butter sandwich fossilized in wax paper.</Original>
                 <Russian>бутерброд с арахисовой пастой, окаменевший в вощёной бумаге.</Russian>
+                <Spanish>un sándwich de crema de cacahuete fosilizado en papel encerado.</Spanish>
                 <Turkish>yağlı kağıt içinde fosilleşmiş bir fıstık ezmeli sandviç.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_061">
                 <Original>a napkin sketch of a treasure map to 'The Bathroom.'</Original>
                 <Russian>набросок карты сокровищ на салфетке с маршрутом до 'Туалета'.</Russian>
+                <Spanish>un mapa del tesoro dibujado en una servilleta que lleva hasta 'El baño'.</Spanish>
                 <Turkish>'Tuvalet'e giden bir hazine haritasının peçete üzerine çizimi.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_062">
                 <Original>a matchbook with only one match, damp and useless.</Original>
                 <Russian>спичечный коробок с одной единственной сырой и бесполезной спичкой.</Russian>
+                <Spanish>una caja de cerillas con una sola cerilla, húmeda e inútil.</Spanish>
                 <Turkish>içinde sadece bir tane nemli ve işe yaramaz kibrit olan bir kibrit kutusu.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_063">
                 <Original>a seashell labeled 'Property of the Navy.'</Original>
                 <Russian>ракушку с биркой 'Собственность Военно-Морского Флота'.</Russian>
+                <Spanish>una concha con la etiqueta 'Propiedad de la Armada'.</Spanish>
                 <Turkish>üzerinde 'Donanma Malıdır' yazan bir deniz kabuğu.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_064">
                 <Original>a half-used crossword with every answer being 'BUTT.'</Original>
                 <Russian>половину заполненного кроссворда, где все ответы — 'ЖОПА'.</Russian>
+                <Spanish>un crucigrama a medias en el que todas las respuestas son 'CULO'.</Spanish>
                 <Turkish>yarım bırakılmış ve her cevabı 'POPO' olan bir kare bulmaca.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_065">
                 <Original>a list of names, all crossed out except 'Jeff???'.</Original>
                 <Russian>список имён, все зачёркнуты, кроме 'Серёга???'.</Russian>
+                <Spanish>una lista de nombres, todos tachados menos 'Jeff???'.</Spanish>
                 <Turkish>'Jeff???' hariç tüm isimlerin üzerinin çizildiği bir liste.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_066">
                 <Original>a ball of yarn with a classified tag on it.</Original>
                 <Russian>клубок ниток с грифом 'Секретно'.</Russian>
+                <Spanish>un ovillo de lana con una etiqueta de material clasificado.</Spanish>
                 <Turkish>üzerinde gizli ibareli bir etiket bulunan bir yün yumağı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_067">
                 <Original>a rolled-up poster of a muscled guy holding a cat.</Original>
                 <Russian>свёрнутый в трубку постер с качком, держащим на руках кота.</Russian>
+                <Spanish>un póster enrollado de un tío musculado sujetando un gato.</Spanish>
                 <Turkish>kucağında kedi tutan kaslı bir adamın rulo yapılmış posteri.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_068">
                 <Original>a note that says 'This is not important intel.'</Original>
                 <Russian>записку: 'Это не важная информация'.</Russian>
+                <Spanish>una nota que dice 'Esto no es información importante'.</Spanish>
                 <Turkish>'Bu önemli bir istihbarat değildir' yazan bir not.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_069">
                 <Original>a ticket stub for 'Shrek 2' opening night.</Original>
                 <Russian>билет в кино с премьеры 'Шрэк 2'.</Russian>
+                <Spanish>una entrada del estreno de 'Shrek 2'.</Spanish>
                 <Turkish>'Shrek 2' gala gecesinden kalma bir bilet koçanı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_070">
                 <Original>a fake, 15 of clubs playing card.</Original>
                 <Russian>фальшивую игральную карту — пятнадцать крести.</Russian>
+                <Spanish>un naipe falso: el 15 de tréboles.</Spanish>
                 <Turkish>sahte, sinek 15'li iskambil kağıdı.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_071">
                 <Original>a packet of ramen seasoning, no noodles.</Original>
                 <Russian>пакет приправы от лапши быстрого приготовления, без самой лапши.</Russian>
+                <Spanish>un sobre de condimento de ramen, sin fideos.</Spanish>
                 <Turkish>bir paket ramen çeşnisi, erişte yok.</Turkish>
             </Key>
             <Key ID="STR_antistasi_intel_not_found_072">
                 <Original>a binder labeled 'Master Plan' with only page numbers inside.</Original>
                 <Russian>папку с надписью 'Генеральный План', внутри только пронумерованные пустые листы.</Russian>
+                <Spanish>una carpeta titulada 'Plan maestro' que dentro solo tiene números de página.</Spanish>
                 <Turkish>üzerinde 'Büyük Plan' yazan ve içinde sadece sayfa numaraları olan bir klasör.</Turkish>
             </Key>
         </Container>
@@ -13987,6 +14082,7 @@
                 <Russian>Защитить Петроса</Russian>
                 <Chinesesimp>保卫Petros</Chinesesimp>
                 <Korean>페트로스 보호</Korean>
+                <Spanish>Defender a Petros</Spanish>
                 <French>Défendre Petros</French>
                 <Turkish>Petros'u Savun</Turkish>
             </Key>
@@ -13995,6 +14091,7 @@
                 <Russian>Враг отправил отряд спецназа с задачей найти и устранить Петроса. Остановите их или передвиньте штаб в безопасное место, пока они нас не нашли.</Russian>
                 <Chinesesimp>敌人派出特遣队去寻找并消灭Petros。 在他们找到我们之前阻止他们或将总部转移到安全地点。</Chinesesimp>
                 <Korean>적들이 페트로스를 찾기 위해 특수부대를 보냈습니다. 그들을 막거나, 그들이 오기 전에 본부를 옮기십시오.</Korean>
+                <Spanish>El enemigo ha enviado fuerzas especiales a buscar a Petros. Deténlos, o mueve el CG antes de que lleguen.</Spanish>
                 <French>L'ennemi a envoyé des troupes spéciales pour trouver Petros. Arrêtez-les ou déplacez le QG avant qu'ils n'arrivent.</French>
                 <Turkish>Düşman Petros'u bulmak için Özel Kuvvetler gönderdi. Onları durdurun ya da onlar buraya varmadan önce karargahı taşıyın.</Turkish>
             </Key>
@@ -14003,6 +14100,7 @@
                 <Russian>Уничтожить лидера ячейки %1</Russian>
                 <Chinesesimp>消灭 %1 组织的领导</Chinesesimp>
                 <Korean>%1 셀 리더 사살</Korean>
+                <Spanish>Matar al líder de célula de %1</Spanish>
                 <French>Tuer %1 Chef de cellule</French>
                 <Turkish>%1 Hücre Liderini Öldür</Turkish>
             </Key>
@@ -14011,6 +14109,7 @@
                 <Russian>Ячейка %1 в %2 скомпрометирована, а это значит, что пришло время действовать - идите туда и уничтожьте лидера ячейки, это остудит их пыл, %1 перестанут проводить свои тайные операции против нас в этой зоне. Наш информатор предоставляет данные что они знают, что мы скоро придём. Сделайте это до %3.</Russian>
                 <Chinesesimp>%2中的%1小队已经暴露了，是时候行动了-去那里杀掉这个小队的头目，这将阻止%1在这个特定区域对我们进行秘密行动。我们的线人提供情报说他们知道我们要来。在%3之前执行此任务。</Chinesesimp>
                 <Korean>%2에서의 %1의 셀이 탄로났습니다. 이제 행동할 시간입니다. 가서 해당 지역의 셀 리더를 죽이면 %1이(가) 이 지역에서 우리를 상대로 비밀 작전을 수행하는 것을 막을 수 있습니다. 우리 정보원은 우리가 올 것을 알고 있다는 정보를 제공했습니다. %3 이전에 완료하십시오.</Korean>
+                <Spanish>La célula de %1 en %2 ha quedado comprometida, es hora de actuar: ve allí y mata a su líder; eso impedirá que %1 siga realizando operaciones encubiertas contra nosotros en esa zona. Nuestro informante avisa de que saben que vamos. Hazlo antes de %3.</Spanish>
                 <French>La cellule %1 dans le %2 a été compromise, il est temps d'agir - allez-y et tuez le chef de cette cellule, cela empêchera %1 de mener des opérations secrètes contre nous dans cette zone particulière. Notre informateur nous dit qu'ils savent que nous arrivons. Faites-le avant %3.</French>
                 <Turkish>%2 bölgesindeki %1 hücresi deşifre oldu, harekete geçme vakti - oraya gidin ve bu hücrenin liderini öldürün; bu durum %1 grubunun bu bölgede bize karşı gizli operasyonlar yürütmesini engelleyecektir. Muhbirimiz, geleceğimizi bildiklerine dair istihbarat veriyor. Bunu %3 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14019,6 +14118,7 @@
                 <Russian>Захватите или уничтожьте тайник %1</Russian>
                 <Chinesesimp>夺取或摧毁 %1 藏匿处</Chinesesimp>
                 <Korean>%1의 은신처 보급품 노획 또는 파괴</Korean>
+                <Spanish>Tomar o destruir el alijo del escondite de %1</Spanish>
                 <French>Saisir ou détruire la cachette de %1</French>
                 <Turkish>%1 Sığınak Zulasını Ele Geçir veya İmha Et</Turkish>
             </Key>
@@ -14027,6 +14127,7 @@
                 <Russian>Убежище %1 в %2 было обнаружено, а это значит, что пришло время действовать - идите туда и украдите (доставьте к штабу) или уничтожьте их тайник с оружием. Без ресурсов на операции %1 перестанут их проводить в этой зоне. Сделайте это до %3.</Russian>
                 <Chinesesimp>%1 藏身地点 %2 已经找到，是时候采取行动了 - 去那里摧毁或窃取（交付给总部）他们的武器储藏室。 没有资源，他们就无法在这个特定区域对我们进行任何秘密行动。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%1의 은신처 위치 %2이(가) 발견되었습니다. 이제 행동할 시간입니다. 가서 무기 보급품을 파괴하거나 훔치십시오(본부로 전달). 자원이 없다면 이 지역에서 우리를 상대로 어떠한 작전도 수행할 수 없을 것입니다. %3 이전에 완료하십시오.</Korean>
+                <Spanish>Hemos localizado el escondite de %1 en %2, es hora de actuar: ve allí y destruye o roba (entregándolo en el CG) su alijo de armas. Sin recursos no podrán realizar operaciones encubiertas contra nosotros en esa zona. Hazlo antes de %3.</Spanish>
                 <French>L'emplacement de la cachette %1 %2 a été trouvé, il est temps d'agir - allez-y et détruisez ou volez (livrez au QG) leur cache d'armes. Sans ressources, ils ne pourront pas mener d'opération secrète contre nous dans cette zone particulière. Faites-le avant %3.</French>
                 <Turkish>%2 mevkiindeki %1 sığınağı bulundu, harekete geçme vakti - oraya gidin ve silah zulalarını imha edin veya çalın (karargaha teslim edin). Kaynakları olmadan bu bölgede bize karşı gizli operasyon yürütemezler. Bunu %3 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14035,6 +14136,7 @@
                 <Russian>Предотвратите передачу Захватчиками ценного груза Соперникам</Russian>
                 <Chinesesimp>防止入侵者将贵重货物转移给竞争对手</Chinesesimp>
                 <Korean>침략군들이 라이벌에게 귀중한 화물을 운송하는 걸 막기</Korean>
+                <Spanish>Impedir que los invasores entreguen carga valiosa a los rivales</Spanish>
                 <Turkish>İşgalcilerin Rakiplere Değerli Kargo Aktarmasını Engelleyin</Turkish>
             </Key>
             <Key ID="STR_RIV_ATT_transfer_text">
@@ -14042,6 +14144,7 @@
                 <Russian>Мы выяснили, что Захватчики собираются передать %1 ценный груз в %2 идите туда и остановите передачу. После срыва передачи, %1 перестанут проводить свои операции в этой зоне. Сделайте это до %3.</Russian>
                 <Chinesesimp>我们发现入侵者将在 %2 转移 %1 贵重货物。前往那里并阻止转移。传输中断后，%1 将停止在此区域开展行动。请在 %3 之前完成此操作。</Chinesesimp>
                 <Korean>우린 침략군이 %2에서 %1의 귀중한 화물을 운송할 것이라는 걸 알아냈습니다. 그 곳으로 가서 운송을 중지시키십시오. 운송이 중단되면 %1은(는) 이 지역에서 작업을 멈출 것입니다. %3 이전에 완료하십시오.</Korean>
+                <Spanish>Hemos descubierto que los invasores van a entregar carga valiosa a %1 en %2. Ve allí y detén la entrega. Una vez interrumpida, %1 dejará de operar en esta zona. Hazlo antes de %3.</Spanish>
                 <Turkish>İşgalcilerin %2 mevkiinde %1 grubuna değerli bir kargo aktaracağını öğrendik. Oraya gidin ve aktarımı durdurun. Aktarım engellendikten sonra %1 bu bölgedeki operasyonlarını durduracaktır. Bunu %3 vaktinden önce yapın.</Turkish>
             </Key>
             <Key ID="STR_trader_quest_header">
@@ -14049,6 +14152,7 @@
                 <Russian>Найти торговца оружием</Russian>
                 <Chinesesimp>找到军火商</Chinesesimp>
                 <Korean>암거래상 찾기</Korean>
+                <Spanish>Encontrar al traficante de armas</Spanish>
                 <French>Trouver le marchand d'armes</French>
                 <Turkish>Silah Tüccarını Bul</Turkish>
             </Key>
@@ -14057,6 +14161,7 @@
                 <Russian>Хотели того %1 или нет, но на %2 прибыл торговец оружием. Итак, давайте купим у него оружие и снаряжение, одно за другим. %3. Насколько мы можем судить, он торгует своим смертоносным товаром из логова за пределами крупных городов. Он хорошо спрятался, но с правильной командой мы сможем не затеряться, найти этого человека и установить контакт с чёрным рынком.</Russian>
                 <Chinesesimp>不管 %1 想不想让我们找到军火商，一名军火商已经到达 %2 。所以我们可以从他那里买武器装备。%3 ，但是据我们所知，他在主要城市外的森林里交易货物。他藏得很好，但是有了合适的团队，我们可以穿过那些树，找到这个人，然后和黑市建立联系。</Chinesesimp>
                 <Korean>%1이(가) 원하든 원하지 않든, 암거래상이 %2에 도착했습니다. 그럼 이제 무기와 장비를 하나씩 사봅시다. 그의 이름은 %3입니다. 우리가 수집한 정보에 의하면 그는 주요 도시 외곽의 숲 속 은신처에서 물건을 거래하고 있습니다. 그는 잘 숨겨졌지만, 적절한 팀이 있다면 그 숲을 뚫고 이 남자를 찾아내 암시장에 접촉할 수 있을 겁니다.</Korean>
+                <Spanish>Lo quisiera %1 o no, ha llegado un traficante de armas a %2. Vamos a comprarle armas y equipo, poco a poco. %3. Por lo que sabemos, vende su mercancía desde un escondite en el bosque, a las afueras de las ciudades grandes. Está bien escondido, pero con el equipo adecuado podemos abrirnos paso entre los árboles, encontrarlo y establecer contacto con el mercado negro.</Spanish>
                 <French>Que %1 le veuille ou non, un marchand d'armes est arrivé sur %2. Allons donc lui acheter des armes et du matériel, un par un. %3. D'après ce que nous savons, il vend ses marchandises depuis une cachette dans la forêt, à l'extérieur des grandes villes. Il est bien caché, mais avec la bonne équipe, nous pouvons percer ces arbres, trouver cet homme et établir un contact avec le marché noir.</French>
                 <Turkish>%1 istese de istemese de, %2 bölgesine bir silah tüccarı geldi. Hadi ondan tek tek silah ve teçhizat satın alalım. %3. Edindiğimiz bilgilere göre mallarını büyük şehirlerin dışındaki ormanlık alanda bulunan bir sığınaktan pazarlıyor. İyi gizlenmiş durumda ama doğru ekiple o ağaçların arasından sızabilir, bu adamı bulabilir ve karaborsa ile bağlantı kurabiliriz.</Turkish>
             </Key>
@@ -14065,6 +14170,7 @@
                 <Russian>Исследуйте поле боя</Russian>
                 <Chinesesimp>调查战场</Chinesesimp>
                 <Korean>전투지역 조사</Korean>
+                <Spanish>Investigar el campo de batalla</Spanish>
                 <French>Enquêter sur le champ de bataille</French>
                 <Turkish>Savaş Alanını İncele</Turkish>
             </Key>
@@ -14073,6 +14179,7 @@
                 <Russian>Мы получаем расплывчатые отчеты о длительной интенсивной перестрелке между %1 и какой-то неизвестной силой. Отправляйтесь на поле битвы и найдите что-нибудь, чтобы выяснить, что там произошло.</Russian>
                 <Chinesesimp>我们收到模糊的报告，说 %1 和一些未知势力之间发生了长时间的激烈交火。 去战场找点东西，看看那里到底发生了什么。</Chinesesimp>
                 <Korean>%1과 알려지지 않은 세력 간의 최근 격렬한 총격전에 대한 모호한 보고를 받았습니다. 해당 전투지역으로 가서 거기서 무슨 일이 일어났는지 단서를 찾으십시오.</Korean>
+                <Spanish>Nos llegan informes confusos sobre un intenso tiroteo reciente entre %1 y una fuerza desconocida. Ve al lugar del combate y busca pistas sobre lo que pasó allí.</Spanish>
                 <French>Nous recueillons de vagues informations sur un récent échange de coups de feu entre %1 et une force inconnue. Rendez-vous sur le champ de bataille et trouvez des indices sur ce qui s'y est passé.</French>
                 <Turkish>%1 ile bilinmeyen bir güç arasında yakın zamanda gerçekleşen şiddetli bir çatışmaya dair belirsiz raporlar alıyoruz. Savaş alanına gidin ve orada neler olduğuna dair ipuçları bulun.</Turkish>
             </Key>
@@ -14081,6 +14188,7 @@
                 <Russian>Отразите атаку %1 или сбегите из города</Russian>
                 <Chinesesimp>击败 %1 或逃离城市</Chinesesimp>
                 <Korean>%1의 공격을 격퇴하거나 도시로부터 탈출</Korean>
+                <Spanish>Repeler el ataque de %1 o escapar de la ciudad</Spanish>
                 <French>Repousser %1 attaque ou s'échapper de la ville</French>
                 <Turkish>%1 Saldırısını Püskürtün veya Şehirden Kaçın</Turkish>
             </Key>
@@ -14089,6 +14197,7 @@
                 <Russian>Это засада! Защитите себя убив всех нападающих или сбегите от засады из города! Сделайте это до %1.</Russian>
                 <Chinesesimp>这是埋伏！ 通过杀死所有攻击者来保卫自己，或者通过离开城市来逃避伏击！ 在 %1 之前执行此任务。</Chinesesimp>
                 <Korean>매복이었습니다! 공격자를 모두 죽여서 방어하거나 도시를 떠나 매복으로부터 탈출하십시오! %1 이전에 완료하십시오.</Korean>
+                <Spanish>¡Es una emboscada! ¡Defiéndete matando a todos los atacantes o escapa de la ciudad! Hazlo antes de %1.</Spanish>
                 <French>C'est une embuscade ! Défendez-vous en tuant tous les attaquants ou échappez à l'embuscade en quittant la ville ! Faites-le avant %1.</French>
                 <Turkish>Bu bir pusu! Tüm saldırganları öldürerek kendinizi savunun ya da şehirden kaçın! Bunu %1 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14097,6 +14206,7 @@
                 <Russian>Захват ресурсов</Russian>
                 <Chinesesimp>资源获取</Chinesesimp>
                 <Korean>자원채취소 획득</Korean>
+                <Spanish>Adquisición de recursos</Spanish>
                 <French>Acquisition de ressources</French>
                 <Turkish>Kaynak Edinimi</Turkish>
             </Key>
@@ -14105,6 +14215,7 @@
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2.</Russian>
                 <Chinesesimp>%1 对我们的行动来说是一个很好的补充。 去那里，在 %2 之前占领它。</Chinesesimp>
                 <Korean>%1은(는) 우리의 대의에 훌륭한 지원이 될 것입니다. 해당 지역으로 가서 %2 이전까지 점령하십시오.</Korean>
+                <Spanish>%1 sería una buena incorporación a nuestra causa. Ve allí y captúralo antes de %2.</Spanish>
                 <French>Un %1 serait un bon complément à notre cause. Allez-y et capturez-le avant %2.</French>
                 <Turkish>%1, davamız için harika bir katkı olurdu. Oraya gidin ve %2 vaktinden önce orayı ele geçirin.</Turkish>
             </Key>
@@ -14113,6 +14224,7 @@
                 <Russian>Уничтожьте блокпост</Russian>
                 <Chinesesimp>破坏检查站</Chinesesimp>
                 <Korean>검문소 파괴</Korean>
+                <Spanish>Destruir bloqueo de carretera</Spanish>
                 <French>Détruire le barrage routier</French>
                 <Turkish>Yol Barikatını İmha Et</Turkish>
             </Key>
@@ -14121,6 +14233,7 @@
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2.</Russian>
                 <Chinesesimp>%1 干扰了我们在该地区的行动。去那里，在 %2 之前摧毁它。</Chinesesimp>
                 <Korean>%1은(는) 해당 지역에서의 우리 작전을 방해하고 있습니다. 해당 지역으로 가서 %2 이전까지 파괴하십시오.</Korean>
+                <Spanish>%1 interfiere en nuestras operaciones en la zona. Ve allí y destrúyelo antes de %2.</Spanish>
                 <French>Un %1 interfère avec nos opérations dans la région. Allez-y et détruisez-le avant %2.</French>
                 <Turkish>Bir %1 bölgedeki operasyonlarımıza engel oluyor. Oraya gidin ve %2 vaktinden önce onu imha edin.</Turkish>
             </Key>
@@ -14129,6 +14242,7 @@
                 <Russian>Захватите аванпост</Russian>
                 <Chinesesimp>占领哨站</Chinesesimp>
                 <Korean>전초 기지 점령</Korean>
+                <Spanish>Tomar puesto avanzado</Spanish>
                 <French>Prendre l'avant-poste</French>
                 <Turkish>Karakolu Ele Geçir</Turkish>
             </Key>
@@ -14137,6 +14251,7 @@
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2.</Russian>
                 <Chinesesimp>%1 正在扰乱我们在该地区的行动。 去那里，在 %2 之前占领它。</Chinesesimp>
                 <Korean>%1은(는) 해당 지역에서의 우리 작전을 방해하고 있습니다. 해당 지역으로 가서 %2 이전까지 점령하십시오.</Korean>
+                <Spanish>%1 está entorpeciendo nuestras operaciones en la zona. Ve allí y captúralo antes de %2.</Spanish>
                 <French>Un %1 perturbe nos opérations dans la région. Allez-y et capturez-le avant %2.</French>
                 <Turkish>Bir %1 bölgedeki operasyonlarımızı rahatsız ediyor. Oraya gidin ve %2 vaktinden önce orayı ele geçirin.</Turkish>
             </Key>
@@ -14145,6 +14260,7 @@
                 <Russian>Захват ресурсов на передовой</Russian>
                 <Chinesesimp>前线资源获取</Chinesesimp>
                 <Korean>최전선의 자원채취소 점령</Korean>
+                <Spanish>Adquisición de recursos en el frente</Spanish>
                 <Turkish>Cephe Hattında Kaynak Edinimi</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_resources_compet_desc">
@@ -14152,6 +14268,7 @@
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2. %3 также отправила туда свои войска</Russian>
                 <Chinesesimp>%1 对我们的事业大有裨益。赶在 %2 之前占领那里。%3 也派出了他们的部队</Chinesesimp>
                 <Korean>%1은(는) 우리 대의의 훌륭한 부차적 자원이 될 것입니다. %2 이전에 그 곳으로 가서 점령하십시오. %3도 병력을 보냈습니다.</Korean>
+                <Spanish>%1 sería una buena incorporación a nuestra causa. Ve allí y captúralo antes de %2. %3 también ha enviado sus tropas</Spanish>
                 <Turkish>Bir %1, davamız için harika bir katkı olurdu. Oraya gidin ve %2 vaktinden önce orayı ele geçirin. %3 de kendi birliklerini gönderdi.</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_task">
@@ -14159,6 +14276,7 @@
                 <Russian>Уничтожьте блокпост на передовой</Russian>
                 <Chinesesimp>摧毁前线的路障</Chinesesimp>
                 <Korean>최전선의 로드블록 파괴</Korean>
+                <Spanish>Destruir bloqueo de carretera en el frente</Spanish>
                 <Turkish>Cephe Hattındaki Yol Barikatını İmha Et</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_controls_compet_desc">
@@ -14166,6 +14284,7 @@
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
                 <Chinesesimp>%1 干扰了我们在该地区的行动。赶快去那里并在 %2 之前将其摧毁。%3 也派出了他们的部队</Chinesesimp>
                 <Korean>%1이(가) 해당 지역에서 우리의 작전을 방해합니다. %2 이전에 가서 파괴하십시오. %3도 병력을 보냈습니다.</Korean>
+                <Spanish>%1 interfiere en nuestras operaciones en la zona. Ve allí y destrúyelo antes de %2. %3 también ha enviado sus tropas</Spanish>
                 <Turkish>Bir %1 bölgedeki operasyonlarımıza engel oluyor. Oraya gidin ve %2 vaktinden önce onu imha edin. %3 de kendi birliklerini gönderdi.</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_task">
@@ -14173,6 +14292,7 @@
                 <Russian>Борьба на передовой</Russian>
                 <Chinesesimp>前线斗争</Chinesesimp>
                 <Korean>최전선에서의 투쟁</Korean>
+                <Spanish>Pugna en el frente</Spanish>
                 <Turkish>Cephe Hattı Mücadelesi</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_outposts_compet_desc">
@@ -14180,6 +14300,7 @@
                 <Russian>%1 мешает нашим операциям в окрестностях. Отправляйтесь туда и уничтожьте его до %2. %3 также отправила туда свои войска</Russian>
                 <Chinesesimp>%1 正在干扰我们在该地区的行动。赶在 %2 之前前往占领该地区。%3 也派出了他们的部队</Chinesesimp>
                 <Korean>%1이(가) 해당 지역에서 우리의 작전을 방해하고 있습니다. %2 이전에 그 곳으로 가서 점령하십시오. %3도 병력을 보냈습니다.</Korean>
+                <Spanish>%1 está entorpeciendo nuestras operaciones en la zona. Ve allí y captúralo antes de %2. %3 también ha enviado sus tropas.</Spanish>
                 <Turkish>Bir %1 bölgedeki operasyonlarımızı rahatsız ediyor. Oraya gidin ve %2 vaktinden önce orayı ele geçirin. %3 de kendi birliklerini gönderdi.</Turkish>
             </Key>
             <Key ID="STR_CON_MilAdmin_task">
@@ -14187,6 +14308,7 @@
                 <Russian>Захватите администрацию</Russian>
                 <Chinesesimp>占领行政区</Chinesesimp>
                 <Korean>군 행정부 습격</Korean>
+                <Spanish>Tomar la administración</Spanish>
                 <French>Saisir l'administration</French>
                 <Turkish>Yönetimi Ele Geçir</Turkish>
             </Key>
@@ -14195,6 +14317,7 @@
                 <Russian>Военная администрация населенного пункта %1 утверждает свое господство и применяет силу к нашему населению, мы должны разобраться с этим, чтобы люди смогли вздохнуть спокойно. Убейте военного администратора для захвата. Сделайте это до %2.</Russian>
                 <Chinesesimp>一个卡瓦拉的军事管理机构宣称他们对我们人民的统治和武力，我们应该处理这个问题，这样人民才能松一口气。杀死军事行政官以夺取它。在%2之前。</Chinesesimp>
                 <Korean>해당 도시의 군 행정부는 우리 국민들에게 그들의 통치와 무력행사의 정당성을 주장합니다. 우린 사람들이 자유롭게 숨쉴 수 있도록 그들을 처리해야 합니다. 군 행정부의 관리자를 죽이고 점령하십시오. %2 이전에 완료하십시오.</Korean>
+                <Spanish>Una administración militar impone su autoridad sobre la población local. Deberíamos ocuparnos de ello para que la gente pueda vivir libre. Libera a los prisioneros que encuentres y mata al oficial destinado allí para tomarla. Hazlo antes de %2.</Spanish>
                 <French>L'administration militaire de Kavala impose sa loi et sa force à notre population, nous devons nous en occuper pour que les gens puissent respirer librement. Tuez l'administrateur militaire pour vous en emparer. Faites-le avant %2.</French>
                 <Turkish>Askeri bir yönetim yerel halk üzerinde baskı kuruyor. İnsanların özgürce yaşayabilmesi için bu durumla ilgilenmeliyiz. Bulduğunuz mahkumları serbest bırakın ve orayı ele geçirmek için orada görevli askeri subayı öldürün. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14203,6 +14326,7 @@
                 <Russian>Атака %1</Russian>
                 <Chinesesimp>攻击 %1</Chinesesimp>
                 <Korean>%1의 공격</Korean>
+                <Spanish>Ataque de %1</Spanish>
                 <French>%1 Attaque</French>
                 <Turkish>%1 Saldırısı</Turkish>
             </Key>
@@ -14211,6 +14335,7 @@
                 <Russian>%1 атакуют наш гарнизон в %2. Остановите их и дайте им бой, если можете, или отступите, чтобы взять реванш позже.</Russian>
                 <Chinesesimp>%1 正在攻击我们在 %2 的驻军。 如果可以的话阻止他们，或者改天再战。</Chinesesimp>
                 <Korean>%1이 %2의 우리 주둔군을 공격하고 있습니다. 가능하다면 그들을 막거나, 아니면 다른 날에 싸울 수 있도록 사십시오.</Korean>
+                <Spanish>%1 está atacando nuestra guarnición en %2. Deténlos si puedes, o vive para luchar otro día.</Spanish>
                 <French>%1 attaque notre garnison à %2. Arrêtez-les si vous le pouvez, ou vivez pour combattre un autre jour.</French>
                 <Turkish>%1, %2 mevkisindeki garnizonumuza saldırıyor. Yapabiliyorsanız onları durdurun, yoksa başka bir gün savaşmak üzere hayatta kalmaya bakın.</Turkish>
             </Key>
@@ -14219,6 +14344,7 @@
                 <Russian>Кара %1</Russian>
                 <Chinesesimp>%1 屠杀</Chinesesimp>
                 <Korean>%1의 학살</Korean>
+                <Spanish>Castigo de %1</Spanish>
                 <French>%1 Punition</French>
                 <Turkish>%1 Cezalandırması</Turkish>
             </Key>
@@ -14227,20 +14353,24 @@
                 <Russian>%2 атакуют критические позиции внутри %1! Защитие город любой ценой.</Russian>
                 <Chinesesimp>%2 正在攻击 %1 内的关键位置！ 不惜一切代价保卫城市。</Chinesesimp>
                 <Korean>%2이 %1 내의 중요한 위치를 공격하고 있습니다! 수단과 방법을 가리지 말고 도시를 지켜내십시오.</Korean>
+                <Spanish>¡%2 está atacando posiciones críticas dentro de %1! Defiende la ciudad a toda costa.</Spanish>
                 <French>%2 attaque des positions critiques à l'intérieur de %1 ! Défendez la ville à tout prix.</French>
                 <Turkish>%2, %1 içerisindeki kritik mevzilere saldırıyor! Şehri ne pahasına olursa olsun savunun.</Turkish>
             </Key>
             <Key ID="STR_townBattle_task">
                 <Original>%1 Skirmish - %2 Contact</Original>
+                <Spanish>Escaramuza en %1 - contacto con %2</Spanish>
             </Key>
             <Key ID="STR_townBattle_desc">
                 <Original>%2 is fighting local citizens within %1! The citizens have revolted against %2, and now they rely on you. Local rebel cells are prepared to aid your efforts, but you must find and protect the VIP. If you succeed, the city will join your cause. Defend the city and prove your worth!</Original>
+                <Spanish>¡%2 está combatiendo contra los vecinos dentro de %1! Los ciudadanos se han rebelado contra %2 y ahora cuentan contigo. Las células rebeldes locales están listas para ayudarte, pero tienes que encontrar y proteger al VIP. Si lo consigues, la ciudad se unirá a tu causa. ¡Defiende la ciudad y demuestra lo que vales!</Spanish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Official_task_header">
                 <Original>Kill %1 Officer</Original>
                 <Russian>Убейте офицера %1</Russian>
                 <Chinesesimp>杀死 %1 军官 </Chinesesimp>
                 <Korean>%1 장교 사살</Korean>
+                <Spanish>Matar a un oficial de %1</Spanish>
                 <French>Tuer %1 Officier</French>
                 <Turkish>%1 Subayını Öldür</Turkish>
             </Key>
@@ -14249,6 +14379,7 @@
                 <Russian>Офицер %1 инспектирует %2. Отправляйтесь туда и убейте его до %3.</Russian>
                 <Chinesesimp>一名 %1 军官正在视察 %2。 去那里，在 %3 之前杀了他。</Chinesesimp>
                 <Korean>%1의 장교가 %2을(를) 시찰 중입니다. 해당 지역으로 가서 %3:%4 이전까지 그를 사살하십시오.</Korean>
+                <Spanish>Un oficial de %1 está inspeccionando %2. Ve allí y mátalo antes de %3.</Spanish>
                 <French>Un officier %1 est en train d'inspecter %2. Allez-y et tuez-le avant %3.</French>
                 <Turkish>Bir %1 subayı %2 mevkisini denetliyor. Oraya gidin ve %3 vaktinden önce onu öldürün.</Turkish>
             </Key>
@@ -14257,6 +14388,7 @@
                 <Russian>Устройте засаду офицеру %1</Russian>
                 <Chinesesimp>伏击%1军官</Chinesesimp>
                 <Korean>%1 장교 매복</Korean>
+                <Spanish>Emboscar a un oficial de %1</Spanish>
                 <French>Embuscade %1 Officier</French>
                 <Turkish>%1 Subayına Pusu Kur</Turkish>
             </Key>
@@ -14265,6 +14397,7 @@
                 <Russian>Высокоранговый офицер %5 поедет из %1 в %2 (время: %3). Перехватите его транспортное средство и устраните его. Мы должны сделать это до %4.</Russian>
                 <Chinesesimp>高级 %5 官员将在 %3 从 %1 调到 %2。 拦截他的车辆并消灭他。 我们必须在 %4 之前完成。</Chinesesimp>
                 <Korean>%5 고위 장교는 %1에서 %3의 %2로 이동할 것입니다. 그의 차량을 막아서 그를 사살하십시오. %4 이전에 완료하십시오.</Korean>
+                <Spanish>Un alto oficial de %5 se desplazará desde %1 hasta %2 a las %3. Intercepta su vehículo y elimínalo. Tenemos que hacerlo antes de %4.</Spanish>
                 <French>Un officier de haut rang %5 se déplacera de %1 à %2 à %3. Interceptez son véhicule et éliminez-le. Nous devons le faire avant %4.</French>
                 <Turkish>Üst düzey bir %5 subayı, %3 vaktinde %1 mevkisinden %2 mevkisine hareket edecek. Aracının yolunu kesin ve onu etkisiz hale getirin. Bunu %4 vaktinden önce yapmalıyız.</Turkish>
             </Key>
@@ -14273,6 +14406,7 @@
                 <Russian>Устраните отряд спецназа</Russian>
                 <Chinesesimp>消灭特遣队</Chinesesimp>
                 <Korean>특수부대 팀 제거</Korean>
+                <Spanish>Eliminar al equipo de fuerzas especiales</Spanish>
                 <French>Éliminer l'équipe SpecOps</French>
                 <Turkish>Özel Kuvvetler Timini Etkisiz Hale Getir</Turkish>
             </Key>
@@ -14281,6 +14415,7 @@
                 <Russian>Мы обнаружили отряд специального назначения %1, патрулирующий окрестности %2. Устраните их и у нас будет на одну проблему меньше. Сделайте это до %3. Будьте осторожны - они довольно профессиональные и крепкие ребята.</Russian>
                 <Chinesesimp>我们发现了 %1 特遣队在 %2 周围巡逻。 消除它们，这样我们就会少一个问题。 在 %3 之前执行此任务。 小心，他们是训练有素装备精良的士兵。</Chinesesimp>
                 <Korean>%1의 특수부대 팀이 %2 주위를 순찰하는 걸 발견했습니다. 그들을 제거하면 우린 문제가 하나 줄어들 것입니다. %3 이전에 완료하십시오. 조심하십시오, 그들은 저렇게 보여도 만만한 녀석들이 아닙니다.</Korean>
+                <Spanish>Hemos avistado un equipo de fuerzas especiales de %1 patrullando cerca de %2. Elimínalos y tendremos un problema menos. Hazlo antes de %3. Ten cuidado, son tipos muy experimentados y duros.</Spanish>
                 <French>Nous avons repéré une équipe de %1 SpecOps qui patrouille autour d'un %2. Éliminez-les et nous aurons un problème de moins. Faites-le avant %3. Faites attention, ce sont des gars très expérimentés et très durs.</French>
                 <Turkish>%2 civarında devriye gezen bir %1 Özel Kuvvetler timi tespit ettik. Onları ortadan kaldırın, böylece bir sorunumuz eksilmiş olur. Bunu %3 vaktinden önce yapın. Dikkatli olun, oldukça deneyimli ve sert çocuklardır.</Turkish>
             </Key>
@@ -14289,6 +14424,7 @@
                 <Russian>Убейте предателя</Russian>
                 <Chinesesimp>杀死内鬼</Chinesesimp>
                 <Korean>배신자 사살</Korean>
+                <Spanish>Matar al traidor</Spanish>
                 <French>Tuer le traître</French>
                 <Turkish>Haini Öldür</Turkish>
             </Key>
@@ -14297,6 +14433,7 @@
                 <Russian>Предатель назначил встречу с %1 в %2. Убейте его до того, как он выдаст достаточно информации о нас. Сделайте это до %3. Мы не знаем точно, где произойдёт эта встреча. Вы узнаете конкретное здание по припаркованному рядом автомобилю и присутствию охраны от %1.</Russian>
                 <Chinesesimp>内鬼已安排在 %2 与 %1 会面。 在他提供足够的情报给我们带来麻烦之前杀了他。 在 %3 之前执行此任务。 我们不知道这次会议的确切地点。 你要通过识别停在附近的载具和 %1 携带的安保人员，找到在哪个建筑交易。</Chinesesimp>
                 <Korean>배신자가 %2에서 %1과의 만남을 예약했습니다. 그가 우리에게 문제를 일으킬 만큼 충분한 정보를 제공하기 전에 그를 죽이십시오. %3 이전에 완료하십시오. 우린 이 만남이 어디서 일어날 지 모릅니다. 근처 차량 및 %1의 존재로 건물을 알아볼 수 있습니다.</Korean>
+                <Spanish>Un traidor ha concertado una reunión con %1 en %2. Mátalo antes de que entregue información suficiente para causarnos problemas. Hazlo antes de %3. No sabemos exactamente dónde será la reunión, pero podrás localizar el edificio por el todoterreno aparcado cerca y la presencia de %1.</Spanish>
                 <French>Un traître a prévu de rencontrer %1 en %2. Tuez-le avant qu'il ne fournisse suffisamment d'informations pour nous causer des ennuis. Faites-le avant %3. Nous ne savons pas exactement où cette réunion aura lieu. Vous reconnaîtrez le bâtiment grâce à la présence d'Offroad et de %1 à proximité.</French>
                 <Turkish>Bir hain, %2 mevkisinde %1 grubuyla bir toplantı ayarladı. Başımıza iş açacak kadar istihbarat vermeden önce onu öldürün. Bunu %3 vaktinden önce yapın. Toplantının tam olarak nerede yapılacağını bilmiyoruz ama binayı, yakınındaki arazi aracından ve %1 varlığından tanıyabilirsiniz.</Turkish>
             </Key>
@@ -14304,24 +14441,28 @@
                 <Original>Kill the Mutant</Original>
                 <Chinesesimp>杀死变种人</Chinesesimp>
                 <Korean>돌연변이 사살</Korean>
+                <Spanish>Matar al mutante</Spanish>
                 <Turkish>Mutantı Öldür</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Smasher_task_desc">
                 <Original>Reports from unknown sources suggest %1 Special Forces have engaged a rare Mutant in %2. Kill the Mutant before it causes major issues. Do this before %3. We don't know where this fight is happening.</Original>
                 <Chinesesimp>来自未知来源的报告表明 %1 特种部队在 %2 与一名罕见的变种人交战。在变种人造成重大问题之前将其杀死。在 %3 之前完成此操作。我们不知道这场战斗发生在哪里。</Chinesesimp>
                 <Korean>알 수 없는 출처의 보고에 따르면 %1의 특수부대가 %2에서 희귀한 돌연변이와 교전했다고 합니다. 중대한 문제가 발생하기 전에 돌연변이를 죽이십시오. %3 이전에 완료하십시오. 이 전투가 어디서 일어나는지 알 수 없습니다.</Korean>
+                <Spanish>Informes de fuentes desconocidas apuntan a que las fuerzas especiales de %1 se han enfrentado a un mutante poco común en %2. Mata al mutante antes de que cause problemas graves. Hazlo antes de %3. No sabemos dónde se está produciendo el combate.</Spanish>
                 <Turkish>Bilinmeyen kaynaklardan gelen raporlar, %1 Özel Kuvvetlerinin %2 mevkisinde nadir bir Mutant ile çatışmaya girdiğini bildiriyor. Büyük sorunlara yol açmadan önce Mutantı öldürün. Bunu %3 vaktinden önce yapın. Bu çatışmanın tam olarak nerede gerçekleştiğini bilmiyoruz.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Zombies_task_header">
                 <Original>Stop City Infestation</Original>
                 <Chinesesimp>阻止城市侵扰</Chinesesimp>
                 <Korean>도시 감염 방호</Korean>
+                <Spanish>Detener la infestación de la ciudad</Spanish>
                 <Turkish>Şehir İstilasını Durdur</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Zombies_task_desc">
                 <Original>%1 is in danger of becoming infested. If it falls, nobody will be able to live there in future. This will have permanent consequences, so we need to act quickly. Save %1 from infestation... Do this before %2.</Original>
                 <Chinesesimp>%1 有被感染的危险。如果它倒塌，以后就没有人能住在那里了。这将产生永久性的后果，所以我们需要迅速采取行动。拯救 %1 免受感染... 在 %2 之前完成这件事。</Chinesesimp>
                 <Korean>%1은(는) 감염될 위험이 있습니다. 만약 뚫린다면 앞으로 아무도 그 곳에서 살 수 없을 것입니다. 이것은 영구적인 결과를 가져올 것이므로 재빨리 행동해야 합니다. %1을(를) 감염으로부터 구하십시오... %2 이전에 완료하십시오.</Korean>
+                <Spanish>%1 corre peligro de quedar infestada. Si cae, nadie podrá vivir allí en el futuro. Esto tendrá consecuencias permanentes, así que hay que actuar rápido. Salva %1 de la infestación... Hazlo antes de %2.</Spanish>
                 <Turkish>%1 istila edilme tehlikesiyle karşı karşıya. Eğer düşerse, gelecekte orada kimse yaşayamayacak. Bunun kalıcı sonuçları olacaktır, bu yüzden hızlı hareket etmeliyiz. %1 bölgesini istiladan kurtarın... Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_RIV_Traitor_task_header">
@@ -14329,6 +14470,7 @@
                 <Russian>Устраните перебежчика</Russian>
                 <Chinesesimp>消灭叛徒</Chinesesimp>
                 <Korean>탈주자 제거</Korean>
+                <Spanish>Eliminar al desertor</Spanish>
                 <French>Éliminer le transfuge</French>
                 <Turkish>Taraf Değiştireni Etkisiz Hale Getir</Turkish>
             </Key>
