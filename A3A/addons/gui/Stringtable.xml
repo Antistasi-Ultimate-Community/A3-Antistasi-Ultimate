@@ -512,6 +512,7 @@
                 <Russian>Список доступной для покупки техники будет расширяться по мере развития войны.</Russian>
                 <Chinesesimp>请注意，随着战争的发展，反抗军的载具数量会增加。</Chinesesimp>
                 <Korean>전쟁이 진행될 때마다 저항군의 차량 재고가 증가한다는 것을 알아두세요.</Korean>
+                <Spanish>Ten en cuenta que el stock de vehículos rebeldes aumenta a medida que avanza la guerra.</Spanish>
                 <French>Notez que le stock de véhicules des rebelles s'accroît au fur et à mesure que la guerre évolue.</French>
                 <Turkish>İsyancı araç stoğunun savaş ilerledikçe arttığını unutmayın</Turkish>
             </Key>
@@ -520,6 +521,7 @@
                 <Russian>Список техники на чёрном рынке зависит от текущего уровня войны и успехов повстанцев.</Russian>
                 <Chinesesimp>黑市上可买的载具清单取决于当前的战争水平和反抗军的各种成功。</Chinesesimp>
                 <Korean>암시장 차량 재고는 현재 전쟁 레벨과 달성한 다양한 이정표에 따라 달라집니다.</Korean>
+                <Spanish>El stock de vehículos del mercado negro depende del Nivel de Guerra actual y de varios hitos alcanzados.</Spanish>
                 <French>Le stock de véhicules du marché noir dépend du niveau de guerre actuel et des différentes étapes franchies.</French>
                 <Turkish>Karaborsa araçları, Savaş Seviyesi ve tamamlanan görevler doğrultusunda belirlenir</Turkish>
             </Key>
@@ -695,6 +697,7 @@
                 <Original>Buy %1 for %2 %3</Original>
                 <Chinesesimp>以 %2 %3 的价格购买 %1</Chinesesimp>
                 <Korean>%2%3에 %1 구매</Korean>
+                <Spanish>Comprar %1 por %2 %3</Spanish>
                 <French>Acheter %1 pour %2 %3</French>
                 <Turkish>%1’i %2 %3 karşılığında al</Turkish>
             </Key>
@@ -703,6 +706,7 @@
                 <Chinesesimp>购买物品</Chinesesimp>
                 <Russian>Парашют</Russian>
                 <Korean>아이템 구매</Korean>
+                <Spanish>Comprar objeto</Spanish>
                 <French>Acheter un article</French>
                 <Turkish>Öğe Satın Al</Turkish>
             </Key>
@@ -711,6 +715,7 @@
                 <Chinesesimp>只有指挥官可以购买此物品</Chinesesimp>
                 <Russian>Только Командир может купить этот предмет.</Russian>
                 <Korean>지휘관만 이 아이템을 살 수 있습니다.</Korean>
+                <Spanish>Solo el Comandante puede comprar este objeto.</Spanish>
                 <French>Seul le commandant peut acheter cet article.</French>
                 <Turkish>Bu öğeyi yalnızca komutan satın alabilir</Turkish>
             </Key>
@@ -728,6 +733,7 @@
                 <Russian>Вся гражданская техника</Russian>
                 <Chinesesimp>所有平民</Chinesesimp>
                 <Korean>모든 민간용</Korean>
+                <Spanish>Todos los civiles</Spanish>
                 <Turkish>Tüm Sivil</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civcars">
@@ -735,6 +741,7 @@
                 <Russian>Гражданские машины</Russian>
                 <Chinesesimp>平民车辆</Chinesesimp>
                 <Korean>민간 차량</Korean>
+                <Spanish>Coches civiles</Spanish>
                 <Turkish>Sivil Arabalar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civtrucks">
@@ -742,6 +749,7 @@
                 <Russian>Гражданские грузовики</Russian>
                 <Chinesesimp>平民卡车</Chinesesimp>
                 <Korean>민간 트럭</Korean>
+                <Spanish>Camiones civiles</Spanish>
                 <Turkish>Sivil Kamyonlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civboats">
@@ -749,6 +757,7 @@
                 <Russian>Гражданские лодки</Russian>
                 <Chinesesimp>平民船只</Chinesesimp>
                 <Korean>민간 보트</Korean>
+                <Spanish>Barcos civiles</Spanish>
                 <Turkish>Sivil Tekneler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civheli">
@@ -756,6 +765,7 @@
                 <Russian>Гражданские вертолёты</Russian>
                 <Chinesesimp>平民直升机</Chinesesimp>
                 <Korean>민간 헬기</Korean>
+                <Spanish>Helicópteros civiles</Spanish>
                 <Turkish>Sivil Heli.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civplanes">
@@ -763,6 +773,7 @@
                 <Russian>Гражданские самолёты</Russian>
                 <Chinesesimp>平民飞机</Chinesesimp>
                 <Korean>민간 항공기</Korean>
+                <Spanish>Aviones civiles</Spanish>
                 <Turkish>Sivil Uçaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reb">
@@ -779,6 +790,7 @@
                 <Russian>Вся техника повстанцев</Russian>
                 <Chinesesimp>所有反抗军</Chinesesimp>
                 <Korean>모든 반군용</Korean>
+                <Spanish>Todos los rebeldes</Spanish>
                 <Turkish>Tüm İsyancılar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebbasic">
@@ -786,6 +798,7 @@
                 <Russian>Базовая техника повстанцев</Russian>
                 <Chinesesimp>反抗军基础</Chinesesimp>
                 <Korean>반군용 기본 차량</Korean>
+                <Spanish>Básicos rebeldes</Spanish>
                 <Turkish>İsyancı Temelleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebtrucks">
@@ -793,6 +806,7 @@
                 <Russian>Грузовики повстанцев</Russian>
                 <Chinesesimp>反抗军卡车</Chinesesimp>
                 <Korean>반군용 트럭</Korean>
+                <Spanish>Camiones rebeldes</Spanish>
                 <Turkish>İsyancı Kamyonları</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightunarmed">
@@ -800,6 +814,7 @@
                 <Russian>Неворуженные машины повстанцев</Russian>
                 <Chinesesimp>反抗军无武装</Chinesesimp>
                 <Korean>반군용 비무장 차량</Korean>
+                <Spanish>Rebeldes sin armamento</Spanish>
                 <Turkish>İsyancı Silahsız</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebboats">
@@ -807,6 +822,7 @@
                 <Russian>Лодки повстанцев</Russian>
                 <Chinesesimp>反抗军船只</Chinesesimp>
                 <Korean>반군용 보트</Korean>
+                <Spanish>Barcos rebeldes</Spanish>
                 <Turkish>İsyancı Tekneleri</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebmedical">
@@ -814,6 +830,7 @@
                 <Russian>Медицинский транспорт повстанцев</Russian>
                 <Chinesesimp>反抗军医疗</Chinesesimp>
                 <Korean>반군용 의료 차량</Korean>
+                <Spanish>Sanitarios rebeldes</Spanish>
                 <Turkish>İsyancı Sağlık</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightarmed">
@@ -821,6 +838,7 @@
                 <Russian>Вооружённые машины повстанцев</Russian>
                 <Chinesesimp>反抗军有武装</Chinesesimp>
                 <Korean>반군용 무장 차량</Korean>
+                <Spanish>Rebeldes armados</Spanish>
                 <Turkish>İsyancı Silahlılar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebat">
@@ -828,6 +846,7 @@
                 <Russian>ПТ техника повстанцев</Russian>
                 <Chinesesimp>反抗军反坦克</Chinesesimp>
                 <Korean>반군용 대전차차량</Korean>
+                <Spanish>AT rebelde</Spanish>
                 <Turkish>İsyancı AT</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebaa">
@@ -835,6 +854,7 @@
                 <Russian>ПВО техника повстанцев</Russian>
                 <Chinesesimp>反抗军对空</Chinesesimp>
                 <Korean>반군용 대공차량</Korean>
+                <Spanish>AA rebelde</Spanish>
                 <Turkish>İsyancı AA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebplane">
@@ -842,6 +862,7 @@
                 <Russian>Самолёты повстанцев</Russian>
                 <Chinesesimp>反抗军飞机</Chinesesimp>
                 <Korean>반군용 항공기</Korean>
+                <Spanish>Aviones rebeldes</Spanish>
                 <Turkish>İsyancı Uçaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
@@ -849,6 +870,7 @@
                 <Russian>Все турели</Russian>
                 <Chinesesimp>所有静态</Chinesesimp>
                 <Korean>모든 고정화기</Korean>
+                <Spanish>Todas las estáticas</Spanish>
                 <Turkish>Tüm Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticMG">
@@ -856,6 +878,7 @@
                 <Russian>Пулемётные турели</Russian>
                 <Chinesesimp>静态机枪</Chinesesimp>
                 <Korean>고정 기관총</Korean>
+                <Spanish>Estáticas de ametralladora</Spanish>
                 <Turkish>MG Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAT">
@@ -863,6 +886,7 @@
                 <Russian>ПТ турели</Russian>
                 <Chinesesimp>静态反坦克</Chinesesimp>
                 <Korean>고정 대전차포</Korean>
+                <Spanish>Estáticas AT</Spanish>
                 <Turkish>AT Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAA">
@@ -870,6 +894,7 @@
                 <Russian>ПВО турели</Russian>
                 <Chinesesimp>静态对空</Chinesesimp>
                 <Korean>고정 대공포</Korean>
+                <Spanish>Estáticas AA</Spanish>
                 <Turkish>AA Statikler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticmortars">
@@ -877,6 +902,7 @@
                 <Russian>Миномёты</Russian>
                 <Chinesesimp>迫击炮</Chinesesimp>
                 <Korean>박격포</Korean>
+                <Spanish>Morteros</Spanish>
                 <Turkish>Havanlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_med_tooltip">
@@ -884,6 +910,7 @@
                 <Russian>Эта станция поможет вам вылечиться</Russian>
                 <Chinesesimp>这个将帮助你医疗</Chinesesimp>
                 <Korean>이 스테이션은 당신의 치료를 도웁니다.</Korean>
+                <Spanish>Esta estación te ayudará a curarte</Spanish>
                 <Turkish>Bu istasyon sağlık yenileme sağlar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_ammo_tooltip">
@@ -891,6 +918,7 @@
                 <Russian>Склад боеприпасов</Russian>
                 <Chinesesimp>弹药站</Chinesesimp>
                 <Korean>탄약고</Korean>
+                <Spanish>Estación de munición</Spanish>
                 <Turkish>Mühimmat İstasyonu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_buy_vehicle_repair_tooltip">
@@ -898,6 +926,7 @@
                 <Russian>Эта станция может чинить технику</Russian>
                 <Chinesesimp>这个可以维修载具</Chinesesimp>
                 <Korean>이 스테이션은 차량을 수리할 수 있습니다.</Korean>
+                <Spanish>Esta estación puede reparar vehículos</Spanish>
                 <Turkish>Bu istasyon araç tamiri sağlar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_select">
@@ -905,6 +934,7 @@
                 <Russian>Выбрать</Russian>
                 <Chinesesimp>选择</Chinesesimp>
                 <Korean>선택</Korean>
+                <Spanish>Seleccionar</Spanish>
                 <Turkish>Seç</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_all">
@@ -912,6 +942,7 @@
                 <Russian>Вся техника</Russian>
                 <Chinesesimp>所有车辆</Chinesesimp>
                 <Korean>모든 차량</Korean>
+                <Spanish>Todos los vehículos</Spanish>
                 <Turkish>Tüm Araçlar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_arty">
@@ -919,6 +950,7 @@
                 <Russian>Артиллерия</Russian>
                 <Chinesesimp>炮兵</Chinesesimp>
                 <Korean>야포</Korean>
+                <Spanish>Artillería</Spanish>
                 <Turkish>Topçu</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_apc">
@@ -926,6 +958,7 @@
                 <Russian>Бронетранспортёры</Russian>
                 <Chinesesimp>APC</Chinesesimp>
                 <Korean>보병수송장갑차</Korean>
+                <Spanish>APC</Spanish>
                 <Turkish>ZPT</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_AA">
@@ -933,6 +966,7 @@
                 <Russian>ПВО</Russian>
                 <Chinesesimp>AA</Chinesesimp>
                 <Korean>대공포</Korean>
+                <Spanish>AA</Spanish>
                 <Turkish>AA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_uav">
@@ -940,6 +974,7 @@
                 <Russian>БПЛА/БПА</Russian>
                 <Chinesesimp>无人机/无人车</Chinesesimp>
                 <Korean>무인기/무인차</Korean>
+                <Spanish>UAV/UGV</Spanish>
                 <Turkish>İHA/İKA</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_tank">
@@ -947,6 +982,7 @@
                 <Russian>Танки</Russian>
                 <Chinesesimp>坦克</Chinesesimp>
                 <Korean>전차</Korean>
+                <Spanish>Tanques</Spanish>
                 <Turkish>Tanklar</Turkish>
             </Key>
             <!-- <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
@@ -958,6 +994,7 @@
                 <Russian>Вертолёты</Russian>
                 <Chinesesimp>直升机</Chinesesimp>
                 <Korean>헬리콥터</Korean>
+                <Spanish>Helicópteros</Spanish>
                 <Turkish>Helikopter</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_plane">
@@ -965,6 +1002,7 @@
                 <Russian>Самолёты</Russian>
                 <Chinesesimp>飞机</Chinesesimp>
                 <Korean>항공기</Korean>
+                <Spanish>Aviones</Spanish>
                 <Turkish>Uçaklar</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_armedcar">
@@ -972,6 +1010,7 @@
                 <Russian>Вооружённые автомобили</Russian>
                 <Chinesesimp>武装车辆</Chinesesimp>
                 <Korean>무장 차량</Korean>
+                <Spanish>Coches armados</Spanish>
                 <Turkish>Silahlı Araba</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_unarmedcar">
@@ -979,6 +1018,7 @@
                 <Russian>Безоружные автомобили</Russian>
                 <Chinesesimp>无武装车辆</Chinesesimp>
                 <Korean>비무장 차량</Korean>
+                <Spanish>Coches sin armar</Spanish>
                 <Turkish>Silahsız Araba</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_boat">
@@ -986,6 +1026,7 @@
                 <Russian>Лодки</Russian>
                 <Chinesesimp>船只</Chinesesimp>
                 <Korean>보트</Korean>
+                <Spanish>Barcos</Spanish>
                 <Turkish>Tekneler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_static">
@@ -1011,6 +1052,7 @@
                 <Chinesesimp>这个物品可以为其他人加油。\n%1 最大燃料是 %2 。</Chinesesimp>
                 <Russian>Этот предмет может заправлять другие машины.\n%1 максимум топлива %2.</Russian>
                 <Korean>이 아이템은 다른 차량을 재급유할 수 있습니다.\n%1의 최대 연료량은 %2입니다.</Korean>
+                <Spanish>Este objeto puede repostar a otros.\n%1 tiene un máximo de combustible de %2.</Spanish>
                 <French>Cet objet peut en ravitailler d'autres.\n%1 Le carburant maximum est de %2.</French>
                 <Turkish>Bu öğe diğerlerini yakıtlandırabilir.\n%1 maksimum yakıt %2’dir</Turkish>
             </Key>
@@ -1019,6 +1061,7 @@
                 <Chinesesimp>这个物品可以收集战利品。</Chinesesimp>
                 <Russian>Этот предмет может собирать трофеи.</Russian>
                 <Korean>이 아이템은 전리품을 수집할 수 있습니다.</Korean>
+                <Spanish>Este objeto puede recoger botín.</Spanish>
                 <French>Cet objet peut collecter du butin.</French>
                 <Turkish>Bu öğe ganimet toplayabilir</Turkish>
             </Key>
@@ -1027,6 +1070,7 @@
                 <Chinesesimp>这个物品可以提供照明。</Chinesesimp>
                 <Russian>Этот предмет излучает свет.</Russian>
                 <Korean>이 아이템은 광원을 제공합니다.</Korean>
+                <Spanish>Este objeto proporciona una fuente de luz.</Spanish>
                 <French>Cet article fournit une source lumineuse.</French>
                 <Turkish>Bu öğe ışık kaynağı sağlar.</Turkish>
             </Key>
@@ -1035,6 +1079,7 @@
                 <Russian>Этот предмет содержит в себе некоторое количество наборов восстановления боеспособности.</Russian>
                 <Chinesesimp>这个物品包含一定数量的战备恢复包。</Chinesesimp>
                 <Korean>이 아이템은 일정량의 전투 준비 복구 키트가 들어 있습니다.</Korean>
+                <Spanish>Este objeto contiene cierta cantidad de kits de recuperación de disponibilidad para el combate.</Spanish>
                 <French>Cet objet contient un certain nombre de kits de récupération de l'état de préparation au combat.</French>
                 <Turkish>Bu öğe belirli sayıda Savaş Hazırlığı Yenileme kiti içerir</Turkish>
             </Key>
@@ -3483,6 +3528,7 @@
                 <Czech>NASTAVENÍ ANTISTASI ULTIMATE</Czech>
                 <French>CONFIGURATION D'ANTISTASI ULTIMATE</French>
                 <Italian>CONFIGURAZIONE ANTISTASI ULTIMATE</Italian>
+                <Spanish>CONFIGURACIÓN DE ANTISTASI ULTIMATE</Spanish>
                 <Korean>안티스타시 플러스 설정</Korean>
                 <Russian>НАСТРОЙКА ANTISTASI ULTIMATE</Russian>
                 <Polish>KONFIGURACJA ANTYSTASI ULTIMATE</Polish>
@@ -3495,6 +3541,7 @@
                 <Czech>Načíst hru</Czech>
                 <French>Charger la partie</French>
                 <Italian>Carica Partita</Italian>
+                <Spanish>Cargar partida</Spanish>
                 <Korean>게임 불러오기</Korean>
                 <Russian>Сохранения</Russian>
                 <Polish>Wczytaj Rozgrywkę</Polish>
@@ -3507,6 +3554,7 @@
                 <Czech>Frakce</Czech>
                 <French>Factions</French>
                 <Italian>Fazioni</Italian>
+                <Spanish>Facciones</Spanish>
                 <Korean>팩션</Korean>
                 <Russian>Фракции</Russian>
                 <Polish>Frakcje</Polish>
@@ -3519,6 +3567,7 @@
                 <Czech>Parametry</Czech>
                 <French>Paramètres</French>
                 <Italian>Parametri</Italian>
+                <Spanish>Parámetros</Spanish>
                 <Korean>매개변수</Korean>
                 <Russian>Параметры</Russian>
                 <Polish>Parametry</Polish>
@@ -3531,6 +3580,7 @@
                 <Czech>Tato karta je zakázána. Chcete-li změnit parametry ukládání, vyberte uloženou pozici, kterou chcete upravit, nebo zaškrtněte políčko "Vytvořit novou hru".</Czech>
                 <French>Cet onglet est désactivé. Pour modifier les paramètres de sauvegarde, sélectionnez une sauvegarde à modifier ou cochez la case « Créer un nouveau jeu ».</French>
                 <Italian>Questa scheda è disabilitata. Per modificare i parametri di salvataggio, seleziona un salvataggio da modificare o seleziona la casella di controllo "Crea nuova partita".</Italian>
+                <Spanish>Esta pestaña está desactivada. Para cambiar los parámetros de una partida guardada, selecciona una partida para editar o marca la casilla «Crear partida nueva».</Spanish>
                 <Korean>이 탭은 사용할 수 없습니다. 저장 매개변수를 변경하려면 편집할 저장을 선택하거나 '새 게임 생성' 확인란을 선택합니다.</Korean>
                 <Russian>Эта вкладка отключена. Чтобы изменить параметры сохранения, выберите сохранение для редактирования или установите флажок «Создать новую игру».</Russian>
                 <Polish>Ta karta jest wyłączona. Aby zmienić parametry zapisu, wybierz zapis do edycji lub zaznacz pole wyboru "Utwórz nową grę".</Polish>
@@ -3543,6 +3593,7 @@
                 <Czech>Základní parametry</Czech>
                 <French>Paramètres de base</French>
                 <Italian>Parametri di base</Italian>
+                <Spanish>Parámetros básicos</Spanish>
                 <Korean>기본 매개 변수</Korean>
                 <Russian>Основные параметры</Russian>
                 <Polish>Podstawowe parametry</Polish>
@@ -3555,6 +3606,7 @@
                 <Czech>Pokročilé parametry</Czech>
                 <French>Paramètres avancés</French>
                 <Italian>Parametri avanzati</Italian>
+                <Spanish>Parámetros avanzados</Spanish>
                 <Korean>고급 매개 변수</Korean>
                 <Russian>Расширенные параметры</Russian>
                 <Polish>Parametry zaawansowane</Polish>
@@ -3567,6 +3619,7 @@
                 <Czech>Umělá inteligence a vyvážení parametrů</Czech>
                 <French>IA et paramètres d'équilibre</French>
                 <Italian>IA e parametri di bilanciamento</Italian>
+                <Spanish>Parámetros de IA y equilibrio</Spanish>
                 <Korean>AI 및 밸런스 매개변수</Korean>
                 <Russian>ИИ и параметры баланса</Russian>
                 <Polish>Parametry sztucznej inteligencji i balansu</Polish>
@@ -3579,6 +3632,7 @@
                 <Czech>Parametry černého trhu a kořisti</Czech>
                 <French>Paramètres du marché noir et du butin</French>
                 <Italian>Mercato nero e parametri del bottino</Italian>
+                <Spanish>Parámetros de mercado negro y botín</Spanish>
                 <Korean>암시장 및 전리품 매개변수</Korean>
                 <Russian>Параметры чёрного рынка и лута</Russian>
                 <Polish>Parametry czarnego rynku i łupów</Polish>
@@ -3591,6 +3645,7 @@
                 <Czech>Parametry stavitele</Czech>
                 <French>Paramètres du constructeur</French>
                 <Italian>Parametri del costruttore</Italian>
+                <Spanish>Parámetros de construcción</Spanish>
                 <Korean>빌더 매개변수</Korean>
                 <Russian>Параметры строителя</Russian>
                 <Polish>Parametry konstruktora</Polish>
@@ -3603,6 +3658,7 @@
                 <Czech>Experimentální parametry</Czech>
                 <French>Paramètres expérimentaux</French>
                 <Italian>Parametri sperimentali</Italian>
+                <Spanish>Parámetros experimentales</Spanish>
                 <Korean>실험적 매개 변수</Korean>
                 <Russian>Экспериментальные параметры</Russian>
                 <Polish>Parametry eksperymentalne</Polish>
@@ -3615,6 +3671,7 @@
                 <Czech>Parametry extenderu</Czech>
                 <French>Paramètres de l'extenseur</French>
                 <Italian>Parametri dell'extender</Italian>
+                <Spanish>Parámetros de Extender</Spanish>
                 <Korean>확장 매개 변수</Korean>
                 <Russian>Параметры расширений</Russian>
                 <Polish>Parametry przedłużacza</Polish>
@@ -3627,6 +3684,7 @@
                 <Czech>Skupina</Czech>
                 <French>Groupe</French>
                 <Italian>Gruppo</Italian>
+                <Spanish>Grupo</Spanish>
                 <Korean>그룹</Korean>
                 <Russian>Группа</Russian>
                 <Polish>Grupa</Polish>
@@ -3638,6 +3696,7 @@
                 <Czech>Pouze</Czech>
                 <French>Seulement</French>
                 <Italian>Solo</Italian>
+                <Spanish>En solitario</Spanish>
                 <Korean>오직</Korean>
                 <Russian>Только</Russian>
                 <Polish>Tylko</Polish>
@@ -3649,6 +3708,7 @@
                 <Czech>Malý</Czech>
                 <French>Petit</French>
                 <Italian>Piccolo</Italian>
+                <Spanish>Pequeño</Spanish>
                 <Korean>작다</Korean>
                 <Russian>Маленький</Russian>
                 <Polish>Mały</Polish>
@@ -3660,6 +3720,7 @@
                 <Czech>Středně</Czech>
                 <French>Douleur moyenne</French>
                 <Italian>Medio</Italian>
+                <Spanish>Mediano</Spanish>
                 <Korean>보통</Korean>
                 <Russian>Терпимая</Russian>
                 <Polish>Średni</Polish>
@@ -3671,6 +3732,7 @@
                 <Czech>Velký</Czech>
                 <French>Grand</French>
                 <Italian>Grande</Italian>
+                <Spanish>Grande</Spanish>
                 <Korean>큰</Korean>
                 <Russian>Большой</Russian>
                 <Polish>Duży</Polish>
@@ -3682,6 +3744,7 @@
                 <Czech>Obtížnost</Czech>
                 <French>Difficulté</French>
                 <Italian>Difficoltà</Italian>
+                <Spanish>Dificultad</Spanish>
                 <Korean>어려움</Korean>
                 <Russian>Трудность</Russian>
                 <Polish>Trudność</Polish>
@@ -3693,6 +3756,7 @@
                 <Czech>Snadný</Czech>
                 <French>Facile</French>
                 <Italian>Facile</Italian>
+                <Spanish>Fácil</Spanish>
                 <Korean>쉬운</Korean>
                 <Russian>Лёгкий</Russian>
                 <Polish>Łatwy</Polish>
@@ -3704,6 +3768,7 @@
                 <Czech>Středně</Czech>
                 <French>Douleur moyenne</French>
                 <Italian>Medio</Italian>
+                <Spanish>Media</Spanish>
                 <Korean>보통</Korean>
                 <Russian>Терпимая</Russian>
                 <Polish>Średni</Polish>
@@ -3715,6 +3780,7 @@
                 <Czech>Tvrdý</Czech>
                 <French>Dur</French>
                 <Italian>Duro</Italian>
+                <Spanish>Difícil</Spanish>
                 <Korean>힘들다</Korean>
                 <Russian>Трудный</Russian>
                 <Polish>Twardy</Polish>
@@ -3726,6 +3792,7 @@
                 <Czech>Zvyk</Czech>
                 <French>Coutume</French>
                 <Italian>Costume</Italian>
+                <Spanish>Personalizado</Spanish>
                 <Korean>관습</Korean>
                 <Russian>Обычай</Russian>
                 <Polish>Zwyczaj</Polish>
@@ -3737,6 +3804,7 @@
                 <Czech>Experimentální a vývojové parametry</Czech>
                 <French>Paramètres expérimentaux et de développement</French>
                 <Italian>Parametri sperimentali e di sviluppo</Italian>
+                <Spanish>Parámetros experimentales y de desarrollo</Spanish>
                 <Korean>실험 및 개발 매개변수</Korean>
                 <Russian>Экспериментальные параметры и настройки для разработки</Russian>
                 <Polish>Parametry eksperymentalne i rozwojowe</Polish>
@@ -3749,6 +3817,7 @@
                 <Czech>Další obsah</Czech>
                 <French>Contenu additionnel</French>
                 <Italian>Contenuto aggiuntivo</Italian>
+                <Spanish>Contenido adicional</Spanish>
                 <Korean>추가 컨텐츠</Korean>
                 <Russian>Доп. контент</Russian>
                 <Polish>Dodatkowa zawartość</Polish>
@@ -3761,6 +3830,7 @@
                 <Czech>Uložené hry</Czech>
                 <French>Parties sauvegardées</French>
                 <Italian>Partite Salvate</Italian>
+                <Spanish>Partidas guardadas</Spanish>
                 <Korean>저장된 게임</Korean>
                 <Russian>Сохранения</Russian>
                 <Polish>Zapisane Rozgrywki</Polish>
@@ -3773,6 +3843,7 @@
                 <Czech>Začít hru</Czech>
                 <French>Commencer une partie</French>
                 <Italian>Inizia Partita</Italian>
+                <Spanish>Iniciar partida</Spanish>
                 <Korean>게임 시작</Korean>
                 <Russian>Начать игру</Russian>
                 <Polish>Rozpocznij Rozgrywkę</Polish>
@@ -3785,6 +3856,7 @@
                 <Czech>Možnosti hry</Czech>
                 <French>Options de jeu</French>
                 <Italian>Opzioni di gioco</Italian>
+                <Spanish>Opciones de partida</Spanish>
                 <Korean>게임 옵션</Korean>
                 <Russian>Опции игры</Russian>
                 <Polish>Opcje gry</Polish>
@@ -3796,6 +3868,7 @@
                 <Czech>Vytvořit novou hru</Czech>
                 <French>Créer une nouvelle partie</French>
                 <Italian>Crea nuova partita</Italian>
+                <Spanish>Crear partida nueva</Spanish>
                 <Korean>새 게임 생성</Korean>
                 <Russian>Новая игра</Russian>
                 <Polish>Stwórz Nową Rozgrywkę</Polish>
@@ -3808,6 +3881,7 @@
                 <Czech>Zkopírovat starou hru</Czech>
                 <French>Copier une partie</French>
                 <Italian>Copia vecchia partita</Italian>
+                <Spanish>Copiar partida antigua</Spanish>
                 <Korean>예전 게임 복사</Korean>
                 <Russian>Скопир. старое сохр.</Russian>
                 <Polish>Skopiuj Starą Rozgrywkę</Polish>
@@ -3820,6 +3894,7 @@
                 <Czech>Načíst staré parametry</Czech>
                 <French>Charger d'anciens paramètres</French>
                 <Italian>Carica i vecchi parametri</Italian>
+                <Spanish>Cargar parámetros antiguos</Spanish>
                 <Korean>예전 매개변수 불러오기</Korean>
                 <Russian>Загр. старые параметры</Russian>
                 <Polish>Wczytaj Stare Parametry</Polish>
@@ -3832,6 +3907,7 @@
                 <Czech>Použít novou metodu uložení</Czech>
                 <French>Utiliser la nouvelle méthode d'enregistrement</French>
                 <Italian>Usa il nuovo metodo di salvataggio</Italian>
+                <Spanish>Usar el nuevo método de guardado</Spanish>
                 <Korean>새 저장 방식 사용</Korean>
                 <Russian>Используйте новый метод сохранения</Russian>
                 <Polish>Użyj nowej metody zapisywania</Polish>
@@ -3844,6 +3920,7 @@
                 <Czech>Varování: To způsobí problémy s ukládáním, pokud je použito na serveru jiném než Windows.</Czech>
                 <French>Avertissement : Cela causera des problèmes de sauvegarde s'il est utilisé sur un serveur non Windows.</French>
                 <Italian>Attenzione: questo causerà problemi di salvataggio se utilizzato su un server non basato su Windows.</Italian>
+                <Spanish>Advertencia: esto PROVOCARÁ problemas de guardado si se usa en un servidor que no sea Windows.</Spanish>
                 <Korean>경고: Windows 기반이 아닌 서버에서 사용하면 저장 문제가 발생합니다.</Korean>
                 <Russian>Предупреждение: Это вызовет проблемы с сохранением при использовании на сервере, отличном от Windows.</Russian>
                 <Polish>Ostrzeżenie: Spowoduje to problemy z zapisywaniem, jeśli zostanie użyty na serwerze innym niż Windows.</Polish>
@@ -3856,6 +3933,7 @@
                 <Czech>Nastavít pozici velitelství</Czech>
                 <French>Définir la position du QG</French>
                 <Italian>Imposta Posizione HQ</Italian>
+                <Spanish>Fijar posición del CG</Spanish>
                 <Korean>본부 위치 설정</Korean>
                 <Russian>Выбор места старта</Russian>
                 <Polish>Ustaw Pozycję Sztabu</Polish>
@@ -3868,6 +3946,7 @@
                 <Czech>Nový název uložení</Czech>
                 <French>Nom de la partie</French>
                 <Italian>Nuovo Nome del Salvataggio</Italian>
+                <Spanish>Nombre de la nueva partida</Spanish>
                 <Korean>새 게임 저장</Korean>
                 <Russian>Имя сохранения</Russian>
                 <Polish>Nowa Nazwa Zapisu</Polish>
@@ -3880,6 +3959,7 @@
                 <Czech>Přejmenovat hru</Czech>
                 <French>Renommer la partie</French>
                 <Italian>Rinomina Partita</Italian>
+                <Spanish>Renombrar partida</Spanish>
                 <Korean>게임 이름 변경</Korean>
                 <Russian>Переименовать</Russian>
                 <Polish>Zmień Nazwę Rozgrywki</Polish>
@@ -3892,6 +3972,7 @@
                 <Czech>Odstranit hru</Czech>
                 <French>Supprimer la partie</French>
                 <Italian>Elimina Partita</Italian>
+                <Spanish>Eliminar partida</Spanish>
                 <Korean>게임 삭제</Korean>
                 <Russian>Удалить</Russian>
                 <Polish>Usuń Rozgrywkę</Polish>
@@ -3904,6 +3985,7 @@
                 <Czech>Rebelové</Czech>
                 <French>Rebelles</French>
                 <Italian>Ribelli</Italian>
+                <Spanish>Rebeldes</Spanish>
                 <Korean>반군(플레이어)</Korean>
                 <Russian>Повстанцы</Russian>
                 <Polish>Rebelianci</Polish>
@@ -3916,6 +3998,7 @@
                 <Czech>Soupeři</Czech>
                 <French>Rivaux</French>
                 <Italian>Rivali</Italian>
+                <Spanish>Rivales</Spanish>
                 <Korean>라이벌</Korean>
                 <Russian>Соперники</Russian>
                 <Polish>Rywale</Polish>
@@ -3928,6 +4011,7 @@
                 <Czech>Civilisté</Czech>
                 <French>Civils</French>
                 <Italian>Civili</Italian>
+                <Spanish>Civiles</Spanish>
                 <Korean>시민</Korean>
                 <Russian>Гражданские</Russian>
                 <Polish>Cywile</Polish>
@@ -3940,6 +4024,7 @@
                 <Czech>Okupanti</Czech>
                 <French>Occupants</French>
                 <Italian>Occupanti</Italian>
+                <Spanish>Ocupantes</Spanish>
                 <Korean>점령군</Korean>
                 <Russian>Оккупанты</Russian>
                 <Polish>Okupanci</Polish>
@@ -3952,6 +4037,7 @@
                 <Czech>Nájezdníci</Czech>
                 <French>Envahisseurs</French>
                 <Italian>Invasori</Italian>
+                <Spanish>Invasores</Spanish>
                 <Korean>침략군</Korean>
                 <Russian>Захватчики</Russian>
                 <Polish>Najeźdźcy</Polish>
@@ -3964,6 +4050,7 @@
                 <Czech>Addonová vozidla</Czech>
                 <French>Véhicules moddés</French>
                 <Italian>Veicoli Addon</Italian>
+                <Spanish>Vehículos de addons</Spanish>
                 <Korean>애드온 차량</Korean>
                 <Russian>Моды на технику</Russian>
                 <Polish>Dodatkowe Pojazdy</Polish>
@@ -3976,6 +4063,7 @@
                 <Czech>DLC</Czech>
                 <French>DLC</French>
                 <Italian>DLC</Italian>
+                <Spanish>DLC</Spanish>
                 <Korean>DLC</Korean>
                 <Russian>DLC</Russian>
                 <Polish>DLC</Polish>
@@ -3988,6 +4076,7 @@
                 <Czech>Potlačuje</Czech>
                 <French>Substitue</French>
                 <Italian>Esegue l' override</Italian>
+                <Spanish>Anulaciones</Spanish>
                 <Korean>재정의</Korean>
                 <Russian>Переопределения</Russian>
                 <Polish>Zastępuje</Polish>
@@ -3999,6 +4088,7 @@
                 <Czech>Přepsat limity map</Czech>
                 <French>Outrepasser les limites de la carte</French>
                 <Italian>Sovrascrivi limiti mappa</Italian>
+                <Spanish>Anular límites del mapa</Spanish>
                 <Korean>지도 제한 덮어쓰기</Korean>
                 <Russian>Откл. ограничения карты</Russian>
                 <Polish>Nadpisz Limity Mapy</Polish>
@@ -4011,6 +4101,7 @@
                 <Czech>Přepsat limity kamufláží</Czech>
                 <French>Outrepasser les limites de camouflage</French>
                 <Italian>Sovrascrivi limiti camo</Italian>
+                <Spanish>Anular límites de camuflaje</Spanish>
                 <Korean>위장 제한 덮어쓰기</Korean>
                 <Russian>Откл. огранич. камуфляжа</Russian>
                 <Polish>Nadpisz Limity Kamuflażu</Polish>
@@ -4023,6 +4114,7 @@
                 <Czech>Zobrazit chybějící módy</Czech>
                 <French>Montrer les mods manquants</French>
                 <Italian>Mostra mod mancanti</Italian>
+                <Spanish>Mostrar mods que faltan</Spanish>
                 <Korean>누락된 모드 표시</Korean>
                 <Russian>Показ. недостающ. моды</Russian>
                 <Polish>Pokaż Brakujące Mody</Polish>
@@ -4035,6 +4127,7 @@
                 <Czech>Přepsat limity stran</Czech>
                 <French>Outrepasser les limites de camps</French>
                 <Italian>Sovrascrivi limiti dei gruppi</Italian>
+                <Spanish>Anular límites de bando</Spanish>
                 <Korean>진영 제한 덮어쓰기</Korean>
                 <Russian>Откл. огранич. сторон</Russian>
                 <Polish>Nadpisz Limity Stron</Polish>
@@ -4047,6 +4140,7 @@
                 <Czech>Přepnout nepřátelské strany</Czech>
                 <French>Changer de camp</French>
                 <Italian>Scambia gruppi nemici</Italian>
+                <Spanish>Intercambiar bandos enemigos</Spanish>
                 <Korean>적군 진영 전환</Korean>
                 <Russian>Поменять местами</Russian>
                 <Polish>Zmień Strony Wroga</Polish>
@@ -4059,6 +4153,7 @@
                 <Czech>POTVRDIT AKCI</Czech>
                 <French>CONFIRMER L'ACTION</French>
                 <Italian>CONFERMA AZIONE</Italian>
+                <Spanish>CONFIRMAR ACCIÓN</Spanish>
                 <Korean>실행 확인</Korean>
                 <Russian>ПОДТВЕРДИТЕ ДЕЙСТВИЕ</Russian>
                 <Polish>POTWIERDŹ DZIAŁANIE</Polish>
@@ -4071,6 +4166,7 @@
                 <Czech>ANO</Czech>
                 <French>OUI</French>
                 <Italian>Sì</Italian>
+                <Spanish>SÍ</Spanish>
                 <Korean>예</Korean>
                 <Russian>ДА</Russian>
                 <Polish>TAK</Polish>
@@ -4083,6 +4179,7 @@
                 <Czech>ZRUŠIT</Czech>
                 <French>ANNULER</French>
                 <Italian>CANCELLA</Italian>
+                <Spanish>CANCELAR</Spanish>
                 <Korean>취소</Korean>
                 <Russian>ОТМЕНА</Russian>
                 <Polish>ANULUJ</Polish>
@@ -4095,6 +4192,7 @@
                 <Russian>Создать новую игру с </Russian>
                 <Chinesesimp>创建新游戏</Chinesesimp>
                 <Korean>새 게임 만들기: </Korean>
+                <Spanish>Crear partida nueva con </Spanish>
                 <French>Créer une nouvelle partie avec</French>
                 <Turkish>Yeni oyun: </Turkish>
             </Key>
@@ -4103,6 +4201,7 @@
                 <Russian>Вы действительно хотите удалить игру с ID %1 на %2?</Russian>
                 <Chinesesimp>您确定要删除 %2 上 ID 为 %1 的游戏吗？</Chinesesimp>
                 <Korean>정말 %2에서 ID가 %1인 게임을 삭제하시겠습니까?</Korean>
+                <Spanish>¿Seguro que quieres eliminar la partida con ID %1 en %2?</Spanish>
                 <French>Êtes-vous sûr de vouloir supprimer le partie avec l'ID %1 sur %2 ?</French>
                 <Turkish>%2 üzerindeki %1 kimliğiyle oyunu silmek istediğinizden emin misiniz?</Turkish>
             </Key>
@@ -4111,6 +4210,7 @@
                 <Russian>Копировать игру с ID %1, </Russian>
                 <Chinesesimp>复制 ID 为 %1 的游戏，</Chinesesimp>
                 <Korean>ID가 %1인 게임 복사, </Korean>
+                <Spanish>Copiar la partida con ID %1, </Spanish>
                 <French>Copier la partie avec ID %1,</French>
                 <Turkish>%1 kimliğiyle Oyunu kopyala, </Turkish>
             </Key>
@@ -4119,18 +4219,21 @@
                 <Russian>Загрузить игру с ID %1, </Russian>
                 <Chinesesimp>加载 ID 为 %1 的游戏，</Chinesesimp>
                 <Korean>ID가 %1인 게임 불러오기, </Korean>
+                <Spanish>Cargar la partida con ID %1, </Spanish>
                 <French>Charger la partie avec l' ID %1,</French>
                 <Turkish>%1 kimliğiyle oyunu yükle, </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_factions">
                 <!-- <Original>Rebels: %1\n Civilians: %2\n Occupants: %3\n Invaders: %4\n Rivals: %5</Original> -->
                 <Original>Occupants: %3\n Invaders: %4\n Rebels: %1\n Rivals: %5\n Civilians: %2</Original>
+ <Spanish>Ocupantes: %3\n Invasores: %4\n Rebeldes: %1\n Rivales: %5\n Civiles: %2</Spanish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
                 <Original>name "%1", </Original>
                 <Russian>названием "%1", </Russian>
                 <Chinesesimp>名称“%1”，</Chinesesimp>
                 <Korean>"%1"(으)로 명명, </Korean>
+                <Spanish>nombre "%1", </Spanish>
                 <French>nom "%1", </French>
                 <Turkish> isim "%1", </Turkish>
             </Key>
@@ -4139,6 +4242,7 @@
                 <Czech>Tento parametr nelze změnit pro existující uloženou pozici.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pour une sauvegarde existante.</French>
                 <Italian>Questo parametro non può essere modificato per un salvataggio esistente.</Italian>
+                <Spanish>Este parámetro no se puede cambiar en una partida ya guardada.</Spanish>
                 <Korean>이 매개변수는 기존에 저장한 게임에서는 바꿀 수 없습니다.</Korean>
                 <Russian>Этот параметр не может быть изменен для существующего сохранения.</Russian>
                 <Polish>Tego parametru nie można zmienić dla istniejącego zapisu.</Polish>
@@ -4151,6 +4255,7 @@
                 <Czech>Tento parametr nelze změnit ve hře.</Czech>
                 <French>Ce paramètre ne peut pas être modifié pendant le jeu.</French>
                 <Italian>Questo parametro non può essere modificato durante il gioco.</Italian>
+                <Spanish>Este parámetro no se puede cambiar durante la partida.</Spanish>
                 <Korean>이 매개변수는 게임 중에는 변경할 수 없습니다.</Korean>
                 <Russian>Этот параметр нельзя изменить во время игры.</Russian>
                 <Polish>Tego parametru nie można zmienić w grze.</Polish>
@@ -4163,6 +4268,7 @@
                 <Czech>Tento parametr nelze změnit, protože nejsou splněny podmínky.</Czech>
                 <French>Ce paramètre ne peut pas être modifié car les conditions ne sont pas remplies.</French>
                 <Italian>Questo parametro non può essere modificato perché le condizioni non sono soddisfatte.</Italian>
+                <Spanish>Este parámetro no se puede cambiar porque no se cumplen las condiciones.</Spanish>
                 <Korean>이 매개변수는 조건이 충족되지 않아 변경할 수 없습니다.</Korean>
                 <Russian>Этот параметр нельзя изменить, потому что не выполняются условия.</Russian>
                 <Polish>Tego parametru nie można zmienić, ponieważ warunki nie są spełnione.</Polish>
@@ -4174,6 +4280,7 @@
                 <Czech>Tento parametr nelze změnit, protože je zamčen jinými parametry.</Czech>
                 <French>Ce paramètre ne peut pas être modifié car il est verrouillé par d'autres paramètres.</French>
                 <Italian>Questo parametro non può essere modificato perché è bloccato da altri parametri.</Italian>
+                <Spanish>Este parámetro no se puede cambiar porque está bloqueado por otros parámetros.</Spanish>
                 <Korean>이 매개변수는 다른 매개변수에 의해 잠겨 있어 변경할 수 없습니다.</Korean>
                 <Russian>Этот параметр нельзя изменить, так как он заблокирован другими параметрами.</Russian>
                 <Polish>Tego parametru nie można zmienić, ponieważ jest zablokowany przez inne parametry.</Polish>
@@ -4185,6 +4292,7 @@
                 <Czech>Zapnutí soupeřů může mít nezamýšlené vedlejší účinky (např. možnost zobrazení výchozí frakce útočníků), když jsou útočníci deaktivováni.</Czech>
                 <French>L'activation des rivaux peut avoir des effets secondaires involontaires (par exemple, la possibilité que la faction des envahisseurs par défaut apparaisse) lorsque les envahisseurs sont désactivés.</French>
                 <Italian>L'abilitazione dei rivali può avere effetti collaterali indesiderati (ad esempio, la possibilità che appaia una fazione invasore predefinita) quando gli invasori sono disabilitati.</Italian>
+                <Spanish>Activar los rivales puede tener efectos secundarios no deseados (por ejemplo, que aparezca la facción invasora por defecto) cuando los invasores están desactivados.</Spanish>
                 <Korean>라이벌을 활성화하면 침입자가 비활성화될 때 의도하지 않은 부작용(예: 기본 침입자 진영이 나타날 가능성)이 발생할 수 있습니다.</Korean>
                 <Russian>Включение соперников может иметь непреднамеренные побочные эффекты (например, возможность появления стандартной фракции захватчиков) при отключении захватчиков.</Russian>
                 <Polish>Włączenie rywali może mieć niezamierzone skutki uboczne (np. możliwość pojawienia się domyślnej frakcji najeźdźców), gdy najeźdźcy są wyłączeni.</Polish>
@@ -4197,6 +4305,7 @@
                 <Czech>Konkurenční frakce je deaktivována. Chcete-li vybrat soupeřící frakci, povolte soupeře na kartě parametrů.</Czech>
                 <French>La faction rivale est désactivée. Pour sélectionner une faction rivale, activez les rivaux dans l'onglet des paramètres.</French>
                 <Italian>La fazione rivale è disabilitata. Per selezionare una fazione rivale, abilita i rivali nella scheda dei parametri.</Italian>
+                <Spanish>La facción rival está desactivada. Para seleccionar una facción rival, activa los rivales en la pestaña de parámetros.</Spanish>
                 <Korean>라이벌 진영이 비활성화되었습니다. 라이벌 진영을 선택하려면, parameters 탭에서 라이벌을 활성화하세요.</Korean>
                 <Russian>Соперничающая фракция отключена. Чтобы выбрать соперничающую фракцию, включите соперников во вкладке параметров.</Russian>
                 <Polish>Rywalizująca frakcja jest wyłączona. Aby wybrać rywalizującą frakcję, włącz rywali w zakładce parametrów.</Polish>
@@ -4209,6 +4318,7 @@
                 <Czech>Frakce Invader je pro tento herní režim zakázána. Chcete-li vybrat frakci útočníků, změňte herní režim na kartě parametrů.</Czech>
                 <French>La faction des envahisseurs est désactivée pour ce mode de jeu. Pour sélectionner une faction d'envahisseur, changez le mode de jeu dans l'onglet des paramètres.</French>
                 <Italian>La fazione Invasore è disabilitata per questa modalità di gioco. Per selezionare una fazione invasore, cambia la modalità di gioco nella scheda dei parametri.</Italian>
+                <Spanish>La facción invasora está desactivada en este modo de juego. Para seleccionar una facción invasora, cambia el modo de juego en la pestaña de parámetros.</Spanish>
                 <Korean>이 게임 모드에서는 침입자 진영이 비활성화되어 있습니다. 침략자 진영을 선택하려면 매개변수 탭에서 게임 모드를 변경하세요.</Korean>
                 <Russian>Фракция захватчиков отключена для этого режима игры. Чтобы выбрать фракцию захватчика, измените режим игры во вкладке параметров.</Russian>
                 <Polish>Frakcja Najeźdźców jest wyłączona w tym trybie gry. Aby wybrać frakcję najeźdźców, zmień tryb gry w zakładce parametrów.</Polish>
@@ -4221,6 +4331,7 @@
                 <Czech>Tento parametr nelze povolit, pokud jsou útočníci zakázáni.</Czech>
                 <French>Ce paramètre ne peut pas être activé si les envahisseurs sont désactivés.</French>
                 <Italian>Questo parametro non può essere abilitato se gli invasori sono disabilitati.</Italian>
+                <Spanish>Este parámetro no se puede activar si los invasores están desactivados.</Spanish>
                 <Korean>이 매개변수는 침략자가 비활성화되어 있다면 활성화할 수 없습니다.</Korean>
                 <Russian>Этот параметр нельзя включить, если захватчики отключены.</Russian>
                 <Polish>Tego parametru nie można włączyć, jeśli intruzi są wyłączeni.</Polish>
@@ -4233,6 +4344,7 @@
                 <Russian>Создание нового сохранения</Russian>
                 <Chinesesimp>创建新存档</Chinesesimp>
                 <Korean>새 저장 생성</Korean>
+                <Spanish>Creando partida nueva</Spanish>
                 <French>Création d'une nouvelle sauvegarde</French>
                 <Turkish>Yeni kayıt oluştur</Turkish>
             </Key>
@@ -4241,6 +4353,7 @@
                 <Russian>Выбрана игра с ID: %1</Russian>
                 <Chinesesimp>编辑存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 편집: %1</Korean>
+                <Spanish>Editando la partida con ID: %1</Spanish>
                 <French>Modification de la sauvegarde (ID : %1)</French>
                 <Turkish>%1 ID’li kaydı düzenliyorsunuz</Turkish>
             </Key>
@@ -4249,6 +4362,7 @@
                 <Russian>Копия игры с ID: %1</Russian>
                 <Chinesesimp>复制存档 (ID: %1)</Chinesesimp>
                 <Korean>ID로 저장 복사: %1</Korean>
+                <Spanish>Copiando la partida con ID: %1</Spanish>
                 <French>Copie de la sauvegarde (ID : %1)</French>
                 <Turkish>%1 ID’li kaydı kopyalıyorsunuz</Turkish>
             </Key>
@@ -4257,6 +4371,7 @@
                 <Russian>Этот параметр нельзя изменить при глобально отключенных разблокировках.</Russian>
                 <Chinesesimp>全局禁用解锁功能时无法更改此参数。</Chinesesimp>
                 <Korean>해금이 전역으로 비활성화된 경우 이 매개변수는 변경할 수 없습니다.</Korean>
+                <Spanish>Este parámetro no se puede cambiar cuando los desbloqueos están desactivados globalmente.</Spanish>
                 <French>Ce paramètre ne peut pas être modifié lorsque les déverrouillages sont désactivés globalement.</French>
                 <Turkish>Açılır öğeler global olarak devre dışıysa bu parametre değiştirilemez</Turkish>
             </Key>
@@ -4265,6 +4380,7 @@
                 <Czech>Předvolby parametrů</Czech>
                 <French>Préréglages de paramètres</French>
                 <Italian>Preset dei parametri</Italian>
+                <Spanish>Preajustes de parámetros</Spanish>
                 <Korean>매개변수 사전 설정</Korean>
                 <Russian>Предустановки параметров</Russian>
                 <Polish>Predefiniowane ustawienia parametrów</Polish>
@@ -4276,6 +4392,7 @@
                 <Czech>Název nové předvolby</Czech>
                 <French>Nouveau nom de préréglage</French>
                 <Italian>Nuovo nome del preset</Italian>
+                <Spanish>Nombre del nuevo preajuste</Spanish>
                 <Korean>새 사전 설정 이름</Korean>
                 <Russian>Новое имя пресета</Russian>
                 <Polish>Nowa nazwa ustawienia predefiniowanego</Polish>
@@ -4287,6 +4404,7 @@
                 <Czech>Uložit předvolbu</Czech>
                 <French>Enregistrer le préréglage</French>
                 <Italian>Salva preset</Italian>
+                <Spanish>Guardar preajuste</Spanish>
                 <Korean>사전 설정 저장</Korean>
                 <Russian>Сохранить предустановку</Russian>
                 <Polish>Zapisz ustawienie wstępne</Polish>
@@ -4298,6 +4416,7 @@
                 <Czech>Odstranit předvolbu</Czech>
                 <French>Supprimer le préréglage</French>
                 <Italian>Elimina preset</Italian>
+                <Spanish>Eliminar preajuste</Spanish>
                 <Korean>사전 설정 삭제</Korean>
                 <Russian>Удалить предустановку</Russian>
                 <Polish>Usuń ustawienie predefiniowane</Polish>
@@ -4309,6 +4428,7 @@
                 <Czech>Přejmenování přednastavení</Czech>
                 <French>Renommer le préréglage</French>
                 <Italian>Rinomina preset</Italian>
+                <Spanish>Renombrar preajuste</Spanish>
                 <Korean>사전 설정 이름 바꾸기</Korean>
                 <Russian>Переименовать предустановку</Russian>
                 <Polish>Zmień nazwę ustawienia predefiniowanego</Polish>
@@ -4320,6 +4440,7 @@
                 <Czech>Vyhledávání parametrů</Czech>
                 <French>Recherche de paramètres</French>
                 <Italian>Ricerca parametri</Italian>
+                <Spanish>Buscar parámetro</Spanish>
                 <Korean>매개변수 검색</Korean>
                 <Russian>Поиск параметров</Russian>
                 <Polish>Wyszukiwanie parametrów</Polish>
@@ -4334,6 +4455,7 @@
                 <Russian>Карта</Russian>
                 <Chinesesimp>地图</Chinesesimp>
                 <Korean>지도</Korean>
+                <Spanish>Mapa</Spanish>
                 <French>Carte</French>
                 <Turkish>Harita</Turkish>
             </Key>
@@ -4343,6 +4465,7 @@
                 <Russian>Название</Russian>
                 <Chinesesimp>名字</Chinesesimp>
                 <Korean>이름</Korean>
+                <Spanish>Nombre</Spanish>
                 <French>Nom</French>
                 <Turkish>İsim</Turkish>
             </Key>
@@ -4352,6 +4475,7 @@
                 <Russian>Версия</Russian>
                 <Chinesesimp>载具</Chinesesimp>
                 <Korean>버전</Korean>
+                <Spanish>Versión</Spanish>
                 <French>Version</French>
                 <Turkish>Sürüm</Turkish>
             </Key>
@@ -4361,6 +4485,7 @@
                 <Russian>Время</Russian>
                 <Chinesesimp>时间</Chinesesimp>
                 <Korean>시간</Korean>
+                <Spanish>Hora</Spanish>
                 <French>Temps</French>
                 <Turkish>Zaman</Turkish>
             </Key>
@@ -4370,6 +4495,7 @@
                 <Russian>Файл</Russian>
                 <Chinesesimp>文件</Chinesesimp>
                 <Korean>파일</Korean>
+                <Spanish>Archivo</Spanish>
                 <French>Fichier</French>
                 <Turkish>Dosya</Turkish>
             </Key>
@@ -4380,6 +4506,7 @@
                 <Czech>Zavřít</Czech>
                 <French>Fermer</French>
                 <Italian>Chiudi</Italian>
+                <Spanish>Cerrar</Spanish>
                 <Korean>닫기</Korean>
                 <Russian>Закрыть</Russian>
                 <Polish>Zamknij</Polish>
@@ -4392,6 +4519,7 @@
                 <Czech>Pozice velitelství</Czech>
                 <French>Position du QG</French>
                 <Italian>Posizione HQ</Italian>
+                <Spanish>Posición del CG</Spanish>
                 <Korean>본부 위치</Korean>
                 <Russian>Позиция штаба</Russian>
                 <Polish>Pozycja Sztabu</Polish>
@@ -4404,6 +4532,7 @@
                 <Czech>Vybraná pozice nemůže být blízko nepřátelské zóny</Czech>
                 <French>La position ne peut pas être proche d'ennemis.</French>
                 <Italian>La posizione selezionata non può essere vicino ad una postazione nemica.</Italian>
+                <Spanish>La posición seleccionada no puede estar cerca de zonas enemigas.</Spanish>
                 <Korean>적 구역 근처에 설치할 수 없습니다.</Korean>
                 <Russian>Выбранное место не должно находиться рядом с вражеской территорией.</Russian>
                 <Polish>Wybrana pozycja nie może znajdować się w pobliżu stref wroga.</Polish>
@@ -4416,6 +4545,7 @@
                 <Czech>Vybraná pozice nemůže být ve vodě</Czech>
                 <French>La position ne peut pas être dans l'eau.</French>
                 <Italian>La posizione selezionata non può essere in acqua.</Italian>
+                <Spanish>La posición seleccionada no puede estar en el agua.</Spanish>
                 <Korean>물 속에는 설치할 수 없습니다.</Korean>
                 <Russian>Выбранное место не может быть в воде.</Russian>
                 <Polish>Wybrana pozycja nie może znajdować się w wodzie.</Polish>
@@ -4428,6 +4558,7 @@
                 <Czech>Vybraná pozice nemůže být mimo mapu</Czech>
                 <French>La position ne peut pas être en dehors de la map.</French>
                 <Italian>La posizione selezionata non può essere fuori dalla mappa</Italian>
+                <Spanish>La posición seleccionada no puede estar fuera del mapa.</Spanish>
                 <Korean>지도 밖에는 설치할 수 없습니다.</Korean>
                 <Russian>Выбранное место не может находиться за краем карты.</Russian>
                 <Polish>Wybrana pozycja nie może znajdować się poza mapą.</Polish>
