@@ -23,8 +23,5 @@ if (!hasInterface) exitWith {};
 // Read the live HUD state so only the group info bar is touched and every other
 // element keeps whatever value another system last set it to.
 private _hud = shownHUD;
-// Older builds returned fewer elements, so pad before writing to index 6.
-while { count _hud < 8 } do { _hud pushBack true };
-
 _hud set [6, missionNamespace getVariable ["A3A_showGroupBar", true]];   // 6 = group info bar
 showHUD _hud;
