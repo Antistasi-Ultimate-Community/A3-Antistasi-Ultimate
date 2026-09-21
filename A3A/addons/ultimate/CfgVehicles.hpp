@@ -448,6 +448,16 @@ class A3U_Small_Pallet_Crate: A3U_Small_Pallet {
     };
 };
 
+class A3U_Small_Pallet_Crates: A3U_Small_Pallet {
+    displayName = "Small Pallet (Crates)";
+
+    model = QPATHTOFOLDER(data\models\A3U_Small_Pallet\A3U_Small_Pallet_Crates.p3d);
+    hiddenSelections[] = {"camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\Textures\A3U_Pallet_co.paa)
+    };
+};
+
 class A3U_Small_Pallet_Boxes: A3U_Small_Pallet {
     displayName = "Small Pallet (Boxes)";
 
