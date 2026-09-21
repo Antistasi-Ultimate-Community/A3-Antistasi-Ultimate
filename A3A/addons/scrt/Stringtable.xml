@@ -6444,6 +6444,7 @@
                 <Russian>Сколько предметов одного типа необходимо собрать для разблокировки</Russian>
                 <Chinesesimp>必须收集多少相同类型的物品才能解锁</Chinesesimp>
                 <Korean>언락에 필요한 동일 아이템 갯수</Korean>
+                <Spanish>Cantidad del mismo objeto necesaria para desbloquearlo</Spanish>
                 <French>Nombre d'articles identiques requis pour débloquer</French>
                 <Turkish>Kilidi açmak için gereken aynı eşya sayısı</Turkish>
             </Key>
@@ -6452,6 +6453,7 @@
                 <Russian>Повстанцы должны иметь указанное количество предметов в арсенале, чтобы предмет разблокировался.</Russian>
                 <Chinesesimp>反抗军必须在军械库中存储此数量的任何给定物品，以便该物品永久解锁。</Chinesesimp>
                 <Korean>반란군이 항목을 영구적으로 잠금 해제하기 위해 무기고에 저장해야 하는 해당 항목의 수입니다.</Korean>
+                <Spanish>Los rebeldes deben tener esta cantidad de un objeto almacenada en el arsenal para desbloquearlo permanentemente.</Spanish>
                 <French>Les rebelles doivent avoir ce nombre d'un élément donné stocké dans l'arsenal pour que l'élément soit déverrouillé de manière permanente.</French>
             </Key>
             <Key ID="STR_params_server_unlock_no_unlocks">
@@ -6459,6 +6461,7 @@
                 <Russian>Разблокировка отсутствует</Russian>
                 <Chinesesimp>永不解锁</Chinesesimp>
                 <Korean>언락 금지</Korean>
+                <Spanish>Sin desbloqueos</Spanish>
                 <French>Pas débloqué</French>
                 <Turkish>Kilit açma yok</Turkish>
             </Key>
@@ -6467,6 +6470,7 @@
                 <Russian>Необходимое количество магазинов к оружию, чтобы гости могли ими пользоваться</Russian>
                 <Chinesesimp>游客能使用的弹夹数量</Chinesesimp>
                 <Korean>게스트가 사용할 수 있도록 필요한 무기 탄창의 갯수</Korean>
+                <Spanish>Número de cargadores necesarios para que los invitados puedan usarlos</Spanish>
                 <French>Nombre de chargeurs d'armes nécessaires pour que les invités puissent les utiliser</French>
                 <Turkish>Misafirlerin kullanabilmesi için gereken silah şarjörü sayısı</Turkish>
             </Key>
@@ -6475,6 +6479,7 @@
                 <Russian>Уровень гражданского автомобильного трафика</Russian>
                 <Chinesesimp>民用交通</Chinesesimp>
                 <Korean>민간인 밀집도</Korean>
+                <Spanish>Tráfico civil</Spanish>
                 <French>Trafic civil</French>
                 <Turkish>Sivil trafik</Turkish>
             </Key>
@@ -6483,12 +6488,14 @@
                 <Russian>Управляет плотностью гражданского автомобильного трафика на карте; более высокие значения увеличивают количество гражданских машин.</Russian>
                 <Chinesesimp>控制地图上的民用车辆交通密度；较高的值会增加民用车辆数量。</Chinesesimp>
                 <Korean>맵상의 민간 차량 밀도를 제어합니다. 값이 클수록 민간 차량 수가 증가합니다.</Korean>
+                <Spanish>Controla la densidad del tráfico de vehículos civiles en el mapa; valores más altos aumentan el número de vehículos civiles presentes.</Spanish>
                 <French>Contrôle la densité du trafic civil sur la carte ; des valeurs plus élevées augmentent le nombre de véhicules civils présents.</French>
             </Key>
             <Key ID="STR_params_global_civilian_max">
                 <Original>Maximum civilians on server</Original>
                 <Russian>Максимальное количество гражданских на сервере</Russian>
                 <Korean>서버 내 최대 민간인 수</Korean>
+                <Spanish>Máximo de civiles en el servidor</Spanish>
                 <French>Nombre maximal de civils sur le serveur</French>
                 <Chinesesimp>服务器上的最大平民数量</Chinesesimp>
                 <Turkish>Sunucudaki maksimum sivil sayısı</Turkish>
@@ -6498,12 +6505,14 @@
                 <Russian>Максимальное число гражданских на сервере. Более высокие значения повышают заселённость мира, но могут влиять на производительность.</Russian>
                 <Chinesesimp>服务器上允许的最大平民总数。更高的值会增加世界人口，但可能影响性能。</Chinesesimp>
                 <Korean>서버에서 허용되는 최대 민간인 총 수입니다. 값이 클수록 세계 인구가 증가하지만 성능에 영향이 있을 수 있습니다.</Korean>
+                <Spanish>Número total máximo de civiles permitidos en el servidor. Valores más altos aumentan la población del mundo, pero pueden afectar al rendimiento.</Spanish>
                 <French>Nombre total maximal de civils autorisés sur le serveur. Des valeurs plus élevées augmentent la population du monde mais peuvent affecter les performances.</French>
             </Key>
             <Key ID="STR_params_civ_per_town">
                 <Original>Maximum civilians per town</Original>
                 <Russian>Максимальное количество гражданских на населенный пункт</Russian>
                 <Korean>마을 당 최대 민간인 수</Korean>
+                <Spanish>Máximo de civiles por población</Spanish>
                 <French>Nombre maximum de civils par ville</French>
                 <Chinesesimp>每个城镇的最大平民数量</Chinesesimp>
                 <Turkish>Kasaba başına maksimum sivil sayısı</Turkish>
@@ -6513,6 +6522,7 @@
                 <Russian>Максимальное количество гражданских, разрешённое в городе; ограничивает локальную плотность населения, чтобы избежать проблем с производительностью.</Russian>
                 <Chinesesimp>每个城镇允许的最大平民数；限制本地人口密度以避免性能问题。</Chinesesimp>
                 <Korean>마을 당 허용되는 최대 민간인 수입니다. 성능 문제를 피하기 위해 지역 인구 밀도를 제한합니다.</Korean>
+                <Spanish>Número máximo de civiles permitidos por población; limita la densidad local para evitar problemas de rendimiento.</Spanish>
                 <French>Nombre maximal de civils autorisés par ville ; limite la densité de population locale pour éviter les problèmes de performance.</French>
             </Key>
             <Key ID="STR_params_civ_traffic_none">
@@ -6520,6 +6530,7 @@
                 <Russian>Отсутствует</Russian>
                 <Chinesesimp>无</Chinesesimp>
                 <Korean>없음</Korean>
+                <Spanish>Ninguno</Spanish>
                 <French>Aucun</French>
                 <Turkish>Yok</Turkish>
             </Key>
@@ -6528,6 +6539,7 @@
                 <Russian>Низкий</Russian>
                 <Chinesesimp>少</Chinesesimp>
                 <Korean>낮음</Korean>
+                <Spanish>Bajo</Spanish>
                 <French>Faible</French>
                 <Turkish>Düşük</Turkish>
             </Key>
@@ -6536,6 +6548,7 @@
                 <Russian>Средний</Russian>
                 <Chinesesimp>中</Chinesesimp>
                 <Korean>중간</Korean>
+                <Spanish>Medio</Spanish>
                 <French>Moyen</French>
                 <Turkish>Orta</Turkish>
             </Key>
@@ -6544,6 +6557,7 @@
                 <Russian>Высокий</Russian>
                 <Chinesesimp>多</Chinesesimp>
                 <Korean>높음</Korean>
+                <Spanish>Alto</Spanish>
                 <French>Elevé</French>
                 <Turkish>Yüksek</Turkish>
             </Key>
@@ -6552,6 +6566,7 @@
                 <Russian>Максимальное количество пешеходов</Russian>
                 <Chinesesimp>最大一般路过平民数量</Chinesesimp>
                 <Korean>최대 보행자 수</Korean>
+                <Spanish>Número máximo de peatones</Spanish>
                 <French>Nombre maximal de pedestrians</French>
                 <Turkish>Maksimum yaya sayısı</Turkish>
             </Key>
@@ -6560,6 +6575,7 @@
                 <Russian>Пункты назначения для быстрого перемещения</Russian>
                 <Chinesesimp>允许快速移动的目标</Chinesesimp>
                 <Korean>빠른 이동이 허용되는 대상</Korean>
+                <Spanish>Destinos permitidos para el viaje rápido</Spanish>
                 <French>Les déplacements rapides permettent d'atteindre des objectifs</French>
                 <Turkish>Hızlı seyahat edilebilecek hedefler</Turkish>
             </Key>
@@ -6568,6 +6584,7 @@
                 <Russian>Управляет ограничениями быстрого перемещения: определяет разрешённые пункты назначения и отправные точки.</Russian>
                 <Chinesesimp>控制快速旅行的目标限制；选择快速旅行允许的目的地类型。</Chinesesimp>
                 <Korean>빠른 이동의 대상 제한을 제어합니다. 빠른 이동 허용 목적지 유형을 선택하세요.</Korean>
+                <Spanish>Controla las restricciones de destino del viaje rápido; elige qué tipos de destino se permiten.</Spanish>
                 <French>Contrôle les restrictions des cibles du voyage rapide ; choisissez les types de destinations autorisées.</French>
             </Key>
             <Key ID="STR_params_allowFT_0">
@@ -6575,6 +6592,7 @@
                 <Russian>Любая дружественная позиция</Russian>
                 <Chinesesimp>任意友好位置</Chinesesimp>
                 <Korean>아무 아군 위치</Korean>
+                <Spanish>Cualquier posición amiga</Spanish>
                 <French>Toute position amicale</French>
                 <Turkish>Herhangi bir dost mevzi</Turkish>
             </Key>
@@ -6583,6 +6601,7 @@
                 <Russian>Только аэропорты, военные базы и штаб</Russian>
                 <Chinesesimp>只有机场、军事基地和HQ</Chinesesimp>
                 <Korean>공항, 군사 기지와 본부만</Korean>
+                <Spanish>Solo aeropuertos, bases militares y CG</Spanish>
                 <French>Uniquement les aéroports, les bases militaires et les QG</French>
                 <Turkish>Yalnızca havaalanları, askeri üsler ve karargah</Turkish>
             </Key>
@@ -6591,6 +6610,7 @@
                 <Russian>Только между аэропортами, военными базами и штаб-квартирой</Russian>
                 <Chinesesimp>仅限机场、军事基地和总部之间</Chinesesimp>
                 <Korean>공항, 군 기지, 본부 간에만 가능</Korean>
+                <Spanish>Solo entre aeropuertos, bases militares y CG</Spanish>
                 <French>Uniquement entre les aéroports, les bases militaires et les quartiers généraux</French>
                 <Turkish>Yalnızca havaalanları, askeri üsler ve karargah arasında</Turkish>
             </Key>
@@ -6599,6 +6619,7 @@
                 <Russian>Включить бомбардировки напалмом для ИИ</Russian>
                 <Chinesesimp>AI启用凝固汽油弹轰炸</Chinesesimp>
                 <Korean>인공지능에게 네이팜탄 폭격 활성화</Korean>
+                <Spanish>Activar bombardeo con napalm para la IA</Spanish>
                 <French>Activer le bombardement au napalm pour l'IA</French>
                 <Turkish>YZ için Napalm Bombardımanını Etkinleştir</Turkish>
             </Key>
@@ -6607,6 +6628,7 @@
                 <Russian>Включает или отключает использование ИИ напалмоподобного оружия; может повысить разрушения и нагрузку на производительность.</Russian>
                 <Chinesesimp>启用或禁用 AI 使用凝固汽油弹类武器；可能增加破坏度和性能开销。</Chinesesimp>
                 <Korean>AI의 네이팜류 무기 사용을 활성화/비활성화합니다. 활성화하면 파괴력과 성능 비용이 증가할 수 있습니다.</Korean>
+                <Spanish>Activa o desactiva el uso de munición tipo napalm por parte de la IA; puede aumentar la destrucción y el coste de rendimiento.</Spanish>
                 <French>Active ou désactive l'utilisation d'armes de type napalm par l'IA ; peut accroître la destruction et le coût en performances.</French>
             </Key>
             <Key ID="STR_params_teamSwitchDelay">
@@ -6614,6 +6636,7 @@
                 <Russian>Задержка после ухода, прежде чем игрок сможет присоединиться к другой команде (PVP, в минутах)</Russian>
                 <Chinesesimp>离开后在玩家可以加入另一支队伍之前的延迟（PVP，分钟）</Chinesesimp>
                 <Korean>플레이어가 다른 팀에 가입하기 전에 떠난 뒤의 딜레이 시간 (PvP, 분)</Korean>
+                <Spanish>Espera tras abandonar antes de poder unirse a otro bando (PvP, minutos)</Spanish>
                 <French>Délai après le départ avant qu'un joueur puisse rejoindre une autre équipe (PVP, minutes)</French>
                 <Turkish>Bir Oyuncunun Başka Bir Takıma Katılabilmesi İçin Geçmesi Gereken Süre (PVP, dakika)</Turkish>
             </Key>
@@ -6622,6 +6645,7 @@
                 <Russian>Без задержки</Russian>
                 <Chinesesimp>不设延迟</Chinesesimp>
                 <Korean>딜레이 없음</Korean>
+                <Spanish>Sin espera</Spanish>
                 <French>Pas de délai</French>
                 <Turkish>Gecikme yok</Turkish>
             </Key>
@@ -6630,6 +6654,7 @@
                 <Russian>Разблокировка оружия также автоматически разблокирует основные боеприпасы</Russian>
                 <Chinesesimp>解锁武器时解锁弹匣</Chinesesimp>
                 <Korean>무기 해제 시 탄창 해제</Korean>
+                <Spanish>Desbloquear el cargador junto con el arma</Spanish>
                 <French>Déverrouiller les chargeurs lors du déverrouillage des armes</French>
                 <Turkish>Kilidi açılan silahlar standart şarjörlerinin kilidini otomatik açsın mı?</Turkish>
             </Key>
@@ -6638,6 +6663,7 @@
                 <Russian>При включении разблокировка оружия также разблокирует его основные боеприпасы (например, стандартный магазин или пулемётную ленту).</Russian>
                 <Chinesesimp>启用后，永久解锁武器也会永久解锁其标准弹匣。</Chinesesimp>
                 <Korean>활성화하면 무기를 영구적으로 잠금 해제할 때 표준 탄창도 영구적으로 잠금 해제됩니다.</Korean>
+                <Spanish>Si está activado, desbloquear permanentemente un arma también desbloqueará permanentemente su cargador estándar.</Spanish>
                 <French>Lorsqu'elle est activée, le déverrouillage permanent d'une arme déverrouille également de manière permanente son chargeur standard.</French>
             </Key>
             <Key ID="STR_params_allowGuidedLaunchers">
@@ -6645,6 +6671,7 @@
                 <Russian>Разрешить разблокировку управляемых пусковых установок</Russian>
                 <Chinesesimp>制导筒子应该解锁吗？</Chinesesimp>
                 <Korean>유도탄 발사기의 언락을 허용합니까?</Korean>
+                <Spanish>Permitir desbloquear lanzamisiles guiados</Spanish>
                 <French>Les lanceurs guidés devraient-ils être débloqués ?</French>
                 <Turkish>Kilidi Açılmış Güdümlü Fırlatıcılara İzin Ver</Turkish>
             </Key>
@@ -6653,12 +6680,14 @@
                 <Russian>Включить возможность разблокировки пусковых установок управляемых ракет.</Russian>
                 <Chinesesimp>启用永久解锁制导导弹发射器的功能。</Chinesesimp>
                 <Korean>제어 미사일 발사기를 영구적으로 잠금 해제하는 기능을 활성화합니다.</Korean>
+                <Spanish>Permite desbloquear permanentemente lanzamisiles guiados.</Spanish>
                 <French>Activer la possibilité de déverrouiller définitivement les lanceurs de missiles guidés.</French>
             </Key>
             <Key ID="STR_params_allowUnlockedExplosives">
                 <Original>Allow Unlocked Explosives</Original>
                 <Russian>Разрешить разблокировку взрывчатки</Russian>
                 <Korean>폭발물 해금 허용</Korean>
+                <Spanish>Permitir desbloquear explosivos</Spanish>
                 <French>Autoriser les explosifs déverrouillés</French>
                 <Chinesesimp>允许解锁爆炸物</Chinesesimp>
                 <Turkish>Kilidi Açılmış Patlayıcılara İzin Ver</Turkish>
@@ -6668,12 +6697,14 @@
                 <Russian>Включить возможность разблокировки устанавливаемой взрывчатки.</Russian>
                 <Chinesesimp>启用永久解锁可放置的爆炸物的功能。</Chinesesimp>
                 <Korean>설치 가능한 폭발물을 영구적으로 잠금 해제하는 기능을 활성화합니다.</Korean>
+                <Spanish>Permite desbloquear permanentemente explosivos colocables.</Spanish>
                 <French>Activer la possibilité de déverrouiller définitivement les objets explosifs plaçables.</French>
             </Key>
             <Key ID="STR_params_allowUnlockedTNVG">
                 <Original>Allow Unlocked TNVGs/ENVGs</Original>
                 <Russian>Разрешить разблокировку TNVG/ENVG</Russian>
                 <Korean>언락된 TNVG/ENVG 허용</Korean>
+                <Spanish>Permitir desbloquear TNVG/ENVG</Spanish>
                 <French>Autoriser les TNVG/ENVG déverrouillés</French>
                 <Chinesesimp>允许解锁的TNVG/ENVG</Chinesesimp>
                 <Turkish>TNVG/ENVG'lerin kilidinin açılmasına izin ver</Turkish>
@@ -6683,6 +6714,7 @@
                 <Russian>Включить возможность разблокировки усовершенствованных приборов ночного видения / тепловизионных устройств.</Russian>
                 <Chinesesimp>启用永久解锁增强型夜视/热成像设备的功能。</Chinesesimp>
                 <Korean>개선된 야간 투시 / 열화상 장치를 영구적으로 잠금 해제하는 기능을 활성화합니다.</Korean>
+                <Spanish>Permite desbloquear permanentemente dispositivos de visión nocturna mejorada y térmica.</Spanish>
                 <French>Activer la possibilité de déverrouiller définitivement les dispositifs de vision nocturne améliorée / d'imagerie thermique.</French>
             </Key>
             <Key ID="STR_params_startWithLongRangeRadio">
@@ -6690,6 +6722,7 @@
                 <Russian>[TFAR] Начинать с рюкзаком ДВ-радиосвязи </Russian>
                 <Chinesesimp>(TFAR)从远程无线电开始</Chinesesimp>
                 <Korean>[TFAR] 장파 무전기 기본 지급</Korean>
+                <Spanish>[TFAR] Empezar con radio de largo alcance</Spanish>
                 <French>[TFAR] Commencer avec la radio longue portée</French>
                 <Turkish>[TFAR] Uzun Menzilli Telsiz ile Başla</Turkish>
             </Key>
@@ -6698,6 +6731,7 @@
                 <Russian>Добавить радиостанцию большой дальности в начальное снаряжение повстанцев при запуске игры.</Russian>
                 <Chinesesimp>在游戏启动时将永久解锁的远程无线电添加到初始反抗军装备。</Chinesesimp>
                 <Korean>게임 시작 시 초기 반군 장비에 영구적으로 잠금 해제된 장거리 무선기를 추가합니다.</Korean>
+                <Spanish>Añade una radio de largo alcance desbloqueada permanentemente al equipo inicial rebelde al empezar una partida.</Spanish>
                 <French>Ajouter une radio longue portée déverrouillée de manière permanente à l'équipement initial des rebelles au démarrage du jeu.</French>
             </Key>
             <Key ID="STR_params_aceFood">
@@ -6705,6 +6739,7 @@
                 <Russian>[ACE] Начинать игру с запасом еды</Russian>
                 <Chinesesimp>[ACE]开启食物？</Chinesesimp>
                 <Korean>[ACE] 음식 아이템을 기본으로 지급합니까?</Korean>
+                <Spanish>[ACE] ¿Empezar con comida?</Spanish>
                 <French>[ACE] Commencer avec des objets alimentaires ?</French>
                 <Turkish>[ACE] Yemek Öğeleri ile Başla?</Turkish>
             </Key>
@@ -6713,6 +6748,7 @@
                 <Russian>Добавить продуктовый набор ACE в начальное снаряжение повстанцев при запуске игры.</Russian>
                 <Chinesesimp>在游戏启动时将永久解锁的 ACE 食物物品添加到初始反抗军装备。</Chinesesimp>
                 <Korean>게임 시작 시 초기 반군 장비에 영구적으로 잠금 해제된 ACE 식량 항목을 추가합니다.</Korean>
+                <Spanish>Añade comida de ACE desbloqueada permanentemente al equipo inicial rebelde al empezar una partida.</Spanish>
                 <French>Ajouter des objets alimentaires ACE déverrouillés de manière permanente à l'équipement initial des rebelles au démarrage du jeu.</French>
             </Key>
             <Key ID="STR_params_helmetLossChance">
@@ -6720,6 +6756,7 @@
                 <Russian>Шанс потери шлема при попадании в голову</Russian>
                 <Chinesesimp>爆头掉头盔的几率</Chinesesimp>
                 <Korean>헤드샷 당할 시 헬멧을 잃을 확률</Korean>
+                <Spanish>Probabilidad de perder el casco en disparos a la cabeza</Spanish>
                 <French>Risque de perte de casque lors des tirs à la tête</French>
                 <Turkish>Kafadan vuruşlarnda kaskın kaybolma ihtimali</Turkish>
             </Key>
@@ -6728,6 +6765,7 @@
                 <Russian>Вероятность того, что шлем будет потерян или уничтожен, когда боец получает повреждение головы.</Russian>
                 <Chinesesimp>单位头部受损时头盔丢失或损毁的概率。</Chinesesimp>
                 <Korean>유닛이 머리에 피해를 입을 때 헬멧이 손실되거나 파괴될 확률입니다.</Korean>
+                <Spanish>Probabilidad de que se pierda o destruya el casco cuando una unidad recibe daño en la cabeza.</Spanish>
                 <French>Probabilité qu'un casque soit perdu ou détruit lorsqu'une unité subit des dégâts à la tête.</French>
             </Key>
             <Key ID="STR_params_helmetLossSound">
@@ -6735,6 +6773,7 @@
                 <Russian>Звуковой сигнал при потере шлема</Russian>
                 <Chinesesimp>头盔丢失时发出声音</Chinesesimp>
                 <Korean>헬멧 분실 시 소리 내기</Korean>
+                <Spanish>Reproducir sonido al perder el casco</Spanish>
                 <French>Faites du bruit en cas de perte de casque</French>
                 <Turkish>Kask kaybolduğunda ses çal</Turkish>
             </Key>
@@ -6743,6 +6782,7 @@
                 <Russian>Включить звуковые эффекты при потере или уничтожении шлемов.</Russian>
                 <Chinesesimp>在头盔丢失或被破坏时切换音效。</Chinesesimp>
                 <Korean>헬멧이 손실되거나 파괴될 때 사운드 효과를 켜거나 끕니다.</Korean>
+                <Spanish>Activa o desactiva los efectos de sonido cuando se pierde o destruye un casco.</Spanish>
                 <French>Basculer les effets sonores lorsque les casques sont perdus ou détruits.</French>
             </Key>
             <Key ID="STR_params_helmetLossChance_0">
@@ -6750,6 +6790,7 @@
                 <Russian>Никогда</Russian>
                 <Chinesesimp>从不</Chinesesimp>
                 <Korean>없음</Korean>
+                <Spanish>Nunca</Spanish>
                 <French>Jamais</French>
                 <Turkish>Asla</Turkish>
             </Key>
@@ -6758,6 +6799,7 @@
                 <Russian>Иногда</Russian>
                 <Chinesesimp>有时</Chinesesimp>
                 <Korean>가끔</Korean>
+                <Spanish>A veces</Spanish>
                 <French>Parfois</French>
                 <Turkish>Bazen</Turkish>
             </Key>
@@ -6766,6 +6808,7 @@
                 <Russian>Часто</Russian>
                 <Chinesesimp>经常</Chinesesimp>
                 <Korean>자주</Korean>
+                <Spanish>A menudo</Spanish>
                 <French>Souvent</French>
                 <Turkish>Sıklıkla</Turkish>
             </Key>
@@ -6774,6 +6817,7 @@
                 <Russian>Всегда</Russian>
                 <Chinesesimp>永远</Chinesesimp>
                 <Korean>항상</Korean>
+                <Spanish>Siempre</Spanish>
                 <French>Toujours</French>
                 <Turkish>Her zaman</Turkish>
             </Key>
@@ -6781,6 +6825,7 @@
                 <Original>Garbage Cleaner Threshold for Automatic Garbage Collection</Original>
                 <Russian>Порог активации сборщика мусора</Russian>
                 <Korean>자동 쓰레기 청소에 대한 쓰레기 청소 프로그램 임계점</Korean>
+                <Spanish>Umbral del recolector de basura para la limpieza automática</Spanish>
                 <French>Seuil de nettoyage des ordures pour le ramassage automatique des ordures</French>
                 <Chinesesimp>垃圾清理器自动垃圾收集阈值</Chinesesimp>
                 <Turkish>Otomatik Çöp Toplama İçin Çöp Temizleyici Eşiği (saat cinsinden)</Turkish>
@@ -6790,12 +6835,14 @@
                 <Russian>Порог (в часах), после которого запускается автоматическая уборка мусора; большие значения уменьшают частоту очисток.</Russian>
                 <Chinesesimp>在自动垃圾回收运行之前的阈值（小时）；更高的值会降低清理频率。</Chinesesimp>
                 <Korean>자동 정리 작업이 시작되기 전의 임계값(시간). 값이 클수록 정리 빈도가 감소합니다.</Korean>
+                <Spanish>Umbral (en horas) a partir del cual se ejecuta la recolección automática de basura; valores más altos reducen la frecuencia de limpieza.</Spanish>
                 <French>Seuil (en heures) après lequel le ramassage automatique des ordures s'exécute ; des valeurs plus élevées réduisent la fréquence des nettoyages.</French>
             </Key>
             <Key ID="STR_params_revive_time">
                 <Original>Revive time for players</Original>
                 <Russian>Время до поднятия игрока на ноги</Russian>
                 <Korean>플레이어 소생 시간</Korean>
+                <Spanish>Tiempo de reanimación de los jugadores</Spanish>
                 <French>Temps de réanimation des joueurs</French>
                 <Chinesesimp>玩家复活时间</Chinesesimp>
                 <Turkish>Oyuncular için canlandırma süresi (saniye cinsinden)</Turkish>
@@ -6805,6 +6852,7 @@
                 <Russian>Время (в секундах), необходимое для возрождения игрока.</Russian>
                 <Chinesesimp>复活玩家所需的时间（秒）。</Chinesesimp>
                 <Korean>플레이어를 되살리는 데 필요한 시간(초)입니다.</Korean>
+                <Spanish>Tiempo (en segundos) que se tarda en reanimar a un jugador.</Spanish>
                 <French>Durée (en secondes) nécessaire pour réanimer un joueur.</French>
             </Key>
             <Key ID="STR_params_antistasi_plus">
@@ -6812,6 +6860,7 @@
                 <Russian>ПАРАМЕТРЫ ANTISTASI PLUS</Russian>
                 <Chinesesimp>ANTISTASI PLUS参数</Chinesesimp>
                 <Korean>안티스타시 플러스 매개변수</Korean>
+                <Spanish>PARÁMETROS DE ANTISTASI PLUS</Spanish>
                 <French>PARAMÈTRES ANTISTASI PLUS</French>
                 <Turkish>ANTISTASI PLUS PARAMETRELERİ</Turkish>
             </Key>
@@ -6820,6 +6869,7 @@
                 <Russian>СКРИПТЫ</Russian>
                 <Chinesesimp>脚本</Chinesesimp>
                 <Korean>스크립트</Korean>
+                <Spanish>SCRIPTS</Spanish>
                 <Turkish>SCRİPTLER</Turkish>
             </Key>
             <Key ID="STR_params_timeMultiplier">
@@ -6827,6 +6877,7 @@
                 <Russian>Множитель времени</Russian>
                 <Chinesesimp>时间倍增器</Chinesesimp>
                 <Korean>시간 가속</Korean>
+                <Spanish>Multiplicador de tiempo</Spanish>
                 <French>Multiplicateur de temps</French>
                 <Turkish>Zaman Çarpanı</Turkish>
             </Key>
@@ -6835,6 +6886,7 @@
                 <Russian>Множитель времени регулирует, насколько быстро в игровом мире проходит время относительно реального (например, 1:24 — день в игре проходит за один реальный час).</Russian>
                 <Chinesesimp>时间倍增器调整游戏内时间相对于现实时间的流逝速度（例如1:24表示1小时等于游戏中的一天）。</Chinesesimp>
                 <Korean>시간 가속은 게임 내 시간이 실제 시간에 비해 얼마나 빠르게 흐르는지 조정합니다(예: 1:24는 실제 1시간에 게임의 하루가 흐름).</Korean>
+                <Spanish>El multiplicador de tiempo ajusta la rapidez con la que pasa el tiempo en el juego respecto al tiempo real (p. ej., 1:24 hace que un día de juego transcurra en una hora real).</Spanish>
                 <French>Le multiplicateur de temps ajuste la vitesse d'écoulement du temps en jeu par rapport au temps réel (par ex. 1:24 fait qu'un jour en jeu s'écoule en une heure réelle).</French>
             </Key>
             <Key ID="STR_params_timeMultiplier_0">
@@ -6842,6 +6894,7 @@
                 <Russian>1:1 (Нормальный)</Russian>
                 <Chinesesimp>1:1（正常）</Chinesesimp>
                 <Korean>1:1 (일반)</Korean>
+                <Spanish>1:1 (normal)</Spanish>
                 <French>1:1 (Normal)</French>
                 <Turkish>1:1 (Normal)</Turkish>
             </Key>
@@ -6850,6 +6903,7 @@
                 <Russian>1:2 (день = 12 часов)</Russian>
                 <Chinesesimp>1:2（一天=12小时）</Chinesesimp>
                 <Korean>1:2 (1일 = 12시간)</Korean>
+                <Spanish>1:2 (día = 12 horas)</Spanish>
                 <French>1:2 (1 jour = 12 heures)</French>
                 <Turkish>1:2 (Gün = 12 Saat)</Turkish>
             </Key>
@@ -6858,6 +6912,7 @@
                 <Russian>1:3 (день = 8 часов)</Russian>
                 <Chinesesimp>1:3（一天=8小时）</Chinesesimp>
                 <Korean>1:3 (1일 = 8시간)</Korean>
+                <Spanish>1:3 (día = 8 horas)</Spanish>
                 <French>1:3 (1 jour = 8 heures)</French>
                 <Turkish>1:3 (Gün = 8 Saat)</Turkish>
             </Key>
@@ -6866,6 +6921,7 @@
                 <Russian>1:4 (день = 6 часов)</Russian>
                 <Chinesesimp>1:4（一天=6小时）</Chinesesimp>
                 <Korean>1:4 (1일 = 6시간)</Korean>
+                <Spanish>1:4 (día = 6 horas)</Spanish>
                 <French>1:4 (1 jour = 6 heures)</French>
                 <Turkish>1:4 (Gün = 6 Saat)</Turkish>
             </Key>
@@ -6874,6 +6930,7 @@
                 <Russian>1:6 (день = 4 часа)</Russian>
                 <Chinesesimp>1:6（一天=4小时）</Chinesesimp>
                 <Korean>1:6 (1일 = 4시간)</Korean>
+                <Spanish>1:6 (día = 4 horas)</Spanish>
                 <French>1:6 (1 jour = 4 heures)</French>
                 <Turkish>1:6 (Gün = 4 Saat)</Turkish>
             </Key>
@@ -6882,6 +6939,7 @@
                 <Russian>1:8 (день = 3 часа)</Russian>
                 <Chinesesimp>1:8（一天=3小时）</Chinesesimp>
                 <Korean>1:8 (1일 = 3시간)</Korean>
+                <Spanish>1:8 (día = 3 horas)</Spanish>
                 <French>1:8 (1 jour = 3 heures)</French>
                 <Turkish>1:8 (Gün = 3 Saat)</Turkish>
             </Key>
@@ -6890,6 +6948,7 @@
                 <Russian>1:12 (день = 2 часа)</Russian>
                 <Chinesesimp>1:12（一天=2小时）</Chinesesimp>
                 <Korean>1:12 (1일 = 2시간)</Korean>
+                <Spanish>1:12 (día = 2 horas)</Spanish>
                 <French>1:12 (1 jour = 2 heures)</French>
                 <Turkish>1:12 (Gün = 2 Saat)</Turkish>
             </Key>
@@ -6898,6 +6957,7 @@
                 <Russian>1:24 (день = 1 час)</Russian>
                 <Chinesesimp>1:24（一天=1小时）</Chinesesimp>
                 <Korean>1:24 (1일 = 1시간)</Korean>
+                <Spanish>1:24 (día = 1 hora)</Spanish>
                 <French>1:24 (1 jour = 1 heures)</French>
                 <Turkish>1:24 (Gün = 1 Saat)</Turkish>
             </Key>
@@ -6906,6 +6966,7 @@
                 <Russian>Сколько человек требуется, чтобы перевернуть транспортное средство?</Russian>
                 <Chinesesimp>翻正载具需要多少人？</Chinesesimp>
                 <Korean>차량을 뒤집으려면 몇 명의 사람이 필요합니까?</Korean>
+                <Spanish>¿Cuántas personas hacen falta para voltear un vehículo?</Spanish>
                 <French>Combien de personnes sont nécessaires pour retourner le véhicule ?</French>
                 <Turkish>Aracı düzeltmek için kaç kişi gerekiyor?</Turkish>
             </Key>
@@ -6914,6 +6975,7 @@
                 <Russian>Количество персонала поблизости, необходимое для переворачивания опрокинутого транспортного средства.</Russian>
                 <Chinesesimp>恢复（翻正）倾覆车辆所需的附近人员数量。</Chinesesimp>
                 <Korean>뒤집힌 차량을 바로잡기(복구)하는 데 필요한 근처 인원의 수입니다.</Korean>
+                <Spanish>Número de personas cercanas necesarias para enderezar (voltear) un vehículo.</Spanish>
                 <French>Nombre de personnels à proximité requis pour redresser (retourner) un véhicule renversé.</French>
             </Key>
             <Key ID="STR_params_magRepack">
@@ -6921,6 +6983,7 @@
                 <Russian>Включить Mag Repack?</Russian>
                 <Chinesesimp>启用Mag Repack？</Chinesesimp>
                 <Korean>탄창 재포장을 활성화합니까?</Korean>
+                <Spanish>¿Activar Mag Repack?</Spanish>
                 <French>Activer le reconditionnement des chargeurs?</French>
                 <Turkish>Şarjör Birleştirmeyi Etkinleştir?</Turkish>
             </Key>
@@ -6929,6 +6992,7 @@
                 <Russian>При включении боеприпасы в инвентаре можно переупаковать, чтобы объединить частично заполненные магазины в полные магазины.</Russian>
                 <Chinesesimp>启用后，弹匣可重新整理，以便将部分填充的弹匣合并为完整弹匣。</Chinesesimp>
                 <Korean>활성화하면 탄약 탄창을 다시 장전하여 부분적으로 채워진 탄창을 완전한 탄창으로 통합할 수 있습니다.</Korean>
+                <Spanish>Si está activado, los cargadores de munición se pueden reagrupar para consolidar cargadores medio vacíos en cargadores llenos.</Spanish>
                 <French>Lorsqu'elle est activée, les chargeurs de munitions peuvent être rechargés pour consolider les chargeurs partiellement remplis en chargeurs pleins.</French>
             </Key>
             <Key ID="STR_params_ReloadRepackTurretMagazines">
@@ -6936,6 +7000,7 @@
                 <Russian>Включить Turret Magazine Repacking?</Russian>
                 <Chinesesimp>启用炮塔弹匣整理？</Chinesesimp>
                 <Korean>포탑 탄창 재포장을 활성화합니까?</Korean>
+                <Spanish>¿Activar el reagrupado de cargadores de torreta?</Spanish>
                 <Turkish>Taret Şarjörü Birleştirmeyi Etkinleştir?</Turkish>
             </Key>
             <Key ID="STR_params_ReloadRepackTurretMagazines_desc">
@@ -6943,6 +7008,7 @@
                 <Russian>При включении магазины турели или башни техники можно переупаковать, чтобы объединить частично заполненные магазины в полные магазины.</Russian>
                 <Chinesesimp>启用后，车辆炮塔弹匣可重新整理，以便将部分填充的弹匣合并为完整弹匣。</Chinesesimp>
                 <Korean>활성화하면 차량 포탑 탄창을 다시 장전하여 부분적으로 채워진 탄창을 완전한 탄창으로 통합할 수 있습니다.</Korean>
+                <Spanish>Si está activado, los cargadores de las torretas de vehículos se pueden reagrupar para consolidar cargadores medio vacíos en cargadores llenos.</Spanish>
                 <French>Lorsqu'elle est activée, les chargeurs de tourelle de véhicule peuvent être rechargés pour consolider les chargeurs partiellement remplis en chargeurs pleins.</French>
             </Key>
             <Key ID="STR_params_playerIcons">
@@ -6950,6 +7016,7 @@
                 <Russian>Показывать 3D-иконки над игроками, которым требуется медицинская помощь?</Russian>
                 <Chinesesimp>在昏迷玩家上方显示3D图标？</Chinesesimp>
                 <Korean>의식불명 플레이어 위에 3D 아이콘을 보이게 합니까?</Korean>
+                <Spanish>¿Mostrar iconos 3D sobre los jugadores inconscientes?</Spanish>
                 <French>Afficher des icônes 3D au-dessus des joueurs inconscients ?</French>
                 <Turkish>Bilinci kapalı oyuncuların üzerinde 3D simgeler gösterilsin mi?</Turkish>
             </Key>
@@ -6958,6 +7025,7 @@
                 <Russian>Включает 3D-иконки над тяжелораненными игроками для облегчения поиска и реанимации.</Russian>
                 <Chinesesimp>在昏迷玩家上方启用3D图标，便于定位和复活。</Chinesesimp>
                 <Korean>의식 불명 플레이어 위에 3D 아이콘을 활성화하여 위치 파악 및 소생을 돕습니다.</Korean>
+                <Spanish>Activa iconos 3D sobre los jugadores inconscientes para ayudar a localizarlos y reanimarlos.</Spanish>
                 <French>Active des icônes 3D au-dessus des joueurs inconscients pour faciliter leur localisation et réanimation.</French>
             </Key>
             <Key ID="STR_params_fastTravelEnemyCheck">
@@ -6965,6 +7033,7 @@
                 <Russian>Проверка на наличие врагов при быстром перемещении</Russian>
                 <Chinesesimp>快速旅行敌人检查</Chinesesimp>
                 <Korean>빠른 이동 시 적군 확인</Korean>
+                <Spanish>Comprobación de enemigos en el viaje rápido</Spanish>
                 <French>Vérification de la présence d'ennemis proches lors d'un déplacement rapide</French>
                 <Turkish>Hızlı Seyahat Düşman Kontrolü</Turkish>
             </Key>
@@ -6973,6 +7042,7 @@
                 <Russian>При проверке на наличие врагов поблизости перед быстрым перемещением, должна ли проверка проводиться только рядом с игроком, или также рядом с техникой и бойцами в его отряде?</Russian>
                 <Chinesesimp>检查快速旅行前附近敌人时，检查应仅包括靠近尝试快速旅行的玩家的敌人，还是靠近玩家小队中任何单位的敌人？</Chinesesimp>
                 <Korean>빠른 이동을 허용하기 전에 근처 적을 확인할 때, 확인에는 빠른 이동을 시도하는 플레이어 근처의 적만 포함되어야 하는가, 아니면 플레이어 분대의 모든 유닛 근처의 적이 포함되어야 하는가?</Korean>
+                <Spanish>Al comprobar si hay enemigos cerca antes de permitir el viaje rápido, ¿debe tenerse en cuenta solo a los enemigos cercanos al jugador que viaja, o también a los cercanos a cualquier unidad de su escuadra?</Spanish>
                 <French>Lors de la vérification des ennemis proches avant d'autoriser les déplacements rapides, la vérification doit-elle inclure uniquement les ennemis près du joueur tentant le déplacement rapide, ou les ennemis près de toute unité de l'escouade du joueur ?</French>
             </Key>
             <Key ID="STR_params_fastTravelEnemyCheck_player">
@@ -6980,6 +7050,7 @@
                 <Russian>Проверять только игроков</Russian>
                 <Chinesesimp>检查玩家</Chinesesimp>
                 <Korean>플레이어만 확인</Korean>
+                <Spanish>Comprobar solo al jugador</Spanish>
                 <French>Vérification pour le joueur uniquement</French>
                 <Turkish>Sadece oyuncu için kontrol et</Turkish>
             </Key>
@@ -6988,6 +7059,7 @@
                 <Russian>Проверять весь отряд игрока (стиль обычного Antistasi)</Russian>
                 <Chinesesimp>检查玩家小队（原版Antistasi风格）</Chinesesimp>
                 <Korean>플레이어 분대 확인(바닐라 안티스타시 유형)</Korean>
+                <Spanish>Comprobar la escuadra del jugador (estilo Antistasi clásico)</Spanish>
                 <French>Vérification de l'escouade des joueurs (Vanilla Antistasi Style)</French>
                 <Turkish>Oyuncu mangasını kontrol et (Vanilla Antistasi Stili)</Turkish>
             </Key>
@@ -6996,6 +7068,7 @@
                 <Russian>Начальные деньги игрока</Russian>
                 <Chinesesimp>初始玩家金钱</Chinesesimp>
                 <Korean>플레이어 초기 자금</Korean>
+                <Spanish>Dinero inicial del jugador</Spanish>
                 <French>Argent initial des joueurs</French>
                 <Turkish>Başlangıç Oyuncu Parası</Turkish>
             </Key>
@@ -7004,6 +7077,7 @@
                 <Russian>Определяет начальную сумму денег, с которой начинается каждый игрок.</Russian>
                 <Chinesesimp>决定每位玩家在战役开始时的初始金钱数量。</Chinesesimp>
                 <Korean>캠페인 시작 시 각 플레이어가 가지는 초기 자금을 결정합니다.</Korean>
+                <Spanish>Determina la cantidad de dinero con la que empieza cada jugador al inicio de la campaña.</Spanish>
                 <French>Détermine la somme d'argent initiale que chaque joueur reçoit au début de la campagne.</French>
             </Key>
             <Key ID="STR_params_rebelFactionStartingMoney">
@@ -7011,6 +7085,7 @@
                 <Russian>Начальные деньги фракции повстанцев</Russian>
                 <Chinesesimp>初始抵抗军派系的钱</Chinesesimp>
                 <Korean>반란군 팩션 초기 자금</Korean>
+                <Spanish>Dinero inicial de la facción rebelde</Spanish>
                 <French>Argent initial de la faction rebelle</French>
                 <Turkish>Başlangıç Direnişçi Grubu Parası</Turkish>
             </Key>
@@ -7019,6 +7094,7 @@
                 <Russian>Устанавливает начальный капитал фракции повстанцев; влияет на раннее строительство и варианты поддержки.</Russian>
                 <Chinesesimp>设置抵抗军派系的初始金钱；影响早期建设和支援选项。</Chinesesimp>
                 <Korean>반란군 팩션의 초기 자금을 설정합니다. 조기 건설 및 지원 옵션에 영향을 미칩니다.</Korean>
+                <Spanish>Establece con cuánto dinero empieza la facción rebelde; afecta a las opciones iniciales de construcción y soporte.</Spanish>
                 <French>Définit la somme d'argent initiale de la faction rebelle ; influence les options de construction et de soutien au début.</French>
             </Key>
             <Key ID="STR_params_initialHr">
@@ -7026,6 +7102,7 @@
                 <Russian>Начальные людские ресурсы</Russian>
                 <Chinesesimp>初始抵抗军派系的人力</Chinesesimp>
                 <Korean>반란군 팩션 초기 인력</Korean>
+                <Spanish>Efectivos iniciales de la facción rebelde</Spanish>
                 <French>Ressources humaines initiales de la faction rebelle</French>
                 <Turkish>Başlangıç Direnişçi Grubu İK</Turkish>
             </Key>
@@ -7034,6 +7111,7 @@
                 <Russian>Начальные людские ресурсы, доступные фракции повстанцев в начале кампании.</Russian>
                 <Chinesesimp>在战役开始时抵抗军派系可用的初始人力资源。</Chinesesimp>
                 <Korean>캠페인 시작 시 반란군 팩션이 보유한 초기 인력입니다.</Korean>
+                <Spanish>Efectivos iniciales (recursos humanos) disponibles para la facción rebelde al comenzar la campaña.</Spanish>
                 <French>Main-d'œuvre initiale (RH) disponible pour la faction rebelle au début de la campagne.</French>
             </Key>
             <Key ID="STR_params_enable_HR_cap">
@@ -7041,6 +7119,7 @@
                 <Russian>Включить ограничение людских ресурсов</Russian>
                 <Chinesesimp>启用人力上限</Chinesesimp>
                 <Korean>인력 한도 활성화</Korean>
+                <Spanish>Activar límite de RH</Spanish>
                 <Turkish>İK Sınırını Etkinleştir</Turkish>
             </Key>
             <Key ID="STR_params_enable_HR_cap_desc">
@@ -7048,19 +7127,23 @@
                 <Russian>Включает ограничение на людские ресурсы повстанцев, чтобы предотвратить экспоненциальный рост и сохранить баланс.</Russian>
                 <Chinesesimp>启用抵抗军人力上限以限制指数增长并保持平衡。</Chinesesimp>
                 <Korean>반란군 인력의 상한을 활성화하여 급속한 성장을 제한하고 밸런스를 유지합니다.</Korean>
+                <Spanish>Activa un límite de efectivos rebeldes para evitar el crecimiento exponencial y mantener el equilibrio bajo control.</Spanish>
                 <French>Activer un plafond sur la main-d'œuvre rebelle pour limiter la croissance exponentielle et préserver l'équilibre.</French>
             </Key>
             <Key ID="STR_params_overall_HR_gain">
                 <Original>Overall HR gain</Original>
+                <Spanish>Ganancia global de RH</Spanish>
             </Key>
             <Key ID="STR_params_overall_HR_gain_desc">
                 <Original>An overall HR gain multiplier. At 10% you get 10% of the normal gains from passive income, but increased gains from active income (Rescues, etc).</Original>
+                <Spanish>Multiplicador global de ganancia de RH. Al 10 % obtienes el 10 % de las ganancias normales de ingresos pasivos, pero mayores ganancias de ingresos activos (rescates, etc.).</Spanish>
             </Key>
             <Key ID="STR_params_newCarTowing">
                 <Original>Improved towing of wheeled vehicles</Original>
                 <Russian>Улучшенная буксировка колёсного транспорта</Russian>
                 <Chinesesimp>改进了轮式车辆的牵引</Chinesesimp>
                 <Korean>차륜형 차량의 견인 능력 향상</Korean>
+                <Spanish>Remolque mejorado de vehículos con ruedas</Spanish>
                 <French>Amélioration du remorquage des véhicules à roues</French>
                 <Turkish>Araçlar için geliştirilmiş çekme sistemi</Turkish>
             </Key>
@@ -7069,6 +7152,7 @@
                 <Russian>Включает улучшенное поведение при буксировке колёсных транспортных средств, делая восстановление и буксировку надежнее.</Russian>
                 <Chinesesimp>启用改进的牵引行为，使轮式车辆的回收和牵引更可靠。</Chinesesimp>
                 <Korean>차륜형 차량의 견인 동작을 개선하여 복구 및 견인이 더 안정적으로 수행되도록 합니다.</Korean>
+                <Spanish>Activa un comportamiento de remolque mejorado para los vehículos con ruedas, haciendo la recuperación y el remolque más fiables.</Spanish>
                 <French>Active l'amélioration du remorquage des véhicules à roues, rendant la récupération et le remorquage plus fiables.</French>
             </Key>
             <Key ID="STR_params_rallyPointSpawnCount">
@@ -7076,6 +7160,7 @@
                 <Russian>Сколько раз можно использовать точку сбора?</Russian>
                 <Chinesesimp>集结点可以使用多少次？</Chinesesimp>
                 <Korean>집결 지점은 몇 번 사용 가능합니까?</Korean>
+                <Spanish>¿Cuántas veces se puede usar el punto de reunión?</Spanish>
                 <French>Combien de fois le point de ralliement peut-il être utilisé ?</French>
                 <Turkish>Toplanma Noktası kaç kez kullanılabilir?</Turkish>
             </Key>
@@ -7084,6 +7169,7 @@
                 <Russian>Управляет количеством раз, которое может быть использована точка сбора (пункт назначения для быстрого перемещения), прежде чем она будет удалена.</Russian>
                 <Chinesesimp>控制集结点（快速旅行目标）在被移除前可使用多少次。</Chinesesimp>
                 <Korean>집결 지점(빠른 이동 대상)을 제거하기 전에 몇 번 사용할 수 있는지 제어합니다.</Korean>
+                <Spanish>Controla cuántas veces se puede usar un punto de reunión (destino de viaje rápido) antes de que desaparezca.</Spanish>
                 <French>Contrôle le nombre de fois qu'un point de rassemblement (destination de voyage rapide) peut être utilisé avant sa suppression.</French>
             </Key>
             <Key ID="STR_params_rallyPointSpawnCountDisabled">
@@ -7091,6 +7177,7 @@
                 <Russian>Точки сбора отключены.</Russian>
                 <Chinesesimp>集结点已被禁用</Chinesesimp>
                 <Korean>집결 지점이 비활성화되었습니다.</Korean>
+                <Spanish>Los puntos de reunión están desactivados</Spanish>
                 <French>Les points de rassemblement ont été désactivés</French>
                 <Turkish>Toplanma noktaları devre dışı bırakıldı</Turkish>
             </Key>
@@ -7099,6 +7186,7 @@
                 <Russian>Ограничение времени управления ИИ</Russian>
                 <Chinesesimp>AI控制时限</Chinesesimp>
                 <Korean>인공지능 조종 시간 제한</Korean>
+                <Spanish>Límite de tiempo de control de la IA</Spanish>
                 <French>Limite de temps du contrôle de l'IA</French>
                 <Turkish>Yapay Zeka Kontrol Süre Sınırı (saniye cinsinden)</Turkish>
             </Key>
@@ -7107,6 +7195,7 @@
                 <Russian>Устанавливает максимальное допустимое время (в секундах), в течение которого игрок может управлять ИИ-бойцом перед возвратом управления ИИ.</Russian>
                 <Chinesesimp>设置玩家在将控制权返回给人工智能前可以控制人工智能单位的最长允许时间（秒）。</Chinesesimp>
                 <Korean>플레이어가 AI에 제어를 반환하기 전에 AI 유닛을 제어할 수 있는 최대 허용 시간(초)을 설정합니다.</Korean>
+                <Spanish>Establece el tiempo máximo (en segundos) que un jugador puede controlar a una unidad de IA antes de devolverle el control.</Spanish>
                 <French>Définit le temps maximum autorisé (en secondes) pendant lequel un joueur peut contrôler une unité IA avant de rendre le contrôle à l'IA.</French>
             </Key>
             <Key ID="STR_params_playerRecruitAI">
@@ -7114,6 +7203,7 @@
                 <Russian>Разрешить игрокам нанимать ИИ</Russian>
                 <Chinesesimp>允许玩家招募AI</Chinesesimp>
                 <Korean>플레이어가 AI를 모집하도록 허용</Korean>
+                <Spanish>Permitir que los jugadores recluten IA</Spanish>
                 <French>Autoriser les joueurs à recruter l'IA</French>
                 <Turkish>Oyuncuların YZ askeri almasına izin ver</Turkish>
             </Key>
@@ -7122,6 +7212,7 @@
                 <Russian>Разрешить игрокам нанимать ИИ-бойцов. При включении игроки могут нанимать сдавшихся врагов ИИ в свою фракцию, либо увеличивая ЛР, либо добавляя личный состав в отряд игрока.</Russian>
                 <Chinesesimp>允许玩家招募人工智能单位。启用时，玩家可以将投降的敌方人工智能招募到其阵营，增加人力资源或向玩家分队增加人员。</Chinesesimp>
                 <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 항복한 적 AI를 자신의 진영으로 모집할 수 있으며, 인적 자원을 늘리거나 플레이어 분대에 인원을 추가할 수 있습니다.</Korean>
+                <Spanish>Permite que los jugadores recluten unidades de IA. Si está activado, los jugadores pueden reclutar IA enemiga rendida para su facción, aumentando los RH o añadiendo efectivos a su escuadra.</Spanish>
                 <French>Autoriser les joueurs à recruter des unités IA. Lorsqu'elle est activée, les joueurs peuvent recruter des IA ennemies reddues à leur faction, augmentant soit les RH, soit ajoutant du personnel à l'escouade du joueur.</French>
             </Key>
             <Key ID="STR_params_enableVehicleAutoLock">
@@ -7129,6 +7220,7 @@
                 <Russian>Активировать замки на вражеских машинах</Russian>
                 <Chinesesimp>启用敌方车辆锁</Chinesesimp>
                 <Korean>적 차량 잠금 장치 활성화</Korean>
+                <Spanish>Activar bloqueo de vehículos enemigos</Spanish>
                 <French>Activer les verrous des véhicules ennemis</French>
                 <Turkish>Düşman Araç Kilitlerini Etkinleştir</Turkish>
                 </Key>
@@ -7137,6 +7229,7 @@
                 <Russian>Должны ли незанятые вражеские машины автоматически блокироваться, требуя взлома замков инженером-повстанцем?</Russian>
                 <Chinesesimp>空置的敌方车辆是否应该自动锁定，需要工程师叛军开锁？</Chinesesimp>
                 <Korean>비어 있는 적 차량은 자동으로 잠겨서 엔지니어 반란군이 자물쇠 따기를 해야 하나요?</Korean>
+                <Spanish>¿Deben bloquearse automáticamente los vehículos enemigos desocupados, obligando a que un rebelde ingeniero fuerce la cerradura?</Spanish>
                 <French>Les véhicules ennemis inoccupés doivent-ils être verrouillés automatiquement, nécessitant un crochetage par un rebelle ingénieur?</French>
             </Key>
             <Key ID="STR_params_enableVehicleAutoLockCiv">
@@ -7144,6 +7237,7 @@
                 <Russian>Активировать замки гражданских автомобилей</Russian>
                 <Chinesesimp>启用民用车辆锁</Chinesesimp>
                 <Korean>민간 차량 잠금장치 활성화</Korean>
+                <Spanish>Activar bloqueo de vehículos civiles</Spanish>
                 <French>Activez les verrous des véhicules civils</French>
             </Key>
             <Key ID="STR_params_enableVehicleAutoLockCiv_desc">
@@ -7151,6 +7245,7 @@
                 <Russian>Должны ли пустые гражданские автомобили автоматически блокироваться, требуя вскрытия замков инженером-повстанцем?</Russian>
                 <Chinesesimp>空置的民用车辆是否应该自动锁闭，需要工程师叛军开锁？</Chinesesimp>
                 <Korean>비인 민간 차량은 자동으로 잠겨서 엔지니어 반군이 자물쇠 따기를 해야 할까요?</Korean>
+                <Spanish>¿Deben bloquearse automáticamente los vehículos civiles desocupados, obligando a que un rebelde ingeniero fuerce la cerradura?</Spanish>
                 <French>Les véhicules civils inoccupés doivent-ils être verrouillés automatiquement, nécessitant le crochetage par un rebelle ingénieur?</French>
             </Key>
             <Key ID="STR_params_vehicleLockpickTime">
@@ -7158,6 +7253,7 @@
                 <Russian>Количество времени для взлома автомобиля</Russian>
                 <French>Quantité de temps pour crocheter un véhicule</French>
                 <Korean>차량을 따는 데 걸리는 시간</Korean>
+                <Spanish>Tiempo para forzar la cerradura de un vehículo</Spanish>
                 <Chinesesimp>撬锁车辆所需的时间</Chinesesimp>
                 <Turkish>Bir aracın kilidini açmak için gereken süre (saniye cinsinden)</Turkish>
             </Key>
@@ -7166,6 +7262,7 @@
                 <Russian>Время (в секундах), необходимое для взлома автомобиля.</Russian>
                 <Chinesesimp>撬锁车辆所需的时间（秒）。</Chinesesimp>
                 <Korean>차량을 따는 데 필요한 시간(초)입니다.</Korean>
+                <Spanish>Tiempo necesario (en segundos) para forzar la cerradura de un vehículo.</Spanish>
                 <French>Temps requis (en secondes) pour crocheter un véhicule.</French>
             </Key>
             <Key ID="STR_params_recruitToPlayerSquad">
@@ -7173,6 +7270,7 @@
                 <Russian>Позволить игрокам нанимать вражеских ИИ в свой отряд</Russian>
                 <Chinesesimp>允许玩家招募敌方 AI 加入他们的小队</Chinesesimp>
                 <Korean>플레이어가 적 AI를 분대에 모집할 수 있도록 허용</Korean>
+                <Spanish>Permitir que los jugadores recluten IA enemiga para su escuadra</Spanish>
                 <French>Permettez aux joueurs de recruter l'IA ennemie dans leur équipe</French>
                 <Turkish>Oyuncuların düşman YZ'yı mangasına katmasına izin ver</Turkish>
             </Key>
@@ -7181,6 +7279,7 @@
                 <Russian>При включении присоединившиеся ИИ будут вступать в отряд игрока напрямую, а не возвращаться в штаб-квартиру, чтобы пополнить резерв ЛР повстанцев.</Russian>
                 <Chinesesimp>启用后，招募的AI将直接加入玩家小队，而不是返回反抗军总部并增加反抗军人力资源库。</Chinesesimp>
                 <Korean>활성화하면 모집된 AI는 반군 본부로 돌아가거나 반군 인력 자원 풀을 증가시키는 대신 플레이어 분대에 직접 합류합니다.</Korean>
+                <Spanish>Si está activado, la IA reclutada se unirá directamente a la escuadra del jugador en lugar de volver al CG rebelde y aumentar la reserva de RH.</Spanish>
                 <French>Lorsqu'elle est activée, l'IA recrutée rejoint directement l'escouade du joueur plutôt que de retourner au QG des rebelles et d'augmenter le réservoir de ressources humaines des rebelles.</French>
             </Key>
             <Key ID="STR_params_enablePunishments">
@@ -7188,6 +7287,7 @@
                 <Russian>Включить наказания захватчиков</Russian>
                 <Chinesesimp>启用入侵者惩罚</Chinesesimp>
                 <Korean>침입자 처벌 활성화</Korean>
+                <Spanish>Activar castigos de los invasores</Spanish>
                 <French>Activer les sanctions contre les envahisseurs</French>
                 <Turkish>İşgalci cezalandırmalarını etkinleştir</Turkish>
             </Key>
@@ -7196,6 +7296,7 @@
                 <Russian>Включить или отключить отправку атак фракцией захватчиков для окончательного уничтожения контролируемых повстанцами населённых пунктов.</Russian>
                 <Chinesesimp>启用或禁用入侵者阵营发起攻击，以永久摧毁反抗军控制的平民城镇。</Chinesesimp>
                 <Korean>침략자 진영이 공격을 보내 반군이 통제하는 민간 도시를 영구적으로 파괴하는 기능을 활성화 또는 비활성화합니다.</Korean>
+                <Spanish>Activa o desactiva que la facción invasora lance ataques para destruir permanentemente poblaciones civiles controladas por los rebeldes.</Spanish>
                 <French>Activer ou désactiver les attaques envoyées par la faction envahisseurs pour détruire définitivement les villes civiles contrôlées par les rebelles.</French>
             </Key>
             <Key ID="STR_params_townSkirmishChance">
@@ -7203,6 +7304,7 @@
                 <Russian>Шанс сражения за город</Russian>
                 <Chinesesimp>城镇冲突概率</Chinesesimp>
                 <Korean>도시 소규모 전투 확률</Korean>
+                <Spanish>Probabilidad de escaramuza en poblaciones</Spanish>
                 <French>Probabilité de bataille de ville</French>
                 <Turkish>Şehir Çatışması Olasılığı</Turkish>
             </Key>
@@ -7211,6 +7313,7 @@
                 <Russian>Процентная вероятность того, что сражения будут происходить, чтобы гражданские города стали дружественными.</Russian>
                 <Chinesesimp>发生冲突的百分比机会，以便平民城镇翻转为友好。</Chinesesimp>
                 <Korean>민간 도시가 우호적으로 전환되기 위해 소규모 전투가 발생할 확률(백분율)입니다.</Korean>
+                <Spanish>Probabilidad (en porcentaje) de que se produzcan escaramuzas para que las poblaciones civiles se pasen a tu bando.</Spanish>
                 <French>Pourcentage de chances que des escarmouches se produisent afin que les villes civiles deviennent amicales.</French>
                 <Turkish>Şehirlerin dostane hale gelmesi için çatışmaların meydana gelme olasılığı yüzdesi.</Turkish>
             </Key>
@@ -7219,6 +7322,7 @@
                 <Russian>Штраф игроку при смерти (Сколько денег будет потеряно при смерти)</Russian>
                 <Chinesesimp>玩家死亡惩罚（死亡会损失多少金钱）</Chinesesimp>
                 <Korean>플레이어 사망 시 패널티 (사망 시 손실되는 금액은 얼마입니까?)</Korean>
+                <Spanish>Penalización del jugador al morir (cuánto dinero se pierde al morir)</Spanish>
                 <French>Pénalité du joueur en cas de décès (combien d'argent sera perdu en cas de décès)</French>
                 <Turkish>Oyuncu ölüm cezası (Ölündüğünde ne kadar para kaybedilecek)</Turkish>
             </Key>
@@ -7227,6 +7331,7 @@
                 <Russian>Процент денег, теряемых игроком при смерти. Более высокие значения увеличивают финансовый риск смерти. Игроки должны периодически жертвовать деньги фракции, чтобы минимизировать риск финансовых потерь при смерти.</Russian>
                 <Chinesesimp>玩家死亡时损失的金钱百分比。更高的值增加死亡的经济风险。玩家应定期向阵营捐赠资金，以最小化死亡时的经济损失风险。</Chinesesimp>
                 <Korean>플레이어가 죽을 때 잃는 금액의 비율입니다. 값이 높을수록 죽음의 재정적 위험이 커집니다. 플레이어는 죽음 시 경제적 손실 위험을 최소화하기 위해 주기적으로 진영에 돈을 기부해야 합니다.</Korean>
+                <Spanish>Porcentaje de dinero que pierde un jugador al morir. Valores más altos aumentan el riesgo económico de morir. Conviene donar dinero a la facción periódicamente para reducir ese riesgo.</Spanish>
                 <French>Pourcentage d'argent perdu par un joueur en cas de décès. Des valeurs plus élevées augmentent le risque financier lié à la mort. Les joueurs doivent périodiquement donner de l'argent à la faction pour minimiser le risque de perte financière en cas de décès.</French>
             </Key>
             <Key ID="STR_params_attackTiming">
@@ -7234,6 +7339,7 @@
                 <Russian>Частота больших атак противника (в минутах, базовое значение зависит от различных условий и модификаторов).</Russian>
                 <Chinesesimp>敌人的大规模攻击频率（以分钟为单位，基础值受各种条件和修改器影响）</Chinesesimp>
                 <Korean>공격 타이밍 - 적의 대규모 공격 빈도 (분 단위, 다양한 조건과 변형에 영향에 따라 기본값이 달라짐)</Korean>
+                <Spanish>Frecuencia de los ataques masivos enemigos (en minutos; el valor base se ve afectado por diversas condiciones y modificadores)</Spanish>
                 <French>Fréquence des attaques massives de l'ennemi (en minutes, la valeur de base dépend de différentes conditions et modificateurs)</French>
                 <Turkish>Saldırı Zamanlaması - Düşman devasa saldırı sıklığı (Dakika cinsinden, temel değer çeşitli koşullardan ve çarpanlardan etkilenir)</Turkish>
             </Key>
@@ -7242,6 +7348,7 @@
                 <Russian>Режим Железной Воли - у Петроса одна жизнь, игра закончится и сохранение затрётся при его смерти</Russian>
                 <Chinesesimp>钢铁侠模式-Petros只有一条命，死亡就游戏结束，存档也会被清空</Chinesesimp>
                 <Korean>아이언맨 모드 - 페트로스는 목숨이 하나 뿐이며 그가 죽으면 게임은 끝날 것이며, 세이브도 지워집니다</Korean>
+                <Spanish>Modo Iron Man: Petros tendrá una sola vida. Si muere, la partida terminará y se borrará el guardado.</Spanish>
                 <French>Mode Iron Man - Petros n'aura qu'une seule vie et le jeu se terminera s'il meurt, les sauvegardes seront également effacées.</French>
                 <Turkish>Iron Man Modu - Petros'un tek bir canı olacak. Eğer ölürse oyun biter ve kayıt dosyası silinir.</Turkish>
             </Key>
@@ -7250,6 +7357,7 @@
                 <Russian>Да (Внимание! Необратимо для текущего сохранения)</Russian>
                 <Chinesesimp>是（警告-当前保存不可逆）</Chinesesimp>
                 <Korean>예 (경고 - 현재 저장을 되돌릴 수 없습니다)</Korean>
+                <Spanish>Sí (aviso: irreversible para el guardado actual)</Spanish>
                 <French>Oui (Attention - irréversible pour la sauvegarde actuelle)</French>
                 <Turkish>Evet (Uyarı - mevcut kayıt için geri döndürülemez)</Turkish>
             </Key>
@@ -7258,6 +7366,7 @@
                 <Russian>Включить случайные события</Russian>
                 <Chinesesimp>开启随机事件</Chinesesimp>
                 <Korean>랜덤 이벤트 활성화</Korean>
+                <Spanish>Activar eventos aleatorios</Spanish>
                 <French>Activer les événements aléatoires</French>
                 <Turkish>Rastgele Etkinlikleri Etkinleştir</Turkish>
             </Key>
@@ -7266,6 +7375,7 @@
                 <Russian>Включить или отключить случайные мировые события. При включении иногда могут происходить события, которые изменяют игровой процесс и создают разнообразие.</Russian>
                 <Chinesesimp>启用或禁用随机世界事件。启用后，可能出现改变游戏玩法并创造多样性的临时事件。</Chinesesimp>
                 <Korean>임의의 월드 이벤트를 활성화 또는 비활성화합니다. 활성화하면 게임플레이를 변경하고 다양성을 만드는 때때로 이벤트가 나타날 수 있습니다.</Korean>
+                <Spanish>Activa o desactiva los eventos aleatorios del mundo. Si está activado, pueden aparecer eventos ocasionales que alteran la partida y añaden variedad.</Spanish>
                 <French>Activer ou désactiver les événements mondiaux aléatoires. Lorsqu'elle est activée, des événements occasionnels peuvent apparaître qui modifient le jeu et créent de la variété.</French>
             </Key>
             <Key ID="STR_params_areRivalsEnabled">
@@ -7273,6 +7383,7 @@
                 <Russian>Соперничающая подфракция повстанцев</Russian>
                 <Chinesesimp>敌对的抵抗军子派系</Chinesesimp>
                 <Korean>라이벌 반란군 서브팩션 활성화</Korean>
+                <Spanish>Subfacción rebelde rival</Spanish>
                 <French>Sous-faction rivale des rebelles</French>
                 <Turkish>Rakip Direnişçi Alt Grubu</Turkish>
             </Key>
@@ -7281,6 +7392,7 @@
                 <Russian>Включает или отключает соперничающую подфракцию повстанцев. При включении конкурирующие группы повстанцев будут действовать самостоятельно и могут мешать вашим операциям.</Russian>
                 <Chinesesimp>启用或禁用敌对抵抗军子派系。启用后，竞争的反抗组织会独立行动，并可能干扰你的行动。</Chinesesimp>
                 <Korean>라이벌 반란 서브팩션을 활성화/비활성화합니다. 활성화 시 경쟁하는 반군 그룹이 독립적으로 행동하며 작전에 지장을 줄 수 있습니다.</Korean>
+                <Spanish>Activa o desactiva la subfacción rebelde rival. Si está activada, grupos rebeldes competidores actuarán por su cuenta y podrán interferir en tus operaciones.</Spanish>
                 <French>Activer ou désactiver la sous-faction rebelle rivale. Lorsqu'elle est activée, des groupes rebelles concurrents agiront indépendamment et pourront gêner vos opérations.</French>
             </Key>
             <Key ID="STR_params_areRivalsEnabled_0">
@@ -7288,6 +7400,7 @@
                 <Russian>Нет (классический Antitasi Plus)</Russian>
                 <Chinesesimp>无（经典 Antitasi Plus体验）</Chinesesimp>
                 <Korean>아니오 (클래식 안티스타시 플러스 경험)</Korean>
+                <Spanish>No (experiencia clásica de Antistasi Plus)</Spanish>
                 <French>Non (expérience Classic Antitasi Plus)</French>
                 <Turkish>Hayır (Klasik Antistasi Plus deneyimi)</Turkish>
             </Key>
@@ -7296,6 +7409,7 @@
                 <Russian>Максимальная точность вражеских ИИ-бойцов</Russian>
                 <Chinesesimp>敌方AI单位最大精度</Chinesesimp>
                 <Korean>적 인공지능 유닛 최대 정확도</Korean>
+                <Spanish>Precisión máxima de las unidades de IA enemigas</Spanish>
                 <French>Précision maximale des unités IA ennemies</French>
                 <Turkish>Düşman YZ birimleri maksimum isabet oranı</Turkish>
             </Key>
@@ -7304,6 +7418,7 @@
                 <Russian>Определяет максимальную точность вражеских ИИ; более высокие значения делают врагов точнее в бою.</Russian>
                 <Chinesesimp>设置敌方AI单位的最大准确度；更高数值使敌人在战斗中更精确。</Chinesesimp>
                 <Korean>적 AI 유닛의 최대 정확도를 정의합니다. 값이 높을수록 전투에서 더 정확해집니다.</Korean>
+                <Spanish>Define la precisión máxima de las unidades de IA enemigas; valores más altos las hacen más certeras en combate.</Spanish>
                 <French>Définit la précision maximale des unités IA ennemies ; des valeurs plus élevées rendent les ennemis plus précis en combat.</French>
             </Key>
             <Key ID="STR_params_occupantFaction_generic">
@@ -7311,6 +7426,7 @@
                 <Russian>Фракция оккупантов</Russian>
                 <Chinesesimp>占领者派系</Chinesesimp>
                 <Korean>점령군 팩션</Korean>
+                <Spanish>Facción de los ocupantes</Spanish>
                 <French>Faction des occupants</French>
                 <Turkish>İşgalci grubu</Turkish>
             </Key>
@@ -7319,6 +7435,7 @@
                 <Russian>Фракция захватчиков</Russian>
                 <Chinesesimp>侵略者派系</Chinesesimp>
                 <Korean>침략군 팩션</Korean>
+                <Spanish>Facción de los invasores</Spanish>
                 <French>Faction des envahisseurs</French>
                 <Turkish>İstilacılar grubu</Turkish>
             </Key>
@@ -7327,6 +7444,7 @@
                 <Russian>Режим Холодной Войны (армия США и Красная Армия, примерно первая половина 1990-х годов, переопределяет настройки фракции, указанные выше)</Russian>
                 <Chinesesimp>冷战模式（美国陆军和红军派系，大致在1990年代上半叶，覆盖上面的派系设置）</Chinesesimp>
                 <Korean>냉전 모드 (미 육군과 붉은 군대 팩션, 약 1990년대 전반 배경으로 위의 팩션 설정을 재정의함)</Korean>
+                <Spanish>Modo Guerra Fría (facciones Ejército de EE. UU. y Ejército Rojo, aproximadamente la primera mitad de los años 90; anula los ajustes de facción anteriores)</Spanish>
                 <French>Mode Guerre froide (factions de l'armée américaine et de l'armée rouge, à peu près dans la première moitié des années 1990 ; les paramètres de faction ci-dessus sont ignorés)</French>
                 <Turkish>Soğuk Savaş modu (ABD Ordusu ve Kızıl Ordu grupları, kabaca 1990'ların ilk yarısı, yukarıdaki grup ayarlarını geçersiz kılar)</Turkish>
             </Key>
@@ -7335,6 +7453,7 @@
                 <Russian>ТОЛЬКО ДЛЯ ПРОДВИНУТЫХ ПОЛЬЗОВАТЕЛЕЙ</Russian>
                 <Chinesesimp>仅限高级用户</Chinesesimp>
                 <Korean>고급 유저 전용</Korean>
+                <Spanish>SOLO PARA USUARIOS AVANZADOS</Spanish>
                 <French>POUR LES UTILISATEURS AVANCÉS UNIQUEMENT</French>
                 <Turkish>SADECE İLERİ DÜZEY KULLANICILAR İÇİN</Turkish>
             </Key>
@@ -7343,6 +7462,7 @@
                 <Russian>Уровень логирования (количество деталей в файле .rpt)</Russian>
                 <Chinesesimp>日志级别（.rpt文件中的细节数量）。</Chinesesimp>
                 <Korean>로그 레벨 (.rpt 파일의 세부 정보량)</Korean>
+                <Spanish>Nivel de registro (cantidad de detalle en el archivo .rpt)</Spanish>
                 <French>Niveau de journalisation (quantité de détails dans le fichier .rpt)</French>
                 <Turkish>Günlük Kaydı Seviyesi (.rpt dosyasındaki detay miktarı)</Turkish>
             </Key>
@@ -7351,6 +7471,7 @@
                 <Russian>Устанавливает уровень детализации логирования; более высокие значения приводят к подробным записям в .rpt файле, увеличивая объём и нагрузку на носитель.</Russian>
                 <Chinesesimp>设置日志详细级别；更高级别将在 .rpt 文件中生成更详细的日志。</Chinesesimp>
                 <Korean>디버그 출력의 로그 상세 수준을 설정합니다. 높은 수준은 .rpt 파일에 더 자세한 로그를 생성합니다.</Korean>
+                <Spanish>Establece el nivel de detalle del registro de depuración; niveles más altos producen registros más detallados en el archivo .rpt.</Spanish>
                 <French>Définit la verbosité des journaux ; des niveaux supérieurs engendrent des logs plus détaillés dans le fichier .rpt.</French>
             </Key>
             <Key ID="STR_params_A3A_logDebugConsole">
@@ -7358,6 +7479,7 @@
                 <Russian>Логировать использование отладочной консоли</Russian>
                 <Chinesesimp>记录调试控制台的使用情况</Chinesesimp>
                 <Korean>디버그 콘솔 사용 기록</Korean>
+                <Spanish>Registrar el uso de la consola de depuración</Spanish>
                 <French>Utilisation de la console de débogage</French>
                 <Turkish>Hata ayıklama konsolu kullanımını günlüğe kaydet</Turkish>
             </Key>
@@ -7366,6 +7488,7 @@
                 <Russian>Создаёт запись в логе сервера, когда определённые типы игроков используют отладочную консоль. Режимы: игнорировать всех, логировать только тех, кто не является разработчиком или логировать всех.</Russian>
                 <Chinesesimp>当某些类型的玩家使用调试控制台时创建服务器日志条目。没有玩家，所有非开发者玩家，或所有玩家。</Chinesesimp>
                 <Korean>특정 유형의 플레이어가 디버그 콘솔을 사용할 때 서버 로그 항목을 생성합니다. 플레이어 없음, 모든 비개발자 플레이어 또는 모든 플레이어.</Korean>
+                <Spanish>Crea una entrada en el registro del servidor cuando ciertos tipos de jugadores usan la consola de depuración. Ningún jugador, todos los que no sean desarrolladores, o todos.</Spanish>
                 <French>Créer une entrée de journal serveur lorsque certains types de joueurs utilisent la console de débogage. Aucun joueur, tous les joueurs non-développeurs ou tous les joueurs.</French>
             </Key>
             <Key ID="STR_params_A3A_logDebugConsole_none">
@@ -7373,6 +7496,7 @@
                 <Russian>Игнорировать всех</Russian>
                 <Chinesesimp>无</Chinesesimp>
                 <Korean>없음</Korean>
+                <Spanish>Ninguno</Spanish>
                 <French>Aucun</French>
                 <Turkish>Hiçbiri</Turkish>
             </Key>
@@ -7381,6 +7505,7 @@
                 <Russian>Логировать не-разработчиков</Russian>
                 <Chinesesimp>记录非开发者</Chinesesimp>
                 <Korean>비개발자 로그</Korean>
+                <Spanish>Registrar a los no desarrolladores</Spanish>
                 <French>Log Non-Développeurs</French>
                 <Turkish>Geliştirici Olmayanları Günlüğe Kaydet</Turkish>
             </Key>
@@ -7389,6 +7514,7 @@
                 <Russian>Логировать всех</Russian>
                 <Chinesesimp>全部</Chinesesimp>
                 <Korean>모두</Korean>
+                <Spanish>Todos</Spanish>
                 <French>Tout</French>
                 <Turkish>Hepsi</Turkish>
             </Key>
@@ -7397,6 +7523,7 @@
                 <Russian>НАСТРОЙКИ ПОДДЕРЖКИ</Russian>
                 <Chinesesimp>支援设置</Chinesesimp>
                 <Korean>지원 설정</Korean>
+                <Spanish>AJUSTES DE SOPORTE</Spanish>
                 <French>PARAMÈTRES DE SOUTIEN</French>
                 <Turkish>DESTEK AYARLARI</Turkish>
             </Key>
@@ -7421,12 +7548,14 @@
                 <Russian>Разрешает или запрещает игрокам взаимодействовать с гражданскими через систему диалогов; отключение запрещает диалоги с гражданскими.</Russian>
                 <Chinesesimp>允许或阻止玩家通过对话系统与平民互动；禁用将阻止平民对话。</Chinesesimp>
                 <Korean>플레이어가 대화 시스템을 통해 민간인과 상호작용할 수 있도록 허용/차단합니다. 비활성화하면 민간인 대화가 차단됩니다.</Korean>
+                <Spanish>Permite o impide que los jugadores interactúen con los civiles mediante el sistema de diálogo; desactivarlo impide las conversaciones con civiles.</Spanish>
                 <French>Permettre ou empêcher les joueurs d'interagir avec les civils via le système de dialogue ; la désactivation empêche les dialogues avec les civils.</French>
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
                 <Russian>Игнорировать условия разблокировки техники на чёрном рынке</Russian>
                 <Korean>암시장 차량 요구사항 무시</Korean>
+                <Spanish>Ignorar los requisitos de vehículos del mercado negro</Spanish>
                 <Turkish>Karaborsa Araç Gereksinimlerini Yoksay</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketIgnoreRequirements_desc">
@@ -7434,12 +7563,14 @@
                 <Russian>При включении чёрный рынок игнорирует требования разблокировки для техники, позволяя покупать их независимо от уровня войны или зон, контролируемых повстанцами.</Russian>
                 <Chinesesimp>启用时，黑市会忽略车辆的解锁要求，使其可购买，不论战争级别或反抗军阵营控制的区域如何。</Chinesesimp>
                 <Korean>활성화하면 암시장은 차량의 언락 요구사항을 무시하여 전쟁 수준이나 반군 진영이 통제하는 지역과 관계없이 구매 가능하게 합니다.</Korean>
+                <Spanish>Si está activado, el mercado negro ignora los requisitos de desbloqueo de los vehículos, de modo que se pueden comprar sin importar el Nivel de Guerra ni las zonas controladas por la facción rebelde.</Spanish>
                 <French>Lorsqu'elle est activée, la marché noir ignore les conditions de déblocage des véhicules, les rendant achetables indépendamment du niveau de guerre ou des zones contrôlées par la faction rebelle.</French>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle">
                 <Original>Black Market Vehicle Discount</Original>
                 <Russian>Скидка на технику на чёрном рынке</Russian>
                 <Korean>암시장 차량 할인</Korean>
+                <Spanish>Descuento de vehículos del mercado negro</Spanish>
                 <Turkish>Karaborsa Araç İndirimi</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle_desc">
@@ -7447,12 +7578,14 @@
                 <Russian>Устанавливает процент скидки на технику на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
                 <Chinesesimp>设置黑市车辆的折扣百分比；更高的值降低购买成本。</Chinesesimp>
                 <Korean>암시장에서 차량에 적용되는 할인 비율을 설정합니다. 값이 클수록 구매 비용이 줄어듭니다.</Korean>
+                <Spanish>Establece el porcentaje de descuento aplicado a los vehículos del mercado negro; valores más altos reducen el precio de compra.</Spanish>
                 <French>Définit le pourcentage de remise appliqué aux véhicules sur le marché noir ; des valeurs plus élevées réduisent le coût d'achat.</French>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
                 <Original>Black Market Equipment Discount</Original>
                 <Russian>Скидка на оружие и экипировку на чёрном рынке</Russian>
                 <Korean>암시장 장비 할인</Korean>
+                <Spanish>Descuento de equipo del mercado negro</Spanish>
                 <Turkish>Karaborsa Ekipman İndirimi</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon_desc">
@@ -7460,6 +7593,7 @@
                 <Russian>Устанавливает процент скидки на оружие и экипировку на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
                 <Chinesesimp>设置黑市武器/装备的折扣百分比。</Chinesesimp>
                 <Korean>암시장에서 무기/장비에 적용되는 할인 비율을 설정합니다.</Korean>
+                <Spanish>Establece el porcentaje de descuento aplicado a las armas y el equipo del mercado negro.</Spanish>
                 <French>Définit le pourcentage de remise appliqué aux armes/équipements sur le marché noir.</French>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
@@ -7467,6 +7601,7 @@
                 <Russian>Разрешить возможность взлома с помощью spectrum device (Contact DLC)</Russian>
                 <Chinesesimp>启用频谱设备黑客功能（Contact DLC）</Chinesesimp>
                 <Korean>스펙트럼 장치 해킹 기능 활성화 (컨택트 DLC)</Korean>
+                <Spanish>Activar la capacidad de hackeo del dispositivo de espectro (DLC Contact)</Spanish>
                 <Turkish>Spektrum cihazı hackleme özelliğini etkinleştir (Contact DLC)</Turkish>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice_desc">
@@ -7474,6 +7609,7 @@
                 <Russian>Переключает доступность spectrum device и его эффекты в игре.</Russian>
                 <Chinesesimp>切换频谱设备支援物品及其在游戏中的效果是否可用。</Chinesesimp>
                 <Korean>스펙트럼 장치 지원 아이템의 사용 가능 여부와 게임 내 효과를 전환합니다.</Korean>
+                <Spanish>Activa o desactiva la disponibilidad del dispositivo de espectro y sus efectos en el juego.</Spanish>
                 <French>Active ou désactive la disponibilité du dispositif spectre et ses effets en jeu.</French>
             </Key>
             <Key ID="STR_params_allowUnfairSupports">
@@ -7481,6 +7617,7 @@
                 <Russian>Разрешить использование противником несправедливых (несбалансированных) вариантов поддержки</Russian>
                 <Chinesesimp>允许不公平（不平衡）支援被敌人使用</Chinesesimp>
                 <Korean>적군이 불공평한(언밸런스한) 지원을 사용하도록 허용</Korean>
+                <Spanish>Permitir que el enemigo use soportes injustos (desequilibrados)</Spanish>
                 <French>Permettre à l'ennemi d'utiliser des supports injustes (déséquilibrés)</French>
                 <Turkish>Düşmanın haksız (dengesiz) destekleri kullanmasına izin ver</Turkish>
             </Key>
@@ -7489,6 +7626,7 @@
                 <Russian>Включает/отключает возможность вызова несправедливой поддержки противником; включение может непредсказуемо повысить сложность.</Russian>
                 <Chinesesimp>切换是否允许敌人调用不平衡支援；启用可能不可预测地增加难度。</Chinesesimp>
                 <Korean>적이 불공평한 지원을 호출할 수 있는지 여부를 전환합니다. 활성화하면 난이도가 예측 불가능하게 증가할 수 있습니다.</Korean>
+                <Spanish>Determina si el enemigo puede solicitar soportes desequilibrados; activarlo puede aumentar la dificultad de forma impredecible.</Spanish>
                 <French>Active ou désactive la possibilité pour l'ennemi d'appeler des soutiens déséquilibrés ; l'activation peut augmenter la difficulté de façon imprévisible.</French>
             </Key>
             <Key ID="STR_params_allowFuturisticSupports">
@@ -7496,6 +7634,7 @@
                 <Russian>Разрешить использование противником футуристичной поддержки</Russian>
                 <Chinesesimp>允许敌人使用未来支援</Chinesesimp>
                 <Korean>적군이 미래적인 지원을 사용하도록 허용</Korean>
+                <Spanish>Permitir que el enemigo use soportes futuristas</Spanish>
                 <French>Permettre à l'ennemi d'utiliser des supports futuristes</French>
                 <Turkish>Düşmanın fütüristik destekleri kullanmasına izin ver</Turkish>
             </Key>
@@ -7504,6 +7643,7 @@
                 <Russian>Разрешить или запретить использование футуристичных опций поддержки противником; включение может добавить мощные вызовы поддержки для ИИ.</Russian>
                 <Chinesesimp>允许或禁止敌人使用未来派支援选项；启用可能为 AI 添加强力支援。</Chinesesimp>
                 <Korean>적이 미래형 지원을 사용할 수 있도록 허용할지 여부를 설정합니다. 활성화하면 강력한 지원 호출이 추가될 수 있습니다.</Korean>
+                <Spanish>Permite o impide que el enemigo disponga de opciones de soporte futuristas; activarlo puede dar a la IA soportes muy potentes.</Spanish>
                 <French>Autoriser ou interdire aux ennemis d'utiliser des supports futuristes ; l'activation peut ajouter des appels de soutien puissants pour l'IA.</French>
             </Key>
             <Key ID="STR_params_loadoutsToGenerate">
@@ -7511,6 +7651,7 @@
                 <Russian>Количество комплектов снаряжения для каждого типа бойцов</Russian>
                 <Chinesesimp>每种单位类型要生成的配置数量</Chinesesimp>
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수</Korean>
+                <Spanish>Número de equipamientos a generar por cada tipo de unidad</Spanish>
                 <French>Nombre de chargements à générer pour chaque type d'unité</French>
                 <Turkish>Her birim türü için oluşturulacak teçhizat sayısı (UYARI: Yükleme süresini artırır)</Turkish>
             </Key>
@@ -7519,6 +7660,7 @@
                 <Russian>Создаёт указанное количество вариантов снаряжения для каждого типа ИИ-бойцов. Большее значение повышает разнообразие, но может существенно увеличить время загрузки.</Russian>
                 <Chinesesimp>每种单位类型生成的AI自定义装备数量。更高数值增加多样性但会显著增加加载时间。</Chinesesimp>
                 <Korean>단위 유형별로 생성되는 AI 커스텀 로드아웃 수입니다. 값이 클수록 다양성은 증가하지만 로드 시간이 길어집니다.</Korean>
+                <Spanish>Número de equipamientos personalizados de IA generados por tipo de unidad. Valores más altos aumentan la variedad, pero pueden alargar mucho los tiempos de carga.</Spanish>
                 <French>Nombre de chargements personnalisés de l'IA générés par type d'unité. Des valeurs plus élevées augmentent la variété mais peuvent allonger considérablement les temps de chargement.</French>
                 </Key>
             <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_title">
@@ -7526,6 +7668,7 @@
                 <Russian>Область захвата/защиты локации</Russian>
                 <Chinesesimp>位置防御/捕获区域</Chinesesimp>
                 <Korean>위치 방어/점령 지역</Korean>
+                <Spanish>Área de defensa/captura de ubicaciones</Spanish>
                 <French>Zone de défense/capture de l'emplacement</French>
             </Key>
             <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_tooltip">
@@ -7533,6 +7676,7 @@
                 <Russian>При захвате/защите локаций будет использована дополнительная круговая область вокруг флага И полный размер зоны для учета присутствия врагов/союзников.</Russian>
                 <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域和整个区域大小来考虑单位存在。</Chinesesimp>
                 <Korean>위치를 점령/방어할 때, 깃발 주위의 추가 원형 영역과 전체 구역 크기를 사용하여 유닛 존재를 고려합니다.</Korean>
+                <Spanish>Al capturar o defender ubicaciones, usa un diámetro de área circular adicional alrededor de la bandera Y el tamaño completo de la zona para tener en cuenta la presencia de unidades.</Spanish>
                 <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau ET la taille complète de la zone pour considérer la présence des unités.</French>
             </Key>
             <Key ID="STR_A3A_Params_diameterExtendedCaptureArea_traditional">
@@ -7540,6 +7684,7 @@
                 <Russian>Традиционный</Russian>
                 <Chinesesimp>传统</Chinesesimp>
                 <Korean>전통적인</Korean>
+                <Spanish>Tradicional</Spanish>
                 <French>Traditionnel</French>
             </Key>
             <Key ID="STR_params_pistolStart">
@@ -7547,6 +7692,7 @@
                 <Russian>Старт только с разблокированными пистолетами</Russian>
                 <Chinesesimp>仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
+                <Spanish>Empezar solo con pistolas desbloqueadas</Spanish>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
                 <Turkish>Sadece kilidi açılmış tabancalarla başla</Turkish>
             </Key>
@@ -7555,6 +7701,7 @@
                 <Russian>При включении единственным разблокированным оружием, которое будут иметь повстанцы в начале кампании, будут пистолеты.</Russian>
                 <Chinesesimp>如果启用，反抗军在战役开始时唯一永久解锁的武器将是手枪。</Chinesesimp>
                 <Korean>활성화하면 반군이 캠페인 시작 시 가질 수 있는 유일한 영구적으로 잠금 해제된 무기는 권총입니다.</Korean>
+                <Spanish>Si está activado, las únicas armas desbloqueadas permanentemente que tendrán los rebeldes al inicio de la campaña serán pistolas.</Spanish>
                 <French>Si activé, la seule arme déverrouillée de manière permanente que les rebelles auront au début de la campagne sera les pistolets.</French>
             </Key>
             <Key ID="STR_params_loadoutArsenalDefaultOverride">
@@ -7562,6 +7709,7 @@
                 <Russian>По умолчанию сохранять все вкладки в пользовательском арсенале снаряжения ИИ</Russian>
                 <Chinesesimp>将 AI 自定义装备库中的所有选项卡设为默认保存</Chinesesimp>
                 <Korean>AI 커스텀 로드아웃 아스널의 모든 탭을 기본적으로 저장</Korean>
+                <Spanish>Guardar por defecto todas las pestañas del arsenal de equipamiento personalizado de la IA</Spanish>
                 <French>Enregistrer par défaut tous les onglets de l'arsenal de chargements personnalisés de l'IA</French>
                 <Turkish>Yapay zeka özel teçhizat cephaneliğindeki tüm sekmeleri varsayılan olarak kaydedilecek şekilde ayarla</Turkish>
             </Key>
@@ -7570,6 +7718,7 @@
                 <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Предметы в несохранённых вкладках будут рандомизированы.</Russian>
                 <Chinesesimp>启用时，会保留旧版自定义装备行为；保存装备时，除非被明确排除，否则装备中的所有物品都会被保存。禁用时，只有在专门启用的选项卡中的物品会被保存，其他所有物品将被随机化。</Chinesesimp>
                 <Korean>활성화하면 기존 커스텀 로드아웃 동작이 유지됩니다. 로드아웃을 저장할 때 명시적으로 제외하지 않는 한 로드아웃의 모든 항목이 저장됩니다. 비활성화하면 명시적으로 활성화된 탭의 항목만 저장되며, 나머지 항목은 무작위로 선택됩니다.</Korean>
+                <Spanish>Si está activado, se conserva el comportamiento antiguo del equipamiento personalizado: al guardar un equipamiento se guardarán todos sus objetos salvo que se excluyan expresamente. Si está desactivado, solo se guardarán los objetos de las pestañas activadas expresamente. El resto se aleatorizará.</Spanish>
                 <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
                 <Turkish>Etkinleştirilirse, eski özel teçhizat davranışı korunur; bir teçhizat kaydedilirken, özellikle hariç tutulmadığı sürece teçhizattaki tüm öğeler kaydedilir. Devre dışı bırakılırsa, yalnızca özellikle etkinleştirilen sekmelerdeki öğeler kaydedilir. Diğer tüm öğeler rastgele belirlenir.</Turkish>
             </Key>
@@ -7578,6 +7727,7 @@
                 <Russian>Ограничение выбора оружия для ИИ по типу бойцов</Russian>
                 <Chinesesimp>按单位类型限制 AI 自定义装备武器选择</Chinesesimp>
                 <Korean>유닛 유형별로 AI 커스텀 로드아웃 무기 선택 제한</Korean>
+                <Spanish>Limitar la selección de armas del equipamiento personalizado de la IA según el tipo de unidad</Spanish>
                 <French>Limiter les sélections d'armes personnalisées de l'IA par type d'unité</French>
                 <Turkish>YZ özel teçhizat silah seçimlerini birim türüne göre sınırla</Turkish>
             </Key>
@@ -7586,6 +7736,7 @@
                 <Russian>При включении создание комплектов снаряжения для ИИ-бойцов повстанцев будет ограничено в зависимости от типа бойца. Например, только пулемётчики могут быть снабжены пулемётами, и только специалисты ПВО могут снаряжаться ракетными системами ПВО. При отключении любой ИИ может быть снабжен любым оружием в соответствии с параметрами разблокировки.</Russian>
                 <Chinesesimp>启用后，人工智能自定义装备将根据单位类型限制可用武器。例如，只有机枪手可以配备机枪，只有防空专家才能配备防空导弹发射器。禁用时，任何人工智能都可以根据解锁参数配备任何武器。</Chinesesimp>
                 <Korean>활성화하면 AI 사용자 정의 로드아웃은 단위 유형에 따라 사용 가능한 무기를 제한합니다. 예를 들어 기관총 사수만 기관총으로 무장할 수 있으며 대공 전문가만 대공 미사일 발사기를 장착할 수 있습니다. 비활성화하면 모든 AI는 언락 매개변수에 따라 모든 무기로 무장할 수 있습니다.</Korean>
+                <Spanish>Si está activado, los equipamientos personalizados de la IA limitarán las armas disponibles según el tipo de unidad. Por ejemplo, solo los ametralladores podrán llevar ametralladoras y solo los especialistas antiaéreos podrán equipar lanzamisiles antiaéreos. Si está desactivado, cualquier IA podrá equipar cualquier arma según los parámetros de desbloqueo.</Spanish>
                 <French>Lorsqu'elle est activée, les charges personnalisées d'IA limiteront les armes disponibles selon le type d'unité. Par exemple, seuls les mitrailleurs peuvent être équipés de mitrailleuses, et seuls les spécialistes de la défense aérienne peuvent s'équiper de lanceurs de missiles anti-aériens. Lorsqu'elle est désactivée, tout IA peut être équipé de n'importe quelle arme selon les paramètres de déblocage.</French>
             </Key>
             <Key ID="STR_params_unconChanceEny">
@@ -7593,6 +7744,7 @@
                 <Russian>Шанс вражеского ИИ потерять сознание</Russian>
                 <Chinesesimp>敌方AI无意识几率</Chinesesimp>
                 <Korean>적 AI 무의식 확률</Korean>
+                <Spanish>Probabilidad de que la IA enemiga quede inconsciente</Spanish>
                 <French>Chance inconsciente de l'IA ennemie</French>
                 <Turkish>Düşman YZ bayılma ihtimali</Turkish>
             </Key>
@@ -7601,6 +7753,7 @@
                 <Russian>Вероятность того, что раненый вражеский ИИ потеряет сознание, а не погибнет после получения достаточного урона</Russian>
                 <Chinesesimp>被击倒的敌方 AI 在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
                 <Korean>쓰러진 적 AI가 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
+                <Spanish>Probabilidad de que la IA enemiga abatida quede inconsciente en lugar de morir tras recibir suficiente daño</Spanish>
                 <French>Chance pour l'IA ennemie abattue de devenir inconsciente au lieu d'être tuée après avoir subi suffisamment de dégâts.</French>
                 <Turkish>Yeterli hasar alan düşman YZ biriminin ölmek yerine bayılma ihtimali</Turkish>
             </Key>
@@ -7609,6 +7762,7 @@
                 <Russian>Шанс потерять сознание для ИИ повстанцев и игроков</Russian>
                 <Chinesesimp>叛军AI和玩家无意识的机率</Chinesesimp>
                 <Korean>반란군 AI와 플레이어 무의식 확률</Korean>
+                <Spanish>Probabilidad de que la IA rebelde y los jugadores queden inconscientes</Spanish>
                 <French>IA rebelle et chance inconsciente du joueur</French>
                 <Turkish>Direnişçi YZ ve oyuncu bayılma ihtimali</Turkish>
             </Key>
@@ -7617,6 +7771,7 @@
                 <Russian>Шанс для раненых повстанцев потерять сознание, а не погибнуть после получения достаточного урона.</Russian>
                 <Chinesesimp>被击倒的叛军在受到足够伤害后有几率失去知觉而不是被杀死</Chinesesimp>
                 <Korean>쓰러진 반란군이 충분한 피해를 입은 후 죽지 않고 의식을 잃을 확률</Korean>
+                <Spanish>Probabilidad de que los rebeldes abatidos queden inconscientes en lugar de morir tras recibir suficiente daño</Spanish>
                 <French>Chance pour les rebelles abattus de perdre connaissance au lieu d'être tués après avoir subi suffisamment de dégâts</French>
                 <Turkish>Yeterli hasar alan direnişçilerin ölmek yerine bayılma ihtimali</Turkish>
             </Key>
@@ -7625,6 +7780,7 @@
                 <Russian>Этот параметр заблокирован, потому что активирован ACE Medical, который отключает в Antistasi систему потери сознания/возрождения.</Russian>
                 <Chinesesimp>这个参数被锁定是因为启用了ACE医疗，这会禁用Antistasi的无意识/复活系统。</Chinesesimp>
                 <Korean>이 매개변수는 ACE Medical이 활성화되어 Antistasi의 무의식/부활 시스템을 비활성화하기 때문에 잠겨 있습니다.</Korean>
+                <Spanish>Este parámetro está bloqueado porque ACE Medical está activado, lo que desactiva el sistema de inconsciencia y reanimación de Antistasi.</Spanish>
                 <French>Ce paramètre est verrouillé car ACE Medical est activé, ce qui désactive le système d'inconscience / de réanimation d'Antistasi.</French>
             </Key>
             <Key ID="STR_params_enableVehiclesForAI">
@@ -7632,6 +7788,7 @@
                 <Russian>По умолчанию разрешить ИИ управлять турелями и орудиями техники, оставленной рядом с дружественными маркерами</Russian>
                 <Chinesesimp>默认启用AI作放置在友方标记附近的车辆</Chinesesimp>
                 <Korean>기본적으로 아군 표식 근처에 배치된 차량을 AI가 조작하도록 활성화하세요</Korean>
+                <Spanish>Permitir por defecto que la IA tripule vehículos dejados cerca de marcadores amigos</Spanish>
                 <French>Permettre à l'IA de manœuvrer par défaut les véhicules laissés près des marqueurs alliés</French>
                 <Turkish>Yapay zekanın dost işaretçilerin yanına bırakılan araçlara varsayılan olarak binmesini etkinleştir</Turkish>
             </Key>
@@ -7640,6 +7797,7 @@
                 <Russian>По умолчанию разрешить ИИ повстанцев садиться на места командира и стрелка в технике, оставленной рядом с дружественными маркерами. Обратите внимание, что игроки всё ещё могут запретить или разрешить ИИ использование отдельной техники через действие на ней.</Russian>
                 <Chinesesimp>默认让叛军AI作留在友军标记附近的车辆（指挥官/炮手座位）。请注意，玩家仍然可以通过与载具互动来启用或禁用AI对特定载具的使用。</Chinesesimp>
                 <Korean>기본적으로 아군 표시 근처에 남겨둔 차량(지휘관/포수 좌석)을 조작할 수 있도록 반란군 AI를 활성화하세요. 플레이어는 여전히 특정 차량과 상호작용하여 AI 사용을 활성화하거나 비활성화할 수 있습니다.</Korean>
+                <Spanish>Permite por defecto que la IA rebelde tripule vehículos (puesto de comandante o artillero) dejados cerca de marcadores amigos. Los jugadores pueden seguir activando o desactivando el uso de vehículos concretos interactuando con el vehículo.</Spanish>
                 <French>Activez par défaut l'IA rebelle pour manœuvrer les véhicules (siège commandant / mitrailleuse) laissés près des marqueurs alliés par défaut. Notez que les joueurs peuvent toujours activer ou désactiver l'utilisation de véhicules spécifiques par l'IA en interagissant avec le véhicule.</French>
                 <Turkish>Direnişçi YZ'nin dost işaretçilerin yanına bırakılan araçlara (komutan / nişancı) varsayılan olarak binmesini etkinleştirir. Oyuncuların, araçla etkileşime girerek belirli araçların YZ tarafından kullanımını hâlâ etkinleştirebileceğini veya devre dışı bırakabileceğini unutmayın.</Turkish>
             </Key>
@@ -7712,6 +7870,7 @@
                 <Russian>Разрешить использование противником футуристичной-несправедливой (несбалансированной) поддержки</Russian>
                 <Chinesesimp>允许敌人使用未来主义的不公平支持</Chinesesimp>
                 <Korean>적군이 미래적이고 불공평한 지원을 사용하도록 허용</Korean>
+                <Spanish>Permitir que el enemigo use soportes futuristas injustos</Spanish>
                 <Turkish>Düşman tarafından fütüristik-haksız desteklerin kullanılmasına izin ver</Turkish>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports_desc">
@@ -7719,6 +7878,7 @@
                 <Russian>Разрешает очень мощные и потенциально несбалансированные футуристичные поддержки у врага; используйте с осторожностью.</Russian>
                 <Chinesesimp>允许敌方使用极其强大且可能不平衡的未来支援；请谨慎使用。</Chinesesimp>
                 <Korean>매우 강력하고 균형을 해칠 수 있는 미래형 지원을 적군에게 허용합니다. 주의해서 사용하세요.</Korean>
+                <Spanish>Permite soportes futuristas extremadamente potentes y potencialmente desequilibrados para las facciones enemigas; úsalo con precaución.</Spanish>
                 <French>Autoriser des supports futuristes extrêmement puissants et potentiellement déséquilibrés pour les ennemis ; à utiliser avec prudence.</French>
             </Key>
             <Key ID="STR_params_CrateOptions">
@@ -7726,6 +7886,7 @@
                 <Russian>НАСТРОЙКИ ЯЩИКОВ С ТРОФЕЯМИ</Russian>
                 <Chinesesimp>战利品箱设置</Chinesesimp>
                 <Korean>전리품 상자 설정</Korean>
+                <Spanish>AJUSTES DE LAS CAJAS DE BOTÍN</Spanish>
                 <French>PARAMÈTRES DES CAISSES DE BUTIN</French>
                 <Turkish>YAĞMA KUTUSU AYARLARI</Turkish>
             </Key>
@@ -7734,6 +7895,7 @@
                 <Russian>Полностью случайные ящики: проверки баланса для ящиков не производится.</Russian>
                 <Chinesesimp>真正随机的战利品箱：箱子没有平衡性检查</Chinesesimp>
                 <Korean>완전히 랜덤한 상자: 상자에 대한 밸런스 확인 없음</Korean>
+                <Spanish>Cajas realmente aleatorias: sin comprobaciones de equilibrio</Spanish>
                 <French>Des caisses vraiment aléatoires : Pas de vérification de l'équilibre des caisses</French>
                 <Turkish>Gerçekten Rastgele Sandıklar: Sandıklar için denge kontrolü yapılmaz.</Turkish>
             </Key>
@@ -7742,6 +7904,7 @@
                 <Russian>Максимальное количество типов оружия в ящиках</Russian>
                 <Chinesesimp>箱子中最大武器类型的数量</Chinesesimp>
                 <Korean>상자의 무기 최대 유형 갯수</Korean>
+                <Spanish>Máximo de tipos de arma en las cajas</Spanish>
                 <French>Types d'armes maximum dans les caisses</French>
                 <Turkish>Kutulardaki Maksimum Silah Türleri</Turkish>
             </Key>
