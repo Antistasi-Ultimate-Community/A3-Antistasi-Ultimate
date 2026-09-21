@@ -93,6 +93,7 @@ class CfgMissions
 	A3A_Mission(bornholm, "Antistasi Ultimate - Bornholm")
 	A3A_Mission(egl_laghisola, "Antistasi Ultimate - Laghisola")
 	A3A_Mission(UMB_Armavir, "Antistasi Ultimate - Armavir")
+	A3A_Mission(IslaPera, "Antistasi Ultimate - IslaPera")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif
