@@ -72,6 +72,7 @@ class IntelMessages {
         "$STR_antistasi_intel_not_found_069",
         "$STR_antistasi_intel_not_found_070",
         "$STR_antistasi_intel_not_found_071",
-        "$STR_antistasi_intel_not_found_072"
+        "$STR_antistasi_intel_not_found_072",
+        "$STR_antistasi_intel_not_found_073"
     };
 };
