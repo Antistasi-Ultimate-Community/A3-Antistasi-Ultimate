@@ -101,6 +101,7 @@ if (_originalName in airportsX) then {
         else { if (_originalName in citiesX) then { _markerType = "A3AU_city_mrk"; }; };
     } else {
         _markerColor = if (_markerSide == teamPlayer) then {colorTeamPlayer} else {[colorOccupants, colorInvaders] select (_markerSide == Invaders)};
+        if (_isTraderMarker) then {_markerColor = "ColorUNKNOWN"};
         
         call {
             if (_isMilAdmin) exitWith { _markerType = "A3AU_miladmin_mrk"; };
@@ -117,8 +118,8 @@ if (_originalName in airportsX) then {
     };
 };
 
-if (_markerType != "") then {_visibleMarkerName setMarkerTypeLocal _markerType;};
-if (_markerColor != "") then {_visibleMarkerName setMarkerColorLocal _markerColor;};
+if (_markerType != "") then {_visibleMarkerName setMarkerTypeLocal _markerType};
+if (_markerColor != "") then {_visibleMarkerName setMarkerColorLocal _markerColor};
 
 private _nearestCityName = "";
 if (_isMilAdmin || _originalName in mrkAntennas || _originalName in resourcesX || _originalName in factories) then {
@@ -167,7 +168,7 @@ private _markerTitle = call {
     if (_originalName in citiesX) exitWith { markerText _originalName };
     
     // FETCH LIVE SPAWN COUNT FROM NAMESPACE
-    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (missionNamespace getVariable ["rallyPointSpawnCount", 0])] };
+    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (rallyPointRoot getVariable ["remainingTravels", 0])] };
     
     if (_isMilAdmin) exitWith { format [localize "STR_milAdministration", _nearestCityName] };
     if (_originalName in mrkAntennas) exitWith { format [localize "STR_radiotower", _nearestCityName] };
@@ -260,7 +261,7 @@ private _flagMarkerType = _markerFaction getOrDefault ["flagMarkerType", ""];
 private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 private _hoverMarkers = missionNamespace getVariable ["A3U_hoverMarkers", []];
 
-if ([_originalName] call A3U_fnc_isMarkerHidden) then {
+if ([_originalName] call A3U_fnc_isMarkerHidden || {_isSyndicateHeadquarters}) then {
     _hoverMetaMap deleteAt _dummyName;
     _hoverMetaMap deleteAt _originalName;
     _hoverMarkers = _hoverMarkers - [_dummyName, _originalName];
@@ -300,7 +301,7 @@ private _specialDefinitions = [
     
     // FETCH LIVE SPAWN COUNT FROM NAMESPACE FOR SPECIAL DEFS
     private _specTitle = if (_specTitleLoc == "STR_marker_RP") then {
-        format [localize _specTitleLoc, str (missionNamespace getVariable ["rallyPointSpawnCount", 0])]
+        format [localize _specTitleLoc, str (rallyPointRoot getVariable ["remainingTravels", 0])]
     } else {
         format [localize _specTitleLoc, _specFaction getOrDefault ["name", ""]]
     };

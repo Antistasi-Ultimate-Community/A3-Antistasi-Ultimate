@@ -983,8 +983,8 @@ class Params
     {
         title = $STR_params_overall_HR_gain;
         tooltip = $STR_params_overall_HR_gain_desc;
-        values[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-        texts[] = {"10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        values[] = {1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"1%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         class difficulty
         {
             class solo

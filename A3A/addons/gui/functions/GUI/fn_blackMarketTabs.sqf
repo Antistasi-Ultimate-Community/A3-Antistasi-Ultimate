@@ -51,9 +51,16 @@ private _vehicleCount = count keys _buyableVehiclesHM;
 private _topPadding = if (_vehicleCount < 7) then {5 * GRID_H} else {1 * GRID_H};
 
 private _added = 0;
-{
+private _bmData = _buyableVehiclesHM apply {
     private _className = _x;
     private _price = _y;
+    [getText(configFile >> "CfgVehicles" >> _className >> "displayName"), _className, _price];
+};
+
+_bmData sort true;
+
+_bmData apply {
+    _x params["", "_className", "_price"];
     private _canGoUndercover = false;
 
     private _vehicleMetadata = _vehicleMetadataCache getOrDefault [_className, []];
@@ -277,7 +284,7 @@ private _added = 0;
     _itemControlsGroup ctrlCommit 0.1;
 
     _added = _added + 1;
-} forEach _buyableVehiclesHM;
+};
 
 uiNamespace setVariable ["A3U_BM_vehicleMetadataCache", _vehicleMetadataCache];
 uiNamespace setVariable ["A3U_BM_dlcMetadataCache", _dlcMetadataCache];
