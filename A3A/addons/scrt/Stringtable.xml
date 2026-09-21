@@ -20185,6 +20185,7 @@
                 <Russian>Гарнизон штаба останется здесь и отвлечёт врага.</Russian>
                 <Chinesesimp>总部驻军将留在这里分散敌人的注意力。</Chinesesimp>
                 <Korean>본부의 주둔군이 이 곳에 머물며 적들의 주의를 분산시킬 것입니다.</Korean>
+                <Spanish>La guarnición del CG se quedará aquí para distraer al enemigo.</Spanish>
                 <French>Le QG de la garnison restera ici et distraira l'ennemi.</French>
                 <Turkish>Karargâh Garnizonu burada kalacak ve düşmanın dikkatini dağıtacak.</Turkish>
             </Key>
@@ -20193,6 +20194,7 @@
                 <Russian>Гарнизон штаба расформирован&lt;br/&gt;&lt;br/&gt;Возвращённые деньги: %1%3&lt;br/&gt;Возвращённые людские ресурсы: %2</Russian>
                 <Chinesesimp>总部驻军解散&lt;br/&gt;&lt;br/&gt;返还金钱：%1%3&lt;br/&gt;返还人力：%2</Chinesesimp>
                 <Korean>본부의 주둔군이 제거되었습니다&lt;br/&gt;&lt;br/&gt;회수된 자금: %1%3&lt;br/&gt;회수된 인력: %2</Korean>
+                <Spanish>Guarnición del CG retirada&lt;br/&gt;&lt;br/&gt;Dinero recuperado: %1%3&lt;br/&gt;RH recuperados: %2</Spanish>
                 <French>Garnison du QG supprimée&lt;br/&gt;&lt;br/&gt;Argent récupéré: %1%3&lt;br/&gt;RH récupérées: %2</French>
                 <Turkish>Karargâh Garnizonu kaldırıldı&lt;br/&gt;&lt;br/&gt;Geri Kazanılan Para: %1%3&lt;br/&gt;Geri Kazanılan İK: %2</Turkish>
             </Key>
@@ -20201,6 +20203,7 @@
                 <Russian>Вскрытие техники</Russian>
                 <Chinesesimp>攻破载具</Chinesesimp>
                 <Korean>차량 브리칭</Korean>
+                <Spanish>Forzar vehículo</Spanish>
                 <French>Violation de véhicule</French>
                 <Turkish>Araca Sız</Turkish>
             </Key>
@@ -20209,6 +20212,7 @@
                 <Russian>Только игроки могут вскрывать технику.</Russian>
                 <Chinesesimp>只有玩家才能破坏载具。</Chinesesimp>
                 <Korean>플레이어만 차량을 브리칭할 수 있습니다.</Korean>
+                <Spanish>Solo los jugadores pueden forzar vehículos.</Spanish>
                 <French>Seuls les joueurs peuvent ouvrir des brèches dans les véhicules.</French>
                 <Turkish>Araçların kilidini yalnızca oyuncular kırabilir.</Turkish>
             </Key>
@@ -20217,6 +20221,7 @@
                 <Russian>Вы должны быть инженером или Командиром для вскрытия техники.</Russian>
                 <Chinesesimp>您必须是工程师或指挥官才能解锁车辆。</Chinesesimp>
                 <Korean>차량을 브리칭하려면 공병이 필요합니다.</Korean>
+                <Spanish>Tienes que ser ingeniero para forzar un vehículo.</Spanish>
                 <French>Il faut être ingénieur pour ouvrir une brèche dans un véhicule.</French>
                 <Turkish>Araçların kilidini yalnızca oyuncular kırabilir.</Turkish>
             </Key>
@@ -20225,6 +20230,7 @@
                 <Russian>Только неуничтоженная техника может быть вскрыта.</Russian>
                 <Chinesesimp>只有未被摧毁的载具才能被攻破。</Chinesesimp>
                 <Korean>파괴되지 않은 차량만 브리칭할 수 있습니다.</Korean>
+                <Spanish>Solo se pueden forzar vehículos que no estén destruidos.</Spanish>
                 <French>Seuls les véhicules non détruits peuvent être pénétrés.</French>
                 <Turkish>Yalnızca imha edilmemiş araçların kilidi kırılabilir.</Turkish>
             </Key>
@@ -20233,6 +20239,7 @@
                 <Russian>Внутри никого живого, нет нужды вскрывать технику.</Russian>
                 <Chinesesimp>没有活着的船员，没有攻破的必要。</Chinesesimp>
                 <Korean>살아 있는 승무원이 없기 때문에 브리칭할 필요 없습니다.</Korean>
+                <Spanish>No queda tripulación viva, no hace falta forzarlo.</Spanish>
                 <French>Il n'y a plus d'équipage vivant, il n'est pas nécessaire de faire une brèche.</French>
                 <Turkish>İçinde canlı mürettebat kalmadı, kilit kırmaya gerek yok.</Turkish>
             </Key>
@@ -20241,6 +20248,7 @@
                 <Russian>Вы не можете вскрывать технику, принадлежащую нашей стороне.</Russian>
                 <Chinesesimp>你不能破坏由抵抗军控制的车辆。</Chinesesimp>
                 <Korean>아군이 조종하는 차량은 브리칭할 수 없습니다.</Korean>
+                <Spanish>No puedes forzar un vehículo controlado por los rebeldes.</Spanish>
                 <French>Il n'est pas possible d'ouvrir une brèche dans un véhicule contrôlé par les rebelles.</French>
                 <Turkish>İsyancıların kontrolündeki bir aracın kilidini kıramazsınız.</Turkish>
             </Key>
@@ -20249,6 +20257,7 @@
                 <Russian>У вас с собой нет взрывчатки, которая необходима, чтобы вскрывать технику.</Russian>
                 <Chinesesimp>你没有打开载具所需的炸药。</Chinesesimp>
                 <Korean>폭발물을 가지고 있지 않습니다. 차량을 브리칭하려면 몇 개가 필요합니다.</Korean>
+                <Spanish>No llevas explosivos. Los necesitas para forzar vehículos.</Spanish>
                 <French>Vous ne transportez pas d'explosifs. Vous en aurez besoin pour ouvrir une brèche dans les véhicules.</French>
                 <Turkish>Yanınızda hiç patlayıcı taşımıyorsunuz. Araçlara sızmak için patlayıcıya ihtiyacınız olacak.</Turkish>
             </Key>
@@ -20257,6 +20266,7 @@
                 <Russian>У вас с собой нет нужного вида взрывчатки, посмотрите во вкладке брифинга, какая именно требуется (взрывпакеты).</Russian>
                 <Chinesesimp>您没有随身携带所需的炸药类型，请在简报标签中查找您需要的炸药（炸药包）。</Chinesesimp>
                 <Korean>적절한 폭발물이 없습니다. 필요한 것을 확인하려면 브리핑 노트를 확인하십시오!</Korean>
+                <Spanish>No llevas los explosivos adecuados, ¡mira las notas del informe para ver cuáles necesitas!</Spanish>
                 <French>Tu n'as pas les bons explosifs, vérifie les notes de briefing pour savoir ce qu'il te faut !</French>
                 <Turkish>Doğru patlayıcılara sahip değilsiniz, neye ihtiyacınız olduğunu görmek için görev notlarını kontrol edin!</Turkish>
             </Key>
@@ -20265,6 +20275,7 @@
                 <Russian>Вскрытие техники отменено.</Russian>
                 <Chinesesimp>攻破载具取消</Chinesesimp>
                 <Korean>브리칭이 취소되었습니다.</Korean>
+                <Spanish>Forzado cancelado.</Spanish>
                 <French>Brèche annulée.</French>
                 <Turkish>Sızma işlemi iptal edildi.</Turkish>
             </Key>
@@ -20273,6 +20284,7 @@
                 <Russian>Вскрытие техники в течение 10 секунд.</Russian>
                 <Chinesesimp>10秒攻破</Chinesesimp>
                 <Korean>10초 후에 돌파합니다.</Korean>
+                <Spanish>Forzando en 10 segundos.</Spanish>
                 <French>Brèche dans 10 secondes.</French>
                 <Turkish>10 saniye içinde sızılıyor.</Turkish>
             </Key>
@@ -20281,6 +20293,7 @@
                 <Russian>Захват</Russian>
                 <Chinesesimp>伪装</Chinesesimp>
                 <Korean>점령</Korean>
+                <Spanish>Captura</Spanish>
                 <French>Capture</French>
                 <Turkish>Ele Geçir</Turkish>
             </Key>
@@ -20289,6 +20302,7 @@
                 <Russian>Вы не можете захватывать локации будучи под маскировкой.</Russian>
                 <Chinesesimp>伪装时无法占领位置。</Chinesesimp>
                 <Korean>잠복 중에는 구역을 점령할 수 없습니다.</Korean>
+                <Spanish>No puedes capturar la zona mientras estás encubierto.</Spanish>
                 <French>On ne peut pas s'emparer de la zone tout en étant sous-couvert.</French>
                 <Turkish>Gizli Kimlikteyken bölgeyi ele geçiremezsiniz.</Turkish>
             </Key>
@@ -20297,6 +20311,7 @@
                 <Russian>Вы не можете захватывать авиабазы до 3-го Уровня Войны.</Russian>
                 <Chinesesimp>只有达到战争等级 3 才能占领空军基地。</Chinesesimp>
                 <Korean>전쟁 레벨 3에 도달하기 전까진 공군 기지를 점령할 수 없습니다.</Korean>
+                <Spanish>No puedes capturar bases aéreas hasta alcanzar el Nivel de Guerra 3.</Spanish>
                 <French>Vous ne pouvez pas capturer de bases aériennes tant que vous n'avez pas atteint le niveau de guerre 3.</French>
                 <Turkish>Savaş Seviyesi 3'e ulaşana kadar hava üslerini ele geçiremezsiniz.</Turkish>
             </Key>
@@ -20305,6 +20320,7 @@
                 <Russian>Вы не можете захватывать военные базы до 3-го Уровня Войны.</Russian>
                 <Chinesesimp>战争等级达到 3 级后才能占领军事基地。</Chinesesimp>
                 <Korean>전쟁 레벨 3에 도달하기 전까진 군사 기지를 점령할 수 없습니다.</Korean>
+                <Spanish>No puedes capturar bases militares hasta alcanzar el Nivel de Guerra 3.</Spanish>
                 <French>Vous ne pouvez pas capturer de bases militaires avant d'avoir atteint le niveau de guerre 3.</French>
                 <Turkish>Savaş Seviyesi 3'e ulaşana kadar askeri üsleri ele geçiremezsiniz.</Turkish>
             </Key>
@@ -20313,6 +20329,7 @@
                 <Russian>Флагшток был использован, подождите %1.</Russian>
                 <Chinesesimp>旗杆已被使用，请稍候%1。</Chinesesimp>
                 <Korean>깃대가 사용 중에 있습니다. %1을(를) 기다리십시오.</Korean>
+                <Spanish>El mástil está en uso, espera %1.</Spanish>
                 <French>Poteau de drapeau utilisé, attendre %1.</French>
                 <Turkish>Bayrak direği şu an kullanılıyor, %1 bekleyin.</Turkish>
             </Key>
@@ -20321,6 +20338,7 @@
                 <Russian>Враг всё ещё рядом в округе. Очистите территорию вокруг от присутствия врага.</Russian>
                 <Chinesesimp>敌人还在附近。 清除周围区域的敌人。</Chinesesimp>
                 <Korean>적이 여전히 주변에 잠복해 있습니다. 구역을 청소하십시오.</Korean>
+                <Spanish>El enemigo todavía ronda por aquí. Despeja la zona de sus fuerzas.</Spanish>
                 <French>L'ennemi rôde toujours dans les parages. Débarrassez-en la zone.</French>
                 <Turkish>Düşman hâlâ civarda kol geziyor. Bölgeyi düşman kuvvetlerinden temizleyin.</Turkish>
             </Key>
@@ -20329,6 +20347,7 @@
                 <Russian>Отменить захват</Russian>
                 <Chinesesimp>撤消伪装</Chinesesimp>
                 <Korean>점령 취소</Korean>
+                <Spanish>Cancelar captura</Spanish>
                 <French>Abandonner la capture</French>
                 <Turkish>Ele Geçirmeyi İptal Et</Turkish>
             </Key>
@@ -20337,6 +20356,7 @@
                 <Russian>Захват отменён.</Russian>
                 <Chinesesimp>取消伪装</Chinesesimp>
                 <Korean>점령이 최소되었습니다.</Korean>
+                <Spanish>Captura cancelada.</Spanish>
                 <French>Capture interrompue</French>
                 <Turkish>Ele geçirme iptal edildi.</Turkish>
             </Key>
@@ -20345,6 +20365,7 @@
                 <Russian>Разблокировка техники</Russian>
                 <Chinesesimp>解锁载具</Chinesesimp>
                 <Korean>차량 잠금해제</Korean>
+                <Spanish>Desbloquear vehículo</Spanish>
                 <French>Déverrouiller le véhicule</French>
                 <Turkish>Aracın Kilidini Aç</Turkish>
             </Key>
@@ -20353,6 +20374,7 @@
                 <Russian>Извините, но вы не можете разблокировать %1.</Russian>
                 <Chinesesimp>抱歉，您无法解锁 %1。</Chinesesimp>
                 <Korean>%1의 잠금을 해제할 수 없습니다.</Korean>
+                <Spanish>Lo siento, pero no puedes desbloquear %1.</Spanish>
                 <French>Désolé, mais vous ne pouvez pas déverrouiller %1.</French>
                 <Turkish>Üzgünüz, %1 aracının kilidini açamazsınız.</Turkish>
             </Key>
@@ -20361,6 +20383,7 @@
                 <Russian>Транспортное средство, на которое вы смотрите, не может быть использовано.</Russian>
                 <Chinesesimp>您正在查看的载具无法解锁无法使用。</Chinesesimp>
                 <Korean>당신이 보고 있는 차량은 사용할 수 없습니다.</Korean>
+                <Spanish>El vehículo al que estás mirando no se puede usar.</Spanish>
                 <French>Le véhicule que vous recherchez ne peut pas être utilisé.</French>
                 <Turkish>Baktığınız araç kullanılamaz durumda.</Turkish>
             </Key>
@@ -20369,6 +20392,7 @@
                 <Russian>Транспортное средство, на которое вы смотрите, никому не принадлежит.</Russian>
                 <Chinesesimp>您正在查看的载具不属于任何人。</Chinesesimp>
                 <Korean>당신이 보고 있는 차량은 누구의 것도 아닙니다.</Korean>
+                <Spanish>El vehículo al que estás mirando no pertenece a nadie.</Spanish>
                 <French>Le véhicule que vous recherchez n'appartient à personne.</French>
                 <Turkish>Baktığınız araç hiç kimseye ait değil.</Turkish>
             </Key>
@@ -20377,6 +20401,7 @@
                 <Russian>Вы не можете блокировать/разблокировать не принадлежащие вам транспортные средства.</Russian>
                 <Chinesesimp>您无法解锁/锁定不属于您的载具。</Chinesesimp>
                 <Korean>소유하지 않은 차량은 잠금/해제할 수 없습니다.</Korean>
+                <Spanish>No puedes bloquear ni desbloquear vehículos que no son tuyos.</Spanish>
                 <French>Vous ne pouvez pas déverrouiller/verrouiller des véhicules dont vous n'êtes pas propriétaire.</French>
                 <Turkish>Sahibi olmadığınız araçların kilidini açamaz veya kilitleyemezsiniz.</Turkish>
             </Key>
@@ -20385,6 +20410,7 @@
                 <Russian>Траснпортное средство было заблокировано.</Russian>
                 <Chinesesimp>祝好运已被锁</Chinesesimp>
                 <Korean>차량이 잠겼습니다.</Korean>
+                <Spanish>El vehículo se ha bloqueado.</Spanish>
                 <French>Le véhicule a été verrouillé.</French>
                 <Turkish>Araç kilitlendi.</Turkish>
             </Key>
@@ -20393,6 +20419,7 @@
                 <Russian>Траснпортное средство было разблокировано.</Russian>
                 <Chinesesimp>载具已解锁</Chinesesimp>
                 <Korean>차량이 잠금해제되었습니다.</Korean>
+                <Spanish>El vehículo se ha desbloqueado.</Spanish>
                 <French>Le véhicule a été déverrouillé.</French>
                 <Turkish>Aracın kilidi açıldı.</Turkish>
             </Key>
@@ -20401,6 +20428,7 @@
                 <Russian>Местоположение штаба</Russian>
                 <Chinesesimp>总部所在地</Chinesesimp>
                 <Korean>본부 위치</Korean>
+                <Spanish>Posición del CG</Spanish>
                 <French>Position du QG</French>
                 <Turkish>Karargah Konumu</Turkish>
             </Key>
@@ -20409,6 +20437,7 @@
                 <Russian>Выбранное местоположение слишком близко к вражеским локациям.</Russian>
                 <Chinesesimp>所选位置离敌人位置太近。</Chinesesimp>
                 <Korean>선택한 장소가 적 구역과 너무 가깝습니다.</Korean>
+                <Spanish>La posición seleccionada está demasiado cerca de zonas enemigas.</Spanish>
                 <French>Le lieu choisi est trop proche des zones ennemies.</French>
                 <Turkish>Seçilen konum düşman bölgelerine çok yakın.</Turkish>
             </Key>
@@ -20417,6 +20446,7 @@
                 <Russian>Выбранная позиция не может быть в воде.</Russian>
                 <Chinesesimp>所选位置不能在水中</Chinesesimp>
                 <Korean>선택한 위치는 물에 있을 수 없습니다.</Korean>
+                <Spanish>La posición seleccionada no puede estar en el agua.</Spanish>
                 <French>La position sélectionnée ne peut pas être dans l'eau.</French>
                 <Turkish>Seçilen konum suyun içinde olamaz.</Turkish>
             </Key>
@@ -20425,6 +20455,7 @@
                 <Russian>Выбранная позиция не может быть за пределами карты.</Russian>
                 <Chinesesimp>所选位置不能在地图外</Chinesesimp>
                 <Korean>선택한 위치는 지도 외부에 있을 수 없습니다.</Korean>
+                <Spanish>La posición seleccionada no puede estar fuera del mapa.</Spanish>
                 <French>La position sélectionnée ne peut pas être en dehors de la carte.</French>
                 <Turkish>Seçilen konum harita sınırlarının dışında olamaz.</Turkish>
             </Key>
@@ -20433,6 +20464,7 @@
                 <Russian>Выбранная позиция не может быть за пределами карты.</Russian>
                 <Chinesesimp>该区域周围有敌人，请选择其他区域。</Chinesesimp>
                 <Korean>해당 지역 주변에 적이 있습니다. 다른 곳을 선택하십시오.</Korean>
+                <Spanish>Hay enemigos rodeando esa zona, elige otra posición.</Spanish>
                 <French>Il y a des ennemis dans les environs de cette zone, veuillez en sélectionner une autre.</French>
                 <Turkish>O bölgenin etrafı düşmanlarla sarılmış, lütfen başka bir konum seçin.</Turkish>
             </Key>
@@ -20441,6 +20473,7 @@
                 <Russian>Продажа техники</Russian>
                 <Chinesesimp>卖载具</Chinesesimp>
                 <Korean>차량 판매</Korean>
+                <Spanish>Vender vehículo</Spanish>
                 <French>Vendre un véhicule</French>
                 <Turkish>Aracı Sat</Turkish>
             </Key>
@@ -20449,6 +20482,7 @@
                 <Russian>Высадить экипаж из техники</Russian>
                 <French>Expulser l'équipage du véhicule</French>
                 <Korean>승무원 내보내기</Korean>
+                <Spanish>Sacar a la tripulación</Spanish>
                 <Chinesesimp>移出乘员</Chinesesimp>
                 <Turkish>Mürettebatı İndir</Turkish>
             </Key>
@@ -20457,6 +20491,7 @@
                 <Russian>В транспортном средстве должен находиться экипаж повстанцев или гражданских.</Russian>
                 <French>Le véhicule doit contenir un équipage rebelle ou civil.</French>
                 <Korean>차량에 반드시 반군 또는 민간인 승무원이 타고 있어야 합니다.</Korean>
+                <Spanish>El vehículo debe tener tripulación rebelde o civil.</Spanish>
                 <Chinesesimp>车辆必须载有叛军乘员或平民乘员。</Chinesesimp>
                 <Turkish>Araçta isyancı mürettebat veya sivil mürettebat bulunmalıdır.</Turkish>
             </Key>
@@ -20465,12 +20500,14 @@
                 <Russian>Техника должна быть ближе 50 метров от маркера штаба, чтобы её можно было продать.</Russian>
                 <Chinesesimp>载具距离总部标志必须小于50米。</Chinesesimp>
                 <Korean>차량은 본부 마커로부터 반경 50m 이하에 있어야 합니다.</Korean>
+                <Spanish>El vehículo debe estar a menos de 50 metros del marcador del CG.</Spanish>
                 <French>Le véhicule doit être à moins de 50 mètres du quartier général.</French>
                 <Turkish>Araç, Karargâha 50 metre yakınında olmalıdır.</Turkish>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err0.1">
                 <Original>Vehicle must be within 50 meters of the HQ marker or airfield.</Original>
                 <Russian>Техника должна быть ближе 50 метров от маркера штаба или аэродрома, чтобы её можно было продать.</Russian>
+                <Spanish>El vehículo debe estar a menos de 50 metros del marcador del CG o de un aeródromo.</Spanish>
                 <Turkish>Araç; Karargâha veya havaalanının 50 metre yakınında olmalıdır.</Turkish>
             </Key>
             <Key ID="STR_A3A_Base_sellVehicle_err1">
@@ -20478,6 +20515,7 @@
                 <Russian>Техника должна быть пустой.</Russian>
                 <Chinesesimp>载具必须是空的。</Chinesesimp>
                 <Korean>차량이 비어 있어야 합니다.</Korean>
+                <Spanish>El vehículo debe estar vacío.</Spanish>
                 <French>Le véhicule doit être vide.</French>
                 <Turkish>Araç boş olmalıdır.</Turkish>
             </Key>
@@ -20486,6 +20524,7 @@
                 <Russian>Вы не владелец данного транспортного средства.</Russian>
                 <Chinesesimp>你不是这载具的车主</Chinesesimp>
                 <Korean>이 차량의 소유자가 아닙니다.</Korean>
+                <Spanish>No eres el propietario de este vehículo.</Spanish>
                 <French>Vous n'êtes pas le propriétaire de ce véhicule.</French>
                 <Turkish>Bu aracın sahibi siz değilsiniz.</Turkish>
             </Key>
@@ -20494,6 +20533,7 @@
                 <Russian>Продажа этого транспортного средства уже в процессе.</Russian>
                 <Chinesesimp>载具销售已经在进行中。</Chinesesimp>
                 <Korean>차량 판매가 이미 진행 중입니다.</Korean>
+                <Spanish>Ya hay una venta de vehículo en curso.</Spanish>
                 <French>La vente du véhicule est déjà en cours.</French>
                 <Turkish>Araç satışı zaten devam ediyor.</Turkish>
             </Key>
@@ -20502,6 +20542,7 @@
                 <Russian>Транспортное средство, на которое вы смотрите, не подходит для продажи.</Russian>
                 <Chinesesimp>您正在查看的载具不符合销售条件。</Chinesesimp>
                 <Korean>당신이 보고 있는 차량은 우리 시장에 적합하지 않습니다.</Korean>
+                <Spanish>El vehículo al que estás mirando no encaja en nuestro mercado.</Spanish>
                 <French>Le véhicule que vous recherchez n'est pas adapté à notre marché.</French>
                 <Turkish>Baktığınız araç marketimizde satışa uygun değil.</Turkish>
             </Key>
@@ -20510,6 +20551,7 @@
                 <Russian>Транспортное средство продано.</Russian>
                 <Chinesesimp>载具已出售</Chinesesimp>
                 <Korean>차량 판매 완료.</Korean>
+                <Spanish>Vehículo vendido.</Spanish>
                 <French>Véhicule vendu.</French>
                 <Turkish>Araç Satıldı.</Turkish>
             </Key>
@@ -20518,6 +20560,7 @@
                 <Russian>Экипаж покинул технику.</Russian>
                 <French>L'équipage a abandonné le véhicule.</French>
                 <Korean>승무원을 내보냈습니다.</Korean>
+                <Spanish>Tripulación fuera.</Spanish>
                 <Chinesesimp>乘员已移出</Chinesesimp>
                 <Turkish>Mürettebat indirildi.</Turkish>
             </Key>
@@ -20528,6 +20571,7 @@
                 <Russian>Общая информация</Russian>
                 <Chinesesimp>一般信息</Chinesesimp>
                 <Korean>일반</Korean>
+                <Spanish>General</Spanish>
                 <French>Général</French>
                 <Turkish>Genel</Turkish>
             </Key>
@@ -20536,6 +20580,7 @@
                 <Russian>Только игроки могут пилотировать воздушную технику.</Russian>
                 <Chinesesimp>只有人类飞行员才能驾驶飞行器。</Chinesesimp>
                 <Korean>플레이어 조종사만이 항공기를 조종할 수 있습니다.</Korean>
+                <Spanish>Solo los pilotos humanos pueden pilotar una aeronave.</Spanish>
                 <French>Seuls des pilotes humains peuvent piloter un véhicule aérien.</French>
                 <Turkish>Hava araçlarını yalnızca Oyuncular kullanabilir.</Turkish>
             </Key>
@@ -20546,6 +20591,7 @@
                 <Russian>Удалённое управление ИИ</Russian>
                 <Chinesesimp>遥控AI</Chinesesimp>
                 <Korean>인공지능 원격 조종</Korean>
+                <Spanish>IA remota</Spanish>
                 <French>Contrôle à distance de l'IA</French>
                 <Turkish>Uzaktan YZ Kontrolü</Turkish>
             </Key>
@@ -20554,6 +20600,7 @@
                 <Russian>Умер во время удалённого управления ИИ.</Russian>
                 <Chinesesimp>在远程控制AI时死亡。</Chinesesimp>
                 <Korean>인공지능 원격 조종 중 사망했습니다.</Korean>
+                <Spanish>Has muerto mientras controlabas a distancia a la IA.</Spanish>
                 <French>Décédé alors qu'il contrôlait l'IA à distance.</French>
                 <Turkish>Yapay zekayı uzaktan kontrol ederken öldünüz.</Turkish>
             </Key>
@@ -20564,6 +20611,7 @@
                 <Russian>Логистика</Russian>
                 <Chinesesimp>物流</Chinesesimp>
                 <Korean>병참</Korean>
+                <Spanish>Logística</Spanish>
                 <French>Logistique</French>
                 <Turkish>Lojistik</Turkish>
             </Key>
@@ -20572,6 +20620,7 @@
                 <Russian>Невозможно выгрузить стационарное орудие, за которым кто-то сидит.</Russian>
                 <Chinesesimp>无法卸载有人的固定武器。</Chinesesimp>
                 <Korean>마운트된 고정화기는 내릴 수 없습니다.</Korean>
+                <Spanish>No se puede descargar una estática que está montada.</Spanish>
                 <French>Impossible de décharger un statique monté.</French>
                 <Turkish>Monte edilmiş haldeki bir sabit silah indirilemez.</Turkish>
             </Key>
@@ -20580,6 +20629,7 @@
                 <Russian>Груз уже выгружается из транспортного средства.</Russian>
                 <Chinesesimp>货物已经从车上卸下了</Chinesesimp>
                 <Korean>화물을 이미 차량에서 내리고 있습니다.</Korean>
+                <Spanish>Ya se está descargando la carga del vehículo.</Spanish>
                 <French>La cargaison est déjà en train d'être déchargée du véhicule.</French>
                 <Turkish>Kargo zaten araçtan indiriliyor.</Turkish>
             </Key>
@@ -20588,6 +20638,7 @@
                 <Russian>Поблизости нет подходящего транспортного средства.</Russian>
                 <Chinesesimp>附近没有足够近的载具。</Chinesesimp>
                 <Korean>충분히 가까운 차량이 없습니다.</Korean>
+                <Spanish>No hay ningún vehículo lo bastante cerca.</Spanish>
                 <French>Aucun véhicule n'est assez proche.</French>
                 <Turkish>Yeterince yakın bir araç yok.</Turkish>
             </Key>
@@ -20596,6 +20647,7 @@
                 <Russian>Вы не можете загрузить груз в уничтоженное транспортное средство.</Russian>
                 <Chinesesimp>你不能将货物装载到被摧毁的载具上。</Chinesesimp>
                 <Korean>파괴된 차량에는 화물을 적재할 수 없습니다.</Korean>
+                <Spanish>No puedes cargar nada en un vehículo destruido.</Spanish>
                 <French>Les véhicules détruits ne peuvent pas être chargés.</French>
                 <Turkish>İmha edilmiş bir araca kargo yükleyemezsiniz.</Turkish>
             </Key>
@@ -20604,6 +20656,7 @@
                 <Russian>Вы не можете загрузить уничтоженный груз в транспортное средство.</Russian>
                 <Chinesesimp>您不能将损坏的货物装载到载具中。</Chinesesimp>
                 <Korean>파괴된 화물은 차량에 적재할 수 없습니다.</Korean>
+                <Spanish>No puedes cargar carga destruida en un vehículo.</Spanish>
                 <French>Vous ne pouvez pas charger une cargaison détruite dans un véhicule.</French>
                 <Turkish>İmha edilmiş bir kargoyu araca yükleyemezsiniz.</Turkish>
             </Key>
@@ -20612,6 +20665,7 @@
                 <Russian>%1 не может быть загружен.</Russian>
                 <Chinesesimp>无法装载%1。</Chinesesimp>
                 <Korean>%1을(를) 로드할 수 없습니다.</Korean>
+                <Spanish>%1 no se puede cargar.</Spanish>
                 <French>%1 ne peut pas être chargé.</French>
                 <Turkish>%1 yüklenemez.</Turkish>
             </Key>
@@ -20620,6 +20674,7 @@
                 <Russian>Невозможно загрузить стационарное орудие, за которым кто-то сидит.</Russian>
                 <Chinesesimp>无法装载有人的固定武器。</Chinesesimp>
                 <Korean>마운트된 고정화기는 적재할 수 없습니다.</Korean>
+                <Spanish>No se puede cargar una estática que está montada.</Spanish>
                 <French>Impossible de charger une statique montée.</French>
                 <Turkish>Monte edilmiş haldeki bir sabit silah yüklenemez.</Turkish>
             </Key>
@@ -20628,6 +20683,7 @@
                 <Russian>%1 не может быть установлен на %2.</Russian>
                 <Chinesesimp>%1 不能装进 %2 里。</Chinesesimp>
                 <Korean>%1을(를) %2에 마운트할 수 없습니다.</Korean>
+                <Spanish>%1 no se puede montar en un %2.</Spanish>
                 <French>%1 ne peut pas être monté sur un %2.</French>
                 <Turkish>%1, bir %2 üzerine monte edilemez.</Turkish>
             </Key>
@@ -20636,6 +20692,7 @@
                 <Russian>%1'у  уже кто-то помогает или ему больше не требуется помощь.</Russian>
                 <Chinesesimp>%1 已经在帮助某人或不再需要帮助。</Chinesesimp>
                 <Korean>%1이(가) 도움을 받고 있거나 더 이상 필요하지 않습니다.</Korean>
+                <Spanish>A %1 ya le están ayudando o ya no necesita tu ayuda.</Spanish>
                 <French>%1 est aidé ou n'a plus besoin de votre aide.</French>
                 <Turkish>%1 yardım alıyor veya artık yardımınıza ihtiyacı yok.</Turkish>
             </Key>
@@ -20644,6 +20701,7 @@
                 <Russian>%1 не может принять какой-либо груз.</Russian>
                 <Chinesesimp>%1 无法装载任何货物。</Chinesesimp>
                 <Korean>%1은(는) 화물을 적재할 수 없습니다.</Korean>
+                <Spanish>%1 no puede cargar nada.</Spanish>
                 <French>%1 n'est pas en mesure de charger une cargaison.</French>
                 <Turkish>%1 herhangi bir kargo yükleyemiyor</Turkish>
             </Key>
@@ -20652,6 +20710,7 @@
                 <Russian>У %1 недостаточно места, чтобы загрузить %2.</Russian>
                 <Chinesesimp>%1 没有足够的空间来加载 %2。</Chinesesimp>
                 <Korean>%1에 공간이 부족하여 %2을(를) 적재할 수 없습니다.</Korean>
+                <Spanish>%1 no tiene espacio suficiente para cargar %2.</Spanish>
                 <French>%1 n'a pas assez d'espace pour charger %2.</French>
                 <Turkish>%1, %2'yi yüklemek için yeterli alana sahip değil.</Turkish>
             </Key>
@@ -20660,6 +20719,7 @@
                 <Russian>%1 не может принять груз, пока бойцы занимают грузовую платформу.</Russian>
                 <Chinesesimp>有单位挡住货物时，%1无法装货。</Chinesesimp>
                 <Korean>%1은(는) 유닛이 막고 있는 동안에는 화물을 적재할 수 없습니다.</Korean>
+                <Spanish>%1 no puede cargar mientras haya unidades bloqueando el avión de carga.</Spanish>
                 <French>%1 ne peut pas charger de cargaison alors que des unités bloquent l'avion cargo.</French>
                 <Turkish>%1, birimler kargo uçağını engelliyorken kargo yükleyemez.</Turkish>
             </Key>
@@ -20668,6 +20728,7 @@
                 <Russian>Груз уже загружается в транспортное средство.</Russian>
                 <Chinesesimp>货物已经装上车了。</Chinesesimp>
                 <Korean>화물이 이미 차량에 적재되는 중입니다.</Korean>
+                <Spanish>Ya se está cargando algo en el vehículo.</Spanish>
                 <French>La cargaison est déjà en train d'être chargée dans le véhicule.</French>
                 <Turkish>Kargo araca yükleniyor.</Turkish>
             </Key>
@@ -20676,6 +20737,7 @@
                 <Russian>Кто-то уже сидит в стационарном орудии.</Russian>
                 <Chinesesimp>有人已经坐在固定武器里了。</Chinesesimp>
                 <Korean>누군가가 이미 고정화기에 있습니다.</Korean>
+                <Spanish>Ya hay alguien en la estática.</Spanish>
                 <French>Quelqu'un est déjà dans la statique.</French>
                 <Turkish>Birisi zaten statik durumda</Turkish>
             </Key>
@@ -20684,6 +20746,7 @@
                 <Russian>&lt;t color='#00fff3'&gt;"%1" загружен в "%2". Места больше нет.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#00fff3'&gt;”%1”被加载到“%2”上。 没有更多的空间了。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#00fff3'&gt;"%1"이(가) "%2"에 적재되었습니다. 더 이상 공간이 없습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;t color='#00fff3'&gt;"%1" se ha cargado en "%2". Ya no queda espacio.&lt;/t&gt;</Spanish>
                 <French>&lt;t color='#00fff3'&gt;"%1" a été chargé à partir de "%2". Il n'y a plus d'espace.&lt;/t&gt;</French>
                 <Turkish>&lt;t color='#00fff3'&gt;"%1", "%2" aracına yüklendi. Daha fazla alan yok.&lt;/t&gt;</Turkish>
             </Key>
@@ -20692,6 +20755,7 @@
                 <Russian>&lt;t color='#00fff3'&gt;"%1" загружен в "%2". Свободных слотов логистики: "%3".&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#00fff3'&gt;“%1”被加载到“%2”上。 空闲插槽：“%3”。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#00fff3'&gt;"%1"이(가) "%2"에 적재되었습니다. 가능한 슬롯은 "%3"입니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;t color='#00fff3'&gt;"%1" se ha cargado en "%2". Huecos libres: "%3".&lt;/t&gt;</Spanish>
                 <French>&lt;t color='#00fff3'&gt;"%1" a été chargé à partir de "%2". Emplacements libres: "%3".&lt;/t&gt;</French>
                 <Turkish>&lt;t color='#00fff3'&gt;"%1", "%2" aracına yüklendi. Boş alan: "%3".&lt;/t&gt;</Turkish>
             </Key>
@@ -20700,6 +20764,7 @@
                 <Russian>&lt;t color='#00fff3'&gt;"%1" разгружен из "%2". Свободных слотов логистики: "%3".&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t color='#00fff3'&gt;“%1”已从“%2”卸载。 空闲插槽：“%3”。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t color='#00fff3'&gt;"%1"이(가) "%2"로부터 내려졌습니다. 가능한 슬롯은 "%3"입니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;t color='#00fff3'&gt;"%1" se ha descargado de "%2". Huecos libres: "%3".&lt;/t&gt;</Spanish>
                 <French>&lt;t color='#00fff3'&gt;"%1"a été déchargé de "%2". Emplacements libres: "%3".&lt;/t&gt;</French>
                 <Turkish>&lt;t color='#00fff3'&gt;"%1", "%2" aracından indirildi. Boş slot sayısı: "%3".&lt;/t&gt;</Turkish>
             </Key>
@@ -20708,6 +20773,7 @@
                 <Russian>Стандартная масса</Russian>
                 <Chinesesimp>初始重量</Chinesesimp>
                 <Korean>기본 적재량</Korean>
+                <Spanish>Masa por defecto</Spanish>
                 <French>Chargement de la cargaison</French>
                 <Turkish>Varsayılan Kütle</Turkish>
             </Key>
@@ -20716,6 +20782,7 @@
                 <Russian>Масса груза</Russian>
                 <Chinesesimp>货物重量</Chinesesimp>
                 <Korean>화물 적재량</Korean>
+                <Spanish>Masa de la carga</Spanish>
                 <French>Chargement de la cargaison</French>
                 <Turkish>Kargo Kütlesi</Turkish>
             </Key>
@@ -20724,6 +20791,7 @@
                 <Russian>Текущая масса</Russian>
                 <Chinesesimp>当前重量</Chinesesimp>
                 <Korean>현재 적재량</Korean>
+                <Spanish>Masa actual</Spanish>
                 <French>Charge actuelle</French>
                 <Turkish>Mevcut Kütle</Turkish>
             </Key>
@@ -20733,6 +20801,7 @@
                 <Russian>Строитель: Отменить</Russian>
                 <Chinesesimp>建筑放置器 - 取消</Chinesesimp>
                 <Korean>건물 배치기 - 취소</Korean>
+                <Spanish>Colocador: cancelar</Spanish>
                 <French>Constructeur: Annuler</French>
                 <Turkish>Yapı Yerleştirici: İptal Et</Turkish>
             </Key>
@@ -20742,6 +20811,7 @@
                 <Russian>Отменить размещение здания.</Russian>
                 <Chinesesimp>取消建筑物放置。</Chinesesimp>
                 <Korean>건물 배치기를 취소합니다.</Korean>
+                <Spanish>Cancela la colocación de la construcción.</Spanish>
                 <French>Annuler le placement du bâtiment.</French>
                 <Turkish>Bina yerleştirmeyi iptal et</Turkish>
             </Key>
@@ -20751,6 +20821,7 @@
                 <Russian>Строитель: Выравнивание</Russian>
                 <Chinesesimp>建筑放置器 - 对齐</Chinesesimp>
                 <Korean>건물 배치기 - 정렬</Korean>
+                <Spanish>Colocador: alinear</Spanish>
                 <French>Constructeur: Aligner</French>
                 <Turkish>Yapı Yerleştirici: Hizala</Turkish>
             </Key>
@@ -20760,6 +20831,7 @@
                 <Russian>Скопировать выравнивание другого здания на текущее.</Russian>
                 <Chinesesimp>将另一个建筑物的对齐方式复制到当前对象。</Chinesesimp>
                 <Korean>다른 건물의 정렬을 현재 객체에 복사합니다.</Korean>
+                <Spanish>Copia la alineación de otra construcción al objeto actual.</Spanish>
                 <French>Copier l'alignement d'un autre bâtiment sur l'objet actuel.</French>
                 <Turkish>Başka bir binanın hizalamasını mevcut nesneye kopyala.</Turkish>
             </Key>
@@ -20769,6 +20841,7 @@
                 <Russian>Строитель: Удалить</Russian>
                 <Chinesesimp>建筑放置器 - 删除</Chinesesimp>
                 <Korean>건물 배치기 - 삭제</Korean>
+                <Spanish>Colocador: eliminar</Spanish>
                 <French>Constructeur: Supprimer</French>
                 <Turkish>Yapı Yerleştirici: Sil</Turkish>
             </Key>
@@ -20778,6 +20851,7 @@
                 <Russian>Удалить здание.</Russian>
                 <Chinesesimp>删除建筑物。</Chinesesimp>
                 <Korean>건물을 삭제합니다.</Korean>
+                <Spanish>Elimina la construcción.</Spanish>
                 <French>Supprimer le bâtiment.</French>
                 <Turkish>Binayı sil.</Turkish>
             </Key>
@@ -20787,6 +20861,7 @@
                 <Russian>Строитель: Разместить</Russian>
                 <Chinesesimp>建筑放置器 - 放置</Chinesesimp>
                 <Korean>건물 배치기 - 배치</Korean>
+                <Spanish>Colocador: colocar</Spanish>
                 <French>Constructeur: Placer</French>
                 <Turkish>Yapı Yerleştirici: Yerleştir</Turkish>
             </Key>
@@ -20796,6 +20871,7 @@
                 <Russian>Разместить здание.</Russian>
                 <Chinesesimp>放置建筑物。</Chinesesimp>
                 <Korean>건물을 배치합니다.</Korean>
+                <Spanish>Coloca la construcción.</Spanish>
                 <French>Placer le bâtiment.</French>
                 <Turkish>Binayı yerleştirin.</Turkish>
             </Key>
@@ -20805,6 +20881,7 @@
                 <Russian>Строитель: Ремонт</Russian>
                 <Chinesesimp>建筑放置器 - 修理</Chinesesimp>
                 <Korean>건물 배치기 - 수리</Korean>
+                <Spanish>Colocador: reparar</Spanish>
                 <French>Constructeur: Réparer</French>
                 <Turkish>Yapı Yerleştirici: Onarım</Turkish>
             </Key>
@@ -20814,6 +20891,7 @@
                 <Russian>Отремонтировать здание.</Russian>
                 <Chinesesimp>修理建筑物。</Chinesesimp>
                 <Korean>건물을 수리합니다.</Korean>
+                <Spanish>Repara la construcción.</Spanish>
                 <French>Réparer le bâtiment.</French>
                 <Turkish>Binayı onarın.</Turkish>
             </Key>
@@ -20823,6 +20901,7 @@
                 <Russian>Строитель: Повернуть против часовой стрелки</Russian>
                 <Chinesesimp>建筑放置器 - 逆时针旋转</Chinesesimp>
                 <Korean>건물 배치기 - 반시계 방향으로 회전</Korean>
+                <Spanish>Colocador: rotar a la izquierda</Spanish>
                 <French>Constructeur: Rotation dans le sens inverse des aiguilles d'une montre</French>
                 <Turkish>Yapı Yerleştirici: Saat yönünün tersine döndür</Turkish>
             </Key>
@@ -20832,6 +20911,7 @@
                 <Russian>Повернуть здание против часовой стрелки.</Russian>
                 <Chinesesimp>逆时针旋转建筑物。</Chinesesimp>
                 <Korean>건물을 반시계 방향으로 회전합니다.</Korean>
+                <Spanish>Rota la construcción en sentido antihorario.</Spanish>
                 <French>Faire pivoter le bâtiment dans le sens inverse des aiguilles d'une montre.</French>
                 <Turkish>Binayı saat yönünün tersine döndür.</Turkish>
             </Key>
@@ -20841,6 +20921,7 @@
                 <Russian>Строитель: Повернуть по часовой стрелке</Russian>
                 <Chinesesimp>建筑放置器 - 顺时针旋转</Chinesesimp>
                 <Korean>건물 배치기 - 시계 방향으로 회전</Korean>
+                <Spanish>Colocador: rotar a la derecha</Spanish>
                 <French>Constructeur: Rotation dans le sens des aiguilles d'une montre</French>
                 <Turkish>Yapı Yerleştirici: Saat yönünde döndür</Turkish>
             </Key>
@@ -20850,6 +20931,7 @@
                 <Russian>Повернуть здание по часовой стрелке.</Russian>
                 <Chinesesimp>顺时针旋转建筑物。</Chinesesimp>
                 <Korean>건물을 시계 방향으로 회전합니다.</Korean>
+                <Spanish>Rota la construcción en sentido horario.</Spanish>
                 <French>Faire pivoter le bâtiment dans le sens des aiguilles d'une montre.</French>
                 <Turkish>Binayı saat yönünde döndür.</Turkish>
             </Key>
@@ -20859,6 +20941,7 @@
                 <Russian>Строитель: Уменьшить шаг вращения</Russian>
                 <Chinesesimp>建筑放置器 - 减少旋转步长</Chinesesimp>
                 <Korean>건물 배치기 - 회전 단계 감소</Korean>
+                <Spanish>Colocador: reducir el paso de rotación</Spanish>
                 <French>Constructeur: Diminuer le pas de rotation</French>
                 <Turkish>Yapı Yerleştirici: Dönüş Azalt</Turkish>
             </Key>
@@ -20868,6 +20951,7 @@
                 <Russian>Уменьшить шаг вращения.</Russian>
                 <Chinesesimp>减少旋转步长。</Chinesesimp>
                 <Korean>회전 단계를 감소시킵니다.</Korean>
+                <Spanish>Reduce el paso de rotación.</Spanish>
                 <French>Diminuer le pas de rotation.</French>
                 <Turkish>Döndürme miktarını azaltır.</Turkish>
             </Key>
@@ -20877,6 +20961,7 @@
                 <Russian>Строитель: Увеличить шаг вращения</Russian>
                 <Chinesesimp>建筑放置器 - 增加旋转步长</Chinesesimp>
                 <Korean>건물 배치기 - 회전 단계 증가</Korean>
+                <Spanish>Colocador: aumentar el paso de rotación</Spanish>
                 <French>Constructeur: Augmenter le pas de rotation</French>
                 <Turkish>Yapı Yerleştirici: Dönüşü Artır</Turkish>
             </Key>
@@ -20886,6 +20971,7 @@
                 <Russian>Увеличить шаг вращения.</Russian>
                 <Chinesesimp>增加旋转步长。</Chinesesimp>
                 <Korean>회전 단계를 증가시킵니다.</Korean>
+                <Spanish>Aumenta el paso de rotación.</Spanish>
                 <French>Augmenter le pas de rotation.</French>
                 <Turkish>Döndürme miktarını artırır.</Turkish>
             </Key>
@@ -20895,6 +20981,7 @@
                 <Russian>Строитель: Привязать к поверхности</Russian>
                 <Chinesesimp>建筑放置器 - 吸附到地面</Chinesesimp>
                 <Korean>건물 배치기 - 표면에 스냅</Korean>
+                <Spanish>Colocador: ajustar a la superficie</Spanish>
                 <French>Constructeur: Accrocher à la surface</French>
                 <Turkish>Yapı Yerleştirici: Yüzeye yapıştır</Turkish>
             </Key>
@@ -20904,6 +20991,7 @@
                 <Russian>Привязать здание к поверхности.</Russian>
                 <Chinesesimp>将建筑物吸附到地面。</Chinesesimp>
                 <Korean>건물을 표면에 스냅합니다.</Korean>
+                <Spanish>Ajusta la construcción a la superficie.</Spanish>
                 <French>Accrocher le bâtiment à la surface.</French>
                 <Turkish>Binayı yüzeye yapıştırın.</Turkish>
             </Key>
@@ -20913,6 +21001,7 @@
                 <Russian>Строитель: Режим небезопасной установки</Russian>
                 <Chinesesimp>建筑放置器 - 不安全模式</Chinesesimp>
                 <Korean>건물 배치기 - 안전하지 않은 모드</Korean>
+                <Spanish>Colocador: modo inseguro</Spanish>
                 <French>Constructeur: Mode non sécurisé</French>
                 <Turkish>Yapı Yerleştirici: Güvensiz Mod</Turkish>
             </Key>
@@ -20922,6 +21011,7 @@
                 <Russian>Переключить небезопасный режим.</Russian>
                 <Chinesesimp>切换不安全模式。</Chinesesimp>
                 <Korean>안전하지 않은 모드를 전환합니다.</Korean>
+                <Spanish>Activa o desactiva el modo inseguro.</Spanish>
                 <French>Basculer en mode non sécurisé.</French>
                 <Turkish>Güvensiz modu aç/kapat.</Turkish>
             </Key>
@@ -20931,6 +21021,7 @@
                 <Russian>Строитель: Уменьшить смещение по оси Z</Russian>
                 <Chinesesimp>建筑放置器 - 减少Z轴偏移</Chinesesimp>
                 <Korean>건물 배치기 - Z-오프셋 감소</Korean>
+                <Spanish>Colocador: reducir el desplazamiento en Z</Spanish>
                 <French>Constructeur: Diminuer le décalage en Z</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetDecrease_desc">
@@ -20939,6 +21030,7 @@
                 <Russian>Уменьшить смещение по оси Z (опустить вниз) объекта при использовании режима привязки к поверхности.</Russian>
                 <Chinesesimp>在使用吸附到地面模式时，减少对象的Z轴偏移（向下移动）。</Chinesesimp>
                 <Korean>표면에 스냅 모드를 사용할 때 객체의 Z-오프셋을 감소시킵니다(아래로 이동).</Korean>
+                <Spanish>Reduce el desplazamiento en Z del objeto (lo baja) al usar el modo de ajuste a la superficie.</Spanish>
                 <French>Diminuer le décalage en Z (descendre) de l'objet lors de l'utilisation du mode accrocher à la surface.</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetIncrease_title">
@@ -20947,6 +21039,7 @@
                 <Russian>Строитель: Увеличить смещение по оси Z</Russian>
                 <Chinesesimp>建筑放置器 - 增加Z轴偏移</Chinesesimp>
                 <Korean>건물 배치기 - Z-오프셋 증가</Korean>
+                <Spanish>Colocador: aumentar el desplazamiento en Z</Spanish>
                 <French>Constructeur: Augmenter le décalage en Z</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetIncrease_desc">
@@ -20955,6 +21048,7 @@
                 <Russian>Увеличить смещение по оси Z (поднять вверх) объекта при использовании режима привязки к поверхности.</Russian>
                 <Chinesesimp>在使用吸附到地面模式时，增加对象的Z轴偏移（向上移动）。</Chinesesimp>
                 <Korean>표면에 스냅 모드를 사용할 때 객체의 Z-오프셋을 증가시킵니다(위로 이동).</Korean>
+                <Spanish>Aumenta el desplazamiento en Z del objeto (lo sube) al usar el modo de ajuste a la superficie.</Spanish>
                 <French>Augmenter le décalage en Z (monter) de l'objet lors de l'utilisation du mode accrocher à la surface.</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZStepDecrease_title">
@@ -20963,6 +21057,7 @@
                 <Russian>Строитель: Уменьшить шаг по оси Z</Russian>
                 <Chinesesimp>建筑放置器 - 减少Z轴步长</Chinesesimp>
                 <Korean>건물 배치기 - Z-단계 감소</Korean>
+                <Spanish>Colocador: reducir el paso en Z</Spanish>
                 <French>Constructeur: Diminuer le pas en Z</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZStepDecrease_desc">
@@ -20971,6 +21066,7 @@
                 <Russian>Уменьшить шаг по оси Z при регулировке смещения по оси Z в режиме привязки к поверхности.</Russian>
                 <Chinesesimp>在吸附到地面模式下调整Z轴偏移时，减少Z轴步长。</Chinesesimp>
                 <Korean>표면에 스냅 모드에서 Z-오프셋을 조정할 때 Z-단계를 감소시킵니다.</Korean>
+                <Spanish>Reduce el paso en Z al ajustar el desplazamiento en Z en el modo de ajuste a la superficie.</Spanish>
                 <French>Diminuer le pas en Z lors de l'ajustement du décalage en Z en mode accrocher à la surface.</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZStepIncrease_title">
@@ -20979,6 +21075,7 @@
                 <Russian>Строитель: Увеличить шаг по оси Z</Russian>
                 <Chinesesimp>建筑放置器 - 增加Z轴步长</Chinesesimp>
                 <Korean>건물 배치기 - Z-단계 증가</Korean>
+                <Spanish>Colocador: aumentar el paso en Z</Spanish>
                 <French>Constructeur: Augmenter le pas en Z</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZStepIncrease_desc">
@@ -20987,6 +21084,7 @@
                 <Russian>Увеличить шаг по оси Z при регулировке смещения по оси Z в режиме привязки к поверхности.</Russian>
                 <Chinesesimp>在吸附到地面模式下调整Z轴偏移时，增加Z轴步长。</Chinesesimp>
                 <Korean>표면에 스냅 모드에서 Z-오프셋을 조정할 때 Z-단계를 증가시킵니다.</Korean>
+                <Spanish>Aumenta el paso en Z al ajustar el desplazamiento en Z en el modo de ajuste a la superficie.</Spanish>
                 <French>Augmenter le pas en Z lors de l'ajustement du décalage en Z en mode accrocher à la surface.</French>
             </Key>
             <Key ID="STR_A3A_teardownModeEnabled_text">
@@ -20995,6 +21093,7 @@
                 <Russian>Режим разрушения теперь ВКЛЮЧЕН.</Russian>
                 <Chinesesimp>拆除模式现在已启用。</Chinesesimp>
                 <Korean>철거 모드가 이제 활성화되었습니다.</Korean>
+                <Spanish>El modo de desmontaje está ACTIVADO.</Spanish>
                 <French>Le mode démolition est maintenant ACTIVÉ.</French>
                 <Turkish>Yıkım modu şimdi ETKİNLEŞTİRİLDİ.</Turkish>
             </Key>
@@ -21004,6 +21103,7 @@
                 <Russian>Режим разрушения теперь ВЫКЛЮЧЕН.</Russian>
                 <Chinesesimp>拆除模式现在已禁用。</Chinesesimp>
                 <Korean>철거 모드가 이제 비활성화되었습니다.</Korean>
+                <Spanish>El modo de desmontaje está DESACTIVADO.</Spanish>
                 <French>Le mode démolition est maintenant DÉSACTIVÉ.</French>
                 <Turkish>Yıkım modu şimdi DEVRE DIŞI BIRAKILDI.</Turkish>
             </Key>
