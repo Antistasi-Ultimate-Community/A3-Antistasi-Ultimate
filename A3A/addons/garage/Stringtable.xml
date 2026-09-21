@@ -96,6 +96,11 @@
                 <Turkish>Uçak</Turkish>
                 <Chinesesimp>飞行器</Chinesesimp>
             </Key>
+            <Key ID="STR_HR_GRG_Generic_Heli">
+                <Original>Helicopters</Original>
+                <Russian>Вертолёты</Russian>
+                <Turkish>Helikopter</Turkish>
+            </Key>
             <Key ID="STR_HR_GRG_Generic_Cars_Сivilian">
               <Original>Сivilian vehicles</Original>
               <Russian>Гражданская техника</Russian>
