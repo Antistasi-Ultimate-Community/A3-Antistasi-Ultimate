@@ -11616,6 +11616,7 @@
                 <Russian>Отдых на %1 %2</Russian>
                 <Chinesesimp>休息 %1 %2</Chinesesimp>
                 <Korean>%1 %2에 대한 휴식</Korean>
+                <Spanish>Descansar %1 %2</Spanish>
                 <French>Repos pour %1 %2</French>
                 <Turkish>%1 %2 boyunca dinlen</Turkish>
             </Key>
@@ -11624,6 +11625,7 @@
                 <Russian>Отдых на 6 %1</Russian>
                 <Chinesesimp>休息 6 %1</Chinesesimp>
                 <Korean>6 %1 휴식</Korean>
+                <Spanish>Descansar 6 %1</Spanish>
                 <French>Repos pour 6 %1</French>
                 <Turkish>6 %1 boyunca dinlen</Turkish>
             </Key>
@@ -11632,6 +11634,7 @@
                 <Russian>%1 для отдыха</Russian>
                 <Chinesesimp>%1 到休息完毕</Chinesesimp>
                 <Korean>%1 휴식</Korean>
+                <Spanish>%1 de descanso</Spanish>
                 <French>%1 au repos</French>
                 <Turkish>Dinlenmek için %1</Turkish>
             </Key>
@@ -11640,6 +11643,7 @@
                 <Russian>Отдых</Russian>
                 <Chinesesimp>休息</Chinesesimp>
                 <Korean>쉬다</Korean>
+                <Spanish>Descansar</Spanish>
                 <French>Se reposer</French>
                 <Turkish>Dinlen</Turkish>
             </Key>
@@ -11648,6 +11652,7 @@
                 <Russian>УБРАТЬ РАСТИТЕЛЬНОСТЬ У ШТАБА</Russian>
                 <Chinesesimp>总部附近的森林</Chinesesimp>
                 <Korean>본부 근처 숲 제거</Korean>
+                <Spanish>DESPEJAR EL BOSQUE CERCA DEL CG</Spanish>
                 <French>FORÊT CLAIRE PRÈS DU HQ</French>
                 <Turkish>KARARGÂH YAKININDAKİ ORMANI TEMİZLE</Turkish>
             </Key>
@@ -11656,6 +11661,7 @@
                 <Russian>Убирает кусты и деревья возле штаб-квартиры.</Russian>
                 <Chinesesimp>清理总部附近的灌木和树木。</Chinesesimp>
                 <Korean>본부 근처의 덤불과 나무를 제거합니다.</Korean>
+                <Spanish>Despeja los arbustos y árboles cercanos al CG.</Spanish>
                 <French>Débroussaille les buissons et les arbres près du QG.</French>
                 <Turkish>Karargâh yakınındaki çalıları ve ağaçları temizler.</Turkish>
             </Key>
@@ -11664,6 +11670,7 @@
                 <Russian>УБРАТЬ МУСОР</Russian>
                 <Chinesesimp>清除垃圾</Chinesesimp>
                 <Korean>쓰레기 청소</Korean>
+                <Spanish>LIMPIAR BASURA</Spanish>
                 <French>NETTOYER LES ORDURES</French>
                 <Turkish>ÇÖPLERİ TEMİZLE</Turkish>
             </Key>
@@ -11672,6 +11679,7 @@
                 <Russian>Убирает мусор (тела, неиспользуемые ящики, обломки, оружие и т. д.) по всей карте. Повышает производительность.</Russian>
                 <Chinesesimp>清理地图上的垃圾（尸体、未使用的箱子、碎片、武器等）。 提高游戏性能。</Chinesesimp>
                 <Korean>지도 전체의 쓰레기(시체, 사용하지 않는 상자, 파괴된 물체, 무기 등)를 청소합니다. 성능이 향상됩니다.</Korean>
+                <Spanish>Limpia la basura (cuerpos, cajas sin usar, restos, armas, etcétera) de todo el mapa. Mejora el rendimiento.</Spanish>
                 <French>Nettoie les déchets (corps, caisses inutilisées, épaves, armes, etc.) sur la carte. Améliore les performances.</French>
                 <Turkish>Harita genelindeki çöpleri (cesetler, kullanılmayan kasalar, enkazlar, silahlar vb.) temizler. Performansı artırır.</Turkish>
             </Key>
@@ -11680,6 +11688,7 @@
                 <Russian>Пропускает 8 часов игрового времени. Требуется, чтобы все игроки находились рядом со штаб-квартирой.</Russian>
                 <Chinesesimp>跳过8小时的游戏时间。 要求每个玩家都在总部附近。</Chinesesimp>
                 <Korean>8시간의 게임 내 시간을 건너뜁니다. 모든 플레이어가 본부 근처에 있어야 합니다.</Korean>
+                <Spanish>Salta 8 horas de tiempo de juego. Requiere que todos los jugadores estén cerca del CG.</Spanish>
                 <French>Passe 8 heures de temps dans le jeu. Exige que chaque joueur soit près du QG.</French>
                 <Turkish>Oyun içi süreyi 8 saat ileri sarar. Tüm oyuncuların karargâh yakınında olmasını gerektirir.</Turkish>
             </Key>
@@ -11688,6 +11697,7 @@
                 <Russian>Макс. кол-во постоянных конструкций: %1</Russian>
                 <Chinesesimp>最大永久建筑：%1</Chinesesimp>
                 <Korean>최대 영구 건축물 수: %1</Korean>
+                <Spanish>Máximo de construcciones persistentes: %1</Spanish>
                 <French>Constuctions persistantes maximales : %1</French>
                 <Turkish>Maksimum kalıcı yapı sayısı: %1</Turkish>
             </Key>
@@ -11696,6 +11706,7 @@
                 <Russian>Позволяет вам установить, сколько постоянных (сохраняемых, устанавливаемых через меню Zeus) конструкций будет разрешено. Влияет на производительность, принцип Last In-First Out.</Russian>
                 <Chinesesimp>允许您设置允许多少个永久（可保存的，通过 Zeus 菜单设置）建筑。 影响性能，后进先出原则。</Chinesesimp>
                 <Korean>허용되는 (저장 가능한) 영구 건축물의 수를 설정하도록 허용합니다. 성능에 영향을 미치며, 후입선출 법칙을 따릅니다.</Korean>
+                <Spanish>Permite fijar cuántas construcciones persistentes (guardables) se permiten. Afecta al rendimiento; funciona por principio de último en entrar, primero en salir.</Spanish>
                 <French>Permet de définir le nombre de constructions persistantes (sauvegardables) autorisées. Affecte les performances, le principe du "dernier entré, premier sorti".</French>
                 <Turkish>Kaç adet kalıcı (kaydedilebilir) yapıya izin verileceğini ayarlamanızı sağlar. Performansı etkiler, "Son Giren İlk Çıkar" (LIFO) prensibiyle çalışır.</Turkish>
             </Key>
@@ -11704,6 +11715,7 @@
                 <Russian>Максимальное количество бойцов ИИ: %1</Russian>
                 <Chinesesimp>最大 AI 单位：%1</Chinesesimp>
                 <Korean>최대 인공지능 유닛 수: %1</Korean>
+                <Spanish>Cantidad máxima de unidades de IA: %1</Spanish>
                 <French>Quantité maximale d'IA : %1</French>
                 <Turkish>Maksimum YZ Birimi Miktarı: %1</Turkish>
             </Key>
@@ -11712,6 +11724,7 @@
                 <Russian>Устанавливает, сколько локальных и смоделированных ИИ-бойцов может появиться на карте. Влияет на производительность и «разумность» ИИ. Используйте с ЧРЕЗВЫЧАЙНОЙ осторожностью, так как при очень высоких значениях производительность может ухудшиться для всех. Это не точное число, так как транспортные средства и командиры отрядов будут появляться всегда.</Russian>
                 <Chinesesimp>设置地图中可以生成多少本地和模拟 AI。 影响性能和 AI“智能”。 使用时要格外小心，因为在非常高的数值下，可能对每个人性能都不利。 这不是一个确切的数字，因为载具和班长总是会刷出来。</Chinesesimp>
                 <Korean>지도에서 로컬 및 시뮬레이션된 인공지능이 생성할 수 있는 양을 설정합니다. 성능 및 인공지능의 ""지능""에 영향을 미칩니다. 매우 높은 값을 사용할 경우 성능이 저하될 수 있으므로 극도로 주의하여 사용하십시오. 이는 차량과 분대장들이 항상 스폰되기 때문에 정확한 숫자는 아닙니다.</Korean>
+                <Spanish>Fija cuánta IA local y simulada puede aparecer en el mapa. Afecta al rendimiento y a la ""inteligencia"" de la IA. Úsalo con EXTREMA precaución, ya que con valores muy altos el rendimiento puede desplomarse para todos. No es un número exacto, porque los vehículos y los líderes de escuadra siempre aparecen.</Spanish>
                 <French>Définit la quantité d'IA locale et simulée pouvant apparaître sur la carte. Affecte les performances et l'"intelligence" de l'IA. A utiliser avec une prudence EXTRÊME, car avec des valeurs très élevées, les performances peuvent chuter pour tout le monde. Il ne s'agit pas d'un chiffre exact, car des véhicules et des chefs d'escouade apparaîtront toujours.</French>
                 <Turkish>Haritada ne kadar yerel ve simüle edilmiş yapay zekanın ortaya çıkabileceğini ayarlar. Performansı ve yapay zeka ""zekasını"" etkiler. ÇOK DİKKATLİ kullanın; çünkü çok yüksek değerlerde performans herkes için ciddi şekilde düşebilir. Araçlar ve manga liderleri her zaman ortaya çıkacağından bu rakam kesin bir sayı değildir.</Turkish>
             </Key>
@@ -11720,6 +11733,7 @@
                 <Russian>Макс. дистанция появления ИИ: %1</Russian>
                 <Chinesesimp>最大生成距离：%1</Chinesesimp>
                 <Korean>최대 스폰 거리: %1</Korean>
+                <Spanish>Distancia máxima de aparición: %1</Spanish>
                 <French>Distance maximale d'apparition: %1</French>
                 <Turkish>Maksimum Doğma Mesafesi: %1</Turkish>
             </Key>
@@ -11728,6 +11742,7 @@
                 <Russian>Влияет на то, на каком расстоянии от игрока появится враг. Используйте это с осторожностью. Установите его на более низкие расстояния, если вы чувствуете, что у вас низкая производительность.</Russian>
                 <Chinesesimp>玩家敌人生成的距离。 请谨慎使用。 如果你觉得你的电脑性能表现不佳，请将它设置为较低的距离。</Chinesesimp>
                 <Korean>플레이어와 적과의 거리에 영향을 미칩니다. 주의하여 사용하십시오. 성능이 저하된다고 생각되면 더 낮은 거리로 설정하십시오.</Korean>
+                <Spanish>Afecta a la distancia del jugador a la que aparecerá el enemigo. Úsalo con precaución. Bájalo si notas poco rendimiento.</Spanish>
                 <French>Affecte la distance à laquelle l'ennemi apparaîtra par rapport au joueur. A utiliser avec précaution. Réglez-le sur des distances plus faibles si vous avez l'impression d'avoir de faibles performances.</French>
                 <Turkish>Düşmanların oyuncudan ne kadar uzaklıkta ortaya çıkacağını etkiler. Bunu dikkatli kullanın. Performansınızın düşük olduğunu hissediyorsanız daha kısa mesafelere ayarlayın.</Turkish>
             </Key>
@@ -11737,6 +11752,7 @@
                 <Chinesesimp>Antistasi Ultimate - %1,\n 版本: %2,\n 解锁武器数量: %3,\n 是否限制快速旅行: %4,\n GC之后经过的时间: %5</Chinesesimp>
                 <French>Antistasi Ultimate - %1,\n Version: %2,\n Nombre d'armes à débloquer: %3,\n Voyage rapide limité : %4\n Temps écoulé depuis le nettoyage: %5</French>
                 <Korean>안티스타시 플러스 - %1,\n 버전: %2,\n 무기 언락 수: %3,\n 빠른 이동 제한: %4,\n 쓰레기 청소 이후 지난 시간: %5</Korean>
+                <Spanish>Antistasi Ultimate - %1,\nVersión: %2,\nArmas necesarias para desbloquear: %3,\nViaje rápido limitado: %4,\nTiempo desde la última limpieza: %5</Spanish>
                 <Turkish>Antistasi Ultimate - %1,\n Sürüm: %2,\n Silah Kilit Açma Sayısı: %3,\n Sınırlı Hızlı Seyahat: %4,\n GC'den Beri Geçen Süre: %5</Turkish>
             </Key>
             <Key ID="STR_commander_menu_skill_level_title">
@@ -11744,6 +11760,7 @@
                 <Russian>Уровень навыков %1: %2/%3</Russian>
                 <Chinesesimp>%1 技能等级：%2/%3</Chinesesimp>
                 <Korean>%1 숙련도 레벨: %2/%3</Korean>
+                <Spanish>Nivel de habilidad de %1: %2/%3</Spanish>
                 <French>%1 Niveau de compétence : %2/%3</French>
                 <Turkish>%1 Yetenek Seviyesi: %2/%3</Turkish>
             </Key>
@@ -11752,6 +11769,7 @@
                 <Russian>СЛУЧАЙНАЯ УНИФОРМА</Russian>
                 <Chinesesimp>随机制服</Chinesesimp>
                 <Korean>군복 랜덤화</Korean>
+                <Spanish>ALEATORIZAR UNIFORMES</Spanish>
                 <French>UNIFORMES ALÉATOIRES</French>
                 <Turkish>RASTGELE ÜNİFORMALAR</Turkish>
             </Key>
@@ -11760,6 +11778,7 @@
                 <Russian>ВКЛ</Russian>
                 <Chinesesimp>开</Chinesesimp>
                 <Korean>켬</Korean>
+                <Spanish>SÍ</Spanish>
                 <French>ON</French>
                 <Turkish>AÇIK</Turkish>
             </Key>
@@ -11768,6 +11787,7 @@
                 <Russian>ВЫКЛ</Russian>
                 <Chinesesimp>关</Chinesesimp>
                 <Korean>끔</Korean>
+                <Spanish>NO</Spanish>
                 <French>OFF</French>
                 <Turkish>KAPALI</Turkish>
             </Key>
@@ -11776,6 +11796,7 @@
                 <Russian>Отключает/включает рандомизацию униформ и небронированных головных уборов в пользовательских снаряжениях повстанцев.</Russian>
                 <Chinesesimp>禁用/启用自定义抵抗军装载的统一和非装甲头饰随机化。</Chinesesimp>
                 <Korean>커스텀 아군 로드아웃에서 유니폼과 비-방탄 헤드기어의 랜덤화를 비활성화/활성화합니다.</Korean>
+                <Spanish>Activa o desactiva la aleatorización de uniformes y tocados sin blindaje en los equipamientos personalizados rebeldes.</Spanish>
                 <French>Désactive ou active l'aléatoire de l'uniforme et du couvre-chef non blindé sur les chargements personnalisés des rebelles.</French>
                 <Turkish>Özel direnişçi teçhizatlarında üniforma ve zırhsız başlık rastgeleleştirmesini açar veya kapatır.</Turkish>
             </Key>
@@ -11784,6 +11805,7 @@
                 <Russian>Глобальные настройки</Russian>
                 <Chinesesimp>全局选项</Chinesesimp>
                 <Korean>글로벌 설정</Korean>
+                <Spanish>Opciones globales</Spanish>
                 <French>Options globales</French>
                 <Turkish>Genel Seçenekler</Turkish>
             </Key>
@@ -11792,6 +11814,7 @@
                 <Russian>Параметры ниже влияют на всех игроков.</Russian>
                 <Chinesesimp>以下选项影响所有玩家。</Chinesesimp>
                 <Korean>아래 옵션은 모든 플레이어에게 적용됩니다.</Korean>
+                <Spanish>Las opciones de abajo afectan a todos los jugadores.</Spanish>
                 <French>Les options ci-dessous concernent tous les joueurs.</French>
                 <Turkish>Aşağıdaki seçenekler tüm oyuncuları etkiler.</Turkish>
             </Key>
@@ -11800,6 +11823,7 @@
                 <Russian>Локальные настройки</Russian>
                 <Chinesesimp>本地选项</Chinesesimp>
                 <Korean>로컬 설정</Korean>
+                <Spanish>Opciones locales</Spanish>
                 <French>Options locales</French>
                 <Turkish>Aşağıdaki seçenekler tüm oyuncuları etkiler.</Turkish>
             </Key>
@@ -11808,6 +11832,7 @@
                 <Russian>Параметры ниже влияют только на вас.</Russian>
                 <Chinesesimp>以下选项仅影响您。</Chinesesimp>
                 <Korean>아래 옵션은 당신에게만 적용됩니다.</Korean>
+                <Spanish>Las opciones de abajo solo te afectan a ti.</Spanish>
                 <French>Les options ci-dessous ne concernent que vous.</French>
                 <Turkish>Aşağıdaki seçenekler sadece sizi etkiler.</Turkish>
             </Key>
@@ -11816,6 +11841,7 @@
                 <Russian>МУЗЫКА</Russian>
                 <Chinesesimp>音乐</Chinesesimp>
                 <Korean>음악</Korean>
+                <Spanish>MÚSICA</Spanish>
                 <French>MUSIQUE</French>
                 <Turkish>MÜZİK</Turkish>
             </Key>
@@ -11824,6 +11850,7 @@
                 <Russian>Выключает/включает ситуативную музыку.</Russian>
                 <Chinesesimp>禁用/启用情境音乐。</Chinesesimp>
                 <Korean>상황에 맞는 음악을 비활성화/활성화합니다.</Korean>
+                <Spanish>Activa o desactiva la música situacional.</Spanish>
                 <French>Désactive/active la musique de situation.</French>
                 <Turkish>Duruma göre değişen müzikleri açar veya kapatır.</Turkish>
             </Key>
@@ -11832,6 +11859,7 @@
                 <Russian>ПОСТОЯННОЕ СОХРАНЕНИЕ</Russian>
                 <Chinesesimp>永久保存</Chinesesimp>
                 <Korean>영구저장</Korean>
+                <Spanish>GUARDADO PERSISTENTE</Spanish>
                 <French>SAUVEGARDE PERSISTANTE</French>
                 <Turkish>KALICI KAYIT</Turkish>
             </Key>
@@ -11839,6 +11867,7 @@
                 <Original>Use this option to save your current game. It does save the most important data in a ""Grand Theft Auto"" way.</Original>
                 <Russian>Используйте эту опцию, чтобы сохранить текущую игру. Сохраняются самые важные данные в стиле «Grand Theft Auto».</Russian>
                 <Korean>현재 게임을 저장하려면 이 옵션을 사용하십시오. ""GTA"" 방식으로 가장 중요한 데이터를 저장합니다.</Korean>
+                <Spanish>Usa esta opción para guardar la partida actual. Guarda los datos más importantes al estilo ""Grand Theft Auto"".</Spanish>
                 <French>Cette option permet de sauvegarder le jeu en cours. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
                 <Chinesesimp>使用此选项可保存当前游戏。它确实以“侠盗猎车手”的方式保存了最重要的数据。</Chinesesimp>
                 <Turkish>Mevcut oyununuzu kaydetmek için bu seçeneği kullanın. En önemli verileri bir ""Grand Theft Auto"" tarzında kaydeder.</Turkish>
@@ -11848,6 +11877,7 @@
                 <Russian>РЕДАКТИРОВАНИЕ ПАРАМЕТРОВ СОХРАНЕНИЯ</Russian>
                 <Chinesesimp>编辑保存参数</Chinesesimp>
                 <Korean>저장 매개변수 편집</Korean>
+                <Spanish>EDITAR PARÁMETROS DEL GUARDADO</Spanish>
                 <French>MODIFIER LES PARAMÈTRES DE SAUVEGARDE</French>
                 <Turkish>KAYIT PARAMETRELERİNİ DÜZENLE</Turkish>
             </Key>
@@ -11855,6 +11885,7 @@
                 <Original>Use this option to edit your current game parameters. Note that not all parameters can be changed in game.</Original>
                 <Russian>Используйте эту опцию для редактирования текущих параметров игры. Обратите внимание, что не все параметры могут быть изменены в игре.</Russian>
                 <Korean>이 옵션을 사용하여 현재 게임 매개 변수를 편집합니다. 게임에서 모든 매개변수를 변경할 수 있는 것은 아닙니다.</Korean>
+                <Spanish>Usa esta opción para editar los parámetros de la partida actual. Ten en cuenta que no todos los parámetros se pueden cambiar en partida.</Spanish>
                 <French>Utilisez cette option pour modifier vos paramètres de jeu actuels. Notez que tous les paramètres ne peuvent pas être modifiés dans le jeu.</French>
                 <Chinesesimp>使用此选项可编辑您当前的游戏参数。请注意，并非所有参数都可以在游戏中更改。</Chinesesimp>
                 <Turkish>Mevcut oyun parametrelerinizi düzenlemek için bu seçeneği kullanın. Bazı parametrelerin oyun içinde değiştirilemeyeceğini unutmayın.</Turkish>
@@ -11864,6 +11895,7 @@
                 <Russian>ПЕРЕКЛЮЧИТЬ РЕЖИМ РАЗРУШЕНИЯ</Russian>
                 <Chinesesimp>切换拆除模式</Chinesesimp>
                 <Korean>철거 모드 전환</Korean>
+                <Spanish>ALTERNAR MODO DE DESMONTAJE</Spanish>
                 <French>ACTIVER/DÉSACTIVER LE MODE DÉMOLITION</French>
                 <Turkish>YIKIM MODUNU AÇ/KAPA</Turkish>
             </Key>
@@ -11872,6 +11904,7 @@
                 <Russian>Режим разрушения позволяет вам уничтожать конструкции, которые вы разместили в штаб-квартире.</Russian>
                 <Chinesesimp>拆除模式允许您摧毁您在总部放置的建筑物。</Chinesesimp>
                 <Korean>철거 모드를 사용하면 본부에 배치한 건축물을 파괴할 수 있습니다.</Korean>
+                <Spanish>El modo de desmontaje te permite destruir las construcciones que has colocado en el CG.</Spanish>
                 <French>Le mode démolition vous permet de détruire les constructions que vous avez placées au QG.</French>
                 <Turkish>Yıkım modu, karargâhta yerleştirdiğiniz yapıları yok etmenizi sağlar.</Turkish>
             </Key>
@@ -11880,6 +11913,7 @@
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
                 <Chinesesimp>检查胜利</Chinesesimp>
                 <Korean>승리 확인</Korean>
+                <Spanish>COMPROBAR VICTORIA</Spanish>
                 <Turkish>ZAFERİ KONTROL ET</Turkish>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button_tooltip">
@@ -11887,6 +11921,7 @@
                 <Russian>Используйте эту опцию, чтобы проверить, выполнили ли вы условия победы, и завершить миссию, если да.</Russian>
                 <Chinesesimp>使用此选项检查您是否已达到胜利条件，如果已达到则结束任务。</Chinesesimp>
                 <Korean>이 옵션을 사용하면 승리 조건을 달성했는지 확인할 수 있으며, 달성했다면 임무를 종료합니다.</Korean>
+                <Spanish>Usa esta opción para comprobar si has cumplido las condiciones de victoria; si es así, termina la misión.</Spanish>
                 <Turkish>Zafer koşullarına ulaşıp ulaşmadığınızı kontrol etmek için bu seçeneği kullanın; ulaştıysanız görevi sonlandırır.</Turkish>
             </Key>
             <Key ID="STR_commander_menu_personal_save_button">
@@ -11894,6 +11929,7 @@
                 <Russian>ЛИЧНОЕ СОХРАНЕНИЕ</Russian>
                 <Chinesesimp>个人存档</Chinesesimp>
                 <Korean>개인 저장</Korean>
+                <Spanish>GUARDADO PERSONAL</Spanish>
                 <French>SAUVEGARDE PERSONNELLE</French>
                 <Turkish>KİŞİSEL KAYIT</Turkish>
             </Key>
@@ -11902,6 +11938,7 @@
                 <Russian>Используйте эту опцию, чтобы сохранить вашего текущего персонажа. Он сохраняет самые важные данные в стиле «Grand Theft Auto».</Russian>
                 <Chinesesimp>使用这个选项来保存你当前的角色。 它以“侠盗猎车手”风格保存最重要的数据。</Chinesesimp>
                 <Korean>현재 캐릭터를 저장하려면 이 옵션을 사용하십시오. ""GTA"" 방식으로 가장 중요한 데이터를 저장합니다.</Korean>
+                <Spanish>Usa esta opción para guardar tu personaje actual. Guarda los datos más importantes al estilo ""Grand Theft Auto"".</Spanish>
                 <French>Cette option permet de sauvegarder votre personnage actuel. Les données les plus importantes sont sauvegardées à la manière de "Grand Theft Auto".</French>
                 <Turkish>Mevcut karakterinizi kaydetmek için bu seçeneği kullanın. En önemli verileri bir ""Grand Theft Auto"" tarzında kaydeder.</Turkish>
             </Key>
@@ -11910,6 +11947,7 @@
                 <Russian>ДЕСАНТИРОВАНИЕ</Russian>
                 <Chinesesimp>空投伞降</Chinesesimp>
                 <Korean>공수강하</Korean>
+                <Spanish>PARADROP</Spanish>
                 <French>PARADROP</French>
                 <Turkish>PARAŞÜTLE ATLAMA</Turkish>
             </Key>
@@ -11918,6 +11956,7 @@
                 <Russian>Чтобы принять участие в парашютном десантировании, вы должны находиться в штаб-квартире повстанцев и включить эту кнопку-переключатель, чтобы иметь возможность переместиться на самолёт.</Russian>
                 <Chinesesimp>要参加空投伞降，您必须在抵抗军总部并打开此切换按钮才能转移到飞机上。</Chinesesimp>
                 <Korean>공수강하에 참여하려면 아군 본부에 있어야 하며 항공기로 이동하려면 이 버튼을 켜야 합니다.</Korean>
+                <Spanish>Para participar en el salto en paracaídas tienes que estar en el CG rebelde y activar este interruptor para que te trasladen a la aeronave.</Spanish>
                 <French>Pour participer au parachutage, vous devez être au QG des rebelles et activer ce bouton pour pouvoir être transféré dans l'avion.</French>
                 <Turkish>Paraşütle atlamaya katılmak için direnişçi karargâhında bulunmalı ve uçağa transfer olmak için bu düğmeyi açmalısınız.</Turkish>
             </Key>
@@ -11926,6 +11965,7 @@
                 <Russian>Информация об игре</Russian>
                 <Chinesesimp>游戏信息</Chinesesimp>
                 <Korean>게임 정보</Korean>
+                <Spanish>Información de la partida</Spanish>
                 <French>Info jeu</French>
                 <Turkish>Oyun Bilgisi</Turkish>
             </Key>
@@ -11934,6 +11974,7 @@
                 <Russian>Постоянные участники сервера</Russian>
                 <Chinesesimp>服务器成员</Chinesesimp>
                 <Korean>서버 멤버</Korean>
+                <Spanish>Miembros del servidor</Spanish>
                 <French>Membres du serveur</French>
                 <Turkish>Sunucu Üyeleri</Turkish>
             </Key>
@@ -11942,6 +11983,7 @@
                 <Russian>Функция постоянных участников сервера отключена.</Russian>
                 <Chinesesimp>服务器会员功能被禁用</Chinesesimp>
                 <Korean>서버 멤버 기능을 사용할 수 없습니다.</Korean>
+                <Spanish>La función de miembros del servidor está desactivada.</Spanish>
                 <French>La fonction Membres du serveur est désactivée.</French>
                 <Turkish>Sunucu Üyeleri özelliği devre dışı bırakıldı.</Turkish>
             </Key>
@@ -11950,6 +11992,7 @@
                 <Russian>%1Гости: %2</Russian>
                 <Chinesesimp>%1游客：%2</Chinesesimp>
                 <Korean>%1 게스트: %2</Korean>
+                <Spanish>%1Invitados: %2</Spanish>
                 <French>%1Invités: %2</French>
                 <Turkish>%1Misafirler: %2</Turkish>
             </Key>
@@ -11958,6 +12001,7 @@
                 <Russian>Повтор задания «Найти торговца оружием»</Russian>
                 <Chinesesimp>重做寻找军火商任务</Chinesesimp>
                 <Korean>암거래상 찾기 과업 재실행</Korean>
+                <Spanish>Rehacer la tarea de encontrar al traficante de armas</Spanish>
                 <French>Refaire la tâche "Trouver un marchand d'armes"</French>
                 <Turkish>Silah Tüccarını Bul Görevini Yinele</Turkish>
             </Key>
@@ -11966,6 +12010,7 @@
                 <Russian>Откатывает состояние торговца оружием и позволяет переделать задание о его местонахождении. Помогает в ситуациях, когда торговец оружием застрял в каком-то нежелательном месте. Стоит 1000 денег, чтобы предотвратить использование.</Russian>
                 <Chinesesimp>重置军火商的状态，并允许重做关于军火商的下落任务。在军火商被困在不想要的地方的情况下有所帮助。要花1000块才能使用。</Chinesesimp>
                 <Korean>암거래상의 상태를 롤백하고 그의 행방에 대한 과업을 다시 수행할 수 있도록 허용합니다. 암거래상이 원치 않는 장소에 갇혔을 때 도움이 됩니다. 악용 방지를 위해 1000 자금을 내야 합니다.</Korean>
+                <Spanish>Revierte el estado del traficante de armas y permite rehacer la tarea sobre su paradero. Ayuda cuando el traficante se queda atascado en un sitio indeseado. Cuesta 1000 para evitar abusos.</Spanish>
                 <French>Reprend l'état du marchand d'armes et permet de refaire une tâche sur sa localisation. Aide dans les situations où le marchand d'armes est coincé dans un endroit indésirable. Coûte 1000 pour empêcher l'exploitation.</French>
                 <Turkish>Silah Tüccarının durumunu geri sarar ve nerede olduğuna dair görevin yeniden yapılmasına olanak tanır. Silah Tüccarının istenmeyen bir konumda takılı kaldığı durumlarda yardımcı olur. Kötüye kullanımı önlemek için 1000 birim maliyeti vardır.</Turkish>
             </Key>
@@ -11975,6 +12020,7 @@
                 <Russian>ПОДДЕРЖКА</Russian>
                 <Chinesesimp>支援</Chinesesimp>
                 <Korean>지원</Korean>
+                <Spanish>SOPORTE</Spanish>
                 <French>SUPPORT</French>
                 <Turkish>DESTEK</Turkish>
             </Key>
@@ -11983,6 +12029,7 @@
                 <Russian>УПРАВЛЕНИЕ ГАРНИЗОНАМИ</Russian>
                 <Chinesesimp>驻军管理</Chinesesimp>
                 <Korean>주둔지 관리</Korean>
+                <Spanish>GESTIÓN DE GUARNICIONES</Spanish>
                 <French>GESTION DE GARNISON</French>
                 <Turkish>GARNİZON YÖNETİMİ</Turkish>
             </Key>
@@ -11991,6 +12038,7 @@
                 <Russian>ШТАБ-КВАРТИРА %1</Russian>
                 <Chinesesimp>总部 %1</Chinesesimp>
                 <Korean>%1의 본부</Korean>
+                <Spanish>CG DE %1</Spanish>
                 <French>%1 HQ</French>
                 <Turkish>%1 KARARGÂH</Turkish>
             </Key>
@@ -11999,6 +12047,7 @@
                 <Russian>ОКРУЖАЮЩАЯ СРЕДА</Russian>
                 <Chinesesimp>周围环境</Chinesesimp>
                 <Korean>환경</Korean>
+                <Spanish>ENTORNO</Spanish>
                 <French>ENVIRONNEMENT</French>
                 <Turkish>ÇEVRE</Turkish>
             </Key>
@@ -12007,6 +12056,7 @@
                 <Russian>ИГРОВЫЕ НАСТРОЙКИ</Russian>
                 <Chinesesimp>游戏选项</Chinesesimp>
                 <Korean>게임 설정</Korean>
+                <Spanish>OPCIONES DE PARTIDA</Spanish>
                 <French>OPTIONS DE JEU</French>
                 <Turkish>OYUN SEÇENEKLERİ</Turkish>
             </Key>
@@ -12015,6 +12065,7 @@
                 <Russian>ОБ ИГРЕ</Russian>
                 <Chinesesimp>关于</Chinesesimp>
                 <Korean>정보</Korean>
+                <Spanish>ACERCA DE</Spanish>
                 <French>À PROPOS</French>
                 <Turkish>HAKKINDA</Turkish>
             </Key>
@@ -12023,6 +12074,7 @@
                 <Russian>Выберите тип поддержки, нажмите на место на карте и нажмите Вызвать Поддержку. Для некоторых вызовов требуется 1 захваченный аэропорт. Очки поддержки будут начисляться автоматически начиная с 3-го уровня войны.</Russian>
                 <Chinesesimp>选择支援类型，点击地图上所需的位置，然后按启动。有些呼叫需要占领一个机场。战争等级3开始支援点数将自动增加。</Chinesesimp>
                 <Korean>지원 유형을 선택하고 지도에서 원하는 위치를 클릭한 후 실행을 누르십시오. 일부 호출에는 점령한 공항이 최소 1개 이상이 필요합니다. 지원 포인트는 전쟁 레벨 3에 자동으로 획득합니다.</Korean>
+                <Spanish>Selecciona el tipo de soporte, haz clic en la posición deseada del mapa y pulsa Lanzar. Algunas peticiones requieren 1 aeropuerto capturado. Los puntos de soporte se ganan automáticamente a partir del Nivel de Guerra 3.</Spanish>
                 <French>Sélectionnez le type de support, cliquez sur la position souhaitée sur la carte et appuyez sur Lancer. Certains appels nécessitent la capture d'un aéroport. Les points de soutien s'accumulent automatiquement à partir du niveau de guerre 3.</French>
                 <Turkish>Destek türünü seçin, haritada istediğiniz konuma tıklayın ve Başlat'a basın. Bazı çağrılar ele geçirilmiş 1 havalimanı gerektirir. Destek puanları, Savaş Seviyesi 3'ten itibaren otomatik olarak kazanılacaktır.</Turkish>
             </Key>
@@ -12031,6 +12083,7 @@
                 <Russian>Стоимость вызова:</Russian>
                 <Chinesesimp>费用</Chinesesimp>
                 <Korean>가격</Korean>
+                <Spanish>Costes</Spanish>
                 <French>Coûts</French>
                 <Turkish>Maliyetler</Turkish>
             </Key>
@@ -12039,6 +12092,7 @@
                 <Russian>Доступные очки поддержки: </Russian>
                 <Chinesesimp>可用的支援点：</Chinesesimp>
                 <Korean>사용 가능한 지원 포인트: </Korean>
+                <Spanish>Puntos de soporte disponibles: </Spanish>
                 <French>Points d'appui disponibles:</French>
                 <Turkish>Mevcut Destek Puanları: </Turkish>
             </Key>
@@ -12047,6 +12101,7 @@
                 <Russian>Доступные авиаудары:</Russian>
                 <Chinesesimp>可用空袭：</Chinesesimp>
                 <Korean>사용 가능한 공습 포인트: </Korean>
+                <Spanish>Ataques aéreos disponibles:</Spanish>
                 <French>Frappes aériennes disponibles:</French>
                 <Turkish>Mevcut Hava Saldırıları:</Turkish>
             </Key>
@@ -12055,6 +12110,7 @@
                 <Russian>Захваченные авиабазы: </Russian>
                 <Chinesesimp>占领的空军基地：</Chinesesimp>
                 <Korean>점령한 공군 기지: </Korean>
+                <Spanish>Bases aéreas capturadas: </Spanish>
                 <French>Bases aériennes capturées:</French>
                 <Turkish>Ele Geçirilen Hava Üsleri: </Turkish>
             </Key>
@@ -12063,6 +12119,7 @@
                 <Russian>Сбросить</Russian>
                 <Chinesesimp>重置</Chinesesimp>
                 <Korean>초기화</Korean>
+                <Spanish>Restablecer</Spanish>
                 <French>Remise à zéro</French>
                 <Turkish>Sıfırla</Turkish>
             </Key>
@@ -12071,6 +12128,7 @@
                 <Russian>Вызвать</Russian>
                 <Chinesesimp>启动</Chinesesimp>
                 <Korean>발사</Korean>
+                <Spanish>Lanzar</Spanish>
                 <French>Lancement</French>
                 <Turkish>Başlat</Turkish>
             </Key>
@@ -12079,6 +12137,7 @@
                 <Russian>Стоимость: %1 очков поддержки</Russian>
                 <Chinesesimp>花费%1支援点</Chinesesimp>
                 <Korean>%1 지원 포인트를 소모합니다</Korean>
+                <Spanish>Cuesta %1 puntos de soporte</Spanish>
                 <French>Coûts %1 points de support</French>
                 <Turkish>%1 destek puanı maliyeti</Turkish>
             </Key>
@@ -12087,6 +12146,7 @@
                 <Russian>Стоимость: %1 очков поддержки и %2%3</Russian>
                 <Chinesesimp>花费 %1 支援点和 %2%3</Chinesesimp>
                 <Korean>%1 지원 포인트와 %2%3를 소모합니다</Korean>
+                <Spanish>Cuesta %1 puntos de soporte y %2%3</Spanish>
                 <French>Coûts %1 points de support et %2%3</French>
                 <Turkish>%1 destek puanı ve %2%3 maliyeti</Turkish>
             </Key>
@@ -12095,6 +12155,7 @@
                 <Russian>Стоимость: 1 авиаудар</Russian>
                 <Chinesesimp>花费 1 空袭</Chinesesimp>
                 <Korean>1 공습 포인트를 소모합니다</Korean>
+                <Spanish>Cuesta 1 ataque aéreo</Spanish>
                 <French>Coûts 1 frappe aérienne</French>
                 <Turkish>1 Hava Saldırısı maliyeti</Turkish>
             </Key>
@@ -12103,6 +12164,7 @@
                 <Russian>Выберите тип аванпоста, нажмите кнопку «Создать» и щелкните желаемое место на карте.</Russian>
                 <Chinesesimp>选择哨站类型，点击“创建”按钮，在地图上点击需要的位置。</Chinesesimp>
                 <Korean>전초 기지 유형을 선택하고 설립 버튼을 누른 다음 지도에 원하는 위치를 클릭하십시오.</Korean>
+                <Spanish>Selecciona el tipo de puesto, pulsa el botón Establecer y haz clic en la posición deseada del mapa.</Spanish>
                 <French>Sélectionnez le type d'avant-poste, appuyez sur le bouton Établir et cliquez sur la position souhaitée sur la carte.</French>
                 <Turkish>Karakol türünü seçin, Kur düğmesine basın ve harita üzerinde istediğiniz konuma tıklayın.</Turkish>
             </Key>
@@ -12111,6 +12173,7 @@
                 <Russian>Стоимость: %1 ЛР и %2%3</Russian>
                 <Chinesesimp>花费 %1 人力 和 %2%3</Chinesesimp>
                 <Korean>%1 인력과 %2%3를 소모합니다</Korean>
+                <Spanish>Cuesta %1 RH y %2%3</Spanish>
                 <French>Coûts %1 HR et %2%3</French>
                 <Turkish>%1 İK ve %2%3 maliyeti</Turkish>
             </Key>
@@ -12119,6 +12182,7 @@
                 <Russian>Отменить задачу</Russian>
                 <Chinesesimp>取消任务</Chinesesimp>
                 <Korean>과업 취소</Korean>
+                <Spanish>Cancelar tarea</Spanish>
                 <French>Annuler la tâche</French>
                 <Turkish>Görevi İptal Et</Turkish>
             </Key>
@@ -12127,6 +12191,7 @@
                 <Russian>Создать</Russian>
                 <Chinesesimp>创建</Chinesesimp>
                 <Korean>설립</Korean>
+                <Spanish>Establecer</Spanish>
                 <French>Établir</French>
                 <Turkish>Kur</Turkish>
             </Key>
@@ -12135,6 +12200,7 @@
                 <Russian>Создать минное поле</Russian>
                 <Chinesesimp>制造雷区</Chinesesimp>
                 <Korean>지뢰지대 생성</Korean>
+                <Spanish>Crear campo de minas</Spanish>
                 <French>Créer un champ de mines</French>
                 <Turkish>Mayın Tarlası Oluştur</Turkish>
             </Key>
@@ -12143,6 +12209,7 @@
                 <Russian>Параметры окружающей среды</Russian>
                 <Chinesesimp>环境选项</Chinesesimp>
                 <Korean>환경 설정</Korean>
+                <Spanish>Opciones de entorno</Spanish>
                 <French>Options d'environnement</French>
                 <Turkish>Çevre Seçenekleri</Turkish>
             </Key>
@@ -12151,6 +12218,7 @@
                 <Russian>Используйте параметры ниже, чтобы настроить условия окружающей среды.</Russian>
                 <Chinesesimp>使用以下选项调整环境条件。</Chinesesimp>
                 <Korean>환경 조건을 조정하려면 아래 옵션을 사용하십시오.</Korean>
+                <Spanish>Usa las opciones de abajo para ajustar las condiciones ambientales.</Spanish>
                 <French>Utilisez les options ci-dessous pour régler les conditions environnementales.</French>
                 <Turkish>Çevresel koşullara ince ayar yapmak için aşağıdaki seçenekleri kullanın.</Turkish>
             </Key>
@@ -12161,6 +12229,7 @@
                 <Russian>Поставить строение</Russian>
                 <Chinesesimp>建造建筑物</Chinesesimp>
                 <Korean>건축물 건설</Korean>
+                <Spanish>Levantar construcción</Spanish>
                 <French>Construire une structure</French>
                 <Turkish>İnşa Et</Turkish>
             </Key>
@@ -12169,6 +12238,7 @@
                 <Russian>Убрать строение</Russian>
                 <Chinesesimp>移除建筑物</Chinesesimp>
                 <Korean>건축물 제거</Korean>
+                <Spanish>Eliminar construcción</Spanish>
                 <French>Construire une structure</French>
                 <Turkish>Yapıyı Kaldır</Turkish>
             </Key>
@@ -12177,6 +12247,7 @@
                 <Russian>Убрать строение?</Russian>
                 <Chinesesimp>是否拆除建筑？</Chinesesimp>
                 <Korean>건축물을 제거합니까?</Korean>
+                <Spanish>¿Eliminar construcción?</Spanish>
                 <French>Supprimer la structure ?</French>
                 <Turkish>Yapı kaldırılsın mı?</Turkish>
             </Key>
@@ -12185,6 +12256,7 @@
                 <Russian>Купить</Russian>
                 <Chinesesimp>购买</Chinesesimp>
                 <Korean>구입</Korean>
+                <Spanish>Comprar</Spanish>
                 <French>Acheter</French>
                 <Turkish>Satın Al</Turkish>
             </Key>
@@ -12193,6 +12265,7 @@
                 <Russian>Цена</Russian>
                 <Chinesesimp>价格</Chinesesimp>
                 <Korean>가격</Korean>
+                <Spanish>Precio</Spanish>
                 <French>Prix</French>
                 <Turkish>Fiyat</Turkish>
             </Key>
@@ -12203,6 +12276,7 @@
                 <Russian>Опции лечения</Russian>
                 <Chinesesimp>治疗选择</Chinesesimp>
                 <Korean>치료 설정</Korean>
+                <Spanish>Opciones de curación</Spanish>
                 <French>Options de soins</French>
                 <Turkish>İyileştirme Seçenekleri</Turkish>
             </Key>
@@ -12211,6 +12285,7 @@
                 <Russian>Автолечение</Russian>
                 <Chinesesimp>自动治疗</Chinesesimp>
                 <Korean>자동 치료</Korean>
+                <Spanish>Autocuración</Spanish>
                 <French>Guérison automatique</French>
                 <Turkish>Otomatik İyileştirme</Turkish>
             </Key>
@@ -12219,6 +12294,7 @@
                 <Russian>Гарнизоны / отряды</Russian>
                 <Chinesesimp>驻军部队/小队</Chinesesimp>
                 <Korean>유닛/분대 주둔</Korean>
+                <Spanish>Guarnecer unidades / escuadras</Spanish>
                 <French>Unités de garnison / escouades</French>
                 <Turkish>Garnizon Birimleri / Mangaları</Turkish>
             </Key>
@@ -12227,6 +12303,7 @@
                 <Russian>Добавляет выбранных бойцов или отряды в гарнизон, указанный на карте.</Russian>
                 <Chinesesimp>将选定的单位或小队添加到地图选定的驻军。</Chinesesimp>
                 <Korean>선택한 유닛 또는 분대를 지도에 선택한 주둔지에 추가합니다.</Korean>
+                <Spanish>Añade las unidades o escuadras seleccionadas a una guarnición elegida en el mapa.</Spanish>
                 <French>Ajoute des unités ou des escouades sélectionnées à une garnison sélectionnée sur la carte.</French>
                 <Turkish>Seçili birimleri veya mangaları haritada seçilen bir garnizona ekler.</Turkish>
             </Key>
@@ -12235,6 +12312,7 @@
                 <Russian>Распустить бойцов/отряды</Russian>
                 <Chinesesimp>解散单位/小队</Chinesesimp>
                 <Korean>유닛/분대 해산</Korean>
+                <Spanish>Licenciar unidades / escuadra</Spanish>
                 <French>Dissolution d"unités/divisions</French>
                 <Turkish>Birimleri / Mangayı Dağıt</Turkish>
             </Key>
@@ -12243,6 +12321,7 @@
                 <Russian>Распустите выбранных бойцов или отряды, вернув их стоимость в соответствующий пул ресурсов.</Russian>
                 <Chinesesimp>&gt;解散选定的单位或小队，将他们的费用返还到相应的资源池中。</Chinesesimp>
                 <Korean>선택한 유닛 또는 분대를 해산시키고 비용을 적절한 자원으로 복구합니다.</Korean>
+                <Spanish>Licencia las unidades o escuadras seleccionadas y devuelve su coste a la reserva de recursos correspondiente.</Spanish>
                 <French>Dissoudre les unités ou escouades sélectionnées, en remettant leur coût dans la réserve de ressources appropriée.</French>
                 <Turkish>Seçili birimleri veya mangaları dağıtarak maliyetlerini ilgili kaynak havuzuna geri aktarır.</Turkish>
             </Key>
@@ -12251,6 +12330,7 @@
                 <Russian>Меню артиллерийской поддержки</Russian>
                 <Chinesesimp>炮兵支援菜单</Chinesesimp>
                 <Korean>포병 지원 메뉴</Korean>
+                <Spanish>Menú de soporte de artillería</Spanish>
                 <French>Menu de soutien d'artillerie</French>
                 <Turkish>Topçu Desteği Menüsü</Turkish>
             </Key>
@@ -12259,6 +12339,7 @@
                 <Russian>Открывает меню миномётной поддержки, которое позволяет игроку задавать цели для миномётных расчётов.</Russian>
                 <Chinesesimp>打开迫击炮支援菜单，允许玩家为迫击炮组设定目标。</Chinesesimp>
                 <Korean>플레이어가 즉각적인 타격을 위한 포격 목표를 설정할 수 있는 박격포 연발포격 메뉴를 엽니다.</Korean>
+                <Spanish>Abre el menú de descarga de morteros, que permite fijar un objetivo de artillería para un ataque inmediato.</Spanish>
                 <French>Ouvre le menu de barrage de mortier qui permet au joueur de définir une cible d'artillerie pour une frappe immédiate.</French>
                 <Turkish>Oyuncunun anında vuruş için topçu hedefi belirlemesine olanak tanıyan havan salvosu menüsünü açar.</Turkish>
             </Key>
@@ -12267,6 +12348,7 @@
                 <Russian>Передача командования (НС)</Russian>
                 <Chinesesimp>高级指挥转移</Chinesesimp>
                 <Korean>하이 커맨드 전송</Korean>
+                <Spanish>Transferencia al Alto Mando</Spanish>
                 <French>Transfert du haut commandement</French>
                 <Turkish>Yüksek Komuta Transferi</Turkish>
             </Key>
@@ -12275,6 +12357,7 @@
                 <Russian>Передаёт ИИ-бойцов из вашего отряда в подчинение главнокомандующего, позволяя их использовать как отдельный отряд.</Russian>
                 <Chinesesimp>将 AI 士兵从你的小队传递到高级指挥菜单，允许他们作为一个单独的小队使用。</Chinesesimp>
                 <Korean>현재 인공지능 분대원을 하이 커맨드로 이동하여 지휘관이 별도의 분대로 사용할 수 있도록 합니다.</Korean>
+                <Spanish>Transfiere a tus compañeros de escuadra IA al Alto Mando, para que el comandante pueda usarlos como escuadra independiente.</Spanish>
                 <French>Transfère vos coéquipiers IA actuels vers le Haut Commandement, leur permettant d'être utilisés par le commandant en tant qu'escouade séparée.</French>
                 <Turkish>Mevcut YZ manga arkadaşlarınızı Yüksek Komuta'ya aktararak komutan tarafından ayrı bir manga olarak kullanılmalarına olanak tanır.</Turkish>
             </Key>
@@ -12283,6 +12366,7 @@
                 <Russian>Автоперевооружение / лутинг</Russian>
                 <Chinesesimp>自动武装/掠夺</Chinesesimp>
                 <Korean>자동 재무장/노획</Korean>
+                <Spanish>Rearme / saqueo automático</Spanish>
                 <French>Réarmement automatique de l'IA / Prise de butin</French>
                 <Turkish>Otomatik Yeniden Kuşan / Yağma</Turkish>
             </Key>
@@ -12291,6 +12375,7 @@
                 <Russian>ИИ-бойцы будут искать себе лучшее оружие, броню и шлемы на поле боя. Если они сидят в технике, они будут складировать в машину всё, что собрали. Если нет, то они будут экипировать найденное снаряжение.</Russian>
                 <Chinesesimp>AI会搜索更好的武器、背心、头盔等。 如果他们在车里，他们只会把搜集到的东西储存在车里。 如果没有，他们会装备他们。</Chinesesimp>
                 <Korean>인공지능은 더 나은 무기, 조끼, 헬멧 등을 찾을 것입니다. 만약 그들이 차 안에 있다면 그들은 그들이 노획한 것을 차 안에 저장할 것입니다. 만약 그렇지 않다면, 그들은 그것들을 장착할 것입니다.</Korean>
+                <Spanish>La IA buscará mejores armas, chalecos, cascos, etc. Si van en un vehículo, guardarán lo que recojan en él. Si no, se lo equiparán.</Spanish>
                 <French>L'IA recherchera de meilleures armes, gilets, casques, etc. Si elle se trouve dans un véhicule, elle stockera simplement ce qu'elle a récupéré dans le véhicule. Sinon, elle les équipera.</French>
                 <Turkish>Yapay zeka daha iyi silahlar, yelekler, kasklar vb. arayacaktır. Eğer bir araçtalarsa, topladıkları ganimetleri araçta depolarlar. Değillerse, onları kuşanırlar.</Turkish>
             </Key>
@@ -12299,6 +12384,7 @@
                 <Russian>Статус отрядов.</Russian>
                 <Chinesesimp>小队状况</Chinesesimp>
                 <Korean>분대 상태입니다.</Korean>
+                <Spanish>Estado de las escuadras.</Spanish>
                 <French>Statut de l'équipe.</French>
                 <Turkish>Manga durumları.</Turkish>
             </Key>
@@ -12307,6 +12393,7 @@
                 <Russian>Придать технику</Russian>
                 <Chinesesimp>分配小队车辆</Chinesesimp>
                 <Korean>차량 할당</Korean>
+                <Spanish>Asignar vehículo</Spanish>
                 <French>Attribuer un véhicule</French>
                 <Turkish>Araç Ata</Turkish>
             </Key>
@@ -12315,6 +12402,7 @@
                 <Russian>Машина, на которую вы смотрите, будет придана отряду.</Russian>
                 <Chinesesimp>将您正在看的车辆将交给小队。</Chinesesimp>
                 <Korean>차량을 보고 선택된 분대에 차량을 할당하여 사용합니다.</Korean>
+                <Spanish>Mira a un vehículo y asígnalo a la escuadra seleccionada para su uso.</Spanish>
                 <French>Regarder un véhicule et l'assigner à l'escouade sélectionnée pour son utilisation.</French>
                 <Turkish>Bir araca bakın ve onu kullanması için seçili mangaya atayın.</Turkish>
             </Key>
@@ -12323,6 +12411,7 @@
                 <Russian>Спешиться / Сесть в технику</Russian>
                 <Chinesesimp>上 / 下 载具</Chinesesimp>
                 <Korean>고정/해제</Korean>
+                <Spanish>Subir / bajar del vehículo</Spanish>
                 <French>Monter / Descendre du véhicule</French>
                 <Turkish>Araca Bin / Araçtan İn</Turkish>
             </Key>
@@ -12331,6 +12420,7 @@
                 <Russian>Сесть / Вылезти</Russian>
                 <Chinesesimp>上 / 下 </Chinesesimp>
                 <Korean>차량에 고정화기를 고정/해제합니다.</Korean>
+                <Spanish>Subir / bajar</Spanish>
                 <French>Monter / Descendre</French>
                 <Turkish>Bin / İn</Turkish>
             </Key>
@@ -12341,6 +12431,7 @@
                 <Russian>Миссии по устранению</Russian>
                 <Chinesesimp>暗杀任务</Chinesesimp>
                 <Korean>암살 임무</Korean>
+                <Spanish>Misión de asesinato</Spanish>
                 <French>Mission d'assassinat</French>
                 <Turkish>Suikast Görevi</Turkish>
             </Key>
@@ -12349,6 +12440,7 @@
                 <Russian>Засады на конвои</Russian>
                 <Chinesesimp>车队伏击</Chinesesimp>
                 <Korean>호송대 매복</Korean>
+                <Spanish>Emboscada a convoy</Spanish>
                 <French>Embuscade de convoi</French>
                 <Turkish>Konvoy Pususu</Turkish>
             </Key>
@@ -12357,6 +12449,7 @@
                 <Russian>Миссии по уничтожению</Russian>
                 <Chinesesimp>摧毁任务</Chinesesimp>
                 <Korean>파괴 임무</Korean>
+                <Spanish>Misiones de destrucción</Spanish>
                 <French>Missions de destruction</French>
                 <Turkish>İmha Görevleri</Turkish>
             </Key>
@@ -12365,6 +12458,7 @@
                 <Russian>Логистические миссии</Russian>
                 <Chinesesimp>后勤任务</Chinesesimp>
                 <Korean>병참 임무</Korean>
+                <Spanish>Misiones de logística</Spanish>
                 <French>Missions logistiques</French>
                 <Turkish>Lojistik Görevleri</Turkish>
             </Key>
@@ -12373,6 +12467,7 @@
                 <Russian>Спасательные миссии</Russian>
                 <Chinesesimp>救援任务</Chinesesimp>
                 <Korean>구출 임무</Korean>
+                <Spanish>Misiones de rescate</Spanish>
                 <French>Missions de sauvetage</French>
                 <Turkish>Kurtarma Görevleri</Turkish>
             </Key>
@@ -12381,6 +12476,7 @@
                 <Russian>Миссии по снабжению</Russian>
                 <Chinesesimp>补给任务</Chinesesimp>
                 <Korean>보급 임무</Korean>
+                <Spanish>Misiones de suministro</Spanish>
                 <French>Missions d'approvisionnement</French>
                 <Turkish>İkmal Görevleri</Turkish>
             </Key>
@@ -12389,6 +12485,7 @@
                 <Russian>Миссии по захвату</Russian>
                 <Chinesesimp>征服任务</Chinesesimp>
                 <Korean>점령 임무</Korean>
+                <Spanish>Misiones de conquista</Spanish>
                 <French>Missions de conquête</French>
                 <Turkish>Kuşatma Görevleri</Turkish>
             </Key>
@@ -12397,6 +12494,7 @@
                 <Russian>Случайные миссии</Russian>
                 <Chinesesimp>随机任务</Chinesesimp>
                 <Korean>랜덤 임무</Korean>
+                <Spanish>Misiones aleatorias</Spanish>
                 <French>Missions aléatoires</French>
                 <Turkish>Rastgele Görevler</Turkish>
             </Key>
@@ -12407,6 +12505,7 @@
                 <Russian>Настроить снаряжение повстанцев</Russian>
                 <Chinesesimp>自定义抵抗军装备</Chinesesimp>
                 <Korean>반군 로드아웃 설정</Korean>
+                <Spanish>Configurar equipamientos rebeldes</Spanish>
                 <French>Définir les équipements des rebelles</French>
                 <Turkish>Direnişçi teçhizatlarını ayarla</Turkish>
             </Key>
@@ -12415,6 +12514,7 @@
                 <Russian>Пользовательский вариант снаряжения не был найден.</Russian>
                 <Chinesesimp>没有找到自定义装备</Chinesesimp>
                 <Korean>사용자 지정 로드아웃을 찾을 수 없습니다.</Korean>
+                <Spanish>No se ha encontrado ningún equipamiento personalizado.</Spanish>
                 <French>Aucun chargement personnalisé n'a été trouvé.</French>
                 <Turkish>Özel teçhizat bulunamadı.</Turkish>
             </Key>
@@ -12423,6 +12523,7 @@
                 <Russian>Пользовательский вариант снаряжения был очищен, бойцы этого класса будут использовать рандомизированное снаряжение.</Russian>
                 <Chinesesimp>自定义装备已清除，该类型的单位将使用随机装备。</Chinesesimp>
                 <Korean>사용자 지정 로드아웃이 지워졌으며, 이 병과의 유닛은 무작위 로드아웃을 사용합니다.</Korean>
+                <Spanish>Se ha borrado el equipamiento personalizado; las unidades de esta clase usarán un equipamiento aleatorio.</Spanish>
                 <French>Le chargement personnalisé a été supprimé, les unités de cette classe utiliseront le chargement aléatoire.</French>
                 <Turkish>Özel teçhizat temizlendi, bu sınıftaki birimler rastgele teçhizat kullanacak.</Turkish>
             </Key>
@@ -12431,6 +12532,7 @@
                 <Russian>Сохранить</Russian>
                 <Chinesesimp>保存</Chinesesimp>
                 <Korean>저장</Korean>
+                <Spanish>Guardar</Spanish>
                 <French>Sauvegarder</French>
                 <Turkish>Kaydet</Turkish>
             </Key>
@@ -12439,6 +12541,7 @@
                 <Russian>Только бесконечные предметы могут быть выбраны.</Russian>
                 <Chinesesimp>只有解锁的物品才能使用。</Chinesesimp>
                 <Korean>언락된 아이템만 사용할 수 있습니다.</Korean>
+                <Spanish>Solo se pueden usar objetos desbloqueados.</Spanish>
                 <French>Seuls les objets déverrouillés peuvent être utilisés.</French>
                 <Turkish>Sadece kilidi açılmış eşyalar kullanılabilir.</Turkish>
             </Key>
@@ -12447,6 +12550,7 @@
                 <Russian>снаряжение было сохранено. </Russian>
                 <Chinesesimp>以保存装载</Chinesesimp>
                 <Korean>로드아웃이 저장되었습니다.</Korean>
+                <Spanish>el equipamiento se ha guardado.</Spanish>
                 <French>l'équipement a été sauvegardé</French>
                 <Turkish>Teçhizat kaydedildi.</Turkish>
             </Key>
@@ -12455,6 +12559,7 @@
                 <Russian>Арсенал снаряжения</Russian>
                 <Chinesesimp>装备军械库</Chinesesimp>
                 <Korean>아스널에서 로드아웃을 지정합니다</Korean>
+                <Spanish>Arsenal de equipamientos</Spanish>
                 <French>Equipement d'Arsenal</French>
                 <Turkish>Teçhizat Cephaneliği</Turkish>
             </Key>
@@ -12463,6 +12568,7 @@
                 <Russian>Сохраняет снаряжение для будущего использования этим классом пехоты.</Russian>
                 <Chinesesimp>储存装备以供该步兵班将来使用</Chinesesimp>
                 <Korean>이 병과에 나중에 사용할 로드아웃을 설정합니다.</Korean>
+                <Spanish>Fija el equipamiento que usará en adelante esta clase de infantería.</Spanish>
                 <French>Définit l'équipement qui sera utilisé ultérieurement par cette classe d'infanterie.</French>
                 <Turkish>Bu piyade sınıfı tarafından gelecekte kullanılacak teçhizatı ayarlar.</Turkish>
             </Key>
@@ -12471,6 +12577,7 @@
                 <Russian>Сбрасывает снаряжение класса до стандартного, рандомизированного состояния.</Russian>
                 <Chinesesimp>将职业装备重置为默认的随机状态。</Chinesesimp>
                 <Korean>병과 로드아웃을 기본 무작위 상태로 재설정합니다.</Korean>
+                <Spanish>Restablece el equipamiento de la clase a su estado aleatorio por defecto.</Spanish>
                 <French>Réinitialise l'équipement à l'état aléatoire par défaut.</French>
                 <Turkish>Sınıf teçhizatını varsayılan, rastgele duruma sıfırlar.</Turkish>
             </Key>
@@ -12479,6 +12586,7 @@
                 <Russian>Сбрасывает снаряжение класса до стандартного состояния, копирует снаряжение при нажатом Shift, вставляет снаряжение при нажатом Ctrl.</Russian>
                 <Chinesesimp>将职业装备重置为默认状态，按住Shift键复制装备，按住Ctrl键粘贴装备。</Chinesesimp>
                 <Korean>병과 로드아웃을 기본 상태로 재설정하고 Shift를 누른 상태에서 로드아웃을 복사하고 Ctrl을 누른 상태에서 로드아웃을 붙여넣습니다.</Korean>
+                <Spanish>Restablece el equipamiento de la clase; copia el equipamiento con Mayús pulsado y pégalo con Ctrl pulsado.</Spanish>
                 <French>Réinitialise l'équipement à l'état par défaut, copie l'équipement avec Shift enfoncé, colle l'équipement avec Ctrl enfoncé.</French>
                 <Turkish>Sınıf teçhizatını varsayılan duruma sıfırlar, Shift basılıyken teçhizatı kopyalar, Ctrl basılıyken teçhizatı yapıştırır.</Turkish>
             </Key>
@@ -12487,6 +12595,7 @@
                 <Russian>Снаряжение для "%1" скопировано.</Russian>
                 <Chinesesimp>已复制“%1”的装载</Chinesesimp>
                 <Korean>"%1" 병과 로드아웃이 복사되었습니다.</Korean>
+                <Spanish>Equipamiento de "%1" copiado.</Spanish>
                 <French>L'équipement pour "%1" a été copié.</French>
                 <Turkish>"%1" sınıf teçhizatı kopyalandı.</Turkish>
             </Key>
@@ -12495,6 +12604,7 @@
                 <Russian>Нет снаряжения для копирования.</Russian>
                 <Chinesesimp>没有配置的装载可供复制</Chinesesimp>
                 <Korean>복사할 구성된 로드아웃이 없습니다.</Korean>
+                <Spanish>No hay ningún equipamiento configurado que copiar.</Spanish>
                 <French>Aucun équipement configuré à copier.</French>
                 <Turkish>Kopyalanacak teçhizat yapılandırılmamış.</Turkish>
             </Key>
@@ -12503,6 +12613,7 @@
                 <Russian>Нет сохранённого снаряжения для вставки.</Russian>
                 <Chinesesimp>没有存储的装载可供粘贴</Chinesesimp>
                 <Korean>붙여넣을 저장된 로드아웃이 없습니다.</Korean>
+                <Spanish>No hay ningún equipamiento guardado que pegar.</Spanish>
                 <French>Aucun équipement enregistré à coller.</French>
                 <Turkish>Yapıştırmak için kaydedilmiş teçhizat yok.</Turkish>
             </Key>
@@ -12511,6 +12622,7 @@
                 <Russian>Скопированное снаряжение вставлено в снаряжение класса "%1".</Russian>
                 <Chinesesimp>已将复制的装载粘贴到“%1”职业装载中</Chinesesimp>
                 <Korean>복사된 로드아웃이 "%1" 병과 로드아웃에 붙여넣어졌습니다.</Korean>
+                <Spanish>Equipamiento copiado pegado en la clase "%1".</Spanish>
                 <French>L'équipement copié a été collé dans l'équipement de la classe "%1".</French>
                 <Turkish>Kopyalanan teçhizat "%1" sınıf teçhizatına yapıştırıldı.</Turkish>
             </Key>
@@ -12519,6 +12631,7 @@
                 <Russian>Открывает арсенал для этого класса повстанцев. Для сохранения снаряжения, нажмите в арсенале СОХРАНИТЬ.</Russian>
                 <Chinesesimp>以当前职业加载打开军械库。 要保存自定义装载，请在军械库中按“保存”。</Chinesesimp>
                 <Korean>현재 병과 로드아웃으로 아스널을 엽니다. 사용자 지정 로드아웃을 지정하려면 아스널에서 저장을 누르십시오.</Korean>
+                <Spanish>Abre el arsenal con el equipamiento actual de la clase. Para guardar un equipamiento personalizado, pulsa GUARDAR en el arsenal.</Spanish>
                 <French>Ouvre l'Arsenal avec l'équipement de classe actuel. Pour sauvegarder l'équipement personnalisé, appuyez sur ENREGISTRER dans l'Arsenal.</French>
                 <Turkish>Mevcut sınıf teçhizatı ile Cephaneliği açar. Özel teçhizatı kaydetmek için Cephanelik içindeki KAYDET tuşuna basın.</Turkish>
             </Key>
@@ -12527,6 +12640,7 @@
                 <Russian>Позволяет Командиру переопределить выбор оружия и снаряжения у повстанческих войск. Только для ОПЫТНЫХ Командиров, которые действительно знают, что делают.</Russian>
                 <Chinesesimp>允许指挥官凌驾于抵抗军对武器和装备的选择。 仅适用于知道自己在做什么的经验丰富的指挥官。</Chinesesimp>
                 <Korean>지휘관이 무기와 장비에서 아군의 선택을 덮어쓸 수 있습니다. 그들이 뭘 하는지 아는 숙련된 지휘관들에게만 해당됩니다.</Korean>
+                <Spanish>Permite al comandante anular las elecciones de armas y equipo de las tropas rebeldes. Solo para comandantes EXPERIMENTADOS que sepan lo que hacen.</Spanish>
                 <French>Permet au commandant d'annuler les choix des troupes rebelles en matière d'armes et d'équipement. Réservé aux commandants EXPÉRIMENTÉS qui savent ce qu'ils font.</French>
                 <Turkish>Komutanın, direnişçi birliklerin silah ve ekipman seçimlerini geçersiz kılmasına izin verir. Sadece ne yaptığını bilen DENEYİMLİ komutanlar içindir.</Turkish>
             </Key>
@@ -12535,6 +12649,7 @@
                 <Russian>Снаряжение повстанцев</Russian>
                 <Chinesesimp>抵抗军装备</Chinesesimp>
                 <Korean>반군 로드아웃</Korean>
+                <Spanish>Equipamientos rebeldes</Spanish>
                 <French>Équipements des rebelles</French>
                 <Turkish>Direnişçi Teçhizatları</Turkish>
             </Key>
@@ -12543,6 +12658,7 @@
                 <Russian>Общий вес</Russian>
                 <Chinesesimp>总重量</Chinesesimp>
                 <Korean>총 중량</Korean>
+                <Spanish>Carga total</Spanish>
                 <French>Charge totale</French>
                 <Turkish>Toplam Yük</Turkish>
             </Key>
@@ -12551,6 +12667,7 @@
                 <Russian>БОЕЦ ПЕРЕГРУЖЕН</Russian>
                 <Chinesesimp>单位负载过重</Chinesesimp>
                 <Korean>유닛이 너무 많은 짐을 지고 있습니다</Korean>
+                <Spanish>LA UNIDAD LLEVA DEMASIADO PESO</Spanish>
                 <French>UNITÉ SURCHARGÉE</French>
                 <Turkish>BİRİM ÇOK FAZLA YÜK TAŞIYOR</Turkish>
             </Key>
@@ -12559,6 +12676,7 @@
                 <Russian>Почти перегружен</Russian>
                 <Chinesesimp>几乎超载</Chinesesimp>
                 <Korean>거의 과적</Korean>
+                <Spanish>Casi sobrecargado</Spanish>
                 <French>Presque surchargé</French>
                 <Turkish>Neredeyse aşırı yüklü</Turkish>
             </Key>
@@ -12567,6 +12685,7 @@
                 <Russian>Униформа</Russian>
                 <Chinesesimp>制服</Chinesesimp>
                 <Korean>유니폼</Korean>
+                <Spanish>Uniforme</Spanish>
                 <French>Uniforme</French>
                 <Turkish>Üniforma</Turkish>
             </Key>
@@ -12575,6 +12694,7 @@
                 <Russian>Жилет</Russian>
                 <Chinesesimp>背心</Chinesesimp>
                 <Korean>조끼</Korean>
+                <Spanish>Chaleco</Spanish>
                 <French>Gilet</French>
                 <Turkish>Yelek</Turkish>
             </Key>
@@ -12583,6 +12703,7 @@
                 <Russian>Рюкзак</Russian>
                 <Chinesesimp>背包</Chinesesimp>
                 <Korean>배낭</Korean>
+                <Spanish>Mochila</Spanish>
                 <French>Sac à dos</French>
                 <Turkish>Sırt Çantası</Turkish>
             </Key>
@@ -12593,6 +12714,7 @@
                 <Russian>ВТОРЖЕНИЕ %1</Russian>
                 <Chinesesimp>%1 入侵</Chinesesimp>
                 <Korean>%1 침입</Korean>
+                <Spanish>INCURSIÓN DE %1</Spanish>
                 <French>%1 INCURSION</French>
                 <Turkish>%1 İSTİLASI</Turkish>
             </Key>
@@ -12601,6 +12723,7 @@
                 <Russian>СЕТЬ %1</Russian>
                 <Chinesesimp>%1 网络</Chinesesimp>
                 <Korean>%1 연락망</Korean>
+                <Spanish>RED DE %1</Spanish>
                 <French>%1 RÉSEAU</French>
                 <Turkish>%1 AĞI</Turkish>
             </Key>
@@ -12609,6 +12732,7 @@
                 <Russian>%1 действуют через сеть ячеек и укрытий. Вы и ваши союзники можете получать данные, расширяющие ваши знания об этой сети, посредством допросов, сбора данных с ноутбука лидера ячейки и выполнения заданий. Когда полоса прогресса полностью заполнится, откроется ещё одно убежище или ячейка, чтобы вы могли начать атаку на нее.</Russian>
                 <Chinesesimp>%1 通过密室和藏身处网络运作。 您和您的盟友可以通过审讯、小组组长笔记本电脑数据挖掘和完成任务来获取增加您对该网络了解的数据。 当进度条完全填满时，将显示另一个藏身处或单元格，因此您可以对其发起攻击。</Chinesesimp>
                 <Korean>%1은(는) 셀과 은신처의 연락망을 통해 작전을 수행합니다. 당신과 당신의 아군들은 심문, 셀 리더의 노트북 데이터 채굴 및 완료 과업을 통해 이 연락망에 대한 지식을 상승시키는 데이터를 얻을 수 있습니다. 진행 표시줄이 완전히 채워지면 다른 은신처나 셀이 나타나므로 이에 대한 공격을 시작할 수 있습니다.</Korean>
+                <Spanish>%1 opera a través de una red de células y escondites. Tú y tus aliados podéis obtener datos que aumenten vuestro conocimiento de esa red mediante interrogatorios, extracción de datos de los portátiles de los líderes de célula y misiones completadas. Cuando la barra de progreso se llene, se revelará otro escondite o célula y podrás atacarlo.</Spanish>
                 <French>%1 opère par le biais d'un réseau de cellules et de cachettes. Vous et vos alliés pouvez obtenir des données qui vous permettront d'accroître vos connaissances sur ce réseau grâce à des interrogatoires, à l'exploration des données du portable du chef de cellule et à l'accomplissement de tâches. Lorsque la barre de progression est entièrement remplie, une autre cachette ou cellule est révélée, ce qui vous permet de l'attaquer.</French>
                 <Turkish>%1; hücreler ve sığınaklardan oluşan bir ağ üzerinden faaliyet gösterir. Siz ve müttefikleriniz; sorgulamalar, hücre lideri dizüstü bilgisayarlarından veri madenciliği ve görevleri tamamlama yoluyla bu ağ hakkındaki bilginizi artıran veriler elde edebilirsiniz. İlerleme çubuğu tamamen dolduğunda, başka bir sığınak veya hücre açığa çıkacak ve oraya bir saldırı başlatabileceksiniz.</Turkish>
             </Key>
@@ -12617,6 +12741,7 @@
                 <Russian>Следующее раскрытие убежища %1.</Russian>
                 <Chinesesimp>下一个 %1 位置揭晓。</Chinesesimp>
                 <Korean>다음 %1의 위치가 드러났습니다.</Korean>
+                <Spanish>Próxima revelación de ubicación de %1.</Spanish>
                 <French>Prochain %1 Emplacement révélé.</French>
                 <Turkish>Sonraki %1 Konumunun Açığa Çıkması.</Turkish>
             </Key>
@@ -12625,6 +12750,7 @@
                 <Russian>Показать местоположения %1</Russian>
                 <Chinesesimp>显示 %1 位置</Chinesesimp>
                 <Korean>%1의 위치 표시</Korean>
+                <Spanish>Mostrar ubicaciones de %1</Spanish>
                 <French>Afficher %1 Emplacements</French>
                 <Turkish>%1 Konumlarını Göster</Turkish>
             </Key>
@@ -12633,6 +12759,7 @@
                 <Russian>Выберите местоположение для атаки</Russian>
                 <Chinesesimp>选择攻击地点</Chinesesimp>
                 <Korean>공격할 위치 선택</Korean>
+                <Spanish>Selecciona la ubicación a atacar</Spanish>
                 <French>Sélectionner le lieu de l'attaque</French>
                 <Turkish>Saldırılacak Konumu Seçin</Turkish>
             </Key>
@@ -12641,6 +12768,7 @@
                 <Russian>Знак вопроса - возможная локация, флажок - подтвержденная локация, штриховка - радиус действия.</Russian>
                 <Chinesesimp>问号-可能位置，旗帜-确认位置，阴影-作战半径区域。</Chinesesimp>
                 <Korean>물음표 - 가능한 위치, 깃발 - 확인된 위치, 원 - 작전 반경 구역</Korean>
+                <Spanish>Interrogación: ubicación posible; bandera: ubicación confirmada; rayado: radio del área de operaciones.</Spanish>
                 <French>Point d'interrogation - emplacement possible, drapeau - emplacement confirmé, hachures - rayon de la zone d'opérations.</French>
                 <Turkish>Soru işareti - olası konum, bayrak - onaylanmış konum, tarama - operasyon alanı yarıçapı.</Turkish>
             </Key>
@@ -12649,6 +12777,7 @@
                 <Russian>Показывает известные локации %1, их радиус активности, также отмечает зоны, где они могут находиться. Ваш Командир может поставить задачу атаковать любое отмеченное флажком убежище/ячейку.</Russian>
                 <Chinesesimp>显示已知的 %1 位置和它们的行动区域，也标出它们可能所在的区域。 您的指挥官可能会分配一项任务来攻击任何标记有旗帜的藏身处/密室。</Chinesesimp>
                 <Korean>알려진 %1의 위치와 그들의 작전 구역을 표시하고, 해당 위치도 표시합니다. 지휘관은 깃발이 표시된 은신처/셀을 공격하는 과업을 할당할 수 있습니다.</Korean>
+                <Spanish>Muestra las ubicaciones conocidas de %1 y su área de operaciones, y marca las zonas donde podrían estar. Tu comandante puede asignar una tarea para atacar cualquier escondite o célula marcado con bandera.</Spanish>
                 <French>Indique les emplacements connus de %1 et leur zone d'opérations, ainsi que les zones où ils pourraient se trouver. Votre commandant peut assigner une tâche pour attaquer n'importe quelle cachette/cellule marquée d'un drapeau.</French>
                 <Turkish>Bilinen %1 konumlarını ve operasyon alanlarını gösterir, ayrıca bulunabilecekleri bölgeleri işaretler. Komutanınız, bayrakla işaretlenmiş herhangi bir sığınağa veya hücreye saldırı görevi atayabilir.</Turkish>
             </Key>
@@ -12657,6 +12786,7 @@
                 <Russian>Показывает известные локации %1, их радиус активности, также отмечает зоны, где они могут находиться. Нажмите на маркер флага, чтобы начать атаку на убежище/ячейку.</Russian>
                 <Chinesesimp>显示已知的 %1 位置和它们的行动区域，也标出它们可能所在的区域。 点击标志标记对藏身处/单元发起攻击。</Chinesesimp>
                 <Korean>알려진 %1의 위치와 그들의 작전 구역을 표시하고, 해당 위치도 표시합니다. 은신처/셀에 대한 공격을 시작하려면 깃발 마커를 클릭하십시오.</Korean>
+                <Spanish>Muestra las ubicaciones conocidas de %1 y su área de operaciones, y marca las zonas donde podrían estar. Haz clic en un marcador de bandera para lanzar un ataque contra el escondite o célula.</Spanish>
                 <French>Indique les emplacements connus de %1 et leur zone d'opérations, ainsi que les zones où ils pourraient se trouver. Cliquez sur le drapeau pour lancer une attaque sur la cachette/cellule.</French>
                 <Turkish>Bilinen %1 konumlarını ve operasyon alanlarını gösterir, ayrıca bulunabilecekleri bölgeleri işaretler. Bir sığınağa veya hücreye saldırı başlatmak için bayrak işaretçisine tıklayın.</Turkish>
             </Key>
@@ -12665,6 +12795,7 @@
                 <Russian>Всего локаций: %1</Russian>
                 <Chinesesimp>总位置：%1</Chinesesimp>
                 <Korean>총 위치 갯수: %1</Korean>
+                <Spanish>Ubicaciones totales: %1</Spanish>
                 <French>Nombre total de sites : %1</French>
                 <Turkish>Toplam Konum: %1</Turkish>
             </Key>
@@ -12673,6 +12804,7 @@
                 <Russian>Мест для атаки: %1</Russian>
                 <Chinesesimp>攻击地点：%1</Chinesesimp>
                 <Korean>공격할 위치 수: %1</Korean>
+                <Spanish>Ubicaciones atacables: %1</Spanish>
                 <French>Lieux à attaquer : %1</French>
                 <Turkish>Toplam Konum: %1</Turkish>
             </Key>
@@ -12681,6 +12813,7 @@
                 <Russian>Вторжение %1</Russian>
                 <Chinesesimp>%1 入侵</Chinesesimp>
                 <Korean>%1 침입</Korean>
+                <Spanish>Incursión de %1</Spanish>
                 <French>%1 Incursion</French>
                 <Turkish>%1 İstilası</Turkish>
             </Key>
@@ -12689,6 +12822,7 @@
                 <Russian>%1 начали строить свою подпольную сеть на %2.&lt;br/&gt; Их стихия - децентрализация, их ячейки автономны, в их рядах есть специалисты с разным прошлым - от дезертиров и международных преступников до наемников и бывших членов ЧВК. Они обучены и хорошо знают, как бороться с повстанческим движением — они попытаются сорвать ваши операции грязными методами, тайными операциями и просто грубой силой. Вскоре они найдут вас.&lt;br/&gt;&lt;br/&gt; Используйте новую вкладку в меню Командира или новое действие на карте на треноге, чтобы увидеть свой текущий прогресс в устранении новой угрозы.</Russian>
                 <Chinesesimp>%1 已经开始在 %2 上建立他们的影子网络。&lt;br/&gt; 他们喜欢散开行动，每个小组都是独立的，他们的队伍中有来自不同背景的各种专家——从逃兵到国际罪犯再到雇佣军以及PMC前成员。 他们受过训练并且非常了解如何打击叛乱——他们会试图用肮脏的手段、秘密行动和简单的蛮力来破坏你的行动。 很快他们就会来找你。&lt;br/&gt;&lt;br/&gt; 使用新的指挥官菜单选项卡</Chinesesimp>
                 <Korean>%1이(가) %2에 지하 연락망을 구축하기 시작했습니다&lt;br/&gt;그들은 서로 분산되어 있고, 셀은 자율적으로 행동하며, 계급은 탈영병과 국제적인 범죄자에서부터 용병과 준군사조직에 이르기까지 다양한 배경을 가진 다양한 전문가들로 이루어져 있습니다. 그들은 고도로 훈련받았고 반란을 일으키는 법과 싸우는 법을 잘 알고 있으며, 더러운 방법과 비밀 작전, 있는 그대로의 무력으로 당신의 작전을 방해하려 할 것입니다. 곧 그들이 당신을 찾을 것입니다.&lt;br/&gt;&lt;br/&gt;새 지휘관 메뉴 탭 또는 새 삼각대 지도 행동을 사용하여 새 위협 제거에 대한 현재 진행 상황을 확인할 수 있습니다.</Korean>
+                <Spanish>%1 ha empezado a tejer su red en la sombra por todo %2.&lt;br/&gt; Su naturaleza es descentralizada, sus células son autónomas y en sus filas hay especialistas de toda procedencia: desde desertores y criminales internacionales hasta mercenarios y paramilitares. Están bien entrenados y saben cómo combatir insurgencias: intentarán entorpecer tus operaciones con métodos sucios, operaciones encubiertas y fuerza bruta. Pronto darán contigo.&lt;br/&gt;&lt;br/&gt; Usa la nueva pestaña del menú del comandante o la nueva acción del mapa sobre el trípode para ver tu progreso en la eliminación de esta nueva amenaza.</Spanish>
                 <French>Le %1 a commencé à construire son réseau clandestin à travers le %2.&lt;br/&gt; Leur nature est décentralisée, leurs cellules sont autonomes, leurs rangs sont composés de divers spécialistes aux antécédents variés - des déserteurs et des criminels internationaux aux mercenaires et aux paramilitaires. Ils sont entraînés et savent parfaitement comment lutter contre l'insurrection - ils essaieront de perturber vos opérations par des méthodes sales, des opérations secrètes et simplement par la force brutale. Bientôt, ils vous trouveront.&lt;br/&gt;&lt;br/&gt; Utilisez le nouvel onglet du menu du commandant ou la nouvelle action de la carte du trépied pour voir votre progression dans l'élimination de la nouvelle menace.</French>
                 <Turkish>%1, %2 genelinde gölge ağını kurmaya başladı.&lt;br/&gt; Yapıları merkeziyetçi değildir, hücreleri otonomdur, rütbelerinde firarilerden uluslararası suçlulara, paralı askerlerden paramiliterlere kadar çeşitli geçmişlere sahip uzmanlar bulunur. İyi eğitimlilerdir ve ayaklanmalarla nasıl savaşacaklarını bilirler; operasyonlarınızı kirli yöntemlerle, gizli operasyonlarla ve kaba kuvvetle aksatmaya çalışacaklar. Yakında sizi bulacaklar.&lt;br/&gt;&lt;br/&gt; Bu yeni tehdidi ortadan kaldırma konusundaki mevcut ilerlemenizi görmek için yeni komutan menüsü sekmesini veya yeni tripod harita eylemini kullanın.</Turkish>
             </Key>
@@ -12697,6 +12831,7 @@
                 <Russian>&lt;t size='0.6'&gt;Наши усилия дали результат - мы теперь знаем где находится ещё одно логово &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; - это в %2. Мы можем начать атаку на него в любой момент.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;我们的努力得到了回报 - 我们现在知道另一个 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; 藏身处已找到 - 它在 %2 中。 我们随时可以对其发起攻击。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;우리들의 노력이 결실을 맺었으며, 이제 우리는 또 다른 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;의 은신처가 어디에 있는지 알게 되었고, 현재 %2에 있습니다. 언제든지 공격할 수 있습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;t size='0.6'&gt;Nuestro esfuerzo ha dado sus frutos: ya sabemos dónde está otro escondite de &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;, está en %2. Podemos atacarlo en cualquier momento.&lt;/t&gt;</Spanish>
                 <French>&lt;t size='0.6'&gt;Nos efforts ont porté leurs fruits : nous savons maintenant où se trouve une autre &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; cachette - elle se trouve dans le %2. Nous pouvons l'attaquer à tout moment.&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;Çabalarımız sonuç verdi - artık başka bir &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; sığınağının nerede olduğunu biliyoruz - %2 bölgesinde. Her an oraya bir saldırı başlatabiliriz.&lt;/t&gt;</Turkish>
             </Key>
@@ -12705,6 +12840,7 @@
                 <Russian>&lt;t size='0.6'&gt;Наши усилия дали результат - мы теперь знаем где находится ещё одна ячейка &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; - это в %2. Мы можем начать атаку на него в любой момент.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;我们的努力得到了回报 - 我们现在知道另一个 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; 密室已找到 - 它在 %2 中。 我们随时可以对其发起攻击。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;우리들의 노력이 결실을 맺었으며, 이제 우리는 또 다른 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;의 셀이 어디에 있는지 알게 되었고, 현재 %2에 있습니다. 언제든지 공격할 수 있습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;t size='0.6'&gt;Nuestro esfuerzo ha dado sus frutos: ya sabemos dónde está otra célula de &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;, está en %2. Podemos atacarla en cualquier momento.&lt;/t&gt;</Spanish>
                 <French> &lt;t size='0.6'&gt;Nos efforts ont porté leurs fruits - nous savons maintenant où se trouve une autre &lt;t size='0.6' color='#800000'&gt;cellule %1&lt;/t&gt; elle se trouve dans le %2. Nous pouvons l'attaquer à tout moment.&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;Çabalarımız sonuç verdi - artık başka bir &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; hücresinin nerede olduğunu biliyoruz - %2 bölgesinde. Her an oraya bir saldırı başlatabiliriz.&lt;/t&gt;</Turkish>
             </Key>
@@ -12713,6 +12849,7 @@
                 <Russian>Уничтожить убежище/ячейку</Russian>
                 <Chinesesimp>摧毁藏身处/密室</Chinesesimp>
                 <Korean>은신처/셀 파괴</Korean>
+                <Spanish>Destruir escondite/célula</Spanish>
                 <French>Détruire les cachettes/cellules</French>
                 <Turkish>Sığınağı/Hücreyi İmha Et</Turkish>
             </Key>
@@ -12721,6 +12858,7 @@
                 <Russian>Нет возможных целей для атаки.</Russian>
                 <Chinesesimp>没有可能的攻击目标</Chinesesimp>
                 <Korean>공격 가능한 대상이 없습니다.</Korean>
+                <Spanish>No hay objetivos posibles a los que atacar.</Spanish>
                 <French>Il n'y a pas de cibles possibles à attaquer.</French>
                 <Turkish>Saldırılabilecek olası bir hedef yok.</Turkish>
             </Key>
@@ -12729,6 +12867,7 @@
                 <Russian>Активной может быть только одна задача такого типа.</Russian>
                 <Chinesesimp>只能激活一个此类任务。</Chinesesimp>
                 <Korean>이런 종류의 과업은 하나만 활성화할 수 있습니다.</Korean>
+                <Spanish>Solo puede haber una tarea de este tipo activa.</Spanish>
                 <French>Une seule tâche de ce type peut être active.</French>
                 <Turkish>Bu türden sadece bir görev aktif olabilir.</Turkish>
             </Key>
@@ -12737,6 +12876,7 @@
                 <Russian>Невозможно совершить набег на %1 ячейку или убежище во время большой атаки или рейда захватчиков.</Russian>
                 <Chinesesimp>在大攻击或入侵者突袭中无法突袭 %1 密室或藏身处。</Chinesesimp>
                 <Korean>대규모 공격이나 학살이 진행되는 동안 %1의 셀이나 은신처를 습격할 수 없습니다.</Korean>
+                <Spanish>No se puede asaltar una célula o escondite de %1 mientras hay un gran ataque o un castigo en curso.</Spanish>
                 <French>Impossible d'effectuer un raid sur la cellule ou la cachette de %1 lors d'une grande attaque ou d'un raid d'envahisseurs.</French>
                 <Turkish>Büyük bir saldırı veya cezalandırma devam ederken %1 hücresine veya sığınağına baskın yapılamaz.</Turkish>
             </Key>
@@ -12745,6 +12885,7 @@
                 <Russian>Невозможно совершить набег на %1 ячейку или убежище, пока наш штаб под угрозой.</Russian>
                 <Chinesesimp>当我们的总部受到威胁时无法突袭 %1 个密室或藏身处。</Chinesesimp>
                 <Korean>본부가 공격받는 동안에는 %1의 셀이나 은신처를 습격할 수 없습니다.</Korean>
+                <Spanish>No se puede asaltar una célula o escondite de %1 mientras nuestro CG está bajo ataque.</Spanish>
                 <French>Impossible d'effectuer un raid sur la cellule ou la cachette de %1 alors que notre QG est attaqué.</French>
                 <Turkish>Karargâhımız saldırı altındayken %1 hücresine veya sığınağına baskın yapılamaz.</Turkish>
             </Key>
@@ -12753,6 +12894,7 @@
                 <Russian>Нажмите на любой маркер с пиктограммой флага на карте, чтобы начать атаку.</Russian>
                 <Chinesesimp>点击地图上的任意旗帜标记开始攻击</Chinesesimp>
                 <Korean>공격을 시작하려면 지도에서 깃발 마커를 클릭하십시오.</Korean>
+                <Spanish>Haz clic en cualquier marcador de bandera del mapa para iniciar el ataque.</Spanish>
                 <French>Cliquez sur n'importe quel drapeau sur la carte pour lancer l'attaque.</French>
                 <Turkish>Saldırıyı başlatmak için haritadaki herhangi bir bayrak işaretçisine tıklayın.</Turkish>
             </Key>
@@ -12761,6 +12903,7 @@
                 <Russian>Нажмите на любое вражеское убежище или ячейку, отмеченную флагом.</Russian>
                 <Chinesesimp>你必须点击任何敌人标记的藏身处或密室。</Chinesesimp>
                 <Korean>적의 깃발로 표시된 은신처나 셀을 클릭해야 합니다.</Korean>
+                <Spanish>Debes hacer clic en un escondite o célula enemigo marcado con bandera.</Spanish>
                 <French>Vous devez cliquer sur toute cachette ou cellule marquée d'un drapeau ennemi.</French>
                 <Turkish>Düşman bayrağıyla işaretlenmiş bir sığınağa veya hücreye tıklamalısınız.</Turkish>
             </Key>
@@ -12769,6 +12912,7 @@
                 <Russian>%1 не могут быть скомпрометированы, пока наши силы находится рядом с зоной. Отойдите от местоположения дальше чем на %2м и попробуйте снова.</Russian>
                 <Chinesesimp>当我们的部队在该位置时，%1 无法显示。 离开位置超过 %2m，然后重试。</Chinesesimp>
                 <Korean>%1은 우리 군대가 있는 동안에는 발견될 수 없습니다. %2m보다 더 먼 위치로 떠나서 다시 시도하십시오.</Korean>
+                <Spanish>%1 no se puede revelar mientras nuestras fuerzas estén en la ubicación. Aléjate más de %2 m e inténtalo de nuevo.</Spanish>
                 <French>%1 ne peut pas être révélé tant que nos forces sont dans le lieu. Quittez le lieu plus loin que %2m et réessayez.</French>
                 <Turkish>Birliklerimiz bölgedeyken %1 açığa çıkarılamaz. Bölgeden %2m'den fazla uzaklaşın ve tekrar deneyin.</Turkish>
             </Key>
@@ -12779,6 +12923,7 @@
                 <Russian>Закрыть</Russian>
                 <Chinesesimp>关闭</Chinesesimp>
                 <Korean>닫기</Korean>
+                <Spanish>Cerrar</Spanish>
                 <French>Fermer</French>
                 <Turkish>Kapat</Turkish>
             </Key>
@@ -12789,6 +12934,7 @@
                 <Russian>Авторы Antistasi Ultimate:</Russian>
                 <Chinesesimp>Antistasi Ultimate 作者：</Chinesesimp>
                 <Korean>안티스타시 얼티밋의 제작자:</Korean>
+                <Spanish>Autores de Antistasi Ultimate:</Spanish>
                 <French>Antistasi Ultimate Auteurs:</French>
                 <Turkish>Antistasi Ultimate Yapımcıları:</Turkish>
             </Key>
@@ -12797,6 +12943,7 @@
                 <Russian>Авторы Antistasi Plus:</Russian>
                 <Chinesesimp>Antistasi Plus 作者：</Chinesesimp>
                 <Korean>안티스타시 얼티밋의 제작자:</Korean>
+                <Spanish>Autores de Antistasi Plus:</Spanish>
                 <French>Antistasi Plus Auteurs:</French>
                 <Turkish>Antistasi Plus Yapımcıları:</Turkish>
             </Key>
@@ -12805,6 +12952,7 @@
                 <Russian>Авторы Antistasi:</Russian>
                 <Chinesesimp>Antistasi 作者：</Chinesesimp>
                 <Korean>안티스타시 제작자:</Korean>
+                <Spanish>Autores de Antistasi:</Spanish>
                 <French>Antistasi Auteurs:</French>
                 <Turkish>Antistasi Yapımcıları:</Turkish>
             </Key>
@@ -12813,6 +12961,7 @@
                 <Russian>Antistasi Ultimate Team</Russian>
                 <Chinesesimp>Antistasi Ultimate Team</Chinesesimp>
                 <Korean>안티스타시 얼티밋 팀</Korean>
+                <Spanish>Equipo de Antistasi Ultimate</Spanish>
                 <French>Antistasi Ultimate Team</French>
                 <Turkish>Antistasi Ultimate Ekibi</Turkish>
             </Key>
@@ -12821,6 +12970,7 @@
                 <Russian>Режим Холодной Войны</Russian>
                 <Chinesesimp>冷战模式</Chinesesimp>
                 <Korean>냉전 모드</Korean>
+                <Spanish>Modo Guerra Fría</Spanish>
                 <French>Mode Guerre froide</French>
                 <Turkish>Soğuk Savaş Modu</Turkish>
             </Key>
@@ -12831,6 +12981,7 @@
                 <Russian>Собрать добычу вокруг</Russian>
                 <Chinesesimp>收集分散的战利品</Chinesesimp>
                 <Korean>흩어진 전리품 수집</Korean>
+                <Spanish>Recoger el botín disperso</Spanish>
                 <French>Rassembler le butin dispersé</French>
                 <Turkish>Etraftaki Ganimetleri Topla</Turkish>
             </Key>
@@ -12839,6 +12990,7 @@
                 <Russian>Добыча вокруг была успешно собрана.</Russian>
                 <Chinesesimp>分散的战利品已成功收集。</Chinesesimp>
                 <Korean>흩어진 전리품이 성공적으로 수집되었습니다.</Korean>
+                <Spanish>El botín disperso se ha recogido correctamente.</Spanish>
                 <French>Le butin dispersé a été rassemblé avec succès.</French>
                 <Turkish>Etraftaki Ganimetler başarıyla toplandı.</Turkish>
             </Key>
@@ -12847,6 +12999,7 @@
                 <Russian>Нет тел, ящиков или иной добычи поблизости.</Russian>
                 <Chinesesimp>附近没有尸体、箱子或其他战利品。</Chinesesimp>
                 <Korean>근처에 수집할 것이 없습니다.</Korean>
+                <Spanish>No hay botín cerca.</Spanish>
                 <French>Pas de butin à proximité.</French>
                 <Turkish>Yakınlarda ganimet yok.</Turkish>
             </Key>
@@ -12855,6 +13008,7 @@
                 <Russian>Сборщик лута уже был использован недавно. Пожалуйста, подождите 10 секунд.</Russian>
                 <Chinesesimp>战利品收集最近已经用过了。 请等待10秒。</Chinesesimp>
                 <Korean>지난 10초 이내에 수집 능력이 사용되었습니다! 조금만 기다려 주십시오.</Korean>
+                <Spanish>¡La habilidad de saqueo se ha usado hace poco! Espera un momento.</Spanish>
                 <French>La capacité de pillage a été utilisée récemment ! Veuillez patienter un peu.</French>
                 <Turkish>Yağma yeteneği yakın zamanda kullanıldı! Lütfen biraz bekleyin.</Turkish>
             </Key>
@@ -12863,6 +13017,7 @@
                 <Russian>Cбор добычи прерван - враги рядом.</Russian>
                 <Chinesesimp>收集中断 - 附近有敌人。</Chinesesimp>
                 <Korean>적들이 근처에 있기 때문에 전리품 수집이 중단되었습니다.</Korean>
+                <Spanish>La recogida de botín se ha interrumpido: hay enemigos cerca.</Spanish>
                 <French>La collecte de butin est interrompue - les ennemis sont à proximité.</French>
                 <Turkish>Ganimet toplama yarıda kesildi - düşmanlar yakında.</Turkish>
             </Key>
@@ -12873,6 +13028,7 @@
                 <Russian>Чёрный рынок техники</Russian>
                 <Chinesesimp>载具黑市</Chinesesimp>
                 <Korean>차량 암시장</Korean>
+                <Spanish>Mercado negro de vehículos: haz clic en el cuaderno para más información.</Spanish>
                 <French>Marché noir des véhicules</French>
                 <Turkish>Araç Karaborsası - Daha fazla bilgi için not defterine tıklayın.</Turkish>
             </Key>
@@ -12881,6 +13037,7 @@
                 <Russian>Условия разблокировки можно найти, кликнув на иконку блокнота в правом верхнем углу</Russian>
                 <Chinesesimp>点击右上角的记事本即可找到车辆要求。</Chinesesimp>
                 <Korean>차량 요구사항은 오른쪽 상단 모서리에 있는 메모장을 클릭하여 확인할 수 있습니다.</Korean>
+                <Spanish>Los requisitos de los vehículos se consultan haciendo clic en el cuaderno de la esquina superior derecha.</Spanish>
                 <Turkish>Araç gereksinimlerine sağ üst köşedeki not defterine tıklayarak ulaşılabilir.</Turkish>
             </Key>
         </Container>
@@ -12890,6 +13047,7 @@
                 <Russian>Получите данные с военного ноутбука</Russian>
                 <Chinesesimp>从军用笔记本电脑获取数据</Chinesesimp>
                 <Korean>군용 노트북 데이터 확보</Korean>
+                <Spanish>Obtener los datos del portátil militar</Spanish>
                 <French>Obtenir les données du portable militaire</French>
                 <Turkish>Askeri Dizüstü Bilgisayar Verilerini Al</Turkish>
             </Key>
@@ -12898,6 +13056,7 @@
                 <Russian>Обследование военного ноутбука</Russian>
                 <Chinesesimp>军用笔记本电脑调查</Chinesesimp>
                 <Korean>군용 노트북 조사</Korean>
+                <Spanish>Investigación del portátil militar</Spanish>
                 <French>Enquête sur les portables militaires</French>
                 <Turkish>Askeri Dizüstü Bilgisayar İncele</Turkish>
             </Key>
@@ -12906,6 +13065,7 @@
                 <Russian>Обследование ноутбука было отменено.</Russian>
                 <Chinesesimp>笔记本调查已取消。</Chinesesimp>
                 <Korean>노트북 조사가 취소되었습니다.</Korean>
+                <Spanish>La investigación del portátil se ha cancelado.</Spanish>
                 <French>L'enquête sur le portable a été annulée.</French>
                 <Turkish>Dizüstü bilgisayar incelemesi iptal edildi.</Turkish>
             </Key>
@@ -12914,6 +13074,7 @@
                 <Russian>Отменить обследование</Russian>
                 <Chinesesimp>取消调查</Chinesesimp>
                 <Korean>조사 취소</Korean>
+                <Spanish>Cancelar investigación</Spanish>
                 <French>Annuler l'enquête</French>
                 <Turkish>İncelemeyi İptal Et</Turkish>
             </Key>
@@ -12922,6 +13083,7 @@
                 <Russian>Поиск отменен.</Russian>
                 <Chinesesimp>搜索已取消</Chinesesimp>
                 <Korean>검색이 취소되었습니다.</Korean>
+                <Spanish>La búsqueda se ha cancelado.</Spanish>
                 <French>La recherche a été annulée.</French>
                 <Turkish>Arama iptal edildi.</Turkish>
             </Key>
@@ -12930,6 +13092,7 @@
                 <Russian>Отменить поиск</Russian>
                 <Chinesesimp>取消搜索</Chinesesimp>
                 <Korean>검색 취소</Korean>
+                <Spanish>Cancelar búsqueda</Spanish>
                 <French>Annuler la recherche</French>
                 <Turkish>Aramayı İptal Et</Turkish>
             </Key>
@@ -12938,6 +13101,7 @@
                 <Russian>Подобраны разведывательные документы.</Russian>
                 <Chinesesimp>收集到的情报文件。</Chinesesimp>
                 <Korean>정보 문서를 확보했습니다.</Korean>
+                <Spanish>Documentos de inteligencia obtenidos.</Spanish>
                 <French>Les informations ont été saisies.</French>
                 <Turkish>İstihbarat belgeleri alındı.</Turkish>
             </Key>
@@ -12946,6 +13110,7 @@
                 <Russian>Поиск завершен, разведданные найдены!</Russian>
                 <Chinesesimp>搜索完成，找到情报！</Chinesesimp>
                 <Korean>검색을 완료했으며, 정보를 찾았습니다!</Korean>
+                <Spanish>Búsqueda completada, ¡has encontrado información!</Spanish>
                 <French>Recherche terminée, information trouvée!</French>
                 <Turkish>Arama tamamlandı, istihbarat bulundu!</Turkish>
             </Key>
@@ -12954,11 +13119,13 @@
                 <Russian>Поиск завершен, но вы ничего не нашли.</Russian>
                 <Chinesesimp>搜索完成，但你一无所获。</Chinesesimp>
                 <Korean>검색을 완료했지만 아무것도 찾지 못했습니다.</Korean>
+                <Spanish>Búsqueda completada, pero no has encontrado nada.</Spanish>
                 <French>La recherche est terminée, mais vous n'avez rien trouvé.</French>
                 <Turkish>Arama tamamlandı ama hiçbir şey bulamadınız.</Turkish>
             </Key>
             <Key ID="STR_intel_search_failure_alternate_description">
                 <Original>You find nothing of significance but %1</Original>
+                <Spanish>No encuentras nada relevante salvo %1</Spanish>
                 <Turkish>%1 dışında önemli bir şey bulamadınız.</Turkish>
             </Key>
         </Container>
@@ -12968,6 +13135,7 @@
                 <Russian>&lt;t size='0.6' color='#C1C0BB'&gt;Найдены разведданные&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6' color='#C1C0BB'&gt;发现情报&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6' color='#C1C0BB'&gt;정보 발견&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;</Korean>
+                <Spanish>&lt;t size='0.6' color='#C1C0BB'&gt;Información encontrada&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;</Spanish>
                 <French>&lt;t size='0.6' color='#C1C0BB'&gt;Informations trouvées&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;</French>
                 <Turkish>&lt;t size='0.6' color='#C1C0BB'&gt;İstihbarat Bulundu&lt;br/&gt; &lt;t size='0.5' color='#C1C0BB'&gt;&lt;br/&gt;</Turkish>
             </Key>
@@ -12976,6 +13144,7 @@
                 <Russian>Поиск информации</Russian>
                 <Chinesesimp>搜索情报</Chinesesimp>
                 <Korean>정보 찾기</Korean>
+                <Spanish>Buscar información</Spanish>
                 <French>Recherche d'informations</French>
                 <Turkish>İstihbarat Ara</Turkish>
             </Key>
@@ -12984,6 +13153,7 @@
                 <Russian>Мы получаем расплывчатые сообщения об интенсивной перестрелке в одном из городов между %1 и неизвестной стороной.</Russian>
                 <Chinesesimp>我们收到模糊的报告，称 %1 与某个城市中的未知方之间发生了激烈的交火。</Chinesesimp>
                 <Korean>한 도시에서 %1과 알려지지 않은 세력 간의 격렬한 총격전이 있었다는 모호한 보고를 받았습니다.</Korean>
+                <Spanish>Nos llegan informes confusos sobre un intenso tiroteo entre %1 y un bando desconocido en una de las ciudades.</Spanish>
                 <French>Nous recevons de vagues rapports sur une fusillade intensive entre %1 et une partie inconnue dans l'une des villes.</French>
                 <Turkish>Şehirlerin birinde %1 ile bilinmeyen bir taraf arasında yoğun bir çatışma olduğuna dair belirsiz raporlar alıyoruz.</Turkish>
             </Key>
@@ -12992,6 +13162,7 @@
                 <Russian>Наша связь была скомпрометирована неизвестным сигналом по всему региону. Мы расшифровали содержание сигнала, в нем есть сообщение для нас. Это манифест неизвестной фракции - они называют себя &lt;t color='#800000'&gt;%2&lt;/t&gt;, они хорошо вооружены и подготовлены, а их лидер, %3, объявил нам войну.</Russian>
                 <Chinesesimp>我们的通信已被整个 %1 的未知信号所覆盖。 我们破译了信号的内容，它包含给我们的信息。 这是一个未知的派系宣言 - 他们称自己为&lt;t color='#800000'&gt;%2&lt;/t&gt;, 他们全副武装且准备充分，他们的领导人 %3 已向我们宣战。</Chinesesimp>
                 <Korean>%1의 모든 지역에서 알 수 없는 신호에 의해 손상되었으며 현재 모든 곳에서 발견되었습니다. 우린 신호 내용을 해독했고, 그건 바로 우리에게 보내는 메시지였습니다. 그들은 스스로를 &lt;t color='#800000'&gt;%2&lt;/t&gt;(이)라고 부르는 미확인 팩션을 선언하는 것이었고, 그들은 잘 무장하고 준비되어 있으며, 그들의 지도자인 %3이(가) 우리에게 선전포고를 했습니다.</Korean>
+                <Spanish>Nuestras comunicaciones han sido comprometidas por una señal desconocida en todo %1, está por todas partes. Hemos descifrado su contenido: es un mensaje para nosotros. Es el manifiesto de una facción desconocida: se hacen llamar &lt;t color='#800000'&gt;%2&lt;/t&gt;, están bien armados y preparados, y su líder, %3, nos ha declarado la guerra.</Spanish>
                 <French>Nos communications ont été compromises par un signal inconnu à travers tout le %1, il est partout maintenant. Nous avons déchiffré le contenu du signal, il contient un message pour nous. C'est un manifeste d'une faction inconnue - ils se nomment eux-mêmes &lt;t color='#800000'&gt;%2&lt;/t&gt;, ils sont bien armés et préparés, et leur chef, %3, nous a déclaré la guerre.</French>
                 <Turkish>İletişim hatlarımız %1 genelinde bilinmeyen bir sinyal tarafından ele geçirildi, her yerde. Sinyalin içeriğini çözdük, bize bir mesaj içeriyor. Bu bilinmeyen bir grubun manifestosu; kendilerine &lt;t color='#800000'&gt;%2&lt;/t&gt; diyorlar, iyi silahlanmış ve hazırlıklılar ve liderleri %3 bize savaş ilan etti.</Turkish>
             </Key>
@@ -13000,6 +13171,7 @@
                 <Russian>В свежих донесениях противника содержится информация о том, что в зону конфликта прибыл торговец оружием. Необходимо наладить контакт между ним и сопротивлением.</Russian>
                 <Chinesesimp>敌人的最新报告包含军火商的信息，这些军火商已抵达我们这个动荡不安的国家。 我们需要找到他，并在黑市和抵抗运动之间建立联系。</Chinesesimp>
                 <Korean>적군의 최신 보고서에는 정세가 불안정한 우리나라에 도착한 암거래상에 대한 정보가 포함되어 있습니다. 그를 찾아서 암시장과 저항세력 사이의 연락책을 마련해야 합니다.</Korean>
+                <Spanish>El último informe enemigo contiene información sobre un traficante de armas que ha llegado a nuestro convulso país. Tenemos que encontrarlo y establecer contacto entre el mercado negro y la resistencia.</Spanish>
                 <French>Le dernier rapport de l'ennemi contient des informations sur un trafiquant d'armes qui est arrivé dans notre pays agité. Nous devons le retrouver et établir des contacts entre le marché noir et la résistance.</French>
                 <Turkish>Düşmanın son raporu, huzursuz ülkemize gelen bir silah tüccarı hakkında bilgiler içeriyor. Onu bulmalı, karaborsa ile direniş arasında bağlantı kurmalıyız.</Turkish>
             </Key>
@@ -13008,6 +13180,7 @@
                 <Russian>На экране написано:&lt;br/&gt;&lt;br/&gt; готовься к смерти!</Russian>
                 <Chinesesimp>屏幕上写着：&lt;br/&gt;&lt;br/&gt;傻逼去死吧！</Chinesesimp>
                 <Korean>화면에 이렇게 표시되었습니다:&lt;br/&gt;&lt;br/&gt;죽을 준비나 해라!</Korean>
+                <Spanish>La pantalla dice:&lt;br/&gt;&lt;br/&gt;¡Prepárate para morir!</Spanish>
                 <French>L'écran indique:&lt;br/&gt;&lt;br/&gt;Préparez-vous à mourir!</French>
                 <Turkish>Ekranda şöyle yazıyor:&lt;br/&gt;&lt;br/&gt;Ölmeye hazır ol!</Turkish>
             </Key>
@@ -13016,6 +13189,7 @@
                 <Russian>Никого в радиусе действия ноутбука, сброс загрузки!</Russian>
                 <Chinesesimp>笔记本电脑范围内无人，正在重置下载！</Chinesesimp>
                 <Korean>노트북 주변에 아무도 없기 때문에 다운로드를 초기화합니다!</Korean>
+                <Spanish>No hay nadie cerca del portátil, ¡se reinicia la descarga!</Spanish>
                 <French>Personne à portée de l'ordinateur portable, réinitialisation du téléchargement !</French>
                 <Turkish>Dizüstü bilgisayarın menzilinde kimse yok, indirme sıfırlanıyor!</Turkish>
             </Key>
@@ -13024,6 +13198,7 @@
                 <Russian>Ссылка на неизвестное местоположение, нужно найти корректное местоположение для продолжения расшифровки данных.</Russian>
                 <Chinesesimp>链接到未知位置，您需要找到正确的位置才能继续解密数据。</Chinesesimp>
                 <Korean>알 수 없는 위치에 관한 레퍼런스이며, 계속 해독하려면 해당 위치를 찾아야 합니다.</Korean>
+                <Spanish>Referencia a una ubicación desconocida; hay que localizarla para seguir descifrando.</Spanish>
                 <French>Référence à un lieu inconnu, besoin de localiser le lieu pour continuer le décryptage.</French>
                 <Turkish>Bilinmeyen bir konuma atıf var, şifreyi çözmeye devam etmek için konumu tespit etmelisiniz.</Turkish>
             </Key>
@@ -13032,6 +13207,7 @@
                 <Russian>Изменить местоположение</Russian>
                 <Chinesesimp>更改位置</Chinesesimp>
                 <Korean>위치 조정</Korean>
+                <Spanish>Ajustar ubicación</Spanish>
                 <French>Ajuster l'emplacement</French>
                 <Turkish>Konumu Ayarla</Turkish>
             </Key>
@@ -13040,6 +13216,7 @@
                 <Russian>Обнаружен неразборчивый текст, необходимо расшифровать значение из контекста.</Russian>
                 <Chinesesimp>遇到乱码，需要从上下文解读。</Chinesesimp>
                 <Korean>읽기 어려운 텍스트가 발견되었으며, 문맥에서 의미를 해독해야 합니다.</Korean>
+                <Spanish>Texto ilegible; hay que deducir el significado por el contexto.</Spanish>
                 <French>Texte illisible, nécessité de déchiffrer le sens à partir du contexte.</French>
                 <Turkish>Okunaksız metinle karşılaşıldı, anlamı bağlamdan çözmek gerekiyor.</Turkish>
             </Key>
@@ -13048,6 +13225,7 @@
                 <Russian>Расшифровать смысл</Russian>
                 <Chinesesimp>解读</Chinesesimp>
                 <Korean>의미 해독</Korean>
+                <Spanish>Deducir el significado</Spanish>
                 <French>Déchiffrer le sens</French>
                 <Turkish>Anlamı Çöz</Turkish>
             </Key>
@@ -13056,6 +13234,7 @@
                 <Russian>Встретилось неизвестное кодовое слово, необходимо найти ссылку на расшифровку.</Russian>
                 <Chinesesimp>遇到未知代号，需要解析代号参考</Chinesesimp>
                 <Korean>알 수 없는 코드네임이 발견되었으며, 코드네임의 레퍼런스를 해독해야 합니다.</Korean>
+                <Spanish>Nombre en clave desconocido; hay que descifrar a qué se refiere.</Spanish>
                 <French>Nom de code inconnu rencontré, besoin de déchiffrer le nom de code de référence.</French>
                 <Turkish>Bilinmeyen bir kod adıyla karşılaşıldı, kod adı referansını çözmek gerekiyor.</Turkish>
             </Key>
@@ -13064,6 +13243,7 @@
                 <Russian>Расшифровать кодовое имя</Russian>
                 <Chinesesimp>破译代号</Chinesesimp>
                 <Korean>코드네임 해독</Korean>
+                <Spanish>Descifrar el nombre en clave</Spanish>
                 <French>Déchiffrer le nom de code</French>
                 <Turkish>Kod Adını Çöz</Turkish>
             </Key>
@@ -13072,6 +13252,7 @@
                 <Russian>Смысл абзаца текста скрыт за загадкой, необходимо её решить, чтобы продолжить расшифровку.</Russian>
                 <Chinesesimp>这段文字的意义隐藏在谜语背后，必须解开它才能继续。</Chinesesimp>
                 <Korean>수수께끼 뒤에 숨겨진 텍스트의 의미 섹션. 계속하려면 풀어야 합니다.</Korean>
+                <Spanish>El significado de una sección del texto está oculto tras un acertijo; hay que resolverlo para continuar.</Spanish>
                 <French>Une partie du texte est cachée derrière une énigme, qu'il faut résoudre pour continuer.</French>
                 <Turkish>Metinlerin bir kısmının anlamı bir bilmecenin arkasına gizlenmiş, devam etmek için onu çözmelisiniz.</Turkish>
             </Key>
@@ -13080,6 +13261,7 @@
                 <Russian>Решить загадку</Russian>
                 <Chinesesimp>解谜</Chinesesimp>
                 <Korean>수수께끼 풀기</Korean>
+                <Spanish>Resolver el acertijo</Spanish>
                 <French>Résoudre l'énigme</French>
                 <Turkish>Bilmeceyi Çöz</Turkish>
             </Key>
@@ -13088,6 +13270,7 @@
                 <Russian>Расшифровка - %1%</Russian>
                 <Chinesesimp>解密进度 - %1%</Chinesesimp>
                 <Korean>암호 해독 진행률 %1%</Korean>
+                <Spanish>Progreso del descifrado: %1%</Spanish>
                 <French>Progression du décryptage à %1%</French>
                 <Turkish>Şifre çözme ilerlemesi: %%1</Turkish>
             </Key>
@@ -13096,6 +13279,7 @@
                 <Russian>Поздравляем! Вам удалось расшифровать разведданные!</Russian>
                 <Chinesesimp>恭喜！ 你成功破解了情报！</Chinesesimp>
                 <Korean>축하합니다! 정보를 해독할 수 있었습니다!</Korean>
+                <Spanish>¡Enhorabuena! Has conseguido descifrar la información.</Spanish>
                 <French>Félicitations ! Vous avez réussi à déchiffrer les informations !</French>
                 <Turkish>Tebrikler! İstihbaratın şifresini çözmeyi başardınız!</Turkish>
             </Key>
@@ -13104,6 +13288,7 @@
                 <Russian>Ошибка фрагмента данных. Файл {0003BD78-000349CE} должен быть подтвержден вручную!</Russian>
                 <Chinesesimp>数据错误。 文件 {0003BD78-000349CE} 必须手动确认！</Chinesesimp>
                 <Korean>데이터 조각 오류. 파일 {0003BD78-000349CE}를 수동으로 확인해야 합니다!</Korean>
+                <Spanish>Error de fragmento de datos. ¡El archivo {0003BD78-000349CE} debe confirmarse manualmente!</Spanish>
                 <French>Erreur de fragment de données. Le fichier {0003BD78-000349CE} doit être confirmé manuellement !</French>
                 <Turkish>Veri Parçacığı Hatası. {0003BD78-000349CE} numaralı dosya manuel olarak onaylanmalıdır!</Turkish>
             </Key>
@@ -13112,6 +13297,7 @@
                 <Russian>Подтвердить файл</Russian>
                 <Chinesesimp>确认文件</Chinesesimp>
                 <Korean>파일 확인</Korean>
+                <Spanish>Confirmar archivo</Spanish>
                 <French>Confirmer le fichier</French>
                 <Turkish>Dosyayı Onayla</Turkish>
             </Key>
@@ -13120,6 +13306,7 @@
                 <Russian>404 ошибка на сервере, неверный адрес. Пропустить адрес?</Russian>
                 <Chinesesimp>404 服务器错误，URL 不正确。 跳过网址？</Chinesesimp>
                 <Korean>서버에 404 오류가 발생했으며, URL이 맞지 않습니다. URL을 스킵합니까?</Korean>
+                <Spanish>Error 404 en el servidor, URL incorrecta. ¿Omitir la URL?</Spanish>
                 <French>"404 Error" sur le serveur, URL incorrecte. Passer l'URL ?</French>
                 <Turkish>Sunucuda 404 Hatası, geçersiz URL. URL geçilsin mi?</Turkish>
             </Key>
@@ -13128,6 +13315,7 @@
                 <Russian>Пропустить адрес</Russian>
                 <Chinesesimp>跳过网址</Chinesesimp>
                 <Korean>URL 스킵</Korean>
+                <Spanish>Omitir la URL</Spanish>
                 <French>Passer l'URL</French>
                 <Turkish>URL'yi Geç</Turkish>
             </Key>
@@ -13136,6 +13324,7 @@
                 <Russian>Windows требует обновления. Обновить сейчас и потерять все данные?</Russian>
                 <Chinesesimp>操作系统需要更新。 立即更新并丢失所有数据？</Chinesesimp>
                 <Korean>OS를 업데이트해야 합니다. 지금 업데이트를 하며 모든 데이터를 잃습니까?</Korean>
+                <Spanish>El sistema operativo necesita una actualización. ¿Actualizar ahora y perder todos los datos?</Spanish>
                 <French>Le système d'exploitation a besoin d'une mise à jour. Mettre à jour maintenant et perdre toutes les données ?</French>
                 <Turkish>İşletim sisteminin güncellenmesi gerekiyor. Şimdi güncelle ve tüm verileri kaybet?</Turkish>
             </Key>
@@ -13144,6 +13333,7 @@
                 <Russian>Остановить обновление Windows</Russian>
                 <Chinesesimp>停止Windows更新</Chinesesimp>
                 <Korean>윈도우 업데이트 중지</Korean>
+                <Spanish>Detener la actualización de Windows</Spanish>
                 <French>Arrêter la mise à jour de Windows</French>
                 <Turkish>Windows güncellenmesini durdur</Turkish>
             </Key>
@@ -13152,6 +13342,7 @@
                 <Russian>Порт скачивания был неожиданно закрыт на сервере. Требуется ручное перенаправление!</Russian>
                 <Chinesesimp>服务器的下载端口意外关闭。 需要手动重定向！</Chinesesimp>
                 <Korean>서버에서 다운로드 포트가 닫혔습니다. 수동으로 경로를 변경해야 합니다!</Korean>
+                <Spanish>El puerto de descarga se ha cerrado en el servidor. ¡Hay que redirigir manualmente!</Spanish>
                 <French>Le port de téléchargement a été fermé sur le serveur. Un réacheminement manuel est nécessaire !</French>
                 <Turkish>Sunucudaki indirme portu kapatıldı. Manuel yönlendirme gerekiyor!</Turkish>
             </Key>
@@ -13160,6 +13351,7 @@
                 <Russian>Перенаправить на другой порт</Russian>
                 <Chinesesimp>手动重定向</Chinesesimp>
                 <Korean>새 포트로 경로 변경</Korean>
+                <Spanish>Redirigir a un puerto nuevo</Spanish>
                 <French>Réacheminement vers un nouveau port</French>
                 <Turkish>Yeni porta yönlendir</Turkish>
             </Key>
@@ -13168,6 +13360,7 @@
                 <Russian>Ошибка сетевого адаптера, аппаратная часть не отвечает. Перезапустить адаптер?</Russian>
                 <Chinesesimp>网络适配器错误，硬件没有响应。 重启适配器？</Chinesesimp>
                 <Korean>네트워크 어댑터 오류, 하드웨어가 응답하지 않습니다. 어댑터를 재시작하시겠습니까?</Korean>
+                <Spanish>Error del adaptador de red, el hardware no responde. ¿Reiniciar el adaptador?</Spanish>
                 <French>Erreur de l'adaptateur réseau, le matériel ne répond pas. Redémarrer l'adaptateur ?</French>
                 <Turkish>Ağ Bağdaştırıcısı Hatası, donanım yanıt vermiyor. Bağdaştırıcıyı yeniden başlat?</Turkish>
             </Key>
@@ -13176,6 +13369,7 @@
                 <Russian>Перезапустить сетевой адаптер</Russian>
                 <Chinesesimp>重启适配器</Chinesesimp>
                 <Korean>네트워크 어댑터 재시작</Korean>
+                <Spanish>Reiniciar el adaptador de red</Spanish>
                 <French>Redémarrer NetworkAdapter</French>
                 <Turkish>Ağ Bağdaştırıcısını Yeniden Başlat</Turkish>
             </Key>
@@ -13184,6 +13378,7 @@
                 <Russian>Критическая ошибка в сетевой инфраструктуре. Сервер вернул ErrorCode: CRITICAL_ARMA_PROCESS_DIED</Russian>
                 <Chinesesimp>网络基础设施中出现严重错误。 服务器返回错误代码：CRITICAL_ARMA_PROCESS_DIED</Chinesesimp>
                 <Korean>네트워크 인프라에 심각한 오류 발생. 서버에서 오류 코드를 반환했습니다: CRITICAL_ARMA_PROCESS_DIED</Korean>
+                <Spanish>Error crítico en la infraestructura de red. El servidor devolvió ErrorCode: CRITICAL_ARMA_PROCESS_DIED</Spanish>
                 <French>Erreur critique dans l'infrastructure du réseau. Le serveur a renvoyé le code ErrorCode: CRITICAL_ARMA_PROCESS_DIED</French>
                 <Turkish>Ağ altyapısında Kritik Hata. Sunucu Hata Kodu döndürdü: CRITICAL_ARMA_PROCESS_DIED</Turkish>
             </Key>
@@ -13192,6 +13387,7 @@
                 <Russian>Перезапустить процесс сервера</Russian>
                 <Chinesesimp>重启服务器进程</Chinesesimp>
                 <Korean>서버 프로세스 재시작</Korean>
+                <Spanish>Reiniciar el proceso del servidor</Spanish>
                 <French>Redémarrer le processus du serveur</French>
                 <Turkish>Sunucu işlemini yeniden başlat</Turkish>
             </Key>
@@ -13200,6 +13396,7 @@
                 <Russian>Загрузка %1%2</Russian>
                 <Chinesesimp>正在下载 %1%2</Chinesesimp>
                 <Korean>%1%2 다운로드 중</Korean>
+                <Spanish>Descarga al %1%2</Spanish>
                 <French>Télécharger à %1%2</French>
                 <Turkish>İndirme durumu: %%%1%2</Turkish>
             </Key>
@@ -13208,6 +13405,7 @@
                 <Russian>Поздравляем! Вам удалось скачать данные с ноутбука!</Russian>
                 <Chinesesimp>恭喜！ 您已成功从笔记本电脑下载数据！</Chinesesimp>
                 <Korean>축하합니다! 정보를 다운로드했습니다!</Korean>
+                <Spanish>¡Enhorabuena! Has conseguido descargar la información.</Spanish>
                 <French>Félicitations ! Vous avez réussi à télécharger l'intel !</French>
                 <Turkish>Tebrikler! İstihbaratı indirmeyi başardınız!</Turkish>
             </Key>
@@ -13216,6 +13414,7 @@
                 <Russian>Мы получили информацию о том, как работает %1, их теневая сеть по всему %2, секретные маршруты, подкупленные чиновники и многое другое. Мы предприняли некоторые меры, чтобы подорвать их активность.</Russian>
                 <Chinesesimp>我们已经获得了关于 %1 如何运作、他们在 %2 的影子网络、秘密路线、贿赂官员等等的信息。 我们采取了一些措施来妨碍他们在这里的活动。</Chinesesimp>
                 <Korean>우리는 %1이 어떻게 작전하는지, %2를 가로지르는 그들의 지하 연락망, 비밀 경로, 뇌물을 받은 공무원 등에 대한 정보를 얻었습니다. 우린 여기서 그들의 활동을 저해하기 위해 몇 가지 조치를 취했습니다.</Korean>
+                <Spanish>Hemos obtenido información sobre cómo opera %1: su red en la sombra por todo %2, rutas secretas, funcionarios sobornados y mucho más. Hemos tomado medidas para dañar su actividad aquí.</Spanish>
                 <French>Nous avons obtenu des informations sur le mode de fonctionnement de %1, son réseau clandestin à travers %2, ses itinéraires secrets, ses fonctionnaires soudoyés et bien d'autres choses encore. Nous avons pris des mesures pour nuire à leur activité ici.</French>
                 <Turkish>%1 grubunun nasıl faaliyet gösterdiği, %2 genelindeki gölge ağları, gizli rotaları, rüşvet verdikleri yetkililer ve çok daha fazlası hakkında bilgi edindik. Buradaki faaliyetlerine darbe vurmak için bazı önlemler aldık.</Turkish>
             </Key>
@@ -13224,6 +13423,7 @@
                 <Russian>Мы собрали крупицы информации о %1, кодовых названиях их укрытий и ячеек в городах. Теперь мы знаем, что %1 в %2 нет.</Russian>
                 <Chinesesimp>我们收集了关于 %1 的点点滴滴的信息，他们的藏身处和城市密室的代号。 我们现在知道 %2 中没有 %1。</Chinesesimp>
                 <Korean>우린 %1에 대한 작은 정보들, 그들의 은신처와 도시의 셀들의 암구호를 모았습니다. 이제 %2에 %1이 없다는 걸 알게 되었습니다.</Korean>
+                <Spanish>Hemos reunido fragmentos de información sobre %1, nombres en clave de sus escondites y de sus células en las ciudades. Ahora sabemos que no hay %1 en %2.</Spanish>
                 <French>Nous avons obtenu des informations sur le mode de fonctionnement de %1, son réseau clandestin à travers %2, ses itinéraires secrets, ses fonctionnaires soudoyés et bien d'autres choses encore. Nous avons pris des mesures pour nuire à leur activité ici.</French>
                 <Turkish>%1 hakkında kırıntı bilgiler, sığınaklarının kod adlarını ve şehirlerdeki hücrelerini topladık. Artık biliyoruz ki %2 bölgesinde hiçbir %1 unsuru bulunmuyor.</Turkish>
             </Key>
