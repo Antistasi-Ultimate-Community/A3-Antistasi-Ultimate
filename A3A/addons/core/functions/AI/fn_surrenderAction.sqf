@@ -102,8 +102,8 @@ if (!isNil "_markerX") then { [_markerX, _unitSide] remoteExec ["A3A_fnc_zoneChe
 
 
 // timed cleanup functions
-[_unit] call FUNCMAIN(despawnQueueEntity);
-[_boxX] call FUNCMAIN(despawnQueueEntity);
+[_unit] call FUNCMAIN(preparePostMortem);
+[_boxX, true] remoteExec[QFUNCMAIN(despawnQueueEntity), 2];
 
 sleep 3;				// Also protects against box kills
 _unit allowDamage true;

@@ -50,8 +50,8 @@ private _civNotHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", f
 
 if (_civNotHuman) exitWith
 {
-    _unit addEventHandler ["Killed", FUNCMAIN(postmortem)];
-    ["civInit", [_unit]] call EFUNC(Events,triggerEvent);
+    [_unit] call FUNCMAIN(preparePostMortem);
+    [CBA_EVENT_SERVER_INIT_CIVILIAN_UNIT, [_unit]] call FUNCMAIN(triggerServerEvent);
 };
 
 _unit addEventHandler["FiredNear", {
@@ -61,6 +61,8 @@ _unit addEventHandler["FiredNear", {
 
 _unit addEventHandler ["Killed", {
     params ["_victim", "_killer"];
+
+    call FUNCMAIN(postmortem);
 
     if (time - (_victim getVariable ["lastInjuredByPlayer", 0]) < 120) then {
         _killer = _victim getVariable ["injuredByPlayer", _killer];
@@ -94,8 +96,8 @@ _unit addEventHandler ["Killed", {
             };
         };
     };
-
-    [_victim, _killer] call FUNCMAIN(postmortem);
 }];
 
-["civInit", [_unit]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_INIT_CIVILIAN_UNIT, [_unit]] call FUNCMAIN(triggerServerEvent);
+
+nil;

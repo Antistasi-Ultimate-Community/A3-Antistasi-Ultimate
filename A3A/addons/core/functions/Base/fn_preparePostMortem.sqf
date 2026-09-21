@@ -37,7 +37,7 @@ if !(local _entity) exitWith {
 
 if (isNil { _entity getVariable QGVAR(postMortemPrepped) }) then {
     _entity setVariable[QGVAR(postMortemPrepped), true];
-    _entity addEventHandler["Killed", FUNCMAIN(postmortem)];
+    _entity addEventHandler["Killed", LINKFUNCMAIN(postmortem)];
 };
 
 nil;

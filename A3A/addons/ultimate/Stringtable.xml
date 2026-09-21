@@ -517,20 +517,6 @@
             <Spanish>Sitio destruido: población eliminada (sin apoyo)</Spanish>
             <Polish>Zniszczone miejsce: populacja wyeliminowana (brak wsparcia)</Polish>
         </Key>
-        <Key ID="STR_A3U_HOVER_DESTROYED_MILADMIN">
-            <Original>Cannot fast travel to a destroyed military administration.</Original>
-            <English>Cannot fast travel to a destroyed military administration.</English>
-            <German>Zu einer zerstörten Militärverwaltung ist keine Schnellreise möglich.</German>
-            <French>Impossible de voyager rapidement vers une administration militaire détruite.</French>
-            <Spanish>No se puede viajar rápido a una administración militar destruida.</Spanish>
-            <Italian>Impossibile viaggiare rapidamente verso un’amministrazione militare distrutta.</Italian>
-            <Polish>Nie można odbyć szybkiej podróży do zniszczonej administracji wojskowej.</Polish>
-            <Russian>Нельзя быстро переместиться к разрушенной военной администрации.</Russian>
-            <Czech>Nelze rychle cestovat do zničené vojenské správy.</Czech>
-            <Turkish>Yok edilmiş bir askerî idareye hızlı seyahat edilemez.</Turkish>
-            <ChineseSimplified>无法快速前往已被摧毁的军事管理区。</ChineseSimplified>
-            <Japanese>破壊された軍政施設にはファストトラベルできません。</Japanese>
-        </Key>
         <Key ID="STR_A3U_HOVER_CITY_SUPPORT">
             <Original>Population: %1&lt;br /&gt;Support — Rebels: %2%% (%3)&lt;br /&gt;Support — Government: %4%% (%5)&lt;br /&gt;To gain more support capture surrounding zones and/or deliver supplies</Original>
             <French>Population : %1&lt;br /&gt;Soutien — Rebelles : %2%% (%3)&lt;br /&gt;Soutien — Gouvernement : %4%% (%5)&lt;br /&gt;Pour augmenter le soutien, capturez les zones voisines et/ou livrez des fournitures</French>
@@ -723,18 +709,6 @@
             <Spanish>Solo disponible para marcadores controlados por el jugador.</Spanish>
             <Polish>Dostępne tylko dla znaczników kontrolowanych przez gracza.</Polish>
         </Key>
-        <Key ID="STR_A3U_CONTEXT_GARRISON_TRADER_BLOCKED">
-            <Original>Garrison is not available for the Black Market Trader.</Original>
-            <French>La garnison n'est pas disponible pour le Marchand du marché noir.</French>
-            <German>Garnison ist für den Schwarzmarkthändler nicht verfügbar.</German>
-            <Czech>Posádka není pro obchodníka na černém trhu k dispozici.</Czech>
-            <ChineseSimplified>黑市商人不可使用驻军功能。</ChineseSimplified>
-            <Korean>암시장 상인에게는 주둔지 기능을 사용할 수 없습니다.</Korean>
-            <Russian>Гарнизон недоступен для торговца чёрного рынка.</Russian>
-            <Italian>La guarnigione non è disponibile per il Mercante del Mercato Nero.</Italian>
-            <Spanish>La guarnición no está disponible para el Comerciante del Mercado Negro.</Spanish>
-            <Polish>Garnizon nie jest dostępny dla handlarza z czarnego rynku.</Polish>
-        </Key>
         <Key ID="STR_A3U_CONTEXT_GARRISON_REQUIREMENTS">
             <Original>Requires Default Commander and player-controlled marker.</Original>
             <French>Nécessite le commandant par défaut et un marqueur contrôlé par le joueur.</French>
@@ -907,18 +881,6 @@
             <Turkish>İdareyi yok etmek için komutanı etkisiz hâle getirin.&lt;br /&gt;İçeride yağmalayabileceğiniz küçük bir erzak sandığı ve kurtarılınca fraksiyonunuza katılacak mahkûmlar bulabilirsiniz.</Turkish>
             <ChineseSimplified>消灭指挥官即可摧毁该管理区。&lt;br /&gt;内部有一只小型补给箱可供搜刮，还有可营救的囚犯，获救后将加入你的阵营。</ChineseSimplified>
             <Japanese>指揮官を排除すると施設を破壊できます。&lt;br /&gt;中には少量の補給箱があり、救出できる捕虜もいて、救出後はあなたの勢力に加わります。</Japanese>
-        </Key>
-        <Key ID="STR_A3U_CONTEXT_GARRISON_RALLYPOINT_BLOCKED">
-            <Original>Cant garrison units on rally point</Original>
-            <French>Impossible de mettre des unités en garnison sur le point de ralliement.</French>
-            <German>Einheiten können am Sammelpunkt nicht in Garnison stationiert werden.</German>
-            <Czech>Na shromaždišti nelze umístit jednotky do posádky.</Czech>
-            <ChineseSimplified>无法在集结点驻扎单位。</ChineseSimplified>
-            <Korean>집결 지점에는 유닛을 주둔시킬 수 없습니다.</Korean>
-            <Russian>Нельзя разместить гарнизон на точке сбора.</Russian>
-            <Italian>Non è possibile assegnare unità alla guarnigione sul punto di raccolta.</Italian>
-            <Spanish>No se pueden guarnecer unidades en el punto de reunión.</Spanish>
-            <Polish>Nie można umieszczać jednostek w garnizonie na punkcie zbornym.</Polish>
         </Key>
     <Package name="CBA-settings">
         <Key ID="STR_A3U_setting_enableInitMessages">

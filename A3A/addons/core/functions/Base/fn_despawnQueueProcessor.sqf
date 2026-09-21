@@ -33,7 +33,7 @@ GVAR(despawnQueue) = GVAR(despawnQueue) select {
     if (isNull _x || {isNil { _x getVariable QGVAR(despawnTTL) }}) then { continueWith false };
 
     // Still alive, retain queue entry
-    if (alive _x) then { continueWith true };
+    if (alive _x && !(_x getVariable QGVAR(despawnAlways))) then { continueWith true };
 
     // First seen dead; mark time of death
     if (isNil { _x getVariable QGVAR(despawnTime) }) then {
@@ -62,7 +62,7 @@ GVAR(despawnQueue) = GVAR(despawnQueue) select {
 Info_1("Despawn queue processor retained %1 entities.",count GVAR(despawnQueue));
 
 // Unblock queue
-missionNamespace setVariable[QGVAR(despawnerRunning), nil];
+GVAR(despawnerRunning) = nil;
 
 // Rerun this after a minute
 [FUNCMAIN(despawnQueueProcessor), nil, GVAR(despawnQueueProcessorDelay)] call CBA_fnc_waitAndExecute;

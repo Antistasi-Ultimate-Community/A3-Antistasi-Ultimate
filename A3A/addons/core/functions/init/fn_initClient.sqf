@@ -288,10 +288,7 @@ player addEventHandler ["WeaponAssembled", {
     private _veh = _this select 1;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
     if (_veh isKindOf "StaticWeapon") then {
-        if (not(_veh in staticsToSave)) then {
-            staticsToSave pushBack _veh;
-            publicVariable "staticsToSave";
-        };
+        [_veh] call A3A_fnc_addToStaticsToSave;
         _markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
         _pos = position _veh;
         [_veh] call A3A_Logistics_fnc_addLoadAction;
@@ -300,8 +297,9 @@ player addEventHandler ["WeaponAssembled", {
 }];
 
 player addEventHandler ["WeaponDisassembled", {
-	[_this select 1] remoteExec ["A3A_fnc_postmortem", 2];
-	[_this select 2] remoteExec ["A3A_fnc_postmortem", 2];
+    params["","_primaryBag","_secondaryBag"];
+    [_primaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+    [_secondaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 }];
 
 if (areRivalsDiscovered) then {

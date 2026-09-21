@@ -170,7 +170,7 @@ if (!_noDeletion) then {
         _x removeAllEventHandlers "Killed";
         _x addEventHandler ["Killed", {
             params ["_victim", "_killer"];
-            _this remoteExecCall[QFUNCMAIN(postmortem), 2];
+            call FUNCMAIN(postmortem);
             if ((isPlayer _killer) and (side _killer == teamPlayer)) then {
                 if (!isMultiPlayer) then {
                     _nul = [0,20] remoteExec ["A3A_fnc_resourcesFIA",2];

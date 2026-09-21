@@ -45,7 +45,6 @@ private _fnc_getTimeDiffString = {
     format ["%1%2 %3%4", _diffTime#_nzi, _text#_nzi, _diffTime#(_nzi+1), _text#(_nzi+1)];
 };
 
-
 // Get display
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
 
@@ -67,11 +66,11 @@ switch (_mode) do
     {
         // Restart if it wasn't server-closed
         if (isNil "A3A_setup_saveData") exitWith {};
-        0 spawn {
+        [] spawn {
             sleep 4;
             Debug("Waiting until escape menu is closed");
-            waitUntil { sleep 1; isNull findDisplay 49 and !dialog };       // escape menu or user dialog
-            if (isNil "A3A_setup_saveData") exitWith {};                        // might have been server-closed during the sleep
+            waitUntil { !dialog && { isNull findDisplay 49 } };       // escape menu or user dialog
+            if (isNil "A3A_setup_saveData") exitWith {};              // might have been server-closed during the sleep
             Debug("Restarting setup dialog");
             createDialog "A3A_setupDialog";
         };
@@ -155,7 +154,8 @@ switch (_mode) do
     {
         Debug("Server requested dialog close");
         A3A_setup_saveData = nil;
-        if (!isNull _display) then { closeDialog 0 };
+        // Close ALL dialogs, not just ours
+        while { dialog } do { closeDialog 0 };
     };
 
     default {

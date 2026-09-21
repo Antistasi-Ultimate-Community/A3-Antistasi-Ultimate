@@ -20,7 +20,7 @@ if (isServer) then {
 };
 
 removeAllActions _oldUnit;
-[_oldUnit] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+[_oldUnit] remoteExecCall[QFUNCMAIN(postmortem), 2];
 
 _oldUnit setVariable ["incapacitated",false,true];
 _newUnit setVariable ["incapacitated",false,true];
@@ -232,10 +232,7 @@ if (side group _newUnit == teamPlayer) then
 		private _veh = _this select 1;
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
 		if (_veh isKindOf "StaticWeapon") then {
-			if (not(_veh in staticsToSave)) then {
-				staticsToSave pushBack _veh;
-				publicVariable "staticsToSave";
-			};
+	        [_veh] call A3A_fnc_addToStaticsToSave;
 			_markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
 			_pos = position _veh;
 			if (_markersX findIf {_pos inArea _x} != -1) then {
@@ -245,8 +242,8 @@ if (side group _newUnit == teamPlayer) then
 	}];
 
 	_newUnit addEventHandler ["WeaponDisassembled", {
-		[_this select 1] remoteExecCall[QFUNCMAIN(postmortem), 2];
-		[_this select 2] remoteExecCall[QFUNCMAIN(postmortem), 2];
+		[_this select 1, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+		[_this select 2, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 	}];
 
 	if (areRivalsDiscovered) then {
@@ -276,4 +273,4 @@ if (staminaEnabled isEqualTo false) then {
 }; 
  
 private _newWeaponSway = swayEnabled / 100;
-_newunit setCustomAimCoef _newWeaponSway;
+_newUnit setCustomAimCoef _newWeaponSway;

@@ -22,19 +22,20 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNCMAIN(postmortem),_this);
 
-if !assert(isServer) exitWith {
-    Warning("Function can only be called on the server.");
-    _this remoteExecCall[QFUNCMAIN(postmortem), 2];
-};
+if !(isServer) exitWith { _this remoteExecCall[QFUNCMAIN(postmortem), 2] };
 
 if !assert(params[
     ["_victim", nil, [objNull]]
 ]) exitWith {};
 if (isNull _victim) exitWith {};
 
+if (alive _victim) exitWith {
+    Error_2("post-mortem on alive unit %1 called (_this=%2)", _victim, _this);
+};
+
 if (isNil { _victim getVariable QGVAR(postMortemEventSent) }) then {
     _victim setVariable[QGVAR(postMortemEventSent), true];
-    [CBA_EVENT_SERVER_ENTITY_POSTMORTEM, _this] call FUNCMAIN(triggerLocalEvent);
+    [CBA_EVENT_SERVER_ENTITY_POSTMORTEM, _this] spawn FUNCMAIN(triggerLocalEvent);
 };
 
 [_victim] call FUNCMAIN(despawnQueueEntity);

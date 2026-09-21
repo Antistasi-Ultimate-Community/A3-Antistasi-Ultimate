@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /*
     A3A_fnc_selfReviveReset
     Remove any self-revive after-effects and clear the timeout
@@ -9,6 +11,9 @@
 
     Environment: Player-local
 */
+
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
 params [["_instant", true]];
 
@@ -35,5 +40,12 @@ if (!_instant && !isNil { player getVariable "A3A_selfReviveTimeout" }) then {
     [localize "STR_A3A_selfRevive_title", localize "STR_A3A_selfRevive_timeout"] call A3A_fnc_customHint;
 };
 player setVariable ["A3A_selfReviveTimeout", nil];
+
+if !(isNil { player getVariable QGVAR(restoreAimCoef) }) exitWith {
+    private _coef = player getVariable QGVAR(restoreAimCoef);
+    player setVariable[QGVAR(restoreAimCoef), nil];
+    Debug_1("Restoring previous aim coefficient: %1",_coef);
+    player setCustomAimCoef _coef;
+};
 
 if (getCustomAimCoef player > 1) then { player setCustomAimCoef 1 };

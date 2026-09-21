@@ -16,13 +16,19 @@ Parameters:
     0: _entity - The entity to be queued for despawn <OBJECT>
 
 Optional:
-    1: _ttl - Time to live for the entity in the despawn queue after its death <NUMBER>
+    1: _alwaysDespawn - Whether the entity should always be despawned regardless of its alive status <BOOL>
+        Default: `false`
+    2: _ttl - Time to live for the entity in the despawn queue after its death <NUMBER>
         Default: `cleantime` server variable
 
 Example:
     (begin example)
+    // Make sure someUnit is cleaned after death
     [someUnit] call A3A_fnc_despawnQueueEntity;
-    [someUnit, 120] call A3A_fnc_despawnQueueEntity; // Queue with custom TTL of 2 minutes
+    // Always delete some object created by e.g. an encounter after TTL
+    [someObject, true] call A3A_fnc_despawnQueueEntity;
+    // Queue with custom TTL of 2 minutes
+    [someUnit, false, 120] call A3A_fnc_despawnQueueEntity;
     (end example)
 
 Returns:
@@ -46,8 +52,10 @@ _this spawn {
 
     waitUntil { isNil QGVAR(despawnerRunning) };
 
-    private _ttl = param[1, cleantime, [0]];
+    private _alwaysDespawn = param[1, false, [true]];
+    private _ttl = param[2, cleantime, [0]];
 
+    _entity setVariable[QGVAR(despawnAlways), _alwaysDespawn];
     _entity setVariable[QGVAR(despawnTTL), _ttl];
     GVAR(despawnQueue) pushBackUnique _entity;
 

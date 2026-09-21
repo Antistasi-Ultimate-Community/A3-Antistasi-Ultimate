@@ -174,11 +174,15 @@ if (_isControl) then
         ];
 
         private _vehicleCategory = selectRandomWeighted _vehicleCategories;
-        private _fallbackVehicle = selectRandom (_faction get "vehiclesAPCs");
+        private _fallbackVehicles = _faction getOrDefault["vehiclesAPCs", []];
 
         Debug_2("Chosen %1 as vehicle category. tierWar is %2", _vehicleCategory, tierWar);
 
-        _typeVehX = selectRandom (_faction getOrDefault [_vehicleCategory, _fallbackVehicle]);
+        _typeVehX = selectRandom (_faction getOrDefault [_vehicleCategory, _fallbackVehicles]);
+        if (isNil "_typeVehX" || { !isClass(configFile >> "CfgVehicles" >> _typeVehX) }) exitWith {
+            Warning("Failed to select a valid vehicle type for '%1'; fallback also failed.", _vehicleCategory);
+        };
+
         _veh = _typeVehX createVehicle getPos (_roads select 0);
         _veh setDir _dirveh + 90;
         [_veh, _sideX] call A3A_fnc_AIVEHinit;
@@ -292,7 +296,7 @@ while {(spawner getVariable _markerX != 2) and ({[_x,_markerX] call A3A_fnc_canC
     sleep 3;
 };
 
-["locationSpawned", [_markerX, "Control", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Control", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {sleep 1;((spawner getVariable _markerX == 2))  or ({[_x,_markerX] call A3A_fnc_canConquer} count _soldiers == 0)};
 
@@ -391,4 +395,7 @@ if (_conquered) then
             };
     };
 };
-["locationSpawned", [_markerX, "Control", false]] call EFUNC(Events,triggerEvent);
+    
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Control", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;
