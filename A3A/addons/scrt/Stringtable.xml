@@ -18531,6 +18531,7 @@
                 <Russian>Количество очков авиаударов успешно увеличено.</Russian>
                 <Chinesesimp>空中支援点数已增加</Chinesesimp>
                 <Korean>항공지원 포인트가 올라갔습니다.</Korean>
+                <Spanish>Se han aumentado los puntos de soporte aéreo.</Spanish>
                 <French>Les points de soutien aérien ont été augmentés.</French>
                 <Turkish>Hava Destek puanları artırıldı.</Turkish>
             </Key>
@@ -18539,6 +18540,7 @@
                 <Russian>Информацие о технике</Russian>
                 <Chinesesimp>载具信息</Chinesesimp>
                 <Korean>차량 정보</Korean>
+                <Spanish>Información del vehículo</Spanish>
                 <French>Informations sur le véhicule</French>
                 <Turkish>Araç Bilgisi</Turkish>
             </Key>
@@ -18547,6 +18549,7 @@
                 <Russian>Вы должны выбрать только одну группу в режиме главнокомандующего.</Russian>
                 <Chinesesimp>您只能在高级指挥面板中选择一个小队。</Chinesesimp>
                 <Korean>하이 커맨드 표시줄에서 그룹을 하나만 선택해야 합니다.</Korean>
+                <Spanish>Tienes que seleccionar un solo grupo en la barra de HC.</Spanish>
                 <French>Vous ne devez sélectionner qu'un seul groupe dans la barre HC.</French>
                 <Turkish>Yüksek Komuta çubuğunda yalnızca bir grup seçmelisiniz.</Turkish>
             </Key>
@@ -18555,6 +18558,7 @@
                 <Russian>%2%1 спешивается&lt;br/&gt;</Russian>
                 <Chinesesimp>%2%1 下车&lt;br/&gt;</Chinesesimp>
                 <Korean>%2%1 분리 중&lt;br/&gt;</Korean>
+                <Spanish>%2%1 desembarcando&lt;br/&gt;</Spanish>
                 <French>%2%1 débarquement&lt;br/&gt;</French>
                 <Turkish>%2%1 araçtan iniyor&lt;br/&gt;</Turkish>
             </Key>
@@ -18563,6 +18567,7 @@
                 <Russian>%2%1 садится&lt;br/&gt;</Russian>
                 <Chinesesimp>%2%1 登机&lt;br/&gt;</Chinesesimp>
                 <Korean>%2%1 탑승 중&lt;br/&gt;</Korean>
+                <Spanish>%2%1 embarcando&lt;br/&gt;</Spanish>
                 <French>%2%1 embarquement&lt;br/&gt;</French>
                 <Turkish>%2%1 araca biniyor&lt;br/&gt;</Turkish>
             </Key>
@@ -18571,6 +18576,7 @@
                 <Russian>%1, ДОЛОЖИТЕ ОБСТАНОВКУ!</Russian>
                 <Chinesesimp>%1, 报告情况！</Chinesesimp>
                 <Korean>%1, 상황 보고하라!</Korean>
+                <Spanish>%1, ¡informe de situación!</Spanish>
                 <French>%1, SITREP!</French>
                 <Turkish>%1, durum raporu ver!</Turkish>
             </Key>
@@ -18579,6 +18585,7 @@
                 <Russian>Статус %1&lt;br/&gt;&lt;br/&gt;Живые члены отряда: %2&lt;br/&gt;Способны сражаться: %3&lt;br/&gt;Текущая задача: %4&lt;br/&gt;Боевой режим:%5&lt;br/&gt;</Russian>
                 <Chinesesimp>%1 状态&lt;br/&gt;&lt;br/&gt;存活成员：%2&lt;br/&gt;可战斗：%3&lt;br/&gt;当前任务：%4&lt;br/&gt;战斗模式：%5&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 상태&lt;br/&gt;&lt;br/&gt;살아 있는 대원: %2&lt;br/&gt;전투 가능 인원: %3&lt;br/&gt;현재 과업: %4&amp;lt&lt;br/&gt;전투 상태:%5&lt;br/&gt;</Korean>
+                <Spanish>Estado de %1&lt;br/&gt;&lt;br/&gt;Miembros vivos: %2&lt;br/&gt;Aptos para el combate: %3&lt;br/&gt;Tarea actual: %4&lt;br/&gt;Modo de combate:%5&lt;br/&gt;</Spanish>
                 <French>%1 Statut&lt;br/&gt;&lt;br/&gt;Membres vivants: %2&lt;br/&gt;Capables de combattre: %3&lt;br/&gt;Tâche actuelle: %4&lt;br/&gt;Mode de combat:%5&lt;br/&gt;</French>
                 <Turkish>%1 Durumu&lt;br/&gt;&lt;br/&gt;Hayatta kalan üyeler: %2&lt;br/&gt;Savaşabilecek durumda olanlar: %3&lt;br/&gt;Mevcut görev: %4&lt;br/&gt;Savaş Modu:%5&lt;br/&gt;</Turkish>
             </Key>
@@ -18587,6 +18594,7 @@
                 <Russian>%1Действующий полевой врач&lt;br/&gt;</Russian>
                 <Chinesesimp>%1有战地医生&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 의무병 작전 가능&lt;br/&gt;</Korean>
+                <Spanish>%1Médico operativo&lt;br/&gt;</Spanish>
                 <French>%1médecin opérationnel&lt;br/&gt;</French>
                 <Turkish>%1Faal Sıhhiye&lt;br/&gt;</Turkish>
             </Key>
@@ -18595,6 +18603,7 @@
                 <Russian>%1Без действующего полевого врача&lt;br/&gt;</Russian>
                 <Chinesesimp>%1没有战地医生&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 작전 가능 의무병 없음&lt;br/&gt;</Korean>
+                <Spanish>%1Sin médico operativo&lt;br/&gt;</Spanish>
                 <French>Pas de médecins opérationnels pour %1&lt;br/&gt;</French>
                 <Turkish>%1Faal Sıhhiye&lt;br/&gt;</Turkish>
             </Key>
@@ -18603,6 +18612,7 @@
                 <Russian>%1С противовоздушными средствами&lt;br/&gt;</Russian>
                 <Chinesesimp>%1具有防空能力&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 대공 기능 포함&lt;br/&gt;</Korean>
+                <Spanish>%1Con capacidad AA&lt;br/&gt;</Spanish>
                 <French>%1avec des capacités AA</French>
                 <Turkish>%1Uçaksavar (AA) kabiliyetine sahip&lt;br/&gt;</Turkish>
             </Key>
@@ -18611,6 +18621,7 @@
                 <Russian>%1С противотанковыми средствами&lt;br/&gt;</Russian>
                 <Chinesesimp>%1具有反坦克功能&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 대전차 기능 포함&lt;br/&gt;</Korean>
+                <Spanish>%1Con capacidad AT&lt;br/&gt;</Spanish>
                 <French>%1avec des capacités AT</French>
                 <Turkish>%1Tanksavar (AT) kabiliyetine sahip&lt;br/&gt;</Turkish>
             </Key>
@@ -18619,6 +18630,7 @@
                 <Russian>%1Миномёт развёрнут&lt;br/&gt;</Russian>
                 <Chinesesimp>%1迫击炮部署完毕&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 박격포 배치됨&lt;br/&gt;</Korean>
+                <Spanish>%1Mortero desplegado&lt;br/&gt;</Spanish>
                 <French>%1Mortier déployé&lt;br/&gt;</French>
                 <Turkish>%1Havan kuruldu&lt;br/&gt;</Turkish>
             </Key>
@@ -18627,6 +18639,7 @@
                 <Russian>%1Миномёт не развёрнут&lt;br/&gt;</Russian>
                 <Chinesesimp>%1迫击炮未部署&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 박격포 배치되지 않음&lt;br/&gt;</Korean>
+                <Spanish>%1Mortero sin desplegar&lt;br/&gt;</Spanish>
                 <French>%1Mortier non déployé&lt;br/&gt;</French>
                 <Turkish>%1Havan kurulu değil&lt;br/&gt;</Turkish>
             </Key>
@@ -18635,6 +18648,7 @@
                 <Russian>%1Стац. орудие развёрнуто&lt;br/&gt;</Russian>
                 <Chinesesimp>%1固定武器已部署&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 고정화기 배치됨&lt;br/&gt;</Korean>
+                <Spanish>%1Estática desplegada&lt;br/&gt;</Spanish>
                 <French>%1Statique déployée&lt;br/&gt;</French>
                 <Turkish>%1Sabit silah kuruldu&lt;br/&gt;</Turkish>
             </Key>
@@ -18643,6 +18657,7 @@
                 <Russian>%1Стац. орудие не развёрнуто&lt;br/&gt;</Russian>
                 <Chinesesimp>%1固定武器未部署&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 고정화기 배치되지 않음&lt;br/&gt;</Korean>
+                <Spanish>%1Estática sin desplegar&lt;br/&gt;</Spanish>
                 <French>%1Statique non déployé&lt;br/&gt;</French>
                 <Turkish>%1Sabit silah kurulu değil&lt;br/&gt;</Turkish>
             </Key>
@@ -18651,6 +18666,7 @@
                 <Russian>%1Текущее трансп. средство:&lt;br/&gt;%2&lt;br/&gt;</Russian>
                 <Chinesesimp>%1当前车辆:&lt;br/&gt;%2&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 현재 차량:&lt;br/&gt;%2&lt;br/&gt;</Korean>
+                <Spanish>%1Vehículo actual:&lt;br/&gt;%2&lt;br/&gt;</Spanish>
                 <French>%1Véhicule actuel:&lt;br/&gt;%2&lt;br/&gt;</French>
                 <Turkish>%1Mevcut araç:&lt;br/&gt;%2&lt;br/&gt;</Turkish>
             </Key>
@@ -18659,6 +18675,7 @@
                 <Russian>%1ОБЕЗДВИЖЕНО&lt;br/&gt;</Russian>
                 <Chinesesimp>%1失去战斗力&lt;br/&gt;</Chinesesimp>
                 <Korean>%1 비활성화&lt;br/&gt;</Korean>
+                <Spanish>%1INUTILIZADO&lt;br/&gt;</Spanish>
                 <French>%1DÉSACTIVÉ&lt;br/&gt;</French>
                 <Turkish>%1DEVRE DIŞI&lt;br/&gt;</Turkish>
             </Key>
@@ -18667,6 +18684,7 @@
                 <Russian>%1ОРУДИЕ НЕ МОЖЕТ СТРЕЛЯТЬ&lt;br/&gt;</Russian>
                 <Chinesesimp>%1武器不能开火&lt;br/&gt;</Chinesesimp>
                 <Korean>%1 무기 비활성화&lt;br/&gt;</Korean>
+                <Spanish>%1ARMA INUTILIZADA&lt;br/&gt;</Spanish>
                 <French>%1ARME DÉSACTIVÉE&lt;br/&gt;</French>
                 <Turkish>%1SİLAH DEVRE DIŞI&lt;br/&gt;</Turkish>
             </Key>
@@ -18675,6 +18693,7 @@
                 <Russian>%1ЕСТЬ БОЕКОМПЛЕКТ&lt;br/&gt;</Russian>
                 <Chinesesimp>%1有弹药&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 탄약 장전됨&lt;br/&gt;</Korean>
+                <Spanish>%1CON MUNICIÓN&lt;br/&gt;</Spanish>
                 <French>%1APPROVISIONNER</French>
                 <Turkish>%1MÜHİMMATLI&lt;br/&gt;</Turkish>
             </Key>
@@ -18683,6 +18702,7 @@
                 <Russian>%1Экипаж:%2/%3</Russian>
                 <Chinesesimp>%1乘员:%2/%3</Chinesesimp>
                 <Korean>%1 탑승함:%2/%3</Korean>
+                <Spanish>%1A bordo:%2/%3</Spanish>
                 <French>%1Equipage:%2%3</French>
                 <Turkish>%1Araçtakiler:%2/%3</Turkish>
             </Key>
@@ -18691,6 +18711,7 @@
                 <Russian>Найм ИИ-бойцов</Russian>
                 <Chinesesimp>招募AI单位</Chinesesimp>
                 <Korean>인공지능 모집</Korean>
+                <Spanish>Reclutamiento de IA</Spanish>
                 <French>Recrutement IA</French>
                 <Turkish>Yapay Zeka Alımı</Turkish>
             </Key>
@@ -18699,6 +18720,7 @@
                 <Russian>Только постоянные участники сервера могут нанимать ИИ-бойцов.</Russian>
                 <Chinesesimp>只有服务器会员才能招募AI单位。</Chinesesimp>
                 <Korean>서버 멤버만 인공지능을 모집할 수 있습니다.</Korean>
+                <Spanish>Solo los miembros del servidor pueden reclutar unidades de IA.</Spanish>
                 <French>Seuls les membres du serveur peuvent recruter des unités d'IA.</French>
                 <Turkish>Yalnızca Sunucu Üyeleri yapay zeka birimi alabilir.</Turkish>
             </Key>
@@ -18707,6 +18729,7 @@
                 <Russian>Необходимо подождать %1 секунд, прежде чем нанимать ещё бойцов.</Russian>
                 <Chinesesimp>您必须等待 %1 秒才能招募更多单位。</Chinesesimp>
                 <Korean>유닛을 다시 모집하려면 %1초를 기다려야 합니다.</Korean>
+                <Spanish>Tienes que esperar %1 segundos para volver a reclutar unidades.</Spanish>
                 <French>Vous devez attendre %1 secondes pour pouvoir recruter à nouveau des unités.</French>
                 <Turkish>Tekrar birim almak için %1 saniye beklemelisiniz.</Turkish>
             </Key>
@@ -18715,6 +18738,7 @@
                 <Russian>Вы не можете нанимать бойцов, пока контролируете ИИ-бойца.</Russian>
                 <Chinesesimp>您不能在控制 AI 单位时招募单位。</Chinesesimp>
                 <Korean>인공지능을 조종하는 동안에는 유닛을 살 수 없습니다.</Korean>
+                <Spanish>No puedes reclutar unidades mientras controlas a la IA.</Spanish>
                 <French>Vous ne pouvez pas acheter d'unités lorsque vous contrôlez l'IA.</French>
                 <Turkish>Bir yapay zekayı kontrol ederken yeni birim alamazsınız.</Turkish>
             </Key>
@@ -18723,6 +18747,7 @@
                 <Russian>Вы не можете нанимать бойцов, пока рядом враги.</Russian>
                 <Chinesesimp>当附近有敌人时，你不能招募单位。</Chinesesimp>
                 <Korean>근처에 적이 있는 때는 유닛을 모집할 수 없습니다.</Korean>
+                <Spanish>No puedes reclutar unidades con enemigos cerca.</Spanish>
                 <French>Vous ne pouvez pas recruter d'unités si des ennemis se trouvent à proximité.</French>
                 <Turkish>Yakında düşmanlar varken birim alamazsınız.</Turkish>
             </Key>
@@ -18731,6 +18756,7 @@
                 <Russian>Вы не можете нанимать бойцов, так как вы не являетесь лидером вашей группы.</Russian>
                 <Chinesesimp>你不能招募单位，因为你不是你的组长。</Chinesesimp>
                 <Korean>당신은 그룹 리더가 아니기 때문에 유닛을 모집할 수 없습니다.</Korean>
+                <Spanish>No puedes reclutar unidades porque no eres el líder de tu grupo.</Spanish>
                 <French>Vous ne pouvez pas recruter d'unités car vous n'êtes pas le chef de votre groupe.</French>
                 <Turkish>Grup lideri olmadığınız için birim alamazsınız.</Turkish>
             </Key>
@@ -18739,6 +18765,7 @@
                 <Russian>У вас недостаточно людских ресурсов для найма.</Russian>
                 <Chinesesimp>您没有足够的人力来完成此请求。</Chinesesimp>
                 <Korean>이 요청을 수행할 인력이 부족합니다.</Korean>
+                <Spanish>No tienes suficientes RH para esta petición.</Spanish>
                 <French>Vous n'avez pas assez de RH pour cette demande.</French>
                 <Turkish>Bu istek için yeterli İK yok.</Turkish>
             </Key>
@@ -18747,6 +18774,7 @@
                 <Russian>У вас недостаточно денег для найма этого бойца (требуется %1%2).</Russian>
                 <Chinesesimp>您没有足够的钱购买这种单位（需要 %1%2）。</Chinesesimp>
                 <Korean>이런 종류의 유닛을 사는 데 필요한 자금이 부족합니다. (%1%2 필요)</Korean>
+                <Spanish>No tienes suficiente dinero para este tipo de unidad (se necesitan %1%2).</Spanish>
                 <French>Vous n'avez pas assez d'argent pour ce type d'unité (%1%2 nécessaire).</French>
                 <Turkish>Bu birim türü için yeterli paranız yok (%1%2 gerekli).</Turkish>
             </Key>
@@ -18754,6 +18782,7 @@
                 <Original>You don't have enough money to equip this type of unit.</Original>
                 <Russian>У вас недостаточно денег для экипирования данного типа бойца.</Russian>
                 <Korean>이런 종류의 유닛을 장비하는 데 필요한 자금이 부족합니다.</Korean>
+                <Spanish>No tienes suficiente dinero para equipar a este tipo de unidad.</Spanish>
                 <French>Vous n'avez pas assez d'argent pour vous équiper de ce type d'unité.</French>
                 <Chinesesimp>您没有足够的钱来装备这种类型的单位。</Chinesesimp>
                 <Turkish>Bu birim türünü donatmak için yeterli paranız yok.</Turkish>
@@ -18762,6 +18791,7 @@
                 <Original>You don't have enough weapons to equip this type of unit.</Original>
                 <Russian>У вас недостаточно оружия для экипирования данного типа бойца.</Russian>
                 <Korean>이런 종류의 유닛을 장비하는 데 필요한 무기가 부족합니다.</Korean>
+                <Spanish>No tienes suficientes armas para equipar a este tipo de unidad.</Spanish>
                 <French>Vous n'avez pas assez d'armes pour équiper ce type d'unité.</French>
                 <Chinesesimp>您没有足够的武器来装备这种类型的部队。</Chinesesimp>
                 <Turkish>Bu birim türünü donatmak için yeterli silahınız yok.</Turkish>
@@ -18771,6 +18801,7 @@
                 <Russian>Ваш отряд полон или у вас слишком много разбросанных в округе бойцов без радиосвязи с ними.</Russian>
                 <Chinesesimp>你的小队已经满了，或者你有太多的单位分散在这个区域周围而没有与他们的无线电联系。</Chinesesimp>
                 <Korean>분대가 꽉 찼거나 무전기가 없어서 흩어진 유닛이 너무 많습니다.</Korean>
+                <Spanish>Tu escuadra está llena o tienes demasiadas unidades dispersas sin contacto por radio.</Spanish>
                 <French>Votre équipe est au complet ou vous avez trop d'unités dispersées sans contact radio.</French>
                 <Turkish>Manganız dolu veya telsiz teması olmayan çok fazla dağılmış biriminiz var.</Turkish>
             </Key>
@@ -18779,6 +18810,7 @@
                 <Russian>Боец рекрутирован.&lt;br/&gt;&lt;br/&gt;Помните: если вы каким-либо образом смените группу вы потеряете контроль над вашими бойцами.</Russian>
                 <Chinesesimp>一名AI士兵已被招募。&lt;br/&gt;&lt;br/&gt;请记住，如果您以任何方式改变组别，您将失去对AI士兵的控制。</Chinesesimp>
                 <Korean>병사 모집 완료.&lt;br/&gt;&lt;br/&gt;기억하십시오, 그룹 메뉴를 사용하여 그룹을 전환하면 모집한 인공지능을 통제할 수 없게 됩니다.</Korean>
+                <Spanish>Soldado reclutado.&lt;br/&gt;&lt;br/&gt;Recuerda: si usas el menú de grupos para cambiar de grupo, perderás el control de la IA que has reclutado.</Spanish>
                 <French>Soldat recruté.&lt;br/&gt;&lt;br/&gt;Souvenez-vous : si vous utilisez le menu de groupe pour changer de groupe, vous perdrez le contrôle de votre IA recrutée.</French>
                 <Turkish>Asker Alındı.&lt;br/&gt;&lt;br/&gt;Unutmayın: Grup menüsünü kullanarak grup değiştirirseniz, aldığınız yapay zekaların kontrolünü kaybedersiniz.</Turkish>
             </Key>
@@ -18787,6 +18819,7 @@
                 <Russian>Это %1, проверка связи прошла успешно.</Russian>
                 <Chinesesimp>这是%1，测试无线电 正常。</Chinesesimp>
                 <Korean>여기는 %1, 무전 체크 양호.</Korean>
+                <Spanish>Aquí %1, prueba de radio correcta.</Spanish>
                 <French>Il s'agit de %1, contrôle radio OK.</French>
                 <Turkish>Ben %1, telsiz kontrolü tamam.</Turkish>
             </Key>
@@ -18795,6 +18828,7 @@
                 <Russian>%1 потерял связь, он попытается вернуться к вам, если это возможно.</Russian>
                 <Chinesesimp>%1 失去了联系，如果可能的话，他会尽快回复你。</Chinesesimp>
                 <Korean>%1의 통신이 끊어졌습니다. 가능하다면 당신과 함께 돌아올 것입니다.</Korean>
+                <Spanish>%1 ha perdido la comunicación; volverá contigo si le es posible.</Spanish>
                 <French>%1 a perdu la communication, il reviendra avec vous si possible.</French>
                 <Turkish>%1 ile iletişim kesildi, mümkünse yanınıza geri dönecektir.</Turkish>
             </Key>
@@ -18803,6 +18837,7 @@
                 <Russian>Вы не можете распустить отряды под управлением игроков, пункты наблюдения, сапёров, блокпосты, а также гнёзда или огневые точки.</Russian>
                 <Chinesesimp>你不能解散由玩家领导的小队、观察哨小队、路障小队、任何炮台小队或雷区建筑小队。</Chinesesimp>
                 <Korean>당신은 플레이어 주도, 감시초소, 검문소, 아무 포대나 지뢰지대 건설 분대를 해산시킬 수 없습니다.</Korean>
+                <Spanish>No puedes licenciar escuadras lideradas por jugadores ni las que construyen puntos de vigilancia, bloqueos de carretera, emplazamientos o campos de minas.</Spanish>
                 <French>Vous ne pouvez pas licencier une escouade dirigée par un joueur, un poste de guet, un barrage routier, un emplacement ou un champ de mines.</French>
                 <Turkish>Oyuncu liderliğindeki grupları, Gözlem Noktası, Yol Barikatı, herhangi bir Mevzi veya Mayın Tarlası inşa ekibini terhis edemezsiniz.</Turkish>
             </Key>
@@ -18811,6 +18846,7 @@
                 <Russian>Распустить отряд</Russian>
                 <Chinesesimp>解散小队</Chinesesimp>
                 <Korean>그룹 해산</Korean>
+                <Spanish>Licenciar grupo</Spanish>
                 <French>Dissoudre l'équipe</French>
                 <Turkish>Grubu Dağıt</Turkish>
             </Key>
@@ -18819,6 +18855,7 @@
                 <Russian>Вы не можете распустить отряд, если вы не являетесь его лидером.</Russian>
                 <Chinesesimp>不是班长不能开除任何人。</Chinesesimp>
                 <Korean>분대장이 아니면 누구도 해산시킬 수 없습니다.</Korean>
+                <Spanish>No puedes licenciar a nadie si no eres el líder de escuadra.</Spanish>
                 <French>Vous ne pouvez pas renvoyer personne si vous n'êtes pas le chef d'escouade.</French>
                 <Turkish>Manga lideri değilseniz kimseyi kovamazsınız.</Turkish>
             </Key>
@@ -18827,6 +18864,7 @@
                 <Russian>Вы не можете распустить подавленный, замаскированный или сильно раненый отряд.</Russian>
                 <Chinesesimp>你不能解散一个被压制、伪装或重伤的单位。</Chinesesimp>
                 <Korean>진압받거나 위장 중이거나, 의식불명인 유닛은 해산시킬 수 없습니다.</Korean>
+                <Spanish>No puedes disolver unidades suprimidas, encubiertas o inconscientes.</Spanish>
                 <French>Vous ne pouvez pas dissoudre les unités supprimées, infiltrées ou inconscientes.</French>
                 <Turkish>Baskılanmış, gizli kimlikteki veya baygın birimleri kovamazsınız.</Turkish>
             </Key>
@@ -18835,6 +18873,7 @@
                 <Russian>Контроль отряда</Russian>
                 <Chinesesimp>小队控制</Chinesesimp>
                 <Korean>분대 통제</Korean>
+                <Spanish>Controlar escuadra</Spanish>
                 <French>Contrôle de l'escouade</French>
                 <Turkish>Mangayı Kontrol Et</Turkish>
             </Key>
@@ -18843,6 +18882,7 @@
                 <Russian>Только Командир имеет возможность контролировать отряды в режиме главнокомандующего.</Russian>
                 <Chinesesimp>只有指挥官才有能力控制HC单位。</Chinesesimp>
                 <Korean>지휘관만이 하이 커맨드 유닛을 통제할 수 있습니다.</Korean>
+                <Spanish>Solo el comandante puede controlar unidades de HC.</Spanish>
                 <French>Seul le commandant a la capacité de contrôler les unités HC.</French>
                 <Turkish>Yüksek Komuta birimlerini yalnızca komutan kontrol edebilir.</Turkish>
             </Key>
@@ -18851,6 +18891,7 @@
                 <Russian>Вы не можете контролировать отряды, пока находитесь в маскировке.</Russian>
                 <Chinesesimp>伪装时无法控制单位小队。</Chinesesimp>
                 <Korean>위장 중에는 분대를 통제할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar escuadras mientras estás encubierto.</Spanish>
                 <French>Vous ne pouvez pas contrôler les escouades lorsque vous êtes sous couverture.</French>
                 <Turkish>Gizli kimlikte mangaları kontrol edemezsiniz.</Turkish>
             </Key>
@@ -18859,6 +18900,7 @@
                 <Russian>Извини, но нет. (Наказание за дружественный огонь).</Russian>
                 <Chinesesimp>没有，什么事都没有。（对误伤的惩罚）</Chinesesimp>
                 <Korean>아뇨, 그럴 수 없습니다. (아군 오사 처벌)</Korean>
+                <Spanish>Ni hablar. No va a pasar (castigo por fuego amigo).</Spanish>
                 <French>Désolé, mais non. (Punition pour tir ami).</French>
                 <Turkish>Olmaz. İzin verilmiyor (Dost Ateşi Cezası).</Turkish>
             </Key>
@@ -18867,6 +18909,7 @@
                 <Russian>Вы не можете контролировать убитого или тяжелораненого бойца.</Russian>
                 <Chinesesimp>你无法控制被杀死或昏迷的单位。</Chinesesimp>
                 <Korean>의식불명이나 죽은 유닛은 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a una unidad inconsciente o muerta.</Spanish>
                 <French>Vous ne pouvez pas contrôler une unité inconsciente ou morte.</French>
                 <Turkish>Baygın veya ölü bir birimi kontrol edemezsiniz.</Turkish>
             </Key>
@@ -18875,6 +18918,7 @@
                 <Russian>Возврат в оригинальное тело, так как оно получило повреждения.</Russian>
                 <Chinesesimp>当被控制的AI受到伤害时返回原来的单位。</Chinesesimp>
                 <Korean>데미지를 입었기 때문에 원래 유닛으로 돌아갑니다.</Korean>
+                <Spanish>Has vuelto a tu unidad original porque ha recibido daño.</Spanish>
                 <French>Retour au corps d'origine s'il a subi des dommages.</French>
                 <Turkish>Hasar aldığı için birime geri dönüldü.</Turkish>
             </Key>
@@ -18883,6 +18927,7 @@
                 <Russian>Возврат в оригинальное тело, так как контролируемый ИИ-боец получил повреждения.</Russian>
                 <Chinesesimp>返回原体，因为被控制的AI单位损坏。</Chinesesimp>
                 <Korean>조종 중인 유닛이 데미지를 입었기 때문에 원래 유닛으로 돌아갑니다.</Korean>
+                <Spanish>Has vuelto a tu unidad original porque la IA controlada ha recibido daño.</Spanish>
                 <French>Retour à l'unité d'origine car l'IA contrôlée a été endommagée.</French>
                 <Turkish>Kontrol edilen yapay zeka hasar aldığı için birime geri dönüldü.</Turkish>
             </Key>
@@ -18891,6 +18936,7 @@
                 <Russian>Развертывание минного поля</Russian>
                 <Chinesesimp>雷区部署</Chinesesimp>
                 <Korean>지뢰지대 배치</Korean>
+                <Spanish>Despliegue de campo de minas</Spanish>
                 <French>Déploiement de champs de mines</French>
                 <Turkish>Mayın Tarlası Döşe</Turkish>
             </Key>
@@ -18899,6 +18945,7 @@
                 <Russian>Отряд инженеров был развернут, вы можете управлять им в режиме главнокомандующего. Когда они доедут до отмеченной позиции, они начнут устанавливать %1 мины в этой зоне. Прикрывайте их, пока они это делают.</Russian>
                 <Chinesesimp>一个工程师团队已经部署在你的命令与高级指挥选项。一旦他们到达目的地，他们将开始在该地区部署%1地雷。同时掩护他们。</Chinesesimp>
                 <Korean>하이 커맨드 설정을 사용하여 공병 팀이 당신의 명령에 따라 배치되었습니다. 그들이 위치에 도달하면 해당 지역에 %1 지뢰를 배치하기 시작할 것입니다. 그 동안 그들을 엄호하십시오.</Korean>
+                <Spanish>Se ha desplegado un equipo de ingenieros bajo tu mando mediante la opción de Alto Mando. Cuando lleguen a la posición, empezarán a colocar minas %1 en la zona. Cúbrelos mientras tanto.</Spanish>
                 <French>Une escouade d'ingénieurs a été déployée sous votre commandement (menu Haut Commandement). Lorsqu'ils atteindront la position marquée, ils commenceront à poser %1 mines dans cette zone. Couvrez-les pendant qu'ils le font.</French>
                 <Turkish>Yüksek Komuta seçeneği ile emrinize bir İstihkam Ekibi sevk edildi. Belirlenen konuma ulaştıklarında bölgeye %1 mayın döşemeye başlayacaklar. Bu süre zarfında onları koruyun.</Turkish>
             </Key>
@@ -18907,6 +18954,7 @@
                 <Russian>Строительство</Russian>
                 <Chinesesimp>建筑</Chinesesimp>
                 <Korean>건설</Korean>
+                <Spanish>Construcción</Spanish>
                 <French>Construction</French>
                 <Turkish>İnşaat</Turkish>
             </Key>
@@ -18915,6 +18963,7 @@
                 <Russian>Подойдите к указанной позиции для начала строительства.</Russian>
                 <Chinesesimp>到指定位置开始施工。</Chinesesimp>
                 <Korean>선택한 위치로 이동하여 건설을 시작하십시오.</Korean>
+                <Spanish>Muévete a la posición seleccionada para empezar a construir.</Spanish>
                 <French>Marchez jusqu'à la position sélectionnée pour commencer la construction.</French>
                 <Turkish>İnşaata başlamak için seçilen konuma gidin.</Turkish>
             </Key>
@@ -18923,6 +18972,7 @@
                 <Russian>Вы не подошли к позиции строительства, конструкция развалилась.</Russian>
                 <Chinesesimp>你没有接近施工现场，建筑已经超时了。</Chinesesimp>
                 <Korean>위치로 이동하지 않았으며, 건설 시간이 초과되었습니다.</Korean>
+                <Spanish>No te has movido a la posición, la construcción ha caducado.</Spanish>
                 <French>Vous ne vous êtes pas déplacé vers la position, la construction a pris fin.</French>
                 <Turkish>Konuma gitmediniz, inşaat süresi doldu.</Turkish>
             </Key>
@@ -18931,6 +18981,7 @@
                 <Russian>Строительство отменено.</Russian>
                 <Chinesesimp>施工取消。</Chinesesimp>
                 <Korean>건설이 취소되었습니다.</Korean>
+                <Spanish>Construcción cancelada.</Spanish>
                 <French>Construction annulée.</French>
                 <Turkish>İnşaat iptal edildi.</Turkish>
             </Key>
@@ -18939,6 +18990,7 @@
                 <Russian>Пустая конструкция, отмена.</Russian>
                 <Chinesesimp>空建筑，中止。</Chinesesimp>
                 <Korean>건축물이 비었으며, 취소합니다.</Korean>
+                <Spanish>Construcción vacía, se cancela.</Spanish>
                 <French>Construction vide, abandon.</French>
                 <Turkish>Boş inşaat verisi, iptal ediliyor.</Turkish>
             </Key>
@@ -18947,6 +18999,7 @@
                 <Russian>Пустой тип конструкции, отмена.</Russian>
                 <Chinesesimp>空建筑类型，中止。</Chinesesimp>
                 <Korean>건축물의 유형이 비었으며, 취소합니다.</Korean>
+                <Spanish>Tipo de construcción vacío, se cancela.</Spanish>
                 <French>Type de construction vide, abandon.</French>
                 <Turkish>Geçersiz inşaat türü, iptal ediliyor.</Turkish>
             </Key>
@@ -18955,6 +19008,7 @@
                 <Russian>Вы не инженер.&lt;br/&gt;</Russian>
                 <Chinesesimp>你不是工程师。&lt;br/&gt;</Chinesesimp>
                 <Korean>당신은 공병이 아닙니다.&lt;br/&gt;</Korean>
+                <Spanish>No eres ingeniero.&lt;br/&gt;</Spanish>
                 <French>Vous n'êtes pas ingénieur.&lt;br/&gt;</French>
                 <Turkish>Mühendis değilsiniz.&lt;br/&gt;</Turkish>
             </Key>
@@ -18963,6 +19017,7 @@
                 <Russian>Вы инженер, но не в том состоянии, чтобы строить: вы можете быть либо без сознания, либо в маскировке.&lt;br/&gt;</Russian>
                 <Chinesesimp>你是一名工程师，但不处于建造状态：你可能昏迷了或者还在伪装。&lt;br/&gt;</Chinesesimp>
                 <Korean>당신은 공병이지만 건설할 수 있는 상태가 아닙니다: 의식불명이거나 위장 중입니다.&lt;br/&gt;</Korean>
+                <Spanish>Eres ingeniero, pero no estás en condiciones de construir: puede que estés inconsciente o encubierto.&lt;br/&gt;</Spanish>
                 <French>Vous êtes ingénieur, mais vous n'êtes pas en état de construire : vous êtes peut-être inconscient ou sous couverture.&lt;br/&gt;</French>
                 <Turkish>Mühendissin ancak inşaat yapacak durumda değilsiniz: Baygın veya gizli kimlikte olabilirsiniz.&lt;br/&gt;</Turkish>
             </Key>
@@ -18971,6 +19026,7 @@
                 <Russian>У вас в отряде есть инженер-человек. Попросите его построить.&lt;br/&gt;</Russian>
                 <Chinesesimp>你的小队中有一名人类工程师。 请他来建造。</Chinesesimp>
                 <Korean>당신 분대에 플레이어 공병이 있습니다. 그들에게 건설을 요청하십시오.&lt;br/&gt;</Korean>
+                <Spanish>Hay un ingeniero humano en tu escuadra. Pídele que construya él.&lt;br/&gt;</Spanish>
                 <French>Il y a un ingénieur humain dans votre équipe. Demandez-lui de construire.&lt;br/&gt;</French>
                 <Turkish>Manganızda Mühendis oyuncu var. İnşa etmesini ondan isteyin.&lt;br/&gt;</Turkish>
             </Key>
@@ -18979,6 +19035,7 @@
                 <Russian>Только командиры отрядов могут приказать ИИ строить.</Russian>
                 <Chinesesimp>有班长才能命令AI建造。</Chinesesimp>
                 <Korean>분대장만이 인공지능에게 건설을 명령할 수 있습니다.</Korean>
+                <Spanish>Solo los líderes de escuadra pueden ordenar construir a la IA.</Spanish>
                 <French>Seuls les chefs d'escouade peuvent ordonner à l'IA de construire.</French>
                 <Turkish>Yapay zekaya yalnızca manga liderleri inşa emri verebilir.</Turkish>
             </Key>
@@ -18987,6 +19044,7 @@
                 <Russian>Приказываю %1 строить.</Russian>
                 <Chinesesimp>命令 %1 建造。</Chinesesimp>
                 <Korean>%1에게 건설을 명령하는 중입니다.</Korean>
+                <Spanish>Ordenando a %1 que construya.</Spanish>
                 <French>Commande de %1 à construire.</French>
                 <Turkish>%1 birimine inşa etme emri veriliyor.</Turkish>
             </Key>
@@ -18995,6 +19053,7 @@
                 <Russian>У вас нет доступных инженеров в отряде. Они могут быть заняты, без сознания или мертвы.</Russian>
                 <Chinesesimp>你的小队中没有可用的工程师。 他们可能很忙，可能昏迷，或者已经死了。</Chinesesimp>
                 <Korean>분대에 사용 가능한 공병이 없습니다.의식불명이거나 바쁠 수 있습니다.</Korean>
+                <Spanish>No tienes ingenieros disponibles en tu escuadra. Puede que estén inconscientes u ocupados.</Spanish>
                 <French>Vous n'avez pas de sapeurs disponibles dans votre équipe. Ils sont peut-être inconscients ou occupés.</French>
                 <Turkish>Manganızda müsait mühendis yok. Baygın veya meşgul olabilirler.</Turkish>
             </Key>
@@ -19003,6 +19062,7 @@
                 <Russian>Крупные фортификации требуют 3 захваченных фабрики, чтобы их можно было строить.</Russian>
                 <Chinesesimp>重型防御工事需要3个被占领的工厂才能建造。</Chinesesimp>
                 <Korean>중형 요새를 건설하려면 점령한 공장이 최소 3곳 이상이 필요합니다.</Korean>
+                <Spanish>Las fortificaciones pesadas requieren 3 fábricas capturadas para construirse.</Spanish>
                 <French>La construction de fortifications lourdes nécessite 3 usines capturées.</French>
                 <Turkish>Ağır tahkimatlar inşa etmek için ele geçirilmiş 3 fabrika gerekir.</Turkish>
             </Key>
@@ -19011,6 +19071,7 @@
                 <Russian>Вы не можете строить за пределами контролируемой зоны.</Russian>
                 <Chinesesimp>你不能在控制区之外建造。</Chinesesimp>
                 <Korean>통제 구역 밖에서는 건설할 수 없습니다.</Korean>
+                <Spanish>No puedes construir fuera de una zona controlada.</Spanish>
                 <French>Vous ne pouvez pas construire en dehors d'une zone contrôlée.</French>
                 <Turkish>Kontrol edilen bölge dışında inşaat yapamazsınız.</Turkish>
             </Key>
@@ -19019,6 +19080,7 @@
                 <Russian>У вас недостаточно денег для этой фортификации. Нужно %1%2.</Russian>
                 <Chinesesimp>你没有足够的钱来建造这个防御工事：需要 %1%2。</Chinesesimp>
                 <Korean>해당 요새를 건설할 자금이 부족합니다. %1%2가 필요합니다.</Korean>
+                <Spanish>No tienes suficiente dinero para esta fortificación: se requieren %1%2.</Spanish>
                 <French>Vous n'avez pas assez d'argent pour cette fortification : %1%2 requis.</French>
                 <Turkish>Bu tahkimat için yeterli paranız yok: %1%2 gerekli.</Turkish>
             </Key>
@@ -19027,6 +19089,7 @@
                 <Russian>Покупка техники</Russian>
                 <Chinesesimp>采购载具</Chinesesimp>
                 <Korean>차량 상점</Korean>
+                <Spanish>Tienda de vehículos</Spanish>
                 <French>Magasin de véhicules</French>
                 <Turkish>Araç Mağazası</Turkish>
             </Key>
@@ -19035,6 +19098,7 @@
                 <Russian>Добавление техники к отряду</Russian>
                 <Chinesesimp>为小队添加载具</Chinesesimp>
                 <Korean>분대 차량 추가</Korean>
+                <Spanish>Añadir vehículo a la escuadra</Spanish>
                 <French>Ajouter de l'équipement à une équipe</French>
                 <Turkish>Araç Mağazası</Turkish>
             </Key>
@@ -19043,6 +19107,7 @@
                 <Russian>Вы должны выбрать только одну группу в режиме главнокомандующего.</Russian>
                 <Chinesesimp>只能在HC栏上选择小队。</Chinesesimp>
                 <Korean>하이 커맨드 표시줄에서 그룹을 하나만 선택해야 합니다.</Korean>
+                <Spanish>Tienes que seleccionar un solo grupo en la barra de HC.</Spanish>
                 <French>Vous ne devez sélectionner qu'un seul groupe dans la barre HC.</French>
                 <Turkish>Yüksek Komuta çubuğunda yalnızca bir grup seçmelisiniz.</Turkish>
             </Key>
@@ -19051,6 +19116,7 @@
                 <Russian>Эта группа уже имеет приданную технику к отряду и их задача зависит от её наличия.</Russian>
                 <Chinesesimp>小队已经有一辆车辆附属于小队，他们的任务取决于它的可用性。</Chinesesimp>
                 <Korean>이 그룹은 이미 차량을 보유하고 있으며 그들의 임무는 해당 차량에 달려 있습니다.</Korean>
+                <Spanish>Este grupo ya tiene un vehículo y su misión depende de él.</Spanish>
                 <French>Ce groupe dispose déjà d'un véhicule et sa mission en dépend.</French>
                 <Turkish>Bu grubun halihazırda bir aracı var ve görevleri buna bağlı.</Turkish>
             </Key>
@@ -19059,6 +19125,7 @@
                 <Russian>Выбранная техника либо уничтожена, либо не может двигаться.</Russian>
                 <Chinesesimp>所选载具要么被摧毁要么无法移动。</Chinesesimp>
                 <Korean>선택한 차량이 파괴되었거나 이동할 수 없습니다.</Korean>
+                <Spanish>El vehículo seleccionado está destruido o no puede moverse.</Spanish>
                 <French>Le véhicule sélectionné est détruit ou ne peut pas se déplacer.</French>
                 <Turkish>Seçilen araç imha edilmiş veya hareket edemiyor.</Turkish>
             </Key>
@@ -19067,6 +19134,7 @@
                 <Russian>Выбранная техника не пуста.</Russian>
                 <Chinesesimp>所选载具不为空</Chinesesimp>
                 <Korean>선택한 차량이 비어 있지 않습니다.</Korean>
+                <Spanish>El vehículo seleccionado no está vacío.</Spanish>
                 <French>Le véhicule sélectionné n'est pas vide.</French>
                 <Turkish>Seçilen araç boş değil.</Turkish>
             </Key>
@@ -19075,6 +19143,7 @@
                 <Russian>Вы не можете придать стационарное орудие отряду.</Russian>
                 <Chinesesimp>你不能为小队分配固定武器。</Chinesesimp>
                 <Korean>분대에 고정화기는 할당할 수 없습니다.</Korean>
+                <Spanish>No puedes asignar un arma estática a una escuadra.</Spanish>
                 <French>Vous ne pouvez pas assigner une arme statique à une escouade.</French>
                 <Turkish>Bir mangaya Sabit Silah atayamazsınız.</Turkish>
             </Key>
@@ -19083,6 +19152,7 @@
                 <Russian>Расчёты стационарных орудий не могут менять его.</Russian>
                 <Chinesesimp>固定武器小队无法改变载具。</Chinesesimp>
                 <Korean>고정화기 팀은 차량을 바꿀 수 없습니다.</Korean>
+                <Spanish>Las escuadras de armas estáticas no pueden cambiar de vehículo.</Spanish>
                 <French>Les escouades d'armes statiques ne peuvent pas changer de véhicule.</French>
                 <Turkish>Sabit Silah Mangaları araç değiştiremez.</Turkish>
             </Key>
@@ -19091,6 +19161,7 @@
                 <Russian>Выбранная техника не имеет места под этот отряд.</Russian>
                 <Chinesesimp>所选载具没有空间容纳该小队。</Chinesesimp>
                 <Korean>선택한 차량에는 해당 분대를 위한 자리가 없습니다.</Korean>
+                <Spanish>El vehículo seleccionado no tiene sitio para esta escuadra.</Spanish>
                 <French>Le véhicule choisi n'a pas de place pour cette escouade.</French>
                 <Turkish>Seçilen araçta bu manga için yeterli yer yok.</Turkish>
             </Key>
@@ -19099,6 +19170,7 @@
                 <Russian>Техника придана к %1 отряду.</Russian>
                 <Chinesesimp>分配给 %1 小队的载具。</Chinesesimp>
                 <Korean>%1 분대에 차량이 할당되었습니다.</Korean>
+                <Spanish>Vehículo asignado a la escuadra %1.</Spanish>
                 <French>Véhicule affecté à l'escouade %1.</French>
                 <Turkish>Araç %1 Mangasına atandı.</Turkish>
             </Key>
@@ -19107,6 +19179,7 @@
                 <Russian>Рекрутировать отряд</Russian>
                 <Chinesesimp>招募小分队</Chinesesimp>
                 <Korean>분대 모집</Korean>
+                <Spanish>Reclutar escuadra</Spanish>
                 <French>Recruter une escouade</French>
                 <Turkish>Manga Al</Turkish>
             </Key>
@@ -19115,6 +19188,7 @@
                 <Russian>Вы не можете рекрутировать новый отряд, пока вы двигаете свой штаб.</Russian>
                 <Chinesesimp>您在移动总部时不能招募新单位。</Chinesesimp>
                 <Korean>본부를 옮기는 동안에는 새 분대를 모집할 수 없습니다.</Korean>
+                <Spanish>No puedes reclutar una escuadra nueva mientras estás moviendo el CG.</Spanish>
                 <French>Vous ne pouvez pas recruter une nouvelle escouade pendant que vous déplacez votre QG.</French>
                 <Turkish>Karargahınızı taşırken yeni bir manga alamazsınız.</Turkish>
             </Key>
@@ -19123,6 +19197,7 @@
                 <Russian>Вам необходимо иметь рацию, чтобы отдавать приказы отрядам.</Russian>
                 <Chinesesimp>你的物品栏中需要一台无线电才能向其他小队下达命令。</Chinesesimp>
                 <Korean>다른 분대에 명령을 내리려면 소지품에 무전기가 필요합니다.</Korean>
+                <Spanish>Necesitas una radio en tu inventario para dar órdenes a otras escuadras.</Spanish>
                 <French>Vous avez besoin d'une radio dans votre inventaire pour pouvoir donner des ordres aux autres escouades.</French>
                 <Turkish>Diğer mangalara emir vermek için envanterinizde bir telsiz olmalıdır.</Turkish>
             </Key>
@@ -19131,6 +19206,7 @@
                 <Russian>Вы не можете рекрутировать отряды, пока рядом враги.</Russian>
                 <Chinesesimp>当附近有敌人时，你不能招募单位。</Chinesesimp>
                 <Korean>본부 근처에 적이 있는 동안에는 분대를 모집할 수 없습니다.</Korean>
+                <Spanish>No puedes reclutar escuadras con enemigos cerca de tu CG.</Spanish>
                 <French>Vous ne pouvez pas recruter d'escouades avec des ennemis près de votre QG.</French>
                 <Turkish>Karargahınızın yakınında düşmanlar varken yeni manga alamazsınız.</Turkish>
             </Key>
@@ -19139,6 +19215,7 @@
                 <Russian>У вас слишком много отрядов в режиме главнокомандующего. Распустите или отправьте некоторые из них в гарнизон, чтобы иметь возможность нанять новый отряд.</Russian>
                 <Chinesesimp>你激活了太多的高级指挥小队。 解散或驻军一些以招募更多。</Chinesesimp>
                 <Korean>활성화된 하이 커맨드 분대가 너무 많습니다. 더 모집하려면 일부를 해산시키거나 주둔시키십시오.</Korean>
+                <Spanish>Tienes demasiadas escuadras de alto mando activas. Disuelve o guarnece algunas para reclutar más.</Spanish>
                 <French>Vous avez trop d'escouades de haut commandement actives. Dissolvez ou mettez en garnison certaines d'entre elles pour en recruter d'autres.</French>
                 <Turkish>Çok fazla aktif Yüksek Komuta manganız var. Yenilerini almak için bazılarını dağıtın veya garnizona yerleştirin.</Turkish>
             </Key>
@@ -19147,6 +19224,7 @@
                 <Russian>Отряд, который вы запросили, не поддерживается в вашем текущем наборе модов.</Russian>
                 <Chinesesimp>您的模组不支持您请求的小队或载具类型。</Chinesesimp>
                 <Korean>요청한 그룹 또는 차량은 모드셋에서 지원하지 않습니다.</Korean>
+                <Spanish>El tipo de grupo o vehículo que has pedido no es compatible con tu conjunto de mods.</Spanish>
                 <French>Le groupe ou le type de véhicule que vous avez demandé n'est pas pris en charge dans votre modset.</French>
                 <Turkish>Talep ettiğiniz grup veya araç türü mod setinizde desteklenmiyor.</Turkish>
             </Key>
@@ -19155,6 +19233,7 @@
                 <Russian>3-й уровень войны должен быть достигнут, чтобы появилась возможность нанимать ПТ-отряд.</Russian>
                 <Chinesesimp>必须达到 战争等级 3才能雇佣AT小队。</Chinesesimp>
                 <Korean>대전차 팀을 모집하려면 전쟁 레벨 3 이상이어야 합니다.</Korean>
+                <Spanish>Hay que alcanzar el Nivel de Guerra 3 para contratar equipos AT.</Spanish>
                 <French>Le niveau de guerre 3 doit être atteint pour pouvoir engager des équipes AT.</French>
                 <Turkish>AT Ekiplerini görevlendirmek için Savaş Seviyesi 3'e ulaşılmalıdır.</Turkish>
             </Key>
@@ -19163,6 +19242,7 @@
                 <Russian>2-й уровень войны должен быть достигнут, чтобы появилась возможность нанимать отряды пулемётчиков или машину с тяжелым пулемётом.</Russian>
                 <Chinesesimp>必须达到 战争等级 3才能雇佣机枪小队以及机枪卡车小队。</Chinesesimp>
                 <Korean>기관총 분대와 기관총 차량을 모집하려면 전쟁 레벨 2 이상이어야 합니다.</Korean>
+                <Spanish>Hay que alcanzar el Nivel de Guerra 2 para contratar escuadras de ametralladora y coches con ametralladora.</Spanish>
                 <French>Le niveau de guerre 2 doit être atteint pour pouvoir engager des escouades et des voitures MG.</French>
                 <Turkish>MG Mangaları ve MG Araçları için Savaş Seviyesi 2'ye ulaşılmalıdır.</Turkish>
             </Key>
@@ -19171,6 +19251,7 @@
                 <Russian>4-й уровень войны должен быть достигнут, чтобы появилась возможность нанимать зенитные или противотанковые расчёты и соответствующую технику, а также отряды поддержки.</Russian>
                 <Chinesesimp>必须达到 战争等级 4才能雇佣AT和AA小队以及AA卡车小队。</Chinesesimp>
                 <Korean>대전차, 대공차량 및 고정화기 지원 분대를 모집하려면 전쟁 레벨 4 이상이어야 합니다.</Korean>
+                <Spanish>Hay que alcanzar el Nivel de Guerra 4 para contratar coches AT o AA, estáticas o escuadras de soporte.</Spanish>
                 <French>Le niveau de guerre 4 doit être atteint pour pouvoir engager des véhicules AT, AA et statiques ainsi que des escouades de soutien.</French>
                 <Turkish>AT, AA Araçları, sabit silahlar veya Destek Mangaları için Savaş Seviyesi 4'e ulaşılmalıdır.</Turkish>
             </Key>
@@ -19179,6 +19260,7 @@
                 <Russian>5-й уровень войны должен быть достигнут, чтобы появилась возможность нанимать миномётный расчёт.</Russian>
                 <Chinesesimp>必须达到 战争等级 5才能雇佣迫击炮小队。</Chinesesimp>
                 <Korean>박격포 팀을 모집하려면 전쟁 레벨 5 이상이어야 합니다.</Korean>
+                <Spanish>Hay que alcanzar el Nivel de Guerra 5 para contratar equipos de mortero.</Spanish>
                 <French>Le niveau de guerre 5 doit être atteint pour pouvoir engager des équipes de mortiers.</French>
                 <Turkish>Havan Ekiplerini görevlendirmek için Savaş Seviyesi 5'e ulaşılmalıdır.</Turkish>
             </Key>
@@ -19187,6 +19269,7 @@
                 <Russian>У вас недостаточно людских ресурсов, чтобы сделать этот запрос. Требуется %1.</Russian>
                 <Chinesesimp>您没有足够的HR来提出这个请求。 需要 %1。</Chinesesimp>
                 <Korean>해당 요청에 필요한 인력이 부족합니다. %1명이 필요합니다.</Korean>
+                <Spanish>No tienes suficientes RH para esta petición. Se requieren %1.</Spanish>
                 <French>Vous n'avez pas assez de RH pour cette demande. %1 requis.</French>
                 <Turkish>Bu istek için yeterli İK yok. %1 gerekli.</Turkish>
             </Key>
@@ -19195,6 +19278,7 @@
                 <Russian>У вас недостаточно денег, чтобы сделать этот запрос. Требуется %1%2.</Russian>
                 <Chinesesimp>您没有足够的钱来提出这个请求。 需要 %1%2。</Chinesesimp>
                 <Korean>해당 요청에 필요한 자금이 부족합니다. %1%2가 필요합니다.</Korean>
+                <Spanish>No tienes suficiente dinero para esta petición. Se requieren %1%2.</Spanish>
                 <French>Vous n'avez pas assez d'argent pour cette demande. %1%2 requis.</French>
                 <Turkish>Bu istek için yeterli paranız yok. %1%2 gerekli.</Turkish>
             </Key>
@@ -19203,6 +19287,7 @@
                 <Russian>Недостаточно денег, чтобы купить транспортное средство для отряда (требуется %1%2). Отряд будет пешим.</Russian>
                 <Chinesesimp>没有足够的钱为小队购买载具（需要 %1%2）。 分队将步行。</Chinesesimp>
                 <Korean>수송 차량을 살 자금이 부족하기 때문에(%1%2 필요), 보병분대를 생성합니다.</Korean>
+                <Spanish>No queda dinero para comprar un vehículo de transporte (se requieren %1%2), se crea una escuadra a pie.</Spanish>
                 <French>Il ne reste plus d'argent pour acheter un véhicule de transport (%1%2 requis), ce qui crée une escouade de va-nu-pieds.</French>
                 <Turkish>Nakliye aracı satın almak için para kalmadı (%1%2 gerekli), yaya manga oluşturuluyor.</Turkish>
             </Key>
@@ -19213,6 +19298,7 @@
                 <Russian>Вне границ</Russian>
                 <Chinesesimp>出界</Chinesesimp>
                 <Korean>범위를 벗어남</Korean>
+                <Spanish>Fuera de los límites</Spanish>
                 <French>Hors limites</French>
                 <Turkish>Sınırların Dışında</Turkish>
             </Key>
@@ -19221,6 +19307,7 @@
                 <Russian>Вернитесь в границы игры, иначе вы взорвётесь. У вас %1 секунд.</Russian>
                 <Chinesesimp>回到游戏范围内，否则你会爆炸。 你有 %1 秒。</Chinesesimp>
                 <Korean>터지기 전에 작전 구역으로 돌아가십시오. %1초 남았습니다.</Korean>
+                <Spanish>Vuelve al AO antes de que te hagamos saltar por los aires, tienes %1 segundos.</Spanish>
                 <French>Retournez dans les limites du jeu ou vous exploserez. Vous avez %1 secondes.</French>
                 <Turkish>Havaya uçmadan önce operasyon alanına dönün, %1 saniyeniz var.</Turkish>
             </Key>
@@ -19229,6 +19316,7 @@
                 <Russian>Вы не можете бросать гранаты или устанавливать взрывчатку в 75 метрах от штаба.</Russian>
                 <Chinesesimp>您不得在总部 75 米范围内投掷手榴弹或放置炸药。</Chinesesimp>
                 <Korean>본부에서 75m 이내에 수류탄을 던지거나 폭발물을 놓을 수 없습니다.</Korean>
+                <Spanish>No puedes lanzar granadas ni colocar explosivos a menos de 75 m del CG.</Spanish>
                 <French>Il est interdit de lancer des grenades ou de placer des explosifs à moins de 75 m du QG.</French>
                 <Turkish>Karargahın 75 metre yakınında el bombası atamaz veya patlayıcı yerleştiremezsiniz.</Turkish>
             </Key>
@@ -19237,6 +19325,7 @@
                 <Russian>Наказание за дружественный огонь</Russian>
                 <Chinesesimp>对误伤的惩罚</Chinesesimp>
                 <Korean>아군오사 처벌</Korean>
+                <Spanish>Castigo por fuego amigo</Spanish>
                 <French>Punition pour tir ami</French>
                 <Turkish>Dost Ateşi Cezası</Turkish>
             </Key>
@@ -19245,6 +19334,7 @@
                 <Russian>Администратор смотрит с жалостью на твою душу. Ты был прощён.</Russian>
                 <Chinesesimp>管理员很同情你的灵魂。 你已经被原谅了。</Chinesesimp>
                 <Korean>관리자는 당신을 측은히 여겨 용서를 했습니다.</Korean>
+                <Spanish>Un administrador se apiada de tu alma. Has sido perdonado.</Spanish>
                 <French>Un administrateur regarde votre âme avec pitié. Vous avez été pardonné.</French>
                 <Turkish>Bir yönetici ruhunuza acıyarak baktı. Affedildiniz.</Turkish>
             </Key>
@@ -19253,6 +19343,7 @@
                 <Russian>С тебя достаточно.</Russian>
                 <Chinesesimp>够了。</Chinesesimp>
                 <Korean>그럼 됐습니다.</Korean>
+                <Spanish>Ya está bien.</Spanish>
                 <French>Cela suffit.</French>
                 <Turkish>Bu kadar yeterli.</Turkish>
             </Key>
@@ -19261,6 +19352,7 @@
                 <Russian>Пожалуйста, не убивай своих больше. Пока попялься на черепашек ещё %1 секунд.</Russian>
                 <Chinesesimp>请不要再杀自己人了。 又盯着海龟看了 %1 秒。</Chinesesimp>
                 <Korean>팀킬을 하지 마십시오. %1초 동안 거북이나 보고 있으십시오.</Korean>
+                <Spanish>Por favor, no mates a tus compañeros. Quédate mirando a las tortugas %1 segundos más.</Spanish>
                 <French>S'il vous plaît, ne tuez plus les vôtres. Pendant que vous survolez les tortues pendant encore %1 secondes.</French>
                 <Turkish>Lütfen takım arkadaşlarınızı öldürmeyin. %1 saniye daha kaplumbağaları seyredin.</Turkish>
             </Key>
@@ -19269,6 +19361,7 @@
                 <Russian> был признан виновным в дружественном огне (3+ случая).&lt;br/&gt;&lt;br/&gt;Если вы думаете, что это ошибка правосудия, вы можете простить его соответствующим действием в контекстном меню на колёсико мыши.</Russian>
                 <Chinesesimp>已被判误伤（3次以上）。&lt;br/&gt;&lt;br/&gt;如果您认为这是误判，您可以通过鼠标滚轮菜单中的适当操作来原谅它。</Chinesesimp>
                 <Korean>이(가) 아군오사(3회 이상 공격)에 대해 유죄 판결을 받았습니다.&lt;br/&gt;&lt;br/&gt;실수인 것 같다고 생각한다면 그에 대한 스크롤 메뉴 행동으로 그를 용서할 수 있습니다.</Korean>
+                <Spanish> ha sido declarado culpable de fuego amigo (3 o más avisos).&lt;br/&gt;&lt;br/&gt;Si crees que es un error, puedes perdonarle con la acción correspondiente del menú de rueda.</Spanish>
                 <French> a été reconnu coupable de tirs amis (plus de trois incidents)..&lt;br/&gt;&lt;br/&gt;Si vous pensez qu'il s'agit d'une erreur, vous pouvez lui pardonner avec l'action correspondante du menu déroulant.</French>
                 <Turkish> dost ateşinden (3+ İhlal) suçlu bulundu.&lt;br/&gt;&lt;br/&gt;Bunun bir hata olduğunu düşünüyorsanız, ilgili kaydırma menüsü (scroll-menu) eylemiyle onu affedebilirsiniz.</Turkish>
             </Key>
@@ -19277,6 +19370,7 @@
                 <Russian>Вы нанесли урон дружественному игроку транспортным средством.</Russian>
                 <Chinesesimp>你用载具TK了友方玩家。</Chinesesimp>
                 <Korean>당신은 운전자로서 아군에게 데미지를 입혔습니다.</Korean>
+                <Spanish>Has herido a un aliado conduciendo.</Spanish>
                 <French>Vous avez endommagé un ami en tant que conducteur.</French>
                 <Turkish>Sürücü olarak bir dost birime hasar verdiniz.</Turkish>
             </Key>
@@ -19285,6 +19379,7 @@
                 <Russian>Вы нанесли урон дружественному игроку как администратор.</Russian>
                 <Chinesesimp>你以管理员身份伤害了一位友方玩家。</Chinesesimp>
                 <Korean>당신은 관리자로서 아군에게 데미지를 입혔습니다.</Korean>
+                <Spanish>Has herido a un aliado siendo administrador.</Spanish>
                 <French>Vous avez causé des dommages à un joueur ami en tant qu'administrateur.</French>
                 <Turkish>Yönetici olarak bir dost birime hasar verdiniz.</Turkish>
             </Key>
@@ -19293,6 +19388,7 @@
                 <Russian>Вы нанесли урон дружественному игроку с воздуха.</Russian>
                 <Chinesesimp>你从空中对友方玩家造成了伤害。</Chinesesimp>
                 <Korean>당신은 근접항공지원으로 아군에게 데미지를 입혔습니다.</Korean>
+                <Spanish>Has herido a un aliado dando apoyo CAS.</Spanish>
                 <French>Vous infligez des dégâts à un joueur ami depuis les airs.</French>
                 <Turkish>Hava desteği (CAS) olarak bir dost birime hasar verdiniz.</Turkish>
             </Key>
@@ -19301,6 +19397,7 @@
                 <Russian>Вы нанесли урон дружественному игроку артиллерией.</Russian>
                 <Chinesesimp>你用大炮伤害了一个友方玩家。</Chinesesimp>
                 <Korean>당신은 포격 지원으로 아군에게 데미지를 입혔습니다.</Korean>
+                <Spanish>Has herido a un aliado dando apoyo de artillería.</Spanish>
                 <French>Vous endommagez un joueur ami avec de l'artillerie.</French>
                 <Turkish>Topçu desteği olarak bir dost birime hasar verdiniz.</Turkish>
             </Key>
@@ -19309,6 +19406,7 @@
                 <Russian>Уведомление о дружественном огне</Russian>
                 <Chinesesimp>误伤通知</Chinesesimp>
                 <Korean>아군 오사 알림</Korean>
+                <Spanish>Aviso de fuego amigo</Spanish>
                 <French>Notification de tir ami</French>
                 <Turkish>Dost Ateşi Bildirimi</Turkish>
             </Key>
@@ -19317,6 +19415,7 @@
                 <Russian>%1 нанес вам урон!</Russian>
                 <Chinesesimp>%1 伤害了你！</Chinesesimp>
                 <Korean>%1이(가) 당신을 다치게 했습니다!</Korean>
+                <Spanish>¡%1 te ha herido!</Spanish>
                 <French>%1 vous a fait du mal!</French>
                 <Turkish>%1 size hasar verdi!</Turkish>
             </Key>
@@ -19325,6 +19424,7 @@
                 <Russian>Раненый товарищ: </Russian>
                 <Chinesesimp>受伤的同志： </Chinesesimp>
                 <Korean>부상당한 아군: </Korean>
+                <Spanish>Camarada herido: </Spanish>
                 <French>Camarade blessé:</French>
                 <Turkish>Yaralı yoldaş: </Turkish>
             </Key>
@@ -19333,6 +19433,7 @@
                 <Russian>  нанёс вам урон!</Russian>
                 <Chinesesimp>  伤害你！</Chinesesimp>
                 <Korean>  이(가) 당신을 다치게 했습니다!</Korean>
+                <Spanish>  ¡te ha herido!</Spanish>
                 <French> a fait des dégâts!</French>
                 <Turkish>  size hasar verdi!</Turkish>
             </Key>
@@ -19341,6 +19442,7 @@
                 <Russian>Смотри куда стреляешь!</Russian>
                 <Chinesesimp>看准点！</Chinesesimp>
                 <Korean>사격 주의!</Korean>
+                <Spanish>¡Cuidado con lo que disparas!</Spanish>
                 <French>Attention au feu!</French>
                 <Turkish>Ateşine dikkat et!</Turkish>
             </Key>
@@ -19349,6 +19451,7 @@
                 <Russian>Контроль над юнитом</Russian>
                 <Chinesesimp>单位控制</Chinesesimp>
                 <Korean>유닛 조종</Korean>
+                <Spanish>Control de unidad</Spanish>
                 <French>Contrôle des unités</French>
                 <Turkish>Birim Kontrolü</Turkish>
             </Key>
@@ -19357,6 +19460,7 @@
                 <Russian>Возврат в оригинальное тело из-за дружественного огня.</Russian>
                 <Chinesesimp>因误伤而变回原来的身体。</Chinesesimp>
                 <Korean>아군오사로 인해 원래 유닛으로 되돌아갑니다.</Korean>
+                <Spanish>Has vuelto a tu unidad original por fuego amigo.</Spanish>
                 <French>Retour à l'unité d'origine en raison de tir ami.</French>
                 <Turkish>Dost ateşi sebebiyle orijinal birime dönüldü.</Turkish>
             </Key>
@@ -19367,6 +19471,7 @@
                 <Russian>Убрать лес вокруг</Russian>
                 <Chinesesimp>清理周围的森林</Chinesesimp>
                 <Korean>숲 제거</Korean>
+                <Spanish>Despejar el bosque</Spanish>
                 <French>Débroussailler la forêt environnante</French>
                 <Turkish>Ormanı Temizle</Turkish>
             </Key>
@@ -19375,6 +19480,7 @@
                 <Russian>Только Командир может убрать лес вокруг штаба.</Russian>
                 <Chinesesimp>只有指挥官才能下令清理总部周围的森林。</Chinesesimp>
                 <Korean>지휘관만이 본부 주변의 숲을 정리하라고 명령할 수 있습니다.</Korean>
+                <Spanish>Solo el comandante puede ordenar despejar el bosque alrededor del CG.</Spanish>
                 <French>Seul le commandant peut ordonner le débroussaillage de la forêt autour du QG.</French>
                 <Turkish>Karargah çevresindeki ormanı temizleme emrini yalnızca komutan verebilir.</Turkish>
             </Key>
@@ -19383,6 +19489,7 @@
                 <Russian>Вы очистили окрестности штаба от деревьев и кустов.</Russian>
                 <Chinesesimp>你已经清除了总部周围的树木和灌木。</Chinesesimp>
                 <Korean>본부 주변의 나무와 덤불을 정리했습니다.</Korean>
+                <Spanish>Has despejado de árboles y arbustos los alrededores del CG.</Spanish>
                 <French>Vous avez débarrassé les environs du QG des arbres et des buissons.</French>
                 <Turkish>Karargah çevresini ağaç ve çalılıklardan temizlediniz.</Turkish>
             </Key>
@@ -19391,6 +19498,7 @@
                 <Russian>В Н И М А Н И Е</Russian>
                 <Chinesesimp>注    意</Chinesesimp>
                 <Korean>주    의</Korean>
+                <Spanish>A T E N C I Ó N</Spanish>
                 <French>A T T E N T I O N</French>
                 <Turkish>D İ K K A T</Turkish>
             </Key>
@@ -19399,6 +19507,7 @@
                 <Russian>Antistasi Ultimate использует нестандартную систему сохранений.&lt;br/&gt;&lt;br/&gt;</Russian>
                 <Chinesesimp>Antistasi Ultimate有一个自定义的保存系统。&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
                 <Korean>안티스타시 플러스는 사용자 지정 저장 시스템을 가졌습니다.&lt;br/&gt;&lt;br/&gt;</Korean>
+                <Spanish>Antistasi Ultimate tiene un sistema de guardado propio.&lt;br/&gt;&lt;br/&gt;</Spanish>
                 <French>Antistasi Plus dispose d'un système de sauvegarde personnalisé.&lt;br/&gt;&lt;br/&gt;</French>
                 <Turkish>Antistasi Ultimate özel bir kaydetme sistemine sahiptir.&lt;br/&gt;&lt;br/&gt;</Turkish>
             </Key>
@@ -19407,6 +19516,7 @@
                 <Russian>Чтобы сохранить игру, ваш Командир должен подойти к &lt;t color='#f0d498'&gt;карте на треноге&lt;/t&gt; или открыть меню Командира (клавишу TAB по умолчанию), выбрать вкладку &lt;t color='#f0d498'&gt;игровых опций&lt;/t&gt; и нажать на кнопку &lt;t color='#f0d498'&gt;"Постоянное сохранение"&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</Russian>
                 <Chinesesimp>要保存：你的指挥官需要去&lt;t color='#f0d498'&gt;地图板&lt;/t&gt; 或打开指挥官菜单（默认为TAB键），选择&lt;t color='#f0d498'&gt;"游戏选项"&lt;/t&gt; 选项卡并单击 &lt;t color='#f0d498'&gt;"永久保存"&lt;/t&gt; button.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
                 <Korean>저장 방법: 당신의 지휘관이 &lt;t color='#f0d498'&gt;화이트보드&lt;/t&gt;로 이동하거나 지휘관 메뉴(기본: 탭 키)를 열고,&lt;t color='#f0d498'&gt;"게임 설정"&lt;/t&gt; 탭을 선택하고 &lt;t color='#f0d498'&gt;"영구 저장"&lt;/t&gt; 버튼을 클릭해야 합니다.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</Korean>
+                <Spanish>Para guardar: tu comandante tiene que ir al &lt;t color='#f0d498'&gt;tablero del mapa&lt;/t&gt; o abrir el menú del comandante (tecla TAB por defecto), seleccionar allí la pestaña &lt;t color='#f0d498'&gt;"Opciones de partida"&lt;/t&gt; y pulsar el botón &lt;t color='#f0d498'&gt;"Guardado persistente"&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</Spanish>
                 <French>Pour sauvegarder : Votre commandant doit aller sur le &lt;t color='#f0d498'&gt;Tableau de la carte&lt;/t&gt; ou ouvrir le menu du commandant (touche TAB par défaut), sélectionner &lt;t color='#f0d498'&gt; "Options de jeu"&lt;/t&gt; l'onglet et cliquer sur le bouton &lt;t color='#f0d498'&gt; "Sauvegarde persistante"&lt;/t&gt;. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</French>
                 <Turkish>Kaydetmek İçin: Komutanınızın &lt;t color='#f0d498'&gt;Harita Masası&lt;/t&gt;'na gitmesi veya Komutan Menüsü'nü açması (varsayılan TAB tuşu), oradaki &lt;t color='#f0d498'&gt;"Oyun Seçenekleri"&lt;/t&gt; sekmesini seçmesi ve &lt;t color='#f0d498'&gt;"Kalıcı Kayıt"&lt;/t&gt; düğmesine tıklaması gerekir.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</Turkish>
             </Key>
@@ -19415,6 +19525,7 @@
                 <Russian>Текущие параметры настроны на автосохранение каждые &lt;t color='#f0d498'&gt;</Russian>
                 <Chinesesimp>当前设置设置为自动保存每&lt;t color='#f0d498'&gt;</Chinesesimp>
                 <Korean>현재 매개변수가 다음 시간마다 자동 저장되도록 설정되어 있습니다: &lt;t color='#f0d498'&gt;</Korean>
+                <Spanish>Los parámetros actuales están configurados para autoguardar cada &lt;t color='#f0d498'&gt;</Spanish>
                 <French>Les paramètres actuels sont configurés pour une sauvegarde automatique tous les &lt;t color='#f0d498'&gt;</French>
                 <Turkish>Mevcut parametreler şu aralıkla otomatik kaydedilecek şekilde yapılandırıldı: &lt;t color='#f0d498'&gt;</Turkish>
             </Key>
@@ -19423,6 +19534,7 @@
                 <Russian>минут&lt;/t&gt;.</Russian>
                 <Chinesesimp>分钟&lt;/t&gt;。</Chinesesimp>
                 <Korean>분&lt;/t&gt;</Korean>
+                <Spanish>minutos&lt;/t&gt;.</Spanish>
                 <French>minutes&lt;/t&gt;.</French>
                 <Turkish>dakika&lt;/t&gt;.</Turkish>
             </Key>
@@ -19431,6 +19543,7 @@
                 <Russian>Автосохранение в данный момент отключено в опциях миссии.</Russian>
                 <Chinesesimp>自动保存目前已禁用</Chinesesimp>
                 <Korean>현재 자동 저장이 비활성화되었습니다.</Korean>
+                <Spanish>El autoguardado está desactivado ahora mismo</Spanish>
                 <French>La sauvegarde automatique est actuellement désactivée</French>
                 <Turkish>Otomatik kayıt şu anda devre dışı</Turkish>
             </Key>
@@ -19439,6 +19552,7 @@
                 <Russian>Быстрое путешествие</Russian>
                 <Chinesesimp>快速旅行</Chinesesimp>
                 <Korean>빠른 이동</Korean>
+                <Spanish>Viaje rápido</Spanish>
                 <Turkish>Hızlı Seyahat</Turkish>
             </Key>
             <Key ID="STR_A3A_Dialogs_fast_travel_error_only_one_hc">
@@ -19446,6 +19560,7 @@
                 <Russian>Вы можете выбрать только одну группу для быстрого путешествия.</Russian>
                 <Chinesesimp>只能选择一队进行快速旅行。</Chinesesimp>
                 <Korean>빠른 이동에는 한 그룹만 선택할 수 있습니다.</Korean>
+                <Spanish>Solo puedes seleccionar un grupo para el viaje rápido.</Spanish>
                 <French>Voyage rapide</French>
                 <Turkish>Hızlı Seyahat için yalnızca bir grup seçebilirsiniz.</Turkish>
             </Key>
@@ -19454,6 +19569,7 @@
                 <Russian>Вы не можете быстро перемещать группы под руководством игроков.</Russian>
                 <Chinesesimp>玩家指挥的队伍无法快速移动</Chinesesimp>
                 <Korean>플레이어가 지휘하는 그룹은 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido con grupos comandados por jugadores.</Spanish>
                 <French>Vous ne pouvez pas faire voyager rapidement des groupes commandés par des joueurs.</French>
                 <Turkish>Oyuncular tarafından komuta edilen grupları Hızlı Seyahat ile taşıyamazsınız.</Turkish>
             </Key>
@@ -19462,6 +19578,7 @@
                 <Russian>Вы не можете быстро путешествовать, если вы контролируете ИИ-бойца.</Russian>
                 <Chinesesimp>控制AI时无法快速旅行</Chinesesimp>
                 <Korean>인공지능을 조종하는 동안에는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido mientras controlas a la IA.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement lorsque vous contrôlez l'IA.</French>
                 <Turkish>YZ kontrol ederken Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19470,6 +19587,7 @@
                 <Russian>Вы не можете быстро путешествовать, пока у вашей техники не убран буксировочный трос или он находится у вас в руках.</Russian>
                 <Chinesesimp>你不能在拉出拖车绳或连接载具的情况下快速行驶。</Chinesesimp>
                 <Korean>견인 로프를 빼거나 차량을 연결한 상태에서는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido con la cuerda de remolque desplegada ni con un vehículo remolcado.</Spanish>
                 <French>Vous ne pouvez pas effectuer de déplacement rapide si vous avez un câble de remorquage dans les mains ou si un véhicule est attaché.</French>
                 <Turkish>Çeki halatı dışarıdayken veya bir araç çekilirken Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19478,6 +19596,7 @@
                 <Russian>Вы не можете быстро путешествовать, пока находитесь под наказанием за дружественный огонь.</Russian>
                 <Chinesesimp>被惩罚时不能快速旅行</Chinesesimp>
                 <Korean>아군오사 처벌을 받는 동안에는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido mientras cumples un castigo por fuego amigo.</Spanish>
                 <French>Vous ne pouvez pas vous déplacer rapidement si vous subissez une pénalité de tir ami.</French>
                 <Turkish>Dost ateşi cezası varken Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19486,6 +19605,7 @@
                 <Russian>Вы не можете быстро путешествовать, пока рядом с вами враги.</Russian>
                 <Chinesesimp>你不能在附近有敌人时进行快速旅行。</Chinesesimp>
                 <Korean>당신 근처에 적이 있는 동안에는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido con enemigos cerca de ti.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement si des ennemis sont près de vous.</French>
                 <Turkish>Yakınınızda düşmanlar varken Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19494,6 +19614,7 @@
                 <Russian>Вы не можете быстро путешествовать, пока рядом с вашим отрядом враги.</Russian>
                 <Chinesesimp>当你的小队附近有敌人时，你不能快速旅行。</Chinesesimp>
                 <Korean>그룹 근처에 적이 있는 동안에는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido con enemigos cerca del grupo.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement si des ennemis se trouvent à proximité du groupe.</French>
                 <Turkish>Grubun yakınında düşmanlar varken Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19502,6 +19623,7 @@
                 <Russian>Вы не можете быстро путешествовать, пока:&lt;br/&gt;во всех транспортных средствах вашего отряда нет водителей или&lt;br/&gt; ваша техника повреждена и обездвижена, или&lt;br/&gt;ваш отряд находится в лодке или ином плавательном средстве.</Russian>
                 <Chinesesimp>如果出现以下情况，您将无法快速旅行：&lt;br/&gt;您的所有车辆都没有驾驶员，或者&lt;br/&gt;您的车辆损坏且无法移动，或者&lt;br/&gt;&gt;你的小队在船上或其他船只上。</Chinesesimp>
                 <Korean>다음의 경우 빠른 이동이 불가능합니다:&lt;br/&gt;해당 차량에 운전수가 없거나&lt;br/&gt;차량이 손상되어 움직일 수 없거나&lt;br/&gt;당신의 그룹이 보트에 있을 경우.</Korean>
+                <Spanish>No puedes hacer viaje rápido si:&lt;br/&gt;no tienes conductor en todos tus vehículos, o&lt;br/&gt;tus vehículos están dañados y no pueden moverse, o&lt;br/&gt;tu grupo está en una embarcación.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement si:&lt;br/&gt;vous n'avez pas de conducteur dans tous vos véhicules ou&lt;br/&gt;vos véhicules sont endommagés et ne peuvent pas bouger ou&lt;br/&gt;votre groupe est dans un bateau.</French>
                 <Turkish>Şu durumlarda Hızlı Seyahat yapamazsınız:&lt;br/&gt;tüm araçlarınızda bir sürücü yoksa veya&lt;br/&gt;araçlarınız hasarlıysa ve hareket edemiyorsa veya&lt;br/&gt;grubunuz bir bottaysa.</Turkish>
             </Key>
@@ -19510,6 +19632,7 @@
                 <Russian>Нажмите на место, куда вы хотите отправиться.</Russian>
                 <Chinesesimp>点击您想去的地方</Chinesesimp>
                 <Korean>빠른 이동할 구역을 클릭하십시오.</Korean>
+                <Spanish>Haz clic en la zona a la que quieres viajar.</Spanish>
                 <French>Cliquez sur le lieu où vous souhaitez vous rendre.</French>
                 <Turkish>Seyahat etmek istediğiniz bölgeye tıklayın.</Turkish>
             </Key>
@@ -19518,6 +19641,7 @@
                 <Russian>Только водители могут быстро путешествовать будучи в транспортном средстве.</Russian>
                 <Chinesesimp>只有司机可以在车内快速行驶。</Chinesesimp>
                 <Korean>운전자만이 차량을 탄 상태로 빠른 이동을 할 수 있습니다.</Korean>
+                <Spanish>Solo los conductores pueden hacer viaje rápido en vehículo.</Spanish>
                 <French>Seuls les conducteurs peuvent se déplacer rapidement dans les véhicules.</French>
                 <Turkish>Araçlarla yalnızca sürücüler hızlı seyahat yapabilir.</Turkish>
             </Key>
@@ -19526,6 +19650,7 @@
                 <Russian>Вы должны нажать на маркер под вашим контролем.</Russian>
                 <Chinesesimp>你必须在你控制的标记附近点击。</Chinesesimp>
                 <Korean>당신 통제 하의 마커 근처를 클릭해야 합니다.</Korean>
+                <Spanish>Tienes que hacer clic cerca de un marcador bajo tu control.</Spanish>
                 <French>Vous devez cliquer à proximité d'un marqueur que vous contrôlez.</French>
                 <Turkish>Kontrolünüz altındaki bir işaretçinin yakınına tıklamalısınız.</Turkish>
             </Key>
@@ -19534,6 +19659,7 @@
                 <Russian>Группы игроков могут быстро путешествовтаь только до штаба, авиа- и военных баз, а также точек сбора и оружейного торговца.</Russian>
                 <Chinesesimp>玩家组队只能快速前往总部、空军基地、军事基地、集结点和军火商。</Chinesesimp>
                 <Korean>플레이어 그룹은 본부, 공군 기지, 군사 기지, 집결 지점, 암거래상으로만 빠른 이동이 가능합니다.</Korean>
+                <Spanish>Los grupos de jugadores solo pueden hacer viaje rápido al CG, bases aéreas, bases militares, puntos de reunión y al traficante de armas.</Spanish>
                 <French>Les groupes de joueurs ne sont autorisés à voyager rapidement que vers le QG, les bases aériennes, les bases militaires, les points de ralliement et les marchands d'armes.</French>
                 <Turkish>Oyuncu gruplarının yalnızca Karargah, Hava Üsleri, Askeri Üsler, Toplanma Noktaları ve Silah Tüccarına Hızlı Seyahat yapmasına izin verilir.</Turkish>
             </Key>
@@ -19542,6 +19668,7 @@
                 <Russian>Группам игроков разрешено быстро перемещаться только между штаб-квартирами, авиабазами, военными базами, торговцами оружием и точками сбора.</Russian>
                 <Chinesesimp>玩家组队只能快速前往总部、空军基地、军事基地、集结点和军火商。</Chinesesimp>
                 <Korean>플레이어 그룹은 본부, 공군 기지, 군사 기지, 무기 상인, 집결 지점 사이로만 빠른 이동이 허용됩니다.</Korean>
+                <Spanish>Los grupos de jugadores solo pueden hacer viaje rápido entre el CG, bases aéreas, bases militares y el traficante de armas, y hacia puntos de reunión.</Spanish>
                 <French>Les groupes de joueurs ne sont autorisés à voyager rapidement qu'entre le QG, les bases aériennes, les bases militaires, les marchands d'armes et les points de rassemblement.</French>
                 <Turkish>Oyuncu gruplarının yalnızca Karargah, Hava Üsleri, Askeri Üsler, Silah Tüccarı ve Toplanma Noktaları arasında Hızlı Seyahat yapmasına izin verilir.</Turkish>
             </Key>
@@ -19550,6 +19677,7 @@
                 <Russian>Вы не можете быстро путешествовать в место, контролируемое врагом.</Russian>
                 <Chinesesimp>你不能快速移动到敌方控制区。</Chinesesimp>
                 <Korean>적의 통제 구역으로 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido a una zona controlada por el enemigo.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement vers une zone contrôlée par l'ennemi.</French>
                 <Turkish>Düşman kontrolündeki bir bölgeye Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19558,6 +19686,7 @@
                 <Russian>Вы не можете быстро путешествовать в место, которое сейчас атакует противник.</Russian>
                 <Chinesesimp>你不能快速旅行到当前正在被敌人攻击的地点。</Chinesesimp>
                 <Korean>공격을 받고 있는 위치로는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido a una ubicación que está bajo ataque.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement vers un lieu qui est attaqué.</French>
                 <Turkish>Saldırı altındaki bir konuma Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19566,6 +19695,7 @@
                 <Russian>Вы не можете быстро путешествовать в место, вокруг которого враги.</Russian>
                 <Chinesesimp>你不能快速旅行到周围有敌人的地方。</Chinesesimp>
                 <Korean>공격을 받거나 주변에 적이 포위한 지역으로는 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido a una zona bajo ataque o con enemigos en los alrededores.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement vers une zone attaquée ou entourée d'ennemis.</French>
                 <Turkish>Saldırı altındaki veya çevresinde düşman bulunan bir bölgeye Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19574,6 +19704,7 @@
                 <Russian>Не удалось найти позицию для размещения бойца.</Russian>
                 <Chinesesimp>无法找到放置单元的位置。</Chinesesimp>
                 <Korean>장치를 배치할 위치를 찾을 수 없습니다.</Korean>
+                <Spanish>No se ha encontrado una posición libre donde colocar a la unidad.</Spanish>
                 <French>Impossible de trouver une position pour placer l'unité.</French>
                 <Turkish>Birimi yerleştirmek için uygun bir konum bulunamadı.</Turkish>
             </Key>
@@ -19582,6 +19713,7 @@
                 <Russian>Перемещаем %1 отряд в место назначения.</Russian>
                 <Chinesesimp>正在将 %1 小队移动到目的地。</Chinesesimp>
                 <Korean>%1 그룹을 목적지로 이동시키는 중입니다.</Korean>
+                <Spanish>Moviendo el grupo %1 al destino.</Spanish>
                 <French>Déplacement du groupe %1 vers la destination.</French>
                 <Turkish>%1 grubu hedefe taşınıyor.</Turkish>
             </Key>
@@ -19590,6 +19722,7 @@
                 <Russian>%1 быстрое перемещение было отменено, так как какой-то игрок сел в технику и конечное место назначения не штаб, авиа- или военных база, точка сбора или оружейный торговец.</Russian>
                 <Chinesesimp>%1 快速旅行已被取消，因为一些玩家已经登上了他们的车辆并且目的地不是总部或空军基地、军事基地、集结点、军火商。</Chinesesimp>
                 <Korean>일부 플레이어가 차량에 탑승했으며 목적지가 본부나 공군 기지, 군사 기지, 집결 지점, 암거래상이 아니기 때문에 %1의 빠른 이동이 취소되었습니다.</Korean>
+                <Spanish>El viaje rápido de %1 se ha cancelado porque algún jugador ha subido a su vehículo y el destino no es el CG, una base aérea, una base militar, un punto de reunión o el traficante de armas.</Spanish>
                 <French>%1 Le voyage rapide a été annulé parce qu'un joueur est monté à bord de son véhicule et que la destination n'est pas le QG ou une base aérienne, une base militaire, un point de ralliement ou un marchand d'armes.</French>
                 <Turkish>Bir oyuncu araca bindiği ve hedef Karargah, Hava Üssü, Askeri Üs, Toplanma Noktası veya Silah Tüccarı olmadığı için %1 Hızlı Seyahat işlemi iptal edildi.</Turkish>
             </Key>
@@ -19598,6 +19731,7 @@
                 <Russian>Вы не можете совершить быстрое путешествие к торговцу, пока не посетите его хотя бы один раз.</Russian>
                 <Chinesesimp>在拜访交易者一次之前，你不能快速旅行到他那里</Chinesesimp>
                 <Korean>한 번 방문하기 전에는 상인에게 빠른 이동을 할 수 없습니다.</Korean>
+                <Spanish>No puedes hacer viaje rápido al traficante hasta que lo hayas visitado una vez.</Spanish>
                 <French>Vous ne pouvez pas voyager rapidement vers un commerçant avant de lui rendre visite une fois.</French>
                 <Turkish>Bir tüccarı en az bir kez ziyaret etmeden oraya Hızlı Seyahat yapamazsınız.</Turkish>
             </Key>
@@ -19606,6 +19740,7 @@
                 <Russian>%1 отряд добрался до места назначения.</Russian>
                 <Chinesesimp>%1小队已经到达目的地。</Chinesesimp>
                 <Korean>%1 그룹이 목적지에 도착했습니다.</Korean>
+                <Spanish>El grupo %1 ha llegado a su destino.</Spanish>
                 <French>Le groupe %1 est arrivé à destination.</French>
                 <Turkish>%1 grubu hedefe ulaştı.</Turkish>
             </Key>
@@ -19614,6 +19749,7 @@
                 <Russian>Минные поля</Russian>
                 <Chinesesimp>雷区</Chinesesimp>
                 <Korean>지뢰지대</Korean>
+                <Spanish>Campos de minas</Spanish>
                 <French>Champs de mines</French>
                 <Turkish>Mayın Tarlaları</Turkish>
             </Key>
@@ -19622,6 +19758,7 @@
                 <Russian>Инженер-подрывник доступен в режиме главнокомандующего.&lt;br/&gt;&lt;br/&gt;Отправьте его обезвреживать мины где это необходимо. Он загрузит в своё транспортное средство все мины, что найдёт.&lt;br/&gt;&lt;br/&gt;До возвращения в штаб мины будут находиться в его транспортном средстве.</Russian>
                 <Chinesesimp>炸弹工程师在您的高级指挥面板中可用。&lt;br/&gt;&lt;br/&gt;把他派到某个地方去拆除地雷。 他会将他发现的所有地雷装载到他的车辆中。&lt;br/&gt;&lt;br/&gt;在他返回总部之前，这些地雷将留在他的载具中。</Chinesesimp>
                 <Korean>폭파전문가는 하이 커맨드 표시줄에서 사용할 수 있습니다.&lt;br/&gt;&lt;br/&gt;그를 지도상의 아무 곳에나 보내서 지뢰를 제거하게 하십시오. 그가 찾은 지뢰를 트럭에 싣을 것입니다.&lt;br/&gt;&lt;br/&gt;본부로 돌아오자마자 그는 차량에 저장된 지뢰를 내릴 것입니다.</Korean>
+                <Spanish>Tienes un especialista en explosivos disponible en la barra de Alto Mando.&lt;br/&gt;&lt;br/&gt;Envíalo a cualquier punto del mapa para desactivar minas. Cargará en su camión las minas que encuentre.&lt;br/&gt;&lt;br/&gt;Al volver al CG descargará las minas guardadas en su vehículo.</Spanish>
                 <French>Un spécialiste des explosifs est disponible sur votre barre de haut commandement.&lt;br/&gt;&lt;br/&gt;Envoyez-le n'importe où sur la carte pour désactiver des mines. Il chargera son camion avec les mines qu'il a trouvées.&lt;br/&gt;&lt;br/&gt;À son retour au QG, il déchargera les mines stockées dans son véhicule.</French>
                 <Turkish>Yüksek Komuta çubuğunuzda bir Patlayıcı Uzmanı mevcut.&lt;br/&gt;&lt;br/&gt;Mayınları etkisiz hale getirmesi için onu haritanın herhangi bir yerine gönderin. Bulduğu mayınları kamyonuna yükleyecektir.&lt;br/&gt;&lt;br/&gt;Karargaha döndüğünde, aracında depolanan mayınları boşaltacaktır.</Turkish>
             </Key>
@@ -19630,6 +19767,7 @@
                 <Russian>Перемещение имущества штаба</Russian>
                 <Chinesesimp>搬总部资产</Chinesesimp>
                 <Korean>본부 자산 옮기기</Korean>
+                <Spanish>Mover recurso del CG</Spanish>
                 <French>Déménagement des ressources du QG</French>
                 <Turkish>Merkez Varlığını Taşıma</Turkish>
             </Key>
@@ -19638,6 +19776,7 @@
                 <Russian>Только Командир может двигать имущество штаба.</Russian>
                 <Chinesesimp>只有指挥官才能移动总部资产。</Chinesesimp>
                 <Korean>지휘관만이 본부 자산을 옮길 수 있습니다.</Korean>
+                <Spanish>Solo el comandante puede mover los recursos del CG.</Spanish>
                 <French>Seul le commandant est autorisé à déplacer les ressources du QG.</French>
                 <Turkish>Sadece komutan karargah varlıklarını taşıyabilir</Turkish>
             </Key>
@@ -19646,6 +19785,7 @@
                 <Russian>Имущество, которое вы хотите передвинуть, уже двигается другим игроком.</Russian>
                 <Chinesesimp>你要移动的资产正在被其他玩家移动。</Chinesesimp>
                 <Korean>옮길 해당 자산을 다른 플레이어가 옮기고 있습니다.</Korean>
+                <Spanish>El recurso que quieres mover lo está moviendo otro jugador.</Spanish>
                 <French>Le bien que vous souhaitez déplacer est en train d'être déplacé par un autre joueur.</French>
                 <Turkish>Taşımak istediğiniz varlık başka bir oyuncu tarafından taşınıyor.</Turkish>
             </Key>
@@ -19654,6 +19794,7 @@
                 <Russian>Вы не можете двигать имущество штаба находясь в транспортном средстве.</Russian>
                 <Chinesesimp>你不能在载具中移动总部资产。</Chinesesimp>
                 <Korean>차량 내에서는 본부 자산을 옮길 수 없습니다.</Korean>
+                <Spanish>No puedes mover recursos del CG mientras estás en un vehículo.</Spanish>
                 <French>Vous ne pouvez pas déplacer les actifs du QG lorsque vous êtes dans un véhicule.</French>
                 <Turkish>Araç içindeyken karargah varlıklarını taşıyamazsınız.</Turkish>
             </Key>
@@ -19662,6 +19803,7 @@
                 <Russian>Вы уже что-то несёте или двигаете.</Russian>
                 <Chinesesimp>你已经在搬运或移动某物了。</Chinesesimp>
                 <Korean>당신은 다른 것을 부착하고 있어서 이걸 옮길 수 없습니다.</Korean>
+                <Spanish>Tienes otras cosas enganchadas, no puedes mover esto.</Spanish>
                 <French>Vous portez ou déplacez déjà quelque chose.</French>
                 <Turkish>Buna bağlı başka nesneler var, bunu taşıyamazsınız.</Turkish>
             </Key>
@@ -19670,6 +19812,7 @@
                 <Russian>Это имущество должно быть ближе к центру штаба, чтобы появилась возможность его двигать.</Russian>
                 <Chinesesimp>这处资产应该靠近总部的中心，以便能够移动它。</Chinesesimp>
                 <Korean>이 자산을 옮기려면 해당 구역 중심에 더 가까이 있어야 합니다.</Korean>
+                <Spanish>Este recurso tiene que estar más cerca del centro de su zona para poder moverlo.</Spanish>
                 <French>Ce poste doit être rapproché de son centre de zone relatif pour pouvoir être déplacé.</French>
                 <Turkish>Bu varlığın taşınabilmesi için bölge merkezine daha yakın olması gerekir.</Turkish>
             </Key>
@@ -19678,6 +19821,7 @@
                 <Russian>Это имущество не может быть передвинуто дальше от центра штаба.</Russian>
                 <Chinesesimp>不能将此资产移动到离总部中心更远的地方。</Chinesesimp>
                 <Korean>이 자신은 해당 구역 중심에서 더 멀리 옮길 수 없습니다.</Korean>
+                <Spanish>Este recurso no se puede alejar más del centro de su zona.</Spanish>
                 <French>Ce bien ne peut pas être déplacé plus loin de son centre de zone.</French>
                 <Turkish>Bu varlık bölge merkezinden daha uzağa taşınamaz.</Turkish>
             </Key>
@@ -19686,6 +19830,7 @@
                 <Russian>Пехотные отряды</Russian>
                 <Chinesesimp>步兵班</Chinesesimp>
                 <Korean>보병 분대</Korean>
+                <Spanish>Escuadras de infantería</Spanish>
                 <French>Escouades d'infanterie</French>
                 <Turkish>Piyade Mangaları</Turkish>
             </Key>
@@ -19694,6 +19839,7 @@
                 <Russian>Пожалуйста, отключите активный режим разрушения, чтобы использовать эту опцию.</Russian>
                 <Chinesesimp>请禁用当前的拆除模式以使用此选项。</Chinesesimp>
                 <Korean>이 옵션을 사용하려면 활성화된 해체 모드를 비활성화하십시오.</Korean>
+                <Spanish>Desactiva el modo de desmontaje para poder usar esta opción.</Spanish>
                 <French>Veuillez désactiver le mode de démolition actif pour utiliser cette option.</French>
                 <Turkish>Bu seçeneği kullanmak için aktif Yıkım modunu devre dışı bırakın.</Turkish>
             </Key>
@@ -19704,6 +19850,7 @@
                 <Russian>Передача денег</Russian>
                 <Chinesesimp>捐钱</Chinesesimp>
                 <Korean>자금 기부</Korean>
+                <Spanish>Donar dinero</Spanish>
                 <French>Faire un don d'argent</French>
                 <Turkish>Para Bağışla</Turkish>
             </Key>
@@ -19712,6 +19859,7 @@
                 <Russian>У вас при себе меньше чем 250%1.</Russian>
                 <Chinesesimp>你身上的钱还不到 250%1。</Chinesesimp>
                 <Korean>당신은 250%1보다 적은 돈을 가지고 있습니다.</Korean>
+                <Spanish>Tienes menos de 250%1 para donar.</Spanish>
                 <French>Vous avez moins de 250%1 à donner.</French>
                 <Turkish>Bağışlamak için 250%1 birimden daha az paranız var.</Turkish>
             </Key>
@@ -19720,6 +19868,7 @@
                 <Russian>Вы пожертвовали %1%2 на общее благо. Это поднимет вашу репутацию внутри нашего движения.</Russian>
                 <Chinesesimp>已为该事业捐赠了 %1%2。 这将提高你在我们部队中的地位。</Chinesesimp>
                 <Korean>%1%2을(를) 기부하였습니다. 이 행위는 우리 군대에서 당신의 지위를 높일 것입니다.</Korean>
+                <Spanish>Has donado %1%2 a la causa. Esto mejorará tu estatus entre nuestras fuerzas.</Spanish>
                 <French>Vous avez fait un don de %1%2 à la cause. Cela augmentera votre statut au sein de nos forces.</French>
                 <Turkish>Davaya %1%2 bağışladınız. Bu, kuvvetlerimiz arasındaki statünüzü yükseltecektir.</Turkish>
             </Key>
@@ -19728,6 +19877,7 @@
                 <Russian>Вы должны смотреть на игрока, чтобы передать ему деньги.</Russian>
                 <Chinesesimp>你得看着玩家给他钱。</Chinesesimp>
                 <Korean>돈을 기부하려면 플레이어를 보고 있어야 합니다.</Korean>
+                <Spanish>Tienes que estar mirando a un jugador para darle dinero.</Spanish>
                 <French>Il faut regarder un joueur pour lui donner de l'argent.</French>
                 <Turkish>Bir oyuncuya para vermek için ona bakıyor olmalısınız.</Turkish>
             </Key>
@@ -19736,6 +19886,7 @@
                 <Russian>Вы подарили %3%2 игроку %1.</Russian>
                 <Chinesesimp>您已将 %3%2 赠予玩家 %1。</Chinesesimp>
                 <Korean>%1에게 %3%2을(를) 기부했습니다.</Korean>
+                <Spanish>Has donado %3%2 a %1.</Spanish>
                 <French>Vous avez fait un don de %3%2 à %1.</French>
                 <Turkish>%1 isimli oyuncuya %3%2 bağışladınız.</Turkish>
             </Key>
@@ -19744,6 +19895,7 @@
                 <Russian>Участие на сервере</Russian>
                 <Chinesesimp>服务器成员</Chinesesimp>
                 <Korean>멤버쉽</Korean>
+                <Spanish>Membresía</Spanish>
                 <French>Membres du serveur</French>
                 <Turkish>Üyelik</Turkish>
             </Key>
@@ -19752,6 +19904,7 @@
                 <Russian>Только администраторы сервера или хост могут добавлять новых постоянных участников.</Russian>
                 <Chinesesimp>只有服务器管理员或主机才能添加新成员。</Chinesesimp>
                 <Korean>서버 관리자 또는 호스트만 새 멤버를 추가할 수 있습니다.</Korean>
+                <Spanish>Solo los administradores o el anfitrión del servidor pueden añadir un miembro nuevo.</Spanish>
                 <French>Seuls les administrateurs de serveur ou les hébergeurs peuvent ajouter un nouveau membre.</French>
                 <Turkish>Yalnızca Sunucu Yöneticileri veya kurucular yeni üye ekleyebilir.</Turkish>
             </Key>
@@ -19760,6 +19913,7 @@
                 <Russian>Функция участия на сервере выключена.</Russian>
                 <Chinesesimp>服务器会员功能被禁用</Chinesesimp>
                 <Korean>서버 멤버 기능이 비활성화되었습니다.</Korean>
+                <Spanish>La función de miembros del servidor está desactivada.</Spanish>
                 <French>La fonction de membre du serveur est désactivée.</French>
                 <Turkish>Sunucu Üyeliği özelliği devre dışı bırakıldı.</Turkish>
             </Key>
@@ -19768,6 +19922,7 @@
                 <Russian>Функция участия на сервере ещё не успела инициализироваться. Пожалуйста, попробуйте позже.</Russian>
                 <Chinesesimp>服务器会员功能尚未初始化。 请稍后再试。</Chinesesimp>
                 <Korean>서버 멤버쉽 기능이 아직 초기화되지 않았습니다. 나중에 다시 시도해주십시오.</Korean>
+                <Spanish>La función de membresía todavía no se ha inicializado. Inténtalo más tarde.</Spanish>
                 <French>La fonction d'adhésion n'a pas encore été initialisée. Veuillez réessayer plus tard.</French>
                 <Turkish>Üyelik özelliği henüz başlatılmadı. Lütfen daha sonra tekrar deneyin.</Turkish>
             </Key>
@@ -19776,6 +19931,7 @@
                 <Russian>Вы ни на кого не смотрите.</Russian>
                 <Chinesesimp>你没有看向任何人</Chinesesimp>
                 <Korean>당신은 아무도 가리키고 있지 않습니다.</Korean>
+                <Spanish>No estás apuntando a nadie.</Spanish>
                 <French>Vous ne désignez personne.</French>
                 <Turkish>Kimseyi işaret etmiyorsun</Turkish>
             </Key>
@@ -19784,6 +19940,7 @@
                 <Russian>Этот игрок уже является постоянным участником сервера.</Russian>
                 <Chinesesimp>该玩家已经是本服会员</Chinesesimp>
                 <Korean>해당 플레이어는 이미 이 서버의 멤버입니다.</Korean>
+                <Spanish>Este jugador ya es miembro de este servidor.</Spanish>
                 <French>Ce joueur est déjà membre de ce serveur.</French>
                 <Turkish>Bu oyuncu zaten bu sunucunun bir üyesi.</Turkish>
             </Key>
@@ -19792,6 +19949,7 @@
                 <Russian>%1 был добавлен в список постоянных участников сервера.</Russian>
                 <Chinesesimp>%1 已添加到服务器成员列表中。</Chinesesimp>
                 <Korean>%1이(가) 서버 멤버 목록에 추가되었습니다.</Korean>
+                <Spanish>%1 se ha añadido a la lista de miembros del servidor.</Spanish>
                 <French>%1 a été ajouté à la liste des membres du serveur.</French>
                 <Turkish>%1, Sunucu Üyeleri Listesine eklendi.</Turkish>
             </Key>
@@ -19800,6 +19958,7 @@
                 <Russian>Вы были добавлены в список постоянных участников сервера.</Russian>
                 <Chinesesimp>您已被添加到服务器成员列表中。</Chinesesimp>
                 <Korean>당신은 서버 멤버 목록에 추가되었습니다.</Korean>
+                <Spanish>Se te ha añadido a la lista de miembros del servidor.</Spanish>
                 <French>Vous avez été ajouté à la liste des membres du serveur.</French>
                 <Turkish>Sunucu Üyeleri listesine eklendiniz.</Turkish>
             </Key>
@@ -19808,6 +19967,7 @@
                 <Russian>%1 был удалён из списка постоянных участников сервера.</Russian>
                 <Chinesesimp>%1 已从服务器成员列表中删除。</Chinesesimp>
                 <Korean>%1이(가) 서버 멤버 목록에서 제거되었습니다.</Korean>
+                <Spanish>%1 se ha eliminado de la lista de miembros del servidor.</Spanish>
                 <French>%1 a été supprimé de la liste des membres du serveur.</French>
                 <Turkish>%1, Sunucu Üyeleri Listesinden çıkarıldı.</Turkish>
             </Key>
@@ -19816,6 +19976,7 @@
                 <Russian>Вы были удалены из списка постоянных участников сервера.</Russian>
                 <Chinesesimp>您已从服务器成员列表中删除。</Chinesesimp>
                 <Korean>당신은 서버 멤버 목록에서 제거되었습니다.</Korean>
+                <Spanish>Se te ha eliminado de la lista de miembros del servidor.</Spanish>
                 <French>Vous avez été retiré de la liste des membres du serveur.</French>
                 <Turkish>Sunucu Üyeleri listesinden çıkarıldınız.</Turkish>
             </Key>
@@ -19824,6 +19985,7 @@
                 <Russian>Вы ушли в отставку с поста Командира, выбрав %1 как вашего преемника.</Russian>
                 <Chinesesimp>你辞去指挥官职务，选择 %1 作为你的继任者。</Chinesesimp>
                 <Korean>%1을(를) 다음 지휘관으로 선택하고 지휘관직을 사임합니다.</Korean>
+                <Spanish>Renuncias al puesto de comandante y eliges a %1 como sucesor.</Spanish>
                 <French>Vous démissionnez de votre poste de commandant et choisissez %1 comme successeur.</French>
                 <Turkish>Komutanlıktan istifa ettiniz; varis olarak %1 kişisini seçtiniz.</Turkish>
             </Key>
@@ -19832,6 +19994,7 @@
                 <Russian>Вы ушли в отставку с поста Командира. Ваш преемник (%1) не соответствует требованиям.</Russian>
                 <Chinesesimp>你辞去指挥官职务。 您选择的继任者 (%1) 不符合条件。</Chinesesimp>
                 <Korean>당신은 지휘관직을 사임했습니다. 선택한 플레이어는 지휘관(%1)는 자격이 없습니다.</Korean>
+                <Spanish>Renuncias al puesto de comandante. El sucesor que elegiste (%1) no era elegible.</Spanish>
                 <French>Vous démissionnez de votre poste de commandant. Le successeur que vous avez choisi (%1) n'était pas éligible.</French>
                 <Turkish>Komutanlıktan istifa ettiniz. Seçtiğiniz varis (%1) uygun değildi.</Turkish>
             </Key>
@@ -19840,6 +20003,7 @@
                 <Russian>Вы ушли в отставку с поста Командира. Другие возьмут на себя командование, если среди них есть кто-то подходящий.</Russian>
                 <Chinesesimp>你辞去指挥官职务。 有合适的就由别人来指挥。</Chinesesimp>
                 <Korean>당신은 지휘관직을 사임했습니다. 적합한 사람이 있으면 다른 사람들이 지휘를 맡을 것입니다.</Korean>
+                <Spanish>Renuncias al puesto de comandante. Otra persona tomará el mando si hay alguien adecuado.</Spanish>
                 <French>Vous démissionnez de votre poste de commandant. D'autres prendront le commandement s'il y a quelqu'un de compétent.</French>
                 <Turkish>Komutanlıktan istifa ettiniz. Uygun biri varsa komutayı başkası devralacak.</Turkish>
             </Key>
@@ -19848,6 +20012,7 @@
                 <Russian>Вы решили, что не подходите на пост Командира.</Russian>
                 <Chinesesimp>您已确定自己不适合担任指挥官一职。</Chinesesimp>
                 <Korean>당신은 지휘관 자격이 없다고 결정했습니다.</Korean>
+                <Spanish>Has decidido no ser elegible como comandante.</Spanish>
                 <French>Vous avez décidé de ne pas être éligible au poste de commandant.</French>
                 <Turkish>Komutanlık için aday olmamaya karar verdiniz.</Turkish>
             </Key>
@@ -19856,6 +20021,7 @@
                 <Russian>Теперь вы имеете право быть Командиром %1.</Russian>
                 <Chinesesimp>您现在有资格成为 %1 的指挥官。</Chinesesimp>
                 <Korean>이제 당신은 %1의 지휘관이 될 자격이 있습니다.</Korean>
+                <Spanish>Ahora eres elegible para ser comandante de %1.</Spanish>
                 <French>Vous êtes maintenant éligible pour devenir commandant de %1.</French>
                 <Turkish>Artık %1 tarafının komutanı olmaya adaysınız.</Turkish>
             </Key>
@@ -19866,6 +20032,7 @@
                 <Russian>Информация о нагрузке ИИ</Russian>
                 <Chinesesimp>AI负载信息</Chinesesimp>
                 <Korean>인공지능 로드 정보</Korean>
+                <Spanish>Información de carga de la IA</Spanish>
                 <French>Informations sur la dotation de l'IA</French>
                 <Turkish>Yapay Zeka Yük Bilgisi</Turkish>
             </Key>
@@ -19874,6 +20041,7 @@
                 <Russian>Headless Client не обнаружены</Russian>
                 <Chinesesimp>未找到无头客户端</Chinesesimp>
                 <Korean>헤드리스 클라이언트 검색되지 않음</Korean>
+                <Spanish>No se ha detectado ningún Headless Client</Spanish>
                 <French>Aucun client sans tête n'est détecté</French>
                 <Turkish>Headless Client Tespit Edilemedi</Turkish>
             </Key>
@@ -19882,6 +20050,7 @@
                 <Russian>%1Повстанцы: %2&lt;br/&gt;Оккупанты:%3&lt;br/&gt;Захватчики:%4&lt;br/&gt;Гражданские:%5&lt;br/&gt;ВСЕГО:%6&lt;br/&gt;&lt;br/&gt;</Russian>
                 <Chinesesimp>%抵抗军: %2&lt;br/&gt;占领着:%3&lt;br/&gt;侵略者:%4&lt;br/&gt;平民:%5&lt;br/&gt;总计:%6&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
                 <Korean>%1의 반군: %2&lt;br/&gt;점령군:%3&lt;br/&gt;침략군:%4&lt;br/&gt;민간인:%5&lt;br/&gt;총 수:%6&lt;br/&gt;&lt;br/&gt;</Korean>
+                <Spanish>%1Rebeldes: %2&lt;br/&gt;Ocupantes:%3&lt;br/&gt;Invasores:%4&lt;br/&gt;Civiles:%5&lt;br/&gt;TOTAL:%6&lt;br/&gt;&lt;br/&gt;</Spanish>
                 <French>%1Rebelles: %2&lt;br/&gt;Occupants:%3&lt;br/&gt;Envahisseurs:%4&lt;br/&gt;Civils:%5&lt;br/&gt;TOTAL:%6&lt;br/&gt;&lt;br/&gt;</French>
                 <Turkish>%1İsyancılar: %2&lt;br/&gt;İşgalciler:%3&lt;br/&gt;İstilacılar:%4&lt;br/&gt;Siviller:%5&lt;br/&gt;TOPLAM:%6&lt;br/&gt;&lt;br/&gt;</Turkish>
             </Key>
@@ -19890,6 +20059,7 @@
                 <Russian>Только Командир</Russian>
                 <Chinesesimp>仅限指挥官</Chinesesimp>
                 <Korean>지휘관 전용</Korean>
+                <Spanish>Solo el comandante</Spanish>
                 <French>Commandant uniquement</French>
                 <Turkish>Sadece Komutan</Turkish>
             </Key>
@@ -19898,6 +20068,7 @@
                 <Russian>Сперва вы должны очистить инвентарь ящика с арсеналом, чтобы получить возможность двигать штаб.</Russian>
                 <Chinesesimp>首先，您必须清空军械箱的库存才能移动总部。</Chinesesimp>
                 <Korean>본부를 이동하려면 먼저 아스널 재고를 비워야 합니다.</Korean>
+                <Spanish>Primero tienes que vaciar el inventario del arsenal para poder mover el CG.</Spanish>
                 <French>Vous devez d'abord vider l'inventaire de l'Arsenal pour pouvoir déplacer le QG.</French>
                 <Turkish>Karargahı taşımak için önce Arsenal envanterini boşaltmalısınız.</Turkish>
             </Key>
@@ -19906,6 +20077,7 @@
                 <Russian>Инвентарь арсенала должен быть пустым</Russian>
                 <Chinesesimp>军火库库存必须为空</Chinesesimp>
                 <Korean>아스널 재고는 비어 있어야 합니다.</Korean>
+                <Spanish>El inventario del arsenal debe estar vacío</Spanish>
                 <French>L'inventaire d'Arsenal doit être vide</French>
                 <Turkish>Arsenal envanteri boş olmalı</Turkish>
             </Key>
@@ -19914,6 +20086,7 @@
                 <Russian>Отпустите Петроса, прежде чем двигать штаб!</Russian>
                 <Chinesesimp>搬总部之前先把Petros放下！</Chinesesimp>
                 <Korean>본부를 옮기기 전에 백두로를 내려놓으십시오!</Korean>
+                <Spanish>¡Suelta a Petros antes de mover el CG!</Spanish>
                 <French>Déposez Petros avant de déplacer le QG !</French>
                 <Turkish>Karargahı taşımadan önce Petros'u yere indirin!</Turkish>
             </Key>
@@ -19922,6 +20095,7 @@
                 <Russian>Петрос в настоящее время перемещается</Russian>
                 <Chinesesimp>Petros目前正被拾起</Chinesesimp>
                 <Korean>페트로스는 현재 픽업되고 있습니다</Korean>
+                <Spanish>Petros está siendo transportado</Spanish>
                 <French>Petros est actuellement levé</French>
                 <Turkish>Petros şu anda taşınıyor</Turkish>
             </Key>
@@ -19930,6 +20104,7 @@
                 <Russian>Ошибка скачивания:&lt;br/&gt;%1</Russian>
                 <Chinesesimp>下载错误：:&lt;br/&gt;%1</Chinesesimp>
                 <Korean>다운로드 오류:&lt;br/&gt;%1</Korean>
+                <Spanish>Error de descarga:&lt;br/&gt;%1</Spanish>
                 <French>Erreur de téléchargement:&lt;br/&gt;%1</French>
                 <Turkish>İndirme hatası:&lt;br/&gt;%1</Turkish>
             </Key>
@@ -19938,6 +20113,7 @@
                 <Russian>Обратный отсчёт</Russian>
                 <Chinesesimp>倒计时</Chinesesimp>
                 <Korean>카운트다운</Korean>
+                <Spanish>Cuenta atrás</Spanish>
                 <French>Décompte</French>
                 <Turkish>Geri Sayım</Turkish>
             </Key>
@@ -19946,6 +20122,7 @@
                 <Russian>Осталось: %1 сек.</Russian>
                 <Chinesesimp>剩余时间：%1 秒</Chinesesimp>
                 <Korean>남은 시간: %1초</Korean>
+                <Spanish>Tiempo restante: %1 s</Spanish>
                 <French>Temps restant: %1 secs</French>
                 <Turkish>Kalan Süre: %1 sn</Turkish>
             </Key>
@@ -19954,6 +20131,7 @@
                 <Russian>&lt;br/&gt;&lt;t size='0.6'&gt;В магазине техники в штабе появились новые позиции.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;抵抗军载具库更新了新的载具。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;t size='0.6'&gt;새 차량으로 아군 차량 재고가 업데이트되었습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;br/&gt;&lt;t size='0.6'&gt;El stock de vehículos rebeldes se ha actualizado con vehículos nuevos.&lt;/t&gt;</Spanish>
                 <French>&lt;br/&gt;&lt;t size='0.6'&gt;Le stock de véhicules Rebel a été mis à jour avec de nouveaux véhicules.&lt;/t&gt;</French>
                 <Turkish>&lt;br/&gt;&lt;t size='0.6'&gt;İsyancı araç stoğu yeni araçlarla güncellendi.&lt;/t&gt;</Turkish>
             </Key>
@@ -19962,6 +20140,7 @@
                 <Russian>&lt;br/&gt;&lt;t size='0.6'&gt;Блокпосты доступны для постройки, также появляется возможность нанимать отряды и группы пулемётчиков.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;路障可建造，机枪班和小队可招募。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;t size='0.6'&gt;이제 검문소를 지을 수 있고, 기관총 분대와 팀을 모집할 수 있습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;br/&gt;&lt;t size='0.6'&gt;Ya puedes construir bloqueos de carretera y reclutar escuadras y equipos de ametralladora.&lt;/t&gt;</Spanish>
                 <French>&lt;br/&gt;&lt;t size='0.6'&gt;Les barrages routiers sont disponibles pour la construction, les escouades et les équipes de MG sont disponibles pour le recrutement.&lt;/t&gt;</French>
                 <Turkish>&lt;br/&gt;&lt;t size='0.6'&gt;Yol Barikatları inşa edilebilir; MG mangaları ve ekipleri görevlendirme için uygun.&lt;/t&gt;</Turkish>
             </Key>
@@ -19970,6 +20149,7 @@
                 <Russian>&lt;br/&gt;&lt;t size='0.6'&gt;Зенитные и противотанковые огневые точки доступны для постройки, также появляется возможность нанимать ПВО/ПТ-расчёты и отряды.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;防空/反坦克阵地可建设，防空/反坦克班及小队可招募。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;t size='0.6'&gt;대공, 대전차화기 포대를 지을 수 있고, 대공/대전차화기 분대와 팀을 모집할 수 있습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;br/&gt;&lt;t size='0.6'&gt;Ya puedes construir emplazamientos AA y AT y reclutar escuadras y equipos AA/AT.&lt;/t&gt;</Spanish>
                 <French>&lt;br/&gt;&lt;t size='0.6'&gt;Les emplacements AA, AT sont disponibles à la construction, les escouades et équipes AA/AT sont disponibles au recrutement.&lt;/t&gt;</French>
                 <Turkish>&lt;br/&gt;&lt;t size='0.6'&gt;AA (Uçaksavar) ve AT (Tanksavar) Mevzileri inşa edilebilir; AA/AT mangaları ve ekipleri görevlendirme için uygun.&lt;/t&gt;</Turkish>
             </Key>
@@ -19978,6 +20158,7 @@
                 <Russian>&lt;br/&gt;&lt;t size='0.6'&gt;Миномётные расчёты доступны для найма.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;t size='0.6'&gt;迫击炮小队开放招募。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;t size='0.6'&gt;박격포 팀을 모집할 수 있습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;br/&gt;&lt;t size='0.6'&gt;Ya puedes reclutar equipos de mortero.&lt;/t&gt;</Spanish>
                 <French>&lt;br/&gt;&lt;t size='0.6'&gt;Des équipes de mortiers sont disponibles pour le recrutement.&lt;/t&gt;</French>
                 <Turkish>&lt;br/&gt;&lt;t size='0.6'&gt;Havan ekipleri görevlendirme için uygun.&lt;/t&gt;</Turkish>
             </Key>
@@ -19986,6 +20167,7 @@
                 <Russian>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Доступны ненаступательные действия поддержки (меню Командира).&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;可用的非进攻性支援行动（指挥官菜单）&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;비-공격적 지원 행동을 사용할 수 있습니다. (지휘관 메뉴)&lt;/t&gt;</Korean>
+                <Spanish>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Ya están disponibles las acciones de soporte no ofensivas (menú del comandante).&lt;/t&gt;</Spanish>
                 <French>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Des actions de soutien non offensives sont disponibles (menu du commandant).&lt;/t&gt;</French>
                 <Turkish>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Saldırı amaçlı olmayan destek eylemleri kullanılabilir (Komutan Menüsü).&lt;/t&gt;</Turkish>
             </Key>
@@ -19994,6 +20176,7 @@
                 <Russian>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;К сопротивлению на контакт вышла организация &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; - некоммерческая гуманитарная организация. При её посредничестве было заключено соглашение - &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; будет платить &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; за освобождение сдавшихся солдат &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt;.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;抵抗运动得到了 &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, 一个第三方人道主义组织的认可，并达成了协议—— &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; 将支付 &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; 以释放 &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; 名投降的士兵.&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;반군은 &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;에 의해 제3자 인도주의 단체로 인정받았고 합의가 이루어졌으며, &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;은 &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt;명의 군인을 석방하는 데 &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt;를 받았습니다.&lt;/t&gt;</Korean>
+                <Spanish>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;La resistencia ha sido reconocida por la &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, una organización humanitaria externa, y se ha llegado a un acuerdo: la &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; nos pagará &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; por liberar a &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; soldados enemigos.&lt;/t&gt;</Spanish>
                 <French>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;La résistance a été reconnue par &lt;t size='0.6' color='#FFA500'&gt;l'IDAP&lt;/t&gt;, une organisation humanitaire tierce et un accord a été conclu - &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;l'IDAP&lt;/t&gt; paiera &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; pour la libération &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; des soldats.&lt;/t&gt;</French>
                 <Turkish>&lt;br/&gt;&lt;br/&gt;&lt;t size='0.6'&gt;Direniş, üçüncü taraf bir insani yardım kuruluşu olan &lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt; tarafından tanındı ve bir anlaşma yapıldı - &lt;br/&gt;&lt;t size='0.6' color='#FFA500'&gt;IDAP&lt;/t&gt;, serbest bırakılan her &lt;t size='0.6' color='#0033CC'&gt;%2&lt;/t&gt; düşman askeri için bize &lt;t size='0.6' color='#008000'&gt;%1&lt;/t&gt; ödeme yapacak.&lt;/t&gt;</Turkish>
             </Key>
