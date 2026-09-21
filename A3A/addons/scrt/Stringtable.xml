@@ -14479,6 +14479,7 @@
                 <Russian>Один товарищ решил внезапно покинуть наши ряды и вступить в %1. Мы должны показать ему, что предательство %2 может быть дорогим удовольствием. Устраните его, пока он не создал нам проблем. Он находится в %3. Сделайте это до %4.</Russian>
                 <Chinesesimp>一些人突然决定离开我们的队伍加入%1。 我们必须让他知道背叛 %2 得付出有多大的代价。 在他给我们带来麻烦之前消灭他。 它位于 %3。 在 %4 之前执行此任务。</Chinesesimp>
                 <Korean>어떤 사람이 우리의 대열을 떠나 %1에 찬동하기로 결정했습니다. 우리는 %2의 배신이 비싼 도박이라는 것을 보여주어야 합니다. 그가 우리에게 문제를 일으키기 전까지 제거하십시오. 그는 현재 %3에 있습니다. %4 이전에 완료하십시오.</Korean>
+                <Spanish>Cierto individuo ha decidido dejar nuestras filas para pasarse a %1. Vamos a demostrarle que la traición sale cara. Elimínalo antes de que nos cause problemas. Está en %3. Hazlo antes de %4.</Spanish>
                 <French>Un individu a décidé de quitter nos rangs en faveur de %1. Nous devons lui montrer que la trahison de %2 est un jeu coûteux. Éliminez-le jusqu'à ce qu'il nous cause des ennuis. Il est dans le %3. Faites-le avant %4.</French>
                 <Turkish>Belirli bir şahıs saflarımızdan ayrılıp %1 tarafına geçmeye karar verdi. Ona ihanetin bedelinin ağır olduğunu göstermeliyiz. Başımıza iş açmadan önce onu ortadan kaldırın. Şahıs %3 bölgesinde bulunuyor. Bunu %4 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14487,6 +14488,7 @@
                 <Russian>Перехватите конвой с боеприпасами</Russian>
                 <Chinesesimp>拦截弹药车队</Chinesesimp>
                 <Korean>탄약 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de munición</Spanish>
                 <French>Intercepter un convoi de munitions</French>
                 <Turkish>Mühimmat Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14495,6 +14497,7 @@
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он привезёт боеприпасы в %3. Попробуйте перехватить его. Украдите или уничтожьте грузовик с искомым содержимым до того, как он достигнет точки назначения.</Russian>
                 <Chinesesimp>来自 %1 的车队即将在 %2 出发。 它将为 %3 提供弹药。 尝试拦截它。 在卡车到达目的地之前偷走或摧毁它。</Chinesesimp>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3에 탄약을 제공할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 트럭을 훔치거나 파괴하십시오.</Korean>
+                <Spanish>Un convoy va a salir de %1 a las %2. Llevará munición a %3. Intenta interceptarlo. Roba o destruye ese camión antes de que llegue a su destino.</Spanish>
                 <French>Un convoi de %1 est sur le point de partir à %2. Il fournira des munitions à %3. Essayez de l'intercepter. Volez ou détruisez ce camion avant qu'il n'atteigne sa destination.</French>
                 <Turkish>%1 grubuna ait bir konvoy %2 vaktinde hareket etmek üzere. Bu konvoy %3 tarafına mühimmat sağlayacak. Önünü kesmeye çalışın. Kamyon hedefine ulaşmadan önce onu çalın veya imha edin.</Turkish>
             </Key>
@@ -14503,6 +14506,7 @@
                 <Russian>Перехватите конвой с топливом</Russian>
                 <Chinesesimp>拦截加油车队</Chinesesimp>
                 <Korean>연료 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de combustible</Spanish>
                 <French>Intercepter un convoi de carburant</French>
                 <Turkish>Yakıt Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14511,6 +14515,7 @@
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он привезёт топливо в %3. Попробуйте перехватить его. Украдите или уничтожьте грузовик с искомым содержимым до того, как он достигнет точки назначения.</Russian>
                 <Chinesesimp>来自 %1 的车队即将在 %2 出发。 它将为 %3 提供燃料。 尝试拦截它。 在卡车到达目的地之前偷走或摧毁它。</Chinesesimp>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3에 연료를 제공할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 트럭을 훔치거나 파괴하십시오.</Korean>
+                <Spanish>Un convoy va a salir de %1 a las %2. Llevará combustible a %3. Intenta interceptarlo. Roba o destruye ese camión antes de que llegue a su destino.</Spanish>
                 <French>Un convoi en provenance de %1 est sur le point de partir à %2. Il fournira du carburant à %3. Essayez de l'intercepter. Volez ou détruisez ce camion avant qu'il n'atteigne sa destination.</French>
                 <Turkish>%1 grubuna ait bir konvoy %2 vaktinde hareket etmek üzere. Bu konvoy %3 tarafına yakıt sağlayacak. Önünü kesmeye çalışın. Kamyon hedefine ulaşmadan önce onu çalın veya imha edin.</Turkish>
             </Key>
@@ -14519,6 +14524,7 @@
                 <Russian>Перехватите конвой бронетехники</Russian>
                 <Chinesesimp>拦截装甲车队</Chinesesimp>
                 <Korean>장갑차량 호송대 방해</Korean>
+                <Spanish>Interceptar convoy blindado</Spanish>
                 <French>Intercepter un convoi blindé</French>
                 <Turkish>Zırhlı Konvoyun Önünü Kes</Turkish>
             </Key>
@@ -14527,6 +14533,7 @@
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он усилит %3 тяжелой техникой. Попробуйте перехватить его. Украдите или уничтожьте бронетехнику до того, как она достигнет точки назначения.</Russian>
                 <Chinesesimp>来自 %1 的车队即将在 %2 出发。 它将用装甲车增援 %3。 尝试拦截它。 在卡车到达目的地之前偷走或摧毁它。</Chinesesimp>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3을 장갑 차량으로 증원할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 차량을 훔치거나 파괴하십시오.</Korean>
+                <Spanish>Un convoy va a salir de %1 a las %2. Reforzará %3 con vehículos blindados. Intenta interceptarlo. Roba o destruye ese blindado antes de que llegue a su destino.</Spanish>
                 <French>Un convoi de %1 est sur le point de partir à %2. Il renforcera %3 avec des véhicules blindés. Essayez de l'intercepter. Volez ou détruisez ce camion avant qu'il n'atteigne sa destination.</French>
                 <Turkish>%1 grubuna ait bir konvoy %2 vaktinde hareket etmek üzere. Bu konvoy %3 tarafını zırhlı araçlarla takviye edecek. Önünü kesmeye çalışın. Zırhlı araç hedefine ulaşmadan önce onu çalın veya imha edin.</Turkish>
             </Key>
@@ -14535,6 +14542,7 @@
                 <Russian>Перехватите конвой с пленниками</Russian>
                 <Chinesesimp>拦截俘虏车队</Chinesesimp>
                 <Korean>포로 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de prisioneros</Spanish>
                 <French>Intercepter un convoi de prisonniers</French>
                 <Turkish>Mahkum Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14543,6 +14551,7 @@
                 <Russian>Группа из наших пленных скоро будет перевозиться из %1 в %3, конвой начнёт движение в %2. Попробуйте перехватить его. Заставьте водителя грузовика покинуть своё место и привезите наших пленников в штаб. Живыми.</Russian>
                 <Chinesesimp>一群战俘正从%1运送到%3，准备在%2出发。 尝试拦截它。 杀死或俘虏卡车司机，让他们加入你的行列，并将他们带到总部。 如果可能的话，活着。</Chinesesimp>
                 <Korean>%1에서 %3(으)로 포로들이 수송되고 있으며 %2에서 출발하려고 합니다. 그들을 방해하십시오. 트럭 운전사를 죽이거나 붙잡아 합류시켜서 본부로 데려오십시오. 가능하면 살아 있어야 합니다.</Korean>
+                <Spanish>Están trasladando a un grupo de prisioneros de guerra desde %1 hasta %3; el convoy saldrá a las %2. Intenta interceptarlo. Mata o captura al conductor del camión para liberar a los prisioneros y llévalos al CG.</Spanish>
                 <French>Un groupe de prisonniers de guerre est transporté de %1 à %3, et il est sur le point de partir à %2. Essayez de l'intercepter. Tuez ou capturez le chauffeur du camion pour qu'ils vous rejoignent et les amènent au QG. En vie si possible.</French>
                 <Turkish>Bir grup savaş esiri %1 mevkisinden %3 mevkisine naklediliyor; konvoy %2 vaktinde hareket edecek. Önünü kesmeye çalışın. Mahkumları serbest bırakmak için kamyon şoförünü öldürün veya etkisiz hale getirin ve onları karargaha getirin.</Turkish>
             </Key>
@@ -14551,6 +14560,7 @@
                 <Russian>Перехватите конвой с подкреплением</Russian>
                 <Chinesesimp>拦截增援车队</Chinesesimp>
                 <Korean>증원군 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de refuerzos</Spanish>
                 <French>Intercepter un convoi de renforts</French>
                 <Turkish>Takviye Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14559,6 +14569,7 @@
                 <Russian>Подкрепление было отправлено из %1 в %3 с конвоем, он начнёт движение в %2. Попробуйте перехватить его и перебить всё подкрепление, а также не забыть о грузовике.</Russian>
                 <Chinesesimp>增援部队正以车队的形式从 %1 运送到 %3，并且即将在 %2 出发。 尽量拦截并杀死所有的部队和车辆目标。</Chinesesimp>
                 <Korean>증원군이 %1에서 %3(으)로 호송 중이며 %2에서 출발하려고 합니다. 모든 병력과 차량 목표물을 방해하여 죽이십시오.</Korean>
+                <Spanish>Se están enviando refuerzos desde %1 hasta %3 en un convoy que sale a las %2. Intenta interceptarlo, mata a todas las tropas y destruye sus transportes.</Spanish>
                 <French>Des renforts sont envoyés de %1 à %3 dans un convoi, et il est sur le point de partir à %2. Essayez d'intercepter et de tuer toutes les troupes et le véhicule objectif.</French>
                 <Turkish>%1 mevkisinden %3 mevkisine bir konvoyla takviye birlik gönderiliyor ve konvoy %2 vaktinde hareket etmek üzere. Önlerini kesmeye çalışın, tüm birlikleri etkisiz hale getirin ve taşıma araçlarını imha edin.</Turkish>
             </Key>
@@ -14567,6 +14578,7 @@
                 <Russian>Перехватите конвой с деньгами</Russian>
                 <Chinesesimp>拦截送钱车队</Chinesesimp>
                 <Korean>자금 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de dinero</Spanish>
                 <French>Interception d'un transport de fonds</French>
                 <Turkish>Para Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14575,6 +14587,7 @@
                 <Russian>Перехватите конвой с припасами</Russian>
                 <Chinesesimp>拦截补给车队</Chinesesimp>
                 <Korean>보급 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de suministros</Spanish>
                 <French>Intercepter un convoi de ravitaillement</French>
                 <Turkish>İkmal Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14583,6 +14596,7 @@
                 <Russian>Грузовик с медикаментами и медицинским оборудованием собирается поехать из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте медикаменты нуждающимся в них людям, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Chinesesimp>一辆装有药品和医疗设备的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
                 <Korean>의료 보급품이 있는 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져오고 해당 주민들에게 그 보급품을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
+                <Spanish>Un camión con material médico con destino a %3 va a salir a las %2 desde %1. Roba ese camión, llévalo a %3 y que la gente de allí sepa que hemos sido nosotros.</Spanish>
                 <French>Un camion de matériel médical à destination de %3 est sur le point de partir à %2 de %1. Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces fournitures.</French>
                 <Turkish>%3 mevkisine giden tıbbi malzeme yüklü bir kamyon, %1 bölgesinden %2 vaktinde hareket etmek üzere. O kamyonu çalın, %3 mevkisine götürün ve oradaki insanların bunun sorumlusunun biz olduğumuzu bilmesini sağlayın.</Turkish>
             </Key>
@@ -14619,6 +14633,7 @@
                 <Russian>Куча денег перевозится в грузовике из %1 в %2, он начнёт движения в %2. Украдите этот грузовик и привезите его в штаб, эти средства нам бы очень пригодились.</Russian>
                 <Chinesesimp>一辆载有大量现金的卡车正在从%1 运到%3，它即将在%2 出发。 偷那辆卡车并把它带到总部。 这些资金将非常受欢迎。</Chinesesimp>
                 <Korean>매우 많은 돈을 싣은 트럭이 %1에서 %3으로 이동하며, %2에서 출발하려고 합니다. 트럭을 훔쳐서 본부로 가져오십시오. 그 자금들은 매우 환영받을 것입니다.</Korean>
+                <Spanish>Un camión cargado de dinero se traslada de %1 a %3 y sale a las %2. Roba ese dinero y llévalo al CG. Esos fondos nos vendrán muy bien.</Spanish>
                 <French>Un transport de fonds est en cours de %1 à %3, et il est sur le point de partir à %2. Volez ce camion et apportez-le au QG. Ces fonds seront les bienvenus.</French>
                 <Turkish>Bol miktarda para taşıyan bir kamyon %1 mevkisinden %3 mevkisine taşınıyor ve %2 vaktinde hareket etmek üzere. O parayı çalın ve karargaha getirin. Bu fonlar bizim için çok makbule geçecek.</Turkish>
             </Key>
@@ -14627,6 +14642,7 @@
                 <Russian>Перехватите конвой с едой</Russian>
                 <Chinesesimp>拦截粮食车队</Chinesesimp>
                 <Korean>식량 호송대 방해</Korean>
+                <Spanish>Interceptar convoy de comida</Spanish>
                 <French>Interception d'un convoi alimentaire</French>
                 <Turkish>Gıda Konvoyunun Önünü Kes</Turkish>
             </Key>
@@ -14635,6 +14651,7 @@
                 <Russian>Грузовик с так необходимой людям едой скоро отъедет из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте еду нуждающимся, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Chinesesimp>一辆装有急需食物的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
                 <Korean>식량이 매우 필요한 사람들을 위한 식량 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져와서 해당 주민들에게 이 음식들을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
+                <Spanish>Un camión con comida que la gente necesita mucho va a salir a las %2 desde %1 (destino: %3). Roba ese camión, llévalo a %3 y que la gente de allí sepa que hemos sido nosotros.</Spanish>
                 <French>Un convoi alimentaire est sur le point de partir à %2 de %1 (destination %3). Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces sacs de nourriture.</French>
                 <Turkish>Halk için çok gerekli olan gıdaları taşıyan bir kamyon, %1 bölgesinden %2 vaktinde hareket etmek üzere (hedef %3). O kamyonu çalın, %3 mevkisine götürün ve oradaki insanların bunun sorumlusunun biz olduğumuzu bilmesini sağlayın.</Turkish>
             </Key>
@@ -14643,6 +14660,7 @@
                 <Russian>Уничтожьте или захватите радиовышку</Russian>
                 <Chinesesimp>摧毁或占领无线电塔</Chinesesimp>
                 <Korean>통신탑 파괴 또는 점령</Korean>
+                <Spanish>Destruir o capturar la torre de radio</Spanish>
                 <French>Détruire ou capturer la tour radio</French>
                 <Turkish>Radyo Kulesini İmha Et veya Ele Geçir</Turkish>
             </Key>
@@ -14651,6 +14669,7 @@
                 <Russian>Мы должны уничтожить или захватить радиовышку в %1. Это ослабит влияние пропаганды %3. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们需要摧毁或占领 %1 的无线电塔。 这将削弱 %3 宣传网络。 在 %2 之前完成。</Chinesesimp>
                 <Korean>%1의 통신탑을 파괴하거나 점령해야 합니다 %3의 선전이 중단될 것입니다. %2 이전에 완료하십시오.</Korean>
+                <Spanish>Tenemos que destruir o tomar la torre de radio de %1. Eso interrumpirá las comunicaciones y la red de propaganda de %3. Hazlo antes de %2.</Spanish>
                 <French>Nous devons détruire ou prendre une tour radio à %1. Cela interrompra %3 réseau de propagande. Faites-le avant %2.</French>
                 <Turkish>%1 mevkisindeki radyo kulesini imha etmemiz veya ele geçirmemiz gerekiyor. Bu, %3 tarafının iletişimini ve propaganda ağını kesecektir. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14659,6 +14678,7 @@
                 <Russian>Уничтожьте подбитый вертолёт</Russian>
                 <Chinesesimp>摧毁坠落的直升机</Chinesesimp>
                 <Korean>추락한 헬기 파괴</Korean>
+                <Spanish>Destruir helicóptero derribado</Spanish>
                 <French>Destruction de l'hélicoptère abattu</French>
                 <Turkish>Düşürülmüş Helikopteri İmha Et</Turkish>
             </Key>
@@ -14667,6 +14687,7 @@
                 <Russian>Мы сбили вертолёт %1. Есть хороший шанс уничтожить или захватить (доставить в штаб) его до того, как его отремонтируют. Сделайте это до того, как ремонтная бригада из %2 достигнет места крушения. Двигайтесь быстро. Сделайте это до %3.</Russian>
                 <Chinesesimp>我们击落了 %1 直升机。 在它可能被回收之前摧毁它或捕获它（将它带到总部）。 在来自 %2 的恢复小组到达坠机现场之前执行此任务。 动作快点。 在 %3 之前完成。</Chinesesimp>
                 <Korean>%1의 헬리콥터를 격추했습니다. 수리되기 전에 파괴하거나 노획(본부로 가져옴)을 할 좋은 기회입니다. %2의 수리 팀이 추락 지점에 도착하기 전에 이 과업을 수행하십시오. 빨리 움직이십시오. %3 이전에 완료하십시오.</Korean>
+                <Spanish>Hemos derribado un helicóptero de %1. Es una buena oportunidad para destruirlo o capturarlo (llevándolo al CG) antes de que lo recuperen. Hazlo antes de que un equipo de recuperación de %2 llegue al lugar del accidente. Date prisa. Hazlo antes de %3.</Spanish>
                 <French>Nous avons abattu un hélicoptère %1. Il y a de bonnes chances de le détruire ou de le capturer (l'amener au QG) avant qu'il ne soit récupéré. Faites-le avant qu'une équipe de récupération de %2 n'atteigne le site du crash. Déplacez-vous rapidement. Faites-le avant %3.</French>
                 <Turkish>Bir %1 helikopterini düşürdük. Geri alınmadan önce onu imha etmek veya ele geçirmek (karargaha getirmek) için bu iyi bir fırsat. Bunu, %2 grubuna ait kurtarma ekibi enkaz alanına ulaşmadan önce yapın. Hızlı hareket edin. Bunu %3 vaktinden önce bitirin.</Turkish>
             </Key>
@@ -14675,6 +14696,7 @@
                 <Russian>Уничтожьте артиллерию</Russian>
                 <Chinesesimp>摧毁火炮</Chinesesimp>
                 <Korean>야포 파괴</Korean>
+                <Spanish>Destruir la artillería</Spanish>
                 <French>Détruire l'artillerie</French>
                 <Turkish>Topçu Birliğini İmha Et</Turkish>
             </Key>
@@ -14683,6 +14705,7 @@
                 <Russian>Артиллерия стреляет по нашим позициям с %1. Мы должнны уничтожить её или её экипаж. Сделайте это до %2, или враг уничтожит что-нибудь ценное.</Russian>
                 <Chinesesimp>火炮正在从 %1 向我们的阵地开火。 我们必须摧毁火炮或者操控火炮人员。 在 %2 之前执行此任务，否则敌人会破坏一些有价值的东西。</Chinesesimp>
                 <Korean>야포가 %1에서 우리 위치를 향해 발사하고 있습니다. 그것을 파괴하거나 해당 사수들을 죽여야 합니다. %2 이전에 완료하십시오. 그렇지 않으면 그들이 어떤 가치있는 것을 파괴할 것입니다.</Korean>
+                <Spanish>Hay artillería disparando contra nuestras posiciones desde %1. Tenemos que destruirla o matar a su dotación. Hazlo antes de %2, ¡o destruirán algo importante!</Spanish>
                 <French>L'artillerie tire sur nos positions depuis %1. Nous devons la détruire ou tuer son équipage. Faites-le avant %2, ou ils détruiront quelque chose de précieux.</French>
                 <Turkish>%1 mevkisinden mevzilerimize topçu ateşi açılıyor. Onu imha etmeli veya mürettebatını etkisiz hale getirmeliyiz. Bunu %2 vaktinden önce yapın, yoksa önemli bir şeyi yok edecekler!</Turkish>
             </Key>
@@ -14691,6 +14714,7 @@
                 <Russian>Угоните или уничтожьте бронетехнику</Russian>
                 <Chinesesimp>劫持或摧毁装甲车</Chinesesimp>
                 <Korean>장갑차량 노획 또는 파괴</Korean>
+                <Spanish>Robar o destruir un blindado</Spanish>
                 <French>Détourner ou détruire des véhicules blindés</French>
                 <Turkish>Zırhlı Aracı Çal veya İmha Et</Turkish>
             </Key>
@@ -14699,6 +14723,7 @@
                 <Russian>Мы знаем, что вражеская бронетехника (%3) развернута в  %1. У нас есть хороший шанс украсть её или уничтожить, пока она не нанесла нам ущерб. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们知道敌方装甲部队 (%3) 驻扎在 %1。 在造成更多损害之前摧毁或偷走它，这是一个好机会。 在 %2 之前完成。</Chinesesimp>
                 <Korean>%1에 적의 장갑차량 (%3)이(가) 주둔하고 있습니다. 더 많은 피해를 주기 전에 파괴하거나 노획할 수 있는 좋은 기회입니다. %2 이전에 완료하십시오.</Korean>
+                <Spanish>Sabemos que hay un %3 estacionado en %1. Es una buena oportunidad para destruirlo o capturarlo antes de que nos haga daño. Hazlo antes de %2.</Spanish>
                 <French>Nous savons qu'un blindé ennemi (%3) est stationné en %1. C'est une bonne occasion de le détruire ou de le voler avant qu'il ne cause plus de dégâts. Faites-le avant %2.</French>
                 <Turkish>%1 mevkisinde bir %3 konuşlandırıldığını biliyoruz. Bize zarar vermeden önce onu imha etmek veya ele geçirmek için bu iyi bir fırsat. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14707,6 +14732,7 @@
                 <Russian>Поймать поставку с воздуха</Russian>
                 <Chinesesimp>空运货物</Chinesesimp>
                 <Korean>보급품 공수 확보</Korean>
+                <Spanish>Recoger lanzamiento aéreo</Spanish>
                 <French>Attraper le largage</French>
                 <Turkish>İkmal Paketini Yakala</Turkish>
             </Key>
@@ -14715,6 +14741,7 @@
                 <Russian>Наш самолёт сбросит полезный груз на %1. Идите туда и укажите точную позицию сброса любой дымовой гранатой, пилот заметит сигнал и сбросит груз. Привезите груз в штаб. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们的飞机将在 %1 空投一些货物。 去那里并在地面上扔任何烟雾弹，飞行员会注意到信号并放下货物。 把货物运到总部。 在 %2 之前执行此任务。</Chinesesimp>
                 <Korean>우리 비행기가 %1에서 어떤 화물을 떨어뜨릴 것입니다. 가서 아무 연막탄을 땅에 던지면 조종사가 신호를 알아보고 화물을 떨굴 것입니다. 화물을 본부로 가져오십시오. %2 이전에 완료하십시오.</Korean>
+                <Spanish>Un avión soltará carga en %1. Ve allí y lanza una granada de humo al suelo; el piloto verá la señal y soltará la carga. Llévala de vuelta al CG. Hazlo antes de %2.</Spanish>
                 <French>Notre avion va déposer une cargaison à %1. Allez-y et lancez une grenade fumigène sur le sol, le pilote remarquera le signal et larguera la cargaison. Apportez la cargaison au QG. Faites-le avant %2.</French>
                 <Turkish>Bir uçak %1 mevkisine kargo bırakacak. Oraya gidin ve yere bir sis bombası atın; pilot sinyali fark edecek ve kargoyu bırakacaktır. Kargoyu karargaha geri getirin. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14723,6 +14750,7 @@
                 <Russian>Угоните или уничтожьте грузовик с боеприпасами</Russian>
                 <Chinesesimp>偷窃或摧毁弹药车</Chinesesimp>
                 <Korean>탄약트럭 노획 또는 파괴</Korean>
+                <Spanish>Robar o destruir el camión de munición</Spanish>
                 <French>Voler ou détruire un camion de munitions</French>
                 <Turkish>Mühimmat Kamyonunu Çal veya İmha Et</Turkish>
             </Key>
@@ -14731,6 +14759,7 @@
                 <Russian>Мы заметили грузовик с боеприпасами в %1. Идите туда и либо угоните его в штаб, либо уничтожьте. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们在 %1 发现了一辆弹药卡车。 去摧毁或偷走它。 在 %2 之前完成。</Chinesesimp>
                 <Korean>%1에서 탄약트럭이 포착되었습니다. 가서 파괴하거나 노획하십시오. %2 이전에 완료하십시오.</Korean>
+                <Spanish>Hemos avistado un camión de munición en %1. Ve allí y destrúyelo o róbalo. Hazlo antes de %2.</Spanish>
                 <French>Nous avons repéré un camion de munitions en %1. Allez-y et détruisez-le ou volez-le. Faites-le avant %2.</French>
                 <Turkish>%1 mevkisinde bir mühimmat kamyonu tespit ettik. Oraya gidin ve onu imha edin veya çalın. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14739,6 +14768,7 @@
                 <Russian>Ограбление банка</Russian>
                 <Chinesesimp>抢劫银行</Chinesesimp>
                 <Korean>은행 강도</Korean>
+                <Spanish>Atraco al banco</Spanish>
                 <French>Vols de banque</French>
                 <Turkish>Banka Soygunu</Turkish>
             </Key>
@@ -14747,6 +14777,7 @@
                 <Russian>Мы заметили, что %3 охраняют большое количество денег в банке города %1. Возьмите специальный грузовик в штабе и подъедьте туда, подгоните грузовик к главному входу банка на 2 минуты, тем самым перегрузив деньги из банка в грузовик. Затем пригоните грузовик обратно и деньги у нас в кармане. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们知道%3在%1的银行保管着一大笔钱。 开着这辆卡车在 %2 之前去那里，把卡车停在靠近银行正门的地方 2 分钟，钱就会转到卡车上。 带回总部，钱就是我们的了</Chinesesimp>
                 <Korean>우리는 %3이 %1의 은행에서 거금을 예치 중이란 것을 알아냈습니다. 이 트럭을 타고 %2 이전까지 가서 2분 동안 은행 정문 가까이에서 트럭을 정차시키고 있으면 돈이 트럭으로 옮겨질 것입니다. 본부로 가져오면 해당 자금은 우리 것이 될 것입니다.</Korean>
+                <Spanish>Sabemos que %3 custodia una gran cantidad de dinero en el banco de %1. Coge este camión y ve allí antes de %2, mantenlo junto a la entrada principal del banco durante 2 minutos y el dinero se cargará en el camión. Llévalo de vuelta al CG y el dinero será nuestro.</Spanish>
                 <French>Nous savons que %3 gardent une grosse somme d'argent dans la banque de %1. Prenez ce camion et allez-y avant %2, tenez le camion près de l'entrée principale de la banque pendant 2 minutes et l'argent sera transféré dans le camion. Ramenez-le au QG et l'argent sera à nous.</French>
                 <Turkish>%1 bankasında %3 grubunun yüklü miktarda parayı koruduğunu biliyoruz. Bu kamyonu alın ve %2 vaktinden önce oraya gidin; kamyonu bankanın ana girişine yakın bir yerde 2 dakika boyunca bekletin, paralar kamyona aktarılacaktır. Kamyonu karargaha geri getirin ve para bizim olsun.</Turkish>
             </Key>
@@ -14755,6 +14786,7 @@
                 <Russian>Не отгоняйте грузовик от банка слишком далеко!</Russian>
                 <Chinesesimp>卡车不要离银行太远！</Chinesesimp>
                 <Korean>트럭을 은행에서 멀리 떨어뜨려 놓지 마십시오!</Korean>
+                <Spanish>¡No alejes el camión del banco!</Spanish>
                 <French>N'éloignez pas le camion de la banque !</French>
                 <Turkish>Kamyonu bankadan uzaklaştırmayın!</Turkish>
             </Key>
@@ -14763,6 +14795,7 @@
                 <Russian>Отвезите грузовик обратно в штаб, чтобы закончить задачу.</Russian>
                 <Chinesesimp>驾驶卡车返回基地完成本次任务。</Chinesesimp>
                 <Korean>트럭을 기지로 옮겨서 임무를 완료하십시오.</Korean>
+                <Spanish>Lleva el camión de vuelta a la base para terminar esta misión.</Spanish>
                 <French>Conduisez le camion jusqu'à la base pour terminer cette mission.</French>
                 <Turkish>Görevi bitirmek için kamyonu üsse geri sürün.</Turkish>
             </Key>
@@ -14771,6 +14804,7 @@
                 <Russian>Вытащите припасы с затонувшего судна</Russian>
                 <Chinesesimp>沉船打捞物资</Chinesesimp>
                 <Korean>난파선 물자 회수</Korean>
+                <Spanish>Rescatar suministros de un barco hundido</Spanish>
                 <French>Récupérer du ravitaillement d'un navire coulé</French>
                 <Turkish>Batık Gemiden İkmal Malzemelerini Kurtar</Turkish>
             </Key>
@@ -14779,6 +14813,7 @@
                 <Russian>Грузовой корабль с поставкой припасов затонул недалеко от %1. Идите туда и вытащите груз до %2. Вам потребуется лодка с лебёдкой, чтобы достать поставку. Сгодится любая лодка c лебёдкой и возможностью принять груз (подойдут спасательные, скоростные лодки и похожие на них) - вы можете либо использовать наши лодки, либо воспользоваться пришвартованными гражданскими судами. Также вы можете найти дайверское снаряжение в ящике со снаряжением в любом вражеском морском порту или в арсенале, если вы захватывали и успешно довозили до штаба ящик из морского порта ранее.</Russian>
                 <Chinesesimp>一批补给品在 %1 外沉没。 去那里并在 %2 之前回收物资。 您将需要获得一艘带有绞车和运货能力的船来回收货物（救援船、摩托艇或类似的船只都适合），检查海滩上是否有您可以征用的民用船只。 如果您之前占领过任何海港并从那里运送过箱子，您可能会在任何敌方海港箱子或军火库中找到潜水装备。</Chinesesimp>
                 <Korean>%1 외곽에서 보급 선적물이 가라앉았습니다. 가서 %2 이전에 보급품을 되찾으십시오. 선적물을 회수하려면 윈치와 화물 기능이 있는 보트를 입수하고(구조 보트, 모터 보트 또는 유사한 보트가 적합합니다), 징발할 수 있는 민간 보트가 있는지 해변을 확인하십시오. 만약 당신이 이전에 어떤 항구를 점령하고 그 곳에서 상자를 배달했다면, 당신은 적의 상자나 무기고에서 다이빙 장비를 발견할 수 있습니다.</Korean>
+                <Spanish>Un cargamento de suministros se hundió frente a %1. Ve allí y recupéralo antes de %2. Necesitarás una embarcación con cabrestante y capacidad de carga (una lancha de rescate, una motora o similar sirven); busca por las playas barcos civiles que puedas requisar. Puedes encontrar equipo de buceo en cualquier caja de puerto marítimo enemigo, o en el arsenal si ya has capturado algún puerto y entregado su caja.</Spanish>
                 <French>Une cargaison de ravitaillement a été coulée à l'extérieur de %1. Allez-y et récupérez le matériel avant %2. Vous aurez besoin d'un bateau avec un treuil et des capacités de chargement pour récupérer la cargaison (un bateau de sauvetage, un bateau à moteur ou des bateaux similaires conviendront), vérifiez sur les plages s'il y a des bateaux civils que vous pouvez réquisitionner. Vous pouvez trouver du matériel de plongée dans n'importe quelle caisse de port maritime ennemi ou dans l'arsenal si vous avez capturé un port maritime et livré une caisse depuis celui-ci auparavant.</French>
                 <Turkish>%1 açıklarında bir ikmal sevkiyatı battı. Oraya gidin ve %2 vaktinden önce malzemeleri kurtarın. Sevkiyatı çıkarmak için vinçli ve kargo kapasiteli bir tekne bulmanız gerekecek (kurtarma botu, motorbot veya benzerleri uygun olacaktır); el koyabileceğiniz sivil tekneler için kıyıları kontrol edin. Eğer daha önce bir limanı ele geçirip oradaki kasayı teslim ettiyseniz, dalış ekipmanlarını düşman liman kasalarında veya cephanelikte bulabilirsiniz.</Turkish>
             </Key>
@@ -14787,6 +14822,7 @@
                 <Russian>Обследуйте место крушения вертолёта</Russian>
                 <Chinesesimp>调查直升机坠毁现场</Chinesesimp>
                 <Korean>헬기 추락 지점</Korean>
+                <Spanish>Lugar del accidente de helicóptero</Spanish>
                 <French>Site de l'accident d'hélicoptère</French>
                 <Turkish>Helikopter Enkaz Alanı</Turkish>
             </Key>
@@ -14795,6 +14831,7 @@
                 <Russian>Вертолёт %1 c ценным грузом был сбит в %2. Привезите этот груз в штаб до того, как его заберёт вражеская эвакуационная команда. Мы должны сделать это %3. Вражеские передовые отряды уже обнаружили груз и охраняют его.</Russian>
                 <Chinesesimp>%1 载有贵重货物的直升机已在 %2 被击落。 在敌方救援队之前将直升机的货物带到总部。 我们必须在 %3 之前得到它。 敌前线部队已经找到坠机点并把守着。</Chinesesimp>
                 <Korean>%2에서 가치 있는 화물을 적재한 %1의 헬리콥터가 격추되었습니다. 헬리콥터의 화물을 적 구조대보다 먼저 본부로 가져오십시오. %3 이전에 확보해야 합니다. 적의 최전선 부대가 이미 추락 지점을 발견하고 지키는 중입니다.</Korean>
+                <Spanish>Un helicóptero de %1 con carga valiosa ha sido derribado en %2. Recoge los datos y llévalos al CG antes que el equipo de rescate enemigo. Tenemos que conseguirlos antes de %3. Las tropas enemigas de primera línea van de camino.</Spanish>
                 <French>L'hélicoptère %1 avec une cargaison de valeur a été abattu à %2. Apportez la cargaison de l'hélicoptère au QG avant l'arrivée de l'équipe de secours ennemie. Nous devons l'obtenir avant %3. Les troupes ennemies de première ligne ont déjà trouvé le site du crash et le gardent.</French>
                 <Turkish>%2 mevkisinde, değerli kargoya sahip bir %1 helikopteri düşürüldü. Verileri toplayın ve düşmanın kurtarma ekibinden önce karargaha getirin. Bunu %3 vaktinden önce yapmalıyız. Düşman öncü birlikleri yolda.</Turkish>
             </Key>
@@ -14803,6 +14840,7 @@
                 <Russian>Направляйтесь на предполагаемое место крушения</Russian>
                 <Chinesesimp>侦察坠毁现场</Chinesesimp>
                 <Korean>정찰 차량 파괴 현장</Korean>
+                <Spanish>Lugar del accidente del vehículo de reconocimiento</Spanish>
                 <Turkish>Keşif Aracı Kaza Alanı</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_desc">
@@ -14810,6 +14848,7 @@
                 <Russian>Транспорт %1 c разведданными был подбит в %2. Соберите их и доставьте в штаб до того, как их заберёт вражеская эвакуационная команда. Мы должны сделать это %3. Вражеские передовые отряды уже в пути.</Russian>
                 <Chinesesimp>%1s 的侦察机发出求救信号。车辆轨迹表明坠机预计发生在 %2。收集数据并在敌方恢复小组到达之前将其带回总部。我们必须在 %3 之前拿到它。敌方前线部队正在前往恢复数据的途中。</Chinesesimp>
                 <Korean>%1의 정찰 차량이 구조 신호를 보냈습니다. 차량의 궤적을 보면 충돌은 %2에서 발생한 것으로 예상됩니다. 데이터를 수집하여 적의 구조팀보다 먼저 본부로 가져오십시오. %3 이전에 가져와야 합니다. 적의 최전선 부대가 데이터를 복구하기 위해 출발했습니다.</Korean>
+                <Spanish>El vehículo de reconocimiento de %1 ha enviado una señal de socorro. Su trayectoria sugiere que el accidente se producirá en %2. Recoge los datos y llévalos al CG antes que el equipo de recuperación enemigo. Tenemos que conseguirlos antes de %3. Las tropas enemigas de primera línea van de camino a recuperarlos.</Spanish>
                 <Turkish>%1 grubuna ait keşif aracı bir imdat sinyali gönderdi. Aracın yörüngesi, kazanın %2 mevkisinde gerçekleşeceğini gösteriyor. Verileri toplayın ve düşman kurtarma ekibinden önce karargaha geri getirin. Bunu %3 vaktinden önce yapmalıyız. Düşman öncü birlikleri verileri geri almak için yolda.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_crashsite_task_alt">
@@ -14817,6 +14856,7 @@
                 <Russian>Доставьте данные торговцу оружием. Он щедро за них заплатит (Петрос не сильно расстроится).</Russian>
                 <Chinesesimp>将坠机现场数据交给军火商。他会付给他丰厚的报酬！Petros 不会对此太难过。</Chinesesimp>
                 <Korean>충돌 현장 데이터를 암거래상에게 전달하십시오. 그는 후하게 대가를 쳐줄 겁니다! 페트로스는 별로 화내지 않을 것입니다.</Korean>
+                <Spanish>Entrega los datos del accidente al traficante de armas. ¡Pagará bien! Y Petros no se enfadará demasiado.</Spanish>
                 <Turkish>Enkaz alanı verilerini silah tüccarına teslim edin. Dolgun bir ödeme yapacaktır! Petros bu duruma pek bozulmayacaktır.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_SUPP_Supplies_task_header">
@@ -14824,6 +14864,7 @@
                 <Russian>Доставьте припасы в %1</Russian>
                 <Chinesesimp>将物资运送到 %1</Chinesesimp>
                 <Korean>%1에 보급품 전달</Korean>
+                <Spanish>Entregar suministros a %1</Spanish>
                 <French>Livrer des fournitures à %1</French>
                 <Turkish>%1 Mevkisine İkmal Malzemelerini Teslim Et</Turkish>
             </Key>
@@ -14832,6 +14873,7 @@
                 <Russian>Население %1 нуждается в гуманитарных поставках. Мы можем улучшить отношение к нам в этом населённом пункте, если мы предоставим им всё необходимое. У нас тут в штабе завалялся ящик с припасами, доставьте этот ящик в центр населённого пункта и раздайте припасы населению. Сделайте это до %2.</Russian>
                 <Chinesesimp>%1 的人民需要物资。 如果我们是提供它们的人，我们可能会改善与该城市的关系。 我在总部附近放了一个装有补给品的箱子。 将箱子运送到 %1 市中心并向居民分发补给品。 在 %2 之前执行此任务。</Chinesesimp>
                 <Korean>%1의 주민들이 보급품을 필요로 합니다. 우리가 제공해준다면 해당 도시의 우호도가 증가할 것입니다. %1 도심부에 화물을 배달하고 보급품을 주민들에게 나눠주십시오. %2 이전에 완료하십시오.</Korean>
+                <Spanish>%1 necesita suministros. Podemos mejorar nuestra relación con la población si somos nosotros quienes se los llevamos. He dejado una caja con suministros cerca de nuestro CG. Llévala al centro de la población y reparte los suministros entre la gente. Hazlo antes de %2.</Spanish>
                 <French>%1 population a besoin de fournitures. Nous pouvons améliorer nos relations avec cette ville si nous sommes ceux qui les fournissent. J'ai placé une caisse de ravitaillement près de notre QG. Livrez la caisse au centre de la ville de %1 et distribuez les vivres à la population. Faites-le avant %2.</French>
                 <Turkish>%1 bölgesinin ikmal malzemelerine ihtiyacı var. Eğer bu malzemeleri biz sağlarsak kasaba ile ilişkilerimizi geliştirebiliriz. Karargahımızın yakınına ikmal malzemesi dolu bir kasa yerleştirdim. Kasayı kasaba merkezine götürün ve malzemeleri halka dağıtın. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -14840,6 +14882,7 @@
                 <Russian>Доставка припасов</Russian>
                 <Chinesesimp>物资配送</Chinesesimp>
                 <Korean>보급품 배달</Korean>
+                <Spanish>Entrega de suministros</Spanish>
                 <French>Livraison de fournitures</French>
                 <Turkish>İkmal Malzemesi Teslimatı</Turkish>
             </Key>
@@ -14848,6 +14891,7 @@
                 <Russian>Доставьте этот ящик в центр населенного пункта %1, разгрузите его, чтобы начать раздачу припасов людям.</Russian>
                 <Chinesesimp>把这个箱子送到%1的地区中心，卸下它，向人们分发物资。</Chinesesimp>
                 <Korean>해당 상자를 %1의 중심부에 배달하고, 주민들에게 보금품을 나누기 위해선 짐을 내리십시오.</Korean>
+                <Spanish>Lleva esta caja al centro de %1 y descárgala para empezar a repartir los suministros entre la gente.</Spanish>
                 <French>Livrez cette boîte au centre de la localité %1, déchargez-la pour commencer à distribuer des fournitures aux gens.</French>
                 <Turkish>Bu kutuyu %1 yerleşim merkezine ulaştırın; halka malzeme dağıtımını başlatmak için kutuyu araçtan indirin.</Turkish>
             </Key>
@@ -14856,6 +14900,7 @@
                 <Russian>Не подпускайте врагов к ящику в течение %1 секунд.</Russian>
                 <Chinesesimp>保持该区域没有敌人 %1 秒。</Chinesesimp>
                 <Korean>%1초 동안 적이 없도록 하십시오.</Korean>
+                <Spanish>Mantén la zona despejada de hostiles durante %1 segundos más.</Spanish>
                 <French>Gardez la zone exempte d'hostiles pendant %1 secondes supplémentaires.</French>
                 <Turkish>Bölgeyi %1 saniye daha düşmanlardan temiz tutun.</Turkish>
             </Key>
@@ -14864,6 +14909,7 @@
                 <Russian>Припасы были успешно доставлены и распространены среди населения. Народ %1 любит вас!</Russian>
                 <Chinesesimp>物资已成功交付并分发给民众。 %1人爱你！</Chinesesimp>
                 <Korean>보급품이 성공적으로 배달되고 주민들에게 나눠졌습니다. %1의 주민들은 이제 당신들을 사랑합니다!</Korean>
+                <Spanish>Los suministros se han entregado y repartido correctamente entre la población. ¡La gente de %1 te adora!</Spanish>
                 <French>Les fournitures ont été livrées et distribuées avec succès à la population. Les gens de "%1" vous aiment !</French>
                 <Turkish>İkmal malzemeleri başarıyla teslim edildi ve halka dağıtıldı. %1 halkı size minnettar!</Turkish>
             </Key>
@@ -14984,6 +15030,7 @@
                 <Russian>Помешайте ремонту радиовышки</Russian>
                 <Chinesesimp>阻碍无线电塔的修复</Chinesesimp>
                 <Korean>통신탑 재건축 방해</Korean>
+                <Spanish>Impedir la reconstrucción de la torre</Spanish>
                 <French>Recontruction de la tour perturber</French>
                 <Turkish>Kule Onarımını Engelle</Turkish>
             </Key>
@@ -14992,6 +15039,7 @@
                 <Russian>%1 пытаются отремонтировать радиовышку в %2. Если мы хотим продолжать нарушать радиосвязь и пропаганду противника в этом районе, мы должны помешать восстановительным работам. Уничтожьте ремонтную машину, которая наверняка будет где-то рядом с вышкой либо захватите локацию. Работы противника будут окончены до %3.</Russian>
                 <Chinesesimp>%1 正在尝试修复 %2 的无线电塔。 如果我们想继续干扰该地区的无线电通信和敌方宣传，我们就必须干预恢复工作。 摧毁在塔附近某处的维修车辆，或占领该位置。 敌人的工作将在 %3 之前完成。</Chinesesimp>
                 <Korean>%1이(가) %2에서 통신탑을 재건축하려 합니다. 우리가 적의 통신을 차단하려면 해당 작업을 중지시켜야 합니다. 근처에 주차된 수리 트럭을 파괴하거나 해당 구역을 점령하십시오. %3에 작업이 완료될 예정입니다.</Korean>
+                <Spanish>%1 está intentando reconstruir la torre de radio de %2. Si queremos mantener las comunicaciones enemigas cortadas, hay que detener la reparación. Destruye o roba el camión de reparaciones aparcado cerca, o bien captura la zona. El trabajo estará terminado hacia %3.</Spanish>
                 <French>%1 tente de reconstruire une tour radio à %2. Si nous voulons maintenir la panne des communications ennemies, les travaux doivent être interrompus. Détruisez le camion de réparation stationné à proximité ou capturez la zone. Les travaux seront terminés le %3.</French>
                 <Turkish>%1 grubu %2 mevkisindeki radyo kulesini yeniden inşa etmeye çalışıyor. Düşman iletişimindeki kesintinin devam etmesini istiyorsak bu onarım durdurulmalı. Yakında park edilmiş onarım kamyonunu imha edin veya çalın; alternatif olarak bölgeyi ele geçirin. Çalışma %3 vaktinde tamamlanmış olacak.</Turkish>
             </Key>
@@ -15000,6 +15048,7 @@
                 <Russian>Спасите пленников</Russian>
                 <Chinesesimp>战俘营救</Chinesesimp>
                 <Korean>포로 구출</Korean>
+                <Spanish>Rescate de prisioneros de guerra</Spanish>
                 <French>Sauvetage de prisonniers de guerre</French>
                 <Turkish>Savaş Esiri Kurtarma</Turkish>
             </Key>
@@ -15008,6 +15057,7 @@
                 <Russian>Группа наших пленников ожидает казни в %1. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Chinesesimp>我们的一群战俘在 %1 等待处决。 我们必须在 %2 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
+                <Spanish>Un grupo de prisioneros de guerra espera su ejecución en %1. Tenemos que rescatarlos antes de %2. Llévalos al CG.</Spanish>
                 <French>Un groupe de prisonniers de guerre attend d'être exécuté à %1. Nous devons les sauver avant %2. Amenez-les au QG.</French>
                 <Turkish>Bir grup savaş esiri %1 mevkisinde infaz edilmeyi bekliyor. Onları %2 vaktinden önce kurtarmalıyız. Onları karargaha getirin.</Turkish>
             </Key>
@@ -15016,6 +15066,7 @@
                 <Russian>Спасите дезертиров</Russian>
                 <Chinesesimp>逃兵营救</Chinesesimp>
                 <Korean>탈영병 구조</Korean>
+                <Spanish>Rescatar desertores</Spanish>
                 <Turkish>Firarileri Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
@@ -15023,6 +15074,7 @@
                 <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Chinesesimp>一群敌方逃兵躲藏在 %1，他们正在被敌方追捕。我们必须在 %2 之前救出他们。将他们带到总部。</Chinesesimp>
                 <Korean>탈주자 구조적의 탈영병 무리가 %1에 숨어 있고, 적 부대에게 쫓기고 있습니다. %2 이전에 구출해야 합니다. 본부로 데려오십시오.</Korean>
+                <Spanish>Un grupo de desertores enemigos se esconde en %1 y los persigue un grupo enemigo. Tenemos que rescatarlos antes de %2. Llévalos al CG.</Spanish>
                 <Turkish>Bir grup düşman firarisi %1 mevkisinde saklanıyor ve düşman grubu tarafından avlanıyorlar. Onları %2 vaktinden önce kurtarmalıyız. Onları karargaha getirin.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_header">
@@ -15030,6 +15082,7 @@
                 <Russian>Спасите пленников</Russian>
                 <Chinesesimp>营救俘虏</Chinesesimp>
                 <Korean>죄수 구출</Korean>
+                <Spanish>Rescatar prisioneros</Spanish>
                 <French>Sauver les prisonniers</French>
                 <Turkish>Mahkumları Kurtar</Turkish>
             </Key>
@@ -15038,6 +15091,7 @@
                 <Russian>%1 собираются казнить наших товарищей в %2. Мы должны спасти их до %3. Привезите их в штаб.</Russian>
                 <Chinesesimp>%1 即将处决我们在 %2 的同志。 我们必须在 %3 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1이 %2에서 우리 동지들을 처형하려고 합니다. %3 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
+                <Spanish>%1 está a punto de ejecutar a nuestros camaradas en %2. Tenemos que rescatarlos antes de %3. Llévalos al CG.</Spanish>
                 <French>%1 sont sur le point d'exécuter nos camarades en %2. Nous devons les sauver avant %3. Amenez-les au QG.</French>
                 <Turkish>%1 grubu, %2 mevkisindeki yoldaşlarımızı infaz etmek üzere. Onları %3 vaktinden önce kurtarmalıyız. Onları karargaha getirin.</Turkish>
             </Key>
@@ -15046,6 +15100,7 @@
                 <Russian>Спасите сторонников %1</Russian>
                 <Chinesesimp>营救%1名支援者</Chinesesimp>
                 <Korean>%1 지지자 구출</Korean>
+                <Spanish>Rescatar a simpatizantes de %1</Spanish>
                 <French>Sauvetage %1 supporter</French>
                 <Turkish>%1 Destekçilerini Kurtar</Turkish>
             </Key>
@@ -15054,6 +15109,7 @@
                 <Russian>Группа гражданских сторонников %1 была арестована в %2 и их скоро отправят в тюрьму. Спасите их, привезите в штаб и они присоединятся к нам. Сделайте это до %3.</Russian>
                 <Chinesesimp>一群平民 %1 支持者在 %2 被捕，他们即将被送进监狱。 去那里，释放他们并将他们带到总部，他们将加入我们的事业。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%2에서 %1의 민간 지지자들이 체포되었고 곧 수용소로 보내질 예정입니다. 가서 그들을 풀어주고 본부로 데려오면 우리 편이 될 것입니다. %3 이전에 완료하십시오.</Korean>
+                <Spanish>Han detenido en %2 a un grupo de civiles simpatizantes de %1 y están a punto de mandarlos a prisión. Ve allí, libéralos y llévalos al CG; se unirán a nuestra causa. Hazlo antes de %3.</Spanish>
                 <French>Un groupe de supporters civils de %1 a été arrêté à %2 et est sur le point d'être envoyé en prison. Allez-y, libérez-les et amenez-les au QG pour qu'ils rejoignent notre cause. Faites-le avant %3.</French>
                 <Turkish>%2 mevkisinde bir grup sivil %1 destekçisi tutuklandı ve hapse gönderilmek üzereler. Oraya gidin, onları serbest bırakın ve karargaha getirin; davamıza katılacaklardır. Bunu %3 vaktinden önce yapın.</Turkish>
             </Key>
@@ -15062,6 +15118,7 @@
                 <Russian>Спасите беженцев</Russian>
                 <Chinesesimp>拯救难民</Chinesesimp>
                 <Korean>난민 구출</Korean>
+                <Spanish>Rescatar refugiados</Spanish>
                 <French>Sauver les réfugiés</French>
                 <Turkish>Mültecileri Kurtar</Turkish>
             </Key>
@@ -15070,6 +15127,7 @@
                 <Russian>Группа беженцев скрывается в %1, ожидая эвакуации. Мы должны найти их до того, как их найдут %2. Если мы не успеем они, вероятно, умрут. Верните их в штаб. Сделайте это до %3.</Russian>
                 <Chinesesimp>一群难民躲在%1等待撤离。 我们必须在 %2 之前找到它们。 否则，他们必死无疑。 把他们带回总部。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>난민 일행이 %1에 숨어서 구출을 기다리고 있습니다. %2이(가) 발견하기 전에 먼저 찾아야 합니다. 그렇지 않으면 그들은 확실하게 죽을 것입니다. 그들을 본부로 데려오십시오. %3 이전에 완료하십시오.</Korean>
+                <Spanish>Un grupo de refugiados se esconde en %1 esperando la evacuación. Tenemos que encontrarlos antes que %2. Si no, es muerte segura para ellos. Llévalos al CG. Hazlo antes de %3.</Spanish>
                 <French>Un groupe de réfugiés se cache dans %1 en attendant d'être évacué. Nous devons les trouver avant que %2 ne le fasse. Sinon, ils connaîtront une mort certaine. Ramenez-les au QG. Faites-le avant %3.</French>
                 <Turkish>Bir grup mülteci tahliye edilmek için %1 mevkisinde saklanıyor. Onları %2 grubundan önce bulmalıyız, aksi takdirde sonları kesin ölüm olacaktır. Onları karargaha geri getirin. Bunu %3 vaktinden önce yapın.</Turkish>
             </Key>
@@ -15078,6 +15136,7 @@
                 <Russian>Спасите информатора</Russian>
                 <Chinesesimp>救援线人</Chinesesimp>
                 <Korean>정보원 구출</Korean>
+                <Spanish>Rescatar al informante</Spanish>
                 <French>Sauver l'informateur</French>
                 <Turkish>Muhbiri Kurtar</Turkish>
             </Key>
@@ -15086,6 +15145,7 @@
                 <Russian>Силы %1 прочёсывают %2 в поисках нашего информатора, у которого есть очень важные разведданные. Он скрывается в одном из зданий в городе. Мы должны вытащить его оттуда и доставить в штаб, пока его не убили и не раскрыли наш источник разведданных. Он выстрелит сигнальной ракетой в небо, когда мы будем близко к нему. Привезите его в наш штаб. Сделайте это до %3.</Russian>
                 <Chinesesimp>%1 部队扫荡 %2 以寻找我们的平民告密者并提供一些非常有价值的数据。 他躲在城市的一栋建筑物中。 我们必须把他弄出去，否则他会被杀，我们的情报来源也会暴露。 当我们靠近他时，他会向天空发射照明弹。 把他带到我们的总部。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%1의 병력이 매우 귀중한 정보를 가진 민간인 정보원을 찾기 위해 %2을(를) 뒤집어 엎고 있습니다. 그는 도시의 한 건물에 숨어 있습니다. 그를 거기서 탈출시키지 않으면 그는 살해되고 우리의 정보가 노출될 것입니다. 그는 우리가 가까이 왔을 때 하늘에 조명탄을 발사할 것입니다. 그를 본부로 데려오십시오. %3 이전에 완료하십시오.</Korean>
+                <Spanish>Las fuerzas de %1 están peinando %2 en busca de nuestro informante civil, que tiene datos muy valiosos. Se esconde en uno de los edificios del pueblo. Tenemos que sacarlo de allí o lo matarán y nuestra fuente quedará expuesta. Lanzará una bengala al cielo cuando estemos cerca. Llévalo a nuestro CG. Hazlo antes de %3.</Spanish>
                 <French>Les forces de %1 balayent %2 à la recherche de notre informateur civil qui détient des informations très précieuses. Il se cache dans l'un des bâtiments de la ville. Nous devons le faire sortir de là, sinon il sera tué et notre source d'information sera exposée. Il lancera des fusées éclairantes dans le ciel lorsque nous serons près de lui. Amenez-le à notre QG. Faites-le avant %3.</French>
                 <Turkish>%1 kuvvetleri, çok değerli verilere sahip sivil muhbirimizi aramak için %2 mevkisinde temizlik operasyonu yapıyor. Kasabadaki binalardan birinde saklanıyor. Onu oradan çıkarmalıyız, aksi takdirde öldürülecek ve istihbarat kaynağımız deşifre olacak. Yaklaştığımızda havaya bir işaret fişeği fırlatacak. Onu karargahımıza getirin. Bunu %3 vaktinden önce yapın.</Turkish>
             </Key>
@@ -15094,6 +15154,7 @@
                 <Russian>Спасите выживших после кораблекрушения</Russian>
                 <Chinesesimp>救援沉船幸存者</Chinesesimp>
                 <Korean>난파선 생존자 구조</Korean>
+                <Spanish>Rescatar a los supervivientes del naufragio</Spanish>
                 <French>Sauver les survivants d'un naufrage</French>
                 <Turkish>Gemi Kazazedelerini Kurtar</Turkish>
             </Key>
@@ -15102,6 +15163,7 @@
                 <Russian>Корабль контрабандистов потерпел крушение in %1. Мы должны успеть спасти выживших до %2. Привезите их в штаб.</Russian>
                 <Chinesesimp>走私者的船在 %1 坠毁。 我们必须在 %2 之前营救幸存者。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 밀수업자의 배가 난파되었습니다. %2 이전에 생존자를 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
+                <Spanish>Un barco de contrabandistas ha naufragado en %1. Tenemos que rescatar a los supervivientes antes de %2. Llévalos al CG.</Spanish>
                 <French>Le vaisseau d'un contrebandier s'est écrasé à %1. Nous devons sauver les survivants avant %2. Amenez-les au QG.</French>
                 <Turkish>%1 mevkisinde bir kaçakçı gemisi karaya oturdu. %2 vaktinden önce hayatta kalanları kurtarmalıyız. Onları karargaha getirin.</Turkish>
             </Key>
@@ -15110,6 +15172,7 @@
                 <Russian>В благодарность за спасение контрабандисты поделились с нами частью своего нелегального груза.</Russian>
                 <Chinesesimp>为了感谢救援，走私者与我们分享了他们的部分非法走私货物。</Chinesesimp>
                 <Korean>구조에 대한 감사의 표시로 밀수업자들은 불법 화물의 일부를 우리에게 나눠주었습니다.</Korean>
+                <Spanish>En agradecimiento por el rescate, los contrabandistas han compartido con nosotros parte de su cargamento ilegal.</Spanish>
                 <French>En remerciement de leur sauvetage, les contrebandiers ont partagé avec nous une partie de leur cargaison illégale.</French>
                 <Turkish>Kurtarılmalarına minnettar kalan kaçakçılar, yasa dışı kargolarının bir kısmını bizimle paylaştılar.</Turkish>
             </Key>
@@ -15118,6 +15181,7 @@
                 <Russian>Огневой контакт с %1</Russian>
                 <Chinesesimp>%1 报告</Chinesesimp>
                 <Korean>%1의 접촉 보고</Korean>
+                <Spanish>Informe de contacto en %1</Spanish>
                 <French>Rapport de contact %1</French>
                 <Turkish>%1 Temas Raporu</Turkish>
             </Key>
@@ -15126,6 +15190,7 @@
                 <Russian>%2 атакуют нас в %1. Помогите защитникам, если у вас есть возможность.</Russian>
                 <Chinesesimp>%2 在 %1 攻击我们。 如果可以的话，帮助防守。</Chinesesimp>
                 <Korean>%2이(가) %1에서 우리를 공격하고 있습니다. 가능하다면 방어를 도와주십시오.</Korean>
+                <Spanish>%2 nos está atacando en %1. Ayuda en la defensa si puedes.</Spanish>
                 <French>%2 nous attaque en %1. Aidez la défense si vous le pouvez.</French>
                 <Turkish>%2 grubu %1 mevkisinde bize saldırıyor. Eğer yapabiliyorsanız savunmaya yardım edin.</Turkish>
             </Key>
@@ -15134,6 +15199,7 @@
                 <Russian>Спасите попавший в засаду грузовик</Russian>
                 <Chinesesimp>营救被伏击的卡车</Chinesesimp>
                 <Korean>매복당한 트럭 구조</Korean>
+                <Spanish>Recuperar el camión emboscado</Spanish>
                 <French>Récupération d'un camion embusqué</French>
                 <Turkish>Pusuya Düşürülmüş Kamyonu Kurtar</Turkish>
             </Key>
@@ -15142,6 +15208,7 @@
                 <Russian>Наш грузовик с едой %1 попал в засаду, устроенную %2, водитель успел отправить сигнал бедствия. Похоже, что груз в порядке и всё ещё может быть доставлен в пункт назначение. Идите туда, заберите груз и привезите его в %1. Разгрузите мешки для распространения продовольствия среди населения. Сделайте это до %3.</Russian>
                 <Chinesesimp>我们运送到%1粮食卡车遭到%2的伏击，司机向我们发出求救信号。 幸好货物仍然完好，可以坚持到目的地。 去被伏击的地方，把货物运到 %1 。 卸载货物在人群中分发补给品。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%1의 주민을 위한 식량을 싣은 트럭이 %2에 의해 매복 공격을 당했으며, 해당 트럭 운전사가 우리에게 조난 신호를 보냈습니다. 화물은 아직 정상이고 목적지까지 배달이 가능할 것 같습니다. 가서 화물을 가져와서 %1의 주민들에게 가져다 주십시오. 주민들에게 물자를 나눠주기 위해선 화물을 내리십시오. %3 이전에 완료하십시오.</Korean>
+                <Spanish>%2 emboscó nuestro camión con comida para %1. Su conductor nos envió una señal de socorro. Parece que la carga sigue en buen estado y se puede entregar en su destino. Ve allí, coge la carga y llévasela a la gente de %1. Descarga la carga para repartir los suministros entre la población. Hazlo antes de %3.</Spanish>
                 <French>Notre camion transportant de la nourriture pour %1 population est tombé dans une embuscade tendue par %2, son chauffeur nous a envoyé un signal de détresse. Il semble que la cargaison soit toujours en bonne état et qu'elle puisse être livrée à sa destination. Allez-y, prenez la cargaison et apportez-la aux habitants de %1. Déchargez la cargaison pour distribuer les vivres à la population. Faites-le avant %3.</French>
                 <Turkish>%1 bölgesi için gıda taşıyan kamyonumuz %2 tarafından pusuya düşürüldü. Şoför bize bir imdat sinyali gönderdi. Görünüşe göre kargo hâlâ sağlam ve hedefine ulaştırılabilir. Oraya gidin, kargoyu alın ve %1 halkına ulaştırın. Malzemeleri halka dağıtmak için kargoyu araçtan indirin. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
@@ -15152,6 +15219,7 @@
                 <Russian>Вселение в ИИ-бойца</Russian>
                 <Chinesesimp>AI单位接管</Chinesesimp>
                 <Korean>인공지능 유닛 빙의</Korean>
+                <Spanish>Posesión de unidad de IA</Spanish>
                 <French>Possession d'une unité AI</French>
                 <Turkish>YZ Birimi Kontrolü</Turkish>
             </Key>
@@ -15160,6 +15228,7 @@
                 <Russian>Вы не можете управлять Петросом.</Russian>
                 <Chinesesimp>你无法控制 Petros。</Chinesesimp>
                 <Korean>페트로스는 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a Petros.</Spanish>
                 <French>Vous ne pouvez pas contrôler Petros.</French>
                 <Turkish>Petros'u kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15168,6 +15237,7 @@
                 <Russian>Вы не можете управлять ИИ, находясь под прикрытием.</Russian>
                 <Chinesesimp>伪装时无法控制AI。</Chinesesimp>
                 <Korean>위장 중에는 인공지능을 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a la IA mientras estás encubierto.</Spanish>
                 <French>Vous ne pouvez pas contrôler l'IA lorsque vous êtes sous couverture.</French>
                 <Turkish>Kimliğin gizliyken yapay zekayı kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15176,6 +15246,7 @@
                 <Russian>Вы не можете управлять ИИ, если вы не командир отряда.</Russian>
                 <Chinesesimp>除非你是班长，否则你无法控制AI。</Chinesesimp>
                 <Korean>분대장이 아니면 인공지능을 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a la IA si no eres el líder de escuadra.</Spanish>
                 <French>Vous ne pouvez pas contrôler l'IA si vous n'êtes pas le chef d'escadron.</French>
                 <Turkish>Takım lideri değilseniz yapay zekayı kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15184,6 +15255,7 @@
                 <Russian>Вы не можете управлять другим игроком.</Russian>
                 <Chinesesimp>你无法控制其他玩家。</Chinesesimp>
                 <Korean>다른 플레이어는 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a otro jugador.</Spanish>
                 <French>Vous ne pouvez pas contrôler un autre joueur.</French>
                 <Turkish>Başka bir oyuncuyu kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15192,6 +15264,7 @@
                 <Russian>Вы не можете управлять бессознательным или мертвым бойцом.</Russian>
                 <Chinesesimp>你无法控制失去意识或死亡的单位。</Chinesesimp>
                 <Korean>의식불명이거나 죽은 유닛은 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a una unidad inconsciente o muerta.</Spanish>
                 <French>Vous ne pouvez pas contrôler une unité inconsciente ou morte.</French>
                 <Turkish>Bilinci kapalı veya ölü bir birimi kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15200,6 +15273,7 @@
                 <Russian>Вы не можете управлять бойцом, который не принадлежит %1.</Russian>
                 <Chinesesimp>你不能控制不属于%1的单位。</Chinesesimp>
                 <Korean>%1에 속하지 않은 유닛은 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a una unidad que no pertenece a %1.</Spanish>
                 <French>Vous ne pouvez pas contrôler une unité qui n'appartient pas à %1.</French>
                 <Turkish>%1 grubuna ait olmayan bir birimi kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15208,6 +15282,7 @@
                 <Russian>Не-а. Ни в коем случае.</Russian>
                 <Chinesesimp>没有。 什么都没发生。</Chinesesimp>
                 <Korean>아뇨, 그럴 수 없습니다.</Korean>
+                <Spanish>Ni hablar. No va a pasar.</Spanish>
                 <French>Non. Ce n'est pas le cas.</French>
                 <Turkish>Olmaz. Bu gerçekleşmeyecek.</Turkish>
             </Key>
@@ -15216,6 +15291,7 @@
                 <Russian>Вы не можете управлять ИИ, пока управляете другим ИИ.</Russian>
                 <Chinesesimp>你不能在控制另一个AI的同时控制AI。</Chinesesimp>
                 <Korean>당신이 다른 인공지능을 조종하는 동안에는 인공지능을 조종할 수 없습니다.</Korean>
+                <Spanish>No puedes controlar a una IA mientras ya estás controlando a otra.</Spanish>
                 <French>Vous ne pouvez pas contrôler l'IA pendant que vous contrôlez une autre IA.</French>
                 <Turkish>Bir yapay zekayı kontrol ederken başka bir yapay zekayı kontrol edemezsiniz.</Turkish>
             </Key>
@@ -15224,6 +15300,7 @@
                 <Russian>Возвращено управление игроку, поскольку игрок получил урон.</Russian>
                 <Chinesesimp>由于玩家本体受到伤害，将玩家本体控制权交还给玩家。</Chinesesimp>
                 <Korean>플레이어가 데미지를 입었기 때문에 플레이어의 조종이 취소되었습니다.</Korean>
+                <Spanish>Control devuelto al jugador porque el jugador ha recibido daño.</Spanish>
                 <French>Rend le contrôle au joueur lorsque celui-ci reçoit des dégâts.</French>
                 <Turkish>Oyuncu hasar aldığı için kontrol oyuncuya geri verildi.</Turkish>
             </Key>
@@ -15232,6 +15309,7 @@
                 <Russian>Возвращено управление игроку, так как боец ИИ получил урон.</Russian>
                 <Chinesesimp>当 AI 单位受到伤害时，将玩家控制权还给玩家。</Chinesesimp>
                 <Korean>인공지능 유닛이 데미지를 입었기 때문에 플레이어의 조종이 취소되었습니다.</Korean>
+                <Spanish>Control devuelto al jugador porque la unidad de IA ha recibido daño.</Spanish>
                 <French>Redonne le contrôle au joueur lorsque l'unité AI a subi des dégâts.</French>
                 <Turkish>Yapay zeka birimi hasar aldığı için kontrol oyuncuya geri verildi.</Turkish>
             </Key>
@@ -15240,6 +15318,7 @@
                 <Russian>Осталось времени до того, как управление вернётся к ИИ: %1</Russian>
                 <Chinesesimp>将控制权交还给 AI 的时间：%1</Chinesesimp>
                 <Korean>조종을 인공지능에게 되돌려주는 시간: %1</Korean>
+                <Spanish>Tiempo para devolver el control a la IA: %1</Spanish>
                 <French>Temps de retour du contrôle à l'IA : %1</French>
                 <Turkish>Kontrolün yapay zekaya geri verilmesine kalan süre: %1</Turkish>
             </Key>
@@ -15248,6 +15327,7 @@
                 <Russian>Вы вернулись в свое первоначальное тело.</Russian>
                 <Chinesesimp>你回到了原来的身体。</Chinesesimp>
                 <Korean>원래 몸으로 되돌아왔습니다.</Korean>
+                <Spanish>Has vuelto a tu cuerpo original.</Spanish>
                 <French>Vous avez retrouvé votre corps d'origine.</French>
                 <Turkish>Kendi bedeninize geri döndünüz.</Turkish>
             </Key>
@@ -15258,6 +15338,7 @@
                 <Russian>Вы успешно использовали набор восстановления боеспособности.</Russian>
                 <Chinesesimp>您成功使用了战备恢复包。</Chinesesimp>
                 <Korean>전투 준비 복구 키트를 성공적으로 사용했습니다.</Korean>
+                <Spanish>Has usado un kit de recuperación de disponibilidad para el combate.</Spanish>
                 <French>Vous avez utilisé avec succès le kit de récupération de la préparation au combat.</French>
                 <Turkish>Muharebe hazırlık yenileme kiti kullandınız.</Turkish>
             </Key>
@@ -15266,6 +15347,7 @@
                 <Russian>Использовать набор восстановления боеспособности на %1</Russian>
                 <Chinesesimp>在 %1 上使用战备恢复工具包</Chinesesimp>
                 <Korean>%1 키로 전투 준비 복구 키트 사용</Korean>
+                <Spanish>Usar kit de recuperación de disponibilidad para el combate en %1</Spanish>
                 <French>Utiliser le kit de récupération de l'état de préparation au combat sur %1</French>
                 <Turkish>%1 üzerinde muharebe hazırlık yenileme kiti kullan</Turkish>
             </Key>
@@ -15274,6 +15356,7 @@
                 <Russian>чтобы встать</Russian>
                 <Chinesesimp>站起来</Chinesesimp>
                 <Korean>일으키려면</Korean>
+                <Spanish>Para levantarte</Spanish>
                 <French>Se lever</French>
                 <Turkish>Ayağa Kalkmak İçin</Turkish>
             </Key>
@@ -15282,6 +15365,7 @@
                 <Russian>Возрождение...</Russian>
                 <Chinesesimp>重生中...</Chinesesimp>
                 <Korean>재투입 중...</Korean>
+                <Spanish>Reapareciendo...</Spanish>
                 <French>Réapparition...</French>
                 <Turkish>Ayağa Kalkmak İçin</Turkish>
             </Key>
@@ -15290,6 +15374,7 @@
                 <Russian>&lt;t size='0.6'&gt;Вы управляете ИИ-бойцом. Помогите себе или вернитесь в свое изначальное тело.&lt;t size='0.5'&gt;&lt;/t&gt;&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;你正在控制AI单元。 要么自救，要么回到原来的身体。&lt;t size='0.5'&gt;&lt;/t&gt;&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;인공지능 유닛을 조종하고 있습니다. 당신 스스로를 도우거나 원래 몸으로 되돌아가십시오.&lt;t size='0.5'&gt;&lt;/t&gt;&lt;/t&gt;</Korean>
+                <Spanish>&lt;t size='0.6'&gt;Estás controlando una unidad de IA. Ayúdate a ti mismo o vuelve a tu cuerpo original.&lt;t size='0.5'&gt;&lt;/t&gt;&lt;/t&gt;</Spanish>
                 <French>&lt;t size='0.6'&gt;Vous contrôlez une unité d'intelligence artificielle. Aidez-vous ou retournez dans votre corps d'origine.&lt;t size='0.5'&gt;&lt;/t&gt;&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;Yapay zeka birimini kontrol ediyorsunuz. Kendinize yardım edin veya orijinal bedeninize geri dönün.&lt;t size='0.5'&gt;&lt;/t&gt;&lt;/t&gt;</Turkish>
             </Key>
@@ -15298,6 +15383,7 @@
                 <Russian>&lt;t size='0.6'&gt;Поблизости нет дружественных ИИ-бойцов, которые могли бы вам помочь.&lt;t size='0.5'&gt;&lt;br/&gt;Нажмите R, чтобы возродиться.%1%2&lt;/t&gt;&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;附近没有AI单位可以救你。&lt;t size='0.5'&gt;&lt;br/&gt;按R键重生。%1%2&lt;/t&gt;&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;당신을 도와줄 인공지능 유닛이 근처에 없습니다.&lt;t size='0.5'&gt;&lt;br/&gt;재투입하려면 R 키를 누르십시오.%1%2&lt;/t&gt;&lt;/t&gt;</Korean>
+                <Spanish>&lt;t size='0.6'&gt;No hay ninguna unidad de IA cerca que pueda ayudarte.&lt;t size='0.5'&gt;&lt;br/&gt;Pulsa R para reaparecer.%1%2&lt;/t&gt;&lt;/t&gt;</Spanish>
                 <French>&lt;t size='0.6'&gt;Il n'y a pas d'unité d'IA proche pour vous aider.&lt;t size='0.5'&gt;&lt;br/&gt;Appuyez sur R pour réapparaître.%1%2&lt;/t&gt;&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;Yakınlarda size yardım edebilecek bir yapay zeka birimi yok.&lt;t size='0.5'&gt;&lt;br/&gt;Yeniden canlanmak için R tuşuna basın.%1%2&lt;/t&gt;&lt;/t&gt;</Turkish>
             </Key>
@@ -15306,6 +15392,7 @@
                 <Russian>&lt;t size='0.6'&gt;%1 спешит вам на помощь.&lt;t size='0.5'&gt;&lt;br/&gt;Нажмите R, чтобы возродиться.%2%3&lt;/t&gt;&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt; %1 正在来救你的路上。&lt;t size='0.5'&gt;&lt;br/&gt;按R键重生。%2%3&lt;/t&gt;&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1이(가) 당신을 도우러 가는 중입니다.&lt;t size='0.5'&gt;&lt;br/&gt;재투입하려면 R 키를 누르십시오.%2%3&lt;/t&gt;&lt;/t&gt;</Korean>
+                <Spanish>&lt;t size='0.6'&gt;%1 va de camino para ayudarte.&lt;t size='0.5'&gt;&lt;br/&gt;Pulsa R para reaparecer.%2%3&lt;/t&gt;&lt;/t&gt;</Spanish>
                 <French>&lt;t size='0.6'&gt;%1 est en route pour vous aider.&lt;t size='0.5'&gt;&lt;br/&gt;Appuyez sur R pour réapparaître.%2%3&lt;/t&gt;&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;%1 size yardım etmek için yolda.&lt;t size='0.5'&gt;&lt;br/&gt;Yeniden canlanmak için R tuşuna basın.%2%3&lt;/t&gt;&lt;/t&gt;</Turkish>
             </Key>
@@ -15314,6 +15401,7 @@
                 <Russian>&lt;t size='0.6'&gt;%1 помогает вам.&lt;t size='0.5'&gt;&lt;br/&gt;Нажмите R, чтобы возродиться.%2%3&lt;/t&gt;&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt; %1 正在来救你的路上。&lt;t size='0.5'&gt;&lt;br/&gt;按R键重生。%2%3&lt;/t&gt;&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;%1이(가) 당신을 도우러 가는 중입니다.&lt;t size='0.5'&gt;&lt;br/&gt;재투입하려면 R 키를 누르십시오.%2%3&lt;/t&gt;&lt;/t&gt;</Korean>
+                <Spanish>&lt;t size='0.6'&gt;%1 te está ayudando.&lt;t size='0.5'&gt;&lt;br/&gt;Pulsa R para reaparecer.%2%3&lt;/t&gt;&lt;/t&gt;</Spanish>
                 <French>&lt;t size='0.6'&gt;%1 vous aide.&lt;t size='0.5'&gt;&lt;br/&gt;Appuyez sur R pour réapparaître.%2%3&lt;/t&gt;&lt;/t&gt;</French>
                 <Turkish>&lt;t size='0.6'&gt;%1 size yardım ediyor.&lt;t size='0.5'&gt;&lt;br/&gt;Yeniden canlanmak için R tuşuna basın.%2%3&lt;/t&gt;&lt;/t&gt;</Turkish>
             </Key>
@@ -15322,6 +15410,7 @@
                 <Russian>&lt;br/&gt;Нажмите T, чтобы вселиться в дружественного ИИ-бойца, чтобы помочь себе.</Russian>
                 <Chinesesimp>&lt;br/&gt;按 T 键呼叫友好的 AI 队友来救助自己。</Chinesesimp>
                 <Korean>&lt;br/&gt;T 키를 눌러서 당신을 도울 수 있는 아군 인공지능 유닛을 보유하십시오.</Korean>
+                <Spanish>&lt;br/&gt;Pulsa T para poseer a una unidad de IA amiga y ayudarte a ti mismo.</Spanish>
                 <French>&lt;br/&gt;Appuyez sur T pour posséder une unité IA alliée afin de vous aider.</French>
                 <Turkish>&lt;br/&gt;Kendinize yardım etmek amacıyla bir dost yapay zeka birimini kontrol etmek için T tuşuna basın.</Turkish>
             </Key>
@@ -15330,6 +15419,7 @@
                 <Russian>&lt;br/&gt;Нажмите Q, чтобы использовать набор восстановления боеспособности.</Russian>
                 <Chinesesimp>&lt;br/&gt;按 Q 使用战备恢复包。</Chinesesimp>
                 <Korean>&lt;br/&gt;전투 준비 복구 키트를 사용하려면 Q 키를 누르십시오.</Korean>
+                <Spanish>&lt;br/&gt;Pulsa Q para usar el kit de recuperación de disponibilidad para el combate.</Spanish>
                 <French>&lt;br/&gt;Appuyez sur Q pour utiliser le kit de récupération de l'état de préparation au combat.</French>
                 <Turkish>&lt;br/&gt;Muharebe Hazırlık Yenileme Kiti kullanmak için Q tuşuna basın.</Turkish>
             </Key>
@@ -15337,18 +15427,21 @@
                 <Original>&lt;br/&gt;Press H to Withstand.</Original>
                 <French>&lt;br/&gt;Appuyez sur H pour résister.</French>
                 <Korean>&lt;br/&gt;H키를 눌러 스스로 일어나십시오.</Korean>
+                <Spanish>&lt;br/&gt;Pulsa H para aguantar.</Spanish>
                 <Chinesesimp>&lt;br/&gt;按 H 键站起。</Chinesesimp>
                 <Turkish>&lt;br/&gt;Direnmek için H tuşuna basın.</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_self_withstand_countdown">
                 <Original>Self-Revive Cooldown</Original>
                 <Korean>자가소생 쿨다운</Korean>
+                <Spanish>Reutilización de la autorreanimación</Spanish>
                 <Chinesesimp>自我复活冷却</Chinesesimp>
                 <Turkish>Kendini Diriltme Bekleme Süresi</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_unconscious_self_withstand_ready">
                 <Original>Available</Original>
                 <Korean>준비됨</Korean>
+                <Spanish>Disponible</Spanish>
                 <Chinesesimp>可用</Chinesesimp>
                 <Turkish>Mevcut</Turkish>
             </Key>
@@ -15357,6 +15450,7 @@
                 <Russian>Посмотреть чёрный рынок техники</Russian>
                 <Chinesesimp>查看黑市载具</Chinesesimp>
                 <Korean>차량 시장 접속</Korean>
+                <Spanish>Acceder al mercado de vehículos</Spanish>
                 <French>Accès au marché des véhicules</French>
                 <Turkish>Araç Marketine Eriş</Turkish>
             </Key>
@@ -15365,6 +15459,7 @@
                 <Russian>Бросить здесь</Russian>
                 <Chinesesimp>放在这里</Chinesesimp>
                 <Korean>여기에 내려놓기</Korean>
+                <Spanish>Dejar aquí</Spanish>
                 <French>Déposer ici</French>
                 <Turkish>Buraya bırak</Turkish>
             </Key>
@@ -15373,6 +15468,7 @@
                 <Russian>Поднять ящик</Russian>
                 <Chinesesimp>搬箱子</Chinesesimp>
                 <Korean>상자 옮기기</Korean>
+                <Spanish>Llevar la caja</Spanish>
                 <French>Porter la caisse </French>
                 <Turkish>Kasayı taşı</Turkish>
             </Key>
@@ -15381,6 +15477,7 @@
                 <Russian>Буксировка</Russian>
                 <Chinesesimp>牵引</Chinesesimp>
                 <Korean>견인하기</Korean>
+                <Spanish>Remolque</Spanish>
                 <French>Remorquage</French>
                 <Turkish>Çekiliyor</Turkish>
             </Key>
@@ -15389,6 +15486,7 @@
                 <Russian>Этот автомобиль собираются отбуксировать.</Russian>
                 <Chinesesimp>这辆载具即将被拖走</Chinesesimp>
                 <Korean>이 차량은 견인되고 있습니다.</Korean>
+                <Spanish>Este vehículo está a punto de ser remolcado.</Spanish>
                 <French>Ce véhicule est sur le point d'être remorqué.</French>
                 <Turkish>Bu araç çekilmek üzere.</Turkish>
             </Key>
@@ -15397,6 +15495,7 @@
                 <Russian>Невозможно поднять буксирные тросы из запертой техники.</Russian>
                 <Chinesesimp>不能从锁住的车上捡起拖车绳</Chinesesimp>
                 <Korean>잠긴 차량에서는 견인 로프를 집을 수 없습니다.</Korean>
+                <Spanish>no se pueden recoger cuerdas de remolque de un vehículo bloqueado.</Spanish>
                 <French>impossible de récupérer les câbles de remorquage d'un véhicule verrouillé.</French>
                 <Turkish>kilitli araçtan çekme halatlarını alamam.</Turkish>
             </Key>
@@ -15405,6 +15504,7 @@
                 <Russian>Невозможно убрать буксировочные тросы в запертую технику.</Russian>
                 <Chinesesimp>锁车后不能收起拖车绳</Chinesesimp>
                 <Korean>잠긴 차량에 견인 로프를 집어 넣을 수 없습니다.</Korean>
+                <Spanish>no se pueden guardar cuerdas de remolque en un vehículo bloqueado.</Spanish>
                 <French>ne peut pas ranger les câbles de remorquage dans un véhicule verrouillé.</French>
                 <Turkish>kilitli araçta çekme halatlarını kaldıramam</Turkish>
             </Key>
@@ -15413,6 +15513,7 @@
                 <Russian>Невозможно взять буксировочные тросы из запертой техники.</Russian>
                 <Chinesesimp>不能从被锁住的车辆上取下拖车绳</Chinesesimp>
                 <Korean>잠긴 차량에서는 견인 로프를 가져갈 수 없습니다.</Korean>
+                <Spanish>no se pueden coger cuerdas de remolque de un vehículo bloqueado.</Spanish>
                 <French>ne peut pas prendre les câbles de remorquage d'un véhicule verrouillé.</French>
                 <Turkish>kilitli araçtan çekme halatlarını alamazsınız</Turkish>
             </Key>
@@ -15421,6 +15522,7 @@
                 <Russian>Невозможно прикрепить буксировочные тросы к запертому автомобилю.</Russian>
                 <Chinesesimp>无法将牵引绳连接到锁定的车辆上。</Chinesesimp>
                 <Korean>잠긴 차량에 견인 로프를 걸 수 없습니다.</Korean>
+                <Spanish>no se pueden enganchar cuerdas de remolque a un vehículo bloqueado.</Spanish>
                 <French>ne peut pas attacher des câbles de remorquage à un véhicule verrouillé.</French>
                 <Turkish>kilitli araca çekme halatı takılamaz</Turkish>
             </Key>
@@ -15429,6 +15531,7 @@
                 <Russian>Буксирные тросы слишком короткие. Пододвиньте технику ближе.</Russian>
                 <Chinesesimp>拖车绳太短了。将载具移近。</Chinesesimp>
                 <Korean>견인 로프가 너무 짧습니다. 차량을 더 가까이 대십시오.</Korean>
+                <Spanish>Las cuerdas de remolque son demasiado cortas. Acerca más el vehículo.</Spanish>
                 <French>Les câbles de remorquage sont trop courts. Rapprocher le véhicule.</French>
                 <Turkish>Çekme halatı çok kısa. Aracı yaklaştırın.</Turkish>
             </Key>
@@ -15437,6 +15540,7 @@
                 <Russian>Развернуть буксировочный трос</Russian>
                 <Chinesesimp>布置拖车绳</Chinesesimp>
                 <Korean>견인 로프 배치</Korean>
+                <Spanish>Desplegar cuerdas de remolque</Spanish>
                 <French>Déployer les câbles de remorquage</French>
                 <Turkish>Çekme halatını yerleştirin</Turkish>
             </Key>
@@ -15445,6 +15549,7 @@
                 <Russian>Убрать буксировочный трос</Russian>
                 <Chinesesimp>收起拖车绳</Chinesesimp>
                 <Korean>견인 로프 집어 넣기</Korean>
+                <Spanish>Guardar cuerdas de remolque</Spanish>
                 <French>Ranger les câbles de remorquage</French>
                 <Turkish>Çekme halatını kaldırın</Turkish>
             </Key>
@@ -15453,6 +15558,7 @@
                 <Russian>Закрепить буксировочный трос</Russian>
                 <Chinesesimp>系上拖车绳</Chinesesimp>
                 <Korean>견인 로프 걸기</Korean>
+                <Spanish>Enganchar a las cuerdas de remolque</Spanish>
                 <French>Attacher les câbles de remorquage</French>
                 <Turkish>Çekme halatını bağlayın</Turkish>
             </Key>
@@ -15461,6 +15567,7 @@
                 <Russian>Бросить буксировочный трос</Russian>
                 <Chinesesimp>放下拖车绳</Chinesesimp>
                 <Korean>견인 로프 떨구기</Korean>
+                <Spanish>Soltar cuerdas de remolque</Spanish>
                 <French>Lâcher les câbles de remorquage</French>
                 <Turkish>Çekme halatını bırak</Turkish>
             </Key>
@@ -15469,6 +15576,7 @@
                 <Russian>Подобрать буксировочный трос</Russian>
                 <Chinesesimp>捡起拖车绳</Chinesesimp>
                 <Korean>견인 로프 집기</Korean>
+                <Spanish>Recoger cuerdas de remolque</Spanish>
                 <French>Rammasser les câbles de remorquage</French>
                 <Turkish>Çekme halatını al</Turkish>
             </Key>
@@ -15477,6 +15585,7 @@
                 <Russian>Переместить предмет</Russian>
                 <Chinesesimp>移动物品</Chinesesimp>
                 <Korean>자산 옮기기</Korean>
+                <Spanish>Mover recurso</Spanish>
                 <French>Déplacer l'objet</French>
                 <Turkish>Varlığı taşı</Turkish>
             </Key>
@@ -15485,6 +15594,7 @@
                 <Russian>Только повстанцам разрешено перемещать предметы.</Russian>
                 <Chinesesimp>只有抵抗军才可以移动物品。</Chinesesimp>
                 <Korean>반군만 자산을 이동시킬 수 있습니다.</Korean>
+                <Spanish>Solo los rebeldes pueden mover recursos.</Spanish>
                 <French>Seuls les rebelles sont autorisés à déplacer des objets</French>
                 <Turkish>Varlıkları sadece asiler taşıyabilir.</Turkish>
             </Key>
@@ -15493,6 +15603,7 @@
                 <Russian>Предмет, который вы хотите передвинуть, уже двигается другим игроком.</Russian>
                 <Chinesesimp>您要移动的物品正在被其他玩家移动。</Chinesesimp>
                 <Korean>당신이 이동시킬 자산은 다른 플레이어가 이동시키고 있습니다.</Korean>
+                <Spanish>El recurso que quieres mover lo está moviendo otro jugador.</Spanish>
                 <French>L'objet que vous souhaitez déplacer est en train d'être déplacé par un autre joueur.</French>
                 <Turkish>Taşımak istediğiniz varlık başka bir oyuncu tarafından taşınıyor.</Turkish>
             </Key>
@@ -15501,6 +15612,7 @@
                 <Russian>Вы не можете двигать предметы находясь внутри техники.</Russian>
                 <Chinesesimp>您不能在车里移动物品</Chinesesimp>
                 <Korean>차량에 있는 동안에는 자산을 이동시킬 수 없습니다.</Korean>
+                <Spanish>No puedes mover recursos mientras estás en un vehículo.</Spanish>
                 <French>Vous ne pouvez pas déplacer des objets lorsque vous êtes dans un véhicule.</French>
                 <Turkish>Bir aracın içindeyken varlıkları taşıyamazsınız.</Turkish>
             </Key>
@@ -15509,6 +15621,7 @@
                 <Russian>К вам уже прикреплены другие вещи, вы не можете двигать ещё и это.</Russian>
                 <Chinesesimp>你身上已经有其他东西了，你不能移动这个。</Chinesesimp>
                 <Korean>당신은 다른 것을 부착하고 있어서 이걸 옮길 수 없습니다.</Korean>
+                <Spanish>Tienes otras cosas enganchadas, no puedes mover esto.</Spanish>
                 <French>Vous avez d'autres choses attachées, vous ne pouvez pas déplacer ceci.</French>
                 <Turkish>Üzerinize takılı başka şeyler var, bunu taşıyamazsınız.</Turkish>
             </Key>
@@ -15517,6 +15630,7 @@
                 <Russian>В технике кто-то сидит, высадите экипаж перед тем, как двигать её.</Russian>
                 <Chinesesimp>载具有人，移动之前要先清理人员。</Chinesesimp>
                 <Korean>차량을 옮기기 전에 해당 차량의 좌석을 비우십시오.</Korean>
+                <Spanish>El vehículo está ocupado, saca a la tripulación antes de moverlo.</Spanish>
                 <French>Le véhicule est occupé par quelqu'un, libérez l'équipage avant de le déplacer.</French>
                 <Turkish>Araçta birileri var, taşımadan önce mürettebatı boşaltın.</Turkish>
             </Key>
@@ -15525,6 +15639,7 @@
                 <Russian>Вы можете двигать только стационарные орудия или ящики-сборщики лута.</Russian>
                 <Chinesesimp>你只能移动固定武器或战利品箱。</Chinesesimp>
                 <Korean>고정화기나 전리품 상자만 이동시킬 수 있습니다.</Korean>
+                <Spanish>Solo puedes mover armas estáticas o cajas de botín.</Spanish>
                 <French>Vous ne pouvez déplacer que des armes statiques ou des caisses de butin.</French>
                 <Turkish>Sadece sabit silahları veya yağma kasalarını taşıyabilirsiniz.</Turkish>
             </Key>
@@ -15533,6 +15648,7 @@
                 <Russian>Стационарное орудие развёрнуто</Russian>
                 <Chinesesimp>固定武器展开</Chinesesimp>
                 <Korean>고정화기가 배치되었습니다.</Korean>
+                <Spanish>Arma estática desplegada</Spanish>
                 <French>Arme statique déployée</French>
                 <Turkish>Sabit Silah Kuruldu</Turkish>
             </Key>
@@ -15541,6 +15657,7 @@
                 <Russian>Стационарное орудие развёрнуто для использования в ближайшей зоне. Оно будет использовано ИИ-бойцами зоны при следующем появлении гарнизона, если вы оставите его здесь.</Russian>
                 <Chinesesimp>固定武器已部署在最近区域。 如果你把它留在这里，它会在下一次驻军刷新时被该区域的驻军使用。</Chinesesimp>
                 <Korean>고정화기는 인근 지역에서 사용할 수 있도록 배치되었으며, 다음에 지역이 스폰되면 주둔 중인 아군이 사용할 것입니다.</Korean>
+                <Spanish>Se ha desplegado un arma estática para usarla en una zona cercana; la usará la milicia de la guarnición si la dejas aquí la próxima vez que aparezca la zona.</Spanish>
                 <French>L'arme statique a été déployée pour être utilisée dans une zone voisine, et sera utilisée par la milice de la garnison si vous la laissez ici lors du prochain chargement de la zone.</French>
                 <Turkish>Yakındaki bir bölgede kullanılmak üzere sabit bir silah kuruldu; eğer silahı burada bırakırsanız, bölge bir sonraki canlanışında garnizon milisleri tarafından kullanılacaktır.</Turkish>
             </Key>
@@ -15549,6 +15666,7 @@
                 <Russian>Позиция стационарного орудия</Russian>
                 <Chinesesimp>固定武器位置</Chinesesimp>
                 <Korean>고정화기 위치</Korean>
+                <Spanish>Posición del arma estática</Spanish>
                 <French>Position statique de l'arme</French>
                 <Turkish>Sabit Silah Mevzisi</Turkish>
             </Key>
@@ -15557,6 +15675,7 @@
                 <Russian>Этот предмет не может быть далеко передвинут от центра зоны.</Russian>
                 <Chinesesimp>这个物品不能移动到离区域中心太远的地方。</Chinesesimp>
                 <Korean>이 자산은 해당 구역 중심으로부터 더 멀리 옮길 수 없습니다.</Korean>
+                <Spanish>Este recurso no se puede alejar más del centro de su zona.</Spanish>
                 <French>Ce bien ne peut pas être déplacé plus loin de son centre de zone.</French>
                 <Turkish>Bu varlık, bölge merkezinden daha uzağa taşınamaz.</Turkish>
             </Key>
@@ -15565,6 +15684,7 @@
                 <Russian>Позиция стационарного орудия сохранена.</Russian>
                 <Chinesesimp>固定武器位置已保存</Chinesesimp>
                 <Korean>고정화기 위치가 저장되었습니다.</Korean>
+                <Spanish>Se ha guardado la posición de la estática.</Spanish>
                 <French>La position statique a été sauvegardée.</French>
                 <Turkish>Sabit mevzi kaydedildi.</Turkish>
             </Key>
@@ -15573,6 +15693,7 @@
                 <Russian>Взломать технику с помощью взрывчатки</Russian>
                 <Chinesesimp>破坏载具</Chinesesimp>
                 <Korean>차량 브리칭</Korean>
+                <Spanish>Forzar el vehículo</Spanish>
                 <French>Véhicule d'effraction</French>
                 <Turkish>Araca sız / Kapıyı zorla</Turkish>
             </Key>
@@ -15581,6 +15702,7 @@
                 <Russian>Захватить</Russian>
                 <Chinesesimp>夺取</Chinesesimp>
                 <Korean>점령</Korean>
+                <Spanish>Tomar</Spanish>
                 <French>Saisir</French>
                 <Turkish>Ele Geçir</Turkish>
             </Key>
@@ -15589,6 +15711,7 @@
                 <Russian>Набрать бойцов</Russian>
                 <Chinesesimp>招募小组</Chinesesimp>
                 <Korean>유닛 모집</Korean>
+                <Spanish>Reclutar unidades</Spanish>
                 <French>Recruter des unités</French>
                 <Turkish>Birim topla</Turkish>
             </Key>
@@ -15597,6 +15720,7 @@
                 <Russian>Набор бойцов</Russian>
                 <Chinesesimp>招募单位</Chinesesimp>
                 <Korean>유닛 모집</Korean>
+                <Spanish>Reclutamiento de unidades</Spanish>
                 <French>Unité recrutée</French>
                 <Turkish>Birim Alımı</Turkish>
             </Key>
@@ -15605,6 +15729,7 @@
                 <Russian>Вы не можете набирать бойцов, пока рядом с вами враги.</Russian>
                 <Chinesesimp>当你附近有敌人时，你不能招募单位。</Chinesesimp>
                 <Korean>근처에 적이 있는 동안에는 유닛을 모집할 수 없습니다.</Korean>
+                <Spanish>No puedes reclutar unidades mientras haya enemigos cerca.</Spanish>
                 <French>Vous ne pouvez pas recruter d'unités tant que des ennemis sont à proximité.</French>
                 <Turkish>Yakınınızda düşmanlar varken yeni birim alamazsınız.</Turkish>
             </Key>
@@ -15613,6 +15738,7 @@
                 <Russian>Купить технику и предметы</Russian>
                 <Chinesesimp>购买载具和物品</Chinesesimp>
                 <Korean>차량 및 아이템 구입</Korean>
+                <Spanish>Comprar vehículos y objetos</Spanish>
                 <French>Acheter des véhicules et des articles</French>
                 <Turkish>Araç ve Eşya Satın Al</Turkish>
             </Key>
@@ -15621,6 +15747,7 @@
                 <Russian>Купить ящик-сборщик лута</Russian>
                 <Chinesesimp>购买战利品箱</Chinesesimp>
                 <Korean>전리품 상자 구입</Korean>
+                <Spanish>Comprar caja de botín</Spanish>
                 <French>Acheter une caisse de butin</French>
                 <Turkish>Yağma kasası satın al</Turkish>
             </Key>
@@ -15629,6 +15756,7 @@
                 <Russian>ящик-сборщик лута</Russian>
                 <Chinesesimp>战利品箱</Chinesesimp>
                 <Korean>전리품 상자</Korean>
+                <Spanish>caja de botín</Spanish>
                 <French>caisse de butin</French>
                 <Turkish>yağma kasası</Turkish>
             </Key>
@@ -15637,6 +15765,7 @@
                 <Russian>Загрузить %1 в грузовой отсек</Russian>
                 <Chinesesimp>&gt;将 %1 装入最近的车辆</Chinesesimp>
                 <Korean>가장 가까운 차량에 %1 적재하기</Korean>
+                <Spanish>Cargar %1 en el vehículo más cercano</Spanish>
                 <French>Chargement de %1 dans le véhicule le plus proche</French>
                 <Turkish>%1 birimini en yakın araca bindir</Turkish>
             </Key>
@@ -15645,6 +15774,7 @@
                 <Russian>Отменить оживление</Russian>
                 <Chinesesimp>取消复活</Chinesesimp>
                 <Korean>소생 취소</Korean>
+                <Spanish>Cancelar reanimación</Spanish>
                 <French>Annuler la réanimation</French>
                 <Turkish>Canlandırmayı iptal et</Turkish>
             </Key>
@@ -15653,6 +15783,7 @@
                 <Russian>Отпустить %1</Russian>
                 <Chinesesimp>释放 %1</Chinesesimp>
                 <Korean>%1 놓기</Korean>
+                <Spanish>Soltar a %1</Spanish>
                 <French>Libération de %1</French>
                 <Turkish>%1 birimini serbest bırak</Turkish>
             </Key>
@@ -15661,6 +15792,7 @@
                 <Russian>Развернуть лебедку</Russian>
                 <Chinesesimp>展开绞车</Chinesesimp>
                 <Korean>윈치 전개</Korean>
+                <Spanish>Desplegar cabrestante</Spanish>
                 <French>Déployer le treuil</French>
                 <Turkish>Vinç yerleştir</Turkish>
             </Key>
@@ -15669,6 +15801,7 @@
                 <Russian>Убрать лебедку</Russian>
                 <Chinesesimp>拆除绞车</Chinesesimp>
                 <Korean>윈치 넣기</Korean>
+                <Spanish>Guardar cabrestante</Spanish>
                 <French>Ranger le treuil</French>
                 <Turkish>Vinci topla</Turkish>
             </Key>
@@ -15677,6 +15810,7 @@
                 <Russian>Прикрепить лебедку</Russian>
                 <Chinesesimp>系上绞车</Chinesesimp>
                 <Korean>윈치 부착</Korean>
+                <Spanish>Enganchar cabrestante</Spanish>
                 <French>Fixer le treuil</French>
                 <Turkish>Vinci bağla</Turkish>
             </Key>
@@ -15685,6 +15819,7 @@
                 <Russian>Сесть в %1 на место стрелка</Russian>
                 <Chinesesimp>作为炮手坐在 %1</Chinesesimp>
                 <Korean>사수석에 탑승: %1</Korean>
+                <Spanish>Subir a %1 como artillero</Spanish>
                 <French>Entrer dans %1 en tant que tireur</French>
                 <Turkish>%1 aracına nişancı olarak bin</Turkish>
             </Key>
@@ -15693,6 +15828,7 @@
                 <Russian>Посмотреть информацию о доставке</Russian>
                 <Chinesesimp>查看交货信息</Chinesesimp>
                 <Korean>배달 정보 보기</Korean>
+                <Spanish>Ver información de la entrega</Spanish>
                 <French>Voir les informations sur la livraison</French>
                 <Turkish>Teslimat bilgilerini görüntüle</Turkish>
             </Key>
@@ -15701,6 +15837,7 @@
                 <Russian>[Простить дружественный огонь] </Russian>
                 <Chinesesimp>[原谅友军伤害]</Chinesesimp>
                 <Korean>[아군오사 용서] </Korean>
+                <Spanish>[Perdonar fuego amigo] </Spanish>
                 <French>[Pardonnez les tirs amis] </French>
                 <Turkish>[Dost Ateşini Affet]</Turkish>
             </Key>
@@ -15709,6 +15846,7 @@
                 <Russian>Выгрузить груз</Russian>
                 <Chinesesimp>卸货</Chinesesimp>
                 <Korean>화물 내리기</Korean>
+                <Spanish>Descargar la carga</Spanish>
                 <French>Décharger la cargaison</French>
                 <Turkish>Kargoyu boşalt</Turkish>
             </Key>
@@ -15717,6 +15855,7 @@
                 <Russian>Поставить штаб здесь</Russian>
                 <Chinesesimp>在这里建立总部</Chinesesimp>
                 <Korean>여기에 본부 짓기</Korean>
+                <Spanish>Construir el CG aquí</Spanish>
                 <French>Construire le QG ici</French>
                 <Turkish>Karargahı buraya kur</Turkish>
             </Key>
@@ -15725,6 +15864,7 @@
                 <Russian>Купить лодку</Russian>
                 <Chinesesimp>买船</Chinesesimp>
                 <Korean>보트 구입</Korean>
+                <Spanish>Comprar barco</Spanish>
                 <French>Acheter un bateau</French>
                 <Turkish>Tekne satın al</Turkish>
             </Key>
@@ -15733,6 +15873,7 @@
                 <Russian>Взять разведданные</Russian>
                 <Chinesesimp>获取情报</Chinesesimp>
                 <Korean>인텔 확보</Korean>
+                <Spanish>Coger la información</Spanish>
                 <French>Prendre des renseignements</French>
                 <Turkish>İstihbaratı al</Turkish>
             </Key>
@@ -15741,6 +15882,7 @@
                 <Russian>Скачать разведданные</Russian>
                 <Chinesesimp>下载情报</Chinesesimp>
                 <Korean>인텔 다운로드</Korean>
+                <Spanish>Descargar la información</Spanish>
                 <French>Télécharger des renseignements</French>
                 <Turkish>İstihbaratı indir</Turkish>
             </Key>
@@ -15749,6 +15891,7 @@
                 <Russian>Расшифровать разведданные</Russian>
                 <Chinesesimp>解密情报</Chinesesimp>
                 <Korean>인텔 해독</Korean>
+                <Spanish>Descifrar la información</Spanish>
                 <French>Déchiffrer des renseignements</French>
                 <Turkish>İstihbaratın şifresini çöz</Turkish>
             </Key>
@@ -15757,6 +15900,7 @@
                 <Russian>Передвинуть стационарное орудие огневой точки</Russian>
                 <Chinesesimp>移动放置的固定武器</Chinesesimp>
                 <Korean>포대의 고정화기 이동</Korean>
+                <Spanish>Mover el arma estática del emplazamiento</Spanish>
                 <French>Déplacer l'emplacement de l'arme statique</French>
                 <Turkish>Mevzi sabit silahını taşı</Turkish>
             </Key>
@@ -15765,6 +15909,7 @@
                 <Russian>Разрешить ИИ-бойцам использовать это стационарное орудие</Russian>
                 <Chinesesimp>允许AI使用此固定武器</Chinesesimp>
                 <Korean>인공지능이 이 무기를 사용하도록 허용</Korean>
+                <Spanish>Permitir que la IA use esta arma</Spanish>
                 <French>Autoriser les IA à utiliser cette arme</French>
                 <Turkish>YZ bu silahı kullanmasına izin ver</Turkish>
             </Key>
@@ -15773,6 +15918,7 @@
                 <Russian>Запретить ИИ-бойцам использовать это стационарное орудие</Russian>
                 <Chinesesimp>禁止AI单位使用这个固定武器</Chinesesimp>
                 <Korean>인공지능이 이 무기 사용을 못하도록 막기</Korean>
+                <Spanish>Impedir que la IA use esta arma</Spanish>
                 <French>Empêcher les IA d'utiliser cette arme</French>
                 <Turkish>YZ bu silahı kullanmasını engelle</Turkish>
             </Key>
@@ -15781,6 +15927,7 @@
                 <Russian>Заставить ИИ-бойца покинуть орудие</Russian>
                 <Chinesesimp>把AI踢出这个固定武器</Chinesesimp>
                 <Korean>이 무기에서 인공지능 내보내기</Korean>
+                <Spanish>Sacar a la IA de esta arma</Spanish>
                 <French>Faire partir l'IA de cette arme</French>
                 <Turkish>Yapay zekayı bu silahtan kov</Turkish>
             </Key>
@@ -15789,6 +15936,7 @@
                 <Russian>Разрешить ИИ-бойцам использовать эту технику</Russian>
                 <Chinesesimp>允许AI使用此固定武器</Chinesesimp>
                 <Korean>인공지능이 이 무기를 사용하도록 허용</Korean>
+                <Spanish>Permitir que la IA use este vehículo</Spanish>
                 <French>Autoriser les IA à utiliser cette arme</French>
                 <Turkish>YZ bu aracı kullanmasına izin ver</Turkish>
             </Key>
@@ -15797,6 +15945,7 @@
                 <Russian>Запретить ИИ-бойцам использовать эту технику</Russian>
                 <Chinesesimp>禁止AI使用此固定武器</Chinesesimp>
                 <Korean>인공지능이 이 무기를 사용하지 못하도록 금지</Korean>
+                <Spanish>Impedir que la IA use este vehículo</Spanish>
                 <French>Empêcher les IA d'utiliser cette arme</French>
                 <Turkish>YZ bu aracı kullanmasını engelle</Turkish>
             </Key>
@@ -15805,6 +15954,7 @@
                 <Russian>Вы не можете покупать технику, пока рядом с вами враги.</Russian>
                 <Chinesesimp>当你附近有敌人时，你不能购买载具。</Chinesesimp>
                 <Korean>처에 적이 있는 동안에는 차량을 구입할 수 없습니다.</Korean>
+                <Spanish>No puedes comprar vehículos mientras haya enemigos cerca.</Spanish>
                 <French>Vous ne pouvez pas acheter de véhicules tant qu'il y a des ennemis près de vous.</French>
                 <Turkish>Yakınınızda düşmanlar varken araç satın alamazsınız.</Turkish>
             </Key>
@@ -15813,6 +15963,7 @@
                 <Russian>Запросить задание</Russian>
                 <Chinesesimp>请求任务</Chinesesimp>
                 <Korean>임무 요청</Korean>
+                <Spanish>Solicitar misión</Spanish>
                 <French>Demander une mission</French>
                 <Turkish>Görev talep et</Turkish>
             </Key>
@@ -15821,6 +15972,7 @@
                 <Russian>Переместить</Russian>
                 <Chinesesimp>移动此物品</Chinesesimp>
                 <Korean>이 자산 옮기기</Korean>
+                <Spanish>Mover este recurso</Spanish>
                 <French>Déplacer cet objet</French>
                 <Turkish>Bu varlığı taşı</Turkish>
             </Key>
@@ -15829,6 +15981,7 @@
                 <Russian>Вернуть управление ИИ</Russian>
                 <Chinesesimp>把控制权还给AI</Chinesesimp>
                 <Korean>인공지능에 대한 조종 취소</Korean>
+                <Spanish>Devolver el control a la IA</Spanish>
                 <French>Rendre le contrôle à l'IA</French>
                 <Turkish>Kontrolü yapay zekaya devret</Turkish>
             </Key>
@@ -15837,6 +15990,7 @@
                 <Russian>Показать информацию на карте</Russian>
                 <Chinesesimp>显示地图信息</Chinesesimp>
                 <Korean>지도 정보 표시</Korean>
+                <Spanish>Mostrar información del mapa</Spanish>
                 <French>Afficher les informations de la carte</French>
                 <Turkish>Harita bilgilerini göster</Turkish>
             </Key>
@@ -15845,6 +15999,7 @@
                 <Russian>Игровые настройки</Russian>
                 <Chinesesimp>游戏选项</Chinesesimp>
                 <Korean>게임 설정</Korean>
+                <Spanish>Opciones de partida</Spanish>
                 <French>Options de jeu</French>
                 <Turkish>Oyun Seçenekleri</Turkish>
             </Key>
@@ -15853,6 +16008,7 @@
                 <Russian>Нагрузка ИИ на производительность</Russian>
                 <Chinesesimp>AI负载信息</Chinesesimp>
                 <Korean>인공지능 로드 정보</Korean>
+                <Spanish>Información de carga de la IA</Spanish>
                 <French>Informations sur le chargement AI</French>
                 <Turkish>YZ Yük Bilgisi</Turkish>
             </Key>
@@ -15861,6 +16017,7 @@
                 <Russian>Восстановить союзников поблизости</Russian>
                 <Chinesesimp>恢复附近的盟友</Chinesesimp>
                 <Korean>인근 유닛 복구</Korean>
+                <Spanish>Restaurar unidades cercanas</Spanish>
                 <French>Restaurer les unités proches</French>
                 <Turkish>Yakındaki birimleri geri yükle</Turkish>
             </Key>
@@ -15869,6 +16026,7 @@
                 <Russian>Переместить груз в арсенал</Russian>
                 <Chinesesimp>把货物转到军火库</Chinesesimp>
                 <Korean>화물을 아스널로 옮기기</Korean>
+                <Spanish>Transferir la carga al arsenal</Spanish>
                 <French>Déplacer la cargaison vers l'Arsenal</French>
                 <Turkish>Kargoyu Cephaneliğe aktar</Turkish>
             </Key>
@@ -15877,6 +16035,7 @@
                 <Russian>Переместить ящик с патронами в машину</Russian>
                 <Chinesesimp>将弹药箱转移到车辆上</Chinesesimp>
                 <Korean>차량에 탄약 상자 옮기기</Korean>
+                <Spanish>Transferir la caja de munición al vehículo</Spanish>
                 <French>Déplacer la caisse de munitions dans la voiture</French>
                 <Turkish>Mühimmat kutusunu araca aktar</Turkish>
             </Key>
@@ -15885,6 +16044,7 @@
                 <Russian>Оживление</Russian>
                 <Chinesesimp>复活</Chinesesimp>
                 <Korean>소생</Korean>
+                <Spanish>Reanimación</Spanish>
                 <French>Ranimer</French>
                 <Turkish>Canlandır</Turkish>
             </Key>
@@ -15893,6 +16053,7 @@
                 <Russian>Вы не можете кого-либо оживлять.</Russian>
                 <Chinesesimp>你无法复活任何人。</Chinesesimp>
                 <Korean>당신은 아무도 소생시킬 수 없습니다.</Korean>
+                <Spanish>No puedes reanimar a nadie.</Spanish>
                 <French>Vous ne pouvez pas réanimer quelqu'un.</French>
                 <Turkish>Kimseyi canlandıracak durumda değilsiniz.</Turkish>
             </Key>
@@ -15901,6 +16062,7 @@
                 <Russian>Мы потеряли %1.</Russian>
                 <Chinesesimp>我们失去了 %1。</Chinesesimp>
                 <Korean>%1을(를) 잃었습니다.</Korean>
+                <Spanish>Hemos perdido a %1.</Spanish>
                 <French>Nous avons perdu %1.</French>
                 <Turkish>%1 birimini kaybettik.</Turkish>
             </Key>
@@ -15909,6 +16071,7 @@
                 <Russian>Оживление отменено.</Russian>
                 <Chinesesimp>取消复活。</Chinesesimp>
                 <Korean>소생이 취소되었습니다.</Korean>
+                <Spanish>Reanimación cancelada.</Spanish>
                 <French>La réanimation a été annulée.</French>
                 <Turkish>Canlandırma iptal edildi.</Turkish>
             </Key>
@@ -15917,6 +16080,7 @@
                 <Russian>Оживить %1</Russian>
                 <Chinesesimp>复活 %1</Chinesesimp>
                 <Korean>%1을(를) 소생하기</Korean>
+                <Spanish>Reanimar a %1</Spanish>
                 <French>Réanimation %1</French>
                 <Turkish>%1 Canlandır</Turkish>
             </Key>
@@ -15925,6 +16089,7 @@
                 <Russian>Нести %1</Russian>
                 <Chinesesimp>携带 %1</Chinesesimp>
                 <Korean>%1을(를) 끌기</Korean>
+                <Spanish>Llevar a %1</Spanish>
                 <French>Porte %1</French>
                 <Turkish>%1 Taşı</Turkish>
             </Key>
@@ -15933,6 +16098,7 @@
                 <Russian>Освободить пленника</Russian>
                 <Chinesesimp>释放囚犯</Chinesesimp>
                 <Korean>죄수 풀어주기</Korean>
+                <Spanish>Liberar al prisionero</Spanish>
                 <French>Détenu libre</French>
                 <Turkish>Esiri serbest bırak</Turkish>
             </Key>
@@ -15941,6 +16107,7 @@
                 <Russian>Защищать вип</Russian>
                 <Chinesesimp>保护VIP</Chinesesimp>
                 <Korean>VIP 보호</Korean>
+                <Spanish>Iniciar escaramuza</Spanish>
                 <French>VIP protégé</French>
             </Key>
             <Key ID="STR_antistasi_actions_car_bomb_disarm">
