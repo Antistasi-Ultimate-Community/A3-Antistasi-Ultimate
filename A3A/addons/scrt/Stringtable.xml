@@ -6239,6 +6239,22 @@
                 <Korean>의식 불명 플레이어 위에 3D 아이콘을 활성화하여 위치 파악 및 소생을 돕습니다.</Korean>
                 <French>Active des icônes 3D au-dessus des joueurs inconscients pour faciliter leur localisation et réanimation.</French>
             </Key>
+            <Key ID="STR_params_showGroupBar">
+                <Original>Show the squad bar?</Original>
+                <Spanish>¿Mostrar la barra de escuadra?</Spanish>
+                <French>Afficher la barre d'escouade ?</French>
+                <German>Gruppenleiste anzeigen?</German>
+                <Italian>Mostrare la barra della squadra?</Italian>
+                <Portuguese>Mostrar a barra de esquadra?</Portuguese>
+            </Key>
+            <Key ID="STR_params_showGroupBar_desc">
+                <Original>When disabled, the vanilla Arma group info bar that lists your AI subordinates is hidden for every player. Requires a mission restart to take effect.</Original>
+                <Spanish>Si se desactiva, se oculta para todos los jugadores la barra de grupo de Arma que muestra a tus subordinados IA. Requiere reiniciar la misión para que surta efecto.</Spanish>
+                <French>Lorsqu'elle est désactivée, la barre de groupe d'Arma qui liste vos subordonnés IA est masquée pour tous les joueurs. Nécessite un redémarrage de la mission.</French>
+                <German>Wenn deaktiviert, wird die Arma-Gruppenleiste mit deinen KI-Untergebenen für alle Spieler ausgeblendet. Erfordert einen Neustart der Mission.</German>
+                <Italian>Se disattivata, la barra di gruppo di Arma che elenca i tuoi subordinati IA viene nascosta per tutti i giocatori. Richiede il riavvio della missione.</Italian>
+                <Portuguese>Quando desativada, a barra de grupo do Arma que lista os teus subordinados IA fica oculta para todos os jogadores. Requer reiniciar a missão.</Portuguese>
+            </Key>
             <Key ID="STR_params_fastTravelEnemyCheck">
                 <Original>Fast Travel Enemies Check</Original>
                 <Russian>Проверка на наличие врагов при быстром перемещении</Russian>
