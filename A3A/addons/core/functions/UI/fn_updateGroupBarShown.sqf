@@ -20,12 +20,11 @@ Example:
 
 if (!hasInterface) exitWith {};
 
-private _state = missionNamespace getVariable ["A3A_showGroupBar", true];
+// Read the live HUD state so only the group info bar is touched and every other
+// element keeps whatever value another system last set it to.
+private _hud = shownHUD;
+// Older builds returned fewer elements, so pad before writing to index 6.
+while { count _hud < 8 } do { _hud pushBack true };
 
-// showHUD has no getter, so the element array is cached in A3A_hudState to avoid
-// clobbering elements another system may have changed. Index 6 is the group info bar.
-private _hudState = missionNamespace getVariable ["A3A_hudState", [true, true, true, true, true, true, true, true]];
-_hudState set [6, _state];
-A3A_hudState = _hudState;
-
-showHUD _hudState;
+_hud set [6, missionNamespace getVariable ["A3A_showGroupBar", true]];   // 6 = group info bar
+showHUD _hud;
