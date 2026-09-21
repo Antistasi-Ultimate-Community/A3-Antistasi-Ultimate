@@ -7,6 +7,7 @@
                 <Russian>Ящик-сборщик добычи</Russian>
                 <Chinesesimp>战利品箱</Chinesesimp>
                 <Korean>전리품 상자</Korean>
+                <Spanish>Caja de botín</Spanish>
                 <French>Caisse de Loot</French>
                 <Turkish>Yağma Kasası</Turkish>
             </Key>
@@ -15,6 +16,7 @@
                 <Russian>Топливная цистерна</Russian>
                 <Chinesesimp>油箱</Chinesesimp>
                 <Korean>연료통 (연료탱크)</Korean>
+                <Spanish>Depósito de combustible</Spanish>
                 <French>Réservoir de carburant</French>
                 <Turkish>Yakıt Tankı</Turkish>
             </Key>
@@ -22,6 +24,7 @@
                 <Original>Fuel Drum</Original>
                 <Russian>Бочка с топливом</Russian>
                 <Korean>연료통 (드럼통)</Korean>
+                <Spanish>Bidón de combustible</Spanish>
                 <French>Fût de carburant</French>
                 <Chinesesimp>油桶</Chinesesimp>
                 <Turkish>Yakıt Varili</Turkish>
@@ -31,6 +34,7 @@
                 <Russian>Уличный фонарь</Russian>
                 <Chinesesimp>灯</Chinesesimp>
                 <Korean>조명</Korean>
+                <Spanish>Luz</Spanish>
                 <French>Lumière</French>
                 <Turkish>Işık</Turkish>
             </Key>
@@ -39,6 +43,7 @@
                 <Russian>Ящик c наборами восстановления боеспособности</Russian>
                 <Chinesesimp>装有战备恢复包的盒子</Chinesesimp>
                 <Korean>전투 준비 복구 키트가 든 상자</Korean>
+                <Spanish>Caja con kits de recuperación de disponibilidad para el combate</Spanish>
                 <French>Boîte contenant des kits de récupération pour la préparation au combat</French>
                 <Turkish>Muharebe Hazırlık Yenileme Kiti Kutusu</Turkish>
             </Key>
@@ -46,6 +51,7 @@
                 <Original>Medical Tent</Original>
                 <Russian>Медицинская палатка</Russian>
                 <Korean>의료텐트</Korean>
+                <Spanish>Tienda médica</Spanish>
                 <French>Tente médicale</French>
                 <Chinesesimp>医疗帐篷</Chinesesimp>
                 <Turkish>Sıhhiye Çadırı</Turkish>
@@ -54,6 +60,7 @@
                 <Original>Ammo Station</Original>
                 <Russian>Склад боеприпасов</Russian>
                 <Korean>탄약고</Korean>
+                <Spanish>Estación de munición</Spanish>
                 <French>Station de munitions</French>
                 <Chinesesimp>弹药箱</Chinesesimp>
                 <Turkish>Mühimmat İstasyonu</Turkish>
@@ -62,6 +69,7 @@
                 <Original>Repair Station</Original>
                 <Russian>Пункт ремонта</Russian>
                 <Korean>수리소</Korean>
+                <Spanish>Estación de reparación</Spanish>
                 <French>Station de réparation</French>
                 <Chinesesimp>维修站</Chinesesimp>
                 <Turkish>Tamir İstasyonu</Turkish>
@@ -70,6 +78,7 @@
                 <Original>Medical Box</Original>
                 <Russian>Коробка с медикаментами</Russian>
                 <Korean>의료 상자</Korean>
+                <Spanish>Caja médica</Spanish>
                 <French>Boite médicale</French>
                 <Chinesesimp>医疗箱</Chinesesimp>
                 <Turkish>Tıbbi Malzeme Kutusu</Turkish>
@@ -81,6 +90,7 @@
                 <Russian>Выберите транспортное средство, чтобы открыть арсенал для него и заполнить инвентарь техники любыми предметами из арсенала.</Russian>
                 <Chinesesimp>选择车辆为其打开武器库，以便将其货物与武器库中的任何物品一起装满。</Chinesesimp>
                 <Korean>아스널의 모든 아이템으로 화물을 채울 수 있도록 아스널을 열 차량을 선택하십시오.</Korean>
+                <Spanish>Selecciona un vehículo para abrirle el arsenal, lo que te permitirá llenar su inventario con cualquier objeto del arsenal.</Spanish>
                 <French>Sélectionnez un véhicule pour ouvrir son inventaire et remplissez-le avec les objets de l'arsenal.</French>
                 <Turkish>Arsenal'ini açmak için bir araç seçin; bu, aracın envanterini arsenaldeki herhangi bir eşya ile doldurmanıza olanak tanır.</Turkish>
             </Key>
@@ -89,6 +99,7 @@
                 <Russian>Арсенал (Техника)</Russian>
                 <Chinesesimp>载具库</Chinesesimp>
                 <Korean>차량 아스널</Korean>
+                <Spanish>Arsenal del vehículo</Spanish>
                 <French>Arsenal du véhicule</French>
                 <Turkish>Araç Arsenali</Turkish>
             </Key>
@@ -97,6 +108,7 @@
                 <Russian>Похоже, что я буду единственным, кто сможет использовать это сегодня</Russian>
                 <Chinesesimp>看来今天只有我在用这个了</Chinesesimp>
                 <Korean>오늘은 나만 이걸 사용할 것 같군</Korean>
+                <Spanish>Parece que hoy soy el único que usa esto</Spanish>
                 <French>On dirait que je suis le seul à l'utiliser aujourd'hui.</French>
                <Turkish>Görünüşe göre bugün bunu benden başka kullanan yok (Stok çok fazla)</Turkish>
             </Key>
@@ -105,6 +117,7 @@
                 <Russian>Более чем достаточно для целой армии</Russian>
                 <Chinesesimp>对于武装整个军队来说绰绰有余</Chinesesimp>
                 <Korean>전군이 감당하기에 충분하다</Korean>
+                <Spanish>Más que suficiente para todo un ejército</Spanish>
                 <French>Plus qu'il n'en faut pour toute une armée</French>
                 <Turkish>Koca bir orduya yetecek kadar var</Turkish>
             </Key>
@@ -113,6 +126,7 @@
                 <Russian>Этого ещё много</Russian>
                 <Chinesesimp>还剩下很多</Chinesesimp>
                 <Korean>많이 남았다</Korean>
+                <Spanish>Quedan muchos de estos</Spanish>
                 <French>Beaucoup d'entre eux ont quitté</French>
                 <Turkish>Bunlardan elimizde çokça kaldı</Turkish>
             </Key>
@@ -121,6 +135,7 @@
                 <Russian>Что-то из этого ещё есть</Russian>
                 <Chinesesimp>还剩下一些</Chinesesimp>
                 <Korean>조금 남았다</Korean>
+                <Spanish>Quedan algunos de estos</Spanish>
                 <French>Certains d'entre eux ont quitté</French>
                 <Turkish>Bunlardan biraz kaldı</Turkish>
             </Key>
@@ -129,6 +144,7 @@
                 <Russian>Если я хочу использовать это оружие, мне нужно взять его до того, как это сделает кто-то другой</Russian>
                 <Chinesesimp>如果你想拿到这些装备得趁早</Chinesesimp>
                 <Korean>만약 내가 뭘 원한다면 다른 사람이 가져가기 전에 내가 먼저 가져야 한다</Korean>
+                <Spanish>Si quiero uno, tengo que cogerlo antes de que lo haga otro</Spanish>
                 <French>Si j'en veux un, je dois le prendre avant que quelqu'un d'autre ne le fasse.</French>
                 <Turkish>Eğer bir tane istiyorsam, başkası almadan önce kapmalıyım</Turkish>
             </Key>
@@ -137,6 +153,7 @@
                 <Russian>Последний предмет в ящике</Russian>
                 <Chinesesimp>箱子里的最后一个</Chinesesimp>
                 <Korean>상자 안에 있는 마지막 물품이다</Korean>
+                <Spanish>El último de la caja</Spanish>
                 <French>Le dernier dans la boîte</French>
                 <Turkish>Kutudaki sonuncusu</Turkish>
             </Key>
@@ -145,6 +162,7 @@
                 <Russian>, но нет подходящих боеприпасов.</Russian>
                 <Chinesesimp>，但是没有弹药</Chinesesimp>
                 <Korean>. 하지만 그걸 위한 탄약이 없다</Korean>
+                <Spanish>, pero no hay munición para él</Spanish>
                 <French>mais il n'y a pas de munitions pour ça</French>
                 <Turkish>, ancak bunun için mühimmat yok</Turkish>
             </Key>
@@ -153,6 +171,7 @@
                 <Russian>, и для оружия достаточно боеприпасов.</Russian>
                 <Chinesesimp>，有足够的弹药</Chinesesimp>
                 <Korean>. 그리고 탄약도 충분하다</Korean>
+                <Spanish>, y hay munición suficiente para él</Spanish>
                 <French>et il y a assez de munitions pour cela</French>
                 <Turkish>, ve bunun için yeterli mühimmat var</Turkish>
             </Key>
@@ -161,6 +180,7 @@
                 <Russian>, и есть некоторое количество подходящих боеприпасов.</Russian>
                 <Chinesesimp>，还剩点弹药</Chinesesimp>
                 <Korean>. 그래도 아직 탄약은 조금 남아 있다</Korean>
+                <Spanish>, y todavía queda algo de munición para él</Spanish>
                 <French>et il y a encore des munitions pour ça</French>
                 <Turkish>, ve bunun için hala biraz mühimmat var</Turkish>
             </Key>
@@ -169,6 +189,7 @@
                 <Russian>, но подходящих боеприпасов совсем немного.</Russian>
                 <Chinesesimp>，只有一点弹药</Chinesesimp>
                 <Korean>. 하지만 몇 번만 쏠 양 밖에 없다</Korean>
+                <Spanish>, pero solo quedan unos pocos disparos para él</Spanish>
                 <French>mais il n'y a que peu de photos pour cela</French>
                 <Turkish>, ancak bunun için sadece birkaç atımlık mühimmat var</Turkish>
             </Key>
@@ -177,6 +198,7 @@
                 <Russian>AU 11.8.5 Пользовательские снаряжения ИИ</Russian>
                 <Chinesesimp>AU 11.8.5 AI 自定义装备</Chinesesimp>
                 <Korean>AU 11.8.5 AI 커스텀 장비 구성</Korean>
+                <Spanish>AU 11.8.5 Equipamientos personalizados de la IA</Spanish>
                 <French>AU 11.8.5 Équipements personnalisés de l'IA</French>
                 <Turkish>AU 11.8.5 AI Özel Yüklemeleri</Turkish>
             </Key>
@@ -185,6 +207,7 @@
                 <Russian>Функциональность пользовательского снаряжения изменилась. Дважды кликните по предмету из списка, чтобы сохранить его в пользовательском наборе. Дважды кликните ещё раз для снятия сохранения. Обратите внимание, что сохранение грузового контейнера (формы, жилета или рюкзака) также сохраняет всё содержимое этого контейнера. При сохранении значок вкладки для предмета должен стать зелёным. Нажмите %1, чтобы не показывать это сообщение снова.</Russian>
                 <Chinesesimp>自定义装备功能发生了变化。 双击列表中的物品以保存到你的自定义装备中。 再次双击以取消保存。 注意，保存货物容器（制服、背心或背包）也会保存该容器的所有内容。 保存后，该物品的标签图标应变为绿色。 点击%1以避免再次显示此信息。</Chinesesimp>
                 <Korean>커스텀 로드아웃 기능이 변경되었습니다. 목록에서 아이템을 더블 클릭하면 사용자 지정 로드아웃에 저장됩니다. 저장 해제하려면 다시 더블 클릭하세요. 화물 컨테이너(유니폼, 조끼, 배낭)를 저장하면 해당 컨테이너의 모든 내용물이 저장됩니다. 이 메시지가 다시 나타나지 않도록 %1을 클릭하세요.</Korean>
+                <Spanish>La funcionalidad de equipamiento personalizado ha cambiado. Haz doble clic en un objeto de la lista para guardarlo en tu equipamiento personalizado. Vuelve a hacer doble clic para quitarlo. Ten en cuenta que guardar un contenedor (uniforme, chaleco o mochila) guarda también todo su contenido. Al guardarlo, el icono de la pestaña del objeto debería ponerse verde. Pulsa %1 para no volver a mostrar este mensaje.</Spanish>
                 <French>La fonctionnalité d'équipement personnalisé a changé. Double-cliquez sur un élément de la liste pour l'enregistrer dans votre équipement personnalisé. Double-cliquez à nouveau pour désenregistrer. Note que sauvegarder un conteneur (uniforme, gilet ou sac à dos) sauvegarde également tout le contenu de ce conteneur. Une fois enregistré, l'icône d'onglet de l'article devrait devenir verte. Cliquez sur %1 pour ne plus afficher ce message.</French>
                 <Turkish>Özel yükleme işlevi değişti. Bir eşyayı özel yüklemenize kaydetmek için listeden üzerine çift tıklayın. Kaldırmak için tekrar çift tıklayın. Bir taşıma konteynerini (Üniforma, Yelek veya Sırt Çantası) kaydetmenin, içindeki tüm eşyaları da kaydedeceğini unutmayın. Kaydedildiğinde, eşyanın sekme simgesi yeşile dönecektir. Bu mesajı tekrar görmemek için %1 tıklayın.</Turkish>
             </Key>
@@ -193,6 +216,7 @@
                 <Russian>Подтвердить</Russian>
                 <Chinesesimp>收到</Chinesesimp>
                 <Korean>확인해 드립니다</Korean>
+                <Spanish>Entendido</Spanish>
                 <French>Accuser réception</French>
                 <Turkish>Anlaşıldı</Turkish>
             </Key>
@@ -201,6 +225,7 @@
                 <Russian>ОК</Russian>
                 <Chinesesimp>还行</Chinesesimp>
                 <Korean>그래</Korean>
+                <Spanish>Aceptar</Spanish>
                 <French>D'ACCORD</French>
                 <Turkish>Tamam</Turkish>
             </Key>
@@ -211,6 +236,7 @@
                 <Russian>Повстанцам необходимо контролировать хотя бы один морской порт для получения доступа к чёрному рынку.</Russian>
                 <Chinesesimp>至少需要控制一个海港才能进入黑市</Chinesesimp>
                 <Korean>반군은 암시장에 접근하기 위해 적어도 하나의 항구를 통제할 필요가 있습니다.</Korean>
+                <Spanish>Los rebeldes necesitan controlar al menos un puerto marítimo para acceder al mercado negro.</Spanish>
                 <French>Les rebelles doivent contrôler au moins un port maritime pour accéder au marché noir.</French>
                 <Turkish>İsyancıların karaborsaya erişebilmesi için en az bir limanı kontrol etmesi gerekir.</Turkish>
             </Key>
@@ -219,6 +245,7 @@
                 <Russian>Повстанцам необходимо контролировать хотя бы одну ресурсную точку для получения доступа к чёрному рынку.</Russian>
                 <Chinesesimp>至少需要控制一种资源才能进入黑市。</Chinesesimp>
                 <Korean>반군은 암시장에 접근하기 위해 적어도 하나의 자원채취소를 통제할 필요가 있습니다.</Korean>
+                <Spanish>Los rebeldes necesitan controlar al menos un recurso para acceder al mercado negro.</Spanish>
                 <French>Les rebelles doivent contrôler au moins une ressource pour accéder au marché noir.</French>
                 <Turkish>İsyancıların karaborsaya erişebilmesi için en az bir kaynak bölgesini kontrol etmesi gerekir.</Turkish>
             </Key>
@@ -227,6 +254,7 @@
                 <Russian>Чёрный рынок техники недоступен</Russian>
                 <Chinesesimp>载具黑市不可用</Chinesesimp>
                 <Korean>차량 암시장을 사용할 수 없음</Korean>
+                <Spanish>El mercado negro de vehículos no está disponible</Spanish>
                 <French>Le marché noir des véhicules n'est pas disponible</French>
                 <Turkish>Araç Karaborsası Mevcut Değil</Turkish>
             </Key>
@@ -237,6 +265,7 @@
                 <Russian>Эта фракция недоступна в текущей конфигурации игры. Проверьте свои моды или CDLC, если вы хотите её использовать.\nТребуемые аддоны: %1</Russian>
                 <Chinesesimp>该派系在当前游戏设置中不可用。如果您想使用它，请检查您的 CDLC 或模组。\n所需的插件: %1</Chinesesimp>
                 <Korean>이 팩션은 현재 게임 설정에서 사용할 수 없습니다. 사용하길 원한다면 CDLC 와/나 모드를 확인하십시오.\n필요 애드온: %1</Korean>
+                <Spanish>Esta facción no está disponible en la configuración actual de la partida. Comprueba tus CDLC o mods si quieres usarla.\nAddons necesarios: %1</Spanish>
                 <French>Cette faction n'est pas disponible dans la configuration actuelle du jeu. Vérifiez vos CDLCs et/ou vos mods si vous souhaitez l'utiliser.\nAddons nécessaires : %1</French>
                 <Turkish>Bu taraf mevcut oyun kurulumunda mevcut değil. Kullanmak istiyorsanız CDLC veya modlarınızı kontrol edin.\nGerekli eklentiler: %1</Turkish>
             </Key>
@@ -245,6 +274,7 @@
                 <Russian>Стандартная фракция из базовой игры.</Russian>
                 <Chinesesimp>来自基础游戏的标准派系。</Chinesesimp>
                 <Korean>바닐라의 표준 팩션입니다.</Korean>
+                <Spanish>Facción estándar del juego base.</Spanish>
                 <French>Faction standard du jeu de base.</French>
                 <Turkish>Ana oyundan standart taraf.</Turkish>
             </Key>
@@ -253,6 +283,7 @@
                 <Russian>Стандартные гражданские.</Russian>
                 <Chinesesimp>标准平民。</Chinesesimp>
                 <Korean>일반 시민입니다.</Korean>
+                <Spanish>Civiles estándar.</Spanish>
                 <French>Civils standard.</French>
                 <Turkish>Standart siviller.</Turkish>
             </Key>
@@ -261,6 +292,7 @@
                 <Russian>Восточноевропейские гражданские.</Russian>
                 <Chinesesimp>东欧平民。</Chinesesimp>
                 <Korean>동유럽계 시민입니다.</Korean>
+                <Spanish>Civiles de Europa del Este.</Spanish>
                 <French>Civils d'Europe de l'Est.</French>
                 <Turkish>Doğu Avrupalı siviller.</Turkish>
             </Key>
@@ -269,6 +301,7 @@
                 <Russian>Гражданские засушливого климата.</Russian>
                 <Chinesesimp>干旱气候平民。</Chinesesimp>
                 <Korean>건조 기후쪽 시민입니다.</Korean>
+                <Spanish>Civiles de clima árido.</Spanish>
                 <French>Civils de climat aride.</French>
                 <Turkish>Kurak İklim Sivilleri.</Turkish>
             </Key>
@@ -277,6 +310,7 @@
                 <Russian>Такистанские гражданские.</Russian>
                 <Chinesesimp>塔克斯坦平民。</Chinesesimp>
                 <Korean>타키스탄 국민입니다.</Korean>
+                <Spanish>Civiles de Takistán.</Spanish>
                 <French>Civils du Takistan.</French>
                 <Turkish>Takistanlı siviller.</Turkish>
             </Key>
@@ -285,6 +319,7 @@
                 <Russian>Стратегический Альянс по Договору Гуанчжоу (CSAT).\nВосточный альянс, делающий ставку на сочетание техники российского производства и собственных разработок.</Russian>
                 <Chinesesimp>(CSAT)\n依赖于俄制装备以及自制装备的东方联盟。</Chinesesimp>
                 <Korean>광둥 의정서 전략 동맹 조약(CSAT).\n러시아제 장비와 자체 개발품의 혼합에 의존하는 동구권 동맹입니다.</Korean>
+                <Spanish>Tratado de Alianza Estratégica del Protocolo de Cantón (CSAT).\nAlianza oriental que se apoya en una mezcla de equipo de fabricación rusa y desarrollos propios.</Spanish>
                 <French>Canton Protocol Strategic Alliance Treaty (CSAT).\nAlliance de l'Est qui s'appuie sur un mélange d'équipements de fabrication russe et sur ses propres développements.</French>
                 <Turkish>Kanton Protokolü Stratejik İttifak Antlaşması (CSAT).\nRus yapımı teçhizatlar ve kendi geliştirdiği teknolojilerin karışımını kullanan Doğu ittifakı.</Turkish>
             </Key>
@@ -293,6 +328,7 @@
                 <Russian>Организация Североатлантического договора (НАТО).\nМногонациональная западная фракция, имеющая множество унифицированных транспортных платформ и широкую номенклатуру управляемых боеприпасов.</Russian>
                 <Chinesesimp>北大西洋公约组织 (NATO)\n多国西方派系，拥有大量统一载具和广泛的制导弹药。</Chinesesimp>
                 <Korean>북대서양 조약기구(NATO).\n수많은 통일된 차량 플랫폼과 다양한 이름의 유도탄을 가진 다국적 서방 진영입니다.</Korean>
+                <Spanish>Organización del Tratado del Atlántico Norte (OTAN).\nFacción occidental multinacional con muchas plataformas de vehículos unificadas y gran variedad de munición guiada.</Spanish>
                 <French>Organisation du traité de l'Atlantique Nord (OTAN):\nFaction occidentale multinationale qui dispose d'un grand nombre de plates-formes de véhicules unifiées et d'une large nomenclature de munitions guidées.</French>
                 <Turkish>Kuzey Atlantik Antlaşması Örgütü (NATO).\nÇok sayıda ortak araç platformuna ve geniş bir güdümlü mühimmat yelpazesine sahip çok uluslu Batı ittifakı.</Turkish>
             </Key>
@@ -301,6 +337,7 @@
                 <Russian>Вооруженные силы Алтиса (AAF).\nНебольшая, но высокомотивированная сила, эффективно использующая широкий спектр хоть и выведенной из эксплуатации и устаревшей, но всё ещё эффективной западной номеклатуры вооружений.</Russian>
                 <Chinesesimp>阿尔蒂斯武装部队 (AAF)\n规模小但士气高涨的部队，能有效地使用各种退役的、过时的但仍然有效的西方装备。</Chinesesimp>
                 <Korean>알티스군(AAF).\n퇴역되었고 구식이지만 여전히 효과적인 서방 장비를 광범위하게 효과적으로 사용하는 작지만 사기가 높은 군대입니다.</Korean>
+                <Spanish>Fuerzas Armadas de Altis (AAF).\nFuerza pequeña pero muy motivada que aprovecha con eficacia una amplia gama de equipo occidental dado de baja y anticuado, pero todavía efectivo.</Spanish>
                 <French>Forces armées d'Altis (AAF).\nPetite force, mais très motivée, qui utilise efficacement une large gamme d'équipements occidentaux déclassés et obsolètes, mais toujours efficaces.</French>
                 <Turkish>Altis Silahlı Kuvvetleri (AAF).\nHizmet dışı kalmış ve eski, ancak hala etkili olan çok çeşitli Batı teçhizatını başarıyla kullanan, küçük ama yüksek motivasyonlu güç.</Turkish>
             </Key>
@@ -309,6 +346,7 @@
                 <Russian>Организация Североатлантического договора и Вооруженные Силы Ливонии (НАТО и ВСЛ).\После успешных совместных учений в Ливонии напряженность в отношениях между CSAT и НАТО возросла. Вооруженные силы Ливонии решили позволить НАТО построить больше своих баз, чтобы увеличить свои шансы, если их восточный сосед начнёт действовать.</Russian>
                 <Chinesesimp>北大西洋公约组织和利沃尼亚国防军（NATO 和 LDF）。\n在利沃尼亚成功进行联合训练后，CSAT 和 NATO 之间的紧张局势加剧。LDF 决定让 NATO 建造更多基地，以增加其东部邻国采取行动的机会。</Chinesesimp>
                 <Korean>북대서양 조약 기구와 리보니아 방위군(NATO와 LDF).\n리보니아에서 성공적인 합동 훈련 이후, CSAT과 NATO 간의 긴장이 고조되었습니다. LDF는 '동쪽의 이웃'이 움직일 경우 기회를 늘리기 위해 NATO가 더 많은 기지를 건설하도록 결정했습니다.</Korean>
+                <Spanish>Organización del Tratado del Atlántico Norte y Fuerza de Defensa de Livonia (OTAN y LDF).\nTras un entrenamiento conjunto exitoso en Livonia, la tensión entre CSAT y la OTAN aumentó. La LDF decidió permitir que la OTAN construyera más bases para mejorar sus opciones si su vecino del este daba un paso.</Spanish>
                 <Turkish>Kuzey Atlantik Antlaşması Örgütü ve Livonya Savunma Kuvvetleri (NATO ve LDF).\nLivonya'daki başarılı ortak eğitimden sonra CSAT ve NATO arasındaki gerilim arttı. LDF, doğu komşularının bir hamle yapma ihtimaline karşı hayatta kalma şansını artırmak için NATO'nun daha fazla üs kurmasına izin verdi.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_csatandaaf">
@@ -316,6 +354,7 @@
                 <Russian>Стратегический Альянс по Договору Гуанчжоу и Вооруженные силы Альтиса (CSAT и AAF).\После жестокой гражданской войны правительство Альтиса и армия остались в руинах. После переговоров с НАТО, AAF получат запрошенную поддержку, но ценой своей автономии.</Russian>
                 <Chinesesimp>《广州议定书》战略联盟条约和阿尔蒂斯武装部队 (CSAT 和 AAF)。\n在北约部队占领阿尔蒂斯群岛后，AAF 与 CSAT 达成协议，归还对其岛屿的控制权，但代价是成为 CSAT 的傀儡，并将他们的国家拖入更大的冲突。</Chinesesimp>
                 <Korean>광둥 의정서 전략 동맹 조약과 알티스군 (CSAT과 AAF).\nNATO군이 알티스 군도를 점령한 이후, AAF는 CSAT과 협정을 맺어 그들의 섬에 대한 통치권을 반환했지만, 그 대가로 그들의 꼭두각시가 되어 국가를 더 큰 분쟁에 끌어들이게 되었습니다.</Korean>
+                <Spanish>Tratado de Alianza Estratégica del Protocolo de Cantón y Fuerzas Armadas de Altis (CSAT y AAF).\nDespués de que las fuerzas de la OTAN tomaran el archipiélago de Altis, las AAF pactaron con CSAT recuperar el control de sus islas, pero a costa de convertirse en sus títeres y arrastrar a su nación a un conflicto mayor.</Spanish>
                 <Turkish>Kanton Protokolü Stratejik İttifak Antlaşması ve Altis Silahlı Kuvvetleri (CSAT ve AAF).\nNATO güçleri Altis takımadalarını ele geçirdikten sonra AAF, adaların kontrolünü geri almak için CSAT ile bir anlaşma yaptı; ancak bu, onların kuklası olma ve uluslarını daha büyük bir çatışmanın içine sürükleme pahasına oldu.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_natoandaaf">
@@ -323,6 +362,7 @@
                 <Russian>Организация Североатлантического договора и Вооруженные силы Альтиса (НАТО и AAF).\После жестокой гражданской войны правительство Альтиса и армия остались в руинах. После переговоров с НАТО, AAF получат запрошенную поддержку, но ценой своей автономии.</Russian>
                 <Chinesesimp>北大西洋公约组织和阿尔蒂斯武装部队（NATO 和 AAF）。\n在残酷的内战之后，阿尔蒂斯政府和军队一片废墟。与北约谈判后，AAF 将获得所要求的支持，但代价是其自治权。</Chinesesimp>
                 <Korean>북대서양 조약 기구와 알티스군 (NATO와 AAF).\n잔혹했던 내전 이후, 알티스 정부와 군대는 몰락했습니다. NATO와의 협상 후, AAF는 요청한 지원을 받게 되지만, 자율권을 희생해야 합니다.</Korean>
+                <Spanish>Organización del Tratado del Atlántico Norte y Fuerzas Armadas de Altis (OTAN y AAF).\nTras una brutal guerra civil, el gobierno y el ejército de Altis quedaron en ruinas. Después de negociar con la OTAN, las AAF recibirán el apoyo solicitado, pero a costa de su autonomía.</Spanish>
                 <Turkish>Kuzey Atlantik Antlaşması Örgütü ve Altis Silahlı Kuvvetleri (NATO ve AAF).\nYıkıcı bir iç savaştan sonra Altis hükümeti ve ordusu harabeye döndü. NATO ile yapılan görüşmelerin ardından AAF talep edilen desteği alacak, ancak bu özerkliklerinden ödün verme pahasına gerçekleşecek.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_aaf_3cbf">
@@ -330,6 +370,7 @@
                 <Russian>Вооруженные силы Алтиса (AAF).\nНебольшая, но высокомотивированная сила, эффективно использующая широкий спектр хоть и выведенной из эксплуатации и устаревшей, но всё ещё эффективной номеклатуры вооружений со всего света.</Russian>
                 <Chinesesimp>阿尔蒂斯武装部队 (AAF)\n规模小但士气高涨的部队，能有效地使用各种退役的、过时的但仍然有效的各国装备。</Chinesesimp>
                 <Korean>알티스군(AAF).\n전 세계적으로 퇴역되었고 구식이지만 여전히 효과적인 서방 장비를 광범위하게 효과적으로 사용하는 작지만 사기가 높은 군대입니다.</Korean>
+                <Spanish>Fuerzas Armadas de Altis (AAF).\nFuerza pequeña pero muy motivada que aprovecha con eficacia una amplia gama de equipo dado de baja y anticuado, pero todavía efectivo, procedente de todo el mundo.</Spanish>
                 <French>Forces armées d'Altis (AAF).\nPetite, mais très motivée, force qui utilise efficacement une large gamme d'équipements déclassés et obsolètes, mais toujours efficaces, dans le monde entier.</French>
                 <Turkish>Altis Silahlı Kuvvetleri (AAF).\nHizmet dışı kalmış ve eski, ancak hala etkili olan dünya genelinden çok çeşitli teçhizatı başarıyla kullanan, küçük ama yüksek motivasyonlu güç.</Turkish>
             </Key>
@@ -338,6 +379,7 @@
                 <Russian>Организация Североатлантического договора и Учреждение Организации Объединенных Наций (НАТО и ООН).\После серии нападений на миротворцев ООН в регионе Сефру-Рамаль, некоторые из которых, по всей видимости, были совершены боевиками SFIA, было решено, что оперативная группа НАТО окажет поддержку в обеспечении безопасности гуманитарных работников и персонала ООН в регионе.</Russian>
                 <Chinesesimp>北大西洋公约组织和联合国机构 (NATO 和 UNA)。\n在塞夫鲁-拉马尔地区发生一系列针对联合国维和人员的袭击之后，其中一些袭击似乎是由 SFIA 的成员实施的，各方同意由北约特遣部队提供支持，以确保该地区援助工作者和联合国工作人员的安全。</Chinesesimp>
                 <Korean>북대서양 조약 기구와 유엔 기구 (NATO와 UNA).\n세프로-라말 지역 내 평화유지군에 대한 일련의 공격(일부는 SFIA의 일부가 저지른 것으로 추정) 이후, NATO의 태스크 포스가 해당 지역의 구호봉사자와 유엔 직원의 안전을 보장하기 위해 지원을 제공하기로 합의했습니다.</Korean>
+                <Spanish>Organización del Tratado del Atlántico Norte y Agencia de las Naciones Unidas (OTAN y UNA).\nTras una serie de ataques contra los cascos azules de la ONU en la región de Sefrou-Ramal, algunos aparentemente perpetrados por elementos del SFIA, se acordó que una fuerza de tarea de la OTAN prestaría apoyo para garantizar la seguridad de los cooperantes y del personal de la ONU en la región.</Spanish>
                 <Turkish>Kuzey Atlantik Antlaşması Örgütü ve Birleşmiş Milletler Ajansı (NATO ve UNA).\nSefrou-Ramal bölgesindeki BM barış güçlerine yönelik, bir kısmının SFIA unsurları tarafından gerçekleştirildiği görülen bir dizi saldırının ardından, bölgedeki yardım çalışanlarının ve BM personelinin güvenliğini sağlamak için bir NATO görev gücünün destek vermesi kararlaştırıldı.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_csatandsfia">
@@ -345,6 +387,7 @@
                 <Russian>Стратегический Альянс по Договору Гуанчжоу и Армия свободы и независимости Сефрауи (CSAT и SFIA).\После недавних нападений сил Тура на военные базы SFIA и увеличения присутствия сил НАТО для наблюдения за миротворческими операциями ООН правительство Арганы приняло решение разместить силы CSAT в Сефру-Рамале для укрепления региональной безопасности.</Russian>
                 <Chinesesimp>《广州议定书》战略联盟条约和塞夫鲁拉马尔自由独立军 (CSAT 和 SFIA)。\n在图拉部队最近对 SFIA 军事基地发动袭击以及北约部队不断增加以监督联合国维和行动之后，阿尔加南政府决定在塞夫鲁拉马尔驻扎 CSAT 部队，以加强地区安全。</Chinesesimp>
                 <Korean>광둥 의정서 전략 동맹 조약과 세프라위 자유독립군 (CSAT과 SFIA).\n최근 투라군이 SFIA 군사 기지를 공격하고 유엔 평화 유지 활동을 감독하기 위해 NATO군이 증가함에 따라 아르가나 정부는 지역 안보를 강화하기 위해 세프로-라말에 CSAT군을 주둔시키기로 결정했습니다.</Korean>
+                <Spanish>Tratado de Alianza Estratégica del Protocolo de Cantón y Ejército de Libertad e Independencia Sefrawí (CSAT y SFIA).\nTras los recientes ataques de las fuerzas Tura contra bases militares del SFIA y la creciente presencia de fuerzas de la OTAN para supervisar las operaciones de paz de la ONU, el gobierno arganés decidió estacionar fuerzas de CSAT en Sefrou-Ramal para reforzar la seguridad regional.</Spanish>
                 <Turkish>Kanton Protokolü Stratejik İttifak Antlaşması ve Sefrawi Özgürlük ve Bağımsızlık Ordusu (CSAT ve SFIA).\nTura güçlerinin SFIA askeri üslerine yaptığı son saldırılar ve BM barış koruma operasyonlarını denetleyen NATO güçlerinin artan varlığı üzerine Arganan hükümeti, bölgesel güvenliği artırmak için CSAT güçlerini Sefrou-Ramal'da konuşlandırma kararı aldı.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_tka">
@@ -352,6 +395,7 @@
                 <Russian>Армия Такистана (TKA).\nСочетание военных и парамилитари-сил, использующих, в основном, устаревшее вооружение со всего мира.</Russian>
                 <Chinesesimp>塔克斯坦军队 (TKA)。\n使用世界各地陈旧装备的军事和准军事部队混合体。</Chinesesimp>
                 <Korean>타키스탄군(TKA).\n전 세계의 구식 장비를 사용하는 군대와 준군사조직이 섞인 군대입니다.</Korean>
+                <Spanish>Ejército de Takistán (TKA).\nUna mezcla de fuerzas militares y paramilitares que usan equipo anticuado de todo el mundo.</Spanish>
                 <French>Armée du Takistan (TKA).\nUn mélange de forces militaires et paramilitaires utilisant des équipements datés dans le monde entier.</French>
                 <Turkish>Takistan Ordusu (TKA).\nDünyanın dört bir yanından gelen eski teçhizatları kullanan askeri ve paramiliter güçlerin bir karışımı.</Turkish>
             </Key>
@@ -360,6 +404,7 @@
                 <Russian>Армия Ардистана (ARD).\nАрмия одного из бывших сателлитов Советского Союза, до сих использующая его вооружение и экипировку.</Russian>
                 <Chinesesimp>阿迪斯坦军队 (ARD)。\n前苏联加盟国的军队，仍在使用大量苏联装备。</Chinesesimp>
                 <Korean>아르디스탄군(ARD).\n구 소련 위성국의 군대로 여전히 많은 장비를 사용하고 있습니다.</Korean>
+                <Spanish>Ejército de Ardistán (ARD).\nEjército de un antiguo estado satélite soviético que sigue usando gran parte de su equipo.</Spanish>
                 <French>Armée de l'Ardistan (ARD).\nL'armée de l'ancien État client de l'Union soviétique utilise encore une grande partie de son équipement.</French>
                 <Turkish>Ardistan Ordusu (ARD).\nHâlâ eski Sovyet teçhizatlarının çoğunu kullanmaya devam eden, eski bir Sovyet uydu devletinin ordusu.</Turkish>
             </Key>
@@ -368,6 +413,7 @@
                 <Russian>Армия свободы и независимости (FIA).\nСтандартная партизанская фракция. Гладкоствольные ружья и немного отваги проложат путь к свободе. </Russian>
                 <Chinesesimp>自由独立军 (FIA)\n标准游击队派系。滑膛枪和一点点的勇气将为你铺平通往自由的道路。 </Chinesesimp>
                 <Korean>자유독립군(FIA).\n표준 게릴라 팩션. 무강선총과 약간의 용기가 당신의 자유를 위한 길을 열어줄 것입니다.</Korean>
+                <Spanish>Ejército de Libertad e Independencia (FIA).\nFacción guerrillera estándar. Fusiles de ánima lisa y un poco de valor te abrirán el camino a la libertad.</Spanish>
                 <French>Armée de la liberté et de l'indépendance (FIA).\nFaction de guérilla standard. Des fusils à canon lisse et un peu de courage vous permettront d'accéder à la liberté.</French>
                 <Turkish>Özgürlük ve Bağımsızlık Ordusu (FIA).\nStandart bir gerilla grubu. Yivsiz tüfekler ve bir parça cesaret, özgürlüğe giden yolunuzu açacaktır.</Turkish>
             </Key>
@@ -376,6 +422,7 @@
                 <Russian>Синдикат (SDK).\nВоенизированная организация, действующая главным образом на островах Горизонта.</Russian>
                 <Chinesesimp>辛迪加 (SDK)。\n地平线群岛准军事部队。</Chinesesimp>
                 <Korean>신디캣(SDK).\n호라이즌 제도의 준군사조직입니다.</Korean>
+                <Spanish>Syndikat (SDK).\nFuerza paramilitar de las Islas Horizonte.</Spanish>
                 <French>Syndikat (SDK).\nForce paramilitaire des Îles de l'Horizon.</French>
                 <Turkish>Syndikat (SDK).\nHorizon Adaları paramiliter gücü.</Turkish>
             </Key>
@@ -384,6 +431,7 @@
                 <Russian>Ливонские Лутеры (LL).\nВосточноевропейское ополчение.</Russian>
                 <Chinesesimp>利沃尼亚掠夺者 (LL)。\n东欧武装分子。</Chinesesimp>
                 <Korean>리보니아 약탈자(LL).\n동유럽계 무장세력입니다.</Korean>
+                <Spanish>Saqueadores de Livonia (LL).\nMilitantes de Europa del Este.</Spanish>
                 <French>Livonian Looters (LL). Militants d'Europe de l'Est.</French>
                 <Turkish>Livonyalı Yağmacılar (LL).\nDoğu Avrupalı milisler.</Turkish>
             </Key>
@@ -392,6 +440,7 @@
                 <Russian>Борщевики.\nДаже не спрашивайте, что это.</Russian>
                 <Chinesesimp>布尔什维克。\不要问它是什么。</Chinesesimp>
                 <Korean>볼셰비키.\n뭔지 절대 묻지 마시오.</Korean>
+                <Spanish>Borsheviks.\nNi preguntes qué es esto.</Spanish>
                 <French>Borsheviks.\nNe demandez même pas ce que c'est.</French>
                 <Turkish>Borshevikler.\nNe olduğunu sorma bile.</Turkish>
             </Key>
@@ -399,6 +448,7 @@
                 <Original>Livonian Militia (LM).\nEastern European militants.</Original>
                 <Russian>Ополчение Ливонии.\nВосточноевропейское ополчение.</Russian>
                 <Korean>리보니아 민병대(LM).\n동유럽계 무장세력입니다.</Korean>
+                <Spanish>Milicia de Livonia (LM).\nMilitantes de Europa del Este.</Spanish>
                 <French>Milice livonienne (LM).\nMilitants d'Europe de l'Est.</French>
                 <Chinesesimp>利沃尼亚民兵 (LM)。\n东欧武装分子。</Chinesesimp>
                 <Turkish>Livonya Milisleri (LM).\nDoğu Avrupalı milisler.</Turkish>
@@ -408,6 +458,7 @@
                 <Russian>Тура.\nОдно из многих военизированных племен пустыни Сефрави, почти как знаменитые туранские рейдеры.</Russian>
                 <Chinesesimp>图拉。\n塞夫拉维沙漠的众多军事化部落之一，几乎与著名的图拉尼海盗一样。</Chinesesimp>
                 <Korean>투라.\n세프라위 사막의 군사화된 많은 부족들 중 하나로, 유명한 투란 레이더스와 거의 유사합니다.</Korean>
+                <Spanish>Tura.\nUna de las muchas tribus militarizadas del desierto sefrawí, casi como los famosos Turanic Raiders.</Spanish>
                 <French>Tura.\nl'une des nombreuses tribus militarisées du désert de Sefrawi, à l'image des célèbres Turanic Raiders.</French>
                 <Turkish>Tura.\nSefrawi Çölü'ndeki pek çok askerileşmiş kabileden biri; neredeyse meşhur Turan Akıncıları gibi.</Turkish>
             </Key>
@@ -416,6 +467,7 @@
                 <Russian>Тройственный оборонный пакт между Австралией, Объединённым Королевством и США (AUKUS).\nОчень разносторонняя фракция с лучшим вооружением из трех миров.</Russian>
                 <Chinesesimp>澳大利亚、英国、美国（AUKUS）的三边安全条约。\n非常全面的派别，拥有三个世界最好的军事装备。</Chinesesimp>
                 <Korean>호주, 영국, 미국 간의 3자 안보 협정(AUKUS).\n3세계 최고의 군사 장비를 가진 매우 다재다능한 팩션입니다.</Korean>
+                <Spanish>Pacto de seguridad trilateral entre Australia, Reino Unido y Estados Unidos (AUKUS).\nFacción muy versátil con el mejor equipo militar de tres mundos.</Spanish>
                 <French>Un pacte de sécurité trilatéral entre l'Australie, le Royaume-Uni et les États-Unis (AUKUS).\nUne faction très polyvalente dotée des meilleurs équipements militaires des trois mondes.</French>
                 <Turkish>Avustralya, Birleşik Krallık ve Amerika Birleşik Devletleri arasında üçlü bir güvenlik paktı (AUKUS).\nÜç farklı dünyanın en iyi askeri teçhizatına sahip, oldukça çok yönlü bir taraf.</Turkish>
             </Key>
@@ -424,6 +476,7 @@
                 <Russian>ВС России.\nСовременная номеклатура вооружений и техники странным образом синергирует с архаичной экипировкой времён середины 20 века.</Russian>
                 <Chinesesimp>俄罗斯武装力量。武器和车辆的现代命名法奇怪地与20世纪中期的古旧装备协同起来。</Chinesesimp>
                 <Korean>러시아군.\n무기와 차량의 현대 명명법은 이상하게도 20세기 중반의 구식 장비와 시너지 효과를 냅니다.</Korean>
+                <Spanish>Fuerzas Armadas de Rusia.\nSus armas y vehículos modernos encajan de forma curiosa con equipo arcaico de mediados del siglo XX.</Spanish>
                 <French>Forces armées de la Russie.\nLa nomenclature moderne des armes et des véhicules s'accorde étrangement avec l'équipement archaïque du milieu du 20e siècle.</French>
                 <Turkish>Rusya Silahlı Kuvvetleri.\nModern silahlar ve araçlar, 20. yüzyıl ortalarından kalma arkaik teçhizatla tuhaf bir sinerji oluşturuyor.</Turkish>
             </Key>
@@ -432,6 +485,7 @@
                 <Russian>Народно-Освободительная Армия (PLA).\nВысокоорганизованная сила с интересными нововведениями в области маскировки и стрелкового оружия.</Russian>
                 <Chinesesimp>人民解放军（PLA）。\n组织严密的军事力量，在伪装和小型武器方面有有趣的创新。</Chinesesimp>
                 <Korean>인민해방군(PLA).\n위장무늬와 소형 화기에 대한 흥미로운 혁신을 가진 고도로 조직화된 군대입니다.</Korean>
+                <Spanish>Ejército Popular de Liberación (PLA).\nFuerza militar muy organizada con innovaciones interesantes en camuflaje y armas ligeras.</Spanish>
                 <French>Armée populaire de libération (APL).\nForce militaire très organisée qui présente des innovations intéressantes en matière de camouflage et d'armes légères.</French>
                 <Turkish>Halk Kurtuluş Ordusu (PLA).\nKamuflaj ve hafif silahlar konusunda ilginç inovasyonlara sahip, oldukça organize bir askeri güç.</Turkish>
             </Key>
@@ -440,6 +494,7 @@
                 <Russian>Армия свободы и независимости (FIA).\n Гаранды и М3.</Russian>
                 <Chinesesimp>自由独立军（FIA）。\n加兰德和黄油枪。</Chinesesimp>
                 <Korean>자유독립군(FIA).\n개런드와 그리스 건.</Korean>
+                <Spanish>Ejército de Libertad e Independencia (FIA).\nGarands y subfusiles M3.</Spanish>
                 <French>Armée de la liberté et de l'indépendance (FIA).\nGarands et grease guns.</French>
                 <Turkish>Özgürlük ve Bağımsızlık Ordusu (FIA).\nGarandlar ve "grease gun"lar.</Turkish>
             </Key>
@@ -448,6 +503,7 @@
                 <Russian>Армия свободы и независимости (FIA).\n Гаранды, Ли Энфилды и немного масла...</Russian>
                 <Chinesesimp>自由独立军（FIA）。\n加兰德, 李·恩菲尔德还有一些黄油枪</Chinesesimp>
                 <Korean>자유독립군(FIA).\n개런드, 리-엔필드와 약간의 그리스 건...</Korean>
+                <Spanish>Ejército de Libertad e Independencia (FIA).\nGarands, Lee Enfields y un poco de grasa...</Spanish>
                 <French>Armée de la liberté et de l'indépendance (FIA).\nGarands, Lee Enfields et un peu de graisse...</French>
                 <Turkish>Özgürlük ve Bağımsızlık Ordusu (FIA).\nGarandlar, Lee Enfieldlar ve birazcık silah yağı...</Turkish>
             </Key>
@@ -456,6 +512,7 @@
                 <Russian>Национальная Партия (NAPA).\nКто-то должен проверить, насколько далеко можно зайти, используя лишь Панцерфаусты и старые гранаты с рукоятями.</Russian>
                 <Chinesesimp>国家党（NAPA）。\n有人要测试一下，用铁拳和木柄手榴弹能走多远。</Chinesesimp>
                 <Korean>체르나루스 국민당(NAPA).\n누군가는 판처파우스트와 막대형 수류탄으로 얼마나 멀리 갈 수 있는지 시험해야 합니다.</Korean>
+                <Spanish>Partido Nacional (NAPA).\nAlguien tiene que comprobar hasta dónde se puede llegar con Panzerfausts y granadas de mango.</Spanish>
                 <French>National Party (NAPA).\nQuelqu'un doit tester la distance que l'on peut parcourir avec des Panzerfausts et des grenades à main.</French>
                 <Turkish>Ulusal Parti (NAPA).\nPanzerfaustlar ve el bombalarıyla ne kadar ileri gidilebileceğini birilerinin test etmesi gerekiyor.</Turkish>
             </Key>
@@ -464,6 +521,7 @@
                 <Russian>Коммунистическое ополчение Чернаруси (CCM).\nППШ, винтовки Мосина и множество товарищей.</Russian>
                 <Chinesesimp>黑俄罗斯共产主义民兵（CCM）。\n波波沙，莫辛纳甘还有很多同志们。</Chinesesimp>
                 <Korean>체르나루스 공산주의 민병대(CCM).\nPPSh, 모신나강, 그리고 많은 동지들.</Korean>
+                <Spanish>Milicia Comunista de Chernarus (CCM).\nPPSh, Mosin-Nagant y muchos camaradas.</Spanish>
                 <French>Milice communiste tchernozienne (CCM).\nPPsH, Mosin-Nagants et beaucoup de camarades.</French>
                 <Turkish>Chernarus Komünist Milisleri (CCM).\nPPSh'ler, Mosin-Nagantlar ve pek çok yoldaş.</Turkish>
             </Key>
@@ -472,6 +530,7 @@
                 <Russian>Ополчение Такистана (TKM).\nПришло время откапывать Ли Энфилд.</Russian>
                 <Chinesesimp>塔克斯坦民兵组织 (TKM)。\n是时候把埋在后院的李·恩菲尔德挖出来了。</Chinesesimp>
                 <Korean>타키스탄 민병대(TKM).\n뒷마당에 있는 리-엔필드를 파낼 시간이 왔습니다.</Korean>
+                <Spanish>Milicia de Takistán (TKM).\nHa llegado el momento de desenterrar el Lee Enfield del patio trasero.</Spanish>
                 <French>Milice du Takistan (TKM).\nIl est temps de ressortir la Lee Enfield du jardin.</French>
                 <Turkish>Takistan Milisleri (TKM).\nArka bahçeye gömülü Lee Enfield'ı çıkarmanın vakti geldi.</Turkish>
             </Key>
@@ -480,6 +539,7 @@
                 <Russian>Армия США.\nАгрессивная, ошеломляющая сила.</Russian>
                 <Chinesesimp>美国陆军\侵略性的、压倒性的力量。</Chinesesimp>
                 <Korean>미 육군.\n공격적이고 압도적인 군사력.</Korean>
+                <Spanish>Ejército de los Estados Unidos.\nFuerza agresiva y abrumadora.</Spanish>
                 <French>Armée des États-Unis.\nAgressif, avec une force écrasante.</French>
                 <Turkish>Amerika Birleşik Devletleri Ordusu.\nSaldırgan ve ezici bir güç.</Turkish>
             </Key>
@@ -488,6 +548,7 @@
                 <Russian>Морская пехота США.\nОчень мобильная, адаптирующаяся к любым обстоятельствам на постоянно меняющемся поле боя, но в то же время очень специализированная фракция.</Russian>
                 <Chinesesimp>美国海军陆战队\n机动性强，能适应不断变化的战场，但又是非常专业的派系。</Chinesesimp>
                 <Korean>미 해병대.\n기동성이 뛰어나고 끊임없이 변화하는 전장에 적응할 수 있는 매우 전문화된 팩션입니다.</Korean>
+                <Spanish>Cuerpo de Marines de los Estados Unidos.\nFacción muy móvil, adaptable a un campo de batalla siempre cambiante y, aun así, muy especializada.</Spanish>
                 <French>United States Marine Corps.\nHaute mobilité, adaptabilité à un champ de bataille en constante évolution, mais faction très spécialisée.</French>
                 <Turkish>Amerika Birleşik Devletleri Deniz Piyade Kolordusu.\nYüksek hareket kabiliyetine sahip, sürekli değişen savaş alanına uyum sağlayabilen ancak bir o kadar da uzmanlaşmış bir taraf.</Turkish>
             </Key>
@@ -496,6 +557,7 @@
                 <Russian>Силы Обороны Чернаруси.\nЭта фракция несет советское наследие в своих вооруженных силах, они до сих пор используют много немодернизированного, но всё ещё эффективного восточноевропейского оружия 20-го века.</Russian>
                 <Chinesesimp>黑俄罗斯国防军。这个派别的武装部队继承了苏联的遗产，他们仍然使用20世纪的许多不现代化但仍然有效的东欧武器装备。</Chinesesimp>
                 <Korean>체르나루스 방위군(CDF).\n이 팩션은 소련 시절의 유산을 그대로 간직하고 있으며, 비록 현대화되진 않았지만 여전히 효과적인 20세기의 동유럽 무기를 많이 사용합니다.</Korean>
+                <Spanish>Fuerzas de Defensa de Chernarus.\nEsta facción arrastra el legado soviético en sus fuerzas armadas; siguen usando mucho armamento de Europa del Este del siglo XX sin modernizar, pero todavía efectivo.</Spanish>
                 <French>Forces de défense tchernarussiennes.\nCette faction porte l'héritage soviétique dans ses forces armées, elle utilise encore beaucoup d'armes d'Europe de l'Est du 20ème siècle, non modernisées mais toujours efficaces.</French>
                 <Turkish>Chernarus Savunma Güçleri.\nSilahlı kuvvetlerinde Sovyet mirasını taşıyan bu taraf; hâlâ 20. yüzyıldan kalma, modernize edilmemiş ancak yine de etkili olan pek çok Doğu Avrupa silahını kullanıyor.</Turkish>
             </Key>
@@ -504,6 +566,7 @@
                 <Russian>Силы Обороны Ливонии.\nБывшая страна Варшавского договора находится на пути к интеграции с НАТО, таким образом переняв много западного оборудования, сохраняя при этом старое советское вооружение.</Russian>
                 <Chinesesimp>利沃尼亚国防军。\n前华沙条约国，正走在北约一体化的道路上，采用了大量的西方装备，同时仍然保持着旧的苏联武器装备。</Chinesesimp>
                 <Korean>리보니아 방위군(LDF).\n옛 바르샤바 조약기구인 이 국가는 NATO와의 통합으로 많은 서방 장비를 채택하면서도 오래된 소련제 무기를 운용하고 있습니다.</Korean>
+                <Spanish>Fuerzas de Defensa de Livonia.\nAntiguo país del Pacto de Varsovia en su camino de integración en la OTAN, por lo que adopta mucho equipo occidental sin dejar de mantener armamento soviético más antiguo.</Spanish>
                 <French>Forces de défense de Livonie.\nAncien pays du Pacte de Varsovie sur la voie de l'intégration à l'OTAN, adoptant ainsi de nombreux équipements occidentaux tout en conservant l'ancien armement soviétique.</French>
                 <Turkish>Livonya Savunma Güçleri.\nNATO ile entegrasyon yolunda olan eski bir Varşova Paktı ülkesi; bu nedenle bir yandan eski Sovyet silahlarını elinde tutarken bir yandan da birçok Batı teçhizatını bünyesine katıyor.</Turkish>
             </Key>
@@ -512,6 +575,7 @@
                 <Russian>Силы Обороны Островов Горизонта (HIDF).\nВооруженные силы Республики Островов Горизонта, использующие множество бывшего в употреблении вооружения и снаряжения стран НАТО.</Russian>
                 <Chinesesimp>地平线群岛国防军（HIDF）。\n地平线群岛共和国的武装力量，他们使用大量的北约剩余装备。</Chinesesimp>
                 <Korean>호라이즌 제도 방위군(HIDF).\n호라이즌 제도 공화국의 군대이며, 많은 여분의 NATO 장비를 사용합니다.</Korean>
+                <Spanish>Fuerza de Defensa de las Islas Horizonte (HIDF).\nFuerzas armadas de la República de las Islas Horizonte; usan mucho excedente de material de la OTAN.</Spanish>
                 <French>Force de défense des îles Horizon (HIDF).\nLes forces armées de la République des îles Horizon utilisent de nombreux équipements excédentaires de l'OTAN.</French>
                 <Turkish>Horizon Adaları Savunma Gücü (HIDF).\nHorizon Adaları Cumhuriyeti'nin silahlı kuvvetleri; çok sayıda ihtiyaç fazlası NATO teçhizatı kullanıyorlar.</Turkish>
             </Key>
@@ -520,6 +584,7 @@
                 <Russian>Remnants.\nRemnants - остатки сил AAF спонсируемые CSAT, желающие вернуть контроль над островами.</Russian>
                 <Chinesesimp>残余部队。\n 由 CSAT 赞助的 AAF 部队残余部队，他们想要重新控制这些岛屿。</Chinesesimp>
                 <Korean>잔당.\nCSAT이 배후에 있는 AAF군의 잔당으로, 섬에 대한 통치권을 되찾으려고 합니다.</Korean>
+                <Spanish>Remanentes.\nRestos de las fuerzas de las AAF patrocinados por CSAT, que quieren recuperar el control de las islas.</Spanish>
                 <Turkish>Kalıntılar.\nAdaların kontrolünü yeniden ele geçirmek isteyen ve CSAT tarafından desteklenen AAF kuvvetlerinin kalıntıları.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_LRI">
@@ -527,6 +592,7 @@
                 <Russian>Инициатива местного сопротивления.\nСопротивление, возглавляемое местными гражданами, использующее военные излишки и базовое снаряжение с eBay.</Russian>
                 <Chinesesimp>当地抵抗倡议。\n由当地平民领导的抵抗运动，使用军用剩余物资和从 ebay 上购买的基本装备。</Chinesesimp>
                 <Korean>현지 저항 결의.\n지역 시민들이 주도하는 저항 세력으로, 군수품과 이베이에서 구입한 기본 장비를 활용합니다.</Korean>
+                <Spanish>Iniciativa de Resistencia Local.\nUna resistencia liderada por civiles locales, que usa excedentes militares y equipo básico comprado por internet.</Spanish>
                 <Turkish>Yerel Direniş Girişimi.\nYerel siviller tarafından yönetilen; askeri ihtiyaç fazlası malzemeler ve eBay'den alınma temel ekipmanlar kullanan bir direniş.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_exegermenos">
@@ -534,6 +600,7 @@
                 <Russian>Exegerménos.\nСтандартная вражеская повстанческая фракция.</Russian>
                 <Chinesesimp>Exegerménos.\n标准的敌方游击队派系。</Chinesesimp>
                 <Korean>엑세게르메노스.\n표준 적군 게릴라 팩션입니다.</Korean>
+                <Spanish>Exegerménos.\nFacción guerrillera enemiga estándar.</Spanish>
                 <French>Exegerménos.\nFaction de guérilla ennemie standard.</French>
                 <Turkish>Exegerménos.\nStandart düşman gerilla grubu.</Turkish>
             </Key>
@@ -542,6 +609,7 @@
                 <Russian>Separatists.\nСтандартная вражеская повстанческая фракция.</Russian>
                 <Chinesesimp>分离主义者。\n标准敌方游击派系。</Chinesesimp>
                 <Korean>분리주의자.\n평범한 적 게릴라 팩션입니다.</Korean>
+                <Spanish>Separatistas.\nFacción guerrillera enemiga estándar.</Spanish>
                 <Turkish>Ayrılıkçılar.\nStandart düşman gerilla grubu.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_le">
@@ -549,6 +617,7 @@
                 <Russian>L'Ensemble.\nОдна из бывших ветвей Синдиката.</Russian>
                 <Chinesesimp>L'Ensemble.\n前辛迪加分支。</Chinesesimp>
                 <Korean>L'Ensemble.\n전 신디캣의 분파입니다.</Korean>
+                <Spanish>L'Ensemble.\nAntigua rama de Syndikat.</Spanish>
                 <French>L'Ensemble.\nAncienne branche du Syndikat.</French>
                 <Turkish>L'Ensemble.\nEski Syndikat kolu.</Turkish>
             </Key>
@@ -557,6 +626,7 @@
                 <Russian>ЧДКЗ.\nВосточноевропейская военизированная группировка людей с разнообразным прошлым - от преступников и дезертиров до высокопрофессиональных наёмников и солдат.</Russian>
                 <Chinesesimp>CHDKZ.\n东欧准军事团体，由具有不同背景的人组成——从罪犯和叛逃者到高度专业的雇佣兵和士兵。</Chinesesimp>
                 <Korean>체다키(ChDKZ).\n범죄자와 탈주자에서부터 고도로 훈련된 전문 용병과 군인에 이르기까지 다양한 배경을 가진 동유럽계 준군사조직입니다.</Korean>
+                <Spanish>CHDKZ.\nGrupo paramilitar de Europa del Este formado por gente de procedencias muy variadas: desde criminales y desertores hasta mercenarios y soldados altamente profesionales.</Spanish>
                 <French>CHDKZ.\nGroupe paramilitaire d'Europe de l'Est composé de personnes aux antécédents variés - des criminels et transfuges aux mercenaires et soldats hautement professionnels.</French>
                 <Turkish>CHDKZ.\nSuçlulardan firarilere, yüksek düzeyde profesyonel paralı askerlerden askerlere kadar pek çok farklı geçmişe sahip kişiden oluşan Doğu Avrupalı paramiliter grup.</Turkish>
             </Key>
@@ -565,6 +635,7 @@
                 <Russian>ION Services.\nION Services, Incorporated - это частная военная компания с штаб-квартирой в США.</Russian>
                 <Chinesesimp>ION Services.\nION Services，公司是一家总部设在美国的私营军事公司</Chinesesimp>
                 <Korean>ION 서비스(ION).\nION 서비스 유한회사는 미국에 본사를 두고 있는 민간군사기업입니다.</Korean>
+                <Spanish>ION Services.\nION Services, Incorporated es una empresa militar privada con sede en EE. UU.</Spanish>
                 <French>ION Services.\nION Services, Incorporated est une société militaire privée basée aux États-Unis.</French>
                 <Turkish>ION Services.\nION Services, Incorporated; ABD merkezli bir özel askeri şirkettir.</Turkish>
             </Key>
@@ -573,6 +644,7 @@
                 <Russian>Повстанцы Такистана (TI).\nЧлены различных военизированных движений на Ближнем Востоке.</Russian>
                 <Chinesesimp>塔吉克斯坦叛乱分子（TI）。\n整个中东地区各种激进运动的成员。</Chinesesimp>
                 <Korean>타키스탄 반군(TI).\n중동 전역에 걸쳐 있는 다양한 전투 행동을 하는 구성원들입니다.</Korean>
+                <Spanish>Insurgentes de Takistán (TI).\nMiembros de diversos movimientos militantes de Oriente Medio.</Spanish>
                 <French>Insurgés du Takistan (TI).\nMembres de divers mouvements militants au Moyen-Orient.</French>
                 <Turkish>Takistan Direnişçileri (TI).\nOrtadoğu genelindeki çeşitli militan hareketlerin üyeleri.</Turkish>
             </Key>
@@ -581,6 +653,7 @@
                 <Russian>Командование по оказанию военной помощи Вьетнаму (MACV).\nВоенная группировка США во Вьетнаме.</Russian>
                 <Chinesesimp>美国越南军事援助司令部（MACV）。\n美国在越南的军事集团。</Chinesesimp>
                 <Korean>미 군사지원 사령부(MACV).\n베트남에 있는 미군입니다.</Korean>
+                <Spanish>Mando de Asistencia Militar de EE. UU. en Vietnam (MACV).\nGrupo militar estadounidense en Vietnam.</Spanish>
                 <French>Commandement de l'assistance militaire américaine au Viêt Nam (MACV).\nGroupe militaire américain au Viêt Nam.</French>
                 <Turkish>ABD Vietnam Askeri Yardım Komutanlığı (MACV).\nVietnam'daki ABD askeri grubu.</Turkish>
             </Key>
@@ -589,6 +662,7 @@
                 <Russian>Армия Республики Вьетнам (ARVN).\nВооруженные силы Южного Вьетнама.</Russian>
                 <Chinesesimp>越南共和国军队（ARVN）。\n南越军事力量。</Chinesesimp>
                 <Korean>베트남 공화국군(ARVN).\n남베트남군입니다.</Korean>
+                <Spanish>Ejército de la República de Vietnam (ARVN).\nFuerza militar de Vietnam del Sur.</Spanish>
                 <French>Armée de la République du Viêt Nam (ARVN).\nForce militaire du Sud Viêt Nam.</French>
                 <Turkish>Vietnam Cumhuriyeti Ordusu (ARVN).\nGüney Vietnam askeri gücü.</Turkish>
             </Key>
@@ -597,6 +671,7 @@
                 <Russian>Народная Армия Вьетнама (PAVN).\nВооруженные силы Северного Вьетнама.</Russian>
                 <Chinesesimp>越南人民军（PAVN）。\n北越的军事力量。</Chinesesimp>
                 <Korean>베트남 인민군(PAVN).\n북베트남군입니다.</Korean>
+                <Spanish>Ejército Popular de Vietnam (PAVN).\nFuerza militar de Vietnam del Norte.</Spanish>
                 <French>Armée populaire du Viêt Nam (PAVN).\nForce militaire du Nord Viêt Nam.</French>
                 <Turkish>Vietnam Halk Ordusu (PAVN).\nKuzey Vietnam askeri gücü.</Turkish>
             </Key>
@@ -605,6 +680,7 @@
                 <Russian>Вьетконг (VC).\nВооруженная организация коммунистов Вьетнама.</Russian>
                 <Chinesesimp>越共（Viet Cong）。\n越南的共产主义武装组织。</Chinesesimp>
                 <Korean>베트콩(VC).\n베트남의 무장한 공산주의자 조직입니다.</Korean>
+                <Spanish>Vietcong (VC).\nOrganización comunista armada vietnamita.</Spanish>
                 <French>Viêt-cong (VC).\nOrganisation communiste armée vietnamienne.</French>
                 <Turkish>Viet Kong (VC).\nVietnamlı silahlı komünist örgüt.</Turkish>
             </Key>
@@ -613,6 +689,7 @@
                 <Russian>Ополчение Вьетнама (VM).\nОбъединение людей с общей целью - освободить свою страну от интервентов.</Russian>
                 <Chinesesimp>越南民兵（VM）。\n一群有共同目标的人——从干涉者手中解放他们的国家。</Chinesesimp>
                 <Korean>베트남 민병대(VM).\n공동의 목표를 가진 많은 사람들이며, 개입주의자들로부터 그들의 나라를 해방시킵니다.</Korean>
+                <Spanish>Milicia de Vietnam (VM).\nUn grupo de personas con un objetivo común: liberar su país de los intervencionistas.</Spanish>
                 <French>Milice vietnamienne (VM).\nUn groupe de personnes ayant un objectif commun : libérer leur pays des interventionnistes.</French>
                 <Turkish>Vietnam Milisleri (VM).\nÜlkelerini müdahalecilerden kurtarmak gibi ortak bir amacı olan bir grup insan.</Turkish>
             </Key>
@@ -621,6 +698,7 @@
                 <Russian>Вьетнамцы.</Russian>
                 <Chinesesimp>越南平民。</Chinesesimp>
                 <Korean>베트남 시민입니다.</Korean>
+                <Spanish>Civiles vietnamitas.</Spanish>
                 <French>Civils vietnamiens.</French>
                 <Turkish>Vietnamlı siviller.</Turkish>
             </Key>
@@ -629,6 +707,7 @@
                 <Russian>Патет Лао.\nПолитическое движение и организация из Лаоса.</Russian>
                 <Chinesesimp>巴特寮。\来自老挝的激进运动和组织。</Chinesesimp>
                 <Korean>파테트라오.\n라오스의 정치 활동 조직입니다.</Korean>
+                <Spanish>Pathet Lao.\nMovimiento y organización política de Laos.</Spanish>
                 <French>Pathet Lao.\nMouvement et organisation politique du Laos.</French>
                 <Turkish>Pathet Lao.\nLaos menşeli siyasi hareket ve organizasyon.</Turkish>
             </Key>
@@ -637,6 +716,7 @@
                 <Russian>Хмонгская тайная армия.\nПоддерживаемая ЦРУ, в основном хмонгская, партизанская сила.</Russian>
                 <Chinesesimp>苗族秘密军。\n由CIA支持，主要是苗族的游击队。</Chinesesimp>
                 <Korean>몽족 비밀군.\nCIA 지원을 받으며, 주로 몽족으로 구성된 게릴라군입니다.</Korean>
+                <Spanish>Ejército Secreto Hmong.\nFuerza guerrillera respaldada por la CIA, formada en su mayoría por hmong.</Spanish>
                 <French>Armée secrète Hmong.\nForce de guérilla soutenue par la CIA, principalement composée de Hmong.</French>
                 <Turkish>Hmong Gizli Ordusu.\nBüyük çoğunluğu Hmonglardan oluşan, CIA destekli gerilla gücü.</Turkish>
             </Key>
@@ -645,6 +725,7 @@
                 <Russian>Рабоче-крестьянская красная армия (РККА).\nВся мощь Советского Союза.\nИспользование этой фракции включает режим Холодной Войны (будет использоваться только оружие и техника, которые подходят по временному периоду).</Russian>
                 <Chinesesimp>工农红军（红军）。\n苏联的所有力量。\n这个派别的使用将激活冷战模式（将只使用大致符合时间线的车辆和武器）。</Chinesesimp>
                 <Korean>노동자와 농민의 붉은 군대(붉은 군대).\n소련의 모든 힘.\n이 팩션을 사용하면 냉전 모드가 활성화됩니다(해당 시간대와 대략 맞는 차량과 무기만 사용됩니다).</Korean>
+                <Spanish>Ejército Rojo de Obreros y Campesinos (Ejército Rojo).\nTodo el poderío de la Unión Soviética.\nUsar esta facción activará el modo Guerra Fría (solo se usarán vehículos y armas que encajen aproximadamente en esa época.</Spanish>
                 <French>L'Armée rouge des travailleurs et des paysans (Armée rouge).Toute la puissance de l'Union soviétique.L'utilisation de cette faction activera le mode Guerre froide (il n'y aura que l'utilisation de véhicules et d'armes qui correspondent à peu près à la chronologie).</French>
                 <Turkish>İşçi ve Köylü Kızıl Ordusu (Kızıl Ordu).\nSovyetler Birliği'nin tüm ihtişamı ve gücü.\nBu fraksiyonun seçilmesi Soğuk Savaş modunu etkinleştirecektir (yalnızca döneme kabaca uygun araç ve silahlar kullanılacaktır).</Turkish>
             </Key>
@@ -653,23 +734,28 @@
                 <Russian>Армия США.\nАгрессивная, ошеломляющая сила.\nИспользование этой фракции включает режим Холодной Войны (будет использоваться только оружие и техника, которые подходят по временному периоду).</Russian>
                 <Chinesesimp>美国陆军。\n侵略性的，压倒性的力量。\n使用这个派别将激活冷战模式（将只使用大致符合时间线的车辆和武器。）</Chinesesimp>
                 <Korean>미 육군.\n공격적이고 압도적인 힘.\n이 팩션을 사용하면 냉전 모드가 활성화됩니다(해당 시간대와 대략 맞는 차량과 무기만 사용됩니다).</Korean>
+                <Spanish>Ejército de los Estados Unidos.\nFuerza agresiva y abrumadora.\nUsar esta facción activará el modo Guerra Fría (solo se usarán vehículos y armas que encajen aproximadamente en esa época.</Spanish>
                 <French>United States Army.\nForce agressive et écrasante.\nL'utilisation de cette faction activera le mode Guerre froide (il n'y aura que l'utilisation de véhicules et d'armes qui correspondent à peu près à la chronologie).</French>
                 <Turkish>Amerika Birleşik Devletleri Ordusu.\nAgresif ve ezici bir güç.\nBu fraksiyonun seçilmesi Soğuk Savaş modunu etkinleştirecektir (yalnızca döneme kabaca uygun araç ve silahlar kullanılacaktır).</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_RAV">
                 <Original>A relatively small military force composed of mercenaries from Russian territory. Their main mission is to defend cargo ships from FIA attacks, but according to some AAN investigations, the Altian government commissioned them for other reasons that are not yet clear. The Raven group has several armored and non-armored vehicles,static defensive weapons and a small air force consisting of helicopters and drones.</Original>
+                <Spanish>Una fuerza militar relativamente pequeña compuesta por mercenarios de territorio ruso. Su misión principal es defender los buques de carga de los ataques del FIA, pero según algunas investigaciones de AAN, el gobierno altiano los contrató por otros motivos que aún no están claros. El grupo Raven dispone de varios vehículos blindados y no blindados, armas defensivas estáticas y una pequeña fuerza aérea formada por helicópteros y drones.</Spanish>
                 <Turkish>Rus topraklarından gelen paralı askerlerden oluşan, nispeten küçük bir askeri güç. Ana görevleri kargo gemilerini FIA saldırılarına karşı korumaktır; ancak bazı AAN araştırmalarına göre Altis hükümeti onları henüz netleşmemiş başka nedenlerle görevlendirmiştir. Raven grubu; çeşitli zırhlı ve zırhsız araçlara, sabit savunma silahlarına ve helikopterler ile dronlardan oluşan küçük bir hava gücüne sahiptir.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_FIA">
                 <Original>From simple street criminals to arms smugglers, the FIA ​​is characterized by its ability to gather under its influence all those who do not support the military government. Although composed mainly of civilians and some AAF deserters, this paramilitary force can rely on foreign-funded weapons and rudimentary and captured enemy vehicles.</Original>
+                <Spanish>Desde simples criminales callejeros hasta contrabandistas de armas, el FIA se caracteriza por su capacidad de reunir bajo su influencia a todos los que no apoyan al gobierno militar. Aunque está compuesto principalmente por civiles y algunos desertores de las AAF, esta fuerza paramilitar puede contar con armas financiadas desde el extranjero y con vehículos rudimentarios o capturados al enemigo.</Spanish>
                 <Turkish>Basit sokak suçlularından silah kaçakçılarına kadar FIA, askeri hükümeti desteklemeyen herkesi kendi etkisi altında toplama yeteneğiyle tanınır. Esas olarak sivillerden ve bazı AAF firarilerinden oluşsa da, bu paramiliter güç; dış destekli silahlara, derme çatma ve ele geçirilmiş düşman araçlarına güvenmektedir.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_AAF">
                 <Original>After the coup, the AAF underwent several changes and received several funds for equipment modernization, with particular attention also to the navy which is responsible for cutting the FIA ​​supply lines. Thanks to Akhanteros, the AAF can count on various vehicles and weapons (some of their own production under license).</Original>
+                <Spanish>Tras el golpe de Estado, las AAF sufrieron varios cambios y recibieron diversos fondos para modernizar su equipo, con especial atención también a la marina, encargada de cortar las líneas de suministro del FIA. Gracias a Akhanteros, las AAF pueden contar con varios vehículos y armas (algunos de producción propia bajo licencia).</Spanish>
                 <Turkish>Darbenin ardından AAF çeşitli değişiklikler geçirdi ve ekipman modernizasyonu için ciddi fonlar aldı; ayrıca FIA ikmal hatlarını kesmekten sorumlu olan donanmaya da özel bir önem verildi. Akhanteros sayesinde AAF, çeşitli araçlara ve silahlara (bazıları lisans altında kendi üretimleri olan) güvenebilir.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_CUP_ACW_TFAegis">
                 <Original>Aegis is a task force composed of US military personnel; their goal is to support the government in the fight against the FIA ​​and to protect the civilian population. The TFA has several light armored vehicles and a small air force, their intervention in the conflict is limited by the Altian government.</Original>
+                <Spanish>Aegis es una fuerza de tarea compuesta por personal militar estadounidense; su objetivo es apoyar al gobierno en la lucha contra el FIA y proteger a la población civil. La TFA dispone de varios vehículos ligeros blindados y una pequeña fuerza aérea; su intervención en el conflicto está limitada por el gobierno altiano.</Spanish>
                 <Turkish>Aegis, ABD askeri personelinden oluşan bir görev gücüdür; amaçları FIA'ya karşı mücadelede hükümeti desteklemek ve sivil nüfusu korumaktır. TFA'nın çeşitli hafif zırhlı araçları ve küçük bir hava gücü vardır, ancak çatışmaya müdahaleleri Altis hükümeti tarafından sınırlandırılmıştır.</Turkish>
             </Key>
         </Container>
@@ -679,6 +765,7 @@
                 <Russian>Перепаковка магазинов инициализирована.</Russian>
                 <Chinesesimp>Mag Repack 初始化</Chinesesimp>
                 <Korean>탄약 재포장 초기화됨.</Korean>
+                <Spanish>Mag Repack inicializado.</Spanish>
                 <French>Repack des chargeurs en cours.</French>
                 <Turkish>Şarjör Birleştirme Başlatıldı.</Turkish>
             </Key>
@@ -687,6 +774,7 @@
                 <Russian>Связка клавиш: </Russian>
                 <Chinesesimp>按键绑定: </Chinesesimp>
                 <Korean>키 설정: </Korean>
+                <Spanish>Atajo de teclado: </Spanish>
                 <French>Raccourcis clavier: </French>
                 <Turkish>Tuş Ataması: </Turkish>
             </Key>
@@ -695,6 +783,7 @@
                 <Russian>Mag Repack: об аддоне</Russian>
                 <Chinesesimp>Mag Repack：关于</Chinesesimp>
                 <Korean>탄약 재포장: 정보</Korean>
+                <Spanish>Mag Repack: Acerca de</Spanish>
                 <French>Repack des chargeurs: À propos</French>
                 <Turkish>Şarjör Birleştirme: Hakkında</Turkish>
             </Key>
@@ -703,6 +792,7 @@
                 <Russian>П'нятно</Russian>
                 <Chinesesimp>Mmkay</Chinesesimp>
                 <Korean>Mmkay</Korean>
+                <Spanish>Vale</Spanish>
                 <French>Mm okay</French>
                 <Turkish>Pekala</Turkish>
             </Key>
@@ -711,6 +801,7 @@
                 <Russian>Автор: Outlawled</Russian>
                 <Chinesesimp>作者:Outlawled</Chinesesimp>
                 <Korean>제작자: Outlawled</Korean>
+                <Spanish>Autor: Outlawled</Spanish>
                 <French>Auteur: Outlawled</French>
                 <Turkish>Yazar: Outlawled</Turkish>
             </Key>
@@ -719,6 +810,7 @@
                 <Russian>Версия:</Russian>
                 <Chinesesimp>版本：</Chinesesimp>
                 <Korean>버전:</Korean>
+                <Spanish>Versión:</Spanish>
                 <French>Version :</French>
                 <Turkish>Sürüm: </Turkish>
             </Key>
@@ -727,6 +819,7 @@
                 <Russian>Обновлено:</Russian>
                 <Chinesesimp>更新：</Chinesesimp>
                 <Korean>업데이트:</Korean>
+                <Spanish>Actualizado:</Spanish>
                 <French>Mise à jour:</French>
                 <Turkish>Güncellendi:</Turkish>
             </Key>
@@ -735,6 +828,7 @@
                 <Russian>Отмена</Russian>
                 <Chinesesimp>取消</Chinesesimp>
                 <Korean>취소</Korean>
+                <Spanish>Cancelar</Spanish>
                 <French>Annuler</French>
                 <Turkish>İptal</Turkish>
             </Key>
@@ -743,6 +837,7 @@
                 <Russian>Применить</Russian>
                 <Chinesesimp>应用</Chinesesimp>
                 <Korean>적용</Korean>
+                <Spanish>Aplicar</Spanish>
                 <French>Appliquer</French>
                 <Turkish>Uygula</Turkish>
             </Key>
@@ -751,6 +846,7 @@
                 <Russian>Назначение клавиш</Russian>
                 <Chinesesimp>按键绑定</Chinesesimp>
                 <Korean>키 설정</Korean>
+                <Spanish>Atajo de teclado</Spanish>
                 <French>Raccourcis clavier</French>
                 <Turkish>Tuş Ataması</Turkish>
             </Key>
@@ -759,6 +855,7 @@
                 <Russian>Модификаторы</Russian>
                 <Chinesesimp>修改</Chinesesimp>
                 <Korean>변경자</Korean>
+                <Spanish>Modificadores</Spanish>
                 <French>Modificateurs</French>
                 <Turkish>Değiştiriciler</Turkish>
             </Key>
@@ -767,6 +864,7 @@
                 <Russian>Mag Repack: назначения клавиш</Russian>
                 <Chinesesimp>Mag Repack: 按键绑定</Chinesesimp>
                 <Korean>탄약 재포장: 키 설정</Korean>
+                <Spanish>Mag Repack: atajos de teclado</Spanish>
                 <French>Repack des chargeurs: Raccourcis clavier</French>
                 <Turkish>Şarjör Birleştirme: Tuş Atamaları</Turkish>
             </Key>
@@ -775,6 +873,7 @@
                 <Russian>Все магазины</Russian>
                 <Chinesesimp>所有弹匣</Chinesesimp>
                 <Korean>모든 탄창</Korean>
+                <Spanish>Todos los cargadores</Spanish>
                 <French>Tous les chargeurs</French>
                 <Turkish>Tüm Şarjörler</Turkish>
             </Key>
@@ -783,6 +882,7 @@
                 <Russian> Источник</Russian>
                 <Chinesesimp> 来源</Chinesesimp>
                 <Korean> 원본</Korean>
+                <Spanish> Origen</Spanish>
                 <French> Source</French>
                 <Turkish> Kaynak</Turkish>
             </Key>
@@ -791,6 +891,7 @@
                 <Russian>Цель </Russian>
                 <Chinesesimp>目标 </Chinesesimp>
                 <Korean>대상 </Korean>
+                <Spanish>Destino </Spanish>
                 <French>Cible </French>
                 <Turkish>Hedef </Turkish>
             </Key>
@@ -799,6 +900,7 @@
                 <Russian>Настройки</Russian>
                 <Chinesesimp>选项</Chinesesimp>
                 <Korean>설정</Korean>
+                <Spanish>Opciones</Spanish>
                 <French>Options</French>
                 <Turkish>Seçenekler</Turkish>
             </Key>
@@ -807,6 +909,7 @@
                 <Russian>НАСТРОЙКИ</Russian>
                 <Chinesesimp>选项</Chinesesimp>
                 <Korean>설정</Korean>
+                <Spanish>OPCIONES</Spanish>
                 <French>OPTIONS</French>
                 <Turkish>SEÇENEKLER</Turkish>
             </Key>
@@ -815,6 +918,7 @@
                 <Russian>Режим отладки</Russian>
                 <Chinesesimp>除错</Chinesesimp>
                 <Korean>디버그</Korean>
+                <Spanish>Depuración</Spanish>
                 <French>Mode de débogage</French>
                 <Turkish>Hata Ayıklama</Turkish>
             </Key>
@@ -823,6 +927,7 @@
                 <Russian>Показать всё</Russian>
                 <Chinesesimp>显示已满</Chinesesimp>
                 <Korean>모두 보이기</Korean>
+                <Spanish>Mostrar llenos</Spanish>
                 <French>Afficher tout</French>
                 <Turkish>Tamamını Göster</Turkish>
             </Key>
@@ -831,6 +936,7 @@
                 <Russian>Сочетание клавиш</Russian>
                 <Chinesesimp>按键绑定</Chinesesimp>
                 <Korean>키 설정</Korean>
+                <Spanish>Atajos de teclado</Spanish>
                 <French>Raccourcis clavier</French>
                 <Turkish>Tuş Atamaları</Turkish>
             </Key>
@@ -839,6 +945,7 @@
                 <Russian>Об аддоне</Russian>
                 <Chinesesimp>关于</Chinesesimp>
                 <Korean>정보</Korean>
+                <Spanish>Acerca de</Spanish>
                 <French>À propos</French>
                 <Turkish>Hakkında</Turkish>
             </Key>
@@ -847,6 +954,7 @@
                 <Russian>Скрыть</Russian>
                 <Chinesesimp>隐藏</Chinesesimp>
                 <Korean>숨기기</Korean>
+                <Spanish>Ocultar</Spanish>
                 <French>Cacher</French>
                 <Turkish>Gizle</Turkish>
             </Key>
@@ -855,6 +963,7 @@
                 <Russian>Назначение клавиш Mag Repack'а было сброшено на </Russian>
                 <Chinesesimp>Mag Repack 按键绑定已重置为 </Chinesesimp>
                 <Korean>탄약 재포장 키 설정이 다음 키로 초기화 되었습니다: </Korean>
+                <Spanish>El atajo de Mag Repack se ha restablecido a </Spanish>
                 <French>Le raccourci clavier de la réorganisation des chargeurs a été réinitialisé</French>
                 <Turkish>Şarjör Birleştirme tuş ataması şuna sıfırlandı: </Turkish>
             </Key>
@@ -863,6 +972,7 @@
                 <Russian>Назначение клавиш Mag Repack'а было обновлено на </Russian>
                 <Chinesesimp>Mag Repack 按键绑定已更新为 </Chinesesimp>
                 <Korean>탄약 재포장 키 설정이 다음 키로 업데이트되었습니다: </Korean>
+                <Spanish>El atajo de Mag Repack se ha actualizado a </Spanish>
                 <French>Le raccourci clavier de la réorganisation des chargeurs a été mis à jour</French>
                 <Turkish>Şarjör Birleştirme tuş ataması şuna güncellendi: </Turkish>
             </Key>
@@ -871,6 +981,7 @@
                 <Russian>Все типы боеприпасов</Russian>
                 <Chinesesimp>所有弹药类型</Chinesesimp>
                 <Korean>모든 탄약 유형</Korean>
+                <Spanish>Todos los tipos de munición</Spanish>
                 <French>Tous les types de munitions</French>
                 <Turkish>Tüm Mühimmat Türleri</Turkish>
             </Key>
@@ -879,6 +990,7 @@
                 <Russian>Все магазины</Russian>
                 <Chinesesimp>所有弹匣</Chinesesimp>
                 <Korean>모든 탄창</Korean>
+                <Spanish>Todos los cargadores</Spanish>
                 <French>Tout les chargeurs</French>
                 <Turkish>Tüm Şarjörler</Turkish>
             </Key>
@@ -887,6 +999,7 @@
                 <Russian>Совместимые магазины</Russian>
                 <Chinesesimp>兼容的弹匣</Chinesesimp>
                 <Korean>호환되는 탄창</Korean>
+                <Spanish>Cargadores compatibles</Spanish>
                 <French>Chargeurs compatible</French>
                 <Turkish>Uyumlu Şarjörler</Turkish>
             </Key>
@@ -895,6 +1008,7 @@
                 <Russian>Неполные магазины</Russian>
                 <Chinesesimp>不满的弹匣</Chinesesimp>
                 <Korean>꽉 차지 않은 탄창</Korean>
+                <Spanish>Cargadores no llenos</Spanish>
                 <French>Magasins non remplis</French>
                 <Turkish>Tam Dolu Olmayan Şarjörler</Turkish>
             </Key>
@@ -903,6 +1017,7 @@
                 <Russian>Совместимые, неполные</Russian>
                 <Chinesesimp>可共用，不满</Chinesesimp>
                 <Korean>호환되고 꽉 차지 않은 탄창</Korean>
+                <Spanish>Compatibles y no llenos</Spanish>
                 <French>Compatible, non complet</French>
                 <Turkish>Uyumlu, Tam Dolu Olmayan</Turkish>
             </Key>
@@ -911,6 +1026,7 @@
                 <Russian>Перепаковка...</Russian>
                 <Chinesesimp>重新打包中...</Chinesesimp>
                 <Korean>재포장 중...</Korean>
+                <Spanish>Reagrupando...</Spanish>
                 <French>Remballage...</French>
                 <Turkish>Birleştiriliyor...</Turkish>
             </Key>
@@ -919,6 +1035,7 @@
                 <Russian>Перепаковка</Russian>
                 <Chinesesimp>重新打包</Chinesesimp>
                 <Korean>재포장 중</Korean>
+                <Spanish>Reagrupando</Spanish>
                 <French>Remballage</French>
                 <Turkish>Birleştir</Turkish>
             </Key>
@@ -927,6 +1044,7 @@
                 <Russian>Цели требуется лента, а не индивидуальные патроны!</Russian>
                 <Chinesesimp>目标需要弹链，而不是单独的子弹！</Chinesesimp>
                 <Korean>대상에게 필요한 것은 개개의 탄환이 아니라 벨트입니다!</Korean>
+                <Spanish>¡El destino requiere una cinta, no balas sueltas!</Spanish>
                 <French>La cible nécessite une rafale, pas de coup par coup !</French>
                 <Turkish>Hedef tekil mermi değil, bir mayon (mermi kemeri) gerektiriyor!</Turkish>
             </Key>
@@ -935,6 +1053,7 @@
                 <Russian>Источник уже определён!</Russian>
                 <Chinesesimp>来源已定义！</Chinesesimp>
                 <Korean>원본이 이미 정의되었습니다!</Korean>
+                <Spanish>¡El origen ya está definido!</Spanish>
                 <French>La source est déjà définie !</French>
                 <Turkish>Kaynak zaten belirlenmiş!</Turkish>
             </Key>
@@ -943,6 +1062,7 @@
                 <Russian>Источник не может быть пустым!</Russian>
                 <Chinesesimp>来源不能为空！</Chinesesimp>
                 <Korean>원본은 비울 수 없습니다!</Korean>
+                <Spanish>¡El origen no puede estar vacío!</Spanish>
                 <French>La source ne peut pas être vide !</French>
                 <Turkish>Kaynak boş olamaz!</Turkish>
             </Key>
@@ -951,6 +1071,7 @@
                 <Russian>Цель уже определена!</Russian>
                 <Chinesesimp>目标准备好了</Chinesesimp>
                 <Korean>대상이 이미 정의되었습니다!</Korean>
+                <Spanish>¡El destino ya está definido!</Spanish>
                 <French>La cible est déjà définie !</French>
                 <Turkish>Hedef zaten belirlenmiş!</Turkish>
             </Key>
@@ -959,6 +1080,7 @@
                 <Russian>Цель не может быть полной!</Russian>
                 <Chinesesimp>目标不能为空！</Chinesesimp>
                 <Korean>대상이 꽉 찰 수 없습니다!</Korean>
+                <Spanish>¡El destino no puede estar lleno!</Spanish>
                 <French>La cible ne peut pas être pleine !</French>
                 <Turkish>Hedef tam dolu olamaz!</Turkish>
             </Key>
@@ -967,6 +1089,7 @@
                 <Russian>Боеприпасы:</Russian>
                 <Chinesesimp>弹药:</Chinesesimp>
                 <Korean>탄약:</Korean>
+                <Spanish>Munición:</Spanish>
                 <French>Munitions :</French>
                 <Turkish>Mühimmat:</Turkish>
             </Key>
@@ -975,6 +1098,7 @@
                 <Russian>Боеприпасы: без изменений</Russian>
                 <Chinesesimp>弹药：无变化</Chinesesimp>
                 <Korean>탄약: 바뀌지 않음</Korean>
+                <Spanish>Munición: sin cambios</Spanish>
                 <French>Munitions : Pas de changement</French>
                 <Turkish>Mühimmat: Değişiklik Yok</Turkish>
             </Key>
@@ -983,6 +1107,7 @@
                 <Russian>Без изменений</Russian>
                 <Chinesesimp>无变化</Chinesesimp>
                 <Korean>바뀌지 않음</Korean>
+                <Spanish>Sin cambios</Spanish>
                 <French>Pas de changement</French>
                 <Turkish>Değişiklik Yok</Turkish>
             </Key>
@@ -993,6 +1118,7 @@
                 <Russian>Прыжок с парашютом</Russian>
                 <Chinesesimp>空投</Chinesesimp>
                 <Korean>공수강하</Korean>
+                <Spanish>Salto en paracaídas</Spanish>
                 <French>Paradrop</French>
                 <Turkish>Paraşütle Atlatma</Turkish>
             </Key>
@@ -1001,6 +1127,7 @@
                 <Russian>Ни один игрок не готов к прыжку. Проверьте, чтобы игроки нажали свитч-кнопку прыжка с парашютом во вкладке игровых опций (клавиша TAB по умолчанию или меню в карте на треноге).</Russian>
                 <Chinesesimp>没有玩家准备好空投。 确保有玩家开启了游戏选项卡中的 空投 开关按钮（TAB 键或地图操作）。</Chinesesimp>
                 <Korean>점프할 준비가 된 플레이어가 없습니다. 플레이어가 게임 옵션 탭에서 공수강하 스위치 버튼을 눌렀는지 확인하십시오.(탭 키 또는 삼각대 행동의 지도).</Korean>
+                <Spanish>No hay jugadores listos para saltar. Asegúrate de que los jugadores han pulsado el botón PARADROP en la pestaña de Opciones de partida (tecla TAB o acción del mapa sobre el trípode).</Spanish>
                 <French>Aucun joueur n'est prêt à sauter. Assurez-vous que les joueurs ont appuyé sur le bouton PARADROP dans l'onglet Options du jeu (touche TAB ou carte sur l'action du trépied).</French>
                 <Turkish>Atlayış için hazır oyuncu yok. Oyuncuların Oyun Seçenekleri sekmesindeki (TAB tuşu veya tripod üzerindeki harita eylemi) PARAŞÜTLE ATLATMA düğmesine bastığından emin olun.</Turkish>
             </Key>
@@ -1009,6 +1136,7 @@
                 <Russian>Игроки, готовящиеся к прыжку, должны быть живы, находиться у штаба и не находиться в технике.</Russian>
                 <Chinesesimp>准备空降的玩家必须活着，而不是在车辆中，并且待在总部。</Chinesesimp>
                 <Korean>공수강하할 준비가 된 플레이어들은 차 안이 아닌 본부에 있어야 합니다.</Korean>
+                <Spanish>Los jugadores que quieran saltar en paracaídas deben estar vivos, fuera de un vehículo y en el CG.</Spanish>
                 <French>Les joueurs prêts à être paradés doivent être en vie, ne pas être dans un véhicule et être au QG.</French>
                 <Turkish>Paraşütle atlatılmak isteyen oyuncuların hayatta olması, bir araçta bulunmaması ve Karargahta (HQ) olması gerekir.</Turkish>
             </Key>
@@ -1017,6 +1145,7 @@
                 <Russian>Что-то случилось с самолётом, отмена прыжка.</Russian>
                 <Chinesesimp>飞机出事了，跳伞失败。</Chinesesimp>
                 <Korean>비행기에 무슨 일이 일어나서 공수강하가 취소되었습니다.</Korean>
+                <Spanish>Le ha pasado algo al avión, se cancela el salto.</Spanish>
                 <French>Il est arrivé quelque chose à l'avion, interruption du paradrop.</French>
                 <Turkish>Uçağa bir şey oldu, paraşütle atlatma iptal ediliyor.</Turkish>
             </Key>
@@ -1025,6 +1154,7 @@
                 <Russian>Самолёт не имеет возможности выполнить сброс, отмена прыжка.</Russian>
                 <Chinesesimp>飞机无法执行任务，跳伞失败。</Chinesesimp>
                 <Korean>비행기가 임무를 수행할 수 없기 때문에 공수강하가 취소되었습니다.</Korean>
+                <Spanish>El avión no puede realizar la misión, se cancela el salto.</Spanish>
                 <French>L'avion n'est pas en mesure d'effectuer la mission, interruption du paradrop.</French>
                 <Turkish>Uçak görevi yerine getirebilecek durumda değil, paraşütle atlatma iptal ediliyor.</Turkish>
             </Key>
@@ -1033,6 +1163,7 @@
                 <Russian>В самолёте нет свободных мест, отмена прыжка.</Russian>
                 <Chinesesimp>飞机没有空位，跳伞失败。</Chinesesimp>
                 <Korean>비행기에 빈 좌석이 없어서 공수강하가 취소되었습니다.</Korean>
+                <Spanish>El avión no tiene asientos libres, se cancela el salto.</Spanish>
                 <French>L'avion n'a pas de sièges libres, interruption du paradrop.</French>
                 <Turkish>Uçakta boş koltuk yok, paraşütle atlatma iptal ediliyor.</Turkish>
             </Key>
@@ -1041,6 +1172,7 @@
                 <Russian>Что-то пошло не так.</Russian>
                 <Chinesesimp>出了点问题。</Chinesesimp>
                 <Korean>뭔가가 잘못되었습니다.</Korean>
+                <Spanish>Algo ha salido mal.</Spanish>
                 <French>Quelque chose n'a pas fonctionné.</French>
                 <Turkish>Bir şeyler ters gitti.</Turkish>
             </Key>
@@ -1051,6 +1183,7 @@
                 <Russian>Точка сбора</Russian>
                 <Chinesesimp>集结点</Chinesesimp>
                 <Korean>집결 지점</Korean>
+                <Spanish>Punto de reunión</Spanish>
                 <French>Point de ralliement</French>
                 <Turkish>Toplanma Noktası</Turkish>
             </Key>
@@ -1059,6 +1192,7 @@
                 <Russian>Точка сбора не существует.</Russian>
                 <Chinesesimp>集结点不存在。</Chinesesimp>
                 <Korean>집결 지점이 존재하지 않습니다.</Korean>
+                <Spanish>El punto de reunión no existe.</Spanish>
                 <French>Le point de ralliement n'existe pas.</French>
                 <Turkish>Toplanma noktası mevcut değil.</Turkish>
             </Key>
@@ -1067,6 +1201,7 @@
                 <Russian>Вы не можете путешествовать к точке сбора сидя в транспортном средстве.</Russian>
                 <Chinesesimp>你不能在车上前往集合点。</Chinesesimp>
                 <Korean>차량 내에서는 집결 지점까지 이동할 수 없습니다.</Korean>
+                <Spanish>No puedes viajar al punto de reunión mientras estás en un vehículo.</Spanish>
                 <French>Vous ne pouvez pas vous déplacer au point de ralliement lorsque vous êtes dans un véhicule.</French>
                 <Turkish>Araç içindeyken toplanma noktasına gidemezsiniz.</Turkish>
             </Key>
@@ -1075,6 +1210,7 @@
                 <Russian>Вы не можете путешествовать к точке сбора с буксировочным тросом в руках или прикрепленным к транспортному средству.</Russian>
                 <Chinesesimp>您不能在拉出拖车绳或连接车辆的情况下旅行。</Chinesesimp>
                 <Korean>견인 로프를 빼거나 차량을 연결한 상태로는 이동할 수 없습니다.</Korean>
+                <Spanish>No puedes viajar con la cuerda de remolque desplegada ni con un vehículo remolcado.</Spanish>
                 <French>Vous ne pouvez pas vous déplacer avec votre câble d'attelage détaché ou un véhicule attaché.</French>
                 <Turkish>Çeki halatınız dışarıdayken veya bir araç çekerken seyahat edemezsiniz.</Turkish>
             </Key>
@@ -1083,6 +1219,7 @@
                 <Russian>Вы не можете путешествовать к точке сбора, пока контролируете ИИ-бойца.</Russian>
                 <Chinesesimp>当您控制 AI 时，您无法前往集结点。</Chinesesimp>
                 <Korean>인공지능을 조종하는 동안에는 집결 지점으로 이동할 수 없습니다.</Korean>
+                <Spanish>No puedes viajar al punto de reunión mientras controlas a la IA.</Spanish>
                 <French>Vous ne pouvez pas vous déplacer au point de ralliement lorsque vous contrôlez l'IA.</French>
                 <Turkish>Yapay zekayı kontrol ederken toplanma noktasına gidemezsiniz.</Turkish>
             </Key>
@@ -1091,6 +1228,7 @@
                 <Russian>Вы не можете путешествовать к точке сбора будучи в тяжело раненом состоянии.</Russian>
                 <Chinesesimp>你不能在失去知觉的情况下前往集结点。</Chinesesimp>
                 <Korean>의식불명 상태로는 집결 지점으로 이동할 수 없습니다.</Korean>
+                <Spanish>No puedes viajar al punto de reunión mientras estás inconsciente.</Spanish>
                 <French>Vous ne pouvez pas vous déplacer au point de ralliement si vous êtes inconscient.</French>
                 <Turkish>Bilinçsiz haldeyken toplanma noktasına gidemezsiniz.</Turkish>
             </Key>
@@ -1099,6 +1237,7 @@
                 <Russian>Вы не можете путешествовать к точке сбора находясь за пределами штаба.</Russian>
                 <Chinesesimp>您不能前往总部外的集结点。</Chinesesimp>
                 <Korean>본부 밖의 집결 지점으로 이동할 수 없습니다.</Korean>
+                <Spanish>No puedes viajar al punto de reunión fuera del CG.</Spanish>
                 <French>Vous ne pouvez pas vous rendre à un point de ralliement en dehors du QG.</French>
                 <Turkish>Karargah (HQ) dışındayken toplanma noktasına gidemezsiniz.</Turkish>
             </Key>
@@ -1107,6 +1246,7 @@
                 <Russian>Недостаточно очков точки сбора для путешествия.</Russian>
                 <Chinesesimp>集结点数不足，无法快速旅行。</Chinesesimp>
                 <Korean>집결 지점이 부족하여 이동할 수 없습니다.</Korean>
+                <Spanish>No tienes suficientes puntos de reunión para viajar.</Spanish>
                 <French>Il n'y a pas assez de points de ralliement pour voyager.</French>
                 <Turkish>Seyahat etmek için yeterli toplanma noktası puanı yok.</Turkish>
             </Key>
