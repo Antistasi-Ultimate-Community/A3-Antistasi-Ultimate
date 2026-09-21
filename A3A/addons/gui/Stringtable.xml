@@ -3362,7 +3362,7 @@
                 <Chinesesimp>您没有足够的人力来处理此请求（需要 %1 个）</Chinesesimp>
                 <Czech>Pro tuto žádost nemáte dostatek HR (vyžadováno%1)</Czech>
                 <Italian>Non hai abbastanza RU per questa richiesta (%1 necessario)</Italian>
-                <Spanish>No tienes suficientes RH para esto (1% requeridos)</Spanish>
+                <Spanish>No tienes suficientes RH para esto (%1 requeridos)</Spanish>
                 <Polish>Nie masz wystarczających zasobów ludzkich dla tego żądania (wymagany %1)</Polish>
                 <Turkish>Bu talep için yeterli İK yok (%1 gerekli)</Turkish>
             </Key>
@@ -3374,7 +3374,7 @@
                 <Chinesesimp>您没有足够的金钱来处理此请求（需要 %1 ）</Chinesesimp>
                 <Czech>Na tuto žádost nemáte dostatek peněz (vyžadováno%1 %2)</Czech>
                 <Italian>Non hai abbastanza denaro per questa richiesta (%1 %2 necessari)</Italian>
-                <Spanish>No tienes suficiente Dinero para esto (1% %2requerido)</Spanish>
+                <Spanish>No tienes suficiente Dinero para esto (%1 %2 requerido)</Spanish>
                 <Polish>Nie masz wystarczającej ilości pieniędzy na to żądanie (wymagane %1 %2)</Polish>
                 <Turkish>Bu talep için yeterli paranız yok (%1 %2 gerekli)</Turkish>
             </Key>
