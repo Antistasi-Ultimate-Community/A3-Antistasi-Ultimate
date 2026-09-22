@@ -1047,6 +1047,14 @@
                 <Korean>ReArma RU</Korean>
                 <French>ReArma RU</French>
             </Key>
+            <Key ID="STR_A3AU_ReArma_CN">
+                <Original>ReArma CN</Original>
+                <German>ReArma CN</German>
+                <Russian>ReArma CN</Russian>
+                <Chinesesimp>ReArma CN</Chinesesimp>
+                <Korean>ReArma CN</Korean>
+                <French>ReArma CN</French>
+            </Key>
             <Key ID="STR_A3AU_QDI">
                 <Original>QDI</Original>
                 <German>QDI</German>

@@ -3,6 +3,8 @@ FIX_LINE_NUMBERS()
 
 params ["_victim", "_killer"];
 
+call FUNCMAIN(postmortem);
+
 //Stops the unit from spawning things
 if (_victim getVariable ["spawner",false]) then
 {
@@ -13,7 +15,6 @@ if (_victim getVariable ["spawner",false]) then
 private _victimGroup = group _victim;
 private _victimSide = side (group _victim);
 private _isRival = _victim getVariable ["isRival", false];
-[_victim] spawn A3A_fnc_postmortem;
 
 // Deplete resource pools if we haven't paid for this unit in advance
 private _pool = _victim getVariable ["A3A_resPool", "legacy"];
