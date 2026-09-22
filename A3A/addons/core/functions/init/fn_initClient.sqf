@@ -300,8 +300,9 @@ player addEventHandler ["WeaponAssembled", {
 }];
 
 player addEventHandler ["WeaponDisassembled", {
-	[_this select 1] remoteExec ["A3A_fnc_postmortem", 2];
-	[_this select 2] remoteExec ["A3A_fnc_postmortem", 2];
+    params["","_primaryBag","_secondaryBag"];
+    [_primaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+    [_secondaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 }];
 
 if (areRivalsDiscovered) then {
