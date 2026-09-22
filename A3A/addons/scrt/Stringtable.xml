@@ -12513,6 +12513,11 @@
                 <Russian>папку с надписью 'Генеральный План', внутри только пронумерованные пустые листы.</Russian>
                 <Turkish>üzerinde 'Büyük Plan' yazan ve içinde sadece sayfa numaraları olan bir klasör.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_intel_not_found_073">
+                <Original>a plethora of cat GIFs on a flash drive labelled 'Shhhhhh!'</Original>
+                <Russian>флешку с кучей GIF-ок с котиками, на которой написано 'Тсссс!'.</Russian>
+                <Turkish>üzerinde 'Şşşşş!' yazan ve içinde bir sürü kedi GIF'i olan bir flash bellek.</Turkish>
+            </Key>
         </Container>
         <Container name="tasks">
             <Key ID="STR_tasks_attackHq_header">
