@@ -133,6 +133,8 @@ class CfgFunctions
             class createBreachChargeText {};
             class createPetros {};
             class deleteControls {};
+            class despawnQueueEntity {};
+            class despawnQueueProcessor {};
             class destroyCity {};
             class distance {};
             class distanceUnits {};
@@ -148,6 +150,7 @@ class CfgFunctions
             class getAggroLevelString {};
             class getLocationName {};
             class getRecentDamage {};
+            class getSideRadioTowerInfluence {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
@@ -176,7 +179,7 @@ class CfgFunctions
             class petrosDeathMonitor {};
             class placementSelection {};
             class playableUnits {};
-            class getSideRadioTowerInfluence {};
+            class preparePostMortem {};
             class rebuildAssets {};
             class rebuildEconomicAssets {};
             class rebuildRadioTower {};
@@ -289,7 +292,6 @@ class CfgFunctions
             class createZoneAmmoBox {};
             class createZoneFlag {};
             class crewTypeForVehicle {};
-            class cycleSpawn {};
             class FIAinitBases {};
             class findSpawnPosition {};
             class freeSpawnPositions {};
@@ -311,7 +313,6 @@ class CfgFunctions
             class spawnGroup {};
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
-            class spawnVehiclePrecise {};
             class townBattle {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
