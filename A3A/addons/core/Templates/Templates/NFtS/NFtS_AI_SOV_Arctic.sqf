@@ -78,7 +78,7 @@ if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
 ["vehiclesPolice", ["LIB_GazM1_SOV"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["NORTH_FIN_Maxim_High"]] call _fnc_saveToTemplate;
-["staticAT", ["NORTH_SOV_W_76mm1936"]] call _fnc_saveToTemplate;
+["staticAT", ["LIB_Zis3_w"]] call _fnc_saveToTemplate;
 ["staticAA", ["NORTH_SOV_Maxim_Quad"]] call _fnc_saveToTemplate;
 ["staticMortars", ["LIB_BM37"]] call _fnc_saveToTemplate;
 ["staticHowitzers", ["NORTH_SOV_W_152mm1938"]] call _fnc_saveToTemplate;
