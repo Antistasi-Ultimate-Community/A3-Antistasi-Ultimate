@@ -159,48 +159,52 @@ switch (_type) do {
 		};
 	};
 
-	case "LOG": {
-		//Add unspawned outposts for ammo trucks, and seaports for salvage
-		_possibleMarkers = [seaports + outposts, petros, true] call A3A_fnc_findIfNearAndHostile;
-		_possibleMarkers = _possibleMarkers select {(_x in seaports) or (spawner getVariable _x != 0)};
+case "LOG": {
+        if (random 100 < 20) then {
+            [["random"], "A3A_fnc_LOG_Stash"] remoteExec ["A3A_fnc_scheduler", 2];
+        } else {
+            // Add unspawned outposts for ammo trucks, and seaports for salvage
+            _possibleMarkers = [seaports + outposts, petros, true] call A3A_fnc_findIfNearAndHostile;
+            _possibleMarkers = _possibleMarkers select {(_x in seaports) or (spawner getVariable _x != 0)};
 
-		private _controlsX = ([controlsX, petros, true] call A3A_fnc_findIfNearAndHostile) select {!isOnRoad (getMarkerPos _x)};
-		_possibleMarkers append _controlsX;
+			private _controlsX = ([controlsX, petros, true] call A3A_fnc_findIfNearAndHostile) select {!isOnRoad (getMarkerPos _x)};
+			_possibleMarkers append _controlsX;
 
-		//append banks in hostile cities
-		if (random 100 < 20) then {
-			{
-				private _nearbyMarker = [markersX, getPos _x] call BIS_fnc_nearestPosition;
-				if (
-					(sidesX getVariable [_nearbyMarker,sideUnknown] != teamPlayer)
-					&& (getPos _x distance getMarkerPos respawnTeamPlayer < distanceMission)
-					) then {_possibleMarkers pushBack _x};
-			} forEach banks;
-		};
-
-		if (_possibleMarkers isEqualTo []) then {
-			if (!_silent) then {
-				[petros, "globalChat", localize "STR_chats_mission_request_no_LOG"] remoteExec ["A3A_fnc_commsMP",_requester];
-				[petros,"hint", format [localize "STR_chats_mission_request_no_LOG_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
+			//append banks in hostile cities
+			if (random 100 < 20) then {
+				{
+					private _nearbyMarker = [markersX, getPos _x] call BIS_fnc_nearestPosition;
+					if (
+						(sidesX getVariable [_nearbyMarker,sideUnknown] != teamPlayer)
+						&& (getPos _x distance getMarkerPos respawnTeamPlayer < distanceMission)
+						) then {_possibleMarkers pushBack _x};
+				} forEach banks;
 			};
-		} else {
-			private _site = selectRandom _possibleMarkers;
-			switch(true) do {
-                case(_site in outposts): {
-                    [[_site],"A3A_fnc_LOG_Ammo"] remoteExec ["A3A_fnc_scheduler", 2];
+
+            if (_possibleMarkers isEqualTo []) then {
+                if (!_silent) then {
+                    [petros, "globalChat", localize "STR_chats_mission_request_no_LOG"] remoteExec ["A3A_fnc_commsMP",_requester];
+                    [petros,"hint", format [localize "STR_chats_mission_request_no_LOG_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
                 };
-                case(_site in banks): {
-                    [[_site],"A3A_fnc_LOG_Bank"] remoteExec ["A3A_fnc_scheduler", 2];
+            } else {
+                private _site = selectRandom _possibleMarkers;
+                switch(true) do {
+                    case(_site in outposts): {
+                        [[_site],"A3A_fnc_LOG_Ammo"] remoteExec ["A3A_fnc_scheduler", 2];
+                    };
+                    case(_site in banks): {
+                        [[_site],"A3A_fnc_LOG_Bank"] remoteExec ["A3A_fnc_scheduler", 2];
+                    };
+                    case(_site in seaports): {
+                        [[_site],"A3A_fnc_LOG_Salvage"] remoteExec ["A3A_fnc_scheduler", 2];
+                    };
+                    case(_site in controlsX): {
+                        private _logMissions = ["A3A_fnc_LOG_Airdrop", 0.35, "A3A_fnc_LOG_Helicrash", 0.35, "A3A_fnc_LOG_Crashsite", 0.5];
+                        private _logMission = selectRandomWeighted _logMissions;
+                        [[_site], _logMission] remoteExec ["A3A_fnc_scheduler", 2];
+                    };
+                    default {};
                 };
-                case(_site in seaports): {
-                    [[_site],"A3A_fnc_LOG_Salvage"] remoteExec ["A3A_fnc_scheduler", 2];
-                };
-                case(_site in controlsX): {
-					private _logMissions = ["A3A_fnc_LOG_Airdrop", 0.35, "A3A_fnc_LOG_Helicrash", 0.35, "A3A_fnc_LOG_Crashsite", 0.5];
-					private _logMission = selectRandomWeighted _logMissions;
-					[[_site],_logMission] remoteExec ["A3A_fnc_scheduler", 2];
-                };
-                default {};
             };
 		};
 	};
