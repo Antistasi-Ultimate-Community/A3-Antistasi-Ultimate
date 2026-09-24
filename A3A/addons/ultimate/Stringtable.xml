@@ -970,4 +970,52 @@
             <French>Rendre la visualisation du cercle VR aux emplacements de l'aide à l'apparition des véhicules en dehors du mode de démontage.</French>
         </Key>
     </Package>
+    <Package name="LOG_delivery">
+        <Key ID="STR_A3A_Missions_LOG_Delivery_task_header">
+            <Original>Pickup Cargo</Original>
+            <Russian>Заберите груз</Russian>
+            <Chinesesimp>取货</Chinesesimp>
+            <Korean>화물 픽업</Korean>
+            <French>Ramasser la cargaison</French>
+            <Turkish>Kargoyu Al</Turkish>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_task_stage_header">
+            <Original>Deliver Cargo</Original>
+            <Russian>Доставьте груз</Russian>
+            <Chinesesimp>运送货物</Chinesesimp>
+            <Korean>화물 운송</Korean>
+            <French>Livrer la cargaison</French>
+            <Turkish>Kargoyu Teslim Et</Turkish>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_task_desc">
+            <Original>You have been hired to deliver cargo to %1. The cargo has been prepared at %2.</Original>
+            <Russian>Вас наняли для доставки груза в %1. Груз был подготовлен в %2.</Russian>
+            <Chinesesimp>您已被雇佣将货物运送到 %1。 货物已在 %2 准备好。</Chinesesimp>
+            <Korean>%1으로 화물을 운송하도록 고용되었습니다. 화물은 %2에서 준비되었습니다.</Korean>
+            <French>Vous avez été engagé pour livrer une cargaison à %1. La cargaison a été préparée à %2.</French>
+            <Turkish>%1 mevkisine kargo teslim etmek için işe alındınız. Kargo %2 mevkisinde hazırlanmıştır.</Turkish>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_request_text">
+            <Original>Request Delivery Mission</Original>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_request_fail_viability_text">
+            <Original>There are no viable delivery areas. Please try again later.</Original>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_acknowledge_action">
+            <Original>Acknowledge Cargo</Original>
+            <Russian>Подтвердить получение груза</Russian>
+            <Chinesesimp>确认货物</Chinesesimp>
+            <Korean>화물 확인</Korean>
+            <French>Confirmer la cargaison</French>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_search_action">
+            <Original>Check Cargo Destination</Original>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_search_text">
+            <Original>This cargo is meant to be delivered to %1.</Original>
+        </Key>
+        <Key ID="STR_A3A_Missions_LOG_Delivery_search_fail_text">
+            <Original>This cargo has no delivery manifest.</Original>
+        </Key>
+    </Package>
 </Project>
