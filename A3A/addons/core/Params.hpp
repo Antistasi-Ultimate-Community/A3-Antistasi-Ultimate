@@ -605,6 +605,26 @@ class Params
         };
         default = 300;
     };
+    class A3A_roadBlocksBaseChance: AIParams
+    {
+        title = $STR_params_A3A_roadBlocksBaseChance;
+        tooltip = $STR_params_A3A_roadBlocksBaseChance_desc;
+        values[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 50;
+                hard = 100;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+    };
     class globalCivilianMax: AIParams
     {
         title = $STR_params_global_civilian_max;

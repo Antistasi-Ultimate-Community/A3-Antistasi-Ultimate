@@ -7982,6 +7982,21 @@
                 <Korean>일반 적 인공지능 숙련도 수정자. 총 숙련도는 반군 훈련 수준의 영향을 받으며 Arma 3 server.cfg에서 구성된 AI 숙련도를 초과할 수 없습니다.</Korean>
                 <French>Modificateur général de compétence de l'IA ennemie. La compétence totale est également affectée par le niveau d'entraînement des rebelles et ne peut pas dépasser la compétence de l'IA configurée dans Arma 3 server.cfg.</French>
             </Key>
+            <Key ID="STR_params_A3A_roadBlocksBaseChance">
+                <Original>Base chance of roadblocks</Original>
+                <Russian>Базовая вероятность появления блокпостов на дорогах</Russian>
+                <Chinesesimp>路障的基本几率</Chinesesimp>
+                <Korean>도로 차단의 기본 확률</Korean>
+                <French>Chance de base des barrages routiers</French>
+                <Turkish>Yol engellerinin temel olasılığı</Turkish>
+            </Key>
+            <Key ID="STR_params_A3A_roadBlocksBaseChance_desc">
+                <Original>Base chance of roadblocks appearing on roads. Actual chance is affected by enemy aggression level and this baseline.</Original>
+                <Russian>Базовая вероятность появления блокпостов на дорогах. Фактическая вероятность зависит от уровня агрессии врага и этой базовой линии.</Russian>
+                <Chinesesimp>路障出现在道路上的基本几率。实际几率受敌方攻击等级和此基线的影响。</Chinesesimp>
+                <Korean>도로에 차단기가 나타날 기본 확률입니다. 실제 확률은 적의 공격 수준과 이 기준선에 의해 영향을 받습니다.</Korean>
+                <French>Chance de base d'apparition de barrages routiers sur les routes. La chance réelle est affectée par le niveau d'agression de l'ennemi et cette ligne de base.</French>
+            </Key>
             <Key ID="STR_params_equipment_header">
                 <Original>EQUIPMENT OPTIONS</Original>
                 <Russian>НАСТРОЙКИ ЭКИПИРОВКИ</Russian>
