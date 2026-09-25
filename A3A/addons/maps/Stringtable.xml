@@ -1125,6 +1125,15 @@
                 <Original>Whether we wanted it or not, we stepped into a war with occupants and invaders on Armavir.</Original>
                 <Spanish>Lo quisiéramos o no, entramos en una guerra con ocupantes e invasores en Armavir.</Spanish>
             </Key>
+            <Key ID="STR_antistasi_mission_info_ruegen_mapname_short_text">
+                <Original>Antistasi Ultimate - Ruegen</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_ruegen_mapname_text">
+                <Original>Antistasi Ultimate - Ruegen</Original>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_ruegen_blurb_text">
+                <Original>Whether we wanted it or not, we stepped into a war with occupants and invaders on Ruegen.</Original>
+            </Key>
             <Key ID="STR_antistasi_mission_info_IslaPera_mapname_short_text">
                 <Original>Antistasi Ultimate - Isla Pera</Original>
             </Key>

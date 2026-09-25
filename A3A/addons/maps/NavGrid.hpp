@@ -67,5 +67,6 @@ class NavGrid {
 	bornholm = QPATHTOFOLDER(Antistasi_bornholm.bornholm\navGrid.sqf);
 	egl_laghisola = QPATHTOFOLDER(Antistasi_egl_laghisola.egl_laghisola\navGrid.sqf);
 	UMB_Armavir = QPATHTOFOLDER(Antistasi_UMB_Armavir.UMB_Armavir\navGrid.sqf);
+	d41_ruegen = QPATHTOFOLDER(Antistasi_d41_ruegen.d41_ruegen\navGrid.sqf);
 	IslaPera = QPATHTOFOLDER(Antistasi_IslaPera.IslaPera\navGrid.sqf);
 };
