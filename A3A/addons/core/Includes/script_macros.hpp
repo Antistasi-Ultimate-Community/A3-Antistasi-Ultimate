@@ -134,3 +134,21 @@ Author:
     Bohemia Interactive (https://community.bistudio.com/wiki/Operators)
 ------------------------------------------- */
 #define XOR(VAR1,VAR2) (((VAR1) || (VAR2)) && !((VAR1) && (VAR2)))
+
+/* -------------------------------------------
+Macro: MARKER_EXISTS
+    Evaluates to true if the given marker exists.
+
+Parameters:
+    VAR1 - the name of the marker to check for existence
+
+Example:
+    (begin example)
+        // return "true" if the marker "airport_2" exists
+        MARKER_EXISTS("airport_2");
+    (end)
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
+#define MARKER_EXISTS(VAR1) (((VAR1) isEqualType "") && { (VAR1) in allMapMarkers })
