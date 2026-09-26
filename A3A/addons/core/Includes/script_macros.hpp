@@ -1,5 +1,5 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
-//#include "script_macros_undef.hpp"
+#include "script_macros_defines.hpp"
 #include "cba_events.hpp"
 
 // Define CfgPatches class name for, well, patches.
@@ -120,6 +120,25 @@ Author:
 // Should akshually be called QEPATHTOFOLDER ...
 // Keep the typo as an alias so ~1000 files don't show up in PR
 #define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
+
+/* -------------------------------------------
+Macro: SNOOZE
+    A "sleep" command that isn't arbitrarily either 0.1 or 0.2 seconds,
+    but a consistent value to maybe be used across the codebase. Will
+    roughly equate to "one frame".
+
+Parameters:
+    None
+
+Example:
+    (begin example)
+        waitUntil { SNOOZE(); someCondition };
+    (end)
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
+#define SNOOZE() sleep 0.001
 
 /* -------------------------------------------
 Macro: XOR
