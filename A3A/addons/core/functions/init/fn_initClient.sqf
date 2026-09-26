@@ -604,6 +604,9 @@ _layer = ["statisticsX"] call bis_fnc_rscLayer;
 #endif
 [] spawn A3A_fnc_statistics;
 
+// Apply the squad bar visibility parameter
+call A3A_fnc_updateGroupBarShown;
+
 //Load the player's personal save.
 [] spawn A3A_fnc_createDialog_shouldLoadPersonalSave;
 

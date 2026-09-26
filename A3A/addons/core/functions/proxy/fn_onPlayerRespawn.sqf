@@ -267,6 +267,9 @@ if (side group _newUnit == teamPlayer) then
 	if (A3A_hasACE) then {[] call A3A_fnc_ACEpvpReDress};
 };
 
+// Re-apply the squad bar visibility parameter for the new unit
+call A3A_fnc_updateGroupBarShown;
+
 if (fatigueEnabled isEqualTo false) then { 
 	_newUnit enableFatigue false; 
 }; 
