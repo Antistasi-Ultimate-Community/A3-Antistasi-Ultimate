@@ -236,7 +236,7 @@
             <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous contrôlez cette zone</French>
             <Korean>%1 &lt;br /&gt;이 지역을 장악했기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
             <Japanese>%1 &lt;br /&gt;このエリアを支配しているため、ピッキング時間が短縮されました</Japanese>
-            <Chineseimp>%1 &lt;br /&gt;撬锁时间已减少，因为你控制了此区域</Chineseimp>
+            <Chinesesimp>%1 &lt;br /&gt;撬锁时间已减少，因为你控制了此区域</Chinesesimp>
             <Chinese>%1 &lt;br /&gt;撬鎖時間已減少，因為你控制了此區域</Chinese>
             <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ kontrolujesz tę strefę</Polish>
             <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože ovládáte tuto zónu</Czech>
@@ -252,7 +252,7 @@
             <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous avez une trousse à outils</French>
             <Korean>%1 &lt;br /&gt;공구 상자가 있기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
             <Japanese>%1 &lt;br /&gt;工具キットを持っているため、ピッキング時間が短縮されました</Japanese>
-            <Chineseimp>%1 &lt;br /&gt;由于你有工具包，撬锁时间已减少</Chineseimp>
+            <Chinesesimp>%1 &lt;br /&gt;由于你有工具包，撬锁时间已减少</Chinesesimp>
             <Chinese>%1 &lt;br /&gt;由於你有工具包，撬鎖時間已減少</Chinese>
             <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ masz zestaw narzędzi</Polish>
             <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože máte sadu nástrojů</Czech>
@@ -268,7 +268,7 @@
             <French>Vous devez être ingénieur pour commencer le crochetage</French>
             <Korean>자물쇠 따기를 시작하려면 엔지니어여야 합니다</Korean>
             <Japanese>ピッキングを開始するにはエンジニアである必要があります</Japanese>
-            <Chineseimp>你必须是工程师才能开始撬锁</Chineseimp>
+            <Chinesesimp>你必须是工程师才能开始撬锁</Chinesesimp>
             <Chinese>你必須是工程師才能開始撬鎖</Chinese>
             <Polish>Musisz być inżynierem, aby rozpocząć otwieranie zamków</Polish>
             <Czech>Musíte být inženýrem, abyste mohli začít odemykat</Czech>
@@ -342,7 +342,7 @@
             <French>Garde-Port|Port de Fer|Mouillage des Tempêtes|Quai des Eaux Noires|Garde-Mer|Pointe du Brise-lames|Marée Rouge|Bastion des Eaux Profondes|Prise d'Ancre|Station des Eaux Bleues|Capitainerie|Mouillage de Fer|Jetée des Tempêtes|Vigie des Mers|Étendue du Port Nord|Sentinelle du Port|Eaux Grises|Mouillage Cramoisi|Crête des Vagues|Quai d'Acier|Port Extérieur|Pointe du Trident|Porte des Mers|Bastion du Port|Récif Noir|Brise-Tempête|Quai Cuirassé|Port des Vents Salés|Front de Port|Mouillage des Vagues Profondes|Jetée des Eaux Rouges|Port de Givre|Garde-Marée|Bastion Marin|Point d'Ancrage|Étendue du Port|Sentinelle du Port Ouest|Port Bleu|Chantier Naval de Fer|Marée des Tempêtes|Quai des Hautes Eaux|Bouclier des Mers|Couronne du Port|Jetée des Eaux Nord|Port de Granit|Garde-Vagues|Vigie du Port Sud|Port du Trident|Mouillage des Eaux Froides|Brise-lames de Fer</French>
             <German>Hafenwacht|Eisenhafen|Sturmankerplatz|Schwarzwasserkai|Seewache|Wellenbrecherpunkt|Rote Flut|Tiefwasserbastion|Ankerhalt|Blauwasserstation|Hafenmeister|Eisenankerplatz|Sturmpier|Seewacht|Nordhafenweite|Hafenschild|Grauwasser|Blutroter Ankerplatz|Wellenkamm|Stahlwerft|Außenhafen|Dreizackpunkt|Seetor|Hafenbastion|Schwarzes Riff|Sturmbrecher|Eiserner Kai|Salzwindhafen|Hafenfront|Tiefwellenankerplatz|Rotwasserpier|Frosthafen|Gezeitenwacht|Seebastion|Ankerpunkt|Hafenweite|Westhafenwacht|Blauhafen|Eisendock|Sturmflut|Hochwasserkai|Seeschild|Hafenkrone|Nordwasserpier|Granithafen|Wellenwacht|Südhafenwacht|Dreizackhafen|Kaltwasserankerplatz|Eisenwellenbrecher</German>
             <Czech>Strážný přístav|Železný přístav|Bouřlivé kotviště|Molo Černé vody|Mořská stráž|Bod vlnolamu|Rudý příliv|Hlubokovodní bašta|Kotevní pevnost|Stanice Modré vody|Správce přístavu|Železné kotviště|Bouřlivé molo|Mořská hlídka|Dosah severního přístavu|Přístavní stráž|Šedá voda|Karmazínové kotviště|Hřeben vlny|Ocelové přístaviště|Vnější přístav|Bod Trojzubce|Mořská brána|Přístavní bašta|Černý útes|Vlnolam bouří|Obrněné molo|Přístav Solného větru|Přístavní promenáda|Kotviště hlubokých vln|Molo Rudé vody|Mrazivý přístav|Hlídka přílivu|Mořská bašta|Kotevní bod|Dosah přístavu|Stráž západního přístavu|Modrý přístav|Železné loděnice|Bouřlivý příliv|Molo vysoké vody|Mořský štít|Koruna přístavu|Molo Severní vody|Žulový přístav|Stráž vln|Hlídka jižního přístavu|Přístav Trojzubce|Kotviště Studené vody|Železný vlnolam</Czech>
-            <ChineseSimplified>港口守望|铁港|风暴锚地|黑水码头|海卫|防波堤角|红潮|深水堡垒|锚泊处|蓝水站|港务长|铁锚地|风暴栈桥|海望|北港湾|港口哨兵|灰水|猩红锚地|浪冠|钢码头|外港|三叉戟角|海门|海港堡垒|黑礁|风暴突围|铁甲码头|盐风港|海港前线|深浪锚地|红水栈桥|霜港|潮汐守望|海堡|锚点|海港湾|西港哨兵|蓝港|铁船坞|风暴潮|高水码头|海盾|港口皇冠|北水栈桥|花岗岩港|浪卫|南港守望|三叉戟港|冷水锚地|铁防波堤</ChineseSimplified>
+            <Chinesesimp>港口守望|铁港|风暴锚地|黑水码头|海卫|防波堤角|红潮|深水堡垒|锚泊处|蓝水站|港务长|铁锚地|风暴栈桥|海望|北港湾|港口哨兵|灰水|猩红锚地|浪冠|钢码头|外港|三叉戟角|海门|海港堡垒|黑礁|风暴突围|铁甲码头|盐风港|海港前线|深浪锚地|红水栈桥|霜港|潮汐守望|海堡|锚点|海港湾|西港哨兵|蓝港|铁船坞|风暴潮|高水码头|海盾|港口皇冠|北水栈桥|花岗岩港|浪卫|南港守望|三叉戟港|冷水锚地|铁防波堤</Chinesesimp>
             <Korean>항구 감시소|강철 항구|폭풍 정박지|검은물 부두|해양 수비대|방파제 곶|붉은 조류|심해 요새|닻의 보루|푸른물 기지|항만 관리소|강철 정박지|폭풍 부두|바다 감시소|북부 항구 유역|항구 파수꾼|잿빛물|진홍빛 정박지|파도마루|강철 부두|외곽 항구|삼지창 곶|해상 관문|항구 요새|검은 암초|폭풍 방파제|철갑 부두|소금바람 항구|항구 앞바다|심해파 정박지|붉은물 부두|서리 항구|조류 감시소|해상 요새|정박 지점|항구 유역|서부 항구 파수꾼|푸른 항구|강철 조선소|폭풍 해일|만조 부두|바다의 방패|항구의 왕관|북부물 부두|화강암 항구|파도 수비대|남부 항구 감시소|삼지창 항구|찬물 정박지|강철 방파제</Korean>
             <Russian>Дозорная гавань|Железная гавань|Штормовая стоянка|Причал Черных вод|Морская стража|Мыс Волнореза|Красный прилив|Глубоководный бастион|Якорная твердыня|Станция Синих вод|Начальник порта|Железная стоянка|Штормовой пирс|Морской дозор|Предел Северного порта|Портовый страж|Серые воды|Багровая стоянка|Гребень волны|Стальная пристань|Внешний порт|Мыс Трезубца|Морские врата|Портовый бастион|Черный риф|Штормовой волнорез|Бронированный причал|Порт Соленого ветра|Портовая зона|Стоянка Глубоких волн|Пирс Красных вод|Морозная гавань|Дозор прилива|Морской бастион|Якорная точка|Предел Гавани|Страж Западного порта|Синяя гавань|Железная верфь|Штормовой прилив|Причал Высокой воды|Морский щит|Венец Гавани|Пирс Северных вод|Гранитная гавань|Страж волн|Дозор Южного порта|Гавань Трезубца|Стоянка Холодных вод|Железный волнорез</Russian>
             <Italian>Guardia Portuale|Porto di Ferro|Ancoraggio della Tempesta|Molo di Acquanera|Guardiamarina|Punto del Frangiflutti|Marea Rossa|Bastione di Acquaprofonda|Presa dell'Ancora|Stazione di Acquablu|Capitaneria|Ancoraggio di Ferro|Molo della Tempesta|Guardia del Mare|Tratto del Porto Nord|Sentinella del Porto|Acquagrigia|Ancoraggio Cremisi|Cresta dell'Onda|Molo d'Acciaio|Porto Esterno|Punto del Tridente|Porta del Mare|Bastione del Porto|Scoglio Nero|Infrangitempesta|Molo Corazzato|Porto Vento Salato|Fronte del Porto|Ancoraggio dell'Onda Profonda|Molo di Acquarossa|Porto del Gelo|Guardia della Marea|Bastione Marino|Punto di Ancoraggio|Tratto del Porto|Sentinella del Porto Ovest|Porto Blu|Cantiere Navale di Ferro|Marea della Tempesta|Molo di Acqualta|Scudo del Mare|Corona del Porto|Molo di Acquanor|Porto di Granito|Guardia dell'Onda|Guardia del Porto Sud|Porto del Tridente|Ancoraggio di Acquafredda|Frangiflutti di Ferro</Italian>
@@ -354,7 +354,7 @@
             <French>Garde-Ciel|Piste de Fer|Champ du Faucon|Tempête|Champ de la Crête de l'Aigle|Haut-Vent|Course du Tonnerre|Champ de la Percée des Nuages|Garde-Céleste|Corbeau|Aile d'Acier|Champ du Vent du Nord|Station du Ciel Rouge|Faucon de Fer|Champ de l'Horizon Bleu|Vol de Tempête|Champ de l'Aile d'Argent|Forteresse Céleste|Cieux Cramoisis|Ligne de Vol de Fer|Champ de la Portée du Faucon|Haut-Point|Aile de l'Ombre|Champ du Vent de Givre|Garde Stratos</French>
             <German>Himmelswacht|Eisenbahn|Falkenfeld|Sturm|Adlerkammfeld|Hochwind|Donnerpiste|Wolkenbruchfeld|Himmelsschild|Rabe|Stahlflügel|Nordwindfeld|Rote Himmelsstation|Eisenfalke|Blauer Horizont Feld|Sturmflug|Silberflügelfeld|Himmelsfeste|Blutrote Himmel|Eiserne Fluglinie|Falkenweite Feld|Hochpunkt|Schattenflügel|Frostwindfeld|Stratoswacht</German>
             <Czech>Nebeská stráž|Železná ranvej|Sokolí letiště|Bouře|Letiště Orlího hřebene|Vysoký vítr|Hromová dráha|Letiště Průrazu mraků|Nebeská garda|Havran|Ocelové křídlo|Letiště Severního větru|Stanice Rudého nebe|Železný jestřáb|Letiště Modrého horizontu|Bouřlivý let|Letiště Stříbrného křídla|Nebeská pevnost|Karmazínová nebesa|Železná letová dráha|Letiště Sokolího dosahu|Vysoký bod|Stínové křídlo|Letiště Mrazivého větru|Stráž Stratos</Czech>
-            <ChineseSimplified>苍穹守望|铁跑道|猎鹰机场|风暴|鹰冠机场|高风|雷霆之路|破云机场|天卫|渡鸦|钢翼|北风机场|红天站|铁鹰|蓝地平线机场|风暴飞行|银翼机场|天堡|猩红苍穹|铁飞行线|猎鹰边际机场|高点|暗影之翼|霜风机场|平流层守望</ChineseSimplified>
+            <Chinesesimp>苍穹守望|铁跑道|猎鹰机场|风暴|鹰冠机场|高风|雷霆之路|破云机场|天卫|渡鸦|钢翼|北风机场|红天站|铁鹰|蓝地平线机场|风暴飞行|银翼机场|天堡|猩红苍穹|铁飞行线|猎鹰边际机场|高点|暗影之翼|霜风机场|平流层守望</Chinesesimp>
             <Korean>하늘 감시소|강철 활주로|매 비행장|폭풍|독수리 마루 비행장|강풍|천둥 질주|구름돌파 비행장|하늘 수비대|까마귀|강철 날개|북풍 비행장|붉은 하늘 기지|강철 매|푸른 지평선 비행장|폭풍 비행|은빛 날개 비행장|하늘의 요새|진홍빛 하늘|강철 비행선|매의 영역 비행장|고지점|그림자 날개|서리바람 비행장|성층권 감시소</Korean>
             <Russian>Небесный дозор|Железная полоса|Соколиное поле|Шторм|Поле Орлиного гребня|Высокий ветер|Громовая трасса|Поле Прорыва облаков|Небесная стража|Ворон|Стальное крыло|Поле Северного ветра|Станция Красного неба|Железный ястреб|Поле Синего горизонта|Штормовой полет|Поле Серебряного крыла|Небесная твердыня|Багровые небеса|Железная линия полета|Поле Соколиного предела|Высокая точка|Теневое крыло|Поле Морозного ветра|Дозор Стратоса</Russian>
             <Italian>Guardia del Cielo|Pista di Ferro|Campo del Falco|Tempesta|Campo della Cresta dell'Aquila|Vento Alto|Corsa del Tuono|Campo dello Squarciante|Guardia Celeste|Corvo|Ala d'Acciaio|Campo del Vento del Nord|Stazione del Cielo Rosso|Falco di Ferro|Campo dell'Orizzonte Blu|Volo di Tempesta|Campo dell'Ala d'Argento|Fortezza del Cielo|Cieli Cremisi|Linea di Volo di Ferro|Campo della Portata del Falco|Punto Alto|Ala d'Ombra|Campo del Vento Gelido|Guardia Stratos</Italian>
@@ -366,7 +366,7 @@
             <French>Cuirassé|Sentinelle de Fer|Bastion Cramoisi|Fort-Tempête|Crête du Corbeau|Horizon d'Acier|Chute du Tonnerre|Atteinte Noire|Garde-Pierre|Garde-Braise|Garde-Sinistre|Garde-Givre|Falaise de Fer|Garde de Nuit|Flèche Rouge|Flèche de Tempête|Garde-Grise|Lande de Fer|Garde-Loup|Haute-Garde|Lande de l'Ombre|Feu Froid|Citadelle de Bronze|Crête Cendrée|Avant-garde de Fer|Flèche du Faucon|Fort de la Crête Noire|Garde-Tempête|Bastion d'Acier|Pointe de la Garde Rouge|Étendue de Havre-Fer|Flèche de Givre|Pointe du Tonnerre|Crête d'Obsidienne|Pierre de Granit|Garde de Fer|Vigie Cramoisie|Garde-Nord|Flèche de l'Ombre|Étendue du Sommet de Fer|Flèche du Loup|Garde-Tempête|Fort de Pierre Noire|Garde-Braise|Garde-Argent|Front de Fer|Crête du Crépuscule|Garde-Acier|Fort-Rouge|Haute-Flèche</French>
             <German>Schlachtschiff|Eiserner Wächter|Blutrote Bastion|Sturmfeste|Rabenkamm|Stahlhorizont|Donnerfall|Schwarzweite|Steinwacht|Glutwacht|Grimmwacht|Frostwacht|Eisenklippe|Nachtwacht|Rotspitze|Sturmspitze|Grauwacht|Eisenmoor|Wolfswacht|Hochwacht|Schattenmoor|Kaltfeuer|Bronzezitadelle|Aschenkamm|Eiserne Vorhut|Falkenspitze|Schwarzgratfeste|Sturmwacht|Stahlbastion|Rotwachtpunkt|Eisenhafenweite|Frostspitze|Donnerpunkt|Obsidiankamm|Granitstein|Eisenwacht|Blutrote Wacht|Nordwacht|Schattenspitze|Eisengipfelweite|Wolfsspitze|Sturmwächter|Schwarzsteinfeste|Glutwächter|Silberwacht|Eisenfront|Dämmerungskamm|Stahlwacht|Rotfeste|Hochspitze</German>
             <Czech>Dreadnought|Železný hlídač|Karmazínová bašta|Bouřná pevnost|Havraní hřeben|Ocelový horizont|Hromopád|Černý dosah|Kamenná stráž|Stráž uhlíků|Ponurá stráž|Mrazivá stráž|Železný útes|Noční hlídka|Rudá věž|Bouřná věž|Šedá hlídka|Železné vřesoviště|Vlčí stráž|Vysoká hlídka|Stínové vřesoviště|Studený oheň|Bronzová citadela|Popelavý hřeben|Železný předvoj|Sokolí věž|Pevnost Černého hřebene|Bouřná stráž|Ocelová bašta|Bod Rudé hlídky|Dosah Železného přístavu|Mrazivá věž|Hromový bod|Obsidiánový hřeben|Žulový kámen|Železný ochránce|Karmazínová hlídka|Severní stráž|Stínová věž|Dosah Železného vrcholu|Vlčí věž|Ochránce bouře|Pevnost Černého kamene|Stráž uhlíků|Stříbrná hlídka|Železná fronta|Hřeben soumraku|Ocelová hlídka|Rudá pevnost|Vysoká věž</Czech>
-            <ChineseSimplified>无畏舰|铁卫|猩红堡垒|风暴要塞|渡鸦之冠|钢地平线|雷陨|黑渊|石卫|烬守望|冷酷守卫|霜卫|铁崖|守夜人|红塔|风暴塔|灰守望|铁原|狼卫|高望|暗影原|冷火|青铜城堡|灰烬岭|铁先锋|猎鹰塔|黑岭要塞|风暴守卫|钢堡垒|红守望角|铁港边际|霜塔|雷霆角|黑曜石岭|花岗岩石|铁守|猩红守望|北卫|暗影塔|铁峰边际|狼塔|风暴守卫|黑石要塞|烬卫|银守望|铁锋|暮光岭|钢守望|红堡|高塔</ChineseSimplified>
+            <Chinesesimp>无畏舰|铁卫|猩红堡垒|风暴要塞|渡鸦之冠|钢地平线|雷陨|黑渊|石卫|烬守望|冷酷守卫|霜卫|铁崖|守夜人|红塔|风暴塔|灰守望|铁原|狼卫|高望|暗影原|冷火|青铜城堡|灰烬岭|铁先锋|猎鹰塔|黑岭要塞|风暴守卫|钢堡垒|红守望角|铁港边际|霜塔|雷霆角|黑曜石岭|花岗岩石|铁守|猩红守望|北卫|暗影塔|铁峰边际|狼塔|风暴守卫|黑石要塞|烬卫|银守望|铁锋|暮光岭|钢守望|红堡|高塔</Chinesesimp>
             <Korean>드레드노트|강철 파수꾼|진홍빛 요새|폭풍의 성채|까마귀 마루|강철 지평선|천둥의 몰락|검은 심연|바위 수비대|잿불 감시소|암울한 수비대|서리 수비대|강철 절벽|야간 감시소|붉은 첨탑|폭풍 첨탑|잿빛 감시소|강철 황야|늑대 수비대|고지 감시소|그림자 황야|차가운 불꽃|청동 성채|재투성이 능선|강철 선봉대|매 첨탑|검은 능선 성채|폭풍 수비대|강철 요새|붉은 감시소 곶|강철 항구 영역|서리 첨탑|천둥 곶|흑요석 능선|화강암석|강철 수비대|진홍빛 감시소|북부 수비대|그림자 첨탑|강철 정상 영역|늑대 첨탑|폭풍 감시자|검은돌 성채|잿불 수비대|은빛 감시소|강철 전선|황혼 능선|강철 감시소|붉은 요새|높은 첨탑</Korean>
             <Russian>Дредноут|Железный страж|Багровый бастион|Штормовая твердыня|Вороний гребень|Стальной горизонт|Громопад|Черный предел|Каменная стража|Дозор углей|Мрачный страж|Морозная стража|Железный утес|Ночной дозор|Красный шпиль|Штормовой шпиль|Серый дозор|Железная пустошь|Волчья стража|Высокий дозор|Теневая пустошь|Холодный огонь|Бронзовая цитадель|Пепельный хребет|Железный авангард|Соколиный шпиль|Твердыня Черного хребта|Штормовая стража|Стальной бастион|Точка Красного дозора|Предел Железной гавани|Морозный шпиль|Громовая точка|Обсидиановый хребет|Гранитный камень|Железная защита|Багровый дозор|Северная стража|Теневой шпиль|Предел Железной вершины|Волчий шпиль|Штормовой страж|Твердыня Черного камня|Страж углей|Серебряный дозор|Железный фронт|Сумеречный хребет|Стальной дозор|Красная твердыня|Высокий шпиль</Russian>
             <Italian>Corazzata|Sentinella di Ferro|Bastione Cremisi|Fortezza della Tempesta|Cresta del Corvo|Orizzonte d'Acciaio|Caduta del Tuono|Landa Nera|Guardia di Pietra|Guardia di Brace|Guardia Torva|Guardia del Gelo|Scogliera di Ferro|Guardia Notturna|Guglia Rossa|Guglia della Tempesta|Guardia Grigia|Landa di Ferro|Guardia del Lupo|Alta Guardia|Landa d'Ombra|Fuoco Freddo|Cittadella di Bronzo|Cresta Cinerea|Avanguardia di Ferro|Guglia del Falco|Fortezza della Cresta Nera|Guardia della Tempesta|Bastione d'Acciaio|Punto della Guardia Rossa|Tratto del Porto di Ferro|Guglia del Gelo|Punto del Tuono|Cresta d'Ossidiana|Pietra di Granito|Guardia di Ferro|Vigilia Cremisi|Guardia del Nord|Guglia d'Ombra|Tratto della Vetta di Ferro|Guglia del Lupo|Guardia della Tempesta|Fortezza di Pietranera|Guardia di Brace|Guardia d'Argento|Fronte di Ferro|Cresta del Crepuscolo|Guardia d'Acciaio|Fortezza Rossa|Alta Guglia</Italian>
@@ -378,7 +378,7 @@
             <French>Cuirassé|Avant-garde|Résolu|Crête du Tonnerre|Crête de la Liberté|Sentinelle|Vigie de Granit|Portée du Faucon|Pierre-Rouge|Eau-Noire|Dominion|Lance d'Argent|Sommet de Fer|Brise-Tempête|Repos de l'Aigle|Havre-Givre|Crête de l'Ombre|Bois-de-Fer|Haut-Point|Champ de Bataille|Inébranlable|Valeur|Eau-Froide|Bastion|Col de Granit|Lumière de Torche|Val de Fer|Tour de Garde|Chute de Braise|Atterrissage du Faucon|Crête-Noire|Ruisseau d'Argent|Vent du Nord|Falaise Cramoisie|Mur de Pierre|Titan|Horizon Rouge|Garde de Fer|Mesa Bleue|Frontière|Pic de Fer|Havre-Acier|Crête Blanche|Hauteurs de l'Avant-garde|Havre-Fer|Garde-Tempête|Sentinelle Grise|Pointe d'Obsidienne|Frontière de Fer|Tête de Cuivre|Rocher du Corbeau|Tête de Tonnerre|Aube d'Argent|Bastion de Fer|Ruisseau du Loup|Crête du Faucon|Bouclier de Granit|Port de Fer|Mesa Rouge|Tombée de la Nuit|Haute Sentinelle|Dominion de Fer|Fort-Tempête|Sommet Noir|Pointe de Givre|Crête de l'Aigle|Citadelle de Fer|Chute de l'Ombre|Pointe Nord|Crête d'Acier|Horizon de Fer|Garde Rouge|Pic Silencieux|Aube de Granit|Crête de Tempête|Résolution de Fer|Crête du Loup|Port Noir|Garde du Faucon|Crête d'Argent|Falaise de Fer|Crête de Braise|Port Froid|Tonnerre de Fer|Pic de la Sentinelle|Vallée Rouge|Pointe de Granit|Front de Tempête|Couronne de Fer|Crête du Faucon|Pierre Noire|Crête de Givre|Point de Garde de Fer|Horizon d'Argent|Garde-Tonnerre|Bastille de Fer|Pointe de l'Ombre|Sommet d'Acier</French>
             <German>Panzerkreuzer|Vorhut|Entschlossen|Donnerkamm|Freiheitskamm|Wächter|Granitwacht|Falkenweite|Rotstein|Schwarzwasser|Herrschaft|Silberspeer|Eisengipfel|Sturmbrecher|Adlerruh|Frosthafen|Schattenkamm|Eisenholz|Hochpunkt|Schlachtfeld|Standhaft|Tapferkeit|Kaltwasser|Bastion|Granitpass|Fackellicht|Eisental|Wachturm|Glutfall|Falkenlandung|Schwarzgrat|Silberbach|Nordwind|Blutrote Klippe|Steinwall|Titan|Roter Horizont|Eisenwacht|Blaue Mesa|Grenze|Eisenspitze|Stahlhafen|Weißer Kamm|Vorhutshöhen|Eisenhafen|Sturmwacht|Grauer Wächter|Obsidianpunkt|Eisengrenze|Kupferkopf|Rabenfels|Donnerkopf|Silberne Dämmerung|Eisenbastion|Wolfsbach|Falkenkamm|Granitschild|Eisenhafen|Rote Mesa|Einbruch der Nacht|Hoher Wächter|Eisenherrschaft|Sturmfeste|Schwarzer Gipfel|Frostpunkt|Adlerkamm|Eisenzitadelle|Schattenfall|Nordpunkt|Stahlkamm|Eisenhorizont|Rotwacht|Stiller Gipfel|Granitdämmerung|Sturmkamm|Eiserne Entschlossenheit|Wolfskamm|Schwarzer Hafen|Falkenwacht|Silberkamm|Eisenklippe|Glutkamm|Kalter Hafen|Eisendonner|Wächterspitze|Rotes Tal|Granitpunkt|Sturmfront|Eisenkrone|Falkenkamm|Schwarzstein|Frostkamm|Eiserner Wachtpunkt|Silberner Horizont|Donnerwacht|Eisenbastille|Schattenpunkt|Stahlgipfel</German>
             <Czech>Obrněnec|Předvoj|Odhodlaný|Hromový hřeben|Hřeben svobody|Strážce|Žulová stráž|Sokolí dosah|Rudý kámen|Černá voda|Dominium|Stříbrné kopí|Železný vrchol|Lamač bouří|Orlí odpočinek|Mrazivý přístav|Stínový hřeben|Železné dřevo|Vysoký bod|Bitevní pole|Neochvějný|Odvaha|Studená voda|Bašta|Žulový průsmyk|Světlo pochodně|Železné údolí|Strážní věž|Pád uhlíků|Sokolí přistání|Černý hřeben|Stříbrný potok|Severní vítr|Karmazínový útes|Kamenná zeď|Titán|Rudý horizont|Železná stráž|Modrá stolová hora|Hranice|Železný štít|Ocelový přístav|Bílý hřeben|Výšiny předvoje|Železný přístav|Bouřná stráž|Šedý strážce|Obsidiánový bod|Železná hranice|Zmije|Havraní skála|Hromová hlava|Stříbrný úsvit|Železná bašta|Vlčí potok|Sokolí hřeben|Žulový štít|Železný přístav|Rudá stolová hora|Soumrak|Vysoký strážce|Železné dominium|Bouřná pevnost|Černý vrchol|Mrazivý bod|Orlí hřeben|Železná citadela|Pád stínu|Severní bod|Ocelový hřeben|Železný horizont|Rudá stráž|Tichý vrchol|Žulový úsvit|Bouřný hřeben|Železné odhodlání|Vlčí hřeben|Černý přístav|Sokolí stráž|Stříbrný hřeben|Železný útes|Hřeben uhlíků|Studený přístav|Železný hrom|Strážní vrchol|Rudé údolí|Žulový bod|Bouřná fronta|Železná koruna|Sokolí hřeben|Černý kámen|Mrazivý hřeben|Železný strážní bod|Stříbrný horizont|Hromová stráž|Železná bastila|Stínový bod|Ocelový vrchol</Czech>
-            <ChineseSimplified>铁甲|先锋|坚决|雷霆岭|自由冠|哨兵|花岗岩守望|猎鹰边际|红石|黑水|统治|银矛|铁峰|风暴破坏者|鹰巢|霜港|暗影岭|铁木|高点|战野|坚定|英勇|冷水|堡垒|花岗岩山口|火炬光|铁谷|瞭望塔|烬陨|鹰降|黑岭|银溪|北风|猩红断崖|石墙|泰坦|红地平线|铁守望|蓝平顶山|边境|铁尖峰|钢港|白岭|先锋高地|铁港|风暴守望|灰哨兵|黑曜石角|铁边境|铜斑蛇|渡鸦岩|雷云砧|银晓|铁堡垒|狼溪|猎鹰冠|花岗岩盾|铁港|红平顶山|日暮|高阶哨兵|铁统治|风暴要塞|黑峰|霜角|鹰冠|铁城堡|影陨|北角|钢岭|铁地平线|红守望|寂静峰|花岗岩之晓|风暴岭|铁决意|狼岭|黑港|猎鹰守望|银岭|铁崖|烬岭|冷港|铁雷霆|哨兵峰|红谷|花岗岩角|风暴前线|铁王冠|鹰岭|黑石|霜岭|铁守望点|银色地平线|雷霆守望|铁巴士底|暗影角|钢峰</ChineseSimplified>
+            <Chinesesimp>铁甲|先锋|坚决|雷霆岭|自由冠|哨兵|花岗岩守望|猎鹰边际|红石|黑水|统治|银矛|铁峰|风暴破坏者|鹰巢|霜港|暗影岭|铁木|高点|战野|坚定|英勇|冷水|堡垒|花岗岩山口|火炬光|铁谷|瞭望塔|烬陨|鹰降|黑岭|银溪|北风|猩红断崖|石墙|泰坦|红地平线|铁守望|蓝平顶山|边境|铁尖峰|钢港|白岭|先锋高地|铁港|风暴守望|灰哨兵|黑曜石角|铁边境|铜斑蛇|渡鸦岩|雷云砧|银晓|铁堡垒|狼溪|猎鹰冠|花岗岩盾|铁港|红平顶山|日暮|高阶哨兵|铁统治|风暴要塞|黑峰|霜角|鹰冠|铁城堡|影陨|北角|钢岭|铁地平线|红守望|寂静峰|花岗岩之晓|风暴岭|铁决意|狼岭|黑港|猎鹰守望|银岭|铁崖|烬岭|冷港|铁雷霆|哨兵峰|红谷|花岗岩角|风暴前线|铁王冠|鹰岭|黑石|霜岭|铁守望点|银色地平线|雷霆守望|铁巴士底|暗影角|钢峰</Chinesesimp>
             <Korean>철갑|선봉대|결연|천둥 능선|자유의 마루|파수꾼|화강암 감시소|매의 영역|붉은돌|검은물|지배|은빛 창|강철 정상|폭풍파괴자|독수리의 안식처|서리 항구|그림자 능선|철목|고지점|전장|확고부동|용맹|찬물|요새|화강암 고개|횃불|강철 계곡|감시탑|잿불 낙하|매의 착륙지|검은 능선|은빛 개울|북풍|진홍빛 절벽|돌담|타이탄|붉은 지평선|강철 감시소|푸른 메사|변경|강철 봉우리|강철 항구|하얀 능선|선봉대 고지|강철 항구|폭풍 감시소|잿빛 파수꾼|흑요석 곶|강철 변경|살무사|까마귀 바위|뇌우|은빛 여명|강철 요새|늑대 개울|매 마루|화강암 방패|강철 항구|붉은 메사|해질녘|고위 파수꾼|강철 지배|폭풍 성채|검은 정상|서리 곶|독수리 마루|강철 성채|그림자 낙하|북부 곶|강철 능선|강철 지평선|붉은 감시소|고요한 봉우리|화강암 여명|폭풍 능선|강철 결의|늑대 능선|검은 항구|매 감시소|은빛 능선|강철 절벽|잿불 능선|차가운 항구|강철 천둥|파수꾼 봉우리|붉은 계곡|화강암 곶|폭풍 전선|강철 왕관|매 능선|검은돌|서리 능선|강철 감시 지점|은빛 지평선|천둥 감시소|강철 바스티유|그림자 곶|강철 정상</Korean>
             <Russian>Броненосец|Авангард|Решительный|Громовой хребет|Гребень Свободы|Часовой|Гранитный дозор|Соколиный предел|Красный камень|Черные воды|Владычество|Серебряное копье|Железная вершина|Штормолом|Орлиное гнездо|Морозная гавань|Теневой хребет|Железное дерево|Высокая точка|Поле брани|Стойкий|Доблесть|Холодные воды|Бастион|Гранитный перевал|Свет факела|Железная долина|Сторожевая башня|Падение углей|Приземление ястреба|Черный хребет|Серебряный ручей|Северный ветер|Багровый утес|Каменная стена|Титан|Красный горизонт|Железный дозор|Синяя столовая гора|Фронтир|Железный пик|Стальная гавань|Белый хребет|Высоты Авангарда|Железная гавань|Штормовой дозор|Серый часовой|Обсидиановая точка|Железный фронтир|Медянка|Воронья скала|Грозовая туча|Серебряный рассвет|Железный бастион|Волчий ручей|Соколиный гребень|Гранитный щит|Железная гавань|Красная столовая гора|Сумерки|Высокий часовой|Железное владычество|Штормовая твердыня|Черная вершина|Морозная точка|Орлиный гребень|Железная цитадель|Теневой закат|Северная точка|Стальной хребет|Железный горизонт|Красный дозор|Безмолвный пик|Гранитный рассвет|Штормовой хребет|Железная решимость|Волчий хребет|Черная гавань|Соколиный дозор|Серебряный хребет|Железный утес|Хребет углей|Холодная гавань|Железный гром|Пик Часового|Красная долина|Гранитная точка|Штормовой фронт|Железная корона|Ястребиный хребет|Черный камень|Морозный хребет|Железная точка дозора|Серебряный горизонт|Громовой дозор|Железная Бастилия|Теневая точка|Стальная вершина</Russian>
             <Italian>Corazzata|Avanguardia|Risoluto|Cresta del Tuono|Cresta della Libertà|Sentinella|Guardia di Granito|Portata del Falco|Pietrarossa|Acquanera|Dominio|Lancia d'Argento|Vetta di Ferro|Infrangitempesta|Riposo dell'Aquila|Rifugio del Gelo|Cresta d'Ombra|Legnodiferro|Punto Alto|Campo di Battaglia|Inamovibile|Valore|Acquafredda|Bastione|Passo di Granito|Luce di Torcia|Valle di Ferro|Torre di Guardia|Caduta di Brace|Atterraggio del Falco|Cresta Nera|Torrente d'Argento|Vento del Nord|Scogliera Cremisi|Muro di Pietra|Titano|Orizzonte Rosso|Guardia di Ferro|Mesa Blu|Frontiera|Picco di Ferro|Rifugio d'Acciaio|Cresta Bianca|Alture dell'Avanguardia|Rifugio di Ferro|Guardia della Tempesta|Sentinella Grigia|Punto d'Ossidiana|Frontiera di Ferro|Testa di Rame|Roccia del Corvo|Testa di Tuono|Alba d'Argento|Bastione di Ferro|Torrente del Lupo|Cresta del Falco|Scudo di Granito|Porto di Ferro|Mesa Rossa|Cala la Notte|Alta Sentinella|Dominio di Ferro|Fortezza della Tempesta|Vetta Nera|Punto del Gelo|Cresta dell'Aquila|Cittadella di Ferro|Caduta d'Ombra|Punto Nord|Cresta d'Acciaio|Orizzonte di Ferro|Guardia Rossa|Picco Silenzioso|Alba di Granito|Cresta della Tempesta|Determinazione di Ferro|Cresta del Lupo|Porto Nero|Guardia del Falco|Cresta d'Argento|Scogliera di Ferro|Cresta di Brace|Porto Freddo|Tuono di Ferro|Picco della Sentinella|Valle Rossa|Punto di Granito|Fronte della Tempesta|Corona di Ferro|Cresta del Falco|Pietranera|Cresta del Gelo|Punto di Guardia di Ferro|Orizzonte d'Argento|Guardia del Tuono|Bastiglia di Ferro|Punto d'Ombra|Vetta d'Acciaio</Italian>
@@ -390,7 +390,7 @@
             <French>Nord</French>
             <German>Nord</German>
             <Czech>Sever</Czech>
-            <ChineseSimplified>北</ChineseSimplified>
+            <Chinesesimp>北</Chinesesimp>
             <Korean>북쪽</Korean>
             <Russian>Север</Russian>
             <Italian>Nord</Italian>
@@ -402,7 +402,7 @@
             <French>Est</French>
             <German>Ost</German>
             <Czech>Východ</Czech>
-            <ChineseSimplified>东</ChineseSimplified>
+            <Chinesesimp>东</Chinesesimp>
             <Korean>동쪽</Korean>
             <Russian>Восток</Russian>
             <Italian>Est</Italian>
@@ -414,7 +414,7 @@
             <French>Sud</French>
             <German>Süd</German>
             <Czech>Jih</Czech>
-            <ChineseSimplified>南</ChineseSimplified>
+            <Chinesesimp>南</Chinesesimp>
             <Korean>남쪽</Korean>
             <Russian>Юг</Russian>
             <Italian>Sud</Italian>
@@ -426,7 +426,7 @@
             <French>Ouest</French>
             <German>West</German>
             <Czech>Západ</Czech>
-            <ChineseSimplified>西</ChineseSimplified>
+            <Chinesesimp>西</Chinesesimp>
             <Korean>서쪽</Korean>
             <Russian>Запад</Russian>
             <Italian>Ovest</Italian>
@@ -438,7 +438,7 @@
             <French>Infos Garnison</French>
             <German>Garnisonsinfo</German>
             <Czech>Informace o posádce</Czech>
-            <ChineseSimplified>驻军信息</ChineseSimplified>
+            <Chinesesimp>驻军信息</Chinesesimp>
             <Korean>주둔지 정보</Korean>
             <Russian>Информация о гарнизоне</Russian>
             <Italian>Info Guarnigione</Italian>
@@ -498,7 +498,7 @@
             <French>Une fois capturé :&lt;br /&gt;permet à votre faction d'acheter, de stocker et de déployer des hélicoptères et des aéronefs à voilure fixe.&lt;br /&gt;Nécessite le niveau de guerre 3+.</French>
             <German>Nach der Einnahme:&lt;br /&gt;ermöglicht es deiner Fraktion, Hubschrauber und Starrflügelflugzeuge zu kaufen, zu lagern und einzusetzen.&lt;br /&gt;Benötigt Kriegsstufe 3+.</German>
             <Czech>Po obsazení:&lt;br /&gt;umožní vaší frakci nakupovat, skladovat a nasazovat vrtulníky a letadla s pevnými křídly.&lt;br /&gt;Vyžaduje úroveň války 3+.</Czech>
-            <ChineseSimplified>占领后：&lt;br /&gt;允许你的派系购买、储存和部署直升机和固定翼飞机。&lt;br /&gt;需要战争等级 3+。</ChineseSimplified>
+            <Chinesesimp>占领后：&lt;br /&gt;允许你的派系购买、储存和部署直升机和固定翼飞机。&lt;br /&gt;需要战争等级 3+。</Chinesesimp>
             <Korean>점령 시:&lt;br /&gt;소속 파벌이 헬리콥터와 고정익 항공기를 구매, 보관 및 배치할 수 있게 해줍니다.&lt;br /&gt;전쟁 티어 3 이상이 필요합니다.</Korean>
             <Russian>При захвате:&lt;br /&gt;позволяет вашей фракции покупать, хранить и развертывать вертолеты и самолеты с неподвижным крылом.&lt;br /&gt;Требуется уровень войны 3+.</Russian>
             <Italian>Una volta catturato:&lt;br /&gt;permette alla tua fazione di acquistare, immagazzinare e schierare elicotteri e velivoli ad ala fissa.&lt;br /&gt;Richiede il livello di guerra 3+.</Italian>
@@ -528,7 +528,7 @@
             <Russian>Нельзя быстро переместиться к разрушенной военной администрации.</Russian>
             <Czech>Nelze rychle cestovat do zničené vojenské správy.</Czech>
             <Turkish>Yok edilmiş bir askerî idareye hızlı seyahat edilemez.</Turkish>
-            <ChineseSimplified>无法快速前往已被摧毁的军事管理区。</ChineseSimplified>
+            <Chinesesimp>无法快速前往已被摧毁的军事管理区。</Chinesesimp>
             <Japanese>破壊された軍政施設にはファストトラベルできません。</Japanese>
         </Key>
         <Key ID="STR_A3U_HOVER_CITY_SUPPORT">
@@ -596,7 +596,7 @@
             <French>Une position d'observation avancée utilisée pour surveiller les mouvements ennemis et signaler les contacts.</French>
             <German>Ein vorgeschobener Beobachtungsposten zur Überwachung feindlicher Bewegungen und Meldung von Kontakten.</German>
             <Czech>Předsunuté pozorovací stanoviště sloužící ke sledování pohybu nepřítele a hlášení kontaktů.</Czech>
-            <ChineseSimplified>用于监视敌军动向并报告接触情况的前沿观察哨。</ChineseSimplified>
+            <Chinesesimp>用于监视敌军动向并报告接触情况的前沿观察哨。</Chinesesimp>
             <Korean>적의 움직임을 감시하고 접촉 상황을 보고하기 위한 전방 관측 초소입니다.</Korean>
             <Russian>Передовой наблюдательный пост для отслеживания передвижений противника и доклада о контактах.</Russian>
             <Italian>Una postazione avanzata di osservazione usata per monitorare i movimenti nemici e segnalare i contatti.</Italian>
@@ -608,7 +608,7 @@
             <French>Un point de contrôle défensif conçu pour ralentir, arrêter ou inspecter les véhicules et l'infanterie de passage.</French>
             <German>Ein defensiver Kontrollpunkt, der vorbeifahrende Fahrzeuge und Infanterie verlangsamen, stoppen oder kontrollieren soll.</German>
             <Czech>Obranné kontrolní stanoviště určené ke zpomalení, zastavení nebo kontrole projíždějících vozidel a pěchoty.</Czech>
-            <ChineseSimplified>用于减缓、拦停或检查过往车辆和步兵的防御检查点。</ChineseSimplified>
+            <Chinesesimp>用于减缓、拦停或检查过往车辆和步兵的防御检查点。</Chinesesimp>
             <Korean>통과하는 차량과 보병을 지연, 정지 또는 검문하기 위해 설치된 방어 검문소입니다.</Korean>
             <Russian>Оборонительный блокпост, предназначенный для замедления, остановки или досмотра проходящей техники и пехоты.</Russian>
             <Italian>Un posto di blocco difensivo costruito per rallentare, fermare o ispezionare veicoli e fanteria di passaggio.</Italian>
@@ -620,7 +620,7 @@
             <French>Une position d'arme fortifiée conçue pour engager les aéronefs hostiles.</French>
             <German>Eine befestigte Waffenstellung zur Bekämpfung feindlicher Luftfahrzeuge.</German>
             <Czech>Opevněné palebné postavení určené k boji proti nepřátelským letadlům.</Czech>
-            <ChineseSimplified>用于打击敌方飞行器的加固武器阵地。</ChineseSimplified>
+            <Chinesesimp>用于打击敌方飞行器的加固武器阵地。</Chinesesimp>
             <Korean>적 항공기를 공격하도록 설계된 방어화된 화기 진지입니다.</Korean>
             <Russian>Укреплённая огневая позиция, предназначенная для поражения вражеской авиации.</Russian>
             <Italian>Una postazione d'arma fortificata progettata per ingaggiare velivoli ostili.</Italian>
@@ -632,7 +632,7 @@
             <French>Une position défensive équipée pour détruire ou dissuader les véhicules blindés.</French>
             <German>Eine Verteidigungsstellung, die zur Zerstörung oder Abschreckung gepanzerter Fahrzeuge ausgerüstet ist.</German>
             <Czech>Obranné postavení vybavené k ničení nebo odrazování obrněných vozidel.</Czech>
-            <ChineseSimplified>用于摧毁或阻止装甲车辆的防御阵地。</ChineseSimplified>
+            <Chinesesimp>用于摧毁或阻止装甲车辆的防御阵地。</Chinesesimp>
             <Korean>장갑차량을 파괴하거나 저지하도록 갖춰진 방어 진지입니다.</Korean>
             <Russian>Оборонительная позиция, оснащённая для уничтожения или сдерживания бронетехники.</Russian>
             <Italian>Una posizione difensiva equipaggiata per distruggere o scoraggiare i veicoli corazzati.</Italian>
@@ -644,7 +644,7 @@
             <French>Une position fixe de mitrailleuse lourde destinée à neutraliser l'infanterie, les véhicules légers et les cibles volant à basse altitude.</French>
             <German>Eine feste Stellung mit schwerem Maschinengewehr zur Bekämpfung von Infanterie, leichten Fahrzeugen und tief fliegenden Zielen.</German>
             <Czech>Pevné postavení těžkého kulometu určené k potlačování pěchoty, lehkých vozidel a nízko letících cílů.</Czech>
-            <ChineseSimplified>用于压制步兵、轻型载具和低空目标的固定重机枪阵地。</ChineseSimplified>
+            <Chinesesimp>用于压制步兵、轻型载具和低空目标的固定重机枪阵地。</Chinesesimp>
             <Korean>보병, 경차량, 저공 비행 목표를 제압하기 위한 고정식 중기관총 진지입니다.</Korean>
             <Russian>Стационарная позиция крупнокалиберного пулемёта для подавления пехоты, лёгкой техники и низколетящих целей.</Russian>
             <Italian>Una postazione fissa di mitragliatrice pesante per sopprimere fanteria, veicoli leggeri e bersagli a bassa quota.</Italian>
@@ -656,7 +656,7 @@
             <French>Une installation lourdement fortifiée qui lance des assauts terrestres et abrite les blindés lourds ennemis.&lt;br /&gt;Nécessite le niveau de guerre 3+.</French>
             <German>Eine schwer befestigte Anlage, die Bodenangriffe startet und schwere feindliche gepanzerte Einheiten beherbergt.&lt;br /&gt;Benötigt Kriegsstufe 3+.</German>
             <Czech>Silně opevněné zařízení, které zahajuje pozemní útoky a ukrývá těžkou nepřátelskou obrněnou techniku.&lt;br /&gt;Vyžaduje úroveň války 3+.</Czech>
-            <ChineseSimplified>一个防御森严的设施，用于发动地面突击并存放敌方重型装甲。&lt;br /&gt;需要战争等级 3+。</ChineseSimplified>
+            <Chinesesimp>一个防御森严的设施，用于发动地面突击并存放敌方重型装甲。&lt;br /&gt;需要战争等级 3+。</Chinesesimp>
             <Korean>지상 강습을 개시하고 적의 중장갑 차량을 수용하는 중무장된 시설입니다.&lt;br /&gt;전쟁 티어 3 이상이 필요합니다.</Korean>
             <Russian>Тщательно укрепленный объект, который служит базой для наземных атак и укрытием для тяжелой вражеской бронетехники.&lt;br /&gt;Требуется уровень войны 3+.</Russian>
             <Italian>Un'installazione pesantemente fortificata che lancia assalti terrestri e ospita veicoli corazzati pesanti nemici.&lt;br /&gt;Richiede il livello di guerra 3+.</Italian>
@@ -668,7 +668,7 @@
             <French>Une position avancée fortifiée utilisée par l'ennemi pour surveiller les réseaux routiers et verrouiller le territoire local.</French>
             <German>Eine befestigte vorgeschobene Position, die vom Feind genutzt wird, um Straßennetze zu überwachen und das lokale Gebiet abzuriegeln.</German>
             <Czech>Opevněná předsunutá pozice, kterou nepřítel využívá ke sledování silničních sítí a zablokování místního území.</Czech>
-            <ChineseSimplified>敌方用于监控公路网并封锁局部地区的防御性前哨阵地。</ChineseSimplified>
+            <Chinesesimp>敌方用于监控公路网并封锁局部地区的防御性前哨阵地。</Chinesesimp>
             <Korean>적이 도로망을 감시하고 지역 영토를 통제하기 위해 사용하는 요새화된 전진 기지입니다.</Korean>
             <Russian>Укрепленная передовая позиция, используемая противником для наблюдения за дорожными сетями и блокирования местной территории.</Russian>
             <Italian>Una posizione avanzata fortificata utilizzata dal nemico per monitorare le reti stradali e bloccare il territorio locale.</Italian>
@@ -680,7 +680,7 @@
             <French>Un centre côtier qui permet à l'ennemi de patrouiller les eaux et de déployer des forces navales.</French>
             <German>Ein Küstenknotenpunkt, der es dem Feind ermöglicht, die Gewässer zu patrouillieren und Marineeinheiten einzusetzen.</German>
             <Czech>Pobřežní uzel, který umožňuje nepříteli hlídkovat ve vodách a nasazovat námořní prostředky.</Czech>
-            <ChineseSimplified>一个沿海枢纽，使敌人能够在其水域巡逻并部署海军资产。</ChineseSimplified>
+            <Chinesesimp>一个沿海枢纽，使敌人能够在其水域巡逻并部署海军资产。</Chinesesimp>
             <Korean>적이 해역을 순찰하고 해군 전력을 배치할 수 있게 해주는 해안 허브입니다.</Korean>
             <Russian>Прибрежный узел, который позволяет противнику патрулировать воды и развертывать военно-морские силы.</Russian>
             <Italian>Uno snodo costiero che consente al nemico di pattugliare le acque e schierare risorse navali.</Italian>
@@ -692,7 +692,7 @@
             <French>Intercepte les communications ennemies pour révéler les mouvements de troupes cachés.&lt;br/&gt;Renforce la priorité stratégique de défense des bases rebelles voisines.</French>
             <German>Fängt feindliche Kommunikation ab, um versteckte Truppenbewegungen aufzudecken.&lt;br/&gt;Erhöht die strategische Verteidigungspriorität nahegelegener Rebellenbasen.</German>
             <Czech>Zachycuje nepřátelskou komunikaci a odhaluje skryté pohyby jednotek.&lt;br/&gt;Zvyšuje strategickou prioritu obrany blízkých povstaleckých základen.</Czech>
-            <ChineseSimplified>拦截敌方通信，揭示隐藏的部队调动。&lt;br/&gt;提升附近叛军基地的战略防御优先级。</ChineseSimplified>
+            <Chinesesimp>拦截敌方通信，揭示隐藏的部队调动。&lt;br/&gt;提升附近叛军基地的战略防御优先级。</Chinesesimp>
             <Korean>적의 통신을 가로채 숨겨진 병력 이동을 드러냅니다.&lt;br/&gt;인근 반군 기지의 전략적 방어 우선순위를 높입니다.</Korean>
             <Russian>Перехватывает вражескую связь, раскрывая скрытые перемещения войск.&lt;br/&gt;Повышает стратегический приоритет обороны ближайших баз повстанцев.</Russian>
             <Italian>Intercetta le comunicazioni nemiche per rivelare i movimenti nascosti delle truppe.&lt;br/&gt;Aumenta la priorità strategica della difesa delle basi ribelli vicine.</Italian>
@@ -704,7 +704,7 @@
             <French>Brouille les fréquences radio locales des rebelles pour perturber les communications.&lt;br/&gt;Renforce les capacités défensives des bases ennemies voisines.&lt;br/&gt;Capturez cette tour pour intercepter les communications ennemies.</French>
             <German>Stört lokale Funkfrequenzen der Rebellen, um deren Kommunikation zu unterbrechen.&lt;br/&gt;Verbessert die Verteidigungsfähigkeiten nahegelegener feindlicher Basen.&lt;br/&gt;Erobere diesen Turm, um feindliche Kommunikation abzufangen.</German>
             <Czech>Ruší místní rádiové frekvence rebelů a narušuje jejich komunikaci.&lt;br/&gt;Posiluje obranné schopnosti blízkých nepřátelských základen.&lt;br/&gt;Obsazením této věže můžete zachytávat nepřátelskou komunikaci.</Czech>
-            <ChineseSimplified>干扰本地叛军无线电频率以破坏其通信。&lt;br/&gt;提升附近敌军基地的防御能力。&lt;br/&gt;占领这座信号塔以拦截敌方通信。</ChineseSimplified>
+            <Chinesesimp>干扰本地叛军无线电频率以破坏其通信。&lt;br/&gt;提升附近敌军基地的防御能力。&lt;br/&gt;占领这座信号塔以拦截敌方通信。</Chinesesimp>
             <Korean>지역 반군의 무전 주파수를 교란하여 통신을 방해합니다.&lt;br/&gt;인근 적 기지의 방어 능력을 강화합니다.&lt;br/&gt;적의 통신을 가로채려면 이 통신탑을 점령하십시오.</Korean>
             <Russian>Подавляет местные радиочастоты повстанцев, нарушая их связь.&lt;br/&gt;Усиливает оборонительные возможности ближайших вражеских баз.&lt;br/&gt;Захватите эту вышку, чтобы перехватывать вражескую связь.</Russian>
             <Italian>Disturba le frequenze radio locali dei ribelli per interrompere le comunicazioni.&lt;br/&gt;Potenzia le capacità difensive delle basi nemiche vicine.&lt;br/&gt;Cattura questa torre per intercettare le comunicazioni nemiche.</Italian>
@@ -716,7 +716,7 @@
             <French>Disponible uniquement pour les marqueurs contrôlés par le joueur.</French>
             <German>Nur für spielerkontrollierte Marker verfügbar.</German>
             <Czech>Dostupné pouze pro hráčem ovládané markery.</Czech>
-            <ChineseSimplified>仅适用于玩家控制的标记。</ChineseSimplified>
+            <Chinesesimp>仅适用于玩家控制的标记。</Chinesesimp>
             <Korean>플레이어가 통제하는 마커에서만 사용할 수 있습니다.</Korean>
             <Russian>Доступно только для маркеров, контролируемых игроком.</Russian>
             <Italian>Disponibile solo per i marcatori controllati dal giocatore.</Italian>
@@ -728,7 +728,7 @@
             <French>La garnison n'est pas disponible pour le Marchand du marché noir.</French>
             <German>Garnison ist für den Schwarzmarkthändler nicht verfügbar.</German>
             <Czech>Posádka není pro obchodníka na černém trhu k dispozici.</Czech>
-            <ChineseSimplified>黑市商人不可使用驻军功能。</ChineseSimplified>
+            <Chinesesimp>黑市商人不可使用驻军功能。</Chinesesimp>
             <Korean>암시장 상인에게는 주둔지 기능을 사용할 수 없습니다.</Korean>
             <Russian>Гарнизон недоступен для торговца чёрного рынка.</Russian>
             <Italian>La guarnigione non è disponibile per il Mercante del Mercato Nero.</Italian>
@@ -740,7 +740,7 @@
             <French>Nécessite le commandant par défaut et un marqueur contrôlé par le joueur.</French>
             <German>Erfordert den Standardkommandanten und einen spielerkontrollierten Marker.</German>
             <Czech>Vyžaduje výchozího velitele a hráčem ovládaný marker.</Czech>
-            <ChineseSimplified>需要默认指挥官身份以及玩家控制的标记。</ChineseSimplified>
+            <Chinesesimp>需要默认指挥官身份以及玩家控制的标记。</Chinesesimp>
             <Korean>기본 지휘관이며 플레이어가 통제하는 마커여야 합니다.</Korean>
             <Russian>Требуется командир по умолчанию и маркер, контролируемый игроком.</Russian>
             <Italian>Richiede il Comandante predefinito e un marcatore controllato dal giocatore.</Italian>
@@ -752,7 +752,7 @@
             <French>Reconstruire l'élément</French>
             <German>Anlage wiederaufbauen</German>
             <Czech>Obnovit zařízení</Czech>
-            <ChineseSimplified>重建资产</ChineseSimplified>
+            <Chinesesimp>重建资产</Chinesesimp>
             <Korean>자산 재건</Korean>
             <Russian>Восстановить объект</Russian>
             <Italian>Ricostruisci struttura</Italian>
@@ -764,7 +764,7 @@
             <French>Seul le commandant peut reconstruire cet élément.</French>
             <German>Nur der Kommandant kann diese Anlage wiederaufbauen.</German>
             <Czech>Pouze velitel může obnovit toto zařízení.</Czech>
-            <ChineseSimplified>只有指挥官才能重建此资产。</ChineseSimplified>
+            <Chinesesimp>只有指挥官才能重建此资产。</Chinesesimp>
             <Korean>지휘관만 이 자산을 재건할 수 있습니다.</Korean>
             <Russian>Только командир может восстановить этот объект.</Russian>
             <Italian>Solo il comandante può ricostruire questa struttura.</Italian>
@@ -776,7 +776,7 @@
             <French>La zone la plus proche n'est pas contrôlée par %1.</French>
             <German>Die nächstgelegene Zone wird nicht von %1 kontrolliert.</German>
             <Czech>Nejbližší zóna není pod kontrolou %1.</Czech>
-            <ChineseSimplified>最近的区域未被 %1 控制。</ChineseSimplified>
+            <Chinesesimp>最近的区域未被 %1 控制。</Chinesesimp>
             <Korean>가장 가까운 지역은 %1의 통제하에 있지 않습니다.</Korean>
             <Russian>Ближайшая зона не контролируется %1.</Russian>
             <Italian>La zona più vicina non è controllata da %1.</Italian>
@@ -788,7 +788,7 @@
             <French>Reconstruire cet élément coûtera %1%2.</French>
             <German>Der Wiederaufbau dieser Anlage kostet %1%2.</German>
             <Czech>Obnova tohoto zařízení bude stát %1%2.</Czech>
-            <ChineseSimplified>重建此资产将花费 %1%2。</ChineseSimplified>
+            <Chinesesimp>重建此资产将花费 %1%2。</Chinesesimp>
             <Korean>이 자산을 재건하는 데 %1%2이(가) 필요합니다.</Korean>
             <Russian>Восстановление этого объекта будет стоить %1%2.</Russian>
             <Italian>Ricostruire questa struttura costerà %1%2.</Italian>
@@ -800,7 +800,7 @@
             <French>Êtes-vous sûr de vouloir reconstruire cet élément ?</French>
             <German>Bist du sicher, dass du diese Anlage wiederaufbauen möchtest?</German>
             <Czech>Opravdu chcete obnovit toto zařízení?</Czech>
-            <ChineseSimplified>你确定要重建此资产吗？</ChineseSimplified>
+            <Chinesesimp>你确定要重建此资产吗？</Chinesesimp>
             <Korean>이 자산을 재건하시겠습니까?</Korean>
             <Russian>Вы уверены, что хотите восстановить этот объект?</Russian>
             <Italian>Sei sicuro di voler ricostruire questa struttura?</Italian>
@@ -812,7 +812,7 @@
             <French>Cet élément n'est pas détruit.</French>
             <German>Diese Anlage ist nicht zerstört.</German>
             <Czech>Toto zařízení není zničeno.</Czech>
-            <ChineseSimplified>此资产未被摧毁。</ChineseSimplified>
+            <Chinesesimp>此资产未被摧毁。</Chinesesimp>
             <Korean>이 자산은 파괴되지 않았습니다.</Korean>
             <Russian>Этот объект не разрушен.</Russian>
             <Italian>Questa struttura non è distrutta.</Italian>
@@ -824,7 +824,7 @@
             <French>Vous ne contrôlez pas ce territoire.</French>
             <German>Du kontrollierst dieses Gebiet nicht.</German>
             <Czech>Nekontrolujete toto území.</Czech>
-            <ChineseSimplified>你不控制该领土。</ChineseSimplified>
+            <Chinesesimp>你不控制该领土。</Chinesesimp>
             <Korean>이 영토를 통제하고 있지 않습니다.</Korean>
             <Russian>Вы не контролируете эту территорию.</Russian>
             <Italian>Non controlli questo territorio.</Italian>
@@ -841,7 +841,7 @@
             <French>Livrer des fournitures</French>
             <Korean>보급품 전달</Korean>
             <Japanese>物資の配達</Japanese>
-            <ChineseSimplified>运送补给</ChineseSimplified>
+            <Chinesesimp>运送补给</Chinesesimp>
             <Chinese>運送補給</Chinese>
             <Polish>Dostarcz zapasy</Polish>
             <Czech>Doručit zásoby</Czech>
@@ -858,7 +858,7 @@
             <French>Lancer une mission logistique pour livrer des fournitures à cette ville.</French>
             <Korean>이 마을에 보급품을 전달하는 물류 임무를 시작합니다.</Korean>
             <Japanese>この町に物資を届ける兵站ミッションを開始します。</Japanese>
-            <ChineseSimplified>开始一项后勤任务，将补给运送到这个城镇。</ChineseSimplified>
+            <Chinesesimp>开始一项后勤任务，将补给运送到这个城镇。</Chinesesimp>
             <Chinese>開始一項後勤任務，將補給運送到這個城鎮。</Chinese>
             <Polish>Rozpocznij misję logistyczną, aby dostarczyć zapasy do tego miasta.</Polish>
             <Czech>Zahájit logistickou misi k doručení zásob do tohoto města.</Czech>
@@ -875,7 +875,7 @@
             <French>Seul le commandant peut demander cette action.</French>
             <Korean>지휘관만 이 조치를 요청할 수 있습니다.</Korean>
             <Japanese>指揮官のみがこのアクションを要求できます。</Japanese>
-            <ChineseSimplified>只有指挥官才能请求此操作。</ChineseSimplified>
+            <Chinesesimp>只有指挥官才能请求此操作。</Chinesesimp>
             <Chinese>只有指揮官才能請求此操作。</Chinese>
             <Polish>Tylko dowódca może zażądać tej akcji.</Polish>
             <Czech>Tuto akci může požadovat pouze velitel.</Czech>
@@ -892,7 +892,7 @@
             <Russian>Позволяет быстро переместиться к месту, заданному командиром.</Russian>
             <Czech>Umožňuje rychlé cestování na místo určené velitelem.</Czech>
             <Turkish>Komutan tarafından belirlenen bir konuma hızlı seyahate izin verir.</Turkish>
-            <ChineseSimplified>允许快速前往由指挥官设定的位置。</ChineseSimplified>
+            <Chinesesimp>允许快速前往由指挥官设定的位置。</Chinesesimp>
             <Japanese>指揮官が設定した場所へファストトラベルできます。</Japanese>
         </Key>
         <Key ID="STR_A3U_HOVER_MILADMIN_DESC">
@@ -905,7 +905,7 @@
             <Russian>Устраните командира, чтобы уничтожить администрацию.&lt;br /&gt;Внутри вы найдёте небольшой ящик с припасами для добычи и пленников, которых можно освободить — они присоединятся к вашей фракции.</Russian>
             <Czech>Zlikviduj velitele a znič administrativu.&lt;br /&gt;Uvnitř najdeš malou bednu se zásobami k vybrání a vězně, které můžeš osvobodit — přidají se k tvé frakci.</Czech>
             <Turkish>İdareyi yok etmek için komutanı etkisiz hâle getirin.&lt;br /&gt;İçeride yağmalayabileceğiniz küçük bir erzak sandığı ve kurtarılınca fraksiyonunuza katılacak mahkûmlar bulabilirsiniz.</Turkish>
-            <ChineseSimplified>消灭指挥官即可摧毁该管理区。&lt;br /&gt;内部有一只小型补给箱可供搜刮，还有可营救的囚犯，获救后将加入你的阵营。</ChineseSimplified>
+            <Chinesesimp>消灭指挥官即可摧毁该管理区。&lt;br /&gt;内部有一只小型补给箱可供搜刮，还有可营救的囚犯，获救后将加入你的阵营。</Chinesesimp>
             <Japanese>指揮官を排除すると施設を破壊できます。&lt;br /&gt;中には少量の補給箱があり、救出できる捕虜もいて、救出後はあなたの勢力に加わります。</Japanese>
         </Key>
         <Key ID="STR_A3U_CONTEXT_GARRISON_RALLYPOINT_BLOCKED">
@@ -913,13 +913,14 @@
             <French>Impossible de mettre des unités en garnison sur le point de ralliement.</French>
             <German>Einheiten können am Sammelpunkt nicht in Garnison stationiert werden.</German>
             <Czech>Na shromaždišti nelze umístit jednotky do posádky.</Czech>
-            <ChineseSimplified>无法在集结点驻扎单位。</ChineseSimplified>
+            <Chinesesimp>无法在集结点驻扎单位。</Chinesesimp>
             <Korean>집결 지점에는 유닛을 주둔시킬 수 없습니다.</Korean>
             <Russian>Нельзя разместить гарнизон на точке сбора.</Russian>
             <Italian>Non è possibile assegnare unità alla guarnigione sul punto di raccolta.</Italian>
             <Spanish>No se pueden guarnecer unidades en el punto de reunión.</Spanish>
             <Polish>Nie można umieszczać jednostek w garnizonie na punkcie zbornym.</Polish>
         </Key>
+    </Package>
     <Package name="CBA-settings">
         <Key ID="STR_A3U_setting_enableInitMessages">
             <Original>Enable Init Messages</Original>

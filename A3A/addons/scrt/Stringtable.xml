@@ -8440,7 +8440,7 @@
                 <French>%1 Avant-poste</French>
                 <German>Außenposten %1</German>
                 <Czech>Předsunutá základna %1</Czech>
-                <ChineseSimplified>%1 哨站</ChineseSimplified>
+                <Chinesesimp>%1 哨站</Chinesesimp>
                 <Korean>%1 전초기지</Korean>
                 <Russian>Аванпост %1</Russian>
                 <Italian>Avamposto %1</Italian>
@@ -8452,7 +8452,7 @@
                 <French>Base aérienne %1</French>
                 <German>Luftwaffenstützpunkt %1</German>
                 <Czech>Letecká základna %1</Czech>
-                <ChineseSimplified>%1 空军基地</ChineseSimplified>
+                <Chinesesimp>%1 空军基地</Chinesesimp>
                 <Korean>%1 공군 기지</Korean>
                 <Russian>Авиабаза %1</Russian>
                 <Italian>Base aerea %1</Italian>
@@ -8464,7 +8464,7 @@
                 <French>%1 Ressources</French>
                 <German>%1 Rohstoffe</German>
                 <Czech>%1 Zdroje</Czech>
-                <ChineseSimplified>%1 资源</ChineseSimplified>
+                <Chinesesimp>%1 资源</Chinesesimp>
                 <Korean>%1 자원</Korean>
                 <Russian>%1 Ресурсы</Russian>
                 <Italian>Risorse %1</Italian>
@@ -8476,7 +8476,7 @@
                 <French>%1 Usine</French>
                 <German>Fabrik %1</German>
                 <Czech>Továrna %1</Czech>
-                <ChineseSimplified>%1 工厂</ChineseSimplified>
+                <Chinesesimp>%1 工厂</Chinesesimp>
                 <Korean>%1 공장</Korean>
                 <Russian>%1 Фабрика</Russian>
                 <Italian>Fabbrica %1</Italian>
@@ -8488,7 +8488,7 @@
                 <French>%1 Port fluvial</French>
                 <German>Flusshafen %1</German>
                 <Czech>Říční přístav %1</Czech>
-                <ChineseSimplified>%1 河港</ChineseSimplified>
+                <Chinesesimp>%1 河港</Chinesesimp>
                 <Korean>%1 강 항구</Korean>
                 <Russian>%1 Речной порт</Russian>
                 <Italian>Porto fluviale %1</Italian>
@@ -8500,7 +8500,7 @@
                 <French>%1 Port maritime</French>
                 <German>Seehafen %1</German>
                 <Czech>Námořní přístav %1</Czech>
-                <ChineseSimplified>%1 海港</ChineseSimplified>
+                <Chinesesimp>%1 海港</Chinesesimp>
                 <Korean>%1 항구</Korean>
                 <Russian>%1 Морской порт</Russian>
                 <Italian>Porto marittimo %1</Italian>
@@ -8512,7 +8512,7 @@
                 <French>%1 Base militaire</French>
                 <German>Militärbasis %1</German>
                 <Czech>Vojenská základna %1</Czech>
-                <ChineseSimplified>%1 军事基地</ChineseSimplified>
+                <Chinesesimp>%1 军事基地</Chinesesimp>
                 <Korean>%1 군사 기지</Korean>
                 <Russian>Военная база %1</Russian>
                 <Italian>Base militare %1</Italian>
@@ -8524,7 +8524,7 @@
                 <French>%1 Tour radio</French>
                 <German>Funkturm %1</German>
                 <Czech>Rádiová věž %1</Czech>
-                <ChineseSimplified>%1 无线电塔</ChineseSimplified>
+                <Chinesesimp>%1 无线电塔</Chinesesimp>
                 <Korean>%1 통신탑</Korean>
                 <Russian>Радиовышка %1</Russian>
                 <Italian>Torre radio %1</Italian>
@@ -8536,7 +8536,7 @@
                 <French>Couloir de soutien %1</French>
                 <German>Unterstützungskorridor %1</German>
                 <Czech>Podpůrný koridor %1</Czech>
-                <ChineseSimplified>%1 支援通道</ChineseSimplified>
+                <Chinesesimp>%1 支援通道</Chinesesimp>
                 <Korean>%1 지원 회랑</Korean>
                 <Russian>Коридор поддержки %1</Russian>
                 <Italian>Corridoio di supporto %1</Italian>
@@ -8548,7 +8548,7 @@
                 <French>Ravitaillement en carburant</French>
                 <German>Tankstelle</German>
                 <Czech>Čerpací stanice</Czech>
-                <ChineseSimplified>加油站</ChineseSimplified>
+                <Chinesesimp>加油站</Chinesesimp>
                 <Korean>주유소</Korean>
                 <Russian>Заправка</Russian>
                 <Italian>Stazione di rifornimento</Italian>
@@ -8560,7 +8560,7 @@
                 <French>%1 Administration militaire</French>
                 <German>Militärverwaltung %1</German>
                 <Czech>Vojenská správa %1</Czech>
-                <ChineseSimplified>%1 军事管理机构</ChineseSimplified>
+                <Chinesesimp>%1 军事管理机构</Chinesesimp>
                 <Korean>%1 군 행정부</Korean>
                 <Russian>%1 Военная администрация</Russian>
                 <Italian>Amministrazione militare %1</Italian>
@@ -8572,7 +8572,7 @@
                 <French>%1 Quartier général</French>
                 <German>Hauptquartier %1</German>
                 <Czech>Velitelství %1</Czech>
-                <ChineseSimplified>%1 总部</ChineseSimplified>
+                <Chinesesimp>%1 总部</Chinesesimp>
                 <Korean>%1 본부</Korean>
                 <Russian>%1 Штаб</Russian>
                 <Italian>Quartier generale %1</Italian>
@@ -8584,7 +8584,7 @@
                 <French>(Détruit)</French>
                 <German>(Zerstört)</German>
                 <Czech>(Zničeno)</Czech>
-                <ChineseSimplified>(已摧毁)</ChineseSimplified>
+                <Chinesesimp>(已摧毁)</Chinesesimp>
                 <Korean>(파괴됨)</Korean>
                 <Russian>(Уничтожено)</Russian>
                 <Italian>(Distrutto)</Italian>
@@ -8596,7 +8596,7 @@
                 <French>&lt;t color='#b40c0c'&gt;Le site a été détruit&lt;/t&gt;&lt;br/&gt;Aucun bonus ou effet ne sera accordé</French>
                 <German>&lt;t color='#b40c0c'&gt;Standort wurde zerstört&lt;/t&gt;&lt;br/&gt;Es wird kein Bonus oder Effekt gewährt</German>
                 <Czech>&lt;t color='#b40c0c'&gt;Místo bylo zničeno&lt;/t&gt;&lt;br/&gt;Nebude získán žádný bonus ani efekt</Czech>
-                <ChineseSimplified>&lt;t color='#b40c0c'&gt;地点已被摧毁&lt;/t&gt;&lt;br/&gt;不会获得任何加成或效果</ChineseSimplified>
+                <Chinesesimp>&lt;t color='#b40c0c'&gt;地点已被摧毁&lt;/t&gt;&lt;br/&gt;不会获得任何加成或效果</Chinesesimp>
                 <Korean>&lt;t color='#b40c0c'&gt;거점이 파괴되었습니다&lt;/t&gt;&lt;br/&gt;보너스나 효과를 얻지 못합니다</Korean>
                 <Russian>&lt;t color='#b40c0c'&gt;Объект уничтожен&lt;/t&gt;&lt;br/&gt;Бонус или эффект не будут получены</Russian>
                 <Italian>&lt;t color='#b40c0c'&gt;Il sito è stato distrutto&lt;/t&gt;&lt;br/&gt;Non verrà ottenuto alcun bonus o effetto</Italian>
@@ -13283,7 +13283,7 @@
                 <French>Fonds insuffisants. Vous n'avez pas les moyens de reconstruire cet élément.</French>
                 <German>Unzureichende Geldmittel. Du kannst es dir nicht leisten, diese Anlage wiederaufzubauen.</German>
                 <Czech>Nedostatek financí. Nemáte dostatek prostředků na obnovu tohoto zařízení.</Czech>
-                <ChineseSimplified>资金不足。你无法负担重建此资产的费用。</ChineseSimplified>
+                <Chinesesimp>资金不足。你无法负担重建此资产的费用。</Chinesesimp>
                 <Korean>자금이 부족합니다. 이 자산을 재건할 자금이 없습니다.</Korean>
                 <Russian>Недостаточно средств. Вы не можете позволить себе восстановить этот объект.</Russian>
                 <Italian>Fondi insufficienti. Non puoi permetterti di ricostruire questa struttura.</Italian>
@@ -13295,7 +13295,7 @@
                 <French>Reconstruire l'élément</French>
                 <German>Anlage wiederaufbauen</German>
                 <Czech>Obnovit zařízení</Czech>
-                <ChineseSimplified>重建资产</ChineseSimplified>
+                <Chinesesimp>重建资产</Chinesesimp>
                 <Korean>자산 재건</Korean>
                 <Russian>Восстановить объект</Russian>
                 <Italian>Ricostruisci struttura</Italian>
@@ -13307,7 +13307,7 @@
                 <French>Livrez les matériaux de construction du QG à %1 pour commencer à reconstruire les éléments détruits. Gardez les matériaux à moins de 50 mètres du centre jusqu'à ce que la construction soit terminée.</French>
                 <German>Liefere die Baumaterialien vom HQ nach %1, um mit dem Wiederaufbau der zerstörten Anlagen zu beginnen. Halte die Materialien innerhalb von 50 Metern um das Zentrum, bis der Bau abgeschlossen ist.</German>
                 <Czech>Doručte stavební materiál z velitelství do %1 a začněte s obnovou zničených zařízení. Udržujte materiál do 50 metrů od centra, dokud nebude stavba dokončena.</Czech>
-                <ChineseSimplified>将建筑材料从总部运送到 %1，以开始重建被摧毁的资产。在施工完成前，请将材料保持在距离中心 50 米的范围内。</ChineseSimplified>
+                <Chinesesimp>将建筑材料从总部运送到 %1，以开始重建被摧毁的资产。在施工完成前，请将材料保持在距离中心 50 米的范围内。</Chinesesimp>
                 <Korean>파괴된 자산의 재건을 시작하려면 HQ에서 %1(으)로 건설 자재를 배달하십시오. 건설이 완료될 때까지 자재를 중심에서 50미터 이내에 두십시오.</Korean>
                 <Russian>Доставьте строительные материалы из штаба в %1, чтобы начать восстановление разрушенных объектов. Держите материалы в пределах 50 метров от центра до завершения строительства.</Russian>
                 <Italian>Consegna i materiali da costruzione dal QG a %1 per iniziare a ricostruire le strutture distrutte. Mantieni i materiali entro 50 metri dal centro fino al completamento della costruzione.</Italian>
@@ -13319,7 +13319,7 @@
                 <French>Les matériaux de construction ont été détruits. La mission de reconstruction a échoué et vos fonds ont été remboursés.</French>
                 <German>Die Baumaterialien wurden zerstört. Die Wiederaufbaumission ist fehlgeschlagen und deine Gelder wurden zurückerstattet.</German>
                 <Czech>Stavební materiál byl zničen. Mise obnovy selhala a vaše prostředky byly vráceny.</Czech>
-                <ChineseSimplified>建筑材料被毁。重建任务失败，您的资金已退还。</ChineseSimplified>
+                <Chinesesimp>建筑材料被毁。重建任务失败，您的资金已退还。</Chinesesimp>
                 <Korean>건설 자재가 파괴되었습니다. 재건 임무에 실패했으며 자금이 환불되었습니다.</Korean>
                 <Russian>Строительные материалы были уничтожены. Миссия по восстановлению провалена, а ваши средства возвращены.</Russian>
                 <Italian>I materiali da costruzione sono stati distrutti. La missione di ricostruzione è fallita e i tuoi fondi sono stati rimborsati.</Italian>
@@ -13331,7 +13331,7 @@
                 <French>Les matériaux sont arrivés. Le processus de reconstruction a commencé. Gardez les matériaux en sécurité dans la zone !</French>
                 <German>Die Materialien sind eingetroffen. Der Wiederaufbauprozess wurde eingeleitet. Halte die Materialien in der Umgebung sicher!</German>
                 <Czech>Materiály dorazily. Proces obnovy zahájen. Udržujte materiály v této oblasti v bezpečí!</Czech>
-                <ChineseSimplified>材料已送达。重建过程已启动。请确保材料在该区域内的安全！</ChineseSimplified>
+                <Chinesesimp>材料已送达。重建过程已启动。请确保材料在该区域内的安全！</Chinesesimp>
                 <Korean>자재가 도착했습니다. 재건 프로세스가 시작되었습니다. 해당 지역에서 자재를 안전하게 보관하십시오!</Korean>
                 <Russian>Материалы прибыли. Процесс восстановления начат. Держите материалы в безопасности в этом районе!</Russian>
                 <Italian>I materiali sono arrivati. Processo di ricostruzione avviato. Mantieni i materiali al sicuro nell'area!</Italian>
@@ -13343,7 +13343,7 @@
                 <French>Les matériaux de construction ont été éloignés de la cible ! Retournez-les au centre pour continuer la reconstruction.</French>
                 <German>Die Baumaterialien wurden vom Ziel entfernt! Bringe sie zum Zentrum zurück, um den Wiederaufbau fortzusetzen.</German>
                 <Czech>Stavební materiál byl přesunut pryč od cíle! Vraťte je zpět do centra, aby obnova mohla pokračovat.</Czech>
-                <ChineseSimplified>建筑材料已被移离目标！将其放回中心以继续重建。</ChineseSimplified>
+                <Chinesesimp>建筑材料已被移离目标！将其放回中心以继续重建。</Chinesesimp>
                 <Korean>건설 자재가 목표물에서 벗어났습니다! 재건을 계속하려면 중심에 다시 가져다 두십시오.</Korean>
                 <Russian>Строительные материалы были перемещены от цели! Верните их в центр, чтобы продолжить восстановление.</Russian>
                 <Italian>I materiali da costruzione sono stati allontanati dal bersaglio! Riportali al centro per continuare la ricostruzione.</Italian>
@@ -13355,7 +13355,7 @@
                 <French>Une opération de reconstruction est déjà active pour cet emplacement.</French>
                 <German>An diesem Standort ist bereits eine Wiederaufbauoperation aktiv.</German>
                 <Czech>Pro toto místo již probíhá operace obnovy.</Czech>
-                <ChineseSimplified>此位置已在进行重建行动。</ChineseSimplified>
+                <Chinesesimp>此位置已在进行重建行动。</Chinesesimp>
                 <Korean>이 위치에서 이미 재건 작업이 활성화되어 있습니다.</Korean>
                 <Russian>Для этого места уже активна операция восстановления.</Russian>
                 <Italian>Un'operazione di ricostruzione è già attiva per questa posizione.</Italian>
@@ -13371,7 +13371,7 @@
                 <French>Une mission de ravitaillement est déjà active.</French>
                 <Korean>보급 임무가 이미 활성화되어 있습니다.</Korean>
                 <Japanese>補給ミッションはすでに有効です。</Japanese>
-                <ChineseSimplified>一项补给任务正在进行中。</ChineseSimplified>
+                <Chinesesimp>一项补给任务正在进行中。</Chinesesimp>
                 <Chinese>一項補給任務正在進行中。</Chinese>
                 <Polish>Misja zaopatrzeniowa jest już aktywna.</Polish>
                 <Czech>Zásobovací mise je již aktivní.</Czech>
@@ -13383,7 +13383,7 @@
                 <French>Temps restant</French>
                 <German>Verbleibende Zeit</German>
                 <Czech>Zbývající čas</Czech>
-                <ChineseSimplified>剩余时间</ChineseSimplified>
+                <Chinesesimp>剩余时间</Chinesesimp>
                 <Korean>남은 시간</Korean>
                 <Russian>Оставшееся время</Russian>
                 <Italian>Tempo rimanente</Italian>
@@ -14937,7 +14937,7 @@
                 <French>Je ne peux pas te parler pendant que tu es là-dedans. Sors du véhicule !</French>
                 <Korean>당신이 거기 있는 동안에는 이야기할 수 없습니다. 차에서 내리세요!</Korean>
                 <Japanese>車に乗ったままでは話せません。車から降りてください！</Japanese>
-                <ChineseSimplified>你在车里我没法跟你说话。从车里出来！</ChineseSimplified>
+                <Chinesesimp>你在车里我没法跟你说话。从车里出来！</Chinesesimp>
                 <Chinese>你在車裡我沒法跟你說話。從車裡出來！</Chinese>
                 <Polish>Nie mogę z tobą rozmawiać, kiedy tam siedzisz. Wyjdź z pojazdu!</Polish>
                 <Czech>Nemůžu s tebou mluvit, když jsi uvnitř. Vylez z vozidla!</Czech>
@@ -18857,7 +18857,7 @@
                 <Chinesesimp>拆除模式现在已启用。</Chinesesimp>
                 <Korean>철거 모드가 이제 활성화되었습니다.</Korean>
                 <French>Le mode démolition est maintenant ACTIVÉ.</French>
-                <Turkish>Yıkım modu şimdi ETKİNLEŞTİRİLD
+                <Turkish>Yıkım modu şimdi ETKİNLEŞTİRİLDİ.</Turkish>
             </Key>
             <Key ID="STR_A3A_teardownModeDisabled_text">
                 <Original>Teardown mode is now DISABLED.</Original>
