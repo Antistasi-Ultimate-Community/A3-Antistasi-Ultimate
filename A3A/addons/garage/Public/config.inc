@@ -39,7 +39,7 @@ HR_GRG_Cnd_isAirbase  = {
     and (HR_GRG_accessPoint inArea _x)}) > 0 
     || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) 
     and (HR_GRG_accessPoint inArea _x)}) > 0 
-    || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] 
+    || count (A3A_buildingsToSave select {typeOf _x isKindOf "A3AU_RebHelipad_base_F"
     && HR_GRG_accessPoint distance2D _x <= 100}) > 0
 };
 
