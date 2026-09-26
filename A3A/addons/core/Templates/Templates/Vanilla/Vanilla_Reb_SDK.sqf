@@ -43,9 +43,14 @@ private _vehiclesSupply = ["C_Van_01_box_F"];
 private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
 
 private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_02_unarmed_F", "C_SUV_01_F"];
-private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
+private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F"];
 private _civHelicopters = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F"];
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
+
+if (_hasLawsOfWar) then {
+  _vehiclesCivCar append ["C_Van_02_vehicle_F", "C_Van_02_transport_F"];
+  _VehTruck pushBack "B_G_Van_02_transport_F";
+};
 
 if (_hasEF) then {
   _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
@@ -106,10 +111,10 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 ///////////////////////////
 
 private _initialRebelEquipment = [
-  "hgun_Pistol_heavy_02_F",
-  "hgun_PDW2000_F",
-  "30Rnd_9x21_Mag", "30Rnd_9x21_Red_Mag",
-  "6Rnd_45ACP_Cylinder","MiniGrenade","SmokeShell",
+  "hgun_Pistol_01_F", // Makarov
+  "SMG_05_F", // MP5K
+  "30Rnd_9x21_Mag_SMG_02", "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
+  "10Rnd_9x21_Mag","MiniGrenade","SmokeShell",
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
   "V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F",

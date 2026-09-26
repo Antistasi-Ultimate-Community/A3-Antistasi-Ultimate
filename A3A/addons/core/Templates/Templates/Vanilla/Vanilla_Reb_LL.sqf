@@ -48,6 +48,17 @@ private _civHelicopters = ["C_Heli_Light_01_civil_F", "O_Heli_Light_02_unarmed_F
 
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 
+if (_hasApex) then {
+  _vehiclesCivCar pushBack "C_Offroad_02_unarmed_F";
+  _vehiclesLightArmed pushBack "I_C_Offroad_02_LMG_F";
+  _vehiclesAt pushBack "I_C_Offroad_02_AT_F";
+};
+
+if (_hasLawsOfWar) then {
+  _vehiclesCivCar append ["C_Van_02_vehicle_F", "C_Van_02_transport_F"];
+  _VehTruck pushBack "B_G_Van_02_transport_F";
+};
+
 if (_hasEF) then {
   _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
 };
@@ -107,10 +118,10 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 ///////////////////////////
 
 private _initialRebelEquipment = [
-  "hgun_Pistol_heavy_02_F",
-  "hgun_PDW2000_F",
-  "30Rnd_9x21_Mag", "30Rnd_9x21_Red_Mag",
-  "6Rnd_45ACP_Cylinder","MiniGrenade","SmokeShell",
+  "hgun_Rook40_F", 
+  "sgun_HunterShotgun_01_F",
+  "2Rnd_12Gauge_Slug", "2Rnd_12Gauge_Pellets",
+  "16Rnd_9x21_Mag","MiniGrenade","SmokeShell",
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk",
   "V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt",
@@ -118,6 +129,14 @@ private _initialRebelEquipment = [
   "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","B_FieldPack_blk","B_AssaultPack_blk",
   ["launch_RPG32_F", 2], ["RPG32_F", 6]
 ];
+
+if (_hasWS) then {
+  _initialRebelEquipment append ["arifle_SLR_lxWS", "20Rnd_762x51_slr_lxWS", "arifle_Galat_worn_lxWS", "30Rnd_762x39_Mag_F"];
+};
+
+if (_hasApex) then {
+  _initialRebelEquipment append ["arifle_AKS_F", "30Rnd_545x39_Mag_F", "hgun_Pistol_01_F", "10Rnd_9x21_Mag"];
+};
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155","tf_anprc155_coyote"]};
