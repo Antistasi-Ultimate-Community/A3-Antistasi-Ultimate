@@ -7,6 +7,7 @@
             <Russian>Магазин Оружейного Торговца</Russian>
             <Chinesesimp>军火商商店</Chinesesimp>
             <Korean>암거래상 상점</Korean>
+            <Spanish>Tienda del traficante de armas</Spanish>
             <French>Magasin de vente d'armes</French>
             <Turkish>Silah Tüccarı Mağazası</Turkish>
         </Key>
@@ -16,6 +17,7 @@
             <Russian>Всё</Russian>
             <Chinesesimp>全部</Chinesesimp>
             <Korean>모두</Korean>
+            <Spanish>Todo</Spanish>
             <French>Tous</French>
             <Turkish>Hepsi</Turkish>
         </Key>
@@ -186,6 +188,7 @@
             <Russian>Магазин</Russian>
             <Chinesesimp>商店</Chinesesimp>
             <Korean>상점</Korean>
+            <Spanish>Tienda</Spanish>
             <French>Magasin</French>
             <Turkish>Mağaza</Turkish>
         </Key>
@@ -196,6 +199,7 @@
             <Russian>Открыть %1</Russian>
             <Chinesesimp>打开 %1</Chinesesimp>
             <Korean>%1 열어보기</Korean>
+            <Spanish>Abrir %1</Spanish>
             <French>Ouvrir le %1</French>
             <Turkish>%1 Aç</Turkish>
         </Key>
@@ -205,6 +209,7 @@
             <Russian>Предмет недоступен</Russian>
             <Chinesesimp>物品不可用。</Chinesesimp>
             <Korean>아이템 이용 불가.</Korean>
+            <Spanish>Objeto no disponible.</Spanish>
             <French>Article indisponible.</French>
             <Turkish>Eşya mevcut değil.</Turkish>
         </Key>
@@ -214,6 +219,7 @@
             <Russian>Товар закончился</Russian>
             <Chinesesimp>已售罄。</Chinesesimp>
             <Korean>재고 부족.</Korean>
+            <Spanish>Stock insuficiente.</Spanish>
             <French>Stock insuffisant.</French>
             <Turkish>Yetersiz stok.</Turkish>
         </Key>
@@ -223,6 +229,7 @@
             <Russian>Недостаточно средств</Russian>
             <Chinesesimp>资金不足。</Chinesesimp>
             <Korean>자금 부족.</Korean>
+            <Spanish>Fondos insuficientes.</Spanish>
             <French>Fonds insuffisants.</French>
             <Turkish>Yetersiz bakiye.</Turkish>
         </Key>
@@ -232,6 +239,7 @@
             <Russian>Невозможно экипировать</Russian>
             <Chinesesimp>无法装备。</Chinesesimp>
             <Korean>장비 불가.</Korean>
+            <Spanish>No se puede equipar.</Spanish>
             <French>Impossible d'équiper</French>
             <Turkish>Kuşanılamıyor.</Turkish>
         </Key>
@@ -241,6 +249,7 @@
             <Russian>Не хватает места в инвентаре</Russian>
             <Chinesesimp>货舱空间不足。</Chinesesimp>
             <Korean>화물 공간 부족.</Korean>
+            <Spanish>Espacio de carga insuficiente.</Spanish>
             <French>Espace de chargement insuffisant.</French>
             <Turkish>Yetersiz kargo alanı.</Turkish>
         </Key>
@@ -250,6 +259,7 @@
             <Russian>куплен</Russian>
             <Chinesesimp>成交</Chinesesimp>
             <Korean>구입 완료</Korean>
+            <Spanish>comprado</Spanish>
             <French>achetés</French>
             <Turkish>satın alındı</Turkish>
         </Key>
@@ -280,6 +290,7 @@
             <Russian>Показывать только предметы, доступные к покупке.</Russian>
             <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
             <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
+            <Spanish>Mostrar solo los objetos disponibles para comprar.</Spanish>
             <French>Seuls les articles disponibles à l'achat sont affichés.</French>
             <Turkish>Sadece satın alınabilir eşyaları göster.</Turkish>
         </Key>
@@ -296,6 +307,7 @@
             <Russian>Показывать только предметы, совместимые с оружием игрока.</Russian>
             <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
             <Korean>플레이어가 장착한 무기와 호환되는 아이템만 표시합니다.</Korean>
+            <Spanish>Mostrar solo los objetos compatibles con las armas equipadas del jugador.</Spanish>
             <French>N'afficher que les objets compatibles avec les armes équipées par le joueur.</French>
             <Turkish>Sadece kuşanılmış silahlarla uyumlu eşyaları göster.</Turkish>
         </Key>
@@ -305,6 +317,7 @@
             <Russian>Показывать только предметы, которые можно продать.</Russian>
             <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
             <Korean>플레이어가 판매할 수 있는 아이템만 표시합니다.</Korean>
+            <Spanish>Mostrar solo los objetos que el jugador puede vender.</Spanish>
             <French>N'afficher que les objets que le joueur peut vendre.</French>
             <Turkish>Sadece satılabilecek eşyaları göster.</Turkish>
         </Key>
@@ -315,6 +328,7 @@
             <Russian>Продать</Russian>
             <Chinesesimp>出售</Chinesesimp>
             <Korean>판매</Korean>
+            <Spanish>Vender</Spanish>
             <French>Vendre</French>
             <Turkish>Sat</Turkish>
         </Key>
@@ -324,6 +338,7 @@
             <Russian>Экипировать после покупки (по возможности).</Russian>
             <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
             <Korean>구매 시 장비 착용. (가능 시)</Korean>
+            <Spanish>Equipar el objeto al comprarlo (si es posible).</Spanish>
             <French>Équiper l'objet lors de l'achat (si possible).</French>
             <Turkish>Satın alındığında kuşan (mümkünse).</Turkish>
         </Key>
@@ -333,6 +348,7 @@
             <Russian>Купить</Russian>
             <Chinesesimp>购买</Chinesesimp>
             <Korean>구입</Korean>
+            <Spanish>Comprar</Spanish>
             <French>Achat</French>
             <Turkish>Satın Al</Turkish>
         </Key>
@@ -342,6 +358,7 @@
             <Russian>Цена</Russian>
             <Chinesesimp>价格</Chinesesimp>
             <Korean>가격</Korean>
+            <Spanish>Precio</Spanish>
             <French>Prix</French>
             <Turkish>Fiyat</Turkish>
         </Key>
@@ -351,6 +368,7 @@
             <Russian>В ПРОДАЖЕ</Russian>
             <Chinesesimp>现货</Chinesesimp>
             <Korean>재고 있음</Korean>
+            <Spanish>EN STOCK</Spanish>
             <French>EN STOCK</French>
             <Turkish>STOKTA VAR</Turkish>
         </Key>
@@ -360,6 +378,7 @@
             <Russian>ЗАКОНЧИЛСЯ</Russian>
             <Chinesesimp>售罄</Chinesesimp>
             <Korean>재고 없음.</Korean>
+            <Spanish>SIN STOCK.</Spanish>
             <French>EN RUPTURE DE STOCK.</French>
             <Turkish>STOKTA YOK.</Turkish>
         </Key>
@@ -378,6 +397,7 @@
                 <Original>Handguns</Original>
                 <Russian>Пистолеты</Russian>
                 <Korean>권총</Korean>
+                <Spanish>Pistolas</Spanish>
                 <French>Armes de poing</French>
                 <Chinesesimp>手枪</Chinesesimp>
                 <Turkish>Tabancalar</Turkish>
@@ -386,6 +406,7 @@
                 <Original>SMGs</Original>
                 <Russian>Пистолеты-пулемёты</Russian>
                 <Korean>기관단총</Korean>
+                <Spanish>Subfusiles</Spanish>
                 <French>SMGs</French>
                 <Chinesesimp>冲锋枪</Chinesesimp>
                 <Turkish>Hafif Makineli Silahlar</Turkish>
@@ -394,6 +415,7 @@
                 <Original>Rifles</Original>
                 <Russian>Штурмовые Винтовки</Russian>
                 <Korean>소총</Korean>
+                <Spanish>Fusiles</Spanish>
                 <French>Fusils</French>
                 <Chinesesimp>步枪</Chinesesimp>
                 <Turkish>Tüfekler</Turkish>
@@ -402,6 +424,7 @@
                 <Original>Sniper Rifles</Original>
                 <Russian>Снайперские Винтовки</Russian>
                 <Korean>저격소총</Korean>
+                <Spanish>Fusiles de francotirador</Spanish>
                 <French>Fusils de sniper</French>
                 <Chinesesimp>狙击步枪</Chinesesimp>
                 <Turkish>Keskin Nişancı Tüfekleri</Turkish>
@@ -410,6 +433,7 @@
                 <Original>MGs</Original>
                 <Russian>Пулемёты</Russian>
                 <Korean>기관총</Korean>
+                <Spanish>Ametralladoras</Spanish>
                 <French>MGs</French>
                 <Chinesesimp>机枪</Chinesesimp>
                 <Turkish>Makineli Tüfekler</Turkish>
@@ -418,6 +442,7 @@
                 <Original>Launchers</Original>
                 <Russian>Пусковые Установки</Russian>
                 <Korean>발사기</Korean>
+                <Spanish>Lanzacohetes</Spanish>
                 <French>Lanceurs</French>
                 <Chinesesimp>发射器</Chinesesimp>
                 <Turkish>Fırlatıcılar</Turkish>
@@ -426,6 +451,7 @@
                 <Original>Special Weapons</Original>
                 <Russian>Спецоружие</Russian>
                 <Korean>특수화기</Korean>
+                <Spanish>Armas especiales</Spanish>
                 <French>Armes spéciales</French>
                 <Chinesesimp>特殊武器</Chinesesimp>
                 <Turkish>Özel Silahlar</Turkish>
@@ -434,6 +460,7 @@
                 <Original>Magazines</Original>
                 <Russian>Магазины</Russian>
                 <Korean>탄창</Korean>
+                <Spanish>Cargadores</Spanish>
                 <French>Magasins</French>
                 <Chinesesimp>弹匣</Chinesesimp>
                 <Turkish>Şarjörler</Turkish>
@@ -442,6 +469,7 @@
                 <Original>GL Grenades</Original>
                 <Russian>Подствольные Гранаты</Russian>
                 <Korean>유탄발사기</Korean>
+                <Spanish>Granadas de lanzagranadas</Spanish>
                 <French>GL Grenades</French>
                 <Chinesesimp>榴弹</Chinesesimp>
                 <Turkish>Bombaatar Mühimmatları</Turkish>
@@ -450,6 +478,7 @@
                 <Original>Missiles and Rockets</Original>
                 <Russian>Ракеты и Реактивные гранаты</Russian>
                 <Korean>미사일과 로켓</Korean>
+                <Spanish>Misiles y cohetes</Spanish>
                 <French>Missiles et roquettes</French>
                 <Chinesesimp>导弹和火箭弹</Chinesesimp>
                 <Turkish>Füzeler ve Roketler</Turkish>
@@ -458,6 +487,7 @@
                 <Original>Sights</Original>
                 <Russian>Прицелы</Russian>
                 <Korean>조준기</Korean>
+                <Spanish>Miras</Spanish>
                 <French>Vue d'ensemble</French>
                 <Chinesesimp>瞄具</Chinesesimp>
                 <Turkish>Nişangahlar</Turkish>
@@ -466,6 +496,7 @@
                 <Original>Muzzle Devices</Original>
                 <Russian>Дульные Устройства</Russian>
                 <Korean>총구부착물</Korean>
+                <Spanish>Bocachas</Spanish>
                 <French>Dispositifs de mise à feu</French>
                 <Chinesesimp>枪口装置</Chinesesimp>
                 <Turkish>Namluağzı Aparatları</Turkish>
@@ -474,6 +505,7 @@
                 <Original>Bipods</Original>
                 <Russian>Сошки</Russian>
                 <Korean>양각대</Korean>
+                <Spanish>Bípodes</Spanish>
                 <French>Bipieds</French>
                 <Chinesesimp>脚架</Chinesesimp>
                 <Turkish>Çatalayak</Turkish>
@@ -482,6 +514,7 @@
                 <Original>Grips</Original>
                 <Russian>Рукоятки</Russian>
                 <Korean>그립</Korean>
+                <Spanish>Empuñaduras</Spanish>
                 <French>Crosses</French>
                 <Chinesesimp>握把</Chinesesimp>
                 <Turkish>Tutamaklar</Turkish>
@@ -490,6 +523,7 @@
                 <Original>Handles</Original>
                 <Russian>Рукоятки</Russian>
                 <Korean>손잡이</Korean>
+                <Spanish>Asas</Spanish>
                 <French>Poignées</French>
                 <Chinesesimp>提把</Chinesesimp>
                 <Turkish>Kollar</Turkish>
@@ -498,6 +532,7 @@
                 <Original>Pointers</Original>
                 <Russian>ЛЦУ</Russian>
                 <Korean>레이저 지시기</Korean>
+                <Spanish>Punteros láser</Spanish>
                 <French>Pointeurs</French>
                 <Chinesesimp>指示器</Chinesesimp>
                 <Turkish>Lazerler</Turkish>
@@ -506,6 +541,7 @@
                 <Original>Flashlights</Original>
                 <Russian>Фонарики</Russian>
                 <Korean>손전등</Korean>
+                <Spanish>Linternas</Spanish>
                 <French>Lampes de poche</French>
                 <Chinesesimp>手电筒</Chinesesimp>
                 <Turkish>Fenerler</Turkish>
@@ -514,6 +550,7 @@
                 <Original>GPS</Original>
                 <Russian>GPS</Russian>
                 <Korean>GPS</Korean>
+                <Spanish>GPS</Spanish>
                 <French>GPS</French>
                 <Chinesesimp>GPS</Chinesesimp>
                 <Turkish>GPS</Turkish>
@@ -522,6 +559,7 @@
                 <Original>Binoculars</Original>
                 <Russian>Бинокли</Russian>
                 <Korean>쌍안경</Korean>
+                <Spanish>Prismáticos</Spanish>
                 <French>Jumelles</French>
                 <Chinesesimp>望远镜</Chinesesimp>
                 <Turkish>Dürbünler</Turkish>
@@ -530,6 +568,7 @@
                 <Original>NVGs</Original>
                 <Russian>ПНВ</Russian>
                 <Korean>야간투시경</Korean>
+                <Spanish>Visores nocturnos</Spanish>
                 <French>NVG</French>
                 <Chinesesimp>夜视仪</Chinesesimp>
                 <Turkish>Gece Görüş Gözlükleri</Turkish>
@@ -538,6 +577,7 @@
                 <Original>Misc</Original>
                 <Russian>Прочее</Russian>
                 <Korean>기타</Korean>
+                <Spanish>Varios</Spanish>
                 <French>Divers</French>
                 <Chinesesimp>杂项</Chinesesimp>
                 <Turkish>Çeşitli</Turkish>
@@ -546,6 +586,7 @@
                 <Original>Bags with Statics</Original>
                 <Russian>Сумки со Стационарным оружием</Russian>
                 <Korean>고정화기 가방</Korean>
+                <Spanish>Mochilas con estáticas</Spanish>
                 <French>Sacs avec statique</French>
                 <Chinesesimp>装有静态武器的背包</Chinesesimp>
                 <Turkish>Statik Silah Çantaları</Turkish>
@@ -554,6 +595,7 @@
                 <Original>Sniper Rifle Magazines</Original>
                 <Russian>Магазины для Снайперских Винтовок</Russian>
                 <Korean>저격소총 탄창</Korean>
+                <Spanish>Cargadores de fusil de francotirador</Spanish>
                 <French>Magasins de fusils de sniper</French>
                 <Chinesesimp>狙击步枪弹匣</Chinesesimp>
                 <Turkish>K.N.Tüfeği Şarjörleri</Turkish>
@@ -562,6 +604,7 @@
                 <Original>Camouflage</Original>
                 <Russian>Камуфляж</Russian>
                 <Korean>위장복</Korean>
+                <Spanish>Camuflaje</Spanish>
                 <French>Camouflage</French>
                 <Chinesesimp>迷彩</Chinesesimp>
                 <Turkish>Kamuflaj</Turkish>
@@ -571,6 +614,7 @@
                 <Russian>Шлемы</Russian>
                 <Chinesesimp>头盔</Chinesesimp>
                 <Korean>헬멧</Korean>
+                <Spanish>Cascos</Spanish>
                 <Turkish>Kasklar</Turkish>
             </Key>
             <Key ID="STR_A3AU_uniforms">
@@ -578,6 +622,7 @@
                 <Russian>Униформы</Russian>
                 <Chinesesimp>制服</Chinesesimp>
                 <Korean>유니폼</Korean>
+                <Spanish>Uniformes</Spanish>
                 <Turkish>Üniformalar</Turkish>
             </Key>
             <Key ID="STR_A3AU_backpacks">
@@ -585,6 +630,7 @@
                 <Russian>Рюкзаки</Russian>
                 <Chinesesimp>背包</Chinesesimp>
                 <Korean>군장</Korean>
+                <Spanish>Mochilas</Spanish>
                 <Turkish>Sırt Çantaları</Turkish>
             </Key>
             <Key ID="STR_A3AU_facewear">
@@ -592,6 +638,7 @@
                 <Russian>Очки/шарфы</Russian>
                 <Chinesesimp>面部装备</Chinesesimp>
                 <Korean>페이스웨어</Korean>
+                <Spanish>Gafas y máscaras</Spanish>
                 <Turkish>Yüz Aksesuarları</Turkish>
             </Key>
             <Key ID="STR_A3AU_vests">
@@ -599,6 +646,7 @@
                 <Russian>Разгрузки</Russian>
                 <Chinesesimp>背心</Chinesesimp>
                 <Korean>조끼</Korean>
+                <Spanish>Chalecos</Spanish>
                 <Turkish>Yelekler</Turkish>
             </Key>
             <Key ID="STR_A3AU_utility">
@@ -606,6 +654,7 @@
                 <Russian>Служебные</Russian>
                 <Chinesesimp>一般物品</Chinesesimp>
                 <Korean>기타 아이템</Korean>
+                <Spanish>Utilidad</Spanish>
                 <Turkish>Yardımcı Ekipman</Turkish>
             </Key>
         </Container>
@@ -616,6 +665,7 @@
                 <Russian>и</Russian>
                 <German>und</German>
                 <Korean>그리고</Korean>
+                <Spanish>y</Spanish>
                 <French>et</French>
                 <Chinesesimp>和</Chinesesimp>
                 <Turkish>ve</Turkish>
@@ -624,6 +674,7 @@
                 <Original>Barret</Original>
                 <Russian>Barret</Russian>
                 <Korean>Barret</Korean>
+                <Spanish>Barret</Spanish>
                 <French>Barret</French>
                 <Chinesesimp>Barret</Chinesesimp>
                 <Turkish>Barret</Turkish>
@@ -632,6 +683,7 @@
                 <Original>Arma 3</Original>
                 <Russian>Арма 3</Russian>
                 <Korean>아르마 3</Korean>
+                <Spanish>Arma 3</Spanish>
                 <French>Arma 3</French>
                 <Chinesesimp>Arma 3</Chinesesimp>
                 <Turkish>Arma 3</Turkish>
@@ -641,6 +693,7 @@
                 <Russian>Apex</Russian>
                 <Chinesesimp>Apex</Chinesesimp>
                 <Korean>Apex</Korean>
+                <Spanish>Apex</Spanish>
                 <Turkish>Apex</Turkish>
             </Key>
             <Key ID="STR_A3AU_Artofwar">
@@ -648,6 +701,7 @@
                 <Russian>Art of war</Russian>
                 <Chinesesimp>Art of war</Chinesesimp>
                 <Korean>Art of war</Korean>
+                <Spanish>Art of war</Spanish>
                 <Turkish>Art of war</Turkish>
             </Key>
             <Key ID="STR_A3AU_Contact">
@@ -655,6 +709,7 @@
                 <Russian>Contact</Russian>
                 <Chinesesimp>Contact</Chinesesimp>
                 <Korean>Contact</Korean>
+                <Spanish>Contact</Spanish>
                 <Turkish>Contact</Turkish>
             </Key>
             <Key ID="STR_A3AU_Jets">
@@ -662,6 +717,7 @@
                 <Russian>Jets</Russian>
                 <Chinesesimp>Jets</Chinesesimp>
                 <Korean>Jets</Korean>
+                <Spanish>Jets</Spanish>
                 <Turkish>Jets</Turkish>
             </Key>
             <Key ID="STR_A3AU_Kart">
@@ -669,6 +725,7 @@
                 <Russian>Kart</Russian>
                 <Chinesesimp>Kart</Chinesesimp>
                 <Korean>Kart</Korean>
+                <Spanish>Kart</Spanish>
                 <Turkish>Kart</Turkish>
             </Key>
             <Key ID="STR_A3AU_Lawsofwar">
@@ -676,6 +733,7 @@
                 <Russian>Laws of war</Russian>
                 <Chinesesimp>Laws of war</Chinesesimp>
                 <Korean>Laws of war</Korean>
+                <Spanish>Laws of war</Spanish>
                 <Turkish>Laws of war</Turkish>
             </Key>
             <Key ID="STR_A3AU_Marksmen">
@@ -683,6 +741,7 @@
                 <Russian>Marksmen</Russian>
                 <Chinesesimp>Marksmen</Chinesesimp>
                 <Korean>Marksmen</Korean>
+                <Spanish>Marksmen</Spanish>
                 <Turkish>Marksmen</Turkish>
             </Key>
             <Key ID="STR_A3AU_Tanks">
@@ -690,6 +749,7 @@
                 <Russian>Tanks</Russian>
                 <Chinesesimp>Tanks</Chinesesimp>
                 <Korean>Tanks</Korean>
+                <Spanish>Tanks</Spanish>
                 <Turkish>Tanks</Turkish>
                 </Key>
             <Key ID="STR_A3AU_Ultimate">
@@ -697,12 +757,14 @@
                 <Russian>Antistasi Ultimate</Russian>
                 <Chinesesimp>Antistasi Ultimate</Chinesesimp>
                 <Korean>Antistasi Ultimate</Korean>
+                <Spanish>Antistasi Ultimate</Spanish>
             </Key>
             <Key ID="STR_A3AU_kkiv2035">
                 <Original>Kkiv 2035</Original>
                 <Russian>Kkiv 2035</Russian>
                 <Chinesesimp>Kkiv 2035</Chinesesimp>
                 <Korean>Kkiv 2035</Korean>
+                <Spanish>Kkiv 2035</Spanish>
                 <Turkish>Kkiv 2035</Turkish>
             </Key>
             <Key ID="STR_A3AU_CSLA">
@@ -710,12 +772,14 @@
                 <Russian>CSLA</Russian>
                 <French>CSLA</French>
                 <Korean>CSLA</Korean>
+                <Spanish>CSLA</Spanish>
                 <Chinesesimp>CSLA</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_RF">
                 <Original>Reaction Forces</Original>
                 <Russian>Reaction Forces</Russian>
                 <Korean>Reaction Forces</Korean>
+                <Spanish>Reaction Forces</Spanish>
                 <French>Force de réaction</French>
                 <Chinesesimp>Reaction Force</Chinesesimp>
             </Key>
@@ -723,6 +787,7 @@
                 <Original>Expeditionary Forces</Original>
                 <Russian>Expeditionary Forces</Russian>
                 <Korean>Expeditionary Forces</Korean>
+                <Spanish>Expeditionary Forces</Spanish>
                 <French>Force de Expéditionnaire</French>
                 <Chinesesimp>Expeditionary Forces</Chinesesimp>
             </Key>
@@ -730,6 +795,7 @@
                 <Original>3CBBAF</Original>
                 <Russian>3CBBAF</Russian>
                 <Korean>3CBBAF</Korean>
+                <Spanish>3CBBAF</Spanish>
                 <French>3CBBAF</French>
                 <Chinesesimp>3CBBAF</Chinesesimp>
             </Key>
@@ -737,6 +803,7 @@
                 <Original>3CB</Original>
                 <Russian>3CB</Russian>
                 <Korean>3CB</Korean>
+                <Spanish>3CB</Spanish>
                 <French>3CB</French>
                 <Chinesesimp>3CB</Chinesesimp>
             </Key>
@@ -744,6 +811,7 @@
                 <Original>3CBFCW</Original>
                 <Russian>3CBFCW</Russian>
                 <Korean>3CBFCW</Korean>
+                <Spanish>3CBFCW</Spanish>
                 <French>3CBFCW</French>
                 <Chinesesimp>3CBFCW</Chinesesimp>
             </Key>
@@ -751,6 +819,7 @@
                 <Original>Aegis</Original>
                 <Russian>Aegis</Russian>
                 <Korean>Aegis</Korean>
+                <Spanish>Aegis</Spanish>
                 <French>Aegis</French>
                 <Chinesesimp>Aegis</Chinesesimp>
             </Key>
@@ -759,6 +828,7 @@
                 <English>Atlas</English>
                 <Russian>Atlas</Russian>
                 <Korean>Atlas</Korean>
+                <Spanish>Atlas</Spanish>
                 <French>Atlas</French>
                 <Chinesesimp>Atlas</Chinesesimp>
             </Key>
@@ -767,6 +837,7 @@
                 <English>Aegis Police</English>
                 <Russian>Aegis Police</Russian>
                 <Korean>Aegis Police</Korean>
+                <Spanish>Aegis Police</Spanish>
                 <French>Aegis Police</French>
                 <Chinesesimp>Aegis Police</Chinesesimp>
             </Key>
@@ -775,6 +846,7 @@
                 <English>Atlas Opposing Forces</English>
                 <Russian>Atlas Opposing Forces</Russian>
                 <Korean>Atlas Opposing Forces</Korean>
+                <Spanish>Atlas Opposing Forces</Spanish>
                 <French>Atlas Opposing Forces</French>
                 <Chinesesimp>Atlas Opposing Forces</Chinesesimp>
             </Key>
@@ -782,6 +854,7 @@
                 <Original>BRAF</Original>
                 <Russian>BRAF</Russian>
                 <Korean>BRAF</Korean>
+                <Spanish>BRAF</Spanish>
                 <French>BRAF</French>
                 <Chinesesimp>BRAF</Chinesesimp>
             </Key>
@@ -789,6 +862,7 @@
                 <Original>BWA</Original>
                 <Russian>BWA</Russian>
                 <Korean>BWA</Korean>
+                <Spanish>BWA</Spanish>
                 <French>BWA</French>
                 <Chinesesimp>BWA</Chinesesimp>
             </Key>
@@ -796,6 +870,7 @@
                 <Original>CSA38</Original>
                 <Russian>CSA38</Russian>
                 <Korean>CSA38</Korean>
+                <Spanish>CSA38</Spanish>
                 <French>CSA38</French>
                 <Chinesesimp>CSA38</Chinesesimp>
             </Key>
@@ -803,6 +878,7 @@
                 <Original>CUP</Original>
                 <Russian>CUP</Russian>
                 <Korean>CUP</Korean>
+                <Spanish>CUP</Spanish>
                 <French>CUP</French>
                 <Chinesesimp>CUP</Chinesesimp>
             </Key>
@@ -810,6 +886,7 @@
                 <Original>CW</Original>
                 <Russian>CW</Russian>
                 <Korean>CW</Korean>
+                <Spanish>CW</Spanish>
                 <French>CW</French>
                 <Chinesesimp>CW</Chinesesimp>
             </Key>
@@ -817,6 +894,7 @@
                 <Original>Empire</Original>
                 <Russian>Empire</Russian>
                 <Korean>Empire</Korean>
+                <Spanish>Empire</Spanish>
                 <French>Empire</French>
                 <Chinesesimp>Empire</Chinesesimp>
             </Key>
@@ -824,6 +902,7 @@
                 <Original>FFAA</Original>
                 <Russian>FFAA</Russian>
                 <Korean>FFAA</Korean>
+                <Spanish>FFAA</Spanish>
                 <French>FFAA</French>
                 <Chinesesimp>FFAA</Chinesesimp>
             </Key>
@@ -831,6 +910,7 @@
                 <Original>FWA</Original>
                 <Russian>FWA</Russian>
                 <Korean>FWA</Korean>
+                <Spanish>FWA</Spanish>
                 <French>FWA</French>
                 <Chinesesimp>FWA</Chinesesimp>
             </Key>
@@ -838,6 +918,7 @@
                 <Original>GM</Original>
                 <Russian>GM</Russian>
                 <Korean>GM</Korean>
+                <Spanish>GM</Spanish>
                 <French>GM</French>
                 <Chinesesimp>GM</Chinesesimp>
             </Key>
@@ -845,6 +926,7 @@
                 <Original>IFA</Original>
                 <Russian>IFA</Russian>
                 <Korean>IFA</Korean>
+                <Spanish>IFA</Spanish>
                 <French>IFA</French>
                 <Chinesesimp>IFA</Chinesesimp>
             </Key>
@@ -852,6 +934,7 @@
                 <Original>FoW</Original>
                 <Russian>FoW</Russian>
                 <Korean>FoW</Korean>
+                <Spanish>FoW</Spanish>
                 <French>FoW</French>
                 <Chinesesimp>FoW</Chinesesimp>
             </Key>
@@ -859,6 +942,7 @@
                 <Original>Pedagne</Original>
                 <Russian>Pedagne</Russian>
                 <Korean>Pedagne</Korean>
+                <Spanish>Pedagne</Spanish>
                 <French>Pedagne</French>
                 <Chinesesimp>Pedagne</Chinesesimp>
             </Key>
@@ -866,6 +950,7 @@
                 <Original>NIArms</Original>
                 <Russian>NIArms</Russian>
                 <Korean>NIArms</Korean>
+                <Spanish>NIArms</Spanish>
                 <French>NIArms</French>
                 <Chinesesimp>NIArms</Chinesesimp>
             </Key>
@@ -873,6 +958,7 @@
                 <Original>OPTRE</Original>
                 <Russian>OPTRE</Russian>
                 <Korean>OPTRE</Korean>
+                <Spanish>OPTRE</Spanish>
                 <French>OPTRE</French>
                 <Chinesesimp>OPTRE</Chinesesimp>
             </Key>
@@ -880,6 +966,7 @@
                 <Original>PLA</Original>
                 <Russian>PLA</Russian>
                 <Korean>PLA</Korean>
+                <Spanish>PLA</Spanish>
                 <French>PLA</French>
                 <Chinesesimp>PLA</Chinesesimp>
             </Key>
@@ -887,6 +974,7 @@
                 <Original>RHS</Original>
                 <Russian>RHS</Russian>
                 <Korean>RHS</Korean>
+                <Spanish>RHS</Spanish>
                 <French>RHS</French>
                 <Chinesesimp>RHS</Chinesesimp>
             </Key>
@@ -894,6 +982,7 @@
                 <Original>MSS</Original>
                 <Russian>MSS</Russian>
                 <Korean>MSS</Korean>
+                <Spanish>MSS</Spanish>
                 <French>MSS</French>
                 <Chinesesimp>MSS</Chinesesimp>
             </Key>
@@ -901,6 +990,7 @@
                 <Original>SFP</Original>
                 <Russian>SFP</Russian>
                 <Korean>SFP</Korean>
+                <Spanish>SFP</Spanish>
                 <French>SFP</French>
                 <Chinesesimp>SFP</Chinesesimp>
             </Key>
@@ -908,6 +998,7 @@
                 <Original>SMA</Original>
                 <Russian>SMA</Russian>
                 <Korean>SMA</Korean>
+                <Spanish>SMA</Spanish>
                 <French>SMA</French>
                 <Chinesesimp>SMA</Chinesesimp>
             </Key>
@@ -915,6 +1006,7 @@
                 <Original>SPE</Original>
                 <Russian>SPE</Russian>
                 <Korean>SPE</Korean>
+                <Spanish>SPE</Spanish>
                 <French>SPE</French>
                 <Chinesesimp>SPE</Chinesesimp>
             </Key>
@@ -922,12 +1014,14 @@
                 <Original>SPEX</Original>
                 <Russian>SPEX</Russian>
                 <Korean>SPEX</Korean>
+                <Spanish>SPEX</Spanish>
                 <French>SPEX</French>
             </Key>
             <Key ID="STR_A3AU_tow">
                 <Original>Tier 1</Original>
                 <Russian>Tier 1</Russian>
                 <Korean>Tier 1</Korean>
+                <Spanish>Tier 1</Spanish>
                 <French>Tier 1</French>
                 <Chinesesimp>Tier 1</Chinesesimp>
             </Key>
@@ -935,6 +1029,7 @@
                 <Original>Unsung</Original>
                 <Russian>Unsung</Russian>
                 <Korean>Unsung</Korean>
+                <Spanish>Unsung</Spanish>
                 <French>Unsung</French>
                 <Chinesesimp>Unsung</Chinesesimp>
             </Key>
@@ -942,6 +1037,7 @@
                 <Original>VN</Original>
                 <Russian>VN</Russian>
                 <Korean>VN</Korean>
+                <Spanish>VN</Spanish>
                 <French>VN</French>
                 <Chinesesimp>VN</Chinesesimp>
             </Key>
@@ -949,12 +1045,14 @@
                 <Original>Nickel steel</Original>
                 <Russian>Nickel steel</Russian>
                 <Korean>Nickel steel</Korean>
+                <Spanish>Nickel steel</Spanish>
                 <French>Nickel steel</French>
             </Key>
             <Key ID="STR_A3AU_wrs">
                 <Original>Research and Security</Original>
                 <Russian>Research and Security</Russian>
                 <Korean>Research and Security</Korean>
+                <Spanish>Research and Security</Spanish>
                 <French>Research and Security</French>
                 <Chinesesimp>Research and Security</Chinesesimp>
             </Key>
@@ -962,6 +1060,7 @@
                 <Original>Western Sahara</Original>
                 <Russian>Western Sahara</Russian>
                 <Korean>Western Sahara</Korean>
+                <Spanish>Western Sahara</Spanish>
                 <French>Western Sahara</French>
                 <Chinesesimp>Western Sahara</Chinesesimp>
             </Key>
@@ -969,6 +1068,7 @@
                 <Original>Northern Fronts</Original>
                 <Russian>Northern Fronts</Russian>
                 <Korean>Northern Fronts</Korean>
+                <Spanish>Northern Fronts</Spanish>
                 <French>Northern Fronts</French>
                 <Chinesesimp>Northern Fronts</Chinesesimp>
             </Key>
@@ -976,6 +1076,7 @@
                 <Original>East Asia War</Original>
                 <Russian>East Asia War</Russian>
                 <Korean>East Asia War</Korean>
+                <Spanish>East Asia War</Spanish>
                 <French>East Asia War</French>
                 <Chinesesimp>East Asia War</Chinesesimp>
             </Key>
@@ -983,6 +1084,7 @@
                 <Original>Cold War ReArmed</Original>
                 <Russian>Cold War ReArmed</Russian>
                 <Korean>Cold War ReArmed</Korean>
+                <Spanish>Cold War ReArmed</Spanish>
                 <French>Cold War ReArmed</French>
                 <Chinesesimp>Cold War ReArmed</Chinesesimp>
             </Key>
@@ -990,6 +1092,7 @@
                 <Original>YLArms</Original>
                 <Russian>YLArms</Russian>
                 <Korean>YLArms</Korean>
+                <Spanish>YLArms</Spanish>
                 <French>YLArms</French>
                 <Chinesesimp>YLArms</Chinesesimp>
             </Key>
@@ -999,6 +1102,7 @@
                 <Russian>P.I.</Russian>
                 <Chinesesimp>P.I.</Chinesesimp>
                 <Korean>P.I.</Korean>
+                <Spanish>P.I.</Spanish>
                 <French>P.I.</French>
             </Key>
             <Key ID="STR_A3AU_JCA_ARSENAL">
@@ -1007,12 +1111,14 @@
                 <Russian>JCA</Russian>
                 <Chinesesimp>JCA</Chinesesimp>
                 <Korean>JCA</Korean>
+                <Spanish>JCA</Spanish>
                 <French>JCA</French>
             </Key>
             <Key ID="STR_A3AU_ffp">
                 <Original>FFP</Original>
                 <Russian>FFP</Russian>
                 <Korean>FFP</Korean>
+                <Spanish>FFP</Spanish>
                 <French>FFP</French>
                 <Chinesesimp>FFP</Chinesesimp>
             </Key>
@@ -1020,6 +1126,7 @@
                 <Original>HAFM</Original>
                 <Russian>HAFM</Russian>
                 <Korean>HAFM</Korean>
+                <Spanish>HAFM</Spanish>
                 <French>HAFM</French>
                 <Chinesesimp>HAFM</Chinesesimp>
             </Key>
@@ -1029,6 +1136,7 @@
                 <Russian>MPP</Russian>
                 <Chinesesimp>MPP</Chinesesimp>
                 <Korean>MPP</Korean>
+                <Spanish>MPP</Spanish>
                 <French>MPP</French>
             </Key>
             <Key ID="STR_A3AU_ReArma_US">
@@ -1037,6 +1145,7 @@
                 <Russian>ReArma US</Russian>
                 <Chinesesimp>ReArma US</Chinesesimp>
                 <Korean>ReArma US</Korean>
+                <Spanish>ReArma US</Spanish>
                 <French>ReAReArma USrma</French>
             </Key>
             <Key ID="STR_A3AU_ReArma_RU">
@@ -1045,6 +1154,7 @@
                 <Russian>ReArma RU</Russian>
                 <Chinesesimp>ReArma RU</Chinesesimp>
                 <Korean>ReArma RU</Korean>
+                <Spanish>ReArma RU</Spanish>
                 <French>ReArma RU</French>
             </Key>
             <Key ID="STR_A3AU_ReArma_CN">
@@ -1061,6 +1171,7 @@
                 <Russian>QDI</Russian>
                 <Chinesesimp>QDI</Chinesesimp>
                 <Korean>QDI</Korean>
+                <Spanish>QDI</Spanish>
                 <French>QDI</French>
             </Key>
             <!-- <Key ID="STR_A3AU_PROJINF">
