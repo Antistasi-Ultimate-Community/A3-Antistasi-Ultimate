@@ -1,4 +1,7 @@
-params ["_action"];
+params [
+	["_action", "", [""]],
+	["_target", cursorTarget, [objNull]]
+];
 
 if (!(serverCommandAvailable "#logout") and {!isServer}) exitWith {
 	[localize "STR_A3A_OrgPlayers_membership_header", localize "STR_A3A_OrgPlayers_membership_only_admins"] call SCRT_fnc_misc_deniedHint;
@@ -12,12 +15,12 @@ if (isNil "membersX") exitWith {
 	[localize "STR_A3A_OrgPlayers_membership_header", localize "STR_A3A_OrgPlayers_membership_noinit"] call SCRT_fnc_misc_deniedHint;
 };
 
-_target = cursortarget;
-
-if (!isPlayer _target) exitWith {
+if (isNull _target || {!isPlayer _target}) exitWith {
 	[localize "STR_A3A_OrgPlayers_membership_header", localize "STR_A3A_OrgPlayers_membership_notarget"] call SCRT_fnc_misc_deniedHint;
 };
-_uid = getPlayerUID _target;
+
+private _uid = getPlayerUID _target;
+
 if ((_action == "add") and {[_target] call A3A_fnc_isMember}) exitWith {
 	[localize "STR_A3A_OrgPlayers_membership_header", localize "STR_A3A_OrgPlayers_membership_alreadymember"] call SCRT_fnc_misc_deniedHint;
 };

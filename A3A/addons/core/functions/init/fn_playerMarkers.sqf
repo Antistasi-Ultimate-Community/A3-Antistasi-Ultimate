@@ -1,4 +1,3 @@
-
 while {true} do
 {
     waitUntil {sleep 0.5; (visibleMap or visibleGPS) and ([player] call A3A_fnc_hasRadio)};
@@ -10,7 +9,9 @@ while {true} do
         private _activePlayers = call A3A_fnc_playableUnits;        // Note: does not include dead players
         private _activeIDs = _activePlayers apply { getPlayerID _x };
         {
-            deleteMarkerLocal format ["A3A_playerMrk_%1", _x];
+            private _mrkName = format ["A3A_playerMrk_%1", _x];
+            deleteMarkerLocal _mrkName;
+            missionNamespace setVariable [(_mrkName + "_unit"), nil]; 
         } forEach (_markedIDs - _activeIDs);
 
         // Create/update active players
@@ -19,6 +20,8 @@ while {true} do
             private _realUnit = _x getVariable ["owner", _x];
             private _name = name _x;
             private _mrk = format ["A3A_playerMrk_%1", _ID];
+
+            missionNamespace setVariable [(_mrk + "_unit"), _realUnit];
 
             if !(_ID in _markedIDs) then
             {
@@ -66,5 +69,9 @@ while {true} do
         sleep 1;
     };
 
-    { deleteMarkerLocal format ["A3A_playerMrk_%1", _x] } forEach _markedIDs;
+    { 
+        private _mrkName = format ["A3A_playerMrk_%1", _x];
+        deleteMarkerLocal _mrkName;
+        missionNamespace setVariable [(_mrkName + "_unit"), nil]; 
+    } forEach _markedIDs;
 };

@@ -33,7 +33,7 @@ Examples:
 Author: Caleb Serafin
 License: MIT License, Copyright (c) 2019 Barbolani & The Official Antistasi Community
 */
-params ["_instigator","_timeAdded","_offenceAdded",["_victim",objNull],["_customMessage",""]];
+params ["_instigator","_timeAdded","_offenceAdded",["_victim",objNull],["_customMessage",""],["_isAdminMessage",false]];
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
@@ -100,7 +100,11 @@ private _playerStats = ["Total-time: ",str _timeTotal," (incl. +",str _timeAdded
 private _instigatorLog = [["WARNING","GUILTY"] select (_offenceTotal >= 1)," | ",_name," [",_UID,"] ",_victimStats,", ",_playerStats] joinString "";
 Info(_instigatorLog);
 
-[localize "STR_A3A_punishment_ff_notification", [localize "STR_A3A_punishment_watch_your_fire",_injuredComrade,_customMessage] joinString "<br/>"] remoteExecCall ["A3A_fnc_customHint", _originalBody, false];
+if (_isAdminMessage) then {
+	[localize "STR_A3A_punishment_wn_notification", [localize "STR_A3A_punishment_admin_warning",_injuredComrade,_customMessage] joinString "<br/>"] remoteExecCall ["A3A_fnc_customHint", _originalBody, false];
+} else {
+	[localize "STR_A3A_punishment_ff_notification", [localize "STR_A3A_punishment_watch_your_fire",_injuredComrade,_customMessage] joinString "<br/>"] remoteExecCall ["A3A_fnc_customHint", _originalBody, false];
+};
 
 if (_offenceTotal < 1) exitWith {"WARNING";};
 
