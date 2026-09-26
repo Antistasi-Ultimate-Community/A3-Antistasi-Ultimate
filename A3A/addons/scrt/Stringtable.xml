@@ -74,6 +74,46 @@
                 <Chinesesimp>医疗箱</Chinesesimp>
                 <Turkish>Tıbbi Malzeme Kutusu</Turkish>
             </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxExtraSmall">
+                <Original>Build Box (Extra Small)</Original>
+                <Russian>Строительный ящик (Очень малый)</Russian>
+                <Korean>빌드 박스 (특소형)</Korean>
+                <French>Caisse de construction (Très petite)</French>
+                <Chinesesimp>建造箱 (超小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Çok Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxSmall">
+                <Original>Build Box (Small)</Original>
+                <Russian>Строительный ящик (Малый)</Russian>
+                <Korean>빌드 박스 (소형)</Korean>
+                <French>Caisse de construction (Petite)</French>
+                <Chinesesimp>建造箱 (小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxMeduim">
+                <Original>Build Box (Medium)</Original>
+                <Russian>Строительный ящик (Средний)</Russian>
+                <Korean>빌드 박스 (중형)</Korean>
+                <French>Caisse de construction (Moyenne)</French>
+                <Chinesesimp>建造箱 (中型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Orta)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxLarge">
+                <Original>Build Box (Large)</Original>
+                <Russian>Строительный ящик (Большой)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Büyük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxHumongous">
+                <Original>Build Box (Humongous)</Original>
+                <Russian>Строительный ящик (Огромный)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Dev)</Turkish>
+            </Key>
         </Container>
         <Container name="arsenal">
             <Key ID="STR_A3AP_vehArsenal_desc">

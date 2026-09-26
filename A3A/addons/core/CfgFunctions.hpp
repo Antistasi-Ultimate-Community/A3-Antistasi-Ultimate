@@ -630,12 +630,15 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class addToStaticsToSave {};
+            class applyObjectSaveData {};
             class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};
             class resetPlayer {};
@@ -860,10 +863,12 @@ class CfgFunctions
 
         class UtilityItems {
             file = QPATHTOFOLDER(functions\UtilityItems);
+            class applyObjectSaveData_BuildBox {};
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
             class dropItem {};
+            class getObjectSaveData_BuildBox {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
