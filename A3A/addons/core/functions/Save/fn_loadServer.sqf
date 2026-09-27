@@ -196,7 +196,7 @@ if (isServer) then {
 
     Info("Persistent Load Completed.");
 
-	["locationSpawned", QGVAR(crewLocationStatics), { call A3A_fnc_crewLocationStatics }] call EFUNC(Events,addEventListener);
+	[CBA_EVENT_SERVER_SPAWN_LOCATION, LINKFUNCMAIN(crewLocationStatics)] call FUNCMAIN(addEventHandler);
 
 	// uh, why here?
 	["tasks"] call A3A_fnc_getStatVariable;

@@ -53,7 +53,7 @@ private _specialMarkers = ["synd_hq", "tradermarker", "rallypointmarker"];
 
 if (!(_originalName in _managedMarkers) && {!(_markerNameLower in _specialMarkers)}) exitWith {};
 
-private _visibleMarkerName = if (markerShape _dummyName != "") then { _dummyName } else { _originalName };
+private _visibleMarkerName = [_originalName, _dummyName] select MARKER_EXISTS(_dummyName);
 private _markerPosition = getMarkerPos _visibleMarkerName;
 
 private _isSyndicateHeadquarters = (_markerNameLower == "synd_hq");

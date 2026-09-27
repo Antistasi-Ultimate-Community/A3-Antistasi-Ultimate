@@ -399,10 +399,10 @@ else
 };
 
 markersChanging = markersChanging - [_markerX];
-["markerChange", [_markerX, _winner]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_MARKER_CHANGE, [_markerX, _winner, _loser]] call FUNCMAIN(triggerLocalEvent);
 
 if (_winner == teamPlayer) then {
-	[_loser] remoteExecCall ["SCRT_fnc_common_defeatFactionIfPossible", 2];
+	[_loser] call SCRT_fnc_common_defeatFactionIfPossible;
 };
 
 Debug_1("Finished marker change at %1", _markerX);

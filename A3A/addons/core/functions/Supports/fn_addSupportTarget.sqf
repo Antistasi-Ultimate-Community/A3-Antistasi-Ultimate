@@ -19,7 +19,10 @@ FIX_LINE_NUMBERS()
 params ["_activeSupport", "_target", "_targPos"];
 
 if (_activeSupport isEqualType "") then { 
-    private _index = A3A_activeSupports findIf { _activeSupport == _suppName };
+    private _index = A3A_activeSupports findIf {
+        _x params["_suppName"];
+        _activeSupport == _suppName;
+    };
     if (_index != -1) then { _activeSupport = A3A_activeSupports select _index };
 };
 if (_activeSupport isEqualType "") exitWith { Error_1("Support name %1 not in active list", _activeSupport); false; };
