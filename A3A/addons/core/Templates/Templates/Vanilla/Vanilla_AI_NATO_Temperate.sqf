@@ -61,8 +61,9 @@ private _planesLargeCAS = [];
 
 private _planesAA = ["B_Plane_CAS_01_dynamicLoadout_F"];
 private _planesLargeAA = [];
-["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] call _fnc_saveToTemplate;
-["vehiclesPlanesGunship", ["B_T_VTOL_01_armed_F"]] call _fnc_saveToTemplate;
+
+private _planesTransport = [];
+private _planesGunship = [];
 
 private _transportHelicopters = ["B_Heli_Transport_01_F","B_CTRG_Heli_Transport_01_tropic_F"];
 
@@ -97,6 +98,24 @@ private _staticAT = ["B_T_Static_AT_F","B_GMG_01_high_F"];
 ["staticMortars", ["B_T_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
+if (_hasJets) then {
+    _planesAA pushBack "B_Plane_Fighter_01_Stealth_F";
+    _planesCAS pushBack "B_Plane_Fighter_01_F";
+};
+
+if (_hasApex) then {
+    _planesGunship pushBack "B_T_VTOL_01_armed_F";
+    _planesTransport pushBack "B_T_VTOL_01_infantry_F";
+};
+
+if (_hasHelicopters) then {
+    _transportHelicopters pushBack "B_Heli_Transport_03_F";
+};
+
+if (_hasTanks) then {
+    _lightTanks append ["B_AFV_Wheeled_01_cannon_F", "B_AFV_Wheeled_01_up_cannon_F"];
+};
+
 if (_hasRF) then {
     _basic pushBack "B_Pickup_rf";
     _unarmedVehicles append ["B_Pickup_rf", "B_Pickup_Comms_rf"];
@@ -130,6 +149,8 @@ if (_hasWS) then {
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", _planesGunship] call _fnc_saveToTemplate;
+["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", _militiaTrucks] call _fnc_saveToTemplate;
 ["vehiclesMilitiaLightArmed", _militiaLightArmed] call _fnc_saveToTemplate;

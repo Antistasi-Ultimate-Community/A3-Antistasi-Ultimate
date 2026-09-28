@@ -1,5 +1,5 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
-//#include "script_macros_undef.hpp"
+#include "script_macros_defines.hpp"
 #include "cba_events.hpp"
 
 // Define CfgPatches class name for, well, patches.
@@ -122,6 +122,25 @@ Author:
 #define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
 
 /* -------------------------------------------
+Macro: SNOOZE
+    A "sleep" command that isn't arbitrarily either 0.1 or 0.2 seconds,
+    but a consistent value to maybe be used across the codebase. Will
+    roughly equate to "one frame".
+
+Parameters:
+    None
+
+Example:
+    (begin example)
+        waitUntil { SNOOZE(); someCondition };
+    (end)
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
+#define SNOOZE() sleep 0.001
+
+/* -------------------------------------------
 Macro: XOR
     Evaluates to true if exactly one of both values is true
 
@@ -139,3 +158,21 @@ Author:
     Bohemia Interactive (https://community.bistudio.com/wiki/Operators)
 ------------------------------------------- */
 #define XOR(VAR1,VAR2) (((VAR1) || (VAR2)) && !((VAR1) && (VAR2)))
+
+/* -------------------------------------------
+Macro: MARKER_EXISTS
+    Evaluates to true if the given marker exists.
+
+Parameters:
+    VAR1 - the name of the marker to check for existence
+
+Example:
+    (begin example)
+        // return "true" if the marker "airport_2" exists
+        MARKER_EXISTS("airport_2");
+    (end)
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
+#define MARKER_EXISTS(VAR1) (((VAR1) isEqualType "") && { (VAR1) in allMapMarkers })

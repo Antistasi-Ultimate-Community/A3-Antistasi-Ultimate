@@ -48,7 +48,7 @@ private _lightAPCs = [];
 private _APCs = ["B_T_APC_Wheeled_01_cannon_F"];
 private _IFVs = ["I_E_APC_tracked_03_cannon_F","B_T_APC_Tracked_01_rcws_F"];
 private _airborneVehicles = ["I_E_APC_tracked_03_cannon_F"];
-private _tanks =  ["B_T_MBT_01_TUSK_F","B_T_MBT_01_cannon_F"];
+private _tanks =  ["B_T_MBT_01_cannon_F"];
 private _lightTanks = [];
 private _aa = ["B_T_APC_Tracked_01_AA_F"];
 
@@ -58,7 +58,7 @@ private _gunBoat = ["I_Boat_Armed_01_minigun_F"];
 private _planesCAS = ["B_Plane_CAS_01_dynamicLoadout_F"];
 private _planesAA = ["a3a_Plane_Fighter_04_grey_F"];
 private _planesTransport = ["B_T_VTOL_01_infantry_F"];
-private _gunship = ["B_T_VTOL_01_armed_F"];
+private _planesGunship = ["B_T_VTOL_01_armed_F"];
 
 private _helisLight = ["I_E_Heli_light_03_unarmed_F", "B_Heli_Light_01_F"];
 private _transportHelicopters = ["B_Heli_Transport_03_F", "B_Heli_Transport_01_F"];
@@ -66,6 +66,20 @@ private _helisLightAttack = ["I_E_Heli_light_03_dynamicLoadout_F", "B_Heli_Light
 private _helisAttack = ["B_Heli_Attack_01_dynamicLoadout_F"];
 
 private _airPatrol = ["I_E_Heli_light_03_unarmed_F", "B_Heli_Light_01_F", "I_E_Heli_light_03_dynamicLoadout_F", "B_Heli_Light_01_dynamicLoadout_F"];
+
+if (_hasJets) then {
+    _planesAA pushBack "B_Plane_Fighter_01_Stealth_F";
+    _planesCAS pushBack "B_Plane_Fighter_01_F";
+};
+
+if (_hasHelicopters) then {
+    _transportHelicopters pushBack "B_Heli_Transport_03_F";
+};
+
+if (_hasTanks) then {
+    _tanks pushBack "a3a_MBT_04_cannon_black_F";
+    _lightTanks append ["B_AFV_Wheeled_01_cannon_F", "B_AFV_Wheeled_01_up_cannon_F"];
+};
 
 if (_hasRF) then {
     _basic pushBack "I_E_Pickup_rf";
@@ -131,7 +145,7 @@ private _staticAA = ["I_E_Static_AA_F"];
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
-["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", _planesGunship] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["staticAA", _staticAA] call _fnc_saveToTemplate;
