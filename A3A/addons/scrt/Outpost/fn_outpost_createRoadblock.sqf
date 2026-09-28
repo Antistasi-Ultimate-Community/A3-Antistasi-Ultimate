@@ -84,7 +84,7 @@ switch (true) do {
 		_garrison = [_riflemanType] + _squadType;
 		garrison setVariable [_marker,_garrison,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		["RebelControlCreated", [_marker, "roadblock"]] call EFUNC(Events,triggerEvent);
+		[CBA_EVENT_SERVER_CREATE_REBEL_CONTROL, [_marker, "roadblock"]] call FUNCMAIN(triggerLocalEvent);
 		[_marker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	};
 	default {
