@@ -3,6 +3,7 @@
 class B_G_Offroad_01_AT_F;
 class B_G_Offroad_01_F;
 class B_G_Offroad_01_armed_F;
+class B_LSV_01_unarmed_F;
 class B_LSV_01_AT_F;
 class C_Van_02_service_F;
 class C_Van_02_transport_F;
@@ -61,6 +62,11 @@ class a3a_LSV_02_AT_black_F : O_LSV_02_AT_F
 {
     scope = 2;
     textureList[] = {"Black",1,"GreenHex",0,"Arid",0};
+};
+class a3a_LSV_01_unarmed_black_F : B_LSV_01_unarmed_F
+{
+    scope = 2;
+    textureList[] = {"Black",1,"Olive",0,"Sand",0};
 };
 class a3a_LSV_01_AT_black_F : B_LSV_01_AT_F
 {
