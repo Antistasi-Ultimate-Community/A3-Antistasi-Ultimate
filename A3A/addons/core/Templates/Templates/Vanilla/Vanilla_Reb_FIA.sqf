@@ -48,6 +48,17 @@ private _civHelicopters = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F
 
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 
+if (_hasApex) then {
+  _vehiclesCivCar pushBack "C_Offroad_02_unarmed_F";
+  _vehiclesLightArmed pushBack "I_C_Offroad_02_LMG_F";
+  _vehiclesAt pushBack "I_C_Offroad_02_AT_F";
+};
+
+if (_hasLawsOfWar) then {
+  _vehiclesCivCar append ["C_Van_02_vehicle_F", "C_Van_02_transport_F"];
+  _VehTruck pushBack "B_G_Van_02_transport_F";
+};
+
 if (_hasEF) then {
   _vehiclesBoat pushBack "EF_B_CombatBoat_HMG_CTRG";
 };
@@ -218,7 +229,7 @@ private _uniformsAll = (_rebUniforms + _dlcUniforms);
 
 private _faces = ["GreekHead_A3_02","GreekHead_A3_03","GreekHead_A3_04",
 "GreekHead_A3_05","GreekHead_A3_06","GreekHead_A3_07","GreekHead_A3_08",
-"GreekHead_A3_09","GreekHead_A3_10","GreekHead_A3_11","GreekHead_A3_12","GreekHead_A3_13",
+"GreekHead_A3_09","GreekHead_A3_11","GreekHead_A3_12","GreekHead_A3_13",
 "GreekHead_A3_14","Ioannou","Mavros","Sturrock"];
 ["voices", ["Male01GRE", "Male02GRE", "Male03GRE", "Male04GRE", "Male05GRE", "Male06GRE"]] call _fnc_saveToTemplate;
 ["faces", _faces] call _fnc_saveToTemplate;
