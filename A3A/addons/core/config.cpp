@@ -26,6 +26,7 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"A3A_events"};
+        skipWhenAnyAddonPresent[] = {"a3uebet_main"};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
@@ -33,6 +34,7 @@ class CfgPatches {
     };
 };
 
+#include "CfgDebriefing.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgSounds.hpp" 
 // Base AI unit definitions

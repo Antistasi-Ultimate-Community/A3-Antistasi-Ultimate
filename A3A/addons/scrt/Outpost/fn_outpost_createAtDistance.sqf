@@ -64,7 +64,7 @@ _groupX setCombatMode "YELLOW";
 
 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 
-["locationSpawned", [_markerX, "RebelAtEmpl", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "RebelAtEmpl", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {
 	sleep 1; 
@@ -96,4 +96,6 @@ deleteGroup _groupX;
 	deleteVehicle _x;
 } forEach _props;
 
-["locationSpawned", [_markerX, "RebelAtEmpl", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "RebelAtEmpl", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;
