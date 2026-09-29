@@ -65,7 +65,8 @@ switch (_mode) do
         private _allTextCtrls = [];
         private _allValsCtrls = [];
         // Should be a hashmap but their arbitrary key order breaks the required
-        // order of the parameters in the GUI
+        // order of the parameters in the GUI. Elements are:
+        // [[configName, [reorderAfterConfigNames...]], ...]
         private _reorderCtrls = [];
         {
             private _type = getText(_x >> "type");
@@ -122,35 +123,33 @@ switch (_mode) do
 
         Trace_1(QFUNCMAIN(setupParamsTab),_reorderCtrls);
 
-        if (count _reorderCtrls > 0) then {
-            _reorderCtrls apply {
-                _x params["_targetClassName", "_reorderClassNames"];
+        _reorderCtrls apply {
+            _x params["_targetClassName", "_reorderClassNames"];
 
-                _reorderClassNames apply {
-                    private _reorderClassName = _x;
+            _reorderClassNames apply {
+                private _reorderClassName = _x;
 
-                    // Find the current index of the element to be reordered
-                    // and remove it _before_ finding the target index
-                    private _oldIndex = _allTextCtrls findIf { _x select 0 isEqualTo _reorderClassName };
+                // Find the current index of the element to be reordered
+                // and remove it _before_ finding the target index
+                private _oldIndex = _allTextCtrls findIf { _x select 0 isEqualTo _reorderClassName };
 
-                    if !assert(_oldIndex >= 0) then { continue };
+                if !assert(_oldIndex >= 0) then { continue };
 
-                    private _element = _allTextCtrls deleteAt _oldIndex;
+                private _element = _allTextCtrls deleteAt _oldIndex;
 
-                    // Sadly, this very efficient loop-in-loop-in-loop has to
-                    // happen for each reordered element since we don't know
-                    // if we're going to insert _before_ or _after_ the target
-                    private _targetIndex = _allTextCtrls findIf { _x select 0 isEqualTo _targetClassName };
+                // Sadly, this very efficient loop-in-loop-in-loop has to
+                // happen for each reordered element since we don't know
+                // if we're going to insert _before_ or _after_ the target
+                private _targetIndex = _allTextCtrls findIf { _x select 0 isEqualTo _targetClassName };
 
-                    if !assert(_targetIndex >= 0) then {
-                        // If the target index is not found, just append the
-                        // element back to the end
-                        _allTextCtrls pushBack _element;
-                        continue;
-                    };
-
-                    _allTextCtrls insert[_targetIndex + 1, [_element]];
+                if !assert(_targetIndex >= 0) then {
+                    // If the target index is not found, just append the
+                    // element back to the end
+                    _allTextCtrls pushBack _element;
+                    continue;
                 };
+
+                _allTextCtrls insert[_targetIndex + 1, [_element]];
             };
         };
 
